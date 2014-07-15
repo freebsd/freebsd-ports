@@ -1,0 +1,819 @@
+--- scripts/devd/nut-usb.conf.in.orig	2014-04-17 13:27:08.000000000 -0700
++++ scripts/devd/nut-usb.conf.in	2014-07-14 19:52:09.449484502 -0700
+@@ -8,7 +8,7 @@
+ 	match "type"		"ATTACH";
+ 	match "vendor"		"0x0001";
+ 	match "product"		"0x0000";
+-	action "chgrp @RUN_AS_GROUP@ /dev/$device-name*; chmod g+rw /dev/$device-name*";
++	action "chgrp @RUN_AS_GROUP@ /dev/$device-name; chmod g+rw /dev/$device-name";
+ };
+ 
+ # Hewlett Packard
+@@ -19,7 +19,7 @@
+ 	match "type"		"ATTACH";
+ 	match "vendor"		"0x03f0";
+ 	match "product"		"0x0001";
+-	action "chgrp @RUN_AS_GROUP@ /dev/$device-name*; chmod g+rw /dev/$device-name*";
++	action "chgrp @RUN_AS_GROUP@ /dev/$device-name; chmod g+rw /dev/$device-name";
+ };
+ #  T500  - bcmxcp_usb
+ notify 100 {
+@@ -28,7 +28,7 @@
+ 	match "type"		"ATTACH";
+ 	match "vendor"		"0x03f0";
+ 	match "product"		"0x1f01";
+-	action "chgrp @RUN_AS_GROUP@ /dev/$device-name*; chmod g+rw /dev/$device-name*";
++	action "chgrp @RUN_AS_GROUP@ /dev/$device-name; chmod g+rw /dev/$device-name";
+ };
+ #  T750  - bcmxcp_usb
+ notify 100 {
+@@ -37,7 +37,7 @@
+ 	match "type"		"ATTACH";
+ 	match "vendor"		"0x03f0";
+ 	match "product"		"0x1f02";
+-	action "chgrp @RUN_AS_GROUP@ /dev/$device-name*; chmod g+rw /dev/$device-name*";
++	action "chgrp @RUN_AS_GROUP@ /dev/$device-name; chmod g+rw /dev/$device-name";
+ };
+ #  HP T750 INTL  - usbhid-ups
+ notify 100 {
+@@ -46,7 +46,7 @@
+ 	match "type"		"ATTACH";
+ 	match "vendor"		"0x03f0";
+ 	match "product"		"0x1f06";
+-	action "chgrp @RUN_AS_GROUP@ /dev/$device-name*; chmod g+rw /dev/$device-name*";
++	action "chgrp @RUN_AS_GROUP@ /dev/$device-name; chmod g+rw /dev/$device-name";
+ };
+ #  HP T1000 INTL  - usbhid-ups
+ notify 100 {
+@@ -55,7 +55,7 @@
+ 	match "type"		"ATTACH";
+ 	match "vendor"		"0x03f0";
+ 	match "product"		"0x1f08";
+-	action "chgrp @RUN_AS_GROUP@ /dev/$device-name*; chmod g+rw /dev/$device-name*";
++	action "chgrp @RUN_AS_GROUP@ /dev/$device-name; chmod g+rw /dev/$device-name";
+ };
+ #  HP T1500 INTL  - usbhid-ups
+ notify 100 {
+@@ -64,7 +64,7 @@
+ 	match "type"		"ATTACH";
+ 	match "vendor"		"0x03f0";
+ 	match "product"		"0x1f09";
+-	action "chgrp @RUN_AS_GROUP@ /dev/$device-name*; chmod g+rw /dev/$device-name*";
++	action "chgrp @RUN_AS_GROUP@ /dev/$device-name; chmod g+rw /dev/$device-name";
+ };
+ #  HP R/T 2200 INTL (like SMART2200RMXL2U)  - usbhid-ups
+ notify 100 {
+@@ -73,7 +73,7 @@
+ 	match "type"		"ATTACH";
+ 	match "vendor"		"0x03f0";
+ 	match "product"		"0x1f0a";
+-	action "chgrp @RUN_AS_GROUP@ /dev/$device-name*; chmod g+rw /dev/$device-name*";
++	action "chgrp @RUN_AS_GROUP@ /dev/$device-name; chmod g+rw /dev/$device-name";
+ };
+ #  HP R1500 G2 and G3 INTL  - usbhid-ups
+ notify 100 {
+@@ -82,7 +82,7 @@
+ 	match "type"		"ATTACH";
+ 	match "vendor"		"0x03f0";
+ 	match "product"		"0x1fe0";
+-	action "chgrp @RUN_AS_GROUP@ /dev/$device-name*; chmod g+rw /dev/$device-name*";
++	action "chgrp @RUN_AS_GROUP@ /dev/$device-name; chmod g+rw /dev/$device-name";
+ };
+ #  HP T750 G2  - usbhid-ups
+ notify 100 {
+@@ -91,7 +91,7 @@
+ 	match "type"		"ATTACH";
+ 	match "vendor"		"0x03f0";
+ 	match "product"		"0x1fe1";
+-	action "chgrp @RUN_AS_GROUP@ /dev/$device-name*; chmod g+rw /dev/$device-name*";
++	action "chgrp @RUN_AS_GROUP@ /dev/$device-name; chmod g+rw /dev/$device-name";
+ };
+ #  e.g. ?  - usbhid-ups
+ notify 100 {
+@@ -100,7 +100,7 @@
+ 	match "type"		"ATTACH";
+ 	match "vendor"		"0x03f0";
+ 	match "product"		"0x1fe2";
+-	action "chgrp @RUN_AS_GROUP@ /dev/$device-name*; chmod g+rw /dev/$device-name*";
++	action "chgrp @RUN_AS_GROUP@ /dev/$device-name; chmod g+rw /dev/$device-name";
+ };
+ #  HP T1500 G3  - usbhid-ups
+ notify 100 {
+@@ -109,7 +109,7 @@
+ 	match "type"		"ATTACH";
+ 	match "vendor"		"0x03f0";
+ 	match "product"		"0x1fe3";
+-	action "chgrp @RUN_AS_GROUP@ /dev/$device-name*; chmod g+rw /dev/$device-name*";
++	action "chgrp @RUN_AS_GROUP@ /dev/$device-name; chmod g+rw /dev/$device-name";
+ };
+ #  R/T3000  - usbhid-ups
+ notify 100 {
+@@ -118,7 +118,7 @@
+ 	match "type"		"ATTACH";
+ 	match "vendor"		"0x03f0";
+ 	match "product"		"0x1fe5";
+-	action "chgrp @RUN_AS_GROUP@ /dev/$device-name*; chmod g+rw /dev/$device-name*";
++	action "chgrp @RUN_AS_GROUP@ /dev/$device-name; chmod g+rw /dev/$device-name";
+ };
+ #  R/T3000  - usbhid-ups
+ notify 100 {
+@@ -127,7 +127,7 @@
+ 	match "type"		"ATTACH";
+ 	match "vendor"		"0x03f0";
+ 	match "product"		"0x1fe6";
+-	action "chgrp @RUN_AS_GROUP@ /dev/$device-name*; chmod g+rw /dev/$device-name*";
++	action "chgrp @RUN_AS_GROUP@ /dev/$device-name; chmod g+rw /dev/$device-name";
+ };
+ #  various models  - usbhid-ups
+ notify 100 {
+@@ -136,7 +136,7 @@
+ 	match "type"		"ATTACH";
+ 	match "vendor"		"0x03f0";
+ 	match "product"		"0x1fe7";
+-	action "chgrp @RUN_AS_GROUP@ /dev/$device-name*; chmod g+rw /dev/$device-name*";
++	action "chgrp @RUN_AS_GROUP@ /dev/$device-name; chmod g+rw /dev/$device-name";
+ };
+ #  various models  - usbhid-ups
+ notify 100 {
+@@ -145,7 +145,7 @@
+ 	match "type"		"ATTACH";
+ 	match "vendor"		"0x03f0";
+ 	match "product"		"0x1fe8";
+-	action "chgrp @RUN_AS_GROUP@ /dev/$device-name*; chmod g+rw /dev/$device-name*";
++	action "chgrp @RUN_AS_GROUP@ /dev/$device-name; chmod g+rw /dev/$device-name";
+ };
+ 
+ # Eaton
+@@ -156,7 +156,7 @@
+ 	match "type"		"ATTACH";
+ 	match "vendor"		"0x0463";
+ 	match "product"		"0x0001";
+-	action "chgrp @RUN_AS_GROUP@ /dev/$device-name*; chmod g+rw /dev/$device-name*";
++	action "chgrp @RUN_AS_GROUP@ /dev/$device-name; chmod g+rw /dev/$device-name";
+ };
+ #  various models  - usbhid-ups
+ notify 100 {
+@@ -165,7 +165,7 @@
+ 	match "type"		"ATTACH";
+ 	match "vendor"		"0x0463";
+ 	match "product"		"0xffff";
+-	action "chgrp @RUN_AS_GROUP@ /dev/$device-name*; chmod g+rw /dev/$device-name*";
++	action "chgrp @RUN_AS_GROUP@ /dev/$device-name; chmod g+rw /dev/$device-name";
+ };
+ 
+ # Dell
+@@ -176,7 +176,7 @@
+ 	match "type"		"ATTACH";
+ 	match "vendor"		"0x047c";
+ 	match "product"		"0xffff";
+-	action "chgrp @RUN_AS_GROUP@ /dev/$device-name*; chmod g+rw /dev/$device-name*";
++	action "chgrp @RUN_AS_GROUP@ /dev/$device-name; chmod g+rw /dev/$device-name";
+ };
+ 
+ # Riello (Cypress Semiconductor Corp.)
+@@ -187,7 +187,7 @@
+ 	match "type"		"ATTACH";
+ 	match "vendor"		"0x04b4";
+ 	match "product"		"0x5500";
+-	action "chgrp @RUN_AS_GROUP@ /dev/$device-name*; chmod g+rw /dev/$device-name*";
++	action "chgrp @RUN_AS_GROUP@ /dev/$device-name; chmod g+rw /dev/$device-name";
+ };
+ 
+ # Minibox
+@@ -198,7 +198,7 @@
+ 	match "type"		"ATTACH";
+ 	match "vendor"		"0x04d8";
+ 	match "product"		"0xd004";
+-	action "chgrp @RUN_AS_GROUP@ /dev/$device-name*; chmod g+rw /dev/$device-name*";
++	action "chgrp @RUN_AS_GROUP@ /dev/$device-name; chmod g+rw /dev/$device-name";
+ };
+ 
+ # Belkin
+@@ -209,7 +209,7 @@
+ 	match "type"		"ATTACH";
+ 	match "vendor"		"0x050d";
+ 	match "product"		"0x0375";
+-	action "chgrp @RUN_AS_GROUP@ /dev/$device-name*; chmod g+rw /dev/$device-name*";
++	action "chgrp @RUN_AS_GROUP@ /dev/$device-name; chmod g+rw /dev/$device-name";
+ };
+ #  F6C550-AVR  - usbhid-ups
+ notify 100 {
+@@ -218,7 +218,7 @@
+ 	match "type"		"ATTACH";
+ 	match "vendor"		"0x050d";
+ 	match "product"		"0x0551";
+-	action "chgrp @RUN_AS_GROUP@ /dev/$device-name*; chmod g+rw /dev/$device-name*";
++	action "chgrp @RUN_AS_GROUP@ /dev/$device-name; chmod g+rw /dev/$device-name";
+ };
+ #  F6C1250-TW-RK  - usbhid-ups
+ notify 100 {
+@@ -227,7 +227,7 @@
+ 	match "type"		"ATTACH";
+ 	match "vendor"		"0x050d";
+ 	match "product"		"0x0750";
+-	action "chgrp @RUN_AS_GROUP@ /dev/$device-name*; chmod g+rw /dev/$device-name*";
++	action "chgrp @RUN_AS_GROUP@ /dev/$device-name; chmod g+rw /dev/$device-name";
+ };
+ #  F6C1500-TW-RK  - usbhid-ups
+ notify 100 {
+@@ -236,7 +236,7 @@
+ 	match "type"		"ATTACH";
+ 	match "vendor"		"0x050d";
+ 	match "product"		"0x0751";
+-	action "chgrp @RUN_AS_GROUP@ /dev/$device-name*; chmod g+rw /dev/$device-name*";
++	action "chgrp @RUN_AS_GROUP@ /dev/$device-name; chmod g+rw /dev/$device-name";
+ };
+ #  F6C900-UNV  - usbhid-ups
+ notify 100 {
+@@ -245,7 +245,7 @@
+ 	match "type"		"ATTACH";
+ 	match "vendor"		"0x050d";
+ 	match "product"		"0x0900";
+-	action "chgrp @RUN_AS_GROUP@ /dev/$device-name*; chmod g+rw /dev/$device-name*";
++	action "chgrp @RUN_AS_GROUP@ /dev/$device-name; chmod g+rw /dev/$device-name";
+ };
+ #  F6C100-UNV  - usbhid-ups
+ notify 100 {
+@@ -254,7 +254,7 @@
+ 	match "type"		"ATTACH";
+ 	match "vendor"		"0x050d";
+ 	match "product"		"0x0910";
+-	action "chgrp @RUN_AS_GROUP@ /dev/$device-name*; chmod g+rw /dev/$device-name*";
++	action "chgrp @RUN_AS_GROUP@ /dev/$device-name; chmod g+rw /dev/$device-name";
+ };
+ #  F6C120-UNV  - usbhid-ups
+ notify 100 {
+@@ -263,7 +263,7 @@
+ 	match "type"		"ATTACH";
+ 	match "vendor"		"0x050d";
+ 	match "product"		"0x0912";
+-	action "chgrp @RUN_AS_GROUP@ /dev/$device-name*; chmod g+rw /dev/$device-name*";
++	action "chgrp @RUN_AS_GROUP@ /dev/$device-name; chmod g+rw /dev/$device-name";
+ };
+ #  F6C800-UNV  - usbhid-ups
+ notify 100 {
+@@ -272,7 +272,7 @@
+ 	match "type"		"ATTACH";
+ 	match "vendor"		"0x050d";
+ 	match "product"		"0x0980";
+-	action "chgrp @RUN_AS_GROUP@ /dev/$device-name*; chmod g+rw /dev/$device-name*";
++	action "chgrp @RUN_AS_GROUP@ /dev/$device-name; chmod g+rw /dev/$device-name";
+ };
+ #  F6C1100-UNV, F6C1200-UNV  - usbhid-ups
+ notify 100 {
+@@ -281,7 +281,7 @@
+ 	match "type"		"ATTACH";
+ 	match "vendor"		"0x050d";
+ 	match "product"		"0x1100";
+-	action "chgrp @RUN_AS_GROUP@ /dev/$device-name*; chmod g+rw /dev/$device-name*";
++	action "chgrp @RUN_AS_GROUP@ /dev/$device-name; chmod g+rw /dev/$device-name";
+ };
+ 
+ # APC
+@@ -292,7 +292,7 @@
+ 	match "type"		"ATTACH";
+ 	match "vendor"		"0x051d";
+ 	match "product"		"0x0002";
+-	action "chgrp @RUN_AS_GROUP@ /dev/$device-name*; chmod g+rw /dev/$device-name*";
++	action "chgrp @RUN_AS_GROUP@ /dev/$device-name; chmod g+rw /dev/$device-name";
+ };
+ #  various 5G models  - usbhid-ups
+ notify 100 {
+@@ -301,7 +301,7 @@
+ 	match "type"		"ATTACH";
+ 	match "vendor"		"0x051d";
+ 	match "product"		"0x0003";
+-	action "chgrp @RUN_AS_GROUP@ /dev/$device-name*; chmod g+rw /dev/$device-name*";
++	action "chgrp @RUN_AS_GROUP@ /dev/$device-name; chmod g+rw /dev/$device-name";
+ };
+ 
+ # Powerware
+@@ -312,7 +312,7 @@
+ 	match "type"		"ATTACH";
+ 	match "vendor"		"0x0592";
+ 	match "product"		"0x0002";
+-	action "chgrp @RUN_AS_GROUP@ /dev/$device-name*; chmod g+rw /dev/$device-name*";
++	action "chgrp @RUN_AS_GROUP@ /dev/$device-name; chmod g+rw /dev/$device-name";
+ };
+ #  PW 9140  - usbhid-ups
+ notify 100 {
+@@ -321,7 +321,7 @@
+ 	match "type"		"ATTACH";
+ 	match "vendor"		"0x0592";
+ 	match "product"		"0x0004";
+-	action "chgrp @RUN_AS_GROUP@ /dev/$device-name*; chmod g+rw /dev/$device-name*";
++	action "chgrp @RUN_AS_GROUP@ /dev/$device-name; chmod g+rw /dev/$device-name";
+ };
+ #  Agiler UPS  - blazer_usb
+ notify 100 {
+@@ -330,7 +330,7 @@
+ 	match "type"		"ATTACH";
+ 	match "vendor"		"0x05b8";
+ 	match "product"		"0x0000";
+-	action "chgrp @RUN_AS_GROUP@ /dev/$device-name*; chmod g+rw /dev/$device-name*";
++	action "chgrp @RUN_AS_GROUP@ /dev/$device-name; chmod g+rw /dev/$device-name";
+ };
+ #  Belkin F6C1200-UNV  - blazer_usb
+ notify 100 {
+@@ -339,7 +339,7 @@
+ 	match "type"		"ATTACH";
+ 	match "vendor"		"0x0665";
+ 	match "product"		"0x5161";
+-	action "chgrp @RUN_AS_GROUP@ /dev/$device-name*; chmod g+rw /dev/$device-name*";
++	action "chgrp @RUN_AS_GROUP@ /dev/$device-name; chmod g+rw /dev/$device-name";
+ };
+ 
+ # Phoenixtec Power Co., Ltd
+@@ -350,7 +350,7 @@
+ 	match "type"		"ATTACH";
+ 	match "vendor"		"0x06da";
+ 	match "product"		"0x0002";
+-	action "chgrp @RUN_AS_GROUP@ /dev/$device-name*; chmod g+rw /dev/$device-name*";
++	action "chgrp @RUN_AS_GROUP@ /dev/$device-name; chmod g+rw /dev/$device-name";
+ };
+ #  Mustek Powermust  - blazer_usb
+ notify 100 {
+@@ -359,7 +359,7 @@
+ 	match "type"		"ATTACH";
+ 	match "vendor"		"0x06da";
+ 	match "product"		"0x0003";
+-	action "chgrp @RUN_AS_GROUP@ /dev/$device-name*; chmod g+rw /dev/$device-name*";
++	action "chgrp @RUN_AS_GROUP@ /dev/$device-name; chmod g+rw /dev/$device-name";
+ };
+ #  Phoenixtec Innova 3/1 T  - blazer_usb
+ notify 100 {
+@@ -368,7 +368,7 @@
+ 	match "type"		"ATTACH";
+ 	match "vendor"		"0x06da";
+ 	match "product"		"0x0004";
+-	action "chgrp @RUN_AS_GROUP@ /dev/$device-name*; chmod g+rw /dev/$device-name*";
++	action "chgrp @RUN_AS_GROUP@ /dev/$device-name; chmod g+rw /dev/$device-name";
+ };
+ #  Phoenixtec Innova RT  - blazer_usb
+ notify 100 {
+@@ -377,7 +377,7 @@
+ 	match "type"		"ATTACH";
+ 	match "vendor"		"0x06da";
+ 	match "product"		"0x0005";
+-	action "chgrp @RUN_AS_GROUP@ /dev/$device-name*; chmod g+rw /dev/$device-name*";
++	action "chgrp @RUN_AS_GROUP@ /dev/$device-name; chmod g+rw /dev/$device-name";
+ };
+ #  Phoenixtec Innova T  - blazer_usb
+ notify 100 {
+@@ -386,7 +386,7 @@
+ 	match "type"		"ATTACH";
+ 	match "vendor"		"0x06da";
+ 	match "product"		"0x0201";
+-	action "chgrp @RUN_AS_GROUP@ /dev/$device-name*; chmod g+rw /dev/$device-name*";
++	action "chgrp @RUN_AS_GROUP@ /dev/$device-name; chmod g+rw /dev/$device-name";
+ };
+ #  Online Zinto A  - blazer_usb
+ notify 100 {
+@@ -395,7 +395,7 @@
+ 	match "type"		"ATTACH";
+ 	match "vendor"		"0x06da";
+ 	match "product"		"0x0601";
+-	action "chgrp @RUN_AS_GROUP@ /dev/$device-name*; chmod g+rw /dev/$device-name*";
++	action "chgrp @RUN_AS_GROUP@ /dev/$device-name; chmod g+rw /dev/$device-name";
+ };
+ #  various models  - usbhid-ups
+ notify 100 {
+@@ -404,7 +404,7 @@
+ 	match "type"		"ATTACH";
+ 	match "vendor"		"0x06da";
+ 	match "product"		"0xffff";
+-	action "chgrp @RUN_AS_GROUP@ /dev/$device-name*; chmod g+rw /dev/$device-name*";
++	action "chgrp @RUN_AS_GROUP@ /dev/$device-name; chmod g+rw /dev/$device-name";
+ };
+ 
+ # iDowell
+@@ -415,7 +415,7 @@
+ 	match "type"		"ATTACH";
+ 	match "vendor"		"0x075d";
+ 	match "product"		"0x0300";
+-	action "chgrp @RUN_AS_GROUP@ /dev/$device-name*; chmod g+rw /dev/$device-name*";
++	action "chgrp @RUN_AS_GROUP@ /dev/$device-name; chmod g+rw /dev/$device-name";
+ };
+ 
+ # Cyber Power Systems
+@@ -426,7 +426,7 @@
+ 	match "type"		"ATTACH";
+ 	match "vendor"		"0x0764";
+ 	match "product"		"0x0005";
+-	action "chgrp @RUN_AS_GROUP@ /dev/$device-name*; chmod g+rw /dev/$device-name*";
++	action "chgrp @RUN_AS_GROUP@ /dev/$device-name; chmod g+rw /dev/$device-name";
+ };
+ #  Dynex DX-800U?  - usbhid-ups
+ notify 100 {
+@@ -435,7 +435,7 @@
+ 	match "type"		"ATTACH";
+ 	match "vendor"		"0x0764";
+ 	match "product"		"0x0501";
+-	action "chgrp @RUN_AS_GROUP@ /dev/$device-name*; chmod g+rw /dev/$device-name*";
++	action "chgrp @RUN_AS_GROUP@ /dev/$device-name; chmod g+rw /dev/$device-name";
+ };
+ #  OR2200LCDRM2U, OR700LCDRM1U, PR6000LCDRTXL5U  - usbhid-ups
+ notify 100 {
+@@ -444,7 +444,7 @@
+ 	match "type"		"ATTACH";
+ 	match "vendor"		"0x0764";
+ 	match "product"		"0x0601";
+-	action "chgrp @RUN_AS_GROUP@ /dev/$device-name*; chmod g+rw /dev/$device-name*";
++	action "chgrp @RUN_AS_GROUP@ /dev/$device-name; chmod g+rw /dev/$device-name";
+ };
+ #  Sweex 1000VA  - richcomm_usb
+ notify 100 {
+@@ -453,7 +453,7 @@
+ 	match "type"		"ATTACH";
+ 	match "vendor"		"0x0925";
+ 	match "product"		"0x1234";
+-	action "chgrp @RUN_AS_GROUP@ /dev/$device-name*; chmod g+rw /dev/$device-name*";
++	action "chgrp @RUN_AS_GROUP@ /dev/$device-name; chmod g+rw /dev/$device-name";
+ };
+ 
+ # TrippLite
+@@ -464,7 +464,7 @@
+ 	match "type"		"ATTACH";
+ 	match "vendor"		"0x09ae";
+ 	match "product"		"0x0001";
+-	action "chgrp @RUN_AS_GROUP@ /dev/$device-name*; chmod g+rw /dev/$device-name*";
++	action "chgrp @RUN_AS_GROUP@ /dev/$device-name; chmod g+rw /dev/$device-name";
+ };
+ #  e.g. TrippLite AVR550U  - usbhid-ups
+ notify 100 {
+@@ -473,7 +473,7 @@
+ 	match "type"		"ATTACH";
+ 	match "vendor"		"0x09ae";
+ 	match "product"		"0x1003";
+-	action "chgrp @RUN_AS_GROUP@ /dev/$device-name*; chmod g+rw /dev/$device-name*";
++	action "chgrp @RUN_AS_GROUP@ /dev/$device-name; chmod g+rw /dev/$device-name";
+ };
+ #  e.g. TrippLite AVR750U  - usbhid-ups
+ notify 100 {
+@@ -482,7 +482,7 @@
+ 	match "type"		"ATTACH";
+ 	match "vendor"		"0x09ae";
+ 	match "product"		"0x1007";
+-	action "chgrp @RUN_AS_GROUP@ /dev/$device-name*; chmod g+rw /dev/$device-name*";
++	action "chgrp @RUN_AS_GROUP@ /dev/$device-name; chmod g+rw /dev/$device-name";
+ };
+ #  e.g. TrippLite ECO550UPS  - usbhid-ups
+ notify 100 {
+@@ -491,7 +491,7 @@
+ 	match "type"		"ATTACH";
+ 	match "vendor"		"0x09ae";
+ 	match "product"		"0x1008";
+-	action "chgrp @RUN_AS_GROUP@ /dev/$device-name*; chmod g+rw /dev/$device-name*";
++	action "chgrp @RUN_AS_GROUP@ /dev/$device-name; chmod g+rw /dev/$device-name";
+ };
+ #  e.g. TrippLite ECO550UPS  - usbhid-ups
+ notify 100 {
+@@ -500,7 +500,7 @@
+ 	match "type"		"ATTACH";
+ 	match "vendor"		"0x09ae";
+ 	match "product"		"0x1009";
+-	action "chgrp @RUN_AS_GROUP@ /dev/$device-name*; chmod g+rw /dev/$device-name*";
++	action "chgrp @RUN_AS_GROUP@ /dev/$device-name; chmod g+rw /dev/$device-name";
+ };
+ #  e.g. TrippLite ECO550UPS  - usbhid-ups
+ notify 100 {
+@@ -509,7 +509,7 @@
+ 	match "type"		"ATTACH";
+ 	match "vendor"		"0x09ae";
+ 	match "product"		"0x1010";
+-	action "chgrp @RUN_AS_GROUP@ /dev/$device-name*; chmod g+rw /dev/$device-name*";
++	action "chgrp @RUN_AS_GROUP@ /dev/$device-name; chmod g+rw /dev/$device-name";
+ };
+ #  e.g. TrippLite OMNI1000LCD  - usbhid-ups
+ notify 100 {
+@@ -518,7 +518,7 @@
+ 	match "type"		"ATTACH";
+ 	match "vendor"		"0x09ae";
+ 	match "product"		"0x2005";
+-	action "chgrp @RUN_AS_GROUP@ /dev/$device-name*; chmod g+rw /dev/$device-name*";
++	action "chgrp @RUN_AS_GROUP@ /dev/$device-name; chmod g+rw /dev/$device-name";
+ };
+ #  e.g. TrippLite OMNI900LCD  - usbhid-ups
+ notify 100 {
+@@ -527,7 +527,7 @@
+ 	match "type"		"ATTACH";
+ 	match "vendor"		"0x09ae";
+ 	match "product"		"0x2007";
+-	action "chgrp @RUN_AS_GROUP@ /dev/$device-name*; chmod g+rw /dev/$device-name*";
++	action "chgrp @RUN_AS_GROUP@ /dev/$device-name; chmod g+rw /dev/$device-name";
+ };
+ #  e.g. ?  - usbhid-ups
+ notify 100 {
+@@ -536,7 +536,7 @@
+ 	match "type"		"ATTACH";
+ 	match "vendor"		"0x09ae";
+ 	match "product"		"0x2008";
+-	action "chgrp @RUN_AS_GROUP@ /dev/$device-name*; chmod g+rw /dev/$device-name*";
++	action "chgrp @RUN_AS_GROUP@ /dev/$device-name; chmod g+rw /dev/$device-name";
+ };
+ #  e.g. TrippLite Smart1000LCD  - usbhid-ups
+ notify 100 {
+@@ -545,7 +545,7 @@
+ 	match "type"		"ATTACH";
+ 	match "vendor"		"0x09ae";
+ 	match "product"		"0x2009";
+-	action "chgrp @RUN_AS_GROUP@ /dev/$device-name*; chmod g+rw /dev/$device-name*";
++	action "chgrp @RUN_AS_GROUP@ /dev/$device-name; chmod g+rw /dev/$device-name";
+ };
+ #  e.g. ?  - usbhid-ups
+ notify 100 {
+@@ -554,7 +554,7 @@
+ 	match "type"		"ATTACH";
+ 	match "vendor"		"0x09ae";
+ 	match "product"		"0x2010";
+-	action "chgrp @RUN_AS_GROUP@ /dev/$device-name*; chmod g+rw /dev/$device-name*";
++	action "chgrp @RUN_AS_GROUP@ /dev/$device-name; chmod g+rw /dev/$device-name";
+ };
+ #  e.g. ?  - usbhid-ups
+ notify 100 {
+@@ -563,7 +563,7 @@
+ 	match "type"		"ATTACH";
+ 	match "vendor"		"0x09ae";
+ 	match "product"		"0x2011";
+-	action "chgrp @RUN_AS_GROUP@ /dev/$device-name*; chmod g+rw /dev/$device-name*";
++	action "chgrp @RUN_AS_GROUP@ /dev/$device-name; chmod g+rw /dev/$device-name";
+ };
+ #  e.g. ?  - usbhid-ups
+ notify 100 {
+@@ -572,7 +572,7 @@
+ 	match "type"		"ATTACH";
+ 	match "vendor"		"0x09ae";
+ 	match "product"		"0x2012";
+-	action "chgrp @RUN_AS_GROUP@ /dev/$device-name*; chmod g+rw /dev/$device-name*";
++	action "chgrp @RUN_AS_GROUP@ /dev/$device-name; chmod g+rw /dev/$device-name";
+ };
+ #  e.g. ?  - usbhid-ups
+ notify 100 {
+@@ -581,7 +581,7 @@
+ 	match "type"		"ATTACH";
+ 	match "vendor"		"0x09ae";
+ 	match "product"		"0x2013";
+-	action "chgrp @RUN_AS_GROUP@ /dev/$device-name*; chmod g+rw /dev/$device-name*";
++	action "chgrp @RUN_AS_GROUP@ /dev/$device-name; chmod g+rw /dev/$device-name";
+ };
+ #  e.g. ?  - usbhid-ups
+ notify 100 {
+@@ -590,7 +590,7 @@
+ 	match "type"		"ATTACH";
+ 	match "vendor"		"0x09ae";
+ 	match "product"		"0x2014";
+-	action "chgrp @RUN_AS_GROUP@ /dev/$device-name*; chmod g+rw /dev/$device-name*";
++	action "chgrp @RUN_AS_GROUP@ /dev/$device-name; chmod g+rw /dev/$device-name";
+ };
+ #  e.g. ?  - usbhid-ups
+ notify 100 {
+@@ -599,7 +599,7 @@
+ 	match "type"		"ATTACH";
+ 	match "vendor"		"0x09ae";
+ 	match "product"		"0x3008";
+-	action "chgrp @RUN_AS_GROUP@ /dev/$device-name*; chmod g+rw /dev/$device-name*";
++	action "chgrp @RUN_AS_GROUP@ /dev/$device-name; chmod g+rw /dev/$device-name";
+ };
+ #  e.g. ?  - usbhid-ups
+ notify 100 {
+@@ -608,7 +608,7 @@
+ 	match "type"		"ATTACH";
+ 	match "vendor"		"0x09ae";
+ 	match "product"		"0x3009";
+-	action "chgrp @RUN_AS_GROUP@ /dev/$device-name*; chmod g+rw /dev/$device-name*";
++	action "chgrp @RUN_AS_GROUP@ /dev/$device-name; chmod g+rw /dev/$device-name";
+ };
+ #  e.g. ?  - usbhid-ups
+ notify 100 {
+@@ -617,7 +617,7 @@
+ 	match "type"		"ATTACH";
+ 	match "vendor"		"0x09ae";
+ 	match "product"		"0x3010";
+-	action "chgrp @RUN_AS_GROUP@ /dev/$device-name*; chmod g+rw /dev/$device-name*";
++	action "chgrp @RUN_AS_GROUP@ /dev/$device-name; chmod g+rw /dev/$device-name";
+ };
+ #  e.g. ?  - usbhid-ups
+ notify 100 {
+@@ -626,7 +626,7 @@
+ 	match "type"		"ATTACH";
+ 	match "vendor"		"0x09ae";
+ 	match "product"		"0x3011";
+-	action "chgrp @RUN_AS_GROUP@ /dev/$device-name*; chmod g+rw /dev/$device-name*";
++	action "chgrp @RUN_AS_GROUP@ /dev/$device-name; chmod g+rw /dev/$device-name";
+ };
+ #  e.g. TrippLite smart2200RMXL2U  - usbhid-ups
+ notify 100 {
+@@ -635,7 +635,7 @@
+ 	match "type"		"ATTACH";
+ 	match "vendor"		"0x09ae";
+ 	match "product"		"0x3012";
+-	action "chgrp @RUN_AS_GROUP@ /dev/$device-name*; chmod g+rw /dev/$device-name*";
++	action "chgrp @RUN_AS_GROUP@ /dev/$device-name; chmod g+rw /dev/$device-name";
+ };
+ #  e.g. ?  - usbhid-ups
+ notify 100 {
+@@ -644,7 +644,7 @@
+ 	match "type"		"ATTACH";
+ 	match "vendor"		"0x09ae";
+ 	match "product"		"0x3013";
+-	action "chgrp @RUN_AS_GROUP@ /dev/$device-name*; chmod g+rw /dev/$device-name*";
++	action "chgrp @RUN_AS_GROUP@ /dev/$device-name; chmod g+rw /dev/$device-name";
+ };
+ #  e.g. ?  - usbhid-ups
+ notify 100 {
+@@ -653,7 +653,7 @@
+ 	match "type"		"ATTACH";
+ 	match "vendor"		"0x09ae";
+ 	match "product"		"0x3014";
+-	action "chgrp @RUN_AS_GROUP@ /dev/$device-name*; chmod g+rw /dev/$device-name*";
++	action "chgrp @RUN_AS_GROUP@ /dev/$device-name; chmod g+rw /dev/$device-name";
+ };
+ #  e.g. ?  - usbhid-ups
+ notify 100 {
+@@ -662,7 +662,7 @@
+ 	match "type"		"ATTACH";
+ 	match "vendor"		"0x09ae";
+ 	match "product"		"0x3015";
+-	action "chgrp @RUN_AS_GROUP@ /dev/$device-name*; chmod g+rw /dev/$device-name*";
++	action "chgrp @RUN_AS_GROUP@ /dev/$device-name; chmod g+rw /dev/$device-name";
+ };
+ #  e.g. TrippLite Smart1500LCD (newer unit)  - usbhid-ups
+ notify 100 {
+@@ -671,7 +671,7 @@
+ 	match "type"		"ATTACH";
+ 	match "vendor"		"0x09ae";
+ 	match "product"		"0x3016";
+-	action "chgrp @RUN_AS_GROUP@ /dev/$device-name*; chmod g+rw /dev/$device-name*";
++	action "chgrp @RUN_AS_GROUP@ /dev/$device-name; chmod g+rw /dev/$device-name";
+ };
+ #  e.g. TrippLite SmartOnline SU1500RTXL2UA (older unit?)  - usbhid-ups
+ notify 100 {
+@@ -680,7 +680,7 @@
+ 	match "type"		"ATTACH";
+ 	match "vendor"		"0x09ae";
+ 	match "product"		"0x4001";
+-	action "chgrp @RUN_AS_GROUP@ /dev/$device-name*; chmod g+rw /dev/$device-name*";
++	action "chgrp @RUN_AS_GROUP@ /dev/$device-name; chmod g+rw /dev/$device-name";
+ };
+ #  e.g. TrippLite SmartOnline SU6000RT4U?  - usbhid-ups
+ notify 100 {
+@@ -689,7 +689,7 @@
+ 	match "type"		"ATTACH";
+ 	match "vendor"		"0x09ae";
+ 	match "product"		"0x4002";
+-	action "chgrp @RUN_AS_GROUP@ /dev/$device-name*; chmod g+rw /dev/$device-name*";
++	action "chgrp @RUN_AS_GROUP@ /dev/$device-name; chmod g+rw /dev/$device-name";
+ };
+ #  e.g. TrippLite SmartOnline SU1500RTXL2ua  - usbhid-ups
+ notify 100 {
+@@ -698,7 +698,7 @@
+ 	match "type"		"ATTACH";
+ 	match "vendor"		"0x09ae";
+ 	match "product"		"0x4003";
+-	action "chgrp @RUN_AS_GROUP@ /dev/$device-name*; chmod g+rw /dev/$device-name*";
++	action "chgrp @RUN_AS_GROUP@ /dev/$device-name; chmod g+rw /dev/$device-name";
+ };
+ #  e.g. TrippLite SmartOnline SU1000XLA  - usbhid-ups
+ notify 100 {
+@@ -707,7 +707,7 @@
+ 	match "type"		"ATTACH";
+ 	match "vendor"		"0x09ae";
+ 	match "product"		"0x4004";
+-	action "chgrp @RUN_AS_GROUP@ /dev/$device-name*; chmod g+rw /dev/$device-name*";
++	action "chgrp @RUN_AS_GROUP@ /dev/$device-name; chmod g+rw /dev/$device-name";
+ };
+ #  e.g. ?  - usbhid-ups
+ notify 100 {
+@@ -716,7 +716,7 @@
+ 	match "type"		"ATTACH";
+ 	match "vendor"		"0x09ae";
+ 	match "product"		"0x4005";
+-	action "chgrp @RUN_AS_GROUP@ /dev/$device-name*; chmod g+rw /dev/$device-name*";
++	action "chgrp @RUN_AS_GROUP@ /dev/$device-name; chmod g+rw /dev/$device-name";
+ };
+ #  e.g. ?  - usbhid-ups
+ notify 100 {
+@@ -725,7 +725,7 @@
+ 	match "type"		"ATTACH";
+ 	match "vendor"		"0x09ae";
+ 	match "product"		"0x4006";
+-	action "chgrp @RUN_AS_GROUP@ /dev/$device-name*; chmod g+rw /dev/$device-name*";
++	action "chgrp @RUN_AS_GROUP@ /dev/$device-name; chmod g+rw /dev/$device-name";
+ };
+ #  e.g. ?  - usbhid-ups
+ notify 100 {
+@@ -734,7 +734,7 @@
+ 	match "type"		"ATTACH";
+ 	match "vendor"		"0x09ae";
+ 	match "product"		"0x4007";
+-	action "chgrp @RUN_AS_GROUP@ /dev/$device-name*; chmod g+rw /dev/$device-name*";
++	action "chgrp @RUN_AS_GROUP@ /dev/$device-name; chmod g+rw /dev/$device-name";
+ };
+ #  e.g. ?  - usbhid-ups
+ notify 100 {
+@@ -743,7 +743,7 @@
+ 	match "type"		"ATTACH";
+ 	match "vendor"		"0x09ae";
+ 	match "product"		"0x4008";
+-	action "chgrp @RUN_AS_GROUP@ /dev/$device-name*; chmod g+rw /dev/$device-name*";
++	action "chgrp @RUN_AS_GROUP@ /dev/$device-name; chmod g+rw /dev/$device-name";
+ };
+ 
+ # PowerCOM
+@@ -754,7 +754,7 @@
+ 	match "type"		"ATTACH";
+ 	match "vendor"		"0x0d9f";
+ 	match "product"		"0x0004";
+-	action "chgrp @RUN_AS_GROUP@ /dev/$device-name*; chmod g+rw /dev/$device-name*";
++	action "chgrp @RUN_AS_GROUP@ /dev/$device-name; chmod g+rw /dev/$device-name";
+ };
+ #  PowerCOM IMP - IMPERIAL Series  - usbhid-ups
+ notify 100 {
+@@ -763,7 +763,7 @@
+ 	match "type"		"ATTACH";
+ 	match "vendor"		"0x0d9f";
+ 	match "product"		"0x00a2";
+-	action "chgrp @RUN_AS_GROUP@ /dev/$device-name*; chmod g+rw /dev/$device-name*";
++	action "chgrp @RUN_AS_GROUP@ /dev/$device-name; chmod g+rw /dev/$device-name";
+ };
+ #  PowerCOM SKP - Smart KING Pro (all Smart series)  - usbhid-ups
+ notify 100 {
+@@ -772,7 +772,7 @@
+ 	match "type"		"ATTACH";
+ 	match "vendor"		"0x0d9f";
+ 	match "product"		"0x00a3";
+-	action "chgrp @RUN_AS_GROUP@ /dev/$device-name*; chmod g+rw /dev/$device-name*";
++	action "chgrp @RUN_AS_GROUP@ /dev/$device-name; chmod g+rw /dev/$device-name";
+ };
+ #  PowerCOM WOW  - usbhid-ups
+ notify 100 {
+@@ -781,7 +781,7 @@
+ 	match "type"		"ATTACH";
+ 	match "vendor"		"0x0d9f";
+ 	match "product"		"0x00a4";
+-	action "chgrp @RUN_AS_GROUP@ /dev/$device-name*; chmod g+rw /dev/$device-name*";
++	action "chgrp @RUN_AS_GROUP@ /dev/$device-name; chmod g+rw /dev/$device-name";
+ };
+ #  PowerCOM VGD - Vanguard  - usbhid-ups
+ notify 100 {
+@@ -790,7 +790,7 @@
+ 	match "type"		"ATTACH";
+ 	match "vendor"		"0x0d9f";
+ 	match "product"		"0x00a5";
+-	action "chgrp @RUN_AS_GROUP@ /dev/$device-name*; chmod g+rw /dev/$device-name*";
++	action "chgrp @RUN_AS_GROUP@ /dev/$device-name; chmod g+rw /dev/$device-name";
+ };
+ #  PowerCOM BNT - Black Knight Pro  - usbhid-ups
+ notify 100 {
+@@ -799,7 +799,7 @@
+ 	match "type"		"ATTACH";
+ 	match "vendor"		"0x0d9f";
+ 	match "product"		"0x00a6";
+-	action "chgrp @RUN_AS_GROUP@ /dev/$device-name*; chmod g+rw /dev/$device-name*";
++	action "chgrp @RUN_AS_GROUP@ /dev/$device-name; chmod g+rw /dev/$device-name";
+ };
+ #  Unitek Alpha 1200Sx  - blazer_usb
+ notify 100 {
+@@ -808,7 +808,7 @@
+ 	match "type"		"ATTACH";
+ 	match "vendor"		"0x0f03";
+ 	match "product"		"0x0001";
+-	action "chgrp @RUN_AS_GROUP@ /dev/$device-name*; chmod g+rw /dev/$device-name*";
++	action "chgrp @RUN_AS_GROUP@ /dev/$device-name; chmod g+rw /dev/$device-name";
+ };
+ 
+ # Liebert
+@@ -819,7 +819,7 @@
+ 	match "type"		"ATTACH";
+ 	match "vendor"		"0x10af";
+ 	match "product"		"0x0001";
+-	action "chgrp @RUN_AS_GROUP@ /dev/$device-name*; chmod g+rw /dev/$device-name*";
++	action "chgrp @RUN_AS_GROUP@ /dev/$device-name; chmod g+rw /dev/$device-name";
+ };
+ #  Liebert PowerSure PSI 1440  - usbhid-ups
+ notify 100 {
+@@ -828,7 +828,7 @@
+ 	match "type"		"ATTACH";
+ 	match "vendor"		"0x10af";
+ 	match "product"		"0x0004";
+-	action "chgrp @RUN_AS_GROUP@ /dev/$device-name*; chmod g+rw /dev/$device-name*";
++	action "chgrp @RUN_AS_GROUP@ /dev/$device-name; chmod g+rw /dev/$device-name";
+ };
+ #  GE EP series  - blazer_usb
+ notify 100 {
+@@ -837,7 +837,7 @@
+ 	match "type"		"ATTACH";
+ 	match "vendor"		"0x14f0";
+ 	match "product"		"0x00c9";
+-	action "chgrp @RUN_AS_GROUP@ /dev/$device-name*; chmod g+rw /dev/$device-name*";
++	action "chgrp @RUN_AS_GROUP@ /dev/$device-name; chmod g+rw /dev/$device-name";
+ };
+ #  Ablerex 625L USB  - blazer_usb
+ notify 100 {
+@@ -846,5 +846,5 @@
+ 	match "type"		"ATTACH";
+ 	match "vendor"		"0xffff";
+ 	match "product"		"0x0000";
+-	action "chgrp @RUN_AS_GROUP@ /dev/$device-name*; chmod g+rw /dev/$device-name*";
++	action "chgrp @RUN_AS_GROUP@ /dev/$device-name; chmod g+rw /dev/$device-name";
+ };
