@@ -30,6 +30,8 @@ WRKSRC=		${WRKDIR}/opt/${PORTNAME}
 SUB_FILES=	${PORTNAME}.script.sh
 SUB_LIST=	JAVA_HOME=${JAVA_HOME}
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MDOCS}
