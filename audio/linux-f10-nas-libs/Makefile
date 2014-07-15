@@ -11,6 +11,8 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-${RPMVERSION}
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	Runtime libraries for NAS (Linux Fedora 10)
 
+FORBIDDEN=	http://www.freshports.org/vuxml.php?vid=bf7912f5-c1a8-11e3-a5ac-001b21614864
+
 USE_LINUX_RPM=	yes
 USE_LINUX_APPS=	xorglibs
 LINUX_DIST_VER=	10
