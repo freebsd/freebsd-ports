@@ -19,6 +19,8 @@ DOCFILES=	README.crc README.hexbin README.macput README.unpit \
 		README.zoom README.crc.orig README.macget README.scan \
 		README.unsit ../README
 
+OPTIONS_DEFINE=	DOCS
+
 # The distribution has a naff install target which doesn't install man
 # pages so here is a decent one.
 #

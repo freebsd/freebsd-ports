@@ -14,6 +14,8 @@ BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/databases/postgresql84-client:patch
 
 WRKSRC=	${WRKDIR}/${PORTNAME}-8.4.0
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.pre.mk>
 
 BROKEN=		Does not compile

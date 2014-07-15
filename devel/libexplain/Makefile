@@ -28,6 +28,8 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 
 PATCHLEVEL=	D012
 
+OPTIONS_DEFINE=	DOCS
+
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's|$$(libdir)/pkgconfig|$$(libdir)/../libdata/pkgconfig|g ; \

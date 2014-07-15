@@ -3,8 +3,8 @@ bin/maxbit
 bin/tsp
 bin/tsp_bf
 include/fga.hpp
-%%PORTDOCS%%%%EXAMPLESDIR%%/graph_gen.cpp
-%%PORTDOCS%%%%EXAMPLESDIR%%/maxbit.cpp
-%%PORTDOCS%%%%EXAMPLESDIR%%/tsp.cpp
-%%PORTDOCS%%%%EXAMPLESDIR%%/tsp_bf.cpp
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/graph_gen.cpp
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/maxbit.cpp
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tsp.cpp
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tsp_bf.cpp
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%

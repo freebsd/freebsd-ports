@@ -22,6 +22,8 @@ SHEBANG_FILES=	${WRKSRC}/dailystrips*
 
 PORTSCOUT=	limit:^1\.0\.
 
+OPTIONS_DEFINE=	DOCS
+
 post-patch:
 	@${REINPLACE_CMD} ' s!/usr/share/dailystrips/strips.def!${DATADIR}/strips.def!' \
 		${WRKSRC}/dailystrips ${WRKSRC}/dailystrips-clean \

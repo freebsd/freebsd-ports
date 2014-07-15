@@ -17,7 +17,7 @@ USES=		pathfix pkgconfig libtool
 
 CONFIGURE_ARGS+=	--docdir=${DOCSDIR}
 
-OPTIONS_DEFINE=	TOOLS
+OPTIONS_DEFINE=	TOOLS DOCS
 OPTIONS_DEFAULT=	TOOLS
 
 TOOLS_DESC=	Build and install statgrab and saidar

@@ -23,4 +23,6 @@ CFLAGS=		-I${LOCALBASE}/include
 LDFLAGS=	-L${LOCALBASE}/lib -lexecinfo -lcurl -lsqlite3 -lm
 MAKE_JOBS_UNSAFE=	yes
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.mk>

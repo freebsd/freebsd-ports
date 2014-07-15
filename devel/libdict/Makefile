@@ -18,6 +18,8 @@ MAKEFILE=	GNUmakefile
 USE_LDCONFIG=	yes
 MAKE_ARGS=	PREFIX=${STAGEDIR}${PREFIX}
 
+OPTIONS_DEFINE=	DOCS
+
 post-extract:
 .	for ___f in avl_insert.pdf empty.pdf treap_insert.pdf
 	@${CP} ${DISTDIR}/${___f} ${WRKSRC}/

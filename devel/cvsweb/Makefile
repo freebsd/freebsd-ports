@@ -19,6 +19,8 @@ CONFLICTS=	cvsweb-3.*
 NO_BUILD=	yes
 USES=		perl5
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.pre.mk>
 
 # Specify where your repository belongs.

@@ -24,6 +24,8 @@ PKGMESSAGE=	${WRKDIR}/pkg-message
 
 CONFLICTS=	sysutils/lbl-hf-1.*
 
+OPTIONS_DEFINE=	DOCS EXAMPLES
+
 post-configure:
 	@${REINPLACE_CMD} -e 's|-pthread|${PTHREAD_LIBS}|' \
 	    ${WRKSRC}/hfkernel/Makefile

@@ -20,6 +20,8 @@ USE_OCAML_LDCONFIG=	yes
 EXAMPLESDIR=	${OCAML_EXAMPLESDIR}/${PORTNAME}
 DOCSDIR=	${PREFIX}/share/doc/pcre-ocaml
 
+OPTIONS_DEFINE=	DOCS EXAMPLES
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|$$prefix"/"share|${STAGEDIR}${PREFIX}/share|' \
 		${WRKSRC}/setup.ml

@@ -63,7 +63,7 @@ SHEBANG_FILES=	scripts/builder2schema.pl \
 		plugins/gbf-mkfile/gbf-mkfile-parse.in \
 		plugins/tools/scripts/*.pl
 
-OPTIONS_DEFINE=	SVN DEVHELP
+OPTIONS_DEFINE=	SVN DEVHELP DOCS
 OPTIONS_DEFAULT=DEVHELP
 DEVHELP_DESC=	Devhelp support
 

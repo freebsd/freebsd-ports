@@ -20,6 +20,7 @@ DOCS_JA=	MANUAL MANUAL.rd MANUAL.html README
 EXAMPLES_EN=	cal.rb daylight.rb goodfriday.rb
 EXAMPLES_JA=	ncal.rb
 
+OPTIONS_DEFINE=	DOCS
 
 post-install:
 	${MKDIR} ${STAGEDIR}${RUBY_MODEXAMPLESDIR}/ja

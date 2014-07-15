@@ -21,6 +21,8 @@ RUBY_SETUP=	install.rb
 
 DOCS=		MANUAL.rd README.rd
 
+OPTIONS_DEFINE=	DOCS
+
 post-install:
 	@${MKDIR} ${STAGEDIR}${RUBY_MODDOCDIR}
 .for f in ${DOCS}

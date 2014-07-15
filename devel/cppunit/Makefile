@@ -10,7 +10,7 @@ MASTER_SITES=	SF
 MAINTAINER=	bdrewery@FreeBSD.org
 COMMENT=	C++ port of the JUnit framework for unit testing
 
-OPTIONS_DEFINE=	DOXYGEN
+OPTIONS_DEFINE=	DOXYGEN DOCS
 
 USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes

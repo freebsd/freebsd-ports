@@ -19,6 +19,8 @@ RESTRICTED=	patent issues, see http://www.mp3licensing.com/
 
 DOC_FILES=	API LICENSE README TODO USAGE
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "i386"

@@ -12,6 +12,8 @@ COMMENT=	Ish/uuencode/Base64 converter
 
 MAKE_ARGS=	DSTDIR=${STAGEDIR}${PREFIX}/bin
 
+OPTIONS_DEFINE=	DOCS
+
 post-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/doc/ja/aish
 	${INSTALL_DATA} ${WRKSRC}/aish.txt ${STAGEDIR}${PREFIX}/share/doc/ja/aish

@@ -19,6 +19,8 @@ BUILD_DEPENDS=	p5-Test-Differences>=0.47:${PORTSDIR}/devel/p5-Test-Differences \
 USES=		perl5
 USE_PERL5=	modbuild
 
+OPTIONS_DEFINE=	DOCS
+
 post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	@${INSTALL_DATA} ${WRKSRC}/CHANGES ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}

@@ -1,9 +1,9 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/IO/KQueue.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/IO/KQueue/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/IO/KQueue/KQueue.so
-%%PORTDOCS%%%%EXAMPLESDIR%%/chat.pl
-%%PORTDOCS%%%%EXAMPLESDIR%%/tail.pl
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/chat.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tail.pl
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
 %%PERL5_MAN3%%/IO::KQueue.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/IO/KQueue
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/IO

@@ -22,6 +22,8 @@ MAKE_ENV=	VERSION=${PORTVERSION:S/.//} \
 
 PLIST_SUB+=	VERSION=${PORTVERSION:S/.//}
 
+OPTIONS_DEFINE=	DOCS
+
 do-install:
 		@${MKDIR} ${STAGEDIR}${PREFIX}/lib/mkZiplib
 		${INSTALL_LIB} ${WRKSRC}/mkZiplib${PORTVERSION:S/.//}.so ${STAGEDIR}${PREFIX}/lib/mkZiplib

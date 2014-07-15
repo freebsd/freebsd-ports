@@ -13,7 +13,7 @@ COMMENT=	Complete gcc-based toolcahin for embedded ARM development
 LICENSE=	GPLv2 LGPL20 LGPL21 GPLv3 LGPL3
 LICENSE_COMB=	multi
 
-OPTIONS_DEFINE=	PURE EXAMPLES HTML PDF
+OPTIONS_DEFINE=	PURE EXAMPLES HTML PDF DOCS
 OPTIONS_DEFAULT=EXAMPLES
 PURE_DESC=	Use all libraries from bundle, do not depend on anything
 HTML_DESC=	Install HTML documentation

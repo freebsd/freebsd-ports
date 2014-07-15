@@ -19,6 +19,8 @@ USES=		gmake dos2unix
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	FLTK_CONFIG="${LOCALBASE}/bin/fltk-config"
 
+OPTIONS_DEFINE=	DOCS
+
 post-configure:
 	@${REINPLACE_CMD} -e 's|-pthread|${PTHREAD_LIBS}|' \
 		-e 's|^CPPFLAGS|#CPPFLAGS|' \
