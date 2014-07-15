@@ -45,6 +45,8 @@ USES=		gettext iconv gmake motif perl5
 # Some prereqs use gcc anyway
 USE_GCC=	yes
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.options.mk>
 
 BROKEN_sparc64=	Does not compile: "undefined reference to '_mcount'"
