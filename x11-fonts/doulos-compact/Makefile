@@ -27,6 +27,8 @@ NO_BUILD=	yes
 
 PLIST_FILES=	${FONTROOTDIR:S/${PREFIX}\///}/${FONTDIR}/${PORTNAME}-R.ttf
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.options.mk>
 
 PORTDOCS=	FONTLOG.txt OFL-FAQ.txt OFL.txt README.txt feat_set_tuned.xml
