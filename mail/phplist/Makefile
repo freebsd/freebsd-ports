@@ -26,6 +26,8 @@ PORTDOCS=	BUGS INSTALL NEWS PEOPLE README README.batches \
 
 SUB_FILES=	phplist
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.options.mk>
 
 post-extract:

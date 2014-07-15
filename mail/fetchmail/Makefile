@@ -36,7 +36,7 @@ CONFIGURE_ARGS=	--enable-opie --enable-RPA --enable-SDPS \
 
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-OPTIONS_DEFINE=	X11 NLS NTLM GSSAPI POP2
+OPTIONS_DEFINE=	X11 NLS NTLM GSSAPI POP2 DOCS
 OPTIONS_DEFAULT=	GSSAPI
 OPTIONS_SUB=	yes
 X11_DESC=	Python/Tkinter dependencies for ``fetchmailconf''

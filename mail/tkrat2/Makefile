@@ -28,7 +28,7 @@ CONFIGURE_ARGS=	--with-tcl-config=${PREFIX}/lib/tcl8.4 \
 		--prefix=${PREFIX}
 MAKE_ARGS+=	-j2 -B
 
-OPTIONS=	DOCS
+OPTIONS_DEFINE=	DOCS
 
 DOCFILES=	CONFIGURATION COPYRIGHT README doc/interface doc/userprocs \
 		doc/userproc.example

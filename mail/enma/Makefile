@@ -32,6 +32,8 @@ MANLANG=	"" ja_JP.UTF-8
 PORTDOCS=	ChangeLog INSTALL LICENSE README
 SUB_FILES=	milter-enma
 
+OPTIONS_DEFINE=	DOCS
+
 .if defined(WITH_POSTFIX_MILTER) || defined(WITH_POSTFIX) || defined(WITH_POSTFIX_CURRENT)
 CONF_SUB=	${REINPLACE_CMD} -e '/milter\.postfix/s/false/true/' ${WRKSRC}/enma/etc/enma.conf.sample
 . if defined(WITH_POSTFIX_CURRENT)

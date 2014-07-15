@@ -18,20 +18,20 @@ bin/osbf-util
 %%PORTDOCS%%%%DOCSDIR%%/Macbeth_Act_IV.txt
 %%PORTDOCS%%%%DOCSDIR%%/The_Wind_in_the_Willows_Chap_1.txt
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-%%EXAMPLESDIR%%/reto_procmailrc.recipe
-%%EXAMPLESDIR%%/mailfilter.crm
-%%EXAMPLESDIR%%/mailfilter.cf
-%%EXAMPLESDIR%%/mailreaver.crm
-%%EXAMPLESDIR%%/mailtrainer.crm
-%%EXAMPLESDIR%%/maillib.crm
-%%EXAMPLESDIR%%/shuffle.crm
-%%EXAMPLESDIR%%/rewriteutil.crm
-%%EXAMPLESDIR%%/rewrites.mfp
-%%EXAMPLESDIR%%/whitelist.mfp
-%%EXAMPLESDIR%%/blacklist.mfp
-%%EXAMPLESDIR%%/priolist.mfp
-%%EXAMPLESDIR%%/priolist.mfp.example
-%%EXAMPLESDIR%%/blacklist.mfp.example
-%%EXAMPLESDIR%%/whitelist.mfp.example
-%%EXAMPLESDIR%%/crm114-mode.el
-@dirrm %%EXAMPLESDIR%%
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/reto_procmailrc.recipe
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mailfilter.crm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mailfilter.cf
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mailreaver.crm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mailtrainer.crm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/maillib.crm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/shuffle.crm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/rewriteutil.crm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/rewrites.mfp
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/whitelist.mfp
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/blacklist.mfp
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/priolist.mfp
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/priolist.mfp.example
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/blacklist.mfp.example
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/whitelist.mfp.example
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/crm114-mode.el
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%

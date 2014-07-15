@@ -26,6 +26,8 @@ ALL_TARGET=	generic
 
 MAKE_ENV+= STAGEDIR=${STAGEDIR}
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.options.mk>
 
 .if !${PORT_OPTIONS:MDOCS}

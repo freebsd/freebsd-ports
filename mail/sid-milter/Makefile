@@ -28,7 +28,7 @@ IGNORE=		your system does not support sysvipc
 .endif
 .endif
 
-OPTIONS_DEFINE=	LIBAR NH_MFROM
+OPTIONS_DEFINE=	LIBAR NH_MFROM DOCS
 LIBAR_DESC=	build and install libar
 NH_MFROM_DESC=	use NH_MFROM
 

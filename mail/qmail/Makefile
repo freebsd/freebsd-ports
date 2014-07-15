@@ -179,6 +179,8 @@ PATCH_SITES+=	${MASTER_SITE_LOCAL:S/$/:dns,sendmail_flagf,rfc2821,ldap,mysql,tls
 PATCH_SITE_SUBDIR+=	bdrewery/qmail/:dns,sendmail_flagf,rfc2821,ldap,mysql,tls,quota,blockexec,doublebounce,spf,spf_tls,localtime,qmtpc_outgoingip
 PATCH_SITES+=	http://mirror.shatow.net/freebsd/qmail/:DEFAULT,dns,sendmail_flagf,rfc2821,ldap,mysql,tls,quota,blockexec,doublebounce,spf,spf_tls,localtime,qmtpc_outgoingip
 
+OPTIONS_DEFINE+=DOCS
+
 .if !defined(BARRIER_SMTP_AUTH_PATCH)
 SMTP_AUTH_VERSION=	0.31
 SMTP_AUTH_DIR=		${WRKDIR}/qmail-smtpd-auth-${SMTP_AUTH_VERSION}
