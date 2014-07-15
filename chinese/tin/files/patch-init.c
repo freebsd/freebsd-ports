@@ -1,6 +1,6 @@
---- src/init.c.orig	2011-08-18 12:58:08.564585495 +0800
-+++ src/init.c	2011-08-18 12:58:30.264685035 +0800
-@@ -354,11 +354,11 @@
+--- src/init.c.orig	2014-07-16 00:47:37.352661040 +0800
++++ src/init.c	2014-07-16 00:48:08.424652944 +0800
+@@ -361,11 +361,11 @@
  #endif /* USE_INVERSE_HACK */
  	TRUE,		/* keep_dead_articles */
  	POSTED_FILE,	/* posted_articles_file */
