@@ -18,6 +18,8 @@ GNU_CONFIGURE=	yes
 
 CONFLICTS=	newsx-1* s-news-0*
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.pre.mk>
 
 # TODO: remove this auto-selection, and tell users through UPDATING to

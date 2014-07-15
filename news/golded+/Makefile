@@ -22,6 +22,8 @@ DOCS=		copying copying.lib license.txt notework.txt rusfaq.txt\
 PORTDOCS=	${DOCS} gold_ref.txt gold_usr.txt
 SUB_FILES=	pkg-message
 
+OPTIONS_DEFINE=	DOCS EXAMPLES
+
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDOCS}
