@@ -2,11 +2,15 @@
 %%SITE_PERL%%/Archive/Any/Plugin.pm
 %%SITE_PERL%%/Archive/Any/Plugin/Tar.pm
 %%SITE_PERL%%/Archive/Any/Plugin/Zip.pm
+%%SITE_PERL%%/Archive/Any/Tar.pm
+%%SITE_PERL%%/Archive/Any/Zip.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Archive/Any/.packlist
 %%PERL5_MAN3%%/Archive::Any.3.gz
 %%PERL5_MAN3%%/Archive::Any::Plugin.3.gz
 %%PERL5_MAN3%%/Archive::Any::Plugin::Tar.3.gz
 %%PERL5_MAN3%%/Archive::Any::Plugin::Zip.3.gz
+%%PERL5_MAN3%%/Archive::Any::Tar.3.gz
+%%PERL5_MAN3%%/Archive::Any::Zip.3.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Archive/Any
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Archive
 @dirrmtry %%SITE_PERL%%/Archive/Any/Plugin
