@@ -1,3 +1,5 @@
+@owner %%WWWOWN%%
+@group %%WWWGRP%%
 %%ACHVODIR%%/README
 %%ACHVODIR%%/achievotools.inc
 %%ACHVODIR%%/atk.inc
@@ -471,6 +473,8 @@
 %%ACHVODIR%%/upgrade/convert-0.9-to-0.9.1.inc
 %%ACHVODIR%%/upgrade/convert-0.9.1-to-0.9.2.inc
 %%ACHVODIR%%/version.inc
+@owner
+@group
 @dirrm %%ACHVODIR%%/upgrade
 @dirrm %%ACHVODIR%%/themes/achievo_classic/images
 @dirrm %%ACHVODIR%%/themes/achievo_classic
