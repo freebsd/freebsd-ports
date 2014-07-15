@@ -21,7 +21,7 @@ PYDISTUTILS_NOEGGINFO=		yes
 
 PLIST_FILES=	bin/tinypy
 
-OPTIONS_DEFINE=	PYGAME
+OPTIONS_DEFINE=	PYGAME EXAMPLES
 PYGAME_DESC=	PyGame support (requires SDL)
 
 .include <bsd.port.options.mk>
