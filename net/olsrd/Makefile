@@ -21,7 +21,7 @@ ALL_TARGET=	build_all
 INSTALL_TARGET=	install_all
 
 OPTIONS_DEFINE=	MULTI_IF
-MULTI_IF_DESC=	IPv6 multiple interface support
+MULTI_IF_DESC=	IPv4 multiple interface support
 
 MULTI_IF_LIB_DEPENDS=	libnet.so:${PORTSDIR}/net/libnet
 MULTI_IF_MAKE_ARGS=	LIBNET=1
