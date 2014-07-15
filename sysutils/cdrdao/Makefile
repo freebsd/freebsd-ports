@@ -20,7 +20,10 @@ MP3OGG_LIB_DEPENDS=	libao.so:${PORTSDIR}/audio/libao \
 			libmad.so:${PORTSDIR}/audio/libmad \
 			libvorbis.so:${PORTSDIR}/audio/libvorbis
 
-OPTIONS_DEFINE=	DOCS
+OPTIONS_DEFINE=	DOCS TOC2MP3 MP3OGG
+OPTIONS_DEFAULT=MP3OGG
+TOC2MP3_DESC=	Build with toc2mp3
+MP3OGG_DESC=	MP3 and Ogg Vorbis support
 
 .if ${PORTNAME} == "gcdmaster"
 USES+=			pkgconfig
