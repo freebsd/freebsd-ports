@@ -24,7 +24,9 @@ PYDISTUTILS_AUTOPLIST=	yes
 
 DOCSDIR=	${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}
 
-.include <bsd.port.pre.mk>
+OPTIONS_DEFINE=	DOCS
+
+.include <bsd.port.options.mk>
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|share/doc|${DOCSDIR}|g ; \
@@ -38,4 +40,4 @@ post-install:
 .endfor
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
