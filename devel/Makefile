@@ -1085,6 +1085,7 @@
     SUBDIR += libopensync022
     SUBDIR += libopkele
     SUBDIR += liborcus
+    SUBDIR += libosinfo
     SUBDIR += libowfat
     SUBDIR += libpafe
     SUBDIR += libpafe-ruby
