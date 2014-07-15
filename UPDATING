@@ -20,8 +20,9 @@ you update your ports collection, before attempting any port upgrades.
   need to upgrade it separately BEFORE upgrading other ports.
 
   Note: some GNOME-related ports, for instance, evolution-data-server,
-  are broken and cannot be compiled if their older version is installed
-  and it depends on the previous db6 version.  For these ports, deinstall
+  cannot be built if their older version is installed because they run
+  their own executables at build-time and prefer libraries from
+  $LOCALPATH over freshly-built ones.  For these ports, deinstall
   them with pkg_delete -f or pkg delete -f before trying to upgrade them.
 
   After that, you must rebuild all applications that link to db6 because
