@@ -1,41 +1,11 @@
-diff --git a/lib/Net/Amazon/S3/Client/Object.pm b/lib/Net/Amazon/S3/Client/Object.pm
-index d10cba7..3d70d33 100755
---- lib/Net/Amazon/S3/Client/Object.pm
-+++ lib/Net/Amazon/S3/Client/Object.pm
-@@ -13,7 +13,7 @@ use IO::File 1.14;
- # ABSTRACT: An easy-to-use Amazon S3 client object
+--- lib/Net/Amazon/S3/Client/Object.pm.orig	2014-07-13 05:44:37.000000000 -0700
++++ lib/Net/Amazon/S3/Client/Object.pm	2014-07-13 05:44:46.000000000 -0700
+@@ -19,7 +19,7 @@
+     [ qw(private public-read public-read-write authenticated-read) ];
  
- enum 'AclShort' =>
--    qw(private public-read public-read-write authenticated-read);
-+    [ qw(private public-read public-read-write authenticated-read) ];
+ enum 'StorageClass' =>
+-    qw(standard reduced_redundancy);
++    [ qw(standard reduced_redundancy) ];
  
  has 'client' =>
      ( is => 'ro', isa => 'Net::Amazon::S3::Client', required => 1 );
-diff --git a/lib/Net/Amazon/S3/HTTPRequest.pm b/lib/Net/Amazon/S3/HTTPRequest.pm
-index 69c6327..eeb9584 100755
---- lib/Net/Amazon/S3/HTTPRequest.pm
-+++ lib/Net/Amazon/S3/HTTPRequest.pm
-@@ -13,7 +13,7 @@ use URI;
- my $METADATA_PREFIX      = 'x-amz-meta-';
- my $AMAZON_HEADER_PREFIX = 'x-amz-';
- 
--enum 'HTTPMethod' => qw(DELETE GET HEAD PUT POST);
-+enum 'HTTPMethod' => [ qw(DELETE GET HEAD PUT POST) ];
- 
- has 's3'     => ( is => 'ro', isa => 'Net::Amazon::S3', required => 1 );
- has 'method' => ( is => 'ro', isa => 'HTTPMethod',      required => 1 );
-diff --git a/lib/Net/Amazon/S3/Request.pm b/lib/Net/Amazon/S3/Request.pm
-index 9dded27..0415880 100644
---- lib/Net/Amazon/S3/Request.pm
-+++ lib/Net/Amazon/S3/Request.pm
-@@ -7,8 +7,8 @@ use Regexp::Common qw /net/;
- # ABSTRACT: Base class for request objects
- 
- enum 'AclShort' =>
--    qw(private public-read public-read-write authenticated-read);
--enum 'LocationConstraint' => ( 'US', 'EU' );
-+    [ qw(private public-read public-read-write authenticated-read) ];
-+enum 'LocationConstraint' => [ 'US', 'EU' ];
- 
- # To comply with Amazon S3 requirements, bucket names must:
- # Contain lowercase letters, numbers, periods (.), underscores (_), and dashes (-)
