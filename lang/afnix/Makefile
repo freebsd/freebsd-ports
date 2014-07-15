@@ -24,6 +24,8 @@ MAKE_ENV=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 PORTDOCS=	*
 PLIST_SUB=	PORTVER=${PORTVERSION:R}
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "powerpc"
