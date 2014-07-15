@@ -4,7 +4,7 @@
 
 PORTNAME=	gstreamer
 PORTVERSION=	0.10.22
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	multimedia python gnome
 MASTER_SITES=	http://gstreamer.freedesktop.org/src/gst-python/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -19,15 +19,15 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/libxml2mod.so:${PORTSDIR}/textproc/py-libxml2
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/libxml2mod.so:${PORTSDIR}/textproc/py-libxml2
 
-USES=		gmake pathfix pkgconfig
+USES=		gmake libtool pathfix pkgconfig tar:bzip2
 USE_PYTHON=	2
-USE_BZIP2=	yes
 USE_GNOME=	pygobject
 USE_GSTREAMER=	yes
 GNU_CONFIGURE=	yes
+INSTALL_TARGET=	install-strip
 PLIST_SUB=	VERSION="${GST_VERSION}"
-CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
-LDFLAGS+=	-L${LOCALBASE} ${PTHREAD_LIBS}
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|DLFCN|dl|g' ${WRKSRC}/gst/__init__.py
@@ -44,8 +44,5 @@ post-install:
 		${PYTHONPREFIX_SITELIBDIR} -f ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 	${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py -d \
 		${PYTHONPREFIX_SITELIBDIR} -f ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
-	@${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/gst-0.10/gst/*.so
-	@${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/*.so
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/gstreamer-0.10/libgstpython.so
 
 .include <bsd.port.mk>
