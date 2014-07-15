@@ -3,6 +3,7 @@
 
 PORTNAME=	libdvbcsa
 PORTVERSION=	1.1.0
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	http://download.videolan.org/pub/videolan/${PORTNAME}/${PORTVERSION}/ \
 		http://ftp.heikorichter.name/pub/videolan/${PORTNAME}/${PORTVERSION}/
@@ -12,10 +13,15 @@ COMMENT=	Free implementation of the DVB Common Scrambling Algorithm
 
 LICENSE=	GPLv2
 
+GNU_CONFIGURE=	yes
+INSTALL_TARGET=	install-strip
+USES=		libtool
 USE_LDCONFIG=	yes
-HAS_CONFIGURE=	yes
 
-CONFIGURE_ARGS+=        --prefix="${PREFIX}" \
-		--enable-mmx --enable-sse2
+.if defined(MACHINE_CPU) && ${MACHINE_CPU:Msse2}
+CONFIGURE_ARGS+=--enable-sse2
+.elif defined(MACHINE_CPU) && ${MACHINE_CPU:Mmmx}
+CONFIGURE_ARGS+=--enable-mmx
+.endif
 
 .include <bsd.port.mk>
