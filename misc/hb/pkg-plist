@@ -1,4 +1,5 @@
 bin/hb.py
+man/man1/hb.1.gz
 share/doc/hb/hb.txt
 share/doc/hb/0-StartHere.txt
 share/doc/hb/1-HB-License.txt
