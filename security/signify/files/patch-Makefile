@@ -1,0 +1,19 @@
+--- Makefile.orig	2014-07-15 19:24:29.000000000 +0200
++++ Makefile	2014-07-15 19:29:34.000000000 +0200
+@@ -1,9 +1,10 @@
++
+ all: signify
+ 
+ SRCS=signify.c ohash.c strlcpy.c base64.c explicit_bzero.c readpassphrase.c bcrypt_pbkdf.c ed25519.c sc25519.c ge25519.c fe25519.c arc4random.c blowfish.c hash.c blocks.c getentropy.c verify.c sha2.c shafile.c
+ OBJS=$(patsubst %.c,%.o,$(SRCS))
+ 
+-CC=gcc -D_GNU_SOURCE -D_BSD_SOURCE -DHAVE_SYS_SYSCALL_H
++CC=clang -D_GNU_SOURCE -D_BSD_SOURCE -DHAVE_SYS_SYSCALL_H
+ CFLAGS=-Os -pipe
+ LDFLAGS=-s
+ LDLIBS=-lcrypto
+@@ -25,3 +26,4 @@
+ 
+ tar:
+ 	cd .. && tar czf signify.tar.gz $(patsubst %,signify/%,$(SRCS) blf.h chacha_private.h crypto_api.h fe25519.h ge25519.h ohash.h readpassphrase.h sc25519.h sha2.h util.h ge25519_base.data Makefile) 
++
