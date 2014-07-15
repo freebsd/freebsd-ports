@@ -1,7 +1,6 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/Unicode/Normalize.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Unicode/Normalize/.packlist
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Unicode/Normalize/Normalize.so
 %%PERL5_MAN3%%/Unicode::Normalize.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Unicode/Normalize
+%%SITE_PERL%%/Unicode/Normalize.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Unicode/Normalize/.packlist
+@dirrmtry %%SITE_PERL%%/Unicode
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Unicode/Normalize
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Unicode
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Unicode
