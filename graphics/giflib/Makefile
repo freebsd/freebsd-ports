@@ -24,7 +24,7 @@ LMAN1=	gif2rgb.1 gifasm.1 gifbg.1 gifclip.1 gifclrmp.1 gifcolor.1 gifcomb.1 \
 	gifinto.1 gifovly.1 gifpos.1 gifrotat.1 gifrsize.1 gifspnge.1 \
 	giftext.1 gifwedge.1 icon2gif.1 raw2gif.1 rgb2gif.1 text2gif.1
 
-OPTIONS_DEFINE=	DOCBOOK X11
+OPTIONS_DEFINE=	DOCBOOK X11 DOCS
 OPTIONS_SUB=	yes
 DOCBOOK_DESC=	Generate API documentation (requires DOCS)
 

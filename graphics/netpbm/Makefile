@@ -31,7 +31,7 @@ USE_LDCONFIG=	yes
 SHEBANG_FILES=	editor/pnmflip editor/pnmquant editor/ppmfade \
 		editor/ppmquant editor/ppmshadow generator/ppmrainbow
 
-OPTIONS_DEFINE=	X11 MANPAGES
+OPTIONS_DEFINE=	X11 MANPAGES DOCS
 OPTIONS_SUB=	yes
 
 X11_USE=	xorg=x11

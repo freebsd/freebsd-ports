@@ -18,6 +18,8 @@ NO_WRKSUBDIR=	yes
 JARFILES=	geoapi-${PORTVERSION} jsr-275-0.9.3 geoapi-conformance-${PORTVERSION}
 DOCS=		README.txt
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.options.mk>
 
 do-install:
