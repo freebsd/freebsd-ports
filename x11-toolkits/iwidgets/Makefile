@@ -27,6 +27,8 @@ MAKE_ARGS+=	INSTALL_ROOT=${STAGEDIR}
 
 PORTDOCS=	CHANGES ChangeLog README iwidgets.ps
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.options.mk>
 
 post-patch:
