@@ -3,7 +3,7 @@
 
 PORTNAME=	scummvm
 DISTVERSION=	1.6.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games emulators
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	${PORTNAME}/${PORTNAME}/${DISTVERSION}
@@ -29,51 +29,34 @@ FLUIDSYNTH_DESC=	FluidSynth MIDI synthesizer
 MT32EMU_DESC=	MT-32 emulator
 OPTIONS_DEFAULT=	VORBIS MP3 PNG MT32EMU
 
-.include <bsd.port.options.mk>
+VORBIS_LIB_DEPENDS=	libogg.so:${PORTSDIR}/audio/libogg \
+			libvorbis.so:${PORTSDIR}/audio/libvorbis
+VORBIS_CONFIGURE_ON=	--with-ogg-prefix=${LOCALBASE} \
+			--with-vorbis-prefix=${LOCALBASE}
+VORBIS_CONFIGURE_OFF=	--disable-vorbis
+
+MP3_LIB_DEPENDS=	libmad.so:${PORTSDIR}/audio/libmad
+MP3_CONFIGURE_ON=	--with-mad-prefix=${LOCALBASE}
+MP3_CONFIGURE_OFF=	--disable-mad
+
+PNG_LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png
+PNG_CONFIGURE_ON=	--with-png-prefix=${LOCALBASE}
+PNG_CONFIGURE_OFF=	--disable-png
+
+FLAC_LIB_DEPENDS=	libFLAC.so:${PORTSDIR}/audio/flac
+FLAC_CONFIGURE_ON=	--with-flac-prefix=${LOCALBASE}
+FLAC_CONFIGURE_OFF=	--disable-flac
+
+FLUIDSYNTH_LIB_DEPENDS=		libfluidsynth.so:${PORTSDIR}/audio/fluidsynth
+FLUIDSYNTH_CONFIGURE_ON=	--with-fluidsynth-prefix=${LOCALBASE}
+FLUIDSYNTH_CONFIGURE_OFF=	--disable-fluidsynth
+
+MT32EMU_CONFIGURE_OFF=	--disable-mt32emu
+
+.include <bsd.port.pre.mk>
 
 .if ${ARCH} == "ia64" || ${ARCH} == "powerpc" || ${ARCH} == "sparc64"
 BROKEN=		Does not compile on ia64, powerpc, or sparc64
-.endif
-
-.if ${PORT_OPTIONS:MVORBIS}
-LIB_DEPENDS+=	libogg.so:${PORTSDIR}/audio/libogg \
-		libvorbis.so:${PORTSDIR}/audio/libvorbis
-CONFIGURE_ARGS+=--with-ogg-prefix=${LOCALBASE} \
-		--with-vorbis-prefix=${LOCALBASE}
-.else
-CONFIGURE_ARGS+=--disable-vorbis
-.endif
-
-.if ${PORT_OPTIONS:MMP3}
-LIB_DEPENDS+=	libmad.so:${PORTSDIR}/audio/libmad
-CONFIGURE_ARGS+=--with-mad-prefix=${LOCALBASE}
-.else
-CONFIGURE_ARGS+=--disable-mad
-.endif
-
-.if ${PORT_OPTIONS:MPNG}
-LIB_DEPENDS+=	libpng.so:${PORTSDIR}/graphics/png
-CONFIGURE_ARGS+=--with-png-prefix=${LOCALBASE}
-.else
-CONFIGURE_ARGS+=--disable-png
-.endif
-
-.if ${PORT_OPTIONS:MFLAC}
-LIB_DEPENDS+=	libFLAC.so:${PORTSDIR}/audio/flac
-CONFIGURE_ARGS+=--with-flac-prefix=${LOCALBASE}
-.else
-CONFIGURE_ARGS+=--disable-flac
-.endif
-
-.if ${PORT_OPTIONS:MFLUIDSYNTH}
-LIB_DEPENDS+=	libfluidsynth.so:${PORTSDIR}/audio/fluidsynth
-CONFIGURE_ARGS+=--with-fluidsynth-prefix=${LOCALBASE}
-.else
-CONFIGURE_ARGS+=--disable-fluidsynth
-.endif
-
-.if empty(PORT_OPTIONS:MMT32EMU)
-CONFIGURE_ARGS+=--disable-mt32emu
 .endif
 
 post-install:
