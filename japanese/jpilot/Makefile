@@ -12,5 +12,4 @@ CONFLICTS=	jpilot-[0-9]*
 
 CONFIGURE_ARGS=	--with-japanese
 
-NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"
