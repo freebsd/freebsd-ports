@@ -17,18 +17,13 @@ WRKSRC=		${WRKDIR}/${PKGNAMEPREFIX}${PORTNAME}-1.0
 DOCSDIR=	${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}
 AC_SUBDIR=	${PREFIX}/share/aclocal
 PLIST_FILES=	share/aclocal/ocaml.m4
+OPTIONS_DEFINE=	DOCS
+PORTDOCS=	*
 
-.if !defined(NOPORTDOCS)
-PORTDOCS=	ocaml.m4.txt
-.endif
-
-NO_STAGE=	yes
 do-install:
-	${MKDIR} ${AC_SUBDIR}/
-	${INSTALL_DATA} ${WRKSRC}/ocaml.m4 ${AC_SUBDIR}/
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}/
-	${INSTALL_DATA} ${WRKSRC}/ocaml.m4.txt ${DOCSDIR}/
-.endif
+	${MKDIR} ${STAGEDIR}${AC_SUBDIR}/
+	${INSTALL_DATA} ${WRKSRC}/ocaml.m4 ${STAGEDIR}${AC_SUBDIR}/
+	${MKDIR} ${STAGEDIR}${DOCSDIR}/
+	${INSTALL_DATA} ${WRKSRC}/ocaml.m4.txt ${STAGEDIR}${DOCSDIR}/
 
 .include <bsd.port.mk>
