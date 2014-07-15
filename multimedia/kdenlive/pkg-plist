@@ -2,6 +2,8 @@ bin/kdenlive
 bin/kdenlive_render
 lib/kde4/libkdenlive_sampleplugin.so
 lib/kde4/westleypreview.so
+man/man1/kdenlive.1.gz
+man/man1/kdenlive_render.1.gz
 share/applications/kde4/kdenlive.desktop
 share/apps/kdenlive/banner.png
 share/apps/kdenlive/blacklisted_effects.txt
@@ -429,8 +431,6 @@ share/kde4/services/westleypreview.desktop
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/kdenlive.mo
 share/mime/packages/kdenlive.xml
 share/mime/packages/westley.xml
-@dirrmtry share/mime/packages
-@dirrmtry share/mime
 @dirrm share/doc/HTML/uk/kdenlive
 @dirrm share/doc/HTML/sv/kdenlive
 @dirrm share/doc/HTML/pt_BR/kdenlive
