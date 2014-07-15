@@ -11,7 +11,7 @@ MASTER_SITES?=	ftp://ftp.opendesktop.org.tw/odp/ODOFonts/OpenFonts/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Ming and Kai face of OpenDesktop fonts
 
-CONFLICTS=	zh-fireflyttf-*
+CONFLICTS=	zh-fireflyttf-[0-9]*
 DIST_SUBDIR=	OpenFonts
 NO_BUILD=	yes
 
@@ -41,7 +41,8 @@ do-install:
 .endfor
 	${INSTALL_DATA} ${FILESDIR}/local.conf-odo ${STAGEDIR}${FONTSDIR}
 .if !defined(WITHOUT_X11)
-	${INSTALL_DATA} ${FILESDIR}/local.conf-odo ${LOCALBASE}/etc/fonts/local.conf
+	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/fonts
+	${INSTALL_DATA} ${FILESDIR}/local.conf-odo ${STAGEDIR}${PREFIX}/etc/fonts/local.conf
 .endif
 
 .include "${PORTSDIR}/chinese/ttfm/Makefile.ttf"
