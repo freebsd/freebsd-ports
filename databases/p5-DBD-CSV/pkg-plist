@@ -1,10 +1,26 @@
 %%PERL5_MAN3%%/Bundle::DBD::CSV.3.gz
 %%PERL5_MAN3%%/DBD::CSV.3.gz
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/DBD/CSV/.packlist
 %%SITE_PERL%%/Bundle/DBD/CSV.pm
 %%SITE_PERL%%/DBD/CSV.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/DBD/CSV/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBD/CSV
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBD
+%%SITE_PERL%%/DBD/CSV/GetInfo.pm
+%%SITE_PERL%%/DBD/CSV/TypeInfo.pm
+%%SITE_PERL%%/DBI/Test/Case/DBD/CSV/t10_base.pm
+%%SITE_PERL%%/DBI/Test/Case/DBD/CSV/t11_dsnlist.pm
+%%SITE_PERL%%/DBI/Test/Case/DBD/CSV/t20_createdrop.pm
+%%SITE_PERL%%/DBI/Test/Case/DBD/CSV/t85_error.pm
+%%SITE_PERL%%/DBI/Test/DBD/CSV/Conf.pm
+%%SITE_PERL%%/DBI/Test/DBD/CSV/List.pm
+@dirrmtry %%SITE_PERL%%/DBI/Test/DBD/CSV
+@dirrmtry %%SITE_PERL%%/DBI/Test/DBD
+@dirrmtry %%SITE_PERL%%/DBI/Test/Case/DBD/CSV
+@dirrmtry %%SITE_PERL%%/DBI/Test/Case/DBD
+@dirrmtry %%SITE_PERL%%/DBI/Test/Case
+@dirrmtry %%SITE_PERL%%/DBI/Test
+@dirrmtry %%SITE_PERL%%/DBI
+@dirrmtry %%SITE_PERL%%/DBD/CSV
 @dirrmtry %%SITE_PERL%%/DBD
 @dirrmtry %%SITE_PERL%%/Bundle/DBD
 @dirrmtry %%SITE_PERL%%/Bundle
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBD/CSV
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBD
