@@ -4,7 +4,7 @@ bin/pareorder
 man/man1/paexec.1.gz
 man/man1/paexec_reorder.1.gz
 man/man1/pareorder.1.gz
-%%PORTDOCS%%%%DOCSDIR%%/COPYRIGHT
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/TODO
