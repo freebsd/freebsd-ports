@@ -22,6 +22,8 @@ USES=		gmake
 
 MAKE_JOBS_UNSAFE=yes
 
+OPTIONS_DEFINE=	DOCS EXAMPLES
+
 .if defined(MAINTAINER_MODE)
 USES+=		fortran
 .endif
