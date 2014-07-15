@@ -23,6 +23,8 @@ SHLIB_VER_MAJ=	1
 
 PLIST_SUB=	SHLIB_VER=${SHLIB_VER} SHLIB_VER_MAJ=${SHLIB_VER_MAJ}
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.options.mk>
 
 post-extract:
@@ -32,7 +34,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|@libdir@/pkgconfig|@prefix@/libdata/pkgconfig|' \
 		-e 's|DATADIR =.*|DATADIR = ${DOCSDIR}|' \
 		${WRKSRC}/Makefile.in
-.if defined(PORT_OPTIONS:MDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${REINPLACE_CMD} -e 's|mkdir -p $$(DESTDIR)$$(DATADIR)||' \
 		-e 's|cp -Rf $$(DOCUMENTFILES) $$(DESTDIR)$$(DATADIR)||' \
 		${WRKSRC}/Makefile.in
