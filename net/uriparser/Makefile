@@ -3,6 +3,7 @@
 
 PORTNAME=	uriparser
 PORTVERSION=	0.7.9
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	SF/${PORTNAME}/Sources/${PORTVERSION}
 
@@ -10,14 +11,9 @@ MAINTAINER=	ed@FreeBSD.org
 COMMENT=	URI parsing library
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=--disable-doc --disable-test
-
-USE_BZIP2=	yes
-USE_AUTOTOOLS=	libtool
+CONFIGURE_ARGS=	--disable-doc --disable-test
+INSTALL_TARGET=	install-strip
+USES=		libtool pathfix tar:bzip2
 USE_LDCONFIG=	yes
-
-post-patch:
-	@${REINPLACE_CMD} 's|$$(libdir)/pkgconfig|$$(libdir)data/pkgconfig|' \
-	    ${WRKSRC}/Makefile.in
 
 .include <bsd.port.mk>

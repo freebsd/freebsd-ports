@@ -5,8 +5,8 @@ include/uriparser/UriDefsConfig.h
 include/uriparser/UriDefsUnicode.h
 include/uriparser/UriIp4.h
 lib/liburiparser.a
-lib/liburiparser.la
 lib/liburiparser.so
 lib/liburiparser.so.1
+lib/liburiparser.so.1.0.14
 libdata/pkgconfig/liburiparser.pc
 @dirrm include/uriparser
