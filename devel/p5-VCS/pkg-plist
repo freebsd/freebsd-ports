@@ -1,4 +1,3 @@
-bin/diff-hist
 %%PERL5_MAN3%%/VCS.3.gz
 %%PERL5_MAN3%%/VCS::Cvs.3.gz
 %%PERL5_MAN3%%/VCS::Dir.3.gz
@@ -20,8 +19,7 @@ bin/diff-hist
 %%SITE_PERL%%/VCS/Version.pm
 %%SITE_PERL%%/VCS_dev.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/VCS/.packlist
-man/man1/diff-hist.1.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/VCS
-@dirrm %%SITE_PERL%%/VCS/Rcs
-@dirrm %%SITE_PERL%%/VCS/Cvs
+@dirrmtry %%SITE_PERL%%/VCS/Cvs
+@dirrmtry %%SITE_PERL%%/VCS/Rcs
 @dirrmtry %%SITE_PERL%%/VCS
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/VCS
