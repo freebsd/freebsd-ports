@@ -4,3 +4,4 @@ lib/libsrs2.a
 lib/libsrs2.la
 lib/libsrs2.so
 lib/libsrs2.so.0
+lib/libsrs2.so.0.0.0

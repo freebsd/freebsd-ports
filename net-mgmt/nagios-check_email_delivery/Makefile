@@ -35,6 +35,8 @@ DOC_FILES=	check_email_delivery.html check_email_delivery.pod \
 
 PORTSCOUT=	ignore:1
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.pre.mk>
 
 do-install:

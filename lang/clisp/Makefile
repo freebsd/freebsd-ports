@@ -14,8 +14,8 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/GNU-GPL
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libavcall.a:${PORTSDIR}/devel/ffcall
-LIB_DEPENDS=	readline.6:${PORTSDIR}/devel/readline \
-		sigsegv.2:${PORTSDIR}/devel/libsigsegv
+LIB_DEPENDS=	libreadline.so.6:${PORTSDIR}/devel/readline \
+		libsigsegv.so:${PORTSDIR}/devel/libsigsegv
 
 DEPRECATED=	development has ceased, not staged
 EXPIRATION_DATE=	2014-07-28

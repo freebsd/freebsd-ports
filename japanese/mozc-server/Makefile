@@ -17,8 +17,8 @@ LICENSE_FILE=	${WRKSRC}/third_party/gyp/LICENSE
 
 BUILD_DEPENDS=	python:${PORTSDIR}/lang/python
 EXTRACT_DEPENDS=${PYTHON_CMD}:${PYTHON_PORTSDIR}
-LIB_DEPENDS=	protobuf:${PORTSDIR}/devel/protobuf \
-		zinnia:${PORTSDIR}/japanese/zinnia
+LIB_DEPENDS=	libprotobuf.so:${PORTSDIR}/devel/protobuf \
+		libzinnia.so:${PORTSDIR}/japanese/zinnia
 RUN_DEPENDS=	xdg-open:${PORTSDIR}/devel/xdg-utils
 
 USES=		pkgconfig iconv gmake tar:bzip2

@@ -13,8 +13,8 @@ MAINTAINER=	jhay@FreeBSD.org
 COMMENT=	Shapelib support for gpsman
 
 RUN_DEPENDS=	gpsman:${PORTSDIR}/astro/gpsman
-LIB_DEPENDS=	shp.1:${PORTSDIR}/devel/shapelib \
-		tcl${TCLVERSION:S/.//}:${PORTSDIR}/lang/tcl${TCLVERSION:S/.//}
+LIB_DEPENDS=	libshp.so:${PORTSDIR}/devel/shapelib \
+		libtcl${TCLVERSION:S/.//}.so:${PORTSDIR}/lang/tcl${TCLVERSION:S/.//}
 
 TCLVERSION?=	8.4
 PLIST_SUB=	TCLVERSION=${TCLVERSION} PORTVERSION=${PORTVERSION}

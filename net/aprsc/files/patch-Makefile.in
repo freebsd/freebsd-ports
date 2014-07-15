@@ -30,7 +30,7 @@
 +	$(INSTALL_DATA) $(subst src/,,$(WEBFILES)) $(DESTDIR)$(PREFIX)/etc/aprsc/web
  	if [ ! -f  $(DESTDIR)$(CFGFILE) ] ; then \
 -		$(INSTALL_DATA) aprsc.conf $(DESTDIR)$(CFGFILE) ; \
-+		$(INSTALL_DATA) aprsc.conf $(DESTDIR)$(PREFIX)/etc/aprsc/aprsc.conf.example ; \
++		$(INSTALL_DATA) aprsc.conf $(DESTDIR)$(PREFIX)/etc/aprsc/aprsc.conf.sample ; \
  	else true ; fi
  
  # -------------------------------------------------------------------- #

@@ -30,6 +30,8 @@ SUB_FILES=	pkg-message
 
 CONFLICTS=	eggdrop-[0-9]*
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.options.mk>
 
 post-patch:

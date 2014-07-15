@@ -10,7 +10,7 @@ MASTER_SITES=	http://sammy.net/~sammy/hacks/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Utility for quickly finding duplicate files
 
-LIB_DEPENDS=	gdbm:${PORTSDIR}/databases/gdbm
+LIB_DEPENDS=	libgdbm.so:${PORTSDIR}/databases/gdbm
 
 PLIST_FILES=	bin/filedupe
 

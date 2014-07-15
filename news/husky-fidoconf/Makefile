@@ -11,7 +11,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}-src
 MAINTAINER=	fjoe@FreeBSD.org
 COMMENT=	Configuration library for Husky Fidosoft Project
 
-LIB_DEPENDS=	smapi.2:${PORTSDIR}/news/husky-smapi
+LIB_DEPENDS=	libsmapi.so:${PORTSDIR}/news/husky-smapi
 RUN_DEPENDS=	${LOCALBASE}/etc/fido/huskymak.cfg:${PORTSDIR}/news/husky-base
 
 CONFLICTS=	husky-fidoconf-devel-[0-9]*

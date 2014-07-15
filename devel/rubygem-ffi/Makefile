@@ -11,7 +11,7 @@ COMMENT=	Extension for dynamic libraries & binding functions
 
 LICENSE=	BSD3CLAUSE
 
-LIB_DEPENDS=	ffi:${PORTSDIR}/devel/libffi
+LIB_DEPENDS=	libffi.so:${PORTSDIR}/devel/libffi
 
 USE_RAKE=	yes
 USE_RUBY=	yes

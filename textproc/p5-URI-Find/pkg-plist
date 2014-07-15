@@ -5,4 +5,3 @@ bin/urifind
 %%SITE_PERL%%/URI/Find/Schemeless.pm
 man/man1/urifind.1.gz
 @dirrmtry %%SITE_PERL%%/URI/Find
-@dirrmtry %%SITE_PERL%%/URI

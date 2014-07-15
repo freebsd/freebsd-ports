@@ -2,7 +2,7 @@ Postfix Admin is a web-based management tool written in PHP for
 Postfix with Postfix-style Virtual Domains using MySQL or
 PostgreSQL lookups.  Postfix Admin is known to work on Apache
 and Lighttpd, but is designed to work on any web server with
-PHP 4.1+ support.
+PHP 5.1.2+ support.
 
 Postfix Admin features:
 
@@ -13,4 +13,4 @@ Postfix Admin features:
 - Backup MX;
 - Packaged with over 25 languages.
 
-WWW:	http://www.postfixadmin.org
+WWW: http://www.postfixadmin.org

@@ -1,3 +1,5 @@
+@owner www
+@group www
 %%APP_HOME%%/LICENSE.txt
 %%APP_HOME%%/README.txt
 %%APP_HOME%%/appclient/configuration/appclient.xml

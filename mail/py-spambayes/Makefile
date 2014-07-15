@@ -45,6 +45,8 @@ PORTDOCS=	CHANGELOG.txt \
 		utilities/ \
 		contrib/
 
+OPTIONS_DEFINE=	DOCS
+
 post-extract:
 	@${CHMOD} -Rf u+w ${WRKSRC}
 

@@ -11,7 +11,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 MAINTAINER=	fjoe@FreeBSD.org
 COMMENT=	Scan for UUE in message base
 
-LIB_DEPENDS=	fidoconfig.0:${PORTSDIR}/news/husky-fidoconf
+LIB_DEPENDS=	libfidoconfig.so:${PORTSDIR}/news/husky-fidoconf
 
 USES=		makeinfo
 MAN1=		hpucode.1

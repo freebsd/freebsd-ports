@@ -12,7 +12,7 @@ MASTER_SITE_SUBDIR=	distfiles
 MAINTAINER=	sitecopy@oldach.net
 COMMENT=	Maintains remote websites, uses FTP or WebDAV to sync up w/ local copy
 
-LIB_DEPENDS=	neon.27:${PORTSDIR}/www/neon29
+LIB_DEPENDS=	libneon.so:${PORTSDIR}/www/neon29
 
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include

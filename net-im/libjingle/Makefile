@@ -3,7 +3,7 @@
 
 PORTNAME=	libjingle
 PORTVERSION=	0.4.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-im
 MASTER_SITES=	SF
 
@@ -13,13 +13,16 @@ COMMENT=	Google Talk's implementation of Jingle and Jingle-Audio
 LICENSE=	BSD
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	speex:${PORTSDIR}/audio/speex \
-		ilbc:${PORTSDIR}/net/ilbc \
-		ortp:${PORTSDIR}/net/linphone-base \
-		expat:${PORTSDIR}/textproc/expat2
+LIB_DEPENDS=	libspeex.so:${PORTSDIR}/audio/speex \
+		libilbc.so:${PORTSDIR}/net/ilbc \
+		libortp.so:${PORTSDIR}/net/ortp \
+		libexpat.so:${PORTSDIR}/textproc/expat2
 
 CONFLICTS=	krb4-[0-9]* krb5-[0-9]* heimdal-[0-9]* srp-[0-9]* \
 		clusterit-[0-9]* pcp-[0-9]* synce-librapi2-[0-9]*
+
+DEPRECATED=	Upstream defunct and broken with clang
+EXPIRATION_DATE=2014-08-31
 
 USES=		pkgconfig dos2unix gmake
 DOS2UNIX_FILES=	README

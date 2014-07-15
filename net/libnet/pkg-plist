@@ -7,11 +7,10 @@ include/%%SNAME%%/libnet/libnet-macros.h
 include/%%SNAME%%/libnet/libnet-structures.h
 include/%%SNAME%%/libnet/libnet-types.h
 lib/%%SNAME%%/libnet.a
-lib/%%SNAME%%/libnet.la
 lib/%%SNAME%%/libnet.so
-lib/%%SNAME%%/libnet.so.8
-lib/libnet-%%VERSION%%.so
-lib/libnet-%%VERSION%%.so.8
+lib/%%SNAME%%/libnet.so.1
+lib/%%SNAME%%/libnet.so.1.7.0
+lib/libnet-%%VERSION%%.so.1
 man/man3/libnet-functions.h.3.gz
 man/man3/libnet-macros.h.3.gz
 man/man3/libnet.h.3.gz

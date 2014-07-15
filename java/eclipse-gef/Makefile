@@ -2,10 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	gef
-PORTVERSION=	3.7.2
+PORTVERSION=	3.9.100
 CATEGORIES=	java devel
-MASTER_SITES=	http://archive.eclipse.org/tools/gef/downloads/drops/%SUBDIR%/
-MASTER_SITE_SUBDIR=	${PORTVERSION}/R201201171043
+MASTER_SITES=	${MASTER_SITE_ECLIPSE:S,/eclipse/downloads/drops/,/,}
+MASTER_SITE_SUBDIR=tools/gef/downloads/drops/${PORTVERSION}/R201405261516
+
 PKGNAMEPREFIX=	eclipse-
 DISTNAME=	GEF-ALL-${PORTVERSION}
 DIST_SUBDIR=	eclipse
@@ -13,7 +14,7 @@ DIST_SUBDIR=	eclipse
 MAINTAINER=	zhoushuqun@gmail.com
 COMMENT=	Graphical Editing Framework for the Eclipse IDE
 
-RUN_DEPENDS=	eclipse:${PORTSDIR}/java/eclipse
+RUN_DEPENDS=	${LOCALBASE}/bin/eclipse:${PORTSDIR}/java/eclipse
 
 WRKSRC=		${WRKDIR}/eclipse
 USES=		zip

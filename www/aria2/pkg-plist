@@ -8,14 +8,6 @@ libdata/pkgconfig/libaria2.pc
 man/man1/aria2c.1.gz
 man/pt/man1/aria2c.1.gz
 man/ru/man1/aria2c.1.gz
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/README.html
-%%PORTDOCS%%%%DOCSDIR%%/README.rst
-%%PORTDOCS%%%%DOCSDIR%%/bash_completion/README.txt
-%%PORTDOCS%%%%DOCSDIR%%/bash_completion/aria2c
-%%PORTDOCS%%%%DOCSDIR%%/xmlrpc/README.txt
-%%PORTDOCS%%%%DOCSDIR%%/xmlrpc/aria2mon
-%%PORTDOCS%%%%DOCSDIR%%/xmlrpc/aria2rpc
 %%NLS%%share/locale/ar/LC_MESSAGES/aria2.mo
 %%NLS%%share/locale/bg/LC_MESSAGES/aria2.mo
 %%NLS%%share/locale/bn/LC_MESSAGES/aria2.mo
@@ -70,9 +62,6 @@ man/ru/man1/aria2c.1.gz
 %%NLS%%@dirrmtry share/locale/en@quot
 %%NLS%%@dirrmtry share/locale/en@boldquot/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/en@boldquot
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/xmlrpc
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/bash_completion
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrmtry man/ru/man1
 @dirrmtry man/ru
 @dirrmtry man/pt/man1

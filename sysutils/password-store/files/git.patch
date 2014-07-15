@@ -1,5 +1,5 @@
 diff --git a/README b/README
-index 8bee02a..299465c 100644
+index 1cc01b9..1a7555b 100644
 --- a/README
 +++ b/README
 @@ -17,8 +17,6 @@ Depends on:
@@ -12,10 +12,10 @@ index 8bee02a..299465c 100644
    http://sourceforge.net/projects/xclip/
  - pwgen
 diff --git a/contrib/emacs/password-store.el b/contrib/emacs/password-store.el
-index 1863185..e0556fd 100644
+index cdecad4..052eda7 100644
 --- a/contrib/emacs/password-store.el
 +++ b/contrib/emacs/password-store.el
-@@ -109,10 +109,6 @@ outputs error message on failure."
+@@ -112,10 +112,6 @@ outputs error message on failure."
                         entry
                         new-entry))
  
@@ -27,7 +27,7 @@ index 1863185..e0556fd 100644
    (password-store--run "version"))
  
 diff --git a/man/pass.1 b/man/pass.1
-index 42d9aec..1a69546 100644
+index 8ac8ecf..b340a95 100644
 --- a/man/pass.1
 +++ b/man/pass.1
 @@ -33,13 +33,6 @@ or
@@ -264,7 +264,7 @@ index b658398..b0695e6 100644
  
  _pass_complete_entries_with_subdirs () {
 diff --git a/src/password-store.sh b/src/password-store.sh
-index 460aa63..969d631 100755
+index cfc25cc..72a0ed6 100755
 --- a/src/password-store.sh
 +++ b/src/password-store.sh
 @@ -15,25 +15,10 @@ PREFIX="${PASSWORD_STORE_DIR:-$HOME/.password-store}"
@@ -293,7 +293,7 @@ index 460aa63..969d631 100755
  yesno() {
  	[[ -t 0 ]] || return 0
  	local response
-@@ -244,9 +229,6 @@ cmd_usage() {
+@@ -254,9 +239,6 @@ cmd_usage() {
  	        Renames or moves old-path to new-path, optionally forcefully, selectively reencrypting.
  	    $PROGRAM cp [--force,-f] old-path new-path
  	        Copies old-path to new-path, optionally forcefully, selectively reencrypting.
@@ -303,7 +303,7 @@ index 460aa63..969d631 100755
  	    $PROGRAM help
  	        Show this text.
  	    $PROGRAM version
-@@ -275,22 +257,16 @@ cmd_init() {
+@@ -285,22 +267,16 @@ cmd_init() {
  	if [[ $# -eq 1 && -z $1 ]]; then
  		[[ ! -f "$gpg_id" ]] && die "Error: $gpg_id does not exist and so cannot be removed."
  		rm -v -f "$gpg_id" || exit 1
@@ -326,7 +326,7 @@ index 460aa63..969d631 100755
  }
  
  cmd_show() {
-@@ -398,7 +374,6 @@ cmd_insert() {
+@@ -408,7 +384,6 @@ cmd_insert() {
  		read -r -p "Enter password for $path: " -e password
  		$GPG -e "${GPG_RECIPIENT_ARGS[@]}" -o "$passfile" "${GPG_OPTS[@]}" <<<"$password"
  	fi
@@ -334,15 +334,15 @@ index 460aa63..969d631 100755
  }
  
  cmd_edit() {
-@@ -430,7 +405,6 @@ cmd_edit() {
- 		echo "GPG encryption failed. Retrying."
- 		sleep 1
+@@ -434,7 +409,6 @@ cmd_edit() {
+ 	while ! $GPG -e "${GPG_RECIPIENT_ARGS[@]}" -o "$passfile" "${GPG_OPTS[@]}" "$tmp_file"; do
+ 		yesno "GPG encryption failed. Would you like to try again?"
  	done
 -	git_add_file "$passfile" "$action password for $path using ${EDITOR:-vi}."
  }
  
  cmd_generate() {
-@@ -472,7 +446,6 @@ cmd_generate() {
+@@ -476,7 +450,6 @@ cmd_generate() {
  	fi
  	local verb="Add"
  	[[ $inplace -eq 1 ]] && verb="Replace"
@@ -350,7 +350,7 @@ index 460aa63..969d631 100755
  
  	if [[ $clip -eq 0 ]]; then
  		printf "\e[1m\e[37mThe generated password for \e[4m%s\e[24m is:\e[0m\n\e[1m\e[93m%s\e[0m\n" "$path" "$pass"
-@@ -504,10 +477,6 @@ cmd_delete() {
+@@ -508,10 +481,6 @@ cmd_delete() {
  	[[ $force -eq 1 ]] || yesno "Are you sure you would like to delete $path?"
  
  	rm $recursive -f -v "$passfile"
@@ -361,7 +361,7 @@ index 460aa63..969d631 100755
  	rmdir -p "${passfile%/*}" 2>/dev/null
  }
  
-@@ -544,34 +513,10 @@ cmd_copy_move() {
+@@ -548,33 +517,10 @@ cmd_copy_move() {
  		mv $interactive -v "$old_path" "$new_path" || exit 1
  		[[ -e "$new_path" ]] && reencrypt_path "$new_path"
  
@@ -388,7 +388,6 @@ index 460aa63..969d631 100755
 -		git config --local diff.gpg.textconv "$GPG -d ${GPG_OPTS[*]}"
 -	elif [[ -d $GIT_DIR ]]; then
 -		tmpdir nowarn #Defines $SECURE_TMPDIR. We don't warn, because at most, this only copies encrypted files.
--		trap "rm -rf '$SECURE_TMPDIR'" INT TERM EXIT
 -		export TMPDIR="$SECURE_TMPDIR"
 -		git "$@"
 -	else
@@ -396,7 +395,7 @@ index 460aa63..969d631 100755
  	fi
  }
  
-@@ -595,7 +540,6 @@ case "$1" in
+@@ -598,7 +544,6 @@ case "$1" in
  	delete|rm|remove) shift;	cmd_delete "$@" ;;
  	rename|mv) shift;		cmd_copy_move "move" "$@" ;;
  	copy|cp) shift;			cmd_copy_move "copy" "$@" ;;
@@ -404,65 +403,3 @@ index 460aa63..969d631 100755
  	*) COMMAND="show";		cmd_show "$@" ;;
  esac
  exit 0
-diff --git a/tests/setup.sh b/tests/setup.sh
-index 779f14a..3c68815 100644
---- a/tests/setup.sh
-+++ b/tests/setup.sh
-@@ -20,12 +20,6 @@ if [[ ! -d $PASSWORD_STORE_DIR ]]; then
- 	exit 1
- fi
- 
--export GIT_DIR="$PASSWORD_STORE_DIR/.git"
--export GIT_WORK_TREE="$PASSWORD_STORE_DIR"
--git config --global user.email "Pass-Automated-Testing-Suite@zx2c4.com"
--git config --global user.name "Pass Automated Testing Suite"
--
--
- PASS="$TEST_HOME/../src/password-store.sh"
- if [[ ! -e $PASS ]]; then
- 	echo "Could not find password-store.sh"
-diff --git a/tests/t0050-mv-tests.sh b/tests/t0050-mv-tests.sh
-index 3ec7c2a..f51304c 100755
---- a/tests/t0050-mv-tests.sh
-+++ b/tests/t0050-mv-tests.sh
-@@ -8,7 +8,6 @@ INITIAL_PASSWORD="bla bla bla will we make it!!"
- 
- test_expect_success 'Basic move command' '
- 	"$PASS" init $KEY1 &&
--	"$PASS" git init &&
- 	"$PASS" insert -e cred1 <<<"$INITIAL_PASSWORD" &&
- 	"$PASS" mv cred1 cred2 &&
- 	[[ -e $PASSWORD_STORE_DIR/cred2.gpg && ! -e $PASSWORD_STORE_DIR/cred1.gpg ]]
-@@ -44,8 +43,4 @@ test_expect_success 'Password made it until the end' '
- 	[[ $("$PASS" show cred) == "$INITIAL_PASSWORD" ]]
- '
- 
--test_expect_success 'Git is consistent' '
--	[[ -z $(git status --porcelain 2>&1) ]]
--'
--
- test_done
-diff --git a/tests/t0300-reencryption.sh b/tests/t0300-reencryption.sh
-index 96da41b..0cbf4b0 100755
---- a/tests/t0300-reencryption.sh
-+++ b/tests/t0300-reencryption.sh
-@@ -21,8 +21,8 @@ gpg_keys_from_group() {
- 	canonicalize_gpg_keys "${keys[@]}"
- }
- 
--test_expect_success 'Setup initial key and git' '
--	"$PASS" init $KEY1 && "$PASS" git init
-+test_expect_success 'Setup initial key' '
-+	"$PASS" init $KEY1
- '
- 
- test_expect_success 'Root key encryption' '
-@@ -93,8 +93,4 @@ test_expect_success 'Password lived through all transformations' '
- 	[[ $("$PASS" show anotherfolder2/anotherfolder/cred1) == "$INITIAL_PASSWORD" ]]
- '
- 
--test_expect_success 'Git picked up all changes throughout' '
--	[[ -z $(git status --porcelain 2>&1) ]]
--'
--
- test_done

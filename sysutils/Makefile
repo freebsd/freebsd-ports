@@ -756,6 +756,7 @@
     SUBDIR += py-zdaemon
     SUBDIR += py-zfs
     SUBDIR += pydf
+    SUBDIR += qchroot
     SUBDIR += qjail
     SUBDIR += qjail2
     SUBDIR += qlogtools

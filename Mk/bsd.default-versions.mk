@@ -18,7 +18,7 @@ _l=		${lang:C/=.*//g}
 ${_l:tu}_DEFAULT=	${lang:C/.*=//g}
 .endfor
 
-APACHE_DEFAULT?=	2.2
+APACHE_DEFAULT?=	2.4
 FPC_DEFAULT?=		2.6.4
 GCC_DEFAULT?=		4.7
 LUA_DEFAULT?=		5.2

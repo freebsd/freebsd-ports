@@ -7,7 +7,12 @@ CATEGORIES=	net
 MASTER_SITES=	SAVANNAH/linphone/ortp
 
 MAINTAINER=	sobomax@FreeBSD.org
-COMMENT=	Real-time Transport Protocol (RTP) stack
+COMMENT=	Real-time Transport Protocol (RTP) library
+
+LICENSE=	LGPL21
+LICENSE_FILE=	${WRKSRC}/COPYING
+
+CONFLICTS_INSTALL=	linphone-base-[0-9]*
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-silent-rules --disable-strict

@@ -271,7 +271,7 @@ CONFIGURE_ARGS+=	--disable-minidriver-dummy
 .endif
 
 .if defined(WITH_LIBFTDI)
-LIB_DEPENDS+=		ftdi:${PORTSDIR}/devel/libftdi
+LIB_DEPENDS+=		libftdi.so:${PORTSDIR}/devel/libftdi
 .endif
 
 .if ${PORT_OPTIONS:MDOXYGEN}

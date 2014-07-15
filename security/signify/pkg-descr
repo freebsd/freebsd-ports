@@ -1,0 +1,6 @@
+'signify' from OpenBSD as of July 15 2014, with the necessary plumbing
+cobbled together from the OpenBSD CVS to make it compile under Linux.
+
+Since the CVS itself is not signed, the author provides no guarantees.
+
+WWW: http://www.fefe.de/signify/

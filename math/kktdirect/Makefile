@@ -19,6 +19,8 @@ LDFLAGS+=	-L${LOCALBASE}/lib ${LAPACK} ${BLAS} -lm
 PLIST_FILES=	include/kktdirect.h lib/libkktdirect.a lib/libkktdirect_pic.a \
 		lib/libkktdirect.so lib/libkktdirect.so.0
 
+OPTIONS_DEFINE=	DOCS EXAMPLES
+
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "sparc64"

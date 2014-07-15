@@ -2,10 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	slimeforest
-PORTVERSION=	0.60
-PORTREVISION=	1
+PORTVERSION=	158
+PORTREVISION=	0
 CATEGORIES=	japanese games linux
-MASTER_SITES=	http://nivi.interfree.it/distfiles/${DIST_SUBDIR}/ \
+MASTER_SITES=	http://nivit.altervista.org/FreeBSD/ports/distfiles/${DIST_SUBDIR}/ \
 		http://lrnj.com/
 DISTNAME=	sfa
 EXTRACT_SUFX=	.tgz
@@ -14,43 +14,27 @@ DIST_SUBDIR=	${PORTNAME}/${PORTVERSION}
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	NES RPG game for learning KANA and KANJI (Linux version)
 
+LICENSE=	GPLv2
+
 NO_BUILD=	yes
+
+PLIST_SUB=	BINMODE=${BINMODE}
+
+SUB_FILES=	${PORTNAME}.sh
+
 USE_LINUX=	yes
 USE_LINUX_APPS=	sdlimage
 
 WRKSRC=		${WRKDIR}/slimeforest
-FIND_DIRS=	-type d \! -empty
-FIND_EXEC=	\! -type d -and -perm -a+x \! -name "*.bak" \! -name "*.orig"
-FIND_DATA=	\! -type d -and \! -perm -a+x -and \! -name "*.txt"
-LINK_OPTS=	-s
-
-REPLACE_FILES=	runfs runwin
-
-NO_STAGE=	yes
-post-patch:
-	@for FILE in ${REPLACE_FILES}; do \
-		${SED} -i .bak\
-		-e "/\`dirname.*\`/s//${DATADIR:S/\//\\\//g}/g" \
-		${WRKSRC}/$${FILE}; \
-	done;
 
 do-install:
-# programs and data
-	@cd ${WRKSRC}; \
-	DIRS=$$(${FIND} . ${FIND_DIRS}); \
-	for DIR in $${DIRS}; do \
-		${MKDIR} ${DATADIR}/$${DIR}; \
-	done; \
-	FILES=$$(${FIND} . ${FIND_EXEC} ); \
-	for FILE in $${FILES}; do \
-		${INSTALL_SCRIPT} $${FILE} ${DATADIR}/$${FILE}; \
-	done; \
-	FILES=$$(${FIND} . ${FIND_DATA}); \
-	for FILE in $${FILES}; do \
-		${INSTALL_DATA} $${FILE} ${DATADIR}/$${FILE}; \
-	done;
-# links to executables
-	${LN} ${LINK_OPTS} ${DATADIR}/runfs ${PREFIX}/bin/slimeforest-fs
-	${LN} ${LINK_OPTS} ${DATADIR}/runwin ${PREFIX}/bin/slimeforest-win
+	${MKDIR} ${STAGEDIR}${DATADIR}
+	(cd ${WRKSRC}/jquest && \
+	${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR} \
+		'! -name *\.bak -and ! -name *\.txt -and ! -name jquest64')
+	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME}.sh \
+		${STAGEDIR}${PREFIX}/bin/${PORTNAME}.sh
+	@${LN} -sf slimeforest.sh ${STAGEDIR}${PREFIX}/bin/slimeforest-fs
+	@${LN} -sf slimeforest.sh ${STAGEDIR}${PREFIX}/bin/slimeforest-win
 
 .include <bsd.port.mk>

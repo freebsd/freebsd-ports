@@ -3,6 +3,7 @@
 
 PORTNAME=	openmpi
 DISTVERSION=	1.7.5
+PORTREVISION=	1
 CATEGORIES=	net parallel
 MASTER_SITES=	http://www.open-mpi.org/software/ompi/v1.7/downloads/
 PKGNAMESUFFIX=	-devel
@@ -17,7 +18,9 @@ LIB_DEPENDS=	libexecinfo.so:${PORTSDIR}/devel/libexecinfo \
 CONFLICTS=	openmpi-1.8
 
 HAS_CONFIGURE=	yes
-USES=		fortran gmake pkgconfig tar:bzip2
+INSTALL_TARGET=	install-strip
+# :keepla because port uses lt_dlopen
+USES=		fortran gmake libtool:keepla pkgconfig tar:bzip2
 
 MPIBASE?=	mpi
 MPIDIR?=	${MPIBASE}/${UNIQUENAME}${PKGNAMESUFFIX}

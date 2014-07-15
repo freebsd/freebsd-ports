@@ -12,7 +12,7 @@ DIST_SUBDIR=	PECL
 MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	Libenchant Binder that Support Near All Spelling Tools
 
-LIB_DEPENDS=	enchant.1:${PORTSDIR}/textproc/enchant
+LIB_DEPENDS=	libenchant.so:${PORTSDIR}/textproc/enchant
 
 CONFIGURE_ARGS+=--with-enchant=${LOCALBASE}
 

@@ -13,7 +13,7 @@ MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl5 extension which makes available the pgplot library
 
 BUILD_DEPENDS=	p5-ExtUtils-F77>=1.13:${PORTSDIR}/lang/p5-ExtUtils-F77
-LIB_DEPENDS=	pgplot.5:${PORTSDIR}/graphics/pgplot
+LIB_DEPENDS=	libpgplot.so:${PORTSDIR}/graphics/pgplot
 
 INSTALL_TARGET=	pure_install
 SCRIPTS_ENV=	PERL=${PERL}

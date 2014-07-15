@@ -13,11 +13,11 @@ COMMENT=	Qt binding for Telepathy Logger
 
 LICENSE=	LGPL21
 
-LIB_DEPENDS=	dbus-1:${PORTSDIR}/devel/dbus \
-		dbus-glib-1:${PORTSDIR}/devel/dbus-glib \
-		telepathy-glib:${PORTSDIR}/net-im/telepathy-glib \
-		telepathy-logger:${PORTSDIR}/net-im/telepathy-logger \
-		telepathy-qt4:${PORTSDIR}/net-im/telepathy-qt4
+LIB_DEPENDS=	libdbus-1.so:${PORTSDIR}/devel/dbus \
+		libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib \
+		libtelepathy-glib.so:${PORTSDIR}/net-im/telepathy-glib \
+		libtelepathy-logger.so:${PORTSDIR}/net-im/telepathy-logger \
+		libtelepathy-qt4.so:${PORTSDIR}/net-im/telepathy-qt4
 
 USE_GNOME=	glib20 libxml2
 USE_GSTREAMER=	qt4

@@ -16,7 +16,7 @@ LICENSE=	GPLv2
 
 BUILD_DEPENDS=	ghc:${PORTSDIR}/lang/ghc
 LIB_DEPENDS=	libgmp.so:${PORTSDIR}/math/gmp \
-		libffi.so:${PORTSDIR}/devel/libffi
+		libffi.so.6:${PORTSDIR}/devel/libffi
 
 USES=		perl5 gmake
 USE_PERL5=	build

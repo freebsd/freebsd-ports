@@ -12,10 +12,10 @@ PKGNAMESUFFIX=	-devel
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Cross-platform high-level application framework and GUI library(devel)
 
-LIB_DEPENDS=	physfs.1:${PORTSDIR}/devel/physfs \
-		expat.6:${PORTSDIR}/textproc/expat2 \
+LIB_DEPENDS=	libphysfs.so:${PORTSDIR}/devel/physfs \
+		libexpat.so:${PORTSDIR}/textproc/expat2 \
 		libfreetype.so:${PORTSDIR}/print/freetype2 \
-		sigc-1.2.5:${PORTSDIR}/devel/libsigc++12
+		libsigc-1.2.so:${PORTSDIR}/devel/libsigc++12
 
 CONFLICTS=	paragui-[0-9]*
 

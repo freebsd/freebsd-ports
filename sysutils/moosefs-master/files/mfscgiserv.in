@@ -10,7 +10,10 @@
 #
 # Add the following lines to /etc/rc.conf or /etc/rc.conf.local to enable mfscgiserv:
 #
-# mfscgiserv_enable="YES"
+# mfscgiserv_enable (bool):    Set to NO by default.
+#                              Set it to YES to enable mfscgiserv.
+# mfscgiserv_flags (str):      Set to "" by default.
+#                              Extra flags passed to mfscgiserv.
 #
 
 . /etc/rc.subr
@@ -18,18 +21,12 @@
 name=mfscgiserv
 rcvar=mfscgiserv_enable
 
+load_rc_config $name
+: ${mfscgiserv_enable=NO}
+
+mfscgiserv_user=mfs
+
+command_interpreter=%%PYTHON_CMD%%
 command=%%PREFIX%%/sbin/mfscgiserv
 
-stop_postcmd=stop_postcmd
-
-stop_postcmd()
-{
-  rm -f $pidfile
-}
-
-# set defaults
-mfscgiserv_enable=${mfscgiserv_enable:-"NO"}
-procname="python"
-
-load_rc_config $name
 run_rc_command "$1"

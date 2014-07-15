@@ -19,7 +19,7 @@ USES=		dos2unix zip:infozip
 
 EXTRACT_AFTER_ARGS=	-x *.bat *.exe readme.txt -d ${WRKDIR}
 NO_WRKSUBDIR=	yes
-OPTIONS_DEFINE=	OPENMP
+OPTIONS_DEFINE=	OPENMP DOCS
 SUB_FILES=	pkg-message
 
 .include <bsd.port.options.mk>
@@ -36,12 +36,10 @@ CXXFLAGS+=	-DDEBUG
 CXXFLAGS+=	-DNDEBUG
 .endif
 
-.if !defined(NOPORTDATA) || make(makesum)
 DISTFILES+=	bmp_j4c.zip bwt.1.zip bwt_j3.zip bwt_slowmode1.zip \
 		calgarytest.zpaq calgarytest2.zpaq exe_j1.zip fast.cfg \
 		jpg_test2.zip lazy210.zip lz1.zip max.cfg mid.cfg min.zip \
 		zpsfx.100.zip zpsfx101.cpp
-.endif
 
 .if ${PORT_OPTIONS:MDOCS} || make(makesum)
 DISTFILES+=	zpaq1.pdf zpaq202.pdf zpaq203.pdf
@@ -51,7 +49,6 @@ DISTFILES+=	zpaq1.pdf zpaq202.pdf zpaq203.pdf
 PORTDOCS=	libzpaq.cpp wbpe.cpp zpaq.cpp zpaq1.pdf zpaq202.pdf zpaq203.pdf zpipe.cpp
 .endif
 
-.if !defined(NOPORTDATA)
 .if ${PORT_OPTIONS:MDOCS}
 PORTDOCS+=	bwt_.cpp bwtpre.cpp bwtrle.cpp divsufsort.c divsufsort.h \
 		exe_jo.cpp jpeg_jo.cpp lzpre.cpp lzppre.cpp readme_bwt.txt \
@@ -65,7 +62,6 @@ WDATA=	bmp_j4.cfg bwt_j3.cfg bwt_slowmode1_1GB_block.cfg \
 	exe_j1.cfg jpg_test2.cfg lazy2.cfg lz1.cfg min.cfg zpsfx.tag
 DDATA=	fast.cfg max.cfg mid.cfg
 PORTDATA=	${WDATA} ${DDATA} zpsfx
-.endif
 
 .if ${PORT_OPTIONS:MOPENMP}
 OPENMP_CFLAGS+=	-fopenmp
@@ -82,19 +78,15 @@ post-extract:
 .endif
 
 post-patch:
-.if !defined(NOPORTDATA)
 	@${REINPLACE_CMD} -e 's|c:\\res\\zpaq\\||' ${WRKSRC}/bwt[12].cfg \
 		${WRKSRC}/bwtrle[12].cfg
-.endif
 
 do-build:
-.if !defined(NOPORTDATA)
 	@cd ${WRKSRC}; for prog in bwt_ bwtpre exe_jo jpeg_jo lazy2 lzpre \
 	lzppre; do \
 	${CXX} ${CXXFLAGS} -o $${prog} $${prog}.cpp; done; \
 	${CXX} ${CXXFLAGS} -o bwtrle bwtrle.cpp divsufsort.c; \
 	${CXX} ${CXXFLAGS} ${ZPAQFLAGS} -o zpsfx zpsfx.cpp libzpaq.cpp
-.endif
 	@cd ${WRKSRC}; \
 	${CXX} ${CXXFLAGS} -o wbpe wbpe.cpp; \
 	${CXX} ${CXXFLAGS} ${OPENMP_CFLAGS} ${ZPAQFLAGS} \
@@ -108,7 +100,6 @@ do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/${prog} ${STAGEDIR}${PREFIX}/bin
 .endfor
 	@${INSTALL_DATA} ${WRKSRC}/libzpaq.h ${STAGEDIR}${PREFIX}/include
-.if !defined(NOPORTDATA)
 .for prog in bwt_ bwtpre bwtrle exe_jo jpeg_jo lazy2 lzpre lzppre
 	@${INSTALL_PROGRAM} ${WRKSRC}/${prog} ${STAGEDIR}${PREFIX}/bin
 .endfor
@@ -116,7 +107,6 @@ do-install:
 	@cd ${WRKSRC}; ${INSTALL_DATA} ${WDATA} ${STAGEDIR}${DATADIR}; \
 	${INSTALL_LIB} zpsfx ${STAGEDIR}${DATADIR}
 	@cd ${_DISTDIR}; ${INSTALL_DATA} ${DDATA} ${STAGEDIR}${DATADIR}
-.endif
 .if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	@cd ${WRKSRC}; ${INSTALL_DATA} ${PORTDOCS:N*.pdf} ${STAGEDIR}${DOCSDIR}

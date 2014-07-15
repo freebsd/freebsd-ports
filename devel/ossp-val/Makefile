@@ -11,7 +11,7 @@ PKGNAMEPREFIX=	ossp-
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Flexible name to value mapping library for C variables
 
-LIB_DEPENDS=	ex.10:${PORTSDIR}/devel/ossp-ex
+LIB_DEPENDS=	libex.so:${PORTSDIR}/devel/ossp-ex
 
 USES=		gmake
 USE_LDCONFIG=	yes

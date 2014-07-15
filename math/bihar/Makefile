@@ -36,7 +36,7 @@ EXTRACT_ONLY=	#empty
 MAINTAINER=	bf@FreeBSD.org
 COMMENT=	Biharmonic equation in rectangular geometry and polar coordinates
 
-LIB_DEPENDS=	linpack.3:${PORTSDIR}/math/linpack
+LIB_DEPENDS=	liblinpack.so:${PORTSDIR}/math/linpack
 
 NO_STAGE=	yes
 NO_WRKSUBDIR=	yes

@@ -16,7 +16,7 @@ PROJECTHOST=	gdata-python-client
 USE_PYTHON=	2
 USE_PYDISTUTILS=	yes
 
-OPTIONS_DEFINE=	GMPY M2CRYPTO PYCRYPTO
+OPTIONS_DEFINE=	GMPY M2CRYPTO PYCRYPTO EXAMPLES
 
 # optional modules (see src/gdata/tlslite/utils/cryptomath.py)
 GMPY_DESC=	Multiprecision arithmetic

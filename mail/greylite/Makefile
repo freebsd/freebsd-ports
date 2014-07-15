@@ -31,12 +31,12 @@ NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MGEOIP}
-LIB_DEPENDS+=	GeoIP:${PORTSDIR}/net/GeoIP
+LIB_DEPENDS+=	libGeoIP.so:${PORTSDIR}/net/GeoIP
 MAKE_ARGS+=	WITH_GEOIP=yep
 .endif
 
 .if ${PORT_OPTIONS:MDNSBLENV}
-LIB_DEPENDS+=	cares:${PORTSDIR}/dns/c-ares
+LIB_DEPENDS+=	libcares.so:${PORTSDIR}/dns/c-ares
 MAKE_ARGS+=	WITH_DNSBLENV=yep
 PLIST_SUB+=	DNSBLENV=""
 .else

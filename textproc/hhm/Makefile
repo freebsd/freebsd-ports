@@ -10,7 +10,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	HTML Help Maker
 
-LIB_DEPENDS=	lzxcomp.1:${PORTSDIR}/archivers/liblzxcomp
+LIB_DEPENDS=	liblzxcomp.so:${PORTSDIR}/archivers/liblzxcomp
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 

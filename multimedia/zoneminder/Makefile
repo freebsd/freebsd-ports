@@ -15,9 +15,9 @@ COMMENT=	Complete security camera solution, fully web based with image analysis
 LICENSE=	GPLv2
 
 RUN_DEPENDS=	${LOCALBASE}/bin/sudo:${PORTSDIR}/security/sudo
-LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
-		netpbm.1:${PORTSDIR}/graphics/netpbm \
-		pcre.3:${PORTSDIR}/devel/pcre \
+LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
+		libnetpbm.so:${PORTSDIR}/graphics/netpbm \
+		libpcre.so:${PORTSDIR}/devel/pcre \
 		libavutil0.so:${PORTSDIR}/multimedia/ffmpeg0
 BUILD_DEPENDS=	${LOCALBASE}/bin/php-config:${PORTSDIR}/lang/php5-extensions \
 		p5-DBI>=0:${PORTSDIR}/databases/p5-DBI \

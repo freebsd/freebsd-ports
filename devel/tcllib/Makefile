@@ -18,8 +18,8 @@ OPTIONS_DEFINE=	DOCS MANPAGES
 USE_GITHUB=	yes
 GH_ACCOUNT=	tcltk
 GH_PROJECT=	tcllib
-GH_TAGNAME=	tcllib_${PORTVERSION:S/./_/}
-GH_COMMIT=	ce4a0e4
+GH_COMMIT=	8c846ec
+GH_TAGNAME=	${PORTNAME}_${PORTVERSION:S/./_/}
 
 USES+=		tcl
 GNU_CONFIGURE=	yes
@@ -81,20 +81,22 @@ post-patch:
 #	man pages have the .tcllib suffix, so there's no need to have a
 #	tcllib_ prefix too
 #
-	for man in `${FIND} ${WRKSRC} -name "tcllib_*.man"`; do \
+	cd ${WRKSRC} && \
+	for man in `${FIND} . -name "tcllib_*.man"`; do \
 	    ${MV} $$man `echo $$man | ${SED} -e 's|tcllib_||'`; \
-	done
-	for man in `${FIND} ${WRKSRC} -name "tcllib_*.n"`; do \
+	done && \
+	for man in `${FIND} . -name "tcllib_*.n"`; do \
 	    ${MV} $$man `echo $$man | ${SED} -e 's|tcllib_||'`; \
 	done
 
 #
 #	add the .tcllib suffix to man pages
 #
-	for man in `${FIND} ${WRKSRC} -name "*.man"`; do \
+	cd ${WRKSRC} && \
+	for man in `${FIND} . -name "*.man"`; do \
 	    ${MV} $$man `echo $$man | ${SED} -e 's|man$$|tcllib.man|'`; \
-	done
-	for man in `${FIND} ${WRKSRC} -name "*.n"`; do \
+	done && \
+	for man in `${FIND} . -name "*.n"`; do \
 	    ${MV} $$man `echo $$man | ${SED} -e 's|n$$|tcllib.n|'`; \
 	done
 

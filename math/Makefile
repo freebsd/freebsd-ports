@@ -258,6 +258,7 @@
     SUBDIR += mpc
     SUBDIR += mpexpr
     SUBDIR += mpfr
+    SUBDIR += mpir
     SUBDIR += mprime
     SUBDIR += msieve
     SUBDIR += mtl

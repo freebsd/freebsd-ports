@@ -44,6 +44,7 @@
     SUBDIR += bcusdk-eibd
     SUBDIR += beacon
     SUBDIR += beanstalkd
+    SUBDIR += belle-sip
     SUBDIR += bindtest
     SUBDIR += binkd
     SUBDIR += bird
@@ -355,7 +356,6 @@
     SUBDIR += linc-reference
     SUBDIR += linknx
     SUBDIR += linphone
-    SUBDIR += linphone-base
     SUBDIR += linux-f10-nss_ldap
     SUBDIR += linux-f10-openldap
     SUBDIR += linuxigd
@@ -369,6 +369,7 @@
     SUBDIR += mad_fcl
     SUBDIR += mcast-tools
     SUBDIR += mediaproxy
+    SUBDIR += mediastreamer
     SUBDIR += mediatomb
     SUBDIR += mgen
     SUBDIR += micro_inetd
@@ -1214,6 +1215,7 @@
     SUBDIR += udptunnel
     SUBDIR += udpxy
     SUBDIR += udt
+    SUBDIR += uget
     SUBDIR += ulxmlrpcpp
     SUBDIR += unfs3
     SUBDIR += unison

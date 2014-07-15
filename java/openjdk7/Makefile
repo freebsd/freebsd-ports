@@ -3,7 +3,7 @@
 
 PORTNAME=	openjdk
 PORTVERSION=	${JDK_MAJOR_VERSION}.${PORT_MINOR_VERSION}.${PORT_BUILD_NUMBER}
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	java devel
 MASTER_SITES=	http://download.java.net/openjdk/jdk${JDK_MAJOR_VERSION}u${JDK_MINOR_VERSION}/promoted/b${JDK_BUILD_NUMBER}/ \
@@ -29,7 +29,6 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 USES=		dos2unix iconv gmake zip
 USE_XORG+=	x11 xext xi xrender xt xtst
 MAKE_ARGS=	CC=${CC:Q} CXX=${CXX:Q} HOST_CC=${CC:Q}
-MAKE_JOBS_UNSAFE=	yes
 
 OPTIONS_DEFINE=		DEBUG POLICY TZUPDATE
 OPTIONS_DEFAULT=	POLICY TZUPDATE
@@ -46,13 +45,14 @@ JDK_BUILD_DATE=		26_aug_2013
 JDK_SRC_DISTFILE=	${PORTNAME}-${JDK_MAJOR_VERSION}u${JDK_MINOR_VERSION}-fcs-src-b${JDK_BUILD_NUMBER}-${JDK_BUILD_DATE}
 
 # Use our own version of ant to avoid circular dependencies
-ANT_VERSION=		1.9.3
+ANT_VERSION=		1.9.4
 ANT_DISTFILE=		apache-ant-${ANT_VERSION}-bin
 
 LATEST_LINK=		openjdk7
 
-LIB_DEPENDS+=	libfreetype.so:${PORTSDIR}/print/freetype2 \
-		libasound.so:${PORTSDIR}/audio/alsa-lib
+LIB_DEPENDS+=	libasound.so:${PORTSDIR}/audio/alsa-lib \
+		libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig \
+		libfreetype.so:${PORTSDIR}/print/freetype2
 BUILD_DEPENDS+=	zip:${PORTSDIR}/archivers/zip \
 		${UNZIP_CMD}:${PORTSDIR}/archivers/unzip \
 		${LOCALBASE}/include/cups/cups.h:${PORTSDIR}/print/cups-client
@@ -68,6 +68,7 @@ NOPRECIOUSMAKEVARS=	yes
 
 ONLY_FOR_ARCHS=	i386 amd64
 
+_MAKE_JOBS=	#
 MAKE_ENV+=	LANG="C" \
 		LC_ALL="C" \
 		JAVA_HOME="" \

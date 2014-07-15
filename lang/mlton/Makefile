@@ -26,7 +26,7 @@ BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash
 
 LICENSE_FILE=	doc/license/MLton-LICENSE
 
-OPTIONS_DEFINE=	SMLNJ MINGW32
+OPTIONS_DEFINE=	SMLNJ MINGW32 DOCS
 SMLNJ_DESC=	Bootstrap with SML/NJ (can take >15 hours)
 MINGW32_DESC=	Add the mingw32 target (requires wine)
 

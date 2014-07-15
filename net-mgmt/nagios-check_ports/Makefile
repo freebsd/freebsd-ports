@@ -3,6 +3,7 @@
 
 PORTNAME=	check_ports
 PORTVERSION=	0.7.1
+PORTREVISION=	1
 CATEGORIES=	net-mgmt
 PKGNAMEPREFIX=	nagios-
 
@@ -18,7 +19,7 @@ NO_BUILD=	yes
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 1000000
+.if ${OSVERSION} < 1000000 && ! defined(WITH_PKGNG)
 RUN_DEPENDS=	portaudit:${PORTSDIR}/ports-mgmt/portaudit
 .endif
 

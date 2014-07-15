@@ -15,7 +15,7 @@
 # was removed.
 #
 # $FreeBSD$
-# $MCom: portlint/portlint.pl,v 1.319 2014/06/21 19:21:54 marcus Exp $
+# $MCom: portlint/portlint.pl,v 1.325 2014/07/12 14:39:55 marcus Exp $
 #
 
 use strict;
@@ -50,7 +50,7 @@ $portdir = '.';
 # version variables
 my $major = 2;
 my $minor = 15;
-my $micro = 2;
+my $micro = 3;
 
 sub l { '[{(]'; }
 sub r { '[)}]'; }
@@ -1046,6 +1046,11 @@ sub checkpatch {
 		return;
 	}
 
+	if (length $file > 100) {
+		&perror("FATAL", $file, -1, "make sure patch file names contain no ".
+			"more than 100 characters.");
+	}
+
 	open(IN, "< $file") || return 0;
 	$whole = '';
 	while (<IN>) {
@@ -1889,6 +1894,7 @@ ruby sed sdl-config sh sort sysctl touch tr which xargs xmkmf
 			my $lineno = &linenumber($`);
 			if ($curline =~ /(?:^|\s)[\@\-]{0,2}$i(?:$|\s)/
 				&& $curline !~ /^[A-Z]+_TARGET[?+]?=[^\n]+$i/m
+				&& $curline !~ /^[A-Z]+_INSTALL_TARGET[?+]?=[^\n]+$i/m
 				&& $curline !~ /^IGNORE(.)?=[^\n]+$i/m
 				&& $curline !~ /^BROKEN(.)?=[^\n]+$i/m
 				&& $curline !~ /^RESTRICTED(.)?=[^\n]+$i/m
@@ -2480,7 +2486,7 @@ DIST_SUBDIR EXTRACT_ONLY
 			"the main category for a port");
 	}
 
-	if ($committer && $makevar{'.CURDIR'} =~ m'${portsdir}/([^/]+)/[^/]+/?$') {
+	if ($committer && $makevar{'.CURDIR'} =~ m/\Q${portsdir}\E\/([^\/]+)\/[^\/]+\/?$/) {
 		if ($cat[0] ne $1 && $makevar{PKGCATEGORY} ne $1 ) {
 			&perror("FATAL", $file, -1, "category \"$1\" must be listed first");
 		}
@@ -2526,16 +2532,6 @@ DIST_SUBDIR EXTRACT_ONLY
 				&perror("WARN", $file, -1, "when you specify multiple categories, ".
 				"language specific category should come first.");
 			}
-		}
-	}
-
-	# check number of MASTER_SITES
-	if ($makevar{MASTER_SITES} ne '' &&
-		! grep {$makevar{MASTER_SITES} =~ m|$_|} @MASTERSITES_WHITELIST) {
-		my @sites = split(/\s+/, $makevar{MASTER_SITES});
-		if (scalar(@sites) == 1 && !&is_predefined($sites[0], undef)) {
-			&perror("WARN", $file, -1, "only one MASTER_SITE configured.  ".
-				"Consider adding additional mirrors.");
 		}
 	}
 

@@ -10,7 +10,7 @@ MASTER_SITES=	http://foobillard.sunsite.dk/dnl/
 MAINTAINER=	thomas@bsdunix.ch
 COMMENT=	Free OpenGL billiards game
 
-LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png \
+LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png \
 		libfreetype.so:${PORTSDIR}/print/freetype2
 
 OPTIONS_DEFINE=	SDL NVIDIA_BUMPREF

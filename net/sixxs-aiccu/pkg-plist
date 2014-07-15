@@ -1,4 +1,2 @@
-@unexec if cmp -s %D/etc/aiccu.conf %D/etc/aiccu.conf.sample; then rm -f %D/etc/aiccu.conf; fi
-etc/aiccu.conf.sample
-@exec [ -f %B/aiccu.conf ] || install -m 0644 %B/%f %B/aiccu.conf
+@sample etc/aiccu.conf.sample
 sbin/sixxs-aiccu

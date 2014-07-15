@@ -16,7 +16,7 @@ LIB_DEPENDS=	libboost_system.so:${PORTSDIR}/devel/boost-libs	\
 		libleveldb.so:${PORTSDIR}/databases/leveldb	\
 		libicui18n.so:${PORTSDIR}/devel/icu
 
-OPTIONS_DEFINE=		UPNP
+OPTIONS_DEFINE=		UPNP DOCS
 OPTIONS_DEFAULT=	UPNP
 UPNP_DESC=		UPnP port mapping
 UPNP_LIB_DEPENDS=	libminiupnpc.so:${PORTSDIR}/net/miniupnpc

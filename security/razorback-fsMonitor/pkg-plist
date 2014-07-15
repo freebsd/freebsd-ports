@@ -1,5 +1,2 @@
 bin/fsMonitor
-@unexec if cmp -s %D/etc/razorback/fsMonitor.conf %D/etc/razorback/fsMonitor.conf.sample; then rm -f %D/etc/razorback/fsMonitor.conf; fi
-etc/razorback/fsMonitor.conf.sample
-@exec if [ ! -f %D/etc/razorback/fsMonitor.conf ]; then cp -p %D/%F %B/fsMonitor.conf; fi
-@dirrmtry etc/razorback
+@sample etc/razorback/fsMonitor.conf.sample

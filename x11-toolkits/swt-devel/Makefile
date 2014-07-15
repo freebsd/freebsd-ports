@@ -48,7 +48,7 @@ OPTIONS_DEFAULT=CAIRO GNOMEVFS
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MCAIRO}
-LIB_DEPENDS+=	cairo:${PORTSDIR}/graphics/cairo
+LIB_DEPENDS+=	libcairo.so:${PORTSDIR}/graphics/cairo
 PLIST_FILES+=	lib/libswt-cairo-gtk-%%BUILD%%.so
 MAKE_CAIRO=	make_cairo
 .endif

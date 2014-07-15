@@ -1,0 +1,205 @@
+@unexec if cmp -s %D/%%ETCDIR%%/fastcgi_params-dist %D/%%ETCDIR%%/fastcgi_params; then rm -f %D/%%ETCDIR%%/fastcgi_params; fi
+%%ETCDIR%%/fastcgi_params-dist
+@exec if [ ! -f %D/%%ETCDIR%%/fastcgi_params ] ; then cp -p %D/%F %B/fastcgi_params && chmod u+w %B/fastcgi_params; fi
+%%ETCDIR%%/koi-utf
+%%ETCDIR%%/koi-win
+@unexec if cmp -s %D/%%ETCDIR%%/scgi_params-dist %D/%%ETCDIR%%/scgi_params; then rm -f %D/%%ETCDIR%%/scgi_params; fi
+%%ETCDIR%%/scgi_params-dist
+@exec if [ ! -f %D/%%ETCDIR%%/scgi_params ] ; then cp -p %D/%F %B/scgi_params && chmod u+w %B/scgi_params; fi
+@unexec if cmp -s %D/%%ETCDIR%%/uwsgi_params-dist %D/%%ETCDIR%%/uwsgi_params; then rm -f %D/%%ETCDIR%%/uwsgi_params; fi
+%%ETCDIR%%/uwsgi_params-dist
+@exec if [ ! -f %D/%%ETCDIR%%/uwsgi_params ] ; then cp -p %D/%F %B/uwsgi_params  && chmod u+w %B/uwsgi_params; fi
+%%ETCDIR%%/win-utf
+@unexec if cmp -s %D/%%ETCDIR%%/mime.types-dist %D/%%ETCDIR%%/mime.types; then rm -f %D/%%ETCDIR%%/mime.types; fi
+%%ETCDIR%%/mime.types-dist
+@exec if [ ! -f %D/%%ETCDIR%%/mime.types ] ; then cp -p %D/%F %B/mime.types  && chmod u+w %B/mime.types; fi
+@unexec if cmp -s %D/%%ETCDIR%%/nginx.conf-dist %D/%%ETCDIR%%/nginx.conf; then rm -f %D/%%ETCDIR%%/nginx.conf; fi
+@dirrmtry %%ETCDIR%%
+%%ETCDIR%%/nginx.conf-dist
+@exec if [ ! -f %D/%%ETCDIR%%/nginx.conf ] ; then cp -p %D/%F %B/nginx.conf && chmod u+w %B/nginx.conf; fi
+@exec if [ ! -d %%NGINX_TMPDIR%% ] ; then mkdir  %%NGINX_TMPDIR%%; fi
+%%WWWDATA%%@exec mkdir -p -m 755 %D/www/nginx-dist
+%%WWWDATA%%@exec if [ ! -d %D/www/nginx/ ] ; then ln -fs %D/www/nginx-dist %D/www/nginx; fi
+%%WWWDATA%%www/nginx-dist/EXAMPLE_DIRECTORY-DONT_ADD_OR_TOUCH_ANYTHING
+%%WWWDATA%%www/nginx-dist/index.html
+%%WWWDATA%%www/nginx-dist/50x.html
+%%WWWDATA%%@exec chmod a-w %D/www/nginx-dist
+%%WWWDATA%%@unexec if [ -L %D/www/nginx ]; then rm -f %D/www/nginx; fi
+%%WWWDATA%%@dirrmtry www/nginx-dist
+%%ETCDIR%%/include/ddebug.h
+%%ETCDIR%%/include/nginx.h
+%%ETCDIR%%/include/ngx_alloc.h
+%%ETCDIR%%/include/ngx_array.h
+%%ETCDIR%%/include/ngx_atomic.h
+%%ETCDIR%%/include/ngx_auto_config.h
+%%ETCDIR%%/include/ngx_auto_headers.h
+%%ETCDIR%%/include/ngx_buf.h
+%%ETCDIR%%/include/ngx_channel.h
+%%ETCDIR%%/include/ngx_conf_file.h
+%%ETCDIR%%/include/ngx_config.h
+%%ETCDIR%%/include/ngx_connection.h
+%%ETCDIR%%/include/ngx_core.h
+%%ETCDIR%%/include/ngx_crc.h
+%%ETCDIR%%/include/ngx_crc32.h
+%%ETCDIR%%/include/ngx_crypt.h
+%%ETCDIR%%/include/ngx_cycle.h
+%%ETCDIR%%/include/ngx_darwin.h
+%%ETCDIR%%/include/ngx_darwin_config.h
+%%ETCDIR%%/include/ngx_errno.h
+%%ETCDIR%%/include/ngx_event.h
+%%ETCDIR%%/include/ngx_event_busy_lock.h
+%%ETCDIR%%/include/ngx_event_connect.h
+%%ETCDIR%%/include/ngx_event_openssl.h
+%%ETCDIR%%/include/ngx_event_pipe.h
+%%ETCDIR%%/include/ngx_event_posted.h
+%%ETCDIR%%/include/ngx_event_timer.h
+%%ETCDIR%%/include/ngx_file.h
+%%ETCDIR%%/include/ngx_files.h
+%%ETCDIR%%/include/ngx_freebsd.h
+%%ETCDIR%%/include/ngx_freebsd_config.h
+%%ETCDIR%%/include/ngx_freebsd_rfork_thread.h
+%%ETCDIR%%/include/ngx_gcc_atomic_amd64.h
+%%ETCDIR%%/include/ngx_gcc_atomic_ppc.h
+%%ETCDIR%%/include/ngx_gcc_atomic_sparc64.h
+%%ETCDIR%%/include/ngx_gcc_atomic_x86.h
+%%ETCDIR%%/include/ngx_hash.h
+%%ETCDIR%%/include/ngx_http.h
+%%ETCDIR%%/include/ngx_http_busy_lock.h
+%%ETCDIR%%/include/ngx_http_cache.h
+%%ETCDIR%%/include/ngx_http_config.h
+%%ETCDIR%%/include/ngx_http_core_module.h
+%%ETCDIR%%/include/ngx_http_lua_accessby.h
+%%ETCDIR%%/include/ngx_http_lua_args.h
+%%ETCDIR%%/include/ngx_http_lua_bodyfilterby.h
+%%ETCDIR%%/include/ngx_http_lua_cache.h
+%%ETCDIR%%/include/ngx_http_lua_capturefilter.h
+%%ETCDIR%%/include/ngx_http_lua_clfactory.h
+%%ETCDIR%%/include/ngx_http_lua_common.h
+%%ETCDIR%%/include/ngx_http_lua_conf.h
+%%ETCDIR%%/include/ngx_http_lua_consts.h
+%%ETCDIR%%/include/ngx_http_lua_contentby.h
+%%ETCDIR%%/include/ngx_http_lua_control.h
+%%ETCDIR%%/include/ngx_http_lua_coroutine.h
+%%ETCDIR%%/include/ngx_http_lua_ctx.h
+%%ETCDIR%%/include/ngx_http_lua_directive.h
+%%ETCDIR%%/include/ngx_http_lua_exception.h
+%%ETCDIR%%/include/ngx_http_lua_headerfilterby.h
+%%ETCDIR%%/include/ngx_http_lua_headers.h
+%%ETCDIR%%/include/ngx_http_lua_headers_in.h
+%%ETCDIR%%/include/ngx_http_lua_headers_out.h
+%%ETCDIR%%/include/ngx_http_lua_initby.h
+%%ETCDIR%%/include/ngx_http_lua_log.h
+%%ETCDIR%%/include/ngx_http_lua_logby.h
+%%ETCDIR%%/include/ngx_http_lua_misc.h
+%%ETCDIR%%/include/ngx_http_lua_ndk.h
+%%ETCDIR%%/include/ngx_http_lua_output.h
+%%ETCDIR%%/include/ngx_http_lua_pcrefix.h
+%%ETCDIR%%/include/ngx_http_lua_phase.h
+%%ETCDIR%%/include/ngx_http_lua_probe.h
+%%ETCDIR%%/include/ngx_http_lua_regex.h
+%%ETCDIR%%/include/ngx_http_lua_req_body.h
+%%ETCDIR%%/include/ngx_http_lua_req_method.h
+%%ETCDIR%%/include/ngx_http_lua_rewriteby.h
+%%ETCDIR%%/include/ngx_http_lua_script.h
+%%ETCDIR%%/include/ngx_http_lua_setby.h
+%%ETCDIR%%/include/ngx_http_lua_shdict.h
+%%ETCDIR%%/include/ngx_http_lua_sleep.h
+%%ETCDIR%%/include/ngx_http_lua_socket_tcp.h
+%%ETCDIR%%/include/ngx_http_lua_socket_udp.h
+%%ETCDIR%%/include/ngx_http_lua_string.h
+%%ETCDIR%%/include/ngx_http_lua_subrequest.h
+%%ETCDIR%%/include/ngx_http_lua_time.h
+%%ETCDIR%%/include/ngx_http_lua_uri.h
+%%ETCDIR%%/include/ngx_http_lua_uthread.h
+%%ETCDIR%%/include/ngx_http_lua_util.h
+%%ETCDIR%%/include/ngx_http_lua_variable.h
+%%ETCDIR%%/include/ngx_http_reqstat.h
+%%ETCDIR%%/include/ngx_http_request.h
+%%ETCDIR%%/include/ngx_http_script.h
+%%ETCDIR%%/include/ngx_http_spdy.h
+%%ETCDIR%%/include/ngx_http_spdy_module.h
+%%ETCDIR%%/include/ngx_http_ssi_filter_module.h
+%%ETCDIR%%/include/ngx_http_ssl_module.h
+%%ETCDIR%%/include/ngx_http_upstream.h
+%%ETCDIR%%/include/ngx_http_upstream_round_robin.h
+%%ETCDIR%%/include/ngx_http_variables.h
+%%ETCDIR%%/include/ngx_inet.h
+%%ETCDIR%%/include/ngx_linux.h
+%%ETCDIR%%/include/ngx_linux_config.h
+%%ETCDIR%%/include/ngx_list.h
+%%ETCDIR%%/include/ngx_log.h
+%%ETCDIR%%/include/ngx_md5.h
+%%ETCDIR%%/include/ngx_murmurhash.h
+%%ETCDIR%%/include/ngx_open_file_cache.h
+%%ETCDIR%%/include/ngx_os.h
+%%ETCDIR%%/include/ngx_palloc.h
+%%ETCDIR%%/include/ngx_parse.h
+%%ETCDIR%%/include/ngx_pipe.h
+%%ETCDIR%%/include/ngx_posix_config.h
+%%ETCDIR%%/include/ngx_process.h
+%%ETCDIR%%/include/ngx_process_cycle.h
+%%ETCDIR%%/include/ngx_queue.h
+%%ETCDIR%%/include/ngx_radix_tree.h
+%%ETCDIR%%/include/ngx_rbtree.h
+%%ETCDIR%%/include/ngx_regex.h
+%%ETCDIR%%/include/ngx_resolver.h
+%%ETCDIR%%/include/ngx_segment_tree.h
+%%ETCDIR%%/include/ngx_setaffinity.h
+%%ETCDIR%%/include/ngx_setproctitle.h
+%%ETCDIR%%/include/ngx_sha1.h
+%%ETCDIR%%/include/ngx_shmem.h
+%%ETCDIR%%/include/ngx_shmtx.h
+%%ETCDIR%%/include/ngx_slab.h
+%%ETCDIR%%/include/ngx_socket.h
+%%ETCDIR%%/include/ngx_solaris.h
+%%ETCDIR%%/include/ngx_solaris_config.h
+%%ETCDIR%%/include/ngx_string.h
+%%ETCDIR%%/include/ngx_sunpro_atomic_sparc64.h
+%%ETCDIR%%/include/ngx_sysinfo.h
+%%ETCDIR%%/include/ngx_syslog.h
+%%ETCDIR%%/include/ngx_thread.h
+%%ETCDIR%%/include/ngx_time.h
+%%ETCDIR%%/include/ngx_times.h
+%%ETCDIR%%/include/ngx_trie.h
+%%ETCDIR%%/include/ngx_user.h
+%%ETCDIR%%/modules/ngx_http_access_module.so
+%%ETCDIR%%/modules/ngx_http_addition_filter_module.so
+%%ETCDIR%%/modules/ngx_http_autoindex_module.so
+%%ETCDIR%%/modules/ngx_http_browser_module.so
+%%ETCDIR%%/modules/ngx_http_charset_filter_module.so
+%%ETCDIR%%/modules/ngx_http_concat_module.so
+%%ETCDIR%%/modules/ngx_http_empty_gif_module.so
+%%ETCDIR%%/modules/ngx_http_fastcgi_module.so
+%%ETCDIR%%/modules/ngx_http_flv_module.so
+%%ETCDIR%%/modules/ngx_http_footer_filter_module.so
+%%ETCDIR%%/modules/ngx_http_geoip_module.so
+%%ETCDIR%%/modules/ngx_http_image_filter_module.so
+%%ETCDIR%%/modules/ngx_http_limit_conn_module.so
+%%ETCDIR%%/modules/ngx_http_limit_req_module.so
+%%ETCDIR%%/modules/ngx_http_lua_module.so
+%%ETCDIR%%/modules/ngx_http_map_module.so
+%%ETCDIR%%/modules/ngx_http_memcached_module.so
+%%ETCDIR%%/modules/ngx_http_mp4_module.so
+%%ETCDIR%%/modules/ngx_http_random_index_module.so
+%%ETCDIR%%/modules/ngx_http_referer_module.so
+%%ETCDIR%%/modules/ngx_http_scgi_module.so
+%%ETCDIR%%/modules/ngx_http_secure_link_module.so
+%%ETCDIR%%/modules/ngx_http_slice_module.so
+%%ETCDIR%%/modules/ngx_http_split_clients_module.so
+%%ETCDIR%%/modules/ngx_http_sub_filter_module.so
+%%ETCDIR%%/modules/ngx_http_sysguard_module.so
+%%ETCDIR%%/modules/ngx_http_trim_filter_module.so
+%%ETCDIR%%/modules/ngx_http_upstream_ip_hash_module.so
+%%ETCDIR%%/modules/ngx_http_upstream_least_conn_module.so
+%%ETCDIR%%/modules/ngx_http_upstream_session_sticky_module.so
+%%ETCDIR%%/modules/ngx_http_user_agent_module.so
+%%ETCDIR%%/modules/ngx_http_userid_filter_module.so
+%%ETCDIR%%/modules/ngx_http_uwsgi_module.so
+%%ETCDIR%%/modules/ngx_http_xslt_filter_module.so
+sbin/nginx
+sbin/dso_tool
+@unexec if [ -z ${UPGRADE_PORT} ] ; then rm -fr %%NGINX_TMPDIR%%; fi
+man/man8/nginx.8.gz
+@dirrmtry %%ETCDIR%%/modules
+@dirrmtry %%ETCDIR%%/include
+@dirrmtry %%NGINX_TMPDIR%%

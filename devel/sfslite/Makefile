@@ -10,7 +10,7 @@ MASTER_SITES=	http://dist.okws.org/dist/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Standard version of the sfslite library
 
-LIB_DEPENDS=	gmp.10:${PORTSDIR}/math/gmp
+LIB_DEPENDS=	libgmp.so:${PORTSDIR}/math/gmp
 
 CONFIGURE_ARGS=	--with-gmp=${LOCALBASE}
 

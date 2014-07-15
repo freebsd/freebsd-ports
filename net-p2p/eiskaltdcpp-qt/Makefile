@@ -15,8 +15,8 @@ LICENSE=	GPLv3
 
 RUN_DEPENDS=	${LOCALBASE}/share/eiskaltdcpp/keep_me:${PORTSDIR}/net-p2p/eiskaltdcpp-data
 
-LIB_DEPENDS+=	eiskaltdcpp:${PORTSDIR}/net-p2p/eiskaltdcpp-lib \
-		execinfo:${PORTSDIR}/devel/libexecinfo
+LIB_DEPENDS+=	libeiskaltdcpp.so:${PORTSDIR}/net-p2p/eiskaltdcpp-lib \
+		libexecinfo.so:${PORTSDIR}/devel/libexecinfo
 BUILD_DEPENDS+=	chrpath:${PORTSDIR}/devel/chrpath
 
 CMAKE_ARGS+=	-DBUILD_LIB:BOOL=OFF
@@ -56,7 +56,7 @@ NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MASPELL}
-LIB_DEPENDS+=	aspell:${PORTSDIR}/textproc/aspell
+LIB_DEPENDS+=	libaspell.so:${PORTSDIR}/textproc/aspell
 CMAKE_ARGS+=	-DUSE_ASPELL:BOOL=on
 .else
 CMAKE_ARGS+=	-DUSE_ASPELL:BOOL=0
@@ -100,7 +100,7 @@ CMAKE_ARGS+=	-DUSE_QT_SQLITE:BOOL=OFF
 .endif
 
 .if ${PORT_OPTIONS:MMINIUPNP}
-LIB_DEPENDS+=	miniupnpc:${PORTSDIR}/net/miniupnpc
+LIB_DEPENDS+=	libminiupnpc.so:${PORTSDIR}/net/miniupnpc
 CMAKE_ARGS+=	-DUSE_MINIUPNP:BOOL=ON -DLOCAL_MINIUPNP:BOOL=OFF
 .else
 CMAKE_ARGS+=	-DUSE_MINIUPNP:BOOL=OFF

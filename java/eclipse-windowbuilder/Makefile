@@ -8,10 +8,10 @@ MASTER_SITES=	${MASTER_SITE_ECLIPSE:S,/eclipse/downloads/drops/,/windowbuilder/W
 		${MASTER_SITE_LOCAL:S,%SUBDIR%/,ale/:native,}
 MASTER_SITE_SUBDIR=	R201309271200
 PKGNAMEPREFIX=	eclipse-
-DISTFILES=	WB_v${PORTVERSION}_UpdateSite_for_Eclipse3.7.zip \
+DISTFILES=	WB_v${PORTVERSION}_UpdateSite_for_Eclipse4.3.zip \
 		org.eclipse.wb.os.freebsd_1.6.1.r37x201309092314.jar:native
 DIST_SUBDIR=	eclipse
-EXTRACT_ONLY=	WB_v${PORTVERSION}_UpdateSite_for_Eclipse3.7.zip
+EXTRACT_ONLY=	WB_v${PORTVERSION}_UpdateSite_for_Eclipse4.3.zip
 
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	Powerful and easy to use Java GUI designer for Eclipse

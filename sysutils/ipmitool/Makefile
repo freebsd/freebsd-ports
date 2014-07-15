@@ -12,7 +12,7 @@ COMMENT=	CLI to manage IPMI systems
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		tar:bzip2 gmake
+USES=		tar:bzip2 gmake readline
 USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--enable-intf-lan --enable-intf-lanplus \
@@ -27,7 +27,7 @@ PORTDOCS=	AUTHORS COPYING ChangeLog README
 
 PERIODIC_DIR=	etc/periodic/daily
 
-OPTIONS_DEFINE=	FREEIPMI
+OPTIONS_DEFINE=	FREEIPMI DOCS
 FREEIPMI_DESC=	Enable support for freeipmi
 
 .if defined(WITH_DEBUG)

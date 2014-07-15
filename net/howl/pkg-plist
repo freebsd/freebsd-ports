@@ -24,13 +24,13 @@ include/howl/salt/signal.h
 include/howl/salt/socket.h
 include/howl/salt/time.h
 lib/libhowl.a
-lib/libhowl.la
 lib/libhowl.so
 lib/libhowl.so.0
+lib/libhowl.so.0.0.0
 lib/libmDNSResponder.a
-lib/libmDNSResponder.la
 lib/libmDNSResponder.so
 lib/libmDNSResponder.so.0
+lib/libmDNSResponder.so.0.0.0
 libdata/pkgconfig/howl.pc
 %%DATADIR%%/help/address-summary.html
 %%DATADIR%%/help/address.html

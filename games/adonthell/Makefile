@@ -16,7 +16,7 @@ COMMENT=	Free role playing game
 LICENSE=	GPLv2
 LICENSE_DISTFILES=	${DISTFILES}
 
-LIB_DEPENDS=	vorbis:${PORTSDIR}/audio/libvorbis \
+LIB_DEPENDS=	libvorbis.so:${PORTSDIR}/audio/libvorbis \
 		libfreetype.so:${PORTSDIR}/print/freetype2
 
 USE_SDL=	mixer ttf sdl

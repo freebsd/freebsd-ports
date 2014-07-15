@@ -21,9 +21,13 @@ MAKE_ENV=	VPATH="${PYTHON_WRKSRC}"
 
 INSTALL_TARGET=	altinstall
 
-USES=		gmake readline shebangfix tar:xz
+USES=		gmake readline shebangfix tar:xz cpe
 USE_LDCONFIG=	yes
 USE_PYTHON=	yes
+
+CPE_VENDOR=	python
+CPE_PRODUCT=	${CPE_VENDOR}
+CPE_VERSION=	${PORTVERSION}
 
 PYTHON_VERSION=	python3.3
 PYTHON_NO_DEPENDS=	yes
@@ -213,11 +217,9 @@ post-install:
 	${INSTALL_MAN} ${PYTHON_WRKSRC}/Misc/python.man \
 		${STAGEDIR}${MAN1PREFIX}/man/man1/${PYTHON_VERSION}.1
 
-.if !defined(NOPORTDATA)
 	@${MKDIR} ${STAGEDIR}${DATADIR}
 	@cd ${PYTHON_WRKSRC}; ${TAR} -cf - Tools | \
 		(cd ${STAGEDIR}${DATADIR}; ${TAR} -xf -)
-.endif
 
 regression-test: build
 	@cd ${WRKSRC} && ${MAKE_CMD} TESTOPTS=-j${MAKE_JOBS_NUMBER} test

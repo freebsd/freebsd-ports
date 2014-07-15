@@ -29,7 +29,7 @@ AREACODE_DATAFILE=${PREFIX}/etc/pbx/areacodes
 MAKEFILE=make/freebsd${X_OR_NOT}.mak
 AUTHOR=		"Ullrich von Bassewitz" <uz@ibb.schwaben.com>
 
-OPTIONS_DEFINE=	X11 DTR_OFF
+OPTIONS_DEFINE=	X11 DTR_OFF DOCS
 OPTIONS_DEFAULT=X11
 NO_OPTIONS_SORT=yes
 DTR_OFF_DESC=	use dtr-off patch

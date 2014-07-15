@@ -14,8 +14,8 @@ COMMENT=	Sather compiler
 #
 # NOTE: currently build fails with threaded Tk
 #
-LIB_DEPENDS=	tk84.1:${PORTSDIR}/x11-toolkits/tk84 \
-		gc-redirect.1:${PORTSDIR}/devel/boehm-gc-redirect
+LIB_DEPENDS=	libtk84.so:${PORTSDIR}/x11-toolkits/tk84 \
+		libgc-redirect.so:${PORTSDIR}/devel/boehm-gc-redirect
 BUILD_DEPENDS=	${LOCALBASE}/bin/libtool:${PORTSDIR}/devel/libtool
 
 USES=		gmake tar:bzip2

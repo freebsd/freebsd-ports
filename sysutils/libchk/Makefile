@@ -9,12 +9,12 @@ MASTER_SITES=	ftp://ftp.iDaemons.org/pub/distfiles/ \
 MASTER_SITE_SUBDIR=	knu
 
 MAINTAINER=	knu@FreeBSD.org
-COMMENT=	A tool to check shared library links
+COMMENT=	Tool to check shared library links
 
-LICENSE=	BSD
+LICENSE=	BSD2CLAUSE
 
-USES=		tar:bzip2
-USE_RUBY=	yes
+USES=			tar:bzip2
+USE_RUBY=		yes
 USE_RUBY_FEATURES=	optparse
 
 MAKE_ARGS=	PREFIX="${PREFIX}"

@@ -156,8 +156,8 @@ detect_beadm()
    fi
 
    # Get list of beadm datasets
-   for b in `${BEADM} list 2>/dev/null| grep -v "Created" | cut -d ' ' -f 1`
-   do
+   for b in `${BEADM} list -H 2>/dev/null | awk '{print $1}'`
+   do 
       # Got a beadm snapshot, lets get the complete dataset name
       beLine=`${BEADM} list -a | grep "/$BEDS/${b}"`
       cdataset=`echo $beLine | awk '{print $1}'`

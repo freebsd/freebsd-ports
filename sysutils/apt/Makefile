@@ -16,7 +16,7 @@ BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash \
 RUN_DEPENDS:=	${BUILD_DEPENDS} \
 		dpkg:${PORTSDIR}/archivers/dpkg \
 		gpg:${PORTSDIR}/security/gnupg1
-LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl
+LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl
 
 GNU_CONFIGURE=	yes
 USES=		gettext iconv gmake

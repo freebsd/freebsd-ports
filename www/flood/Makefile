@@ -10,8 +10,8 @@ DISTNAME=	httpd-test_20041105052051
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Profile-driven HTTP load tester
 
-LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2 \
-		apr-1:${PORTSDIR}/devel/apr1
+LIB_DEPENDS=	libexpat.so:${PORTSDIR}/textproc/expat2 \
+		libapr-1.so:${PORTSDIR}/devel/apr1
 
 WRKSRC=		${WRKDIR}/httpd-test/flood
 USE_AUTOTOOLS=	autoconf libtool:env

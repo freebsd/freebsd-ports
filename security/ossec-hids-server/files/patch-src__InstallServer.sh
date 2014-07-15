@@ -1,5 +1,5 @@
---- ./src/InstallServer.sh.orig	2013-10-29 12:13:44.000000000 -0600
-+++ ./src/InstallServer.sh	2014-04-21 19:56:55.000000000 -0600
+--- ./src/InstallServer.sh.orig	2014-05-22 07:10:57.000000000 -0600
++++ ./src/InstallServer.sh	2014-07-13 15:24:45.552390120 -0600
 @@ -44,13 +44,13 @@
  
  # Creating groups/users
@@ -139,16 +139,16 @@
  
  # Moving the binary files
  cp -pr addagent/manage_agents agentlessd/ossec-agentlessd \
-@@ -255,7 +255,7 @@
- cp -pr util/syscheck_control ${DIR}/bin/
- cp -pr util/rootcheck_control ${DIR}/bin/
+@@ -257,7 +257,7 @@
+ cp -pr external/lua/src/ossec-lua ${DIR}/bin/
+ cp -pr external/lua/src/ossec-luac ${DIR}/bin/
  cp -pr ../contrib/util.sh ${DIR}/bin/
 -chown root:${GROUP} ${DIR}/bin/util.sh
 +#chown root:${GROUP} ${DIR}/bin/util.sh
  chmod +x ${DIR}/bin/util.sh
  
  # Local install chosen
-@@ -285,14 +285,14 @@
+@@ -287,14 +287,14 @@
    
  cp -pr ../etc/internal_options.conf ${DIR}/etc/
  cp -pr rootcheck/db/*.txt ${DIR}/etc/shared/
@@ -171,7 +171,7 @@
  chmod 440 ${DIR}/etc/decoder.xml
  chmod 440 ${DIR}/etc/local_decoder.xml >/dev/null 2>&1
  chmod 440 ${DIR}/etc/internal_options.conf
-@@ -312,9 +312,9 @@
+@@ -314,9 +314,9 @@
  cp -p ../active-response/firewalls/*.sh ${DIR}/active-response/bin/
  
  chmod 550 ${DIR}/active-response/bin/*
@@ -183,7 +183,7 @@
  chmod 550 ${DIR}/bin/*
  
  
-@@ -326,12 +326,12 @@
+@@ -328,12 +328,12 @@
  
  ls ../etc/ossec.mc > /dev/null 2>&1
  if [ $? = 0 ]; then

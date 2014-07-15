@@ -9,9 +9,9 @@ MASTER_SITES=	http://www.autistici.org/bakunin/libnxml/ \
 		http://nivi.interfree.it/distfiles/${PORTNAME}/${PORTVERSION}/
 
 MAINTAINER=	nivit@FreeBSD.org
-COMMENT=	A C library for writing XML 1.0/1.1 files or streams
+COMMENT=	C library for writing XML 1.0/1.1 files or streams
 
-LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl
+LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl
 
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include

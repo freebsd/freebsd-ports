@@ -1,5 +1,5 @@
---- configure.orig	Thu Oct 13 19:03:54 2005
-+++ configure	Tue Nov 29 12:41:17 2005
+--- configure.orig	2014-07-10 19:20:13.118096813 +1000
++++ configure	2014-07-10 19:20:13.117096540 +1000
 @@ -45,7 +45,7 @@
  
  
@@ -9,6 +9,17 @@
  
  
  echo ""
+@@ -63,8 +63,8 @@
+ 
+ rep=""
+ if (test -f $conf) then
+-  echo "A configuration file already exists, overwrite? (y/n):";
+-  read rep;
++  echo "A configuration file already exists, not overwriting";
++  rep="n"
+ else
+   rep="y"
+ fi
 @@ -96,7 +96,7 @@
  # INSTALLATION DIRECTORY
  #############################################################################
@@ -18,7 +29,233 @@
  
  
  # Now add the variables that need user interaction
-@@ -438,8 +438,7 @@
+@@ -127,19 +127,11 @@
+   fi;
+ done
+ 
+-# Prompt if not found
++# Don't Prompt if not found
+ if (test $found -eq 0) then
+   echo 'ERROR: grep utility not found';
+-  echo 'Enter location of executable:';
+-  while (test 1 -eq 1) 
+-    do read grepexe;
+-    if (test -x "$grepexe") then
+-	  echo \$GREP_EXE = \'$grepexe\'\; >> $conf; 
+-      break;
+-    else
+-      echo 'grep was not found (try again):';
+-    fi;
+-  done
++  echo 'Configure aborted!';
++  exit 1
+ fi
+ 
+ 
+@@ -156,19 +148,11 @@
+   fi;
+ done
+ 
+-# Prompt if not found
++# Don't Prompt if not found
+ if (test $found -eq 0) then
+   echo 'ERROR: file utility not found';
+-  echo 'Enter location of executable:';
+-  while (test 1 -eq 1) 
+-    do read fileexe;
+-    if (test -x "$fileexe") then
+-	  echo \$FILE_EXE = \'$filexe\'\; >> $conf; 
+-      break;
+-    else
+-      echo 'file was not found (try again):';
+-    fi;
+-  done
++  echo 'Configure aborted!';
++  exit 1
+ fi
+ 
+ #
+@@ -189,19 +173,11 @@
+   fi;
+ done
+ 
+-# Prompt if not found
++# Don't Prompt if not found
+ if (test $found -eq 0) then
+   echo 'ERROR: md5/md5sum utility not found';
+-  echo 'Enter location of executable:';
+-  while (test 1 -eq 1) 
+-    do read md5exe;
+-    if (test -x "$md5exe") then
+-	  echo \$MD5_EXE = \'$md5exe\'\; >> $conf; 
+-      break;
+-    else
+-      echo 'md5 was not found (try again):';
+-    fi;
+-  done
++  echo 'Configure aborted!';
++  exit 1
+ fi
+ 
+ 
+@@ -263,25 +239,8 @@
+ if (test $found -eq 0) then
+   echo 'Sleuth Kit tools were not found in the standard install locations.'
+   echo 'If you have not installed them, do so now and configure autopsy again.'
+-  echo 'If you have installed them in a non-standard location, then'
+-  echo '  enter the "bin" directory now:'
+-
+-  while (test 1 -eq 1) 
+-    do read tskdir;
+-    if ((test -x ${tskdir}/fls) && (test -x ${tskdir}/ffind) && (test -x ${tskdir}/blkstat) && \
+-          (test -x ${tskdir}/blkls) && (test -x ${tskdir}/blkcat) && \
+-          (test -x ${tskdir}/mmls) && (test -x ${tskdir}/mmstat) && \
+-          (test -x ${tskdir}/fsstat) && (test -x ${tskdir}/img_stat) && \
+-          (test -x ${tskdir}/istat) && (test -x ${tskdir}/ifind) && \
+-          (test -x ${tskdir}/icat) && (test -x ${tskdir}/ils) && \
+-          (test -x ${tskdir}/srch_strings) && \
+-          (test -x ${tskdir}/mactime) && (test -x ${tskdir}/sorter)) then
+-      echo \$TSKDIR = \'${tskdir}\'\; >> $conf;
+-      break;
+-    else
+-      echo 'TSK tools were not found or incomplete (try again):';
+-    fi;
+-  done
++  echo 'Configure aborted!'
++  exit 1
+ fi;
+ 
+ # Test for latest version
+@@ -297,9 +256,6 @@
+ elif (test "$ver" '<' "$curtskver") then 
+ 	echo '';
+     echo "*** NOTE: A more recent version ($curtskver) of The Sleuth Kit Exists ***"
+-	echo "  [Press Enter to Continue]";
+-	read foo;
+-
+ else
+ 	echo '  Required version found';
+ fi
+@@ -307,73 +263,18 @@
+ 
+ 
+ # NSRL
+-echo ''
+-echo '---------------------------------------------------------------'
+-echo ''
+-echo 'The NIST National Software Reference Library (NSRL) contains'
+-echo 'hash values of known good and bad files.'
+-echo '         http://www.nsrl.nist.gov'
+-echo ''
+-echo 'Have you purchased or downloaded a copy of the NSRL (y/n) [n]'
+-read rep;
+-if (test "$rep" = "y") then
+-
+-  echo 'Enter the directory where you installed it:'
+-  while (test 1 -eq 1) 
+-    do read nsrldir;
+-    if (test "$nsrldir" = "cancel") then
+-        echo \$NSRLDB = \'\'\; >> $conf;
+-		break;
+-	fi;
+-    if (test -f "${nsrldir}/NSRLFile.txt") then
+-      echo '  NSRL database was found (NSRLFile.txt)';
+-      echo \$NSRLDB = \'${nsrldir}/NSRLFile.txt\'\; >> $conf;
+-
+-	  if (test -f "${nsrldir}/NSRLFile.txt-md5.idx") then
+-		echo '  NSRL Index file found (NSRLFile.txt-md5.idx)';
+-      else
+-        echo '  NSRL Index file not found, do you want it created? (y/n) [n]:'
+-        read rep;
+-        if (test "$rep" = "y") then
+-          echo ''
+-          echo '-------------- begin hfind output --------------'
+-          "${tskdir}/hfind" -i nsrl-md5 "${nsrldir}/NSRLFile.txt";
+-          echo '--------------- end hfind output ---------------'
+-          echo ''
+-		fi;
+-	  fi;
+-      break;
+-    else
+-      echo 'The NSRL was not found (the directory should have NSRLFile.txt in it)';
+-	  echo 'Enter a new directory (or cancel to stop):';
+-    fi;
+-  done
+-else
+-  echo \$NSRLDB = \'\'\; >> $conf;
+-fi;
++# User may add later (see pkg-message)
++echo \$NSRLDB = \'\'\; >> $conf;
+ 
+-#############################################################################
+ # EVIDENCE LOCKER
+-#############################################################################
+-mdone=0
+-echo ''
+-echo '---------------------------------------------------------------'
+-echo ''
+-echo 'Autopsy saves configuration files, audit logs, and output to the'
+-echo 'Evidence Locker directory.'
+-echo ''
+-echo 'Enter the directory that you want to use for the Evidence Locker:';
+-read locker;
+-if (test -d "${locker}") then
+-  echo "  $locker already exists"
+-else
+-  echo '';
+-  echo "WARNING: $locker does not exist"
+-  mdone=1
+-fi
++# User may add later (see pkg-message)
++echo \$LOCKDIR = \'\'\; >> $conf;
+ 
+-echo \$LOCKDIR = \'${locker}\'\; >> $conf;
++# Ensure configure-created conf.pl returns 1 to allow it to be
++# require-d in Autopsy's perl modules
++echo 1\; >> $conf;
+ 
++# XXX NOTE: This matches an overwrite if at the top of this script
+ fi
+ 
+ # Start of non-conf.pl file configuration
+@@ -404,28 +305,8 @@
+ # If it wasn't found, then prompt for it.
+ if (test $found -eq 0) then
+   echo 'ERROR: perl not found or the incorrect version found';
+-  while (test 1 -eq 1) 
+-    do echo 'Enter location of perl executable:';
+-    read perlexe;
+-    if (test -x "$perlexe") then
+-      if (test -n "`$perlexe -v 2> /dev/null | awk '/This is perl/ {print $0}'`")       then
+-        ver=`$perlexe -e 'print $];'`;
+-        if (`$perlexe -e 'exit( $] >= 5.008);'`) then 
+-          echo "This version of Perl is too old, 5.8.0 or older needed";
+-        else      
+-          echo "Correct version found";
+-          echo "#!${perlexe} -wT" > ./config.tmp;
+-          echo "#!${perlexe}" > ./config2.tmp;
+-          found=1; 
+-          break; 
+-        fi;
+-      else
+-        echo "Perl found, but is not working.  Try another";
+-      fi;
+-    else
+-      echo "file not found";
+-    fi
+-  done
++  echo 'Configure aborted!'
++  exit 1
+ fi
+ 
+ # Check if this version of Perl supports large files
+@@ -434,24 +315,14 @@
+   echo '    NOTE: It appears that your Perl does not support large files.';
+   echo '    You therefore will not be able to analyze images larger than 2GB.';
+   echo '    Download the source version from www.cpan.org and compile a new version.';
+-  echo "  [Press Enter to Continue]";
+-  read foo;
+   echo ''
  fi;
  
  # Get current working directory for lib
@@ -27,4 +264,15 @@
 +echo "use lib '${PREFIX}/lib/autopsy/';" >> ./config.tmp
  
  if (test -f ./autopsy) then
-   echo "autopsy already exists, overwrite? (y/n):";
+-  echo "autopsy already exists, overwrite? (y/n):";
+-  read rep;
+-  if (test "$rep" = "y") then
+-    cat ./config.tmp base/autopsy.base > ./autopsy
+-    cat ./config2.tmp base/make-live-cd.base > ./make-live-cd
+-  else 
+-    echo '  original version was kept';
+-  fi
++  echo "WARNING: ./autopsy already exists not overwriting";
+ else
+   cat ./config.tmp base/autopsy.base > ./autopsy
+   cat ./config2.tmp base/make-live-cd.base > ./make-live-cd

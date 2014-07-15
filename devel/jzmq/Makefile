@@ -10,7 +10,7 @@ DISTNAME=	zeromq-${PORTNAME}-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Java bindings for ZeroMQ
 
-LIB_DEPENDS=	zmq.1:${PORTSDIR}/net/libzmq2
+LIB_DEPENDS=	libzmq.so:${PORTSDIR}/net/libzmq2
 
 USES=		pkgconfig gmake
 USE_AUTOTOOLS=	autoconf:env libtool automake:env

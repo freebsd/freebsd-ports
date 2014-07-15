@@ -12,7 +12,7 @@ COMMENT=	Implanting and checking checksums within an ISO9660 image
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	popt:${PORTSDIR}/devel/popt
+LIB_DEPENDS=	libpopt.so:${PORTSDIR}/devel/popt
 
 USES=		gmake
 USE_BZIP2=	yes

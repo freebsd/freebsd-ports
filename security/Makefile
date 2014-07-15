@@ -273,6 +273,7 @@
     SUBDIR += libpreludedb
     SUBDIR += libpwquality
     SUBDIR += libpwstor
+    SUBDIR += libressl
     SUBDIR += libscrypt
     SUBDIR += libsecret
     SUBDIR += libsectok
@@ -911,6 +912,7 @@
     SUBDIR += shishi
     SUBDIR += shttpscanner
     SUBDIR += sig2dot
+    SUBDIR += signify
     SUBDIR += signing-party
     SUBDIR += silktools
     SUBDIR += sinfp

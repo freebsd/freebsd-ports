@@ -3,13 +3,18 @@
 
 PORTNAME=	radmind
 PORTVERSION=	1.14.1
-PORTREVISION=	2012032001
+PORTREVISION=	2014052201
 CATEGORIES=	sysutils
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	mikeg@bsd-box.net
 COMMENT=	Utility for administering filesystem changes
+
+LICENSE=	Michigan
+LICENSE_NAME=	University of Michigan License
+LICENSE_FILE=	${WRKSRC}/COPYRIGHT
+LICENSE_PERMS=	${_LICENSE_PERMS_DEFAULT}
 
 USE_OPENSSL=	yes
 USE_RC_SUBR=	radmind
@@ -24,38 +29,36 @@ GROUPS=		${RADMINUSER}
 RADMIND_BASE_DIR?=	/var/radmind
 
 SUB_LIST=	RADMIND_BASE_DIR=${RADMIND_BASE_DIR} RADMINUSER=${RADMINUSER}
-PLIST_SUB=	RADMIND_BASE_DIR=${RADMIND_BASE_DIR} RADMINUSER=${RADMINUSER}
+PLIST_SUB=	RADMIND_BASE_DIR=${RADMIND_BASE_DIR:S@/@@} RADMINUSER=${RADMINUSER}
 SUB_FILES+=	pkg-install pkg-message
 
-MAN1=		fsdiff.1 ktcheck.1 lapply.1 lcksum.1 lcreate.1 lfdiff.1 \
-		lmerge.1 lsort.1 twhich.1 rash.1 repo.1
-MAN5=		applefile.5
-MAN8=		radmind.8
 DOCS=		COPYRIGHT README SPEC
 
-OPTIONS_DEFINE=	IGNORE_TIMESTAMPS DOCS
+OPTIONS_DEFINE=	DOCS
 IGNORE_TIMESTAMPS_DESC=	Add '-t' option to fsdiff
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MIGNORE_TIMESTAMPS}
-EXTRA_PATCHES+=	${FILESDIR}/optpatch-ignore_timestamps
-.endif
-
 post-install:
-# Ugly hack to remove generated man pages
+	# Ugly hack to remove generated man pages
 	${RM} -rf ${WRKSRC}/tmp
 
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}
-.endif
-	${CP} ${FILESDIR}/config.sample ${RADMIND_BASE_DIR}/config.sample
-	@if [ ! -f ${RADMIND_BASE_DIR}/config ]; then \
-		${CP} -p ${RADMIND_BASE_DIR}/config.sample ${RADMIND_BASE_DIR}/config ; \
-	fi
-	@${CHOWN} -R ${RADMINUSER}:${RADMINUSER} ${RADMIND_BASE_DIR}
-	@${CAT} ${PKGMESSAGE}
+	# Port's Docs (Copyright & wire protocol info)
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${STAGEDIR}${DOCSDIR}
+
+	${MKDIR} ${STAGEDIR}${RADMIND_BASE_DIR}
+	${MKDIR} ${STAGEDIR}${RADMIND_BASE_DIR}/cert
+	${MKDIR} ${STAGEDIR}${RADMIND_BASE_DIR}/client
+	${MKDIR} ${STAGEDIR}${RADMIND_BASE_DIR}/command
+	${MKDIR} ${STAGEDIR}${RADMIND_BASE_DIR}/file
+	${MKDIR} ${STAGEDIR}${RADMIND_BASE_DIR}/postapply
+	${MKDIR} ${STAGEDIR}${RADMIND_BASE_DIR}/preapply
+	${MKDIR} ${STAGEDIR}${RADMIND_BASE_DIR}/special
+	${MKDIR} ${STAGEDIR}${RADMIND_BASE_DIR}/tmp
+	${MKDIR} ${STAGEDIR}${RADMIND_BASE_DIR}/tmp/file
+	${MKDIR} ${STAGEDIR}${RADMIND_BASE_DIR}/tmp/transcript
+	${MKDIR} ${STAGEDIR}${RADMIND_BASE_DIR}/transcript
+	${CP}    ${FILESDIR}/config.sample ${STAGEDIR}${RADMIND_BASE_DIR}/config.sample
 
 .include <bsd.port.mk>

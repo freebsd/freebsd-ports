@@ -18,7 +18,7 @@ OCTSRC=		${OCTAVE_PKGNAME}
 
 WRKSRC=		${WRKDIR}/${OCTSRC}/src
 
-LIB_DEPENDS+=	proj:${PORTSDIR}/graphics/proj
+LIB_DEPENDS+=	libproj.so:${PORTSDIR}/graphics/proj
 
 .include "${.CURDIR}/../../Mk/bsd.octave.mk"
 

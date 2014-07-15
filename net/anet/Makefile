@@ -3,6 +3,7 @@
 
 PORTNAME=	anet
 PORTVERSION=	0.3.0
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://www.codelabs.ch/download/
 DISTNAME=	libanet-${PORTVERSION}
@@ -55,9 +56,11 @@ do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/lib/gnat \
 		${STAGEDIR}${PREFIX}/lib/anet \
 		${STAGEDIR}${PREFIX}/include/anet
-	${INSTALL_DATA} ${WRKSRC}/src/*.ad[bs] \
+	${INSTALL_DATA} ${WRKSRC}/src/*.ad[bs] ${WRKSRC}/src/bsd/*.ad[bs] \
 		${STAGEDIR}${PREFIX}/include/anet
-	${INSTALL_DATA} ${WRKSRC}/lib/static/* ${STAGEDIR}${PREFIX}/lib/anet
+	${INSTALL_DATA} ${WRKSRC}/lib/static/*.ali \
+		${STAGEDIR}${PREFIX}/lib/anet
+	${INSTALL_DATA} ${WRKSRC}/lib/static/*.a ${STAGEDIR}${PREFIX}/lib
 	${INSTALL_DATA} ${WRKSRC}/gnat/anet.gpr ${STAGEDIR}${PREFIX}/lib/gnat
 .if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${STAGEDIR}${DOCSDIR}

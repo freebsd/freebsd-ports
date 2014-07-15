@@ -10,7 +10,7 @@ MASTER_SITES=	http://www.rtpproxy.org/chrome/site/
 MAINTAINER=	sobomax@FreeBSD.org
 COMMENT=	High-performance RTP proxy server for the SIP Express Router (SER)
 
-LIB_DEPENDS=	gsm.1:${PORTSDIR}/audio/gsm
+LIB_DEPENDS=	libgsm.so:${PORTSDIR}/audio/gsm
 
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include

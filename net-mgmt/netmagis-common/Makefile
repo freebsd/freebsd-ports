@@ -11,6 +11,12 @@ PKGNAMESUFFIX?=	-common
 MAINTAINER?=	pdagog@gmail.com
 COMMENT?=	Netmagis common infrastructure
 
+# Portlint barfs about a MASTERDIR variable if the LICENSE block is defined (black magic?)
+#LICENSE=	CECILL-B
+#LICENSE_NAME=	CeCILL-B Free Software License Agreement
+#LICENSE_FILE=	${WRKSRC}/LICENSE
+#LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
+
 USES=		tcl:85+
 
 USE_PGSQL=	pgtcl
@@ -28,13 +34,9 @@ USE_PGSQL+=	server pltcl
 .endif
 
 .if ${PKGNAMESUFFIX} == -www
-USE_APACHE=	22+
 USE_TEX=	tex
 RUN_DEPENDS+=	dot:${PORTSDIR}/graphics/graphviz \
-		pwgen:${PORTSDIR}/sysutils/pwgen \
-		${LOCALBASE}/libexec/apache22/mod_auth_pgsql.so:${PORTSDIR}/www/mod_auth_pgsql2
-# FIXME compile apache22 with option mod_auth_ldap
-# FIXME add ap22-mod_auth_cas
+		pwgen:${PORTSDIR}/sysutils/pwgen
 .endif
 
 .if ${PKGNAMESUFFIX} == -topo
@@ -51,10 +53,13 @@ RUN_DEPENDS+=	p5-DBD-Pg>0:${PORTSDIR}/databases/p5-DBD-Pg \
 		p5-Net-SNMP>=0:${PORTSDIR}/net-mgmt/p5-Net-SNMP \
 		p5-SNMP_Session>=0:${PORTSDIR}/net-mgmt/p5-SNMP_Session \
 		p5-RRDTool-OO>=0:${PORTSDIR}/devel/p5-RRDTool-OO
+
+USES+=		shebangfix
+SHEBANG_FILES=	metro/bin/metrocreatedb metro/bin/metropoller metro/bin/metropoller-run
 .endif
 
 # Variables used in netmagis Makefiles
-MAKE_ARGS+=	DESTDIR=${DESTDIR} PREFIX=${PREFIX}
+MAKE_ARGS+=	DESTDIR=${STAGEDIR}${DESTDIR} PREFIX=${PREFIX}
 MAKE_ARGS+=	TCLSH=${TCLSH} TCLCONF=${TCL_LIBDIR}/tclConfig.sh
 
 .if ${PKGNAMESUFFIX} == -topo || ${PKGNAMESUFFIX} == -www

@@ -29,8 +29,6 @@ NO_BUILD=	yes
 
 CONFLICTS=	saxon-6.*
 
-OPTIONS_DEFINE=	DOCS
-
 JARFILES=	saxon9-sql.jar saxon9.jar saxon9-xpath.jar saxon9-dom.jar \
 		saxon9-xqj.jar saxon9-s9api.jar
 PLIST_FILES+=	${JARFILES:S,^,%%JAVAJARDIR%%/,} bin/saxon bin/saxon-xquery

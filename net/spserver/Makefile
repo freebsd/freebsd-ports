@@ -11,7 +11,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}.src
 MAINTAINER=	vanilla@FreeBSD.org
 COMMENT=	TCP server framework library written in C++ based on libevent
 
-LIB_DEPENDS=	event-1.4:${PORTSDIR}/devel/libevent
+LIB_DEPENDS=	libevent-1.4.so:${PORTSDIR}/devel/libevent
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 USE_LDCONFIG=	yes

@@ -3,6 +3,7 @@
 
 PORTNAME=	eclipse
 PORTVERSION=	4.3.2
+PORTREVISION=	1
 CATEGORIES=	java devel
 MASTER_SITES=	https://googledrive.com/host/0B2kYpXHnC5LpSk01bU1ud0N5bXc/
 DISTFILES=	eclipse.platform.releng.aggregator-${PORTVERSION}.xz \
@@ -114,6 +115,8 @@ do-install:
 	@(cd ${STAGEDIR}${PREFIX}; ${FIND} -s -d lib/eclipse -type d) | ${SED} -ne "s,^,@dirrm ,p" >> ${TMPPLIST}
 	@${ECHO_CMD} "@exec ${MKDIR} %D/lib/eclipse/dropins > /dev/null || ${TRUE}" >> ${TMPPLIST}
 	@${ECHO_CMD} "@exec ${MKDIR} %D/share/eclipse/dropins > /dev/null || ${TRUE}" >> ${TMPPLIST}
+	@${ECHO_CMD} "@exec echo '-Dorg.eclipse.equinox.p2.reconciler.dropins.directory=%D/share/eclipse/dropins' >> %D/lib/eclipse/eclipse.ini" >> ${TMPPLIST}
+	@${ECHO_CMD} "@unexec ${SED} -i '' '/^-Dorg.eclipse.equinox.p2.reconciler.dropins.directory=/d' %D/lib/eclipse/eclipse.ini" >> ${TMPPLIST}
 	@${ECHO_CMD} "@dirrm share/eclipse/dropins" >> ${TMPPLIST}
 	@${ECHO_CMD} "@dirrm share/eclipse" >> ${TMPPLIST}
 

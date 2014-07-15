@@ -14,7 +14,7 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	don@na.rim.or.jp
 COMMENT=	Yet another Ming module for Ruby
 
-LIB_DEPENDS?=	ming.5:${PORTSDIR}/graphics/ming
+LIB_DEPENDS?=	libming.so:${PORTSDIR}/graphics/ming
 
 RUBY_MING_VERSION=	0.2.1
 

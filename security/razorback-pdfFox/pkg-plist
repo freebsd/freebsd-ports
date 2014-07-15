@@ -1,10 +1,6 @@
-@unexec if cmp -s %D/etc/razorback/pdffox.conf %D/etc/razorback/pdffox.conf.sample; then rm -f %D/etc/razorback/pdffox.conf; fi
-etc/razorback/pdffox.conf.sample
-@exec if [ ! -f %D/etc/razorback/pdffox.conf ]; then cp -p %D/%F %B/pdffox.conf; fi
-@dirrmtry etc/razorback
+@sample etc/razorback/pdffox.conf.sample
 lib/razorback/pdfFox.so.2.0.0
 lib/razorback/pdfFox.so.2
 lib/razorback/pdfFox.so
-lib/razorback/pdfFox.la
 lib/razorback/pdfFox.a
 @dirrmtry lib/razorback

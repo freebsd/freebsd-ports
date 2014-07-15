@@ -11,7 +11,7 @@ MASTER_SITE_SUBDIR=	apps/graphics/misc
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Creates thumbnails of JPEG images
 
-LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg
+LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-libjpeg=${LOCALBASE}

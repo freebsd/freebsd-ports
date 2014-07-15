@@ -6,7 +6,7 @@ DISTFILES=	${PORTNAME}${PKGNAMESUFFIX}-src-${PORTVERSION}.0${EXTRACT_SUFX}:plugi
 
 COMMENT=	Low-level RDP plugin for the Mupen64Plus
 
-LIB_DEPENDS=	mupen64plus.2:${PORTSDIR}/emulators/mupen64plus-core
+LIB_DEPENDS=	libmupen64plus.so.2:${PORTSDIR}/emulators/mupen64plus-core
 
 USE_GL=		gl glu glew
 USE_SDL=	yes

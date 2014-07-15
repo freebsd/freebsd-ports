@@ -14,10 +14,10 @@ COMMENT=	The successor of the STk Scheme interpreter
 DEPRECATED=	Fails testsuite on all platforms, unmaintained upstream
 EXPIRATION_DATE=2014-07-20
 
-LIB_DEPENDS=	gmp.10:${PORTSDIR}/math/gmp \
-		pcre.3:${PORTSDIR}/devel/pcre \
-		ffi:${PORTSDIR}/devel/libffi \
-		gc-threaded.1:${PORTSDIR}/devel/boehm-gc-threaded
+LIB_DEPENDS=	libgmp.so:${PORTSDIR}/math/gmp \
+		libpcre.so:${PORTSDIR}/devel/pcre \
+		libffi.so:${PORTSDIR}/devel/libffi \
+		libgc-threaded.so:${PORTSDIR}/devel/boehm-gc-threaded
 
 ONLY_FOR_ARCHS=	i386 amd64
 

@@ -11,7 +11,7 @@ COMMENT=	Convert/extract images in Microsoft Windows(R) icon/cursor files
 
 LICENSE=	GPLv3
 
-LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png
 
 OPTIONS_DEFINE=	RESSCRIPTS
 RESSCRIPTS_DESC=	PERL resource scripts

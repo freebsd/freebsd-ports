@@ -42,7 +42,7 @@ MAKE_ARGS+=	GTK_CONFIG=:
 .if ${PORT_OPTIONS:MGSSAPI}
 _COMPAT=		-DSTATIC_GSSAPI
 .if ${OSVERSION} >= 900000
-LIB_DEPENDS+=		krb5support:${PORTSDIR}/security/krb5
+LIB_DEPENDS+=		libkrb5support.so:${PORTSDIR}/security/krb5
 .endif
 .else
 _COMPAT=		-DNO_GSSAPI

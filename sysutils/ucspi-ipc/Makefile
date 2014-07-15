@@ -17,6 +17,8 @@ DOCS=		CHANGES
 
 WRKSRC=		${WRKDIR}/host/superscript.com/net/${DISTNAME}
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.options.mk>
 
 do-configure:

@@ -3,6 +3,7 @@
 
 PORTNAME=	wildfly80
 PORTVERSION=	8.0.0
+PORTREVISION=	1
 CATEGORIES=	java www
 MASTER_SITES=	http://download.jboss.org/wildfly/${WILDFLY_VERSION}/
 DISTNAME=	wildfly-${WILDFLY_VERSION}
@@ -17,7 +18,6 @@ USE_JAVA=	yes
 JAVA_VERSION=	1.7+
 USER=		www
 GROUP=		www
-NEED_ROOT=	yes
 VAR_DIR?=	/var
 LOG_DIR?=	${VAR_DIR}/log/${PORTNAME}
 PID_FILE=	${VAR_DIR}/run/${PORTNAME}.pid
@@ -38,8 +38,5 @@ do-build:
 
 do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/wildfly-${PORTVERSION} && cd ${WRKSRC} && ${FIND} . | ${CPIO} -pdmu -R ${USER}:${GROUP} ${STAGEDIR}${PREFIX}/wildfly-${PORTVERSION}
-
-post-install:
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>

@@ -10,8 +10,6 @@ MASTER_SITES=	SF/ghostbsdproject/package/LXMusic/
 MAINTAINER=	ericturgeon@ghostbsd.org
 COMMENT=	LXDE music player based on xmms2
 
-OPTIONS_DEFINE=	DOCS NLS
-
 LICENSE=	MIT GPLv2
 LICENSE_COMB=	dual
 

@@ -26,6 +26,8 @@ SHEBANG_FILES=	rake spec spec_translator Rakefile '*.rb'
 
 PLIST_SUB+=	PORTNAME=${PORTNAME} PORTVERSION=${PORTVERSION} JRUBY_HOME=${JRUBY_HOME:S,${PREFIX}/,,}
 
+OPTIONS_DEFINE=	DOCS EXAMPLES
+
 .include <bsd.port.pre.mk>
 
 pre-patch:

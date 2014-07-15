@@ -11,8 +11,4 @@ COMMENT=	Simple, but complete budget management in Python
 
 USE_PYTHON=	yes
 
-MANCOMPRESSED=	yes
-MAN1=           hb.1
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

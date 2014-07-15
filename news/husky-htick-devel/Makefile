@@ -11,7 +11,7 @@ PKGNAMESUFFIX=	-devel
 MAINTAINER=	mail@ozzmosis.com
 COMMENT=	FTN File ticker, development version
 
-LIB_DEPENDS=	fidoconfig.1:${PORTSDIR}/news/husky-fidoconf-devel
+LIB_DEPENDS=	libfidoconfig.so:${PORTSDIR}/news/husky-fidoconf-devel
 
 CONFLICTS=	husky-htick-[0-9]*
 

@@ -5,6 +5,59 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20140714:
+  AFFECTS: users of databases/db6
+  AUTHOR:  mandree@FreeBSD.org
+
+  Oracle Berkeley DB 6 has been upgraded to version 6.1.19.  Since the
+  previous 6.0 version, the log file format has changed in 6.1.
+  Depending on applications used, you may need to take action BEFORE you
+  upgrade.  For details, please see the online upgrade manual at
+  <http://docs.oracle.com/cd/E17076_04/html/upgrading/upgrade_process.html>
+  <http://docs.oracle.com/cd/E17076_04/html/installation/upgrade_61_toc.html>
+
+  Also, you must rebuild all applications that link to db6. To do so:
+  If you use portmaster:
+        portmaster -w -r db6-
+  If you use portupgrade:
+        portupgrade -fr databases/db6
+
+20140714:
+  AFFECTS: users of net/linphone-base
+  AUTHOR: tijl@FreeBSD.org
+
+  Linphone has been updated to version 3.7.0 and the linphone-base port
+  has been split into separate components.  You must first delete the
+  linphone-base package before you can update ports that depend on it.
+
+  pkg del -f linphone-base
+    or
+  pkg_delete -f linphone-base\*
+
+20140713:
+  AFFECTS: users of mail/postfix-current
+  AUTHOR: sahil@FreeBSD.org
+
+  This is a significant update; so, please carefully review the
+  RELEASE_NOTES to identify which incompatible changes impact your
+  environment. Of particular note are changes to the Postfix
+  build/install procedure.
+
+  Please backup main.cf, master.cf and any other important files
+  associated with your Postfix setup before updating.
+
+20140713:
+  AFFECTS: users of www/apache22
+  AUTHOR: ohauer@FreeBSD.org
+
+  The default version was changed from www/apache22 to www/apache24,
+  pre-build apache modules and web applications will also reflect this!
+
+  In case ports are build by yourself and apache22 is required
+  use the following command to keep apache22 as default.
+
+  # echo "DEFAULT_VERSIONS+=apache=2.2" >> /etc/make.conf
+
 20140710:
   AFFECTS: users of lang/rust
   AUTHOR: robak@FreeBSD.org

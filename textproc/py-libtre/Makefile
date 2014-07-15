@@ -13,7 +13,7 @@ DISTNAME=	tre-${PORTVERSION}
 MAINTAINER=	bf@FreeBSD.org
 COMMENT=	Python interface for the tre regular expressions library
 
-LIB_DEPENDS=	tre.5:${PORTSDIR}/textproc/libtre
+LIB_DEPENDS=	libtre.so:${PORTSDIR}/textproc/libtre
 
 LICENSE=	BSD
 LICENSE_FILE=	${WRKSRC}/LICENSE

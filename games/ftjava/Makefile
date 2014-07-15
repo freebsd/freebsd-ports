@@ -3,7 +3,7 @@
 
 PORTNAME=	ftjava
 PORTVERSION=	1.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games java
 MASTER_SITES=	http://www.warpfish.com/davisje/:file1 \
 		http://home.roadrunner.com/~davisje/ftjava/:doc1
@@ -15,7 +15,8 @@ EXTRACT_ONLY=	FTJavaV${PORTVERSION}.zip
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Full Thrust PBEM Client
 
-BROKEN=		no distinfo provided for some of the distfiles
+LICENSE=	BSD2CLAUSE
+
 USES=		zip
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+

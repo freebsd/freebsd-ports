@@ -8,10 +8,11 @@ POST-INSTALL CONFIGURATION FOR MOODLE
    NOTE: this package assumes that either the phpX-pgsql,
    phpX-mysql, or phpX-mssql packages are installed.
 
-2) Add the following to your Apache configuration, and
-   restart the server:
+2) Add the following to your Apache configuration file
+   httpd.conf, and restart the server:
 
-   ### Add the AcceptPathInfo directive only for Apache 2.0.30 or later.
+   For Apache versions earlier than 2.4:
+
    Alias /moodle %%PREFIX%%/%%MOODLEDIR%%/
    AcceptPathInfo On
    <Directory %%PREFIX%%/%%MOODLEDIR%%>
@@ -23,6 +24,19 @@ POST-INSTALL CONFIGURATION FOR MOODLE
       AllowOverride None
       Order Allow,Deny
       Deny from all 
+   </Directory>
+
+   For Apache version 2.4.x or above:
+
+   Alias /moodle %%PREFIX%%/%%MOODLEDIR%%/
+   AcceptPathInfo On
+   <Directory %%PREFIX%%/%%MOODLEDIR%%/>
+      AllowOverride None
+      Require all granted
+   </Directory>
+   <Directory %%PREFIX%%/%%MOODLEDATADIR%%/>
+      AllowOverride None
+      Require all denied
    </Directory>
 
 3) Visit your Moodle site with a browser (i.e.,

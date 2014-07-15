@@ -11,7 +11,7 @@ DISTNAME=	qrencode-${PORTVERSION}
 MAINTAINER=	vanilla@FreeBSD.org
 COMMENT=	C library for encoding data in a QR Code symbol
 
-LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png
 
 USES=		pathfix pkgconfig
 USE_LDCONFIG=	yes

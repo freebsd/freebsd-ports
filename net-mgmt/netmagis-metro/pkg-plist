@@ -34,11 +34,7 @@ www/metro/gengraph
 @dirrmtry var/netmagis/metro
 @dirrmtry var/netmagis
 @dirrmtry var
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
-@dirrmtry lib/netmagis/tmp/netmagis/lib/netmagis
-@dirrmtry lib/netmagis/tmp/netmagis/lib
-@dirrmtry lib/netmagis/tmp/netmagis
-@dirrmtry lib/netmagis/tmp
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%
 @dirrm lib/netmagis/probes
 @dirrm lib/netmagis/plugins
 @exec mkdir -p %D/var/netmagis/metro/wifi
@@ -49,4 +45,3 @@ www/metro/gengraph
 @exec mkdir -p %D/var/netmagis/metro/graph
 @exec mkdir -p %D/var/netmagis/metro/db
 @exec mkdir -p %D/var/netmagis/metro/cache
-@exec mkdir -p %D/lib/netmagis/tmp/netmagis/lib/netmagis

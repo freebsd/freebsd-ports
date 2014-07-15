@@ -33,14 +33,14 @@ CONFIGURE_ARGS+=	--without-gcu
 .endif
 
 .if ${PORT_OPTIONS:MX11}
-LIB_DEPENDS+=	X11.6:${PORTSDIR}/x11/libX11
+LIB_DEPENDS+=	libX11.so:${PORTSDIR}/x11/libX11
 CONFIGURE_ARGS+=	--with-x11
 .else
 CONFIGURE_ARGS+=	--without-x11
 .endif
 
 .if ${PORT_OPTIONS:MSDL}
-LIB_DEPENDS+=	SDL-1.2:${PORTSDIR}/devel/sdl12
+LIB_DEPENDS+=	libSDL-1.2.so:${PORTSDIR}/devel/sdl12
 CONFIGURE_ARGS+=	--with-sdl
 .else
 CONFIGURE_ARGS+=	--without-sdl

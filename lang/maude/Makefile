@@ -10,10 +10,10 @@ DISTNAME=	Maude-${PORTVERSION}
 MAINTAINER=	joemann@beefree.free.de
 COMMENT=	High-performance reflective language
 
-LIB_DEPENDS=	bdd:${PORTSDIR}/science/buddy \
-		tecla:${PORTSDIR}/devel/libtecla \
-		gmp:${PORTSDIR}/math/gmp \
-		sigsegv:${PORTSDIR}/devel/libsigsegv
+LIB_DEPENDS=	libbdd.so:${PORTSDIR}/science/buddy \
+		libtecla.so:${PORTSDIR}/devel/libtecla \
+		libgmp.so:${PORTSDIR}/math/gmp \
+		libsigsegv.so:${PORTSDIR}/devel/libsigsegv
 
 USES=		bison
 USE_AUTOTOOLS=	aclocal autoheader automake

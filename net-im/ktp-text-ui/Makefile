@@ -10,9 +10,9 @@ MASTER_SITE_SUBDIR=	${KTP_BRANCH}/kde-telepathy/${PORTVERSION}/src
 MAINTAINER=	avilla@FreeBSD.org
 COMMENT=	KDE chat window application
 
-LIB_DEPENDS=	telepathy-qt4:${PORTSDIR}/net-im/telepathy-qt4 \
-		telepathy-logger-qt4:${PORTSDIR}/net-im/telepathy-logger-qt4 \
-		ktpcommoninternalsprivate:${PORTSDIR}/net-im/ktp-common-internals
+LIB_DEPENDS=	libtelepathy-qt4.so:${PORTSDIR}/net-im/telepathy-qt4 \
+		libtelepathy-logger-qt4.so:${PORTSDIR}/net-im/telepathy-logger-qt4 \
+		libktpcommoninternalsprivate.so:${PORTSDIR}/net-im/ktp-common-internals
 RUN_DEPENDS=	${KDE4_PREFIX}/bin/ktp-contactlist:${PORTSDIR}/net-im/ktp-contact-list
 
 USE_KDE4=	kdehier kdeprefix kdelibs automoc4

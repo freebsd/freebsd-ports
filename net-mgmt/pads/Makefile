@@ -13,7 +13,7 @@ COMMENT=	Passively detect network assets
 CFLAGS+=	-Wno-return-type
 USE_CSTD=	gnu89
 
-LIB_DEPENDS=	pcre:${PORTSDIR}/devel/pcre
+LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre
 
 GNU_CONFIGURE=	yes
 

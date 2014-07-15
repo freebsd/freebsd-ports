@@ -1,0 +1,16 @@
+--- ./xtermcfg.hin.orig	2014-05-08 10:05:07.000000000 +0200
++++ ./xtermcfg.hin	2014-07-15 09:09:15.492622374 +0200
+@@ -1,4 +1,4 @@
+-/* $XTermId: xtermcfg.hin,v 1.205 2014/05/08 08:05:07 tom Exp $ */
++/* $XTermId: xtermcfg.hin,v 1.206 2014/07/14 23:42:59 tom Exp $ */
+ 
+ /*
+  * Copyright 1997-2013,2014 by Thomas E. Dickey
+@@ -62,6 +62,7 @@
+ #undef HAVE_LIB_PCRE		/* CF_WITH_PCRE */
+ #undef HAVE_LIB_XAW		/* CF_X_ATHENA */
+ #undef HAVE_LIB_XAW3D		/* CF_X_ATHENA(--with-Xaw3d) */
++#undef HAVE_LIB_XAW3DXFT	/* CF_X_ATHENA(--with-Xaw3dxft) */
+ #undef HAVE_LIB_XAWPLUS		/* CF_X_ATHENA(--with-XawPlus) */
+ #undef HAVE_LIB_XCURSOR		/* AC_CHECK_LIB(Xcursor) */
+ #undef HAVE_MKDTEMP		/* AC_CHECK_FUNCS(mkdtemp) */

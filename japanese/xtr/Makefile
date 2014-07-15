@@ -18,6 +18,8 @@ GNU_CONFIGURE=	yes
 
 NO_CDROM=	Need to obtain permission for commercial redistribution
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.options.mk>
 
 post-extract:

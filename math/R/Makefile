@@ -37,7 +37,7 @@ CONFIGURE_ENV=		LIBR_LDFLAGS="${LDFLAGS}" OBJC="${CC}" \
 			SED="${LOCALBASE}/bin/gsed" \
 			ac_cv_have_decl_powl=yes ac_cv_have_decl_log1pl=yes
 
-OPTIONS_DEFINE=		MISSING
+OPTIONS_DEFINE=		MISSING DOCS
 
 MISSING_DESC=		use libmissing rather than libquadmath
 

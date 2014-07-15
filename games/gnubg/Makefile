@@ -16,9 +16,9 @@ LICENSE=	GPLv3
 
 BUILD_DEPENDS=	bison:${PORTSDIR}/devel/bison
 RUN_DEPENDS=	sqlite3:${PORTSDIR}/databases/sqlite3
-LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png \
-		gtkextra-x11-2.0.1:${PORTSDIR}/x11-toolkits/gtkextra2 \
-		gtkglext-x11-1.0.0:${PORTSDIR}/x11-toolkits/gtkglext
+LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png \
+		libgtkextra-x11-2.0.so:${PORTSDIR}/x11-toolkits/gtkextra2 \
+		libgtkglext-x11-1.0.so:${PORTSDIR}/x11-toolkits/gtkglext
 
 OPTIONS_DEFINE=	ESOUND NLS
 OPTIONS_DEFAULT=ESOUND NLS

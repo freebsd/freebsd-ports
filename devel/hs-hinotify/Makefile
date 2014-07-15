@@ -10,7 +10,7 @@ COMMENT=	Haskell binding to inotify
 
 LICENSE=	BSD
 
-LIB_DEPENDS=	inotify.0:${PORTSDIR}/devel/libinotify
+LIB_DEPENDS=	libinotify.so:${PORTSDIR}/devel/libinotify
 
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

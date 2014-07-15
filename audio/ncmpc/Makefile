@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ncmpc
-PORTVERSION=	0.21
+PORTVERSION=	0.23
 CATEGORIES=	audio
 MASTER_SITES=	http://www.musicpd.org/download/ncmpc/0/
 
@@ -22,8 +22,7 @@ LYRICS_DESC=	Compile with lyrics screen
 
 .include <bsd.port.options.mk>
 
-USES=		iconv pkgconfig shebangfix
-SHEBANG_FILES=	lyrics/15-leoslyrics.sh
+USES=		iconv pkgconfig
 PLIST_FILES=	bin/ncmpc \
 		man/man1/ncmpc.1.gz \
 		%%EXAMPLESDIR%%/config \
@@ -44,18 +43,12 @@ CONFIGURE_ARGS+=--disable-nls
 .if ${PORT_OPTIONS:MLYRICS}
 CONFIGURE_ARGS+=--enable-lyrics-screen
 PLIST_FILES+=	lib/ncmpc/lyrics/10-hd.sh \
-		lib/ncmpc/lyrics/15-leoslyrics.sh \
-		lib/ncmpc/lyrics/20-lyricwiki.rb \
-		lib/ncmpc/lyrics/30-leoslyrics.py
+		lib/ncmpc/lyrics/20-lyricwiki.rb
 PLIST_DIRS+=	lib/ncmpc/lyrics \
 		lib/ncmpc
 .else
 CONFIGURE_ARGS+=--disable-lyrics-screen
 .endif
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|/usr/bin|${PREFIX}/bin|' \
-	    ${WRKSRC}/lyrics/30-leoslyrics.py
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/ncmpc ${STAGEDIR}${PREFIX}/bin
@@ -73,7 +66,7 @@ do-install:
 .endif
 	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/ncmpc/lyrics
 	(cd ${WRKSRC}/lyrics && ${INSTALL_SCRIPT} \
-		10-hd.sh 15-leoslyrics.sh 20-lyricwiki.rb 30-leoslyrics.py \
+		10-hd.sh 20-lyricwiki.rb \
 		${STAGEDIR}${PREFIX}/lib/ncmpc/lyrics)
 
 .include <bsd.port.mk>

@@ -3,7 +3,7 @@
 
 PORTNAME=	boinc-client
 PORTVERSION=	7.2.33
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_LOCAL} \
 		ftp://rene-ladan.nl/pub/distfiles/
@@ -12,8 +12,9 @@ MASTER_SITE_SUBDIR=rene
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Berkeley Open Infrastructure for Network Computing client
 
-USES=		dos2unix gmake pkgconfig tar:xz
 GNU_CONFIGURE=	yes
+INSTALL_TARGET=	install-strip
+USES=		dos2unix gmake libtool pkgconfig tar:xz
 USE_AUTOTOOLS=	autoconf:env automake:env libtoolize:env
 USE_LDCONFIG=	yes
 DOS2UNIX_GLOB=	*.xpm

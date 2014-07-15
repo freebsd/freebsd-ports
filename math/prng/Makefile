@@ -18,6 +18,8 @@ PLIST_FILES=	include/prng.h lib/libprng.a
 PORTDOCS=	prng.dvi prng.pdf prng.ps prng.txt
 PORTEXAMPLES=	Makefile pairs.c tuples.c
 
+OPTIONS_DEFINE=	DOCS EXAMPLES
+
 .include <bsd.port.options.mk>
 
 post-install:

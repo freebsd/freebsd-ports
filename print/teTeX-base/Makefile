@@ -19,10 +19,10 @@ BUILD_DEPENDS=	${LOCALBASE}/${TEXMFDISTDIR}/LICENSE.texmf:${PORTSDIR}/print/teTe
 RUN_DEPENDS=	${LOCALBASE}/${TEXMFDISTDIR}/LICENSE.texmf:${PORTSDIR}/print/teTeX-texmf \
 		${TEXMFLOCAL_LSR}:${PORTSDIR}/print/tex-texmflocal \
 		texi2html:${PORTSDIR}/textproc/texi2html
-LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png \
-		wwwcore:${PORTSDIR}/www/libwww \
-		t1:${PORTSDIR}/devel/t1lib \
-		gd:${PORTSDIR}/${GD_PORT}
+LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png \
+		libwwwcore.so:${PORTSDIR}/www/libwww \
+		libt1.so:${PORTSDIR}/devel/t1lib \
+		libgd.so:${PORTSDIR}/${GD_PORT}
 
 GD_PORT?=	graphics/gd
 WRKSRC=		${WRKDIR}/tetex-src-${PORTVERSION}

@@ -38,3 +38,5 @@ share/pixmaps/hatari-icon.png
 @dirrm %%DATADIR%%/hconsole
 @dirrm %%DATADIR%%/hatariui
 @dirrm %%DATADIR%%
+@dirrmtry man/fr/man1
+@dirrmtry man/fr

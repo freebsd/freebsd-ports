@@ -1,7 +1,7 @@
-lib/libafpclient.la
+lib/libafpclient.a
 lib/libafpclient.so
 lib/libafpclient.so.0
-lib/libafpclient.a
+lib/libafpclient.so.0.0.0
 bin/afpcmd
 bin/afpgetstatus
 include/afpfs-ng/dsi.h

@@ -2,9 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	bitcoin
-PORTVERSION=	0.9.1
+PORTVERSION=	0.9.2
 CATEGORIES=	net-p2p finance
-MASTER_SITES=	${MASTER_SITE_LOCAL} \
+MASTER_SITES=	http://vps.robbak.com/distfiles/ \
+		${MASTER_SITE_LOCAL} \
 		http://people.freebsd.org/~swills/ \
 		GH
 
@@ -21,7 +22,7 @@ OPTIONS_DEFINE=	GUI WALLET UPNP QRCODES
 OPTIONS_DEFAULT=	GUI WALLET QRCODES
 
 GUI_DESC=	Build and install the QT4 binary
-WALLET_DESC=	Build the binaries with support to create and manage a wallet.
+WALLET_DESC=	Build with support to create and manage a wallet
 UPNP_DESC=	Build with UPNP support
 QRCODES_DESC=	Build with QR code display
 
@@ -33,7 +34,7 @@ CONFIGURE_ENV=	SSL_LIBS="-lssl" CRYPTO_LIBS="-lcrypto" SSL_CFLAGS="-I/usr/includ
 USE_GITHUB=	yes
 GH_ACCOUNT=	bitcoin
 GH_PROJECT=	bitcoin
-GH_COMMIT=	66a2ae9
+GH_COMMIT=		30a7357
 GH_TAGNAME=	v${PORTVERSION}
 
 USES=			gmake

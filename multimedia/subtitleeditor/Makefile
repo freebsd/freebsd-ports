@@ -3,7 +3,7 @@
 
 PORTNAME=	subtitleeditor
 PORTVERSION=	0.41.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia
 MASTER_SITES=	http://download.gna.org/${PORTNAME}/${PORTVERSION:C/\.[0-9]*$//}/ \
 		CRITICAL
@@ -15,17 +15,17 @@ LICENSE=	GPLv3
 
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-codes
 RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-codes
-LIB_DEPENDS=	libgtkmm-2.4.so:${PORTSDIR}/x11-toolkits/gtkmm24 \
-		libglademm-2.4.so:${PORTSDIR}/devel/libglademm24 \
+LIB_DEPENDS=	libglademm-2.4.so:${PORTSDIR}/devel/libglademm24 \
 		libgstreamermm-0.10.so:${PORTSDIR}/multimedia/gstreamermm \
 		libenchant.so:${PORTSDIR}/textproc/enchant \
 		libpcre.so:${PORTSDIR}/devel/pcre
 
-USES=		gmake pkgconfig
+USES=		gmake libtool pkgconfig
 USE_GCC=	yes
-USE_GNOME=	gtk20
+USE_GNOME=	gtkmm24
 USE_GSTREAMER=	good
 INSTALLS_ICONS=	yes
+INSTALL_TARGET=	install-strip
 GNU_CONFIGURE=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include

@@ -3,6 +3,7 @@
 
 PORTNAME=	fortune-mod-epictetus
 PORTVERSION=	0.1
+PORTREVISION=	1
 CATEGORIES=	misc
 MASTER_SITES=	http://github.com/akosela/fortune-mod-epictetus/releases/download/v0.1/
 

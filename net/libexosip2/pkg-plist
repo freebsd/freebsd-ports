@@ -9,7 +9,7 @@ include/eXosip2/eX_setup.h
 include/eXosip2/eX_subscribe.h
 include/eXosip2/eXosip.h
 lib/libeXosip2.a
-lib/libeXosip2.la
 lib/libeXosip2.so
 lib/libeXosip2.so.%%SHLIB_VER%%
+lib/libeXosip2.so.%%SHLIB_VER%%.0.0
 @dirrm include/eXosip2

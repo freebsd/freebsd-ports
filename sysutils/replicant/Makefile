@@ -11,11 +11,11 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Replicant is a tool for creating replicated state machines
 
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/libpo6.pc:${PORTSDIR}/devel/libpo6
-LIB_DEPENDS=	busybee:${PORTSDIR}/devel/busybee \
-		e:${PORTSDIR}/devel/libe \
-		glog:${PORTSDIR}/devel/glog \
-		leveldb:${PORTSDIR}/databases/leveldb \
-		popt:${PORTSDIR}/devel/popt
+LIB_DEPENDS=	libbusybee.so:${PORTSDIR}/devel/busybee \
+		libe.so:${PORTSDIR}/devel/libe \
+		libglog.so:${PORTSDIR}/devel/glog \
+		libleveldb.so:${PORTSDIR}/databases/leveldb \
+		libpopt.so:${PORTSDIR}/devel/popt
 
 ONLY_FOR_ARCHS=	amd64
 GNU_CONFIGURE=	yes

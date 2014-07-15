@@ -3,16 +3,16 @@
 
 PORTNAME=	openvas-plugins
 PORTVERSION=	1.0.7
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	security
 MASTER_SITES=	http://wald.intevation.org/frs/download.php/588/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Plugins for OpenVAS
 
-BUILD_DEPENDS=	${LIBNET_CONFIG}:${PORTSDIR}/net/libnet \
-		openvasd:${PORTSDIR}/security/openvas-server
-LIB_DEPENDS=	libopenvas.so:${PORTSDIR}/security/openvas-libraries \
+BUILD_DEPENDS=	openvasd:${PORTSDIR}/security/openvas-server
+LIB_DEPENDS=	libnet.so:${PORTSDIR}/net/libnet \
+		libopenvas.so:${PORTSDIR}/security/openvas-libraries \
 		libopenvasnasl.so:${PORTSDIR}/security/openvas-libnasl \
 		libgnutls.so:${PORTSDIR}/security/gnutls
 RUN_DEPENDS=	openvasd:${PORTSDIR}/security/openvas-server \

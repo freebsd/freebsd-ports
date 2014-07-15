@@ -28,6 +28,8 @@ PROGRAMS=	ezmlm-make ezmlm-manage ezmlm-send ezmlm-reject ezmlm-return \
 		ezmlm-warn ezmlm-weed ezmlm-list ezmlm-sub ezmlm-unsub
 DOCS=		BLURB INSTALL README THANKS TODO
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.options.mk>
 
 post-patch:

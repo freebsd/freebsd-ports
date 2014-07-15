@@ -1,0 +1,36 @@
+--- mfsdata/Makefile.in.orig	2013-11-26 11:22:48.000000000 +0000
++++ mfsdata/Makefile.in
+@@ -470,26 +470,20 @@ install-data-hook:
+ 	if [ ! -d $(DESTDIR)$(sysconfdir)"/mfs" ]; then \
+ 		$(MKDIR_P) $(DESTDIR)$(sysconfdir)"/mfs" ; \
+ 	fi
+-@BUILD_CHUNKSERVER_TRUE@	$(INSTALL_DATA) $(builddir)/mfschunkserver.cfg $(DESTDIR)$(sysconfdir)/mfs/mfschunkserver.cfg.dist
+-@BUILD_CHUNKSERVER_TRUE@	$(INSTALL_DATA) $(srcdir)/mfshdd.cfg $(DESTDIR)$(sysconfdir)/mfs/mfshdd.cfg.dist
++@BUILD_CHUNKSERVER_TRUE@	$(INSTALL_DATA) $(builddir)/mfschunkserver.cfg $(DESTDIR)$(sysconfdir)/mfs/mfschunkserver.cfg.sample
++@BUILD_CHUNKSERVER_TRUE@	$(INSTALL_DATA) $(srcdir)/mfshdd.cfg $(DESTDIR)$(sysconfdir)/mfs/mfshdd.cfg.sample
+ @BUILD_CHUNKSERVER_TRUE@	if [ ! -d $(DESTDIR)$(DATA_PATH) ]; then \
+ @BUILD_CHUNKSERVER_TRUE@		$(MKDIR_P) $(DESTDIR)$(DATA_PATH) ; \
+-@BUILD_CHUNKSERVER_TRUE@		if [ "`id -u`" = "0" ]; then \
+-@BUILD_CHUNKSERVER_TRUE@			chown $(DEFAULT_USER):$(DEFAULT_GROUP) $(DESTDIR)$(DATA_PATH) ; \
+-@BUILD_CHUNKSERVER_TRUE@		fi ; \
+ @BUILD_CHUNKSERVER_TRUE@	fi
+-@BUILD_MASTER_TRUE@	$(INSTALL_DATA) $(builddir)/mfsmetalogger.cfg $(DESTDIR)$(sysconfdir)/mfs/mfsmetalogger.cfg.dist
+-@BUILD_MASTER_TRUE@	$(INSTALL_DATA) $(builddir)/mfsmaster.cfg $(DESTDIR)$(sysconfdir)/mfs/mfsmaster.cfg.dist
+-@BUILD_MASTER_TRUE@	$(INSTALL_DATA) $(builddir)/mfsexports.cfg $(DESTDIR)$(sysconfdir)/mfs/mfsexports.cfg.dist
+-@BUILD_MASTER_TRUE@	$(INSTALL_DATA) $(builddir)/mfstopology.cfg $(DESTDIR)$(sysconfdir)/mfs/mfstopology.cfg.dist
++@BUILD_MASTER_TRUE@	$(INSTALL_DATA) $(builddir)/mfsmetalogger.cfg $(DESTDIR)$(sysconfdir)/mfs/mfsmetalogger.cfg.sample
++@BUILD_MASTER_TRUE@	$(INSTALL_DATA) $(builddir)/mfsmaster.cfg $(DESTDIR)$(sysconfdir)/mfs/mfsmaster.cfg.sample
++@BUILD_MASTER_TRUE@	$(INSTALL_DATA) $(builddir)/mfsexports.cfg $(DESTDIR)$(sysconfdir)/mfs/mfsexports.cfg.sample
++@BUILD_MASTER_TRUE@	$(INSTALL_DATA) $(builddir)/mfstopology.cfg $(DESTDIR)$(sysconfdir)/mfs/mfstopology.cfg.sample
+ @BUILD_MASTER_TRUE@	if [ ! -d $(DESTDIR)$(DATA_PATH) ]; then \
+ @BUILD_MASTER_TRUE@		$(MKDIR_P) $(DESTDIR)$(DATA_PATH) ; \
+-@BUILD_MASTER_TRUE@		if [ "`id -u`" = "0" ]; then \
+-@BUILD_MASTER_TRUE@			chown $(DEFAULT_USER):$(DEFAULT_GROUP) $(DESTDIR)$(DATA_PATH) ; \
+-@BUILD_MASTER_TRUE@		fi ; \
+ @BUILD_MASTER_TRUE@	fi
+ @BUILD_MASTER_TRUE@	$(INSTALL_DATA) $(srcdir)/metadata.mfs $(DESTDIR)$(DATA_PATH)/metadata.mfs.empty
+-@BUILD_MOUNT_TRUE@	$(INSTALL_DATA) $(builddir)/mfsmount.cfg $(DESTDIR)$(sysconfdir)/mfs/mfsmount.cfg.dist
++@BUILD_MOUNT_TRUE@	$(INSTALL_DATA) $(builddir)/mfsmount.cfg $(DESTDIR)$(sysconfdir)/mfs/mfsmount.cfg.sample
+ 
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.

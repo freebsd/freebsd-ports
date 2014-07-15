@@ -35,6 +35,10 @@ bin/pmat-sizes
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/share/module/Devel-MAT-UI/icons/size-Owned.svg
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/share/module/Devel-MAT-UI/icons/size-SV.svg
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/share/module/Devel-MAT-UI/icons/size-Structure.svg
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/share/module/Devel-MAT-UI/icons/strength-indirect.svg
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/share/module/Devel-MAT-UI/icons/strength-inferred.svg
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/share/module/Devel-MAT-UI/icons/strength-strong.svg
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/share/module/Devel-MAT-UI/icons/strength-weak.svg
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/share/module/Devel-MAT-UI/icons/type-ARRAY.svg
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/share/module/Devel-MAT-UI/icons/type-CODE.svg
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/share/module/Devel-MAT-UI/icons/type-FORMAT.svg

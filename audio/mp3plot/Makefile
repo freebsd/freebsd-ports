@@ -10,39 +10,27 @@ MASTER_SITES=	http://p.outlyer.net/mp3plot/files/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Mp3 bitrate plot tool
 
+LICENSE=	GPLv2
+
 LIB_DEPENDS=	libboost_thread.so:${PORTSDIR}/devel/boost-libs
 
 OPTIONS_DEFINE=	GD IMAGEMAGICK
-OPTIONS_DEFAULT=	GD
+OPTIONS_DEFAULT=GD
 
-LICENSE=	GPLv2
-
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=--with-boost-program-options=boost_program_options \
+CONFIGURE_ARGS=	--with-boost-program-options=boost_program_options \
 		--with-boost-thread=boost_thread
+CPPFLAGS+=	-I${LOCALBASE}/include
+GNU_CONFIGURE=	yes
+LIBS+=		-L${LOCALBASE}/lib -lboost_system
 
 PLIST_FILES=	bin/${PORTNAME} man/man1/${PORTNAME}.1.gz
 
-CPPFLAGS+=	-I${LOCALBASE}/include
-LIBS+=		-L${LOCALBASE}/lib -lboost_system
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MGD}
-LIB_DEPENDS+=	libgd.so:${PORTSDIR}/graphics/gd
-.else
-CONFIGURE_ARGS+=	--disable-gd
-.endif
-
-.if ${PORT_OPTIONS:MIMAGEMAGICK}
-LIB_DEPENDS+=	libMagick++-6.Q*.so:${PORTSDIR}/graphics/ImageMagick
-.else
-CONFIGURE_ARGS+=	--disable-magick
-.endif
+GD_CONFIGURE_ENABLE=	gd
+GD_LIB_DEPENDS=		libgd.so:${PORTSDIR}/graphics/gd
+IMAGEMAGICK_CONFIGURE_ENABLE=	magick
+IMAGEMAGICK_LIB_DEPENDS=libMagick++-6.Q*.so:${PORTSDIR}/graphics/ImageMagick
 
 post-patch:
-	@${REINPLACE_CMD} -e '/bldtype_/s|-O2||g' \
-		-e 's|^extra_LD.*||g' \
-		${WRKSRC}/configure
+	@${REINPLACE_CMD} -e '/bldtype_/s|-O2||g; s|^extra_LD.*||g' ${WRKSRC}/configure
 
 .include <bsd.port.mk>

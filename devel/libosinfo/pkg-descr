@@ -1,0 +1,3 @@
+libosinfo is a library that allows virtualization provisioning tools to
+determine the optimal device settings for a hypervisor/operating system
+combination.

@@ -13,9 +13,9 @@ EXTRACT_ONLY=	${SRCFILE}
 MAINTAINER=	maho@FreeBSD.org
 COMMENT=	SDPARA parallel version of SDPA (math/sdpa)
 
-LIB_DEPENDS=	scalapack:${PORTSDIR}/math/scalapack \
-		blacs:${PORTSDIR}/math/blacs \
-		mpich:${PORTSDIR}/net/mpich2
+LIB_DEPENDS=	libscalapack.so:${PORTSDIR}/math/scalapack \
+		libblacs.so:${PORTSDIR}/math/blacs \
+		libmpich.so:${PORTSDIR}/net/mpich2
 
 SRCDATE=	20090109
 MANDATE=	20080618
@@ -34,16 +34,16 @@ WITH_BLAS?=	reference
 .endif
 
 . if ${WITH_BLAS} == reference
-LIB_DEPENDS+=	blas.2:${PORTSDIR}/math/blas
-LIB_DEPENDS+=	lapack.4:${PORTSDIR}/math/lapack
+LIB_DEPENDS+=	libblas.so:${PORTSDIR}/math/blas
+LIB_DEPENDS+=	liblapack.so:${PORTSDIR}/math/lapack
 BLAS=		-lblas
 LAPACK=		-llapack
 .elif ${WITH_BLAS} == gotoblas
-LIB_DEPENDS+=	goto2:${PORTSDIR}/math/gotoblas
+LIB_DEPENDS+=	libgoto2.so:${PORTSDIR}/math/gotoblas
 BLAS=		-lgoto2p
 LAPACK=		-lgoto2p
 .elif ${WITH_BLAS} == atlas
-LIB_DEPENDS+=	atlas:${PORTSDIR}/math/atlas
+LIB_DEPENDS+=	libatlas.so:${PORTSDIR}/math/atlas
 BLAS=		-lptf77blas
 LAPACK=		-lalapack -lptcblas
 .endif

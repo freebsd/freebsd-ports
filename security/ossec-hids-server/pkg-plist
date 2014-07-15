@@ -21,6 +21,8 @@
 %%PORTNAME%%/bin/ossec-execd
 %%PORTNAME%%/bin/ossec-logcollector
 %%PORTNAME%%/bin/ossec-logtest
+%%PORTNAME%%/bin/ossec-lua
+%%PORTNAME%%/bin/ossec-luac
 %%PORTNAME%%/bin/ossec-maild
 %%PORTNAME%%/bin/ossec-makelists
 %%PORTNAME%%/bin/ossec-monitord
@@ -33,6 +35,7 @@
 %%PORTNAME%%/bin/syscheck_update
 %%PORTNAME%%/bin/util.sh
 %%PORTNAME%%/bin/verify-agent-conf
+@group ossec
 %%PORTNAME%%/etc/decoder.xml
 %%PORTNAME%%/etc/internal_options.conf
 @sample %%PORTNAME%%/etc/ossec.conf.sample
@@ -46,7 +49,6 @@
 %%PORTNAME%%/etc/shared/cis_rhel_linux_rcl.txt
 %%PORTNAME%%/etc/shared/cis_rhel5_linux_rcl.txt
 @owner ossec
-@group ossec
 @mode 660
 %%PORTNAME%%/logs/active-responses.log
 %%PORTNAME%%/logs/ossec.log
@@ -57,7 +59,6 @@
 %%PORTNAME%%/rules/arpwatch_rules.xml
 %%PORTNAME%%/rules/asterisk_rules.xml
 %%PORTNAME%%/rules/attack_rules.xml
-%%PORTNAME%%/rules/bro-ids_rules.xml
 %%PORTNAME%%/rules/cimserver_rules.xml
 %%PORTNAME%%/rules/cisco-ios_rules.xml
 %%PORTNAME%%/rules/clam_av_rules.xml
@@ -140,7 +141,9 @@
 @dirrmtry %%PORTNAME%%/queue/rootcheck
 @dirrmtry %%PORTNAME%%/rules
 @dirrmtry %%PORTNAME%%/tmp
+@mode 770
 @dirrmtry %%PORTNAME%%/var/run
+@mode 550
 @dirrmtry %%PORTNAME%%/var
 @owner ossec
 @mode 770

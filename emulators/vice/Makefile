@@ -64,7 +64,7 @@ FIX_XAW=	src/arch/unix/x11/xaw/about.c \
 		src/arch/unix/x11/xaw/widgets/MultiListP.h \
 		src/arch/unix/x11/xaw/widgets/ScrList.c \
 
-OPTIONS_DEFINE=	SDL ASOUND PULSE
+OPTIONS_DEFINE=	SDL ASOUND PULSE DOCS
 OPTIONS_SINGLE= GUI
 OPTIONS_SINGLE_GUI=	GNOMEUI XAW3D XAW
 OPTIONS_DEFAULT?=	GNOMEUI SDL

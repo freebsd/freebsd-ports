@@ -17,12 +17,14 @@ GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	automake
 AUTOMAKE_ARGS=	--add-missing
 OPTIONS_SUB=	yes
-USES=		pathfix perl5 shebangfix libtool
+USES=		pathfix shebangfix libtool
 LIB_DEPENDS=	libevent-2.0.so:${PORTSDIR}/devel/libevent2
 
 NTP_SHEBANG_FILES=	sbin/ntp-wait sbin/ntptrace
 
 .include "Makefile.inc"
+
+PERL_UTILS_USES=	perl5
 
 SSL_USE=		OPENSSL=yes
 SSL_CONFIGURE_OFF=	--without-crypto
@@ -31,7 +33,6 @@ IPV6_CONFIGURE_ENABLE=	ipv6
 
 NTP_SIGND_CONFIGURE_ENABLE=	ntp-signd
 
-NTPSNMPD_PLIST_FILES=	sbin/ntpsnmpd
 NTPSNMPD_LIB_DEPENDS=	libnetsnmp.so:${PORTSDIR}/net-mgmt/net-snmp
 NTPSNMPD_CONFIGURE_OFF=	--without-ntpsnmpd
 
@@ -53,13 +54,6 @@ BROKEN=		Fails to compile when MX4200 is enabled.
 .endif
  
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}4
-
-pre-everything::
-	@${ECHO}
-	@${ECHO} If you wish to build this port with SNMP support, please make
-	@${ECHO} sure that the net-mgmt/net-snmp port is installed before
-	@${ECHO} building and installing this port.
-	@${ECHO}
 
 AUTOTOOLSFILES=	aclocal.m4
 

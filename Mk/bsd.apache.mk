@@ -84,7 +84,7 @@ WARNING+=	"DEFAULT_APACHE_VER is defined, consider using DEFAULT_VERSIONS=apache
 .endif
 
 DEFAULT_APACHE_VERSION?=	${APACHE_DEFAULT:S/.//}
-APACHE_SUPPORTED_VERSION=	22 24 # preferred version first
+APACHE_SUPPORTED_VERSION=	24 22 # preferred version first
 
 # Print warnings
 _ERROR_MSG=	: Error from bsd.apache.mk.

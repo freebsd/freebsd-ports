@@ -10,7 +10,7 @@ MASTER_SITES=	http://FreeBSD.czest.pl/~wkoszek/ports/
 MAINTAINER= ports@FreeBSD.org
 COMMENT=	Free programmer for Xilinx Spartan S3E Starter Kit
 
-LIB_DEPENDS=	ftdi:${PORTSDIR}/devel/libftdi
+LIB_DEPENDS=	libftdi.so:${PORTSDIR}/devel/libftdi
 RUN_DEPENDS=	${LOCALBASE}/sbin/fxload:${PORTSDIR}/misc/fxload
 
 USES=		cmake

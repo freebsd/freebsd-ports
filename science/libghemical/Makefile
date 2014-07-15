@@ -14,8 +14,8 @@ COMMENT=	Support libraries of science/ghemical port
 BUILD_DEPENDS=	obabel:${PORTSDIR}/science/openbabel \
 		intltool-update:${PORTSDIR}/textproc/intltool \
 		ld:${PORTSDIR}/devel/binutils
-LIB_DEPENDS+=	mpqc:${PORTSDIR}/science/mpqc \
-		f2c:${PORTSDIR}/lang/f2c
+LIB_DEPENDS+=	libmpqc.so:${PORTSDIR}/science/mpqc \
+		libf2c.so:${PORTSDIR}/lang/f2c
 
 USES=		fortran gettext gmake pathfix pkgconfig
 USE_GL=		gl

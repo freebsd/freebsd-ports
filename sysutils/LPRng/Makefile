@@ -16,7 +16,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Enhanced Printer Spooler
 
-LIB_DEPENDS=	gdbm:${PORTSDIR}/databases/gdbm
+LIB_DEPENDS=	libgdbm.so:${PORTSDIR}/databases/gdbm
 
 CONFLICTS=	cups-base-1.[2-9]*
 

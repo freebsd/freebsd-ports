@@ -30,7 +30,7 @@ NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_CANNA)
-LIB_DEPENDS+=	canna.1:${PORTSDIR}/japanese/canna-lib
+LIB_DEPENDS+=	libcanna.so:${PORTSDIR}/japanese/canna-lib
 
 CFLAGS+=	-I${LOCALBASE}/include -DCANNA
 LIBS+=		-L${LOCALBASE}/lib -lcanna

@@ -19,7 +19,7 @@ PRE-INSTALL)
   ;;
 POST-INSTALL)
 	if [ ! -d ${DNRD_DIR} ]; then
-		${MKDIR} ${DNRD_DIR}
+		${MKDIR} ${DESTDIR}${DNRD_DIR}
 	fi
   ;;
 esac

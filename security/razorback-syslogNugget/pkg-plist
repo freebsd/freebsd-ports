@@ -1,10 +1,6 @@
-@unexec if cmp -s %D/etc/razorback/syslog.conf %D/etc/razorback/syslog.conf.sample; then rm -f %D/etc/razorback/syslog.conf; fi
-etc/razorback/syslog.conf.sample
-@exec if [ ! -f %D/etc/razorback/syslog.conf ]; then cp -p %D/%F %B/syslog.conf; fi
-@dirrmtry etc/razorback
+@sample etc/razorback/syslog.conf.sample
 lib/razorback/syslogNugget.so.2.0.0
 lib/razorback/syslogNugget.so.2
 lib/razorback/syslogNugget.so
-lib/razorback/syslogNugget.la
 lib/razorback/syslogNugget.a
 @dirrmtry lib/razorback

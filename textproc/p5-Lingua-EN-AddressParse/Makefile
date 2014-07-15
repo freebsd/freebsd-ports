@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Lingua-EN-AddressParse
-PORTVERSION=	1.18
+PORTVERSION=	1.19
 CATEGORIES=	textproc perl5 geography
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-

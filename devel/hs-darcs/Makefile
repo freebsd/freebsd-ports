@@ -39,7 +39,7 @@ CONFIGURE_ARGS+=	--flags="library executable"
 
 .if ${PORT_OPTIONS:MCURL}
 CONFIGURE_ARGS+=	--flags="curl"
-LIB_DEPENDS+=		curl:${PORTSDIR}/ftp/curl
+LIB_DEPENDS+=		libcurl.so:${PORTSDIR}/ftp/curl
 .else
 CONFIGURE_ARGS+=	--flags="-curl"
 .endif

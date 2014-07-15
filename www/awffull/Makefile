@@ -11,9 +11,9 @@ MAINTAINER?=	chad@wickdev.com
 COMMENT=	AWFFull is a webserver log analysis tool forked from Webalizer
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/X11/fonts/bitstream-vera/Vera.ttf:${PORTSDIR}/x11-fonts/bitstream-vera
-LIB_DEPENDS=	gd:${PORTSDIR}/graphics/gd \
-		png15:${PORTSDIR}/graphics/png \
-		pcre:${PORTSDIR}/devel/pcre
+LIB_DEPENDS=	libgd.so:${PORTSDIR}/graphics/gd \
+		libpng15.so:${PORTSDIR}/graphics/png \
+		libpcre.so:${PORTSDIR}/devel/pcre
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 CONFLICTS?=	ja-awffull-[0-9]*
@@ -36,7 +36,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGEOIP}
-LIB_DEPENDS+=	GeoIP.5:${PORTSDIR}/net/GeoIP
+LIB_DEPENDS+=	libGeoIP.so:${PORTSDIR}/net/GeoIP
 CONFIGURE_ARGS+=--enable-geoip
 .else
 CONFIGURE_ARGS+=--disable-geoip

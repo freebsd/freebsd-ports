@@ -12,6 +12,7 @@
 %%WWWDIR%%/js/tinymce/plugins/bbcode/plugin.min.js
 %%WWWDIR%%/js/tinymce/plugins/charmap/plugin.min.js
 %%WWWDIR%%/js/tinymce/plugins/code/plugin.min.js
+%%WWWDIR%%/js/tinymce/plugins/colorpicker/plugin.min.js
 %%WWWDIR%%/js/tinymce/plugins/contextmenu/plugin.min.js
 %%WWWDIR%%/js/tinymce/plugins/directionality/plugin.min.js
 %%WWWDIR%%/js/tinymce/plugins/emoticons/img/smiley-cool.gif
@@ -59,6 +60,7 @@
 %%WWWDIR%%/js/tinymce/plugins/table/plugin.min.js
 %%WWWDIR%%/js/tinymce/plugins/template/plugin.min.js
 %%WWWDIR%%/js/tinymce/plugins/textcolor/plugin.min.js
+%%WWWDIR%%/js/tinymce/plugins/textpattern/plugin.min.js
 %%WWWDIR%%/js/tinymce/plugins/visualblocks/css/visualblocks.css
 %%WWWDIR%%/js/tinymce/plugins/visualblocks/plugin.min.js
 %%WWWDIR%%/js/tinymce/plugins/visualchars/plugin.min.js
@@ -94,6 +96,7 @@
 @dirrm %%WWWDIR%%/js/tinymce/plugins/visualchars
 @dirrm %%WWWDIR%%/js/tinymce/plugins/visualblocks/css
 @dirrm %%WWWDIR%%/js/tinymce/plugins/visualblocks
+@dirrm %%WWWDIR%%/js/tinymce/plugins/textpattern
 @dirrm %%WWWDIR%%/js/tinymce/plugins/textcolor
 @dirrm %%WWWDIR%%/js/tinymce/plugins/template
 @dirrm %%WWWDIR%%/js/tinymce/plugins/table
@@ -124,6 +127,7 @@
 @dirrm %%WWWDIR%%/js/tinymce/plugins/emoticons
 @dirrm %%WWWDIR%%/js/tinymce/plugins/directionality
 @dirrm %%WWWDIR%%/js/tinymce/plugins/contextmenu
+@dirrm %%WWWDIR%%/js/tinymce/plugins/colorpicker
 @dirrm %%WWWDIR%%/js/tinymce/plugins/code
 @dirrm %%WWWDIR%%/js/tinymce/plugins/charmap
 @dirrm %%WWWDIR%%/js/tinymce/plugins/bbcode

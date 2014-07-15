@@ -1,16 +1,18 @@
-# Created by: Simon Dick <simond@irrelevant.org>
 # $FreeBSD$
 
 PORTNAME=		libsrs_alt
 DISTVERSION=		1.0
+PORTREVISION=		1
 CATEGORIES=		mail
 MASTER_SITES=		http://srs.mirtol.com/
 
 MAINTAINER=		simond@irrelevant.org
 COMMENT=		Sender Rewriting Scheme C Implementation
 
-USE_AUTOTOOLS=	libtool
-USE_BZIP2=		yes
+BROKEN=			distfile no longer available
+EXPIRATION_DATE=	2014-09-15
+
+USES=			libtool tar:bzip2
 USE_LDCONFIG=		yes
 SHLIB_MAJOR=		1
 GNU_CONFIGURE=		yes

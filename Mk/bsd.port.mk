@@ -853,7 +853,7 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 # CONFIGURE_TARGET
 #				- The name of target to call when GNU_CONFIGURE is
 #				  defined.
-#				  Default: ${ARCH}-portbld-freebsd${OSREL}
+#				  Default: ${ARCH}-portbld-${OPSYS:tl}${OSREL}
 # GNU_CONFIGURE_PREFIX
 #				- The directory passed as prefix to the configure script if
 #				  GNU_CONFIGURE is set.
@@ -1184,8 +1184,7 @@ STRIPBIN=	${STRIP_CMD}
 # ${FILEDIR}/patch-* files from them.
 
 .if !target(makepatch)
-makepatch:
-	@${MKDIR} ${FILESDIR}
+makepatch: ${FILESDIR}
 	@(cd ${PATCH_WRKSRC}; \
 		for i in `find . -type f -name '*.orig'`; do \
 			ORG=$$i; \
@@ -2755,7 +2754,7 @@ LATEST_LINK?=		${PKGBASE}
 PKGLATESTFILE=		${PKGLATESTREPOSITORY}/${LATEST_LINK}${PKG_SUFX}
 
 CONFIGURE_SCRIPT?=	configure
-CONFIGURE_TARGET?=	${ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET?=	${ARCH}-portbld-${OPSYS:tl}${OSREL}
 CONFIGURE_TARGET:=	${CONFIGURE_TARGET:S/--build=//}
 CONFIGURE_LOG?=		config.log
 
@@ -3255,6 +3254,8 @@ options-message:
 	@${ECHO_MSG} "===>  Found saved configuration for ${_OPTIONS_READ}"
 .endif
 
+${_DISTDIR} ${FILESDIR} ${PKG_DBDIR} ${PREFIX} ${WRKDIR} ${WRKSRC}:
+	@${MKDIR} ${.TARGET}
 
 # Warn user about deprecated packages.  Advisory only.
 
@@ -3327,8 +3328,7 @@ DISTINFO_DATA?=	if [ \( -n "${DISABLE_SIZE}" -a -n "${NO_CHECKSUM}" \) -o ! -f "
 # Fetch
 
 .if !target(do-fetch)
-do-fetch:
-	@${MKDIR} ${_DISTDIR}
+do-fetch: ${_DISTDIR}
 	@cd ${_DISTDIR};\
 	${_MASTER_SITES_ENV} ; \
 	for _file in ${DISTFILES}; do \
@@ -3485,10 +3485,11 @@ do-fetch:
 
 # Extract
 
-.if !target(do-extract)
-do-extract:
+clean-wrkdir:
 	@${RM} -rf ${WRKDIR}
-	@${MKDIR} ${WRKDIR}
+
+.if !target(do-extract)
+do-extract: clean-wrkdir ${WRKDIR}
 	@for file in ${EXTRACT_ONLY}; do \
 		if ! (cd ${WRKDIR} && ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${_DISTDIR}/$$file ${EXTRACT_AFTER_ARGS});\
 		then \
@@ -3908,9 +3909,8 @@ install-package:
 
 .if !target(check-already-installed)
 .if !defined(NO_PKG_REGISTER) && !defined(FORCE_PKG_REGISTER)
-check-already-installed: ${TMPPLIST_SORT}
+check-already-installed: ${TMPPLIST_SORT} ${PKG_DBDIR}
 		@${ECHO_MSG} "===>  Checking if ${PKGORIGIN} already installed"; \
-		${MKDIR} ${PKG_DBDIR}; \
 		already_installed=`${PKG_INFO} -q -O ${PKGORIGIN}`; \
 		if [ -n "$${already_installed}" ]; then \
 				for p in $${already_installed}; do \
@@ -3950,8 +3950,7 @@ check-umask:
 .endif
 
 .if !target(install-mtree)
-install-mtree:
-	@${MKDIR} ${PREFIX}
+install-mtree: ${PREFIX}
 	@if [ ${UID} != 0 ]; then \
 		if [ -w ${PREFIX}/ ]; then \
 			${ECHO_MSG} "Warning: not superuser, you may get some errors during installation."; \
@@ -4201,7 +4200,7 @@ fix-plist-sequence: ${TMPPLIST}
 
 .if !defined(DISABLE_SECURITY_CHECK)
 .if !target(security-check)
-security-check:
+security-check: ${TMPPLIST}
 # Scan PLIST for:
 #   1.  setugid files
 #   2.  accept()/recvfrom() which indicates network listening capability
@@ -4465,8 +4464,7 @@ delete-distfiles-list:
 # Prints out a list of files to fetch (useful to do a batch fetch)
 
 .if !target(fetch-list)
-fetch-list:
-	@${MKDIR} ${_DISTDIR}
+fetch-list: ${_DISTDIR}
 	@(cd ${_DISTDIR}; \
 	 ${_MASTER_SITES_ENV} ; \
 	 for _file in ${DISTFILES}; do \
@@ -4539,8 +4537,7 @@ fetch-list:
 .endif
 
 .if !target(fetch-url-list-int)
-fetch-url-list-int:
-	@${MKDIR} ${_DISTDIR}
+fetch-url-list-int: ${_DISTDIR}
 	@(cd ${_DISTDIR}; \
 	${_MASTER_SITES_ENV}; \
 	for _file in ${DISTFILES}; do \
@@ -5498,7 +5495,7 @@ ${i:S/-//:tu}=	${WRKDIR}/${SUB_FILES:M${i}*}
 # files exist.
 
 .if !target(generate-plist)
-generate-plist:
+generate-plist: ${WRKDIR}
 	@${ECHO_MSG} "===>   Generating temporary packing list"
 	@${MKDIR} `${DIRNAME} ${TMPPLIST}`
 	@if [ ! -f ${DESCR} ]; then ${ECHO_MSG} "** Missing pkg-descr for ${PKGNAME}."; exit 1; fi
@@ -6422,7 +6419,7 @@ _FETCH_SEQ=		fetch-depends pre-fetch pre-fetch-script \
 				do-fetch fetch-specials post-fetch post-fetch-script
 _EXTRACT_DEP=	fetch
 _EXTRACT_SEQ=	check-build-conflicts extract-message checksum extract-depends \
-				pre-extract pre-extract-script do-extract \
+				pre-extract pre-extract-script clean-wrkdir do-extract \
 				post-extract post-extract-script
 _PATCH_DEP=		extract
 _PATCH_SEQ=		ask-license patch-message patch-depends pathfix dos2unix fix-shebang \

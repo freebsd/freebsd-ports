@@ -11,7 +11,7 @@ COMMENT=	Add-on module for snort to generate real-time web reports
 
 LICENSE=	GPLv2
 
-OPTIONS_DEFINE=		BARNYARD JPGRAPH MYSQL PGSQL
+OPTIONS_DEFINE=		BARNYARD JPGRAPH MYSQL PGSQL DOCS
 
 BARNYARD_DESC=		Depend on Barnyard2
 JPGRAPH_DESC=		Graphical charting

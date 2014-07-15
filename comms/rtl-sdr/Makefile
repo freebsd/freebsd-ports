@@ -24,6 +24,8 @@ USE_LDCONFIG=	yes
 
 DOCSDIR=	${PREFIX}/share/doc/librtlsdr
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MDOCS}

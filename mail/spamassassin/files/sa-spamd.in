@@ -33,6 +33,9 @@ rcvar=${name}_enable
 extra_commands="reload"
 load_rc_config $name
 
+start_precmd="precmd"
+restart_precmd="precmd"
+
 # Set defaults
 : ${spamd_enable:="NO"}
 : ${spamd_flags="-c %%SQL_FLAG%% %%RUN_AS_USER%%"}
@@ -40,6 +43,14 @@ load_rc_config $name
 pidfile=${spamd_pidfile:-"/var/run/${name}/${name}.pid"}
 command=%%PREFIX%%/bin/${name}
 command_args="-d -r ${pidfile}"
-required_dirs="%%PREFIX%%/share/spamassassin /var/run/${name}"
+required_dirs="%%PREFIX%%/share/spamassassin"
+
+precmd()
+{
+	if [ ! -d /var/run/${name} ]; then
+		mkdir -p /var/run/${name}
+		chown %%SPAMD_OWN%% /var/run/${name}
+	fi
+}
 
 run_rc_command "$1"

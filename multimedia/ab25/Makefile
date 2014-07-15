@@ -12,7 +12,7 @@ COMMENT=	Utility for ARIB STD-B25 ECM handling in MPEG2-TS stream
 LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/licence.txt
 
-LIB_DEPENDS=	pcsclite:${PORTSDIR}/devel/pcsc-lite
+LIB_DEPENDS=	libpcsclite.so:${PORTSDIR}/devel/pcsc-lite
 RUN_DEPENDS=	${LOCALBASE}/lib/pcsc/drivers/ifd-ccid.bundle/Contents/FreeBSD/libccid.so:${PORTSDIR}/devel/libccid
 
 USE_LDCONFIG=	yes

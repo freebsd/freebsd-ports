@@ -9,22 +9,17 @@ MASTER_SITES=	SF/razorbacktm/Dispatcher
 PKGNAMEPREFIX=	razorback-
 DIST_SUBDIR=	razorback
 
-MAINTAINER= ports@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Framework for an intelligence driven security - Dispatcher
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	razorback_api:${PORTSDIR}/security/razorback-api \
-		memcached:${PORTSDIR}/databases/libmemcached \
-		cli:${PORTSDIR}/devel/libcli
+LIB_DEPENDS=	librazorback_api.so:${PORTSDIR}/security/razorback-api \
+		libmemcached.so:${PORTSDIR}/databases/libmemcached \
+		libcli.so:${PORTSDIR}/devel/libcli
 
-OPTIONS_DEFINE=	DEBUG ASSERT ACTIVEMQ
-ASSERT_DESC=	Enable Asserts
-ACTIVEMQ_DESC=	ActiveMQ runs locally
-
-USES=	pathfix pkgconfig
-USE_AUTOTOOLS=	libtool
+USES=		libtool pathfix pkgconfig
 GNU_CONFIGURE=	yes
 USE_MYSQL=	yes
 USE_RC_SUBR=	dispatcher dispatcher_safed
@@ -35,16 +30,14 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 USERS?=		razorback
 GROUPS?=	razorback
 
-NO_STAGE=	yes
+OPTIONS_DEFINE=	DEBUG ASSERT ACTIVEMQ
+
+ASSERT_DESC=	Enable Asserts
+ASSERT_CONFIGURE_ENABLE=	assert
+ACTIVEMQ_DESC=	ActiveMQ runs locally
+DEBUG_CONFIGURE_ENABLE=	debug
+
 .include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MDEBUG}
-CONFIGURE_ARGS+=--enable-debug
-.endif
-
-.if ${PORT_OPTIONS:MASSERT}
-CONFIGURE_ARGS+=--enable-assert
-.endif
 
 .if ${PORT_OPTIONS:MACTIVEMQ}
 RUN_DEPENDS=	${LOCALBASE}/etc/rc.d/activemq:${PORTSDIR}/net/activemq
@@ -56,11 +49,5 @@ SUB_LIST=	ACTIVEMQ="" ACTIVEMQ_LOC="remote" \
 		ACTIVEMQ_LOCATION="on the remote ActiveMQ host." \
 		ACTIVEMQ_CONFIG=""
 .endif
-
-post-install:
-	@if [ ! -f ${PREFIX}/etc/razorback/dispatcher.conf ]; then \
-		${CP} -p ${PREFIX}/etc/razorback/dispatcher.conf.sample ${PREFIX}/etc/razorback/dispatcher.conf ; \
-	fi
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>

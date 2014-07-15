@@ -21,6 +21,8 @@ PORTDOCS=	*
 
 USE_RC_SUBR=	ptpd2
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.options.mk>
 
 do-install::

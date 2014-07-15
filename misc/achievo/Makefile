@@ -19,16 +19,13 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 NO_BUILD=	YES
 
 ACHVODIR?=	www/achievo
-PLIST_SUB=	ACHVODIR=${ACHVODIR}
+PLIST_SUB=	ACHVODIR=${ACHVODIR} WWWOWN="${WWWOWN}" WWWGRP="${WWWGRP}"
 
-NO_STAGE=	yes
 post-patch:
 	@${MV} ${WRKSRC}/config.inc.php ${WRKSRC}/config.inc.php-default
 
 do-install:
-	@${MKDIR} ${PREFIX}/${ACHVODIR}
-	@${CP} -R ${WRKSRC}/* ${PREFIX}/${ACHVODIR}
-	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${PREFIX}/${ACHVODIR}
-	@${CAT} ${PKGMESSAGE}
+	@${MKDIR} ${STAGEDIR}${PREFIX}/${ACHVODIR}
+	@${CP} -R ${WRKSRC}/* ${STAGEDIR}${PREFIX}/${ACHVODIR}
 
 .include <bsd.port.mk>

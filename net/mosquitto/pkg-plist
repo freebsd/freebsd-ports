@@ -8,13 +8,13 @@ share/man/man1/mosquitto_pub.1.gz
 share/man/man1/mosquitto_passwd.1.gz
 %%NOPYTHON%%%%PYTHON_LIBDIR%%/site-packages/mosquitto.pyc
 %%NOPYTHON%%%%PYTHON_LIBDIR%%/site-packages/mosquitto.py
-%%NOPYTHON%%%%PYTHON_LIBDIR%%/site-packages/mosquitto-1.3.1-py%%PYTHON_VER%%.egg-info
+%%NOPYTHON%%%%PYTHON_LIBDIR%%/site-packages/mosquitto-1.3.2-py%%PYTHON_VER%%.egg-info
 lib/libmosquittopp.so.1
 lib/libmosquittopp.so
 lib/libmosquitto.so.1
 lib/libmosquitto.so
-lib/libmosquitto.so.1.3.1
-lib/libmosquittopp.so.1.3.1
+lib/libmosquitto.so.1.3.2
+lib/libmosquittopp.so.1.3.2
 include/mosquittopp.h
 include/mosquitto_plugin.h
 include/mosquitto.h
@@ -22,12 +22,10 @@ bin/mosquitto_sub
 bin/mosquitto_pub
 bin/mosquitto_passwd
 sbin/mosquitto
-etc/mosquitto/pwfile.example
-etc/mosquitto/pskfile.example
-@unexec if cmp -s %D/etc/mosquitto/mosquitto.conf %D/etc/mosquitto/mosquitto.conf.example; then rm -f %D/etc/mosquitto/mosquitto.conf; fi
-etc/mosquitto/mosquitto.conf.example
-@exec cp -n %B/mosquitto.conf.example %B/mosquitto.conf
-etc/mosquitto/aclfile.example
+@sample etc/mosquitto/pwfile.sample
+@sample etc/mosquitto/pskfile.sample
+@sample etc/mosquitto/mosquitto.conf.sample
+@sample etc/mosquitto/aclfile.sample
 @dirrmtry etc/mosquitto
 @dirrmtry share/man/man8
 @dirrmtry share/man/man7

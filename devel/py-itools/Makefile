@@ -22,8 +22,8 @@ BUILD_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}reportlab2>=2.3:${PORTSDIR}/print/py-repo
 		${PYTHON_PKGNAMEPREFIX}pygit2>=0:${PORTSDIR}/devel/py-pygit2 \
 		python:${PORTSDIR}/lang/python
 RUN_DEPENDS+=	${BUILD_DEPENDS}
-LIB_DEPENDS=	glib:${PORTSDIR}/devel/glib20 \
-		soup:${PORTSDIR}/devel/libsoup
+LIB_DEPENDS=	libglib.so:${PORTSDIR}/devel/glib20 \
+		libsoup.so:${PORTSDIR}/devel/libsoup
 
 LDFLAGS+=	-L${LOCALBASE}/lib
 USES=		pkgconfig

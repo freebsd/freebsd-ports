@@ -1,0 +1,115 @@
+#!/bin/sh
+#
+# $FreeBSD$
+# Created by: Dreamcat4 <dreamcat4@gmail.com>
+#
+# PROVIDE: universal_media_server
+# REQUIRE: LOGIN DAEMON NETWORKING
+# KEYWORD: shutdown
+# 
+# To enable Universal Media Server, just type:
+# sysrc universal_media_server_enable=YES
+# 
+# Optional settings:
+# universal_media_server_user=<run UMS program as 'user'>
+# universal_media_server_profile_path=<full path to UMS profile directory, where exists UMS.conf, cache files, etc.>
+# universal_media_server_log=<full path to UMS.log>
+# universal_media_server_jvm_max_heap=<max memory usage - defaults to '768M'>
+# universal_media_server_java_opts_extra="<extra java options>"
+# 
+# Advanced settings, better to leave alone:
+# universal_media_server_java_class=<java main class to load (program entry point)>
+# universal_media_server_path=<full path to the directory where ums is installed>
+# universal_media_server_classpath=<colon-seperated list of all jar files to load, must include ums.jar)>
+# universal_media_server_jvm_opts="<overides default jvm-related java options with your own set>"
+# universal_media_server_java_opts="<overide default java options with your own set>"
+#
+
+. /etc/rc.subr
+
+name=universal_media_server
+rcvar=universal_media_server_enable
+load_rc_config $name
+
+: ${universal_media_server_enable:=NO}
+
+# Optional settings
+: ${universal_media_server_user=ums}
+: ${universal_media_server_jvm_max_heap=768M}
+: ${universal_media_server_profile_path=%%UMS_PROFILE_PATH%%}
+: ${universal_media_server_log=%%UMS_LOG_DIR%%/UMS.log}
+
+# Advanced settings, better to leave alone
+: ${universal_media_server_path=%%DATADIR%%}
+: ${universal_media_server_java_class=net.pms.PMS}
+: ${universal_media_server_classpath=ums.jar}
+: ${universal_media_server_jvm_opts=-Xss2048k -XX:+UseParNewGC -XX:MinHeapFreeRatio=10 -XX:MaxHeapFreeRatio=20}
+: ${universal_media_server_java_opts=-Dfile.encoding=UTF-8 -Djava.net.preferIPv4Stack=true -Djava.awt.headless=true -Djna.nosys=true}
+# End - "Advanced settings"
+
+JAVA_HOME=%%JAVA_HOME%%
+JAVA=%%JAVA%%
+
+pidfile=%%UMS_PID_DIR%%/UMS.pid
+start_precmd=${name}_prestart
+start_postcmd=${name}_poststart
+stop_precmd=${name}_prestop
+stop_postcmd="rm ${pidfile}"
+
+universal_media_server_prestart()
+{
+  if [ ! -e "${universal_media_server_profile_path}" ]; then
+    mkdir -p ${universal_media_server_profile_path}
+    cp "${universal_media_server_path}/UMS.conf" "${universal_media_server_profile_path}/UMS.conf.sample"
+    cp "${universal_media_server_path}/WEB.conf" "${universal_media_server_profile_path}/WEB.conf.sample"
+  fi
+
+  # Make sure UMS has permission to write it's files into the profile directory
+  chown -R ${universal_media_server_user}:${universal_media_server_user} ${universal_media_server_profile_path}
+}
+
+universal_media_server_poststart()
+{
+  # Find running UMS processes
+  echo "$(pgrep -n -f "java.*${universal_media_server_classpath}.*${universal_media_server_java_class}")" > ${pidfile}
+}
+
+universal_media_server_prestop()
+{
+  ppid=$(head -1 ${pidfile})
+  cpids=$(pgrep -d ' ' -P ${ppid})
+  
+  if [ "${cpids}" ]; then
+    echo "Waiting for PIDS: ${cpids}"
+    for signal in "TERM" "KILL" "HUP" "INT" "QUIT"       
+    do
+      pkill -${signal} -P ${ppid}
+      cpids=$(pgrep -d ' ' -P ${ppid})
+      [ "${cpids}" ] || break;
+      sleep 1;
+    done
+  fi
+}
+
+_universal_media_server_java_args()
+{
+  echo \
+  -Xmx${universal_media_server_jvm_max_heap} \
+  ${universal_media_server_jvm_opts} \
+  ${universal_media_server_java_opts} \
+  ${universal_media_server_java_opts_extra} \
+  -Dums.profile.path=${universal_media_server_profile_path} \
+  -classpath ${universal_media_server_classpath} \
+  ${universal_media_server_java_class}
+}
+
+# UMS looks for transcoder executables on $PATH, so PATH must include %%PREFIX%%/bin
+PATH=/sbin:/bin:/usr/sbin:/usr/bin:%%PREFIX%%/sbin:%%PREFIX%%/bin
+
+# UMS will only startup correctly when CWD=/path/to/ums, otherwise a bizarre exception occurs
+universal_media_server_chdir=${universal_media_server_path}
+
+command=${JAVA}
+command_args="$(_universal_media_server_java_args) >> ${universal_media_server_log} 2>&1 &"
+
+run_rc_command "$1"

@@ -14,5 +14,4 @@ USE_SDL=	image mixer sdl
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--target=""
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -11,7 +11,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	BSD licenced configuration database system
 
-LIB_DEPENDS=	mowgli.2:${PORTSDIR}/devel/libmowgli
+LIB_DEPENDS=	libmowgli.so:${PORTSDIR}/devel/libmowgli
 
 OPTIONS_DEFINE=	GCONF
 OPTIONS_DEFAULT=	GCONF

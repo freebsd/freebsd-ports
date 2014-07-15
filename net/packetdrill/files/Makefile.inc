@@ -3,7 +3,7 @@
 PREFIX?=	/usr/local
 BINDIR?=	${PREFIX}/bin
 
-NO_MAN=
+MAN=
 
 .PATH: ${.CURDIR}/..
 

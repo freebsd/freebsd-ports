@@ -33,7 +33,7 @@ PORTDOCS=	*
 
 WITH_PTHREAD=	yes
 
-OPTIONS_DEFINE=	OPTIMIZE_O3
+OPTIONS_DEFINE=	OPTIMIZE_O3 DOCS
 OPTIMIZE_O3_DESC=	Use O3 Optimization
 
 .include <bsd.port.options.mk>

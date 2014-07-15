@@ -302,7 +302,7 @@ db46_DEPENDS=	libdb-4.6.so:${PORTSDIR}/databases/db46
 db47_DEPENDS=	libdb-4.7.so:${PORTSDIR}/databases/db47
 db48_DEPENDS=	libdb-4.8.so:${PORTSDIR}/databases/db48
 db5_DEPENDS=	libdb-5.3.so:${PORTSDIR}/databases/db5
-db6_DEPENDS=	libdb-6.0.so:${PORTSDIR}/databases/db6
+db6_DEPENDS=	libdb-6.1.so:${PORTSDIR}/databases/db6
 # Detect db versions by finding some files
 db40_FIND=	${LOCALBASE}/include/db4/db.h
 db41_FIND=	${LOCALBASE}/include/db41/db.h
@@ -468,8 +468,8 @@ BDB_LIB_NAME=		db-5.3
 BDB_LIB_CXX_NAME=	db_cxx-5.3
 BDB_LIB_DIR=		${LOCALBASE}/lib/db5
 .  elif ${_BDB_VER} == 6
-BDB_LIB_NAME=		db-6.0
-BDB_LIB_CXX_NAME=	db_cxx-6.0
+BDB_LIB_NAME=		db-6.1
+BDB_LIB_CXX_NAME=	db_cxx-6.1
 BDB_LIB_DIR=		${LOCALBASE}/lib/db6
 .  endif
 BDB_LIB_NAME?=		db${_BDB_VER}

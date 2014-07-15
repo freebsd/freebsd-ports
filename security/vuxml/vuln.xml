@@ -57,6 +57,37 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="ff98087f-0a8f-11e4-b00b-5453ed2e2b49">
+    <topic>postfixadmin -- SQL injection vulnerability</topic>
+    <affects>
+      <package>
+	<name>postfixadmin</name>
+	<range><lt>2.3.7</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Thijs Kinkhorst reports:</p>
+	<blockquote cite="http://www.openwall.com/lists/oss-security/2014/03/26/6">
+	  <p>Postfixadmin has an SQL injection vulnerability. This
+	    vulnerability is only exploitable by authenticated users able to
+	    create new aliases.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2014-2655</cvename>
+      <bid>66455</bid>
+      <freebsdpr>189248</freebsdpr>
+      <mlist>http://www.openwall.com/lists/oss-security/2014/03/26/6</mlist>
+      <url>https://www.debian.org/security/2014/dsa-2889</url>
+    </references>
+    <dates>
+      <discovery>2014-03-28</discovery>
+      <entry>2014-07-13</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="e6a7636a-02d0-11e4-88b6-080027671656">
     <topic>dbus -- multiple vulnabilities</topic>
     <affects>

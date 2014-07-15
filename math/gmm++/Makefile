@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	gmm++
-PORTVERSION=	4.2
+PORTVERSION=	4.3
 CATEGORIES=	math
 MASTER_SITES=	http://download.gna.org/getfem/stable/
 DISTNAME=	${PORTNAME:S/+//g}-${PORTVERSION}

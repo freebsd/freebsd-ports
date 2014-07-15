@@ -2,12 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	subversive
-PORTVERSION=	1.1.2
-PORTEPOCH=	1
+PORTVERSION=	2.0.0
 CATEGORIES=	devel java
-MASTER_SITES=	${MASTER_SITE_ECLIPSE:S,%SUBDIR%,technology/subversive/1.1/builds,:S,$,:core,} \
-		http://community.polarion.com/projects/subversive/download/eclipse/3.0/builds/:connectors
-DISTNAME=	Subversive-${PORTVERSION}.I20131116-1700
+MASTER_SITES=	${MASTER_SITE_ECLIPSE:S,%SUBDIR%,technology/subversive/2.0/builds,:S,$,:core,} \
+		http://community.polarion.com/projects/subversive/download/eclipse/4.0/builds/:connectors
+DISTNAME=	Subversive-${PORTVERSION}.I20140519-1700
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:core ${CONNECTORS}:connectors
 
 MAINTAINER=	ale@FreeBSD.org
@@ -17,7 +16,7 @@ LICENSE=	EPL
 
 RUN_DEPENDS=	eclipse:${PORTSDIR}/java/eclipse
 
-CONNECTORS=	Subversive-connectors-allplatforms-3.0.5.I20140122-1700.zip
+CONNECTORS=	Subversive-connectors-allplatforms-4.0.2.I20140528-1700.zip
 
 USES=		zip
 NO_WRKSUBDIR=	yes

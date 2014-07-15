@@ -2,18 +2,18 @@
 # $FreeBSD$
 
 PORTNAME=	datatools
-PORTVERSION=	1.11
+PORTVERSION=	1.12
 CATEGORIES=	java devel databases
-MASTER_SITES=	${MASTER_SITE_ECLIPSE:S,/eclipse/downloads/drops/,/datatools/downloads/,}
-MASTER_SITE_SUBDIR=	${PORTVERSION}
+MASTER_SITES=	${MASTER_SITE_ECLIPSE:S,/eclipse/downloads/drops/,/,}
+MASTER_SITE_SUBDIR=datatools/downloads/${PORTVERSION}
 PKGNAMEPREFIX=	eclipse-
-DISTNAME=	dtp-sdk_${PORTVERSION}
+DISTNAME=	dtp-sdk_${PORTVERSION}.0
 DIST_SUBDIR=	eclipse
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ljboiler@gmail.com
 COMMENT=	Data Tools Platform for the Eclipse IDE
 
-RUN_DEPENDS=	eclipse:${PORTSDIR}/java/eclipse \
+RUN_DEPENDS=	${LOCALBASE}/bin/eclipse:${PORTSDIR}/java/eclipse \
 		${LOCALBASE}/share/eclipse/dropins/emf:${PORTSDIR}/java/eclipse-emf \
 		${LOCALBASE}/share/eclipse/dropins/gef:${PORTSDIR}/java/eclipse-gef
 

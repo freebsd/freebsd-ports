@@ -27,7 +27,7 @@ USE_RC_SUBR=	turnserver
 
 HAS_CONFIGURE=	YES
 
-OPTIONS_DEFINE=	MYSQL PGSQL REDIS
+OPTIONS_DEFINE=	MYSQL PGSQL REDIS DOCS EXAMPLES
 
 SHEBANG_FILES=	examples/scripts/restapi/shared_secret_maintainer.pl
 USES=		perl5 shebangfix

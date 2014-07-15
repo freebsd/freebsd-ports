@@ -12,7 +12,7 @@ COMMENT=	Application launcher for Blackbox-like window manager
 
 LICENSE=	BSD
 
-LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png
 
 GNU_CONFIGURE=	yes
 USE_XORG=	x11
@@ -23,12 +23,8 @@ PLIST_FILES=	bin/bbdock
 
 OPTIONS_DEFINE=	DOCS
 
-.include <bsd.port.options.mk>
-
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/${PORTDOCS} ${STAGEDIR}${DOCSDIR}
-.endif
 
 .include <bsd.port.mk>

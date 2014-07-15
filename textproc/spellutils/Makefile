@@ -20,6 +20,8 @@ LIBS+=		-L${LOCALBASE}/lib -lintl
 DOCS=		NEWS README
 EXAMPLES=	aspell.sl
 
+OPTIONS_DEFINE=	DOCS EXAMPLES
+
 .include <bsd.port.options.mk>
 
 post-install:

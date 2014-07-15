@@ -22,6 +22,8 @@ GNU_CONFIGURE=	yes
 
 PLIST_SUB=	VERSION="2.0" API_VERSION="2.0"
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.options.mk>
 
 .if ! ${PORT_OPTIONS:MDOCS}

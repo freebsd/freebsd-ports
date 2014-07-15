@@ -1,4 +1,5 @@
 bin/pacpl
+man/man1/pacpl.1.gz
 %%DATADIR%%/locale/en_US.po
 %%ADDITIONAL_LANGS%%%%DATADIR%%/locale/ca.po
 %%ADDITIONAL_LANGS%%%%DATADIR%%/locale/de.po

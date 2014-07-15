@@ -37,7 +37,7 @@ PLIST_FILES+=	bin/dnsblchk bin/dnsblupd bin/ipfwmtad bin/mxlookup \
 PORTDOCS=	Changelog INSTALL LICENSE docs.html docs.txt db.rcpt \
 		db.rdnsbl db.sndr policy.html spamilter.rc
 
-OPTIONS_DEFINE=	SMTP_AFTER_POP3 PAM LIBSPF
+OPTIONS_DEFINE=	SMTP_AFTER_POP3 PAM LIBSPF DOCS
 SMTP_AFTER_POP3_DESC=	SMTP after POP3
 LIBSPF_DESC=	build with libspf
 

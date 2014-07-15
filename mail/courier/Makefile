@@ -11,7 +11,7 @@ MAINTAINER=	bsd@dino.sk
 COMMENT=	Courier SMTP IMAP POP3 HTTP mail server suite
 
 BUILD_DEPENDS=	courierauthconfig:${PORTSDIR}/security/courier-authlib-base
-LIB_DEPENDS=	pcre:${PORTSDIR}/devel/pcre
+LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre
 RUN_DEPENDS=	courierauthconfig:${PORTSDIR}/security/courier-authlib-base \
 		${LOCALBASE}/share/sysconftool/sysconftool:${PORTSDIR}/devel/sysconftool \
 		${LOCALBASE}/etc/mime.types:${PORTSDIR}/misc/mime-support \
@@ -107,7 +107,7 @@ SUB_LIST:=	${PLIST_SUB}
 SUB_FILES+=	pkg-message crontab sharedindexupdate
 #SUB_FILES+=	pkg-install pkg-message crontab sharedindexupdate
 
-OPTIONS_DEFINE=	LDAP PROCMAIL SENDFAX UUCP IPV6 MAILDROPFLAGS
+OPTIONS_DEFINE=	LDAP PROCMAIL SENDFAX UUCP IPV6 MAILDROPFLAGS DOCS
 OPTIONS_GROUP=	WEBMAIL
 #OPTIONS_GROUP=	SYSTEM WEBMAIL
 #OPTIONS_GROUP_SYSTEM=	RCCONF MAILCONF PERIODIC

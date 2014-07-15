@@ -28,9 +28,9 @@ SHEBANG_FILES=	adm/templates/env.sh.in adm/templates/draw.sh		\
 		adm/start.tcl draw.sh xcode.sh env.sh custom.sh.in	\
 		gendoc codeblocks.sh
 
-OPTIONS_DEFINE=	TBB VIS
-TBB_DESC=	"Build with TBB"
-VIS_DESC=	"Build Visualizazion module (requires OpenGL, freetype, ftgl and gl2ps)"
+OPTIONS_DEFINE=	TBB VIS DOCS
+TBB_DESC=	Build with TBB
+VIS_DESC=	Build Visualizazion module (requires OpenGL, freetype, ftgl and gl2ps)
 OPTIONS_DEFAULT=TBB VIS
 OPTIONS_SUB=	yes
 

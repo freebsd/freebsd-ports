@@ -46,7 +46,7 @@ USE_LDCONFIG=	yes
 
 USE_GCC=	any
 
-OPTIONS_DEFINE=	JAPANESE
+OPTIONS_DEFINE=	JAPANESE DOCS
 JAPANESE_DESC=	Japanese support in ID3 tags
 
 .include <bsd.port.options.mk>

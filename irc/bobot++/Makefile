@@ -30,7 +30,7 @@ NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGUILE}
-LIB_DEPENDS+=	guile.21:${PORTSDIR}/lang/guile
+LIB_DEPENDS+=	libguile.so:${PORTSDIR}/lang/guile
 CONFIGURE_ARGS+=	--enable-scripting
 PLIST_FILES+=	share/guile/site/bobotpp/bot.scm \
 		%%DATADIR%%/scripts/bobot-utils.scm

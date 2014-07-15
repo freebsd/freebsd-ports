@@ -81,7 +81,7 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/SSLeay/want_nothing.al
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/SSLeay/want_read.al
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/SSLeay/want_write.al
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/SSLeay
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Net/SSLeay
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Net
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/SSLeay
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net

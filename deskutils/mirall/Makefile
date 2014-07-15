@@ -41,6 +41,9 @@ post-patch:
 post-build:
 	@(cd ${WRKSRC} && ${CP} -f sync-exclude.lst sync-exclude.lst.sample)
 
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MDOCS}
 post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	(cd ${INSTALL_WRKSRC}/doc/latex && ${INSTALL_DATA} *.pdf \
@@ -48,5 +51,6 @@ post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}/html
 	@(cd ${INSTALL_WRKSRC}/doc/html/unthemed && ${COPYTREE_SHARE} . \
 		${STAGEDIR}${DOCSDIR}/html)
+.endif
 
 .include <bsd.port.mk>

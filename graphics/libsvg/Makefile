@@ -11,9 +11,9 @@ MASTER_SITES=	http://cairographics.org/snapshots/
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Parser for SVG content in files or buffers
 
-LIB_DEPENDS=	fontconfig.1:${PORTSDIR}/x11-fonts/fontconfig \
-		png15:${PORTSDIR}/graphics/png \
-		jpeg.11:${PORTSDIR}/graphics/jpeg
+LIB_DEPENDS=	libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig \
+		libpng15.so:${PORTSDIR}/graphics/png \
+		libjpeg.so:${PORTSDIR}/graphics/jpeg
 
 USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes

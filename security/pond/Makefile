@@ -17,7 +17,7 @@ BUILD_DEPENDS=	${LOCALBASE}/${GO_LIBDIR}/code.google.com/p/go.crypto/bcrypt.a:${
 		${LOCALBASE}/${GO_LIBDIR}/code.google.com/p/goprotobuf/proto.a:${PORTSDIR}/devel/goprotobuf \
 		${LOCALBASE}/${GO_LIBDIR}/code.google.com/p/go.net/dict.a:${PORTSDIR}/net/go.net
 RUN_DEPENDS=	tor:${PORTSDIR}/security/tor
-LIB_DEPENDS=	gtkspell:${PORTSDIR}/textproc/gtkspell \
+LIB_DEPENDS=	libgtkspell.so:${PORTSDIR}/textproc/gtkspell \
 		libtspi.so:${PORTSDIR}/security/trousers
 
 BROKEN=		Experimental. Know what you do!

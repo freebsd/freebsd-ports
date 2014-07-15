@@ -29,6 +29,8 @@ USE_RC_SUBR=	kqemu
 
 USES=		kmod gmake uidfix
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.pre.mk>
 
 PORTDOCS=	kqemu-doc.html kqemu-tech.html

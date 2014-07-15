@@ -1,7 +1,14 @@
 bin/polipo
-etc/polipo/config.sample
-etc/polipo/forbidden.sample
+@sample etc/polipo/config.sample
+@sample etc/polipo/forbidden.sample
 etc/periodic/daily/400.polipo
-%%PORTDOCS%%%%DATADIR%%/www/index.html
+man/man1/polipo.1.gz
+%%DATADIR%%/www/index.html
+@dirrmtry %%DATADIR%%/www
+@dirrmtry %%DATADIR%%
+@dirrmtry etc/polipo
 @dirrmtry etc/periodic/daily
 @dirrmtry etc/periodic
+@cwd /
+@dirrmtry var/cache/polipo
+@cwd %%RESETPREFIX%%

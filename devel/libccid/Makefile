@@ -12,10 +12,9 @@ COMMENT=	Generic USB CCID (Chip/Smart Card Interface Devices) driver
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	pcsclite.1:${PORTSDIR}/devel/pcsc-lite
+LIB_DEPENDS=	libpcsclite.so:${PORTSDIR}/devel/pcsc-lite
 
-USE_BZIP2=	yes
-USES=		pkgconfig perl5
+USES=		pkgconfig perl5 tar:bzip2
 GNU_CONFIGURE=	yes
 USE_PERL5=	build
 CONFIGURE_ARGS=	--enable-usbdropdir=${PREFIX}/lib/pcsc/drivers \

@@ -12,7 +12,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	LISP like scripting language
 
-LIB_DEPENDS=	ffi:${PORTSDIR}/devel/libffi
+LIB_DEPENDS=	libffi.so:${PORTSDIR}/devel/libffi
 
 CONFLICTS=	newlisp-[0-9]*
 
@@ -33,7 +33,7 @@ DOCS=		CHANGES CodePatterns.html ExpressionEvaluation.html \
 		manual_frame.html newLISPdoc.html \
 		newlisp_index.html newlisp_manual.html \
 
-OPTIONS_DEFINE=	GMP GSL MYSQL PGSQL SQLITE GUISERV
+OPTIONS_DEFINE=	GMP GSL MYSQL PGSQL SQLITE GUISERV DOCS EXAMPLES
 GSL_DESC=	GSL (GNU Scientific Library)
 GUISERV_DESC=	Install GUI server (in Java)
 
@@ -47,7 +47,7 @@ CFLAGS+=	-DNEWLISP64
 .endif
 
 .if ${PORT_OPTIONS:MGMP}
-LIB_DEPENDS+=	gmp:${PORTSDIR}/math/gmp
+LIB_DEPENDS+=	libgmp.so:${PORTSDIR}/math/gmp
 MODULES+=	gmp
 PLIST_SUB+=	GMP=""
 .else
@@ -55,7 +55,7 @@ PLIST_SUB+=	GMP="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MGSL}
-LIB_DEPENDS+=	gsl:${PORTSDIR}/math/gsl
+LIB_DEPENDS+=	libgsl.so:${PORTSDIR}/math/gsl
 MODULES+=	gsl
 PLIST_SUB+=	GSL=""
 .else

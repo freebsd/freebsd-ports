@@ -12,7 +12,7 @@ EXTRACT_SUFX=	tar.gz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	H323 Answer Machine
 
-LIB_DEPENDS=	h323_r.1:${PORTSDIR}/net/openh323
+LIB_DEPENDS=	libh323_r.so:${PORTSDIR}/net/openh323
 
 WRKSRC=		${WRKDIR}/${PORTNAME}_v${PORTVERSION:S/./_/g}
 

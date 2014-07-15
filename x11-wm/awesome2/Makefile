@@ -13,8 +13,8 @@ COMMENT=	A tiling window manager initially based on a dwm code rewriting
 
 BUILD_DEPENDS=	asciidoc:${PORTSDIR}/textproc/asciidoc \
 		xmlto:${PORTSDIR}/textproc/xmlto
-LIB_DEPENDS=	confuse.0:${PORTSDIR}/devel/libconfuse \
-		cairo.2:${PORTSDIR}/graphics/cairo \
+LIB_DEPENDS=	libconfuse.so:${PORTSDIR}/devel/libconfuse \
+		libcairo.so:${PORTSDIR}/graphics/cairo \
 		libfreetype.so:${PORTSDIR}/print/freetype2
 
 USES=		iconv pkgconfig

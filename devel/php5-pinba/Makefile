@@ -12,7 +12,7 @@ DISTNAME=	tony2001-pinba_extension-${GITVERSION}
 MAINTAINER=	komarov@valerka.net
 COMMENT=	PHP-extension part of statistics server for PHP
 
-LIB_DEPENDS=	protobuf:${PORTSDIR}/devel/protobuf
+LIB_DEPENDS=	libprotobuf.so:${PORTSDIR}/devel/protobuf
 
 GITVERSION=	f76b673
 

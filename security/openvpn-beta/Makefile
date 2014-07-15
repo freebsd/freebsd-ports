@@ -22,7 +22,7 @@ CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 INSTALL_TARGET=	install mandir=${MANPREFIX}/man
 
-LIB_DEPENDS+=	lzo2:${PORTSDIR}/archivers/lzo2
+LIB_DEPENDS+=	liblzo2.so:${PORTSDIR}/archivers/lzo2
 
 MAN8=		openvpn.8
 
@@ -49,7 +49,7 @@ CFLAGS+=	-DLOG_OPENVPN=${LOG_OPENVPN}
 .endif
 
 .if ${PORT_OPTIONS:MPOLARSSL}
-LIB_DEPENDS+=		polarssl:${PORTSDIR}/security/polarssl
+LIB_DEPENDS+=		libpolarssl.so:${PORTSDIR}/security/polarssl
 CONFIGURE_ARGS+=	--with-crypto-library=polarssl
 WITHOUT_CHECK=	yes
 .else
@@ -73,7 +73,7 @@ CONFIGURE_ARGS+=	--enable-password-save
 .endif
 
 .if ${PORT_OPTIONS:MPKCS11}
-LIB_DEPENDS+=	pkcs11-helper:${PORTSDIR}/security/pkcs11-helper
+LIB_DEPENDS+=	libpkcs11-helper.so:${PORTSDIR}/security/pkcs11-helper
 .else
 CONFIGURE_ARGS+=	--disable-pkcs11
 .endif

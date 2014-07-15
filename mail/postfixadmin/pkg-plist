@@ -160,9 +160,7 @@ www/postfixadmin/users/vacation.php
 www/postfixadmin/variables.inc.php
 www/postfixadmin/viewlog.php
 www/postfixadmin/xmlrpc.php
-@unexec if cmp -s %D/www/postfixadmin/config.inc.php.sample %D/www/postfixadmin/config.inc.php; then rm -f %D/www/postfixadmin/config.inc.php; fi
-www/postfixadmin/config.inc.php.sample
-@exec if [ ! -f %D/www/postfixadmin/config.inc.php ] ; then cp -p %D/%F %B/config.inc.php; fi
+@sample www/postfixadmin/config.inc.php.sample
 %%PORTDOCS%%%%DOCSDIR%%/BACKUP_MX.txt
 %%PORTDOCS%%%%DOCSDIR%%/DOVECOT.txt
 %%PORTDOCS%%%%DOCSDIR%%/FAQ.txt

@@ -10,7 +10,7 @@ MASTER_SITES=	SF/${PORTNAME}/C%20library/${PORTVERSION}
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Package For Manipulating Undirected And Directed Graphs
 
-LIB_DEPENDS=	gmp.10:${PORTSDIR}/math/gmp
+LIB_DEPENDS=	libgmp.so:${PORTSDIR}/math/gmp
 
 GNU_CONFIGURE=	yes
 USE_GCC=	any

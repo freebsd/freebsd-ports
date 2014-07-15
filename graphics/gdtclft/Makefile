@@ -11,7 +11,7 @@ DISTNAME=	${PORTNAME}${PORTVERSION}
 MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	TCL interface to the Thomas Boutell's Gd library
 
-LIB_DEPENDS=	gd:${PORTSDIR}/graphics/gd
+LIB_DEPENDS=	libgd.so:${PORTSDIR}/graphics/gd
 
 USES=		tcl:84+ uidfix
 

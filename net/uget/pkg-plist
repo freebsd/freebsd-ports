@@ -1,0 +1,55 @@
+bin/uget-cmd
+bin/uget-gtk
+share/applications/uget-gtk.desktop
+share/icons/hicolor/128x128/apps/uget-icon.png
+share/icons/hicolor/16x16/apps/uget-icon.png
+share/icons/hicolor/16x16/apps/uget-tray-default.png
+share/icons/hicolor/16x16/apps/uget-tray-downloading.png
+share/icons/hicolor/16x16/apps/uget-tray-error.png
+share/icons/hicolor/22x22/apps/uget-icon.png
+share/icons/hicolor/22x22/apps/uget-tray-default.png
+share/icons/hicolor/22x22/apps/uget-tray-downloading.png
+share/icons/hicolor/22x22/apps/uget-tray-error.png
+share/icons/hicolor/24x24/apps/uget-icon.png
+share/icons/hicolor/24x24/apps/uget-tray-default.png
+share/icons/hicolor/24x24/apps/uget-tray-downloading.png
+share/icons/hicolor/24x24/apps/uget-tray-error.png
+share/icons/hicolor/32x32/apps/uget-icon.png
+share/icons/hicolor/32x32/apps/uget-tray-default.png
+share/icons/hicolor/32x32/apps/uget-tray-downloading.png
+share/icons/hicolor/32x32/apps/uget-tray-error.png
+share/icons/hicolor/48x48/apps/uget-icon.png
+share/icons/hicolor/48x48/apps/uget-tray-default.png
+share/icons/hicolor/48x48/apps/uget-tray-downloading.png
+share/icons/hicolor/48x48/apps/uget-tray-error.png
+share/icons/hicolor/64x64/apps/uget-icon.png
+share/icons/hicolor/96x96/apps/uget-icon.png
+share/icons/hicolor/scalable/apps/uget-icon.svg
+%%NLS%%share/locale/ar/LC_MESSAGES/uget.mo
+%%NLS%%share/locale/be/LC_MESSAGES/uget.mo
+%%NLS%%share/locale/bn_BD/LC_MESSAGES/uget.mo
+%%NLS%%share/locale/cs/LC_MESSAGES/uget.mo
+%%NLS%%share/locale/da/LC_MESSAGES/uget.mo
+%%NLS%%share/locale/de/LC_MESSAGES/uget.mo
+%%NLS%%share/locale/es/LC_MESSAGES/uget.mo
+%%NLS%%share/locale/fr/LC_MESSAGES/uget.mo
+%%NLS%%share/locale/hu/LC_MESSAGES/uget.mo
+%%NLS%%share/locale/id/LC_MESSAGES/uget.mo
+%%NLS%%share/locale/it/LC_MESSAGES/uget.mo
+%%NLS%%share/locale/ka_GE/LC_MESSAGES/uget.mo
+%%NLS%%share/locale/pl/LC_MESSAGES/uget.mo
+%%NLS%%share/locale/pt_BR/LC_MESSAGES/uget.mo
+%%NLS%%share/locale/ru/LC_MESSAGES/uget.mo
+%%NLS%%share/locale/tr/LC_MESSAGES/uget.mo
+%%NLS%%share/locale/uk/LC_MESSAGES/uget.mo
+%%NLS%%share/locale/vi/LC_MESSAGES/uget.mo
+%%NLS%%share/locale/zh_CN/LC_MESSAGES/uget.mo
+%%NLS%%share/locale/zh_TW/LC_MESSAGES/uget.mo
+share/pixmaps/uget/logo.png
+share/sounds/uget/notification.wav
+%%NLS%%@dirrmtry share/locale/bn_BD/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/bn_BD
+%%NLS%%@dirrmtry share/locale/ka_GE/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/ka_GE
+@dirrm share/pixmaps/uget
+@dirrm share/sounds/uget

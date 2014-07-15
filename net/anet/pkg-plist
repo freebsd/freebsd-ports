@@ -7,18 +7,26 @@ include/anet/anet-net_ifaces.adb
 include/anet/anet-net_ifaces.ads
 include/anet/anet-os.adb
 include/anet/anet-os.ads
+include/anet/anet-os_constants.ads
 include/anet/anet-receivers-datagram.adb
 include/anet/anet-receivers-datagram.ads
 include/anet/anet-receivers-stream.adb
 include/anet/anet-receivers-stream.ads
 include/anet/anet-receivers.adb
 include/anet/anet-receivers.ads
+include/anet/anet-socket_families.ads
 include/anet/anet-sockets-filters.adb
 include/anet/anet-sockets-filters.ads
+include/anet/anet-sockets-inet-iface.adb
 include/anet/anet-sockets-inet-iface.ads
 include/anet/anet-sockets-inet.adb
 include/anet/anet-sockets-inet.ads
+include/anet/anet-sockets-thin-inet.adb
+include/anet/anet-sockets-thin-inet.ads
+include/anet/anet-sockets-thin-netdev-requests.ads
 include/anet/anet-sockets-thin-netdev.ads
+include/anet/anet-sockets-thin-sockaddr.ads
+include/anet/anet-sockets-thin-unix.ads
 include/anet/anet-sockets-thin.ads
 include/anet/anet-sockets-unix.adb
 include/anet/anet-sockets-unix.ads
@@ -60,8 +68,8 @@ lib/anet/anet-types.ali
 lib/anet/anet-udp.ali
 lib/anet/anet-util.ali
 lib/anet/anet.ali
-lib/anet/libanet.a
 lib/gnat/anet.gpr
+lib/libanet.a
 %%PORTDOCS%%%%DOCSDIR%%/html/asciidoc.css
 %%PORTDOCS%%%%DOCSDIR%%/html/index.html
 %%PORTDOCS%%@dirrmtry %%DOCSDIR%%/html

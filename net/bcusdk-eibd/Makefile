@@ -11,7 +11,7 @@ DISTFILES=	${PORTNAME}_${PORTVERSION}${EXTRACT_SUFX}
 MAINTAINER=	bkoenig@alpha-tierchen.de
 COMMENT=	The EIBnet/IP server of the BCU SDK
 
-LIB_DEPENDS=	pthsem.20:${PORTSDIR}/devel/pthsem
+LIB_DEPENDS=	libpthsem.so:${PORTSDIR}/devel/pthsem
 BUILD_DEPENDS=	${LOCALBASE}/lib/libargp.a:${PORTSDIR}/devel/argp-standalone
 
 GNU_CONFIGURE=	yes

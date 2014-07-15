@@ -11,12 +11,12 @@ COMMENT=	CGI Webmail client for Maildirs
 
 BUILD_DEPENDS=	courierauthconfig:${PORTSDIR}/security/courier-authlib-base
 RUN_DEPENDS=	courierauthconfig:${PORTSDIR}/security/courier-authlib-base
-LIB_DEPENDS=	pcre:${PORTSDIR}/devel/pcre
+LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre
 
 CFLAGS:=	-I${LOCALBASE}/include -L${LOCALBASE}/lib ${CFLAGS:S/^[:space:]*//}
 CXXFLAGS:=	-I${LOCALBASE}/include ${CXXFLAGS:S/^[:space:]*//}
 
-OPTIONS_DEFINE=	CACHEDIR FAM GDBM GZIP HTTPS HTTPS_LOGIN ISPELL MIMETYPES SENTRENAME CHARSET
+OPTIONS_DEFINE=	CACHEDIR FAM GDBM GZIP HTTPS HTTPS_LOGIN ISPELL MIMETYPES SENTRENAME CHARSET DOCS
 OPTIONS_DEFAULT=	CACHEDIR FAM GZIP SENTRENAME
 CACHEDIR_DESC=	Cache logins
 FAM_DESC=	Build in fam support for IDLE command

@@ -24,8 +24,8 @@ GHC_DESC=	Build with GHC
 .if ${PORT_OPTIONS:MGHC}
 BUILD_DEPENDS=	ghc:${PORTSDIR}/lang/ghc \
 		hs-random>=0:${PORTSDIR}/devel/hs-random
-LIB_DEPENDS=	gmp.10:${PORTSDIR}/math/gmp \
-		ffi.6:${PORTSDIR}/devel/libffi
+LIB_DEPENDS=	libgmp.so.10:${PORTSDIR}/math/gmp \
+		libffi.so.6:${PORTSDIR}/devel/libffi
 
 CONFIGURE_ARGS+=	--with-hc=ghc
 .endif

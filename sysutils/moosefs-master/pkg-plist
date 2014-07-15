@@ -1,26 +1,36 @@
-@exec  if [ ! -f %D/etc/mfsmaster.cfg ]; then /bin/cp %D/%F %D/etc/mfsmaster.cfg; fi
-@exec  if [ ! -f %D/etc/mfsexports.cfg ]; then /bin/cp %D/%F %D/etc/mfsexports.cfg; fi
-@exec  if [ ! -f %D/etc/mfsmetalogger.cfg ]; then /bin/cp %D/%F %D/etc/mfsmetalogger.cfg; fi
-@exec  if [ ! -f %D/etc/mfstopology.cfg ]; then /bin/cp %D/%F %D/etc/mfstopology.cfg; fi
-@unexec if cmp -s %D/etc/mfs/mfsmaster.cfg.dist %D/etc/mfsmaster.cfg; then rm -f %D/etc/mfsmaster.cfg; fi
-@unexec if cmp -s %D/etc/mfs/mfsexports.cfg.dist %D/etc/mfsexports.cfg; then rm -f %D/etc/mfsexports.cfg; fi
-@unexec if cmp -s %D/etc/mfs/mfsmetalogger.cfg.dist %D/etc/mfsmetalogger.cfg; then rm -f %D/etc/mfsmetalogger.cfg; fi
-@unexec if cmp -s %D/etc/mfs/mfstopology.cfg.dist %D/etc/mfstopology.cfg; then rm -f %D/etc/mfstopology.cfg; fi
-etc/mfs/mfsmaster.cfg.dist
-etc/mfs/mfsexports.cfg.dist
-etc/mfs/mfsmetalogger.cfg.dist
-etc/mfs/mfstopology.cfg.dist
+@owner mfs
+@group mfs
+@sample etc/mfs/mfsexports.cfg.sample
+@sample etc/mfs/mfsmaster.cfg.sample
+@sample etc/mfs/mfsmetalogger.cfg.sample
+@sample etc/mfs/mfstopology.cfg.sample
+@owner
+@group
+man/man5/mfsexports.cfg.5.gz
+man/man5/mfsmaster.cfg.5.gz
+man/man5/mfsmetalogger.cfg.5.gz
+man/man5/mfstopology.cfg.5.gz
+man/man7/mfs.7.gz
+man/man7/moosefs.7.gz
+man/man8/mfscgiserv.8.gz
+man/man8/mfsmaster.8.gz
+man/man8/mfsmetalogger.8.gz
+man/man8/mfsmetarestore.8.gz
 sbin/mfscgiserv
 sbin/mfsmaster
-sbin/mfsmetarestore
 sbin/mfsmetadump
 sbin/mfsmetalogger
+sbin/mfsmetarestore
+share/mfscgi/chart.cgi
+share/mfscgi/err.gif
+share/mfscgi/favicon.ico
+share/mfscgi/index.html
+share/mfscgi/logomini.png
 share/mfscgi/mfs.cgi
 share/mfscgi/mfs.css
-share/mfscgi/logomini.png
-share/mfscgi/index.html
-share/mfscgi/err.gif
-share/mfscgi/chart.cgi
-share/mfscgi/favicon.ico
-@dirrm etc/mfs
+@dirrmtry etc/mfs
 @dirrm share/mfscgi
+@owner mfs
+@group mfs
+/var/mfs/metadata.mfs.empty
+@unexec rmdir "/var/mfs" >/dev/null 2>&1 || :

@@ -3,7 +3,7 @@
 
 PORTNAME=	phpldapadmin
 PORTVERSION=	1.2.3
-PORTREVISION=	6
+PORTREVISION=	7
 PORTEPOCH=	1
 CATEGORIES=	net www
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-php5/${PORTVERSION}
@@ -13,6 +13,9 @@ MAINTAINER=	matthew@FreeBSD.org
 COMMENT=	PHP application to administer LDAP over the web
 
 LICENSE=	GPLv2
+
+USES=		cpe
+CPE_VENDOR=	deon_george
 
 NO_ARCH=	yes
 NO_BUILD=	yes

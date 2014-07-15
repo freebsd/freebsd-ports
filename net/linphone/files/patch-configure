@@ -1,0 +1,24 @@
+--- configure.orig
++++ configure
+@@ -19486,12 +19486,6 @@
+         ;;
+ esac
+ 
+-case "$host_os" in
+-	*freebsd*)
+-		LDFLAGS="$LDFLAGS -pthread"
+-	;;
+-esac
+-
+ case "$host_cpu" in
+ 	*arm*)
+ 
+@@ -20993,7 +20987,7 @@
+         { $as_echo "$as_me:${as_lineno-$LINENO}: result: yes" >&5
+ $as_echo "yes" >&6; }
+ 
+-		SQLITE3_CFLAGS+="-DMSG_STORAGE_ENABLED"
++		SQLITE3_CFLAGS="$SQLITE3_CFLAGS -DMSG_STORAGE_ENABLED"
+ 
+ 
+ 		enable_msg_storage=true

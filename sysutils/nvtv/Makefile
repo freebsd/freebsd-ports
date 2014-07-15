@@ -10,7 +10,7 @@ MASTER_SITES=	SF/nv-tv-out/${PORTNAME}-src/${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	TV output on nvidia card
 
-LIB_DEPENDS=	pci:${PORTSDIR}/devel/libpci
+LIB_DEPENDS=	libpci.so:${PORTSDIR}/devel/libpci
 
 ONLY_FOR_ARCHS=	i386
 

@@ -17,10 +17,12 @@ LICENSE=	GPLv3
 BUILD_DEPENDS=	${LOCALBASE}/lib/libfreeimage.a:${PORTSDIR}/graphics/freeimage
 LIB_DEPENDS=	libboost_thread.so:${PORTSDIR}/devel/boost-libs
 
+DEPRECATED=	No longer needed as luxrender bundles its own verion now
+EXPIRATION_DATE=2014-08-15
+
 HG_NODEID=	475fbf15f0ca
 
-USES=		bison cmake
-USE_BZIP2=	yes
+USES=		bison cmake tar:bzip2
 USE_GL=		glew glut
 WRKSRC=		${WRKDIR}/luxrays-${HG_NODEID}
 

@@ -9,7 +9,7 @@ MASTER_SITES=	SF/husky/fidoconfig/1.4-RC5
 MAINTAINER=	os@rsu.ru
 COMMENT=	Configuration library for Husky Fidosoft Project. Development version
 
-LIB_DEPENDS=	smapi.2:${PORTSDIR}/news/husky-smapi-devel
+LIB_DEPENDS=	libsmapi.so:${PORTSDIR}/news/husky-smapi-devel
 RUN_DEPENDS=	${LOCALBASE}/etc/fido/huskymak.cfg:${PORTSDIR}/news/husky-base-devel
 
 CONFLICTS=	husky-fidoconf-[0-9]*

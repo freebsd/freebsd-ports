@@ -14,7 +14,7 @@ COMMENT=	EiskaltDC++ Direct Connect client GTK GUI
 LICENSE=	GPLv3
 
 RUN_DEPENDS=	${LOCALBASE}/share/eiskaltdcpp/keep_me:${PORTSDIR}/net-p2p/eiskaltdcpp-data
-LIB_DEPENDS=	eiskaltdcpp:${PORTSDIR}/net-p2p/eiskaltdcpp-lib
+LIB_DEPENDS=	libeiskaltdcpp.so:${PORTSDIR}/net-p2p/eiskaltdcpp-lib
 BUILD_DEPENDS+=	chrpath:${PORTSDIR}/devel/chrpath
 
 CMAKE_ARGS+=	-DBUILD_LIB:BOOL=OFF
@@ -48,7 +48,7 @@ NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MMINIUPNP}
-LIB_DEPENDS+=	miniupnpc:${PORTSDIR}/net/miniupnpc
+LIB_DEPENDS+=	libminiupnpc.so:${PORTSDIR}/net/miniupnpc
 CMAKE_ARGS+=	-DUSE_MINIUPNP:BOOL=ON -DLOCAL_MINIUPNP:BOOL=OFF
 .else
 CMAKE_ARGS+=	-DUSE_MINIUPNP:BOOL=OFF
@@ -62,7 +62,7 @@ CMAKE_ARGS+=	-DUSE_LIBGNOME2:BOOL=OFF
 .endif
 
 .if ${PORT_OPTIONS:MLIBNOTIFY}
-LIB_DEPENDS+=	notify:${PORTSDIR}/devel/libnotify
+LIB_DEPENDS+=	libnotify.so:${PORTSDIR}/devel/libnotify
 CMAKE_ARGS+=	-DUSE_LIBNOTIFY:BOOL=ON
 .else
 CMAKE_ARGS+=	-DUSE_LIBNOTIFY:BOOL=OFF

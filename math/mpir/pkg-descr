@@ -1,0 +1,8 @@
+MPIR is an open source multiprecision integer (bignum) library forked from the
+GMP (GNU Multi Precision) project. It consists of much code from past GMP
+releases, in combination with much original contributed code.
+
+MPIR is constructed by a developer and vendor friendly community of
+professional and amateur mathematicians, computer scientists and hobbyists.
+
+WWW: http://www.mpir.org

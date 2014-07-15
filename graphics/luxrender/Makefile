@@ -24,6 +24,9 @@ LIB_DEPENDS=	libboost_python.so:${PORTSDIR}/devel/boost-python-libs \
 LIB_DEPENDS+=	libexecinfo.so:${PORTSDIR}/devel/libexecinfo
 .endif
 
+ONLY_FOR_ARCHS=	i386 amd64
+ONLY_FOR_ARCHS_REASON=	uses SSE extensions
+
 USES=		bison cmake tar:bzip2
 USE_GL=		glut glew
 WRKSRC=		${WRKDIR}/luxrender-lux-${LUX_REV}

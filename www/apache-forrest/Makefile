@@ -16,9 +16,12 @@ COMMENT=		Tool for rapid development of small sites
 ANT=			${STAGEDIR}${DATADIR}/tools/ant/bin/ant
 ANT_TARGET=		local-deploy
 
-IGNORE_FILES=		KEYS README.txt .gitignore *.bak *.bat \
-			*.orig forrest ant index.html
-IGNORE_FILES:=		${IGNORE_FILES:@f@-and ! -name ${f}@}
+IGNORE_FILES=		! -name *\.bak -and ! -name *\.bat \
+			-and ! -name *\.orig -and ! -name .gitignore \
+			-and ! -name KEYS -and ! -name README.txt \
+			-and ! -name ant -and ! -name forrest \
+			-and ! -name index.html
+
 INSTALL_WRKSRC=		${WRKSRC}/build
 
 JAVA_VERSION=		1.6+
@@ -42,7 +45,7 @@ post-patch:
 
 do-install:
 	@cd ${WRKSRC}; \
-	${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR} '${IGNORE_FILES:[2..-1]}'
+	${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR} '${IGNORE_FILES}'
 	@${INSTALL_SCRIPT} ${WRKSRC}/bin/forrest ${STAGEDIR}${DATADIR}/bin/forrest
 	@${INSTALL_SCRIPT} ${WRKSRC}/tools/ant/bin/ant ${STAGEDIR}${DATADIR}/tools/ant/bin/ant
 	@${LN} -sf ../${DATADIR_REL}/bin/forrest ${STAGEDIR}${PREFIX}/bin/forrest

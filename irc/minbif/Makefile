@@ -3,7 +3,7 @@
 
 PORTNAME=	minbif
 PORTVERSION=	1.0.5
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	irc net-im
 MASTER_SITES=	https://symlink.me/attachments/download/148/
 
@@ -25,8 +25,6 @@ USE_RC_SUBR=	minbif
 
 USES=		cmake pkgconfig
 USE_GNOME=	glib20
-USE_EFL=	imlib2
-CMAKE_ARGS=	-DENABLE_IMLIB:BOOL=ON
 
 CFLAGS+=	-DX_DISPLAY_MISSING
 LDFLAGS+=	-pthread
@@ -43,8 +41,8 @@ PLIST_FILES=	bin/minbif %%ETCDIR%%/minbif.conf-dist \
 PLIST_DIRS=	%%ETCDIR%%
 
 CACA_LIB_DEPENDS=	libcaca.so:${PORTSDIR}/graphics/libcaca
-CACA_CMAKE_ON=		-DENABLE_CACA:BOOL=ON
-CACA_CMAKE_OFF=		-DENABLE_CACA:BOOL=OFF
+CACA_CMAKE_ON=		-DENABLE_CACA:BOOL=ON -DENABLE_IMLIB:BOOL=ON
+CACA_CMAKE_OFF=		-DENABLE_CACA:BOOL=OFF -DENABLE_IMLIB:BOOL=OFF
 
 GNUTLS_LIB_DEPENDS=	libgnutls.so:${PORTSDIR}/security/gnutls
 GNUTLS_CMAKE_ON=	-DENABLE_TLS:BOOL=ON
@@ -66,9 +64,12 @@ CMAKE_ARGS+=	-DENABLE_VIDEO:BOOL=ON
 CMAKE_ARGS+=	-DENABLE_VIDEO:BOOL=OFF
 .endif
 
+.if ${PORT_OPTIONS:MCACA}
+USE_EFL=	imlib2
+.endif
+
 .if ${PORT_OPTIONS:MVIDEO} && empty(PORT_OPTIONS:MCACA)
-IGNORE=		if you want to enable webcam support, you must \
-		also enable CACA.
+IGNORE=	if you want to enable webcam support, you must also enable CACA
 .endif
 
 post-patch:

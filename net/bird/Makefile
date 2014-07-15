@@ -12,7 +12,7 @@ COMMENT?=	Dynamic IP routing daemon (IPv4 version)
 
 LICENSE=	GPLv2
 
-USES=		bison gmake
+USES=		bison gmake readline
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--localstatedir=/var
 USE_CSTD=	gnu89

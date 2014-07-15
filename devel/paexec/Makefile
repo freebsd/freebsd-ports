@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	paexec
-PORTVERSION=	0.19.1
-PORTREVISION=	1
+PORTVERSION=	1.0.0
 CATEGORIES=	devel
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
@@ -34,7 +33,7 @@ do-build:
 	@${SETENV} ${MAKE_ENV} ${LOCALBASE}/bin/mkcmake -C ${WRKSRC}
 
 do-install:
-	@${SETENV} ${MAKE_ENV} ${LOCALBASE}/bin/mkcmake -C ${WRKSRC} \
+	${SETENV} ${MAKE_ENV} ${LOCALBASE}/bin/mkcmake -C ${WRKSRC} \
 		${INSTALL_TARGET}
 	${INSTALL_DATA} ${WRKSRC}/presentation/${PORTNAME}.pdf ${STAGEDIR}${DOCSDIR}
 

@@ -3,4 +3,6 @@ platform but might work on other devices using GPIO pins too.
 
 The received data can be logged for later playback/analysis.
 
+The software is written as a library for easy reuse into other software.
+
 WWW: https://github.com/rene0/dcf77pi

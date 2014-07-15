@@ -22,8 +22,6 @@ DOCFILES=	DOCUMENTATION README
 EXAMPLES=	example.lua
 LUNIT_FILES=	lunit-console.lua lunit-tests.lua lunit.lua
 
-OPTIONS_DEFINE=	DOCS EXAMPLES
-
 post-patch:
 	${REINPLACE_CMD} -e 's|"lua"|"${LUA_CMD}"|g' ${WRKSRC}/lunit
 

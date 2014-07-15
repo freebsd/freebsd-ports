@@ -1,0 +1,8 @@
+--- ./source3/script/findsmb.in.orig	2014-07-12 21:37:56.512194098 +0000
++++ ./source3/script/findsmb.in	2014-07-12 21:38:19.976192656 +0000
+@@ -1,4 +1,4 @@
+-#!@PERL@
++#!%%PREFIX%%/bin/perl
+ #
+ # Prints info on all smb responding machines on a subnet.
+ # This script needs to be run on a machine without nmbd running and be

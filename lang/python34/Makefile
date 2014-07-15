@@ -1,24 +1,28 @@
 # Created by: Kubilay Kocak <koobs@FreeBSD.org>
 # $FreeBSD$
 
-PORTNAME=		python34
-PORTVERSION=		3.4.1
-PORTREVISION=		1
-CATEGORIES=		lang python ipv6
-MASTER_SITES=		PYTHON
+PORTNAME=	python34
+PORTVERSION=	3.4.1
+PORTREVISION=	1
+CATEGORIES=	lang python ipv6
+MASTER_SITES=	PYTHON
 MASTER_SITE_SUBDIR=	${PYTHON_MASTER_SITE_SUBDIR}
-DISTNAME=		${PYTHON_DISTNAME}
-DIST_SUBDIR=		python
+DISTNAME=	${PYTHON_DISTNAME}
+DIST_SUBDIR=	python
 
 MAINTAINER=	python@FreeBSD.org
 COMMENT=	Interpreted object-oriented programming language
 
 LICENSE=	PSFL
 
-USES=		ncurses pkgconfig readline tar:xz
+USES=		ncurses pkgconfig readline tar:xz cpe
 USE_LDCONFIG=	yes
 USE_PYTHON=	yes
 GNU_CONFIGURE=	yes
+
+CPE_VENDOR=	python
+CPE_PRODUCT=	${CPE_VENDOR}
+CPE_VERSION=	${PORTVERSION}
 
 PYTHON_VERSION=		python3.4
 PYTHON_NO_DEPENDS=	yes

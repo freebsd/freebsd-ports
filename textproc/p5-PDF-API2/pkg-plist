@@ -27,7 +27,6 @@
 %%PERL5_MAN3%%/PDF::API2::Resource::ColorSpace::Indexed::ACTFile.3.gz
 %%PERL5_MAN3%%/PDF::API2::Resource::ColorSpace::Separation.3.gz
 %%PERL5_MAN3%%/PDF::API2::Resource::ExtGState.3.gz
-%%PERL5_MAN3%%/PDF::API2::Resource::Font.3.gz
 %%PERL5_MAN3%%/PDF::API2::Resource::Font::BdFont.3.gz
 %%PERL5_MAN3%%/PDF::API2::Resource::Font::CoreFont.3.gz
 %%PERL5_MAN3%%/PDF::API2::Resource::Font::SynFont.3.gz

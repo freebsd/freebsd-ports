@@ -120,7 +120,7 @@ man/man3/imclient.3.gz
 man/man5/cyrus.conf.5.gz
 man/man5/imapd.conf.5.gz
 man/man5/krb.equiv.5.gz
-%%EXAMPLESDIR%%/imapd.conf
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/imapd.conf
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Cyrus/IMAP
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Cyrus/SIEVE
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Cyrus

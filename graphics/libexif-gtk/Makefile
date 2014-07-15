@@ -12,7 +12,7 @@ COMMENT=	GTK+ widgets to display/edit EXIF tags
 
 LICENSE=	LGPL21
 
-LIB_DEPENDS=	exif:${PORTSDIR}/graphics/libexif
+LIB_DEPENDS=	libexif.so:${PORTSDIR}/graphics/libexif
 
 USES=		pathfix pkgconfig
 USE_GNOME=	gtk20

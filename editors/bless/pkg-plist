@@ -70,7 +70,6 @@ share/applications/bless.desktop
 share/pixmaps/bless-48x48.png
 @dirrm %%DATADIR%%
 %%PORTDOCS%%@dirrm share/omf/bless
-%%PORTDOCS%%@dirrmtry share/omf
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/user/figures
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/user
 %%PORTDOCS%%@dirrm %%DOCSDIR%%

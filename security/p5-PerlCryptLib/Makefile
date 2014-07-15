@@ -11,7 +11,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl interface to Peter Guttman cryptlib API
 
-LIB_DEPENDS=	cl:${PORTSDIR}/security/cryptlib
+LIB_DEPENDS=	libcl.so:${PORTSDIR}/security/cryptlib
 
 USES=		perl5
 USE_PERL5=	configure

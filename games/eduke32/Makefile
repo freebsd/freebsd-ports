@@ -15,7 +15,7 @@ COMMENT=	Duke Nukem 3D Port based on JFDuke and EDuke
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/GNU.TXT
 
-LIB_DEPENDS=	execinfo.1:${PORTSDIR}/devel/libexecinfo
+LIB_DEPENDS=	libexecinfo.so:${PORTSDIR}/devel/libexecinfo
 
 USES=		gmake
 USE_CSTD=	gnu89
@@ -55,7 +55,7 @@ RUN_DEPENDS+=	timidity:${PORTSDIR}/audio/timidity
 .endif
 
 .if ${PORT_OPTIONS:MVORBIS}
-LIB_DEPENDS+=	vorbis.4:${PORTSDIR}/audio/libvorbis
+LIB_DEPENDS+=	libvorbis.so:${PORTSDIR}/audio/libvorbis
 .endif
 
 post-patch:

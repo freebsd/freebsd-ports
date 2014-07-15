@@ -34,7 +34,7 @@ EXAMPLESDIR=	${PREFIX}/share/examples/py-gtk
 
 CONFLICTS=	py*-gtk-0*
 
-OPTIONS_DEFINE=	NUMPY
+OPTIONS_DEFINE=	NUMPY DOCS EXAMPLES
 NUMPY_DESC=	Numpy support (pulls in lang/gcc)
 
 .include <bsd.port.options.mk>

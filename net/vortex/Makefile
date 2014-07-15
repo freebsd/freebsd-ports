@@ -2,6 +2,7 @@
 
 PORTNAME=	vortex
 DISTVERSION=	2.9.0-59
+PORTREVISION=	1
 CATEGORIES=	net ipv6
 MASTER_SITES=	SF/${PORTNAME}-ids/${PORTNAME}/2.9.0/
 EXTRACT_SUFX=	.tgz
@@ -11,8 +12,8 @@ COMMENT=	Network surveillance engine
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/libnids.a:${PORTSDIR}/net/libnids-libnet11 \
-		${LIBNET_CONFIG}:${PORTSDIR}/net/libnet
+BUILD_DEPENDS=	${LOCALBASE}/lib/libnids.a:${PORTSDIR}/net/libnids-libnet11
+LIB_DEPENDS=	libnet.so:${PORTSDIR}/net/libnet
 
 LIBNET_CONFIG=	${LOCALBASE}/bin/libnet11-config
 

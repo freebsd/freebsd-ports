@@ -10,7 +10,7 @@ MASTER_SITES=	http://untroubled.org/${PORTNAME}/ \
 MAINTAINER= ports@FreeBSD.org
 COMMENT=	Credential Validation Modules
 
-LIB_DEPENDS=	bg.2:${PORTSDIR}/devel/bglibs
+LIB_DEPENDS=	libbg.so:${PORTSDIR}/devel/bglibs
 
 CONFLICTS=	bglibs-1.00*
 

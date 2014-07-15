@@ -27,7 +27,4 @@ share/pixmaps/wxmaxima.png
 %%DATADIR%%/tips.txt
 %%DATADIR%%/wxmathml.lisp
 %%DATADIR%%/wxmaxima.png
-@dirrm %%DATADIR%%
-@dirrmtry %%DESKTOPDIR%%
-@exec %%LOCALBASE%%/bin/update-desktop-database -q > /dev/null || /usr/bin/true
-@unexec %%LOCALBASE%%/bin/update-desktop-database -q > /dev/null || /usr/bin/true
+@dirrmtry %%DATADIR%%

@@ -6,7 +6,7 @@ DISTFILES=	${PORTNAME}${PKGNAMESUFFIX}-src-${PORTVERSION}.0${EXTRACT_SUFX}:plugi
 
 COMMENT=	The arachnoid video plugin for Mupen64plus
 
-LIB_DEPENDS=	mupen64plus.2:${PORTSDIR}/emulators/mupen64plus-core
+LIB_DEPENDS=	libmupen64plus.so.2:${PORTSDIR}/emulators/mupen64plus-core
 
 USE_GL=		gl glu
 USE_SDL=	#

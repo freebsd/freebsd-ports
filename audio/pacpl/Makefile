@@ -3,7 +3,7 @@
 
 PORTNAME=	pacpl
 PORTVERSION=	4.0.5
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	audio
 MASTER_SITES=	SF
 
@@ -11,11 +11,12 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl Audio Converter
 
 USES=		shebangfix perl5
-NO_STAGE=	yes
 ONLY_FOR_ARCHS=	i386 amd64
 NO_BUILD=	yes
+BUILD_DEPENDS=	p5-Switch>0:${PORTSDIR}/lang/p5-Switch
+NO_ARCH=	yes
 
-OPTIONS_DEFINE=	BONK CDPARANOIA CDDB FAAC FAAD FFMPEG FLAC FLACTAG \
+OPTIONS_DEFINE=	CDPARANOIA CDDB FAAC FAAD FFMPEG FLAC FLACTAG \
 		LAME LAUDIO SNDFILE LPAC APE APETAG MP3TAG MP4TAG \
 		MPP  MPLAYER OPTIMFROG VORBIS VORBISTAG SHORTEN \
 		SOX SPEEX TOOLAME TTA WAVPACK WMATAG KDE4 AMAROK NORELANGS \
@@ -27,7 +28,6 @@ OPTIONS_DEFAULT=	CDPARANOIA CDDB FAAD FFMPEG FLAC FLACTAG MP3TAG \
 OPTIONS_DEFAULT=	LAME FAAC
 .endif
 
-BONK_DESC=	Enable Bonk support
 AMAROK_DESC=	Enable Amarok integration (BROKEN)
 APETAG_DESC=	Enable Monkey's tagging support
 FLACTAG_DESC=	Enable FLAC tagging support
@@ -48,7 +48,6 @@ WAVPACK_DESC=	Enable wavpack support
 WMATAG_DESC=	Enable WMA tagging support
 MORELANGS_DESC=	Enable Additional language support
 
-MAN1=		pacpl.1
 PACPL_PO=	en_US.po
 
 SHEBANG_FILES=	pacpl plugins/amarok/pacx
@@ -68,16 +67,6 @@ RUN_DEPENDS+=	amarok:${PORTSDIR}/audio/amarok
 PLIST_SUB+=	AMAROK=""
 .else
 PLIST_SUB+=	AMAROK="@comment "
-.endif
-
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} >= 501400
-BUILD_DEPENDS+= p5-Switch>0:${PORTSDIR}/lang/p5-Switch
-.endif
-
-.if ${PORT_OPTIONS:MBONK}
-RUN_DEPENDS+=	bonk:${PORTSDIR}/audio/bonk
 .endif
 
 .if ${PORT_OPTIONS:MCDDB}
@@ -224,36 +213,34 @@ post-patch:
 		s@/usr/share/pacpl@${DATADIR}@' ${WRKSRC}/pacpl ${WRKSRC}/pacpl.conf
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/pacpl ${PREFIX}/bin/
-	${MKDIR} ${PREFIX}/etc/pacpl/modules/
-	${MKDIR} ${DATADIR}/locale/
-	${INSTALL_DATA} ${WRKSRC}/pacpl.conf ${PREFIX}/etc/pacpl/pacpl.conf.sample
-	${INSTALL_DATA} ${WRKSRC}/codecs.conf ${PREFIX}/etc/pacpl/codecs.conf.sample
-	${INSTALL_DATA} ${WRKSRC}/extra/sample.m ${PREFIX}/etc/pacpl/modules/sample.m
+	${INSTALL_SCRIPT} ${WRKSRC}/pacpl ${STAGEDIR}${PREFIX}/bin/
+	${MKDIR} ${STAGEDIR}${PREFIX}/etc/pacpl/modules/
+	${MKDIR} ${STAGEDIR}${DATADIR}/locale/
+	${INSTALL_DATA} ${WRKSRC}/pacpl.conf ${STAGEDIR}${PREFIX}/etc/pacpl/pacpl.conf.sample
+	${INSTALL_DATA} ${WRKSRC}/codecs.conf ${STAGEDIR}${PREFIX}/etc/pacpl/codecs.conf.sample
+	${INSTALL_DATA} ${WRKSRC}/extra/sample.m ${STAGEDIR}${PREFIX}/etc/pacpl/modules/sample.m
 .for po in ${PACPL_PO}
-	${INSTALL_DATA} ${WRKSRC}/po/${po} ${DATADIR}/locale
+	${INSTALL_DATA} ${WRKSRC}/po/${po} ${STAGEDIR}${DATADIR}/locale
 .endfor
 	@pod2man ${WRKSRC}/pacpl ${WRKSRC}/pacpl.1
-	${INSTALL_MAN} ${WRKSRC}/pacpl.1 ${MAN1PREFIX}/man/man1/
+	${INSTALL_MAN} ${WRKSRC}/pacpl.1 ${STAGEDIR}${MAN1PREFIX}/man/man1/
 
 .if ${PORT_OPTIONS:MKDE4}
-	${INSTALL_DATA} ${WRKSRC}/plugins/konqueror/pacpl.desktop ${KDE4_PREFIX}/share/kde4/services/ServiceMenus
+	${INSTALL_DATA} ${WRKSRC}/plugins/konqueror/pacpl.desktop ${STAGEDIR}${KDE4_PREFIX}/share/kde4/services/ServiceMenus
 .endif
 
 .if ${PORT_OPTIONS:MAMAROK}
-	${MKDIR} ${PREFIX}/share/apps/amarok/scripts/transcoding_pacx
-	${INSTALL_DATA} ${WRKSRC}/plugins/amarok/pacx ${PREFIX}/share/apps/amarok/scripts/transcoding_pacx/transcoding_pacx.pl
-	${PERL} -e 'print qq(name = Pacx\ntype = transcode)' > ${PREFIX}/share/apps/amarok/scripts/transcoding_pacx/transcoding_pacx.spec
+	${MKDIR} ${STAGEDIR}${PREFIX}/share/apps/amarok/scripts/transcoding_pacx
+	${INSTALL_DATA} ${WRKSRC}/plugins/amarok/pacx ${STAGEDIR}${PREFIX}/share/apps/amarok/scripts/transcoding_pacx/transcoding_pacx.pl
+	${PERL} -e 'print qq(name = Pacx\ntype = transcode)' > ${STAGEDIR}${PREFIX}/share/apps/amarok/scripts/transcoding_pacx/transcoding_pacx.spec
 .endif
 
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/extra/README.module ${WRKSRC}/ChangeLog ${WRKSRC}/README ${DOCSDIR}
-.endif
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/extra/README.module ${WRKSRC}/ChangeLog ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 
 post-install:
 	@${ECHO_MSG} ""
-	@${PREFIX}/bin/pacpl -f
+	#@${STAGEDIR}${PREFIX}/bin/pacpl -f # FIXME errors out
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * "
 	@${ECHO_MSG} ""
@@ -273,4 +260,4 @@ post-install:
 	@${ECHO_MSG} "* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * "
 	@${ECHO_MSG} ""
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

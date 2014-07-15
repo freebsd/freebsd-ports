@@ -13,7 +13,7 @@ DISTNAME=	OpenEXR-${PORTVERSION}
 MAINTAINER=	jamesb-bsd@excamera.com
 COMMENT=	Python module for ILM's OpenEXR image format and library
 
-LIB_DEPENDS=	IlmImf:${PORTSDIR}/graphics/OpenEXR
+LIB_DEPENDS=	libIlmImf.so:${PORTSDIR}/graphics/OpenEXR
 
 post-extract:
 	${REINPLACE_CMD} -e 's#/usr/local#${LOCALBASE}#g' ${WRKSRC}/setup.py

@@ -12,7 +12,7 @@ MAINTAINER=	hselasky@FreeBSD.org
 COMMENT=	Video4Linux library
 
 BUILD_DEPENDS=	v4l_compat>=1.0.20120501:${PORTSDIR}/multimedia/v4l_compat
-LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg
+LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg
 
 MAKE_ARGS=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" LIBDIR="${PREFIX}/lib"

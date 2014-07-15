@@ -1,10 +1,6 @@
-@unexec if cmp -s %D/etc/razorback/clamav.conf %D/etc/razorback/clamav.conf.sample; then rm -f %D/etc/razorback/clamav.conf; fi
-etc/razorback/clamav.conf.sample
-@exec if [ ! -f %D/etc/razorback/clamav.conf ]; then cp -p %D/%F %B/clamav.conf; fi
-@dirrmtry etc/razorback
+@sample etc/razorback/clamav.conf.sample
 lib/razorback/clamavNugget.so.2.0.0
 lib/razorback/clamavNugget.so.2
 lib/razorback/clamavNugget.so
-lib/razorback/clamavNugget.la
 lib/razorback/clamavNugget.a
 @dirrmtry lib/razorback

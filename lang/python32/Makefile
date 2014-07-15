@@ -1,29 +1,33 @@
 # $FreeBSD$
 
-PORTNAME=		python32
-PORTVERSION=		3.2.5
-PORTREVISION=		9
-CATEGORIES=		lang python ipv6
-MASTER_SITES=		PYTHON
+PORTNAME=	python32
+PORTVERSION=	3.2.5
+PORTREVISION=	9
+CATEGORIES=	lang python ipv6
+MASTER_SITES=	PYTHON
 MASTER_SITE_SUBDIR=	${PYTHON_MASTER_SITE_SUBDIR}
-DISTNAME=		${PYTHON_DISTNAME}
-DIST_SUBDIR=		python
+DISTNAME=	${PYTHON_DISTNAME}
+DIST_SUBDIR=	python
 
 MAINTAINER=	python@FreeBSD.org
 COMMENT=	Interpreted object-oriented programming language
 
 LICENSE=	PSFL
 
-GNU_CONFIGURE=		yes
+GNU_CONFIGURE=	yes
 CONFIGURE_SCRIPT=	../configure # must be relative
-CONFIGURE_ENV=		OPT="" SVNVERSION="echo freebsd"
-MAKE_ENV=		VPATH="${PYTHON_WRKSRC}"
+CONFIGURE_ENV=	OPT="" SVNVERSION="echo freebsd"
+MAKE_ENV=	VPATH="${PYTHON_WRKSRC}"
 
 INSTALL_TARGET=	altinstall
 
-USES=		readline tar:xz
+USES=		readline tar:xz cpe
 USE_LDCONFIG=	yes
 USE_PYTHON=	yes
+
+CPE_VENDOR=	python
+CPE_PRODUCT=	${CPE_VENDOR}
+CPE_VERSION=	${PORTVERSION}
 
 PYTHON_VERSION=		python3.2
 PYTHON_NO_DEPENDS=	yes
@@ -213,11 +217,9 @@ post-install:
 	${INSTALL_MAN} ${PYTHON_WRKSRC}/Misc/python.man \
 		${STAGEDIR}${MAN1PREFIX}/man/man1/${PYTHON_VERSION}.1
 
-.if !defined(NOPORTDATA)
 	@${MKDIR} ${STAGEDIR}${DATADIR}
 	@cd ${PYTHON_WRKSRC}; ${TAR} -cf - Tools | \
 		(cd ${STAGEDIR}${DATADIR}; ${TAR} -xf -)
-.endif
 
 	@${CAT} ${PKGMESSAGE}
 

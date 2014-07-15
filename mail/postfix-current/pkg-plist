@@ -1,5 +1,5 @@
-@unexec if cmp -s %D/libexec/postfix/main.cf %%PFETC%%/main.cf; then rm -f %%PFETC%%/main.cf; fi
-@unexec if cmp -s %D/libexec/postfix/master.cf %%PFETC%%/master.cf; then rm -f %%PFETC%%/master.cf; fi
+@unexec if cmp -s %D/libexec/postfix/main.cf.proto %%PFETC%%/main.cf; then rm -f %%PFETC%%/main.cf; fi
+@unexec if cmp -s %D/libexec/postfix/master.cf.proto %%PFETC%%/master.cf; then rm -f %%PFETC%%/master.cf; fi
 bin/mailq
 bin/newaliases
 %%TEST%%bin/qmqp-sink
@@ -13,7 +13,6 @@ etc/postfix/LICENSE
 etc/postfix/TLS_LICENSE
 etc/postfix/bounce.cf.default
 etc/postfix/main.cf.default
-etc/postfix/makedefs.out
 @cwd %%RESETPREFIX%%
 libexec/postfix/anvil
 libexec/postfix/bounce
@@ -24,9 +23,10 @@ libexec/postfix/error
 libexec/postfix/flush
 libexec/postfix/lmtp
 libexec/postfix/local
-libexec/postfix/main.cf
+libexec/postfix/main.cf.proto
+libexec/postfix/makedefs.out
 libexec/postfix/master
-libexec/postfix/master.cf
+libexec/postfix/master.cf.proto
 libexec/postfix/nqmgr
 libexec/postfix/oqmgr
 libexec/postfix/pickup
@@ -320,7 +320,8 @@ sbin/sendmail
 %%PORTDOCS%%%%DOCSDIR%%/verify.8.html
 %%PORTDOCS%%%%DOCSDIR%%/virtual.5.html
 %%PORTDOCS%%%%DOCSDIR%%/virtual.8.html
-@dirrm libexec/postfix
+@dirrmtry libexec/postfix/postfix-files.d
+@dirrmtry libexec/postfix
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @unexec rmdir "/var/db/postfix" >/dev/null 2>&1 || :
 @unexec rmdir "/var/spool/postfix/active" >/dev/null 2>&1 || :

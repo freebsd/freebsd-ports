@@ -28,6 +28,8 @@ DOCS=		AUTHORS ChangeLog ChangeLog-2011 INSTALL NEWS README \
 INFO=		gcrypt
 PORTDOCS=	*
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.options.mk>
 
 .if ${ARCH} == "powerpc"

@@ -22,7 +22,7 @@ USE_AUTOTOOLS=		libtool autoheader
 USE_LDCONFIG=		yes
 USE_PERL5=		build
 BUILD_DEPENDS+=		gawk:${PORTSDIR}/lang/gawk
-LIB_DEPENDS+=		gcrypt:${PORTSDIR}/security/libgcrypt
+LIB_DEPENDS+=		libgcrypt.so:${PORTSDIR}/security/libgcrypt
 CONFIGURE_ARGS+=	--with-libgcrypt
 
 MAN1=		vtysh.1

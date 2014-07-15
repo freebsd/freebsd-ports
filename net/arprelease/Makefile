@@ -3,14 +3,14 @@
 
 PORTNAME=	arprelease
 PORTVERSION=	1.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net
 MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Libnet tool to flush arp cache entries from devices (eg. routers)
 
-LIB_DEPENDS=	net:${PORTSDIR}/net/libnet
+LIB_DEPENDS=	libnet.so:${PORTSDIR}/net/libnet
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 

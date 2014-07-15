@@ -31,8 +31,8 @@ sbin/toposendd
 @dirrmtry var/netmagis
 @dirrmtry var
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/eqvirt
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%
 @dirrm lib/netmagis/topo
-@dirrm lib/netmagis
+@dirrmtry lib/netmagis
 @exec mkdir -p %D/var/netmagis/eqvirt
 @exec mkdir -p %D/var/netmagis/eqgen

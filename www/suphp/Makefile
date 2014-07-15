@@ -38,6 +38,8 @@ CONFIGURE_ARGS=	CFLAGS="${CFLAGS}" --with-apxs=${APXS}
 WITH_SETID_MODE?=	owner
 CONFIGURE_ARGS+=	--with-setid-mode=${WITH_SETID_MODE}
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.options.mk>
 
 CONFIGURE_ARGS+=	--with-apr=${LOCALBASE}

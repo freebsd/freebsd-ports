@@ -32,7 +32,7 @@ CONFIGURE_ARGS=	--prefix=${PREFIX} \
 
 INSTALL_TARGET=	install install-man
 
-OPTIONS_DEFINE=	JOYSTICK
+OPTIONS_DEFINE=	JOYSTICK DOCS
 JOYSTICK_DESC=	Enable joystick support
 
 DESKTOP_ENTRIES="eboard" \

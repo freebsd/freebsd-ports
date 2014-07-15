@@ -8,7 +8,7 @@ CATEGORIES=	multimedia haskell
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Binding to the GStreamer open source multimedia framework
 
-LIB_DEPENDS=	gstreamer:${PORTSDIR}/multimedia/gstreamer
+LIB_DEPENDS=	libgstreamer-0.10.so:${PORTSDIR}/multimedia/gstreamer
 
 LICENSE=	LGPL21
 

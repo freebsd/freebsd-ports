@@ -12,7 +12,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S|.|-|g}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Flow analysis tool used for analyzing Cisco's NetFlow switching
 
-LIB_DEPENDS=	Arts:${PORTSDIR}/net-mgmt/arts++
+LIB_DEPENDS=	libArts.so:${PORTSDIR}/net-mgmt/arts++
 
 GNU_CONFIGURE=	yes
 USES=		bison gmake libtool:keepla

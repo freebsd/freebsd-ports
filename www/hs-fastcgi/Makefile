@@ -13,7 +13,7 @@ LICENSE=	BSD
 
 USE_CABAL=	cgi>=3000.0.0
 
-LIB_DEPENDS=	fcgi.0:${PORTSDIR}/www/fcgi
+LIB_DEPENDS=	libfcgi.so:${PORTSDIR}/www/fcgi
 
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

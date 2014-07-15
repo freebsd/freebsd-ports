@@ -11,7 +11,7 @@ MAINTAINER=	perl@FreeBSD.org
 COMMENT=	XS SASL Authentication
 
 BUILD_DEPENDS=	p5-Authen-SASL>=0:${PORTSDIR}/security/p5-Authen-SASL
-LIB_DEPENDS=	sasl2:${PORTSDIR}/security/cyrus-sasl2
+LIB_DEPENDS=	libsasl2.so:${PORTSDIR}/security/cyrus-sasl2
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

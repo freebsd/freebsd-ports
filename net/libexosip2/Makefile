@@ -3,6 +3,7 @@
 
 PORTNAME=	libeXosip2
 PORTVERSION=	4.1.0
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	SAVANNAH/exosip
 
@@ -16,11 +17,14 @@ LIB_DEPENDS=	libosip2.so:${PORTSDIR}/net/libosip2
 CONFLICTS_INSTALL=	libeXosip2-legacy-[0-9]*
 
 GNU_CONFIGURE=	yes
+INSTALL_TARGET=	install-strip
+USES=		libtool
 USE_LDCONFIG=	yes
 SHLIB_VER=	11
 
 PLIST_SUB+=	SHLIB_VER=${SHLIB_VER}
 
-CFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib
+CPPFLAGS+=	-I${LOCALBASE}/include
+LIBS+=		-L${LOCALBASE}/lib
 
 .include <bsd.port.mk>

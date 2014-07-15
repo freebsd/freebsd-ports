@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	aria2
-PORTVERSION=	1.18.5
-PORTREVISION=	3
+PORTVERSION=	1.18.6
 CATEGORIES=	www
 MASTER_SITES=	SF/${PORTNAME}/stable/${PORTNAME}-${PORTVERSION}
 
@@ -35,6 +34,8 @@ USE_LDCONFIG=	yes
 USE_OPENSSL=	yes
 USES=		compiler:c++11-lib libtool pathfix pkgconfig tar:xz
 
+PORTDOCS=	*
+
 CA_BUNDLE_CONFIGURE_OFF=--without-ca-bundle
 CA_BUNDLE_CONFIGURE_ON=	--with-ca-bundle=${LOCALBASE}/share/certs/ca-root-nss.crt
 CA_BUNDLE_RUN_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:${PORTSDIR}/security/ca_root_nss
@@ -53,17 +54,7 @@ ARIA2_DISK_CACHE?=	16M
 BROKEN=		Does not install on powerpc-9
 .endif
 
-post-patch:
-.if !${PORT_OPTIONS:MDOCS}
-	@${REINPLACE_CMD} -e 's|\(install-exec-am\) install-data-am|\1|' ${WRKSRC}/Makefile.in ${WRKSRC}/doc/Makefile.in
-.endif
-
-post-build:
-	@${STRIP_CMD} ${WRKSRC}/src/.libs/libaria2.so.0
-
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
-	@${INSTALL_DATA} ${WRKSRC}/README.html ${STAGEDIR}${DOCSDIR}/
-.endif
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libaria2.so.0.0.0
 
 .include <bsd.port.post.mk>

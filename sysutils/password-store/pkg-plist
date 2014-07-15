@@ -22,8 +22,8 @@
 %%CONTRIB%%@dirrmtry %%DATADIR%%/dmenu
 %%CONTRIB%%@dirrmtry %%DATADIR%%/emacs
 %%CONTRIB%%@dirrmtry %%DATADIR%%/importers
-%%PORTDOCS%%man/man1/pass.1.gz
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/example-filter.sh
 %%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%
 bin/pass
 libexec/pass
+man/man1/pass.1.gz

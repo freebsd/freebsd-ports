@@ -14,8 +14,8 @@ BUILD_DEPENDS=	${LOCALBASE}/include/tnt/tnt.h:${PORTSDIR}/devel/tnt \
 		${LOCALBASE}/include/tnt/jama_cholesky.h:${PORTSDIR}/math/jama \
 		${LOCALBASE}/lib/libRAPID.a:${PORTSDIR}/math/rapid
 EXTRACT_DEPENDS=	dos2unix:${PORTSDIR}/converters/unix2dos
-LIB_DEPENDS=	wx_gtk2_core-2.8.0:${PORTSDIR}/x11-toolkits/wxgtk28 \
-		vtkCommon.5:${PORTSDIR}/math/vtk5
+LIB_DEPENDS=	libwx_gtk2_core-2.8.so:${PORTSDIR}/x11-toolkits/wxgtk28 \
+		libvtkCommon.so:${PORTSDIR}/math/vtk5
 
 CONFLICTS=	dtiquery-1.0*
 

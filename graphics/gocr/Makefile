@@ -31,7 +31,7 @@ DOCSRCDIR2=	${WRKSRC}/doc
 DOCSDIR2=	${DOCSDIR}/doc
 DOC_FILES2=	*.dtd *.xml *.html *.txt *.fig *.png
 
-OPTIONS_DEFINE=	X11
+OPTIONS_DEFINE=	X11 DOCS
 OPTIONS_DEFAULT=	X11
 
 .include <bsd.port.options.mk>

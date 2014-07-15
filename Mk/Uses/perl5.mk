@@ -181,7 +181,7 @@ CONFIGURE_ARGS+=--destdir ${STAGEDIR}
 DESTDIRNAME=	--destdir
 .if ${_USE_PERL5:Mmodbuild}
 .if ${PORTNAME} != Module-Build
-BUILD_DEPENDS+=	p5-Module-Build>=0.4205:${PORTSDIR}/devel/p5-Module-Build
+BUILD_DEPENDS+=	p5-Module-Build>=0.4206:${PORTSDIR}/devel/p5-Module-Build
 .endif
 CONFIGURE_ARGS+=--create_packlist 0
 .endif

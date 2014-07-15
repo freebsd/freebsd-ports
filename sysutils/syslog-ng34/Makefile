@@ -3,7 +3,7 @@
 
 PORTNAME=	syslog-ng
 PORTVERSION=	3.4.8
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	sysutils
 DISTVERSION=	$(PORTVERSION:S/a/alpha/:S/b/beta/:S/r/rc/)
 PKGNAMESUFFIX=	34
@@ -71,7 +71,7 @@ CONFIGURE_ARGS+=	--disable-tcp-wrapper
 .endif
 
 .if ${PORT_OPTIONS:MSPOOF}
-BUILD_DEPENDS+=		${LIBNET_CONFIG}:${PORTSDIR}/net/libnet
+LIB_DEPENDS+=		libnet.so:${PORTSDIR}/net/libnet
 LIBNET_CONFIG?=		${LOCALBASE}/bin/libnet11-config
 CONFIGURE_ARGS+=	--enable-spoof-source --with-libnet=${LOCALBASE}/bin
 CFLAGS+=		`${LIBNET_CONFIG} --cflags` -I${LOCALBASE}/include

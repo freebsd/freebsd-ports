@@ -15,7 +15,7 @@ COMMENT=	mod_gnutls uses the GnuTLS library to provide SSL, and TLS encryption f
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	gnutls.26:${PORTSDIR}/security/gnutls
+LIB_DEPENDS=	libgnutls.so:${PORTSDIR}/security/gnutls
 
 USE_BZIP2=	yes
 USE_AUTOTOOLS=	libtool

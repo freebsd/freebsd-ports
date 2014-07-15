@@ -10,7 +10,7 @@ MASTER_SITES=	http://linuxmafia.com/pub/palmos/other-os/
 MAINTAINER=	sumikawa@FreeBSD.org
 COMMENT=	Palm Pilot Image Viewer to PGM Converter
 
-LIB_DEPENDS=	netpbm.1:${PORTSDIR}/graphics/netpbm
+LIB_DEPENDS=	libnetpbm.so:${PORTSDIR}/graphics/netpbm
 
 GNU_CONFIGURE=	yes
 CONFIGUR_ARGS=	--libdir=${PREFIX}

@@ -12,7 +12,7 @@ MASTER_SITES=	ftp://ftp.springdaemons.com/pub/snapshots/e17/ \
 MAINTAINER=	bf@FreeBSD.org
 COMMENT=	Immensely fast JPEG thumbnailing library
 
-LIB_DEPENDS=	jpeg:${PORTSDIR}/graphics/jpeg
+LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg
 
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes

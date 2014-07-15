@@ -22,6 +22,8 @@ USE_RUBY=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 NO_BUILD=	yes
 
+OPTIONS_DEFINE=	DOCS EXAMPLES
+
 .include <bsd.port.options.mk>
 
 do-install:

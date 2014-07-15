@@ -59,9 +59,9 @@ WRKSRC=${WRKDIR}/iscan-${PORTVERSION}
 MAN5=		sane-epkowa.5
 
 # We use LIB_DEPENDS, but the dependency is also at build time
-LIB_DEPENDS+=	ltdl:${PORTSDIR}/devel/libltdl
-LIB_DEPENDS+=	getline:${PORTSDIR}/devel/libgetline
-LIB_DEPENDS+=	sane.1:${PORTSDIR}/graphics/sane-backends
+LIB_DEPENDS+=	libltdl.so:${PORTSDIR}/devel/libltdl
+LIB_DEPENDS+=	libgetline.so:${PORTSDIR}/devel/libgetline
+LIB_DEPENDS+=	libsane.so:${PORTSDIR}/graphics/sane-backends
 
 #BUILD_DEPENDS+=	${LOCALBASE}/lib/libltdl.so:${PORTSDIR}/devel/libltdl
 

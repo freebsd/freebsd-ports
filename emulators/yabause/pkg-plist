@@ -1,12 +1,15 @@
 bin/yabause
+man/man1/yabause.1.gz
+share/applications/yabause.desktop
+share/pixmaps/yabause.png
 %%DATADIR%%/yts/de.yts
 %%DATADIR%%/yts/es.yts
 %%DATADIR%%/yts/fr.yts
 %%DATADIR%%/yts/it.yts
 %%DATADIR%%/yts/lt.yts
+%%DATADIR%%/yts/nl.yts
 %%DATADIR%%/yts/pt.yts
 %%DATADIR%%/yts/pt_BR.yts
 %%DATADIR%%/yts/sv.yts
-share/pixmaps/yabause.png
-@dirrmtry share/yabause/yts
-@dirrmtry share/yabause
+@dirrm %%DATADIR%%/yts
+@dirrm %%DATADIR%%

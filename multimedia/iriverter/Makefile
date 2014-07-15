@@ -7,7 +7,7 @@ PORTREVISION=	8
 CATEGORIES=	multimedia java
 MASTER_SITES=	SF
 
-MAINTAINER= ports@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Cross-platform frontend to mencoder
 
 RUN_DEPENDS=	mencoder:${PORTSDIR}/multimedia/mencoder
@@ -21,7 +21,6 @@ SWTDEVEL_DESC=	Use SWT Development port
 
 CONFIGURE_ARGS=	--with-swt="${JAVALIBDIR}/${SWT_JAR}"
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MSWTDEVEL}

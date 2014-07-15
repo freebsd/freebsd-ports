@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	statgrab
-PORTVERSION=	0.5
+PORTVERSION=	0.6
 CATEGORIES=	devel python
 MASTER_SITES=	http://ftp.uk.i-scream.org/pub/i-scream/%SUBDIR%/ \
 		http://ftp.i-scream.org/pub/i-scream/%SUBDIR%/
@@ -13,11 +13,11 @@ DISTNAME=	py${PORTNAME}-${PORTVERSION}
 MAINTAINER=	tdb@FreeBSD.org
 COMMENT=	Set of Python bindings for libstatgrab
 
-LIB_DEPENDS=	libstatgrab0.so:${PORTSDIR}/devel/libstatgrab0
+LIB_DEPENDS=	libstatgrab.so:${PORTSDIR}/devel/libstatgrab
 
 USES=		pkgconfig
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
-PYDISTUTILS_PKGNAME=	pystatgrab
+PYDISTUTILS_AUTOPLIST=	yes
 
 .include <bsd.port.mk>

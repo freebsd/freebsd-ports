@@ -1,8 +1,14 @@
-@exec  if [ ! -f %D/etc/mfshdd.cfg ]; then /bin/cp %D/%F %D/etc/mfshdd.cfg; fi
-@exec  if [ ! -f %D/etc/mfschunkserver.cfg ]; then /bin/cp %D/%F %D/etc/mfschunkserver.cfg; fi
-@unexec if cmp -s %D/etc/mfs/mfshdd.cfg.dist %D/etc/mfshdd.cfg; then rm -f %D/etc/mfshdd.cfg; fi
-@unexec if cmp -s %D/etc/mfs/mfschunkserver.cfg.dist %D/etc/mfschunkserver.cfg; then rm -f %D/etc/mfschunkserver.cfg; fi
-etc/mfs/mfschunkserver.cfg.dist
-etc/mfs/mfshdd.cfg.dist
+@owner mfs
+@group mfs
+@sample etc/mfs/mfschunkserver.cfg.sample
+@sample etc/mfs/mfshdd.cfg.sample
+@owner
+@group
+man/man5/mfschunkserver.cfg.5.gz
+man/man5/mfshdd.cfg.5.gz
+man/man8/mfschunkserver.8.gz
 sbin/mfschunkserver
-@dirrm etc/mfs
+@dirrmtry etc/mfs
+@owner mfs
+@group mfs
+@unexec rmdir "/var/mfs" >/dev/null 2>&1 || :

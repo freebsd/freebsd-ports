@@ -21,8 +21,6 @@ PORTDOCS=	ANNOUNCE NEWS README
 
 INFO=		${PORTNAME}
 
-OPTIONS_DEFINE=	DOCS
-
 do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/share/festival/lib
 	cd ${WRKSRC} && ${INSTALL_DATA} *.scm ${STAGEDIR}${PREFIX}/share/festival/lib
