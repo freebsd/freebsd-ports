@@ -23,6 +23,8 @@ USES=		zip:infozip
 
 ETQWDIR=	${PREFIX}/lib/${PORTNAME}${PKGNAMESUFFIX}
 
+OPTIONS_DEFINE=	DOCS
+
 do-extract:
 	@${MKDIR} ${WRKSRC}
 	@cd ${WRKSRC} && \

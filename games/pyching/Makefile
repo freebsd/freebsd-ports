@@ -18,6 +18,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}tkinter>0:${PORTSDIR}/x11-toolkits/py-tkinte
 NO_WRKSUBDIR=	yes
 USE_PYTHON=	yes
 
+OPTIONS_DEFINE=	DOCS
+
 post-patch:
 	@cd ${WRKSRC}; ${SED} 's|/usr/share/|${PYTHON_SITELIBDIR}/|g' \
 		< ${PORTNAME}.sh > ${PORTNAME}

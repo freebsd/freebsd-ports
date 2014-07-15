@@ -25,7 +25,7 @@ NO_WRKSUBDIR=	yes
 DATADIR=	${PREFIX}/lib/enemyterritory/${PORTNAME}-${VERSTR}
 DOCSDIR=	${PREFIX}/share/doc/enemyterritory-${PORTNAME}-${VERSTR}
 
-.include <bsd.port.options.mk>
+OPTIONS_DEFINE=	DOCS
 
 do-build:
 .for f in et etded

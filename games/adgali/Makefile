@@ -30,6 +30,8 @@ CONFIGURE_ARGS=	--enable-compile-optim=no
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib -lexecinfo
 
+OPTIONS_DEFINE=	DOCS
+
 post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	(cd ${WRKSRC}/doc/html && ${FIND} . | ${CPIO} -pdm -L -R \

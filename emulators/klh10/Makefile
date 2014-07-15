@@ -16,6 +16,8 @@ ONLY_FOR_ARCHS=	i386
 BUILD_WRKSRC=	${WRKSRC}/bld/fbx86
 INSTALL_WRKSRC=	${BUILD_WRKSRC}
 
+OPTIONS_DEFINE=	DOCS
+
 # someday add support for base-kl and base-ks targets
 MAKE_ENV=		KLH10_HOME="${DATADIR}"
 ALL_TARGET=		base-ks-its

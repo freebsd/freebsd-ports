@@ -13,6 +13,8 @@ MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}" PREFIX="${PREFIX}"
 
 DOCS=	CHANGES README
 
+OPTIONS_DEFINE=	DOCS
+
 do-install:
 .for i in exifcom exiftags exiftime
 	${INSTALL_PROGRAM} ${WRKSRC}/${i} ${STAGEDIR}${PREFIX}/bin

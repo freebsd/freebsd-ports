@@ -12,6 +12,8 @@ COMMENT=	Bicycle with trailers like "sl"
 
 MANLANG=	ja
 
+OPTIONS_DEFINE=	DOCS
+
 do-build:
 	${CC} ${CFLAGS} ${CPPFLAGS} -o ${WRKSRC}/quit \
 		${WRKSRC}/quit.c -lncurses

@@ -15,6 +15,8 @@ MAKE_JOBS_UNSAFE=	yes
 
 INFO=		gnushogi
 
+OPTIONS_DEFINE=	DOCS
+
 post-extract:
 	-@${RM} ${WRKSRC}/doc/gnushogi.info*
 

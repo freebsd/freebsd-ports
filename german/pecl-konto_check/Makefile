@@ -19,6 +19,8 @@ DEFAULT_PHP_VER=53
 
 WRKSRC=	${WRKDIR}/php
 
+OPTIONS_DEFINE=	DOCS
+
 post-extract:
 	@${UNZIP_CMD} -q -d ${WRKDIR} ${WRKDIR}/php.zip
 

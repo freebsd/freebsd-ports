@@ -22,6 +22,8 @@ USE_GNOME=	glib20
 INSTALLS_ICONS=	yes
 MAKE_ARGS+=	prefix=${PREFIX}
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 900000

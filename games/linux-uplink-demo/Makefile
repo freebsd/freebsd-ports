@@ -25,7 +25,7 @@ SUB_FILES=	uplink
 SUB_LIST=	LINUXBASE=${LINUXBASE}
 DOCFILES=	license.txt mods.txt Readme-UplinkSupport.txt readme.txt
 
-OPTIONS_DEFINE=	NVIDIA
+OPTIONS_DEFINE=	NVIDIA DOCS
 NVIDIA_DESC=	support for nvidia
 
 .include <bsd.port.options.mk>

@@ -21,6 +21,8 @@ USES=		imake
 USE_XORG=	xpm
 INSTALL_TARGET=	install install.dir
 
+OPTIONS_DEFINE=	DOCS
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/sxsame ${STAGEDIR}${PREFIX}/bin
 	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/X11/sxsame

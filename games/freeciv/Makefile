@@ -24,7 +24,7 @@ CONFIGURE_ARGS=	${ICONV_CONFIGURE_ARG} --program-transform-name= \
 		--enable-aimodules --enable-shared \
 		--enable-fcdb=sqlite3
 
-OPTIONS_DEFINE?=	NLS X11 SDL MYSQL IPV6
+OPTIONS_DEFINE?=	NLS X11 SDL MYSQL IPV6 DOCS
 OPTIONS_DEFAULT?=	NLS X11 IPV6
 OPTIONS_SUB=		yes
 SDL_CONFIGURE_ON=	--enable-client=gtk,sdl

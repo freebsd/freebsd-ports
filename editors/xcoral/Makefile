@@ -17,6 +17,8 @@ MAKE_JOBS_UNSAFE=	yes
 
 PLIST_SUB=	VERSION="${PORTVERSION}"
 
+OPTIONS_DEFINE=	DOCS
+
 post-patch:
 	@${REINPLACE_CMD} -e 's| regex\.c | |g ; \
 		 s| -g | |g' ${WRKSRC}/Makefile.in

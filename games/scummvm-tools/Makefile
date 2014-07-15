@@ -30,10 +30,9 @@ STRIP_FILES=	construct_mohawk create_sjisfnt decine degob dekyra \
 		deriven descumm desword2 extract_mohawk gob_loadcalc \
 		scummvm-tools-cli
 
-OPTIONS_DEFINE=	WXGTK
+OPTIONS_DEFINE=	WXGTK DOCS
 OPTIONS_DEFAULT=	WXGTK
 
-.include <bsd.port.options.mk>
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MWXGTK}

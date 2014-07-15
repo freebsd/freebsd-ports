@@ -17,6 +17,8 @@ USE_PYDISTUTILS=	yes
 DOCSDIR=	${PREFIX}/share/doc/py-${PORTNAME}
 PORTDOC_FILES=	README.html README.txt ftputil.html ftputil.txt ftputil_ru_utf8.txt
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.pre.mk>
 
 do-fetch:
