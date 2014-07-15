@@ -24,6 +24,8 @@ PLIST_FILES=	bin/portlint \
 
 PORTEXAMPLES=	portlintgrep
 
+OPTIONS_DEFINE=	EXAMPLES
+
 pre-patch:
 	@${CP} -R ${SRC} ${WRKDIR}
 

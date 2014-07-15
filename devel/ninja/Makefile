@@ -22,6 +22,8 @@ USE_PYTHON_BUILD=	yes
 PLIST_FILES=	bin/ninja
 PORTDOCS=	COPYING HACKING.md README manual.asciidoc
 
+OPTIONS_DEFINE=	DOCS
+
 do-build:
 	@(cd ${WRKSRC} && \
 		CXX="${CXX}" CFLAGS="${CXXFLAGS}" ${PYTHON_CMD} bootstrap.py --verbose)
