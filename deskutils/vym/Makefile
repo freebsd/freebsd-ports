@@ -26,7 +26,7 @@ DESKTOP_ENTRIES=	"VYM" \
 			"" \
 			true
 
-OPTIONS_DEFINE=	NLS
+OPTIONS_DEFINE=	NLS DOCS
 OPTIONS_SUB=	yes
 NLS_USE=	QT4=linguist_build
 
