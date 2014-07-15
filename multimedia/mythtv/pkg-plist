@@ -657,9 +657,9 @@ lib/libmythupnp-0.27.so.0
 lib/libmythupnp-0.27.so.0.27
 lib/libmythupnp-0.27.so.0.27.0
 lib/libmythzmq.a
-lib/libmythzmq.la
 lib/libmythzmq.so
 lib/libmythzmq.so.1
+lib/libmythzmq.so.1.0.1
 lib/mythtv/filters/libadjust.so
 lib/mythtv/filters/libbobdeint.so
 lib/mythtv/filters/libcrop.so
