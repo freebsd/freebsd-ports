@@ -52,7 +52,6 @@
     SUBDIR += beast
     SUBDIR += beets
     SUBDIR += blop
-    SUBDIR += bonk
     SUBDIR += boodler
     SUBDIR += bristol
     SUBDIR += btc
@@ -788,7 +787,6 @@
     SUBDIR += xmixer
     SUBDIR += xmmix
     SUBDIR += xmms-ahx
-    SUBDIR += xmms-bonk
     SUBDIR += xmms-curses
     SUBDIR += xmms-faad
     SUBDIR += xmms-festalon
