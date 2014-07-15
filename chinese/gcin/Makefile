@@ -20,11 +20,9 @@ USES=		gmake pkgconfig tar:xz
 USE_XORG=	x11 xtst xext
 INSTALLS_ICONS=	YES
 USE_LDCONFIG=	YES
-OPTIONS_DEFINE=	ANTHY QT_IM_MODULE
+OPTIONS_DEFINE=	ANTHY QT_IM_MODULE DOCS
 ANTHY_DESC=	Japanese anthy IM module
 QT_IM_MODULE_DESC=	QT IM module
-
-OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.options.mk>
 

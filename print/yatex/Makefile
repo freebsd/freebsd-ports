@@ -32,8 +32,6 @@ ELFILES=	comment.el yatex.el yatexadd.el yatexgen.el \
 		yatexm-o.el yatexsec.el  yatexpkg.el yatexhie.el yahtml.el \
 		yatex19.el
 
-OPTIONS_DEFINE=	DOCS
-
 post-extract:
 	@${INSTALL_DATA} ${WRKSRC}/docs/* ${WRKSRC}
 

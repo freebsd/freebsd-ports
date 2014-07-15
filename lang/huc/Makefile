@@ -18,8 +18,6 @@ USES=		gmake zip
 
 MAKE_ARGS=	CC="${CC}" LD="${CC}" CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}"
 
-OPTIONS_DEFINE=	DOCS
-
 do-install:
 .for file in huc isolink nesasm pceas pcxtool
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/${file} ${STAGEDIR}${PREFIX}/bin
