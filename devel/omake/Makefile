@@ -19,6 +19,8 @@ MAKE_JOBS_UNSAFE=	yes
 
 INFO=		omake-doc
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "powerpc"

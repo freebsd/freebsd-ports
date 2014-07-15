@@ -24,7 +24,7 @@ LIB32_PATH?=	${DESTDIR}/usr/lib32/libc.so
 BUILD_DEPENDS+=		docbook-xsl>=0:${PORTSDIR}/textproc/docbook-xsl \
 			xsltproc:${PORTSDIR}/textproc/libxslt
 
-OPTIONS_DEFINE=		MPI
+OPTIONS_DEFINE=		MPI DOCS
 OPTIONS_DEFINE_amd64=	32BIT
 #.if exists(${LIB32_PATH})
 #OPTIONS_DEFAULT_amd64=	32BIT

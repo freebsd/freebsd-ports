@@ -25,6 +25,8 @@ PLIST_FILES=	lib/gtk-2.0/modules/libgtkparasite.a \
 		lib/gtk-2.0/modules/libgtkparasite.so
 USE_AUTOTOOLS=	autoconf automake libtool
 
+OPTIONS_DEFINE=	DOCS
+
 pre-configure:
 	cd ${WRKSRC} && ${REINPLACE_CMD} -e '/.\/configure/d' ./autogen.sh \
 		&& ./autogen.sh

@@ -31,6 +31,8 @@ CONFIGURE_ARGS+=--with-lua=${LUA_BINDIR}/lua \
 
 OCTAVE_VER_CMD=	${LOCALBASE}/bin/octave-config -v 2>/dev/null || ${TRUE}
 
+OPTIONS_DEFINE=	DOCS EXAMPLES
+
 .include <bsd.port.pre.mk>
 
 post-patch:

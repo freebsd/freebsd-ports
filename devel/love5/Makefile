@@ -32,6 +32,8 @@ PLIST_FILES=	bin/love5
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}5
 PORTDOCS=	*
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.options.mk>
 
 post-patch:

@@ -25,7 +25,7 @@ CONFIGURE_ARGS=	--enable-utf --enable-unicode-properties \
 		--enable-pcretest-libedit
 INSTALL_TARGET=	install-strip
 
-OPTIONS_DEFINE=		STACK_RECURSION
+OPTIONS_DEFINE=		STACK_RECURSION DOCS
 OPTIONS_DEFAULT=	STACK_RECURSION
 
 STACK_RECURSION_DESC=	Use the stack for recursion during matching

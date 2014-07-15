@@ -20,7 +20,7 @@ USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGNAME=	SimPy
 
-OPTIONS_DEFINE=	TKINTER
+OPTIONS_DEFINE=	TKINTER DOCS
 TKINTER_DESC=	py-tkinter for plot
 
 .include <bsd.port.options.mk>

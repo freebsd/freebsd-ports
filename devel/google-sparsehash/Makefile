@@ -17,6 +17,8 @@ COMMENT=	Extremely memory-efficient hash_map implementation
 GNU_CONFIGURE=	yes
 USE_GCC=	4.8+
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.options.mk>
 
 post-patch:

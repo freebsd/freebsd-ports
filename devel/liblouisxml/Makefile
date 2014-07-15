@@ -22,6 +22,8 @@ USE_GCC=	yes
 
 INFO=		liblouisxml
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.options.mk>
 
 post-extract:
