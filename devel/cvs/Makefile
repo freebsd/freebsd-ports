@@ -11,6 +11,9 @@ COMMENT=	Version control system
 
 LICENSE=	GPLv2
 
+OPTIONS_DEFINE=		KERBEROS
+OPTIONS_DEFAULT=	KERBEROS
+
 USES=		makeinfo tar:xz uidfix
 WRKSRC=		${WRKDIR}/call/cvs-build
 INFO=		cvs cvsclient
@@ -18,6 +21,12 @@ INFO=		cvs cvsclient
 # bsd.stage.makes sets the wrong value for DESTDIR
 DESTDIRNAME=	NADA
 MAKE_ARGS=	DESTDIR=${STAGEDIR}${PREFIX}
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MKERBEROS}
+MAKE_ARGS+=	MK_KERBEROS_SUPPORT=yes
+.endif
 
 .include <bsd.port.pre.mk>
 
