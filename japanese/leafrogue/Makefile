@@ -15,19 +15,16 @@ RUN_DEPENDS=	rogue_s:${PORTSDIR}/japanese/rogue_s
 
 WRKSRC=		${WRKDIR}/lf_rogue
 NO_BUILD=	yes
-
 DOC_FILES=	readme.txt lf_rogue.html lf_rogue.txt guide.tex guide.txt
+OPTIONS_DEFINE=	DOCS
 
-NO_STAGE=	yes
 do-install:
-	${MKDIR} ${PREFIX}/share/rogue
-	${INSTALL_DATA} ${WRKSRC}/leaf.msg ${PREFIX}/share/rogue
-	${INSTALL_SCRIPT} ${FILESDIR}/leafrogue ${PREFIX}/bin
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${PREFIX}/share/rogue
+	${INSTALL_DATA} ${WRKSRC}/leaf.msg ${STAGEDIR}${PREFIX}/share/rogue
+	${INSTALL_SCRIPT} ${FILESDIR}/leafrogue ${STAGEDIR}${PREFIX}/bin
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	for file in ${DOC_FILES}; do \
-		${INSTALL_DATA} ${WRKSRC}/"$$file" ${DOCSDIR} ; \
+		${INSTALL_DATA} ${WRKSRC}/"$$file" ${STAGEDIR}${DOCSDIR} ; \
 	done
-.endif
 
 .include <bsd.port.mk>
