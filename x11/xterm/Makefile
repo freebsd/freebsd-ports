@@ -25,7 +25,7 @@ LIBS+=		-L${LOCALBASE}/lib
 
 ICONVERSION=	1
 
-OPTIONS_DEFINE=	WCHAR LUIT DECTERM PCRE DABBREV 256COLOR SIXEL GNOME
+OPTIONS_DEFINE=	WCHAR LUIT DECTERM PCRE DABBREV 256COLOR SIXEL GNOME XAW3DXFT
 
 DABBREV_DESC=	Enable support for dabbrev-expand
 DECTERM_DESC=	Enable DECterm Locator support
@@ -33,6 +33,7 @@ LUIT_DESC=	Use LUIT for locale convertion from/to UTF-8
 SIXEL_DESC=	Enable Sixel graphics support
 WCHAR_DESC=	Enable wide-character support
 256COLOR_DESC=	Enable 256-color support
+XAW3DXFT_DESC=	Enable Xaw 3d xft library support
 
 OPTIONS_DEFAULT=WCHAR LUIT 256COLOR
 
@@ -46,6 +47,8 @@ PCRE_LIB_DEPENDS=		libpcre.so:${PORTSDIR}/devel/pcre
 DABBREV_CONFIGURE_ENABLE=	dabbrev
 SIXEL_CONFIGURE_ENABLE=		sixel-graphics
 GNOME_USES=			desktop-file-utils
+XAW3DXFT_CONFIGURE_WITH=	Xaw3dxft
+XAW3DXFT_LIB_DEPENDS=		libXaw3dxft.so:${PORTSDIR}/x11-toolkits/libxaw3dxft
 
 .include <bsd.port.options.mk>
 
