@@ -31,6 +31,8 @@ PKGMESSAGE=	${WRKDIR}/pkg-message
 
 SUB_FILES=	pkg-message
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.options.mk>
 
 do-install:

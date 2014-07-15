@@ -11,7 +11,7 @@ MASTER_SITE_SUBDIR=	UNIX/misc
 MAINTAINER=	matthew@FreeBSD.org
 COMMENT=	Automated password generator
 
-OPTIONS_DEFINE=	CRACKLIB
+OPTIONS_DEFINE=	CRACKLIB DOCS
 CRACKLIB_DESCR=	CrackLib support for password quality
 
 .include <bsd.port.options.mk>
