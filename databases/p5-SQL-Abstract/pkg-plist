@@ -1,4 +1,3 @@
-bin/format-sql
 %%PERL5_MAN3%%/DBIx::Class::Storage::Debug::PrettyPrint.3.gz
 %%PERL5_MAN3%%/SQL::Abstract.3.gz
 %%PERL5_MAN3%%/SQL::Abstract::Test.3.gz
