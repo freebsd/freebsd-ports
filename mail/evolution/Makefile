@@ -1,9 +1,9 @@
 # Created by: Ade Lovett <ade@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/mail/evolution/Makefile 19734 2014-06-09 09:25:38Z gusi $
+#   $MCom: ports/trunk/mail/evolution/Makefile 19774 2014-07-14 10:44:24Z gusi $
 
 PORTNAME=	evolution
-PORTVERSION=	3.12.3
+PORTVERSION=	3.12.4
 CATEGORIES=	mail gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -24,7 +24,7 @@ LIB_DEPENDS=	libnss3.so:${PORTSDIR}/security/nss \
 RUN_DEPENDS=	highlight:${PORTSDIR}/textproc/highlight \
 		spamassassin:${PORTSDIR}/mail/spamassassin
 
-USES=		desktop-file-utils bison gettext gmake libtool:keepla \
+USES=		desktop-file-utils bison gettext gmake libtool \
 		pathfix perl5 pkgconfig tar:xz
 USE_GNOME=	evolutiondataserver3 gnomedesktop3 gnomeprefix gtkhtml4 \
 		intlhack

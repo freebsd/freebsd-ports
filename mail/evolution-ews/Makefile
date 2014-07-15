@@ -1,9 +1,9 @@
 # Created by: Koop Mast <kwm@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/mail/evolution-ews/Makefile 19735 2014-06-09 09:37:57Z gusi $
+#   $MCom: ports/trunk/mail/evolution-ews/Makefile 19774 2014-07-14 10:44:24Z gusi $
 
 PORTNAME=	evolution-ews
-PORTVERSION=	3.12.3
+PORTVERSION=	3.12.4
 CATEGORIES=	mail gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -17,7 +17,7 @@ LIB_DEPENDS=	libsoup-2.4.so:${PORTSDIR}/devel/libsoup \
 		libical.so:${PORTSDIR}/devel/libical
 RUN_DEPENDS=	evolution>=3.0.0:${PORTSDIR}/mail/evolution
 
-USES=		gettext gmake libtool:keepla pathfix pkgconfig tar:xz
+USES=		gettext gmake libtool pathfix pkgconfig tar:xz
 GNU_CONFIGURE=	yes
 USE_SQLITE=	3
 USE_BDB=	5
