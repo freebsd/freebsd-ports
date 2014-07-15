@@ -26,6 +26,8 @@ MAKE_ARGS=	DESTDIR=${STAGEDIR}${PREFIX}
 
 .if ${PORT_OPTIONS:MKERBEROS}
 MAKE_ARGS+=	KERBEROS_SUPPORT=yes
+.else
+MAKE_ARGS+=	KERBEROS_SUPPORT=no
 .endif
 
 .include <bsd.port.pre.mk>
