@@ -22,6 +22,8 @@ ONLY_FOR_ARCHS_REASON=	The port fetches and installs precompiled binaries
 USES=		perl5
 USE_PERL5=	run
 
+OPTIONS_DEFINE=	DOCS EXAMPLES
+
 .include <bsd.port.options.mk>
 
 post-patch:

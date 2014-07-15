@@ -29,6 +29,8 @@ USES=		compiler libtool
 CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib -lexecinfo
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.pre.mk>
 
 .if ${COMPILER_TYPE} == "clang" && !defined(USE_GCC)
