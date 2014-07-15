@@ -912,6 +912,7 @@
     SUBDIR += shishi
     SUBDIR += shttpscanner
     SUBDIR += sig2dot
+    SUBDIR += signify
     SUBDIR += signing-party
     SUBDIR += silktools
     SUBDIR += sinfp
