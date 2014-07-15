@@ -38,7 +38,26 @@ for i in ${GRUB_PRELOAD_MODULES} ; do
   echo "insmod $i"
 done
 
-if [ "x${GRUB_DEFAULT}" = "x" ] ; then GRUB_DEFAULT=0 ; fi
+# If GRUB_DEFAULT is unset, lets figure out which beadm wants to use by default
+if [ "x${GRUB_DEFAULT}" = "x" ] ; then 
+  GRUB_DEFAULT=0
+  beCount=0
+  beadm list -H >/tmp/.grub-beadm.$$ 2>/dev/null
+  while read line
+  do 
+    flags=`echo $line | awk '{print $2}'`
+
+    # Is this BE marked as wanting to be used for next boot? Make it default if so
+    if [ "$flags" = "NR" -o "$flags" = "R" ] ; then
+       GRUB_DEFAULT="$beCount"
+       break
+    fi
+
+    # Moving onto next target
+    beCount=`expr $beCount + 1`
+  done < /tmp/.grub-beadm.$$
+  rm /tmp/.grub-beadm.$$
+fi
 if [ "x${GRUB_DEFAULT}" = "xsaved" ] ; then GRUB_DEFAULT='${saved_entry}' ; fi
 if [ "x${GRUB_TIMEOUT}" = "x" ] ; then GRUB_TIMEOUT=5 ; fi
 if [ "x${GRUB_GFXMODE}" = "x" ] ; then GRUB_GFXMODE=auto ; fi
