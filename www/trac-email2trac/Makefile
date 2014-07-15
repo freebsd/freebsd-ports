@@ -15,7 +15,7 @@ LICENSE_COMB=	dual
 
 RUN_DEPENDS+=	tracd:${PORTSDIR}/www/trac
 
-OPTIONS_DEFINE=	POSTFIX
+OPTIONS_DEFINE=	POSTFIX DOCS
 POSTFIX_DESC=	Configure suid script for postfix
 
 TRACUSER?=	${WWWOWN}

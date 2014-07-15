@@ -17,7 +17,7 @@ GH_ACCOUNT=	${PORTNAME}
 GH_TAGNAME=	${GH_COMMIT}
 GH_COMMIT=	42067ac
 
-OPTIONS_DEFINE=	DOCCOMM
+OPTIONS_DEFINE=	DOCCOMM DOCS EXAMPLES
 
 DOCCOMM_DESC=	Retain doc-comments in internal php structures
 DOCCOMM_CONFIGURE_WITH=	eaccelerator-doc-comment-inclusion
