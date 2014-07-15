@@ -24,8 +24,7 @@ NO_BUILD=	yes
 
 SHEBANG_FILES=	bin/gcfilms install
 
-NO_STAGE=	yes
 do-install:
-	cd ${WRKSRC} ; ./install --prefix=${PREFIX}
+	cd ${WRKSRC} ; ./install --prefix=${STAGEDIR}${PREFIX}
 
 .include <bsd.port.mk>
