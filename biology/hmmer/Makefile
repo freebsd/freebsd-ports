@@ -18,29 +18,23 @@ DOCFILES=	COPYRIGHT INSTALL LICENSE Userguide.pdf
 EXAMPLES=	7LESS_DROME Pkinase.sto fn3.sto globins4.sto minifam.h3f minifam.h3p \
 		HBB_HUMAN fn3.hmm globins4.hmm globins45.fa minifam.h3i \
 		Pkinase.hmm fn3.out globins4.out minifam minifam.h3m
-#MAN1=		hmmalign.1 hmmbuild.1 hmmcalibrate.1 hmmconvert.1 hmmemit.1 \
-#		hmmer.1 hmmfetch.1 hmmindex.1 hmmpfam.1 hmmsearch.1
 
-OPTIONS_DEFINE=	PVM
+OPTIONS_DEFINE=	PVM DOCS EXAMPLES
 PVM_DESC=	PVM support
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MPVM}
-CONFIGURE_ENV+=		PVM_ROOT="${LOCALBASE}/lib/pvm" PVM_ARCH="FREEBSD"
-CONFIGURE_ARGS+=	--with-pvm
-BUILD_DEPENDS+=		pvm:${PORTSDIR}/net/pvm
-.endif
+PVM_CONFIGURE_ENV=	PVM_ROOT="${LOCALBASE}/lib/pvm" PVM_ARCH="FREEBSD"
+PVM_CONFIGURE_WITH=	pvm
+PVM_BUILD_DEPENDS=	pvm:${PORTSDIR}/net/pvm
 
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
+	(cd ${WRKSRC}/documentation/man; for i in *.man; do \
+		${INSTALL_MAN} $$i ${STAGEDIR}${PREFIX}/man/man1/`echo $$i|${SED} 's/.man/.1/'`; \
+	done)
+
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${DOCFILES:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
-.endif
 
-.if ${PORT_OPTIONS:MEXAMPLES}
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${EXAMPLES:S,^,${WRKSRC}/tutorial/,} ${STAGEDIR}${EXAMPLESDIR}
-.endif
 
 .include <bsd.port.mk>
