@@ -24,6 +24,8 @@ PORTDOCS=	README AUTHORS
 PLIST_FILES=	lib/jpilot/plugins/libpicsnvideos.la	\
 		lib/jpilot/plugins/libpicsnvideos.so
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.options.mk>
 
 post-patch:

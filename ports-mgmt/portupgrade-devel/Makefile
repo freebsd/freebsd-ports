@@ -35,6 +35,8 @@ MAKE_ARGS=	PREFIX="${PREFIX}" RUBY="${RUBY}" \
 EXAMPLESDIR=	${PREFIX}/share/examples/pkgtools
 DOCSDIR=	${PREFIX}/share/doc/pkgtools
 
+OPTIONS_DEFINE=	DOCS EXAMPLES
+
 .include <bsd.port.pre.mk>
 
 INSTALL_TARGET=		install
