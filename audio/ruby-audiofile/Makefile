@@ -27,6 +27,8 @@ REINPLACE_ARGS=	-i ""
 
 DOCS=		audiofile.rd
 
+OPTIONS_DEFINE=	DOCS
+
 post-patch:
 	${REINPLACE_CMD} -E -e "s,/home/jaredj/ruby-lib/(cddb),\1,g" \
 		${CDDB_WRKSRC}/wavcddb

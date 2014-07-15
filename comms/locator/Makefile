@@ -11,6 +11,8 @@ COMMENT=	Grid square calculator program used in Amateur Radio and GPS work
 
 CONFLICTS=	wwl*
 
+OPTIONS_DEFINE=	DOCS
+
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/locator ${STAGEDIR}${PREFIX}/bin
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

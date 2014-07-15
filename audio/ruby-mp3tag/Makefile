@@ -21,6 +21,8 @@ NO_BUILD=	yes
 DOCS=		README \
 		${RUBY_RD_HTML_FILES}
 
+OPTIONS_DEFINE=	DOCS
+
 post-patch:
 	@${REINPLACE_CMD} -E \
 		-e "s,^(require[[:space:]]+')\./mp3tag(.*),\1mp3tag\2," \

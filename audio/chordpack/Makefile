@@ -17,6 +17,8 @@ USE_PERL5=	run
 NO_WRKSUBDIR=	true
 NO_BUILD=	true
 
+OPTIONS_DEFINE=	DOCS
+
 do-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/chordpack ${STAGEDIR}${PREFIX}/bin
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/emacs/site-lisp

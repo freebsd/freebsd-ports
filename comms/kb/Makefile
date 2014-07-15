@@ -23,6 +23,8 @@ DESKTOP_ENTRIES="KB" \
 		"" \
 		true
 
+OPTIONS_DEFINE=	DOCS
+
 pre-configure:
 	@${CP}	${FILESDIR}/Makefile ${WRKSRC}
 

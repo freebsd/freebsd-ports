@@ -21,7 +21,7 @@ CONFIGURE_ARGS=	-bindir "${PREFIX}/bin" -mandir "${PREFIX}/man" \
 USE_OCAML_FINDLIB=yes
 OCAMLFIND_DEPEND=	# Avoid dependency loop
 
-OPTIONS_DEFINE=	TOOLBOX
+OPTIONS_DEFINE=	TOOLBOX DOCS
 OPTIONS_DEFAULT=TOOLBOX
 OPTIONS_SUB=	yes
 TOOLBOX_DESC=	Include toolbox interface (requires OCaml with TK)

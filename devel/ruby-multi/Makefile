@@ -18,6 +18,8 @@ NO_BUILD=	yes
 
 EXAMPLES=	multi_example.rb
 
+OPTIONS_DEFINE=	DOCS
+
 do-install:
 	${MKDIR} ${STAGEDIR}${RUBY_SITELIBDIR}
 	${INSTALL_DATA} ${WRKSRC}/multi.rb ${STAGEDIR}${RUBY_SITELIBDIR}/

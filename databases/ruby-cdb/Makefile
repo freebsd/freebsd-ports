@@ -22,6 +22,8 @@ CDB_PORTDIR=	${PORTSDIR}/databases/cdb
 
 INSTALL_TARGET=	site-install
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.pre.mk>
 
 post-patch:

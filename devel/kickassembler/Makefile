@@ -19,6 +19,8 @@ SUB_LIST=	PORTNAME=${PORTNAME}
 SUB_FILES=	kickassembler.sh
 WRKSRC=		${WRKDIR}
 
+OPTIONS_DEFINE=	DOCS EXAMPLES
+
 post-extract-script:
 	@${MV} "${WRKSRC}/Examples/MusicIrq/ode to 64.bin" ${WRKSRC}/Examples/MusicIrq/odeto64.bin
 

@@ -18,6 +18,8 @@ USES=		gmake pkgconfig libtool
 USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes
 
+OPTIONS_DEFINE=	DOCS
+
 post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for	d in ${WRKSRC}/README \

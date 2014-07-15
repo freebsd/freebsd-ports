@@ -24,6 +24,8 @@ RUBY_SHEBANG_FILES=	${_SCRIPTS:S:^:${WRKSRC}/ruby-:}
 DOCS_EN=	doc.en/* NEWS.en Usage_en.txt README.en ChangeLog TODO
 DOCS_JA=	doc.ja/* NEWS.ja Usage_ja.txt README.ja
 
+OPTIONS_DEFINE=	DOCS
+
 post-extract:
 .for f in ${_SCRIPTS}
 	${CP} -p ${WRKSRC}/${f} ${WRKSRC}/ruby-${f}

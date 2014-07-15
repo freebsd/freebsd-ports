@@ -3,8 +3,8 @@
 %%SITE_PERL%%/Class/Contract.pm
 %%SITE_PERL%%/Class/Contract/Production.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/Contract/.packlist
-%%PORTDOCS%%%%EXAMPLESDIR%%/demo.pl
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo.pl
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/Contract
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class
 @dirrm %%SITE_PERL%%/Class/Contract

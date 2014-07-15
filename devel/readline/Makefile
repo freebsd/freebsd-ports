@@ -18,7 +18,7 @@ COMMENT=	Library for editing command lines as they are typed
 
 LICENSE=	GPLv3
 
-OPTIONS_DEFINE=	TERMCAP
+OPTIONS_DEFINE=	TERMCAP DOCS
 OPTIONS_DEFAULT=TERMCAP
 TERMCAP_DESC=	Link against libtermcap
 

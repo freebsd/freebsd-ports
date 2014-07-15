@@ -27,6 +27,8 @@ RUN_DEPENDS=	oggenc:${PORTSDIR}/audio/vorbis-tools \
 		${PYTHON_PKGNAMEPREFIX}mutagen>=0:${PORTSDIR}/audio/py-mutagen \
 		${PYTHON_PKGNAMEPREFIX}dbus>=0.8:${PORTSDIR}/devel/py-dbus
 
+OPTIONS_DEFINE=	DOCS
+
 USES=		compiler:nestedfct desktop-file-utils gettext gmake \
 		libtool pathfix pkgconfig
 LDFLAGS=	-L${LOCALBASE}/lib

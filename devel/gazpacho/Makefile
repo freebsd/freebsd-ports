@@ -17,9 +17,11 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/kiwi-i18n:${PORTSDIR}/x11-toolkits/py-kiwi
 NO_BUILD=	yes
 USE_GNOME=	pygtk2
 USE_PYTHON=	yes
-USE_PYDISTUTILS=	yes
+USE_PYDISTUTILS=yes
 USES=		gettext
 DOCS=		AUTHORS ChangeLog CONTRIBUTORS COPYING README NEWS
+
+OPTIONS_DEFINE=	DOCS
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|share/doc/gazpacho/examples|${EXAMPLESDIR}|g' ${WRKSRC}/setup.py

@@ -13,6 +13,8 @@ COMMENT=	Server daemon providing Internet access to APRS packet data
 GNU_CONFIGURE=	yes
 SUB_FILES=	pkg-message
 
+OPTIONS_DEFINE=	DOCS EXAMPLES
+
 .include <bsd.port.pre.mk>
 
 post-patch:

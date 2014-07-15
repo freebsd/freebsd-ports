@@ -23,6 +23,8 @@ SHEBANG_FILES=	src/*.pl.in src/tsung-plotter/tsung/tsung.py
 
 PLIST_SUB=	PORTVERSION=${PORTVERSION}
 
+OPTIONS_DEFINE=	DOCS EXAMPLES
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|MAN_DIR   = $$(datadir)/man/man1/|MAN_DIR   = $$(prefix)/man/man1/| ; \
 		s|CONFDIR   = $$(docdir)/examples|CONFDIR   = $$(prefix)/share/examples/tsung|' \

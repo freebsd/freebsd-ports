@@ -20,6 +20,8 @@ INSTALL_TARGET=	installdirs install install-doc
 
 PORTEXAMPLES=	*
 
+OPTIONS_DEFINE=	DOCS EXAMPLES
+
 post-patch:
 	@${ECHO_CMD} "MKDEP ?= bmkdep" >> ${WRKSRC}/mk/sys.mk
 

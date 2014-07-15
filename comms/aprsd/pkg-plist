@@ -6,12 +6,12 @@ etc/aprsd/aprsd.conf.samp
 etc/aprsd/user.deny.samp
 etc/aprsd/welcome.txt.samp
 etc/rc.d/aprsd
-%%EXAMPLESDIR%%/chkaprsd
-%%EXAMPLESDIR%%/udp_example
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/chkaprsd
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/udp_example
 %%PORTDOCS%%%%DOCSDIR%%/aprsddoc.html
 %%PORTDOCS%%%%DOCSDIR%%/ports.html
 %%PORTDOCS%%%%DOCSDIR%%/q.html
 %%PORTDOCS%%%%DOCSDIR%%/qalgorithm.html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm %%EXAMPLESDIR%%
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
 @dirrmtry etc/aprsd
