@@ -1906,7 +1906,7 @@ libdata/pkgconfig/python-%%VER%%.pc
 %%PYTHON_LIBDIR%%/lib-dynload/_lzma.so
 %%PYTHON_LIBDIR%%/lib-dynload/_md5.so
 %%PYTHON_LIBDIR%%/lib-dynload/_multibytecodec.so
-%%PYTHON_LIBDIR%%/lib-dynload/_multiprocessing.so
+%%THREADS%%%%PYTHON_LIBDIR%%/lib-dynload/_multiprocessing.so
 %%PYTHON_LIBDIR%%/lib-dynload/_opcode.so
 %%PYTHON_LIBDIR%%/lib-dynload/_pickle.so
 %%PYTHON_LIBDIR%%/lib-dynload/_posixsubprocess.so
