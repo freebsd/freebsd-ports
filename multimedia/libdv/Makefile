@@ -3,7 +3,7 @@
 
 PORTNAME=	libdv
 PORTVERSION=	1.0.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	multimedia
 MASTER_SITES=	SF
 
@@ -15,15 +15,15 @@ LICENSE=	LGPL21
 LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
 		libpopt.so:${PORTSDIR}/devel/popt
 
-USES=	pkgconfig pathfix
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=	--disable-gtk
-CONFIGURE_ENV=	PKG_CONFIG_PATH=${PKG_CONFIG_PATH}:${LOCALBASE}/libdata/pkgconfig
-CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
-LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
+CONFIGURE_ARGS=	--disable-gtk
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
+INSTALL_TARGET=	install-strip
+USES=		libtool pathfix pkgconfig
 USE_LDCONFIG=	yes
 
-DOCS=	AUTHORS COPYING COPYRIGHT ChangeLog NEWS README \
+DOCS=		AUTHORS COPYING COPYRIGHT ChangeLog NEWS README \
 		README.dvconnect README.encoder TODO
 
 OPTIONS_DEFINE=	SDL DOCS
@@ -49,7 +49,6 @@ post-patch:
 post-install:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC}; ${INSTALL_DATA} ${DOCS} ${STAGEDIR}${DOCSDIR}
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libdv.so.4
 
 .include <bsd.port.mk>
 
