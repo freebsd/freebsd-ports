@@ -25,6 +25,8 @@ PORTDOCS=	README
 PORTEXAMPLES=	radiusplugin.cnf
 PLIST_FILES=	lib/radiusplugin.so
 
+OPTIONS_DEFINE=	DOCS EXAMPLES
+
 .include <bsd.port.pre.mk>
 
 do-install:
