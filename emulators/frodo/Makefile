@@ -20,7 +20,7 @@ GNU_CONFIGURE=	yes
 
 ROM=		1541 Basic Char Kernal
 
-OPTIONS_DEFINE=SDL
+OPTIONS_DEFINE=	SDL DOCS
 OPTIONS_DEFAULT=SDL
 
 .include <bsd.port.options.mk>
