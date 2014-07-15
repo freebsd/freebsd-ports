@@ -9,12 +9,12 @@ MASTER_SITES=	SF
 MAINTAINER=	brooks@FreeBSD.org
 COMMENT=	Collection of powerful tools for manipulating EPROM load files
 
-BUILD_DEPENDS=	ps2pdf:${PORTSDIR}/print/ghostscript9 \
-		${LOCALBASE}/include/boost/shared_ptr.hpp:${PORTSDIR}/devel/boost-libs \
+BUILD_DEPENDS=	${LOCALBASE}/include/boost/shared_ptr.hpp:${PORTSDIR}/devel/boost-libs \
 		libtool:${PORTSDIR}/devel/libtool
 LIB_DEPENDS=	libgcrypt.so:${PORTSDIR}/security/libgcrypt
 
 USES=		libtool
+USE_GHOSTSCRIPT=	9
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
