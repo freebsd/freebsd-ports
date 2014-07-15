@@ -57,21 +57,19 @@ include/boinc/win_util.h
 %%X11%%include/boinc/graphics_data.h
 %%X11%%include/boinc/ttfont.h
 lib/libboinc.a
-lib/libboinc.la
 lib/libboinc_api.a
-lib/libboinc_api.la
 lib/libboinc_api.so
 lib/libboinc_api.so.7
+lib/libboinc_api.so.7.2.33
 lib/libboinc_crypt.a
-lib/libboinc_crypt.la
 lib/libboinc_opencl.a
-lib/libboinc_opencl.la
 lib/libboinc_opencl.so
 lib/libboinc_opencl.so.7
+lib/libboinc_opencl.so.7.2.33
 %%X11%%lib/libboinc_graphics2.a
-%%X11%%lib/libboinc_graphics2.la
 %%X11%%lib/libboinc_graphics2.so
 %%X11%%lib/libboinc_graphics2.so.7
+%%X11%%lib/libboinc_graphics2.so.7.2.33
 %%SKINS%%share/boinc/skins/Charity Engine/background_image.png
 %%SKINS%%share/boinc/skins/Charity Engine/ce_about.ico
 %%SKINS%%share/boinc/skins/Charity Engine/ce_icon_play.png
