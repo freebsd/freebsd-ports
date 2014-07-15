@@ -22,7 +22,7 @@ DOCFILES=	COPYRIGHT INSTALL doc/ChangeLog doc/README doc/README.Y2K \
 		doc/README.cisco doc/README.pam doc/README.proxy \
 		doc/README.simul doc/README.usersfile
 
-OPTIONS_DEFINE=	PAM
+OPTIONS_DEFINE=	PAM DOCS
 OPTIONS_DEFAULT=PAM
 OPTIONS_SUB=	yes
 
@@ -31,16 +31,14 @@ OPTIONS_SUB=	yes
 PLIST_SUB+=	PAMBASE="/usr/local/etc"
 
 do-build:
-	cd ${WRKSRC}/src && ${SETENV} ${MAKE_ENV} ${MAKE} -f ${MAKEFILE}
+	${DO_MAKE_BUILD} -C ${WRKSRC}/src
 
 do-install:
 .if ${PORT_OPTIONS:MPAM}
 	${MKDIR} ${STAGEDIR}/etc/pam.d
 .endif
-	cd ${WRKSRC}/src && ${SETENV} ${MAKE_ENV} ${MAKE} -f ${MAKEFILE} install
-.if ${PORT_OPTIONS:MDOCS}
+	${DO_MAKE_BUILD} -C ${WRKSRC}/src install
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${DOCFILES:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}/
-.endif
+	${INSTALL_DATA} ${DOCFILES:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

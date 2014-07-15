@@ -14,6 +14,8 @@ COMMENT=	Unix-like tools to manipulate stored files from the command line
 USE_PYDISTUTILS=	yes
 USE_PYTHON=	2
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.options.mk>
 
 post-patch:

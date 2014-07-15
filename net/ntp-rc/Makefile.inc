@@ -15,7 +15,9 @@ OPTIONS_DEFINE=	NTPSNMPD \
   		CHU \
   		AUDIO_CHU \
   		DATUM \
+  		DOCS \
   		DUMBCLOCK \
+  		EXAMPLES \
   		FG \
   		HEATH \
   		HOPFSERIAL \
