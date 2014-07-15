@@ -3,6 +3,7 @@
 
 PORTNAME=	spectrwm
 PORTVERSION=	2.5.1
+PORTREVISION=	1
 CATEGORIES=	x11-wm
 MASTER_SITES=	https://opensource.conformal.com/snapshots/${PORTNAME}/
 EXTRACT_SUFX=	.tgz
@@ -46,7 +47,6 @@ do-install:
 	${INSTALL_LIB} ${WRKSRC}/libswmhack.so ${STAGEDIR}${PREFIX}/lib
 	${INSTALL_MAN} ${WRKSRC}/spectrwm.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
 	${INSTALL_DATA} ${WRKSRC}/spectrwm.conf ${STAGEDIR}${PREFIX}/etc/spectrwm.conf.sample
-	${INSTALL_DATA} ${WRKSRC}/spectrwm.conf ${STAGEDIR}${PREFIX}/etc/spectrwm.conf
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 .for conf in ${PORTEXAMPLES}
 	${INSTALL_DATA} ${WRKSRC}/${conf} ${STAGEDIR}${EXAMPLESDIR}
