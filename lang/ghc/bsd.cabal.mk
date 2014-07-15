@@ -108,7 +108,7 @@ CONFIGURE_ARGS+=	--with-c2hs=${C2HS_CMD}
 .endif
 
 .if defined(EXECUTABLE)
-LIB_DEPENDS+=	gmp.10:${PORTSDIR}/math/gmp
+LIB_DEPENDS+=	libgmp.so:${PORTSDIR}/math/gmp
 USES+=		iconv
 
 CONFIGURE_ARGS+=	--enable-executable-stripping
