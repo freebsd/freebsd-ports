@@ -24,6 +24,8 @@ USE_PERL5=	configure
 CONFIGURE_ENV=	PREFIX="${PREFIX}"
 DOCSDIR=	${PREFIX}/share/doc/chasen
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.pre.mk>
 
 PKGNAMEPREFIX:=	${PKGNAMEPREFIX}p5-
