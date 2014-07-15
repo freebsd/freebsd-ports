@@ -1,0 +1,19 @@
+Struct::Dumb creates record-like structure types, similar to the struct keyword
+in C, C++ or C#, or Record in Pascal. An invocation of this module will create a
+construction function which returns new object references with the given field
+values. These references all respond to lvalue methods that access or modify the
+values stored.
+
+It's specifically and intentionally not meant to be an object class. You cannot
+subclass it. You cannot provide additional methods. You cannot apply roles or
+mixins or metaclasses or traits or antlers or whatever else is in fashion this
+week.
+
+On the other hand, it is tiny, creates cheap lightweight array-backed
+structures, uses nothing outside of core. It's intended simply to be a slightly
+nicer way to store data structures, where otherwise you might be tempted to
+abuse a hash, complete with the risk of typoing key names. The constructor will
+croak if passed the wrong number of arguments, as will attempts to refer to
+fields that don't exist.
+
+WWW: http://search.cpan.org/dist/Struct-Dumb/
