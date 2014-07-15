@@ -4,12 +4,6 @@
 @rmtry %%ETCDIR%%/config.pl.sample
 @rmtry %%ETCDIR%%/hosts.sample
 @mode 0555
-@stopdaemon backuppc
-@unexec if cmp -s %D/%%ETCDIR%%/config.pl %D/%%ETCDIR%%/config.pl.sample; then rm -f %D/%%ETCDIR%%/config.pl; fi
-@unexec if cmp -s %D/%%ETCDIR%%/hosts %D/%%ETCDIR%%/hosts.sample; then rm -f %D/%%ETCDIR%%/hosts; fi
-@rmtry %%ETCDIR%%/config.pl.sample
-@rmtry %%ETCDIR%%/hosts.sample
-@mode 0555
 bin/BackupPC
 bin/BackupPC_archive
 bin/BackupPC_archiveHost
@@ -86,9 +80,9 @@ lib/BackupPC/Zip/FileMember.pm
 lib/Net/FTP/AutoReconnect.pm
 lib/Net/FTP/RetrHandle.pm
 man/man1/backuppc.1.gz
-%%PORTDOCS%%%%DOCSDIR%%/BackupPC.html
+%%DOCSDIR%%/BackupPC.html
 %%PORTDOCS%%%%DOCSDIR%%/BackupPC.pod
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm %%DOCSDIR%%
 %%WWWDIR%%/0000000.gif
 %%WWWDIR%%/0000011.gif
 %%WWWDIR%%/0001000.gif
@@ -158,7 +152,7 @@ man/man1/backuppc.1.gz
 @exec install -d -o backuppc -g backuppc -m 0750 /var/db/BackupPC/pc
 @exec install -d -o backuppc -g backuppc -m 0750 /var/db/BackupPC/pool
 @exec install -d -o backuppc -g backuppc -m 0750 /var/db/BackupPC/trash
-@dirrmtry /var/log/BackupPC 
+@dirrmtry /var/log/BackupPC
 @dirrmtry /var/db/BackupPC/cpool
 @dirrmtry /var/db/BackupPC/pc
 @dirrmtry /var/db/BackupPC/pool
