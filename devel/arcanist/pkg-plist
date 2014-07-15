@@ -462,6 +462,7 @@ lib/php/arcanist/src/parser/__tests__/diff/svn-1.7-property-added.svndiff
 lib/php/arcanist/src/parser/__tests__/diff/svn-binary-add.svndiff
 lib/php/arcanist/src/parser/__tests__/diff/svn-binary-diff-freebsd.svndiff
 lib/php/arcanist/src/parser/__tests__/diff/svn-binary-diff.svndiff
+lib/php/arcanist/src/parser/__tests__/diff/svn-double-diff.svndiff
 lib/php/arcanist/src/parser/__tests__/diff/svn-empty-file.svndiff
 lib/php/arcanist/src/parser/__tests__/diff/svn-ignore-whitespace-only.svndiff
 lib/php/arcanist/src/parser/__tests__/diff/svn-property-add.svndiff
