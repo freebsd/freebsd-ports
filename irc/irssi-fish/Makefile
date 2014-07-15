@@ -22,6 +22,8 @@ USE_LDCONFIG=	yes
 PLIST_FILES=	lib/irssi/modules/libfish.so
 PORTDOCS=	FiSH-irssi.txt FiSH-irssi_History.txt
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.options.mk>
 
 .if ${ARCH} == "amd64"
