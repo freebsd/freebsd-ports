@@ -16,7 +16,6 @@ MAINTAINER=	knu@FreeBSD.org
 COMMENT=	Ruby interface to Oracle Berkeley DB revision 2 or later
 
 USE_BDB=	yes
-USE_BZIP2=	yes
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 OPTIONSFILE=	${PORT_DBDIR}/ruby-${PORTNAME}/options
@@ -35,7 +34,7 @@ EXAMPLESDIR=	${RUBY_MODEXAMPLESDIR}
 PLIST_FILES=	%%RUBY_SITEARCHLIBDIR%%/bdb.so
 PORTDOCS=	*
 PORTEXAMPLES=	*
-USES=		shebangfix
+USES=		shebangfix tar:bzip2
 SHEBANG_FILES=	examples/record.rb \
 		examples/recno.rb \
 		examples/zeroc.rb \
