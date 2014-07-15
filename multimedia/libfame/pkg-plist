@@ -25,11 +25,10 @@ include/fame_syntax.h
 include/fame_syntax_mpeg1.h
 include/fame_syntax_mpeg4.h
 include/fame_version.h
-lib/libfame.a
-lib/libfame.la
-lib/libfame.so
-lib/libfame-0.9.so
 lib/libfame-0.9.so.1
+lib/libfame-0.9.so.1.0.0
+lib/libfame.a
+lib/libfame.so
 man/man3/fame_close.3.gz
 man/man3/fame_encode_frame.3.gz
 man/man3/fame_encode_slice.3.gz
