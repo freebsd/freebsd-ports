@@ -15,5 +15,4 @@ OPTIONS_EXCLUDE=TK X11
 
 SFX=		-nox11
 
-NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"
