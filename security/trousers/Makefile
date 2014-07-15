@@ -23,7 +23,7 @@ USE_RC_SUBR=	tcsd
 GNU_CONFIGURE=	YES
 CONFIGURE_ARGS=	--with-gui=none --enable-static \
 		--localstatedir=${PREFIX}/var \
-		--with-tssuser=${USERS} --with-tssgroup=${GROUPS}
+		--with-tssuser=${USERS} --with-tssgroup=${GROUPS} RANLIB=:
 MAKE_ENV=	PTHREAD_LIBS=${PTHREAD_LIBS} ICONV_LIB=${ICONV_LIB} \
 		ICONV_PREFIX=${ICONV_PREFIX}
 SUB_FILES=	pkg-message
