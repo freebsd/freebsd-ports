@@ -19,7 +19,7 @@ GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 
-OPTIONS_DEFINE=	EXAMPLES
+OPTIONS_DEFINE=	EXAMPLES DOCS
 EXAMPLES_DESC=	Compile examples, need libglut
 
 .include <bsd.port.options.mk>

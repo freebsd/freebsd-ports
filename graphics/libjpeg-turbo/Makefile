@@ -26,7 +26,7 @@ PORTEXAMPLES=	*
 # chase graphics/jpeg
 SOVERSION=	11
 
-OPTIONS_DEFINE=	PIC
+OPTIONS_DEFINE=	PIC DOCS EXAMPLES
 PIC_DESC=	Static library with PIC (required for VirtualGL)
 
 .include <bsd.port.options.mk>

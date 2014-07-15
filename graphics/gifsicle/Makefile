@@ -15,23 +15,16 @@ GNU_CONFIGURE=	yes
 
 PORTDOCS=	NEWS README.md
 
-OPTIONS_DEFINE=	X11
+OPTIONS_DEFINE=	X11 DOCS
 OPTIONS_DEFAULT=X11
 
 OPTIONS_SUB=	yes
 
-.include <bsd.port.options.mk>
-
-.if ! ${PORT_OPTIONS:MX11}
-CONFIGURE_ARGS+=	--without-x --disable-gifview
-.else
-USE_XORG=	x11
-.endif
+X11_CONFIGURE_OFF=	--without-x --disable-gifview
+X11_USE=	XORG=x11
 
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_MAN} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
-.endif
 
 .include <bsd.port.mk>
