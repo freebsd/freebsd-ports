@@ -7,14 +7,14 @@
 # the user/port can now set this options in the makefiles.
 #
 # WITH_OPENSSL_BASE=yes	- Use the version in the base system.
-# WITH_OPENSSL_PORT=yes	- Use the port, even if base is up to date
+# WITH_OPENSSL_PORT=yes	- Use the OpenSSL port, even if base is up to date
 #
 # USE_OPENSSL_RPATH=yes	- Pass RFLAGS options in CFLAGS,
 #			  needed for ports who don't use LDFLAGS
 #
 # Overrideable defaults:
 #
-# OPENSSL_SHLIBVER=	3
+# OPENSSL_SHLIBVER=	8
 # OPENSSL_PORT=		security/openssl
 #
 # The makefile sets this variables:
@@ -31,14 +31,6 @@
 
 OpenSSL_Include_MAINTAINER=	dinoex@FreeBSD.org
 
-# honor obsolete options for a bit
-.if defined(USE_OPENSSL_BASE) && !defined(WITH_OPENSSL_BASE)
-WITH_OPENSSL_BASE=yes
-.endif
-.if defined(USE_OPENSSL_PORT) && !defined(WITH_OPENSSL_PORT)
-WITH_OPENSSL_PORT=yes
-.endif
-
 #	if no preference was set, check for an installed base version
 #	but give an installed port preference over it.
 .if	!defined(WITH_OPENSSL_BASE) && \
@@ -50,7 +42,7 @@ WITH_OPENSSL_BASE=yes
 
 .if defined(WITH_OPENSSL_BASE)
 OPENSSLBASE=		/usr
-OPENSSLDIR=		/etc/ssl
+OPENSSLDIR?=		/etc/ssl
 
 .if !exists(${DESTDIR}/usr/lib/libcrypto.so)
 check-depends::
@@ -107,7 +99,7 @@ PKGARGS=
 OPENSSL_INSTALLED!=	${PKG_BIN} ${PKGARGS} which -qo ${LOCALBASE}/lib/libcrypto.so || :
 .else
 OPENSSL_INSTALLED!=	find "${PKG_DBDIR}/" -type f -name "+CONTENTS" -print0 | \
-			xargs -0 grep -l "^lib/libssl.so." | \
+			xargs -0 grep -l "^lib/libcrypto.so.[0-9]*$$" | \
 			while read contents; do \
 				sslprefix=`grep "^@cwd " "$${contents}" | ${HEAD} -n 1`; \
 				if test "$${sslprefix}" = "@cwd ${LOCALBASE}" ; then \
@@ -117,22 +109,22 @@ OPENSSL_INSTALLED!=	find "${PKG_DBDIR}/" -type f -name "+CONTENTS" -print0 | \
 .if defined(OPENSSL_INSTALLED) && ${OPENSSL_INSTALLED} != ""
 .if defined(WITH_PKGNG)
 OPENSSL_PORT=		${OPENSSL_INSTALLED}
-OPENSSL_SHLIBFILE!=	${PKG_INFO} -ql ${OPENSSL_INSTALLED} | grep "^`pkg query "%p" ${OPENSSL_INSTALLED}`/lib/libssl.so."
+OPENSSL_SHLIBFILE!=	${PKG_INFO} -ql ${OPENSSL_INSTALLED} | grep "^`pkg query "%p" ${OPENSSL_INSTALLED}`/lib/libcrypto.so.[0-9]*$$"
 .else
 OPENSSL_PORT!=		grep "^@comment ORIGIN:" "${OPENSSL_INSTALLED}" | ${CUT} -d : -f 2
-OPENSSL_SHLIBFILE!=	grep "^lib/libssl.so." "${OPENSSL_INSTALLED}"
+OPENSSL_SHLIBFILE!=	grep "^lib/libcrypto.so.[0-9]*$$" "${OPENSSL_INSTALLED}"
 .endif
 OPENSSL_SHLIBVER?=	${OPENSSL_SHLIBFILE:E}
 .else
-# PKG_DBDIR was not found, default
-OPENSSL_PORT?=		security/openssl
-OPENSSL_SHLIBVER?=	8
+# PKG_DBDIR was not found
 .endif
 .endif
+
+# default
 OPENSSL_PORT?=		security/openssl
 OPENSSL_SHLIBVER?=	8
 
-OPENSSLDIR=		${OPENSSLBASE}/openssl
+OPENSSLDIR?=		${OPENSSLBASE}/openssl
 BUILD_DEPENDS+=		${LOCALBASE}/lib/libcrypto.so.${OPENSSL_SHLIBVER}:${PORTSDIR}/${OPENSSL_PORT}
 RUN_DEPENDS+=		${LOCALBASE}/lib/libcrypto.so.${OPENSSL_SHLIBVER}:${PORTSDIR}/${OPENSSL_PORT}
 OPENSSLRPATH=		${LOCALBASE}/lib
