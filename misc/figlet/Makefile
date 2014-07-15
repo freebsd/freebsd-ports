@@ -17,6 +17,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 MAKE_ENV=	datadir=${DATADIR} prefix=${PREFIX}
 MAKE_ARGS=	LD=${CC}
 
+OPTIONS_DEFINE=	DOCS
+
 regression-test:
 	@ cd ${WRKSRC} && ${MAKE} check
 
