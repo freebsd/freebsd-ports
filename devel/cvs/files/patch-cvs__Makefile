@@ -1,0 +1,11 @@
+--- cvs/Makefile.orig	2012-09-06 06:25:43.000000000 +0400
++++ cvs/Makefile	2014-07-15 12:37:28.000000000 +0400
+@@ -32,7 +32,7 @@
+ DPADD=	${LIBCVS} ${LIBDIFF} ${LIBGNUREGEX} ${LIBMD} ${LIBCRYPT} ${LIBZ}
+ LDADD=	${LIBCVS} ${LIBDIFF} -lgnuregex -lmd -lcrypt -lz
+ 
+-.if ${MK_KERBEROS_SUPPORT} != "no"
++.if ${KERBEROS_SUPPORT} != "no"
+ CFLAGS+= -DHAVE_GSSAPI -DENCRYPTION
+ LDADD+= -lgssapi -lkrb5 -lhx509 -lasn1 -lcrypto -lroken -lcrypt -lcom_err
+ DPADD+= ${LIBGSSAPI} ${LIBKRB5} ${LIBHX509} ${LIBASN1} ${LIBCRYPTO} ${LIBROKEN}
