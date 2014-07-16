@@ -20,6 +20,8 @@ USES=		gmake tar:bzip2
 SUB_FILES=	pkg-message
 SUB_LIST+=	RUNFILE=${DATADIR}/bash_completion.sh
 
+OPTIONS_DEFINE=	DOCS
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|FLAC|&\|flv\|FLV|;' ${WRKSRC}/bash_completion
 

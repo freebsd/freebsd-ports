@@ -23,6 +23,8 @@ GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include -fpermissive
 LIBS+=		-L${LOCALBASE}/lib -lintl -lmcrypt
 
+OPTIONS_DEFINE=	DOCS
+
 post-patch:
 	${REINPLACE_CMD} -e 's,SHELL) libtool,SHELL) ${LIBTOOL} --tag=CXX,' \
 		${WRKSRC}/src/Makefile.in

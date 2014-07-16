@@ -25,6 +25,8 @@ BDREL=		5
 
 SUB_LIST=	bdc pkg-message
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.pre.mk>
 
 .if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX})

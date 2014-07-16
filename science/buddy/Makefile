@@ -17,6 +17,8 @@ INSTALL_TARGET=	install-strip
 
 DOCS=		doc/bddnotes.ps doc/buddy.ps doc/tech.txt README AUTHORS
 
+OPTIONS_DEFINE=	DOCS
+
 post-install:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${DOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}

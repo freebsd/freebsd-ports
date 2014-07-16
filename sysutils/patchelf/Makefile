@@ -12,4 +12,6 @@ COMMENT=	Utility to modify the dynamic linker
 USES=		gmake
 GNU_CONFIGURE=	yes
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.mk>

@@ -23,7 +23,7 @@ LICENSE_PERMS=	auto-accept
 LICENSE_FILE=	${WRKSRC}/client/lib/tablelist4.1/COPYRIGHT.txt
 LICENSE_PERMS=	auto-accept
 
-OPTIONS_DEFINE=	AUDIO SANCP WIRESHARK
+OPTIONS_DEFINE=	AUDIO SANCP WIRESHARK DOCS
 AUDIO_DESC=	Install Festival Speech Synthesis
 SANCP_DESC=	Use sancp
 WIRESHARK_DESC=	Install wireshark

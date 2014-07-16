@@ -15,6 +15,8 @@ USE_PERL5=	build
 JADOCSDIR=	share/doc/ja/${PORTNAME}
 PLIST_SUB=	JADOCSDIR=${JADOCSDIR}
 
+OPTIONS_DEFINE=	DOCS
+
 pre-build:
 		@(echo perl is set ${PERL} in pre-build:)
 		@(cd ${WRKSRC}; ./findperl.sh ${PERL} > whereperl)

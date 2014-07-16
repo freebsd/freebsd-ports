@@ -14,6 +14,8 @@ COMMENT=	A telnet-like application which uses a secure SSL channel
 GNU_CONFIGURE=	yes
 USE_OPENSSL=	yes
 
+OPTIONS_DEFINE=	DOCS
+
 do-install:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/control.txt ${STAGEDIR}${DOCSDIR}

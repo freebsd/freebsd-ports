@@ -28,6 +28,8 @@ ALL_TARGET=
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
+OPTIONS_DEFINE=	DOCS
+
 post-patch:
 	@${REINPLACE_CMD} -e '/utmp/d' \
 		${WRKSRC}/quota/report.c ${WRKSRC}/quota/util.c

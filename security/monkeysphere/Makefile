@@ -25,6 +25,8 @@ GROUPS=	monkeysphere
 
 MAKE_ARGS+=	ETCPREFIX=${PREFIX} MANPREFIX=${PREFIX}/man ETCSUFFIX=.sample
 
+OPTIONS_DEFINE=	DOCS
+
 # use proper system paths for FreeBSD instead of debian's:
 post-patch:
 	@${REINPLACE_CMD} -e 's|/etc/monkeysphere|${LOCALBASE}/etc/monkeysphere|g' \

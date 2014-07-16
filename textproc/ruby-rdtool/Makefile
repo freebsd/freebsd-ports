@@ -26,6 +26,8 @@ RUBY_MODNAME=	rd
 DOCS_EN=	README.rd	doc/rd-draft.rd
 DOCS_JA=	README.rd.ja	doc/rd-draft.rd.ja
 
+OPTIONS_DEFINE=	DOCS
+
 post-install:
 	${MKDIR} ${STAGEDIR}${RUBY_SITELIBDIR}/rd
 	${INSTALL_DATA} ${WRKSRC}/lib/rd/dot.rd2rc ${STAGEDIR}${RUBY_SITELIBDIR}/rd/

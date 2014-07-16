@@ -63,6 +63,8 @@ SHEBANG_FILES=	src/tools/sss_obfuscate
 USE_RC_SUBR=	${PORTNAME}
 PORTDATA=	*
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.options.mk>
 
 .if ${ARCH} == "ia64" || ${ARCH} == "powerpc" || ${ARCH} == "sparc64"

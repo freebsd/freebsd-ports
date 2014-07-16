@@ -20,6 +20,8 @@ INSTALL_TARGET=	site-install
 DOCS=		README.txt History.txt License.txt
 EXAMPLES=	ext/camellia-example.rb
 
+OPTIONS_DEFINE=	DOCS
+
 post-install:
 	${MKDIR} ${STAGEDIR}${RUBY_MODEXAMPLESDIR}
 .for f in ${EXAMPLES}

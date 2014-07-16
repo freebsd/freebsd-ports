@@ -31,4 +31,6 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 PROJECTHOST=	ibus
 WRKSRC=			${WRKDIR}/${DISTNAME}
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.mk>

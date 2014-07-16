@@ -23,6 +23,8 @@ DOCS_EN=	ChangeLog \
 		doc/en/*
 DOCS_JA=	doc/ja/*
 
+OPTIONS_DEFINE=	DOCS
+
 do-install:
 	${MKDIR} ${STAGEDIR}${RUBY_SITELIBDIR}
 	${CP} -R ${WRKSRC}/lib/xmlscan ${STAGEDIR}${RUBY_SITELIBDIR}/

@@ -22,6 +22,8 @@ MAKE_ENV+=	CONFDIR=${PREFIX}/etc/gather DATADIR=${DATADIR}
 
 SUB_FILES=	pkg-message
 
+OPTIONS_DEFINE=	DOCS EXAMPLES
+
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/gather ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/gather.1 ${STAGEDIR}${PREFIX}/man/man1

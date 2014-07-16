@@ -16,6 +16,8 @@ USE_RUBY=	yes
 
 NO_BUILD=	yes
 
+OPTIONS_DEFINE=	DOCS
+
 post-patch:
 	${RUBY} -i.orig -pe 'gsub(/"(format_test\.pl)/, "\"./\\1")' ${WRKSRC}/test_format.rb
 

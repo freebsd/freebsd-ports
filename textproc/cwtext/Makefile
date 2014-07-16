@@ -16,6 +16,8 @@ ALL_TARGET=	ALL
 
 LICENSE=	GPLv2
 
+OPTIONS_DEFINE=	DOCS
+
 post-patch:
 	@${REINPLACE_CMD} -e "s,%%STAGEDIR%%,${STAGEDIR},g" \
 		${WRKSRC}/makefile

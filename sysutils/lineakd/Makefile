@@ -21,6 +21,8 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 
 DOCS=		README TODO AUTHORS
 
+OPTIONS_DEFINE=	DOCS EXAMPLES
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|-ldl||' \
 		${WRKSRC}/lineak/Makefile.in ${WRKSRC}/lineakd/Makefile.in

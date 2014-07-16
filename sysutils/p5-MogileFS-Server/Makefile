@@ -29,6 +29,8 @@ USE_PERL5=	configure
 REINPLACE_ARGS=	-i ''
 USE_RC_SUBR=	mogilefsd mogstored
 
+OPTIONS_DEFINE=	DOCS
+
 post-install:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/* ${STAGEDIR}${DOCSDIR}
