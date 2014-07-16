@@ -1,7 +1,7 @@
 # Created by: Tim Robbins <tim@robbins.dropbear.id.au>
 # $FreeBSD$
 
-PORTREVISION=	2
+PORTREVISION=	3
 
 COMMENT=	Client programs for a replicated high-performance network file system
 
@@ -10,5 +10,4 @@ PKGDIR=		${.CURDIR}
 
 CODA_SUITE=	client
 
-NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"
