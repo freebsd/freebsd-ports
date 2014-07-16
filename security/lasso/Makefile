@@ -40,7 +40,7 @@ PLIST_SUB+=	WITH_PERL="@comment "
 CONFIGURE_ARGS+=	--enable-php5 \
 		--with-php5-config="${LOCALBASE}/bin/php-config"
 LDFLAGS+=	"-L${LOCALBASE}/lib"
-LIB_DEPENDS+=	expat:${PORTSDIR}/textproc/expat2
+LIB_DEPENDS+=	libexpat.so:${PORTSDIR}/textproc/expat2
 PLIST_SUB+=	WITH_PHP5=""
 USE_PHP=	yes
 USE_PHP_BUILD=	yes

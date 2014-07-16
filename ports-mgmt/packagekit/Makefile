@@ -72,7 +72,7 @@ PLIST_SUB+=	GTK="@comment "
 CONFIGURE_ARGS+=--disable-qt
 
 .elif defined(${SLAVEPORT}) && ${SLAVEPORT}=="qt4"
-LIB_DEPENDS+=	packagekit-glib2:${PORTSDIR}/ports-mgmt/packagekit
+LIB_DEPENDS+=	libpackagekit-glib2.so:${PORTSDIR}/ports-mgmt/packagekit
 
 CONFIGURE_ARGS+=--enable-qt
 LIB_DEPENDS+=	libcppunit-1.12.so:${PORTSDIR}/devel/cppunit

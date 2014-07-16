@@ -74,7 +74,7 @@ PORT_OPTIONS+=	GTKSPELL
 .endif
 
 .if ${PORT_OPTIONS:MTLEN}
-LIB_DEPENDS+=	tlen.1:${PORTSDIR}/polish/libtlen
+LIB_DEPENDS+=	libtlen.so:${PORTSDIR}/polish/libtlen
 CONFIGURE_ARGS+=	--with-tlen
 PLIST_SUB+=	TLEN:=""
 .else
@@ -83,7 +83,7 @@ PLIST_SUB+=	TLEN:="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MJABBER}
-LIB_DEPENDS+=	loudmouth-1.0:${PORTSDIR}/net-im/loudmouth
+LIB_DEPENDS+=	libloudmouth-1.so:${PORTSDIR}/net-im/loudmouth
 CONFIGURE_ARGS+=	--with-jabber
 PLIST_SUB+=	JABBER:=""
 .else
@@ -108,14 +108,14 @@ PLIST_SUB+=	DOCKAPP:="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MGTKSPELL}
-LIB_DEPENDS+=	gtkspell.0:${PORTSDIR}/textproc/gtkspell
+LIB_DEPENDS+=	libgtkspell.so:${PORTSDIR}/textproc/gtkspell
 CONFIGURE_ARGS+=	--with-gtkspell
 .else
 CONFIGURE_ARGS+=	--without-gtkspell
 .endif
 
 .if ${PORT_OPTIONS:MDBUS}
-LIB_DEPENDS+=	dbus-1.3:${PORTSDIR}/devel/dbus
+LIB_DEPENDS+=	libdbus-1.so:${PORTSDIR}/devel/dbus
 CONFIGURE_ARGS+=	--with-dbus \
 			--with-dbus-dir=${PREFIX}/share/dbus-1/services
 PLIST_SUB+=	DBUS:=""
@@ -135,7 +135,7 @@ PLIST_SUB+=	ESOUND:="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MXOSD}
-LIB_DEPENDS+=	xosd.4:${PORTSDIR}/misc/xosd
+LIB_DEPENDS+=	libxosd.so:${PORTSDIR}/misc/xosd
 CONFIGURE_ARGS+=	--with-xosd
 PLIST_SUB+=	XOSD:=""
 .else

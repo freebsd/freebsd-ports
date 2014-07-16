@@ -65,8 +65,8 @@ LDIRECTORD_DESC=	Enable Linux Director Daemon
 APCSNMP_DESC=		Enable APC SNMP Stonith Device
 DRAC3_DESC=		Enable Dell DRACIII Stonith Device
 
-APCSNMP_LIB_DEPENDS=	netsnmp:${PORTSDIR}/net-mgmt/net-snmp
-DRAC3_LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl
+APCSNMP_LIB_DEPENDS=	libnetsnmp.so:${PORTSDIR}/net-mgmt/net-snmp
+DRAC3_LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl
 
 .include <bsd.port.options.mk>
 

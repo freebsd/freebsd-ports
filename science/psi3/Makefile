@@ -40,7 +40,7 @@ LIB_DEPENDS+=	liblapack.so:${PORTSDIR}/math/lapack
 BLAS=		-lgoto2p
 LAPACK=		-lgoto2p
 .elif ${WITH_BLAS} == atlas
-LIB_DEPENDS+=   atlas:${PORTSDIR}/math/atlas
+LIB_DEPENDS+=	libatlas.so:${PORTSDIR}/math/atlas
 BLAS=		-lptf77blas
 LAPACK=		-lalapack -lptcblas
 .endif
