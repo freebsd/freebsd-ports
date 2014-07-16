@@ -2,6 +2,11 @@ bin/awesome2
 bin/awesome2-client
 bin/awesome2-menu
 bin/awesome2-message
+man/man1/awesome2.1.gz
+man/man1/awesome2-client.1.gz
+man/man1/awesome2-menu.1.gz
+man/man1/awesome2-message.1.gz
+man/man5/awesome2rc.5.gz
 %%DATADIR%%/icons/awesome16.png
 %%DATADIR%%/icons/awesome32.png
 %%DATADIR%%/icons/awesome48.png
