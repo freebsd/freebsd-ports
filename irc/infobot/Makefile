@@ -14,6 +14,8 @@ USES=		perl5
 USE_PERL5=	run
 NO_BUILD=	yes
 
+OPTIONS_DEFINE=	DOCS
+
 post-patch:
 	-@${RM} ${WRKSRC}/src/*.orig
 .for i in config help users

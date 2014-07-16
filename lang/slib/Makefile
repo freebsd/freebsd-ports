@@ -15,6 +15,8 @@ USES=		gmake makeinfo
 ALL_TARGET=	slib.info
 INFO=		slib
 
+OPTIONS_DEFINE=	DOCS
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/lib/slib|${PREFIX}/share/slib|' ${WRKSRC}/guile.init
 

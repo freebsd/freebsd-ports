@@ -26,6 +26,8 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 
 SUB_FILES=	pkg-message
 
+OPTIONS_DEFINE=	DOCS EXAMPLES
+
 post-patch: .SILENT
 	${FIND} ${WRKSRC} -name Makefile | ${XARGS} \
 		${REINPLACE_CMD} -e "s,-O2,${CFLAGS} -I${LOCALBASE}/include,"

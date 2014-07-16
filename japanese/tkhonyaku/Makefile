@@ -18,6 +18,8 @@ NO_BUILD=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
+OPTIONS_DEFINE=	DOCS
+
 post-patch:
 	@${REINPLACE_CMD} -i '' -e 's|/usr/local/tkhonyaku|${PREFIX}/tkhonyaku|g' \
 		${WRKSRC}/tkhonyaku ${WRKSRC}/tkhonyaku-readme

@@ -25,6 +25,8 @@ INFO=		gawk
 
 DOCSDIR=	${PREFIX}/share/doc/${PKGBASE}
 
+OPTIONS_DEFINE=	DOCS
+
 post-configure:
 	@${REINPLACE_CMD} -E \
 	'/(DEFPATH|sed )/!s,(bin|data|lib|info|man|libexec)dir\),DESTDIR\)$$\(&,g' \

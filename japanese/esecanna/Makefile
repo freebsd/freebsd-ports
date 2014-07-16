@@ -22,6 +22,8 @@ CONFIGURE_ARGS=	--with-piddir="/var/run/esecanna"
 
 DOCS=		CREDITS CHANGES.jp README.First.jp README.jp
 
+OPTIONS_DEFINE=	DOCS
+
 post-patch:
 	${REINPLACE_CMD} -e " \
 		s,!!PREFIX!!,${PREFIX},g; \

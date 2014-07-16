@@ -23,6 +23,8 @@ CONFIGURE_ARGS=	--disable-kde
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
+OPTIONS_DEFINE=	DOCS
+
 post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for file in AUTHORS ChangeLog TODO README INSTALL
