@@ -52,7 +52,7 @@ CONFIGURE_ARGS+=	--disable-smb
 .endif
 
 .if ${PORT_OPTIONS:MSMI}
-LIB_DEPENDS+=		smi:${PORTSDIR}/net-mgmt/libsmi
+LIB_DEPENDS+=		libsmi.so:${PORTSDIR}/net-mgmt/libsmi
 .else
 CONFIGURE_ARGS+=	--disable-smi
 .endif

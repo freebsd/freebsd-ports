@@ -471,7 +471,7 @@ PLIST_SUB+=		SLAPI="@comment "
 
 .if ${PORT_OPTIONS:MSLP}
 CONFIGURE_ARGS+=	--enable-slp
-LIB_DEPENDS+=		slp.1:${PORTSDIR}/net/openslp
+LIB_DEPENDS+=		libslp.so:${PORTSDIR}/net/openslp
 .endif
 
 # Include tcp-wrapper support

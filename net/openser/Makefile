@@ -80,7 +80,7 @@ MAKE_ENV+=	POSTGRESQL=postgres
 .endif
 
 .if ${PORT_OPTIONS:MUNIXODBC}
-LIB_DEPENDS+=	odbc.2:${PORTSDIR}/databases/unixODBC
+LIB_DEPENDS+=	libodbc.so:${PORTSDIR}/databases/unixODBC
 MODULES+=	unixodbc
 .else
 MAKE_ENV+=	UNIXODBC=unixodbc

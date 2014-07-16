@@ -46,7 +46,7 @@ CONFIGURE_ARGS+=	--enable-64-bit
 .endif
 
 .if ${PORT_OPTIONS:MPOPT}
-LIB_DEPENDS+=	popt.0:${PORTSDIR}/devel/popt
+LIB_DEPENDS+=	libpopt.so:${PORTSDIR}/devel/popt
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 

@@ -18,7 +18,7 @@ CONFLICTS=	trafshow-[45].*
 
 .if defined(WITH_TRAFSHOW_SLANG) || \
     (exists(${LOCALBASE}/lib/libslang.a) && !defined(WITHOUT_TRAFSHOW_SLANG))
-LIB_DEPENDS=	slang.2:${PORTSDIR}/devel/libslang2
+LIB_DEPENDS=	libslang.so:${PORTSDIR}/devel/libslang2
 .endif
 
 GNU_CONFIGURE=	yes

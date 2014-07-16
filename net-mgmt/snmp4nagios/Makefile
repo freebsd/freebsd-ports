@@ -39,7 +39,7 @@ LIBS+=		-L${LOCALBASE}/lib
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MRRDTOOL}
-LIB_DEPENDS+=	rrd:${PORTSDIR}/databases/rrdtool
+LIB_DEPENDS+=	librrd.so:${PORTSDIR}/databases/rrdtool
 CONFIGURE_ARGS+=--with-rrd
 PLIST_SUB+=	RRD=""
 .else
