@@ -11,6 +11,8 @@ COMMENT=	Quick-N-Dirty Web Access Log Analyzer
 
 USE_PYTHON=	yes
 
+OPTIONS_DEFINE=	DOCS
+
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/waccess ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/waccess.1.gz ${STAGEDIR}${PREFIX}/man/man1

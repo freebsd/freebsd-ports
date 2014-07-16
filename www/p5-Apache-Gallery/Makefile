@@ -32,6 +32,8 @@ DOC_FILES=	INSTALL LICENSE README TODO UPGRADE
 
 SUB_FILES+=	pkg-message
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.pre.mk>
 
 post-patch:

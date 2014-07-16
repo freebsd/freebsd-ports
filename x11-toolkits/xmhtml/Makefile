@@ -23,6 +23,8 @@ USE_LDCONFIG=	yes
 LIBTOOL=	libtool
 MAKE_ENV=	LIBTOOL=${LIBTOOL}
 
+OPTIONS_DEFINE=	DOCS EXAMPLES
+
 do-install:
 	(cd ${WRKSRC}/lib && ${LIBTOOL} --mode=install ${INSTALL_DATA} \
 		libXmHTML.la ${STAGEDIR}${PREFIX}/lib)

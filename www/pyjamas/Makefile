@@ -19,6 +19,8 @@ PYDISTUTILS_AUTOPLIST=	yes
 
 REINPLACE_ARGS=	-i '' -e 's,../../bin,${PREFIX}/bin,'
 
+OPTIONS_DEFINE=	DOCS
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/share/pyjamas|${DATADIR}|' ${WRKSRC}/setup.py
 	${FIND} ${WRKSRC}/examples -type f -name "build.sh" -print0 | ${XARGS} -0 ${REINPLACE_CMD}

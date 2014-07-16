@@ -18,6 +18,8 @@ DATADIR=	${PREFIX}/share/nanoblogger
 
 NO_BUILD=	yes
 
+OPTIONS_DEFINE=	DOCS
+
 do-install:
 .for data in default lang plugins
 	@( cd ${WRKSRC}/${data} && \

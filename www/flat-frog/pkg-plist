@@ -29,11 +29,11 @@
 %%DATADIR%%/plugins/modifier.upper.php
 %%DATADIR%%/plugins/modifier.urlencode.php
 %%DATADIR%%/plugins/modifier.wordwrap.php
-%%EXAMPLESDIR%%/templates/footer.tpl
-%%EXAMPLESDIR%%/templates/header.tpl
-%%EXAMPLESDIR%%/templates/index.tpl
-%%EXAMPLESDIR%%/templates/test.conf
-%%EXAMPLESDIR%%/test.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/templates/footer.tpl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/templates/header.tpl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/templates/index.tpl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/templates/test.conf
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test.php
 %%PORTDOCS%%%%DOCSDIR%%/appendix.caching.html
 %%PORTDOCS%%%%DOCSDIR%%/appendix.groups.html
 %%PORTDOCS%%%%DOCSDIR%%/favicon.ico
@@ -50,8 +50,8 @@
 %%PORTDOCS%%%%DOCSDIR%%/programming.methods.html
 %%PORTDOCS%%%%DOCSDIR%%/programming.variables.html
 %%PORTDOCS%%%%DOCSDIR%%/what.is.html
-@dirrm %%EXAMPLESDIR%%/templates
-@dirrm %%EXAMPLESDIR%%
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/templates
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
 @dirrm %%DATADIR%%/plugins
 @dirrm %%DATADIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%

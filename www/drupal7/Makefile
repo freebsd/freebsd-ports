@@ -20,7 +20,7 @@ USES=		drupal:7
 USE_PHP=	dom filter gd hash json mbstring pcre pdo session simplexml xml
 WANT_PHP_WEB=	yes
 
-OPTIONS_DEFINE=		MYSQL SQLITE3 PGSQL
+OPTIONS_DEFINE=		MYSQL SQLITE3 PGSQL DOCS
 OPTIONS_DEFAULT=	MYSQL
 
 NO_BUILD=	yes

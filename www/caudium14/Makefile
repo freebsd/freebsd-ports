@@ -29,6 +29,8 @@ INSTALL_TARGET=	install_alt
 
 DOCSDIR=	${PREFIX}/share/doc/caudium
 
+OPTIONS_DEFINE=	DOCS
+
 post-patch:
 	@${SED} -e 's:@CAUDIUM_SERVERDIR@:${PREFIX}/caudium/server:' \
 		-e 's:^#############$$:${ECHO} "$${caudium_enable}" | ${EGREP} -iq "^yes|^true" || exit:' \

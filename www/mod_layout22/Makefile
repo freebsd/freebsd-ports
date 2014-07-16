@@ -20,6 +20,8 @@ LATEST_LINK=	mod_layout22
 
 MAKE_ARGS+=	builddir=${WRKSRC}
 
+OPTIONS_DEFINE=	DOCS
+
 post-patch:
 	${REINPLACE_CMD} -e 's|@APXS_STAGE@|-S LIBEXECDIR=${STAGEDIR}${PREFIX}/${APACHEMODDIR}|' \
 		${WRKSRC}/Makefile
