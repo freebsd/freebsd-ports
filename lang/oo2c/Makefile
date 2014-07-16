@@ -25,6 +25,8 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 
 ONLY_FOR_ARCHS=	i386 amd64 ia64
 
+OPTIONS_DEFINE=	DOCS
+
 post-patch:
 	@${REINPLACE_CMD} 's/dir=@/dir=$${DESTDIR}@/' \
 		 ${WRKSRC}/Makefile.config.in

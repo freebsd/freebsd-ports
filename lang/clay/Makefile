@@ -17,7 +17,7 @@ BUILD_DEPENDS=	llvm-config32:${PORTSDIR}/devel/llvm32 \
 		clang32:${PORTSDIR}/lang/clang32
 RUN_DEPENDS=	clang32:${PORTSDIR}/lang/clang32
 
-OPTIONS_DEFINE=		BINDGEN
+OPTIONS_DEFINE=		BINDGEN DOCS
 BINDGEN_DESC=		Build with binding generator (broken on 10.0+)
 
 GITVERSION=	751ebe3

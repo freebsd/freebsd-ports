@@ -19,6 +19,8 @@ CONFIGURE_ARGS=	--with-darts=${LOCALBASE}/include ${ICONV_CONFIGURE_BASE}
 USES=		iconv
 USE_LDCONFIG=	yes
 
+OPTIONS_DEFINE=	DOCS
+
 post-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/share/chasen/dic
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
