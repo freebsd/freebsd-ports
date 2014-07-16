@@ -27,7 +27,7 @@ INSTALLS_ICONS=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGTKSPELL}
-LIB_DEPENDS+=	gtkspell:${PORTSDIR}/textproc/gtkspell
+LIB_DEPENDS+=	libgtkspell.so:${PORTSDIR}/textproc/gtkspell
 CONFIGURE_ARGS+=--with-gtkspell
 .else
 CONFIGURE_ARGS+=--without-gtkspell

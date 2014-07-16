@@ -86,7 +86,7 @@ SVG_CONFIGURE_WITH=	rsvg
 GTK2_USE=	GNOME=gtk20
 GTK2_CONFIGURE_ON=	--with-x-toolkit=gtk
 
-XAW3D_LIB_DEPENDS=	Xaw3d:${PORTSDIR}/x11-toolkits/Xaw3d
+XAW3D_LIB_DEPENDS=	libXaw3d.so:${PORTSDIR}/x11-toolkits/Xaw3d
 XAW3D_CONFIGURE_ON=	--with-x-toolkit=athena
 
 XAW_USE=	XORG=xaw
@@ -99,29 +99,29 @@ SCROLLBARS_CONFIGURE_WITH=	toolkit-scroll-bars
 
 SYNC_INPUT_CONFIGURE_WITH=	sync-input
 
-JPEG_LIB_DEPENDS=	jpeg:${PORTSDIR}/graphics/jpeg
+JPEG_LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg
 JPEG_CONFIGURE_WITH=	jpeg
 
-TIFF_LIB_DEPENDS=	tiff:${PORTSDIR}/graphics/tiff
+TIFF_LIB_DEPENDS=	libtiff.so:${PORTSDIR}/graphics/tiff
 TIFF_CONFIGURE_WITH=	tiff
 
-GIF_LIB_DEPENDS=	gif:${PORTSDIR}/graphics/giflib
+GIF_LIB_DEPENDS=	libgif.so:${PORTSDIR}/graphics/giflib
 GIF_CONFIGURE_WITH=	gif
 
-PNG_LIB_DEPENDS+=	png15:${PORTSDIR}/graphics/png
+PNG_LIB_DEPENDS+=	libpng15.so:${PORTSDIR}/graphics/png
 PNG_CONFIGURE_WITH=	png
 
 XPM_USE=		XORG=xpm
 XPM_CONFIGURE_WITH=	xpm
 
 XFT_USE=		XORG=xft
-XFT_LIB_DEPENDS=	freetype:${PORTSDIR}/print/freetype2
+XFT_LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2
 XFT_CONFIGURE_WITH=	xft
 
-M17N_LIB_DEPENDS=	m17n:${PORTSDIR}/devel/m17n-lib
+M17N_LIB_DEPENDS=	libm17n.so:${PORTSDIR}/devel/m17n-lib
 M17N_CONFIGURE_WITH=	m17n-flt
 
-OTF_LIB_DEPENDS=	otf:${PORTSDIR}/print/libotf
+OTF_LIB_DEPENDS=	libotf.so:${PORTSDIR}/print/libotf
 OTF_CONFIGURE_WITH=	libotf
 
 GCONF_USE=			gnome=gconf2
@@ -134,7 +134,7 @@ CANNA_CONFIGURE_ON=	--with-canna \
 			--with-canna-libraries=${LOCALBASE}/lib
 CANNA_PATCHFILES=	emacs23.3canna-20110316.diff.gz
 CANNA_PATCH_SITES=	http://distfiles.pirateparty.in/%SUBDIR%/ ${MASTER_SITE_LOCAL}
-CANNA_LIB_DEPENDS=	canna:${PORTSDIR}/japanese/canna-lib
+CANNA_LIB_DEPENDS=	libcanna.so:${PORTSDIR}/japanese/canna-lib
 
 X11_CONFIGURE_WITH=	x
 X11_USE=	XORG=x11

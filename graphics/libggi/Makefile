@@ -53,7 +53,7 @@ PLIST_SUB+=	WITH_VGL="@comment "
 
 .if ${PORT_OPTIONS:MAALIB}
 CONFIGURE_ARGS+=--enable-aa
-LIB_DEPENDS+=	aa:${PORTSDIR}/graphics/aalib
+LIB_DEPENDS+=	libaa.so:${PORTSDIR}/graphics/aalib
 PLIST_SUB+=	WITH_AALIB=""
 .else
 CONFIGURE_ARGS+=--disable-aa
@@ -62,7 +62,7 @@ PLIST_SUB+=	WITH_AALIB="@comment "
 
 .if ${PORT_OPTIONS:MSVGALIB}
 CONFIGURE_ARGS+=--enable-vgagl --enable-svga
-LIB_DEPENDS+=	vga:${PORTSDIR}/graphics/svgalib
+LIB_DEPENDS+=	libvga.so:${PORTSDIR}/graphics/svgalib
 PLIST_SUB+=	WITH_SVGALIB=""
 .else
 CONFIGURE_ARGS+=--disable-vgagl --disable-svga

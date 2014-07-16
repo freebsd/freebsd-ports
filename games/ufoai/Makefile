@@ -70,7 +70,7 @@ PLIST_SUB+=	UFO2MAP="@comment "
 .if $(PORT_OPTIONS:MUFORADIANT)
 CONFIGURE_ARGS+=--enable-uforadiant
 USE_GNOME+=	gtk20 glib20 gtksourceview2 libxml2
-LIB_DEPENDS+=	gtkglext-x11-1.0.0:${PORTSDIR}/x11-toolkits/gtkglext
+LIB_DEPENDS+=	libgtkglext-x11-1.0.so:${PORTSDIR}/x11-toolkits/gtkglext
 RADIANT_FILE=	uforadiant
 RADIANT_DIRS=	bitmaps i18n prefabs sourceviewer
 PLIST_SUB+=	UFORADIANT=""
