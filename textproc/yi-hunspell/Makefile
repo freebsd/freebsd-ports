@@ -1,18 +1,18 @@
 # $FreeBSD$
 
 PORTNAME=	hunspell
-PORTVERSION=	0.0.2
-PORTREVISION=	1
+PORTVERSION=	0.0.3
 CATEGORIES=	textproc
-MASTER_SITES=	${MASTER_SITE_MOZILLA_EXTENDED}
-MASTER_SITE_SUBDIR=	addons/222538
+MASTER_SITES=	MOZILLA_EXTENDED/addons/222538
 PKGNAMEPREFIX=	yi-
-DISTNAME=	yiddish_spell_checker__yivo_-${PORTVERSION}-fx+tb+sm+fn
+DISTNAME=	yiddish_spell_checker_yivo-${PORTVERSION}-sm+fn+fx+tb
 EXTRACT_SUFX=	.xpi
 DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Yiddish hunspell dictionaries
+
+LICENSE=	GPLv3
 
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/dictionaries
