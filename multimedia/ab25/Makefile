@@ -6,7 +6,7 @@ CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	hrs
 
-MAINTAINER= ports@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Utility for ARIB STD-B25 ECM handling in MPEG2-TS stream
 
 LICENSE=	ISCL
@@ -16,7 +16,7 @@ LIB_DEPENDS=	libpcsclite.so:${PORTSDIR}/devel/pcsc-lite
 RUN_DEPENDS=	${LOCALBASE}/lib/pcsc/drivers/ifd-ccid.bundle/Contents/FreeBSD/libccid.so:${PORTSDIR}/devel/libccid
 
 USE_LDCONFIG=	yes
-MAKE_JOBS=SAFE=	yes
+MAKE_JOBS_SAFE=	yes
 PORTDOCS=	README readme-en.txt readme-jp.txt
 
 PLIST_FILES=	bin/b25 \
@@ -26,16 +26,11 @@ PLIST_DIRS=	include/ab25
 
 OPTIONS_DEFINE=	DOCS
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
-
 pre-su-install:
-	${MKDIR} ${PREFIX}/include/ab25
+	${MKDIR} ${STAGEDIR}${PREFIX}/include/ab25
 
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
-.endif
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
