@@ -1,4 +1,5 @@
 bin/emesene
+man/man1/emesene.1.gz
 %%DATADIR%%/libmimic.so
 %%DATADIR%%/Avatar.py
 %%DATADIR%%/Avatar.pyc
@@ -828,31 +829,13 @@ share/pixmaps/emesene-big.png
 @dirrm %%DATADIR%%/themes/tango
 @dirrm %%DATADIR%%/themes
 @dirrm %%DATADIR%%
-@dirrmtry share/icons/hicolor/scalable/apps
-@dirrmtry share/icons/hicolor/scalable
-@dirrmtry share/icons/hicolor
-@dirrmtry share/icons
-@dirrmtry share/locale/ast/LC_MESSAGES
-@dirrmtry share/locale/ast
 @dirrmtry share/locale/dv/LC_MESSAGES
 @dirrmtry share/locale/dv
 @dirrmtry share/locale/fil/LC_MESSAGES
 @dirrmtry share/locale/fil
-@dirrmtry share/locale/fo/LC_MESSAGES
-@dirrmtry share/locale/fo
 @dirrmtry share/locale/gv/LC_MESSAGES
 @dirrmtry share/locale/gv
-@dirrmtry share/locale/ku/LC_MESSAGES
-@dirrmtry share/locale/ku
 @dirrmtry share/locale/la/LC_MESSAGES
 @dirrmtry share/locale/la
 @dirrmtry share/locale/nb_NO/LC_MESSAGES
 @dirrmtry share/locale/nb_NO
-@dirrmtry share/locale/nds/LC_MESSAGES
-@dirrmtry share/locale/nds
-@dirrmtry share/locale/oc/LC_MESSAGES
-@dirrmtry share/locale/oc
-@dirrmtry share/locale/zh_HK/LC_MESSAGES
-@dirrmtry share/locale/zh_HK
-@exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
-@unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
