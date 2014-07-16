@@ -86,7 +86,7 @@ LIBXML2_LDFLAGS=	-lbsdxml
 LZO_LIB_DEPENDS=	liblzo2.so:${PORTSDIR}/archivers/lzo2
 LZO_CONFIGURE_WITH=	lzo2
 
-NETTLE_LIB_DEPENDS=	nettle:${PORTSDIR}/security/nettle
+NETTLE_LIB_DEPENDS=	libnettle.so:${PORTSDIR}/security/nettle
 NETTLE_CONFIGURE_WITH=	nettle
 NETTLE_CONFIGURE_ON=	--without-openssl
 NETTLE_USE_OFF=		OPENSSL=yes
