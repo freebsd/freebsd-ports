@@ -12,6 +12,8 @@ DIST_SUBDIR=	${PORTNAME}
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Italian thesaurus
 
+LICENSE=	AGPLv3
+
 USES=		zip
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
