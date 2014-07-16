@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ntp
-PORTVERSION=	4.2.7p447
+PORTVERSION=	4.2.7p449
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://www.eecis.udel.edu/~ntp/ntp_spool/ntp4/ntp-dev/ \
 		ftp://ftp.archive.de.uu.net/pub/unix/ntp/ntp4/ntp-dev/ \
@@ -56,6 +56,11 @@ BROKEN=		Fails to compile when MX4200 is enabled.
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}4
 
 AUTOTOOLSFILES=	aclocal.m4
+
+# XXX Temporary hack. Remember to remove this next commit.
+post-extract:
+	@/usr/bin/touch ${WRKSRC}/scripts/build/checkHtmlFileDates
+	@${CHMOD} +x ${WRKSRC}/scripts/build/checkHtmlFileDates
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|1.11.1|%%AUTOMAKE_APIVER%%|g' \
