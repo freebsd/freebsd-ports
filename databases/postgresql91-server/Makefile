@@ -214,7 +214,7 @@ IGNORE=	requires that you remove heimdal's /usr/bin/krb5-config and /usr/lib/lib
 CONFIGURE_ARGS+=--with-krb5
 # Allow defining a home built MIT Kerberos by setting KRB5_HOME
 .    if defined(KRB5_HOME) && exists(${KRB5_HOME}/lib/libgssapi_krb5.a) && exists(${KRB5_HOME}/bin/krb5-config)
-LIB_DEPENDS+=	krb5.3:${PORTSDIR}/security/krb5
+LIB_DEPENDS+=	libkrb5.so:${PORTSDIR}/security/krb5
 .    endif
 .   endif
 .  endif

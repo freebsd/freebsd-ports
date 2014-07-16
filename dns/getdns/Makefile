@@ -37,7 +37,7 @@ LIBEV_LIB_DEPENDS=	libev.so:${PORTSDIR}/devel/libev
 LIBEV_CONFIGURE_WITH=	libev
 LIBUV_LIB_DEPENDS=	libuv.so:${PORTSDIR}/devel/libuv
 LIBUV_CONFIGURE_WITH=	libuv
-LIBEVENT_LIB_DEPENDS=	event-1:${PORTSDIR}/devel/libevent
+LIBEVENT_LIB_DEPENDS=	libevent-1.4.so:${PORTSDIR}/devel/libevent
 LIBEVENT_CONFIGURE_WITH=libevent
 
 .include <bsd.port.options.mk>
