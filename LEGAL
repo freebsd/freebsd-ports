@@ -259,7 +259,6 @@ Tripwire-*-1.tar.gz	security/tripwire-131	Cannot be redistributed for more than 
 tripwire-*.tar.gz	security/tripwire12	Cannot be redistributed for more than the cost of duplication
 TrueCrypt*		security/truecrypt	May not be redistributed.  Must accept license to download.
 tuc-*			converters/tuc		Author does not allow CD-ROM distribution
-twelf-*			lang/twelf		License is currently indeterminate
 tw_cli-*		sysutils/tw_cli		Redistribution forbidden by license
 uDrawGraph-*		graphics/uDrawGraph	Binary under GNU LGPL without accompanying source
 ue*dev.zip		editors/uemacs		Resale allowed for media cost only
