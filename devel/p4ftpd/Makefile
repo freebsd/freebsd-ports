@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	p4ftpd
-PORTVERSION=	2012.1.442152
+PORTVERSION=	2014.1.821990
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.perforce.com/perforce/${P4VERSION}/bin.${PLATFORM}/ \
 		http://filehost.perforce.com/perforce/r${P4VERSION}/bin.${PLATFORM}/
@@ -13,7 +13,7 @@ EXTRACT_ONLY=	# none
 MAINTAINER=	gordon@FreeBSD.org
 COMMENT=	Perforce server
 
-ONLY_FOR_ARCHS=	amd64 i386 sparc64
+ONLY_FOR_ARCHS=	amd64 i386
 
 P4VERSION=	r${PORTVERSION:S/^20//:C/\.[0-9]+$//}
 DIST_SUBDIR=	perforce/${PORTVERSION}/bin.${PLATFORM}
