@@ -16,6 +16,11 @@ DIST_SUBDIR=	${PORTNAME}
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	English hunspell dictionaries
 
+# en_CA and en_US are licensed under BSD
+# en_GB is licensed under LGPL3
+LICENSE=	BSD3CLAUSE LGPL3
+LICENSE_COMB=	multi
+
 USES=		zip
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
