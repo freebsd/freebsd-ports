@@ -2326,7 +2326,6 @@ share/icons/hicolor/scalable/apps/lyx.svg
 @dirrm %%DATADIR%%/images/oxygen
 @dirrm %%DATADIR%%/images/math
 @dirrm %%DATADIR%%/images/ipa
-@dirrm %%DATADIR%%/images/commands
 @dirrm %%DATADIR%%/images/classic
 @dirrm %%DATADIR%%/images
 @dirrm %%DATADIR%%/fonts
