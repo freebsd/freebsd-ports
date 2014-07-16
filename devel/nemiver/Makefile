@@ -56,7 +56,7 @@ GLIB_SCHEMAS=	org.nemiver.gschema.xml
 .if ${PORT_OPTIONS:MGHEX}
 CONFIGURE_ARGS+=--enable-memoryview
 PLIST_SUB+=	GHEX=""
-LIB_DEPENDS+=	gtkhex.0:${PORTSDIR}/editors/ghex
+LIB_DEPENDS+=	libgtkhex.so:${PORTSDIR}/editors/ghex
 .else
 CONFIGURE_ARGS+=--disable-memoryview
 PLIST_SUB+=	GHEX="@comment "

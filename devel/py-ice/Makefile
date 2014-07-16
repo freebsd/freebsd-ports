@@ -11,7 +11,7 @@ LICENSE=	GPLv2
 
 BUILD_DEPENDS=	mcpp:${PORTSDIR}/devel/mcpp \
 		slice2py:${PORTSDIR}/devel/ice
-LIB_DEPENDS=	Ice.${LIB_VRS}:${PORTSDIR}/devel/ice
+LIB_DEPENDS=	libIce.so.${LIB_VRS}:${PORTSDIR}/devel/ice
 
 USE_PYTHON=	yes
 SLAVE_PORT=	yes

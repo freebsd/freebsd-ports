@@ -14,7 +14,7 @@ COMMENT=	Kyua (automated testing framework) - Command line interface
 LICENSE=	BSD
 
 LIB_DEPENDS=	liblutok.so.3:${PORTSDIR}/devel/lutok
-LIB_DEPENDS+=	sqlite3:${PORTSDIR}/databases/sqlite3
+LIB_DEPENDS+=	libsqlite3.so:${PORTSDIR}/databases/sqlite3
 BUILD_DEPENDS=	kyua-testers>=0.2:${PORTSDIR}/devel/kyua-testers
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
