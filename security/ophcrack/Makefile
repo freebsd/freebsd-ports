@@ -40,7 +40,7 @@ CONFIGURE_ARGS+=	--disable-gui
 .endif
 
 .if ${PORT_OPTIONS:MGRAPH}
-LIB_DEPENDS+=	qwt:${PORTSDIR}/x11-toolkits/qwt5
+LIB_DEPENDS+=	libqwt.so:${PORTSDIR}/x11-toolkits/qwt5
 .else
 CONFIGURE_ARGS+=	--disable-graph
 .endif

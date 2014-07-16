@@ -70,28 +70,28 @@ PLIST_SUB+=	EXIV2="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MFLAC}
-LIB_DEPENDS+=	FLAC:${PORTSDIR}/audio/flac
+LIB_DEPENDS+=	libFLAC.so:${PORTSDIR}/audio/flac
 PLIST_SUB+=	FLAC=""
 .else
 PLIST_SUB+=	FLAC="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MMPEG2}
-LIB_DEPENDS+=	mpeg2:${PORTSDIR}/multimedia/libmpeg2
+LIB_DEPENDS+=	libmpeg2.so:${PORTSDIR}/multimedia/libmpeg2
 PLIST_SUB+=	MPEG2=""
 .else
 PLIST_SUB+=	MPEG2="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MVORBIS}
-LIB_DEPENDS+=	vorbisfile:${PORTSDIR}/audio/libvorbis
+LIB_DEPENDS+=	libvorbisfile.so:${PORTSDIR}/audio/libvorbis
 PLIST_SUB+=	VORBIS=""
 .else
 PLIST_SUB+=	VORBIS="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MGSF}
-LIB_DEPENDS+=	gsf-1:${PORTSDIR}/devel/libgsf
+LIB_DEPENDS+=	libgsf-1.so:${PORTSDIR}/devel/libgsf
 PLIST_SUB+=	GSF=""
 .else
 PLIST_SUB+=	GSF="@comment "
@@ -105,7 +105,7 @@ PLIST_SUB+=	POPPLER="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MRPM}
-LIB_DEPENDS+=	rpm:${PORTSDIR}/archivers/rpm4
+LIB_DEPENDS+=	librpm.so:${PORTSDIR}/archivers/rpm4
 PLIST_SUB+=	RPM=""
 .else
 PLIST_SUB+=	RPM="@comment "
@@ -113,7 +113,7 @@ PLIST_SUB+=	RPM="@comment "
 
 # QT can be disabled
 .if ${PORT_OPTIONS:MQT}
-LIB_DEPENDS+=	QtGui:${PORTSDIR}/x11-toolkits/qt4-gui
+LIB_DEPENDS+=	libQtGui.so:${PORTSDIR}/x11-toolkits/qt4-gui
 LDFLAGS+=	-L${LOCALBASE}/lib -L${LOCALBASE}/lib/qt4
 CONFIGURE_ARGS+=--with-qt=${LOCALBASE}
 PLIST_SUB+=	QT=""

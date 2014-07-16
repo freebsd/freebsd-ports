@@ -72,7 +72,7 @@ CONFIGURE_ARGS+=--disable-lzo
 .endif
 
 .if ${PORT_OPTIONS:MSNAPPY}
-LIB_DEPENDS+=	snappy:${PORTSDIR}/archivers/snappy
+LIB_DEPENDS+=	libsnappy.so:${PORTSDIR}/archivers/snappy
 .else
 CONFIGURE_ARGS+=--disable-snappy
 .endif

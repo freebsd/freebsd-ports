@@ -43,7 +43,7 @@ NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ! ${PORT_OPTIONS:MCUPS}
-LIB_DEPENDS+=	cups.2:${PORTSDIR}/print/cups-client
+LIB_DEPENDS+=	libcups.so:${PORTSDIR}/print/cups-client
 .endif
 
 .if ! ${PORT_OPTIONS:MVIDEO}

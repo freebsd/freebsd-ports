@@ -19,7 +19,7 @@ NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_SNMP)
-LIB_DEPENDS+=	netsnmp.30:${PORTSDIR}/net-mgmt/net-snmp
+LIB_DEPENDS+=	libnetsnmp.so:${PORTSDIR}/net-mgmt/net-snmp
 PLIST_SUB+=	SNMP=""
 .else
 INSTALL_TARGET=	installbase

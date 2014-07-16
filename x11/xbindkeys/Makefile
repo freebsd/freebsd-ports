@@ -26,7 +26,7 @@ WISH=		${LOCALBASE}/bin/wish8.4
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGUILE}
-LIB_DEPENDS+=	guile:${PORTSDIR}/lang/guile
+LIB_DEPENDS+=	libguile.so:${PORTSDIR}/lang/guile
 .else
 CONFIGURE_ARGS+=	--disable-guile
 .endif
