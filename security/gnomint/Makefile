@@ -3,7 +3,7 @@
 
 PORTNAME=	gnomint
 PORTVERSION=	1.2.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	security
 MASTER_SITES=	SF
 
@@ -30,5 +30,8 @@ OPTIONS_SUB=	yes
 
 NLS_USES=	gettext
 NLS_CONFIGURE_ENABLE=	nls
+
+post-install:
+	${RMDIR} ${STAGEDIR}${PREFIX}/lib/pkgconfig
 
 .include <bsd.port.mk>
