@@ -31,7 +31,7 @@ PLIST_FILES=	bin/pxspread bin/xspread man/man1/pxspread.1.gz \
 
 .if ${PORT_OPTIONS:MX11}
 USE_XORG=	x11 xau xcb xdmcp xt
-LIB_DEPENDS+=	pthread-stubs:${PORTSDIR}/devel/libpthread-stubs
+LIB_DEPENDS+=	libpthread-stubs.so:${PORTSDIR}/devel/libpthread-stubs
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 .else

@@ -33,7 +33,7 @@ PLIST_SUB+=	WITH_MATRIXSSL="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MGNUTLS}
-LIB_DEPENDS+=	gnutls.26:${PORTSDIR}/security/gnutls
+LIB_DEPENDS+=	libgnutls.so:${PORTSDIR}/security/gnutls
 ALL_TARGET+=	build_gnutls
 PLIST_SUB+=	WITH_GNUTLS=""
 .else

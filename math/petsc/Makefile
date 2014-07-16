@@ -123,11 +123,11 @@ PLIST_SUB+=		MPIUNI=""
 WITH_ATLAS=	yes
 .endif
 .if defined(WITH_ATLAS)
-LIB_DEPENDS+=	atlas:${PORTSDIR}/math/atlas
+LIB_DEPENDS+=	libatlas.so:${PORTSDIR}/math/atlas
 LIBBLASLAPACK=	-L${LOCALBASE}/lib -lalapack -lcblas -lf77blas
 CONFIGURE_ARGS+=	--with-blas-lapack-lib="${LIBBLASLAPACK}"
 .else
-LIB_DEPENDS+=	lapack:${PORTSDIR}/math/lapack
+LIB_DEPENDS+=	liblapack.so:${PORTSDIR}/math/lapack
 LIBBLASLAPACK=	-L${LOCALBASE}/lib -llapack -lblas
 CONFIGURE_ARGS+=	--with-blas-lapack-lib="${LIBBLASLAPACK}"
 .endif
@@ -161,7 +161,7 @@ CONFLICTS+=		metis-4*
 WITH_BLACS=	yes
 .endif
 .if defined(WITH_BLACS) && defined(WITH_MPI)
-LIB_DEPENDS+=		blacs:${PORTSDIR}/math/blacs
+LIB_DEPENDS+=		libblacs.so:${PORTSDIR}/math/blacs
 CONFIGURE_ARGS+=	--with_blacs=1	\
 			--with-blacs-include=${LOCALBASE}/include	\
 			--with-blacs-lib=[${LOCALBASE}/lib/libblacsc.a,${LOCALBASE}/lib/libblacsf77.a,${LOCALBASE}/lib/libblacs.a]
@@ -169,7 +169,7 @@ CONFIGURE_ARGS+=	--with_blacs=1	\
 WITH_SCALAPACK=	yes
 . endif
 . if defined(WITH_SCALAPACK)
-LIB_DEPENDS+=		scalapack:${PORTSDIR}/math/scalapack
+LIB_DEPENDS+=		libscalapack.so:${PORTSDIR}/math/scalapack
 CONFIGURE_ARGS+=	--with-scalapack=1	\
 			--with-scalapack-dir=${LOCALBASE}
 . endif

@@ -74,7 +74,7 @@ report.sh
 
 .if ${PORT_OPTIONS:MHTTP}
 BROKEN =	WITH_HTTP requires libmicrohttpd 0.9.18 or higher
-LIB_DEPENDS+=		microhttpd:${PORTSDIR}/www/libmicrohttpd
+LIB_DEPENDS+=		libmicrohttpd.so:${PORTSDIR}/www/libmicrohttpd
 CONFIGURE_ARGS+=	--with-microhttpd=${LOCALBASE}
 PLIST_SUB+=		HTTP=""
 .else

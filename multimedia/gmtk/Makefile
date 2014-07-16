@@ -27,7 +27,7 @@ GIO_DESC=	Use GIO for file I/O
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MALSA}
-LIB_DEPENDS+=	asound:${PORTSDIR}/audio/alsa-lib
+LIB_DEPENDS+=	libasound.so:${PORTSDIR}/audio/alsa-lib
 CONFIGURE_ARGS+=	--with-alsa
 .else
 CONFIGURE_ARGS+=	--without-alsa

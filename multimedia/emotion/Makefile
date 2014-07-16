@@ -47,7 +47,7 @@ PLIST_SUB+=	GST="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MLIBXINE}
-LIB_DEPENDS+=	xine:${PORTSDIR}/multimedia/libxine
+LIB_DEPENDS+=	libxine.so:${PORTSDIR}/multimedia/libxine
 CONFIGURE_ARGS+=--enable-xine
 PLIST_SUB+=	XINE=""
 .else

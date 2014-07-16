@@ -114,7 +114,7 @@ CONFIGURE_ARGS+=--enable-rtadv
 
 .if ${PORT_OPTIONS:MSNMP}
 CONFIGURE_ARGS+=--enable-snmp
-LIB_DEPENDS+=netsnmp:${PORTSDIR}/net-mgmt/net-snmp
+LIB_DEPENDS+=libnetsnmp.so:${PORTSDIR}/net-mgmt/net-snmp
 .endif
 
 .if ${PORT_OPTIONS:MTCPSOCKETS}
@@ -122,7 +122,7 @@ CONFIGURE_ARGS+=--enable-tcp-zebra
 .endif
 
 .if ${PORT_OPTIONS:MDLMALLOC}
-LIB_DEPENDS+=dlmalloc:${PORTSDIR}/devel/libdlmalloc
+LIB_DEPENDS+=libdlmalloc.so:${PORTSDIR}/devel/libdlmalloc
 LDFLAGS+=-ldlmalloc
 SUB_LIST=	RCLDCONFIG=ldconfig
 .else
