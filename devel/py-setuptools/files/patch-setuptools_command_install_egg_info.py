@@ -1,3 +1,7 @@
+# install_egg_info command includes directory entries in --record output
+# Issue: https://bitbucket.org/pypa/setuptools/issue/118
+# TODO: Merge upstream
+
 --- setuptools/command/install_egg_info.py.orig	2013-11-27 22:45:15.000000000 +0100
 +++ setuptools/command/install_egg_info.py	2013-11-27 22:45:23.000000000 +0100
 @@ -23,7 +23,7 @@
