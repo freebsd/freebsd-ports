@@ -3,7 +3,6 @@
 
 PORTNAME=	lyx
 PORTVERSION=	${MAJOR_VERSION}.${MINOR_VERSION}
-PORTREVISION=	1
 CATEGORIES=	print editors
 MASTER_SITES=	ftp://ftp.lyx.org/pub/lyx/stable/${MAJOR_VERSION}.x/ \
 		http://www-ftp.lip6.fr/ftp/pub/lyx/stable/${MAJOR_VERSION}.x/ \
@@ -21,7 +20,7 @@ LIB_DEPENDS=	libboost_regex.so:${PORTSDIR}/devel/boost-libs \
 		libmythes-1.2.so:${PORTSDIR}/textproc/mythes
 
 MAJOR_VERSION=	2.1
-MINOR_VERSION=	0
+MINOR_VERSION=	1
 
 USES=		desktop-file-utils gmake iconv pkgconfig perl5
 USE_PYTHON=	2
