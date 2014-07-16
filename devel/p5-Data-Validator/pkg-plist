@@ -5,6 +5,7 @@
 %%SITE_PERL%%/Data/Validator/Role/NoRestricted.pm
 %%SITE_PERL%%/Data/Validator/Role/NoThrow.pm
 %%SITE_PERL%%/Data/Validator/Role/Sequenced.pm
+%%SITE_PERL%%/Data/Validator/Role/SmartSequenced.pm
 %%SITE_PERL%%/Data/Validator/Role/StrictSequenced.pm
 %%PERL5_MAN3%%/Data::Validator.3.gz
 %%PERL5_MAN3%%/Data::Validator::Role::AllowExtra.3.gz
@@ -13,6 +14,7 @@
 %%PERL5_MAN3%%/Data::Validator::Role::NoRestricted.3.gz
 %%PERL5_MAN3%%/Data::Validator::Role::NoThrow.3.gz
 %%PERL5_MAN3%%/Data::Validator::Role::Sequenced.3.gz
+%%PERL5_MAN3%%/Data::Validator::Role::SmartSequenced.3.gz
 %%PERL5_MAN3%%/Data::Validator::Role::StrictSequenced.3.gz
 @dirrm %%SITE_PERL%%/Data/Validator/Role
 @dirrm %%SITE_PERL%%/Data/Validator
