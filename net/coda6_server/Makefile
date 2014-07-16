@@ -3,7 +3,7 @@
 
 PORTNAME=	coda
 PORTVERSION=	6.9.4
-PORTREVISION?=	1
+PORTREVISION?=	2
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.coda.cs.cmu.edu/pub/coda/src/ \
 		ftp://ftp.planetmirror.com/pub/coda/src/ \
@@ -18,61 +18,20 @@ LIB_DEPENDS=	liblwp.so:${PORTSDIR}/devel/lwp \
 		librpc2.so:${PORTSDIR}/devel/rpc2 \
 		librvmlwp.so:${PORTSDIR}/devel/rvm
 
-USES=		pkgconfig gmake
+USES=		pkgconfig gmake shebangfix perl5
+USE_PERL5=	run
+SHEBANG_FILES=	coda-src/scripts/tape.pl \
+		coda-src/scripts/volinfo.pl \
+		coda-src/scripts/volsizes.pl \
+		coda-src/scripts/volmunge
 GNU_CONFIGURE=	yes
-
 CONFIGURE_ARGS+=	--enable-${CODA_SUITE}
-
 CODA_SUITE?=	server
 
 .if ${CODA_SUITE} == server
 CONFLICTS=	openafs-[0-9]*
-
-MAN5=	backuplogs.5 \
-	dumpfile.5 \
-	dumplist.5 \
-	maxgroupid.5 \
-	passwd.coda.5 \
-	servers.5 \
-	vicetab.5 \
-	volumelist.5 \
-	vrdb.5
-MAN8=	auth2.8 \
-	backup.8 \
-	bldvldb.sh.8 \
-	codasrv.8 \
-	createvol_rep.8 \
-	initpw.8 \
-	merge.8 \
-	norton.8 \
-	pdbtool.8 \
-	purgevol_rep.8 \
-	readdump.8 \
-	startserver.8 \
-	updateclnt.8 \
-	updatesrv.8 \
-	vice-setup.8 \
-	volutil.8
-.else
-MAN1=	au.1 \
-	cfs.1 \
-	clog.1 \
-	cmon.1 \
-	coda_replay.1 \
-	cpasswd.1 \
-	ctokens.1 \
-	cunlog.1 \
-	hoard.1 \
-	mkcodabf.1 \
-	repair.1 \
-	spy.1
-MAN8=	venus-setup.8 \
-	venus.8 \
-	volmunge.8 \
-	vutil.8
 .endif
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${CODA_SUITE} == client
