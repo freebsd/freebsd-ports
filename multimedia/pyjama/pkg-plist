@@ -1,7 +1,7 @@
 bin/pyjama
 share/applications/pyjama.desktop
 share/locale/bg/LC_MESSAGES/pyjama.mo
-share/locale//ca/LC_MESSAGES/pyjama.mo
+share/locale/ca/LC_MESSAGES/pyjama.mo
 share/locale/da/LC_MESSAGES/pyjama.mo
 share/locale/de/LC_MESSAGES/pyjama.mo
 share/locale/en_GB/LC_MESSAGES/pyjama.mo
