@@ -160,7 +160,7 @@ CONFIGURE_ARGS+=	--enable-maxpurge=${WITH_MAXPURGE}
 
 .if ${PORT_OPTIONS:MGDBM}
 CONFIGURE_ARGS+=--with-db=gdbm
-LIB_DEPENDS+=	gdbm.4:${PORTSDIR}/databases/gdbm
+LIB_DEPENDS+=	libgdbm.so:${PORTSDIR}/databases/gdbm
 .else
 CONFIGURE_ARGS+=--with-db=db
 .endif

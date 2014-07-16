@@ -25,7 +25,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGDBM}
-LIB_DEPENDS+=	gdbm:${PORTSDIR}/databases/gdbm
+LIB_DEPENDS+=	libgdbm.so:${PORTSDIR}/databases/gdbm
 .else
 CONFIGURE_ARGS+=	--without-gdbm
 .endif

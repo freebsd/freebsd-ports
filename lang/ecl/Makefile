@@ -72,11 +72,11 @@ CONFIGURE_ARGS+=--with-dffi=no
 .if ${PORT_OPTIONS:MTHREADS}
 CONFIGURE_ARGS+=--enable-threads=yes
 LDFLAGS+=	${PTHREAD_LIBS}
-LIB_DEPENDS+=	gc-threaded:${PORTSDIR}/devel/boehm-gc-threaded
+LIB_DEPENDS+=	libgc-threaded.so:${PORTSDIR}/devel/boehm-gc-threaded
 PLIST_SUB+=	THREADS=""
 .else
 CONFIGURE_ARGS+=--enable-threads=no
-LIB_DEPENDS+=	gc:${PORTSDIR}/devel/boehm-gc
+LIB_DEPENDS+=	libgc.so:${PORTSDIR}/devel/boehm-gc
 PLIST_SUB+=	THREADS="@comment "
 .endif
 

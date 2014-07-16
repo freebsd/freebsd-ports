@@ -36,7 +36,7 @@ CONFIGURE_ARGS+=	--enable-default_sender
 
 .if ${PORT_OPTIONS:MDIFFHEADERS}
 CONFIGURE_ARGS+=	--enable-diffheaders
-LIB_DEPENDS+=		tre:${PORTSDIR}/textproc/libtre
+LIB_DEPENDS+=		libtre.so:${PORTSDIR}/textproc/libtre
 .else
 CONFIGURE_ARGS+=	--without-tre
 .endif
@@ -112,14 +112,14 @@ PLIST_SUB+=		REPRRD="@comment "
 .if ${PORT_OPTIONS:MREPUTATION}
 CONFIGURE_ARGS+=	--enable-reputation \
 			--with-libcurl
-LIB_DEPENDS+=		curl:${PORTSDIR}/ftp/curl
+LIB_DEPENDS+=		libcurl.so:${PORTSDIR}/ftp/curl
 . if ${PORT_OPTIONS:MXML}
 CONFIGURE_ARGS+=	--without-libjansson --with-libxml2
-LIB_DEPENDS+=		xml2:${PORTSDIR}/textproc/libxml2
+LIB_DEPENDS+=		libxml2.so:${PORTSDIR}/textproc/libxml2
 PLIST_SUB+=		JANSSON="@comment "
 . else
 CONFIGURE_ARGS+=	--with-libjansson
-LIB_DEPENDS+=		jansson:${PORTSDIR}/devel/jansson
+LIB_DEPENDS+=		libjansson.so:${PORTSDIR}/devel/jansson
 MAN8+=			autobuild.8
 PLIST_SUB+=		JANSSON=""
 . endif

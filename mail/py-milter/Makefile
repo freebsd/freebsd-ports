@@ -16,7 +16,7 @@ COMMENT=	Python interface to Sendmail milter API
 LICENSE=	GPLv2
 
 .if !exists(/usr/lib/libmilter.so)
-LIB_DEPENDS=	milter:${PORTSDIR}/mail/sendmail
+LIB_DEPENDS=	libmilter.so:${PORTSDIR}/mail/sendmail
 .endif
 
 PYPORTNAME=	${PKGNAMEPREFIX:C/[0-9]+-//}${PORTNAME}
