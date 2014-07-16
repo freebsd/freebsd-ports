@@ -2,6 +2,7 @@
 
 PORTNAME=	password-store
 PORTVERSION=	1.6.3
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://git.zx2c4.com/password-store/snapshot/
 
@@ -16,7 +17,7 @@ RUN_DEPENDS=	bash>=0:${PORTSDIR}/shells/bash \
 		pwgen>=0:${PORTSDIR}/sysutils/pwgen \
 		tree>=1.7:${PORTSDIR}/sysutils/tree
 
-OPTIONS_DEFINE=		GIT XCLIP CONTRIB EXAMPLES
+OPTIONS_DEFINE=		GIT XCLIP CONTRIB DOCS EXAMPLES
 OPTIONS_SUB=	yes
 
 GIT_DESC=		Enable git storage
@@ -58,10 +59,9 @@ do-install:
 	@(cd ${WRKSRC}/contrib && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR})
 	@(cd ${WRKSRC}/src/completion && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR})
 .endif
-.if ${PORT_OPTIONS:MEXAMPLES}
+
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
-	@${INSTALL_DATA} ${WRKSRC}/man/example-filter.sh ${STAGEDIR}${EXAMPLESDIR}
-.endif
+	@${INSTALL_MAN} ${WRKSRC}/man/example-filter.sh ${STAGEDIR}${EXAMPLESDIR}
 	@${INSTALL_MAN} ${WRKSRC}/man/pass.1 ${STAGEDIR}${MANPREFIX}/man/man1/pass.1
 
 .include <bsd.port.mk>
