@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	rar
-PORTVERSION=	4.2.0
+PORTVERSION=	5.1.0
 PORTEPOCH=	3
 CATEGORIES=	archivers
 MASTER_SITES=	http://www.rarlab.com/rar/
@@ -20,8 +20,7 @@ RESTRICTED=	only unmodified original package can be distributed
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/rar
 PLIST_FILES=	bin/rar lib/default.sfx etc/rarfiles.lst man/cat1/rar.1.gz
-PORTDOCS=	technote.txt license.txt whatsnew.txt order.htm \
-		readme.txt
+PORTDOCS=	license.txt whatsnew.txt order.htm readme.txt
 
 OPTIONS_DEFINE=	DOCS
 
