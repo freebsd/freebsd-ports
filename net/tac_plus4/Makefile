@@ -24,6 +24,8 @@ GROUPS=		tacacs
 CONFLICTS=	ru-tac+ia-[0-9]* tac_plus-libradius-[0-9]*
 MAKE_JOBS_UNSAFE=	yes
 
+OPTIONS_DEFINE=	DOCS
+
 # check expiration dates against 'expire' field of master.passwd file
 .if defined(TAC_EXPIRE_MASTER_PASSWD)
 EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-bb

@@ -15,6 +15,8 @@ USES=		gmake
 USE_GCC=	any
 GNU_CONFIGURE=	yes
 
+OPTIONS_DEFINE=	DOCS
+
 post-extract:
 	${LN} -s nget-${PORTVERSION} ${WRKDIR}/${DISTNAME}
 

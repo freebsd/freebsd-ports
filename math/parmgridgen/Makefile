@@ -19,6 +19,8 @@ LIB_DEPENDS+=	libmpi.so:${PORTSDIR}/net/openmpi
 USES=		gmake
 MAKE_JOBS_UNSAFE=	yes
 
+OPTIONS_DEFINE=	DOCS
+
 post-patch:
 	@${REINPLACE_CMD} 's|make|$$(MAKE)|g' ${WRKSRC}/Makefile
 #respect CFLAGS

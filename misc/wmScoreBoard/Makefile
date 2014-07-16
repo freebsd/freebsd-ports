@@ -20,6 +20,8 @@ USE_XORG=	xpm
 USES=		gmake shebangfix
 SHEBANG_FILES=	GrabScores.excite
 
+OPTIONS_DEFINE=	DOCS
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/wmScoreBoard ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_SCRIPT} ${WRKSRC}/GrabScores.excite ${STAGEDIR}${PREFIX}/bin

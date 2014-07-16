@@ -24,6 +24,8 @@ INSTALLS_OMF=	yes
 INSTALLS_ICONS=	yes
 USE_GNOME=	gnomehack gnomeprefix gtkhtml3 intlhack libgsf
 
+OPTIONS_DEFINE=	DOCS
+
 do-configure:
 	@cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} ./waf configure \
 		--prefix=${STAGEDIR}${PREFIX} --destdir=${STAGEDIR}${PREFIX} \

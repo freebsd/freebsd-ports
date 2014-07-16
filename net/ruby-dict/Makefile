@@ -20,6 +20,8 @@ RUBY_SHEBANG_FILES=	${WRKSRC}/rdict
 
 DOCS=		Changelog README doc/dict.html doc/rdict.html
 
+OPTIONS_DEFINE=	DOCS
+
 post-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/rdict ${STAGEDIR}${PREFIX}/bin/
 	${MKDIR} ${STAGEDIR}${RUBY_MODDOCDIR}

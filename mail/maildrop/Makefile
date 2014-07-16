@@ -60,7 +60,7 @@ OPTIONS_MULTI=		AUTHLIB
 AUTHLIB_DESC=		Courier Auth Library support
 .endif
 
-OPTIONS_DEFINE+=	DOVECOTAUTH FAM GDBM IDN MAILWRAPPER
+OPTIONS_DEFINE+=	DOVECOTAUTH FAM GDBM IDN MAILWRAPPER DOCS
 
 DOVECOTAUTH_DESC=	Dovecot Authentication support
 MAILWRAPPER_DESC=	Let configure guess which sendmail binary to use

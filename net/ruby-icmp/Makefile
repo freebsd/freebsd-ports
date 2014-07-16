@@ -19,6 +19,8 @@ INSTALL_TARGET=	site-install
 
 EXAMPLES=	sample/*
 
+OPTIONS_DEFINE=	DOCS
+
 post-install:
 	${MKDIR} ${STAGEDIR}${RUBY_MODEXAMPLESDIR}
 .for f in ${EXAMPLES}

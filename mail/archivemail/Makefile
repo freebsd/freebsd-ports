@@ -16,6 +16,8 @@ NO_BUILD=	yes
 DOCS=		CHANGELOG FAQ NEWS README TODO
 EXAMPLES=	test_archivemail examples/archivemail_all
 
+OPTIONS_DEFINE=	DOCS EXAMPLES
+
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/archivemail ${STAGEDIR}${PREFIX}/bin/archivemail
 	${INSTALL_MAN} ${WRKSRC}/archivemail.1 ${STAGEDIR}${MANPREFIX}/man/man1

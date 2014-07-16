@@ -18,6 +18,8 @@ NO_BUILD=	yes
 RUBY_RD_FILES=	progressbar.en.rd progressbar.ja.rd
 DOCS=	ChangeLog ${RUBY_RD_FILES}
 
+OPTIONS_DEFINE=	DOCS
+
 do-install:
 	${MKDIR} ${STAGEDIR}${RUBY_SITELIBDIR}
 	${INSTALL_DATA} ${INSTALL_WRKSRC}/${PORTNAME}.rb ${STAGEDIR}${RUBY_SITELIBDIR}

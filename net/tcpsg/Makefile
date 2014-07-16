@@ -9,6 +9,8 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 MAINTAINER=	mich@FreeBSD.org
 COMMENT=	Simple TCP port forwarder
 
+OPTIONS_DEFINE=	DOCS
+
 post-patch:
 	@${REINPLACE_CMD} -e "s|%%PREFIX%%|${PREFIX}|" ${WRKSRC}/tcpsg.c
 

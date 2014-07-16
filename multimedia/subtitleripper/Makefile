@@ -41,6 +41,8 @@ PROGRAM_FILES=	\
 SCRIPT_FILES=	\
 		pgm2txt
 
+OPTIONS_DEFINE=	DOCS EXAMPLES
+
 post-patch:
 	@${REINPLACE_CMD} -E \
 		-e 's|^(CC[[:space:]]*=).*$$|\1${CC}|' \

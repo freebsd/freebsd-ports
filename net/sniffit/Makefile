@@ -19,6 +19,8 @@ COMMENT=	Packet sniffer program. For educational use
 GNU_CONFIGURE=	yes
 ALL_TARGET=
 
+OPTIONS_DEFINE=	DOCS
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/sniffit ${STAGEDIR}${PREFIX}/sbin
 	${INSTALL_MAN} ${WRKSRC}/sniffit.5 ${STAGEDIR}${MANPREFIX}/man/man5

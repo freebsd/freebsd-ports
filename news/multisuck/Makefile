@@ -11,6 +11,8 @@ COMMENT=	Multi-server/conn news suck
 
 GNU_CONFIGURE=	yes
 
+OPTIONS_DEFINE=	EXAMPLES
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/msuck ${STAGEDIR}${PREFIX}/bin
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}

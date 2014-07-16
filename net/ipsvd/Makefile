@@ -14,6 +14,8 @@ ALL_TARGET=	default
 
 DOCS=		package/CHANGES package/COPYING package/README doc/*.html
 
+OPTIONS_DEFINE=	DOCS
+
 do-configure:
 	@${ECHO_CMD} "${CC} ${CFLAGS}" > ${WRKSRC}/src/conf-cc
 	@${ECHO_CMD} "${CC} ${LDFLAGS}" > ${WRKSRC}/src/conf-ld
@@ -30,6 +32,6 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/man/*.${n} ${STAGEDIR}${MANPREFIX}/man/man${n}
 .endfor
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${STAGEDIR}${DOCSDIR}
+	(cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${STAGEDIR}${DOCSDIR})
 
 .include <bsd.port.mk>

@@ -22,7 +22,7 @@ LIB_DEPENDS=	libpopt.so:${PORTSDIR}/devel/popt \
 		libgnutls.so:${PORTSDIR}/security/gnutls \
 		libexpat.so:${PORTSDIR}/textproc/expat2
 
-OPTIONS_DEFINE= IPV6 MYSQL PGSQL
+OPTIONS_DEFINE= IPV6 MYSQL PGSQL DOCS
 
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip

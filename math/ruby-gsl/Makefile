@@ -24,6 +24,8 @@ CONFIGURE_ARGS=	-- --with-opt-dir="${LOCALBASE}"
 
 DOCS=		AUTHORS ChangeLog THANKS rdoc
 
+OPTIONS_DEFINE=	DOCS
+
 post-extract:
 	${FIND} ${WRKSRC} '(' -name '.DS_Store' -o -name '*~' ')' -delete
 

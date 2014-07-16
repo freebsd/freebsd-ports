@@ -13,7 +13,7 @@ COMMENT=	PPP over SSL virtual private networking (client part)
 
 LICENSE=	BSD3CLAUSE
 
-OPTIONS_DEFINE=	GUI
+OPTIONS_DEFINE=	GUI DOCS
 GUI_DESC=	GTK 1.2 graphical interface
 
 CONFIGURE_ARGS=	--disable-server --with-iconv=${ICONV_PREFIX}

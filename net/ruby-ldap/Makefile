@@ -14,6 +14,8 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Ruby interface to LDAP API based on RFC1823
 
+OPTIONS_DEFINE=	DOCS
+
 WITH_LDAP_BACKEND?=	openldap2
 
 .if ${WITH_LDAP_BACKEND} == ldapsdk
