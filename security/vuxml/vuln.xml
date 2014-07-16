@@ -57,6 +57,40 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="4a114331-0d24-11e4-8dd2-5453ed2e2b49">
+    <topic>kdelibs4 -- KMail/KIO POP3 SSL Man-in-the-middle Flaw</topic>
+    <affects>
+      <package>
+	<name>kdelibs</name>
+	<range><ge>4.10.95</ge><lt>4.12.5_2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Richard J. Moore reports:</p>
+	<blockquote cite="http://www.kde.org/info/security/advisory-20140618-1.txt">
+	  <p>The POP3 kioslave used by KMail will accept invalid
+	  certificates without presenting a dialog to the user due a
+	  bug that leads to an inability to display the dialog
+	  combined with an error in the way the result is checked.</p>
+	  <p>This flaw allows an active attacker to perform MITM
+	  attacks against the ioslave which could result in the leakage of
+	  sensitive data such as the authentication details and the contents of
+	  emails.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2014-3494</cvename>
+      <bid>68113</bid>
+      <mlist>http://lists.kde.org/?l=kde-announce&amp;m=140312275318160&amp;w=2</mlist>
+    </references>
+    <dates>
+      <discovery>2014-06-17</discovery>
+      <entry>2014-07-16</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="ff98087f-0a8f-11e4-b00b-5453ed2e2b49">
     <topic>postfixadmin -- SQL injection vulnerability</topic>
     <affects>
