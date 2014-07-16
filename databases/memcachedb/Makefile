@@ -7,7 +7,7 @@ PORTREVISION=	2
 CATEGORIES=	databases
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 
-MAINTAINER=	meritus@innervision.pl
+MAINTAINER=	k@stereochro.me
 COMMENT=	Distributed storage system designed for persistence
 
 LICENSE=	BSD3CLAUSE
