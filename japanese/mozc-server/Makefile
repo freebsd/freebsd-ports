@@ -193,7 +193,7 @@ GYP_OPTIONS+=	--noqt
 GYP_DEFINES+=	use_libibus=1 \
 		enable_gtk_renderer=1
 
-LIB_DEPENDS+=	ibus-1.0:${PORTSDIR}/textproc/ibus
+LIB_DEPENDS+=	libibus-1.0.so:${PORTSDIR}/textproc/ibus
 RUN_DEPENDS+=	mozc_server:${PORTSDIR}/japanese/mozc-server \
 		mozc_tool:${PORTSDIR}/japanese/mozc-tool \
 		mozc_server_start:${PORTSDIR}/japanese/mozc-additions \

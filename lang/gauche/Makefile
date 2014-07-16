@@ -60,7 +60,7 @@ MANPREFIX=	${WRKDIR}
 
 .if ${PORT_OPTIONS:MGDBM}
 CONFIGURE_ARGS+=--with-local=${LOCALBASE}
-LIB_DEPENDS+=	gdbm:${PORTSDIR}/databases/gdbm
+LIB_DEPENDS+=	libgdbm.so:${PORTSDIR}/databases/gdbm
 PLIST_SUB+=	GDBM=""
 .else
 PLIST_SUB+=	GDBM="@comment "

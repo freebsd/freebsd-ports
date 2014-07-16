@@ -23,7 +23,7 @@ OPTIONS_RADIO_SSL=	GNUTLS OPENSSL
 OPTIONS_DEFAULT=	IDN OPENSSL
 OPTIONS_SUB=		yes
 
-GNOMEKEYRING_LIB_DEPENDS=	libgnome-keyring:${PORTSDIR}/security/libgnome-keyring
+GNOMEKEYRING_LIB_DEPENDS=	libgnome-keyring.so:${PORTSDIR}/security/libgnome-keyring
 GNOMEKEYRING_CONFIGURE_WITH=	gnome-keyring
 GNUTLS_LIB_DEPENDS=	libgnutls.so:${PORTSDIR}/security/gnutls
 GNUTLS_CONFIGURE_ON=	--with-ssl=gnutls

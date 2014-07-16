@@ -96,7 +96,7 @@ PLIST_SUB+=	RUBY="@comment "
 
 .if ${PORT_OPTIONS:MGNUTLS}
 USES+=		pkgconfig
-LIB_DEPENDS+=	gnutls:${PORTSDIR}/security/gnutls
+LIB_DEPENDS+=	libgnutls.so:${PORTSDIR}/security/gnutls
 .else
 CMAKE_ARGS+=	-DENABLE_GNUTLS=no
 .endif
@@ -159,7 +159,7 @@ PLIST_SUB+=	MANPAGES="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MBACKTRACE}
-LIB_DEPENDS+=	execinfo:${PORTSDIR}/devel/libexecinfo
+LIB_DEPENDS+=	libexecinfo.so:${PORTSDIR}/devel/libexecinfo
 .endif
 
 .if ${PORT_OPTIONS:MICON}
