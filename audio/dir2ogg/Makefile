@@ -23,6 +23,8 @@ PORTDOCS=	NEWS README
 PLIST_FILES=	bin/${PORTNAME} \
 		man/man1/${PORTNAME}.1.gz
 
+OPTIONS_DEFINE=	DOCS
+
 post-patch:
 	@${REINPLACE_CMD} -e \
 		'/^#!/s|/.*python|${SETENV} python|g' ${WRKSRC}/${PORTNAME}

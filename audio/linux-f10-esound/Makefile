@@ -27,4 +27,6 @@ DOCSDIR=	${PREFIX}/usr/share/doc/${LINUX_NAME}-${PORTVERSION}
 PORTDOCS=	AUTHORS COPYING.LIB ChangeLog NEWS README TIPS TODO esound.sgml
 DESCR=		${.CURDIR}/../${PORTNAME}/pkg-descr
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.mk>

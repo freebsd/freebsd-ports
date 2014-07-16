@@ -48,6 +48,8 @@ SUB_LIST+=	DBDIR=${DBDIR} \
 		ETCDIR=${ETCDIR} \
 		LOGDIR=${LOGDIR}
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.options.mk>
 
 .if ${ARCH} ==	"i386"

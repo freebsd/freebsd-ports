@@ -17,6 +17,8 @@ PORTDOCS=	README TODO
 
 PLIST_FILES=	bin/dtmfdial
 
+OPTIONS_DEFINE=	DOCS
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/dial ${STAGEDIR}${PREFIX}/bin/dtmfdial
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

@@ -26,6 +26,8 @@ DOCSDIR=	${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}
 PORTDOCS=	AUTHORS ChangeLog README.rst
 PORTEXAMPLES=	*
 
+OPTIONS_DEFINE=	DOCS EXAMPLES
+
 post-patch:
 	${REINPLACE_CMD} -e 's/bash/sh/g' ${WRKSRC}/bin/eyeD3
 post-install:

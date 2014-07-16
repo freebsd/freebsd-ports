@@ -27,4 +27,6 @@ DOCSDIR=	${PREFIX}/usr/share/doc/${PORTNAME}-${PORTVERSION}
 PORTDOCS=	AUTHORS COPYING README
 DESCR=		${.CURDIR}/../${PORTNAME}/pkg-descr
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.mk>

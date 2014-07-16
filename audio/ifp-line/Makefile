@@ -22,6 +22,8 @@ LDFLAGS+=	-L${LOCALBASE}/lib -lusb
 PLIST_FILES=	bin/ifp man/man1/ifp.1.gz
 PORTDOCS=	NEWS README TIPS nonroot.sh
 
+OPTIONS_DEFINE=	DOCS
+
 post-patch:
 	@${REINPLACE_CMD} -e \
 		'/LIBUSB/s|ERROR|WARN|' ${WRKSRC}/configure.ac

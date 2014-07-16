@@ -26,6 +26,8 @@ USES=		gmake libtool pathfix pkgconfig
 
 PORTDOCS=	*
 
+OPTIONS_DEFINE=	DOCS
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|-ffast-math||g' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|^Requires: |Requires.private: |' ${WRKSRC}/shout.pc.in

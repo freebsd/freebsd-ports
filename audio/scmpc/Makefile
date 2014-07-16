@@ -22,6 +22,8 @@ USE_GNOME=	glib20
 PLIST_FILES=	bin/scmpc man/man1/scmpc.1.gz
 PORTDOCS=	NEWS README.md scmpc.conf.example
 
+OPTIONS_DEFINE=	DOCS
+
 post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}

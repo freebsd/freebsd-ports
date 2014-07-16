@@ -22,6 +22,8 @@ PORTDOCS=	README
 run-autotools:: run-autotools-aclocal run-autotools-autoheader \
 		run-autotools-autoconf run-autotools-automake
 
+OPTIONS_DEFINE=	DOCS
+
 pre-install:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}/README

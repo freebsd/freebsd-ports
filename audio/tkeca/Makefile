@@ -18,6 +18,8 @@ USES=		desktop-file-utils tk
 NO_BUILD=	yes
 PORTDOCS=	*
 
+OPTIONS_DEFINE=	DOCS
+
 post-patch:
 	${REINPLACE_CMD} -e '3s,^exec wish,exec ${WISH},' ${WRKSRC}/tkeca.tcl
 

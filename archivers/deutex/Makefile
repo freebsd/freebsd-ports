@@ -19,6 +19,8 @@ PLIST_FILES=	bin/deusf bin/deutex \
 		man/man6/${PORTNAME}.6.gz
 PORTDOCS=	*
 
+OPTIONS_DEFINE=	DOCS
+
 post-extract:
 	@${REINPLACE_CMD} -e 's,-mkdir,mkdir -p,' ${WRKSRC}/Makefile
 	@${REINPLACE_CMD} -e 's,malloc\.h,stdlib.h,' ${WRKSRC}/src/tools.c

@@ -15,6 +15,8 @@ PLIST_FILES=	bin/lbzip2 \
 
 PORTDOCS=	ChangeLog README
 
+OPTIONS_DEFINE=	DOCS
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/lbzip2 ${STAGEDIR}${PREFIX}/bin/lbzip2
 	${INSTALL_MAN} ${WRKSRC}/lbzip2.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
