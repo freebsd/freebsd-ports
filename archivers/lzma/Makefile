@@ -28,6 +28,8 @@ CFLAGS+=	-D_LZMA_SIZE_OPT
 .endif
 PORTDOCS=	7zC.txt 7zFormat.txt Methods.txt history.txt lzma.txt
 
+OPTIONS_DEFINE=	DOCS
+
 post-patch:
 	@${REINPLACE_CMD} -e '/bool Open(LPCTSTR fileName, DWORD creationDisposition)/,/}/d'\
 		${WRKSRC}/CPP/7zip/Common/FileStreams.h

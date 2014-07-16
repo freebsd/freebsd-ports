@@ -34,6 +34,8 @@ CONFIGURE_ENV+=	flite_dir=${LOCALBASE}
 PLIST_FILES=	bin/eflite
 PORTDOCS=	AUTHORS CREDITS ChangeLog INSTALL README
 
+OPTIONS_DEFINE=	DOCS
+
 pre-fetch:
 .ifdef!(FL_LANG || FL_LEX || FL_VOX)
 	@${ECHO_MSG} "===>  You can set FL_LANG, FL_LEX and/or FL_VOX"

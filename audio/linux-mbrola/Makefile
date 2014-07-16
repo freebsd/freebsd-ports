@@ -26,6 +26,8 @@ RESTRICTED=	for non-commercial, non-military applications only
 PLIST_FILES=	bin/mbrola
 PORTDOCS=	readme.txt
 
+OPTIONS_DEFINE=	DOCS
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/mbrola-linux-i386 ${STAGEDIR}${PREFIX}/bin/mbrola
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

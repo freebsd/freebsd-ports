@@ -19,6 +19,8 @@ WRKSRC=		${WRKDIR}/${PORTNAME:S/-/_/}_Tool_${PORTVERSION:S/.//g}
 PORTDOCS=	HVS_file_format.txt HVSC_Update.txt SID_file_format.txt
 PLIST_FILES=	bin/${PORTNAME}
 
+OPTIONS_DEFINE=	DOCS
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/Update ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

@@ -27,6 +27,8 @@ CONFLICTS=	par2cmdline-[0-9]*
 
 PLIST_FILES=	bin/par2 bin/par2create bin/par2repair bin/par2verify
 
+OPTIONS_DEFINE=	DOCS
+
 post-extract:
 	@${CHMOD} u+x ${WRKSRC}/install-sh
 

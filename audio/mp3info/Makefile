@@ -13,7 +13,7 @@ COMMENT=	MP3 technical info viewer and ID3 1.x tag editor
 
 LICENSE=	GPLv2
 
-OPTIONS_DEFINE=	GTK2
+OPTIONS_DEFINE=	GTK2 DOCS
 GTK2_DESC=	Enable to have the gmp3info
 
 ALL_TARGET=	mp3info

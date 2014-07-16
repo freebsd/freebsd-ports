@@ -25,4 +25,6 @@ DOCSDIR=	${PREFIX}/usr/share/doc/${PORTNAME}-${PORTVERSION}
 PORTDOCS=	FAQ HISTORY README TODO
 DESCR=		${.CURDIR}/../nas/pkg-descr
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.mk>

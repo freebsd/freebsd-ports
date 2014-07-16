@@ -19,6 +19,8 @@ PORTDOCS=	ChangeLog README TODO
 PLIST_FILES=	bin/lbrate \
 		man/man1/lbrate.1.gz
 
+OPTIONS_DEFINE=	DOCS
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/lbrate ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/lbrate.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
