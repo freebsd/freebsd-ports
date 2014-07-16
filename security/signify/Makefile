@@ -7,13 +7,15 @@ MASTER_SITES=	http://www.fefe.de/signify/
 DISTNAME=	${PORTNAME}
 
 MAINTAINER=	pi@FreeBSD.org
-COMMENT=	OpenBSD signify ported by fefe
+COMMENT=	OpenBSD signify ported by Felix von Leitner
 
 LICENSE=	BSD2CLAUSE
 
-USES=		gmake
+USES=		gmake compiler:c11
+
+PLIST_FILES=	bin/signify
 
 do-install:
-	${CP} ${WRKSRC}/signify ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/signify ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>
