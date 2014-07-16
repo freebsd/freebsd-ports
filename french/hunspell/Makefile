@@ -11,6 +11,8 @@ DIST_SUBDIR=	${PORTNAME}
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Modern French hunspell dictionaries
 
+LICENSE=	MPL
+
 USES=		zip
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
