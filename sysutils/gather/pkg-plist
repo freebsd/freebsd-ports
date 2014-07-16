@@ -6,10 +6,6 @@ man/man1/gather.1.gz
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/gather.map.linux
 %%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%
 %%PORTDOCS%%@dirrmtry %%DOCSDIR%%
-@unexec if cmp -s %D/etc/gather/gather.cfg.sample %D/etc/gather/gather.cfg; then rm -f %D/etc/gather/gather.cfg; else echo "If permanently deleting this package, %D/etc/gather/gather.cfg must be removed manually."; fi
-etc/gather/gather.cfg.sample
-@exec if [ ! -f %D/etc/gather/gather.cfg ]; then cp -p %D/%F %B/gather.cfg; fi
-@unexec if cmp -s %D/etc/gather/gather.map.sample %D/etc/gather/gather.map; then rm -f %D/etc/gather/gather.map; else echo "If permanently deleting this package, %D/etc/gather/gather.map must be removed manually."; fi
-etc/gather/gather.map.sample
-@exec if [ ! -f %D/etc/gather/gather.map ]; then cp -p %D/%F %B/gather.map; fi
+@sample etc/gather/gather.cfg.sample
+@sample etc/gather/gather.map.sample
 @dirrmtry etc/gather

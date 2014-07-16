@@ -26,7 +26,7 @@ WRKSRC=	${WRKDIR}/fletcher-MultiMarkdown-4-${MM4_COMMIT}
 
 ALL_TARGET=	${PORTNAME}
 
-OPTIONS_DEFINE=	CHEAT_SHEET EXTRAS HELPERS
+OPTIONS_DEFINE=	CHEAT_SHEET EXTRAS HELPERS DOCS
 CHEAT_SHEET_DESC=	HTML-based cheat sheat
 EXTRAS_DESC=	Extra scripts and XSLT support
 HELPERS_DESC=	Helper scripts (conflicts with emulators/mtools)

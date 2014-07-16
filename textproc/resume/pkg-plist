@@ -69,20 +69,20 @@ share/xsl/resume/params.xsl
 @dirrm share/xsl/resume
 @dirrmtry share/xsl
 %%JAVAJARDIR%%/xmlresume-filter.jar
-%%PORTDOCS%%%%EXAMPLESDIR%%/Makefile
-%%PORTDOCS%%%%EXAMPLESDIR%%/addressing/Makefile
-%%PORTDOCS%%%%EXAMPLESDIR%%/addressing/README
-%%PORTDOCS%%%%EXAMPLESDIR%%/addressing/brazil.xml
-%%PORTDOCS%%%%EXAMPLESDIR%%/addressing/canada.xml
-%%PORTDOCS%%%%EXAMPLESDIR%%/addressing/ireland.xml
-%%PORTDOCS%%%%EXAMPLESDIR%%/addressing/italy.xml
-%%PORTDOCS%%%%EXAMPLESDIR%%/addressing/norway.xml
-%%PORTDOCS%%%%EXAMPLESDIR%%/addressing/nz.xml
-%%PORTDOCS%%%%EXAMPLESDIR%%/addressing/uk.xml
-%%PORTDOCS%%%%EXAMPLESDIR%%/addressing/untagged.xml
-%%PORTDOCS%%%%EXAMPLESDIR%%/addressing/usa.xml
-%%PORTDOCS%%%%EXAMPLESDIR%%/build.xml
-%%PORTDOCS%%%%EXAMPLESDIR%%/example1.xml
-%%PORTDOCS%%%%EXAMPLESDIR%%/example2.xml
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/addressing
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Makefile
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/addressing/Makefile
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/addressing/README
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/addressing/brazil.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/addressing/canada.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/addressing/ireland.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/addressing/italy.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/addressing/norway.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/addressing/nz.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/addressing/uk.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/addressing/untagged.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/addressing/usa.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/build.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example1.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example2.xml
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/addressing
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%

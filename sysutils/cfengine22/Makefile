@@ -34,6 +34,8 @@ CONFIGURE_ENV+=	BERKELEY_DB_CFLAGS=-I${BDB_INCLUDE_DIR} \
 
 INFO=		cfengine-Tutorial cfengine-Reference
 
+OPTIONS_DEFINE=	DOCS
+
 post-patch:
 		@${REINPLACE_CMD} -e '/^docdir/s!=.*!= @docdir@!'\
 				  ${WRKSRC}/doc/Makefile.in \

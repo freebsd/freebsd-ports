@@ -9,7 +9,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTVERSION}
 MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	Parse and Decode METAR, TAF, SYNOP and BUOY and Store as XML
 
-OPTIONS_DEFINE=	APACHE
+OPTIONS_DEFINE=	APACHE DOCS
 OPTIONS_SUB=	yes
 APACHE_DESC=	Install Apache config file for metaf2xml (depends on Apache)
 

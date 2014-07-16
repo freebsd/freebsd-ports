@@ -20,6 +20,8 @@ PLIST_SUB+=	TCL_VERSION=${TCL_VER}
 MAKEFILE=	${FILESDIR}/Makefile
 MAKE_ENV+=	TCL_VERSION=${TCL_VER}
 
+OPTIONS_DEFINE=	DOCS
+
 # Remove the old version of expat bundled with the package:
 post-extract:
 	${RM} -rf ${WRKSRC}/expat

@@ -29,6 +29,8 @@ DOCS_EN=	ChangeLog \
 DOCS_JA=	${RUBY_RD_FILES:M*.ja.rd} \
 		${RUBY_RD_HTML_FILES:M*.ja.html}
 
+OPTIONS_DEFINE=	DOCS
+
 post-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/rsary.rb ${STAGEDIR}${PREFIX}/bin/
 	${MKDIR}  ${STAGEDIR}${RUBY_MODDOCDIR}/ja

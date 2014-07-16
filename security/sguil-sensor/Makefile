@@ -13,7 +13,7 @@ RUN_DEPENDS=	tcltls>=0:${PORTSDIR}/devel/tcltls \
 		barnyard2:${PORTSDIR}/security/barnyard2-sguil \
 		${LOCALBASE}/lib/tclx8.4/tclx.tcl:${PORTSDIR}/lang/tclX
 
-OPTIONS_DEFINE=	PADS SANCP
+OPTIONS_DEFINE=	PADS SANCP DOCS
 PADS_DESC=	Include pads sensor
 SANCP_DESC=	Include sancp sensor
 

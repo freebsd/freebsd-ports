@@ -17,6 +17,8 @@ NO_BUILD=	yes
 
 DOCS=		COPYING Changes README
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.options.mk>
 
 do-install:

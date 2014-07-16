@@ -27,6 +27,8 @@ INSTALL_TARGET=	site-install
 MAKE_ARGS=	INSTALL_PROG="${INSTALL_PROGRAM}" \
 		INSTALL_DATA="${INSTALL_DATA}"
 
+OPTIONS_DEFINE=	DOCS
+
 post-extract:
 	${FIND} ${WRKSRC} -name CVS -type d -exec ${RM} -r {} ';' -prune
 

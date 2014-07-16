@@ -15,6 +15,8 @@ USES=		libtool pathfix pkgconfig
 USE_GNOME=	glib20
 USE_LDCONFIG=	yes
 
+OPTIONS_DEFINE=	DOCS
+
 post-patch:
 	@${REINPLACE_CMD} -e '/^SUBDIRS/s|docs||g' ${WRKSRC}/Makefile.in
 

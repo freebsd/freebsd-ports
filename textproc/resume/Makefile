@@ -18,6 +18,8 @@ PKGMESSAGE=	${WRKDIR}/pkg-message
 
 PORTDOCS=	*
 
+OPTIONS_DEFINE=	DOCS EXAMPLES
+
 post-patch:
 	${REINPLACE_CMD} -e 's|\.\./\.\./css|css|' ${WRKSRC}/xsl/params.xsl
 	${FIND} ${WRKSRC} -name '*.bak' -delete

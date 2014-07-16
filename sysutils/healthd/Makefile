@@ -13,7 +13,7 @@ COMMENT=	Daemon to monitor vital motherboard parameters
 
 LICENSE=	BSD2CLAUSE
 
-OPTIONS_DEFINE=	IPV6 FULL_CONFIG
+OPTIONS_DEFINE=	IPV6 FULL_CONFIG DOCS
 
 FULL_CONFIG_DESC= 		Remotely reading the full config
 IPV6_CONFIGURE_ENABLE=		ipv6

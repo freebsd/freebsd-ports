@@ -18,11 +18,8 @@ USE_LDCONFIG=	YES
 SHLIB_MAJOR=	3
 PLIST_SUB=	SHLIB_MAJOR="${SHLIB_MAJOR}"
 
-.if defined(NOPROFILE) || defined(NO_PROFILE)
-PLIST_SUB+=	PROFILE="@comment "
-.else
-PLIST_SUB+=	PROFILE=""
-.endif
+OPTIONS_DEFINE=	DOCS PROFILE
+OPTIONS_SUB=	yes
 
 post-patch:
 	${MV} ${WRKSRC}/Makefile ${WRKSRC}/Makefile.prev

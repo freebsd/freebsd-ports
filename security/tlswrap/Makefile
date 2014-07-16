@@ -14,6 +14,8 @@ COMMENT=	FTP proxy that wraps data and control with TLS/SSL
 GNU_CONFIGURE=	yes
 USE_OPENSSL=	yes
 
+OPTIONS_DEFINE=	DOCS
+
 post-patch:
 	@${REINPLACE_CMD} -E 's,^(CC|CFLAGS|LDFLAGS).*=,\1?=,g' \
 		${WRKSRC}/Makefile.in
