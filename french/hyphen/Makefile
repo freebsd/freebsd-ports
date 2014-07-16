@@ -11,6 +11,8 @@ DIST_SUBDIR=	${PORTNAME}
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	French hyphenation rules
 
+LICENSE=	LGPL21
+
 USES=		zip
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
