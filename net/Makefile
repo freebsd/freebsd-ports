@@ -451,6 +451,7 @@
     SUBDIR += openam
     SUBDIR += openbgpd
     SUBDIR += opendpi
+    SUBDIR += openggsn
     SUBDIR += openh323
     SUBDIR += openldap24-client
     SUBDIR += openldap24-sasl-client
