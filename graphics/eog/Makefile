@@ -36,7 +36,7 @@ _WITH_EXEMPI=	no
 
 .if !defined(WITHOUT_EXIF) || (exists(${LOCALBASE}/lib/libexif.so.12) || \
 	defined(WITH_EXIF))
-LIB_DEPENDS+=	exif.12:${PORTSDIR}/graphics/libexif
+LIB_DEPENDS+=	libexif.so:${PORTSDIR}/graphics/libexif
 PLIST_SUB+=	EXIF=""
 _WITH_EXIF=	yes
 .else
@@ -45,7 +45,7 @@ PLIST_SUB+=	EXIF="@comment "
 
 .if !defined(WITHOUT_EXEMPI) || (exists(${LOCALBASE}/lib/libexempi.so)) || \
     	defined(WITH_EXEMPI)
-LIB_DEPENDS+=	exempi.3:${PORTSDIR}/textproc/exempi
+LIB_DEPENDS+=	libexempi.so:${PORTSDIR}/textproc/exempi
 _WITH_EXEMPI=	yes
 .endif
 

@@ -62,7 +62,7 @@ PLIST_SUB+=	SDL="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MVORBIS}
-LIB_DEPENDS+=	vorbis.4:${PORTSDIR}/audio/libvorbis
+LIB_DEPENDS+=	libvorbis.so:${PORTSDIR}/audio/libvorbis
 CONFIGURE_ARGS+=--with-ogg=${LOCALBASE} --with-vorbis=${LOCALBASE}
 PLIST_SUB+=	VORBIS=""
 .else
@@ -71,7 +71,7 @@ PLIST_SUB+=	VORBIS="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MXMMS}
-LIB_DEPENDS+=	xmms.4:${PORTSDIR}/multimedia/xmms
+LIB_DEPENDS+=	libxmms.so:${PORTSDIR}/multimedia/xmms
 CONFIGURE_ARGS+=--with-xmms-prefix=${LOCALBASE}
 PLIST_SUB+=	XMMS=""
 .else

@@ -35,7 +35,7 @@ IGNORE=	HDF and NETCDF are conflicting
 .endif
 
 .if defined(WITH_HDF)
-LIB_DEPENDS+=	mfhdf:${PORTSDIR}/science/hdf
+LIB_DEPENDS+=	libmfhdf.so:${PORTSDIR}/science/hdf
 .else
 CONFIGURE_ARGS+=	--without-hdf
 .endif
