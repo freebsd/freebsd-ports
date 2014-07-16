@@ -11,6 +11,8 @@ DIST_SUBDIR=	${PORTNAME}
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Vietnamese hunspell dictionaries
 
+LICENSE=	GPLv3
+
 USES=		zip
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
