@@ -5,7 +5,8 @@ PORTVERSION=	2013.09.05
 CATEGORIES=	textproc
 MASTER_SITES=	http://sourceforge.net/projects/aoo-extensions/files/1204/13/
 PKGNAMEPREFIX=	it-
-DISTFILES=	dict-it.oxt
+DISTNAME=	dict-it
+EXTRACT_SUFX=	.oxt
 DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	office@FreeBSD.org
@@ -13,7 +14,6 @@ COMMENT=	Italian hunspell dictionaries
 
 LICENSE=	GPLv3
 
-USES=		zip
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 
