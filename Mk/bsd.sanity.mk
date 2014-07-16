@@ -56,7 +56,7 @@ DEV_WARNING+=	"USE_GNOME=desktopfileutils is deprecated, please use USES=desktop
 .endif
 
 .if defined(LIB_DEPENDS) && ${LIB_DEPENDS:Nlib*}
-DEV_WARNING+=	"Please use the new format for LIB_DEPENDS, see handbook for details"
+DEV_ERROR+=	"Please use the new format for LIB_DEPENDS, see handbook for details"
 .endif
 
 .if defined(USE_TCL) || defined(USE_TCL_BUILD) || defined(USE_TCL_RUN) || defined(USE_TCL_WRAPPER) || \
