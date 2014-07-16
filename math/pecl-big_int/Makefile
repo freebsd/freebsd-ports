@@ -21,6 +21,8 @@ EXAMPLES=	bitset.php example.php rand.php RSA.php std_header.php
 
 CONFIGURE_ARGS=	--enable-big-int=shared
 
+OPTIONS_DEFINE=	DOCS EXAMPLES
+
 post-install:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}

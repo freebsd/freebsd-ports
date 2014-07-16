@@ -36,6 +36,8 @@ USE_LDCONFIG=	yes
 
 CMAKE_ARGS+=	-DWANT_HUNSPELL=YES -Wno-ferror-limit
 
+OPTIONS_DEFINE=	DOCS
+
 post-install:
 	${LN} -sf ${DATADIR}/icons/scribus.png ${STAGEDIR}${PREFIX}/share/pixmaps/
 

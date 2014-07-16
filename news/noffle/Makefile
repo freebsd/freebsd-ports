@@ -25,6 +25,8 @@ PLIST_SUB+=	SPOOL_DIR=${SPOOL_DIR}
 DOCS=		ChangeLog docs/FAQ INSTALL docs/INTERNALS README \
 		docs/testing.txt docs/noffle.lsm
 
+OPTIONS_DEFINE=	DOCS
+
 post-patch:
 	@${REINPLACE_CMD} -e \
 	's|/etc/noffle.conf|${PREFIX}/etc/noffle.conf|g' \

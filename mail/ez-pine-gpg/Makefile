@@ -17,6 +17,8 @@ RUN_DEPENDS=	gpg:${PORTSDIR}/security/gnupg
 WRKSRC=	${WRKDIR}/${PORTNAME}
 NO_BUILD=	yes
 
+OPTIONS_DEFINE=	DOCS
+
 do-install:
 	(cd ${WRKSRC} && ./install ${STAGEDIR}${PREFIX}/bin)
 

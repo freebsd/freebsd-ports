@@ -13,6 +13,8 @@ COMMENT=	File viewer for terminal
 
 USES=		gmake
 
+OPTIONS_DEFINE=	DOCS
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/tcb ${STAGEDIR}${PREFIX}/bin
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/tcb

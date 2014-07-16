@@ -16,6 +16,8 @@ USE_GNOME=	pygnomedesktop
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 
+OPTIONS_DEFINE=	DOCS
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|Icon=.*|Icon=arista.svg|g' \
 		${WRKSRC}/arista.desktop

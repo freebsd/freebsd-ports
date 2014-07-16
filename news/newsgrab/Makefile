@@ -20,6 +20,8 @@ NO_BUILD=	yes
 USES=		perl5 shebangfix
 SHEBANG_FILES=	newsgrab.pl
 
+OPTIONS_DEFINE=	DOCS
+
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/newsgrab.pl ${STAGEDIR}${PREFIX}/bin/newsgrab
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/doc/newsgrab

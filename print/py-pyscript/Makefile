@@ -13,12 +13,11 @@ COMMENT=	Python module for producing high quality PostScript graphics
 
 LICENSE=	GPLv2
 
-OPTIONS_DEFAULT=	EXAMPLES
-OPTIONS_DEFINE=	EXAMPLES
+OPTIONS_DEFINE=	DOCS EXAMPLES
 
-PYSCRIPT_MANUAL=	doc/manual/pyscript.pdf
+PYSCRIPT_MANUAL=doc/manual/pyscript.pdf
 
-USE_PYDISTUTILS=	yes
+USE_PYDISTUTILS=yes
 USE_PYTHON=	yes
 USE_TEX=	latex dvipsk
 

@@ -27,7 +27,7 @@ USES=		gmake
 USE_RC_SUBR=	openradius
 SUB_LIST=	LOGFILE="${LOGFILE}"
 
-OPTIONS_DEFINE=	LDAP
+OPTIONS_DEFINE=	LDAP DOCS EXAMPLES
 
 .include <bsd.port.options.mk>
 

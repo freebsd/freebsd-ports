@@ -11,6 +11,8 @@ COMMENT=	DOS-XTREE(tm) look-a-like file manager
 
 ALL_TARGET=	ytree
 
+OPTIONS_DEFINE=	DOCS
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/ytree ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_DATA} ${WRKSRC}/ytree.conf ${STAGEDIR}${PREFIX}/etc/ytree.conf.sample

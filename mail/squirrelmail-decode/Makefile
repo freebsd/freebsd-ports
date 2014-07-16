@@ -1,27 +1,29 @@
 # Created by: Adam Weinberger <adamw@FreeBSD.org>
 # $FreeBSD$
 
-PORTNAME=		squirrelmail-decode
+PORTNAME=	squirrelmail-decode
 PORTVERSION=	1.2
-CATEGORIES=		mail www
+CATEGORIES=	mail www
 MASTER_SITES=	SF/squirrelmail/decode/${PORTVERSION}
 DIST_SUBDIR=	squirrelmail
 
-MAINTAINER=		adamw@FreeBSD.org
-COMMENT=		Decoders to display extra character sets in SquirrelMail
+MAINTAINER=	adamw@FreeBSD.org
+COMMENT=	Decoders to display extra character sets in SquirrelMail
 
-LICENSE=		GPLv2
+LICENSE=	GPLv2
 
 RUN_DEPENDS=	${SQUIRRELDIR}/index.php:${PORTSDIR}/mail/squirrelmail
 
-USES=			tar:bzip2
-NO_BUILD=		yes
+USES=		tar:bzip2
+NO_BUILD=	yes
 
-DOCSDIR=		${PREFIX}/share/doc/squirrelmail/decode
+DOCSDIR=	${PREFIX}/share/doc/squirrelmail/decode
 
 # if you were using WITHOUT_WWWDIR, use SQUIRRELDIR=${PREFIX}/squirrelmail
 SQUIRRELDIR?=	${PREFIX}/www/squirrelmail
-PLIST_SUB=		SQUIRRELDIR="${SQUIRRELDIR:S,^${PREFIX}/,,}"
+PLIST_SUB=	SQUIRRELDIR="${SQUIRRELDIR:S,^${PREFIX}/,,}"
+
+OPTIONS_DEFINE=	DOCS
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${SQUIRRELDIR}/functions/decode
