@@ -53,12 +53,12 @@ IPV4_MAPPED_CONFIGURE_ENABLE=	v4-mapped
 
 LDAP_CONFIGURE_ON=		--enable-ldap=shared
 
-LUAJIT_LIB_DEPENDS=		luajit:${PORTSDIR}/lang/luajit
+LUAJIT_LIB_DEPENDS=		libluajit.so:${PORTSDIR}/lang/luajit
 LUA_CONFIGURE_WITH=		lua
 LUA_USES=			lua
 
 SOCACHE_DC_CONFIGURE_ON=	--with-distcache=${LOCALBASE}
-SOCACHE_DC_LIB_DEPENDS=		distcache:${PORTSDIR}/security/distcache
+SOCACHE_DC_LIB_DEPENDS=		libdistcache.so:${PORTSDIR}/security/distcache
 
 # Note:
 # OpenSSL version (base/ports) depends how devel/apr1 was build
