@@ -12,6 +12,9 @@ DIST_SUBDIR=	${PORTNAME}
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Albanian hunspell dictionaries
 
+LICENSE=	GPLv2 GPLv3
+LICENSE_COMB=	dual
+
 USES=		zip
 NO_BUILD=	yes
 
