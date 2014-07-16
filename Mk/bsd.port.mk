@@ -4928,7 +4928,7 @@ ${deptype:tl}-depends:
 lib-depends:
 .if defined(LIB_DEPENDS) && !defined(NO_DEPENDS)
 	@set -e ; \
-	for i in ${LIB_DEPENDS:M*.so*\:*}; do \
+	for i in ${LIB_DEPENDS}; do \
 		lib=$${i%%:*} ; \
 		dir=$${i#*:}  ; \
 		target="${DEPENDS_TARGET}"; \
@@ -4956,43 +4956,6 @@ lib-depends:
 		else \
 			${ECHO_MSG}; \
 		fi ; \
-	done
-	@set -e ; for i in ${LIB_DEPENDS:N*.so*\:*}; do \
-		lib=$${i%%:*}; \
-		pattern="`${ECHO_CMD} $$lib | ${SED} -E -e 's/\./\\\\./g' -e 's/(\\\\)?\+/\\\\+/g'`"\
-		dir=$${i#*:}; \
-		target=$${i##*:}; \
-		if ${TEST} $$dir = $$target; then \
-			target="${DEPENDS_TARGET}"; \
-			depends_args="${DEPENDS_ARGS}"; \
-		else \
-			dir=$${dir%%:*}; \
-		fi; \
-		${ECHO_MSG} -n "===>   ${PKGNAME} depends on shared library: $$lib"; \
-		if ${LDCONFIG} ${_LDCONFIG_FLAGS} -r | ${GREP} -vwF -e "${PKGCOMPATDIR}" | ${GREP} -qwE -e "-l$$pattern"; then \
-			${ECHO_MSG} " - found"; \
-			if [ ${_DEPEND_ALWAYS} = 1 ]; then \
-				${ECHO_MSG} "       (but building it anyway)"; \
-				notfound=1; \
-			else \
-				notfound=0; \
-			fi; \
-		else \
-			${ECHO_MSG} " - not found"; \
-			notfound=1; \
-		fi; \
-		if [ $$notfound != 0 ]; then \
-			${ECHO_MSG} "===>    Verifying $$target for $$lib in $$dir"; \
-			if [ ! -d "$$dir" ]; then \
-				${ECHO_MSG} "     => No directory for $$lib.  Skipping.."; \
-			else \
-				${_INSTALL_DEPENDS} \
-				if ! ${LDCONFIG} ${_LDCONFIG_FLAGS} -r | ${GREP} -vwF -e "${PKGCOMPATDIR}" | ${GREP} -qwE -e "-l$$pattern"; then \
-					${ECHO_MSG} "Error: shared library \"$$lib\" does not exist"; \
-					${FALSE}; \
-				fi; \
-			fi; \
-		fi; \
 	done
 .endif
 
