@@ -1,36 +1,32 @@
 # $FreeBSD$
 
 PORTNAME=	pkg
-DISTVERSION=	1.2.7
-PORTREVISION=	4
+DISTVERSION=	1.3.0.rc2
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	\
-		http://files.etoilebsd.net/${PORTNAME}/ \
-		http://mirror.shatow.net/freebsd/${PORTNAME}/ \
-		LOCAL/portmgr
+		http://highsecure.ru/distfiles/ \
+		http://pkg.semmy.ru/
 
-MAINTAINER=	portmgr@FreeBSD.org
+MAINTAINER=	pkg@FreeBSD.org
 COMMENT=	Package manager
 
 LICENSE=	BSD2CLAUSE
 
-USES=		tar:xz uidfix
-
 # Disable CCACHE support because of the chicken/egg problem pkg should always
 # With no dependency at all
 NO_CCACHE=	yes
+WITH_DEBUG=	yes
+CFLAGS+=	-O0 -g
 USE_LDCONFIG=	yes
-MAKE_ARGS+=	PKG_PORTSDIR=${PORTSDIR}
-
-MAKE_ENV+=	WITHOUT_PROFILE=yes __MAKE_CONF=/dev/null SRCCONF=/dev/null \
-		PORTREVISION=${PORTREVISION} NO_PIE=yes
+USES=		libtool tar:xz
+GNU_CONFIGURE=	yes
 
 # Use a submake as 'deinstall install' needs to reevaluate PKG_CMD
 # so that pkg-static is used from the wrkdir
 USE_SUBMAKE=	yes
 
 .if !exists(/usr/include/jail.h)
-EXTRA_PATCHES=	${FILESDIR}/extra-patch-pkg_pkg.8
+EXTRA_PATCHES=	${FILESDIR}/extra-patch-docs_pkg.8
 .endif
 
 .include <bsd.port.pre.mk>
@@ -81,15 +77,13 @@ pre-everything::
 PKG_DEPENDS=
 .undef INSTALLS_DEPENDS
 .if !exists(${LOCALBASE}/sbin/pkg)
-PKG_BIN=	${WRKSRC}/pkg/pkg-static
+PKG_BIN=	${WRKSRC}/src/pkg-static
 .endif
 .endif
-
-PERIODIC_DAILY=		400.status-pkg 411.pkg-backup 490.status-pkg-changes
-PERIODIC_SECURITY=	410.pkg-audit 460.pkg-checksum
-PERIODIC_ALL=		${PERIODIC_DAILY} ${PERIODIC_SECURITY}
 
 post-install:
-	@${INSTALL_DATA} ${WRKSRC}/pkg/pkg.conf.sample ${STAGEDIR}${PREFIX}/etc
+	@${MV} ${STAGEDIR}${PREFIX}/lib/libpkg_static.a \
+		${STAGEDIR}${PREFIX}/lib/libpkg.a
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libpkg.so.2
 
 .include <bsd.port.post.mk>
