@@ -25,6 +25,7 @@ WRKSRC=		${WRKDIR}
 
 do-install:
 	${MKDIR} ${STAGEDIR}${FONTDIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} *.otf ${STAGEDIR}${FONTDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} *.ttf ${STAGEDIR}${FONTDIR}
 
 .include <bsd.port.mk>
