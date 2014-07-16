@@ -8,7 +8,7 @@ CATEGORIES=	multimedia python
 MASTER_SITES=	http://launchpadlibrarian.net/26637583/
 DISTNAME=	pyjama-0.3.0.1_all
 
-MAINTAINER= ports@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Frontend to the Jamendo music network
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:${PORTSDIR}/databases/py-sqlite3 \
@@ -17,7 +17,6 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:${PORTSDIR}/databases/py-sqlite3 \
 		${PYTHON_PKGNAMEPREFIX}gstreamer>=0.10:${PORTSDIR}/multimedia/py-gstreamer
 
 NO_BUILD=	yes
-
 USE_PYTHON=	yes
 USE_GSTREAMER=	core good bad gnomevfs
 USE_GNOME=	pygtk2
@@ -29,7 +28,6 @@ INSTSUBDIRS=	clLayouts extended_modules images modules plugins themes
 INSTFILES=	about.glade preferences.glade pyjama.cfg pyjama_test.glade \
 		pyjama.doxygen.py pyjama.py pyjama_test.glade
 
-NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -i '' 's|path = "locale"|path = "${PREFIX}/share/locale"|' \
 		${WRKSRC}/src/modules/functions.py
@@ -38,23 +36,23 @@ post-patch:
 	${FIND} ${WRKSRC} -name "*~" -delete
 
 do-install:
-	${MKDIR} ${INSTDIR}
+	${MKDIR} ${STAGEDIR}${INSTDIR}
 
-.	for f in ${INSTFILES}
-	    ${INSTALL_DATA} ${WRKSRC}/src/${f} ${INSTDIR}
-.	endfor
+.for f in ${INSTFILES}
+	${INSTALL_DATA} ${WRKSRC}/src/${f} ${STAGEDIR}${INSTDIR}
+.endfor
 
-.	for dir in ${INSTSUBDIRS}
-		cd ${WRKSRC}/src && ${COPYTREE_SHARE} ${dir} ${INSTDIR}
-.	endfor
+.for dir in ${INSTSUBDIRS}
+	cd ${WRKSRC}/src && ${COPYTREE_SHARE} ${dir} ${STAGEDIR}${INSTDIR}
+.endfor
 
-.	for loc in ${LOCALES}
-		${INSTALL_DATA} ${WRKSRC}/src/locale/${loc}/LC_MESSAGES/pyjama.mo ${PREFIX}/share/locale/${loc}/LC_MESSAGES/
-.	endfor
+.for loc in ${LOCALES}
+	${INSTALL_DATA} ${WRKSRC}/src/locale/${loc}/LC_MESSAGES/pyjama.mo ${STAGEDIR}${PREFIX}/share/locale/${loc}/LC_MESSAGES/
+.endfor
 
-	${LN} -fs ${INSTDIR}/pyjama.py ${PREFIX}/bin/pyjama
-	${CHMOD} a+x ${INSTDIR}/pyjama.py
-	${INSTALL_DATA} ${WRKSRC}/src/pyjama.desktop ${PREFIX}/share/applications
-	${INSTALL_DATA} ${WRKSRC}/src/images/pyjama.xpm ${PREFIX}/share/pixmaps
+	${LN} -fs ${INSTDIR}/pyjama.py ${STAGEDIR}${PREFIX}/bin/pyjama
+	${CHMOD} a+x ${STAGEDIR}${INSTDIR}/pyjama.py
+	${INSTALL_DATA} ${WRKSRC}/src/pyjama.desktop ${STAGEDIR}${PREFIX}/share/applications
+	${INSTALL_DATA} ${WRKSRC}/src/images/pyjama.xpm ${STAGEDIR}${PREFIX}/share/pixmaps
 
 .include <bsd.port.mk>
