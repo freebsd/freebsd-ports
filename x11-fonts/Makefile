@@ -133,6 +133,7 @@
     SUBDIR += montecarlo_fonts
     SUBDIR += moveable-type-fonts
     SUBDIR += nexfontsel
+    SUBDIR += noto
     SUBDIR += nucleus
     SUBDIR += p5-Font-AFM
     SUBDIR += p5-Font-TTF
