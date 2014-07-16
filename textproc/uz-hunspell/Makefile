@@ -12,8 +12,8 @@ DIST_SUBDIR=	${PORTNAME}
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Uzbek hunspell dictionaries
 
-USE_BZIP2=	yes
 ALL_TARGET=	uz_UZ.dic
+USES=		tar:bzip2
 WRKSRC=		${WRKDIR}/${DISTNAME}/hunspell
 
 PLIST_FILES=	%%DATADIR%%/uz_UZ.aff \
