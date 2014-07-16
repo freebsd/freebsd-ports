@@ -31,6 +31,8 @@ LIMGDIR?=	www/data/images
 IMGDIR=		${PREFIX}/${LIMGDIR}
 PLIST_SUB=	IMGDIR="${LIMGDIR}"
 
+OPTIONS_DEFINE=	DOCS EXAMPLES
+
 .include <bsd.port.pre.mk>
 
 do-install:

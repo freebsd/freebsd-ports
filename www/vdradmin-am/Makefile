@@ -57,6 +57,8 @@ PLIST_SUB=	VDR_USER=${VDR_USER}
 PLIST_SUB+=	VDR_GROUP=${VDR_GROUP}
 PLIST_SUB+=	PREFIX=${PREFIX}
 
+OPTIONS_DEFINE=	DOCS
+
 post-patch:
 	@${REINPLACE_CMD} 1s-^#!/bin/bash-#!${LOCALBASE}/bin/bash- \
 		${WRKSRC}/install.sh ${WRKSRC}/make.sh

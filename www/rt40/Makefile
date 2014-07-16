@@ -33,7 +33,7 @@ NO_ARCH=	yes
 # mentioned in the docs is currently unsupported in the ports, but see
 # http://www.infracaninophile.co.uk/articles/sphinxse.html
 
-OPTIONS_DEFINE=		DEV GD GPG GRAPHVIZ SSL_MAILGATE
+OPTIONS_DEFINE=		DEV GD GPG GRAPHVIZ SSL_MAILGATE DOCS
 OPTIONS_SINGLE=		DB
 OPTIONS_SINGLE_DB=	MYSQL ORACLE PGSQL SQLITE
 OPTIONS_RADIO=		WEB

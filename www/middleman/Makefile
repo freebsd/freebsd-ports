@@ -10,12 +10,11 @@ MASTER_SITES=	SF/middle-man/Source/${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Robust proxy server
 
-OPTIONS_DEFINE=	SYSLOG DEBUG MTIME
-OPTIONS_DEFAULT=
+OPTIONS_DEFINE=	SYSLOG DEBUG MTIME DOCS
 
 SYSLOG_DESC=	Enable syslog support
-DEBUG_DESC=		Enable debugging support
-MTIME_DESC=		Enable mtime support
+DEBUG_DESC=	Enable debugging support
+MTIME_DESC=	Enable mtime support
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 GNU_CONFIGURE=	yes
@@ -23,8 +22,6 @@ USES=		gmake
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib -pthread
-
-MAN8=		mman.8
 
 .include <bsd.port.options.mk>
 

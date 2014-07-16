@@ -20,6 +20,8 @@ RUBY_SETUP=	install.rb
 DOCS=		CHANGES Changelog README google.html
 EXAMPLES=	examples/*
 
+OPTIONS_DEFINE=	DOCS
+
 post-install:
 	${MKDIR} ${STAGEDIR}${RUBY_MODEXAMPLESDIR}
 .for f in ${EXAMPLES}

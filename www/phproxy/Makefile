@@ -19,6 +19,8 @@ EXTRACT_AFTER_ARGS+=	-d ${WRKSRC}
 
 DOCFILES=	ChangeLog.txt LICENSE.txt README.txt TODO.txt
 
+OPTIONS_DEFINE=	DOCS
+
 do-install:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for i in ${DOCFILES}

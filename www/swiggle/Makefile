@@ -16,6 +16,8 @@ LICENSE=	BSD4CLAUSE
 LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
 		libexif.so:${PORTSDIR}/graphics/libexif
 
+OPTIONS_DEFINE=	DOCS
+
 post-patch:
 	${REINPLACE_CMD} -e 's,/usr/local,${LOCALBASE},g' ${WRKSRC}/Makefile
 

@@ -17,6 +17,8 @@ BUILD_WRKSRC=	${WRKSRC}/src
 CONFIGURE_WRKSRC=	${WRKSRC}/src
 HAS_CONFIGURE=	yes
 
+OPTIONS_DEFINE=	DOCS EXAMPLES
+
 post-patch:
 	@cd ${BUILD_WRKSRC}/&&${REINPLACE_CMD} -e 's|gcc|${CC}|' Makefile
 

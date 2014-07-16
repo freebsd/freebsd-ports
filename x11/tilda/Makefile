@@ -19,6 +19,8 @@ USES=		gmake gettext pkgconfig
 
 DOCS=		AUTHORS ChangeLog README TODO
 
+OPTIONS_DEFINE=	DOCS
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|ps -C tilda -o pid=|pgrep tilda|' \
 		${WRKSRC}/src/tilda.c

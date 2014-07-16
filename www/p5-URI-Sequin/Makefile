@@ -14,6 +14,8 @@ COMMENT=	Extract information from the URLs of Search-Engines
 USES=		perl5
 USE_PERL5=	configure
 
+OPTIONS_DEFINE=	DOCS
+
 post-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/${SITE_PERL_REL}/URI/Sequin/examples
 	@${INSTALL_DATA} ${WRKSRC}/example.pl ${WRKSRC}/ref?.log \
