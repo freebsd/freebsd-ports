@@ -11,8 +11,10 @@ COMMENT=	OpenSSL-based signcode utility
 
 PLIST_FILES=	bin/osslsigncode
 
+USES=		gmake pkgconfig
 GNU_CONFIGURE=	yes
 USE_OPENSSL=	yes
+USE_AUTOTOOLS=	autoheader
 
 OPTIONS_DEFINE=		CURL GSF
 OPTIONS_DEFAULT=	CURL GSF
