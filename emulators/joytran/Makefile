@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	joytran
-PORTVERSION=	0.9.5.1
+PORTVERSION=	0.9.5.2
 CATEGORIES=	emulators
-MASTER_SITES=	BERLIOS GOOGLE_CODE
-MASTER_SITE_SUBDIR=	joytran
+MASTER_SITES=	http://sourceforge.net/projects/${PORTNAME}/files/
 
 MAINTAINER=	beyert@cs.ucr.edu
 COMMENT=	Joystick to keyboard/mouse events translator written in C
@@ -13,13 +12,14 @@ COMMENT=	Joystick to keyboard/mouse events translator written in C
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
-# This is needed to fetch from BerliOS
-USE_BZIP2=	yes
 USE_SDL=	sdl2
-USES=		cmake pkgconfig
+USES=		tar:bzip2 cmake pkgconfig
 CMAKE_ARGS=	-DLOCALBASE="${LOCALBASE}" -DPREFIX="${PREFIX}"
 USE_XORG=	x11 xtst
 
 OPTIONS_DEFINE=	DOCS
+
+post-install:
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
 .include <bsd.port.mk>
