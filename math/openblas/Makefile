@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	openblas
-PORTVERSION=	0.2.8
-PORTREVISION=	3
+PORTVERSION=	0.2.9
 CATEGORIES=	math
 MASTER_SITES=	https://codeload.github.com/${GH_ACCOUNT}/${GH_PROJECT}/legacy.tar.gz/${GH_TAGNAME}?dummy=/:${PORTNAME} \
 		NL:lapack_tmg
@@ -14,13 +13,13 @@ DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}:${PORTNAME} \
 MAINTAINER=	phd_kimberlite@yahoo.co.jp
 COMMENT=	Optimized BLAS library based on GotoBLAS2
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 
 DIST_SUBDIR=	openblas
 GH_ACCOUNT=	xianyi
 GH_PROJECT=	OpenBLAS
 GH_TAGNAME=	${GH_COMMIT}
-GH_COMMIT=	835293c
+GH_COMMIT=	f773f49
 LARGE_FILE=	large.tgz
 TIMING_FILE=	timing.tgz
 
@@ -164,5 +163,9 @@ do-install:
 	for i in ${OPENBLAS_LIBS:S|$|.so|}; do \
 		${LN} -sf $$i.${OPENBLAS_SVER} $$i ; \
 	done
+
+post-stage:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libopenblas.so.0
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libopenblasp.so.0
 
 .include <bsd.port.mk>
