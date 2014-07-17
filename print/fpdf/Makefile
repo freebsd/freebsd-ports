@@ -11,7 +11,7 @@ DISTNAME=	${PORTNAME}${PORTVERSION:S|.||}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	thierry@FreeBSD.org
-COMMENT=	A free PHP class to generate PDF files with pure PHP
+COMMENT=	Free PHP class to generate PDF files with pure PHP
 
 USE_PHP=	zlib
 

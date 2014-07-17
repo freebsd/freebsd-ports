@@ -10,7 +10,7 @@ PKGNAMESUFFIX=	-gdk
 DISTNAME=	${PORTNAME}${PKGNAMESUFFIX}-${PORTVERSION}
 
 MAINTAINER=	garga@FreeBSD.org
-COMMENT=	A modified version of the dockapp wmCube
+COMMENT=	Modified version of the dockapp wmCube
 
 LICENSE=	GPLv2
 

@@ -9,7 +9,7 @@ MASTER_SITES=	SF/${PORTNAME}/Stable/${PORTVERSION}
 DISTNAME=	${PORTNAME}-${PORTVERSION}-1
 
 MAINTAINER=	freebsd-ports@herveybayaustralia.com.au
-COMMENT=	A GTK/GNOME-based genealogy program
+COMMENT=	GTK/GNOME-based genealogy program
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

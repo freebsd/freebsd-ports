@@ -7,7 +7,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	http://ntarmos.dyndns.org/Software/FreeBSD/
 
 MAINTAINER=	ntarmos@cs.uoi.gr
-COMMENT=	A daemon monitoring the battery level of ACPI-enabled laptops
+COMMENT=	Daemon monitoring the battery level of ACPI-enabled laptops
 
 PLIST_FILES=	sbin/battmond \
 		etc/rc.d/battmond \

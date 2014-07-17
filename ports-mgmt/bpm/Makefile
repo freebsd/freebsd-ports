@@ -9,7 +9,7 @@ MASTER_SITES=	http://www.meowfishies.com/code/bpm/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	sethk@meowfishies.com
-COMMENT=	A graphical BSD ports collection manager
+COMMENT=	Graphical BSD ports collection manager
 
 RUN_DEPENDS=	portupgrade:${PORTSDIR}/ports-mgmt/portupgrade \
   		gnomesu:${PORTSDIR}/security/libgnomesu \

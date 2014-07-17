@@ -7,7 +7,7 @@ CATEGORIES=	sysutils python
 MASTER_SITES=	http://www.tundraware.com/Software/tren/
 
 MAINTAINER=	tren@tundraware.com
-COMMENT=	A Powerful File And Directory Batch Renaming Tool
+COMMENT=	Powerful File And Directory Batch Renaming Tool
 
 USE_PYTHON=	yes
 PLIST_FILES=	bin/tren.py man/man1/tren.1.gz

@@ -6,7 +6,7 @@ PORTVERSION=	0.3.2
 CATEGORIES=	shells www pear
 
 MAINTAINER=	miwi@FreeBSD.org
-COMMENT=	An interactive PHP Shell
+COMMENT=	Interactive PHP Shell
 
 USE_PHP=	pcre tokenizer readline
 

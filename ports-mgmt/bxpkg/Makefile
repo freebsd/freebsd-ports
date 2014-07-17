@@ -9,7 +9,7 @@ MASTER_SITES=	http://bxpkg.bsdroot.lv/files/
 DISTNAME=	${PORTNAME}-${DISTVERSION}
 
 MAINTAINER=	kpetrikas@gmail.com
-COMMENT=	bxPKG is a GTK+ based tool to manage binary packages on BSD systems.
+COMMENT=	GTK+ based tool to manage binary packages on BSD systems
 
 USES=		pkgconfig
 USE_XORG=	x11

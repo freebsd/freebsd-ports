@@ -9,7 +9,7 @@ MASTER_SITES=	http://reboot78.re.funpic.de/cryptofs/
 PKGNAMEPREFIX=	fusefs-
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A encrypted filesystem for FUSE
+COMMENT=	Encrypted filesystem for FUSE
 
 LIB_DEPENDS=	libgcrypt.so:${PORTSDIR}/security/libgcrypt \
 		libglib-2.0.so:${PORTSDIR}/devel/glib20

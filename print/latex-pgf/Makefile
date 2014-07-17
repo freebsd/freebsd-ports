@@ -9,7 +9,7 @@ PKGNAMEPREFIX=	latex-
 DISTNAME=	${PORTNAME}_${PORTVERSION}.tds
 
 MAINTAINER=	hrs@FreeBSD.org
-COMMENT=	A LaTeX package for TeX Portable Graphic Format
+COMMENT=	LaTeX package for TeX Portable Graphic Format
 
 NO_BUILD=	YES
 USES=		zip

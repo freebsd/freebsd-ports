@@ -6,7 +6,7 @@ PORTVERSION=	0.1.0
 CATEGORIES=	security www pear
 
 MAINTAINER=	miwi@FreeBSD.org
-COMMENT=	PHP MicroID library.
+COMMENT=	PHP MicroID library
 
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
 RUN_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear

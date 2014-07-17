@@ -7,7 +7,7 @@ CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
-COMMENT=	A flexible logging library for use in Ruby programs
+COMMENT=	Flexible logging library for use in Ruby programs
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes

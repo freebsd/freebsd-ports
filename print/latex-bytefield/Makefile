@@ -11,7 +11,7 @@ DISTFILES=	bytefield.dtx bytefield.ins ${PORTDOCS}
 DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	hrs@FreeBSD.org
-COMMENT=	A LaTeX package that utilization diagram of data fields
+COMMENT=	LaTeX package that utilization diagram of data fields
 
 USE_TEX=	latex
 PLIST_SUB=	TEXMFDIR=${TEXMFDIR} MKTEXLSR=${MKTEXLSR} \

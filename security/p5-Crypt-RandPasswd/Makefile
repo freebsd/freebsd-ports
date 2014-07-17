@@ -9,7 +9,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	skreuzer@FreeBSD.org
-COMMENT=	An implementation of the Automated Password Generator standard
+COMMENT=	Implementation of the Automated Password Generator standard
 
 USES=		perl5
 USE_PERL5=	configure

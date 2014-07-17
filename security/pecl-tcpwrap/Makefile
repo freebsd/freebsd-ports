@@ -10,7 +10,7 @@ EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	PECL
 
 MAINTAINER=	miwi@FreeBSD.org
-COMMENT=	A PECL extension which provides tcpwrappers binding
+COMMENT=	PECL extension which provides tcpwrappers binding
 
 USE_PHP=	yes
 USE_PHPEXT=	yes

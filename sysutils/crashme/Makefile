@@ -11,7 +11,7 @@ DISTNAME=	crashme
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	gjc@alum.mit.edu
-COMMENT=	A tool to test an operating system's robustness
+COMMENT=	Tool to test an operating system's robustness
 
 # according to license.rtf, and using the most restrictive one:
 LICENSE=	LGPL21

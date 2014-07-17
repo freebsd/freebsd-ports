@@ -12,7 +12,7 @@ DIST_SUBDIR=	${PORTNAME}
 EXTRACT_ONLY=	#empty
 
 MAINTAINER=	hrs@FreeBSD.org
-COMMENT=	A LaTeX package for printing all of a BibTeX database entries
+COMMENT=	LaTeX package for printing all of a BibTeX database entries
 
 USE_TEX=	latex
 NO_BUILD=	YES

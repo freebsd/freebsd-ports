@@ -9,7 +9,7 @@ MASTER_SITES=	${MASTER_SITE_PACKETSTORM}
 MASTER_SITE_SUBDIR=	crypt/SSL/slush
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A telnet-like application which uses a secure SSL channel
+COMMENT=	Telnet-like application which uses a secure SSL channel
 
 GNU_CONFIGURE=	yes
 USE_OPENSSL=	yes

@@ -11,7 +11,7 @@ PKGNAMESUFFIX=	32
 
 MAINTAINER=	cy@FreeBSD.org
 #		gjb@FreeBSD.org is an alternate committer for this port
-COMMENT=	A systems administration tool for networks
+COMMENT=	Systems administration tool for networks
 
 LATEST_LINK=	cfengine32
 FETCH_BEFORE_ARGS=   -o ${DISTDIR}/${DISTFILES}

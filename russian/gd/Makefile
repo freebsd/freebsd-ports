@@ -4,7 +4,7 @@ MASTERDIR=	${.CURDIR}/../../graphics/gd
 CATEGORIES=	russian
 
 MAINTAINER=	dinoex@FreeBSD.org
-COMMENT=	A graphics library for fast image creation with KOI8-U support
+COMMENT=	Graphics library for fast image creation with KOI8-U support
 
 FETCH_DEPENDS=  ${NONEXISTENT}:${PORTSDIR}/x11-fonts/geminifonts:fetch
 BUILD_DEPENDS=  ${NONEXISTENT}:${PORTSDIR}/x11-fonts/geminifonts:fetch

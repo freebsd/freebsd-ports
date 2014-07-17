@@ -9,7 +9,7 @@ MASTER_SITES=	SF/${PORTNAME}/OldFiles
 DISTNAME=	${PORTNAME}
 
 MAINTAINER=	osa@FreeBSD.org
-COMMENT=	A CloneCD to ISO converter
+COMMENT=	CloneCD to ISO converter
 
 PLIST_FILES=	bin/ccd2iso
 

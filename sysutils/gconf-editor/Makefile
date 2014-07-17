@@ -11,7 +11,7 @@ MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
-COMMENT=	A gconf database editor for the GNOME 2 environment
+COMMENT=	Gconf database editor for the GNOME 2 environment
 
 USES=		gettext gmake pkgconfig tar:bzip2
 INSTALLS_OMF=	yes

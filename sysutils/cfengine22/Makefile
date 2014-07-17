@@ -10,7 +10,7 @@ PKGNAMESUFFIX=	22
 
 MAINTAINER=	cy@FreeBSD.org
 #		gjb@FreeBSD.org is also committer for this port
-COMMENT=	A systems administration tool for networks
+COMMENT=	Systems administration tool for networks
 
 FETCH_BEFORE_ARGS=	-o ${DISTDIR}/${DISTFILES}
 

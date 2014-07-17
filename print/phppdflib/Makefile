@@ -8,7 +8,7 @@ MASTER_SITES=	http://www.potentialtech.com/
 EXTRACT_SUFX=	.tbz
 
 MAINTAINER=	sexbear@tmu.edu.tw
-COMMENT=	An easy to use API for creating PDF files dynamically
+COMMENT=	Easy to use API for creating PDF files dynamically
 
 USE_PHP=	yes
 WANT_PHP_MOD=	yes

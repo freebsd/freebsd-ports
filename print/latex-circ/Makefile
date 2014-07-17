@@ -11,7 +11,7 @@ PKGNAMEPREFIX=	latex-
 DISTNAME=	${PORTNAME}
 
 MAINTAINER=	nivit@FreeBSD.org
-COMMENT=	A LaTeX package for typesetting circuit diagrams
+COMMENT=	LaTeX package for typesetting circuit diagrams
 
 USES=		zip
 USE_TEX=	latex

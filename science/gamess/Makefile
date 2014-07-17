@@ -10,7 +10,7 @@ DISTNAME=	gamess-current
 DIST_SUBDIR=	${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	maho@FreeBSD.org
-COMMENT=	A freely obtainable ab-initio molecular orbital calculation program
+COMMENT=	Freely obtainable ab-initio molecular orbital calculation program
 
 USES=		fortran gmake
 WRKSRC=		${WRKDIR}/gamess

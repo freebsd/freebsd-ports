@@ -13,7 +13,7 @@ DISTFILES=	${SRC_FILES} ${PORTDOCS}
 DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	hrs@FreeBSD.org
-COMMENT=	A LaTeX package to generate a nomenclature using MakeIndex
+COMMENT=	LaTeX package to generate a nomenclature using MakeIndex
 
 USE_TEX=	latex
 PLIST_SUB=	MKTEXLSR=${MKTEXLSR} \

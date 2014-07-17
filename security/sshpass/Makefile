@@ -7,7 +7,7 @@ CATEGORIES=	security
 MASTER_SITES=	SF/${PORTNAME}/sshpass/${PORTVERSION}
 
 MAINTAINER=	gaod@hychen.org
-COMMENT=	A non-interactive ssh password auth tool
+COMMENT=	Non-interactive ssh password auth tool
 
 LICENSE=	GPLv2
 

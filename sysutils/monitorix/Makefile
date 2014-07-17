@@ -8,7 +8,7 @@ MASTER_SITES=	http://www.monitorix.org/ \
 		http://www.bayofrum.net/dist/${PORTNAME}/
 
 MAINTAINER=	crees@FreeBSD.org
-COMMENT=	A web based monitoring system
+COMMENT=	Web based monitoring system
 
 LICENSE=	GPLv2
 

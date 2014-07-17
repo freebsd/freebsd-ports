@@ -8,7 +8,7 @@ MASTER_SITES=	ftp://ftp.infradead.org/pub/${PORTNAME}/ \
 		http://mirrors.rit.edu/zi/
 
 MAINTAINER=	zi@FreeBSD.org
-COMMENT=	A collection of scripts to setup routes and other changes for a VPN
+COMMENT=	Collection of scripts to setup routes and other changes for a VPN
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

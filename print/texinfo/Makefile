@@ -11,7 +11,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} htmlxref.cnf texinfo.tex texi2dvi
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	johans@FreeBSD.org
-COMMENT=	A typeset documentation system with multiple format output
+COMMENT=	Typeset documentation system with multiple format output
 
 BUILD_DEPENDS+=	help2man:${PORTSDIR}/misc/help2man
 

@@ -8,7 +8,7 @@ CATEGORIES=	print
 MASTER_SITES=	http://waterdeep.physics.upatras.gr/~eelvex/files/
 
 MAINTAINER=	mplekos@physics.upatras.gr
-COMMENT=	A LaTeX package for switching between greek/latintext automatically
+COMMENT=	LaTeX package for switching between greek/latintext automatically
 
 USE_TEX=	latex
 NO_BUILD=	YES

@@ -9,7 +9,7 @@ MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 PKGNAMEPREFIX=	fusefs-
 
 MAINTAINER=	leeym@FreeBSD.org
-COMMENT=	A FUSE based filesystem with replication at the filesystem level
+COMMENT=	FUSE based filesystem with replication at the filesystem level
 
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include

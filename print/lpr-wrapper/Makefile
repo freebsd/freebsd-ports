@@ -8,7 +8,7 @@ CATEGORIES=	print
 MASTER_SITES=	http://www.mathstat.dal.ca/~selinger/lpr-wrapper/download/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A user level printer frontend
+COMMENT=	User level printer frontend
 
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash \
 		ppdfilt:${PORTSDIR}/print/libppd \

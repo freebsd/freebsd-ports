@@ -7,7 +7,7 @@ CATEGORIES=	science cad
 MASTER_SITES=	http://www.wrcad.com/ftp/pub/ LOCAL/bf
 
 MAINTAINER=	bf@FreeBSD.org
-COMMENT=	A multipole-accelerated inductance analysis program
+COMMENT=	Multipole-accelerated inductance analysis program
 
 HAS_CONFIGURE=	yes
 CONFIGURE_SCRIPT=	config

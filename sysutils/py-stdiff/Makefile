@@ -6,7 +6,7 @@ CATEGORIES=		sysutils python
 MASTER_SITES=		SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}/
 
 MAINTAINER=		araujo@FreeBSD.org
-COMMENT=		Spot The Difference is a file integrity checker.
+COMMENT=		Spot The Difference is a file integrity checker
 
 USE_PYTHON=		yes
 USE_PYDISTUTILS=	yes

@@ -7,7 +7,7 @@ CATEGORIES=	security
 MASTER_SITES=	http://olivier.sessink.nl/scannedonly/
 
 MAINTAINER= ports@FreeBSD.org
-COMMENT=	A Samba VFS virus scanning daemon
+COMMENT=	Samba VFS virus scanning daemon
 
 LICENSE=	GPLv2
 

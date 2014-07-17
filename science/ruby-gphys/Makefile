@@ -12,7 +12,7 @@ PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	murashin@gfd-dennou.org
-COMMENT=	A multi-purpose class to handle gridded physical quantities
+COMMENT=	Multi-purpose class to handle gridded physical quantities
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 

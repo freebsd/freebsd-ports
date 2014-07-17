@@ -9,7 +9,7 @@ MASTER_SITES=	http://utcc.utoronto.ca/~pkern/stuff/sst/
 DISTNAME=	${PORTNAME}
 
 MAINTAINER=	mi@aldan.algebra.com
-COMMENT=	A simple SSL tunneling tool (uses netcat)
+COMMENT=	Simple SSL tunneling tool (uses netcat)
 
 .if !exists(/usr/bin/nc)
 RUN_DEPENDS=	netcat:${PORTSDIR}/net/netcat

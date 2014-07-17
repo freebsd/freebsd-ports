@@ -11,7 +11,7 @@ EXTRACT_SUFX=
 EXTRACT_ONLY=
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A cron like tool that performs a single pass on a cronfile
+COMMENT=	Cron-like tool that performs a single pass on a cronfile
 
 RUN_DEPENDS=	p5-DateTime-Event-Cron>=0:${PORTSDIR}/devel/p5-DateTime-Event-Cron \
 		p5-DateTime>=0:${PORTSDIR}/devel/p5-DateTime \

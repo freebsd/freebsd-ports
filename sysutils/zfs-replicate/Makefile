@@ -9,7 +9,7 @@ MASTER_SITES=	http://blogs.sun.com/constantin/resource/
 DISTNAME=	${PORTNAME}_v${PORTVERSION}
 
 MAINTAINER=	jnlin@csie.nctu.edu.tw
-COMMENT=	A ZFS Snapshot Replication Script
+COMMENT=	ZFS Snapshot Replication Script
 
 RUN_DEPENDS=	ksh:${PORTSDIR}/shells/pdksh
 

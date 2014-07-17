@@ -8,7 +8,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	clsung@FreeBSD.org
-COMMENT=	A graphical performance meter
+COMMENT=	Graphical performance meter
 
 USE_XORG=	xpm
 GNU_CONFIGURE=	yes

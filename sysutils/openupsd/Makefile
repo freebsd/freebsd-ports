@@ -8,7 +8,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	http://frmb.org/download/
 
 MAINTAINER=	tdb@FreeBSD.org
-COMMENT=	A UPS daemon for some Belkin UPS's
+COMMENT=	UPS daemon for some Belkin UPS's
 
 USE_RC_SUBR=	${PORTNAME}
 GNU_CONFIGURE=	yes

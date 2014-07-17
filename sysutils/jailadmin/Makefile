@@ -9,7 +9,7 @@ MASTER_SITES=	http://subwiki.honeypot.net/pub/Freebsd/JailAdmin/
 DISTNAME=	jailadmin-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A system for managing a set of named jails
+COMMENT=	System for managing a set of named jails
 
 USES=		perl5
 

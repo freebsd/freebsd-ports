@@ -12,7 +12,7 @@ DISTNAME=	ruby-${PORTNAME}-${PORTVERSION}
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	ruby@FreeBSD.org
-COMMENT=	A Ruby interface to GnuPG Made Easy (GPGME)
+COMMENT=	Ruby interface to GnuPG Made Easy (GPGME)
 
 LIB_DEPENDS=	libgpgme.so:${PORTSDIR}/security/gpgme
 

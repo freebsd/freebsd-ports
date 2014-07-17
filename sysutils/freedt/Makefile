@@ -8,7 +8,7 @@ MASTER_SITES=	http://offog.org/files/ \
 		http://ftp.i-scream.org/pub/offog.org/files/
 
 MAINTAINER=	tdb@FreeBSD.org
-COMMENT=	An experimental reimplementation of Dan Bernstein's daemontools
+COMMENT=	Experimental reimplementation of Dan Bernstein's daemontools
 
 CONFLICTS=	daemontools-[0-9]*
 

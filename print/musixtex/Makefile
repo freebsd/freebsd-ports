@@ -9,7 +9,7 @@ MASTER_SITES=	http://icking-music-archive.org/software/musixtex/
 DISTFILES=	musixtex-${PORTVERSION}.tar.gz
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A set of TeX macros to typeset music
+COMMENT=	Set of TeX macros to typeset music
 
 BUILD_DEPENDS=	initex:${PORTSDIR}/print/tex
 RUN_DEPENDS=	initex:${PORTSDIR}/print/tex

@@ -8,7 +8,7 @@ MASTER_SITES=	http://www.lugs.ch/~dussuett/
 DISTNAME=	ods2
 
 MAINTAINER=	dussuett@wigwam.ethz.ch
-COMMENT=	An utility for manipulating ODS-2 filesystems
+COMMENT=	Utility for manipulating ODS-2 filesystems
 
 USES=		zip
 NO_WRKSUBDIR=	yes

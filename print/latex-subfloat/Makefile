@@ -11,7 +11,7 @@ DISTFILES=	Makefile subfloat.dtx subfloat.ins ${DOC_FILES}
 DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	hrs@FreeBSD.org
-COMMENT=	A LaTeX package that enables subnumbering of different floats
+COMMENT=	LaTeX package that enables subnumbering of different floats
 
 USE_TEX=	latex
 PLIST_SUB=	TEXMFLOCAL=${TEXMFLOCAL} MKTEXLSR=${MKTEXLSR} \

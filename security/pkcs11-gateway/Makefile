@@ -8,7 +8,7 @@ MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	ale
 
 MAINTAINER=	ale@FreeBSD.org
-COMMENT=	A wrapper Cryptoki library to use Linux PKCS\#11 modules
+COMMENT=	Wrapper Cryptoki library to use Linux PKCS\#11 modules
 
 LICENSE=	LGPL20
 

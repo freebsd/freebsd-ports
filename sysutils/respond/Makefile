@@ -6,7 +6,7 @@ PORTVERSION=	1.3
 CATEGORIES=	sysutils
 
 MAINTAINER=	j.witteveen@gmail.com
-COMMENT=	A response automator for logged events
+COMMENT=	Response automator for logged events
 
 LICENSE=	BSD2CLAUSE
 

@@ -7,7 +7,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/7.1.0
 
 MAINTAINER=	nobutaka@FreeBSD.org
-COMMENT=	A dd program useful for computer forensics
+COMMENT=	dd program useful for computer forensics
 
 USE_BZIP2=	yes
 USES=		gettext iconv gmake

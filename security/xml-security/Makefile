@@ -9,7 +9,7 @@ MASTER_SITE_SUBDIR=	santuario/java-library/${PORTVERSION:S/./_/g}
 DISTNAME=	${PORTNAME}-src-${PORTVERSION:S/./_/g}
 
 MAINTAINER=	ale@FreeBSD.org
-COMMENT=	A Java library for XML Signature and Encryption
+COMMENT=	Java library for XML Signature and Encryption
 
 BUILD_DEPENDS=	${JAVALIBDIR}/commons-logging.jar:${PORTSDIR}/java/jakarta-commons-logging \
 		${JAVALIBDIR}/xalan.jar:${PORTSDIR}/textproc/xalan-j

@@ -12,7 +12,7 @@ MASTER_SITE_SUBDIR=	system/daemons/cron
 DISTNAME=	${PORTNAME}-${PORTVERSION}.src
 
 MAINTAINER=	rde@tavi.co.uk
-COMMENT=	A periodic command scheduler
+COMMENT=	Periodic command scheduler
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 

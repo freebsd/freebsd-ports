@@ -10,7 +10,7 @@ EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	PECL
 
 MAINTAINER=	ale@FreeBSD.org
-COMMENT=	A PECL extension to create PDF on the fly
+COMMENT=	PECL extension to create PDF on the fly
 
 LICENSE=	PHP30
 
