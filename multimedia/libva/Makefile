@@ -2,6 +2,7 @@
 
 PORTNAME=	libva
 PORTVERSION=	1.3.1
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	http://cgit.freedesktop.org/${PORTNAME}/snapshot/
 
@@ -39,11 +40,6 @@ CFLAGS+=	-DNDEBUG
 .endif
 
 .include <bsd.port.pre.mk>
-
-# add strnlen(3) from head/lib/libc/string/strnlen.c
-.if ${OSVERSION} < 800067
-EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-va-va_trace.c
-.endif
 
 .if ${ARCH} == "sparc64"
 BROKEN=		glXCreateContext fails during configure
