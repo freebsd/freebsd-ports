@@ -4,7 +4,6 @@
 %%CGI_DIR%%/gnatsweb.pl
 %%CGI_DIR%%/gnatsweb-site.pl
 %%CGI_DIR%%/gnatsweb.html
-%%ETCDIR%%/gnatsweb-site.pl
 @dirrmtry %%CGI_DIR%%
 @dirrmtry %%ETCDIR%%
 @dirrm %%WWWDIR%%
