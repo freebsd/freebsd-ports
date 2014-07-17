@@ -82,7 +82,6 @@ lib/Net/FTP/RetrHandle.pm
 man/man1/backuppc.1.gz
 %%DOCSDIR%%/BackupPC.html
 %%PORTDOCS%%%%DOCSDIR%%/BackupPC.pod
-@dirrm %%DOCSDIR%%
 %%WWWDIR%%/0000000.gif
 %%WWWDIR%%/0000011.gif
 %%WWWDIR%%/0001000.gif
@@ -144,6 +143,7 @@ man/man1/backuppc.1.gz
 @dirrm lib/BackupPC
 @dirrm lib/Net/FTP
 @dirrm lib/Net
+@dirrm %%DOCSDIR%%
 @dirrmtry %%WWWDIR%%
 @dirrmtry %%CGIDIR%%
 @exec install -d -o backuppc -g backuppc -m 0750 /var/log/BackupPC
