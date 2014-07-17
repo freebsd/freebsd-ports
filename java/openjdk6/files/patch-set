@@ -8274,17 +8274,6 @@
  #include <math.h>
  #include <jlong.h>
  
---- jdk/src/share/native/sun/management/GcInfoBuilder.c
-+++ jdk/src/share/native/sun/management/GcInfoBuilder.c
-@@ -190,7 +190,7 @@
- 
-     if (ext_att_count <= 0) {
-         JNU_ThrowIllegalArgumentException(env, "Invalid ext_att_count");
--        return;
-+        return 0;
-     }
- 
-     gc_stat.usage_before_gc = usageBeforeGC;
 --- jdk/src/share/transport/socket/socketTransport.c
 +++ jdk/src/share/transport/socket/socketTransport.c
 @@ -65,6 +65,9 @@
