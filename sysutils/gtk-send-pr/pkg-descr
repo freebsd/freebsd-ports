@@ -1,8 +1,0 @@
-This is a GTK2 based tool, similar to send-pr(1), but with some nice
-features:
-
-- User friendly UI
-- Uses libesmtp to deliver mail to any SMTP server
-- Free software (BSD licensed)
-
-WWW: http://gtk-send-pr.berlios.de/index.html
