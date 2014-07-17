@@ -1,5 +1,9 @@
 bin/gtick
 man/man1/gtick.1.gz
+share/applications/gtick.desktop
+share/icons/hicolor/64x64/apps/gtick.xpm
+share/appdata/gtick.appdata.xml
+share/pixmaps/gtick_32x32.xpm
 %%NLS%%share/locale/af/LC_MESSAGES/gtick.mo
 %%NLS%%share/locale/ca/LC_MESSAGES/gtick.mo
 %%NLS%%share/locale/cs/LC_MESSAGES/gtick.mo
@@ -33,3 +37,8 @@ man/man1/gtick.1.gz
 %%NLS%%@dirrmtry share/locale/en@quot
 %%NLS%%@dirrmtry share/locale/en@boldquot/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/en@boldquot
+@dirrmtry share/appdata
+@dirrmtry share/icons/hicolor/64x64/apps
+@dirrmtry share/icons/hicolor/64x64
+@dirrmtry share/icons/hicolor
+@dirrmtry share/icons

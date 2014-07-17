@@ -1,0 +1,11 @@
+--- Makefile.in.orig	2014-07-16 16:54:29.000000000 +0200
++++ Makefile.in	2014-07-16 16:54:39.000000000 +0200
+@@ -395,7 +395,7 @@
+ 
+ appdatadir = $(datadir)/appdata
+ appdata_DATA = gtick.appdata.xml
+-desktopdir = $(datadir)/application
++desktopdir = $(datadir)/applications
+ desktop_DATA = gtick.desktop
+ 
+ #AUTOMAKE_OPTIONS = dist-bzip2
