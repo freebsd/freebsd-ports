@@ -57,6 +57,39 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="3718833e-0d27-11e4-89db-000c6e25e3e9">
+    <topic>chromium -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+       <name>chromium</name>
+       <range><lt>36.0.1985.125</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+       <p>Google Chrome Releases reports:</p>
+       <blockquote cite="http://googlechromereleases.blogspot.nl">
+	 <p>26 security fixes in this release, including</p>
+	 <ul>
+	   <li>[380885] Medium CVE-2014-3160: Same-Origin-Policy bypass in SVG. Credit
+	     to Christian Schneider.</li>
+	   <li>[393765] CVE-2014-3162: Various fixes from internal audits, fuzzing and
+	      other initiatives.</li>
+	  </ul>
+       </blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2014-3160</cvename>
+      <cvename>CVE-2014-3162</cvename>
+      <url>http://googlechromereleases.blogspot.nl</url>
+    </references>
+    <dates>
+      <discovery>2014-07-16</discovery>
+      <entry>2014-07-16</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="4a114331-0d24-11e4-8dd2-5453ed2e2b49">
     <topic>kdelibs4 -- KMail/KIO POP3 SSL Man-in-the-middle Flaw</topic>
     <affects>
