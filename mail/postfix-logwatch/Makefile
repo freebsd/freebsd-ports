@@ -26,7 +26,7 @@ OPTIONS_DEFINE=	DOCS EXAMPLES
 
 post-patch:
 	@(cd ${WRKSRC} && \
-		${REINPLACE_CMD} -e 's!/usr/local/etc!${ETCDIR}' \
+		${REINPLACE_CMD} -e 's!/usr/local/etc!${ETCDIR}!' \
 		${PORTNAME} ${PORTNAME}.1 README)
 
 do-install:
