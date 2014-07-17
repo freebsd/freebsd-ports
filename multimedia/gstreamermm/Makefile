@@ -4,6 +4,7 @@
 
 PORTNAME=	gstreamermm
 PORTVERSION=	0.10.10.2
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	GNOME
 
@@ -12,11 +13,12 @@ COMMENT=	C++ wrapper library for the multimedia library GStreamer
 
 LICENSE=	LGPL21
 
-USES=		pkgconfig tar:xz gmake
+USES=		gmake libtool pkgconfig tar:xz
 USE_GSTREAMER=	theora vorbis cdparanoia gio pango
 USE_GNOME=	gnomeprefix gnomehack gtkmm24
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-documentation
+INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
 PLIST_SUB=	GST_VERSION="${GST_VERSION}"
 
