@@ -3,6 +3,7 @@
 
 PORTNAME=	squirrelmail-decode
 PORTVERSION=	1.2
+PORTREVISION=	1
 CATEGORIES=	mail www
 MASTER_SITES=	SF/squirrelmail/decode/${PORTVERSION}
 DIST_SUBDIR=	squirrelmail
@@ -28,7 +29,7 @@ OPTIONS_DEFINE=	DOCS
 do-install:
 	@${MKDIR} ${STAGEDIR}${SQUIRRELDIR}/functions/decode
 .for DIR in eastasia x-mac
-	cd ${WRKSRC}/${DIR} && ${FIND} . | ${CPIO} -pdmu --quiet ${STAGEDIR}${SQUIRRELDIR}/functions/decode
+	${INSTALL_DATA} ${WRKSRC}/${DIR}/*.php ${STAGEDIR}${SQUIRRELDIR}/functions/decode
 .endfor
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/*.decode ${STAGEDIR}${DOCSDIR}
