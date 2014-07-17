@@ -5,16 +5,18 @@
 %%FILTER%%sbin/opendkim
 %%JANSSON%%bin/autobuild
 %%JANSSON%%man/man8/autobuild.8.gz
-%%LUA%%%%FILTER%%man/man3/opendkim-lua.3.gz
 %%LUA%%bin/miltertest
 %%LUA%%man/man3/opendkim-lua.3.gz
 %%LUA%%man/man8/miltertest.8.gz
-%%OPENDBX%%%%STATS%%bin/opendkim-spam
-%%OPENDBX%%%%STATS%%sbin/opendkim-importstats
+%%OPENDBX%%bin/opendkim-spam
+%%OPENDBX%%sbin/opendkim-importstats
+%%OPENDBX%%man/man1/opendkim-spam.1.gz
+%%OPENDBX%%man/man8/opendkim-importstats.8.gz
 %%RBL%%include/rbl/rbl.h
 %%RBL%%lib/librbl.a
 %%RBL%%lib/librbl.so
 %%RBL%%lib/librbl.so.1
+%%RBL%%lib/librbl.so.1.0.0
 %%RBL%%libdata/pkgconfig/rbl.pc
 %%RBL%%man/man3/rbl.3.gz
 %%REPRRD%%bin/opendkim-reprrdimport
@@ -22,15 +24,18 @@
 %%REPRRD%%lib/libreprrd.a
 %%REPRRD%%lib/libreprrd.so
 %%REPRRD%%lib/libreprrd.so.1
+%%REPRRD%%lib/libreprrd.so.1.0.0
 %%REPRRD%%man/man8/opendkim-reprrdimport.8.gz
 %%REPUTATION%%include/repute/repute.h
 %%REPUTATION%%include/ut/ut.h
 %%REPUTATION%%lib/librepute.a
 %%REPUTATION%%lib/librepute.so
 %%REPUTATION%%lib/librepute.so.1
+%%REPUTATION%%lib/librepute.so.1.0.0
 %%REPUTATION%%lib/libut.a
 %%REPUTATION%%lib/libut.so
 %%REPUTATION%%lib/libut.so.1
+%%REPUTATION%%lib/libut.so.1.0.0
 %%REPUTATION%%libdata/pkgconfig/repute.pc
 %%REPUTATION%%libdata/pkgconfig/ut.pc
 %%REPUTATION%%man/man3/ut.3.gz
@@ -40,8 +45,6 @@
 %%REPUTATION%%sbin/opendkim-genrates
 %%REPUTATION%%sbin/opendkim-modtotals
 %%REPUTATION%%sbin/opendkim-rephistory
-%%STATS%%%%OPENDBX%%man/man1/opendkim-spam.1.gz
-%%STATS%%%%OPENDBX%%man/man8/opendkim-importstats.8.gz
 %%STATS%%man/man8/opendkim-expire.8.gz
 %%STATS%%man/man8/opendkim-gengraphs.8.gz
 %%STATS%%man/man8/opendkim-genstats.8.gz
@@ -55,6 +58,7 @@
 %%VBR%%lib/libvbr.a
 %%VBR%%lib/libvbr.so
 %%VBR%%lib/libvbr.so.2
+%%VBR%%lib/libvbr.so.2.0.0
 %%VBR%%libdata/pkgconfig/vbr.pc
 %%VBR%%man/man3/vbr.3.gz
 @sample etc/mail/opendkim.conf.sample

@@ -23,8 +23,8 @@ GNU_CONFIGURE=	yes
 NO_OPTIONS_SORT=yes
 USES=		pkgconfig perl5 shebangfix libtool
 USE_PERL5=	run
-SHEBANG_FILES=	opendkim/opendkim-genkey.in
-SHEBANG_FILES=	opendkim/opendkim-genkey* reputation/opendkim-* stats/opendkim-*
+SHEBANG_FILES=	opendkim/opendkim-genkey* reputation/opendkim-* stats/opendkim-* \
+		reprrd/opendkim-reprrdimport*
 USE_OPENSSL=	yes
 USE_LDCONFIG=	yes
 
@@ -125,7 +125,7 @@ IGNORE= Options LUA_ONLY_SIGNING and RBL require LUA as well
 .endif
 
 .if ${PORT_OPTIONS:MREPUTATION}
-.if !${PORT_OPTIONS:MCURL} || !${PORT_OPTIONS:MJANNSON}
+.if !${PORT_OPTIONS:MCURL} || !${PORT_OPTIONS:MJANSSON}
 IGNORE= Option REPUTATION requires CURL and JANSSON as well
 .endif
 .endif
