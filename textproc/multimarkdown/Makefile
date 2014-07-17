@@ -5,11 +5,11 @@ PORTNAME=	multimarkdown
 PORTVERSION=	4.5.3
 CATEGORIES=	textproc
 MASTER_SITES=	https://codeload.github.com/fletcher/MultiMarkdown-4/legacy.tar.gz/${MM4_COMMIT}?dummy=/:MM4 \
-				https://codeload.github.com/fletcher/MMD-Support/legacy.tar.gz/${SUPPORT_COMMIT}?dummy=/:support \
-				https://codeload.github.com/fletcher/human-markdown-reference/legacy.tar.gz/${CHEAT_COMMIT}?dummy=/:cheat \
-				https://codeload.github.com/nddrylliog/greg/legacy.tar.gz/${GREG_COMMIT}?dummy=/:greg
-DISTFILES=		${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}:MM4 \
-				greg-${GREG_COMMIT}${EXTRACT_SUFX}:greg
+		https://codeload.github.com/fletcher/MMD-Support/legacy.tar.gz/${SUPPORT_COMMIT}?dummy=/:support \
+		https://codeload.github.com/fletcher/human-markdown-reference/legacy.tar.gz/${CHEAT_COMMIT}?dummy=/:cheat \
+		https://codeload.github.com/nddrylliog/greg/legacy.tar.gz/${GREG_COMMIT}?dummy=/:greg
+DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}:MM4 \
+		greg-${GREG_COMMIT}${EXTRACT_SUFX}:greg
 DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	adamw@FreeBSD.org
@@ -17,19 +17,19 @@ COMMENT=	Extended Markdown processor with more features, written in C
 
 LICENSE=	MIT
 
-MM4_COMMIT=		b891584
+MM4_COMMIT=	b891584
 SUPPORT_COMMIT=	685c95c
 CHEAT_COMMIT=	199dae8
 GREG_COMMIT=	3f11f56
 
-WRKSRC=	${WRKDIR}/fletcher-MultiMarkdown-4-${MM4_COMMIT}
+WRKSRC=		${WRKDIR}/fletcher-MultiMarkdown-4-${MM4_COMMIT}
 
 ALL_TARGET=	${PORTNAME}
 
-OPTIONS_DEFINE=	CHEAT_SHEET EXTRAS HELPERS DOCS
+OPTIONS_DEFINE=		CHEAT_SHEET EXTRAS HELPERS DOCS
 CHEAT_SHEET_DESC=	HTML-based cheat sheat
-EXTRAS_DESC=	Extra scripts and XSLT support
-HELPERS_DESC=	Helper scripts (conflicts with emulators/mtools)
+EXTRAS_DESC=		Extra scripts and XSLT support
+HELPERS_DESC=		Helper scripts (conflicts with emulators/mtools)
 
 CHEAT_SHEET_DISTFILES=	human-markdown-reference-${CHEAT_COMMIT}${EXTRACT_SUFX}:cheat
 EXTRAS_DISTFILES=	MMD-Support-${SUPPORT_COMMIT}${EXTRACT_SUFX}:support
@@ -48,7 +48,7 @@ post-extract:
 .if ${PORT_OPTIONS:MEXTRAS}
 	@${MV} ${WRKDIR}/fletcher-MMD-Support-${SUPPORT_COMMIT}/* ${WRKSRC}/Support
 .endif
-	
+
 post-patch:
 	@${REINPLACE_CMD} -E "s/^(CFLAGS).+=/\1 \+=/" ${WRKSRC}/Makefile ${WRKSRC}/greg/Makefile
 	@${REINPLACE_CMD} -e "s,/usr/local,${PREFIX},g" ${WRKSRC}/scripts/*
@@ -63,7 +63,7 @@ pre-install:
 	@${FIND} ${WRKSRC}/cheat-sheet -type f -exec ${CHMOD} ${SHAREMODE} {} \;
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/multimarkdown ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/multimarkdown ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_SCRIPT} ${WRKSRC}/scripts/* ${STAGEDIR}${PREFIX}/bin
 
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
@@ -80,7 +80,7 @@ do-install:
 
 .if ${PORT_OPTIONS:MCHEAT_SHEET}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}/cheat-sheet
-	cd ${WRKSRC} && ${FIND} cheat-sheet | ${CPIO} -pdmu --quiet ${STAGEDIR}${DOCSDIR}
+	(cd ${WRKSRC} && ${COPYTREE_SHARE} cheat-sheet ${STAGEDIR}${DOCSDIR})
 .endif
 
 .include <bsd.port.mk>
