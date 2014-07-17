@@ -13,13 +13,13 @@ include/gmtk/gmtk_media_player.h
 include/gmtk/gmtk_media_tracker.h
 include/gmtk/gmtk_output_combo_box.h
 lib/libgmlib.a
-lib/libgmlib.la
 lib/libgmlib.so
 lib/libgmlib.so.1
+lib/libgmlib.so.1.0.8
 lib/libgmtk.a
-lib/libgmtk.la
 lib/libgmtk.so
 lib/libgmtk.so.1
+lib/libgmtk.so.1.0.8
 libdata/pkgconfig/gmlib.pc
 libdata/pkgconfig/gmtk.pc
 %%NLS%%share/locale/ar/LC_MESSAGES/gmtk.mo
