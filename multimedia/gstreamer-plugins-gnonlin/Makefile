@@ -4,6 +4,7 @@
 
 PORTNAME=	gstreamer-plugins-gnonlin
 PORTVERSION=	0.10.17
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	http://gstreamer.freedesktop.org/src/gnonlin/
 DISTNAME=	gnonlin-${PORTVERSION}
@@ -12,13 +13,12 @@ MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Gstreamer lib for writing non-linear audio and video
 
 CFLAGS:=	${CFLAGS} -O2 -Wno-format
-USES=		pkgconfig
-USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
+INSTALL_TARGET=	install-strip
+USES=		libtool pkgconfig tar:bzip2
 USE_GSTREAMER=	yes
 
-PLIST_FILES=	lib/gstreamer-0.10/libgnl.la \
-		lib/gstreamer-0.10/libgnl.so
+PLIST_FILES=	lib/gstreamer-0.10/libgnl.so
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-Wmissing-include-dirs||g' ${WRKSRC}/configure
