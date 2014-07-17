@@ -3,7 +3,7 @@
 
 PORTNAME=	nvi
 PORTVERSION=	1.79.20040608
-PORTREVISION=	2
+PORTREVISION=	3
 PORTEPOCH=	1
 CATEGORIES?=	editors
 MASTER_SITES=	ftp://ftp.mk.bsdclub.org/pub/FreeBSD/distfiles/	\
@@ -20,8 +20,11 @@ COMMENT=	Clone of vi/ex, with multilingual patch, no default settings
 PATCH_DIST_ARGS=	-d ${WRKSRC}/.. --forward --quiet -E -p0 -f
 WRKSRC=		${WRKDIR}/${DISTNAME}/build
 
+USES=		perl5
+USE_PERL5=	run
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	OPTFLAG='-D_PATH_SYSEXRC=\"${PREFIX}/etc/vi.exrc\"'
+CONFIGURE_ENV=	OPTFLAG='-D_PATH_SYSEXRC=\"${PREFIX}/etc/vi.exrc\"' \
+		vi_cv_path_perl=${PERL}
 CONFIGURE_ARGS=	--program-prefix=n
 
 OPTIONS_RADIO=	MULTIBYTE
