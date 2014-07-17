@@ -284,12 +284,12 @@ lib/gstreamermm-%%GST_VERSION%%/gen/m4/plugingen.m4
 lib/gstreamermm-%%GST_VERSION%%/gen/m4/plugingen_gstreamermm.m4
 lib/gstreamermm-%%GST_VERSION%%/gen/m4/shared.m4
 lib/gstreamermm-%%GST_VERSION%%/include/gstreamermmconfig.h
-lib/libgstreamermm-%%GST_VERSION%%.la
 lib/libgstreamermm-%%GST_VERSION%%.so
 lib/libgstreamermm-%%GST_VERSION%%.so.2
-lib/libgstreamermm_get_plugin_defs-%%GST_VERSION%%.la
+lib/libgstreamermm-%%GST_VERSION%%.so.2.0.1
 lib/libgstreamermm_get_plugin_defs-%%GST_VERSION%%.so
 lib/libgstreamermm_get_plugin_defs-%%GST_VERSION%%.so.2
+lib/libgstreamermm_get_plugin_defs-%%GST_VERSION%%.so.2.0.1
 libdata/pkgconfig/gstreamermm-%%GST_VERSION%%.pc
 @dirrm lib/gstreamermm-%%GST_VERSION%%/include
 @dirrm lib/gstreamermm-%%GST_VERSION%%/gen/m4
