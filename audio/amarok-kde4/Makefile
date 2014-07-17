@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	amarok
-PORTVERSION=	2.7.0
-PORTREVISION=	6
+PORTVERSION=	2.8.0
 CATEGORIES=	audio kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${PORTNAME}/${PORTVERSION}/src
@@ -34,12 +33,13 @@ USE_QT4=	corelib dbus designer gui network opengl \
 USE_XORG=	x11
 USE_BZIP2=	yes
 USES=		cmake pkgconfig shared-mime-info
+CFLAGS+=	-D__STDC_CONSTANT_MACROS
 USE_LDCONFIG=	yes
 
 BROKEN_sparc64=	does not build (GCC-related error)
 
 OPTIONS_DEFINE=	AMAZON IPOD MP3TUNES MTP NLS
-OPTIONS_DEFAULT=IPOD MP3TUNES MTP
+OPTIONS_DEFAULT=AMAZON IPOD MP3TUNES MTP
 OPTIONS_SUB=	yes
 
 AMAZON_DESC=		Amazon MP3 store support via clamz
