@@ -11,10 +11,9 @@ COMMENT=	OpenSSL-based signcode utility
 
 PLIST_FILES=	bin/osslsigncode
 
-USES=		gmake pkgconfig
+USES=		pkgconfig
 GNU_CONFIGURE=	yes
 USE_OPENSSL=	yes
-USE_AUTOTOOLS=	autoheader
 
 OPTIONS_DEFINE=		CURL GSF
 OPTIONS_DEFAULT=	CURL GSF
@@ -23,5 +22,8 @@ CURL_LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl
 GSF_DESC?=		GSF support (enables signing of e.g. MSI files)
 GSF_CONFIGURE_WITH=	gsf
 GSF_LIB_DEPENDS=	libgsf-1.so:${PORTSDIR}/devel/libgsf
+
+post-patch:
+	${TOUCH} ${WRKSRC}/stamp-h1 ${WRKSRC}/config.h.in
 
 .include <bsd.port.mk>
