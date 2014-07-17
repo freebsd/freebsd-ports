@@ -2,6 +2,7 @@
 
 PORTNAME=	pond
 PORTVERSION=	20140120
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://c-s.li/ports/
 DISTFILES=	pond-20140120.tar.gz \
