@@ -11,7 +11,7 @@ DISTNAME=	cjk-${PORTVERSION}
 DISTFILES=	${DISTNAME}.tar.gz
 
 MAINTAINER=	rafan@FreeBSD.org
-COMMENT=	A LaTeX2e macro package which enables the use of CJK scripts
+COMMENT=	LaTeX2e macro package which enables the use of CJK scripts
 
 RUN_DEPENDS=	zh-arphicttf>=0:${PORTSDIR}/chinese/arphicttf \
 		ttf2pk:${PORTSDIR}/print/freetype-tools

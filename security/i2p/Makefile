@@ -15,7 +15,7 @@ MASTER_SITES=	SF/${PORTNAME:tl}/${PORTVERSION} \
 DISTFILES=	i2psource_${PORTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	An anonymizing network
+COMMENT=	Anonymizing network
 
 LICENSE=	EULA
 LICENSE_NAME=	End User License Agreement

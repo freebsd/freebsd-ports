@@ -9,7 +9,7 @@ MASTER_SITES=	http://java.net/downloads/${PORTNAME}/
 DISTNAME=	PDFRenderer-full-${PORTVERSION}
 
 MAINTAINER=	ale@FreeBSD.org
-COMMENT=	A 100% Java PDF renderer and viewer
+COMMENT=	100% Java PDF renderer and viewer
 
 LICENSE=	LGPL21
 

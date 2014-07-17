@@ -8,7 +8,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	SF/relaxbsd/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A set of text menu based utilities for configuring RelaxBSD LiveCD
+COMMENT=	Set of text menu based utilities for configuring RelaxBSD LiveCD
 
 BUILD_DEPENDS=	cdialog:${PORTSDIR}/devel/cdialog
 RUN_DEPENDS=	cdialog:${PORTSDIR}/devel/cdialog \

@@ -7,7 +7,7 @@ MASTER_SITES=	RG
 DISTNAME=	pdf-writer-${PORTVERSION}
 
 MAINTAINER=	ruby@FreeBSD.org
-COMMENT=	A pure Ruby PDF document creation library
+COMMENT=	Pure Ruby PDF document creation library
 
 RUN_DEPENDS=	rubygem-color>=1.4.0:${PORTSDIR}/print/rubygem-color \
 		rubygem-transactionsimple>=1.4.0:${PORTSDIR}/devel/rubygem-transactionsimple

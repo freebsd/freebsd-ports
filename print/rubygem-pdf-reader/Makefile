@@ -7,7 +7,7 @@ CATEGORIES=	print rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
-COMMENT=	A PDF parser conforming as much as possible to the PDF specification
+COMMENT=	PDF parser conforming as much as possible to the PDF specification
 
 RUN_DEPENDS=	rubygem-afm>=0.2.0:${PORTSDIR}/print/rubygem-afm \
 		rubygem-ascii85>=1.0.0:${PORTSDIR}/devel/rubygem-ascii85 \

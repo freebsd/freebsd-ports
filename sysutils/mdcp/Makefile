@@ -7,7 +7,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/shine
 
 MAINTAINER=	wamonzyne@hotmail.com
-COMMENT=	A fastest utility for copy from a disk device for many
+COMMENT=	Fastest utility for copy from a disk device for many
 
 GNU_CONFIGURE=	yes
 USES=		gmake

@@ -8,7 +8,7 @@ MASTER_SITES=	http://archive.debian.org/debian/pool/main/i/ipsc/
 DISTNAME=	${PORTNAME}_${PORTVERSION}.orig
 
 MAINTAINER=	cy@FreeBSD.org
-COMMENT=	An IP Subnet Calculator
+COMMENT=	IP Subnet Calculator
 
 BUILD_DEPENDS=	${PRIPS_WRKSRC}/prips.o:${PORTSDIR}/sysutils/prips:build
 

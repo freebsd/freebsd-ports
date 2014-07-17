@@ -9,7 +9,7 @@ MASTER_SITES=	http://www.cgabriel.org/download/ssh-askpass-fullscreen/
 DISTNAME=	ssh-askpass-fullscreen-${PORTVERSION}
 
 MAINTAINER=	arved@FreeBSD.org
-COMMENT=	A tiny GTK2 ssh askpass replacement
+COMMENT=	Tiny GTK2 ssh askpass replacement
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

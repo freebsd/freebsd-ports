@@ -7,7 +7,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	http://people.collaborativefusion.com/~wmoran/code/jailme/
 
 MAINTAINER=	wmoran@collaborativefusion.com
-COMMENT=	A setuid version of jexec to allow normal users access to jails
+COMMENT=	setuid version of jexec to allow normal users access to jails
 
 PLIST_FILES=	sbin/jailme
 

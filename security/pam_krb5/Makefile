@@ -10,7 +10,7 @@ MASTER_SITES=		http://archives.eyrie.org/software/kerberos/ \
 DISTNAME=		pam-krb5-${PORTVERSION:S/.r/-rc/}
 
 MAINTAINER=		cy@FreeBSD.org
-COMMENT=		A Pluggable Authentication Module for Kerberos 5
+COMMENT=		Pluggable Authentication Module for Kerberos 5
 
 CONFLICTS=		pam_krb5-rh-2.*
 

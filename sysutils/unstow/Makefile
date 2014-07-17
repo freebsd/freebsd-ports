@@ -9,7 +9,7 @@ MASTER_SITES=	http://download.github.com/ \
 DISTNAME=	knu-stow-utils-885c88a
 
 MAINTAINER=	knu@FreeBSD.org
-COMMENT=	A script to unstow packages much faster than stow -D
+COMMENT=	Script to unstow packages much faster than stow -D
 
 NO_BUILD=	yes
 

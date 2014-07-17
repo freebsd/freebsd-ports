@@ -8,7 +8,7 @@ MASTER_SITES=	http://www.mesa.nl/pub/dvi2tty/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A dvi-file previewer for text only devices
+COMMENT=	dvi-file previewer for text only devices
 
 CONFLICTS=	ja-dvi2tty-[0-9]*
 

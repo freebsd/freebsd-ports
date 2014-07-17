@@ -7,7 +7,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	http://www.exit.com/Archives/FreeBSD/
 
 MAINTAINER=	sten@blinkenlights.nl
-COMMENT=	A utility to recover UFS2 filesystems
+COMMENT=	Utility to recover UFS2 filesystems
 
 USE_BZIP2=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}

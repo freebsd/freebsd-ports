@@ -12,7 +12,7 @@ PATCHFILES=	SVMLight.patch
 PATCH_DIST_STRIP=-p1
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	An implementation of Support Vector Machines (SVMs) in C
+COMMENT=	Implementation of Support Vector Machines (SVMs) in C
 
 RESTRICTED=	only for education and research
 

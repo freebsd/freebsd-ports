@@ -9,7 +9,7 @@ PKGNAMEPREFIX=	php-
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ale@FreeBSD.org
-COMMENT=	A PHP extension that implements high-level protections
+COMMENT=	PHP extension that implements high-level protections
 
 LICENSE=	PHP301
 

@@ -9,7 +9,7 @@ MASTER_SITE_SUBDIR=	CPAN:OSALAUN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	fw@moov.de
-COMMENT=	A Perl API to Yale's Central Authentication System (CAS)
+COMMENT=	Perl API to Yale's Central Authentication System (CAS)
 
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual

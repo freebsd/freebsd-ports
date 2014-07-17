@@ -12,7 +12,7 @@ DISTFILES=	${DOC_FILES} logpap.dtx logpap.ins
 DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	hrs@FreeBSD.org
-COMMENT=	A LaTeX package for drawing logarithmic graph paper
+COMMENT=	LaTeX package for drawing logarithmic graph paper
 
 PLIST_SUB=	TEXMFLOCAL=${TEXMFLOCAL} MKTEXLSR=${MKTEXLSR} \
 		CLASSDIR=${CLASSDIR}

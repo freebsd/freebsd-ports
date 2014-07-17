@@ -8,7 +8,7 @@ CATEGORIES=	science
 MASTER_SITES=	http://www.aero.polimi.it/~masarati/Download/mbdyn/
 
 MAINTAINER=	maho@FreeBSD.org
-COMMENT=	A MultiBody Dynamics analysis system
+COMMENT=	MultiBody Dynamics analysis system
 
 LICENSE=	GPLv2
 

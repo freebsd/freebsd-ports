@@ -8,7 +8,7 @@ MASTER_SITES=	${MASTER_SITE_BERLIOS}
 MASTER_SITE_SUBDIR=	bmp-plugins
 
 MAINTAINER=	novel@FreeBSD.org
-COMMENT=	A colorized df
+COMMENT=	Colorized df
 
 PLIST_FILES=	bin/cdf
 

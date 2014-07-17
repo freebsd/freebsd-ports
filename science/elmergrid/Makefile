@@ -8,7 +8,7 @@ CATEGORIES=	science
 MASTER_SITES=	http://garr.dl.sourceforge.net/sourceforge/elmerfem/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A Mesh Manipulation Utility for use with the ELMER FEM package
+COMMENT=	Mesh Manipulation Utility for use with the ELMER FEM package
 
 ALL_TARGET=
 GNU_CONFIGURE=	yes

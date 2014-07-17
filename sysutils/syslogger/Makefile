@@ -7,7 +7,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	http://oav.net/projects/syslogger/
 
 MAINTAINER=	kiwi@oav.net
-COMMENT=	A logger(1) like tool that sends file or pipe througth syslog
+COMMENT=	Logger(1) like tool that sends file or pipe througth syslog
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 

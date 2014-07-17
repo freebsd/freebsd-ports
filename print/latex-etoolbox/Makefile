@@ -11,7 +11,7 @@ DISTNAME=	${PORTNAME}
 DIST_SUBDIR=	${PORTNAME}/${DISTVERSION}
 
 MAINTAINER=	idolum@users.sourceforge.net
-COMMENT=	A toolbox providing programming facilities for LaTeX
+COMMENT=	Toolbox providing programming facilities for LaTeX
 
 USES=		zip
 USE_TEX=	latex

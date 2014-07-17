@@ -7,7 +7,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${DISTVERSION}/
 
 MAINTAINER=	nobutaka@FreeBSD.org
-COMMENT=	An enhanced dd tool with MD5 hashing capability
+COMMENT=	Enhanced dd tool with MD5 hashing capability
 
 GNU_CONFIGURE=	yes
 

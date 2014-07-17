@@ -7,7 +7,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	ftp://segfault.kiev.ua/pub/
 
 MAINTAINER=	netch@segfault.kiev.ua
-COMMENT=	A simple command-line GPT partition editor
+COMMENT=	Simple command-line GPT partition editor
 
 PLIST_FILES=	bin/gpte \
 		man/man8/gpte.8.gz

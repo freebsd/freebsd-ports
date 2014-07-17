@@ -10,7 +10,7 @@ MASTER_SITE_SUBDIR=	CPAN:NCLEATON
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	jeffrey@goldmark.org
-COMMENT=	A perl5 module providing access to lchown(2)
+COMMENT=	Perl5 module providing access to lchown(2)
 
 USES=		perl5
 USE_PERL5=	modbuild

@@ -8,7 +8,7 @@ CATEGORIES=	science
 MASTER_SITES=	http://ab-initio.mit.edu/${PORTNAME}/
 
 MAINTAINER=	aehlig@linta.de
-COMMENT=	A set of utilities for visualization and conversion of HDF5 format
+COMMENT=	Set of utilities for visualization and conversion of HDF5 format
 
 LICENSE=	MIT GPLv2
 LICENSE_COMB=	multi

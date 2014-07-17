@@ -10,7 +10,7 @@ DISTFILES=	supertabular.dtx supertabular.ins ${DOC_FILES}
 DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	niedbalski@gmail.com
-COMMENT=	A LaTeX package for a tabular that spans multiple pages
+COMMENT=	LaTeX package for a tabular that spans multiple pages
 
 USE_TEX=	latex
 PLIST_SUB=	TEXMFLOCAL=${TEXMFLOCAL} MKTEXLSR=${MKTEXLSR} \

@@ -7,7 +7,7 @@ CATEGORIES=	security
 MASTER_SITES=	http://peff.net/tinysu/
 
 MAINTAINER= ports@FreeBSD.org
-COMMENT=	A featureless replacement for su and sudo
+COMMENT=	Featureless replacement for su and sudo
 
 PLIST_FILES=	bin/tinysu
 

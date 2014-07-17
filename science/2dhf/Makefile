@@ -10,7 +10,7 @@ DISTNAME=	${PORTNAME}-05.05
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	maho@FreeBSD.org
-COMMENT=	A Numerical Hartree-Fock Program for Diatomic Molecules
+COMMENT=	Numerical Hartree-Fock Program for Diatomic Molecules
 
 BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash
 .if defined(WITH_INTEL)

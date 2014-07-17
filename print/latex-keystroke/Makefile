@@ -12,7 +12,7 @@ DIST_SUBDIR=	${PORTNAME}
 EXTRACT_ONLY=	#empty
 
 MAINTAINER=	hrs@FreeBSD.org
-COMMENT=	A LaTeX package for the graphical representation of the keys
+COMMENT=	LaTeX package for the graphical representation of the keys
 
 USE_TEX=	latex
 NO_BUILD=	YES

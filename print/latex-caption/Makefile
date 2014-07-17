@@ -12,7 +12,7 @@ DISTFILES=	${SRC_FILES} ${PORTDOCS}
 DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	hrs@FreeBSD.org
-COMMENT=	A LaTeX package that supports customization of captions
+COMMENT=	LaTeX package that supports customization of captions
 
 USE_TEX=	latex
 PLIST_SUB=	MKTEXLSR=${MKTEXLSR} \

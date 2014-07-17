@@ -9,7 +9,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A simple curses-based editor for BibTeX bibliography files
+COMMENT=	Simple curses-based editor for BibTeX bibliography files
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 

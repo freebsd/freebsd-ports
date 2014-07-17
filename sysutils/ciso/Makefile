@@ -8,7 +8,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	SF
 
 MAINTAINER=	blttll@gmail.com
-COMMENT=	A tool to compress ISO images to CSO format
+COMMENT=	Tool to compress ISO images to CSO format
 
 USES=		dos2unix
 PLIST_FILES=	bin/ciso

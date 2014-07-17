@@ -7,7 +7,7 @@ CATEGORIES=	security
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	zeus@ix.netcom.com
-COMMENT=	A web-based firewall log analyzer
+COMMENT=	Web-based firewall log analyzer
 
 LICENSE=	GPLv2
 

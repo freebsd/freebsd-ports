@@ -9,7 +9,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	mahlon@martini.nu
-COMMENT=	An object oriented perl interface to jail(2)
+COMMENT=	Object oriented perl interface to jail(2)
 
 BUILD_DEPENDS=	p5-Inline>=0:${PORTSDIR}/devel/p5-Inline
 

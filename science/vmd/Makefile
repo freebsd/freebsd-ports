@@ -13,7 +13,7 @@ DISTFILES=		${VMD_DIST} \
 			${STRIDE_DIST}:stride
 
 MAINTAINER=		bjk@FreeBSD.org
-COMMENT=		A molecular visualization program
+COMMENT=	Molecular visualization program
 
 BUILD_DEPENDS=		makedepend:${PORTSDIR}/devel/makedepend \
 			${PYNUMERIC}

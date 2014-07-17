@@ -9,7 +9,7 @@ MASTER_SITE_SUBDIR=	CPAN:CGRAU
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	fw@moov.de
-COMMENT=	A random password generator
+COMMENT=	Random password generator
 
 USES=		perl5
 USE_PERL5=	configure

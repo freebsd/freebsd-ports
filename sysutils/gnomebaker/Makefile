@@ -9,7 +9,7 @@ MASTER_SITES=		SF
 DIST_SUBDIR=		gnome2
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=		A CD/DVD recording GUI for Gnome
+COMMENT=		CD/DVD recording GUI for Gnome
 
 OPTIONS_DEFINE=		DVD
 DVD_DESC=		DVD support

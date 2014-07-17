@@ -10,7 +10,7 @@ DISTNAME=	${PORTNAME}-rb-${PORTVERSION}
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	osho@pcc-software.org
-COMMENT=	A Ruby extension library which implements Camellia encryption
+COMMENT=	Ruby extension library which implements Camellia encryption
 
 USE_RUBY=	yes
 USE_RUBY_SETUP=	yes

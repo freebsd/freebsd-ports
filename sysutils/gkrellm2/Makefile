@@ -10,7 +10,7 @@ MASTER_SITE_SUBDIR=	ume
 PKGNAMESUFFIX=	2
 
 MAINTAINER=	ume@FreeBSD.org
-COMMENT=	A GTK based system monitor
+COMMENT=	GTK based system monitor
 
 LICENSE=	GPLv3
 

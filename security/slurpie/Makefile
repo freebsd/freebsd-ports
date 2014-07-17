@@ -10,7 +10,7 @@ DISTNAME=	${PORTNAME}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A passwd file cracker (supports distributed nodes)
+COMMENT=	Passwd file cracker (supports distributed nodes)
 
 PLIST_FILES=	sbin/slurp sbin/slurpie
 PORTDOCS=	README

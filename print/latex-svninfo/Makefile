@@ -11,7 +11,7 @@ MASTER_SITE_SUBDIR=	brix
 PKGNAMEPREFIX=	latex-
 
 MAINTAINER=	brix@FreeBSD.org
-COMMENT=	A LaTeX package for Subversion support
+COMMENT=	LaTeX package for Subversion support
 
 LICENSE=	LPPL10
 

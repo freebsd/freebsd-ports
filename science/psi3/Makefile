@@ -17,7 +17,7 @@ DIST_SUBDIR=	psi3
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	maho@FreeBSD.org
-COMMENT=	An electronic structure programs for high-accuracy computations
+COMMENT=	Electronic structure programs for high-accuracy computations
 
 BROKEN=		Fails to build
 

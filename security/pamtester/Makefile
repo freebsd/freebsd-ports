@@ -7,7 +7,7 @@ CATEGORIES=	security
 MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A command line pam authentication tester
+COMMENT=	Command line pam authentication tester
 
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	${CFLAGS}

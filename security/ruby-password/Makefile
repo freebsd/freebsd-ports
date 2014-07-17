@@ -11,7 +11,7 @@ DISTNAME=	ruby-${PORTNAME}-${PORTVERSION}
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	ruby@FreeBSD.org
-COMMENT=	A Ruby library to create, verify, and manipulate passwords
+COMMENT=	Ruby library to create, verify, and manipulate passwords
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 LIB_DEPENDS=	libcrack.so:${PORTSDIR}/security/cracklib

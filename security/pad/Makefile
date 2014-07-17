@@ -10,7 +10,7 @@ MASTER_SITES=	http://keyserver.kjsl.com/~jharris/distfiles/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	jharris@widomaker.com
-COMMENT=	A command-line utility to encrypt files
+COMMENT=	Command-line utility to encrypt files
 
 GNU_CONFIGURE=	yes
 USE_OPENSSL=	yes

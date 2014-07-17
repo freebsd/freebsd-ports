@@ -10,7 +10,7 @@ MASTER_SITES=	http://mirror.inerd.com/FreeBSD/distfiles/${PORTNAME}/	\
 		http://www.inerd.com/software/${PORTNAME}/
 
 MAINTAINER=	shaun@FreeBSD.org
-COMMENT=	A tool to scan for new versions of FreeBSD ports
+COMMENT=	Tool to scan for new versions of FreeBSD ports
 
 OPTIONS_DEFINE=	SQLITE3 DOCS
 SQLITE3_DESC=	Use SQLite backend instead of PostgreSQL

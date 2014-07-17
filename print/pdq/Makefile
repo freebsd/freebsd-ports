@@ -9,7 +9,7 @@ MASTER_SITES=	http://pdq.sourceforge.net/ftp/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A straightforward, flexible print subsystem
+COMMENT=	Straightforward, flexible print subsystem
 
 USE_GNOME=	gtk12
 GNU_CONFIGURE=	yes

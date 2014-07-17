@@ -8,7 +8,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	http://www.bayofrum.net/dist/${PORTNAME}/
 
 MAINTAINER=	crees@FreeBSD.org
-COMMENT=	A text pager with autoscrolling and more
+COMMENT=	Text pager with autoscrolling and more
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

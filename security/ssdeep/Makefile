@@ -8,7 +8,7 @@ CATEGORIES=	security
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	nobutaka@FreeBSD.org
-COMMENT=	A tool for computing context triggered piecewise hashes
+COMMENT=	Tool for computing context triggered piecewise hashes
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

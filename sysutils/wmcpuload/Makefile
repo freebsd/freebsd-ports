@@ -8,7 +8,7 @@ CATEGORIES=	sysutils windowmaker
 MASTER_SITES=	http://seiichisato.jp/dockapps/src/
 
 MAINTAINER=	xride@FreeBSD.org
-COMMENT=	An "lcd" dockapp for windowmaker, which displays the current cpuload
+COMMENT=	"lcd" dockapp for windowmaker, which displays the current cpuload
 
 USES=		tar:bzip2
 USE_XORG=	xpm

@@ -10,7 +10,7 @@ EXTRACT_SUFX=	#
 EXTRACT_ONLY=	#
 
 MAINTAINER=	gaod@hychen.org
-COMMENT=	A bash script to run sudo command on multiple remote computers
+COMMENT=	Bash script to run sudo command on multiple remote computers
 
 LICENSE=	GPLv3
 

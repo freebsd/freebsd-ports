@@ -8,7 +8,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	http://www.ohse.de/uwe/uschedule/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A scheduler program, designed to replace cron(8) and at(1)
+COMMENT=	Scheduler program, designed to replace cron(8) and at(1)
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/tai64nlocal:${PORTSDIR}/sysutils/daemontools
 RUN_DEPENDS=	${LOCALBASE}/bin/multilog:${PORTSDIR}/sysutils/daemontools

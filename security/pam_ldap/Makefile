@@ -10,7 +10,7 @@ MASTER_SITES=	http://www.padl.com/download/ \
 DISTNAME=	pam_ldap-${PORTVERSION:S/.//g}
 
 MAINTAINER=	marcus@FreeBSD.org
-COMMENT=	A pam module for authenticating with LDAP
+COMMENT=	Pam module for authenticating with LDAP
 
 GNU_CONFIGURE=	yes
 USE_OPENLDAP=	yes

@@ -11,7 +11,7 @@ DISTNAME=	ruby-${PORTNAME}-${PORTVERSION}
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	ruby@FreeBSD.org
-COMMENT=	A Ruby extension library to access Panda
+COMMENT=	Ruby extension library to access Panda
 
 BROKEN=		not staged
 

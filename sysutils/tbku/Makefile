@@ -7,7 +7,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	http://www.tundraware.com/Software/tbku/
 
 MAINTAINER=	tbku@tundraware.com
-COMMENT=	A Tool For Incremental And Imaging Backups
+COMMENT=	Tool For Incremental And Imaging Backups
 
 OPTIONS_DEFINE=	DOCS
 

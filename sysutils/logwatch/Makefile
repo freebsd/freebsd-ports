@@ -7,7 +7,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	trix@basement.net
-COMMENT=	A log file analysis program
+COMMENT=	Log file analysis program
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

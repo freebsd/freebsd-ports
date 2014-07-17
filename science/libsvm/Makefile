@@ -9,7 +9,7 @@ MASTER_SITES=	http://www.csie.ntu.edu.tw/~cjlin/libsvm/ \
 DISTNAME=	${PORTNAME}-${PORTVERSION:C/0$//}
 
 MAINTAINER=	rafan@FreeBSD.org
-COMMENT=	A library for Support Vector Machines
+COMMENT=	Library for Support Vector Machines
 
 LICENSE=	BSD
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT

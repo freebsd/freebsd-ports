@@ -7,7 +7,7 @@ CATEGORIES=	print
 MASTER_SITES=	http://www.panix.com/~mbh/pscal/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A utility for generating Postscript calendars
+COMMENT=	Utility for generating Postscript calendars
 
 NO_BUILD=	yes
 PLIST_FILES=	bin/pscal
