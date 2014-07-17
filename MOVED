@@ -6257,3 +6257,4 @@ net/linphone-base||2014-07-14|Split into separate components
 databases/py-simplecouchdb||2014-07-15|Has expired: Obsolete, abandoned
 audio/xmms-bonk||2014-07-15|Has expired: Obsolete experimental codec, use audio/flac or audio/wavpack
 audio/bonk||2014-07-15|Has expired: Obsolete experimental codec, use audio/flac or audio/wavpack
+sysutils/gtk-send-pr||2014-07-17|Has expired: Obsolete after migration to Bugzilla
