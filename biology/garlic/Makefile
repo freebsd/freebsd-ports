@@ -3,6 +3,7 @@
 
 PORTNAME=	garlic
 PORTVERSION=	1.6
+PORTREVISION=	1
 CATEGORIES=	biology
 MASTER_SITES=	http://www.zucic.org/sources/garlic-${PORTVERSION}/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
@@ -36,19 +37,16 @@ post-patch:
 	s|%%CFLAGS%%|${CFLAGS}|g'  ${WRKSRC}/Makefile
 
 do-install:
-	${MKDIR} ${STAGEDIR}${DATADIR}
+	@${MKDIR} ${STAGEDIR}${DATADIR} ${STAGEDIR}${EXAMPLESDIR} \
+		${STAGEDIR}${DOCSDIR} ${WRKDIR}/doc
 	${INSTALL_PROGRAM} ${WRKSRC}/garlic       ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_DATA}    ${WRKSRC}/.garlicrc    ${STAGEDIR}${DATADIR}
 	${INSTALL_DATA}    ${WRKSRC}/residues.pdb ${STAGEDIR}${DATADIR}
-	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA}    ${WRKSRC}/*.pdb        ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA}    ${WRKSRC}/*.script     ${STAGEDIR}${EXAMPLESDIR}
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	@${MKDIR} ${STAGEDIR}${WRKDIR}/doc
-	(cd ${WRKDIR}/doc ; ${TAR} xfz ${DISTDIR}/${DISTNAME}-doc${EXTRACT_SUFX} )
+	(cd ${WRKDIR}/doc ; \
+		${TAR} -xzf ${DISTDIR}/${DISTNAME}-doc${EXTRACT_SUFX} )
 	${TAR} -C ${WRKDIR}/doc/${DISTNAME} -cf - .  | \
 		${TAR} -C ${STAGEDIR}${DOCSDIR} -xf -
-	${FIND} ${STAGEDIR}${DOCSDIR} | ${XARGS} ${CHOWN} ${SHAREOWN}:${SHAREGRP}
-	${FIND} ${STAGEDIR}${DOCSDIR} -type f | ${XARGS} ${CHMOD} ${SHAREMODE}
 
 .include <bsd.port.mk>
