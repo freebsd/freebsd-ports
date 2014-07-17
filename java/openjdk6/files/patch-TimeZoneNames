@@ -216,7 +216,16 @@
              {"America/St_Kitts", AST},
              {"America/St_Lucia", AST},
              {"America/St_Thomas", AST},
-@@ -503,6 +518,7 @@
+@@ -462,6 +477,8 @@
+             {"Antarctica/South_Pole", NZST},
+             {"Antarctica/Syowa", new String[] {"Syowa Time", "SYOT",
+                                                "Syowa Summer Time", "SYOST"}},
++            {"Antarctica/Troll", new String[] {"Coordinated Universal Time", "UTC",
++                                               "Central European Summer Time", "CEST"}},
+             {"Antarctica/Vostok", new String[] {"Vostok Time", "VOST",
+                                                 "Vostok Summer Time", "VOSST"}},
+             {"Arctic/Longyearbyen", CET},
+@@ -503,6 +520,7 @@
                                              "Tajikistan Summer Time", "TJST"}},
              {"Asia/Gaza", EET},
              {"Asia/Harbin", CTT},
@@ -224,7 +233,7 @@
              {"Asia/Ho_Chi_Minh", ICT},
              {"Asia/Hong_Kong", HKT},
              {"Asia/Hovd", new String[] {"Hovd Time", "HOVT",
-@@ -511,7 +527,7 @@
+@@ -511,7 +529,7 @@
                                             "Irkutsk Summer Time", "IRKST"}},
              {"Asia/Istanbul", EET},
              {"Asia/Jakarta", WIT},
@@ -233,7 +242,7 @@
                                              "East Indonesia Summer Time", "EIST"}},
              {"Asia/Kabul", new String[] {"Afghanistan Time", "AFT",
                                           "Afghanistan Summer Time", "AFST"}},
-@@ -521,6 +537,8 @@
+@@ -521,6 +539,8 @@
              {"Asia/Kashgar", CTT},
              {"Asia/Kathmandu", NPT},
              {"Asia/Katmandu", NPT},
@@ -242,7 +251,7 @@
              {"Asia/Kolkata", IST},
              {"Asia/Krasnoyarsk", new String[] {"Krasnoyarsk Time", "KRAT",
                                                 "Krasnoyarsk Summer Time", "KRAST"}},
-@@ -569,11 +587,11 @@
+@@ -569,11 +589,11 @@
              {"Asia/Ulaanbaatar", ULAT},
              {"Asia/Ulan_Bator", ULAT},
              {"Asia/Urumqi", CTT},
@@ -258,7 +267,7 @@
              {"Asia/Yekaterinburg", new String[] {"Yekaterinburg Time", "YEKT",
                                                   "Yekaterinburg Summer Time", "YEKST"}},
              {"Asia/Yerevan", ARMT},
-@@ -619,7 +637,7 @@
+@@ -619,7 +639,7 @@
              {"Australia/Yancowinna", BROKEN_HILL},
              {"BET", BRT},
              {"BST", BDT},
@@ -267,7 +276,7 @@
              {"Brazil/DeNoronha", NORONHA},
              {"Brazil/East", BRT},
              {"Brazil/West", AMT},
-@@ -657,6 +675,7 @@
+@@ -657,6 +677,7 @@
              {"Europe/Bratislava", CET},
              {"Europe/Brussels", CET},
              {"Europe/Budapest", CET},
@@ -275,7 +284,7 @@
              {"Europe/Chisinau", EET},
              {"Europe/Copenhagen", CET},
              {"Europe/Dublin", DUBLIN},
-@@ -666,7 +685,7 @@
+@@ -666,7 +687,7 @@
              {"Europe/Isle_of_Man", GMTBST},
              {"Europe/Istanbul", EET},
              {"Europe/Jersey", GMTBST},
@@ -284,7 +293,7 @@
              {"Europe/Kiev", EET},
              {"Europe/Lisbon", WET},
              {"Europe/Ljubljana", CET},
-@@ -675,7 +694,7 @@
+@@ -675,7 +696,7 @@
              {"Europe/Madrid", CET},
              {"Europe/Malta", CET},
              {"Europe/Mariehamn", EET},
@@ -293,7 +302,16 @@
              {"Europe/Monaco", CET},
              {"Europe/Moscow", MSK},
              {"Europe/Nicosia", EET},
-@@ -755,6 +774,7 @@
+@@ -688,7 +709,7 @@
+                                             "Samara Summer Time", "SAMST"}},
+             {"Europe/San_Marino", CET},
+             {"Europe/Sarajevo", CET},
+-            {"Europe/Simferopol", EET},
++            {"Europe/Simferopol", MSK},
+             {"Europe/Skopje", CET},
+             {"Europe/Sofia", EET},
+             {"Europe/Stockholm", CET},
+@@ -755,6 +776,7 @@
              {"Pacific/Apia", WST_SAMOA},
              {"Pacific/Auckland", NZST},
              {"Pacific/Chatham", CHAST},
@@ -301,7 +319,7 @@
              {"Pacific/Easter", EASTER},
              {"Pacific/Efate", new String[] {"Vanuatu Time", "VUT",
                                              "Vanuatu Summer Time", "VUST"}},
-@@ -793,8 +813,8 @@
+@@ -793,8 +815,8 @@
              {"Pacific/Palau", new String[] {"Palau Time", "PWT",
                                              "Palau Summer Time", "PWST"}},
              {"Pacific/Pitcairn", PITCAIRN},
@@ -312,7 +330,7 @@
              {"Pacific/Port_Moresby", new String[] {"Papua New Guinea Time", "PGT",
                                                     "Papua New Guinea Summer Time", "PGST"}},
              {"Pacific/Rarotonga", new String[] {"Cook Is. Time", "CKT",
-@@ -807,12 +827,12 @@
+@@ -807,12 +829,12 @@
                                               "Gilbert Is. Summer Time", "GILST"}},
              {"Pacific/Tongatapu", new String[] {"Tonga Time", "TOT",
                                                  "Tonga Summer Time", "TOST"}},
@@ -610,7 +628,16 @@
              {"Antarctica/Mawson", new String[] {"Mawson Zeit", "MAWT",
                                                  "Mawson Sommerzeit", "MAWST"}},
              {"Antarctica/McMurdo", NZST},
-@@ -500,6 +518,7 @@
+@@ -459,6 +477,8 @@
+             {"Antarctica/South_Pole", NZST},
+             {"Antarctica/Syowa", new String[] {"Syowa Zeit", "SYOT",
+                                                "Syowa Sommerzeit", "SYOST"}},
++            {"Antarctica/Troll", new String[] {"Koordinierte Universalzeit", "UTC",
++                                               "Mitteleurop\u00e4ische Sommerzeit", "MESZ"}},
+             {"Antarctica/Vostok", new String[] {"Vostok Zeit", "VOST",
+                                                 "Vostok Sommerzeit", "VOSST"}},
+             {"Arctic/Longyearbyen", CET},
+@@ -500,6 +520,7 @@
                                              "Tadschikische Sommerzeit", "TJST"}},
              {"Asia/Gaza", EET},
              {"Asia/Harbin", CTT},
@@ -618,7 +645,7 @@
              {"Asia/Ho_Chi_Minh", ICT},
              {"Asia/Hong_Kong", HKT},
              {"Asia/Hovd", new String[] {"Hovd Zeit", "HOVT",
-@@ -508,7 +527,7 @@
+@@ -508,7 +529,7 @@
                                             "Irkutsk Sommerzeit", "IRKST"}},
              {"Asia/Istanbul", EET},
              {"Asia/Jakarta", WIT},
@@ -627,7 +654,7 @@
                                              "Ostindonesische Sommerzeit", "EIST"}},
              {"Asia/Kabul", new String[] {"Afghanistanische Zeit", "AFT",
                                           "Afghanistanische Sommerzeit", "AFST"}},
-@@ -518,6 +537,8 @@
+@@ -518,6 +539,8 @@
              {"Asia/Kashgar", CTT},
              {"Asia/Kathmandu", NPT},
              {"Asia/Katmandu", NPT},
@@ -636,7 +663,7 @@
              {"Asia/Kolkata", IST},
              {"Asia/Krasnoyarsk", new String[] {"Krasnojarsker Zeit", "KRAT",
                                                 "Krasnojarsker Sommerzeit", "KRAST"}},
-@@ -566,11 +587,11 @@
+@@ -566,11 +589,11 @@
              {"Asia/Ulaanbaatar", ULAT},
              {"Asia/Ulan_Bator", ULAT},
              {"Asia/Urumqi", CTT},
@@ -652,7 +679,7 @@
              {"Asia/Yekaterinburg", new String[] {"Jekaterinburger Zeit", "YEKT",
                                                   "Jekaterinburger Sommerzeit", "YEKST"}},
              {"Asia/Yerevan", ARMT},
-@@ -597,8 +618,8 @@
+@@ -597,8 +620,8 @@
              {"Australia/Canberra", EST_NSW},
              {"Australia/Currie", EST_NSW},
              {"Australia/Darwin", DARWIN},
@@ -663,7 +690,7 @@
              {"Australia/Hobart", TASMANIA},
              {"Australia/LHI", LORD_HOWE},
              {"Australia/Lindeman", BRISBANE},
-@@ -616,7 +637,7 @@
+@@ -616,7 +639,7 @@
              {"Australia/Yancowinna", BROKEN_HILL},
              {"BET", BRT},
              {"BST", BDT},
@@ -672,7 +699,7 @@
              {"Brazil/DeNoronha", NORONHA},
              {"Brazil/East", BRT},
              {"Brazil/West", AMT},
-@@ -654,6 +675,7 @@
+@@ -654,6 +677,7 @@
              {"Europe/Bratislava", CET},
              {"Europe/Brussels", CET},
              {"Europe/Budapest", CET},
@@ -680,7 +707,7 @@
              {"Europe/Chisinau", EET},
              {"Europe/Copenhagen", CET},
              {"Europe/Dublin", DUBLIN},
-@@ -663,7 +685,7 @@
+@@ -663,7 +687,7 @@
              {"Europe/Isle_of_Man", GMTBST},
              {"Europe/Istanbul", EET},
              {"Europe/Jersey", GMTBST},
@@ -689,7 +716,7 @@
              {"Europe/Kiev", EET},
              {"Europe/Lisbon", WET},
              {"Europe/Ljubljana", CET},
-@@ -672,7 +694,7 @@
+@@ -672,7 +696,7 @@
              {"Europe/Madrid", CET},
              {"Europe/Malta", CET},
              {"Europe/Mariehamn", EET},
@@ -698,7 +725,16 @@
              {"Europe/Monaco", CET},
              {"Europe/Moscow", MSK},
              {"Europe/Nicosia", EET},
-@@ -752,6 +774,7 @@
+@@ -685,7 +709,7 @@
+                                             "Samarische Sommerzeit", "SAMST"}},
+             {"Europe/San_Marino", CET},
+             {"Europe/Sarajevo", CET},
+-            {"Europe/Simferopol", EET},
++            {"Europe/Simferopol", MSK},
+             {"Europe/Skopje", CET},
+             {"Europe/Sofia", EET},
+             {"Europe/Stockholm", CET},
+@@ -752,6 +776,7 @@
              {"Pacific/Apia", WST_SAMOA},
              {"Pacific/Auckland", NZST},
              {"Pacific/Chatham", CHAST},
@@ -706,7 +742,7 @@
              {"Pacific/Easter", EASTER},
              {"Pacific/Efate", new String[] {"Vanuatu Zeit", "VUT",
                                              "Vanuatu Sommerzeit", "VUST"}},
-@@ -790,8 +813,8 @@
+@@ -790,8 +815,8 @@
              {"Pacific/Palau", new String[] {"Palau Zeit", "PWT",
                                              "Palau Sommerzeit", "PWST"}},
              {"Pacific/Pitcairn", PITCAIRN},
@@ -717,7 +753,7 @@
              {"Pacific/Port_Moresby", new String[] {"Papua-Neuguinea Zeit", "PGT",
                                                     "Papua-Neuguinea Sommerzeit", "PGST"}},
              {"Pacific/Rarotonga", new String[] {"Cook-Inseln Zeit", "CKT",
-@@ -804,12 +827,12 @@
+@@ -804,12 +829,12 @@
                                               "Gilbert-Inseln Sommerzeit", "GILST"}},
              {"Pacific/Tongatapu", new String[] {"Tonga Zeit", "TOT",
                                                  "Tonga Sommerzeit", "TOST"}},
@@ -1010,7 +1046,16 @@
              {"Antarctica/Mawson", new String[] {"Hora de Mawson", "MAWT",
                                                  "Hora de verano de Mawson", "MAWST"}},
              {"Antarctica/McMurdo", NZST},
-@@ -500,6 +518,7 @@
+@@ -459,6 +477,8 @@
+             {"Antarctica/South_Pole", NZST},
+             {"Antarctica/Syowa", new String[] {"Hora de Syowa", "SYOT",
+                                                "Hora de verano de Syowa", "SYOST"}},
++            {"Antarctica/Troll", new String[] {"Hora Universal Coordinada", "UTC",
++                                               "Hora de verano de Europa Central", "CEST"}},
+             {"Antarctica/Vostok", new String[] {"Hora de Vostok", "VOST",
+                                                 "Hora de verano de Vostok", "VOSST"}},
+             {"Arctic/Longyearbyen", CET},
+@@ -500,6 +520,7 @@
                                              "Hora de verano de Tajikist\u00e1n", "TJST"}},
              {"Asia/Gaza", EET},
              {"Asia/Harbin", CTT},
@@ -1018,7 +1063,7 @@
              {"Asia/Ho_Chi_Minh", ICT},
              {"Asia/Hong_Kong", HKT},
              {"Asia/Hovd", new String[] {"Hora de Hovd", "HOVT",
-@@ -508,7 +527,7 @@
+@@ -508,7 +529,7 @@
                                             "Hora de verano de Irkutsk", "IRKST"}},
              {"Asia/Istanbul", EET},
              {"Asia/Jakarta", WIT},
@@ -1027,7 +1072,7 @@
                                              "Hora de verano de Indonesia Oriental", "EIST"}},
              {"Asia/Kabul", new String[] {"Hora de Afganist\u00e1n", "AFT",
                                           "Hora de verano de Afganist\u00e1n", "AFST"}},
-@@ -518,6 +537,8 @@
+@@ -518,6 +539,8 @@
              {"Asia/Kashgar", CTT},
              {"Asia/Kathmandu", NPT},
              {"Asia/Katmandu", NPT},
@@ -1036,7 +1081,7 @@
              {"Asia/Kolkata", IST},
              {"Asia/Krasnoyarsk", new String[] {"Hora de Krasnoyarsk", "KRAT",
                                                 "Hora de verano de Krasnoyarsk", "KRAST"}},
-@@ -533,7 +554,6 @@
+@@ -533,7 +556,6 @@
                                            "Hora de verano de Filipinas", "PHST"}},
              {"Asia/Muscat", GST},
              {"Asia/Nicosia", EET},
@@ -1044,7 +1089,7 @@
              {"Asia/Novokuznetsk", NOVT},
              {"Asia/Novosibirsk", NOVT},
              {"Asia/Oral", new String[] {"Hora de Uralsk", "ORAT",
-@@ -567,11 +587,11 @@
+@@ -567,11 +589,11 @@
              {"Asia/Ulaanbaatar", ULAT},
              {"Asia/Ulan_Bator", ULAT},
              {"Asia/Urumqi", CTT},
@@ -1060,7 +1105,7 @@
              {"Asia/Yekaterinburg", new String[] {"Hora de Ekaterinburgo", "YEKT",
                                                   "Hora de verano de Ekaterinburgo", "YEKST"}},
              {"Asia/Yerevan", ARMT},
-@@ -598,8 +618,8 @@
+@@ -598,8 +620,8 @@
              {"Australia/Canberra", EST_NSW},
              {"Australia/Currie", EST_NSW},
              {"Australia/Darwin", DARWIN},
@@ -1071,7 +1116,7 @@
              {"Australia/Hobart", TASMANIA},
              {"Australia/LHI", LORD_HOWE},
              {"Australia/Lindeman", BRISBANE},
-@@ -617,7 +637,7 @@
+@@ -617,7 +639,7 @@
              {"Australia/Yancowinna", BROKEN_HILL},
              {"BET", BRT},
              {"BST", BDT},
@@ -1080,7 +1125,7 @@
              {"Brazil/DeNoronha", NORONHA},
              {"Brazil/East", BRT},
              {"Brazil/West", AMT},
-@@ -655,6 +675,7 @@
+@@ -655,6 +677,7 @@
              {"Europe/Bratislava", CET},
              {"Europe/Brussels", CET},
              {"Europe/Budapest", CET},
@@ -1088,7 +1133,7 @@
              {"Europe/Chisinau", EET},
              {"Europe/Copenhagen", CET},
              {"Europe/Dublin", DUBLIN},
-@@ -664,7 +685,7 @@
+@@ -664,7 +687,7 @@
              {"Europe/Isle_of_Man", GMTBST},
              {"Europe/Istanbul", EET},
              {"Europe/Jersey", GMTBST},
@@ -1097,7 +1142,7 @@
              {"Europe/Kiev", EET},
              {"Europe/Lisbon", WET},
              {"Europe/Ljubljana", CET},
-@@ -673,7 +694,7 @@
+@@ -673,7 +696,7 @@
              {"Europe/Madrid", CET},
              {"Europe/Malta", CET},
              {"Europe/Mariehamn", EET},
@@ -1106,7 +1151,16 @@
              {"Europe/Monaco", CET},
              {"Europe/Moscow", MSK},
              {"Europe/Nicosia", EET},
-@@ -753,6 +774,7 @@
+@@ -686,7 +709,7 @@
+                                             "Hora de verano de Samara", "SAMST"}},
+             {"Europe/San_Marino", CET},
+             {"Europe/Sarajevo", CET},
+-            {"Europe/Simferopol", EET},
++            {"Europe/Simferopol", MSK},
+             {"Europe/Skopje", CET},
+             {"Europe/Sofia", EET},
+             {"Europe/Stockholm", CET},
+@@ -753,6 +776,7 @@
              {"Pacific/Apia", WST_SAMOA},
              {"Pacific/Auckland", NZST},
              {"Pacific/Chatham", CHAST},
@@ -1114,7 +1168,7 @@
              {"Pacific/Easter", EASTER},
              {"Pacific/Efate", new String[] {"Hora de Vanuatu", "VUT",
                                              "Hora de verano de Vanuatu", "VUST"}},
-@@ -791,8 +813,8 @@
+@@ -791,8 +815,8 @@
              {"Pacific/Palau", new String[] {"Hora de Palau", "PWT",
                                              "Hora de verano de Palau", "PWST"}},
              {"Pacific/Pitcairn", PITCAIRN},
@@ -1125,7 +1179,7 @@
              {"Pacific/Port_Moresby", new String[] {"Hora de Pap\u00faa-Nueva Guinea", "PGT",
                                                     "Hora de verano de Pap\u00faa-Nueva Guinea", "PGST"}},
              {"Pacific/Rarotonga", new String[] {"Hora de las islas Cook", "CKT",
-@@ -805,12 +827,12 @@
+@@ -805,12 +829,12 @@
                                               "Hora de verano de las islas Gilbert", "GILST"}},
              {"Pacific/Tongatapu", new String[] {"Hora de Tonga", "TOT",
                                                  "Hora de verano de Tonga", "TOST"}},
@@ -1516,7 +1570,16 @@
              {"Antarctica/Mawson", new String[] {"Heure de Mawson", "MAWT",
                                                  "Heure d'\u00e9t\u00e9 de Mawson", "MAWST"}},
              {"Antarctica/McMurdo", NZST},
-@@ -500,6 +518,7 @@
+@@ -459,6 +477,8 @@
+             {"Antarctica/South_Pole", NZST},
+             {"Antarctica/Syowa", new String[] {"Heure de Syowa", "SYOT",
+                                                "Heure d'\u00e9t\u00e9 de Syowa", "SYOST"}},
++            {"Antarctica/Troll", new String[] {"Temps universel coordonn\u00e9", "UTC",
++                                               "Heure d'\u00e9t\u00e9 d'Europe centrale", "CEST"}},
+             {"Antarctica/Vostok", new String[] {"Heure de Vostok", "VOST",
+                                                 "Heure d'\u00e9t\u00e9 de Vostok", "VOSST"}},
+             {"Arctic/Longyearbyen", CET},
+@@ -500,6 +520,7 @@
                                              "Heure d'\u00e9t\u00e9 du Tadjikistan", "TJST"}},
              {"Asia/Gaza", EET},
              {"Asia/Harbin", CTT},
@@ -1524,7 +1587,7 @@
              {"Asia/Ho_Chi_Minh", ICT},
              {"Asia/Hong_Kong", HKT},
              {"Asia/Hovd", new String[] {"Heure de Hovd", "HOVT",
-@@ -508,7 +527,7 @@
+@@ -508,7 +529,7 @@
                                             "Heure d'\u00e9t\u00e9 d'Irkutsk", "IRKST"}},
              {"Asia/Istanbul", EET},
              {"Asia/Jakarta", WIT},
@@ -1533,7 +1596,7 @@
                                              "Heure d'\u00e9t\u00e9 d'Indon\u00e9sie orientale", "EIST"}},
              {"Asia/Kabul", new String[] {"Heure d'Afghanistan", "AFT",
                                           "Heure d'\u00e9t\u00e9 d'Afghanistan", "AFST"}},
-@@ -518,6 +537,8 @@
+@@ -518,6 +539,8 @@
              {"Asia/Kashgar", CTT},
              {"Asia/Kathmandu", NPT},
              {"Asia/Katmandu", NPT},
@@ -1542,7 +1605,7 @@
              {"Asia/Kolkata", IST},
              {"Asia/Krasnoyarsk", new String[] {"Heure de Krasno\u00efarsk", "KRAT",
                                                 "Heure d'\u00e9t\u00e9 de Krasno\u00efarsk", "KRAST"}},
-@@ -566,11 +587,11 @@
+@@ -566,11 +589,11 @@
              {"Asia/Ulaanbaatar", ULAT},
              {"Asia/Ulan_Bator", ULAT},
              {"Asia/Urumqi", CTT},
@@ -1558,7 +1621,7 @@
              {"Asia/Yekaterinburg", new String[] {"Heure de Yekaterinburg", "YEKT",
                                                   "Heure d'\u00e9t\u00e9 de Yekaterinburg", "YEKST"}},
              {"Asia/Yerevan", ARMT},
-@@ -597,8 +618,8 @@
+@@ -597,8 +620,8 @@
              {"Australia/Canberra", EST_NSW},
              {"Australia/Currie", EST_NSW},
              {"Australia/Darwin", DARWIN},
@@ -1569,7 +1632,7 @@
              {"Australia/Hobart", TASMANIA},
              {"Australia/LHI", LORD_HOWE},
              {"Australia/Lindeman", BRISBANE},
-@@ -616,7 +637,7 @@
+@@ -616,7 +639,7 @@
              {"Australia/Yancowinna", BROKEN_HILL},
              {"BET", BRT},
              {"BST", BDT},
@@ -1578,7 +1641,7 @@
              {"Brazil/DeNoronha", NORONHA},
              {"Brazil/East", BRT},
              {"Brazil/West", AMT},
-@@ -654,6 +675,7 @@
+@@ -654,6 +677,7 @@
              {"Europe/Bratislava", CET},
              {"Europe/Brussels", CET},
              {"Europe/Budapest", CET},
@@ -1586,7 +1649,7 @@
              {"Europe/Chisinau", EET},
              {"Europe/Copenhagen", CET},
              {"Europe/Dublin", DUBLIN},
-@@ -663,7 +685,7 @@
+@@ -663,7 +687,7 @@
              {"Europe/Isle_of_Man", GMTBST},
              {"Europe/Istanbul", EET},
              {"Europe/Jersey", GMTBST},
@@ -1595,7 +1658,7 @@
              {"Europe/Kiev", EET},
              {"Europe/Lisbon", WET},
              {"Europe/Ljubljana", CET},
-@@ -672,7 +694,7 @@
+@@ -672,7 +696,7 @@
              {"Europe/Madrid", CET},
              {"Europe/Malta", CET},
              {"Europe/Mariehamn", EET},
@@ -1604,7 +1667,16 @@
              {"Europe/Monaco", CET},
              {"Europe/Moscow", MSK},
              {"Europe/Nicosia", EET},
-@@ -752,6 +774,7 @@
+@@ -685,7 +709,7 @@
+                                             "Heure d'\u00e9t\u00e9 de Samara", "SAMST"}},
+             {"Europe/San_Marino", CET},
+             {"Europe/Sarajevo", CET},
+-            {"Europe/Simferopol", EET},
++            {"Europe/Simferopol", MSK},
+             {"Europe/Skopje", CET},
+             {"Europe/Sofia", EET},
+             {"Europe/Stockholm", CET},
+@@ -752,6 +776,7 @@
              {"Pacific/Apia", WST_SAMOA},
              {"Pacific/Auckland", NZST},
              {"Pacific/Chatham", CHAST},
@@ -1612,7 +1684,7 @@
              {"Pacific/Easter", EASTER},
              {"Pacific/Efate", new String[] {"Heure du Vanuatu", "VUT",
                                              "Heure d'\u00e9t\u00e9 du Vanuatu", "VUST"}},
-@@ -790,8 +813,8 @@
+@@ -790,8 +815,8 @@
              {"Pacific/Palau", new String[] {"Heure de Palaos", "PWT",
                                              "Heure d'\u00e9t\u00e9 de Palaos", "PWST"}},
              {"Pacific/Pitcairn", PITCAIRN},
@@ -1623,7 +1695,7 @@
              {"Pacific/Port_Moresby", new String[] {"Heure de Papouasie-Nouvelle-Guin\u00e9e", "PGT",
                                                     "Heure d'\u00e9t\u00e9 de de Papouasie-Nouvelle-Guin\u00e9e", "PGST"}},
              {"Pacific/Rarotonga", new String[] {"Heure des \u00celes Cook", "CKT",
-@@ -804,12 +827,12 @@
+@@ -804,12 +829,12 @@
                                               "Heure d'\u00e9t\u00e9 de Kiribati", "GILST"}},
              {"Pacific/Tongatapu", new String[] {"Heure de Tonga", "TOT",
                                                  "Heure d'\u00e9t\u00e9 de Tonga", "TOST"}},
@@ -1917,7 +1989,16 @@
              {"Antarctica/Mawson", new String[] {"Ora di Mawson", "MAWT",
                                                  "Ora estiva di Mawson", "MAWST"}},
              {"Antarctica/McMurdo", NZST},
-@@ -500,6 +518,7 @@
+@@ -459,6 +477,8 @@
+             {"Antarctica/South_Pole", NZST},
+             {"Antarctica/Syowa", new String[] {"Ora di Syowa", "SYOT",
+                                                "Ora estiva di Syowa", "SYOST"}},
++            {"Antarctica/Troll", new String[] {"Tempo universale coordinato", "UTC",
++                                               "Ora estiva dell'Europa centrale", "CEST"}},
+             {"Antarctica/Vostok", new String[] {"Ora di Vostok", "VOST",
+                                                 "Ora estiva di Vostok", "VOSST"}},
+             {"Arctic/Longyearbyen", CET},
+@@ -500,6 +520,7 @@
                                              "Ora estiva del Tagikistan", "TJST"}},
              {"Asia/Gaza", EET},
              {"Asia/Harbin", CTT},
@@ -1925,7 +2006,7 @@
              {"Asia/Ho_Chi_Minh", ICT},
              {"Asia/Hong_Kong", HKT},
              {"Asia/Hovd", new String[] {"Ora di Hovd", "HOVT",
-@@ -508,7 +527,7 @@
+@@ -508,7 +529,7 @@
                                             "Ora estiva di Irkutsk", "IRKST"}},
              {"Asia/Istanbul", EET},
              {"Asia/Jakarta", WIT},
@@ -1934,7 +2015,7 @@
                                              "Ora estiva dell'Indonesia orientale", "EIST"}},
              {"Asia/Kabul", new String[] {"Ora dell'Afghanistan", "AFT",
                                           "Ora estiva dell'Afghanistan", "AFST"}},
-@@ -518,6 +537,8 @@
+@@ -518,6 +539,8 @@
              {"Asia/Kashgar", CTT},
              {"Asia/Kathmandu", NPT},
              {"Asia/Katmandu", NPT},
@@ -1943,7 +2024,7 @@
              {"Asia/Kolkata", IST},
              {"Asia/Krasnoyarsk", new String[] {"Ora di Krasnojarsk", "KRAT",
                                                 "Ora estiva di Krasnojarsk", "KRAST"}},
-@@ -566,11 +587,11 @@
+@@ -566,11 +589,11 @@
              {"Asia/Ulaanbaatar", ULAT},
              {"Asia/Ulan_Bator", ULAT},
              {"Asia/Urumqi", CTT},
@@ -1959,7 +2040,7 @@
              {"Asia/Yekaterinburg", new String[] {"Ora di Ekaterinburg", "YEKT",
                                                   "Ora estiva di Ekaterinburg", "YEKST"}},
              {"Asia/Yerevan", ARMT},
-@@ -597,8 +618,8 @@
+@@ -597,8 +620,8 @@
              {"Australia/Canberra", EST_NSW},
              {"Australia/Currie", EST_NSW},
              {"Australia/Darwin", DARWIN},
@@ -1970,7 +2051,7 @@
              {"Australia/Hobart", TASMANIA},
              {"Australia/LHI", LORD_HOWE},
              {"Australia/Lindeman", BRISBANE},
-@@ -616,7 +637,7 @@
+@@ -616,7 +639,7 @@
              {"Australia/Yancowinna", BROKEN_HILL},
              {"BET", BRT},
              {"BST", BDT},
@@ -1979,7 +2060,7 @@
              {"Brazil/DeNoronha", NORONHA},
              {"Brazil/East", BRT},
              {"Brazil/West", AMT},
-@@ -654,6 +675,7 @@
+@@ -654,6 +677,7 @@
              {"Europe/Bratislava", CET},
              {"Europe/Brussels", CET},
              {"Europe/Budapest", CET},
@@ -1987,7 +2068,7 @@
              {"Europe/Chisinau", EET},
              {"Europe/Copenhagen", CET},
              {"Europe/Dublin", DUBLIN},
-@@ -663,7 +685,7 @@
+@@ -663,7 +687,7 @@
              {"Europe/Isle_of_Man", GMTBST},
              {"Europe/Istanbul", EET},
              {"Europe/Jersey", GMTBST},
@@ -1996,7 +2077,7 @@
              {"Europe/Kiev", EET},
              {"Europe/Lisbon", WET},
              {"Europe/Ljubljana", CET},
-@@ -672,7 +694,7 @@
+@@ -672,7 +696,7 @@
              {"Europe/Madrid", CET},
              {"Europe/Malta", CET},
              {"Europe/Mariehamn", EET},
@@ -2005,7 +2086,16 @@
              {"Europe/Monaco", CET},
              {"Europe/Moscow", MSK},
              {"Europe/Nicosia", EET},
-@@ -752,6 +774,7 @@
+@@ -685,7 +709,7 @@
+                                             "Ora estiva di Samara", "SAMST"}},
+             {"Europe/San_Marino", CET},
+             {"Europe/Sarajevo", CET},
+-            {"Europe/Simferopol", EET},
++            {"Europe/Simferopol", MSK},
+             {"Europe/Skopje", CET},
+             {"Europe/Sofia", EET},
+             {"Europe/Stockholm", CET},
+@@ -752,6 +776,7 @@
              {"Pacific/Apia", WST_SAMOA},
              {"Pacific/Auckland", NZST},
              {"Pacific/Chatham", CHAST},
@@ -2013,7 +2103,7 @@
              {"Pacific/Easter", EASTER},
              {"Pacific/Efate", new String[] {"Ora di Vanuatu", "VUT",
                                              "Ora estiva di Vanuatu", "VUST"}},
-@@ -790,8 +813,8 @@
+@@ -790,8 +815,8 @@
              {"Pacific/Palau", new String[] {"Ora di Palau", "PWT",
                                              "Ora estiva di Palau", "PWST"}},
              {"Pacific/Pitcairn", PITCAIRN},
@@ -2024,7 +2114,7 @@
              {"Pacific/Port_Moresby", new String[] {"Ora di Papua Nuova Guinea", "PGT",
                                                     "Ora estiva di Papua Nuova Guinea", "PGST"}},
              {"Pacific/Rarotonga", new String[] {"Ora delle Isole Cook", "CKT",
-@@ -804,12 +827,12 @@
+@@ -804,12 +829,12 @@
                                               "Ora estiva delle Isole Gilbert", "GILST"}},
              {"Pacific/Tongatapu", new String[] {"Ora di Tonga", "TOT",
                                                  "Ora estiva di Tonga", "TOST"}},
@@ -2326,7 +2416,16 @@
              {"Antarctica/Mawson", new String[] {"\u30e2\u30fc\u30bd\u30f3\u6642\u9593", "MAWT",
                                                  "\u30e2\u30fc\u30bd\u30f3\u590f\u6642\u9593", "MAWST"}},
              {"Antarctica/McMurdo", NZST},
-@@ -500,6 +518,7 @@
+@@ -459,6 +477,8 @@
+             {"Antarctica/South_Pole", NZST},
+             {"Antarctica/Syowa", new String[] {"\u662d\u548c\u57fa\u5730\u6642\u9593", "SYOT",
+                                                "\u662d\u548c\u57fa\u5730\u590f\u6642\u9593", "SYOST"}},
++            {"Antarctica/Troll", new String[] {"\u5354\u5b9a\u4e16\u754c\u6642", "UTC",
++                                               "\u4e2d\u90e8\u30e8\u30fc\u30ed\u30c3\u30d1\u590f\u6642\u9593", "CEST"}},
+             {"Antarctica/Vostok", new String[] {"\u30dc\u30b9\u30c8\u30fc\u30af\u57fa\u5730\u6642\u9593", "VOST",
+                                                 "\u30dc\u30b9\u30c8\u30fc\u30af\u57fa\u5730\u590f\u6642\u9593", "VOSST"}},
+             {"Arctic/Longyearbyen", CET},
+@@ -500,6 +520,7 @@
                                              "\u30bf\u30b8\u30ad\u30b9\u30bf\u30f3\u590f\u6642\u9593", "TJST"}},
              {"Asia/Gaza", EET},
              {"Asia/Harbin", CTT},
@@ -2334,7 +2433,7 @@
              {"Asia/Ho_Chi_Minh", ICT},
              {"Asia/Hong_Kong", HKT},
              {"Asia/Hovd", new String[] {"\u30db\u30d6\u30c9\u6642\u9593", "HOVT",
-@@ -508,7 +527,7 @@
+@@ -508,7 +529,7 @@
                                             "\u30a4\u30eb\u30af\u30fc\u30c4\u30af\u590f\u6642\u9593", "IRKST"}},
              {"Asia/Istanbul", EET},
              {"Asia/Jakarta", WIT},
@@ -2343,7 +2442,7 @@
                                              "\u6771\u30a4\u30f3\u30c9\u30cd\u30b7\u30a2\u590f\u6642\u9593", "EIST" }},
              {"Asia/Kabul", new String[] {"\u30a2\u30d5\u30ac\u30cb\u30b9\u30bf\u30f3\u6642\u9593", "AFT",
                                           "\u30a2\u30d5\u30ac\u30cb\u30b9\u30bf\u30f3\u590f\u6642\u9593", "AFST"}},
-@@ -518,6 +537,8 @@
+@@ -518,6 +539,8 @@
              {"Asia/Kashgar", CTT},
              {"Asia/Kathmandu", NPT},
              {"Asia/Katmandu", NPT},
@@ -2352,7 +2451,7 @@
              {"Asia/Kolkata", IST},
              {"Asia/Krasnoyarsk", new String[] {"\u30af\u30e9\u30b9\u30ce\u30e4\u30eb\u30b9\u30af\u6642\u9593", "KRAT",
                                                 "\u30af\u30e9\u30b9\u30ce\u30e4\u30eb\u30b9\u30af\u590f\u6642\u9593", "KRAST"}},
-@@ -566,11 +587,11 @@
+@@ -566,11 +589,11 @@
              {"Asia/Ulaanbaatar", ULAT},
              {"Asia/Ulan_Bator", ULAT},
              {"Asia/Urumqi", CTT},
@@ -2368,7 +2467,7 @@
              {"Asia/Yekaterinburg", new String[] {"\u30a8\u30ab\u30c6\u30ea\u30f3\u30d6\u30eb\u30b0\u6642\u9593", "YEKT",
                                                   "\u30a8\u30ab\u30c6\u30ea\u30f3\u30d6\u30eb\u30b0\u590f\u6642\u9593", "YEKST"}},
              {"Asia/Yerevan", ARMT},
-@@ -597,8 +618,8 @@
+@@ -597,8 +620,8 @@
              {"Australia/Canberra", EST_NSW},
              {"Australia/Currie", EST_NSW},
              {"Australia/Darwin", DARWIN},
@@ -2379,7 +2478,7 @@
              {"Australia/Hobart", TASMANIA},
              {"Australia/LHI", LORD_HOWE},
              {"Australia/Lindeman", BRISBANE},
-@@ -616,7 +637,7 @@
+@@ -616,7 +639,7 @@
              {"Australia/Yancowinna", BROKEN_HILL},
              {"BET", BRT},
              {"BST", BDT},
@@ -2388,7 +2487,7 @@
              {"Brazil/DeNoronha", NORONHA},
              {"Brazil/East", BRT},
              {"Brazil/West", AMT},
-@@ -654,6 +675,7 @@
+@@ -654,6 +677,7 @@
              {"Europe/Bratislava", CET},
              {"Europe/Brussels", CET},
              {"Europe/Budapest", CET},
@@ -2396,7 +2495,7 @@
              {"Europe/Chisinau", EET},
              {"Europe/Copenhagen", CET},
              {"Europe/Dublin", DUBLIN},
-@@ -663,7 +685,7 @@
+@@ -663,7 +687,7 @@
              {"Europe/Isle_of_Man", GMTBST},
              {"Europe/Istanbul", EET},
              {"Europe/Jersey", GMTBST},
@@ -2405,7 +2504,7 @@
              {"Europe/Kiev", EET},
              {"Europe/Lisbon", WET},
              {"Europe/Ljubljana", CET},
-@@ -672,7 +694,7 @@
+@@ -672,7 +696,7 @@
              {"Europe/Madrid", CET},
              {"Europe/Malta", CET},
              {"Europe/Mariehamn", EET},
@@ -2414,7 +2513,16 @@
              {"Europe/Monaco", CET},
              {"Europe/Moscow", MSK},
              {"Europe/Nicosia", EET},
-@@ -752,6 +774,7 @@
+@@ -685,7 +709,7 @@
+                                             "\u30b5\u30de\u30e9\u590f\u6642\u9593", "SAMST"}},
+             {"Europe/San_Marino", CET},
+             {"Europe/Sarajevo", CET},
+-            {"Europe/Simferopol", EET},
++            {"Europe/Simferopol", MSK},
+             {"Europe/Skopje", CET},
+             {"Europe/Sofia", EET},
+             {"Europe/Stockholm", CET},
+@@ -752,6 +776,7 @@
              {"Pacific/Apia", WST_SAMOA},
              {"Pacific/Auckland", NZST},
              {"Pacific/Chatham", CHAST},
@@ -2422,7 +2530,7 @@
              {"Pacific/Easter", EASTER},
              {"Pacific/Efate", new String[] {"\u30d0\u30cc\u30a2\u30c4\u6642\u9593", "VUT",
                                              "\u30d0\u30cc\u30a2\u30c4\u590f\u6642\u9593", "VUST"}},
-@@ -790,8 +813,8 @@
+@@ -790,8 +815,8 @@
              {"Pacific/Palau", new String[] {"\u30d1\u30e9\u30aa\u6642\u9593", "PWT",
                                              "\u30d1\u30e9\u30aa\u590f\u6642\u9593", "PWST"}},
              {"Pacific/Pitcairn", PITCAIRN},
@@ -2433,7 +2541,7 @@
              {"Pacific/Port_Moresby", new String[] {"\u30d1\u30d7\u30a2\u30cb\u30e5\u30fc\u30ae\u30cb\u30a2\u6642\u9593", "PGT",
                                                     "\u30d1\u30d7\u30a2\u30cb\u30e5\u30fc\u30ae\u30cb\u30a2\u590f\u6642\u9593", "PGST"}},
              {"Pacific/Rarotonga", new String[] {"\u30af\u30c3\u30af\u8af8\u5cf6\u6642\u9593", "CKT",
-@@ -804,12 +827,12 @@
+@@ -804,12 +829,12 @@
                                               "\u30ae\u30eb\u30d0\u30fc\u30c8\u8af8\u5cf6\u590f\u6642\u9593", "GILST"}},
              {"Pacific/Tongatapu", new String[] {"\u30c8\u30f3\u30ac\u6642\u9593", "TOT",
                                                  "\u30c8\u30f3\u30ac\u590f\u6642\u9593", "TOST"}},
@@ -2735,7 +2843,16 @@
              {"Antarctica/Mawson", new String[] {"\ubaa8\uc2a8 \uc2dc\uac04", "MAWT",
                                                  "\ubaa8\uc2a8 \uc77c\uad11\uc808\uc57d\uc2dc\uac04", "MAWST"}},
              {"Antarctica/McMurdo", NZST},
-@@ -500,6 +518,7 @@
+@@ -459,6 +477,8 @@
+             {"Antarctica/South_Pole", NZST},
+             {"Antarctica/Syowa", new String[] {"Syowa \uc2dc\uac04", "SYOT",
+                                                "Syowa \uc77c\uad11\uc808\uc57d\uc2dc\uac04", "SYOST"}},
++            {"Antarctica/Troll", new String[] {"\uc138\uacc4 \ud45c\uc900\uc2dc", "UTC",
++                                               "\uc911\uc559 \uc720\ub7fd \uc77c\uad11\uc808\uc57d\uc2dc\uac04", "CEST"}},
+             {"Antarctica/Vostok", new String[] {"Vostok \uc2dc\uac04", "VOST",
+                                                 "Vostok \uc77c\uad11\uc808\uc57d\uc2dc\uac04", "VOSST"}},
+             {"Arctic/Longyearbyen", CET},
+@@ -500,6 +520,7 @@
                                              "\ud0c0\uc9c0\ud0a4\uc2a4\ud0c4 \uc77c\uad11\uc808\uc57d\uc2dc\uac04", "TJST"}},
              {"Asia/Gaza", EET},
              {"Asia/Harbin", CTT},
@@ -2743,7 +2860,7 @@
              {"Asia/Ho_Chi_Minh", ICT},
              {"Asia/Hong_Kong", HKT},
              {"Asia/Hovd", new String[] {"Hovd \uc2dc\uac04", "HOVT",
-@@ -508,7 +527,7 @@
+@@ -508,7 +529,7 @@
                                              "\uc774\ub974\ucfe0\uce20\ud06c \uc77c\uad11\uc808\uc57d\uc2dc\uac04", "IRKST"}},
              {"Asia/Istanbul", EET},
              {"Asia/Jakarta", WIT},
@@ -2752,7 +2869,7 @@
                                              "\ub3d9\ubd80 \uc778\ub3c4\ub124\uc2dc\uc544 \uc77c\uad11\uc808\uc57d\uc2dc\uac04", "EIST"}},
              {"Asia/Kabul", new String[] {"\uc544\ud504\uac00\ub2c8\uc2a4\ud0c4 \uc2dc\uac04", "AFT",
                                           "\uc544\ud504\uac00\ub2c8\uc2a4\ud0c4 \uc77c\uad11\uc808\uc57d\uc2dc\uac04", "AFST"}},
-@@ -518,6 +537,8 @@
+@@ -518,6 +539,8 @@
              {"Asia/Kashgar", CTT},
              {"Asia/Kathmandu", NPT},
              {"Asia/Katmandu", NPT},
@@ -2761,7 +2878,7 @@
              {"Asia/Kolkata", IST},
              {"Asia/Krasnoyarsk", new String[] {"\ud06c\ub77c\uc2a4\ub178\uc57c\ub974\uc2a4\ud06c \uc2dc\uac04", "KRAT",
                                                 "\ud06c\ub77c\uc2a4\ub178\uc57c\ub974\uc2a4\ud06c \uc77c\uad11\uc808\uc57d\uc2dc\uac04", "KRAST"}},
-@@ -566,11 +587,11 @@
+@@ -566,11 +589,11 @@
              {"Asia/Ulaanbaatar", ULAT},
              {"Asia/Ulan_Bator", ULAT},
              {"Asia/Urumqi", CTT},
@@ -2777,7 +2894,7 @@
              {"Asia/Yekaterinburg", new String[] {"\uc608\uce74\ud14c\ub9b0\ubc84\uadf8 \uc2dc\uac04", "YEKT",
                                                   "\uc608\uce74\ud14c\ub9b0\ubc84\uadf8 \uc77c\uad11\uc808\uc57d\uc2dc\uac04", "YEKST"}},
              {"Asia/Yerevan", ARMT},
-@@ -597,8 +618,8 @@
+@@ -597,8 +620,8 @@
              {"Australia/Canberra", EST_NSW},
              {"Australia/Currie", EST_NSW},
              {"Australia/Darwin", DARWIN},
@@ -2788,7 +2905,7 @@
              {"Australia/Hobart", TASMANIA},
              {"Australia/LHI", LORD_HOWE},
              {"Australia/Lindeman", BRISBANE},
-@@ -616,7 +637,7 @@
+@@ -616,7 +639,7 @@
              {"Australia/Yancowinna", BROKEN_HILL},
              {"BET", BRT},
              {"BST", BDT},
@@ -2797,7 +2914,7 @@
              {"Brazil/DeNoronha", NORONHA},
              {"Brazil/East", BRT},
              {"Brazil/West", AMT},
-@@ -654,6 +675,7 @@
+@@ -654,6 +677,7 @@
              {"Europe/Bratislava", CET},
              {"Europe/Brussels", CET},
              {"Europe/Budapest", CET},
@@ -2805,7 +2922,7 @@
              {"Europe/Chisinau", EET},
              {"Europe/Copenhagen", CET},
              {"Europe/Dublin", DUBLIN},
-@@ -663,7 +685,7 @@
+@@ -663,7 +687,7 @@
              {"Europe/Isle_of_Man", GMTBST},
              {"Europe/Istanbul", EET},
              {"Europe/Jersey", GMTBST},
@@ -2814,7 +2931,7 @@
              {"Europe/Kiev", EET},
              {"Europe/Lisbon", WET},
              {"Europe/Ljubljana", CET},
-@@ -672,7 +694,7 @@
+@@ -672,7 +696,7 @@
              {"Europe/Madrid", CET},
              {"Europe/Malta", CET},
              {"Europe/Mariehamn", EET},
@@ -2823,7 +2940,16 @@
              {"Europe/Monaco", CET},
              {"Europe/Moscow", MSK},
              {"Europe/Nicosia", EET},
-@@ -752,6 +774,7 @@
+@@ -685,7 +709,7 @@
+                                             "\uc0ac\ub9c8\ub77c \uc77c\uad11\uc808\uc57d\uc2dc\uac04", "SAMST"}},
+             {"Europe/San_Marino", CET},
+             {"Europe/Sarajevo", CET},
+-            {"Europe/Simferopol", EET},
++            {"Europe/Simferopol", MSK},
+             {"Europe/Skopje", CET},
+             {"Europe/Sofia", EET},
+             {"Europe/Stockholm", CET},
+@@ -752,6 +776,7 @@
              {"Pacific/Apia", WST_SAMOA},
              {"Pacific/Auckland", NZST},
              {"Pacific/Chatham", CHAST},
@@ -2831,7 +2957,7 @@
              {"Pacific/Easter", EASTER},
              {"Pacific/Efate", new String[] {"\ube44\ub204\uc544\ud22c \uc2dc\uac04", "VUT",
                                              "\ubc14\ub204\uc544\ud22c \uc77c\uad11\uc808\uc57d\uc2dc\uac04", "VUST"}},
-@@ -790,8 +813,8 @@
+@@ -790,8 +815,8 @@
              {"Pacific/Palau", new String[] {"\ud314\ub77c\uc6b0 \uc2dc\uac04", "PWT",
                                              "\ud314\ub77c\uc6b0 \uc77c\uad11\uc808\uc57d\uc2dc\uac04", "PWST"}},
              {"Pacific/Pitcairn", PITCAIRN},
@@ -2842,7 +2968,7 @@
              {"Pacific/Port_Moresby", new String[] {"\ud30c\ud478\uc544\ub274\uae30\ub2c8 \uc2dc\uac04", "PGT",
                                                    "\ud30c\ud478\uc544\ub274\uae30\ub2c8 \uc77c\uad11\uc808\uc57d\uc2dc\uac04", "PGST"}},
              {"Pacific/Rarotonga", new String[] {"\ucfe0\ud06c \uad70\ub3c4 \uc2dc\uac04", "CKT",
-@@ -804,12 +827,12 @@
+@@ -804,12 +829,12 @@
                                               "\uae38\ubc84\ud2b8 \uad70\ub3c4 \uc77c\uad11\uc808\uc57d\uc2dc\uac04", "GILST"}},
              {"Pacific/Tongatapu", new String[] {"\ud1b5\uac00 \uc2dc\uac04", "TOT",
                                                  "\ud1b5\uac00 \uc77c\uad11\uc808\uc57d\uc2dc\uac04", "TOST"}},
@@ -3145,7 +3271,16 @@
              {"Antarctica/Mawson", new String[] {"Mawson, normaltid", "MAWT",
                                                  "Mawson, sommartid", "MAWST"}},
              {"Antarctica/McMurdo", NZST},
-@@ -500,6 +518,7 @@
+@@ -459,6 +477,8 @@
+             {"Antarctica/South_Pole", NZST},
+             {"Antarctica/Syowa", new String[] {"Syowa, normaltid", "SYOT",
+                                                "Syowa, sommartid", "SYOST"}},
++            {"Antarctica/Troll", new String[] {"Koordinerad universell tid", "UTC",
++                                               "Centraleuropeisk sommartid", "CEST"}},
+             {"Antarctica/Vostok", new String[] {"Vostok, normaltid", "VOST",
+                                                 "Vostok, sommartid", "VOSST"}},
+             {"Arctic/Longyearbyen", CET},
+@@ -500,6 +520,7 @@
                                              "Tadzjikistan, sommartid", "TJST"}},
              {"Asia/Gaza", EET},
              {"Asia/Harbin", CTT},
@@ -3153,7 +3288,7 @@
              {"Asia/Ho_Chi_Minh", ICT},
              {"Asia/Hong_Kong", HKT},
              {"Asia/Hovd", new String[] {"Hovd, normaltid", "HOVT",
-@@ -508,7 +527,7 @@
+@@ -508,7 +529,7 @@
                                             "Irkutsk, sommartid", "IRKST"}},
              {"Asia/Istanbul", EET},
              {"Asia/Jakarta", WIT},
@@ -3162,7 +3297,7 @@
                                              "\u00d6stindonesisk sommartid", "EIST"}},
              {"Asia/Kabul", new String[] {"Afghanistan, normaltid", "AFT",
                                           "Afghanistan, sommartid", "AFST"}},
-@@ -518,6 +537,8 @@
+@@ -518,6 +539,8 @@
              {"Asia/Kashgar", CTT},
              {"Asia/Kathmandu", NPT},
              {"Asia/Katmandu", NPT},
@@ -3171,7 +3306,7 @@
              {"Asia/Kolkata", IST},
              {"Asia/Krasnoyarsk", new String[] {"Krasnojarsk, normaltid", "KRAT",
                                                 "Krasnojarsk, sommartid", "KRAST"}},
-@@ -566,11 +587,11 @@
+@@ -566,11 +589,11 @@
              {"Asia/Ulaanbaatar", ULAT},
              {"Asia/Ulan_Bator", ULAT},
              {"Asia/Urumqi", CTT},
@@ -3187,7 +3322,7 @@
              {"Asia/Yekaterinburg", new String[] {"Jekaterinburg, normaltid", "YEKT",
                                                   "Jekaterinburg, sommartid", "YEKST"}},
              {"Asia/Yerevan", ARMT},
-@@ -597,8 +618,8 @@
+@@ -597,8 +620,8 @@
              {"Australia/Canberra", EST_NSW},
              {"Australia/Currie", EST_NSW},
              {"Australia/Darwin", DARWIN},
@@ -3198,7 +3333,7 @@
              {"Australia/Hobart", TASMANIA},
              {"Australia/LHI", LORD_HOWE},
              {"Australia/Lindeman", BRISBANE},
-@@ -616,7 +637,7 @@
+@@ -616,7 +639,7 @@
              {"Australia/Yancowinna", BROKEN_HILL},
              {"BET", BRT},
              {"BST", BDT},
@@ -3207,7 +3342,7 @@
              {"Brazil/DeNoronha", NORONHA},
              {"Brazil/East", BRT},
              {"Brazil/West", AMT},
-@@ -654,6 +675,7 @@
+@@ -654,6 +677,7 @@
              {"Europe/Bratislava", CET},
              {"Europe/Brussels", CET},
              {"Europe/Budapest", CET},
@@ -3215,7 +3350,7 @@
              {"Europe/Chisinau", EET},
              {"Europe/Copenhagen", CET},
              {"Europe/Dublin", DUBLIN},
-@@ -663,7 +685,7 @@
+@@ -663,7 +687,7 @@
              {"Europe/Isle_of_Man", GMTBST},
              {"Europe/Istanbul", EET},
              {"Europe/Jersey", GMTBST},
@@ -3224,7 +3359,7 @@
              {"Europe/Kiev", EET},
              {"Europe/Lisbon", WET},
              {"Europe/Ljubljana", CET},
-@@ -672,7 +694,7 @@
+@@ -672,7 +696,7 @@
              {"Europe/Madrid", CET},
              {"Europe/Malta", CET},
              {"Europe/Mariehamn", EET},
@@ -3233,7 +3368,16 @@
              {"Europe/Monaco", CET},
              {"Europe/Moscow", MSK},
              {"Europe/Nicosia", EET},
-@@ -752,6 +774,7 @@
+@@ -685,7 +709,7 @@
+                                             "Samara, sommartid", "SAMST"}},
+             {"Europe/San_Marino", CET},
+             {"Europe/Sarajevo", CET},
+-            {"Europe/Simferopol", EET},
++            {"Europe/Simferopol", MSK},
+             {"Europe/Skopje", CET},
+             {"Europe/Sofia", EET},
+             {"Europe/Stockholm", CET},
+@@ -752,6 +776,7 @@
              {"Pacific/Apia", WST_SAMOA},
              {"Pacific/Auckland", NZST},
              {"Pacific/Chatham", CHAST},
@@ -3241,7 +3385,7 @@
              {"Pacific/Easter", EASTER},
              {"Pacific/Efate", new String[] {"Vanuatu, normaltid", "VUT",
                                              "Vanuatu, sommartid", "VUST"}},
-@@ -790,8 +813,8 @@
+@@ -790,8 +815,8 @@
              {"Pacific/Palau", new String[] {"Palau, normaltid", "PWT",
                                              "Palau, sommartid", "PWST"}},
              {"Pacific/Pitcairn", PITCAIRN},
@@ -3252,7 +3396,7 @@
              {"Pacific/Port_Moresby", new String[] {"Papua Nya Guinea, normaltid", "PGT",
                                                     "Papua Nya Guinea, sommartid", "PGST"}},
              {"Pacific/Rarotonga", new String[] {"Cook\u00f6arna, normaltid", "CKT",
-@@ -804,12 +827,12 @@
+@@ -804,12 +829,12 @@
                                               "Gilbert\u00f6arna, sommartid", "GILST"}},
              {"Pacific/Tongatapu", new String[] {"Tonga, normaltid", "TOT",
                                                  "Tonga, sommartid", "TOST"}},
@@ -3554,7 +3698,16 @@
              {"Antarctica/Mawson", new String[] {"\u83ab\u68ee\u65f6\u95f4", "MAWT",
                                                  "\u83ab\u68ee\u590f\u4ee4\u65f6", "MAWST"}},
              {"Antarctica/McMurdo", NZST},
-@@ -500,6 +518,7 @@
+@@ -459,6 +477,8 @@
+             {"Antarctica/South_Pole", NZST},
+             {"Antarctica/Syowa", new String[] {"Syowa \u65f6\u95f4", "SYOT",
+                                                "Syowa \u590f\u4ee4\u65f6", "SYOST"}},
++            {"Antarctica/Troll", new String[] {"\u534f\u8c03\u4e16\u754c\u65f6\u95f4", "UTC",
++                                               "\u4e2d\u6b27\u590f\u4ee4\u65f6", "CEST"}},
+             {"Antarctica/Vostok", new String[] {"\u83ab\u65af\u6258\u514b\u65f6\u95f4", "VOST",
+                                                 "\u83ab\u65af\u6258\u514b\u590f\u4ee4\u65f6", "VOSST"}},
+             {"Arctic/Longyearbyen", CET},
+@@ -500,6 +520,7 @@
                                              "\u5854\u5409\u514b\u65af\u5766\u590f\u4ee4\u65f6", "TJST"}},
              {"Asia/Gaza", EET},
              {"Asia/Harbin", CTT},
@@ -3562,7 +3715,7 @@
              {"Asia/Ho_Chi_Minh", ICT},
              {"Asia/Hong_Kong", HKT},
              {"Asia/Hovd", new String[] {"\u79d1\u5e03\u591a\u65f6\u95f4", "HOVT",
-@@ -508,7 +527,7 @@
+@@ -508,7 +529,7 @@
                                             "\u4f0a\u5c14\u5e93\u6b21\u514b\u590f\u4ee4\u65f6", "IRKST"}},
              {"Asia/Istanbul", EET},
              {"Asia/Jakarta", WIT},
@@ -3571,7 +3724,7 @@
                                              "\u4e1c\u5370\u5ea6\u5c3c\u897f\u4e9a\u590f\u4ee4\u65f6", "EIST"}},
              {"Asia/Kabul", new String[] {"\u963f\u5bcc\u6c57\u65f6\u95f4", "AFT",
                                           "\u963f\u5bcc\u6c57\u590f\u4ee4\u65f6", "AFST"}},
-@@ -518,6 +537,8 @@
+@@ -518,6 +539,8 @@
              {"Asia/Kashgar", CTT},
              {"Asia/Kathmandu", NPT},
              {"Asia/Katmandu", NPT},
@@ -3580,7 +3733,7 @@
              {"Asia/Kolkata", IST},
              {"Asia/Krasnoyarsk", new String[] {"\u514b\u62c9\u65af\u8bfa\u4e9a\u5c14\u65af\u514b\u65f6\u95f4", "KRAT",
                                                 "\u514b\u62c9\u65af\u8bfa\u4e9a\u5c14\u65af\u514b\u590f\u4ee4\u65f6", "KRAST"}},
-@@ -566,11 +587,11 @@
+@@ -566,11 +589,11 @@
              {"Asia/Ulaanbaatar", ULAT},
              {"Asia/Ulan_Bator", ULAT},
              {"Asia/Urumqi", CTT},
@@ -3596,7 +3749,7 @@
              {"Asia/Yekaterinburg", new String[] {"Yekaterinburg \u65f6\u95f4", "YEKT",
                                                   "Yekaterinburg \u590f\u4ee4\u65f6", "YEKST"}},
              {"Asia/Yerevan", ARMT},
-@@ -597,8 +618,8 @@
+@@ -597,8 +620,8 @@
              {"Australia/Canberra", EST_NSW},
              {"Australia/Currie", EST_NSW},
              {"Australia/Darwin", DARWIN},
@@ -3607,7 +3760,7 @@
              {"Australia/Hobart", TASMANIA},
              {"Australia/LHI", LORD_HOWE},
              {"Australia/Lindeman", BRISBANE},
-@@ -616,7 +637,7 @@
+@@ -616,7 +639,7 @@
              {"Australia/Yancowinna", BROKEN_HILL},
              {"BET", BRT},
              {"BST", BDT},
@@ -3616,7 +3769,7 @@
              {"Brazil/DeNoronha", NORONHA},
              {"Brazil/East", BRT},
              {"Brazil/West", AMT},
-@@ -654,6 +675,7 @@
+@@ -654,6 +677,7 @@
              {"Europe/Bratislava", CET},
              {"Europe/Brussels", CET},
              {"Europe/Budapest", CET},
@@ -3624,7 +3777,7 @@
              {"Europe/Chisinau", EET},
              {"Europe/Copenhagen", CET},
              {"Europe/Dublin", DUBLIN},
-@@ -663,7 +685,7 @@
+@@ -663,7 +687,7 @@
              {"Europe/Isle_of_Man", GMTBST},
              {"Europe/Istanbul", EET},
              {"Europe/Jersey", GMTBST},
@@ -3633,7 +3786,7 @@
              {"Europe/Kiev", EET},
              {"Europe/Lisbon", WET},
              {"Europe/Ljubljana", CET},
-@@ -672,7 +694,7 @@
+@@ -672,7 +696,7 @@
              {"Europe/Madrid", CET},
              {"Europe/Malta", CET},
              {"Europe/Mariehamn", EET},
@@ -3642,7 +3795,16 @@
              {"Europe/Monaco", CET},
              {"Europe/Moscow", MSK},
              {"Europe/Nicosia", EET},
-@@ -752,6 +774,7 @@
+@@ -685,7 +709,7 @@
+                                             "\u6c99\u9a6c\u62c9\u590f\u4ee4\u65f6", "SAMST"}},
+             {"Europe/San_Marino", CET},
+             {"Europe/Sarajevo", CET},
+-            {"Europe/Simferopol", EET},
++            {"Europe/Simferopol", MSK},
+             {"Europe/Skopje", CET},
+             {"Europe/Sofia", EET},
+             {"Europe/Stockholm", CET},
+@@ -752,6 +776,7 @@
              {"Pacific/Apia", WST_SAMOA},
              {"Pacific/Auckland", NZST},
              {"Pacific/Chatham", CHAST},
@@ -3650,7 +3812,7 @@
              {"Pacific/Easter", EASTER},
              {"Pacific/Efate", new String[] {"\u74e6\u5974\u963f\u56fe\u65f6\u95f4", "VUT",
                                              "\u74e6\u5974\u963f\u56fe\u590f\u4ee4\u65f6", "VUST"}},
-@@ -790,8 +813,8 @@
+@@ -790,8 +815,8 @@
              {"Pacific/Palau", new String[] {"\u5e1b\u7409\u65f6\u95f4", "PWT",
                                              "\u5e1b\u7409\u590f\u4ee4\u65f6", "PWST"}},
              {"Pacific/Pitcairn", PITCAIRN},
@@ -3661,7 +3823,7 @@
              {"Pacific/Port_Moresby", new String[] {"\u5df4\u5e03\u4e9a\u65b0\u51e0\u5185\u4e9a\u65f6\u95f4", "PGT",
                                                     "\u5df4\u5e03\u4e9a\u65b0\u51e0\u5185\u4e9a\u590f\u4ee4\u65f6", "PGST"}},
              {"Pacific/Rarotonga", new String[] {"\u5e93\u514b\u7fa4\u5c9b\u65f6\u95f4", "CKT",
-@@ -804,12 +827,12 @@
+@@ -804,12 +829,12 @@
                                               "\u5409\u4f2f\u7279\u7fa4\u5c9b\u590f\u4ee4\u65f6", "GILST"}},
              {"Pacific/Tongatapu", new String[] {"\u4e1c\u52a0\u65f6\u95f4", "TOT",
                                                  "\u4e1c\u52a0\u590f\u4ee4\u65f6", "TOST"}},
@@ -3963,7 +4125,16 @@
              {"Antarctica/Mawson", new String[] {"\u83ab\u68ee\u6642\u9593", "MAWT",
                                                  "\u83ab\u68ee\u590f\u4ee4\u6642\u9593", "MAWST"}},
              {"Antarctica/McMurdo", NZST},
-@@ -500,6 +518,7 @@
+@@ -459,6 +477,8 @@
+             {"Antarctica/South_Pole", NZST},
+             {"Antarctica/Syowa", new String[] {"\u5915\u6b50\u74e6 (Syowa) \u6642\u9593", "SYOT",
+                                                "\u5915\u6b50\u74e6 (Syowa) \u590f\u4ee4\u6642\u9593", "SYOST"}},
++            {"Antarctica/Troll", new String[] {"\u5354\u8abf\u4e16\u754c\u6642\u9593", "UTC",
++                                               "\u4e2d\u6b50\u590f\u4ee4\u6642\u9593", "CEST"}},
+             {"Antarctica/Vostok", new String[] {"\u4f5b\u65af\u6258 (Vostok) \u6642\u9593", "VOST",
+                                                 "\u4f5b\u65af\u6258 (Vostok) \u590f\u4ee4\u6642\u9593", "VOSST"}},
+             {"Arctic/Longyearbyen", CET},
+@@ -500,6 +520,7 @@
                                              "\u5854\u5409\u514b\u590f\u4ee4\u6642\u9593", "TJST"}},
              {"Asia/Gaza", EET},
              {"Asia/Harbin", CTT},
@@ -3971,7 +4142,7 @@
              {"Asia/Ho_Chi_Minh", ICT},
              {"Asia/Hong_Kong", HKT},
              {"Asia/Hovd", new String[] {"\u4faf\u5fb7 (Hovd) \u6642\u9593", "HOVT",
-@@ -508,7 +527,7 @@
+@@ -508,7 +529,7 @@
                                             "Irkutsk \u590f\u4ee4\u6642\u9593", "IRKST"}},
              {"Asia/Istanbul", EET},
              {"Asia/Jakarta", WIT},
@@ -3980,7 +4151,7 @@
                                              "\u6771\u5370\u5ea6\u5c3c\u897f\u4e9e\u590f\u65e5\u6642\u9593", "EIST"}},
              {"Asia/Kabul", new String[] {"\u963f\u5bcc\u6c57\u6642\u9593", "AFT",
                                           "\u963f\u5bcc\u6c57\u590f\u4ee4\u6642\u9593", "AFST"}},
-@@ -518,6 +537,8 @@
+@@ -518,6 +539,8 @@
              {"Asia/Kashgar", CTT},
              {"Asia/Kathmandu", NPT},
              {"Asia/Katmandu", NPT},
@@ -3989,7 +4160,7 @@
              {"Asia/Kolkata", IST},
              {"Asia/Krasnoyarsk", new String[] {"\u514b\u62c9\u65af\u8afe\u4e9e\u723e\u65af\u514b\u6642\u9593", "KRAT",
                                                 "\u514b\u62c9\u65af\u8afe\u4e9e\u723e\u65af\u514b\u590f\u4ee4\u6642\u9593", "KRAST"}},
-@@ -554,7 +575,8 @@
+@@ -554,7 +577,8 @@
              {"Asia/Samarkand", UZT},
              {"Asia/Seoul", KST},
              {"Asia/Singapore", SGT},
@@ -3999,7 +4170,7 @@
              {"Asia/Tel_Aviv", ISRAEL},
              {"Asia/Tashkent", UZT},
              {"Asia/Tbilisi", new String[] {"\u55ac\u6cbb\u4e9e\u6642\u9593", "GET",
-@@ -566,11 +588,11 @@
+@@ -566,11 +590,11 @@
              {"Asia/Ulaanbaatar", ULAT},
              {"Asia/Ulan_Bator", ULAT},
              {"Asia/Urumqi", CTT},
@@ -4015,7 +4186,7 @@
              {"Asia/Yekaterinburg", new String[] {"Yekaterinburg \u6642\u9593", "YEKT",
                                                   "Yekaterinburg \u590f\u4ee4\u6642\u9593", "YEKST"}},
              {"Asia/Yerevan", ARMT},
-@@ -597,8 +619,8 @@
+@@ -597,8 +621,8 @@
              {"Australia/Canberra", EST_NSW},
              {"Australia/Currie", EST_NSW},
              {"Australia/Darwin", DARWIN},
@@ -4026,7 +4197,7 @@
              {"Australia/Hobart", TASMANIA},
              {"Australia/LHI", LORD_HOWE},
              {"Australia/Lindeman", BRISBANE},
-@@ -616,7 +638,7 @@
+@@ -616,7 +640,7 @@
              {"Australia/Yancowinna", BROKEN_HILL},
              {"BET", BRT},
              {"BST", BDT},
@@ -4035,7 +4206,7 @@
              {"Brazil/DeNoronha", NORONHA},
              {"Brazil/East", BRT},
              {"Brazil/West", AMT},
-@@ -654,6 +676,7 @@
+@@ -654,6 +678,7 @@
              {"Europe/Bratislava", CET},
              {"Europe/Brussels", CET},
              {"Europe/Budapest", CET},
@@ -4043,7 +4214,7 @@
              {"Europe/Chisinau", EET},
              {"Europe/Copenhagen", CET},
              {"Europe/Dublin", DUBLIN},
-@@ -663,7 +686,7 @@
+@@ -663,7 +688,7 @@
              {"Europe/Isle_of_Man", GMTBST},
              {"Europe/Istanbul", EET},
              {"Europe/Jersey", GMTBST},
@@ -4052,7 +4223,7 @@
              {"Europe/Kiev", EET},
              {"Europe/Lisbon", WET},
              {"Europe/Ljubljana", CET},
-@@ -672,7 +695,7 @@
+@@ -672,7 +697,7 @@
              {"Europe/Madrid", CET},
              {"Europe/Malta", CET},
              {"Europe/Mariehamn", EET},
@@ -4061,7 +4232,16 @@
              {"Europe/Monaco", CET},
              {"Europe/Moscow", MSK},
              {"Europe/Nicosia", EET},
-@@ -752,6 +775,7 @@
+@@ -685,7 +710,7 @@
+                                             "\u6c99\u99ac\u62c9\u590f\u4ee4\u6642\u9593", "SAMST"}},
+             {"Europe/San_Marino", CET},
+             {"Europe/Sarajevo", CET},
+-            {"Europe/Simferopol", EET},
++            {"Europe/Simferopol", MSK},
+             {"Europe/Skopje", CET},
+             {"Europe/Sofia", EET},
+             {"Europe/Stockholm", CET},
+@@ -752,6 +777,7 @@
              {"Pacific/Apia", WST_SAMOA},
              {"Pacific/Auckland", NZST},
              {"Pacific/Chatham", CHAST},
@@ -4069,7 +4249,7 @@
              {"Pacific/Easter", EASTER},
              {"Pacific/Efate", new String[] {"\u74e6\u5974\u963f\u5716\u6642\u9593", "VUT",
                                              "\u74e6\u5974\u963f\u5716\u590f\u4ee4\u6642\u9593", "VUST"}},
-@@ -790,8 +814,8 @@
+@@ -790,8 +816,8 @@
              {"Pacific/Palau", new String[] {"\u5e1b\u7409\u6642\u9593", "PWT",
                                              "\u5e1b\u7409\u590f\u4ee4\u6642\u9593", "PWST"}},
              {"Pacific/Pitcairn", PITCAIRN},
@@ -4080,7 +4260,7 @@
              {"Pacific/Port_Moresby", new String[] {"\u5df4\u5e03\u4e9e\u65b0\u5e7e\u5167\u4e9e\u6642\u9593", "PGT",
                                                     "\u5df4\u5e03\u4e9e\u65b0\u5e7e\u5167\u4e9e\u590f\u4ee4\u6642\u9593", "PGST"}},
              {"Pacific/Rarotonga", new String[] {"\u5eab\u514b\u7fa4\u5cf6\u6642\u9593", "CKT",
-@@ -804,12 +828,12 @@
+@@ -804,12 +830,12 @@
                                               "\u5409\u4f2f\u7279\u7fa4\u5cf6\u590f\u4ee4\u6642\u9593", "GILST"}},
              {"Pacific/Tongatapu", new String[] {"\u6771\u52a0\u6642\u9593", "TOT",
                                                  "\u6771\u52a0\u590f\u4ee4\u6642\u9593", "TOST"}},
