@@ -3,6 +3,7 @@
 
 PORTNAME=	iodine
 PORTVERSION=	0.7.0
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://code.kryo.se/iodine/ \
 		http://redundancy.redundancy.org/mirror/
