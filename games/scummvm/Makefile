@@ -59,6 +59,9 @@ MT32EMU_CONFIGURE_OFF=	--disable-mt32emu
 BROKEN=		Does not compile on ia64, powerpc, or sparc64
 .endif
 
+post-patch:
+	@${REINPLACE_CMD} -e '/^mandir=/s/datarootdir/prefix/' ${WRKSRC}/configure
+
 post-install:
 	${MKDIR} ${STAGEDIR}${DESKTOPDIR}
 	${INSTALL_DATA} ${WRKSRC}/dists/${PORTNAME}.desktop ${STAGEDIR}${DESKTOPDIR}/
