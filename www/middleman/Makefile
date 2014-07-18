@@ -16,6 +16,10 @@ SYSLOG_DESC=	Enable syslog support
 DEBUG_DESC=	Enable debugging support
 MTIME_DESC=	Enable mtime support
 
+SYSLOG_CONFIGURE_ON=	--enable-syslog
+DEBUG_CONFIGURE_ON=	--enable-debug
+MTIME_CONFIGURE_ON=	--enable-mtime
+
 WRKSRC=		${WRKDIR}/${PORTNAME}
 GNU_CONFIGURE=	yes
 USES=		gmake
@@ -23,19 +27,7 @@ USES=		gmake
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib -pthread
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MSYSLOG}
-CONFIGURE_ARGS+=	--enable-syslog
-.endif
-
-.if ${PORT_OPTIONS:MDEBUG}
-CONFIGURE_ARGS+=	--enable-debug
-.endif
-
-.if ${PORT_OPTIONS:MMTIME}
-CONFIGURE_ARGS+=	--enable-mtime
-.endif
+MAKE_JOBS_UNSAFE=	yes
 
 MMAN_CACHE=	/var/cache/mman
 PLIST_SUB+=	MMAN_CACHE=${MMAN_CACHE}
@@ -52,7 +44,7 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/man/mman.8 ${STAGEDIR}${MANPREFIX}/man/man8
 	${INSTALL_PROGRAM} ${WRKSRC}/mman ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_DATA} ${WRKSRC}/config.xml \
-		${STAGEDIR}${PREFIX}/etc/mman.xml.dist
+		${STAGEDIR}${PREFIX}/etc/mman.xml.sample
 	${INSTALL_DATA} ${WRKSRC}/scripts/mman.init \
 		${STAGEDIR}${PREFIX}/etc/rc.d/mman.sh.sample
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
