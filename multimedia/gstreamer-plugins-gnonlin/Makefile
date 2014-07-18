@@ -12,7 +12,6 @@ DISTNAME=	gnonlin-${PORTVERSION}
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Gstreamer lib for writing non-linear audio and video
 
-CFLAGS:=	${CFLAGS} -O2 -Wno-format
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 USES=		libtool pkgconfig tar:bzip2
