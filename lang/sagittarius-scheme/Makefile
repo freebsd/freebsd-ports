@@ -15,6 +15,7 @@ COMMENT=	R6RS/R7RS Scheme system
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/Copyright
 
+BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/libffi.pc:${PORTSDIR}/devel/libffi
 LIB_DEPENDS=	libffi.so:${PORTSDIR}/devel/libffi \
 		libgc-threaded.so:${PORTSDIR}/devel/boehm-gc-threaded
 
