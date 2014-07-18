@@ -13,19 +13,22 @@ COMMENT=	Easy access to RESTful web services
 LICENSE=	LGPL21
 
 BUILD_DEPENDS=	ca_root_nss>0:${PORTSDIR}/security/ca_root_nss
-LIB_DEPENDS=	libsoup-gnome-2.4.so:${PORTSDIR}/devel/libsoup-gnome
-RUN_DEPENDS=	ca_root_nss>0:${PORTSDIR}/security/ca_root_nss
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-USES=		pathfix pkgconfig gmake tar:xz
+USES=		gmake pathfix pkgconfig tar:xz
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--with-ca-certificates=${LOCALBASE}/share/certs/ca-root-nss.crt
 USE_LDCONFIG=	yes
 USE_GNOME=	glib20 intlhack libxml2 introspection:build
 
-CONFIGURE_ARGS=	--with-ca-certificates=${LOCALBASE}/share/certs/ca-root-nss.crt
-
 PORTEXAMPLES=	*.c
 
-OPTIONS_DEFINE=	EXAMPLES
+OPTIONS_DEFINE=	GNOME EXAMPLES
+OPTIONS_DEFAULT=	GNOME
+
+GNOME_LIB_DEPENDS=	libsoup-gnome-2.4.so:${PORTSDIR}/devel/libsoup-gnome
+GNOME_CONFIGURE_OFF=	--without-gnome
+GNOME_LIB_DEPENDS_OFF=	libsoup-2.4.so:${PORTSDIR}/devel/libsoup
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
