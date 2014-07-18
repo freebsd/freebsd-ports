@@ -3,7 +3,7 @@
 
 PORTNAME=	sword
 PORTVERSION=	1.7.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	misc
 MASTER_SITES=	ftp://ftp.crosswire.org/pub/sword/source/v${PORTVERSION:R}/ \
 		http://crosswire.org/ftpmirror/pub/sword/source/v${PORTVERSION:R}/
@@ -15,9 +15,10 @@ LICENSE=	GPLv2
 
 BUILD_DEPENDS=	cppunit-config:${PORTSDIR}/devel/cppunit
 
-USES=		gmake pkgconfig
-USE_AUTOTOOLS=	automake autoconf
+GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-conf --with-zlib
+INSTALL_TARGET=	install-strip
+USES=		gmake libtool pathfix pkgconfig
 USE_LDCONFIG=	yes
 SUB_FILES=	pkg-message
 
@@ -44,26 +45,12 @@ CONFIGURE_ARGS+=	--with-clucene=${LOCALBASE} --with-icu
 CONFIGURE_ARGS+=	--without-clucene --without-icu
 .endif
 
-run-autotools::	run-autotools-aclocal
-
-	@${REINPLACE_CMD} -e 's|-O3||' ${WRKSRC}/configure
-
 post-patch:
-	@${REINPLACE_CMD} -e 's|$$(libdir)/pkgconfig|${PREFIX}/libdata/pkgconfig|g' \
-		-e's|-O3||g' \
-		-e 's|%%DESTDIR%%|${STAGEDIR}|g' \
-		${WRKSRC}/Makefile.am ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} 's|-O3||' ${WRKSRC}/configure
 
 post-install:
-	@${MKDIR} ${PREFIX}/share/sword/mods.d
-.if !exists(${PREFIX}/etc/sword.conf)
 	@(cd ${WRKSRC} && ${MAKE_CMD} install_config)
-.else
-	@${ECHO_CMD} "Config file not installed since ${PREFIX}/etc/sword.conf already exists."
-	@${ECHO_CMD} "Please check that DataPath points to your modules (default ${DATADIR}).";
-.endif
-	@${ECHO_CMD}
-	@${CAT} ${PKGMESSAGE}
-	@${ECHO_CMD}
+	${MV} ${STAGEDIR}${PREFIX}/etc/sword.conf \
+		${STAGEDIR}${PREFIX}/etc/sword.conf.sample
 
 .include <bsd.port.mk>
