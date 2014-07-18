@@ -1,24 +1,20 @@
-# Created by: AlanE <alane@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	cdialog
-PORTVERSION=	1.1.20120215
+PORTVERSION=	1.2.20140219
 PORTEPOCH=	1
 CATEGORIES=	devel
 MASTER_SITES=	ftp://invisible-island.net/${PORTNAME:S|^c||}/
 DISTNAME=	${PORTNAME:S|^c||}-${PORTVERSION:R}-${PORTVERSION:E}
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Enhanced version of 'dialog' to work with ncurses
 
-OPTIONS_DEFINE=	EXAMPLES
-
 LICENSE=	LGPL21
 
-USES=		ncurses
+OPTIONS_DEFINE=	EXAMPLES
 
-USE_AUTOTOOLS=	libtool
+USES=		ncurses	libtool:keepla tar:tgz
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--enable-widec \
@@ -38,6 +34,8 @@ CONFIGURE_ARGS+=	--with-curses-dir=${NCURSESBASE}
 
 post-patch:
 	@${FIND} ${WRKSRC}/samples/ -type f -exec ${REINPLACE_CMD} -i "" "s|dialog|cdialog|g" {} \;
+	@${REINPLACE_CMD} -e 's|$$(INSTALL_DATA) $$(LIB)|$$(INSTALL_DATA) -s $$(LIB)|'\
+		${WRKSRC}/${MAKEFILE}.in
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
