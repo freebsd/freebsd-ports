@@ -7,7 +7,7 @@ MASTER_SITES=	http://alef.hagilda.com/
 DISTNAME=	Alef
 
 MAINTAINER=	cpm@fbsd.es
-COMMENT=	Free multi-lingual font designed for screens
+COMMENT=	A free multi-lingual font designed for screens
 
 LICENSE=	OFL11
 
@@ -21,13 +21,14 @@ NO_BUILD=	yes
 
 PLIST_SUB=	FONTSDIR="${FONTSDIR:S|${PREFIX}/||}"
 
-PORTDOCS=	--COMING-SOON--.txt OFL-license.txt readme.txt
+PORTDOCS=	COMING-SOON.txt OFL-license.txt readme.txt
 
 OPTIONS_DEFINE=	DOCS
 
 post-extract:
 	@${MKDIR} ${WRKSRC}
 	cd ${WRKDIR} ; ${MV} TTF ${WRKSRC}
+	${MV} ${WRKDIR}/--COMING-SOON--.txt ${WRKDIR}/COMING-SOON.txt
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${FONTSDIR}
