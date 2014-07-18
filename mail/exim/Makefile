@@ -3,7 +3,7 @@
 
 PORTNAME=	exim
 PORTVERSION?=	${EXIM_VERSION}
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	mail ipv6
 MASTER_SITES=	${MASTER_SITE_EXIM:S/$/:exim/}
 MASTER_SITE_SUBDIR=	exim4/:exim
@@ -427,6 +427,10 @@ SEDLIST+=	-e 's,XX_SPF_FLAGS_XX,,' \
 LIB_DEPENDS+=	libsrs2.so:${PORTSDIR}/mail/libsrs2
 SEDLIST+=	-e 's,XX_SRS_FLAGS_XX,-DSRS,' \
 		-e 's,XX_SRS_LIBS_XX,-L${LOCALBASE}/lib -lsrs2,'
+.elif ${PORT_OPTIONS:MSRS_ALT}
+LIB_DEPENDS+=	libsrs_alt.so:${PORTSDIR}/mail/libsrs_alt
+SEDLIST+=	-e 's,XX_SRS_FLAGS_XX,-DEXPERIMENTAL_SRS,' \
+		-e 's,XX_SRS_LIBS_XX,-L${LOCALBASE}/lib -lsrs_alt,'
 .else
 SEDLIST+=	-e 's,XX_SRS_FLAGS_XX,,' \
 		-e 's,XX_SRS_LIBS_XX,,'
