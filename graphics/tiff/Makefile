@@ -25,8 +25,6 @@ CONFIGURE_ARGS+=	--with-jpeg-include-dir=${LOCALBASE}/include \
 			--with-jpeg-lib-dir=${LOCALBASE}/lib \
 			--without-x
 
-OPTIONS_DEFINE=	DOCS
-
 MLNKS=	TIFFError.3tiff          TIFFSetErrorHandler.3tiff \
 	TIFFFlush.3tiff          TIFFFlushData.3tiff \
 	TIFFGetField.3tiff       TIFFGetFieldDefaulted.3tiff \
@@ -84,6 +82,8 @@ MLNKS=	TIFFError.3tiff          TIFFSetErrorHandler.3tiff \
 	TIFFtile.3tiff           TIFFTileSize.3tiff \
 	TIFFtile.3tiff           TIFFTileRowSize.3tiff \
 	TIFFtile.3tiff           TIFFVTileSize.3tiff
+
+OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.options.mk>
 
