@@ -1,6 +1,3 @@
-
-$FreeBSD$
-
 --- src/Clients/Booter/banshee.linux.in.orig
 +++ src/Clients/Booter/banshee.linux.in
 @@ -54,7 +54,7 @@

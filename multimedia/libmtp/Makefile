@@ -3,7 +3,7 @@
 
 PORTNAME=	libmtp
 PORTVERSION=	1.1.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia audio
 MASTER_SITES=	SF
 
@@ -16,8 +16,9 @@ OPTIONS_DEFINE=	MTPZ
 OPTIONS_DEFAULT=	MTPZ
 MTPZ_DESC=	Enable functionality to connect to MTPZ devices
 
-USES=		pathfix pkgconfig iconv
 GNU_CONFIGURE=	yes
+INSTALL_TARGET=	install-strip
+USES=		iconv libtool pathfix pkgconfig
 USE_LDCONFIG=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include
