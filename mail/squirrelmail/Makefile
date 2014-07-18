@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	squirrelmail
-PORTVERSION=	20140420
+PORTVERSION=	20140717
 CATEGORIES=	mail www
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	adamw/squirrelmail
@@ -49,15 +49,6 @@ CONFLICTS=	squirreloutlook-[0-9]*
 DATABASE_RUN_DEPENDS=	${LOCALBASE}/share/pear/DB.php:${PORTSDIR}/databases/pear-DB
 LDAP_USE=	PHP=ldap
 
-.include <bsd.port.options.mk>
-
-pre-everything::
-.if ${PORT_OPTIONS:MDATABASE}
-	@${ECHO_CMD} "Note that the PEAR database framework still requires you to install a"
-	@${ECHO_CMD} "database-specific PEAR driver, e.g. MySQL."
-	@${ECHO_CMD}
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|ispell|${LOCALBASE}/bin/ispell|g' \
 		${WRKSRC}/plugins/squirrelspell/sqspell_config.php
@@ -67,29 +58,26 @@ post-patch:
 		${WRKSRC}/config/conf.pl ${WRKSRC}/config/config_default.php ${WRKSRC}/doc/INSTALL
 
 do-build:
-# Rearrange the documentation
-	@${MV} ${WRKSRC}/themes/README.themes ${WRKSRC}/doc/
-	@cd ${WRKSRC} ; for f in `${FIND} plugins -name "README*" -or \
-		-name INSTALL -or -name CHANGES -or -name HISTORY`; \
+	# Rearrange the documentation
+	@${MV} ${WRKSRC}/themes/README.themes ${WRKSRC}/doc
+	@(cd ${WRKSRC} && \
+		for f in `${FIND} -E plugins -regex \
+			'.*(README.*|INSTALL|HISTORY)'`; \
 		do \
-		${MKDIR} doc/`dirname $$f` ; \
-		${MV} $$f doc/`dirname $$f` ; \
-	done; \
-	${MV} doc/plugins/squirrelspell/doc/README doc/plugins/squirrelspell ; \
-	${RM} -rf doc/plugins/squirrelspell/doc ; \
-	${MV} plugins/squirrelspell/doc/* doc/plugins/squirrelspell ; \
-	${RM} -f doc/plugins/squirrelspell/index.php ; \
-	${RM} -rf plugins/squirrelspell/doc
+			${MKDIR} doc/`dirname $$f`; \
+			${MV} $$f doc/`dirname $$f`; \
+		done)
+	@${MV} ${WRKSRC}/doc/plugins/squirrelspell/doc/README ${WRKSRC}/doc/plugins/squirrelspell
+	@${RM} -rf ${WRKSRC}/doc/plugins/squirrelspell/doc
+	@${MV} ${WRKSRC}/plugins/squirrelspell/doc/* ${WRKSRC}/doc/plugins/squirrelspell
+	@${RM} -f ${WRKSRC}/doc/plugins/squirrelspell/index.php
+	@${RM} -rf ${WRKSRC}/plugins/squirrelspell/doc
 
 	@${ECHO} "left_refresh=300" >> ${WRKSRC}/data/default_pref
 	@${MV} ${WRKSRC}/config/config_local.php ${WRKSRC}/config/config_local.php.sample
 	@${MV} ${WRKSRC}/data/default_pref ${WRKSRC}/data/default_pref.sample
 	@${MKDIR} ${WRKSRC}/attach
 	@${CP} -p ${WRKSRC}/data/.htaccess ${WRKSRC}/attach/.htaccess
-
-pre-install:
-	@${FIND} ${WRKSRC} -name '*.orig' -delete
-	@${FIND} ${WRKSRC} -name '*.bak' -delete
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/periodic/daily
@@ -98,8 +86,8 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/index.php ${STAGEDIR}${SQUIRRELDIR}
 	${INSTALL_SCRIPT} ${WRKSRC}/configure ${STAGEDIR}${SQUIRRELDIR}
 	(cd ${WRKSRC} && \
-		${FIND} attach class config data functions help images include locale plugins po scripts src themes \
-		| ${CPIO} -pdmu --quiet ${STAGEDIR}${SQUIRRELDIR})
+		${COPYTREE_SHARE} "attach class config data functions help images include locale plugins po scripts src themes" \
+			${STAGEDIR}${SQUIRRELDIR})
 
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	(cd ${WRKSRC}/doc && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR})
