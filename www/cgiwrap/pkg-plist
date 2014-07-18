@@ -1,5 +1,11 @@
+@group www
+@mode 4755
 www/cgi-bin/cgiwrap
-%%DEBUGFLAG%%www/cgi-bin/cgiwrapd
-%%NPHFLAG%%www/cgi-bin/nph-cgiwrap
-%%NPHFLAG%%%%DEBUGFLAG%%www/cgi-bin/nph-cgiwrapd
+%%NPH%%www/cgi-bin/nph-cgiwrap
+@mode
+@mode 4550
+%%DEBUG%%www/cgi-bin/cgiwrapd
+%%NPH%%%%DEBUG%%www/cgi-bin/nph-cgiwrapd
+@mode
+@group
 @dirrmtry www/cgi-bin

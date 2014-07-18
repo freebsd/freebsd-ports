@@ -9,6 +9,8 @@ MASTER_SITES=	SF
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Securely execute Web CGI scripts
 
+LICENSE=	GPLv2
+
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
@@ -17,6 +19,7 @@ OPTIONS_DEFINE=	CGI_OWNER CGI_GROUP CGI_SETUID CGI_SETGID \
 		DOCS NPH USE_REDIRECT_URL USE_SCRIPT_URL
 OPTIONS_DEFAULT=CGI_OWNER CGI_GROUP CGI_SETUID CGI_SETGID \
 		CGI_GROUP_WRITABLE CGI_WORLD_WRITABLE
+OPTIONS_SUB=	yes
 
 CGI_OWNER_DESC=	Check CGI file owner
 CGI_GROUP_DESC=	Check CGI file group
@@ -57,6 +60,10 @@ USER_CGIDIR?=	public_html/cgi-bin
 ALLOW_FILE?=	${PREFIX}/etc/${PORTNAME}.allow
 DENY_FILE?=	${PREFIX}/etc/${PORTNAME}.deny
 
+SUB_FILES=	pkg-message
+SUB_LIST+=	INSTALL_DIR=${INSTALL_DIR} \
+		ALLOW_FILE=${ALLOW_FILE} \
+		DENY_FILE=${DENY_FILE}
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-httpd-user=${WWWOWN} \
 		--with-install-group=${WWWGRP} \
@@ -67,8 +74,22 @@ CONFIGURE_ARGS=	--with-httpd-user=${WWWOWN} \
 		--with-check-shell \
 		--with-wall
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
+CGI_OWNER_CONFIGURE_WITH=	check-owner
+CGI_GROUP_CONFIGURE_WITH=	check-group
+CGI_SETUID_CONFIGURE_WITH=	check-setuid
+CGI_SETGID_CONFIGURE_WITH=	check-setgid
+CGI_GROUP_WRITABLE_CONFIGURE_WITH=	check-group-writable
+CGI_WORLD_WRITABLE_CONFIGURE_WITH=	check-world-writable
+USE_REDIRECT_URL_CONFIGURE_WITH=	use-redirect-url
+USE_SCRIPT_URL_CONFIGURE_WITH=	use-script-url
+NPH_CONFIGURE_WITH=		nph
+DEBUG_CONFIGURE_WITH=		cgiwrapd
+
+PORTDOCS=	accesscontrol.html afs.html changes.html \
+		chroot.html comments.html download.html faq.html \
+		index.html install.html intro.html maillist.html \
+		notes.html pubs.html quickref.html setup.html \
+		thanks.html todo.html tricks.html y2k.html
 
 ##
 # LOG_FILE
@@ -81,77 +102,15 @@ CONFIGURE_ARGS+=	--with-logging-file=${LOG_FILE}
 .else
 CONFIGURE_ARGS+=	--without-logging-file
 .endif
-.if empty(PORT_OPTIONS:MCGI_OWNER)
-CONFIGURE_ARGS+=	--without-check-owner
-.endif
-.if empty(PORT_OPTIONS:MCGI_GROUP)
-CONFIGURE_ARGS+=	--without-check-group
-.endif
-.if empty(PORT_OPTIONS:MCGI_SETUID)
-CONFIGURE_ARGS+=	--without-check-setuid
-.endif
-.if empty(PORT_OPTIONS:MCGI_SETGID)
-CONFIGURE_ARGS+=	--without-check-setgid
-.endif
-.if empty(PORT_OPTIONS:MCGI_GROUP_WRITABLE)
-CONFIGURE_ARGS+=	--without-check-group-writable
-.endif
-.if empty(PORT_OPTIONS:MCGI_WORLD_WRITABLE)
-CONFIGURE_ARGS+=	--without-check-world-writable
-.endif
-.if ${PORT_OPTIONS:MUSE_REDIRECT_URL}
-CONFIGURE_ARGS+=	--with-use-redirect-url
-.endif
-.if ${PORT_OPTIONS:MUSE_SCRIPT_URL}
-CONFIGURE_ARGS+=	--with-use-script-url
-.endif
 
-.if empty(PORT_OPTIONS:MNPH)
-PLIST_SUB+=		NPHFLAG="@comment "
-CONFIGURE_ARGS+=	--without-nph
-.else
-PLIST_SUB+=		NPHFLAG=
-.endif
-
-.if ${PORT_OPTIONS:MDEBUG}
-PLIST_SUB+=		DEBUGFLAG=
-CONFIGURE_ARGS+=	--with-cgiwrapd
-.else
-PLIST_SUB+=		DEBUGFLAG="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MDOCS}
-PORTDOCS=	accesscontrol.html afs.html changes.html \
-		chroot.html comments.html download.html faq.html \
-		index.html install.html intro.html maillist.html \
-		notes.html pubs.html quickref.html setup.html \
-		thanks.html todo.html tricks.html y2k.html
-.endif
-
-pre-install:
-	@${MKDIR} ${INSTALL_DIR}
-
-post-install:
-	@${STRIP_CMD} ${INSTALL_DIR}/cgiwrap
-	@${CHMOD} 4550 ${INSTALL_DIR}/cgiwrap
-.if ${PORT_OPTIONS:MDEBUG}
-	@${STRIP_CMD} ${INSTALL_DIR}/cgiwrapd
-	@${CHMOD} 4550 ${INSTALL_DIR}/cgiwrapd
-.if ${PORT_OPTIONS:MNPH}
-	@${STRIP_CMD} ${INSTALL_DIR}/nph-cgiwrapd
-	@${CHMOD} 4550 ${INSTALL_DIR}/nph-cgiwrapd
-.endif
-.endif
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-.for f in ${PORTDOCS}
-	@${INSTALL_DATA} ${WRKSRC}/htdocs/${f} ${DOCSDIR}
+do-install:
+	@${MKDIR} ${STAGEDIR}${INSTALL_DIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/cgiwrap ${STAGEDIR}${INSTALL_DIR}
+.for link in cgiwrapd nph-cgiwrap nph-cgiwrapd
+	${LN} -sf cgiwrap ${STAGEDIR}${INSTALL_DIR}/${link}
 .endfor
-.endif
-	@${SED}	-e's,%%INSTALL_DIR%%,${INSTALL_DIR},g' \
-		-e's,%%ALLOW_FILE%%,${ALLOW_FILE},g' \
-		-e's,%%DENY_FILE%%,${DENY_FILE},g' \
-		${MASTERDIR}/pkg-message > ${PKGMESSAGE}
-	@${CAT} ${PKGMESSAGE}
+
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	(cd ${WRKSRC}/htdocs && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR})
 
 .include <bsd.port.mk>
