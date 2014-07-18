@@ -16,14 +16,10 @@ DIST_SUBDIR=	OpenFonts
 NO_BUILD=	yes
 
 TTF=		odokai-ExtB.ttf odokai.ttf odosung-ExtB.ttf odosung.ttc
+PLIST_FILES=	${FONTSDIR_REL}/local.conf-odo
 
 .include <bsd.port.pre.mk>
-
-.if !defined(WITHOUT_X11)
-PLIST_SUB+=	X11=""
-.else
-PLIST_SUB+=	X11="@comment "
-.endif
+.include "${PORTSDIR}/chinese/ttfm/Makefile.ttf"
 
 post-extract:
 	@${CHMOD} 0755 ${WRKSRC}/license
@@ -35,15 +31,10 @@ post-patch:
 	@${FIND} ${WRKSRC} -name "*.bak" -delete
 
 do-install:
-	${MKDIR} ${STAGEDIR}${FONTSDIR}
+	@${MKDIR} ${STAGEDIR}${FONTSDIR}
 .for i in ${TTF}
 	${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${FONTSDIR}
 .endfor
 	${INSTALL_DATA} ${FILESDIR}/local.conf-odo ${STAGEDIR}${FONTSDIR}
-.if !defined(WITHOUT_X11)
-	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/fonts
-	${INSTALL_DATA} ${FILESDIR}/local.conf-odo ${STAGEDIR}${PREFIX}/etc/fonts/local.conf
-.endif
 
-.include "${PORTSDIR}/chinese/ttfm/Makefile.ttf"
 .include <bsd.port.post.mk>

@@ -8,8 +8,7 @@
 # TTF		- Name(s) of font file(s) installed in FONTSDIR. Mandatory.
 #
 
-OPTIONS_DEFINE+=	GHOSTSCRIPT X11
-OPTIONS_DEFAULT+=	X11
+OPTIONS_DEFINE+=GHOSTSCRIPT X11
 
 .include <bsd.port.options.mk>
 
@@ -42,8 +41,8 @@ check-makefile-ttf:
 .else
 	@${ECHO_CMD} ""
 	@${ECHO_CMD} "You may use the following options:"
-	@${ECHO_CMD} "	${OPTIONS_NAME}_SET=GHOSTSCRIPT		- if you want Ghostscript support"
-	@${ECHO_CMD} "	${OPTIONS_NAME}_UNSET=X11	- if you DON'T want X Window support"
+	@${ECHO_CMD} "	${OPTIONS_NAME}_SET+=GHOSTSCRIPT	- if you want Ghostscript support"
+	@${ECHO_CMD} "	${OPTIONS_NAME}_SET+=X11		- if you want X Window support"
 	@${ECHO_CMD} ""
 .endif
 .if !defined(TTF)
