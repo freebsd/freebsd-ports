@@ -57,6 +57,43 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="3f09ca29-0e48-11e4-b17a-6805ca0b3d42">
+    <topic>phpMyAdmin -- multiple XSS vulnerabilities, missing validation</topic>
+    <affects>
+      <package>
+	<name>phpMyAdmin</name>
+	<range><ge>4.2.0</ge><lt>4.2.6</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The phpMyAdmin development team reports:</p>
+	<blockquote cite="http://www.phpmyadmin.net/home_page/security/PMASA-2014-4.php">
+	  <p>XSS injection due to unescaped table comment.</p>
+	</blockquote>
+	<blockquote cite="http://www.phpmyadmin.net/home_page/security/PMASA-2014-5.php">
+	  <p>XSS injection due to unescaped table name (triggers).</p>
+	</blockquote>
+	<blockquote cite="http://www.phpmyadmin.net/home_page/security/PMASA-2014-6.php">
+	  <p>XSS in AJAX confirmation messages.</p>
+	</blockquote>
+	<blockquote cite="http://www.phpmyadmin.net/home_page/security/PMASA-2014-7.php">
+	  <p>Missing validation for accessing User groups feature.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://www.phpmyadmin.net/home_page/security/PMASA-2014-4.php</url>
+      <url>http://www.phpmyadmin.net/home_page/security/PMASA-2014-5.php</url>
+      <url>http://www.phpmyadmin.net/home_page/security/PMASA-2014-6.php</url>
+      <url>http://www.phpmyadmin.net/home_page/security/PMASA-2014-7.php</url>
+    </references>
+    <dates>
+      <discovery>2014-07-18</discovery>
+      <entry>2014-07-18</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="3718833e-0d27-11e4-89db-000c6e25e3e9">
     <topic>chromium -- multiple vulnerabilities</topic>
     <affects>
