@@ -24,9 +24,7 @@
 %%WWWDIR%%/psdetail.php
 %%WWWDIR%%/sig-by-time-chart.php
 %%WWWDIR%%/sigdetail.php
-@unexec if cmp -s %D/%%WWWDIR%/srconf.php.sample %D/%%WWWDIR%%/srconf.php; then rm -f %D/%%WWWDIR%%/srconf.php; fi
-%%WWWDIR%%/srconf.php.sample
-@exec [ -f %D/%%WWWDIR%%/srconf.php ] || cp %D/%%WWWDIR%%/srconf.php.sample %D/%%WWWDIR%%/srconf.php
+@sample %%WWWDIR%%/srconf.php.sample
 %%WWWDIR%%/srlogo.png
 %%WWWDIR%%/ssm.js
 %%WWWDIR%%/ssmItems.js
