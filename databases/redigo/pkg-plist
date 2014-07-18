@@ -1,6 +1,7 @@
 %%GO_LIBDIR%%/%%GO_PKGNAME%%.a
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/conn.go
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/conn_test.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/commandinfo.go
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/doc.go
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/log.go
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/pool.go
