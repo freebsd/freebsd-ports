@@ -388,6 +388,7 @@
     SUBDIR += iat
     SUBDIR += installwatch
     SUBDIR += intel-pcm
+    SUBDIR += iocage
     SUBDIR += iogen
     SUBDIR += iograph
     SUBDIR += ioping
