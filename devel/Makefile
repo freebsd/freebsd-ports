@@ -3558,6 +3558,7 @@
     SUBDIR += py-archetypes.schemaextender
     SUBDIR += py-argh
     SUBDIR += py-argparse
+    SUBDIR += py-args
     SUBDIR += py-asn1
     SUBDIR += py-asn1-modules
     SUBDIR += py-aspects
