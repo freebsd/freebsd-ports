@@ -15,7 +15,8 @@ LICENSE=	GPLv2
 BUILD_DEPENDS=	${LOCALBASE}/share/ghostscript/fonts/n022003l.afm:${PORTSDIR}/print/gsfonts
 RUN_DEPENDS=	${LOCALBASE}/share/ghostscript/fonts/n022003l.afm:${PORTSDIR}/print/gsfonts
 
-USES=		gmake shebangfix
+USES=		gmake shebangfix perl5
+USE_PERL5=	build
 SHEBANG_FILES=	kantiword Unix-only/fontinfo.pl
 MAKE_JOBS_UNSAFE=yes
 INSTALL_TARGET=	global_install
