@@ -18,6 +18,7 @@ OPTIONS_DEFINE+=	ALT_CONFIG_PREFIX \
 			READLINE \
 			SPF \
 			SRS \
+			SRS_ALT \
 			SUID \
 			TCP_WRAPPERS \
 			WISHLIST \
@@ -104,6 +105,7 @@ SO_1024_DESC=		Build with Spamooborona-1024 local scan
 SPF_DESC=		Enable Sender Policy Framework checking
 SQLITE_DESC=		Enable SQLite lookups
 SRS_DESC=		Enable Sender Rewriting Scheme
+SRS_ALT_DESC=		Enable alternative Sender Rewriting Scheme
 SUID_DESC=		Install the exim binary suid root
 TCP_WRAPPERS_DESC=	Enable /etc/hosts.allow access control
 GNUTLS_DESC=		Use GnuTLS instead of OpenSSL for TLS
