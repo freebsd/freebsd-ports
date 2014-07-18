@@ -13,7 +13,6 @@ COMMENT=	MPEG2 demuxing gstreamer plugin from fluendo
 
 LICENSE=	MPL
 
-CFLAGS:=	${CFLAGS} -O2
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 USES=		libtool pkgconfig tar:bzip2
