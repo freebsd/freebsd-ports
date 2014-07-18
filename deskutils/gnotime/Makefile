@@ -3,6 +3,7 @@
 
 PORTNAME=	gnotime
 PORTVERSION=	2.4.1
+PORTREVISION=	1
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	SF/gttr/${PORTNAME}/${PORTNAME}-${PORTVERSION} \
 		SF/qof/qof/${QOF_VERSION}:qof
@@ -16,16 +17,18 @@ LICENSE=	GPLv2 # (or later)
 
 LIB_DEPENDS=	libguile.so:${PORTSDIR}/lang/guile
 
-USES=		gettext gmake pathfix pkgconfig
+USES=		gettext gmake libtool pathfix pkgconfig
 USE_XORG=	xscrnsaver
 USE_GNOME=	gnomeprefix gtkhtml3 intlhack libgnomeui
-USE_AUTOTOOLS=	libtool libltdl
+USE_AUTOTOOLS=	libtoolize libltdl
+GNU_CONFIGURE=	yes
 LIBTOOLFILES=	configure ../${QOF_DISTNAME}/configure
 CONFIGURE_ENV=	GUILE_CFLAGS="$$(guile-config compile)" \
 		GUILE_LIBS="$$(guile-config link)" \
 		LIBQOF_CFLAGS="${LIBQOF_CFLAGS}" \
 		LIBQOF_LIBS="${LIBQOF_LIBS}"
 CONFIGURE_ARGS=	--disable-silent-rules
+INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
 INSTALLS_OMF=	yes
 
@@ -41,6 +44,9 @@ LIBQOF_CFLAGS=	-I${QOF_WRKSRC}/qof
 LIBQOF_LIBS=	-L${QOF_WRKSRC}/qof/.libs -lqof
 
 post-patch:
+	@${REINPLACE_CMD} -e \
+		'/^install-data-am/s|install-data-local||' \
+		${WRKSRC}/gconf/Makefile.in
 	@${REINPLACE_CMD} -e \
 		'/^AM_CFLAGS =/s|-g||' ${WRKSRC}/src/Makefile.in
 	@${REINPLACE_CMD} -e \
@@ -63,11 +69,13 @@ pre-configure:
 		--disable-sqlite --disable-gdasql)
 
 pre-build:
-	@(cd ${QOF_WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_FLAGS} \
+	(cd ${QOF_WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_FLAGS} \
 		${MAKEFILE} ${MAKE_ARGS} ${ALL_TARGET})
+	${FIND} ${QOF_WRKSRC} -type f -name '*.la' | \
+		${XARGS} ${GREP} -l 'libtool library' | ${XARGS} ${RM}
 
 pre-install:
-	@(cd ${QOF_WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_FLAGS} \
+	(cd ${QOF_WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_FLAGS} \
 		${MAKEFILE} ${MAKE_ARGS} ${INSTALL_TARGET})
 
 .include <bsd.port.mk>
