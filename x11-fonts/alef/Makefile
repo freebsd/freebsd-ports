@@ -7,7 +7,7 @@ MASTER_SITES=	http://alef.hagilda.com/
 DISTNAME=	Alef
 
 MAINTAINER=	cpm@fbsd.es
-COMMENT=	A free multi-lingual font designed for screens
+COMMENT=	Free multi-lingual font designed for screens
 
 LICENSE=	OFL11
 
