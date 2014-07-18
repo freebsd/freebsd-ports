@@ -6,7 +6,7 @@ PORTREVISION=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://thewalter.net/stef/software/bsnmp-jails/
 
-MAINTAINER=	dinoex@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	bsnmpd module to measure statistics about jails
 
 LICENSE=	BSD3CLAUSE
