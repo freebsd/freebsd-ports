@@ -2,7 +2,6 @@
 @mode 4755
 www/cgi-bin/cgiwrap
 %%NPH%%www/cgi-bin/nph-cgiwrap
-@mode
 @mode 4550
 %%DEBUG%%www/cgi-bin/cgiwrapd
 %%NPH%%%%DEBUG%%www/cgi-bin/nph-cgiwrapd
