@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	twister-core
-PORTVERSION=	0.140629
+PORTVERSION=	0.140718
 CATEGORIES=	net-p2p
 
 MAINTAINER=	thierry@FreeBSD.org
@@ -16,16 +16,13 @@ LIB_DEPENDS=	libboost_system.so:${PORTSDIR}/devel/boost-libs	\
 		libleveldb.so:${PORTSDIR}/databases/leveldb	\
 		libicui18n.so:${PORTSDIR}/devel/icu
 
-OPTIONS_DEFINE=		UPNP DOCS
-OPTIONS_DEFAULT=	UPNP
-UPNP_DESC=		UPnP port mapping
-UPNP_LIB_DEPENDS=	libminiupnpc.so:${PORTSDIR}/net/miniupnpc
+OPTIONS_DEFINE=		DOCS
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	miguelfreitas
 GH_PROJECT=	${PORTNAME}
 GH_TAGNAME=	${GH_COMMIT}
-GH_COMMIT=	7474196
+GH_COMMIT=	ed68411
 
 USE_BDB=	yes
 WANT_BDB_VER=	48
@@ -59,9 +56,6 @@ WITH_OPENSSL_PORT=	yes
 
 pre-configure:
 	(cd ${CONFIGURE_WRKSRC} && ./autotool.sh)
-.if ${PORT_OPTIONS:MUPNP}
-	${REINPLACE_CMD} -e 's|USE_UPNP:=1|USE_UPNP:=|' ${BUILD_WRKSRC}/${MAKEFILE}
-.endif
 
 do-install:
 	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/twisterd ${STAGEDIR}${PREFIX}/bin
