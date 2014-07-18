@@ -6,7 +6,8 @@ PORTVERSION=	2.1.0
 PORTREVISION?=	4
 PORTEPOCH=	1
 CATEGORIES+=	graphics
-MASTER_SITES=	http://cdn.bitbucket.org/libgd/gd-libgd/downloads/
+MASTER_SITES=	https://bitbucket.org/libgd/gd-libgd/downloads/ \
+		http://cdn.bitbucket.org/libgd/gd-libgd/downloads/
 
 MAINTAINER?=	dinoex@FreeBSD.org
 COMMENT?=	Graphics library for fast creation of images
