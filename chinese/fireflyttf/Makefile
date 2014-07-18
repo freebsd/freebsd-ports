@@ -16,24 +16,22 @@ CONFLICTS=	zh-opendesktop-fonts-*
 
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME}
-OPTIONS_DEFINE=	LGJ_FONT X11
-OPTIONS_DEFAULT=	LGJ_FONT X11
-LGJ_FONT_DESC=	Patch for Taiwan horn
 
 TTF=		fireflysung.ttf
+PLIST_FILES=	${FONTSDIR_REL}/local.conf-sung
+
+OPTIONS_DEFAULT+=LGJ_FONT
 
 .include <bsd.port.pre.mk>
+.include "${PORTSDIR}/chinese/ttfm/Makefile.ttf"
+
+OPTIONS_DEFINE+=LGJ_FONT
+LGJ_FONT_DESC=	Patch for Taiwan horn
 
 .if ${PORT_OPTIONS:MLGJ_FONT}
 PKGNAMESUFFIX+=	-LGJ
 MASTER_SITES=	http://edt1023.sayya.org/fonts/
 DISTNAME=	fireflysung-1.3.0p1
-.endif
-
-.if ${PORT_OPTIONS:MX11}
-PLIST_SUB+=	X11=""
-.else
-PLIST_SUB+=	X11="@comment "
 .endif
 
 post-extract:
@@ -47,12 +45,8 @@ post-extract:
 .endif
 
 do-install:
-	${MKDIR} ${STAGEDIR}${FONTSDIR}
+	@${MKDIR} ${STAGEDIR}${FONTSDIR}
 	${INSTALL_DATA} ${WRKSRC}/${TTF} ${STAGEDIR}${FONTSDIR}
 	${INSTALL_DATA} ${FILESDIR}/local.conf-sung ${STAGEDIR}${FONTSDIR}
-.if ${PORT_OPTIONS:MX11}
-	${INSTALL_DATA} ${FILESDIR}/local.conf-sung ${LOCALBASE}/etc/fonts/local.conf
-.endif
 
-.include "${PORTSDIR}/chinese/ttfm/Makefile.ttf"
 .include <bsd.port.post.mk>
