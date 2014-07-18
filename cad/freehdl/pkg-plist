@@ -91,6 +91,11 @@ lib/libfreehdl-cdfggen.so.0
 lib/libfreehdl-cdfggen.so
 lib/libfreehdl-cdfggen.la
 lib/libfreehdl-cdfggen.a
+man/man1/freehdl-config.1.gz
+man/man1/freehdl-gennodes.1.gz
+man/man1/freehdl-v2cc.1.gz
+man/man1/gvhdl.1.gz
+man/man5/v2cc.libs.5.gz
 %%DATADIR%%/lib/std/standard.vhdl
 %%DATADIR%%/lib/std/textio.vhdl
 %%DATADIR%%/lib/ieee/std_logic_1164.vhdl
