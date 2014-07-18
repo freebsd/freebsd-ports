@@ -7,10 +7,12 @@ include/cdialog/dlg_keys.h
 lib/libcdialog.a
 lib/libcdialog.la
 lib/libcdialog.so
-lib/libcdialog.so.10
+lib/libcdialog.so.11
 man/man1/cdialog.1.gz
 man/man3/cdialog.3.gz
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/README
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/buildlist
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/buildlist2
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/calendar
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/calendar-stdout
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/calendar2
@@ -23,6 +25,7 @@ man/man3/cdialog.3.gz
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/checklist1
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/checklist10
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/checklist11
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/checklist12
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/checklist2
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/checklist3
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/checklist4
@@ -32,26 +35,11 @@ man/man3/cdialog.3.gz
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/checklist8
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/checklist9
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/checklist9.txt
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/copifuncs/admin.funcs
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/copifuncs/common.funcs
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/copifuncs/copi.funcs
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/copifuncs/copi.ifman1
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/copifuncs/copi.ifman2
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/copifuncs/copi.ifmcfg2
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/copifuncs/copi.ifmcfg4
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/copifuncs/copi.ifmcfg5
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/copifuncs/copi.ifpoll1
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/copifuncs/copi.ifpoll2
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/copifuncs/copi.ifreq1
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/copifuncs/copi.ifreq2
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/copifuncs/copi.rcnews
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/copifuncs/copi.sendifm1
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/copifuncs/copi.sendifm2
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/copifuncs/copi.trnrc
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/copifuncs/copi.wheel
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/copifuncs/ifpatch
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/copismall
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/debian.rc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/dft-cancel
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/dft-extra
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/dft-help
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/dft-no
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dialog.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/editbox
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/editbox-utf8
@@ -104,11 +92,6 @@ man/man3/cdialog.3.gz
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/inputmenu2
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/inputmenu3
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/inputmenu4
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/install/FDISK.TEST
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/install/makefile
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/install/makefile.in
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/install/setup.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/install/setup.help
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/killall
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/listing
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/menubox
@@ -116,6 +99,7 @@ man/man3/cdialog.3.gz
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/menubox-utf8
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/menubox1
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/menubox10
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/menubox12
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/menubox2
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/menubox3
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/menubox4
@@ -160,6 +144,10 @@ man/man3/cdialog.3.gz
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/radiolist2
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/radiolist3
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/radiolist4
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/rangebox
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/rangebox2
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/rangebox3
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/rangebox4
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/report-button
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/report-edit
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/report-string
@@ -189,8 +177,12 @@ man/man3/cdialog.3.gz
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/timebox-stdout
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/timebox2
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/timebox2-stdout
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/treeview
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/treeview2
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/wheel
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/whiptail.rc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/with-dquotes
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/with-squotes
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/yesno
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/yesno-both
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/yesno-extra
@@ -199,7 +191,5 @@ man/man3/cdialog.3.gz
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/yesno2
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/yesno3
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/yesno4
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/install
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/copifuncs
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%
 @dirrm include/cdialog
