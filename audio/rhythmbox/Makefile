@@ -4,7 +4,7 @@
 
 PORTNAME=	rhythmbox
 PORTVERSION=	0.12.8
-PORTREVISION=	13
+PORTREVISION=	14
 CATEGORIES=	audio gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -24,7 +24,7 @@ LIB_DEPENDS=	libmusicbrainz3.so:${PORTSDIR}/audio/libmusicbrainz3 \
 
 CONFLICTS=	rhythmbox-2.[0-9]* rhythmbox-3.[0-9]*
 
-USES=		desktop-file-utils gettext gmake libtool:keepla pathfix \
+USES=		desktop-file-utils gettext gmake libtool pathfix \
 		pkgconfig tar:bzip2
 INSTALLS_OMF=	yes
 USE_GNOME=	intlhack gnomeprefix gtk20 nautilus2

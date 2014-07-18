@@ -21,7 +21,7 @@ bin/mtp-tracks
 bin/mtp-trexist
 include/libmtp.h
 lib/libmtp.a
-lib/libmtp.la
 lib/libmtp.so
-lib/libmtp.so.10
+lib/libmtp.so.9
+lib/libmtp.so.9.1.0
 libdata/pkgconfig/libmtp.pc
