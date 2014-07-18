@@ -3593,6 +3593,7 @@
     SUBDIR += py-cjson
     SUBDIR += py-cld
     SUBDIR += py-click
+    SUBDIR += py-clint
     SUBDIR += py-clonedigger
     SUBDIR += py-cmdln
     SUBDIR += py-cog
