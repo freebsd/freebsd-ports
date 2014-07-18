@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	amavisd-new
-PORTVERSION=	2.8.0
-PORTREVISION=	2
+PORTVERSION=	2.9.1
 PORTEPOCH=	1
 CATEGORIES=	security
 MASTER_SITES=	http://www.ijs.si/software/amavisd/ \
@@ -18,11 +17,11 @@ RUN_DEPENDS=	p5-Unix-Syslog>=0:${PORTSDIR}/sysutils/p5-Unix-Syslog \
 		p5-MIME-Tools>=0:${PORTSDIR}/mail/p5-MIME-Tools \
 		p5-Convert-TNEF>=0:${PORTSDIR}/converters/p5-Convert-TNEF \
 		p5-Convert-UUlib>=1.08,1:${PORTSDIR}/converters/p5-Convert-UUlib \
-		p5-Archive-Zip>=0:${PORTSDIR}/archivers/p5-Archive-Zip \
-		p5-Net-Server>=0.93:${PORTSDIR}/net/p5-Net-Server \
+		p5-Archive-Zip>=1.14:${PORTSDIR}/archivers/p5-Archive-Zip \
+		p5-Net-Server>=2.0:${PORTSDIR}/net/p5-Net-Server \
 		p5-Mail-DKIM>=0.33:${PORTSDIR}/mail/p5-Mail-DKIM
 
-USES=		perl5
+USES=		perl5 tar:xz
 USE_PERL5=	run
 
 NO_BUILD=	yes
@@ -81,7 +80,6 @@ SUB_LIST+=	AMAVISUSER=${AMAVISUSER} \
 
 PLIST_SUB+=	AMAVIS_NOP0F=${AMAVIS_NOP0F}
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 USE_RC_SUBR+=	amavisd
@@ -135,7 +133,7 @@ RUN_DEPENDS+=	${LOCALBASE}/bin/altermime:${PORTSDIR}/mail/altermime
 .endif
 
 .if ${PORT_OPTIONS:MFILE}
-# security fix, file > 4.21 needed
+# security fix, file >= 4.21 needed
 RUN_DEPENDS+=	file>=4.21:${PORTSDIR}/sysutils/file
 .endif
 
@@ -241,34 +239,26 @@ pre-install:
 
 do-install:
 .if ${PORT_OPTIONS:MP0F}
-	${INSTALL_SCRIPT} ${WRKSRC}/p0f-analyzer.pl ${PREFIX}/sbin
+	${INSTALL_SCRIPT} ${WRKSRC}/p0f-analyzer.pl ${STAGEDIR}${PREFIX}/sbin
 .endif
 .for i in amavisd amavisd-agent amavisd-nanny amavisd-release amavisd-snmp-subagent
-	${INSTALL_SCRIPT} ${WRKSRC}/${i} ${PREFIX}/sbin
+	${INSTALL_SCRIPT} ${WRKSRC}/${i} ${STAGEDIR}${PREFIX}/sbin
 .endfor
-	${INSTALL_SCRIPT} ${WRKSRC}/amavisd.conf ${PREFIX}/etc/amavisd.conf-dist
-	${INSTALL_SCRIPT} ${WRKSRC}/amavisd.conf-default ${PREFIX}/etc/amavisd.conf-default
-	${INSTALL_SCRIPT} ${WRKSRC}/amavisd-custom.conf ${PREFIX}/etc/amavisd-custom.conf-dist
-.if !exists(${PREFIX}/etc/amavisd.conf)
-#
-#  This can contain sensitive information, e.g. SQL passwords, so it should be handled
-#  with care.
-#
-	${INSTALL} -o root -g ${AMAVISGROUP} -m 640 ${WRKSRC}/amavisd.conf ${PREFIX}/etc
-.endif
-.if !exists(${PREFIX}/etc/amavisd-custom.conf)
-	${INSTALL} -o root -g ${AMAVISGROUP} -m 640 ${WRKSRC}/amavisd-custom.conf ${PREFIX}/etc
-.endif
+	${INSTALL_SCRIPT} ${WRKSRC}/amavisd.conf ${STAGEDIR}${PREFIX}/etc/amavisd.conf-dist
+	@${ECHO_CMD} "@exec if [ ! -f %D/etc/amavisd.conf ]; then ${INSTALL_SCRIPT} %D/etc/amavisd.conf-dist %D/etc/amavisd.conf; fi" >> ${TMPPLIST}
+	${INSTALL_SCRIPT} ${WRKSRC}/amavisd.conf-default ${STAGEDIR}${PREFIX}/etc/amavisd.conf-default
+	${INSTALL_SCRIPT} ${WRKSRC}/amavisd-custom.conf ${STAGEDIR}${PREFIX}/etc/amavisd-custom.conf-dist
+	@${ECHO_CMD} "@exec if [ ! -f %D/etc/amavisd-custom.conf ]; then ${INSTALL_SCRIPT} %D/etc/amavisd-custom.conf-dist %D/etc/amavisd-custom.conf; fi" >> ${TMPPLIST}
 .if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}/images
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}/images
 .for i in ${DOCS}
-	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${DOCSDIR}
 .endfor
-	@${CP} -pr ${WRKSRC}/README_FILES/images/ ${DOCSDIR}/images
+	@${CP} -pr ${WRKSRC}/README_FILES/images/ ${STAGEDIR}${DOCSDIR}/images
 .endif
 
 post-install:
-	${LN} -s ${PREFIX}/sbin/amavisd-release ${PREFIX}/sbin/amavisd-requeue
+	${LN} -s ${PREFIX}/sbin/amavisd-release ${STAGEDIR}${PREFIX}/sbin/amavisd-requeue
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
