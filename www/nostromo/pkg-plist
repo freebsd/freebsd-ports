@@ -1,9 +1,8 @@
+man/man8/nhttpd.8.gz
 sbin/crypt
 sbin/nhttpd
 %%NOSTROMODIR%%/conf/mimes
-@unexec if cmp -s %D/%%NOSTROMODIR%%/conf/nhttpd.conf-dist %D/%%NOSTROMODIR%%/conf/nhttpd.conf; then rm -f %D/%%NOSTROMODIR%%/conf/nhttpd.conf; fi
-%%NOSTROMODIR%%/conf/nhttpd.conf-dist
-@exec if [ ! -f %D/%%NOSTROMODIR%%/conf/nhttpd.conf ] ; then cp -p %D/%F %B/nhttpd.conf; fi
+@sample %%NOSTROMODIR%%/conf/nhttpd.conf.sample
 %%NOSTROMODIR%%/htdocs/index.html
 %%NOSTROMODIR%%/htdocs/nostromo.gif
 %%NOSTROMODIR%%/htdocs/cgi-bin/printenv
