@@ -1,0 +1,35 @@
+--- ./CMakeLists.txt.orig	2013-02-22 05:23:51.000000000 +1030
++++ ./CMakeLists.txt	2013-05-09 05:46:34.580378528 +0930
+@@ -88,10 +88,7 @@
+ ENDIF()
+ 
+ #SET(CMAKE_CXX_FLAGS "-fno-implement-inlines -finline-small-functions -findirect-inlining -fpartial-inlining")
+-SET(CMAKE_CXX_FLAGS "-O2 -fno-implement-inlines")
+-SET(CMAKE_CXX_FLAGS_RELEASE "")
+-SET(CMAKE_CXX_FLAGS_DEBUG "-g ")#-Winline")
+-
++SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS}")
+ 
+ IF(APPLE)
+ 	#Compile for 32bit and 64bit intel macs
+@@ -106,9 +103,9 @@
+ MANDATORY_PKG(LIBSNDFILE)
+ 
+ # TODO remove data from path
+-SET(SYS_DATA_PATH "${CMAKE_INSTALL_PREFIX}/share/hydrogen/data")
++SET(SYS_DATA_PATH "${CMAKE_INSTALL_PREFIX}/share/hydrogen-devel/data")
+ # TODO remove data from path, could be .config/hydrogen
+-SET(USR_DATA_PATH ".hydrogen/data")
++SET(USR_DATA_PATH ".hydrogen-devel/data")
+ IF(WIN32)
+     SET(WANT_JACK FALSE)
+     SET(Threads_PATH "C:/Program Files/GnuWin32")
+@@ -159,7 +156,7 @@
+ FIND_HELPER(LIBSNDFILE sndfile sndfile.h sndfile)
+ FIND_HELPER(ALSA alsa alsa/asoundlib.h asound )
+ FIND_LADSPA(LADSPA ladspa.h noise)
+-FIND_HELPER(OSS oss sys/soundcard.h OSSlib )
++FIND_HELPER(OSS oss sys/soundcard.h c )
+ FIND_HELPER(JACK jack jack/jack.h jack)
+ FIND_HELPER(JACKSESSION jack jack/session.h jack)
+ IF(APPLE)
