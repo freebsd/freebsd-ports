@@ -3,6 +3,7 @@
 
 PORTNAME=	dbmail
 PORTVERSION=	3.1.15
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://git.dbmail.eu/paul/dbmail/snapshot/
 
@@ -23,7 +24,7 @@ BUILD_DEPENDS=	asciidoc:${PORTSDIR}/textproc/asciidoc \
 CONFLICTS=	dbmail22-[0-9]*
 
 OPTIONS_DEFINE=	DOCS LDAP SIEVE THREADS
-OPTIONS_DEFAULT=	THREADS
+OPTIONS_DEFAULT=	SIEVE THREADS
 SIEVE_DESC=	Sieve mail sorting language support
 
 OPTIONS_SUB=	yes
