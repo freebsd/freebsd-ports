@@ -7,23 +7,18 @@ PORTREVISION=	1
 CATEGORIES=	mail perl5
 MASTER_SITES=	SF/adc-${PORTNAME}/${PORTNAME}/${PORTVERSION}
 
-MAINTAINER= ports@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Email archiver that parses mailboxes and performs actions
 
 LICENSE=	GPLv2
 
 USES=		perl5
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	PERL="${PERL}"
 
-MAN1=		archmbox.1
-PLIST_FILES=	bin/archmbox
+PLIST_FILES=	bin/${PORTNAME} man/man1/${PORTNAME}.1.gz
 PORTDOCS=	ChangeLog NEWS README THANKS TODO
 
 OPTIONS_DEFINE=	DOCS
-
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
 
 post-patch:
 # Linux fuser(1) is incompatible with FreeBSD one, do not look for it
@@ -31,9 +26,7 @@ post-patch:
 		${WRKSRC}/configure
 
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${DOCSDIR}
-.endif
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
