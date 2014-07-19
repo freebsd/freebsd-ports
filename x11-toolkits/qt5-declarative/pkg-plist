@@ -215,7 +215,6 @@
 %%QT_INCDIR%%/QtDeclarative/qtdeclarativeversion.h
 %%QT_LIBDIR%%/cmake/Qt5Declarative/Qt5DeclarativeConfig.cmake
 %%QT_LIBDIR%%/cmake/Qt5Declarative/Qt5DeclarativeConfigVersion.cmake
-%%QT_LIBDIR%%/libQt5Declarative.la
 %%QT_LIBDIR%%/libQt5Declarative.prl
 %%QT_LIBDIR%%/libQt5Declarative.so
 %%QT_LIBDIR%%/libQt5Declarative.so.5

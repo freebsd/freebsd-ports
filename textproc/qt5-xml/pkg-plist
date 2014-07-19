@@ -38,7 +38,6 @@
 %%QT_INCDIR%%/QtXml/qxml.h
 %%QT_LIBDIR%%/cmake/Qt5Xml/Qt5XmlConfig.cmake
 %%QT_LIBDIR%%/cmake/Qt5Xml/Qt5XmlConfigVersion.cmake
-%%QT_LIBDIR%%/libQt5Xml.la
 %%QT_LIBDIR%%/libQt5Xml.prl
 %%QT_LIBDIR%%/libQt5Xml.so
 %%QT_LIBDIR%%/libQt5Xml.so.5

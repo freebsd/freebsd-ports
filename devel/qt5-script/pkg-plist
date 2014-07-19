@@ -58,7 +58,6 @@
 %%QT_INCDIR%%/QtScript/qtscriptversion.h
 %%QT_LIBDIR%%/cmake/Qt5Script/Qt5ScriptConfig.cmake
 %%QT_LIBDIR%%/cmake/Qt5Script/Qt5ScriptConfigVersion.cmake
-%%QT_LIBDIR%%/libQt5Script.la
 %%QT_LIBDIR%%/libQt5Script.prl
 %%QT_LIBDIR%%/libQt5Script.so
 %%QT_LIBDIR%%/libQt5Script.so.5

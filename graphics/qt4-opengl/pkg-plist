@@ -34,7 +34,6 @@
 %%QT_INCDIR%%/QtOpenGL/qglpixelbuffer.h
 %%QT_INCDIR%%/QtOpenGL/qglscreen_qws.h
 %%QT_INCDIR%%/QtOpenGL/qglshaderprogram.h
-%%QT_LIBDIR%%/libQtOpenGL.la
 %%QT_LIBDIR%%/libQtOpenGL.prl
 %%QT_LIBDIR%%/libQtOpenGL.so
 %%QT_LIBDIR%%/libQtOpenGL.so.4

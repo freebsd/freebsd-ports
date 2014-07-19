@@ -65,7 +65,6 @@
 %%QT_LIBDIR%%/cmake/Qt5DBus/Qt5DBusConfigExtras.cmake
 %%QT_LIBDIR%%/cmake/Qt5DBus/Qt5DBusConfigVersion.cmake
 %%QT_LIBDIR%%/cmake/Qt5DBus/Qt5DBusMacros.cmake
-%%QT_LIBDIR%%/libQt5DBus.la
 %%QT_LIBDIR%%/libQt5DBus.prl
 %%QT_LIBDIR%%/libQt5DBus.so
 %%QT_LIBDIR%%/libQt5DBus.so.5

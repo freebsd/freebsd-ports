@@ -44,7 +44,6 @@
 %%QT_INCDIR%%/QtXmlPatterns/qxmlschema.h
 %%QT_INCDIR%%/QtXmlPatterns/qxmlschemavalidator.h
 %%QT_INCDIR%%/QtXmlPatterns/qxmlserializer.h
-%%QT_LIBDIR%%/libQtXmlPatterns.la
 %%QT_LIBDIR%%/libQtXmlPatterns.prl
 %%QT_LIBDIR%%/libQtXmlPatterns.so
 %%QT_LIBDIR%%/libQtXmlPatterns.so.4

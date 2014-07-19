@@ -3,6 +3,7 @@
 
 PORTNAME=	webkit
 DISTVERSION=	${QT4_VERSION}
+PORTREVISION=	1
 CATEGORIES=	www
 PKGNAMEPREFIX=	qt4-
 
@@ -92,7 +93,6 @@ post-configure:
 		${WRKSRC}/lib/pkgconfig/QtWebKit.pc
 # QtWebKit is statically linked with jscore, remove the latest.
 	${REINPLACE_CMD} -e 's|-L../JavaScriptCore/release||; s|-ljscore||' \
-		${WRKSRC}/lib/pkgconfig/QtWebKit.pc \
-		${WRKSRC}/lib/libQtWebKit.la
+		${WRKSRC}/lib/pkgconfig/QtWebKit.pc
 
 .include <bsd.port.post.mk>

@@ -20,7 +20,6 @@
 %%QT_INCDIR%%/QtCLucene/QtCLuceneDepends
 %%QT_INCDIR%%/QtCLucene/QtCLuceneVersion
 %%QT_INCDIR%%/QtCLucene/qtcluceneversion.h
-%%QT_LIBDIR%%/libQt5CLucene.la
 %%QT_LIBDIR%%/libQt5CLucene.prl
 %%QT_LIBDIR%%/libQt5CLucene.so
 %%QT_LIBDIR%%/libQt5CLucene.so.5

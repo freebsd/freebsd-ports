@@ -176,14 +176,12 @@
 %%QT_INCDIR%%/QtDesignerComponents/qtdesignercomponentsversion.h
 %%QT_LIBDIR%%/cmake/Qt5Designer/Qt5DesignerConfig.cmake
 %%QT_LIBDIR%%/cmake/Qt5Designer/Qt5DesignerConfigVersion.cmake
-%%QT_LIBDIR%%/libQt5Designer.la
 %%QT_LIBDIR%%/libQt5Designer.prl
 %%QT_LIBDIR%%/libQt5Designer.so
 %%QT_LIBDIR%%/libQt5Designer.so.5
 %%QT_LIBDIR%%/libQt5Designer.so.%%SHORTVER%%
 %%QT_LIBDIR%%/libQt5Designer.so.%%FULLVER%%
 %%DEBUG%%%%QT_LIBDIR%%/libQt5Designer.so.%%FULLVER%%.debug
-%%QT_LIBDIR%%/libQt5DesignerComponents.la
 %%QT_LIBDIR%%/libQt5DesignerComponents.prl
 %%QT_LIBDIR%%/libQt5DesignerComponents.so
 %%QT_LIBDIR%%/libQt5DesignerComponents.so.5

@@ -22,7 +22,6 @@
 %%QT_LIBDIR%%/cmake/Qt5Gui/Qt5Gui_QSvgPlugin.cmake
 %%QT_LIBDIR%%/cmake/Qt5Svg/Qt5SvgConfig.cmake
 %%QT_LIBDIR%%/cmake/Qt5Svg/Qt5SvgConfigVersion.cmake
-%%QT_LIBDIR%%/libQt5Svg.la
 %%QT_LIBDIR%%/libQt5Svg.prl
 %%QT_LIBDIR%%/libQt5Svg.so
 %%QT_LIBDIR%%/libQt5Svg.so.5
