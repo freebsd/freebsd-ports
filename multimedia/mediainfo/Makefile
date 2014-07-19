@@ -2,44 +2,26 @@
 # $FreeBSD$
 
 PORTNAME=	mediainfo
-PORTVERSION=	0.7.52
-PORTREVISION=	3
+PORTVERSION=	0.7.69
 CATEGORIES=	multimedia
-MASTER_SITES=	SF/${PORTNAME}/binary/${PORTNAME}/${PORTVERSION}
+MASTER_SITES=	http://mediaarea.net/download/binary/${PORTNAME}/${PORTVERSION}/
 DISTNAME=	MediaInfo_CLI_${PORTVERSION}_GNU_FromSource
 
 MAINTAINER=	sunpoet@FreeBSD.org
-COMMENT=	Supplies technical and tag information about a video or audio file
+COMMENT=	Provides technical and tag information for video and audio files
 
-LICENSE=	GPLv3 LGPL3
-LICENSE_COMB=	multi
-LICENSE_FILE=	${WRKSRC}/MediaInfo/License.html
+LICENSE=	BSD2CLAUSE
 
-USES=		libtool tar:bzip2
-USE_LDCONFIG=	yes
-GNU_CONFIGURE=	yes
+LIB_DEPENDS=	libmediainfo.so:${PORTSDIR}/multimedia/libmediainfo \
+		libzen.so:${PORTSDIR}/multimedia/libzen
+
 CONFIGURE_ARGS=	--enable-shared
-CONFIGURE_SCRIPT=	CLI_Compile.sh
-NO_BUILD=	yes
-WRKSRC=		${WRKDIR}/MediaInfo_CLI_GNU_FromSource
+CPPFLAGS+=	-I${LOCALBASE}/include
+GNU_CONFIGURE=	yes
+USE_LDCONFIG=	yes
+USES=		libtool pathfix pkgconfig tar:bzip2
 
-PLIST_FILES=	bin/mediainfo \
-		lib/libmediainfo.a \
-		lib/libmediainfo.so \
-		lib/libmediainfo.so.0 \
-		lib/libmediainfo.so.0.0.0 \
-		lib/libzen.a \
-		lib/libzen.so \
-		lib/libzen.so.0 \
-		lib/libzen.so.0.0.0
-
-SUBDIRS=	ZenLib/Project/GNU/Library \
-		MediaInfoLib/Project/GNU/Library \
-		MediaInfo/Project/GNU/CLI
-
-do-install:
-.for d in ${SUBDIRS}
-	@(cd ${WRKSRC}/$d && ${MAKE_CMD} ${MAKE_ARGS} install)
-.endfor
+PLIST_FILES=	bin/mediainfo
+WRKSRC=		${WRKDIR}/MediaInfo_CLI_GNU_FromSource/MediaInfo/Project/GNU/CLI
 
 .include <bsd.port.mk>
