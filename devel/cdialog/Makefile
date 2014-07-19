@@ -24,6 +24,8 @@ CONFIGURE_ARGS=	--enable-widec \
 		--with-package=${PORTNAME}
 MAKEFILE=	makefile
 
+BUILD_DEPENDS=	libtool:${PORTSDIR}/devel/libtool
+
 INSTALL_TARGET=	install-strip install-man install-lib
 
 .include <bsd.port.pre.mk>
