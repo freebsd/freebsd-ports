@@ -3,6 +3,7 @@
 
 PORTNAME=	sane-backends
 PORTVERSION=	1.0.24
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://alioth.debian.org/frs/download.php/3958/ \
 		http://fossies.org/linux/misc/
@@ -21,12 +22,13 @@ OPTIONS_SUB=	yes
 IEEE1284_DESC=	Pararell port support via libieee1284
 USB_DESC=	USB support
 
-USES=		gmake pathfix pkgconfig
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-docdir=${DOCSDIR} \
 		--disable-latex \
 		--disable-locking \
 		--enable-pthread
+INSTALL_TARGET=	install-strip
+USES=		gmake libtool pathfix pkgconfig
 USE_LDCONFIG=	yes
 
 PORTDOCS=	*
