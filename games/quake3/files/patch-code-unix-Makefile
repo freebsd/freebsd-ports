@@ -98,7 +98,8 @@
 +RELEASE_CFLAGS+=-O2 -fomit-frame-pointer -pipe -ffast-math -falign-functions=2 -fno-strict-aliasing -fstrength-reduce
 +  else
 +RELEASE_CFLAGS+=-O2 -ffast-math -funroll-loops -fomit-frame-pointer -fexpensive-optimizations
-+  endif+endif
++  endif
++endif
  
 -DEBUG_CFLAGS=$(BASE_CFLAGS) -g  -Wall -Werror
 -ifeq ($(ARCH),axp)
