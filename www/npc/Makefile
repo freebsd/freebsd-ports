@@ -14,17 +14,13 @@ MAKE_ARGS=	INDEX_DIR="${INDEX_DIR}"
 
 INDEX_DIR=	${PREFIX}/etc/npc
 
-NO_STAGE=	yes
 do-install:
-	${MKDIR} ${PREFIX}/www/cgi-bin
+	${MKDIR} ${STAGEDIR}${PREFIX}/www/cgi-bin
 	cd ${WRKSRC}; \
-	    ${INSTALL_PROGRAM} npc.cgi ${PREFIX}/www/cgi-bin
-	${MKDIR} ${PREFIX}/share/examples/npc
+	    ${INSTALL_PROGRAM} npc.cgi ${STAGEDIR}${PREFIX}/www/cgi-bin
+	${MKDIR} ${STAGEDIR}${PREFIX}/share/examples/npc
 	cd ${WRKSRC}/../conf; \
-	    ${INSTALL_DATA} sample1.idx sample2.idx ${PREFIX}/share/examples/npc
-	${MKDIR} ${INDEX_DIR}
-
-post-install:
-	@${CAT} ${PKGMESSAGE}
+	    ${INSTALL_DATA} sample1.idx sample2.idx ${STAGEDIR}${PREFIX}/share/examples/npc
+	${MKDIR} ${STAGEDIR}${INDEX_DIR}
 
 .include <bsd.port.mk>
