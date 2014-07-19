@@ -15,7 +15,7 @@ LICENSE=	LGPL20
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 CFLAGS:=	${CFLAGS} -O2 -Wno-format
-USES=		bison gettext gmake libtool:keepla pathfix pkgconfig tar:bzip2
+USES=		bison gmake libtool:keepla pathfix pkgconfig tar:bzip2
 USE_GNOME=	glib20 introspection libxml2
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-tests \
@@ -30,7 +30,7 @@ USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
 GST_VERSION=	0.10
 
-OPTIONS_DEFINE=	LIBCHECK
+OPTIONS_DEFINE=	LIBCHECK NLS
 LIBCHECK_DESC=	Unit tests support
 
 .include <bsd.port.pre.mk>
@@ -52,6 +52,14 @@ USE_GCC=	any
 .if ${OSVERSION} < 1000033
 BUILD_DEPENDS+=	${LOCALBASE}/bin/flex:${PORTSDIR}/textproc/flex
 CONFIGURE_ENV+=	FLEX_PATH="${LOCALBASE}/bin/flex"
+.endif
+
+.if ${PORT_OPTIONS:MNLS}
+USES+=	gettext
+PLIST_SUB+=	NLS=""
+.else
+CONFIGURE_ARGS+=	--disable-nls
+PLIST_SUB+=	NLS="@comment "
 .endif
 
 post-patch:
