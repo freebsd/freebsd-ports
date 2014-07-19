@@ -30,7 +30,6 @@ RUN_DEPENDS=	\
 USES=		perl5
 WRKSRC=	${WRKDIR}/twiki
 
-NO_STAGE=	yes
 post-extract:
 	@${RM} -rf ${WRKSRC}/lib/CPAN
 	@${CAT} ${.CURDIR}/../twiki-*/pkg-plist |\
@@ -41,10 +40,10 @@ post-extract:
 	@${FIND} ${WRKSRC} -type d -empty -delete
 
 post-patch:
-	@cd ${WRKSRC}/ &&\
-		${REINPLACE_CMD} -i "" -e "s|/home/httpd/twiki|${WWWDIR}|g" \
-		lib/TWiki.spec twiki_httpd_conf.txt
-	@${FIND} ${WRKSRC} -name \*.orig -delete
+	${SED} -i "" -e "s|/home/httpd/twiki|${WWWDIR}|g" \
+		${WRKSRC}/lib/TWiki.spec \
+		${WRKSRC}/twiki_httpd_conf.txt
+	${FIND} ${WRKSRC} -name \*.orig -delete
 
 .include "${.CURDIR}/bsd.twiki.mk"
 .include <bsd.port.mk>

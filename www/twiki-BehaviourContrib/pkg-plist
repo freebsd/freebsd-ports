@@ -1,8 +1,8 @@
 %%TWDIR%%/data/TWiki/BehaviourContrib.txt
+%%TWDIR%%/lib/TWiki/Contrib/BehaviourContrib.pm
 %%TWDIR%%/lib/TWiki/Contrib/BehaviourContrib/DEPENDENCIES
 %%TWDIR%%/lib/TWiki/Contrib/BehaviourContrib/MANIFEST
 %%TWDIR%%/lib/TWiki/Contrib/BehaviourContrib/build.pl
-%%TWDIR%%/lib/TWiki/Contrib/BehaviourContrib.pm
 %%TWDIR%%/pub/TWiki/BehaviourContrib/behaviour.compressed.js
 %%TWDIR%%/pub/TWiki/BehaviourContrib/behaviour.compressed_src.js
 %%TWDIR%%/pub/TWiki/BehaviourContrib/behaviour.js

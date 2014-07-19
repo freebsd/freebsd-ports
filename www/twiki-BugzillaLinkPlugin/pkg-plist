@@ -1,8 +1,8 @@
 %%TWDIR%%/data/TWiki/BugzillaLinkPlugin.txt
+%%TWDIR%%/lib/TWiki/Plugins/BugzillaLinkPlugin.pm
 %%TWDIR%%/lib/TWiki/Plugins/BugzillaLinkPlugin/DEPENDENCIES
 %%TWDIR%%/lib/TWiki/Plugins/BugzillaLinkPlugin/MANIFEST
 %%TWDIR%%/lib/TWiki/Plugins/BugzillaLinkPlugin/build.pl
-%%TWDIR%%/lib/TWiki/Plugins/BugzillaLinkPlugin.pm
 %%TWDIR%%/pub/TWiki/BugzillaLinkPlugin/bug.gif
 %%TWDIR%%/pub/TWiki/BugzillaLinkPlugin/bug_small.gif
 %%TWDIR%%/pub/TWiki/BugzillaLinkPlugin/bug_small.png

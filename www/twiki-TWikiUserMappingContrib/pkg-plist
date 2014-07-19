@@ -22,10 +22,10 @@
 %%TWDIR%%/data/TWiki/TWikiUsersTemplate.txt
 %%TWDIR%%/data/TWiki/UserForm.txt
 %%TWDIR%%/data/TWiki/UserToolsCategory.txt
+%%TWDIR%%/lib/TWiki/Contrib/TWikiUserMappingContrib.pm
 %%TWDIR%%/lib/TWiki/Contrib/TWikiUserMappingContrib/DEPENDENCIES
 %%TWDIR%%/lib/TWiki/Contrib/TWikiUserMappingContrib/MANIFEST
 %%TWDIR%%/lib/TWiki/Contrib/TWikiUserMappingContrib/build.pl
-%%TWDIR%%/lib/TWiki/Contrib/TWikiUserMappingContrib.pm
 %%TWDIR%%/lib/TWiki/Users/TWikiUserMapping.pm
 %%TWDIR%%/pub/TWiki/RegistrationApprovals/.keep_me
 %%TWDIR%%/test/unit/TWikiUserMappingContrib/TWikiUserMappingContribSuite.pm

@@ -1,10 +1,10 @@
 %%TWDIR%%/data/TWiki/RenderListPlugin.txt
 %%TWDIR%%/data/TWiki/RenderListPlugin.txt,v
 %%TWDIR%%/data/TWiki/VarRENDERLIST.txt
+%%TWDIR%%/lib/TWiki/Plugins/RenderListPlugin.pm
 %%TWDIR%%/lib/TWiki/Plugins/RenderListPlugin/DEPENDENCIES
 %%TWDIR%%/lib/TWiki/Plugins/RenderListPlugin/MANIFEST
 %%TWDIR%%/lib/TWiki/Plugins/RenderListPlugin/build.pl
-%%TWDIR%%/lib/TWiki/Plugins/RenderListPlugin.pm
 %%TWDIR%%/pub/TWiki/RenderListPlugin/doc.gif
 %%TWDIR%%/pub/TWiki/RenderListPlugin/dot_ud.gif
 %%TWDIR%%/pub/TWiki/RenderListPlugin/dot_udr.gif
