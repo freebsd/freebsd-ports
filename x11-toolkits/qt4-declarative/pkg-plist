@@ -68,7 +68,6 @@
 %%QT_INCDIR%%/QtDeclarative/qdeclarativepropertyvaluesource.h
 %%QT_INCDIR%%/QtDeclarative/qdeclarativescriptstring.h
 %%QT_INCDIR%%/QtDeclarative/qdeclarativeview.h
-%%QT_LIBDIR%%/libQtDeclarative.la
 %%QT_LIBDIR%%/libQtDeclarative.prl
 %%QT_LIBDIR%%/libQtDeclarative.so
 %%QT_LIBDIR%%/libQtDeclarative.so.4

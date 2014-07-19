@@ -1,5 +1,4 @@
 %%QT_LIBDIR%%/libQt5Bootstrap.a
-%%QT_LIBDIR%%/libQt5Bootstrap.la
 %%QT_LIBDIR%%/libQt5Bootstrap.prl
 %%QT_BINDIR%%/moc
 %%QT_BINDIR%%/rcc

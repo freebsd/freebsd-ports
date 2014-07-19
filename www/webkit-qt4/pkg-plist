@@ -59,7 +59,6 @@
 %%QT_IMPORTDIR%%/QtWebKit/libqmlwebkitplugin.so
 %%DEBUG%%%%QT_IMPORTDIR%%/QtWebKit/libqmlwebkitplugin.so.debug
 %%QT_IMPORTDIR%%/QtWebKit/qmldir
-%%QT_LIBDIR%%/libQtWebKit.la
 %%QT_LIBDIR%%/libQtWebKit.prl
 %%QT_LIBDIR%%/libQtWebKit.so
 %%QT_LIBDIR%%/libQtWebKit.so.4

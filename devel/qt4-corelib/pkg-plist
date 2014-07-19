@@ -624,7 +624,6 @@
 %%QT_INCDIR%%/QtCore/qvector.h
 %%QT_INCDIR%%/QtCore/qwaitcondition.h
 %%QT_INCDIR%%/QtCore/qxmlstream.h
-%%QT_LIBDIR%%/libQtCore.la
 %%QT_LIBDIR%%/libQtCore.prl
 %%QT_LIBDIR%%/libQtCore.so
 %%QT_LIBDIR%%/libQtCore.so.4

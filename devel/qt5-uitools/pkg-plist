@@ -8,7 +8,6 @@
 %%QT_LIBDIR%%/cmake/Qt5UiTools/Qt5UiToolsConfig.cmake
 %%QT_LIBDIR%%/cmake/Qt5UiTools/Qt5UiToolsConfigVersion.cmake
 %%QT_LIBDIR%%/libQt5UiTools.a
-%%QT_LIBDIR%%/libQt5UiTools.la
 %%QT_LIBDIR%%/libQt5UiTools.prl
 %%QT_MKSPECDIR%%/modules/qt_lib_uitools.pri
 %%QT_MKSPECDIR%%/modules/qt_lib_uitools_private.pri

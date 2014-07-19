@@ -139,7 +139,6 @@
 %%QT_LIBDIR%%/cmake/Qt5Network/Qt5NetworkConfig.cmake
 %%QT_LIBDIR%%/cmake/Qt5Network/Qt5NetworkConfigVersion.cmake
 %%QT_LIBDIR%%/cmake/Qt5Network/Qt5Network_QGenericEnginePlugin.cmake
-%%QT_LIBDIR%%/libQt5Network.la
 %%QT_LIBDIR%%/libQt5Network.prl
 %%QT_LIBDIR%%/libQt5Network.so
 %%QT_LIBDIR%%/libQt5Network.so.5

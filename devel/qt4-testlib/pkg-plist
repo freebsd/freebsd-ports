@@ -76,7 +76,6 @@
 %%QT_INCDIR%%/QtTest/qtesttouch.h
 %%QT_INCDIR%%/QtTest/qtestxmlstreamer.h
 %%QT_INCDIR%%/QtTest/qtestxunitstreamer.h
-%%QT_LIBDIR%%/libQtTest.la
 %%QT_LIBDIR%%/libQtTest.prl
 %%QT_LIBDIR%%/libQtTest.so
 %%QT_LIBDIR%%/libQtTest.so.4

@@ -1,4 +1,3 @@
-%%QT_LIBDIR%%/libQtCLucene.la
 %%QT_LIBDIR%%/libQtCLucene.prl
 %%QT_LIBDIR%%/libQtCLucene.so
 %%QT_LIBDIR%%/libQtCLucene.so.4

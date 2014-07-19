@@ -667,7 +667,6 @@
 %%QT_LIBDIR%%/cmake/Qt5Core/Qt5CoreConfigExtrasMkspecDir.cmake
 %%QT_LIBDIR%%/cmake/Qt5Core/Qt5CoreConfigVersion.cmake
 %%QT_LIBDIR%%/cmake/Qt5Core/Qt5CoreMacros.cmake
-%%QT_LIBDIR%%/libQt5Core.la
 %%QT_LIBDIR%%/libQt5Core.prl
 %%QT_LIBDIR%%/libQt5Core.so
 %%QT_LIBDIR%%/libQt5Core.so.5
