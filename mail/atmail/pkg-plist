@@ -1,4 +1,6 @@
-@exec mkdir -p %D/www/atmail/users
+@mode 755
+@owner %%WWWOWN%%
+@group %%WWWGRP%%
 %%WWWDIR%%/CHANGELOG
 %%WWWDIR%%/LICENSE
 %%WWWDIR%%/README
