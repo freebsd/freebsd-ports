@@ -192,6 +192,7 @@
     SUBDIR += libvpx
     SUBDIR += libxine
     SUBDIR += libxspf
+    SUBDIR += libzen
     SUBDIR += linux-f10-libtheora
     SUBDIR += linux-f10-libv4l
     SUBDIR += linux-realplayer
