@@ -57,6 +57,49 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="4364e1f1-0f44-11e4-b090-20cf30e32f6d">
+    <topic>apache24 -- several vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>apache24</name>
+	<range><lt>2.4.10</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<h1>Apache HTTP SERVER PROJECT reports:</h1>
+	<blockquote cite="http://svn.apache.org/viewvc/httpd/httpd/branches/2.4.x/CHANGES?view=markup&amp;pathrev=1610737">
+	  <p>mod_proxy: Fix crash in Connection header handling which allowed a
+	    denial of service attack against a reverse proxy with a threaded MPM.</p>
+	  <p>Fix a race condition in scoreboard handling, which could lead to a
+	    heap buffer overflow.</p>
+	  <p>mod_deflate: The DEFLATE input filter (inflates request bodies) now
+	    limits the length and compression ratio of inflated request bodies to avoid
+	    denial of sevice via highly compressed bodies.  See directives
+	    DeflateInflateLimitRequestBody, DeflateInflateRatioLimit,
+	    and DeflateInflateRatioBurst.</p>
+	  <p>mod_cgid: Fix a denial of service against CGI scripts that do
+	    not consume stdin that could lead to lingering HTTPD child processes
+	    filling up the scoreboard and eventually hanging the server.  By
+	    default, the client I/O timeout (Timeout directive) now applies to
+	    communication with scripts.  The CGIDScriptTimeout directive can be
+	    used to set a different timeout for communication with scripts.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2014-0117</cvename>
+      <cvename>CVE-2014-3523</cvename>
+      <cvename>CVE-2014-0226</cvename>
+      <cvename>CVE-2014-0118</cvename>
+      <cvename>CVE-2014-0231</cvename>
+    </references>
+    <dates>
+      <discovery>2014-07-15</discovery>
+      <entry>2014-07-19</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="3f09ca29-0e48-11e4-b17a-6805ca0b3d42">
     <topic>phpMyAdmin -- multiple XSS vulnerabilities, missing validation</topic>
     <affects>
