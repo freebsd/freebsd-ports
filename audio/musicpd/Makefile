@@ -217,17 +217,26 @@ post-patch:
 .endif
 
 do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/src/mpd \
+	${INSTALL_PROGRAM} ${WRKSRC}/src/mpd \
 		${STAGEDIR}/${PREFIX}/bin/${PORTNAME}
-	@${INSTALL_MAN} ${WRKSRC}/doc/mpd.1 \
+	${INSTALL_MAN} ${WRKSRC}/doc/mpd.1 \
 		${STAGEDIR}/${PREFIX}/man/man1/${PORTNAME}.1
-	@${INSTALL_MAN} ${WRKSRC}/doc/mpd.conf.5 \
+	${INSTALL_MAN} ${WRKSRC}/doc/mpd.conf.5 \
 		${STAGEDIR}/${PREFIX}/man/man5/${PORTNAME}.conf.5
-	@${MKDIR} ${STAGEDIR}/${DOCSDIR}
-.for doc in ${PORTDOCS}
-	@${INSTALL_DATA} ${WRKSRC}/${doc} ${STAGEDIR}/${DOCSDIR}/
-.endfor
-	@${INSTALL_DATA} ${WRKSRC}/doc/mpdconf.example \
+	${MKDIR} ${STAGEDIR}/${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}/${DOCSDIR}/
+	${INSTALL_DATA} ${WRKSRC}/doc/mpdconf.example \
 		${STAGEDIR}/${PREFIX}/etc/${PORTNAME}.conf.sample
+	${PRINTF} "%s\n%s\n%s\n" "@cwd /" "@owner ${MPDUSER}" \
+		"@group ${MPDGROUP}" >> ${TMPPLIST}
+	cd ${STAGEDIR} && ${MKDIR} -v ${MPDDIR:S,^/,,}/.mpd | ${SORT} -r | \
+		${SED} 's,^,@dirrmtry ,' >> ${TMPPLIST}
+.ifndef WITH_PKGNG
+	# Cute, we can't use @dirrmtry with pkg_old...
+	# Remove once all using pkgng
+	${REINPLACE_CMD} \
+		's,^@dirrmtry \(.*\),@unexec rmdir \1 > /dev/null || :,' \
+		${TMPPLIST}
+.endif
 
 .include <bsd.port.mk>
