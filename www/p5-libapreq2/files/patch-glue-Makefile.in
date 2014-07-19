@@ -1,0 +1,11 @@
+--- ./glue/Makefile.in.orig	2009-04-13 06:32:19.000000000 +0000
++++ ./glue/Makefile.in	2009-04-13 06:32:29.000000000 +0000
+@@ -266,7 +266,7 @@
+ 
+ perl_install:
+ 	cd perl; INSTALL=1 @PERL@ @PERL_OPTS@ Makefile.PL -apxs @APACHE2_APXS@ @MM_OPTS@
+-	cd perl; $(MAKE) install
++	cd perl; $(MAKE) pure_install
+ 
+ perl_clean:
+ 	-cd perl; $(MAKE) clean
