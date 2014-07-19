@@ -172,6 +172,7 @@
     SUBDIR += libfame
     SUBDIR += libkate
     SUBDIR += libmatroska
+    SUBDIR += libmediainfo
     SUBDIR += libmovtar
     SUBDIR += libmpeg2
     SUBDIR += libmpeg3
