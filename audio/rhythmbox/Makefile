@@ -81,7 +81,7 @@ PLIST_SUB+=		MTP="@comment "
 .if ${PORT_OPTIONS:MDAAP}
 CONFIGURE_ARGS+=	--enable-daap  --with-mdns=avahi
 LIB_DEPENDS+=		libavahi-client.so:${PORTSDIR}/net/avahi-app \
-    			gnome-keyring.0:${PORTSDIR}/security/libgnome-keyring
+			libgnome-keyring.so:${PORTSDIR}/security/libgnome-keyring
 PLIST_SUB+=		DAAP=""
 .else
 .if exists(${LOCALBASE}/lib/libavahi-client.a)
