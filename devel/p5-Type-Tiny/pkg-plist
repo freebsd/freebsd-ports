@@ -22,6 +22,7 @@
 %%SITE_PERL%%/Type/Tiny/Manual.pod
 %%SITE_PERL%%/Type/Tiny/Manual/Coercions.pod
 %%SITE_PERL%%/Type/Tiny/Manual/Libraries.pod
+%%SITE_PERL%%/Type/Tiny/Manual/Optimization.pod
 %%SITE_PERL%%/Type/Tiny/Manual/Params.pod
 %%SITE_PERL%%/Type/Tiny/Manual/Policies.pod
 %%SITE_PERL%%/Type/Tiny/Manual/UsingWithMoo.pod
@@ -67,6 +68,7 @@
 %%PERL5_MAN3%%/Type::Tiny::Manual.3.gz
 %%PERL5_MAN3%%/Type::Tiny::Manual::Coercions.3.gz
 %%PERL5_MAN3%%/Type::Tiny::Manual::Libraries.3.gz
+%%PERL5_MAN3%%/Type::Tiny::Manual::Optimization.3.gz
 %%PERL5_MAN3%%/Type::Tiny::Manual::Params.3.gz
 %%PERL5_MAN3%%/Type::Tiny::Manual::Policies.3.gz
 %%PERL5_MAN3%%/Type::Tiny::Manual::UsingWithMoo.3.gz
@@ -87,7 +89,7 @@
 %%PERL5_MAN3%%/Types::Standard::ScalarRef.3.gz
 %%PERL5_MAN3%%/Types::Standard::Tuple.3.gz
 %%PERL5_MAN3%%/Types::TypeTiny.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Type/Tiny
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Type/Tiny
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Type
 @dirrmtry %%SITE_PERL%%/Types/Standard
 @dirrmtry %%SITE_PERL%%/Types/Common
