@@ -104,11 +104,6 @@ post-patch:
 		${WRKSRC}/bin/tSmoke
 
 post-install:
-.for FILE in basepage.html config smokemail smokeping_secrets tmail
-	${MV} ${STAGEDIR}/${ETCDIR}/${FILE}.dist ${STAGEDIR}/${ETCDIR}/${FILE}.sample
-.endfor
-	${MV} ${STAGEDIR}/${PREFIX}/smokeping/htdocs/smokeping.fcgi.dist ${STAGEDIR}/${PREFIX}/smokeping/htdocs/smokeping.fcgi.sample
-
 	${MKDIR} ${STAGEDIR}/${PREFIX}/smokeping/htdocs/img
 	${MKDIR} ${STAGEDIR}/${PREFIX}/var/smokeping
 
