@@ -14,7 +14,8 @@ COMMENT=	Wrapper for using windows plugins in web browsers
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/gpg2:${PORTSDIR}/security/gnupg
+BUILD_DEPENDS=	${LOCALBASE}/bin/gpg2:${PORTSDIR}/security/gnupg \
+		${LOCALBASE}/bin/bash:${PORTSDIR}/shells/bash
 LIB_DEPENDS=	libxml2.so:${PORTSDIR}/textproc/libxml2
 RUN_DEPENDS=	${LOCALBASE}/bin/bash:${PORTSDIR}/shells/bash \
 		${LOCALBASE}/bin/wget:${PORTSDIR}/ftp/wget \
