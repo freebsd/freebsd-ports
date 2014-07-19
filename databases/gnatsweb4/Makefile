@@ -3,7 +3,7 @@
 
 PORTNAME=	gnatsweb
 PORTVERSION=	4.00
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	databases devel www
 MASTER_SITES=	GNU
 
@@ -30,20 +30,19 @@ PORTEXAMPLESS=	gnatsweb-site-example.pl
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
 do-install:
-	@${MKDIR} ${STAGEDIR}${ETCDIR}
-	${INSTALL_DATA} ${WRKSRC}/gnatsweb-site.pl  ${STAGEDIR}${ETCDIR}/gnatsweb-site.pl.default
-	${INSTALL_DATA} ${WRKSRC}/gnatsweb-site.pl ${STAGEDIR}${ETCDIR}/gnatsweb-site.pl.sample
-	@${MKDIR} ${STAGEDIR}${CGI_DIR}
+	@${MKDIR} ${STAGEDIR}${ETCDIR} ${STAGEDIR}${CGI_DIR} \
+		${STAGEDIR}${DOCSDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/gnatsweb-site.pl \
+		${STAGEDIR}${ETCDIR}/gnatsweb-site.pl.sample
 	${INSTALL_SCRIPT} ${WRKSRC}/gnatsweb.pl ${STAGEDIR}${CGI_DIR}
 	${LN} -s  ${ETCDIR}/gnatsweb-site.pl ${STAGEDIR}${CGI_DIR}
 	${INSTALL_DATA} ${WRKSRC}/gnatsweb.html ${STAGEDIR}${CGI_DIR}
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	for doc in ${PORTDOCS}; do \
 		${INSTALL_DATA} ${WRKSRC}/$${doc} ${STAGEDIR}${DOCSDIR}; \
 	done
-	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	for example in ${EXAMPLEFILES}; do \
-		${INSTALL_DATA} ${WRKSRC}/$${example} ${STAGEDIR}${EXAMPLESDIR}; \
+		${INSTALL_DATA} ${WRKSRC}/$${example} \
+			${STAGEDIR}${EXAMPLESDIR}; \
 	done
 
 .include <bsd.port.mk>
