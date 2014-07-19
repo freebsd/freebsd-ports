@@ -1,3 +1,6 @@
+@owner games
+@group games
 bin/moon-buggy
+@owner
+@group
 man/man6/moon-buggy.6.gz
-@exec chmod 0555 %D/bin/moon-buggy
