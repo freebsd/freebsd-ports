@@ -5,7 +5,7 @@ PORTNAME=	moettf
 PORTVERSION=	2.0
 PORTREVISION=	4
 CATEGORIES=	chinese x11-fonts
-MASTER_SITES=	LOCAL/MARINO
+MASTER_SITES=	LOCAL/marino
 DISTFILES=	edustds1.exe edustds2.exe edustd-15.exe \
 		kai-pc.ttf moe_kai.ttf moe_sung.ttf
 DIST_SUBDIR=	zh-moettf
