@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	diffuse
-PORTVERSION=	0.4.7
+PORTVERSION=	0.4.8
 CATEGORIES=	devel python
 MASTER_SITES=	SF
 
@@ -14,11 +14,11 @@ LICENSE_COMB=	dual
 
 NO_BUILD=	yes
 
-USE_BZIP2=	yes
+USES=		tar:bzip2
 USE_PYTHON=	2
 USE_GNOME=	pygtk2
 
-CONFLICTS=	tinker-[0-9]*
+CONFLICTS_INSTALL=	tinker-[0-9]*
 
 PORTDATA=	syntax
 PORTDOCS=	AUTHORS ChangeLog ChangeLog_ru README README_ru
@@ -31,7 +31,9 @@ OPTIONS_SUB=	yes
 MENU_USES=	desktop-file-utils
 NLS_USES=	gettext
 
-TRANSLATIONS=	cs de es it ja ko pl ru zh_CN
+INSTALLS_ICONS=	yes
+
+TRANSLATIONS=	cs de es it ja ko pl ru zh_CN zh_TW
 MANUALS=	cs it ru
 
 .include <bsd.port.options.mk>
@@ -65,8 +67,8 @@ do-install:
 	@${MKDIR} ${STAGEDIR}${DESKTOPDIR}
 	${INSTALL_DATA} ${WRKSRC}/src/usr/share/applications/*.desktop \
 		${STAGEDIR}${DESKTOPDIR}/
-	${INSTALL_DATA} ${WRKSRC}/src/usr/share/pixmaps/${PORTNAME}.png \
-		${STAGEDIR}${PREFIX}/share/pixmaps/
+	(cd ${WRKSRC}/src/usr/share/icons && \
+		${COPYTREE_SHARE} \* ${STAGEDIR}${PREFIX}/share/icons/)
 
 .if ${PORT_OPTIONS:MNLS}
 .for x in ${TRANSLATIONS}
