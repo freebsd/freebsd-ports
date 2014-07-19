@@ -8,10 +8,10 @@
 %%TWDIR%%/data/TWiki/TagMeSearch.txt
 %%TWDIR%%/data/TWiki/TagMeViewAllTags.txt
 %%TWDIR%%/data/TWiki/TagMeViewMyTags.txt
+%%TWDIR%%/lib/TWiki/Plugins/TagMePlugin.pm
 %%TWDIR%%/lib/TWiki/Plugins/TagMePlugin/DEPENDENCIES
 %%TWDIR%%/lib/TWiki/Plugins/TagMePlugin/MANIFEST
 %%TWDIR%%/lib/TWiki/Plugins/TagMePlugin/build.pl
-%%TWDIR%%/lib/TWiki/Plugins/TagMePlugin.pm
 %%TWDIR%%/pub/TWiki/TagMePlugin/alltagcloud.gif
 %%TWDIR%%/pub/TWiki/TagMePlugin/buttons_gradient.psd
 %%TWDIR%%/pub/TWiki/TagMePlugin/tag_add.gif
@@ -24,8 +24,8 @@
 %%TWDIR%%/pub/_work_areas_doc_example_TagMePlugin.zip
 %%TWDIR%%/templates/view.tagme.tmpl
 %%TWDIR%%/templates/view.tagme04x01.tmpl
-%%TWDIR%%/templates/view.tagme_styleblogbutton.tmpl
 %%TWDIR%%/templates/view.tagme_styleblog.tmpl
+%%TWDIR%%/templates/view.tagme_styleblogbutton.tmpl
 @dirrm %%TWDIR%%/data/TWiki
 @dirrm %%TWDIR%%/data
 @dirrm %%TWDIR%%/lib/TWiki/Plugins/TagMePlugin

@@ -1,9 +1,9 @@
 %%TWDIR%%/data/Main/ClassicSkinUserViewTemplate.txt
 %%TWDIR%%/data/TWiki/ClassicSkin.txt
+%%TWDIR%%/lib/TWiki/Contrib/ClassicSkin.pm
 %%TWDIR%%/lib/TWiki/Contrib/ClassicSkin/DEPENDENCIES
 %%TWDIR%%/lib/TWiki/Contrib/ClassicSkin/MANIFEST
 %%TWDIR%%/lib/TWiki/Contrib/ClassicSkin/build.pl
-%%TWDIR%%/lib/TWiki/Contrib/ClassicSkin.pm
 %%TWDIR%%/pub/TWiki/ClassicSkin/fullscreen.gif
 %%TWDIR%%/pub/TWiki/ClassicSkin/screenshot.gif
 %%TWDIR%%/templates/addform.classic.tmpl

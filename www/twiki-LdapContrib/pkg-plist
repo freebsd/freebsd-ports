@@ -1,10 +1,10 @@
 %%TWDIR%%/data/TWiki/LdapContrib.txt
 %%TWDIR%%/lib/TWiki/Client/LdapApacheLogin.pm
+%%TWDIR%%/lib/TWiki/Contrib/LdapContrib.pm
 %%TWDIR%%/lib/TWiki/Contrib/LdapContrib/Config.spec
 %%TWDIR%%/lib/TWiki/Contrib/LdapContrib/DEPENDENCIES
 %%TWDIR%%/lib/TWiki/Contrib/LdapContrib/MANIFEST
 %%TWDIR%%/lib/TWiki/Contrib/LdapContrib/build.pl
-%%TWDIR%%/lib/TWiki/Contrib/LdapContrib.pm
 %%TWDIR%%/lib/TWiki/LoginManager/LdapApacheLogin.pm
 %%TWDIR%%/lib/TWiki/Users/LdapUser.pm
 %%TWDIR%%/lib/TWiki/Users/LdapUserMapping.pm

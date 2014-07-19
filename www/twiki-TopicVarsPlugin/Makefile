@@ -7,6 +7,5 @@ PORTEPOCH=	1
 
 COMMENT=	Create externally usable variables in any topic
 
-NO_STAGE=	yes
 .include "${.CURDIR}/../twiki/bsd.twiki.mk"
 .include <bsd.port.mk>
