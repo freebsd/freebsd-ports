@@ -3,6 +3,7 @@
 
 PORTNAME=	dracmail
 PORTVERSION=	0.1.2
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	SF/dracmail/release/
 DISTNAME=	dracMail-${PORTVERSION}_release
@@ -10,40 +11,26 @@ DISTNAME=	dracMail-${PORTVERSION}_release
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	DracMail is a webmail interface built using PHP
 
-RUN_DEPENDS+=	php:${PORTSDIR}/lang/php5
-
 USE_PHP+=	mysql imap dom tidy iconv mbstring
 USE_MYSQL=	yes
 NO_BUILD=	yes
-WWWOWN=		www
-WWWGRP=		${WWWOWN}
 
-PKGMESSAGE=	${WRKDIR}/${PORTNAME}/pkg-message
-SUB_FILES=      pkg-message
-PLIST_DIRSTRY=	%%WWWDIR%%
+SUB_FILES=	pkg-message
+PLIST_SUB+=	WWWOWN=${WWWOWN} WWWGRP=${WWWGRP}
 
 OPTIONS_DEFINE=	PGSQL APACHE LIGHTTPD
-OPTIONS_DEFAULT=	APACHE
+OPTIONS_DEFAULT=APACHE
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
+PGSQL_USE=	PHP=pgsql
+APACHE_USE=	APACHE_RUN=22+
+LIGHTTPD_RUN_DEPENDS=	lighttpd:${PORTSDIR}/www/lighttpd
 
-.if ${PORT_OPTIONS:MPGSQL}
-USE_PHP+=	pgsql
-.endif
-.if ${PORT_OPTIONS:MAPACHE}
-USE_APACHE_RUN=	22
-.endif
-.if ${PORT_OPTIONS:MLIGHTTPD}
-RUN_DEPENDS+=	lighttpd:${PORTSDIR}/www/lighttpd
-.endif
+post-extract:
+	@${MKDIR} ${WRKSRC}
+	-@${MV} ${WRKDIR}/* ${WRKSRC}
 
 do-install:
-	@${MKDIR} ${WWWDIR}
-	@${CP} -r ${WRKDIR}/* ${WWWDIR}
-	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${WWWDIR}
-
-post-install:
-	@${CAT} ${PKGMESSAGE}
+	@${MKDIR} ${STAGEDIR}${WWWDIR}
+	${CP} -rp ${WRKSRC}/* ${STAGEDIR}${WWWDIR}
 
 .include <bsd.port.mk>
