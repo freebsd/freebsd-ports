@@ -8,22 +8,17 @@ MASTER_SITES=	http://www.openprinting.org/download/printdriver/auxfiles/HP/plugi
 DISTNAME=	hplip-${DISTVERSION}-plugin
 EXTRACT_SUFX=	.run
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	makc@FreeBSD.org
 COMMENT=	Binary plugin for some HP Printers and All-in-One devices
-
-DEPRECATED=	Unmaintained interactive port
-EXPIRATION_DATE=2014-08-20
 
 RUN_DEPENDS=	hp-plugin:${PORTSDIR}/print/hplip
 
+RESTRICTED=	User must accept the license terms
+
 USE_PYTHON=	yes
 NO_BUILD=	yes
-RESTRICTED=	User must accept the license terms
-NO_PACKAGE=	${RESTRICTED}
-IS_INTERACTIVE=	yes
 WRKSRC=		${WRKDIR}/plugin_tmp
 HPLIP_FAKEDIR=	${WRKDIR}/hplip_fakedir
-MAKE_ENV=	HOME=/dev/null
 
 ONLY_FOR_ARCHS=	amd64 i386
 
@@ -55,8 +50,8 @@ do-extract:
 	@cd ${WRKDIR} && ${SH} ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX} --keep --noexec
 
 post-patch:
-#	${REINPLACE_CMD} -e 's|ok, ans = tui.enter_yes_no.*|ok, ans = 1, 1|' \
-#		${WRKSRC}/plugin_install.py
+	${REINPLACE_CMD} -e 's|ok, ans = tui.enter_yes_no.*|ok, ans = 1, 1|' \
+		${WRKSRC}/plugin_install.py
 	${REINPLACE_CMD} -e 's|rules,||;s|rules_alt,||' ${WRKSRC}/plugin.spec
 	${REINPLACE_CMD} -e 's|/etc/hp|${HPLIP_FAKEDIR}|g' \
 		${WRKSRC}/plugin_install.py
