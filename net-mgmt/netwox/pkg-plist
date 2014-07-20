@@ -1,5 +1,7 @@
 bin/netwox%%SHORTPORTVERSION%%
 bin/netwox
+man/man1/netwox.1.gz
+man/man1/netwox%%SHORTPORTVERSION%%.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/html/examples.html
 %%PORTDOCS%%%%DOCSDIR%%/html/routerandfw.html
 %%PORTDOCS%%%%DOCSDIR%%/html/sendip6.html
