@@ -12,8 +12,8 @@ MAINTAINER=	stephen@FreeBSD.org
 COMMENT=	IBM's Open Visualization Data Explorer
 
 LIB_DEPENDS=	libMagickWand-6.Q*.so:${PORTSDIR}/graphics/ImageMagick	\
-		tiff:${PORTSDIR}/graphics/tiff		\
-		cdf:${PORTSDIR}/science/cdf
+		libtiff.so:${PORTSDIR}/graphics/tiff		\
+		libcdf.so:${PORTSDIR}/science/cdf
 
 USE_XORG=	xinerama xext xpm xmu sm ice
 USES=		bison motif gmake libtool
