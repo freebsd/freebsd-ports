@@ -23,6 +23,7 @@
 #                             Set to yes to check for accf_http kernel
 #                             module on start up and load if not loaded.
 # apache24_fib (str):	      Set an altered default network view for apache
+# apache24_configcheck_disable (bool): Set to "YES" to disable sanity check on startup
 
 . /etc/rc.subr
 
@@ -46,6 +47,7 @@ envvars="%%PREFIX%%/sbin/envvars"
 [ -z "$apache24limits_enable" ] && apache24limits_enable="NO"
 [ -z "$apache24limits_args" ]   && apache24limits_args="-e -C daemon"
 [ -z "$apache24_http_accept_enable" ] && apache24_http_accept_enable="NO"
+[ -z "$apache24_configcheck_disable" ] && apache24_configcheck_disable="NO"
 
 apache24_accf()
 {
@@ -75,6 +77,7 @@ if [ -n "$2" ]; then
 		eval apache24limits_enable="\${apache24limits_${profile}_enable:-${apache24limits_enable}}"
 		eval apache24limits_args="\${apache24limits_${profile}_args:-${apache24limits_args}}"
 		eval apache24_fib="\${apache24_${profile}_fib:-${apache24_fib}}"
+		eval apache24_configcheck_disable="\${apache24_${profile}_configcheck_disable:-${apache24_configcheck_disable}}"
 		eval command="\${apache24_${profile}_command:-${command}}"
 		eval pidfile="\${apache24_${profile}_pidfile:-${pidfile}}"
 		eval apache24_envvars="\${apache24_${profile}_envvars:-${envvars}}"
@@ -123,10 +126,14 @@ if [ "${1}" != "stop" ] ; then \
 	apache24_accf
 fi
 
+if checkyesno apache24_configcheck_disable
+then
+        unset restart_precmd
+        unset reload_precmd
+fi
+
 apache24_requirepidfile()
 {
-    apache24_checkconfig
-
 	if [ ! "0`check_pidfile ${pidfile} ${command}`" -gt 1 ]; then
 		echo "${name} not running? (check $pidfile)."
 		exit 1
@@ -147,6 +154,11 @@ apache24_checkconfig()
 apache24_graceful() {
 	apache24_requirepidfile
 
+	if ! checkyesno apache24_configcheck_disable
+	then
+		apache24_checkconfig
+	fi
+
 	echo "Performing a graceful restart"
 	eval ${command} ${apache24_flags} -k graceful
 }
@@ -154,13 +166,21 @@ apache24_graceful() {
 apache24_gracefulstop() {
 	apache24_requirepidfile
 
+	if ! checkyesno apache24_configcheck_disable
+	then
+		apache24_checkconfig
+	fi
+
 	echo "Performing a graceful stop"
 	eval ${command} ${apache24_flags} -k graceful-stop
 }
 
 apache24_precmd()
 {
-	apache24_checkconfig
+	if ! checkyesno apache24_configcheck_disable
+	then
+		apache24_checkconfig
+	fi
 
 	if checkyesno apache24limits_enable
 	then

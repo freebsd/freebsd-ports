@@ -1,5 +1,5 @@
 --- ./Makefile.in.orig	2012-12-17 12:50:41.000000000 +0100
-+++ ./Makefile.in	2013-10-27 15:15:14.000000000 +0100
++++ ./Makefile.in	2014-07-08 06:27:38.000000000 +0200
 @@ -32,12 +32,10 @@
  install-conf:
  	@echo Installing configuration files
@@ -91,16 +91,8 @@
  
  install-other:
  	@test -d $(DESTDIR)$(logfiledir) || $(MKINSTALLDIRS) $(DESTDIR)$(logfiledir)
-@@ -224,19 +196,17 @@
- 	done
- 
- install-man:
--	@echo Installing man pages and online manual
-+	@echo Installing man pages
- 	@test -d $(DESTDIR)$(mandir)      || $(MKINSTALLDIRS) $(DESTDIR)$(mandir)
- 	@test -d $(DESTDIR)$(mandir)/man1 || $(MKINSTALLDIRS) $(DESTDIR)$(mandir)/man1
- 	@test -d $(DESTDIR)$(mandir)/man8 || $(MKINSTALLDIRS) $(DESTDIR)$(mandir)/man8
--	@test -d $(DESTDIR)$(manualdir)   || $(MKINSTALLDIRS) $(DESTDIR)$(manualdir)
+@@ -231,12 +203,7 @@
+ 	@test -d $(DESTDIR)$(manualdir)   || $(MKINSTALLDIRS) $(DESTDIR)$(manualdir)
  	@cp -p $(top_srcdir)/docs/man/*.1 $(DESTDIR)$(mandir)/man1
  	@cp -p $(top_srcdir)/docs/man/*.8 $(DESTDIR)$(mandir)/man8
 -	@if test "x$(RSYNC)" != "x" && test -x $(RSYNC) ; then \
@@ -109,11 +101,7 @@
 -	  cd $(top_srcdir)/docs/manual && cp -rp * $(DESTDIR)$(manualdir); \
 -	  cd $(DESTDIR)$(manualdir) && find . -name ".svn" -type d -print | xargs rm -rf 2>/dev/null || true; \
 -	fi
-+.if !defined(NOPORTDOCS)
-+	@echo Installing online manual
-+	@test -d $(DESTDIR)$(manualdir)   || $(MKINSTALLDIRS) $(DESTDIR)$(manualdir)
-+	  cd $(top_srcdir)/docs/manual && cp -rp * $(DESTDIR)$(manualdir);
-+.endif
++	cd $(top_srcdir)/docs/manual && cp -rp * $(DESTDIR)$(manualdir)
  
  install-suexec:
  	@if test -f $(builddir)/support/suexec; then \

@@ -78,6 +78,7 @@ libexec/apache24/httpd.exp
 %%MOD_ALIAS%%libexec/apache24/mod_alias.so
 %%MOD_ALLOWMETHODS%%libexec/apache24/mod_allowmethods.so
 %%MOD_ASIS%%libexec/apache24/mod_asis.so
+%%MOD_AUTHNZ_FCGI%%libexec/apache24/mod_authnz_fcgi.so
 %%MOD_AUTHNZ_LDAP%%libexec/apache24/mod_authnz_ldap.so
 %%MOD_AUTHN_ANON%%libexec/apache24/mod_authn_anon.so
 %%MOD_AUTHN_CORE%%libexec/apache24/mod_authn_core.so
@@ -279,6 +280,7 @@ sbin/split-logfile
 @unexec if cmp -s %D/%%ETCDIR%%/mime.types %D/%%EXAMPLESDIR%%/mime.types; then rm -f %D/%%ETCDIR%%/mime.types; fi
 %%EXAMPLESDIR%%/mime.types
 @exec [ -f %D/%%ETCDIR%%/mime.types ] || cp %D/%%EXAMPLESDIR%%/mime.types %D/%%ETCDIR%%/mime.types
+%%EXAMPLESDIR%%/modules.d/README_modules.d
 %%WWWDIR%%/cgi-bin/printenv
 %%WWWDIR%%/cgi-bin/printenv.vbs
 %%WWWDIR%%/cgi-bin/printenv.wsf
@@ -545,22 +547,23 @@ sbin/split-logfile
 %%WWWDIR%%/icons/world2.gif
 %%WWWDIR%%/icons/world2.png
 %%WWWDIR%%/icons/xml.png
-@dirrm %%WWWDIR%%/icons/small
-@dirrm %%WWWDIR%%/icons
-@dirrm %%WWWDIR%%/error/include
-@dirrm %%WWWDIR%%/error
-@dirrmtry %%WWWDIR%%/data
-@dirrmtry %%WWWDIR%%/cgi-bin
-@dirrmtry %%WWWDIR%%
-@dirrm %%EXAMPLESDIR%%/extra
-@dirrm %%EXAMPLESDIR%%
+@unexec rm -f %D/%%ETCDIR%%/httpd.conf.bak 2> /dev/null || true
+@dirrmtry %%ETCDIR%%/Includes
+@dirrmtry %%ETCDIR%%/envvars.d
+@dirrmtry %%ETCDIR%%/extra
+@dirrmtry %%ETCDIR%%/modules.d
+@dirrmtry %%ETCDIR%%
+@dirrmtry include/apache24
+@dirrmtry libexec/apache24
 @dirrm %%DATADIR%%/build
 @dirrm %%DATADIR%%
-@dirrmtry libexec/apache24
-@dirrmtry include/apache24
-@unexec rm -f %D/%%ETCDIR%%/httpd.conf.bak 2> /dev/null || true
-@dirrmtry %%ETCDIR%%/modules.d
-@dirrmtry %%ETCDIR%%/extra
-@dirrmtry %%ETCDIR%%/envvars.d
-@dirrmtry %%ETCDIR%%/Includes
-@dirrmtry %%ETCDIR%%
+@dirrm %%EXAMPLESDIR%%/extra
+@dirrm %%EXAMPLESDIR%%/modules.d
+@dirrm %%EXAMPLESDIR%%
+@dirrmtry %%WWWDIR%%/cgi-bin
+@dirrmtry %%WWWDIR%%/data
+@dirrm %%WWWDIR%%/error/include
+@dirrm %%WWWDIR%%/error
+@dirrm %%WWWDIR%%/icons/small
+@dirrm %%WWWDIR%%/icons
+@dirrmtry %%WWWDIR%%

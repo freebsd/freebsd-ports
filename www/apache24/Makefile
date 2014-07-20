@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	apache24
-PORTVERSION=	2.4.9
-PORTREVISION=	3
+PORTVERSION=	2.4.10
 CATEGORIES=	www ipv6
 MASTER_SITES=	${MASTER_SITE_APACHE_HTTPD}
 DISTNAME=	httpd-${PORTVERSION}
@@ -16,7 +15,7 @@ LIB_DEPENDS=	libexpat.so:${PORTSDIR}/textproc/expat2 \
 		libpcre.so:${PORTSDIR}/devel/pcre
 
 CONFLICTS_INSTALL=	caudium14-1.* \
-		apache-*-2.2.* apache22-*
+			apache-*-2.2.* apache22-*
 
 USE_APACHE=	common24
 USES=		tar:bzip2 iconv perl5 libtool cpe
@@ -53,12 +52,12 @@ IPV4_MAPPED_CONFIGURE_ENABLE=	v4-mapped
 
 LDAP_CONFIGURE_ON=		--enable-ldap=shared
 
-LUAJIT_LIB_DEPENDS=		luajit:${PORTSDIR}/lang/luajit
+LUAJIT_LIB_DEPENDS=		libluajit-5.1.so:${PORTSDIR}/lang/luajit
 LUA_CONFIGURE_WITH=		lua
 LUA_USES=			lua
 
 SOCACHE_DC_CONFIGURE_ON=	--with-distcache=${LOCALBASE}
-SOCACHE_DC_LIB_DEPENDS=		distcache:${PORTSDIR}/security/distcache
+SOCACHE_DC_LIB_DEPENDS=		libdistcache.so:${PORTSDIR}/security/distcache
 
 # Note:
 # OpenSSL version (base/ports) depends how devel/apr1 was build
@@ -71,10 +70,6 @@ SSL_USE=			OPENSSL=yes
 .include <bsd.port.options.mk>
 
 ETC_SUBDIRS=		Includes envvars.d extra modules.d
-
-.if ! ${PORT_OPTIONS:MDOCS}
-MAKE_ENV+=	NOPORTDOCS=yes
-.endif
 
 APR_CONFIG?=		${LOCALBASE}/bin/apr-1-config
 APU_CONFIG?=		${LOCALBASE}/bin/apu-1-config
@@ -156,6 +151,14 @@ post-install:
 	@${MKDIR} ${ETC_SUBDIRS:S|^|${STAGEDIR}${ETCDIR}/|}
 	${INSTALL_DATA} ${FILESDIR}/no-accf.conf ${STAGEDIR}${ETCDIR}/Includes/
 	${INSTALL_DATA} ${FILESDIR}/README_modules.d ${STAGEDIR}/${ETCDIR}/modules.d/
+# place for module configuration samples
+	@${MKDIR} ${STAGEDIR}/${EXAMPLESDIR}/modules.d
+	${INSTALL_DATA} ${FILESDIR}/README_modules.d ${STAGEDIR}/${EXAMPLESDIR}/modules.d
+
+# suppress warning for non binary files
+	-@${STRIP_CMD} ${STAGEDIR}${PREFIX}/sbin/* \
+		${STAGEDIR}${PREFIX}/bin/* \
+		${STAGEDIR}${PREFIX}/libexec/apache24/*.so 2>/dev/null
 
 .if ${PORT_OPTIONS:MLOG_FORENSIC}
 	@${INSTALL_SCRIPT} ${WRKSRC}/support/check_forensic ${STAGEDIR}${PREFIX}/sbin
