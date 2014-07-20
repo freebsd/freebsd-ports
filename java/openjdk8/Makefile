@@ -3,11 +3,11 @@
 PORTNAME=	openjdk
 PORTVERSION=	${JDK_MAJOR_VERSION}.${JDK_UPDATE_VERSION}.${JDK_BUILD_NUMBER:S/^0//}
 CATEGORIES=	java devel
-MASTER_SITES=	http://download.java.net/openjdk/jdk${JDK_MAJOR_VERSION}/promoted/b${JDK_BUILD_NUMBER}/:jdk \
+MASTER_SITES=	http://download.java.net/openjdk/jdk${JDK_MAJOR_VERSION}/promoted/b${DIST_BUILD_NUMBER}/:jdk \
 		https://adopt-openjdk.ci.cloudbees.com/job/jtreg/${JTREG_JENKINS_BUILD}/artifact/:jtreg \
 		LOCAL/jkim:jdk,jtreg
 PKGNAMESUFFIX?=	${JDK_MAJOR_VERSION}
-DISTNAME=	${PORTNAME}-${JDK_MAJOR_VERSION}-src-b132-03_mar_2014
+DISTNAME=	${PORTNAME}-${JDK_MAJOR_VERSION}-src-b${DIST_BUILD_NUMBER}-03_mar_2014
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:jdk
 
 MAINTAINER=	java@FreeBSD.org
@@ -19,6 +19,7 @@ BUILD_DEPENDS=	zip:${PORTSDIR}/archivers/zip \
 		${LOCALBASE}/include/cups/cups.h:${PORTSDIR}/print/cups-client \
 		bash:${PORTSDIR}/shells/bash
 LIB_DEPENDS=	libasound.so:${PORTSDIR}/audio/alsa-lib \
+		libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig \
 		libfreetype.so:${PORTSDIR}/print/freetype2 \
 		libgif.so:${PORTSDIR}/graphics/giflib
 RUN_DEPENDS=	javavm:${PORTSDIR}/java/javavmwrapper \
@@ -62,6 +63,7 @@ NOPRECIOUSMAKEVARS=	yes
 JDK_MAJOR_VERSION=	8
 JDK_UPDATE_VERSION=	11
 JDK_BUILD_NUMBER=	12
+DIST_BUILD_NUMBER=	132
 JTREG_VERSION=		4.1
 JTREG_BUILD_NUMBER=	b08
 JTREG_JENKINS_BUILD=	77
