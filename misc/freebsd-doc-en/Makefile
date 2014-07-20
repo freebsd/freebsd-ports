@@ -3,6 +3,7 @@
 
 PORTNAME=	freebsd-doc
 PORTVERSION=	45106
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	misc docs
 MASTER_SITES=	LOCAL/blackend
@@ -24,7 +25,11 @@ MAKE_ARGS=	FORMATS="${DOCFORMAT}" \
 		DOCOWN=${SHAREOWN} \
 		DOCGRP=${SHAREGRP}
 MAKE_JOBS_UNSAFE=	yes
-DESTDIRNAME=	${STAGEDIR}${PREFIX}/${DOCBASE}
+
+# To populate correctly the stage directory
+TMPDESTDIR=	${STAGEDIR}${DESTDIR}/${PREFIX}/${DOCBASE}
+DESTDIRNAME=	TMPDESTDIR
+
 PLIST=		${WRKDIR}/pkg-plist
 NEED_ROOT=	yes
 
@@ -77,5 +82,15 @@ PLIST_FORMATS+=	extras common
 
 pre-build:
 	${CAT} ${PLIST_FORMATS:S,^,${.CURDIR}/pkg-plist.,} > ${PLIST}
+
+# For HTML files, images links are hardcoded during the build
+# with absolute pathnames.  Make these pathnames relative.
+post-build:
+.if ${PORT_OPTIONS:MHTML} || ${PORT_OPTIONS:MHTML_SPLIT}
+	${FIND} ${WRKSRC} -name "*.html" -exec \
+		${REINPLACE_CMD} -e 's,img src=\"${WRKSRC}.*share/images,img src=\"../..,g' {} \;
+	${FIND} ${WRKSRC} -name "*.html" -exec \
+		${REINPLACE_CMD} -e 's,img src=\"${WRKSRC}.*imagelib,img src=\"imagelib,g' {} \;
+.endif
 
 .include <bsd.port.mk>
