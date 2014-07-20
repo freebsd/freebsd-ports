@@ -487,9 +487,16 @@
 @dirrm %%WWWDIR%%/config/locale/da_DK/LC_MESSAGES
 @dirrm %%WWWDIR%%/config/locale/da_DK
 @dirrm %%WWWDIR%%/config/locale
+@owner %%WWWOWN%%
+@group %%WWWGRP%%
 @dirrmtry %%WWWDIR%%/config
+@group
+@owner
 @dirrm %%WWWDIR%%/admin
 @dirrmtry %%WWWDIR%%
+@mode 750
+@owner %%WWWOWN%%
+@group %%NAGIOSUSER%%
 @dirrmtry %%ETCDIR%%/ssh
 @dirrmtry %%ETCDIR%%/services
 @dirrmtry %%ETCDIR%%/hosts
@@ -498,3 +505,6 @@
 @dirrmtry %%ETCDIR%%/backup/hosts
 @dirrmtry %%ETCDIR%%/backup
 @dirrmtry %%ETCDIR%%
+@mode
+@owner
+@group
