@@ -24,6 +24,6 @@ PLIST_SUB=	SHLIB_MAJOR="${SHLIB_MAJOR}"
 
 post-stage:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libapreq2.so.3.8.0
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/libexec/apache22/mod_apreq2.so
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${APACHEMODDIR}/mod_apreq2.so
 
 .include <bsd.port.mk>
