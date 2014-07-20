@@ -6,7 +6,7 @@ PORTVERSION=	7.40.3
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.vips.ecs.soton.ac.uk/supported/${PORTVERSION:R}/
 
-MAINTAINER=	antoine@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Free image processing system
 
 OPTIONS_DEFINE=	PYTHON DOCS
