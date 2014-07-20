@@ -20,8 +20,8 @@ RUN_DEPENDS=	${LOCALBASE}/${TEXMFDIR}/fonts/tfm/ptex/min10.tfm:${PORTSDIR}/japan
 		${LOCALBASE}/${MINCHO}:${PORTSDIR}/japanese/font-std \
 		${LOCALBASE}/${GOTHIC}:${PORTSDIR}/japanese/font-std
 LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2 \
-		wwwcore.1:${PORTSDIR}/www/libwww \
-		t1.5:${PORTSDIR}/devel/t1lib
+		libwwwcore.so:${PORTSDIR}/www/libwww \
+		libt1.so:${PORTSDIR}/devel/t1lib
 
 DIST_SUBDIR=	xdvik
 USE_TEX=	tetex base texmf
