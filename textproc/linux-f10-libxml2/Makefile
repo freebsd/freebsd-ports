@@ -12,6 +12,8 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-${RPMVERSION}
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	Library providing XML and HTML support (Linux Fedora 10)
 
+FORBIDDEN=	http://www.freshports.org/vuxml.php?vid=57f1a624-6197-11e1-b98c-bcaec565249c|7be92050-a450-11e2-9898-001060e06fd4|b8ae4659-a0da-11e1-a294-bcaec565249c
+
 CONFLICTS=	linux-libxml2-[0-9]* linux-f8-libxml2-[0-9]*
 
 USE_LINUX_RPM=	yes
