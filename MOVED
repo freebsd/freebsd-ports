@@ -6258,3 +6258,6 @@ databases/py-simplecouchdb||2014-07-15|Has expired: Obsolete, abandoned
 audio/xmms-bonk||2014-07-15|Has expired: Obsolete experimental codec, use audio/flac or audio/wavpack
 audio/bonk||2014-07-15|Has expired: Obsolete experimental codec, use audio/flac or audio/wavpack
 sysutils/gtk-send-pr||2014-07-17|Has expired: Obsolete after migration to Bugzilla
+lang/stklos||2014-07-20|Has expired: Fails testsuite on all platforms, unmaintained upstream
+lang/ikarus||2014-07-20|Has expired: Upstream project died in 2009
+security/pam_pgina||2014-07-20|Has expired: main site disappeared, no more public distfiles
