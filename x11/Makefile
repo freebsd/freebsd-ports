@@ -134,6 +134,7 @@
     SUBDIR += keynav
     SUBDIR += kgamma
     SUBDIR += konsole
+    SUBDIR += leechcraft
     SUBDIR += libICE
     SUBDIR += libSM
     SUBDIR += libX11
