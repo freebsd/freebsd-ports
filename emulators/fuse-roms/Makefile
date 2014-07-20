@@ -9,8 +9,7 @@ MASTER_SITES=	ftp://mirror.switch.ch/pool/4/mirror/rpmfusion/nonfree/fedora/rele
 		ftp://ftp.pbone.net/mirror/rpmfusion.org/nonfree/fedora/releases/19/Everything/x86_64/os/:1 \
 		ftp://ftp.icm.edu.pl/vol/rzm2/linux-rpmfusion/nonfree/fedora/releases/19/Everything/x86_64/os/:1 \
 		http://zxspectrum.it.omegahg.com/rom/:2
-DISTNAME=	fuse-emulator-roms-0.9.0-5.fc19.noarch.rpm:1 Opus-22.rom:2
-EXTRACT_SUFX=
+DISTFILES=	fuse-emulator-roms-0.9.0-5.fc19.noarch.rpm:1 Opus-22.rom:2
 EXTRACT_ONLY=	fuse-emulator-roms-0.9.0-5.fc19.noarch.rpm
 
 MAINTAINER=	wulf@cicgroup.ru
@@ -32,7 +31,7 @@ post-extract:
 
 do-install:
 	${MKDIR} ${STAGEDIR}${DATADIR}
-	cd ${WRKDIR}/usr/share/fuse && \
-		${INSTALL_DATA} ${ROMS} ${STAGEDIR}${DATADIR}
+	(cd ${WRKDIR}/usr/share/fuse && \
+		${INSTALL_DATA} ${ROMS} ${STAGEDIR}${DATADIR})
 
 .include <bsd.port.mk>
