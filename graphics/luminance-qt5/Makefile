@@ -5,6 +5,7 @@ PORTNAME=	luminance-hdr
 DISTVERSION=	2.4.0
 CATEGORIES=	graphics
 MASTER_SITES=	SF/qtpfsgui/luminance/${DISTVERSION}
+PKGNAMESUFFIX=	-qt5
 
 MAINTAINER=	h2+fbsdports@fsfe.org
 COMMENT=	Complete open source solution for HDR photography
