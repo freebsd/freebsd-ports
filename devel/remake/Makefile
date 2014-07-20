@@ -12,7 +12,7 @@ MAINTAINER=	arved@FreeBSD.org
 COMMENT=	Fork of gmake with debugger
 
 GNU_CONFIGURE=	yes
-USES=		gettext
+USES=		gettext readline
 INFO=		remake
 
 .include <bsd.port.mk>
