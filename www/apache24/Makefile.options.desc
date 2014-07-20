@@ -42,6 +42,7 @@ ACTIONS_DESC=			Action triggering on requests
 ALIAS_DESC=			Mapping of requests to different filesystem parts
 ALLOWMETHODS_DESC=		Easily restrict what HTTP methods can be used on the server
 ASIS_DESC=			Sends files that contain their own HTTP headers
+AUTHNZ_FCGI_DESC=		Allows a FastCGI authorizer to handle the check_authn hook
 AUTHNZ_LDAP_DESC=		LDAP based authentication
 AUTHN_ANON_DESC=		Anonymous user authentication control
 AUTHN_CORE_DESC=		Core authentication module
