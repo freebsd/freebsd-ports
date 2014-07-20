@@ -26,6 +26,8 @@ USE_QT4=	gui sql webkit xml linguist_build moc_build qmake_build \
 		rcc_build uic_build imageformats_run
 INSTALLS_ICONS=	yes
 
+CONFLICTS_INSTALL=	luminance-hdr-qt5-*
+
 OPTIONS_DEFINE=	DOCS
 
 post-patch:
