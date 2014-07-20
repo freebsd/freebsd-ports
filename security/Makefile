@@ -623,7 +623,6 @@
     SUBDIR += pam_mkhomedir
     SUBDIR += pam_p11
     SUBDIR += pam_per_user
-    SUBDIR += pam_pgina
     SUBDIR += pam_pseudo
     SUBDIR += pam_pwdfile
     SUBDIR += pam_require
