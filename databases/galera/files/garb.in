@@ -45,7 +45,7 @@ command_args="-c -f -u nobody -p $garb_pid_file $procname"
 start_precmd="${name}_prestart"
 start_postcmd="${name}_poststart"
 stop_precmd="${name}_prestop"
-export %%LD_LIBRARY_PATH%%
+export LD_LIBRARY_PATH=%%LD_LIBRARY_PATH%%
 
 garb_prestart()
 {
