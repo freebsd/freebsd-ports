@@ -78,6 +78,7 @@ libexec/apache24/httpd.exp
 %%MOD_ALIAS%%libexec/apache24/mod_alias.so
 %%MOD_ALLOWMETHODS%%libexec/apache24/mod_allowmethods.so
 %%MOD_ASIS%%libexec/apache24/mod_asis.so
+%%MOD_AUTHNZ_FCGI%%libexec/apache24/mod_authnz_fcgi.so
 %%MOD_AUTHNZ_LDAP%%libexec/apache24/mod_authnz_ldap.so
 %%MOD_AUTHN_ANON%%libexec/apache24/mod_authn_anon.so
 %%MOD_AUTHN_CORE%%libexec/apache24/mod_authn_core.so

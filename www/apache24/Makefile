@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	apache24
-PORTVERSION=	2.4.9
-PORTREVISION=	4
+PORTVERSION=	2.4.10
 CATEGORIES=	www ipv6
 MASTER_SITES=	${MASTER_SITE_APACHE_HTTPD}
 DISTNAME=	httpd-${PORTVERSION}
@@ -53,7 +52,7 @@ IPV4_MAPPED_CONFIGURE_ENABLE=	v4-mapped
 
 LDAP_CONFIGURE_ON=		--enable-ldap=shared
 
-LUAJIT_LIB_DEPENDS=		libluajit.so:${PORTSDIR}/lang/luajit
+LUAJIT_LIB_DEPENDS=		libluajit-5.1.so:${PORTSDIR}/lang/luajit
 LUA_CONFIGURE_WITH=		lua
 LUA_USES=			lua
 
@@ -156,7 +155,7 @@ post-install:
 	@${MKDIR} ${STAGEDIR}/${EXAMPLESDIR}/modules.d
 	${INSTALL_DATA} ${FILESDIR}/README_modules.d ${STAGEDIR}/${EXAMPLESDIR}/modules.d
 
-# supress warnings about all the non binary files
+# suppress warning for non binary files
 	-@${STRIP_CMD} ${STAGEDIR}${PREFIX}/sbin/* \
 		${STAGEDIR}${PREFIX}/bin/* \
 		${STAGEDIR}${PREFIX}/libexec/apache24/*.so 2>/dev/null
