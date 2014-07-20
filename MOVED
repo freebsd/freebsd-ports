@@ -6262,3 +6262,4 @@ lang/stklos||2014-07-20|Has expired: Fails testsuite on all platforms, unmaintai
 lang/ikarus||2014-07-20|Has expired: Upstream project died in 2009
 security/pam_pgina||2014-07-20|Has expired: main site disappeared, no more public distfiles
 www/linux-opera-devel|www/opera|2014-07-20|Has expired: Not staged and multiple vulnerabilities. 
+www/opera-devel|www/opera|2014-07-20|Has expired: Not staged, multiple vulnerabilities, older than non-devel

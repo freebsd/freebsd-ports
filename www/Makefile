@@ -583,7 +583,6 @@
     SUBDIR += opencart
     SUBDIR += openxmldir
     SUBDIR += opera
-    SUBDIR += opera-devel
     SUBDIR += opera-linuxplugins
     SUBDIR += orangehrm
     SUBDIR += oscommerce
