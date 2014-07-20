@@ -258,9 +258,11 @@ PLIST_DIRSTRY=	${TEXMFVARDIR}/web2c \
 .if !empty(USE_TEX:Mupdmap)
 .PHONY:	do-updmap
 do-updmap:
+.if defined(NO_STAGE)
 	${SETENV} PATH=${PATH}:${LOCALBASE}/bin \
 		TEXMFMAIN=${LOCALBASE}/${TEXMFDIR} \
 		${LOCALBASE}/bin/updmap-sys
+.endif
 	@${ECHO_CMD} "@exec ${SETENV} PATH=${PATH}:${LOCALBASE}/bin " \
 		"TEXMFMAIN=${LOCALBASE}/${TEXMFDIR} " \
 		"${LOCALBASE}/bin/updmap-sys"  >> ${TMPPLIST}
