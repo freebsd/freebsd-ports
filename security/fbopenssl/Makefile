@@ -18,6 +18,12 @@ MAKE_ENV=	BSD_INSTALL_DATA="${BSD_INSTALL_DATA}"
 WRKSRC=		${WRKDIR}/${PORTNAME}
 PORTDOCS=	readme.txt
 
+.if defined(NO_PROFILE)
+PLIST_SUB+=	PROFILE="@comment "
+.else
+PLIST_SUB+=	PROFILE=""
+.endif
+
 OPTIONS_DEFINE=	DOCS
 
 post-extract:
