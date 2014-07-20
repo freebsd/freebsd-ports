@@ -405,7 +405,6 @@
     SUBDIR += linux-firefox
     SUBDIR += linux-libgtkembedmoz
     SUBDIR += linux-opera
-    SUBDIR += linux-opera-devel
     SUBDIR += linux-seamonkey
     SUBDIR += lionwiki
     SUBDIR += ljdeps

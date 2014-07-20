@@ -6261,3 +6261,4 @@ sysutils/gtk-send-pr||2014-07-17|Has expired: Obsolete after migration to Bugzil
 lang/stklos||2014-07-20|Has expired: Fails testsuite on all platforms, unmaintained upstream
 lang/ikarus||2014-07-20|Has expired: Upstream project died in 2009
 security/pam_pgina||2014-07-20|Has expired: main site disappeared, no more public distfiles
+www/linux-opera-devel|www/opera|2014-07-20|Has expired: Not staged and multiple vulnerabilities. 
