@@ -29,7 +29,7 @@ INSTALLS_ICONS=	yes
 
 MAKE_JOBS_UNSAFE=yes
 
-CONFLICTS_INSTALL=	luminance-hdr-qt5-*
+CONFLICTS_INSTALL=	luminance-hdr-[0-9]*
 
 OPTIONS_DEFINE=	DOCS
 
