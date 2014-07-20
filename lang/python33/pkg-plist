@@ -4779,226 +4779,226 @@ man/man1/python3.3.1.gz
 @dirrm %%PYTHON_LIBDIR%%/xmlrpc
 @dirrm %%PYTHON_LIBDIR%%
 @dirrm %%PYTHON_INCLUDEDIR%%%%PYABIVER%%
-%%PORTDATA%%%%DATADIR%%/Tools/README
-%%PORTDATA%%%%DATADIR%%/Tools/buildbot/README.tcltk-AMD64
-%%PORTDATA%%%%DATADIR%%/Tools/buildbot/build-amd64.bat
-%%PORTDATA%%%%DATADIR%%/Tools/buildbot/build.bat
-%%PORTDATA%%%%DATADIR%%/Tools/buildbot/buildmsi.bat
-%%PORTDATA%%%%DATADIR%%/Tools/buildbot/clean-amd64.bat
-%%PORTDATA%%%%DATADIR%%/Tools/buildbot/clean.bat
-%%PORTDATA%%%%DATADIR%%/Tools/buildbot/external-amd64.bat
-%%PORTDATA%%%%DATADIR%%/Tools/buildbot/external-common.bat
-%%PORTDATA%%%%DATADIR%%/Tools/buildbot/external.bat
-%%PORTDATA%%%%DATADIR%%/Tools/buildbot/test-amd64.bat
-%%PORTDATA%%%%DATADIR%%/Tools/buildbot/test.bat
-%%PORTDATA%%%%DATADIR%%/Tools/ccbench/ccbench.py
-%%PORTDATA%%%%DATADIR%%/Tools/demo/README
-%%PORTDATA%%%%DATADIR%%/Tools/demo/beer.py
-%%PORTDATA%%%%DATADIR%%/Tools/demo/eiffel.py
-%%PORTDATA%%%%DATADIR%%/Tools/demo/hanoi.py
-%%PORTDATA%%%%DATADIR%%/Tools/demo/life.py
-%%PORTDATA%%%%DATADIR%%/Tools/demo/markov.py
-%%PORTDATA%%%%DATADIR%%/Tools/demo/mcast.py
-%%PORTDATA%%%%DATADIR%%/Tools/demo/queens.py
-%%PORTDATA%%%%DATADIR%%/Tools/demo/redemo.py
-%%PORTDATA%%%%DATADIR%%/Tools/demo/rpython.py
-%%PORTDATA%%%%DATADIR%%/Tools/demo/rpythond.py
-%%PORTDATA%%%%DATADIR%%/Tools/demo/sortvisu.py
-%%PORTDATA%%%%DATADIR%%/Tools/demo/ss1.py
-%%PORTDATA%%%%DATADIR%%/Tools/demo/vector.py
-%%PORTDATA%%%%DATADIR%%/Tools/freeze/README
-%%PORTDATA%%%%DATADIR%%/Tools/freeze/bkfile.py
-%%PORTDATA%%%%DATADIR%%/Tools/freeze/checkextensions.py
-%%PORTDATA%%%%DATADIR%%/Tools/freeze/checkextensions_win32.py
-%%PORTDATA%%%%DATADIR%%/Tools/freeze/extensions_win32.ini
-%%PORTDATA%%%%DATADIR%%/Tools/freeze/flag.py
-%%PORTDATA%%%%DATADIR%%/Tools/freeze/freeze.py
-%%PORTDATA%%%%DATADIR%%/Tools/freeze/hello.py
-%%PORTDATA%%%%DATADIR%%/Tools/freeze/makeconfig.py
-%%PORTDATA%%%%DATADIR%%/Tools/freeze/makefreeze.py
-%%PORTDATA%%%%DATADIR%%/Tools/freeze/makemakefile.py
-%%PORTDATA%%%%DATADIR%%/Tools/freeze/parsesetup.py
-%%PORTDATA%%%%DATADIR%%/Tools/freeze/win32.html
-%%PORTDATA%%%%DATADIR%%/Tools/freeze/winmakemakefile.py
-%%PORTDATA%%%%DATADIR%%/Tools/gdb/libpython.py
-%%PORTDATA%%%%DATADIR%%/Tools/hg/hgtouch.py
-%%PORTDATA%%%%DATADIR%%/Tools/i18n/makelocalealias.py
-%%PORTDATA%%%%DATADIR%%/Tools/i18n/msgfmt.py
-%%PORTDATA%%%%DATADIR%%/Tools/i18n/pygettext.py
-%%PORTDATA%%%%DATADIR%%/Tools/importbench/README
-%%PORTDATA%%%%DATADIR%%/Tools/importbench/importbench.py
-%%PORTDATA%%%%DATADIR%%/Tools/iobench/iobench.py
-%%PORTDATA%%%%DATADIR%%/Tools/msi/README.txt
-%%PORTDATA%%%%DATADIR%%/Tools/msi/crtlicense.txt
-%%PORTDATA%%%%DATADIR%%/Tools/msi/msi.py
-%%PORTDATA%%%%DATADIR%%/Tools/msi/msilib.py
-%%PORTDATA%%%%DATADIR%%/Tools/msi/msisupport.c
-%%PORTDATA%%%%DATADIR%%/Tools/msi/msisupport.mak
-%%PORTDATA%%%%DATADIR%%/Tools/msi/schema.py
-%%PORTDATA%%%%DATADIR%%/Tools/msi/sequence.py
-%%PORTDATA%%%%DATADIR%%/Tools/msi/uisample.py
-%%PORTDATA%%%%DATADIR%%/Tools/parser/test_unparse.py
-%%PORTDATA%%%%DATADIR%%/Tools/parser/unparse.py
-%%PORTDATA%%%%DATADIR%%/Tools/pybench/Arithmetic.py
-%%PORTDATA%%%%DATADIR%%/Tools/pybench/Calls.py
-%%PORTDATA%%%%DATADIR%%/Tools/pybench/CommandLine.py
-%%PORTDATA%%%%DATADIR%%/Tools/pybench/Constructs.py
-%%PORTDATA%%%%DATADIR%%/Tools/pybench/Dict.py
-%%PORTDATA%%%%DATADIR%%/Tools/pybench/Exceptions.py
-%%PORTDATA%%%%DATADIR%%/Tools/pybench/Imports.py
-%%PORTDATA%%%%DATADIR%%/Tools/pybench/Instances.py
-%%PORTDATA%%%%DATADIR%%/Tools/pybench/LICENSE
-%%PORTDATA%%%%DATADIR%%/Tools/pybench/Lists.py
-%%PORTDATA%%%%DATADIR%%/Tools/pybench/Lookups.py
-%%PORTDATA%%%%DATADIR%%/Tools/pybench/NewInstances.py
-%%PORTDATA%%%%DATADIR%%/Tools/pybench/Numbers.py
-%%PORTDATA%%%%DATADIR%%/Tools/pybench/README
-%%PORTDATA%%%%DATADIR%%/Tools/pybench/Setup.py
-%%PORTDATA%%%%DATADIR%%/Tools/pybench/Strings.py
-%%PORTDATA%%%%DATADIR%%/Tools/pybench/Tuples.py
-%%PORTDATA%%%%DATADIR%%/Tools/pybench/Unicode.py
-%%PORTDATA%%%%DATADIR%%/Tools/pybench/With.py
-%%PORTDATA%%%%DATADIR%%/Tools/pybench/clockres.py
-%%PORTDATA%%%%DATADIR%%/Tools/pybench/package/__init__.py
-%%PORTDATA%%%%DATADIR%%/Tools/pybench/package/submodule.py
-%%PORTDATA%%%%DATADIR%%/Tools/pybench/pybench.py
-%%PORTDATA%%%%DATADIR%%/Tools/pybench/systimes.py
-%%PORTDATA%%%%DATADIR%%/Tools/pynche/ChipViewer.py
-%%PORTDATA%%%%DATADIR%%/Tools/pynche/ColorDB.py
-%%PORTDATA%%%%DATADIR%%/Tools/pynche/DetailsViewer.py
-%%PORTDATA%%%%DATADIR%%/Tools/pynche/ListViewer.py
-%%PORTDATA%%%%DATADIR%%/Tools/pynche/Main.py
-%%PORTDATA%%%%DATADIR%%/Tools/pynche/PyncheWidget.py
-%%PORTDATA%%%%DATADIR%%/Tools/pynche/README
-%%PORTDATA%%%%DATADIR%%/Tools/pynche/StripViewer.py
-%%PORTDATA%%%%DATADIR%%/Tools/pynche/Switchboard.py
-%%PORTDATA%%%%DATADIR%%/Tools/pynche/TextViewer.py
-%%PORTDATA%%%%DATADIR%%/Tools/pynche/TypeinViewer.py
-%%PORTDATA%%%%DATADIR%%/Tools/pynche/X/rgb.txt
-%%PORTDATA%%%%DATADIR%%/Tools/pynche/X/xlicense.txt
-%%PORTDATA%%%%DATADIR%%/Tools/pynche/__init__.py
-%%PORTDATA%%%%DATADIR%%/Tools/pynche/html40colors.txt
-%%PORTDATA%%%%DATADIR%%/Tools/pynche/namedcolors.txt
-%%PORTDATA%%%%DATADIR%%/Tools/pynche/pyColorChooser.py
-%%PORTDATA%%%%DATADIR%%/Tools/pynche/pynche
-%%PORTDATA%%%%DATADIR%%/Tools/pynche/pynche.pyw
-%%PORTDATA%%%%DATADIR%%/Tools/pynche/webcolors.txt
-%%PORTDATA%%%%DATADIR%%/Tools/pynche/websafe.txt
-%%PORTDATA%%%%DATADIR%%/Tools/scripts/2to3
-%%PORTDATA%%%%DATADIR%%/Tools/scripts/README
-%%PORTDATA%%%%DATADIR%%/Tools/scripts/abitype.py
-%%PORTDATA%%%%DATADIR%%/Tools/scripts/analyze_dxp.py
-%%PORTDATA%%%%DATADIR%%/Tools/scripts/byext.py
-%%PORTDATA%%%%DATADIR%%/Tools/scripts/byteyears.py
-%%PORTDATA%%%%DATADIR%%/Tools/scripts/checkpyc.py
-%%PORTDATA%%%%DATADIR%%/Tools/scripts/cleanfuture.py
-%%PORTDATA%%%%DATADIR%%/Tools/scripts/combinerefs.py
-%%PORTDATA%%%%DATADIR%%/Tools/scripts/copytime.py
-%%PORTDATA%%%%DATADIR%%/Tools/scripts/crlf.py
-%%PORTDATA%%%%DATADIR%%/Tools/scripts/db2pickle.py
-%%PORTDATA%%%%DATADIR%%/Tools/scripts/diff.py
-%%PORTDATA%%%%DATADIR%%/Tools/scripts/dutree.doc
-%%PORTDATA%%%%DATADIR%%/Tools/scripts/dutree.py
-%%PORTDATA%%%%DATADIR%%/Tools/scripts/eptags.py
-%%PORTDATA%%%%DATADIR%%/Tools/scripts/find-uname.py
-%%PORTDATA%%%%DATADIR%%/Tools/scripts/find_recursionlimit.py
-%%PORTDATA%%%%DATADIR%%/Tools/scripts/finddiv.py
-%%PORTDATA%%%%DATADIR%%/Tools/scripts/findlinksto.py
-%%PORTDATA%%%%DATADIR%%/Tools/scripts/findnocoding.py
-%%PORTDATA%%%%DATADIR%%/Tools/scripts/fixcid.py
-%%PORTDATA%%%%DATADIR%%/Tools/scripts/fixdiv.py
-%%PORTDATA%%%%DATADIR%%/Tools/scripts/fixheader.py
-%%PORTDATA%%%%DATADIR%%/Tools/scripts/fixnotice.py
-%%PORTDATA%%%%DATADIR%%/Tools/scripts/fixps.py
-%%PORTDATA%%%%DATADIR%%/Tools/scripts/ftpmirror.py
-%%PORTDATA%%%%DATADIR%%/Tools/scripts/get-remote-certificate.py
-%%PORTDATA%%%%DATADIR%%/Tools/scripts/google.py
-%%PORTDATA%%%%DATADIR%%/Tools/scripts/gprof2html.py
-%%PORTDATA%%%%DATADIR%%/Tools/scripts/h2py.py
-%%PORTDATA%%%%DATADIR%%/Tools/scripts/highlight.py
-%%PORTDATA%%%%DATADIR%%/Tools/scripts/idle3
-%%PORTDATA%%%%DATADIR%%/Tools/scripts/ifdef.py
-%%PORTDATA%%%%DATADIR%%/Tools/scripts/import_diagnostics.py
-%%PORTDATA%%%%DATADIR%%/Tools/scripts/lfcr.py
-%%PORTDATA%%%%DATADIR%%/Tools/scripts/linktree.py
-%%PORTDATA%%%%DATADIR%%/Tools/scripts/lll.py
-%%PORTDATA%%%%DATADIR%%/Tools/scripts/mailerdaemon.py
-%%PORTDATA%%%%DATADIR%%/Tools/scripts/make_ctype.py
-%%PORTDATA%%%%DATADIR%%/Tools/scripts/md5sum.py
-%%PORTDATA%%%%DATADIR%%/Tools/scripts/mkreal.py
-%%PORTDATA%%%%DATADIR%%/Tools/scripts/ndiff.py
-%%PORTDATA%%%%DATADIR%%/Tools/scripts/nm2def.py
-%%PORTDATA%%%%DATADIR%%/Tools/scripts/objgraph.py
-%%PORTDATA%%%%DATADIR%%/Tools/scripts/parseentities.py
-%%PORTDATA%%%%DATADIR%%/Tools/scripts/patchcheck.py
-%%PORTDATA%%%%DATADIR%%/Tools/scripts/pathfix.py
-%%PORTDATA%%%%DATADIR%%/Tools/scripts/pdeps.py
-%%PORTDATA%%%%DATADIR%%/Tools/scripts/pickle2db.py
-%%PORTDATA%%%%DATADIR%%/Tools/scripts/pindent.py
-%%PORTDATA%%%%DATADIR%%/Tools/scripts/ptags.py
-%%PORTDATA%%%%DATADIR%%/Tools/scripts/pydoc3
-%%PORTDATA%%%%DATADIR%%/Tools/scripts/pydocgui.pyw
-%%PORTDATA%%%%DATADIR%%/Tools/scripts/pysource.py
-%%PORTDATA%%%%DATADIR%%/Tools/scripts/pyvenv
-%%PORTDATA%%%%DATADIR%%/Tools/scripts/reindent-rst.py
-%%PORTDATA%%%%DATADIR%%/Tools/scripts/reindent.py
-%%PORTDATA%%%%DATADIR%%/Tools/scripts/rgrep.py
-%%PORTDATA%%%%DATADIR%%/Tools/scripts/run_tests.py
-%%PORTDATA%%%%DATADIR%%/Tools/scripts/serve.py
-%%PORTDATA%%%%DATADIR%%/Tools/scripts/suff.py
-%%PORTDATA%%%%DATADIR%%/Tools/scripts/svneol.py
-%%PORTDATA%%%%DATADIR%%/Tools/scripts/texi2html.py
-%%PORTDATA%%%%DATADIR%%/Tools/scripts/treesync.py
-%%PORTDATA%%%%DATADIR%%/Tools/scripts/untabify.py
-%%PORTDATA%%%%DATADIR%%/Tools/scripts/which.py
-%%PORTDATA%%%%DATADIR%%/Tools/scripts/win_add2path.py
-%%PORTDATA%%%%DATADIR%%/Tools/ssl/make_ssl_data.py
-%%PORTDATA%%%%DATADIR%%/Tools/stringbench/README
-%%PORTDATA%%%%DATADIR%%/Tools/stringbench/stringbench.py
-%%PORTDATA%%%%DATADIR%%/Tools/test2to3/README
-%%PORTDATA%%%%DATADIR%%/Tools/test2to3/maintest.py
-%%PORTDATA%%%%DATADIR%%/Tools/test2to3/setup.py
-%%PORTDATA%%%%DATADIR%%/Tools/test2to3/test/runtests.py
-%%PORTDATA%%%%DATADIR%%/Tools/test2to3/test/test_foo.py
-%%PORTDATA%%%%DATADIR%%/Tools/test2to3/test2to3/__init__.py
-%%PORTDATA%%%%DATADIR%%/Tools/test2to3/test2to3/hello.py
-%%PORTDATA%%%%DATADIR%%/Tools/unicode/Makefile
-%%PORTDATA%%%%DATADIR%%/Tools/unicode/comparecodecs.py
-%%PORTDATA%%%%DATADIR%%/Tools/unicode/gencjkcodecs.py
-%%PORTDATA%%%%DATADIR%%/Tools/unicode/gencodec.py
-%%PORTDATA%%%%DATADIR%%/Tools/unicode/genwincodec.py
-%%PORTDATA%%%%DATADIR%%/Tools/unicode/genwincodecs.bat
-%%PORTDATA%%%%DATADIR%%/Tools/unicode/listcodecs.py
-%%PORTDATA%%%%DATADIR%%/Tools/unicode/makeunicodedata.py
-%%PORTDATA%%%%DATADIR%%/Tools/unicode/mkstringprep.py
-%%PORTDATA%%%%DATADIR%%/Tools/unicode/python-mappings/CP1140.TXT
-%%PORTDATA%%%%DATADIR%%/Tools/unicode/python-mappings/KOI8-U.TXT
-%%PORTDATA%%%%DATADIR%%/Tools/unicode/python-mappings/TIS-620.TXT
-%%PORTDATA%%%%DATADIR%%/Tools/unittestgui/README.txt
-%%PORTDATA%%%%DATADIR%%/Tools/unittestgui/unittestgui.py
-%%PORTDATA%%@dirrm %%DATADIR%%/Tools/buildbot
-%%PORTDATA%%@dirrm %%DATADIR%%/Tools/ccbench
-%%PORTDATA%%@dirrm %%DATADIR%%/Tools/demo
-%%PORTDATA%%@dirrm %%DATADIR%%/Tools/freeze
-%%PORTDATA%%@dirrm %%DATADIR%%/Tools/gdb
-%%PORTDATA%%@dirrm %%DATADIR%%/Tools/hg
-%%PORTDATA%%@dirrm %%DATADIR%%/Tools/i18n
-%%PORTDATA%%@dirrm %%DATADIR%%/Tools/iobench
-%%PORTDATA%%@dirrm %%DATADIR%%/Tools/importbench
-%%PORTDATA%%@dirrm %%DATADIR%%/Tools/msi
-%%PORTDATA%%@dirrm %%DATADIR%%/Tools/parser
-%%PORTDATA%%@dirrm %%DATADIR%%/Tools/pybench/package
-%%PORTDATA%%@dirrm %%DATADIR%%/Tools/pybench
-%%PORTDATA%%@dirrm %%DATADIR%%/Tools/pynche/X
-%%PORTDATA%%@dirrm %%DATADIR%%/Tools/pynche
-%%PORTDATA%%@dirrm %%DATADIR%%/Tools/scripts
-%%PORTDATA%%@dirrm %%DATADIR%%/Tools/ssl
-%%PORTDATA%%@dirrm %%DATADIR%%/Tools/stringbench
-%%PORTDATA%%@dirrm %%DATADIR%%/Tools/test2to3/test
-%%PORTDATA%%@dirrm %%DATADIR%%/Tools/test2to3/test2to3
-%%PORTDATA%%@dirrm %%DATADIR%%/Tools/test2to3
-%%PORTDATA%%@dirrm %%DATADIR%%/Tools/unicode/python-mappings
-%%PORTDATA%%@dirrm %%DATADIR%%/Tools/unicode
-%%PORTDATA%%@dirrm %%DATADIR%%/Tools/unittestgui
-%%PORTDATA%%@dirrm %%DATADIR%%/Tools
-%%PORTDATA%%@dirrm %%DATADIR%%
+%%DATADIR%%/Tools/README
+%%DATADIR%%/Tools/buildbot/README.tcltk-AMD64
+%%DATADIR%%/Tools/buildbot/build-amd64.bat
+%%DATADIR%%/Tools/buildbot/build.bat
+%%DATADIR%%/Tools/buildbot/buildmsi.bat
+%%DATADIR%%/Tools/buildbot/clean-amd64.bat
+%%DATADIR%%/Tools/buildbot/clean.bat
+%%DATADIR%%/Tools/buildbot/external-amd64.bat
+%%DATADIR%%/Tools/buildbot/external-common.bat
+%%DATADIR%%/Tools/buildbot/external.bat
+%%DATADIR%%/Tools/buildbot/test-amd64.bat
+%%DATADIR%%/Tools/buildbot/test.bat
+%%DATADIR%%/Tools/ccbench/ccbench.py
+%%DATADIR%%/Tools/demo/README
+%%DATADIR%%/Tools/demo/beer.py
+%%DATADIR%%/Tools/demo/eiffel.py
+%%DATADIR%%/Tools/demo/hanoi.py
+%%DATADIR%%/Tools/demo/life.py
+%%DATADIR%%/Tools/demo/markov.py
+%%DATADIR%%/Tools/demo/mcast.py
+%%DATADIR%%/Tools/demo/queens.py
+%%DATADIR%%/Tools/demo/redemo.py
+%%DATADIR%%/Tools/demo/rpython.py
+%%DATADIR%%/Tools/demo/rpythond.py
+%%DATADIR%%/Tools/demo/sortvisu.py
+%%DATADIR%%/Tools/demo/ss1.py
+%%DATADIR%%/Tools/demo/vector.py
+%%DATADIR%%/Tools/freeze/README
+%%DATADIR%%/Tools/freeze/bkfile.py
+%%DATADIR%%/Tools/freeze/checkextensions.py
+%%DATADIR%%/Tools/freeze/checkextensions_win32.py
+%%DATADIR%%/Tools/freeze/extensions_win32.ini
+%%DATADIR%%/Tools/freeze/flag.py
+%%DATADIR%%/Tools/freeze/freeze.py
+%%DATADIR%%/Tools/freeze/hello.py
+%%DATADIR%%/Tools/freeze/makeconfig.py
+%%DATADIR%%/Tools/freeze/makefreeze.py
+%%DATADIR%%/Tools/freeze/makemakefile.py
+%%DATADIR%%/Tools/freeze/parsesetup.py
+%%DATADIR%%/Tools/freeze/win32.html
+%%DATADIR%%/Tools/freeze/winmakemakefile.py
+%%DATADIR%%/Tools/gdb/libpython.py
+%%DATADIR%%/Tools/hg/hgtouch.py
+%%DATADIR%%/Tools/i18n/makelocalealias.py
+%%DATADIR%%/Tools/i18n/msgfmt.py
+%%DATADIR%%/Tools/i18n/pygettext.py
+%%DATADIR%%/Tools/importbench/README
+%%DATADIR%%/Tools/importbench/importbench.py
+%%DATADIR%%/Tools/iobench/iobench.py
+%%DATADIR%%/Tools/msi/README.txt
+%%DATADIR%%/Tools/msi/crtlicense.txt
+%%DATADIR%%/Tools/msi/msi.py
+%%DATADIR%%/Tools/msi/msilib.py
+%%DATADIR%%/Tools/msi/msisupport.c
+%%DATADIR%%/Tools/msi/msisupport.mak
+%%DATADIR%%/Tools/msi/schema.py
+%%DATADIR%%/Tools/msi/sequence.py
+%%DATADIR%%/Tools/msi/uisample.py
+%%DATADIR%%/Tools/parser/test_unparse.py
+%%DATADIR%%/Tools/parser/unparse.py
+%%DATADIR%%/Tools/pybench/Arithmetic.py
+%%DATADIR%%/Tools/pybench/Calls.py
+%%DATADIR%%/Tools/pybench/CommandLine.py
+%%DATADIR%%/Tools/pybench/Constructs.py
+%%DATADIR%%/Tools/pybench/Dict.py
+%%DATADIR%%/Tools/pybench/Exceptions.py
+%%DATADIR%%/Tools/pybench/Imports.py
+%%DATADIR%%/Tools/pybench/Instances.py
+%%DATADIR%%/Tools/pybench/LICENSE
+%%DATADIR%%/Tools/pybench/Lists.py
+%%DATADIR%%/Tools/pybench/Lookups.py
+%%DATADIR%%/Tools/pybench/NewInstances.py
+%%DATADIR%%/Tools/pybench/Numbers.py
+%%DATADIR%%/Tools/pybench/README
+%%DATADIR%%/Tools/pybench/Setup.py
+%%DATADIR%%/Tools/pybench/Strings.py
+%%DATADIR%%/Tools/pybench/Tuples.py
+%%DATADIR%%/Tools/pybench/Unicode.py
+%%DATADIR%%/Tools/pybench/With.py
+%%DATADIR%%/Tools/pybench/clockres.py
+%%DATADIR%%/Tools/pybench/package/__init__.py
+%%DATADIR%%/Tools/pybench/package/submodule.py
+%%DATADIR%%/Tools/pybench/pybench.py
+%%DATADIR%%/Tools/pybench/systimes.py
+%%DATADIR%%/Tools/pynche/ChipViewer.py
+%%DATADIR%%/Tools/pynche/ColorDB.py
+%%DATADIR%%/Tools/pynche/DetailsViewer.py
+%%DATADIR%%/Tools/pynche/ListViewer.py
+%%DATADIR%%/Tools/pynche/Main.py
+%%DATADIR%%/Tools/pynche/PyncheWidget.py
+%%DATADIR%%/Tools/pynche/README
+%%DATADIR%%/Tools/pynche/StripViewer.py
+%%DATADIR%%/Tools/pynche/Switchboard.py
+%%DATADIR%%/Tools/pynche/TextViewer.py
+%%DATADIR%%/Tools/pynche/TypeinViewer.py
+%%DATADIR%%/Tools/pynche/X/rgb.txt
+%%DATADIR%%/Tools/pynche/X/xlicense.txt
+%%DATADIR%%/Tools/pynche/__init__.py
+%%DATADIR%%/Tools/pynche/html40colors.txt
+%%DATADIR%%/Tools/pynche/namedcolors.txt
+%%DATADIR%%/Tools/pynche/pyColorChooser.py
+%%DATADIR%%/Tools/pynche/pynche
+%%DATADIR%%/Tools/pynche/pynche.pyw
+%%DATADIR%%/Tools/pynche/webcolors.txt
+%%DATADIR%%/Tools/pynche/websafe.txt
+%%DATADIR%%/Tools/scripts/2to3
+%%DATADIR%%/Tools/scripts/README
+%%DATADIR%%/Tools/scripts/abitype.py
+%%DATADIR%%/Tools/scripts/analyze_dxp.py
+%%DATADIR%%/Tools/scripts/byext.py
+%%DATADIR%%/Tools/scripts/byteyears.py
+%%DATADIR%%/Tools/scripts/checkpyc.py
+%%DATADIR%%/Tools/scripts/cleanfuture.py
+%%DATADIR%%/Tools/scripts/combinerefs.py
+%%DATADIR%%/Tools/scripts/copytime.py
+%%DATADIR%%/Tools/scripts/crlf.py
+%%DATADIR%%/Tools/scripts/db2pickle.py
+%%DATADIR%%/Tools/scripts/diff.py
+%%DATADIR%%/Tools/scripts/dutree.doc
+%%DATADIR%%/Tools/scripts/dutree.py
+%%DATADIR%%/Tools/scripts/eptags.py
+%%DATADIR%%/Tools/scripts/find-uname.py
+%%DATADIR%%/Tools/scripts/find_recursionlimit.py
+%%DATADIR%%/Tools/scripts/finddiv.py
+%%DATADIR%%/Tools/scripts/findlinksto.py
+%%DATADIR%%/Tools/scripts/findnocoding.py
+%%DATADIR%%/Tools/scripts/fixcid.py
+%%DATADIR%%/Tools/scripts/fixdiv.py
+%%DATADIR%%/Tools/scripts/fixheader.py
+%%DATADIR%%/Tools/scripts/fixnotice.py
+%%DATADIR%%/Tools/scripts/fixps.py
+%%DATADIR%%/Tools/scripts/ftpmirror.py
+%%DATADIR%%/Tools/scripts/get-remote-certificate.py
+%%DATADIR%%/Tools/scripts/google.py
+%%DATADIR%%/Tools/scripts/gprof2html.py
+%%DATADIR%%/Tools/scripts/h2py.py
+%%DATADIR%%/Tools/scripts/highlight.py
+%%DATADIR%%/Tools/scripts/idle3
+%%DATADIR%%/Tools/scripts/ifdef.py
+%%DATADIR%%/Tools/scripts/import_diagnostics.py
+%%DATADIR%%/Tools/scripts/lfcr.py
+%%DATADIR%%/Tools/scripts/linktree.py
+%%DATADIR%%/Tools/scripts/lll.py
+%%DATADIR%%/Tools/scripts/mailerdaemon.py
+%%DATADIR%%/Tools/scripts/make_ctype.py
+%%DATADIR%%/Tools/scripts/md5sum.py
+%%DATADIR%%/Tools/scripts/mkreal.py
+%%DATADIR%%/Tools/scripts/ndiff.py
+%%DATADIR%%/Tools/scripts/nm2def.py
+%%DATADIR%%/Tools/scripts/objgraph.py
+%%DATADIR%%/Tools/scripts/parseentities.py
+%%DATADIR%%/Tools/scripts/patchcheck.py
+%%DATADIR%%/Tools/scripts/pathfix.py
+%%DATADIR%%/Tools/scripts/pdeps.py
+%%DATADIR%%/Tools/scripts/pickle2db.py
+%%DATADIR%%/Tools/scripts/pindent.py
+%%DATADIR%%/Tools/scripts/ptags.py
+%%DATADIR%%/Tools/scripts/pydoc3
+%%DATADIR%%/Tools/scripts/pydocgui.pyw
+%%DATADIR%%/Tools/scripts/pysource.py
+%%DATADIR%%/Tools/scripts/pyvenv
+%%DATADIR%%/Tools/scripts/reindent-rst.py
+%%DATADIR%%/Tools/scripts/reindent.py
+%%DATADIR%%/Tools/scripts/rgrep.py
+%%DATADIR%%/Tools/scripts/run_tests.py
+%%DATADIR%%/Tools/scripts/serve.py
+%%DATADIR%%/Tools/scripts/suff.py
+%%DATADIR%%/Tools/scripts/svneol.py
+%%DATADIR%%/Tools/scripts/texi2html.py
+%%DATADIR%%/Tools/scripts/treesync.py
+%%DATADIR%%/Tools/scripts/untabify.py
+%%DATADIR%%/Tools/scripts/which.py
+%%DATADIR%%/Tools/scripts/win_add2path.py
+%%DATADIR%%/Tools/ssl/make_ssl_data.py
+%%DATADIR%%/Tools/stringbench/README
+%%DATADIR%%/Tools/stringbench/stringbench.py
+%%DATADIR%%/Tools/test2to3/README
+%%DATADIR%%/Tools/test2to3/maintest.py
+%%DATADIR%%/Tools/test2to3/setup.py
+%%DATADIR%%/Tools/test2to3/test/runtests.py
+%%DATADIR%%/Tools/test2to3/test/test_foo.py
+%%DATADIR%%/Tools/test2to3/test2to3/__init__.py
+%%DATADIR%%/Tools/test2to3/test2to3/hello.py
+%%DATADIR%%/Tools/unicode/Makefile
+%%DATADIR%%/Tools/unicode/comparecodecs.py
+%%DATADIR%%/Tools/unicode/gencjkcodecs.py
+%%DATADIR%%/Tools/unicode/gencodec.py
+%%DATADIR%%/Tools/unicode/genwincodec.py
+%%DATADIR%%/Tools/unicode/genwincodecs.bat
+%%DATADIR%%/Tools/unicode/listcodecs.py
+%%DATADIR%%/Tools/unicode/makeunicodedata.py
+%%DATADIR%%/Tools/unicode/mkstringprep.py
+%%DATADIR%%/Tools/unicode/python-mappings/CP1140.TXT
+%%DATADIR%%/Tools/unicode/python-mappings/KOI8-U.TXT
+%%DATADIR%%/Tools/unicode/python-mappings/TIS-620.TXT
+%%DATADIR%%/Tools/unittestgui/README.txt
+%%DATADIR%%/Tools/unittestgui/unittestgui.py
+@dirrm %%DATADIR%%/Tools/buildbot
+@dirrm %%DATADIR%%/Tools/ccbench
+@dirrm %%DATADIR%%/Tools/demo
+@dirrm %%DATADIR%%/Tools/freeze
+@dirrm %%DATADIR%%/Tools/gdb
+@dirrm %%DATADIR%%/Tools/hg
+@dirrm %%DATADIR%%/Tools/i18n
+@dirrm %%DATADIR%%/Tools/iobench
+@dirrm %%DATADIR%%/Tools/importbench
+@dirrm %%DATADIR%%/Tools/msi
+@dirrm %%DATADIR%%/Tools/parser
+@dirrm %%DATADIR%%/Tools/pybench/package
+@dirrm %%DATADIR%%/Tools/pybench
+@dirrm %%DATADIR%%/Tools/pynche/X
+@dirrm %%DATADIR%%/Tools/pynche
+@dirrm %%DATADIR%%/Tools/scripts
+@dirrm %%DATADIR%%/Tools/ssl
+@dirrm %%DATADIR%%/Tools/stringbench
+@dirrm %%DATADIR%%/Tools/test2to3/test
+@dirrm %%DATADIR%%/Tools/test2to3/test2to3
+@dirrm %%DATADIR%%/Tools/test2to3
+@dirrm %%DATADIR%%/Tools/unicode/python-mappings
+@dirrm %%DATADIR%%/Tools/unicode
+@dirrm %%DATADIR%%/Tools/unittestgui
+@dirrm %%DATADIR%%/Tools
+@dirrm %%DATADIR%%
