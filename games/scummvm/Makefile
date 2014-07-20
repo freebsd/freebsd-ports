@@ -11,8 +11,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}/${PORTNAME}/${DISTVERSION}
 MAINTAINER=	lme@FreeBSD.org
 COMMENT=	Interpreter for several adventure games
 
-USE_BZIP2=	yes
-USES=		gmake
+USES=		gmake tar:bzip2
 HAS_CONFIGURE=	yes
 USE_SDL=	sdl
 
@@ -65,5 +64,6 @@ post-patch:
 post-install:
 	${MKDIR} ${STAGEDIR}${DESKTOPDIR}
 	${INSTALL_DATA} ${WRKSRC}/dists/${PORTNAME}.desktop ${STAGEDIR}${DESKTOPDIR}/
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
