@@ -8,12 +8,11 @@ CATEGORIES=	audio linux
 PKGNAMEPREFIX=	linux-f10-
 DISTNAME=	${PORTNAME}-${PORTVERSION}-${RPMVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	OSS plugin for ALSA (Linux Fedora 10)
 
 ONLY_FOR_ARCHS=	i386 amd64
 USE_LINUX_RPM=	yes
-NO_STAGE=	yes
 USE_LINUX_APPS=	alsalib
 LINUX_DIST_VER=	10
 RPMVERSION=	3.fc10
@@ -27,9 +26,6 @@ post-patch:
 	@${MV} ${WRKSRC}/${CONF_FILE} ${WRKSRC}/${CONF_FILE}-dist
 
 post-install:
-	@if [ ! -f ${PREFIX}/${CONF_FILE} ]; then \
-		${CP} -p ${PREFIX}/${CONF_FILE}-dist ${PREFIX}/${CONF_FILE} ; \
-	fi
-	PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
+	${MV} ${STAGEDIR}${PREFIX}/${CONF_FILE}-dist ${STAGEDIR}${PREFIX}/${CONF_FILE}.sample
 
 .include <bsd.port.mk>
