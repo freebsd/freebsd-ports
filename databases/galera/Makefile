@@ -4,6 +4,7 @@
 PORTNAME=	galera
 PORTVERSION=	25.3.5
 DISTVERSIONSUFFIX=	-src
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	https://launchpadlibrarian.net/170877450/
 
@@ -23,7 +24,7 @@ USES=		scons shebangfix
 USE_CXXSTD=	c++11
 USE_LDCONFIG=	yes
 USE_OPENSSL=	yes
-USE_PYTHON=	yes
+USE_PYTHON_BUILD=	yes
 
 MAKE_CMD=	${SCONS} -j${MAKE_JOBS_NUMBER} --config=force
 
@@ -70,9 +71,11 @@ GARB_USE=	RC_SUBR=garb
 
 .if ${OSVERSION} > 1000000
 BUILD_DEPENDS+=	asio>=0:${PORTSDIR}/net/asio
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+RUN_DEPENDS+=	asio>=0:${PORTSDIR}/net/asio
+SUB_LIST=	LD_LIBRARY_PATH=$$LD_LIBRARY_PATH
 .else
 USE_GCC=	yes
+SUB_LIST=	LD_LIBRARY_PATH=${LOCALBASE}/lib/${CC}:$$LD_LIBRARY_PATH
 .endif
 
 .if ${OSVERSION} < 900506
@@ -89,10 +92,6 @@ MAKE_CMD+=	bpostatic=${PREFIX}/lib/libboost_program_options.so
 
 .if ${PORT_OPTIONS:MDEBUG}
 MAKE_CMD+=	debug=3
-.endif
-
-.if ${PORT_OPTIONS:MGARB}
-SUB_LIST=	LD_LIBRARY_PATH=${LOCALBASE}/lib/${CC}:$$LD_LIBRARY_PATH
 .endif
 
 post-patch:
