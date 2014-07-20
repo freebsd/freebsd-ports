@@ -13,7 +13,7 @@ COMMENT=	Abinit calculates electronic structure of systems
 BUILD_DEPENDS=	python:${PORTSDIR}/lang/python \
 		${PYTHON_SITELIBDIR}/numarray/__init__.py:${PORTSDIR}/math/py-numarray
 LIB_DEPENDS=	libnetcdff.so:${PORTSDIR}/science/netcdf-fortran \
-		gsl:${PORTSDIR}/math/gsl
+		libgsl.so:${PORTSDIR}/math/gsl
 
 USES=		fortran gmake perl5
 USE_PYTHON=	yes
