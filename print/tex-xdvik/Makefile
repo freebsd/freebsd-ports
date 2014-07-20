@@ -13,7 +13,7 @@ MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	DVI Previewer(kpathsearch) for X
 
 LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2 \
-		paper:${PORTSDIR}/print/libpaper
+		libpaper.so:${PORTSDIR}/print/libpaper
 
 USES=		iconv gmake motif
 USE_TEX=	texlive web2c kpathsea texmf texhash
