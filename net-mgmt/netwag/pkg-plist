@@ -1,5 +1,7 @@
 bin/netwag%%SHORTPORTVERSION%%
 bin/netwag
+man/man1/netwag.1.gz
+man/man1/netwag%%SHORTPORTVERSION%%.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/html/lessons.html
 %%PORTDOCS%%%%DOCSDIR%%/images/banner_netwag.jpg
 %%PORTDOCS%%%%DOCSDIR%%/index.html
