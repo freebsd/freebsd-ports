@@ -4,8 +4,7 @@
 PORTNAME=	libatomic_ops
 DISTVERSION=	7.4.0
 CATEGORIES=	devel
-MASTER_SITES=	http://www.hpl.hp.com/personal/Hans_Boehm/gc/gc_source/ \
-		http://www.hboehm.info/gc/gc_source/
+MASTER_SITES=	http://www.hboehm.info/gc/gc_source/
 
 MAINTAINER=	rodrigo@FreeBSD.org
 COMMENT=	Atomic operations access library
