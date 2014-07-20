@@ -114,8 +114,8 @@ share/sounds/linphone/rings/toy-mono.wav
 @dirrmtry man/cs/man1
 @dirrmtry man/cs
 @dirrm %%DATADIR%%
-@dirrmtry share/locale/nb_NO/LC_MESSAGES
-@dirrmtry share/locale/nb_NO
+%%NLS%%@dirrmtry share/locale/nb_NO/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/nb_NO
 @dirrm share/pixmaps/linphone
 @dirrm share/sounds/linphone/rings
 @dirrm share/sounds/linphone
