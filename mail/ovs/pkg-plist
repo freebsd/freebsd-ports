@@ -4,3 +4,6 @@ sbin/ovs.pl
 @dirrmtry www/cgi-bin
 @dirrmtry www/data/ovs
 @dirrmtry www/data
+@owner %%OVS_USER%%
+@group %%OVS_GROUP%%
+@dirrmtry %%DATADIR%%
