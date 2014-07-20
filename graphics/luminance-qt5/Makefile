@@ -28,6 +28,8 @@ INSTALLS_ICONS=	yes
 
 MAKE_JOBS_UNSAFE=yes
 
+CONFLICTS_INSTALL=	luminance-hdr-qt5-*
+
 OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.pre.mk>
