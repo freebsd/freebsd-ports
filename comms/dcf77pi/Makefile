@@ -3,6 +3,7 @@
 
 PORTNAME=	dcf77pi
 PORTVERSION=	3.1.0
+PORTREVISION=	1
 CATEGORIES=	comms
 
 MAINTAINER=	rene@FreeBSD.org
@@ -16,6 +17,7 @@ GH_COMMIT=	d441662
 
 USES=		ncurses
 
+PATCH_STRIP=	-p1
 PORTDOCS=	README.md
 
 INSTALL_TARGET=	install-strip
