@@ -25,6 +25,5 @@ do-install:
 	${CP} -fr ${WRKSRC}/license ${STAGEDIR}${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/logo.gif ${WRKSRC}/release.txt ${STAGEDIR}${DATADIR}
 
-.include <bsd.port.pre.mk>
-.include "${PORTSDIR}/chinese/ttfm/Makefile.ttf"
-.include <bsd.port.post.mk>
+.include "${.CURDIR}/../ttfm/Makefile.ttf"
+.include <bsd.port.mk>

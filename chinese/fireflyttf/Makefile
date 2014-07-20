@@ -22,8 +22,7 @@ PLIST_FILES=	${FONTSDIR_REL}/local.conf-sung
 
 OPTIONS_DEFAULT+=LGJ_FONT
 
-.include <bsd.port.pre.mk>
-.include "${PORTSDIR}/chinese/ttfm/Makefile.ttf"
+.include "${.CURDIR}/../ttfm/Makefile.ttf"
 
 OPTIONS_DEFINE+=LGJ_FONT
 LGJ_FONT_DESC=	Patch for Taiwan horn
@@ -49,4 +48,4 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/${TTF} ${STAGEDIR}${FONTSDIR}
 	${INSTALL_DATA} ${FILESDIR}/local.conf-sung ${STAGEDIR}${FONTSDIR}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
