@@ -18,8 +18,7 @@ NO_BUILD=	yes
 TTF=		odokai-ExtB.ttf odokai.ttf odosung-ExtB.ttf odosung.ttc
 PLIST_FILES=	${FONTSDIR_REL}/local.conf-odo
 
-.include <bsd.port.pre.mk>
-.include "${PORTSDIR}/chinese/ttfm/Makefile.ttf"
+.include "${.CURDIR}/../ttfm/Makefile.ttf"
 
 post-extract:
 	@${CHMOD} 0755 ${WRKSRC}/license
@@ -37,4 +36,4 @@ do-install:
 .endfor
 	${INSTALL_DATA} ${FILESDIR}/local.conf-odo ${STAGEDIR}${FONTSDIR}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

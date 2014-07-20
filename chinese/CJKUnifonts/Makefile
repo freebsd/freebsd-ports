@@ -26,6 +26,5 @@ do-install:
 	${INSTALL_DATA} ${WRKDIR}/ukai.ttc ${STAGEDIR}${FONTSDIR}
 	${INSTALL_DATA} ${WRKDIR}/uming.ttc ${STAGEDIR}${FONTSDIR}
 
-.include <bsd.port.pre.mk>
-.include "${PORTSDIR}/chinese/ttfm/Makefile.ttf"
-.include <bsd.port.post.mk>
+.include "${.CURDIR}/../ttfm/Makefile.ttf"
+.include <bsd.port.mk>
