@@ -1,19 +1,15 @@
+etc/snmp/snmptt.conf.generic-dist
+etc/snmp/snmptt.ini-dist
 sbin/snmptt
 sbin/snmptt-net-snmp-test
 sbin/snmpttconvert
 sbin/snmpttconvertmib
 sbin/snmptthandler
-@unexec if cmp -s %D/etc/snmp/snmptt.ini %D/etc/snmp/snmptt.ini-dist; then rm -f %D/etc/snmp/snmptt.ini; fi
-etc/snmp/snmptt.ini-dist
-@exec [ ! -f %B/snmptt.ini ] && cp %B/%f %B/snmptt.ini
-@unexec if cmp -s %D/etc/snmp/snmptt.conf.generic %D/etc/snmp/snmptt.conf.generic-dist; then rm -f %D/etc/snmp/snmptt.conf.generic; fi
-etc/snmp/snmptt.conf.generic-dist
-@exec [ ! -f %B/snmptt.conf.generic ] && cp %B/%f %B/snmptt.conf.generic
 %%PORTDOCS%%%%DOCSDIR%%/faqs.html
 %%PORTDOCS%%%%DOCSDIR%%/index.html
 %%PORTDOCS%%%%DOCSDIR%%/layout1.css
 %%PORTDOCS%%%%DOCSDIR%%/snmptt.html
 %%PORTDOCS%%%%DOCSDIR%%/snmpttconvert.html
 %%PORTDOCS%%%%DOCSDIR%%/snmpttconvertmib.html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm etc/snmp
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%
+@dirrmtry etc/snmp
