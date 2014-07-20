@@ -30,7 +30,7 @@ musicpd_getpidfile()
 	if get_pidfile_from_conf pid_file %%PREFIX%%/etc/musicpd.conf ; then
 		pidfile="$_pidfile_from_conf"
 	else
-		pidfile="%%MPDDIR%%/.mpd/pid"
+		pidfile="/var/mpd/.mpd/pid"
 	fi
 }
 

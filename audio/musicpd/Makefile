@@ -124,17 +124,11 @@ WAVPACK_LIB_DEPENDS=libwavpack.so:${PORTSDIR}/audio/wavpack
 WILDMIDI_CONFIGURE_ENABLE=wildmidi
 WILDMIDI_LIB_DEPENDS=libWildMidi.so:${PORTSDIR}/audio/wildmidi
 
-MPDDIR?=	/var/mpd
 MPDUSER?=	mpd
 MPDGROUP?=	mpd
 
 USERS=	${MPDUSER}
 GROUPS=	${MPDGROUP}
-
-PLIST_SUB=	MPDUSER=${MPDUSER} \
-		MPDDIR=${MPDDIR}   \
-		MPDGROUP=${MPDGROUP}
-SUB_LIST+=	MPDDIR=${MPDDIR}
 
 .include <bsd.port.options.mk>
 
@@ -143,7 +137,7 @@ IGNORE=Please remove the MPDCONF line from make.conf, then rename ${PREFIX}/etc/
 .endif
 
 .if exists(${PREFIX}/etc/mpd.conf)
-MSG=You still have ${PREFIX}/etc/mpd.conf in existence-- this file is no longer used by musicpd.
+MSG=does not expect ${PREFIX}/etc/mpd.conf to exist.
 .if !exists(${PREFIX}/etc/musicpd.conf)
 IGNORE=${MSG}  Move it to ${PREFIX}/etc/musicpd.conf.
 .else
@@ -191,8 +185,8 @@ CONFIGURE_ARGS+=--disable-shout
 .endif
 
 post-patch:
-# Replace ~/ with MPDDIR and make musicpd run as mpd by default
-	@${REINPLACE_CMD} -e 's,^#\([^"]*"\)~/,\1${MPDDIR}/,g' \
+# Replace ~/ with /var/mpd and make musicpd run as mpd by default
+	@${REINPLACE_CMD} -e 's,^#\([^"]*"\)~/,\1/var/mpd,g' \
 		-e 's,^#\(user[^"]*"\)nobody,\1${MPDUSER},g' \
 		${WRKSRC}/doc/mpdconf.example
 # Uncomment OSS audio output part from MPDCONF; dragons!
@@ -227,16 +221,5 @@ do-install:
 	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}/${DOCSDIR}/
 	${INSTALL_DATA} ${WRKSRC}/doc/mpdconf.example \
 		${STAGEDIR}/${PREFIX}/etc/${PORTNAME}.conf.sample
-	${PRINTF} "%s\n%s\n%s\n" "@cwd /" "@owner ${MPDUSER}" \
-		"@group ${MPDGROUP}" >> ${TMPPLIST}
-	cd ${STAGEDIR} && ${MKDIR} -v ${MPDDIR:S,^/,,}/.mpd | ${SORT} -r | \
-		${SED} 's,^,@dirrmtry ,' >> ${TMPPLIST}
-.ifndef WITH_PKGNG
-	# Cute, we can't use @dirrmtry with pkg_old...
-	# Remove once all using pkgng
-	${REINPLACE_CMD} \
-		's,^@dirrmtry \(.*\),@unexec rmdir \1 > /dev/null || :,' \
-		${TMPPLIST}
-.endif
 
 .include <bsd.port.mk>
