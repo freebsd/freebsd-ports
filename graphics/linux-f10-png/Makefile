@@ -12,6 +12,8 @@ DISTNAME=	${LINUX_NAME}-${PORTVERSION}-${RPMVERSION}
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	RPM of the PNG lib (Linux Fedora 10)
 
+FORBIDDEN=	http://www.freshports.org/vuxml.php?vid=262b92fe-81c8-11e1-8899-001ec9578670
+
 CONFLICTS=	linux-png-[0-9]* linux-f8-png-[0-9]*
 
 ONLY_FOR_ARCHS=	i386 amd64
