@@ -147,20 +147,38 @@ Notes:
       <body xmlns="http://www.w3.org/1999/xhtml">
 	<p>The phpMyAdmin development team reports:</p>
 	<blockquote cite="http://www.phpmyadmin.net/home_page/security/PMASA-2014-4.php">
-	  <p>XSS injection due to unescaped table comment.</p>
+	  <p>Self-XSS due to unescaped HTML output in database
+	    structure page.</p>
+	  <p>With a crafted table comment, it is possible to trigger
+	    an XSS in database structure page.</p>
 	</blockquote>
 	<blockquote cite="http://www.phpmyadmin.net/home_page/security/PMASA-2014-5.php">
-	  <p>XSS injection due to unescaped table name (triggers).</p>
+	  <p>Self-XSS due to unescaped HTML output in database
+	    triggers page.</p>
+	  <p>When navigating into the database triggers page, it is
+	    possible to trigger an XSS with a crafted trigger
+	    name.</p>
 	</blockquote>
 	<blockquote cite="http://www.phpmyadmin.net/home_page/security/PMASA-2014-6.php">
-	  <p>XSS in AJAX confirmation messages.</p>
+	  <p>Multiple XSS in AJAX confirmation messages.</p>
+	  <p>With a crafted column name it is possible to trigger an
+	    XSS when dropping the column in table structure page. With
+	    a crafted table name it is possible to trigger an XSS when
+	    dropping or truncating the table in table operations
+	    page.</p>
 	</blockquote>
 	<blockquote cite="http://www.phpmyadmin.net/home_page/security/PMASA-2014-7.php">
-	  <p>Missing validation for accessing User groups feature.</p>
+	  <p>Access for an unprivileged user to MySQL user list.</p>
+	  <p>An unpriviledged user could view the MySQL user list and
+	    manipulate the tabs displayed in phpMyAdmin for them.</p>
 	</blockquote>
       </body>
     </description>
     <references>
+      <cvename>CVE-2014-4954</cvename>
+      <cvename>CVE-2014-4955</cvename>
+      <cvename>CVE-2014-4986</cvename>
+      <cvename>CVE-2014-4987</cvename>
       <url>http://www.phpmyadmin.net/home_page/security/PMASA-2014-4.php</url>
       <url>http://www.phpmyadmin.net/home_page/security/PMASA-2014-5.php</url>
       <url>http://www.phpmyadmin.net/home_page/security/PMASA-2014-6.php</url>
@@ -169,6 +187,7 @@ Notes:
     <dates>
       <discovery>2014-07-18</discovery>
       <entry>2014-07-18</entry>
+      <modified>2014-07-20</modified>
     </dates>
   </vuln>
 
