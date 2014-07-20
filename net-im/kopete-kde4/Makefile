@@ -2,7 +2,7 @@
 
 PORTNAME=	kopete
 PORTVERSION=	${KDE4_VERSION}
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net-im kde
 MASTER_SITES=	KDE/${KDE4_BRANCH}/${PORTVERSION}/src
 DIST_SUBDIR=	KDE/${PORTVERSION}
@@ -29,7 +29,7 @@ BUILD_DEPENDS=	${LOCALBASE}/include/linux/videodev2.h:${PORTSDIR}/multimedia/v4l
 RUN_DEPENDS=	qca-ossl>=2.0.0.b3:${PORTSDIR}/security/qca-ossl \
 		${LOCALBASE}/lib/mediastreamer/plugins/libmsilbc.so:${PORTSDIR}/audio/msilbc
 
-USES=		cmake:outsource pkgconfig tar:xz webplugin:native
+USES=		cmake:outsource pkgconfig shebangfix tar:xz webplugin:native
 USE_GNOME=	libxml2 libxslt
 USE_KDE4=	kdehier kdelibs kdeprefix pimlibs \
 		automoc4 qimageblitz
@@ -39,6 +39,9 @@ USE_QT4=	corelib gui network qt3support sql xml \
 USE_SQLITE=	yes
 USE_XORG=	x11 xdamage xext xscrnsaver xtst
 USE_LDCONFIG=	yes
+
+SHEBANG_FILES=	${WRKSRC}/protocols/winpopup/winpopup-install \
+		${WRKSRC}/protocols/winpopup/winpopup-send
 
 WEBPLUGIN_NAME=	# empty
 WEBPLUGIN_FILES=	skypebuttons.so
