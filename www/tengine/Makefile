@@ -3,6 +3,7 @@
 
 PORTNAME=	tengine
 PORTVERSION=	2.0.3
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	GH
 
@@ -44,6 +45,7 @@ OPTIONS_DEFINE=	\
 	MAIL_POP3 \
 	MAIL_SMTP \
 	MAIL_SSL \
+	SPDY \
 	CPP_TEST \
 	TFS \
 	WWW \
@@ -111,6 +113,7 @@ MAIL_IMAP_DESC=			Enable IMAP4 proxy module
 MAIL_POP3_DESC=			Enable POP3 proxy module
 MAIL_SMTP_DESC=			Enable SMTP proxy module
 MAIL_SSL_DESC=			Enable mail_ssl module
+SPDY_DESC=			Enable SPDY v3 protocol support (SSL req.)
 CPP_TEST_DESC=			Enable CPP Test module
 TFS_DESC=			Enable TaoBao File System
 WWW_DESC=			Enable html sample files
@@ -649,6 +652,11 @@ DISTFILES+=	agentzh-xss-nginx-module-v${NGINX_XSS_VERSION}-${GIT_XSS_VERSION}.ta
 CONFIGURE_ARGS+=--add-module=${WRKDIR}/agentzh-xss-nginx-module-${GIT_XSS_VERSION:S/^0-g//}
 .endif
 
+.if ${PORT_OPTIONS:MSPDY}
+WITH_HTTP_SSL=  yes
+CONFIGURE_ARGS+=--with-http_spdy_module
+.endif
+
 .if ${PORT_OPTIONS:MCPP_TEST}
 CONFIGURE_ARGS+=--with-cpp_test_module
 .endif
@@ -727,8 +735,14 @@ CONFIGURE_ARGS+=--without-http_rewrite_module \
 .endif
 
 .if defined(NGINX_OPENSSL)
-USE_OPENSSL=	yes
-WITH_OPENSSL_BASE=	yes
+USE_OPENSSL=    yes
+.if ${PORT_OPTIONS:MSPDY}
+.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1000028
+WITH_OPENSSL_PORT=      yes
+.else
+WITH_OPENSSL_BASE=      yes
+.endif
+.endif
 .endif
 
 .if defined(WITH_HTTP_SSL)
@@ -789,9 +803,11 @@ post-patch:
 		's!%%PREFIX%%!${LOCALBASE}!g' \
 		${WRKDIR}/nginx-sflow-module-${NGINX_SFLOW_VERSION}/ngx_http_sflow_config.h
 .endif
+.if ${PORT_OPTIONS:MSPDY}
 .if ${PORT_OPTIONS:MDRIZZLE}
-	@${REINPLACE_CMD} '584d' \
-		${WRKDIR}/chaoslawful-drizzle-nginx-module-${GIT_DRIZZLE_VERSION:S/^0-g//}/src/ngx_http_drizzle_util.c
+        @${REINPLACE_CMD} '584d' \
+                ${WRKDIR}/chaoslawful-drizzle-nginx-module-${GIT_DRIZZLE_VERSION:S/^0-g//}/src/ngx_http_drizzle_util.c
+.endif
 .endif
 .if ${PORT_OPTIONS:MSUPERVISORD}
 	( cd ${WRKDIR}/nginx_upstream_fair-${NGINX_UPSTREAM_FAIR_VERSION} && \
