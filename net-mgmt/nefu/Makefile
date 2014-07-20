@@ -30,28 +30,16 @@ GROUPS=		nefu
 USE_OPENSSL=	yes
 OPTIONS_DEFINE=	LDAP HTML
 HTML_DESC=	HTML support
+OPTIONS_SUB=	yes
 
-MAN1=		nefu.1
-MAN4=		nefu.conf.4
 DBDIR=		/var/db/nefu
-PLIST_FILES=	bin/nefu
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
+LDAP_CONFIGURE_ON=	--with-ldap=${LOCALBASE}/lib
+LDAP_CONFIGURE_OFF=	--without-ldap
+LDAP_USE=		OPENLDAP=yes
 
-.if ${PORT_OPTIONS:MLDAP}
-USE_OPENLDAP=	yes
-CONFIGURE_ARGS+=	--with-ldap=${LOCALBASE}/lib
-.else
-CONFIGURE_ARGS+=	--without-ldap
-.endif
-
-.if ${PORT_OPTIONS:MHTML}
-CONFIGURE_ARGS+=--with-html=${WWWDIR}
-PLIST_FILES+=	"@unexec rm -rf "%D/%%WWWDIR%%" 2> /dev/null || true"
-.else
-CONFIGURE_ARGS+=--without-html
-.endif
+HTML_CONFIGURE_ON=	--with-html=${WWWDIR}
+HTML_CONFIGURE_OFF=	--without-html
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lsasl2||' \
@@ -64,16 +52,11 @@ post-patch:
 		${WRKSRC}/libsnet/configure
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/nefu.1 ${PREFIX}/man/man1
-	${INSTALL_MAN} ${WRKSRC}/nefu.conf.4 ${PREFIX}/man/man4
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/nefu.1 ${STAGEDIR}${PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/nefu.conf.4 ${STAGEDIR}${PREFIX}/man/man4
 
 post-install:
-.if ${PORT_OPTIONS:MHTML}
-	${MKDIR} ${WWWDIR}
-	${CHOWN} -R ${USERS}:${GROUPS} ${WWWDIR}
-.endif
-	${MKDIR} ${DBDIR}
-	${CHOWN} -R ${USERS}:${GROUPS} ${DBDIR}
+	@${MKDIR} ${STAGEDIR}${WWWDIR} ${STAGEDIR}${DBDIR}
 
 .include <bsd.port.mk>
