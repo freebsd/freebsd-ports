@@ -13,6 +13,9 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ayu@commun.jp
 COMMENT=	Get mail from Hotmail (Live) mailboxes
 
+DEPRECATED=	GetLive project has been declared dead due to MS account conversion
+EXPIRATION_DATE=2014-08-01
+
 RUN_DEPENDS=	curl:${PORTSDIR}/ftp/curl \
 		procmail:${PORTSDIR}/mail/procmail \
 		p5-URI>=0:${PORTSDIR}/net/p5-URI \
