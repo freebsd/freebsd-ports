@@ -20,6 +20,9 @@ DISTNAME=	${PORTNAME}-${OPERA_VER}-${OPERA_BUILD}.i386.linux
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	A blazingly fast, full-featured, standards-compliant browser
 
+FORBIDDEN=	http://www.freshports.org/vuxml.php?vid=0925716f-34e2-11e2-aa75-003067c2616f|38daea4f-2851-11e2-9483-14dae938ec40|85f33a8d-492f-11e2-aa75-003067c2616f|cebed39d-9e6f-11e2-b3f5-003067c2616f|ea0f45e2-6c4b-11e2-98d9-003067c2616f
+IGNORE=		not staged, outdated version, vulnerable, use www/opera instead
+
 RUN_DEPENDS=	update-mime-database:${PORTSDIR}/misc/shared-mime-info
 
 USE_XZ=		yes
@@ -50,13 +53,6 @@ RENAME=		opera opera-widget-manager lib/opera \
 		share/mime/packages/opera-widget.xml
 
 NO_STAGE=	yes
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION}<700055
-IGNORE=	you need FreeBSD>=7.0 RELEASE with Linux emulation 2.6.x.
-.elif ${OSVERSION}<800076 && ! defined (OVERRIDE_LINUX_NONBASE_PORTS)
-IGNORE=	you need to use non-default linux ports (define OVERRIDE_LINUX_BASE_PORT=f8 and OVERRIDE_LINUX_NONBASE_PORTS=f8). You also can use f10 instead of f8, but I only have tested it with f8.
-.endif
 
 post-extract:
 	@${GUNZIP_CMD} ${WRKSRC}/share/man/man1/*.gz
@@ -127,4 +123,4 @@ post-patch:
 do-install:
 	@(cd ${WRKSRC} && ./install --system --quiet --force)
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
