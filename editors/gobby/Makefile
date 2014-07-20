@@ -12,7 +12,7 @@ COMMENT=	Free collaborative editor
 LICENSE=	GPLv2
 
 LIB_DEPENDS=	libobby.so:${PORTSDIR}/devel/obby \
-		libnet6-1.3.so:${PORTSDIR}/net/net6 \
+		libnet6.so:${PORTSDIR}/net/net6 \
 		libxml++-2.6.so:${PORTSDIR}/textproc/libxml++26 \
 		libgtkmm-2.4.so:${PORTSDIR}/x11-toolkits/gtkmm24
 
