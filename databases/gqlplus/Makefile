@@ -10,7 +10,7 @@ MAINTAINER=	leeym@FreeBSD.org
 COMMENT=	SQL*PLUS with commandline editing, history, and name completion
 
 GNU_CONFIGURE=	yes
-USES=		gmake
+USES=		gmake readline
 
 PORTDOCS=	README ChangeLog
 PLIST_FILES=	bin/gqlplus
