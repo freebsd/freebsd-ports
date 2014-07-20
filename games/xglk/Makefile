@@ -19,7 +19,7 @@ LIB_DEPENDS+=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
 
 USE_XORG=	x11
 
-MAKE_ENV+=	AR=${AR} RANLIB=${RANLIB} ECHO=${ECHO} RM=${RM}
+MAKE_ENV+=	AR=${AR} RANLIB=${RANLIB} ECHO=${ECHO} RM=${RM:Q}
 
 do-install:
 		@${MKDIR} ${STAGEDIR}${PREFIX}/include/xglk
