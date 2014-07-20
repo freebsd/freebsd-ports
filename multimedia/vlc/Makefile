@@ -3,7 +3,7 @@
 
 PORTNAME=	vlc
 DISTVERSION=	2.1.4
-PORTREVISION=	9
+PORTREVISION=	10
 PORTEPOCH=	4
 CATEGORIES=	multimedia audio ipv6 net www
 MASTER_SITES=	http://download.videolan.org/pub/videolan/${PORTNAME}/${DISTVERSION:S/a$//}/ \
@@ -163,6 +163,7 @@ LIBSSH2_CONFIGURE_ENABLE=	sftp
 
 LIRC_LIB_DEPENDS=	liblirc_client.so:${PORTSDIR}/comms/lirc
 LIRC_CONFIGURE_ENABLE=	lirc
+LIRC_CONFIGURE_ENV=	LIBS_lirc="-L${LOCALBASE}/lib -llirc_client"
 
 LIVEMEDIA_LIB_DEPENDS=	libliveMedia.so:${PORTSDIR}/net/liveMedia
 LIVEMEDIA_CONFIGURE_ENABLE=	live555
@@ -327,6 +328,7 @@ post-patch:
 	@${REINPLACE_CMD} \
 		-e '\|LIBS|s|-lrt||' \
 		-e 's|gnutls |gnutls3 |g' \
+		-e 's|LIBS="-llirc_client|LIBS="$$LIBS_lirc|' \
 		${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|/dev/cdrom|${WITH_CDROM_DEVICE}|g' \
 		-e 's|/dev/dvd|${WITH_DVD_DEVICE}|g' \
