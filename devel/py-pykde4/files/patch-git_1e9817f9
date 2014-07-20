@@ -1,0 +1,67 @@
+commit 1e9817f99b405a66199fe9f62de31d3870e3ad12
+Author: Luca Beltrame <lbeltrame@kde.org>
+Date:   Fri Jun 20 11:08:31 2014 +0200
+
+    Fix building with PyQt >= 4.11
+    
+    PyQt 4.11 adds new typedefs for GLuint, and these clash with the ones
+    defined in PyKDE4. Using a conditional in the sip file, the old
+    definitions are only kept if PyQt's version is lower than 4.11.
+    
+    Checks have been added also for the Python 3 definitions.
+    
+    CCMAIL: kde-packager@kde.org
+
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index cf133d7..5233da8 100644
+--- CMakeLists.txt
++++ CMakeLists.txt
+@@ -113,15 +113,27 @@ set(SIP_DISABLE_FEATURES VendorID PyQt_NoPrintRangeBug)
+ # Use an extra option when compiling on Python 3.
+ if (PYTHON_VERSION_MAJOR GREATER 2)
+     if(PYQT4_VERSION STRGREATER "040904")
+-	    # Disable for newer PyQt
+-	    set(SIP_EXTRA_OPTIONS -P -g -x PyKDE_QVector)
++	    # Disable for features in newer Qt
++        if (PYQT4_VERSION STRGREATER "040a04")
++            # GLuint + QVector (PyQt > 4.11)
++            set(SIP_EXTRA_OPTIONS -P -g -x PyKDE_QVector -x PyKDE_GLuint)
++        else ()
++            # QVector (PyQt < 4.11)
++            set(SIP_EXTRA_OPTIONS -P -g -x PyKDE_QVector)
++        endif ()
+     else ()
+ 	    set(SIP_EXTRA_OPTIONS -g)
+     endif()
+ else (PYTHON_VERSION_MAJOR GREATER 2)
+     if(PYQT4_VERSION STRGREATER "040904")
+ 	# Disable for newer PyQt
+-    	set(SIP_EXTRA_OPTIONS -P -g -x PyKDE_QVector -x Py_v3)
++        if (PYQT4_VERSION STRGREATER "040a04")
++            # GLuint + QVector (PyQt > 4.11)
++            set(SIP_EXTRA_OPTIONS -P -g -x PyKDE_QVector -x Py_v3 -x PyKDE_GLuint)
++        else ()
++            # QVector (PyQt < 4.11)
++            set(SIP_EXTRA_OPTIONS -P -g -x PyKDE_QVector -x Py_v3)
++        endif ()
+     else ()
+ 	    set(SIP_EXTRA_OPTIONS -g -x Py_v3)
+     endif()
+diff --git a/sip/plasma/glapplet.sip b/sip/plasma/glapplet.sip
+index ab35ccb..15dbd47 100644
+--- sip/plasma/glapplet.sip
++++ sip/plasma/glapplet.sip
+@@ -18,8 +18,13 @@
+ // 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+ 
+ //force
++
++%Feature PyKDE_GLuint
++
++%If (PyKDE_GLuint)
+ typedef unsigned int GLuint;
+ typedef unsigned int GLenum;
++%End
+ 
+ namespace Plasma
+ {
