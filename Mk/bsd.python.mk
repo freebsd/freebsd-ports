@@ -501,7 +501,7 @@ PYDISTUTILS_EGGINFODIR?=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 add-plist-egginfo:
 .if !defined(PYDISTUTILS_NOEGGINFO) && \
 	!defined(PYDISTUTILS_AUTOPLIST) && \
-	defined(INSTALLS_EGGINFO) && \
+	(defined(INSTALLS_EGGINFO) || defined(USE_PYDISTUTILS)) && \
 	defined(PYTHON_REL)
 . for egginfo in ${PYDISTUTILS_EGGINFO}
 	if [ -d "${PYDISTUTILS_EGGINFODIR}/${egginfo}" ]; then \
