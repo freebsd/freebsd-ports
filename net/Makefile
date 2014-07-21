@@ -95,7 +95,6 @@
     SUBDIR += datapipe
     SUBDIR += dbeacon
     SUBDIR += delegate
-    SUBDIR += desktop-data-model
     SUBDIR += despoof
     SUBDIR += dgd
     SUBDIR += dgd-kernel
@@ -445,7 +444,6 @@
     SUBDIR += omnitty
     SUBDIR += onenetd
     SUBDIR += onioncat
-    SUBDIR += online-desktop
     SUBDIR += opal
     SUBDIR += openafs
     SUBDIR += openam

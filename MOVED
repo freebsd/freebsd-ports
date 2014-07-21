@@ -6263,3 +6263,7 @@ lang/ikarus||2014-07-20|Has expired: Upstream project died in 2009
 security/pam_pgina||2014-07-20|Has expired: main site disappeared, no more public distfiles
 www/linux-opera-devel|www/opera|2014-07-20|Has expired: Not staged and multiple vulnerabilities. 
 www/opera-devel|www/opera|2014-07-20|Has expired: Not staged, multiple vulnerabilities, older than non-devel
+accessibility/at-poke||2014-07-21|Has expired: Depends on expired libgailgnome
+misc/bigboard||2014-07-21|Has expired: gnome-panel will be updated to the 3.x version which is not compatible with 2.x
+net/desktop-data-model||2014-07-21|Has expired: gnome-desktop 2.x will be updated in the GNOME 3 import
+net/online-desktop||2014-07-21|Has expired: Disappeared upstream, depends on expired ports
