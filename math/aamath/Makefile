@@ -13,6 +13,8 @@ COMMENT=	Renders ASCII art from mathematical expressions
 
 LICENSE=	GPLv2
 
+USES=		readline
+
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 PLIST_FILES=	bin/aamath man/man1/aamath.1.gz
