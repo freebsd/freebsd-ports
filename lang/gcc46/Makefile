@@ -3,7 +3,7 @@
 
 PORTNAME=	gcc46
 PORTVERSION=	4.6.4
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	lang java
 MASTER_SITES=	${MASTER_SITE_GCC}
@@ -126,7 +126,8 @@ full-regression-test: build
 .endif
 
 post-install:
-	${RM} -f ${STAGEDIR}${TARGLIB}/*.la
+	${FIND} ${STAGEDIR}${TARGLIB} ${STAGEDIR}${LIBEXEC} \
+	        -name '*.la' | ${XARGS} ${RM}
 	${RM} -f ${STAGEDIR}${PREFIX}/man/man7/*
 	${RM} -f ${STAGEDIR}${PREFIX}/bin/rebuild-gcj-db${SUFFIX} \
 	         ${STAGEDIR}${PREFIX}/man/man1/rebuild-gcj-db${SUFFIX}.1
