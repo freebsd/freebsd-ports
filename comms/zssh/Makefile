@@ -3,10 +3,8 @@
 
 PORTNAME=	zssh
 PORTVERSION=	1.5c
-PORTREVISION=	0
 CATEGORIES=	comms security
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/1.5
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Interactively transferring files to a remote machine while using ssh
@@ -14,6 +12,7 @@ COMMENT=	Interactively transferring files to a remote machine while using ssh
 RUN_DEPENDS=	lrz:${PORTSDIR}/comms/lrzsz
 
 HAS_CONFIGURE=	yes
+USES=		readline tar:tgz
 
 PLIST_FILES=	bin/zssh bin/ztelnet man/man1/zssh.1.gz man/man1/ztelnet.1.gz
 

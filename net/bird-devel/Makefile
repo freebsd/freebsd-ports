@@ -12,7 +12,7 @@ COMMENT=	Dynamic IP routing daemon (devel version)
 
 CONFLICTS=	bird-[0-9]*
 
-USES=		bison gmake
+USES=		bison gmake readline
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--localstatedir=/var --enable-mpls
 USE_CSTD=	gnu89

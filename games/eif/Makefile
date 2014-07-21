@@ -12,7 +12,7 @@ MAINTAINER=	johans@FreeBSD.org
 COMMENT=	Empire text client
 
 GNU_CONFIGURE=	yes
-USES=		shebangfix
+USES=		shebangfix readline
 SHEBANG_FILES=	contrib/*.pl
 
 .include <bsd.port.pre.mk>

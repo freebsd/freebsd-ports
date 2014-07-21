@@ -37,7 +37,7 @@ CONFIGURE_ARGS=	-P "${PREFIX}" \
 		--vendordir "${PREFIX}/lib/ruby/vendor_ruby/rubinius" \
 		--stagingdir "${STAGEDIR}${PREFIX}" --with-execinfo
 
-USES=		perl5 gmake tar:bzip2
+USES=		perl5 gmake tar:bzip2 readline
 USE_RUBY=	yes
 RUBY_NO_RUN_DEPENDS=	yes
 USE_PERL5=	build
