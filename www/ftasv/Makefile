@@ -10,24 +10,20 @@ MASTER_SITES=	http://fabletech.com/${PORTNAME}-download/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Is a commandline scoreboard viewer for the Apache server
 
+LICENSE=	APACHE20
+
 GNU_CONFIGURE=	yes
 USE_APACHE=	22+
 
 PLIST_FILES=	sbin/ftasv
 SUB_FILES=	pkg-message
-
 PORTDOCS=	AUTHORS COPYING ChangeLog README
-
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
+OPTIONS_DEFINE=	DOCS
 
 post-install:
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for docs in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${docs} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${docs} ${STAGEDIR}${DOCSDIR}
 .endfor
-.endif
-	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
