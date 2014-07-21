@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	transmission
-PORTVERSION=	2.82
+PORTVERSION=	2.84
 PORTREVISION?=	0
 CATEGORIES?=	net-p2p
 #MASTER_SITES=	http://download.m0k.org/${PORTNAME}/files/
@@ -36,13 +36,15 @@ GEN_LIB_DEPENDS=libcurl.so:${PORTSDIR}/ftp/curl \
 GEN_RUN_DEPENDS=${LOCALBASE}/share/transmission/web/index.html:${PORTSDIR}/www/transmission-web
 
 # This is master port of transmission-*, so don't override USES definition 
-USES+=		gmake pkgconfig iconv
+USES+=		gmake pkgconfig iconv tar:xz
 USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib ${ICONV_LIB}
 CONFIGURE_ARGS=--with-zlib=/usr \
 		${EXTRA_CONF_ARGS}
+CONFIGURE_ENV+=	OPENSSL_LIBS=${OPENSSL_LDFLAGS} \
+		OPENSSL_CFLAGS=${OPENSSL_CFLAGS},-I${OPENSSLINC}
 EXTRA_CONF_ARGS?=--enable-cli \
 		 --disable-daemon \
 		 --without-gtk \
@@ -55,8 +57,6 @@ CONFIGURE_ARGS+=--enable-lightweight
 
 EXTRA_PATCHES=	${PATCHDIR}/disable-web
 .endif
-
-USE_XZ=		yes
 
 DOCS=		AUTHORS NEWS README
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}${PKGNAMESUFFIX}
