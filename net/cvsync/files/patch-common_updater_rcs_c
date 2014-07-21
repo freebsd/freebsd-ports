@@ -1,0 +1,65 @@
+$OpenBSD: patch-common_updater_rcs_c,v 1.2 2014/06/26 20:06:50 naddy Exp $
+--- common/updater_rcs.c.orig	Mon Jul 18 16:32:59 2005
++++ common/updater_rcs.c	Thu Jun 26 19:28:00 2014
+@@ -59,6 +59,7 @@
+ #include "logmsg.h"
+ #include "mux.h"
+ #include "rcslib.h"
++#include "version.h"
+ 
+ #include "updater.h"
+ 
+@@ -1930,18 +1931,50 @@ updater_rcs_write_delta(struct updater_args *uda, uint
+ 		sp += slen;
+ 	}
+ 	len -= slen + 1;
+-	iov[2].iov_base = ";\n\n";
+-	iov[2].iov_len = 3;
++	iov[2].iov_base = ";\n";
++	iov[2].iov_len = 2;
+ 
+ 	if ((wn = writev(uda->uda_fileno, iov, 3)) == -1) {
+ 		logmsg_err("%s", strerror(errno));
+ 		(*hashops->destroy)(uda->uda_hash_ctx);
+ 		return (false);
+ 	}
+-	if ((size_t)wn != slen + 10) {
++	if ((size_t)wn != slen + 9) {
+ 		logmsg_err("writev error");
+ 		(*hashops->destroy)(uda->uda_hash_ctx);
+ 		return (false);
++	}
++
++	/* commitid */
++	if (uda->uda_proto >= CVSYNC_PROTO(0, 25)) {
++	    len--;
++	    if ((slen = *sp++) != 0) {
++		iov[0].iov_base = "commitid\t";
++		iov[0].iov_len = 9;
++
++		if (len < slen) {
++			(*hashops->destroy)(uda->uda_hash_ctx);
++			return (false);
++		}
++		iov[1].iov_base = (void *)sp;
++		iov[1].iov_len = slen;
++		(*hashops->update)(uda->uda_hash_ctx, sp, slen);
++
++		sp += slen;
++		len -= slen;
++
++		iov[2].iov_base = ";\n\n";
++		iov[2].iov_len = 3;
++
++		if ((wn = writev(uda->uda_fileno, iov, 3)) == -1) {
++			(*hashops->destroy)(uda->uda_hash_ctx);
++			return (false);
++		}
++		if ((size_t)wn != slen + 12) {
++			(*hashops->destroy)(uda->uda_hash_ctx);
++			return (false);
++		}
++	    }
+ 	}
+ 
+ 	if (len != hashops->length) {
