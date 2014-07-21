@@ -36,7 +36,7 @@ GEN_LIB_DEPENDS=libcurl.so:${PORTSDIR}/ftp/curl \
 GEN_RUN_DEPENDS=${LOCALBASE}/share/transmission/web/index.html:${PORTSDIR}/www/transmission-web
 
 # This is master port of transmission-*, so don't override USES definition 
-USES+=		gmake pkgconfig iconv tar:xz
+USES+=		gmake pkgconfig iconv
 USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
@@ -57,6 +57,8 @@ CONFIGURE_ARGS+=--enable-lightweight
 
 EXTRA_PATCHES=	${PATCHDIR}/disable-web
 .endif
+
+USES+=		tar:xz
 
 DOCS=		AUTHORS NEWS README
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}${PKGNAMESUFFIX}
