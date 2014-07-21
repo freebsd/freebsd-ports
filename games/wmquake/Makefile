@@ -10,27 +10,18 @@ MASTER_SITES=	http://www.ne.jp/asahi/linux/timecop/software/ \
 MASTER_SITE_SUBDIR=	uqs
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Id Software\'s Quake I in a 64x64 WM dockapp window
+COMMENT=	Id Software's Quake I in a 64x64 WM dockapp window
 
 USES=		gmake tar:bzip2
 USE_GNOME=	gtk12
 
 PLIST_FILES=	bin/wmquake
 
-.if defined(WITH_OPTIMIZED_CFLAGS)
-CFLAGS+=	-O3 -fomit-frame-pointer -funroll-loops -fno-strength-reduce
-.endif
+OPTIONS_DEFINE=	OPTIMIZED_CFLAGS
 
-NO_STAGE=	yes
-pre-everything::
-.if !defined(WITH_OPTIMIZED_CFLAGS)
-	@${ECHO_MSG} "Define WITH_OPTIMIZED_CFLAGS to enable aggressive optimizations"
-.endif
+OPTIMIZED_CFLAGS_CFLAGS=	-O3 -fomit-frame-pointer -funroll-loops -fno-strength-reduce
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/wmquake ${PREFIX}/bin
-
-post-install:
-	@${CAT} ${PKGMESSAGE}
+	${INSTALL_PROGRAM} ${WRKSRC}/wmquake ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>
