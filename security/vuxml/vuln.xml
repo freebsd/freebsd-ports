@@ -57,6 +57,40 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="ecea9e92-0be5-4931-88da-8772d044972a">
+    <topic>mcollective -- cert valication issue</topic>
+    <affects>
+      <package>
+	<name>mcollective</name>
+	<range><lt>2.5.3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Melissa Stone reports:</p>
+	<blockquote cite="https://groups.google.com/forum/#!topic/puppet-announce/cPykqUXMmK4">
+	  <p>The MCollective aes_security public key plugin does not correctly
+	    validate certs against the CA. By exploiting this vulnerability
+	    within a race/initialization window, an attacker with local access
+	    could initiate an unauthorized MCollective client connection with a
+	    server, and thus control the mcollective plugins running on that
+	    server. This vulnerability requires a collective be configured to
+	    use the aes_security plugin. Puppet Enterprise and open source
+	    MCollective are not configured to use the plugin and are not
+	    vulnerable by default.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2014-3251</cvename>
+      <url>https://groups.google.com/forum/#!topic/puppet-announce/cPykqUXMmK4</url>
+    </references>
+    <dates>
+      <discovery>2014-07-09</discovery>
+      <entry>2014-07-21</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="904d78b8-0f7e-11e4-8b71-5453ed2e2b49">
     <topic>qt4-imageformats, qt5-imageformats -- DoS vulnerability in the GIF image handler</topic>
     <affects>
