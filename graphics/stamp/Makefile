@@ -17,6 +17,7 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib
 
 OPTIONS_DEFINE=	X11
+OPTIONS_SUB=	yes
 X11_USE=	GNOME=gtk12
 
 post-patch:
