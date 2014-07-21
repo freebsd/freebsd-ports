@@ -17,26 +17,21 @@ USES=		zip
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 USE_LDCONFIG=	yes
-MAN1=		regutil.1
-MLINKS=		regutil.1 rexxutil.1
 MAKEFILE=	Makefile.bsd
 
 SUB_FILES=	regutil.1 pkg-message
 
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 do-install:
-		${INSTALL_PROGRAM} ${WRKSRC}/librexxutil.so ${PREFIX}/lib
-		${INSTALL_MAN} ${WRKDIR}/regutil.1 ${PREFIX}/man/man1
+		${INSTALL_LIB} ${WRKSRC}/librexxutil.so ${STAGEDIR}${PREFIX}/lib
+		${INSTALL_MAN} ${WRKDIR}/regutil.1 ${STAGEDIR}${PREFIX}/man/man1/regutil.1.gz
+		${INSTALL_MAN} ${WRKDIR}/regutil.1 ${STAGEDIR}${PREFIX}/man/man1/rexxutil.1.gz
 
 post-install:
-.if !defined(NOPORTDOCS)
-		${MKDIR} ${DOCSDIR}
-		${INSTALL_MAN} ${WRKSRC}/regutil.pdf ${DOCSDIR}
-		@${CAT} ${PKGMESSAGE}
-.endif
+		${MKDIR} ${STAGEDIR}${DOCSDIR}
+		${INSTALL_MAN} ${WRKSRC}/regutil.pdf ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.post.mk>
