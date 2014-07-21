@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	knot
-DISTVERSION=	1.4.7
+DISTVERSION=	1.5.0
 CATEGORIES=	dns ipv6
 MASTER_SITES=	https://secure.nic.cz/files/knot-dns/ \
 		http://dns-lab.com/downloads/knot-dns/
@@ -16,7 +16,7 @@ BUILD_DEPENDS=	bison:${PORTSDIR}/devel/bison \
 		flex>=2.5.35_1:${PORTSDIR}/textproc/flex
 LIB_DEPENDS=	liburcu.so:${PORTSDIR}/sysutils/liburcu
 
-USES=		libtool makeinfo
+USES=		libtool
 
 USE_LDCONFIG=	yes
 
@@ -40,8 +40,6 @@ IDNA_LIB_DEPENDS=    libidn.so:${PORTSDIR}/dns/libidn
 SUB_FILES=	pkg-message
 
 USE_RC_SUBR=	${PORTNAME}
-
-INFO=		knot
 
 PORTDOCS=	AUTHORS COPYING ChangeLog INSTALL NEWS README THANKS
 
