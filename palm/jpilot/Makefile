@@ -4,8 +4,7 @@
 # "?=" and "+=" are for including this Makefile from japanese/jpilot"
 
 PORTNAME=	jpilot
-PORTVERSION=	1.8.1
-PORTREVISION=	2
+PORTVERSION=	1.8.2
 CATEGORIES+=	palm comms
 MASTER_SITES=	http://www.mirrorservice.org/sites/master.us.finkmirrors.net/distfiles/ \
 		http://jpilot.org/
