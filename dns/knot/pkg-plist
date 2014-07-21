@@ -14,5 +14,11 @@ bin/kdig
 bin/khost
 bin/knsec3hash
 bin/knsupdate
+lib/libknot.so
+lib/libknot.so.0
+lib/libknot.so.0.0.1
+lib/libzscanner.so
+lib/libzscanner.so.0
+lib/libzscanner.so.0.0.1
 sbin/knotc
 sbin/knotd
