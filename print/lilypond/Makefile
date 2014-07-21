@@ -24,7 +24,7 @@ BUILD_DEPENDS=	pdftexi2dvi:${PORTSDIR}/print/texinfo \
 		pngtopnm:${PORTSDIR}/graphics/netpbm \
 		rsync:${PORTSDIR}/net/rsync \
 		zip:${PORTSDIR}/archivers/zip \
-		texi2html:${PORTSDOR}/textproc/texi2html \
+		texi2html:${PORTSDIR}/textproc/texi2html \
 		${LOCALBASE}/share/ghostscript/fonts/c059033l.pfb:${PORTSDIR}/print/gsfonts
 
 RUN_DEPENDS=	mftrace:${PORTSDIR}/print/mftrace \
