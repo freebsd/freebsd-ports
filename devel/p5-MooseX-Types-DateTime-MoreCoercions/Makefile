@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	MooseX-Types-DateTime-MoreCoercions
-PORTVERSION=	0.11
+PORTVERSION=	0.12
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -21,10 +21,10 @@ BUILD_DEPENDS=	p5-DateTime>=0.43.02:${PORTSDIR}/devel/p5-DateTime \
 		p5-Time-Duration-Parse>=0.06:${PORTSDIR}/devel/p5-Time-Duration-Parse \
 		p5-namespace-clean>=0.08:${PORTSDIR}/devel/p5-namespace-clean
 RUN_DEPENDS:=	${BUILD_DEPENDS}
-TEST_DEPENDS=	p5-Test-Exception>=0.27:${PORTSDIR}/devel/p5-Test-Exception \
+TEST_DEPENDS=	p5-Test-Fatal>=0:${PORTSDIR}/devel/p5-Test-Fatal \
 		p5-Test-use-ok>=0.02:${PORTSDIR}/devel/p5-Test-use-ok
 
-USE_PERL5=	configure
+USE_PERL5=	modbuildtiny
 USES=		perl5
 
 .include <bsd.port.mk>
