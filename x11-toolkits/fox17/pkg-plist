@@ -125,6 +125,8 @@ include/fox-%%MAJORVER%%/FXDriveBox.h
 include/fox-%%MAJORVER%%/FXElement.h
 include/fox-%%MAJORVER%%/FXEvent.h
 include/fox-%%MAJORVER%%/FXException.h
+include/fox-%%MAJORVER%%/FXEXEIcon.h
+include/fox-%%MAJORVER%%/FXEXEImage.h
 include/fox-%%MAJORVER%%/FXExpression.h
 include/fox-%%MAJORVER%%/FXExtentd.h
 include/fox-%%MAJORVER%%/FXExtentf.h
