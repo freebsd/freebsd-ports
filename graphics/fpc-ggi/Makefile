@@ -8,6 +8,9 @@ PKGNAMESUFFIX=	-ggi
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Free Pascal interface to libggi
 
+DEPRECATED=	Unmaintained upstream
+EXPIRATION_DATE=	2014-09-22
+
 USE_FPC=	yes
 
 MASTERDIR=	${.CURDIR}/../../lang/fpc

@@ -14,6 +14,9 @@ COMMENT=	Flexible drawing library
 
 LICENSE=	MIT
 
+DEPRECATED=	Unmaintained upstream
+EXPIRATION_DATE=	2014-09-22
+
 LIB_DEPENDS=	libgii.so:${PORTSDIR}/devel/libgii
 
 USES=		libtool:keepla tar:bzip2
