@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ploy_fabric
-DISTVERSION=	1.0b5
+DISTVERSION=	1.0.0
 CATEGORIES=	sysutils python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,7 +13,7 @@ COMMENT=	Ploy plugin for integration with Fabric
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ploy>=1.0.r9:${PORTSDIR}/sysutils/py-ploy \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ploy>=1.0.0:${PORTSDIR}/sysutils/py-ploy \
 		${PYTHON_PKGNAMEPREFIX}fabric>=1.3.0:${PORTSDIR}/devel/py-fabric
 
 USES=			zip
