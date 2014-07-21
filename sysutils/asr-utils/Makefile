@@ -32,9 +32,10 @@ PLIST_SUB+=	LIBXM=""
 PLIST_SUB+=	LIBXM="@comment "
 .endif
 
+NO_STAGE=	yes
+
 .ifndef (WITHOUT_X11)
 PLIST_SUB+=	X11=""
-NO_STAGE=	yes
 do-build:
 	${SED} -e 's,%%PREFIX%%,${PREFIX},g' \
 	    ${FILESDIR}/dptmgr.sh.in > ${WRKDIR}/dptmgr.sh
