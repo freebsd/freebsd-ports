@@ -11,17 +11,16 @@ COMMENT=	Collection of clustering tools
 
 GNU_CONFIGURE=	yes
 
-.include <bsd.port.pre.mk>
+OPTIONS_DEFINE=	X11
+OPTIONS_DEFAULT=X11
+OPTIONS_SUB=	yes
 
-.if defined (WITHOUT_X11)
-PLIST_SUB+=	X11='@comment '
-.else
-PLIST_SUB+=	X11=''
-USE_XORG=	x11
-.endif
+X11_USE=	XORG=x11
+
+.include <bsd.port.options.mk>
 
 post-patch:
-.if defined(WITHOUT_X11)
+.if empty(PORT_OPTIONS:MX11)
 	${REINPLACE_CMD} -E 's,^(SUBDIRS) = .*,\1 = barrier dsh jsd pcp dtop tools,' ${WRKSRC}/Makefile.in
 .endif
 

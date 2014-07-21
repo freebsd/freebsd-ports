@@ -14,8 +14,13 @@ COMMENT=	OCaml module for functional reactive programming
 
 LICENSE=	BSD3CLAUSE
 
+OPTIONS_DEFINE=	X11
+
 USE_OCAML=		yes
-.if defined (WITHOUT_X11)
+
+.include <bsd.port.options.mk>
+
+.if empty(PORT_OPTIONS:MX11)
 OCAMLC_DEPEND=		ocaml-notk>=3.11:${OCAMLC_PORT}
 .else
 OCAMLC_DEPEND=		ocaml>=3.11:${OCAMLC_PORT}
