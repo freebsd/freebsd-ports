@@ -1,0 +1,21 @@
+# $FreeBSD$
+
+PORTNAME=	trollius
+PORTVERSION=	0.4
+CATEGORIES=	devel python
+MASTER_SITES=	CHEESESHOP
+PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+
+MAINTAINER=	skreuzer@FreeBSD.org
+COMMENT=	Port of the Tulip project (asyncio module, PEP 3156) on Python 2
+
+LICENSE=	MIT
+
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}futures>0:${PORTSDIR}/devel/py-futures
+RUN_DEPENDS:=	${BUILD_DEPENDS}
+
+USE_PYTHON=	yes
+USE_PYDISTUTILS=	yes
+PYDISTUTILS_AUTOPLIST=	yes
+
+.include <bsd.port.mk>
