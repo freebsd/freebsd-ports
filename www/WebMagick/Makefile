@@ -38,12 +38,15 @@ X11_BUILD_DEPENDS=	xlsfonts:${PORTSDIR}/x11-fonts/xlsfonts
 X11_RUN_DEPENDS=	xlsfonts:${PORTSDIR}/x11-fonts/xlsfonts
 X11_CONFIGURE_ENV_OFF=	with_x=no
 
-pre-everything::
-	@${ECHO_CMD}
-	@${ECHO_CMD} ${PORTNAME} requires that ImageMagick be installed with the PERL option enabled.
-	@${ECHO_CMD}
+.include <bsd.port.pre.mk>
+
+do-configure:
+	@if [ ! -f ${SITE_PERL}/${PERL_ARCH}/Image/Magick.pm ]; then \
+		${ECHO_CMD} ERROR: ImageMagick must be installed with the PERL option enabled; \
+		${FALSE}; \
+	fi
 
 pre-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/www/data
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
