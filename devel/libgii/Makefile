@@ -13,6 +13,9 @@ COMMENT=	GGI API for input sources
 
 LICENSE=	MIT
 
+DEPRECATED=	Unmaintained upstream
+EXPIRATION_DATE=	2014-09-22
+
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 USES=		libtool:keepla tar:bzip2
 USE_LDCONFIG=	yes

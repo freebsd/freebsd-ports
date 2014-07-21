@@ -65,7 +65,7 @@ UNITSDIR=		${LOCALBASE}/lib/fpc/${FPC_VER}/units/${BUILDNAME}
 _FPC_ALL_UNITS=	a52 aspell bfd bzip2 cairo chm dblib dbus dts fastcgi fcl-async fcl-base \
 		fcl-db fcl-extra fcl-fpcunit fcl-image fcl-js fcl-json fcl-net fcl-passrc \
 		fcl-process fcl-registry fcl-res fcl-web fcl-xml fftw fpgtk fpindexer \
-		fpmkunit fppkg fv gdbint gdbm ggi gmp gnome1 graph gtk1 gtk2 hash \
+		fpmkunit fppkg fv gdbint gdbm gmp gnome1 graph gtk1 gtk2 hash \
 		hermes httpd22 httpd24 ibase iconvenc imagemagick imlib ldap libcurl libgd \
 		libpng libvlc libxml2 lua mad matroska modplug mysql ncurses newt numlib \
 		odbc oggvorbis openal opengl openssl oracle pasjpeg paszlib pcap \
@@ -151,7 +151,6 @@ fpvectorial_UNIT=	graphics/fpc-fpvectorial
 fv_UNIT=	devel/fpc-fv
 hermes_UNIT=	graphics/fpc-hermes
 gdbm_UNIT=	databases/fpc-gdbm
-ggi_UNIT=	graphics/fpc-ggi
 gmp_UNIT=	math/fpc-gmp
 gnome1_UNIT=	x11-toolkits/fpc-gnome1
 gtk1_UNIT=	x11-toolkits/fpc-gtk1
