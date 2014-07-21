@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ploy_ansible
-DISTVERSION=	1.0b7
+DISTVERSION=	1.0.0
 CATEGORIES=	sysutils python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,7 +12,7 @@ COMMENT=	Ploy plugin to integrate with Ansible
 
 LICENSE=	GPLv3
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ploy>=1.0.r9:${PORTSDIR}/sysutils/py-ploy \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ploy>=1.0.0:${PORTSDIR}/sysutils/py-ploy \
 		${PYTHON_PKGNAMEPREFIX}execnet>0:${PORTSDIR}/sysutils/py-execnet \
 		ansible>0:${PORTSDIR}/sysutils/ansible
 
