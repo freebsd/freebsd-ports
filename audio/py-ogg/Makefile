@@ -12,12 +12,13 @@ DISTNAME=	pyogg-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Object-oriented Python bindings for the ogg library
 
+LICENSE=	LGPL20
+
 LIB_DEPENDS=	libogg.so:${PORTSDIR}/audio/libogg
 
 USE_PYTHON=		2
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_AUTOPLIST=	yes
-PYDISTUTILS_PKGNAME=	pyogg
 
 do-configure:
 	@cd ${WRKSRC} && ${MAKE_ENV} ${PYTHON_CMD} config_unix.py --prefix ${LOCALBASE}
