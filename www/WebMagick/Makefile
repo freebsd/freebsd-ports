@@ -40,7 +40,7 @@ X11_CONFIGURE_ENV_OFF=	with_x=no
 
 .include <bsd.port.pre.mk>
 
-do-configure:
+pre-configure:
 	@if [ ! -f ${SITE_PERL}/${PERL_ARCH}/Image/Magick.pm ]; then \
 		${ECHO_CMD} ERROR: ImageMagick must be installed with the PERL option enabled; \
 		${FALSE}; \
