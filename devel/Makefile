@@ -3904,6 +3904,7 @@
     SUBDIR += py-trace2html
     SUBDIR += py-traits
     SUBDIR += py-transaction
+    SUBDIR += py-trollius
     SUBDIR += py-turbocheetah
     SUBDIR += py-turbojson
     SUBDIR += py-turbojson11
