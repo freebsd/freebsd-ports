@@ -14,25 +14,26 @@ LICENSE=	LGPL21
 
 LIB_DEPENDS=	libexpat.so:${PORTSDIR}/textproc/expat2
 
-GNU_CONFIGURE=	yes
 USES=		gmake libtool pathfix pkgconfig
+GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
+
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
 SCEW_EXAMPLES=	print stream write
 
-BROKEN_powerpc=	Does not compile on powerpc
-
 post-install:
 .for ex in ${SCEW_EXAMPLES}
-	${INSTALL_SCRIPT} ${WRKSRC}/examples/${PORTNAME}_${ex}/${PORTNAME}_${ex} ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_SCRIPT} \
+		${WRKSRC}/examples/${PORTNAME}_${ex}/${PORTNAME}_${ex} \
+		${STAGEDIR}${PREFIX}/bin
 .endfor
 
 .ifdef MAINTAINER_MODE
 LIB_DEPENDS+=	libcheck.so:${PORTSDIR}/devel/libcheck
 regression-test: build
-	cd ${WRKSRC}/tests && ${MAKE_CMD} check
+	${MAKE_CMD} -C ${WRKSRC}/tests check
 .endif
 
 .include <bsd.port.mk>
