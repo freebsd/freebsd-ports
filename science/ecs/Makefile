@@ -21,6 +21,7 @@ LIB_DEPENDS=	libmed.so:${PORTSDIR}/french/med	\
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 USES=		gmake zip
+USE_TEX=	dvipsk
 GNU_CONFIGURE=	yes
 CPPFLAGS=	-I${LOCALBASE}/include
 CONFIGURE_ARGS=	--with-bft=${LOCALBASE}		\
