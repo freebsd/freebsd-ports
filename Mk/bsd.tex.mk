@@ -30,6 +30,7 @@ TEX_MAINTAINER=	hrs@FreeBSD.org
 #  dvipsk:	dvipsk
 #  dvipdfmx:	DVIPDFMx
 #  xdvik:	XDvi
+#  gbklatex:	gbklatex
 #
 #  formats:	TeX, LaTeX, PDFTeX, AMSTeX, ConTeXT, CSLaTeX, EplainTeX,
 #		METAFONT, MLTeX, PDFTeX, TeXsis[*]
@@ -99,6 +100,9 @@ _USE_TEX_TEXMF=		${LOCALBASE}/${TEXMFDISTDIR}/README:${PORTSDIR}/print/texlive-t
 
 _USE_TETEX_BASE=	mktexlsr:${PORTSDIR}/print/teTeX-base
 _USE_TEX_BASE=		tlmgr:${PORTSDIR}/print/texlive-base
+
+_USE_TETEX_GBKLATEX=	gbklatex:${PORTSDIR}/print/latex-cjk
+_USE_TEX_GBKLATEX=	gbklatex:${PORTSDIR}/print/texlive-base
 
 _USE_TEX_DOCS=		${LOCALBASE}/${TEXMFDIR}/doc/texlive/texlive-en/README:${PORTSDIR}/print/texlive-docs
 
