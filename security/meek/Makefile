@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	meek
-PORTVERSION=	0.8
+PORTVERSION=	0.9
 CATEGORIES=	security
 MASTER_SITES=	http://c-s.li/ports/
 
