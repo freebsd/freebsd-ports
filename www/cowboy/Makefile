@@ -1,15 +1,17 @@
 # $FreeBSD$
 
 PORTNAME=	cowboy
-PORTVERSION=	0.8.6
+PORTVERSION=	0.10.0
 CATEGORIES=	www
 
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Small, fast and modular HTTP server written in Erlang
 
-BUILD_DEPENDS=	erlc:${PORTSDIR}/lang/erlang
+BUILD_DEPENDS=	erlc:${PORTSDIR}/lang/erlang \
+		cowlib>=0.6.2:${PORTSDIR}/devel/cowlib
 RUN_DEPENDS=	erl:${PORTSDIR}/lang/erlang \
-		ranch>=0:${PORTSDIR}/net/ranch
+		cowlib>=0.6.2:${PORTSDIR}/devel/cowlib \
+		ranch>=0.10.0:${PORTSDIR}/net/ranch
 
 PLIST_SUB=	VERSION="${PORTVERSION}"
 
@@ -17,12 +19,10 @@ USES=		gmake
 USE_GITHUB=	yes
 GH_ACCOUNT=	extend
 GH_PROJECT=	cowboy
-GH_COMMIT=	9eaee45
+GH_COMMIT=	ee3ad5e
 GH_TAGNAME=	${PORTVERSION}
 
 PORTDOCS=	*
-
-.include <bsd.port.options.mk>
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
