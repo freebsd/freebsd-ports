@@ -38,7 +38,7 @@ MAN1+=		escputil.1
 
 .if defined(GUT_SLAVE) && ${GUT_SLAVE}=="gimp"
 LIB_DEPENDS+=	libgimp-2.0.so:${PORTSDIR}/graphics/gimp-app \
-		gutenprint.3:${PORTSDIR}/print/gutenprint-base
+		libgutenprint.so:${PORTSDIR}/print/gutenprint-base
 CONFIGURE_ARGS=--with-gimp2=yes # Override CONFIGURE_ARGS
 BUILD_WRKSRC=	${WRKSRC}/src/gimp2
 INSTALL_WRKSRC=	${WRKSRC}/src/gimp2
