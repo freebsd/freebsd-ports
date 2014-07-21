@@ -2,7 +2,6 @@
 
 PORTNAME=	opera
 PORTVERSION=	${OPERA_VER}
-PORTREVISION=	1
 CATEGORIES=	www linux
 MASTER_SITES=	ftp://ftp.opera.com/pub/opera/linux/${OPERA_VER:S/.//}/ \
 		ftp://ftp.sunet.se/pub/www/clients/Opera/linux/${OPERA_VER:S/.//}/ \
@@ -18,41 +17,28 @@ PKGNAMEPREFIX=	linux-
 DISTNAME=	${PORTNAME}-${OPERA_VER}-${OPERA_BUILD}.i386.linux
 
 MAINTAINER=	acm@FreeBSD.org
-COMMENT=	A blazingly fast, full-featured, standards-compliant browser
-
-FORBIDDEN=	http://www.freshports.org/vuxml.php?vid=0925716f-34e2-11e2-aa75-003067c2616f|38daea4f-2851-11e2-9483-14dae938ec40|85f33a8d-492f-11e2-aa75-003067c2616f|cebed39d-9e6f-11e2-b3f5-003067c2616f|ea0f45e2-6c4b-11e2-98d9-003067c2616f
-IGNORE=		not staged, outdated version, vulnerable, use www/opera instead
+COMMENT=	Blazingly fast, full-featured, standards-compliant browser
 
 RUN_DEPENDS=	update-mime-database:${PORTSDIR}/misc/shared-mime-info
 
-USE_XZ=		yes
 USE_LINUX=	yes
-USE_LINUX_APPS=	naslibs png xorglibs
+USE_LINUX_APPS=	gdkpixbuf gtk2 naslibs png sqlite3 xorglibs
 ONLY_FOR_ARCHS=	i386 amd64
-USE_GNOME=	desktopfileutils
+USES=		desktop-file-utils shared-mime-info tar:xz
 WANT_GNOME=	yes
 INSTALLS_ICONS=	yes
 
 NO_BUILD=	yes
 
-OPERA_VER?=	11.62
-OPERA_BUILD?=	1347
+OPERA_VER?=	12.16
+OPERA_BUILD?=	1860
 DATADIR=	${PREFIX}/share/${UNIQUENAME}
 DOCSDIR=	${PREFIX}/share/doc/${UNIQUENAME}
 
-MAN1=		linux-opera.1 linux-opera-widget-manager.1
-
-RENAME=		opera opera-widget-manager lib/opera \
+RENAME=		opera lib/opera \
 		share/applications/opera-browser.desktop \
-		share/applications/opera-widget-installer.desktop \
-		share/applications/opera-widget-manager.desktop \
 		share/doc/opera share/opera man/man1/opera.1 \
-		man/man1/opera-widget-manager.1 \
-		share/mime/packages/opera-extension.xml \
-		share/mime/packages/opera-unite-application.xml \
-		share/mime/packages/opera-widget.xml
-
-NO_STAGE=	yes
+		share/mime/packages/opera-extension.xml
 
 post-extract:
 	@${GUNZIP_CMD} ${WRKSRC}/share/man/man1/*.gz
@@ -121,6 +107,6 @@ post-patch:
 	@${FIND} ${WRKSRC} -name '*.bak' -delete
 
 do-install:
-	@(cd ${WRKSRC} && ./install --system --quiet --force)
+	@(cd ${WRKSRC} && ./install --repackage ${STAGEDIR}${PREFIX} --system --quiet --force)
 
 .include <bsd.port.mk>
