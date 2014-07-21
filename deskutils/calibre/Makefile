@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	calibre
-PORTVERSION=	1.44.0
+PORTVERSION=	1.45.0
 CATEGORIES=	deskutils python
 MASTER_SITES=	SF/${PORTNAME}/${PORTVERSION}/
 
@@ -67,22 +67,27 @@ MAKE_ENV+=	FC_INC_DIR="${LOCALBASE}/include/fontconfig" \
 		PODOFO_LIB_DIR="${LOCALBASE}/lib" \
 		PODOFO_INC_DIR="${LOCALBASE}/include/podofo" \
 		WITH_USB=yes \
+		CALIBRE_CONFIG_DIRECTORY=${WRKDIR}/calibre-config \
 		XDG_DATA_DIRS=${STAGEDIR}${PREFIX}/share \
-		XDG_CONFIG_HOME=${STAGEDIR}/.config
+		XDG_CONFIG_HOME=${WRKDIR}/xdg-config
+
+post-patch:
+	@${FIND} ${WRKSRC}/resources/content_server -name "*.orig" -delete
 
 do-build:
+	@${MKDIR} ${WRKDIR}/calibre-config ${WRKDIR}/xdg-config
 	@(cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} ${PYTHON_CMD} \
 		${PYSETUP} build)
 
 do-install:
-	${MKDIR} ${STAGEDIR}/.config
-.for dir in bash-completion desktop-directories gnome/apps mime/packages icons/hicolor/128x128/apps zsh/site-functions
+.for dir in bash-completion desktop-directories gnome/apps mime/packages \
+	icons/hicolor/128x128/apps zsh/site-functions
 	${MKDIR} ${STAGEDIR}${PREFIX}/share/${dir}
 .endfor
 	${MKDIR} ${STAGEDIR}${PREFIX}/lib/${PYTHON_VERSION}/site-packages
-	@(cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} ${PYTHON_CMD} \
-		${PYSETUP} ${INSTALL} --prefix ${PREFIX} --staging-root ${STAGEDIR}${PREFIX})
-	@${RM} ${STAGEDIR}${PREFIX}/bin/calibre-uninstall
-	@${RM} -r ${STAGEDIR}/.config
+	(cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} ${PYTHON_CMD} \
+		${PYSETUP} install --prefix ${PREFIX} \
+		--staging-root ${STAGEDIR}${PREFIX})
+	${RM} ${STAGEDIR}${PREFIX}/bin/calibre-uninstall
 
 .include <bsd.port.mk>

@@ -59,7 +59,7 @@ calibre_start()
 		command_args="${command_args} --password=${calibre_password}"
 	fi
 	if [ ! -z "${calibre_url_prefix}" ]; then
-		command_args="${command_args} --url-prefx=${calibre_url_prefix}"
+		command_args="${command_args} --url-prefix=${calibre_url_prefix}"
 	fi
 
 	calibre_home=${calibre_home:-$(getent passwd ${calibre_user} | awk -F: '{print $6}')}
