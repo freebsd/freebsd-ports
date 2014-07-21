@@ -23,7 +23,7 @@ NO_BUILD=	yes
 SUB_FILES=	pkg-message
 
 OPTIONS_DEFINE=	DCRAW FFMPEG GD GRAPHMAGICK IMAGEMAGICK JHEAD \
-		NETPBM NLS UNZIP
+		NETPBM NLS UNZIP X11
 OPTIONS_DEFAULT=	IMAGEMAGICK JHEAD UNZIP
 
 .include <bsd.port.options.mk>
@@ -51,7 +51,7 @@ RUN_DEPENDS+=	gm:${PORTSDIR}/graphics/GraphicsMagick
 .endif
 
 .if ${PORT_OPTIONS:MIMAGEMAGICK}
-.if !defined(WITHOUT_X11)
+.if ${PORT_OPTIONS:MX11}
 RUN_DEPENDS+=	convert:${PORTSDIR}/graphics/ImageMagick
 .else
 RUN_DEPENDS+=	convert:${PORTSDIR}/graphics/ImageMagick-nox11

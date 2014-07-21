@@ -12,8 +12,13 @@ COMMENT=	Highly configurable, secure, and portable finger daemon
 
 CONFLICTS=	gnu-finger-1.*
 
+OPTIONS_DEFINE=	X11
+
 GNU_CONFIGURE=	yes
-.if !defined(WITHOUT_X11)
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MX11}
 USE_GNOME=	gtk12
 PLIST_SUB+=	WITHOUT_X11=""
 .else

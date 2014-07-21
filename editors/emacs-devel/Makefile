@@ -225,7 +225,7 @@ GNUTLS3_RPATH=
 post-patch:
 	@${RM} -f ${WRKSRC}/info/*
 	@${REINPLACE_CMD} -e "s/%%EMACS_VER%%/${EMACS_VER}/g" -e "s/%%DATADIR%%/${DATADIR:C/\//\\\//g}/g" ${WRKSRC}/sources.el
-.if defined(WITHOUT_X11)
+.if empty(PORT_OPTIONS:MX11)
 	@${REINPLACE_CMD} -e 's/^Terminal=.*$$/Terminal=true/' ${WRKSRC}/etc/emacs.desktop
 .endif
 .if ${PORT_OPTIONS:MGNUTLS3}

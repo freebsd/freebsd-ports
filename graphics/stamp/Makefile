@@ -15,9 +15,9 @@ LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib
-.if !defined(WITHOUT_X11)
-USE_GNOME=	gtk12
-.endif
+
+OPTIONS_DEFINE=	X11
+X11_USE=	GNOME=gtk12
 
 post-patch:
 	@${REINPLACE_CMD} -e 's#/usr/local/share/stamp#${DATADIR}#' \
