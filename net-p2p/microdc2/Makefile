@@ -14,7 +14,7 @@ LICENSE=	GPLv2
 
 CONFLICTS=	tthsum-[0-9]*
 
-USES=		iconv
+USES=		iconv readline
 GNU_CONFIGURE=	yes
 USE_GNOME=	libxml2
 

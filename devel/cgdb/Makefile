@@ -9,7 +9,7 @@ MASTER_SITES=	http://cgdb.me/files/
 MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	Curses-based interface to the GNU Debugger
 
-USES=		makeinfo
+USES=		makeinfo readline
 
 INFO=		cgdb
 

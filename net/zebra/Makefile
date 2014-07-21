@@ -26,6 +26,7 @@ SUB_LIST=	BGPDARGS=${BGPDARGS} \
 		ZEBRAARGS=${ZEBRAARGS}
 USE_SUBMAKE=	yes
 GNU_CONFIGURE=	yes
+USES=		readline
 CONFIGURE_ARGS+=	--sysconfdir=${PREFIX}/etc/zebra
 
 PORTSCOUT=	ignore:1
