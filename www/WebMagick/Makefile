@@ -33,17 +33,17 @@ SHEBANG_FILES=	utils/aub \
 		utils/help2man \
 		utils/make_dir_index.pl
 
-.include <bsd.port.pre.mk>
+OPTIONS_DEFINE=		X11
+X11_BUILD_DEPENDS=	xlsfonts:${PORTSDIR}/x11-fonts/xlsfonts
+X11_RUN_DEPENDS=	xlsfonts:${PORTSDIR}/x11-fonts/xlsfonts
+X11_CONFIGURE_ENV_OFF=	with_x=no
 
-.if !exists(${LOCALBASE}/bin/xlsfonts)
-WITHOUT_X11=	yes
-.endif
-
-.if defined(WITHOUT_X11)
-CONFIGURE_ENV+=with_x=no
-.endif
+pre-everything::
+	@${ECHO_CMD}
+	@${ECHO_CMD} ${PORTNAME} requires that ImageMagick be installed with the PERL option enabled.
+	@${ECHO_CMD}
 
 pre-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/www/data
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
