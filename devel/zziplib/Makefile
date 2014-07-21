@@ -16,7 +16,7 @@ LICENSE_COMB=	dual
 BUILD_DEPENDS=	zip:${PORTSDIR}/archivers/zip
 
 USES=		tar:bzip2 pathfix pkgconfig gmake libtool
-USE_PYTHON_BUILD=	yes
+USE_PYTHON_BUILD=	2
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	ac_cv_path_XMLTO=":"
 USE_LDCONFIG=	yes
