@@ -47,7 +47,7 @@ share/applications/jpilot.desktop
 %%DATADIR%%/ContactsDB-PAdd.pdb
 %%DATADIR%%/DatebookDB.pdb
 %%DATADIR%%/ExpenseDB.pdb
-%%DATADIR%%/MañanaDB.pdb
+%%DATADIR%%/MananaDB.pdb
 %%DATADIR%%/Memo32DB.pdb
 %%DATADIR%%/MemoDB.pdb
 %%DATADIR%%/MemosDB-PMem.pdb
