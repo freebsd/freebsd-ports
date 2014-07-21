@@ -24,4 +24,4 @@ post-patch:
 	${REINPLACE_CMD} -E 's,^(SUBDIRS) = .*,\1 = barrier dsh jsd pcp dtop tools,' ${WRKSRC}/Makefile.in
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
