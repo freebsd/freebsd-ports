@@ -131,7 +131,7 @@ PLIST_SUB+=	BASH="@comment "
 
 .if ${PORT_OPTIONS:MAVAHI}
 BUILD_DEPENDS+=	${LOCALBASE}/include/avahi-ui/avahi-ui.h:${PORTSDIR}/net/avahi-header
-RUN_DEPENDS+=	avahi-daemon:${PORTSDIR}/net/avaha-app
+RUN_DEPENDS+=	avahi-daemon:${PORTSDIR}/net/avahi-app
 CONFIGURE_ARGS+=	--with-avahi
 .else
 CONFIGURE_ARGS+=	--without-avahi
