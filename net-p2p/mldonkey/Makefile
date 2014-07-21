@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mldonkey
-PORTVERSION=	3.1.3
-PORTREVISION=	1
+PORTVERSION=	3.1.5
 CATEGORIES+=	net-p2p
 MASTER_SITES=	SF
 
@@ -36,73 +35,69 @@ SUB_FILES=	pkg-message
 ###
 ## Options activation
 ###
-.if defined(WITHOUT_GUI) && defined(WITHOUT_CORE)
-IGNORE=	cannot install: you defined both WITHOUT_GUI and WITHOUT_CORE. I think I'll do nothing
-.endif
 
-.if !(defined(WITHOUT_GUI) || defined(WITHOUT_CORE))
+OPTIONS_DEFINE=	GD DOCS EXAMPLES
+OPTIONS_DEFAULT=CORE GD GUI
+OPTIONS_MULTI=	CLIENT
+OPTIONS_MULTI_CLIENT=CORE GUI
+CORE_DESC=	Client 'core' support
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MGUI} && ${PORT_OPTIONS:MCORE}
 CONFLICTS+=	mldonkey-core-[0.9]*
 CONFLICTS+=	mldonkey-gui-[0.9]*
 
 PLIST_SUB+=	CORE="" GUI="" GUICORE=""
-.else # (defined(WITHOUT_GUI) || defined(WITHOUT_CORE))
+.else # (${PORT_OPTIONS:MGUI} && ${PORT_OPTIONS:MCORE})
 
-. if defined(WITHOUT_GUI)
+. if !${PORT_OPTIONS:MGUI}
 PKGNAMESUFFIX=	-core
 
 CONFLICTS+=	mldonkey-gui-[0.9]*
 
 CONFIGURE_ARGS+=--disable-gui
 PLIST_SUB+=	CORE="" GUI="@comment " GUICORE="@comment "
-. endif # defined(WITHOUT_GUI)
+. endif # !${PORT_OPTIONS:MGUI}
 
-. if defined(WITHOUT_CORE)
+. if !${PORT_OPTIONS:MCORE}
 PKGNAMESUFFIX=	-gui
 
 CONFLICTS+=	mldonkey-core-[0.9]*
 
 PLIST_SUB+=	CORE="@comment " GUI="" GUICORE="@comment "
-. endif # defined(WITHOUT_CORE)
+. endif # !${PORT_OPTIONS:MCORE}
 
-.endif # !(defined(WITHOUT_GUI) || defined(WITHOUT_CORE))
+.endif # ${PORT_OPTIONS:MGUI} && ${PORT_OPTIONS:MCORE}
 
-.if !defined(WITHOUT_GUI)
+.if ${PORT_OPTIONS:MGUI}
 BUILD_DEPENDS+=	${LOCALBASE}/lib/ocaml/site-lib/lablgtk2/lablrsvg.cma:${PORTSDIR}/x11-toolkits/ocaml-lablgtk2
 LIB_DEPENDS+=	librsvg-2.so:${PORTSDIR}/graphics/librsvg2
 
 CONFIGURE_ARGS+=--enable-gui=newgui2
 # we don't need lablgtk as RUN dependency, but we need gtk+glib
 USE_GNOME=	gtk20
-.endif # !defined(WITHOUT_GUI)
+.endif # ${PORT_OPTIONS:MGUI}
 
-.if !defined(WITHOUT_CORE)
+.if ${PORT_OPTIONS:MCORE}
 USE_RC_SUBR=	mlnet
 SUB_LIST+=	SH=${SH:Q}
 
-. if !defined(WITHOUT_GD)
+. if ${PORT_OPTIONS:MGD}
 LIB_DEPENDS+=	libgd.so:${PORTSDIR}/graphics/gd
 . else
 CONFIGURE_ARGS+=--disable-gd
 . endif
 .endif
 
-DOCFILES=	Authors.txt Bugs.txt ChangeLog Developers.txt \
+PORTDOCS=	Authors.txt Bugs.txt ChangeLog Developers.txt \
 		Install.txt Todo.txt ed2k_links.txt
-PORTDOCS=	${DOCFILES}
 
 # build additional tools
 ALL_TARGET+=	\
 		mld_hash
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
-
-pre-everything::
-.if !defined(WITHOUT_GUI) && !defined(WITHOUT_CORE)
-	@${ECHO_MSG} "You can disable the GUI by defining WITHOUT_GUI."
-	@${ECHO_MSG} "You can disable the CORE by defining WITHOUT_CORE."
-	@${ECHO_MSG}
-.endif
 
 post-patch:
 	@${SED} \
@@ -133,27 +128,27 @@ pre-configure:
 	@cd ${WRKSRC}/config && ${AUTOCONF}
 
 do-install:
-.ifndef(WITHOUT_CORE)
-	@${INSTALL_PROGRAM} ${WRKSRC}/mld_hash		${PREFIX}/bin
-	@${INSTALL_PROGRAM} ${WRKSRC}/mlnet		${PREFIX}/bin/mlnet-real
-	@${INSTALL_SCRIPT} ${WRKDIR}/wrapper.sh		${PREFIX}/bin/mlnet
-.if !defined(NOPORTEXAMPLES)
-	@${MKDIR} ${EXAMPLESDIR}
-	@${INSTALL_SCRIPT} ${FILESDIR}/kill_mldonkey	${EXAMPLESDIR}
+.if ${PORT_OPTIONS:MCORE}
+	${INSTALL_PROGRAM} ${WRKSRC}/mld_hash ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/mlnet ${STAGEDIR}${PREFIX}/bin/mlnet-real
+	${INSTALL_SCRIPT} ${WRKDIR}/wrapper.sh ${STAGEDIR}${PREFIX}/bin/mlnet
+.if ${PORT_OPTIONS:MEXAMPLES}
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_SCRIPT} ${FILESDIR}/kill_mldonkey ${STAGEDIR}${EXAMPLESDIR}
 .endif
 .endif
-.ifndef(WITHOUT_GUI)
-	@${INSTALL_PROGRAM} ${WRKSRC}/mlgui		${PREFIX}/bin
+.if ${PORT_OPTIONS:MGUI}
+	${INSTALL_PROGRAM} ${WRKSRC}/mlgui ${STAGEDIR}${PREFIX}/bin
 .endif
-.ifndef(WITHOUT_CORE && WITHOUT_GUI)
-	@${INSTALL_SCRIPT} ${WRKSRC}/distrib/mldonkey_previewer ${PREFIX}/bin
-	@${INSTALL_PROGRAM} ${WRKSRC}/mlguistarter	${PREFIX}/bin
-	@${INSTALL_PROGRAM} ${WRKSRC}/mlnet+gui		${PREFIX}/bin
+.if ${PORT_OPTIONS:MGUI} && ${PORT_OPTIONS:MCORE}
+	${INSTALL_SCRIPT} ${WRKSRC}/distrib/mldonkey_previewer ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/mlguistarter ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/mlnet+gui ${STAGEDIR}${PREFIX}/bin
 .endif
-.ifndef(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-.for _file in ${DOCFILES}
-	@${INSTALL_DATA} ${WRKSRC}/distrib/${_file} ${DOCSDIR}
+.if ${PORT_OPTIONS:MDOCS}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+.for _file in ${PORTDOCS}
+	${INSTALL_DATA} ${WRKSRC}/distrib/${_file} ${STAGEDIR}${DOCSDIR}
 .endfor
 .endif
 
