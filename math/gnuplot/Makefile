@@ -2,7 +2,7 @@
 
 PORTNAME=	gnuplot
 PORTVERSION=	4.6.5
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	math graphics
 MASTER_SITES=	SF
 
@@ -50,7 +50,7 @@ PLOT_LIB_DEPENDS=	libplot.so:${PORTSDIR}/graphics/plotutils
 PLOT_CONFIGURE_ON=	--with-plot=${LOCALBASE}
 PLOT_CONFIGURE_OFF=	--without-plot
 
-TEX_USE=	TEX=base,texmf,latex
+TEX_USE=	TEX=base,texmf,latex,dvipsk
 TEX_CONFIGURE_ON=	--with-kpsexpand \
 			--with-texdir=${LOCALBASE}/share/texmf/tex/latex/gnuplot
 TEX_CONFIGURE_OFF=	--without-kpexpand
@@ -62,7 +62,7 @@ X11_USE=	XORG=x11
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MWX}
-USE_WX=			2.8
+USE_WX=			3.0
 WX_UNICODE=		yes
 WX_CONF_ARGS=		absolute
 .else
