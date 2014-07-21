@@ -12,7 +12,7 @@ Backported from:
  
  #ifndef SNDCTL_DSP_HALT
  # define SNDCTL_DSP_HALT SNDCTL_DSP_RESET
-@@ -210,6 +211,22 @@ static int Start (audio_output_t *aout, 
+@@ -209,6 +210,22 @@ static int Start (audio_output_t *aout, 
      }
      aout_FormatPrepare (fmt);
  
@@ -32,6 +32,6 @@ Backported from:
 +        msg_Err (aout, "cannot set 0x%08x fragment: %s", frag,
 +                 strerror_r(errno, buf, sizeof(buf) - 1));
 +
+     sys->fd = fd;
      VolumeSync (aout);
      sys->starting = true;
-     sys->format = *fmt;
