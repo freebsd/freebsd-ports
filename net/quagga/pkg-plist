@@ -86,12 +86,15 @@ man/man8/ospfd.8.gz
 %%OSPFAPI%%man/man8/ospfclient.8.gz
 man/man8/ripd.8.gz
 man/man8/ripngd.8.gz
-man/man8/watch%%ENABLE_USER%%.8.gz
+man/man8/watchquagga.8.gz
 man/man8/zebra.8.gz
 @dirrm include/quagga/ospfd
 %%OSPFAPI%%@dirrm include/quagga/ospfapi
 @dirrm include/quagga
 @dirrm share/examples/quagga
-@dirrm etc/quagga
+@owner %%ENABLE_USER%%
+@group %%ENABLE_GROUP%%
 @dirrmtry %%LOCALSTATE_DIR%%
 @dirrmtry %%ETCDIR%%
+@group root
+@owner wheel
