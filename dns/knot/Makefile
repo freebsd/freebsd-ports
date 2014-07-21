@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	knot
-DISTVERSION=	1.5.0
+PORTVERSION=	1.5.0
 CATEGORIES=	dns ipv6
 MASTER_SITES=	https://secure.nic.cz/files/knot-dns/ \
 		http://dns-lab.com/downloads/knot-dns/
@@ -20,22 +20,22 @@ USES=		libtool
 
 USE_LDCONFIG=	yes
 
-USE_OPENSSL=	yes
-WITH_OPENSSL_PORT=yes
+USE_OPENSSL=		yes
+WITH_OPENSSL_PORT=	yes
 
 GNU_CONFIGURE=	yes
 
-CONFIGURE_ARGS+=--with-storage=/var/db/knot
-CONFIGURE_ARGS+=--with-rundir=/var/run/knot
+CONFIGURE_ARGS+=	--with-storage=/var/db/knot
+CONFIGURE_ARGS+=	--with-rundir=/var/run/knot
 
-OPTIONS_DEFINE=   FASTPARSER IDNA
+OPTIONS_DEFINE=	FASTPARSER IDNA
 
-FASTPARSER_CONFIGURE_ENABLE= fastparser
-FASTPARSER_DESC=             Fast zone parser (demanding compilation)
+FASTPARSER_CONFIGURE_ENABLE=	fastparser
+FASTPARSER_DESC=		Fast zone parser (demanding compilation)
 
-IDNA_CONFIGURE_WITH= libidn
-IDNA_DESC=           IDN support in knot utilities
-IDNA_LIB_DEPENDS=    libidn.so:${PORTSDIR}/dns/libidn
+IDNA_CONFIGURE_WITH=	libidn
+IDNA_DESC=		IDN support in knot utilities
+IDNA_LIB_DEPENDS=	libidn.so:${PORTSDIR}/dns/libidn
 
 SUB_FILES=	pkg-message
 
