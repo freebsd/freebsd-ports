@@ -1,7 +1,9 @@
 bin/gogoc
-%%ETCDIR%%.conf
+etc/gogoc.conf
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/gogoc.conf.sample
+man/man5/gogoc.conf.5.gz
+man/man8/gogoc.8.gz
 template/README
 template/freebsd.sh
-@dirrm template
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
+@dirrmtry template
