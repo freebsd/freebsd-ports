@@ -3,13 +3,15 @@
 
 PORTNAME=	tora
 PORTVERSION=	2.1.3
-PORTREVISION=	5
+PORTREVISION=	6
 PORTEPOCH=	1
 CATEGORIES=	databases
 MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Toolkit for Oracle
+
+LICENSE=	GPLv2
 
 BUILD_DEPENDS=	cppunit-config:${PORTSDIR}/devel/cppunit
 LIB_DEPENDS=	libqscintilla2.so:${PORTSDIR}/devel/qscintilla2 \
@@ -19,15 +21,21 @@ OPTIONS_DEFINE=	PGSQL MYSQL DOCS
 OPTIONS_DEFINE_i386=	ORACLE
 OPTIONS_DEFAULT=	PGSQL MYSQL
 
-USE_AUTOTOOLS=	aclocal automake autoconf autoheader libtool
+USE_AUTOTOOLS=	aclocal automake autoconf autoheader libtoolize
 USE_QT4=	gui corelib sql xml network linguist moc_build uic_build rcc_build
-USES=		gmake
+USES=		gmake libtool
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--with-pcre=${LOCALBASE}
+LDFLAGS+=	-L${LOCALBASE}/lib
+INSTALL_TARGET=	install-strip
 
 PREFIX2FIX=	doc/help/preferences.texi doc/help/preferences.html
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1000024
+BROKEN=		Does not compile with clang (include <list>)
+.endif
 
 .if ${PORT_OPTIONS:MDOCS}
 USES+=		makeinfo
@@ -56,10 +64,10 @@ run-autotools:
 
 pre-configure:
 .if ${PORT_OPTIONS:MDOCS}
-	@${REINPLACE_CMD} -e 's|/etc/torarc|${PREFIX}/etc/torarc|'	\
+	${REINPLACE_CMD} -e 's|/etc/torarc|${PREFIX}/etc/torarc|'	\
 		${PREFIX2FIX:S|^|${WRKSRC}/|}
 .else
-	@${REINPLACE_CMD} -e 's|test doc|test|' ${WRKSRC}/Makefile.am
+	${REINPLACE_CMD} -e 's|test doc|test|' ${WRKSRC}/Makefile.am
 .endif
 
 .include <bsd.port.mk>
