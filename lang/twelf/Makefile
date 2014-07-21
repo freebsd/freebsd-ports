@@ -15,7 +15,8 @@ LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	mlton:${PORTSDIR}/lang/mlton
-BUILD_DEPENDS=	mlton:${PORTSDIR}/lang/mlton
+BUILD_DEPENDS=	mlton:${PORTSDIR}/lang/mlton \
+		texi2html:${PORTSDIR}/textproc/texi2html
 
 USES=	gmake
 ALL_TARGET=	mlton
