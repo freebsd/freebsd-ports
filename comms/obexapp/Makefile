@@ -14,7 +14,7 @@ LIB_DEPENDS=	libopenobex.so:${PORTSDIR}/comms/openobex \
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-USES=		iconv
+USES=		iconv readline
 PLIST_FILES=	bin/obexapp
 
 .if !defined(NO_INSTALL_MANPAGES)
