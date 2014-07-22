@@ -21,6 +21,7 @@ load_rc_config $name
 : ${zookeeper_enable:="NO"}
 : ${zookeeper_logdir="%%ZOOKEEPER_LOGDIR%%"}
 : ${zookeeper_rundir="%%ZOOKEEPER_RUNDIR%%"}
+: ${zookeeper_jmx:="YES"}
 
 command="%%PREFIX%%/zookeeper/bin/zkServer.sh"
 
@@ -34,6 +35,10 @@ export ZOOPIDFILE=${zookeeper_rundir}/zookeeper.pid
 
 zookeeper_command()
 {
+	export JAVA_HOME=%%JAVA_HOME%%
+	if ! checkyesno zookeeper_jmx; then
+		export JMXDISABLE=yes
+	fi
 	${command} ${rc_arg}
 }
 
