@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	eaglemode
-PORTVERSION=	0.84.0
-PORTREVISION=	2
+PORTVERSION=	0.85.0
 CATEGORIES=	x11
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
@@ -32,7 +31,7 @@ PLIST_FILES=	bin/${PORTNAME}
 PORTDATA=	*
 
 OPTIONS_DEFINE=	XINE RSVG PDF
-OPTIONS_DEFAULT=RSVG PDF
+OPTIONS_DEFAULT=XINE RSVG PDF
 RSVG_DESC=	SVG support through librsvg
 PDF_DESC=	PDF support through poppler-glib
 
@@ -43,7 +42,6 @@ LIB_DEPENDS+=	libxine.so:${PORTSDIR}/multimedia/libxine
 BUILD_ARGS+=	xine-inc-dir="${LOCALBASE}/include" \
 		xine-lib-dir="${LOCALBASE}/lib"
 PLIST_SUB+=	EMAV=""
-BROKEN=		does not build with libxine 1.2.x
 .else
 PLIST_SUB+=	EMAV="@comment "
 .endif
@@ -83,5 +81,10 @@ do-install:
 	${MKDIR} ${STAGEDIR}${DATADIR}
 	cd ${WRKSRC} && ${PERL} make.pl install dir=${STAGEDIR}${DATADIR}
 	${INSTALL_SCRIPT} ${WRKDIR}/eaglemode.sh ${STAGEDIR}${PREFIX}/bin/eaglemode
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/eaglemode/bin/* \
+		${STAGEDIR}${PREFIX}/lib/eaglemode/lib/*.so \
+		${STAGEDIR}${PREFIX}/lib/eaglemode/lib/emClock/emTimeZonesProc \
+		${STAGEDIR}${PREFIX}/lib/eaglemode/lib/emTmpConv/emTmpConvProc \
+		${STAGEDIR}${PREFIX}/lib/eaglemode/lib/emAv/emAvServerProc_xine
 
 .include <bsd.port.mk>
