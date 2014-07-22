@@ -1,10 +1,12 @@
---- lv_defines.h.orig	2006-01-22 13:23:37.000000000 +0000
-+++ libvisual/lv_defines.h	2014-06-24 19:56:46.961214708 +0100
-@@ -39,14 +39,13 @@
+--- libvisual/lv_defines.h.orig	2006-01-22 14:23:37.000000000 +0100
++++ libvisual/lv_defines.h	2014-07-21 15:18:07.000000000 +0200
+@@ -38,15 +38,14 @@
+ # define VISUAL_END_DECLS
  #endif /* __cplusplus */
  
- #ifdef NULL
+-#ifdef NULL
 -#undef NULL
++#ifndef NULL
 +# ifndef __cplusplus
 +#   define NULL ((void *) 0)
 +# else
