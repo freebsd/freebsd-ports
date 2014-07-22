@@ -46,7 +46,7 @@ CFLAGS+=	-DGMP_DESC
 .endif
 
 .if ${PORT_OPTIONS:MDOCS}
-USE_TEX=	latex:build
+USE_TEX=	latex:build dvipdfmx:build
 PORTDOCS=	*
 .else
 MAKE_ARGS+=	NODOCS=yes
