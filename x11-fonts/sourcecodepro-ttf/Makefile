@@ -7,31 +7,28 @@ CATEGORIES=	x11-fonts
 MASTER_SITES=	SF/sourcecodepro.adobe
 DISTNAME=	SourceCodePro_FontsOnly-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A set of fonts by Adobe designed for coders
+MAINTAINER=	sunpoet@FreeBSD.org
+COMMENT=	Set of fonts by Adobe designed for coders
 
 LICENSE=	OFL11
 
-BUILD_DEPENDS=	mkfontscale:${PORTSDIR}/x11-fonts/mkfontscale	\
-		mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir \
-		fc-cache:${PORTSDIR}/x11-fonts/fontconfig
+BUILD_DEPENDS=	${LOCALBASE}/bin/mkfontscale:${PORTSDIR}/x11-fonts/mkfontscale \
+		${LOCALBASE}/bin/mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir \
+		${LOCALBASE}/bin/fc-cache:${PORTSDIR}/x11-fonts/fontconfig
 
-USES=		zip
+NO_BUILD=	yes
 USE_XORG=	x11
+USES=		zip
 
 PLIST_SUB=	FONTDIR="${FONTDIR:S|${PREFIX}/||}"
-
-SUB_FILES=	pkg-message
 PKGMESSAGE=	${WRKDIR}/pkg-message
+SUB_FILES=	pkg-message
 SUB_LIST=	FONTDIR=${FONTDIR}
 
-FONTNAME=	SourceCodePro
-FONTDIR=	${PREFIX}/lib/X11/fonts/${FONTNAME}
-NO_BUILD=	yes
+FONTDIR=	${PREFIX}/lib/X11/fonts/SourceCodePro
 
 do-install:
-	${MKDIR} ${STAGEDIR}${FONTDIR}
-	cd ${WRKSRC}/TTF/ &&	\
-	${INSTALL_DATA} *.ttf ${STAGEDIR}${FONTDIR}
+	${MKDIR} ${STAGEDIR}${FONTDIR}/
+	cd ${WRKSRC}/TTF/ && ${INSTALL_DATA} *.ttf ${STAGEDIR}${FONTDIR}/
 
 .include <bsd.port.mk>
