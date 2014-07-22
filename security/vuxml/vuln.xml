@@ -57,6 +57,40 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="904d78b8-0f7e-11e4-8b71-5453ed2e2b49">
+    <topic>qt4-gui, qt5-gui -- DoS vulnerability in the GIF image handler</topic>
+    <affects>
+      <package>
+	<name>qt4-gui</name>
+	<range><lt>4.8.6_2</lt></range>
+      </package>
+      <package>
+	<name>qt5-gui</name>
+	<range><lt>5.2.1_3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Richard J. Moore reports:</p>
+	<blockquote cite="http://lists.qt-project.org/pipermail/announce/2014-April/000045.html">
+	  <p>The builtin GIF decoder in QtGui prior to Qt 5.3 contained a bug
+	    that would lead to a null pointer dereference when loading certain
+	    hand crafted corrupt GIF files. This in turn would cause the
+	    application loading these hand crafted GIFs to crash.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2014-0190</cvename>
+      <bid>67087</bid>
+      <mlist>http://lists.qt-project.org/pipermail/announce/2014-April/000045.html</mlist>
+    </references>
+    <dates>
+      <discovery>2014-04-24</discovery>
+      <entry>2014-07-19</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="3718833e-0d27-11e4-89db-000c6e25e3e9">
     <topic>chromium -- multiple vulnerabilities</topic>
     <affects>
