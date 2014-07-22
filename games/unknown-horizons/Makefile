@@ -2,10 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	unknown-horizons
-PORTVERSION=	2013.2
-PORTREVISION=	1
+PORTVERSION=	2013.3
 CATEGORIES=	games
-MASTER_SITES=	SF/unknownhorizons/Unknown%20Horizons/${PORTVERSION}/
+#MASTER_SITES=	SF/unknownhorizons/Unknown%20Horizons/${PORTVERSION}/
+MASTER_SITES=	GH
 
 MAINTAINER=	fiziologus@gmail.com
 COMMENT=	Real time simulation game
@@ -17,9 +17,11 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/fife/__init__.py:${PORTSDIR}/games/py-fife \
 		${PYTHON_SITELIBDIR}/yaml/__init__.py:${PORTSDIR}/devel/py-yaml \
 		${PYTHON_PKGNAMEPREFIX}gdbm>0:${PORTSDIR}/databases/py-gdbm
 
-WRKSRC=		${WRKDIR}/${PORTNAME}
-
 ONLY_FOR_ARCHS=	i386 amd64
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	${PORTNAME}
+GH_COMMIT=	ac7af43
 
 USE_GNOME=	intltool
 USES=		gettext:build tar:xz
@@ -53,5 +55,7 @@ post-install:
 	${MKDIR} ${STAGEDIR}${PYTHON_SITELIBDIR}/horizons/network/libs/freebsd-${ENET_DIR}
 	${INSTALL} ${WRKSRC}/horizons/network/libs/freebsd-${ENET_DIR}/enet.so \
 		${STAGEDIR}${PYTHON_SITELIBDIR}/horizons/network/libs/freebsd-${ENET_DIR}/enet.so
+# (rene) prune unwanted files to pass 'make check-plist'
+	${RM} -r ${STAGEDIR}${PYTHON_SITELIBDIR}/UnknownHorizons-_unknown_-py${PYTHON_VER}.egg-info
 
 .include <bsd.port.post.mk>
