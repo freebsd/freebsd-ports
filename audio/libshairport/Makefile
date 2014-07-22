@@ -3,6 +3,7 @@
 
 PORTNAME=	libshairport
 PORTVERSION=	1.2.0.20310
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://mirrors.xbmc.org/build-deps/darwin-libs/
 DISTNAME=	libshairport-${PORTVERSION}_lib
@@ -10,7 +11,7 @@ DISTNAME=	libshairport-${PORTVERSION}_lib
 MAINTAINER=	manuel.creach@icloud.com
 COMMENT=	Airport Extreme Emulator
 
-USES=		gmake
+USES=		gmake libtool
 USE_AUTOTOOLS=	aclocal autoheader automake autoconf libtoolize
 ACLOCAL_ARGS=	-I.
 AUTOMAKE_ARGS=	--add-missing
