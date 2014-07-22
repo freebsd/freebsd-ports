@@ -3,6 +3,7 @@
 
 PORTNAME=	zookeeper
 PORTVERSION=	3.4.6
+PORTREVISION=	1
 CATEGORIES=	devel java
 MASTER_SITES=	${MASTER_SITE_APACHE}
 MASTER_SITE_SUBDIR=	zookeeper/zookeeper-${PORTVERSION}
@@ -22,8 +23,6 @@ JAVA_RUN=	yes
 
 USE_RC_SUBR=	zookeeper
 
-OPTIONS_DEFINE=	DOCS
-
 NO_BUILD=	yes
 
 SCRIPTS=	zkCleanup.sh \
@@ -34,7 +33,18 @@ PORTDOCS=	*
 
 PLIST_SUB=	PORTNAME=${PORTNAME} \
 		PORTVERSION=${PORTVERSION} \
-		RESETPREFIX=${PREFIX}
+		RESETPREFIX=${PREFIX} \
+		JAVA_HOME=${JAVA_HOME}
+
+ZOOKEEPER_LOGDIR?=	/var/log/${PORTNAME}
+ZOOKEEPER_RUNDIR?=	/var/run/${PORTNAME}
+
+SUB_LIST+=	ZOOKEEPER_LOGDIR=${ZOOKEEPER_LOGDIR} \
+		ZOOKEEPER_RUNDIR=${ZOOKEEPER_RUNDIR}
+post-patch:
+.for f in ${SCRIPTS}
+	${REINPLACE_CMD} -e "s|bash|${LOCALBASE}/bin/bash|" ${WRKSRC}/bin/${f}
+.endfor
 
 do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/${PORTNAME}
@@ -45,11 +55,19 @@ do-install:
 	cd ${WRKSRC} && ${COPYTREE_SHARE} conf ${STAGEDIR}${PREFIX}/${PORTNAME}/
 	cd ${WRKSRC} && ${COPYTREE_SHARE} lib ${STAGEDIR}${PREFIX}/${PORTNAME}/
 	${INSTALL_DATA} ${WRKSRC}/*.jar ${STAGEDIR}${PREFIX}/${PORTNAME}
+	${LN} -s ${PREFIX}/${PORTNAME}/bin/zkCli.sh ${STAGEDIR}${PREFIX}/bin/zkCli.sh
+
+.include <bsd.port.options.mk>
 
 post-install:
+	@${MKDIR} ${STAGEDIR}${ZOOKEEPER_LOGDIR}
+	@${MKDIR} ${STAGEDIR}${ZOOKEEPER_RUNDIR}
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC}/docs && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}
-	@${MKDIR} ${STAGEDIR}/var/log/${PORTNAME}
-	@${MKDIR} ${STAGEDIR}/var/run/${PORTNAME}
+	${RM} -r ${STAGEDIR}${DOCSDIR}/skin/translations
+	${RM} -r ${STAGEDIR}${DOCSDIR}/skin/scripts
+	${RM} -r ${STAGEDIR}${DOCSDIR}/skin/css
+.endif
 
 .include <bsd.port.mk>
