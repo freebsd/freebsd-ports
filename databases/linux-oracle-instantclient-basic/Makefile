@@ -3,7 +3,7 @@
 
 PORTNAME=		instantclient
 PORTVERSION=		${ORACLEVERSION}.${DISTDATE}
-PORTREVISION=		3
+PORTREVISION=		4
 CATEGORIES=		databases
 MASTER_SITES=		#http://www.oracle.com/technology/software/tech/oci/instantclient/
 PKGNAMEPREFIX=		linux-oracle-
@@ -40,7 +40,7 @@ WRKSRC=			${WRKDIR}/instantclient_10_2
 INSTBINSDIR=		${STAGEDIR}${PREFIX}/usr/bin
 INSTLIBSDIR=		${STAGEDIR}${PREFIX}/usr/lib/oracle/${ORACLEVERSION}/client/lib
 
-USE_LDCONFIG=${INSTLIBSDIR}
+USE_LDCONFIG=		${PREFIX}/usr/lib/oracle/${ORACLEVERSION}/client/lib
 
 PLIST_SUB=		ORACLEVERSION=${ORACLEVERSION}
 
