@@ -58,15 +58,15 @@ Notes:
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
   <vuln vid="904d78b8-0f7e-11e4-8b71-5453ed2e2b49">
-    <topic>qt4-imageformats, qt5-imageformats -- DoS vulnerability in the GIF image handler</topic>
+    <topic>qt4-imageformats, qt5-gui -- DoS vulnerability in the GIF image handler</topic>
     <affects>
       <package>
 	<name>qt4-imageformats</name>
 	<range><lt>4.8.6_1</lt></range>
       </package>
       <package>
-	<name>qt5-imageformats</name>
-	<range><lt>5.2.1_1</lt></range>
+	<name>qt5-gui</name>
+	<range><lt>5.2.1_4</lt></range>
       </package>
     </affects>
     <description>
@@ -88,7 +88,7 @@ Notes:
     <dates>
       <discovery>2014-04-24</discovery>
       <entry>2014-07-19</entry>
-      <modified>2014-07-20</modified>
+      <modified>2014-07-21</modified>
     </dates>
   </vuln>
 
