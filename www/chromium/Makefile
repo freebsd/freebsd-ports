@@ -16,6 +16,8 @@ COMMENT=	Mostly BSD-licensed web browser based on WebKit and Gtk+
 LICENSE=	BSD3CLAUSE LGPL21 MPL
 LICENSE_COMB=	multi
 
+FORBIDDEN=	http://www.vuxml.org/freebsd/3718833e-0d27-11e4-89db-000c6e25e3e9.html
+
 CFLAGS+=	-fno-stack-protector
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/gperf:${PORTSDIR}/devel/gperf \
