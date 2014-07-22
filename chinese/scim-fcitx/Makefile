@@ -3,7 +3,7 @@
 
 PORTNAME=	scim
 PORTVERSION=	3.1.1
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	chinese
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-fcitx/${PORTVERSION}
 PKGNAMESUFFIX=	-fcitx
@@ -15,7 +15,7 @@ COMMENT=	SCIM IMEngine module for fcitx
 RUN_DEPENDS=	scim:${PORTSDIR}/textproc/scim
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
-USES=		tar:bzip2 gmake pkgconfig
+USES=		tar:bzip2 gmake libtool:keepla pkgconfig
 GNU_CONFIGURE=	yes
 MAKE_JOBS_UNSAFE=	yes
 
