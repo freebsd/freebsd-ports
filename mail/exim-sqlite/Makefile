@@ -4,6 +4,6 @@
 PKGNAMESUFFIX=	-sqlite
 MASTERDIR=	${.CURDIR}/../exim
 
-WITH_SQLITE=		yes
+OPTIONS_SLAVE=	SQLITE
 
 .include "${MASTERDIR}/Makefile"
