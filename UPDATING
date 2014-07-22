@@ -6,6 +6,14 @@ You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
 20140722:
+  AFFECTS: users of mail/exim
+  AUTHOR: vsevolod@FreeBSD.org
+
+  The behaviuor of expansion of arguments to math comparison functions (<, <=,
+  =, =>, >) was unexpected, expanding the values twice. Please update your
+  configuration if you have relied on such an expansion.
+
+20140722:
   AFFECTS: users of multimedia/mediainfo
   AUTHOR: sunpoet@FreeBSD.org
 
