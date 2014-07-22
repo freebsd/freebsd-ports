@@ -12,6 +12,8 @@ MAINTAINER= ports@FreeBSD.org
 COMMENT=	Python script to managing merges in a Subversion repository
 
 BROKEN=		Tries to fetch during extract phase
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2014-08-22
 
 RUN_DEPENDS=	${LOCALBASE}/bin/svn:${PORTSDIR}/devel/subversion16
 

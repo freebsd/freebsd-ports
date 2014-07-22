@@ -22,6 +22,8 @@ LIB_DEPENDS=	libgtkspell.so:${PORTSDIR}/textproc/gtkspell \
 		libtspi.so:${PORTSDIR}/security/trousers
 
 BROKEN=		Experimental. Know what you do!
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2014-08-22
 PLIST_FILES=	bin/server bin/client
 USE_GNOME=	gtk30
 GO_PKGNAME=	github.com/agl/pond
