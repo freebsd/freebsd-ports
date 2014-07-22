@@ -13,8 +13,9 @@ COMMENT=	Set of fonts by Adobe designed for user interfaces
 
 LICENSE=	OFL11
 
-BUILD_DEPENDS=	mkfontscale:${PORTSDIR}/x11-fonts/mkfontscale \
-		mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir
+BUILD_DEPENDS=	fc-cache:${PORTSDIR}/x11-fonts/fontconfig \
+		mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir \
+		mkfontscale:${PORTSDIR}/x11-fonts/mkfontscale
 
 NO_BUILD=	yes
 USES=		zip
