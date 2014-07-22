@@ -3,6 +3,7 @@
 
 PORTNAME=	libconfig
 PORTVERSION=	1.4.9
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.hyperrealm.com/libconfig/
 
@@ -11,7 +12,7 @@ COMMENT=	Simple library for manipulating structured configuration files
 
 CONFLICTS=	wand-libconfig-[0-9]*
 
-USES=		gmake pathfix
+USES=		gmake libtool pathfix
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS+=	--prefix=${PREFIX} --infodir=${PREFIX}/${INFO_PATH}
