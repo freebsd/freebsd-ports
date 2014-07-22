@@ -33,6 +33,6 @@ SQLITE3_CONFIGURE_ON=	--with-sqlite3=${LOCALBASE}
 SQLITE3_CONFIGURE_OFF=	--with-sqlite3=/tmp
 
 post-build:
-	@${STRIP_CMD} ${WRKSRC}/.libs/libsqlite3*${PORTVERSION}.so
+	@${STRIP_CMD} ${WRKSRC}/.libs/libsqlite*${PORTVERSION}.so
 
 .include <bsd.port.mk>
