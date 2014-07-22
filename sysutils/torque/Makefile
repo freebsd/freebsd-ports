@@ -10,8 +10,9 @@ MASTER_SITES=	http://www.adaptivecomputing.com/index.php?wpfb_dl=1643/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Open source distributed computing resource manager based on PBS
 
-FETCH_AFTER_ARGS=	-o ${DISTDIR}/${DISTFILES}
+FETCH_BEFORE_ARGS=	-o ${DISTDIR}/${DISTFILES}
 USES=		gmake perl5 libtool
+USE_AUTOTOOLS=	libtoolize
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-syslog \
 		--disable-spool
