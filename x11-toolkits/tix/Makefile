@@ -28,9 +28,6 @@ CONFIGURE_ENV=	PREFIX=${PREFIX}
 TIX_LIB=	libTix${PORTVERSION}.so
 TIX_LIB_FILE=	${TIX_LIB}.0
 
-pre-extract:
-	@${MAKE} clean
-
 pre-configure:
 	@(cd ${WRKSRC} && \
 	    CC="${CC}" ac_cv_path_CC="${CC}" CFLAGS="${CFLAGS}" \
