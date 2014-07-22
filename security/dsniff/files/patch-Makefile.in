@@ -1,5 +1,5 @@
---- ./Makefile.in.orig	2000-12-15 20:03:26.000000000 +0000
-+++ ./Makefile.in	2014-02-08 06:51:17.000000000 +0000
+--- ./Makefile.in.orig	2001-03-15 09:34:42.000000000 +0100
++++ ./Makefile.in	2014-07-22 13:21:21.000000000 +0200
 @@ -8,7 +8,6 @@
  srcdir          = @srcdir@
  VPATH           = @srcdir@
@@ -13,7 +13,7 @@
  
  NIDSINC	= @NIDSINC@
 -NIDSLIB	= @NIDSLIB@
-+NIDSLIB	= @NIDSLIB@ `pkg-config --libs gthread-2.0`
++NIDSLIB	= @NIDSLIB@ `pkg-config --libs gthread-2.0` `pkg-config --libs gthread-2.0` `pkg-config --libs gthread-2.0` `pkg-config --libs gthread-2.0`
  
  DBINC	= @DBINC@
  DBLIB	= @DBLIB@
@@ -64,7 +64,7 @@
  
  dsniff: $(HDRS) $(SRCS) $(OBJS)
  	$(CC) $(LDFLAGS) -o $@ $(OBJS) $(LIBS) $(NIDSLIB) $(PCAPLIB) $(LNETLIB) $(DBLIB) $(SSLLIB)
-@@ -136,24 +135,24 @@
+@@ -139,24 +138,24 @@
  	$(CC) $(LDFLAGS) -o $@ webspy.o base64.o buf.o remote.o $(LIBS) $(NIDSLIB) $(PCAPLIB) $(LNETLIB) $(X11LIB)
  
  install:
