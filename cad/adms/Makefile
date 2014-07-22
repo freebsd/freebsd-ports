@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	adms
-PORTVERSION=	2.3.0
-PORTREVISION=	0
+PORTVERSION=	2.3.2
 CATEGORIES=	cad
 MASTER_SITES=	SF/mot-${PORTNAME}/${PORTNAME}-source/${PORTVERSION:R}
 
@@ -13,9 +12,10 @@ COMMENT=	Model generator for SPICE simulators
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		gmake pkgconfig
+USES=		bison gmake libtool pkgconfig
 USE_GNOME=	glib20
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
+INSTALL_TARGET=	install-strip
 
 .include <bsd.port.mk>
