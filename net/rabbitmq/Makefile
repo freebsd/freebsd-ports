@@ -3,6 +3,7 @@
 
 PORTNAME=	rabbitmq
 PORTVERSION=	3.3.4
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://www.rabbitmq.com/releases/rabbitmq-server/v${PORTVERSION}/
 DISTNAME=	${PORTNAME}-server-${PORTVERSION}
@@ -53,7 +54,8 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|/etc/rabbitmq|${PREFIX}/etc/rabbitmq|g ; s|/var/lib|/var/db|g ; s|erl|${LOCALBASE}/bin/erl|g' \
 		${SCRIPTS_DIR}/rabbitmq-server ${SCRIPTS_DIR}/rabbitmqctl \
 		${SCRIPTS_DIR}/rabbitmq-env ${SCRIPTS_DIR}/rabbitmq-plugins \
-		${SCRIPTS_DIR}/rabbitmq-defaults
+		${SCRIPTS_DIR}/rabbitmq-defaults \
+		${WRKSRC}/docs/rabbitmq-env.conf.5.xml
 	@${REINPLACE_CMD} -e 's|VERSION=0.0.0|VERSION=${PORTVERSION}|g' \
 		${WRKSRC}/plugins-src/rabbitmq-erlang-client/Makefile \
 		${WRKSRC}/plugins-src/release.mk
@@ -67,6 +69,8 @@ post-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/rabbitmq
 	@${MKDIR} ${STAGEDIR}/var/db/rabbitmq/mnesia
 	@${MKDIR} ${STAGEDIR}/var/log/rabbitmq
+	${INSTALL_DATA} ${WRKSRC}/docs/rabbitmq.config.example \
+		${STAGEDIR}${PREFIX}/etc/rabbitmq/rabbitmq.config.sample
 .if ${PORT_OPTIONS:MADMIN}
 	${INSTALL} ${WRKSRC}/plugins-src/rabbitmq-management/bin/rabbitmqadmin ${STAGEDIR}${PREFIX}/bin
 .endif

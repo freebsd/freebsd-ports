@@ -1,3 +1,4 @@
+@sample etc/rabbitmq/rabbitmq.config.sample
 %%ADMIN%%bin/rabbitmqadmin
 sbin/rabbitmq-defaults
 sbin/rabbitmq-env
@@ -208,7 +209,6 @@ man/man5/rabbitmq-env.conf.5.gz
 @dirrm lib/erlang/lib/rabbitmq_server-%%VERSION%%/sbin
 @dirrm lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin
 @dirrm lib/erlang/lib/rabbitmq_server-%%VERSION%%
-@exec mkdir -p %D/etc/rabbitmq
 @dirrmtry etc/rabbitmq
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/rabbitmq.config.example
 %%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%
