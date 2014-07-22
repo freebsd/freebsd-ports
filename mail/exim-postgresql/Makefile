@@ -4,6 +4,6 @@
 PKGNAMESUFFIX=	-postgresql
 MASTERDIR=	${.CURDIR}/../exim
 
-WITH_PGSQL=	yes
+OPTIONS_SLAVE=	PGSQL
 
 .include "${MASTERDIR}/Makefile"
