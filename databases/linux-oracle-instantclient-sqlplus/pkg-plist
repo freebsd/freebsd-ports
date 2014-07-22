@@ -1,8 +1,8 @@
 usr/bin/sqlplus
-usr/lib/oracle/%%ORACLEVERSION%%/client/bin/sqlplus
 usr/lib/oracle/%%ORACLEVERSION%%/client/lib/glogin.sql
 usr/lib/oracle/%%ORACLEVERSION%%/client/lib/libsqlplus.so
 usr/lib/oracle/%%ORACLEVERSION%%/client/lib/libsqlplusic.so
-@dirrm usr/lib/oracle/%%ORACLEVERSION%%/client/bin
-@dirrmtry usr/bin
-@exec %D/sbin/ldconfig
+@dirrmtry usr/lib/oracle/%%ORACLEVERSION%%/client/lib
+@dirrmtry usr/lib/oracle/%%ORACLEVERSION%%/client
+@dirrmtry usr/lib/oracle/%%ORACLEVERSION%%
+@dirrmtry usr/lib/oracle
