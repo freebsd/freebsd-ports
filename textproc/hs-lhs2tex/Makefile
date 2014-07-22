@@ -12,7 +12,7 @@ COMMENT=	Preprocessor for typesetting Haskell sources with LaTeX
 LICENSE=	GPLv2
 
 USE_CABAL=	mtl regex-compat
-USE_TEX=	latex
+USE_TEX=	latex dvipsk
 
 STANDALONE=	yes
 EXECUTABLE=	lhs2TeX
