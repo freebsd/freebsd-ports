@@ -3,7 +3,7 @@
 
 PORTNAME=	denemo
 PORTVERSION=	1.1.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	GNU
 
@@ -36,10 +36,14 @@ CPPFLAGS+=	-I${LOCALBASE}/include/portaudio2 \
 LDFLAGS+=	${LOCALBASE}/lib/portaudio2/libportaudio.so \
 		-L${LOCALBASE}/lib
 
-OPTIONS_DEFINE=		DOCS EXAMPLES GTK3 LILYPOND
+OPTIONS_DEFINE=		DOCS EXAMPLES GTK3 LILYPOND NLS
+OPTIONS_SUB=	yes
 
 LILYPOND_DESC=		Install LilyPond (Printing)
 LILYPOND_RUN_DEPENDS=	lilypond:${PORTSDIR}/print/lilypond
+
+NLS_CONFIGURE_ENABLE=	nls
+NLS_USES=		gettext
 
 .include <bsd.port.options.mk>
 
