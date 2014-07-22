@@ -1,28 +1,28 @@
---- hack/hack.unix.c.orig	2009-09-24 10:46:30.000000000 +0200
-+++ hack/hack.unix.c	2009-11-04 18:49:58.645035610 +0100
-@@ -19,7 +19,9 @@
+--- hack/hack.unix.c.orig	2014-07-22 09:54:22.000000000 -0400
++++ hack/hack.unix.c	2014-07-22 10:20:43.000000000 -0400
+@@ -18,7 +18,9 @@
  
- #include	<sys/types.h>		/* for time_t and stat */
- #include	<sys/stat.h>
-+#include	<sys/param.h>
- #include	<time.h>
-+#include	<err.h>
+ #include <sys/types.h>	/* for time_t and stat */
+ #include <sys/stat.h>
++#include <sys/param.h>
+ #include <time.h>
++#include <err.h>
  
- static struct tm	*getlt(void);
- static bool		 veryold(int);
-@@ -95,13 +97,32 @@
+ static struct tm *getlt(void);
+ static bool  veryold(int);
+@@ -94,13 +96,32 @@
  void
  gethdate(const char *name)
  {
 -/* old version - for people short of space */
--char *np;
+-	char *np;
 +	char *p, *np, *path;
 +	char filename[MAXPATHLEN+1];
  
 -	name = "/usr/games/hide/hack";
--	if(stat(name, &hbuf))
+-	if (stat(name, &hbuf))
 -		error("Cannot get status of %s.",
--			(np = rindex(name, '/')) ? np+1 : name);
+-		      (np = strrchr(name, '/')) ? np + 1 : name);
 +	if (strchr(name, '/') != NULL || (p = getenv("PATH")) == NULL)
 +		p = "";
 +	np = path = strdup(p);	/* Make a copy for strsep. */
