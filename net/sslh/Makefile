@@ -3,6 +3,7 @@
 
 PORTNAME=	sslh
 PORTVERSION=	1.16
+PORTREVISION=	1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	net
 MASTER_SITES=	http://www.rutschle.net/tech/
