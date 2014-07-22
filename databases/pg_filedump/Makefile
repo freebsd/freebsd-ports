@@ -19,6 +19,8 @@ OPTIONS_DEFINE=	DOCS
 .include <bsd.port.pre.mk>
 
 BROKEN=		Does not compile
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2014-08-22
 
 PG84VER!=	cd ${PORTSDIR}/databases/postgresql84-client && ${MAKE} -V PORTVERSION
 

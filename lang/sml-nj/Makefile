@@ -20,6 +20,8 @@ MAINTAINER=	joemann@beefree.free.de
 COMMENT=	Popular functional language from Bell Labs
 
 BROKEN=		Fails to build
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2014-08-22
 
 # Other mirror sites that generally carry only released versions of SML
 # 	ftp://ftp.cl.cam.ac.uk/MIRRORED/smlnj/release/
