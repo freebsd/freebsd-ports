@@ -1,46 +1,36 @@
-# Created by: Dereckson <dereckson@gmail.com>
+# Created by: Sébastien Santoro <dereckson@gmail.com>
 # $FreeBSD$
 
 PORTNAME=	astrometry
-PORTVERSION=	0.34
-PORTREVISION=	4
+PORTVERSION=	0.46
 CATEGORIES=	astro
 MASTER_SITES=	http://www.astrometry.net/downloads/
-DISTNAME=	astrometry.net-${PORTVERSION}
+DISTNAME=	${PORTNAME}.net-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Describes an astronomical image
 
+BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/numpy:${PORTSDIR}/math/py-numpy
 LIB_DEPENDS=	libcairo.so:${PORTSDIR}/graphics/cairo \
+		libcfitsio.so:${PORTSDIR}/astro/cfitsio \
 		libjpeg.so:${PORTSDIR}/graphics/jpeg \
 		libpng15.so:${PORTSDIR}/graphics/png \
 		libnetpbm.so:${PORTSDIR}/graphics/netpbm
-BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/numpy:${PORTSDIR}/math/py-numpy
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/numpy:${PORTSDIR}/math/py-numpy
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-NO_STAGE=	yes
-USES=		gmake pkgconfig
+USES=		gmake pkgconfig tar:bzip2
 USE_PYTHON=	yes
 ALL_TARGET=	all extra
-MAKE_ENV=	INSTALL_DIR=${PREFIX}/astrometry
+MAKE_ENV=	INSTALL_DIR=${STAGEDIR}${PREFIX}/${PORTNAME}
 MAKE_JOBS_UNSAFE=	yes
 SUB_FILES=	pkg-message
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == "ia64" || ${ARCH} == "powerpc" || ${ARCH} == "sparc64"
-BROKEN=		Does not compile on ia64, powerpc, or sparc64
-.endif
-
 post-patch:
-	${REINPLACE_CMD} -e 's|png_set_gray_1_2_4_to_8|png_set_expand_gray_1_2_4_to_8|' \
-		${WRKSRC}/util/cairoutils.c
-	${REINPLACE_CMD} -e 's|python setup|${PYTHON_CMD} setup|' \
-		${WRKSRC}/util/Makefile \
-		${WRKSRC}/libkd/Makefile \
-		${WRKSRC}/blind/Makefile
+	@${REINPLACE_CMD} -E 's,python (setup|-c),${PYTHON_CMD} \1,' \
+		${WRKSRC}/blind/Makefile ${WRKSRC}/libkd/Makefile \
+		${WRKSRC}/sdss/Makefile ${WRKSRC}/util/Makefile
+# Outwit detection logic that thinks Clang does not support -shared argument
+	@${REINPLACE_CMD} -e '/CCTEST/s,\\|warning:,,' \
+		${WRKSRC}/util/makefile.common
 
-post-install:
-	@${CAT} ${PKGMESSAGE}
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
