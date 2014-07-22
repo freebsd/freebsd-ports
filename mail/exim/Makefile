@@ -3,7 +3,6 @@
 
 PORTNAME=	exim
 PORTVERSION?=	${EXIM_VERSION}
-PORTREVISION=	7
 CATEGORIES=	mail ipv6
 MASTER_SITES=	${MASTER_SITE_EXIM:S/$/:exim/}
 MASTER_SITE_SUBDIR=	exim4/:exim
@@ -75,7 +74,7 @@ IGNORE=	You cannot enable OCSP stapling with gnutls
 .endif
 
 # DMARC implies SPF
-.if ${PORT_OPTIONS:MOCSP}
+.if ${PORT_OPTIONS:MDMARC}
 .if ! ${PORT_OPTIONS:MSPF} || ! ${PORT_OPTIONS:MDKIM}
 IGNORE=	You cannot enable DMARC without SPF and DKIM support
 .endif
@@ -93,7 +92,7 @@ MASTER_SITES+=	ftp://ftp.renatasystems.org/pub/FreeBSD/ports/distfiles/:so_1024
 DISTFILES+=	spamooborona1024-src-${SO_1024_VERSION}.tar.gz:so_1024
 .endif
 
-EXIM_VERSION=	4.82.1
+EXIM_VERSION=	4.83
 SA_EXIM_VERSION=4.2
 SO_1024_VERSION=3.2
 EXIM_INSTALL_ARG+=	"-no_chown" "-no_symlink"
@@ -199,8 +198,28 @@ SEDLIST+=	-e 's,^\# (EXPAND_LISTMATCH_RHS=),\1,'
 SEDLIST+=	-e 's,^\# (EXPERIMENTAL_DCC=),\1,'
 .endif
 
-.if ${PORT_OPTIONS:MOCSP}
-SEDLIST+=	-e 's,^\# (EXPERIMENTAL_OCSP=),\1,'
+.if ${PORT_OPTIONS:MPROXY}
+SEDLIST+=	-e 's,^\# (EXPERIMENTAL_PROXY=),\1,'
+.endif
+
+.if ${PORT_OPTIONS:MCERTNAMES}
+SEDLIST+=	-e 's,^\# (EXPERIMENTAL_CERTNAMES=),\1,'
+.endif
+
+.if ${PORT_OPTIONS:MDSN}
+SEDLIST+=	-e 's,^\# (EXPERIMENTAL_DSN=),\1,'
+.endif
+
+.if !${PORT_OPTIONS:MPRDR}
+SEDLIST+=	-e 's,^\# (DISABLE_PRDR=),\1,'
+.endif
+
+.if !${PORT_OPTIONS:MOCSP}
+SEDLIST+=	-e 's,^\# (DISABLE_OCSP=),\1,'
+.endif
+
+.if !${PORT_OPTIONS:MDNSSEC}
+SEDLIST+=	-e 's,^\# (DISABLE_DNSSEC=),\1,'
 .endif
 
 .if ${PORT_OPTIONS:MDMARC}
@@ -209,7 +228,6 @@ SEDLIST+= -e 's,XX_DMARC_LIBS_XX,-L${LOCALBASE}/lib -lopendmarc,' \
 .else
 SEDLIST+= -e 's,XX_DMARC_LIBS_XX,,'
 .endif
-
 
 .if ${PORT_OPTIONS:MWISHLIST}
 EXTRA_PATCHES+=	`${FIND} ${PATCHDIR} -name 'wishlist-*.patch'`
