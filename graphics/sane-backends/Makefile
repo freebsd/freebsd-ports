@@ -3,7 +3,7 @@
 
 PORTNAME=	sane-backends
 PORTVERSION=	1.0.24
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	http://alioth.debian.org/frs/download.php/3958/ \
 		http://fossies.org/linux/misc/
@@ -19,7 +19,7 @@ LIB_DEPENDS=	libtiff.so:${PORTSDIR}/graphics/tiff \
 OPTIONS_DEFINE=	AVAHI CUPS DOCS GPHOTO IEEE1284 IPV6 NLS SNMP USB
 OPTIONS_DEFAULT=	USB IPV6
 OPTIONS_SUB=	yes
-IEEE1284_DESC=	Pararell port support via libieee1284
+IEEE1284_DESC=	Parallel port support via libieee1284
 USB_DESC=	USB support
 
 GNU_CONFIGURE=	yes
