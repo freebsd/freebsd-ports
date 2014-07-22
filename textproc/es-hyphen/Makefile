@@ -1,18 +1,21 @@
 # $FreeBSD$
 
 PORTNAME=	hyphen
-PORTVERSION=	2005.11.18
-PORTREVISION=	1
+PORTVERSION=	2013.09.01	# 0.7
+PORTEPOCH=	1
 CATEGORIES=	textproc spanish
 MASTER_SITES=	LOCAL/sunpoet/${PORTNAME}/
 PKGNAMEPREFIX=	es-
-DISTNAME=	hyph_es_ES-${PORTVERSION:C/\.//g}
+DISTNAME=	es_any-0.7
+EXTRACT_SUFX=	.oxt
 DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Spanish hyphenation rules
 
-USES=		zip
+LICENSE=	GPLv3 LGPL3 MPL
+LICENSE_COMB=	dual
+
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 
@@ -27,7 +30,7 @@ PLIST_FILES+=	%%DATADIR%%/hyph_${ALIAS}.dic
 
 do-install:
 	${MKDIR} ${STAGEDIR}${DATADIR}/
-	${INSTALL_DATA} ${WRKSRC}/hyph_es_ES.dic ${STAGEDIR}${DATADIR}/
+	${INSTALL_DATA} ${WRKSRC}/hyph_es_ANY.dic ${STAGEDIR}${DATADIR}/hyph_es_ES.dic
 .for ALIAS in ${ESALIASES}
 	${LN} -s hyph_es_ES.dic ${STAGEDIR}${DATADIR}/hyph_${ALIAS}.dic
 .endfor
