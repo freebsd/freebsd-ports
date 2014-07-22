@@ -5,6 +5,13 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20140722:
+  AFFECTS: users of multimedia/mediainfo
+  AUTHOR: sunpoet@FreeBSD.org
+
+  mediainfo has been split into 3 ports: libzen, libmediainfo and mediainfo.
+  Please uninstall mediainfo before you update this port.
+
 20140722
   AFFECTS: users of games/bsdgames
   AUTHOR: adamw@adamw.org
