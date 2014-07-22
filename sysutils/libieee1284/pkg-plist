@@ -1,9 +1,9 @@
 bin/libieee1284_test
 include/ieee1284.h
 lib/libieee1284.a
-lib/libieee1284.la
 lib/libieee1284.so
-lib/libieee1284.so.5
+lib/libieee1284.so.3
+lib/libieee1284.so.3.2.2
 man/man3/ieee1284_byte_read.3.gz
 man/man3/ieee1284_claim.3.gz
 man/man3/ieee1284_close.3.gz
