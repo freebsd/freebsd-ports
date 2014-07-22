@@ -3,7 +3,7 @@
 
 PORTNAME=	bsdgames
 PORTVERSION=	2.4
-PORTREVISION=	2
+PORTREVISION=	3
 PORTEPOCH=	1
 CATEGORIES=	games
 # Fetched from http://gitweb.dragonflybsd.org/dragonfly.git/tree/v2.4.0:/games
@@ -11,47 +11,14 @@ CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	uqs
 
-MAINTAINER=	uqs@FreeBSD.org
+MAINTAINER=	adamw@FreeBSD.org
 COMMENT=	Traditional BSD games taken from DragonFly BSD
 
 CONFLICTS=	hangman-*
 
+USES=		tar:bzip2
 WRKSRC=		${WRKDIR}/dragonfly
-USE_BZIP2=	yes
 MAKE_ENV+=	NO_WERROR=1
-MAN6=	adventure.6 \
-	arithmetic.6 \
-	atc.6 \
-	backgammon.6 \
-	battlestar.6 \
-	bs.6 \
-	canfield.6 \
-	cfscores.6 \
-	cribbage.6 \
-	fish.6 \
-	hack.6 \
-	hangman.6 \
-	hunt.6 \
-	huntd.6 \
-	larn.6 \
-	mille.6 \
-	phantasia.6 \
-	piano.6 \
-	pig.6 \
-	quiz.6 \
-	rain.6 \
-	robots.6 \
-	rogue.6 \
-	sail.6 \
-	snake.6 \
-	snscore.6 \
-	trek.6 \
-	wargames.6 \
-	worm.6 \
-	worms.6 \
-	wump.6
-
-MANCOMPRESSED=	maybe
 
 # contain /usr/share/games
 SHAREPATH_FILES=atc/atc.6 \
@@ -79,7 +46,6 @@ GAMESPATH_FILES=backgammon/backgammon/backgammon.6 \
 SGID_BINARIES=	atc battlestar canfield/canfield cribbage hack phantasia \
 		robots sail snake/snake
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e "s/NOMAN/NO_MAN/" \
 		${WRKSRC}/backgammon/teachgammon/Makefile \
@@ -100,12 +66,16 @@ post-patch:
 			${WRKSRC}/$${f}/Makefile; \
 	done
 
-# Only useful for DESTDIR
-VARDIR?=	/var
+pre-install:
+.for d in atc larn quiz.db
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/games/$d
+.endfor
+.for d in atc battlestar hackdir/save larn phantasia
+	@${MKDIR} ${STAGEDIR}/var/games/$d
+.endfor
 
-pre-su-install:
-	${MKDIR} ${VARDIR}
-	mtree -deU -f ${FILESDIR}/var.mtree -p ${VARDIR}
-	mtree -deU -f ${FILESDIR}/share.mtree -p ${PREFIX}/share
+post-install:
+	@${TOUCH} ${STAGEDIR}/var/games/atc_score
+	@${FIND} ${STAGEDIR}/var/games -type f -exec ${MV} {} {}.sample \;
 
 .include <bsd.port.mk>

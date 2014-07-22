@@ -2,7 +2,6 @@ bin/adventure
 bin/arithmetic
 bin/atc
 bin/backgammon
-bin/teachgammon
 bin/battlestar
 bin/bs
 bin/canfield
@@ -25,22 +24,52 @@ bin/rogue
 bin/sail
 bin/snake
 bin/snscore
+bin/teachgammon
 bin/trek
 bin/wargames
 bin/worm
 bin/worms
 bin/wump
+man/man6/adventure.6.gz
+man/man6/arithmetic.6.gz
+man/man6/atc.6.gz
+man/man6/backgammon.6.gz
+man/man6/battlestar.6.gz
+man/man6/bs.6.gz
+man/man6/canfield.6.gz
+man/man6/cfscores.6.gz
+man/man6/cribbage.6.gz
+man/man6/fish.6.gz
+man/man6/hack.6.gz
+man/man6/hangman.6.gz
+man/man6/hunt.6.gz
+man/man6/huntd.6.gz
+man/man6/larn.6.gz
+man/man6/mille.6.gz
+man/man6/phantasia.6.gz
+man/man6/piano.6.gz
+man/man6/pig.6.gz
+man/man6/quiz.6.gz
+man/man6/rain.6.gz
+man/man6/robots.6.gz
+man/man6/rogue.6.gz
+man/man6/sail.6.gz
+man/man6/snake.6.gz
+man/man6/snscore.6.gz
+man/man6/trek.6.gz
+man/man6/wargames.6.gz
+man/man6/worm.6.gz
+man/man6/worms.6.gz
+man/man6/wump.6.gz
 share/games/atc/Game_List
 share/games/atc/Killer
 share/games/atc/crossover
 share/games/atc/default
 share/games/atc/easy
 share/games/atc/game_2
-@dirrm share/games/atc
 share/games/larn/larnmaze
 share/games/larn/larnopts
 share/games/larn/larn.help
-@dirrm share/games/larn
 share/games/quiz.db/africa
 share/games/quiz.db/america
 share/games/quiz.db/areas
@@ -74,51 +103,47 @@ share/games/quiz.db/spell
 share/games/quiz.db/state
 share/games/quiz.db/trek
 share/games/quiz.db/ucc
-@dirrm share/games/quiz.db
 share/games/cribbage.instr
 share/games/fish.instr
 share/games/wump.info
+@dirrm share/games/atc
+@dirrm share/games/larn
+@dirrm share/games/quiz.db
 @dirrm share/games
-@cwd /var/games
-@exec chgrp games /var/games
-@dirrmtry atc
-@exec mkdir %D/atc
-@exec chmod 0775 %D/atc
-@dirrmtry battlestar
-@exec mkdir %D/battlestar
-@exec chmod 0775 %D/battlestar
-hackdir/perm
-hackdir/rumors
-hackdir/help
-hackdir/hh
-hackdir/data
-phantasia/monsters
-phantasia/void
-@comment FIXME below are highscores, we should keep them if non-empty
-@comment Also, we must make sure to not clobber them upon install XXX
-hackdir/record
-@dirrmtry hackdir/save
-@dirrmtry hackdir
-@exec mkdir -p %D/hackdir/save
-@exec chmod 0770 %D/hackdir %D/hackdir/save
-larn/lscore12.0
-larn/llog12.0
-@dirrmtry larn
-@exec chmod 0775 %D/larn
-phantasia/characs
-phantasia/gold
-phantasia/lastdead
-phantasia/mess
-phantasia/motd
-phantasia/scoreboard
-@dirrmtry phantasia
-@exec chmod 0775 %D/phantasia
-@comment atc_score
-battlestar.log
-cfscores
-criblog
-robots_roll
-rogue.scores
-saillog
-snakerawscores
-snake.log
+@group games
+@mode 664
+@sample /var/games/hackdir/help.sample
+@sample /var/games/hackdir/hh.sample
+@sample /var/games/hackdir/data.sample
+@sample /var/games/hackdir/perm.sample
+@sample /var/games/hackdir/record.sample
+@sample /var/games/hackdir/rumors.sample
+@sample /var/games/larn/lscore12.0.sample
+@sample /var/games/larn/llog12.0.sample
+@sample /var/games/phantasia/monsters.sample
+@sample /var/games/phantasia/void.sample
+@sample /var/games/phantasia/characs.sample
+@sample /var/games/phantasia/gold.sample
+@sample /var/games/phantasia/lastdead.sample
+@sample /var/games/phantasia/mess.sample
+@sample /var/games/phantasia/motd.sample
+@sample /var/games/phantasia/scoreboard.sample
+@sample /var/games/atc_score.sample
+@sample /var/games/battlestar.log.sample
+@sample /var/games/cfscores.sample
+@sample /var/games/criblog.sample
+@sample /var/games/robots_roll.sample
+@sample /var/games/rogue.scores.sample
+@sample /var/games/saillog.sample
+@sample /var/games/snakerawscores.sample
+@sample /var/games/snake.log.sample
+@mode 0775
+@dirrmtry /var/games/phantasia
+@dirrmtry /var/games/larn
+@mode 0770
+@dirrmtry /var/games/hackdir/save
+@mode 0775
+@dirrmtry /var/games/hackdir
+@dirrmtry /var/games/battlestar
+@dirrmtry /var/games/atc
+@dirrmtry /var/games
