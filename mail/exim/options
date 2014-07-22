@@ -1,11 +1,10 @@
 OPTIONS_DEFINE+=	ALT_CONFIG_PREFIX \
 			CONTENT_SCAN \
 			DAEMON \
-			DCC \
 			DEBUG \
 			DISABLE_D_OPT \
 			DKIM \
-			DMARC \
+			DNSSEC \
 			DOCS \
 			EMBEDDED_PERL \
 			EXIMON \
@@ -13,12 +12,11 @@ OPTIONS_DEFINE+=	ALT_CONFIG_PREFIX \
 			IPV6 \
 			LISTMATCH_RHS \
 			LMTP \
+			NIS \
 			OCSP \
 			OLD_DEMIME \
+			PRDR \
 			READLINE \
-			SPF \
-			SRS \
-			SRS_ALT \
 			SUID \
 			TCP_WRAPPERS \
 			WISHLIST \
@@ -33,6 +31,7 @@ OPTIONS_DEFAULT+=	AUTH_CRAM_MD5 \
 			DISABLE_D_OPT \
 			DKIM \
 			DNSDB \
+			DNSSEC \
 			DSEARCH \
 			EMBEDDED_PERL \
 			ICONV \
@@ -41,10 +40,11 @@ OPTIONS_DEFAULT+=	AUTH_CRAM_MD5 \
 			MAILDIR \
 			MAILSTORE \
 			MBX \
-			NIS \
+			OCSP \
 			OLD_DEMIME \
 			PAM \
 			PASSWD \
+			PRDR \
 			SUID \
 			TLS
 
@@ -52,7 +52,9 @@ OPTIONS_RADIO_TLS=	TLS GNUTLS
 TLS_DESC=	TLS support
 OPTIONS_RADIO_LS=	SA_EXIM SO_1024 KAS
 LS_DESC=	Local scan patch
-OPTIONS_RADIO=	TLS LS
+OPTIONS_RADIO_SRSR=	SRS SRS_ALT
+SRSR_DESC=	Sender Rewriting Scheme
+OPTIONS_RADIO=	TLS LS SRSR
 
 OPTIONS_GROUP_AUTH=	AUTH_CRAM_MD5 AUTH_DOVECOT AUTH_PLAINTEXT AUTH_RADIUS AUTH_SASL AUTH_SPA SASLAUTHD PAM PASSWD
 AUTH_DESC=	SMTP Authorization
@@ -60,7 +62,9 @@ OPTIONS_GROUP_LOOKUP=	CDB BDB DNSDB DSEARCH LSEARCH MYSQL NIS OPENLDAP PGSQL RED
 LOOKUP_DESC=	Lookup support
 OPTIONS_GROUP_STORAGE=	MAILDIR MAILSTORE MBX
 STORAGE_DESC=	Supported storage formats
-OPTIONS_GROUP=	AUTH LOOKUP STORAGE
+OPTIONS_GROUP_EXPERIMENTAL= CERTNAMES DCC DMARC DSN PROXY SPF
+EXPERIMENTAL_DESC=	Experimental options
+OPTIONS_GROUP=	AUTH LOOKUP STORAGE EXPERIMENTAL
 
 ALT_CONFIG_PREFIX_DESC=	Restrict the set of configuration files
 AUTH_CRAM_MD5_DESC=	Enable CRAM-MD5 authentication mechanisms
@@ -69,6 +73,8 @@ AUTH_PLAINTEXT_DESC=	Enable plaintext authentication
 AUTH_RADIUS_DESC=	Enable radius (RFC 2865) authentication
 AUTH_SASL_DESC=		Enable use of Cyrus SASL auth library
 AUTH_SPA_DESC=		Enable Secure Password Authentication
+CERTNAMES_DESC=		Check certiticates ownership
+DSN_DESC=		Enable Delivery Status Notifications
 BDB_DESC=		Enable Berkeley DB lookups
 CDB_DESC=		Enable CDB-style lookups
 CONTENT_SCAN_DESC=	Enable exiscan email content scanner
@@ -78,6 +84,7 @@ DISABLE_D_OPT_DESC=	Disable macros overrides using option -D
 DKIM_DESC=		Enable support for DKIM
 DMARC_DESC=		Enable DMARC support
 DNSDB_DESC=		Enable DNS-style lookups
+DNSSEC_DESC=	Enable DNSSEC validation
 DSEARCH_DESC=		Enable directory-list lookups
 EMBEDDED_PERL_DESC=	Enable embedded Perl interpreter
 EXIMON_DESC=		Build eximon monitor (requires X libraries)
@@ -97,8 +104,10 @@ OCSP_DESC=		Enable OCSP stapling
 PAM_DESC=		Enable PAM authentication mechanisms
 PASSWD_DESC=		Enable /etc/passwd lookups
 PGSQL_DESC=		Enable postgresql lookups
+PRDR_DESC=		Enable Per-Recipient-Data-Response support
+PROXY_DESC=		Enable Experimental Proxy Protocol
 READLINE_DESC=		Enable readline(3) library
-REDIS_DESC=		Enable redis lookups
+REDIS_DESC=		Enable redis lookups (experimental)
 SASLAUTHD_DESC=		Enable use of Cyrus SASL auth daemon
 SA_EXIM_DESC=		Build with Spamassassin local scan
 SO_1024_DESC=		Build with Spamooborona-1024 local scan
