@@ -5,6 +5,15 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20140722
+  AFFECTS: users of games/bsdgames
+  AUTHOR: adamw@adamw.org
+
+  bsdgames now expects savegame data in /usr/local/var/games instead of
+  /var/games. To continue using your saved games,
+
+  cp -rp /var/games/* /usr/local/var/games
+
 20140714:
   AFFECTS: users of databases/db6
   AUTHOR:  mandree@FreeBSD.org
