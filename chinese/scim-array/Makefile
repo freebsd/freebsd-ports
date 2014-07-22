@@ -3,7 +3,7 @@
 
 PORTNAME=	scim-array
 PORTVERSION=	1.0.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	chinese
 MASTER_SITES=	http://of.openfoundry.org/download/scimarray/${PORTVERSION}/
 
@@ -14,7 +14,7 @@ BUILD_DEPENDS=	scim:${PORTSDIR}/textproc/scim
 RUN_DEPENDS=	scim:${PORTSDIR}/textproc/scim
 
 GNU_CONFIGURE=	yes
-USES=		gettext gmake iconv pkgconfig
+USES=		gettext gmake iconv libtool:keepla pkgconfig
 
 CFLAGS+=	-fPIC
 CPPFLAGS+=	-I${LOCALBASE}/include
