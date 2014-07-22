@@ -801,6 +801,7 @@
     SUBDIR += redis
     SUBDIR += redis-devel
     SUBDIR += riak
+    SUBDIR += rocksdb
     SUBDIR += rrdman
     SUBDIR += rrdmerge
     SUBDIR += rrdtool
