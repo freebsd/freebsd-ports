@@ -3254,7 +3254,7 @@ options-message:
 	@${ECHO_MSG} "===>  Found saved configuration for ${_OPTIONS_READ}"
 .endif
 
-${_DISTDIR} ${FILESDIR} ${PKG_DBDIR} ${PREFIX} ${WRKDIR} ${WRKSRC}:
+${FILESDIR} ${PKG_DBDIR} ${PREFIX} ${WRKDIR} ${WRKSRC}:
 	@${MKDIR} ${.TARGET}
 
 # Warn user about deprecated packages.  Advisory only.
@@ -3328,7 +3328,8 @@ DISTINFO_DATA?=	if [ \( -n "${DISABLE_SIZE}" -a -n "${NO_CHECKSUM}" \) -o ! -f "
 # Fetch
 
 .if !target(do-fetch)
-do-fetch: ${_DISTDIR}
+do-fetch:
+	@${MKDIR} ${_DISTDIR}
 	@cd ${_DISTDIR};\
 	${_MASTER_SITES_ENV} ; \
 	for _file in ${DISTFILES}; do \
@@ -3413,7 +3414,7 @@ do-fetch: ${_DISTDIR}
 	    fi; \
 	 done
 .if defined(PATCHFILES)
-	@cd ${_DISTDIR};\
+	cd ${_DISTDIR};\
 	${_PATCH_SITES_ENV} ; \
 	for _file in ${PATCHFILES}; do \
 		file=`${ECHO_CMD} $$_file | ${SED} -E -e 's/:[^-:][^:]*$$//'` ; \
@@ -4465,7 +4466,8 @@ delete-distfiles-list:
 # Prints out a list of files to fetch (useful to do a batch fetch)
 
 .if !target(fetch-list)
-fetch-list: ${_DISTDIR}
+fetch-list:
+	@${MKDIR} ${_DISTDIR}
 	@(cd ${_DISTDIR}; \
 	 ${_MASTER_SITES_ENV} ; \
 	 for _file in ${DISTFILES}; do \
@@ -4538,7 +4540,8 @@ fetch-list: ${_DISTDIR}
 .endif
 
 .if !target(fetch-url-list-int)
-fetch-url-list-int: ${_DISTDIR}
+fetch-url-list-int:
+	@${MKDIR} ${_DISTDIR}
 	@(cd ${_DISTDIR}; \
 	${_MASTER_SITES_ENV}; \
 	for _file in ${DISTFILES}; do \
