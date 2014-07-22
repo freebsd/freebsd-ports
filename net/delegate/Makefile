@@ -2,12 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	delegate
-PORTVERSION=	9.9.9
+PORTVERSION=	9.9.10
 CATEGORIES=	net www
 MASTER_SITES=	ftp://ftp.delegate.org/pub/DeleGate/
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	danilo@FreeBSD.org
 COMMENT=	General purpose TCP/IP proxy system
 
 USES=		gmake
