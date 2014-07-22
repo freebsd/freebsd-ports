@@ -12,6 +12,8 @@ DISTNAME=	openerp-${PORTVERSION}-${NIGHTLY}
 MAINTAINER=	pakhom706@gmail.com
 COMMENT=	Open source application ERP & CRM in Python using Postgresql
 
+BROKEN=		Non-functional as shipped (Operational Error)(PR: 186262)
+
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/PIL/__init__.py:${PORTSDIR}/graphics/py-imaging \
 		${PYTHON_SITELIBDIR}/libxml2.py:${PORTSDIR}/textproc/py-libxml2 \
 		${PYTHON_PKGNAMEPREFIX}pytz>0:${PORTSDIR}/devel/py-pytz \
