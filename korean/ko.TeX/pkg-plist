@@ -120,14 +120,12 @@ share/texmf-local/tex/plain/kotex/hangulcweb.tex
 share/texmf-local/tex/plain/kotex/kotexplain.tex
 @exec %%TEXHASH%%
 @dirrm share/texmf-local/tex/plain/kotex
-@dirrmtry share/texmf-local/tex/latex/kotex/utf/unfonts
 @dirrm share/texmf-local/tex/latex/kotex/utf/tex4ht
 @dirrm share/texmf-local/tex/latex/kotex/utf/oblivoir/memhangul
 @dirrm share/texmf-local/tex/latex/kotex/utf/oblivoir
 @dirrm share/texmf-local/tex/latex/kotex/utf/midkor
 @dirrm share/texmf-local/tex/latex/kotex/utf/contrib
 @dirrmtry share/texmf-local/tex/latex/kotex/utf
-@dirrmtry share/texmf-local/tex/latex/kotex/euc/unfonts
 @dirrm share/texmf-local/tex/latex/kotex/euc/contrib/third-party
 @dirrm share/texmf-local/tex/latex/kotex/euc/contrib
 @dirrmtry share/texmf-local/tex/latex/kotex/euc
