@@ -15,6 +15,7 @@ COMMENT=	OCaml module for functional reactive programming
 LICENSE=	BSD3CLAUSE
 
 OPTIONS_DEFINE=	X11
+OPTIONS_DEFAULT=	X11
 
 USE_OCAML=		yes
 
