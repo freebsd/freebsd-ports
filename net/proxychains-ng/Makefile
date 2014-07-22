@@ -1,8 +1,8 @@
-# Created by: nemysis <nemysis@gmx.ch>
+# Created by: Rusmir Dusko <nemysis@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	proxychains-ng
-PORTVERSION=	4.7
+PORTVERSION=	4.8
 CATEGORIES=	net security
 MASTER_SITES=	SF/${PORTNAME}
 DISTNAME=	${PORTNAME:S/-ng//}-${PORTVERSION}
@@ -12,8 +12,7 @@ COMMENT=	Redirect connection through proxy servers
 
 LICENSE=	GPLv2
 
-USE_BZIP2=	yes
-USES=		gmake
+USES=		gmake tar:bzip2
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX}
 ALL_TARGET=	all
@@ -22,8 +21,7 @@ USE_LDCONFIG=	yes
 
 CONFLICTS=	proxychains-[0-9]*
 
-PORTDOCS=	AUTHORS ChangeLog README TODO
-
+PORTDOCS=	AUTHORS README
 OPTIONS_DEFINE=	DOCS
 
 post-configure:
