@@ -3,7 +3,7 @@
 
 PORTNAME=	texinfo
 PORTVERSION=	4.7
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	japanese print
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -16,7 +16,7 @@ PATCH_DIST_STRIP=	-p1
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Typeset Texinfo files for printing. Uses TeX
 
-RUN_DEPENDS=	ptex:${PORTSDIR}/japanese/ptex
+RUN_DEPENDS=	ptex:${PORTSDIR}/japanese/tex-ptex
 
 USES=		gettext gmake
 GNU_CONFIGURE=	yes
