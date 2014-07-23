@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	zathura
-PORTVERSION=	0.2.7
-PORTREVISION=	1
+PORTVERSION=	0.2.9
 CATEGORIES=	graphics print
 MASTER_SITES=	http://pwmt.org/projects/zathura/download/
 
@@ -54,7 +53,7 @@ post-patch:	.SILENT
 		${WRKSRC}/config.mk
 	${REINPLACE_CMD} -e 's|/etc|${PREFIX}&|g' \
 		${WRKSRC}/config.h \
-		${WRKSRC}/zathurarc.5.rst
+		${WRKSRC}/doc/man/zathurarc.5.rst
 	(cd ${WRKSRC}; ${RM} -f zathura.1 zathurarc.5)
 
 .include <bsd.port.mk>
