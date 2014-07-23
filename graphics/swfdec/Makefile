@@ -26,7 +26,7 @@ LDFLAGS+=	-Wl,-Bsymbolic -L${LOCALBASE}/lib
 PLIST_SUB=	VERSION=${PORTVERSION:R}
 
 OPTIONS_DEFINE=	PULSEAUDIO
-PULSEAUDIO_DESC="Enable the PulseAudio sound module"
+PULSEAUDIO_DESC=Enable the PulseAudio sound module
 
 .include <bsd.port.options.mk>
 
