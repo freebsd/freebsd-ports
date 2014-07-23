@@ -8,7 +8,7 @@ CATEGORIES=	games
 MASTER_SITES=	http://www.bstern.org/wmeyes/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	World\'s most useless WindowMaker dock app
+COMMENT=	World's most useless WindowMaker dock app
 
 USES=		imake
 USE_XORG=	xpm xmu

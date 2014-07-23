@@ -9,7 +9,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
-COMMENT=	Create or parse Google\'s SAML requests
+COMMENT=	Create or parse Google's SAML requests
 
 BUILD_DEPENDS=	p5-TimeDate>0:${PORTSDIR}/devel/p5-TimeDate \
 		p5-URI>0:${PORTSDIR}/net/p5-URI \

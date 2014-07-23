@@ -8,7 +8,7 @@ MASTER_SITES=	http://pear.netpirates.net/get/
 PKGNAMEPREFIX=	pear-TheSeer_
 
 MAINTAINER=	gasol.wu@gmail.com
-COMMENT=	Extension to PHP\'s standard DOM
+COMMENT=	Extension to PHP's standard DOM
 
 LICENSE=	BSD3CLAUSE
 

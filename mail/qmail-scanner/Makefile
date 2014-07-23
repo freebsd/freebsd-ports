@@ -55,7 +55,7 @@ CONTRIB=	mrtg-qmail-scanner.cfg check_AV_daemons logrotate.qmail-scanner \
 OPTIONS_DEFINE=	TNEF FIX_MIME REDUNDANT NORMALIZE CWRAPPER STPATCH
 OPTIONS_DEFAULT=TNEF REDUNDANT CWRAPPER STPATCH
 
-TNEF_DESC=	Mark Simpson\'s Patch (Recommended)
+TNEF_DESC=	Mark Simpson's Patch (Recommended)
 FIX_MIME_DESC=	Fix broken MIME messages
 REDUNDANT_DESC=	Scan attachments and body mails
 NORMALIZE_DESC=	Decode encoded headers per MIME Base64
