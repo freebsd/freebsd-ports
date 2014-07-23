@@ -3,7 +3,7 @@
 
 PORTNAME=	scim-bridge
 PORTVERSION=	0.4.16
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc
 MASTER_SITES=	SF/scim/${PORTNAME}/${PORTVERSION}
 PKGNAMESUFFIX=	-qt4
@@ -20,7 +20,7 @@ RUN_DEPENDS=	scim-bridge:${PORTSDIR}/textproc/scim-bridge
 
 USE_QT4=	corelib gui moc_build
 QT_NONSTANDARD=	yes
-USES=		gettext gmake pkgconfig
+USES=		gettext gmake libtool pkgconfig
 GNU_CONFIGURE=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include -D__STDC_ISO_10646__
