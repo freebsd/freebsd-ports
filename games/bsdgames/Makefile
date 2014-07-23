@@ -3,20 +3,19 @@
 
 PORTNAME=	bsdgames
 PORTVERSION=	3.8.1
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	games
 # Fetched from http://gitweb.dragonflybsd.org/dragonfly.git/tree/v${PORTVERSION}:/games
-# Content is stable, but file timestamps differ. Bad gitweb, no cookie!
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	adamw
 
 MAINTAINER=	adamw@FreeBSD.org
 COMMENT=	Traditional BSD games taken from DragonFly BSD
 
-CONFLICTS=	hangman-*
+CONFLICTS=	hangman-[0-9]*
 
 USES=		tar:xz
-#WRKSRC=		${WRKDIR}/dragonfly
 MAKE_ENV+=	NO_WERROR=1
 
 # contain /usr/share/games
@@ -64,19 +63,17 @@ post-patch:
 		${REINPLACE_CMD} -e 's/HIDEGAME/SGIDGAME/' \
 			${WRKSRC}/$${f}/Makefile; \
 	done
-	@${FIND} ${WRKSRC} -type f | ${XARGS} \
-		${REINPLACE_CMD} -e 's|/var/games/|${PREFIX}&|g'
 
 pre-install:
 .for d in atc larn quiz.db
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/games/$d
 .endfor
 .for d in atc battlestar hackdir/save larn phantasia
-	@${MKDIR} ${STAGEDIR}${PREFIX}/var/games/$d
+	@${MKDIR} ${STAGEDIR}/var/games/$d
 .endfor
 
 post-install:
-	@${TOUCH} ${STAGEDIR}${PREFIX}/var/games/atc_score
-	@${FIND} ${STAGEDIR}${PREFIX}/var/games -type f -exec ${MV} {} {}.sample \;
+	@${TOUCH} ${STAGEDIR}/var/games/atc_score
+	@${FIND} ${STAGEDIR}/var/games -type f -exec ${MV} {} {}.sample \;
 
 .include <bsd.port.mk>
