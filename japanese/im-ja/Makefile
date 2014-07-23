@@ -3,7 +3,7 @@
 
 PORTNAME=	im-ja
 PORTVERSION=	1.5
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	japanese x11-toolkits
 MASTER_SITES=	http://im-ja.sourceforge.net/
 
@@ -11,12 +11,12 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Japanese input module for GTK2
 
 OPTIONS_DEFINE=	ANTHY CANNA WNN
-OPTIONS_DEFAULT=	ANTHY CANNA WNN
-ANTHY_DESC=		Use Anthy
-CANNA_DESC=		Use Canna
-WNN_DESC=		Use FreeWnn
+OPTIONS_DEFAULT=ANTHY CANNA WNN
+ANTHY_DESC=	Use Anthy
+CANNA_DESC=	Use Canna
+WNN_DESC=	Use FreeWnn
 
-USES=		gmake pathfix perl5 pkgconfig
+USES=		gmake libtool pathfix perl5 pkgconfig
 USE_GNOME=	gconf2 gnomeprefix intlhack libglade2
 USE_PERL5=	build
 GNU_CONFIGURE=	yes
