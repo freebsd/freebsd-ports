@@ -8,7 +8,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
-COMMENT=	Guess Chinese text\'s variant and encoding
+COMMENT=	Guess Chinese text's variant and encoding
 
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual

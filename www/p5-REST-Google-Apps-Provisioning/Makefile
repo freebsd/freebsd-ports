@@ -9,7 +9,7 @@ MASTER_SITE_SUBDIR=	CPAN:SSCHNEID
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
-COMMENT=	Perl library to Google\'s RESTful Apps API
+COMMENT=	Perl library to Google's RESTful Apps API
 
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual

@@ -10,7 +10,7 @@ DISTNAME=	${PORTNAME}${PORTVERSION}install
 EXTRACT_SUFX=	.jar
 
 MAINTAINER=	danilo@FreeBSD.org
-COMMENT=	Powerful programmer\'s text editor written in Java
+COMMENT=	Powerful programmer's text editor written in Java
 
 LICENSE=	GPLv2
 

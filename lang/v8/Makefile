@@ -7,7 +7,7 @@ CATEGORIES=	lang
 MASTER_SITES=	LOCAL/vanilla
 
 MAINTAINER=	vanilla@FreeBSD.org
-COMMENT=	Google\'s open source JavaScript engine
+COMMENT=	Google's open source JavaScript engine
 
 LICENSE=	BSD3CLAUSE
 

@@ -10,7 +10,7 @@ MASTER_SITES=	SF/${PORTNAME}/Critical%20Mass/${PORTVERSION}
 DISTNAME=	CriticalMass-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	SDL/OpenGL space shoot\'em up game
+COMMENT=	SDL/OpenGL space shoot'em up game
 
 LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png
 

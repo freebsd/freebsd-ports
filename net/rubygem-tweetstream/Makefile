@@ -7,7 +7,7 @@ CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
-COMMENT=	TweetStream provides simple Ruby access to Twitter\'s Streaming API
+COMMENT=	TweetStream provides simple Ruby access to Twitter's Streaming API
 
 LICENSE=	MIT
 
