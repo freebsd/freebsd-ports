@@ -45,10 +45,8 @@
     SUBDIR += dk-acroread8
     SUBDIR += dot2tex
     SUBDIR += dvi2tty
-    SUBDIR += dvipdfmx
     SUBDIR += dvips
     SUBDIR += dvips2ascii
-    SUBDIR += dvipsk-tetex
     SUBDIR += dviselect
     SUBDIR += dvisvg
     SUBDIR += easylatex
@@ -118,7 +116,6 @@
     SUBDIR += indexinfo
     SUBDIR += it-acroread8
     SUBDIR += jabref
-    SUBDIR += jadetex
     SUBDIR += kde4-print-manager
     SUBDIR += kde_poster
     SUBDIR += kover
