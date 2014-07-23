@@ -25,6 +25,7 @@ RUN_DEPENDS=	${LOCALBASE}/bin/bash:${PORTSDIR}/shells/bash \
 		${LOCALBASE}/bin/gpg2:${PORTSDIR}/security/gnupg
 
 WRKSRC=		${WRKDIR}/mmueller2012-pipelight-e2362eb15df6
+USE_GCC=	4.7+
 USE_LDCONFIG=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
