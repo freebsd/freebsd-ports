@@ -1,30 +1,33 @@
 # $FreeBSD$
 
 PORTNAME=	epgsql
-PORTVERSION=	1.4
+PORTVERSION=	2.0.0
 CATEGORIES=	databases
 
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Erlang PostgreSQL Database Client
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 
-BUILD_DEPENDS=	erlc:${PORTSDIR}/lang/erlang
+BUILD_DEPENDS=	erlc:${PORTSDIR}/lang/erlang \
+		rebar:${PORTSDIR}/devel/rebar
 RUN_DEPENDS=	erl:${PORTSDIR}/lang/erlang
 
 PLIST_SUB=	VERSION="${PORTVERSION}"
 
 USES=		gmake
 USE_GITHUB=	yes
-GH_ACCOUNT=	wg
+GH_ACCOUNT=	epgsql
 GH_PROJECT=	epgsql
-GH_COMMIT=	6dd2d26
+GH_COMMIT=	c7dfb06
 GH_TAGNAME=	${PORTVERSION}
-ALL_TARGET=	app
 
 PORTDOCS=	*
 
 .include <bsd.port.options.mk>
+
+post-patch:
+	@${REINPLACE_CMD} -e "s/%%PORTVERSION%%/${PORTVERSION}/" ${WRKSRC}/src/epgsql.app.src
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
