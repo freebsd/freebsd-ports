@@ -2,11 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	exmpp
-PORTVERSION=	0.9.7
-PORTREVISION=	2
+PORTVERSION=	0.9.9
 CATEGORIES=	textproc net-im
-MASTER_SITES=	http://download.process-one.net/${PORTNAME}/
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Fast and scalable library for XMPP written in Erlang/OTP
@@ -18,6 +15,12 @@ BUILD_DEPENDS=	erlc:${PORTSDIR}/lang/erlang \
 RUN_DEPENDS=	erl:${PORTSDIR}/lang/erlang
 LIB_DEPENDS=	libexpat.so:${PORTSDIR}/textproc/expat2 \
 		libxml2.so:${PORTSDIR}/textproc/libxml2
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	processone
+GH_PROJECT=	exmpp
+GH_COMMIT=	829cdc2
+GH_TAGNAME=	v${PORTVERSION}
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--enable-static=yes \
