@@ -3,6 +3,7 @@
 
 PORTNAME=	vlc
 DISTVERSION=	2.1.5
+PORTREVISION=	1
 PORTEPOCH=	4
 CATEGORIES=	multimedia audio ipv6 net www
 MASTER_SITES=	http://download.videolan.org/pub/videolan/${PORTNAME}/${DISTVERSION:S/a$//}/ \
@@ -47,7 +48,7 @@ CONFIGURE_ARGS=	--enable-avcodec --enable-avformat --enable-dvbpsi \
 .if defined(WITH_DEBUG) && !defined(WITHOUT_DEBUG)
 CONFIGURE_ARGS+=--enable-debug
 .endif
-CPPFLAGS+=	-I${LOCALBASE}/include/gnutls3 -I${LOCALBASE}/include
+CPPFLAGS+=	-I${LOCALBASE}/include
 CFLAGS_i386=	-fomit-frame-pointer
 
 OPTIONS_DEFINE=	A52 AALIB ASS AVAHI CACA DBUS DCA DIRAC DOCS DVDREAD \
@@ -138,7 +139,7 @@ GME_CONFIGURE_ENV=	LIBS_gme="-L${LOCALBASE}/lib -lgme"
 GNOMEVFS2_USE=			GNOME=gnomevfs2
 GNOMEVFS2_CONFIGURE_ENABLE=	gnomevfs
 
-GNUTLS_LIB_DEPENDS=	libgnutls.so.28:${PORTSDIR}/security/gnutls3
+GNUTLS_LIB_DEPENDS=	libgnutls.so:${PORTSDIR}/security/gnutls
 GNUTLS_CONFIGURE_ENABLE=gnutls
 
 GOOM_LIB_DEPENDS=	libgoom2.so:${PORTSDIR}/graphics/goom
@@ -327,7 +328,6 @@ WITH_DVD_DEVICE?=/dev/acd0
 post-patch:
 	@${REINPLACE_CMD} \
 		-e '\|LIBS|s|-lrt||' \
-		-e 's|gnutls |gnutls3 |g' \
 		-e 's|LIBS="-llirc_client|LIBS="$$LIBS_lirc|' \
 		${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|/dev/cdrom|${WITH_CDROM_DEVICE}|g' \

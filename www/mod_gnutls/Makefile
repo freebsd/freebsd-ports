@@ -3,7 +3,7 @@
 
 PORTNAME=	mod_gnutls
 PORTVERSION=	0.5.10
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www security
 MASTER_SITES=	http://modgnutls.sourceforge.net/downloads/ \
 		http://www.outoforder.cc/downloads/mod_gnutls/

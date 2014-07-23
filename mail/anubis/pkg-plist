@@ -9,7 +9,10 @@ man/man1/anubis.1.gz
 %%GUILE%%share/anubis/rot-13.scm
 %%NLS%%share/locale/da/LC_MESSAGES/anubis.mo
 %%NLS%%share/locale/de/LC_MESSAGES/anubis.mo
+%%NLS%%share/locale/es/LC_MESSAGES/anubis.mo
+%%NLS%%share/locale/fi/LC_MESSAGES/anubis.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/anubis.mo
+%%NLS%%share/locale/hr/LC_MESSAGES/anubis.mo
 %%NLS%%share/locale/id/LC_MESSAGES/anubis.mo
 %%NLS%%share/locale/it/LC_MESSAGES/anubis.mo
 %%NLS%%share/locale/ms/LC_MESSAGES/anubis.mo
@@ -18,8 +21,10 @@ man/man1/anubis.1.gz
 %%NLS%%share/locale/pl/LC_MESSAGES/anubis.mo
 %%NLS%%share/locale/ro/LC_MESSAGES/anubis.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/anubis.mo
+%%NLS%%share/locale/sr/LC_MESSAGES/anubis.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/anubis.mo
 %%NLS%%share/locale/tr/LC_MESSAGES/anubis.mo
 %%NLS%%share/locale/uk/LC_MESSAGES/anubis.mo
 %%NLS%%share/locale/vi/LC_MESSAGES/anubis.mo
+%%NLS%%share/locale/zh_CN/LC_MESSAGES/anubis.mo
 @dirrm share/anubis

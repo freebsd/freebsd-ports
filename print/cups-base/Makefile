@@ -51,7 +51,7 @@ USERS=		cups
 
 # UNIQUENAME must be set before bsd.port.pre.mk so OPTIONSFILE can be included
 .if defined(CUPS_CLIENT)
-PORTREVISION=	0
+PORTREVISION=	1
 LICENSE=	LGPL21
 CUPS_SUFFIX=	-client
 OPTIONS_SINGLE=		SSL

@@ -59,7 +59,23 @@
  	return false;
  	/* XXX we have to delete the structure on shutdown using asn1_delete_structure(&mio_tls_asn1_tree) */
      }
-@@ -1684,14 +1666,14 @@
+@@ -1498,7 +1480,6 @@
+     const gnutls_datum_t *cert_list = NULL;
+     unsigned int cert_list_size = 0;
+ 
+-#ifdef HAVE_GNUTLS_EXTRA
+     // get the certificate (it's only a single one for OpenPGP)
+     cert_list = gnutls_certificate_get_peers(static_cast<gnutls_session_t>(m->ssl), &cert_list_size);
+     if (cert_list == NULL || cert_list_size <= 0) {
+@@ -1566,7 +1547,6 @@
+     // free memory
+     gnutls_openpgp_key_deinit(pgpkey);
+     pool_free(jidpool);
+-#endif
+     return 0;
+ }
+ 
+@@ -1684,14 +1664,14 @@
  		    /* init subjectAltName_element */
  		    ret = asn1_create_element(mio_tls_asn1_tree, "PKIX1.SubjectAltName", &subjectAltName_element);
  		    if (ret != ASN1_SUCCESS) {
@@ -76,7 +92,7 @@
  			asn1_delete_structure(&subjectAltName_element);
  			break;
  		    }
-@@ -1712,7 +1694,7 @@
+@@ -1712,7 +1692,7 @@
  			    break;
  			}
  			if (ret != ASN1_SUCCESS) {
@@ -85,7 +101,7 @@
  			    break;
  			}
  
-@@ -1732,7 +1714,7 @@
+@@ -1732,7 +1712,7 @@
  
  				ret = asn1_read_value(subjectAltName_element, access_string, dNSName, &dNSName_len);
  				if (ret != ASN1_SUCCESS) {
@@ -94,7 +110,7 @@
  				    break;
  				}
  
-@@ -1772,7 +1754,7 @@
+@@ -1772,7 +1752,7 @@
  			    /* get the OID of the otherName */
  			    ret = asn1_read_value(subjectAltName_element, access_string_type, otherNameType, &otherNameType_len);
  			    if (ret != ASN1_SUCCESS) {
@@ -103,7 +119,7 @@
  				break;
  			    }
  
-@@ -1785,7 +1767,7 @@
+@@ -1785,7 +1765,7 @@
  			    /* get the value of the otherName */
  			    ret = asn1_read_value(subjectAltName_element, access_string_value, otherNameValue, &otherNameValue_len);
  			    if (ret != ASN1_SUCCESS) {
@@ -112,7 +128,7 @@
  				break;
  			    }
  
-@@ -1799,21 +1781,21 @@
+@@ -1799,21 +1779,21 @@
  
  				ret = asn1_create_element(mio_tls_asn1_tree, "PKIX1.DirectoryString", &directoryString_element);
  				if (ret != ASN1_SUCCESS) {

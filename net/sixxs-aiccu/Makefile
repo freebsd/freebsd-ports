@@ -3,7 +3,7 @@
 
 PORTNAME=	aiccu
 PORTVERSION=	20070115
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://www.sixxs.net/archive/sixxs/aiccu/unix/
 PKGNAMEPREFIX=	sixxs-
