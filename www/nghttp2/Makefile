@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	nghttp2
-PORTVERSION=	0.4.1
+PORTVERSION=	0.5.0
 CATEGORIES=	www net
 MASTER_SITES=	https://github.com/tatsuhiro-t/${PORTNAME}/releases/download/v${PORTVERSION}/ \
 		LOCAL/sunpoet
@@ -52,6 +52,6 @@ post-patch:
 	@${REINPLACE_CMD} -e '/JEMALLOC_LIBS/ s|-ljemalloc||' ${WRKSRC}/configure
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libnghttp2.so.3.0.1
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libnghttp2.so.4.0.0
 
 .include <bsd.port.post.mk>
