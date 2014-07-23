@@ -1,8 +1,8 @@
 libdata/pkgconfig/igraph.pc
 lib/libigraph.a
-lib/libigraph.la
 lib/libigraph.so
 lib/libigraph.so.0
+lib/libigraph.so.0.0.0
 include/igraph/DensityGrid.h
 include/igraph/DensityGrid_3d.h
 include/igraph/NetDataTypes.h
