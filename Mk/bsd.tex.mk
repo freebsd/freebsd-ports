@@ -10,22 +10,18 @@ TEX_MAINTAINER=	hrs@FreeBSD.org
 # USE_TEX=	yes
 # imports variables only, and
 # USE_TEX=	full
-# means full teTeX or TeXLive dependency.
+# means TeXLive dependency.
 #
-# If a port needs to depend on a specific TeX distribution (teTeX or
-# TeXLive), specify either of "texlive" or "tetex" in USE_TEX in
-# addition to other keywords.
-#
-# The other valid keywords (* means TeXLive specific):
+# The other valid keywords
 #
 #  base:	base part
 #  texmf:	texmf tree (except for documentation)
 #  docs:	documentation
 #
-#  web2c:	WEB2C toolchain and TeX engines[*]
-#  kpathsea:	kpathsea library[*]
-#  ptexenc:	character code conversion library for pTeX[*]
-#  infra:	tlmgr dependency (Perl modules)[*]
+#  web2c:	WEB2C toolchain and TeX engines
+#  kpathsea:	kpathsea library
+#  ptexenc:	character code conversion library for pTeX
+#  infra:	tlmgr dependency (Perl modules)
 #
 #  dvipsk:	dvipsk
 #  dvipdfmx:	DVIPDFMx
@@ -37,11 +33,11 @@ TEX_MAINTAINER=	hrs@FreeBSD.org
 #  tex:		TeX
 #  latex:	LaTeX
 #  pdftex:	PDFTeX
-#  aleph:	Aleph[*]
+#  aleph:	Aleph
 #  jadetex:	JadeTeX
-#  luatex:	LuaTeX[*]
+#  luatex:	LuaTeX
 #  ptex:	pTeX
-#  xetex:	XeTeX[*]
+#  xetex:	XeTeX
 #  xmltex:	XMLTeX
 #
 #  texhash:	directory search hash regeneration
@@ -53,8 +49,7 @@ TEX_MAINTAINER=	hrs@FreeBSD.org
 # USE_TEX=	formats texlive
 # USE_TEX=	latex:build dvipsk:build
 
-# default TeX distribution.  "tetex" or "texlive"
-#TEX_DEFAULT?=	tetex
+# default TeX distribution.  "texlive"
 TEX_DEFAULT?=	texlive
 
 TEXMFDIR?=	share/texmf
@@ -79,9 +74,7 @@ CONFLICTS_TETEX= \
 	latex2e-[0-9]*
 
 # override the user configuration
-.if !empty(USE_TEX:tu:MTETEX)
-TEX_DEFAULT=	tetex
-.elif !empty(USE_TEX:tu:MTEXLIVE)
+.if !empty(USE_TEX:tu:MTEXLIVE)
 TEX_DEFAULT=	texlive
 .endif
 
@@ -95,44 +88,32 @@ CONFLICTS_INSTALL+=	${CONFLICTS_TETEX}
 
 _TEX_LABEL:=	${TEX_DEFAULT:tu:S/TEXLIVE/TEX/}
 
-_USE_TETEX_TEXMF=	${LOCALBASE}/${TEXMFDISTDIR}/LICENSE.texmf:${PORTSDIR}/print/teTeX-texmf
 _USE_TEX_TEXMF=		${LOCALBASE}/${TEXMFDISTDIR}/README:${PORTSDIR}/print/texlive-texmf
 
-_USE_TETEX_BASE=	mktexlsr:${PORTSDIR}/print/teTeX-base
 _USE_TEX_BASE=		tlmgr:${PORTSDIR}/print/texlive-base
 
-_USE_TETEX_GBKLATEX=	gbklatex:${PORTSDIR}/print/latex-cjk
 _USE_TEX_GBKLATEX=	gbklatex:${PORTSDIR}/print/texlive-base
 
 _USE_TEX_DOCS=		${LOCALBASE}/${TEXMFDIR}/doc/texlive/texlive-en/README:${PORTSDIR}/print/texlive-docs
 
 _USE_TEX_INFRA=		texlive-infra>=0:${PORTSDIR}/print/texlive-infra
 
-_USE_TETEX_DVIPSK=	dvips:${PORTSDIR}/print/dvipsk-tetex
 _USE_TEX_DVIPSK=	dvips:${PORTSDIR}/print/tex-dvipsk
 
-_USE_TETEX_XDVIK=	xdvi:${PORTSDIR}/print/xdvik
 _USE_TEX_XDVIK=		xdvi:${PORTSDIR}/print/tex-xdvik
 
-_USE_TETEX_DVIPDFMX=	dvipdfmx:${PORTSDIR}/print/dvipdfmx
 _USE_TEX_DVIPDFMX=	dvipdfmx:${PORTSDIR}/print/tex-dvipdfmx
 
-_USE_TETEX_TEX=		${_USE_TETEX_BASE} ${_USE_TETEX_TEXMF}
 _USE_TEX_TEX=		${_USE_TEX_FORMATS}
 
-_USE_TETEX_LATEX=	${_USE_TETEX_BASE} ${_USE_TETEX_TEXMF}
 _USE_TEX_LATEX=		${_USE_TEX_FORMATS}
 
-_USE_TETEX_PDFTEX=	${_USE_TETEX_BASE} ${_USE_TETEX_TEXMF}
 _USE_TEX_PDFTEX=	${_USE_TEX_FORMATS}
 
-_USE_TETEX_JADETEX=	jadetex:${PORTSDIR}/print/jadetex
 _USE_TEX_JADETEX=	jadetex:${PORTSDIR}/print/tex-jadetex
 
-_USE_TETEX_XMLTEX=	xmltex:${PORTSDIR}/print/xmltex
 _USE_TEX_XMLTEX=	xmltex:${PORTSDIR}/print/tex-xmltex
 
-_USE_TETEX_PTEX=	ptex:${PORTSDIR}/japanese/ptex
 _USE_TEX_PTEX=		ptex:${PORTSDIR}/japanese/tex-ptex
 
 _USE_TEX_WEB2C=		weave:${PORTSDIR}/devel/tex-web2c
@@ -143,8 +124,6 @@ _USE_TEX_ALEPH=		aleph:${PORTSDIR}/print/tex-aleph
 _USE_TEX_LUATEX=	luatex:${PORTSDIR}/print/tex-luatex
 _USE_TEX_XETEX=		xetex:${PORTSDIR}/print/tex-xetex
 
-_USE_TETEX_FULL=texmf base \
-		dvipsk dvipdfmx xdvik xmltex jadetex
 _USE_TEX_FULL=	texmf base web2c infra \
 		formats aleph xetex jadetex luatex xmltex ptex \
 		dvipsk dvipdfmx xdvik \
