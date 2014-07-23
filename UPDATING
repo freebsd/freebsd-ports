@@ -16,7 +16,7 @@ you update your ports collection, before attempting any port upgrades.
     pw userdel scanlogd
     pw groupdel scanlogd
 
-20140727:
+20140723:
   AFFECTS: users of TeX
   AUTHOR: bapt@FreeBSD.org
 
