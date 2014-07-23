@@ -9,7 +9,9 @@ MASTER_SITES=	ftp://ftp.netbsd.org/pub/NetBSD/misc/tnftp/
 MAINTAINER=	cejkar@fit.vutbr.cz
 COMMENT=	Enhanced ftp server from NetBSD
 
-USE_AUTOTOOLS=	aclocal automake libtool
+USES=		libtool
+GNU_CONFIGURE=	yes
+USE_AUTOTOOLS=	aclocal automake
 AUTOMAKE_ARGS=	--add-missing
 ACLOCAL_ARGS=	-I ${LOCALBASE}/share/aclocal
 
