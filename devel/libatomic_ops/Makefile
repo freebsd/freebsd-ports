@@ -3,6 +3,7 @@
 
 PORTNAME=	libatomic_ops
 DISTVERSION=	7.4.0
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.hboehm.info/gc/gc_source/
 
@@ -14,7 +15,7 @@ LICENSE_COMB=	multi
 
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-USES=	pathfix
+USES=		libtool pathfix
 
 OPTIONS_DEFINE=	DOCS
 

@@ -63,9 +63,7 @@ include/atomic_ops/sysdeps/loadstore/short_acquire_release_volatile.h
 include/atomic_ops/sysdeps/loadstore/short_atomic_load.h
 include/atomic_ops/sysdeps/loadstore/short_atomic_store.h
 lib/libatomic_ops.a
-lib/libatomic_ops.la
 lib/libatomic_ops_gpl.a
-lib/libatomic_ops_gpl.la
 libdata/pkgconfig/atomic_ops.pc
 %%PORTDOCS%%%%DOCSDIR%%/LICENSING.txt
 %%PORTDOCS%%%%DOCSDIR%%/README.txt
