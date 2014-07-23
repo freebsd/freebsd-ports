@@ -6311,3 +6311,4 @@ japanese/dvipsk|print/tex-dvipsk|2014-07-23|Use TeXLive version
 print/dvipsk-tetex|print/tex-dvipsk|2014-07-23|Use TeXLive version
 print/dvipdfmx|print/print/tex-dvipdfmx|2014-07-23|Use TeXLive version
 print/jadetex|print/tex-jadetex|2014-07-23|Use TeXLive version
+japanese/teTeX|print/texlive-full|2014-07-23|Use TeXLive

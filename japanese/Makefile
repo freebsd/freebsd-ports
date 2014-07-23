@@ -281,7 +281,6 @@
     SUBDIR += t2ps
     SUBDIR += tcl80
     SUBDIR += tdiary
-    SUBDIR += teTeX
     SUBDIR += tegaki-recognize
     SUBDIR += tegaki-zinnia-japanese
     SUBDIR += tex-ptex
