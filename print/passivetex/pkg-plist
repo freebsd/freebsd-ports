@@ -1,8 +1,0 @@
-%%CLASSDIR%%/dummyels.sty
-%%CLASSDIR%%/fotex.xmt
-%%CLASSDIR%%/fotex.sty
-%%CLASSDIR%%/mlnames.sty
-%%CLASSDIR%%/ucharacters.sty
-%%CLASSDIR%%/unicode.sty
-%%CLASSDIR%%/nomulticol.sty
-@dirrm %%CLASSDIR%%
