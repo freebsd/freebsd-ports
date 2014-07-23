@@ -14,12 +14,15 @@ share/pixmaps/scummvm.xpm
 %%DATADIR%%/hugo.dat
 %%DATADIR%%/kyra.dat
 %%DATADIR%%/lure.dat
+%%DATADIR%%/mort.dat
+%%DATADIR%%/neverhood.dat
 %%DATADIR%%/pred.dic
 %%DATADIR%%/queen.tbl
 %%DATADIR%%/scummclassic.zip
 %%DATADIR%%/scummmodern.zip
 %%DATADIR%%/sky.cpt
 %%DATADIR%%/teenagent.dat
+%%DATADIR%%/tony.dat
 %%DATADIR%%/toon.dat
 %%DATADIR%%/translations.dat
 @dirrmtry %%DATADIR%%
