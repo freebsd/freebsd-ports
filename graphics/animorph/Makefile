@@ -3,6 +3,7 @@
 
 PORTNAME=	animorph
 PORTVERSION=	0.3
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	SF/makehuman/MakeHuman%20Source/MakeHuman_091
 
@@ -12,8 +13,9 @@ COMMENT=	Morphing engine for MakeHuman
 LICENSE=	LGPL21
 
 GNU_CONFIGURE=	yes
-USES=		pkgconfig gmake
+USES=		pkgconfig gmake libtool
 USE_LDCONFIG=	yes
+INSTALL_TARGET=	install-strip
 USE_GCC=	any # otherwise graphics/makehuman won't link
 
 CPPFLAGS+=	-I${LOCALBASE}/include
@@ -21,7 +23,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 
 PORTDOCS=	*
 
-.include <bsd.port.options.mk>
+OPTIONS_DEFINE=	DOCS
 
 post-patch:
 	@${REINPLACE_CMD} -e '/^libanimorphdocdir =/ s|doc/|share/doc/|' ${WRKSRC}/Makefile.in
