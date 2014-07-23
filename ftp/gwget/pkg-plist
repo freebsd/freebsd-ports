@@ -11,7 +11,6 @@ share/dbus-1/services/org.gnome.gwget.service
 %%DATADIR%%/gwget.ui
 %%EPIPHANY%%lib/epiphany/%%EPHY_VERSION%%/extensions/gwget.xml
 %%EPIPHANY%%lib/epiphany/%%EPHY_VERSION%%/extensions/libgwgetextension.a
-%%EPIPHANY%%lib/epiphany/%%EPHY_VERSION%%/extensions/libgwgetextension.la
 %%EPIPHANY%%lib/epiphany/%%EPHY_VERSION%%/extensions/libgwgetextension.so
 share/locale/ar/LC_MESSAGES/gwget.mo
 share/locale/bg/LC_MESSAGES/gwget.mo
