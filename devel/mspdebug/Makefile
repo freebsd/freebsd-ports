@@ -11,7 +11,7 @@ COMMENT=	Debugger for use with MSP 430 MCUs
 
 LICENSE=	GPLv2
 
-USES=		gmake
+USES=		gmake readline
 
 PLIST_FILES=	bin/mspdebug man/man1/mspdebug.1.gz
 

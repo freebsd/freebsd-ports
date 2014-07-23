@@ -14,6 +14,7 @@ LICENSE=	GPLv2
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
+USES=		readline
 USE_XORG=	x11
 MAKEFILE=	Makefile.freebsd
 

@@ -13,7 +13,7 @@ COMMENT=	Interpreted dynamic parser
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:R}
 
-USES=		libtool
+USES=		libtool readline
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 CFLAGS+=	-Wno-return-type

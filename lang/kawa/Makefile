@@ -15,7 +15,7 @@ LICENSE=	MIT
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/makeinfo:${PORTSDIR}/print/texinfo
 
-USES=		gmake
+USES=		gmake readline
 USE_JAVA=	yes
 USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes

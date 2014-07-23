@@ -11,6 +11,8 @@ COMMENT=	To-do list manager
 
 CONFLICTS=	devtodo-[0-9]*
 
+USES=		readline
+
 HAS_CONFIGURE=	yes
 
 CONFIGURE_ARGS+=	--prefix=${PREFIX}

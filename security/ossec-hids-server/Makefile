@@ -16,6 +16,8 @@ USE_RC_SUBR=	ossec-hids
 
 CFLAGS+=	-ferror-limit=0
 
+USES=		readline
+
 .if defined(MAINTAINER_MODE)
 UID_FILES+=	../../UIDs
 GID_FILES+=	../../GIDs

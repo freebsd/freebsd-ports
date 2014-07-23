@@ -28,6 +28,7 @@ HAL_DESC=		Compile MegaHAL (enables hal command)
 XMMS_DESC=		Enable trackname command
 NOIPV4_DESC=		IPv6 support (disables IPv4 support)
 
+USES=		readline
 MAKEFILE=	makefile
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=
