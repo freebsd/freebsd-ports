@@ -17,7 +17,7 @@ LICENSE=	LGPL21 GPLv2
 LICENSE_COMB=	multi
 LICENSE_FILE=	${WRKSRC}/doc/COPYING
 
-USES=		gettext gmake libtool
+USES=		gettext gmake libtool readline
 USE_AUTOTOOLS=	autoconf libtoolize
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=		INSTALL="${INSTALL} ${_BINOWNGRP}" \

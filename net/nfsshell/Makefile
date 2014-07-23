@@ -15,6 +15,8 @@ GH_ACCOUNT=	NetDirect
 GH_TAGNAME=	${GH_COMMIT}
 GH_COMMIT=	09cdd52
 
+USES=		readline
+
 ALL_TARGET=	nfsshell
 MAKE_ARGS=	CC="${CC}" LIBS="-lreadline"
 

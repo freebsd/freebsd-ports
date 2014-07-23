@@ -12,7 +12,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Attractive toolkit for the analysis of ELF object files
 
-USES=		gmake
+USES=		gmake readline
 USE_LDCONFIG=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}

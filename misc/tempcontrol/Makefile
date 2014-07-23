@@ -11,6 +11,7 @@ COMMENT=	Temperature control for fermenting beer and other applications
 
 LICENSE=	BSD2CLAUSE
 
+USES=		readline
 MAKE_ARGS=	CFLAGS="${CFLAGS} -Wall -Wno-parentheses"
 NO_WRKSUBDIR=	yes
 

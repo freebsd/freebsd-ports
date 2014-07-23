@@ -18,7 +18,7 @@ LICENSE=	GPLv3
 
 LIB_DEPENDS=	libguile.so:${PORTSDIR}/lang/guile
 
-USES=		pkgconfig
+USES=		pkgconfig readline
 USE_GNOME=	vte
 GNU_CONFIGURE=	yes
 

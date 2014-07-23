@@ -17,6 +17,8 @@ LIB_DEPENDS=	libffi.so:${PORTSDIR}/devel/libffi
 
 CONFLICTS=	newlisp-devel-[0-9]*
 
+USES=		readline
+
 HAS_CONFIGURE=	yes
 ALL_TARGET=	default
 
