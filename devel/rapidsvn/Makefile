@@ -2,7 +2,7 @@
 
 PORTNAME=	rapidsvn
 PORTVERSION=	0.12.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	http://www.rapidsvn.org/download/release/${PORTVERSION}/
 
@@ -13,12 +13,12 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/svn:${PORTSDIR}/devel/subversion \
 		xsltproc:${PORTSDIR}/textproc/libxslt \
 		${LOCALBASE}/share/xsl/docbook/VERSION:${PORTSDIR}/textproc/docbook-xsl
 
-USE_WX=	2.8
+USE_WX=		2.8
 WX_UNICODE=	yes
 WX_CONF_ARGS=	absolute
 
 GNU_CONFIGURE=	yes
-USES=		gettext
+USES=		gettext libtool
 CONFIGURE_TARGET=
 CONFIGURE_ARGS=	--with-apr-config=apr-1-config \
 	--with-apu-config=apu-1-config \
