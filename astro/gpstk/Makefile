@@ -1,4 +1,4 @@
-# Created by: bms@FreeBSD.org
+# Created by: Bruce M Simpson <bms@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	gpstk
@@ -10,38 +10,51 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}.src
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Toolkit for developing GPS applications
 
+LICENSE=	LGPL21
+
 BUILD_DEPENDS=	jam:${PORTSDIR}/devel/jam
 
-WRKSRC=		${WRKDIR}/${PORTNAME}
-
 USES=		dos2unix
-NO_STAGE=	yes
 USE_PYTHON_RUN=	yes
 USE_LDCONFIG=	yes
 DOS2UNIX_FILES=	${WRKSRC}/Jamrules
 
+WRKSRC=		${WRKDIR}/${PORTNAME}
+
 JAM=		jam
-JAM_ENV=	PREFIX="${PREFIX}" \
-		BINDIR="${PREFIX}/bin" \
-		INCDIR="${PREFIX}/include/${PORTNAME}" \
-		LIBDIR="${PREFIX}/lib" \
+JAM_ENV=	PREFIX="${STAGEDIR}${PREFIX}" \
 		CC="${CC}" CCFLAGS="${CFLAGS}" \
 		C++="${CXX}" C++FLAGS="${CXXFLAGS}"
 
+post-patch:
+# Unbreak with modern C++ compilers (notably, Clang)
+	@${REINPLACE_CMD} -e 's,assignFrom(,this->&,' \
+		${WRKSRC}/src/Vector.hpp ${WRKSRC}/src/Matrix.hpp
+	@${REINPLACE_CMD} -e 's,matSliceCheck(,this->&,' \
+		${WRKSRC}/src/Matrix.hpp
+	@${REINPLACE_CMD} -e 's,addData(,this->&,' \
+		${WRKSRC}/src/FileFilterFrame.hpp
+	@${REINPLACE_CMD} -e 's,float,double,' \
+		${WRKSRC}/apps/swrx/gpsSim.cpp
+	@${REINPLACE_CMD} -e '/GPSEllipsoid gm/s,const ,,' \
+		${WRKSRC}/apps/reszilla/ddGen.cpp
+
 do-build:
-	cd ${WRKSRC} && ${SETENV} ${JAM_ENV} ${JAM}
+	cd ${WRKSRC} && ${SETENV} ${JAM_ENV} ${JAM} ${_MAKE_JOBS}
 
 NOSTRIPFILES=	ddPlot|ordPlot  # don't strip scripts
 SHLIBS=		geodyn geomatics gpstk procframe rxio vdraw vplot
-SHLIBVER=	${PORTVERSION:C/\.//g}
+SHLIBVER=	${PORTVERSION:S/.//g}
+
 do-install:
-	@${MKDIR} ${PREFIX}/include/${PORTNAME}
+	@${MKDIR} ${STAGEDIR}${PREFIX}/include/${PORTNAME}
 	cd ${WRKSRC} && ${SETENV} ${JAM_ENV} ${JAM} install
 .for shlib in ${SHLIBS}
-	@${LN} -sf lib${shlib}.so.${SHLIBVER} ${PREFIX}/lib/lib${shlib}.so
+	${LN} -sf lib${shlib}.so.${SHLIBVER} \
+		${STAGEDIR}${PREFIX}/lib/lib${shlib}.so
 .endfor
 	@${STRIP_CMD} `${GREP} '^bin/' ${PLIST} | \
 		 ${GREP} -E -v '^bin/(${NOSTRIPFILES})$$' | \
-		 ${SED} 's:^:${PREFIX}/:g'`
+			 ${SED} 's,^,${STAGEDIR}${PREFIX}/,'`
 
 .include <bsd.port.mk>
