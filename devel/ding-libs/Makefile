@@ -3,6 +3,7 @@
 
 PORTNAME=	ding-libs
 DISTVERSION=	0.1.3
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	https://fedorahosted.org/released/${PORTNAME}/
 
@@ -14,7 +15,7 @@ LICENSE=	GPLv3
 GNU_CONFIGURE=	yes
 CPPFLAGS=	-I${LOCALBASE}/include -L${LOCALBASE}/lib
 
-USES=		gettext pkgconfig
+USES=		gettext libtool pkgconfig
 USE_LDCONFIG=	yes
 
 CONFIGURE_ENV+=	DOXYGEN=""
