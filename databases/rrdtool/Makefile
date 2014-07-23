@@ -3,7 +3,7 @@
 
 PORTNAME=	rrdtool
 PORTVERSION=	1.4.8
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	databases graphics
 MASTER_SITES=	http://oss.oetiker.ch/rrdtool/pub/
 
@@ -12,29 +12,24 @@ COMMENT=	Round Robin Database Tools
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2 \
-		libcairo.so:${PORTSDIR}/graphics/cairo \
-		libpng15.so:${PORTSDIR}/graphics/png \
-		libxml2.so:${PORTSDIR}/textproc/libxml2 \
-		libpangocairo-1.0.so:${PORTSDIR}/x11-toolkits/pango
-
 CONFLICTS=	rrdtool10-* rrdtool12-*
 
 USE_RC_SUBR=	rrdcached
-USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
-USES=		gmake pkgconfig
-USE_GNOME=	gnomehack intltool
+USES=		gmake libtool pathfix pkgconfig
+USE_GNOME=	glib20 libxml2
+INSTALL_TARGET=	install-strip
 
-CONFIGURE_ARGS=	--disable-tcl
+CONFIGURE_ARGS=	--disable-tcl --disable-silent-rules
 
-PORTDOCS=	*
 PORTEXAMPLES=	4charts.pl bigtops.pl cgi-demo.cgi minmax.pl perftest.pl \
 		piped-demo.pl shared-demo.pl stripes.pl
 
-OPTIONS_DEFINE=	DEJAVU JSON MMAP PERL_MODULE PYTHON_MODULE RUBY_MODULE EXAMPLES DOCS
-OPTIONS_DEFAULT=	MMAP PERL_MODULE
+OPTIONS_DEFINE=	DEJAVU GRAPH JSON MMAP NLS PERL_MODULE PYTHON_MODULE \
+		RUBY_MODULE EXAMPLES DOCS
+OPTIONS_DEFAULT=	GRAPH MMAP PERL_MODULE
+GRAPH_DESC=		Enable the rrdtool graph command (needs cairo)
 DEJAVU_DESC=		Use DejaVu fonts (requires X11)
 JSON_DESC=		Support of json export
 MMAP_DESC=		Use mmap in rrd_update
@@ -68,6 +63,7 @@ PLIST_SUB+=	WITH_RUBY="@comment "
 
 .if ${PORT_OPTIONS:MPERL_MODULE}
 USES+=		perl5
+USE_PERL5+=	build run fixpacklist
 CONFIGURE_ARGS+=	--enable-perl --enable-perl-site-install
 PLIST_SUB+=	WITH_PERL=""
 .else
@@ -83,26 +79,43 @@ CONFIGURE_ARGS+=	--disable-mmap
 EXTRA_PATCHES+=		${FILESDIR}/thirdparty-json.diff
 .endif
 
+.if ${PORT_OPTIONS:MGRAPH}
+LIB_DEPENDS+=	libfreetype.so:${PORTSDIR}/print/freetype2 \
+		libpng15.so:${PORTSDIR}/graphics/png
+USE_GNOME+=	cairo pango
+PLIST_SUB+=	WITH_GRAPH=""
+.else
+CONFIGURE_ARGS+=--disable-rrdcgi --disable-rrd_graph
+PLIST_SUB+=	WITH_GRAPH="@comment "
+.endif
+
+.if ${PORT_OPTIONS:MNLS}
+USES+=	gettext
+USE_GNOME+=	intltool
+.else
+CONFIGURE_ARGS+=--disable-nls
+.endif
+
 .if exists(${LOCALBASE}/lib/X11/fonts/dejavu) || ${PORT_OPTIONS:MDEJAVU}
 RUN_DEPENDS+=	${LOCALBASE}/lib/X11/fonts/dejavu:${PORTSDIR}/x11-fonts/dejavu
 .endif
 
 CPPFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/freetype2
-##LDFLAGS+=	-L${LOCALBASE}/lib
-CFLAGS:=	${CFLAGS:N-ffast-math}
 
 post-extract:
-	@${REINPLACE_CMD} -e 's/^POD3/#POD3/' ${WRKSRC}/doc/Makefile.in
 .if ! ${PORT_OPTIONS:MDOCS}
-	@${REINPLACE_CMD} -e 's/[[:space:]]install-idocDATA//g' \
-		-e 's/[[:space:]]install-ihtmlDATA//g' \
-		-e 's/^[[:space:]].*cd .* rrdtool.html index.html/	#/' \
-		${WRKSRC}/doc/Makefile.in
-.endif
-.if ! ${PORT_OPTIONS:MEXAMPLES}
-	${REINPLACE_CMD} -e '/^SUBDIRS = /s| examples | |' \
+	@${REINPLACE_CMD} -e '/^SUBDIRS = /s| doc | |' \
 		${WRKSRC}/Makefile.in
 .endif
+.if ! ${PORT_OPTIONS:MEXAMPLES}
+	@${REINPLACE_CMD} -e '/^SUBDIRS = /s| examples | |' \
+		${WRKSRC}/Makefile.in
+.endif
+	@${REINPLACE_CMD} -E 's|(^rrdcached_LDADD = librrd_th.la)|\1 $$\(ALL_LIBS\)|' \
+		${WRKSRC}/src/Makefile.in
+
+	@${REINPLACE_CMD} -E 's|(^rrdtool_LDADD = librrd.la)|\1 $$\(ALL_LIBS\)|' \
+		${WRKSRC}/src/Makefile.in
 
 post-install:
 .if !defined(BATCH) && ${PORT_OPTIONS:MEXAMPLES}
