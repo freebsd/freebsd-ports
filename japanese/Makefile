@@ -142,7 +142,6 @@
     SUBDIR += kpcal
     SUBDIR += kterm
     SUBDIR += lambdamoo
-    SUBDIR += latex2html
     SUBDIR += leafrogue
     SUBDIR += less
     SUBDIR += libreoffice
@@ -226,15 +225,12 @@
     SUBDIR += plain2
     SUBDIR += plan
     SUBDIR += platex-japanese
-    SUBDIR += platex-jsclasses
     SUBDIR += platex-otf
-    SUBDIR += platex209
     SUBDIR += postgresql82-man
     SUBDIR += prime
     SUBDIR += prime-dict
     SUBDIR += prime-el
     SUBDIR += prn
-    SUBDIR += ptex
     SUBDIR += py-mecab
     SUBDIR += py-tegaki
     SUBDIR += py-tegaki-gtk
