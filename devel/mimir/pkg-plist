@@ -12,11 +12,11 @@ include/dcg_random.h
 include/dcg_string.h
 include/dcg_xput.h
 lib/libdcg.a
-lib/libdcg.la
 lib/libdcg.so
 lib/libdcg.so.2
+lib/libdcg.so.2.0.15
 lib/libdcg2.a
-lib/libdcg2.la
 lib/libdcg2.so
 lib/libdcg2.so.2
+lib/libdcg2.so.2.0.15
 man/man1/dcg.1.gz
