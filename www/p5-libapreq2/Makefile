@@ -16,7 +16,7 @@ LICENSE=	APACHE20
 
 USES=		gmake libtool perl5
 USE_APACHE=	22+
-USE_PERL5=	fixpacklist
+USE_PERL5=	fixpacklist run
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	autoconf
 CONFIGURE_ARGS+=	--with-apache2-apxs=${APXS} \
@@ -25,12 +25,14 @@ CONFIGURE_ARGS+=	--with-apache2-apxs=${APXS} \
 
 MAKE_ENV+=     MAKE=${GMAKE} ## MakeMaker blows it without this
 
-BUILD_DEPENDS+=	libapreq2>0:${PORTSDIR}/www/libapreq2 \
+BUILD_DEPENDS=	libapreq2>0:${PORTSDIR}/www/libapreq2 \
 		${APACHE_PKGNAMEPREFIX}mod_perl2>=0:${PORTSDIR}/www/mod_perl2 \
 		p5-ExtUtils-XSBuilder>=0:${PORTSDIR}/devel/p5-ExtUtils-XSBuilder \
 		p5-Parse-RecDescent>=0:${PORTSDIR}/devel/p5-Parse-RecDescent
 
-RUN_DEPENDS+=	${BUILD_DEPENDS}
+RUN_DEPENDS=	libapreq2>0:${PORTSDIR}/www/libapreq2 \
+		${APACHE_PKGNAMEPREFIX}mod_perl2>=0:${PORTSDIR}/www/mod_perl2 \
+		p5-Parse-RecDescent>=0:${PORTSDIR}/devel/p5-Parse-RecDescent
 
 post-patch:
 	@${REINPLACE_CMD} -i '' -e "s!%%APACHEINCLUDEDIR%%!${APACHEINCLUDEDIR}!" \
