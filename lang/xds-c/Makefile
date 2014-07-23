@@ -9,7 +9,7 @@ MASTER_SITES=	http://www.excelsior-usa.com/download/xds25x/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.//}-enduser-linux
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	coumarin@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Excelsior Oberon-2/Modula-2 to C compiler, set up to produce native FreeBSD binaries
 
 RESTRICTED=	Excelsior forbids any redistribution

@@ -7,7 +7,7 @@ CATEGORIES=	math devel
 MASTER_SITES=	http://www.osl.iu.edu/download/research/itl/
 DISTNAME=	${PORTNAME}-4.0.0-1
 
-MAINTAINER=	bf@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Iterative Template Library (based on MTL)
 
 BUILD_DEPENDS=	${LOCALBASE}/include/mtl/mtl.h:${PORTSDIR}/math/mtl \

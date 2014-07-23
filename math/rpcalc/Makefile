@@ -7,7 +7,7 @@ PORTREVISION=	4
 CATEGORIES=	math
 MASTER_SITES=	BERLIOS
 
-MAINTAINER=	edwin@mavetju.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple RPN calculator
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}//PyQt4/QtGui.so:${PORTSDIR}/x11-toolkits/py-qt4-gui

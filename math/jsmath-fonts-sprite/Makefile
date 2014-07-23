@@ -7,7 +7,7 @@ CATEGORIES=	math www
 MASTER_SITES=	http://www.math.union.edu/~dpvc/jsMath/download/ \
 		http://nivi.interfree.it/distfiles/${PORTNAME}/
 
-MAINTAINER=	nivit@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Sprite fonts pack for jsMath
 
 USES=		zip

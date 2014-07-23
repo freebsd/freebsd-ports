@@ -8,7 +8,7 @@ CATEGORIES=	lang
 MASTER_SITES=	http://www.metaocaml.org/dist/old/
 DISTNAME=	MetaOCaml_309_alpha_030
 
-MAINTAINER=	mainland@apeiron.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The MetaOCaml compiler and programming environment
 
 ONLY_FOR_ARCHS=	i386 amd64 # feel free to test on other archs and send a PR

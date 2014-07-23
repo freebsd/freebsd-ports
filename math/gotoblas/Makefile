@@ -13,7 +13,7 @@ DISTFILES=	GotoBLAS2-${GOTOBLAS2VER}_bsd.tar.gz \
 		large.tgz:lapack_tmg timing.tgz:lapack_tmg
 EXTRACT_ONLY=	${GOTOBLAS2_SRCFILE}
 
-MAINTAINER=	maho@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fast implementation of Basic Linear Algebra Subprograms
 
 LICENSE=	BSD

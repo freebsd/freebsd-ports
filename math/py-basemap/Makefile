@@ -8,7 +8,7 @@ CATEGORIES=	math python
 MASTER_SITES=	SF/matplotlib/matplotlib-toolkits/${PORTNAME}-${PORTVERSION}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	mainland@apeiron.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Plots data on map projections (with continental and political boundaries)
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/matplotlib/:${PORTSDIR}/math/py-matplotlib

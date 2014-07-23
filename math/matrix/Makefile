@@ -7,7 +7,7 @@ CATEGORIES=	math devel
 MASTER_SITES=	http://www.chelcom.ru/~anton/projects/files/
 DISTNAME=	matrix-${PORTVERSION}
 
-MAINTAINER=	anton@chelcom.ru
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C++ library to manipulate matrices and vectors
 
 WRKSRC=		${WRKDIR}/matrix
