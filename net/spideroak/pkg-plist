@@ -2,7 +2,7 @@ bin/SpiderOak
 bin/spideroak
 etc/dbus-1/system.d/SpiderOak.dbus.conf
 etc/xdg/menus/applications-merged/SpiderOak.menu
-man/man1/SpiderOak.1.gz
+%%MANPAGES%%man/man1/SpiderOak.1.gz
 %%DESKTOPDIR%%/SpiderOak.desktop
 %%PORTDOCS%%%%DOCSDIR%%/globalsync-linux.pdf
 share/pixmaps/SpiderOak.png
