@@ -9,17 +9,31 @@ PKGNAMESUFFIX=	-6rd-kmod
 DISTNAME=	freebsd-stf-${OSREL}-${PORTVERSION}
 
 MAINTAINER=	kuriyama@FreeBSD.org
-COMMENT=	6rd patched stf(4) kernel modules port for 8.3+
+COMMENT=	6rd patched stf(4) kernel modules port for 8.4+
 
 ONLY_FOR_ARCHS=	amd64 i386
 
 WRKSRC=		${WRKDIR}
-SVN_REV=	239080	# 8.1=r209773, 8.2=r216741, 8.3=r232314
+SVN_REV=	267655
 
 USES=		kmod
+
 .include <bsd.port.pre.mk>
 
-.if ${OSREL} != "8.1" && ${OSREL} != "8.2" && ${OSREL} != "8.3" && ${OSREL} != "8.4" && ${OSREL} != "9.1"
+.if ${OSREL} == "8.4"
+#SVN_REV=	255447
+.elif ${OSREL} == "9.1"
+#SVN_REV=	255448
+.elif ${OSREL} == "9.2"
+#SVN_REV=	255444
+PATCHDIR=	${MASTERDIR}/files-9.2
+.elif ${OSREL} == "9.3"
+#SVN_REV=	267655
+PATCHDIR=	${MASTERDIR}/files-9.2
+#.elif ${OSREL} == "10.0"
+##SVN_REV=	258913
+#PATCHDIR=	${MASTERDIR}/files-10.0
+.else
 IGNORE=		not supported $${OSREL} (${OSREL})
 .endif
 
@@ -46,10 +60,13 @@ do-install:
 SVN_MIRROR?=	http://svn.freebsd.org/base
 EXPDIR=		${WRKSRC}/src/sys
 maintainer-tar:
+.for _osrel in 8.4 9.1 9.2 9.3 10.0
+	-${RM} -rf ${EXPDIR}
 	${MKDIR} ${EXPDIR}
-	cd ${EXPDIR} && svn export -r ${SVN_REV} ${SVN_MIRROR}/releng/${OSREL}/sys/net net
-	cd ${EXPDIR} && svn export -r ${SVN_REV} ${SVN_MIRROR}/releng/${OSREL}/sys/modules/if_stf modules/if_stf
-	cd ${EXPDIR} && ${TAR} cfvz ${DISTDIR}/${DISTFILES} net modules
+	cd ${EXPDIR} && svn export -r ${SVN_REV} ${SVN_MIRROR}/releng/${_osrel}/sys/net net
+	cd ${EXPDIR} && svn export -r ${SVN_REV} ${SVN_MIRROR}/releng/${_osrel}/sys/modules/if_stf modules/if_stf
+	cd ${EXPDIR} && ${TAR} cfz ${DISTDIR}/freebsd-stf-${_osrel}-${PORTVERSION}${EXTRACT_SUFX} net modules
+.endfor
 
 maintainer-check:
 	@new=`svn log -ql 1 ${SVN_MIRROR}@HEAD releng/${OSREL}/sys/net/if_stf.c | ${GREP} -v ^- | ${SED} -e 's| .*||'`;\
@@ -58,7 +75,7 @@ maintainer-check:
 
 make-distinfo:
 	${RM} -f distinfo.tmp.*
-.for r in 8.1 8.2 8.3 8.4 9.1
+.for r in 8.4 9.1 9.2 9.3 10.0
 	${MAKE} OSREL=${r} DISTINFO_FILE=${MASTERDIR}/distinfo.tmp.${r} makesum
 .endfor
 	${CAT} ${MASTERDIR}/distinfo.tmp.* > ${MASTERDIR}/distinfo

@@ -9,7 +9,7 @@ MASTER_SITES=	http://www.csie.ntu.edu.tw/~cjlin/liblinear/ \
 DISTNAME=	${PORTNAME}-${PORTVERSION:C/0$//}
 
 MAINTAINER=	rafan@FreeBSD.org
-COMMENT=	A library for Large Linear Classification
+COMMENT=	Library for Large Linear Classification
 
 LICENSE=	BSD
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT

@@ -16,6 +16,8 @@ USE_PERL5=	configure
 DOCS=		CHANGES README TODO
 EXAMPLES=	cookies get_post print upload file post reference
 
+OPTIONS_DEFINE=	DOCS EXAMPLES
+
 post-install:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${STAGEDIR}${DOCSDIR}

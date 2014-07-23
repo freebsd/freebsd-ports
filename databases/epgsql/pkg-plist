@@ -1,20 +1,25 @@
-%%LIB32DIR%%/erlang/lib/epgsql-%%VERSION%%/ebin/epgsql.app
-%%LIB32DIR%%/erlang/lib/epgsql-%%VERSION%%/ebin/pgsql.beam
-%%LIB32DIR%%/erlang/lib/epgsql-%%VERSION%%/ebin/pgsql_binary.beam
-%%LIB32DIR%%/erlang/lib/epgsql-%%VERSION%%/ebin/pgsql_connection.beam
-%%LIB32DIR%%/erlang/lib/epgsql-%%VERSION%%/ebin/pgsql_fdatetime.beam
-%%LIB32DIR%%/erlang/lib/epgsql-%%VERSION%%/ebin/pgsql_idatetime.beam
-%%LIB32DIR%%/erlang/lib/epgsql-%%VERSION%%/ebin/pgsql_sock.beam
-%%LIB32DIR%%/erlang/lib/epgsql-%%VERSION%%/ebin/pgsql_types.beam
-%%LIB32DIR%%/erlang/lib/epgsql-%%VERSION%%/include/pgsql.hrl
-%%LIB32DIR%%/erlang/lib/epgsql-%%VERSION%%/src/epgsql.app.src
-%%LIB32DIR%%/erlang/lib/epgsql-%%VERSION%%/src/pgsql.erl
-%%LIB32DIR%%/erlang/lib/epgsql-%%VERSION%%/src/pgsql_binary.erl
-%%LIB32DIR%%/erlang/lib/epgsql-%%VERSION%%/src/pgsql_connection.erl
-%%LIB32DIR%%/erlang/lib/epgsql-%%VERSION%%/src/pgsql_fdatetime.erl
-%%LIB32DIR%%/erlang/lib/epgsql-%%VERSION%%/src/pgsql_idatetime.erl
-%%LIB32DIR%%/erlang/lib/epgsql-%%VERSION%%/src/pgsql_sock.erl
-%%LIB32DIR%%/erlang/lib/epgsql-%%VERSION%%/src/pgsql_types.erl
+lib/erlang/lib/epgsql-%%VERSION%%/ebin/apgsql.beam
+lib/erlang/lib/epgsql-%%VERSION%%/ebin/epgsql.app
+lib/erlang/lib/epgsql-%%VERSION%%/ebin/ipgsql.beam
+lib/erlang/lib/epgsql-%%VERSION%%/ebin/pgsql.beam
+lib/erlang/lib/epgsql-%%VERSION%%/ebin/pgsql_binary.beam
+lib/erlang/lib/epgsql-%%VERSION%%/ebin/pgsql_fdatetime.beam
+lib/erlang/lib/epgsql-%%VERSION%%/ebin/pgsql_idatetime.beam
+lib/erlang/lib/epgsql-%%VERSION%%/ebin/pgsql_sock.beam
+lib/erlang/lib/epgsql-%%VERSION%%/ebin/pgsql_types.beam
+lib/erlang/lib/epgsql-%%VERSION%%/ebin/pgsql_wire.beam
+lib/erlang/lib/epgsql-%%VERSION%%/include/pgsql.hrl
+lib/erlang/lib/epgsql-%%VERSION%%/include/pgsql_binary.hrl
+lib/erlang/lib/epgsql-%%VERSION%%/src/apgsql.erl
+lib/erlang/lib/epgsql-%%VERSION%%/src/epgsql.app.src
+lib/erlang/lib/epgsql-%%VERSION%%/src/ipgsql.erl
+lib/erlang/lib/epgsql-%%VERSION%%/src/pgsql.erl
+lib/erlang/lib/epgsql-%%VERSION%%/src/pgsql_binary.erl
+lib/erlang/lib/epgsql-%%VERSION%%/src/pgsql_fdatetime.erl
+lib/erlang/lib/epgsql-%%VERSION%%/src/pgsql_idatetime.erl
+lib/erlang/lib/epgsql-%%VERSION%%/src/pgsql_sock.erl
+lib/erlang/lib/epgsql-%%VERSION%%/src/pgsql_types.erl
+lib/erlang/lib/epgsql-%%VERSION%%/src/pgsql_wire.erl
 @dirrm %%LIB32DIR%%/erlang/lib/epgsql-%%VERSION%%/src
 @dirrm %%LIB32DIR%%/erlang/lib/epgsql-%%VERSION%%/include
 @dirrm %%LIB32DIR%%/erlang/lib/epgsql-%%VERSION%%/ebin

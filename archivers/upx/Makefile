@@ -28,6 +28,8 @@ PORTDOCS=	BUGS COPYING LICENSE NEWS PROJECTS README\
 PLIST_FILES=	bin/upx \
 		man/man1/upx.1.gz
 
+OPTIONS_DEFINE=	DOCS
+
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/src/upx.out ${STAGEDIR}${PREFIX}/bin/upx
 	@${INSTALL_MAN} ${WRKSRC}/doc/upx.1 ${STAGEDIR}${MANPREFIX}/man/man1

@@ -10,15 +10,17 @@ DIST_SUBDIR=	${PORTNAME}
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Library for high quality hyphenation and justification
 
+LICENSE=	LGPL21 LGPL3 MPL
+LICENSE_COMB=	dual
+
 BUILD_DEPENDS=	gawk:${PORTSDIR}/lang/gawk
 
+CONFIGURE_ENV=	ac_cv_prog_AWK=gawk
 GNU_CONFIGURE=	yes
-USES=	libtool pathfix perl5 shebangfix
+USES=		libtool pathfix perl5 shebangfix
 USE_LDCONFIG=	yes
 SHEBANG_FILES=	substrings.pl
 INSTALL_TARGET=	install-strip
-
-CONFIGURE_ENV+=	ac_cv_prog_AWK=gawk
 
 PLIST_FILES=	bin/substrings.pl \
 		include/hyphen.h \
@@ -32,7 +34,6 @@ PLIST_DIRSTRY=	%%DATADIR%%
 USALIASES=	en_AG en_AU en_BS en_BW en_BZ en_CA en_DK en_GB en_GH en_HK \
 		en_IE en_IN en_JM en_NA en_NZ en_PH en_SG en_TT en_ZA en_ZW
 
-CONFIGURE_ENV+=	ac_cv_prog_AWK=gawk
 .for ALIAS in ${USALIASES}
 PLIST_FILES+=	%%DATADIR%%/hyph_${ALIAS}.dic
 .endfor

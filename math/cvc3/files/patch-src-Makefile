@@ -1,0 +1,43 @@
+--- src/Makefile.orig	2014-07-16 11:12:07.907490115 +0800
++++ src/Makefile	2014-07-16 11:18:34.387487445 +0800
+@@ -254,27 +254,27 @@ HEADERS = $(patsubst %, $(TOP)/src/inclu
+ 
+ install: $(HEADERS)
+ 	$(MAKE) build TARGET=
+-	mkdir -p $(incdir)
+-	$(INSTALL) $(INSTALL_FLAGS) -m 644 $(HEADERS) $(incdir)
+-	mkdir -p $(libdir)
++	mkdir -p $(DESTDIR)$(incdir)
++	$(INSTALL) $(INSTALL_FLAGS) -m 644 $(HEADERS) $(DESTDIR)$(incdir)
++	mkdir -p $(DESTDIR)$(libdir)
+ ifeq ($(STATIC),1)
+-	$(INSTALL) $(INSTALL_FLAGS) -m 644 $(CVC_LIB_DIR)/$(CVC_LIB_NAME).$(LIB_VERSION) $(libdir)
+-	ln -sf $(CVC_LIB_NAME).$(LIB_VERSION) $(libdir)/$(call notdirx,$(CVC_LIB))
++	$(INSTALL) $(INSTALL_FLAGS) -m 644 $(CVC_LIB_DIR)/$(CVC_LIB_NAME).$(LIB_VERSION) $(DESTDIR)$(libdir)
++	ln -sf $(CVC_LIB_NAME).$(LIB_VERSION) $(DESTDIR)$(libdir)/$(call notdirx,$(CVC_LIB))
+ else
+-	$(INSTALL) $(INSTALL_FLAGS) -m 644 $(CVC_LIB) $(libdir)
++	$(INSTALL) $(INSTALL_FLAGS) -m 644 $(CVC_LIB) $(DESTDIR)$(libdir)
+ ifeq ($(MAC_OSX),)
+ ifeq ($(CYGWIN),)
+ 	$(LDCONFIG) -nv $(libdir)
+ endif
+ endif
+-	ln -sf $(CVC_LIB_NAME) $(libdir)/$(LIB_SHARED_COMPAT) 
+-	ln -sf $(CVC_LIB_NAME) $(libdir)/$(LIB_SHARED_MAJOR)
+-	ln -sf $(CVC_LIB_NAME) $(libdir)/$(LIB_SHARED_BASE)
++	ln -sf $(CVC_LIB_NAME) $(DESTDIR)$(libdir)/$(LIB_SHARED_COMPAT) 
++	ln -sf $(CVC_LIB_NAME) $(DESTDIR)$(libdir)/$(LIB_SHARED_MAJOR)
++	ln -sf $(CVC_LIB_NAME) $(DESTDIR)$(libdir)/$(LIB_SHARED_BASE)
+ endif
+-	mkdir -p $(bindir)
+-	$(INSTALL) $(INSTALL_FLAGS) -m 755 $(CVC_EXE) $(bindir)
+-	mkdir -p $(libdir)/pkgconfig
+-	$(INSTALL) $(INSTALL_FLAGS) -m 644 cvc3.pc $(libdir)/pkgconfig
++	mkdir -p $(DESTDIR)$(bindir)
++	$(INSTALL) $(INSTALL_FLAGS) -m 755 $(CVC_EXE) $(DESTDIR)$(bindir)
++	mkdir -p $(DESTDIR)$(libdir)/pkgconfig
++	$(INSTALL) $(INSTALL_FLAGS) -m 644 cvc3.pc $(DESTDIR)$(libdir)/pkgconfig
+ 
+ ifndef FILELIST
+ FILELIST = /dev/null

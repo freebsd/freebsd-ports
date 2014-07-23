@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	xkeyboard-config
-PORTVERSION=	2.11
+PORTVERSION=	2.12
 CATEGORIES=	x11
 MASTER_SITE_SUBDIR=	individual/${XORG_CAT}/${PORTNAME}
 
@@ -17,6 +17,7 @@ USES=		gmake pathfix perl5 tar:bzip2
 USE_GNOME=	intlhack libxslt:build
 USE_PERL5=	build
 GNU_CONFIGURE=	yes
+INSTALL_TARGET=	install-strip
 
 CONFIGURE_ARGS=	--with-xkb-base=${PREFIX}/share/X11/xkb \
 		--with-xkb-rules-symlink=xorg

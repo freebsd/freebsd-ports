@@ -8,7 +8,7 @@ CATEGORIES=	security
 MASTER_SITES=	http://www.acm.vt.edu/~jmaxwell/programs/xspy/
 
 MAINTAINER=	onatan@gmail.com
-COMMENT=	A utility for monitoring keystrokes on remote X servers
+COMMENT=	Utility for monitoring keystrokes on remote X servers
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 USES=		imake:notall

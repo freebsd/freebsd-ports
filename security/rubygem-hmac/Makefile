@@ -8,7 +8,7 @@ MASTER_SITES=	RG
 DISTNAME=	ruby-${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ruby@FreeBSD.org
-COMMENT=	A Ruby library which implements the HMAC algorithm
+COMMENT=	Ruby library which implements the HMAC algorithm
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes

@@ -8,7 +8,7 @@ MASTER_SITES=	http://pear.phpunit.de/get/
 PKGNAMEPREFIX=	pear-SebastianBergmann_
 
 MAINTAINER=	gasol.wu@gmail.com
-COMMENT=	Convenience wrapper for Symfony\'s Finder component
+COMMENT=	Convenience wrapper for Symfony's Finder component
 
 LICENSE=	BSD
 

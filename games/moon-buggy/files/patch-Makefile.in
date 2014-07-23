@@ -1,0 +1,18 @@
+--- Makefile.in.orig	2006-03-19 19:24:50.000000000 +0000
++++ Makefile.in
+@@ -849,7 +849,6 @@ install-exec-hook:
+ 	@$(NORMAL_INSTALL)
+ 
+ install-data-local:
+-	$(mkinstalldirs) $(DESTDIR)$(scoredir)
+ 
+ install-data-hook:
+ 	@$(POST_INSTALL)
+@@ -861,7 +860,6 @@ install-data-hook:
+ 		 || chmod 664 "$(DESTDIR)$(scoredir)/mbscore" ; } \
+ 	    && chmod 575 "$(DESTDIR)$(scoredir)" ; \
+ 	fi
+-	$(DESTDIR)$(bindir)/moon-buggy -c
+ 
+ uninstall-local:
+ 	rm -f $(DESTDIR)$(scoredir)/mbscore

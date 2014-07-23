@@ -8,7 +8,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
-COMMENT=	SAML responses for Google\'s SSO implementation
+COMMENT=	SAML responses for Google's SSO implementation
 
 BUILD_DEPENDS=	p5-Crypt-OpenSSL-Bignum>=0:${PORTSDIR}/security/p5-Crypt-OpenSSL-Bignum \
 		p5-Crypt-OpenSSL-DSA>=0:${PORTSDIR}/security/p5-Crypt-OpenSSL-DSA \

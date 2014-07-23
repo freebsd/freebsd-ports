@@ -23,6 +23,8 @@ DESKTOP_ENTRIES="OpenGlad" "" "" "${PORTNAME}" "" ""
 
 NOT_FOR_ARCHS=	sparc64
 
+OPTIONS_DEFINE=	DOCS
+
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's|COPYING INSTALL|INSTALL|' ${WRKSRC}/Makefile.in

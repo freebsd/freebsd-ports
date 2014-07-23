@@ -1,4 +1,8 @@
 bin/tqsl
+%%CONVERTER%%bin/converter
+%%GEN_CRQ%%bin/gen_crq
+%%LOAD_CERT%%bin/load_cert
+%%STATION_LOC%%bin/station_loc
 include/adif.h
 include/cabrillo.h
 include/tqslconvert.h

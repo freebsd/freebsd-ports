@@ -9,7 +9,7 @@ PKGNAMEPREFIX=	pecl-
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	miwi@FreeBSD.org
-COMMENT=	A PECL extension to the libssh2 library
+COMMENT=	PECL extension to the libssh2 library
 
 LIB_DEPENDS=	libssh2.so:${PORTSDIR}/security/libssh2
 

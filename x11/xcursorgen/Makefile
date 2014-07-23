@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	xcursorgen
-PORTVERSION=	1.0.5
+PORTVERSION=	1.0.6
 CATEGORIES=	x11
 
 MAINTAINER=	x11@FreeBSD.org
@@ -13,6 +13,8 @@ LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png
 
 XORG_CAT=	app
 USE_XORG=	x11 xcursor xextproto
+INSTALL_TARGET=	install-strip
 
 PLIST_FILES=	bin/xcursorgen man/man1/xcursorgen.1.gz
+
 .include <bsd.port.mk>

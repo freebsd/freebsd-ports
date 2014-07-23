@@ -7,7 +7,7 @@ CATEGORIES=	irc net
 MASTER_SITES=	SF/${PORTNAME}/ircu/ircu${PORTVERSION}
 DISTNAME=	ircu${PORTVERSION}
 
-MAINTAINER=	weaseal@users.sourceforge.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Undernet IRCU irc daemon
 
 CONFLICTS=	ircd-hybrid-7.[0-9]*

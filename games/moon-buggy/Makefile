@@ -3,7 +3,7 @@
 
 PORTNAME=	moon-buggy
 PORTVERSION=	1.0.51
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games
 MASTER_SITES=	http://seehuhn.de/media/programs/
 
@@ -15,10 +15,11 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX} \
-		--sharedstatedir=/var/games\
-		--with-setgid=games
-NEED_ROOT=	yes
+		--sharedstatedir=/var/games
 
 INFO=		moon-buggy
+
+post-install:
+	${CHMOD} ${BINMODE} ${STAGEDIR}${PREFIX}/bin/moon-buggy
 
 .include <bsd.port.mk>

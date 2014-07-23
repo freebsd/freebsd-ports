@@ -502,9 +502,9 @@ etc/periodic/daily/111.clean-squirrelmail
 @group %%SMGROUP%%
 @mode 0750
 @dirrm %%SQUIRRELDIR%%/data
-@mode
 @group
 @owner
+@mode 0755
 @dirrmtry %%SQUIRRELDIR%%/config
 @dirrm %%SQUIRRELDIR%%/class/mime
 @dirrm %%SQUIRRELDIR%%/class/helper

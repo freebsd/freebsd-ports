@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	powerdns-recursor
-PORTVERSION=	3.5.3
+PORTVERSION=	3.6.0
 CATEGORIES=	dns ipv6
 MASTER_SITES=	http://downloads.powerdns.com/releases/ \
 		http://mirrors.evolva.ro/powerdns.com/releases/
@@ -10,6 +10,8 @@ DISTNAME=	pdns-recursor-${PORTVERSION}
 
 MAINTAINER=	sten@blinkenlights.nl
 COMMENT=	Advanced DNS recursor
+
+LICENSE=	GPLv2
 
 BUILD_DEPENDS=	bjam:${PORTSDIR}/devel/boost-jam \
 		${LOCALBASE}/include/boost/shared_ptr.hpp:${PORTSDIR}/devel/boost-libs
@@ -62,7 +64,7 @@ BROKEN=		requires setcontext()
 post-patch:
 	@${REINPLACE_CMD} -e 's;SBINDIR=/usr/sbin/;SBINDIR=${PREFIX}/sbin/;' \
 	   -e 's;BINDIR=/usr/bin/;BINDIR=${PREFIX}/bin/;' \
-	   -e 's;CONFIGDIR="/etc/powerdns/";CONFIGDIR=${PREFIX}/etc/pdns/;' \
+	   -e 's;SYSCONFDIR=/etc/powerdns/;SYSCONFDIR=${PREFIX}/etc/pdns/;' \
 		${WRKSRC}/Makefile
 	@${REINPLACE_CMD} -e 's;"/etc/powerdns/";"${PREFIX}/etc/pdns/";' \
 		${WRKSRC}/config.h

@@ -3,7 +3,6 @@
 %%QT_INCDIR%%/QtScriptTools/QScriptEngineDebugger
 %%QT_INCDIR%%/QtScriptTools/QtScriptTools
 %%QT_INCDIR%%/QtScriptTools/qscriptenginedebugger.h
-%%QT_LIBDIR%%/libQtScriptTools.la
 %%QT_LIBDIR%%/libQtScriptTools.prl
 %%QT_LIBDIR%%/libQtScriptTools.so
 %%QT_LIBDIR%%/libQtScriptTools.so.4

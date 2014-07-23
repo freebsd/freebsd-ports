@@ -10,7 +10,7 @@ MASTER_SITES=	SF \
 		http://www.stillhq.com/panda/source/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A PDF generation library
+COMMENT=	PDF generation library
 
 LICENSE=	GPLv2 LGPL21
 LICENSE_COMB=	dual

@@ -11,7 +11,7 @@ COMMENT=	Numeric-oriented programming language
 
 LICENSE=	MIT
 
-USES=		gmake ncurses
+USES=		gmake ncurses readline
 GNU_CONFIGURE=	yes
 
 # Nickle now has bindings which are likely to pull in libraries that need

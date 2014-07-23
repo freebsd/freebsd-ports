@@ -43,7 +43,7 @@ LIB_DEPENDS=	libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig \
 		libsamplerate.so:${PORTSDIR}/audio/libsamplerate
 .if !defined(PACKAGE_BUILDING)
 # DVDCSS version hardcoded in contrib/libdvdread/libdvdread/src/dvd_input.c (dlopen'ed)
-LIB_DEPENDS+=	${LOCALBASE}/lib/libdvdcss.so.2:${PORTSDIR}/multimedia/libdvdcss
+LIB_DEPENDS+=	libdvdcss.so.2:${PORTSDIR}/multimedia/libdvdcss
 .endif
 
 GNU_CONFIGURE=	yes

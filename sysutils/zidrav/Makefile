@@ -9,7 +9,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}4unix/${PORTVERSION}
 DISTNAME=	zidrav4unix-${PORTVERSION}
 
 MAINTAINER=	dinoex@FreeBSD.org
-COMMENT=	A file corruption detection and repair program
+COMMENT=	File corruption detection and repair program
 
 LICENSE=	GPLv2
 

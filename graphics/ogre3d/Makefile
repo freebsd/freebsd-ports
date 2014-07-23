@@ -16,7 +16,7 @@ LIB_DEPENDS=	libzzip.so:${PORTSDIR}/devel/zziplib \
 		libfreetype.so:${PORTSDIR}/print/freetype2 \
 		libfreeimage.so:${PORTSDIR}/graphics/freeimage
 
-OPTIONS_DEFINE=	BOOST
+OPTIONS_DEFINE=	BOOST DOCS
 
 USE_LDCONFIG=	yes
 USES=		tar:bzip2 cmake pkgconfig compiler:c++11-lib

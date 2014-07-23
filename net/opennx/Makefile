@@ -8,7 +8,7 @@ CATEGORIES=	net
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/CI-source
 
 MAINTAINER=	beyert@cs.ucr.edu
-COMMENT=	Open source drop in replacement for NoMachine\'s NX client
+COMMENT=	Open source drop in replacement for NoMachine's NX client
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING

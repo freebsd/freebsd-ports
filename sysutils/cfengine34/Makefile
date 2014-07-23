@@ -9,7 +9,7 @@ MASTER_SITES=	https://s3.amazonaws.com/cfengine.package-repos/tarballs/
 
 MAINTAINER=	cy@FreeBSD.org
 #		gjb@FreeBSD.org is also committer for this port
-COMMENT=	A systems administration tool for networks
+COMMENT=	Systems administration tool for networks
 
 .if !defined(MASTERDIR)
 PKGNAMESUFFIX=	34

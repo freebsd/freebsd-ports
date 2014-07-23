@@ -12,6 +12,8 @@ COMMENT=	Block-sorting file compressor
 USE_LDCONFIG=	yes
 PATCH_STRIP=	-p3
 
+OPTIONS_DEFINE=	DOCS
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bzip2 ${STAGEDIR}${PREFIX}/bin
 	${LN} -sf ${PREFIX}/bin/bzip2 ${STAGEDIR}${PREFIX}/bin/bunzip2

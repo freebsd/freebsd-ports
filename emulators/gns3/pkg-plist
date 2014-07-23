@@ -556,5 +556,10 @@ man/man1/gns3.1.gz
 @dirrm %%PYTHON_SITELIBDIR%%/GNS3/Config
 @dirrm %%PYTHON_SITELIBDIR%%/GNS3/Awp
 @dirrm %%PYTHON_SITELIBDIR%%/GNS3
+%%PYTHON_SITELIBDIR%%/GNS3-%%VERSION%%-py%%PYTHON_VERSION%%.egg-info/PKG-INFO
+%%PYTHON_SITELIBDIR%%/GNS3-%%VERSION%%-py%%PYTHON_VERSION%%.egg-info/SOURCES.txt
+%%PYTHON_SITELIBDIR%%/GNS3-%%VERSION%%-py%%PYTHON_VERSION%%.egg-info/dependency_links.txt
+%%PYTHON_SITELIBDIR%%/GNS3-%%VERSION%%-py%%PYTHON_VERSION%%.egg-info/top_level.txt
+@dirrmtry %%PYTHON_SITELIBDIR%%/GNS3-%%VERSION%%-py%%PYTHON_VERSION%%.egg-info
 @dirrm %%EXAMPLESDIR%%
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

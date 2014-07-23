@@ -1,6 +1,8 @@
-sbin/exact
-etc/exact.conf.sample
+@sample etc/exact.conf.sample
 etc/rc.d/exact.sh
-@exec mkdir -p %%EXACTDIR%%
-@exec chown %%MAILUSER%%:%%MAILGROUP%% %%EXACTDIR%%
-@unexec rmdir %%EXACTDIR%% 2>/dev/null || true
+man/man5/exact.conf.5.gz
+man/man8/exact.8.gz
+sbin/exact
+@owner %%MAILUSER%%
+@group %%MAILGROUP%%
+@dirrmtry %%EXACTDIR%%

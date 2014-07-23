@@ -9,7 +9,7 @@ PKGNAMEPREFIX=	pecl-
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	miwi@FreeBSD.org
-COMMENT=	A PECL extension to Haru PDF functions
+COMMENT=	PECL extension to Haru PDF functions
 
 BUILD_DEPENDS=	${LOCALBASE}/include/hpdf.h:${PORTSDIR}/print/libharu
 RUN_DEPENDS:=	${LOCALBASE}/include/hpdf.h:${PORTSDIR}/print/libharu

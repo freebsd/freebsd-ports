@@ -12,7 +12,7 @@ COMMENT=	Extensible plotting language for producing scientific graphs
 
 LIB_DEPENDS=	libnetcdf.so:${PORTSDIR}/science/netcdf
 
-USES=		gmake readline shebangfix
+USES=		gmake readline shebangfix makeinfo
 SHEBANG_FILES=	src/gri_merge src/gri_unpage
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-FreeBSD
@@ -21,6 +21,7 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
 INFO=		gri
+USE_TEX=	formats:build dvipsk:build
 PORTDOCS=	*
 PORTEXAMPLES=	*
 PLIST_FILES=	bin/gri bin/gri_merge bin/gri_unpage \
@@ -38,8 +39,7 @@ OPTIONS_DEFINE=	DOCS EXAMPLES
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDOCS} || ${PORT_OPTIONS:MEXAMPLES}
-BUILD_DEPENDS+=	convert:${PORTSDIR}/graphics/ImageMagick \
-		dvips:${PORTSDIR}/print/dvipsk-tetex
+BUILD_DEPENDS+=	convert:${PORTSDIR}/graphics/ImageMagick
 .endif
 
 post-patch:

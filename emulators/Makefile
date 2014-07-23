@@ -156,6 +156,7 @@
     SUBDIR += wine
     SUBDIR += wine-devel
     SUBDIR += wine-doors
+    SUBDIR += wine-compholio
     SUBDIR += wine-gecko
     SUBDIR += wine-gecko-devel
     SUBDIR += wine-mono

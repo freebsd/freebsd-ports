@@ -2,38 +2,34 @@
 # $FreeBSD$
 
 PORTNAME=	libvmime
-PORTVERSION=	0.9.1
-PORTREVISION=	8
+PORTVERSION=	0.9.2.s20140721
 CATEGORIES=	mail
-MASTER_SITES=	SF/vmime/vmime/0.9
 
 MAINTAINER=	delphij@FreeBSD.org
 COMMENT=	All-in-one Internet mail library
 
-LIB_DEPENDS+=	libgnutls.so:${PORTSDIR}/security/gnutls
-LIB_DEPENDS+=	libgsasl.so:${PORTSDIR}/security/gsasl
+LICENSE=	GPLv3
+LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		iconv gmake pkgconfig tar:bzip2 libtool
-GNU_CONFIGURE=	yes
+LIB_DEPENDS=	libgnutls.so:${PORTSDIR}/security/gnutls \
+		libgsasl.so:${PORTSDIR}/security/gsasl
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	kisli
+GH_PROJECT=	vmime
+GH_TAGNAME=	${GH_COMMIT}
+GH_COMMIT=	03a0e36
+
+USES=		cmake:outsource compiler:c++11-lib iconv pkgconfig
 USE_LDCONFIG=	yes
 
-CFLAGS+=	-I${LOCALBASE}/include -D_GLIBCXX__PTHREADS
-CXXFLAGS+=	${CFLAGS}
-LDFLAGS+=	-L${LOCALBASE}/lib
+CMAKE_ARGS=	-DLIB_SUFFIX:STRING="" \
+		-DVMIME_BUILD_SAMPLES:BOOL=NO \
+		-DVMIME_SHARED_PTR_USE_BOOST:BOOL=NO \
+		-DVMIME_SHARED_PTR_USE_CXX:BOOL=YES
 
-.ifndef	DEBUG
-CONFIGURE_ARGS+=--disable-debug
-.endif
+post-patch:
+	@${REINPLACE_CMD} 's,$${VMIME_INSTALL_LIBDIR}/pkgconfig,${PREFIX}/libdata/pkgconfig,' \
+		${WRKSRC}/CMakeLists.txt
 
-CONFIGURE_ENV+=	EXTRA_CFLAGS="${CFLAGS}" EXTRA_CXXFLAGS="${CXXFLAGS}" \
-		LIBGNUTLS_CONFIG="${LOCALBASE}/bin/pkg-config" libgnutls_config_args="gnutls"
-
-DOCSDIR=	${PREFIX}/share/doc/vmime
-
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == "sparc64"
-BROKEN=		Does not compile on sparc64
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

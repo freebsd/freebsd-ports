@@ -20,6 +20,8 @@ RUBY_SETUP=	install.rb
 
 DOCS=		NEWS README THANKS TODO doc
 
+OPTIONS_DEFINE=	DOCS
+
 post-extract:
 	${FIND} ${WRKSRC} -name '*~' -delete
 

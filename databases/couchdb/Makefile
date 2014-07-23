@@ -2,15 +2,17 @@
 # $FreeBSD$
 
 PORTNAME=	couchdb
-PORTVERSION=	1.5.0
+PORTVERSION=	1.6.0
 PORTEPOCH=	2
 CATEGORIES=	databases
 MASTER_SITES=	${MASTER_SITE_APACHE}
 MASTER_SITE_SUBDIR=	couchdb/source/${PORTVERSION}
 DISTNAME=	apache-couchdb-${PORTVERSION}
 
-MAINTAINER=	adams-ports@ateamsystems.com
+MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Document database server, accessible via a RESTful JSON API
+
+LICENSE=	APACHE20
 
 LIB_DEPENDS=	libicudata.so:${PORTSDIR}/devel/icu \
 		libmozjs185.so:${PORTSDIR}/lang/spidermonkey185 \
@@ -24,8 +26,9 @@ GROUPS=		couchdb
 
 USE_RC_SUBR=	couchdb
 SUB_FILES=	pkg-message
-USES=		gmake
-USE_AUTOTOOLS=	libtool
+PLIST_SUB=	VERSION=${PORTVERSION}
+USES=		gmake libtool
+GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--with-erlang=${LOCALBASE}/lib/erlang/usr/include \
 		--localstatedir=/var \
@@ -74,7 +77,7 @@ post-patch:
 
 post-configure:
 # Cater for parallel Spidermonkey v1.7 and v1.8.5 installs by ensuring that
-# jsapi.h gets pulled from /usr/local/include/js/ instead of /usr/local/include 
+# jsapi.h gets pulled from /usr/local/include/js/ instead of /usr/local/include
 	@${FIND} ${WRKSRC} -name Makefile|${XARGS} ${REINPLACE_CMD} -e 's|include -I/usr/local/include/js|include/js -I/usr/local/include|'
 
 post-install:

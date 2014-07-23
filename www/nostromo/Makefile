@@ -3,7 +3,7 @@
 
 PORTNAME=	nostromo
 PORTVERSION=	1.9.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www ipv6
 MASTER_SITES=	http://www.nazgul.ch/dev/
 
@@ -18,12 +18,9 @@ NOSTROMO_LOGDIR_PERMS?=	0775
 
 USE_RC_SUBR=	nostromo
 
-MAN8=		nhttpd.8
-
 MAKE_ENV?=	MAKEOBJDIR=. PREFIX=${PREFIX} NOSTROMO_DIR=${NOSTROMO_DIR}
 PLIST_SUB+=	NOSTROMODIR="${NOSTROMO_DIR}" NOSTROMOLOGDIR="${NOSTROMO_LOGDIR}"
 
-NO_STAGE=	yes
 post-extract:
 	@${REINPLACE_CMD} -e "s@/var/nostromo@${NOSTROMO_DIR}@g" \
 		${WRKSRC}/src/nhttpd/nhttpd.8
@@ -33,25 +30,22 @@ post-extract:
 		${WRKSRC}/conf/nhttpd.conf-dist
 
 do-install:
-	@${INSTALL_SCRIPT} ${WRKSRC}/src/nhttpd/nhttpd ${PREFIX}/sbin
-	@${INSTALL_SCRIPT} ${WRKSRC}/src/tools/crypt ${PREFIX}/sbin
-	@${INSTALL_MAN} ${WRKSRC}/src/nhttpd/nhttpd.8 ${PREFIX}/man/man8
-	@${MKDIR} ${PREFIX}/${NOSTROMO_DIR}
-	@${MKDIR} ${PREFIX}/${NOSTROMO_DIR}/conf
-	@${MKDIR} -m ${NOSTROMO_LOGDIR_PERMS} -p ${PREFIX}/${NOSTROMO_LOGDIR}
-	@${INSTALL_DATA} ${WRKSRC}/conf/mimes ${PREFIX}/${NOSTROMO_DIR}/conf
-	@${INSTALL_DATA} ${WRKSRC}/conf/nhttpd.conf-dist ${PREFIX}/${NOSTROMO_DIR}/conf
-	if [ ! -f ${PREFIX}/${NOSTROMO_DIR}/conf/nhttpd.conf ]; then \
-		${CP} -p ${PREFIX}/${NOSTROMO_DIR}/conf/nhttpd.conf-dist ${PREFIX}/${NOSTROMO_DIR}/conf/nhttpd.conf ; \
-	fi
-	@${MKDIR} ${PREFIX}/${NOSTROMO_DIR}/htdocs
-	@${INSTALL_DATA} ${WRKSRC}/htdocs/index.html ${PREFIX}/${NOSTROMO_DIR}/htdocs
-	@${INSTALL_DATA} ${WRKSRC}/htdocs/nostromo.gif ${PREFIX}/${NOSTROMO_DIR}/htdocs
-	@${MKDIR} ${PREFIX}/${NOSTROMO_DIR}/htdocs/cgi-bin
+	@${INSTALL_SCRIPT} ${WRKSRC}/src/nhttpd/nhttpd ${STAGEDIR}${PREFIX}/sbin
+	@${INSTALL_SCRIPT} ${WRKSRC}/src/tools/crypt ${STAGEDIR}${PREFIX}/sbin
+	@${INSTALL_MAN} ${WRKSRC}/src/nhttpd/nhttpd.8 ${STAGEDIR}${PREFIX}/man/man8
+	@${MKDIR} ${STAGEDIR}${PREFIX}/${NOSTROMO_DIR}
+	@${MKDIR} ${STAGEDIR}${PREFIX}/${NOSTROMO_DIR}/conf
+	@${MKDIR} -m ${NOSTROMO_LOGDIR_PERMS} -p ${STAGEDIR}${PREFIX}/${NOSTROMO_LOGDIR}
+	@${INSTALL_DATA} ${WRKSRC}/conf/mimes ${STAGEDIR}${PREFIX}/${NOSTROMO_DIR}/conf
+	@${INSTALL_DATA} ${WRKSRC}/conf/nhttpd.conf-dist ${STAGEDIR}${PREFIX}/${NOSTROMO_DIR}/conf/nhttpd.conf.sample
+	@${MKDIR} ${STAGEDIR}${PREFIX}/${NOSTROMO_DIR}/htdocs
+	@${INSTALL_DATA} ${WRKSRC}/htdocs/index.html ${STAGEDIR}${PREFIX}/${NOSTROMO_DIR}/htdocs
+	@${INSTALL_DATA} ${WRKSRC}/htdocs/nostromo.gif ${STAGEDIR}${PREFIX}/${NOSTROMO_DIR}/htdocs
+	@${MKDIR} ${STAGEDIR}${PREFIX}/${NOSTROMO_DIR}/htdocs/cgi-bin
 	@${INSTALL_SCRIPT} ${WRKSRC}/htdocs/cgi-bin/printenv \
-		${PREFIX}/${NOSTROMO_DIR}/htdocs/cgi-bin
-	@${MKDIR} ${PREFIX}/${NOSTROMO_DIR}/icons
-	@${INSTALL_DATA} ${WRKSRC}/icons/dir.gif ${PREFIX}/${NOSTROMO_DIR}/icons
-	@${INSTALL_DATA} ${WRKSRC}/icons/file.gif ${PREFIX}/${NOSTROMO_DIR}/icons
+		${STAGEDIR}${PREFIX}/${NOSTROMO_DIR}/htdocs/cgi-bin
+	@${MKDIR} ${STAGEDIR}${PREFIX}/${NOSTROMO_DIR}/icons
+	@${INSTALL_DATA} ${WRKSRC}/icons/dir.gif ${STAGEDIR}${PREFIX}/${NOSTROMO_DIR}/icons
+	@${INSTALL_DATA} ${WRKSRC}/icons/file.gif ${STAGEDIR}${PREFIX}/${NOSTROMO_DIR}/icons
 
 .include <bsd.port.mk>

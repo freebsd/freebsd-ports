@@ -35,6 +35,8 @@ PLIST_SUB=	PYVER=${PYTHON_VERSION:S/python//} \
 		VERSION=${VERSION}
 VERSION=	3.00
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.pre.mk>
 post-configure:
 	@${REINPLACE_CMD} -e 's|%%DESTDIR%%|${STAGEDIR}|' ${WRKSRC}/Makefile

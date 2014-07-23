@@ -250,7 +250,6 @@
 %%QT_INCDIR%%/QtQml/qtqmlversion.h
 %%QT_LIBDIR%%/cmake/Qt5Qml/Qt5QmlConfig.cmake
 %%QT_LIBDIR%%/cmake/Qt5Qml/Qt5QmlConfigVersion.cmake
-%%QT_LIBDIR%%/libQt5Qml.la
 %%QT_LIBDIR%%/libQt5Qml.prl
 %%QT_LIBDIR%%/libQt5Qml.so
 %%QT_LIBDIR%%/libQt5Qml.so.5

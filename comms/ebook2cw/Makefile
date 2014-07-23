@@ -15,6 +15,8 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	libmp3lame.so:${PORTSDIR}/audio/lame \
 		libvorbis.so:${PORTSDIR}/audio/libvorbis
 
+OPTIONS_DEFINE=	DOCS EXAMPLES
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|'g \
 	     ${WRKSRC}/Makefile

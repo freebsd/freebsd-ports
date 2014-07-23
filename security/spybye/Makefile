@@ -8,7 +8,7 @@ CATEGORIES=	security www
 MASTER_SITES=	http://www.monkey.org/~provos/
 
 MAINTAINER=	pauls@utdallas.edu
-COMMENT=	A web proxy to detect malware
+COMMENT=	Web proxy to detect malware
 
 LIB_DEPENDS=	libevent-1.4.so:${PORTSDIR}/devel/libevent
 

@@ -11,7 +11,7 @@ DISTNAME=	mpio-${PORTVERSION:S|.p|_pre|}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Digit@lway MPIO MP3 player tool
 
-USES=		iconv
+USES=		iconv readline
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 

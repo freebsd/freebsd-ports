@@ -14,6 +14,8 @@ GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
+OPTIONS_DEFINE=	DOCS
+
 .if defined(WANT_FINAL)
 CONFIGURE_ARGS+=	--enable-final
 USES=		gmake

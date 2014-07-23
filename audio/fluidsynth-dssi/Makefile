@@ -3,7 +3,7 @@
 
 PORTNAME=	fluidsynth-dssi
 PORTVERSION=	1.0.0
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	audio
 MASTER_SITES=	SF/dssi/${PORTNAME}/${PORTVERSION}
 
@@ -17,7 +17,7 @@ LIB_DEPENDS=	libdssialsacompat.so:${PORTSDIR}/audio/libdssialsacompat \
 BUILD_DEPENDS=	${LOCALBASE}/include/dssi.h:${PORTSDIR}/audio/dssi
 
 GNU_CONFIGURE=	yes
-USES=		gmake pkgconfig
+USES=		gmake libtool pkgconfig
 USE_GNOME=	gtk20
 
 post-patch:

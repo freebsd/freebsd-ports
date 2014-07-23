@@ -10,7 +10,7 @@ MASTER_SITES=	http://www.codon.org.uk/~mjg59/vbetool/download/	\
 MASTER_SITE_SUBDIR=	jkim
 
 MAINTAINER=	jkim@FreeBSD.org
-COMMENT=	An application for executing video card BIOS code
+COMMENT=	Application for executing video card BIOS code
 
 LICENSE=	GPLv2
 

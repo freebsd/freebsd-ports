@@ -1,0 +1,11 @@
+bin/memcached
+bin/memcached-tool
+include/memcached/protocol_binary.h
+man/man1/memcached.1.gz
+%%PORTDOCS%%%%DOCSDIR%%/protocol-binary-range.txt
+%%PORTDOCS%%%%DOCSDIR%%/protocol-binary.txt
+%%PORTDOCS%%%%DOCSDIR%%/protocol.txt
+%%PORTDOCS%%%%DOCSDIR%%/readme.txt
+%%PORTDOCS%%%%DOCSDIR%%/threads.txt
+@dirrmtry include/memcached
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%

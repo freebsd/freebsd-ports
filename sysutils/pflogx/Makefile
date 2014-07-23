@@ -18,7 +18,7 @@ EXPAT_DESC=	Ability to merge new events (require expat)
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MEXPAT}
-LIB_DEPENDS=	expat:${PORTSDIR}/textproc/expat2
+LIB_DEPENDS=	libexpat.so:${PORTSDIR}/textproc/expat2
 MAKE_ARGS+=	-DWITH_EXPAT \
 		EXPAT_INCLUDEDIR=${LOCALBASE}/include \
 		EXPAT_LIBDIR=${LOCALBASE}/lib

@@ -20,6 +20,8 @@ USE_PERL5=	configure
 
 DOCS=		README README.plugins Plugin.sample
 
+OPTIONS_DEFINE=	DOCS
+
 post-patch:
 	@${MV} ${WRKSRC}/lib/Pancho/Plugins/README ${WRKSRC}/README.plugins
 	@${MV} ${WRKSRC}/lib/Pancho/Plugins/Plugin.sample ${WRKSRC}/

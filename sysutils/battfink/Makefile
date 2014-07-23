@@ -9,7 +9,7 @@ MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
-COMMENT=	An energy saving preferences app for GNOME
+COMMENT=	Energy saving preferences app for GNOME
 
 USE_XORG=	x11
 INSTALLS_OMF=	yes

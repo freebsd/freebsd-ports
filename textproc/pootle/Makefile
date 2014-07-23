@@ -70,7 +70,7 @@ RUN_DEPENDS+=	svn:${PORTSDIR}/devel/subversion
 .endif
 
 .if ${PORT_OPTIONS:MMEMCACHED}
-LIB_DEPENDS+=	memcached:${PORTSDIR}/databases/libmemcached
+LIB_DEPENDS+=	libmemcached.so:${PORTSDIR}/databases/libmemcached
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}memcached>=1.45:${PORTSDIR}/databases/py-memcached
 .endif
 

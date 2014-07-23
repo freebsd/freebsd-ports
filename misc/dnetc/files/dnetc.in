@@ -11,7 +11,7 @@
 # dnetc_enable (bool):		Set to "NO" by default.
 #				Set to "YES" to enable dnetc.
 # dnetc_dir (path):		Set to "%%BINDIR%%" by default.
-# dnetc_user (user):		Set to "%%CLIENTUSER%%" by default.
+# dnetc_user (user):		Set to "dnetc" by default.
 # dnetc_idprio (priority):	Unset by default. See idprio manpage.
 #
 
@@ -24,7 +24,7 @@ load_rc_config $name
 
 : ${dnetc_enable="NO"}
 : ${dnetc_dir="%%BINDIR%%"}
-: ${dnetc_user="%%CLIENTUSER%%"}
+: ${dnetc_user="dnetc"}
 
 required_files=${dnetc_dir}/${name}.ini
 

@@ -5295,7 +5295,7 @@
 +#[bsd]sun.tools.attach.BsdAttachProvider
 --- jdk/src/share/lib/security/java.security-bsd
 +++ jdk/src/share/lib/security/java.security-bsd
-@@ -0,0 +1,498 @@
+@@ -0,0 +1,500 @@
 +#
 +# This is the "master security properties file".
 +#
@@ -5508,7 +5508,8 @@
 +               org.jcp.xml.dsig.internal.,\
 +               jdk.internal.,\
 +               jdk.nashorn.internal.,\
-+               jdk.nashorn.tools.
++               jdk.nashorn.tools.,\
++               com.sun.activation.registries.
 +
 +
 +#
@@ -5555,7 +5556,8 @@
 +                   org.jcp.xml.dsig.internal.,\
 +                   jdk.internal.,\
 +                   jdk.nashorn.internal.,\
-+                   jdk.nashorn.tools.
++                   jdk.nashorn.tools.,\
++                   com.sun.activation.registries.
 +
 +
 +#
@@ -8260,17 +8262,6 @@
  
  JNIEXPORT void JNICALL Java_sun_management_DiagnosticCommandImpl_setNotificationEnabled
  (JNIEnv *env, jobject dummy, jboolean enabled) {
---- jdk/src/share/native/sun/management/GcInfoBuilder.c
-+++ jdk/src/share/native/sun/management/GcInfoBuilder.c
-@@ -190,7 +190,7 @@
- 
-     if (ext_att_count <= 0) {
-         JNU_ThrowIllegalArgumentException(env, "Invalid ext_att_count");
--        return;
-+        return 0;
-     }
- 
-     gc_stat.usage_before_gc = usageBeforeGC;
 --- jdk/src/solaris/back/util_md.h
 +++ jdk/src/solaris/back/util_md.h
 @@ -51,7 +51,7 @@

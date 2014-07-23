@@ -6,7 +6,7 @@ PORTVERSION=	1.5.0
 CATEGORIES=	lang
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	sahil@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Wrapper for AWK interpreter that implements a modules system
 
 BUILD_DEPENDS=	mk-configure>=0.21.0:${PORTSDIR}/devel/mk-configure

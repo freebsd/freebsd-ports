@@ -14,6 +14,8 @@ HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX}
 PORTDOCS=	ChangeLog README
 
+OPTIONS_DEFINE=	DOCS
+
 post-patch:
 	(cd ${WRKSRC} && \
 	${REINPLACE_CMD} -e "s@<wait.h>@<sys/wait.h>@" httplog.c && \

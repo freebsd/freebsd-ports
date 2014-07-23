@@ -3,7 +3,7 @@
 
 PORTNAME=	nut
 PORTVERSION=	2.7.2
-PORTREVISION=	4
+PORTREVISION=	6
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.networkupstools.org/source/${PORTVERSION:R}/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DISTNAME}${EXTRACT_SUFX}.sig
@@ -131,7 +131,7 @@ PLIST_SUB+=	BASH="@comment "
 
 .if ${PORT_OPTIONS:MAVAHI}
 BUILD_DEPENDS+=	${LOCALBASE}/include/avahi-ui/avahi-ui.h:${PORTSDIR}/net/avahi-header
-RUN_DEPENDS+=	avahi-daemon:${PORTSDIR}/net/avaha-app
+RUN_DEPENDS+=	avahi-daemon:${PORTSDIR}/net/avahi-app
 CONFIGURE_ARGS+=	--with-avahi
 .else
 CONFIGURE_ARGS+=	--without-avahi
@@ -163,6 +163,7 @@ CONFIGURE_ARGS+=	--without-openssl --without-ssl
 
 pre-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/libexec/nut
+	@${REINPLACE_CMD} -e 's/device-name\*/cdev/g' ${WRKSRC}/scripts/devd/nut-usb.conf
 
 .if ${PORT_OPTIONS:MDOCS}
 post-install:

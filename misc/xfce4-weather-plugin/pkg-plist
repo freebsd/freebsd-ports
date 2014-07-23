@@ -1,4 +1,3 @@
-lib/xfce4/panel/plugins/libweather.la
 lib/xfce4/panel/plugins/libweather.so
 share/icons/hicolor/48x48/apps/xfce4-weather.png
 share/locale/ar/LC_MESSAGES/xfce4-weather-plugin.mo

@@ -3044,6 +3044,7 @@
     SUBDIR += p5-Tree-Simple-VisitorFactory
     SUBDIR += p5-Type-Tie
     SUBDIR += p5-Type-Tiny
+    SUBDIR += p5-Type-Tiny-XS
     SUBDIR += p5-Types-Path-Tiny
     SUBDIR += p5-Types-Serialiser
     SUBDIR += p5-UDCode
@@ -3563,6 +3564,7 @@
     SUBDIR += py-archetypes.schemaextender
     SUBDIR += py-argh
     SUBDIR += py-argparse
+    SUBDIR += py-args
     SUBDIR += py-asn1
     SUBDIR += py-asn1-modules
     SUBDIR += py-aspects
@@ -3597,6 +3599,7 @@
     SUBDIR += py-cjson
     SUBDIR += py-cld
     SUBDIR += py-click
+    SUBDIR += py-clint
     SUBDIR += py-clonedigger
     SUBDIR += py-cmdln
     SUBDIR += py-cog
@@ -3906,6 +3909,7 @@
     SUBDIR += py-trace2html
     SUBDIR += py-traits
     SUBDIR += py-transaction
+    SUBDIR += py-trollius
     SUBDIR += py-turbocheetah
     SUBDIR += py-turbojson
     SUBDIR += py-turbojson11
@@ -3940,6 +3944,7 @@
     SUBDIR += py-xattr
     SUBDIR += py-xcaplib
     SUBDIR += py-xdg
+    SUBDIR += py-xerox
     SUBDIR += py-xmltodict
     SUBDIR += py-xoltar-toolkit
     SUBDIR += py-yaml

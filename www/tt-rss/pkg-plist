@@ -1999,7 +1999,6 @@
 %%WWWDIR%%/lib/scriptaculous/controls.js
 %%WWWDIR%%/lib/scriptaculous/effects.js
 %%WWWDIR%%/lib/scriptaculous/scriptaculous.js
-%%WWWDIR%%/lib/sphinxapi.php
 %%WWWDIR%%/lib/timezones.txt
 %%WWWDIR%%/lib/xsl_mop-up.js
 %%WWWDIR%%/locale/.htaccess
@@ -2007,10 +2006,16 @@
 %%WWWDIR%%/locale/ca_CA/LC_MESSAGES/messages.po
 %%WWWDIR%%/locale/cs_CZ/LC_MESSAGES/messages.mo
 %%WWWDIR%%/locale/cs_CZ/LC_MESSAGES/messages.po
+%%WWWDIR%%/locale/da_DA/LC_MESSAGES/messages.mo
+%%WWWDIR%%/locale/da_DA/LC_MESSAGES/messages.po
 %%WWWDIR%%/locale/de_DE/LC_MESSAGES/messages.mo
 %%WWWDIR%%/locale/de_DE/LC_MESSAGES/messages.po
+%%WWWDIR%%/locale/el_GR/LC_MESSAGES/messages.mo
+%%WWWDIR%%/locale/el_GR/LC_MESSAGES/messages.po
 %%WWWDIR%%/locale/es_ES/LC_MESSAGES/messages.mo
 %%WWWDIR%%/locale/es_ES/LC_MESSAGES/messages.po
+%%WWWDIR%%/locale/es_LA/LC_MESSAGES/messages.mo
+%%WWWDIR%%/locale/es_LA/LC_MESSAGES/messages.po
 %%WWWDIR%%/locale/fi_FI/LC_MESSAGES/messages.mo
 %%WWWDIR%%/locale/fi_FI/LC_MESSAGES/messages.po
 %%WWWDIR%%/locale/fr_FR/LC_MESSAGES/messages.mo
@@ -2033,6 +2038,8 @@
 %%WWWDIR%%/locale/pl_PL/LC_MESSAGES/messages.po
 %%WWWDIR%%/locale/pt_BR/LC_MESSAGES/messages.mo
 %%WWWDIR%%/locale/pt_BR/LC_MESSAGES/messages.po
+%%WWWDIR%%/locale/pt_PT/LC_MESSAGES/messages.mo
+%%WWWDIR%%/locale/pt_PT/LC_MESSAGES/messages.po
 %%WWWDIR%%/locale/ru_RU/LC_MESSAGES/messages.mo
 %%WWWDIR%%/locale/ru_RU/LC_MESSAGES/messages.po
 %%WWWDIR%%/locale/sv_SE/LC_MESSAGES/messages.mo
@@ -2058,6 +2065,7 @@
 %%WWWDIR%%/plugins/af_comics/filters/af_comics_twp.php
 %%WWWDIR%%/plugins/af_comics/init.php
 %%WWWDIR%%/plugins/af_fsckportal/init.php
+%%WWWDIR%%/plugins/af_habr/init.php
 %%WWWDIR%%/plugins/af_natgeo/init.php
 %%WWWDIR%%/plugins/af_redditimgur/init.php
 %%WWWDIR%%/plugins/af_sciam/init.php
@@ -2097,6 +2105,8 @@
 %%WWWDIR%%/plugins/note/note.png
 %%WWWDIR%%/plugins/nsfw/init.js
 %%WWWDIR%%/plugins/nsfw/init.php
+%%WWWDIR%%/plugins/search_sphinx/init.php
+%%WWWDIR%%/plugins/search_sphinx/sphinxapi.php
 %%WWWDIR%%/plugins/share/init.php
 %%WWWDIR%%/plugins/share/notshared.png
 %%WWWDIR%%/plugins/share/share.js
@@ -2144,6 +2154,8 @@
 %%WWWDIR%%/schema/versions/mysql/122.sql
 %%WWWDIR%%/schema/versions/mysql/123.sql
 %%WWWDIR%%/schema/versions/mysql/124.sql
+%%WWWDIR%%/schema/versions/mysql/125.sql
+%%WWWDIR%%/schema/versions/mysql/126.sql
 %%WWWDIR%%/schema/versions/mysql/13.sql
 %%WWWDIR%%/schema/versions/mysql/14.sql
 %%WWWDIR%%/schema/versions/mysql/15.sql
@@ -2266,6 +2278,8 @@
 %%WWWDIR%%/schema/versions/pgsql/122.sql
 %%WWWDIR%%/schema/versions/pgsql/123.sql
 %%WWWDIR%%/schema/versions/pgsql/124.sql
+%%WWWDIR%%/schema/versions/pgsql/125.sql
+%%WWWDIR%%/schema/versions/pgsql/126.sql
 %%WWWDIR%%/schema/versions/pgsql/13.sql
 %%WWWDIR%%/schema/versions/pgsql/14.sql
 %%WWWDIR%%/schema/versions/pgsql/15.sql
@@ -2393,6 +2407,7 @@
 @dirrm %%WWWDIR%%/plugins/swap_jk
 @dirrm %%WWWDIR%%/plugins/shorten_expanded
 @dirrm %%WWWDIR%%/plugins/share
+@dirrm %%WWWDIR%%/plugins/search_sphinx
 @dirrm %%WWWDIR%%/plugins/nsfw
 @dirrm %%WWWDIR%%/plugins/note
 @dirrm %%WWWDIR%%/plugins/no_url_hashes
@@ -2415,6 +2430,7 @@
 @dirrm %%WWWDIR%%/plugins/af_sciam
 @dirrm %%WWWDIR%%/plugins/af_redditimgur
 @dirrm %%WWWDIR%%/plugins/af_natgeo
+@dirrm %%WWWDIR%%/plugins/af_habr
 @dirrm %%WWWDIR%%/plugins/af_fsckportal
 @dirrm %%WWWDIR%%/plugins/af_comics/filters
 @dirrm %%WWWDIR%%/plugins/af_comics
@@ -2430,6 +2446,8 @@
 @dirrm %%WWWDIR%%/locale/sv_SE
 @dirrm %%WWWDIR%%/locale/ru_RU/LC_MESSAGES
 @dirrm %%WWWDIR%%/locale/ru_RU
+@dirrm %%WWWDIR%%/locale/pt_PT/LC_MESSAGES
+@dirrm %%WWWDIR%%/locale/pt_PT
 @dirrm %%WWWDIR%%/locale/pt_BR/LC_MESSAGES
 @dirrm %%WWWDIR%%/locale/pt_BR
 @dirrm %%WWWDIR%%/locale/pl_PL/LC_MESSAGES
@@ -2452,10 +2470,16 @@
 @dirrm %%WWWDIR%%/locale/fr_FR
 @dirrm %%WWWDIR%%/locale/fi_FI/LC_MESSAGES
 @dirrm %%WWWDIR%%/locale/fi_FI
+@dirrm %%WWWDIR%%/locale/es_LA/LC_MESSAGES
+@dirrm %%WWWDIR%%/locale/es_LA
 @dirrm %%WWWDIR%%/locale/es_ES/LC_MESSAGES
 @dirrm %%WWWDIR%%/locale/es_ES
+@dirrm %%WWWDIR%%/locale/el_GR/LC_MESSAGES
+@dirrm %%WWWDIR%%/locale/el_GR
 @dirrm %%WWWDIR%%/locale/de_DE/LC_MESSAGES
 @dirrm %%WWWDIR%%/locale/de_DE
+@dirrm %%WWWDIR%%/locale/da_DA/LC_MESSAGES
+@dirrm %%WWWDIR%%/locale/da_DA
 @dirrm %%WWWDIR%%/locale/cs_CZ/LC_MESSAGES
 @dirrm %%WWWDIR%%/locale/cs_CZ
 @dirrm %%WWWDIR%%/locale/ca_CA/LC_MESSAGES

@@ -2,42 +2,95 @@
 # $FreeBSD$
 
 # This file is used to tune build time options.
-# Please refer FEATURES file distributed with the source for details.
 
-OPTIONS_DEFINE+=	FFR
+OPTIONS_GROUP+=		DEVELOPER
+DEVELOPER_DESC=		Options useful for OpenDKIM development
+
+OPTIONS_GROUP_DEVELOPER=	ALLSYMBOLS CODECOVERAGE DEBUG
+
+ALLSYMBOLS_DESC=	Export all internal symbols for better test coverage
+ALLSYMBOLS_CONFIGURE_ENABLE=	allsymbols
+
+CODECOVERAGE_DESC=	Enable internal code-coverage/profiling
+CODECOVERAGE_CONFIGURE_ENABLE=	codecoverage
+
+DEBUG_DESC=		Build with debug symbols
+DEBUG_CONFIGURE_ENABLE=	debug
+
+## Please refer FEATURES file distributed with the source for details.
+
 FFR_DESC=		Use features marked as For-Future-Releases
 
 OPTIONS_GROUP+=		FFR
-OPTIONS_GROUP_FFR=	ADSP_LISTS ALLSYMBOLS ATPS CODECOVERAGE \
-			DB_HANDLE_POOLS DEFAULT_SENDER DIFFHEADERS \
-			DKIM_REPUTATION ERLANG IDENTITY_HEADER LCOV \
+
+## _FFR_DNSSEC is referenced in the code, but does not appear to do
+## anything much.
+
+OPTIONS_GROUP_FFR=	ADSP_LISTS ATPS DB_HANDLE_POOLS \
+			DEFAULT_SENDER DIFFHEADERS IDENTITY_HEADER \
 			LDAP_CACHING POSTGRES_RECONNECT_HACK \
-			RATE_LIMIT RBL REDIRECT REPLACE_RULES REPRRD \
-			REPUTATION RESIGN SENDER_MACRO SOCKETDB \
-			STATSEXT VBR XML
+			RATE_LIMIT RBL REPLACE_RULES REPRRD \
+			REPUTATION RESIGN SENDER_MACRO \
+			SOCKETDB STATS STATSEXT VBR
 
 ADSP_LISTS_DESC=		ADSP filtering for lists (experimental)
-ALLSYMBOLS_DESC=		Export internal symbols for test
+ADSP_LISTS_CONFIGURE_ENABLE=	adsp_lists
+
 ATPS_DESC=			Authorized Third Party Sign check
-CODECOVERAGE_DESC=		Include coverage/profile code
+ATPS_CONFIGURE_ENABLE=		atps
+
 DB_HANDLE_POOLS_DESC=		Database handle pools (experimental)
+DB_HANDLE_POOLS_CONFIGURE_ENABLE=	db_handle_pools
+
 DEFAULT_SENDER_DESC=		Default sender address
+DEFAULT_SENDER_CONFIGURE_ENABLE=default_sender
+
 DIFFHEADERS_DESC=		Compare signed and verified headers (experimental)
-DKIM_REPUTATION_DESC=		DKIM reputation check (experimental)
-ERLANG_DESC=			Support for Erlang datasets
+DIFFHEADERS_CONFIGURE_ENABLE=	diffheaders
+
 IDENTITY_HEADER_DESC=		Special header to set identity
-LCOV_DESC=			Profiling with LCOV
+IDENTITY_HEADER_CONFIGURE_ENABLE=	identity_header
+
 LDAP_CACHING_DESC=		LDAP query piggybacking and caching
+LDAP_CACHING_CONFIGURE_ENABLE=	ldap_caching
+LDAP_CACHING_USE=		OPENLDAP=yes
+
+LUA_ONLY_SIGNING=		Message signing by Lua only
+LUA_ONLY_SIGNING_CONFIGURE_ENABLE=	lua_only_signing
+
 POSTGRES_RECONNECT_HACK_DESC=	PostgreSQL connection error detection bug hack
+POSTGRES_RECONNECT_HACK_CONFIGURE_ENABLE=	postgresql_reconnect_hack
+
 RATE_LIMIT_DESC=		DKIM based rate limiting support
+RATE_LIMIT_CONFIGURE_ENABLE=	rate_limit
+
 RBL_DESC=			Realtime Blacklist query support
-REDIRECT_DESC=			Redirecting failed verification to a mailbox
+RBL_CONFIGURE_ENABLE=		rbl
+
 REPLACE_RULES_DESC=		String substition when signing
+REPLACE_RULES_CONFIGURE_ENABLE=	replace_rules
+
 REPRRD_DESC=			Support for collaborative reputation that uses rrdtool (experimental)
+REPRRD_CONFIGURE_ENABLE=	reprrd
+REPRRD_LIB_DEPENDS=		librrd.so:${PORTSDIR}/databases/rrdtool
+
 REPUTATION_DESC=		Reputation check (experimental)
+REPUTATION_CONFIGURE_ENABLE=	reputation
+
 RESIGN_DESC=			One-step resigning
+RESIGN_CONFIGURE_ENABLE=	resign
+
 SENDER_MACRO_DESC=		Macro to determine sender
+SENDER_MACRO_CONFIGURE_ENABLE=	sender_macro
+
 SOCKETDB_DESC=			Arbitrary socket data sets
-STATSEXT_DESC=			Extended stats
+SOCKETDB_CONFIGURE_ENABLE=	socketdb
+
+STATS_DESC=			Per-message and per-signature statistics
+STATS_CONFIGURE_ENABLE=		stats
+
+STATSEXT_DESC=			Localized stats extensions
+STATSEXT_CONFIGURE_ENABLE=	statsext
+
 VBR_DESC=			Vouch-By-Reference support
-XML_DESC=			Prefer textproc/libxml2 to devel/jansson for JSON processing
+VBR_CONFIGURE_ENABLE=		vbr

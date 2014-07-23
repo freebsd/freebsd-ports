@@ -25,6 +25,8 @@ MAKE_ENV=	BDBINCLUDE="-I${BDB_INCLUDE_DIR}" \
 
 SUB_FILES=	pkg-message
 
+OPTIONS_DEFINE=	DOCS
+
 post-extract:
 	@: > ${WRKSRC}/Makefile.local
 	@${REINPLACE_CMD} 's/-ccopt -pg //' ${WRKSRC}/Makefile

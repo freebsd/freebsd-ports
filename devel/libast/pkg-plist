@@ -19,8 +19,8 @@ include/libast/objpair.h
 include/libast/sysdefs.h
 include/libast/vector_if.h
 lib/libast.a
-lib/libast.la
 lib/libast.so
 lib/libast.so.2
+lib/libast.so.2.0.1
 share/aclocal/libast.m4
 @dirrm include/libast

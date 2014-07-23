@@ -1,17 +1,8 @@
-GnuTLS is a portable ANSI C based library which implements the TLS 1.0 and
-SSL 3.0 protocols. The library does not include any patented algorithms and
-is available under the GNU Lesser GPL license. 
-
-Important features of the GnuTLS library include: 
-- Thread safety
-- Support for both TLS 1.0 and SSL 3.0 protocols
-- Support for both X.509 and OpenPGP certificates
-- Support for basic parsing and verification of certificates
-- Support for SRP for TLS authentication
-- Support for TLS Extension mechanism
-- Support for TLS Compression Methods
-
-Additionaly GnuTLS provides an emulation API for the widely used 
-OpenSSL library, to ease integration with existing applications. 
+GnuTLS is a secure communications library implementing the SSL, TLS and DTLS
+protocols and technologies around them.  It provides a simple C language
+application programming interface (API) to access the secure communications
+protocols as well as APIs to parse and write X.509, PKCS #12, OpenPGP and
+other required structures.  It is aimed to be portable and efficient with
+focus on security and interoperability.
 
 WWW: http://www.gnutls.org/

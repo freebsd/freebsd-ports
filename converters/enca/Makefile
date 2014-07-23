@@ -24,6 +24,8 @@ CONFIGURE_ARGS=	--with-html-dir=${DOCSDIR}
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
+OPTIONS_DEFINE=	DOCS
+
 post-patch::
 	@${REINPLACE_CMD} -e 's/$$(LN_S)/$$(LN_S) -f/' ${WRKSRC}/src/Makefile.in
 

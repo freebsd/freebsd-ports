@@ -2,6 +2,7 @@
 
 PORTNAME=	gmtk
 PORTVERSION=	1.0.8
+PORTREVISION=	1
 CATEGORIES=	multimedia gnome devel
 MASTER_SITES=	GOOGLE_CODE
 
@@ -13,11 +14,14 @@ LICENSE=	GPLv2
 BUILD_DEPENDS=	p5-XML-Parser>=0:${PORTSDIR}/textproc/p5-XML-Parser
 
 GNU_CONFIGURE=	yes
+INSTALL_TARGET=	install-strip
+USES=		gmake libtool pathfix perl5 pkgconfig
 USE_GNOME=	glib20
 USE_LDCONFIG=	yes
 USE_PERL5=	build
 USE_XORG=	x11
-USES=		pathfix pkgconfig perl5 gmake
+
+CPPFLAGS+=	-I${LOCALBASE}/include
 
 PORTDOCS=	AUTHORS COPYING ChangeLog INSTALL NEWS README
 
@@ -27,7 +31,7 @@ GIO_DESC=	Use GIO for file I/O
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MALSA}
-LIB_DEPENDS+=	asound:${PORTSDIR}/audio/alsa-lib
+LIB_DEPENDS+=	libasound.so:${PORTSDIR}/audio/alsa-lib
 CONFIGURE_ARGS+=	--with-alsa
 .else
 CONFIGURE_ARGS+=	--without-alsa
@@ -68,8 +72,6 @@ CONFIGURE_ARGS+=	--with-pulseaudio
 .else
 CONFIGURE_ARGS+=	--without-pulseaudio
 .endif
-
-CPPFLAGS+=	-I${LOCALBASE}/include
 
 .if empty(PORT_OPTIONS:MDOCS)
 post-patch:

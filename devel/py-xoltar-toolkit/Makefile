@@ -14,6 +14,8 @@ COMMENT=	Functional programming, lazy expressions, and thread pools for Python
 USE_PYTHON=	2
 NO_WRKSUBDIR=	yes
 
+OPTIONS_DEFINE=	DOCS
+
 do-build:
 	@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${WRKSRC}
 	@${PYTHON_CMD} -O ${PYTHON_LIBDIR}/compileall.py ${WRKSRC}

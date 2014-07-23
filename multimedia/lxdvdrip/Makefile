@@ -46,6 +46,8 @@ DOCS=	Changelog.de Changelog.en Changelog.fr \
 		README.dvdwizard.DE README.dvdwizard.EN README.dvdwizard.FR \
 		TODO freebsd.doc
 
+OPTIONS_DEFINE=	DOCS EXAMPLES
+
 post-patch:
 	@${REINPLACE_CMD} -E \
 		-e 's|playwave[[:space:]]+-r[[:space:]]+|wavplay -s|' \

@@ -11,17 +11,16 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A PHP script encryption tool
 
-PKGMESSAGE=	${WRKDIR}/pkg-message
-
 CRYPTKEY?=	11152, 368, 192, 1281, 62
 
 USE_AUTOTOOLS=	libtool
 USE_PHP=	zlib
 USE_PHPIZE=	yes
+PLIST_SUB=	PHP_EXTDIR="${PHP_EXT_DIR}"
+SUB_FILES=	pkg-message
 
-CONFIGURE_ARGS+=--enable-php_screw=shared
+CONFIGURE_ARGS+=	--enable-php_screw=shared
 
-NO_STAGE=	yes
 pre-everything::
 	@${ECHO} ""
 	@${ECHO} "To achieve real security, define your own encryption"
@@ -40,16 +39,11 @@ do-build:
 	@(cd ${BUILD_WRKSRC}/tools; ${SETENV} ${MAKE_ENV} ${MAKE} \
 		${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${ALL_TARGET})
 
-post-build:
-	@${SED} "s|%%LOCALBASE%%|${LOCALBASE}|g;s|%%PREFIX%%|${PREFIX}|g;s|%%PHP_EXT_DIR%%|${PHP_EXT_DIR}|g" \
-		${.CURDIR}/pkg-message > ${PKGMESSAGE}
 do-install:
-	@${MKDIR} ${PREFIX}/lib/php/${PHP_EXT_DIR}
+	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/php/${PHP_EXT_DIR}
 	@${INSTALL_DATA} ${WRKSRC}/modules/php_screw.so \
-		${PREFIX}/lib/php/${PHP_EXT_DIR}
-	@${INSTALL_PROGRAM} ${WRKSRC}/tools/screw ${PREFIX}/bin
-
-post-install:
-	@${CAT} ${PKGMESSAGE}
+		${STAGEDIR}${PREFIX}/lib/php/${PHP_EXT_DIR}
+	@${INSTALL_PROGRAM} ${WRKSRC}/tools/screw ${STAGEDIR}${PREFIX}/bin
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/php/${PHP_EXT_DIR}/php_screw.so
 
 .include <bsd.port.mk>

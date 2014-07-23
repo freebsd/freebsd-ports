@@ -26,6 +26,8 @@ DOCS_EN=	${RUBY_RD_FILES:N*.ja.rd} \
 DOCS_JA=	${RUBY_RD_FILES:M*.ja.rd} \
 		${RUBY_RD_HTML_FILES:M*.ja.html}
 
+OPTIONS_DEFINE=	DOCS
+
 do-install:
 	${MKDIR} ${STAGEDIR}${RUBY_SITELIBDIR}/
 	${INSTALL_DATA} ${WRKSRC}/lib/image_size.rb ${STAGEDIR}${RUBY_SITELIBDIR}/

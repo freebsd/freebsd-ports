@@ -13,7 +13,7 @@ EXTRACT_SUFX=	.lha
 MAINTAINER=	slaven@rezic.de
 COMMENT=	Full featured floating point expression evaluator
 
-USES=		lha
+USES=		lha readline
 
 PLIST_FILES=	bin/Eval
 

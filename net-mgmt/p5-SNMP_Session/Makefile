@@ -17,7 +17,7 @@ USE_PERL5=	configure
 
 DOCSDIR=	${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}
 
-.include <bsd.port.options.mk>
+OPTIONS_DEFINE=	DOCS
 
 post-patch:
 	${RM} ${WRKSRC}/lib/SNMP_Session.pm.orig

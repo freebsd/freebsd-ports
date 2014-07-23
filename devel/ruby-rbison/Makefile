@@ -23,6 +23,8 @@ EXAMPLES=	CalcFileLexer.rb CalcStringLexer.rb	\
 
 NO_BUILD=	yes
 
+OPTIONS_DEFINE=	DOCS
+
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/rbison ${STAGEDIR}${PREFIX}/bin/
 	${MKDIR} ${STAGEDIR}${RUBY_MODEXAMPLESDIR}

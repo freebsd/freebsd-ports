@@ -22,7 +22,6 @@
 %%QT_INCDIR%%/QtConcurrent/qtconcurrentversion.h
 %%QT_LIBDIR%%/cmake/Qt5Concurrent/Qt5ConcurrentConfig.cmake
 %%QT_LIBDIR%%/cmake/Qt5Concurrent/Qt5ConcurrentConfigVersion.cmake
-%%QT_LIBDIR%%/libQt5Concurrent.la
 %%QT_LIBDIR%%/libQt5Concurrent.prl
 %%QT_LIBDIR%%/libQt5Concurrent.so
 %%QT_LIBDIR%%/libQt5Concurrent.so.5

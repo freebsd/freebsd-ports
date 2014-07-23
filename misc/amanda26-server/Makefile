@@ -145,7 +145,7 @@ RUN_DEPENDS+=	aespipe:${PORTSDIR}/security/aespipe
 
 # If configure founds libcurl, automatically enabled it (with plist change).
 .if ${PORT_OPTIONS:MS3}
-LIB_DEPENDS+=	curl:${PORTSDIR}/ftp/curl
+LIB_DEPENDS+=	libcurl.so:${PORTSDIR}/ftp/curl
 CONFIGURE_ARGS+=	--enable-s3-device
 PLIST_SUB+=	S3DEVICE=''
 .else

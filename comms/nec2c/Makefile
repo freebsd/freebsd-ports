@@ -14,6 +14,8 @@ COMMENT=	Used to calculate antenna patterns useful to ham radio
 
 LIB_DEPENDS=	libccm.so:${PORTSDIR}/math/ccmath
 
+OPTIONS_DEFINE=	DOCS EXAMPLES
+
 post-patch:
 	${CP} ${FILESDIR}/carg.c  ${WRKSRC}
 

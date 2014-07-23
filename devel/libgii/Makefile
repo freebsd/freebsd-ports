@@ -13,6 +13,9 @@ COMMENT=	GGI API for input sources
 
 LICENSE=	MIT
 
+DEPRECATED=	Unmaintained upstream
+EXPIRATION_DATE=	2014-09-22
+
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 USES=		libtool:keepla tar:bzip2
 USE_LDCONFIG=	yes
@@ -50,10 +53,6 @@ PLIST_SUB+=	VGL=""
 CONFIGURE_ARGS+=--disable-vgl
 PLIST_SUB+=	VGL="@comment "
 .endif
-
-post-patch:
-	@${REINPLACE_CMD} '/^LDADD =/s,$$, $$(top_builddir)/gg/libgg.la,' \
-		${WRKSRC}/regress/gii/Makefile.in
 
 post-install:
 	${MV} ${STAGEDIR}${PREFIX}/etc/ggi/libgii.conf ${STAGEDIR}${PREFIX}/etc/ggi/libgii.conf.sample

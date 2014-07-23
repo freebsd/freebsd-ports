@@ -43,6 +43,8 @@ DOS2UNIX_REGEX=	.*\.(cpp|h|txt)
 #   have to be provided by the port to have working extensions
 CMAKE_ARGS+=	-DDISABLEDEPENDENCIES:BOOL=ON
 
+OPTIONS_DEFINE=	DOCS
+
 post-patch:
 	@${FIND} ${WRKSRC} -type f -a '(' -name '*.cpp' -o -name '*.h' ')' -print0 \
 		| ${XARGS} -0 -x -n10 \

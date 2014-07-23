@@ -11,7 +11,7 @@ DISTNAME=	BlockSolve95
 EXTRACT_SUFX=	.tar.Z
 DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	bf@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Software for the efficient solution of large, sparse linear systems
 
 BUILD_DEPENDS=	${MPIDIR}/lib/libmpich.a:${PORTSDIR}/net/mpich2

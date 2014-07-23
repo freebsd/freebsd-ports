@@ -7,7 +7,7 @@ PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	SF
 
-MAINTAINER=	erik@bz.bzflag.bz
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Debugging library for OpenGL
 
 OPTIONS_DEFINE=	AVCODEC GUI THREADS
@@ -39,13 +39,13 @@ NO_STAGE=	yes
 
 .if ${PORT_OPTIONS:MAVCODEC}
 CONFIGURE_ARGS+=--with-lavc
-LIB_DEPENDS+=	avcodec.1:${PORTSDIR}/multimedia/ffmpeg
+LIB_DEPENDS+=	libavcodec.so.1:${PORTSDIR}/multimedia/ffmpeg
 .else
 CONFIGURE_ARGS+=--without-lavc
 .endif
 
 .if ${PORT_OPTIONS:MGUI}
-LIB_DEPENDS+=	gtkglext-x11-1.0:${PORTSDIR}/x11-toolkits/gtkglext
+LIB_DEPENDS+=	libgtkglext-x11-1.0.so:${PORTSDIR}/x11-toolkits/gtkglext
 CONFIGURE_ARGS+=--with-gtk --with-gtkglext
 .else
 CONFIGURE_ARGS+=--without-gtk --without-gtkglext

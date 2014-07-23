@@ -16,10 +16,10 @@ RUN_DEPENDS=	p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
 	        p5-XML-Simple>=0:${PORTSDIR}/textproc/p5-XML-Simple \
 		p5-Crypt-SSLeay>=0:${PORTSDIR}/security/p5-Crypt-SSLeay
 
-.if !defined(WITHOUT_X11)
+#.if !defined(WITHOUT_X11)
 # some work to do here
 #RUN_DEPENDS+=	p5-Tk>=0:${PORTSDIR}/x11-toolkits/p5-Tk
-.endif
+#.endif
 
 USES=		perl5 shebangfix
 SHEBANG_FILES=	webinject.pl

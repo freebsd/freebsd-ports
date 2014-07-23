@@ -12,7 +12,7 @@ COMMENT=	Highly portable, general purpose CAS (Computer Algebra System)
 
 LICENSE=	GPLv2
 
-USES=		gmake tar:bzip2
+USES=		gmake tar:bzip2 readline
 
 MAKEFILE=	makefile
 

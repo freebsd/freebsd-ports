@@ -8,7 +8,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	http://ti.arc.nasa.gov/m/project/nasa-vision-workbench/
 DISTNAME=	VisionWorkbench-${PORTVERSION}
 
-MAINTAINER=	swills@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	General purpose image processing and computer vision library
 
 BROKEN=		Fails to configure

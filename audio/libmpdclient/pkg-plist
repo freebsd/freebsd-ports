@@ -32,9 +32,9 @@ include/mpd/sticker.h
 include/mpd/tag.h
 include/mpd/version.h
 lib/libmpdclient.a
-lib/libmpdclient.la
 lib/libmpdclient.so
 lib/libmpdclient.so.2
+lib/libmpdclient.so.2.0.9
 libdata/pkgconfig/libmpdclient.pc
 share/vala/vapi/libmpdclient.vapi
 %%DOCSDIR%%/COPYING

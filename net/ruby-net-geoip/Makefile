@@ -21,6 +21,8 @@ INSTALL_TARGET=	site-install
 
 DOCS=	README
 
+OPTIONS_DEFINE=	DOCS
+
 post-install:
 	@${MKDIR} ${STAGEDIR}${RUBY_MODDOCDIR}
 .for f in ${DOCS}

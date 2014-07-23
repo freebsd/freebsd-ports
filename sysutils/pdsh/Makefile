@@ -51,7 +51,7 @@ PLIST_SUB+=		NETGROUP="@comment "
 
 .if ${PORT_OPTIONS:MREADLINE}
 CONFIGURE_ARGS+=	--with-readline
-LIB_DEPENDS+=		readline:${PORTSDIR}/devel/readline
+LIB_DEPENDS+=		libreadline.so.6:${PORTSDIR}/devel/readline
 .else
 CONFIGURE_ARGS+=	--without-readline
 .endif

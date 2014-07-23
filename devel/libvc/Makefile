@@ -14,6 +14,8 @@ USES=		bison libtool tar:bzip2
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
+OPTIONS_DEFINE=	DOCS
+
 post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for DOC in AUTHORS ChangeLog NEWS README THANKS doc/rfc2426.txt

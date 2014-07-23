@@ -26,7 +26,7 @@ INSTALL_TARGET=	install-strip
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-OPTIONS_DEFINE=	SMB
+OPTIONS_DEFINE=	SMB DOCS
 
 .include <bsd.port.options.mk>
 

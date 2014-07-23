@@ -8,7 +8,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	SF/idled/${PORTNAME}/${PORTVERSION}/
 
 MAINTAINER=	cy@FreeBSD.org
-COMMENT=	A daemon that logs out idle users and those users hogging resources
+COMMENT=	Daemon that logs out idle users and those users hogging resources
 
 USE_RC_SUBR=	${PORTNAME}
 

@@ -8,7 +8,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	http://linuxfocus.org/~guido/
 
 MAINTAINER=	samm@os2.kiev.ua
-COMMENT=	A minimalistic tool for keeping filesystems in synchronization
+COMMENT=	Minimalistic tool for keeping filesystems in synchronization
 
 USES=		gmake
 

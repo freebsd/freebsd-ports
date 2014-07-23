@@ -46,6 +46,8 @@ EXCEPTFILES=	${STAGEDIR}${PREFIX}/${PHPBBDIR}/install/install.php \
 		${STAGEDIR}${PREFIX}/${PHPBBDIR}/install/upgrade.php \
 		${STAGEDIR}${PREFIX}/${PHPBBDIR}/install/update_to_latest.php
 
+OPTIONS_DEFINE=	DOCS
+
 options:
 	@ ${ECHO_MSG} "===>  Build options for ${PKGNAME}:"
 	@ ${CAT} ${PKGOPTS}

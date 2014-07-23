@@ -52,7 +52,7 @@ WORDSIZE=	64
 ENDIANESS=	le
 PLIST_SUB+=	AMD64="@comment "
 .elif ${ARCH} == "amd64"
-MAINTAINER=	bzeeb+freebsdports@zabbadoz.net
+MAINTAINER=	ports@FreeBSD.org
 PORTVERSION=	1.1
 PORTREVISION=	2
 AMD64_PATCHES=	p-amd64-common p-amd64-gcc p-amd64-gcc-321-322 p-amd64-gcchacks \

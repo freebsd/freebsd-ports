@@ -7,7 +7,7 @@ PORTREVISION=	3
 CATEGORIES=	lang
 MASTER_SITES=	http://www.canonware.com/download/onyx/
 
-MAINTAINER=	jasone@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Embeddable stack-based threaded interpreted language
 
 BUILD_DEPENDS=	cook:${PORTSDIR}/devel/cook

@@ -34,7 +34,6 @@
 %%QT_INCDIR%%/QtPrintSupport/qtprintsupportversion.h
 %%QT_LIBDIR%%/cmake/Qt5PrintSupport/Qt5PrintSupportConfig.cmake
 %%QT_LIBDIR%%/cmake/Qt5PrintSupport/Qt5PrintSupportConfigVersion.cmake
-%%QT_LIBDIR%%/libQt5PrintSupport.la
 %%QT_LIBDIR%%/libQt5PrintSupport.prl
 %%QT_LIBDIR%%/libQt5PrintSupport.so
 %%QT_LIBDIR%%/libQt5PrintSupport.so.5

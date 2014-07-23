@@ -10,7 +10,7 @@ MASTER_SITES=	http://www.cs.arizona.edu/mpd/download/ \
 DISTNAME=	${PORTNAME}.${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	kaiw27@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Concurrent programming language
 
 ONLY_FOR_ARCHS=	i386

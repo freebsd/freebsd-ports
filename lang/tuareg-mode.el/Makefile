@@ -7,7 +7,7 @@ PORTEPOCH=	1
 CATEGORIES=	lang elisp
 MASTER_SITES=	http://forge.ocamlcore.org/frs/download.php/882/
 
-MAINTAINER=	michael.grunewald@laposte.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Emacs major mode for editing Caml code
 
 USE_EMACS=	yes

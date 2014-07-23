@@ -25,12 +25,12 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
 CONFIGURE_ARGS+=--disable-alsa --disable-alsatest \
-		--disable-arts --disable-video-directfb
+		--disable-arts --disable-video-directfb --disable-video-ggi
 
 EXAMPLES=	test/*.c test/*.bmp test/*.dat test/*.xbm test/*.wav
 DOCS=		BUGS COPYING CREDITS README README-SDL.txt WhatsNew docs.html
 
-OPTIONS_DEFINE=		AALIB DOCS ESOUND EXAMPLES GGI NAS OPENGL OSS \
+OPTIONS_DEFINE=		AALIB DOCS ESOUND EXAMPLES NAS OPENGL OSS \
 			PULSEAUDIO SVGALIB X11
 OPTIONS_DEFAULT=	AALIB OPENGL OSS X11
 
@@ -44,8 +44,6 @@ AALIB_CONFIGURE_ENABLE=		video-aalib
 AALIB_LIB_DEPENDS=		libaa.so:${PORTSDIR}/graphics/aalib
 ESOUND_USE=			GNOME=esound
 ESOUND_CONFIGURE_ENABLE=	esd esdtest
-GGI_CONFIGURE_ENABLE=		video-ggi
-GGI_LIB_DEPENDS=		libggi.so:${PORTSDIR}/graphics/libggi
 NAS_CONFIGURE_ENABLE=		nas
 NAS_LIB_DEPENDS=		libaudio.so:${PORTSDIR}/audio/nas
 OPENGL_CONFIGURE_ENABLE=	video-opengl

@@ -7,7 +7,7 @@ CATEGORIES=	irc
 MASTER_SITES=	ftp://ftp.funet.fi/pub/unix/irc/sic/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	sec@42.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Another 'Internet Relay Chat' Client
 
 GNU_CONFIGURE=	yes

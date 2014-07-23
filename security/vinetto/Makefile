@@ -9,7 +9,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-beta-${PORTVERSION}
 DISTNAME=	${PORTNAME}-beta-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A forensics tool to examine Thumbs.db files
+COMMENT=	Forensics tool to examine Thumbs.db files
 
 OPTIONS_DEFINE=	IMAGING
 OPTIONS_DEFAULT=	IMAGING

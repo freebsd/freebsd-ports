@@ -17,9 +17,8 @@ LICENSE=	GPLv2
 RUN_DEPENDS=	nagios:${PORTSDIR}/net-mgmt/nagios \
 		${PEARDIR}/HTML/Template/IT.php:${PORTSDIR}/devel/pear-HTML_Template_IT
 
-USE_BZIP2=	yes
 USE_MYSQL=	yes
-USES=		gettext
+USES=		gettext tar:bzip2
 USE_PHP=	mysql filter gettext session simplexml
 WANT_PHP_WEB=	yes
 
@@ -30,30 +29,17 @@ NAGIOSUSER?=	nagios
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}32
 
-SUB_FILES=	pkg-message pkg-install
-SUB_LIST=	WWWOWN=${WWWOWN} WWWGRP=${WWWGRP} NAGIOSUSER=${NAGIOSUSER}
+SUB_FILES=	pkg-message
+PLIST_SUB=	WWWOWN=${WWWOWN} WWWGRP=${WWWGRP} NAGIOSUSER=${NAGIOSUSER}
 
 PEARDIR?=	${LOCALBASE}/share/pear
 
-OPTIONS_DEFINE=	CURL FTP SSH2
+OPTIONS_DEFINE=	CURL FTP
 CURL_DESC=	Configure with cURL support
 FTP_DESC=	Configure with FTP support
-SSH2_DESC=	Configure with SSH2 support
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MCURL}
-USE_PHP+=	curl
-.endif
-
-.if ${PORT_OPTIONS:MFTP}
-USE_PHP+=	ftp
-.endif
-
-.if ${PORT_OPTIONS:MSSH2}
-USE_PHP+=	ssh2
-.endif
+CURL_USE=	PHP=curl
+FTP_USE=	PHP=ftp
 
 post-patch:
 	${REINPLACE_CMD} -e "s|\'/etc/nagiosql/|\'${ETCDIR}/|g" \
@@ -71,12 +57,15 @@ post-patch:
 		${WRKSRC}/install/install.php
 
 do-install:
-	@${MKDIR} ${WWWDIR}
-	@(cd ${WRKSRC} && ${COPYTREE_SHARE} . ${WWWDIR} "! ( -name *\.orig -o -name *\.bak )")
-	@${CHOWN} ${WWWOWN}:${WWWGRP} ${WWWDIR}/config
-
-post-install:
-	@${SH} ${PKGINSTALL} ${PORTNAME} POST-INSTALL
-	@${CAT} ${PKGMESSAGE}
+	@${MKDIR} ${STAGEDIR}${WWWDIR}
+	@${MKDIR} ${STAGEDIR}${ETCDIR}
+	@${MKDIR} ${STAGEDIR}${ETCDIR}/ssh
+	@${MKDIR} ${STAGEDIR}${ETCDIR}/hosts
+	@${MKDIR} ${STAGEDIR}${ETCDIR}/services
+	@${MKDIR} ${STAGEDIR}${ETCDIR}/backup
+	@${MKDIR} ${STAGEDIR}${ETCDIR}/backup/hosts
+	@${MKDIR} ${STAGEDIR}${ETCDIR}/backup/services
+	@${MKDIR} ${STAGEDIR}${ETCDIR}/backup/ssh
+	(cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${WWWDIR} "! ( -name *\.orig -o -name *\.bak )")
 
 .include <bsd.port.mk>

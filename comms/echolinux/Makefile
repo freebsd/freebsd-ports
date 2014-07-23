@@ -16,7 +16,7 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	libforms.so:${PORTSDIR}/x11-toolkits/xforms \
 		libgsm.so:${PORTSDIR}/audio/gsm
 
-.include <bsd.port.options.mk>
+OPTIONS_DEFINE=	DOCS
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|gcc|$${CC}|' -e 's|/usr/include/X11|$${LOCALBASE}/include|' \

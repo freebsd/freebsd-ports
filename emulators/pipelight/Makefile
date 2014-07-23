@@ -14,7 +14,8 @@ COMMENT=	Wrapper for using windows plugins in web browsers
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/gpg2:${PORTSDIR}/security/gnupg
+BUILD_DEPENDS=	${LOCALBASE}/bin/gpg2:${PORTSDIR}/security/gnupg \
+		${LOCALBASE}/bin/bash:${PORTSDIR}/shells/bash
 LIB_DEPENDS=	libxml2.so:${PORTSDIR}/textproc/libxml2
 RUN_DEPENDS=	${LOCALBASE}/bin/bash:${PORTSDIR}/shells/bash \
 		${LOCALBASE}/bin/wget:${PORTSDIR}/ftp/wget \
@@ -29,15 +30,16 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--verbose --wine-path=${LOCALBASE}/bin/wine --win32-prebuilt \
-		--win64-prebuilt --moz-plugin-path=${LOCALBASE}/lib/browser_plugins
-USES=		compiler:c11 gmake
+		--win64-prebuilt --moz-plugin-path=${LOCALBASE}/lib/browser_plugins \
+		--cxx=${CXX}
+USES=		compiler:gcc-c++11-lib gmake 
 MAKE_JOBS_UNSAFE=yes
 
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "i386"
-BUILD_DEPENDS+=	${LOCALBASE}/bin/wine:${PORTSDIR}/emulators/wine-devel
-RUN_DEPENDS+=	${LOCALBASE}/bin/wine:${PORTSDIR}/emulators/wine-devel
+BUILD_DEPENDS+=	${LOCALBASE}/bin/wine:${PORTSDIR}/emulators/wine-compholio
+RUN_DEPENDS+=	${LOCALBASE}/bin/wine:${PORTSDIR}/emulators/wine-compholio
 .elif ${ARCH} == "amd64"
 BUILD_DEPENDS+=	${LOCALBASE}/bin/wine:${PORTSDIR}/emulators/i386-wine-devel
 RUN_DEPENDS+=	${LOCALBASE}/bin/wine:${PORTSDIR}/emulators/i386-wine-devel

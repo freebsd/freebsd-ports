@@ -39,7 +39,7 @@ MAKE_ARGS+=	TARGET=Linux_GTK
 PKGNAMESUFFIX=	-gtk
 .else
 .if defined(WITH_SVGALIB)
-LIB_DEPENDS+=	vga:${PORTSDIR}/graphics/svgalib
+LIB_DEPENDS+=	libvga.so:${PORTSDIR}/graphics/svgalib
 MAKE_ARGS+=	TARGET=Linux_svgalib
 PKGNAMESUFFIX=	-svgalib
 .else

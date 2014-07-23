@@ -70,7 +70,7 @@ PLIST_SUB+=	CAMPAIGN="@comment "
 
 .if ${PORT_OPTIONS:MFRIBIDI}
 CMAKE_ARGS+=	-DENABLE_FRIBIDI=on
-LIB_DEPENDS+=	fribidi:${PORTSDIR}/converters/fribidi
+LIB_DEPENDS+=	libfribidi.so:${PORTSDIR}/converters/fribidi
 .else
 CMAKE_ARGS+=	-DENABLE_FRIBIDI=off
 .endif
@@ -83,7 +83,7 @@ CMAKE_ARGS+=	-DENABLE_LOW_MEM=off
 
 .if ${PORT_OPTIONS:MNOTIFY}
 CMAKE_ARGS+=	-DENABLE_NOTIFICATIONS=on
-LIB_DEPENDS+=	dbus-1:${PORTSDIR}/devel/dbus
+LIB_DEPENDS+=	libdbus-1.so:${PORTSDIR}/devel/dbus
 .else
 CMAKE_ARGS+=	-DENABLE_NOTIFICATIONS=off
 .endif

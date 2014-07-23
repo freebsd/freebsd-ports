@@ -7,7 +7,7 @@ MASTER_SITES=	SF/${PORTNAME}/OTS_${TAXYEAR}/v${PORTVERSION}
 DISTNAME=	${UPPORTNAME}${TAXYEAR}_${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	jhein@symmetricom.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	US tax prep software
 
 PLIST=		${WRKDIR}/pkg-plist

@@ -16,6 +16,8 @@ USE_EMACS=	yes
 NO_BUILD=	yes
 SUB_FILES=	pkg-message
 
+OPTIONS_DEFINE=	DOCS
+
 post-patch:
 	@${FIND} ${WRKSRC}/snippets -type d -empty | ${XARGS} ${RMDIR}
 

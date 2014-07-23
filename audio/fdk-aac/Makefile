@@ -3,6 +3,7 @@
 
 PORTNAME=	fdk-aac
 PORTVERSION=	0.1.3
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	SF/opencore-amr/${PORTNAME}
 
@@ -20,7 +21,7 @@ NOT_FOR_ARCHS_REASON=	not yet ported to this architecture
 LIBS+=		-lm
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-USES=		pathfix
+USES=		libtool pathfix
 
 post-build:
 	@${STRIP_CMD} ${WRKSRC}/.libs/libfdk-aac.so.0

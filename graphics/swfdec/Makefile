@@ -26,7 +26,7 @@ LDFLAGS+=	-Wl,-Bsymbolic -L${LOCALBASE}/lib
 PLIST_SUB=	VERSION=${PORTVERSION:R}
 
 OPTIONS_DEFINE=	PULSEAUDIO
-PULSEAUDIO_DESC="Enable the PulseAudio sound module"
+PULSEAUDIO_DESC=Enable the PulseAudio sound module
 
 .include <bsd.port.options.mk>
 
@@ -43,8 +43,6 @@ post-extract:
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-Wmissing-include-dirs||g' \
-	    	${WRKSRC}/configure
-	@${REINPLACE_CMD} '/^swfdec_test_LDADD =/s/$$/ -lgmodule-2.0/' \
-		${WRKSRC}/test/Makefile.in
+		${WRKSRC}/configure
 
 .include <bsd.port.mk>

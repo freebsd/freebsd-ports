@@ -28,6 +28,8 @@ DOCS=		AUTHORS INSTALL PROBLEMS README TIPS TODO \
 		doc/ddd-themes.pdf doc/ddd.pdf
 INFO=		ddd ddd-themes
 
+OPTIONS_DEFINE=	DOCS
+
 .if defined(MOTIFLIB)
 .if defined(MOTIF_STATIC)
 LIBXMDIR!=	${ECHO_CMD} ${MOTIFLIB} | ${SED} -e 's/\/libXm\.a//g' | ${AWK} '{print $$1}'

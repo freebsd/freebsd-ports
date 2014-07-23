@@ -45,7 +45,7 @@ LDFLAGS+=	${PTHREAD_LIBS}
 .endif
 
 .if ${PORT_OPTIONS:MPNG}
-LIB_DEPENDS+=	png15:${PORTSDIR}/graphics/png
+LIB_DEPENDS+=	libpng15.so:${PORTSDIR}/graphics/png
 CONFIGURE_ARGS+=	--with-libpng=${PREFIX}
 .else
 CONFIGURE_ARGS+=	--disable-png

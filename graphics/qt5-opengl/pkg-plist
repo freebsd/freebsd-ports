@@ -38,7 +38,6 @@
 %%QT_INCDIR%%/QtOpenGL/qtopenglversion.h
 %%QT_LIBDIR%%/cmake/Qt5OpenGL/Qt5OpenGLConfig.cmake
 %%QT_LIBDIR%%/cmake/Qt5OpenGL/Qt5OpenGLConfigVersion.cmake
-%%QT_LIBDIR%%/libQt5OpenGL.la
 %%QT_LIBDIR%%/libQt5OpenGL.prl
 %%QT_LIBDIR%%/libQt5OpenGL.so
 %%QT_LIBDIR%%/libQt5OpenGL.so.5

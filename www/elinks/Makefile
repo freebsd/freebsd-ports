@@ -55,7 +55,7 @@ CONFIGURE_ARGS+=	--disable-nls
 #.endif
 
 .if ${PORT_OPTIONS:MGUILE}
-LIB_DEPENDS+=	guile:${PORTSDIR}/lang/guile
+LIB_DEPENDS+=	libguile.so:${PORTSDIR}/lang/guile
 CONFIGURE_ARGS+=	--with-guile
 .else
 CONFIGURE_ARGS+=	--without-guile
@@ -82,7 +82,7 @@ CONFIGURE_ARGS+=	--enable-fastmem
 .endif
 
 .if ${PORT_OPTIONS:MIDN}
-LIB_DEPENDS+=	idn:${PORTSDIR}/dns/libidn
+LIB_DEPENDS+=	libidn.so:${PORTSDIR}/dns/libidn
 CONFIGURE_ARGS+=	--with-idn
 .else
 CONFIGURE_ARGS+=	--without-idn
@@ -159,7 +159,7 @@ CONFIGURE_ARGS+=	--disable-cgi
 .endif
 
 .if ${PORT_OPTIONS:MXBELMARKS}
-LIB_DEPENDS+=	expat:${PORTSDIR}/textproc/expat2
+LIB_DEPENDS+=	libexpat.so:${PORTSDIR}/textproc/expat2
 CONFIGURE_ARGS+=	--enable-xbel --with-expat
 .else
 CONFIGURE_ARGS+=	--disable-xbel
@@ -176,7 +176,7 @@ CONFIGURE_ARGS+=	--enable-88-colors
 .if ${PORT_OPTIONS:MSPIDERMONKEY}
 BUILD_DEPENDS+=	${LOCALBASE}/lib/libjs.so:${PORTSDIR}/lang/spidermonkey17
 RUN_DEPENDS+=	js:${PORTSDIR}/lang/spidermonkey17
-LIB_DEPENDS+=	nspr4:${PORTSDIR}/devel/nspr
+LIB_DEPENDS+=	libnspr4.so:${PORTSDIR}/devel/nspr
 CFLAGS+=	-I${LOCALBASE}/include/nspr
 LDFLAGS+=	-lnspr4 -pthread -lpthread -lm
 CONFIGURE_ARGS+=	--enable-sm-scripting --with-spidermonkey
@@ -189,17 +189,13 @@ USES+=			iconv
 CONFIGURE_ARGS+=	${ICONV_CONFIGURE_ARG}
 .endif
 
-.if ${PORT_OPTIONS:MFASTMEM} && ${OSVERSION} > 1000000
-BROKEN=		segfaults on 10.X with fast mem enabled
-.endif
-
 #
 # Elinks will try to use it if exists
 #
 .if exists(/usr/include/execinfo.h)
 LDFLAGS+=	-lexecinfo
 .elif exists(${LOCALBASE}/include/execinfo.h)
-LIB_DEPENDS+=	execinfo.1:${PORTSDIR}/devel/libexecinfo
+LIB_DEPENDS+=	libexecinfo.so:${PORTSDIR}/devel/libexecinfo
 LDFLAGS+=	-L${LOCALBASE}/lib -lexecinfo
 .endif
 

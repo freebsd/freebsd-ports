@@ -18,4 +18,6 @@ USE_PYTHON=		yes
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_AUTOPLIST=	yes
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.mk>

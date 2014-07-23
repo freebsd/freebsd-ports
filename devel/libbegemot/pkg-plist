@@ -1,7 +1,6 @@
 include/begemot.h
 include/rpoll.h
 lib/libbegemot.a
-lib/libbegemot.la
 lib/libbegemot.so
 lib/libbegemot.so.1
 man/man1/cstrc.1.gz

@@ -34,43 +34,15 @@ share/mime/packages/gnomint.xml
 @dirrmtry share/mime/packages
 @dirrmtry share/mime
 etc/gconf/schemas/gnomint.schemas
-@dirrmtry lib/pkgconfig
-%%NLS%%lib/locale/ca/LC_MESSAGES/gnomint.mo
-%%NLS%%@dirrmtry lib/locale/ca/LC_MESSAGES
-%%NLS%%@dirrmtry lib/locale/ca
-%%NLS%%lib/locale/cs/LC_MESSAGES/gnomint.mo
-%%NLS%%@dirrmtry lib/locale/cs/LC_MESSAGES
-%%NLS%%@dirrmtry lib/locale/cs
-%%NLS%%lib/locale/de/LC_MESSAGES/gnomint.mo
-%%NLS%%@dirrmtry lib/locale/de/LC_MESSAGES
-%%NLS%%@dirrmtry lib/locale/de
-%%NLS%%lib/locale/es/LC_MESSAGES/gnomint.mo
-%%NLS%%@dirrmtry lib/locale/es/LC_MESSAGES
-%%NLS%%@dirrmtry lib/locale/es
-%%NLS%%lib/locale/fi/LC_MESSAGES/gnomint.mo
-%%NLS%%@dirrmtry lib/locale/fi/LC_MESSAGES
-%%NLS%%@dirrmtry lib/locale/fi
-%%NLS%%lib/locale/fr/LC_MESSAGES/gnomint.mo
-%%NLS%%@dirrmtry lib/locale/fr/LC_MESSAGES
-%%NLS%%@dirrmtry lib/locale/fr
-%%NLS%%lib/locale/it/LC_MESSAGES/gnomint.mo
-%%NLS%%@dirrmtry lib/locale/it/LC_MESSAGES
-%%NLS%%@dirrmtry lib/locale/it
-%%NLS%%lib/locale/pt_BR/LC_MESSAGES/gnomint.mo
-%%NLS%%@dirrmtry lib/locale/pt_BR/LC_MESSAGES
-%%NLS%%@dirrmtry lib/locale/pt_BR
-%%NLS%%lib/locale/oc/LC_MESSAGES/gnomint.mo
-%%NLS%%@dirrmtry lib/locale/oc/LC_MESSAGES
-%%NLS%%@dirrmtry lib/locale/oc
-%%NLS%%lib/locale/ru/LC_MESSAGES/gnomint.mo
-%%NLS%%@dirrmtry lib/locale/ru/LC_MESSAGES
-%%NLS%%@dirrmtry lib/locale/ru
-%%NLS%%lib/locale/sk/LC_MESSAGES/gnomint.mo
-%%NLS%%@dirrmtry lib/locale/sk/LC_MESSAGES
-%%NLS%%@dirrmtry lib/locale/sk
-%%NLS%%lib/locale/sv/LC_MESSAGES/gnomint.mo
-%%NLS%%@dirrmtry lib/locale/sv/LC_MESSAGES
-%%NLS%%@dirrmtry lib/locale/sv
-%%NLS%%@dirrmtry lib/locale
-@dirrmtry etc/gconf/schemas
-@dirrmtry etc/gconf
+%%NLS%%share/locale/ca/LC_MESSAGES/gnomint.mo
+%%NLS%%share/locale/cs/LC_MESSAGES/gnomint.mo
+%%NLS%%share/locale/de/LC_MESSAGES/gnomint.mo
+%%NLS%%share/locale/es/LC_MESSAGES/gnomint.mo
+%%NLS%%share/locale/fi/LC_MESSAGES/gnomint.mo
+%%NLS%%share/locale/fr/LC_MESSAGES/gnomint.mo
+%%NLS%%share/locale/it/LC_MESSAGES/gnomint.mo
+%%NLS%%share/locale/pt_BR/LC_MESSAGES/gnomint.mo
+%%NLS%%share/locale/oc/LC_MESSAGES/gnomint.mo
+%%NLS%%share/locale/ru/LC_MESSAGES/gnomint.mo
+%%NLS%%share/locale/sk/LC_MESSAGES/gnomint.mo
+%%NLS%%share/locale/sv/LC_MESSAGES/gnomint.mo

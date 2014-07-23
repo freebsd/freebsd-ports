@@ -9,7 +9,7 @@ MASTER_SITES=	SF/${PORTNAME}/ProtoMol/${PORTVERSION}
 DISTNAME=	${PORTNAME}-${PORTVERSION}-tar.gz
 EXTRACT_SUFX=	# empty
 
-MAINTAINER=	sangwoos@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	OO, component based, framework for molecular dynamics (MD) simulations
 
 LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png \

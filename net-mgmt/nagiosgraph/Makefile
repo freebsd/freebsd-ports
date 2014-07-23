@@ -12,6 +12,7 @@ COMMENT=	Generate rrdtool graphs using performance data from nagios plugins
 
 RUN_DEPENDS=	rrdtool>=0:${PORTSDIR}/databases/rrdtool
 
+OPTIONS_DEFINE=		DOCS
 OPTIONS_SINGLE=		NAGIOS
 OPTIONS_SINGLE_NAGIOS=	NAGIOS35 NAGIOS4
 OPTIONS_DEFAULT=	NAGIOS35

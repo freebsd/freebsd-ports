@@ -13,6 +13,8 @@ LICENSE=	GPLv2
 
 ALL_TARGET=	irssistats
 
+OPTIONS_DEFINE=	DOCS
+
 post-patch:
 	${REINPLACE_CMD} -e 's|/etc/irssistats.conf|${PREFIX}/etc/irssistats.conf|g' ${WRKSRC}/irssistats.c
 	${REINPLACE_CMD} -e 's/gcc/$$(CC)/g' ${WRKSRC}/Makefile

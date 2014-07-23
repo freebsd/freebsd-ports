@@ -57,10 +57,10 @@ PLIST_SUB=	PORTVERSION=${PORTVERSION:R}
 OPTIONS_DEFINE=	BZIP2 DOCS DJVU FFTW FONTCONFIG FPX FREETYPE \
 		GRAPHVIZ GSLIB JPEG2000 JBIG JPEG LCMS2 LZMA LQR MODULES \
 		OPENEXR OPENMP PANGO PDF PERL PNG SVG TESTS TIFF WEBP WMF \
-		THREADS
+		THREADS X11
 OPTIONS_DEFAULT=	16BIT_PIXEL BZIP2 FFTW FONTCONFIG FPX FREETYPE \
 		JPEG2000 JBIG JPEG LCMS2 LZMA LQR MODULES PDF PERL PNG SVG \
-		TIFF WEBP WMF THREADS
+		TIFF WEBP WMF THREADS X11
 OPTIONS_GROUP=	HALFSUPPORTED
 OPTIONS_GROUP_HALFSUPPORTED=	16BIT_PIXEL HDRI
 
@@ -320,7 +320,7 @@ CONFIGURE_ARGS+=	--without-fontconfig
 
 # WMF (Windows Meta File) images
 .if ${PORT_OPTIONS:MWMF}
-. if !defined(WITHOUT_X11)
+. if ${PORT_OPTIONS:MX11}
 LIB_DEPENDS+=		libwmf.so:${PORTSDIR}/graphics/libwmf
 . else
 LIB_DEPENDS+=		libwmf.so:${PORTSDIR}/graphics/libwmf-nox11
@@ -334,7 +334,7 @@ PLIST_SUB+=		WMF="@comment "
 .endif
 
 # SVG (Scalable Vector Graphics) requires both libxml2 and X11
-.if ${PORT_OPTIONS:MSVG} && !defined(WITHOUT_X11)
+.if ${PORT_OPTIONS:MSVG} && ${PORT_OPTIONS:MX11}
 USE_GNOME+=		libxml2
 LIB_DEPENDS+=		librsvg-2.so:${PORTSDIR}/graphics/librsvg2
 CONFIGURE_ARGS+=	--with-rsvg --with-xml
@@ -345,7 +345,7 @@ CONFIGURE_ARGS+=	--without-rsvg --without-xml
 .endif
 
 # Pango support
-.if ${PORT_OPTIONS:MPANGO} && !defined(WITHOUT_X11)
+.if ${PORT_OPTIONS:MPANGO} && ${PORT_OPTIONS:MX11}
 USE_GNOME+=		pango
 PLIST_SUB+=		PANGO=""
 .else
@@ -358,7 +358,7 @@ PLIST_SUB+=		PANGO="@comment "
 USE_GHOSTSCRIPT=	yes
 .endif
 
-.if defined(WITHOUT_X11)
+.if ${PORT_OPTIONS:MX11}
 CONFIGURE_ARGS+=	--without-x
 CONFLICTS+=		ImageMagick-6*
 PLIST_SUB+=		X11='@comment '
@@ -388,7 +388,7 @@ pre-configure:
 	@${ECHO_CMD} '###################################################################'
 .endif
 
-.if ${PORT_OPTIONS:MSVG} && defined(WITHOUT_X11)
+.if ${PORT_OPTIONS:MSVG} && ${PORT_OPTIONS:NX11}
 	@${ECHO_CMD} NOTICE: SVG format support disabled, requires X11
 .endif
 

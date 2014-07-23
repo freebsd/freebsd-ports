@@ -46,9 +46,10 @@ create-plist:	extract
 	@${ECHO_CMD} '@dirrmtry share/twiki' >> ${PLIST}
 
 do-install:
-	@${INSTALL} -d ${TWDIR}/
-	@cd ${WRKSRC}/ && ${COPYTREE_SHARE} . ${TWDIR}/
-	@${SETENV} ${SCRIPTS_ENV} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
+	${MKDIR} ${STAGEDIR}${TWDIR}
+	(cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${TWDIR})
+# not required with stage
+#	@${SETENV} ${SCRIPTS_ENV} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
 make-twdep: extract
 	@echo "TWDEP=`grep -v ^# ${WRKSRC}/lib/TWiki/*/${PORTNAME}/DEPENDENCIES |\

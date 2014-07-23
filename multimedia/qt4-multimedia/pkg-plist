@@ -36,7 +36,6 @@
 %%QT_INCDIR%%/QtMultimedia/qaudiooutput.h
 %%QT_INCDIR%%/QtMultimedia/qvideoframe.h
 %%QT_INCDIR%%/QtMultimedia/qvideosurfaceformat.h
-%%QT_LIBDIR%%/libQtMultimedia.la
 %%QT_LIBDIR%%/libQtMultimedia.prl
 %%QT_LIBDIR%%/libQtMultimedia.so
 %%QT_LIBDIR%%/libQtMultimedia.so.4

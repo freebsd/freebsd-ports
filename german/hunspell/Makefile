@@ -17,8 +17,7 @@ LICENSE_COMB=	dual
 BUILD_DEPENDS=	aspell:${PORTSDIR}/textproc/aspell \
 		hunspell:${PORTSDIR}/textproc/hunspell
 
-USES=		gmake perl5 shebangfix
-USE_BZIP2=	yes
+USES=		gmake perl5 shebangfix tar:bzip2
 ALL_TARGET=	hunspell-all
 USE_PERL5=	build
 SHEBANG_FILES=	bin/*.pl

@@ -29,6 +29,8 @@ WX_UNICODE=	yes
 USE_GNOME=	atk	# Required by libwx_gtk2_aui-2.8.so
 USE_PYTHON=	yes
 
+OPTIONS_DEFINE=	DOCS
+
 PLIST_SUB=	OPSYS=${OPSYS}	\
 		DESKTOPDIR=${DESKTOPDIR:S|^${PREFIX}/||}
 

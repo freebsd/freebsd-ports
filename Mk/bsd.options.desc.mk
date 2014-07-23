@@ -7,8 +7,8 @@
 #  - OPTION_DESC?= must be 19 characters or less
 #  - OPTION description text must be 43 characters or less
 #
-# - This file's MAINTAINER is ports@FreeBSD.org so that entries can be added to
-#   it easily.  Any sweeping changes should be approved by portmgr.
+# - This file is maintained by ports@FreeBSD.org so that entries can be added
+#   to it easily.  Any sweeping changes should be approved by portmgr@.
 
 Options_Desc_MAINTAINER=	ports@FreeBSD.org
 
@@ -94,7 +94,7 @@ FREETYPE_DESC?=		TrueType font rendering support
 FREEXL_DESC?=		Excel file (.xls) support via FreeXL
 FREI0R_DESC?=		Frei0r video plugins support
 FRIBIDI_DESC?=		Bidirectional text support via GNU FriBidi
-FTP_DESC?=		FTP file transfer support
+FTP_DESC?=		FTP protocol support
 FTPS_DESC?=		FTP with SSL/TLS support
 FUSE_DESC?=		FUSE (Filesystem in Userspace) support
 GCONF_DESC?=		GConf configuration backend support
@@ -139,7 +139,7 @@ H323_DESC?=		H.323 codec support
 HAL_DESC?=		HAL (Hardware Abstraction Layer) support
 HDF5_DESC?=		HDF-5 data format support
 HPACK_DESC?=		Header Compression for HTTP/2.0 support
-HTTP2_DESC?=		HTTP/2.0 support
+HTTP2_DESC?=		HTTP protocol version 2.0 support
 HTTPD_DESC?=		httpd output streaming support
 HTTPS_DESC?=		HTTPS protocol support
 HUNSPELL_DESC?=		Spell checking support via Hunspell
@@ -173,13 +173,13 @@ KML_DESC?=		Keyhole Markup Language (KML) support
 KWALLET_DESC?=		KWallet password manager support
 LADSPA_DESC?=		LADSPA audio plugins support
 LAME_DESC?=		LAME MP3 audio encoder support
-LANG_AF_DESC?=		Africaans language support
+LANG_AF_DESC?=		Afrikaans language support
 LANG_AK_DESC?=		Akan language support
 LANG_AM_DESC?=		Armenian language support
 LANG_AR_DESC?=		Arabic language support
 LANG_AST_DESC?=		Asturian language support
 LANG_BB_DESC?=		Bengali (Bangladesh) language support
-LANG_BE_DESC?=		Byelorussian language support
+LANG_BE_DESC?=		Belarusian language support
 LANG_BG_DESC?=		Bulgarian language support
 LANG_BN_DESC?=		Bengali language support
 LANG_BR_DESC?=		Breton language support
@@ -275,12 +275,12 @@ LIBEXIF_DESC?=		EXIF metadata support via libexif
 LIBEXTRACTOR_DESC?=	Metadata extraction support
 LIBLO_DESC?=		Open Sound Control support via liblo
 LIBMNG_DESC?=		MNG animated images support via libmng
-LIBOIL_DESC?=		Inner loop optimizations support via liboil
+LIBOIL_DESC?=		Inner loop optimization support via liboil
 LIBPAPER_DESC?=		Paper size selection support via libpaper
 LIBRSVG2_DESC?=		SVG vector graphics support via librsvg2
-LIBVIRT_DESC?=		libvirt virtualization support
-LIBVISUAL_DESC?=	Audio visualisation support via libvisual
-LIBWMF_DESC?=		windows metafile format support
+LIBVIRT_DESC?=		Virtualization support via libvirt
+LIBVISUAL_DESC?=	Audio visualization support via libvisual
+LIBWMF_DESC?=		Windows Metafile format support
 LIBWRAP_DESC?=		TCP wrapper support
 LIBXINE_DESC?=		Multimedia codec support via libxine
 LIBXML2_DESC?=		XML parser support via libxml2
@@ -322,7 +322,7 @@ MPLS_DESC?=		MPLS support
 MPP_DESC?=		Musepack audio format support
 MSQL_DESC?=		mSQL database support
 MSSQL_DESC?=		Microsoft SQL Server support
-MTP_DESC?=		Media Tranfer Protocol support
+MTP_DESC?=		Media Transfer Protocol support
 MULTIBYTE_DESC?=	Multibyte character encoding support
 MUSEPACK_DESC?=		MPC audio format support
 MYSQL_DESC?=		MySQL database support
@@ -385,7 +385,7 @@ PROXY_DESC?=		Proxy support
 PS_DESC?=		PostScript document support
 PTH_DESC?=		Threading/multiprocessing via GNU Pth
 PULSEAUDIO_DESC?=	PulseAudio sound server support
-PYMALLOC_DESC?=		Use Python's internal malloc
+PYMALLOC_DESC?=		Use Python's internal malloc()
 PYTHON_DESC?=		Python bindings or support
 QT4_DESC?=		Qt 4 toolkit support
 QT5_DESC?=		Qt 5 toolkit support
@@ -443,7 +443,6 @@ TIFF_DESC?=		TIFF image format support
 TINYXML_DESC?=		XML parser support via TinyXML
 TK_DESC?=		Tk GUI toolkit support
 TLS_DESC?=		Secure network connection support via TLS
-TOMCAT5_DESC?=		Tomcat 5.x support
 TOMCAT6_DESC?=		Tomcat 6.x support
 TOMCAT7_DESC?=		Tomcat 7.x support
 TREMOR_DESC?=		Tremor audio decoder support
@@ -468,6 +467,7 @@ VORBIS_DESC?=		Ogg Vorbis audio codec support
 VPX_DESC?=		VP8/VP9 video codec support
 WAV_DESC?=		WAV audio format support
 WAVPACK_DESC?=		WavPack lossless audio format support
+WEBGL_DESC?=		WebGL 2D/3D graphics rendering support
 WEBKIT_DESC?=		WebKit webpage renderer support
 WEBP_DESC?=		WebP image format support
 WEBSERVER_DESC?=	Build and/or install internal web server

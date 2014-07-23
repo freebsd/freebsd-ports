@@ -3,7 +3,7 @@
 
 PORTNAME=	smpeg
 PORTVERSION=	0.4.4
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	multimedia
 MASTER_SITES=	ftp://sunsite.auc.dk/pub/os/linux/loki/open-source/smpeg/ \
 		${MASTER_SITE_GENTOO}
@@ -12,9 +12,9 @@ MASTER_SITE_SUBDIR=	distfiles
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Free MPEG1 video player library with sound support
 
-USE_AUTOTOOLS=	libtool
-USES=		gmake
 GNU_CONFIGURE=	yes
+INSTALL_TARGET=	install-strip
+USES=		gmake libtool
 USE_SDL=	sdl
 USE_LDCONFIG=	yes
 CONFIGURE_ENV=	GLBASE="${LOCALBASE}" \
@@ -27,9 +27,5 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 CONFIGURE_ARGS=	--disable-opengl-player \
 		--disable-gtk-player \
 		--enable-mmx
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|$${CONFIG_SHELL-/bin/sh} $$ac_aux_dir|$$ac_aux_dir|' \
-		${WRKSRC}/configure
 
 .include <bsd.port.mk>

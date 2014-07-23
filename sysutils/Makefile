@@ -357,7 +357,6 @@
     SUBDIR += gstreamer-plugins-hal
     SUBDIR += gstreamer1-plugins-cdio
     SUBDIR += gtk-imonc
-    SUBDIR += gtk-send-pr
     SUBDIR += hachoir-metadata
     SUBDIR += hachoir-subfile
     SUBDIR += hachoir-urwid
@@ -393,6 +392,7 @@
     SUBDIR += iat
     SUBDIR += installwatch
     SUBDIR += intel-pcm
+    SUBDIR += iocage
     SUBDIR += iogen
     SUBDIR += iograph
     SUBDIR += ioping

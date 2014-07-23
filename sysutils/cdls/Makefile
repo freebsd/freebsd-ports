@@ -7,7 +7,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	ftp://pd7w.fs2a.eu/
 
 MAINTAINER=	hans@dehartog.nl
-COMMENT=	A curses based file manager for system managers
+COMMENT=	Curses based file manager for system managers
 
 PLIST_FILES=	bin/cdls
 

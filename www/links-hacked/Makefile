@@ -45,14 +45,14 @@ CONFIGURE_ARGS+=	--disable-graphics --without-libjpeg --without-libtiff
 .endif
 
 .if ${PORT_OPTIONS:MSVGALIB}
-LIB_DEPENDS+=	vga.1:${PORTSDIR}/graphics/svgalib
+LIB_DEPENDS+=	libvga.so:${PORTSDIR}/graphics/svgalib
 CONFIGURE_ARGS+=	--with-svgalib
 .else
 CONFIGURE_ARGS+=	--without-svgalib
 .endif
 
 .if ${PORT_OPTIONS:MDIRECTFB}
-LIB_DEPENDS+=	directfb-1.4.5:${PORTSDIR}/devel/directfb
+LIB_DEPENDS+=	libdirectfb-1.4.so:${PORTSDIR}/devel/directfb
 CONFIGURE_ARGS+=	--with-directfb
 .else
 CONFIGURE_ARGS+=	--without-directfb

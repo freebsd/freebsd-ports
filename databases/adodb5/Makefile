@@ -24,7 +24,7 @@ NO_BUILD=	YES
 
 ADODB_SUBDIRS=	contrib datadict drivers lang pear perf session xsl
 
-OPTIONS_DEFINE=	TESTS
+OPTIONS_DEFINE=	TESTS DOCS
 TESTS_DESC=	Install tests
 
 .include <bsd.port.options.mk>

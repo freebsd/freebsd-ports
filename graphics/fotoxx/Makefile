@@ -26,6 +26,8 @@ INSTALL_TARGET=	install MANDIR=${PREFIX}/man/man1/
 
 LDFLAGS+=	-O3 -g -Wall -rdynamic -lexecinfo
 
+OPTIONS_DEFINE=	DOCS
+
 post-patch:
 	@# drop xdg-desktop-menu calls, they fail
 	${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|' \

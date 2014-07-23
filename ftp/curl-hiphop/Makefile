@@ -21,7 +21,6 @@ DESCR=		${.CURDIR}/pkg-descr
 
 MASTERDIR=	${.CURDIR}/../curl
 
-NO_STAGE=	yes
 do-install:
 .for dir in include lib
 	@cd ${WRKSRC}/${dir} && \

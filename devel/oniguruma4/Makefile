@@ -19,6 +19,8 @@ DOCS=		HISTORY README doc/*
 
 PKGNAMESUFFIX=	4
 
+OPTIONS_DEFINE=	DOCS EXAMPLES
+
 post-patch:
 	${REINPLACE_CMD} -e 's|echo aout|echo elf|' \
 		-e 's|freebsd1|freebsd1.|' \

@@ -12,10 +12,12 @@ DIST_SUBDIR=	${PORTNAME}
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Wallon hunspell dictionaries
 
+LICENSE=	LGPL21
+
 BUILD_DEPENDS=	aspell:${PORTSDIR}/textproc/aspell
 
-USE_BZIP2=	yes
 ALL_TARGET=	myspell
+USES=		tar:bzip2
 
 PLIST_FILES=	%%DATADIR%%/wa.aff \
 		%%DATADIR%%/wa.dic

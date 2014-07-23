@@ -1,10 +1,11 @@
 %%TWDIR%%/data/TWiki/TinyMCEPlugin.txt
 %%TWDIR%%/data/TWiki/TinyMCEQuickHelp.txt
+%%TWDIR%%/lib/TWiki/Plugins/TinyMCEPlugin.pm
 %%TWDIR%%/lib/TWiki/Plugins/TinyMCEPlugin/DEPENDENCIES
 %%TWDIR%%/lib/TWiki/Plugins/TinyMCEPlugin/MANIFEST
 %%TWDIR%%/lib/TWiki/Plugins/TinyMCEPlugin/build.pl
-%%TWDIR%%/lib/TWiki/Plugins/TinyMCEPlugin.pm
 %%TWDIR%%/pub/TWiki/TinyMCEPlugin/screenshot.gif
+%%TWDIR%%/pub/TWiki/TinyMCEPlugin/tinymce.gif
 %%TWDIR%%/pub/TWiki/TinyMCEPlugin/tinymce/changelog
 %%TWDIR%%/pub/TWiki/TinyMCEPlugin/tinymce/docs/index.html
 %%TWDIR%%/pub/TWiki/TinyMCEPlugin/tinymce/examples/example_advanced.css
@@ -477,7 +478,6 @@
 %%TWDIR%%/pub/TWiki/TinyMCEPlugin/tinymce/jscripts/tiny_mce/utils/mctabs.js
 %%TWDIR%%/pub/TWiki/TinyMCEPlugin/tinymce/jscripts/tiny_mce/utils/validate.js
 %%TWDIR%%/pub/TWiki/TinyMCEPlugin/tinymce/readme
-%%TWDIR%%/pub/TWiki/TinyMCEPlugin/tinymce.gif
 %%TWDIR%%/pub/TWiki/TinyMCEPlugin/twiki.js
 %%TWDIR%%/pub/TWiki/TinyMCEPlugin/twiki_src.js
 %%TWDIR%%/pub/TWiki/TinyMCEPlugin/twiki_tiny.js

@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	byacc
-PORTVERSION=	20140527
+PORTVERSION=	20140715
 CATEGORIES=	devel
 MASTER_SITES=	ftp://invisible-island.net/${PORTNAME}/
 
@@ -14,5 +14,8 @@ MAKEFILE=	makefile
 
 PLIST_FILES=	bin/yacc \
 		man/man1/yacc.1.gz
+
+regression-test: build
+	@cd ${WRKSRC}; ${MAKE_CMD} check
 
 .include <bsd.port.mk>

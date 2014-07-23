@@ -10,6 +10,7 @@ MAINTAINER=		alken@colorado.edu
 COMMENT=		Debugger for assembly level programs
 
 GNU_CONFIGURE=		yes
+USES=			readline
 
 PLIST_FILES=		bin/ald man/man8/ald.8.gz
 ONLY_FOR_ARCHS=		i386

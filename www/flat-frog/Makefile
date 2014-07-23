@@ -13,6 +13,8 @@ NO_BUILD=	yes
 USE_PHP=	yes
 USES=		zip
 
+OPTIONS_DEFINE=	DOCS EXAMPLES
+
 do-install:
 	${MKDIR} ${STAGEDIR}${DATADIR} ${STAGEDIR}${DATADIR}/plugins
 	${INSTALL_DATA} ${WRKSRC}/src/class.* ${STAGEDIR}${DATADIR}

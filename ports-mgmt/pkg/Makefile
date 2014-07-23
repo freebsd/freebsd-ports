@@ -1,26 +1,27 @@
 # $FreeBSD$
 
 PORTNAME=	pkg
-DISTVERSION=	1.3.0.rc4
-PORTREVISION=	1
+DISTVERSION=	1.3.0
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	\
-		http://highsecure.ru/distfiles/ \
-		http://pkg.semmy.ru/
+		http://files.etoilebsd.net/${PORTNAME}/ \
+		http://mirror.shatow.net/freebsd/${PORTNAME}/ \
+		LOCAL/portmgr
 
-MAINTAINER=	pkg@FreeBSD.org
+MAINTAINER=	portmgr@FreeBSD.org
 COMMENT=	Package manager
 
 LICENSE=	BSD2CLAUSE
 
+USES=		tar:xz uidfix
+
 # Disable CCACHE support because of the chicken/egg problem pkg should always
 # With no dependency at all
 NO_CCACHE=	yes
-WITH_DEBUG=	yes
-CFLAGS+=	-O0 -g
 USE_LDCONFIG=	yes
 USES=		libtool tar:xz
 GNU_CONFIGURE=	yes
+INSTALL_TARGET=	install-strip
 
 # Use a submake as 'deinstall install' needs to reevaluate PKG_CMD
 # so that pkg-static is used from the wrkdir
@@ -85,6 +86,5 @@ PKG_BIN=	${WRKSRC}/src/pkg-static
 post-install:
 	@${MV} ${STAGEDIR}${PREFIX}/lib/libpkg_static.a \
 		${STAGEDIR}${PREFIX}/lib/libpkg.a
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libpkg.so.2
 
 .include <bsd.port.post.mk>

@@ -13,7 +13,7 @@ COMMENT=	Apple Filing Protocol client library
 LICENSE=	GPLv2
 
 INSTALL_TARGET=	install-strip
-USES=		gmake iconv libtool tar:bzip2
+USES=		gmake iconv libtool tar:bzip2 readline
 USE_AUTOTOOLS=	aclocal autoheader automake autoconf libtoolize
 AUTOMAKE_ARGS=	--add-missing --copy --force
 USE_LDCONFIG=	yes

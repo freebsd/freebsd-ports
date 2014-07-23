@@ -7,7 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	editors
 MASTER_SITES=	SF/${PORTNAME}/Cream/${PORTVERSION}
 
-MAINTAINER=	jmohacsi@bsd.hu
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Gvim extension with many features
 
 RUN_DEPENDS=	${LOCALBASE}/bin/gvim:${PORTSDIR}/editors/vim

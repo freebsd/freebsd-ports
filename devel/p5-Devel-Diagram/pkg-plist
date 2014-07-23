@@ -4,14 +4,14 @@
 %%SITE_PERL%%/Devel/Diagram/Render/UXF20.pm
 %%SITE_PERL%%/Devel/Diagram/xsl/uxf20toHtml.xsl
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel/Diagram/.packlist
-%%PORTDOCS%%%%EXAMPLESDIR%%/ClassDiagram.pl
-%%PORTDOCS%%%%EXAMPLESDIR%%/cd-CGI.html
-%%PORTDOCS%%%%EXAMPLESDIR%%/cd-CPAN.html
-%%PORTDOCS%%%%EXAMPLESDIR%%/cd-DBI.html
-%%PORTDOCS%%%%EXAMPLESDIR%%/cd-HTML.html
-%%PORTDOCS%%%%EXAMPLESDIR%%/cd-IO.html
-%%PORTDOCS%%%%EXAMPLESDIR%%/cd-LWP.html
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ClassDiagram.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cd-CGI.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cd-CPAN.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cd-DBI.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cd-HTML.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cd-IO.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cd-LWP.html
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel/Diagram
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel
 @dirrm %%SITE_PERL%%/Devel/Diagram/xsl

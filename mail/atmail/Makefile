@@ -6,44 +6,26 @@ PORTVERSION=	1.0.4
 CATEGORIES=	mail
 MASTER_SITES=	http://atmail.org/download/
 DISTNAME=	atmailopen
-EXTRACT_SUFX=	.tgz
 
-MAINTAINER= ports@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Open Source Webmail Client
 
+USES=		tar:tgz
 USE_PHP=	mysql pcre session
 WRKSRC=		${WRKDIR}/${DISTNAME}
 NO_BUILD=	yes
 SUB_FILES=	pkg-message
+PLIST_SUB+=	WWWOWN=${WWWOWN} WWWGRP=${WWWGRP}
 
-OPTIONS_DEFINE=	LDAP MBSTRING
-MBSTRING_DESC= Support for UTF8 folder names
+OPTIONS_DEFINE=	LDAP MBSTRING ICONV
+MBSTRING_DESC=	Support for UTF8 folder names
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MLDAP}
-USE_PHP+=	ldap
-.endif
-
-.if ${PORT_OPTIONS:MMBSTRING}
-USE_PHP+=	mbstring
-.endif
-
-.if ${PORT_OPTIONS:MICONV}
-USE_PHP+=	iconv
-.endif
+LDAP_USE=	PHP=ldap
+MBSTRING_USE=	PHP=mbstring
+ICONV_USE=	PHP=iconv
 
 do-install:
-	@cd ${WRKSRC} && ${COPYTREE_SHARE} . ${WWWDIR}
-	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${WWWDIR}
-	@${CHMOD} -R 755 ${WWWDIR}
-
-post-install:
-	@${ECHO_CMD} '@exec ${CHOWN} -R ${WWWOWN}:${WWWGRP} ${WWWDIR}' \
-		>> ${TMPPLIST}
-	@${ECHO_CMD} '@exec ${CHMOD} -R 755 ${WWWDIR}' \
-		>> ${TMPPLIST}
-	@${CAT} ${PKGMESSAGE}
+	@${MKDIR} ${STAGEDIR}${WWWDIR}
+	(cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${WWWDIR})
 
 .include <bsd.port.mk>

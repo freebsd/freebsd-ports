@@ -372,15 +372,14 @@ include/geos/util/UnsupportedOperationException.h
 include/geos/util/math.h
 include/geos/version.h
 include/geos_c.h
-lib/libgeos-3.4.2.so
+lib/libgeos-%%PORTVERSION%%.so
 lib/libgeos.a
-lib/libgeos.la
 lib/libgeos.so
 lib/libgeos.so.0
 lib/libgeos_c.a
-lib/libgeos_c.la
 lib/libgeos_c.so
-lib/libgeos_c.so.9
+lib/libgeos_c.so.1
+lib/libgeos_c.so.1.8.2
 @dirrmtry lib/geos
 @dirrm include/geos/util
 @dirrm include/geos/triangulate/quadedge
@@ -423,7 +422,6 @@ lib/libgeos_c.so.9
 @dirrm include/geos
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/geos.pth
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/geos/_geos.a
-%%PYTHON%%%%PYTHON_SITELIBDIR%%/geos/_geos.la
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/geos/_geos.so
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/geos/geos.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/geos/geos.pyc
@@ -431,7 +429,6 @@ lib/libgeos_c.so.9
 %%PYTHON%%@dirrm %%PYTHON_SITELIBDIR%%/geos
 %%PYTHON%%@dirrmtry %%PYTHON_SITELIBDIR%%
 %%RUBY%%%%RUBY_SITEARCHLIBDIR%%/geos.a
-%%RUBY%%%%RUBY_SITEARCHLIBDIR%%/geos.la
 %%RUBY%%%%RUBY_SITEARCHLIBDIR%%/geos.so
 %%RUBY%%@dirrmtry %%RUBY_SITEARCHLIBDIR%%/
 %%PHP%%lib/php/20100525/geos.so

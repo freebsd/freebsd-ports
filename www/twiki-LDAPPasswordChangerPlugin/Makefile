@@ -13,6 +13,5 @@ RUN_DEPENDS=	p5-perl-ldap>=0:${PORTSDIR}/net/p5-perl-ldap
 
 SVNREV=		18108
 
-NO_STAGE=	yes
 .include "${.CURDIR}/../twiki/bsd.twiki.mk"
 .include <bsd.port.mk>

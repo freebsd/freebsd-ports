@@ -4,7 +4,6 @@
     COMMENT = Ports to help disabled users
 
     SUBDIR += accerciser
-    SUBDIR += at-poke
     SUBDIR += at-spi
     SUBDIR += at-spi-reference
     SUBDIR += at-spi2-atk

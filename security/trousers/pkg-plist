@@ -25,9 +25,9 @@ include/tss/tss_structs.h
 include/tss/tss_typedef.h
 %%TDDL%%lib/libtddl.a
 lib/libtspi.a
-lib/libtspi.la
 lib/libtspi.so
-lib/libtspi.so.3
+lib/libtspi.so.1
+lib/libtspi.so.1.2.0
 sbin/tcsd
 man/man3/Tspi_ChangeAuth.3.gz
 man/man3/Tspi_ChangeAuthAsym.3.gz

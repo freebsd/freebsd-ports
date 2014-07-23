@@ -7,7 +7,7 @@ CATEGORIES=	security
 MASTER_SITES=	http://www.bayofrum.net/dist/${PORTNAME}/
 
 MAINTAINER=	crees@FreeBSD.org
-COMMENT=	A cryptographic file system implemented as a user-space NFS server
+COMMENT=	Cryptographic file system implemented as a user-space NFS server
 
 ALL_TARGET=	cfs
 MAKE_ARGS=	CC="${CC}"

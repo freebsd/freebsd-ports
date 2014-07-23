@@ -14,6 +14,8 @@ LICENSE=	BSD2CLAUSE
 USES=		tar:bzip2
 NO_BUILD=	yes
 
+OPTIONS_DEFINE=	DOCS
+
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/jail.pristine.fetch		\
 		${STAGEDIR}${PREFIX}/bin

@@ -3,7 +3,7 @@
 
 PORTNAME=	GeoIP
 PORTVERSION=	1.4.8
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	net geography
 MASTER_SITES=	http://geolite.maxmind.com/download/geoip/api/c/
 
@@ -16,7 +16,7 @@ USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	aclocal automake libtool libtoolize autoconf
 AUTOMAKE_ARGS=	--add-missing
 
-SUB_FILES=	geoipupdate.sh
+SUB_FILES=	geoipupdate.sh pkg-message
 
 post-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/geoipupdate.sh ${STAGEDIR}${PREFIX}/bin

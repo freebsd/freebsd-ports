@@ -8,7 +8,7 @@ CATEGORIES=	security
 MASTER_SITES=	SF/opensc/${PORTNAME}
 
 MAINTAINER=	ale@FreeBSD.org
-COMMENT=	A PAM module using crypto tokens for auth
+COMMENT=	PAM module using crypto tokens for auth
 
 LICENSE=	LGPL21
 

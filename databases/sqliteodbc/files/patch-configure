@@ -1,6 +1,6 @@
---- configure.orig	2013-08-27 13:34:44.000000000 +0200
-+++ configure	2014-03-26 23:49:03.494985827 +0100
-@@ -18043,7 +18043,7 @@
+--- configure.orig	2014-07-21 08:27:18.000000000 +0200
++++ configure	2014-07-22 19:36:19.714479471 +0200
+@@ -10531,7 +10531,7 @@
           SQLITE_LIBDIR="$i/lib"
           break
        elif test -d "$i/lib" ; then
@@ -9,7 +9,7 @@
           SQLITE_LIBDIR="$i/lib"
  	 break
        fi
-@@ -18564,7 +18564,7 @@
+@@ -11058,7 +11058,7 @@
           SQLITE3_LIBDIR="$i/lib"
           break
        elif test -d "$i/lib" ; then

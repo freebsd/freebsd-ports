@@ -7,7 +7,7 @@ CATEGORIES=	print
 MASTER_SITES=	GNU/${PORTNAME}
 
 MAINTAINER=	bf@FreeBSD.org
-COMMENT=	A PostScript and PDF previewer
+COMMENT=	PostScript and PDF previewer
 
 LIB_DEPENDS=	libXaw3d.so:${PORTSDIR}/x11-toolkits/Xaw3d
 

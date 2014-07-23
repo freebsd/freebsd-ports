@@ -12,7 +12,7 @@ MASTER_SITES=	http://kamares.ucsd.edu/~arobert/Files/Chinese/ \
 MASTER_SITE_SUBDIR=	. Old
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	sunrychen@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Chinese character learning-aid program
 
 BUILD_DEPENDS+=	wish8.4:${PORTSDIR}/x11-toolkits/tk84

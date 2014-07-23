@@ -7,7 +7,7 @@ CATEGORIES=	sysutils net
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 
 MAINTAINER=	ports@christianserving.org
-COMMENT=	An interactive real-time monitoring tool for the HAProxy unix socket
+COMMENT=	Interactive real-time monitoring tool for the HAProxy unix socket
 
 RUN_DEPENDS=	${LOCALBASE}/sbin/haproxy:${PORTSDIR}/net/haproxy
 

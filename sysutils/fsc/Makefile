@@ -9,7 +9,7 @@ MASTER_SITES=	LOCAL
 MASTER_SITE_SUBDIR=	trhodes
 
 MAINTAINER=	trhodes@FreeBSD.org
-COMMENT=	The FreeBSD Services Control family of utilties.
+COMMENT=	The FreeBSD Services Control family of utilities
 
 WRKSRC=		${WRKDIR}/fsc
 

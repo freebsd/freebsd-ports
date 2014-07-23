@@ -9,7 +9,7 @@ MASTER_SITE_SUBDIR=	Sys
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
-COMMENT=	Access system calls that Perl doesn\'t provide access to
+COMMENT=	Access system calls that Perl doesn't provide access to
 
 USES=		perl5
 USE_PERL5=	configure

@@ -30,6 +30,8 @@ MAKE_ARGS+=	INCLUDES="-I${LOCALBASE}/include/apache${APACHE_VERSION} -I${LOCALBA
 INSTALL_TARGET=	install-modules-yes
 DOCSDIR=	${PREFIX}/share/doc/apache${APACHE_VERSION}/mod
 
+OPTIONS_DEFINE=	DOCS
+
 post-install:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_MAN} ${WRKSRC}/docs/manual/mod/mod_fcgid.html ${STAGEDIR}${DOCSDIR}

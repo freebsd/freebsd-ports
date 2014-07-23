@@ -9,7 +9,7 @@ MASTER_SITES=	GOOGLE_CODE
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A backup frontend like Apple's Time Machine
+COMMENT=	Backup frontend like Apple's Time Machine
 
 RUN_DEPENDS=	rsync:${PORTSDIR}/net/rsync
 
@@ -19,16 +19,13 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 USE_PYTHON=	yes
 USE_GNOME=	pygtk2 pygnome2 libglade2
 
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
-
 SUB_FILES=	flyback.sh
 
 do-install:
-	@${MKDIR} ${DATADIR}
-	${INSTALL_SCRIPT} ${WRKSRC}/*.py ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/GPL.txt ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/viewer.glade ${DATADIR}
-	${INSTALL_SCRIPT} ${WRKDIR}/flyback.sh ${PREFIX}/bin/flyback
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	${INSTALL_SCRIPT} ${WRKSRC}/*.py ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/GPL.txt ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/viewer.glade ${STAGEDIR}${DATADIR}
+	${INSTALL_SCRIPT} ${WRKDIR}/flyback.sh ${STAGEDIR}${PREFIX}/bin/flyback
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

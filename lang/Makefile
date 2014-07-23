@@ -55,6 +55,7 @@
     SUBDIR += dragonegg47-33
     SUBDIR += ecl
     SUBDIR += elan
+    SUBDIR += elixir
     SUBDIR += elk
     SUBDIR += emacs-lisp-intro
     SUBDIR += embryo
@@ -122,7 +123,6 @@
     SUBDIR += ici
     SUBDIR += icon
     SUBDIR += ifc
-    SUBDIR += ikarus
     SUBDIR += intel2gas
     SUBDIR += intercal
     SUBDIR += io
@@ -320,7 +320,6 @@
     SUBDIR += sr
     SUBDIR += stalin
     SUBDIR += starlogo
-    SUBDIR += stklos
     SUBDIR += stldoc
     SUBDIR += swi-pl
     SUBDIR += t3x

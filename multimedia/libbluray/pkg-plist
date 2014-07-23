@@ -8,9 +8,9 @@ include/libbluray/log_control.h
 include/libbluray/meta_data.h
 include/libbluray/overlay.h
 lib/libbluray.a
-lib/libbluray.la
 lib/libbluray.so
-lib/libbluray.so.6
+lib/libbluray.so.1
+lib/libbluray.so.1.5.0
 libdata/pkgconfig/libbluray.pc
 @dirrm include/libbluray
 %%JAVA%%lib/libbluray/libbluray.jar

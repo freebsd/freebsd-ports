@@ -8,7 +8,7 @@ PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	deskutils www
 
-MAINTAINER=	horde@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Notes and memos application
 
 USE_HORDE=	base

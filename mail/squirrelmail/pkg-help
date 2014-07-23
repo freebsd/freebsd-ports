@@ -1,0 +1,5 @@
+If you enable the PEAR database framework option, you still need to install a
+database-specific PEAR driver.
+
+SquirrelMail is only compatible with old-style pear-DB drivers, not the newer
+MDB2 drivers.

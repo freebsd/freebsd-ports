@@ -1,10 +1,10 @@
 %%TWDIR%%/data/TWiki/EditTablePlugin.txt
 %%TWDIR%%/data/TWiki/VarEDITTABLE.txt
+%%TWDIR%%/lib/TWiki/Plugins/EditTablePlugin.pm
 %%TWDIR%%/lib/TWiki/Plugins/EditTablePlugin/Core.pm
 %%TWDIR%%/lib/TWiki/Plugins/EditTablePlugin/DEPENDENCIES
 %%TWDIR%%/lib/TWiki/Plugins/EditTablePlugin/MANIFEST
 %%TWDIR%%/lib/TWiki/Plugins/EditTablePlugin/build.pl
-%%TWDIR%%/lib/TWiki/Plugins/EditTablePlugin.pm
 %%TWDIR%%/pub/TWiki/EditTablePlugin/EditTablePluginCalendarExample.gif
 %%TWDIR%%/pub/TWiki/EditTablePlugin/ScreenshotEditCell1.gif
 %%TWDIR%%/pub/TWiki/EditTablePlugin/ScreenshotEditCell2.gif

@@ -1,6 +1,6 @@
-bin/srs
+bin/srs_alt
 include/srs_alt.h
 lib/libsrs_alt.a
-lib/libsrs_alt.la
 lib/libsrs_alt.so
 lib/libsrs_alt.so.%%SHLIB_MAJOR%%
+lib/libsrs_alt.so.%%SHLIB_MAJOR%%.0.0

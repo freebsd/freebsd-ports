@@ -19,7 +19,7 @@ USE_RC_SUBR=	sapserver
 SUB_FILES=	pkg-message
 
 OPTIONS_DEFINE=	SLP
-SLP_DESC=	"Enable SLP support via openslp"
+SLP_DESC=	Enable SLP support via openslp
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

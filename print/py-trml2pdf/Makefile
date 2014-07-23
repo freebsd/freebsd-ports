@@ -9,7 +9,7 @@ MASTER_SITES=	SF/kraft/${PORTNAME}/${PORTVERSION}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	ports@caomhin.org
-COMMENT=	Tiny RML2PDF easily creates PDF documents.
+COMMENT=	Tiny RML2PDF easily creates PDF documents
 
 RUN_DEPENDS=	${LOCALBASE}/bin/pildriver.py:${PORTSDIR}/graphics/py-imaging \
 		${PYTHON_PKGNAMEPREFIX}reportlab1>=0:${PORTSDIR}/print/py-reportlab1
@@ -21,6 +21,8 @@ USE_PYTHON=	yes
 
 DOCSDIR=	${PREFIX}/share/doc/py-${PORTNAME}
 EXAMPLESDIR=	${PREFIX}/share/examples/py-${PORTNAME}
+
+OPTIONS_DEFINE=	DOCS EXAMPLES
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${PYTHON_SITELIBDIR}/trml2pdf

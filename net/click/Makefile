@@ -97,7 +97,7 @@ NO_STAGE=	yes
 
 .if ${PORT_OPTIONS:MXML_EXPAT}
 CONFIGURE_ARGS+=	--with-expat=${LOCALBASE}
-LIB_DEPENDS=		expat.6:${PORTSDIR}/textproc/expat2
+LIB_DEPENDS=		libexpat.so:${PORTSDIR}/textproc/expat2
 PLIST_SUB+=		XMLCLICK=""
 .else
 PLIST_SUB+=		XMLCLICK="@comment "

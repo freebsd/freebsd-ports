@@ -8,7 +8,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	smatsui@karashi.org
-COMMENT=	A read-eval-print loop in Perl
+COMMENT=	Read-eval-print loop in Perl
 
 RUN_DEPENDS=	p5-Class-Accessor>=0:${PORTSDIR}/devel/p5-Class-Accessor \
 		p5-YAML>=0:${PORTSDIR}/textproc/p5-YAML \

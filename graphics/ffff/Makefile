@@ -8,7 +8,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/FFFF%203.2.3
 DISTNAME=	FFFF${PORTVERSION}-src
 
-MAINTAINER=	rossiya@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fast Mandelbrot fractal generator
 
 USE_XORG=	x11 xmu xext

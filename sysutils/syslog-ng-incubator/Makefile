@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	syslog-ng-incubator
-PORTVERSION=	0.2.1
+PORTVERSION=	0.3.2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://packages.madhouse-project.org/syslog-ng/incubator/
 DISTFILES=	syslog-ng-incubator-${PORTVERSION}.tar.xz
@@ -14,10 +14,10 @@ WRKSRC=		$(WRKDIR)/$(PORTNAME)-$(PORTVERSION)
 
 MAKE_JOBS_UNSAFE=	yes
 
-LIB_DEPENDS=	libevtlog.so:${PORTSDIR}/sysutils/eventlog
-LIB_DEPENDS=	libsyslog-ng-3.5.4.1.so:${PORTSDIR}/sysutils/syslog-ng
+LIB_DEPENDS=	libevtlog.so:${PORTSDIR}/sysutils/eventlog \
+		libsyslog-ng.so:${PORTSDIR}/sysutils/syslog-ng
 
-USES=		gmake pkgconfig pathfix bison lua tar:xz
+USES=		gmake pkgconfig pathfix bison lua tar:xz libtool
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 USE_GNOME=	glib20

@@ -188,8 +188,8 @@ SCONS_ARGS+=	socket_export=no
 .endif
 
 .if ${PORT_OPTIONS:MDBUS}
-LIB_DEPENDS+=	dbus:${PORTSDIR}/devel/dbus \
-		dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib
+LIB_DEPENDS+=	libdbus:${PORTSDIR}/devel/dbus \
+		libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib
 SCONS_ARGS+=	dbus_export=yes
 .endif
 

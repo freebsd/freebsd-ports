@@ -35,6 +35,8 @@ CONFIGURE_ENV=	REHASH="${PERL} ${SCRIPTDIR}/c_rehash"
 
 INSTALL_TARGET=	install-strip
 
+OPTIONS_DEFINE=	DOCS
+
 post-extract:
 		@${MKDIR} ${WRKDIR}/ncursesw
 		${LN} -s ${LOCALBASE}/include/ncurses/ncurses.h ${WRKDIR}/ncursesw/curses.h

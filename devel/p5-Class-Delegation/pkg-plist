@@ -1,13 +1,13 @@
 %%PERL5_MAN3%%/Class::Delegation.3.gz
 %%SITE_PERL%%/Class/Delegation.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/Delegation/.packlist
-%%PORTDOCS%%%%EXAMPLESDIR%%/demo_adapt_interface.pl
-%%PORTDOCS%%%%EXAMPLESDIR%%/demo_change_semantics.pl
-%%PORTDOCS%%%%EXAMPLESDIR%%/demo_facade.pl
-%%PORTDOCS%%%%EXAMPLESDIR%%/demo_handle.pl
-%%PORTDOCS%%%%EXAMPLESDIR%%/demo_inheritance.pl
-%%PORTDOCS%%%%EXAMPLESDIR%%/demo_pseudo.pl
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo_adapt_interface.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo_change_semantics.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo_facade.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo_handle.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo_inheritance.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo_pseudo.pl
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/Delegation
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class
 @dirrmtry %%SITE_PERL%%/Class

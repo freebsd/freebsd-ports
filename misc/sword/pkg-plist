@@ -14,7 +14,7 @@ bin/xml2gbs
 bin/imp2gbs
 bin/imp2ld
 bin/mod2zmod
-%%ETCDIR%%.conf
+@sample etc/sword.conf
 include/sword/canon.h
 include/sword/canon_abbrevs.h
 include/sword/cipherfil.h
@@ -186,7 +186,6 @@ include/sword/canon_null.h
 include/sword/canon_orthodox.h
 lib/libsword-%%PORTVERSION%%.so
 lib/libsword.a
-lib/libsword.la
 lib/libsword.so
 libdata/pkgconfig/sword.pc
 %%DATADIR%%/locales.d/abbr.conf

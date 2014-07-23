@@ -20,6 +20,8 @@ DOCS_EN=	README.en ext/sdn/README.sdncal20
 DOCS_JA=	README
 EXAMPLES_EN=	ext/calendar/cal*.rb
 
+OPTIONS_DEFINE=	DOCS
+
 post-install:
 	${MKDIR} ${STAGEDIR}${RUBY_MODEXAMPLESDIR}
 .for f in ${EXAMPLES_EN}

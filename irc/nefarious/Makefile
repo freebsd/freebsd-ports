@@ -8,7 +8,7 @@ CATEGORIES=	irc
 MASTER_SITES=	SF/evilnet/${PORTNAME}%20IRCu/${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	IRC server used by evilnet based off of Undernet\'s ircu
+COMMENT=	IRC server used by evilnet based off of Undernet's ircu
 
 BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash

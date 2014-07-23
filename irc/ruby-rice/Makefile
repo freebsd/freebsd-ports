@@ -14,6 +14,8 @@ COMMENT=	Yet another IRC interface library for Ruby
 USE_RUBY=	yes
 NO_BUILD=	yes
 
+OPTIONS_DEFINE=	DOCS
+
 do-install:
 	${MKDIR} ${STAGEDIR}${RUBY_SITELIBDIR}
 	${CP} -R ${WRKSRC}/rice ${STAGEDIR}${RUBY_SITELIBDIR}/

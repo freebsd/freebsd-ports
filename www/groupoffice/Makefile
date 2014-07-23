@@ -42,7 +42,7 @@ USE_PHP+=	calendar
 .endif
 
 .if ${PORT_OPTIONS:MWBXML}
-LIB_DEPENDS=	wbxml2:${PORTSDIR}/textproc/wbxml2
+LIB_DEPENDS=	libwbxml2.so:${PORTSDIR}/textproc/wbxml2
 .endif
 
 do-install:

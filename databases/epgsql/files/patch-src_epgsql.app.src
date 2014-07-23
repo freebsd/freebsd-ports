@@ -1,0 +1,13 @@
+
+$FreeBSD$
+
+--- src/epgsql.app.src.orig
++++ src/epgsql.app.src
+@@ -1,6 +1,6 @@
+ {application, epgsql,
+  [{description, "PostgreSQL Client"},
+-  {vsn, git},
++  {vsn, "%%PORTVERSION%%"},
+   {modules, []},
+   {registered, []},
+   {applications, [kernel,

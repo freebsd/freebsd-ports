@@ -15,6 +15,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png \
 		libvorbis.so:${PORTSDIR}/audio/libvorbis
 
+OPTIONS_DEFINE=	DOCS
+
 USES=		cmake openal:al,alut
 USE_SDL=	sdl mixer ttf
 USE_LDCONFIG=	yes

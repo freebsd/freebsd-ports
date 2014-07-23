@@ -9,7 +9,7 @@ DISTNAME=	dict-${PORTVERSION}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${dict}.gz
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
-MAINTAINER=	wosch@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple English/German dictionary
 
 RUN_DEPENDS=	agrep:${PORTSDIR}/textproc/agrep

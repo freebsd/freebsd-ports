@@ -3,7 +3,7 @@
 
 PORTNAME=	libprelude
 PORTVERSION=	1.0.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	security
 MASTER_SITES=	https://www.prelude-ids.org/attachments/download/241/
 
@@ -62,6 +62,9 @@ BROKEN=		Does not compile
 post-patch:
 	@${REINPLACE_CMD} -e \
 		'/^install-data-am:/s|install-data-local||' ${WRKSRC}/docs/api/Makefile.in
+	@${REINPLACE_CMD} '\,gnutls/extra\.h,d' \
+		${WRKSRC}/prelude-admin/prelude-admin.c \
+		${WRKSRC}/prelude-admin/server.c
 
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/docs/manpages/*.1 ${MAN1PREFIX}/man/man1

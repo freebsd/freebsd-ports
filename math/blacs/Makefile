@@ -15,7 +15,7 @@ DISTFILES+=	blacs_install.ps f77blacsqref.ps lawn94.ps \
 DIST_SUBDIR=	blacs
 EXTRACT_ONLY=	mpiblacs.tgz blacstester.tgz mpiblacs-patch03.tgz
 
-MAINTAINER=	maho@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The BLACS (Basic Linear Algebra Communication Subprograms)
 
 PKGMESSAGE=	${WRKDIR}/pkg-message

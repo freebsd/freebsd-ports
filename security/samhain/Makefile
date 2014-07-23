@@ -106,7 +106,7 @@ CONFIGURE_ARGS+=	--with-logserver=true
 CONFIGURE_ARGS+=	--with-altlogserver=true
 .endif
 .if ${PORT_OPTIONS:MPRELUDE}
-LIB_DEPENDS+=		prelude:${PORTSDIR}/security/libprelude
+LIB_DEPENDS+=		libprelude.so:${PORTSDIR}/security/libprelude
 CONFIGURE_ARGS+=	--with-prelude
 .endif
 

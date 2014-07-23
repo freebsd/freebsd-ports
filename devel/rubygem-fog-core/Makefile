@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	fog-core
-PORTVERSION=	1.22.0
+PORTVERSION=	1.23.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -12,7 +12,7 @@ COMMENT=	Shared classes and tests for fog providers and services
 LICENSE=	MIT
 
 RUN_DEPENDS=	rubygem-builder>=0:${PORTSDIR}/devel/rubygem-builder \
-		rubygem-excon>=0.33:${PORTSDIR}/devel/rubygem-excon \
+		rubygem-excon>=0.38:${PORTSDIR}/devel/rubygem-excon \
 		rubygem-formatador>=0.2:${PORTSDIR}/devel/rubygem-formatador \
 		rubygem-mime-types>=0:${PORTSDIR}/misc/rubygem-mime-types \
 		rubygem-net-scp>=1.1:${PORTSDIR}/security/rubygem-net-scp \

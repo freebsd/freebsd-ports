@@ -10,7 +10,7 @@ MASTER_SITES=	${MASTER_SITE_LOCAL} \
 MASTER_SITE_SUBDIR=	motoyuki
 DISTNAME=	${PORTNAME}-${VERSION}-JP-${JP_VERSION}
 
-MAINTAINER=	motoyuki@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Rand MH mail handling system + Japanese patches
 
 BUILD_DEPENDS=	jless:${PORTSDIR}/japanese/less

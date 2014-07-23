@@ -20,7 +20,6 @@ lib/banshee/Backends/Banshee.Unix.dll.mdb
 %%OPT_GIO%%lib/banshee/Backends/gtk-sharp-beans.dll.config
 %%OPT_GIO%%lib/banshee/Backends/gtk-sharp-beans.dll.mdb
 lib/banshee/Backends/libbnpx11.a
-lib/banshee/Backends/libbnpx11.la
 lib/banshee/Backends/libbnpx11.so
 lib/banshee/Banshee.CollectionIndexer.dll
 lib/banshee/Banshee.CollectionIndexer.dll.mdb
@@ -134,10 +133,8 @@ lib/banshee/Nereid.exe
 lib/banshee/Nereid.exe.mdb
 lib/banshee/gconf-schema-extractor.exe
 lib/banshee/libbanshee.a
-lib/banshee/libbanshee.la
 lib/banshee/libbanshee.so
 %%OPT_WEBKIT%%lib/banshee/libossifer.a
-%%OPT_WEBKIT%%lib/banshee/libossifer.la
 %%OPT_WEBKIT%%lib/banshee/libossifer.so
 %%PORTDOCS%%lib/monodoc/sources/banshee-docs.source
 %%PORTDOCS%%lib/monodoc/sources/banshee-docs.tree

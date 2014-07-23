@@ -5,6 +5,48 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20140723:
+  AFFECTS: users of security/scanlogd
+  AUTHOR: tgyurci@gmail.com
+
+  The security/scanlogd port now creates scanlogd user and group. Previous
+  scanlogd user and group must be removed before updating to not conflict
+  with the one created by the port:
+
+    pw userdel scanlogd
+    pw groupdel scanlogd
+
+20140723:
+  AFFECTS: users of TeX
+  AUTHOR: bapt@FreeBSD.org
+
+  TeXLive is now the default teX provider.
+  Please remove all TeX-related packages based on teTeX.
+
+20140722:
+  AFFECTS: users of mail/exim
+  AUTHOR: vsevolod@FreeBSD.org
+
+  The behaviour of expansion of arguments to math comparison functions (<, <=,
+  =, =>, >) was unexpected, expanding the values twice. Please update your
+  configuration if you have relied on such an expansion.
+
+20140722:
+  AFFECTS: users of multimedia/mediainfo
+  AUTHOR: sunpoet@FreeBSD.org
+
+  mediainfo has been split into 3 ports: libzen, libmediainfo and mediainfo.
+  Please uninstall mediainfo before you update this port.
+
+20140722
+  AFFECTS: users of games/bsdgames
+  AUTHOR: adamw@FreeBSD.org
+
+  bsdgames now expects savegame data in /usr/local/var/games instead of
+  /var/games. To continue using your saved games,
+
+  cp -rp /var/games/* /usr/local/var/games
+
 20140714:
   AFFECTS: users of databases/db6
   AUTHOR:  mandree@FreeBSD.org
@@ -16,7 +58,13 @@ you update your ports collection, before attempting any port upgrades.
   <http://docs.oracle.com/cd/E17076_04/html/upgrading/upgrade_process.html>
   <http://docs.oracle.com/cd/E17076_04/html/installation/upgrade_61_toc.html>
 
-  Also, you must rebuild all applications that link to db6. To do so:
+  Note: if you've got Apache installed and depending on db6, you may
+  need to upgrade it separately BEFORE upgrading other ports, such as
+  Apache modules.
+
+  After that, you must rebuild all applications that link to db6 because
+  the shared library name has changed with the upgrade.  To do that:
+
   If you use portmaster:
         portmaster -w -r db6-
   If you use portupgrade:

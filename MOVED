@@ -5504,6 +5504,7 @@ textproc/p5-ElasticSearch|textproc/p5-ElasticSearch-legacy|2014-02-12|This versi
 x11-fonts/cosmic-sans-neue-mono|x11-fonts/fantasque-sans-mono|2014-02-13|Renamed upstream
 mail/zmailer||2014-02-13|Broken since at least last August
 lang/gcc34|lang/gcc|2014-02-13|Superseded by GCC 4.6 or later
+lang/perl5.12|lang/perl5.16|2014-02-14|Has expired: no longer under development, use lang/perl5.18 or lang/perl5.16
 devel/adabooch-doc-html||2014-02-15|Obsolete; adabooch now has DOCS option
 x11-toolkits/sakura|x11/sakura|2014-02-16|Moved to a better category
 misc/kde4-shared-mime-info||2014-02-18|Removed: this port is not needed anymore
@@ -5893,7 +5894,6 @@ www/trac-ldap||2014-03-30|Has expired: No more public distfiles
 www/trac-codetags||2014-03-30|Has expired: No more public distfiles
 www/trac-addcomment||2014-03-30|Has expired: No more public distfiles
 www/trac-nav||2014-03-30|Has expired: No more public distfiles
-www/baikal||2014-03-30|Has expired: No more public distfiles
 www/trac-pagetopdf||2014-03-30|Has expired: No more public distfiles
 sysutils/logmon||2014-03-30|Has expired: No more public distfiles
 www/trac-simpleticket||2014-03-30|Has expired: No more public distfiles
@@ -6390,3 +6390,58 @@ net/linphone-base||2014-07-14|Split into separate components
 databases/py-simplecouchdb||2014-07-15|Has expired: Obsolete, abandoned
 audio/xmms-bonk||2014-07-15|Has expired: Obsolete experimental codec, use audio/flac or audio/wavpack
 audio/bonk||2014-07-15|Has expired: Obsolete experimental codec, use audio/flac or audio/wavpack
+sysutils/gtk-send-pr||2014-07-17|Has expired: Obsolete after migration to Bugzilla
+lang/stklos||2014-07-20|Has expired: Fails testsuite on all platforms, unmaintained upstream
+lang/ikarus||2014-07-20|Has expired: Upstream project died in 2009
+security/pam_pgina||2014-07-20|Has expired: main site disappeared, no more public distfiles
+www/linux-opera-devel|www/opera|2014-07-20|Has expired: Not staged and multiple vulnerabilities. 
+www/opera-devel|www/opera|2014-07-20|Has expired: Not staged, multiple vulnerabilities, older than non-devel
+accessibility/at-poke||2014-07-21|Has expired: Depends on expired libgailgnome
+misc/bigboard||2014-07-21|Has expired: gnome-panel will be updated to the 3.x version which is not compatible with 2.x
+net/desktop-data-model||2014-07-21|Has expired: gnome-desktop 2.x will be updated in the GNOME 3 import
+net/online-desktop||2014-07-21|Has expired: Disappeared upstream, depends on expired ports
+x11-toolkits/libgail-gnome||2014-07-21|Has expired: gnome-panel 2.x will be updated in the GNOME 3 import
+security/gnutls3|security/gnutls|2014-07-22|Moved to replace GnuTLS 2.x port
+print/latex-ifluatex|print/texlive-texmf|2014-07-23|Has been incorporated into texlive-texmf
+print/teTeX|print/texlive-full|2014-07-23|Replaced by texlive
+print/passivetex|print/tex-xmltex|2014-07-23|Has been incorporated in TeXLive version of xmltex
+print/xmltex|print/tex-xmltex|2014-07-23|Replaced by texlive
+print/latex-caption|print/texlive-texmf|2014-07-23|Has been incorporated in TeXLive
+print/xdvik|print/tex-xdvik|2014-07-23|Replaced by texlive
+print/latex-subfloat|print/texlive-texmf|2014-07-23|Has been incorporated in TeXLive
+print/latex-circ|print/texlive-texmf|2014-07-23|Has been incorporated in TeXLive
+print/latex-prettyref|print/texlive-texmf|2014-07-23|Has been incorporated in TeXLive
+print/latex-nomencl|print/texlive-texmf|2014-07-23|Has been incorporated in TeXLive
+print/latex-mathabx|print/texlive-texmf|2014-07-23|Has been incorporated in TeXLive
+print/latex-arydshln|print/texlive-texmf|2014-07-23|Has been incorporated in TeXLive
+print/latex-feynmf|print/texlive-texmf|2014-07-23|Has been incorporated in TeXLive
+print/latex-chapterfolder|print/texlive-texmf|2014-07-23|Has been incorporated in TeXLive
+print/latex-cjk|print/texlive-base|2014-07-23|Has been incorporated in TeXLive
+print/latex-aastex|print/texlive-texmf|2014-07-23|Has been incorporated in TeXLive
+print/latex-beamer|print/texlive-texmf|2014-07-23|Has been incorporated in TeXLive
+print/latex-biblatex|print/texlive-texmf|2014-07-23|Has been incorporated in TeXLive
+print/latex-biblist|print/texlive-texmf|2014-07-23|Has been incorporated in TeXLive
+print/latex-bytefield|print/texlive-texmf|2014-07-23|Has been incorporated in TeXLive
+print/latex-csquotes|print/texlive-texmf|2014-07-23|Has been incorporated in TeXLive
+print/latex-etoolbox|print/texlive-texmf|2014-07-23|Has been incorporated in TeXLive
+print/latex-keystroke|print/texlive-texmf|2014-07-23|Has been incorporated in TeXLive
+print/latex-logpap|print/texlive-texmf|2014-07-23|Has been incorporated in TeXLive
+print/latex-logreq|print/texlive-texmf|2014-07-23|Has been incorporated in TeXLive
+print/latex-pgf|print/texlive-texmf|2014-07-23|Has been incorporated in TeXLive
+print/latex-supertabular|print/texlive-texmf|2014-07-23|Has been incorporated in TeXLive
+print/latex-svninfo|print/texlive-texmf|2014-07-23|Has been incorporated in TeXLive
+print/latex-tipa|print/texlive-texmf|2014-07-23|Has been incorporated in TeXLive
+print/latex-ucs|print/texlive-texmf|2014-07-23|Has been incorporated in TeXLive
+print/teTeX-base|print/texlive-base|2014-07-23|Has been incorporated in TeXLive
+print/teTeX-texmf|print/texlive-texmf|2014-07-23|Has been incorporated in TeXLive
+japanese/xdvik|print/tex-xdvik|2014-07-23|Use TeXLive version
+japanese/latex2html||2014-07-23|Depends on decomissioned teTeX
+japanese/platex209||2014-07-23|Depends on decomissioned teTeX
+japanese/platex-jsclasses||2014-07-23|Depends on decomissioned teTeX
+japanese/platex-otf||2014-07-23|Depends on decomissioned teTeX
+japanese/ptex|japaneses/tex-ptex|2014-07-23|Use TeXLive version
+japanese/dvipsk|print/tex-dvipsk|2014-07-23|Use TeXLive version
+print/dvipsk-tetex|print/tex-dvipsk|2014-07-23|Use TeXLive version
+print/dvipdfmx|print/tex-dvipdfmx|2014-07-23|Use TeXLive version
+print/jadetex|print/tex-jadetex|2014-07-23|Use TeXLive version
+japanese/teTeX|print/texlive-full|2014-07-23|Use TeXLive

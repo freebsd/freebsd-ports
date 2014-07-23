@@ -7,7 +7,7 @@ PORTREVISION=	4
 CATEGORIES=	comms hamradio
 MASTER_SITES=	http://www.ibiblio.org/pub/linux/apps/ham/
 
-MAINTAINER=	xride@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Openmotif X psk31 client
 
 USE_XORG=	xpm

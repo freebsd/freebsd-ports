@@ -1,7 +1,10 @@
---- build/pkgs/pynac/spkg-install-orig	2014-05-15 02:26:11.000000000 +0000
-+++ build/pkgs/pynac/spkg-install	2014-05-15 02:19:32.000000000 +0000
-@@ -33,6 +33,9 @@
+--- build/pkgs/pynac/spkg-install.orig	2014-05-06 11:21:42.000000000 +0000
++++ build/pkgs/pynac/spkg-install	2014-07-21 04:36:42.000000000 +0000
+@@ -31,8 +31,12 @@
+ 
+ build_pynac()
  {
++    chmod -R g-w ${PYNACDIR}
      cd ${PYNACDIR}
      PKG_CONFIG_PATH=${SAGE_LOCAL}/lib/pkgconfig; export PKG_CONFIG_PATH
 +    aclocal

@@ -7,7 +7,7 @@ CATEGORIES=	security
 MASTER_SITES=	http://www.triades.net/downloads/
 
 MAINTAINER=	damien.bobillot_pam_jail@m4x.org
-COMMENT=	A PAM module dropping users in jails after login
+COMMENT=	PAM module dropping users in jails after login
 
 LICENSE=	BSD
 

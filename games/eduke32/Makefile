@@ -9,7 +9,7 @@ MASTER_SITES=	http://dukeworld.duke4.net/eduke32/synthesis/${PORTVERSION}-${SVNR
 		http://dukeworld.duke4.net/eduke32/synthesis/old/${PORTVERSION}-${SVNREVISION}/
 DISTNAME=	${PORTNAME}_src_${PORTVERSION}-${SVNREVISION}
 
-MAINTAINER=	olivier@gid0.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Duke Nukem 3D Port based on JFDuke and EDuke
 
 LICENSE=	GPLv2

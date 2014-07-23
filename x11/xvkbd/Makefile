@@ -22,7 +22,7 @@ USE_XORG=	ice sm x11 xaw xext xmu xpm xt
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MXAW3D}
-LIB_DEPENDS+=	Xaw3d:${PORTSDIR}/x11-toolkits/Xaw3d
+LIB_DEPENDS+=	libXaw3d.so:${PORTSDIR}/x11-toolkits/Xaw3d
 XK_DEFSUBST+=	-e 's/XCOMM define XAW3d/\#define XAW3d/;'
 .endif
 

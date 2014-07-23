@@ -3,6 +3,7 @@
 
 PORTNAME=	aws
 PORTVERSION=	3.2.0.0
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://downloads.dragonlace.net/src/
 
@@ -76,8 +77,7 @@ LINK_SSL=
 .endif
 .if ${PORT_OPTIONS:MGNUTLS}
 CONF_ARGS+=	SOCKET=gnutls
-CONF_ARGS+=	LPATH=${PREFIX}/lib/gnutls3
-LIB_DEPENDS+=	libgnutls.so:${PORTSDIR}/security/gnutls3
+LIB_DEPENDS+=	libgnutls.so:${PORTSDIR}/security/gnutls
 LINK_TLS=
 .endif
 .if ${PORT_OPTIONS:MNOSSL}

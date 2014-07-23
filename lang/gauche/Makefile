@@ -9,7 +9,7 @@ MASTER_SITES=	SF/${PORTNAME}/Gauche/
 DISTNAME=	Gauche-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	erik@elfga.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Scheme script interpreter with multibyte character handling
 
 OPTIONS_DEFINE=	GDBM SLIB DOCS MANPAGES
@@ -60,7 +60,7 @@ MANPREFIX=	${WRKDIR}
 
 .if ${PORT_OPTIONS:MGDBM}
 CONFIGURE_ARGS+=--with-local=${LOCALBASE}
-LIB_DEPENDS+=	gdbm:${PORTSDIR}/databases/gdbm
+LIB_DEPENDS+=	libgdbm.so:${PORTSDIR}/databases/gdbm
 PLIST_SUB+=	GDBM=""
 .else
 PLIST_SUB+=	GDBM="@comment "

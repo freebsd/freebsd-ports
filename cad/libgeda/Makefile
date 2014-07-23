@@ -3,7 +3,7 @@
 
 PORTNAME=	libgeda
 PORTVERSION=	1.4.3
-PORTREVISION=	6
+PORTREVISION=	7
 PORTEPOCH=	1
 CATEGORIES=	cad
 MASTER_SITES=	ftp://ftp.geda.seul.org/pub/geda/release/v1.4/${PORTVERSION}/ \
@@ -16,7 +16,7 @@ LIB_DEPENDS=	libguile.so:${PORTSDIR}/lang/guile
 
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
-USES=		gmake pathfix pkgconfig shared-mime-info
+USES=		gmake libtool pathfix pkgconfig shared-mime-info
 USE_GNOME=	gtk20
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--disable-update-mime-database \

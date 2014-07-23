@@ -21,7 +21,7 @@ SUB_FILES=	pkg-message jython.sh
 PLIST_FILES=	%%JAVAJARDIR%%/libreadline-java.jar lib/libJavaReadline.so \
 		lib/libJavaEditline.so lib/libJavaGetline.so
 PORTDOCS=	README.1st README jython.sh JReadlineCompleter.py
-USES=		gmake
+USES=		gmake readline
 USE_JAVA=	yes
 USE_LDCONFIG=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}

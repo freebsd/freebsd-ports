@@ -58,7 +58,7 @@ ARGS+=		--debug --trace
 # Bug 180467: We need to remove the port_v${VERSION} directory that does not
 # correspond to the Python version being used to avoid failures in the
 # bytecompilation calls in post-install.
-PLIST_SUB+= PYTHON_MAJOR_VER="${PYTHON_MAJOR_VER}"
+PLIST_SUB+=	PYTHON_MAJOR_VER="${PYTHON_MAJOR_VER}"
 post-patch:
 .if ${PYTHON_MAJOR_VER} == "2"
 	${RM} -rf ${WRKSRC}/pyuic/uic/port_v3

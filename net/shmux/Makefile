@@ -27,7 +27,7 @@ RUN_DEPENDS+=	fping:${PORTSDIR}/net/fping
 .endif
 
 .if ${PORT_OPTIONS:MPCRE}
-LIB_DEPENDS+=	pcre.3:${PORTSDIR}/devel/pcre
+LIB_DEPENDS+=	libpcre.so:${PORTSDIR}/devel/pcre
 CONFIGURE_ARGS+=	--with-pcre=${LOCALBASE}/lib
 .else
 CONFIGURE_ARGS+=	--with-pcre=no

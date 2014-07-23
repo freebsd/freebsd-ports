@@ -8,7 +8,7 @@ MASTER_SITES=	https://github.com/dworkin/dgd/archive/
 DISTNAME=	${PORTVERSION}
 
 MAINTAINER=	glewis@FreeBSD.org
-COMMENT=	Dworkin\'s Game Driver
+COMMENT=	Dworkin's Game Driver
 
 LICENSE=	GPLv3
 

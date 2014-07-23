@@ -7,6 +7,6 @@ bin/pbrowse
 bin/pbrowse.cgi
 bin/pseq
 bin/tab2vcf
-lib/libplinkseq.la
 lib/libplinkseq.so
 lib/libplinkseq.so.0
+lib/libplinkseq.so.0.0.0

@@ -23,6 +23,9 @@ USES=	tar:bzip2
 PLIST_FILES=	bin/gmake-lite \
 		man/man1/gmake-lite.1.gz
 
+post-patch:
+	${REINPLACE_CMD} -e "s/ doc / /g" ${WRKSRC}/Makefile.in
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/make ${STAGEDIR}${PREFIX}/bin/gmake-lite
 	${INSTALL_MAN} ${WRKSRC}/make.1 ${STAGEDIR}${PREFIX}/man/man1/gmake-lite.1

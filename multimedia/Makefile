@@ -173,6 +173,7 @@
     SUBDIR += libkate
     SUBDIR += libmatroska
     SUBDIR += libmediaart
+    SUBDIR += libmediainfo
     SUBDIR += libmovtar
     SUBDIR += libmpeg2
     SUBDIR += libmpeg3
@@ -193,6 +194,7 @@
     SUBDIR += libvpx
     SUBDIR += libxine
     SUBDIR += libxspf
+    SUBDIR += libzen
     SUBDIR += linux-f10-libtheora
     SUBDIR += linux-f10-libv4l
     SUBDIR += linux-realplayer

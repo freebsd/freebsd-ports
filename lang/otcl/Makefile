@@ -7,7 +7,7 @@ DISTVERSIONPREFIX=	src-
 CATEGORIES=	lang tcl tk
 MASTER_SITES=	SF/${PORTNAME}-tclcl/OTcl/${PORTVERSION}
 
-MAINTAINER=	5u623l20@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	MIT Object Tcl
 
 BROKEN=		Fails to configure

@@ -9,7 +9,7 @@ MASTER_SITES=	http://sdpa.indsys.chuo-u.ac.jp/sdpa/files/
 DISTNAME=	${PORTNAME}.${PORTVERSION}.src-${SRCDATE}
 DIST_SUBDIR=	sdpa
 
-MAINTAINER=	maho@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Very efficient SDP (semidefinite programming) solver
 
 USES=		fortran gmake

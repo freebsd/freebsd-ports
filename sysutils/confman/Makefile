@@ -8,7 +8,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	http://www.timesinks.net/distfiles/
 
 MAINTAINER=	ccowart@timesinks.net
-COMMENT=	A revision controlled configuration manager
+COMMENT=	Revision controlled configuration manager
 
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash \
 		svn:${PORTSDIR}/devel/subversion16 \

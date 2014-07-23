@@ -100,33 +100,33 @@ bin/tmda-sendmail
 @dirrm %%PYTHON_SITELIBDIR%%/TMDA/pythonlib
 @dirrm %%PYTHON_SITELIBDIR%%/TMDA/Queue
 @dirrm %%PYTHON_SITELIBDIR%%/TMDA
-%%EXAMPLESDIR%%/collectaddys
-%%EXAMPLESDIR%%/def2html
-%%EXAMPLESDIR%%/dot-tmda/README
-%%EXAMPLESDIR%%/dot-tmda/config
-%%EXAMPLESDIR%%/dot-tmda/crypt_key
-%%EXAMPLESDIR%%/dot-tmda/filters/incoming
-%%EXAMPLESDIR%%/dot-tmda/filters/outgoing
-%%EXAMPLESDIR%%/dot-tmda/lists/blacklist
-%%EXAMPLESDIR%%/dot-tmda/lists/confirmed
-%%EXAMPLESDIR%%/dot-tmda/lists/whitelist
-%%EXAMPLESDIR%%/printcdb
-%%EXAMPLESDIR%%/printdbm
-%%EXAMPLESDIR%%/sendit.sh
-%%EXAMPLESDIR%%/smtp-check-sender
-%%EXAMPLESDIR%%/tmda.el
-%%EXAMPLESDIR%%/tofmipd.init
-%%EXAMPLESDIR%%/tofmipd.sysconfig
-%%EXAMPLESDIR%%/update-internaldomains
-%%EXAMPLESDIR%%/vadduser-tmda
-%%EXAMPLESDIR%%/vmailmgr-vdir.sh
-%%EXAMPLESDIR%%/vpopmail-vdir.sh
-%%EXAMPLESDIR%%/vtmdarc
-%%EXAMPLESDIR%%/wrapfd3.sh
-@dirrm %%EXAMPLESDIR%%/dot-tmda/lists
-@dirrm %%EXAMPLESDIR%%/dot-tmda/filters
-@dirrm %%EXAMPLESDIR%%/dot-tmda
-@dirrm %%EXAMPLESDIR%%
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/collectaddys
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/def2html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/dot-tmda/README
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/dot-tmda/config
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/dot-tmda/crypt_key
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/dot-tmda/filters/incoming
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/dot-tmda/filters/outgoing
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/dot-tmda/lists/blacklist
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/dot-tmda/lists/confirmed
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/dot-tmda/lists/whitelist
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/printcdb
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/printdbm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sendit.sh
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/smtp-check-sender
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tmda.el
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tofmipd.init
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tofmipd.sysconfig
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/update-internaldomains
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/vadduser-tmda
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/vmailmgr-vdir.sh
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/vpopmail-vdir.sh
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/vtmdarc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/wrapfd3.sh
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/dot-tmda/lists
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/dot-tmda/filters
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/dot-tmda
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
 %%DATADIR%%/bounce_expired_dated.txt
 %%DATADIR%%/bounce_fail_dated.txt
 %%DATADIR%%/bounce_fail_keyword.txt

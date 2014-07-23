@@ -22,7 +22,7 @@ USE_XORG=	x11
 OPTIONS_DEFINE=	DOCS JAPANESE XFT
 
 JAPANESE_CONFIGURE_ON=	--enable-xim --enable-cjk --with-encoding=eucj
-XFT_LIB_DEPENDS=	Xft.2:${PORTSDIR}/x11-fonts/libXft
+XFT_LIB_DEPENDS=	libXft.so:${PORTSDIR}/x11-fonts/libXft
 XFT_CONFIGURE_ENABLE=	xft
 
 .include <bsd.port.pre.mk>

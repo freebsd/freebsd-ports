@@ -252,7 +252,7 @@ external_acl+=	LDAP_group
 libexec+=	basic_ldap_auth ext_ldap_group_acl
 .endif
 .if ${PORT_OPTIONS:MAUTH_SASL}
-LIB_DEPENDS+=	sasl2:${PORTSDIR}/security/cyrus-sasl2
+LIB_DEPENDS+=	libsasl2.so:${PORTSDIR}/security/cyrus-sasl2
 CFLAGS+=	-I${LOCALBASE}/include
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
@@ -432,7 +432,7 @@ CONFIGURE_ARGS+=	--disable-follow-x-forwarded-for
 .endif
 .if ${PORT_OPTIONS:MECAP}
 CONFIGURE_ARGS+=	--enable-ecap
-LIB_DEPENDS+=	ecap:${PORTSDIR}/www/libecap
+LIB_DEPENDS+=	libecap.so:${PORTSDIR}/www/libecap
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 .else
@@ -445,8 +445,8 @@ CONFIGURE_ARGS+=	--disable-icap-client
 .endif
 .if ${PORT_OPTIONS:MESI}
 CONFIGURE_ARGS+=	--enable-esi
-LIB_DEPENDS+=	expat:${PORTSDIR}/textproc/expat2 \
-		xml2:${PORTSDIR}/textproc/libxml2
+LIB_DEPENDS+=	libexpat.so:${PORTSDIR}/textproc/expat2 \
+		libxml2.so:${PORTSDIR}/textproc/libxml2
 CFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/libxml2
 LDFLAGS+=	-L${LOCALBASE}/lib
 .else

@@ -5,6 +5,7 @@ PORTNAME=	luminance-hdr
 DISTVERSION=	2.4.0
 CATEGORIES=	graphics
 MASTER_SITES=	SF/qtpfsgui/luminance/${DISTVERSION}
+PKGNAMESUFFIX=	-qt5
 
 MAINTAINER=	h2+fbsdports@fsfe.org
 COMMENT=	Complete open source solution for HDR photography
@@ -27,6 +28,10 @@ USE_QT5=	buildtools_build gui sql webkit xml linguist_build \
 INSTALLS_ICONS=	yes
 
 MAKE_JOBS_UNSAFE=yes
+
+CONFLICTS_INSTALL=	luminance-hdr-[0-9]*
+
+OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.pre.mk>
 

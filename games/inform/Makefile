@@ -22,6 +22,8 @@ NO_WRKSUBDIR=	yes
 USES=		zip:infozip
 MAKEFILE=	${FILESDIR}/Makefile.inform
 
+OPTIONS_DEFINE=	DOCS
+
 post-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}
 	(cd ${STAGEDIR}${DATADIR} && \

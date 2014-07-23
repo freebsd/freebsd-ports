@@ -10,10 +10,12 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 MAINTAINER=	johans@FreeBSD.org
 COMMENT=	Not-so-very-strong chess engine
 
-USES=		gmake perl5
+USES=		gmake perl5 readline
 USE_PERL5=	build
 MAKE_JOBS_UNSAFE=yes
 MAKE_ENV=	HAVE_GETOPT=1
+
+OPTIONS_DEFINE=	DOCS
 
 post-patch:
 	@${RM} ${WRKSRC}/src/lib/getopt.h

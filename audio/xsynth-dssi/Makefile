@@ -3,7 +3,7 @@
 
 PORTNAME=	xsynth-dssi
 PORTVERSION=	0.9.4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio
 MASTER_SITES=	SF/dssi/${PORTNAME}/${PORTVERSION}
 
@@ -19,9 +19,10 @@ LIB_DEPENDS=	libdssialsacompat.so:${PORTSDIR}/audio/libdssialsacompat \
 LICENSE=	GPLv2 LGPL21
 LICENSE_COMB=	multi
 
+GNU_CONFIGURE=	yes
 USE_GNOME=	gtk20
-USES=		gmake pkgconfig
-USE_AUTOTOOLS=	libtool
+USES=		gmake libtool pkgconfig
+INSTALL_TARGET=	install-strip
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

@@ -19,4 +19,6 @@ BRANDELF_FILES=	usr/bin/gpg-error
 PLIST_SUB=	PORTVERSION="${PORTVERSION}"
 DESCR=		${.CURDIR}/../libgpg-error/pkg-descr
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.mk>

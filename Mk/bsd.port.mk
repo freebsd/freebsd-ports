@@ -3254,7 +3254,7 @@ options-message:
 	@${ECHO_MSG} "===>  Found saved configuration for ${_OPTIONS_READ}"
 .endif
 
-${_DISTDIR} ${FILESDIR} ${PKG_DBDIR} ${PREFIX} ${WRKDIR} ${WRKSRC}:
+${FILESDIR} ${PKG_DBDIR} ${PREFIX} ${WRKDIR} ${WRKSRC}:
 	@${MKDIR} ${.TARGET}
 
 # Warn user about deprecated packages.  Advisory only.
@@ -3328,7 +3328,8 @@ DISTINFO_DATA?=	if [ \( -n "${DISABLE_SIZE}" -a -n "${NO_CHECKSUM}" \) -o ! -f "
 # Fetch
 
 .if !target(do-fetch)
-do-fetch: ${_DISTDIR}
+do-fetch:
+	@${MKDIR} ${_DISTDIR}
 	@cd ${_DISTDIR};\
 	${_MASTER_SITES_ENV} ; \
 	for _file in ${DISTFILES}; do \
@@ -3413,7 +3414,7 @@ do-fetch: ${_DISTDIR}
 	    fi; \
 	 done
 .if defined(PATCHFILES)
-	@cd ${_DISTDIR};\
+	cd ${_DISTDIR};\
 	${_PATCH_SITES_ENV} ; \
 	for _file in ${PATCHFILES}; do \
 		file=`${ECHO_CMD} $$_file | ${SED} -E -e 's/:[^-:][^:]*$$//'` ; \
@@ -3489,7 +3490,7 @@ clean-wrkdir:
 	@${RM} -rf ${WRKDIR}
 
 .if !target(do-extract)
-do-extract: clean-wrkdir ${WRKDIR}
+do-extract:
 	@for file in ${EXTRACT_ONLY}; do \
 		if ! (cd ${WRKDIR} && ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${_DISTDIR}/$$file ${EXTRACT_AFTER_ARGS});\
 		then \
@@ -4464,7 +4465,8 @@ delete-distfiles-list:
 # Prints out a list of files to fetch (useful to do a batch fetch)
 
 .if !target(fetch-list)
-fetch-list: ${_DISTDIR}
+fetch-list:
+	@${MKDIR} ${_DISTDIR}
 	@(cd ${_DISTDIR}; \
 	 ${_MASTER_SITES_ENV} ; \
 	 for _file in ${DISTFILES}; do \
@@ -4537,7 +4539,8 @@ fetch-list: ${_DISTDIR}
 .endif
 
 .if !target(fetch-url-list-int)
-fetch-url-list-int: ${_DISTDIR}
+fetch-url-list-int:
+	@${MKDIR} ${_DISTDIR}
 	@(cd ${_DISTDIR}; \
 	${_MASTER_SITES_ENV}; \
 	for _file in ${DISTFILES}; do \
@@ -4927,7 +4930,7 @@ ${deptype:tl}-depends:
 lib-depends:
 .if defined(LIB_DEPENDS) && !defined(NO_DEPENDS)
 	@set -e ; \
-	for i in ${LIB_DEPENDS:M*.so*\:*}; do \
+	for i in ${LIB_DEPENDS}; do \
 		lib=$${i%%:*} ; \
 		dir=$${i#*:}  ; \
 		target="${DEPENDS_TARGET}"; \
@@ -4955,43 +4958,6 @@ lib-depends:
 		else \
 			${ECHO_MSG}; \
 		fi ; \
-	done
-	@set -e ; for i in ${LIB_DEPENDS:N*.so*\:*}; do \
-		lib=$${i%%:*}; \
-		pattern="`${ECHO_CMD} $$lib | ${SED} -E -e 's/\./\\\\./g' -e 's/(\\\\)?\+/\\\\+/g'`"\
-		dir=$${i#*:}; \
-		target=$${i##*:}; \
-		if ${TEST} $$dir = $$target; then \
-			target="${DEPENDS_TARGET}"; \
-			depends_args="${DEPENDS_ARGS}"; \
-		else \
-			dir=$${dir%%:*}; \
-		fi; \
-		${ECHO_MSG} -n "===>   ${PKGNAME} depends on shared library: $$lib"; \
-		if ${LDCONFIG} ${_LDCONFIG_FLAGS} -r | ${GREP} -vwF -e "${PKGCOMPATDIR}" | ${GREP} -qwE -e "-l$$pattern"; then \
-			${ECHO_MSG} " - found"; \
-			if [ ${_DEPEND_ALWAYS} = 1 ]; then \
-				${ECHO_MSG} "       (but building it anyway)"; \
-				notfound=1; \
-			else \
-				notfound=0; \
-			fi; \
-		else \
-			${ECHO_MSG} " - not found"; \
-			notfound=1; \
-		fi; \
-		if [ $$notfound != 0 ]; then \
-			${ECHO_MSG} "===>    Verifying $$target for $$lib in $$dir"; \
-			if [ ! -d "$$dir" ]; then \
-				${ECHO_MSG} "     => No directory for $$lib.  Skipping.."; \
-			else \
-				${_INSTALL_DEPENDS} \
-				if ! ${LDCONFIG} ${_LDCONFIG_FLAGS} -r | ${GREP} -vwF -e "${PKGCOMPATDIR}" | ${GREP} -qwE -e "-l$$pattern"; then \
-					${ECHO_MSG} "Error: shared library \"$$lib\" does not exist"; \
-					${FALSE}; \
-				fi; \
-			fi; \
-		fi; \
 	done
 .endif
 
@@ -6419,7 +6385,7 @@ _FETCH_SEQ=		fetch-depends pre-fetch pre-fetch-script \
 				do-fetch fetch-specials post-fetch post-fetch-script
 _EXTRACT_DEP=	fetch
 _EXTRACT_SEQ=	check-build-conflicts extract-message checksum extract-depends \
-				pre-extract pre-extract-script clean-wrkdir do-extract \
+				clean-wrkdir ${WRKDIR} pre-extract pre-extract-script do-extract \
 				post-extract post-extract-script
 _PATCH_DEP=		extract
 _PATCH_SEQ=		ask-license patch-message patch-depends pathfix dos2unix fix-shebang \

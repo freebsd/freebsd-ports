@@ -7,7 +7,7 @@ CATEGORIES=	security net ipv6
 MASTER_SITES=	TOR
 
 MAINTAINER=	bf@FreeBSD.org
-COMMENT=	An anonymizing overlay network for TCP
+COMMENT=	Anonymizing overlay network for TCP
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

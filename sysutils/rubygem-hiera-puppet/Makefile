@@ -8,7 +8,7 @@ CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	mat@FreeBSD.org
-COMMENT=	A data backend for Hiera that queries the Puppet scope for data
+COMMENT=	Data backend for Hiera that queries the Puppet scope for data
 
 RUN_DEPENDS=	puppet27>=0:${PORTSDIR}/sysutils/puppet27 \
 		rubygem-hiera>=1.0:${PORTSDIR}/sysutils/rubygem-hiera

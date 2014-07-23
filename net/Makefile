@@ -95,7 +95,6 @@
     SUBDIR += datapipe
     SUBDIR += dbeacon
     SUBDIR += delegate
-    SUBDIR += desktop-data-model
     SUBDIR += despoof
     SUBDIR += dgd
     SUBDIR += dgd-kernel
@@ -454,12 +453,12 @@
     SUBDIR += omnitty
     SUBDIR += onenetd
     SUBDIR += onioncat
-    SUBDIR += online-desktop
     SUBDIR += opal
     SUBDIR += openafs
     SUBDIR += openam
     SUBDIR += openbgpd
     SUBDIR += opendpi
+    SUBDIR += openggsn
     SUBDIR += openh323
     SUBDIR += openldap24-client
     SUBDIR += openldap24-sasl-client

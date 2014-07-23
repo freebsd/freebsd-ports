@@ -18,6 +18,8 @@ USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
 USES=		iconv
 
+OPTIONS_DEFINE=	DOCS
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|' \
 		-e 's|%%ICONV_LIB%%|${ICONV_LIB}|' \

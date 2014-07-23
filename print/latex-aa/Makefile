@@ -13,6 +13,8 @@ MAINTAINER=	yokota@res.otaru-uc.ac.jp
 COMMENT=	LaTeX class for submission to "Astronomy and Astrophysics"
 
 BROKEN=		Does not install
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2014-08-22
 
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes

@@ -7,7 +7,7 @@ CATEGORIES=	japanese
 MASTER_SITES=	http://redundancy.redundancy.org/mirror/${PORTNAME}/
 DISTFILES=	${DICTFILES}
 
-MAINTAINER=	lx@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Japanese-English edict UTF-8 dictionaries
 
 EXTRACT_DEPENDS=	${UNZIP_CMD}:${PORTSDIR}/archivers/unzip

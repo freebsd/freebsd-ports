@@ -10,7 +10,7 @@ PKGNAMESUFFIX=	22
 
 MAINTAINER=	cy@FreeBSD.org
 #		gjb@FreeBSD.org is also committer for this port
-COMMENT=	A systems administration tool for networks
+COMMENT=	Systems administration tool for networks
 
 FETCH_BEFORE_ARGS=	-o ${DISTDIR}/${DISTFILES}
 
@@ -33,6 +33,8 @@ CONFIGURE_ENV+=	BERKELEY_DB_CFLAGS=-I${BDB_INCLUDE_DIR} \
 		BERKELEY_DB_LIB=-l${BDB_LIB_NAME}
 
 INFO=		cfengine-Tutorial cfengine-Reference
+
+OPTIONS_DEFINE=	DOCS
 
 post-patch:
 		@${REINPLACE_CMD} -e '/^docdir/s!=.*!= @docdir@!'\

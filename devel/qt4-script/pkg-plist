@@ -42,7 +42,6 @@
 %%QT_INCDIR%%/QtScript/qscriptstring.h
 %%QT_INCDIR%%/QtScript/qscriptvalue.h
 %%QT_INCDIR%%/QtScript/qscriptvalueiterator.h
-%%QT_LIBDIR%%/libQtScript.la
 %%QT_LIBDIR%%/libQtScript.prl
 %%QT_LIBDIR%%/libQtScript.so
 %%QT_LIBDIR%%/libQtScript.so.4

@@ -7,7 +7,7 @@ PORTREVISION=	2
 CATEGORIES=	lang
 MASTER_SITES=	http://nekovm.org/_media/
 
-MAINTAINER=	ozawa@ongs.co.jp
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The Neko Programming Language
 
 LIB_DEPENDS=	libgc-threaded.so:${PORTSDIR}/devel/boehm-gc-threaded
@@ -71,7 +71,7 @@ PLIST_SUB+=	SQLITE3="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MPCRE}
-LIB_DEPENDS+=	pcre:${PORTSDIR}/devel/pcre
+LIB_DEPENDS+=	libpcre.so:${PORTSDIR}/devel/pcre
 PLIST_SUB+=	PCRE=""
 .else
 LIBKEYNAME+=	regexp

@@ -10,7 +10,7 @@ DISTFILES=	${SRCFILE} ${MANUALFILE}
 DIST_SUBDIR=	sdpa
 EXTRACT_ONLY=	${SRCFILE}
 
-MAINTAINER=	maho@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Multi precision arithmetic version of math/sdpa
 
 NO_STAGE=	yes

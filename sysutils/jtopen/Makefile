@@ -25,6 +25,8 @@ JAR_FILES=	composer.jar jt400.jar jt400Proxy.jar jt400Servlet.jar jui400.jar \
 		outputwriters.jar reportwriter.jar tes.jar uitools.jar util400.jar
 DOC_FILES=	changes.html license.html readme.html
 
+OPTIONS_DEFINE=	DOCS
+
 do-install:
 .for i in ${JAR_FILES}
 	${INSTALL_DATA} ${WRKSRC}/lib/${i} ${STAGEDIR}${JAVAJARDIR}

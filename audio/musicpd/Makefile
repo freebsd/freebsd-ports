@@ -27,7 +27,7 @@ PORTDOCS=	AUTHORS README COPYING NEWS UPGRADING
 SUB_FILES=	pkg-message
 
 OPTIONS_DEFINE=	ID3TAG IPV6 ARCHIVE SAMPLERATE SQLITE3 \
-		CDPARANOIA LAME MMS VORBISENC
+		CDPARANOIA LAME MMS VORBISENC DOCS
 
 OPTIONS_RADIO=	ZEROCONF
 OPTIONS_RADIO_ZEROCONF=	AVAHI MDNSRESPONDER
@@ -124,17 +124,11 @@ WAVPACK_LIB_DEPENDS=libwavpack.so:${PORTSDIR}/audio/wavpack
 WILDMIDI_CONFIGURE_ENABLE=wildmidi
 WILDMIDI_LIB_DEPENDS=libWildMidi.so:${PORTSDIR}/audio/wildmidi
 
-MPDDIR?=	/var/mpd
 MPDUSER?=	mpd
 MPDGROUP?=	mpd
 
 USERS=	${MPDUSER}
 GROUPS=	${MPDGROUP}
-
-PLIST_SUB=	MPDUSER=${MPDUSER} \
-		MPDDIR=${MPDDIR}   \
-		MPDGROUP=${MPDGROUP}
-SUB_LIST+=	MPDDIR=${MPDDIR}
 
 .include <bsd.port.options.mk>
 
@@ -143,7 +137,7 @@ IGNORE=Please remove the MPDCONF line from make.conf, then rename ${PREFIX}/etc/
 .endif
 
 .if exists(${PREFIX}/etc/mpd.conf)
-MSG=You still have ${PREFIX}/etc/mpd.conf in existence-- this file is no longer used by musicpd.
+MSG=does not expect ${PREFIX}/etc/mpd.conf to exist.
 .if !exists(${PREFIX}/etc/musicpd.conf)
 IGNORE=${MSG}  Move it to ${PREFIX}/etc/musicpd.conf.
 .else
@@ -191,8 +185,8 @@ CONFIGURE_ARGS+=--disable-shout
 .endif
 
 post-patch:
-# Replace ~/ with MPDDIR and make musicpd run as mpd by default
-	@${REINPLACE_CMD} -e 's,^#\([^"]*"\)~/,\1${MPDDIR}/,g' \
+# Replace ~/ with /var/mpd and make musicpd run as mpd by default
+	@${REINPLACE_CMD} -e 's,^#\([^"]*"\)~/,\1/var/mpd,g' \
 		-e 's,^#\(user[^"]*"\)nobody,\1${MPDUSER},g' \
 		${WRKSRC}/doc/mpdconf.example
 # Uncomment OSS audio output part from MPDCONF; dragons!
@@ -217,17 +211,15 @@ post-patch:
 .endif
 
 do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/src/mpd \
+	${INSTALL_PROGRAM} ${WRKSRC}/src/mpd \
 		${STAGEDIR}/${PREFIX}/bin/${PORTNAME}
-	@${INSTALL_MAN} ${WRKSRC}/doc/mpd.1 \
+	${INSTALL_MAN} ${WRKSRC}/doc/mpd.1 \
 		${STAGEDIR}/${PREFIX}/man/man1/${PORTNAME}.1
-	@${INSTALL_MAN} ${WRKSRC}/doc/mpd.conf.5 \
+	${INSTALL_MAN} ${WRKSRC}/doc/mpd.conf.5 \
 		${STAGEDIR}/${PREFIX}/man/man5/${PORTNAME}.conf.5
-	@${MKDIR} ${STAGEDIR}/${DOCSDIR}
-.for doc in ${PORTDOCS}
-	@${INSTALL_DATA} ${WRKSRC}/${doc} ${STAGEDIR}/${DOCSDIR}/
-.endfor
-	@${INSTALL_DATA} ${WRKSRC}/doc/mpdconf.example \
+	${MKDIR} ${STAGEDIR}/${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}/${DOCSDIR}/
+	${INSTALL_DATA} ${WRKSRC}/doc/mpdconf.example \
 		${STAGEDIR}/${PREFIX}/etc/${PORTNAME}.conf.sample
 
 .include <bsd.port.mk>

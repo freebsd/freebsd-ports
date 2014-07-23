@@ -1,5 +1,0 @@
---- gconf.path~	2008-04-23 23:06:43.000000000 +0530
-+++ gconf.path	2008-05-28 21:24:34.000000000 +0530
-@@ -1 +1 @@
--xml:readonly:/usr/share/online-desktop/gconf.xml.online-desktop
-+xml:readonly:%%PREFIX%%/share/online-desktop/gconf.xml.online-desktop

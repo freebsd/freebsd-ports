@@ -1,2 +1,28 @@
 #!/bin/sh
-fetch -o - http://geolite.maxmind.com/download/geoip/database/GeoLiteCountry/GeoIP.dat.gz | gunzip > %%DATADIR%%/GeoIP.dat
+
+TEMPFILE=`mktemp %%DATADIR%%/GeoIP.dat-XXXXXX`
+if fetch -o - http://geolite.maxmind.com/download/geoip/database/GeoLiteCountry/GeoIP.dat.gz | gunzip >> $TEMPFILE ; then
+    chmod 644 $TEMPFILE
+    if ! mv $TEMPFILE %%DATADIR%%/GeoIP.dat ; then
+        rm $TEMPFILE
+        echo Unable to overwrite %%DATADIR%%/GeoIP.dat
+        exit 2
+    fi
+else
+    rm $TEMPFILE
+    echo GeoIP.dat download failed
+    exit 1
+fi
+TEMPFILE=`mktemp %%DATADIR%%/GeoIPv6.dat-XXXXXX`
+if fetch -o - http://geolite.maxmind.com/download/geoip/database/GeoIPv6.dat.gz | gunzip >> $TEMPFILE ; then
+    chmod 644 $TEMPFILE
+    if ! mv $TEMPFILE %%DATADIR%%/GeoIPv6.dat ; then
+        rm $TEMPFILE
+        echo Unable to overwrite %%DATADIR%%/GeoIPv6.dat 
+        exit 2
+    fi
+else
+    rm $TEMPFILE
+    echo GeoIPv6.dat download failed
+    exit 1
+fi

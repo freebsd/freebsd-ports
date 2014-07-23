@@ -12,6 +12,8 @@ COMMENT=	Advanced drum machine
 
 LICENSE=	GPLv2
 
+CONFLICTS=	hydrogen-devel-0.*
+
 LIB_DEPENDS+=	libsndfile.so:${PORTSDIR}/audio/libsndfile \
 		libtar.so:${PORTSDIR}/devel/libtar \
 		liblrdf.so:${PORTSDIR}/textproc/liblrdf

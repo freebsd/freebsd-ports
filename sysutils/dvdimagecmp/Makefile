@@ -9,7 +9,7 @@ MASTER_SITE_SUBDIR=	apps/video
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@thepentagon.org
-COMMENT=	A simple tool for comparing an image to a burned disc
+COMMENT=	Simple tool for comparing an image to a burned disc
 
 USES=		gmake
 

@@ -13,6 +13,8 @@ COMMENT=	Produces a web page of statistics and quotes from IRC channel logs
 GNU_CONFIGURE=	YES
 USES=	gmake
 
+OPTIONS_DEFINE=	DOCS
+
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's,strcasestr,strcasestr_x,g' ${WRKSRC}/ircstats.h \

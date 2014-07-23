@@ -22,7 +22,7 @@ USE_PYDISTUTILS=	YES
 DOCS=			README.txt
 EXAMPLES=		test/cube.stl test/cube_bin.stl
 
-OPTIONS_DEFINE=		PYCAIRO
+OPTIONS_DEFINE=		PYCAIRO DOCS
 PYCAIRO_DESC=		Use (py)Cairo to enable stl2pdf to function.
 
 .include <bsd.port.options.mk>

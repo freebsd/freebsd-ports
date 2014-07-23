@@ -1,2 +1,7 @@
+@group kmem
+@mode 2555
 bin/xosview
+@mode
+@group
 lib/X11/app-defaults/XOsview
+man/man1/xosview.1.gz

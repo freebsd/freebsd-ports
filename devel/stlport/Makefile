@@ -9,7 +9,7 @@ PKGNAMESUFFIX=	-${COMPILER}
 DISTNAME=	STLport-${PORTVERSION:S/.b/-b/}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Adaptation of SGI\'s Standard Template Library
+COMMENT=	Adaptation of SGI's Standard Template Library
 
 
 WRKSRC=		${WRKDIR}/STLport-${PORTVERSION:S/.b/b/}/build/lib

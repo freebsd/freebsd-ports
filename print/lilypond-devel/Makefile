@@ -21,6 +21,7 @@ BUILD_DEPENDS=	pdftexi2dvi:${PORTSDIR}/print/texinfo \
 		help2man:${PORTSDIR}/misc/help2man \
 		pngtopnm:${PORTSDIR}/graphics/netpbm \
 		rsync:${PORTSDIR}/net/rsync \
+		texi2html:${PORTSDIR}/textproc/texi2html \
 		zip:${PORTSDIR}/archivers/zip \
 		${LOCALBASE}/share/ghostscript/fonts/c059033l.pfb:${PORTSDIR}/print/gsfonts
 

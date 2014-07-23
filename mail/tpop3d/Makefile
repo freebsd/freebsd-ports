@@ -41,7 +41,7 @@ PASSWDAUTH_CONFIGURE_ENABLE=	auth-passwd
 MBOXINDICES_CONFIGURE_ENABLE=	mbox-bsd-save-indices
 
 DRAC_BUILD_DEPENDS=		${LOCALBASE}/lib/libdrac.a:${PORTSDIR}/mail/drac
-GDBMAUTH_LIB_DEPENDS=		gdbm:${PORTSDIR}/databases/gdbm
+GDBMAUTH_LIB_DEPENDS=		libgdbm.so:${PORTSDIR}/databases/gdbm
 
 .include <bsd.port.options.mk>
 

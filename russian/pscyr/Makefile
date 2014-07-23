@@ -14,7 +14,7 @@ DISTFILES=	${PORTNAME}-${PORTVERSION:S/${PATCH_LEVEL}$/-patch&/}-tex.tar.gz \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Cyrillic PostScript Type1 fonts for use with TeX
 
-USE_TEX=	base texmf
+USE_TEX=	base texmf infra
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 MAKE_ENV=	TEXMFDIR=${LOCALBASE}/share/texmf

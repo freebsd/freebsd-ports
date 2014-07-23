@@ -20,6 +20,8 @@ WRKSRC=		${WRKDIR}/p4api-2008.1.158777
 PLATFORM=	freebsd60
 VERSION=	08.1
 
+OPTIONS_DEFINE=	DOCS EXAMPLES
+
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == i386

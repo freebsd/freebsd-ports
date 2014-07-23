@@ -18,8 +18,11 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--program-transform-name='s|.*\(tcp.*\)|\1|' \
 		--with-pcapnav-config=${LOCALBASE}/bin/pcapnav-config
 
-# does not build on FreeBSD 8.x
-PORTSCOUT=	skipv:4.0.4
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 900000
+BROKEN=		does not compile on FreeBSD 8.x
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-Wall -O3||' ${WRKSRC}/${CONFIGURE_SCRIPT}
@@ -27,4 +30,4 @@ post-patch:
 regression-test: build
 	@cd ${WRKSRC} && ${MAKE} -s test
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

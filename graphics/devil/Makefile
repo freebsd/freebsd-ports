@@ -94,8 +94,6 @@ CONFIGURE_ARGS+=--disable-altivec --disable-sse --disable-sse2 --disable-sse3
 
 post-patch:
 	@${REINPLACE_CMD} -e '/^SUBDIRS/s|docs||g' ${WRKSRC}/Makefile.am
-	@${REINPLACE_CMD} -e '/^ilur_LDADD =/s|$$| $$(il_library)|' \
-		${WRKSRC}/bin/Makefile.am
 	@${REINPLACE_CMD} -e '/^pkgdir=/s|$$(libdir)/|$$(prefix)/libdata/|g' \
 		${WRKSRC}/data/Makefile.am
 	@${REINPLACE_CMD} -e 's|<malloc\.h>|<stdlib.h>|g' \

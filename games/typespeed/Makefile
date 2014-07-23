@@ -8,7 +8,7 @@ CATEGORIES=	games
 MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Test your typing speed and get your fingers\' CPS
+COMMENT=	Test your typing speed and get your fingers' CPS
 
 OPTIONS_DEFINE=	NLS
 OPTIONS_SUB=	yes

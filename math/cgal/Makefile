@@ -19,9 +19,8 @@ LIB_DEPENDS=	libGLU.so:${PORTSDIR}/graphics/libGLU \
 		libgmp.so:${PORTSDIR}/math/gmp \
 		libmpfr.so:${PORTSDIR}/math/mpfr
 
-USE_BZIP2=		yes
 USE_LDCONFIG=		yes
-USES=			cmake
+USES=			cmake tar:bzip2
 USE_QT4=		corelib opengl qmake_build gui moc_build rcc_build uic_build
 HAS_CONFIGURE=		yes
 LDFLAGS+=		-L${LOCALBASE}/lib

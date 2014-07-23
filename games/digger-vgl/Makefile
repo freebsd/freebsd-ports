@@ -14,7 +14,7 @@ ONLY_FOR_ARCHS=	i386	# Alphas don't have libvgl yet...
 
 MAKEFILE=	Makefile.fbsd
 
-OPTIONS_DEFINE=	SOUND
+OPTIONS_DEFINE=	SOUND DOCS
 
 .include <bsd.port.options.mk>
 

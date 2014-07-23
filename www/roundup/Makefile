@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	roundup
-PORTVERSION=	1.4.21
+PORTVERSION=	1.5.0
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 
@@ -25,11 +25,11 @@ RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:${PORTSDIR}/databases/py-sqlite3
 .endif
 
 .if ${PORT_OPTIONS:MPGSQL}
-RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/psycopgmodule.so:${PORTSDIR}/databases/py-psycopg
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPRREFIX}psycopg>0:${PORTSDIR}/databases/py-psycopg
 .endif
 
 .if ${PORT_OPTIONS:MMYSQL}
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}MySQLdb>=0:${PORTSDIR}/databases/py-MySQLdb
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}MySQLdb>0:${PORTSDIR}/databases/py-MySQLdb
 .endif
 
 .if ${PORT_OPTIONS:MNLS}

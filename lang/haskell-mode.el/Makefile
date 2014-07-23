@@ -5,7 +5,7 @@ PORTNAME=	haskell-mode
 PORTVERSION=	2.9.1
 CATEGORIES=	lang elisp
 
-MAINTAINER=	umq@ueo.co.jp
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Emacs lisp mode for editing haskell programs
 
 LICENSE=	GPLv3

@@ -48,7 +48,6 @@
 %%QT_INCDIR%%/QtXml/qdom.h
 %%QT_INCDIR%%/QtXml/qxml.h
 %%QT_INCDIR%%/QtXml/qxmlstream.h
-%%QT_LIBDIR%%/libQtXml.la
 %%QT_LIBDIR%%/libQtXml.prl
 %%QT_LIBDIR%%/libQtXml.so
 %%QT_LIBDIR%%/libQtXml.so.4

@@ -8,7 +8,7 @@ CATEGORIES=	security
 MASTER_SITES=	PACKETSTORM/UNIX/loggers
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A program to assist logging of smurf attacks
+COMMENT=	Program to assist logging of smurf attacks
 
 USE_CSTD=	gnu89
 GNU_CONFIGURE=	yes

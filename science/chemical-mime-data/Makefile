@@ -8,7 +8,7 @@ CATEGORIES=	science
 MASTER_SITES=	SF/chemical-mime/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	kwm@FreeBSD.org
-COMMENT=	A collection of chemical MIME types for UNIX desktops
+COMMENT=	Collection of chemical MIME types for UNIX desktops
 
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/librsvg-2.0.pc:${PORTSDIR}/graphics/librsvg2
 

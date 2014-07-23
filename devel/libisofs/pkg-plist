@@ -1,7 +1,7 @@
 include/libisofs/libisofs.h
 lib/libisofs.a
-lib/libisofs.la
 lib/libisofs.so
 lib/libisofs.so.6
+lib/libisofs.so.6.72.0
 libdata/pkgconfig/libisofs-1.pc
 @dirrm include/libisofs

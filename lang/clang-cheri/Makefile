@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	clang-cheri
-PORTVERSION=	3.4.20140528
+PORTVERSION=	3.5.d20140702
 CATEGORIES=	lang devel
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	brooks
@@ -9,8 +9,8 @@ MASTER_SITE_SUBDIR=	brooks
 MAINTAINER=	brooks@FreeBSD.org
 COMMENT=	C, Objective-C, and C++ compiler with CHERI CPU support
 
-USES=		cmake:outsource compiler:c++11-lib ninja perl5 shebangfix
-USE_BZIP2=	yes
+USES=		cmake:outsource compiler:c++11-lib ninja perl5 shebangfix \
+		tar:bzip2
 USE_PYTHON=	yes
 
 BUILD_DEPENDS=	swig1.3:${PORTSDIR}/devel/swig13

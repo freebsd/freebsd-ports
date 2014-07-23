@@ -21,6 +21,8 @@ INSTALL_TARGET=	site-install
 
 EXAMPLES=	hook2.rb test.rb
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.pre.mk>
 
 PKGNAMEPREFIX:=	${PKGNAMEPREFIX}${RUBY_PKGNAMEPREFIX}

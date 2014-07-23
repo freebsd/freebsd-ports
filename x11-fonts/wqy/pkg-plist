@@ -9,4 +9,7 @@
 %%FONTSDIR%%/wqy-zenhei.ttc
 %%FONTSDIR%%/wqy-microhei-lite.ttc
 %%FONTSDIR%%/wqy-microhei.ttc
-@dirrm %%FONTSDIR%%
+@fcfontsdir %%FONTSDIR%%
+@dirrmtry %%CONFAVAILDIR%%
+@dirrmtry %%CONFDDIR%%
+@dirrmtry etc/fonts

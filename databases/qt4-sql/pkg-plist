@@ -85,7 +85,6 @@
 %%QT_INCDIR%%/QtSql/qsqlrelationaltablemodel.h
 %%QT_INCDIR%%/QtSql/qsqlresult.h
 %%QT_INCDIR%%/QtSql/qsqltablemodel.h
-%%QT_LIBDIR%%/libQtSql.la
 %%QT_LIBDIR%%/libQtSql.prl
 %%QT_LIBDIR%%/libQtSql.so
 %%QT_LIBDIR%%/libQtSql.so.4

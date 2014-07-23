@@ -32,6 +32,8 @@ HEADER_DIRS=	input \
 		output/file \
 		quit
 
+OPTIONS_DEFINE=	DOCS
+
 post-build:
 	cd ${WRKSRC} && ${MAKE_CMD} libdir/pkgconfig/srecord.pc
 

@@ -2,19 +2,18 @@
 # $FreeBSD$
 
 PORTNAME=	mozjpeg
-PORTVERSION=	1.0.1
-PORTREVISION=	1
+PORTVERSION=	2.0.1
 CATEGORIES=	graphics
 
 MAINTAINER=	horia@racoviceanu.com
-COMMENT=	Fork of libjpeg-turbo with 'jpgcrush' functionality
+COMMENT=	Advanced JPEG encoder for the Web
 
 LICENSE=	BSD3CLAUSE
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	mozilla
 GH_TAGNAME=	${GH_COMMIT}
-GH_COMMIT=	0c7449c
+GH_COMMIT=	e7a135b
 
 USES=		libtool:oldver
 USE_AUTOTOOLS=	aclocal autoconf autoheader automake libtoolize
@@ -52,7 +51,7 @@ OPTIONS_MULTI_LIBRARIES=	SHARED STATIC
 OPTIONS_SINGLE=	API_ABI_EMULATION
 OPTIONS_SINGLE_API_ABI_EMULATION=	JPEG6B JPEG7 JPEG8
 
-OPTIONS_DEFAULT=	DECODING ENCODING GCC JPEG8 SHARED STATIC TURBOJPEG
+OPTIONS_DEFAULT=	DECODING ENCODING GCC JPEG8 SHARED TURBOJPEG
 
 OPTIONS_SUB=	yes
 
@@ -99,15 +98,11 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|docdir = $$(datadir)/doc|&/mozjpeg|; \
 		/^exampledir/s|=.*|= ${EXAMPLESDIR}|' \
 			${WRKSRC}/Makefile.am
-	@${REINPLACE_CMD} -e 's|__attribute__((always_inline))",|inline &|' \
-			${WRKSRC}/configure.ac
 
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR2}
 	${INSTALL_DATA} ${DOC_FILES:S|^|${DOCSRCDIR1}/|} ${STAGEDIR}${DOCSDIR1}
 	${INSTALL_DATA} ${DOC_FILES:S|^|${DOCSRCDIR2}/|} ${STAGEDIR}${DOCSDIR2}
-.endif
 
 .if ${PORT_OPTIONS:MSHARED}
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/${PORTNAME}/libjpeg.so.${VER}

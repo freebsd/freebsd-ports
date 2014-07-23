@@ -25,6 +25,8 @@ THEMES=		atlantis.conf \
 		light_gray.conf \
 		light_orange.conf
 
+OPTIONS_DEFINE=	DOCS
+
 post-patch:
 	@${REINPLACE_CMD} -e '35,36d;89d;92,94d' \
 		-e "s/\([^-]pthread'\)/\1, 'X11'/" \

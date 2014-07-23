@@ -10,7 +10,7 @@ CATEGORIES=	benchmarks java
 DISTNAME=	SPECsfs2008-1.00
 EXTRACT_SUFX=	.iso
 
-MAINTAINER=	rodrigc@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	SPEC NFS and CIFS filesystem benchmark suite
 
 NO_PACKAGE=	license restricts redistribution

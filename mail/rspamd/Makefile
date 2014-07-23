@@ -2,7 +2,7 @@
 
 PORTNAME=	rspamd
 PORTVERSION=	0.6.9
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail
 MASTER_SITES=	http://rspamd.com/downloads/
 
@@ -67,5 +67,11 @@ USE_OPENSSL=	yes
 .else
  PLIST_SUB+=		REDIRECTOR="@comment "
 .endif
+
+post-install:
+	${INSTALL} -d \
+		${STAGEDIR}/var/log/rspamd \
+		${STAGEDIR}/var/db/rspamd \
+		${STAGEDIR}/var/run/rspamd
 
 .include <bsd.port.mk>

@@ -18,6 +18,8 @@ NO_WRKSUBDIR=	yes
 PORTDOCS=	example.unix groupfile CHANGELOG MANUAL mp3table.sql README repl.dat TODO utf.dat
 PLIST_FILES=	bin/mp3riot
 
+OPTIONS_DEFINE=	DOCS
+
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/mp3riot ${STAGEDIR}${PREFIX}/bin
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

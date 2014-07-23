@@ -10,7 +10,7 @@ PKGNAMESUFFIX?=	${SSL_SUFFIX}${PKGNAMESUFFIX2}
 DISTNAME=	vsFTPd-${UPSTREAMVERSION}-ext${EXTVERSION}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	gelraen.ua@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	FTP daemon that aims to be "very secure". Extended build
 
 CONFLICTS=	vsftpd-2* vsftpd${SSL_SUFFIX}${PKGNAMESUFFIX2}-2*

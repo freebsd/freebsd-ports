@@ -56,7 +56,7 @@ post-install:
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MHTMLDOCGUI}
-LIB_DEPENDS+=	fltk:${PORTSDIR}/x11-toolkits/fltk
+LIB_DEPENDS+=	libfltk.so:${PORTSDIR}/x11-toolkits/fltk
 CONFIGURE_ARGS+=--with-gui=yes
 .else
 CONFIGURE_ARGS+=--with-gui=no

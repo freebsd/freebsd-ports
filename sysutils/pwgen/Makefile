@@ -8,7 +8,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	SF
 
 MAINTAINER=	andrey@hm.perm.ru
-COMMENT=	A small, powerful, GPL'ed password generator
+COMMENT=	Small, powerful, GPL'ed password generator
 
 GNU_CONFIGURE=	yes
 USES=		perl5

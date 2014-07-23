@@ -10,7 +10,7 @@ PKGNAMEPREFIX=	php5-
 DISTNAME=	${PORTNAME}-php-${PORTVERSION}
 EXTRACT_SUFX=	.tbz2
 
-MAINTAINER=	acm@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The ffmpeg shared extension for php
 
 LIB_DEPENDS=	libgd.so:${PORTSDIR}/graphics/gd \

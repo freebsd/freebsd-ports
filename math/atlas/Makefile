@@ -55,7 +55,7 @@ POINTER?=	32
 .endif
 
 .if defined(MAINTAINER_MODE)
-LIB_DEPENDS+=	blas:${PORTSDIR}/math/blas
+LIB_DEPENDS+=	libblas.so:${PORTSDIR}/math/blas
 .endif
 
 .for i in DATA DOCS

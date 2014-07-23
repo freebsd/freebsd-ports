@@ -34,7 +34,7 @@ USES=		tar:xz cmake desktop-file-utils gettext iconv pathfix pkgconfig shared-mi
 INSTALLS_ICONS=	yes
 LDFLAGS+=	-L${LOCALBASE}/lib ${ICONV_LIB}
 
-OPTIONS_DEFINE=	GTK2 GTK3 QT4 OPENCC TPUNC
+OPTIONS_DEFINE=	GTK2 GTK3 QT4 OPENCC TPUNC DOCS
 OPTIONS_DEFAULT=GTK2
 
 GTK2_DESC=	Enable Gtk2 IM module

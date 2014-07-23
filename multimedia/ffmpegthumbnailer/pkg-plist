@@ -8,9 +8,9 @@ include/libffmpegthumbnailer/videoframe.h
 include/libffmpegthumbnailer/videothumbnailer.h
 include/libffmpegthumbnailer/videothumbnailerc.h
 lib/libffmpegthumbnailer.a
-lib/libffmpegthumbnailer.la
 lib/libffmpegthumbnailer.so
 lib/libffmpegthumbnailer.so.4
+lib/libffmpegthumbnailer.so.4.0.8
 libdata/pkgconfig/libffmpegthumbnailer.pc
 man/man1/ffmpegthumbnailer.1.gz
 %%MATE%%share/thumbnailers/ffmpegthumbnailer.thumbnailer

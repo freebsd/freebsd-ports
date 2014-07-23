@@ -3,13 +3,14 @@
 
 PORTNAME=	indic-ttf
 PORTVERSION=	0.5.14
+PORTREVISION=	1
 CATEGORIES=	x11-fonts
 MASTER_SITES=	DEBIAN/pool/main/t/ttf-indic-fonts
 PKGNAMESUFFIX=	-fonts
 DISTNAME=	${PORTNAME:C|(.*)-(.*)|\2-\1|}${PKGNAMESUFFIX}_${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A collection of truetype Indic fonts
+COMMENT=	Collection of truetype Indic fonts
 
 BUILD_DEPENDS+=	mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir \
 		mkfontscale:${PORTSDIR}/x11-fonts/mkfontscale \
@@ -20,11 +21,12 @@ WRKSRC=		${WRKDIR}/${DISTNAME:S|_|-|}
 
 NO_BUILD=	yes
 
-OPTIONS_MULTI=	FONTS
-OPTIONS_MULTI_FONTS=	BENGALI DEVANAGARI GUJARATI KANNADA ORIYA PUNJABI \
-			TAMIL TELUGU
-OPTIONS_DEFAULT=	BENGALI DEVANAGARI GUJARATI KANNADA ORIYA PUNJABI \
-			TAMIL TELUGU
+OPTIONS_SUB=		yes
+OPTIONS_MULTI=		FONTS
+OPTIONS_MULTI_FONTS=	BENGALI DEVANAGARI GUJARATI KANNADA MALAYALAM \
+			ORIYA PUNJABI TAMIL TELUGU
+OPTIONS_DEFAULT=	BENGALI DEVANAGARI GUJARATI KANNADA MALAYALAM \
+			ORIYA PUNJABI TAMIL TELUGU
 
 BENGALI_DESC=		BENGALI font set
 DEVANAGARI_DESC=	DEVANAGARI font set
@@ -36,13 +38,15 @@ PUNJABI_DESC=		PUNJABI font set
 TAMIL_DESC=		TAMIL font set
 TELUGU_DESC=		TELUGU font set
 
-FONTSNAME=	${PORTNAME}
-FONTSDIR?=	${PREFIX}/lib/X11/fonts/${FONTSNAME}
+FONTSNAME=	indic-ttf
+FONTLOC?=	lib/X11/fonts/indic-ttf
+FONTSDIR=	${PREFIX}/${FONTLOC}
 
-CONFAVAILDIR?=	${PREFIX}/etc/fonts/conf.avail
+CONFAVLOC?=	etc/fonts/conf.avail
+CONFAVAILDIR=	${PREFIX}/${CONFAVLOC}
 
-PLIST_SUB=	FONTSDIR=${FONTSDIR:S|${PREFIX}/||} \
-		CONFAVAILDIR=${CONFAVAILDIR:S|${PREFIX}/||} \
+PLIST_SUB=	FONTSDIR=${FONTLOC} \
+		CONFAVAILDIR=${CONFAVLOC} \
 		FCCACHE='${FCCACHE}'
 
 SUB_FILES=	pkg-message
@@ -52,66 +56,39 @@ SUB_LIST=	FONTSDIR=${FONTSDIR} \
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MBENGALI}
-FONTS=		bengali
-PLIST_SUB+=	BENGALI=''
-.else
-PLIST_SUB+=	BENGALI='@comment '
+FONTS+=		bengali
 .endif
 
 .if ${PORT_OPTIONS:MDEVANAGARI}
 FONTS+=		devanagari
-PLIST_SUB+=	DEVANAGARI=''
-.else
-PLIST_SUB+=	DEVANAGARI='@comment '
 .endif
 
 .if ${PORT_OPTIONS:MGUJARATI}
 FONTS+=		gujarati
-PLIST_SUB+=	GUJARATI=''
-.else
-PLIST_SUB+=	GUJARATI='@comment '
 .endif
 
 .if ${PORT_OPTIONS:MKANNADA}
 FONTS+=		kannada
-PLIST_SUB+=	KANNADA=''
-.else
-PLIST_SUB+=	KANNADA='@comment '
 .endif
 
 .if ${PORT_OPTIONS:MMALAYALAM}
 FONTS+=		malayalam
-PLIST_SUB+=	MALAYALAM=''
-.else
-PLIST_SUB+=	MALAYALAM='@comment '
 .endif
 
 .if ${PORT_OPTIONS:MORIYA}
 FONTS+=		oriya
-PLIST_SUB+=	ORIYA=''
-.else
-PLIST_SUB+=	ORIYA='@comment '
 .endif
 
 .if ${PORT_OPTIONS:MPUNJABI}
 FONTS+=		punjabi
-PLIST_SUB+=	PUNJABI=''
-.else
-PLIST_SUB+=	PUNJABI='@comment '
 .endif
 
 .if ${PORT_OPTIONS:MTAMIL}
 FONTS+=		tamil
-PLIST_SUB+=	TAMIL=''
-.else
-PLIST_SUB+=	TAMIL='@comment '
 .endif
 
 .if ${PORT_OPTIONS:MTELUGU}
 FONTS+=		telugu
-PLIST_SUB+=	TELUGU=''
-.else
-PLIST_SUB+=	TELUGU='@comment '
 .endif
 
 SUB_LIST+=	FONTS="${FONTS}"
@@ -119,17 +96,18 @@ SUB_LIST+=	FONTS="${FONTS}"
 do-install: install-fonts install-conf
 
 install-fonts:
-
 .for f in ${FONTS}
 	${MKDIR} ${STAGEDIR}${FONTSDIR}/${f}
 	${INSTALL_DATA} ${WRKSRC}/ttf-${f}/*.ttf ${STAGEDIR}${FONTSDIR}/${f}
-	${INSTALL_DATA} ${WRKSRC}/debian/ttf-${f}${PKGNAMESUFFIX}.copyright ${STAGEDIR}${FONTSDIR}/${f}
+	${INSTALL_DATA} ${WRKSRC}/debian/ttf-${f}${PKGNAMESUFFIX}.copyright \
+		${STAGEDIR}${FONTSDIR}/${f}
 .endfor
 
 install-conf:
 	${MKDIR} ${STAGEDIR}${CONFAVAILDIR}
 .for f in ${FONTS}
-	${INSTALL_DATA} ${WRKSRC}/ttf-${f}/90-ttf-${f}${PKGNAMESUFFIX}.conf ${STAGEDIR}${CONFAVAILDIR}/
+	${INSTALL_DATA} ${WRKSRC}/ttf-${f}/90-ttf-${f}${PKGNAMESUFFIX}.conf \
+		${STAGEDIR}${CONFAVAILDIR}/
 .endfor
 
 .include <bsd.port.mk>

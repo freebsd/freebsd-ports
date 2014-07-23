@@ -43,7 +43,7 @@ PLIST_SUB=	X11=""
 .else
 CONFIGURE_ARGS+=	--without-x
 PLIST_SUB=	X11="@comment "
-MAKE_ENV+=	WITHOUT_X11=${WITHOUT_X11}
+MAKE_ENV+=	WITHOUT_X11=yes
 .endif
 
 post-patch:

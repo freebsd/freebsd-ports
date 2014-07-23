@@ -1,3 +1,4 @@
+bin/zkCli.sh
 %%PORTNAME%%/bin/zkCleanup.sh
 %%PORTNAME%%/bin/zkCli.sh
 %%PORTNAME%%/bin/zkEnv.sh

@@ -557,7 +557,6 @@
 %%QT_LIBDIR%%/cmake/Qt5Gui/Qt5Gui_QMinimalIntegrationPlugin.cmake
 %%QT_LIBDIR%%/cmake/Qt5Gui/Qt5Gui_QOffscreenIntegrationPlugin.cmake
 %%QT_LIBDIR%%/cmake/Qt5Gui/Qt5Gui_QXcbIntegrationPlugin.cmake
-%%QT_LIBDIR%%/libQt5Gui.la
 %%QT_LIBDIR%%/libQt5Gui.prl
 %%QT_LIBDIR%%/libQt5Gui.so
 %%QT_LIBDIR%%/libQt5Gui.so.5
@@ -565,7 +564,6 @@
 %%QT_LIBDIR%%/libQt5Gui.so.%%FULLVER%%
 %%DEBUG%%%%QT_LIBDIR%%/libQt5Gui.so.%%FULLVER%%.debug
 %%QT_LIBDIR%%/libQt5PlatformSupport.a
-%%QT_LIBDIR%%/libQt5PlatformSupport.la
 %%QT_LIBDIR%%/libQt5PlatformSupport.prl
 %%QT_MKSPECDIR%%/modules/qt_lib_gui.pri
 %%QT_MKSPECDIR%%/modules/qt_lib_gui_private.pri

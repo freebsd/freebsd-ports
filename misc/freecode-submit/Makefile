@@ -9,6 +9,8 @@ MASTER_SITES=	http://www.c-s.li/ports/ \
 
 MAINTAINER=	cs@FreeBSD.org
 COMMENT=	Submission of updates to Freecode via its JSON API
+DEPRECATED=	This software is obsolete. Freecode does not accept updates anymore.
+EXPIRATION_DATE=2014-07-30
 
 LICENSE=	BSD4CLAUSE
 

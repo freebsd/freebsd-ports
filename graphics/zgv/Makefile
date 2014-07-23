@@ -16,7 +16,7 @@ LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
 		libpng15.so:${PORTSDIR}/graphics/png \
 		libtiff.so:${PORTSDIR}/graphics/tiff
 
-OPTIONS_DEFINE=	SDL
+OPTIONS_DEFINE=	SDL DOCS
 
 USES=		gmake makeinfo
 ALL_TARGET=	zgv info

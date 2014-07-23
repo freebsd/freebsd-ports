@@ -26,6 +26,8 @@ CONFIGURE_ARGS=	--with-perl-binding \
 		--with-python-binding --without-rigmatrix
 PLIST_SUB=	VER=${PORTVERSION} TCL_VER=${TCL_VER}
 
+OPTIONS_DEFINE=	DOCS
+
 post-patch:
 	${REINPLACE_CMD} -e 's|%%PYTHON_SITELIBDIR%%|${PYTHON_SITELIBDIR}|g' \
 		-e 's|%%TCL_LIBDIR%%|${TCL_LIBDIR}/hamlib|g' \

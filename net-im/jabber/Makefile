@@ -3,7 +3,7 @@
 
 PORTNAME=	jabber
 PORTVERSION=	1.6.1.1
-PORTREVISION=	15
+PORTREVISION=	16
 PORTEPOCH=	1
 CATEGORIES=	net-im ipv6
 MASTER_SITES=	http://download.jabberd.org/jabberd14/%SUBDIR%/
@@ -22,7 +22,7 @@ LIB_DEPENDS=	libpopt.so:${PORTSDIR}/devel/popt \
 		libgnutls.so:${PORTSDIR}/security/gnutls \
 		libexpat.so:${PORTSDIR}/textproc/expat2
 
-OPTIONS_DEFINE= IPV6 MYSQL PGSQL
+OPTIONS_DEFINE= IPV6 MYSQL PGSQL DOCS
 
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip

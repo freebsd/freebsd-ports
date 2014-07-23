@@ -3,12 +3,12 @@
 
 PORTNAME=	tickr
 PORTVERSION=	0.6.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	http://www.newsrssticker.com/src/ \
 		LOCAL/nivit/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	News RSS Ticker
 
 LICENSE=	GPLv3
@@ -17,20 +17,20 @@ GNU_CONFIGURE=	yes
 
 PLIST_SUB=	DESKTOPDIR=${DESKTOPDIR:S,${PREFIX}/,,}
 
-REINPLACE_ARGS=	-e 's,%%PREFIX%%,${PREFIX},1' -i.bak
+REINPLACE_ARGS=	-e 's,%%DATADIR%%,${DATADIR},1' -e 's,%%PREFIX%%,${PREFIX},1' -i.bak
 
 DOS2UNIX_GLOB=	tickr.h
-USE_GNOME=	desktopfileutils gtk20 libxml2
-USES=		dos2unix pkgconfig
+USE_GNOME=	gtk20 libxml2
+USES=		desktop-file-utils dos2unix pkgconfig libtool
 
-NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} ${WRKSRC}/${PORTNAME}.desktop ${WRKSRC}/src/tickr/tickr.h
 
 post-install:
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/tickr-url-list ${STAGEDIR}${DATADIR}/tickr-url-list
 	${LOCALBASE}/bin/desktop-file-install \
-		--mode=${SHAREMODE} --dir=${DESKTOPDIR} \
+		--mode=${SHAREMODE} --dir=${STAGEDIR}${DESKTOPDIR} \
 		${WRKSRC}/${PORTNAME}.desktop
-	-${LOCALBASE}/bin/update-desktop-database
 
 .include <bsd.port.mk>

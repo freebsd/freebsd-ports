@@ -261,6 +261,7 @@
     SUBDIR += p5-Bucardo
     SUBDIR += p5-CDB_File
     SUBDIR += p5-CDB_File-Generator
+    SUBDIR += p5-CGI-Session-Driver-memcached
     SUBDIR += p5-Cache-BDB
     SUBDIR += p5-Cache-Memcached
     SUBDIR += p5-Cache-Memcached-Fast
@@ -334,6 +335,7 @@
     SUBDIR += p5-DBIx-Browse
     SUBDIR += p5-DBIx-Class
     SUBDIR += p5-DBIx-Class-AsFdat
+    SUBDIR += p5-DBIx-Class-BitField
     SUBDIR += p5-DBIx-Class-Candy
     SUBDIR += p5-DBIx-Class-Cursor-Cached
     SUBDIR += p5-DBIx-Class-CustomPrefetch
@@ -800,6 +802,7 @@
     SUBDIR += redis
     SUBDIR += redis-devel
     SUBDIR += riak
+    SUBDIR += rocksdb
     SUBDIR += rrdman
     SUBDIR += rrdmerge
     SUBDIR += rrdtool

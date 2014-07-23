@@ -16,9 +16,8 @@ COMMENT=	Supportive tools for Chinese docproj build
 
 LICENSE=	BSD2CLAUSE
 
-RUN_DEPENDS=	gbklatex:${PORTSDIR}/print/latex-cjk
-
 USES=	iconv
+USE_TEX=	gbklatex:run
 
 WRKSRC=		${WRKDIR}/src
 

@@ -8,7 +8,7 @@ CATEGORIES=	graphics math
 MASTER_SITES=	http://www.informatik.uni-bremen.de/uDrawGraph/download/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-${PKGNUM}-${OPSYS:tl}-${ARCH}
 
-MAINTAINER=	nivit@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Graph drawing/visualization system
 
 LIB_DEPENDS=	libc.so.4:${PORTSDIR}/misc/compat4x

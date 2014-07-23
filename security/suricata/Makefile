@@ -61,7 +61,7 @@ BROKEN=		Does not compile on ia64, powerpc, or sparc64
 .endif
 
 .if ${PORT_OPTIONS:MPRELUDE}
-LIB_DEPENDS+=		prelude:${PORTSDIR}/security/libprelude
+LIB_DEPENDS+=		libprelude.so:${PORTSDIR}/security/libprelude
 CONFIGURE_ARGS+=	--enable-prelude \
 			--with-libprelude-prefix=${LOCALBASE}
 PLIST_SUB+=		PRELUDE=""
@@ -72,7 +72,7 @@ CONFIGURE_ARGS+=	--enable-ipfw
 .endif
 
 .if ${PORT_OPTIONS:MPORTS_PCAP}
-LIB_DEPENDS+=		pcap:${PORTSDIR}/net/libpcap
+LIB_DEPENDS+=		libpcap.so:${PORTSDIR}/net/libpcap
 CONFIGURE_ARGS+=	--with-libpcap-includes=${LOCALBASE}/include \
 			--with-libpcap-libraries=${LOCALBASE}/lib
 .else

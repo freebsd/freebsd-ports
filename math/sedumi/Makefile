@@ -9,7 +9,7 @@ MASTER_SITES=	${MASTER_SITE_LOCAL:S|%SUBDIR%|maho/sedumi|}
 # http://sedumi.mcmaster.ca/
 DISTNAME=	SeDuMi_1_1R3
 
-MAINTAINER=	maho@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	SeDuMi is an semidefinite programming solver on Matlab
 
 RUN_DEPENDS=	octave:${PORTSDIR}/math/octave

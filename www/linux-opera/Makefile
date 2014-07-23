@@ -2,7 +2,6 @@
 
 PORTNAME=	opera
 PORTVERSION=	${OPERA_VER}
-PORTREVISION=	1
 CATEGORIES=	www linux
 MASTER_SITES=	ftp://ftp.opera.com/pub/opera/linux/${OPERA_VER:S/.//}/ \
 		ftp://ftp.sunet.se/pub/www/clients/Opera/linux/${OPERA_VER:S/.//}/ \
@@ -18,45 +17,28 @@ PKGNAMEPREFIX=	linux-
 DISTNAME=	${PORTNAME}-${OPERA_VER}-${OPERA_BUILD}.i386.linux
 
 MAINTAINER=	acm@FreeBSD.org
-COMMENT=	A blazingly fast, full-featured, standards-compliant browser
+COMMENT=	Blazingly fast, full-featured, standards-compliant browser
 
 RUN_DEPENDS=	update-mime-database:${PORTSDIR}/misc/shared-mime-info
 
-USE_XZ=		yes
 USE_LINUX=	yes
-USE_LINUX_APPS=	naslibs png xorglibs
+USE_LINUX_APPS=	gdkpixbuf gtk2 naslibs png sqlite3 xorglibs
 ONLY_FOR_ARCHS=	i386 amd64
-USE_GNOME=	desktopfileutils
+USES=		desktop-file-utils shared-mime-info tar:xz
 WANT_GNOME=	yes
 INSTALLS_ICONS=	yes
 
 NO_BUILD=	yes
 
-OPERA_VER?=	11.62
-OPERA_BUILD?=	1347
+OPERA_VER?=	12.16
+OPERA_BUILD?=	1860
 DATADIR=	${PREFIX}/share/${UNIQUENAME}
 DOCSDIR=	${PREFIX}/share/doc/${UNIQUENAME}
 
-MAN1=		linux-opera.1 linux-opera-widget-manager.1
-
-RENAME=		opera opera-widget-manager lib/opera \
+RENAME=		opera lib/opera \
 		share/applications/opera-browser.desktop \
-		share/applications/opera-widget-installer.desktop \
-		share/applications/opera-widget-manager.desktop \
 		share/doc/opera share/opera man/man1/opera.1 \
-		man/man1/opera-widget-manager.1 \
-		share/mime/packages/opera-extension.xml \
-		share/mime/packages/opera-unite-application.xml \
-		share/mime/packages/opera-widget.xml
-
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION}<700055
-IGNORE=	you need FreeBSD>=7.0 RELEASE with Linux emulation 2.6.x.
-.elif ${OSVERSION}<800076 && ! defined (OVERRIDE_LINUX_NONBASE_PORTS)
-IGNORE=	you need to use non-default linux ports (define OVERRIDE_LINUX_BASE_PORT=f8 and OVERRIDE_LINUX_NONBASE_PORTS=f8). You also can use f10 instead of f8, but I only have tested it with f8.
-.endif
+		share/mime/packages/opera-extension.xml
 
 post-extract:
 	@${GUNZIP_CMD} ${WRKSRC}/share/man/man1/*.gz
@@ -125,6 +107,6 @@ post-patch:
 	@${FIND} ${WRKSRC} -name '*.bak' -delete
 
 do-install:
-	@(cd ${WRKSRC} && ./install --system --quiet --force)
+	@(cd ${WRKSRC} && ./install --repackage ${STAGEDIR}${PREFIX} --system --quiet --force)
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

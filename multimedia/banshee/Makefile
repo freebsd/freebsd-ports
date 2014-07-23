@@ -2,7 +2,7 @@
 
 PORTNAME=	banshee
 PORTVERSION=	2.6.2
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	multimedia audio
 MASTER_SITES=	GNOME
@@ -32,7 +32,8 @@ YOUTUBE_DESC=	Build and/or install the Youtube extension
 
 OPTIONS_DEFAULT=BPMDETECT GIO MTP WEBKIT YOUTUBE
 
-USES=		desktop-file-utils gmake mono pathfix perl5 pkgconfig shared-mime-info tar:xz
+USES=		desktop-file-utils gmake libtool mono pathfix perl5 \
+		pkgconfig shared-mime-info tar:xz
 USE_PERL5=	build
 GNU_CONFIGURE=	yes
 USE_GNOME=	gtksharp20 gnomesharp20
@@ -41,6 +42,7 @@ USE_LDCONFIG=	${PREFIX}/lib/${PORTNAME:C/-.*//}
 USE_XORG=	xrandr xxf86vm
 USE_SQLITE=	yes
 INSTALLS_ICONS=	yes
+INSTALL_TARGET=	install-strip
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--with-vendor-build-id=FreeBSD\ BSD\#\ Project --disable-gio-hardware --disable-boo
 

@@ -13,7 +13,7 @@ MASTER_SITES=	SF \
 		ftp://ftp.freetype.org/freetype/freetupe1/
 
 MAINTAINER=	doceng@FreeBSD.org
-COMMENT=	A free and portable TrueType font rendering engine
+COMMENT=	Free and portable TrueType font rendering engine
 
 USES=		desthack libtool:oldver
 GNU_CONFIGURE=	yes

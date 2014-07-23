@@ -401,7 +401,6 @@
 %%QT_INCDIR%%/Qt3Support/q3widgetstack.h
 %%QT_INCDIR%%/Qt3Support/q3wizard.h
 %%QT_INCDIR%%/Qt3Support/qiconset.h
-%%QT_LIBDIR%%/libQt3Support.la
 %%QT_LIBDIR%%/libQt3Support.prl
 %%QT_LIBDIR%%/libQt3Support.so
 %%QT_LIBDIR%%/libQt3Support.so.4

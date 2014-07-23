@@ -20,6 +20,8 @@ RUN_DEPENDS=	\
 NO_BUILD=	YES
 USES=		perl5
 
+OPTIONS_DEFINE=	DOCS
+
 pre-patch:
 	@${MV} ${WRKSRC}/ubh ${WRKSRC}/ubh.old
 	@${SED} -e '1,1s:/usr/bin/perl:${PERL5}:' \

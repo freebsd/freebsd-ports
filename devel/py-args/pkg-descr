@@ -1,0 +1,4 @@
+This simple Python module gives you an elegant interface for your command line
+arguments.
+
+WWW: https://github.com/kennethreitz/args

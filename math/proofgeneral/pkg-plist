@@ -4,6 +4,7 @@ bin/legotags
 bin/proofgeneral
 share/application-registry/proofgeneral.applications
 share/applications/proofgeneral.desktop
+man/man1/proofgeneral.1.gz
 %%EMACS_SITE_LISPDIR%%/ProofGeneral/acl2/acl2.el
 %%EMACS_SITE_LISPDIR%%/ProofGeneral/acl2/acl2.elc
 %%EMACS_SITE_LISPDIR%%/ProofGeneral/ccc/ccc.el

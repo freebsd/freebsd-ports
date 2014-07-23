@@ -27,7 +27,7 @@ CONFIGURE_ARGS=	--enable-ssl=${OPENSSLBASE} \
 OPTIONS_DEFINE=	SASL DOCS
 
 SASL_CONFIGURE_ON=	--enable-sasl
-SASL_LIB_DEPENDS=	sasl2:${PORTSDIR}/security/cyrus-sasl2
+SASL_LIB_DEPENDS=	libsasl2.so:${PORTSDIR}/security/cyrus-sasl2
 
 post-patch:
 	@${REINPLACE_CMD} -e \

@@ -9,7 +9,7 @@ MASTER_SITE_SUBDIR=	ldaputils/Contrib/mkntpwd
 DISTNAME=	${PORTNAME}
 
 MAINTAINER=	pcTA@cs.nctu.edu.tw
-COMMENT=	A utility to create Samba password hashes
+COMMENT=	Utility to create Samba password hashes
 
 NO_WRKSUBDIR=	yes
 PLIST_FILES=	bin/mkntpwd

@@ -13,9 +13,8 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python-based SPAM reduction system
 
-.if defined(WITH_CDB)
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/cdbmodule.so:${PORTSDIR}/databases/py-cdb
-.endif
+OPTIONS_DEFINE=	CDB DOCS EXAMPLES
+CDB_RUN_DEPENDS=${PYTHON_SITELIBDIR}/cdbmodule.so:${PORTSDIR}/databases/py-cdb
 
 USE_PYTHON=	yes
 

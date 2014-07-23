@@ -29,4 +29,6 @@ DOCSDIR=	${PREFIX}/usr/share/doc/${LINUX_NAME}-${PORTVERSION}
 PORTDOCS=	CHANGES COPYING README
 DESCR=		${.CURDIR}/../${PORTNAME}/pkg-descr
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.mk>

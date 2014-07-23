@@ -8,7 +8,7 @@ MASTER_SITES=	http://kassiopeia.juls.savba.sk/~garabik/software/pydf/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	baptiste@bapt.name
-COMMENT=	A python implementation of df
+COMMENT=	Python implementation of df
 
 LICENSE=	unknown
 LICENSE_NAME=	Public Domain

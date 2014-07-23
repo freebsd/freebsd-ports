@@ -20,6 +20,8 @@ SUB_FILES=	pkg-message
 
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
+OPTIONS_DEFINE=	DOCS
+
 do-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}
 	@${INSTALL_DATA} ${WRKSRC}/queen.1c ${STAGEDIR}${DATADIR}

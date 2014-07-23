@@ -17,6 +17,8 @@ WRKSRC=		${WRKDIR}/pyexif
 DATADIR=	${PREFIX}/share/py-exif
 DOCSDIR=	${PREFIX}/share/doc/py-exif
 
+OPTIONS_DEFINE=	DOCS
+
 post-patch:
 .for pyfile in exiftool exifinfo.py
 	@ cd ${WRKSRC}/bin && ${MV} ${pyfile} ${pyfile}.orig && \

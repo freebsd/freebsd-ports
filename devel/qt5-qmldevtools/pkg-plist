@@ -13,7 +13,6 @@
 %%QT_INCDIR%%/QtQmlDevTools/QtQmlDevToolsVersion
 %%QT_INCDIR%%/QtQmlDevTools/qtqmldevtoolsversion.h
 %%QT_LIBDIR%%/libQt5QmlDevTools.a
-%%QT_LIBDIR%%/libQt5QmlDevTools.la
 %%QT_LIBDIR%%/libQt5QmlDevTools.prl
 %%QT_MKSPECDIR%%/modules/qt_lib_qmldevtools_private.pri
 libdata/pkgconfig/Qt5QmlDevTools.pc

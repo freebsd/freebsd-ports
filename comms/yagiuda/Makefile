@@ -15,6 +15,8 @@ LICENSE=	GPLv2
 
 GNU_CONFIGURE=	yes
 
+OPTIONS_DEFINE=	DOCS
+
 do-install:
 .for f in first optimise yagi dipole input output
 	${INSTALL_PROGRAM} ${WRKSRC}/src/${f} ${STAGEDIR}${PREFIX}/bin

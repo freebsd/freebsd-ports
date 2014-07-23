@@ -12,7 +12,7 @@ COMMENT=	Minesweeper-style game for text-mode terminals
 LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual
 
-USES=			gmake
+USES=		gmake
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-prefsdir=${DATADIR} \
 		--with-scoresdir=${DATADIR} \
@@ -21,8 +21,10 @@ ALL_TARGET=	${PORTNAME}
 
 PORTDOCS=	CHANGES README
 PLIST_FILES=	bin/${PORTNAME} man/man6/${PORTNAME}.6.gz \
-				%%DATADIR%%/sweeprc %%DATADIR%%/sweeptimes
+		%%DATADIR%%/sweeprc %%DATADIR%%/sweeptimes
 PLIST_DIRS=	%%DATADIR%%
+
+OPTIONS_DEFINE=	DOCS
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

@@ -120,24 +120,29 @@ class BzGetPatch(GetPatch):
     URL_BASE= 'https://bugs.freebsd.org/bugzilla/'
     URL_SHOW = '%s/show_bug.cgi?id=' % URL_BASE
     REGEX_URL = r'<a href="([^<]+)">Details</a>'
-    REGEX = r'<div class="details">([^ ]+) \(text/plain\)'
+    REGEX = r'<div class="details">([^ ]+) \(text/plain(?:; charset=[-\w]+)?\)'
 
     def __init__(self, pr, category):
         GetPatch.__init__(self, pr, category)
 
-    def _extract_patchs_url(self, data):
-        pattern = re.compile(self.REGEX_URL)
-        return re.findall(pattern, data)
+    def _get_patch_name(self, url):
+        match = re.search(self.REGEX, urllib2.urlopen(url).read())
+        if match is None:
+            return None
+        return match.group(1)
 
-    def _extract_patchs_name(self, urls):
-        names = []
-        pattern = re.compile(self.REGEX)
-        for url in urls:
-            u = urllib2.urlopen('%s/%s' % (self.URL_BASE, url))
-            data = u.read()
-            names.append(re.findall(pattern, data)[0])
-
-        return names
+    def _get_patch_urls(self, data):
+        patch_urls = {}
+        for url in re.findall(self.REGEX_URL, data):
+            url = '%s/%s' % (self.URL_BASE, url)
+            file_name = self._get_patch_name(url)
+            if file_name is None:
+                self.out("[-] Could not determine the patch file name in %s. "
+                         "Skipping." % url)
+                continue
+            download_url = url[:url.find('&')]
+            patch_urls[download_url] = file_name
+        return patch_urls
 
     def fetch(self, *largs, **kwargs):
         category = kwargs['category']
@@ -149,19 +154,13 @@ class BzGetPatch(GetPatch):
             self.out("[-] No patch found")
             sys.exit(1)
 
-        urls = self._extract_patchs_url(data)
-        nb_urls = len(urls)
-        names = self._extract_patchs_name(urls)
-        nb_names = len(names)
-
-        urls = ['%s/%s' % (self.URL_BASE, u[:u.find('&')]) for u in urls]
-
-        if nb_names == 0 or nb_urls == 0 or nb_names != nb_urls:
+        patch_urls = self._get_patch_urls(data)
+        if not patch_urls:
             self.out("[-] No patch found")
             sys.exit(1)
 
-        for i in range(nb_urls):
-            self.add_patch(urls[i], names[i])
+        for url, file_name in patch_urls.iteritems():
+            self.add_patch(url, file_name)
 
 def main():
 

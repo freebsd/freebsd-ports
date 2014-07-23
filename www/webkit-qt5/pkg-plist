@@ -84,14 +84,12 @@
 %%QT_LIBDIR%%/cmake/Qt5WebKit/Qt5WebKitConfigVersion.cmake
 %%QT_LIBDIR%%/cmake/Qt5WebKitWidgets/Qt5WebKitWidgetsConfig.cmake
 %%QT_LIBDIR%%/cmake/Qt5WebKitWidgets/Qt5WebKitWidgetsConfigVersion.cmake
-%%QT_LIBDIR%%/libQt5WebKit.la
 %%QT_LIBDIR%%/libQt5WebKit.prl
 %%QT_LIBDIR%%/libQt5WebKit.so
 %%QT_LIBDIR%%/libQt5WebKit.so.5
 %%QT_LIBDIR%%/libQt5WebKit.so.%%SHORTVER%%
 %%QT_LIBDIR%%/libQt5WebKit.so.%%FULLVER%%
 %%DEBUG%%%%QT_LIBDIR%%/libQt5WebKit.so.%%FULLVER%%.debug
-%%QT_LIBDIR%%/libQt5WebKitWidgets.la
 %%QT_LIBDIR%%/libQt5WebKitWidgets.prl
 %%QT_LIBDIR%%/libQt5WebKitWidgets.so
 %%QT_LIBDIR%%/libQt5WebKitWidgets.so.5

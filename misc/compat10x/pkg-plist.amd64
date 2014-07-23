@@ -1,11 +1,17 @@
 lib/compat/libcam.so.6
 lib/compat/libdwarf.so.3
 lib/compat/libelf.so.1
+lib/compat/libhistory.so.8
 lib/compat/libipx.so.5
+lib/compat/libreadline.so.8
+lib/compat/libsbuf.so.6
 lib32/compat/libcam.so.6
 lib32/compat/libdwarf.so.3
 lib32/compat/libelf.so.1
+lib32/compat/libhistory.so.8
 lib32/compat/libipx.so.5
+lib32/compat/libreadline.so.8
+lib32/compat/libsbuf.so.6
 @dirrmtry lib/compat
 @dirrmtry lib32/compat
 @dirrmtry lib32

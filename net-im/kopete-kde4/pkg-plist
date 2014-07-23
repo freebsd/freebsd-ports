@@ -70,7 +70,7 @@ include/kopete/ui/kopeteview.h
 include/kopete/ui/kopeteviewplugin.h
 include/kopete/ui/ui_kopeteawaydialogbase.h
 include/kopete/ui/ui_kopetepasswordwidgetbase.h
-%%WEBPLUGIN_DIR%%/skypebuttons.so
+%%WEBPLUGIN_DIR%%skypebuttons.so
 lib/kde4/kcm_kopete_accountconfig.so
 lib/kde4/kcm_kopete_addbookmarks.so
 lib/kde4/kcm_kopete_appearanceconfig.so

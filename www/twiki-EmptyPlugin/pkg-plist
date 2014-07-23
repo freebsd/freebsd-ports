@@ -1,9 +1,9 @@
 %%TWDIR%%/data/Sandbox/PluginTestEmptyPlugin.txt
 %%TWDIR%%/data/TWiki/EmptyPlugin.txt
+%%TWDIR%%/lib/TWiki/Plugins/EmptyPlugin.pm
 %%TWDIR%%/lib/TWiki/Plugins/EmptyPlugin/DEPENDENCIES
 %%TWDIR%%/lib/TWiki/Plugins/EmptyPlugin/MANIFEST
 %%TWDIR%%/lib/TWiki/Plugins/EmptyPlugin/build.pl
-%%TWDIR%%/lib/TWiki/Plugins/EmptyPlugin.pm
 %%TWDIR%%/test/unit/EmptyPlugin/EmptyPluginSuite.pm
 %%TWDIR%%/test/unit/EmptyPlugin/EmptyPluginTests.pm
 @dirrm %%TWDIR%%/data/Sandbox

@@ -25,6 +25,8 @@ HAS_CONFIGURE=		YES
 MAKE_JOBS_UNSAFE=	yes
 WRKSRC=			${WRKDIR}/gsl-ocaml-${PORTVERSION}
 
+OPTIONS_DEFINE=	DOCS
+
 post-configure:
 	@${ECHO_CMD} 'stagedir="${STAGEDIR}"' >> ${WRKSRC}/setup.data
 	@${ECHO_CMD} 'docdir="$$datarootdir/doc/ocaml/$$pkg_name"' >> ${WRKSRC}/setup.data

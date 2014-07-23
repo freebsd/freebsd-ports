@@ -10,7 +10,7 @@ DISTNAME=	ruby-${PORTNAME}-${PORTVERSION}
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	ruby@FreeBSD.org
-COMMENT=	A Ruby library to manipulate filesystem quotas
+COMMENT=	Ruby library to manipulate filesystem quotas
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 USE_RUBY=	yes

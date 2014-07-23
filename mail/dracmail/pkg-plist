@@ -1,3 +1,5 @@
+@owner %%WWWOWN%%
+@group %%WWWGRP%%
 %%WWWDIR%%/INSTALL
 %%WWWDIR%%/LICENSE
 %%WWWDIR%%/api/SQL/dracmail.sql
@@ -7405,7 +7407,6 @@
 %%WWWDIR%%/objSynch.js
 %%WWWDIR%%/objThemes.js
 %%WWWDIR%%/objUIMenu.js
-%%WWWDIR%%/pkg-message
 %%WWWDIR%%/styles.css
 %%WWWDIR%%/tiny_mce/langs/en.js
 %%WWWDIR%%/tiny_mce/license.txt
@@ -8542,16 +8543,4 @@
 @dirrm %%WWWDIR%%/api/classes
 @dirrm %%WWWDIR%%/api/SQL
 @dirrmtry %%WWWDIR%%/api
-@exec mkdir -p %D/%%WWWDIR%%/ext-3.3.0/src/ext-core/test/yui_2.6.0/yui/build/yuitest/assets/skins/sam
-@exec mkdir -p %D/%%WWWDIR%%/ext-3.3.0/src/ext-core/test/yui_2.6.0/yui/build/logger/assets/skins/sam
-@exec mkdir -p %D/%%WWWDIR%%/ext-3.3.0/src/ext-core/examples/tabs/images
-@exec mkdir -p %D/%%WWWDIR%%/ext-3.3.0/src/ext-core/examples/rating/images
-@exec mkdir -p %D/%%WWWDIR%%/ext-3.3.0/src/ext-core/examples/menu/images
-@exec mkdir -p %D/%%WWWDIR%%/ext-3.3.0/src/ext-core/examples/lightbox/images
-@exec mkdir -p %D/%%WWWDIR%%/ext-3.3.0/src/ext-core/examples/jsonp/images
-@exec mkdir -p %D/%%WWWDIR%%/ext-3.3.0/src/ext-core/examples/combo
-@exec mkdir -p %D/%%WWWDIR%%/ext-3.3.0/src/ext-core/examples/carousel/slides
-@exec mkdir -p %D/%%WWWDIR%%/ext-3.3.0/src/ext-core/examples/carousel/images
-@exec mkdir -p %D/%%WWWDIR%%/ext-3.3.0/resources/images/vista/tree
-@exec mkdir -p %D/%%WWWDIR%%/ext-3.3.0/resources/images/vista/dd
-@exec mkdir -p %D/%%WWWDIR%%/ext-3.3.0/examples/spinner/images
+@dirrmtry %%WWWDIR%%

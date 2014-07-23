@@ -9,7 +9,7 @@ MASTER_SITES=	SF/math-${PORTNAME}/Developer%20%28unstable%29/${PORTVERSION}
 PKGNAMESUFFIX=	-devel
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
-MAINTAINER=	bf@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Development version of math/atlas
 
 IGNORE =	: dependent ports have been altered to link with math/atlas -- please\

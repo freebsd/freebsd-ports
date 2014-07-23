@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	puppet
-PORTVERSION=	2.7.25
+PORTVERSION=	2.7.26
 CATEGORIES=	sysutils
 MASTER_SITES=	http://downloads.puppetlabs.com/puppet/
 PKGNAMESUFFIX=	27

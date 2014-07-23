@@ -10,7 +10,7 @@ DISTNAME=	${PORTNAME}-rb-${PORTVERSION}
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	osho@pcc-software.org
-COMMENT=	A Ruby extension library which implements Camellia encryption
+COMMENT=	Ruby extension library which implements Camellia encryption
 
 USE_RUBY=	yes
 USE_RUBY_SETUP=	yes
@@ -19,6 +19,8 @@ INSTALL_TARGET=	site-install
 
 DOCS=		README.txt History.txt License.txt
 EXAMPLES=	ext/camellia-example.rb
+
+OPTIONS_DEFINE=	DOCS
 
 post-install:
 	${MKDIR} ${STAGEDIR}${RUBY_MODEXAMPLESDIR}

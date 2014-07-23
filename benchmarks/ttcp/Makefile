@@ -21,6 +21,8 @@ LICENSE_TEXT=	The license: ${_LICENSE} (${_LICENSE_NAME}) is standard, please re
 NO_WRKSUBDIR=	yes
 DIST_SUBDIR=	${PORTNAME}
 
+OPTIONS_DEFINE=	DOCS
+
 post-extract:
 	${CP} ${DISTDIR}/${DIST_SUBDIR}/ttcp.c ${WRKSRC}
 	${CP} ${DISTDIR}/${DIST_SUBDIR}/ttcp.1 ${WRKSRC}

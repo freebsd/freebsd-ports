@@ -7,7 +7,7 @@ PORTREVISION=	2
 CATEGORIES=	cad
 MASTER_SITES=	http://alpha.fh-friedberg.de/iem/fileadmin/user_upload/novender/sceptre/
 
-MAINTAINER=	maho@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	General-purpose circuit analysis program
 
 LICENSE=	GPLv2

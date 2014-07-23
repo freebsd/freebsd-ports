@@ -3,7 +3,7 @@
 
 PORTNAME=	tecnoballz
 PORTVERSION=	0.92
-PORTREVISION=	12
+PORTREVISION=	13
 CATEGORIES=	games
 MASTER_SITES=	http://linux.tlk.fr/games/TecnoballZ/download/ \
 		http://mirror.amdmi3.ru/distfiles/

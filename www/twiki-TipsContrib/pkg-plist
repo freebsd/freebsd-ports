@@ -34,10 +34,10 @@
 %%TWDIR%%/data/TWiki/TWikiTipsOfTheDayInclude.txt
 %%TWDIR%%/data/TWiki/TWikiTipsOfTheDayTemplate.txt
 %%TWDIR%%/data/TWiki/TipsContrib.txt
+%%TWDIR%%/lib/TWiki/Contrib/TipsContrib.pm
 %%TWDIR%%/lib/TWiki/Contrib/TipsContrib/DEPENDENCIES
 %%TWDIR%%/lib/TWiki/Contrib/TipsContrib/MANIFEST
 %%TWDIR%%/lib/TWiki/Contrib/TipsContrib/build.pl
-%%TWDIR%%/lib/TWiki/Contrib/TipsContrib.pm
 @dirrm %%TWDIR%%/data/TWiki
 @dirrm %%TWDIR%%/data
 @dirrm %%TWDIR%%/lib/TWiki/Contrib/TipsContrib

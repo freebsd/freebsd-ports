@@ -39,7 +39,6 @@
     SUBDIR += ddskk
     SUBDIR += devil-fpw
     SUBDIR += dvi2tty
-    SUBDIR += dvipsk
     SUBDIR += e2ps
     SUBDIR += eb
     SUBDIR += ebd-fpw
@@ -106,7 +105,6 @@
     SUBDIR += ipadic
     SUBDIR += ja6
     SUBDIR += jacode.pl
-    SUBDIR += jadetex-ptex
     SUBDIR += japana
     SUBDIR += japaneseAFM
     SUBDIR += jargon-fpw
@@ -142,7 +140,6 @@
     SUBDIR += kpcal
     SUBDIR += kterm
     SUBDIR += lambdamoo
-    SUBDIR += latex2html
     SUBDIR += leafrogue
     SUBDIR += less
     SUBDIR += libreoffice
@@ -226,15 +223,11 @@
     SUBDIR += plain2
     SUBDIR += plan
     SUBDIR += platex-japanese
-    SUBDIR += platex-jsclasses
-    SUBDIR += platex-otf
-    SUBDIR += platex209
     SUBDIR += postgresql82-man
     SUBDIR += prime
     SUBDIR += prime-dict
     SUBDIR += prime-el
     SUBDIR += prn
-    SUBDIR += ptex
     SUBDIR += py-mecab
     SUBDIR += py-tegaki
     SUBDIR += py-tegaki-gtk
@@ -287,7 +280,6 @@
     SUBDIR += t2ps
     SUBDIR += tcl80
     SUBDIR += tdiary
-    SUBDIR += teTeX
     SUBDIR += tegaki-recognize
     SUBDIR += tegaki-zinnia-japanese
     SUBDIR += tex-ptex
@@ -315,7 +307,6 @@
     SUBDIR += wordpress
     SUBDIR += wwasw-fpw
     SUBDIR += xdtp
-    SUBDIR += xdvik
     SUBDIR += xgate
     SUBDIR += xjtext
     SUBDIR += xlockmore

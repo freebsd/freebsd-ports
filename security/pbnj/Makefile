@@ -8,7 +8,7 @@ CATEGORIES=	security
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A suite of tools to monitor changes on a network
+COMMENT=	Suite of tools to monitor changes on a network
 
 BUILD_DEPENDS=	p5-YAML>=0:${PORTSDIR}/textproc/p5-YAML \
 		p5-XML-Twig>=0:${PORTSDIR}/textproc/p5-XML-Twig \

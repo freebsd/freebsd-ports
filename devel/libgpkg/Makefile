@@ -3,6 +3,7 @@
 
 PORTNAME=	libgpkg
 PORTVERSION=	0.9.18
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	https://bitbucket.org/luciad/libgpkg/get/ \
 		LOCAL/sunpoet/${PORTNAME}

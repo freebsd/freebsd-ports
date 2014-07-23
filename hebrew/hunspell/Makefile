@@ -11,6 +11,8 @@ DIST_SUBDIR=	${PORTNAME}
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Hebrew hunspell dictionaries
 
+LICENSE=	AGPLv3
+
 ALL_TARGET=	hunspell
 CONFIGURE_ARGS=	--enable-fatverb
 GNU_CONFIGURE=	yes

@@ -13,9 +13,9 @@ COMMENT=	Spanish thesaurus
 
 LICENSE=	LGPL21
 
-USE_BZIP2=	yes
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
+USES=		tar:bzip2
 
 PLIST_FILES=	%%DATADIR%%/th_es_ES_v2.dat \
 		%%DATADIR%%/th_es_ES_v2.idx

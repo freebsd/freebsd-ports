@@ -8,7 +8,7 @@ CATEGORIES=	devel python
 MASTER_SITES=	http://download.hforge.org/itools/0.62/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	wen@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python library Provides Wide Range Of Capabilities
 
 LICENSE=	GPLv3

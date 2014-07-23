@@ -82,7 +82,7 @@ SYSLOG_DESC=		Enable logging via syslog
 SYSLOG_CONFIGURE_WITH=	syslog
 
 UNIXODBC_CONFIGURE_WITH=unixodbc
-UNIXODBC_LIB_DEPENDS=	odbc:${PORTSDIR}/databases/unixODBC
+UNIXODBC_LIB_DEPENDS=	libodbc.so:${PORTSDIR}/databases/unixODBC
 
 
 CONFLICTS=	sphinxsearch-[0-9]* dpsearch-[0-9]* rdb-[0-9]* \

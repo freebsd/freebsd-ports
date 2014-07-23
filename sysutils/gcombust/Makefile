@@ -9,7 +9,7 @@ MASTER_SITES=	http://mirror.symnds.com/software/misc/ \
 		http://www.egr.msu.edu/~mcdouga9/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A GTK+ frontend for mkisofs and cdrecord
+COMMENT=	GTK+ frontend for mkisofs and cdrecord
 
 LICENSE=	GPLv2
 
@@ -24,11 +24,7 @@ CONFIGURE_ARGS+=--without-included-gettext --datadir=${PREFIX}/share
 CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib
 
-NO_STAGE=	yes
-
 OPTIONS_DEFINE=	DOCS
-
-.include <bsd.port.options.mk>
 
 pre-patch:
 	@${REINPLACE_CMD} -e 's|DATADIRNAME=lib|DATADIRNAME=share|g' \
@@ -39,10 +35,8 @@ post-configure:
 	cd ${WRKSRC}/po && ${MAKE} update-po
 
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${PREFIX}/share/doc/gcombust
-	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/NEWS ${DOCSDIR}
-.endif
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/NEWS ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

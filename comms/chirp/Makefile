@@ -19,6 +19,8 @@ BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/serial:${PORTSDIR}/comms/py-serial \
 USE_PYTHON=	YES
 USE_PYDISTUTILS=	YES
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.pre.mk>
 
 pre-configure:

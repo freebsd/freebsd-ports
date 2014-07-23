@@ -10,6 +10,11 @@ in the release notes and/or placed into UPDATING.
 
 All ports committers are allowed to commit to this file.
 
+20140715:
+AUTHOR: bapt@FreeBSD.org
+
+  Only one format is now support in LIB_DEPENDS: lib*.so
+
 20140708:
 AUTHOR: mva@FreeBSD.org
 

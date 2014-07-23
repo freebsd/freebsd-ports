@@ -21,6 +21,8 @@ USES=		compiler gmake iconv
 
 WRKSRC=		${WRKDIR}/astyle/build/gcc
 
+OPTIONS_DEFINE=	DOCS
+
 pre-patch:
 	@${REINPLACE_CMD} -e 's,^CFLAGS,#CFLAGS,; s,g++,${CXX},; \
 		s,\(CFLAGSr.*=.*\),\1 -I${LOCALBASE}/include,' \

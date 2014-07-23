@@ -20,6 +20,8 @@ MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS} -DANSILIBS -c" LNK="${CC}"
 
 MANPAGES=		abc2abc.1 abc2midi.1 mftext.1 midi2abc.1 midicopy.1 yaps.1
 
+OPTIONS_DEFINE=	DOCS
+
 do-install:
 .for FILE in abc2abc abc2midi abcmatch mftext midi2abc midicopy yaps
 	${INSTALL_PROGRAM} ${WRKSRC}/${FILE} ${STAGEDIR}${PREFIX}/bin

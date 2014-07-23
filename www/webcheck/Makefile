@@ -15,6 +15,8 @@ NO_BUILD=	yes
 
 # what about fancytooltips?
 
+OPTIONS_DEFINE=	DOCS
+
 do-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/*.py ${STAGEDIR}${DATADIR}

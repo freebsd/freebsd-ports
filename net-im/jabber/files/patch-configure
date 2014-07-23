@@ -8,6 +8,15 @@
  #include <sys/types.h>
  #include <sys/socket.h>
  #include <netdb.h>
+@@ -21878,7 +21879,7 @@
+ echo "${ECHO_T}yes" >&6; }
+ 	hasgnutlsextra=yes
+ fi
+-if test $hasgnutls = "yes" ; then
++if test $hasgnutlsextra = "yes" ; then
+     CPPFLAGS="$CPPFLAGS $GNUTLSEXTRA_CFLAGS"
+     LDFLAGS="$LDFLAGS $GNUTLSEXTRA_LIBS"
+ 
 @@ -22554,7 +22555,7 @@
  if test "${with_mysql+set}" = set; then
    withval=$with_mysql; mysql=$withval
@@ -15,7 +24,7 @@
 -  mysql=yes
 +  mysql=no
  fi
-
+ 
  if test "$mysql" != "no"; then
 @@ -22778,7 +22779,7 @@
  if test "${with_postgresql+set}" = set; then
@@ -24,7 +33,7 @@
 -  postgresql=yes
 +  postgresql=no
  fi
-
+ 
  if test "$postgresql" != "no"; then
 @@ -22787,8 +22788,8 @@
  	CPPFLAGS="${CPPFLAGS} -I$postgresql/include"

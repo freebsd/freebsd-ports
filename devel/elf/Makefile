@@ -11,7 +11,7 @@ MASTER_SITE_SUBDIR=	linux/reverse-engineering
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Commandline based ELF header analyzer
 
-USES=		gmake
+USES=		gmake readline
 GNU_CONFIGURE=	yes
 PLIST_FILES=	bin/elf man/man1/elf.1.gz
 

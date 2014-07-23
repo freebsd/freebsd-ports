@@ -294,6 +294,7 @@
     SUBDIR += hs-OpenAL
     SUBDIR += hs-libmpd
     SUBDIR += hydrogen
+    SUBDIR += hydrogen-devel
     SUBDIR += icecast-kh
     SUBDIR += icecast2
     SUBDIR += icegenerator

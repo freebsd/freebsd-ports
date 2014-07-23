@@ -8,7 +8,7 @@ MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	wg@FreeBSD.org
-COMMENT=	Ned\'s script to check McCabe complexity
+COMMENT=	Ned's script to check McCabe complexity
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes

@@ -1,3 +1,4 @@
+bin/ods-getconf
 bin/ods-hsmspeed
 bin/ods-hsmutil
 bin/ods-kaspcheck
@@ -42,6 +43,7 @@ man/man5/ods-timing.5.gz
 man/man7/opendnssec.7.gz
 man/man8/ods-control.8.gz
 man/man8/ods-enforcerd.8.gz
+man/man8/ods-getconf.8.gz
 man/man8/ods-signer.8.gz
 man/man8/ods-signerd.8.gz
 @owner opendnssec

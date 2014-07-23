@@ -12,6 +12,9 @@ DISTNAME=	${PORTNAME}
 MAINTAINER=	martin.dieringer@gmx.de
 COMMENT=	The file ifxetex.sty tests whether XeTeX is being used
 
+DEPRECATED=	Very outdated and fully contained in texlive-texmf
+EXPIRATION_DATE=2014-08-01
+
 WRKSRC=		${WRKDIR}/${PORTNAME}
 USES=		zip
 USE_TEX=	latex

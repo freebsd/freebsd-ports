@@ -14,13 +14,13 @@ COMMENT=	Netwox a network testing toolbox
 
 BUILD_DEPENDS=	netwib-config:${PORTSDIR}/net/netwib
 
+OPTIONS_DEFINE=	DOCS
+
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}-src/src
 SHORTPORTVERSION=${PORTVERSION:C/([0-9]*)\.([0-9]*)\.[0-9]*/\1\2/}
-MAN1=		netwox.1 netwox${SHORTPORTVERSION}.1
 
 PLIST_SUB+=	SHORTPORTVERSION=${SHORTPORTVERSION}
 
-NO_STAGE=	yes
 do-configure:
 		@${REINPLACE_CMD} \
 		-e 's|%%PREFIX%%|${PREFIX}|' \
@@ -31,10 +31,8 @@ do-configure:
 		(cd ${WRKSRC} ; ${SH} ${WRKSRC}/genemake )
 
 post-install:
-		${STRIP_CMD} ${PREFIX}/bin/${PORTNAME}
-.ifndef(NOPORTDOCS)
-		@${MKDIR} ${DOCSDIR}
-		@${CP} -R ${WRKSRC}/../../${PORTNAME}-${PORTVERSION}-doc_html/* ${DOCSDIR}
-.endif
+		@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+		@${MKDIR} ${STAGEDIR}${DOCSDIR}
+		${CP} -R ${WRKSRC}/../../${PORTNAME}-${PORTVERSION}-doc_html/* ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

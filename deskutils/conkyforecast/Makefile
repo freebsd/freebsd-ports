@@ -20,7 +20,7 @@ RUN_DEPENDS=	conky:${PORTSDIR}/sysutils/conky \
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
-INSTALL_EGGINFO=yes
+INSTALLS_EGGINFO=	yes
 USES=		gettext
 SUB_FILES=	pkg-message
 SUB_LIST+=	FONTSDIR="${FONTSDIR:S|${PREFIX}/||}"

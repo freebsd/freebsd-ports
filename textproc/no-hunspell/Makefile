@@ -1,16 +1,18 @@
 # $FreeBSD$
 
 PORTNAME=	hunspell
-PORTVERSION=	2.0.10
-PORTREVISION=	1
+PORTVERSION=	2.1
 CATEGORIES=	textproc
-MASTER_SITES=	https://alioth.debian.org/frs/download.php/2357/
+MASTER_SITES=	https://alioth.debian.org/frs/download.php/file/3764/
 PKGNAMEPREFIX=	no-
 DISTNAME=	no_NO-pack2-${PORTVERSION}
 DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Norwegian (Nynorsk and Bokmaal) hunspell dictionaries
+
+LICENSE=	GPLv2 GPLv3
+LICENSE_COMB=	dual
 
 USES=		zip
 NO_BUILD=	yes

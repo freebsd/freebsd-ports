@@ -23,6 +23,8 @@ INSTALL_TARGET=	install-strip
 
 DOCS=		AUTHORS README NEWS docs/*.pdf license/LICENSING.txt
 
+OPTIONS_DEFINE=	DOCS
+
 post-patch:
 	${CHMOD} ${BINMODE} ${WRKSRC}/configure ${WRKSRC}/install-sh
 

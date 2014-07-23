@@ -29,9 +29,8 @@ CONFIGURE_ARGS=		--enable-dccbounce \
 			--disable-dependency-tracking
 CPPFLAGS+=		-I${LOCALBASE}/include
 
-.if defined(WITH_IPV6)
-CONFIGURE_ARGS+=	--enable-ipv6
-.endif
+OPTIONS_DEFINE=	DOCS IPV6
+IPV6_CONFIGURE_ON=	--enable-ipv6
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,\$$datadir/doc/miau/examples,${EXAMPLESDIR},g' \

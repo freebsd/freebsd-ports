@@ -23,6 +23,8 @@ USES=		perl5 shebangfix dos2unix
 SHEBANG_FILES=	${WRKSRC}/${PORTNAME}
 DOS2UNIX_FILES=	${WRKSRC}/${PORTNAME}.cfg
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.pre.mk>
 
 post-patch:

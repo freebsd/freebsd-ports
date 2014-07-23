@@ -32,6 +32,8 @@ PKGMESSAGE=	${WRKDIR}/pkg-message
 FONTNAME=	${PORTNAME}
 FONTSDIR?=	${PREFIX}/lib/X11/fonts/${FONTNAME}
 
+OPTIONS_DEFINE=	DOCS
+
 post-patch:
 	${SED} 's|%%FONTSDIR%%|${FONTSDIR}|g' ${MSG_FILE} > ${PKGMESSAGE}
 

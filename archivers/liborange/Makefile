@@ -3,13 +3,14 @@
 
 PORTNAME=	liborange
 PORTVERSION=	0.4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	archivers
 MASTER_SITES=	SF/synce/Orange/${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library to extract CAB files from self-extracting installers
 
+LIB_DEPENDS=	libgsf-1.so:${PORTSDIR}/devel/libgsf
 RUN_DEPENDS=	cabextract:${PORTSDIR}/archivers/cabextract \
 		unzip:${PORTSDIR}/archivers/unzip
 
@@ -25,8 +26,10 @@ MSI_DESC=		Build with expermential MSI support
 GNU_CONFIGURE=	yes
 USES=		iconv libtool pathfix pkgconfig
 CFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+LDFLAGS+=	-L${LOCALBASE}/lib -lgsf-1
 USE_LDCONFIG=	yes
+
+CONFIGURE_ARGS+=		--with-libgsf
 
 LIBSYNCE_LIB_DEPENDS=		libsynce.so:${PORTSDIR}/palm/synce-libsynce
 LIBSYNCE_CONFIGURE_WITH=	libsynce
@@ -41,8 +44,7 @@ INNO_CONFIGURE_ENABLE=		inno
 
 VISE_CONFIGURE_ENABLE=		vise
 
-MSI_LIB_DEPENDS=		libgsf-1.so.114:${PORTSDIR}/devel/libgsf
-MSI_CONFIGURE_ENABLE=		msi libgsf
+MSI_CONFIGURE_ENABLE=		msi
 
 .include <bsd.port.options.mk>
 

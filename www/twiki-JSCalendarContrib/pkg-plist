@@ -1,9 +1,9 @@
 %%TWDIR%%/data/TWiki/JSCalendarContrib.txt
 %%TWDIR%%/data/TWiki/JSCalendarContribInline.txt
+%%TWDIR%%/lib/TWiki/Contrib/JSCalendarContrib.pm
 %%TWDIR%%/lib/TWiki/Contrib/JSCalendarContrib/DEPENDENCIES
 %%TWDIR%%/lib/TWiki/Contrib/JSCalendarContrib/MANIFEST
 %%TWDIR%%/lib/TWiki/Contrib/JSCalendarContrib/build.pl
-%%TWDIR%%/lib/TWiki/Contrib/JSCalendarContrib.pm
 %%TWDIR%%/lib/TWiki/Form/Date.pm
 %%TWDIR%%/pub/TWiki/JSCalendarContrib/ChangeLog
 %%TWDIR%%/pub/TWiki/JSCalendarContrib/README

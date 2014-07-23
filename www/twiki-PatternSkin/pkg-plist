@@ -27,10 +27,10 @@
 %%TWDIR%%/data/TWiki/WebTopBar.txt
 %%TWDIR%%/data/Trash/WebLeftBar.txt
 %%TWDIR%%/data/_default/WebLeftBar.txt
+%%TWDIR%%/lib/TWiki/Contrib/PatternSkin.pm
 %%TWDIR%%/lib/TWiki/Contrib/PatternSkin/DEPENDENCIES
 %%TWDIR%%/lib/TWiki/Contrib/PatternSkin/MANIFEST
 %%TWDIR%%/lib/TWiki/Contrib/PatternSkin/build.pl
-%%TWDIR%%/lib/TWiki/Contrib/PatternSkin.pm
 %%TWDIR%%/pub/TWiki/PatternSkin/TWiki_header.gif
 %%TWDIR%%/pub/TWiki/PatternSkin/background_action.gif
 %%TWDIR%%/pub/TWiki/PatternSkin/background_alert.gif

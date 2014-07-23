@@ -17,6 +17,8 @@ MAKE_ENV+=	LIBCGETOPT=0
 
 DOCS=		Changelog README
 
+OPTIONS_DEFINE=	DOCS
+
 post-patch:
 	${REINPLACE_CMD} -e 's|CC=gcc|CC=${CC}|' ${WRKSRC}/Makefile
 

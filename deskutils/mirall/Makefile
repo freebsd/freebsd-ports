@@ -30,7 +30,7 @@ CONFLICTS=	owncloud-csync-[0-9]*
 OPTIONS_DEFINE=	DOCS
 
 DOCS_BUILD_DEPENDS=	sphinx-build:${PORTSDIR}/textproc/py-sphinx
-DOCS_USE=		TEX=latex:build
+DOCS_USE=		TEX=latex:build,dvipsk
 DOCS_CMAKE_ON=		WITH_DOC=true
 DOCS_ALL_TARGET=	all doc-html doc-pdf
 

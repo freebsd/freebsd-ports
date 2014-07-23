@@ -14,6 +14,8 @@ USES=		shebangfix perl5
 NO_BUILD=	yes
 SHEBANG_FILES=	calamaris
 
+OPTIONS_DEFINE=	DOCS
+
 do-install:
 	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${STAGEDIR}${MANPREFIX}/man/man1
 	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin

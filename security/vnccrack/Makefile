@@ -9,7 +9,7 @@ DISTNAME=	VNCcrack-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	pankov_p@mail.ru
-COMMENT=	A fast offline password cracker for VNC passwords
+COMMENT=	Fast offline password cracker for VNC passwords
 
 GNU_CONFIGURE=	yes
 USE_OPENSSL=	yes

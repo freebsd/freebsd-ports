@@ -372,6 +372,7 @@ lib/calibre/calibre/ebooks/metadata/xmp.py
 lib/calibre/calibre/ebooks/metadata/zip.py
 lib/calibre/calibre/ebooks/mobi/__init__.py
 lib/calibre/calibre/ebooks/mobi/debug/__init__.py
+lib/calibre/calibre/ebooks/mobi/debug/containers.py
 lib/calibre/calibre/ebooks/mobi/debug/headers.py
 lib/calibre/calibre/ebooks/mobi/debug/index.py
 lib/calibre/calibre/ebooks/mobi/debug/main.py
@@ -381,6 +382,7 @@ lib/calibre/calibre/ebooks/mobi/huffcdic.py
 lib/calibre/calibre/ebooks/mobi/langcodes.py
 lib/calibre/calibre/ebooks/mobi/mobiml.py
 lib/calibre/calibre/ebooks/mobi/reader/__init__.py
+lib/calibre/calibre/ebooks/mobi/reader/containers.py
 lib/calibre/calibre/ebooks/mobi/reader/headers.py
 lib/calibre/calibre/ebooks/mobi/reader/index.py
 lib/calibre/calibre/ebooks/mobi/reader/markup.py
@@ -1009,6 +1011,7 @@ lib/calibre/calibre/gui2/tweak_book/diff/main.py
 lib/calibre/calibre/gui2/tweak_book/diff/view.py
 lib/calibre/calibre/gui2/tweak_book/editor/__init__.py
 lib/calibre/calibre/gui2/tweak_book/editor/canvas.py
+lib/calibre/calibre/gui2/tweak_book/editor/help.py
 lib/calibre/calibre/gui2/tweak_book/editor/image.py
 lib/calibre/calibre/gui2/tweak_book/editor/insert_resource.py
 lib/calibre/calibre/gui2/tweak_book/editor/smart/__init__.py
@@ -1531,6 +1534,12 @@ share/applications/calibre-lrfviewer.desktop
 %%DATADIR%%/dictionaries/es-ES/es-ES.dic
 %%DATADIR%%/dictionaries/es-ES/locales
 %%DATADIR%%/ebook-convert-complete.pickle
+%%DATADIR%%/editor-help/css.json
+%%DATADIR%%/editor-help/html.json
+%%DATADIR%%/editor-help/mathml.json
+%%DATADIR%%/editor-help/opf2.json
+%%DATADIR%%/editor-help/opf3.json
+%%DATADIR%%/editor-help/svg.json
 %%DATADIR%%/fonts/calibreSymbols.otf
 %%DATADIR%%/fonts/liberation/LiberationMono-Bold.ttf
 %%DATADIR%%/fonts/liberation/LiberationMono-BoldItalic.ttf
@@ -2010,6 +2019,7 @@ share/mime/application/x-sony-bbeb.xml
 share/mime/application/x-topaz-ebook.xml
 share/mime/packages/calibre-mimetypes.xml
 share/mime/text/lrs.xml
+share/zsh/site-functions/_calibre
 @dirrmtry share/mime/text
 @dirrmtry share/mime/packages
 @dirrmtry share/mime/application
@@ -2088,6 +2098,7 @@ share/mime/text/lrs.xml
 @dirrm %%DATADIR%%/images
 @dirrm %%DATADIR%%/fonts/liberation
 @dirrm %%DATADIR%%/fonts
+@dirrm %%DATADIR%%/editor-help
 @dirrm %%DATADIR%%/dictionaries/es-ES
 @dirrm %%DATADIR%%/dictionaries/en-US
 @dirrm %%DATADIR%%/dictionaries/en-GB

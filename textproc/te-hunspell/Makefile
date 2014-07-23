@@ -12,10 +12,12 @@ DIST_SUBDIR=	${PORTNAME}
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Telugu hunspell dictionaries
 
+LICENSE=	GPLv2
+
 BUILD_DEPENDS=	prezip-bin:${PORTSDIR}/textproc/aspell \
 		wordlist2hunspell:${PORTSDIR}/textproc/hunspell
 
-USE_BZIP2=	yes
+USES=		tar:bzip2
 
 PLIST_FILES=	%%DATADIR%%/te_IN.aff \
 		%%DATADIR%%/te_IN.dic

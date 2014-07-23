@@ -13,6 +13,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Abyss Web Server is a compact and easy to use web server
 
 BROKEN=		Fails to install
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2014-08-22
 
 WRKSRC=		${WRKDIR}/abyssws
 ONLY_FOR_ARCHS=	i386

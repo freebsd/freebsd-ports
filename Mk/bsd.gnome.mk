@@ -81,7 +81,7 @@ _USE_GNOME_ALL+= atk atspi cairo desktopfileutils eel2 gal2 \
 		gnomedesktopsharp20 gnomedocutils gnomesharp20 \
 		gnomespeech gnomevfs2 gtk-update-icon-cache gtk20 gtkhtml3 gtksharp10 \
 		gtksharp20 gtksourceview gtksourceview2 gvfs libartlgpl2 libbonobo \
-		libbonoboui libgailgnome libgda4 libglade2 libgnome \
+		libbonoboui libgda4 libglade2 libgnome \
 		libgnomecanvas libgnomedb libgnomekbd libgnomeprint libgnomeprintui \
 		libgnomeui libgsf libgtkhtml libidl librsvg2 libwnck \
 		libxml2 libxslt libzvt linc \
@@ -352,10 +352,6 @@ libgnomeui_USE_GNOME_IMPL=	libbonoboui
 atspi_LIB_DEPENDS=	libspi.so:${PORTSDIR}/accessibility/at-spi
 atspi_DETECT=		${LOCALBASE}/libdata/pkgconfig/cspi-1.0.pc
 atspi_USE_GNOME_IMPL=	gtk20 libbonobo
-
-libgailgnome_DETECT=		${LOCALBASE}/libdata/pkgconfig/libgail-gnome.pc
-libgailgnome_RUN_DEPENDS=	${libgailgnome_DETECT}:${PORTSDIR}/x11-toolkits/libgail-gnome
-libgailgnome_USE_GNOME_IMPL=	libgnomeui atspi
 
 libgtkhtml_LIB_DEPENDS=	libgtkhtml-2.so:${PORTSDIR}/www/libgtkhtml
 libgtkhtml_DETECT=	${LOCALBASE}/libdata/pkgconfig/libgtkhtml-2.0.pc

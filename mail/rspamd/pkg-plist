@@ -69,3 +69,11 @@ man/man8/rspamd.8.gz
 @dirrmtry etc/rspamd
 @dirrmtry include/rspamd
 %%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%
+
+@owner nobody
+@group nobody
+@dirrmtry /var/db/rspamd
+@dirrmtry /var/log/rspamd
+@dirrm /var/run/rspamd
+@owner
+@group

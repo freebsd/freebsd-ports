@@ -1,8 +1,7 @@
-# Created by: Seamus Venasse <svenasse@polaris.ca>
 # $FreeBSD$
 
 PORTNAME=	Lingua-EN-AddressParse
-PORTVERSION=	1.19
+PORTVERSION=	1.20
 CATEGORIES=	textproc perl5 geography
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-

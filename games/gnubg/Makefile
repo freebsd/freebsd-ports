@@ -20,7 +20,7 @@ LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png \
 		libgtkextra-x11-2.0.so:${PORTSDIR}/x11-toolkits/gtkextra2 \
 		libgtkglext-x11-1.0.so:${PORTSDIR}/x11-toolkits/gtkglext
 
-OPTIONS_DEFINE=	ESOUND NLS
+OPTIONS_DEFINE=	ESOUND NLS DOCS
 OPTIONS_DEFAULT=ESOUND NLS
 
 CONFIGURE_ARGS=	--with-board3d --with-sqlite --with-python

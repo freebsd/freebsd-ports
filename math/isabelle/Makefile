@@ -30,8 +30,8 @@ HOL_HOL4_DESC=		Build optional heap: HOL4
 EMACS_PKG_DESC=		Build with Emacs Packages
 
 USES=		perl5
+MAKE_JOBS_UNSAFE=	yes
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDOCS}
@@ -160,16 +160,16 @@ post-build:
 
 post-install:
 	${WRKSRC}/bin/isabelle install \
-		-d ${PREFIX}/share/isabelle \
-		-p ${PREFIX}/bin
+		-d ${STAGEDIR}${PREFIX}/share/isabelle \
+		-p ${STAGEDIR}${PREFIX}/bin
 .if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for file in ${DOCFILES}
-	${INSTALL_DATA} ${WRKSRC}/doc/${file} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/${file} ${STAGEDIR}${DOCSDIR}
 .endfor
 	(cd ${WRKSRC}; \
-	 ${FIND} -d browser_info -type d -exec ${MKDIR} ${DOCSDIR}/{} \; ; \
-	 ${FIND} -d browser_info -type f -exec ${INSTALL_DATA} {} ${DOCSDIR}/{} \;)
+	 ${FIND} -d browser_info -type d -exec ${MKDIR} ${STAGEDIR}${DOCSDIR}/{} \; ; \
+	 ${FIND} -d browser_info -type f -exec ${INSTALL_DATA} {} ${STAGEDIR}${DOCSDIR}/{} \;)
 .endif
 
 .include <bsd.port.post.mk>

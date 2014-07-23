@@ -13,6 +13,8 @@ COMMENT=	Basic time period checking library
 USE_PYTHON=	yes
 NO_BUILD=	yes
 
+OPTIONS_DEFINE=	DOCS
+
 do-install:
 	@${MKDIR} ${STAGEDIR}${PYTHON_SITELIBDIR}
 	${INSTALL_SCRIPT} ${WRKSRC}/period.py ${STAGEDIR}${PYTHON_SITELIBDIR}

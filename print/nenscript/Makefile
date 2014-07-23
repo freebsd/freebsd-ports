@@ -7,7 +7,7 @@ CATEGORIES=	print
 MASTER_SITES=	http://www.ai.mit.edu/projects/im/magnus/nenscript/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A clone of the proprietary enscript program from Adobe Systems
+COMMENT=	Clone of the proprietary enscript program from Adobe Systems
 
 OPTIONS_DEFINE=	DOCS
 

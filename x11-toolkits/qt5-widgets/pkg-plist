@@ -481,7 +481,6 @@
 %%QT_LIBDIR%%/cmake/Qt5Widgets/Qt5WidgetsConfigVersion.cmake
 %%QT_LIBDIR%%/cmake/Qt5Widgets/Qt5WidgetsMacros.cmake
 %%QT_LIBDIR%%/cmake/Qt5Widgets/Qt5Widgets_AccessibleFactory.cmake
-%%QT_LIBDIR%%/libQt5Widgets.la
 %%QT_LIBDIR%%/libQt5Widgets.prl
 %%QT_LIBDIR%%/libQt5Widgets.so
 %%QT_LIBDIR%%/libQt5Widgets.so.5

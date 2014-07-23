@@ -26,7 +26,7 @@ OPTIONS_DEFINE=	DOCS
 
 post-extract:
 	@${REINPLACE_CMD} -e 's,type perl,type ${LOCALBASE}/bin/perl,' ${WRKSRC}/scripts/Makefile
-.if (${OSVERSION} >= 1000024)
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1000024
 	@${REINPLACE_CMD} -e 's,type gcc,type clang,' ${WRKSRC}/Makefile
 	@${REINPLACE_CMD} -e 's,type g++,type clang++,' ${WRKSRC}/Makefile
 .endif

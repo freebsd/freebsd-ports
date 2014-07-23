@@ -2,16 +2,19 @@
 # $FreeBSD$
 
 PORTNAME=	delegate
-PORTVERSION=	9.9.9
+PORTVERSION=	9.9.10
+PORTREVISION=	2
 CATEGORIES=	net www
 MASTER_SITES=	ftp://ftp.delegate.org/pub/DeleGate/
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	danilo@FreeBSD.org
 COMMENT=	General purpose TCP/IP proxy system
 
 USES=		gmake
 SUB_FILES=	pkg-message
+
+ADMIN?=		admin@example.com
 
 PLIST_FILES=	sbin/delegated etc/rc.d/delegated.sh-dist
 PORTDOCS=	CHANGES COPYRIGHT DG9note.html HowToDG.html IPv6NOTE.txt \
@@ -26,7 +29,7 @@ post-patch:
 # allow unattended (non-interactive) builds
 	@${REINPLACE_CMD} -e 's,"$$(XDG)",& DGROOT=${WRKDIR},' \
 		${WRKSRC}/Makefile
-	@${REINPLACE_CMD} -E '/ADMIN/s,undef,admin@example.com, ; \
+	@${REINPLACE_CMD} -E '/ADMIN/s,undef,${ADMIN}, ; \
 		s,-F(esign|ver),& DGROOT=${WRKDIR},' ${WRKSRC}/src/Makefile
 
 do-install:
@@ -35,5 +38,13 @@ do-install:
 		${STAGEDIR}${PREFIX}/etc/rc.d/delegated.sh-dist
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/doc/,} ${STAGEDIR}${DOCSDIR}
+
+post-install:
+# Re-sign the executable
+	@${MKDIR} ${WRKDIR}/tmp
+	@${CP} ${STAGEDIR}${PREFIX}/sbin/delegated ${WRKDIR}/tmp/dg
+	@${CHMOD} +w ${STAGEDIR}${PREFIX}/sbin/delegated
+	@${WRKDIR}/tmp/dg -Fesign -w ${STAGEDIR}${PREFIX}/sbin/delegated
+	@${CHMOD} -w ${STAGEDIR}${PREFIX}/sbin/delegated
 
 .include <bsd.port.mk>

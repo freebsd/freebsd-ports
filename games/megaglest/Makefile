@@ -30,6 +30,7 @@ USE_WX=		3.0
 WX_UNICODE=	yes
 
 CFLAGS+=	-I${LOCALBASE}/include/libpng15
+LDFLAGS+=	-L${LOCALBASE}/lib -lssl -lcrypto
 WRKSRC=		${WRKDIR}/${PORTNAME}-3.9.0
 
 OPTIONS_DEFINE=	EDITOR DOCS

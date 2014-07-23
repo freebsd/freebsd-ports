@@ -9,7 +9,7 @@ DISTFILES=	# empty
 EXTRACT_ONLY=	# empty
 
 MAINTAINER=	mwm@mired.org
-COMMENT=	A startup/shutdown script to preserve mixer settings across reboots
+COMMENT=	Startup/shutdown script to preserve mixer settings across reboots
 
 NO_BUILD=	yes
 PLIST_FILES=	etc/rc.d/mixer.sh

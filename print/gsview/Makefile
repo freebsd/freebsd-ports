@@ -8,7 +8,7 @@ CATEGORIES=	print
 MASTER_SITES=	LOCAL/bf
 
 MAINTAINER=	bf@FreeBSD.org
-COMMENT=	A GUI to view, search, print, and convert PostScript and PDF documents
+COMMENT=	GUI to view, search, print, and convert PostScript and PDF documents
 
 USE_GNOME=		gtk12
 USE_GHOSTSCRIPT=	yes

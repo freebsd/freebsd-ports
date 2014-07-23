@@ -24,18 +24,14 @@ TCPSERVER_DESC=		Use DJB's tcpserver
 CGI_DESC=		Enable CGI support
 DIR_LIST_DESC=		Enable directory listing
 SYSTEM_SYMLINK_DEREF_DESC=	Enable system symlink (needs DIR_LIST)
-OLD_STYLE_REDIRECT_DESC= "Enable old style redirection
+OLD_STYLE_REDIRECT_DESC= Enable old style redirection
 
-NO_STAGE=	yes
+DAEMONTOOLS_RUN_DEPENDS=	setuidgid:${PORTSDIR}/sysutils/daemontools
+TCPSERVER_RUN_DEPENDS=		tcpserver:${PORTSDIR}/sysutils/ucspi-tcp
+
+MAKE_ARGS+=	DIET="" CC="${CC}" CXX="${CXX}"
+
 .include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MDAEMONTOOLS}
-RUN_DEPENDS=	setuidgid:${PORTSDIR}/sysutils/daemontools
-.endif
-
-.if ${PORT_OPTIONS:MTCPSERVER}
-RUN_DEPENDS=	tcpserver:${PORTSDIR}/sysutils/ucspi-tcp
-.endif
 
 .if ${PORT_OPTIONS:MCGI}
 SED_SCRIPT+=	-e "s|^// \(\#define CGI\).*|\1|"
@@ -53,8 +49,8 @@ SED_SCRIPT+=	-e "s|^// \(\#define CGI\).*|\1|"
 # http://<vhost>/etc/passwd */
 
 .if ${PORT_OPTIONS:MSYSTEM_SYMLINK_DEREF}
-.if ${PORT_OPTIONS:MDIR_LIST}
-IGNORE=	SYSTEM_SYMLINK_DEREF has no effect if DIR_LIST is not enabled
+.if empty(PORT_OPTIONS:MDIR_LIST)
+IGNORE=	SYSTEM_SYMLINK_DEREF requires the DIR_LIST option
 .endif
 SED_SCRIPT+=	-e "s|^/\* \(\#define SYSTEM_SYMLINK_DEREF\).*|\1|"
 .endif
@@ -77,15 +73,10 @@ post-patch:
 		 ${REINPLACE_CMD} ${SED_SCRIPT} ${WRKSRC}/httpd.c
 	@${REINPLACE_CMD} -e "/strip/d" ${WRKSRC}/Makefile
 
-do-build:
-	cd ${WRKSRC}; ${MAKE_CMD} DIET=""
-
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/fnord ${PREFIX}/bin/
-	${INSTALL_SCRIPT} ${WRKSRC}/fnord-conf ${PREFIX}/bin/
-	${INSTALL_SCRIPT} ${WRKDIR}/fnord.inetd ${PREFIX}/bin/
+	${INSTALL_PROGRAM} ${WRKSRC}/fnord ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/fnord-conf ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKDIR}/fnord.inetd ${STAGEDIR}${PREFIX}/bin
 
-post-install:
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>

@@ -215,6 +215,7 @@
     SUBDIR += plopfolio
     SUBDIR += preferencepanes
     SUBDIR += preferences
+    SUBDIR += py-pystash
     SUBDIR += py-send2trash
     SUBDIR += py-vobject
     SUBDIR += pybookreader

@@ -17,7 +17,7 @@ INSTALL_TARGET=	install-strip
 USES=		gmake libtool pathfix tar:bzip2
 USE_LDCONFIG=	yes
 
-OPTIONS_DEFINE=	DOXYGEN
+OPTIONS_DEFINE=	DOXYGEN DOCS
 
 .include <bsd.port.options.mk>
 

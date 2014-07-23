@@ -2,7 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	curl
-PORTVERSION=	7.37.0
+PORTVERSION=	7.37.1
+PORTREVISION=	1
 CATEGORIES=	ftp www
 MASTER_SITES=	http://curl.haxx.se/download/ \
 		LOCAL/sunpoet
@@ -39,17 +40,20 @@ MAKE_ENV+=	INSTALL_STRIP_FLAG=${STRIP}
 USE_PERL5=	build
 USES=		libtool:oldver pathfix perl5 tar:lzma
 
-PORTDOCS=	*
-PORTEXAMPLES=	*
-
 .if !defined(BUILDING_HIPHOP)
 USE_LDCONFIG=	yes
 
+PORTDOCS=	*
+PORTEXAMPLES=	*
+
 DOCS=		BINDINGS BUGS CONTRIBUTE DISTRO-DILEMMA FAQ FEATURES HISTORY \
-		INSTALL INSTALL.devcpp INTERNALS KNOWN_BUGS LICENSE-MIXING \
-		MANUAL README.netware README.win32 RESOURCES SSLCERTS THANKS \
-		TODO TheArtOfHttpScripting VERSIONS curl-config.html \
-		curl-config.pdf curl.html curl.pdf index.html
+		HTTP-COOKIES INSTALL INSTALL.devcpp INTERNALS KNOWN_BUGS \
+		LIBCURL-STRUCTS LICENSE-MIXING MAIL-ETIQUETTE MANUAL \
+		README.netware README.win32 RELEASE-PROCEDURE RESOURCES \
+		SECURITY SSL-PROBLEMS SSLCERTS THANKS TODO \
+		TheArtOfHttpScripting VERSIONS curl-config.html \
+		curl-config.pdf curl.html curl.pdf index.html \
+		mk-ca-bundle.html mk-ca-bundle.pdf
 .endif
 
 SLAVEDIRS=	ftp/curl-hiphop

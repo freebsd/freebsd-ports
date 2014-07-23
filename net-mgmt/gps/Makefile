@@ -20,6 +20,8 @@ USES=		gmake
 
 LIBNET_CONFIG?=	${LOCALBASE}/bin/libnet10-config
 
+OPTIONS_DEFINE=	DOCS
+
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's|-Wall -O3|${CFLAGS}|; \

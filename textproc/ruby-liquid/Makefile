@@ -18,6 +18,8 @@ NO_BUILD=	yes
 SADIR=		${RUBY_SITELIBDIR}
 DOCS=		CHANGELOG README.txt History.txt
 
+OPTIONS_DEFINE=	DOCS
+
 do-install:
 	${MKDIR} ${STAGEDIR}${SADIR}/liquid/tags ${STAGEDIR}${SADIR}/liquid/extras
 	${INSTALL_DATA} ${WRKSRC}/lib/liquid.rb ${STAGEDIR}${SADIR}/

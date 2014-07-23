@@ -7,7 +7,7 @@ CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	mat@FreeBSD.org
-COMMENT=	A backend for Hiera that queries JSON data
+COMMENT=	Backend for Hiera that queries JSON data
 
 RUN_DEPENDS=	puppet>=0:${PORTSDIR}/sysutils/puppet \
 		rubygem-hiera>=1.0:${PORTSDIR}/sysutils/rubygem-hiera \

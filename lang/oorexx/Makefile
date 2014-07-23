@@ -6,7 +6,7 @@ PORTVERSION=	3.0.0
 CATEGORIES=	lang
 MASTER_SITES=	http://www.matem.unam.mx/~micho/download/
 
-MAINTAINER=	micho@matem.unam.mx
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Powerful typeless object-oriented scripting language
 
 CONFLICTS=	rexx-imc-[0-9]* rexx-regina-[0-9]*

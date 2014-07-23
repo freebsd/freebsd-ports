@@ -18,6 +18,8 @@ USE_AUTOTOOLS=	aclocal automake
 USE_PYTHON=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
+OPTIONS_DEFINE=	DOCS
+
 post-patch:
 	${FIND} ${WRKSRC} -type f | ${XARGS} \
 		${REINPLACE_CMD} \

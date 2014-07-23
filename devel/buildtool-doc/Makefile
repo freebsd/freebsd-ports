@@ -25,6 +25,8 @@ DOCBOOK_XSL=	${LOCALBASE}/share/xsl/docbook/html/docbook.xsl
 
 DOCS=		CHANGES COPYING PEOPLE README README.bt
 
+OPTIONS_DEFINE=	DOCS
+
 do-configure:
 	cd ${WRKSRC} && \
 		CATALOG_FILE=${LOCALBASE}/share/xml/catalog.ports \

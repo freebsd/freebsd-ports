@@ -14,7 +14,7 @@ MAINTAINER=	hamradio@FreeBSD.org
 COMMENT=	Amateur Radio DSP utility (SDR)
 
 LIB_DEPENDS=	librtlsdr.so:${PORTSDIR}/comms/rtl-sdr \
-		portaudio2/libportaudio.so:${PORTSDIR}/audio/portaudio2 \
+		libportaudio.so:${PORTSDIR}/audio/portaudio2 \
 		libftdi.so:${PORTSDIR}/devel/libftdi
 BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm
 

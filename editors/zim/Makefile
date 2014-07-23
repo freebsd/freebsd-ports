@@ -6,7 +6,7 @@ PORTVERSION=	0.60
 CATEGORIES=	editors python
 MASTER_SITES=	http://www.zim-wiki.org/downloads/
 
-MAINTAINER=	acm@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Desktop wiki editor
 
 LICENSE=	GPLv2

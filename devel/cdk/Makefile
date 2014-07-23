@@ -25,7 +25,7 @@ ALL_TARGET=	default examples demos cli cdkshlib
 INSTALL_TARGET=	install installCDKSHLibrary
 USE_LDCONFIG=	yes
 
-OPTIONS_DEFINE=	EXAMPLES
+OPTIONS_DEFINE=	DOCS EXAMPLES
 
 .include <bsd.port.options.mk>
 

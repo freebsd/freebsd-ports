@@ -1,0 +1,11 @@
+--- module/Makefile.in.orig
++++ module/Makefile.in
+@@ -43,7 +43,7 @@
+ mkinstalldirs = $(install_sh) -d
+ CONFIG_HEADER = $(top_builddir)/include/apreq_config.h
+ CONFIG_CLEAN_FILES =
+-PROGRAMS = $(noinst_PROGRAMS)
++PROGRAMS = 
+ test_cgi_SOURCES = test_cgi.c
+ test_cgi_OBJECTS = test_cgi.$(OBJEXT)
+ test_cgi_LDADD = $(LDADD)

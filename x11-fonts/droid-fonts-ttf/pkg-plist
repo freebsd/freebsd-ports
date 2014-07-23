@@ -21,6 +21,4 @@
 %%FONTDIR%%/DroidSerif-BoldItalic.ttf
 %%FONTDIR%%/DroidSerif-Italic.ttf
 %%FONTDIR%%/DroidSerif-Regular.ttf
-%%FONTDIR%%/fonts.dir
-%%FONTDIR%%/fonts.scale
-@dirrm %%FONTDIR%%
+@fcfontsdir %%FONTDIR%%

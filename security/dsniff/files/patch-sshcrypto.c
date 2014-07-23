@@ -1,5 +1,5 @@
---- ./sshcrypto.c.orig	Tue Nov 28 18:23:28 2000
-+++ ./sshcrypto.c	Fri Feb  9 01:15:08 2007
+--- ./sshcrypto.c.orig	2001-03-15 09:33:04.000000000 +0100
++++ ./sshcrypto.c	2014-07-22 13:20:14.000000000 +0200
 @@ -14,6 +14,9 @@
  
  #include <sys/types.h>

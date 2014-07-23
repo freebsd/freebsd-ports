@@ -16,14 +16,11 @@ COMMENT=	Apache module for simple text rewriting
 LICENSE=	GPLv2
 
 USE_APACHE=	22+
-
 AP_FAST_BUILD=	yes
 AP_GENPLIST=	yes
 
-pre-extract:
-	@${MKDIR} ${WRKSRC}
-
 do-extract:
-	@${CP} ${DISTDIR}/${PORTNAME}.c ${WRKSRC}
+	${MKDIR} ${WRKSRC}
+	${CP} ${DISTDIR}/${PORTNAME}.c ${WRKSRC}
 
 .include <bsd.port.mk>

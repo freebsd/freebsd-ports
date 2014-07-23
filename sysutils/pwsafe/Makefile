@@ -13,7 +13,7 @@ COMMENT=	Cmdline program that manages encrypted password databases
 OPTIONS_DEFINE=	SETUID X11
 SETUID_DESC=	Install setuid pwsafe binary
 
-USES=		gmake
+USES=		gmake readline
 GNU_CONFIGURE=	yes
 
 PLIST_FILES=	bin/pwsafe man/man1/pwsafe.1.gz

@@ -1,0 +1,33 @@
+# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
+# $FreeBSD$
+
+PORTNAME=	libzen
+PORTVERSION=	0.7.69
+CATEGORIES=	multimedia
+MASTER_SITES=	http://mediaarea.net/download/binary/mediainfo/${PORTVERSION}/
+DISTNAME=	MediaInfo_CLI_${PORTVERSION}_GNU_FromSource
+
+MAINTAINER=	sunpoet@FreeBSD.org
+COMMENT=	ZenLib used by MediaInfo and its library
+
+LICENSE=	ZLIB
+
+CONFLICTS_INSTALL=	mediainfo-0.[0-6]* mediainfo-0.7.[0-5]*
+
+CONFIGURE_ARGS=	--enable-shared
+GNU_CONFIGURE=	yes
+USE_LDCONFIG=	yes
+USES=		libtool pathfix tar:bzip2
+
+WRKSRC=		${WRKDIR}/MediaInfo_CLI_GNU_FromSource/ZenLib/Project/GNU/Library
+
+post-patch:
+	@${REINPLACE_CMD} -e '/^ZenLib_LIBS/ s|$$(pwd)[^ ]*|${LOCALBASE}/lib|' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|-lpthread -lstdc++|-pthread|g' ${WRKSRC}/configure ${WRKSRC}/libzen.pc.in
+	@${REINPLACE_CMD} -e '1 s|bin/bash|bin/sh|' ${WRKSRC}/libzen-config.in
+
+post-install:
+	${INSTALL_DATA} ${WRKSRC}/../../../Source/ZenLib/BitStream_Fast.h ${STAGEDIR}${PREFIX}/include/ZenLib/BitStream_Fast.h
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libzen.so.0.0.0
+
+.include <bsd.port.mk>

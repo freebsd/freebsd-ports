@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	vlc
-DISTVERSION=	2.1.4
-PORTREVISION=	8
+DISTVERSION=	2.1.5
+PORTREVISION=	1
 PORTEPOCH=	4
 CATEGORIES=	multimedia audio ipv6 net www
 MASTER_SITES=	http://download.videolan.org/pub/videolan/${PORTNAME}/${DISTVERSION:S/a$//}/ \
@@ -48,7 +48,7 @@ CONFIGURE_ARGS=	--enable-avcodec --enable-avformat --enable-dvbpsi \
 .if defined(WITH_DEBUG) && !defined(WITHOUT_DEBUG)
 CONFIGURE_ARGS+=--enable-debug
 .endif
-CPPFLAGS+=	-I${LOCALBASE}/include/gnutls3 -I${LOCALBASE}/include
+CPPFLAGS+=	-I${LOCALBASE}/include
 CFLAGS_i386=	-fomit-frame-pointer
 
 OPTIONS_DEFINE=	A52 AALIB ASS AVAHI CACA DBUS DCA DIRAC DOCS DVDREAD \
@@ -134,11 +134,12 @@ FRIBIDI_CONFIGURE_ENABLE=	fribidi
 
 GME_LIB_DEPENDS=	libgme.so:${PORTSDIR}/audio/libgme
 GME_CONFIGURE_ENABLE=	gme
+GME_CONFIGURE_ENV=	LIBS_gme="-L${LOCALBASE}/lib -lgme"
 
 GNOMEVFS2_USE=			GNOME=gnomevfs2
 GNOMEVFS2_CONFIGURE_ENABLE=	gnomevfs
 
-GNUTLS_LIB_DEPENDS=	libgnutls.so.28:${PORTSDIR}/security/gnutls3
+GNUTLS_LIB_DEPENDS=	libgnutls.so:${PORTSDIR}/security/gnutls
 GNUTLS_CONFIGURE_ENABLE=gnutls
 
 GOOM_LIB_DEPENDS=	libgoom2.so:${PORTSDIR}/graphics/goom
@@ -163,6 +164,7 @@ LIBSSH2_CONFIGURE_ENABLE=	sftp
 
 LIRC_LIB_DEPENDS=	liblirc_client.so:${PORTSDIR}/comms/lirc
 LIRC_CONFIGURE_ENABLE=	lirc
+LIRC_CONFIGURE_ENV=	LIBS_lirc="-L${LOCALBASE}/lib -llirc_client"
 
 LIVEMEDIA_LIB_DEPENDS=	libliveMedia.so:${PORTSDIR}/net/liveMedia
 LIVEMEDIA_CONFIGURE_ENABLE=	live555
@@ -326,7 +328,7 @@ WITH_DVD_DEVICE?=/dev/acd0
 post-patch:
 	@${REINPLACE_CMD} \
 		-e '\|LIBS|s|-lrt||' \
-		-e 's|gnutls |gnutls3 |g' \
+		-e 's|LIBS="-llirc_client|LIBS="$$LIBS_lirc|' \
 		${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|/dev/cdrom|${WITH_CDROM_DEVICE}|g' \
 		-e 's|/dev/dvd|${WITH_DVD_DEVICE}|g' \

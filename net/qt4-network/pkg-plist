@@ -108,7 +108,6 @@
 %%QT_INCDIR%%/QtNetwork/qtcpsocket.h
 %%QT_INCDIR%%/QtNetwork/qudpsocket.h
 %%QT_INCDIR%%/QtNetwork/qurlinfo.h
-%%QT_LIBDIR%%/libQtNetwork.la
 %%QT_LIBDIR%%/libQtNetwork.prl
 %%QT_LIBDIR%%/libQtNetwork.so
 %%QT_LIBDIR%%/libQtNetwork.so.4

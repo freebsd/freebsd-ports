@@ -20,6 +20,8 @@ USE_SDL=	sdl
 HAS_CONFIGURE=	yes
 USES=		gmake
 
+OPTIONS_DEFINE=	DOCS
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|{datarootdir}/man|{prefix}/man|' ${WRKSRC}/configure
 

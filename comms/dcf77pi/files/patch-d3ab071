@@ -1,0 +1,22 @@
+commit d3ab071432f052c799dc5c77035913423abd16c4
+Author: René Ladan <r.c.ladan@gmail.com>
+Date:   Sun Jul 20 12:44:57 2014 +0200
+
+    dcf77pi: fix display of freq_reset
+
+diff --git a/dcf77pi.c b/dcf77pi.c
+index 2e46911..ce61d51 100644
+--- a/dcf77pi.c
++++ b/dcf77pi.c
+@@ -218,9 +218,9 @@ display_bit_gui(uint16_t state, int bitpos)
+ 	    bitinf->realfreq, (int)bitinf->bit0, (int)bitinf->bit20,
+ 	    bitinf->maxone * 100, bitinf->a);
+ 	if (bitinf->freq_reset)
+-		mvwchgat(input_win, 3, 24, 8, A_BOLD, 3, NULL);
++		mvwchgat(input_win, 3, 22, 8, A_BOLD, 3, NULL);
+ 	else
+-		mvwchgat(input_win, 3, 24, 8, A_NORMAL, 7, NULL);
++		mvwchgat(input_win, 3, 22, 8, A_NORMAL, 7, NULL);
+ 
+ 	mvwprintw(input_win, 3, 1, "%2u", bitpos);
+ 

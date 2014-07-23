@@ -19,4 +19,6 @@ CONFIGURE_ARGS+=	--datadir=${PREFIX}/share/doc
 GNU_CONFIGURE=	yes
 USES=		pkgconfig
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.mk>

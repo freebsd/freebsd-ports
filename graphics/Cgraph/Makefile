@@ -8,7 +8,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	http://www.tobez.org/download/port-mirrors/graphics/Cgraph/
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
-MAINTAINER=	tobez@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PostScript plotting library in C
 
 WRKSRC=		${WRKDIR}/Cgraph/source

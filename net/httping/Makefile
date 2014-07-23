@@ -33,7 +33,7 @@ MAKE_ENV+=	NC=no
 
 .if ${PORT_OPTIONS:MFFTW}
 MAKE_ENV+=	FW=yes
-LIB_DEPENDS+=	fftw3:${PORTSDIR}/math/fftw3
+LIB_DEPENDS+=	libfftw3.so:${PORTSDIR}/math/fftw3
 .else
 MAKE_ENV+=	FW=no
 .endif

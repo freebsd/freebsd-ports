@@ -1,8 +1,8 @@
 %%TWDIR%%/data/TWiki/SmiliesPlugin.txt
+%%TWDIR%%/lib/TWiki/Plugins/SmiliesPlugin.pm
 %%TWDIR%%/lib/TWiki/Plugins/SmiliesPlugin/DEPENDENCIES
 %%TWDIR%%/lib/TWiki/Plugins/SmiliesPlugin/MANIFEST
 %%TWDIR%%/lib/TWiki/Plugins/SmiliesPlugin/build.pl
-%%TWDIR%%/lib/TWiki/Plugins/SmiliesPlugin.pm
 %%TWDIR%%/pub/TWiki/SmiliesPlugin/biggrin.gif
 %%TWDIR%%/pub/TWiki/SmiliesPlugin/biggrin.gif,v
 %%TWDIR%%/pub/TWiki/SmiliesPlugin/confused.gif

@@ -1,26 +1,29 @@
-etc/squidstats/config.ini
-etc/squidstats/snmp_monitor.cfg
-etc/squidstats/templates.conf
-share/squidstats/templates/clients
-share/squidstats/templates/dnsreq
-share/squidstats/templates/fds
-share/squidstats/templates/hitratio
-share/squidstats/templates/icp
-share/squidstats/templates/ipcachereq
-share/squidstats/templates/outgoing
-share/squidstats/templates/cache
-share/squidstats/templates/cpu
-share/squidstats/templates/dnssvc
-share/squidstats/templates/fqdncachereq
-share/squidstats/templates/httpsvc
-share/squidstats/templates/incoming
-share/squidstats/templates/objects
-share/squidstats/templates/requests
-share/squidstats/htdocs/graph.css
 bin/squidstats.pl
+%%ETCDIR%%/config.ini
+%%ETCDIR%%/snmp_monitor.cfg
+%%ETCDIR%%/templates.conf
+%%DATADIR%%/htdocs/graph.css
+%%DATADIR%%/templates/cache
+%%DATADIR%%/templates/clients
+%%DATADIR%%/templates/cpu
+%%DATADIR%%/templates/dnsreq
+%%DATADIR%%/templates/dnssvc
+%%DATADIR%%/templates/fds
+%%DATADIR%%/templates/fqdncachereq
+%%DATADIR%%/templates/hitratio
+%%DATADIR%%/templates/httpsvc
+%%DATADIR%%/templates/icp
+%%DATADIR%%/templates/incoming
+%%DATADIR%%/templates/ipcachereq
+%%DATADIR%%/templates/objects
+%%DATADIR%%/templates/outgoing
+%%DATADIR%%/templates/requests
 www/cgi-bin/graph-summary.cgi
+@dirrm %%ETCDIR%%
+@dirrm %%DATADIR%%/htdocs
+@dirrm %%DATADIR%%/templates
+@dirrm %%DATADIR%%
 @dirrmtry www/cgi-bin
-@dirrm etc/squidstats
-@dirrm share/squidstats/htdocs
-@dirrm share/squidstats/templates
-@dirrm share/squidstats
+@unexec rmdir "/var/db/squidstats/graphs" >/dev/null 2>&1 || :
+@unexec rmdir "/var/db/squidstats/rrd" >/dev/null 2>&1 || :
+@unexec rmdir "/var/db/squidstats" >/dev/null 2>&1 || :

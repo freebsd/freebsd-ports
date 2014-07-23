@@ -8,7 +8,7 @@ MASTER_SITES=	http://www.geuz.org/gl2ps/src/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	araujo@FreeBSD.org
-COMMENT=	A C library providing vector output for OpenGL application
+COMMENT=	C library providing vector output for OpenGL application
 
 USE_GL=		yes
 USE_XORG=	x11 xmu xi

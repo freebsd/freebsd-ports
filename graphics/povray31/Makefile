@@ -14,7 +14,7 @@ DISTNAME=	${PORTNAME}${PKGNAMESUFFIX}
 DISTFILES=	povuni_s.tgz povuni_d.tgz
 DIST_SUBDIR=	${PORTNAME}${PKGNAMESUFFIX}
 
-MAINTAINER=	bkoenig@alpha-tierchen.de
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Persistence of Vision Ray Tracer
 
 LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png

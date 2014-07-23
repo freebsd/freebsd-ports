@@ -31,9 +31,4 @@ PLIST_FILES=	lib/libgdiplus.a \
 		lib/libgdiplus.so.0.0.0 \
 		libdata/pkgconfig/libgdiplus.pc
 
-post-patch:
-	@${REINPLACE_CMD} \
-		'/^testgdi_LDADD =/s/$$/ $$(BASE_DEPENDENCIES_LIBS) -lX11/' \
-		${WRKSRC}/tests/Makefile.in
-
 .include <bsd.port.mk>

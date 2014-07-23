@@ -21,6 +21,7 @@ SUB_FILES=	mediathek
 INSTALLFILES=	MediathekView.jar MediathekView.ico
 INSTALLDOCS=	Kurzanleitung.pdf Instructions.pdf
 
+OPTIONS_DEFINE=		DOCS
 OPTIONS_MULTI=		BACKEND
 OPTIONS_MULTI_BACKEND=	MPLAYER VLC
 

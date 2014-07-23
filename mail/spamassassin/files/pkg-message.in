@@ -13,7 +13,10 @@ You should complete the following post-installation tasks:
 	
 	3) To run spamd, add the following to /etc/rc.conf:
 	   spamd_enable="YES"
-	
+
+	4) Install mail/spamass-rules if you want some third-party
+	   spam-catching rulesets
+
 SECURITY NOTE:
 By default, spamd runs as root (the AS_ROOT option). If you wish
 to change this, add the following to /etc/rc.conf:

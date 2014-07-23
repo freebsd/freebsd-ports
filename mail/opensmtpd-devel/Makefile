@@ -59,7 +59,7 @@ LDAP_CONFIGURE_ON=	--with-experimental-ldap
 
 PAM_CONFIGURE_ON=	--with-pam --with-pam-service=smtpd
 
-REDIS_LIB_DEPENDS=	hiredis:${PORTSDIR}/databases/hiredis
+REDIS_LIB_DEPENDS=	libhiredis.so:${PORTSDIR}/databases/hiredis
 REDIS_CONFIGURE_ON=	--with-experimental-redis
 
 USE_OPENSSL=		yes

@@ -19,6 +19,8 @@ USE_LDCONFIG=	yes
 
 BROKEN_sparc64=	does not build
 
+OPTIONS_DEFINE=	DOCS EXAMPLES
+
 post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${CP} -R ${WRKSRC}/doc/ ${STAGEDIR}${DOCSDIR}

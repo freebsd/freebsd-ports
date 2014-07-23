@@ -18,6 +18,8 @@ DOCS=		README CHANGES doc/flex/flex_string.html \
 		doc/yasli/Notes.txt \
 		doc/yasli/yasli.html
 
+OPTIONS_DEFINE=	DOCS
+
 post-patch:
 	@${REINPLACE_CMD} 's/bad_function_call/Loki::bad_function_call/g' \
 		${WRKSRC}/test/Function/FunctionTest.cpp

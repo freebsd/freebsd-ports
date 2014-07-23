@@ -14,7 +14,7 @@ MASTERDIR=	${.CURDIR}/../../databases/postgresql${WANT_PGSQL_VER}-server
 
 WANT_PGSQL_VER?=90
 
-USES=		perl5
+USES=		perl5 readline
 CONFIGURE_ARGS=	--with-perl
 
 BUILD_DIRS=	src/backend src/pl/plperl

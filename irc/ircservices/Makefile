@@ -27,6 +27,8 @@ MAKE_JOBS_UNSAFE=	yes
 
 IRCSERVICES_LANG?=	EN_US
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "amd64"

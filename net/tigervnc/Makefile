@@ -3,7 +3,7 @@
 
 PORTNAME=	tigervnc
 PORTVERSION=	1.3.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net x11-servers
 MASTER_SITES=	SF:tigervnc
 MASTER_SITE_SUBDIR=	${PORTNAME}/${PORTNAME}/${PORTVERSION}/:tigervnc
@@ -40,7 +40,7 @@ USE_XORG+=	bigreqsproto compositeproto damageproto fixesproto fontsproto glproto
 
 CFLAGS+=	-fPIC
 
-OPTIONS_DEFINE=		GNUTLS NLS PAM VIEWER HPJPG
+OPTIONS_DEFINE=		GNUTLS NLS PAM VIEWER HPJPG DOCS
 OPTIONS_DEFAULT=	GNUTLS NLS PAM VIEWER
 VIEWER_DESC=		Build vncviewer
 HPJPG_DESC=		Build with High-Performance JPEG support

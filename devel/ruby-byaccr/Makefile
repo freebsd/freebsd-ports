@@ -17,6 +17,8 @@ RUBY_NO_RUN_DEPENDS=	yes
 
 DOCS=		README		README.html
 
+OPTIONS_DEFINE=	DOCS
+
 post-patch:
 	${REINPLACE_CMD} 's,^#include <malloc\.h>,#include <stdlib.h>,' ${WRKSRC}/*.[ch]
 

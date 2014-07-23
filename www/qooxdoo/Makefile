@@ -28,9 +28,6 @@ SHAREMODE=	644
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
-
 post-patch:
 	${FIND} ${FIND_FILES} | ${XARGS} -0 ${REINPLACE_CMD}
 	${FIND} ${FIND_FILES_BAK} -delete
@@ -40,18 +37,14 @@ do-build:
 	${PYTHON_CMD} -O -m compileall -f ${WRKSRC}/tool
 
 do-install:
-	${MKDIR} ${DATADIR}
+	${MKDIR} ${STAGEDIR}${DATADIR}
 .for D in ${QXDDIRS}
-	cd ${WRKSRC} && ${COPYTREE_SHARE} ${D} ${DATADIR}
+	cd ${WRKSRC} && ${COPYTREE_SHARE} ${D} ${STAGEDIR}${DATADIR}
 .endfor
-.if ${PORT_OPTIONS:MDOCS}
-	cd ${WRKSRC}/documentation/manual && ${COPYTREE_SHARE} . ${DOCSDIR}
-.endif
-.if ${PORT_OPTIONS:MEXAMPLES}
-	cd ${WRKSRC}/application && ${COPYTREE_SHARE} . ${EXAMPLESDIR}
-.endif
-	${INSTALL_DATA} ${WRKSRC}/version.txt ${DATADIR}
-	${CHMOD} ${BINMODE} ${DATADIR}/tool/bin/*.py
-	${INSTALL_SCRIPT} ${WRKSRC}/create-application.py ${DATADIR}/create-application.py
+	cd ${WRKSRC}/documentation/manual && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC}/application && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/version.txt ${STAGEDIR}${DATADIR}
+	${CHMOD} ${BINMODE} ${STAGEDIR}${DATADIR}/tool/bin/*.py
+	${INSTALL_SCRIPT} ${WRKSRC}/create-application.py ${STAGEDIR}${DATADIR}/create-application.py
 
 .include <bsd.port.mk>

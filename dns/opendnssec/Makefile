@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	opendnssec
-PORTVERSION=	1.4.5
-PORTREVISION=	2
+PORTVERSION=	1.4.6
 CATEGORIES=	dns
-MASTER_SITES=	http://dist.opendnssec.org/source/
+MASTER_SITES=	http://dist.opendnssec.org/source/ 
 
 MAINTAINER=	jaap@NLnetLabs.nl
 COMMENT=	Tool suite for maintaining DNSSEC
@@ -53,13 +52,15 @@ SCRIPTDATA=	migrate_adapters_1.mysql migrate_keyshare_mysql.pl \
 .endif
 
 .if ${PORT_OPTIONS:MSQLITE}
+CONFIGURE_ARGS+=	--with-sqlite3=${LOCALBASE}
+CONFIGURE_ARGS+=	--with-database-backend=sqlite3
 BUILD_DEPENDS+=	sqlite3>=3.3.9:${PORTSDIR}/databases/sqlite3
 SCRIPTDATA=	database_create.sqlite3 migrate_keyshare_sqlite3.pl \
 		migrate_adapters_1.sqlite3 migrate_to_ng_sqlite.pl
 .endif
 
 .if ${PORT_OPTIONS:MSOFTHSM}
-CONFIGURE_ARGS+=	--with-pkcs11-softhsm=${LOCALBASE}/lib/libsofthsm.so
+CONFIGURE_ARGS+=	--with-pkcs11-softhsm=${LOCALBASE}/lib/softhsm/libsofthsm.so
 RUN_DEPENDS+=	softhsm>=1.2.0:${PORTSDIR}/security/softhsm
 .endif
 

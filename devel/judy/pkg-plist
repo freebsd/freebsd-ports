@@ -1,6 +1,5 @@
 include/Judy.h
 lib/libJudy.a
-lib/libJudy.la
 lib/libJudy.so
 lib/libJudy.so.1
 lib/libJudy.so.1.0.3

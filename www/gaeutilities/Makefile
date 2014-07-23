@@ -20,17 +20,12 @@ WRKSRC=	${WRKDIR}/joerussbowman-gaeutilities-ea3f7e1
 OPTIONSFILE=	${PORT_DBDIR}/py-${PORTNAME}/options
 OPTIONS_DEFINE=	DOCS
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
-
 do-build:
 	${PYTHON_CMD} -m compileall -f ${WRKSRC}/appengine_utilities
 	${PYTHON_CMD} -O -m compileall -f ${WRKSRC}/appengine_utilities
 
 do-install:
-	cd ${WRKSRC} && ${COPYTREE_SHARE} appengine_utilities ${PYTHONPREFIX_SITELIBDIR}
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR} && cd ${WRKSRC}/docs && ${COPYTREE_SHARE} . ${DOCSDIR}
-.endif
+	cd ${WRKSRC} && ${COPYTREE_SHARE} appengine_utilities ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR} && cd ${WRKSRC}/docs && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

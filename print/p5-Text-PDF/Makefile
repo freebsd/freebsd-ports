@@ -9,7 +9,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	tobez@FreeBSD.org
-COMMENT=	A PDF manipulation module
+COMMENT=	PDF manipulation module
 
 WRKSRC=		${WRKDIR}/${DISTNAME:C/a$//}
 

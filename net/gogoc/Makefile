@@ -3,6 +3,7 @@
 
 PORTNAME=	gogoc
 PORTVERSION=	1.2
+PORTREVISION=	1
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://gogo6.com/downloads/
 DISTNAME=	gogoc-1_2-RELEASE
@@ -14,34 +15,35 @@ USES=		gmake
 USE_RC_SUBR=	gogoc
 USE_OPENSSL=	yes
 
+OPTIONS_DEFINE=	DOCS EXAMPLES
+
 MAKE_JOBS_UNSAFE=	yes
 
-MAN5=		gogoc.conf.5
-MAN8=		gogoc.8
-
-PORTDOCS=	README CLIENT-LICENSE.TXT GUI-LICENSE.TXT
+PORTDOCS=	CLIENT-LICENSE.TXT GUI-LICENSE.TXT INSTALL README
 
 SUB_FILES=	gogoc
 SUB_LIST=	LOCALBASE=${LOCALBASE}
 
-NO_STAGE=	yes
-do-install:
-	cd ${WRKSRC}/gogoc-tsp/ && \
-	    ${MAKE_CMD} platform=freebsd installdir=${PREFIX} install
-	${RM} ${PREFIX}/bin/gogoc.conf*
-.if !defined(NOPORTEXAMPLES)
-	${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/gogoc-tsp/bin/gogoc.conf.sample ${EXAMPLESDIR}
-.endif
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-.for file in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
-.endfor
-.endif
+.include <bsd.port.options.mk>
 
-	@if [ ! -f ${PREFIX}/etc/gogoc.conf ]; then \
-		${TOUCH} ${PREFIX}/etc/gogoc.conf ; \
-	fi
+do-install:
+	cd ${WRKSRC}/gogoc-tsp/ && ${SETENV} ${MAKE_ENV} DESTDIR=${STAGEDIR} \
+	    ${MAKE_CMD} platform=freebsd installdir=${STAGEDIR}${PREFIX} install
+	${RM} ${STAGEDIR}${PREFIX}/bin/gogoc.conf*
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/gogoc
+	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/gogoc-tsp/bin/gogoc.conf.sample ${STAGEDIR}${EXAMPLESDIR}
+	@${REINPLACE_CMD} -e \
+	    's|gogoc_dir=${STAGEDIR}${PREFIX}|gogoc_dir=${PREFIX}|g' \
+	    ${STAGEDIR}${EXAMPLESDIR}/gogoc.conf.sample
+	@${RM} ${STAGEDIR}${EXAMPLESDIR}/gogoc.conf.sample.bak # pass stage-qa
+	${INSTALL_DATA} ${STAGEDIR}${EXAMPLESDIR}/gogoc.conf.sample \
+	    ${STAGEDIR}${PREFIX}/etc/gogoc.conf
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+.for file in ${PORTDOCS}
+	${INSTALL_DATA} ${WRKSRC}/${file} ${STAGEDIR}${DOCSDIR}
+.endfor
 
 .include <bsd.port.mk>

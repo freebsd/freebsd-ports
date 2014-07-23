@@ -5,7 +5,7 @@ include/fbopenssl/krb5help.h
 include/fbopenssl/spnego.h
 include/fbopenssl/spnegohelp.h
 lib/libfbopenssl.a
-lib/libfbopenssl_p.a
+%%PROFILE%%lib/libfbopenssl_p.a
 lib/libfbopenssl.so
 lib/libfbopenssl.so.0
 @dirrm include/fbopenssl

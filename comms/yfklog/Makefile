@@ -25,6 +25,8 @@ RUN_DEPENDS=	p5-Curses>=0:${PORTSDIR}/devel/p5-Curses \
 USES=		perl5
 NO_BUILD=	yes
 
+OPTIONS_DEFINE=	DOCS EXAMPLES
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/bin/perl|${PERL}|' \
 	     ${WRKSRC}/yfk ${WRKSRC}/yfksubs.pl

@@ -1,4 +1,5 @@
 bin/scummvm
+man/man6/scummvm.6.gz
 share/applications/scummvm.desktop
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
@@ -8,21 +9,21 @@ share/applications/scummvm.desktop
 %%PORTDOCS%%%%DOCSDIR%%/COPYRIGHT
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
 %%PORTDOCS%%%%DOCSDIR%%/README
-share/man/man6/scummvm.6
 share/pixmaps/scummvm.xpm
 %%DATADIR%%/drascula.dat
 %%DATADIR%%/hugo.dat
 %%DATADIR%%/kyra.dat
 %%DATADIR%%/lure.dat
+%%DATADIR%%/mort.dat
+%%DATADIR%%/neverhood.dat
 %%DATADIR%%/pred.dic
 %%DATADIR%%/queen.tbl
 %%DATADIR%%/scummclassic.zip
 %%DATADIR%%/scummmodern.zip
 %%DATADIR%%/sky.cpt
 %%DATADIR%%/teenagent.dat
+%%DATADIR%%/tony.dat
 %%DATADIR%%/toon.dat
 %%DATADIR%%/translations.dat
 @dirrmtry %%DATADIR%%
-@dirrmtry share/man/man6
-@dirrmtry share/man
 %%PORTDOCS%%@dirrmtry %%DOCSDIR%%
