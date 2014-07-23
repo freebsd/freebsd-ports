@@ -106,8 +106,13 @@ share/games/quiz.db/ucc
 share/games/cribbage.instr
 share/games/fish.instr
 share/games/wump.info
+@dirrm share/games/atc
+@dirrm share/games/larn
+@dirrm share/games/quiz.db
+@dirrm share/games
 @group games
 @mode 664
+@cwd /
 @sample var/games/atc_score.sample
 @sample var/games/battlestar.log.sample
 @sample var/games/cfscores.sample
@@ -143,10 +148,3 @@ share/games/wump.info
 @dirrmtry var/games/battlestar
 @dirrmtry var/games/atc
 @dirrmtry var/games
-@mode
-@group
-@dirrmtry var
-@dirrm share/games/atc
-@dirrm share/games/larn
-@dirrm share/games/quiz.db
-@dirrm share/games
