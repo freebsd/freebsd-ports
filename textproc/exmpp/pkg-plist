@@ -1,5 +1,4 @@
 %%PORTDOCS%%lib/erlang/lib/exmpp-%%VERSION%%/doc/html/ejabberd_socket.html
-%%PORTDOCS%%lib/erlang/lib/exmpp-%%VERSION%%/doc/html/ejabberd_zlib.html
 %%PORTDOCS%%lib/erlang/lib/exmpp-%%VERSION%%/doc/html/erlang.png
 %%PORTDOCS%%lib/erlang/lib/exmpp-%%VERSION%%/doc/html/exmpp.html
 %%PORTDOCS%%lib/erlang/lib/exmpp-%%VERSION%%/doc/html/exmpp_bosh.html
@@ -126,4 +125,3 @@ lib/erlang/lib/exmpp-%%VERSION%%/priv/lib/exmpp_xml_libxml2.so
 %%PORTDOCS%%@dirrm lib/erlang/lib/exmpp-%%VERSION%%/doc/html
 %%PORTDOCS%%@dirrm lib/erlang/lib/exmpp-%%VERSION%%/doc
 @dirrm lib/erlang/lib/exmpp-%%VERSION%%
-@dirrmtry lib/erlang/lib
