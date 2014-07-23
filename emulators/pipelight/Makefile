@@ -30,8 +30,9 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--verbose --wine-path=${LOCALBASE}/bin/wine --win32-prebuilt \
-		--win64-prebuilt --moz-plugin-path=${LOCALBASE}/lib/browser_plugins
-USES=		compiler:c11 gmake
+		--win64-prebuilt --moz-plugin-path=${LOCALBASE}/lib/browser_plugins \
+		--cxx=${CXX}
+USES=		compiler:gcc-c++11-lib gmake 
 MAKE_JOBS_UNSAFE=yes
 
 .include <bsd.port.pre.mk>
