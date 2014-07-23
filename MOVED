@@ -6301,3 +6301,7 @@ print/latex-ucs|print/texlive-texmf|2014-07-23|Has been incorporated in TeXLive
 print/teTeX-base|print/texlive-base|2014-07-23|Has been incorporated in TeXLive
 print/teTeX-texmf|print/texlive-texmf|2014-07-23|Has been incorporated in TeXLive
 japanese/xdvik|print/tex-xdvik|2014-07-23|Use TeXLive version
+japanese/latex2html||2014-07-23|Depends on decomissioned teTeX
+japanese/platex209||2014-07-23|Depends on decomissioned teTeX
+japanese/platex-jsclasses||2014-07-23|Depends on decomissioned teTeX
+japanese/ptex|japaneses/tex-ptex||2014-07-23|Use TeXLive version
