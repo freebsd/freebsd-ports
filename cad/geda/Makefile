@@ -3,6 +3,7 @@
 
 PORTNAME=	geda
 PORTVERSION=	1.8.2
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	cad
 MASTER_SITES=	http://ftp.geda-project.org/geda-gaf/stable/%SUBDIR%/
@@ -20,8 +21,8 @@ RUN_DEPENDS=	gawk:${PORTSDIR}/lang/gawk
 
 OPTIONS_DEFINE=	DOCS
 
-USES=		desktop-file-utils gettext gmake pathfix perl5 pkgconfig \
-		shared-mime-info shebangfix
+USES=		desktop-file-utils gettext gmake pathfix libtool perl5 \
+		pkgconfig shared-mime-info shebangfix
 SHEBANG_FILES=	examples/lightning_detector/bom libgeda/docs/*.dox \
 		utils/gxyrs/*.pl utils/scripts/* \
 		utils/docs/*.dox gattrib/docs/*.dox \
@@ -30,7 +31,7 @@ SHEBANG_FILES=	examples/lightning_detector/bom libgeda/docs/*.dox \
 USE_GNOME=	gtk20
 USE_PERL5=	run
 USE_PYTHON=	run
-USE_AUTOTOOLS=	libtool
+GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-libstroke=${LOCALBASE}
 USE_LDCONFIG=	yes
 INSTALLS_ICONS=	yes

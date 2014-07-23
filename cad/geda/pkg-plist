@@ -32,10 +32,9 @@ include/libgeda/o_types.h
 include/libgeda/papersizes.h
 include/libgeda/prototype.h
 include/libgeda/struct.h
-lib/libgeda.a
-lib/libgeda.la
 lib/libgeda.so
 lib/libgeda.so.42
+lib/libgeda.so.42.0.1
 libdata/pkgconfig/libgeda.pc
 man/man1/convert_sym.1.gz
 man/man1/garchive.1.gz
@@ -2342,6 +2341,7 @@ share/mime/application/x-geda-gsch2pcb-project.xml
 share/mime/application/x-geda-schematic.xml
 share/mime/application/x-geda-symbol.xml
 share/mime/packages/libgeda.xml
+@dirrmtry share/mime/application
 @dirrm %%DATADIR%%/sym/xilinx
 @dirrm %%DATADIR%%/sym/vhdl
 @dirrm %%DATADIR%%/sym/verilog
