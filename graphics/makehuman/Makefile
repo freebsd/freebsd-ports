@@ -25,7 +25,7 @@ PLIST_FILES=	bin/${PORTNAME}
 PORTDOCS=	*
 PORTDATA=	*
 
-.include <bsd.port.options.mk>
+OPTIONS_DEFINE=	DOCS
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,find . \(-name .*\) -exec cp --parents {} \(.*\) \\;,find -d . \1 | ${CPIO} -dumpl \2,g' \
