@@ -9,7 +9,7 @@ MASTER_SITES=	http://lalescu.ro/liviu/fet/download/ \
 		http://timetabling.de/download/ \
 		http://timetabling.de/download/old/
 
-MAINTAINER=	salfrancl@yahoo.es
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Free timetabling software
 
 LICENSE=	GPLv2 GPLv3
