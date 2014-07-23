@@ -22,11 +22,4 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--enable-static
 
-post-patch:
-	@${REINPLACE_CMD} \
-		-e '/^examples_server_credentials_LDADD =/s/$$/ $$(LIBEPC_UI_LIBS)/' \
-		-e '/^examples_service_browser_LDADD =/s/$$/ $$(LIBEPC_LIBS)/' \
-		-e '/^tests_test_progress_hooks_LDADD =/s/$$/ $$(LIBEPC_UI_LIBS)/' \
-		${WRKSRC}/Makefile.in
-
 .include <bsd.port.mk>
