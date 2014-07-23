@@ -2,44 +2,24 @@
 # $FreeBSD$
 
 PORTNAME=	xosview
-PORTVERSION=	1.8.3
-PORTREVISION=	3
+PORTVERSION=	1.16
+PORTREVISION=	0
 CATEGORIES=	sysutils
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
+MASTER_SITES=	http://www.pogo.org.uk/~mark/xosview/releases/
 
 MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	Graphical performance meter
 
 USE_XORG=	xpm
-GNU_CONFIGURE=	yes
-MAN1=		xosview.1
+USES=		gmake
+MAKE_ENV+=	PLATFORM=bsd MANDIR=${LOCALBASE}/man
+ALL_TARGET=
 
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
+do-configure:
+	@${CP} ${WRKSRC}/targets/freebsd-9.0 ${WRKSRC}/.config
+	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g' ${WRKSRC}/.config
 
-post-patch:
-	@${REINPLACE_CMD} -e 's,iostream.h,iostream,' \
-		${WRKSRC}/xwin.h \
-		${WRKSRC}/Host.h \
-		${WRKSRC}/Xrm.cc \
-		${WRKSRC}/llist.cc \
-		${WRKSRC}/timeval.h \
-		${WRKSRC}/xosview.cc
-	@${REINPLACE_CMD} -e 's,string.h,string,' \
-		${WRKSRC}/xwin.h \
-		${WRKSRC}/Host.cc \
-		${WRKSRC}/Xrm.cc \
-		${WRKSRC}/llist.cc \
-		${WRKSRC}/timeval.h \
-		${WRKSRC}/xosview.cc
-	@${REINPLACE_CMD} -e 's,fstream.h,fstream,' \
-		${WRKSRC}/bitfieldmeter.cc \
-		${WRKSRC}/fieldmeter.cc \
-		${WRKSRC}/fieldmeterdecay.cc \
-		${WRKSRC}/fieldmetergraph.cc
-	@${REINPLACE_CMD} -e 's,-O4,,' \
-		${WRKSRC}/configure
-	@${REINPLACE_CMD} -e 's,/share/man,/man,' \
-		${WRKSRC}/config/Makefile.top.in
+post-install:
+	@${CP} ${WRKSRC}/Xdefaults ${STAGEDIR}${PREFIX}/lib/X11/app-defaults/XOsview
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
