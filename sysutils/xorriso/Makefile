@@ -19,7 +19,8 @@ RUN_DEPENDS=	libburn>=1.1.0:${PORTSDIR}/devel/libburn \
 		libisofs>=1.1.2:${PORTSDIR}/devel/libisofs
 
 GNU_CONFIGURE=	yes
-USES=		gmake iconv libtool pathfix pkgconfig
+USES=		gmake iconv libtool pathfix pkgconfig shebangfix
+SHEBANG_FILES=	${WRKSRC}/frontend/xorriso-tcltk
 USE_LDCONFIG=	yes
 
 INFO=		xorrecord xorriso xorrisofs
