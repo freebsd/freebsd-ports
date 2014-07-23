@@ -177,7 +177,6 @@
     SUBDIR += papersize-default-a4
     SUBDIR += papersize-default-letter
     SUBDIR += paps
-    SUBDIR += passivetex
     SUBDIR += pcal
     SUBDIR += pdf-renderer
     SUBDIR += pdf4tcl
@@ -288,7 +287,6 @@
     SUBDIR += typetools
     SUBDIR += utopia
     SUBDIR += xdvi
-    SUBDIR += xdvik
     SUBDIR += xfce4-print
     SUBDIR += xmbibtex
     SUBDIR += xpp
