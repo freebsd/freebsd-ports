@@ -3,7 +3,7 @@
 
 PORTNAME=	epeg
 PORTVERSION=	0.9.1.042
-PORTREVISION=	2
+PORTREVISION=	3
 PORTEPOCH=	2
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.springdaemons.com/pub/snapshots/e17/ \
@@ -15,8 +15,7 @@ COMMENT=	Immensely fast JPEG thumbnailing library
 LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg
 
 GNU_CONFIGURE=	yes
-USE_BZIP2=	yes
-USES=	pathfix
+USES=		libtool pathfix tar:bzip2
 USE_LDCONFIG=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib
