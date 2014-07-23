@@ -5,6 +5,13 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20140727:
+  AFFECTS: users of TeX
+  AUTHOR: bapt@FreeBSD.org
+
+  TeXLive is now the default teX provider.
+  Please remove all TeX-related packages based on teTeX.
+
 20140722:
   AFFECTS: users of mail/exim
   AUTHOR: vsevolod@FreeBSD.org

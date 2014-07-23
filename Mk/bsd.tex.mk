@@ -54,8 +54,8 @@ TEX_MAINTAINER=	hrs@FreeBSD.org
 # USE_TEX=	latex:build dvipsk:build
 
 # default TeX distribution.  "tetex" or "texlive"
-TEX_DEFAULT?=	tetex
-#TEX_DEFAULT?=	texlive
+#TEX_DEFAULT?=	tetex
+TEX_DEFAULT?=	texlive
 
 TEXMFDIR?=	share/texmf
 TEXMFDISTDIR?=	share/texmf-dist
