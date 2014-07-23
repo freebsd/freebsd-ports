@@ -1,7 +1,7 @@
---- man/Makefile.in.orig	2014-06-05 17:06:15.791427000 +0400
-+++ man/Makefile.in	2014-06-05 17:09:15.000000000 +0400
-@@ -446,9 +446,11 @@
- geoiplookup6.1: geoiplookup6.1.in
+--- ./man/Makefile.am.orig	2011-03-27 23:00:36.000000000 +0200
++++ ./man/Makefile.am	2014-07-23 19:37:28.000000000 +0200
+@@ -23,7 +23,9 @@
+ LOOKUP6_MAN = $(mandir)/man1/geoiplookup6.1
  
  install-data-hook:
 +	chmod u+w $(DESTDIR)$(mandir)/man1/*.1
@@ -10,5 +10,3 @@
  	cat geoiplookup6.1 | sed s,DATADIR,$(pkgdatadir), > $(DESTDIR)$(LOOKUP6_MAN)
 +	chmod u-w $(DESTDIR)$(mandir)/man1/*.1
  
- # Tell versions [3.59,3.63) of GNU make to not export all variables.
- # Otherwise a system limit (for SysV at least) may be exceeded.
