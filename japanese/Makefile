@@ -39,7 +39,6 @@
     SUBDIR += ddskk
     SUBDIR += devil-fpw
     SUBDIR += dvi2tty
-    SUBDIR += dvipsk
     SUBDIR += e2ps
     SUBDIR += eb
     SUBDIR += ebd-fpw
@@ -225,7 +224,6 @@
     SUBDIR += plain2
     SUBDIR += plan
     SUBDIR += platex-japanese
-    SUBDIR += platex-otf
     SUBDIR += postgresql82-man
     SUBDIR += prime
     SUBDIR += prime-dict

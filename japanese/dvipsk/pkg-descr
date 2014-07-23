@@ -1,5 +1,0 @@
-Dvipsk converts a DVI file produced by TeX (or other program) to
-a PostScript file. Missing fonts can be automatically generated if
-METAFONT exists on the system, or can be converted from `gf' to `pk'
-format on demand. Dvips also supports `tpic', `psfig', `emtex',
-and `METAPOST'.
