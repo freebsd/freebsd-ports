@@ -69,10 +69,10 @@ CMAKE_ARGS+=	-D3RDPARTY_FREETYPE_DIR=${LOCALBASE}	\
 .endif
 
 .if ${PORT_OPTIONS:MDOCS}
+USE_TEX+=	latex:build
 BUILD_DEPENDS+=	bash:${PORTSDIR}/shells/bash		\
 		doxygen:${PORTSDIR}/devel/doxygen	\
 		dot:${PORTSDIR}/graphics/graphviz	\
-		pdflatex:${PORTSDIR}/print/teTeX-base	\
 		inkscape:${PORTSDIR}/graphics/inkscape
 RUN_DEPENDS+=	${LOCALBASE}/www/MathJax/MathJax.js:${PORTSDIR}/www/mathjax
 .endif
