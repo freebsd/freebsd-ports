@@ -6282,3 +6282,22 @@ print/latex-mathabx|print/texlive-texmf|2014-07-23|Has been incorporated in TeXL
 print/latex-arydshln|print/texlive-texmf|2014-07-23|Has been incorporated in TeXLive
 print/latex-feynmf|print/texlive-texmf|2014-07-23|Has been incorporated in TeXLive
 print/latex-chapterfolder|print/texlive-texmf|2014-07-23|Has been incorporated in TeXLive
+print/latex-cjk|print/texlive-base|2014-07-23|Has been incorporated in TeXLive
+print/latex-aastex|print/texlive-texmf|2014-07-23|Has been incorporated in TeXLive
+print/latex-beamer|print/texlive-texmf|2014-07-23|Has been incorporated in TeXLive
+print/latex-biblatex|print/texlive-texmf|2014-07-23|Has been incorporated in TeXLive
+print/latex-biblist|print/texlive-texmf|2014-07-23|Has been incorporated in TeXLive
+print/latex-bytefield|print/texlive-texmf|2014-07-23|Has been incorporated in TeXLive
+print/latex-csquotes|print/texlive-texmf|2014-07-23|Has been incorporated in TeXLive
+print/latex-etoolbox|print/texlive-texmf|2014-07-23|Has been incorporated in TeXLive
+print/latex-keystroke|print/texlive-texmf|2014-07-23|Has been incorporated in TeXLive
+print/latex-logpap|print/texlive-texmf|2014-07-23|Has been incorporated in TeXLive
+print/latex-logreq|print/texlive-texmf|2014-07-23|Has been incorporated in TeXLive
+print/latex-pgf|print/texlive-texmf|2014-07-23|Has been incorporated in TeXLive
+print/latex-supertabular|print/texlive-texmf|2014-07-23|Has been incorporated in TeXLive
+print/latex-svninfo|print/texlive-texmf|2014-07-23|Has been incorporated in TeXLive
+print/latex-tipa|print/texlive-texmf|2014-07-23|Has been incorporated in TeXLive
+print/latex-ucs|print/texlive-texmf|2014-07-23|Has been incorporated in TeXLive
+print/teTeX-base|print/texlive-base|2014-07-23|Has been incorporated in TeXLive
+print/teTeX-texmf|print/texlive-texmf|2014-07-23|Has been incorporated in TeXLive
+
