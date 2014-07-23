@@ -18,8 +18,4 @@ USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS?=--without-gtk
 
-post-patch:
-	@${REINPLACE_CMD} '/^gaiksaurus_LDADD =/s/$$/ $$(GTK_LIBS)/' \
-		${WRKSRC}/gtk/src/Makefile.in
-
 .include <bsd.port.mk>

@@ -54,8 +54,6 @@ post-patch:
 .endif
 	@${REINPLACE_CMD} -e 's,/usr/share,${PREFIX}/share,g' \
 		${WRKSRC}/dict/src/conf.cpp
-	@${REINPLACE_CMD} '/^stardict_LDADD =/s/$$/ -lgmodule-2.0/' \
-		${WRKSRC}/dict/src/Makefile.in
 
 pre-configure:
 	cd ${WRKSRC}/lib && \
