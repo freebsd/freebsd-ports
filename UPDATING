@@ -22,7 +22,7 @@ you update your ports collection, before attempting any port upgrades.
 
 20140722
   AFFECTS: users of games/bsdgames
-  AUTHOR: adamw@adamw.org
+  AUTHOR: adamw@FreeBSD.org
 
   bsdgames now expects savegame data in /usr/local/var/games instead of
   /var/games. To continue using your saved games,
