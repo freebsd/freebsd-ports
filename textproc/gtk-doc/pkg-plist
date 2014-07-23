@@ -9,7 +9,6 @@ bin/gtkdoc-mktmpl
 bin/gtkdoc-rebase
 bin/gtkdoc-scan
 bin/gtkdoc-scangobj
-bin/gtkdoc-scanobj
 bin/gtkdocize
 libdata/pkgconfig/gtk-doc.pc
 share/aclocal/gtk-doc.m4

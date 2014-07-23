@@ -22,6 +22,7 @@ share/locale/sl/LC_MESSAGES/california.mo
 share/locale/sr/LC_MESSAGES/california.mo
 share/locale/sr@latin/LC_MESSAGES/california.mo
 share/locale/sv/LC_MESSAGES/california.mo
+share/locale/tr/LC_MESSAGES/california.mo
 share/locale/uk/LC_MESSAGES/california.mo
 @dirrmtry share/appdata
 @dirrm %%DOCSDIR%%

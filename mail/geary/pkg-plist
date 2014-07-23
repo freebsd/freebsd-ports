@@ -1,5 +1,6 @@
 bin/geary
 share/appdata/geary.appdata.xml
+share/applications/geary-autostart.desktop
 share/applications/geary.desktop
 %%DATADIR%%/icons/archive-symbolic.svg
 %%DATADIR%%/icons/close-symbolic.svg

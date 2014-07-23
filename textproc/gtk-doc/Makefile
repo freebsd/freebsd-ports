@@ -1,9 +1,9 @@
 # Created by: fenner
 # $FreeBSD$
-#    $MCom: ports/trunk/textproc/gtk-doc/Makefile 19571 2014-04-25 18:12:46Z kwm $
+#    $MCom: ports/trunk/textproc/gtk-doc/Makefile 19780 2014-07-17 18:46:46Z gusi $
 
 PORTNAME=	gtk-doc
-PORTVERSION=	1.20
+PORTVERSION=	1.21
 CATEGORIES=	textproc
 MASTER_SITES=	GNOME
 
