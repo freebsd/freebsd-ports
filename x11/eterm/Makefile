@@ -21,7 +21,9 @@ CONFIGURE_ARGS?=--enable-trans --enable-utmp \
 		--enable-multi-charset
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-USES=		iconv libtool
+USES=		iconv libtool shebangfix
+SHEBANG_FILES=	${WRKSRC}/utils/kEsetroot.in
+perl_OLD_CMD=	@PERL@
 USE_CSTD=	gnu89
 USE_EFL=	imlib2
 USE_LDCONFIG=	yes
