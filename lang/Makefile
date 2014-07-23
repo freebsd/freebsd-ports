@@ -54,6 +54,7 @@
     SUBDIR += dragonegg47-33
     SUBDIR += ecl
     SUBDIR += elan
+    SUBDIR += elixir
     SUBDIR += elk
     SUBDIR += emacs-lisp-intro
     SUBDIR += embryo
