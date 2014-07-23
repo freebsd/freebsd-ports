@@ -10,9 +10,9 @@ include/libgeda/papersizes.h
 include/libgeda/prototype.h
 include/libgeda/struct.h
 lib/libgeda.a
-lib/libgeda.la
 lib/libgeda.so
 lib/libgeda.so.33
+lib/libgeda.so.33.0.2
 libdata/pkgconfig/libgeda.pc
 share/geda/prolog.ps
 share/geda/scheme/geda.scm
