@@ -315,7 +315,6 @@
     SUBDIR += wordpress
     SUBDIR += wwasw-fpw
     SUBDIR += xdtp
-    SUBDIR += xdvik
     SUBDIR += xgate
     SUBDIR += xjtext
     SUBDIR += xlockmore
