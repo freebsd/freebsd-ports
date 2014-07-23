@@ -1,8 +1,8 @@
 bin/rapidsvn
 lib/libsvncpp.a
-lib/libsvncpp.la
 lib/libsvncpp.so
 lib/libsvncpp.so.3
+lib/libsvncpp.so.3.0.0
 man/man1/rapidsvn.1.gz
 share/locale/de/LC_MESSAGES/rapidsvn.mo
 share/locale/es/LC_MESSAGES/rapidsvn.mo
