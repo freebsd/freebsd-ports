@@ -83,12 +83,6 @@ ALL_TARGET+=	man
 INSTALL_TARGET+=	install-man
 .endif
 
-# Examples
-.if !${PORT_OPTIONS:MEXAMPLES}
-post-install:
-	@${RM} -R ${STAGEDIR}${EXAMPLESDIR}
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e 's,%%LOCALBASE%%,${LOCALBASE},1' -i.bak ${WRKSRC}/settings.cc
 
