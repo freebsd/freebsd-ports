@@ -3,6 +3,7 @@
 
 PORTNAME=	libmpdclient
 PORTVERSION=	2.9
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://www.musicpd.org/download/libmpdclient/2/
 
@@ -10,7 +11,7 @@ MAINTAINER=	gblach@FreeBSD.org
 COMMENT=	API library for interfacing MPD
 
 GNU_CONFIGURE=	yes
-USES=		tar:xz gmake pathfix
+USES=		tar:xz gmake libtool pathfix
 USE_LDCONFIG=	yes
 
 OPTIONS_DEFINE=	DOCS
