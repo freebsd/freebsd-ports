@@ -6268,3 +6268,17 @@ net/desktop-data-model||2014-07-21|Has expired: gnome-desktop 2.x will be update
 net/online-desktop||2014-07-21|Has expired: Disappeared upstream, depends on expired ports
 x11-toolkits/libgail-gnome||2014-07-21|Has expired: gnome-panel 2.x will be updated in the GNOME 3 import
 security/gnutls3|security/gnutls|2014-07-22|Moved to replace GnuTLS 2.x port
+print/latex-ifluatex|print/texlive-texmf|2014-07-23|Has been incorporated into texlive-texmf
+print/teTeX|print/texlive-full|2014-07-23|Replaced by texlive
+print/passivetex|print/tex-xmltex|2014-07-23|Has been incorporated in TeXLive version of xmltex
+print/xmltex|print/tex-xmltex|2014-07-23|Replaced by texlive
+print/latex-caption|print/texlive-texmf|2014-07-23|Has been incorporated in TeXLive
+print/xdvik|print/tex-xdvik|2014-07-23|Replaced by texlive
+print/latex-subfloat|print/texlive-texmf|2014-07-23|Has been incorporated in TeXLive
+print/latex-circ|print/texlive-texmf|2014-07-23|Has been incorporated in TeXLive
+print/latex-prettyref|print/texlive-texmf|2014-07-23|Has been incorporated in TeXLive
+print/latex-nomencl|print/texlive-texmf|2014-07-23|Has been incorporated in TeXLive
+print/latex-mathabx|print/texlive-texmf|2014-07-23|Has been incorporated in TeXLive
+print/latex-arydshln|print/texlive-texmf|2014-07-23|Has been incorporated in TeXLive
+print/latex-feynmf|print/texlive-texmf|2014-07-23|Has been incorporated in TeXLive
+print/latex-chapterfolder|print/texlive-texmf|2014-07-23|Has been incorporated in TeXLive
