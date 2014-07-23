@@ -12,16 +12,16 @@ COMMENT=	Set of fonts by Adobe designed for coders
 
 LICENSE=	OFL11
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/mkfontscale:${PORTSDIR}/x11-fonts/mkfontscale \
+BUILD_DEPENDS=	${LOCALBASE}/bin/fc-cache:${PORTSDIR}/x11-fonts/fontconfig \
 		${LOCALBASE}/bin/mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir \
-		${LOCALBASE}/bin/fc-cache:${PORTSDIR}/x11-fonts/fontconfig
+		${LOCALBASE}/bin/mkfontscale:${PORTSDIR}/x11-fonts/mkfontscale
 
 NO_BUILD=	yes
 USE_XORG=	x11
 USES=		zip
 
-PLIST_SUB=	FONTDIR="${FONTDIR:S|${PREFIX}/||}"
 PKGMESSAGE=	${WRKDIR}/pkg-message
+PLIST_SUB=	FONTDIR="${FONTDIR:S|${PREFIX}/||}"
 SUB_FILES=	pkg-message
 SUB_LIST=	FONTDIR=${FONTDIR}
 
