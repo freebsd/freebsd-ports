@@ -8,7 +8,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=sources/ocrfeeder/${PORTVERSION:R}
 
-MAINTAINER=	buganini@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Document layout analysis and optical character recognition
 
 LICENSE=	GPLv3

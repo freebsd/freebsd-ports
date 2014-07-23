@@ -9,7 +9,7 @@ PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DISTNAME=	RMagick-${PORTVERSION}
 DIST_SUBDIR=	ruby
 
-MAINTAINER=	ruby@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Ruby binding for ImageMagick
 
 USES=		pkgconfig

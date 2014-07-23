@@ -7,7 +7,7 @@ PORTREVISION=	7
 CATEGORIES=	graphics
 MASTER_SITES=	http://megapov.inetart.net/packages/unix/
 
-MAINTAINER=	maho@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Unofficial extensions of POV-Ray
 
 RUN_DEPENDS=	povray:${PORTSDIR}/graphics/povray-meta

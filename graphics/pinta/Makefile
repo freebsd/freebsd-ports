@@ -6,7 +6,7 @@ PORTVERSION=	1.4
 CATEGORIES=	graphics
 MASTER_SITES=	http://cloud.github.com/downloads/PintaProject/Pinta/
 
-MAINTAINER=	mono@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple Gtk\# Paint Program
 
 LICENSE=	MIT

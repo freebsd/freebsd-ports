@@ -7,7 +7,7 @@ PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	SF
 
-MAINTAINER=	erik@bz.bzflag.bz
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Debugging library for OpenGL
 
 OPTIONS_DEFINE=	AVCODEC GUI THREADS

@@ -13,7 +13,7 @@ PATCH_SITES=	ftp://daemon.jp.freebsd.org/pub/FreeBSD-jp/man-jp/
 PATCHFILES=	jp-man-1.1j-ex-20020115.patch
 PATCH_DIST_STRIP=-p1
 
-MAINTAINER=	kuriyama@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Manual display command for Japanese (EUC)
 
 RUN_DEPENDS=	${LOCALBASE}/bin/groff:${PORTSDIR}/japanese/groff \

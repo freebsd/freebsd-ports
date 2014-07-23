@@ -7,7 +7,7 @@ CATEGORIES=	irc
 MASTER_SITES=	SF/solidircd/Solid-Stable/solidircd-stable.${PORTVERSION}
 DISTNAME=	solidircd-stable3.4.8
 
-MAINTAINER=	systemoperator@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Solid Internet Relay Chat Daemon based on bahamut IRCd
 
 DEPRECATED=	Fails to build with new utmpx

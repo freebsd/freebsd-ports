@@ -8,7 +8,7 @@ PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	ftp://root.cern.ch/root/
 
-MAINTAINER=	fjoe@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C/C++ interpreter
 
 BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash

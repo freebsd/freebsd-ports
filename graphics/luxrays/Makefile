@@ -9,7 +9,7 @@ MASTER_SITES=	http://src.luxrender.net/luxrays/archive/
 DISTNAME=	${HG_NODEID}
 DIST_SUBDIR=	luxrender
 
-MAINTAINER=	natbsd@instinctive.eu
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Accelerate the ray intersection process by using GPUs
 
 LICENSE=	GPLv3

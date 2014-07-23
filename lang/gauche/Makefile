@@ -9,7 +9,7 @@ MASTER_SITES=	SF/${PORTNAME}/Gauche/
 DISTNAME=	Gauche-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	erik@elfga.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Scheme script interpreter with multibyte character handling
 
 OPTIONS_DEFINE=	GDBM SLIB DOCS MANPAGES

@@ -8,7 +8,7 @@ CATEGORIES=	java graphics
 MASTER_SITES=	#
 DISTNAME=	${PORTNAME:S/-/_/}-${PORTVERSION:S/./_/g}-lib-linux-i586
 
-MAINTAINER=	java@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Plug-ins for the Java Image I/O Framework
 
 USE_JAVA=	yes

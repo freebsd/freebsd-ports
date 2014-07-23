@@ -8,7 +8,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	SUNSITE
 MASTER_SITE_SUBDIR=apps/math/fractals
 
-MAINTAINER=	maho@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Application for computing/exploring Mandelbrot set
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
