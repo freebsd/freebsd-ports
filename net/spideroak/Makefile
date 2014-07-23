@@ -3,7 +3,7 @@
 
 PORTNAME=	spideroak
 PORTVERSION=	5.1.6
-#PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://nivit.altervista.org/FreeBSD/ports/distfiles/${PORTNAME}/ \
 		https://spideroak.com/getbuild?platform=slackware&arch=i386&dummy=/
@@ -24,7 +24,7 @@ ONLY_FOR_ARCHS=	amd64 i386
 ONLY_FOR_ARCHS_REASON=	binary distribution
 OPTIONS_DEFINE=	DOCS MANPAGES
 OPTIONS_DEFAULT=	MANPAGES
-OPTIONS_SUB=	MANPAGES
+OPTIONS_SUB=	yes
 
 PLIST_SUB=	DESKTOPDIR=${DESKTOPDIR:S,${PREFIX}/,,} \
 		BINMODE=${BINMODE}
