@@ -9,7 +9,7 @@ you update your ports collection, before attempting any port upgrades.
   AFFECTS: users of mail/exim
   AUTHOR: vsevolod@FreeBSD.org
 
-  The behaviuor of expansion of arguments to math comparison functions (<, <=,
+  The behaviour of expansion of arguments to math comparison functions (<, <=,
   =, =>, >) was unexpected, expanding the values twice. Please update your
   configuration if you have relied on such an expansion.
 
