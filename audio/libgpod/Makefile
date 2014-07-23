@@ -3,7 +3,7 @@
 
 PORTNAME=	libgpod
 PORTVERSION=	0.8.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	SF/gtkpod/${PORTNAME}/${PORTNAME}-${PORTVERSION:R}
 
@@ -18,7 +18,7 @@ LIB_DEPENDS=	libplist.so:${PORTSDIR}/devel/libplist \
 
 USE_GNOME=	gdkpixbuf2 gtk20
 USE_SQLITE=	3
-USES=		tar:bzip2 gettext gmake pathfix pkgconfig
+USES=		tar:bzip2 gettext gmake libtool pathfix pkgconfig
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-udev --without-hal \
 		--with-html-dir="${DOCSDIR:H}"
