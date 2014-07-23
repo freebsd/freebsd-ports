@@ -3,7 +3,7 @@
 
 PORTNAME=	libbegemot
 PORTVERSION=	1.11
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	devel
 MASTER_SITES=	http://people.freebsd.org/~harti/libbegemot/ \
 		http://m1cro.me/ports/distfiles/libbegemot/
@@ -12,10 +12,11 @@ MAINTAINER=	rum1cro@yandex.ru
 COMMENT=	Function library for begemot tools
 
 LICENSE=	BSD2CLAUSE
+LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
 GNU_CONFIGURE=	yes
-USES=	gmake
-USE_AUTOTOOLS=	automake:env autoconf:env libltdl libtool
+USES=		gmake libtool
+USE_AUTOTOOLS=	automake:env autoconf:env libltdl libtoolize
 USE_LDCONFIG=	yes
 MAKE_JOBS_UNSAFE=	yes
 
@@ -28,6 +29,9 @@ run-autotools::
 	@${REINPLACE_CMD} -e "/^ltmain=/!s^\$$ac_aux_dir/ltmain.sh^${LIBTOOLFLAGS} ${LTMAIN}^g" \
 		-e '/^LIBTOOL=/s^\$$(top_builddir)/libtool^${LIBTOOL}^g' \
 			${WRKSRC}/configure
+
+pre-install:
+	@${STRIP_CMD} ${WRKSRC}/.libs/libbegemot.so
 
 post-install:
 .for i in ${MAN_FILES}
