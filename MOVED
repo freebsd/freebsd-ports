@@ -5338,7 +5338,7 @@ net/pypvm||2014-01-01|Has expired: Dead upstream and suspected that there are no
 www/mawstats||2014-01-01|Has expired: Upstream development dead, use www/[j]awstats instead
 devel/p5-Dialog|devel/p5-UI-Dialog|2014-01-01|Has expired
 textproc/referrercop||2014-01-01|Has expired: distfile unfetchable
-www/nojsclassestftp||2014-01-01|Has expired: distfile unfetchable
+www/notftp||2014-01-01|Has expired: distfile unfetchable
 www/mod_lisp2||2014-01-01|Has expired: distfile unfetchable
 irc/xchat-gnome||2014-01-02|Has expired: broken and no release since 2009
 net-mgmt/unifi|net-mgmt/unifi3|2014-01-02|Rename to unifi3; unifi2 is coming to ports tree as well
