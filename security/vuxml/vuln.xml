@@ -57,6 +57,55 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="81fc1076-1286-11e4-bebd-000c2980a9f3">
+    <topic>tomcat -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>tomcat6</name>
+	<range><lt>6.0.40</lt></range>
+      </package>
+      <package>
+	<name>tomcat7</name>
+	<range><lt>7.0.53</lt></range>
+      </package>
+      <package>
+	<name>tomcat8</name>
+	<range><lt>8.0.4</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Tomcat Security Team reports:</p>
+	<blockquote cite="https://tomcat.apache.org/security-7.html#Fixed_in_Apache_Tomcat_7.0.54">
+	  <p>Tomcat does not properly restrict XSLT stylesheets, which allows
+	    remote attackers to bypass security-manager restrictions and read
+	    arbitrary files via a crafted web application that provides an XML
+	    external entity declaration in conjunction with an entity
+	    reference, related to an XML External Entity (XXE) issue.</p>
+	  <p>An integer overflow, when operated behind a reverse proxy, allows
+	    remote attackers to conduct HTTP request smuggling attacks via a
+	    crafted Content-Length HTTP header.</p>
+	  <p>An integer overflow in parseChunkHeader allows remote attackers
+	    to cause a denial of service (resource consumption) via a malformed
+	    chunk size in chunked transfer coding of a request during the
+	    streaming of data.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2014-0096</cvename>
+      <cvename>CVE-2014-0099</cvename>
+      <cvename>CVE-2014-0075</cvename>
+      <url>https://tomcat.apache.org/security-6.html</url>
+      <url>https://tomcat.apache.org/security-7.html</url>
+      <url>https://tomcat.apache.org/security-8.html</url>
+    </references>
+    <dates>
+      <discovery>2014-05-23</discovery>
+      <entry>2014-07-23</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="978b0f76-122d-11e4-afe3-bc5ff4fb5e7b">
     <topic>mozilla -- multiple vulnerabilities</topic>
     <affects>
