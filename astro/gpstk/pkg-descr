@@ -1,3 +1,9 @@
-The GPSTk is a C++ library for developing GPS applications.
+The GPSTk is an open source C++ library for developing GPS applications.
 
-WWW: http://gpstk.sourceforge.net/
+The GPSTk suite consists of a core library, auxiliary libraries, and a set
+of applications.  The GPSTk provides a wide array of functions that solve
+processing problems associated with GNSS such as processing or using
+standard formats such as RINEX.  The libraries are the basis for the more
+advanced applications distributed as part of the GPSTk suite.
+
+WWW: http://www.gpstk.org/
