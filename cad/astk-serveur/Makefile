@@ -11,7 +11,7 @@ PKGNAMESUFFIX=	-serveur
 PKGNAMESUFFIX=	-client
 .endif
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	thierry@FreeBSD.org
 COMMENT?=	Graphical interface for Code_Aster (server side)
 
 LICENSE=	GPLv2
