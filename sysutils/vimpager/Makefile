@@ -21,11 +21,7 @@ VIMCAT_PLIST_FILES=	bin/vimcat man/man1/vimcat.1.gz
 
 PLIST_FILES=		bin/${PORTNAME} etc/${PORTNAME}rc man/man1/${PORTNAME}.1.gz
 
-do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_SCRIPT} ${WRKSRC}/vimcat ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${STAGEDIR}${MANPREFIX}/man/man1
-	${INSTALL_MAN} ${WRKSRC}/vimcat.1 ${STAGEDIR}${MANPREFIX}/man/man1
-	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}rc ${STAGEDIR}${PREFIX}/etc
+post-patch:
+	@${REINPLACE_CMD} -e 's|share/man|man|' ${WRKSRC}/Makefile
 
 .include <bsd.port.mk>
