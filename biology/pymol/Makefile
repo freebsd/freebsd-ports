@@ -7,7 +7,7 @@ PORTREVISION=	3
 CATEGORIES=	biology python
 MASTER_SITES=	${MASTER_SITE_LOCAL:S|%SUBDIR%|maho/pymol|}
 
-MAINTAINER=	maho@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Free and Open-Source molecular modeling system
 
 BUILD_DEPENDS=	${PYNUMERIC}

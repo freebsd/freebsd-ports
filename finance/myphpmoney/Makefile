@@ -8,7 +8,7 @@ CATEGORIES=		finance www
 MASTER_SITES=		SF/${PORTNAME}/MyPhpMoney/1.3RC3
 DISTNAME=		${PORTNAME}-${PORTVERSION:S/.r/RC/}
 
-MAINTAINER=		courou@users.sourceforge.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=		PHP script for managing your accounts
 
 WEBOWN?=		www

@@ -9,7 +9,7 @@ MASTER_SITES=	http://download.gna.org/remember-el/
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
 DISTNAME=	remember-${DISTVERSIONPREFIX}${DISTVERSION}${DISTVERSIONSUFFIX}
 
-MAINTAINER=	dryice@dryice.name
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Emacs mode for remembering data
 
 USE_EMACS=	yes

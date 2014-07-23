@@ -4,7 +4,7 @@
 PORTREVISION=	1
 CATEGORIES=	french
 
-MAINTAINER=	fehlner@gmx.de
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Interactive (dynamic) elementary Geometry Software
 
 WITH_LANG=	fr

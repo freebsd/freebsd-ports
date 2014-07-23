@@ -7,7 +7,7 @@ CATEGORIES=	chinese x11-fonts
 MASTER_SITES=	# empty
 DISTFILES=	# empty
 
-MAINTAINER=	hrs@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Chinese Standard Fonts
 
 RUN_DEPENDS=	${LOCALBASE}/share/fonts/TrueType/bkai00mp.ttf:${PORTSDIR}/chinese/arphicttf \

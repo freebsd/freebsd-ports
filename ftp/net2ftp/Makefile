@@ -7,7 +7,7 @@ CATEGORIES=	ftp
 MASTER_SITES=	http://www.net2ftp.com/download/
 DISTNAME=	${PORTNAME}_v${PORTVERSION}
 
-MAINTAINER=	avk@vl.ru
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PHP scripts to work with ftp
 
 USES=		zip

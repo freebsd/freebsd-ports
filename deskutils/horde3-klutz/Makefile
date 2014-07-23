@@ -7,7 +7,7 @@ DISTVERSIONSUFFIX=
 PORTREVISION=	2
 CATEGORIES=	deskutils www
 
-MAINTAINER=	horde@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Comic strip viewer for horde
 
 USE_HORDE=	base

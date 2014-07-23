@@ -7,7 +7,7 @@ PORTREVISION=	6
 CATEGORIES=	editors java
 MASTER_SITES=	SF/${PORTNAME}/OldFiles
 
-MAINTAINER=	vd@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Powerful 100% pure Java text editor
 
 USE_JAVA=	yes

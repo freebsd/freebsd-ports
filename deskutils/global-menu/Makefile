@@ -7,7 +7,7 @@ PORTREVISION=	3
 CATEGORIES=		deskutils
 MASTER_SITES=		http://gnome2-globalmenu.googlecode.com/files/
 
-MAINTAINER=		gustau.perez@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=		Global menu for gnome
 
 LIB_DEPENDS=		libnotify.so:${PORTSDIR}/devel/libnotify

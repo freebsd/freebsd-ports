@@ -9,7 +9,7 @@ MASTER_SITES=	http://www.phpbb-tw.net/phpbb/download/ \
 PKGNAMESUFFIX=	3-tw
 DISTNAME=	phpBB-${PORTVERSION}
 
-MAINTAINER=	appleboy.tw@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The Traditional Chinese version of phpBB3
 
 CONFLICTS=	phpbb-tw-[0-2]* phpbb-devel-[0-3]* phpbb-[0-3]*

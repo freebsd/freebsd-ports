@@ -7,7 +7,7 @@ CATEGORIES=	chinese
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 DIST_SUBDIR=	fcitx
 
-MAINTAINER=	lichray@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	SunPinyin support for Fcitx
 
 LIB_DEPENDS=	libfcitx-config.so:${PORTSDIR}/chinese/fcitx

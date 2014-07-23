@@ -8,7 +8,7 @@ CATEGORIES=	comms
 MASTER_SITES=	http://www.qpage.org/download/
 EXTRACT_SUFX=	.tar.Z
 
-MAINTAINER=	jfb@mr-happy.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	SNPP client/server for sending messages to an alphanumeric pager
 
 USE_RC_SUBR=	qpage
