@@ -57,6 +57,98 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="978b0f76-122d-11e4-afe3-bc5ff4fb5e7b">
+    <topic>mozilla -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>firefox</name>
+	<range><lt>31.0,1</lt></range>
+      </package>
+      <package>
+	<name>firefox-esr</name>
+	<range><lt>24.7.0,1</lt></range>
+      </package>
+      <package>
+	<name>linux-firefox</name>
+	<range><lt>31.0,1</lt></range>
+      </package>
+      <package>
+	<name>linux-thunderbird</name>
+	<range><lt>24.7.0</lt></range>
+      </package>
+      <package>
+	<name>thunderbird</name>
+	<range><lt>24.7.0</lt></range>
+      </package>
+      <package>
+	<name>nss</name>
+	<range><lt>3.16.1_2</lt></range>
+	<!-- CVE-2014-1544/Bug 963150 -->
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Mozilla Project reports:</p>
+	<blockquote cite="http://www.mozilla.org/security/known-vulnerabilities/">
+	  <p>MFSA 2014-66 IFRAME sandbox same-origin access through
+	    redirect</p>
+	  <p>MFSA 2014-65 Certificate parsing broken by non-standard
+	    character encoding</p>
+	  <p>MFSA 2014-64 Crash in Skia library when scaling high
+	    quality images</p>
+	  <p>MFSA 2014-63 Use-after-free while when manipulating
+	    certificates in the trusted cache</p>
+	  <p>MFSA 2014-62 Exploitable WebGL crash with Cesium
+	    JavaScript library</p>
+	  <p>MFSA 2014-61 Use-after-free with FireOnStateChange
+	    event</p>
+	  <p>MFSA 2014-60 Toolbar dialog customization event
+	    spoofing</p>
+	  <p>MFSA 2014-59 Use-after-free in DirectWrite font
+	    handling</p>
+	  <p>MFSA 2014-58 Use-after-free in Web Audio due to
+	    incorrect control message ordering</p>
+	  <p>MFSA 2014-57 Buffer overflow during Web Audio
+	    buffering for playback</p>
+	  <p>MFSA 2014-56 Miscellaneous memory safety hazards
+	    (rv:31.0 / rv:24.7)</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2014-1544</cvename>
+      <cvename>CVE-2014-1547</cvename>
+      <cvename>CVE-2014-1548</cvename>
+      <cvename>CVE-2014-1549</cvename>
+      <cvename>CVE-2014-1550</cvename>
+      <cvename>CVE-2014-1551</cvename>
+      <cvename>CVE-2014-1552</cvename>
+      <cvename>CVE-2014-1555</cvename>
+      <cvename>CVE-2014-1556</cvename>
+      <cvename>CVE-2014-1557</cvename>
+      <cvename>CVE-2014-1558</cvename>
+      <cvename>CVE-2014-1559</cvename>
+      <cvename>CVE-2014-1560</cvename>
+      <cvename>CVE-2014-1561</cvename>
+      <url>https://www.mozilla.org/security/announce/2014/mfsa2014-56.html</url>
+      <url>https://www.mozilla.org/security/announce/2014/mfsa2014-57.html</url>
+      <url>https://www.mozilla.org/security/announce/2014/mfsa2014-58.html</url>
+      <url>https://www.mozilla.org/security/announce/2014/mfsa2014-59.html</url>
+      <url>https://www.mozilla.org/security/announce/2014/mfsa2014-60.html</url>
+      <url>https://www.mozilla.org/security/announce/2014/mfsa2014-61.html</url>
+      <url>https://www.mozilla.org/security/announce/2014/mfsa2014-62.html</url>
+      <url>https://www.mozilla.org/security/announce/2014/mfsa2014-63.html</url>
+      <url>https://www.mozilla.org/security/announce/2014/mfsa2014-64.html</url>
+      <url>https://www.mozilla.org/security/announce/2014/mfsa2014-65.html</url>
+      <url>https://www.mozilla.org/security/announce/2014/mfsa2014-66.html</url>
+      <url>https://www.mozilla.org/security/announce/</url>
+    </references>
+    <dates>
+      <discovery>2014-07-22</discovery>
+      <entry>2014-07-23</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="ecea9e92-0be5-4931-88da-8772d044972a">
     <topic>mcollective -- cert valication issue</topic>
     <affects>
