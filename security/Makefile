@@ -154,7 +154,6 @@
     SUBDIR += gnupg
     SUBDIR += gnupg1
     SUBDIR += gnutls
-    SUBDIR += gnutls3
     SUBDIR += go.crypto
     SUBDIR += goptlib
     SUBDIR += gorilla

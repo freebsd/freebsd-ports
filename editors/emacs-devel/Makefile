@@ -3,7 +3,7 @@
 
 PORTNAME=	emacs
 PORTVERSION=	${EMACS_VER}.${EMACS_REV}
-PORTREVISION=	2
+PORTREVISION=	3
 PORTEPOCH=	2
 CATEGORIES=	editors ipv6
 MASTER_SITES=	http://distfiles.pirateparty.in/%SUBDIR%/ \
@@ -55,7 +55,7 @@ INFO=		ada-mode auth autotype bovine calc ccmode cl dbus dired-x \
 OPTIONS_DEFINE=	X11 ACL DBUS GCONF GIF JPEG M17N OTF PNG SOUND SOURCES SVG TIFF SCROLLBARS \
 		XFT XIM XML XPM MAGICK GNUTLS GSETTINGS LTO FILENOTIFY
 
-OPTIONS_SINGLE=	X11 SOUND GNUTLS
+OPTIONS_SINGLE=	X11 SOUND
 
 ACL_DESC=		ACL support
 GSETTINGS_DESC=		GSettings support
@@ -69,15 +69,12 @@ M17N_DESC=		M17N support for text-shaping
 OTF_DESC=		Opentype fonts suport
 FILENOTIFY_DESC=	File notification support
 LTO_DESC=		Enable link-time optimization (requires GCC 4.6+)
-GNUTLS2_DESC=		GnuTLS 2.x
-GNUTLS3_DESC=		GnuTLS 3.x
 
 OPTIONS_SINGLE_X11=	GTK2 GTK3 XAW XAW3D MOTIF
 OPTIONS_SINGLE_SOUND=		ALSA OSS
-OPTIONS_SINGLE_GNUTLS=		GNUTLS2 GNUTLS3
 
 OPTIONS_DEFAULT=ACL DBUS GCONF GIF GTK2 JPEG M17N OTF PNG SOUND SOURCES SVG TIFF \
-		SCROLLBARS XFT XIM XML XPM MAGICK GNUTLS GSETTINGS FILENOTIFY OSS X11 GNUTLS3
+		SCROLLBARS XFT XIM XML XPM MAGICK GNUTLS GSETTINGS FILENOTIFY OSS X11
 
 OPTIONS_SUB=		SOURCES
 
@@ -88,10 +85,8 @@ OSS_CONFIGURE_ON=		--with-sound=oss
 DBUS_LIB_DEPENDS=		libdbus-1.so:${PORTSDIR}/devel/dbus
 DBUS_CONFIGURE_WITH=		dbus
 
+GNUTLS_LIB_DEPENDS=	libgnutls.so:${PORTSDIR}/security/gnutls
 GNUTLS_CONFIGURE_WITH=	gnutls
-
-GNUTLS3_LIB_DEPENDS=	libgnutls.so:${PORTSDIR}/security/gnutls3
-GNUTLS2_LIB_DEPENDS=	libgnutls.so:${PORTSDIR}/security/gnutls
 
 XML_USE=		GNOME=libxml2
 XML_CONFIGURE_WITH=	xml2
@@ -216,25 +211,15 @@ LDFLAGS+=	-ltinfo
 BROKEN=	Emacs 24.X does not currently build on ia64
 .endif
 
-.if ${PORT_OPTIONS:MGNUTLS3}
-GNUTLS3_RPATH=	-Wl,-rpath,${LOCALBASE}/lib/gnutls3
-.else
-GNUTLS3_RPATH=
-.endif
-
 post-patch:
 	@${RM} -f ${WRKSRC}/info/*
 	@${REINPLACE_CMD} -e "s/%%EMACS_VER%%/${EMACS_VER}/g" -e "s/%%DATADIR%%/${DATADIR:C/\//\\\//g}/g" ${WRKSRC}/sources.el
 .if empty(PORT_OPTIONS:MX11)
 	@${REINPLACE_CMD} -e 's/^Terminal=.*$$/Terminal=true/' ${WRKSRC}/etc/emacs.desktop
 .endif
-.if ${PORT_OPTIONS:MGNUTLS3}
-	@${REINPLACE_CMD} -e '/HAVE_GNUTLS3=yes/s/gnutls >=/gnutls3 >=/' ${WRKSRC}/configure.ac
-.endif
 
 post-configure:
 	@${REINPLACE_CMD} -e "s/^\(DBUS_LIBS.*\)-pthread\(.*\)$$/\1$$(${DBUS_PTHREAD_LIBS})\2/" \
-			  -e 's|%%GNUTLS3_RPATH%%|${GNUTLS3_RPATH}|g' \
 			  ${WRKSRC}/src/Makefile
 
 add-plist-data:

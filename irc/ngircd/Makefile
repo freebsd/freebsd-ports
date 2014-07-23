@@ -3,6 +3,7 @@
 
 PORTNAME=	ngircd
 PORTVERSION=	21.1
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	irc ipv6
 MASTER_SITES=	http://arthur.barton.de/pub/%SUBDIR%/ \

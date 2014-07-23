@@ -3,7 +3,7 @@
 
 PORTNAME=	gnomint
 PORTVERSION=	1.2.1
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	security
 MASTER_SITES=	SF
 
@@ -23,7 +23,8 @@ GNU_CONFIGURE=	yes
 USES=		gmake perl5 pkgconfig readline
 USE_GNOME=	gconf2 gdkpixbuf2 glib20 gtk20
 
-CFLAGS:=	${CFLAGS:C/-Werror//}
+CPPFLAGS+=	-I${LOCALBASE}/include
+LIBS+=		-L${LOCALBASE}/lib
 
 OPTIONS_DEFINE=	NLS
 OPTIONS_SUB=	yes

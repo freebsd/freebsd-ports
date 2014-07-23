@@ -3,7 +3,7 @@
 
 PORTNAME=	jabber
 PORTVERSION=	1.6.1.1
-PORTREVISION=	15
+PORTREVISION=	16
 PORTEPOCH=	1
 CATEGORIES=	net-im ipv6
 MASTER_SITES=	http://download.jabberd.org/jabberd14/%SUBDIR%/

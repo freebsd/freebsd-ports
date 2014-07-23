@@ -1,95 +1,51 @@
-# Created by: Sergei Kolobov <sergei@kolobov.com>
 # $FreeBSD$
 
 PORTNAME=	gnutls
-PORTVERSION=	2.12.23
-PORTREVISION=	6
+PORTVERSION=	3.2.15
 CATEGORIES=	security net
-MASTER_SITES=	\
-	ftp://ftp.gnutls.org/gcrypt/gnutls/v${PORTVERSION:C/.[0-9]+$//}/ \
-	http://www.ring.gr.jp/pub/net/gnupg/gnutls/v${PORTVERSION:C/.[0-9]+$//}/
+MASTER_SITES=	GNUPG/gnutls/v3.2
 
-MAINTAINER=	novel@FreeBSD.org
+MAINTAINER=	bdrewery@FreeBSD.org
 COMMENT=	GNU Transport Layer Security library
 
-LICENSE=	GPLv3
+LICENSE=	GPLv3 LGPL21
+LICENSE_COMB=	multi
+LICENSE_FILE_GPLv3=	${WRKSRC}/COPYING
+LICENSE_FILE_LGPL21=	${WRKSRC}/COPYING.LESSER
 
 LIB_DEPENDS=	libnettle.so:${PORTSDIR}/security/nettle \
-		libgpg-error.so:${PORTSDIR}/security/libgpg-error \
-		libp11-kit.so:${PORTSDIR}/security/p11-kit
+		libp11-kit.so:${PORTSDIR}/security/p11-kit \
+		libidn.so:${PORTSDIR}/dns/libidn \
+		libtasn1.so:${PORTSDIR}/security/libtasn1 \
+		libtspi.so:${PORTSDIR}/security/trousers
 
-CONFLICTS=	gnutls-devel-[0-9]*
-
-USES=		gmake iconv libtool:keepla pathfix perl5 pkgconfig shebangfix tar:bzip2
-USE_PERL5=	build
-GNU_CONFIGURE=	yes
+USES=		gmake iconv libtool makeinfo pathfix pkgconfig tar:xz
 USE_LDCONFIG=	yes
-SHEBANG_FILES=	doc/scripts/gdoc doc/scripts/sort2.pl
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--disable-guile \
+		--disable-silent-rules \
+		--enable-local-libopts
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-CONFIGURE_ARGS+=	--disable-guile
-CONFIGURE_ARGS_PREFIX=	${STAGEDIR}${PREFIX}
+MAKE_ENV=	MAKEINFOFLAGS=--no-split
 
-INFO=		gnutls
+OPTIONS_DEFINE=	EXAMPLES LIBDANE NLS
+OPTIONS_SUB=	yes
 
-OPTIONS_DEFINE=	LIBTASN1 CXX LZO NLS EXAMPLES DOCS
+LIBDANE_DESC=		DNSSEC support for DANE (danetool --check)
+LIBDANE_LIB_DEPENDS=	libunbound.so:${PORTSDIR}/dns/unbound
+LIBDANE_CONFIGURE_ENABLE=	libdane
 
-LIBTASN1_DESC=	Use system libtasn1 instead of local one
-CXX_DESC=	Install C++ library
-LZO_DESC=	LZO compression
+NLS_CONFIGURE_ENABLE=	nls
+NLS_USES=		gettext
 
-OPTIONS_DEFAULT=	LIBTASN1 CXX
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MLIBTASN1}
-LIB_DEPENDS+=		libtasn1.so:${PORTSDIR}/security/libtasn1
-.else
-CONFIGURE_ARGS+=	--with-included-libtasn1
-.endif
-
-.if ${PORT_OPTIONS:MLZO}
-LIB_DEPENDS+=		liblzo2.so:${PORTSDIR}/archivers/lzo2
-CONFIGURE_ARGS+=	--with-lzo
-.else
-CONFIGURE_ARGS+=	--with-lzo=no
-.endif
-
-.if ${PORT_OPTIONS:MCXX}
-PLIST_SUB+=		CXX=""
-.else
-CONFIGURE_ARGS+=	--disable-cxx
-PLIST_SUB+=		CXX="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MNLS}
-USES+=			gettext
-PLIST_SUB+=		NLS=""
-.else
-CONFIGURE_ARGS+=	--disable-nls
-PLIST_SUB+=		NLS="@comment "
-.endif
-
-PORTDOCS=		AUTHORS NEWS README THANKS
-PORTEXAMPLES=		*.c
+INFO=		gnutls gnutls-guile
 
 post-patch:
-	@${FIND} ${WRKSRC} -name "Makefile.in" -type f |\
-		${XARGS} ${REINPLACE_CMD} -e 's|[$$][(]LTLIBPTHREAD[)]||g'
-	@${REINPLACE_CMD} -e 's|/usr/bin/perl|${PREFIX}/bin/perl|g' \
-		${WRKSRC}/doc/doxygen/Doxyfile.in
+	@${RM} ${WRKSRC}/doc/*.info*
 
 post-install:
-.if ${PORT_OPTIONS:MEXAMPLES}
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
-	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTEXAMPLES:C,^,doc/examples/,} \
-		${STAGEDIR}${EXAMPLESDIR}
-.endif
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-.for i in ${PORTDOCS}
-	@${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${DOCSDIR}
-.endfor
-.endif
+	${INSTALL_DATA} ${WRKSRC}/doc/examples/*.[ch] ${STAGEDIR}${EXAMPLESDIR}
 
 .include <bsd.port.mk>

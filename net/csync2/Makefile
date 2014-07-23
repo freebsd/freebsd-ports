@@ -3,7 +3,7 @@
 
 PORTNAME=	csync2
 PORTVERSION=	1.34
-PORTREVISION=	15
+PORTREVISION=	16
 CATEGORIES=	net
 MASTER_SITES=	http://oss.linbit.com/csync2/ \
 		http://people.freebsd.org/~aaron/distfiles/

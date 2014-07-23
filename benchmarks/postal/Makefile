@@ -3,6 +3,7 @@
 
 PORTNAME=	postal
 PORTVERSION=	0.73
+PORTREVISION=	1
 CATEGORIES=	benchmarks mail
 MASTER_SITES=	http://www.coker.com.au/postal/
 EXTRACT_SUFX=	.tgz

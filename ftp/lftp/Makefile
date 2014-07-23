@@ -3,6 +3,7 @@
 
 PORTNAME=	lftp
 PORTVERSION=	4.5.3
+PORTREVISION=	1
 CATEGORIES=	ftp ipv6
 MASTER_SITES=	http://lftp.yar.ru/ftp/ \
 		http://lftp.yar.ru/ftp/old/ \

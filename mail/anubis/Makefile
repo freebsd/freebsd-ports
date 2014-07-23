@@ -2,16 +2,15 @@
 # $FreeBSD$
 
 PORTNAME=	anubis
-PORTVERSION=	4.1.1
-PORTREVISION=	10
+PORTVERSION=	4.2
 CATEGORIES=	mail
-MASTER_SITES=	${MASTER_SITE_GNU}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	GNU
 
 MAINTAINER=	jhale@FreeBSD.org
 COMMENT=	Outgoing SMTP mail processor
 
 LICENSE=	GPLv3
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 OPTIONS_DEFINE=	NLS EXAMPLES GUILE GPGME GNUTLS GSASL \
 		GDBM MYSQL PGSQL PCRE PAM SOCKS LIBWRAP
@@ -23,11 +22,12 @@ GSASL_DESC=	GSASL support (required for databases)
 GDBM_DESC=	GDBM backend
 SOCKS_DESC=	SOCKS proxy support
 
-USES=		makeinfo pkgconfig shebangfix
+USES=		charsetfix makeinfo pkgconfig shebangfix
+CHARSETFIX_MAKEFILEIN=	gnulib.mk
 SHEBANG_FILES=	contrib/msg2smtp.pl
 USE_RC_SUBR=	anubis
 USE_AUTOTOOLS=	aclocal autoheader autoconf automake
-ACLOCAL_ARGS=	-I m4 -I am
+ACLOCAL_ARGS=	-I m4 -I gint -I am
 AUTOMAKE_ARGS=	--force --add-missing
 
 INFO=		anubis
