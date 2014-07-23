@@ -27,9 +27,8 @@ PORTDOCS=	dvi html info pdf ps
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDOCS}
-USE_TEX=	tex:build
+USE_TEX=	tex:build dvipsk:build
 BUILD_DEPENDS+=	${LOCALBASE}/bin/makeinfo:${PORTSDIR}/print/texinfo
-BUILD_DEPENDS+=	${LOCALBASE}/bin/dvips:${PORTSDIR}/print/dvipsk-tetex
 .endif
 
 post-patch:
