@@ -1,5 +1,4 @@
 lib/qt4/plugins/inputmethods/im-scim-bridge.a
-lib/qt4/plugins/inputmethods/im-scim-bridge.la
 lib/qt4/plugins/inputmethods/im-scim-bridge.so
 @dirrmtry lib/qt4/plugins/inputmethods
 @dirrmtry lib/qt4/plugins
