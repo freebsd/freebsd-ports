@@ -3,7 +3,7 @@
 
 PORTNAME=	gwget
 PORTVERSION=	1.0.4
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	ftp gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -18,8 +18,7 @@ OPTIONS_DEFINE=	NOTIFY EPIPHANY
 OPTIONS_DEFAULT=	NOTIFY EPIPHANY
 EPIPHANY_DESC=	Epiphany extension
 
-USE_BZIP2=	yes
-USES=		pathfix gettext gmake desktop-file-utils
+USES=		desktop-file-utils gettext gmake libtool pathfix tar:bzip2
 USE_GNOME=	gnomeprefix gtk20 gconf2 libgnomeui
 INSTALLS_ICONS=	yes
 GNU_CONFIGURE=	yes
