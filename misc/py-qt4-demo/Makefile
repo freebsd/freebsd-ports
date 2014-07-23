@@ -17,14 +17,17 @@ USE_PYTHON=	yes
 
 EXAMPLESDIR=	${PREFIX}/share/examples/py-qt4
 
-OPTIONS_DEFINE=	PYQT4
-PYQT4_DESC=	Install all PyQt4 components
-
 .include "${.CURDIR}/../../devel/py-qt4/bsd.pyqt.mk"
 
 .for component in ${PYQT4_COMPONENTS:Ndemo}
 PYQT4_RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}qt4-${component}>=0:${PORTSDIR}/${${component}_PORT}
 .endfor
+
+# Remove some empty __pycache__/ directories that are wrongly part of the
+# tarball and cause check-plist failures.
+post-patch:
+	${RMDIR} ${WRKSRC}/examples/opengl/textures/__pycache__
+	${RMDIR} ${WRKSRC}/examples/widgets/stylesheet/__pycache__
 
 do-build:
 	${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${WRKSRC}/examples

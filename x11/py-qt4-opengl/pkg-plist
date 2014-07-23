@@ -1,6 +1,5 @@
 %%PYTHON_SITELIBDIR%%/PyQt4/QtOpenGL.so
 share/py-sip/QtOpenGL/QtOpenGLmod.sip
-share/py-sip/QtOpenGL/opengl_types.sip
 share/py-sip/QtOpenGL/qgl.sip
 share/py-sip/QtOpenGL/qglbuffer.sip
 share/py-sip/QtOpenGL/qglcolormap.sip

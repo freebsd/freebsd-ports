@@ -2,6 +2,11 @@
 #
 # $FreeBSD$
 #
+# Port variables:
+# PYQT4_DIST            - This port is part of PyQt4 itself. Variables and
+#                         targets are then set assuming a certain tarball and
+#                         port layout.
+#
 
 PYQT_MAINTAINER=	kde@FreeBSD.org
 
@@ -14,9 +19,9 @@ MASTER_SITES_PYQT4=	SF/pyqt/PyQt4/PyQt-${PORTVERSION} \
 MASTER_SITES_QSCI2=	SF/pyqt/QScintilla2/QScintilla-${PORTVERSION} \
 			${MASTER_SITE_GENTOO:S,%SUBDIR%,distfiles,}
 
-SIP_VERSION=		4.15.2
-PYQT4_VERSION=		4.10.3
-QSCI2_VERSION=		2.7.2
+SIP_VERSION=		4.16.2
+PYQT4_VERSION=		4.11.1
+QSCI2_VERSION=		2.8.3
 
 SIP_DISTNAME=		sip-${SIP_VERSION}
 PYQT4_DISTNAME=		PyQt-x11-gpl-${PYQT4_VERSION}
@@ -79,3 +84,39 @@ test_DESC=		Python bindings for QtTest module
 webkit_DESC=		Python bindings for QtWebKit module
 xml_DESC=		Python bindings for QtXml module
 xmlpatterns_DESC=	Python bindings for QtXmlPatterns module
+
+.if defined(PYQT4_DIST)
+PORTVERSION=	${PYQT4_VERSION}
+MASTER_SITES=	${MASTER_SITES_PYQT4}
+PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}qt4-
+DISTNAME=	${PYQT4_DISTNAME}
+
+DISTINFO_FILE=	${PYQT4_DISTINFO_FILE}
+HAS_CONFIGURE=	yes
+USE_PYTHON=	yes
+
+QT_NONSTANDARD=	yes  # Do not add unknown arguments to CONFIGURE_ARGS.
+
+PATCHDIR=	${.CURDIR}/../../devel/py-qt4-core/files
+OPTIONSFILE?=	${PORT_DBDIR}/py-qt4-${PORTNAME}/options
+SIPDIR=		${PREFIX}/share/py-sip
+QSCIDIR=	${PREFIX}/share/qt4/qsci
+CONFIGURE_ARGS+=-b ${PREFIX}/bin \
+		-d ${PYTHONPREFIX_SITELIBDIR} \
+		-q ${QMAKE} \
+		--confirm-license \
+		--sipdir ${SIPDIR}
+
+# One of the things PyQt4 looks for to determine whether to build the Qt DBus
+# main loop module (py-qt4-dbussupport) is whether the dbus/ directory is
+# present. Only extract it for that port then.
+.if ${PORTNAME} != "dbussupport"
+EXTRACT_AFTER_ARGS+=	--exclude "${DISTNAME}/dbus"
+.endif  # ${PORTNAME} != "dbussupport"
+
+.if !target(do-configure)
+do-configure:
+	cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} \
+		${PYTHON_CMD} configure.py ${CONFIGURE_ARGS}
+.endif  # !target(do-configure)
+.endif  # defined(PYQT4_DIST)

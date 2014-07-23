@@ -3,7 +3,6 @@
 
 PORTNAME=	sip
 PORTVERSION=	${SIP_VERSION}
-PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	devel python
 MASTER_SITES=	${MASTER_SITES_SIP} ${MASTER_SITE_LOCAL}
@@ -18,7 +17,7 @@ PYTHON_PY3K_PLIST_HACK=	yes
 
 DATADIR=	${PREFIX}/share/py-${PORTNAME}
 DOCSDIR=	${PREFIX}/share/doc/py-${PORTNAME}
-ARGS=		-b ${PREFIX}/bin -d ${PYTHONPREFIX_SITELIBDIR} \
+CONFIGURE_ARGS=	-b ${PREFIX}/bin -d ${PYTHONPREFIX_SITELIBDIR} \
 		-e ${PYTHONPREFIX_INCLUDEDIR} -v ${DATADIR} \
 		CC="${CC}" CXX="${CXX}" LINK="${CXX}" LINK_SHLIB="${CXX}" \
 		CFLAGS="${CFLAGS}" CXXFLAGS="${CXXFLAGS}" \
@@ -26,23 +25,17 @@ ARGS=		-b ${PREFIX}/bin -d ${PYTHONPREFIX_SITELIBDIR} \
 
 PORTDOCS=	*
 
-OPTIONS_DEFINE=	DOCS DEBUG
+OPTIONS_DEFINE=		DOCS DEBUG
+DEBUG_CONFIGURE_ON=	--debug
 
 .include "${.CURDIR}/../py-qt4/bsd.pyqt.mk"
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MDEBUG}
-ARGS+=		-u
-.endif
 
 do-configure:
-	cd ${WRKSRC} && ${PYTHON_CMD} configure.py ${ARGS}
+	cd ${WRKSRC} && ${PYTHON_CMD} configure.py ${CONFIGURE_ARGS}
 
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${STAGEDIR}${DOCSDIR} && cd ${WRKSRC}/doc/html && \
 		${COPYTREE_SHARE} \. ${STAGEDIR}${DOCSDIR}
-.endif
 	${MKDIR} ${STAGEDIR}${DATADIR} &&\
 		cd ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR} &&\
 		${PYTHON_CMD} -c "import sipconfig" &&\
