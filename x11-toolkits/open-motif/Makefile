@@ -50,68 +50,6 @@ post-patch:
 		${XARGS} ${REINPLACE_CMD} -e 's|special file|5| ; \
 		 s|file formats|5|'
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|' ${WRKSRC}/configure.ac
-	@${REINPLACE_CMD} '/^mwm_LDADD =/s/$$/ -lXt -lXext -lX11/' \
-		${WRKSRC}/clients/mwm/Makefile.am
-	@${REINPLACE_CMD} '/^uil_LDADD =/s/$$/ -lXt/' \
-		${WRKSRC}/clients/uil/Makefile.am
-	@${REINPLACE_CMD} '/^LDADD =/s/\\*$$/ -lXt -lX11 &/' \
-		${WRKSRC}/clients/xmbind/Makefile.am \
-		${WRKSRC}/demos/doc/programGuide/ch05/Scale/Makefile.am \
-		${WRKSRC}/demos/doc/programGuide/ch06/combo_box/Makefile.am \
-		${WRKSRC}/demos/doc/programGuide/ch06/spin_box/Makefile.am \
-		${WRKSRC}/demos/doc/programGuide/ch08/Container/Makefile.am \
-		${WRKSRC}/demos/doc/programGuide/ch08/Notebook/Makefile.am \
-		${WRKSRC}/demos/doc/programGuide/ch16/Makefile.am \
-		${WRKSRC}/demos/doc/programGuide/ch17/simple_drag/Makefile.am \
-		${WRKSRC}/demos/doc/programGuide/ch17/simple_drop/Makefile.am \
-		${WRKSRC}/demos/programs/ColorSel/Makefile.am \
-		${WRKSRC}/demos/programs/Column/Makefile.am \
-		${WRKSRC}/demos/programs/Exm/simple_app/Makefile.am \
-		${WRKSRC}/demos/programs/Ext18List/Makefile.am \
-		${WRKSRC}/demos/programs/IconB/Makefile.am \
-		${WRKSRC}/demos/programs/TabStack/Makefile.am \
-		${WRKSRC}/demos/programs/Tree/Makefile.am \
-		${WRKSRC}/demos/programs/airport/Makefile.am \
-		${WRKSRC}/demos/programs/animate/Makefile.am \
-		${WRKSRC}/demos/programs/drag_and_drop/Makefile.am \
-		${WRKSRC}/demos/programs/draw/Makefile.am \
-		${WRKSRC}/demos/programs/filemanager/Makefile.am \
-		${WRKSRC}/demos/programs/fileview/Makefile.am \
-		${WRKSRC}/demos/programs/getsubres/Makefile.am \
-		${WRKSRC}/demos/programs/i18ninput/Makefile.am \
-		${WRKSRC}/demos/programs/panner/Makefile.am \
-		${WRKSRC}/demos/programs/periodic/Makefile.am \
-		${WRKSRC}/demos/programs/piano/Makefile.am \
-		${WRKSRC}/demos/programs/popups/Makefile.am \
-		${WRKSRC}/demos/programs/sampler2_0/Makefile.am \
-		${WRKSRC}/demos/programs/setdate/Makefile.am \
-		${WRKSRC}/demos/programs/workspace/Makefile.am \
-		${WRKSRC}/demos/unsupported/aicon/Makefile.am \
-		${WRKSRC}/demos/unsupported/dainput/Makefile.am \
-		${WRKSRC}/demos/unsupported/dogs/Makefile.am \
-		${WRKSRC}/demos/unsupported/motifshell/Makefile.am \
-		${WRKSRC}/demos/unsupported/xmapdef/Makefile.am \
-		${WRKSRC}/demos/unsupported/xmfonts/Makefile.am
-	@${REINPLACE_CMD} '/^LDADD =/s/$$/ -lXt/' \
-		${WRKSRC}/demos/lib/Exm/wml/Makefile.am \
-		${WRKSRC}/demos/lib/Xmd/Makefile.am \
-		${WRKSRC}/demos/programs/ButtonBox/Makefile.am \
-		${WRKSRC}/demos/programs/Combo2/Makefile.am \
-		${WRKSRC}/demos/programs/FontSel/Makefile.am \
-		${WRKSRC}/demos/programs/Outline/Makefile.am \
-		${WRKSRC}/demos/programs/Paned/Makefile.am \
-		${WRKSRC}/demos/programs/hellomotif/Makefile.am \
-		${WRKSRC}/demos/programs/hellomotifi18n/Makefile.am \
-		${WRKSRC}/demos/programs/tooltips/Makefile.am \
-		${WRKSRC}/demos/unsupported/hellomotif/Makefile.am \
-		${WRKSRC}/demos/unsupported/xmforc/Makefile.am \
-		${WRKSRC}/demos/unsupported/xmform/Makefile.am
-	@${REINPLACE_CMD} '/^LDADD =/s/\\*$$/ -lXt -lXext -lX11 &/' \
-		${WRKSRC}/demos/programs/Exm/app_in_c/Makefile.am \
-		${WRKSRC}/demos/programs/earth/Makefile.am \
-		${WRKSRC}/demos/programs/todo/Makefile.am
-	@${REINPLACE_CMD} '/^wmldbcreate_LDADD =/s/$$/ -lXt/' \
-		${WRKSRC}/tools/wml/Makefile.am
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

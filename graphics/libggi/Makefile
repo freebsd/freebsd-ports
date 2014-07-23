@@ -72,21 +72,6 @@ CONFIGURE_ARGS+=--disable-vgagl --disable-svga
 PLIST_SUB+=	WITH_SVGALIB="@comment "
 .endif
 
-post-patch:
-	@${REINPLACE_CMD} '/^exttest1_LDADD =/s/$$/ -lgg/' \
-		${WRKSRC}/extensions/test/Makefile.in
-	@${REINPLACE_CMD} '/^showaccel_LDADD =/ { \
-		p; s/showaccel/palette/; p; s/palette/cbconsist/; }' \
-		${WRKSRC}/programs/check/Makefile.in
-	@${REINPLACE_CMD} '/^cube3d_LDADD =/s/$$/ -lgii/' \
-		${WRKSRC}/programs/demos/Makefile.in
-	@${REINPLACE_CMD} '/^LDADD =/s/$$/ -lgii/' \
-		${WRKSRC}/programs/regress/Makefile.in
-	@${REINPLACE_CMD} '/^inputdump_LDADD =/s/$$/ -lgii/' \
-		${WRKSRC}/programs/util/Makefile.in
-	@${REINPLACE_CMD} '/^ggiteleserver_LDADD =/s/$$/ -lgg/' \
-		${WRKSRC}/programs/util/ggiteleserver/Makefile.in
-
 post-install:
 	${TOUCH} ${STAGEDIR}${PREFIX}/lib/ggi/default/fbdev/.keep
 	${TOUCH} ${STAGEDIR}${PREFIX}/lib/ggi/default/kgi/.keep

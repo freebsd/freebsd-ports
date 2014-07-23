@@ -41,8 +41,6 @@ post-patch:
 	    	s|-DGDK_DISABLE_DEPRECATED||g' \
 		${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|gtkhtml-editor-test[$$]|gtkhtml3-editor-test$$|' \
-		-e '/^gtkhtml_editor_test_LDADD =/s/=/= @GTKHTML_LIBS@/' \
-		-e 's/$$(GTHREAD_LIBS)/-lgthread-2.0/' \
 	    	${WRKSRC}/components/editor/Makefile.in
 	@${REINPLACE_CMD} -e 's|G_CONST_RETURN||g' \
 		${WRKSRC}/a11y/*.[ch]

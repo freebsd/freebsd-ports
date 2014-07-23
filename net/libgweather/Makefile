@@ -28,7 +28,4 @@ INSTALL_TARGET=	install-strip
 
 GCONF_SCHEMAS=	gweather.schemas
 
-post-patch:
-	@${REINPLACE_CMD} '/noinst_PROGRAMS/,+1 d' ${WRKSRC}/libgweather/Makefile.in
-
 .include <bsd.port.mk>

@@ -88,8 +88,6 @@ post-patch:
 			${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|-DG_DISABLE_DEPRECATED||g' \
 		${WRKSRC}/*/Makefile.in
-	@${REINPLACE_CMD} '/^gnomevfs_info_LDADD =/s/$$/ -lgobject-2.0/' \
-		${WRKSRC}/programs/Makefile.in
 	@${SED} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
 		< ${MASTERDIR}/pkg-install.in > ${PKGINSTALL}
 	@${SED} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \

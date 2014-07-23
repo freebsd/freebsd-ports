@@ -33,7 +33,5 @@ post-patch:
 		-e "s|BINOWN = bin|BINOWN = root|" -e "s|BINGRP = bin|BINGRP = wheel|" \
 		-e "s|libgdbm.la libgdbm_compat.la|libgdbm.la libgdbm_compat.la gdbm.info|" \
 			${WRKSRC}/Makefile.in
-	@${REINPLACE_CMD} '/_LDADD =/s/$$/ @LTLIBINTL@/' \
-		${WRKSRC}/src/Makefile.in
 
 .include <bsd.port.mk>

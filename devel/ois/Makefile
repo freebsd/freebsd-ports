@@ -25,7 +25,4 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-post-patch:
-	@${REINPLACE_CMD} '/_LDADD =/s/$$/ -lX11/' ${WRKSRC}/demos/Makefile.am
-
 .include <bsd.port.mk>

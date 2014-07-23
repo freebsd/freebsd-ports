@@ -57,9 +57,7 @@ CONFIGURE_ENV+=	LUA_CFLAGS=-I${LUA_INCDIR} \
 PLIST_SUB+=	VERSION=${PORTVERSION}
 
 post-patch:
-	${REINPLACE_CMD} \
-		-e '/_LDADD =/s/=/= @LTLIBINTL@/' \
-		-e 's:\.\./\.\./bin/::' ${WRKSRC}/Makefile.in
+	${REINPLACE_CMD} -e 's:\.\./\.\./bin/::' ${WRKSRC}/Makefile.in
 	${REINPLACE_CMD} -e 's/(hpux)/& || defined(__FreeBSD__)/' \
 		${WRKSRC}/misc/fts.?
 	${REINPLACE_CMD} -e 's/ __GLIBC__.*/& || defined(__FreeBSD__)/' \
