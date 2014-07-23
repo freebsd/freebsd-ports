@@ -19,8 +19,10 @@ USES=		gmake zip
 
 post-patch:
 	@${REINPLACE_CMD} \
-	  -e 's^"crashmail.prefs"^"${PREFIX}/etc/crashmail/crashmail.prefs"^' \
-	  ${WRKSRC}/src/oslib_linux/os_linux.h
+		-e 's^"crashmail.prefs"^"${PREFIX}/etc/crashmail/crashmail.prefs"^' \
+		${WRKSRC}/src/oslib_linux/os_linux.h
+	@${FIND} ${WRKSRC} -name 'Makefile*' | ${XARGS} ${REINPLACE_CMD} \
+		-e 's|gcc|${CC}|'
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/crashexport ${STAGEDIR}${PREFIX}/bin
