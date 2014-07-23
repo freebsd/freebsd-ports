@@ -8,7 +8,7 @@ CATEGORIES=	lang
 MASTER_SITES=	http://user.cs.tu-berlin.de/~opal/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
-MAINTAINER=	bkoenig@cs.tu-berlin.de
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The OPAL Compilation System
 
 BROKEN=		Fails to build

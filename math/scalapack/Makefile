@@ -15,7 +15,7 @@ DISTFILES+=	scalapack_install.ps scalapackqref.ps  \
 DIST_SUBDIR=	scalapack
 EXTRACT_ONLY=	scalapack-${PORTVERSION}.tgz manpages.tgz
 
-MAINTAINER=	maho@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The ScaLAPACK Scalable LAPACK library
 
 BUILD_DEPENDS=	f2c:${PORTSDIR}/lang/f2c

@@ -8,7 +8,7 @@ MASTER_SITES=	ftp://ftp.math.tu-berlin.de/pub/algebra/Kant/Kash_3/ \
 		http://nivi.interfree.it/distfiles/${PORTNAME}/
 DISTFILES=	${PORTNAME:tu}-${ELFTYPE}-i686-${PORTVERSION:S|.|-|g}.tar.bz2
 
-MAINTAINER=	nivit@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Computer algebra system for computing in algebraic number fields
 
 RUN_DEPENDS=	curl:${PORTSDIR}/ftp/curl

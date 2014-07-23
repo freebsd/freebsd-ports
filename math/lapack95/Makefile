@@ -10,7 +10,7 @@ DISTNAME=	${PORTNAME}
 EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	lapack95
 
-MAINTAINER=	maho@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	LAPACK95, Fortran90/95 wrapper for LAPACK
 
 USES=		fortran

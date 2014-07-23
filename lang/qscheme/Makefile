@@ -7,7 +7,7 @@ PORTREVISION=	6
 CATEGORIES=	lang scheme
 MASTER_SITES=	http://www.sof.ch/dan/qscheme/files/
 
-MAINTAINER=	erik@bz.bzflag.bz
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Small and fast Scheme interpreter
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libavcall.a:${PORTSDIR}/devel/ffcall\

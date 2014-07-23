@@ -8,7 +8,7 @@ PORTEPOCH=	1
 CATEGORIES=	math parallel
 MASTER_SITES=	ftp://ftp.mcs.anl.gov/pub/petsc/release-snapshots/
 
-MAINTAINER=	bf@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Portable, Extensible Toolkit for Scientific computation
 
 BUILD_DEPENDS=	python:${PORTSDIR}/lang/python

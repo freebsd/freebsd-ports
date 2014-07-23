@@ -6,7 +6,7 @@ DISTVERSION=	3.6e
 CATEGORIES=	math www
 MASTER_SITES=	SF/${PORTNAME:tl}/${PORTNAME}/${DISTVERSION}
 
-MAINTAINER=	nivit@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	JavaScript tool for including mathematics in web pages
 
 USES=		zip

@@ -10,7 +10,7 @@ DISTFILES=	${SRCFILE}#${MANUALFILE}
 DIST_SUBDIR=	sdpa
 EXTRACT_ONLY=	${SRCFILE}
 
-MAINTAINER=	maho@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	SDPARA parallel version of SDPA (math/sdpa)
 
 LIB_DEPENDS=	libscalapack.so:${PORTSDIR}/math/scalapack \

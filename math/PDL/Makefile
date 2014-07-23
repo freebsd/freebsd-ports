@@ -9,7 +9,7 @@ MASTER_SITES=	CPAN/${PORTNAME}:cpan \
 		SF/pdl/PDL/${PORTVERSION}:sf
 DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}:cpan,sf
 
-MAINTAINER=	perl@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl Data Language
 
 BUILD_DEPENDS=	p5-Astro-FITS-Header>=0:${PORTSDIR}/astro/p5-Astro-FITS-Header \

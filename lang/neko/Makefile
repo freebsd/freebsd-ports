@@ -7,7 +7,7 @@ PORTREVISION=	2
 CATEGORIES=	lang
 MASTER_SITES=	http://nekovm.org/_media/
 
-MAINTAINER=	ozawa@ongs.co.jp
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The Neko Programming Language
 
 LIB_DEPENDS=	libgc-threaded.so:${PORTSDIR}/devel/boehm-gc-threaded

@@ -11,7 +11,7 @@ MASTER_SITES=	ftp://sepftp.stanford.edu/pub/sep-distr/  \
 MASTER_SITE_SUBDIR=	obrien
 DISTFILES=	ratfor.shar.2 local.ratfor77.shar
 
-MAINTAINER=	obrien@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Ratfor -- the Rational FORTRAN compiler
 
 NO_WRKSUBDIR=	yes

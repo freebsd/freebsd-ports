@@ -15,7 +15,7 @@ DISTFILES=	${PORTNAME}src${EXTRACT_SUFX}:src \
 DIST_SUBDIR=	${PORTNAME}
 EXTRACT_ONLY=	${PORTNAME}src${EXTRACT_SUFX}
 
-MAINTAINER=	gahr@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	High Level Assembly
 
 USES=		bison zip:infozip
