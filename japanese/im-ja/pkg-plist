@@ -1,6 +1,5 @@
 bin/im-ja-conf
 bin/im-ja-xim-server
-lib/gtk-2.0/%%GTK2_VERSION%%/immodules/im-ja.la
 lib/gtk-2.0/%%GTK2_VERSION%%/immodules/im-ja.so
 libexec/im-ja/im-ja-helper
 libexec/im-ja/kpengine
