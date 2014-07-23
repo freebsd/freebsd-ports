@@ -5,6 +5,17 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20140723:
+  AFFECTS: users of security/scanlogd
+  AUTHOR: tgyurci@gmail.com
+
+  The security/scanlogd port now creates scanlogd user and group. Previous
+  scanlogd user and group must be removed before updating to not conflict
+  with the one created by the port:
+
+    pw userdel scanlogd
+    pw groupdel scanlogd
+
 20140727:
   AFFECTS: users of TeX
   AUTHOR: bapt@FreeBSD.org
