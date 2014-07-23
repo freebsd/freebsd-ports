@@ -1,9 +1,9 @@
 bin/ipod-read-sysinfo-extended
 include/gpod-1.0/gpod/itdb.h
 lib/libgpod.a
-lib/libgpod.la
 lib/libgpod.so
-lib/libgpod.so.7
+lib/libgpod.so.4
+lib/libgpod.so.4.3.2
 %%MONO%%lib/libgpod/libgpod-sharp-test.exe
 %%MONO%%lib/libgpod/libgpod-sharp-test.exe.mdb
 %%MONO%%lib/libgpod/libgpod-sharp.dll
@@ -12,7 +12,6 @@ lib/libgpod.so.7
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/gpod/__init__.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/gpod/__init__.pyc
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/gpod/__init__.pyo
-%%PYTHON%%%%PYTHON_SITELIBDIR%%/gpod/_gpod.la
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/gpod/_gpod.so
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/gpod/gpod.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/gpod/gpod.pyc
