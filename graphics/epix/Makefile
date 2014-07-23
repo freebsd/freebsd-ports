@@ -11,8 +11,8 @@ COMMENT=	Creates math plots and line figures using easy-to-learn syntax
 
 LICENSE=	GPLv2 # (or later)
 
-BUILD_DEPENDS=	latex-pgf>=0:${PORTSDIR}/print/latex-pgf \
-		bash:${PORTSDIR}/shells/bash
+USE_TEX=	texmf:build
+BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
 
 USES=		gmake makeinfo tar:bzip2
