@@ -68,23 +68,5 @@ post-patch:
 		s|-Wl,--no-undefined||g ; \
 		s|-Wmissing-include-dirs||g' \
 			${WRKSRC}/configure
-	@${REINPLACE_CMD} '/^e_addressbook_factory_LDADD =/ \
-		s/=/= -lgio-2.0 -lgobject-2.0 -lgthread-2.0 -lglib-2.0 $$(INTLLIBS)/' \
-		${WRKSRC}/addressbook/libedata-book/Makefile.in
-	@${REINPLACE_CMD} '/^test_interval_searches_LDADD =/s/=/= -lgthread-2.0/' \
-		${WRKSRC}/calendar/backends/file/Makefile.in
-	@${REINPLACE_CMD} -e '/^test_e_sexp_LDADD =/s/=/= -lical/' \
-		-e '/^test_intervaltree_LDADD =/s/=/= -lical/' \
-		-e '/^e_calendar_factory_LDADD =/s|=|= ../libecal/libecal-1.2.la -lical|' \
-		${WRKSRC}/calendar/libedata-cal/Makefile.in
-	@${REINPLACE_CMD} '/^camel_index_control_1_2_LDADD =/s/=/= -lgthread-2.0/' \
-		${WRKSRC}/camel/Makefile.in
-	@${REINPLACE_CMD} '/^test_imapx_LDADD =/s/=/= -lgobject-2.0 -lgthread-2.0/' \
-		${WRKSRC}/camel/providers/imapx/Makefile.in
-	@${REINPLACE_CMD} -e '/^test_contact_store_LDADD =/s|$$| ../addressbook/libebook/libebook-1.2.la|' \
-		-e '/^test_name_selector_LDADD =/s|$$| ../camel/libcamel-1.2.la -lgthread-2.0|' \
-		${WRKSRC}/libedataserverui/Makefile.in
-	@${REINPLACE_CMD} '/^soap_test_LDADD =/s/=/= -lgthread-2.0/' \
-		${WRKSRC}/servers/groupwise/Makefile.in
 
 .include <bsd.port.mk>

@@ -54,10 +54,6 @@ CONFIGURE_ARGS+=--disable-vgl
 PLIST_SUB+=	VGL="@comment "
 .endif
 
-post-patch:
-	@${REINPLACE_CMD} '/^LDADD =/s,$$, $$(top_builddir)/gg/libgg.la,' \
-		${WRKSRC}/regress/gii/Makefile.in
-
 post-install:
 	${MV} ${STAGEDIR}${PREFIX}/etc/ggi/libgii.conf ${STAGEDIR}${PREFIX}/etc/ggi/libgii.conf.sample
 	${MV} ${STAGEDIR}${PREFIX}/etc/ggi/filter/mouse ${STAGEDIR}${PREFIX}/etc/ggi/filter/mouse.sample

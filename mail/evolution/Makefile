@@ -109,14 +109,6 @@ post-patch:
 		-e 's|-DG_DISABLE_DEPRECATED||g' \
 		-e 's|-Wmissing-include-dirs||g' \
 	    	${WRKSRC}/configure
-	@${REINPLACE_CMD} '/^evolution_alarm_notify_LDADD =/s/=/= -lgthread-2.0/' \
-		${WRKSRC}/calendar/gui/alarm-notify/Makefile.in
-	@${REINPLACE_CMD} '/^evolution_settings_LDADD =/s/=/= -lgthread-2.0/' \
-		${WRKSRC}/capplet/Makefile.in
-	@${REINPLACE_CMD} '/^evolution_backup_LDADD =/s/=/= -lgthread-2.0/' \
-		${WRKSRC}/plugins/backup-restore/Makefile.in
-	@${REINPLACE_CMD} '/^evolution_LDADD =/s/=/= -lgthread-2.0/' \
-		${WRKSRC}/shell/Makefile.in
 	@${REINPLACE_CMD} -e 's|/usr|${LOCALBASE}|g' \
 		${WRKSRC}/plugins/bogo-junk-plugin/bf-junk-filter.c
 	@${REINPLACE_CMD} -e 's|/usr/sbin|${LOCALBASE}/bin|g' \

@@ -81,10 +81,6 @@ CONFIGURE_ARGS+=	--disable-libtrackergtk --disable-gui \
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|libpng|libpng15|' ${WRKSRC}/configure
-	@${REINPLACE_CMD} '/tracker_extract_LDADD =/s/=/= $$(DBUS_LIBS) $$(GIO_LIBS)/' \
-		${WRKSRC}/src/tracker-extract/Makefile.in
-	@${REINPLACE_CMD} '/tracker_status_LDADD =/s/$$/ $$(DBUS_LIBS)/' \
-		${WRKSRC}/src/tracker-utils/Makefile.in
 
 post-build:
 .if defined(TRACKER_SLAVE) && ${TRACKER_SLAVE}=="libtrackergtk"

@@ -35,8 +35,4 @@ NLS_CONFIGURE_ENABLE=nls
 NLS_CPPFLAGS=	-I${LOCALBASE}/include
 NLS_LDFLAGS=	-L${LOCALBASE}/lib
 
-post-patch:
-	@${REINPLACE_CMD} '/shell_LDADD =/s/$$/ -lgio-2.0 -lgobject-2.0 -lglib-2.0/' \
-		${WRKSRC}/tests/Makefile.in ${WRKSRC}/tools/Makefile.in
-
 .include <bsd.port.mk>

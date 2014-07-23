@@ -97,7 +97,6 @@ post-patch:
 		-e 's|install-data-hook install-dist_initSCRIPTS|install-dist_initSCRIPTS|g' \
 		-e 's|install-data-hook|notinstall-data-hook|g' \
 		-e 's| -lpam_misc||g' \
-		-e '/^ldap_child_LDADD =/s|=|= $$(LTLIBINTL)|' \
 		${WRKSRC}/Makefile.am
 	@${REINPLACE_CMD} -e 's|/etc/sssd/|${ETCDIR}/|g' \
 		-e 's|/etc/openldap/|${LOCALBASE}/etc/openldap/|g' \

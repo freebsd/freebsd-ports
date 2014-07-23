@@ -19,8 +19,4 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 INSTALL_TARGET=	install-strip
 
-post-patch:
-	@${REINPLACE_CMD} '/^test_dock_LDADD =/s/$$/ $$(GDL_DEPENDENCIES_LIBS)/' \
-		${WRKSRC}/gdl/Makefile.in
-
 .include <bsd.port.mk>

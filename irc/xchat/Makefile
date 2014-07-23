@@ -97,8 +97,6 @@ PLIST_SUB+=	TCL="@comment "
 post-patch:
 	@${REINPLACE_CMD} -e 's|glib/.*\.h>|glib.h>|g' \
 		${WRKSRC}/src/common/*.[ch]
-	@${REINPLACE_CMD} '/xchat_LDADD =/s/$$/ -lgmodule-2.0/' \
-		${WRKSRC}/src/fe-gtk/Makefile.in
 
 # Create plugins directory even when no plugins are installed
 post-install:

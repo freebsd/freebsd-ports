@@ -34,8 +34,6 @@ post-patch:
 		'/^install-data-am:/s|install-info-am|| ; \
 		 /install-man/s|install-nobase_infoimgDATA||' \
 		${WRKSRC}/doc/Makefile.in
-	@${REINPLACE_CMD} '/^gvx_LDADD =/s/=/= $$(OPENGLLIBS)/' \
-		${WRKSRC}/src/bin/geomview/x11/Makefile.in
 
 post-build:
 	@(cd ${WRKSRC}/doc && makeinfo --no-split --no-validate \
