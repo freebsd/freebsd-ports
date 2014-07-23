@@ -7,7 +7,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	http://www.frontiernet.net/~eugene.ressler/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	joerg@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	3D Scene Description Translator
 
 LICENSE=	GPLv3

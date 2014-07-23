@@ -9,7 +9,7 @@ MASTER_SITES=	http://download.deegree.org/deegree${PORTVERSION}/
 PKGNAMEPREFIX=	deegree-
 DISTNAME=	${PKGNAMEPREFIX}${PORTNAME}_${PORTVERSION}
 
-MAINTAINER=	wenheping@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Deegree Web Map Service(WMS)
 
 USES=		zip

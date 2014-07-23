@@ -8,7 +8,7 @@ CATEGORIES?=	graphics
 MASTER_SITES=	http://www.advsofteng.com/
 PKGNAMEPREFIX?=	php5-
 
-MAINTAINER=	swhetzel@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	ChartDirector Chart Component for PHP ${PHP_VER}
 
 USE_PHP=	yes

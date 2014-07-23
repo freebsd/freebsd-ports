@@ -12,7 +12,7 @@ MASTER_SITE_SUBDIR=	Official/Unix
 PKGNAMESUFFIX=	36
 DIST_SUBDIR=	povray36
 
-MAINTAINER=	maho@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Persistence of Vision Ray Tracer
 
 .if defined(WITH_ICC)

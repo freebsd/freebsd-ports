@@ -9,7 +9,7 @@ MASTER_SITES=	http://download.deegree.org/deegree${PORTVERSION}/
 PKGNAMEPREFIX=	deegree-
 DISTNAME=	${PORTNAME}-std_${PORTVERSION}
 
-MAINTAINER=	wenheping@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Browser based client handling WMS, WFS, and proxy service
 
 USES=		zip

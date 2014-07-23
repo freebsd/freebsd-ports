@@ -9,7 +9,7 @@ MASTER_SITES=	http://www.ncc.up.pt/gpsmanshp/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	jhay@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Shapelib support for gpsman
 
 RUN_DEPENDS=	gpsman:${PORTSDIR}/astro/gpsman

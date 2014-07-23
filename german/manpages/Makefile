@@ -7,7 +7,7 @@ CATEGORIES=	german
 MASTER_SITES=	http://www.infodrom.org/projects/manpages-de/download/ \
 		http://wolfram.schneider.org/src/
 
-MAINTAINER=	wosch@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	German GNU and Linux manual pages
 
 LANG=		de.ISO8859-1

@@ -8,7 +8,7 @@ MASTER_SITES=	http://members.tripod.com/~so_o2/ \
 		http://nivi.interfree.it/distfiles/${PORTNAME}/${PORTVERSION}/
 DISTVERSIONSUFFIX=	-bin
 
-MAINTAINER=	nivit@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Japanese Symbols Trainer
 
 NO_BUILD=	yes
