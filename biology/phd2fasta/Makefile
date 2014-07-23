@@ -7,7 +7,7 @@ CATEGORIES=	biology
 MASTER_SITES=	# put the tarball manually
 DISTFILES=	phd2fasta-acd-dist.tar.Z
 
-MAINTAINER=	mzaki@m.u-tokyo.ac.jp
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Converter from output files of Phred/Consed to FASTA files
 
 RESTRICTED=	Redistribution is not permitted in any form. You must request the tarball via e-mail. Free for academic use.

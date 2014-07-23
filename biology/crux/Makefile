@@ -7,7 +7,7 @@ PORTREVISION=	3
 CATEGORIES=	biology python
 MASTER_SITES=	http://www.canonware.com/download/Crux/
 
-MAINTAINER=	jasone@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Software toolkit for phylogenetic inference
 
 USES=		fortran gmake

@@ -6,7 +6,7 @@ PORTVERSION=	1.0.1
 PORTREVISION=	3
 CATEGORIES=	deskutils www
 
-MAINTAINER=	horde@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Time tracking application
 
 USE_HORDE=	base pkg-message

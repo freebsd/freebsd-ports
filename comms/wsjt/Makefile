@@ -10,7 +10,7 @@ MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	db
 DISTNAME=	wsjt-r${SVN_REV}
 
-MAINTAINER=	db@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Weak signal ham radio communication package
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}tkinter>0:${PORTSDIR}/x11-toolkits/py-tkinter \

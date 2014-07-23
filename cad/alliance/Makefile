@@ -10,7 +10,7 @@ MASTER_SITES=	http://www-asim.lip6.fr/pub/alliance/distribution/5.0/ \
 MASTER_SITE_SUBDIR=	hrs
 DISTNAME=	${PORTNAME}-5.0-20090901
 
-MAINTAINER=	hrs@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Complete set of CAD tools and libraries for VLSI design
 
 BROKEN=		Does not compile

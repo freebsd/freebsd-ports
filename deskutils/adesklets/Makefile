@@ -7,7 +7,7 @@ PORTREVISION=	9
 CATEGORIES=	deskutils
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}%20%28core%29/${PORTVERSION}
 
-MAINTAINER=	novel@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Interactive Imlib2 console for the X Window system
 
 RUN_DEPENDS=	gsed:${PORTSDIR}/textproc/gsed

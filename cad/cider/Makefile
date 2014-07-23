@@ -9,7 +9,7 @@ MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	mita
 DISTNAME=	cider1b1
 
-MAINTAINER=	amakawa@jp.FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Mixed-level circuit and device simulator (includes SPICE3)
 
 CONFLICTS=	spice-[0-9]*

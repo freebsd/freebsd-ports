@@ -8,7 +8,7 @@ CATEGORIES=	editors
 MASTER_SITES=	http://downloads.activestate.com/Komodo/releases/${PORTVERSION}/
 DISTNAME=	Komodo-Edit-${PORTVERSION}-8334-linux-libcpp6-x86
 
-MAINTAINER=	gahr@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Multi-language editor from ActiveState
 
 BROKEN=		Unfetchable

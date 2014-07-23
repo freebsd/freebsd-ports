@@ -9,7 +9,7 @@ MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	joerg
 DISTNAME=	${PORTNAME}
 
-MAINTAINER=	joerg@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The part of X11R3's xcalc featuring a slide rule
 
 USES=		imake

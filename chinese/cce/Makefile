@@ -14,7 +14,7 @@ PATCH_SITES=	http://www.chinatinco.com/freebsd/cce/ \
 PATCHFILES=	cce_0.51-1.diff.gz
 PATCH_DIST_STRIP=-p1
 
-MAINTAINER=	sunrychen@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Console CJK Environment
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}

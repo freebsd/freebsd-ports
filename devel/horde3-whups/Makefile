@@ -6,7 +6,7 @@ PORTVERSION=	1.0.1
 PORTREVISION=	5
 CATEGORIES=	devel www
 
-MAINTAINER=	horde@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Bug tracking/ticketing system
 
 USE_HORDE=	base pkg-message

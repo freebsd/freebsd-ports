@@ -7,7 +7,7 @@ CATEGORIES=	finance www
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	${PORTNAME}/FrontAccounting-2.3/${PORTVERSION}
 
-MAINTAINER=	ek@purplehat.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple, powerful system for the entire ERP chain
 
 LICENSE=	GPLv3

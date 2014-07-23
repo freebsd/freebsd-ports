@@ -10,7 +10,7 @@ MASTER_SITES=	http://bioperl.org/DIST/ \
 PKGNAMEPREFIX=	p5-
 DISTNAME=	BioPerl-run-${PORTVERSION}
 
-MAINTAINER=	mauricio@arareko.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Wrapper modules for common bioinformatics tools
 
 BROKEN=		Fails to configure
