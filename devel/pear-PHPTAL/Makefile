@@ -13,9 +13,9 @@ BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
 RUN_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
 
 OPTIONS_DEFINE=	GETTEXT SIMPLEXML JSON
-GETTEXT_DESC=	"Enable GetText Support"
-SIMPLEXML_DESC=	"Enable SimpleXML Support"
-JSON_DESC=	"Enable JSON Support"
+GETTEXT_DESC=	Enable GetText Support
+SIMPLEXML_DESC=	Enable SimpleXML Support
+JSON_DESC=	Enable JSON Support
 
 .include <bsd.port.options.mk>
 

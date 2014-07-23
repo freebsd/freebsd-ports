@@ -24,13 +24,13 @@ LDFLAGS+=	-L${LOCALBASE}/lib -lintl
 MAKE_JOBS_UNSAFE=	yes
 
 OPTIONS_DEFINE=	CAIRO DOCS FRIBIDI IBUS M17NLIB SCIM SIXEL UIM
-CAIRO_DESC=	"Use Cairo for type engine (experimental)"
-FRIBIDI_DESC=	"Use Fribidi for BiDi rendering"
-IBUS_DESC=	"IBUS support (experimental)"
-M17NLIB_DESC=	"m17n library support (experimental)"
-SCIM_DESC=	"SCIM support (experimental)"
-SIXEL_DESC=	"Sixel graphics support"
-UIM_DESC=	"uim support (experimental)"
+CAIRO_DESC=	Use Cairo for type engine (experimental)
+FRIBIDI_DESC=	Use Fribidi for BiDi rendering
+IBUS_DESC=	IBUS support (experimental)
+M17NLIB_DESC=	m17n library support (experimental)
+SCIM_DESC=	SCIM support (experimental)
+SIXEL_DESC=	Sixel graphics support
+UIM_DESC=	uim support (experimental)
 
 .include <bsd.port.options.mk>
 

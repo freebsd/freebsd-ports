@@ -20,7 +20,7 @@ USES=		perl5
 USE_PERL5=	configure
 
 OPTIONS_DEFINE=	TEXTDIFF
-TEXTDIFF_DESC=	"Text::Diff support for ptardiff"
+TEXTDIFF_DESC=	Text::Diff support for ptardiff
 
 TEXTDIFF_RUN_DEPENDS=	p5-Text-Diff>=0:${PORTSDIR}/textproc/p5-Text-Diff
 
