@@ -5,9 +5,11 @@ share/py-sip/Qsci/qscicommand.sip
 share/py-sip/Qsci/qscicommandset.sip
 share/py-sip/Qsci/qscidocument.sip
 share/py-sip/Qsci/qscilexer.sip
+share/py-sip/Qsci/qscilexeravs.sip
 share/py-sip/Qsci/qscilexerbash.sip
 share/py-sip/Qsci/qscilexerbatch.sip
 share/py-sip/Qsci/qscilexercmake.sip
+share/py-sip/Qsci/qscilexercoffeescript.sip
 share/py-sip/Qsci/qscilexercpp.sip
 share/py-sip/Qsci/qscilexercsharp.sip
 share/py-sip/Qsci/qscilexercss.sip
@@ -26,6 +28,7 @@ share/py-sip/Qsci/qscilexermatlab.sip
 share/py-sip/Qsci/qscilexeroctave.sip
 share/py-sip/Qsci/qscilexerpascal.sip
 share/py-sip/Qsci/qscilexerperl.sip
+share/py-sip/Qsci/qscilexerpo.sip
 share/py-sip/Qsci/qscilexerpostscript.sip
 share/py-sip/Qsci/qscilexerpov.sip
 share/py-sip/Qsci/qscilexerproperties.sip
@@ -50,6 +53,6 @@ share/py-sip/Qsci/qsciscintillabase3.sip
 share/py-sip/Qsci/qsciscintillabase4.sip
 share/py-sip/Qsci/qscistyle.sip
 share/py-sip/Qsci/qscistyledtext.sip
-%%API%%share/qt4/qsci/api/python/QScintilla2.api
+share/qt4/qsci/api/python/QScintilla2.api
 @dirrm share/py-sip/Qsci
 @dirrmtry %%PYTHON_SITELIBDIR%%/PyQt4

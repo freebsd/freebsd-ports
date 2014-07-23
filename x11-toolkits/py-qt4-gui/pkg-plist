@@ -1,5 +1,6 @@
 %%PYTHON_SITELIBDIR%%/PyQt4/QtGui.so
 share/py-sip/QtGui/QtGuimod.sip
+share/py-sip/QtGui/opengl_types.sip
 share/py-sip/QtGui/qabstractbutton.sip
 share/py-sip/QtGui/qabstractitemdelegate.sip
 share/py-sip/QtGui/qabstractitemview.sip
