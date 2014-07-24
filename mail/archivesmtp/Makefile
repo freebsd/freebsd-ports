@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	archivesmtp
-PORTVERSION=	1.1.b1
+PORTVERSION=	1.2
 CATEGORIES=	mail
 MASTER_SITES=	http://www.dancingfortune.com/projects/archivesmtp/files/
 
@@ -12,24 +12,18 @@ COMMENT=	SMTP mail archiver
 CFLAGS+=	${PTHREAD_CFLAGS}
 LIBS+=		${PTHREAD_LIBS}\
 		-lmilter
-MAKE_ENV+=	LDADD="${LIBS}"\
-		BINDIR="${PREFIX}/sbin"\
-		MANDIR="${MANPREFIX}/man/man"\
-		NO_MANCOMPRESS="yes"
+MAKE_ENV+=	LDADD="${LIBS}"
 
 USE_RC_SUBR=	archivesmtp
 SUB_FILES=	pkg-message
-SUB_LIST+=	SOCKETBASE=${SOCKETBASE}\
-		SOCKETDIR=${SOCKETDIR}
+SUB_LIST+=	SOCKETBASE="${SOCKETBASE}"\
+		SOCKETDIR="${SOCKETDIR}"
 PLIST_SUB+=	${SUB_LIST}
-
-MAN8=		archivesmtp.8
 
 # Path for unix/local socket (by default also used for pid file)
 SOCKETBASE?=	/var/run
 SOCKETDIR?=	archivesmtp
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 # Sets up libmilter dependencies and options
@@ -40,14 +34,14 @@ pre-build:
 	${CP} ${FILESDIR}/top-Makefile ${WRKSRC}/Makefile
 	${CP} ${FILESDIR}/src-Makefile ${WRKSRC}/src/Makefile
 
+do-install:
+	${INSTALL} -s ${WRKSRC}/src/archivesmtp ${STAGEDIR}${PREFIX}/sbin
+	${INSTALL_MAN} ${WRKSRC}/src/archivesmtp.8 ${STAGEDIR}${PREFIX}/man/man8
+
 post-install:
 	# Install sample configuration file
-	${INSTALL_DATA} ${WRKSRC}/src/archivesmtp.conf.sample ${PREFIX}/etc
-	# Create directory for unix/local socket
-	${MKDIR} ${SOCKETBASE}/${SOCKETDIR}
-	${CHOWN} nobody ${SOCKETBASE}/${SOCKETDIR}
-	${CHMOD} 755 ${SOCKETBASE}/${SOCKETDIR}
-	# Print post install message
-	@${CAT} ${PKGMESSAGE}
+	${INSTALL_DATA} ${WRKSRC}/src/archivesmtp.conf.sample ${STAGEDIR}${PREFIX}/etc
+	# Create socket directory
+	@${MKDIR} ${STAGEDIR}${SOCKETBASE}/${SOCKETDIR}
 
 .include <bsd.port.post.mk>
