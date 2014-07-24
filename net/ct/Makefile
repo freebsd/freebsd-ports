@@ -7,7 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://www.tahi.org/release/ct/
 
-MAINTAINER=	hrs@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	IPv6 Conformance Test Kit
 
 LICENSE=	BSD

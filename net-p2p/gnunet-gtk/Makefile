@@ -7,7 +7,7 @@ CATEGORIES=		net-p2p ipv6 security
 MASTER_SITES=		GNU
 MASTER_SITE_SUBDIR=	gnunet
 
-MAINTAINER=	bf@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GTK interface to GNUnet
 
 BROKEN=		Does not fetch

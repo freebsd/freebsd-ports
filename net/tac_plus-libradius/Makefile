@@ -10,7 +10,7 @@ MASTER_SITES=	http://www.portal-to-web.de/tacacs/ \
 DISTFILES=	tac_plus.F5.0.0.alpha.tar.gz \
 		tac_plus_radius.tgz
 
-MAINTAINER=	gremlin@portal-to-web.de
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The www.gazi.edu.tr tacacs+ Daemon with pam and libradius support
 
 USE_RC_SUBR=	tac_plus

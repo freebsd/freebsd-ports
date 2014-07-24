@@ -7,7 +7,7 @@ CATEGORIES=	net-p2p
 MASTER_SITES=	GOOGLE_CODE
 DISTNAME=	eiskaltdcpp-${DISTVERSION}
 
-MAINTAINER=	fjoe@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	EiskaltDC++ Direct Connect command-line interface
 
 LICENSE=	GPLv3

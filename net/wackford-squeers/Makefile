@@ -6,7 +6,7 @@ PORTVERSION=	1.17
 CATEGORIES=	net
 MASTER_SITES=	http://www.mammothcheese.ca/
 
-MAINTAINER=	jimmy@mammothcheese.ca
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Plain text network hypertext server and client
 
 RUN_DEPENDS=	${LOCALBASE}/bin/munger:${PORTSDIR}/lang/munger

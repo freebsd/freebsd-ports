@@ -7,7 +7,7 @@ CATEGORIES=	net security
 MASTER_SITES=	http://200ok.org/distfiles/ipsorc/ \
 		http://sorcerer.mirrors.pair.com/sources/ipsorcery/${PORTVERSION}/
 
-MAINTAINER=	ecu@200ok.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tool to create and send IP packets with a graphical GTK front-end
 
 USE_GNOME=	gtk12

@@ -8,7 +8,7 @@ CATEGORIES=		net
 MASTER_SITES=		http://ftp.sernet.de/pub/samba4WINS/debian/pool/
 DISTNAME=		${PORTNAME}_${PORTVERSION}-2
 
-MAINTAINER=		timur@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=		Full featured replicating WINS server for UNIX
 
 CONFLICTS=		ja-samba-2.* ja-samba-4.* samba-2.* samba-4.* sharity-light-1.*

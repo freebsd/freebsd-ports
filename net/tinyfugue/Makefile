@@ -8,7 +8,7 @@ MASTER_SITES=	SF/tinyfugue/tinyfugue/5.0%20beta%208
 DISTVERSION=	${PORTVERSION:S/.//}
 DISTNAME=	${PORTNAME}-${DISTVERSION}
 
-MAINTAINER=	fjoe@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Popular programmable MUD client, with macro support and more
 
 GNU_CONFIGURE=	yes

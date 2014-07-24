@@ -9,7 +9,7 @@ MASTER_SITES=	http://caspian.dotconf.net/menu/Software/SendSMS/ \
 DISTNAME=	sendSMS.pl
 EXTRACT_SUFX=	.gz
 
-MAINTAINER=	itetcu@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple perl command-line utility to send SMS via from on provider site
 
 EXTRACT_CMD=	${GZCAT}

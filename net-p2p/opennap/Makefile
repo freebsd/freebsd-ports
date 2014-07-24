@@ -7,7 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	net-p2p
 MASTER_SITES=	SF
 
-MAINTAINER=	sam@cassiba.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Open-source Napster server
 
 USES=		gmake

@@ -11,7 +11,7 @@ MASTER_SITE_SUBDIR=	wollman
 DISTFILES=	entitymib entitymib.1 ENTITY-MIB.txt:mibs
 EXTRACT_ONLY=
 
-MAINTAINER=	wollman@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=Display the Entity MIB of an SNMP agent
 
 RUN_DEPENDS=	p5-Tree-DAG_Node>=0:${PORTSDIR}/devel/p5-Tree-DAG_Node \

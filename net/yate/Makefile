@@ -7,7 +7,7 @@ CATEGORIES=	net
 MASTER_SITES=	http://yate.null.ro/tarballs/yate4/
 DISTNAME=	${PORTNAME}-4.3.0-1
 
-MAINTAINER=	komarov@valerka.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Yet Another Telephony Engine
 
 LIB_DEPENDS=	libgsm.so:${PORTSDIR}/audio/gsm \

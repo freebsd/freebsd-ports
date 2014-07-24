@@ -7,7 +7,7 @@ CATEGORIES=	net
 MASTER_SITES=	http://www.online.redhate.org/bld/ \
 		http://olivier.beyssac.googlepages.com/
 
-MAINTAINER=	obld@r14.freenix.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Blacklisting daemon
 
 USE_RC_SUBR=	bld

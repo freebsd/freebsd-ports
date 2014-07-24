@@ -10,7 +10,7 @@ MASTER_SITES=	http://www.csse.uwa.edu.au/cnet/ \
 		http://T32.TecNik93.com/FreeBSD/ports/${PORTNAME}/sources/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	itetcu@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Networking simulator
 
 LIB_DEPENDS=	libtk84.so:${PORTSDIR}/x11-toolkits/tk84

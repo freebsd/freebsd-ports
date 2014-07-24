@@ -8,7 +8,7 @@ MASTER_SITES=	http://userfw.net/files/release/ \
 		http://imax.in.ua/files/ \
 		http://projects.ukrweb.net/files/
 
-MAINTAINER=	gelraen.ua@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Modular packet filter
 
 LICENSE=	BSD

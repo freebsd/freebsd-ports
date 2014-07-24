@@ -9,7 +9,7 @@ MASTER_SITES=	http://www.irrd.net/
 DISTNAME=	${PORTNAME}${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	sem@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Internet Routing Registry database server
 
 WRKSRC=		${WRKDIR}/${PORTNAME}${PORTVERSION}/src

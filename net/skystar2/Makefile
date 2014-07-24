@@ -9,7 +9,7 @@ MASTER_SITES=	http://paradox.lissyara.su/ \
 		http://lissyara.su/patch/skystar2/
 DISTNAME=	${PORTNAME}.8_${PORTVERSION:S/.//}
 
-MAINTAINER=	admin@lissyara.su
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Kernel module and program for SkyStar2/SkyStar2.8A
 
 USE_BZIP2=	yes

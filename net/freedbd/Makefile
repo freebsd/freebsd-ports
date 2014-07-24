@@ -7,7 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	net audio
 MASTER_SITES=	http://rink.nu/downloads/projects/
 
-MAINTAINER=	rink@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Lightweight daemon for answering FreeDB queries
 
 USES=		perl5

@@ -7,7 +7,7 @@ PORTREVISION=	4
 CATEGORIES=	net
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	jmohacsi@bsd.hu
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Rude is a Real-time UDP Data Emitter and Collector (crude)
 
 RUN_DEPENDS=	p5-Tk>=0:${PORTSDIR}/x11-toolkits/p5-Tk
