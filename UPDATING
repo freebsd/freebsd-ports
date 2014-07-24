@@ -8,8 +8,11 @@ you update your ports collection, before attempting any port upgrades.
 20140723:
   AFFECTS: users of devel/libevent
 
-  libevent1 as been replaced by libevent2 via the compatibility layer.
-  Make sure to remove libevent before upgrading the regular way.
+  libevent1 has been replaced by libevent2 via the compatibility layer.
+  All applications that used libevent1 must be rebuilt.
+
+  Please remove libevent1 before upgrading, by running:
+  	pkg delete libevent
 
 20140723:
   AFFECTS: users of security/scanlogd
