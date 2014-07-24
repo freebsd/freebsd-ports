@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Net
-PORTVERSION=	1.25
+PORTVERSION=	1.27
 PORTEPOCH=	1
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
@@ -15,7 +15,7 @@ COMMENT=	Perl5 modules to access and use network protocols
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-TEST_DEPENDS=	p5-Test-Kwalitee>=0:${PORTSDIR}/devel/p5-Test-Kwalitee
+BUILD_DEPENDS=	p5-ExtUtils-MakeMaker>=6.64:${PORTSDIR}/devel/p5-ExtUtils-MakeMaker
 
 OPTIONS_DEFINE=	SASL
 OPTIONS_DEFAULT=SASL
