@@ -19,6 +19,8 @@ ALL_TARGET=	# empty
 WRKSRC=		${WRKDIR}/tokamak_release
 BUILD_WRKSRC=	${WRKSRC}/build/gnu
 
+PORTSCOUT=	skipv:1.0.5
+
 PORTDOCS=	*
 
 OPTIONS_DEFINE=	DOCS
