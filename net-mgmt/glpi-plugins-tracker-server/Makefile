@@ -9,7 +9,7 @@ MASTER_SITES=	https://forge.indepnet.net/attachments/download/512/ \
 PKGNAMEPREFIX=	glpi-plugins-tracker-
 DISTNAME=	glpi-tracker_server-2.1.3
 
-MAINTAINER=	d.durieux@siprossii.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Plugin of glpi to get information of networking devices by SNMP
 
 RUN_DEPENDS=	glpi>=0.72:${PORTSDIR}/www/glpi

@@ -6,7 +6,7 @@ PORTVERSION=	0.4
 CATEGORIES=	net-mgmt www
 MASTER_SITES=	ftp://ftp.renatasystems.org/pub/FreeBSD/ports/distfiles/
 
-MAINTAINER=	alexey@renatasystems.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PHP-based web interface for NeTAMS software
 
 NO_BUILD=	yes

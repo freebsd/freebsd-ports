@@ -8,7 +8,7 @@ CATEGORIES=	misc
 MASTER_SITES=	http://download.gna.org/gcstar/ \
 		http://djdomics.free.fr/distfiles/
 
-MAINTAINER=	dominique.goncalves@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Open source application for managing your collections
 
 RUN_DEPENDS=	p5-Gtk2>=0:${PORTSDIR}/x11-toolkits/p5-Gtk2 \

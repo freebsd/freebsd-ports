@@ -7,7 +7,7 @@ CATEGORIES=	misc
 MASTER_SITES=	http://www.redbrick.dcu.ie/~c-hey/src.gzipped/
 DISTNAME=	c-hey2.1
 
-MAINTAINER=	philip.reynolds@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Terminal based instant messaging utility
 
 DEPRECATED=	Fails to build with new utmpx

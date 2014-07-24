@@ -7,7 +7,7 @@ PORTREVISION=	2
 CATEGORIES=	misc
 MASTER_SITES=	http://www.unknown.nu/ports/
 
-MAINTAINER=	user@unknown.nu
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Interactive Quran (Koran)
 
 BUILD_DEPENDS=	icont:${PORTSDIR}/lang/icon

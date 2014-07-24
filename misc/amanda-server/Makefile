@@ -9,7 +9,7 @@ CATEGORIES=	misc
 MASTER_SITES=	SF/amanda/amanda%20-%20stable/${PORTVERSION}
 PKGNAMESUFFIX?=	-server
 
-MAINTAINER=	kuriyama@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT?=	The Advanced Maryland Automatic Network Disk Archiver (server)
 
 RUN_DEPENDS=	perl-amanda:${PORTSDIR}/misc/amanda-perl-wrapper

@@ -10,7 +10,7 @@ MASTER_SITES=	http://codelabs.ru/fbsd/distfiles/ \
 PKGNAMEPREFIX=	nagios-
 DISTNAME=	check_portaudit-${PORTVERSION}
 
-MAINTAINER=	rea@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Nagios plug-in to get portaudit/portupgrade status
 
 OPTIONS_DEFINE=	PORTAUDIT PORTUPGRADE PORTUPGRADE_DEVEL

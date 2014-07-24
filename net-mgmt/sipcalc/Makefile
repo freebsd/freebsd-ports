@@ -6,7 +6,7 @@ PORTVERSION=	1.1.5
 CATEGORIES=	net-mgmt ipv6
 MASTER_SITES=	http://www.routemeister.net/projects/sipcalc/files/
 
-MAINTAINER=	jmohacsi@bsd.hu
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Sipcalc is an IP subnet calculator with IPv6 support
 
 GNU_CONFIGURE=	yes

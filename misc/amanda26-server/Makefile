@@ -9,7 +9,7 @@ CATEGORIES=	misc
 MASTER_SITES=	SF/amanda/amanda%20-%20stable/${PORTVERSION}
 PKGNAMESUFFIX?=	26-server
 
-MAINTAINER=	kuriyama@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT?=	The Advanced Maryland Automatic Network Disk Archiver (server)
 
 WRKSRC=		${WRKDIR}/amanda-${PORTVERSION}
