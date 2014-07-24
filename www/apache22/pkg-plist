@@ -216,6 +216,7 @@ sbin/split-logfile
 @unexec if cmp -s %D/%%ETCDIR%%/mime.types %D/%%EXAMPLESDIR%%/mime.types; then rm -f %D/%%ETCDIR%%/mime.types; fi
 %%EXAMPLESDIR%%/mime.types
 @exec [ -f %D/%%ETCDIR%%/mime.types ] || cp %D/%%EXAMPLESDIR%%/mime.types %D/%%ETCDIR%%/mime.types
+%%EXAMPLESDIR%%/modules.d/README_modules.d
 %%WWWDIR%%/cgi-bin/printenv
 %%WWWDIR%%/cgi-bin/test-cgi
 %%WWWDIR%%/error/HTTP_BAD_GATEWAY.html.var
@@ -461,22 +462,23 @@ sbin/split-logfile
 %%WWWDIR%%/icons/world1.png
 %%WWWDIR%%/icons/world2.gif
 %%WWWDIR%%/icons/world2.png
-@dirrm %%WWWDIR%%/icons/small
-@dirrm %%WWWDIR%%/icons
-@dirrm %%WWWDIR%%/error/include
-@dirrm %%WWWDIR%%/error
-@dirrmtry %%WWWDIR%%/data
-@dirrmtry %%WWWDIR%%/cgi-bin
-@dirrmtry %%WWWDIR%%
-@dirrm %%EXAMPLESDIR%%/extra
-@dirrm %%EXAMPLESDIR%%
+@unexec rm -f %D/%%ETCDIR%%/httpd.conf.bak 2> /dev/null || true
+@dirrmtry %%ETCDIR%%/Includes
+@dirrmtry %%ETCDIR%%/envvars.d
+@dirrmtry %%ETCDIR%%/extra
+@dirrmtry %%ETCDIR%%/modules.d
+@dirrmtry %%ETCDIR%%
+@dirrmtry include/apache22
+@dirrmtry libexec/apache22
 @dirrm %%DATADIR%%/build
 @dirrm %%DATADIR%%
-@dirrmtry libexec/apache22
-@dirrmtry include/apache22
-@unexec rm -f %D/%%ETCDIR%%/httpd.conf.bak 2> /dev/null || true
-@dirrmtry %%ETCDIR%%/modules.d
-@dirrmtry %%ETCDIR%%/extra
-@dirrmtry %%ETCDIR%%/envvars.d
-@dirrmtry %%ETCDIR%%/Includes
-@dirrmtry %%ETCDIR%%
+@dirrm %%EXAMPLESDIR%%/extra
+@dirrm %%EXAMPLESDIR%%/modules.d
+@dirrm %%EXAMPLESDIR%%
+@dirrmtry %%WWWDIR%%/cgi-bin
+@dirrmtry %%WWWDIR%%/data
+@dirrm %%WWWDIR%%/error/include
+@dirrm %%WWWDIR%%/error
+@dirrm %%WWWDIR%%/icons/small
+@dirrm %%WWWDIR%%/icons
+@dirrmtry %%WWWDIR%%
