@@ -3,7 +3,7 @@
 
 PORTNAME=	libpano13
 PORTVERSION=	2.9.18
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics java
 MASTER_SITES=	SF/panotools/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
@@ -16,8 +16,9 @@ LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
 
 USE_GNOME=	gtk20 glib20 pango atk
 
+USES=		libtool
 USE_AUTOTOOLS=	autoconf:env autoheader:env aclocal:env \
-		automake:env libtool:env
+		automake:env libtoolize
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include/gtk-2.0 \
 		-I${LOCALBASE}/include/glib-2.0 \
