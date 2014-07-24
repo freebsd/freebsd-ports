@@ -15,14 +15,14 @@ LICENSE=	MIT
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/makeinfo:${PORTSDIR}/print/texinfo
 
-USES=		gmake readline
+USES=		gmake libtool readline
 USE_JAVA=	yes
-USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-kawa-frontend \
 		--with-java-source=${JAVA_PORT_VERSION} \
 		--with-libtool
 CONFIGURE_ENV+=	MAKEINFO=${LOCALBASE}/bin/makeinfo
+MAKE_ENV+=	READLINE_LIB_PATH=${LOCALBASE}/lib
 
 MAKE_JOBS_UNSAFE=yes
 
@@ -37,6 +37,9 @@ pre-patch:
 		-e '/^JAR =/s|[a-zA-Z]*$$|${JAR}|g;'
 	@${REINPLACE_CMD} -e 's|{JAVAC-javac}|{JAVAC-${JAVAC}}|g;' \
 		-e 's|{JAVA-java}|{JAVA-${JAVA}}|g;' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e '/^READLINE_LIB_PATH =/s|$$|-L${LOCALBASE}/lib|' \
+		${WRKSRC}/bin/Makefile.in \
+		${WRKSRC}/bin/Makefile.am
 
 regression-test: build
 	cd ${WRKSRC} && ${MAKE_CMD} check
