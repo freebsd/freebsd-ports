@@ -7,7 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	http://wolfram.schneider.org/src/
 
-MAINTAINER=	wosch@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Checkout and build ports and all depending ports
 
 USES=		shebangfix perl5

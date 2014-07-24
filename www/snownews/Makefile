@@ -7,7 +7,7 @@ PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	http://kiza.kcore.de/media/software/snownews/
 
-MAINTAINER=	clsung@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A text mode RSS newsreader
 
 USES=		gmake iconv perl5

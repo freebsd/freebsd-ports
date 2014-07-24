@@ -9,7 +9,7 @@ MASTER_SITES=	SF
 PKGNAMEPREFIX=	latex-
 DISTNAME=	${PORTNAME}-0-2
 
-MAINTAINER=	hrs@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Creating dynamic online presentations with LaTeX
 
 USE_TEX=	tetex latex

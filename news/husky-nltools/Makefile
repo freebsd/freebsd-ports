@@ -8,7 +8,7 @@ CATEGORIES=	news mail
 MASTER_SITES=	SF/husky/${PORTNAME}/1.2-release
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
-MAINTAINER=	fjoe@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Nodelist tools
 
 LIB_DEPENDS=	libfidoconfig.so:${PORTSDIR}/news/husky-fidoconf

@@ -8,7 +8,7 @@ CATEGORIES=	ports-mgmt
 MASTER_SITES=	http://bxpkg.bsdroot.lv/files/
 DISTNAME=	${PORTNAME}-${DISTVERSION}
 
-MAINTAINER=	kpetrikas@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GTK+ based tool to manage binary packages on BSD systems
 
 USES=		pkgconfig

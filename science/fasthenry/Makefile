@@ -6,7 +6,7 @@ DISTVERSION=	3.0wr-021113
 CATEGORIES=	science cad
 MASTER_SITES=	http://www.wrcad.com/ftp/pub/ LOCAL/bf
 
-MAINTAINER=	bf@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Multipole-accelerated inductance analysis program
 
 HAS_CONFIGURE=	yes

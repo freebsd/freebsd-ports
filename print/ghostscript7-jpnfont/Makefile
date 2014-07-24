@@ -9,7 +9,7 @@ MASTER_SITES=	# empty
 PKGNAMESUFFIX=	7-jpnfont
 DISTFILES=	# empty
 
-MAINTAINER=	doceng@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Japanese font support for Ghostscript 7.x
 
 RUN_DEPENDS=	${LOCALBASE}/share/fonts/std.ja_JP/Ryumin-Light.gs7:${PORTSDIR}/japanese/font-std \

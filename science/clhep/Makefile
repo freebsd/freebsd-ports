@@ -7,7 +7,7 @@ CATEGORIES=	science
 MASTER_SITES=	http://wwwasd.web.cern.ch/wwwasd/lhc++/clhep/DISTRIBUTION/tarFiles/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	dhn@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Object-oriented toolkit for particle physics applications by CERN
 
 WRKSRC=		${WRKDIR}/${PORTVERSION}/${PORTNAME:tu}

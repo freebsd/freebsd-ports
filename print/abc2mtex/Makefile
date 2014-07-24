@@ -8,7 +8,7 @@ MASTER_SITES=		${MASTER_SITE_TEX_CTAN}
 MASTER_SITE_SUBDIR=	support/abc2mtex
 DISTNAME=		${PORTNAME}${PORTVERSION}
 
-MAINTAINER=		joerg@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Music TeX converter from "abc" to MusiXTeX format
 
 RUN_DEPENDS=		musixtex:${PORTSDIR}/print/musixtex

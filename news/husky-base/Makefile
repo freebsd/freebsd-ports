@@ -8,7 +8,7 @@ CATEGORIES=	news mail
 MASTER_SITES=	SF/husky/huskybase/${PORTVERSION}
 DISTNAME=	huskybase-${PORTVERSION}-src
 
-MAINTAINER=	fjoe@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Common files for Husky Fidosoft Project
 
 CONFLICTS=	husky-base-devel-[0-9]*

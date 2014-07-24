@@ -9,7 +9,7 @@ MASTER_SITES=	#http://www.msg.ameslab.gov/GAMESS/License_Agreement.html
 DISTNAME=	gamess-current
 DIST_SUBDIR=	${PORTNAME}/${PORTVERSION}
 
-MAINTAINER=	maho@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Freely obtainable ab-initio molecular orbital calculation program
 
 USES=		fortran gmake

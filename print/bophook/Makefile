@@ -8,7 +8,7 @@ MASTER_SITES=	${MASTER_SITE_TEX_CTAN}
 MASTER_SITE_SUBDIR=	macros/latex/contrib/
 DISTNAME=	${PORTNAME}
 
-MAINTAINER=	hiroto.kagotani@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Style file providing a beginning-of-page hook for LaTeX
 
 WRKSRC=		${WRKDIR}/${PORTNAME}

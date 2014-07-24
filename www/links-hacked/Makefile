@@ -7,7 +7,7 @@ PORTREVISION=	3
 CATEGORIES?=	www
 MASTER_SITES=	http://xray.sai.msu.ru/~karpov/links-hacked/downloads/ http://links-hacked.nm.ru/
 
-MAINTAINER=	peter@vereshagin.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Hacked version of a Links WWW browser
 
 LIB_DEPENDS+=	libexecinfo.so:${PORTSDIR}/devel/libexecinfo \

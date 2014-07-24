@@ -9,7 +9,7 @@ MASTER_SITES=	# empty
 PKGNAMESUFFIX=	7-commfont
 DISTFILES=	# empty
 
-MAINTAINER=	doceng@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Common files for Ghostscript 7.x CJK font support
 
 BUILD_DEPENDS=	${CMAPDIR}/ac15/cid2code.txt:${PORTSDIR}/print/adobe-cmaps

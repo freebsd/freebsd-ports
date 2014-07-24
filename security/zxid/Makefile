@@ -8,7 +8,7 @@ CATEGORIES=	security www
 MASTER_SITES=	http://zxid.org/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	clsung@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Open Source IdM for the Masses - SAML SSO
 
 LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl

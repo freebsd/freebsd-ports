@@ -8,7 +8,7 @@ CATEGORIES=	ports-mgmt
 MASTER_SITES=	http://www.meowfishies.com/code/bpm/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	sethk@meowfishies.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Graphical BSD ports collection manager
 
 RUN_DEPENDS=	portupgrade:${PORTSDIR}/ports-mgmt/portupgrade \

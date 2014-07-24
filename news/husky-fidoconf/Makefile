@@ -8,7 +8,7 @@ CATEGORIES=	news mail
 MASTER_SITES=	SF/husky/fidoconfig/0.14-release
 DISTNAME=	${PORTNAME}_${PORTVERSION}-src
 
-MAINTAINER=	fjoe@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Configuration library for Husky Fidosoft Project
 
 LIB_DEPENDS=	libsmapi.so:${PORTSDIR}/news/husky-smapi

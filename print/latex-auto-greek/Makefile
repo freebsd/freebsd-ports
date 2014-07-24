@@ -7,7 +7,7 @@ PORTREVISION=	4
 CATEGORIES=	print
 MASTER_SITES=	http://waterdeep.physics.upatras.gr/~eelvex/files/
 
-MAINTAINER=	mplekos@physics.upatras.gr
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	LaTeX package for switching between greek/latintext automatically
 
 USE_TEX=	latex

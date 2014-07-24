@@ -9,7 +9,7 @@ CATEGORIES=	x11 gnome
 MASTER_SITES=	http://www.jwz.org/xscreensaver/
 DISTNAME=	xscreensaver-${PORTVERSION}
 
-MAINTAINER=	gnome@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Save your screen while you entertain your cat (for GNOME users)
 
 LIB_DEPENDS=	libgle.so:${PORTSDIR}/graphics/gle \
