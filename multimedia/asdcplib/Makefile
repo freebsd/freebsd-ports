@@ -2,6 +2,7 @@
 
 PORTNAME=	asdcplib
 PORTVERSION=	1.11.49
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	http://download.cinecert.com/asdcplib/
 
@@ -12,6 +13,8 @@ LIB_DEPENDS=	libexpat.so:${PORTSDIR}/textproc/expat2
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--with-expat=${LOCALBASE}
+INSTALL_TARGET=	install-strip
+USES=		libtool
 USE_LDCONFIG=	yes
 
 .include <bsd.port.mk>
