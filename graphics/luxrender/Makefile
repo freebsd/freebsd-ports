@@ -53,6 +53,8 @@ post-patch:
 		${LUXRAYS_WRKSRC}/samples/smallluxgpu4/smallluxgpu.h \
 		${WRKSRC}/core/osfunc.h \
 		${WRKSRC}/shapes/mikktspace/weldmesh.c
+	@${REINPLACE_CMD} -e '/^set(Boost_USE_STATIC_LIBS/s,ON,OFF,' \
+		${LUXRAYS_WRKSRC}/cmake/Dependencies.cmake
 
 pre-configure:
 	cd ${LUXRAYS_WRKSRC} && ${SETENV} ${CMAKE_ENV} ${CMAKE_BIN} \
