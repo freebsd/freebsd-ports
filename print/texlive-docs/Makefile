@@ -11,7 +11,7 @@ DIST_SUBDIR=	TeX
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	TeX Live Typesetting System, documentation
 
-USE_XZ=		yes
+USES=		tar:xz
 USE_TEX=	texlive texmf
 NO_BUILD=	yes
 NO_WRKSRC=	yes
@@ -37,13 +37,12 @@ EXCLUDE_FILES=	\*/doc/man \
 
 EXTRACT_AFTER_ARGS=| ${TAR} xf - ${EXCLUDE_FILES:S,^,--exclude ${DISTNAME}/,}
 
-NO_STAGE=	yes
 do-extract:
 	@${MKDIR} ${WRKDIR}
 
 do-install:
 	${CAT} ${DISTDIR}/${DIST_SUBDIR}/${DISTNAME}${EXTRACT_SUFX} \
-		${EXTRACT_AFTER_ARGS} -C ${PREFIX}/share \
+		${EXTRACT_AFTER_ARGS} -C ${STAGEDIR}${PREFIX}/share \
 		--strip-components 1 --no-same-permission --no-same-owner \
 		${DISTNAME}/texmf/doc ${DISTNAME}/texmf-dist/doc
 
