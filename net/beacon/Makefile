@@ -7,7 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	net perl5 mbone ipv6
 MASTER_SITES=	SF/multicastbeacon/multicastbeacon/beacon%20v${PORTVERSION}
 
-MAINTAINER=	jmohacsi@bsd.hu
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Beacon active measurement tool to monitor multicast
 
 BUILD_DEPENDS=	p5-Net>=0:${PORTSDIR}/net/p5-Net

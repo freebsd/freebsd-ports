@@ -9,7 +9,7 @@ MASTER_SITES=	http://caspian.dotconf.net/menu/Software/SendEmail/ \
 		http://T32.TecNik93.com/FreeBSD/ports/${PORTNAME}/sources/
 DISTNAME=	${PORTNAME}-v${PORTVERSION}
 
-MAINTAINER=	itetcu@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Lightweight, completely command line based, SMTP email agent
 
 USES=		perl5

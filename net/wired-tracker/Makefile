@@ -7,7 +7,7 @@ CATEGORIES=	net
 MASTER_SITES=	http://mirror.mcx2.org/
 DISTNAME=	wiredtracker-${PORTVERSION}
 
-MAINTAINER=	dhn@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Wired tracker
 
 # This is an artificial dependancy - net/wired and net/wired-tracker

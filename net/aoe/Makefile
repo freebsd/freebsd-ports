@@ -7,7 +7,7 @@ CATEGORIES=	net kld
 MASTER_SITES=	http://www.son.org/download/
 DISTNAME=	${PORTNAME}-freebsd-${PORTVERSION}
 
-MAINTAINER=	fjoe@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	FreeBSD driver for ATA over Ethernet (AoE)
 
 NO_PACKAGE=	Should be in sync with the kernel to work correctly

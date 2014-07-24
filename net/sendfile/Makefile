@@ -8,7 +8,7 @@ CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.belwue.de/pub/unix/sendfile/current/
 DISTNAME=	${PORTNAME}-20010216
 
-MAINTAINER=	sec@42.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple Asynchronous File Transfer Reference Implementation
 
 DEPRECATED=	Fails to build with new utmpx

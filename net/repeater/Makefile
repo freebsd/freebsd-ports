@@ -7,7 +7,7 @@ CATEGORIES=	net
 MASTER_SITES=	http://koti.mbnet.fi/jtko/uvncrepeater/
 DISTNAME=	repeater${PORTVERSION:C/\.//}
 
-MAINTAINER=	rick@sloservers.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	UltraVNC repeater
 
 USES=		zip

@@ -9,7 +9,7 @@ PKGNAMESUFFIX=	-devel
 DISTNAME=	HawkNL17b1src
 DIST_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	acm@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Portable networking library (devel)
 
 CONFLICTS=	hawknl-[0-9]*

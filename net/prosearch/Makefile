@@ -7,7 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	net www
 MASTER_SITES=	http://pro.setun.net/search/download/ SF/pro-search/pro-search/${PORTVERSION}
 
-MAINTAINER=	proler@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Powerful file search
 
 USES=		perl5

@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	server/sources
 PKGNAMESUFFIX=	-server
 DISTNAME=	${PORTNAME}${PKGNAMESUFFIX}-${PORTVERSION}
 
-MAINTAINER=	wxs@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Secure Internet Live Conferencing (SILC) network server
 
 LIB_DEPENDS=	libsilc-1.1.so:${PORTSDIR}/devel/silc-toolkit

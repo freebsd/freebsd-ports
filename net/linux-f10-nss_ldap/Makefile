@@ -10,7 +10,7 @@ MASTER_SITES=	ftp://ftp.pbone.net/mirror/archive.fedoraproject.org/fedora/linux/
 PKGNAMEPREFIX=	linux-f10-
 DISTNAME=	${PORTNAME}-${NSS_LDAP_VERSION}-${RPMVERSION}
 
-MAINTAINER=	port_maintainer@herveybayaustralia.com.au
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	RFC 2307 NSS Module (Linux Fedora 10)
 
 #LICENSE=	GPLv2

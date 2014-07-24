@@ -7,7 +7,7 @@ PORTREVISION=	8
 CATEGORIES=	net-p2p ipv6 security
 MASTER_SITES=	GNU
 
-MAINTAINER=	bf@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Anonymous, distributed, reputation-based network
 
 LICENSE=	GPLv3

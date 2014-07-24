@@ -7,7 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	SF
 
-MAINTAINER=	tim@SPYDERWEB.COM.AU
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Powerful GUI MUD client written in TCL
 
 LIB_DEPENDS=	libtcl84.so:${PORTSDIR}/lang/tcl84

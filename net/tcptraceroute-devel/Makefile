@@ -9,7 +9,7 @@ MASTER_SITES=	http://michael.toren.net/code/tcptraceroute/ \
 		http://pflog.net/tcptraceroute/
 PKGNAMESUFFIX=	-devel
 
-MAINTAINER=	josh.carroll@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Traceroute implementation using TCP packets
 
 LIB_DEPENDS=	libnet.so:${PORTSDIR}/net/libnet

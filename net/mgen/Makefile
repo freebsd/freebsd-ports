@@ -10,7 +10,7 @@ MASTER_SITE_SUBDIR=	miwi
 DISTNAME=	src-${PORTNAME}-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	jmohacsi@bsd.hu
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	IP network performance tests and measurements
 
 # Dumps core on 64-bit architectures. This was reported to the upstream

@@ -8,7 +8,7 @@ CATEGORIES=	net-p2p
 MASTER_SITES=	http://www.extatic.org/downloads/uhub/
 DISTFILES=	${PORTNAME}-${PORTVERSION}-src${EXTRACT_SUFX}
 
-MAINTAINER=	yashin.dm@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	High performance peer-to-peer hub for the ADC network
 
 LICENSE=	GPLv3

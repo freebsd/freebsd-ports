@@ -7,7 +7,7 @@ CATEGORIES=	net kld
 MASTER_SITES=	http://projects.ukrweb.net/files/ \
 		http://imax.in.ua/files/
 
-MAINTAINER=	gelraen.ua@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Netgraph node for Mikrotik EoIP tunneling
 
 LICENSE=	BSD

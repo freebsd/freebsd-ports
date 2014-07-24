@@ -8,7 +8,7 @@ CATEGORIES=	net-p2p
 MASTER_SITES=	http://www.epicsol.org/~brian/got.net-archive/teknap/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.g/g/}
 
-MAINTAINER=	sam@cassiba.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Console napster client
 
 .if defined(WITH_MP3)

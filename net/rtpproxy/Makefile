@@ -7,7 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://www.rtpproxy.org/chrome/site/
 
-MAINTAINER=	sobomax@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	High-performance RTP proxy server for the SIP Express Router (SER)
 
 LIB_DEPENDS=	libgsm.so:${PORTSDIR}/audio/gsm

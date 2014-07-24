@@ -8,7 +8,7 @@ CATEGORIES=	net
 MASTER_SITES=	http://openser.org/pub/openser/${PORTVERSION}/src/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-tls_src
 
-MAINTAINER=	jesusr@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fast and configurable SIP proxy with TLS support
 
 LIB_DEPENDS=	libradiusclient-ng.so:${PORTSDIR}/net/radiusclient
