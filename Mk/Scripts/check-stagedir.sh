@@ -252,13 +252,20 @@ setup_plist_seds() {
 
 	sed_plist_sub=$(echo "${PLIST_SUB_SED}" | /bin/sh ${SCRIPTSDIR}/plist_sub_sed_sort.sh)
 	unset PLIST_SUB_SED
-	sed_files="s!${PREFIX}/!!g; ${sed_plist_sub} ${sed_portdocsexamples} \
-	    /^share\/licenses/d;"
-
-	sed_dirs="s!${PREFIX}/!!g; ${sed_plist_sub} s,^,@dirrmtry ,; \
+	# Used for generate_plist
+	sed_files_gen="s!${PREFIX}/!!g; ${sed_plist_sub} \
+	    ${sed_portdocsexamples} /^share\/licenses/d;"
+	sed_dirs_gen="s!${PREFIX}/!!g; ${sed_plist_sub} s,^,@dirrmtry ,; \
 	    ${sed_portdocsexamples} \
 	    s!@dirrmtry \(/.*\)!@unexec rmdir \"\1\" >/dev/null 2>\&1 || :!; \
 	    /^@dirrmtry share\/licenses/d;"
+
+	# These prevent ignoring DOCS/EXAMPLES dirs with sed_portdocsexamples
+	sed_files="s!${PREFIX}/!!g; ${sed_plist_sub} /^share\/licenses/d;"
+	sed_dirs="s!${PREFIX}/!!g; ${sed_plist_sub} s,^,@dirrmtry ,; \
+	    s!@dirrmtry \(/.*\)!@unexec rmdir \"\1\" >/dev/null 2>\&1 || :!; \
+	    /^@dirrmtry share\/licenses/d;"
+
 }
 
 # Generate plist from staged files
@@ -269,7 +276,7 @@ generate_plist() {
 	find ${STAGEDIR} -type f -o -type l | sort | \
 	    sed -e "s,${STAGEDIR},," >${WRKDIR}/.staged-files
 	comm -13 ${WRKDIR}/.plist-files ${WRKDIR}/.staged-files | \
-	    sed -e "${sed_files}" \
+	    sed -e "${sed_files_gen}" \
 	     >>${WRKDIR}/.staged-plist || :
 
 	### HANDLE DIRS
@@ -282,7 +289,7 @@ generate_plist() {
 	    >${WRKDIR}/.staged-dirs-dfs-sorted
 	# Find all staged dirs and then sort them by depth-first (find -ds)
 	comm -13 ${WRKDIR}/.traced-dirs ${WRKDIR}/.staged-dirs-sorted \
-	    | sort_dfs | sed "${sed_dirs}" \
+	    | sort_dfs | sed "${sed_dirs_gen}" \
 	    >>${WRKDIR}/.staged-plist || :
 }
 
