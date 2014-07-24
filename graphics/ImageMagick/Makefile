@@ -358,7 +358,7 @@ PLIST_SUB+=		PANGO="@comment "
 USE_GHOSTSCRIPT=	yes
 .endif
 
-.if ${PORT_OPTIONS:MX11}
+.if ! ${PORT_OPTIONS:MX11}
 CONFIGURE_ARGS+=	--without-x
 CONFLICTS+=		ImageMagick-6*
 PLIST_SUB+=		X11='@comment '
