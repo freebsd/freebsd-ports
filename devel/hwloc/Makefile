@@ -2,6 +2,7 @@
 
 PORTNAME=	hwloc
 PORTVERSION=	1.9
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.open-mpi.org/software/hwloc/v${PORTVERSION}/downloads/ \
 		http://icl.cs.utk.edu/open-mpi/software/hwloc/v${PORTVERSION}/downloads/
@@ -10,6 +11,7 @@ MAINTAINER=	phd_kimberlite@yahoo.co.jp
 COMMENT=	Portable Hardware Locality software package
 
 LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libpciaccess.so:${PORTSDIR}/devel/libpciaccess
 
@@ -17,7 +19,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--enable-static \
 			--enable-libxml2 \
 			--disable-gl
-USES=		pkgconfig pathfix iconv tar:bzip2
+USES=		pkgconfig pathfix iconv libtool tar:bzip2
 USE_LDCONFIG=	yes
 USE_GNOME=	libxml2
 
