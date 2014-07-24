@@ -1,12 +1,15 @@
 #!/bin/sh
 
+# $FreeBSD$
+#
 # PROVIDE: archivesmtp
 # BEFORE: mail
+# KEYWORD: shutdown
 
 . /etc/rc.subr
 
 name="archivesmtp"
-rcvar=archivesmtp_enable
+rcvar=`set_rcvar`
 
 command="%%PREFIX%%/sbin/${name}"
 
@@ -18,9 +21,10 @@ load_rc_config "$name"
 : ${archivesmtp_socket="unix:%%SOCKETBASE%%/%%SOCKETDIR%%/mta.sock"}
 : ${archivesmtp_config="%%PREFIX%%/etc/archivesmtp.conf"}
 : ${archivesmtp_pidfile="%%SOCKETBASE%%/%%SOCKETDIR%%/run.pid"}
+# archivesmtp_flags= May be used to set optional behaviours.
 
 pidfile="${archivesmtp_pidfile}"
 
-command_args="${archivesmtp_flags} -p ${archivesmtp_socket} -f ${archivesmtp_config} -u ${archivesmtp_chuser} -r ${archivesmtp_pidfile} &"
+command_args="-p ${archivesmtp_socket} -f ${archivesmtp_config} -u ${archivesmtp_chuser} -r ${archivesmtp_pidfile} ${archivesmtp_flags} &"
 
 run_rc_command "$1"

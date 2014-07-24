@@ -1,7 +1,7 @@
 sbin/archivesmtp
 etc/archivesmtp.conf.sample
-@stopdaemon archivesmtp
+man/man8/archivesmtp.8.gz
+@owner nobody
+@mode 755
 @exec mkdir -p %%SOCKETBASE%%/%%SOCKETDIR%%
-@exec chown nobody %%SOCKETBASE%%/%%SOCKETDIR%%
-@cwd %%SOCKETBASE%%
-@dirrm %%SOCKETDIR%%
+@dirrmtry %%SOCKETBASE%%/%%SOCKETDIR%%
