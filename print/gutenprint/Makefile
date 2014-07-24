@@ -3,7 +3,7 @@
 #    $MCom: ports/print/gutenprint/Makefile,v 1.8 2007/04/03 17:42:21 ahze Exp $
 
 PORTNAME=	gutenprint
-PORTVERSION=	5.2.8
+PORTVERSION=	5.2.10
 CATEGORIES=	print
 MASTER_SITES=	# empty
 DISTFILES=	# empty
