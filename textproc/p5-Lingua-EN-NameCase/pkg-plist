@@ -1,8 +1,6 @@
 %%PERL5_MAN3%%/Lingua::EN::NameCase.3.gz
 %%SITE_PERL%%/Lingua/EN/NameCase.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua/EN/NameCase/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua/EN/NameCase
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua/EN
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua-EN-NameCase/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua-EN-NameCase
 @dirrmtry %%SITE_PERL%%/Lingua/EN
 @dirrmtry %%SITE_PERL%%/Lingua
