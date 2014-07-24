@@ -3,6 +3,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/_sources/design.txt
 %%PORTDOCS%%%%DOCSDIR%%/_sources/developers.txt
 %%PORTDOCS%%%%DOCSDIR%%/_sources/extensions.txt
+%%PORTDOCS%%%%DOCSDIR%%/_sources/glossary.txt
 %%PORTDOCS%%%%DOCSDIR%%/_sources/history.txt
 %%PORTDOCS%%%%DOCSDIR%%/_sources/hooks.txt
 %%PORTDOCS%%%%DOCSDIR%%/_sources/index.txt
@@ -35,6 +36,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/design.html
 %%PORTDOCS%%%%DOCSDIR%%/developers.html
 %%PORTDOCS%%%%DOCSDIR%%/extensions.html
+%%PORTDOCS%%%%DOCSDIR%%/glossary.html
 %%PORTDOCS%%%%DOCSDIR%%/history.html
 %%PORTDOCS%%%%DOCSDIR%%/hooks.html
 %%PORTDOCS%%%%DOCSDIR%%/index.html
@@ -46,6 +48,6 @@
 %%PORTDOCS%%%%DOCSDIR%%/search.html
 %%PORTDOCS%%%%DOCSDIR%%/searchindex.js
 %%PORTDOCS%%%%DOCSDIR%%/tips.html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/_static
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/_sources
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/_sources
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/_static
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%
