@@ -7,7 +7,7 @@ PORTREVISION=	4
 CATEGORIES=	misc python
 MASTER_SITES=	http://www.mired.org/downloads/
 
-MAINTAINER=	mwm@mired.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tools for decoding and using the output of a :Cue:Cat(TM) wand scanner
 
 .if !defined(WITHOUT_X11)

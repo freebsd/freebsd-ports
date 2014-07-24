@@ -7,7 +7,7 @@ PORTREVISION=	4
 CATEGORIES=	net-mgmt www
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}%20stable/${PORTVERSION}
 
-MAINTAINER=	lth@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple grapher of SNMP data with RRD
 
 RUN_DEPENDS=	rrdtool:${PORTSDIR}/databases/rrdtool \

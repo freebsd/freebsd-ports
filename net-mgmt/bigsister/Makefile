@@ -8,7 +8,7 @@ CATEGORIES=	net-mgmt
 MASTER_SITES=		SF/${PORTNAME}/Big%20Sister/${PORTVERSION}
 DISTNAME=		big-sister-${PORTVERSION}
 
-MAINTAINER=	freebsd@troback.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	SNMP-based network and system monitor with web interface
 
 RUN_DEPENDS=	net-snmp>=0:${PORTSDIR}/net-mgmt/net-snmp \

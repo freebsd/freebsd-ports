@@ -8,7 +8,7 @@ CATEGORIES=	net-mgmt
 MASTER_SITES=	ftp://ftp.shrubbery.net/pub/rancid/
 PKGNAMESUFFIX=	-devel
 
-MAINTAINER=	jmohacsi@bsd.hu
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Really Awesome New Cisco confIg Differ
 
 LIB_DEPENDS=	libexpect.so:${PORTSDIR}/lang/expect

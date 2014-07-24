@@ -8,7 +8,7 @@ PORTREVISION=	8
 CATEGORIES=	net-mgmt
 MASTER_SITES=	CENKES http://freebsd.alaskaparadise.com/source/
 
-MAINTAINER=	horde@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Network service monitor
 
 USE_HORDE=	base pkg-message

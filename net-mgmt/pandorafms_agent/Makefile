@@ -6,7 +6,7 @@ PORTVERSION=	${PANDORA_VERSION}
 PORTREVISION=	1
 CATEGORIES=	net-mgmt
 
-MAINTAINER=	koichiro@rworks.jp
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Pandora FMS agent, Perl version
 
 LICENSE=	${PANDORA_LICENSE}

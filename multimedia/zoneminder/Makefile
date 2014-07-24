@@ -9,7 +9,7 @@ MASTER_SITES=	http://www2.zoneminder.com/downloads/ \
 		http://www.zoneminder.com/downloads/
 DISTNAME=	ZoneMinder-${PORTVERSION}
 
-MAINTAINER=	pakhom706@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Complete security camera solution, fully web based with image analysis
 
 LICENSE=	GPLv2

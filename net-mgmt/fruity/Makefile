@@ -7,7 +7,7 @@ PORTREVISION=	3
 CATEGORIES=	net-mgmt www
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-1.0-rc2
 
-MAINTAINER=	dan@langille.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fruity is a PHP based web-frontend to your Nagios configuration
 
 RUN_DEPENDS=	${LOCALBASE}/libexec/nagios/check_nagios:${PORTSDIR}/net-mgmt/nagios-plugins

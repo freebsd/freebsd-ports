@@ -14,7 +14,7 @@ PATCHFILES=
 PATCH_DIST_STRIP=	-p1
 PATCHLEVEL=
 
-MAINTAINER=	sem@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Web-driven graphing interface for RRDTool
 
 LICENSE=	GPLv2

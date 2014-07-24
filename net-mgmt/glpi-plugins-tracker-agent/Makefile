@@ -10,7 +10,7 @@ MASTER_SITES=	https://forge.indepnet.net/attachments/download/512/ \
 PKGNAMEPREFIX=	glpi-plugins-tracker-
 DISTNAME=	glpi-tracker_agent-1.5.3
 
-MAINTAINER=	d.durieux@siprossii.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Agent get informations of networking devices by SNMP for GLPI
 
 RUN_DEPENDS=	p5-Net-SNMP>=0:${PORTSDIR}/net-mgmt/p5-Net-SNMP \

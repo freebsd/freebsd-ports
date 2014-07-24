@@ -8,7 +8,7 @@ CATEGORIES=	net-mgmt ipv6
 MASTER_SITES=	http://ipv6.niif.hu/~mohacsi/downloads/
 DISTNAME=	ASpath-tree-v${PORTVERSION}
 
-MAINTAINER=	jmohacsi@bsd.hu
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Checks IPv6 routes' stability and correctness on IPv6 internet
 
 RUN_DEPENDS=	p5-Net-Telnet>=0:${PORTSDIR}/net/p5-Net-Telnet \

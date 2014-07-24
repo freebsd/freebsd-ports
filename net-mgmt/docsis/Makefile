@@ -7,7 +7,7 @@ PORTREVISION=	5
 CATEGORIES=	net-mgmt
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	jflemer@alum.rpi.edu
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	DOCSIS(tm) binary configuration file encoder/decoder
 
 BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4

@@ -7,7 +7,7 @@ MASTER_SITES=	# none
 PKGNAMEPREFIX=	nagios-
 DISTFILES=	# none
 
-MAINTAINER=	kuriyama@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Nagios plugin for kumofs manager/server
 
 RUN_DEPENDS=	\

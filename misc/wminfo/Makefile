@@ -8,7 +8,7 @@ CATEGORIES=	misc windowmaker
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	pav
 
-MAINTAINER=	t.kempka@web.de
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Dockapp to run shell scripts and display the output
 
 DEPRECATED=	Fails to build with new utmpx
