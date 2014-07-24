@@ -16,9 +16,9 @@ CONFLICTS=	ptpd2-devel.*
 
 ETCDIR=	${PREFIX}/etc/${PORTNAME}${PKGNAMESUFFIX}
 
-USES=	gmake
+USES=		gmake libtool
 GNU_CONFIGURE=	yes
-USE_AUTOTOOLS=	autoconf:env aclocal:env automake:env libtool
+USE_AUTOTOOLS=	autoconf:env aclocal:env automake:env libtoolize
 
 PORTDOCS=	*
 
