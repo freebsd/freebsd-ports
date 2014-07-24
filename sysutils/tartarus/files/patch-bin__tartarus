@@ -56,6 +56,15 @@
  #=back
  #
  #=cut
+@@ -616,7 +649,7 @@
+ constructFilename() {
+     local INC=""
+     if isEnabled "$INCREMENTAL_BACKUP"; then
+-        local BASEDON=$(date -r "$INCREMENTAL_TIMESTAMP_FILE" '+%Y%m%d-%H%M')
++        local BASEDON=$(stat -f '%Sm' -t '%Y%m%d-%H%M' "$INCREMENTAL_TIMESTAMP_FILE")
+         INC="-inc-${BASEDON}"
+     fi
+     local CHUNK=""
 @@ -638,10 +671,10 @@
  case "$ASSEMBLY_METHOD" in
      tar|"")
