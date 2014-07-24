@@ -3,6 +3,7 @@
 
 PORTNAME=	ladvd
 PORTVERSION=	1.0.4
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	GOOGLE_CODE \
 		http://blinkenlights.nl/software/ladvd/
@@ -12,7 +13,7 @@ COMMENT=	Minimal LLDP/CDP daemon
 
 LICENSE=	BSD
 
-LIB_DEPENDS=	libevent-1.4.so:${PORTSDIR}/devel/libevent
+LIB_DEPENDS=	libevent.so:${PORTSDIR}/devel/libevent2
 
 USERS=		ladvd
 GROUPS=		${USERS}

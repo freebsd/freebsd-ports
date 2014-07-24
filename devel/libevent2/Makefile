@@ -3,7 +3,7 @@
 
 PORTNAME=	libevent2
 PORTVERSION=	2.0.21
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	http://cloud.github.com/downloads/libevent/libevent/
 DISTNAME=	${PORTNAME:S/2//}-${DISTVERSION}-stable
@@ -11,39 +11,24 @@ DISTNAME=	${PORTNAME:S/2//}-${DISTVERSION}-stable
 MAINTAINER=	mm@FreeBSD.org
 COMMENT=	API for executing callback functions on events or timeouts
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 GNU_CONFIGURE=	yes
-USES=		libtool:oldver pathfix
-USE_LDCONFIG=	${PREFIX}/lib/event2
+USES=		libtool pathfix
+USE_LDCOFNIG=	yes
 
 OPTIONS_DEFINE=	OPENSSL THREADS
 OPTIONS_DEFAULT=	OPENSSL THREADS
+OPTIONS_SUB=	yes
+INSTALL_TARGET=	install-strip
 
-CONFIGURE_ARGS+=	--libdir=${PREFIX}/lib/event2
+OPENSSL_USE=	openssl=yes
+OPENSSL_CPPFLAGS=	-I${OPENSSLINC}
+OPENSLS_LDFLAGS=	-L${OPENSSLLIB}
+OPENSSL_CONFIGURE_ENABLE=	openssl
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MOPENSSL}
-USE_OPENSSL=	yes
-CPPFLAGS+=	-I${OPENSSLINC}
-LDFLAGS+=	-L${OPENSSLLIB}
-PLIST_SUB+=		OPENSSL=""
-.else
-CONFIGURE_ARGS+=	--disable-openssl
-PLIST_SUB+=		OPENSSL="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MTHREADS}
-PLIST_SUB+=		THREADS=""
-.else
-CONFIGURE_ARGS+=	--disable-thread-support
-PLIST_SUB+=		THREADS="@comment "
-.endif
-
-post-install:
-	@${INSTALL_SCRIPT} ${WRKSRC}/event_rpcgen.py ${STAGEDIR}${PREFIX}/bin/event2_rpcgen.py
+THREADS_CONFIGURE_ENABLE=	support
 
 regression-test: build
 	@(${SH} ${WRKSRC}/test/regress)

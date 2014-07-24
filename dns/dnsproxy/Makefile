@@ -3,13 +3,14 @@
 
 PORTNAME=	dnsproxy
 PORTVERSION=	1.16
+PORTREVISION=	1
 CATEGORIES=	dns
 MASTER_SITES=	http://www.wolfermann.org/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	proxy for DNS queries
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/libevent.so:${PORTSDIR}/devel/libevent
+LIB_DEPENDS=	libevent.so:${PORTSDIR}/devel/libevent2
 
 GNU_CONFIGURE=	yes
 

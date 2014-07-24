@@ -29,15 +29,11 @@ PORTDOCS=	CREDITS Changelog FEATURES LICENSE README README.svn \
 		ietf67-design-02.pdf requirements.txt
 PLIST_SUB+=	PYTHON=${PYTHON} MUNIN=${MUNIN}
 
-OPTIONS_DEFINE=	THREADS PYTHON GOST ECDSA MUNIN DOCS
+OPTIONS_DEFINE=	THREADS PYTHON GOST ECDSA MUNIN DOCS LIBEVENT
 OPTIONS_DEFAULT=THREADS ECDSA
 
-OPTIONS_RADIO=	LIBEVENT
-OPTIONS_RADIO_LIBEVENT=	LIBEVENT14 LIBEVENT20
 
-LIBEVENT_DESC=	Enable whenever using many (10000) outgoing ports
-LIBEVENT14_DESC=Build against libevent-1.4 (devel/libevent)
-LIBEVENT20_DESC=Build against libevent-2.0 (devel/libevent2)
+LIBEVENT_DESC=	Build against libevent (devel/libevent2)
 GOST_DESC=	Enable GOST support (requires OpenSSL >= 1.0)
 ECDSA_DESC=	Enable ECDSA (elliptic curve) support (OpenSSL >= 1.0)
 MUNIN_DESC=	Install Munin plugin
@@ -83,14 +79,10 @@ MUNIN=
 MUNIN=		"@comment "
 .endif
 
-.if ${PORT_OPTIONS:MLIBEVENT14}
-LIB_DEPENDS+=	libevent-1.4.so:${PORTSDIR}/devel/libevent
-CONFIGURE_ARGS+=--with-libevent=${LOCALBASE}
-.elif ${PORT_OPTIONS:MLIBEVENT20}
-LIB_DEPENDS+=	libevent-2.0.so:${PORTSDIR}/devel/libevent2
+.if ${PORT_OPTIONS:MLIBEVENT}
+LIB_DEPENDS+=	libevent.so:${PORTSDIR}/devel/libevent2
 USES+=		pkgconfig
-CONFIGURE_ARGS+=--with-libevent=${NONEXISTENT}
-CONFIGURE_ENV+=	found_libevent=yes
+CONFIGURE_ARGS+=--with-libevent
 CPPFLAGS+=	$$(pkg-config libevent --cflags-only-I)
 LDFLAGS+=	$$(pkg-config libevent --libs-only-L)
 .else

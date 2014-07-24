@@ -3,6 +3,7 @@
 
 PORTNAME=	ntp
 PORTVERSION=	4.2.7p453
+PORTREVISION=	1
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://www.eecis.udel.edu/~ntp/ntp_spool/ntp4/ntp-dev/ \
 		ftp://ftp.archive.de.uu.net/pub/unix/ntp/ntp4/ntp-dev/ \
@@ -18,7 +19,7 @@ USE_AUTOTOOLS=	automake
 AUTOMAKE_ARGS=	--add-missing
 OPTIONS_SUB=	yes
 USES=		pathfix shebangfix libtool
-LIB_DEPENDS=	libevent-2.0.so:${PORTSDIR}/devel/libevent2
+LIB_DEPENDS=	libevent.so:${PORTSDIR}/devel/libevent2
 
 NTP_SHEBANG_FILES=	sbin/ntp-wait sbin/ntptrace
 

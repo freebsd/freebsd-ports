@@ -6,6 +6,12 @@ You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
 20140723:
+  AFFECTS: users of devel/libevent
+
+  libevent1 as been replaced by libevent2 via the compatibility layer.
+  Make sure to remove libevent before upgrading the regular way.
+
+20140723:
   AFFECTS: users of security/scanlogd
   AUTHOR: tgyurci@gmail.com
 

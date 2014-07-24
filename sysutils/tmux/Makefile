@@ -3,7 +3,7 @@
 
 PORTNAME=	tmux
 DISTVERSION=	1.9a
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION:R}
 
@@ -26,9 +26,8 @@ PLIST_DIRSTRY=	etc/bash_completion.d
 PORTDOCS=	CHANGES FAQ README TODO
 PORTEXAMPLES=	*
 
-OPTIONS_DEFINE=	DOCS EXAMPLES LIBEVENT2 LIBEVENT_STATIC BACKSPACE
+OPTIONS_DEFINE=	DOCS EXAMPLES LIBEVENT_STATIC BACKSPACE
 
-LIBEVENT2_DESC=	Use libevent version 2
 LIBEVENT_STATIC_DESC=	Build with static libevent
 BACKSPACE_DESC=	Build with tty/keys patch
 
@@ -39,8 +38,9 @@ LIBEVENT2_CONFIGURE_ENV=	LIBEVENT_CFLAGS="-I${LOCALBASE}/include/event2/compat" 
 				LIBEVENT_LIBS="-L${LOCALBASE}/lib/event2 -levent"
 LIBEVENT2_CONFIGURE_ENV_OFF=	LIBEVENT_CFLAGS="-I${LOCALBASE}/include" \
 				LIBEVENT_LIBS="-L${LOCALBASE}/lib -levent"
-LIBEVENT2_LIB_DEPENDS=		libevent-2.0.so:${PORTSDIR}/devel/libevent2
-LIBEVENT2_LIB_DEPENDS_OFF=	libevent-1.4.so:${PORTSDIR}/devel/libevent
+
+LIBEVENT_STATIC_LIB_DEPENDS_OFF=	libevent.so:${PORTSDIR}/devel/libevent2
+LIBEVENT_STATIC_BUILD_DEPENDS=	${LOCALBASE}/lib/libevent.a:${PORTSDIR}/devel/libevent2
 
 # 1.9a was released as an errata to 1.9
 # this port was never updated to 1.9
@@ -52,11 +52,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|/etc/tmux.conf|${PREFIX}/etc/tmux.conf|g' ${WRKSRC}/CHANGES
 
 .if ${PORT_OPTIONS:MLIBEVENT_STATIC}
-.if ${PORT_OPTIONS:MLIBEVENT2}
-LESTATIC=	${LOCALBASE}/lib/event2/libevent.a
-.else
 LESTATIC=	${LOCALBASE}/lib/libevent.a
-.endif
 post-configure:
 	${REINPLACE_CMD} -e '/LIBS/s|-levent[^[:blank:]]*|${LESTATIC}|' \
 		${WRKSRC}/${MAKEFILE}

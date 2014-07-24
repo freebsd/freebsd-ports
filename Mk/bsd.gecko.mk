@@ -133,7 +133,7 @@ cairo_LIB_DEPENDS=	libcairo.so:${PORTSDIR}/graphics/cairo
 cairo_MOZ_OPTIONS=	--enable-system-cairo
 cairo_EXTRACT_AFTER_ARGS=	--exclude mozilla*/gfx/cairo/cairo
 
-event_LIB_DEPENDS=	libevent-2.0.so:${PORTSDIR}/devel/libevent2
+event_LIB_DEPENDS=	libevent.so:${PORTSDIR}/devel/libevent2
 event_MOZ_OPTIONS=	--with-system-libevent
 event_EXTRACT_AFTER_ARGS=	--exclude mozilla*/ipc/chromium/src/third_party/libevent
 

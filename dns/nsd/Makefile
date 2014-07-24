@@ -3,6 +3,7 @@
 
 PORTNAME=	nsd
 PORTVERSION=	4.0.3
+PORTREVISION=	1
 CATEGORIES=	dns ipv6
 MASTER_SITES=	http://www.nlnetlabs.nl/downloads/nsd/	\
 		ftp://ftp.rhnet.is/pub/nsd/
@@ -62,7 +63,7 @@ RRL_DESC=		Response Rate Limiting
 EUI_RRTYPES_DESC=	EUI48 and EUI64 RRtypes support
 RECVMMSG_DESC=		Enable use of recvmmsg and sendmmsg
 
-LIB_DEPENDS+=	libevent-1.4.so:${PORTSDIR}/devel/libevent
+LIB_DEPENDS+=	libevent.so:${PORTSDIR}/devel/libevent2
 
 ROOT_SERVER_CONFIGURE_ENABLE=	root-server
 LARGEFILE_CONFIGURE_ENABLE=	largefile

@@ -2,7 +2,7 @@
 
 PORTNAME=	aprsc
 PORTVERSION=	2.0.14
-PORTREVISION=	2
+PORTREVISION=	3
 DISTVERSIONSUFFIX=	.g28c5a6a
 CATEGORIES=	net hamradio
 MASTER_SITES=	http://he.fi/aprsc/down/ \
@@ -15,10 +15,10 @@ COMMENT=	Plain APRS-IS server
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libevent-2.0.so:${PORTSDIR}/devel/libevent2
+LIB_DEPENDS=	libevent.so:${PORTSDIR}/devel/libevent2
 
 CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib/event2
+LDFLAGS+=	-L${LOCALBASE}/lib
 MAKEFILE=	GNUmakefile
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/src

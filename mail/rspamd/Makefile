@@ -2,7 +2,7 @@
 
 PORTNAME=	rspamd
 PORTVERSION=	0.6.9
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	mail
 MASTER_SITES=	http://rspamd.com/downloads/
 
@@ -13,7 +13,7 @@ LICENSE=	BSD2CLAUSE
 
 LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre \
 		libgmime-2.4.so:${PORTSDIR}/mail/gmime24 \
-		libevent.so:${PORTSDIR}/devel/libevent
+		libevent.so:${PORTSDIR}/devel/libevent2
 
 OPTIONS_DEFINE=	GPERF REDIRECTOR
 GPERF_DESC=		google perf-tools profiling

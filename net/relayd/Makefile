@@ -2,7 +2,7 @@
 
 PORTNAME=	relayd
 PORTVERSION=	5.4.20131122
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net
 MASTER_SITES=	GH
 
@@ -19,6 +19,8 @@ USES=		uidfix
 USE_GITHUB=	yes
 USE_RC_SUBR=	relayd
 
+BROKEN=		Abuse evbuffer API
+
 CFLAGS+=	-I${PREFIX}/include -Wall
 
 MAKE_ARGS+=	BINDIR=${PREFIX}/sbin MANDIR=${PREFIX}/man/man
@@ -32,10 +34,10 @@ LIBEVENT_STATIC_DESC=	Build with static libevent
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MLIBEVENT_STATIC}
-BUILD_DEPENDS=	${LOCALBASE}/lib/libevent.a:${PORTSDIR}/devel/libevent
+BUILD_DEPENDS=	${LOCALBASE}/lib/libevent.a:${PORTSDIR}/devel/libevent2
 MAKE_ARGS+=	LIBEVENT=${LOCALBASE}/lib/libevent.a
 .else
-LIB_DEPENDS=	libevent-1.4.so:${PORTSDIR}/devel/libevent
+LIB_DEPENDS=	libevent.so:${PORTSDIR}/devel/libevent2
 MAKE_ARGS+=	LIBEVENT=-levent
 .endif
 

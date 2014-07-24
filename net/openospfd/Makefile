@@ -2,7 +2,7 @@
 
 PORTNAME=	openospfd
 PORTVERSION=	4.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	OPENBSD/OpenBGPD:openbsd \
 		LOCAL/flz/openospfd/:freebsd
@@ -18,7 +18,7 @@ LICENSE=	ISCL
 
 CONFLICTS=	zebra-0* quagga-0*
 
-LIB_DEPENDS=	libevent-1.4.so:${PORTSDIR}/devel/libevent
+LIB_DEPENDS=	libevent.so:${PORTSDIR}/devel/libevent2
 
 MAKE_ENV=	BINDIR="${PREFIX}/sbin" \
 		MANDIR="${PREFIX}/man/man"

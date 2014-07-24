@@ -3,7 +3,7 @@
 
 PORTNAME=	crawl
 PORTVERSION=	0.4
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	www
 MASTER_SITES=	http://www.monkey.org/~provos/
 
@@ -12,7 +12,7 @@ COMMENT=	Small, efficient web crawler with advanced features
 
 OPTIONS_DEFINE=	EXAMPLES
 
-LIB_DEPENDS=	libevent-2.0.so:${PORTSDIR}/devel/libevent2
+LIB_DEPENDS=	libevent.so:${PORTSDIR}/devel/libevent2
 
 USES=		pkgconfig
 
