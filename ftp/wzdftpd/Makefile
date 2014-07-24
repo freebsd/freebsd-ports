@@ -3,7 +3,7 @@
 
 PORTNAME=	wzdftpd
 PORTVERSION=	0.8.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	ftp ipv6
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-sources/${PORTNAME}-${PORTVERSION:R}
 
@@ -21,7 +21,7 @@ HOWL_DESC=	Zeroconf support via Howl
 
 OPTIONS_SUB=	yes
 
-USES=		pkgconfig
+USES=		pkgconfig libtool
 USE_AUTOTOOLS=	libtoolize aclocal autoheader automake autoconf
 LIBTOOLIZE_ARGS=--copy --force
 ACLOCAL_ARGS=	-I m4 -I ac-helpers
