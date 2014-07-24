@@ -12,29 +12,19 @@ COMMENT=	Text-based calendar and scheduling application
 LICENSE=	BSD2CLAUSE
 
 OPTIONS_DEFINE=	DOCS NLS
+OPTIONS_SUB=	yes
 
 USES=		gmake
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--without-asciidoc
 
-.include <bsd.port.options.mk>
-
-.if empty(PORT_OPTIONS:MDOCS)
-CONFIGURE_ARGS+=	--disable-docs
-.endif
-
-.if ${PORT_OPTIONS:MNLS}
-USES+=		gettext
-PLIST_SUB+=	NLS=""
-.else
-CONFIGURE_ARGS+=	--disable-nls
-PLIST_SUB+=	NLS="@comment "
-.endif
+DOCS_CONFIGURE_ENABLE=	docs
+NLS_CONFIGURE_ENABLE=	nls
+NLS_USES=	gettext
 
 post-patch:
-.if ${PORT_OPTIONS:MDOCS}
 	@${REINPLACE_CMD} -e 's|^docdir = .*|docdir = ${DOCSDIR}|' ${WRKSRC}/doc/Makefile.in
-.endif
+	@${REINPLACE_CMD} -e 's|-R$$found_dir||' ${WRKSRC}/configure
 
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/doc/${PORTNAME}.1 ${STAGEDIR}${MANPREFIX}/man/man1/${PORTNAME}.1
