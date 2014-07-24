@@ -31,9 +31,9 @@ include/hwloc/openfabrics-verbs.h
 include/hwloc/plugins.h
 include/hwloc/rename.h
 lib/libhwloc.a
-lib/libhwloc.la
 lib/libhwloc.so
-lib/libhwloc.so.10
+lib/libhwloc.so.5
+lib/libhwloc.so.5.5.0
 libdata/pkgconfig/hwloc.pc
 man/man1/hwloc-annotate.1.gz
 man/man1/hwloc-assembler-remote.1.gz
