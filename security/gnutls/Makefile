@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	gnutls
-PORTVERSION=	3.2.15
+PORTVERSION=	3.2.16
 CATEGORIES=	security net
 MASTER_SITES=	GNUPG/gnutls/v3.2
 
@@ -47,5 +47,6 @@ post-patch:
 post-install:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/examples/*.[ch] ${STAGEDIR}${EXAMPLESDIR}
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libgnutls*.so.*
 
 .include <bsd.port.mk>
