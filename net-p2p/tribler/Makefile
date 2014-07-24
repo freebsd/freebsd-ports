@@ -3,7 +3,7 @@
 
 PORTNAME=	tribler
 PORTVERSION=	6.0.3
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	net-p2p
 #MASTER_SITES=	http://dl.tribler.org/
 MASTER_SITES=	GENTOO/distfiles \
@@ -20,7 +20,7 @@ LICENSE=	LGPL21 MIT
 LICENSE_COMB=	multi
 
 EXTRACT_DEPENDS=${UNZIP_CMD}:${PORTSDIR}/archivers/unzip
-LIB_DEPENDS=	libevent-2.0.so:${PORTSDIR}/devel/libevent2 \
+LIB_DEPENDS=	libevent.so:${PORTSDIR}/devel/libevent2 \
 		libvlc.so:${PORTSDIR}/multimedia/vlc
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:${PORTSDIR}/databases/py-sqlite3 \
 		${PYTHON_PKGNAMEPREFIX}netifaces>0:${PORTSDIR}/net/py-netifaces \
@@ -65,9 +65,9 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|-O2|| ; \
 		 s|CPPFLAGS|CXXFLAGS| ; \
 		 s|-g -I$${LIBEVENT_HOME}/include|-I$${LOCALBASE}/include| ; \
-		 s|-levent -lstdc++|-levent-2.0| ; \
+		 s|-lstdc++|| ; \
 		 s|g++|$${CXX}| ; \
-		 s|$${LIBEVENT_HOME}/lib|$${LOCALBASE}/lib/event2|g' \
+		 s|$${LIBEVENT_HOME}/lib|$${LOCALBASE}/lib|g' \
 		${WRKDIR}/usr/share/tribler/Tribler/SwiftEngine/Makefile
 	@${REINPLACE_CMD} 's|linux|freebsd|' \
 		${WRKDIR}/usr/share/tribler/Tribler/vlc.py

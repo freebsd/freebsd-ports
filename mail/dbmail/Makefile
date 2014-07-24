@@ -3,7 +3,7 @@
 
 PORTNAME=	dbmail
 PORTVERSION=	3.1.15
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail
 MASTER_SITES=	http://git.dbmail.eu/paul/dbmail/snapshot/
 
@@ -15,7 +15,7 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	libgmime-2.6.so:${PORTSDIR}/mail/gmime26 \
 		libzdb.so:${PORTSDIR}/databases/libzdb \
 		libmhash.so:${PORTSDIR}/security/mhash \
-		libevent-2.0.so:${PORTSDIR}/devel/libevent2
+		libevent.so:${PORTSDIR}/devel/libevent2
 
 BUILD_DEPENDS=	asciidoc:${PORTSDIR}/textproc/asciidoc \
 		xmlto:${PORTSDIR}/textproc/xmlto \

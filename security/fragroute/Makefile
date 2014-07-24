@@ -3,7 +3,7 @@
 
 PORTNAME=	fragroute
 PORTVERSION=	1.2
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	security net
 MASTER_SITES=	http://monkey.org/~dugsong/fragroute/ \
 		${MASTER_SITE_PACKETSTORM}
@@ -15,7 +15,7 @@ COMMENT=	Tool for intercepting, modifying, and rewriting egress traffic
 LICENSE=	BSD3CLAUSE
 
 LIB_DEPENDS=	libdnet.so:${PORTSDIR}/net/libdnet \
-		libevent-1.4.so:${PORTSDIR}/devel/libevent
+		libevent.so:${PORTSDIR}/devel/libevent2
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--with-libdnet=${LOCALBASE} \

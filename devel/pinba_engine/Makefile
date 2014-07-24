@@ -3,7 +3,7 @@
 
 PORTNAME=	pinba_engine
 PORTVERSION=	2011.08.18
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/tony2001/pinba_engine/tarball/${GITVERSION}/
 DISTNAME=	tony2001-pinba_engine-${GITVERSION}
@@ -12,7 +12,7 @@ MAINTAINER=	raven428@gmail.com
 COMMENT=	Mysql-engine part of statistics server for PHP
 
 BUILD_DEPENDS=	${LOCALBASE}/include/google/protobuf/descriptor.h:${PORTSDIR}/devel/protobuf \
- 		${LOCALBASE}/include/event.h:${PORTSDIR}/devel/libevent \
+ 		${LOCALBASE}/include/event.h:${PORTSDIR}/devel/libevent2 \
 		${LOCALBASE}/include/Judy.h:${PORTSDIR}/devel/judy \
 		${LOCALBASE}/lib/mysql/plugin:${PORTSDIR}/${_MYSQL_SERVER} \
  		${NONEXISTENT}:${PORTSDIR}/${_MYSQL_SERVER}:configure \

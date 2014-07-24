@@ -15,7 +15,7 @@ COMMENT=	File server for Mac OS X
 LICENSE=	GPLv2
 
 LIB_DEPENDS=	libgcrypt.so:${PORTSDIR}/security/libgcrypt \
-    		libevent-2.0.so:${PORTSDIR}/devel/libevent2
+    		libevent.so:${PORTSDIR}/devel/libevent2
 
 USE_BDB=	5+
 USES=		iconv gmake pkgconfig perl5 libtool tar:bzip2
@@ -30,8 +30,7 @@ CONFIGURE_ARGS+=	--with-pkgconfdir=${PREFIX}/etc \
 			${ICONV_CONFIGURE_BASE} \
 			--localstatedir=/var \
 			--disable-bundled-libevent \
-			--with-libevent-header=${LOCALBASE}/include \
-			--with-libevent-lib=${LOCALBASE}/lib/event2
+			--with-libevent-header=${LOCALBASE}/include
 
 OPTIONS_DEFINE=PAM KRB5 LDAP SENDFILE KERBEROS DTRACE DBUS MYSQL ACL TCPWRAP
 OPTIONS_DEFAULT=KERBEROS DBUS TCPWRAP

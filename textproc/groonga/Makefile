@@ -2,7 +2,7 @@
 
 PORTNAME=	groonga
 PORTVERSION=	3.0.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc
 MASTER_SITES=	http://packages.groonga.org/source/groonga/
 
@@ -55,7 +55,7 @@ PLIST_SUB+=	MECAB="@comment "
 CONFIGURE_ARGS+=	--with-libevent=${LOCALBASE} \
 			--with-message-pack=${LOCALBASE} \
 			--enable-zeromq
-LIB_DEPENDS+=	libevent-1.4.so:${PORTSDIR}/devel/libevent \
+LIB_DEPENDS+=	libevent.so:${PORTSDIR}/devel/libevent2 \
 		libmsgpack.so:${PORTSDIR}/devel/msgpack \
 		libzmq.so:${PORTSDIR}/net/libzmq2
 PLIST_SUB+=	SUGGEST=""

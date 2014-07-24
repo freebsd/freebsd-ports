@@ -6312,3 +6312,4 @@ print/dvipsk-tetex|print/tex-dvipsk|2014-07-23|Use TeXLive version
 print/dvipdfmx|print/tex-dvipdfmx|2014-07-23|Use TeXLive version
 print/jadetex|print/tex-jadetex|2014-07-23|Use TeXLive version
 japanese/teTeX|print/texlive-full|2014-07-23|Use TeXLive
+devel/libevent|devel/libevent2|2014-07-27|libevent2 replaced libevent

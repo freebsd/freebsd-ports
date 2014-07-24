@@ -3,7 +3,7 @@
 
 PORTNAME=	thunderbird
 DISTVERSION=	24.6.0
-PORTREVISION=	1
+PORTREVISION=	3
 CATEGORIES=	mail news net-im ipv6
 MASTER_SITES=	MOZILLA/${PORTNAME}/releases/${DISTVERSION}/source \
 		https://ftp.mozilla.org/pub/mozilla.org/${PORTNAME}/candidates/${DISTVERSION}-candidates/build2/source/

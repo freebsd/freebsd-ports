@@ -1,6 +1,5 @@
 include/dnsres.h
 lib/libdnsres.a
-lib/libdnsres.la
 lib/libdnsres.so
 lib/libdnsres.so.0
 lib/libdnsres.so.0.0.1

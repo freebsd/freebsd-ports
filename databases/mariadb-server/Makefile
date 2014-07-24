@@ -2,7 +2,7 @@
 
 PORTNAME=	mariadb
 PORTVERSION=	5.3.12
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	databases ipv6
 MASTER_SITES=	http://ftp.osuosl.org/pub/mariadb/${PORTNAME}-${PORTVERSION}/kvm-tarbake-jaunty-x86/ \
 		http://mirrors.supportex.net/mariadb/${PORTNAME}-${PORTVERSION}/kvm-tarbake-jaunty-x86/ \
@@ -48,7 +48,7 @@ OPENSSL_DESC=	Use OpenSSL instead of bundled yassl
 
 
 .if !defined(MARIADB_CLIENT_SLAVE)
-LIB_DEPENDS=	libevent-1.4.so:${PORTSDIR}/devel/libevent
+LIB_DEPENDS=	libevent.so:${PORTSDIR}/devel/libevent2
 
 MANS=	innochecksum.1 my_print_defaults.1 myisam_ftdump.1 myisamchk.1 \
 	myisamlog.1 myisampack.1 mysql.server.1 mysql_client_test_embedded.1 \

@@ -2,7 +2,7 @@
 
 PORTNAME=	grok
 PORTVERSION=	1.20110708.1
-PORTREVISION=	2
+PORTREVISION=	3
 PORTEPOCH=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	GOOGLE_CODE
@@ -14,7 +14,7 @@ OPTIONS_DEFINE=	DOCS
 
 BUILD_DEPENDS=	gperf>=3.0.3:${PORTSDIR}/devel/gperf
 LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre \
-		libevent-2.0.so:${PORTSDIR}/devel/libevent2 \
+		libevent.so:${PORTSDIR}/devel/libevent2 \
 		libtokyocabinet.so:${PORTSDIR}/databases/tokyocabinet
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
@@ -24,8 +24,6 @@ MAKE_ENV+=	GPERF=${LOCALBASE}/bin/gperf \
 
 USES=		gmake pkgconfig
 USE_LDCONFIG=	yes
-LDFLAGS+=	`pkgconf --libs libevent`
-CFLAGS+=	`pkgconf --cflags libevent`
 
 SUB_FILES=	pkg-message
 
@@ -33,7 +31,7 @@ PROJECTHOST=	semicomplete
 PORTDOCS=	CHANGELIST INSTALL
 
 post-patch:
-	@${REINPLACE_CMD} 's|PREFIX=|PREFIX?=|; s|-g root|-g wheel|; s|-levent||g' \
+	@${REINPLACE_CMD} 's|PREFIX=|PREFIX?=|; s|-g root|-g wheel|; ' \
 		${WRKSRC}/Makefile
 
 post-install:

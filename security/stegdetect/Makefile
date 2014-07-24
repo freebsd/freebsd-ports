@@ -3,7 +3,7 @@
 
 PORTNAME=	stegdetect
 PORTVERSION=	0.6
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	security
 MASTER_SITES=	http://www.outguess.org/ \
 		http://distfiles.master.finkmirrors.net/ \
@@ -18,7 +18,7 @@ OPTIONS_DEFAULT=	X11
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MX11}
-LIB_DEPENDS=	libevent-1.4.so:${PORTSDIR}/devel/libevent
+LIB_DEPENDS=	libevent.so:${PORTSDIR}/devel/libevent2
 USE_GNOME=	gtk12
 CONFIGURE_ENV+=	PATH_GTKCONFIG="${GTK_CONFIG}"
 PLIST_SUB+=	X11=""
