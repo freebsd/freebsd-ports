@@ -24,7 +24,7 @@ CONFIGURE_ARGS=	--disable-init-scripts \
 		--with-ipmi-monitoring-sdr-cache-dir=${CACHE_DIR}/ipmimonitoringsdrcache \
 		--with-pkgconfig-dir=${PREFIX}/libdata/pkgconfig
 CONFIGURE_ENV=	PTHREAD_LIBS=-pthread ac_cv_path_CPP=${CPP}
-CPPFLAGS+=	-I${LOCALBASE}/include
+CPPFLAGS+=	-fPIC -I${LOCALBASE}/include
 MAKE_ENV=	INSTALL_STRIP_FLAG=${STRIP}
 GNU_CONFIGURE=	yes
 LDFLAGS+=	-L${LOCALBASE}/lib
