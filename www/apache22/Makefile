@@ -2,7 +2,7 @@
 
 PORTNAME=	apache22
 PORTVERSION=	2.2.27
-PORTREVISION?=	5
+PORTREVISION?=	6
 CATEGORIES=	www ipv6
 MASTER_SITES=	${MASTER_SITE_APACHE_HTTPD}
 DISTNAME=	httpd-${PORTVERSION}
@@ -153,9 +153,9 @@ pre-configure::
 	@${ECHO_MSG}	"  You can check your modules configuration by using make show-modules"
 	@${ECHO_MSG}	""
 
-# Fix build on FreeBSD-10+ with OpenSSL from ports
+# Fix build with OpenSSL from ports
 .if ${PORT_OPTIONS:MSSL}
-. if ${OPSYS} == FreeBSD && ${OSVERSION} > 1000000
+. if ${OPSYS} == FreeBSD
 .  if defined(OPENSSL_INSTALLED) && ${OPENSSL_INSTALLED} != ""
 	@${ECHO_MSG}	"===>  apply fix for FreeBSD-${OSREL} (${OSVERSION}) for usage with ${OPENSSL_INSTALLED}"
 	@${ECHO_MSG}	""
@@ -173,12 +173,12 @@ post-configure:
 post-install:
 	@${MKDIR} ${ETC_SUBDIRS:S|^|${STAGEDIR}${ETCDIR}/|}
 	${INSTALL_DATA} ${FILESDIR}/no-accf.conf ${STAGEDIR}${ETCDIR}/Includes/
-	${INSTALL_DATA} ${FILESDIR}/README_modules.d ${STAGEDIR}/${ETCDIR}/modules.d/
+	${INSTALL_DATA} ${FILESDIR}/README_modules.d ${STAGEDIR}${ETCDIR}/modules.d/
 # place for module configuration samples
 	@${MKDIR} ${STAGEDIR}/${EXAMPLESDIR}/modules.d
-	${INSTALL_DATA} ${FILESDIR}/README_modules.d ${STAGEDIR}/${EXAMPLESDIR}/modules.d
+	${INSTALL_DATA} ${FILESDIR}/README_modules.d ${STAGEDIR}${EXAMPLESDIR}/modules.d
 
-# supress warnings about all the non binary files
+# suppress warning for non binary files
 	-@${STRIP_CMD} ${STAGEDIR}${PREFIX}/sbin/* \
 		${STAGEDIR}${PREFIX}/libexec/apache22/*.so 2>/dev/null
 .if ${PORT_OPTIONS:MLOG_FORENSIC}
