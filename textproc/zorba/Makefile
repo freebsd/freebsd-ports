@@ -35,6 +35,7 @@ USES=		cmake:outsource iconv compiler:c++11-lib
 CXXFLAGS+=	-I${LOCALBASE}/include -O1 # compiler hangs with -O2 on CURRENT
 LDFLAGS+=	-L${LOCALBASE}/lib
 CMAKE_ARGS=	-DCMAKE_REQUIRED_FLAGS:STRING="-I${LOCALBASE}/include -L${LOCALBASE}/lib" \
+    		-DLOCALBASE:STRING=${LOCALBASE} \
     		-DCMAKE_VERBOSE_MAKEFILE:BOOL=ON
 
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}-${PORTVERSION}
