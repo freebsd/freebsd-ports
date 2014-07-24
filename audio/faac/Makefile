@@ -3,7 +3,7 @@
 
 PORTNAME=	faac
 PORTVERSION=	1.28
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-src/${PORTNAME}-${PORTVERSION}
 
@@ -14,9 +14,9 @@ LIB_DEPENDS=	libmp4v2.so:${PORTSDIR}/multimedia/mp4v2
 
 RESTRICTED=	Distribution in binary form is prohibited
 
-USES=		dos2unix gmake
-USE_BZIP2=	yes
-USE_AUTOTOOLS=	aclocal autoheader automake autoconf libtool
+USES=		dos2unix gmake libtool tar:bzip2
+USE_AUTOTOOLS=	aclocal autoheader automake autoconf libtoolize
+GNU_CONFIGURE=	yes
 ACLOCAL_ARGS=	-I . -I ${LOCALBASE}/share/aclocal
 AUTOMAKE_ARGS=	--add-missing
 CONFIGURE_ARGS=	--with-mp4v2
