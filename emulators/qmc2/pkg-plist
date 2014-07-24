@@ -83,6 +83,7 @@ bin/qmc2-sdlmess
 %%DATADIR%%/img/activity_green.png
 %%DATADIR%%/img/activity_red.png
 %%DATADIR%%/img/add_to_favorites.png
+%%DATADIR%%/img/alien.png
 %%DATADIR%%/img/arcadecabinet.png
 %%DATADIR%%/img/arcademode.png
 %%DATADIR%%/img/back.png
@@ -98,6 +99,7 @@ bin/qmc2-sdlmess
 %%DATADIR%%/img/circles/activity_green.png
 %%DATADIR%%/img/circles/activity_red.png
 %%DATADIR%%/img/circles/add_to_favorites.png
+%%DATADIR%%/img/circles/alien.png
 %%DATADIR%%/img/circles/arcadecabinet.png
 %%DATADIR%%/img/circles/arcademode.png
 %%DATADIR%%/img/circles/back.png
@@ -203,6 +205,7 @@ bin/qmc2-sdlmess
 %%DATADIR%%/img/circles/led_on.png
 %%DATADIR%%/img/circles/left_action.png
 %%DATADIR%%/img/circles/lifebelt.png
+%%DATADIR%%/img/circles/loadanim.gif
 %%DATADIR%%/img/circles/locale.png
 %%DATADIR%%/img/circles/lock.png
 %%DATADIR%%/img/circles/mame.icns
@@ -231,6 +234,7 @@ bin/qmc2-sdlmess
 %%DATADIR%%/img/circles/minimize.png
 %%DATADIR%%/img/circles/minus.png
 %%DATADIR%%/img/circles/minus_all.png
+%%DATADIR%%/img/circles/minus_multiple.png
 %%DATADIR%%/img/circles/movie.png
 %%DATADIR%%/img/circles/music.png
 %%DATADIR%%/img/circles/next-sail.png
@@ -246,6 +250,7 @@ bin/qmc2-sdlmess
 %%DATADIR%%/img/circles/pencils.png
 %%DATADIR%%/img/circles/plus.png
 %%DATADIR%%/img/circles/plus_all.png
+%%DATADIR%%/img/circles/plus_multiple.png
 %%DATADIR%%/img/circles/postscript.png
 %%DATADIR%%/img/circles/preview.png
 %%DATADIR%%/img/circles/previous-sail.png
@@ -270,6 +275,7 @@ bin/qmc2-sdlmess
 %%DATADIR%%/img/circles/qt-logo.png
 %%DATADIR%%/img/circles/rank.png
 %%DATADIR%%/img/circles/rank_bg.png
+%%DATADIR%%/img/circles/rank_flat.png
 %%DATADIR%%/img/circles/redo.png
 %%DATADIR%%/img/circles/refresh.png
 %%DATADIR%%/img/circles/release.png
@@ -367,6 +373,7 @@ bin/qmc2-sdlmess
 %%DATADIR%%/img/classic/activity_green.png
 %%DATADIR%%/img/classic/activity_red.png
 %%DATADIR%%/img/classic/add_to_favorites.png
+%%DATADIR%%/img/classic/alien.png
 %%DATADIR%%/img/classic/arcadecabinet.png
 %%DATADIR%%/img/classic/arcademode.png
 %%DATADIR%%/img/classic/back.png
@@ -472,6 +479,7 @@ bin/qmc2-sdlmess
 %%DATADIR%%/img/classic/led_on.png
 %%DATADIR%%/img/classic/left_action.png
 %%DATADIR%%/img/classic/lifebelt.png
+%%DATADIR%%/img/classic/loadanim.gif
 %%DATADIR%%/img/classic/locale.png
 %%DATADIR%%/img/classic/lock.png
 %%DATADIR%%/img/classic/mame.icns
@@ -500,6 +508,7 @@ bin/qmc2-sdlmess
 %%DATADIR%%/img/classic/minimize.png
 %%DATADIR%%/img/classic/minus.png
 %%DATADIR%%/img/classic/minus_all.png
+%%DATADIR%%/img/classic/minus_multiple.png
 %%DATADIR%%/img/classic/movie.png
 %%DATADIR%%/img/classic/music.png
 %%DATADIR%%/img/classic/next-sail.png
@@ -515,6 +524,7 @@ bin/qmc2-sdlmess
 %%DATADIR%%/img/classic/pencils.png
 %%DATADIR%%/img/classic/plus.png
 %%DATADIR%%/img/classic/plus_all.png
+%%DATADIR%%/img/classic/plus_multiple.png
 %%DATADIR%%/img/classic/postscript.png
 %%DATADIR%%/img/classic/preview.png
 %%DATADIR%%/img/classic/previous-sail.png
@@ -539,6 +549,7 @@ bin/qmc2-sdlmess
 %%DATADIR%%/img/classic/qt-logo.png
 %%DATADIR%%/img/classic/rank.png
 %%DATADIR%%/img/classic/rank_bg.png
+%%DATADIR%%/img/classic/rank_flat.png
 %%DATADIR%%/img/classic/redo.png
 %%DATADIR%%/img/classic/refresh.png
 %%DATADIR%%/img/classic/release.png
@@ -641,6 +652,7 @@ bin/qmc2-sdlmess
 %%DATADIR%%/img/crazy-black/activity_green.png
 %%DATADIR%%/img/crazy-black/activity_red.png
 %%DATADIR%%/img/crazy-black/add_to_favorites.png
+%%DATADIR%%/img/crazy-black/alien.png
 %%DATADIR%%/img/crazy-black/arcadecabinet.png
 %%DATADIR%%/img/crazy-black/arcademode.png
 %%DATADIR%%/img/crazy-black/back.png
@@ -746,6 +758,7 @@ bin/qmc2-sdlmess
 %%DATADIR%%/img/crazy-black/led_on.png
 %%DATADIR%%/img/crazy-black/left_action.png
 %%DATADIR%%/img/crazy-black/lifebelt.png
+%%DATADIR%%/img/crazy-black/loadanim.gif
 %%DATADIR%%/img/crazy-black/locale.png
 %%DATADIR%%/img/crazy-black/lock.png
 %%DATADIR%%/img/crazy-black/mame.icns
@@ -774,6 +787,7 @@ bin/qmc2-sdlmess
 %%DATADIR%%/img/crazy-black/minimize.png
 %%DATADIR%%/img/crazy-black/minus.png
 %%DATADIR%%/img/crazy-black/minus_all.png
+%%DATADIR%%/img/crazy-black/minus_multiple.png
 %%DATADIR%%/img/crazy-black/movie.png
 %%DATADIR%%/img/crazy-black/music.png
 %%DATADIR%%/img/crazy-black/next-sail.png
@@ -789,6 +803,7 @@ bin/qmc2-sdlmess
 %%DATADIR%%/img/crazy-black/pencils.png
 %%DATADIR%%/img/crazy-black/plus.png
 %%DATADIR%%/img/crazy-black/plus_all.png
+%%DATADIR%%/img/crazy-black/plus_multiple.png
 %%DATADIR%%/img/crazy-black/postscript.png
 %%DATADIR%%/img/crazy-black/preview.png
 %%DATADIR%%/img/crazy-black/previous-sail.png
@@ -813,6 +828,7 @@ bin/qmc2-sdlmess
 %%DATADIR%%/img/crazy-black/qt-logo.png
 %%DATADIR%%/img/crazy-black/rank.png
 %%DATADIR%%/img/crazy-black/rank_bg.png
+%%DATADIR%%/img/crazy-black/rank_flat.png
 %%DATADIR%%/img/crazy-black/redo.png
 %%DATADIR%%/img/crazy-black/refresh.png
 %%DATADIR%%/img/crazy-black/release.png
@@ -909,6 +925,7 @@ bin/qmc2-sdlmess
 %%DATADIR%%/img/crazy/activity_green.png
 %%DATADIR%%/img/crazy/activity_red.png
 %%DATADIR%%/img/crazy/add_to_favorites.png
+%%DATADIR%%/img/crazy/alien.png
 %%DATADIR%%/img/crazy/arcadecabinet.png
 %%DATADIR%%/img/crazy/arcademode.png
 %%DATADIR%%/img/crazy/back.png
@@ -1014,6 +1031,7 @@ bin/qmc2-sdlmess
 %%DATADIR%%/img/crazy/led_on.png
 %%DATADIR%%/img/crazy/left_action.png
 %%DATADIR%%/img/crazy/lifebelt.png
+%%DATADIR%%/img/crazy/loadanim.gif
 %%DATADIR%%/img/crazy/locale.png
 %%DATADIR%%/img/crazy/lock.png
 %%DATADIR%%/img/crazy/mame.icns
@@ -1042,6 +1060,7 @@ bin/qmc2-sdlmess
 %%DATADIR%%/img/crazy/minimize.png
 %%DATADIR%%/img/crazy/minus.png
 %%DATADIR%%/img/crazy/minus_all.png
+%%DATADIR%%/img/crazy/minus_multiple.png
 %%DATADIR%%/img/crazy/movie.png
 %%DATADIR%%/img/crazy/music.png
 %%DATADIR%%/img/crazy/next-sail.png
@@ -1057,6 +1076,7 @@ bin/qmc2-sdlmess
 %%DATADIR%%/img/crazy/pencils.png
 %%DATADIR%%/img/crazy/plus.png
 %%DATADIR%%/img/crazy/plus_all.png
+%%DATADIR%%/img/crazy/plus_multiple.png
 %%DATADIR%%/img/crazy/postscript.png
 %%DATADIR%%/img/crazy/preview.png
 %%DATADIR%%/img/crazy/previous-sail.png
@@ -1081,6 +1101,7 @@ bin/qmc2-sdlmess
 %%DATADIR%%/img/crazy/qt-logo.png
 %%DATADIR%%/img/crazy/rank.png
 %%DATADIR%%/img/crazy/rank_bg.png
+%%DATADIR%%/img/crazy/rank_flat.png
 %%DATADIR%%/img/crazy/redo.png
 %%DATADIR%%/img/crazy/refresh.png
 %%DATADIR%%/img/crazy/release.png
@@ -1177,6 +1198,7 @@ bin/qmc2-sdlmess
 %%DATADIR%%/img/cubes/activity_green.png
 %%DATADIR%%/img/cubes/activity_red.png
 %%DATADIR%%/img/cubes/add_to_favorites.png
+%%DATADIR%%/img/cubes/alien.png
 %%DATADIR%%/img/cubes/arcadecabinet.png
 %%DATADIR%%/img/cubes/arcademode.png
 %%DATADIR%%/img/cubes/back.png
@@ -1282,6 +1304,7 @@ bin/qmc2-sdlmess
 %%DATADIR%%/img/cubes/led_on.png
 %%DATADIR%%/img/cubes/left_action.png
 %%DATADIR%%/img/cubes/lifebelt.png
+%%DATADIR%%/img/cubes/loadanim.gif
 %%DATADIR%%/img/cubes/locale.png
 %%DATADIR%%/img/cubes/lock.png
 %%DATADIR%%/img/cubes/mame.icns
@@ -1310,6 +1333,7 @@ bin/qmc2-sdlmess
 %%DATADIR%%/img/cubes/minimize.png
 %%DATADIR%%/img/cubes/minus.png
 %%DATADIR%%/img/cubes/minus_all.png
+%%DATADIR%%/img/cubes/minus_multiple.png
 %%DATADIR%%/img/cubes/movie.png
 %%DATADIR%%/img/cubes/music.png
 %%DATADIR%%/img/cubes/next-sail.png
@@ -1325,6 +1349,7 @@ bin/qmc2-sdlmess
 %%DATADIR%%/img/cubes/pencils.png
 %%DATADIR%%/img/cubes/plus.png
 %%DATADIR%%/img/cubes/plus_all.png
+%%DATADIR%%/img/cubes/plus_multiple.png
 %%DATADIR%%/img/cubes/postscript.png
 %%DATADIR%%/img/cubes/preview.png
 %%DATADIR%%/img/cubes/previous-sail.png
@@ -1349,6 +1374,7 @@ bin/qmc2-sdlmess
 %%DATADIR%%/img/cubes/qt-logo.png
 %%DATADIR%%/img/cubes/rank.png
 %%DATADIR%%/img/cubes/rank_bg.png
+%%DATADIR%%/img/cubes/rank_flat.png
 %%DATADIR%%/img/cubes/redo.png
 %%DATADIR%%/img/cubes/refresh.png
 %%DATADIR%%/img/cubes/release.png
@@ -1528,6 +1554,7 @@ bin/qmc2-sdlmess
 %%DATADIR%%/img/led_on.png
 %%DATADIR%%/img/left_action.png
 %%DATADIR%%/img/lifebelt.png
+%%DATADIR%%/img/loadanim.gif
 %%DATADIR%%/img/locale.png
 %%DATADIR%%/img/lock.png
 %%DATADIR%%/img/mame.icns
@@ -1556,6 +1583,7 @@ bin/qmc2-sdlmess
 %%DATADIR%%/img/minimize.png
 %%DATADIR%%/img/minus.png
 %%DATADIR%%/img/minus_all.png
+%%DATADIR%%/img/minus_multiple.png
 %%DATADIR%%/img/movie.png
 %%DATADIR%%/img/music.png
 %%DATADIR%%/img/next-sail.png
@@ -1571,6 +1599,7 @@ bin/qmc2-sdlmess
 %%DATADIR%%/img/pencils.png
 %%DATADIR%%/img/plus.png
 %%DATADIR%%/img/plus_all.png
+%%DATADIR%%/img/plus_multiple.png
 %%DATADIR%%/img/postscript.png
 %%DATADIR%%/img/preview.png
 %%DATADIR%%/img/previous-sail.png
@@ -1595,6 +1624,7 @@ bin/qmc2-sdlmess
 %%DATADIR%%/img/qt-logo.png
 %%DATADIR%%/img/rank.png
 %%DATADIR%%/img/rank_bg.png
+%%DATADIR%%/img/rank_flat.png
 %%DATADIR%%/img/redo.png
 %%DATADIR%%/img/refresh.png
 %%DATADIR%%/img/release.png
@@ -1704,32 +1734,32 @@ bin/qmc2-sdlmess
 %%DATADIR%%/opt/SDLUME/template.xml
 %%DATADIR%%/opt/UME/template.xml
 %%DATADIR%%/opt/template.xml
-@dirrmtry %%DATADIR%%/opt/UME
-@dirrmtry %%DATADIR%%/opt/SDLUME
-@dirrmtry %%DATADIR%%/opt/SDLMESS
-@dirrmtry %%DATADIR%%/opt/SDLMAME
-@dirrmtry %%DATADIR%%/opt/MESS
-@dirrmtry %%DATADIR%%/opt/MAME
-@dirrmtry %%DATADIR%%/opt
-@dirrmtry %%DATADIR%%/lng
-@dirrmtry %%DATADIR%%/img/cubes
-@dirrmtry %%DATADIR%%/img/crazy-black
-@dirrmtry %%DATADIR%%/img/crazy
-@dirrmtry %%DATADIR%%/img/classic
-@dirrmtry %%DATADIR%%/img/circles
-@dirrmtry %%DATADIR%%/img
-@dirrmtry %%DATADIR%%
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/html/us
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/html/sv
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/html/ro
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/html/pt
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/html/pl
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/html/it
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/html/images
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/html/fr
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/html/es
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/html/el
+@dirrmtry %%ETCDIR%%
 %%PORTDOCS%%@dirrmtry %%DOCSDIR%%/html/de
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/html/el
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/html/es
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/html/fr
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/html/images
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/html/it
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/html/pl
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/html/pt
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/html/ro
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/html/sv
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/html/us
 %%PORTDOCS%%@dirrmtry %%DOCSDIR%%/html
 %%PORTDOCS%%@dirrmtry %%DOCSDIR%%
-@dirrmtry %%ETCDIR%%
+@dirrmtry %%DATADIR%%/img/circles
+@dirrmtry %%DATADIR%%/img/classic
+@dirrmtry %%DATADIR%%/img/crazy
+@dirrmtry %%DATADIR%%/img/crazy-black
+@dirrmtry %%DATADIR%%/img/cubes
+@dirrmtry %%DATADIR%%/img
+@dirrmtry %%DATADIR%%/lng
+@dirrmtry %%DATADIR%%/opt/MAME
+@dirrmtry %%DATADIR%%/opt/MESS
+@dirrmtry %%DATADIR%%/opt/SDLMAME
+@dirrmtry %%DATADIR%%/opt/SDLMESS
+@dirrmtry %%DATADIR%%/opt/SDLUME
+@dirrmtry %%DATADIR%%/opt/UME
+@dirrmtry %%DATADIR%%/opt
+@dirrmtry %%DATADIR%%
