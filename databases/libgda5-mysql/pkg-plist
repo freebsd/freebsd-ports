@@ -1,5 +1,3 @@
-lib/libgda-%%VERSION%%/providers/libgda-mysql.a
-lib/libgda-%%VERSION%%/providers/libgda-mysql.la
 lib/libgda-%%VERSION%%/providers/libgda-mysql.so
 libdata/pkgconfig/libgda-mysql-%%VERSION%%.pc
 share/libgda-%%VERSION%%/mysql_specs_add_column.xml

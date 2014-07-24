@@ -4,7 +4,7 @@
 
 PORTNAME=	libgda
 PORTVERSION=	4.2.12
-PORTREVISION?=	2
+PORTREVISION?=	3
 CATEGORIES=	databases gnome
 MASTER_SITES=	GNOME
 PKGNAMESUFFIX?=	4
@@ -15,7 +15,7 @@ COMMENT?=	Provides uniform access to different kinds of data sources
 
 CONFLICTS=	libgda5-ui-[0-9]*
 
-USE_XZ=		yes
+USES=		tar:xz
 LIBGDA4_SLAVE?=	no
 
 .if !defined(REFERENCE_PORT)
@@ -23,11 +23,11 @@ LIBGDA4_SLAVE?=	no
 LIB_DEPENDS=	libgcrypt.so:${PORTSDIR}/security/libgcrypt \
 		libjson-glib-1.0.so:${PORTSDIR}/devel/json-glib
 
-USE_AUTOTOOLS=	libtool
-USES=		pathfix gettext gmake pkgconfig
+USES+=		gettext gmake libtool pathfix pkgconfig
 USE_GNOME=	gnomeprefix glib20 libxslt intlhack referencehack
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
+INSTALL_TARGET=	install-strip
 MAKE_JOBS_UNSAFE=yes
 CONFIGURE_ARGS=	--without-oracle \
 		--disable-crypto \
@@ -36,7 +36,7 @@ CONFIGURE_ARGS=	--without-oracle \
 		--without-goocanvas \
 		--without-graphviz
 CPPFLAGS+=	-I${LOCALBASE}/include
-LDDFLAGS+=	-L${LOCALBASE}/lib
+LIBS+=		-L${LOCALBASE}/lib
 
 .if ${LIBGDA4_SLAVE}=="no"
 OPTIONS_DEFINE=	UI SOUP KEYRING
@@ -142,7 +142,7 @@ post-patch:
 .if ${LIBGDA4_SLAVE}!="no"
 #. for d in msql firebird odbc freetds mdb ldap mysql sqlite postgres
 . for d in bdb jdbc mdb mysql postgres reuseable/postgres reuseable/mysql ldap
-	@${REINPLACE_CMD} -e 's|$$(top_builddir)/libgda/libgda-4.0.la|${LOCALBASE}/lib/libgda-4.0.la|g' \
+	@${REINPLACE_CMD} -e 's|$$(top_builddir)/libgda/libgda-4.0.la|-lgda-4.0|g' \
 		${WRKSRC}/providers/${d}/Makefile.in
 . endfor
 .endif
@@ -158,9 +158,8 @@ pre-build:
 
 .if ${LIBGDA4_SLAVE}=="no"
 post-install:
-	${INSTALL_DATA} ${WRKSRC}/data/config \
-		${STAGEDIR}${PREFIX}/etc/libgda-${VERSION}/config.default
-	@${RM} -f ${STAGEDIR}${PREFIX}/etc/libgda-${VERSION}/config
+	${MV} ${STAGEDIR}${PREFIX}/etc/libgda-${VERSION}/config \
+		${STAGEDIR}${PREFIX}/etc/libgda-${VERSION}/config.sample
 .endif
 
 .include <bsd.port.mk>

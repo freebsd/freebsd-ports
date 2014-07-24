@@ -3,7 +3,7 @@
 
 PORTNAME=	dovecot
 PORTVERSION=	1.2.17
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	mail ipv6
 MASTER_SITES=	http://www.dovecot.org/releases/${PORTVERSION:R}/ \
 		http://www.rename-it.nl/dovecot/${PORTVERSION:R}/

@@ -4,7 +4,7 @@
 
 PORTNAME=	libgda
 PORTVERSION?=	5.0.3
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES=	databases gnome
 MASTER_SITES=	GNOME
 PKGNAMESUFFIX?=	5
@@ -13,7 +13,7 @@ DIST_SUBDIR=	gnome3
 MAINTAINER?=	gnome@FreeBSD.org
 COMMENT?=	Provides uniform access to different kinds of data sources
 
-USE_XZ=		yes
+USES=		tar:xz
 LIBGDA5_SLAVE?=	no
 
 .if !defined(REFERENCE_PORT)
@@ -22,18 +22,18 @@ LIB_DEPENDS=	libgcrypt.so:${PORTSDIR}/security/libgcrypt \
 		libsoup-2.4.so:${PORTSDIR}/devel/libsoup \
 		libjson-glib-1.0.so:${PORTSDIR}/devel/json-glib
 
-USE_AUTOTOOLS=	libtool
-USES=		gettext gmake pathfix pkgconfig
+USES+=		gettext gmake libtool pathfix pkgconfig
 USE_GNOME=	gnomeprefix glib20 libxslt intlhack referencehack
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
+INSTALL_TARGET=	install-strip
 MAKE_JOBS_UNSAFE=yes
 CONFIGURE_ARGS=	--without-oracle \
 		--disable-crypto \
 		--disable-default-binary \
 		--disable-introspection
 CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+LIBS+=		-L${LOCALBASE}/lib
 
 .include <bsd.port.options.mk>
 
@@ -109,8 +109,8 @@ post-patch:
 		${WRKSRC}/providers/bdb/gda-bdb-test.c
 .if ${LIBGDA5_SLAVE}!="no"
 	@${FIND} ${WRKSRC} -name Makefile.in -exec ${REINPLACE_CMD} \
-		-e 's|$$(top_builddir)/libgda/libgda-5.0.la|${LOCALBASE}/lib/libgda-5.0.la|g' \
-		-e 's|../libgda/libgda-5.0.la|${LOCALBASE}/lib/libgda-5.0.la|g' \
+		-e 's|$$(top_builddir)/libgda/libgda-5.0.la|-lgda-5.0|g' \
+		-e 's|../libgda/libgda-5.0.la|-lgda-5.0|g' \
 		{} \;
 .endif
 
@@ -129,9 +129,8 @@ pre-build:
 
 .if ${LIBGDA5_SLAVE}==no
 post-install:
-	${INSTALL_DATA} ${WRKSRC}/data/config \
-		${STAGEDIR}${PREFIX}/etc/libgda-${VERSION}/config.default
-	@${RM} -f ${STAGEDIR}${PREFIX}/etc/libgda-${VERSION}/config
+	${MV} ${STAGEDIR}${PREFIX}/etc/libgda-${VERSION}/config \
+		${STAGEDIR}${PREFIX}/etc/libgda-${VERSION}/config.sample
 .endif
 .if ${LIBGDA5_SLAVE}==ui
 post-install:

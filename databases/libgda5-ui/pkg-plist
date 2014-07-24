@@ -34,13 +34,10 @@ lib/libgda-%%VERSION%%/plugins/gdaui-entry-password.xml
 lib/libgda-%%VERSION%%/plugins/gdaui-entry-pict-spec.xml
 lib/libgda-%%VERSION%%/plugins/gdaui-entry-pict-spec_string.xml
 lib/libgda-%%VERSION%%/plugins/gdaui-entry-text-spec.xml
-lib/libgda-%%VERSION%%/plugins/libgda-ui-plugins.a
-lib/libgda-%%VERSION%%/plugins/libgda-ui-plugins.la
 lib/libgda-%%VERSION%%/plugins/libgda-ui-plugins.so
-lib/libgda-ui-%%VERSION%%.a
-lib/libgda-ui-%%VERSION%%.la
 lib/libgda-ui-%%VERSION%%.so
-lib/libgda-ui-%%VERSION%%.so.5
+lib/libgda-ui-%%VERSION%%.so.4
+lib/libgda-ui-%%VERSION%%.so.4.1.0
 libdata/pkgconfig/libgda-ui-%%VERSION%%.pc
 share/applications/gda-browser-%%VERSION%%.desktop
 share/applications/gda-control-center-%%VERSION%%.desktop

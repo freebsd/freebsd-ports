@@ -1,5 +1,3 @@
-lib/libgda-%%VERSION%%/providers/libgda-postgres.a
-lib/libgda-%%VERSION%%/providers/libgda-postgres.la
 lib/libgda-%%VERSION%%/providers/libgda-postgres.so
 libdata/pkgconfig/libgda-postgres-%%VERSION%%.pc
 share/libgda-%%VERSION%%/postgres_specs_add_column.xml

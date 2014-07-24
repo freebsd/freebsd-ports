@@ -2,7 +2,7 @@
 
 PORTNAME=	pam_yubico
 PORTVERSION=	2.16
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES=	http://opensource.yubico.com/yubico-pam/releases/
 

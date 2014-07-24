@@ -3,7 +3,7 @@
 
 PORTNAME=	jabberd
 DISTVERSION=	2.3.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	net-im
 MASTER_SITES=	https://github.com/jabberd2/jabberd2/releases/download/${PORTNAME}-${DISTVERSION}/ \
 		LOCAL/matthew/${PORTNAME}

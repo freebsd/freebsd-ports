@@ -77,7 +77,6 @@ include/libgdamm-4.0/libgdamm/throw_exception.h
 include/libgdamm-4.0/libgdamm/value.h
 include/libgdamm-4.0/libgdamm/wrap_init.h
 include/libgdamm-4.0/libgdamm/xatransaction.h
-lib/libgdamm-4.0.la
 lib/libgdamm-4.0.so
 lib/libgdamm-4.0.so.12
 lib/libgdamm-4.0.so.12.0.0

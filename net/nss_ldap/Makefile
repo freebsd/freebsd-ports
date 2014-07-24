@@ -3,7 +3,7 @@
 
 PORTNAME=	nss_ldap
 PORTVERSION=	1.${NSS_LDAP_VERSION}
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	net
 MASTER_SITES=	http://www.padl.com/download/ \
 		LOCAL/martymac

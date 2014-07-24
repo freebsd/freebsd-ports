@@ -3,7 +3,7 @@
 
 PORTNAME=	openradius
 PORTVERSION=	0.9.12c
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	http://evbergen.home.xs4all.nl/openradius/download/ \
 		http://www.mirrors.wiretapped.net/security/authentication/radius/openradius/

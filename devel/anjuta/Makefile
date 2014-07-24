@@ -4,7 +4,7 @@
 
 PORTNAME=	anjuta
 PORTVERSION=	2.32.1.1
-PORTREVISION=	12
+PORTREVISION=	13
 CATEGORIES=	devel gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -30,7 +30,7 @@ RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash \
 
 CONFLICTS=	anjuta-3.[0-9]*
 
-USES=		desktop-file-utils gmake gettext libtool:keepla pathfix \
+USES=		desktop-file-utils gmake gettext libtool pathfix \
 		perl5 pkgconfig shared-mime-info shebangfix tar:bzip2
 INSTALLS_OMF=	yes
 INSTALLS_ICONS=	yes
