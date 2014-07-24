@@ -5,6 +5,17 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20140724:
+  AFFECTS: users of dns/mydns-ng
+  AUTHOR: danilo@FreeBSD.org
+
+  The dns/mydns-ng port no longer has the suffix (-mysql|-pgsql). Before
+  you update this port the old one must be removed:
+
+  pkg remove mydns-ng-mysql
+    or
+  pkg remove mysql-ng-pgsql
+
 20140723:
   AFFECTS: users of devel/libevent
 
