@@ -388,7 +388,7 @@ pre-configure:
 	@${ECHO_CMD} '###################################################################'
 .endif
 
-.if ${PORT_OPTIONS:MSVG} && ${PORT_OPTIONS:NX11}
+.if ${PORT_OPTIONS:MSVG} && ! ${PORT_OPTIONS:NX11}
 	@${ECHO_CMD} NOTICE: SVG format support disabled, requires X11
 .endif
 
