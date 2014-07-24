@@ -1,3 +1,5 @@
+man/man1/update-gosa.1.gz
+man/man5/gosa.conf.5.gz
 sbin/update-gosa
 %%WWWDIR%%/html/autocomplete.php
 %%WWWDIR%%/html/favicon.ico

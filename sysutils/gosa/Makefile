@@ -15,7 +15,7 @@ COMMENT=	Web Based LDAP Administration Program
 RUN_DEPENDS=	p5-Crypt-SmbHash>=0.12:${PORTSDIR}/security/p5-Crypt-SmbHash \
 		pecl-imagick>=2.2.2:${PORTSDIR}/graphics/pecl-imagick
 
-USE_BZIP2=	yes
+USES=		tar:bzip2
 USE_PHP=	gettext iconv imap ldap mbstring mhash mysql pcre posix \
 		session spl xml zlib
 
@@ -24,11 +24,10 @@ PKGMESSAGE=	${WRKDIR}/pkg-message
 REINPLACE_ARGS=	-i ""
 SUB_FILES=	pkg-message
 SUB_LIST+=	WWWOWN=${WWWOWN} WWWGRP=${WWWGRP}
+PLIST_SUB+=	WWWOWN=${WWWOWN} WWWGRP=${WWWGRP}
 
-MAN1=		update-gosa.1
-MAN5=		gosa.conf.5
+OPTIONS_DEFINE=	DOCS
 
-NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} \
 		-e 's!"/etc/gosa"!"${ETCDIR}"!g' \
@@ -49,29 +48,17 @@ post-patch:
 	${FIND} ${WRKSRC} -type f -name '*.orig' -exec ${RM} -f {} +
 
 do-install:
-	${MKDIR} ${WWWDIR}
+	@${MKDIR} ${STAGEDIR}${WWWDIR}
 	(cd ${WRKSRC} && ${COPYTREE_SHARE} \
-		"html ihtml include locale plugins setup" ${WWWDIR})
-
-	${INSTALL_SCRIPT} ${WRKSRC}/update-gosa   ${PREFIX}/sbin/
-	${INSTALL_MAN}    ${WRKSRC}/update-gosa.1 ${MANPREFIX}/man/man1/
-	${INSTALL_MAN}    ${WRKSRC}/gosa.conf.5   ${MANPREFIX}/man/man5/
-
-	${MKDIR} ${EXAMPLESDIR}
-	(cd ${WRKSRC} && ${COPYTREE_SHARE} "contrib" ${EXAMPLESDIR})
-
-	${MKDIR} ${ETCDIR}
-	${INSTALL} -d -o ${WWWOWN} -g ${WWWGRP} /var/spool/gosa
-
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	(cd ${WRKSRC}/doc && ${COPYTREE_SHARE} "*" ${DOCSDIR})
-.  for i in AUTHORS COPYING Changelog FAQ INSTALL README README.safemode
-	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
-.  endfor
-.endif
-
-post-install:
-	${CAT} ${PKGMESSAGE}
+		"html ihtml include locale plugins setup" ${STAGEDIR}${WWWDIR})
+	${INSTALL_SCRIPT} ${WRKSRC}/update-gosa ${STAGEDIR}${PREFIX}/sbin
+	${INSTALL_MAN} ${WRKSRC}/update-gosa.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/gosa.conf.5 ${STAGEDIR}${MANPREFIX}/man/man5
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	(cd ${WRKSRC} && ${COPYTREE_SHARE} "contrib" ${STAGEDIR}${EXAMPLESDIR})
+	@${MKDIR} ${STAGEDIR}${ETCDIR} ${STAGEDIR}${DOCSDIR}
+	(cd ${WRKSRC}/doc && ${COPYTREE_SHARE} "*" ${STAGEDIR}${DOCSDIR})
+	(cd ${WRKSRC} && ${INSTALL_DATA} AUTHORS COPYING Changelog FAQ \
+		INSTALL README README.safemode ${STAGEDIR}${DOCSDIR})
 
 .include <bsd.port.mk>
