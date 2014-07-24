@@ -16,5 +16,4 @@ MASTERDIR=	${.CURDIR}/../../print/gutenprint-base
 GUT_SLAVE=	gimp
 PLIST=	${.CURDIR}/pkg-plist
 
-NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

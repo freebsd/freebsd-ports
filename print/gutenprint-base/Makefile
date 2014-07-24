@@ -3,7 +3,7 @@
 #    $MCom: ports/print/gutenprint-base/Makefile,v 1.8 2007/03/30 16:45:02 ahze Exp $
 
 PORTNAME?=	gutenprint
-PORTVERSION=	5.2.8
+PORTVERSION=	5.2.10
 CATEGORIES=	print
 MASTER_SITES=	SF/gimp-print/gutenprint-5.2/${PORTVERSION}
 PKGNAMESUFFIX?=	-base
@@ -15,9 +15,8 @@ LICENSE=	GPLv2
 
 CONFLICTS=	gimp-print-[0-9]*
 
-USE_BZIP2=	yes
-USES=		gettext gmake pkgconfig
-USE_GNOME=	gnomehack gtk20
+USES=		gettext gmake libtool pathfix pkgconfig tar:bzip2
+USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=--with-gimp=no --with-gimp2=no
 USE_LDCONFIG=	yes
@@ -25,7 +24,6 @@ USE_LDCONFIG=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include -I${PREFIX}/include
 LDFLAGS+=	-L${LOCALBASE}/lib -L${PREFIX}/lib
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${SLAVE_PORT}=="yes"
@@ -47,13 +45,18 @@ CONFIGURE_ARGS+=--without-gimp2
 .endif
 
 .if defined(GUT_SLAVE) && ${GUT_SLAVE}=="cups"
+.if ${OSVERSION} > 1000000
+PLIST_FILES+=	libexec/cups/backend/gutenprint52+usb \
+		share/cups/usb/net.sf.gimp-print.usb-quirks
+PLIST_DIRS+=	libexec/cups/backend \
+		share/cups/usb
+.endif
 LIB_DEPENDS+=	libcups.so:${PORTSDIR}/print/cups-client \
 		libcupsimage.so:${PORTSDIR}/print/cups-image
 RUN_DEPENDS+=	espgs:${PORTSDIR}/print/cups-pstoraster
 CONFIGURE_ARGS+=	--with-cups=${PREFIX} \
 			--enable-cups-ppds \
 			--enable-cups-level3-ppds
-MAN8+=	cups-calibrate.8 cups-genppd.8 cups-genppdupdate.8
 BUILD_WRKSRC=	${WRKSRC}/src/cups
 INSTALL_WRKSRC=	${WRKSRC}/src/cups
 .else
@@ -63,7 +66,6 @@ CONFIGURE_ARGS+=	--without-cups
 .if defined(GUT_SLAVE) && ${GUT_SLAVE}=="ijs"
 LIB_DEPENDS+=	libijs.so:${PORTSDIR}/print/libijs
 CONFIGURE_ARGS+=--with-ijs=yes
-MAN1+=		ijsgutenprint.1
 BUILD_WRKSRC=	${WRKSRC}/src/ghost
 INSTALL_WRKSRC=	${WRKSRC}/src/ghost
 .else
@@ -73,16 +75,12 @@ CONFIGURE_ARGS+=--without-ghostscript
 .if defined(GUT_SLAVE) && ${GUT_SLAVE}=="foomatic"
 BUILD_DEPENDS+=	foomatic-combo-xml:${PORTSDIR}/print/foomatic-db-engine
 RUN_DEPENDS+=	foomatic-combo-xml:${PORTSDIR}/print/foomatic-db-engine \
-		foomatic-db>0:${PORTSDIR}/print/foomatic-db
+		${LOCALBASE}/share/cups/model/foomatic-db-ppds:${PORTSDIR}/print/foomatic-db
 CONFIGURE_ARGS+=--with-foomatic=yes --with-foomatic3=yes
 BUILD_WRKSRC=	${WRKSRC}/src/foomatic
 INSTALL_WRKSRC=	${WRKSRC}/src/foomatic
 .else
 CONFIGURE_ARGS+=--without-foomatic
-.endif
-
-.if defined(NOPORTDOCS)
-CONFIGURE_ARGS+=	--with-user-guide=no
 .endif
 
 post-patch:
@@ -106,9 +104,20 @@ pre-build:
 	@(cd ${WRKSRC}/src/xml && ${MAKE})
 .endif
 
+pre-install:
+	@${MKDIR} ${STAGEDIR}${LOCALBASE}/lib/gutenprint/5.2/modules
+.if defined(GUT_SLAVE) && ${GUT_SLAVE}=="cups"
+	@${REINPLACE_CMD} -e 's|/usr/bin/perl|${LOCALBASE}/bin/perl|' \
+		${WRKSRC}/src/cups/cups-genppdupdate
+.endif
+
 post-install:
 .if ${SLAVE_PORT}=="yes"
-	@(cd ${WRKSRC}/man && ${MAKE_CMD} ${INSTALL_TARGET})
+	@(cd ${WRKSRC}/man && ${GMAKE} ${INSTALL_TARGET} DESTDIR=${STAGEDIR})
+.endif
+.if defined(GUT_SLAVE) && ${GUT_SLAVE}=="cups"
+	@${LN} -s ${LOCALBASE}/sbin/cups-genppd.5.2 \
+		${STAGEDIR}${LOCALBASE}/sbin/cups-genppd
 .endif
 
 .include <bsd.port.post.mk>

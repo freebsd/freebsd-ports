@@ -2,7 +2,6 @@
 # $FreeBSD$
 #    $MCom: ports/print/gutenprint-foomatic/Makefile,v 1.1 2007/03/30 16:42:47 ahze Exp $
 
-PORTREVISION=	1
 PORTEPOCH=	0
 PKGNAMESUFFIX=	-foomatic
 
@@ -16,5 +15,4 @@ MASTERDIR=	${.CURDIR}/../../print/gutenprint-base
 GUT_SLAVE=	foomatic
 PLIST=		${.CURDIR}/pkg-plist
 
-NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"
