@@ -3,14 +3,14 @@
 
 PORTNAME=	moc
 PORTVERSION=	2.4.4
-PORTREVISION=	13
+PORTREVISION=	14
 CATEGORIES=	audio
 MASTER_SITES=	ftp://ftp.daper.net/pub/soft/moc/stable/
 
 MAINTAINER=	rzinkov@gmail.com
 COMMENT=	Console audio player designed to be powerful and easy to use
 
-USES=		tar:bzip2 gmake pkgconfig
+USES=		gmake libtool pkgconfig tar:bzip2
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 
@@ -28,44 +28,37 @@ JACK_CONFIGURE_OFF=	--without-jack
 MP3_LIB_DEPENDS=	libmad.so:${PORTSDIR}/audio/libmad \
 		libid3tag.so:${PORTSDIR}/audio/libid3tag
 MP3_PLIST_FILES=	lib/moc/decoder_plugins/libmp3_decoder.a \
-		lib/moc/decoder_plugins/libmp3_decoder.la \
 		lib/moc/decoder_plugins/libmp3_decoder.so
 MP3_CONFIGURE_OFF=	--without-mp3
 
 MUSEPACK_LIB_DEPENDS=	libmpcdec.so:${PORTSDIR}/audio/musepack \
 		libtag_c.so:${PORTSDIR}/audio/taglib
 MUSE_PACK_PLIST_FILES=	lib/moc/decoder_plugins/libmusepack_decoder.a \
-		lib/moc/decoder_plugins/libmusepack_decoder.la \
 		lib/moc/decoder_plugins/libmusepack_decoder.so
 MUSEPACK_CONFIGURE_OFF=	--without-musepack
 
 VORBIS_LIB_DEPENDS=	libvorbis.so:${PORTSDIR}/audio/libvorbis
 VORBIS_PLIST_FILES=	lib/moc/decoder_plugins/libvorbis_decoder.a \
-		lib/moc/decoder_plugins/libvorbis_decoder.la \
 		lib/moc/decoder_plugins/libvorbis_decoder.so
 VORBIS_CONFIGURE_OFF=	--without-ogg
 
 FLAC_LIB_DEPENDS=	libFLAC.so:${PORTSDIR}/audio/flac
 FLAC_PLIST_FILES=	lib/moc/decoder_plugins/libflac_decoder.a \
-		lib/moc/decoder_plugins/libflac_decoder.la \
 		lib/moc/decoder_plugins/libflac_decoder.so
 FLAC_CONFIGURE_OFF=	--without-flac
 
 FFMPEG_LIB_DEPENDS=	libavcodec.so:${PORTSDIR}/multimedia/ffmpeg
 FFMPEG_PLIST_FILES=   lib/moc/decoder_plugins/libffmpeg_decoder.a \
-		lib/moc/decoder_plugins/libffmpeg_decoder.la \
 		lib/moc/decoder_plugins/libffmpeg_decoder.so
 FFMPEG_CONFIGURE_OFF=	--without-ffmpeg
 
 SNDFILE_LIB_DEPENDS=	libsndfile.so:${PORTSDIR}/audio/libsndfile
 SNDFILE_PLIST_FILES=	lib/moc/decoder_plugins/libsndfile_formats_decoder.a \
-		lib/moc/decoder_plugins/libsndfile_formats_decoder.la \
 		lib/moc/decoder_plugins/libsndfile_formats_decoder.so
 SNDFILE_CONFIGURE_OFF=	--without-sndfile
 
 SPEEX_LIB_DEPENDS=	libspeex.so:${PORTSDIR}/audio/speex
 SPEEX_PLIST_FILES=	lib/moc/decoder_plugins/libspeex_decoder.a \
-		lib/moc/decoder_plugins/libspeex_decoder.la \
 		lib/moc/decoder_plugins/libspeex_decoder.so
 SPEEX_CONFIGURE_OFF=	--without-speex
 
