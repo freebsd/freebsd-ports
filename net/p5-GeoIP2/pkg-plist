@@ -7,9 +7,11 @@ bin/web-service-request
 %%SITE_PERL%%/GeoIP2/Error/Type.pm
 %%SITE_PERL%%/GeoIP2/Error/WebService.pm
 %%SITE_PERL%%/GeoIP2/Model/City.pm
-%%SITE_PERL%%/GeoIP2/Model/CityISPOrg.pm
+%%SITE_PERL%%/GeoIP2/Model/ConnectionType.pm
 %%SITE_PERL%%/GeoIP2/Model/Country.pm
-%%SITE_PERL%%/GeoIP2/Model/Omni.pm
+%%SITE_PERL%%/GeoIP2/Model/Domain.pm
+%%SITE_PERL%%/GeoIP2/Model/ISP.pm
+%%SITE_PERL%%/GeoIP2/Model/Insights.pm
 %%SITE_PERL%%/GeoIP2/Record/City.pm
 %%SITE_PERL%%/GeoIP2/Record/Continent.pm
 %%SITE_PERL%%/GeoIP2/Record/Country.pm
@@ -20,9 +22,12 @@ bin/web-service-request
 %%SITE_PERL%%/GeoIP2/Record/Subdivision.pm
 %%SITE_PERL%%/GeoIP2/Record/Traits.pm
 %%SITE_PERL%%/GeoIP2/Role/Error/HTTP.pm
+%%SITE_PERL%%/GeoIP2/Role/HasIPAddress.pm
 %%SITE_PERL%%/GeoIP2/Role/HasLocales.pm
 %%SITE_PERL%%/GeoIP2/Role/Model.pm
+%%SITE_PERL%%/GeoIP2/Role/Model/Flat.pm
 %%SITE_PERL%%/GeoIP2/Role/Model/HasSubdivisions.pm
+%%SITE_PERL%%/GeoIP2/Role/Model/Location.pm
 %%SITE_PERL%%/GeoIP2/Role/Record/Country.pm
 %%SITE_PERL%%/GeoIP2/Role/Record/HasNames.pm
 %%SITE_PERL%%/GeoIP2/Types.pm
@@ -36,9 +41,11 @@ bin/web-service-request
 %%PERL5_MAN3%%/GeoIP2::Error::Type.3.gz
 %%PERL5_MAN3%%/GeoIP2::Error::WebService.3.gz
 %%PERL5_MAN3%%/GeoIP2::Model::City.3.gz
-%%PERL5_MAN3%%/GeoIP2::Model::CityISPOrg.3.gz
+%%PERL5_MAN3%%/GeoIP2::Model::ConnectionType.3.gz
 %%PERL5_MAN3%%/GeoIP2::Model::Country.3.gz
-%%PERL5_MAN3%%/GeoIP2::Model::Omni.3.gz
+%%PERL5_MAN3%%/GeoIP2::Model::Domain.3.gz
+%%PERL5_MAN3%%/GeoIP2::Model::ISP.3.gz
+%%PERL5_MAN3%%/GeoIP2::Model::Insights.3.gz
 %%PERL5_MAN3%%/GeoIP2::Record::City.3.gz
 %%PERL5_MAN3%%/GeoIP2::Record::Continent.3.gz
 %%PERL5_MAN3%%/GeoIP2::Record::Country.3.gz
@@ -49,7 +56,7 @@ bin/web-service-request
 %%PERL5_MAN3%%/GeoIP2::Record::Subdivision.3.gz
 %%PERL5_MAN3%%/GeoIP2::Record::Traits.3.gz
 %%PERL5_MAN3%%/GeoIP2::WebService::Client.3.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/GeoIP2
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/GeoIP2
 @dirrm %%SITE_PERL%%/GeoIP2/WebService
 @dirrm %%SITE_PERL%%/GeoIP2/Role/Record
 @dirrm %%SITE_PERL%%/GeoIP2/Role/Model
@@ -59,4 +66,4 @@ bin/web-service-request
 @dirrm %%SITE_PERL%%/GeoIP2/Model
 @dirrm %%SITE_PERL%%/GeoIP2/Error
 @dirrm %%SITE_PERL%%/GeoIP2/Database
-@dirrmtry %%SITE_PERL%%/GeoIP2
+@dirrm %%SITE_PERL%%/GeoIP2
