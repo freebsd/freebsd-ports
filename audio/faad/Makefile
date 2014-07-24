@@ -3,7 +3,7 @@
 
 PORTNAME=	faad2
 PORTVERSION=	2.7
-PORTREVISION=	4
+PORTREVISION=	5
 PORTEPOCH=	1
 CATEGORIES=	audio
 MASTER_SITES=	SF/faac/${PORTNAME}-src/${PORTNAME}-${PORTVERSION}
@@ -11,9 +11,9 @@ MASTER_SITES=	SF/faac/${PORTNAME}-src/${PORTNAME}-${PORTVERSION}
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	MPEG-2 and MPEG-4 AAC audio decoder
 
-USES=		dos2unix gmake
-USE_BZIP2=	yes
-USE_AUTOTOOLS=	aclocal autoheader automake autoconf libtool
+USES=		dos2unix gmake libtool tar:bzip2
+USE_AUTOTOOLS=	aclocal autoheader automake autoconf libtoolize
+GNU_CONFIGURE=	yes
 ACLOCAL_ARGS=	-I . -I ${LOCALBASE}/share/aclocal
 AUTOMAKE_ARGS=	--add-missing
 CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
