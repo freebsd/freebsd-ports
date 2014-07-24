@@ -43,9 +43,9 @@
 %%JACK%%include/portaudio2/pa_jack.h
 include/portaudio2/portaudio.h
 lib/portaudio2/libportaudio.a
-lib/portaudio2/libportaudio.la
 lib/portaudio2/libportaudio.so
 lib/portaudio2/libportaudio.so.2
+lib/portaudio2/libportaudio.so.2.0.0
 libdata/pkgconfig/portaudio-2.0.pc
 @dirrm lib/portaudio2
 @dirrm include/portaudio2
