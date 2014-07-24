@@ -18,7 +18,7 @@
 +# execinfo
 +#
 +IF(FREEBSD)
-+   SET(requiredlibs ${requiredlibs} "/usr/local/lib/libexecinfo.so")
++   SET(requiredlibs ${requiredlibs} "${LOCALBASE}/lib/libexecinfo.so")
 +ENDIF(FREEBSD)
 +
 +#
