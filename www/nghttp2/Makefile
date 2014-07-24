@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	nghttp2
-PORTVERSION=	0.5.0
+PORTVERSION=	0.5.1
 PORTREVISION=	1
 CATEGORIES=	www net
 MASTER_SITES=	https://github.com/tatsuhiro-t/${PORTNAME}/releases/download/v${PORTVERSION}/ \
@@ -53,6 +53,6 @@ post-patch:
 	@${REINPLACE_CMD} -e '/JEMALLOC_LIBS/ s|-ljemalloc||' ${WRKSRC}/configure
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libnghttp2.so.4.0.0
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libnghttp2.so.4.0.1
 
 .include <bsd.port.post.mk>
