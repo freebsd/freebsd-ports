@@ -57,6 +57,61 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="f927e06c-1109-11e4-b090-20cf30e32f6d">
+    <topic>apache22 -- several vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>apache22</name>
+	<range><gt>2.2.0</gt><lt>2.2.27_6</lt></range>
+      </package>
+      <package>
+	<name>apache22-event-mpm</name>
+	<range><gt>2.2.0</gt><lt>2.2.27_6</lt></range>
+      </package>
+      <package>
+	<name>apache22-itk-mpm</name>
+	<range><gt>2.2.0</gt><lt>2.2.27_6</lt></range>
+      </package>
+      <package>
+	<name>apache22-peruser-mpm</name>
+	<range><gt>2.2.0</gt><lt>2.2.27_6</lt></range>
+      </package>
+      <package>
+	<name>apache22-worker-mpm</name>
+	<range><gt>2.2.0</gt><lt>2.2.27_6</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Apache HTTP SERVER PROJECT reports:</p>
+	<blockquote cite="http://svn.apache.org/viewvc/httpd/httpd/branches/2.2.x/CHANGES?revision=1611816&amp;view=markup">
+	  <p> mod_deflate: The DEFLATE input filter (inflates request bodies) now
+	    limits the length and compression ratio of inflated request bodies to
+	    avoid denial of service via highly compressed bodies.  See directives
+	    DeflateInflateLimitRequestBody, DeflateInflateRatioLimit, and
+	    DeflateInflateRatioBurst.</p>
+	  <p>mod_cgid: Fix a denial of service against CGI scripts that do not consume
+	    stdin that could lead to lingering HTTPD child processes filling up the
+	    scoreboard and eventually hanging the server.  By default, the client I/O
+	    timeout (Timeout directive) now applies to communication with scripts.  The
+	    CGIDScriptTimeout directive can be used to set a different timeout for
+	    communication with scripts.</p>
+	  <p>Fix a race condition in scoreboard handling, which could lead to a heap
+	    buffer overflow.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2014-0118</cvename>
+      <cvename>CVE-2014-0231</cvename>
+      <cvename>CVE-2014-0226</cvename>
+    </references>
+    <dates>
+      <discovery>2014-07-19</discovery>
+      <entry>2014-07-24</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="81fc1076-1286-11e4-bebd-000c2980a9f3">
     <topic>tomcat -- multiple vulnerabilities</topic>
     <affects>
