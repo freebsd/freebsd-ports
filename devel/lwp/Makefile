@@ -3,6 +3,7 @@
 
 PORTNAME=	lwp
 PORTVERSION=	2.6
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://ftp.coda.cs.cmu.edu/pub/lwp/src/ \
 		http://ftp.wu-wien.ac.at/pub/systems/coda/src/ \
@@ -14,8 +15,9 @@ COMMENT=	Userspace thread library
 
 LICENSE=	LGPL20
 
-USES=		gmake pathfix
+USES=		gmake libtool pathfix
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
+INSTALL_TARGET=	install-strip
 
 .include <bsd.port.mk>

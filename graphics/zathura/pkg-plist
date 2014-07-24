@@ -24,6 +24,7 @@ share/dbus-1/interfaces/org.pwmt.zathura.xml
 %%NLS%%share/locale/hr/LC_MESSAGES/zathura.mo
 %%NLS%%share/locale/id_ID/LC_MESSAGES/zathura.mo
 %%NLS%%share/locale/it/LC_MESSAGES/zathura.mo
+%%NLS%%share/locale/lt/LC_MESSAGES/zathura.mo
 %%NLS%%share/locale/no/LC_MESSAGES/zathura.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/zathura.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/zathura.mo

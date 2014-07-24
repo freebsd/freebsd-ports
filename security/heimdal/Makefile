@@ -103,8 +103,6 @@ post-patch:
 .endif
 	@${REINPLACE_CMD} -e 's|$$ac_cv_header_fnmatch_h|yes|' \
 		${WRKSRC}/configure
-	@${REINPLACE_CMD} '/^kgetcred_LDADD =/s/$$/ $$(LIB_libintl)/' \
-		${WRKSRC}/kuser/Makefile.in
 	@${REINPLACE_CMD} -e 's|@LDFLAGS@|@LDFLAGS@ \$$\(PTHREADS_LIBADD\)|g' \
 		${WRKSRC}/lib/ipc/Makefile.in
 

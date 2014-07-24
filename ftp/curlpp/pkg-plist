@@ -60,13 +60,13 @@ include/utilspp/singleton/PrivateMembers.inl
 include/utilspp/singleton/SingletonHolder.hpp
 include/utilspp/singleton/SingletonHolder.inl
 lib/libcurlpp.a
-lib/libcurlpp.la
 lib/libcurlpp.so
 lib/libcurlpp.so.0
+lib/libcurlpp.so.0.0.2
 lib/libutilspp.a
-lib/libutilspp.la
 lib/libutilspp.so
 lib/libutilspp.so.0
+lib/libutilspp.so.0.0.0
 libdata/pkgconfig/curlpp.pc
 %%PORTDOCS%%%%DOCSDIR%%/guide.pdf
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/README

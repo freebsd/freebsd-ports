@@ -1,0 +1,11 @@
+--- configure.orig	2013-05-23 09:55:19.000000000 +0200
++++ configure	2014-07-15 19:59:43.000000000 +0200
+@@ -12846,7 +12846,7 @@
+ 
+ 
+ if test "x$GCC" = "xyes"; then
+-  for flag in -fno-strict-aliasing -Wall -std=gnu99 -pedantic -Wundef -Wshadow -Wpointer-arith -Wcast-align -Wmissing-prototypes -Wmissing-declarations -Wnested-externs -Winline -Wold-style-definition -W; do
++  for flag in -fno-strict-aliasing -Wall -std=gnu99 -pedantic -Wundef -Wshadow -Wpointer-arith -Wcast-align -Wmissing-prototypes -Wmissing-declarations -Wnested-externs -Winline -Wold-style-definition; do
+     oCFLAGS="$CFLAGS"
+     CFLAGS="$CFLAGS $flag"
+     cachename=rd_cv_gcc_flag_`echo $flag|sed 's/[^A-Za-z]/_/g'`

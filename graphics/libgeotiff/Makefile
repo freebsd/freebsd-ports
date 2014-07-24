@@ -3,7 +3,7 @@
 
 PORTNAME=	libgeotiff
 PORTVERSION=	1.4.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics
 MASTER_SITES=	http://download.osgeo.org/geotiff/libgeotiff/ \
 		ftp://ftp.remotesensing.org/geotiff/libgeotiff/ \
@@ -17,6 +17,7 @@ LIB_DEPENDS=	libjbig.so:${PORTSDIR}/graphics/jbigkit \
 		libproj.so:${PORTSDIR}/graphics/proj \
 		libtiff.so:${PORTSDIR}/graphics/tiff
 
+USES=		libtool
 CONFIGURE_ARGS=	--datadir=${DATADIR} \
 		--disable-doxygen-doc \
 		--disable-doxygen-dot \

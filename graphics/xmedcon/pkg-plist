@@ -42,9 +42,9 @@ include/xmedcon/m-xtract.h
 include/xmedcon/medcon.h
 @dirrm include/xmedcon
 lib/libmdc.a
-lib/libmdc.la
 lib/libmdc.so
 lib/libmdc.so.2
+lib/libmdc.so.2.0.1
 man/man1/medcon.1.gz
 %%X11%%man/man1/xmedcon.1.gz
 man/man1/xmedcon-config.1.gz

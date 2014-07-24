@@ -42,17 +42,14 @@ post-patch:
 .endif
 
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
 	cd ${WRKSRC} &&\
 		${MKDIR} ${STAGEDIR}${DOCSDIR}/html ${STAGEDIR}${DOCSDIR}/Scintilla &&\
 		${INSTALL_DATA} NEWS README ${STAGEDIR}${DOCSDIR} &&\
 		${INSTALL_DATA} doc/html-Qt4Qt5/* ${STAGEDIR}${DOCSDIR}/html &&\
 		${INSTALL_DATA} doc/Scintilla/* ${STAGEDIR}${DOCSDIR}/Scintilla
-.endif
-.if ${PORT_OPTIONS:MEXAMPLES}
 	cd ${WRKSRC}/example-Qt4Qt5 &&\
 		${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/images &&\
 		${INSTALL_DATA} *.* ${STAGEDIR}${EXAMPLESDIR} &&\
 		${INSTALL_DATA} images/* ${STAGEDIR}${EXAMPLESDIR}/images
-.endif
+
 .include <bsd.port.mk>

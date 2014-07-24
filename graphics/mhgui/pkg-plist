@@ -24,8 +24,8 @@ include/mhgui/Tooltip.h
 include/mhgui/Widget.h
 include/mhgui/Window.h
 lib/libmhgui.a
-lib/libmhgui.la
 lib/libmhgui.so
 lib/libmhgui.so.0
+lib/libmhgui.so.0.0.0
 libdata/pkgconfig/mhgui.pc
 @dirrm include/mhgui

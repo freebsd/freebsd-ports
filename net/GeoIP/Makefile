@@ -13,7 +13,7 @@ COMMENT=	Find the country that any IP address or hostname originates from
 GNU_CONFIGURE=	yes
 USES=		libtool:oldver
 USE_LDCONFIG=	yes
-USE_AUTOTOOLS=	aclocal automake libtool libtoolize autoconf
+USE_AUTOTOOLS=	aclocal automake libtoolize autoconf
 AUTOMAKE_ARGS=	--add-missing
 
 SUB_FILES=	geoipupdate.sh pkg-message

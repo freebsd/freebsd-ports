@@ -3,6 +3,7 @@
 
 PORTNAME=	updatedd
 PORTVERSION=	2.6
+PORTREVISION=	1
 CATEGORIES=	dns
 MASTER_SITES=	${MASTER_SITE_SAVANNAH}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -13,7 +14,7 @@ COMMENT=	Dynamic DNS Update Client supporting multiple services
 
 OPTIONS_DEFINE=	DOCS
 
-USES=		gmake perl5
+USES=		gmake libtool perl5
 GNU_CONFIGURE=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}

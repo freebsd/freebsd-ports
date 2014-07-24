@@ -17,9 +17,6 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libevent-2.0.so:${PORTSDIR}/devel/libevent2
 
-TEST_DEPENDS=	prove:${PORTSDIR}/lang/${PERL_PORT} \
-		git:${PORTSDIR}/devel/git
-
 CONFLICTS=	memcached-1.2*
 
 # Dtrace option disabled until it is fixed upstream

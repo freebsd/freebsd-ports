@@ -36,8 +36,8 @@ include/animorph/VertexVector.h
 include/animorph/util.h
 include/animorph/xmlParser.h
 lib/libanimorph.a
-lib/libanimorph.la
 lib/libanimorph.so
 lib/libanimorph.so.0
+lib/libanimorph.so.0.0.0
 libdata/pkgconfig/animorph.pc
 @dirrm include/animorph

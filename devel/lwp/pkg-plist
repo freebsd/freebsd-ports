@@ -2,8 +2,8 @@ include/lwp/lock.h
 include/lwp/lwp.h
 include/lwp/timer.h
 lib/liblwp.a
-lib/liblwp.la
 lib/liblwp.so
 lib/liblwp.so.2
+lib/liblwp.so.2.0.9
 libdata/pkgconfig/lwp.pc
 @dirrm include/lwp

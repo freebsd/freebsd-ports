@@ -94,7 +94,7 @@ GVEDIT_USE=	qt4=qmake_build,moc_build,rcc_build,uic_build \
 GHOSTSCRIPT_USE=GHOSTSCRIPT=yes
 PERL_USES=	perl5
 PHP_USE=	PHP=yes PHP_BUILD=yes
-PYTHON_USE=	PYTHON_BUILD=yes
+PYTHON_USE=	PYTHON_BUILD=2.7
 RUBY_USE=	RUBY=yes
 LUA_USES=	lua
 TCL_USES=	tcl:build
@@ -172,6 +172,10 @@ BROKEN=	guile is too old
 
 .if ${PORT_OPTIONS:MMING}
 BROKEN=	incomplete, uses removed libgraph
+.endif
+
+.if ${PORT_OPTIONS:MRUBY}
+BROKEN=	illegal macro in libdata/pkgconfig/ruby-1.9.pc
 .endif
 
 .if ${PORT_OPTIONS:MTK}
