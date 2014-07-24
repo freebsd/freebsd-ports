@@ -3,6 +3,7 @@
 
 PORTNAME=	eggdrop
 PORTVERSION=	1.8.0.20140321
+PORTREVISION=	1
 CATEGORIES=	irc
 MASTER_SITES=	GH \
 		http://mirror.shatow.net/freebsd/${PORTNAME}/
@@ -118,5 +119,6 @@ do-install:
 	cd ${WRKSRC}/doc/settings && ${RM} -rf CVS \
 		&& ${INSTALL_DATA} * ${STAGEDIR}${DOCSDIR}/settings
 .endif
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/eggdrop/*.so
 
 .include <bsd.port.mk>
