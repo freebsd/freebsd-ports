@@ -45,11 +45,9 @@ include/glom-1.12/libglom/init.h
 include/glom-1.12/libglom/libglom_config.h
 include/glom-1.12/libglom/sharedptr.h
 include/glom-1.12/libglom/standard_table_prefs_fields.h
-lib/libglom-1.12.la
 lib/libglom-1.12.so
 lib/libglom-1.12.so.0
 lib/libglom-1.12.so.0.0.0
-%%PYTHON_SITELIBDIR%%/glom_1_12.la
 %%PYTHON_SITELIBDIR%%/glom_1_12.so
 libdata/pkgconfig/glom-1.12.pc
 share/applications/glom.desktop

@@ -4,7 +4,7 @@
 
 PORTNAME=	glom
 PORTVERSION=	1.12.2
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	databases gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -26,12 +26,13 @@ BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-
 RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-codes \
 		${LOCALBASE}/libdata/pkgconfig/libgda-postgres-4.0.pc:${PORTSDIR}/databases/libgda4-postgresql
 
-USE_PYTHON=	yes
 GNU_CONFIGURE=	yes
-USES=		desktop-file-utils gettext gmake libtool:keepla pathfix \
+INSTALL_TARGET=	install-strip
+USES=		desktop-file-utils gettext gmake libtool pathfix \
 		pgsql pkgconfig shared-mime-info tar:bzip2
 USE_GNOME=	gnomedocutils gnomeprefix pygnomeextras
 USE_LDCONFIG=	yes
+USE_PYTHON=	yes
 INSTALLS_OMF=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
@@ -41,9 +42,5 @@ INSTALLS_ICONS=	yes
 # Note: USE_PGSQL has already been set above.
 BUILD_DEPENDS+=	postmaster:${PORTSDIR}/databases/postgresql${PGSQL_VER_NODOT}-server
 RUN_DEPENDS+=	postmaster:${PORTSDIR}/databases/postgresql${PGSQL_VER_NODOT}-server
-
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libglom-1.12.so.0.0.0
-	@${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/glom_1_12.so 
 
 .include <bsd.port.mk>

@@ -3,6 +3,7 @@
 
 PORTNAME=	atheme-services
 PORTVERSION=	7.0.7
+PORTREVISION=	1
 CATEGORIES=	irc
 MASTER_SITES=	http://atheme.net/downloads/
 

@@ -2,7 +2,7 @@
 
 PORTNAME=	powerdns
 PORTVERSION=	3.3.1
-PORTREVISION?=	2
+PORTREVISION=	3
 CATEGORIES=	dns ipv6
 MASTER_SITES=	http://downloads.powerdns.com/releases/
 DISTNAME=	pdns-${PORTVERSION}
@@ -16,13 +16,14 @@ LIB_DEPENDS=	libboost_serialization.so:${PORTSDIR}/devel/boost-libs
 
 CONFLICTS=	powerdns-devel-[2-3].[0-9]*
 
-USES=		gmake lua:51 pkgconfig
+USES=		gmake libtool lua:51 pkgconfig
 USE_SUBMAKE=	YES
-USE_AUTOTOOLS=	libtool
-USE_LDCONFIG=	YES
+GNU_CONFIGURE=	yes
+INSTALL_TARGET=	install-strip
 CXXFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-CONFIGURE_ARGS=	--with-modules="" \
+CONFIGURE_ARGS=	--disable-static \
+		--with-modules="" \
 		--with-dynmodules="pipe ${MODULES}" \
 		--sysconfdir="${PREFIX}/etc/pdns" \
 		--with-boost="${LOCALBASE}"
@@ -196,13 +197,6 @@ post-install:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 .for i in pdns.conf
 	${INSTALL_DATA} ${FILESDIR}/$i ${STAGEDIR}${EXAMPLESDIR}/
-.endfor
-.for j in libgpgsqlbackend.so libgmysqlbackend.so \
-	libgsqlite3backend.so libldapbackend.so libopendbxbackend.so \
-	libgeobackend.so libpipebackend.so
-	@if ([ -f ${STAGEDIR}${PREFIX}/lib/$j ] && [ ! -f ${STAGEDIR}${PREFIX}/lib/$j.0 ]); then \
-		${LN} -sf ${PREFIX}/lib/$j ${STAGEDIR}${PREFIX}/lib/$j.0; \
-	fi
 .endfor
 
 .include <bsd.port.mk>

@@ -3,7 +3,6 @@
 
 PORTNAME=		openldap
 DISTVERSION=		2.4.39
-PORTREVISION=		1
 PORTREVISION=		${OPENLDAP_PORTREVISION}
 CATEGORIES=		net databases
 MASTER_SITES=		ftp://ftp.OpenLDAP.org/pub/OpenLDAP/%SUBDIR%/ \
@@ -43,11 +42,11 @@ LICENSE_NAME=		OpenLDAP Public License
 LICENSE_FILE=		${WRKSRC}/LICENSE
 LICENSE_PERMS=		dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-LATEST_LINK?=		${PKGNAMEPREFIX}openldap24${PKGNAMESUFFIX}
+GNU_CONFIGURE=		yes
+# :keepla because port uses lt_dlopen
+USES=			libtool:keepla
 USE_OPENSSL=		yes
-USE_AUTOTOOLS=		libtool
 .if !defined(CLIENT_ONLY)
-USE_AUTOTOOLS+=		autoconf
 USERS=			ldap
 GROUPS=			ldap
 LDAP_USER?=		ldap
@@ -59,9 +58,9 @@ WANT_OPENLDAP_VER?=	24
 BROKEN=			incompatible OpenLDAP version: ${WANT_OPENLDAP_VER}
 .endif
 
-PORTREVISION_CLIENT=	0
-PORTREVISION_SERVER=	1
-OPENLDAP_SHLIB_MAJOR=	8
+PORTREVISION_CLIENT=	1
+PORTREVISION_SERVER=	2
+OPENLDAP_SHLIB_MAJOR=	2
 OPENLDAP_MAJOR=		${DISTVERSION:R}
 
 OPTIONS_DEFINE=		FETCH GSSAPI
@@ -128,7 +127,7 @@ OPENLDAP_PORTREVISION=	${PORTREVISION_SERVER}
 OPENLDAP_PKGFILESUFX=
 .endif
 
-CONFIGURE_SED=		-e 's,-kthread,${PTHREAD_LIBS},g' -e 's,uuid/uuid.h,xxuuid/uuid.h,g'
+CONFIGURE_SED=		-e 's,uuid/uuid.h,xxuuid/uuid.h,g'
 
 .include <bsd.port.pre.mk>
 
@@ -374,6 +373,7 @@ PLIST_SUB+=		BACK_BDB="@comment " \
 .endif
 
 CPPFLAGS+=		-I${BDB_INCLUDE_DIR}
+LDFLAGS+=		-L${BDB_LIB_DIR}
 CONFIGURE_SED+=		-e 's,ol_DB_LIB=$$,&-l${BDB_LIB_NAME:R},' \
 			-e 's,(ol_cv_lib_db=)yes$$,\1-l${BDB_LIB_NAME:R},'
 .endif
@@ -520,18 +520,18 @@ pre-configure:
 
 .if !defined(CLIENT_ONLY)
 test: build
-	@cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} \
-		${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} test
+	@(cd ${BUILD_WRKSRC} && ${SETENV} ${MAKE_ENV} \
+		${MAKE_CMD} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} test)
 
 post-build:
 	@${DO_NADA}
 .if ${PORT_OPTIONS:MSMBPWD}
-	@cd ${BUILD_WRKSRC}/contrib/slapd-modules/smbk5pwd; ${SETENV} ${MAKE_ENV} \
-		${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} DEFS="-DDO_SAMBA" all
+	@(cd ${BUILD_WRKSRC}/contrib/slapd-modules/smbk5pwd && ${SETENV} ${MAKE_ENV} \
+		${MAKE_CMD} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} DEFS="-DDO_SAMBA" all)
 .endif
 .if ${PORT_OPTIONS:MSHA2}
-	@cd ${BUILD_WRKSRC}/contrib/slapd-modules/passwd/sha2; ${SETENV} ${MAKE_ENV} \
-		${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} all
+	@(cd ${BUILD_WRKSRC}/contrib/slapd-modules/passwd/sha2 && ${SETENV} ${MAKE_ENV} \
+		${MAKE_CMD} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} all)
 .endif
 .endif
 

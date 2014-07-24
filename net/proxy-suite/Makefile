@@ -3,7 +3,7 @@
 
 PORTNAME=	proxy-suite
 PORTVERSION=	1.9.2.4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.suse.com/pub/projects/proxy-suite/src/
 

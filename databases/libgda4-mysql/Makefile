@@ -2,7 +2,7 @@
 # $FreeBSD$
 #   $MCom: ports/databases/libgda4-mysql/Makefile,v 1.7 2011/10/15 15:18:36 kwm Exp $
 
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	databases gnome
 PKGNAMESUFFIX=	4-mysql
 

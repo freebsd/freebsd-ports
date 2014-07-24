@@ -36,8 +36,8 @@ Database_Include_MAINTAINER=		ports@FreeBSD.org
 .if defined(USE_OPENLDAP)
 DEFAULT_OPENLDAP_VER?=	24
 # OpenLDAP client versions currently supported
-OPENLDAP23_LIBVER=	2.3
-OPENLDAP24_LIBVER=	2.4
+OPENLDAP23_LIB=		libldap-2.3.so.2
+OPENLDAP24_LIB=		libldap-2.4.so.2
 
 .if exists(${LOCALBASE}/bin/ldapwhoami)
 _OPENLDAP_VER!=	${LOCALBASE}/bin/ldapwhoami -VV 2>&1 | ${GREP} ldapwhoami | ${SED} -E 's/.*OpenLDAP: ldapwhoami (2)\.(3|4).*/\1\2/'
@@ -77,7 +77,7 @@ _OPENLDAP_FLAVOUR=	-sasl
 .endif
 
 # And now we are checking if we can use it
-.if defined(OPENLDAP${OPENLDAP_VER}_LIBVER)
+.if defined(OPENLDAP${OPENLDAP_VER}_LIB)
 # compatability shim
 .if defined(BROKEN_WITH_OPENLDAP)
 IGNORE_WITH_OPENLDAP=${BROKEN_WITH_OPENLDAP}
@@ -89,7 +89,7 @@ IGNORE=		cannot install: doesn't work with OpenLDAP version: ${OPENLDAP_VER} (Do
 .		endif
 .	endfor
 .endif # IGNORE_WITH_OPENLDAP
-LIB_DEPENDS+=	libldap-${OPENLDAP${OPENLDAP_VER}_LIBVER}.so:${PORTSDIR}/net/openldap${OPENLDAP_VER}${_OPENLDAP_FLAVOUR}-client
+LIB_DEPENDS+=	${OPENLDAP${OPENLDAP_VER}_LIB}:${PORTSDIR}/net/openldap${OPENLDAP_VER}${_OPENLDAP_FLAVOUR}-client
 .else
 IGNORE=		cannot install: unknown OpenLDAP version: ${OPENLDAP_VER}
 .endif # Check for correct libs
