@@ -26,7 +26,7 @@ RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/xdg/__init__.py:${PORTSDIR}/devel/py-xdg \
 USE_PYTHON=	yes
 USE_GNOME=	pygtk2
 USE_PYDISTUTILS=yes
-USE_GSTREAMER=	good bad python
+USE_GSTREAMER=	yes core good bad ugly python
 PYDISTUTILS_AUTOPLIST=	yes
 
 post-install:
