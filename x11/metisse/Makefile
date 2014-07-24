@@ -3,7 +3,7 @@
 
 PORTNAME=	metisse
 PORTVERSION=	0.4.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11
 MASTER_SITES=	http://insitu.lri.fr/metisse/download/metisse/
 
@@ -18,7 +18,21 @@ LIB_DEPENDS=	libNucleo.so:${PORTSDIR}/x11-toolkits/nucleo \
 		libpng15.so:${PORTSDIR}/graphics/png
 RUN_DEPENDS=	${LOCALBASE}/libdata/xorg/fonts:${PORTSDIR}/x11-fonts/xorg-fonts
 
-USES=		gettext pathfix pkgconfig tar:bzip2
+USES=		gettext libtool pathfix pkgconfig shebangfix tar:bzip2
+SHEBANG_FILES=	${WRKSRC}/fvwm-insitu/bin/fvwm-convert-2.4.in \
+		${WRKSRC}/fvwm-insitu/bin/fvwm-convert-2.6.in \
+		${WRKSRC}/fvwm-insitu/bin/fvwm-menu-desktop.in \
+		${WRKSRC}/fvwm-insitu/bin/fvwm-menu-directory.in \
+		${WRKSRC}/fvwm-insitu/bin/fvwm-menu-headlines.in \
+		${WRKSRC}/fvwm-insitu/bin/fvwm-menu-xlock.in \
+		${WRKSRC}/fvwm-insitu/bin/fvwm-perllib.in \
+		${WRKSRC}/fvwm-insitu/modules/FvwmConsole/FvwmConsoleC.pl.in \
+		${WRKSRC}/fvwm-insitu/modules/FvwmDebug/FvwmDebug.in \
+		${WRKSRC}/fvwm-insitu/modules/FvwmDebug/FvwmGtkDebug.in \
+		${WRKSRC}/fvwm-insitu/modules/FvwmPerl/FvwmPerl.in \
+		${WRKSRC}/fvwm-insitu/modules/FvwmTabs/FvwmTabs.in \
+		${WRKSRC}/fvwm-insitu/modules/FvwmWindowMenu/FvwmWindowMenu.in
+perl_OLD_CMD=	@PERL@
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-fontdir=${LOCALBASE}/lib/X11/fonts
 USE_LDCONFIG=	yes
@@ -26,6 +40,7 @@ USE_PYTHON=	yes
 USE_XORG=	xcursor xft xinerama xpm xrender xt xtst
 WANT_GNOME=	yes
 MAKE_ARGS=	METISSE_DOC_DIR="${DOCSDIR}"
+INSTALL_TARGET=	install-strip
 
 CPPFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/libpng15
 LDFLAGS+=	-L${LOCALBASE}/lib
