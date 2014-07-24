@@ -16,7 +16,6 @@
     SUBDIR += autoconvert
     SUBDIR += bg5pdf
     SUBDIR += bg5ps
-    SUBDIR += big5con
     SUBDIR += big5width
     SUBDIR += bitchx
     SUBDIR += bsdconv-opencc
@@ -59,7 +58,6 @@
     SUBDIR += gugod-clean
     SUBDIR += hanzim
     SUBDIR += hc
-    SUBDIR += hztty
     SUBDIR += ibus-chewing
     SUBDIR += ibus-pinyin
     SUBDIR += irssi

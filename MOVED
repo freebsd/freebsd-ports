@@ -6313,3 +6313,23 @@ print/dvipdfmx|print/tex-dvipdfmx|2014-07-23|Use TeXLive version
 print/jadetex|print/tex-jadetex|2014-07-23|Use TeXLive version
 japanese/teTeX|print/texlive-full|2014-07-23|Use TeXLive
 devel/libevent|devel/libevent2|2014-07-27|libevent2 replaced libevent
+chinese/big5con||2014-07-24|Has expired: Fails to build with new utmpx
+chinese/hztty||2014-07-24|Has expired: Fails to build with new utmpx
+irc/solid-ircd||2014-07-24|Has expired: Fails to build with new utmpx
+korean/eterm||2014-07-24|Has expired: Fails to build with new utmpx
+mail/biffer||2014-07-24|Has expired: Fails to build with new utmpx
+misc/c-hey||2014-07-24|Has expired: Fails to build with new utmpx
+misc/wminfo||2014-07-24|Has expired: Fails to build with new utmpx
+net/sendfile||2014-07-24|Has expired: Fails to build with new utmpx
+net-im/centericq||2014-07-24|Has expired: Fails to build with new utmpx
+security/chkrootkit||2014-07-24|Has expired: Fails to build with new utmpx
+security/openfwtk||2014-07-24|Has expired: Fails to build with new utmpx
+security/pam_alreadyloggedin||2014-07-24|Has expired: Fails to build with new utmpx
+security/srp||2014-07-24|Has expired: Fails to build with new utmpx
+security/sud||2014-07-24|Has expired: Fails to build with new utmpx
+sysutils/hyperic-sigar||2014-07-24|Has expired: Fails to build with new utmpx
+sysutils/lookupd||2014-07-24|Has expired: Fails to build with new utmpx
+sysutils/lookupd_ldap||2014-07-24|Has expired: Fails to build with new utmpx
+sysutils/p5-Sys-Utmp||2014-07-24|Has expired: Fails to build with new utmpx
+sysutils/syslog-ng2||2014-07-24|Has expired: Fails to build with new utmpx
+sysutils/yawho||2014-07-24|Has expired: Fails to build with new utmpx

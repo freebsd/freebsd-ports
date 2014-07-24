@@ -33,7 +33,6 @@
     SUBDIR += boxquote.el
     SUBDIR += brs
     SUBDIR += buffer
-    SUBDIR += c-hey
     SUBDIR += callid
     SUBDIR += cave
     SUBDIR += cdcollect
@@ -459,7 +458,6 @@
     SUBDIR += window
     SUBDIR += wmScoreBoard
     SUBDIR += wmcalendar
-    SUBDIR += wminfo
     SUBDIR += wmjulia
     SUBDIR += wmpal
     SUBDIR += wmtunlo

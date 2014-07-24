@@ -56,7 +56,6 @@
     SUBDIR += chaosreader
     SUBDIR += checkpassword
     SUBDIR += checkpassword-pam
-    SUBDIR += chkrootkit
     SUBDIR += chntpw
     SUBDIR += chroot_safe
     SUBDIR += chrootuid
@@ -347,7 +346,6 @@
     SUBDIR += openconnect
     SUBDIR += opencryptoki
     SUBDIR += openct
-    SUBDIR += openfwtk
     SUBDIR += openpgpsdk
     SUBDIR += opensaml2
     SUBDIR += opensc
@@ -609,7 +607,6 @@
     SUBDIR += pam-mysql
     SUBDIR += pam-pgsql
     SUBDIR += pam_abl
-    SUBDIR += pam_alreadyloggedin
     SUBDIR += pam_bsdbioapi
     SUBDIR += pam_fprint
     SUBDIR += pam_google_authenticator
@@ -935,7 +932,6 @@
     SUBDIR += sqlmap
     SUBDIR += sqlninja
     SUBDIR += srm
-    SUBDIR += srp
     SUBDIR += ssdeep
     SUBDIR += ssh-copy-id
     SUBDIR += ssh-gui
@@ -964,7 +960,6 @@
     SUBDIR += subversion-gnome-keyring
     SUBDIR += subversion-kwallet
     SUBDIR += subweb
-    SUBDIR += sud
     SUBDIR += sudo
     SUBDIR += sudoscript
     SUBDIR += super

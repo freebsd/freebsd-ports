@@ -1080,7 +1080,6 @@
     SUBDIR += seda
     SUBDIR += self-service-password
     SUBDIR += sendemail
-    SUBDIR += sendfile
     SUBDIR += sendsms
     SUBDIR += sendsnpp
     SUBDIR += ser
