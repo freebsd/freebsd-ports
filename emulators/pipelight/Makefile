@@ -2,11 +2,14 @@
 # $FreeBSD$
 
 PORTNAME=	pipelight
-DISTVERSION=	0.2.7.1
-PORTREVISION=	1
+DISTVERSION=	0.2.7.3
 CATEGORIES=	emulators
-MASTER_SITES=	https://bitbucket.org/mmueller2012/pipelight/get/
+MASTER_SITES=	https://bitbucket.org/mmueller2012/pipelight/get/ \
+		http://repos.fds-team.de/pluginloader/v${DISTVERSION}/:plg
 DISTNAME=	v${DISTVERSION}
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} pluginloader.tar.gz:plg pluginloader.tar.gz.sig:plg
+DIST_SUBDIR=	pipelight
+EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	kmoore@FreeBSD.org
 COMMENT=	Wrapper for using windows plugins in web browsers
@@ -24,7 +27,7 @@ RUN_DEPENDS=	${LOCALBASE}/bin/bash:${PORTSDIR}/shells/bash \
 		${LOCALBASE}/bin/flock:${PORTSDIR}/sysutils/flock \
 		${LOCALBASE}/bin/gpg2:${PORTSDIR}/security/gnupg
 
-WRKSRC=		${WRKDIR}/mmueller2012-pipelight-e2362eb15df6
+WRKSRC=		${WRKDIR}/mmueller2012-pipelight-79b1b7ba0032
 USE_GCC=	4.7+
 USE_LDCONFIG=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
@@ -33,6 +36,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--verbose --wine-path=${LOCALBASE}/bin/wine --win32-prebuilt \
 		--win64-prebuilt --moz-plugin-path=${LOCALBASE}/lib/browser_plugins \
 		--cxx=${CXX}
+USE_XORG=	x11
 USES=		compiler:gcc-c++11-lib gmake 
 MAKE_JOBS_UNSAFE=yes
 
@@ -47,8 +51,7 @@ RUN_DEPENDS+=	${LOCALBASE}/bin/wine:${PORTSDIR}/emulators/i386-wine-devel
 .endif
 
 pre-configure:
-	${REINPLACE_CMD} "s|DISTVERSION|v${DISTVERSION}|g" ${WRKSRC}/src/windows/Makefile
-	${REINPLACE_CMD} "s|DISTVERSION|v${DISTVERSION}|g" ${WRKSRC}/src/winecheck/Makefile
-	${REINPLACE_CMD} "s|/share/man/man1|/man/man1|g" ${WRKSRC}/Makefile
+		@${LN} -s ${DISTDIR}/pluginloader.tar.gz ${WRKSRC}/pluginloader-v${DISTVERSION}.tar.gz
+		@${LN} -s ${DISTDIR}/pluginloader.tar.gz.sig ${WRKSRC}/pluginloader-v${DISTVERSION}.tar.gz.sig
 
 .include <bsd.port.post.mk>
