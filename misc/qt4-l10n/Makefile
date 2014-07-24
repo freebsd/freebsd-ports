@@ -11,7 +11,8 @@ COMMENT=	Qt localized messages
 USE_QT4=	linguist_build
 QT_DIST=	yes
 
-EXTRACT_AFTER_ARGS+=	--include '${DISTNAME}/translations'
+EXTRACT_AFTER_ARGS+=	--include '${DISTNAME}/src/corelib' \
+			'${DISTNAME}/translations'
 
 EXTRA_PATCHES=	# empty
 
