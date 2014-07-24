@@ -1,5 +1,0 @@
-Yawho is a fast and simple program similar to 'w'.
-For each logged in user yawho displays the connection type,
-tty, login shell PID, 'from' host, and the user's current command.
-
-WWW: http://wizard.ae.krakow.pl/~mike/

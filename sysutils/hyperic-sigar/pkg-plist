@@ -1,8 +1,0 @@
-include/sigar.h
-include/sigar_fileinfo.h
-include/sigar_format.h
-include/sigar_log.h
-include/sigar_ptql.h
-lib/libsigar.so.%%SHLIB_MAJOR%%
-lib/libsigar.so
-%%JAVAJARDIR%%/sigar.jar

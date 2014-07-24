@@ -32,7 +32,6 @@
     SUBDIR += bayespam
     SUBDIR += bbmail
     SUBDIR += biabam
-    SUBDIR += biffer
     SUBDIR += bmf
     SUBDIR += bogofilter
     SUBDIR += bogofilter-sqlite
