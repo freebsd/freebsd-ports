@@ -9,7 +9,7 @@ MASTER_SITES=	http://www.fizyka.umk.pl/~jkob/2dhf/
 DISTNAME=	${PORTNAME}-05.05
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	maho@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Numerical Hartree-Fock Program for Diatomic Molecules
 
 BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash

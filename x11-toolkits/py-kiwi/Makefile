@@ -9,17 +9,16 @@ MASTER_SITES=	http://download.gnome.org/sources/${PORTNAME}/1.9/ \
 		http://nivi.interfree.it/distfiles/${PORTNAME}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	nivit@FreeBSD.org
-COMMENT=	A framework and a set of enhanced widgets based on PyGTK
+MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Framework and a set of enhanced widgets based on PyGTK
 
 BUILD_DEPENDS=	pygtk-codegen-2.0:${PORTSDIR}/x11-toolkits/py-gtk2
 RUN_DEPENDS=	pygtk-codegen-2.0:${PORTSDIR}/x11-toolkits/py-gtk2
 
-USES=		gettext
+USES=		gettext tar:xz
 USE_GNOME=	libglade2
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
-USE_XZ=	yes
 
 DOCSDIR=	${PREFIX}/share/doc/${PYTHON_PKGNAMEPREFIX}${PORTNAME}
 EXAMPLESDIR=	${PREFIX}/share/examples/${PYTHON_PKGNAMEPREFIX}${PORTNAME}

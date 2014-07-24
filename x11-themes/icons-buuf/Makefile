@@ -9,7 +9,7 @@ MASTER_SITES=	http://ic1.deviantart.com/fs12/f/2006/266/9/0/
 DISTNAME=	Buuf_1.6-r2
 EXTRACT_SUFX=	_tar_bz2
 
-MAINTAINER=	pneumann@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A cool set of icons for the most common usage
 
 NO_BUILD=	yes

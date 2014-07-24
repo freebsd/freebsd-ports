@@ -10,7 +10,7 @@ PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DISTNAME=	ruby-${PORTNAME}-${PORTVERSION}
 DIST_SUBDIR=	ruby
 
-MAINTAINER=	ruby@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Ruby extension library to access Panda
 
 BROKEN=		not staged

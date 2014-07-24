@@ -7,7 +7,7 @@ CATEGORIES=	science
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}.5
 DISTNAME=	xmds-1.6.5
 
-MAINTAINER=	mplekos@physics.upatras.gr
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	XMDS is a code generator that integrates equations;
 
 MAN1=	loadxsil.1 xmds.1 xsil2graphics.1

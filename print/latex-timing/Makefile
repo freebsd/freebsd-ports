@@ -11,7 +11,7 @@ DISTFILES=	${DOC_FILES} ${CLASS_FILES} ${MF_FILES} ${PK_FILES} ${TFM_FILES}
 DIST_SUBDIR=	${PORTNAME}
 EXTRACT_ONLY=	#empty
 
-MAINTAINER=	hrs@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	LaTeX package for drawing timing diagrams
 
 USE_TEX=	latex

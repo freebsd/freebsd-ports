@@ -7,7 +7,7 @@ PORTREVISION=	4
 CATEGORIES=	print
 MASTER_SITES=	LOCAL/bf
 
-MAINTAINER=	bf@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GUI to view, search, print, and convert PostScript and PDF documents
 
 USE_GNOME=		gtk12

@@ -6,7 +6,7 @@ PORTVERSION=	1.1
 CATEGORIES=	print
 MASTER_SITES=	http://www.mammothcheese.ca/
 
-MAINTAINER=	jimmy@mammothcheese.ca
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Adobe Utopia typeface for Groff
 
 MAN7=	utopia_font.7

@@ -8,7 +8,7 @@ CATEGORIES=		www
 MASTER_SITES=		http://modmellon.googlecode.com/files/
 DIST_SUBDIR=		apache2
 
-MAINTAINER=		tj@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=		Apache auth module for identifying SSO users
 
 LICENSE=		GPLv2

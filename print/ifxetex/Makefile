@@ -9,7 +9,7 @@ MASTER_SITES=	${MASTER_SITE_TEX_CTAN}
 MASTER_SITE_SUBDIR=	macros/generic/
 DISTNAME=	${PORTNAME}
 
-MAINTAINER=	martin.dieringer@gmx.de
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The file ifxetex.sty tests whether XeTeX is being used
 
 DEPRECATED=	Very outdated and fully contained in texlive-texmf

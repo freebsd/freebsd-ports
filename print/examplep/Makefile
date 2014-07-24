@@ -8,7 +8,7 @@ MASTER_SITES=	${MASTER_SITE_TEX_CTAN}
 MASTER_SITE_SUBDIR=	macros/latex2e/contrib/
 DISTNAME=	${PORTNAME}
 
-MAINTAINER=	hiroto.kagotani@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	LaTeX style files for typesetting verbatim source code listings
 
 WRKSRC=		${WRKDIR}/${PORTNAME}

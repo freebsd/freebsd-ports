@@ -10,7 +10,7 @@ MASTER_SITES=	http://download.tuxfamily.org/bartcoding/FreeBSD/ \
 DISTNAME=	${PORTNAME}-${PORTVERSION}-${SVN_REV}
 PKGNAMESUFFIX=	-devel
 
-MAINTAINER=	coder@tuxfamily.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Comprehensive desktop publishing program
 
 LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg \

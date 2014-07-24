@@ -6,7 +6,7 @@ DISTVERSION=	2.4-rc5
 CATEGORIES=	news mail
 MASTER_SITES=	SF/husky/${PORTNAME}/2.4-RC5
 
-MAINTAINER=	os@rsu.ru
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	MSGAPI for Husky Fidosoft Project. Development version
 
 CONFLICTS=	husky-smapi-[0-9]*

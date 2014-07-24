@@ -9,7 +9,7 @@ MASTER_SITES=	http://comp.uark.edu/~ajarthu/mod_auth_form/download.php?download=
 PKGNAMEPREFIX=	${APACHE_PKGNAMEPREFIX}
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
-MAINTAINER=	net@arrishq.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	MySQL based form authentication module for Apache 2.x
 
 

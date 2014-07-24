@@ -7,7 +7,7 @@ CATEGORIES=	ports-mgmt
 MASTER_SITES=	http://kodu.neti.ee/~madis555/pkgfe/releases/ \
 		http://ketas.si.pri.ee/pkgfe/releases/
 
-MAINTAINER=	madis555@hot.ee
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Ncurses frontend for ports collection
 
 RUN_DEPENDS=	portupgrade:${PORTSDIR}/ports-mgmt/portupgrade \

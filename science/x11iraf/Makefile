@@ -8,7 +8,7 @@ CATEGORIES=	science astro
 MASTER_SITES=	ftp://iraf.noao.edu/iraf/x11iraf/
 DISTNAME=	x11iraf-v${PORTVERSION}-bin.freebsd
 
-MAINTAINER=	dsyphers@u.washington.edu
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Provides graphical tools to work with IRAF
 
 CONFLICTS=	xterm-[0-9]*

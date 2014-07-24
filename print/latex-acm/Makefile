@@ -9,7 +9,7 @@ MASTER_SITES=	http://www.acm.org/publications/latex_style/ \
 DISTFILES=	acm-small-v1-1.zip \
 		acm-large-v1-1.zip
 
-MAINTAINER=	rea@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	LaTeX styles for ACM journals
 
 USES=		zip

@@ -8,7 +8,7 @@ MASTER_SITES=	http://ext.by/libcyrillic/
 PKGNAMEPREFIX=
 DISTNAME=	${PORTNAME:S/^lib//}-${PORTVERSION}
 
-MAINTAINER=	pavel@ext.by
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Text manipulation and autodetection for 6 major Cyrillic charsets
 
 MAKE_ENV=	WRKSRC="${WRKSRC}"

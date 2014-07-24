@@ -8,7 +8,7 @@ MASTER_SITES=	http://www.rusf.ru/books/yo/src/ \
 		http://pankovpv.sovietservers.com/stuff/freebsd-distfiles/
 DISTNAME=	xcodesrc
 
-MAINTAINER=	pankov_p@mail.ru
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Program for converting Russian encodings with care to letter YO
 
 USES=		zip
