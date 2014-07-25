@@ -17,6 +17,7 @@ RUN_DEPENDS=	${SCILAB_CMD}:${PORTSDIR}/math/scilab
 USES=		dos2unix pkgconfig tar:xz
 DOS2UNIX_FILES=	etc/SIVP.start
 
+BROKEN=		Fails to compile in PC-BSD poudriere
 SCILAB_CMD=	${LOCALBASE}/bin/scilab
 CONTRIBDIR?=	share/scilab/contrib
 TOOLBOXDIR_REL?=	${CONTRIBDIR}/${PORTNAME}

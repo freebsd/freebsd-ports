@@ -43,6 +43,7 @@ CMAKE_ARGS+=	-DICONV_PREFIX:STRING="${ICONV_PREFIX}" \
 		-DICE_CONFIG_INCLUDE_DIR="${LOCALBASE}/include/"
 # for detailed debugging uncomment the next line
 #CMAKE_ARGS+=	--debug-output --trace
+BROKEN=		Fails to compile in PC-BSD poudriere
 DOCSDIR=	share/doc/${PORTNAME}-${PORTVERSION}
 USE_PYTHON=	yes
 USE_WX=		3.0+

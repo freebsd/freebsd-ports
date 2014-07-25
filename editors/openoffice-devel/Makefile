@@ -20,6 +20,7 @@ LICENSE=	APACHE20
 
 PKGNAMESUFFIX=	-devel
 
+BROKEN=		Fails to compile in PC-BSD poudriere
 USE_GNOME=	gtk20 libxslt libidl glib20
 USE_XORG=	x11 ice xaw xau xext xrender xrandr \
 		xi xt xcursor xdamage xcomposite xfixes

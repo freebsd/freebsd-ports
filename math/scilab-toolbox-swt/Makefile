@@ -14,6 +14,7 @@ COMMENT=	Scilab 1-D and 2-D Wavelet Toolbox
 BUILD_DEPENDS=	${SCILAB_CMD}:${PORTSDIR}/math/scilab
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
+BROKEN=		Fails to compile in PC-BSD poudriere
 SCILAB_CMD=	${LOCALBASE}/bin/scilab
 CONTRIBDIR?=	share/scilab/contrib
 TOOLBOXDIR_REL?=	${CONTRIBDIR}/${PORTNAME}

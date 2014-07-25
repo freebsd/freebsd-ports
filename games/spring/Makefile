@@ -24,6 +24,7 @@ BUILD_DEPENDS=	7z:${PORTSDIR}/archivers/p7zip
 
 # XXX: it should be possible to build it on i386, investigate
 # (currently link fails on undefined reference to __sync_fetch_and_add_8)
+BROKEN=		Fails to compile in PC-BSD poudriere
 ONLY_FOR_ARCHS=	amd64
 ONLY_FOR_ARCHS_REASON=	relies on x86 floating-point math and amd64 atomic ops
 

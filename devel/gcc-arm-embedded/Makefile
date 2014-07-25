@@ -13,6 +13,7 @@ COMMENT=	Complete gcc-based toolcahin for embedded ARM development
 LICENSE=	GPLv2 LGPL20 LGPL21 GPLv3 LGPL3
 LICENSE_COMB=	multi
 
+BROKEN=		Fails to compile in PC-BSD poudriere
 OPTIONS_DEFINE=	PURE EXAMPLES HTML PDF DOCS
 OPTIONS_DEFAULT=EXAMPLES
 PURE_DESC=	Use all libraries from bundle, do not depend on anything
