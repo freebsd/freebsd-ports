@@ -3,7 +3,7 @@
 
 PORTNAME=	libg19draw
 PORTVERSION=	1.0.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	SF/g19linux/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
@@ -17,12 +17,12 @@ CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib -pthread"
 
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
-USES=		pkgconfig
+USES=		libtool pkgconfig
 
 PLIST_FILES=	include/libg19draw.h \
 		lib/libg19draw.a \
-		lib/libg19draw.la \
 		lib/libg19draw.so \
-		lib/libg19draw.so.1
+		lib/libg19draw.so.1 \
+		lib/libg19draw.so.1.0.0
 
 .include <bsd.port.mk>
