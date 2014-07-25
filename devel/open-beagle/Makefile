@@ -3,6 +3,7 @@
 
 PORTNAME=	open-beagle
 PORTVERSION=	3.0.3
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	SF/beagle/beagle/${PORTVERSION}
 DISTNAME=	beagle-${PORTVERSION}
@@ -11,10 +12,12 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Evolutionary Computation Framework
 
 CONFLICTS=	beagle-[0-9]*
-USE_AUTOTOOLS=	libtool
+
+GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-optimization --with-zlib=/usr
 USE_LDCONFIG=	yes
-USES=		gmake
+USES=		gmake libtool
+INSTALL_TARGET=	install-strip
 PACCVERSION=	1.3.1b
 
 PLIST_SUB=	PORTVERSION=${PORTVERSION} PACCVERSION=${PACCVERSION}
