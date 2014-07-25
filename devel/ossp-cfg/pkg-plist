@@ -1,7 +1,7 @@
 bin/cfg-config
 include/cfg.h
 lib/libcfg.a
-lib/libcfg.la
 lib/libcfg.so
 lib/libcfg.so.9
+lib/libcfg.so.9.0.31
 man/man3/cfg.3.gz
