@@ -57,6 +57,266 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="9defb2d6-1404-11e4-8cae-20cf30e32f6d">
+    <topic>bugzilla -- Cross Site Request Forgery</topic>
+    <affects>
+      <package>
+	<name>bugzilla44</name>
+	<range><lt>4.4.5</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<h1>A Bugzilla Security Advisory reports:</h1>
+	<blockquote cite="http://www.bugzilla.org/security/4.0.13/">
+	  <p>Adobe does not properly restrict the SWF file format,
+	    which allows remote attackers to conduct cross-site
+	    request forgery (CSRF) attacks against Bugzilla's JSONP
+	    endpoint, possibly obtaining sensitive bug information,
+	    via a crafted OBJECT element with SWF content satisfying
+	    the character-set requirements of a callback API.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2014-1546</cvename>
+    </references>
+    <dates>
+      <discovery>2014-07-24</discovery>
+      <entry>2014-07-25</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="f927e06c-1109-11e4-b090-20cf30e32f6d">
+    <topic>apache22 -- several vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>apache22</name>
+	<range><gt>2.2.0</gt><lt>2.2.27_6</lt></range>
+      </package>
+      <package>
+	<name>apache22-event-mpm</name>
+	<range><gt>2.2.0</gt><lt>2.2.27_6</lt></range>
+      </package>
+      <package>
+	<name>apache22-itk-mpm</name>
+	<range><gt>2.2.0</gt><lt>2.2.27_6</lt></range>
+      </package>
+      <package>
+	<name>apache22-peruser-mpm</name>
+	<range><gt>2.2.0</gt><lt>2.2.27_6</lt></range>
+      </package>
+      <package>
+	<name>apache22-worker-mpm</name>
+	<range><gt>2.2.0</gt><lt>2.2.27_6</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Apache HTTP SERVER PROJECT reports:</p>
+	<blockquote cite="http://svn.apache.org/viewvc/httpd/httpd/branches/2.2.x/CHANGES?revision=1611816&amp;view=markup">
+	  <p> mod_deflate: The DEFLATE input filter (inflates request bodies) now
+	    limits the length and compression ratio of inflated request bodies to
+	    avoid denial of service via highly compressed bodies.  See directives
+	    DeflateInflateLimitRequestBody, DeflateInflateRatioLimit, and
+	    DeflateInflateRatioBurst.</p>
+	  <p>mod_cgid: Fix a denial of service against CGI scripts that do not consume
+	    stdin that could lead to lingering HTTPD child processes filling up the
+	    scoreboard and eventually hanging the server.  By default, the client I/O
+	    timeout (Timeout directive) now applies to communication with scripts.  The
+	    CGIDScriptTimeout directive can be used to set a different timeout for
+	    communication with scripts.</p>
+	  <p>Fix a race condition in scoreboard handling, which could lead to a heap
+	    buffer overflow.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2014-0118</cvename>
+      <cvename>CVE-2014-0231</cvename>
+      <cvename>CVE-2014-0226</cvename>
+    </references>
+    <dates>
+      <discovery>2014-07-19</discovery>
+      <entry>2014-07-24</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="81fc1076-1286-11e4-bebd-000c2980a9f3">
+    <topic>tomcat -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>tomcat6</name>
+	<range><lt>6.0.40</lt></range>
+      </package>
+      <package>
+	<name>tomcat7</name>
+	<range><lt>7.0.53</lt></range>
+      </package>
+      <package>
+	<name>tomcat8</name>
+	<range><lt>8.0.4</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Tomcat Security Team reports:</p>
+	<blockquote cite="https://tomcat.apache.org/security-7.html#Fixed_in_Apache_Tomcat_7.0.54">
+	  <p>Tomcat does not properly restrict XSLT stylesheets, which allows
+	    remote attackers to bypass security-manager restrictions and read
+	    arbitrary files via a crafted web application that provides an XML
+	    external entity declaration in conjunction with an entity
+	    reference, related to an XML External Entity (XXE) issue.</p>
+	  <p>An integer overflow, when operated behind a reverse proxy, allows
+	    remote attackers to conduct HTTP request smuggling attacks via a
+	    crafted Content-Length HTTP header.</p>
+	  <p>An integer overflow in parseChunkHeader allows remote attackers
+	    to cause a denial of service (resource consumption) via a malformed
+	    chunk size in chunked transfer coding of a request during the
+	    streaming of data.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2014-0096</cvename>
+      <cvename>CVE-2014-0099</cvename>
+      <cvename>CVE-2014-0075</cvename>
+      <url>https://tomcat.apache.org/security-6.html</url>
+      <url>https://tomcat.apache.org/security-7.html</url>
+      <url>https://tomcat.apache.org/security-8.html</url>
+    </references>
+    <dates>
+      <discovery>2014-05-23</discovery>
+      <entry>2014-07-23</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="978b0f76-122d-11e4-afe3-bc5ff4fb5e7b">
+    <topic>mozilla -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>firefox</name>
+	<range><lt>31.0,1</lt></range>
+      </package>
+      <package>
+	<name>firefox-esr</name>
+	<range><lt>24.7.0,1</lt></range>
+      </package>
+      <package>
+	<name>linux-firefox</name>
+	<range><lt>31.0,1</lt></range>
+      </package>
+      <package>
+	<name>linux-thunderbird</name>
+	<range><lt>24.7.0</lt></range>
+      </package>
+      <package>
+	<name>thunderbird</name>
+	<range><lt>24.7.0</lt></range>
+      </package>
+      <package>
+	<name>nss</name>
+	<range><lt>3.16.1_2</lt></range>
+	<!-- CVE-2014-1544/Bug 963150 -->
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Mozilla Project reports:</p>
+	<blockquote cite="http://www.mozilla.org/security/known-vulnerabilities/">
+	  <p>MFSA 2014-66 IFRAME sandbox same-origin access through
+	    redirect</p>
+	  <p>MFSA 2014-65 Certificate parsing broken by non-standard
+	    character encoding</p>
+	  <p>MFSA 2014-64 Crash in Skia library when scaling high
+	    quality images</p>
+	  <p>MFSA 2014-63 Use-after-free while when manipulating
+	    certificates in the trusted cache</p>
+	  <p>MFSA 2014-62 Exploitable WebGL crash with Cesium
+	    JavaScript library</p>
+	  <p>MFSA 2014-61 Use-after-free with FireOnStateChange
+	    event</p>
+	  <p>MFSA 2014-60 Toolbar dialog customization event
+	    spoofing</p>
+	  <p>MFSA 2014-59 Use-after-free in DirectWrite font
+	    handling</p>
+	  <p>MFSA 2014-58 Use-after-free in Web Audio due to
+	    incorrect control message ordering</p>
+	  <p>MFSA 2014-57 Buffer overflow during Web Audio
+	    buffering for playback</p>
+	  <p>MFSA 2014-56 Miscellaneous memory safety hazards
+	    (rv:31.0 / rv:24.7)</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2014-1544</cvename>
+      <cvename>CVE-2014-1547</cvename>
+      <cvename>CVE-2014-1548</cvename>
+      <cvename>CVE-2014-1549</cvename>
+      <cvename>CVE-2014-1550</cvename>
+      <cvename>CVE-2014-1551</cvename>
+      <cvename>CVE-2014-1552</cvename>
+      <cvename>CVE-2014-1555</cvename>
+      <cvename>CVE-2014-1556</cvename>
+      <cvename>CVE-2014-1557</cvename>
+      <cvename>CVE-2014-1558</cvename>
+      <cvename>CVE-2014-1559</cvename>
+      <cvename>CVE-2014-1560</cvename>
+      <cvename>CVE-2014-1561</cvename>
+      <url>https://www.mozilla.org/security/announce/2014/mfsa2014-56.html</url>
+      <url>https://www.mozilla.org/security/announce/2014/mfsa2014-57.html</url>
+      <url>https://www.mozilla.org/security/announce/2014/mfsa2014-58.html</url>
+      <url>https://www.mozilla.org/security/announce/2014/mfsa2014-59.html</url>
+      <url>https://www.mozilla.org/security/announce/2014/mfsa2014-60.html</url>
+      <url>https://www.mozilla.org/security/announce/2014/mfsa2014-61.html</url>
+      <url>https://www.mozilla.org/security/announce/2014/mfsa2014-62.html</url>
+      <url>https://www.mozilla.org/security/announce/2014/mfsa2014-63.html</url>
+      <url>https://www.mozilla.org/security/announce/2014/mfsa2014-64.html</url>
+      <url>https://www.mozilla.org/security/announce/2014/mfsa2014-65.html</url>
+      <url>https://www.mozilla.org/security/announce/2014/mfsa2014-66.html</url>
+      <url>https://www.mozilla.org/security/announce/</url>
+    </references>
+    <dates>
+      <discovery>2014-07-22</discovery>
+      <entry>2014-07-23</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="ecea9e92-0be5-4931-88da-8772d044972a">
+    <topic>mcollective -- cert valication issue</topic>
+    <affects>
+      <package>
+	<name>mcollective</name>
+	<range><lt>2.5.3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Melissa Stone reports:</p>
+	<blockquote cite="https://groups.google.com/forum/#!topic/puppet-announce/cPykqUXMmK4">
+	  <p>The MCollective aes_security public key plugin does not correctly
+	    validate certs against the CA. By exploiting this vulnerability
+	    within a race/initialization window, an attacker with local access
+	    could initiate an unauthorized MCollective client connection with a
+	    server, and thus control the mcollective plugins running on that
+	    server. This vulnerability requires a collective be configured to
+	    use the aes_security plugin. Puppet Enterprise and open source
+	    MCollective are not configured to use the plugin and are not
+	    vulnerable by default.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2014-3251</cvename>
+      <url>https://groups.google.com/forum/#!topic/puppet-announce/cPykqUXMmK4</url>
+    </references>
+    <dates>
+      <discovery>2014-07-09</discovery>
+      <entry>2014-07-21</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="904d78b8-0f7e-11e4-8b71-5453ed2e2b49">
     <topic>qt4-imageformats, qt5-gui -- DoS vulnerability in the GIF image handler</topic>
     <affects>
@@ -89,6 +349,105 @@ Notes:
       <discovery>2014-04-24</discovery>
       <entry>2014-07-19</entry>
       <modified>2014-07-21</modified>
+    </dates>
+  </vuln>
+
+  <vuln vid="4364e1f1-0f44-11e4-b090-20cf30e32f6d">
+    <topic>apache24 -- several vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>apache24</name>
+	<range><lt>2.4.10</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<h1>Apache HTTP SERVER PROJECT reports:</h1>
+	<blockquote cite="http://svn.apache.org/viewvc/httpd/httpd/branches/2.4.x/CHANGES?view=markup&amp;pathrev=1610737">
+	  <p>mod_proxy: Fix crash in Connection header handling which allowed a
+	    denial of service attack against a reverse proxy with a threaded MPM.</p>
+	  <p>Fix a race condition in scoreboard handling, which could lead to a
+	    heap buffer overflow.</p>
+	  <p>mod_deflate: The DEFLATE input filter (inflates request bodies) now
+	    limits the length and compression ratio of inflated request bodies to avoid
+	    denial of sevice via highly compressed bodies.  See directives
+	    DeflateInflateLimitRequestBody, DeflateInflateRatioLimit,
+	    and DeflateInflateRatioBurst.</p>
+	  <p>mod_cgid: Fix a denial of service against CGI scripts that do
+	    not consume stdin that could lead to lingering HTTPD child processes
+	    filling up the scoreboard and eventually hanging the server.  By
+	    default, the client I/O timeout (Timeout directive) now applies to
+	    communication with scripts.  The CGIDScriptTimeout directive can be
+	    used to set a different timeout for communication with scripts.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2014-0117</cvename>
+      <cvename>CVE-2014-3523</cvename>
+      <cvename>CVE-2014-0226</cvename>
+      <cvename>CVE-2014-0118</cvename>
+      <cvename>CVE-2014-0231</cvename>
+    </references>
+    <dates>
+      <discovery>2014-07-15</discovery>
+      <entry>2014-07-19</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="3f09ca29-0e48-11e4-b17a-6805ca0b3d42">
+    <topic>phpMyAdmin -- multiple XSS vulnerabilities, missing validation</topic>
+    <affects>
+      <package>
+	<name>phpMyAdmin</name>
+	<range><ge>4.2.0</ge><lt>4.2.6</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The phpMyAdmin development team reports:</p>
+	<blockquote cite="http://www.phpmyadmin.net/home_page/security/PMASA-2014-4.php">
+	  <p>Self-XSS due to unescaped HTML output in database
+	    structure page.</p>
+	  <p>With a crafted table comment, it is possible to trigger
+	    an XSS in database structure page.</p>
+	</blockquote>
+	<blockquote cite="http://www.phpmyadmin.net/home_page/security/PMASA-2014-5.php">
+	  <p>Self-XSS due to unescaped HTML output in database
+	    triggers page.</p>
+	  <p>When navigating into the database triggers page, it is
+	    possible to trigger an XSS with a crafted trigger
+	    name.</p>
+	</blockquote>
+	<blockquote cite="http://www.phpmyadmin.net/home_page/security/PMASA-2014-6.php">
+	  <p>Multiple XSS in AJAX confirmation messages.</p>
+	  <p>With a crafted column name it is possible to trigger an
+	    XSS when dropping the column in table structure page. With
+	    a crafted table name it is possible to trigger an XSS when
+	    dropping or truncating the table in table operations
+	    page.</p>
+	</blockquote>
+	<blockquote cite="http://www.phpmyadmin.net/home_page/security/PMASA-2014-7.php">
+	  <p>Access for an unprivileged user to MySQL user list.</p>
+	  <p>An unpriviledged user could view the MySQL user list and
+	    manipulate the tabs displayed in phpMyAdmin for them.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2014-4954</cvename>
+      <cvename>CVE-2014-4955</cvename>
+      <cvename>CVE-2014-4986</cvename>
+      <cvename>CVE-2014-4987</cvename>
+      <url>http://www.phpmyadmin.net/home_page/security/PMASA-2014-4.php</url>
+      <url>http://www.phpmyadmin.net/home_page/security/PMASA-2014-5.php</url>
+      <url>http://www.phpmyadmin.net/home_page/security/PMASA-2014-6.php</url>
+      <url>http://www.phpmyadmin.net/home_page/security/PMASA-2014-7.php</url>
+    </references>
+    <dates>
+      <discovery>2014-07-18</discovery>
+      <entry>2014-07-18</entry>
+      <modified>2014-07-20</modified>
     </dates>
   </vuln>
 
@@ -596,8 +955,16 @@ Notes:
 	<range><lt>24.6.0,1</lt></range>
       </package>
       <package>
+	<name>seamonkey</name>
+	<range><lt>2.26.1</lt></range>
+      </package>
+      <package>
 	<name>linux-firefox</name>
 	<range><lt>30.0,1</lt></range>
+      </package>
+      <package>
+	<name>linux-seamonkey</name>
+	<range><lt>2.26.1</lt></range>
       </package>
       <package>
 	<name>linux-thunderbird</name>
