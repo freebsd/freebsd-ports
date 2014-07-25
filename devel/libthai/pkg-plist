@@ -16,9 +16,9 @@ include/thai/thwstr.h
 include/thai/tis.h
 include/thai/wtt.h
 lib/libthai.a
-lib/libthai.la
 lib/libthai.so
-lib/libthai.so.2
+lib/libthai.so.0
+lib/libthai.so.0.2.0
 libdata/pkgconfig/libthai.pc
 %%DOXYGEN%%%%DOCSDIR%%/html/annotated.html
 %%DOXYGEN%%%%DOCSDIR%%/html/bc_s.png
