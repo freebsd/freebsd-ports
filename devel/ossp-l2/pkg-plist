@@ -2,9 +2,9 @@ bin/l2-config
 bin/l2tool
 include/l2.h
 lib/libl2.a
-lib/libl2.la
 lib/libl2.so
 lib/libl2.so.9
+lib/libl2.so.9.0.33
 man/man1/l2-config.1.gz
 man/man1/l2tool.1.gz
 man/man3/l2.3.gz
