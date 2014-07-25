@@ -15,9 +15,9 @@ include/psiconv/parse.h
 include/psiconv/parse_routines.h
 include/psiconv/unicode.h
 lib/libpsiconv.a
-lib/libpsiconv.la
 lib/libpsiconv.so
-lib/libpsiconv.so.10
+lib/libpsiconv.so.6
+lib/libpsiconv.so.6.4.2
 man/man1/psiconv-config.1.gz
 man/man1/psiconv.1.gz
 %%DATADIR%%/psion/ASCII_Codes.psi
