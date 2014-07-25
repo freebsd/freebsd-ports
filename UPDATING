@@ -5,6 +5,14 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20140725:
+  AFFECTS: users of cad/netgen
+  AUTHOR: stephen@FreeBSD.org
+
+  Before you update this port the old one should be removed.  (This is
+  because the build may try to link to libraries that are in
+  ${LOCALBASE}/lib rather than in ${WRKSRC}.)
+
 20140724:
   AFFECTS: users of dns/mydns-ng
   AUTHOR: danilo@FreeBSD.org
