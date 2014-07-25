@@ -12,4 +12,8 @@ Entry formats:
           - BGP messages (OPEN, UPDATE, NOTIFY, KEEPALIVE)
           - BGP state changes
 
+See also:
+
+https://bitbucket.org/ripencc/bgpdump/
+
 WWW: http://www.ris.ripe.net/source/
