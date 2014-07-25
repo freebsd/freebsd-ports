@@ -3,7 +3,7 @@
 
 PORTNAME=	scim-m17n
 PORTVERSION=	0.2.3
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	textproc
 MASTER_SITES=	SF/scim/${PORTNAME}/${PORTVERSION} \
 		http://anthesphoria.net/FreeBSD/ports/distfiles/
@@ -16,11 +16,12 @@ BUILD_DEPENDS=	scim:${PORTSDIR}/textproc/scim \
 LIB_DEPENDS=	libm17n.so:${PORTSDIR}/devel/m17n-lib
 RUN_DEPENDS=	scim:${PORTSDIR}/textproc/scim
 
-USES=		gmake pkgconfig libtool
+USES=		gmake pkgconfig libtool:keepla
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 
 PLIST_FILES=	lib/scim-1.0/1.4.0/IMEngine/m17n.a \
+		lib/scim-1.0/1.4.0/IMEngine/m17n.la \
 		lib/scim-1.0/1.4.0/IMEngine/m17n.so \
 		share/scim/icons/scim-m17n.png
 
