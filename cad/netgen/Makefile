@@ -3,7 +3,7 @@
 
 PORTNAME=	netgen
 PORTVERSION=	5.0.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	cad
 MASTER_SITES=	SF/netgen-mesher/netgen-mesher/${PORTVERSION:S|.0$||}/
 
@@ -41,7 +41,7 @@ CONFIGURE_ARGS+=	--enable-occ
 .endif
 
 .if ${PORT_OPTIONS:MFFMPEG}
-LIB_DEPENDS+=	libavcodec.so:${PORTSDIR}/multimedia/ffmpeg
+LIB_DEPENDS+=	libavcodec0.so:${PORTSDIR}/multimedia/ffmpeg0
 CONFIGURE_ARGS+=	--enable-ffmpeg
 .endif
 
@@ -57,6 +57,10 @@ MAKE_ENV=	TK_VER=${TK_VER} TCL_VER=${TCL_VER}	\
 pre-configure:
 	${REINPLACE_CMD} -e "s|%%DATADIR%%|${DATADIR}|"		\
 		${WRKSRC}/ng/ngappinit.cpp
+
+post-configure:
+	${REINPLACE_CMD} -e "s|%%LOCALBASE%%|${LOCALBASE}|"	\
+		${WRKSRC}/configure
 
 post-install:
 #	copy some additional headers for build cad/salome-netgenplugin
