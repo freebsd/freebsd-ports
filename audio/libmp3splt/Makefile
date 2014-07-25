@@ -3,7 +3,7 @@
 
 PORTNAME=	libmp3splt
 PORTVERSION=	0.8.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	SF/mp3splt/${PORTNAME}/${PORTVERSION}
 
@@ -14,7 +14,7 @@ LICENSE=	GPLv2
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-cutter --disable-doxygen_doc
-USES=	pathfix pkgconfig
+USES=		libtool pathfix pkgconfig
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	libltdl
 
@@ -29,9 +29,8 @@ OPTIONS_DEFAULT=	MAD VORBIS ID3 PCRE NLS
 PLUGIN_DIR=	libmp3splt0
 
 PLIST_DIRS=	include/libmp3splt lib/${PLUGIN_DIR}
-PLIST_DIRSTRY=	libdata/pkgconfig
 PLIST_FILES=	include/libmp3splt/mp3splt.h include/libmp3splt/version.h lib/libmp3splt.a \
-		lib/libmp3splt.la lib/libmp3splt.so lib/libmp3splt.so.0 \
+		lib/libmp3splt.so lib/libmp3splt.so.0 lib/libmp3splt.so.0.0.8 \
 		libdata/pkgconfig/libmp3splt.pc
 
 .include <bsd.port.options.mk>
@@ -39,9 +38,9 @@ PLIST_FILES=	include/libmp3splt/mp3splt.h include/libmp3splt/version.h lib/libmp
 .if ${PORT_OPTIONS:MMAD}
 LIB_DEPENDS+=	libmad.so:${PORTSDIR}/audio/libmad
 PLIST_FILES+=	lib/${PLUGIN_DIR}/libsplt_mp3.a \
-		lib/${PLUGIN_DIR}/libsplt_mp3.la \
 		lib/${PLUGIN_DIR}/libsplt_mp3.so \
-		lib/${PLUGIN_DIR}/libsplt_mp3.so.0
+		lib/${PLUGIN_DIR}/libsplt_mp3.so.0 \
+		lib/${PLUGIN_DIR}/libsplt_mp3.so.0.0.0
 .else
 CONFIGURE_ARGS+=	--disable-mp3
 .endif
@@ -50,9 +49,9 @@ CONFIGURE_ARGS+=	--disable-mp3
 LIB_DEPENDS+=	libogg.so:${PORTSDIR}/audio/libogg \
 		libvorbis.so:${PORTSDIR}/audio/libvorbis
 PLIST_FILES+=	lib/${PLUGIN_DIR}/libsplt_ogg.a \
-		lib/${PLUGIN_DIR}/libsplt_ogg.la \
 		lib/${PLUGIN_DIR}/libsplt_ogg.so \
-		lib/${PLUGIN_DIR}/libsplt_ogg.so.0
+		lib/${PLUGIN_DIR}/libsplt_ogg.so.0 \
+		lib/${PLUGIN_DIR}/libsplt_ogg.so.0.0.0
 .else
 CONFIGURE_ARGS+=	--disable-ogg
 .endif
