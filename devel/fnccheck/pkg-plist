@@ -1,6 +1,5 @@
 bin/fcdump
 bin/fcmanager
 lib/libfc.a
-lib/libfc.la
 lib/libfc.so
 lib/libfc.so.0
