@@ -96,6 +96,14 @@ $1 == "@dirrmtry" {
 	next
 }
 
+$1 == "@fmtutil" {
+	print "@comment begin " $0
+	print "@exec fmtutil-sys --missing >/dev/null"
+	for (i = 2; i <= NF; i++)
+		print "@unexec rm -f "$i"; rmdir -p `dirname "$1"` 2>/dev/null"
+	print "@comment end " $0
+}
+
 # Print everything else as-is
 {
   print $0
