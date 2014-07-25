@@ -4,8 +4,8 @@ bin/zinnia_learn
 include/zinnia.h
 include/zinnia/zinnia.h
 lib/libzinnia.a
-lib/libzinnia.la
 lib/libzinnia.so
 lib/libzinnia.so.0
+lib/libzinnia.so.0.0.0
 libdata/pkgconfig/zinnia.pc
 @dirrm include/zinnia
