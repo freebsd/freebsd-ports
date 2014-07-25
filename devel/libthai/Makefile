@@ -3,6 +3,7 @@
 
 PORTNAME=	libthai
 PORTVERSION=	0.1.20
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://linux.thai.net/pub/thailinux/software/libthai/
 
@@ -13,9 +14,8 @@ LICENSE=	LGPL21
 
 LIB_DEPENDS=	libdatrie.so:${PORTSDIR}/devel/libdatrie
 
-USE_XZ=		yes
 GNU_CONFIGURE=	yes
-USES=	gmake pathfix pkgconfig
+USES=		gmake libtool pathfix pkgconfig tar:xz
 USE_LDCONFIG=	yes
 
 OPTIONS_DEFINE=	DOXYGEN
