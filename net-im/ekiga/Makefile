@@ -3,7 +3,7 @@
 
 PORTNAME=	ekiga
 PORTVERSION=	4.0.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	net-im
 MASTER_SITES=	GNOME
 #MASTER_SITES=	http://www.ekiga.org/admin/downloads/latest/sources/ekiga_${PORTVERSION}/
@@ -20,9 +20,8 @@ LIB_DEPENDS=	libboost_signals.so:${PORTSDIR}/devel/boost-libs \
 		libv4l2.so:${PORTSDIR}/multimedia/libv4l
 RUN_DEPENDS=	gnome-icon-theme>=3.0.0:${PORTSDIR}/misc/gnome-icon-theme
 
-USE_XZ=		yes
 GNU_CONFIGURE=	yes
-USES=		gettext gmake pathfix perl5 pkgconfig
+USES=		gettext gmake libtool pathfix perl5 pkgconfig tar:xz
 USE_XORG=	xv
 USE_GNOME=	gtk20 intltool libxml2
 INSTALLS_OMF=	yes
