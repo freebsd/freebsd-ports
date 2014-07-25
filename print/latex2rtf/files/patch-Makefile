@@ -1,71 +1,33 @@
---- Makefile.orig	2009-12-11 22:10:59.000000000 +0100
-+++ Makefile	2010-02-11 15:08:00.000000000 +0100
-@@ -1,5 +1,5 @@
--CC?=gcc
--TAR?=gnutar
--RM?=rm
-+#CC?=gcc
-+#TAR?=gnutar
-+#RM?=rm
- MKDIR=mkdir -p
- PKGMANDIR?=man
-@@ -6,5 +6,6 @@
+--- ./Makefile.orig	2013-11-12 06:44:44.000000000 -0200
++++ ./Makefile	2014-07-24 21:27:45.000000000 -0300
+@@ -151,10 +151,10 @@
+ 	$(CC) $(CFLAGS) $(LDFLAGS) $(OBJS)	$(LIBS) -o $(BINARY_NAME)
  
--CFLAGS:=$(CFLAGS) -DUNIX
-+CFLAGS+=-DUNIX
-+#CFLAGS:=$(CFLAGS) -DUNIX
- #CFLAGS:=$(CFLAGS) -DUNIX -fexceptions -fstack-protector --param=ssp-buffer-size=4 -m64  -mtune=generic
- #CFLAGS:=$(CFLAGS) -DMSDOS -DNOSTDERR #Windows/DOS
- #CFLAGS:=$(CFLAGS) -DMAC_CLASSIC   #MacOS 8/9
-@@ -20,7 +21,7 @@
- #CFLAGS:=$(CFLAGS) -Zwin32  
+ cfg.o: Makefile cfg.c
+-	$(CC) $(CFLAGS) -DCFGDIR=\"$(DESTDIR)$(CFGDIR)\" -c cfg.c -o cfg.o
++	$(CC) $(CFLAGS) -DCFGDIR=\"$(CFGDIR)\" -c cfg.c -o cfg.o
  
- #Base directory - adapt as needed
--PREFIX?=$(PREFIX_DRIVE)/usr/local
-+#PREFIX?=$(PREFIX_DRIVE)/usr/local
+ main.o: Makefile main.c
+-	$(CC) $(CFLAGS) -DCFGDIR=\"$(DESTDIR)$(CFGDIR)\" -c main.c -o main.o
++	$(CC) $(CFLAGS) -DCFGDIR=\"$(CFGDIR)\" -c main.c -o main.o
  
- #Name of executable binary --- beware of 8.3 restriction under DOS
- BINARY_NAME=latex2rtf$(EXE_SUFFIX)
-@@ -34,7 +35,7 @@
+ check test: latex2rtf
+ 	cd test && $(MAKE) clean
+@@ -209,7 +209,6 @@
+ 	cd doc && $(MAKE) -k
  
- # Nothing to change below this line
- 
--CFLAGS:=$(CFLAGS) -g -Wall -fsigned-char
-+CFLAGS+= -fsigned-char
- 
- LIBS= -lm
- 
-@@ -195,14 +196,14 @@
- 	$(MKDIR) $(BIN_INSTALL)
- 	$(MKDIR) $(MAN_INSTALL)
- 	$(MKDIR) $(CFG_INSTALL)
--	cp $(BINARY_NAME)     $(BIN_INSTALL)
--	cp scripts/latex2png  $(BIN_INSTALL)
--	cp doc/latex2rtf.1    $(MAN_INSTALL)
--	cp doc/latex2png.1    $(MAN_INSTALL)
--	cp $(CFGS)            $(CFG_INSTALL)
--	cp doc/latex2rtf.html $(SUPPORT_INSTALL)
--	cp doc/latex2rtf.pdf  $(SUPPORT_INSTALL)
--	cp doc/latex2rtf.txt  $(SUPPORT_INSTALL)
-+	${BSD_INSTALL_PROGRAM} $(BINARY_NAME)     $(BIN_INSTALL)
-+	${BSD_INSTALL_SCRIPT} scripts/latex2png  $(BIN_INSTALL)
-+	${BSD_INSTALL_MAN} doc/latex2rtf.1    $(MAN_INSTALL)
-+	${BSD_INSTALL_MAN} doc/latex2png.1    $(MAN_INSTALL)
-+	${BSD_INSTALL_DATA} $(CFGS)            $(CFG_INSTALL)
-+	${BSD_INSTALL_DATA} doc/latex2rtf.html $(SUPPORT_INSTALL)
-+	${BSD_INSTALL_DATA} doc/latex2rtf.pdf  $(SUPPORT_INSTALL)
-+	${BSD_INSTALL_DATA} doc/latex2rtf.txt  $(SUPPORT_INSTALL)
+ install: latex2rtf doc/latex2rtf.1 $(CFGS) scripts/latex2png
+-	cd doc && $(MAKE)
+ 	$(MKDIR) $(DESTDIR)$(BINDIR)
+ 	$(MKDIR) $(DESTDIR)$(MANDIR)
+ 	$(MKDIR) $(DESTDIR)$(CFGDIR)
+@@ -217,9 +216,6 @@
+ 	cp -p doc/latex2rtf.1    $(DESTDIR)$(MANDIR)
+ 	cp -p doc/latex2png.1    $(DESTDIR)$(MANDIR)
+ 	cp -p $(CFGS)            $(DESTDIR)$(CFGDIR)
+-	cp -p doc/latex2rtf.html $(DESTDIR)$(SUPPORTDIR)
+-	cp -p doc/latex2rtf.pdf  $(DESTDIR)$(SUPPORTDIR)
+-	cp -p doc/latex2rtf.txt  $(DESTDIR)$(SUPPORTDIR)
+ 	cp -p $(BINARY_NAME)     $(DESTDIR)$(BINDIR)
  	@echo "******************************************************************"
  	@echo "*** latex2rtf successfully installed as \"$(BINARY_NAME)\""
- 	@echo "*** in directory \"$(BIN_INSTALL)\""
-@@ -220,8 +221,8 @@
- 
- install-info: doc/latex2rtf.info
- 	$(MKDIR) $(INFO_INSTALL)
--	cp doc/latex2rtf.info $(INFO_INSTALL)
--	install-info --info-dir=$(INFO_INSTALL) doc/latex2rtf.info
-+	${BSD_INSTALL_DATA} doc/latex2rtf.info $(INFO_INSTALL)
-+	install-info --info-dir=$(INFO_INSTALL) $(INFO_INSTALL)/latex2rtf.info
- 
- realclean: checkdir clean
- 	$(RM) -f makefile.depend $(L2R_VERSION).tar.gz

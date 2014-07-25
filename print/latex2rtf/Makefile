@@ -2,26 +2,24 @@
 # $FreeBSD$
 
 PORTNAME=	latex2rtf
-PORTVERSION=	2.0.0
+PORTVERSION=	2.3.8
 CATEGORIES=	print
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-unix/${PORTVERSION} \
 		${MASTER_SITE_TEX_CTAN}
 
-
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	danilo@FreeBSD.org
 COMMENT=	Translator from LaTeX to RTF
 
-MAN1=		latex2rtf.1 latex2png.1
-INFO=		latex2rtf
+USES=		shebangfix
+SHEBANG_FILES=	${WRKSRC}/scripts/latex2png
 
-USES=		perl5
-USE_PERL5=	build
+OPTIONS_DEFINE= LATEX2PNG
+LATEX2PNG_DESC= Install latex2png utility
+OPTIONS_SUB=    yes
 
-INSTALL_TARGET=	install install-info
+LATEX2PNG_RUN_DEPENDS=  convert:${PORTSDIR}/graphics/ImageMagick
 
-NO_STAGE=	yes
-pre-patch:
-	@${CP} ${WRKSRC}/doc/latex2rtf.info ${WRKSRC}/doc/latex2rtf.info.bak
-	@${TR} -d '\r\b\0' < ${WRKSRC}/doc/latex2rtf.info.bak > ${WRKSRC}/doc/latex2rtf.info
+MAKE_ARGS+=	MANDIR=${PREFIX}/man/man1 CFGDIR=${DATADIR}/cfg \
+		BINDIR=${PREFIX}/bin
 
 .include <bsd.port.mk>
