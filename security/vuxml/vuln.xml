@@ -57,6 +57,36 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="9defb2d6-1404-11e4-8cae-20cf30e32f6d">
+    <topic>bugzilla -- Cross Site Request Forgery</topic>
+    <affects>
+      <package>
+	<name>bugzilla44</name>
+	<range><lt>4.4.5</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<h1>A Bugzilla Security Advisory reports:</h1>
+	<blockquote cite="http://www.bugzilla.org/security/4.0.13/">
+	  <p>Adobe does not properly restrict the SWF file format,
+	    which allows remote attackers to conduct cross-site
+	    request forgery (CSRF) attacks against Bugzilla's JSONP
+	    endpoint, possibly obtaining sensitive bug information,
+	    via a crafted OBJECT element with SWF content satisfying
+	    the character-set requirements of a callback API.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2014-1546</cvename>
+    </references>
+    <dates>
+      <discovery>2014-07-24</discovery>
+      <entry>2014-07-25</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="f927e06c-1109-11e4-b090-20cf30e32f6d">
     <topic>apache22 -- several vulnerabilities</topic>
     <affects>
