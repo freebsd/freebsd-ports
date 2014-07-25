@@ -2,11 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	weka
-DISTVERSION=	3-6-8
+DISTVERSION=	3-6-11
 CATEGORIES=	textproc java
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-3-6/${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	danilo@FreeBSD.org
 COMMENT=	Data Mining Software in Java
 
 LICENSE=	GPLv2
