@@ -15,7 +15,7 @@ LICENSE=	BSD
 MAKEFILE=	BSDmakefile
 USE_BZIP2=	yes
 USE_OPENLDAP=	24
-LDFLAGS+=	-L${LOCALBASE}/lib -llber-2.4
+LDFLAGS+=	-L${LOCALBASE}/lib -llber
 
 PLIST_FILES=	bin/ldapform \
 		bin/ldapedit \
