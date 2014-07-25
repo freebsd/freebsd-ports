@@ -14,10 +14,9 @@ include/gm_metric.h
 include/gm_msg.h
 include/gm_protocol.h
 include/gm_value.h
-lib/libganglia-%%PORTVERSION%%.so
 lib/libganglia-%%PORTVERSION%%.so.0
+lib/libganglia-%%PORTVERSION%%.so.0.0.0
 lib/libganglia.a
-lib/libganglia.la
 lib/libganglia.so
 lib/ganglia/modcpu.so
 lib/ganglia/moddisk.so
@@ -28,6 +27,12 @@ lib/ganglia/modnet.so
 lib/ganglia/modproc.so
 lib/ganglia/modpython.so
 lib/ganglia/modsys.so
+man/man1/gmetric.1.gz
+%%GMETAD%%man/man1/gmetad.1.gz
+%%GMETAD%%man/man1/gmetad.py.1.gz
+man/man1/gmond.1.gz
+man/man1/gstat.1.gz
+man/man5/gmond.conf.5.gz
 %%GMETAD%%sbin/gmetad
 %%GMETAD%%sbin/gmetasnap
 sbin/gmond
