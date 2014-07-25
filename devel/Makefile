@@ -4244,6 +4244,7 @@
     SUBDIR += rubygem-deep_merge
     SUBDIR += rubygem-deeptest
     SUBDIR += rubygem-delayed_job
+    SUBDIR += rubygem-delayer
     SUBDIR += rubygem-dep_selector
     SUBDIR += rubygem-deprecated
     SUBDIR += rubygem-deprecated2
