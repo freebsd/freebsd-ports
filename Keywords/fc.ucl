@@ -1,0 +1,11 @@
+# $FreeBSD$
+#
+# MAINTAINER: x11@FreeBSD.org
+
+actions: [dirrmtry]
+post-install: <<EOD
+  fc-cache -s %D/%@ 2>/dev/null || true
+EOD
+post-deinstall: <<EOD
+  fc-cache -s %D/%@ 2>/dev/null || true
+EOD

@@ -7,7 +7,7 @@ PORTREVISION=	3
 CATEGORIES=	science
 MASTER_SITES=	http://www.aero.polimi.it/~masarati/Download/mbdyn/
 
-MAINTAINER=	maho@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	MultiBody Dynamics analysis system
 
 LICENSE=	GPLv2

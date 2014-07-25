@@ -6,7 +6,7 @@ PORTVERSION=	1.1.4
 CATEGORIES=	science
 MASTER_SITES=	http://www.files.chem.vt.edu/chem-dept/valeev/software/libint/src/
 
-MAINTAINER=	maho@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Evaluate the integrals in modern atomic and molecular theory
 
 USES=		perl5 gmake

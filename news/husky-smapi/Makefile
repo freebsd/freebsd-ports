@@ -8,7 +8,7 @@ CATEGORIES=	news mail
 MASTER_SITES=	SF/husky/${PORTNAME}/2.2-release
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
-MAINTAINER=	fjoe@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	MSGAPI for Husky Fidosoft Project
 
 CONFLICTS=	husky-smapi-devel-[0-9]*

@@ -76,7 +76,7 @@ NO_STAGE=	yes
 
 PORTNAME=	lusca
 DISTVERSION=	r14809
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 PROJECTHOST=	lusca-cache
@@ -84,7 +84,7 @@ PKGNAMESUFFIX=	-head
 DISTNAME=	LUSCA_HEAD-r14809
 # EXTRACT_SUFX=	.tar.gz
 
-MAINTAINER=	adrian@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	HTTP Caching Proxy (Squid Derivative) - Stable Release
 
 CONFLICTS=	squid-[0-9]* cacheboy*

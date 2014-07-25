@@ -334,9 +334,9 @@
     SUBDIR += dbus-glib
     SUBDIR += dbus-qt4
     SUBDIR += dbus-qt5
-    SUBDIR += dbus-tcl
     SUBDIR += dbus-sharp
     SUBDIR += dbus-sharp-glib
+    SUBDIR += dbus-tcl
     SUBDIR += dcmtk
     SUBDIR += dconf
     SUBDIR += dconf-editor
@@ -410,8 +410,8 @@
     SUBDIR += elftoaout
     SUBDIR += elib
     SUBDIR += entity
-    SUBDIR += epm
     SUBDIR += epl.el
+    SUBDIR += epm
     SUBDIR += epydoc
     SUBDIR += eric4
     SUBDIR += eris
@@ -1001,7 +1001,6 @@
     SUBDIR += libesedb
     SUBDIR += libestr
     SUBDIR += libev
-    SUBDIR += libevent
     SUBDIR += libevent-hiphop
     SUBDIR += libevent2
     SUBDIR += libevt
@@ -3440,8 +3439,8 @@
     SUBDIR += pipestatus
     SUBDIR += pire
     SUBDIR += pit
-    SUBDIR += pkgconf
     SUBDIR += pkg-info.el
+    SUBDIR += pkgconf
     SUBDIR += plan9port
     SUBDIR += pmccabe
     SUBDIR += pmd
@@ -3607,6 +3606,7 @@
     SUBDIR += py-collective.monkeypatcher
     SUBDIR += py-collective.z3cform.datetimewidget
     SUBDIR += py-colorama
+    SUBDIR += py-colorlog
     SUBDIR += py-conditional
     SUBDIR += py-configobj
     SUBDIR += py-configparser

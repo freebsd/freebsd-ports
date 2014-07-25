@@ -6,7 +6,7 @@ PORTVERSION=	1.7.1
 CATEGORIES=	net
 MASTER_SITES=	http://openvswitch.org/releases/
 
-MAINTAINER=	emaste@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Production quality, multilayer virtual switch
 
 LICENSE=	APACHE20

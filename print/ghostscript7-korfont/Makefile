@@ -9,7 +9,7 @@ MASTER_SITES=	# empty
 PKGNAMESUFFIX=	7-korfont
 DISTFILES=	# empty
 
-MAINTAINER=	doceng@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Korean font support for Ghostscript 7.x
 
 RUN_DEPENDS=	${LOCALBASE}/share/fonts/CIDFont/Munhwa-Regular:${PORTSDIR}/korean/munhwafonts-cid \

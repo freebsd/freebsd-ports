@@ -9,7 +9,7 @@ MASTER_SITES=	http://download.gna.org/color-theme/
 PKGNAMESUFFIX=	-${EMACS_NAME}
 DISTNAME=	color-theme-${PORTVERSION}
 
-MAINTAINER=	dsh@vlink.ru
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Emacs-Lisp package with more than 50 color themes
 
 USE_EMACS=	yes

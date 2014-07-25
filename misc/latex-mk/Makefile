@@ -7,7 +7,7 @@ PORTREVISION=	3
 CATEGORIES=	misc print
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	jlaffaye@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Collection of makefile and scripts for LaTeX documents
 
 BUILD_DEPENDS=	texi2dvi:${PORTSDIR}/print/texinfo

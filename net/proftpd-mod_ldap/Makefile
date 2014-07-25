@@ -2,6 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mod_ldap
+PORTREVISION=	3
 CATEGORIES=	net ftp
 PKGNAMEPREFIX=	proftpd-
 

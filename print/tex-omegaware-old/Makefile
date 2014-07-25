@@ -10,7 +10,7 @@ MASTER_SITE_SUBDIR=     hrs/teTeX
 DISTFILES=	${TETEX_SRC} ${TETEX_TEXMF}
 EXTRACT_ONLY=	${TETEX_SRC}
 
-MAINTAINER=	hrs@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Old version of ovf2ovp, ovp2ovf, ofm2opl, and opl2ofm
 
 USE_TEX=	base texmf

@@ -3,7 +3,7 @@
 
 PORTNAME=	adsuck
 PORTVERSION=	2.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	dns
 MASTER_SITES=	http://opensource.conformal.com/snapshots/adsuck/ \
 		http://philpep.org/pub/
@@ -14,12 +14,10 @@ COMMENT=	DNS relay for ad blocking
 
 LICENSE=	ISCL
 
-LIB_DEPENDS+=	libevent-2.0.so:${PORTSDIR}/devel/libevent2 \
+LIB_DEPENDS+=	libevent.so:${PORTSDIR}/devel/libevent2 \
 		libldns.so:${PORTSDIR}/dns/ldns
 
-CFLAGS+=	-I${LOCALBASE}/include/event2/compat \
-		-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib/event2
+CFLAGS+= 	-I${LOCALBASE}/include
 
 USE_RC_SUBR=	adsuck
 
@@ -29,9 +27,6 @@ GROUPS=	_adsuck
 SUB_FILES+=	pkg-message
 
 OPTIONS_DEFINE=	EXAMPLES
-
-post-patch:
-	@${REINPLACE_CMD} -e "s/-levent/-levent-2.0/g" ${WRKSRC}/Makefile
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/adsuck ${STAGEDIR}${PREFIX}/sbin

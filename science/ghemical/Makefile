@@ -8,7 +8,7 @@ CATEGORIES=	science
 MASTER_SITES=	http://bioinformatics.org/ghemical/download/release20111012/	\
 		http://bioinformatics.org/ghemical/download/current
 
-MAINTAINER=	maho@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Ghemical is a computational chemistry software package
 
 BUILD_DEPENDS=	f2c:${PORTSDIR}/lang/f2c \

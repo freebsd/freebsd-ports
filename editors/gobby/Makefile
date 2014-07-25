@@ -2,6 +2,7 @@
 
 PORTNAME=	gobby
 PORTVERSION=	0.4.13
+PORTREVISION=	1
 CATEGORIES=	editors
 MASTER_SITES=	http://releases.0x539.de/gobby/ \
 		LOCAL/${MAINTAINER:C/([^@]*)@.*/\1/}
@@ -19,8 +20,8 @@ LIB_DEPENDS=	libobby.so:${PORTSDIR}/devel/obby \
 OPTIONS_DEFINE=	GTKSPELL NLS
 GTKSPELL_DESC=	Enable GtkSpell support
 
-USE_GNOME=	gnomehack gtksourceview2 intltool
-USES=		gmake pkgconfig
+USE_GNOME=	gtksourceview2 intltool
+USES=		gmake pkgconfig pathfix
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
 

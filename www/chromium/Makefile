@@ -5,7 +5,7 @@
 
 PORTNAME=	chromium
 PORTVERSION=	35.0.1916.153
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	http://commondatastorage.googleapis.com/chromium-browser-official/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
@@ -34,7 +34,7 @@ LIB_DEPENDS=	libcairo.so:${PORTSDIR}/graphics/cairo \
 		libnss3.so:${PORTSDIR}/security/nss \
 		libgnome-keyring.so:${PORTSDIR}/security/libgnome-keyring \
 		libcups.so:${PORTSDIR}/print/cups-client \
-		libevent-1.4.so:${PORTSDIR}/devel/libevent \
+		libevent.so:${PORTSDIR}/devel/libevent2 \
 		libgcrypt.so:${PORTSDIR}/security/libgcrypt \
 		libpci.so:${PORTSDIR}/devel/libpci \
 		libdrm.so:${PORTSDIR}/graphics/libdrm

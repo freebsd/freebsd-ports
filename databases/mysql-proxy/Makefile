@@ -3,6 +3,7 @@
 
 PORTNAME=	mysql-proxy
 PORTVERSION=	0.8.4
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	${MASTER_SITE_MYSQL}
 MASTER_SITE_SUBDIR=	MySQL-Proxy
@@ -12,7 +13,7 @@ COMMENT=	Monitor, analyze, or transform the communication of MySQL
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libevent-1.4.so:${PORTSDIR}/devel/libevent \
+LIB_DEPENDS=	libevent.so:${PORTSDIR}/devel/libevent2 \
 		libglib-2.0.so:${PORTSDIR}/devel/glib20
 
 CONFIGURE_ARGS+=	--with-lua=lua-${LUA_VER} --with-mysql=${LOCALBASE}/bin/mysql_config --docdir=${DATADIR} --enable-self-contained

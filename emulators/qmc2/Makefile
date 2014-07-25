@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	qmc2
-PORTVERSION=	0.43
+PORTVERSION=	0.44
 CATEGORIES=	emulators
 MASTER_SITES=	SF
 
@@ -24,7 +24,8 @@ USE_QT4=	gui opengl phonon qtestlib webkit xml \
 USE_SDL=	sdl
 MAKE_ARGS=	QTDIR="${QT_PREFIX}" QMAKE="${QMAKE}" \
 		SYSCONFDIR="${PREFIX}/etc" ARCH="${OPSYS}" \
-		CC_FLAGS="${CFLAGS}" CXX_FLAGS="${CXXFLAGS}" \
+		CC_FLAGS="${CFLAGS} -DUSE_FILE32API" \
+		CXX_FLAGS="${CXXFLAGS} -DUSE_FILE32API" \
 		CC="${CC}" CXX="${CXX}" LINK="${CXX}"
 
 DESKTOP_ENTRIES="QMC2 (MAME)" "MAME frontend" "${DATADIR}/img/mame.png" \

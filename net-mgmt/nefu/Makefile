@@ -3,7 +3,7 @@
 
 PORTNAME=	nefu
 PORTVERSION=	1.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://rsug.itd.umich.edu/software/nefu/files/
 EXTRACT_SUFX=	.tgz

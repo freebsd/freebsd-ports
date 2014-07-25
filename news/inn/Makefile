@@ -11,7 +11,7 @@ MASTER_SITE_SUBDIR?=	${PORTNAME}
 #MASTER_SITES=	${MASTER_SITE_LOCAL}
 #MASTER_SITE_SUBDIR=	fluffy
 
-MAINTAINER=	fluffy@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	InterNetNews -- the Internet meets Netnews
 
 BUILD_DEPENDS=	p5-GD>=0:${PORTSDIR}/graphics/p5-GD \

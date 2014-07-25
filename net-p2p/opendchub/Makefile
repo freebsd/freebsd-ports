@@ -6,7 +6,7 @@ PORTVERSION=	0.8.2
 CATEGORIES=	net-p2p
 MASTER_SITES=	SF/${PORTNAME}/Open%20DC%20Hub/${PORTVERSION}
 
-MAINTAINER=	yashin.dm@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Unofficial Unix version of the Direct Connect Hub software
 
 USES=		perl5 gmake

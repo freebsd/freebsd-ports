@@ -1,12 +1,6 @@
 --- contrib/slapd-modules/smbk5pwd/Makefile.orig	2013-03-03 13:17:30.000000000 -0800
 +++ contrib/slapd-modules/smbk5pwd/Makefile	2013-03-14 10:54:56.917578861 -0700
-@@ -24,13 +24,12 @@
- HEIMDAL_INC = -I/usr/heimdal/include
- HEIMDAL_LIB = -L/usr/heimdal/lib -lkrb5 -lkadm5srv
- 
--LIBTOOL = $(LDAP_BUILD)/libtool
- CC = gcc
- OPT = -g -O2 -Wall
+@@ -30,7 +30,7 @@
  # Omit DO_KRB5, DO_SAMBA or DO_SHADOW if you don't want to support it.
  DEFS = -DDO_KRB5 -DDO_SAMBA -DDO_SHADOW
  INCS = $(LDAP_INC) $(HEIMDAL_INC) $(SSL_INC)

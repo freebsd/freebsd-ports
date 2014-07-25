@@ -2,7 +2,7 @@
 
 PORTNAME=	powerdns
 PORTVERSION=	3.3.1
-PORTREVISION?=	2
+PORTREVISION=	3
 PORTEPOCH=	1
 CATEGORIES=	dns ipv6
 PKGNAMESUFFIX=	-devel
@@ -25,13 +25,11 @@ GH_COMMIT=	8e1c18b
 
 CONFLICTS=	powerdns-[2-3].[0-9]*
 
-NO_LATEST_LINK=	YES
-
-USES=		bison gmake lua:51 pkgconfig
+USES=		bison gmake libtool lua:51 pkgconfig
 USE_SUBMAKE=	YES
-USE_AUTOTOOLS=	autoconf:env automake:env libtool:env
-USE_LDCONFIG=	YES
+USE_AUTOTOOLS=	autoconf:env automake:env libtoolize:env
 GNU_CONFIGURE=	YES
+INSTALL_TARGET=	install-strip
 CXXFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--with-modules="" \
@@ -226,13 +224,6 @@ post-install:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 .for i in pdns.conf
 	${INSTALL_DATA} ${FILESDIR}/$i ${STAGEDIR}${EXAMPLESDIR}/
-.endfor
-.for j in libtinydnsbackend.so libremotebackend.so libmydnsbackend.so libgpgsqlbackend.so \
-	libgmysqlbackend.so libgsqlite3backend.so libldapbackend.so libopendbxbackend.so \
-	libgeobackend.so libpipebackend.so
-	@if ([ -f ${STAGEDIR}${PREFIX}/lib/$j ] && [ ! -f ${STAGEDIR}${PREFIX}/lib/$j.0 ]); then \
-		${LN} -sf ${PREFIX}/lib/$j ${STAGEDIR}${PREFIX}/lib/$j.0; \
-	fi
 .endfor
 
 .include <bsd.port.mk>

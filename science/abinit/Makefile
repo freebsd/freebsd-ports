@@ -7,7 +7,7 @@ PORTREVISION=	14
 CATEGORIES=	science
 MASTER_SITES=	ftp://ftp.abinit.org/pub/abinitio/ABINIT_v${PORTVERSION}/
 
-MAINTAINER=	maho@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Abinit calculates electronic structure of systems
 
 BUILD_DEPENDS=	python:${PORTSDIR}/lang/python \

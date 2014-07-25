@@ -2,7 +2,7 @@
 # $FreeBSD$
 #   $MCom: ports/trunk/databases/libgda5-mdb/Makefile 18610 2013-06-30 16:33:05Z marcus $
 
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	databases gnome
 PKGNAMESUFFIX=	5-mdb
 

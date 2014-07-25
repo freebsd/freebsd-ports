@@ -2,6 +2,7 @@
 
 PORTNAME=	mohawk
 PORTVERSION=	2.0.13
+PORTREVISION=	1
 CATEGORIES=	www ipv6
 MASTER_SITES=	http://fossil.bsdsx.fr/mohawk/tarball/ \
 		http://fossil.etoilebsd.net/mohawk/tarball/
@@ -12,7 +13,7 @@ COMMENT=	Simple and lightweight HTTP daemon
 
 LICENSE=	BSD2CLAUSE
 
-LIB_DEPENDS=	libevent-2.0.so:${PORTSDIR}/devel/libevent2
+LIB_DEPENDS=	libevent.so:${PORTSDIR}/devel/libevent2
 
 PLIST_FILES+=	bin/mhtpasswd \
 		man/man5/mohawk.conf.5.gz \
@@ -24,8 +25,8 @@ PLIST_FILES+=	bin/mhtpasswd \
 PORTEXAMPLES=	*
 USE_RC_SUBR=	mohawk
 
-CFLAGS+=	-I${LOCALBASE}/include/event2/compat -I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib/event2
+CFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 OPTIONS_DEFINE=	EXAMPLES
 

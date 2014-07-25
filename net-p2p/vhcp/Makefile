@@ -7,7 +7,7 @@ CATEGORIES=	net-p2p www
 MASTER_SITES=	SF/${PORTNAME}/PHP%205.x/1.7g
 DISTNAME=	vhcp_v${PORTVERSION}
 
-MAINTAINER=	gelraen.ua@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Verlihub control panel
 
 WRKSRC=	${WRKDIR}/${PORTNAME}

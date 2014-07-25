@@ -22,10 +22,10 @@ include/KM_tai.h
 include/KM_util.h
 include/KM_xml.h
 lib/libasdcp.a
-lib/libasdcp.la
 lib/libasdcp.so
 lib/libasdcp.so.0
+lib/libasdcp.so.0.0.0
 lib/libkumu.a
-lib/libkumu.la
 lib/libkumu.so
 lib/libkumu.so.0
+lib/libkumu.so.0.0.0

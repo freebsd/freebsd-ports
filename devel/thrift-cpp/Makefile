@@ -18,7 +18,7 @@ DISTNAME=		thrift-${PORTVERSION}
 DISTINFO_FILE=		${.CURDIR}/../thrift/distinfo
 
 LIB_DEPENDS=	libboost_system.so:${PORTSDIR}/devel/boost-libs \
-		libevent-1.4.so:${PORTSDIR}/devel/libevent
+		libevent.so:${PORTSDIR}/devel/libevent2
 
 USE_AUTOTOOLS=	autoconf autoheader:env aclocal automake libtool
 ACLOCAL_ARGS=	-I${WRKSRC}/aclocal

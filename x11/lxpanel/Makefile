@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	lxpanel
-PORTVERSION=	0.6.1
-PORTREVISION=	2
+PORTVERSION=	0.6.2
 CATEGORIES=	x11
 MASTER_SITES=	SF/lxde/LXPanel%20%28desktop%20panel%29/LXPanel%20${PORTVERSION}/
 
@@ -13,38 +12,97 @@ COMMENT=	Lightweight X11 desktop panel
 LICENSE=	GPLv2 MIT
 LICENSE_COMB=	dual
 
-LIB_DEPENDS=	libmenu-cache.so:${PORTSDIR}/x11/menu-cache
-RUN_DEPENDS=	${LOCALBASE}/share/desktop-directories/lxde-audio-video.directory:${PORTSDIR}/x11/lxmenu-data
+LIB_DEPENDS=	libmenu-cache.so:${PORTSDIR}/x11/menu-cache \
+		libsysinfo.so:${PORTSDIR}/devel/libsysinfo
+RUN_DEPENDS=	${LOCALBASE}/share/desktop-directories/lxde-audio-video.directory:${PORTSDIR}/x11/lxmenu-data \
+		xmessage:${PORTSDIR}/x11/xmessage
 
-PORTDOCS=	AUTHORS README
-OPTIONS_DEFINE=	ALSA DOCS NLS
-
-OPTIONS_SUB=	yes
-
-ALSA_RUN_DEPENDS=	${LINUXBASE}/lib/libasound.so.2:${PORTSDIR}/audio/linux-f10-alsa-lib
-ALSA_CONFIGURE_ENABLE=	alsa
-
-NLS_USES=	gettext
-
-USE_XORG=	x11 xmu
+USE_AUTOTOOLS=	automake:env
+USE_CSTD=	gnu89
 USE_GNOME=	gtk20 libwnck
+USE_XORG=	x11 xmu
 USES=		gmake pathfix pkgconfig
 GNU_CONFIGURE=	yes
-USE_AUTOTOOLS=	automake:env
-CONFIGURE_ARGS=	--prefix=${PREFIX} \
-		--with-plugins=volume,deskno,kbled,xkb,batt \
+CONFIGURE_ARGS=	--prefix="${PREFIX}" \
+		--with-plugins=netstatus,volume,volumealsa,deskno,batt,kbled,xkb,thermal,cpu,cpufreq,monitors,wnckpager \
+		--with-x \
 		CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
-CFLAGS+=	-I${WRKSRC} -Wno-return-type
-USE_CSTD=	gnu89
+CFLAGS+=	-I${WRKSRC}
+
+SUB_FILES=	pkg-message
+PORTDOCS=	AUTHORS README
+
+OPTIONS_DEFINE=	ALSA DOCS NLS
+OPTIONS_SUB=	yes
+
+ALSA_LIB_DEPENDS=	libasound.so:${PORTSDIR}/audio/alsa-lib
+ALSA_CONFIGURE_ENABLE=	alsa
+NLS_CONFIGURE_ENABLE=	nls
+NLS_USES=	gettext
 
 .include <bsd.port.options.mk>
 
+.if ${PORT_OPTIONS:MALSA}
+PLIST_SUB+=	VOLUME="@comment "
+.else
+PLIST_SUB+=	VOLUME=""
+.endif
+
 post-patch:
+	@${REINPLACE_CMD} -e '/g_thread_create/ \
+		s|.*|        g_thread_new("tf", (GThreadFunc)thread_func,\
+		thread_data);|' \
+		${WRKSRC}/src/gtk-run.c
+	@${REINPLACE_CMD} -e '/g_thread_init/d' \
+		${WRKSRC}/src/panel.c
+	@${REINPLACE_CMD} -e 's|structure_size :|.structure_size =|; \
+		s|structure_version :|.structure_version =|' \
+		${WRKSRC}/src/plugin.h
+	@${REINPLACE_CMD} -e 's|    type *:|    .type =|; \
+		s|    name *:|    .name =|; \
+		s|    version *:|    .version =|; \
+		s|    description *:|    .description =|; \
+		s|    constructor *:|    .constructor =|; \
+		s|    destructor  *:|    .destructor =|; \
+		s|    config *:|    .config =|; \
+		s|    save *:|    .save =|; \
+		s|    panel_configuration_changed *:|   \
+		.panel_configuration_changed =|; \
+		s|    fname:|    .fname =|; \
+		s|    count:|    .count =|; \
+		s|    expand_available :|    .expand_available =|; \
+		s|    expand_default :|    .expand_default =|; \
+		s|    one_per_system :|    .one_per_system =|; \
+		s|    not_unloadable :|    .not_unloadable =|' \
+		${WRKSRC}/src/plugins/batt/batt.c \
+		${WRKSRC}/src/plugins/cpu*/cpu*.c \
+		${WRKSRC}/src/plugins/deskno/deskno.c \
+		${WRKSRC}/src/plugins/kbled/kbled.c \
+		${WRKSRC}/src/plugins/monitors/monitors.c \
+		${WRKSRC}/src/plugins/netstatus/netstatus.c \
+		${WRKSRC}/src/plugins/thermal/thermal.c \
+		${WRKSRC}/src/plugins/wnckpager/wnckpager.c \
+		${WRKSRC}/src/plugins/xkb/xkb-plugin.c \
+		${WRKSRC}/src/plugins/volume*/volume*.c \
+		${WRKSRC}/src/plugins/*.c
+	@${REINPLACE_CMD} -e '/gdk_color_parse(b/ s|;||; \
+		/gdk_color_parse(b/{p;s/.*/            ;/;}' \
+		${WRKSRC}/src/plugins/batt/batt.c
+	@${REINPLACE_CMD} -e 's|/sys|/compat/linux&|' \
+		${WRKSRC}/src/plugins/batt/batt_sys.h
+	@${REINPLACE_CMD} -e 's|/proc|/compat/linux&|' \
+		${WRKSRC}/src/plugins/cpu/cpu.c \
+		${WRKSRC}/src/plugins/monitors/monitors.c \
+		${WRKSRC}/src/plugins/thermal/thermal.c
+	@${REINPLACE_CMD} -e 's|%lld|%lu|g; s|bytes >=|bytes >|' \
+		${WRKSRC}/src/plugins/netstatus/netstatus-dialog.c
+	@${REINPLACE_CMD} -e '/NETSTATUS_ERROR, code/ s|error_message|"%s", &|' \
+		${WRKSRC}/src/plugins/netstatus/netstatus-iface.c
+	@${REINPLACE_CMD} -e '611s/signal_strength)/*&/' \
+		${WRKSRC}/src/plugins/netstatus/netstatus-sysdeps.c
 	@${REINPLACE_CMD} -e 's|linux|sys|' \
 		${WRKSRC}/src/plugins/volume/volume-impl.c
-	@${REINPLACE_CMD} -e 's|$$(DATADIRNAME)/locale|share/locale|' \
-		${WRKSRC}/po/Makefile.in.in
 
 .if ! ${PORT_OPTIONS:MNLS}
 	@${REINPLACE_CMD} -e 's|po man|man|' \
@@ -52,9 +110,15 @@ post-patch:
 .endif
 
 post-install:
-.for l in volume xkb deskno batt kbled
+.for l in netstatus deskno batt kbled xkb thermal cpu cpufreq monitors wnckpager
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/lxpanel/plugins/${l}.so
 .endfor
+
+.if ${PORT_OPTIONS:MALSA}
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/lxpanel/plugins/volumealsa.so
+.else
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/lxpanel/plugins/volume.so
+.endif
 
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}

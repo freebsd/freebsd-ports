@@ -2,9 +2,7 @@ bin/gda-list-config-%%VERSION%%
 bin/gda-list-server-op-%%VERSION%%
 bin/gda-sql-%%VERSION%%
 bin/gda-test-connection-%%VERSION%%
-@unexec if cmp -s %D/etc/libgda-%%VERSION%%/config %D/etc/libgda-%%VERSION%%/config.default; then rm -f %D/etc/libgda-%%VERSION%%/config; fi
-etc/libgda-%%VERSION%%/config.default
-@exec [ -f %B/config ] || cp %B/%f %B/config
+@sample etc/libgda-%%VERSION%%/config.sample
 etc/libgda-%%VERSION%%/sales_test.db
 include/libgda-%%VERSION%%/libgda-report/gda-report-docbook-document.h
 include/libgda-%%VERSION%%/libgda-report/gda-report-document.h
@@ -105,24 +103,17 @@ include/libgda-%%VERSION%%/libgda/virtual/gda-virtual-provider.h
 include/libgda-%%VERSION%%/libgda/virtual/gda-vprovider-data-model.h
 include/libgda-%%VERSION%%/libgda/virtual/gda-vprovider-hub.h
 include/libgda-%%VERSION%%/libgda/virtual/libgda-virtual.h
-lib/libgda-%%VERSION%%.a
-lib/libgda-%%VERSION%%.la
 lib/libgda-%%VERSION%%.so
-lib/libgda-%%VERSION%%.so.5
-lib/libgda-%%VERSION%%/providers/libgda-web.a
-lib/libgda-%%VERSION%%/providers/libgda-web.la
+lib/libgda-%%VERSION%%.so.4
+lib/libgda-%%VERSION%%.so.4.1.0
 lib/libgda-%%VERSION%%/providers/libgda-web.so
-lib/libgda-%%VERSION%%/providers/libgda-sqlite.a
-lib/libgda-%%VERSION%%/providers/libgda-sqlite.la
 lib/libgda-%%VERSION%%/providers/libgda-sqlite.so
-lib/libgda-report-%%VERSION%%.a
-lib/libgda-report-%%VERSION%%.la
 lib/libgda-report-%%VERSION%%.so
-lib/libgda-report-%%VERSION%%.so.5
-lib/libgda-xslt-%%VERSION%%.a
-lib/libgda-xslt-%%VERSION%%.la
+lib/libgda-report-%%VERSION%%.so.4
+lib/libgda-report-%%VERSION%%.so.4.1.0
 lib/libgda-xslt-%%VERSION%%.so
-lib/libgda-xslt-%%VERSION%%.so.5
+lib/libgda-xslt-%%VERSION%%.so.4
+lib/libgda-xslt-%%VERSION%%.so.4.1.0
 libdata/pkgconfig/libgda-%%VERSION%%.pc
 libdata/pkgconfig/libgda-report-%%VERSION%%.pc
 libdata/pkgconfig/libgda-sqlite-%%VERSION%%.pc

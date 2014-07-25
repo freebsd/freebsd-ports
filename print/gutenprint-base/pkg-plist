@@ -27,16 +27,17 @@ include/gutenprintui2/curve.h
 include/gutenprintui2/gammacurve.h
 include/gutenprintui2/gutenprintui.h
 include/gutenprintui2/typebuiltins.h
+lib/libgutenprint.so.2
+lib/libgutenprint.so.2.3.0
+lib/libgutenprintui2.so.1.0.0
 lib/libgutenprint.a
-lib/libgutenprint.la
 lib/libgutenprint.so
-lib/libgutenprint.so.3
 lib/libgutenprintui2.a
-lib/libgutenprintui2.la
 lib/libgutenprintui2.so
 lib/libgutenprintui2.so.1
 libdata/pkgconfig/gutenprint.pc
 libdata/pkgconfig/gutenprintui2.pc
+man/man1/escputil.1.gz
 %%DATADIR%%/5.2/xml/dither-matrix-1x1.xml
 %%DATADIR%%/5.2/xml/dither-matrix-2x1.xml
 %%DATADIR%%/5.2/xml/dither-matrix-4x1.xml
@@ -76,9 +77,11 @@ libdata/pkgconfig/gutenprintui2.pc
 %%DATADIR%%/5.2/xml/escp2/inks/pro_ultrachrome_k3.xml
 %%DATADIR%%/5.2/xml/escp2/inks/pro_ultrachrome_k34.xml
 %%DATADIR%%/5.2/xml/escp2/inks/pro_ultrachrome_k3v.xml
+%%DATADIR%%/5.2/xml/escp2/inks/pro_ultrachrome_k3v10.xml
 %%DATADIR%%/5.2/xml/escp2/inks/pro_ultrachrome_k3v4.xml
 %%DATADIR%%/5.2/xml/escp2/inks/standard.xml
 %%DATADIR%%/5.2/xml/escp2/inks/standard_gen0.xml
+%%DATADIR%%/5.2/xml/escp2/inks/sx445.xml
 %%DATADIR%%/5.2/xml/escp2/inks/ultrachrome.xml
 %%DATADIR%%/5.2/xml/escp2/inks/wf40.xml
 %%DATADIR%%/5.2/xml/escp2/inks/wf500.xml
@@ -90,6 +93,7 @@ libdata/pkgconfig/gutenprintui2.pc
 %%DATADIR%%/5.2/xml/escp2/inputslots/cd_roll_feed.xml
 %%DATADIR%%/5.2/xml/escp2/inputslots/cutter_roll_feed.xml
 %%DATADIR%%/5.2/xml/escp2/inputslots/default.xml
+%%DATADIR%%/5.2/xml/escp2/inputslots/default-duplex.xml
 %%DATADIR%%/5.2/xml/escp2/inputslots/pro3880.xml
 %%DATADIR%%/5.2/xml/escp2/inputslots/pro_cutter_roll_feed.xml
 %%DATADIR%%/5.2/xml/escp2/inputslots/pro_roll_feed.xml
@@ -100,6 +104,7 @@ libdata/pkgconfig/gutenprintui2.pc
 %%DATADIR%%/5.2/xml/escp2/inputslots/rx700.xml
 %%DATADIR%%/5.2/xml/escp2/inputslots/spro5000.xml
 %%DATADIR%%/5.2/xml/escp2/inputslots/standard_roll_feed.xml
+%%DATADIR%%/5.2/xml/escp2/inputslots/wf7000.xml
 %%DATADIR%%/5.2/xml/escp2/media/artisan.xml
 %%DATADIR%%/5.2/xml/escp2/media/b500.xml
 %%DATADIR%%/5.2/xml/escp2/media/c120.xml
@@ -135,6 +140,7 @@ libdata/pkgconfig/gutenprintui2.pc
 %%DATADIR%%/5.2/xml/escp2/media/pro_ultrachrome.xml
 %%DATADIR%%/5.2/xml/escp2/media/pro_ultrachrome_k3.xml
 %%DATADIR%%/5.2/xml/escp2/media/pro_ultrachrome_k3v.xml
+%%DATADIR%%/5.2/xml/escp2/media/pro_ultrachrome_k3v10.xml
 %%DATADIR%%/5.2/xml/escp2/media/r800.xml
 %%DATADIR%%/5.2/xml/escp2/media/standard.xml
 %%DATADIR%%/5.2/xml/escp2/media/standard_gen0.xml
@@ -164,7 +170,11 @@ libdata/pkgconfig/gutenprintui2.pc
 %%DATADIR%%/5.2/xml/escp2/model/model_115.xml
 %%DATADIR%%/5.2/xml/escp2/model/model_116.xml
 %%DATADIR%%/5.2/xml/escp2/model/model_117.xml
+%%DATADIR%%/5.2/xml/escp2/model/model_118.xml
+%%DATADIR%%/5.2/xml/escp2/model/model_119.xml
 %%DATADIR%%/5.2/xml/escp2/model/model_12.xml
+%%DATADIR%%/5.2/xml/escp2/model/model_120.xml
+%%DATADIR%%/5.2/xml/escp2/model/model_121.xml
 %%DATADIR%%/5.2/xml/escp2/model/model_13.xml
 %%DATADIR%%/5.2/xml/escp2/model/model_14.xml
 %%DATADIR%%/5.2/xml/escp2/model/model_15.xml
@@ -282,9 +292,9 @@ libdata/pkgconfig/gutenprintui2.pc
 %%DATADIR%%/doc/gutenprint-users-manual.pdf
 %%DATADIR%%/doc/gutenprint.pdf
 %%DATADIR%%/doc/reference-html/book1.html
-%%DATADIR%%/doc/reference-html/c1717.html
+%%DATADIR%%/doc/reference-html/c1715.html
 %%DATADIR%%/doc/reference-html/c194.html
-%%DATADIR%%/doc/reference-html/c1968.html
+%%DATADIR%%/doc/reference-html/c1966.html
 %%DATADIR%%/doc/reference-html/c200.html
 %%DATADIR%%/doc/reference-html/c39.html
 %%DATADIR%%/doc/reference-html/c464.html
@@ -294,17 +304,18 @@ libdata/pkgconfig/gutenprintui2.pc
 %%DATADIR%%/doc/reference-html/gpl-terms.html
 %%DATADIR%%/doc/reference-html/gpl.html
 %%DATADIR%%/doc/reference-html/ln10.html
-%%DATADIR%%/doc/reference-html/x1669.html
-%%DATADIR%%/doc/reference-html/x1734.html
+%%DATADIR%%/doc/reference-html/x1667.html
+%%DATADIR%%/doc/reference-html/x1732.html
 %%DATADIR%%/doc/reference-html/x271.html
 %%DATADIR%%/doc/reference-html/x67.html
 %%DATADIR%%/doc/reference-html/x79.html
-%%DATADIR%%/doc/reference-html/x955.html
+%%DATADIR%%/doc/reference-html/x953.html
 %%DATADIR%%/samples/colorbars4.png
 %%DATADIR%%/samples/colorsweep.png
 %%DATADIR%%/samples/extended.sample
 %%DATADIR%%/samples/profile.jpg
 %%DATADIR%%/samples/testpattern.sample
+share/locale/ca/LC_MESSAGES/gutenprint.mo
 share/locale/cs/LC_MESSAGES/gutenprint.mo
 share/locale/da/LC_MESSAGES/gutenprint.mo
 share/locale/de/LC_MESSAGES/gutenprint.mo
@@ -325,7 +336,9 @@ share/locale/ru/LC_MESSAGES/gutenprint.mo
 share/locale/sk/LC_MESSAGES/gutenprint.mo
 share/locale/sl/LC_MESSAGES/gutenprint.mo
 share/locale/sv/LC_MESSAGES/gutenprint.mo
+share/locale/tr/LC_MESSAGES/gutenprint.mo
 share/locale/uk/LC_MESSAGES/gutenprint.mo
+share/locale/vi/LC_MESSAGES/gutenprint.mo
 share/locale/zh_CN/LC_MESSAGES/gutenprint.mo
 share/locale/zh_TW/LC_MESSAGES/gutenprint.mo
 @dirrm %%DATADIR%%/samples
@@ -342,8 +355,8 @@ share/locale/zh_TW/LC_MESSAGES/gutenprint.mo
 @dirrm %%DATADIR%%/5.2/xml
 @dirrm %%DATADIR%%/5.2
 @dirrm %%DATADIR%%
-@dirrm lib/gutenprint/5.2/modules
-@dirrm lib/gutenprint/5.2
-@dirrm lib/gutenprint
+@dirrmtry lib/gutenprint/5.2/modules
+@dirrmtry lib/gutenprint/5.2
+@dirrmtry lib/gutenprint
 @dirrm include/gutenprintui2
 @dirrm include/gutenprint

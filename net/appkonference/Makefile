@@ -6,7 +6,7 @@ PORTVERSION=	2.1
 CATEGORIES=	net
 MASTER_SITES=	SF
 
-MAINTAINER=	alex.deiter@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	High-performance Asterisk voice/video conferencing plugin
 
 BUILD_DEPENDS=	asterisk:${PORTSDIR}/net/asterisk

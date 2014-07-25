@@ -8,7 +8,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-unix/${PORTVERSION} \
 		${MASTER_SITE_TEX_CTAN}
 
 
-MAINTAINER=	joerg@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Translator from LaTeX to RTF
 
 MAN1=		latex2rtf.1 latex2png.1

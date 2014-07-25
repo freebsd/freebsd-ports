@@ -23,13 +23,9 @@ USE_XORG=	xpm
 ALL_TARGET=	xrot
 CFLAGS+=	-Wno-return-type
 
-PLIST_FILES=	bin/xrot
-
-NO_STAGE=	yes
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/xrot ${PREFIX}/bin
-	${CHOWN} root:games ${PREFIX}/bin/xrot
-	${CHMOD} g+s ${PREFIX}/bin/xrot
-	${SH} pkg-install ${PKGNAME} POST-INSTALL
+	${INSTALL_PROGRAM} ${WRKSRC}/xrot ${STAGEDIR}${PREFIX}/bin
+	@${MKDIR} ${STAGEDIR}/var/games
+	${TOUCH} ${STAGEDIR}/var/games/xrot.scores.sample
 
 .include <bsd.port.mk>

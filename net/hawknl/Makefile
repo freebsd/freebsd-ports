@@ -8,7 +8,7 @@ MASTER_SITES=	http://www.hawksoft.com/download/files/
 DISTNAME=	HawkNL168src
 DIST_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	acm@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Portable networking library
 
 USES=		dos2unix gmake

@@ -3,7 +3,7 @@
 
 PORTNAME=	spserver
 PORTVERSION=	0.9.5
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 DISTNAME=	${PORTNAME}-${PORTVERSION}.src
@@ -11,13 +11,15 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}.src
 MAINTAINER=	vanilla@FreeBSD.org
 COMMENT=	TCP server framework library written in C++ based on libevent
 
-LIB_DEPENDS=	libevent-1.4.so:${PORTSDIR}/devel/libevent
+LIB_DEPENDS=	libevent.so:${PORTSDIR}/devel/libevent2
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 USE_LDCONFIG=	yes
 USES=		gmake
 ALL_TARGET=	all build_openssl
 MAKE_JOBS_UNSAFE=	yes
+
+BROKEN=		Misuse libevent API
 
 OPTIONS_DEFINE=	GNUTLS
 #		MATRIXSSL	"Enable matrixssl support" off

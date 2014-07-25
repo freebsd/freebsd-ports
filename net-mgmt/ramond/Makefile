@@ -7,7 +7,7 @@ PORTREVISION=	4
 CATEGORIES=	net-mgmt ipv6
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/_${PORTVERSION}/
 
-MAINTAINER=	jmohacsi@bsd.hu
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	On-link IPv6 router advertisement monitoring and reporting daemon
 
 LICENSE=	BSD

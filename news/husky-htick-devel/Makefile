@@ -8,7 +8,7 @@ MASTER_SITES=	SF/husky/${PORTNAME}/1.4-RC5
 
 PKGNAMESUFFIX=	-devel
 
-MAINTAINER=	mail@ozzmosis.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	FTN File ticker, development version
 
 LIB_DEPENDS=	libfidoconfig.so:${PORTSDIR}/news/husky-fidoconf-devel

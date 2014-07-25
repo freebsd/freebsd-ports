@@ -3,6 +3,7 @@
 
 PORTNAME=	ldapdns
 PORTVERSION=	2.07
+PORTREVISION=	1
 CATEGORIES=	dns
 MASTER_SITES=	http://bsdforge.com/projects/source/dns/ldapdns/
 

@@ -8,7 +8,7 @@ MASTER_SITES=	http://membres.lycos.fr/phjounin/zip/ \
 		ftp://ftp.wilbury.sk/pub/FreeBSD/local/distfiles/
 DISTNAME=	tcp4u331
 
-MAINTAINER=	otis@freebsd.sk
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	TCP interface library
 
 LICENSE=	GPLv2

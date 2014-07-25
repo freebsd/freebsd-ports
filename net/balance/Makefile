@@ -6,7 +6,7 @@ PORTVERSION=	3.54
 CATEGORIES=	net
 MASTER_SITES=	http://www.inlab.de/
 
-MAINTAINER=	joseph@randomnetworks.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple but powerful generic TCP proxy with round robin features
 
 ALL_TARGET=	balance

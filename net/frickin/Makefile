@@ -8,7 +8,7 @@ CATEGORIES=	net
 MASTER_SITES=	SF/${PORTNAME}/OldFiles
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	asm@asm.kiev.ua
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Frickin PPTP Proxy
 
 MAKE_JOBS_UNSAFE=	yes

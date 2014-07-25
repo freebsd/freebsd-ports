@@ -2,7 +2,6 @@ include/DungeonMaker.h
 lib/libdungeonmaker.a
 lib/libdungeonmaker.so
 lib/libdungeonmaker.so.2
-lib/libdungeonmaker_p.a
 %%PORTDOCS%%%%DOCSDIR%%/Contents.gif
 %%PORTDOCS%%%%DOCSDIR%%/Next.gif
 %%PORTDOCS%%%%DOCSDIR%%/Prev.gif

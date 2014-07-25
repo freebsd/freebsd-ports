@@ -8,7 +8,7 @@ CATEGORIES=	net ipv6
 MASTER_SITES=	http://www.atm.tut.fi/mad/download/
 DISTNAME=	${PORTNAME}_v${PORTVERSION}_src
 
-MAINTAINER=	jmohacsi@bsd.hu
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	FLUTE - File Delivery over Unidirectional Transport implementation
 
 LIB_DEPENDS=	libexpat.so:${PORTSDIR}/textproc/expat2

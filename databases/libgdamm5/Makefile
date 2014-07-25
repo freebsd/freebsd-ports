@@ -4,7 +4,7 @@
 
 PORTNAME=	libgdamm
 PORTVERSION=	4.99.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	databases gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -14,13 +14,12 @@ COMMENT=	C++ wrapper for libgda5 library
 
 BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4
 
-LATEST_LINK=	libgdamm5
-
 USES=		gmake libtool pathfix pkgconfig tar:xz
 USE_GNOME=	libgda5 glibmm
 GNU_CONFIGURE=	yes
+INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
-CONFIGURE_ARGS=	--enable-static --disable-documentation
+CONFIGURE_ARGS=	--disable-documentation
 
 OPTIONS_DEFINE=	BDB
 

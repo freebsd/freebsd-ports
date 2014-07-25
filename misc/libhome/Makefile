@@ -3,11 +3,11 @@
 
 PORTNAME=	libhome
 PORTVERSION=	0.10.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	misc
 MASTER_SITES=	ftp://ftp.oav.net/pll/ SF/pll/${PORTNAME}/${PORTVERSION}
 
-MAINTAINER=	kiwi@oav.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library providing a getpwname() emulation
 
 OPTIONS_DEFINE=	LDAP MYSQL BDB PAM PGSQL

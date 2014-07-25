@@ -9,7 +9,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	quagga-re
 PKGNAMESUFFIX=	-re
 
-MAINTAINER=	sem@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Branch of popular quagga software pointed at stability
 
 LICENSE=	GPLv2

@@ -6,7 +6,7 @@ PORTVERSION=	0.91
 CATEGORIES=	net kld
 MASTER_SITES=	ftp://ftp.lissyara.su/users/nsand/skyfish/
 
-MAINTAINER=	nsand@sura.ru
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Grabbing TCP streams from network interface (SAT internet)
 
 SSP_UNSAFE=	kernel module does not support ssp

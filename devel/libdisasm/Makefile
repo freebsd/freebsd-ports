@@ -3,6 +3,7 @@
 
 PORTNAME=	libdisasm
 PORTVERSION=	0.23
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	SF/bastard/${PORTNAME}/${PORTVERSION}
 
@@ -11,7 +12,7 @@ COMMENT=	The Bastard Disassembly Environment x86 disassembler library and CLI
 
 OPTIONS_DEFINE=	DOCS
 
-USES=		gmake
+USES=		gmake libtool
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 ONLY_FOR_ARCHS=	i386 amd64

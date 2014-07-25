@@ -3,7 +3,7 @@
 
 PORTNAME=	pgbouncer
 PORTVERSION=	1.5.4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	databases
 MASTER_SITES=	http://pgfoundry.org/frs/download.php/3393/
 
@@ -12,7 +12,7 @@ COMMENT=	Lightweight connection pooler for PostgreSQL
 
 LICENSE=	BSD2CLAUSE
 
-LIB_DEPENDS=	libevent-2.0.so:${PORTSDIR}/devel/libevent2
+LIB_DEPENDS=	libevent.so:${PORTSDIR}/devel/libevent2
 
 OPTIONS_DEFINE=	DOCS
 

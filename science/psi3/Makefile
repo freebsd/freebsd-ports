@@ -16,7 +16,7 @@ DISTFILES+=	${DISTNAME}${EXTRACT_SUFX} installation.pdf:doc userman.pdf:doc prog
 DIST_SUBDIR=	psi3
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
-MAINTAINER=	maho@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Electronic structure programs for high-accuracy computations
 
 BROKEN=		Fails to build

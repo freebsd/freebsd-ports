@@ -9,7 +9,7 @@ MASTER_SITES=	http://www.chelcom.ru/~anton/projects/files/
 DISTNAME=	ciscoconf-${PORTVERSION}
 DIST_SUBDIR=	cisco_conf
 
-MAINTAINER=	anton@chelcom.ru
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple configuration editor for Cisco devices
 
 RUN_DEPENDS=	${LOCALBASE}/bin/joe:${PORTSDIR}/editors/joe

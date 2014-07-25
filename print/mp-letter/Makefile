@@ -10,7 +10,7 @@ MASTER_SITES=	ftp://relay.NUXI.org/pub/misc/ \
 #		ftp://ftp.inria.fr/system/user/
 DISTNAME=	mp-3.0.1
 
-MAINTAINER=	obrien@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A PostScript printing util for ASCII files, email, USENET news articles, etc
 
 WRKSRC=		${WRKDIR}/mp

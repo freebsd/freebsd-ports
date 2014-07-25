@@ -3,7 +3,7 @@
 
 PORTNAME=	msktutil
 PORTVERSION=	0.5.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE} \
     		http://mirrors.rit.edu/zi/

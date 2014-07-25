@@ -5,9 +5,9 @@ bin/extract_dts
 include/dca.h
 include/dts.h
 lib/libdca.a
-lib/libdca.la
 lib/libdca.so
 lib/libdca.so.0
+lib/libdca.so.0.0.0
 lib/libdts.a
 libdata/pkgconfig/libdca.pc
 libdata/pkgconfig/libdts.pc

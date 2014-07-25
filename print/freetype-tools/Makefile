@@ -13,7 +13,7 @@ MASTER_SITES=   SF/freetype/freetype/${PORTVERSION} \
 		ftp://ftp.freetype.org/freetype/freetupe1/
 DISTNAME=	freetype-${PORTVERSION}
 
-MAINTAINER=	rafan@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tools for FreeType 1
 
 LIB_DEPENDS=	libttf.so:${PORTSDIR}/print/freetype

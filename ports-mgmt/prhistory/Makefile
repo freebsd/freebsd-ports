@@ -7,7 +7,7 @@ PORTREVISION=	2
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	GH
 
-MAINTAINER=	waitman@waitman.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PR review for ports
 
 LICENSE=	PRHISTORY

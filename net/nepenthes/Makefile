@@ -7,7 +7,7 @@ PORTREVISION=	7
 CATEGORIES=	net
 MASTER_SITES=	SF/${PORTNAME}/Nepenthes%20development/${PORTVERSION}
 
-MAINTAINER=	systemoperator@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Determine the malware activity on a network
 
 LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl \

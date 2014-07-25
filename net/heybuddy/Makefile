@@ -9,7 +9,7 @@ MASTER_SITES=	http://launchpad.net/${PORTNAME}/${PORTVERSION:R}/${PORTVERSION}/+
 		http://freebsd.grindcore.ch/distfiles/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	navigium@grindcore.ch
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Supposedly light, feature free identi.ca client
 
 LICENSE=	GPLv3

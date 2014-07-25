@@ -1,9 +1,9 @@
 bin/x86dis
 include/libdis.h
 lib/libdisasm.a
-lib/libdisasm.la
 lib/libdisasm.so
 lib/libdisasm.so.0
+lib/libdisasm.so.0.0.0
 man/man1/x86dis.1.gz
 man/man3/x86_disasm.3.gz
 man/man3/x86_format_insn.3.gz

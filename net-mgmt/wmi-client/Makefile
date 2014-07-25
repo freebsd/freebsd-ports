@@ -9,7 +9,7 @@ MASTER_SITES=		http://dev.zenoss.org/trac/export/26435/trunk/inst/externallibs/ 
 			http://mirrors.rit.edu/zi/
 PKGNAMESUFFIX=		-client
 
-MAINTAINER=		koichiro@rworks.jp
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=		DCOM/WMI client implementation
 
 CONFLICTS=		zenoss-3*

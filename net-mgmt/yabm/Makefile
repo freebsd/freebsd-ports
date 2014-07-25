@@ -7,7 +7,7 @@ PORTREVISION=	2
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://www.shapeshifter.se/code/yabm/release/
 
-MAINTAINER=	fli@shapeshifter.se
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Yet Another Bandwidth Meter, somewhat resembles the Linux bwbar
 
 LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png

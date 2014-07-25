@@ -3,7 +3,7 @@
 
 PORTNAME=	opensmtpd
 PORTVERSION=	201405202105
-PORTREVISION=	2
+PORTREVISION=	3
 PORTEPOCH=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://www.opensmtpd.org/archives/ \
@@ -17,7 +17,7 @@ COMMENT=	OpenSMTPD is a free MTA (development snapshot)
 LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libevent-1.4.so:${PORTSDIR}/devel/libevent
+LIB_DEPENDS=	libevent.so:${PORTSDIR}/devel/libevent2
 
 OPENSMTPD_SNAPSHOT_VER=	p1
 

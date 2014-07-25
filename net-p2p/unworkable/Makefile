@@ -3,13 +3,14 @@
 
 PORTNAME=	unworkable
 PORTVERSION=	0.53
+PORTREVISION=	1
 CATEGORIES=	net-p2p
 MASTER_SITES=	GOOGLE_CODE
 
 MAINTAINER=	wenheping@gmail.com
 COMMENT=	Free BitTorrent Implementation
 
-LIB_DEPENDS=	libevent-1.4.so:${PORTSDIR}/devel/libevent
+LIB_DEPENDS=	libevent.so:${PORTSDIR}/devel/libevent2
 
 USES=		scons
 USE_OPENSSL=	yes

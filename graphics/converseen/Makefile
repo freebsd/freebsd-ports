@@ -2,12 +2,14 @@
 # $FreeBSD$
 
 PORTNAME=	converseen
-PORTVERSION=	0.7.2.1
+PORTVERSION=	0.7.3
 CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}/Converseen/Converseen%200.7/
 
 MAINTAINER=	fernando.apesteguia@gmail.com
 COMMENT=	Easy to use graphics conversion utility
+
+LICENSE=	GPLv3
 
 LIB_DEPENDS=	libMagick++-6.Q*.so:${PORTSDIR}/graphics/ImageMagick
 

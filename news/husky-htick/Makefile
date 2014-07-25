@@ -8,7 +8,7 @@ CATEGORIES=	news mail
 MASTER_SITES=	SF/husky/${PORTNAME}/1.0-release
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
-MAINTAINER=	fjoe@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	FTN file ticker
 
 LIB_DEPENDS=	libfidoconfig.so:${PORTSDIR}/news/husky-fidoconf

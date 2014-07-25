@@ -2,6 +2,7 @@
 
 PORTNAME=	turnserver
 PORTVERSION=	3.2.2.5
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://turnserver.open-sys.org/downloads/v${PORTVERSION}/ \
 		http://turnserver.open-sys.org/downloads/extradocs/ \
@@ -15,7 +16,7 @@ COMMENT=	STUN/TURN Server; IPv6, DTLS support; RFCs 5389, 5766, 6062, 6156
 
 LICENSE=	BSD3CLAUSE
 
-LIB_DEPENDS=	libevent-2.0.so:${PORTSDIR}/devel/libevent2
+LIB_DEPENDS=	libevent.so:${PORTSDIR}/devel/libevent2
 
 CONFLICTS=	libevent-1.*
 
@@ -76,8 +77,7 @@ selfloadbalance/secure_relay.sh
 CONFIGURE_ENV+=	PTHREAD_LIBS=-pthread TURN_DISABLE_RPATH=1
 
 .if ${PORT_OPTIONS:MPGSQL}
-USE_PGSQL=	yes
-LIB_DEPENDS+=	libpq.so:${PORTSDIR}/databases/postgresql90-client
+USES+=		pgsql
 .else
 CONFIGURE_ENV+=	TURN_NO_PQ=1
 .endif

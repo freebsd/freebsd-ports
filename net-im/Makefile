@@ -5,7 +5,6 @@
 
     SUBDIR += ayttm
     SUBDIR += bsflite
-    SUBDIR += centericq
     SUBDIR += centerim
     SUBDIR += centerim-devel
     SUBDIR += chattahoochie

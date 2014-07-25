@@ -7,7 +7,7 @@ CATEGORIES=	net
 MASTER_SITES=	http://oss.netfarm.it/guides/
 DISTNAME=	ris-linux-${PORTVERSION}
 
-MAINTAINER=	alex.deiter@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	OpenSource alternative to Microsoft Windows RIS
 
 RUN_DEPENDS=	${LOCALBASE}/libexec/in.tftpd:${PORTSDIR}/ftp/tftp-hpa

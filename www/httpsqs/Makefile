@@ -3,6 +3,7 @@
 
 PORTNAME=	httpsqs
 PORTVERSION=	1.7
+PORTREVISION=	1
 CATEGORIES=	www devel
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 
@@ -12,7 +13,7 @@ COMMENT=	Simple Queue Service based on HTTP GET/POST protocol
 LICENSE=	BSD
 
 LIB_DEPENDS+=	libtokyocabinet.so:${PORTSDIR}/databases/tokyocabinet \
-		libevent-2.0.so:${PORTSDIR}/devel/libevent2
+		libevent.so:${PORTSDIR}/devel/libevent2
 
 USES=		pkgconfig
 

@@ -3,11 +3,12 @@
 
 PORTNAME=	DBIx-SearchBuilder
 PORTVERSION=	1.65
+PORTREVISION=	1
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	demon@FreeBSD.org
+MAINTAINER=	michelle@sorbs.net
 COMMENT=	Perl extension for easy SQL SELECT Statement generation
 
 BUILD_DEPENDS=	p5-Class-ReturnValue>=0:${PORTSDIR}/devel/p5-Class-ReturnValue \
