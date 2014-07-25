@@ -18,15 +18,13 @@ LIB_DEPENDS=	libspeex.so:${PORTSDIR}/audio/speex \
 
 CONFLICTS=	libshout2-[0-9]*
 
-CFLAGS+=	-I${LOCALBASE}/include
+OPTIONS_DEFINE=	DOCS
+
 GNU_CONFIGURE=	yes
-LDFLAGS+=	-L${LOCALBASE}/lib -pthread
 USE_LDCONFIG=	yes
 USES=		gmake libtool pathfix pkgconfig
 
 PORTDOCS=	*
-
-OPTIONS_DEFINE=	DOCS
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-ffast-math||g' ${WRKSRC}/configure
