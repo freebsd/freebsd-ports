@@ -4,7 +4,7 @@
 
 PORTNAME=	libsvg-cairo
 PORTVERSION=	0.1.6
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	graphics
 MASTER_SITES=	http://cairographics.org/snapshots/
 
@@ -15,15 +15,14 @@ LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
 		libsvg.so:${PORTSDIR}/graphics/libsvg \
 		libcairo.so:${PORTSDIR}/graphics/cairo
 
-USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes
-USES=		pathfix pkgconfig
+USES=		libtool pathfix pkgconfig
 USE_LDCONFIG=	yes
 PLIST_FILES=	include/svg-cairo.h \
 		lib/libsvg-cairo.a \
-		lib/libsvg-cairo.la \
 		lib/libsvg-cairo.so \
 		lib/libsvg-cairo.so.1 \
+		lib/libsvg-cairo.so.1.0.1 \
 		libdata/pkgconfig/libsvg-cairo.pc
 
 .include <bsd.port.mk>
