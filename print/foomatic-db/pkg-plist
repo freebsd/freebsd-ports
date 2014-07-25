@@ -1875,6 +1875,7 @@ share/foomatic/db/source/PPD/Lexmark/Lexmark_MS510_Series.ppd.gz
 share/foomatic/db/source/PPD/Lexmark/Lexmark_MS610_Series.ppd.gz
 share/foomatic/db/source/PPD/Lexmark/Lexmark_MS710_Series.ppd.gz
 share/foomatic/db/source/PPD/Lexmark/Lexmark_MS810_Series.ppd.gz
+share/foomatic/db/source/PPD/Lexmark/Lexmark_MS910_Series.ppd.gz
 share/foomatic/db/source/PPD/Lexmark/Lexmark_MX310_Series.ppd.gz
 share/foomatic/db/source/PPD/Lexmark/Lexmark_MX410_Series.ppd.gz
 share/foomatic/db/source/PPD/Lexmark/Lexmark_MX510_Series.ppd.gz
@@ -1882,6 +1883,7 @@ share/foomatic/db/source/PPD/Lexmark/Lexmark_MX610_Series.ppd.gz
 share/foomatic/db/source/PPD/Lexmark/Lexmark_MX6500e_Series.ppd.gz
 share/foomatic/db/source/PPD/Lexmark/Lexmark_MX710_Series.ppd.gz
 share/foomatic/db/source/PPD/Lexmark/Lexmark_MX810_Series.ppd.gz
+share/foomatic/db/source/PPD/Lexmark/Lexmark_MX910_Series.ppd.gz
 share/foomatic/db/source/PPD/Lexmark/Lexmark_T650.ppd.gz
 share/foomatic/db/source/PPD/Lexmark/Lexmark_T652.ppd.gz
 share/foomatic/db/source/PPD/Lexmark/Lexmark_T654.ppd.gz
@@ -1925,6 +1927,7 @@ share/foomatic/db/source/PPD/Lexmark/Lexmark_XM1100_Series.ppd.gz
 share/foomatic/db/source/PPD/Lexmark/Lexmark_XM3100_Series.ppd.gz
 share/foomatic/db/source/PPD/Lexmark/Lexmark_XM5100_Series.ppd.gz
 share/foomatic/db/source/PPD/Lexmark/Lexmark_XM7100_Series.ppd.gz
+share/foomatic/db/source/PPD/Lexmark/Lexmark_XM9100_Series.ppd.gz
 share/foomatic/db/source/PPD/NRG/PS/NRG-10515_10518_10512_PS.ppd.gz
 share/foomatic/db/source/PPD/NRG/PS/NRG-2205_2238_2212_PS.ppd.gz
 share/foomatic/db/source/PPD/NRG/PS/NRG-2705_2738_2712_PS.ppd.gz
@@ -6557,6 +6560,8 @@ share/foomatic/db/source/printer/Lexmark-MS711.xml
 share/foomatic/db/source/printer/Lexmark-MS810.xml
 share/foomatic/db/source/printer/Lexmark-MS811.xml
 share/foomatic/db/source/printer/Lexmark-MS812.xml
+share/foomatic/db/source/printer/Lexmark-MS910.xml
+share/foomatic/db/source/printer/Lexmark-MS911de.xml
 share/foomatic/db/source/printer/Lexmark-MX310.xml
 share/foomatic/db/source/printer/Lexmark-MX310dn.xml
 share/foomatic/db/source/printer/Lexmark-MX410.xml
@@ -6575,6 +6580,10 @@ share/foomatic/db/source/printer/Lexmark-MX711.xml
 share/foomatic/db/source/printer/Lexmark-MX810.xml
 share/foomatic/db/source/printer/Lexmark-MX811.xml
 share/foomatic/db/source/printer/Lexmark-MX812.xml
+share/foomatic/db/source/printer/Lexmark-MX910.xml
+share/foomatic/db/source/printer/Lexmark-MX910de.xml
+share/foomatic/db/source/printer/Lexmark-MX911dte.xml
+share/foomatic/db/source/printer/Lexmark-MX912dxe.xml
 share/foomatic/db/source/printer/Lexmark-Optra_C710.xml
 share/foomatic/db/source/printer/Lexmark-Optra_Color_1200.xml
 share/foomatic/db/source/printer/Lexmark-Optra_Color_1275.xml
@@ -6676,6 +6685,10 @@ share/foomatic/db/source/printer/Lexmark-XM7100.xml
 share/foomatic/db/source/printer/Lexmark-XM7155.xml
 share/foomatic/db/source/printer/Lexmark-XM7163.xml
 share/foomatic/db/source/printer/Lexmark-XM7170.xml
+share/foomatic/db/source/printer/Lexmark-XM9100.xml
+share/foomatic/db/source/printer/Lexmark-XM9145.xml
+share/foomatic/db/source/printer/Lexmark-XM9155.xml
+share/foomatic/db/source/printer/Lexmark-XM9165.xml
 share/foomatic/db/source/printer/Lexmark-Z11.xml
 share/foomatic/db/source/printer/Lexmark-Z12.xml
 share/foomatic/db/source/printer/Lexmark-Z13.xml
