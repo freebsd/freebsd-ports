@@ -6,6 +6,7 @@
 # PROVIDE: svscan
 # REQUIRE: %%SVSCAN_REQUIRE%%
 # BEFORE: %%SVSCAN_BEFORE%%
+# KEYWORD: shutdown
 
 # Define these svscan_* variables in one of these files:
 #       /etc/rc.conf
