@@ -1,7 +1,7 @@
 bin/al-config
 include/al.h
 lib/libal.a
-lib/libal.la
 lib/libal.so
 lib/libal.so.9
+lib/libal.so.9.0.23
 man/man3/al.3.gz
