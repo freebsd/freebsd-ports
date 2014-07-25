@@ -3,7 +3,7 @@
 
 PORTNAME=	daemontools
 PORTVERSION=	0.76
-PORTREVISION=	16
+PORTREVISION=	17
 CATEGORIES=	sysutils
 MASTER_SITES=	http://cr.yp.to/daemontools/ \
 		http://mirror.shatow.net/freebsd/${PORTNAME}/:DEFAULT,1 \
