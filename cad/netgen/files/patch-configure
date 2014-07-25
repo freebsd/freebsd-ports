@@ -1,0 +1,14 @@
+--- configure-orig	2014-07-24 20:42:11.000000000 -0500
++++ configure	2014-07-24 20:43:21.000000000 -0500
+@@ -15361,9 +15361,9 @@
+ ffmpegon=false
+ # Check whether --enable-ffmpeg was given.
+ if test "${enable_ffmpeg+set}" = set; then :
+-  enableval=$enable_ffmpeg; FFMPEG_INCLUDES="-DFFMPEG -D__STDC_CONSTANT_MACROS"
++  enableval=$enable_ffmpeg; FFMPEG_INCLUDES="-I%%LOCALBASE%%/include/ffmpeg0 -DFFMPEG -D__STDC_CONSTANT_MACROS"
+ 
+-        FFMPEG_LIBS="-lavutil -lavformat -lavcodec -lavutil -lswscale -lz -lbz2"
++        FFMPEG_LIBS="-L%%LOCALBASE%%/lib/ffmpeg0 -lavutil0 -lavformat0 -lavcodec0 -lavutil0 -lswscale -lz -lbz2"
+ 
+         if test "$enableval" = yes; then ffmpegon=true; else ffmpegon=false; fi
+ 
