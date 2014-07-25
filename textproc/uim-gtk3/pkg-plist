@@ -3,8 +3,6 @@ bin/uim-input-pad-ja-gtk3
 bin/uim-pref-gtk3
 bin/uim-toolbar-gtk3
 bin/uim-toolbar-gtk3-systray
-lib/gtk-3.0/%%GTK3_VERSION%%/immodules/im-uim.a
-lib/gtk-3.0/%%GTK3_VERSION%%/immodules/im-uim.la
 lib/gtk-3.0/%%GTK3_VERSION%%/immodules/im-uim.so
 libexec/uim-candwin-gtk3
 libexec/uim-candwin-horizontal-gtk3
