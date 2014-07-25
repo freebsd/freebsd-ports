@@ -23,7 +23,7 @@ you update your ports collection, before attempting any port upgrades.
   All applications that used libevent1 must be rebuilt.
 
   Please remove libevent1 before upgrading, by running:
-  	pkg delete libevent
+  	pkg delete -f libevent
 
 20140723:
   AFFECTS: users of security/scanlogd
