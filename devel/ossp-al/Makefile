@@ -3,6 +3,7 @@
 
 PORTNAME=	al
 PORTVERSION=	0.9.3
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_OSSP}
 MASTER_SITE_SUBDIR=	lib/${PORTNAME}
@@ -13,7 +14,7 @@ COMMENT=	Defines an abstract type of buffer that can move data without copying
 
 LIB_DEPENDS=	libex.so:${PORTSDIR}/devel/ossp-ex
 
-USES=		gmake
+USES=		gmake libtool
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-ex=${LOCALBASE}
 USE_LDCONFIG=	yes
