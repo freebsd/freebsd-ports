@@ -2,7 +2,7 @@
 
 PORTNAME=	monitor-core
 PORTVERSION=	3.4.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	sysutils net parallel
 MASTER_SITES=	SF/ganglia/ganglia%20monitoring%20core/${PORTVERSION}
 PKGNAMEPREFIX=	ganglia-
@@ -25,9 +25,8 @@ OPTIONS_DEFINE=	GMETAD
 OPTIONS_DEFAULT=	GMETAD
 GMETAD_DESC=	include gmetad
 
-USES=		pkgconfig
+USES=		libtool pkgconfig
 USE_PYTHON=	yes
-USE_AUTOTOOLS=	libtool
 LIBTOOLFILES=	configure libmetrics/configure
 
 GNU_CONFIGURE=	yes
@@ -60,7 +59,6 @@ IGNORE=		the variable GMOND_CONF must point to a file when defined
 GMOND_CONF=	${WRKDIR}/gmond.conf
 .endif
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 USE_RC_SUBR=	gmond
@@ -77,12 +75,6 @@ SUB_LIST+=	GMETAD="\#"
 .endif
 
 USE_LDCONFIG=	yes
-
-MAN1=		gmetric.1 gmond.1 gstat.1
-.if ${PORT_OPTIONS:MGMETAD}
-MAN1+=		gmetad.1 gmetad.py.1
-.endif
-MAN5=		gmond.conf.5
 
 CONF_DIR=	${PREFIX}/etc
 
@@ -112,26 +104,25 @@ MODULES=	modcpu.so \
 
 post-patch:
 	${REINPLACE_CMD} -e "s|/etc/ganglia/\(gm[a-z]*d.conf\)|${PREFIX}/etc/\1|g" \
-	    ${FIX_CONF_FILES:S|^|${WRKSRC}/|}
+		${FIX_CONF_FILES:S|^|${WRKSRC}/|}
 	${REINPLACE_CMD} -e "s|%%GMONDCONFDIR%%|gmond.conf.d|g" \
-	    ${FIX_GMOND_CONF_DIR:S|^|${WRKSRC}/|}
+		${FIX_GMOND_CONF_DIR:S|^|${WRKSRC}/|}
 	${REINPLACE_CMD} -e "s|nobody|ganglia|g" \
-	    ${FIX_USER_FILES:S|^|${WRKSRC}/|}
+		${FIX_USER_FILES:S|^|${WRKSRC}/|}
 
 post-build:
 	${WRKSRC}/gmond/gmond -t > ${WRKDIR}/gmond.conf
 
 post-install:
 .if ${PORT_OPTIONS:MGMETAD}
-	${INSTALL_SCRIPT} ${FILESDIR}/gmetasnap.sh ${PREFIX}/sbin/gmetasnap
-	${INSTALL_MAN} ${WRKSRC}/mans/gmetad.1 ${MANPREFIX}/man/man1
-	${INSTALL_DATA} ${GMETAD_CONF} ${PREFIX}/etc/gmetad.conf.sample
+	${INSTALL_SCRIPT} ${FILESDIR}/gmetasnap.sh ${STAGEDIR}${PREFIX}/sbin/gmetasnap
+	${INSTALL_MAN} ${WRKSRC}/mans/gmetad.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	${INSTALL_DATA} ${GMETAD_CONF} ${STAGEDIR}${PREFIX}/etc/gmetad.conf.sample
 .endif
-	${INSTALL_MAN} ${WRKSRC}/mans/gmetric.1 ${MANPREFIX}/man/man1
-	${INSTALL_MAN} ${WRKSRC}/mans/gmond.1 ${MANPREFIX}/man/man1
-	${INSTALL_MAN} ${WRKSRC}/gmond/gmond.conf.5 ${MANPREFIX}/man/man5
-	${INSTALL_MAN} ${WRKSRC}/mans/gstat.1 ${MANPREFIX}/man/man1
-	${INSTALL_DATA} ${GMOND_CONF} ${PREFIX}/etc/gmond.conf.sample
-	${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
+	${INSTALL_MAN} ${WRKSRC}/mans/gmetric.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/mans/gmond.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/gmond/gmond.conf.5 ${STAGEDIR}${MANPREFIX}/man/man5
+	${INSTALL_MAN} ${WRKSRC}/mans/gstat.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	${INSTALL_DATA} ${GMOND_CONF} ${STAGEDIR}${PREFIX}/etc/gmond.conf.sample
 
 .include <bsd.port.mk>
