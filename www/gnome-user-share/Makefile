@@ -19,7 +19,7 @@ RUN_DEPENDS=	${LOCALBASE}/${APACHEMODDIR}/mod_dnssd.so:${PORTSDIR}/www/mod_dnssd
 		console-kit-daemon:${PORTSDIR}/sysutils/consolekit
 
 USES=		gettext gmake libtool pkgconfig tar:bzip2
-USE_APACHE=	22
+USE_APACHE=	22+
 USE_XORG=	sm
 USE_GNOME=	gnomeprefix intlhack gtk20 gconf2 gnomedocutils nautilus2
 GNU_CONFIGURE=	yes
