@@ -8,7 +8,6 @@ include/a52dec/mm_accel.h
 lib/liba52.so.0.0.0
 lib/liba52.so.0
 lib/liba52.so
-lib/liba52.la
 lib/liba52.a
 man/man1/a52dec.1.gz
 man/man1/extract_a52.1.gz
