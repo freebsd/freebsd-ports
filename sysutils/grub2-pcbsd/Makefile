@@ -92,4 +92,4 @@ post-install:
 
 .include <bsd.port.post.mk>
 
-RUN_DEPENDS:=   ${RUN_DEPENDS:Ngcc*}
+RUN_DEPENDS:=	${RUN_DEPENDS:Ngcc*}
