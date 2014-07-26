@@ -4,6 +4,8 @@ lib/libBLTlite%%BLTSHORTVER%%.so
 lib/libBLT.a
 lib/libBLTlite.a
 lib/libBLTlite%%BLTSHORTVER%%.a
+lib/libBLTstub.a
+lib/libBLTstub%%BLTSHORTVER%%.a
 bin/bltwish%%BLTSHORTVER%%
 bin/bltsh%%BLTSHORTVER%%
 bin/bltwish
