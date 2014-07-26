@@ -45,7 +45,8 @@ RUN_DEPENDS=	${LOCALBASE}/lib/alsa-lib/libasound_module_pcm_oss.so:${PORTSDIR}/a
 ONLY_FOR_ARCHS=	i386 amd64
 USES=		bison compiler:c++11-lib cpe desktop-file-utils pkgconfig \
 		perl5 shebangfix ninja tar:xz
-CPE_VENDOR=	The Chromium Project
+CPE_VENDOR=	google
+CPE_PRODUCT=	chrome
 USE_PERL5=	build
 USE_PYTHON_BUILD=	2
 USE_XORG=	scrnsaverproto x11 xproto xscrnsaver xtst
