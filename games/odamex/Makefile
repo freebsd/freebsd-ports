@@ -2,27 +2,29 @@
 # $FreeBSD$
 
 PORTNAME=	odamex
-PORTVERSION=	0.6.2
+PORTVERSION=	0.7.0
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/Odamex/${PORTVERSION}
 DISTNAME=	odamex-src-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Standard in Online Multiplayer Doom
+MAINTAINER=	cpm@fbsd.es
+COMMENT=	Client/server multiplayer engine for Doom
 
-USE_BZIP2=	yes
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
 USE_SDL=	sdl mixer
-USES=		cmake dos2unix
+USES=		cmake dos2unix tar:bzip2
 DOS2UNIX_FILES=	CMakeLists.txt odalaunch/CMakeLists.txt common/d_main.cpp
 
-OPTIONS_DEFINE=	LAUNCHER DOCS
+OPTIONS_DEFINE=	DOCS LAUNCHER
 
 LAUNCHER_DESC=	Enable GUI launcher program
 
 OPTIONS_SUB=	yes
 
-LAUNCHER_USE=		WX=2.6+
-LAUNCHER_CMAKE_ON=	-DODALAUNCH_TARGET=on -DNO_AG-ODALAUNCH_TARGET=off
+LAUNCHER_USE=		WX=3.0
+LAUNCHER_CMAKE_ON=	-DODALAUNCH_TARGET=on -DNO_AG-ODALAUNCH_TARGET=off -DwxWidgets_CONFIG_EXECUTABLE=${PREFIX}/bin/wxgtk2u-3.0-config
 LAUNCHER_CMAKE_OFF=	-DODALAUNCH_TARGET=off
 
 .include <bsd.port.options.mk>

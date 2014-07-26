@@ -4,7 +4,7 @@
  
  # Odalaunch target
  if(wxWidgets_FOUND)
-+  set(wxWidgets_wxrc_EXECUTABLE %%LOCALBASE%%/bin/wxrc-gtk2-%%WX_VER%%)
++  set(wxWidgets_wxrc_EXECUTABLE %%LOCALBASE%%/bin/wxrc-gtk2u-%%WX_VER%%)
    add_custom_command(
      OUTPUT ${XRCRES_HEADER}
      COMMAND ${CMAKE_COMMAND} -E make_directory ${CMAKE_CURRENT_BINARY_DIR}/res
