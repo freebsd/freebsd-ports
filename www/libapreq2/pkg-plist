@@ -16,4 +16,3 @@ lib/libapreq2.so.3.8.0
 %%APACHEMODDIR%%/mod_apreq2.so
 @dirrm include/apreq2
 @dirrm %%APACHEINCLUDEDIR%%/apreq2
-@dirrmtry %%APACHEINCLUDEDIR%%
