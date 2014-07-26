@@ -98,7 +98,7 @@ MAKE_ENV+=	LUA_MODLIBDIR=${LUA_MODLIBDIR} \
 .if ${_LUA_ARGS:Mbuild}
 BUILD_DEPENDS+=	${LUA_CMD}:${PORTSDIR}/lang/lua${LUA_VER_STR}
 .elfif ${_LUA_ARGS:Mrun}
-RUN_DEPENDS+=	${LUA_CMD}:${POTSDIR}/lang/lua${LUA_VER_STR}
+RUN_DEPENDS+=	${LUA_CMD}:${PORTSDIR}/lang/lua${LUA_VER_STR}
 .else
 LIB_DEPENDS+=	liblua-${LUA_VER}.so:${PORTSDIR}/lang/lua${LUA_VER_STR}
 .endif
