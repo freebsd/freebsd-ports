@@ -19,7 +19,6 @@ DATADIR=	share/${PKGNAMEPREFIX:S/-//}
 PLIST=		${WRKDIR}/pkg-plist
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-NO_STAGE=	yes
 pre-install:
 	@${RM} -f ${PLIST}
 	@cd ${WRKSRC} && \
@@ -28,9 +27,9 @@ pre-install:
 	@${ECHO_CMD} "@dirrm %%DATADIR%%" >> ${PLIST}
 
 do-install:
-	@${MKDIR} ${PREFIX}/${DATADIR}
+	@${MKDIR} ${STAGEDIR}${PREFIX}/${DATADIR}
 	cd ${WRKSRC} && \
-		${FIND} * -type d -exec ${MKDIR} "${PREFIX}/${DATADIR}/{}" \; && \
-			${FIND} * -type f -exec ${INSTALL_DATA} "{}" "${PREFIX}/${DATADIR}/{}" \;
+		${FIND} * -type d -exec ${MKDIR} "${STAGEDIR}${PREFIX}/${DATADIR}/{}" \; && \
+			${FIND} * -type f -exec ${INSTALL_DATA} "{}" "${STAGEDIR}${PREFIX}/${DATADIR}/{}" \;
 
 .include <bsd.port.mk>
