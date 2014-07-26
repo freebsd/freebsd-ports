@@ -31,6 +31,10 @@ PLIST_FILES=	${RUBY_ARCHLIBDIR:S,${PREFIX},,:S,^/,,}/iconv.so
 
 .include <bsd.port.pre.mk>
 
+.if ${RUBY_VER} != 1.9
+IGNORE=		Not needed with Ruby 2.0 or higher
+.endif
+
 RUBY_WRKDIR!=	cd ${PORTSDIR}/${RUBY_PORT}; ${MAKE} -V WRKDIR
 
 do-extract:
