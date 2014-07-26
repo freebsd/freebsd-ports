@@ -17,9 +17,9 @@ LICENSE_FILE=	${WRKSRC}/GNU.TXT
 
 LIB_DEPENDS=	libexecinfo.so:${PORTSDIR}/devel/libexecinfo
 
-USES=		gmake
+USES=		gmake tar:bzip2
+USE_GCC=	any
 USE_CSTD=	gnu89
-USE_BZIP2=	yes
 USE_GL=		gl
 USE_GNOME=	gtk20
 USE_SDL=	mixer sdl
@@ -32,7 +32,6 @@ TIMIDITYPLUS_DESC=	Use Timidity++ instead of Timidity
 
 OPTIONS_DEFAULT=	MIDI VORBIS
 
-NO_STAGE=	yes
 .include "${.CURDIR}/../duke3d-data/Makefile.include"
 
 .include <bsd.port.options.mk>
@@ -82,17 +81,13 @@ post-patch:
 
 do-install:
 .for f in eduke32 mapster32
-	${INSTALL_PROGRAM} ${WRKSRC}/${f} ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/${f} ${STAGEDIR}${PREFIX}/bin
 .endfor
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/ChangeLog ${WRKSRC}/samples/*.sample ${DOCSDIR}
-.endif
-.if ${PORT_OPTIONS:MEXAMPLES}
-	${MKDIR} ${EXAMPLESDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/ChangeLog ${WRKSRC}/samples/*.sample ${STAGEDIR}${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 . for f in cfg map m32 txt
-	${INSTALL_DATA} ${WRKSRC}/samples/*.${f} ${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/samples/*.${f} ${STAGEDIR}${EXAMPLESDIR}
 . endfor
-.endif
 
 .include <bsd.port.post.mk>
