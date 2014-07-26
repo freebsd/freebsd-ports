@@ -4,7 +4,7 @@
 
 PORTNAME=	gnumeric
 PORTVERSION=	1.12.11
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -56,7 +56,7 @@ CONFIGURE_ARGS+=	--without-perl
 PLIST_SUB+=		PERL="@comment "
 .endif
 
-.if defined(WITH_GDA)
+.if ${PORT_OPTIONS:MGDA}
 USE_GNOME+=		libgda5-ui
 CONFIGURE_ARGS+=	--with-gda
 PLIST_SUB+=		GDA=""

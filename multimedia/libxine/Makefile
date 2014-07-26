@@ -3,7 +3,7 @@
 
 PORTNAME=	xine
 PORTVERSION=	1.2.4
-PORTREVISION=	12
+PORTREVISION=	13
 CATEGORIES=	multimedia ipv6
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-lib/${PORTVERSION}
 PKGNAMEPREFIX=	lib
@@ -230,9 +230,9 @@ post-patch:
 # XXX older nvidia-driver versions don't support opengl 2.0 so this
 # plugin might not get built:
 post-install:
-.if !exists(${STAGEDIR}${PREFIX}/${PLUGINSDIR}/xineplug_vo_out_opengl2.so)
-	${REINPLACE_CMD} -e '/xineplug_vo_out_opengl2.so/d' \
-		${TMPPLIST}
-.endif
+	@if ! [ -e "${STAGEDIR}${PREFIX}/${PLUGINSDIR}/xineplug_vo_out_opengl2.so" ]; then \
+		${REINPLACE_CMD} -e '/xineplug_vo_out_opengl2.so/d' \
+			${TMPPLIST}; \
+	fi
 
 .include <bsd.port.post.mk>

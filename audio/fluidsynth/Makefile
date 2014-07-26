@@ -52,6 +52,12 @@ PULSEAUDIO_CMAKE_OFF=	-Denable-pulseaudio:BOOL=FALSE
 SNDFILE_LIB_DEPENDS=	libsndfile.so:${PORTSDIR}/audio/libsndfile
 SNDFILE_CMAKe_OFF=	-Denable-libsndfile:BOOL=FALSE
 
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MPORTAUDIO} && exists(${LOCALBASE}/include/portaudio.h)
+BROKEN=		portaudio2 support does not build in presence of old portaudio
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e \
 		'/Linux/s|^|#| ; \

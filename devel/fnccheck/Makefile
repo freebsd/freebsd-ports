@@ -2,7 +2,7 @@
 
 PORTNAME=	fnccheck
 PORTVERSION=	3.2.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	SF/${PORTNAME}
 DISTNAME=	FunctionCheck-${PORTVERSION}
@@ -16,6 +16,7 @@ LICENSE_COMB=	multi
 BUILD_DEPENDS=	gnulibiberty>0:${PORTSDIR}/devel/gnulibiberty \
 		libbfd>0:${PORTSDIR}/devel/libbfd
 
+USES=		libtool
 USE_AUTOTOOLS=	libtoolize aclocal automake autoconf
 LIBTOOLIZE_ARGS=--force
 AUTOMAKE_ARGS=	--force-missing --add-missing --foreign

@@ -18,6 +18,7 @@ USES=		bison
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
+LIBS+=		-lX11
 CONFIGURE_ARGS=	--disable-alsa
 MAKE_JOBS_UNSAFE=	yes
 CONFIGURE_ENV=	ac_cv_path_RESWRAP=${LOCALBASE}/bin/fox-1.4/reswrap

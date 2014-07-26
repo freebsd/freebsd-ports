@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	libsixel
-PORTVERSION=	0.19.5
+PORTVERSION=	0.25.2
 PORTEPOCH=	1
 CATEGORIES=	graphics
 
@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 USE_GITHUB=	yes
 GH_ACCOUNT=	saitoha
 GH_TAGNAME=	v${PORTVERSION}
-GH_COMMIT=	200e4d9
+GH_COMMIT=	1b62176
 
 USE_LDCONFIG=	yes
 USES=		libtool
@@ -22,33 +22,21 @@ USES=		libtool
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-pkgconfigdir=${LOCALBASE}/libdata/pkgconfig
 
-INSTALL_TARGET=		install-strip
+INSTALL_TARGET=	install-strip
 
 PORTDOCS=	README.md
 
 OPTIONS_DEFINE=	CURL GD PIXBUF
 OPTIONS_DEFAULT=
 
-CURL_DESC=	libcurl support
-GD_DESC=	gd support
-PIXBUF_DESC=	gdk-pixbuf2 support
+CURL_LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl
+CURL_CONFIGURE_WITH=	libcurl
 
-.include <bsd.port.options.mk>
+GD_LIB_DEPENDS=		libgd.so:${PORTSDIR}/graphics/gd
+GD_CONFIGURE_WITH=	gd
 
-.if ${PORT_OPTIONS:MCURL}
-LIB_DEPENDS+=	libcurl.so:${PORTSDIR}/ftp/curl
-CONFIGURE_ARGS+=--with-libcurl
-.endif
-
-.if ${PORT_OPTIONS:MGD}
-LIB_DEPENDS+=	libgd.so:${PORTSDIR}/graphics/gd
-CONFIGURE_ARGS+=--with-gd
-.endif
-
-.if ${PORT_OPTIONS:MPIXBUF}
-LIB_DEPENDS+=	libgdk_pixbuf-2.0.so:${PORTSDIR}/graphics/gdk-pixbuf2
-CONFIGURE_ARGS+=--with-gdk-pixbuf2
-.endif
+PIXBUF_LIB_DEPENDS=	libgdk_pixbuf-2.0.so:${PORTSDIR}/graphics/gdk-pixbuf2
+PIXBUF_CONFIGURE_WITH=	gdk-pixbuf2
 
 post-install:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}

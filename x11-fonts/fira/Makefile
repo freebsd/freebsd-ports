@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	fira
-PORTVERSION=	3.110
+PORTVERSION=	3.111
 CATEGORIES=	x11-fonts
 MASTER_SITES=	http://www.carrois.com/wordpress/downloads/${PORTNAME}_3_1/ \
 		SF/horia/${CATEGORIES}/${PORTNAME}/

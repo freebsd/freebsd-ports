@@ -5,8 +5,7 @@ PORTNAME=	sa
 PORTVERSION=	1.2.6
 PORTREVISION=	1
 CATEGORIES=	net ipv6
-MASTER_SITES=	${MASTER_SITE_OSSP}
-MASTER_SITE_SUBDIR=	lib/${PORTNAME}
+MASTER_SITES=	OSSP/lib/${PORTNAME}
 PKGNAMEPREFIX=	ossp-
 
 MAINTAINER=	ports@FreeBSD.org
@@ -22,5 +21,8 @@ USE_LDCONFIG=	yes
 regression-test check: build
 	@(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_FLAGS} \
 		${MAKEFILE} ${MAKE_ARGS} check)
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libsa.so
 
 .include <bsd.port.mk>

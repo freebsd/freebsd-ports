@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	bugzilla
-PORTVERSION=	4.4.4
-PORTREVISION=	1
+PORTVERSION=	4.4.5
 CATEGORIES=	devel
 MASTER_SITES=	BUGZILLA
 MASTER_SITE_SUBDIR=	webtools webtools/archived
@@ -162,7 +161,8 @@ EXTRA_PATCHES=	${FILESDIR}/freebsd-project-ldap.diff
 post-extract:
 	@${RM} -rf ${WRKSRC}/.bzr
 	@${RM} -f ${WRKSRC}/.bzrignore ${WRKSRC}/.gitignore ${WRKSRC}/.gitrev \
-		${WRKSRC}/docs/en/README.docs ${WRKSRC}/docs/en/html/Bugzilla-Guide.proc
+		${WRKSRC}/docs/en/README.docs ${WRKSRC}/docs/en/html/Bugzilla-Guide.proc \
+		${WRKSRC}/.travis.yml ${WRKSRC}/Build.PL ${WRKSRC}/MANIFEST.SKIP
 
 post-patch:
 	@${PERL} -pi -e 's/(default => ON_WINDOWS.+)apache/$$1www/' \
@@ -178,7 +178,7 @@ post-patch:
 		${XARGS} ${REINPLACE_CMD} -i '' -e "s!/var/www/html/bugzilla!${WWWDIR}!"
 
 pre-install:
-	@${FIND} ${WRKSRC} -type f \( -name "*.orig" -or -name "*.bak" \) -delete
+	${FIND} ${WRKSRC} -type f \( -name "*.orig" -or -name "*.bak" \) -delete
 
 do-install:	.SILENT
 	${MKDIR} ${STAGEDIR}${WWWDIR}
@@ -191,12 +191,11 @@ do-install:	.SILENT
 	${TAR} -C ${WRKSRC} -cf - Bugzilla template | ${TAR} --unlink -C ${STAGEDIR}${WWWDIR} -xf -
 	@${MKDIR} ${EMPTY_DIRS_LIST:S!^!${STAGEDIR}${WWWDIR}/!}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	(cd ${WRKSRC}/docs/ && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}/)
+	(cd ${WRKSRC}/docs/ && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR})
 
 .if ${PORT_OPTIONS:MCONTRIB}
-	@(cd ${WRKSRC}/contrib && \
-		${FIND} . -type d -exec ${MKDIR} "${STAGEDIR}${WWWDIR}/contrib/{}" \; && \
-		${FIND} . -type f -exec ${INSTALL_DATA} "{}" "${STAGEDIR}${WWWDIR}/contrib/{}" \;)
+	@${MKDIR} ${STAGEDIR}${WWWDIR}/contrib
+	(cd ${WRKSRC}/contrib && ${COPYTREE_SHARE} . ${STAGEDIR}${WWWDIR}/contrib)
 .endif
 
 .include <bsd.port.mk>

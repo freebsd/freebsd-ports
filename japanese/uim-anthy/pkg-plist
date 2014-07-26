@@ -1,9 +1,5 @@
 %%X11%%bin/uim-dict-gtk
-lib/uim/plugin/libuim-anthy.a
-lib/uim/plugin/libuim-anthy.la
 lib/uim/plugin/libuim-anthy.so
-lib/uim/plugin/libuim-anthy-utf8.a
-lib/uim/plugin/libuim-anthy-utf8.la
 lib/uim/plugin/libuim-anthy-utf8.so
 %%X11%%%%DATADIR%%/helperdata/uim-dict-ui.xml
 @dirrmtry %%X11%%%%DATADIR%%/helperdata

@@ -380,7 +380,6 @@ lib/libgeos_c.a
 lib/libgeos_c.so
 lib/libgeos_c.so.1
 lib/libgeos_c.so.1.8.2
-@dirrmtry lib/geos
 @dirrm include/geos/util
 @dirrm include/geos/triangulate/quadedge
 @dirrm include/geos/triangulate

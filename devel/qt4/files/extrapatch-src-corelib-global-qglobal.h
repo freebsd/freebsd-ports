@@ -70,7 +70,7 @@ index 158ef78..4f1384b 100644
  /* Clang also masquerades as GCC 4.2.1 */
  #    define Q_CC_CLANG
 +#    if !defined(__has_extension)
-+#      /* Compatibility with older Clang versions */
++       /* Compatibility with older Clang versions */
 +#      define __has_extension __has_feature
 +#    endif
  #  endif

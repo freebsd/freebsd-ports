@@ -263,10 +263,10 @@ share/icons/hicolor/scalable/apps/deadbeef.svg
 @dirrmtry share/icons/hicolor/scalable
 @dirrmtry share/icons/hicolor
 @dirrmtry share/icons
-@dirrmtry %%NLS%%share/locale/km/LC_MESSAGES
-@dirrmtry %%NLS%%share/locale/km
-@dirrmtry %%NLS%%share/locale/lg/LC_MESSAGES
-@dirrmtry %%NLS%%share/locale/lg
+%%NLS%%@dirrmtry share/locale/km/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/km
+%%NLS%%@dirrmtry share/locale/lg/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/lg
 @dirrm %%DOCSDIR%%
 @dirrm %%DATADIR%%/pixmaps
 @dirrm %%DATADIR%%

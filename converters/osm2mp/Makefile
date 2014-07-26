@@ -3,6 +3,7 @@
 
 PORTNAME=	osm2mp
 PORTVERSION=	r475
+PORTREVISION=	1
 CATEGORIES=	converters geography
 MASTER_SITES=	http://mirror.amdmi3.ru/distfiles/
 
@@ -20,7 +21,8 @@ RUN_DEPENDS=	p5-YAML>=0:${PORTSDIR}/textproc/p5-YAML \
 
 LICENSE=	GPLv2
 
-USES=		tar:bzip2 perl5
+USES=		tar:bzip2 perl5 shebangfix
+SHEBANG_FILES=	${WRKSRC}/osm2mp.pl
 USE_PERL5=	run
 NO_BUILD=	yes
 

@@ -3,6 +3,7 @@
 
 PORTNAME=	soundtouch
 PORTVERSION=	1.8.0
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://www.surina.net/soundtouch/
 
@@ -19,7 +20,7 @@ AUTOMAKE_ARGS=	--add-missing --copy --foreign
 CONFIGURE_ARGS=	--disable-silent-rules
 USE_LDCONFIG=	yes
 
-USES=			pathfix
+USES=			pathfix libtool
 PATHFIX_MAKEFILEIN=	Makefile.am
 
 OPTIONS_DEFINE=	INTEGER_SAMPLES DOCS

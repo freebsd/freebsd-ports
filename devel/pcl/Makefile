@@ -3,13 +3,14 @@
 
 PORTNAME=	pcl
 PORTVERSION=	1.6
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.xmailserver.org/
 
 MAINTAINER=	manuel.giraud@gmail.com
 COMMENT=	Portable Coroutine Library
 
-USES=		gmake
+USES=		gmake libtool
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 

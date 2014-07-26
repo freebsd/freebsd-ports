@@ -3,7 +3,7 @@
 
 PORTNAME=	cdonkey
 PORTVERSION=	0.9.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net-p2p
 MASTER_SITES=	http://www.sourcefiles.org/Internet/File_Sharing/Edonkey/
 DISTNAME=	cDonkey-${PORTVERSION}
@@ -14,8 +14,8 @@ COMMENT=	Open and free core client for the eDonkey protocol
 WRKSRC=		${WRKDIR}/cDonkey-${PORTVERSION}
 
 USE_BDB=	41
-USES=		gmake tar:bzip2
-USE_AUTOTOOLS=	libtool
+USES=		gmake libtool tar:bzip2
+USE_AUTOTOOLS=	libtoolize
 CONFIGURE_ARGS=	--with-berkeley-db="${BDB_INCLUDE_DIR}:${BDB_LIB_DIR}"
 
 PLIST_FILES=	bin/cDonkey

@@ -23,25 +23,22 @@ BUILD_WRKSRC=	${WRKSRC}/BlockOut
 
 SUB_FILES=	pkg-message
 
-NO_STAGE=	yes
 pre-build:
 		cd ${WRKSRC}/ImageLib/src && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_FLAGS} ${MAKEFILE} ${_MAKE_JOBS} ${MAKE_ARGS}
 
 do-install:
-		${INSTALL_PROGRAM} ${WRKSRC}/BlockOut/blockout ${PREFIX}/bin
-		${INSTALL_DATA} ${WRKSRC}/ImageLib/src/libimagelib.a ${PREFIX}/lib
-		${MKDIR} ${DATADIR}
-		${MKDIR} ${DATADIR}/sounds
-		${MKDIR} ${DATADIR}/images
+		${INSTALL_PROGRAM} ${WRKSRC}/BlockOut/blockout ${STAGEDIR}${PREFIX}/bin
+		${INSTALL_DATA} ${WRKSRC}/ImageLib/src/libimagelib.a ${STAGEDIR}${PREFIX}/lib
+		@${MKDIR} ${STAGEDIR}${DATADIR}
+		@${MKDIR} ${STAGEDIR}${DATADIR}/sounds
+		@${MKDIR} ${STAGEDIR}${DATADIR}/images
 .		for i in allPieces background background2 background3 font gameover gameovera marble \
 marbleg menuback menucredits menufont menufont2 menupit online onlinea spark sparka sprites spritesa star_crystal_grid
-		    ${INSTALL_DATA} ${WRKSRC}/BlockOut/images/${i}.png ${DATADIR}/images
+		    ${INSTALL_DATA} ${WRKSRC}/BlockOut/images/${i}.png ${STAGEDIR}${DATADIR}/images
 .		endfor
 .		for s in blub empty empty2 hit level level2 line line2 tchh welldone welldone2 wozz
-		    ${INSTALL_DATA} ${WRKSRC}/BlockOut/sounds/${s}.wav ${DATADIR}/sounds
+		    ${INSTALL_DATA} ${WRKSRC}/BlockOut/sounds/${s}.wav ${STAGEDIR}${DATADIR}/sounds
 .		endfor
-		${INSTALL_DATA} ${WRKSRC}/BlockOut/sounds/music.mp3 ${DATADIR}/sounds
-post-install:
-		@${CAT} ${PKGMESSAGE}
+		${INSTALL_DATA} ${WRKSRC}/BlockOut/sounds/music.mp3 ${STAGEDIR}${DATADIR}/sounds
 
 .include <bsd.port.mk>

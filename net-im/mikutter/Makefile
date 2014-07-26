@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mikutter
-PORTVERSION=	0.2.2.1537
+PORTVERSION=	3.0.3
 CATEGORIES=	net-im ruby
 MASTER_SITES=	http://mikutter.hachune.net/bin/ \
 		LOCAL
@@ -22,7 +22,9 @@ RUN_DEPENDS=	rubygem-gtk2>=1.5.0:${PORTSDIR}/x11-toolkits/rubygem-gtk2 \
 		${RUBY_SITELIBDIR}/memoize.rb:${PORTSDIR}/devel/ruby-memoize \
 		rubygem-oauth>=0.4.7:${PORTSDIR}/net/rubygem-oauth \
 		${RUBY_SITELIBDIR}/bsearch.rb:${PORTSDIR}/devel/ruby-bsearch \
-		rubygem-typed-array>=0.1.2:${PORTSDIR}/devel/rubygem-typed-array
+		rubygem-typed-array>=0.1.2:${PORTSDIR}/devel/rubygem-typed-array \
+		rubygem-delayer>=0.0.2:${PORTSDIR}/devel/rubygem-delayer \
+		rubygem-gettext>=2.3.1:${PORTSDIR}/devel/rubygem-gettext
 
 WRKSRC=	${WRKDIR}/${PORTNAME}
 
@@ -31,6 +33,7 @@ NO_BUILD=	yes
 
 RUBY_SHEBANG_FILES=	mikutter.rb \
 			core/miku/miku.rb \
+			core/lib/piapro.rb \
 			devel/makechi.rb
 
 PORTDOCS=	README

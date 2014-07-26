@@ -1,27 +1,13 @@
---- CMakeLists.txt.orig	2012-09-04 15:00:25.000000000 +0400
-+++ CMakeLists.txt	2012-11-03 02:04:20.000000000 +0400
-@@ -34,7 +34,7 @@ qt4_add_resources(yagf_RCC_SRCS ${yagf_R
- include_directories( ${CMAKE_BINARY_DIR} ${PROJECT_SOURCE_DIR}/src)
- add_executable(yagf ${SOURCES} ${UI_HEADERS} ${MOC_SRCS} ${yagf_RCC_SRCS} ${QM_FILES})
- add_library(xspreload SHARED ${INT_SOURCES})
--target_link_libraries(xspreload dl)
-+target_link_libraries(xspreload)
- target_link_libraries(yagf ${QT_LIBRARIES} ${ASPELL_LIBRARIES} ${TIFF_LIBRARIES})
- add_custom_target(translations DEPENDS ${QM_FILES})
- qt4_add_translation(${CMAKE_BINARY_DIR}/yagf_ru.qm ${PROJECT_SOURCE_DIR}/src/mainform.cpp ${PROJECT_SOURCE_DIR}/src/popplerdialog.cpp ${MOC_SRCS} ${UI_HEADERS} ${PROJECT_SOURCE_DIR}/src/translations/yagf_ru.ts)
-@@ -45,12 +45,12 @@ qt4_add_translation(${CMAKE_BINARY_DIR}/
- #QT4_CREATE_TRANSLATION(yagf_ru.qm src/mainform.cpp ${MOC_SRCS} ${UI_HEADERS} src/yagf_ru.ts)
- #set(CMAKE_INSTALL_PREFIX /usr/)
+--- CMakeLists.txt.orig	2014-02-19 14:15:50.000000000 +0400
++++ CMakeLists.txt	2014-03-15 16:39:26.911288073 +0400
+@@ -8,8 +8,8 @@ if(MPTIFF_SUPPORT)
+ set(TIFFIO_SRC src/qxttiffiohandler.cpp)
+ endif(MPTIFF_SUPPORT)
  if (NOT DEFINED  ${CMAKE_INSTALL_PREFIX})
 -set(CPACK_INSTALL_PREFIX /usr/)
 -set (CMAKE_INSTALL_PREFIX /usr/)
 +set(CPACK_INSTALL_PREFIX ${PREFIX})
-+set(CMAKE_INSTALL_PREFIX ${PREFIX})
++set (CMAKE_INSTALL_PREFIX ${PREFIX})
  endif()
- install_targets(/bin/ yagf)
- if (CMAKE_SIZEOF_VOID_P EQUAL 8)
--        set (LIB_PATH_SUFFIX 64)
-+        set (LIB_PATH_SUFFIX "")
-         set_property (GLOBAL PROPERTY FIND_LIBRARY_USE_LIB64_PATHS TRUE)
- endif(CMAKE_SIZEOF_VOID_P EQUAL 8)
- install_targets(/lib${LIB_PATH_SUFFIX}/yagf xspreload)
+ # following 2 lines define where interface translations will be installed
+ set(QML_DESTINATION share/yagf/translations/)

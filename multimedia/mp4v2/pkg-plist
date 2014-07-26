@@ -23,9 +23,9 @@ include/mp4v2/streaming.h
 include/mp4v2/track.h
 include/mp4v2/track_prop.h
 lib/libmp4v2.a
-lib/libmp4v2.la
 lib/libmp4v2.so
-lib/libmp4v2.so.10
+lib/libmp4v2.so.1
+lib/libmp4v2.so.1.9.1
 man/man1/mp4art.1.gz
 man/man1/mp4file.1.gz
 man/man1/mp4subtitle.1.gz

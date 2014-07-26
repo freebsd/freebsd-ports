@@ -3,6 +3,7 @@
 
 PORTNAME=	ogmrip
 PORTVERSION=	1.0.1
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION:R}/${PORTVERSION}
 
@@ -33,7 +34,7 @@ MP4BOX_DESC=	Enable Mpeg-4 container support
 THEORA_DESC=	Enable Ogg Theora video codec support
 SRT_DESC=	Enable SRT text subtitles support
 
-USES=		desktop-file-utils gmake libtool:keepla pathfix pkgconfig
+USES=		desktop-file-utils gmake libtool pathfix pkgconfig
 USE_GNOME=	glib20 intlhack libxml2
 USE_LDCONFIG=	yes
 

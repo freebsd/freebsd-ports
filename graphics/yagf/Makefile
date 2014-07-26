@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	yagf
-PORTVERSION=	0.9.2
-PORTREVISION=	3
+PORTVERSION=	0.9.3.2
 CATEGORIES=	graphics
 MASTER_SITES=	http://symmetrica.net/cuneiform-linux/
 

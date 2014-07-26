@@ -3,7 +3,7 @@
 
 PORTNAME=	liba52
 PORTVERSION=	0.7.4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio
 MASTER_SITES=	http://liba52.sourceforge.net/files/
 DISTNAME=	a52dec-${PORTVERSION:S/.b/b/}
@@ -14,7 +14,7 @@ COMMENT=	Free library for decoding ATSC A/52 streams, aka AC-3
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		gmake libtool:keepla
+USES=		gmake libtool
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-oss --enable-shared
 USE_LDCONFIG=	yes
