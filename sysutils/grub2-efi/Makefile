@@ -2,11 +2,13 @@
 # $FreeBSD$
 
 PORTNAME=	grub2-efi
-PORTVERSION=	2.00
-PORTREVISION=	3
+PORTVERSION=	2.02
+PORTREVISION=	1
 CATEGORIES=	sysutils
-MASTER_SITES=	GNU/grub
-DISTNAME=	grub-${PORTVERSION}
+MASTER_SITES=	http://www.pcbsd.org/~kris/software/ \
+		ftp://ftp.pcbsd.org/pub/software/
+DISTNAME=	grub-${PORTVERSION}_1
+WRKSRC=		${WRKDIR}/grub-${PORTVERSION}
 
 MAINTAINER=	kmoore@FreeBSD.org
 COMMENT=	Multiboot EFI boot loader
@@ -14,12 +16,14 @@ COMMENT=	Multiboot EFI boot loader
 LICENSE=	GPLv3
 
 RUN_DEPENDS=	${LOCALBASE}/bin/mformat:${PORTSDIR}/emulators/mtools \
-		${LOCALBASE}/bin/grub-mkrescue:${PORTSDIR}/sysutils/grub2
+		${LOCALBASE}/bin/grub-mkrescue:${PORTSDIR}/sysutils/grub2-pcbsd
 BUILD_DEPENDS=	${LOCALBASE}/bin/flex:${PORTSDIR}/textproc/flex \
+		${LOCALBASE}/bin/bash:${PORTSDIR}/shells/bash \
 		help2man:${PORTSDIR}/misc/help2man
 
 SSP_UNSAFE=	yes
 USE_GCC=	yes
+USE_PYTHON=	yes
 USE_AUTOTOOLS=	automake aclocal autoconf
 ACLOCAL_ARGS=	-Im4
 GNU_CONFIGURE=	yes
@@ -37,6 +41,10 @@ post-patch:
 	@${LN} -s ${LOCALBASE}/lib/X11/fonts/dejavu/DejaVuSans.ttf ${WRKSRC}
 	@${TOUCH} -t 200001010000 ${WRKSRC}/Makefile.util.def
 
+pre-configure:
+	@${REINPLACE_CMD} -e 's|python|${PYTHON_CMD}|g' ${WRKSRC}/autogen.sh
+	cd ${WRKSRC} && ./autogen.sh
+
 post-configure:
 	@${LN} -sfh /usr/include/machine /usr/include/sys /usr/include/x86 ${WRKSRC}/grub-core
 
@@ -44,3 +52,5 @@ do-install:
 	@cd ${WRKSRC}/grub-core && gmake install DESTDIR=${STAGEDIR}
 
 .include <bsd.port.post.mk>
+
+RUN_DEPENDS:=	${RUN_DEPENDS:Ngcc*}
