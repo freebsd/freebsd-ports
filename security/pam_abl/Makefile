@@ -6,8 +6,11 @@ PORTVERSION=	0.2.3
 CATEGORIES=	security
 MASTER_SITES=	SF/pam-abl/pam-abl/${PORTVERSION}
 
-MAINTAINER=	prehor@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Blacklisting responsible for repeated failed authentication attempts
+
+DEPRECATED=	Newer version requires large number of hacks, not worth the effort
+EXPIRATION_DATE=2014-08-24
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 

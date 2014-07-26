@@ -2,7 +2,7 @@
 
 PORTNAME=	gnuplot
 PORTVERSION=	4.6.5
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	math graphics
 MASTER_SITES=	SF
 
@@ -62,7 +62,9 @@ X11_USE=	XORG=x11
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MWX}
-USE_WX=			3.0
+# Version 3.x of WX currently cause gnuplot to crash.
+# Do not update without this without testing.
+USE_WX=			2.8
 WX_UNICODE=		yes
 WX_CONF_ARGS=		absolute
 .else
