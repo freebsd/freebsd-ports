@@ -1,2 +1,11 @@
+@mode 2511
+@group games
 bin/ishido
+@group
+@mode
+man/man6/ishido.6.gz
+@mode 664
+@group games
 share/misc/ishido_scores
+@group
+@mode
