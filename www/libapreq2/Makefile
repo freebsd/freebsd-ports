@@ -13,7 +13,7 @@ COMMENT=	Generic Apache2 Request Library
 
 LICENSE=	APACHE20
 
-USES=		gmake libtool
+USES=		libtool
 USE_APACHE=	22+
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	autoconf
