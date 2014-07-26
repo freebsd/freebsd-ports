@@ -22,7 +22,6 @@ RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-co
 		${LOCALBASE}/libdata/pkgconfig/gnome-icon-theme.pc:${PORTSDIR}/misc/gnome-icon-theme
 
 USES=		gettext libtool:keepla pathfix pkgconfig gmake tar:bzip2
-USE_GCC=	yes
 USE_XORG=	xinerama xi xrandr xcursor xcomposite xdamage
 USE_GNOME=	gnomeprefix intlhack gconf2 gtk20
 USE_LDCONFIG=	yes
