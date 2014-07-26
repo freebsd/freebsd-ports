@@ -3,7 +3,7 @@
 
 PORTNAME=	grub2-pcbsd
 PORTVERSION=	2.02p
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	sysutils
 MASTER_SITES=   http://www.pcbsd.org/~kris/software/ \
 		ftp://ftp.pcbsd.org/pub/software/
@@ -16,12 +16,12 @@ LICENSE=	GPLv3
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/flex:${PORTSDIR}/textproc/flex \
 		${LOCALBASE}/bin/bash:${PORTSDIR}/shells/bash \
+		${LOCALBASE}/bin/g++47:${PORTSDIR}/lang/gcc47 \
 		help2man:${PORTSDIR}/misc/help2man
 
 WRKSRC=		${WRKDIR}/grub-2.02
 CONFLICTS=	grub-0* grub2-2*
 SSP_UNSAFE=	yes
-USE_GCC=	yes
 USE_PYTHON=	yes
 USE_AUTOTOOLS=	automake aclocal autoconf
 ACLOCAL_ARGS=	-Im4
@@ -32,7 +32,9 @@ INFO=		grub grub-dev
 MAKE_JOBS_UNSAFE=	yes
 
 CONFIGURE_ARGS=	--disable-werror --localedir=${PREFIX}/share/locale
-CONFIGURE_ENV=	CPP="${CC} -E" \
+CONFIGURE_ENV=	CPP="gcc47 -E" \
+		CC="gcc47" \
+		CCXX="g++47" \
 		LEX=${LOCALBASE}/bin/flex
 
 SUB_FILES=	00_header 10_kfreebsd 10_ktrueos 30_os-prober
