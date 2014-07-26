@@ -3,11 +3,8 @@ lib/yagf/libxspreload.so
 share/applications/YAGF.desktop
 share/icons/hicolor/96x96/apps/yagf.png
 share/pixmaps/yagf.png
-share/yagf/translations/yagf_de.qm
-share/yagf/translations/yagf_lt.qm
-share/yagf/translations/yagf_pl.qm
-share/yagf/translations/yagf_ru.qm
-share/yagf/translations/yagf_uk.qm
+%%DATADIR%%/translations/yagf_fr.qm
+%%DATADIR%%/translations/yagf_ru.qm
 @comment those are yagf directories
 @dirrm lib/yagf
 @dirrm share/yagf/translations
