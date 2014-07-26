@@ -2,6 +2,7 @@
 %%SITE_PERL%%/CPAN/Meta/Converter.pm
 %%SITE_PERL%%/CPAN/Meta/Feature.pm
 %%SITE_PERL%%/CPAN/Meta/History.pm
+%%SITE_PERL%%/CPAN/Meta/Merge.pm
 %%SITE_PERL%%/CPAN/Meta/Prereqs.pm
 %%SITE_PERL%%/CPAN/Meta/Spec.pm
 %%SITE_PERL%%/CPAN/Meta/Validator.pm
@@ -10,6 +11,7 @@
 %%PERL5_MAN3%%/CPAN::Meta::Converter.3.gz
 %%PERL5_MAN3%%/CPAN::Meta::Feature.3.gz
 %%PERL5_MAN3%%/CPAN::Meta::History.3.gz
+%%PERL5_MAN3%%/CPAN::Meta::Merge.3.gz
 %%PERL5_MAN3%%/CPAN::Meta::Prereqs.3.gz
 %%PERL5_MAN3%%/CPAN::Meta::Spec.3.gz
 %%PERL5_MAN3%%/CPAN::Meta::Validator.3.gz
