@@ -16,8 +16,35 @@ bin/zmvideo.pl
 bin/zmwatch.pl
 bin/zmx10.pl
 @unexec if cmp -s %D/etc/zm.conf.sample %D/etc/zm.conf; then rm -f %D/etc/zm.conf; fi
+@mode 0600
 etc/zm.conf.sample
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/perllocal.pod
+@mode
+%%DOCSDIR%%/zm_create.sql
+%%PERL5_MAN3%%/ZoneMinder.3.gz
+%%PERL5_MAN3%%/ZoneMinder::Base.3.gz
+%%PERL5_MAN3%%/ZoneMinder::Config.3.gz
+%%PERL5_MAN3%%/ZoneMinder::ConfigAdmin.3.gz
+%%PERL5_MAN3%%/ZoneMinder::ConfigData.3.gz
+%%PERL5_MAN3%%/ZoneMinder::Control.3.gz
+%%PERL5_MAN3%%/ZoneMinder::Control::AxisV2.3.gz
+%%PERL5_MAN3%%/ZoneMinder::Control::Ncs370.3.gz
+%%PERL5_MAN3%%/ZoneMinder::Control::PanasonicIP.3.gz
+%%PERL5_MAN3%%/ZoneMinder::Control::PelcoD.3.gz
+%%PERL5_MAN3%%/ZoneMinder::Control::Visca.3.gz
+%%PERL5_MAN3%%/ZoneMinder::Control::mjpgStreamer.3.gz
+%%PERL5_MAN3%%/ZoneMinder::Database.3.gz
+%%PERL5_MAN3%%/ZoneMinder::General.3.gz
+%%PERL5_MAN3%%/ZoneMinder::Logger.3.gz
+%%PERL5_MAN3%%/ZoneMinder::Memory.3.gz
+%%PERL5_MAN3%%/ZoneMinder::Trigger::Channel.3.gz
+%%PERL5_MAN3%%/ZoneMinder::Trigger::Channel::File.3.gz
+%%PERL5_MAN3%%/ZoneMinder::Trigger::Channel::Handle.3.gz
+%%PERL5_MAN3%%/ZoneMinder::Trigger::Channel::Inet.3.gz
+%%PERL5_MAN3%%/ZoneMinder::Trigger::Channel::Serial.3.gz
+%%PERL5_MAN3%%/ZoneMinder::Trigger::Channel::Spawning.3.gz
+%%PERL5_MAN3%%/ZoneMinder::Trigger::Channel::Unix.3.gz
+%%PERL5_MAN3%%/ZoneMinder::Trigger::Connection.3.gz
+%%PERL5_MAN3%%/ZoneMinder::Trigger::Connection::Example.3.gz
 %%SITE_PERL%%/ZoneMinder.pm
 %%SITE_PERL%%/ZoneMinder/Base.pm
 %%SITE_PERL%%/ZoneMinder/Config.pm
@@ -320,3 +347,15 @@ lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/perllocal.pod
 @dirrm %%SITE_PERL%%/ZoneMinder/Memory
 @dirrm %%SITE_PERL%%/ZoneMinder/Control
 @dirrm %%SITE_PERL%%/ZoneMinder
+@exec mkdir -m 0700 -p %%ZM_TMPDIR%%/fgfhfh
+@exec chown %%WEB_USER%% %%ZM_TMPDIR%%
+@exec chgrp %%WEB_GROUP%% %%ZM_TMPDIR%%
+@exec mkdir -m 0755 -p %%ZM_RUNDIR%%
+@exec chown %%WEB_USER%% %%ZM_RUNDIR%%
+@exec chgrp %%WEB_GROUP%% %%ZM_RUNDIR%%
+@exec mkdir -m 0755 -p %%ZM_LOGDIR%%
+@exec chown %%WEB_USER%% %%ZM_LOGDIR%%
+@exec chgrp %%WEB_GROUP%% %%ZM_LOGDIR%%
+@unexec rmdir %%ZM_RUNDIR%%
+@unexec rmdir %%ZM_TMPDIR%%
+@unexec rmdir %%ZM_LOGDIR%%
