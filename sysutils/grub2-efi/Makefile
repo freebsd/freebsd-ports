@@ -52,3 +52,5 @@ do-install:
 	@cd ${WRKSRC}/grub-core && gmake install DESTDIR=${STAGEDIR}
 
 .include <bsd.port.post.mk>
+
+RUN_DEPENDS:=	${RUN_DEPENDS:Ngcc*}
