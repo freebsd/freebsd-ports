@@ -20,7 +20,6 @@ TEST_DEPENDS=	p5-Test-Fatal>=0:${PORTSDIR}/devel/p5-Test-Fatal \
 		p5-Test-Identity>=0:${PORTSDIR}/devel/p5-Test-Identity \
 		p5-Test-Pod>=1:${PORTSDIR}/devel/p5-Test-Pod \
 		p5-Test-Refcount>=0:${PORTSDIR}/devel/p5-Test-Refcount
-BUILD_DEPENDS+=	${TEST_DEPENDS}
 
 USES=		perl5
 USE_PERL5=	configure
