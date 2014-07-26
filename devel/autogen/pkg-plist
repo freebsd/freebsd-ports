@@ -6,9 +6,9 @@ bin/xml2ag
 include/autoopts/options.h
 include/autoopts/usage-txt.h
 lib/libopts.a
-lib/libopts.la
 lib/libopts.so
-lib/libopts.so.35
+lib/libopts.so.25
+lib/libopts.so.25.10.0
 libdata/pkgconfig/autoopts.pc
 share/aclocal/autoopts.m4
 %%DATADIR%%/aginfo.tpl
