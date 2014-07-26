@@ -7,7 +7,7 @@ CATEGORIES=	databases geography
 MASTER_SITES=	http://download.osgeo.org/postgis/source/
 PKGNAMESUFFIX=	20
 
-MAINTAINER=	matt.trisoline@intermedix.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Geographic objects support for PostgreSQL databases
 
 LICENSE=	GPLv2
