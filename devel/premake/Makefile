@@ -9,7 +9,7 @@ MASTER_SITES=	SF/${PORTNAME}/Premake/${PORTVERSION}
 DISTNAME=	${PORTNAME}-src-${PORTVERSION}
 
 MAINTAINER=	lippe@FreeBSD.org
-COMMENT=	Writes build scripts
+COMMENT=	Build script creation tool
 
 OPTIONS_DEFINE=	DOCS
 
@@ -24,6 +24,6 @@ PORTDOCS=	CHANGES.txt LICENSE.txt README.txt
 do-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
-	@${INSTALL_PROGRAM} ${WRKSRC}/bin/premake ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/bin/premake ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>
