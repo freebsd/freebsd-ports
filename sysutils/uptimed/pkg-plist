@@ -9,8 +9,8 @@ man/man1/uprecords.1.gz
 man/man8/uptimed.8.gz
 sbin/uptimed
 www/cgi-bin/uprecords.cgi
-www/cgi-bin/uprecords.conf
-www/cgi-bin/uprecords.footer
-www/cgi-bin/uprecords.header
+www/cgi-bin/uprecords.conf.sample
+www/cgi-bin/uprecords.footer.sample
+www/cgi-bin/uprecords.header.sample
 @dirrmtry www/cgi-bin
 @unexec rmdir /var/spool/uptimed 2>/dev/null || true

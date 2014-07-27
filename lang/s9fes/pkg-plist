@@ -3,6 +3,7 @@ bin/s9help
 bin/s9resolve
 bin/scm2html
 bin/scmpp
+man/man1/s9.1.gz
 %%DATADIR%%/S9Book
 %%DATADIR%%/S9Book-bw
 %%DATADIR%%/_template

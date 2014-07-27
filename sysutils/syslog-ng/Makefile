@@ -98,7 +98,7 @@ CONFIGURE_ARGS+=	--disable-pcre
 .if ${PORT_OPTIONS:MGEOIP}
 CONFIGURE_ARGS+=	--enable-geoip
 LIB_DEPENDS+=		libGeoIP.so:${PORTSDIR}/net/GeoIP
-CONFIGURE_ENV+=		GEOIP_LIBS="-lGeoIP"
+CONFIGURE_ENV+=		GEOIP_LIBS="-L${LOCALBASE}/lib -lGeoIP"
 PLIST_FILES+=		lib/syslog-ng/libtfgeoip.so
 .else
 CONFIGURE_ARGS+=	--disable-geoip

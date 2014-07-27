@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	shotwell
-PORTVERSION=	0.18.0
-PORTREVISION=	1
+PORTVERSION=	0.18.1
 CATEGORIES=	graphics gnome
 MASTER_SITES=	GNOME/sources/shotwell/${PORTVERSION:R}
 
@@ -27,7 +26,7 @@ LIB_DEPENDS=	libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib \
 		librest-0.7.so:${PORTSDIR}/devel/librest
 
 USES=		shebangfix gettext desktop-file-utils gmake pkgconfig tar:xz
-USE_GNOME=	gnomehier gconf2 gtk20 gnomedocutils librsvg2
+USE_GNOME=	dconf gnomehier gtk30 gnomedocutils
 USE_SQLITE=	3
 USE_GSTREAMER1=	yes
 HAS_CONFIGURE=	yes
@@ -66,6 +65,14 @@ post-configure:
 	@${REINPLACE_CMD} -E \
 		-e 's|\.get_child\("share")\.get_child\("shotwell")|${SHOTWELL_DATADIR}|' \
 		${WRKSRC}/src/AppDirs.vala
+
+post-install:
+	@${STRIP_CMD} ${STAGEDIR}${LOCALBASE}/bin/shotwell \
+		${STAGEDIR}${LOCALBASE}/lib/shotwell/plugins/builtin/shotwell-transitions.so \
+		${STAGEDIR}${LOCALBASE}/lib/shotwell/plugins/builtin/shotwell-publishing.so \
+		${STAGEDIR}${LOCALBASE}/lib/shotwell/plugins/builtin/shotwell-data-imports.so \
+		${STAGEDIR}${LOCALBASE}/lib/shotwell/plugins/builtin/shotwell-publishing-extras.so \
+		${STAGEDIR}${LOCALBASE}/libexec/shotwell/shotwell-video-thumbnailer
 
 .include <bsd.port.pre.mk>
 

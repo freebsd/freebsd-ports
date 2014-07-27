@@ -1,6 +1,6 @@
---- Bio/Root/Build.pm.orig	2009-09-30 00:33:53.000000000 +0800
-+++ Bio/Root/Build.pm	2009-12-01 10:31:39.000000000 +0800
-@@ -127,49 +127,9 @@
+--- Bio/Root/Build.pm.orig	2014-07-10 22:13:23.000000000 +0200
++++ Bio/Root/Build.pm	2014-07-24 11:55:59.000000000 +0200
+@@ -83,49 +83,9 @@
          }
      }
      closedir($scripts_dir);
@@ -52,11 +52,12 @@
  
      print "\n";
  }
-@@ -1136,21 +1096,9 @@
+@@ -1153,22 +1113,9 @@
  sub prompt_for_network {
      my ($self, $accept) = @_;
  
--    my $proceed = $accept ? 0 : $self->y_n("Do you want to run tests that require connection to servers across the internet\n(likely to cause some failures)? y/n", 'n');
+-    my $proceed = $accept ? 0 : $self->y_n(  "Do you want to run tests that require connection to servers across the internet\n"
+-                                           . "(likely to cause some failures)? y/n", 'n');
 -
 -    if ($proceed) {
 -        $self->notes('network' => 1);
@@ -76,4 +77,4 @@
 +    $self->log_info("  - will not run internet-requiring tests\n");
  }
  
- # override the build script warnings flag
+ =head2 print_build_script

@@ -5,6 +5,15 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20140727:
+  AFFECTS: users of comms/qpage
+  AUTHOR: marino@FreeBSD.org
+
+  The default configure file location has changed from
+  ${LOCALBASE}/etc/qpage.cf to ${LOCALBASE}/etc/qpage.conf
+  You will likely want to move the old configure file to the new location
+  after updating if it contains custom settings.
+
 20140725:
   AFFECTS: users of cad/netgen
   AUTHOR: stephen@FreeBSD.org

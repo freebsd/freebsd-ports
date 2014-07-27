@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	opennx
-PORTVERSION=	0.16.0.725
-PORTREVISION=	1
+PORTVERSION=	0.16.0.729
 CATEGORIES=	net
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/CI-source
 
@@ -33,12 +32,14 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 INSTALLS_ICONS=	yes
 
 NO_PACKAGE=	must generate a fresh private key at install time
+LEGAL_PACKAGE=	yes
 
 SSH_KEYGEN?=	ssh-keygen
 
 OPTIONS_DEFINE=	NLS
 OPTIONS_SUB=	yes
 
+NLS_USES=	gettext
 NLS_CONFIGURE_ENABLE=	nls
 
 # do not use default private key included with tarball
