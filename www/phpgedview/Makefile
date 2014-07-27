@@ -10,6 +10,9 @@ DISTNAME=	${PORTNAME:S/p/P/}-basic-${PORTVERSION}
 MAINTAINER=	fbsd@opal.com
 COMMENT=	Online genealogy viewer
 
+DEPRECATED=	Superceded by www/webtrees
+EXPIRATION_DATE=2014-08-15
+
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 EXTRACT_AFTER_ARGS=	-d ${WRKSRC}
 
