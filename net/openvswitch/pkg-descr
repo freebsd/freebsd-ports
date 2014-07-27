@@ -6,4 +6,4 @@ ERSPAN, CLI, LACP, 802.1ag). In addition, it is designed to support
 distribution across multiple physical servers similar to VMware's vNetwork
 distributed vswitch or Cisco's Nexus 1000V.
 
-WWW:	http://openvswitch.org/
+WWW: http://openvswitch.org/
