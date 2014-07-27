@@ -4685,6 +4685,7 @@
     SUBDIR += vera++
     SUBDIR += viewvc
     SUBDIR += violet
+    SUBDIR += visualparadigm
     SUBDIR += vstr
     SUBDIR += vtcl
     SUBDIR += vtg

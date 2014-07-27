@@ -330,7 +330,8 @@ validate:
 	@${MKDIR} ${WRKSRC}/rubyspec
 	rm -rf ${WRKSRC}/rubyspec/*
 	(cd ${WRKSRC}/rubyspec && git clone git://github.com/rubyspec/rubyspec.git)
+	(cd ${WRKSRC}/rubyspec/rubyspec && git checkout 1.x)
 	(cd ${WRKSRC}/rubyspec && git clone git://github.com/rubyspec/mspec.git)
-	(cd ${WRKSRC}/rubyspec/rubyspec && env PATH=${WRKSRC}/rubyspec/mspec/bin:${PATH} mspec -t ${STAGEDIR}${PREFIX}/bin/ruby${RUBY_SUFFIX})
+	(cd ${WRKSRC}/rubyspec/rubyspec && env PATH=${WRKSRC}/rubyspec/mspec/bin:${PATH} mspec -t ${PREFIX}/bin/ruby${RUBY_SUFFIX} .)
 
 .include <bsd.port.post.mk>
