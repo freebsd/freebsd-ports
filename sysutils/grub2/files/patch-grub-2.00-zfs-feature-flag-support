@@ -395,7 +395,7 @@ new file mode 100644
 index 0000000..ff85a77
 --- /dev/null
 +++ grub-core/fs/zfs/zfs_lz4.c
-@@ -0,0 +1,317 @@
+@@ -0,0 +1,318 @@
 +/*
 + * LZ4 - Fast LZ compression algorithm
 + * Header File
@@ -430,6 +430,7 @@ index 0000000..ff85a77
 + * - LZ4 source repository : http://code.google.com/p/lz4/
 + */
 +
++#include <sys/endian.h>
 +#include <grub/err.h>
 +#include <grub/mm.h>
 +#include <grub/misc.h>
