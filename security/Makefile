@@ -486,6 +486,7 @@
     SUBDIR += p5-Crypt-Rijndael
     SUBDIR += p5-Crypt-Rijndael_PP
     SUBDIR += p5-Crypt-SKey
+    SUBDIR += p5-Crypt-SMIME
     SUBDIR += p5-Crypt-SSLeay
     SUBDIR += p5-Crypt-Salt
     SUBDIR += p5-Crypt-SaltedHash
