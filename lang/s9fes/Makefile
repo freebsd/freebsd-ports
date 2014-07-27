@@ -18,8 +18,11 @@ LIBDIR=		${DATADIR}
 MAKE_ARGS=	${MAKE_ENV}
 WRKSRC=		${WRKDIR}/s9
 
-MAN1=		s9.1
-MANCOMPRESSED=	yes
+post-patch:
+	${REINPLACE_CMD} -E \
+		-e 's|\$$\(BINDIR\)|$$(DESTDIR)$$(BINDIR)|g' \
+		-e '/-DDEF|>s9.1.gz/!s|\$$\(LIBDIR\)|$$(DESTDIR)$$(LIBDIR)|g' \
+		-e 's|\$$\(MANDIR\)|$$(DESTDIR)$$(MANDIR)|g' \
+		${WRKSRC}/Makefile
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
