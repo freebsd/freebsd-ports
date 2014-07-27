@@ -11,7 +11,7 @@ MASTER_SITES=	http://www.dcc-servers.net/dcc/source/old/ \
 DISTNAME=	dcc-${PORTVERSION}
 EXTRACT_SUFX=	.tar.Z
 
-MAINTAINER=	cgreen@sentex.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Distributed Checksum Clearinghouse bulk email detector
 
 .if ! defined(PACKAGE_BUILDING)
@@ -114,6 +114,7 @@ MILTERINC=	${MILTERBASE}/include
 MILTERLIB=	${MILTERBASE}/lib
 
 CPPFLAGS+=	-I${MILTERINC}
+CFLAGS+=	-I${MILTERINC}
 LDFLAGS+=	-L${MILTERLIB}
 
 CONFIGURE_ARGS+=	--with-sendmail=yes
