@@ -103,7 +103,6 @@ CONFIGURE_ARGS+=	--enable-libedit --with-libedit-prefix=${LOCALBASE}
 BUILD_DEPENDS+=	readline>=0:${PORTSDIR}/devel/readline
 RUN_DEPENDS+=	readline>=0:${PORTSDIR}/devel/readline
 CONFIGURE_ARGS+=	--disable-libedit --with-readline-prefix=${LOCALBASE}
-EXTRA_PATCHES+=		${FILESDIR}/extra-patch-ext__readline__readline.c
 .endif
 
 .if ${RUBY_VER} == ${RUBY_DEFAULT_VER}
