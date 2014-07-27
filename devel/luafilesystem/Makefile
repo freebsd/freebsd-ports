@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	luafilesystem
-PORTVERSION=	1.5.0
+PORTVERSION=	1.6.2
 CATEGORIES=	devel
 MASTER_SITES=	GH
 PKGNAMEPREFIX=	${LUA_PKGNAMEPREFIX}
@@ -12,13 +12,13 @@ COMMENT=	Library to access directory structure and file attributes
 
 LICENSE=	MIT
 
-USES=		lua:51
+USES=		lua
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	keplerproject
 GH_PROGECT=	${PORTNAME}
-GH_TAGNAME=	v${PORTVERSION}
-GH_COMMIT=	8ff2013
+GH_TAGNAME=	v${PORTVERSION:S/./_/g}
+GH_COMMIT=	9557350
 
 ALL_TARGET=	lib
 
