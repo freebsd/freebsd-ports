@@ -102,7 +102,6 @@
     SUBDIR += pidgin-audacious-remote
     SUBDIR += pidgin-birthday-reminder
     SUBDIR += pidgin-bs
-    SUBDIR += pidgin-facebookchat
     SUBDIR += pidgin-fetion
     SUBDIR += pidgin-guifications
     SUBDIR += pidgin-hotkeys
