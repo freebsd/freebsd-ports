@@ -2,7 +2,7 @@
 
 PORTNAME=	cairo-dock-plugins
 DISTVERSION=	3.2.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	deskutils
 MASTER_SITES=	https://launchpadlibrarian.net/137290159/ \
 		http://pazzle.otdux.com.ua/
@@ -57,8 +57,7 @@ post-patch:
 	     s|/usr/share/cairo-dock|${LOCALBASE}/share/cairo-dock|g'
 
 .if ${PORT_OPTIONS:MXFCE_INTEGRATION}
-LIB_DEPENDS+=	libthunar-vfs-1.so:${PORTSDIR}/x11-fm/thunar-vfs \
-		libexif.so:${PORTSDIR}/graphics/libexif
+LIB_DEPENDS+=	libexif.so:${PORTSDIR}/graphics/libexif
 CMAKE_ARGS+=	-Denable-xfce-integration:BOOL=TRUE
 .else
 CMAKE_ARGS+=	-Denable-xfce-integration:BOOL=FALSE
