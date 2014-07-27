@@ -2,8 +2,9 @@ bin/qupzilla
 lib/libQupZilla.so
 lib/libQupZilla.so.1
 lib/libQupZilla.so.1.6
-lib/libQupZilla.so.1.6.5
+lib/libQupZilla.so.1.6.6
 lib/qupzilla/libAccessKeysNavigation.so
+lib/qupzilla/libAutoScroll.so
 %%GNOMEKEYRING%%lib/qupzilla/libGnomeKeyringPasswords.so
 lib/qupzilla/libGreaseMonkey.so
 %%KWALLET%%lib/qupzilla/libKWalletPasswords.so
