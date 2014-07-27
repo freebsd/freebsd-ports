@@ -1,0 +1,10 @@
+--- Imakefile.orig	2002-11-25 15:28:17.000000000 +0000
++++ Imakefile
+@@ -20,6 +20,6 @@ OBJS			= xcb.o
+ ComplexProgramTarget(xcb)
+ 
+ Xcb.ad:	Xcb.ad.base
+-	$(CPP) -P Xcb.ad.base $(GUI) > $@    # -P removes line directives.
++	$(CPP) $(GUI) -P Xcb.ad.base > $@    # -P removes line directives.
+ 
+ InstallAppDefaults(Xcb)
