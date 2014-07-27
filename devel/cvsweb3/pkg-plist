@@ -10,8 +10,7 @@ etc/cvsweb/cvsweb.conf-ruby.dist
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/TODO
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-%%PORTDOCS%%%%EXAMPLESDIR%%/cvsweb-httpd.conf
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cvsweb-httpd.conf
 %%CGIDIR%%/cvsweb.cgi
 %%ICONSDIR%%/cvsweb/back.gif
 %%ICONSDIR%%/cvsweb/binary.gif
@@ -21,9 +20,14 @@ etc/cvsweb/cvsweb.conf-ruby.dist
 %%ICONSDIR%%/cvsweb/minigraph.png
 %%ICONSDIR%%/cvsweb/minitext.gif
 %%ICONSDIR%%/cvsweb/text.gif
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
 @dirrm %%ICONSDIR%%/cvsweb
 %%CSSDIR%%/cvsweb/cvsweb.css
 @dirrm %%CSSDIR%%/cvsweb
 share/enscript/hl/lang_cvsweb.st
 share/enscript/hl/lang_cvsweb_diff.st
-@dirrmtry share/enscript/hl
+@dirrmtry %%CGIDIR%%
+@dirrmtry %%CSSDIR%%
+@dirrmtry share/apache/data
+@dirrmtry %%ICONSDIR%%
+@dirrmtry share/apache
