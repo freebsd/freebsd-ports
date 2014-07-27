@@ -1,5 +1,14 @@
---- macunpack/lzh.c.orig	Thu Sep 28 13:10:04 2006
-+++ macunpack/lzh.c	Thu Sep 28 13:11:27 2006
+--- macunpack/lzh.c.orig	2014-07-27 11:11:36.000000000 -0400
++++ macunpack/lzh.c	2014-07-27 11:11:39.000000000 -0400
+@@ -23,7 +23,7 @@
+ extern unsigned char (*lzah_getbyte)();
+ extern void de_lzh();
+ 
+-typedef struct methodinfo {
++struct methodinfo {
+ 	char *name;
+ 	int number;
+ };
 @@ -40,13 +40,13 @@
      {"-lzs-", lzs}
  };
