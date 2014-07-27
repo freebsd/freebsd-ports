@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	kzip
-DISTVERSION=	20070805
+DISTVERSION=	20091108
 CATEGORIES=	archivers linux
-MASTER_SITES=	http://static.jonof.id.au.nyud.net/dl/kenutils/
+MASTER_SITES=	http://static.jonof.id.au/dl/kenutils/
 DISTNAME=	kzipmix-${DISTVERSION}-linux-static
 
 MAINTAINER=	ports@FreeBSD.org
@@ -18,10 +18,8 @@ ONLY_FOR_ARCHS=	i386
 
 USE_LINUX=	yes
 NO_BUILD=	yes
-WRKSRC=		${WRKDIR}/kzipmix-static
 
 FILES=		kzip-static
-
 .for file in ${FILES}
 PLIST_FILES+=	bin/${file:S/-static$//}
 .endfor
