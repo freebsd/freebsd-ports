@@ -11,7 +11,6 @@ MAINTAINER=	damjan.jov@gmail.com
 COMMENT=	ELF prelinking utility to speed up dynamic linking
 
 LIB_DEPENDS=	libargp.so:${PORTSDIR}/devel/argp-standalone
-BUILD_DEPENDS=	fig2dev:${PORTSDIR}/print/transfig
 
 USES=		gmake tar:bzip2 libtool
 GNU_CONFIGURE=	yes
