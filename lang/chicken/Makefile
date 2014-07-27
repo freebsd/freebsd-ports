@@ -3,6 +3,7 @@
 
 PORTNAME=	chicken
 PORTVERSION=	4.9.0.1
+PORTREVISION=	1
 CATEGORIES=	lang scheme
 MASTER_SITES=	http://code.call-cc.org/releases/4.9.0/
 
