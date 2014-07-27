@@ -1,6 +1,7 @@
 %%FUSE%%bin/grub-mount
-%%FUSE%%man/man1/grub-mount.1
+%%FUSE%%man/man1/grub-mount.1.gz
 %%MKFONT%%bin/grub-mkfont
+%%MKFONT%%man/man1/grub-mkfont.1.gz
 %%MKFONT%%share/grub/themes/starfield/dejavu_10.pf2
 %%MKFONT%%share/grub/themes/starfield/dejavu_12.pf2
 %%MKFONT%%share/grub/themes/starfield/dejavu_bold_14.pf2
