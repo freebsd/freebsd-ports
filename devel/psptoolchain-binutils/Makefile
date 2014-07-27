@@ -10,7 +10,7 @@ MASTER_SITES=	ftp://ftp.gnu.org/pub/gnu/${PORTNAME}/ \
 MASTER_SITE_SUBDIR=	${PORTNAME}/releases
 PKGNAMEPREFIX=	psptoolchain-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	tphilipp@potion-studios.com
 COMMENT=	PlayStation Portable development toolchain ${PORTNAME}
 
 USES=		gmake tar:bzip2 libtool
