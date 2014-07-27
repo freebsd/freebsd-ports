@@ -2,14 +2,15 @@
 # $FreeBSD$
 
 PORTNAME=	curl
-PORTVERSION=	7.19.3.1
+PORTVERSION=	7.19.5
 CATEGORIES=	ftp python
-MASTER_SITES=	http://pycurl.sourceforge.net/download/ \
+MASTER_SITES=	CHEESESHOP \
+		http://pycurl.sourceforge.net/download/ \
 		http://pycurl.sourceforge.net/download/00-OLD-VERSIONS/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	py${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	wenheping@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python interface to libcurl
 
 LICENSE=	LGPL21 MIT
