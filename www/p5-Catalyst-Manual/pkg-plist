@@ -17,7 +17,6 @@
 %%PERL5_MAN3%%/Catalyst::Manual::ExtendingCatalyst.3.gz
 %%PERL5_MAN3%%/Catalyst::Manual::Internals.3.gz
 %%PERL5_MAN3%%/Catalyst::Manual::Intro.3.gz
-%%PERL5_MAN3%%/Catalyst::Manual::Plugins.3.gz
 %%PERL5_MAN3%%/Catalyst::Manual::Tutorial.3.gz
 %%PERL5_MAN3%%/Catalyst::Manual::Tutorial::01_Intro.3.gz
 %%PERL5_MAN3%%/Catalyst::Manual::Tutorial::02_CatalystBasics.3.gz
@@ -52,7 +51,6 @@
 %%SITE_PERL%%/Catalyst/Manual/ExtendingCatalyst.pod
 %%SITE_PERL%%/Catalyst/Manual/Internals.pod
 %%SITE_PERL%%/Catalyst/Manual/Intro.pod
-%%SITE_PERL%%/Catalyst/Manual/Plugins.pm
 %%SITE_PERL%%/Catalyst/Manual/Tutorial.pod
 %%SITE_PERL%%/Catalyst/Manual/Tutorial/01_Intro.pod
 %%SITE_PERL%%/Catalyst/Manual/Tutorial/02_CatalystBasics.pod
