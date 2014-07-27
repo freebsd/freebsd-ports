@@ -1,0 +1,25 @@
+--- ./Makefile.orig	2007-08-18 08:18:50.000000000 +0200
++++ ./Makefile	2014-06-17 14:58:37.000000000 +0200
+@@ -27,6 +27,9 @@
+ 	@strip $@
+ 	@echo "Run ./help for documentation"
+ 
++gadgets:
++	$(MAKE) -C gadgets
++
+ clean:
+ 	@echo cleaning
+ 	@rm -f dzen2 ${OBJ} dzen2-${VERSION}.tar.gz
+@@ -49,8 +52,11 @@
+ 	@cp -f dzen2 ${DESTDIR}${PREFIX}/bin
+ 	@chmod 755 ${DESTDIR}${PREFIX}/bin/dzen2
+ 
++install-gadgets: gadgets
++	$(MAKE) -C gadgets install
++
+ uninstall:
+ 	@echo removing executable file from ${DESTDIR}${PREFIX}/bin
+ 	@rm -f ${DESTDIR}${PREFIX}/bin/dzen2
+ 
+-.PHONY: all options clean dist install uninstall
++.PHONY: all options clean dist install uninstall gadgets install-gadgets
