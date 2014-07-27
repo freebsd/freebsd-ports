@@ -10,7 +10,9 @@ PKGNAMEPREFIX=	${APACHE_PKGNAMEPREFIX}
 DIST_SUBDIR=	apache2
 
 MAINTAINER=	mk@neon1.net
-COMMENT=	An Apache module to provide public key ticket based authentication
+COMMENT=	Apache module to provide public key ticket based authentication
+
+BROKEN=		Fails to build
 
 USE_APACHE=	22+
 AP_FAST_BUILD=	yes
