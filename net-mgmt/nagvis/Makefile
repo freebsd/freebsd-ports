@@ -3,6 +3,7 @@
 
 PORTNAME=	nagvis
 PORTVERSION=	1.7.2
+PORTREVISION=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=${PORTNAME}/NagVis%201.7
@@ -24,7 +25,6 @@ NO_BUILD=	yes
 USE_PHP=	gd gettext mbstring session json pdo pdo_sqlite
 WANT_PHP_WEB=	yes
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 WWW_OWNER?=	${WWWOWN}
@@ -35,6 +35,7 @@ FILEMODE?=	640
 SUB_LIST+=	WWW_OWNER=${WWW_OWNER} WWW_GROUP=${WWW_GROUP} \
 		DIRMODE=${DIRMODE} FILEMODE=${FILEMODE}
 SUB_FILES+=	pkg-install pkg-deinstall
+PLIST_SUB+=	WWWDIR="${WWWDIR}"
 
 .if ${PORT_OPTIONS:MNDO2DB}
 USE_PHP+=	mysql
@@ -60,9 +61,10 @@ post-patch:
 		${WRKSRC}/etc/nagvis.ini.php-sample
 
 do-install:
-	@( cd ${WRKSRC} && ${COPYTREE_SHARE} \* ${WWWDIR}/ )
-
-post-install:
-	@${SH} ${PKGINSTALL} ${DISTNAME} POST-INSTALL
+	cd ${WRKSRC} && ${COPYTREE_SHARE} \* ${STAGEDIR}${WWWDIR}/
+	${MKDIR} ${STAGEDIR}${WWWDIR}/etc/automaps \
+		${STAGEDIR}${WWWDIR}/share/var \
+		${STAGEDIR}${WWWDIR}/var/tmpl/cache \
+		${STAGEDIR}${WWWDIR}/var/tmpl/compile
 
 .include <bsd.port.mk>
