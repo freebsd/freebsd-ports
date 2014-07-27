@@ -1,0 +1,68 @@
+From 3f56689bff57e3db52ec8fd5c5f730a2aec64d3d Mon Sep 17 00:00:00 2001
+From: Baptiste Daroussin <bapt@FreeBSD.org>
+Date: Sun, 27 Jul 2014 16:12:07 +0200
+Subject: [PATCH] Fix reading pkg.conf
+
+---
+ libpkg/pkg_config.c | 38 +++++++++++++++++++++++++++++++++++++-
+ 1 file changed, 37 insertions(+), 1 deletion(-)
+
+diff --git a/libpkg/pkg_config.c b/libpkg/pkg_config.c
+index 3ba3d0e..692c4dc 100644
+--- libpkg/pkg_config.c
++++ libpkg/pkg_config.c
+@@ -673,6 +673,42 @@ pkg_compiled_for_same_os_major(void)
+ #endif
+ }
+ 
++static ucl_object_t *
++ucl_dup(const ucl_object_t *from)
++{
++	ucl_object_t *ret;
++	const ucl_object_t *cur;
++	ucl_object_iter_t it;
++	const char *key;
++
++	switch (from->type) {
++	case UCL_BOOLEAN:
++		ret = ucl_object_frombool(ucl_object_toboolean(from));
++		break;
++	case UCL_INT:
++		ret = ucl_object_fromint(ucl_object_toint(from));
++		break;
++	case UCL_STRING:
++		ret = ucl_object_fromstring(ucl_object_tostring(from));
++		break;
++	case UCL_ARRAY:
++		ret = ucl_object_typed_new(from->type);
++		it = NULL;
++		while ((cur = ucl_iterate_object(from, &it, true)))
++			ucl_array_append(ret, ucl_object_ref(cur));
++		break;
++	case UCL_OBJECT:
++		ret = ucl_object_typed_new(from->type);
++		it = NULL;
++		while ((cur = ucl_iterate_object(from, &it, true))) {
++			key = ucl_object_key(cur);
++			ucl_object_insert_key(ret, ucl_object_ref(cur), key, strlen(key), true);
++		}
++		break;
++	}
++
++	return (ret);
++}
+ 
+ int
+ pkg_init(const char *path, const char *reposdir)
+@@ -802,7 +838,7 @@ pkg_init(const char *path, const char *reposdir)
+ 
+ 		if (ncfg == NULL)
+ 			ncfg = ucl_object_typed_new(UCL_OBJECT);
+-		ucl_object_insert_key(ncfg, ucl_object_copy(cur), sbuf_data(ukey), sbuf_len(ukey), true);
++		ucl_object_insert_key(ncfg, ucl_dup(cur), sbuf_data(ukey), sbuf_len(ukey), true);
+ 	}
+ 
+ 	if (ncfg != NULL) {
+-- 
+1.9.3
+
