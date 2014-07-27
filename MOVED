@@ -6333,3 +6333,5 @@ sysutils/lookupd_ldap||2014-07-24|Has expired: Fails to build with new utmpx
 sysutils/p5-Sys-Utmp||2014-07-24|Has expired: Fails to build with new utmpx
 sysutils/syslog-ng2||2014-07-24|Has expired: Fails to build with new utmpx
 sysutils/yawho||2014-07-24|Has expired: Fails to build with new utmpx
+devel/p5-MetaCPAN-API|devel/p5-MetaCPAN-Client|2014-07-27|Has expired: Use devel/p5-MetaCPAN-Client instead
+net-im/pidgin-facebookchat||2014-07-27|Has expired: obsolete, development has ceased, not staged
