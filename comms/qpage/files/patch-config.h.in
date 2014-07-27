@@ -5,7 +5,7 @@
  
  /* Define as the location of the qpage configuration file.  */
 -#define QPAGE_CONFIG "/etc/qpage.cf"
-+#define QPAGE_CONFIG "%%PREFIX%%/etc/qpage.cf"
++#define QPAGE_CONFIG "%%PREFIX%%/etc/qpage.conf"
  
  /* Define as the location of the lock directory.  */
  #undef DEFAULT_LOCKDIR
