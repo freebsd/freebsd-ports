@@ -3,7 +3,7 @@
 
 PORTNAME=	boinc-client
 PORTVERSION=	7.2.33
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_LOCAL} \
 		ftp://rene-ladan.nl/pub/distfiles/
@@ -123,6 +123,10 @@ post-extract:
 	    ${WRKSRC}/zip/zip/z_fileio.c ${WRKSRC}/zip/zip/z_globals.c \
 	    ${WRKSRC}/zip/zip/zip.c ${WRKSRC}/zip/zip/zipfile.c \
 	    ${WRKSRC}/zip/zip/zipup.c
+
+post-patch:
+	${REINPLACE_CMD} -e 's|@PREFIX@|${PREFIX}|' \
+		${WRKSRC}/client/hostinfo_unix.cpp
 
 pre-configure:
 	(cd ${WRKSRC} ; ./_autosetup)
