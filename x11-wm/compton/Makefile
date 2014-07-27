@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	compton
-PORTVERSION=	20130625
-PORTREVISION=	2
+PORTVERSION=	20140326
 CATEGORIES=	x11-wm
 
 MAINTAINER=	femc7488@gmail.com
@@ -17,10 +16,10 @@ RUN_DEPENDS=	xprop:${PORTSDIR}/x11/xprop \
 USE_GITHUB=	yes
 GH_ACCOUNT=	chjj
 GH_TAGNAME=	${GH_COMMIT}
-GH_COMMIT=	b26bbc0
+GH_COMMIT=	360da12
 
 USES=		gmake pkgconfig
-USE_XORG=	xcomposite xdamage xrandr xrender
+USE_XORG=	xcomposite xdamage xrandr xrender xinerama
 
 MAKE_ARGS=	COMPTON_VERSION=git-${PORTVERSION}-${GH_COMMIT} \
 		XDGDIR=${LOCALBASE}/etc/xdg
