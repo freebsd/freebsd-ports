@@ -12,8 +12,6 @@ DIST_SUBDIR=	apache2
 MAINTAINER=	mk@neon1.net
 COMMENT=	Apache module to provide public key ticket based authentication
 
-BROKEN=		Fails to build
-
 USE_APACHE=	22+
 AP_FAST_BUILD=	yes
 AP_GENPLIST=	yes
