@@ -2,8 +2,9 @@
 %%WWWDIR%%/ChangeLog
 %%WWWDIR%%/README
 %%WWWDIR%%/README_PLUGIN
-%%WWWDIR%%/config.php
+@unexec if cmp -s %D/%%WWWDIR%%/config.php.new %D/%%WWWDIR%%/config.php; then rm -f %D/%%WWWDIR%%/config.php; fi
 %%WWWDIR%%/config.php.new
+@exec if [ ! -f %D/%%WWWDIR%%/config.php ] ; then cp -p %D/%F %B/config.php; fi
 %%WWWDIR%%/data/ModelTranslation.txt
 %%WWWDIR%%/data/distros.ini
 %%WWWDIR%%/gfx/ajaxLoader.gif
