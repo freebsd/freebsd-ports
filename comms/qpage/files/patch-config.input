@@ -5,7 +5,7 @@
  # the syntax of the configuration file.
  #
 -QPAGE_CONFIG="/etc/qpage.cf"
-+QPAGE_CONFIG="%%PREFIX%%/etc/qpage.cf"
++QPAGE_CONFIG="%%PREFIX%%/etc/qpage.conf"
  
  
  #

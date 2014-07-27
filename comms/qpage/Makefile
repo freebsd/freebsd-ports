@@ -3,7 +3,7 @@
 
 PORTNAME=	qpage
 PORTVERSION=	3.3
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	comms
 MASTER_SITES=	http://www.qpage.org/download/
 EXTRACT_SUFX=	.tar.Z
@@ -17,9 +17,6 @@ GNU_CONFIGURE=	yes
 OPTIONS_DEFINE=	IDENT_PATCH
 IDENT_PATCH_DESC=	Disable libwrap ident lookups
 
-MAN1=		qpage.1
-
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MIDENT_PATCH}
@@ -69,14 +66,11 @@ post-patch:
 		-e 's,%%WITH_QPAGE_USER%%,${WITH_QPAGE_USER},' \
 		${WRKSRC}/config.input
 
-post-install:
-	@if [ ! -f ${PREFIX}/etc/qpage-example.cf ]; then \
-		${ECHO_MSG} "Install ${PREFIX}/etc/qpage-example.cf file."; \
-		${INSTALL_DATA} -m 640 ${WRKDIR}/${PORTNAME}-${PORTVERSION}/example.cf \
-			${PREFIX}/etc/qpage-example.cf; \
-	fi
-	${MKDIR} /var/spool/${PORTNAME}
-	${CHOWN} ${WITH_QPAGE_USER}:dialer /var/spool/${PORTNAME}
-	${CHMOD} 0775 /var/spool/${PORTNAME}
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/qpage ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/qpage.man \
+		${STAGEDIR}${MAN1PREFIX}/man/man1/qpage.1
+	${INSTALL_DATA} ${WRKSRC}/example.cf \
+		${STAGEDIR}${PREFIX}/etc/qpage.conf.sample
 
 .include <bsd.port.mk>
