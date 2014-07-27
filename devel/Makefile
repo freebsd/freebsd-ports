@@ -949,6 +949,7 @@
     SUBDIR += libatomic_ops
     SUBDIR += libaura
     SUBDIR += libavl
+    SUBDIR += libbde
     SUBDIR += libbegemot
     SUBDIR += libbfd
     SUBDIR += libbinio

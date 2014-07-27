@@ -1,0 +1,20 @@
+bin/bdeinfo
+bin/bdemount
+include/libbde.h
+include/libbde/codepage.h
+include/libbde/definitions.h
+include/libbde/error.h
+include/libbde/extern.h
+include/libbde/features.h
+include/libbde/types.h
+lib/libbde.a
+lib/libbde.so
+lib/libbde.so.1
+lib/libbde.so.1.0.0
+%%PYTHON_SITELIBDIR%%/pybde.a
+%%PYTHON_SITELIBDIR%%/pybde.so
+libdata/pkgconfig/libbde.pc
+man/man1/bdeinfo.1.gz
+man/man1/bdemount.1.gz
+man/man3/libbde.3.gz
+@dirrm include/libbde
