@@ -7,7 +7,7 @@ PORTREVISION=	2
 CATEGORIES=	x11
 MASTER_SITES=	http://gotmor.googlepages.com/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	udvzsolt@gmail.com
 COMMENT=	General purpose messaging, notification and menuing program for X11
 
 LICENSE=	MIT
