@@ -1,21 +1,20 @@
 bin/pacpl
 man/man1/pacpl.1.gz
 %%DATADIR%%/locale/en_US.po
-%%ADDITIONAL_LANGS%%%%DATADIR%%/locale/ca.po
-%%ADDITIONAL_LANGS%%%%DATADIR%%/locale/de.po
-%%ADDITIONAL_LANGS%%%%DATADIR%%/locale/es.po
-%%ADDITIONAL_LANGS%%%%DATADIR%%/locale/et.po
-%%ADDITIONAL_LANGS%%%%DATADIR%%/locale/fr_FR.po
-%%ADDITIONAL_LANGS%%%%DATADIR%%/locale/it_IT.po
-%%ADDITIONAL_LANGS%%%%DATADIR%%/locale/nl_NL.po
-%%ADDITIONAL_LANGS%%%%DATADIR%%/locale/pl.po
-%%ADDITIONAL_LANGS%%%%DATADIR%%/locale/pt.po
-%%ADDITIONAL_LANGS%%%%DATADIR%%/locale/ro.po
-%%ADDITIONAL_LANGS%%%%DATADIR%%/locale/ru_RU.po
-%%ADDITIONAL_LANGS%%%%DATADIR%%/locale/tr.po
-%%ADDITIONAL_LANGS%%%%DATADIR%%/locale/zh_CN.po
-%%AMAROK%%share/apps/amarok/scripts/transcoding_pacx/transcoding_pacx.pl
-%%AMAROK%%share/apps/amarok/scripts/transcoding_pacx/transcoding_pacx.spec
+%%NLS%%%%DATADIR%%/locale/ca.po
+%%NLS%%%%DATADIR%%/locale/de.po
+%%NLS%%%%DATADIR%%/locale/es.po
+%%NLS%%%%DATADIR%%/locale/et.po
+%%NLS%%%%DATADIR%%/locale/fr_FR.po
+%%NLS%%%%DATADIR%%/locale/GR.po
+%%NLS%%%%DATADIR%%/locale/it_IT.po
+%%NLS%%%%DATADIR%%/locale/nl_NL.po
+%%NLS%%%%DATADIR%%/locale/pl.po
+%%NLS%%%%DATADIR%%/locale/pt.po
+%%NLS%%%%DATADIR%%/locale/ro.po
+%%NLS%%%%DATADIR%%/locale/ru_RU.po
+%%NLS%%%%DATADIR%%/locale/tr.po
+%%NLS%%%%DATADIR%%/locale/zh_CN.po
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/README.module
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
@@ -23,10 +22,9 @@ man/man1/pacpl.1.gz
 etc/pacpl/modules/sample.m
 etc/pacpl/pacpl.conf.sample
 etc/pacpl/codecs.conf.sample
-%%AMAROK%%@dirrm share/apps/amarok/scripts/transcoding_pacx
 @dirrm %%DATADIR%%/locale
 @dirrm %%DATADIR%%
 @dirrmtry etc/pacpl/modules
 @dirrmtry etc/pacpl
-%%KDE4SERVICEMENU%%@cwd %%KDE4_PREFIX%%
-%%KDE4SERVICEMENU%%share/kde4/services/ServiceMenus/pacpl.desktop
+%%KDE4%%@cwd %%KDE4_PREFIX%%
+%%KDE4%%share/kde4/services/ServiceMenus/pacpl.desktop
