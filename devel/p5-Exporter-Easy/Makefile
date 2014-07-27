@@ -2,12 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	Exporter-Easy
-PORTVERSION=	0.16
+PORTVERSION=	0.17
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	wen@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Takes the drudgery out of Exporting symbols
 
 USES=		perl5
