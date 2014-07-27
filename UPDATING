@@ -6,6 +6,15 @@ You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
 20140727:
+  AFFECTS: users of ports-mgmt/pkg
+  AUTHOR: mva@FreeBSD.org
+
+  Before updating ports-mgmt/pkg, please make sure that there are no doubled
+  entries in ${LOCALBASE}/etc/pkg.conf (/usr/local/etc/pkg.conf by default).
+  Especially a doubled "leaf: " entry in the ALIAS settings of the default
+  configuration may cause pkg to break during the update.
+
+20140727:
   AFFECTS: users of comms/qpage
   AUTHOR: marino@FreeBSD.org
 
