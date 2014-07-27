@@ -3,12 +3,12 @@
 
 PORTNAME=	phpsysinfo
 PORTVERSION=	3.0.10
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}/
 
 MAINTAINER=	walt@relnor.com
-COMMENT=	A PHP script for displaying system information
+COMMENT=	PHP script for displaying system information
 
 LICENSE=	GPLv2
 
@@ -22,23 +22,11 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 
 SUB_FILES=	pkg-message
 
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
-
-post-install:
-	@if [ ! -f ${WWWDIR}/config.php ]; then \
-		${CP} -p ${WWWDIR}/config.php ${WWWDIR}/config.php.bak ; \
-	fi
-
 do-install:
-	${MKDIR} ${WWWDIR}
+	${MKDIR} ${STAGEDIR}${WWWDIR}
 	cd ${WRKSRC}; ${FIND} . \
-		| ${CPIO} -pdm -R ${WWWOWN}:${WWWGRP} ${WWWDIR}
-	${CHMOD} -R ${BINMODE} ${WWWDIR}
-	${FIND} ${WWWDIR} ! -type d | ${XARGS} ${CHMOD} ${NOBINMODE}
-	${CP} ${WWWDIR}/config.php.new ${WWWDIR}/config.php
+		| ${CPIO} -pdm -R ${WWWOWN}:${WWWGRP} ${STAGEDIR}${WWWDIR}
+	${CHMOD} -R ${BINMODE} ${STAGEDIR}${WWWDIR}
+	${FIND} ${STAGEDIR}${WWWDIR} ! -type d | ${XARGS} ${CHMOD} ${NOBINMODE}
 
-.if !defined(BATCH)
-	@ ${CAT} ${PKGMESSAGE}
-.endif
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
