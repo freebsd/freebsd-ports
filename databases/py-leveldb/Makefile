@@ -25,6 +25,6 @@ post-patch:
 	@${REINPLACE_CMD} \
 		-e "s|^\(extra_compile_args = \).*$$|\1\['-I${LOCALBASE}/include'\]|" \
 		-e "s|^\(extra_link_args = \).*$$|\1\['-L${LOCALBASE}/lib', '-lleveldb'\]|" \
-			${WRKSRC}/${PYSETUP}
+			${WRKSRC}/setup.py
 
 .include <bsd.port.mk>
