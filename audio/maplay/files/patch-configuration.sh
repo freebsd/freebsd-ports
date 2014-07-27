@@ -9,13 +9,13 @@
 +   FreeBSD*)
 +      COMPILER='${CXX}'
 +      if [ ${ARCH} = "i386" ]; then
-+        COMPILERFLAGS='-m486 -DLINUX -DDAMN_INTEL_BYTE_ORDER'
++        COMPILERFLAGS='-DLINUX -DDAMN_INTEL_BYTE_ORDER'
 +      else
 +        COMPILERFLAGS='-DLINUX'
 +      fi
 +      INCLUDEDIRS=
 +      LIBRARIES= 
-+      AUDIO_INCLUDES='#include <machine/soundcard.h>' ;;
++      AUDIO_INCLUDES='#include <sys/soundcard.h>' ;;
     Linux*)
        COMPILER=g++
        COMPILERFLAGS='-O2 -m486 -funroll-loops -DLINUX -DDAMN_INTEL_BYTE_ORDER'

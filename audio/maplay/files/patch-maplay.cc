@@ -1,5 +1,5 @@
---- maplay.cc.orig	Thu Jun 23 22:14:36 1994
-+++ maplay.cc	Thu Nov 21 16:40:21 2002
+--- maplay.cc.orig	1994-06-23 08:14:36.000000000 -0400
++++ maplay.cc	2014-07-27 09:22:27.000000000 -0400
 @@ -39,8 +39,8 @@
  #include <stdlib.h>
  #include <string.h>
@@ -34,8 +34,12 @@
  static real scalefactor;
  
  // data extracted from header of first frame:
-@@ -93,12 +92,12 @@
- main (int argc, char *argv[])
+@@ -90,15 +89,15 @@
+ }
+ 
+ 
+-main (int argc, char *argv[])
++int main (int argc, char *argv[])
  {
    int i;
 -  bool read_ready = False, write_ready = False;
