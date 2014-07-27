@@ -8,7 +8,7 @@ CATEGORIES=	net
 MASTER_SITES=	https://github.com/facebook/scribe/tarball/${GITVERSION}/
 DISTNAME=	facebook-scribe-${GITVERSION}
 
-MAINTAINER=	jnlin@csie.nctu.edu.tw
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Aggregating log data streamed in real time
 
 BUILD_DEPENDS=	fb303>0:${PORTSDIR}/devel/fb303 \
