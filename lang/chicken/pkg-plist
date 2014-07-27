@@ -8,32 +8,31 @@ bin/csc
 bin/csi
 include/chicken/chicken-config.h
 include/chicken/chicken.h
-lib/chicken/6/chicken.import.so
-lib/chicken/6/csi.import.so
-lib/chicken/6/data-structures.import.so
-lib/chicken/6/extras.import.so
-lib/chicken/6/files.import.so
-lib/chicken/6/foreign.import.so
-lib/chicken/6/irregex.import.so
-lib/chicken/6/lolevel.import.so
-lib/chicken/6/ports.import.so
-lib/chicken/6/posix.import.so
-lib/chicken/6/setup-api.import.so
-lib/chicken/6/setup-api.so
-lib/chicken/6/setup-download.import.so
-lib/chicken/6/setup-download.so
-lib/chicken/6/srfi-1.import.so
-lib/chicken/6/srfi-13.import.so
-lib/chicken/6/srfi-14.import.so
-lib/chicken/6/srfi-18.import.so
-lib/chicken/6/srfi-4.import.so
-lib/chicken/6/srfi-69.import.so
-lib/chicken/6/tcp.import.so
-lib/chicken/6/types.db
-lib/chicken/6/utils.import.so
+lib/chicken/7/chicken.import.so
+lib/chicken/7/csi.import.so
+lib/chicken/7/data-structures.import.so
+lib/chicken/7/extras.import.so
+lib/chicken/7/files.import.so
+lib/chicken/7/foreign.import.so
+lib/chicken/7/irregex.import.so
+lib/chicken/7/lolevel.import.so
+lib/chicken/7/ports.import.so
+lib/chicken/7/posix.import.so
+lib/chicken/7/setup-api.import.so
+lib/chicken/7/setup-api.so
+lib/chicken/7/setup-download.import.so
+lib/chicken/7/setup-download.so
+lib/chicken/7/srfi-1.import.so
+lib/chicken/7/srfi-13.import.so
+lib/chicken/7/srfi-14.import.so
+lib/chicken/7/srfi-18.import.so
+lib/chicken/7/srfi-4.import.so
+lib/chicken/7/srfi-69.import.so
+lib/chicken/7/tcp.import.so
+lib/chicken/7/types.db
+lib/chicken/7/utils.import.so
 lib/libchicken.a
-lib/libchicken.so
-lib/libchicken.so.6
+lib/libchicken.so.7
 man/man1/chicken-bug.1.gz
 man/man1/chicken-install.1.gz
 man/man1/chicken-profile.1.gz
@@ -95,16 +94,16 @@ man/man1/csi.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/manual/Unit tcp.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/Unit utils.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/Using the compiler.html
-%%PORTDOCS%%%%DOCSDIR%%/manual/chicken.png
 %%PORTDOCS%%%%DOCSDIR%%/manual/Using the interpreter.html
+%%PORTDOCS%%%%DOCSDIR%%/manual/chicken.png
 %%PORTDOCS%%%%DOCSDIR%%/manual/faq.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/index.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/manual.css
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/manual
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @exec %D/bin/chicken-install -update-db
-@unexec rm -f %D/lib/chicken/6/modules.db
+@unexec rm -f %D/lib/chicken/7/modules.db
 @dirrm %%DATADIR%%
-@dirrm lib/chicken/6
+@dirrm lib/chicken/7
 @dirrm lib/chicken
 @dirrm include/chicken
