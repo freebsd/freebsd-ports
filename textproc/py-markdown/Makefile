@@ -2,18 +2,20 @@
 # $FreeBSD$
 
 PORTNAME=	markdown
-PORTVERSION=	2.4
+PORTVERSION=	2.4.1
 CATEGORIES=	textproc python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	Markdown-${PORTVERSION}
 
 MAINTAINER=	koobs@FreeBSD.org
-COMMENT=	Text markup to HTML conversion engine for Python
+COMMENT=	Python implementation of Markdown
 
 LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
-TEST_DEPENDS=	nosetests:${PORTSDIR}/devel/py-nose
+TEST_DEPENDS=	nosetests:${PORTSDIR}/devel/py-nose \
+		${PYTHON_PKGNAMEPREFIX}pytidylib:${PORTSDIR}/textproc/py-pytidylib
 
 USES=			dos2unix
 USE_PYTHON=		yes
