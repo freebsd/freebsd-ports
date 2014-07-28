@@ -7,7 +7,6 @@ lib/postgresql/postgis-2.0.so
 %%RASTER%%lib/postgresql/rtpostgis-2.0.so
 lib/liblwgeom-%%PORTVERSION%%.so
 lib/liblwgeom.a
-lib/liblwgeom.la
 lib/liblwgeom.so
 %%DATADIR%%/tiger_2010/README
 %%DATADIR%%/tiger_2010/census_loader.sql
