@@ -28,4 +28,10 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/scanrule/*.uxe ${STAGEDIR}${PREFIX}/share/arirang
 	${INSTALL_DATA} ${WRKSRC}/script/*.rb ${STAGEDIR}${PREFIX}/share/arirang
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${RUBY_VER} >= 2.0
+BROKEN=		Does not build with Ruby 2.0 or newer
+.endif
+
+.include <bsd.port.post.mk>
