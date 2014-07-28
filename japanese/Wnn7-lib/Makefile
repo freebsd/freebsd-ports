@@ -29,12 +29,12 @@ post-patch:
 
 # Warning: we cannot use USE_IMAKE.
 do-build:
-	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} make World -f Makefile.ini
+	(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} make World -f Makefile.ini)
 
 post-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/include/wnn7/wnn
 	${INSTALL_DATA} ${WRKSRC}/Wnn/include/*.h ${STAGEDIR}${PREFIX}/include/wnn7/wnn
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
-	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
+	(cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR})
 
 .include <bsd.port.mk>

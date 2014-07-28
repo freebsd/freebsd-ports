@@ -25,13 +25,13 @@ post-patch:
 		${WRKSRC}/Makefile.ini
 
 do-build:
-	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV}  make World -f Makefile.ini
+	(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV}  make World -f Makefile.ini)
 
 post-install:
 	${LN} -sf libwnn6_fromsrc.a ${STAGEDIR}${PREFIX}/lib/libwnn6.a
 	${MKDIR} ${STAGEDIR}${PREFIX}/include/wnn6/wnn
 	${INSTALL_DATA} ${WRKSRC}/Wnn/include/*.h ${STAGEDIR}${PREFIX}/include/wnn6/wnn
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
-	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
+	(cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR})
 
 .include <bsd.port.mk>
