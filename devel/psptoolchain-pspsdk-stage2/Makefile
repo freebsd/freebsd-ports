@@ -1,9 +1,11 @@
 # Created by: Tassilo Philipp <tphilipp@potion-studios.com>
 # $FreeBSD$
 
+PORTREVISION=		1
+
 PKGNAMESUFFIX=		-stage2
 
-MAINTAINER= ports@FreeBSD.org
+MAINTAINER=		tphilipp@potion-studios.com
 COMMENT=		PlayStation Portable development toolchain ${PORTNAME}
 
 BUILD_DEPENDS=		psp-cpp:${PORTSDIR}/devel/psptoolchain-gcc-stage2 \
@@ -18,5 +20,4 @@ CONFIGURE_ARGS=		--prefix=${PREFIX} --with-pspdev="${LOCALBASE}"
 PLIST=			${.CURDIR}/pkg-plist
 MASTERDIR=		${.CURDIR}/../psptoolchain-pspsdk-stage1
 
-NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"
