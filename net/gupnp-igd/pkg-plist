@@ -26,9 +26,7 @@ share/gtk-doc/html/gupnp-igd/up.png
 @dirrmtry share/gtk-doc/html/gupnp-igd
 @dirrmtry share/gtk-doc/html
 @dirrmtry share/gtk-doc
-@dirrmtry share/gir-1.0
 %%PYTHON%%@dirrmtry %%PYTHON_SITELIBDIR%%/gupnp
 %%PYTHON%%@dirrmtry %%PYTHON_SITELIBDIR%%
-@dirrmtry lib/girepository-1.0
 @dirrmtry include/gupnp-igd-1.0/libgupnp-igd
 @dirrmtry include/gupnp-igd-1.0
