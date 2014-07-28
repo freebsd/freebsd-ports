@@ -3,7 +3,7 @@
 
 PORTNAME=	gmpc-alarm
 PORTVERSION=	11.8.16
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio
 MASTER_SITES=	http://download.sarine.nl/Programs/gmpc/${PORTVERSION}/
 

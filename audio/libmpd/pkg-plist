@@ -10,8 +10,8 @@ include/libmpd/libmpd-version.h
 include/libmpd/libmpd.h
 include/libmpd/libmpdclient.h
 lib/libmpd.a
-lib/libmpd.la
 lib/libmpd.so
-lib/libmpd.so.4
+lib/libmpd.so.1
+lib/libmpd.so.1.3.0
 libdata/pkgconfig/libmpd.pc
 @dirrm include/libmpd

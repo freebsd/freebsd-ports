@@ -3,14 +3,14 @@
 
 PORTNAME=	xfce4-mpc-plugin
 PORTVERSION=	0.4.4
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	audio xfce
 MASTER_SITES=	${MASTER_SITE_XFCE}
 MASTER_SITE_SUBDIR=src/panel-plugins/${PORTNAME}/${PORTVERSION:R}
 DIST_SUBDIR=	xfce4
 
 MAINTAINER=	xfce@FreeBSD.org
-COMMENT=	Musicpd client plugin for the Xfce panel 
+COMMENT=	Musicpd client plugin for the Xfce panel
 
 LICENSE=	BSD
 

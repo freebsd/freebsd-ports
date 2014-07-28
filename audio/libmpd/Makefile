@@ -3,15 +3,15 @@
 
 PORTNAME=	libmpd
 PORTVERSION=	11.8.17
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://download.sarine.nl/Programs/gmpc/11.8.16/
 
 MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	Abstraction around libmpdclient
 
-USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes
-USES=		pathfix pkgconfig
+USES=		libtool pathfix pkgconfig
 USE_GNOME=	glib20
 USE_LDCONFIG=	yes
 
