@@ -8,7 +8,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}%20${PORTVERSION}
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
 MAINTAINER=	uqs@FreeBSD.org
-COMMENT=	Utility to merge mp3 files (and other formats)
+COMMENT=	Merge mp3 files (and other formats)
 
 GNU_CONFIGURE=	yes
 

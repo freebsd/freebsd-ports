@@ -6,10 +6,11 @@ PORTVERSION=	1.02
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	apps/sound/mixers
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Cpu's Audio Mixer [curses based]
+
+USES=		tar:tgz
 
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}" \
 		BINDIR="${PREFIX}/bin" \

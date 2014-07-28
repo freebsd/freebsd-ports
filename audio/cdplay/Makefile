@@ -30,6 +30,6 @@ pre-patch:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/cdplay ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN}	${WRKSRC}/cdplay.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/cdplay.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
 
 .include <bsd.port.mk>
