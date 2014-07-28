@@ -99,7 +99,7 @@ CONFIGURE_ARGS+=	--enable-multibyte
 
 .if ${PORT_OPTIONS:MCANNA}
 CONFIGURE_ARGS+=	--enable-canna=${PREFIX}
-LIB_DEPEND=	canna.1:${PORTSDIR}/japanese/Canna
+LIB_DEPENDS=	libcanna.so:${PORTSDIR}/japanese/canna-lib
 .endif
 
 post-patch:
