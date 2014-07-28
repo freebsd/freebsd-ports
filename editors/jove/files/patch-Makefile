@@ -11,7 +11,7 @@
 -JOVEHOME = /usr/local
 -SHAREDIR = $(JOVEHOME)/lib/jove
 -LIBDIR = $(JOVEHOME)/lib/jove
-+JOVEHOME = ${PREFIX}
++JOVEHOME = ${DESTDIR}${PREFIX}
 +SHAREDIR = $(JOVEHOME)/share/jove
 +LIBDIR = $(JOVEHOME)/libexec/jove
  BINDIR = $(JOVEHOME)/bin

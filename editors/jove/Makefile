@@ -13,7 +13,5 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Jonathan's Own Version of Emacs
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
-MAN1=		jove.1 teachjove.1
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

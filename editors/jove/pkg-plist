@@ -2,6 +2,8 @@ bin/jove
 bin/teachjove
 libexec/jove/portsrv
 libexec/jove/recover
+man/man1/jove.1.gz
+man/man1/teachjove.1.gz
 %%DATADIR%%/XTermresource
 %%DATADIR%%/cmds.doc
 %%DATADIR%%/jove.rc
