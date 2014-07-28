@@ -38,8 +38,8 @@ post-install:
 
 .include <bsd.port.pre.mk>
 
-.if ${RUBY_VER} != 1.9
-BROKEN=		Does not build
+.if ${RUBY_VER} >= 2.0
+BROKEN=		Does not build with Ruby 2.0 or newer
 .endif
 
 .include <bsd.port.post.mk>
