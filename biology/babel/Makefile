@@ -7,13 +7,13 @@ PORTREVISION=	4
 CATEGORIES=	biology converters
 MASTER_SITES=	http://smog.com/chem/babel/files/ \
 		http://www.ccl.net/cca/software/UNIX/babel/
-EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Converts among various molecular file formats
 
 CONFLICTS_INSTALL=	openbabel-*
 
+USES=		tar:Z
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}"
 
 PLIST_FILES+=	bin/babel libexec/babel
