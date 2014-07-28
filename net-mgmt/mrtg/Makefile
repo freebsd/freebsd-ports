@@ -3,7 +3,7 @@
 
 PORTNAME=	mrtg
 PORTVERSION=	2.17.4
-PORTREVISION=	4
+PORTREVISION=	5
 PORTEPOCH=	1
 CATEGORIES=	net-mgmt ipv6
 MASTER_SITES=	http://oss.oetiker.ch/mrtg/pub/ \
@@ -12,13 +12,13 @@ MASTER_SITES=	http://oss.oetiker.ch/mrtg/pub/ \
 		ftp://ftp.chg.ru/pub/networking/monitoring/mrtg/
 
 MAINTAINER=	ports@subnets.ru
-COMMENT=	The multi-router traffic grapher
-
-# slave ports override with languages specific gd
-GD_PORT?=	graphics/gd
+COMMENT=	Multi-router traffic grapher
 
 LIB_DEPENDS=	libgd.so:${PORTSDIR}/${GD_PORT}
 RUN_DEPENDS=	p5-SNMP_Session>=0:${PORTSDIR}/net-mgmt/p5-SNMP_Session
+
+# slave ports override with languages specific gd
+GD_PORT?=	graphics/gd
 
 CONFIGURE_ARGS=	--with-gd-lib=${LOCALBASE}/lib \
 		--with-gd-inc=${LOCALBASE}/include
@@ -43,7 +43,7 @@ PKGDEINSTALL=	${WRKDIR}/pkg-deinstall
 GNU_CONFIGURE=	YES
 CONFIGURE_ENV=	PERL=${PERL}
 
-MANPAGE=		cfgmaker.1 indexmaker.1 mrtg-contrib.1 mrtg-faq.1 mrtg-forum.1 \
+MANPAGE=	cfgmaker.1 indexmaker.1 mrtg-contrib.1 mrtg-faq.1 mrtg-forum.1 \
 		mrtg-ipv6.1 mrtg-logfile.1 mrtg-mibhelp.1 mrtg-nt-guide.1 \
 		mrtg-nw-guide.1 mrtg-reference.1 mrtg-rrd.1 mrtg-squid.1 \
 		mrtg-unix-guide.1 mrtg-webserver.1 mrtg.1 mrtglib.1
@@ -66,18 +66,11 @@ SCRIPTS=	cfgmaker indexmaker mrtg mrtg-traffic-sum
 
 OPTIONS_DEFINE=	DOCS EXAMPLES IPV6 SNMPV3
 
+IPV6_RUN_DEPENDS=	p5-IO-Socket-INET6>=0:${PORTSDIR}/net/p5-IO-Socket-INET6
+SNMPV3_RUN_DEPENDS=	p5-Net-SNMP>=0:${PORTSDIR}/net-mgmt/p5-Net-SNMP
+
 PORTDOCS=	*
 PORTEXAMPLES=	*
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MIPV6}
-RUN_DEPENDS+=	p5-IO-Socket-INET6>=0:${PORTSDIR}/net/p5-IO-Socket-INET6
-.endif
-
-.if ${PORT_OPTIONS:MSNMPV3}
-RUN_DEPENDS+=	p5-Net-SNMP>=0:${PORTSDIR}/net-mgmt/p5-Net-SNMP
-.endif
 
 post-extract:
 	@${FIND} ${WRKSRC} -type f -name "*.orig" -delete
@@ -86,21 +79,24 @@ post-patch:
 	@${RM} ${WRKSRC}/lib/mrtg2/BER.pm ${WRKSRC}/lib/mrtg2/SNMP_*.pm
 
 do-install:
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	@${INSTALL_DATA} ${DOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}/
-	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/doc ${STAGEDIR}${EXAMPLESDIR}/images
-	@${INSTALL_DATA} ${EXAMPLES:S,^,${WRKSRC}/doc/,} ${STAGEDIR}${EXAMPLESDIR}/doc/
-	@${INSTALL_DATA} ${IMAGES:S,^,${WRKSRC}/images/,} ${STAGEDIR}${EXAMPLESDIR}/images/
-	@${MKDIR} ${STAGEDIR}${ETCDIR}
-	@${INSTALL_DATA} ${WRKSRC}/contrib/mrtgmk/cfg/mrtg.cfg ${STAGEDIR}${ETCDIR}/mrtg.cfg.sample
-	@${INSTALL_DATA} ${MANPAGE:S,^,${WRKSRC}/doc/,} ${STAGEDIR}${PREFIX}/man/man1
-	@${MKDIR} ${STAGEDIR}${PREFIX}/${SITE_PERL_REL}
-	@${CP} -p ${WRKSRC}/lib/mrtg2/*.pm ${STAGEDIR}${PREFIX}/${SITE_PERL_REL}
-	@${INSTALL_PROGRAM} ${WRKSRC}/bin/rateup ${STAGEDIR}${PREFIX}/bin
-	@${INSTALL_SCRIPT} ${SCRIPTS:S,^,${WRKSRC}/bin/,} ${STAGEDIR}${PREFIX}/bin
-
-post-install:
-	@${SETENV} @PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
-	@${CAT} ${PKGMESSAGE}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR} \
+		${STAGEDIR}${EXAMPLESDIR}/doc \
+		${STAGEDIR}${EXAMPLESDIR}/images \
+		${STAGEDIR}${ETCDIR} \
+		${STAGEDIR}${PREFIX}/${SITE_PERL_REL}
+	${INSTALL_DATA} ${DOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}/
+	${INSTALL_DATA} ${EXAMPLES:S,^,${WRKSRC}/doc/,} \
+		${STAGEDIR}${EXAMPLESDIR}/doc/
+	${INSTALL_DATA} ${IMAGES:S,^,${WRKSRC}/images/,} \
+		${STAGEDIR}${EXAMPLESDIR}/images/
+	${INSTALL_DATA} ${WRKSRC}/contrib/mrtgmk/cfg/mrtg.cfg \
+		${STAGEDIR}${ETCDIR}/mrtg.cfg.sample
+	${INSTALL_DATA} ${MANPAGE:S,^,${WRKSRC}/doc/,} \
+		${STAGEDIR}${PREFIX}/man/man1
+	cd ${WRKSRC}/lib/mrtg2 && \
+		${COPYTREE_SHARE} "*.pm" ${STAGEDIR}${PREFIX}/${SITE_PERL_REL}
+	${INSTALL_PROGRAM} ${WRKSRC}/bin/rateup ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_SCRIPT} ${SCRIPTS:S,^,${WRKSRC}/bin/,} \
+		${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>
