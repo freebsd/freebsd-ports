@@ -1,6 +1,6 @@
---- ffmpeg_movie.c.orig	2012-09-01 22:21:08.000000000 -0500
-+++ ffmpeg_movie.c	2012-09-01 22:25:06.000000000 -0500
-@@ -308,7 +308,7 @@
+--- ffmpeg_movie.c.orig	2014-07-24 01:57:31.000000000 +0800
++++ ffmpeg_movie.c	2014-07-24 02:05:36.823897263 +0800
+@@ -315,7 +315,7 @@
      } 
  
      if (persistent) {
@@ -9,7 +9,7 @@
          /* resolve the fully-qualified path name to use as the hash key */
          fullpath = expand_filepath(filename, NULL TSRMLS_CC);
  
-@@ -343,7 +343,7 @@
+@@ -350,7 +350,7 @@
              }
              
          } else { /* no existing persistant movie, create one */
@@ -18,7 +18,7 @@
              ffmovie_ctx = _php_alloc_ffmovie_ctx(1);
  
              if (_php_open_movie_file(ffmovie_ctx, filename)) {
-@@ -357,7 +357,7 @@
+@@ -364,7 +364,7 @@
              new_le.ptr = ffmovie_ctx;
  
              if (FAILURE == zend_hash_update(&EG(persistent_list), hashkey, 
@@ -27,7 +27,7 @@
                          NULL)) {
                  php_error_docref(NULL TSRMLS_CC, E_WARNING, 
                          "Failed to register persistent resource");
-@@ -501,7 +501,7 @@
+@@ -508,7 +508,7 @@
                      codec_id));
  
          if (!decoder) {
@@ -36,3 +36,18 @@
                      _php_get_filename(ffmovie_ctx));
              return NULL;
          }
+@@ -964,12 +964,14 @@
+     /* Copied from libavcodec/utils.c::avcodec_string */
+     if (p) {
+         codec_name = p->name;
++/*
+         if (decoder_ctx->codec_id == CODEC_ID_MP3) {
+             if (decoder_ctx->sub_id == 2)
+                 codec_name = "mp2";
+             else if (decoder_ctx->sub_id == 1)
+                 codec_name = "mp1";
+         }
++ */
+     } else if (decoder_ctx->codec_id == CODEC_ID_MPEG2TS) {
+         /* fake mpeg2 transport stream codec (currently not registered) */
+         codec_name = "mpeg2ts";
