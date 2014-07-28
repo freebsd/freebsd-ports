@@ -37,4 +37,10 @@ post-configure:
 	@${REINPLACE_CMD} -e 's|CPPFLAGS = -DHAVE_SYS_TIME_H -DHAVE_SIGNAL_H -I/usr/local/include/fxscintilla -I/usr/local/include/fox-1.6|CPPFLAGS = -ffriend-injection -DHAVE_SYS_TIME_H -DHAVE_SIGNAL_H -I/usr/local/include/fxscintilla -I/usr/local/include/fox-1.6|' \
 	${WRKSRC}/ext/fox16/Makefile
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${RUBY_VER} >= 2.0
+BROKEN=		Does not build with Ruby 2.0 or newer
+.endif
+
+.include <bsd.port.post.mk>
