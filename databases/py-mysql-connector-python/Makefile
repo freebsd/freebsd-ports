@@ -1,17 +1,17 @@
 # $FreeBSD$
 
-PORTNAME=	mysql-connector-python
-PORTVERSION=	1.2.2
-CATEGORIES=	databases python
+PORTNAME=		mysql-connector-python
+PORTVERSION=		1.2.2
+CATEGORIES=		databases python
 MASTER_SITES=		${MASTER_SITE_MYSQL}
 MASTER_SITE_SUBDIR=	Connector-Python
-PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+PKGNAMEPREFIX=		${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	arcade@bit.name
-COMMENT=	MySQL driver written in Python
+MAINTAINER=		ports@FreeBSD.org
+COMMENT=		MySQL driver written in Python
 
-LICENSE=	GPLv2
-LICENSE_FILE=	${WRKSRC}/COPYING
+LICENSE=		GPLv2
+LICENSE_FILE=		${WRKSRC}/COPYING
 
 USE_PYTHON=		yes
 USE_PYDISTUTILS=	yes
