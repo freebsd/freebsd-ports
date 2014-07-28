@@ -6,6 +6,13 @@ You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
 20140728:
+  AFFECTS: users of net/GeoIP
+  AUTHOR: adamw@FreeBSD.org
+
+  GeoIP no longer ships with the GeoIP database. To continue using GeoIP,
+  you MUST fetch it first by running geoipupdate.sh.
+
+20140728:
   AFFECTS: users of security/libtasn1 and any port that depends on it
   AUTHOR: novel@FreeBSD.org
 
