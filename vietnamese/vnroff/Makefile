@@ -12,21 +12,23 @@ DISTFILES=	vnroff.c.Z vnroff.1.Z
 MAINTAINER=	obrien@FreeBSD.org
 COMMENT=	Converts Vietnamese VIQR text into troff format
 
+PLIST_FILES=	bin/vnroff man/man1/vnroff.1.gz
 NO_WRKSUBDIR=	yes
 
 do-extract:
 	@${RM} -rf ${WRKDIR}
 	@${MKDIR} ${WRKDIR}
-	@(cd ${WRKDIR} && ${GZCAT} ${DISTDIR}/vnroff.c.Z  \
-		| ${SED} -e '1,/-cut here-/d'    \
+	@(cd ${WRKDIR} && ${GZCAT} ${DISTDIR}/vnroff.c.Z \
+		| ${SED} -e '1,/-cut here-/d' \
 		> vnroff.c)
-	@(cd ${WRKDIR} && ${GZCAT} ${DISTDIR}/vnroff.1.Z  \
-		| ${SED} -e '1,/Status:/d' -e '//,//d'  \
-		| ${SED} -e '1,1d'  \
+	@(cd ${WRKDIR} && ${GZCAT} ${DISTDIR}/vnroff.1.Z \
+		| ${SED} -e '1,/Status:/d' \
+		| ${SED} -e '1,1d' \
+		| ${TR} -d '\01' \
 		> vnroff.1)
 
 do-build:
-	(cd ${WRKSRC} && ${CC} ${CFLAGS} -o vnroff vnroff.c)
+	cd ${WRKSRC} && ${CC} ${CFLAGS} -o vnroff vnroff.c
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/vnroff ${STAGEDIR}${PREFIX}/bin
