@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	sdl
-PORTVERSION=	2.1.3
-PORTREVISION=	2
+PORTVERSION=	2.1.3.1
 CATEGORIES=	devel graphics audio ruby
-MASTER_SITES=	RUBYFORGE/ruby${PORTNAME}/
+MASTER_SITES=	https://ohai.github.io/rubysdl/archives/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DISTNAME=	ruby${PORTNAME}-${PORTVERSION}
 DIST_SUBDIR=	ruby
@@ -18,9 +17,7 @@ LICENSE=	LGPL21
 LIB_DEPENDS=	libSGE.so:${PORTSDIR}/devel/sdl_sge \
 		libSDLSKK.so.2.0:${PORTSDIR}/devel/sdlskk \
 		libsmpeg.so:${PORTSDIR}/multimedia/smpeg
-
-RUBY_OPENGL_PORTDIR=	${PORTSDIR}/graphics/ruby-opengl
-RUBY_OPENGL_WRKSRC_CMD=	cd ${RUBY_OPENGL_PORTDIR}; ${MAKE} -V WRKSRC
+RUN_DEPENDS=	rubygem-opengl>=0:${PORTSDIR}/graphics/rubygem-opengl
 
 USE_SDL=	mixer image ttf sdl
 USE_RUBY=	yes
@@ -31,12 +28,6 @@ CONFIGURE_ARGS=	--with-sdl-config="sdl-config" \
 		--with-x11-dir="${LOCALBASE}" \
 		--disable-pthreads
 INSTALL_TARGET=	site-install
-
-PLIST_FILES=	%%RUBY_SITEARCHLIBDIR%%/sdl_ext.so \
-		%%RUBY_SITELIBDIR%%/rubysdl_aliases.rb \
-		%%RUBY_SITELIBDIR%%/rubysdl_compatible_ver1.rb \
-		%%RUBY_SITELIBDIR%%/sdl.rb \
-		%%RUBY_SITELIBDIR%%/sdl1_compatible.rb
 
 PORTDOCS=	*
 PORTEXAMPLES=	*
@@ -50,18 +41,22 @@ DOC_FILES_WRKSRC_EN=	NEWS.en README.en
 
 DOCSRCDIRJA=	${WRKSRC}/doc
 DOCSDIRJA=	${RUBY_MODDOCDIR}/doc
-DOC_FILESJA=	*.rsd *.rb
+DOC_FILESJA=	*.rsd *.rb *ref.html
 
 DOCSRCDIREN=	${WRKSRC}/doc-en
 DOCSDIREN=	${RUBY_MODDOCDIR}/doc-en
-DOC_FILESEN=	*.rsd
+DOC_FILESEN=	*.rsd *ref.en.html
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
+OPTIONS_SUB=	yes
+
+.include <bsd.port.options.mk>
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/ruby/site_ruby/${RUBY_VER}/*/sdl_ext.so
 	@${REINPLACE_CMD} -e 's|ruby|${LOCALBASE}/bin/ruby|g' ${WRKSRC}/doc/rsd.rb
 
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}/ja
 	${INSTALL_DATA} ${DOC_FILES_WRKSRC_JA:S|^|${DOCSRCDIR1}/|} ${STAGEDIR}${DOCSDIR}/ja/
 	${INSTALL_DATA} ${DOC_FILES_WRKSRC_EN:S|^|${DOCSRCDIR1}/|} ${STAGEDIR}${DOCSDIR}
@@ -69,8 +64,11 @@ post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}/doc/ja
 	${INSTALL_DATA} ${DOC_FILESJA:S|^|${DOCSRCDIRJA}/|} ${STAGEDIR}${DOCSDIR}/doc/ja/
 	${INSTALL_DATA} ${DOC_FILESEN:S|^|${DOCSRCDIREN}/|} ${STAGEDIR}${DOCSDIR}/doc/
+.endif
 
+.if ${PORT_OPTIONS:MEXAMPLES}
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/sample/* ${STAGEDIR}${EXAMPLESDIR}
+.endif
 
 .include <bsd.port.mk>
