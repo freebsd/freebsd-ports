@@ -71,7 +71,5 @@ share/gtk-doc/html/gupnp/up.png
 @dirrmtry share/gtk-doc/html/gupnp
 @dirrmtry share/gtk-doc/html
 @dirrmtry share/gtk-doc
-@dirrmtry share/gir-1.0
-@dirrmtry lib/girepository-1.0
 @dirrmtry include/gupnp-1.0/libgupnp
 @dirrmtry include/gupnp-1.0
