@@ -1,4 +1,11 @@
 bin/gramps
+man/cs/man1/gramps.1.gz
+man/fr/man1/gramps.1.gz
+man/man1/gramps.1.gz
+man/nl/man1/gramps.1.gz
+man/pl/man1/gramps.1.gz
+man/pt_BR/man1/gramps.1.gz
+man/sv/man1/gramps.1.gz
 share/application-registry/gramps.applications
 share/applications/gramps.desktop
 %%DATADIR%%/Assistant.py
@@ -29,6 +36,9 @@ share/applications/gramps.desktop
 %%DATADIR%%/DateHandler/_DateUtils.py
 %%DATADIR%%/DateHandler/_DateUtils.pyc
 %%DATADIR%%/DateHandler/_DateUtils.pyo
+%%DATADIR%%/DateHandler/_Date_ar.py
+%%DATADIR%%/DateHandler/_Date_ar.pyc
+%%DATADIR%%/DateHandler/_Date_ar.pyo
 %%DATADIR%%/DateHandler/_Date_bg.py
 %%DATADIR%%/DateHandler/_Date_bg.pyc
 %%DATADIR%%/DateHandler/_Date_bg.pyo
@@ -38,9 +48,15 @@ share/applications/gramps.desktop
 %%DATADIR%%/DateHandler/_Date_cs.py
 %%DATADIR%%/DateHandler/_Date_cs.pyc
 %%DATADIR%%/DateHandler/_Date_cs.pyo
+%%DATADIR%%/DateHandler/_Date_da.py
+%%DATADIR%%/DateHandler/_Date_da.pyc
+%%DATADIR%%/DateHandler/_Date_da.pyo
 %%DATADIR%%/DateHandler/_Date_de.py
 %%DATADIR%%/DateHandler/_Date_de.pyc
 %%DATADIR%%/DateHandler/_Date_de.pyo
+%%DATADIR%%/DateHandler/_Date_el.py
+%%DATADIR%%/DateHandler/_Date_el.pyc
+%%DATADIR%%/DateHandler/_Date_el.pyo
 %%DATADIR%%/DateHandler/_Date_es.py
 %%DATADIR%%/DateHandler/_Date_es.pyc
 %%DATADIR%%/DateHandler/_Date_es.pyo
@@ -86,6 +102,9 @@ share/applications/gramps.desktop
 %%DATADIR%%/DateHandler/_Date_sv.py
 %%DATADIR%%/DateHandler/_Date_sv.pyc
 %%DATADIR%%/DateHandler/_Date_sv.pyo
+%%DATADIR%%/DateHandler/_Date_uk.py
+%%DATADIR%%/DateHandler/_Date_uk.pyc
+%%DATADIR%%/DateHandler/_Date_uk.pyo
 %%DATADIR%%/DateHandler/__init__.py
 %%DATADIR%%/DateHandler/__init__.pyc
 %%DATADIR%%/DateHandler/__init__.pyo
@@ -107,6 +126,66 @@ share/applications/gramps.desktop
 %%DATADIR%%/ExportOptions.py
 %%DATADIR%%/ExportOptions.pyc
 %%DATADIR%%/ExportOptions.pyo
+%%DATADIR%%/Filters/Rules/Citation/_AllCitations.py
+%%DATADIR%%/Filters/Rules/Citation/_AllCitations.pyc
+%%DATADIR%%/Filters/Rules/Citation/_AllCitations.pyo
+%%DATADIR%%/Filters/Rules/Citation/_ChangedSince.py
+%%DATADIR%%/Filters/Rules/Citation/_ChangedSince.pyc
+%%DATADIR%%/Filters/Rules/Citation/_ChangedSince.pyo
+%%DATADIR%%/Filters/Rules/Citation/_CitationPrivate.py
+%%DATADIR%%/Filters/Rules/Citation/_CitationPrivate.pyc
+%%DATADIR%%/Filters/Rules/Citation/_CitationPrivate.pyo
+%%DATADIR%%/Filters/Rules/Citation/_HasCitation.py
+%%DATADIR%%/Filters/Rules/Citation/_HasCitation.pyc
+%%DATADIR%%/Filters/Rules/Citation/_HasCitation.pyo
+%%DATADIR%%/Filters/Rules/Citation/_HasGallery.py
+%%DATADIR%%/Filters/Rules/Citation/_HasGallery.pyc
+%%DATADIR%%/Filters/Rules/Citation/_HasGallery.pyo
+%%DATADIR%%/Filters/Rules/Citation/_HasIdOf.py
+%%DATADIR%%/Filters/Rules/Citation/_HasIdOf.pyc
+%%DATADIR%%/Filters/Rules/Citation/_HasIdOf.pyo
+%%DATADIR%%/Filters/Rules/Citation/_HasNote.py
+%%DATADIR%%/Filters/Rules/Citation/_HasNote.pyc
+%%DATADIR%%/Filters/Rules/Citation/_HasNote.pyo
+%%DATADIR%%/Filters/Rules/Citation/_HasNoteMatchingSubstringOf.py
+%%DATADIR%%/Filters/Rules/Citation/_HasNoteMatchingSubstringOf.pyc
+%%DATADIR%%/Filters/Rules/Citation/_HasNoteMatchingSubstringOf.pyo
+%%DATADIR%%/Filters/Rules/Citation/_HasNoteRegexp.py
+%%DATADIR%%/Filters/Rules/Citation/_HasNoteRegexp.pyc
+%%DATADIR%%/Filters/Rules/Citation/_HasNoteRegexp.pyo
+%%DATADIR%%/Filters/Rules/Citation/_HasReferenceCountOf.py
+%%DATADIR%%/Filters/Rules/Citation/_HasReferenceCountOf.pyc
+%%DATADIR%%/Filters/Rules/Citation/_HasReferenceCountOf.pyo
+%%DATADIR%%/Filters/Rules/Citation/_HasSource.py
+%%DATADIR%%/Filters/Rules/Citation/_HasSource.pyc
+%%DATADIR%%/Filters/Rules/Citation/_HasSource.pyo
+%%DATADIR%%/Filters/Rules/Citation/_HasSourceIdOf.py
+%%DATADIR%%/Filters/Rules/Citation/_HasSourceIdOf.pyc
+%%DATADIR%%/Filters/Rules/Citation/_HasSourceIdOf.pyo
+%%DATADIR%%/Filters/Rules/Citation/_HasSourceNoteRegexp.py
+%%DATADIR%%/Filters/Rules/Citation/_HasSourceNoteRegexp.pyc
+%%DATADIR%%/Filters/Rules/Citation/_HasSourceNoteRegexp.pyo
+%%DATADIR%%/Filters/Rules/Citation/_MatchesFilter.py
+%%DATADIR%%/Filters/Rules/Citation/_MatchesFilter.pyc
+%%DATADIR%%/Filters/Rules/Citation/_MatchesFilter.pyo
+%%DATADIR%%/Filters/Rules/Citation/_MatchesPageSubstringOf.py
+%%DATADIR%%/Filters/Rules/Citation/_MatchesPageSubstringOf.pyc
+%%DATADIR%%/Filters/Rules/Citation/_MatchesPageSubstringOf.pyo
+%%DATADIR%%/Filters/Rules/Citation/_MatchesRepositoryFilter.py
+%%DATADIR%%/Filters/Rules/Citation/_MatchesRepositoryFilter.pyc
+%%DATADIR%%/Filters/Rules/Citation/_MatchesRepositoryFilter.pyo
+%%DATADIR%%/Filters/Rules/Citation/_MatchesSourceFilter.py
+%%DATADIR%%/Filters/Rules/Citation/_MatchesSourceFilter.pyc
+%%DATADIR%%/Filters/Rules/Citation/_MatchesSourceFilter.pyo
+%%DATADIR%%/Filters/Rules/Citation/_RegExpIdOf.py
+%%DATADIR%%/Filters/Rules/Citation/_RegExpIdOf.pyc
+%%DATADIR%%/Filters/Rules/Citation/_RegExpIdOf.pyo
+%%DATADIR%%/Filters/Rules/Citation/_RegExpSourceIdOf.py
+%%DATADIR%%/Filters/Rules/Citation/_RegExpSourceIdOf.pyc
+%%DATADIR%%/Filters/Rules/Citation/_RegExpSourceIdOf.pyo
+%%DATADIR%%/Filters/Rules/Citation/__init__.py
+%%DATADIR%%/Filters/Rules/Citation/__init__.pyc
+%%DATADIR%%/Filters/Rules/Citation/__init__.pyo
 %%DATADIR%%/Filters/Rules/Event/_AllEvents.py
 %%DATADIR%%/Filters/Rules/Event/_AllEvents.pyc
 %%DATADIR%%/Filters/Rules/Event/_AllEvents.pyo
@@ -119,9 +198,15 @@ share/applications/gramps.desktop
 %%DATADIR%%/Filters/Rules/Event/_HasAttribute.py
 %%DATADIR%%/Filters/Rules/Event/_HasAttribute.pyc
 %%DATADIR%%/Filters/Rules/Event/_HasAttribute.pyo
+%%DATADIR%%/Filters/Rules/Event/_HasCitation.py
+%%DATADIR%%/Filters/Rules/Event/_HasCitation.pyc
+%%DATADIR%%/Filters/Rules/Event/_HasCitation.pyo
 %%DATADIR%%/Filters/Rules/Event/_HasData.py
 %%DATADIR%%/Filters/Rules/Event/_HasData.pyc
 %%DATADIR%%/Filters/Rules/Event/_HasData.pyo
+%%DATADIR%%/Filters/Rules/Event/_HasDayOfWeek.py
+%%DATADIR%%/Filters/Rules/Event/_HasDayOfWeek.pyc
+%%DATADIR%%/Filters/Rules/Event/_HasDayOfWeek.pyo
 %%DATADIR%%/Filters/Rules/Event/_HasGallery.py
 %%DATADIR%%/Filters/Rules/Event/_HasGallery.pyc
 %%DATADIR%%/Filters/Rules/Event/_HasGallery.pyo
@@ -140,9 +225,9 @@ share/applications/gramps.desktop
 %%DATADIR%%/Filters/Rules/Event/_HasReferenceCountOf.py
 %%DATADIR%%/Filters/Rules/Event/_HasReferenceCountOf.pyc
 %%DATADIR%%/Filters/Rules/Event/_HasReferenceCountOf.pyo
-%%DATADIR%%/Filters/Rules/Event/_HasSource.py
-%%DATADIR%%/Filters/Rules/Event/_HasSource.pyc
-%%DATADIR%%/Filters/Rules/Event/_HasSource.pyo
+%%DATADIR%%/Filters/Rules/Event/_HasSourceCount.py
+%%DATADIR%%/Filters/Rules/Event/_HasSourceCount.pyc
+%%DATADIR%%/Filters/Rules/Event/_HasSourceCount.pyo
 %%DATADIR%%/Filters/Rules/Event/_HasType.py
 %%DATADIR%%/Filters/Rules/Event/_HasType.pyc
 %%DATADIR%%/Filters/Rules/Event/_HasType.pyo
@@ -152,6 +237,9 @@ share/applications/gramps.desktop
 %%DATADIR%%/Filters/Rules/Event/_MatchesPersonFilter.py
 %%DATADIR%%/Filters/Rules/Event/_MatchesPersonFilter.pyc
 %%DATADIR%%/Filters/Rules/Event/_MatchesPersonFilter.pyo
+%%DATADIR%%/Filters/Rules/Event/_MatchesPlaceFilter.py
+%%DATADIR%%/Filters/Rules/Event/_MatchesPlaceFilter.pyc
+%%DATADIR%%/Filters/Rules/Event/_MatchesPlaceFilter.pyo
 %%DATADIR%%/Filters/Rules/Event/_MatchesSourceConfidence.py
 %%DATADIR%%/Filters/Rules/Event/_MatchesSourceConfidence.pyc
 %%DATADIR%%/Filters/Rules/Event/_MatchesSourceConfidence.pyo
@@ -188,6 +276,9 @@ share/applications/gramps.desktop
 %%DATADIR%%/Filters/Rules/Family/_HasAttribute.py
 %%DATADIR%%/Filters/Rules/Family/_HasAttribute.pyc
 %%DATADIR%%/Filters/Rules/Family/_HasAttribute.pyo
+%%DATADIR%%/Filters/Rules/Family/_HasCitation.py
+%%DATADIR%%/Filters/Rules/Family/_HasCitation.pyc
+%%DATADIR%%/Filters/Rules/Family/_HasCitation.pyo
 %%DATADIR%%/Filters/Rules/Family/_HasEvent.py
 %%DATADIR%%/Filters/Rules/Family/_HasEvent.pyc
 %%DATADIR%%/Filters/Rules/Family/_HasEvent.pyo
@@ -215,9 +306,12 @@ share/applications/gramps.desktop
 %%DATADIR%%/Filters/Rules/Family/_HasRelType.py
 %%DATADIR%%/Filters/Rules/Family/_HasRelType.pyc
 %%DATADIR%%/Filters/Rules/Family/_HasRelType.pyo
-%%DATADIR%%/Filters/Rules/Family/_HasSource.py
-%%DATADIR%%/Filters/Rules/Family/_HasSource.pyc
-%%DATADIR%%/Filters/Rules/Family/_HasSource.pyo
+%%DATADIR%%/Filters/Rules/Family/_HasSourceCount.py
+%%DATADIR%%/Filters/Rules/Family/_HasSourceCount.pyc
+%%DATADIR%%/Filters/Rules/Family/_HasSourceCount.pyo
+%%DATADIR%%/Filters/Rules/Family/_HasSourceOf.py
+%%DATADIR%%/Filters/Rules/Family/_HasSourceOf.pyc
+%%DATADIR%%/Filters/Rules/Family/_HasSourceOf.pyo
 %%DATADIR%%/Filters/Rules/Family/_HasTag.py
 %%DATADIR%%/Filters/Rules/Family/_HasTag.pyc
 %%DATADIR%%/Filters/Rules/Family/_HasTag.pyo
@@ -272,6 +366,9 @@ share/applications/gramps.desktop
 %%DATADIR%%/Filters/Rules/MediaObject/_HasAttribute.py
 %%DATADIR%%/Filters/Rules/MediaObject/_HasAttribute.pyc
 %%DATADIR%%/Filters/Rules/MediaObject/_HasAttribute.pyo
+%%DATADIR%%/Filters/Rules/MediaObject/_HasCitation.py
+%%DATADIR%%/Filters/Rules/MediaObject/_HasCitation.pyc
+%%DATADIR%%/Filters/Rules/MediaObject/_HasCitation.pyo
 %%DATADIR%%/Filters/Rules/MediaObject/_HasIdOf.py
 %%DATADIR%%/Filters/Rules/MediaObject/_HasIdOf.pyc
 %%DATADIR%%/Filters/Rules/MediaObject/_HasIdOf.pyo
@@ -287,12 +384,21 @@ share/applications/gramps.desktop
 %%DATADIR%%/Filters/Rules/MediaObject/_HasReferenceCountOf.py
 %%DATADIR%%/Filters/Rules/MediaObject/_HasReferenceCountOf.pyc
 %%DATADIR%%/Filters/Rules/MediaObject/_HasReferenceCountOf.pyo
+%%DATADIR%%/Filters/Rules/MediaObject/_HasSourceCount.py
+%%DATADIR%%/Filters/Rules/MediaObject/_HasSourceCount.pyc
+%%DATADIR%%/Filters/Rules/MediaObject/_HasSourceCount.pyo
+%%DATADIR%%/Filters/Rules/MediaObject/_HasSourceOf.py
+%%DATADIR%%/Filters/Rules/MediaObject/_HasSourceOf.pyc
+%%DATADIR%%/Filters/Rules/MediaObject/_HasSourceOf.pyo
 %%DATADIR%%/Filters/Rules/MediaObject/_HasTag.py
 %%DATADIR%%/Filters/Rules/MediaObject/_HasTag.pyc
 %%DATADIR%%/Filters/Rules/MediaObject/_HasTag.pyo
 %%DATADIR%%/Filters/Rules/MediaObject/_MatchesFilter.py
 %%DATADIR%%/Filters/Rules/MediaObject/_MatchesFilter.pyc
 %%DATADIR%%/Filters/Rules/MediaObject/_MatchesFilter.pyo
+%%DATADIR%%/Filters/Rules/MediaObject/_MatchesSourceConfidence.py
+%%DATADIR%%/Filters/Rules/MediaObject/_MatchesSourceConfidence.pyc
+%%DATADIR%%/Filters/Rules/MediaObject/_MatchesSourceConfidence.pyo
 %%DATADIR%%/Filters/Rules/MediaObject/_MediaPrivate.py
 %%DATADIR%%/Filters/Rules/MediaObject/_MediaPrivate.pyc
 %%DATADIR%%/Filters/Rules/MediaObject/_MediaPrivate.pyo
@@ -368,6 +474,9 @@ share/applications/gramps.desktop
 %%DATADIR%%/Filters/Rules/Person/_HasBirth.py
 %%DATADIR%%/Filters/Rules/Person/_HasBirth.pyc
 %%DATADIR%%/Filters/Rules/Person/_HasBirth.pyo
+%%DATADIR%%/Filters/Rules/Person/_HasCitation.py
+%%DATADIR%%/Filters/Rules/Person/_HasCitation.pyc
+%%DATADIR%%/Filters/Rules/Person/_HasCitation.pyo
 %%DATADIR%%/Filters/Rules/Person/_HasCommonAncestorWith.py
 %%DATADIR%%/Filters/Rules/Person/_HasCommonAncestorWith.pyc
 %%DATADIR%%/Filters/Rules/Person/_HasCommonAncestorWith.pyo
@@ -419,9 +528,9 @@ share/applications/gramps.desktop
 %%DATADIR%%/Filters/Rules/Person/_HasRelationship.py
 %%DATADIR%%/Filters/Rules/Person/_HasRelationship.pyc
 %%DATADIR%%/Filters/Rules/Person/_HasRelationship.pyo
-%%DATADIR%%/Filters/Rules/Person/_HasSource.py
-%%DATADIR%%/Filters/Rules/Person/_HasSource.pyc
-%%DATADIR%%/Filters/Rules/Person/_HasSource.pyo
+%%DATADIR%%/Filters/Rules/Person/_HasSourceCount.py
+%%DATADIR%%/Filters/Rules/Person/_HasSourceCount.pyc
+%%DATADIR%%/Filters/Rules/Person/_HasSourceCount.pyo
 %%DATADIR%%/Filters/Rules/Person/_HasSourceOf.py
 %%DATADIR%%/Filters/Rules/Person/_HasSourceOf.pyc
 %%DATADIR%%/Filters/Rules/Person/_HasSourceOf.pyo
@@ -500,6 +609,9 @@ share/applications/gramps.desktop
 %%DATADIR%%/Filters/Rules/Person/_IsParentOfFilterMatch.py
 %%DATADIR%%/Filters/Rules/Person/_IsParentOfFilterMatch.pyc
 %%DATADIR%%/Filters/Rules/Person/_IsParentOfFilterMatch.pyo
+%%DATADIR%%/Filters/Rules/Person/_IsRelatedWith.py
+%%DATADIR%%/Filters/Rules/Person/_IsRelatedWith.pyc
+%%DATADIR%%/Filters/Rules/Person/_IsRelatedWith.pyo
 %%DATADIR%%/Filters/Rules/Person/_IsSiblingOfFilterMatch.py
 %%DATADIR%%/Filters/Rules/Person/_IsSiblingOfFilterMatch.pyc
 %%DATADIR%%/Filters/Rules/Person/_IsSiblingOfFilterMatch.pyo
@@ -539,6 +651,9 @@ share/applications/gramps.desktop
 %%DATADIR%%/Filters/Rules/Person/_PeoplePrivate.py
 %%DATADIR%%/Filters/Rules/Person/_PeoplePrivate.pyc
 %%DATADIR%%/Filters/Rules/Person/_PeoplePrivate.pyo
+%%DATADIR%%/Filters/Rules/Person/_PeoplePublic.py
+%%DATADIR%%/Filters/Rules/Person/_PeoplePublic.pyc
+%%DATADIR%%/Filters/Rules/Person/_PeoplePublic.pyo
 %%DATADIR%%/Filters/Rules/Person/_PersonWithIncompleteEvent.py
 %%DATADIR%%/Filters/Rules/Person/_PersonWithIncompleteEvent.pyc
 %%DATADIR%%/Filters/Rules/Person/_PersonWithIncompleteEvent.pyo
@@ -569,6 +684,9 @@ share/applications/gramps.desktop
 %%DATADIR%%/Filters/Rules/Place/_ChangedSince.py
 %%DATADIR%%/Filters/Rules/Place/_ChangedSince.pyc
 %%DATADIR%%/Filters/Rules/Place/_ChangedSince.pyo
+%%DATADIR%%/Filters/Rules/Place/_HasCitation.py
+%%DATADIR%%/Filters/Rules/Place/_HasCitation.pyc
+%%DATADIR%%/Filters/Rules/Place/_HasCitation.pyo
 %%DATADIR%%/Filters/Rules/Place/_HasGallery.py
 %%DATADIR%%/Filters/Rules/Place/_HasGallery.pyc
 %%DATADIR%%/Filters/Rules/Place/_HasGallery.pyo
@@ -593,6 +711,12 @@ share/applications/gramps.desktop
 %%DATADIR%%/Filters/Rules/Place/_HasReferenceCountOf.py
 %%DATADIR%%/Filters/Rules/Place/_HasReferenceCountOf.pyc
 %%DATADIR%%/Filters/Rules/Place/_HasReferenceCountOf.pyo
+%%DATADIR%%/Filters/Rules/Place/_HasSourceCount.py
+%%DATADIR%%/Filters/Rules/Place/_HasSourceCount.pyc
+%%DATADIR%%/Filters/Rules/Place/_HasSourceCount.pyo
+%%DATADIR%%/Filters/Rules/Place/_HasSourceOf.py
+%%DATADIR%%/Filters/Rules/Place/_HasSourceOf.pyc
+%%DATADIR%%/Filters/Rules/Place/_HasSourceOf.pyo
 %%DATADIR%%/Filters/Rules/Place/_InLatLonNeighborhood.py
 %%DATADIR%%/Filters/Rules/Place/_InLatLonNeighborhood.pyc
 %%DATADIR%%/Filters/Rules/Place/_InLatLonNeighborhood.pyo
@@ -602,6 +726,9 @@ share/applications/gramps.desktop
 %%DATADIR%%/Filters/Rules/Place/_MatchesFilter.py
 %%DATADIR%%/Filters/Rules/Place/_MatchesFilter.pyc
 %%DATADIR%%/Filters/Rules/Place/_MatchesFilter.pyo
+%%DATADIR%%/Filters/Rules/Place/_MatchesSourceConfidence.py
+%%DATADIR%%/Filters/Rules/Place/_MatchesSourceConfidence.pyc
+%%DATADIR%%/Filters/Rules/Place/_MatchesSourceConfidence.pyo
 %%DATADIR%%/Filters/Rules/Place/_PlacePrivate.py
 %%DATADIR%%/Filters/Rules/Place/_PlacePrivate.pyc
 %%DATADIR%%/Filters/Rules/Place/_PlacePrivate.pyo
@@ -677,9 +804,6 @@ share/applications/gramps.desktop
 %%DATADIR%%/Filters/Rules/Source/_HasRepositoryCallNumberRef.py
 %%DATADIR%%/Filters/Rules/Source/_HasRepositoryCallNumberRef.pyc
 %%DATADIR%%/Filters/Rules/Source/_HasRepositoryCallNumberRef.pyo
-%%DATADIR%%/Filters/Rules/Source/_HasSource.py
-%%DATADIR%%/Filters/Rules/Source/_HasSource.pyc
-%%DATADIR%%/Filters/Rules/Source/_HasSource.pyo
 %%DATADIR%%/Filters/Rules/Source/_MatchesFilter.py
 %%DATADIR%%/Filters/Rules/Source/_MatchesFilter.pyc
 %%DATADIR%%/Filters/Rules/Source/_MatchesFilter.pyo
@@ -707,6 +831,9 @@ share/applications/gramps.desktop
 %%DATADIR%%/Filters/Rules/_HasAttributeBase.py
 %%DATADIR%%/Filters/Rules/_HasAttributeBase.pyc
 %%DATADIR%%/Filters/Rules/_HasAttributeBase.pyo
+%%DATADIR%%/Filters/Rules/_HasCitationBase.py
+%%DATADIR%%/Filters/Rules/_HasCitationBase.pyc
+%%DATADIR%%/Filters/Rules/_HasCitationBase.pyo
 %%DATADIR%%/Filters/Rules/_HasEventBase.py
 %%DATADIR%%/Filters/Rules/_HasEventBase.pyc
 %%DATADIR%%/Filters/Rules/_HasEventBase.pyo
@@ -734,6 +861,12 @@ share/applications/gramps.desktop
 %%DATADIR%%/Filters/Rules/_HasSourceBase.py
 %%DATADIR%%/Filters/Rules/_HasSourceBase.pyc
 %%DATADIR%%/Filters/Rules/_HasSourceBase.pyo
+%%DATADIR%%/Filters/Rules/_HasSourceCountBase.py
+%%DATADIR%%/Filters/Rules/_HasSourceCountBase.pyc
+%%DATADIR%%/Filters/Rules/_HasSourceCountBase.pyo
+%%DATADIR%%/Filters/Rules/_HasSourceOfBase.py
+%%DATADIR%%/Filters/Rules/_HasSourceOfBase.pyc
+%%DATADIR%%/Filters/Rules/_HasSourceOfBase.pyo
 %%DATADIR%%/Filters/Rules/_HasTagBase.py
 %%DATADIR%%/Filters/Rules/_HasTagBase.pyc
 %%DATADIR%%/Filters/Rules/_HasTagBase.pyo
@@ -746,6 +879,9 @@ share/applications/gramps.desktop
 %%DATADIR%%/Filters/Rules/_IsPrivate.py
 %%DATADIR%%/Filters/Rules/_IsPrivate.pyc
 %%DATADIR%%/Filters/Rules/_IsPrivate.pyo
+%%DATADIR%%/Filters/Rules/_IsPublic.py
+%%DATADIR%%/Filters/Rules/_IsPublic.pyc
+%%DATADIR%%/Filters/Rules/_IsPublic.pyo
 %%DATADIR%%/Filters/Rules/_MatchesEventFilterBase.py
 %%DATADIR%%/Filters/Rules/_MatchesEventFilterBase.pyc
 %%DATADIR%%/Filters/Rules/_MatchesEventFilterBase.pyo
@@ -767,6 +903,9 @@ share/applications/gramps.desktop
 %%DATADIR%%/Filters/Rules/__init__.py
 %%DATADIR%%/Filters/Rules/__init__.pyc
 %%DATADIR%%/Filters/Rules/__init__.pyo
+%%DATADIR%%/Filters/SideBar/_CitationSidebarFilter.py
+%%DATADIR%%/Filters/SideBar/_CitationSidebarFilter.pyc
+%%DATADIR%%/Filters/SideBar/_CitationSidebarFilter.pyo
 %%DATADIR%%/Filters/SideBar/_EventSidebarFilter.py
 %%DATADIR%%/Filters/SideBar/_EventSidebarFilter.pyc
 %%DATADIR%%/Filters/SideBar/_EventSidebarFilter.pyo
@@ -872,6 +1011,9 @@ share/applications/gramps.desktop
 %%DATADIR%%/Merge/__init__.py
 %%DATADIR%%/Merge/__init__.pyc
 %%DATADIR%%/Merge/__init__.pyo
+%%DATADIR%%/Merge/mergecitation.py
+%%DATADIR%%/Merge/mergecitation.pyc
+%%DATADIR%%/Merge/mergecitation.pyo
 %%DATADIR%%/Merge/mergeevent.py
 %%DATADIR%%/Merge/mergeevent.pyc
 %%DATADIR%%/Merge/mergeevent.pyo
@@ -974,6 +1116,9 @@ share/applications/gramps.desktop
 %%DATADIR%%/cli/plug/__init__.py
 %%DATADIR%%/cli/plug/__init__.pyc
 %%DATADIR%%/cli/plug/__init__.pyo
+%%DATADIR%%/cli/user.py
+%%DATADIR%%/cli/user.pyc
+%%DATADIR%%/cli/user.pyo
 %%DATADIR%%/config.py
 %%DATADIR%%/config.pyc
 %%DATADIR%%/config.pyo
@@ -1087,6 +1232,12 @@ share/applications/gramps.desktop
 %%DATADIR%%/gen/lib/childreftype.py
 %%DATADIR%%/gen/lib/childreftype.pyc
 %%DATADIR%%/gen/lib/childreftype.pyo
+%%DATADIR%%/gen/lib/citation.py
+%%DATADIR%%/gen/lib/citation.pyc
+%%DATADIR%%/gen/lib/citation.pyo
+%%DATADIR%%/gen/lib/citationbase.py
+%%DATADIR%%/gen/lib/citationbase.pyc
+%%DATADIR%%/gen/lib/citationbase.pyo
 %%DATADIR%%/gen/lib/const.py
 %%DATADIR%%/gen/lib/const.pyc
 %%DATADIR%%/gen/lib/const.pyo
@@ -1204,18 +1355,12 @@ share/applications/gramps.desktop
 %%DATADIR%%/gen/lib/src.py
 %%DATADIR%%/gen/lib/src.pyc
 %%DATADIR%%/gen/lib/src.pyo
-%%DATADIR%%/gen/lib/srcbase.py
-%%DATADIR%%/gen/lib/srcbase.pyc
-%%DATADIR%%/gen/lib/srcbase.pyo
 %%DATADIR%%/gen/lib/srcmediatype.py
 %%DATADIR%%/gen/lib/srcmediatype.pyc
 %%DATADIR%%/gen/lib/srcmediatype.pyo
 %%DATADIR%%/gen/lib/srcnote.py
 %%DATADIR%%/gen/lib/srcnote.pyc
 %%DATADIR%%/gen/lib/srcnote.pyo
-%%DATADIR%%/gen/lib/srcref.py
-%%DATADIR%%/gen/lib/srcref.pyc
-%%DATADIR%%/gen/lib/srcref.pyo
 %%DATADIR%%/gen/lib/styledtext.py
 %%DATADIR%%/gen/lib/styledtext.pyc
 %%DATADIR%%/gen/lib/styledtext.pyo
@@ -1438,15 +1583,15 @@ share/applications/gramps.desktop
 %%DATADIR%%/gen/proxy/proxybase.py
 %%DATADIR%%/gen/proxy/proxybase.pyc
 %%DATADIR%%/gen/proxy/proxybase.pyo
-%%DATADIR%%/gen/proxy/referenced.py
-%%DATADIR%%/gen/proxy/referenced.pyc
-%%DATADIR%%/gen/proxy/referenced.pyo
 %%DATADIR%%/gen/proxy/referencedbyselection.py
 %%DATADIR%%/gen/proxy/referencedbyselection.pyc
 %%DATADIR%%/gen/proxy/referencedbyselection.pyo
 %%DATADIR%%/gen/updatecallback.py
 %%DATADIR%%/gen/updatecallback.pyc
 %%DATADIR%%/gen/updatecallback.pyo
+%%DATADIR%%/gen/user.py
+%%DATADIR%%/gen/user.pyc
+%%DATADIR%%/gen/user.pyo
 %%DATADIR%%/gen/utils/__init__.py
 %%DATADIR%%/gen/utils/__init__.pyc
 %%DATADIR%%/gen/utils/__init__.pyo
@@ -1474,6 +1619,7 @@ share/applications/gramps.desktop
 %%DATADIR%%/glade/editaddress.glade
 %%DATADIR%%/glade/editattribute.glade
 %%DATADIR%%/glade/editchildref.glade
+%%DATADIR%%/glade/editcitation.glade
 %%DATADIR%%/glade/editevent.glade
 %%DATADIR%%/glade/editeventref.glade
 %%DATADIR%%/glade/editfamily.glade
@@ -1494,6 +1640,7 @@ share/applications/gramps.desktop
 %%DATADIR%%/glade/editurl.glade
 %%DATADIR%%/glade/grampletpane.glade
 %%DATADIR%%/glade/gramps.glade
+%%DATADIR%%/glade/mergecitation.glade
 %%DATADIR%%/glade/mergedata.glade
 %%DATADIR%%/glade/mergeevent.glade
 %%DATADIR%%/glade/mergefamily.glade
@@ -1572,6 +1719,15 @@ share/applications/gramps.desktop
 %%DATADIR%%/gui/editors/displaytabs/childmodel.py
 %%DATADIR%%/gui/editors/displaytabs/childmodel.pyc
 %%DATADIR%%/gui/editors/displaytabs/childmodel.pyo
+%%DATADIR%%/gui/editors/displaytabs/citationbackreflist.py
+%%DATADIR%%/gui/editors/displaytabs/citationbackreflist.pyc
+%%DATADIR%%/gui/editors/displaytabs/citationbackreflist.pyo
+%%DATADIR%%/gui/editors/displaytabs/citationembedlist.py
+%%DATADIR%%/gui/editors/displaytabs/citationembedlist.pyc
+%%DATADIR%%/gui/editors/displaytabs/citationembedlist.pyo
+%%DATADIR%%/gui/editors/displaytabs/citationrefmodel.py
+%%DATADIR%%/gui/editors/displaytabs/citationrefmodel.pyc
+%%DATADIR%%/gui/editors/displaytabs/citationrefmodel.pyo
 %%DATADIR%%/gui/editors/displaytabs/dataembedlist.py
 %%DATADIR%%/gui/editors/displaytabs/dataembedlist.pyc
 %%DATADIR%%/gui/editors/displaytabs/dataembedlist.pyo
@@ -1659,12 +1815,6 @@ share/applications/gramps.desktop
 %%DATADIR%%/gui/editors/displaytabs/sourcebackreflist.py
 %%DATADIR%%/gui/editors/displaytabs/sourcebackreflist.pyc
 %%DATADIR%%/gui/editors/displaytabs/sourcebackreflist.pyo
-%%DATADIR%%/gui/editors/displaytabs/sourceembedlist.py
-%%DATADIR%%/gui/editors/displaytabs/sourceembedlist.pyc
-%%DATADIR%%/gui/editors/displaytabs/sourceembedlist.pyo
-%%DATADIR%%/gui/editors/displaytabs/sourcerefmodel.py
-%%DATADIR%%/gui/editors/displaytabs/sourcerefmodel.pyc
-%%DATADIR%%/gui/editors/displaytabs/sourcerefmodel.pyo
 %%DATADIR%%/gui/editors/displaytabs/surnamemodel.py
 %%DATADIR%%/gui/editors/displaytabs/surnamemodel.pyc
 %%DATADIR%%/gui/editors/displaytabs/surnamemodel.pyo
@@ -1686,6 +1836,9 @@ share/applications/gramps.desktop
 %%DATADIR%%/gui/editors/editchildref.py
 %%DATADIR%%/gui/editors/editchildref.pyc
 %%DATADIR%%/gui/editors/editchildref.pyo
+%%DATADIR%%/gui/editors/editcitation.py
+%%DATADIR%%/gui/editors/editcitation.pyc
+%%DATADIR%%/gui/editors/editcitation.pyo
 %%DATADIR%%/gui/editors/editevent.py
 %%DATADIR%%/gui/editors/editevent.pyc
 %%DATADIR%%/gui/editors/editevent.pyo
@@ -1743,9 +1896,6 @@ share/applications/gramps.desktop
 %%DATADIR%%/gui/editors/editsource.py
 %%DATADIR%%/gui/editors/editsource.pyc
 %%DATADIR%%/gui/editors/editsource.pyo
-%%DATADIR%%/gui/editors/editsourceref.py
-%%DATADIR%%/gui/editors/editsourceref.pyc
-%%DATADIR%%/gui/editors/editsourceref.pyo
 %%DATADIR%%/gui/editors/editurl.py
 %%DATADIR%%/gui/editors/editurl.pyc
 %%DATADIR%%/gui/editors/editurl.pyo
@@ -1794,9 +1944,6 @@ share/applications/gramps.desktop
 %%DATADIR%%/gui/plug/report/_graphvizreportdialog.py
 %%DATADIR%%/gui/plug/report/_graphvizreportdialog.pyc
 %%DATADIR%%/gui/plug/report/_graphvizreportdialog.pyo
-%%DATADIR%%/gui/plug/report/_options.py
-%%DATADIR%%/gui/plug/report/_options.pyc
-%%DATADIR%%/gui/plug/report/_options.pyo
 %%DATADIR%%/gui/plug/report/_papermenu.py
 %%DATADIR%%/gui/plug/report/_papermenu.pyc
 %%DATADIR%%/gui/plug/report/_papermenu.pyo
@@ -1827,6 +1974,9 @@ share/applications/gramps.desktop
 %%DATADIR%%/gui/selectors/baseselector.py
 %%DATADIR%%/gui/selectors/baseselector.pyc
 %%DATADIR%%/gui/selectors/baseselector.pyo
+%%DATADIR%%/gui/selectors/selectcitation.py
+%%DATADIR%%/gui/selectors/selectcitation.pyc
+%%DATADIR%%/gui/selectors/selectcitation.pyo
 %%DATADIR%%/gui/selectors/selectevent.py
 %%DATADIR%%/gui/selectors/selectevent.pyc
 %%DATADIR%%/gui/selectors/selectevent.pyo
@@ -1857,6 +2007,9 @@ share/applications/gramps.desktop
 %%DATADIR%%/gui/selectors/selectsource.py
 %%DATADIR%%/gui/selectors/selectsource.pyc
 %%DATADIR%%/gui/selectors/selectsource.pyo
+%%DATADIR%%/gui/user.py
+%%DATADIR%%/gui/user.pyc
+%%DATADIR%%/gui/user.pyo
 %%DATADIR%%/gui/utils.py
 %%DATADIR%%/gui/utils.pyc
 %%DATADIR%%/gui/utils.pyo
@@ -1881,6 +2034,15 @@ share/applications/gramps.desktop
 %%DATADIR%%/gui/views/treemodels/__init__.py
 %%DATADIR%%/gui/views/treemodels/__init__.pyc
 %%DATADIR%%/gui/views/treemodels/__init__.pyo
+%%DATADIR%%/gui/views/treemodels/citationbasemodel.py
+%%DATADIR%%/gui/views/treemodels/citationbasemodel.pyc
+%%DATADIR%%/gui/views/treemodels/citationbasemodel.pyo
+%%DATADIR%%/gui/views/treemodels/citationlistmodel.py
+%%DATADIR%%/gui/views/treemodels/citationlistmodel.pyc
+%%DATADIR%%/gui/views/treemodels/citationlistmodel.pyo
+%%DATADIR%%/gui/views/treemodels/citationtreemodel.py
+%%DATADIR%%/gui/views/treemodels/citationtreemodel.pyc
+%%DATADIR%%/gui/views/treemodels/citationtreemodel.pyo
 %%DATADIR%%/gui/views/treemodels/eventmodel.py
 %%DATADIR%%/gui/views/treemodels/eventmodel.pyc
 %%DATADIR%%/gui/views/treemodels/eventmodel.pyo
@@ -1914,9 +2076,15 @@ share/applications/gramps.desktop
 %%DATADIR%%/gui/widgets/__init__.py
 %%DATADIR%%/gui/widgets/__init__.pyc
 %%DATADIR%%/gui/widgets/__init__.pyo
+%%DATADIR%%/gui/widgets/basicentry.py
+%%DATADIR%%/gui/widgets/basicentry.pyc
+%%DATADIR%%/gui/widgets/basicentry.pyo
 %%DATADIR%%/gui/widgets/buttons.py
 %%DATADIR%%/gui/widgets/buttons.pyc
 %%DATADIR%%/gui/widgets/buttons.pyo
+%%DATADIR%%/gui/widgets/dateentry.py
+%%DATADIR%%/gui/widgets/dateentry.pyc
+%%DATADIR%%/gui/widgets/dateentry.pyo
 %%DATADIR%%/gui/widgets/expandcollapsearrow.py
 %%DATADIR%%/gui/widgets/expandcollapsearrow.pyc
 %%DATADIR%%/gui/widgets/expandcollapsearrow.pyo
@@ -2000,6 +2168,7 @@ share/applications/gramps.desktop
 %%DATADIR%%/images/16x16/gramps-bookmark-edit.png
 %%DATADIR%%/images/16x16/gramps-bookmark-new.png
 %%DATADIR%%/images/16x16/gramps-bookmark.png
+%%DATADIR%%/images/16x16/gramps-citation.png
 %%DATADIR%%/images/16x16/gramps-config.png
 %%DATADIR%%/images/16x16/gramps-date-edit.png
 %%DATADIR%%/images/16x16/gramps-date.png
@@ -2054,6 +2223,7 @@ share/applications/gramps.desktop
 %%DATADIR%%/images/22x22/gramps-bookmark-edit.png
 %%DATADIR%%/images/22x22/gramps-bookmark-new.png
 %%DATADIR%%/images/22x22/gramps-bookmark.png
+%%DATADIR%%/images/22x22/gramps-citation.png
 %%DATADIR%%/images/22x22/gramps-config.png
 %%DATADIR%%/images/22x22/gramps-date-edit.png
 %%DATADIR%%/images/22x22/gramps-date.png
@@ -2113,6 +2283,7 @@ share/applications/gramps.desktop
 %%DATADIR%%/images/48x48/gramps-bookmark-edit.png
 %%DATADIR%%/images/48x48/gramps-bookmark-new.png
 %%DATADIR%%/images/48x48/gramps-bookmark.png
+%%DATADIR%%/images/48x48/gramps-citation.png
 %%DATADIR%%/images/48x48/gramps-config.png
 %%DATADIR%%/images/48x48/gramps-date-edit.png
 %%DATADIR%%/images/48x48/gramps-date.png
@@ -2183,6 +2354,7 @@ share/applications/gramps.desktop
 %%DATADIR%%/images/scalable/gramps-bookmark-edit.svg
 %%DATADIR%%/images/scalable/gramps-bookmark-new.svg
 %%DATADIR%%/images/scalable/gramps-bookmark.svg
+%%DATADIR%%/images/scalable/gramps-citation.svg
 %%DATADIR%%/images/scalable/gramps-config.svg
 %%DATADIR%%/images/scalable/gramps-date-edit.svg
 %%DATADIR%%/images/scalable/gramps-date.svg
@@ -2256,18 +2428,15 @@ share/applications/gramps.desktop
 %%DATADIR%%/plugins/docgen/ODFDoc.py
 %%DATADIR%%/plugins/docgen/ODFDoc.pyc
 %%DATADIR%%/plugins/docgen/ODFDoc.pyo
-%%DATADIR%%/plugins/docgen/PSDrawDoc.py
-%%DATADIR%%/plugins/docgen/PSDrawDoc.pyc
-%%DATADIR%%/plugins/docgen/PSDrawDoc.pyo
-%%DATADIR%%/plugins/docgen/PdfDoc.py
-%%DATADIR%%/plugins/docgen/PdfDoc.pyc
-%%DATADIR%%/plugins/docgen/PdfDoc.pyo
 %%DATADIR%%/plugins/docgen/RTFDoc.py
 %%DATADIR%%/plugins/docgen/RTFDoc.pyc
 %%DATADIR%%/plugins/docgen/RTFDoc.pyo
 %%DATADIR%%/plugins/docgen/SvgDrawDoc.py
 %%DATADIR%%/plugins/docgen/SvgDrawDoc.pyc
 %%DATADIR%%/plugins/docgen/SvgDrawDoc.pyo
+%%DATADIR%%/plugins/docgen/cairodoc.py
+%%DATADIR%%/plugins/docgen/cairodoc.pyc
+%%DATADIR%%/plugins/docgen/cairodoc.pyo
 %%DATADIR%%/plugins/docgen/docgen.gpr.py
 %%DATADIR%%/plugins/docgen/docgen.gpr.pyc
 %%DATADIR%%/plugins/docgen/docgen.gpr.pyo
@@ -2320,11 +2489,6 @@ share/applications/gramps.desktop
 %%DATADIR%%/plugins/export/export.gpr.py
 %%DATADIR%%/plugins/export/export.gpr.pyc
 %%DATADIR%%/plugins/export/export.gpr.pyo
-%%DATADIR%%/plugins/export/exportcsv.glade
-%%DATADIR%%/plugins/export/exportftree.glade
-%%DATADIR%%/plugins/export/exportgeneweb.glade
-%%DATADIR%%/plugins/export/exportvcalendar.glade
-%%DATADIR%%/plugins/export/exportvcard.glade
 %%DATADIR%%/plugins/gramplet/AgeOnDateGramplet.py
 %%DATADIR%%/plugins/gramplet/AgeOnDateGramplet.pyc
 %%DATADIR%%/plugins/gramplet/AgeOnDateGramplet.pyo
@@ -2334,9 +2498,6 @@ share/applications/gramps.desktop
 %%DATADIR%%/plugins/gramplet/Attributes.py
 %%DATADIR%%/plugins/gramplet/Attributes.pyc
 %%DATADIR%%/plugins/gramplet/Attributes.pyo
-%%DATADIR%%/plugins/gramplet/AttributesGramplet.py
-%%DATADIR%%/plugins/gramplet/AttributesGramplet.pyc
-%%DATADIR%%/plugins/gramplet/AttributesGramplet.pyo
 %%DATADIR%%/plugins/gramplet/Backlinks.py
 %%DATADIR%%/plugins/gramplet/Backlinks.pyc
 %%DATADIR%%/plugins/gramplet/Backlinks.pyo
@@ -2346,6 +2507,9 @@ share/applications/gramps.desktop
 %%DATADIR%%/plugins/gramplet/Children.py
 %%DATADIR%%/plugins/gramplet/Children.pyc
 %%DATADIR%%/plugins/gramplet/Children.pyo
+%%DATADIR%%/plugins/gramplet/Citations.py
+%%DATADIR%%/plugins/gramplet/Citations.pyc
+%%DATADIR%%/plugins/gramplet/Citations.pyo
 %%DATADIR%%/plugins/gramplet/DescendGramplet.py
 %%DATADIR%%/plugins/gramplet/DescendGramplet.pyc
 %%DATADIR%%/plugins/gramplet/DescendGramplet.pyo
@@ -2391,9 +2555,6 @@ share/applications/gramps.desktop
 %%DATADIR%%/plugins/gramplet/PlaceDetails.py
 %%DATADIR%%/plugins/gramplet/PlaceDetails.pyc
 %%DATADIR%%/plugins/gramplet/PlaceDetails.pyo
-%%DATADIR%%/plugins/gramplet/PluginManagerGramplet.py
-%%DATADIR%%/plugins/gramplet/PluginManagerGramplet.pyc
-%%DATADIR%%/plugins/gramplet/PluginManagerGramplet.pyo
 %%DATADIR%%/plugins/gramplet/QuickViewGramplet.py
 %%DATADIR%%/plugins/gramplet/QuickViewGramplet.pyc
 %%DATADIR%%/plugins/gramplet/QuickViewGramplet.pyo
@@ -2406,9 +2567,6 @@ share/applications/gramps.desktop
 %%DATADIR%%/plugins/gramplet/SessionLogGramplet.py
 %%DATADIR%%/plugins/gramplet/SessionLogGramplet.pyc
 %%DATADIR%%/plugins/gramplet/SessionLogGramplet.pyo
-%%DATADIR%%/plugins/gramplet/Sources.py
-%%DATADIR%%/plugins/gramplet/Sources.pyc
-%%DATADIR%%/plugins/gramplet/Sources.pyo
 %%DATADIR%%/plugins/gramplet/StatsGramplet.py
 %%DATADIR%%/plugins/gramplet/StatsGramplet.pyc
 %%DATADIR%%/plugins/gramplet/StatsGramplet.pyo
@@ -2504,6 +2662,9 @@ share/applications/gramps.desktop
 %%DATADIR%%/plugins/lib/libmapservice.py
 %%DATADIR%%/plugins/lib/libmapservice.pyc
 %%DATADIR%%/plugins/lib/libmapservice.pyo
+%%DATADIR%%/plugins/lib/libmetadata.py
+%%DATADIR%%/plugins/lib/libmetadata.pyc
+%%DATADIR%%/plugins/lib/libmetadata.pyo
 %%DATADIR%%/plugins/lib/libmixin.py
 %%DATADIR%%/plugins/lib/libmixin.pyc
 %%DATADIR%%/plugins/lib/libmixin.pyo
@@ -2597,6 +2758,9 @@ share/applications/gramps.desktop
 %%DATADIR%%/plugins/records.gpr.py
 %%DATADIR%%/plugins/records.gpr.pyc
 %%DATADIR%%/plugins/records.gpr.pyo
+%%DATADIR%%/plugins/rel/rel_ca.py
+%%DATADIR%%/plugins/rel/rel_ca.pyc
+%%DATADIR%%/plugins/rel/rel_ca.pyo
 %%DATADIR%%/plugins/rel/rel_cs.py
 %%DATADIR%%/plugins/rel/rel_cs.pyc
 %%DATADIR%%/plugins/rel/rel_cs.pyo
@@ -2648,6 +2812,9 @@ share/applications/gramps.desktop
 %%DATADIR%%/plugins/rel/rel_sv.py
 %%DATADIR%%/plugins/rel/rel_sv.pyc
 %%DATADIR%%/plugins/rel/rel_sv.pyo
+%%DATADIR%%/plugins/rel/rel_uk.py
+%%DATADIR%%/plugins/rel/rel_uk.pyc
+%%DATADIR%%/plugins/rel/rel_uk.pyo
 %%DATADIR%%/plugins/rel/relplugins.gpr.py
 %%DATADIR%%/plugins/rel/relplugins.gpr.pyc
 %%DATADIR%%/plugins/rel/relplugins.gpr.pyo
@@ -2657,6 +2824,9 @@ share/applications/gramps.desktop
 %%DATADIR%%/plugins/sidebar/sidebar.gpr.py
 %%DATADIR%%/plugins/sidebar/sidebar.gpr.pyc
 %%DATADIR%%/plugins/sidebar/sidebar.gpr.pyo
+%%DATADIR%%/plugins/textreport/AlphabeticalIndex.py
+%%DATADIR%%/plugins/textreport/AlphabeticalIndex.pyc
+%%DATADIR%%/plugins/textreport/AlphabeticalIndex.pyo
 %%DATADIR%%/plugins/textreport/AncestorReport.py
 %%DATADIR%%/plugins/textreport/AncestorReport.pyc
 %%DATADIR%%/plugins/textreport/AncestorReport.pyo
@@ -2699,6 +2869,9 @@ share/applications/gramps.desktop
 %%DATADIR%%/plugins/textreport/Summary.py
 %%DATADIR%%/plugins/textreport/Summary.pyc
 %%DATADIR%%/plugins/textreport/Summary.pyo
+%%DATADIR%%/plugins/textreport/TableOfContents.py
+%%DATADIR%%/plugins/textreport/TableOfContents.pyc
+%%DATADIR%%/plugins/textreport/TableOfContents.pyo
 %%DATADIR%%/plugins/textreport/TagReport.py
 %%DATADIR%%/plugins/textreport/TagReport.pyc
 %%DATADIR%%/plugins/textreport/TagReport.pyo
@@ -2738,6 +2911,9 @@ share/applications/gramps.desktop
 %%DATADIR%%/plugins/tool/MediaManager.py
 %%DATADIR%%/plugins/tool/MediaManager.pyc
 %%DATADIR%%/plugins/tool/MediaManager.pyo
+%%DATADIR%%/plugins/tool/MergeCitations.py
+%%DATADIR%%/plugins/tool/MergeCitations.pyc
+%%DATADIR%%/plugins/tool/MergeCitations.pyo
 %%DATADIR%%/plugins/tool/NotRelated.py
 %%DATADIR%%/plugins/tool/NotRelated.pyc
 %%DATADIR%%/plugins/tool/NotRelated.pyo
@@ -2779,6 +2955,7 @@ share/applications/gramps.desktop
 %%DATADIR%%/plugins/tool/eventcmp.glade
 %%DATADIR%%/plugins/tool/finddupes.glade
 %%DATADIR%%/plugins/tool/leak.glade
+%%DATADIR%%/plugins/tool/mergecitations.glade
 %%DATADIR%%/plugins/tool/notrelated.glade
 %%DATADIR%%/plugins/tool/ownereditor.glade
 %%DATADIR%%/plugins/tool/patchnames.glade
@@ -2790,6 +2967,12 @@ share/applications/gramps.desktop
 %%DATADIR%%/plugins/tool/tools.gpr.pyc
 %%DATADIR%%/plugins/tool/tools.gpr.pyo
 %%DATADIR%%/plugins/tool/verify.glade
+%%DATADIR%%/plugins/view/citationlistview.py
+%%DATADIR%%/plugins/view/citationlistview.pyc
+%%DATADIR%%/plugins/view/citationlistview.pyo
+%%DATADIR%%/plugins/view/citationtreeview.py
+%%DATADIR%%/plugins/view/citationtreeview.pyc
+%%DATADIR%%/plugins/view/citationtreeview.pyo
 %%DATADIR%%/plugins/view/eventview.py
 %%DATADIR%%/plugins/view/eventview.pyc
 %%DATADIR%%/plugins/view/eventview.pyo
@@ -2872,21 +3055,23 @@ share/applications/gramps.desktop
 %%DATADIR%%/plugins/webreport/webplugins.gpr.pyc
 %%DATADIR%%/plugins/webreport/webplugins.gpr.pyo
 %%DATADIR%%/plugins/webstuff/css/GeoView.css
-%%DATADIR%%/plugins/webstuff/css/Mapstraction.css
 %%DATADIR%%/plugins/webstuff/css/Web_Basic-Ash.css
 %%DATADIR%%/plugins/webstuff/css/Web_Basic-Blue.css
 %%DATADIR%%/plugins/webstuff/css/Web_Basic-Cypress.css
 %%DATADIR%%/plugins/webstuff/css/Web_Basic-Lilac.css
 %%DATADIR%%/plugins/webstuff/css/Web_Basic-Peach.css
 %%DATADIR%%/plugins/webstuff/css/Web_Basic-Spruce.css
+%%DATADIR%%/plugins/webstuff/css/Web_DropDown-Menus.css
+%%DATADIR%%/plugins/webstuff/css/Web_Fade-Menus.css
+%%DATADIR%%/plugins/webstuff/css/Web_Horizontal-Menus.css
 %%DATADIR%%/plugins/webstuff/css/Web_Mainz.css
-%%DATADIR%%/plugins/webstuff/css/Web_Navigation-Horizontal.css
-%%DATADIR%%/plugins/webstuff/css/Web_Navigation-Vertical.css
 %%DATADIR%%/plugins/webstuff/css/Web_Nebraska.css
 %%DATADIR%%/plugins/webstuff/css/Web_Print-Default.css
+%%DATADIR%%/plugins/webstuff/css/Web_Vertical-Menus.css
 %%DATADIR%%/plugins/webstuff/css/Web_Visually.css
 %%DATADIR%%/plugins/webstuff/css/ancestortree.css
 %%DATADIR%%/plugins/webstuff/css/behaviour.css
+%%DATADIR%%/plugins/webstuff/css/narrative-maps.css
 %%DATADIR%%/plugins/webstuff/images/Web_Gender_Female.png
 %%DATADIR%%/plugins/webstuff/images/Web_Gender_Male.png
 %%DATADIR%%/plugins/webstuff/images/Web_Mainz_Bkgd.png
@@ -2909,15 +3094,10 @@ share/applications/gramps.desktop
 %%DATADIR%%/plugins/webstuff/images/gramps-geo-marriage.png
 %%DATADIR%%/plugins/webstuff/images/gramps-geo-marriage.svg
 %%DATADIR%%/plugins/webstuff/images/somerights20.gif
-%%DATADIR%%/plugins/webstuff/js/mapstraction/README
-%%DATADIR%%/plugins/webstuff/js/mapstraction/mxn.core.js
-%%DATADIR%%/plugins/webstuff/js/mapstraction/mxn.geocommons.core.js
-%%DATADIR%%/plugins/webstuff/js/mapstraction/mxn.google.core.js
-%%DATADIR%%/plugins/webstuff/js/mapstraction/mxn.google.geocoder.js
-%%DATADIR%%/plugins/webstuff/js/mapstraction/mxn.googleearth.core.js
-%%DATADIR%%/plugins/webstuff/js/mapstraction/mxn.googlev3.core.js
-%%DATADIR%%/plugins/webstuff/js/mapstraction/mxn.js
-%%DATADIR%%/plugins/webstuff/js/mapstraction/mxn.openlayers.core.js
+%%DATADIR%%/plugins/webstuff/js/jquery-1.3.2.min.js
+%%DATADIR%%/plugins/webstuff/js/jquery-1.7.1.js
+%%DATADIR%%/plugins/webstuff/js/jquery-1.7.min.js
+%%DATADIR%%/plugins/webstuff/js/jquery-ui-1.7.2.custom.min.js
 %%DATADIR%%/plugins/webstuff/webstuff.gpr.py
 %%DATADIR%%/plugins/webstuff/webstuff.gpr.pyc
 %%DATADIR%%/plugins/webstuff/webstuff.gpr.pyo
@@ -2937,11 +3117,13 @@ share/icons/gnome/scalable/mimetypes/gnome-mime-application-x-geneweb.svg
 share/icons/gnome/scalable/mimetypes/gnome-mime-application-x-gramps-package.svg
 share/icons/gnome/scalable/mimetypes/gnome-mime-application-x-gramps-xml.svg
 share/icons/gnome/scalable/mimetypes/gnome-mime-application-x-gramps.svg
+share/locale/ar/LC_MESSAGES/gramps.mo
 share/locale/bg/LC_MESSAGES/gramps.mo
 share/locale/ca/LC_MESSAGES/gramps.mo
 share/locale/cs/LC_MESSAGES/gramps.mo
 share/locale/da/LC_MESSAGES/gramps.mo
 share/locale/de/LC_MESSAGES/gramps.mo
+share/locale/el/LC_MESSAGES/gramps.mo
 share/locale/es/LC_MESSAGES/gramps.mo
 share/locale/fi/LC_MESSAGES/gramps.mo
 share/locale/fr/LC_MESSAGES/gramps.mo
@@ -2949,6 +3131,7 @@ share/locale/he/LC_MESSAGES/gramps.mo
 share/locale/hr/LC_MESSAGES/gramps.mo
 share/locale/hu/LC_MESSAGES/gramps.mo
 share/locale/it/LC_MESSAGES/gramps.mo
+share/locale/ja/LC_MESSAGES/gramps.mo
 share/locale/lt/LC_MESSAGES/gramps.mo
 share/locale/nb/LC_MESSAGES/gramps.mo
 share/locale/nl/LC_MESSAGES/gramps.mo
@@ -2962,104 +3145,114 @@ share/locale/sl/LC_MESSAGES/gramps.mo
 share/locale/sq/LC_MESSAGES/gramps.mo
 share/locale/sv/LC_MESSAGES/gramps.mo
 share/locale/uk/LC_MESSAGES/gramps.mo
+share/locale/vi/LC_MESSAGES/gramps.mo
 share/locale/zh_CN/LC_MESSAGES/gramps.mo
 share/mime-info/gramps.keys
 share/mime-info/gramps.mime
+share/mime/XMLnamespaces
+share/mime/aliases
 share/mime/application/x-geneweb.xml
 share/mime/application/x-gramps-package.xml
 share/mime/application/x-gramps-xml.xml
 share/mime/application/x-gramps.xml
+share/mime/generic-icons
+share/mime/globs
+share/mime/globs2
+share/mime/icons
+share/mime/magic
+share/mime/mime.cache
 share/mime/packages/gramps.xml
+share/mime/subclasses
+share/mime/treemagic
+share/mime/types
+share/mime/version
 share/pixmaps/gramps.png
-@dirrmtry share/omf
-@dirrmtry share/mime/packages
-@dirrmtry share/mime/application
-@dirrmtry share/mime-info
-@dirrmtry share/mime
-@dirrmtry share/icons/gnome/scalable/mimetypes
-@dirrmtry share/icons/gnome/scalable
-@dirrmtry share/icons/gnome/48x48/mimetypes
-@dirrmtry share/icons/gnome/48x48
-@dirrmtry share/icons/gnome
-@dirrmtry share/icons
-@dirrm %%DATADIR%%/plugins/webstuff/js/mapstraction
-@dirrm %%DATADIR%%/plugins/webstuff/js
-@dirrm %%DATADIR%%/plugins/webstuff/images
-@dirrm %%DATADIR%%/plugins/webstuff/css
-@dirrm %%DATADIR%%/plugins/webstuff
-@dirrm %%DATADIR%%/plugins/webreport
-@dirrm %%DATADIR%%/plugins/view
-@dirrm %%DATADIR%%/plugins/tool
-@dirrm %%DATADIR%%/plugins/textreport
-@dirrm %%DATADIR%%/plugins/sidebar
-@dirrm %%DATADIR%%/plugins/rel
-@dirrm %%DATADIR%%/plugins/quickview
-@dirrm %%DATADIR%%/plugins/mapservices
-@dirrm %%DATADIR%%/plugins/lib/maps
-@dirrm %%DATADIR%%/plugins/lib
-@dirrm %%DATADIR%%/plugins/import
-@dirrm %%DATADIR%%/plugins/graph
-@dirrm %%DATADIR%%/plugins/gramplet
-@dirrm %%DATADIR%%/plugins/export
-@dirrm %%DATADIR%%/plugins/drawreport
-@dirrm %%DATADIR%%/plugins/docgen
-@dirrm %%DATADIR%%/plugins
-@dirrm %%DATADIR%%/images/scalable
-@dirrm %%DATADIR%%/images/48x48
-@dirrm %%DATADIR%%/images/22x22
-@dirrm %%DATADIR%%/images/16x16
-@dirrm %%DATADIR%%/images
-@dirrm %%DATADIR%%/gui/widgets
-@dirrm %%DATADIR%%/gui/views/treemodels
-@dirrm %%DATADIR%%/gui/views
-@dirrm %%DATADIR%%/gui/selectors
-@dirrm %%DATADIR%%/gui/plug/report
-@dirrm %%DATADIR%%/gui/plug
-@dirrm %%DATADIR%%/gui/editors/displaytabs
-@dirrm %%DATADIR%%/gui/editors
-@dirrm %%DATADIR%%/gui
-@dirrm %%DATADIR%%/glade
-@dirrm %%DATADIR%%/gen/utils
-@dirrm %%DATADIR%%/gen/proxy
-@dirrm %%DATADIR%%/gen/plug/report
-@dirrm %%DATADIR%%/gen/plug/menu
-@dirrm %%DATADIR%%/gen/plug/docgen
-@dirrm %%DATADIR%%/gen/plug/docbackend
-@dirrm %%DATADIR%%/gen/plug
-@dirrm %%DATADIR%%/gen/mime
-@dirrm %%DATADIR%%/gen/lib
-@dirrm %%DATADIR%%/gen/display
-@dirrm %%DATADIR%%/gen/db
-@dirrm %%DATADIR%%/gen
-@dirrm %%DATADIR%%/example
-@dirrm %%DATADIR%%/docgen
-@dirrm %%DATADIR%%/data
-@dirrm %%DATADIR%%/cli/plug
-@dirrm %%DATADIR%%/cli
-@dirrm %%DATADIR%%/Simple
-@dirrm %%DATADIR%%/Merge
-@dirrm %%DATADIR%%/GrampsLogger
-@dirrm %%DATADIR%%/GrampsLocale
-@dirrm %%DATADIR%%/Filters/SideBar
-@dirrm %%DATADIR%%/Filters/Rules/Source
-@dirrm %%DATADIR%%/Filters/Rules/Repository
-@dirrm %%DATADIR%%/Filters/Rules/Place
-@dirrm %%DATADIR%%/Filters/Rules/Person
-@dirrm %%DATADIR%%/Filters/Rules/Note
-@dirrm %%DATADIR%%/Filters/Rules/MediaObject
-@dirrm %%DATADIR%%/Filters/Rules/Family
-@dirrm %%DATADIR%%/Filters/Rules/Event
-@dirrm %%DATADIR%%/Filters/Rules
-@dirrm %%DATADIR%%/Filters
-@dirrm %%DATADIR%%/DateHandler
-@dirrm %%DATADIR%%
-@dirrmtry man/sv/man1
-@dirrmtry man/sv
-@dirrmtry man/pl/man1
-@dirrmtry man/pl
-@dirrmtry man/nl/man1
-@dirrmtry man/nl
-@dirrmtry man/fr/man1
-@dirrmtry man/fr
 @dirrmtry man/cs/man1
 @dirrmtry man/cs
+@dirrmtry man/fr/man1
+@dirrmtry man/fr
+@dirrmtry man/nl/man1
+@dirrmtry man/nl
+@dirrmtry man/pl/man1
+@dirrmtry man/pl
+@dirrmtry man/pt_BR/man1
+@dirrmtry man/pt_BR
+@dirrmtry man/sv/man1
+@dirrmtry man/sv
+@dirrmtry %%DATADIR%%/DateHandler
+@dirrmtry %%DATADIR%%/Filters/Rules/Citation
+@dirrmtry %%DATADIR%%/Filters/Rules/Event
+@dirrmtry %%DATADIR%%/Filters/Rules/Family
+@dirrmtry %%DATADIR%%/Filters/Rules/MediaObject
+@dirrmtry %%DATADIR%%/Filters/Rules/Note
+@dirrmtry %%DATADIR%%/Filters/Rules/Person
+@dirrmtry %%DATADIR%%/Filters/Rules/Place
+@dirrmtry %%DATADIR%%/Filters/Rules/Repository
+@dirrmtry %%DATADIR%%/Filters/Rules/Source
+@dirrmtry %%DATADIR%%/Filters/Rules
+@dirrmtry %%DATADIR%%/Filters/SideBar
+@dirrmtry %%DATADIR%%/Filters
+@dirrmtry %%DATADIR%%/GrampsLocale
+@dirrmtry %%DATADIR%%/GrampsLogger
+@dirrmtry %%DATADIR%%/Merge
+@dirrmtry %%DATADIR%%/Simple
+@dirrmtry %%DATADIR%%/cli/plug
+@dirrmtry %%DATADIR%%/cli
+@dirrmtry %%DATADIR%%/data
+@dirrmtry %%DATADIR%%/docgen
+@dirrmtry %%DATADIR%%/example
+@dirrmtry %%DATADIR%%/gen/db
+@dirrmtry %%DATADIR%%/gen/display
+@dirrmtry %%DATADIR%%/gen/lib
+@dirrmtry %%DATADIR%%/gen/mime
+@dirrmtry %%DATADIR%%/gen/plug/docbackend
+@dirrmtry %%DATADIR%%/gen/plug/docgen
+@dirrmtry %%DATADIR%%/gen/plug/menu
+@dirrmtry %%DATADIR%%/gen/plug/report
+@dirrmtry %%DATADIR%%/gen/plug
+@dirrmtry %%DATADIR%%/gen/proxy
+@dirrmtry %%DATADIR%%/gen/utils
+@dirrmtry %%DATADIR%%/gen
+@dirrmtry %%DATADIR%%/glade
+@dirrmtry %%DATADIR%%/gui/editors/displaytabs
+@dirrmtry %%DATADIR%%/gui/editors
+@dirrmtry %%DATADIR%%/gui/plug/report
+@dirrmtry %%DATADIR%%/gui/plug
+@dirrmtry %%DATADIR%%/gui/selectors
+@dirrmtry %%DATADIR%%/gui/views/treemodels
+@dirrmtry %%DATADIR%%/gui/views
+@dirrmtry %%DATADIR%%/gui/widgets
+@dirrmtry %%DATADIR%%/gui
+@dirrmtry %%DATADIR%%/images/16x16
+@dirrmtry %%DATADIR%%/images/22x22
+@dirrmtry %%DATADIR%%/images/48x48
+@dirrmtry %%DATADIR%%/images/scalable
+@dirrmtry %%DATADIR%%/images
+@dirrmtry %%DATADIR%%/plugins/docgen
+@dirrmtry %%DATADIR%%/plugins/drawreport
+@dirrmtry %%DATADIR%%/plugins/export
+@dirrmtry %%DATADIR%%/plugins/gramplet
+@dirrmtry %%DATADIR%%/plugins/graph
+@dirrmtry %%DATADIR%%/plugins/import
+@dirrmtry %%DATADIR%%/plugins/lib/maps
+@dirrmtry %%DATADIR%%/plugins/lib
+@dirrmtry %%DATADIR%%/plugins/mapservices
+@dirrmtry %%DATADIR%%/plugins/quickview
+@dirrmtry %%DATADIR%%/plugins/rel
+@dirrmtry %%DATADIR%%/plugins/sidebar
+@dirrmtry %%DATADIR%%/plugins/textreport
+@dirrmtry %%DATADIR%%/plugins/tool
+@dirrmtry %%DATADIR%%/plugins/view
+@dirrmtry %%DATADIR%%/plugins/webreport
+@dirrmtry %%DATADIR%%/plugins/webstuff/css
+@dirrmtry %%DATADIR%%/plugins/webstuff/images
+@dirrmtry %%DATADIR%%/plugins/webstuff/js
+@dirrmtry %%DATADIR%%/plugins/webstuff
+@dirrmtry %%DATADIR%%/plugins
+@dirrmtry %%DATADIR%%
+@dirrmtry share/icons/gnome/48x48/mimetypes
+@dirrmtry share/icons/gnome/48x48
+@dirrmtry share/icons/gnome/scalable/mimetypes
+@dirrmtry share/icons/gnome/scalable
+@dirrmtry share/icons/gnome
+@dirrmtry share/mime/application

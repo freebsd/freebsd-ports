@@ -187,7 +187,6 @@
 @dirrm %%PSP_GCC_STAGE_PREFIX%%/lib/gcc/psp/4.6.2
 @dirrm %%PSP_GCC_STAGE_PREFIX%%/lib/gcc/psp
 @dirrm %%PSP_GCC_STAGE_PREFIX%%/lib/gcc
-@dirrmtry %%PSP_GCC_STAGE_PREFIX%%/share/info
 @dirrmtry %%PSP_GCC_STAGE_PREFIX%%/share
 @dirrmtry %%PSP_GCC_STAGE_PREFIX%%/psp/lib
 @dirrmtry %%PSP_GCC_STAGE_PREFIX%%/psp

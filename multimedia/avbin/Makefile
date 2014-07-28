@@ -3,7 +3,7 @@
 
 PORTNAME=	avbin
 PORTVERSION=	7
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE} \
 		http://mirror.amdmi3.ru/distfiles/
@@ -15,7 +15,9 @@ COMMENT=	FFmpeg wrapper
 LIB_DEPENDS=	libavcodec0.so:${PORTSDIR}/multimedia/ffmpeg0
 
 LIBNAME=	libavbin.so.${PORTVERSION}
-PLIST_FILES=	lib/${LIBNAME} include/avbin.h
+PLIST_FILES=	include/avbin.h \
+		lib/${LIBNAME} \
+		lib/libavbin.so
 USE_LDCONFIG=	yes
 
 PORTDOCS=	*
@@ -37,7 +39,8 @@ do-build:
 		-lavcodec0 -lavformat0
 
 do-install:
-	${INSTALL_DATA} ${WRKSRC}/${LIBNAME} ${STAGEDIR}${PREFIX}/lib/
+	${INSTALL_PROGRAM} ${WRKSRC}/${LIBNAME} ${STAGEDIR}${PREFIX}/lib/
+	${LN} -s ${LIBNAME} ${STAGEDIR}${PREFIX}/lib/libavbin.so
 	${INSTALL_DATA} ${WRKSRC}/include/avbin.h ${STAGEDIR}${PREFIX}/include/
 	cd ${WRKSRC}/doc && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}/
 

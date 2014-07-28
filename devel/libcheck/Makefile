@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libcheck
-PORTVERSION=	0.9.13
+PORTVERSION=	0.9.14
 CATEGORIES=	devel
 MASTER_SITES=	SF/check/check/${PORTVERSION}
 DISTNAME=	check-${PORTVERSION}
@@ -33,7 +33,7 @@ post-patch:
 		-e '/^example[a-z]*dir = / s|(docdir)/example/|(exampledir)/|' \
 			${WRKSRC}/doc/Makefile.in
 
-post-build:
-	@${STRIP_CMD} ${WRKSRC}/src/.libs/libcheck.so.0
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libcheck.so.0.0.0
 
 .include <bsd.port.mk>

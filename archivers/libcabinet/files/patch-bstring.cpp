@@ -1,5 +1,5 @@
---- bstring.cpp.orig	2014-02-21 15:40:03.760303112 -0500
-+++ bstring.cpp	2014-02-21 15:41:19.474297650 -0500
+--- bstring.cpp.orig	2014-07-27 11:17:34.000000000 -0400
++++ bstring.cpp	2014-07-27 11:17:37.000000000 -0400
 @@ -15,7 +15,7 @@
  
  #include "bstring.h"
@@ -18,6 +18,15 @@
  	return temp += s;
  }
  
+@@ -150,7 +150,7 @@
+ 		if(strlen(str) < strlen(s))	// If more memory is needed
+ 			*this = s;			// Use assign function
+ 		else						// If stpcpy can be used
+-			stpcpy(str, s);		// Copy s into str
++			strcpy(str, s);		// Copy s into str
+ 	}
+ 
+ 	return *this;					// Return a refrence to this object
 @@ -217,4 +217,4 @@
  
  //*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/

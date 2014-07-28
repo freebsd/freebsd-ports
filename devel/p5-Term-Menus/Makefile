@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Term-Menus
-PORTVERSION=	2.66
+PORTVERSION=	2.79
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:REEDFISH
@@ -16,7 +16,7 @@ LICENSE=	AGPLv3
 BUILD_DEPENDS=	p5-Data-Dump-Streamer>0:${PORTSDIR}/devel/p5-Data-Dump-Streamer \
 		p5-Devel-Symdump>0:${PORTSDIR}/devel/p5-Devel-Symdump \
 		p5-PadWalker>0:${PORTSDIR}/devel/p5-PadWalker \
-		p5-Term-RawInput>0:${PORTSDIR}/devel/p5-Term-RawInput \
+		p5-Term-RawInput>=1.20:${PORTSDIR}/devel/p5-Term-RawInput \
 		p5-Term-ReadKey>0:${PORTSDIR}/devel/p5-Term-ReadKey
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 

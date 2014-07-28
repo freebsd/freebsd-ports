@@ -52,16 +52,16 @@ man/man8/ods-signerd.8.gz
 @exec install -d -o opendnssec -g opendnssec %D/var/opendnssec/tmp
 @exec install -d -o opendnssec -g opendnssec %D/var/opendnssec/signed
 @exec install -d -o opendnssec -g opendnssec %D/var/opendnssec/signconf
+@exec install -d -o opendnssec -g opendnssec %D/var/run/opendnssec
 @dirrm var/opendnssec/unsigned
 @dirrm var/opendnssec/tmp
 @dirrm var/opendnssec/signed
 @dirrm var/opendnssec/signconf
 @dirrm var/opendnssec
+@dirrmtry var/run/opendnssec
 @owner root
 @group wheel
 @dirrm %%DATADIR%%
 @dirrm %%ETCDIR%%
-@exec mkdir -p %D/var/run/opendnssec
-@dirrmtry var/run/opendnssec
 @dirrmtry var/run
 @dirrmtry var

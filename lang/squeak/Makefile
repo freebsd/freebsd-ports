@@ -45,7 +45,7 @@ NO_STAGE=	yes
 
 ##################################################
 DIST_SUBDIR=		squeak
-ONLY_FOR_ARCHS=		i386 amd64
+ONLY_FOR_ARCHS=		i386 amd64 powerpc
 MAN1=			squeak.1
 USE_GCC=		any
 USE_GL=			gl

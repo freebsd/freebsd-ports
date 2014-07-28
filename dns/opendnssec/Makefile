@@ -3,8 +3,9 @@
 
 PORTNAME=	opendnssec
 PORTVERSION=	1.4.6
+PORTREVISION=	1
 CATEGORIES=	dns
-MASTER_SITES=	http://dist.opendnssec.org/source/ 
+MASTER_SITES=	http://dist.opendnssec.org/source/
 
 MAINTAINER=	jaap@NLnetLabs.nl
 COMMENT=	Tool suite for maintaining DNSSEC

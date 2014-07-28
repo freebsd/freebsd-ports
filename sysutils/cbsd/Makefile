@@ -31,12 +31,8 @@ CBSD_HOME?=	${PREFIX}/cbsd
 USERS=	${PORTNAME}
 GROUPS=	${PORTNAME}
 
-.if ${OSVERSION} < 901000
-IGNORE=	does not support FreeBSD versions < 9.1
-.endif
-
-.if ${OSVERSION} < 902001
-RUN_DEPENDS+=	sysrc:${PORTSDIR}/sysutils/sysrc
+.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1000000
+IGNORE=	does not support FreeBSD versions < 10.0
 .endif
 
 do-install:

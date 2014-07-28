@@ -9,7 +9,7 @@ MASTER_SITES=	http://ftp.edgewall.com/pub/trac/ \
 		ftp://ftp.edgewall.com/pub/trac/
 DISTNAME=	Trac-${PORTVERSION}
 
-MAINTAINER=	clsung@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Enhanced wiki and issue tracking system for software projects
 
 LICENSE=	BSD3CLAUSE

@@ -3,7 +3,7 @@
 
 PORTNAME=	jogl
 PORTVERSION=	1.1.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics devel java
 MASTER_SITES=http://download.java.net/media/jogl/builds/archive/jsr-231-1.1.1/
 EXTRACT_SUFX=	-src.zip
@@ -13,8 +13,6 @@ COMMENT=	Java bindings for OpenGL
 
 LIB_DEPENDS=	libdrm.so:${PORTSDIR}/graphics/libdrm
 BUILD_DEPENDS=	${JAVALIBDIR}/antlr.jar:${PORTSDIR}/devel/antlr
-
-CONFLICTS=	jogamp-jogl-*
 
 NO_WRKSUBDIR=	yes
 

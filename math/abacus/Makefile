@@ -31,7 +31,7 @@ post-patch:
 
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/lib/linux20-gcc44/libabacus-osi.a ${STAGEDIR}${PREFIX}/lib/libabacus-osi.a
-	${INSTALL_DATA} ${WRKSRC}/lib/linux20-gcc44/libabacus-osi.so ${STAGEDIR}${PREFIX}/lib/libabacus-osi.so.1
+	${INSTALL_PROGRAM} ${WRKSRC}/lib/linux20-gcc44/libabacus-osi.so ${STAGEDIR}${PREFIX}/lib/libabacus-osi.so.1
 	${LN} -sf libabacus-osi.so.1 ${STAGEDIR}${PREFIX}/lib/libabacus-osi.so
 	cd ${WRKSRC}/Include && ${COPYTREE_SHARE} abacus ${STAGEDIR}${PREFIX}/include
 

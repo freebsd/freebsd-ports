@@ -10,6 +10,8 @@ MASTER_SITES=	http://hyperdex.org/src/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Replicant is a tool for creating replicated state machines
 
+BROKEN=		Fails to build
+
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/libpo6.pc:${PORTSDIR}/devel/libpo6
 LIB_DEPENDS=	libbusybee.so:${PORTSDIR}/devel/busybee \
 		libe.so:${PORTSDIR}/devel/libe \

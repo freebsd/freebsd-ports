@@ -8,7 +8,9 @@ MASTER_SITES=	http://dl.bytesex.org/releases/webfs/ \
 		http://www.bsd-geek.de/FreeBSD/distfiles/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A simple http server for static content
+COMMENT=	Simple http server for static content
+
+BROKEN=		Fails post-patch
 
 RUN_DEPENDS=	${LOCALBASE}/etc/mime.types:${PORTSDIR}/misc/mime-support
 

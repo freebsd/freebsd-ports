@@ -10,7 +10,7 @@ MASTER_SITES=	http://downloads.xiph.org/releases/libshout/ \
 		http://public.planetmirror.com/pub/xiph/releases/libshout/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Program that sends mp3 streams to an icecast/shoutcast server
+COMMENT=	Send mp3 streams to an icecast/shoutcast server
 
 GNU_CONFIGURE=	yes
 

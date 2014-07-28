@@ -1178,6 +1178,7 @@
     SUBDIR += py-pyscss
     SUBDIR += py-pysrt
     SUBDIR += py-pystache
+    SUBDIR += py-pytidylib
     SUBDIR += py-pyx12
     SUBDIR += py-qt4-xml
     SUBDIR += py-qt4-xmlpatterns

@@ -28,7 +28,7 @@ PORTEXAMPLES=	light.theme sample-config sample.theme
 NLS_USES=		gettext
 
 post-patch:
-	@${REINPLACE_CMD} -e '/build\/man\/bpython/d; /data\/bpython.desktop/d' ${WRKSRC}/${PYSETUP}
+	@${REINPLACE_CMD} -e '/build\/man\/bpython/d; /data\/bpython.desktop/d' ${WRKSRC}/setup.py
 
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/build/man/bpython.1 ${STAGEDIR}${PREFIX}/man/man1/

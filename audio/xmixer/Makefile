@@ -19,9 +19,11 @@ ALL_TARGET=	${PROGRAMS}
 PLIST_FILES=	bin/xmixer \
 		man/man1/xmixer.1.gz
 
-.include <bsd.port.pre.mk>
+OPTIONS_DEFINE=	GTK1
 
-.if ${HAVE_GNOME:Mgtk12}!=""
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MGTK1}
 USE_GNOME+=	gtk12
 PROGRAMS=	xmixer xgmixer
 MLINKS+=	xmixer.1 xgmixer.1
@@ -46,4 +48,4 @@ do-install:
 .endfor
 	${INSTALL_MAN} ${WRKSRC}/xmixer.man ${STAGEDIR}${MAN1PREFIX}/man/man1/xmixer.1
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -1,7 +1,13 @@
-Markdown is two things: (1) a plain text formatting syntax; and (2) a
-software tool that converts the plain text formatting to (X)HTML. The
-formatting syntax is designed to be easy and intuitive for web authors
-and resembles typical email formatting conventions. The resultant
-(X)HTML is structurally valid.
+This is a Python implementation of John Gruber's Markdown. It is almost
+completely compliant with the reference implementation, though there are a
+few very minor differences.
 
-WWW: https://pypi.python.org/pypi/Markdown
+Features:
+
+  * International Input
+  * Extensions
+  * Output Formats
+  * "Safe Modes"
+  * Command Line Interface
+
+WWW: http://packages.python.org/Markdown

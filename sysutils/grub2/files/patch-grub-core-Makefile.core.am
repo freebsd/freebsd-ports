@@ -1,0 +1,128 @@
+--- grub-core/Makefile.core.am.orig
++++ grub-core/Makefile.core.am
+@@ -32004,7 +32004,7 @@ endif
+ if COND_emu
+ platform_PROGRAMS += zfs.module
+ MODULE_FILES += zfs.module$(EXEEXT)
+-zfs_module_SOURCES  = fs/zfs/zfs.c fs/zfs/zfs_lzjb.c fs/zfs/zfs_sha256.c fs/zfs/zfs_fletcher.c  ## platform sources
++zfs_module_SOURCES  = fs/zfs/zfs.c fs/zfs/zfs_lzjb.c fs/zfs/zfs_lz4.c fs/zfs/zfs_sha256.c fs/zfs/zfs_fletcher.c  ## platform sources
+ nodist_zfs_module_SOURCES  =  ## platform nodist sources
+ zfs_module_LDADD  = 
+ zfs_module_CFLAGS  = $(AM_CFLAGS) $(CFLAGS_MODULE) 
+@@ -32026,7 +32026,7 @@ endif
+ if COND_i386_pc
+ platform_PROGRAMS += zfs.module
+ MODULE_FILES += zfs.module$(EXEEXT)
+-zfs_module_SOURCES  = fs/zfs/zfs.c fs/zfs/zfs_lzjb.c fs/zfs/zfs_sha256.c fs/zfs/zfs_fletcher.c  ## platform sources
++zfs_module_SOURCES  = fs/zfs/zfs.c fs/zfs/zfs_lzjb.c fs/zfs/zfs_lz4.c fs/zfs/zfs_sha256.c fs/zfs/zfs_fletcher.c  ## platform sources
+ nodist_zfs_module_SOURCES  =  ## platform nodist sources
+ zfs_module_LDADD  = 
+ zfs_module_CFLAGS  = $(AM_CFLAGS) $(CFLAGS_MODULE) 
+@@ -32048,7 +32048,7 @@ endif
+ if COND_i386_efi
+ platform_PROGRAMS += zfs.module
+ MODULE_FILES += zfs.module$(EXEEXT)
+-zfs_module_SOURCES  = fs/zfs/zfs.c fs/zfs/zfs_lzjb.c fs/zfs/zfs_sha256.c fs/zfs/zfs_fletcher.c  ## platform sources
++zfs_module_SOURCES  = fs/zfs/zfs.c fs/zfs/zfs_lzjb.c fs/zfs/zfs_lz4.c fs/zfs/zfs_sha256.c fs/zfs/zfs_fletcher.c  ## platform sources
+ nodist_zfs_module_SOURCES  =  ## platform nodist sources
+ zfs_module_LDADD  = 
+ zfs_module_CFLAGS  = $(AM_CFLAGS) $(CFLAGS_MODULE) 
+@@ -32070,7 +32070,7 @@ endif
+ if COND_i386_qemu
+ platform_PROGRAMS += zfs.module
+ MODULE_FILES += zfs.module$(EXEEXT)
+-zfs_module_SOURCES  = fs/zfs/zfs.c fs/zfs/zfs_lzjb.c fs/zfs/zfs_sha256.c fs/zfs/zfs_fletcher.c  ## platform sources
++zfs_module_SOURCES  = fs/zfs/zfs.c fs/zfs/zfs_lzjb.c fs/zfs/zfs_lz4.c fs/zfs/zfs_sha256.c fs/zfs/zfs_fletcher.c  ## platform sources
+ nodist_zfs_module_SOURCES  =  ## platform nodist sources
+ zfs_module_LDADD  = 
+ zfs_module_CFLAGS  = $(AM_CFLAGS) $(CFLAGS_MODULE) 
+@@ -32092,7 +32092,7 @@ endif
+ if COND_i386_coreboot
+ platform_PROGRAMS += zfs.module
+ MODULE_FILES += zfs.module$(EXEEXT)
+-zfs_module_SOURCES  = fs/zfs/zfs.c fs/zfs/zfs_lzjb.c fs/zfs/zfs_sha256.c fs/zfs/zfs_fletcher.c  ## platform sources
++zfs_module_SOURCES  = fs/zfs/zfs.c fs/zfs/zfs_lzjb.c fs/zfs/zfs_lz4.c fs/zfs/zfs_sha256.c fs/zfs/zfs_fletcher.c  ## platform sources
+ nodist_zfs_module_SOURCES  =  ## platform nodist sources
+ zfs_module_LDADD  = 
+ zfs_module_CFLAGS  = $(AM_CFLAGS) $(CFLAGS_MODULE) 
+@@ -32114,7 +32114,7 @@ endif
+ if COND_i386_multiboot
+ platform_PROGRAMS += zfs.module
+ MODULE_FILES += zfs.module$(EXEEXT)
+-zfs_module_SOURCES  = fs/zfs/zfs.c fs/zfs/zfs_lzjb.c fs/zfs/zfs_sha256.c fs/zfs/zfs_fletcher.c  ## platform sources
++zfs_module_SOURCES  = fs/zfs/zfs.c fs/zfs/zfs_lzjb.c fs/zfs/zfs_lz4.c fs/zfs/zfs_sha256.c fs/zfs/zfs_fletcher.c  ## platform sources
+ nodist_zfs_module_SOURCES  =  ## platform nodist sources
+ zfs_module_LDADD  = 
+ zfs_module_CFLAGS  = $(AM_CFLAGS) $(CFLAGS_MODULE) 
+@@ -32136,7 +32136,7 @@ endif
+ if COND_i386_ieee1275
+ platform_PROGRAMS += zfs.module
+ MODULE_FILES += zfs.module$(EXEEXT)
+-zfs_module_SOURCES  = fs/zfs/zfs.c fs/zfs/zfs_lzjb.c fs/zfs/zfs_sha256.c fs/zfs/zfs_fletcher.c  ## platform sources
++zfs_module_SOURCES  = fs/zfs/zfs.c fs/zfs/zfs_lzjb.c fs/zfs/zfs_lz4.c fs/zfs/zfs_sha256.c fs/zfs/zfs_fletcher.c  ## platform sources
+ nodist_zfs_module_SOURCES  =  ## platform nodist sources
+ zfs_module_LDADD  = 
+ zfs_module_CFLAGS  = $(AM_CFLAGS) $(CFLAGS_MODULE) 
+@@ -32158,7 +32158,7 @@ endif
+ if COND_x86_64_efi
+ platform_PROGRAMS += zfs.module
+ MODULE_FILES += zfs.module$(EXEEXT)
+-zfs_module_SOURCES  = fs/zfs/zfs.c fs/zfs/zfs_lzjb.c fs/zfs/zfs_sha256.c fs/zfs/zfs_fletcher.c  ## platform sources
++zfs_module_SOURCES  = fs/zfs/zfs.c fs/zfs/zfs_lzjb.c fs/zfs/zfs_lz4.c fs/zfs/zfs_sha256.c fs/zfs/zfs_fletcher.c  ## platform sources
+ nodist_zfs_module_SOURCES  =  ## platform nodist sources
+ zfs_module_LDADD  = 
+ zfs_module_CFLAGS  = $(AM_CFLAGS) $(CFLAGS_MODULE) 
+@@ -32180,7 +32180,7 @@ endif
+ if COND_mips_loongson
+ platform_PROGRAMS += zfs.module
+ MODULE_FILES += zfs.module$(EXEEXT)
+-zfs_module_SOURCES  = fs/zfs/zfs.c fs/zfs/zfs_lzjb.c fs/zfs/zfs_sha256.c fs/zfs/zfs_fletcher.c  ## platform sources
++zfs_module_SOURCES  = fs/zfs/zfs.c fs/zfs/zfs_lzjb.c fs/zfs/zfs_lz4.c fs/zfs/zfs_sha256.c fs/zfs/zfs_fletcher.c  ## platform sources
+ nodist_zfs_module_SOURCES  =  ## platform nodist sources
+ zfs_module_LDADD  = 
+ zfs_module_CFLAGS  = $(AM_CFLAGS) $(CFLAGS_MODULE) 
+@@ -32202,7 +32202,7 @@ endif
+ if COND_sparc64_ieee1275
+ platform_PROGRAMS += zfs.module
+ MODULE_FILES += zfs.module$(EXEEXT)
+-zfs_module_SOURCES  = fs/zfs/zfs.c fs/zfs/zfs_lzjb.c fs/zfs/zfs_sha256.c fs/zfs/zfs_fletcher.c  ## platform sources
++zfs_module_SOURCES  = fs/zfs/zfs.c fs/zfs/zfs_lzjb.c fs/zfs/zfs_lz4.c fs/zfs/zfs_sha256.c fs/zfs/zfs_fletcher.c  ## platform sources
+ nodist_zfs_module_SOURCES  =  ## platform nodist sources
+ zfs_module_LDADD  = 
+ zfs_module_CFLAGS  = $(AM_CFLAGS) $(CFLAGS_MODULE) 
+@@ -32224,7 +32224,7 @@ endif
+ if COND_powerpc_ieee1275
+ platform_PROGRAMS += zfs.module
+ MODULE_FILES += zfs.module$(EXEEXT)
+-zfs_module_SOURCES  = fs/zfs/zfs.c fs/zfs/zfs_lzjb.c fs/zfs/zfs_sha256.c fs/zfs/zfs_fletcher.c  ## platform sources
++zfs_module_SOURCES  = fs/zfs/zfs.c fs/zfs/zfs_lzjb.c fs/zfs/zfs_lz4.c fs/zfs/zfs_sha256.c fs/zfs/zfs_fletcher.c  ## platform sources
+ nodist_zfs_module_SOURCES  =  ## platform nodist sources
+ zfs_module_LDADD  = 
+ zfs_module_CFLAGS  = $(AM_CFLAGS) $(CFLAGS_MODULE) 
+@@ -32246,7 +32246,7 @@ endif
+ if COND_mips_arc
+ platform_PROGRAMS += zfs.module
+ MODULE_FILES += zfs.module$(EXEEXT)
+-zfs_module_SOURCES  = fs/zfs/zfs.c fs/zfs/zfs_lzjb.c fs/zfs/zfs_sha256.c fs/zfs/zfs_fletcher.c  ## platform sources
++zfs_module_SOURCES  = fs/zfs/zfs.c fs/zfs/zfs_lzjb.c fs/zfs/zfs_lz4.c fs/zfs/zfs_sha256.c fs/zfs/zfs_fletcher.c  ## platform sources
+ nodist_zfs_module_SOURCES  =  ## platform nodist sources
+ zfs_module_LDADD  = 
+ zfs_module_CFLAGS  = $(AM_CFLAGS) $(CFLAGS_MODULE) 
+@@ -32268,7 +32268,7 @@ endif
+ if COND_ia64_efi
+ platform_PROGRAMS += zfs.module
+ MODULE_FILES += zfs.module$(EXEEXT)
+-zfs_module_SOURCES  = fs/zfs/zfs.c fs/zfs/zfs_lzjb.c fs/zfs/zfs_sha256.c fs/zfs/zfs_fletcher.c  ## platform sources
++zfs_module_SOURCES  = fs/zfs/zfs.c fs/zfs/zfs_lzjb.c fs/zfs/zfs_lz4.c fs/zfs/zfs_sha256.c fs/zfs/zfs_fletcher.c  ## platform sources
+ nodist_zfs_module_SOURCES  =  ## platform nodist sources
+ zfs_module_LDADD  = 
+ zfs_module_CFLAGS  = $(AM_CFLAGS) $(CFLAGS_MODULE) 
+@@ -32290,7 +32290,7 @@ endif
+ if COND_mips_qemu_mips
+ platform_PROGRAMS += zfs.module
+ MODULE_FILES += zfs.module$(EXEEXT)
+-zfs_module_SOURCES  = fs/zfs/zfs.c fs/zfs/zfs_lzjb.c fs/zfs/zfs_sha256.c fs/zfs/zfs_fletcher.c  ## platform sources
++zfs_module_SOURCES  = fs/zfs/zfs.c fs/zfs/zfs_lzjb.c fs/zfs/zfs_lz4.c fs/zfs/zfs_sha256.c fs/zfs/zfs_fletcher.c  ## platform sources
+ nodist_zfs_module_SOURCES  =  ## platform nodist sources
+ zfs_module_LDADD  = 
+ zfs_module_CFLAGS  = $(AM_CFLAGS) $(CFLAGS_MODULE) 

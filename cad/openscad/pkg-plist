@@ -1,6 +1,7 @@
 bin/openscad
+man/man1/openscad.1.gz
+share/appdata/openscad.appdata.xml
 share/applications/openscad.desktop
-share/pixmaps/openscad.png
 %%DATADIR%%/examples/example001.scad
 %%DATADIR%%/examples/example002.scad
 %%DATADIR%%/examples/example003.scad
@@ -31,53 +32,61 @@ share/pixmaps/openscad.png
 %%DATADIR%%/examples/example021.scad
 %%DATADIR%%/examples/example022.scad
 %%DATADIR%%/examples/example023.scad
-%%DATADIR%%/libraries/MCAD/openscad_testing.py
-%%DATADIR%%/libraries/MCAD/bearing.scad
-%%DATADIR%%/libraries/MCAD/boxes.scad
-%%DATADIR%%/libraries/MCAD/fonts.scad
-%%DATADIR%%/libraries/MCAD/hardware.scad
-%%DATADIR%%/libraries/MCAD/lego_compatibility.scad
-%%DATADIR%%/libraries/MCAD/math.scad
-%%DATADIR%%/libraries/MCAD/multiply.scad
-%%DATADIR%%/libraries/MCAD/servos.scad
-%%DATADIR%%/libraries/MCAD/teardrop.scad
-%%DATADIR%%/libraries/MCAD/transformations.scad
-%%DATADIR%%/libraries/MCAD/gridbeam.scad
-%%DATADIR%%/libraries/MCAD/curves.scad
+%%DATADIR%%/examples/example024.scad
+%%DATADIR%%/libraries/MCAD/2Dshapes.scad
+%%DATADIR%%/libraries/MCAD/3d_triangle.scad
 %%DATADIR%%/libraries/MCAD/README.markdown
 %%DATADIR%%/libraries/MCAD/TODO
-%%DATADIR%%/libraries/MCAD/constants.scad
-%%DATADIR%%/libraries/MCAD/screw.scad
-%%DATADIR%%/libraries/MCAD/metric_fastners.scad
-%%DATADIR%%/libraries/MCAD/bitmap/bitmap.scad
-%%DATADIR%%/libraries/MCAD/bitmap/README
-%%DATADIR%%/libraries/MCAD/bitmap/height_map.scad
-%%DATADIR%%/libraries/MCAD/bitmap/name_tag.scad
-%%DATADIR%%/libraries/MCAD/bitmap/letter_necklace.scad
-%%DATADIR%%/libraries/MCAD/bitmap/alphabet_block.scad
-%%DATADIR%%/libraries/MCAD/involute_gears.scad
-%%DATADIR%%/libraries/MCAD/3d_triangle.scad
-%%DATADIR%%/libraries/MCAD/get_submodules.py
-%%DATADIR%%/libraries/MCAD/polyholes.scad
-%%DATADIR%%/libraries/MCAD/nuts_and_bolts.scad
-%%DATADIR%%/libraries/MCAD/utilities.scad
-%%DATADIR%%/libraries/MCAD/stepper.scad
-%%DATADIR%%/libraries/MCAD/triangles.scad
-%%DATADIR%%/libraries/MCAD/motors.scad
-%%DATADIR%%/libraries/MCAD/trochoids.scad
-%%DATADIR%%/libraries/MCAD/test_mcad.py
 %%DATADIR%%/libraries/MCAD/__init__.py
-%%DATADIR%%/libraries/MCAD/lgpl-2.1.txt
-%%DATADIR%%/libraries/MCAD/regular_shapes.scad
-%%DATADIR%%/libraries/MCAD/openscad_utils.py
-%%DATADIR%%/libraries/MCAD/shapes.scad
-%%DATADIR%%/libraries/MCAD/materials.scad
-%%DATADIR%%/libraries/MCAD/test_docs.py
+%%DATADIR%%/libraries/MCAD/bearing.scad
+%%DATADIR%%/libraries/MCAD/bitmap/README
+%%DATADIR%%/libraries/MCAD/bitmap/alphabet_block.scad
+%%DATADIR%%/libraries/MCAD/bitmap/bitmap.scad
+%%DATADIR%%/libraries/MCAD/bitmap/height_map.scad
+%%DATADIR%%/libraries/MCAD/bitmap/letter_necklace.scad
+%%DATADIR%%/libraries/MCAD/bitmap/name_tag.scad
+%%DATADIR%%/libraries/MCAD/boxes.scad
+%%DATADIR%%/libraries/MCAD/constants.scad
+%%DATADIR%%/libraries/MCAD/curves.scad
+%%DATADIR%%/libraries/MCAD/fonts.scad
 %%DATADIR%%/libraries/MCAD/gears.scad
+%%DATADIR%%/libraries/MCAD/get_submodules.py
+%%DATADIR%%/libraries/MCAD/gridbeam.scad
+%%DATADIR%%/libraries/MCAD/hardware.scad
+%%DATADIR%%/libraries/MCAD/involute_gears.scad
+%%DATADIR%%/libraries/MCAD/layouts.scad
+%%DATADIR%%/libraries/MCAD/lego_compatibility.scad
+%%DATADIR%%/libraries/MCAD/lgpl-2.1.txt
+%%DATADIR%%/libraries/MCAD/libtriangles.scad
+%%DATADIR%%/libraries/MCAD/materials.scad
+%%DATADIR%%/libraries/MCAD/math.scad
+%%DATADIR%%/libraries/MCAD/metric_fastners.scad
+%%DATADIR%%/libraries/MCAD/motors.scad
+%%DATADIR%%/libraries/MCAD/multiply.scad
+%%DATADIR%%/libraries/MCAD/nuts_and_bolts.scad
+%%DATADIR%%/libraries/MCAD/openscad_testing.py
+%%DATADIR%%/libraries/MCAD/openscad_utils.py
+%%DATADIR%%/libraries/MCAD/polyholes.scad
+%%DATADIR%%/libraries/MCAD/regular_shapes.scad
+%%DATADIR%%/libraries/MCAD/screw.scad
+%%DATADIR%%/libraries/MCAD/servos.scad
+%%DATADIR%%/libraries/MCAD/shapes.scad
+%%DATADIR%%/libraries/MCAD/stepper.scad
+%%DATADIR%%/libraries/MCAD/teardrop.scad
+%%DATADIR%%/libraries/MCAD/test_docs.py
+%%DATADIR%%/libraries/MCAD/test_mcad.py
+%%DATADIR%%/libraries/MCAD/transformations.scad
+%%DATADIR%%/libraries/MCAD/triangles.scad
+%%DATADIR%%/libraries/MCAD/trochoids.scad
 %%DATADIR%%/libraries/MCAD/units.scad
 %%DATADIR%%/libraries/MCAD/unregular_shapes.scad
+%%DATADIR%%/libraries/MCAD/utilities.scad
+share/pixmaps/openscad.png
+@dirrmtry share/appdata
+@dirrm %%DATADIR%%/examples
+@dirrm %%DATADIR%%/libraries/MCAD/SolidPython
+@dirrm %%DATADIR%%/libraries/MCAD/ThingDoc
 @dirrm %%DATADIR%%/libraries/MCAD/bitmap
 @dirrm %%DATADIR%%/libraries/MCAD
 @dirrm %%DATADIR%%/libraries
-@dirrm %%DATADIR%%/examples
 @dirrm %%DATADIR%%

@@ -94,6 +94,7 @@ bin/exiftool
 %%PERL5_MAN3%%/Image::ExifTool::Nikon.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::NikonCapture.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::NikonCustom.3.gz
+%%PERL5_MAN3%%/Image::ExifTool::Nintendo.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::OOXML.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::Ogg.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::Olympus.3.gz
@@ -105,6 +106,7 @@ bin/exiftool
 %%PERL5_MAN3%%/Image::ExifTool::PNG.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::PPM.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::PSP.3.gz
+%%PERL5_MAN3%%/Image::ExifTool::Palm.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::Panasonic.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::PanasonicRaw.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::Pentax.3.gz
@@ -283,6 +285,7 @@ bin/exiftool
 %%SITE_PERL%%/Image/ExifTool/Nikon.pm
 %%SITE_PERL%%/Image/ExifTool/NikonCapture.pm
 %%SITE_PERL%%/Image/ExifTool/NikonCustom.pm
+%%SITE_PERL%%/Image/ExifTool/Nintendo.pm
 %%SITE_PERL%%/Image/ExifTool/OOXML.pm
 %%SITE_PERL%%/Image/ExifTool/Ogg.pm
 %%SITE_PERL%%/Image/ExifTool/Olympus.pm
@@ -294,6 +297,7 @@ bin/exiftool
 %%SITE_PERL%%/Image/ExifTool/PNG.pm
 %%SITE_PERL%%/Image/ExifTool/PPM.pm
 %%SITE_PERL%%/Image/ExifTool/PSP.pm
+%%SITE_PERL%%/Image/ExifTool/Palm.pm
 %%SITE_PERL%%/Image/ExifTool/Panasonic.pm
 %%SITE_PERL%%/Image/ExifTool/PanasonicRaw.pm
 %%SITE_PERL%%/Image/ExifTool/Pentax.pm

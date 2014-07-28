@@ -1,14 +1,12 @@
 # Created by: sem@FreeBSD.org
-# $FreeBSD: head/sysutils/grub2/Makefile 343743 2014-02-11 14:12:39Z miwi $
+# $FreeBSD$
 
 PORTNAME=	grub2
-PORTVERSION=	2.02
-PORTREVISION=	2
+PORTVERSION=	2.00
+PORTREVISION=	5
 CATEGORIES=	sysutils
-MASTER_SITES=   http://www.pcbsd.org/~kris/software/ \
-		ftp://ftp.pcbsd.org/pub/software/
-DISTNAME=	grub-${PORTVERSION}_1
-WRKSRC=		${WRKDIR}/grub-${PORTVERSION}
+MASTER_SITES=	GNU/grub
+DISTNAME=	grub-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Multiboot boot loader
@@ -16,18 +14,15 @@ COMMENT=	Multiboot boot loader
 LICENSE=	GPLv3
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/flex:${PORTSDIR}/textproc/flex \
-		${LOCALBASE}/bin/bash:${PORTSDIR}/shells/bash \
 		help2man:${PORTSDIR}/misc/help2man
 
 CONFLICTS=	grub-0*
 SSP_UNSAFE=	yes
-USE_XZ=		yes
 USE_GCC=	yes
-USE_PYTHON=	yes
 USE_AUTOTOOLS=	automake aclocal autoconf
 ACLOCAL_ARGS=	-Im4
 GNU_CONFIGURE=	yes
-USES=		bison gettext gmake
+USES=		bison gettext gmake tar:xz
 ONLY_FOR_ARCHS=	i386 amd64
 INFO=		grub grub-dev
 MAKE_JOBS_UNSAFE=	yes
@@ -37,51 +32,31 @@ CONFIGURE_ENV=	CPP="${CC} -E" \
 		LEX=${LOCALBASE}/bin/flex
 
 OPTIONS_DEFINE=	MKFONT FUSE
+OPTIONS_SUB=	yes
 MKFONT_DESC=	Build grub-mkfont (require freetype2)
 FUSE_DESC=	Build grub-mount (require FUSE)
 
+MKFONT_CONFIGURE_ENABLE=	grub-mkfont
+MKFONT_LIB_DEPENDS=		libfreetype.so:${PORTSDIR}/print/freetype2
+MKFONT_BUILD_DEPENDS=		${LOCALBASE}/lib/X11/fonts/dejavu/DejaVuSans.ttf:${PORTSDIR}/x11-fonts/dejavu
+
+FUSE_CONFIGURE_ENABLE=		grub-mount
+FUSE_LIB_DEPENDS=		libfuse.so:${PORTSDIR}/sysutils/fusefs-libs
+
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} != "amd64"
-EFIEMU=		"@comment "
-.endif
-
-PLIST_SUB+=	EFIEMU=${EFIEMU}
-
-.if ${PORT_OPTIONS:MMKFONT}
-LIB_DEPENDS+=	libfreetype.so:${PORTSDIR}/print/freetype2
-BUILD_DEPENDS+=	${LOCALBASE}/lib/X11/fonts/dejavu/DejaVuSans.ttf:${PORTSDIR}/x11-fonts/dejavu
-MAN1+=		grub-mkfont.1
-CONFIGURE_ARGS+=	--enable-grub-mkfont
+.if ${ARCH} != amd64
+PLIST_SUB+=	EFIEMU="@comment "
 .else
-CONFIGURE_ARGS+=	--disable-grub-mkfont
-MKFONT=		"@comment "
+PLIST_SUB+=	EFIEMU=""
 .endif
-
-PLIST_SUB+=	MKFONT=${MKFONT}
-
-.if ${PORT_OPTIONS:MFUSE}
-LIB_DEPENDS+=	libfuse.so:${PORTSDIR}/sysutils/fusefs-libs
-CONFIGURE_ARGS+=	--enable-grub-mount
-.else
-CONFIGURE_ARGS+=	--disable-grub-mount
-FUSE=		"@comment "
-.endif
-
-PLIST_SUB+=	FUSE=${FUSE}
 
 post-patch:
 	@${LN} -s ${LOCALBASE}/lib/X11/fonts/dejavu/DejaVuSans.ttf ${WRKSRC}
 	@${TOUCH} -t 200001010000 ${WRKSRC}/Makefile.util.def
 
-pre-configure:
-	@${REINPLACE_CMD} -e 's|python|${PYTHON_CMD}|g' ${WRKSRC}/autogen.sh
-	cd ${WRKSRC} && ./autogen.sh
-
 post-configure:
-	@${LN} -sfh /usr/include/machine /usr/include/sys /usr/include/x86 ${WRKSRC}/grub-core
-
-post-install:
-	@${RM} -rf ${STAGEDIR}${PREFIX}/lib/charset.alias
+	@${LN} -sfh /usr/include/machine /usr/include/sys /usr/include/x86 \
+		${WRKSRC}/grub-core
 
 .include <bsd.port.post.mk>

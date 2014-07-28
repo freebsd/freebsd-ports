@@ -5,5 +5,6 @@ mingw32/lib/libgmp.la
 mingw32/lib/libgmpxx.a
 mingw32/lib/libgmpxx.la
 @dirrmtry mingw32/include
+@dirrmtry mingw32/info
 @dirrmtry mingw32/lib
 @dirrmtry mingw32
