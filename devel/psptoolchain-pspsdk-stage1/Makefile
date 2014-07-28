@@ -3,19 +3,20 @@
 
 PORTNAME=		pspsdk
 PORTVERSION=		20111215
+PORTREVISION=		1
 CATEGORIES=		devel
 MASTER_SITES=		http://www.potion-studios.com/
 PKGNAMEPREFIX=		psptoolchain-
 PKGNAMESUFFIX?=		-stage1
 
-MAINTAINER= ports@FreeBSD.org
+MAINTAINER=		tphilipp@potion-studios.com
 COMMENT=		PlayStation Portable development toolchain ${PORTNAME}
 
 PSP_SDK_STAGE_PREFIX=	psp/stage1
 
-USE_AUTOTOOLS=		libtool:env aclocal:env autoheader:env automake:env autoconf:env
+USE_AUTOTOOLS=		aclocal:env autoheader:env automake:env autoconf:env
 HAS_CONFIGURE=		yes
-USES=		gmake
+USES=			gmake libtool
 CONFIGURE_ARGS?=	--prefix=${PREFIX}/${PSP_SDK_STAGE_PREFIX} \
 			--with-pspdev="${LOCALBASE}/${PSP_SDK_STAGE_PREFIX}"
 
@@ -26,7 +27,6 @@ CONFIGURE_ARGS?=	--prefix=${PREFIX}/${PSP_SDK_STAGE_PREFIX} \
 INSTALL_TARGET=		install-data
 NO_BUILD=		yes
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -E 's/^(prefix="\$$pspdev")$$/#\1/' ${WRKSRC}/configure.ac
 	@${REINPLACE_CMD} -E 's/^(psp_targetdir=")psp(")$$/\1.\2/' ${WRKSRC}/configure.ac
