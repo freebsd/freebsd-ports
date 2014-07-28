@@ -7,7 +7,7 @@ PORTREVISION=	5
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 
-MAINTAINER=	snb@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Splat is the Scalable Periodic LDAP Attribute Transmogrifier
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/zconfig:${PORTSDIR}/devel/py-zconfig \
