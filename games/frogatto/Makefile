@@ -3,6 +3,7 @@
 
 PORTNAME=	frogatto
 PORTVERSION=	1.3.1
+PORTREVISION=	1
 CATEGORIES=	games
 
 MAINTAINER=	fiziologus@gmail.com
@@ -20,13 +21,15 @@ GH_COMMIT=	58bd7c6
 
 USES=		gmake pkgconfig
 ALL_TARGET=	game server
-USE_GL=		glew
-USE_SDL=	image mixer ttf
+USE_GL=		glew glu
+USE_SDL=	sdl image mixer ttf
 
 PLIST_FILES=	bin/${PORTNAME} bin/${PORTNAME}-server
 
 post-patch:
-	@${ECHO_CMD} >> ${WRKSRC}/src/difficulty.hpp
+	@${REINPLACE_CMD} -e \
+		's|-lpthread|${PTHREAD_LIBS}|g ; \
+		s|-Werror||' ${WRKSRC}/Makefile
 	@${REINPLACE_CMD} -e 's,%lu,%u,' ${WRKSRC}/src/server.cpp
 	@${REINPLACE_CMD} -e 's,__linux__,__${OPSYS}__,' \
 		${WRKSRC}/src/clipboard.cpp
