@@ -7,7 +7,6 @@ PORTREVISION=	9
 CATEGORIES=	graphics
 MASTER_SITES=	http://samba.org/picturebook/
 DISTNAME=	capture
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	SONY VAIO camera capture utility
@@ -16,6 +15,7 @@ ONLY_FOR_ARCHS=	i386
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 USE_GNOME=	imlib
+USES=		tar:tgz
 
 PLIST_FILES=	bin/capture sbin/setbrightness sbin/vaiobat
 PORTDOCS=	README README.FreeBSD

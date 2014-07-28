@@ -1,0 +1,11 @@
+--- ./preconf/X11/Imakefile.org	Wed Feb  8 11:48:30 1995
++++ ./preconf/X11/Imakefile	Thu Jun 12 10:35:35 1997
+@@ -2,7 +2,7 @@
+         DEPLIBS = $(DEPXLIB)
+ LOCAL_LIBRARIES = $(XLIB)
+ 
+-all:
++all::
+ 	@ echo "#"
+ 	@ echo LIBPATH = -L$(USRLIBDIR)
+ 	@ echo INCLUDES = $(ALLINCLUDES)
