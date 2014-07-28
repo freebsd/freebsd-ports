@@ -23,7 +23,7 @@ USE_XORG=	xpm x11 xaw
 OPTIONS_DEFINE=	DOCS
 
 pre-build:
-	cd ${WRKSRC} && ${MAKE_CMD} readme.var
+	(cd ${WRKSRC} && ${MAKE_CMD} readme.var)
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/sol ${STAGEDIR}${PREFIX}/bin

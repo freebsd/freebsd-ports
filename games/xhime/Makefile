@@ -27,8 +27,8 @@ post-install:
 	#${GZIP_CMD} ${STAGEDIR}${PREFIX}/man/ja/man6/xhime.6
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/doc/ja/xhime
 	@(cd ${WRKSRC};\
-	${INSTALL_DATA} xhime-doc.euc xhime.doc rh110-doc.euc \
-		${STAGEDIR}${PREFIX}/share/doc/ja/xhime; \
+		${INSTALL_DATA} xhime-doc.euc xhime.doc rh110-doc.euc \
+			${STAGEDIR}${PREFIX}/share/doc/ja/xhime; \
 	)
 
 .include <bsd.port.mk>

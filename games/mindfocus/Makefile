@@ -17,9 +17,7 @@ RESTRICTED=	'contains commercial character data'
 
 DOCSDIR=	${PREFIX}/share/doc/ja/${PORTNAME}
 
-OPTIONS_DEFINE=	DOCS
-
-.include <bsd.port.options.mk>
+OPTIONS_DEFINE=	DOCS EXAMPLES
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
@@ -36,13 +34,11 @@ post-install:
 	${INSTALL_DATA} ${WRKDIR}/pixmaps/$i ${STAGEDIR}${EXAMPLESDIR}/pixmaps
 .endfor
 
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_MAN} ${WRKSRC}/doc/HISTORY.euc ${STAGEDIR}${DOCSDIR}
 	${INSTALL_MAN} ${WRKSRC}/doc/MFC.euc ${STAGEDIR}${DOCSDIR}
 	${INSTALL_MAN} ${WRKSRC}/doc/README.euc ${STAGEDIR}${DOCSDIR}
 	${INSTALL_MAN} ${WRKSRC}/doc/SCRIPT.euc ${STAGEDIR}${DOCSDIR}
 	${INSTALL_MAN} ${WRKSRC}/doc/TODO.euc ${STAGEDIR}${DOCSDIR}
-.endif
 
 .include <bsd.port.mk>
