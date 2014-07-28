@@ -9,7 +9,6 @@ MASTER_SITES=	http://www.dridus.com/~nyef/darcnes/download/ \
 		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR= grembo
 DISTNAME=	dn${PORTVERSION}
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	multi-system emulator
@@ -19,11 +18,15 @@ NO_CDROM=	Commercial use is restricted
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 WANT_GNOME=	yes
-USES=		gmake
+USES=		gmake tar:tgz
 MAKE_ARGS=	CC="${CC}" TARGET_CC="${CC}" CXX="${CXX}" TARGET_CXX="${CXX}" \
 		AS="${AS}" TARGET_AS="${CC}" LD="${LD}" TARGET_LD="${CC}"
 
 OPTIONS_DEFINE=	DOCS
+OPTIONS_SINGLE=	BACKEND
+OPTIONS_SINGLE_BACKEND=	X11 GTK1 SVGALIB
+OPTIONS_DEFAULT=X11
+BACKEND_DESC=	GUI backend
 
 .include <bsd.port.pre.mk>
 
@@ -33,18 +36,20 @@ MAKE_ARGS+=	C_ONLY=-DC_ONLY
 MAKE_ARGS+=	MACH_TYPES=-DMACH_TYPES=\\\"types-i386.h\\\"
 .endif
 
-.if ${HAVE_GNOME:Mgtk12}!=""
+.if ${PORT_OPTIONS:MGTK1}
 USE_GNOME=	gtk12
 MAKE_ARGS+=	TARGET=Linux_GTK
 PKGNAMESUFFIX=	-gtk
-.else
-.if defined(WITH_SVGALIB)
+.endif
+
+.if ${PORT_OPTIONS:MSVGALIB}
 LIB_DEPENDS+=	libvga.so:${PORTSDIR}/graphics/svgalib
 MAKE_ARGS+=	TARGET=Linux_svgalib
 PKGNAMESUFFIX=	-svgalib
-.else
-USE_XORG=	x11 xaw xext xmu xt
 .endif
+
+.if ${PORT_OPTIONS:MX11}
+USE_XORG=	x11 xaw xext xmu xt
 .endif
 
 post-patch:
