@@ -19,7 +19,6 @@ INSTALL_TARGET=	install-a4
 .endif
 
 MAKEFILE=	Makefile.dist
-MAKE_ARGS=	STAGEDIR=${STAGEDIR}
 
 post-install:
 .for a in ${LINKS}
