@@ -18,7 +18,7 @@ MAINTAINER=	ports@FreeBSD.org
 
 COMMENT=	FSF GCC 4.x for Atmel AVR 8-bit RISC cross-development
 
-BROKEN=		Fails to configure with avr-binutils 2.24
+BROKEN=		Fails to build with avr-binutils 2.24
 
 BUILD_DEPENDS=	avr-as:${PORTSDIR}/devel/avr-binutils \
 		avr-ld:${PORTSDIR}/devel/avr-binutils
