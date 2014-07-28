@@ -1,0 +1,31 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+# PROVIDE: hbase_regionserver
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# hbase_regionserver_enable (bool):  Set to NO by default.
+#                                    Set it to YES to enable HBase regionserver.
+
+. /etc/rc.subr
+
+name=hbase_regionserver
+rcvar=hbase_regionserver_enable
+
+load_rc_config "${name}"
+
+: ${hbase_regionserver_enable:=NO}
+: ${hbase_regionserver_user:=%%HBASE_USER%%}
+
+command="%%PREFIX%%/hbase/bin/hbase-daemon.sh"
+command_args='--config %%ETCDIR%% start regionserver'
+
+stop_cmd=hbase_regionserver_stop
+
+hbase_regionserver_stop () {
+  su -m ${hbase_regionserver_user} -c "${command} --config %%ETCDIR%% stop regionserver"
+}
+
+run_rc_command "$1"

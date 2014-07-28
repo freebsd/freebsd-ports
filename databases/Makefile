@@ -103,6 +103,7 @@
     SUBDIR += gtksql
     SUBDIR += hamsterdb
     SUBDIR += hashtypes
+    SUBDIR += hbase
     SUBDIR += hiredis
     SUBDIR += hk_classes
     SUBDIR += hs-mysql
