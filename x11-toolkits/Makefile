@@ -211,6 +211,7 @@
     SUBDIR += qt5-declarative
     SUBDIR += qt5-gui
     SUBDIR += qt5-quick
+    SUBDIR += qt5-quickcontrols
     SUBDIR += qt5-widgets
     SUBDIR += qtada
     SUBDIR += qwt5
