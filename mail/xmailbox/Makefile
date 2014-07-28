@@ -15,19 +15,15 @@ USE_XORG=	xaw
 
 OPTIONS_DEFINE=	DOCS
 
-.include <bsd.port.options.mk>
-
 post-patch:
 	@${REINPLACE_CMD} -e "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/XMailbox.ad
 
 post-install:
-	@${MKDIR} ${STAGEDIR}${PREFIX}/share/xmailbox
-	${INSTALL_DATA} ${WRKSRC}/dingdong.au ${STAGEDIR}${PREFIX}/share/xmailbox
-	${INSTALL_DATA} ${WRKSRC}/ugotmail.au ${STAGEDIR}${PREFIX}/share/xmailbox
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${STAGEDIR}${PREFIX}/share/doc/xmailbox
-	${INSTALL_DATA} ${WRKSRC}/DISCLAIMER ${STAGEDIR}${PREFIX}/share/doc/xmailbox
-	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${PREFIX}/share/doc/xmailbox
-.endif
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/dingdong.au ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/ugotmail.au ${STAGEDIR}${DATADIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/DISCLAIMER ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
