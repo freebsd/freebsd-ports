@@ -5,8 +5,7 @@ PORTNAME=	swhplugins
 PORTVERSION=	0.4.15
 PORTREVISION=	4
 CATEGORIES=	audio
-MASTER_SITES=	http://plugin.org.uk/releases/%SUBDIR%/
-MASTER_SITE_SUBDIR=	${PORTVERSION}
+MASTER_SITES=	http://plugin.org.uk/releases/${PORTVERSION}/
 DISTNAME=	swh-plugins-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
@@ -19,8 +18,7 @@ LIB_DEPENDS=	libfftw3f.so:${PORTSDIR}/math/fftw3-float
 # includes assembler code
 ONLY_FOR_ARCHS=	i386 amd64
 
-USES=		gmake pkgconfig
-USE_AUTOTOOLS=	libtool
+USES=		gmake libtool pkgconfig
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
