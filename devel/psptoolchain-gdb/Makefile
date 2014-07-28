@@ -3,18 +3,18 @@
 
 PORTNAME=		gdb
 PORTVERSION=		7.3.1
+PORTREVISION=		1
 CATEGORIES=		devel
 MASTER_SITES=		${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}/
 PKGNAMEPREFIX=		psptoolchain-
 
-MAINTAINER= ports@FreeBSD.org
+MAINTAINER=		tphilipp@potion-studios.com
 COMMENT=		PlayStation Portable development toolchain ${PORTNAME}
 
 BUILD_DEPENDS=		${LOCALBASE}/psp/sdk/lib/libpspsdk.a:${PORTSDIR}/devel/psptoolchain-pspsdk-stage2
 
-USES=			gmake
-USE_BZIP2=		yes
+USES=			gmake tar:bzip2
 USE_CSTD=		gnu89
 
 HAS_CONFIGURE=		yes
@@ -25,12 +25,7 @@ CONFIGURE_ARGS=		--prefix=${PREFIX} \
 			--disable-install-libiberty \
 			--mandir=${PREFIX}/man
 
-MAN1=			psp-gdb.1 \
-			psp-gdbtui.1 \
-			psp-run.1
-
 # Disable installation of .info files and libiberty.
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -E 's/^(INFO_DEPS.*=)(.*)/\1#\2/' ${WRKSRC}/bfd/doc/Makefile.in
 	@${REINPLACE_CMD} -E 's/^(INFO_DEPS.*=)(.*)/\1#\2/' ${WRKSRC}/gdb/doc/Makefile.in
