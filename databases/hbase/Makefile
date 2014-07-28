@@ -1,0 +1,75 @@
+# Created by: Dmitry Sivachenko <mitya@yandex-team.ru>
+# $FreeBSD$
+
+PORTNAME=	hbase
+PORTVERSION=	0.98.4
+CATEGORIES=	databases java
+MASTER_SITES=	${MASTER_SITE_APACHE} \
+		LOCAL/demon/:maven \
+		http://people.freebsd.org/~demon/:maven
+MASTER_SITE_SUBDIR=${PORTNAME}/${PORTNAME}-${PORTVERSION}
+DISTFILES=	${PORTNAME}-${PORTVERSION}-src${EXTRACT_SUFX} FreeBSD-hbase-${PORTVERSION}-maven-repository.tar.gz:maven
+DIST_SUBDIR=	hadoop
+
+MAINTAINER=	demon@FreeBSD.org
+COMMENT=	Hadoop database, a distributed, scalable, big data store
+
+LICENSE=	APACHE20
+
+BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash \
+		${LOCALBASE}/share/java/maven3/bin/mvn:${PORTSDIR}/devel/maven3
+RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash \
+		${LOCALBASE}/zookeeper/bin/zkServer.sh:${PORTSDIR}/devel/zookeeper
+
+USE_JAVA=	yes
+JAVA_VERSION=	1.7+
+
+OPTIONS_DEFINE=	DOCS
+
+HBASE_LOGDIR=	/var/log/${PORTNAME}
+HBASE_RUNDIR=	/var/run/${PORTNAME}
+
+HBASE_DIST=	${WRKSRC}/hbase-assembly/target/${PORTNAME}-${PORTVERSION}
+
+HBASE_USER=	hbase
+HBASE_GROUP=	hbase
+USERS=		${HBASE_USER}
+GROUPS=		${HBASE_GROUP}
+
+SUB_FILES=	hbase-env-dist.sh
+USE_RC_SUBR=    hbase_master hbase_regionserver
+SUB_LIST=	HBASE_USER="${HBASE_USER}" \
+		JAVA_HOME="${JAVA_HOME}" \
+		HBASE_LOG_DIR="${HBASE_LOGDIR}" \
+		HBASE_PID_DIR="${HBASE_RUNDIR}"
+PLIST_SUB=	HBASE_USER=${HBASE_USER} \
+		HBASE_GROUP=${HBASE_GROUP} \
+		HBASE_LOGDIR=${HBASE_LOGDIR} \
+		HBASE_RUNDIR=${HBASE_RUNDIR}
+
+post-patch:
+	${REINPLACE_CMD} -e "s#%%ETCDIR%%#${ETCDIR}#" ${WRKSRC}/conf/hbase-env.sh
+	${RM} ${WRKSRC}/conf/hbase-env.sh.bak ${WRKSRC}/conf/hbase-env.sh.orig
+
+do-build:
+	cd ${WRKSRC} && bash dev-support/generate-hadoopX-poms.sh ${PORTVERSION}-RELEASE ${PORTVERSION}-hadoop2-RELEASE
+	cd ${WRKSRC} && ${LOCALBASE}/share/java/maven3/bin/mvn -Dmaven.repo.local=${WRKDIR}/m2 --offline clean install -Prelease,native -DskipTests
+	cd ${WRKSRC} && ${LOCALBASE}/share/java/maven3/bin/mvn -Dmaven.repo.local=${WRKDIR}/m2 --offline install -DskipTests site assembly:single -Prelease,native
+
+post-build:
+	cd ${WRKSRC}/hbase-assembly/target && ${TAR} xf ${PORTNAME}-${PORTVERSION}-bin.tar.gz
+	${RM} ${HBASE_DIST}/conf/*.cmd
+
+do-install:
+	${MKDIR} ${STAGEDIR}${PREFIX}/hbase/bin
+	cd ${HBASE_DIST}/bin && ${INSTALL_SCRIPT} *.sh hbase ${STAGEDIR}${PREFIX}/hbase/bin/
+	${MKDIR} ${STAGEDIR}${ETCDIR}
+	cd ${HBASE_DIST} && ${COPYTREE_SHARE} conf ${STAGEDIR}${PREFIX}/hbase/
+	${INSTALL_DATA} ${WRKDIR}/hbase-env-dist.sh ${STAGEDIR}${ETCDIR}/
+	cd ${HBASE_DIST}/docs && ${COPYTREE_SHARE} "*" ${STAGEDIR}${DOCSDIR}/
+	cd ${HBASE_DIST} && ${COPYTREE_SHARE} hbase-webapps ${STAGEDIR}${PREFIX}/hbase/
+	cd ${HBASE_DIST} && ${COPYTREE_SHARE} lib ${STAGEDIR}${PREFIX}/hbase/ "! -name hadoop-*.jar"
+	${MKDIR} ${STAGEDIR}${HBASE_LOGDIR}
+	${MKDIR} ${STAGEDIR}${HBASE_RUNDIR}
+
+.include <bsd.port.mk>
