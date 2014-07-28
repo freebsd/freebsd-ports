@@ -262,7 +262,6 @@
     SUBDIR += tex-formats
     SUBDIR += tex-jadetex
     SUBDIR += tex-luatex
-    SUBDIR += tex-mfpic
     SUBDIR += tex-omegaware-old
     SUBDIR += tex-ptexenc
     SUBDIR += tex-texmflocal
@@ -275,7 +274,6 @@
     SUBDIR += texlive-full
     SUBDIR += texlive-infra
     SUBDIR += texlive-texmf
-    SUBDIR += texpower
     SUBDIR += texvc
     SUBDIR += tgif2tex
     SUBDIR += transfig

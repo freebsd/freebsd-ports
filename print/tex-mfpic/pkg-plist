@@ -1,2 +1,0 @@
-@exec %%MKTEXLSR%% %D/%%TEXMFDIR%%
-@unexec %%MKTEXLSR%% %D/%%TEXMFDIR%%
