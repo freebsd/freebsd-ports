@@ -1,0 +1,111 @@
+--- Makefile.dist.orig	1993-08-01 20:28:21.000000000 +0000
++++ Makefile.dist
+@@ -45,11 +45,14 @@ PROLOGUE = -DPROLOGUE=\"$(MPLIBDIR)\"
+ #  Default locations where mp files will be installed.
+ #  You might wish to alter these values.
+ #
+-MPPATH     = /usr/local
++#MPPATH     = /usr/local
++MPPATH     = $(PREFIX)
+ MPBINDIR   = $(MPPATH)/bin
+-MPLIBDIR   = $(MPPATH)/lib
++#MPLIBDIR   = $(MPPATH)/lib
++MPLIBDIR   = $(MPPATH)/share/mp
+ MPMANDIR   = $(MPPATH)/man/man$(MPMANSECT)
+-MPMANSECT  = l
++#MPMANSECT  = l
++MPMANSECT  = 1
+ #---------------------------------------------------------------------
+ #  Alternate names for the mailp frontend
+ #
+@@ -58,11 +61,13 @@ MAILPNAMES = mailp newsp digestp filep f
+ #  Compilation flags and standard macro definitions.
+ #
+ CDEFS	 = $(GECOSFIELDS) $(GECOSLENGTH) $(PROLOGUE)
+-CCOMP	 = -O
++CXXFLAGS ?= $(CFLAGS)
++CCOMP	 := $(CXXFLAGS)
+ CCFLAGS  = $(CCOMP) $(CDEFS)
+ LDFLAGS  =
+ 
+-CCC	 = g++
++CXXFLAGS = $(CCFLAGS)	# needed for gmake's implicit rule
++CCC	=	$(CXX)
+ #=================================================================
+ 
+ .KEEPSTATE:
+@@ -95,7 +100,7 @@ mp:	$(OBJS) mp.man
+ SHELL = /bin/sh
+ install-a4: common-install
+ 	   @echo "      Adjusting for A4 paper"
+-	   -@cd $(MPLIBDIR); \
++	   @cd $(DESTDIR)$(MPLIBDIR); \
+ 		cp mp.common.ps /tmp/tmp-pro; \
+ 		sed < /tmp/tmp-pro > mp.common.ps \
+ 		   -e 's|^/fullwidth 8.5 inch def|/fullwidth 595 def|' \
+@@ -107,47 +112,19 @@ install:   common-install
+ 	   @echo "**IMPORTANT NOTE**"
+ 	   @echo
+ 	   @echo "Mp is setup by default to work with US Letter sized paper."
+-	   @echo "If you are using A4 sized paper, you should reinstall, by
++	   @echo "If you are using A4 sized paper, you should reinstall, by"
+ 	   @echo "doing a:"
+ 	   @echo
+-	   @echo "make install-a4"
++	   @echo "make PAPERSIZE=a4 reinstall"
+ 	   @echo
+ 
+ common-install: $(BINARIES)
+-#                                                     mp
+-	   -cp mp $(MPBINDIR)
+-	   -chmod 751 $(MPBINDIR)/mp
+-	   -strip $(MPBINDIR)/mp
+-#                                                     mp.1
+-	   -cp mp.1 $(MPMANDIR)/mp.$(MPMANSECT)
+-	   -chmod 644 $(MPMANDIR)/mp.$(MPMANSECT)
+-#                                                     mp.common.ps
+-	   -cp mp.common.ps $(MPLIBDIR)
+-	   -chmod 644 $(MPLIBDIR)/mp.common.ps
+-#                                                     mp.pro.ps
+-	   -cp mp.pro.ps $(MPLIBDIR)
+-	   -chmod 644 $(MPLIBDIR)/mp.pro.ps
+-#                                                     mp.pro.l.ps
+-	   -cp mp.pro.l.ps $(MPLIBDIR)
+-	   -chmod 644 $(MPLIBDIR)/mp.pro.l.ps
+-#                                                     mp.pro.alt.ps
+-	   -cp mp.pro.alt.ps $(MPLIBDIR)
+-	   -chmod 644 $(MPLIBDIR)/mp.pro.alt.ps
+-#                                                     mp.pro.altl.ps
+-	   -cp mp.pro.altl.ps $(MPLIBDIR)
+-	   -chmod 644 $(MPLIBDIR)/mp.pro.altl.ps
+-#                                                     mp.pro.ff.ps
+-	   -cp mp.pro.ff.ps $(MPLIBDIR)
+-	   -chmod 644 $(MPLIBDIR)/mp.pro.ff.ps
+-#                                                     mp.pro.fp.ps
+-	   -cp mp.pro.fp.ps $(MPLIBDIR)
+-	   -chmod 644 $(MPLIBDIR)/mp.pro.fp.ps
+-#                                                     mp.pro.tm.ps
+-	   -cp mp.pro.tm.ps $(MPLIBDIR)
+-	   -chmod 644 $(MPLIBDIR)/mp.pro.tm.ps
+-#                                                     mp.pro.ts.ps
+-	   -cp mp.pro.ts.ps $(MPLIBDIR)
+-	   -chmod 644 $(MPLIBDIR)/mp.pro.ts.ps
++	$(BSD_INSTALL_PROGRAM) mp $(DESTDIR)$(MPBINDIR)
++	$(BSD_INSTALL_MAN) mp.1 $(DESTDIR)$(MPMANDIR)/mp.$(MPMANSECT)
++	mkdir -p $(DESTDIR)$(MPLIBDIR)
++	$(BSD_INSTALL_DATA) mp.common.ps mp.pro.ps mp.pro.l.ps \
++		mp.pro.alt.ps mp.pro.altl.ps mp.pro.ff.ps \
++		mp.pro.fp.ps mp.pro.tm.ps mp.pro.ts.ps $(DESTDIR)$(MPLIBDIR)
+ #
+ #  NOTE: If you don't want the mailp, newsp, filep ... symbolic links
+ #        installed, then you should comment out the following seven lines.
+@@ -155,8 +132,7 @@ common-install: $(BINARIES)
+ 	   @echo Making mp links
+ 	   -@for name in $(MAILPNAMES); do \
+ 		echo -n $$name " "; \
+-		rm -f $(MPBINDIR)/$$name; \
+-		ln -s $(MPBINDIR)/mp $(MPBINDIR)/$$name; \
++		ln -s mp $(DESTDIR)$(MPBINDIR)/$$name; \
+ 	   done
+ 	   @echo
+ 

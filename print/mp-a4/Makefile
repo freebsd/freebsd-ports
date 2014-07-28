@@ -4,5 +4,4 @@
 PAPERSIZE=	a4
 MASTERDIR=	${.CURDIR}/../mp-letter
 
-NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"
