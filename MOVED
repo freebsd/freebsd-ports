@@ -6335,3 +6335,19 @@ sysutils/syslog-ng2||2014-07-24|Has expired: Fails to build with new utmpx
 sysutils/yawho||2014-07-24|Has expired: Fails to build with new utmpx
 devel/p5-MetaCPAN-API|devel/p5-MetaCPAN-Client|2014-07-27|Has expired: Use devel/p5-MetaCPAN-Client instead
 net-im/pidgin-facebookchat||2014-07-27|Has expired: obsolete, development has ceased, not staged
+net-im/gtkyahoo||2014-07-28|Has expired: Broken, unmaintained, unstaged, gtk12, i386 only
+devel/cl-cffi-clisp||2014-07-28|Has expired: Depends on deprecated lang/clisp
+devel/cl-alexandria-clisp||2014-07-28|Has expired: Depends on deprecated lang/clisp
+converters/cl-babel-clisp||2014-07-28|Has expired: Depends on deprecated lang/clisp
+devel/cl-infix-clisp||2014-07-28|Has expired: Depends on deprecated lang/clisp
+devel/meta-cvs||2014-07-28|Has expired: Depends on deprecated lang/clisp
+textproc/cl-meta-clisp||2014-07-28|Has expired: Depends on deprecated lang/clisp
+www/cl-lml-clisp||2014-07-28|Has expired: Depends on deprecated lang/clisp
+devel/cl-trivial-features-clisp||2014-07-28|Has expired: Depends on deprecated lang/clisp
+security/cl-md5-clisp||2014-07-28|Has expired: Depends on deprecated lang/clisp
+devel/cl-port-clisp||2014-07-28|Has expired: Depends on deprecated lang/clisp
+textproc/cl-ppcre-clisp||2014-07-28|Has expired: Depends on deprecated lang/clisp
+devel/cl-asdf-clisp||2014-07-28|Has expired: Depends on deprecated lang/clisp
+devel/cl-split-sequence-clisp||2014-07-28|Has expired: Depends on deprecated lang/clisp
+devel/cl-trivial-gray-streams-clisp||2014-07-28|Has expired: Depends on deprecated lang/clisp
+lang/clisp||2014-07-28|Has expired: development has ceased, not staged
