@@ -3,7 +3,7 @@
 
 PORTNAME=	box
 PORTVERSION=	0.4.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}c/Box%20-%20the%20compiler/${DISTNAME}/
 DIST_SUBDIR=	box
@@ -17,7 +17,7 @@ LICENSE_COMB=	dual
 BUILD_DEPENDS=	docbook-to-man:${PORTSDIR}/textproc/docbook-to-man
 LIB_DEPENDS=	libcairo.so:${PORTSDIR}/graphics/cairo
 
-USES=		gmake
+USES=		gmake libtool
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-cairo
 USE_LDCONFIG=	yes

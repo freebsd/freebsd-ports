@@ -32,7 +32,6 @@ include/box%%PLIST_VER%%/box/vmstore.h
 include/box%%PLIST_VER%%/box/vmsym.h
 include/box%%PLIST_VER%%/box/vmsymstuff.h
 lib/box%%PLIST_VER%%/lib/libg.a
-lib/box%%PLIST_VER%%/lib/libg.la
 lib/box%%PLIST_VER%%/lib/libg.so
 lib/box%%PLIST_VER%%/pkg/_arrows.bxh
 lib/box%%PLIST_VER%%/pkg/_sphere.bxh
@@ -93,9 +92,9 @@ lib/box%%PLIST_VER%%/pkg/math.box
 lib/box%%PLIST_VER%%/pkg/rectangle.box
 lib/box%%PLIST_VER%%/pkg/tools.bxh
 lib/libboxcore%%PLIST_VER%%.a
-lib/libboxcore%%PLIST_VER%%.la
 lib/libboxcore%%PLIST_VER%%.so
 lib/libboxcore%%PLIST_VER%%.so.0
+lib/libboxcore%%PLIST_VER%%.so.0.0.0
 man/man1/box.1.gz
 @dirrm lib/box%%PLIST_VER%%/pkg/g
 @dirrm lib/box%%PLIST_VER%%/pkg
