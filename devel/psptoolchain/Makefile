@@ -3,12 +3,12 @@
 
 PORTNAME=		psptoolchain
 PORTVERSION=		20111215
-PORTREVISION=	1
+PORTREVISION=		2
 CATEGORIES=		devel
 MASTER_SITES=		# none
 DISTFILES=		# none
 
-MAINTAINER= ports@FreeBSD.org
+MAINTAINER=		tphilipp@potion-studios.com
 COMMENT=		PlayStation Portable development toolchain meta port
 
 RUN_DEPENDS=		psp-gdb:${PORTSDIR}/devel/psptoolchain-gdb \
@@ -30,8 +30,8 @@ RUN_DEPENDS=		psp-gdb:${PORTSDIR}/devel/psptoolchain-gdb \
 NO_WRKSUBDIR=		YES
 NO_BUILD=		YES
 NO_FETCH=		YES
+NO_MTREE=		YES
 
-NO_STAGE=	yes
 do-install:
 
 .include <bsd.port.mk>
