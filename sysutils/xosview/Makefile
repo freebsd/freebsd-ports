@@ -7,7 +7,7 @@ PORTREVISION=	0
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.pogo.org.uk/~mark/xosview/releases/
 
-MAINTAINER=	clsung@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Graphical performance meter
 
 USE_XORG=	xpm
