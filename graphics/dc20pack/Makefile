@@ -6,12 +6,12 @@ PORTVERSION=		1.0
 CATEGORIES=		graphics
 MASTER_SITES=		${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	apps/graphics/capture
-EXTRACT_SUFX=		.tgz
 
 MAINTAINER=		maurice@castro.aus.net
 COMMENT=	Digital camera control and download tool for Kodak DC20/25 camera
 
 WRKSRC=			${WRKDIR}
+USES=			tar:tgz
 
 post-extract:
 	for file in `${FIND} ${WRKSRC} -type f`; do \

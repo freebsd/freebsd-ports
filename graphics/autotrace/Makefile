@@ -23,30 +23,19 @@ LDFLAGS+=	$$(libpng-config --L_opts) ${PTHREAD_LIBS}
 INSTALL_TARGET=	install-strip
 
 OPTIONS_DEFINE=	IMAGEMAGICK MING PSTOEDIT
-OPTIONS_DEFAULT=	IMAGEMAGICK PSTOEDIT
+OPTIONS_DEFAULT=IMAGEMAGICK PSTOEDIT
 MING_DESC=	Enable swf interface
 PSTOEDIT_DESC=	Convert postscript to other formats
 
-.include <bsd.port.options.mk>
+IMAGEMAGICK_LIB_DEPENDS=	libMagickWand-6.Q*.so:${PORTSDIR}/graphics/ImageMagick
+IMAGEMAGICK_CONFIGURE_OFF=	--without-magick
 
-.if ${PORT_OPTIONS:MIMAGEMAGICK}
-LIB_DEPENDS+=	libMagickWand-6.Q*.so:${PORTSDIR}/graphics/ImageMagick
-.else
-CONFIGURE_ARGS+=	--without-magick
-.endif
+MING_LIB_DEPENDS=	libming.so:${PORTSDIR}/graphics/ming
+MING_CPPFLAGS=		-I${LOCALBASE}/include -I${LOCALBASE}/include/ming
+MING_CONFIGURE_OFF=	ac_cv_header_ming_h=no
 
-.if ${PORT_OPTIONS:MMING}
-LIB_DEPENDS+=	libming.so:${PORTSDIR}/graphics/ming
-CPPFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/ming
-.else
-CONFIGURE_ENV+=	ac_cv_header_ming_h=no
-.endif
-
-.if ${PORT_OPTIONS:MPSTOEDIT}
-LIB_DEPENDS+=	libpstoedit.so:${PORTSDIR}/graphics/pstoedit
-.else
-CONFIGURE_ARGS+=	--without-pstoedit
-.endif
+PSTOEDIT_LIB_DEPENDS=	libpstoedit.so:${PORTSDIR}/graphics/pstoedit
+PSTOEDIT_CONFIGURE_OFF=	--without-pstoedit
 
 post-patch:
 	@${REINPLACE_CMD} -e \
