@@ -10,6 +10,11 @@ sbin/nullmailer-queue
 @exec chmod u+s %D/sbin/nullmailer-queue
 @exec chown %%NULLMAIL_USER%% %D/sbin/nullmailer-queue
 sbin/nullmailer-send
+man/man1/nullmailer-inject.1.gz
+man/man1/sendmail.1.gz
+man/man7/nullmailer.7.gz
+man/man8/nullmailer-queue.8.gz
+man/man8/nullmailer-send.8.gz
 %%ETCDIR%%/me.sample
 %%ETCDIR%%/remotes.sample
 @dirrm libexec/nullmailer
@@ -28,6 +33,4 @@ sbin/nullmailer-send
 @exec chmod 600 %%LOCALSTATEDIR%%/nullmailer/trigger
 @exec chown %%NULLMAIL_USER%%:%%NULLMAIL_USER%% %%LOCALSTATEDIR%%/nullmailer/trigger
 @unexec rm -f %%LOCALSTATEDIR%%/nullmailer/trigger
-@ignore
-%%LOCALSTATEDIR%%/nullmailer/trigger
 @dirrmtry %%LOCALSTATEDIR%%/nullmailer
