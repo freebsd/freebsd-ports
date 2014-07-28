@@ -3,7 +3,7 @@
 
 PORTNAME=	scilab
 PORTVERSION=	5.3.3
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	math cad parallel java
 MASTER_SITES=	http://www.scilab.org/download/${PORTVERSION}/:scilab \
 		http://www.predatorlabs.net/dl/:jgraphx \
@@ -217,6 +217,7 @@ post-patch:
 	@# Run fixes
 	@${REINPLACE_CMD} -e 's|%%JAVALIBDIR%%|${JAVALIBDIR}|' ${WRKSRC}/etc/librarypath.xml
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|' ${WRKSRC}/etc/librarypath.xml
+	@${REINPLACE_CMD} -e 's, gfortran, ${FC},' ${WRKSRC}/modules/dynamic_link/src/scripts/configure
 .if ${PORT_OPTIONS:MGUI}
 	@# Configure fixes
 	@${REINPLACE_CMD} -e 's|/usr/lib/java|${JAVALIBDIR}|g' ${WRKSRC}/configure
