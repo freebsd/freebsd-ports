@@ -14,4 +14,4 @@ Ruby/SDL has following functions.
     3D graphics drawing with OpenGL Interface
     bdf font drawing with SDL_kanji
 
-WWW: http://www.kmc.gr.jp/~ohai/rubysdl.en.html
+WWW: https://ohai.github.io/rubysdl/
