@@ -3,7 +3,7 @@
 
 PORTNAME=	libmspack
 PORTVERSION=	0.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	archivers
 MASTER_SITES=	http://www.cabextract.org.uk/libmspack/
 DISTNAME=	${PORTNAME}-${PORTVERSION}alpha
@@ -15,7 +15,7 @@ LICENSE=	LGPL21
 
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-USES=		libtool:oldver pathfix
+USES=		libtool pathfix
 INSTALL_TARGET=	install-strip
 
 .include <bsd.port.mk>
