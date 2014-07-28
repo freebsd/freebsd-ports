@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	openconnect
-PORTVERSION=	5.03
-PORTREVISION=	5
+PORTVERSION=	6.00
 CATEGORIES=	security
 MASTER_SITES=	ftp://ftp.infradead.org/pub/openconnect/ \
 		http://mirrors.rit.edu/zi/
@@ -41,5 +40,6 @@ GNUTLS_USE_OFF=		OPENSSL=yes
 post-install:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/TODO ${STAGEDIR}${DOCSDIR}
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libopenconnect.so.3.3.0
 
 .include <bsd.port.mk>
