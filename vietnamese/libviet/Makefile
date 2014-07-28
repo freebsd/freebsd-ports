@@ -16,6 +16,8 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/lib
 
 OPTIONS_DEFINE=	DOCS
 
+#MAKE_ARGS=	${MAKE_ENV:S/CFLAGS/FLAGS/}
+
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/libvntype.a ${WRKSRC}/libviqr.a \
 		${STAGEDIR}${PREFIX}/lib
