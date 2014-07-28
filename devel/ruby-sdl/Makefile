@@ -59,7 +59,7 @@ DOC_FILESEN=	*.rsd
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/ruby/site_ruby/1.9/*/sdl_ext.so
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/ruby/site_ruby/${RUBY_VER}/*/sdl_ext.so
 	@${REINPLACE_CMD} -e 's|ruby|${LOCALBASE}/bin/ruby|g' ${WRKSRC}/doc/rsd.rb
 
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}/ja
