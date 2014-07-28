@@ -18,9 +18,7 @@ PORTDOCS=	README.euc README.english
 OPTIONS_DEFINE=	DOCS
 
 post-patch:
-		cd ${WRKSRC} && \
-		mv ps-font.c ps-font.c.orig && \
-		${SED} -e '/Times-Roman$$/,/^Gothic-Medium.Katakana$$/{s,$$,\\,;}' ps-font.c.orig > ps-font.c
+	${REINPLACE_CMD} -e '/Times-Roman$$/,/^Gothic-Medium.Katakana$$/{s,$$,\\,;}' ps-font.c
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/e2ps ${STAGEDIR}${PREFIX}/bin
