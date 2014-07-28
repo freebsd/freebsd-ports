@@ -13,7 +13,7 @@ COMMENT=	Simple and low-tech monster-bashing maze game
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	ruby19-sdl>=0:${PORTSDIR}/devel/ruby-sdl
+RUN_DEPENDS=	ruby${RUBY_SUFFIX}-sdl>=0:${PORTSDIR}/devel/ruby-sdl
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION:S/./_/g}
 
