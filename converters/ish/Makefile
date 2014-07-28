@@ -18,6 +18,6 @@ ALL_TARGET=	ish
 PLIST_FILES=	bin/ish
 
 do-install:
-	(cd ${WRKSRC} && ${INSTALL_PROGRAM} ish ${STAGEDIR}${PREFIX}/bin)
+	${INSTALL_PROGRAM} ${WRKSRC}/ish ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>
