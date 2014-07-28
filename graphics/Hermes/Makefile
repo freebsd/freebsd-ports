@@ -3,17 +3,16 @@
 
 PORTNAME=	Hermes
 PORTVERSION=	1.3.3
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.su.se/pub/lunar/source-archive/ \
-		GENTOO
-MASTER_SITE_SUBDIR=	distfiles
+		GENTOO/distfiles
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fast pixel formats conversion library
 
-USES=		gmake tar:bzip2
-USE_AUTOTOOLS=	libtool
+USES=		gmake libtool tar:bzip2
+USE_AUTOTOOLS=	libtoolize
 GNU_CONFIGURE=	yes
 MAKE_ARGS=	ACLOCAL="${TRUE}" AUTOCONF="${TRUE}" AUTOMAKE="${TRUE}" \
 		AUTOHEADER="${TRUE}"
