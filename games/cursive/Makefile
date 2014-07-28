@@ -6,11 +6,11 @@ PORTVERSION=	1.0
 CATEGORIES=	games
 MASTER_SITES=	ftp://puck.nether.net/pub/janc/
 DISTNAME=	${PORTNAME}
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Create ASCII character cursive handwriting
 
+USES=		tar:tgz
 PLIST_FILES=	bin/cursive \
 		man/man6/cursive.6.gz
 

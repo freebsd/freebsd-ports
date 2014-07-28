@@ -16,17 +16,17 @@ USE_XORG=	x11
 MAKEFILE=	makefile
 NO_WRKSUBDIR=	yes
 
+OPTIONS_DEFINE=	DOCS
+
 RESTRICTED=	'contains commercial character data'
 
 post-patch:
-	@cd ${WRKSRC}; \
-	${PATCH} < ${WRKSRC}/xchada01.bug
+	@(cd ${WRKSRC}; \
+		${PATCH} < ${WRKSRC}/xchada01.bug)
 
 post-install:
-.if !defined(NOPORTOCS)
-	@${MKDIR} ${STAGEDIR}${PREFIX}/share/doc/xchadance
-	@${INSTALL_DATA} ${WRKSRC}/README.jp ${STAGEDIR}${PREFIX}/share/doc/xchadance
-	@${INSTALL_DATA} ${WRKSRC}/README.eng ${STAGEDIR}${PREFIX}/share/doc/xchadance
-.endif
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README.jp ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README.eng ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
