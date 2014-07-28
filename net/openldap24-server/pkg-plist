@@ -84,11 +84,9 @@ etc/openldap/schema/README
 %%SHA2%%libexec/openldap/pw-sha2.la
 %%SHA2%%libexec/openldap/pw-sha2.so
 %%SHA2%%libexec/openldap/pw-sha2.so.0
-%%SHA2%%libexec/openldap/pw-sha2.so.0.0.0
 %%SMBPWD%%libexec/openldap/smbk5pwd.la
 %%SMBPWD%%libexec/openldap/smbk5pwd.so
 %%SMBPWD%%libexec/openldap/smbk5pwd.so.0
-%%SMBPWD%%libexec/openldap/smbk5pwd.so.0.0.0
 libexec/slapd
 %%MODULES%%@dirrmtry libexec/openldap
 sbin/slapacl
