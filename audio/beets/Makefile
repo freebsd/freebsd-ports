@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	beets
-PORTVERSION=	1.3.3
-PORTREVISION=	1
+PORTVERSION=	1.3.6
 CATEGORIES=	audio python
 MASTER_SITES=	CHEESESHOP
 
@@ -15,6 +14,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mutagen>=1.22:${PORTSDIR}/audio/py-mutagen \
 		${PYTHON_PKGNAMEPREFIX}musicbrainzngs>=0:${PORTSDIR}/audio/py-musicbrainzngs \
 		${PYTHON_PKGNAMEPREFIX}munkres>=0:${PORTSDIR}/math/py-munkres \
 		${PYTHON_PKGNAMEPREFIX}yaml>=0:${PORTSDIR}/devel/py-yaml \
+		${PYTHON_PKGNAMEPREFIX}enum34>=0:${PORTSDIR}/devel/py-enum34 \
 		${PYTHON_PKGNAMEPREFIX}sqlite3>=0:${PORTSDIR}/databases/py-sqlite3
 
 USE_PYTHON=		yes
