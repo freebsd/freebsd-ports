@@ -297,8 +297,8 @@ _USE_QT4_ONLY=	accessible assistant-adp assistantclient codecs-cn codecs-jp \
 				qtestlib qvfb rcc uic uic3 xmlpatterns-tool
 
 _USE_QT5_ONLY=	buildtools concurrent core graphicaleffects linguisttools \
-				printsupport qdbus qdoc qev qml qmldevtools quick uitools \
-				widgets
+				printsupport qdbus qdoc qev qml qmldevtools quick \
+				quickcontrols uitools widgets
 
 accessible_PORT=	accessibility/${_QT_RELNAME}-accessible
 accessible_PATH=	${QT_PLUGINDIR}/accessible/libqtaccessiblewidgets.so
@@ -455,6 +455,9 @@ qtestlib_PATH=		${testlib_PATH}
 
 quick_PORT=			x11-toolkits/${_QT_RELNAME}-quick
 quick_PATH=			${QT_LIBDIR}/libQt${_QT_LIBVER}Quick.so
+
+quickcontrols_PORT=	x11-toolkits/${_QT_RELNAME}-quickcontrols
+quickcontrols_PATH=	${QT_QMLDIR}/QtQuick/Controls/qmldir
 
 qvfb_PORT=			devel/${_QT_RELNAME}-qvfb
 qvfb_PATH=			${QT_BINDIR}/qvfb${_QT_BINSUFX}
