@@ -10,7 +10,7 @@ MASTER_SITES=	http://untroubled.org/nullmailer/ \
 		http://untroubled.org/nullmailer/archive/
 MASTER_SITE_SUBDIR=	${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	uffe@uffe.org
 COMMENT=	MTA for hosts which relay to a fixed set of smart relays
 
 LICENSE=	GPLv2
@@ -39,14 +39,8 @@ PKGMESSAGE=	${WRKDIR}/pkg-message
 PLIST_SUB+=	LOCALSTATEDIR=${LOCALSTATEDIR} NULLMAIL_USER=${USERS}
 SUB_LIST+=	LOCALSTATEDIR=${LOCALSTATEDIR} NULLMAIL_USER=${USERS}
 
-MAN1=	nullmailer-inject.1 sendmail.1
-MAN7=	nullmailer.7
-MAN8=	nullmailer-queue.8 nullmailer-send.8
-
-
 OPTIONS_DEFINE=	GNUTLS
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGNUTLS}
@@ -60,10 +54,7 @@ CONFIGURE_ARGS+=--disable-tls
 .endif
 
 post-install:
-	@cd ${WRKSRC} && ${MAKE} install-root
-
-	@${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
-	${INSTALL_DATA} -c ${FILESDIR}/remotes.sample ${ETCDIR}
-	@${CAT} ${PKGMESSAGE}
+	${INSTALL_DATA} -c ${FILESDIR}/remotes.sample ${STAGEDIR}${ETCDIR}
+	${ECHO} 'hostname' > ${STAGEDIR}${ETCDIR}/me.sample
 
 .include <bsd.port.mk>
