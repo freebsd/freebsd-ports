@@ -3,6 +3,7 @@
 
 PORTNAME=	extract_url
 PORTVERSION=	1.5.8
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	GOOGLE_CODE
 PROJECTHOST=	extracturl
@@ -17,10 +18,13 @@ BUILD_DEPENDS=	p5-MIME-Tools>=0:${PORTSDIR}/mail/p5-MIME-Tools \
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		gmake perl5
-
 MAKE_ARGS=	all prefix=${PREFIX} man_prefix=${PREFIX}
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
+
+PLIST_FILES=	bin/extract_url \
+		etc/extract_urlview.sample \
+		man/man1/extract_url.1.gz
 
 SUB_FILES=	pkg-message
 
@@ -48,7 +52,8 @@ post-patch:
 		${WRKSRC}/${MAKEFILE}
 
 post-install:
-	${INSTALL_DATA} ${FILESDIR}/${PORTNAME}view ${STAGEDIR}${PREFIX}/etc/${PORTNAME}view.sample
+	${INSTALL_DATA} ${FILESDIR}/${PORTNAME}view \
+		${STAGEDIR}${PREFIX}/etc/${PORTNAME}view.sample
 
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
