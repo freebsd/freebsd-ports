@@ -38,11 +38,17 @@ for i in ${GRUB_PRELOAD_MODULES} ; do
   echo "insmod $i"
 done
 
+if [ -e "/root/beadm.install" ] ; then
+  BEADM="/root/beadm.install"
+else
+  BEADM="beadm"
+fi
+
 # If GRUB_DEFAULT is unset, lets figure out which beadm wants to use by default
 if [ "x${GRUB_DEFAULT}" = "x" ] ; then 
   GRUB_DEFAULT=0
   beCount=0
-  beadm list -H >/tmp/.grub-beadm.$$ 2>/dev/null
+  $BEADM list -H >/tmp/.grub-beadm.$$ 2>/dev/null
   while read line
   do 
     flags=`echo $line | awk '{print $2}'`
@@ -63,7 +69,7 @@ if [ "x${GRUB_TIMEOUT}" = "x" ] ; then GRUB_TIMEOUT=5 ; fi
 if [ "x${GRUB_GFXMODE}" = "x" ] ; then GRUB_GFXMODE=auto ; fi
 
 # Check if we have more than one BE, and need to show the menu by default
-beNum=`beadm list 2>/dev/null | grep -v 'Mountpoint' | wc -l | awk '{print $1}'`
+beNum=`$BEADM list 2>/dev/null | grep -v 'Mountpoint' | wc -l | awk '{print $1}'`
 if [ $beNum -gt 1 ] ; then GRUB_HIDDEN_TIMEOUT=""; fi
 
 if [ "x${GRUB_DEFAULT_BUTTON}" = "x" ] ; then GRUB_DEFAULT_BUTTON="$GRUB_DEFAULT" ; fi
