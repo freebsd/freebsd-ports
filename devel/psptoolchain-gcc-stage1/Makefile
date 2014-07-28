@@ -3,14 +3,14 @@
 
 PORTNAME=		gcc
 PORTVERSION=		4.6.2
-PORTREVISION=	1
+PORTREVISION=		2
 CATEGORIES=		devel
 MASTER_SITES=		${MASTER_SITE_GCC}
 MASTER_SITE_SUBDIR=	releases/${DISTNAME}/
 PKGNAMEPREFIX=		psptoolchain-
 PKGNAMESUFFIX?=		-stage1
 
-MAINTAINER= ports@FreeBSD.org
+MAINTAINER=		tphilipp@potion-studios.com
 COMMENT=		PlayStation Portable development toolchain ${PORTNAME}
 
 ONLY_FOR_ARCHS=		amd64 i386
@@ -35,8 +35,7 @@ BUILD_DEPENDS+=		psp-addr2line:${PORTSDIR}/devel/psptoolchain-binutils \
 			psp-strings:${PORTSDIR}/devel/psptoolchain-binutils \
 			psp-strip:${PORTSDIR}/devel/psptoolchain-binutils
 
-
-USES=		gmake tar:bzip2
+USES=			gmake tar:bzip2
 PATCH_WRKSRC=		${SRCDIR}
 CONFIGURE_SCRIPT=	../${SRCDIR:S/${WRKDIR}\///}/configure
 
@@ -59,7 +58,6 @@ CONFIGURE_ARGS?=	--prefix=${PREFIX}/${PSP_GCC_STAGE_PREFIX} \
 			--with-as=${LOCALBASE}/bin/psp-as \
 			--mandir=${PREFIX}/man
 
-NO_STAGE=	yes
 pre-configure:
 	@${MKDIR} ${CONFIGURE_WRKSRC}
 
@@ -76,15 +74,6 @@ post-patch:
 		${SRCDIR}/gcc/Makefile.in
 .if ${PKGNAMESUFFIX} == "-stage1"
 	@${REINPLACE_CMD} -E "s/^(install-man:)(.*)/\1#\2/" ${SRCDIR}/gcc/Makefile.in
-.endif
-
-# Stage 2 installs (1) man pages.
-.if ${PKGNAMESUFFIX} != "-stage1"
-
-MAN1+=			psp-cpp.1 \
-			psp-gcc.1 \
-			psp-gcov.1
-
 .endif
 
 PLIST_SUB+=		PSP_GCC_STAGE_PREFIX=${PSP_GCC_STAGE_PREFIX}
