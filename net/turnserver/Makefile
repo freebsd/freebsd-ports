@@ -2,7 +2,7 @@
 
 PORTNAME=	turnserver
 PORTVERSION=	3.2.2.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	http://turnserver.open-sys.org/downloads/v${PORTVERSION}/ \
 		http://turnserver.open-sys.org/downloads/extradocs/ \
@@ -84,7 +84,6 @@ CONFIGURE_ENV+=	TURN_NO_PQ=1
 
 .if ${PORT_OPTIONS:MMYSQL}
 USE_MYSQL=	yes
-LIB_DEPENDS+=	libmysqlclient.so:${PORTSDIR}/databases/mysql55-client
 .else
 CONFIGURE_ENV+=	TURN_NO_MYSQL=1
 .endif
