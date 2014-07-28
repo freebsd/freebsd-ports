@@ -3,7 +3,7 @@ include/libsigrok/proto.h
 include/libsigrok/version.h
 lib/libsigrok.a
 lib/libsigrok.so
-lib/libsigrok.so.1
-lib/libsigrok.so.1.0.2
+lib/libsigrok.so.2
+lib/libsigrok.so.2.0.0
 libdata/pkgconfig/libsigrok.pc
 @dirrm include/libsigrok
