@@ -6,14 +6,13 @@ PORTVERSION=	1.6e
 CATEGORIES=	devel
 MASTER_SITES=	http://www.gedanken.org.uk/software/cxref/download/ \
 		http://fossies.org/linux/misc/
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C program cross-referencing & documentation tool
 
 LICENSE=	GPLv2
 
-USES=		gmake shebangfix
+USES=		gmake shebangfix tar:tgz
 SHEBANG_FILES=	contrib/xrgr.pl
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--without-cxref-cpp
