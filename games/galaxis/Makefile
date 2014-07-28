@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	galaxis
-PORTVERSION=	1.8
-PORTREVISION=	1
+PORTVERSION=	1.9
 CATEGORIES=	games
 MASTER_SITES=	http://www.catb.org/~esr/galaxis/ \
 		SF/nemysisfreebsdp/games/:icons
@@ -16,6 +15,8 @@ COMMENT=	Clone of the nifty little Macintosh game
 
 LICENSE=	BSD3CLAUSE
 
+WRKSRC=		${WRKDIR}/${PORTNAME}-
+
 USES=		gmake
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS} -DNDEBUG"
 ALL_TARGET=	${PORTNAME}
@@ -26,12 +27,11 @@ PLIST_FILES=	bin/${PORTNAME} \
 		share/pixmaps/${PORTNAME}.png
 
 PORTDOCS=	README
-
 OPTIONS_DEFINE=	DOCS
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/
-	${INSTALL_DATA} ${FILESDIR}/${PORTNAME}.desktop ${STAGEDIR}${DESKTOPDIR}
+	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.desktop ${STAGEDIR}${DESKTOPDIR}
 	${INSTALL_DATA} ${_DISTDIR}/${PORTNAME}.png \
 		${STAGEDIR}${PREFIX}/share/pixmaps/
 	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.6 ${STAGEDIR}${MAN6PREFIX}/man/man6/
