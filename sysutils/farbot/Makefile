@@ -8,7 +8,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 DISTNAME=	farbot-1.0-beta2
 
-MAINTAINER=	snb@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	FreeBSD Automated Release Bot
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/zconfig:${PORTSDIR}/devel/py-zconfig
