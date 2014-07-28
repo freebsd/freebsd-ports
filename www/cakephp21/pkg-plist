@@ -575,8 +575,10 @@
 %%WWWDIR%%/lib/Cake/Test/test_app/Console/Templates/test/views/admin_edit.ctp
 %%WWWDIR%%/lib/Cake/Test/test_app/Controller/AppController.php
 %%WWWDIR%%/lib/Cake/Test/test_app/Controller/PagesController.php
+%%WWWDIR%%/lib/Cake/Test/test_app/Controller/TestAppsErrorController.php
 %%WWWDIR%%/lib/Cake/Test/test_app/Controller/TestsAppsController.php
 %%WWWDIR%%/lib/Cake/Test/test_app/Controller/TestsAppsPostsController.php
+%%WWWDIR%%/lib/Cake/Test/test_app/Error/TestAppsExceptionRenderer.php
 %%WWWDIR%%/lib/Cake/Test/test_app/Lib/Cache/Engine/TestAppCacheEngine.php
 %%WWWDIR%%/lib/Cake/Test/test_app/Lib/Library.php
 %%WWWDIR%%/lib/Cake/Test/test_app/Lib/Log/Engine/TestAppLog.php
@@ -748,6 +750,7 @@
 %%WWWDIR%%/lib/Cake/Test/test_app/View/Elements/type_check.ctp
 %%WWWDIR%%/lib/Cake/Test/test_app/View/Emails/html/custom.ctp
 %%WWWDIR%%/lib/Cake/Test/test_app/View/Emails/html/default.ctp
+%%WWWDIR%%/lib/Cake/Test/test_app/View/Emails/html/image.ctp
 %%WWWDIR%%/lib/Cake/Test/test_app/View/Emails/html/japanese.ctp
 %%WWWDIR%%/lib/Cake/Test/test_app/View/Emails/html/nested_element.ctp
 %%WWWDIR%%/lib/Cake/Test/test_app/View/Emails/text/custom.ctp
@@ -765,6 +768,7 @@
 %%WWWDIR%%/lib/Cake/Test/test_app/View/Layouts/Emails/text/japanese.ctp
 %%WWWDIR%%/lib/Cake/Test/test_app/View/Layouts/ajax.ctp
 %%WWWDIR%%/lib/Cake/Test/test_app/View/Layouts/ajax2.ctp
+%%WWWDIR%%/lib/Cake/Test/test_app/View/Layouts/banana.ctp
 %%WWWDIR%%/lib/Cake/Test/test_app/View/Layouts/cache_empty_sections.ctp
 %%WWWDIR%%/lib/Cake/Test/test_app/View/Layouts/cache_layout.ctp
 %%WWWDIR%%/lib/Cake/Test/test_app/View/Layouts/default.ctp
@@ -1111,6 +1115,7 @@
 @dirrm %%WWWDIR%%/lib/Cake/Test/test_app/Lib/Cache/Engine
 @dirrm %%WWWDIR%%/lib/Cake/Test/test_app/Lib/Cache
 @dirrm %%WWWDIR%%/lib/Cake/Test/test_app/Lib
+@dirrm %%WWWDIR%%/lib/Cake/Test/test_app/Error
 @dirrm %%WWWDIR%%/lib/Cake/Test/test_app/Controller/Component
 @dirrm %%WWWDIR%%/lib/Cake/Test/test_app/Controller
 @dirrm %%WWWDIR%%/lib/Cake/Test/test_app/Console/Templates/test/views
