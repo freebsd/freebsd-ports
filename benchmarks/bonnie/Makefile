@@ -21,8 +21,6 @@ OPTIONS_DEFINE=	STATIC
 
 STATIC_CFLAGS+=	-static
 
-.include <bsd.port.options.mk>
-
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/Bonnie ${STAGEDIR}${PREFIX}/bin/bonnie
 	${INSTALL_MAN} ${FILESDIR}/bonnie.1 ${STAGEDIR}${PREFIX}/man/man1

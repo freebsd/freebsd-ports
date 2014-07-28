@@ -27,7 +27,6 @@
     SUBDIR += gajim
     SUBDIR += gale
     SUBDIR += gloox
-    SUBDIR += gtkyahoo
     SUBDIR += gyach
     SUBDIR += hotot
     SUBDIR += icb

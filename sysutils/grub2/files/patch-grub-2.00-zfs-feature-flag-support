@@ -92,7 +92,7 @@ index ba0554a..811e3df 100644
 + * to be listed here since grub opens pools in read-only mode.
 + */
 +static const char *spa_feature_names[] = {
-+	"org.illumos:lz4_compress",NULL
++	"org.illumos:lz4_compress","com.delphix:hole_birth",NULL
 +};
 +
 +static int NESTED_FUNC_ATTR

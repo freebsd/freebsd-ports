@@ -16,6 +16,6 @@ PLIST_FILES=	bin/bp bin/bpl
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bpl ${STAGEDIR}${PREFIX}/bin
-	(cd ${STAGEDIR}${PREFIX}/bin; ${LN} -sf bpl bp)
+	${LN} -sf bpl ${STAGEDIR}${PREFIX}/bin/bp
 
 .include <bsd.port.mk>

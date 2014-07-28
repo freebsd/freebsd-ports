@@ -62,7 +62,6 @@
     SUBDIR += ckpass
     SUBDIR += cksfv
     SUBDIR += cl-md5
-    SUBDIR += cl-md5-clisp
     SUBDIR += cl-md5-sbcl
     SUBDIR += clamassassin
     SUBDIR += clamav

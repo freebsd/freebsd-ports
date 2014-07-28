@@ -1,5 +1,7 @@
 #!/bin/sh
 
+echo Fetching GeoIP.dat and GeoIPv6.dat...
+
 TEMPFILE=`mktemp %%DATADIR%%/GeoIP.dat-XXXXXX`
 if fetch -o - http://geolite.maxmind.com/download/geoip/database/GeoLiteCountry/GeoIP.dat.gz | gunzip >> $TEMPFILE ; then
     chmod 644 $TEMPFILE
@@ -13,6 +15,7 @@ else
     echo GeoIP.dat download failed
     exit 1
 fi
+
 TEMPFILE=`mktemp %%DATADIR%%/GeoIPv6.dat-XXXXXX`
 if fetch -o - http://geolite.maxmind.com/download/geoip/database/GeoIPv6.dat.gz | gunzip >> $TEMPFILE ; then
     chmod 644 $TEMPFILE

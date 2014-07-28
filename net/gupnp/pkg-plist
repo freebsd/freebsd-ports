@@ -24,6 +24,7 @@ lib/libgupnp-1.0.so.4
 lib/libgupnp-1.0.so.4.0.0
 libdata/pkgconfig/gupnp-1.0.pc
 share/gir-1.0/GUPnP-1.0.gir
+share/gtk-doc/html/gupnp/GUPnPAcl.html
 share/gtk-doc/html/gupnp/GUPnPContext.html
 share/gtk-doc/html/gupnp/GUPnPContextManager.html
 share/gtk-doc/html/gupnp/GUPnPControlPoint.html
@@ -38,6 +39,7 @@ share/gtk-doc/html/gupnp/GUPnPServiceProxy.html
 share/gtk-doc/html/gupnp/GUPnPWhiteList.html
 share/gtk-doc/html/gupnp/GUPnPXMLDoc.html
 share/gtk-doc/html/gupnp/annotation-glossary.html
+share/gtk-doc/html/gupnp/api-context.html
 share/gtk-doc/html/gupnp/api-device-control.html
 share/gtk-doc/html/gupnp/api-device-impl.html
 share/gtk-doc/html/gupnp/api-device-info.html

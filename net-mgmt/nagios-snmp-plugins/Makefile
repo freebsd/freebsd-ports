@@ -12,13 +12,14 @@ COMMENT=	Additional SNMP plugins for Nagios
 
 LIB_DEPENDS=	libnetsnmp.so:${PORTSDIR}/net-mgmt/net-snmp
 
-USES=			gmake perl5
-GNU_CONFIGURE=		yes
+USES=		gmake perl5
+GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	automake14 autoheader autoconf
+OPTIONS_DEFINE=	DOCS
 
 NAGIOS_PLUGIN_DIR=	${PREFIX}/libexec/nagios
 
-AUTOMAKE_ARGS=		--add-missing
+AUTOMAKE_ARGS=	--add-missing
 CONFIGURE_ARGS=	--sbindir=${PREFIX}/share/nagios/cgi-bin \
 		--libexecdir=${NAGIOS_PLUGIN_DIR} \
 		--datadir=${PREFIX}/share/nagios \
@@ -30,9 +31,6 @@ CONFIGURE_ENV=	LOCALBASE=${LOCALBASE}
 # Workaround configure.in lameness.
 CPPFLAGS+=	`net-snmp-config --cflags`
 
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
-
 pre-configure:
 	@(cd ${CONFIGURE_WRKSRC} && ${SETENV} ${AUTOMAKE_ENV} ${ACLOCAL} \
 		--acdir=${ACLOCAL_DIR})
@@ -43,12 +41,10 @@ pre-configure:
 		${AUTOCONF_ARGS})
 
 do-install:
-	${MKDIR} ${NAGIOS_PLUGIN_DIR}
-	${INSTALL_PROGRAM} ${WRKSRC}/check_snmp_disk ${NAGIOS_PLUGIN_DIR}
-	${INSTALL_PROGRAM} ${WRKSRC}/check_snmp_proc ${NAGIOS_PLUGIN_DIR}
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
-.endif
+	${MKDIR} ${STAGEDIR}${NAGIOS_PLUGIN_DIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/check_snmp_disk ${STAGEDIR}${NAGIOS_PLUGIN_DIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/check_snmp_proc ${STAGEDIR}${NAGIOS_PLUGIN_DIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

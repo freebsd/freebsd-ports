@@ -34,10 +34,6 @@ BACKSPACE_DESC=	Build with tty/keys patch
 CFLAGS+=	-Wno-pointer-sign
 
 BACKSPACE_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-tty-keys.c
-LIBEVENT2_CONFIGURE_ENV=	LIBEVENT_CFLAGS="-I${LOCALBASE}/include/event2/compat" \
-				LIBEVENT_LIBS="-L${LOCALBASE}/lib/event2 -levent"
-LIBEVENT2_CONFIGURE_ENV_OFF=	LIBEVENT_CFLAGS="-I${LOCALBASE}/include" \
-				LIBEVENT_LIBS="-L${LOCALBASE}/lib -levent"
 
 LIBEVENT_STATIC_LIB_DEPENDS_OFF=	libevent.so:${PORTSDIR}/devel/libevent2
 LIBEVENT_STATIC_BUILD_DEPENDS=	${LOCALBASE}/lib/libevent.a:${PORTSDIR}/devel/libevent2

@@ -8,7 +8,7 @@ CATEGORIES=	databases
 MASTER_SITES=	SF/${PORTNAME}/MySQLDumper/
 DISTNAME=	MySQLDumper${PORTVERSION}
 
-MAINTAINER= ports@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tool for backing up MySQL databases
 
 LICENSE=	GPLv2
@@ -24,8 +24,8 @@ WRKSRC=		${WRKDIR}/msd${PORTVERSION}
 
 OPTIONS_DEFINE=	APACHE LIGHTTPD
 OPTIONS_DEFAULT=	APACHE
+PLIST_SUB=	WWWOWN="${WWWOWN}" WWWGRP="${WWWGRP}"
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MAPACHE}
@@ -37,13 +37,7 @@ RUN_DEPENDS+=	lighttpd:${PORTSDIR}/www/lighttpd
 .endif
 
 do-install:
-	@${MKDIR} ${WWWDIR}
-	${CP} -a ${WRKDIR}/msd${PORTVERSION}/ ${WWWDIR}
-	${CHOWN} -R ${WWWOWN}:${WWWGRP} ${WWWDIR}
-
-post-install:
-	@${ECHO_MSG}
-	@${CAT} ${PKGMESSAGE}
-	@${ECHO_MSG}
+	@${MKDIR} ${STAGEDIR}${WWWDIR}
+	${CP} -a ${WRKDIR}/msd${PORTVERSION}/ ${STAGEDIR}${WWWDIR}
 
 .include <bsd.port.mk>

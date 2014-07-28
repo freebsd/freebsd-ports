@@ -1,10 +1,10 @@
 === Configuration details ===
 You can mostly follow the guide at:
-http://observium.org/wiki/FreeBSD_SVN_Installation
+http://observium.org/wiki/Installation
 
 with the following notes:
 - Installation directory is %%WWWDIR%%
-- $config['fping'] should be set to '%%FPING%%'
+- $config['fping'] should be set to '%%LOCALBASE%%/sbin/fping'
 - The following lines should be added to /etc/crontab:
 
 33	*/6	*	*	*	www	cd %%WWWDIR%% && %%PHP%% discovery.php -h all > /dev/null 2>&1

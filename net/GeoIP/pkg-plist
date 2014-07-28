@@ -1,21 +1,13 @@
 bin/geoiplookup
 bin/geoiplookup6
-bin/geoipupdate
 bin/geoipupdate.sh
-@sample etc/GeoIP.conf.sample
 include/GeoIP.h
 include/GeoIPCity.h
-include/GeoIPUpdate.h
 lib/libGeoIP.a
 lib/libGeoIP.la
 lib/libGeoIP.so
-lib/libGeoIP.so.5
-lib/libGeoIPUpdate.a
-lib/libGeoIPUpdate.la
-lib/libGeoIPUpdate.so
-lib/libGeoIPUpdate.so.0
-@sample %%DATADIR%%/GeoIP.dat.sample
+lib/libGeoIP.so.7
+libdata/pkgconfig/geoip.pc
 man/man1/geoiplookup.1.gz
 man/man1/geoiplookup6.1.gz
-man/man1/geoipupdate.1.gz
 @dirrmtry %%DATADIR%%

@@ -804,12 +804,13 @@ bin/psp-gcc
 bin/psp-g++
 bin/psp-cpp
 bin/psp-c++
-psp/bin/c++
-psp/bin/g++
-psp/bin/gcc
 share/gcc-4.6.2/python/libstdcxx/v6/printers.py
 share/gcc-4.6.2/python/libstdcxx/v6/__init__.py
 share/gcc-4.6.2/python/libstdcxx/__init__.py
+man/man1/psp-cpp.1.gz
+man/man1/psp-gcc.1.gz
+man/man1/psp-gcov.1.gz
+man/man1/psp-g++.1.gz
 @dirrm psp/include/c++/4.6.2/tr1
 @dirrm psp/include/c++/4.6.2/psp/bits
 @dirrm psp/include/c++/4.6.2/psp

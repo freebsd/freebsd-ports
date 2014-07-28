@@ -17,6 +17,9 @@ share/gdb/syscalls/ppc-linux.xml
 share/gdb/syscalls/ppc64-linux.xml
 share/gdb/syscalls/sparc-linux.xml
 share/gdb/syscalls/sparc64-linux.xml
+man/man1/psp-gdb.1.gz
+man/man1/psp-gdbtui.1.gz
+man/man1/psp-run.1.gz
 @dirrmtry share/info
 @dirrm share/gdb/syscalls
 @dirrm share/gdb/python/gdb/command
