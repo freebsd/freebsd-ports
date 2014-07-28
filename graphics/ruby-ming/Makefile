@@ -36,4 +36,10 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${RUBY_MODDOCDIR}/
 .endfor
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${RUBY_VER} != 1.9
+BROKEN=		Does not build
+.endif
+
+.include <bsd.port.post.mk>
