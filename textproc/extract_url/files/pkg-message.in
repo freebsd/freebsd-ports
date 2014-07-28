@@ -2,8 +2,14 @@
 
 extract_url has been installed.
 
-Sample configuration is installed, please adjust it
+If you don't have ~/.extract_urlview
 
-     %%PREFIX%%/etc/extract_urlview.sample
+the extract_url configuration file can be copied, please type as user:
+
+    su - user
+
+    cp %%PREFIX%%/etc/extract_urlview.sample ~/.extract_urlview
+
+    exit
 
 ===============================================================================
