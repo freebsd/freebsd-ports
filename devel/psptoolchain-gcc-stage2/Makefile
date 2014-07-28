@@ -1,9 +1,11 @@
 # Created by: Tassilo Philipp <tphilipp@potion-studios.com>
 # $FreeBSD$
 
+PORTREVISION=		1
+
 PKGNAMESUFFIX=		-stage2
 
-MAINTAINER= ports@FreeBSD.org
+MAINTAINER=		tphilipp@potion-studios.com
 
 BUILD_DEPENDS=		${LOCALBASE}/psp/lib/libc.a:${PORTSDIR}/devel/psptoolchain-newlib
 
@@ -22,10 +24,7 @@ CONFIGURE_ARGS=		--prefix=${PREFIX} \
 			--with-as=${LOCALBASE}/bin/psp-as \
 			--mandir=${PREFIX}/man
 
-MAN1=			psp-g++.1
-
 PLIST=			${.CURDIR}/pkg-plist
 MASTERDIR=		${.CURDIR}/../psptoolchain-gcc-stage1
 
-NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"
