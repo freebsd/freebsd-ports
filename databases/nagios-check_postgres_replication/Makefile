@@ -10,7 +10,7 @@ PKGNAMEPREFIX=	nagios-
 DISTNAME=	check_postgres_replication.py
 EXTRACT_SUFX=
 
-MAINTAINER= ports@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Nagios plugin to check the lag between a postgresql replica and master
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}nagiosplugin>=0:${PORTSDIR}/sysutils/py-nagiosplugin \
@@ -22,14 +22,13 @@ USE_PGSQL=	yes
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 
-NO_STAGE=	yes
 do-extract:
 	${MKDIR} ${WRKDIR}
 	${CP} ${DISTDIR}/${DISTNAME} ${WRKDIR}
 
 do-install:
-	${MKDIR} ${PREFIX}/libexec/nagios
+	${MKDIR} ${STAGEDIR}${PREFIX}/libexec/nagios
 	${INSTALL_SCRIPT} ${WRKDIR}/${DISTNAME} \
-	    ${PREFIX}/libexec/nagios/${DISTNAME:S/.py//}
+	    ${STAGEDIR}${PREFIX}/libexec/nagios/${DISTNAME:S/.py//}
 
 .include <bsd.port.mk>
