@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libsigrokdecode
-PORTVERSION=	0.2.0
-PORTREVISION=	1
+PORTVERSION=	0.3.0
 CATEGORIES=	devel
 MASTER_SITES=	http://sigrok.org/download/source/libsigrokdecode/
 
@@ -14,8 +13,8 @@ LICENSE=	GPLv3
 
 USE_PYTHON=	3
 GNU_CONFIGURE=	yes
-USES=		gmake pkgconfig pathfix
-USE_GNOME=	gtk20
+USE_GNOME=	glib20
+USES=		gmake pathfix libtool pkgconfig
 MAKE_JOBS_UNSAFE=	yes
 USE_LDCONFIG=	yes
 
