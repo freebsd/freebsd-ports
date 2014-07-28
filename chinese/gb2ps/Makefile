@@ -19,8 +19,6 @@ WRKSRC=		${WRKDIR}/GB2PS
 
 OPTIONS_DEFINE=	DOCS
 
-.include <bsd.port.options.mk>
-
 do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/chinese/gb
 	${INSTALL_PROGRAM} ${WRKSRC}/gb2ps ${STAGEDIR}${PREFIX}/bin
@@ -28,9 +26,7 @@ do-install:
 .for font in csong24.ccf ckai24.ccf cfang24.ccf chei24.ccf cfan24.ccf
 	${GUNZIP_CMD} -c ${DISTDIR}/${font}.gz > ${STAGEDIR}${PREFIX}/share/chinese/gb/${font}
 .endfor
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${STAGEDIR}${PREFIX}/share/doc/gb2ps
-	${INSTALL_DATA} ${WRKSRC}/gb2ps.help ${STAGEDIR}${PREFIX}/share/doc/gb2ps
-.endif
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/gb2ps.help ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

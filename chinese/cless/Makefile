@@ -15,12 +15,9 @@ CPP=		#
 
 OPTIONS_DEFINE=	DOCS
 
-.include <bsd.port.options.mk>
 
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${STAGEDIR}${PREFIX}/share/doc/cless
-	${INSTALL_DATA} ${WRKSRC}/README.CLESS ${STAGEDIR}${PREFIX}/share/doc/cless
-.endif
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README.CLESS ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
