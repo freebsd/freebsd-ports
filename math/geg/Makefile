@@ -22,6 +22,6 @@ PLIST_FILES=	bin/geg \
 		man/man1/geg.1.gz
 
 pre-configure:
-	@cd ${WRKSRC}; ${ACLOCAL} -I ${LOCALBASE}/share/aclocal
+	@(cd ${WRKSRC}; ${ACLOCAL} -I ${LOCALBASE}/share/aclocal)
 
 .include <bsd.port.mk>

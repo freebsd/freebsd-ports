@@ -19,7 +19,7 @@ USE_XORG=	x11 xpm
 PLIST_FILES=	bin/apc man/man1/apc.1.gz
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/apc ${STAGEDIR}${PREFIX}/bin/
-	${INSTALL_MAN} ${WRKSRC}/apc.1 ${STAGEDIR}/${MAN1PREFIX}/man/man1/
+	${INSTALL_PROGRAM} ${WRKSRC}/apc ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/apc.1 ${STAGEDIR}/${MAN1PREFIX}/man/man1
 
 .include <bsd.port.mk>
