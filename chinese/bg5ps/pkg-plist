@@ -11,14 +11,14 @@
 %%PORTDOCS%%%%DOCSDIR%%/html/bg5ps.html
 %%PORTDOCS%%%%DOCSDIR%%/makeps
 %%PORTDOCS%%%%DOCSDIR%%/ttf2ps.doc
-%%EXAMPLESDIR%%/netscape.ps
-%%EXAMPLESDIR%%/test.big5
-%%EXAMPLESDIR%%/test.gb2312
-%%EXAMPLESDIR%%/test.sh
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/netscape.ps
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test.big5
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test.gb2312
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test.sh
 bin/bg5ps
 bin/ttf2psm
 etc/bg5ps.conf.sample
 etc/gb2312-bg5ps.conf.sample
-@dirrm %%EXAMPLESDIR%%
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%

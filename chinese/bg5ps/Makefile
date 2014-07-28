@@ -16,7 +16,7 @@ LIB_DEPENDS=	libttf.so:${PORTSDIR}/print/freetype
 USE_PYTHON=	yes
 SUB_FILES=	pkg-message
 
-OPTIONS_DEFINE=	DOCS
+OPTIONS_DEFINE=	DOCS EXAMPLES
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/bg5ps ${STAGEDIR}${PREFIX}/bin
@@ -24,7 +24,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/bg5ps.conf ${STAGEDIR}${PREFIX}/etc/bg5ps.conf.sample
 	${INSTALL_DATA} ${WRKSRC}/gb2312-bg5ps.conf ${STAGEDIR}${PREFIX}/etc/gb2312-bg5ps.conf.sample
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	cd ${WRKSRC}/doc && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}
+	(cd ${WRKSRC}/doc && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR})
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/examples/netscape.ps ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/examples/test.big5 ${STAGEDIR}${EXAMPLESDIR}
