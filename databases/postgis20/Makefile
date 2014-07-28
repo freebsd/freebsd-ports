@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	postgis
-PORTVERSION=	2.0.4
-PORTREVISION=	5
+PORTVERSION=	2.0.6
 CATEGORIES=	databases geography
 MASTER_SITES=	http://download.osgeo.org/postgis/source/
 PKGNAMESUFFIX=	20
@@ -59,16 +58,11 @@ TOPOLOGY_CONFIGURE_WITH=topology
 BROKEN=		Raster suppport is broken on FreeBSD < 9.x
 .endif
 
-post-patch:
-	@${GREP} -lR 'bin/bash' ${WRKSRC} | ${XARGS} ${REINPLACE_CMD} -e "s|/bin/bash|/bin/sh|"
-
 post-install:
-	${MKDIR} ${STAGEDIR}/${DATADIR}/tiger_2010
-	(cd ${WRKSRC}/extras/tiger_geocoder/tiger_2010/ && ${COPYTREE_SHARE} . ${STAGEDIR}/${DATADIR}/tiger_2010/ "! ( -name *\.orig -o -name *\.bak )" )
-	${MKDIR} ${STAGEDIR}/${DATADIR}/utils
-	(cd ${WRKSRC}/utils/ && ${COPYTREE_SHARE} . ${STAGEDIR}/${DATADIR}/utils/ "! ( -name *\.orig -o -name *\.bak )" )
-	${STRIP_CMD} ${STAGEDIR}/${PREFIX}/lib/postgresql/*.so \
-		${STAGEDIR}/${PREFIX}/lib/*.so \
-		${STAGEDIR}/${PREFIX}/bin/*
+	${MKDIR} ${STAGEDIR}/${DATADIR}/tiger_2010/
+	cd ${WRKSRC}/extras/tiger_geocoder/tiger_2010/ && ${COPYTREE_SHARE} . ${STAGEDIR}/${DATADIR}/tiger_2010/
+	${MKDIR} ${STAGEDIR}/${DATADIR}/utils/
+	cd ${WRKSRC}/utils/ && ${COPYTREE_SHARE} . ${STAGEDIR}/${DATADIR}/utils/
+	${STRIP_CMD} ${STAGEDIR}/${PREFIX}/bin/* ${STAGEDIR}/${PREFIX}/lib/*.so ${STAGEDIR}/${PREFIX}/lib/postgresql/*.so
 
 .include <bsd.port.post.mk>
