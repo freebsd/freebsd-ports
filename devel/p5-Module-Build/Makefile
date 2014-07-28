@@ -1,8 +1,9 @@
 # Created by: Dmitry Sivachenko <demon@FreeBSD.org>
 # $FreeBSD$
 #
-# Do not forget to update p5-Module-Build version in Mk/Uses/perl5.mk
-# while updating this port!
+# If you have compelling evidence that some ports need at least this version of
+# p5-Module-Build to build, be sure to update the BUILD_DEPENDS version in
+# Mk/Uses/perl5.mk.
 
 PORTNAME=	Module-Build
 PORTVERSION=	0.4206
