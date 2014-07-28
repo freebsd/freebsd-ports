@@ -13,7 +13,7 @@ COMMENT=	Binary plugin for some HP Printers and All-in-One devices
 
 RUN_DEPENDS=	hp-plugin:${PORTSDIR}/print/hplip
 
-RESTRICTED=	User must accept the license terms
+RESTRICTED=	License agreement is required
 
 USE_PYTHON=	yes
 NO_BUILD=	yes
