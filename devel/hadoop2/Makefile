@@ -11,7 +11,6 @@ MASTER_SITES=	${MASTER_SITE_APACHE} \
 		http://archive.apache.org/dist/tomcat/tomcat-6/v${TOMCAT_VERSION}/bin/:tomcat \
 		http://dist.codehaus.org/jetty/jetty-6.1.14/:jetty
 MASTER_SITE_SUBDIR=${PORTNAME}/common/stable
-PKGNAMEPREFIX=	apache-
 PKGNAMESUFFIX=	2
 DISTFILES=	${PORTNAME}-${PORTVERSION}-src${EXTRACT_SUFX} FreeBSD-hadoop2-${PORTVERSION}-maven-repository.tar.gz:maven apache-tomcat-${TOMCAT_VERSION}.tar.gz:tomcat jetty-6.1.14.zip:jetty
 DIST_SUBDIR=	hadoop
