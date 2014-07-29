@@ -10,7 +10,7 @@ MASTER_SITE_SUBDIR=	dannyboy
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Locks a terminal while showing fortunes
 
-USE_BZIP2=	yes
+USES=		tar:bzip2
 
 PLIST_FILES=	bin/fortunelock man/man1/${PORTNAME}.1.gz
 
