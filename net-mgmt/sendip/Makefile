@@ -3,7 +3,7 @@
 
 PORTNAME=	sendip
 PORTVERSION=	2.5
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net-mgmt ipv6
 MASTER_SITES=	http://www.earth.li/projectpurple/files/
 
