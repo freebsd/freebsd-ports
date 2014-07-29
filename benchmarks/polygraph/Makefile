@@ -14,6 +14,7 @@ COMMENT=	Benchmarking tool for Web proxies
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+USES=		tar:tgz
 USE_GCC=	any
 GNU_CONFIGURE=	yes
 WRKSRC=	${WRKDIR}/${PORTNAME}-${PORTVERSION}
@@ -43,7 +44,7 @@ CONFIGURE_ARGS+=	--without-ssl
 .endif
 
 .if ${PORT_OPTIONS:MPERL}
-USES+=		perl5 tar:tgz
+USES+=		perl5
 USE_PERL5=	run
 .endif
 
