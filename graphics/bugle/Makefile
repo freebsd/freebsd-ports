@@ -2,73 +2,46 @@
 # $FreeBSD$
 
 PORTNAME=	bugle
-PORTVERSION=	0.0.20091026
-PORTREVISION=	2
+PORTVERSION=	0.0.20100508
 CATEGORIES=	graphics
 MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Debugging library for OpenGL
 
-OPTIONS_DEFINE=	AVCODEC GUI THREADS
-AVCODEC_DESC=	LAVC codec support
+LICENSE=	GPLv2
 
-GNU_CONFIGURE=	yes
+USES=		libtool pathfix perl5
 USE_GL=		gl
-USES=		perl5
+USE_GCC=	yes
 USE_AUTOTOOLS=	libltdl
-USE_LDCONFIG=	${PREFIX}/lib ${PREFIX}/lib/${PORTNAME}
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--enable-ltdl-install=no
+INSTALL_TARGET=	install-strip
+USE_LDCONFIG=	yes
 
-CONFIGURE_ARGS=--enable-ltdl-install=no
 CPPFLAGS+=	-I${LOCALBASE}/include
-LIBS+=		-L${LOCALBASE}/lib
+LDFLAGS+=	-L${LOCALBASE}/lib
 
-MAN1=	gldb.1 gldb-gui.1
-MAN3=	bugle.3
-MAN5=	bugle-statistics.5
-MAN7=	bugle-camera.7 bugle-checks.7 bugle-eps.7 bugle-error.7 \
-	bugle-exe.7 bugle-extoverride.7 bugle-frontbuffer.7 bugle-log.7 \
-	bugle-logstats.7 bugle-screenshot.7 bugle-showerror.7 \
-	bugle-showextensions.7 bugle-showstats.7 bugle-stats_basic.7 \
-	bugle-stats_calls.7 bugle-stats_calltimes.7 bugle-stats_fragments.7 \
-	bugle-stats_nv.7 bugle-stats_primitives.7 bugle-trace.7 \
-	bugle-unwindstack.7 bugle-wireframe.7
+BROKEN_sparc64=	Fails to link
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
+OPTIONS_DEFINE=		FFMPEG GTK2 READLINE THREADS
+OPTIONS_DEFAULT=	READLINE THREADS
 
-.if ${PORT_OPTIONS:MAVCODEC}
-CONFIGURE_ARGS+=--with-lavc
-LIB_DEPENDS+=	libavcodec.so.1:${PORTSDIR}/multimedia/ffmpeg
-.else
-CONFIGURE_ARGS+=--without-lavc
-.endif
-
-.if ${PORT_OPTIONS:MGUI}
-LIB_DEPENDS+=	libgtkglext-x11-1.0.so:${PORTSDIR}/x11-toolkits/gtkglext
-CONFIGURE_ARGS+=--with-gtk --with-gtkglext
-.else
-CONFIGURE_ARGS+=--without-gtk --without-gtkglext
-.endif
-
-.if ${PORT_OPTIONS:MTHREADS}
-CONFIGURE_ARGS+=--with-threads=pthreads
-.else
-CONFIGURE_ARGS+=--with-threads=single
-.endif
-
-.if ${ARCH} == "sparc64"
-BROKEN=		Fails to link
-.endif
+FFMPEG_CONFIGURE_WITH=	lavc
+FFMPEG_LIB_DEPENDS=	libavcodec.so.1:${PORTSDIR}/multimedia/ffmpeg
+GTK2_LIB_DEPENDS=	libgtkglext-x11-1.0.so:${PORTSDIR}/x11-toolkits/gtkglext
+GTK2_USE=		gnome=gtk20
+GTK2_CONFIGURE_WITH=	gtk gtkglext
+READLINE_USES=		readline
+READLINE_CONFIGURE_WITH=	readline
+THREADS_CONFIGURE_ON=	--with-threads=pthreads
+THREADS_CONFIGURE_OFF=	--with-threads=single
 
 post-patch:
-	@${REINPLACE_CMD} -e 's,/usr/X11R6,${LOCALBASE},g' ${WRKSRC}/gengl/find_header.perl
-
-post-install:
-	@${RM} -f ${PREFIX}/lib/libbugle.la ${PREFIX}/lib/libbugleutils.la \
-	          ${PREFIX}/lib/bugle/*.la \
-	          ${PREFIX}/lib/pkgconfig/bugle.pc
-	@-${RMDIR} ${PREFIX}/lib/pkgconfig
-	@${RM} -rf ${PREFIX}/share/doc/bugle
+	@${REINPLACE_CMD} -e \
+		's|=-lpthread|=-pthread|g' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e \
+		's|/usr/X11R6|${LOCALBASE}|' ${WRKSRC}/gengl/find_header.perl
 
 .include <bsd.port.mk>

@@ -77,13 +77,85 @@ lib/bugle/validate.so
 lib/libbugle.a
 lib/libbugle.so
 lib/libbugle.so.8
+lib/libbugle.so.8.0.0
 lib/libbugleutils.a
 lib/libbugleutils.so
 lib/libbugleutils.so.7
+lib/libbugleutils.so.7.0.0
+libdata/pkgconfig/bugle.pc
+man/man1/gldb.1.gz
+man/man1/gldb-gui.1.gz
+man/man3/bugle.3.gz
+man/man5/bugle-statistics.5.gz
+man/man7/bugle-camera.7.gz
+man/man7/bugle-checks.7.gz
+man/man7/bugle-eps.7.gz
+man/man7/bugle-error.7.gz
+man/man7/bugle-exe.7.gz
+man/man7/bugle-extoverride.7.gz
+man/man7/bugle-frontbuffer.7.gz
+man/man7/bugle-log.7.gz
+man/man7/bugle-logstats.7.gz
+man/man7/bugle-screenshot.7.gz
+man/man7/bugle-showerror.7.gz
+man/man7/bugle-showextensions.7.gz
+man/man7/bugle-showstats.7.gz
+man/man7/bugle-stats_basic.7.gz
+man/man7/bugle-stats_calls.7.gz
+man/man7/bugle-stats_calltimes.7.gz
+man/man7/bugle-stats_fragments.7.gz
+man/man7/bugle-stats_nv.7.gz
+man/man7/bugle-stats_primitives.7.gz
+man/man7/bugle-trace.7.gz
+man/man7/bugle-unwindstack.7.gz
+man/man7/bugle-wireframe.7.gz
+%%PORTDOCS%%%%DOCSDIR%%/html/bugle.3.html
+%%PORTDOCS%%%%DOCSDIR%%/html/bugle.css
+%%PORTDOCS%%%%DOCSDIR%%/html/camera.7.html
+%%PORTDOCS%%%%DOCSDIR%%/html/checks.7.html
+%%PORTDOCS%%%%DOCSDIR%%/html/eps.7.html
+%%PORTDOCS%%%%DOCSDIR%%/html/error.7.html
+%%PORTDOCS%%%%DOCSDIR%%/html/exe.7.html
+%%PORTDOCS%%%%DOCSDIR%%/html/extending.html
+%%PORTDOCS%%%%DOCSDIR%%/html/extoverride.7.html
+%%PORTDOCS%%%%DOCSDIR%%/html/faq.html
+%%PORTDOCS%%%%DOCSDIR%%/html/frontbuffer.7.html
+%%PORTDOCS%%%%DOCSDIR%%/html/gldb-gui.1.html
+%%PORTDOCS%%%%DOCSDIR%%/html/gldb.1.html
+%%PORTDOCS%%%%DOCSDIR%%/html/hacking.html
+%%PORTDOCS%%%%DOCSDIR%%/html/images/gtk-copy.png
+%%PORTDOCS%%%%DOCSDIR%%/html/images/gtk-zoom-100.png
+%%PORTDOCS%%%%DOCSDIR%%/html/images/gtk-zoom-fit.png
+%%PORTDOCS%%%%DOCSDIR%%/html/images/gtk-zoom-in.png
+%%PORTDOCS%%%%DOCSDIR%%/html/images/gtk-zoom-out.png
+%%PORTDOCS%%%%DOCSDIR%%/html/index.html
+%%PORTDOCS%%%%DOCSDIR%%/html/install.html
+%%PORTDOCS%%%%DOCSDIR%%/html/introduction.html
+%%PORTDOCS%%%%DOCSDIR%%/html/log.7.html
+%%PORTDOCS%%%%DOCSDIR%%/html/logstats.7.html
+%%PORTDOCS%%%%DOCSDIR%%/html/protocol.html
+%%PORTDOCS%%%%DOCSDIR%%/html/screenshot.7.html
+%%PORTDOCS%%%%DOCSDIR%%/html/showerror.7.html
+%%PORTDOCS%%%%DOCSDIR%%/html/showextensions.7.html
+%%PORTDOCS%%%%DOCSDIR%%/html/showstats.7.html
+%%PORTDOCS%%%%DOCSDIR%%/html/single.html
+%%PORTDOCS%%%%DOCSDIR%%/html/statistics.5.html
+%%PORTDOCS%%%%DOCSDIR%%/html/stats_basic.7.html
+%%PORTDOCS%%%%DOCSDIR%%/html/stats_calls.7.html
+%%PORTDOCS%%%%DOCSDIR%%/html/stats_calltimes.7.html
+%%PORTDOCS%%%%DOCSDIR%%/html/stats_fragments.7.html
+%%PORTDOCS%%%%DOCSDIR%%/html/stats_nv.7.html
+%%PORTDOCS%%%%DOCSDIR%%/html/stats_primitives.7.html
+%%PORTDOCS%%%%DOCSDIR%%/html/trace.7.html
+%%PORTDOCS%%%%DOCSDIR%%/html/unwindstack.7.html
+%%PORTDOCS%%%%DOCSDIR%%/html/wireframe.7.html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/html/images
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm lib/bugle
 @dirrm include/bugle/bugle/glx
 @dirrm include/bugle/bugle/glwin
 @dirrm include/bugle/bugle/gl
 @dirrm include/bugle/bugle
 @dirrm include/bugle/budgie
 @dirrm include/bugle
-@dirrm lib/bugle
