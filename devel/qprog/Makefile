@@ -7,12 +7,11 @@ PORTREVISION=	4
 CATEGORIES=	devel
 MASTER_SITES=	http://bfoz.net/projects/${PORTNAME}/release/
 DISTNAME=	QProg_${PORTVERSION}
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	bfoz@bfoz.net
 COMMENT=	Cross-platform software for the DIY line of PIC programmers
 
-USES=		qmake
+USES=		qmake tar:tgz
 USE_QT4=	moc_build gui network
 
 WRKSRC=		${WRKDIR}/QProg

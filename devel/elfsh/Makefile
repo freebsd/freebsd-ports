@@ -7,12 +7,11 @@ PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	http://elfsh.asgardlabs.org/files/
 DISTNAME=	elfsh-0.51b3-portable
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Attractive toolkit for the analysis of ELF object files
 
-USES=		gmake readline
+USES=		gmake readline tar:tgz
 USE_LDCONFIG=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}

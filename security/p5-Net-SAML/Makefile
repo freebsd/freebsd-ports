@@ -7,7 +7,6 @@ MASTER_SITES=	http://zxid.org/ \
 		CPAN
 PKGNAMEPREFIX=	p5-
 DISTNAME=	zxid-${PORTVERSION}
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension for using SAML SSO
@@ -19,7 +18,7 @@ LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl \
 
 OPTIONS_DEFINE=	EXAMPLES
 
-USES=		perl5 shebangfix
+USES=		perl5 shebangfix tar:tgz
 USE_PERL5=	configure
 WRKSRC=		${WRKDIR}/${DISTNAME}/Net
 

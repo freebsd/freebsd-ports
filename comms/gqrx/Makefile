@@ -6,7 +6,6 @@ PORTVERSION=	20140313
 CATEGORIES=	comms hamradio
 MASTER_SITES=	http://contribs.martymac.org/FreeBSD-ports/distfiles/ \
 		LOCAL/martymac
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	martymac@FreeBSD.org
 COMMENT=	Qt-based software defined radio receiver
@@ -25,7 +24,7 @@ LIB_DEPENDS=	libgnuradio-runtime.so:${PORTSDIR}/comms/gnuradio \
 		libboost_system.so:${PORTSDIR}/devel/boost-libs \
 		libboost_program_options.so:${PORTSDIR}/devel/boost-libs
 
-USES=		pkgconfig qmake
+USES=		pkgconfig qmake tar:tgz
 USE_QT5=	buildtools_build core gui svg network widgets
 
 QMAKE_ARGS+=	VER="${PORTVERSION}"

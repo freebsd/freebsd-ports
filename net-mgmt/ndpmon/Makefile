@@ -6,7 +6,6 @@ PORTVERSION=	1.4.0
 PORTREVISION=	3
 CATEGORIES=	net-mgmt ipv6
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-1.4/
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	On-link icmpv6 message monitoring and reporting daemon
@@ -31,7 +30,7 @@ PLIST_SUB+=	PY=""
 PLIST_SUB+=	PY="@comment "
 .endif
 
-USES=		perl5
+USES=		perl5 tar:tgz
 USE_PERL5=	run
 USE_GNOME=	libxml2
 USE_RC_SUBR=	ndpmonitor

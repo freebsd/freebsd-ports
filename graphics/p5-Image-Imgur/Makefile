@@ -6,7 +6,6 @@ PORTVERSION=	0.01
 CATEGORIES=	graphics perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Perl extension for uploading images to http://imgur.com
@@ -14,7 +13,7 @@ COMMENT=	Perl extension for uploading images to http://imgur.com
 RUN_DEPENDS=	p5-Moose>=0:${PORTSDIR}/devel/p5-Moose \
 		p5-libwww>=0:${PORTSDIR}/www/p5-libwww
 
-USES=		perl5
+USES=		perl5 tar:tgz
 USE_PERL5=	configure
 
 .include <bsd.port.mk>

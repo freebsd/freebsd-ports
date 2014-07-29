@@ -7,14 +7,13 @@ PORTREVISION=	2
 CATEGORIES=	news mail
 MASTER_SITES=	SF/husky/${PORTNAME}/6.2%20RC1
 DISTNAME=	${PORTNAME}-${PORTVERSION}-stable-src
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Msged/TE (full-featured FTN mail reader)
 
 LIB_DEPENDS=	libfidoconfig.so:${PORTSDIR}/news/husky-fidoconf
 
-USES=		makeinfo
+USES=		makeinfo tar:tgz
 MAKE_ARGS=	MSGEDCFG="\\\"~/.msged\\\""
 
 INFO=		msged

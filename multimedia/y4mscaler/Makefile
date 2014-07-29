@@ -7,7 +7,6 @@ PORTREVISION=	8
 CATEGORIES=	multimedia
 MASTER_SITES=	http://www.mir.com/DMG/Software/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Y4mscaler scales, crops, and shifts Y'CbCr video
@@ -16,7 +15,7 @@ BROKEN=		Conflicts with mjpegtools on /usr/local/bin/y4mscaler
 
 LIB_DEPENDS=	liblavjpeg.so:${PORTSDIR}/multimedia/mjpegtools
 
-USES=		gmake
+USES=		gmake tar:tgz
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 DOCS=		COPYING ChangeLog INSTALL README TODO

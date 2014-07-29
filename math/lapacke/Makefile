@@ -7,7 +7,6 @@ CATEGORIES=	math
 MASTER_SITES=	NL
 MASTER_SITE_SUBDIR=	lapack
 DISTNAME=	lapack-${PORTVERSION}
-EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	lapack
 
 MAINTAINER=	phd_kimberlite@yahoo.co.jp
@@ -17,7 +16,7 @@ LICENSE=	BSD
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USE_LDCONFIG=	yes
-USES=		fortran
+USES=		fortran tar:tgz
 
 OPTIONS_DEFINE=	PROFILE XLAPACKE DOCS
 PROFILE_DESC=	Build a profiling library

@@ -7,7 +7,6 @@ PORTREVISION=	13
 CATEGORIES=	games
 MASTER_SITES=	http://linux.tlk.fr/games/TecnoballZ/download/ \
 		http://mirror.amdmi3.ru/distfiles/
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Brick breaker (Arkanoid-like game)
@@ -17,7 +16,7 @@ LIB_DEPENDS=	libmikmod.so:${PORTSDIR}/audio/libmikmod \
 		libogg.so:${PORTSDIR}/audio/libogg \
 		libsmpeg.so:${PORTSDIR}/multimedia/smpeg
 
-USES=		gmake
+USES=		gmake tar:tgz
 USE_AUTOTOOLS=	automake aclocal
 AUTOMAKE_ARGS=	--add-missing
 USE_SDL=	sdl mixer image

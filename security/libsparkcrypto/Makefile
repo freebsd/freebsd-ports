@@ -6,14 +6,13 @@ PORTVERSION=	0.1.1
 PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES=	http://senier.net/libsparkcrypto/
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	marino@FreeBSD.org
 COMMENT=	Cryptographic library implemented in SPARK
 
 LICENSE=	BSD3CLAUSE
 
-USES=		ada dos2unix gmake
+USES=		ada dos2unix gmake tar:tgz
 DOS2UNIX_FILES=	Makefile build/libsparkcrypto.gpr
 SPARKARCH:=	${ARCH:S/amd64/x86_64/:S/i386/i686/}
 

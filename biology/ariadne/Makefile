@@ -5,7 +5,6 @@ PORTNAME=	ariadne
 PORTVERSION=	1.3
 CATEGORIES=	biology
 MASTER_SITES=	http://www.well.ox.ac.uk/ariadne/
-EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Programs to compare protein sequences and profiles
@@ -13,7 +12,7 @@ COMMENT=	Programs to compare protein sequences and profiles
 WRKSRC=		${WRKDIR}/SRC-${PORTVERSION}
 
 PLIST_FILES+=	bin/ariadne bin/prospero
-USES=		gmake
+USES=		gmake tar:Z
 PORTDOCS=	README
 MAKE_ARGS+=	CC="${CC}"
 

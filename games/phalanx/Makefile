@@ -6,7 +6,6 @@ PORTVERSION=	23.b
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/Version%20XXIII%20Beta
 DISTNAME=	${PORTNAME}-XXIII-beta
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	johans@FreeBSD.org
 COMMENT=	Xboard-compatible chess playing program
@@ -16,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 WRKSRC=		${WRKDIR}/${DISTNAME:S/-beta//}
 
-USES=		gmake
+USES=		gmake tar:tgz
 MAKEFILE=	makefile
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}"
 ALL_TARGET=	# empty

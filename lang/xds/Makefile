@@ -6,7 +6,6 @@ PORTVERSION=	2.51
 CATEGORIES=	lang linux devel
 MASTER_SITES=	http://www.excelsior-usa.com/download/xds25x/
 DISTNAME=	${PORTNAME}-x86-${PORTVERSION:S/.//}-enduser-linux
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Excelsior Oberon-2/Modula-2 compiler, set up to produce native FreeBSD binaries
@@ -16,7 +15,7 @@ RESTRICTED=	Excelsior forbids any redistribution
 ONLY_FOR_ARCHS=	i386
 ONLY_FOR_ARCHS_REASON=	uses assembly code
 USE_LINUX=	yes
-USES=		gmake
+USES=		gmake tar:tgz
 WRKSRC=		${WRKDIR}/${PORTNAME}
 BUILD_WRKSRC=	${WRKSRC}/lib/x86
 

@@ -7,7 +7,6 @@ PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	http://bargraphgen.googlecode.com/files/
 DISTNAME=	bargraphgen-${PORTVERSION}
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	dereckson@gmail.com
 COMMENT=	Scriptable bar graph generator
@@ -17,7 +16,7 @@ LICENSE=	GPLv2
 RUN_DEPENDS=	${LOCALBASE}/bin/fig2dev:${PORTSDIR}/print/transfig \
 		${LOCALBASE}/bin/gnuplot:${PORTSDIR}/math/gnuplot
 
-USES=		perl5 shebangfix
+USES=		perl5 shebangfix tar:tgz
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 SHEBANG_FILES=	bargraph.pl

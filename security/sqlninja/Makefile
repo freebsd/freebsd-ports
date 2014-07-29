@@ -5,7 +5,6 @@ PORTNAME=	sqlninja
 DISTVERSION=	0.2.6
 CATEGORIES=	security
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Sql Server exploit toolkit
@@ -18,7 +17,7 @@ RUN_DEPENDS=	p5-IO-Socket-SSL>=0:${PORTSDIR}/security/p5-IO-Socket-SSL \
 		p5-Net-RawIP>=0:${PORTSDIR}/net/p5-Net-RawIP \
 		p5-NetPacket>=0:${PORTSDIR}/net/p5-NetPacket
 
-USES=		perl5
+USES=		perl5 tar:tgz
 NO_BUILD=	yes
 
 OPTIONS_DEFINE=	DOCS

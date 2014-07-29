@@ -5,7 +5,6 @@ PORTNAME=	kaptain
 PORTVERSION=	0.73
 CATEGORIES=	devel
 MASTER_SITES=	SF
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tool for building/running Qt GUIs for command line programs
@@ -14,7 +13,7 @@ LICENSE=	GPLv2 # (or later)
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
-USES=		qmake
+USES=		qmake tar:tgz
 USE_QT4=	qt3support moc_build
 
 INFO=		kaptain

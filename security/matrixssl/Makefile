@@ -7,7 +7,6 @@ CATEGORIES=	security
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:CDRAKE
 DISTNAME=	Crypt-MatrixSSL3-3.3.0.1
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Small alternative SSL implementation
@@ -18,7 +17,7 @@ OPTIONS_DEFINE=	DOCS EXAMPLES
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/${PORTNAME}-${PORTVERSION:S/./-/g}-open
 
-USES=		gmake
+USES=		gmake tar:tgz
 MAKE_ARGS=	CC="${CC}" DFLAGS="${CFLAGS}" STRIP="${TEST}"
 USE_LDCONFIG=	yes
 

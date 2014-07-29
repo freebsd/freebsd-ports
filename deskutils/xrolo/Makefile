@@ -8,7 +8,6 @@ CATEGORIES=	deskutils
 MASTER_SITES=	ftp://ftp.uni-potsdam.de/pub/X11/open-look/ \
 		ftp://ftp.uni-bielefeld.de/pub/systems/FreeBSD/lkoeller/
 DISTNAME=	${PORTNAME}.v2p6
-EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Electronic Rolodex
@@ -17,7 +16,7 @@ LIB_DEPENDS=	libxview.so:${PORTSDIR}/x11-toolkits/xview
 
 WRKSRC=		${WRKDIR}/xrolo
 
-USES=		imake
+USES=		imake tar:Z
 USE_XORG=	x11 xext
 PLIST_FILES=	bin/xrolo man/man1/xrolo.1.gz
 

@@ -6,12 +6,11 @@ PORTVERSION=	0.0.31
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://www.vanheusden.com/nagtail/ \
 		http://mirrors.rit.edu/zi/
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	zi@FreeBSD.org
 COMMENT=	Tail for the nagios status.dat file
 
-USES=		gmake
+USES=		gmake tar:tgz
 
 PLIST_FILES=	bin/nagtail man/man1/nagtail.1.gz
 

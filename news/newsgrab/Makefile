@@ -6,7 +6,6 @@ PORTVERSION=	0.4.0
 PORTREVISION=	1
 CATEGORIES=	news
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Download and uudecode binary files from USENET using regexps
@@ -17,7 +16,7 @@ RUN_DEPENDS=	p5-NNTPClient>=0:${PORTSDIR}/news/p5-NNTPClient \
 		p5-Time-modules>=0:${PORTSDIR}/devel/p5-Time-modules
 
 NO_BUILD=	yes
-USES=		perl5 shebangfix
+USES=		perl5 shebangfix tar:tgz
 SHEBANG_FILES=	newsgrab.pl
 
 OPTIONS_DEFINE=	DOCS

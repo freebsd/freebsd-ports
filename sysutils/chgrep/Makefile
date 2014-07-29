@@ -5,13 +5,12 @@ PORTNAME=	chgrep
 PORTVERSION=	1.2.4
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.bmk-it.com/projects/chgrep/files/
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fast string substitution across multiple files
 
 GNU_CONFIGURE=	yes
-USES=		gmake
+USES=		gmake tar:tgz
 
 PLIST_FILES=	bin/chgrep man/man1/${PORTNAME}.1.gz
 

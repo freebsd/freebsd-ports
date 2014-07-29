@@ -6,7 +6,6 @@ PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://www.wanlink.com/spamilter/download/
 MASTER_SITE_SUBDIR=	dinoex
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Sendmail LibMilter filter to block spam
@@ -16,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 NEED_ROOT=	yes
 
-USES=		shebangfix
+USES=		shebangfix tar:tgz
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--have-resn
 USE_RC_SUBR=	spamilter

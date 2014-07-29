@@ -7,14 +7,13 @@ CATEGORIES=	net-mgmt security
 MASTER_SITES=	http://lcamtuf.coredump.cx/p0f/ \
 		http://farrokhi.net/distfiles/
 DISTNAME=	p0f-${DISTVERSION}
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Passive OS fingerprinting tool
 
 CONFLICTS=	p0f-3.*
 
-USES=		gmake
+USES=		gmake tar:tgz
 USE_RC_SUBR=	p0f2
 ALL_TARGET=	all p0fq tools
 PORTDOCS=	COPYING CREDITS ChangeLog KNOWN_BUGS README TODO win-memleak.txt

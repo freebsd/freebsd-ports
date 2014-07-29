@@ -6,7 +6,6 @@ PORTVERSION=	0.1.0
 PORTREVISION=	6
 CATEGORIES=	audio graphics
 MASTER_SITES=	http://www.coppercloudmusic.com/enscribe/
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Create digital audio watermark images from photographic images
@@ -17,7 +16,7 @@ LIB_DEPENDS=	libsndfile.so:${PORTSDIR}/audio/libsndfile \
 		libpng15.so:${PORTSDIR}/graphics/png \
 		libfreetype.so:${PORTSDIR}/print/freetype2
 
-USES=		pkgconfig
+USES=		pkgconfig tar:tgz
 
 LICENSE=	GPLv2
 

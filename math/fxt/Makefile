@@ -5,14 +5,13 @@ PORTNAME=	fxt
 PORTVERSION=	2012.06.18
 CATEGORIES=	math
 MASTER_SITES=	http://www.jjj.de/fxt/
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	dhn@FreeBSD.org
 COMMENT=	FFT code and related stuff
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-USES=		gmake
+USES=		gmake tar:tgz
 MAKEFILE=	makefile
 
 OPTIONS_DEFINE=	DOCS EXAMPLES

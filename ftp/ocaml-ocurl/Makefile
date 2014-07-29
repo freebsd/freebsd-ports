@@ -7,7 +7,6 @@ PORTREVISION=	3
 CATEGORIES=	ftp
 MASTER_SITES=	SF
 PKGNAMEPREFIX=	ocaml-
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	johans@FreeBSD.org
 COMMENT=	Interface for OCaml to the curl lib
@@ -19,7 +18,7 @@ RUN_DEPENDS=	ocamlc:${PORTSDIR}/lang/ocaml \
 LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
-USES=		gmake
+USES=		gmake tar:tgz
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+="--with-findlib"
 MAKE_JOBS_UNSAFE=	yes

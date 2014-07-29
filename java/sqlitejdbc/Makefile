@@ -8,7 +8,6 @@ DISTVERSIONSUFFIX=	-src
 PORTREVISION=	2
 CATEGORIES=	java databases
 MASTER_SITES=	http://files.zentus.com/sqlitejdbc/
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	lapo@lapo.it
 COMMENT=	Java JDBC driver for SQLite
@@ -18,7 +17,7 @@ LIB_DEPENDS=	libsqlite3.so:${PORTSDIR}/databases/sqlite3
 WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSIONPREFIX}${DISTVERSION}
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
-USES=		gmake
+USES=		gmake tar:tgz
 MAKE_ENV=	JAVA_HOME="${JAVA_HOME}"
 ALL_TARGET=	native
 

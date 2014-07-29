@@ -8,7 +8,6 @@ PORTEPOCH=	1
 CATEGORIES=	benchmarks
 MASTER_SITES=	SF/${PORTNAME}/development/${PORTNAME}-3.0-a9 http://thegaul.org/src/
 DISTNAME=	${PORTNAME}-${PORTVERSION:C/\.a9/-a9/}
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	sacchi@gmail.com
 COMMENT=	System performance measurement tool
@@ -16,7 +15,7 @@ COMMENT=	System performance measurement tool
 ALL_TARGET=	build
 MAKE_ARGS=	CC="${CC}"
 MAKE_ENV=	PATH=${PATH}:${WRKSRC}/scripts
-USES=		shebangfix perl5 gmake
+USES=		shebangfix perl5 gmake tar:tgz
 USE_PERL5=	run
 SHEBANG_FILES=	scripts/getresults
 

@@ -7,12 +7,11 @@ CATEGORIES=	security python
 MASTER_SITES=	SF
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	TrustedPickle
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	TrustedPickle is a Python (de)Pickler with a way to verify the data
 
-USES=		dos2unix
+USES=		dos2unix tar:tgz
 USE_PYTHON=	yes
 
 PLIST_FILES=	%%PYTHON_SITELIBDIR%%/TrustedPickle.py \

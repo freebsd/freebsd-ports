@@ -4,7 +4,6 @@ PORTNAME=	sks
 PORTVERSION=	1.1.5
 CATEGORIES=	security
 MASTER_SITES=	http://cdn.bitbucket.org/skskeyserver/sks-keyserver/downloads/
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	johans@FreeBSD.org
 COMMENT=	Synchronizing Key Server, a fast OpenPGP keyserver
@@ -13,7 +12,7 @@ PROJECTHOST=	sks-keyserver
 
 USE_OCAML=	yes
 USE_BDB=	5
-USES=		perl5 gmake shebangfix
+USES=		perl5 gmake shebangfix tar:tgz
 USE_PERL5=	build
 MAKE_JOBS_UNSAFE=yes
 SHEBANG_FILES=	sks_build.sh

@@ -6,7 +6,6 @@ PORTVERSION=	2.0.1
 PORTREVISION=	6
 CATEGORIES=	net-mgmt
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}%20${PORTVERSION}
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	bdrewery@FreeBSD.org
 COMMENT=	Tracks bandwidth usage by IP address
@@ -18,7 +17,7 @@ LIB_DEPENDS+=	libgd.so:${PORTSDIR}/graphics/gd
 USE_CSTD=	gnu89
 
 GNU_CONFIGURE=	YES
-USES=		iconv gmake
+USES=		iconv gmake tar:tgz
 
 post-install:
 	${INSTALL_SCRIPT} ${FILESDIR}/bandwidthd.sh \

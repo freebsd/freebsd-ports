@@ -8,7 +8,6 @@ CATEGORIES=	www
 MASTER_SITES=	SF/${PORTNAME}/TWiki%20for%20all%20Platforms/${DISTNAME} \
 		http://twiki.org/p/pub/Codev/Release/
 DISTNAME=	TWiki-${PORTVERSION}
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Flexible, powerful, and easy to use enterprise wiki
@@ -27,7 +26,7 @@ RUN_DEPENDS=	\
 		p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
 		twiki-TWikiUserMappingContrib>=0:${PORTSDIR}/www/twiki-TWikiUserMappingContrib
 
-USES=		perl5
+USES=		perl5 tar:tgz
 WRKSRC=	${WRKDIR}/twiki
 
 post-extract:

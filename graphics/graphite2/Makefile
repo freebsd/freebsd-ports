@@ -4,12 +4,11 @@ PORTNAME=	graphite2
 PORTVERSION=	1.2.4
 CATEGORIES=	graphics print
 MASTER_SITES=	SF/silgraphite/${PORTNAME}
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Rendering capabilities for complex non-Roman writing systems
 
-USES=		cmake iconv
+USES=		cmake iconv tar:tgz
 USE_LDCONFIG=	yes
 LDFLAGS+=	-L${LOCALBASE}/lib ${ICONV_LIB}
 

@@ -6,12 +6,11 @@ PORTVERSION=	2012.1
 CATEGORIES=	math
 MASTER_SITES=	http://www.qhull.org/download/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	stephen@FreeBSD.org
 COMMENT=	Qhull computes convex hulls, Delaunay triangulations, and halfspaces
 
-USES=		cmake
+USES=		cmake tar:tgz
 USE_LDCONFIG=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 

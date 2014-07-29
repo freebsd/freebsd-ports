@@ -8,7 +8,6 @@ CATEGORIES=	print
 MASTER_SITES=	${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	applications
 DISTNAME=	${PORTNAME}-20
-EXTRACT_SUFX=	.tar.Z
 DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
@@ -19,7 +18,7 @@ EXPIRATION_DATE=2014-08-20
 
 CONFLICTS=	teTeX-*
 
-USES=		gmake imake:notall
+USES=		gmake imake:notall tar:Z
 USE_XORG=	ice sm x11 xaw xext xmu xt xpm
 PKGINSTALL=	${WRKDIR}/pkg-install
 PKGDEINSTALL=	${WRKDIR}/pkg-deinstall

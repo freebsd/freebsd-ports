@@ -8,7 +8,6 @@ CATEGORIES=	net
 MASTER_SITES=	http://farrokhi.net/distfiles/ \
 		http://nocat.net/download/NoCatSplash/
 DISTNAME=	NoCatSplash-nightly
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Open 802.11 Splash Screen
@@ -18,7 +17,7 @@ USE_GNOME=	glib12
 CONFLICTS=	nocatauth-server-*
 
 GNU_CONFIGURE=	yes
-USES=		gmake
+USES=		gmake tar:tgz
 
 CONFIGURE_ARGS+=	--disable-dependency-tracking
 CONFIGURE_ARGS+=	--disable-glibtest

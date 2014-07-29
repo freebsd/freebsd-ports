@@ -7,7 +7,6 @@ CATEGORIES=	textproc java
 MASTER_SITES=	APACHE
 MASTER_SITE_SUBDIR=	lucene/solr/${PORTVERSION}
 DISTNAME=	solr-${PORTVERSION}
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	gaod@hychen.org
 COMMENT=	High performance search server built using Lucene Java
@@ -16,7 +15,7 @@ LICENSE=	APACHE20
 
 CONFLICT=	apache-solr-3.6.*
 
-USES=	shebangfix
+USES=	shebangfix tar:tgz
 SHEBANG_FILES=	example/etc/create-solrtest.keystore.sh
 JAVA_VERSION=	1.7+
 NO_BUILD=	yes

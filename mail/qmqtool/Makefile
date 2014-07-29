@@ -7,14 +7,13 @@ CATEGORIES=	mail
 MASTER_SITES=	http://jeremy.kister.net/code/qmqtool/ \
 		http://mirror.spingen.com/qmqtool/
 DISTNAME=	${PORTNAME}-current
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	mwill@spingen.com
 COMMENT=	Tool to manipulate contents of a qmail queue
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 NO_BUILD=	yes
-USES=		perl5
+USES=		perl5 tar:tgz
 
 OPTIONS_DEFINE=	DOCS
 

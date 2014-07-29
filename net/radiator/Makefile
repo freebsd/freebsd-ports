@@ -6,7 +6,6 @@ PORTVERSION=	4.13
 PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	# fetch manually
-EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	lyngbol@wheel.dk
@@ -15,7 +14,7 @@ COMMENT=	Radiator Radius Server by Open System Consultants
 OPTIONS_DEFINE=	MYSQL
 MYSQL_DESC=	MySQL support
 
-USES=		perl5
+USES=		perl5 tar:tgz
 USE_PERL5=	configure
 
 RESTRICTED=	Commercial software

@@ -8,7 +8,6 @@ MASTER_SITES=	ftp://ftp.hpc.uh.edu/pub/tlb/ \
 		http://www.freenix.no/~anders/ \
 		ftp://totem.fix.no/pub/mirrors/misc/ \
 		http://ports.toco-domains.de/
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@toco-domains.de
 COMMENT=	The List Batcher, a general purpose mail list delivery engine
@@ -23,7 +22,7 @@ DOCS=	FAQ INSTALL README README.loglevels README.mungelist TIPS TODO \
 	complete.tlb mj.tlb simple.tlb
 FIXPREFIX=	tlb mungelist complete.tlb mj.tlb simple.tlb
 
-USES=		shebangfix perl5
+USES=		shebangfix perl5 tar:tgz
 SHEBANG_FILES=	${FIXPREFIX}
 perl_OLD_CMD=	/usr/local/bin/perl5
 

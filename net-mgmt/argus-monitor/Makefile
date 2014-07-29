@@ -7,7 +7,6 @@ PORTREVISION=	4
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://www.tcp4me.com/code/argus-archive/
 DISTNAME=	argus-dev-${PORTVERSION}
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Argus - The All Seeing System and Network Monitoring Software
@@ -20,7 +19,7 @@ EXTRA_PATCHES=	${FILESDIR}/patch.001
 LICENSE=	ART10
 
 WRKSRC=		${WRKDIR}/${DISTNAME}
-USES=		perl5
+USES=		perl5 tar:tgz
 USE_RC_SUBR=	argusd
 HAS_CONFIGURE=	yes
 USE_APACHE_RUN=	22+

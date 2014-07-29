@@ -6,7 +6,6 @@ PORTVERSION=	9.4c
 PORTREVISION=	2
 CATEGORIES=	cad
 MASTER_SITES=	http://www.veripool.org/ftp/
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Graphical signal trace waveform viewer
@@ -16,7 +15,7 @@ OPTIONS_DEFAULT=	EMACS
 EMACS_DESC=	Install Emacs supplimentary files
 
 USE_XORG=	x11 sm ice xmu xt
-USES=		gmake motif perl5
+USES=		gmake motif perl5 tar:tgz
 USE_PERL5=	build
 GNU_CONFIGURE=	yes
 

@@ -5,7 +5,6 @@ PORTNAME=	tDOM
 PORTVERSION=	0.8.3
 CATEGORIES=	www
 MASTER_SITES=	https://cloud.github.com/downloads/tDOM/tdom/
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	High performance XML data processing with Tcl (ARGS for OpenACS)
@@ -15,7 +14,7 @@ TDOMBASE=	${PREFIX}/lib/tdom${PORTVERSION}
 
 OPTIONS_DEFINE=	DOCS
 
-USES=		gmake tcl
+USES=		gmake tcl tar:tgz
 
 HAS_CONFIGURE=	yes
 CONFIGURE_SCRIPT=	../configure

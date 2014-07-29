@@ -11,7 +11,6 @@ MASTER_SITES=	ftp://ftp.lprng.com/pub/%SUBDIR%/ \
 		ftp://ftp.informatik.uni-hamburg.de/pub/os/unix/utils/%SUBDIR%/ \
 		ftp://ftp.uni-paderborn.de/pub/unix/printer/%SUBDIR%/
 MASTER_SITE_SUBDIR=	LPRng/LPRng
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Enhanced Printer Spooler
@@ -68,7 +67,7 @@ OPTIONS_DEFINE=	DOCS NLS
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}
-USES+=			gettext
+USES+=			gettext tar:tgz
 PLIST_SUB+=		NLS=""
 .else
 CONFIGURE_ARGS+=	--disable-nls

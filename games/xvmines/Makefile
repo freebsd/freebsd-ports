@@ -6,7 +6,6 @@ PORTVERSION=	1.0
 PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	XCONTRIB/../R5contrib
-EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple minesweeper game for X Window System
@@ -15,7 +14,7 @@ LIB_DEPENDS=	libxview.so:${PORTSDIR}/x11-toolkits/xview
 
 OPTIONS_DEFINE=	DOCS
 
-USES=		imake
+USES=		imake tar:Z
 USE_XORG=	x11
 
 PORTDOCS=	Copyright

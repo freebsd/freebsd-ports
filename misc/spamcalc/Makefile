@@ -6,12 +6,11 @@ PORTVERSION=	0.5
 CATEGORIES=	misc
 MASTER_SITES=	http://www.garion.org/spamcalc/
 DISTNAME=	sc-0.5
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	logix@foobar.franken.de
 COMMENT=	Calculates "DNS-spam"-values for hostnames
 
-USES=		perl5
+USES=		perl5 tar:tgz
 
 OPTIONS_DEFINE=	DOCS
 

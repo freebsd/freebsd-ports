@@ -6,7 +6,6 @@ PORTVERSION=	1.1f
 PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://inc2.com/download/
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Curses based real-time logfile viewer esp. useful for ipflog
@@ -15,7 +14,7 @@ LICENSE=	GPLv2
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-USES=		perl5
+USES=		perl5 tar:tgz
 USE_PERL5=	build
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}" LIBS="${LDFLAGS} -lcurses -pthread"
 ALL_TARGET=	it

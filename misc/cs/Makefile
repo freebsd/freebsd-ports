@@ -5,7 +5,6 @@ PORTNAME=	cs
 PORTVERSION=	0.9.6
 CATEGORIES=	misc
 MASTER_SITES=	http://njhurst.com/programming/cross-stitch/
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Cross Stitch software
@@ -16,7 +15,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}imaging>=0:${PORTSDIR}/graphics/py-imaging
 
 NO_BUILD=	yes
 
-USES=		shebangfix
+USES=		shebangfix tar:tgz
 SHEBANG_FILES=	xs.py
 USE_PYTHON_RUN=	yes
 

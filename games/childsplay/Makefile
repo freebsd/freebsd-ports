@@ -6,7 +6,6 @@ PORTVERSION=	2.5
 PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/Childsplay/
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Educative games for children
@@ -21,7 +20,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlalchemy>0:${PORTSDIR}/databases/py-sqlalc
 
 NO_BUILD=	yes
 
-USES=		gettext shebangfix
+USES=		gettext shebangfix tar:tgz
 USE_GNOME=	pygtk2
 USE_PYTHON=	2
 

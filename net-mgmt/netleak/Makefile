@@ -6,7 +6,6 @@ PORTVERSION=	0.1a
 PORTREVISION=	2
 CATEGORIES=	net-mgmt
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-devel/${PORTNAME}-${PORTVERSION}
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tool to detect connectivity between network segments
@@ -21,7 +20,7 @@ RUN_DEPENDS=	p5-Net-PcapUtils>=0:${PORTSDIR}/net/p5-Net-PcapUtils \
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-USES=		perl5 shebangfix
+USES=		perl5 shebangfix tar:tgz
 USE_PERL5=	run
 SHEBANG_FILES= 	netleak netleakd
 

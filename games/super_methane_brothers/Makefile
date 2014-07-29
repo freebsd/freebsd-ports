@@ -7,7 +7,6 @@ PORTREVISION=	3
 CATEGORIES=	games
 MASTER_SITES=	SF/methane/Methane%20Stable/Methane%20V${PORTVERSION}
 DISTNAME=	methane-${PORTVERSION}
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Port of the Amiga platform game of the same name
@@ -17,7 +16,7 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	libclan23Core.so:${PORTSDIR}/devel/clanlib \
 		libexecinfo.so:${PORTSDIR}/devel/libexecinfo
 
-USES=		gmake pkgconfig
+USES=		gmake pkgconfig tar:tgz
 USE_GCC=	yes
 USE_GL=		glu
 MAKE_ENV=	METHANE_FLAGS="${CPPFLAGS}" METHANE_LIBS="${LIBS}"

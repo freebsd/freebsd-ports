@@ -7,14 +7,13 @@ PORTREVISION=	4
 # Assign with += for slave ports
 CATEGORIES+=	irc
 MASTER_SITES=	http://members.core.com/~stabro/
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	SLang-based IRC client
 
 LIB_DEPENDS=	${LIB_DEPENDS_LIBSLANG}
 
-USES=		gmake
+USES=		gmake tar:tgz
 SUB_FILES=	pkg-message
 PKGMESSAGE=	${WRKDIR}/pkg-message
 

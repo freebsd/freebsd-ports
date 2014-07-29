@@ -6,7 +6,6 @@ PORTVERSION=	0.65
 PORTREVISION=	1
 CATEGORIES=	archivers
 MASTER_SITES=	http://www.kipple.pe.kr/win/unalz/
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Extracts AlZip archives
@@ -15,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/readme.txt
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-USES=		dos2unix iconv
+USES=		dos2unix iconv tar:tgz
 MAKE_ARGS+=	CPP="${CXX}" CC="${CC}" OBJ="${UNALZ_OBJS}" \
 		LDFLAGS="${LDFLAGS}" CFLAGS="${CFLAGS}"
 ALL_TARGET=	posix-utf8

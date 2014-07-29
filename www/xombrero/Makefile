@@ -6,7 +6,6 @@ PORTVERSION=	1.6.3
 PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	https://opensource.conformal.com/snapshots/xombrero/
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	zeising@FreeBSD.org
 COMMENT=	Minimalists vi-like web browser based on webkit and GTK+
@@ -16,7 +15,7 @@ LICENSE=	ISCL
 LIB_DEPENDS=	libgnutls.so:${PORTSDIR}/security/gnutls \
 		libsoup-2.4.so:${PORTSDIR}/devel/libsoup
 
-USES=		pkgconfig perl5
+USES=		pkgconfig perl5 tar:tgz
 USE_PERL5=	build
 INSTALLS_ICONS=	yes
 

@@ -7,7 +7,6 @@ PORTREVISION=	2
 CATEGORIES=	comms
 MASTER_SITES=	http://www.soft-switch.org/downloads/spandsp/
 PKGNAMESUFFIX=	-devel
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	DSP library and software FAX machine
@@ -16,7 +15,7 @@ LIB_DEPENDS=	libtiff.so:${PORTSDIR}/graphics/tiff
 
 WRKSRC=		${WRKDIR}/spandsp-${DISTVERSION:C/pre.*//}
 
-USES=		gmake pathfix
+USES=		gmake pathfix tar:tgz
 USE_AUTOTOOLS=	libtool autoconf
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	CPPFLAGS="-I${LOCALBASE}/include" \

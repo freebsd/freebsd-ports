@@ -8,7 +8,6 @@ CATEGORIES=	mail
 MASTER_SITES=	http://tardisi.com/distfiles/ \
 		http://lawrencechen.net/distfiles/
 DISTNAME=	GetLive_${DISTVERSION}
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ayu@commun.jp
 COMMENT=	Get mail from Hotmail (Live) mailboxes
@@ -22,7 +21,7 @@ RUN_DEPENDS=	curl:${PORTSDIR}/ftp/curl \
 		p5-WWW-Mechanize-GZip>=0:${PORTSDIR}/www/p5-WWW-Mechanize-GZip
 
 NO_BUILD=	yes
-USES=		perl5 shebangfix
+USES=		perl5 shebangfix tar:tgz
 SHEBANG_FILES=	GetLive.pl
 USE_PERL5=	run
 

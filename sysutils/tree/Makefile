@@ -6,7 +6,6 @@ PORTVERSION=	1.7.0
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://mama.indstate.edu/linux/tree/ \
 		CENKES
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	gb@unistra.fr
 COMMENT=	Display a tree-view of directories with optional color or HTML output
@@ -14,7 +13,7 @@ COMMENT=	Display a tree-view of directories with optional color or HTML output
 LICENSE=	GPLv2
 
 MAKE_ENV+=	MKDIR="${MKDIR}"
-USES=		gmake
+USES=		gmake tar:tgz
 
 PLIST_FILES=	bin/tree \
 		man/man1/tree.1.gz

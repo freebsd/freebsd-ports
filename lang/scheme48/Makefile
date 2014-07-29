@@ -5,7 +5,6 @@ PORTNAME=	scheme48
 PORTVERSION=	1.9.2
 CATEGORIES=	lang scheme
 MASTER_SITES=	http://www.s48.org/${PORTVERSION}/
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	lichray@gmail.com
 COMMENT=	The Scheme Underground's implementation of R5RS
@@ -15,7 +14,7 @@ LICENSE=	BSD
 CONFLICTS=	scsh-[0-9]*
 
 ALL_TARGET=	enough
-USES=		gmake
+USES=		gmake tar:tgz
 GNU_CONFIGURE=	yes
 
 OPTIONS_DEFINE=	DOCS

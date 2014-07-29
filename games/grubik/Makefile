@@ -6,14 +6,13 @@ PORTREVISION=	2
 CATEGORIES=	games gnustep
 MASTER_SITES=	http://debian.uni-essen.de/misc/GNUstep/Apps/Recreational/
 DISTNAME=	GRubik
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Virtual 3D Rubiks cube for GNUstep
 
 LICENSE=	GPLv2
 
-USES=		tar:tgz
+USES=		tar:tgz tar:tgz
 USE_GNUSTEP=	yes
 USE_GNUSTEP_BACK=	yes
 USE_GNUSTEP_BUILD=	yes

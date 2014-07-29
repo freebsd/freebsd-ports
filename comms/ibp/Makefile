@@ -8,12 +8,11 @@ CATEGORIES=	comms hamradio
 MASTER_SITES=	http://wwwhome.cs.utwente.nl/~ptdeboer/ham/ \
 		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	db
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	db@FreeBSD.org
 COMMENT=	Little program for monitoring amateur radio beacons
 
-USES=		imake
+USES=		imake tar:tgz
 USE_XORG=	x11
 
 do-install:

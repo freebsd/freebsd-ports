@@ -6,12 +6,11 @@ PORTVERSION=	1.3.2
 PORTREVISION=	4
 CATEGORIES=	editors
 MASTER_SITES=	XCONTRIB/editors
-EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Text editor for X/Motif
 
-USES=		imake:notall motif
+USES=		imake:notall motif tar:Z
 USE_XORG=	ice sm x11 xext xmu xp xt
 
 PLIST_FILES=	bin/asedit \

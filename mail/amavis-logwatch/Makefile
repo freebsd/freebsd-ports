@@ -5,7 +5,6 @@ PORTNAME=	amavis-logwatch
 PORTVERSION=	1.51.02
 CATEGORIES=	mail
 MASTER_SITES=	SF/logreporters/${PORTNAME}/release/${PORTVERSION}
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Amavisd-new log parser
@@ -16,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 PORTDOCS=	Bugs Changes README
 PORTEXAMPLES=	${PORTNAME}.conf
 
-USES=		perl5 shebangfix
+USES=		perl5 shebangfix tar:tgz
 USE_PERL5=	run
 NO_BUILD=	yes
 SHEBANG_FILES=	amavis-logwatch

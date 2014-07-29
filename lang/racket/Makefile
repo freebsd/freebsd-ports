@@ -11,7 +11,6 @@ MASTER_SITES=	http://mirror.racket-lang.org/installers/${PORTVERSION}/ \
 		http://mirror.informatik.uni-tuebingen.de/mirror/racket/${PORTVERSION}/ \
 		http://racket.infogroep.be/${PORTVERSION}/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
-EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	olgeni@FreeBSD.org
@@ -55,7 +54,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 CPPFLAGS+=	-I${LOCALBASE}/include
 
 WRKSRC=		${WRKDIR}/racket-${PORTVERSION}/src
-USES=		iconv libtool
+USES=		iconv libtool tar:tgz
 USE_LDCONFIG=	yes
 USE_GNOME=	pango
 USE_SQLITE=	3

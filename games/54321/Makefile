@@ -9,14 +9,13 @@ MASTER_SITES=	http://old.nklein.com/products/54321/%SUBDIR%/ \
 		http://www.sourcefiles.org/Games/Puzzle/
 MASTER_SITE_SUBDIR=	${PORTVERSION}
 DISTNAME=	${PORTNAME}
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Five games in four-, three-, or two-dimensions for one player
 
 LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png
 
-USES=		gmake
+USES=		gmake tar:tgz
 USE_SDL=	image sdl
 MAKEFILE=	GNUmakefile
 

@@ -5,7 +5,6 @@ PORTNAME=	spamdyke
 PORTVERSION=	5.0.0
 CATEGORIES=	mail
 MASTER_SITES=	http://www.spamdyke.org/releases/
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	bdrewery@FreeBSD.org
 COMMENT=	Qmail filter for monitoring and intercepting SMTP connections
@@ -16,7 +15,7 @@ RUN_DEPENDS=	${LOCALBASE}/bin/tcprules:${PORTSDIR}/sysutils/ucspi-tcp
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/spamdyke
 
-USES=		qmail
+USES=		qmail tar:tgz
 
 GNU_CONFIGURE=	yes
 

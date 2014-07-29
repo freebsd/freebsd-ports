@@ -9,12 +9,11 @@ MASTER_SITES=	http://phk.freebsd.dk/phkrel/ \
 		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=mat
 DISTNAME=	Libphk.${PORTVERSION:C/0.3.//}
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	PHK's utilities functions
 
-USES=	uidfix
+USES=	uidfix tar:tgz
 
 WRKSRC=		${WRKDIR}/Libphk
 

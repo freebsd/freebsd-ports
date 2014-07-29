@@ -7,14 +7,13 @@ PORTREVISION=	2
 CATEGORIES=	x11 accessibility
 MASTER_SITES=	ftp://trace.wisc.edu/pub/access_utils/unix/
 DISTNAME=	unwindows
-EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Magnifying utility which updates continuously
 
 ALL_TARGET=	dynamag
 PLIST_FILES=	bin/dynamag
-USES=		imake
+USES=		imake tar:Z
 USE_XORG=	x11 xaw xext xmu xt xpm sm ice
 WRKSRC=		${WRKDIR}/${PORTNAME}
 

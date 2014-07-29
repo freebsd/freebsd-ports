@@ -6,7 +6,6 @@ PORTREVISION=	8
 CATEGORIES=	audio
 MASTER_SITES=	http://downloads.slimdevices.com/SqueezeboxServer_v${PORTVERSION}/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-noCPAN
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	markk@knigma.org
 COMMENT=	Slim Devices audio streaming server
@@ -43,7 +42,7 @@ RUN_DEPENDS+=	p5-Package-DeprecationManager>=0.10:${PORTSDIR}/devel/p5-Package-D
 
 USERS=		${SLIMUSER}
 GROUPS=		${SLIMGROUP}
-USES=		perl5
+USES=		perl5 tar:tgz
 
 .include <bsd.port.pre.mk>
 

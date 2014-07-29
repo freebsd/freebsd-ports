@@ -5,7 +5,6 @@ PORTVERSION=	1.1.5
 CATEGORIES=	www
 MASTER_SITES=	SF
 DISTNAME=	Foswiki-${PORTVERSION}
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A free and open source enterprise wiki
@@ -17,7 +16,7 @@ RUN_DEPENDS=	p5-Error>=0.15:${PORTSDIR}/lang/p5-Error \
 
 LICENSE=	GPLv2
 
-USES=		perl5
+USES=		perl5 tar:tgz
 NO_BUILD=	yes
 
 OPTIONS_DEFINE=	OPTINT OPTOTH APACHE

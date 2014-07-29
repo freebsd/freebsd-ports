@@ -5,7 +5,6 @@ PORTNAME=	bitflu
 PORTVERSION=	1.35
 CATEGORIES=	net-p2p
 MASTER_SITES=	http://bitflu.workaround.ch/bitflu/ CENKES
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	BitTorrent client written in Perl
@@ -17,7 +16,7 @@ RUN_DEPENDS=	p5-Digest-SHA1>=0:${PORTSDIR}/security/p5-Digest-SHA1 \
 
 PLUGINSDIR_BASE=lib/perl5
 PLUGINSDIR=	${PLUGINSDIR_BASE}/Bitflu
-USES=		perl5
+USES=		perl5 tar:tgz
 NO_BUILD=	yes
 
 SUB_FILES=	pkg-message

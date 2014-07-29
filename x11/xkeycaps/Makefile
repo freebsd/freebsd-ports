@@ -6,12 +6,11 @@ PORTVERSION=	2.46
 PORTREVISION=	3
 CATEGORIES=	x11
 MASTER_SITES=	http://www.jwz.org/xkeycaps/
-EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Graphically display and edit the keyboard mapping
 
-USES=		imake
+USES=		imake tar:Z
 USE_XORG=	xbitmaps xaw
 PLIST_FILES=	bin/xkeycaps \
 		man/man1/xkeycaps.1.gz

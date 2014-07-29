@@ -6,14 +6,13 @@ PORTVERSION=	1.2.9
 PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	SF
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Drawing editors derived from idraw
 
 LIB_DEPENDS=	libtiff.so:${PORTSDIR}/graphics/tiff
 
-USES=		imake:env gmake
+USES=		imake:env gmake tar:tgz
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	autoconf
 CONFIGURE_ARGS=	--with-tiff=${PREFIX}

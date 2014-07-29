@@ -6,7 +6,6 @@ PORTVERSION=	2.10b
 PORTREVISION=	1
 CATEGORIES=	security www
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	zi@FreeBSD.org
 COMMENT=	Fully automated, active web application security reconnaissance tool
@@ -17,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libidn.so:${PORTSDIR}/dns/libidn \
 		libpcre.so:${PORTSDIR}/devel/pcre
 
-USES=		gmake
+USES=		gmake tar:tgz
 SUB_FILES=	pkg-message
 
 OPTIONS_DEFINE=	DOCS

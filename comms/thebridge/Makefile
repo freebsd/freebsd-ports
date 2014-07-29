@@ -5,14 +5,13 @@ PORTNAME=	thebridge
 PORTVERSION=	1.09
 CATEGORIES=	comms hamradio
 MASTER_SITES=	SF/cqinet/${PORTNAME}/${PORTNAME}-${PORTVERSION}
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	db@FreeBSD.org
 COMMENT=	Amateur Radio Echolink conference bridge
 
 LICENSE=	GPLv2
 
-USES=		gmake
+USES=		gmake tar:tgz
 GNU_CONFIGURE=	yes
 PORTDOCS=	README
 USE_RC_SUBR=	tbd

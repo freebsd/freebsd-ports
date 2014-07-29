@@ -6,7 +6,6 @@ PORTVERSION=	1.0108
 CATEGORIES=	textproc devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Generate personalized HTML from PODs
@@ -20,7 +19,7 @@ BUILD_DEPENDS=	p5-version>=0.72:${PORTSDIR}/devel/p5-version \
 		p5-Pod-Escapes>=0:${PORTSDIR}/textproc/p5-Pod-Escapes
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-USES=		perl5
+USES=		perl5 tar:tgz
 USE_PERL5=	configure
 
 .include <bsd.port.mk>

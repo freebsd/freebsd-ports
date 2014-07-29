@@ -5,7 +5,6 @@ PORTNAME=	XmHTML
 PORTVERSION=	1.1.9
 CATEGORIES=	x11-toolkits www
 MASTER_SITES=	SF/${PORTNAME:tl}
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Motif widget set for displaying HTML 3.2 documents
@@ -16,7 +15,7 @@ BUILD_DEPENDS=	libtool:${PORTSDIR}/devel/libtool
 LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
 		libpng15.so:${PORTSDIR}/graphics/png
 
-USES=		gmake libtool motif pkgconfig
+USES=		gmake libtool motif pkgconfig tar:tgz
 USE_XORG=	xft xmu xpm xt
 USE_LDCONFIG=	yes
 

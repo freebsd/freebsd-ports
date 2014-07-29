@@ -9,7 +9,6 @@ MASTER_SITES=	http://www.dsmit.com/cons/stable/ \
 		http://www.gnu.org/software/cons/stable/ \
 		ftp://ftp.gnu.org/pub/old-gnu/cons/ \
 		http://www.baldmt.com/cons/stable/
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Test bed for `Cons' development
@@ -22,7 +21,7 @@ RUN_DEPENDS=	${LOCALBASE}/bin/cons:${PORTSDIR}/devel/cons
 WRKSRC=		${WRKDIR}/cons-${PORTVERSION}/test
 NO_BUILD=	yes
 
-USES=		perl5
+USES=		perl5 tar:tgz
 PLIST_SUB=	CONS_VER="${PORTVERSION}" CONS_TEST="${CONS_TEST}"
 
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME:S/-test//}-${PORTVERSION}/test

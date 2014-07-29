@@ -6,14 +6,13 @@ PORTVERSION=	1.3
 CATEGORIES=	security
 MASTER_SITES=	http://www.phenoelit-us.org/hp/
 DISTNAME=	libPJL-${PORTVERSION}-src
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER= ports@FreeBSD.org
 COMMENT=	Printer Job Language library and tool
 
 NO_WRKSUBDIR=	yes
 ALL_TARGET=	libPJL.a
-USES=		gmake
+USES=		gmake tar:tgz
 
 PLIST_FILES=	bin/pft lib/libPJL.a
 

@@ -6,14 +6,13 @@ PORTVERSION=	1.8
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.ct0.com/pub/
 DISTNAME=	${PORTNAME}${PORTVERSION}
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Cross-assembler for variety of microprocessors and controllers
 
 LICENSE=	GPLv2
 
-USES=		gmake
+USES=		gmake tar:tgz
 
 PORTDOCS=	CONVERSION_C166.TXT MANUAL.TXT README*.TXT
 PORTEXAMPLES=	*

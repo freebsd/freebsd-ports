@@ -7,7 +7,6 @@ CATEGORIES=	x11-toolkits
 # MASTER_SITES=	SF/${PORTNAME}/Motif%202.3.4%20Source%20Code/
 MASTER_SITES=	SF/motif/Motif%202.3.4%20Source%20Code/
 DISTNAME=	motif-${PORTVERSION}-src
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	m.tsatsenko@gmail.com
 COMMENT=	Motif X11 Toolkit (industry standard GUI (IEEE 1295))
@@ -23,7 +22,7 @@ CONFLICTS=	lesstif-[0-9]*
 # WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 WRKSRC=		${WRKDIR}/motif-${PORTVERSION}
 
-USES=		gmake iconv libtool:keepla pkgconfig
+USES=		gmake iconv libtool:keepla pkgconfig tar:tgz
 USE_AUTOTOOLS=	libtoolize aclocal autoconf autoheader automake
 ACLOCAL_ARGS=	-I.
 AUTOMAKE_ARGS=	-a -c -f --foreign

@@ -7,14 +7,13 @@ PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	XCONTRIB/../R5contrib
 DISTNAME=	${PORTNAME}.${PORTVERSION}
-EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Display GL animations on X screen
 
 NO_WRKSUBDIR=	yes
 
-USES=		imake
+USES=		imake tar:Z
 USE_XORG=	x11 xext
 
 PLIST_FILES=	bin/glib bin/xgrasp \

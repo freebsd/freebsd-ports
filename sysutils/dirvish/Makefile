@@ -6,7 +6,6 @@ PORTVERSION=	1.2.1
 PORTREVISION=	1
 CATEGORIES=	sysutils archivers
 MASTER_SITES=	http://www.dirvish.org/
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	tarkhil@over.ru
 COMMENT=	Network backup system based off of rsync
@@ -20,7 +19,7 @@ MAN8S=		dirvish.8 dirvish-expire.8 dirvish-locate.8 dirvish-runall.8
 
 WRKSRC=		${WRKDIR}
 NO_BUILD=	yes
-USES=		perl5
+USES=		perl5 tar:tgz
 USE_PERL5=	run
 
 EXECUTABLES=	dirvish   dirvish-expire   dirvish-locate   dirvish-runall

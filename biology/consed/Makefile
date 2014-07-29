@@ -6,7 +6,6 @@ PORTVERSION=	16.0
 CATEGORIES=	biology
 MASTER_SITES=	http://www.phrap.org/consed/distributions/${PORTVERSION}/
 DISTNAME=	${PORTNAME}_linux
-EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	mzaki@m.u-tokyo.ac.jp
 COMMENT=	Graphical tool for editing Phrap assemblies
@@ -15,7 +14,7 @@ RUN_DEPENDS=	phred:${PORTSDIR}/biology/phred \
 		phrap:${PORTSDIR}/biology/phrap \
 		phd2fasta:${PORTSDIR}/biology/phd2fasta
 
-USES=		perl5
+USES=		perl5 tar:Z
 USE_LINUX=	yes
 USE_LINUX_APPS=	xorglibs
 ONLY_FOR_ARCHS=	i386 amd64

@@ -8,7 +8,6 @@ MASTER_SITES=	ftp://ftp.physics.purdue.edu/pub/pundits/ \
 		http://www.komquats.com/distfiles/ \
 		http://people.freebsd.org/~cy/distfiles/
 
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	Command-line parser and manual page generator
@@ -17,7 +16,7 @@ BUILD_DEPENDS=	makeme:${PORTSDIR}/devel/msrc0
 
 MAKE_FLAGS=
 MAKEFILE=
-USES=		desthack
+USES=		desthack tar:tgz
 
 post-patch:
 .for f in bin/mkcmd/machine.h bin/mkcmd/mkcmd.man lib/mkcmd/mkcmd.man

@@ -6,7 +6,6 @@ PORTVERSION=	2012.02.05
 PORTREVISION=	1
 CATEGORIES=	science graphics
 MASTER_SITES=	http://www.ann.jussieu.fr/~frey/ftp/archives/
-EXTRACT_SUFX=	.tgz
 DISTFILES=	${SOURCETARB} ${LIBTARBALL}
 EXTRACT_ONLY=	${SOURCETARB}
 
@@ -22,7 +21,7 @@ BUILD_DEPENDS=	${LOCALBASE}/include/cfortran.h:${PORTSDIR}/lang/cfortran
 
 USE_XORG=	x11 xmu xext
 USE_GL=		glut
-USES=		gmake
+USES=		gmake tar:tgz
 MAKEFILE=	makefile
 ALL_TARGET=	${OPSYS}
 MAKE_ENV=	WRKSRC="${WRKSRC}" ARCHI=${OPSYS} ARCH=${ARCH} OSREL=${OSREL}

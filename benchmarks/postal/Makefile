@@ -6,14 +6,13 @@ PORTVERSION=	0.73
 PORTREVISION=	1
 CATEGORIES=	benchmarks mail
 MASTER_SITES=	http://www.coker.com.au/postal/
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Benchmark SMTP/POP servers
 
 LICENSE=	GPLv3
 
-USES=		gmake
+USES=		gmake tar:tgz
 GNU_CONFIGURE=	yes
 
 PLIST_FILES=	bin/postal-list \

@@ -6,7 +6,6 @@ PORTVERSION=	1.0
 PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	http://hackmysql.com/scripts/
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	rdna@rdna.ru
 COMMENT=	Checks MySQL databases/tables for unused indexes
@@ -17,7 +16,7 @@ RUN_DEPENDS=	p5-Term-ReadKey>=0:${PORTSDIR}/devel/p5-Term-ReadKey \
 
 NO_WRKSUBDIR=	yes
 
-USES=		perl5 shebangfix
+USES=		perl5 shebangfix tar:tgz
 NO_BUILD=	yes
 
 PLIST_FILES=	bin/mysqlidxchk

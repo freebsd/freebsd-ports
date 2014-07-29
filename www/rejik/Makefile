@@ -7,7 +7,6 @@ CATEGORIES=	www
 MASTER_SITES=	http://www.rejik.ru/download/ \
 		http://bio3k.softboard.ru/uploads/arch/
 DISTNAME=	redirector-${PORTVERSION}
-EXTRACT_SUFX=	.tgz
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	ports@FreeBSD.org
@@ -59,7 +58,7 @@ PLIST_SUB+=	WWW="@comment "
 
 .if ${PORT_OPTIONS:MDBL}
 DISTFILES+=	dbl-2.0.tgz
-USES+=		perl5
+USES+=		perl5 tar:tgz
 USE_PERL5=	run
 RUN_DEPENDS+=	p5-Text-Iconv>=0:${PORTSDIR}/converters/p5-Text-Iconv \
 		p5-XML-Parser>=0:${PORTSDIR}/textproc/p5-XML-Parser \

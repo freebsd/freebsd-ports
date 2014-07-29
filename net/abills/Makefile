@@ -5,7 +5,6 @@ PORTNAME=	abills
 PORTVERSION=	0.55
 CATEGORIES=	net
 MASTER_SITES=	SF
-EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
@@ -22,7 +21,7 @@ RUN_DEPENDS=	radiusd:${PORTSDIR}/net/freeradius2 \
 WRKSRC=		${WRKDIR}/${PORTNAME}
 NO_BUILD=	yes
 
-USES=		perl5
+USES=		perl5 tar:tgz
 USE_PERL5=	run
 
 SUB_FILES=	pkg-message

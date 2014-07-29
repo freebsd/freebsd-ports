@@ -8,7 +8,6 @@ CATEGORIES=	devel
 MASTER_SITES=	http://www.clanlib.org/download/releases-2.0/
 DISTNAME=	ClanLib-${PORTVERSION}
 PKGNAMESUFFIX=	22
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Cross-platform game SDK
@@ -23,7 +22,7 @@ LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
 		libpcre.so:${PORTSDIR}/devel/pcre
 
 USE_XORG=	x11
-USES=		gmake pathfix pkgconfig
+USES=		gmake pathfix pkgconfig tar:tgz
 USE_LDCONFIG=	yes
 USE_GL=		yes
 USE_SQLITE=	yes

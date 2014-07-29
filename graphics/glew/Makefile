@@ -6,7 +6,6 @@ PORTVERSION=	1.10.0
 PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	SF
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	mva@FreeBSD.org
 COMMENT=	The OpenGL Extension Wrangler Library
@@ -14,7 +13,7 @@ COMMENT=	The OpenGL Extension Wrangler Library
 LICENSE=	MIT BSD3CLAUSE
 LICENSE_COMB=	dual
 
-USES=		gmake
+USES=		gmake tar:tgz
 USE_XORG=	x11 xext xi xmu
 USE_GL=		yes
 USE_LDCONFIG=	yes

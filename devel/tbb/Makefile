@@ -7,7 +7,6 @@ CATEGORIES=	devel
 MASTER_SITES=	http://threadingbuildingblocks.org/sites/default/files/software_releases/source/ \
 		LOCAL/martymac
 DISTNAME=	${PORTNAME}${PORTVERSION:R:S/.//g}_20131118oss_src
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	martymac@FreeBSD.org
 COMMENT=	Library that provides thread building blocks
@@ -18,7 +17,7 @@ ONLY_FOR_ARCHS=	amd64 i386 ia64
 ONLY_FOR_ARCHS_REASON=	has not been ported to this platform
 
 USE_LDCONFIG=	yes
-USES=	compiler gmake
+USES=	compiler gmake tar:tgz
 ALL_TARGET=	default
 
 WRKSRC=	${WRKDIR}/${DISTNAME:S/_src//}

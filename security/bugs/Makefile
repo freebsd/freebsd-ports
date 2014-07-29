@@ -6,14 +6,13 @@ PORTVERSION=	4.1.1
 PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES=	SUNSITE/apps/crypto
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Great cryptographic library and sample programs
 
 LICENSE=	GPLv2
 
-USES=		gmake
+USES=		gmake tar:tgz
 MAKE_ARGS=	CC="${CC}" BFLAG="${CFLAGS}" \
 		INSTALL_PATH="${PREFIX}/${DISTNAME}"
 

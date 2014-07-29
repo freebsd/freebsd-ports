@@ -6,14 +6,13 @@ PORTVERSION=	1.0.5
 CATEGORIES=	security
 MASTER_SITES=	SF/sslproxy/sslproxy/${PORTVERSION}
 DISTNAME=	sslproxy-${PORTVERSION}
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	SSL proxy for securing insecure connections
 
 LICENSE=	GPLv2 # (or later)
 
-USES=		gmake
+USES=		gmake tar:tgz
 USE_OPENSSL=	yes
 
 SUB_FILES=	pkg-message
