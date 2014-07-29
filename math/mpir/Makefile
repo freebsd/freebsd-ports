@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mpir
-DISTVERSION=	2.7.0-alpha9
+DISTVERSION=	2.7.0-alpha10
 CATEGORIES=	math
 MASTER_SITES=	http://www.mpir.org/
 
@@ -21,6 +21,8 @@ INSTALL_TARGET+=install-strip
 
 MPIR_VERSION=	10.6.0
 MPIRXX_VERSION=	4.4.0
+
+INFO=		mpir
 
 PLIST_FILES=	include/mpir.h \
 		include/mpirxx.h \
