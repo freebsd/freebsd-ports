@@ -16,8 +16,7 @@ LICENSE_FILE=	${WRKSRC}/cuneiform_src/Kern/license.txt
 
 ONLY_FOR_ARCHS=	i386 amd64
 
-USE_BZIP2=	yes
-USES=		cmake:outsource
+USES=		cmake:outsource tar:bzip2
 USE_LDCONFIG=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include

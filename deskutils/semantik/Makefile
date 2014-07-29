@@ -17,8 +17,7 @@ NO_OCAML_RUNDEPENDS=	yes
 USE_PYTHON=	yes
 USE_QT4=	corelib gui linguist_build svg webkit xml \
 		moc_build qmake_build uic_build
-USES=		pkgconfig shebangfix
-USE_BZIP2=	yes
+USES=		pkgconfig shebangfix tar:bzip2
 CONFIGURE_ENV=	CXXFLAGS="${CXXFLAGS}" \
 		PATH="${KDE4_PREFIX}/bin:$$PATH" \
 		WAF_HOME="${WRKSRC}"

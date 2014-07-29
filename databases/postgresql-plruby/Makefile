@@ -15,8 +15,7 @@ GH_ACCOUNT=	CraigCottingham
 GH_TAGNAME=	${GH_COMMIT}
 GH_COMMIT=	f8d9ced
 
-USES=	uidfix
-USE_BZIP2=	yes
+USES=	uidfix tar:bzip2
 USE_PGSQL=	server
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes

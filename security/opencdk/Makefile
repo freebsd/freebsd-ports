@@ -17,8 +17,7 @@ OPTIONS_DEFINE=	DOCS
 LIB_DEPENDS=	libgcrypt.so:${PORTSDIR}/security/libgcrypt
 
 GNU_CONFIGURE=	yes
-USES=		libtool:keepla pathfix pkgconfig
-USE_BZIP2=	yes
+USES=		libtool:keepla pathfix pkgconfig tar:bzip2
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--with-libgcrypt-prefix=${LOCALBASE}
 

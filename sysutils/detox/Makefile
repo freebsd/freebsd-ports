@@ -9,8 +9,7 @@ MASTER_SITES=	SF
 MAINTAINER=	purgedhalo@users.sourceforge.net
 COMMENT=	Removes non-standard characters from filenames
 
-USE_BZIP2=	yes
-USES=		gmake
+USES=		gmake tar:bzip2
 GNU_CONFIGURE=	yes
 
 LICENSE=	BSD

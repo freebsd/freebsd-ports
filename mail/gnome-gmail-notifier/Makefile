@@ -14,8 +14,7 @@ LIB_DEPENDS=	libnotify.so:${PORTSDIR}/devel/libnotify \
 		libgnome-keyring.so:${PORTSDIR}/security/libgnome-keyring
 
 GNU_CONFIGURE=	yes
-USE_BZIP2=	yes
-USES=		gettext gmake pkgconfig
+USES=		gettext gmake pkgconfig tar:bzip2
 USE_GNOME=	glib20 gtk20 gconf2 libxml2 librsvg2
 USE_GSTREAMER=	good
 LDFLAGS+=	-L${LOCALBASE}/lib -lintl

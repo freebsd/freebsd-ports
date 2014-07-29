@@ -12,9 +12,8 @@ COMMENT=	EFL Terminal Emulator
 
 LICENSE=	BSD
 
-USES=		pkgconfig
+USES=		pkgconfig tar:bzip2
 DIST_SUBDIR=	e17
-USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_EFL=	eina eet evas ecore edje emotion elementary
 USE_EFL_ECORE=	imf imf_evas input ipc

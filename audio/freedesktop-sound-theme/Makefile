@@ -13,9 +13,8 @@ DISTNAME=	sound-theme-freedesktop-${PORTVERSION}
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Sound theme based on the FreeDesktop specification
 
-USE_BZIP2=	yes
 USE_GNOME=	gnomehier intlhack
-USES=		gettext gmake
+USES=		gettext gmake tar:bzip2
 GNU_CONFIGURE=	yes
 
 .include <bsd.port.mk>

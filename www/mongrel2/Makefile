@@ -15,8 +15,7 @@ LICENSE=	BSD3CLAUSE
 LIB_DEPENDS=	libzmq.so:${PORTSDIR}/net/libzmq2 \
 		libsqlite3.so:${PORTSDIR}/databases/sqlite3
 
-USES=	gmake
-USE_BZIP2=	yes
+USES=	gmake tar:bzip2
 MAKE_FLAGS=	freebsd
 EXAMPLES_LIST=	bbs \
 		chat \

@@ -14,13 +14,12 @@ LICENSE=	LGPL21
 
 LIB_DEPENDS=	libva.so:${PORTSDIR}/multimedia/libva
 
-USE_BZIP2=	yes
 USE_LDCONFIG=	yes
 USE_GSTREAMER1=	yes
 GNU_CONFIGURE=	yes
 USE_GL=		gl
 USE_XORG=	x11 xrandr xrender xproto:build
-USES=		gmake pkgconfig
+USES=		gmake pkgconfig tar:bzip2
 CONFIGURE_ARGS=	--disable-wayland --with-gstreamer-api=1.2
 PATHFIX_MAKEFILEIN=	configure
 

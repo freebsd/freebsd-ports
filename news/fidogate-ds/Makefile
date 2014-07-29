@@ -17,9 +17,8 @@ BROKEN=			Fails to configure
 PORTSCOUT=		limit:^5\.[^2] # 5.2.X is development branch
 
 USE_AUTOTOOLS=	libtool
-USE_BZIP2=		yes
 GNU_CONFIGURE=		yes
-USES=		perl5
+USES=		perl5 tar:bzip2
 MAKE_JOBS_UNSAFE=	yes
 
 SPOOLDIR?=/var/spool/fido/gate

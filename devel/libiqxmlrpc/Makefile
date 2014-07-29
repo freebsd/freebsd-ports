@@ -20,9 +20,8 @@ DOCS_CMAKE_ARGS_OFF=	-Dbuild_docs=off
 
 LICENSE=	BSD
 
-USE_BZIP2=	yes
 USE_GNOME=	libxml2
-USES=		cmake
+USES=		cmake tar:bzip2
 LDFLAGS+=	-L${LOCALBASE}/lib
 USE_LDCONFIG=	yes
 USE_OPENSSL=	yes

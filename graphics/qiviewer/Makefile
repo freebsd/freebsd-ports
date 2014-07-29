@@ -12,8 +12,7 @@ COMMENT=	Fast and lightweight image viewer
 
 LICENSE=	GPLv2
 
-USES=		qmake
-USE_BZIP2=	yes
+USES=		qmake tar:bzip2
 USE_QT4=	gui xml dbus imageformats_run linguist_build \
 		moc_build rcc_build uic_build
 

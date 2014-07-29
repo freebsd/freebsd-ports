@@ -16,11 +16,10 @@ BUILD_DEPENDS=	bdftopcf:${PORTSDIR}/x11-fonts/bdftopcf \
 		mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir
 RUN_DEPENDS=	mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir
 
-USES=		perl5
+USES=		perl5 tar:bzip2
 USE_PERL5=	build
 
 FONTSDIR=	lib/X11/fonts/local
-USE_BZIP2=	yes
 ALL_TARGET=	bdf
 
 PLIST_SUB=	FONTSDIR=${FONTSDIR}

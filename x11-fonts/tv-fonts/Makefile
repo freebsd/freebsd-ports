@@ -17,8 +17,7 @@ RUN_DEPENDS=	bdftopcf:${PORTSDIR}/x11-fonts/bdftopcf \
 		mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir \
 		mkfontscale:${PORTSDIR}/x11-fonts/mkfontscale
 
-USES=		gmake
-USE_BZIP2=	yes
+USES=		gmake tar:bzip2
 
 FONTSDIR=	${PREFIX}/lib/X11/fonts/misc
 FONTS=		caption.pcf.gz captioni.pcf.gz led-iso10646-1.pcf.gz \

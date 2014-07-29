@@ -18,9 +18,8 @@ LIB_DEPENDS=	libgdbm.so:${PORTSDIR}/databases/gdbm
 EXTRACT_AFTER_ARGS=	${DISTNAME}/ext/GDBM_File ${DISTNAME}/t/lib
 
 CFLAGS+=	-I${LOCALBASE}/include
-USES=		perl5
+USES=		perl5 tar:bzip2
 USE_PERL5=	configure
-USE_BZIP2=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME}/ext/GDBM_File
 
 .include <bsd.port.mk>

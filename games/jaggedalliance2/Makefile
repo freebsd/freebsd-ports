@@ -16,8 +16,7 @@ DISTVERSIONSUFFIX=	-source
 # Ignore this if you feel adventurous
 ONLY_FOR_ARCHS=	amd64 arm i386 pc98
 ONLY_FOR_ARCHS_REASON=	Needs a little endian environment
-USE_BZIP2=	yes
-USES=		gmake
+USES=		gmake tar:bzip2
 USE_SDL=	sdl
 NO_CDROM=	License only permits non-commerical use
 NO_PACKAGE=	Language of the datafiles must be hardcoded in the game binary

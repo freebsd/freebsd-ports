@@ -30,8 +30,7 @@ MLINKS=		fcatcmd.1 fcat.1 fcdcmd.1 fcd.1 fducmd.1 fdu.1 \
 		frmdircmd.1 frmdir.1 fstatcmd.1 fstat.1 fmvcmd.1 fmv.1 \
 		fsetupcmd.1 fsetup.1
 
-USES=		scons
-USE_BZIP2=	yes
+USES=		scons tar:bzip2
 WRKSRC=		${WRKDIR}/${DISTNAME}
 
 OPTIONS_DEFINE=	NOCLIENTS INFINITE

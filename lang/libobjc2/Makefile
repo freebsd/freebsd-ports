@@ -12,7 +12,7 @@ COMMENT=	Replacement Objective-C runtime supporting modern Objective-C features
 
 SSP_UNSAFE=	yes
 
-USES=		cmake
+USES=		cmake tar:bzip2
 BROKEN_powerpc=		Does not compile on powerpc: Unsupported relocation type 10
 
 .include <bsd.port.options.mk>
@@ -32,7 +32,6 @@ CXX=	/usr/bin/clang++
 SHLIB_MAJOR=	4
 SHLIB_MINOR=	6
 
-USE_BZIP2=	yes
 PLIST_SUB+=	SHLIB_MAJOR=${SHLIB_MAJOR} SHLIB_MINOR=${SHLIB_MINOR}
 
 .if ${OSVERSION} < 902000

@@ -17,8 +17,7 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/libiberty.a:${PORTSDIR}/devel/gnulibiberty \
 RUN_DEPENDS=	${LOCALBASE}/lib/libiberty.a:${PORTSDIR}/devel/gnulibiberty \
 		${LOCALBASE}/lib/libbfd.a:${PORTSDIR}/devel/libbfd
 
-USES=		gmake pkgconfig
-USE_BZIP2=	yes
+USES=		gmake pkgconfig tar:bzip2
 USE_GNOME=	gtk20
 WRKSRC=		${WRKDIR}/${PORTNAME}-v1
 

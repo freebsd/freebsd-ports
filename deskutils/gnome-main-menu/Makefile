@@ -13,10 +13,9 @@ COMMENT=	Provides easy access to sets of GNOME applications
 
 LIB_DEPENDS=	libgtop-2.0.so:${PORTSDIR}/devel/libgtop
 
-USE_BZIP2=	yes
 USE_GNOME=	gnomehack gnomeprefix gnomepanel intlhack eel2 gnomedesktop \
 		libgnomeui
-USES=		gettext gmake pkgconfig
+USES=		gettext gmake pkgconfig tar:bzip2
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include `pkg-config --cflags libgnomeui-2.0`
 LIBS+=		-L${LOCALBASE}/lib `pkg-config --libs libgnomeui-2.0`

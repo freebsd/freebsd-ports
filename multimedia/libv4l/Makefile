@@ -16,8 +16,7 @@ LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg
 
 MAKE_ARGS=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" LIBDIR="${PREFIX}/lib"
-USE_BZIP2=	yes
-USES=		gmake
+USES=		gmake tar:bzip2
 USE_LDCONFIG=	yes
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/lib

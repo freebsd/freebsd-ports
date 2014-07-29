@@ -16,7 +16,6 @@ USE_QT4=	gui moc_build
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
-USES=		gmake pkgconfig
-USE_BZIP2=	yes
+USES=		gmake pkgconfig tar:bzip2
 
 .include <bsd.port.mk>

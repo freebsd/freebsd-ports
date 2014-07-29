@@ -12,11 +12,10 @@ COMMENT=	Place launch icons and background directly on your desktop
 
 LIB_DEPENDS=	libXft.so:${PORTSDIR}/x11-fonts/libXft
 
-USE_BZIP2=	yes
 USE_EFL=	imlib2
 GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	autoconf
-USES=		gmake pkgconfig
+USES=		gmake pkgconfig tar:bzip2
 
 OPTIONS_DEFINE=	SHAPE SN DOCS
 SHAPE_DESC=	Support of XShape extension

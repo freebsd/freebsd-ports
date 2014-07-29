@@ -12,11 +12,10 @@ COMMENT=	KDE/Qt IDE for microcontroller development
 
 LICENSE=	GPLv2 # (or later)
 
-USE_BZIP2=	yes
 DOS2UNIX_FILES=	cmake/Piklab.cmake
 USE_QT4=	corelib gui qt3support qtestlib xml \
 		moc_build qmake_build rcc_build uic_build
-USES=		cmake gettext readline dos2unix
+USES=		cmake gettext readline dos2unix tar:bzip2
 
 OPTIONS_DEFINE=	KDE4
 OPTIONS_DEFAULT=	KDE4

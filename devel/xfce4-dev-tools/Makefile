@@ -13,9 +13,8 @@ COMMENT=	Xfce 4 development tools
 RUN_DEPENDS=	${LOCALBASE}/share/autotools:${PORTSDIR}/devel/autotools
 
 GNU_CONFIGURE=	yes
-USE_BZIP2=	yes
 USE_XFCE=	configenv	# to get MASTER_SITE_SUBDIR something has to be defined
 USE_GNOME=	glib20
-USES=		pkgconfig
+USES=		pkgconfig tar:bzip2
 
 .include <bsd.port.mk>

@@ -9,9 +9,8 @@ MASTER_SITES=	SF
 MAINTAINER=	romain@FreeBSD.org
 COMMENT=	Junk Mail Buffering Agent
 
-USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
-USES=	gmake
+USES=	gmake tar:bzip2
 
 PLIST_FILES=	bin/jmba \
 		man/man1/jmba.1.gz

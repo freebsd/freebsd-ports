@@ -12,8 +12,7 @@ COMMENT=	Object-oriented RTP library written in C++
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.MIT
 
-USE_BZIP2=	yes
-USES=		cmake
+USES=		cmake tar:bzip2
 USE_LDCONFIG=	yes
 
 PLIST_SUB=	JRTPLIB_VER="${PORTVERSION}"

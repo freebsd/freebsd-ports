@@ -10,8 +10,7 @@ MAINTAINER=	bsd@volki.at
 COMMENT=	Free chess database application
 
 HAS_CONFIGURE=	yes
-USES=		gmake tk:84,85,86
-USE_BZIP2=	yes
+USES=		gmake tk:84,85,86 tar:bzip2
 USE_PYTHON=	yes
 
 TCL_LIBRARY=	-L${LOCALBASE}/lib -ltcl${TCL_SHLIB_VER}

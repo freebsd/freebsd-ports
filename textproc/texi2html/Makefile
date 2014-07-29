@@ -14,8 +14,7 @@ COMMENT=	Texinfo to HTML converter
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	PERL=${PERL}
 CONFIGURE_ARGS=	--disable-multiplatform
-USES=		gmake perl5 shebangfix
-USE_BZIP2=	yes
+USES=		gmake perl5 shebangfix tar:bzip2
 SHEBANG_FILES=	*.pl
 
 OPTIONS_DEFINE=	NLS DOCS

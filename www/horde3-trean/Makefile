@@ -12,8 +12,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Bookmark manager
 
 USE_HORDE=	base pkg-message
-USE_BZIP2=	yes
-USES=		gettext
+USES=		gettext tar:bzip2
 PORTDOCS=	CHANGES CREDITS INSTALL TODO README
 
 NO_STAGE=	yes

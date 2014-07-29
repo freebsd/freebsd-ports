@@ -10,8 +10,7 @@ MASTER_SITES=	SF/vym/${PORTVERSION}
 MAINTAINER=	lichray@gmail.com
 COMMENT=	VYM is a tool to generate and manipulate mind maps
 
-USES=		qmake
-USE_BZIP2=	yes
+USES=		qmake tar:bzip2
 USE_QT4=	uic_build moc_build qt3support_build \
 		network xml dbus svg
 QMAKE_ARGS=	DATADIR=${DATADIR:C,/vym$,,} \

@@ -15,10 +15,9 @@ COMMENT=	Source code analysis tool
 
 LICENSE=	GPLv2
 
-USES=		shebangfix
+USES=		shebangfix tar:bzip2
 SHEBANG_FILES=	${WRKSRC}/snavigator/demo/c++/contrib/perl/sample_client
 USE_GCC=	yes
-USE_BZIP2=	yes
 USE_XORG=	x11
 
 HAS_CONFIGURE=	yes

@@ -28,8 +28,7 @@ PLIST_FILES=	bin/i3lock \
 
 LDFLAGS+=	${ICONV_LIB}
 USE_XORG=	x11 xcb xt xproto xext
-USE_BZIP2=	yes
-USES=		gmake iconv pkgconfig
+USES=		gmake iconv pkgconfig tar:bzip2
 
 post-install:
 	${CHMOD} u+s ${STAGEDIR}${PREFIX}/bin/i3lock

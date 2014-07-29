@@ -14,8 +14,7 @@ COMMENT=	Old school roguelike game
 
 WRKSRC_SUBDIR=	source
 
-USE_BZIP2=	yes
-USES=		ncurses
+USES=		ncurses tar:bzip2
 MAKEFILE=	makefile.bsd
 
 PORTDOCS=	buglist.txt crawl.txt

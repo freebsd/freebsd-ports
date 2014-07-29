@@ -21,8 +21,7 @@ SSLEAY_RUN_DEPENDS=	p5-Net-SSLeay>0:${PORTSDIR}/security/p5-Net-SSLeay
 
 NO_BUILD=	yes
 
-USE_BZIP2=	yes
-USES=		perl5 shebangfix
+USES=		perl5 shebangfix tar:bzip2
 USE_PERL5=	run
 SHEBANG_FILES=	nikto.pl
 

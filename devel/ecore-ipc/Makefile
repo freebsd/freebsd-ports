@@ -15,11 +15,10 @@ COMMENT=	Enlightenment core abstraction library (ipc module)
 LICENSE=	BSD
 
 DIST_SUBDIR=	e17
-USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_EFL=	ecore libtool_hack
 USE_EFL_ECORE=	con
-USES=		gmake pkgconfig
+USES=		gmake pkgconfig tar:bzip2
 USE_LDCONFIG=	yes
 BUILD_WRKSRC=	${WRKSRC}/src/lib/ecore_ipc
 INSTALL_WRKSRC=	${BUILD_WRKSRC}

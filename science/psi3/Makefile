@@ -45,9 +45,8 @@ BLAS=		-lptf77blas
 LAPACK=		-lalapack -lptcblas
 .endif
 
-USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
-USES=		fortran gmake
+USES=		fortran gmake tar:bzip2
 CONFIGURE_ARGS=	--with-cc=${CC} \
 		--with-cxx=${CXX} \
 		--with-fc=${FC} \

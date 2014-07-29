@@ -13,8 +13,7 @@ LICENSE?=	LGPL21
 
 SLAVE_PORT?=	no
 
-USE_BZIP2=	yes
-USES=		cmake pkgconfig
+USES=		cmake pkgconfig tar:bzip2
 
 .if ${SLAVE_PORT} == "no"
 

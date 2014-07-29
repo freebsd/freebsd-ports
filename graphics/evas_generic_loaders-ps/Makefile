@@ -17,9 +17,8 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	libspectre.so:${PORTSDIR}/print/libspectre
 
 DIST_SUBDIR=	e17
-USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
-USES=		pkgconfig
+USES=		pkgconfig tar:bzip2
 USE_EFL=	eina
 USE_LDCONFIG=	yes
 

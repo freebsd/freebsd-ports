@@ -17,8 +17,7 @@ LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}-src
 
-USE_BZIP2=	yes
-USES=		gmake
+USES=		gmake tar:bzip2
 USE_SDL=	image mixer sdl
 MAKE_ENV=	DATADIR=${DATADIR}/ BINDIR=${PREFIX}/bin
 ALL_TARGET=	sdl

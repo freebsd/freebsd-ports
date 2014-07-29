@@ -18,8 +18,7 @@ LICENSE_FILE_imlib2=	${WRKSRC}/COPYING
 LICENSE_PERMS_imlib2=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 GNU_CONFIGURE=	yes
-USE_BZIP2=	yes
-USES=		pathfix pkgconfig
+USES=		pathfix pkgconfig tar:bzip2
 USE_EFL=	imlib2 libtool_hack
 
 OPTIONS_DEFINE=	EET XCF

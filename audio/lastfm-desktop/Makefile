@@ -20,8 +20,7 @@ LIB_DEPENDS=	liblastfm.so:${PORTSDIR}/audio/liblastfm \
 		libavcodec.so:${PORTSDIR}/multimedia/ffmpeg \
 		libgpod.so:${PORTSDIR}/audio/libgpod
 
-USES=		pkgconfig qmake
-USE_BZIP2=	yes
+USES=		pkgconfig qmake tar:bzip2
 USE_QT4=	gui linguist_build moc_build network phonon \
 		rcc_build uic_build webkit xml
 LASTFM=		${PORTNAME}${PKGNAMESUFFIX}

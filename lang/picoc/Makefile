@@ -10,8 +10,7 @@ COMMENT=	Very small C interpreter for scripting
 
 LICENSE=	BSD
 
-USES=		gmake readline
-USE_BZIP2=	yes
+USES=		gmake readline tar:bzip2
 
 PLIST_FILES=	bin/picoc
 

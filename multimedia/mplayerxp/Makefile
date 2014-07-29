@@ -25,9 +25,8 @@ ONLY_FOR_ARCHS=	i386
 
 MAKE_JOBS_UNSAFE=	yes
 
-USE_BZIP2=	yes
 USE_XORG=	xinerama xv xxf86dga xxf86vm
-USES=		iconv gmake
+USES=		iconv gmake tar:bzip2
 HAS_CONFIGURE=	yes
 WANT_SDL=	yes
 USE_LDCONFIG=	yes

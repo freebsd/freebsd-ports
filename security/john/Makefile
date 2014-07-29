@@ -14,8 +14,7 @@ COMMENT=	Featureful Unix password cracker
 
 LICENSE=	GPLv2
 
-USES=		gmake shebangfix
-USE_BZIP2=	yes
+USES=		gmake shebangfix tar:bzip2
 SHEBANG_FILES=	run/*.pl
 BUILD_WRKSRC=	${WRKDIR}/${DISTNAME}/src
 

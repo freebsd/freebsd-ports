@@ -27,8 +27,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 MAKEFILE=	makefile
 MAKE_ARGS=	install_prefix=${STAGEDIR}${PREFIX} \
 		verbose=1
-USES=		gmake
-USE_BZIP2=	yes
+USES=		gmake tar:bzip2
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 

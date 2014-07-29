@@ -14,10 +14,9 @@ LICENSE=	GPLv2
 
 OPTIONS_DEFINE=	DOCS
 
-USES=		qmail:run perl5
+USES=		qmail:run perl5 tar:bzip2
 
 NO_BUILD=	yes
-USE_BZIP2=	yes
 
 PORTDOCS=	HISTORY README
 

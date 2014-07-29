@@ -17,9 +17,8 @@ LICENSE=	GPLv2
 
 OPTIONS_DEFINE=	DOCS
 
-USES=		perl5
+USES=		perl5 tar:bzip2
 USE_BDB=	yes
-USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	PERL=${PERL} \
 		djm_cv_lib_db_Dbopen=yes

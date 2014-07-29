@@ -13,8 +13,7 @@ COMMENT=	Show information about local users
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		libtool
-USE_BZIP2=	yes
+USES=		libtool tar:bzip2
 GNU_CONFIGURE=	yes
 
 .include <bsd.port.mk>

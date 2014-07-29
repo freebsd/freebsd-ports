@@ -11,10 +11,9 @@ DISTFILES=	${PORTNAME}_${PORTVERSION}.orig${EXTRACT_SUFX}
 MAINTAINER=	aragon@phat.za.net
 COMMENT=	Extremely simple MTA to get mail off the system to a mail hub
 
-USE_BZIP2=	yes
 USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
-USES=		gmake
+USES=		gmake tar:bzip2
 GROUPS=		ssmtp
 BINMODE=	2555
 SHAREMODE=	640

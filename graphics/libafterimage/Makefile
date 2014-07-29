@@ -19,8 +19,7 @@ LIB_DEPENDS=	libgif.so:${PORTSDIR}/graphics/giflib \
 		libtiff.so:${PORTSDIR}/graphics/tiff \
 		libfreetype.so:${PORTSDIR}/print/freetype2
 
-USE_BZIP2=	yes
-USES=		pkgconfig
+USES=		pkgconfig tar:bzip2
 USE_XORG=	xext
 USE_GNOME=	librsvg2
 GNU_CONFIGURE=	yes

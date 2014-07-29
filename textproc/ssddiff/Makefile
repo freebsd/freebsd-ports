@@ -12,8 +12,7 @@ COMMENT=	Diff application for semistructured data such as XML files
 
 LICENSE=	GPLv2 # (or later)
 
-USE_BZIP2=	yes
-USES=		pkgconfig
+USES=		pkgconfig tar:bzip2
 USE_GNOME=	libxml2 
 USE_GCC=	any
 USE_AUTOTOOLS=	automake14

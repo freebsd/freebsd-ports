@@ -36,9 +36,8 @@ INSTALL_WRKSRC=		${BUILD_WRKSRC}
 CONFIGURE_SCRIPT=	../gcc-${PORTVERSION}/configure
 
 USE_PERL5=	build
-USE_BZIP2=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
-USES=		bison gettext gmake perl5
+USES=		bison gettext gmake perl5 tar:bzip2
 GNU_CONFIGURE=	yes
 
 NO_STAGE=	yes

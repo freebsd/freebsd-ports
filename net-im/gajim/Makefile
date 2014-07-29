@@ -18,8 +18,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}openssl>=0:${PORTSDIR}/security/py-openssl \
 
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
-USES=		dos2unix gmake pathfix
-USE_BZIP2=	yes
+USES=		dos2unix gmake pathfix tar:bzip2
 DOS2UNIX_FILES=	src/plugins/plugins_i18n.py
 USE_GNOME=	pygtk2
 USE_PYTHON=	2

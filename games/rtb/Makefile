@@ -17,8 +17,7 @@ BUILD_DEPENDS=	gsed:${PORTSDIR}/textproc/gsed
 
 OPTIONS_DEFINE=	DOCS
 
-USE_BZIP2=	yes
-USES=		gettext gmake perl5 pkgconfig
+USES=		gettext gmake perl5 pkgconfig tar:bzip2
 USE_GNOME=	gtk20
 USE_PYTHON=	yes
 GNU_CONFIGURE=	yes

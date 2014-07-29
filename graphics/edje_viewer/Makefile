@@ -9,9 +9,8 @@ MASTER_SITES=	LOCAL/gblach/e17/extra/
 MAINTAINER=	gblach@FreeBSD.org
 COMMENT=	Simple viewer for .edj files
 
-USES=		pkgconfig
+USES=		pkgconfig tar:bzip2
 DIST_SUBDIR=	e17
-USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_EFL=	evas ecore edje elementary
 USE_EFL_ECORE=	file

@@ -15,9 +15,8 @@ COMMENT=	Football (soccer) management game
 RUN_DEPENDS=	zip:${PORTSDIR}/archivers/zip \
 		unzip:${PORTSDIR}/archivers/unzip
 
-USES=		pkgconfig
+USES=		pkgconfig tar:bzip2
 GNU_CONFIGURE=	yes
-USE_BZIP2=	yes
 USE_GNOME=	gtk20
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS} -lm

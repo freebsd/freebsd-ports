@@ -12,8 +12,7 @@ COMMENT=	X11 shoot-'em up which requires some lateral thinking
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-USE_BZIP2=	yes
-USES=		gmake
+USES=		gmake tar:bzip2
 USE_GL=		glut
 MAKE_ARGS=	CC="${CC}" CPP="${CXX}" CC_FLAGS="${CXXFLAGS}" \
 		LIB_FLAGS="${LDFLAGS}" GCC="${CC}" CFLAGS="${CFLAGS}"

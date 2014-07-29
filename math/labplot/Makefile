@@ -13,8 +13,7 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	libgsl.so:${PORTSDIR}/math/gsl
 
-USE_BZIP2=	yes
-USES=		cmake shared-mime-info
+USES=		cmake shared-mime-info tar:bzip2
 USE_XORG=	xft xpm
 USE_GCC=	yes
 USE_KDE4=	automoc4 kdelibs kdeprefix

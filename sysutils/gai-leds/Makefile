@@ -15,8 +15,7 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	libgai.so:${PORTSDIR}/x11-toolkits/gai
 
 GNU_CONFIGURE=	yes
-USES=		pathfix pkgconfig
-USE_BZIP2=	yes
+USES=		pathfix pkgconfig tar:bzip2
 USE_GNOME=	gnomeprefix
 
 post-patch:

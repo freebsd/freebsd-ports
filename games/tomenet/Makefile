@@ -9,11 +9,10 @@ MASTER_SITES=	http://tomenet.net/downloads/
 MAINTAINER=	culot@FreeBSD.org
 COMMENT=	Online multiplayer rogue-like role-playing game
 
-USE_BZIP2=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
 MAKEFILE=	makefile
 
-USES=		gmake ncurses
+USES=		gmake ncurses tar:bzip2
 CFLAGS+=	-DDEFAULT_PATH="\\\"${DATADIR}/lib/\\\""
 MAKE_JOBS_UNSAFE=	yes
 

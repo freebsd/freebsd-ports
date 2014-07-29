@@ -19,9 +19,8 @@ LIB_DEPENDS+=	libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig \
 		libjpeg.so:${PORTSDIR}/graphics/jpeg \
 		libpng15.so:${PORTSDIR}/graphics/png
 
-USE_BZIP2=	yes
 
-USES=			pkgconfig gmake perl5 iconv
+USES=			pkgconfig gmake perl5 iconv tar:bzip2
 USE_XORG=		x11 xext xrender
 USE_PERL5=		build
 USE_LDCONFIG=		yes

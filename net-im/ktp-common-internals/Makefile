@@ -17,8 +17,7 @@ RUN_DEPENDS=	${LOCALBASE}/libexec/mission-control-5:${PORTSDIR}/net-im/telepathy
 USE_KDE4=	kdehier kdeprefix kdelibs automoc4
 USE_QT4=	declarative script \
 		moc_build qmake_build rcc_build uic_build
-USES=		cmake gettext
-USE_BZIP2=	yes
+USES=		cmake gettext tar:bzip2
 USE_LDCONFIG=	yes
 
 .include <bsd.port.mk>

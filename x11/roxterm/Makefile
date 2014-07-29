@@ -17,8 +17,7 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}lockfile>0:${PORTSDIR}/devel/py-lockfile \
 LIB_DEPENDS=	libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib
 RUN_DEPENDS=	xdg-open:${PORTSDIR}/devel/xdg-utils
 
-USE_BZIP2=	yes
-USES=		gettext pkgconfig
+USES=		gettext pkgconfig tar:bzip2
 USE_GNOME=	librsvg2
 USE_PYTHON_BUILD=	yes
 USE_AUTOTOOLS=	libtool:env

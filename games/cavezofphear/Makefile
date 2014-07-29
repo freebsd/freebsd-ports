@@ -17,8 +17,7 @@ OPTIONS_DEFINE=	DOCS
 
 BUILD_WRKSRC=	${WRKDIR}/${DISTNAME}/src
 
-USE_BZIP2=	yes
-USES=		gmake
+USES=		gmake tar:bzip2
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}"
 ALL_TARGET=	phear
 

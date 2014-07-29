@@ -18,9 +18,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libfftw3.so:${PORTSDIR}/math/fftw3 \
 		libgimp-2.0.so:${PORTSDIR}/graphics/gimp-app
 
-USES=		gmake pkgconfig
+USES=		gmake pkgconfig tar:bzip2
 GNU_CONFIGURE=	yes
-USE_BZIP2=	yes
 USE_GNOME=	gtk20
 
 PLUGIN_DIR?=	libexec/gimp/2.2/plug-ins

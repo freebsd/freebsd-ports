@@ -15,9 +15,8 @@ BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/monodevelop.pc:${PORTSDIR}/devel/m
 RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/monodevelop.pc:${PORTSDIR}/devel/monodevelop
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
-USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
-USES=		gettext gmake pathfix pkgconfig
+USES=		gettext gmake pathfix pkgconfig tar:bzip2
 USE_GNOME=	gtksharp20
 MAKE_JOBS_UNSAFE=yes
 

@@ -21,10 +21,9 @@ CONFLICTS=	xorp-1*
 
 NOMAN=		defined
 
-USE_BZIP2=	yes
 USE_GCC=	any
 USE_PYTHON_BUILD=	2
-USES=		scons
+USES=		scons tar:bzip2
 NO_STAGE=	yes
 #USE_OPENSSL=	yes
 

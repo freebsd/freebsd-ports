@@ -12,9 +12,8 @@ COMMENT=	Mount packed data files of various games (PACK, WAD, etc.)
 
 LICENSE=	GPLv2
 
-USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
-USES=		fuse pkgconfig
+USES=		fuse pkgconfig tar:bzip2
 
 PLIST_FILES=	bin/pakmount man/man1/pakmount.1.gz
 

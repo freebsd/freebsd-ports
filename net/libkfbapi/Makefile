@@ -15,8 +15,7 @@ LICENSE=	LGPL20
 
 LIB_DEPENDS=	libqjson.so:${PORTSDIR}/devel/qjson
 
-USE_BZIP2=	yes
-USES=		cmake:outsource gettext
+USES=		cmake:outsource gettext tar:bzip2
 USE_KDE4=	automoc4 kdelibs kdeprefix kdehier pimlibs
 USE_LDCONFIG=	yes
 USE_QT4=	gui webkit \

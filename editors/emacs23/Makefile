@@ -28,8 +28,7 @@ CONFLICTS=	emacs-19.* emacs21-* emacs22-* emacs24-* \
 
 EMACS_VER=	23.4
 GNU_CONFIGURE=	yes
-USES=		gmake makeinfo ncurses pkgconfig
-USE_BZIP2=	yes
+USES=		gmake makeinfo ncurses pkgconfig tar:bzip2
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 INFO_PATH=	${DATADIR_REL}/info

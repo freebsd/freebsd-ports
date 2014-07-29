@@ -20,8 +20,7 @@ PLIST_FILES=	bin/portrac \
 
 PLIST_DIRS=	share/portrac
 
-USES=		qmake
-USE_BZIP2=	yes
+USES=		qmake tar:bzip2
 USE_QT4=	gui moc_build
 
 do-install:

@@ -13,8 +13,7 @@ BUILD_DEPENDS=	xsltproc:${PORTSDIR}/textproc/libxslt
 
 OPTIONS_DEFINE=	DOCS
 
-USE_BZIP2=	yes
-USES=		gmake perl5
+USES=		gmake perl5 tar:bzip2
 USE_PERL5=	build
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	PERL="${PERL}"

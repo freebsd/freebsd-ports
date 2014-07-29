@@ -16,8 +16,7 @@ RUN_DEPENDS=	${KDE4_PREFIX}/lib/kde4/libexec/polkit-kde-authentication-agent-1:$
 
 USE_KDE4=	kdehier kdelibs kdeprefix automoc4
 USE_QT4=	dbus xml moc_build qmake_build rcc_build uic_build
-USE_BZIP2=	yes
-USES=		cmake gmake pkgconfig
+USES=		cmake gmake pkgconfig tar:bzip2
 USE_LDCONFIG=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-kcmodules-1

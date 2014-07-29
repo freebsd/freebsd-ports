@@ -12,8 +12,7 @@ MAINTAINER=	chip-set@mail.ru
 COMMENT=	A GTK+ tool for managing x11 cut-buffers
 
 HAS_CONFIGURE=	yes
-USES=		pkgconfig
-USE_BZIP2=	yes
+USES=		pkgconfig tar:bzip2
 USE_GNOME=	gtk20
 
 post-patch:

@@ -13,9 +13,8 @@ COMMENT=	Enlightenment Input/Output Library
 LICENSE=	LGPL21
 
 DIST_SUBDIR=	e17
-USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
-USES=		pathfix pkgconfig
+USES=		pathfix pkgconfig tar:bzip2
 USE_EFL=	eina eet ecore libtool_hack
 USE_LDCONFIG=	yes
 

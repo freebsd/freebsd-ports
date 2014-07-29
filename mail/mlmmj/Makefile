@@ -13,7 +13,7 @@ COMMENT=	Mailing list managing made joyful
 
 LICENSE=	MIT
 
-USES=	gmake
+USES=	gmake tar:bzip2
 
 .if defined(WITH_PHP_WEBINTERFACE)
 USE_PHP=	yes
@@ -44,7 +44,6 @@ PLIST_SUB+=	WEB="@comment "
 PLIST_SUB+=	WEB=""
 .endif
 
-USE_BZIP2=	yes
 HAS_CONFIGURE=	yes
 
 CONFIGURE_ARGS+=	--prefix=${PREFIX} --mandir=${MANPREFIX}/man

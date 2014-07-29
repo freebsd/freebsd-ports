@@ -12,8 +12,7 @@ COMMENT=	Program that keeps the content of your X clipboard in memory
 
 LICENSE=	GPLv2
 
-USE_BZIP2=	yes
-USES=		pkgconfig
+USES=		pkgconfig tar:bzip2
 USE_GNOME=	gtk20
 
 PLIST_FILES=	bin/${PORTNAME}

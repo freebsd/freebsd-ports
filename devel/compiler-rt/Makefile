@@ -18,8 +18,7 @@ INSTALL_WRKSRC=		${WRKDIR}/build
 
 CMAKE_SOURCE_PATH=	${WRKSRC}
 
-USES=		cmake
-USE_BZIP2=	yes
+USES=		cmake tar:bzip2
 USE_LDCONFIG=	yes
 MAKE_ARGS=	VERBOSE=1
 

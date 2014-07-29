@@ -13,8 +13,7 @@ LICENSE?=	LGPL21
 
 SLAVE_PORT?=	no
 
-USES=		pkgconfig
-USE_BZIP2=	yes
+USES=		pkgconfig tar:bzip2
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	openssl_LIBS=-lssl
 CFLAGS+=	-I${LOCALBASE}/include

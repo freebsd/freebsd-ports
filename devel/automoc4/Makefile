@@ -12,8 +12,7 @@ MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Automatic moc for Qt 4 packages
 
 USE_QT4=	corelib moc qmake_build rcc_build uic_build
-USE_BZIP2=	yes
-USES=		cmake iconv
+USES=		cmake iconv tar:bzip2
 MAKE_JOBS_UNSAFE=	yes
 
 .include <bsd.port.mk>

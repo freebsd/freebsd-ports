@@ -17,8 +17,7 @@ LIB_DEPENDS=	libnotify.so:${PORTSDIR}/devel/libnotify \
 	libpolkit-gobject-1.so:${PORTSDIR}/sysutils/polkit
 
 GNU_CONFIGURE=	yes
-USE_BZIP2=	yes
-USES=		gettext pkgconfig gmake
+USES=		gettext pkgconfig gmake tar:bzip2
 USE_GNOME=	glib20 gtk20 intltool intlhack
 USE_XFCE=	configenv libutil libmenu panel xfconf
 INSTALLS_ICONS=	yes

@@ -17,9 +17,8 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	libpoppler.so:${PORTSDIR}/graphics/poppler
 
-USES=		pkgconfig
+USES=		pkgconfig tar:bzip2
 DIST_SUBDIR=	e17
-USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_EFL=	eina
 USE_LDCONFIG=	yes

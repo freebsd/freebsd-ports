@@ -15,9 +15,8 @@ COMMENT=	Mail notification applet for the Xfce panel
 LIB_DEPENDS=	libgnutls.so:${PORTSDIR}/security/gnutls \
 		libgcrypt.so:${PORTSDIR}/security/libgcrypt
 
-USE_BZIP2=	yes
 INSTALLS_ICONS=	yes
-USES=		gettext gmake pkgconfig
+USES=		gettext gmake pkgconfig tar:bzip2
 GNU_CONFIGURE=	yes
 USE_GNOME=	glib20 gtk20 intltool intlhack
 USE_XFCE=	configenv libexo libmenu libutil panel

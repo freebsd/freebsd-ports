@@ -12,10 +12,9 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GNOME JavaScript common modules and tests
 
-USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_GNOME=	gnomehack intltool
-USES=		pkgconfig gettext gmake
+USES=		pkgconfig gettext gmake tar:bzip2
 
 PORTDOCS=	AUTHORS COPYING INSTALL NEWS README ChangeLog
 

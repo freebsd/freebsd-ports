@@ -23,8 +23,7 @@ LIB_DEPENDS=	libAtlas-0.6.so:${PORTSDIR}/devel/atlas-devel \
 CONFIGURE_ARGS=	--with-python=${LOCALBASE}
 
 GNU_CONFIGURE=	yes
-USE_BZIP2=	yes
-USES=		gmake pathfix pkgconfig compiler:c++11-lib
+USES=		gmake pathfix pkgconfig compiler:c++11-lib tar:bzip2
 USE_LDCONFIG=	yes
 USE_PGSQL=	yes
 USE_PYTHON=	2

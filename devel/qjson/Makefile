@@ -11,8 +11,7 @@ COMMENT=	Library to manage JSON objects with Qt
 LICENSE=	LGPL21
 
 USE_QT4=	corelib moc_build qmake_build rcc_build uic_build
-USE_BZIP2=	yes
-USES=		cmake
+USES=		cmake tar:bzip2
 USE_LDCONFIG=	yes
 
 PORTDOCS=	*

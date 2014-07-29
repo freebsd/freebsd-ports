@@ -10,8 +10,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S,0.0.,,}
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Portable and enhanced troff, nroff, and related utilities
 
-USES=	gmake
-USE_BZIP2=	yes
+USES=	gmake tar:bzip2
 ALL_TARGET=	#empty
 MAKE_ENV+=	INSTALL=${INSTALL} \
 		BINDIR=${BINDIR} \

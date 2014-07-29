@@ -13,8 +13,7 @@ COMMENT=	Graphical configuration utility for the newsreader slrn
 BUILD_DEPENDS=	p5-Gtk2>=0:${PORTSDIR}/x11-toolkits/p5-Gtk2 \
 		p5-Parse-RecDescent>=0:${PORTSDIR}/devel/p5-Parse-RecDescent
 
-USE_BZIP2=	yes
-USES=		perl5
+USES=		perl5 tar:bzip2
 MAKE_ARGS+=	PREFIX=${PREFIX}
 
 OPTIONS_DEFINE=	DOCS

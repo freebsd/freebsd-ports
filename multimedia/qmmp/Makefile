@@ -12,8 +12,7 @@ COMMENT=	Qt4-based multimedia player
 
 LICENSE=	GPLv2
 
-USE_BZIP2=	yes
-USES=		cmake:outsource pkgconfig
+USES=		cmake:outsource pkgconfig tar:bzip2
 USE_QT4=	corelib gui network xml \
 		qmake_build rcc_build uic_build moc_build linguist_build
 USE_LDCONFIG=	yes
