@@ -15,7 +15,7 @@ DIST_SUBDIR=	gnome3
 MAINTAINER?=	gnome@FreeBSD.org
 COMMENT?=	Gtk 3 based terminal widget with accessibility and I18N support
 
-USES=		tar:xz
+USES+=		tar:xz
 
 .if !defined(REFERENCE_PORT)
 VTE3_SLAVE?=	no
