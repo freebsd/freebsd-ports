@@ -1,0 +1,10 @@
+--- ./bin/pkg_glob.orig	2014-07-29 18:43:42.604036006 -0500
++++ ./bin/pkg_glob	2014-07-29 18:43:59.499573325 -0500
+@@ -415,6 +415,7 @@
+   return true if $noexecute
+ 
+   if $pkgdb.with_pkgng?
++    $pkg_delete_args.push '-f'
+     cmdargs = [PkgDB::command(:pkg), 'delete', *$pkg_delete_args] << pkgname
+   else
+     cmdargs = [PkgDB::command(:pkg_delete), *$pkg_delete_args] << pkgname
