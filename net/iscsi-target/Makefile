@@ -14,7 +14,7 @@ MAINTAINER=	mark@foster.cc
 COMMENT=	Implementation of userland ISCSI target (from NetBSD)
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
-
+DEPRECATED=	Use net/istgt or base systems ctld(8) on 10.x instead
 GNU_CONFIGURE=	yes
 
 MAN5=		targets.5
@@ -51,4 +51,3 @@ post-install:
 .endfor
 
 .include <bsd.port.mk>
-	@${CAT} ${PKGMESSAGE}
