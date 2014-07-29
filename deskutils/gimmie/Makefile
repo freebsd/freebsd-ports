@@ -3,7 +3,7 @@
 
 PORTNAME=	gimmie
 PORTVERSION=	0.2.7
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	http://www.beatniksoftware.com/gimmie/releases/ \
 		LOCAL/beech
@@ -18,7 +18,7 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/libgnomecups-1.0.a:${PORTSDIR}/print/libgnomecup
 		${PYTHON_SITELIBDIR}/dbus/_dbus.py:${PORTSDIR}/devel/py-dbus
 
 USE_GNOME=	gnomehack gnomeprefix pygnome2 pygnomedesktop pygnomeextras
-USES=		gmake pkgconfig
+USES=		gmake libtool pkgconfig
 USE_PYTHON=	yes
 GCONF_SCHEMAS=	gimmie.schemas
 INSTALLS_ICONS=	yes
