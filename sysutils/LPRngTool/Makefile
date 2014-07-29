@@ -11,7 +11,6 @@ MASTER_SITES=	ftp://ftp.lprng.com/pub/%SUBDIR%/ \
 		ftp://ftp.informatik.uni-hamburg.de/pub/os/unix/utils/%SUBDIR%/ \
 		ftp://ftp.uni-paderborn.de/pub/unix/printer/%SUBDIR%/
 MASTER_SITE_SUBDIR=	LPRng/LPRngTool
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Configuration Tool for LPRng
@@ -22,7 +21,7 @@ BUILD_DEPENDS=	a2ps:${PORTSDIR}/print/a2ps \
 #RUN_DEPENDS=	ifhp:${PORTSDIR}/print/ifhp
 
 USE_GHOSTSCRIPT_BUILD=	yes
-USES=		tk
+USES=		tk tar:tgz
 
 .if defined(SYSCONFDIR)
 PLIST_SUB+=	CWD="" SYSCONFDIR="${SYSCONFDIR:S,^/,,}"

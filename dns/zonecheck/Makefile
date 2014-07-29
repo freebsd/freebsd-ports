@@ -7,7 +7,6 @@ PORTEPOCH=	1
 CATEGORIES=	dns ipv6 ruby
 MASTER_SITES=	http://www.zonecheck.fr/download/ \
 		ftp://ftp.nic.fr/pub/mirror/zonecheck/src/
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	jmohacsi@bsd.hu
 COMMENT=	Perform consistency checks on DNS zones
@@ -17,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/GPL
 
 RUN_DEPENDS=	rubygem-dnsruby>=1.47:${PORTSDIR}/dns/rubygem-dnsruby
 
-USES=	gmake
+USES=	gmake tar:tgz
 USE_RUBY=	yes
 
 NO_BUILD=	yes

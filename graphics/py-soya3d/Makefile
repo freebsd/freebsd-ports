@@ -22,10 +22,9 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/editobj/editor.py:${PORTSDIR}/graphics/py-edit
 		${PYTHON_SITELIBDIR}/tofu/client.py:${PORTSDIR}/net/py-tofu \
 		${PYTHON_SITELIBDIR}/cerealizer/__init__.py:${PORTSDIR}/security/py-cerealizer
 
-USE_BZIP2=	yes
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
-USES=		gmake openal:al,alut
+USES=		gmake openal:al,alut tar:bzip2
 USE_GL=		glew glu
 USE_SDL=	sdl
 

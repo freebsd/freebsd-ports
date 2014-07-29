@@ -10,9 +10,8 @@ DISTNAME=	vanessa_logger-${PORTVERSION}
 MAINTAINER=	thomas@bsdunix.ch
 COMMENT=	Library that provides a generic logging layer
 
-USE_BZIP2=	yes
 USE_AUTOTOOLS=	libtool
-USES=	pathfix
+USES=	pathfix tar:bzip2
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	ac_cv_have_decl_facilitynames=yes

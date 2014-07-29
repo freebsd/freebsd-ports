@@ -7,7 +7,6 @@ PORTREVISION=	3
 CATEGORIES=	irc
 MASTER_SITES=	http://services.ratbox.org/download/		\
 		http://services.ratbox.org/download/old/
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	moggie@elasticmind.net
 COMMENT=	Highly configurable services package for use with ircd-ratbox
@@ -21,7 +20,7 @@ LOGDIR?=	/var/log
 RUNDIR?=	/var/run
 DBDIR?=		/var/db/${PORTNAME}
 PERL?=		${LOCALBASE}/bin/perl
-USES=		libtool pkgconfig perl5
+USES=		libtool pkgconfig perl5 tar:tgz
 SUB_FILES=	pkg-message pkg-install
 PLIST_SUB=	LOGDIR=${LOGDIR} RUNDIR=${RUNDIR} DBDIR=${DBDIR} PERL=${PERL}
 SUB_LIST=	LOGDIR=${LOGDIR} RUNDIR=${RUNDIR} DBDIR=${DBDIR} PERL=${PERL}

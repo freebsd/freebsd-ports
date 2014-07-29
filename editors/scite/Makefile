@@ -6,7 +6,6 @@ PORTVERSION=	3.4.1
 CATEGORIES=	editors gnome
 MASTER_SITES=	SF/scintilla/SciTE/${PORTVERSION}
 DISTNAME=	${PORTNAME}${PORTVERSION:S/.//g}
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	cyberbotx@cyberbotx.com
 COMMENT=	Full-featured SCIntilla based text editor for GTK/GNOME
@@ -19,7 +18,7 @@ FULL_BUFFER_MENU_DESC=	Show all files in buffer menu
 
 WRKSRC=		${WRKDIR}/${PORTNAME}/gtk
 
-USES=		desktop-file-utils gmake pkgconfig
+USES=		desktop-file-utils gmake pkgconfig tar:tgz
 USE_GNOME=	gtk20
 MAKEFILE=	makefile
 

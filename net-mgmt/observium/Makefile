@@ -3,12 +3,13 @@
 
 PORTNAME=	observium
 PORTVERSION=	0.14.4.5229
+PORTREVISION=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://www.observium.org/
 DISTNAME=	${PORTNAME}-community-latest
 DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	feld@FreeBSD.org
 COMMENT=	Autodiscovering PHP/MySQL/SNMP based network monitoring
 
 LICENSE=	GPLv3
@@ -75,6 +76,10 @@ do-install:
 .for f in ${ROOT_FILES}
 	@${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}/${WWWDIR}
 .endfor
+	# Create empty rrd dir writable by www
+	@${INSTALL} -d -o www -g www ${STAGEDIR}/${WWWDIR}/rrd
+	# Files in scripts dir should be executable
+	@${FIND} ${STAGEDIR}/${WWWDIR}/scripts -type f -exec ${CHMOD} +x {} \;
 
 .if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${STAGEDIR}/${DOCSDIR}

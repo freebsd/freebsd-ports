@@ -12,8 +12,7 @@ COMMENT=	Program to download videos from YouTube and etc
 
 LICENSE=	GPLv3
 
-USES=		qmake
-USE_BZIP2=	yes
+USES=		qmake tar:bzip2
 USE_QT4=	gui xml uic_build moc_build \
 		rcc_build network dbus webkit
 

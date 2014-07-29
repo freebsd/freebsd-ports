@@ -17,8 +17,7 @@ RUN_DEPENDS=	portaudio2>=0:${PORTSDIR}/audio/portaudio2
 
 OPTIONS_DEFINE=	DOCS
 
-USE_BZIP2=	yes
-USES=		cmake readline
+USES=		cmake readline tar:bzip2
 USE_GNOME=	pygtk2
 USE_SDL=	sdl
 CMAKE_ARGS=	-DPORTAUDIO_INCLUDE_DIR:STRING="${PA2_INCLUDE_DIR}" \

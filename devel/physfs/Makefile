@@ -9,8 +9,7 @@ MASTER_SITES=	http://offload1.icculus.org:9090/${PORTNAME}/downloads/
 MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	Library to provide abstract access to various archives
 
-USE_BZIP2=	yes
-USES=		cmake
+USES=		cmake tar:bzip2
 USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
 

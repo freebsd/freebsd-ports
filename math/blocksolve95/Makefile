@@ -8,7 +8,6 @@ CATEGORIES=	math parallel
 MASTER_SITES=	ftp://ftp.mcs.anl.gov/pub/BlockSolve95/ \
 		http://ftp.mcs.anl.gov/pub/BlockSolve95/
 DISTNAME=	BlockSolve95
-EXTRACT_SUFX=	.tar.Z
 DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
@@ -18,7 +17,7 @@ BUILD_DEPENDS=	${MPIDIR}/lib/libmpich.a:${PORTSDIR}/net/mpich2
 LIB_DEPENDS=	libf2c.so:${PORTSDIR}/lang/f2c
 RUN_DEPENDS=	${MPIDIR}/bin/mpirun:${PORTSDIR}/net/mpich2
 
-USES=		fortran gmake
+USES=		fortran gmake tar:Z
 MAKEFILE=	makefile
 MAKE_ARGS=	GMAKE=${MAKE_CMD} PETSC_ARCH=${PETSC_ARCH} BOPT=${BOPT}	\
 		BLAS_LIB="${BLAS_LIB}" LAPACK_LIB="${LAPACK_LIB}"

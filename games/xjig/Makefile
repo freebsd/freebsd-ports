@@ -7,12 +7,11 @@ PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	games
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Jigsaw puzzle game for X11
 
-USES=		compiler
+USES=		compiler tar:tgz
 USE_XORG=	x11 xproto xext
 MAKEFILE=	Makefile.Linux
 PLIST_FILES=	bin/xjig man/man1/xjig.1.gz

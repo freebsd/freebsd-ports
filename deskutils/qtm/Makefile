@@ -11,8 +11,7 @@ COMMENT=	Blog management application based on Qt 4
 
 LICENSE=	GPLv2
 
-USE_BZIP2=	yes
-USES=		cmake
+USES=		cmake tar:bzip2
 USE_QT4=	corelib dbus gui network xml \
 		moc_build qmake_build rcc_build uic_build
 USE_OPENSSL=	yes

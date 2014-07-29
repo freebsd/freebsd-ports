@@ -105,15 +105,12 @@ lib/cinepaint/%%VER%%/plug-ins/tiff
 lib/cinepaint/%%VER%%/plug-ins/unsharp
 lib/cinepaint/%%VER%%/plug-ins/xwd
 lib/libcinepaint.a
-lib/libcinepaint.la
 lib/libcinepaint.so
 lib/libcinepaint.so.1
 lib/libcinepaintHalf.a
-lib/libcinepaintHalf.la
 lib/libcinepaintHalf.so
 lib/libcinepaintHalf.so.1
 lib/libcinepaint_fl_i18n.a
-lib/libcinepaint_fl_i18n.la
 lib/libcinepaint_fl_i18n.so
 lib/libcinepaint_fl_i18n.so.1
 libdata/pkgconfig/cinepaint-gtk.pc

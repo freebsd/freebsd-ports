@@ -13,8 +13,7 @@ LIB_DEPENDS=	libopensync.so:${PORTSDIR}/devel/libopensync022
 
 CONFLICTS=	libopensync-plugin-python-devel-[0-9]*
 
-USES=		pkgconfig
-USE_BZIP2=	yes
+USES=		pkgconfig tar:bzip2
 GNU_CONFIGURE=	yes
 USE_PYTHON=	yes
 

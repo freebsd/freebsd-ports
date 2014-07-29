@@ -7,12 +7,11 @@ PORTREVISION=	2
 CATEGORIES=	math print
 MASTER_SITES=	ftp://ftp.cs.utoronto.ca/pub/radford/
 DISTNAME=	xgraph-11
-EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	sanpei@FreeBSD.org
 COMMENT=	Program that helps you plot graphs
 
-USES=		imake
+USES=		imake tar:Z
 USE_XORG=	x11 xext
 WRKSRC=		${WRKDIR}/${PORTNAME}
 

@@ -6,7 +6,6 @@ PORTVERSION=	0.7.2
 PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	http://distfiles.atheme.org/
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	BSD licenced configuration database system
@@ -18,7 +17,7 @@ OPTIONS_DEFAULT=	GCONF
 
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-USES=		gmake pkgconfig
+USES=		gmake pkgconfig tar:tgz
 
 .include <bsd.port.options.mk>
 

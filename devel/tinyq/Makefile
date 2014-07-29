@@ -10,8 +10,7 @@ MASTER_SITES=	http://www.uwyn.com/download/tinyq/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Stripped down version of Qt 3 for use as a utility library
 
-USES=		gmake
-USE_BZIP2=	yes
+USES=		gmake tar:bzip2
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS+=-thread -stl -prefix ${PREFIX}/tinyq -docdir ${DOCSDIR}
 CONFIGURE_ENV+=	QTDIR="${WRKSRC}"

@@ -13,9 +13,8 @@ COMMENT=	Open Collaboration Services API library
 
 USE_QT4=	network qtestlib_build xml \
 		moc_build qmake_build rcc_build uic_build
-USE_BZIP2=	yes
 USE_LDCONFIG=	yes
-USES=		cmake
+USES=		cmake tar:bzip2
 CMAKE_ARGS=	-DATTICA_ENABLE_TESTS:BOOL=OFF \
 		-DQT4_BUILD:BOOL=ON
 

@@ -15,8 +15,7 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	libqmmpui.so:${PORTSDIR}/multimedia/qmmp
 BUILD_DEPENDS=	qmmp>=0.7.0:${PORTSDIR}/multimedia/qmmp
 
-USE_BZIP2=	yes
-USES=		cmake:outsource pkgconfig
+USES=		cmake:outsource pkgconfig tar:bzip2
 USE_QT4=	corelib gui qmake_build rcc_build moc_build linguist_build
 USE_LDCONFIG=	yes
 

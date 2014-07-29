@@ -7,7 +7,6 @@ PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://lem.eui.upm.es/pub/ocre/
 DISTNAME=	${PORTNAME}_v${PORTVERSION:S/./_/}
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple optical character recognition solution
@@ -22,7 +21,7 @@ RUN_DEPENDS=	display:${PORTSDIR}/graphics/ImageMagick \
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/${PORTNAME}
 
 USE_GNOME=	gtk20
-USES=		gettext gmake pkgconfig
+USES=		gettext gmake pkgconfig tar:tgz
 MAKE_ARGS=	CC="${CC}" CFLAGS1="${CFLAGS}"
 
 post-extract:

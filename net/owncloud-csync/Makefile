@@ -18,8 +18,7 @@ LIB_DEPENDS=	libiniparser.so:${PORTSDIR}/devel/iniparser \
 		libssh.so.4:${PORTSDIR}/security/libssh \
 		libneon.so:${PORTSDIR}/www/neon29
 
-USES=		cmake:outsource iconv pkgconfig
-USE_BZIP2=	yes
+USES=		cmake:outsource iconv pkgconfig tar:bzip2
 USE_SQLITE=	yes
 CMAKE_ARGS+=	-DUNIT_TESTING=NO \
 		-DMAN_INSTALL_DIR=${MANPREFIX}/man

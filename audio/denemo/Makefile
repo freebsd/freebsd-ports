@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	denemo
-PORTVERSION=	1.1.4
-PORTREVISION=	2
+PORTVERSION=	1.1.6
 CATEGORIES=	audio
 MASTER_SITES=	GNU
 
@@ -24,7 +23,7 @@ LIB_DEPENDS=	libaubio.so:${PORTSDIR}/audio/aubio \
 RUN_DEPENDS=	portaudio2>0:${PORTSDIR}/audio/portaudio2 \
 		xdg-open:${PORTSDIR}/devel/xdg-utils
 
-USES=		bison gmake pkgconfig
+USES=		bison gettext gmake pkgconfig
 USE_GNOME=	librsvg2 libxml2
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-jack \
@@ -36,14 +35,10 @@ CPPFLAGS+=	-I${LOCALBASE}/include/portaudio2 \
 LDFLAGS+=	${LOCALBASE}/lib/portaudio2/libportaudio.so \
 		-L${LOCALBASE}/lib
 
-OPTIONS_DEFINE=		DOCS EXAMPLES GTK3 LILYPOND NLS
-OPTIONS_SUB=	yes
+OPTIONS_DEFINE=		DOCS EXAMPLES GTK3 LILYPOND
 
 LILYPOND_DESC=		Install LilyPond (Printing)
 LILYPOND_RUN_DEPENDS=	lilypond:${PORTSDIR}/print/lilypond
-
-NLS_CONFIGURE_ENABLE=	nls
-NLS_USES=		gettext
 
 .include <bsd.port.options.mk>
 

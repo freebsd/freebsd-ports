@@ -15,9 +15,8 @@ LICENSE_COMB=	dual
 
 RUN_DEPENDS=	p5-IO-Socket-INET6>=0:${PORTSDIR}/net/p5-IO-Socket-INET6
 
-USES=		perl5
+USES=		perl5 tar:bzip2
 USE_PERL5=	run
-USE_BZIP2=	yes
 USE_RC_SUBR=	tiarra
 NO_BUILD=	yes
 

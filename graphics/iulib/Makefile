@@ -6,7 +6,6 @@ PORTVERSION=	0.4
 PORTREVISION=	13
 CATEGORIES=	graphics
 MASTER_SITES=	GOOGLE_CODE
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	hiroto.kagotani@gmail.com
 COMMENT=	Library of image understanding-related algorithms
@@ -21,7 +20,7 @@ OPTIONS_DEFINE=	SDL VIDIO
 SDL_DESC=	Enable SDL for graphical debugging
 VIDIO_DESC=	Enable Video Input/Output (using ffmpeg)
 
-USES=		libtool
+USES=		libtool tar:tgz
 USE_GCC=	any
 USE_PYTHON_BUILD=	yes
 USE_AUTOTOOLS=	libtoolize aclocal automake autoconf

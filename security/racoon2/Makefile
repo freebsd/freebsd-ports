@@ -6,12 +6,11 @@ PORTVERSION=	20100526a
 PORTREVISION=	4
 CATEGORIES=	security net ipv6
 MASTER_SITES=	ftp://ftp.racoon2.wide.ad.jp/pub/racoon2/
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER= 	cy@FreeBSD.org
 COMMENT=	Racoon2 IPsec daemon
 
-USES=		perl5
+USES=		perl5 tar:tgz
 USE_RC_SUBR=	YES
 USE_OPENSSL=	YES
 

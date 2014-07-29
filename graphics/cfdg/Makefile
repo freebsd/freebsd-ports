@@ -8,7 +8,6 @@ CATEGORIES=	graphics math
 MASTER_SITES=	http://www.contextfreeart.org/download/ \
 		http://glyphic.s3.amazonaws.com/cfa/download/
 DISTNAME=	ContextFreeSource${PORTVERSION}
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	anatoly.borodin@gmail.com
 COMMENT=	Context Free Design Grammar compiler
@@ -20,7 +19,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 WRKSRC=		${WRKDIR}/${DISTNAME}${EXTRACT_SUFX}
 
-USES=		gmake
+USES=		gmake tar:tgz
 NO_INSTALL_MANPAGES=	yes
 PLIST_FILES=	bin/cfdg
 

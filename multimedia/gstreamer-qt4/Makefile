@@ -16,8 +16,7 @@ LATEST_LINK=	${PORTNAME}${PKGNAMESUFFIX}
 
 LIB_DEPENDS=	libboost_thread.so:${PORTSDIR}/devel/boost-libs
 
-USES=		bison cmake gmake pkgconfig
-USE_BZIP2=	yes
+USES=		bison cmake gmake pkgconfig tar:bzip2
 USE_LDCONFIG=	yes
 USE_GSTREAMER=	yes
 USE_GNOME=	glib20

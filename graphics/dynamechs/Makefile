@@ -12,8 +12,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION:S/.p/pre/}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Multibody Dynamic Simulation Library
 
-USE_BZIP2=	yes
-USES=		gmake perl5
+USES=		gmake perl5 tar:bzip2
 USE_GL=		glut
 USE_PERL5=	build
 MAKE_ENV=	OPENGLINCDIR="${LOCALBASE}/include" \

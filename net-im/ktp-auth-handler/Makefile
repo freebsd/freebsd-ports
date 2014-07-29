@@ -18,7 +18,6 @@ LIB_DEPENDS=	libqjson.so:${PORTSDIR}/devel/qjson \
 USE_KDE4=	kdehier kdeprefix kdelibs automoc4
 USE_QT4=	corelib dbus gui xml webkit \
 		moc_build qmake_build rcc_build uic_build
-USES=		cmake gettext
-USE_BZIP2=	yes
+USES=		cmake gettext tar:bzip2
 
 .include <bsd.port.mk>

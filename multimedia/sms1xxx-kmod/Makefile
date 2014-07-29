@@ -8,7 +8,6 @@ CATEGORIES=	multimedia
 MASTER_SITES=	http://contribs.martymac.org/FreeBSD-siano/
 PKGNAMESUFFIX=	-kmod
 DISTNAME=	siano-${PORTVERSION}
-EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	martymac@FreeBSD.org
@@ -42,7 +41,7 @@ STELLAR_FW=	stellar_dvbt
 NOVA_FW=	novab0_dvbbda
 BUILD_FWS=
 
-USES=		kmod
+USES=		kmod tar:tgz
 
 .include <bsd.port.options.mk>
 

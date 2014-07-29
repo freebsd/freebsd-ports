@@ -5,7 +5,6 @@ PORTNAME=	lxr
 PORTVERSION=	0.10.2
 CATEGORIES=	devel
 MASTER_SITES=	SF/${PORTNAME}/stable/${PORTNAME}-${PORTVERSION}
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER= ports@FreeBSD.org
 COMMENT=	Source code indexer and cross-referencer
@@ -16,7 +15,7 @@ BUILD_DEPENDS=	exctags:${PORTSDIR}/devel/ctags \
 
 PATCH_STRIP=	-p1
 
-USES=		perl5
+USES=		perl5 tar:tgz
 NO_BUILD=	yes
 
 OPTIONS_DEFINE=	DOCS

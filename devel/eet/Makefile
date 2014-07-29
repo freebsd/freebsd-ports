@@ -16,9 +16,8 @@ LICENSE=	BSD
 LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg
 
 DIST_SUBDIR=	e17
-USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
-USES=		pathfix pkgconfig
+USES=		pathfix pkgconfig tar:bzip2
 USE_EFL=	eina librt_hack libtool_hack
 USE_OPENSSL=	yes
 USE_LDCONFIG=	yes

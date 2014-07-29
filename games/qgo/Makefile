@@ -12,8 +12,7 @@ COMMENT=	Go board and SGF editor written with the Qt library
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-USE_BZIP2=	yes
-USES=		desktop-file-utils qmake
+USES=		desktop-file-utils qmake tar:bzip2
 USE_QT4=	gui network qtestlib moc_build rcc_build uic_build
 
 PLIST_FILES=	bin/qgo share/applications/qgo.desktop share/pixmaps/qgo.png

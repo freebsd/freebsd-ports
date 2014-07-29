@@ -19,12 +19,11 @@ RUN_DEPENDS=	soya_editor:${PORTSDIR}/graphics/py-soya3d \
 		${PYTHON_SITELIBDIR}/tofu/client.py:${PORTSDIR}/net/py-tofu \
 		${PYTHON_SITELIBDIR}/cerealizer/__init__.py:${PORTSDIR}/security/py-cerealizer
 
-USE_BZIP2=	yes
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 USE_GL=		glew
 USE_SDL=	sdl mixer
-USES=		gettext twisted
+USES=		gettext twisted tar:bzip2
 
 PYDISTUTILS_PKGNAME=	Balazar
 PYDISTUTILS_EGGINFODIR=	${PREFIX}/share

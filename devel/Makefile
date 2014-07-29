@@ -1109,6 +1109,7 @@
     SUBDIR += librest
     SUBDIR += libruin
     SUBDIR += libs11n
+    SUBDIR += libserialport
     SUBDIR += libserver
     SUBDIR += libshbuf
     SUBDIR += libshhmsg

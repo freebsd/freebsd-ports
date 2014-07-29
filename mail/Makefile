@@ -343,6 +343,7 @@
     SUBDIR += p5-Email-Sender-Transport-SMTP-TLS
     SUBDIR += p5-Email-Sender-Transport-SQLite
     SUBDIR += p5-Email-Simple
+    SUBDIR += p5-Email-Simple-FromHandle
     SUBDIR += p5-Email-Stuff
     SUBDIR += p5-Email-Stuffer
     SUBDIR += p5-Email-Valid

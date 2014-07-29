@@ -11,8 +11,7 @@ DISTNAME=	redcoder
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Program to gather data (statistics) on Core War warriors
 
-USE_BZIP2=	yes
-USES=		gmake
+USES=		gmake tar:bzip2
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 PLIST_FILES=	bin/tycho \

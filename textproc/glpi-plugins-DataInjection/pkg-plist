@@ -1,3 +1,5 @@
+@owner %%WWWOWN%%
+@group %%WWWGRP%%
 www/glpi/plugins/datainjection/ajax/profiles.php
 www/glpi/plugins/datainjection/config/plugin_datainjection.config.php
 www/glpi/plugins/datainjection/css/datainjection.css
@@ -78,6 +80,8 @@ www/glpi/plugins/datainjection/pics/ok.png
 www/glpi/plugins/datainjection/pics/plus.png
 www/glpi/plugins/datainjection/plugin_datainjection.includes.php
 www/glpi/plugins/datainjection/setup.php
+@group
+@owner
 @dirrm www/glpi/plugins/datainjection/pics
 @dirrm www/glpi/plugins/datainjection/locales
 @dirrm www/glpi/plugins/datainjection/javascript

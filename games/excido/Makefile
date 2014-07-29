@@ -19,10 +19,9 @@ LIB_DEPENDS=	libphysfs.so:${PORTSDIR}/devel/physfs
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-USE_BZIP2=	yes
 USE_GL=		yes
 USE_SDL=	image sdl ttf
-USES=		gmake openal:al,alut
+USES=		gmake openal:al,alut tar:bzip2
 
 OPTIONS_DEFINE=	DOCS
 

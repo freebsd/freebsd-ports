@@ -1,7 +1,5 @@
 bin/analog
-@unexec [ -f %D/etc/analog.cfg ] && cmp -s %D/etc/analog.cfg %D/etc/analog.cfg-dist && rm -f %D/etc/analog.cfg
-etc/analog.cfg-dist
-@exec if [ ! -f %D/etc/analog.cfg ] ; then cp -p %D/%F %B/analog.cfg; fi
+@sample etc/analog.cfg.sample
 %%DATADIR%%/lang/README.txt
 %%DATADIR%%/lang/am.lng
 %%DATADIR%%/lang/amdom.tab

@@ -8,7 +8,6 @@ CATEGORIES=	math
 MASTER_SITES=	http://www.tau.ac.il/~stoledo/taucs/${PORTVERSION}/ \
 		LOCAL/bf
 DISTNAME=	${PORTNAME}
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	bf@FreeBSD.org
 COMMENT=	C library of sparse linear solvers
@@ -16,7 +15,7 @@ COMMENT=	C library of sparse linear solvers
 LIB_DEPENDS=	libmetis.so:${PORTSDIR}/math/metis4
 
 HAS_CONFIGURE=	yes
-USES=		fortran
+USES=		fortran tar:tgz
 USE_LDCONFIG=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}

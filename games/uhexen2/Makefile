@@ -7,7 +7,6 @@ CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/Hammer%20of%20Thyrion/${PORTVERSION}/Source \
 		SF/${PORTNAME}/Hexen2%20GameData/gamedata-1.28:data
 DISTNAME=	hexen2source-${PORTVERSION}
-EXTRACT_SUFX=	.tgz
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		gamedata-all-1.28${EXTRACT_SUFX}:data
 DIST_SUBDIR=	${PORTNAME}
@@ -33,7 +32,7 @@ LAUNCHER_GTK1_DESC=	Build graphical (GTK1) game launcher
 LAUNCHER_GTK2_DESC=	Build graphical (GTK2) game launcher
 LAUNCHER_GTK3_DESC=	Build graphical (GTK3) game launcher
 
-USES=		gmake pkgconfig
+USES=		gmake pkgconfig tar:tgz
 USE_SDL=	sdl
 USE_GL=		gl
 MAKE_ENV=	X11BASE="${LOCALBASE}"

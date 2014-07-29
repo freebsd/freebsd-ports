@@ -3,7 +3,7 @@
 
 PORTNAME=	pcre
 PORTVERSION=	8.34
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION} \
 		ftp://ftp.csx.cam.ac.uk/pub/software/programming/%SUBDIR%/ \
@@ -18,17 +18,21 @@ LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENCE
 
 GNU_CONFIGURE=	yes
-USES=		libtool:oldver pathfix readline tar:bzip2
+USES=		libtool:oldver pathfix tar:bzip2
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--enable-utf --enable-unicode-properties \
-		--enable-pcre8 --enable-pcre16 --enable-pcre32 \
-		--enable-pcretest-libedit
+		--enable-pcre8 --enable-pcre16 --enable-pcre32
 INSTALL_TARGET=	install-strip
 
-OPTIONS_DEFINE=		STACK_RECURSION DOCS
+OPTIONS_DEFINE=		DOCS LIBEDIT READLINE STACK_RECURSION
 OPTIONS_DEFAULT=	STACK_RECURSION
 
 STACK_RECURSION_DESC=	Use the stack for recursion during matching
+
+LIBEDIT_CONFIGURE_ENABLE=	pcretest-libedit
+
+READLINE_USES=			readline
+READLINE_CONFIGURE_ENABLE=	pcretest-libreadline
 
 .include <bsd.port.options.mk>
 

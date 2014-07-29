@@ -17,7 +17,7 @@ USES=		makeinfo
 INFO=		vera
 
 do-build:
-	@ cd ${WRKSRC} && makeinfo --no-split vera.texi
+	@ (cd ${WRKSRC} && makeinfo --no-split vera.texi)
 
 do-install:
 	@ ${INSTALL_DATA} ${WRKSRC}/vera.info ${STAGEDIR}${PREFIX}/info

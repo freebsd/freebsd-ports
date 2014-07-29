@@ -7,14 +7,13 @@ PORTREVISION=	4
 PORTEPOCH=	1
 CATEGORIES=	textproc
 MASTER_SITES=	SF/chicago/${PORTNAME}/backend
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Convert Excel and PowerPoint files to HTML and text
 
 LICENSE=	GPLv2
 
-USES=		gmake
+USES=		gmake tar:tgz
 
 USE_AUTOTOOLS=	automake14 autoconf
 

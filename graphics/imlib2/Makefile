@@ -20,10 +20,9 @@ LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2
 
 GNU_CONFIGURE=	yes
-USE_BZIP2=	yes
 USE_EFL=	libtool_hack
 USE_LDCONFIG=	yes
-USES=		pathfix pkgconfig
+USES=		pathfix pkgconfig tar:bzip2
 
 CONFIGURE_ARGS+=	--enable-visibility-hiding
 CONFIGURE_ENV+=	ac_cv_lib_dl_dlopen=no

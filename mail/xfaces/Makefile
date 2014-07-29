@@ -7,7 +7,6 @@ PORTREVISION=	5
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.cs.indiana.edu/pub/faces/xfaces/ \
 		http://www.mavetju.org/download/adopted/xfaces/
-EXTRACT_SUFX=	.tar.Z
 DIST_SUBDIR=	${PORTNAME}
 
 PATCH_SITES=	${MASTER_SITES}
@@ -24,7 +23,7 @@ LIB_DEPENDS=	libcompface.so:${PORTSDIR}/mail/faces
 
 # GNU make properly processes some overridden rules in the makefile that
 # imake generates.  Specifically, installing the html docs.
-USES=		imake gmake
+USES=		imake gmake tar:Z
 USE_XORG=	ice sm x11 xaw xext xmu xt xpm
 
 post-install:

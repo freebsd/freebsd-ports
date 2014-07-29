@@ -2,56 +2,54 @@
 # $FreeBSD$
 
 PORTNAME=	gle-graphics
-PORTVERSION=	4.0.12
-PORTREVISION=	7
+DISTVERSION=	4.2.4cf
+PORTREVISION=	0
 CATEGORIES=	graphics print
-MASTER_SITES=	SF/glx/gle4%20%28Current%20Active%20Version%29/${PORTVERSION}
-DISTNAME=	GLE-${PORTVERSION}-src
+MASTER_SITES=	SF/glx/gle4%20%28Current%20Active%20Version%29/${DISTVERSION:C,.$,,1}
+DISTNAME=	${PORTNAME}-${DISTVERSION}-src
 
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	Graphics language that produces images from script files
 
-RUN_DEPENDS=	gv:${PORTSDIR}/print/gv
+LICENSE=	BSD3CLAUSE GPLv2
+LICENSE_COMB=	multi
+
+BUILD_DEPENDS=	qmake-qt4:${PORTSDIR}/devel/qmake4
+
+BITMAP_IMAGES_CONFIGURE_WITH=	jpeg=${LOCALBASE} tiff=${LOCALBASE} png=${LOCALBASE}
+BITMAP_IMAGES_DESC=	Support for including bitmap images
+BITMAP_IMAGES_LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
+		libpng15.so:${PORTSDIR}/graphics/png \
+		libtiffxx.so:${PORTSDIR}/graphics/tiff
+
+CONFIGURE_ARGS=	--with-extrafonts=yes
+
+GNU_CONFIGURE=	yes
+
+LATEX_GS_DESC=	Use LaTeX & GhostScript
+LATEX_GS_USE=	tex=latex ghostscript=run
+
+MAKE_JOBS_UNSAFE=yes
 
 OPTIONS_DEFINE=	BITMAP_IMAGES LATEX_GS X11
 OPTIONS_DEFAULT=	BITMAP_IMAGES LATEX_GS X11
-BITMAP_IMAGES_DESC=	Support for including bitmap images
-LATEX_GS_DESC=		Use LaTeX & GhostScript
-
-WRKSRC=	${WRKDIR}/gle4
-
-GNU_CONFIGURE=	yes
-# GUI requires QT 4.1.X
-CONFIGURE_ARGS+=	--with-qt=no
 
 PLIST_SUB+=	PORTVERSION=${PORTVERSION}
+
 REINPLACE_FILES=	configure
 
-USES=		gmake zip
+USE_GCC=	yes
+USE_GL=	yes
+USE_LDCONFIG=	yes
+USE_QT4=	gui moc network opengl rcc
+USES=	gmake pathfix
 
-NO_STAGE=	yes
+WRKSRC=	${WRKDIR}/${PORTNAME}-${PORTVERSION:R}${PORTVERSION:E}
+
+X11_CONFIGURE_WITH=	x
+X11_USE=	xorg=x11
+
 post-patch:
-	cd ${WRKSRC} && ${REINPLACE_CMD} -e 's|%%DATADIR%%|${DATADIR}|g' ${REINPLACE_FILES}
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MBITMAP_IMAGES}
-LIB_DEPENDS+=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
-		libpng15.so:${PORTSDIR}/graphics/png \
-		libtiffxx.so:${PORTSDIR}/graphics/tiff
-CONFIGURE_ARGS+=	 --with-jpeg=${LOCALBASE} --with-tiff=${LOCALBASE} --with-png=${LOCALBASE}
-.else
-CONFIGURE_ARGS+=	 --with-jpeg=no --with-png=no -with-tiff=no
-.endif
-
-.if ${PORT_OPTIONS:MLATEX_GS}
-USE_GHOSTSCRIPT_RUN=	yes
-USE_TEX=	latex
-.endif
-
-.if ${PORT_OPTIONS:MX11}
-CONFIGURE_ARGS+=	--with-x
-USE_XORG=	x11
-.endif
+	cd ${WRKSRC} && ${REINPLACE_CMD} -E -e 's,k(freebsd),\1,1' ${REINPLACE_FILES}
 
 .include <bsd.port.mk>

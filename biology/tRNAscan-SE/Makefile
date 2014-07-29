@@ -6,12 +6,11 @@ PORTVERSION=	1.23
 PORTREVISION=	1
 CATEGORIES=	biology
 MASTER_SITES=	ftp://selab.janelia.org/pub/software/tRNAscan-SE/
-EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Improved tool for transfer RNA detection
 
-USES=		perl5
+USES=		perl5 tar:Z
 MAKE_ARGS=	BINDIR="${PREFIX}/bin" \
 		LIBDIR="${DATADIR}" \
 		CC="${CC}" \

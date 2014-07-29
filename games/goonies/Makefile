@@ -8,12 +8,11 @@ CATEGORIES=	games
 MASTER_SITES=	http://goonies.jorito.net/download/ \
 		http://mirror.amdmi3.ru/distfiles/
 DISTNAME=	${PORTNAME}_r${PORTVERSION:C/\./-/g}
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Remake of the 8 bit classic game 'The Goonies'
 
-USES=		gmake
+USES=		gmake tar:tgz
 USE_SDL=	sdl mixer image
 USE_GL=		yes
 

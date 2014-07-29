@@ -7,7 +7,6 @@ PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	http://forge.ocamlcore.org/frs/download.php/850/
 PKGNAMEPREFIX=	ocaml-
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER= ports@FreeBSD.org
 COMMENT=	OCaml interface to PostgreSQL
@@ -19,7 +18,7 @@ BUILD_DEPENDS=	${LOCALBASE}/${OCAML_SITELIBDIR}/extlib:${PORTSDIR}/devel/ocaml-e
 		${LOCALBASE}/${OCAML_SITELIBDIR}/calendar:${PORTSDIR}/devel/ocaml-calendar \
 		${LOCALBASE}/${OCAML_SITELIBDIR}/csv:${PORTSDIR}/textproc/ocaml-csv
 
-USES=		gmake
+USES=		gmake tar:tgz
 USE_OCAML=	yes
 USE_OCAML_FINDLIB=	yes
 USE_OCAMLFIND_PLIST=	yes

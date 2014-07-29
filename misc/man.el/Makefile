@@ -20,9 +20,9 @@ PKGMODULES=	i18n-man-de i18n-man-en i18n-man-ja
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${ELISPDIR} ${STAGEDIR}${PREFIX}/share/doc/i18n-man
-	@cd ${WRKSRC}; \
-	${INSTALL_DATA} `${TAR} tzf ${DISTDIR}/${DISTFILES}` \
-		${STAGEDIR}${ELISPDIR}
+	@(cd ${WRKSRC}; \
+		${INSTALL_DATA} `${TAR} tzf ${DISTDIR}/${DISTFILES}` \
+			${STAGEDIR}${ELISPDIR})
 # For xemacs package install configuration
 	@${MKDIR} ${STAGEDIR}${SITEPKGDIR}/pkginfo
 .for f in ${PKGMODULES}

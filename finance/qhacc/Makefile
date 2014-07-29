@@ -5,7 +5,6 @@ PORTNAME=	qhacc
 PORTVERSION=	4.3
 CATEGORIES=	finance
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple Qt-based financial manager
@@ -17,7 +16,7 @@ LIB_DEPENDS=	libgpgme.so:${PORTSDIR}/security/gpgme \
 
 OPTIONS_DEFINE=	DOCS
 
-USES=		qmake:norecursive
+USES=		qmake:norecursive tar:tgz
 USE_QT4=	corelib gui sql moc_build rcc_build uic_build
 USE_CXXSTD=	c++0x
 USE_LDCONFIG=	yes

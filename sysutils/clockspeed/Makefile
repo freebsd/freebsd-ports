@@ -16,14 +16,14 @@ LIB_DEPENDS=	libtai.so:${PORTSDIR}/devel/libtai
 ALL_TARGET=	it
 INSTALL_TARGET=	setup check
 
-MAN1=		clockadd.1 clockspeed.1 clockview.1 sntpclock.1 \
+MAN_FILES=	clockadd.1 clockspeed.1 clockview.1 sntpclock.1 \
 		taiclock.1 taiclockd.1
+BIN_FILES=	clockadd clockspeed clockview sntpclock taiclock taiclockd
 
 PREFIX_FIX_FILES=	leapsecs_read.c INSTALL
 CLOCKSPEED_RC_SCRIPT_SAMPLE=	${FILESDIR}/clockspeed.sh.sample
 RC_SCRIPT_STARTUP_DIR=		${PREFIX}/etc/rc.d
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-extract:
@@ -47,21 +47,29 @@ do-configure:
 	@${ECHO_CMD} ${PREFIX} > ${WRKSRC}/conf-home
 
 post-build:
-	@${CP} ${FILESDIR}/leapsecs.dat ${WRKSRC}/leapsecs.dat
+	${CP} ${FILESDIR}/leapsecs.dat ${WRKSRC}/leapsecs.dat
+
+do-install:
+.for i in ${BIN_FILES}
+	${INSTALL} ${WRKSRC}/${i} ${STAGEDIR}/${PREFIX}/bin/
+.endfor
+.for i in ${MAN_FILES}
+	${INSTALL} ${WRKSRC}/${i} ${STAGEDIR}/${PREFIX}/man/man1/
+.endfor
+	${INSTALL} -d -o ${SHAREOWN} -g ${SHAREGRP} -m 755 \
+		${STAGEDIR}/${PREFIX}/etc/clockspeed
+	${INSTALL_DATA} ${WRKSRC}/leapsecs.dat ${STAGEDIR}/${ETCDIR}
+	${INSTALL_SCRIPT} ${WRKDIR}/${CLOCKSPEED_RC_SCRIPT_SAMPLE:T} \
+		${STAGEDIR}/${RC_SCRIPT_STARTUP_DIR}/${CLOCKSPEED_RC_SCRIPT_SAMPLE:T}
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${INSTALL} -d -o ${SHAREOWN} -g ${SHAREGRP} -m 755 \
-		${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/INSTALL ${DOCSDIR}
+		${STAGEDIR}/${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/INSTALL ${STAGEDIR}/${DOCSDIR}
 	@${INSTALL_DATA} ${PKGMESSAGE} \
-		${DOCSDIR}/INSTALL-FreeBSD
+		${STAGEDIR}/${DOCSDIR}/INSTALL-FreeBSD
 .endif
-	@${INSTALL} -d -o ${SHAREOWN} -g ${SHAREGRP} -m 755 \
-		${PREFIX}/etc/clockspeed
-	@${INSTALL_DATA} ${WRKSRC}/leapsecs.dat ${PREFIX}/etc/clockspeed
-	@${INSTALL_SCRIPT} ${WRKDIR}/${CLOCKSPEED_RC_SCRIPT_SAMPLE:T} \
-		${RC_SCRIPT_STARTUP_DIR}/${CLOCKSPEED_RC_SCRIPT_SAMPLE:T}
 	@${SED} s!/usr/local/!${PREFIX}/! ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>

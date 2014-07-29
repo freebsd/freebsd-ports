@@ -9,8 +9,7 @@ MASTER_SITES=		SF
 MAINTAINER=		dhn@FreeBSD.org
 COMMENT=	Fully featured easy to use IRC-bouncer
 
-USE_BZIP2=		yes
-USES=			iconv
+USES=			iconv tar:bzip2
 GNU_CONFIGURE=		yes
 
 INFO=			miau

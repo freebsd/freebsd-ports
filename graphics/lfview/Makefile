@@ -6,12 +6,11 @@ PORTVERSION=	1.1a
 PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	http://hoshina.denpa.org/
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Graphic viewer for Leaf products
 
-USES=		imake
+USES=		imake tar:tgz
 USE_XORG=	x11 xext
 USE_LDCONFIG=	yes
 

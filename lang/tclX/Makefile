@@ -16,9 +16,8 @@ LICENSE_NAME=	Tcl/Tk License
 LICENSE_FILE=	${WRKSRC}/license.terms
 LICENSE_PERMS=	auto-accept dist-mirror dist-sell pkg-mirror pkg-sell
 
-USE_BZIP2=	yes
 
-USES=		tcl
+USES=		tcl tar:bzip2
 USE_LDCONFIG=	${PREFIX}/lib/tclx${PORTVERSION}
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${TCL_INCLUDEDIR}/unix\

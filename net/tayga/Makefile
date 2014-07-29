@@ -10,8 +10,7 @@ COMMENT=	Userland stateless NAT64 daemon
 
 LICENSE=	GPLv2
 
-USE_BZIP2=	yes
-USES=		gmake
+USES=		gmake tar:bzip2
 GNU_CONFIGURE=	yes
 
 .include <bsd.port.mk>

@@ -15,10 +15,9 @@ LIB_DEPENDS=	librcd.so:${PORTSDIR}/devel/librcd \
 		libenca.so:${PORTSDIR}/converters/enca \
 		libaspell.so:${PORTSDIR}/textproc/aspell
 
-USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_GNOME=	libxml2
-USES=		gmake iconv libtool:oldver pathfix pkgconfig
+USES=		gmake iconv libtool:oldver pathfix pkgconfig tar:bzip2
 USE_LDCONFIG=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include

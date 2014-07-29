@@ -8,12 +8,11 @@ CATEGORIES=	audio
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-01a
 PKGNAMESUFFIX=	-encoder
 DISTNAME=	${PORTNAME}-${PORTVERSION:C/\.//g}
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	MPEG Layer II audio encoder with multi-channel support
 
-USES=		gmake
+USES=		gmake tar:tgz
 ALL_TARGET=	#
 MAKE_ARGS=	CC="${CC}" OPTIM="${CFLAGS}"
 PLIST_SUB=	PKGNAMESUFFIX="${PKGNAMESUFFIX}"

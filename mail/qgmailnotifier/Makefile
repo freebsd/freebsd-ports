@@ -6,12 +6,11 @@ PORTVERSION=	2008.3
 PORTREVISION=	2
 CATEGORIES=	mail
 MASTER_SITES=	http://www.codef00.com/projects/
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	crees@FreeBSD.org
 COMMENT=	Portable Qt 4 based GMail notifier
 
-USES=		qmake
+USES=		qmake tar:tgz
 USE_QT4=	moc_build uic_build gui network xml rcc_build
 
 WRKSRC=		${WRKDIR}/${PORTNAME}

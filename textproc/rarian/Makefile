@@ -23,8 +23,7 @@ DOCBOOK_VERSION=4.2
 
 CONFLICTS=	scrollkeeper-[0-9]*
 
-USE_BZIP2=	yes
-USES=		gmake pathfix
+USES=		gmake pathfix tar:bzip2
 USE_GNOME=	gnomehier libxslt
 USE_PYTHON=	yes
 GNU_CONFIGURE=	yes

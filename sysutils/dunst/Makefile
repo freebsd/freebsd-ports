@@ -20,8 +20,7 @@ LIB_DEPENDS=	libcairo.so:${PORTSDIR}/graphics/cairo \
 		libpango-1.0.so:${PORTSDIR}/x11-toolkits/pango \
 		libxdg-basedir.so:${PORTSDIR}/x11/libxdg-basedir
 
-USES=		gmake pkgconfig:build perl5
-USE_BZIP2=	yes
+USES=		gmake pkgconfig:build perl5 tar:bzip2
 USE_GNOME=	glib20
 USE_XORG=	xext xft xinerama xscrnsaver
 MAKE_ARGS+=	MANPREFIX="${PREFIX}/man"

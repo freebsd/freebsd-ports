@@ -6,12 +6,11 @@ PORTVERSION=	2.21
 CATEGORIES=	security
 MASTER_SITES=	http://freebsdcluster.org/~mich/software/ \
 		http://hackbot.stream-portal.org/
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	mich@FreeBSD.org
 COMMENT=	Host exploration tool and bannergrabber
 
-USES=		perl5 shebangfix
+USES=		perl5 shebangfix tar:tgz
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 

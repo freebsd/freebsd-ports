@@ -7,7 +7,6 @@ PORTEPOCH=	1
 CATEGORIES=	cad
 MASTER_SITES=	http://opencircuitdesign.com/xcircuit/archive/ \
 		http://fossies.org/unix/misc/
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	danilo@FreeBSD.org
 COMMENT=	X11 circuit schematics drawing program
@@ -17,7 +16,7 @@ LICENSE=	GPLv2
 OPTIONS_DEFINE=	EXAMPLES
 
 USE_XORG=	xpm xscrnsaver xt
-USES=	tk gmake
+USES=	tk gmake tar:tgz
 USE_GHOSTSCRIPT_RUN=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-tcl=${TCL_LIBDIR} \

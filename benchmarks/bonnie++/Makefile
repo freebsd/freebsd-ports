@@ -6,7 +6,6 @@ PORTVERSION=	1.97
 PORTREVISION=	3
 CATEGORIES=	benchmarks
 MASTER_SITES=	http://www.coker.com.au/bonnie++/experimental/
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	martymac@FreeBSD.org
 COMMENT=	Performance Test of Filesystem I/O
@@ -15,7 +14,7 @@ LICENSE=	GPLv2
 
 GNU_CONFIGURE=	yes
 
-USES=	shebangfix
+USES=	shebangfix tar:tgz
 SHEBANG_FILES=	bon_csv2txt.in
 
 WRKSRC=	${WRKDIR}/${PORTNAME}-1.97.1

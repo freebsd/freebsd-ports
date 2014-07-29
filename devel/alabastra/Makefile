@@ -7,7 +7,6 @@ PORTREVISION=	3
 CATEGORIES=	devel
 MASTER_SITES=	SF
 DISTNAME=	Alabastra-${PORTVERSION}
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C++ editor written with Qt 4
@@ -16,7 +15,7 @@ LICENSE=	GPLv2 # (or later)
 
 WRKSRC=		${WRKDIR}/${DISTNAME}
 
-USES=		qmake gmake
+USES=		qmake gmake tar:tgz
 USE_QT4=	gui xml \
 		moc_build rcc_build uic_build \
 		iconengines_run

@@ -57,6 +57,39 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="13419364-1685-11e4-bf04-60a44c524f57">
+    <topic>i2p -- Multiple Vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>i2p</name>
+	<range><lt>0.9.14</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The i2p project reports:</p>
+	<blockquote cite="http://geti2p.net/en/blog/post/2014/07/26/0.9.14-Release">
+	  <p>XSS and remote execution vulnerabilities reported by Exodus Intelligence.</p>
+	</blockquote>
+	<p>Exodus Intelligence reports:</p>
+	<blockquote cite="http://blog.exodusintel.com/2014/07/23/silverbullets_and_fairytails/">
+	  <p>The vulnerability we have found is able to perform remote code
+	     execution with a specially crafted payload. This payload can be
+	     customized to unmask a user and show the public IP address in
+	     which the user connected from within 'a couple of seconds.'</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://blog.exodusintel.com/2014/07/23/silverbullets_and_fairytails/</url>
+      <url>http://geti2p.net/en/blog/post/2014/07/26/0.9.14-Release</url>
+    </references>
+    <dates>
+      <discovery>2014-07-24</discovery>
+      <entry>2014-07-28</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="9defb2d6-1404-11e4-8cae-20cf30e32f6d">
     <topic>bugzilla -- Cross Site Request Forgery</topic>
     <affects>

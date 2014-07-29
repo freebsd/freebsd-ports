@@ -16,9 +16,8 @@ LICENSE=	GPLv2
 
 BUILD_DEPENDS=	icon-naming-utils>=0.8.90:${PORTSDIR}/x11-themes/icon-naming-utils
 
-USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
-USES=		gmake libtool:keepla perl5 pkgconfig
+USES=		gmake libtool:keepla perl5 pkgconfig tar:bzip2
 USE_GNOME=	glib20 gtk20 intltool intlhack
 INSTALLS_ICONS=	yes
 

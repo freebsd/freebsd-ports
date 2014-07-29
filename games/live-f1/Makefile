@@ -6,7 +6,6 @@ PORTVERSION=	0.2.11
 PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	https://launchpad.net/${PORTNAME}/${PORTVERSION:R}/${PORTVERSION}/+download/
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	koobs@FreeBSD.org
 COMMENT=	Native client for the official Formula 1 Live Timing service
@@ -19,7 +18,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}_${PORTVERSION}
 
 OPTIONS_DEFINE=	NLS
 
-USES=		pkgconfig gettext:build iconv gmake
+USES=		pkgconfig gettext:build iconv gmake tar:tgz
 USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
 LDFLAGS+=	-L${LOCALBASE}/lib

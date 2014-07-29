@@ -2,6 +2,7 @@
 
 PORTNAME=	tcc
 PORTVERSION=	0.9.26
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	SAVANNAH/tinycc
 
@@ -14,7 +15,7 @@ ONLY_FOR_ARCHS=	i386
 
 CONFLICTS=	TenDRA-[0-9]*
 
-USES=		tar:bzip2 gmake perl5
+USES=		gmake makeinfo perl5 tar:bzip2
 USE_PERL5=	build
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix="${PREFIX}" --cc="${CC}"
@@ -22,6 +23,7 @@ MAKE_ARGS=	CONFIG_NOLDL=1
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
+INFO=		tcc-doc
 PORTDOCS=	COPYING	Changelog README TODO VERSION
 
 .include <bsd.port.options.mk>
@@ -39,11 +41,14 @@ CFLAGS+=	-fheinous-gnu-extensions
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/tcc
 	${INSTALL_MAN} ${WRKSRC}/tcc.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
-	${INSTALL_DATA} ${WRKSRC}/lib/i386/bcheck.o ${STAGEDIR}${PREFIX}/lib/tcc/
+	${RM} -r ${STAGEDIR}${PREFIX}/share/man
+	${INSTALL_DATA} ${WRKSRC}/lib/i386/bcheck.o ${STAGEDIR}${PREFIX}/lib/tcc
 
 .if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/tcc-doc.info ${STAGEDIR}${PREFIX}/info
+	${RM} -r ${STAGEDIR}${PREFIX}/share/info
 .endif
 
 .if ${PORT_OPTIONS:MEXAMPLES}

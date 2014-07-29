@@ -6,7 +6,6 @@ PORTVERSION=	3.31.1
 PORTREVISION=	2
 CATEGORIES=	math
 MASTER_SITES=	http://www.phy.duke.edu/~rgb/General/dieharder/ LOCAL/bf
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	bf@FreeBSD.org
 COMMENT=	Random number generator testsuite
@@ -17,7 +16,7 @@ LIB_DEPENDS=	libgsl.so:${PORTSDIR}/math/gsl
 
 MAKE_JOBS_UNSAFE=	yes
 
-USES=		dos2unix libtool
+USES=		dos2unix libtool tar:tgz
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

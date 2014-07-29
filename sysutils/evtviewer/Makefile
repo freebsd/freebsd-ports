@@ -7,14 +7,13 @@ PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	SF/${PORTNAME:tl}/${PORTNAME:tl}/${PORTNAME}-${PORTVERSION} \
 		http://contribs.martymac.org/evtViewer/
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	martymac@FreeBSD.org
 COMMENT=	Ms event log viewer
 
 LICENSE=	GPLv2
 
-USES=		perl5 shebangfix
+USES=		perl5 shebangfix tar:tgz
 SHEBANG_FILES=	evtViewer
 NO_BUILD=	yes
 

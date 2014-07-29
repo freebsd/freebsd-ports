@@ -31,4 +31,10 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${RUBY_MODDOCDIR}
 .endfor
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${RUBY_VER} >= 2.0
+BROKEN=		Does not build with Ruby 2.0 or newer
+.endif
+
+.include <bsd.port.post.mk>

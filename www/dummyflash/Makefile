@@ -7,7 +7,6 @@ PORTREVISION=	5
 CATEGORIES=	www
 MASTER_SITES=	ftp://ftp.netscape.com/pub/sdk/plugin/unix/
 DISTNAME=	unix-sdk-3.0b5
-EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	darius@dons.net.au
 COMMENT=	Silently consume flash MIME types
@@ -17,7 +16,7 @@ BUILD_WRKSRC=	${WRKSRC}/PluginSDK30b5/examples/UnixTemplate/Unix
 NO_WRKSUBDIR=	yes
 MAKEFILE=	makefile.freebsd
 
-USES=		webplugin:native
+USES=		webplugin:native tar:Z
 WEBPLUGIN_FILES=dummyflash.so
 
 do-install:

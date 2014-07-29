@@ -6,12 +6,11 @@ PORTVERSION=	1.0.10
 PORTREVISION=	3
 CATEGORIES=	games
 MASTER_SITES=	SUNSITE/games/arcade
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Boulderdash-like KC85 Digger for X Window System
 
-USES=		imake
+USES=		imake tar:tgz
 USE_XORG=	x11 xext
 
 DESKTOP_ENTRIES="XDigger" "" "" "${PORTNAME}" "" ""

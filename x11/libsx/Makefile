@@ -8,13 +8,13 @@ CATEGORIES=	x11
 MASTER_SITES=	${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	libraries
 DISTNAME=	${PORTNAME}
-EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple X11 library
 
 LIB_DEPENDS=	libXaw3d.so:${PORTSDIR}/x11-toolkits/Xaw3d
 
+USES=		tar:Z
 USE_XORG=	x11 xaw xext xmu xt
 ALL_TARGET=	src freq
 MAKE_JOBS_UNSAFE=	yes

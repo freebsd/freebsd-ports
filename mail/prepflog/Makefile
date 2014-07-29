@@ -5,12 +5,11 @@ PORTNAME=	prepflog
 PORTVERSION=	0.4
 CATEGORIES=	mail
 MASTER_SITES=	http://www.gufonero.com/postfix/
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	tabmow@freenode.net
 COMMENT=	Prepares logfiles in a sanitised format for pflogsumm and awstats
 
-USES=		perl5 shebangfix
+USES=		perl5 shebangfix tar:tgz
 NO_BUILD=	yes
 
 SHEBANG_FILES=	prepflog.pl

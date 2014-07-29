@@ -1,0 +1,31 @@
+--- Makefile.in.orig	2014-07-29 21:06:10.045210973 +0800
++++ Makefile.in	2014-07-29 21:07:11.227205493 +0800
+@@ -15,17 +15,17 @@ docs: Makefile doc/Makefile
+ 	@cd doc && $(MAKE) && cd ..
+ 
+ install: all
+-	$(INSTALL) -d -m 755 $(SBINDIR)
+-	$(INSTALL) -m 555 source/ipfm $(SBINDIR)/ipfm
+-	$(INSTALL) -d -m 755 $(ETCDIR)
+-	[ -f $(CONFIGFILE) ] || \
+-	  $(INSTALL) -m 644 ipfm.conf.sample $(CONFIGFILE)
+-	$(INSTALL) -d -m 755 $(MANDIR)/man5
+-	$(INSTALL) -d -m 755 $(MANDIR)/man8
+-	$(INSTALL) -m 444 doc/ipfm.conf.5 $(MANDIR)/man5/ipfm.conf.5
+-	$(INSTALL) -m 444 doc/ipfm.8 $(MANDIR)/man8/ipfm.8
+-	$(INSTALL) -d -m 755 $(LOGDIR)/ipfm
+-	$(INSTALL) -d -m 755 $(VARRUNDIR)
++	$(INSTALL) -d -m 755 $(DESTDIR)$(SBINDIR)
++	$(INSTALL) -m 555 source/ipfm $(DESTDIR)$(SBINDIR)/ipfm
++	$(INSTALL) -d -m 755 $(DESTDIR)$(ETCDIR)
++	[ -f $(DESTDIR)$(CONFIGFILE) ] || \
++	  $(INSTALL) -m 644 ipfm.conf.sample $(DESTDIR)$(CONFIGFILE)
++	$(INSTALL) -d -m 755 $(DESTDIR)$(MANDIR)/man5
++	$(INSTALL) -d -m 755 $(DESTDIR)$(MANDIR)/man8
++	$(INSTALL) -m 444 doc/ipfm.conf.5 $(DESTDIR)$(MANDIR)/man5/ipfm.conf.5
++	$(INSTALL) -m 444 doc/ipfm.8 $(DESTDIR)$(MANDIR)/man8/ipfm.8
++	$(INSTALL) -d -m 755 $(DESTDIR)$(LOGDIR)/ipfm
++	$(INSTALL) -d -m 755 $(DESTDIR)$(VARRUNDIR)
+ 
+ clean:
+ 	@cd source && $(MAKE) clean && cd .. && \

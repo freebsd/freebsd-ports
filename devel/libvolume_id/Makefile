@@ -9,8 +9,7 @@ MASTER_SITES=	http://www.marcuscom.com/downloads/
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Library to provide file system type information
 
-USE_BZIP2=	yes
-USES=		gmake
+USES=		gmake tar:bzip2
 USE_LDCONFIG=	yes
 MAKE_ENV=	E=${ECHO_MSG} RANLIB=${RANLIB} AR=${AR} Q=@ \
 		prefix=${PREFIX}

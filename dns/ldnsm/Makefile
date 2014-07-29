@@ -5,12 +5,11 @@ PORTNAME=	ldnsm
 PORTVERSION=	0.2.1
 CATEGORIES=	dns
 MASTER_SITES=	http://vvelox.net/src/ldap/
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	vvelox@vvelox.net
 COMMENT=	Manages LDAP enteries for the BIND9 SDB LDAP patch
 
-USES=		perl5
+USES=		perl5 tar:tgz
 NO_BUILD=	yes
 
 PLIST_FILES=	bin/ldnsm man/man1/ldnsm.1.gz man/man5/dotldnsm.5.gz

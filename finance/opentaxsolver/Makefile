@@ -5,7 +5,6 @@ PORTVERSION=	10.00
 CATEGORIES=	finance
 MASTER_SITES=	SF/${PORTNAME}/OTS_${TAXYEAR}/v${PORTVERSION}
 DISTNAME=	${UPPORTNAME}${TAXYEAR}_${PORTVERSION}
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	US tax prep software
@@ -19,7 +18,7 @@ UPPORTNAME=	OpenTaxSolver
 .if !defined(WITHOUT_X11)
 USE_GL=		yes
 USE_XORG=	xmu xext x11
-USES=		pkgconfig
+USES=		pkgconfig tar:tgz
 CPPFLAGS+=	$$(pkg-config --cflags-only-I glu xext xmu)
 LDFLAGS+=	$$(pkg-config --libs-only-L glu xext xmu)
 SUB_LIST+=	X11=

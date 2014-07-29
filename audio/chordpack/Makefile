@@ -6,12 +6,11 @@ PORTVERSION=	0.8.1
 PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	http://sweb.cz/dan.polansky/chordpack/
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	sethk@meowfishies.com
 COMMENT=	Script to convert ChordPro files to HTML, ASCII, and TeX
 
-USES=		shebangfix perl5
+USES=		shebangfix perl5 tar:tgz
 SHEBANG_FILES=	chordpack
 USE_PERL5=	run
 NO_WRKSUBDIR=	true

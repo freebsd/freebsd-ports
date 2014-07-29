@@ -15,8 +15,7 @@ LICENSE=	LGPL20
 LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png \
 		libLLVM-3.2.so:${PORTSDIR}/devel/llvm32
 
-USES=		cmake perl5
-USE_BZIP2=	yes
+USES=		cmake perl5 tar:bzip2
 USE_LDCONFIG=	yes
 CMAKE_ARGS=	-DLLVM_CONFIG_EXECUTABLE=${LOCALBASE}/bin/llvm-config32
 

@@ -8,7 +8,6 @@ CATEGORIES=	lang
 MASTER_SITES=	http://www.cs.arizona.edu/mpd/download/ \
 		http://crypto.riken.go.jp/pub/NetBSD/packages/distfiles/mpd-language/
 DISTNAME=	${PORTNAME}.${PORTVERSION}
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Concurrent programming language
@@ -20,7 +19,7 @@ ONLY_FOR_ARCHS_REASON=	uses assembly code for the target machine
 CONFLICTS=	mpd-[^1]*
 NO_LATEST_LINK=	yes
 
-USES=		gmake
+USES=		gmake tar:tgz
 
 OPTIONS_DEFINE=	X11 DOCS
 OPTIONS_DEFAULT=	X11

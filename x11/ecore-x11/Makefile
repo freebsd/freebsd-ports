@@ -15,9 +15,8 @@ COMMENT=	Enlightenment core abstraction library (x11 module)
 LICENSE=	BSD
 
 DIST_SUBDIR=	e17
-USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
-USES=		gmake pkgconfig
+USES=		gmake pkgconfig tar:bzip2
 USE_EFL=	ecore libtool_hack
 USE_EFL_ECORE=	input
 USE_LDCONFIG=	yes

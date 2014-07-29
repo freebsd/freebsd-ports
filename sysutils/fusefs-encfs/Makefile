@@ -7,7 +7,6 @@ PORTREVISION=	6
 CATEGORIES=	sysutils
 MASTER_SITES=	GOOGLE_CODE
 PKGNAMEPREFIX=	fusefs-
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Encrypted pass-through FUSE filesystem
@@ -23,7 +22,7 @@ CONFIGURE_ARGS=	--with-boost-serialization=boost_serialization \
 		--with-boost-filesystem=boost_filesystem
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-USES=		fuse gmake libtool pkgconfig
+USES=		fuse gmake libtool pkgconfig tar:tgz
 USE_LDCONFIG=	yes
 USE_OPENSSL=	yes
 INSTALL_TARGET=	install-strip

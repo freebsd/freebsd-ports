@@ -7,12 +7,11 @@ PORTREVISION=	2
 CATEGORIES=	lang parallel
 MASTER_SITES=	ftp://ftp.cs.arizona.edu/sr/
 DISTNAME=	sr${PORTVERSION:S/.//g}
-EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Parallel language from the University of Arizona
 
-USES=		gmake	# required to support parallel (-jX) builds
+USES=		gmake	# required to support parallel (-jX) builds tar:Z
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	prefix
 CONFIGURE_ENV=	PREFIX="${PREFIX}"

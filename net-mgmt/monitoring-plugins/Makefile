@@ -2,22 +2,15 @@
 # $FreeBSD$
 
 PORTNAME=	monitoring-plugins
-PORTVERSION=	1.5.99.20140721
-PORTREVISION=	1
+PORTVERSION=	2.0
 CATEGORIES=	net-mgmt
-MASTER_SITES=	LOCAL/mat/${PORTNAME} GH GHC
-		
+MASTER_SITES=	https://www.monitoring-plugins.org/download/ LOCAL/mat/${PORTNAME}
 
 MAINTAINER=	mat@FreeBSD.org
 COMMENT=	Monitoring Plugins for Nagios
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
-
-USE_GITHUB=	yes
-GH_ACCOUNT=	monitoring-plugins
-GH_COMMIT=	b5611ea
-GH_TAGNAME=	${GH_COMMIT}
 
 CONFLICTS_INSTALL=	nagios-plugins-*
 
@@ -57,8 +50,6 @@ EXTRAOPTS_CONFIGURE_ENABLE=	extra-opts
 
 GNU_CONFIGURE=	yes
 
-NAGIOSUSER?=	nagios
-NAGIOSGROUP?=	nagios
 NAGIOSDIR?=	/var/spool/nagios
 
 NAGIOSWWWDIR?=	www/nagios
@@ -68,21 +59,19 @@ NAGIOSCGIURL?=	${NAGIOSHTMURL}/cgi-bin
 NAGIOSPOLLIP?=	127.0.0.1
 NAGIOSPOLLIP6?=	::1
 
-CONFIGURE_ARGS+=--with-nagios-user=${NAGIOSUSER} \
-		--with-nagios-group=${NAGIOSGROUP} \
-		--with-cgiurl=${NAGIOSCGIURL} \
+CONFIGURE_ARGS+=--with-cgiurl=${NAGIOSCGIURL} \
 		--sbindir=${PREFIX}/${NAGIOSWWWDIR}/cgi-bin \
 		--libexecdir=${PREFIX}/libexec/nagios \
 		--datadir=${PREFIX}/share \
 		--sysconfdir=${PREFIX}/etc/nagios \
 		--localstatedir=${NAGIOSDIR} \
+		--with-perl=${PERL} \
 		--prefix=${PREFIX}
 
 # Also, force some commands with their expected paths so that they don't get
 # disabled.
 CONFIGURE_ARGS+=--with-qmail-qstat-command=/var/qmail/bin/qmail-qstat
 
-CONFIGURE_ENV=	PERL=${PERL}
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 CFLAGS+=	-I${LOCALBASE}/include

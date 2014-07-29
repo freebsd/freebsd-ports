@@ -25,10 +25,8 @@ LIBS+=		-L${LOCALBASE}/lib
 # for plib (sound):
 CONFIGURE_ARGS+=	--with-plib=${LOCALBASE}/plib
 
-.include <bsd.port.pre.mk>
-
 pre-patch:
 	@${REINPLACE_CMD} -i '' -e 's|<malloc.h>|<stdlib.h>|' \
 		${WRKSRC}/common/gr_memory.h
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

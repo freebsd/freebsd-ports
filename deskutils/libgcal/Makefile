@@ -16,8 +16,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl \
 		libxml2.so:${PORTSDIR}/textproc/libxml2
 
-USE_BZIP2=	yes
-USES=		cmake iconv
+USES=		cmake iconv tar:bzip2
 CMAKE_ARGS=	-DLIB_INSTALL_DIR="${LOCALBASE}/lib" \
 		-DENABLE_TESTS=OFF
 USE_LDCONFIG=	yes

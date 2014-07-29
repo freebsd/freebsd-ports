@@ -7,7 +7,6 @@ PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://mattdm.org/icebreaker/1.9.x/ \
 		SF/nemysisfreebsdp/games/${PORTNAME}/:icons
-EXTRACT_SUFX=	.tgz
 DISTFILES=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX} \
 		${PORTNAME}.png:icons
 EXTRACT_ONLY=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX}
@@ -17,7 +16,7 @@ COMMENT=	Game similar to Jezzball or Barrack
 
 LICENSE=	GPLv2
 
-USES=		gmake
+USES=		gmake tar:tgz
 USE_SDL=	mixer sdl
 
 PORTDOCS=	ChangeLog README README.SDL README.ifyoumakechanges \

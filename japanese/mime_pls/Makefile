@@ -9,12 +9,11 @@ MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	nork
 PKGNAMEPREFIX=	ja-p5-
 DISTNAME=	${PORTNAME}${PORTVERSION:C/\.//}
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl Library for MIME encode/decode
 
-USES=		perl5 shebangfix
+USES=		perl5 shebangfix tar:tgz
 SHEBANG_FILES=	${BINS}
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes

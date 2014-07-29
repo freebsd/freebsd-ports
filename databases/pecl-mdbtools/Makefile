@@ -7,7 +7,6 @@ PORTREVISION=	1
 CATEGORIES=	databases pear
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
-EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	PECL
 
 MAINTAINER=	miwi@FreeBSD.org
@@ -15,7 +14,7 @@ COMMENT=	PECL extension for the mdbtools library
 
 LICENSE=	LGPL21
 
-USES=		pkgconfig
+USES=		pkgconfig tar:tgz
 USE_PHP=	yes
 USE_PHPEXT=	yes
 USE_PHP_BUILD=	yes

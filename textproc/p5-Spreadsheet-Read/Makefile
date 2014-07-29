@@ -7,7 +7,6 @@ CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:HMBRAND
 PKGNAMEPREFIX=	p5-
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Read the data from a spreadsheet
@@ -23,7 +22,7 @@ BUILD_DEPENDS=	p5-IO-stringy>0:${PORTSDIR}/devel/p5-IO-stringy \
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-NoWarnings>0:${PORTSDIR}/devel/p5-Test-NoWarnings
 
-USES=		perl5
+USES=		perl5 tar:tgz
 USE_PERL5=	configure
 
 .include <bsd.port.mk>

@@ -32,9 +32,7 @@ USE_QT4=	corelib dbus designer gui network opengl \
 		phonon script sql svg webkit xml \
 		qmake_build moc_build rcc_build uic_build
 USE_XORG=	x11
-USE_BZIP2=	yes
-USES=		cmake pkgconfig shared-mime-info
-CFLAGS+=	-D__STDC_CONSTANT_MACROS
+USES=		cmake pkgconfig shared-mime-info tar:bzip2
 USE_LDCONFIG=	yes
 
 BROKEN_sparc64=	does not build (GCC-related error)

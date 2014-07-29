@@ -7,14 +7,13 @@ PORTREVISION=	4
 CATEGORIES=	mail elisp
 MASTER_SITES=	https://launchpad.net/${PORTNAME}/8.1.x/${PORTVERSION}/+download/
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Mail reader running inside Emacs or XEmacs
 
 GNU_CONFIGURE=	yes
 USE_EMACS=	yes
-USES=		gmake makeinfo
+USES=		gmake makeinfo tar:tgz
 CONFIGURE_ARGS+=	--with-emacs=${EMACS_CMD}
 MAKE_ARGS=	prefix=${PREFIX} \
 		lispdir=${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}/${PORTNAME} \

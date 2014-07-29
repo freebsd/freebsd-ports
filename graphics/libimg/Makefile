@@ -19,8 +19,7 @@ PLIST_SUB+=	SHLIB_NAME="${SHLIB_NAME}" \
 		SHLIB_LINK="${SHLIB_LINK}"
 
 WRKSRC=		${WRKDIR}/tkimg${PORTVERSION:R}
-USES=		tk
-USE_BZIP2=	yes
+USES=		tk tar:bzip2
 
 # We don't need the bundled libraries:
 EXTRACT_AFTER_ARGS=	--exclude '*/libz/*' --exclude zlib \

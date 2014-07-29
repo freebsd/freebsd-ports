@@ -14,9 +14,8 @@ BUILD_DEPENDS=	qca-ossl>=2.0.0.b3:${PORTSDIR}/security/qca-ossl
 LIB_DEPENDS=	libqca.so:${PORTSDIR}/devel/qca
 RUN_DEPENDS=	qca-ossl>=2.0.0.b3:${PORTSDIR}/security/qca-ossl
 
-USES=		qmake
+USES=		qmake tar:bzip2
 USE_LDCONFIG=	yes
-USE_BZIP2=	yes
 USE_QT4=	corelib qtestlib network moc_build
 USE_OPENSSL=	yes
 

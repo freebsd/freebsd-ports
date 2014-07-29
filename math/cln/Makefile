@@ -14,8 +14,7 @@ COMMENT=	Class Library for Numbers
 LIB_DEPENDS=	libgmp.so:${PORTSDIR}/math/gmp
 
 USE_AUTOTOOLS=	libtool
-USE_BZIP2=	yes
-USES=		gmake pathfix pkgconfig
+USES=		gmake pathfix pkgconfig tar:bzip2
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-gmp
 USE_LDCONFIG=	yes

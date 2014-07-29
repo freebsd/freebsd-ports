@@ -10,10 +10,9 @@ COMMENT=	Clean and optimize Matroska and WebM files
 
 LICENSE=	BSD
 
-USE_BZIP2=	yes
 HAS_CONFIGURE=	yes
 
-USES=		iconv gmake
+USES=		iconv gmake tar:bzip2
 
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib ${ICONV_LIB}

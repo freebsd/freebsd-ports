@@ -6,14 +6,13 @@ PORTVERSION=	2.3.4
 CATEGORIES=	net
 MASTER_SITES=	http://www.vanheusden.com/httping/ \
 		CRITICAL
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Ping-like tool for HTTP requests
 
 LICENSE=	GPLv2
 
-USES=		gmake gettext
+USES=		gmake gettext tar:tgz
 
 PLIST_FILES=	bin/httping man/man1/httping.1.gz
 

@@ -31,6 +31,11 @@ SRCDIRS=	afterstep \
 		modules/Banner modules/Pager modules/Wharf \
 		modules/Wharf/ASSound
 
+OPTIONS_DEFINE=	HICOLOR_ICONS
+HICOLOR_ICONS_DESC=	Use hi-color icons
+
+.include <bsd.port.options.mk>
+
 post-patch:
 		${REINPLACE_CMD} \
 			-e 's|%%PREFIX%%|${PREFIX}|g' \
@@ -43,7 +48,7 @@ post-patch:
 		done
 
 pre-build:
-		@ cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${SH} MakeMakefiles
+		@ (cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${SH} MakeMakefiles)
 
 post-install:
 		@ ${MKDIR} ${STAGEDIR}${PREFIX}/lib/X11/afterstep/backgrounds/
@@ -51,15 +56,10 @@ post-install:
 		@ ${MKDIR} ${STAGEDIR}${PREFIX}/lib/X11/afterstep/sounds/
 		${INSTALL_DATA} ${WRKSRC}/sounds/* ${STAGEDIR}${PREFIX}/lib/X11/afterstep/sounds/
 		@ ${MKDIR} ${STAGEDIR}${PREFIX}/include/X11/pixmaps/
-.if defined(WITH_HICOLOR_ICONS)
+.if ${PORT_OPTIONS:MHICOLOR_ICONS}
 		${INSTALL_DATA} ${WRKSRC}/icons/*.xpm ${STAGEDIR}${PREFIX}/include/X11/pixmaps/
 		${INSTALL_DATA} ${FILESDIR}/monitor_bsd.xpm ${STAGEDIR}${PREFIX}/include/X11/pixmaps/
 .else
-.if !defined(BATCH)
-		@${ECHO_MSG} "===>  Note: to use the hi-color icons,"
-		@${ECHO_MSG} "      reinstall this port with -DWITH_HICOLOR_ICONS"
-		@${ECHO_MSG} "      defined"
-.endif
 		@for i in AFstep.xpm penguin.xpm monitor_bsd.xpm; do \
 			${CP} ${FILESDIR}/$$i ${WRKSRC}/icons/8bit/; \
 		done

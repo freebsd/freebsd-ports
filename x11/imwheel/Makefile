@@ -20,17 +20,13 @@ CONFIGURE_ARGS=	--disable-gpm
 
 OPTIONS_DEFINE=	DOCS
 
-.include <bsd.port.options.mk>
-
 post-patch:
 .for i in imwheel.1 util.c
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/${i}
 .endfor
 
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${WRKSRC}/EMACS ${STAGEDIR}${DOCSDIR}
-.endif
 
 .include <bsd.port.mk>

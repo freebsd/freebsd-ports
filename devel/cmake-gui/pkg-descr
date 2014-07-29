@@ -6,4 +6,4 @@ it is possible to support complex environments requiring system
 configuration, pre-processor generation, code generation, and
 template instantiation.
 
-WWW:	http://www.cmake.org
+WWW: http://www.cmake.org

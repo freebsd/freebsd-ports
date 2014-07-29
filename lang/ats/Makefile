@@ -7,13 +7,12 @@ CATEGORIES=	lang
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	${PORTNAME}-lang/${PORTNAME}-lang/${ATS_IMPL}-${PORTVERSION}
 DISTNAME=	${PORTNAME}-lang-${ATS_IMPL}-${PORTVERSION}
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Language with a type system rooted in the Applied Type System
 
 ONLY_FOR_ARCHS=	i386 amd64
-USES=		gmake
+USES=		gmake tar:tgz
 GNU_CONFIGURE=	yes
 CFLAGS+=	-I${LOCALBASE}/include \
 		-L${LOCALBASE}/lib

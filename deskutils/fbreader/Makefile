@@ -8,7 +8,6 @@ PORTREVISION=	1
 CATEGORIES=	deskutils
 MASTER_SITES=	http://www.fbreader.org/files/desktop/ \
 		http://old.fbreader.org/
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	fluffy@FreeBSD.org
 COMMENT=	Powerful e-book reader
@@ -33,7 +32,7 @@ STATUS=		debug
 STATUS=		release
 .endif
 
-USES=		iconv gmake pkgconfig
+USES=		iconv gmake pkgconfig tar:tgz
 USE_SQLITE=	yes
 USE_LDCONFIG=	yes
 

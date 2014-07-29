@@ -6,12 +6,12 @@ PORTVERSION=	1.1
 PORTREVISION=	3
 CATEGORIES=	x11
 MASTER_SITES=	ftp://ftp.cs.brown.edu/pub/xmx/
-EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	X protocol multiplexor
 
 USE_XORG=	x11
+USES=		tar:Z
 
 PLIST_FILES=	bin/xmx man/man1/xmx.1.gz
 

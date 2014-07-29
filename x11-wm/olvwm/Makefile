@@ -13,7 +13,6 @@ MASTER_SITE_SUBDIR=     cy
 		
 MASTER_SITE_SUBDIR=	window_managers
 DISTNAME=	${PORTNAME}4
-EXTRACT_SUFX=	.tar.Z
 
 PATCH_SITES=	${MASTER_SITES}
 PATCHFILES=	olvwm4.Patch01.Z \
@@ -27,7 +26,7 @@ LIB_DEPENDS=	libxview.so:${PORTSDIR}/x11-toolkits/xview
 
 REINPLACE_ARGS= -i ""
 NO_WRKSUBDIR=	yes
-USES=		imake
+USES=		imake tar:Z
 USE_XORG=	xpm
 MAN1=		olvwm.1 olvwmrc.1
 XFREE86_HTML_MAN=	no

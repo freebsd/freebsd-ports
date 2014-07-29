@@ -7,7 +7,6 @@ CATEGORIES=	devel pear
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
 DISTNAME=	SPL_Types-${PORTVERSION}
-EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	PECL
 
 MAINTAINER=	5u623l20@gmail.com
@@ -22,7 +21,7 @@ RE2C_RUN_DEPENDS=	re2c:${PORTSDIR}/devel/re2c
 USE_PHP=	spl
 #USE_PHP_BUILD=	yes
 USE_PHPEXT=	yes
-USES=		tar:tgz
+USES=		tar:tgz tar:tgz
 
 CONFIGURE_ARGS=	--enable-spl-types
 CFLAGS+=	-I${LOCALBASE}/include

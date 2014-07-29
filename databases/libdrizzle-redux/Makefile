@@ -3,6 +3,7 @@
 
 PORTNAME=	libdrizzle
 PORTVERSION=	5.1.4
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	http://launchpadlibrarian.net/138246183/
 PKGNAMESUFFIX=	-redux
@@ -15,7 +16,7 @@ COMMENT=	Client and protocol library for the Drizzle database
 LICENSE=	BSD2CLAUSE
 
 GNU_CONFIGURE=	yes
-USES=		gmake
+USES=		gmake libtool
 USE_LDCONFIG=	yes
 
 CONFLICTS=	libdrizzle-[0-9]*

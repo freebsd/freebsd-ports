@@ -15,8 +15,7 @@ COMMENT=	Omnipresent versatile search interface
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/dbus/__init__.py:${PORTSDIR}/devel/py-dbus
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/dbus/__init__.py:${PORTSDIR}/devel/py-dbus
 
-USE_BZIP2=	yes
-USES=		pathfix gettext gmake pkgconfig
+USES=		pathfix gettext gmake pkgconfig tar:bzip2
 USE_GNOME=	gnomeprefix pygnomedesktop intlhack
 USE_PYTHON=	yes
 GNU_CONFIGURE=	yes

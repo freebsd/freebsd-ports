@@ -7,7 +7,6 @@ CATEGORIES=	benchmarks www
 MASTER_SITES=	http://www.web-polygraph.org/downloads/srcs/ \
 		http://people.bsdgroup.de/~as/freebsd/distfiles/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Benchmarking tool for Web proxies
@@ -44,7 +43,7 @@ CONFIGURE_ARGS+=	--without-ssl
 .endif
 
 .if ${PORT_OPTIONS:MPERL}
-USES+=		perl5
+USES+=		perl5 tar:tgz
 USE_PERL5=	run
 .endif
 

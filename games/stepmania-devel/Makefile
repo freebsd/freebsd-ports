@@ -26,8 +26,7 @@ OPTIONS_DEFAULT=VORBIS
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-SM5-alpha3
 
-USE_BZIP2=	yes
-USES=		iconv pathfix perl5 pkgconfig shebangfix
+USES=		iconv pathfix perl5 pkgconfig shebangfix tar:bzip2
 USE_XORG=	x11 xau xdmcp xext xrandr xrender xtst
 USE_GL=		gl glu
 USE_GNOME=	gtk20

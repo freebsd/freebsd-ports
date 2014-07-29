@@ -17,8 +17,7 @@ LICENSE=	LGPL21
 LIB_DEPENDS=	libcairo.so:${PORTSDIR}/graphics/cairo \
 		libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib
 
-USE_BZIP2=	yes
 USE_GNOME=	gtk20
-USES=		cmake pkgconfig
+USES=		cmake pkgconfig tar:bzip2
 
 .include <bsd.port.mk>

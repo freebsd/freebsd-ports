@@ -46,4 +46,10 @@ post-install:
 	${MKDIR} ${STAGEDIR}${RUBY_MODDOCDIR}
 	cd ${WRKSRC} && ${COPYTREE_SHARE} "${DOCS}" ${STAGEDIR}${RUBY_MODDOCDIR}/
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${RUBY_VER} >= 2.0
+BROKEN=		Does not build with Ruby 2.0 or newer
+.endif
+
+.include <bsd.port.post.mk>

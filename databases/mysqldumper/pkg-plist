@@ -327,8 +327,6 @@
 %%WWWDIR%%/tpl/sqlbrowser/sql_record_insert_inputmask.tpl
 %%WWWDIR%%/tpl/sqlbrowser/sql_record_update_inputmask.tpl
 %%WWWDIR%%/tpl/sqlbrowser/sqlbox.tpl
-@group
-@owner
 @dirrm %%WWWDIR%%/tpl/sqlbrowser
 @dirrm %%WWWDIR%%/tpl/menu
 @dirrm %%WWWDIR%%/tpl/home
@@ -367,3 +365,5 @@
 @dirrm %%WWWDIR%%/css
 @dirrm %%WWWDIR%%/ReadMe
 @dirrmtry %%WWWDIR%%
+@group
+@owner

@@ -5,7 +5,6 @@ PORTNAME=	dxpc
 PORTVERSION=	3.9.2
 CATEGORIES=	x11
 MASTER_SITES=	http://www.vigor.nu/dxpc/
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Compressing X protocol proxy designed to support X11 over slow links
@@ -15,7 +14,7 @@ LIB_DEPENDS=	liblzo2.so:${PORTSDIR}/archivers/lzo2
 LICENSE=	BSD2CLAUSE
 
 USE_XORG=	x11
-USES=		gmake
+USES=		gmake tar:tgz
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-lzo-lib=${LOCALBASE}
 MAKE_ARGS=	INSTALL="${INSTALL_PROGRAM}" \

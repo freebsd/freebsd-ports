@@ -6,12 +6,11 @@ PORTVERSION=	3.0
 PORTREVISION=	2
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.x.org/R5contrib/
-EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	obrien@FreeBSD.org
 COMMENT=	The X Literate Biff - displays the from and subject from incoming mails
 
-USES=		imake
+USES=		imake tar:Z
 USE_XORG=	ice sm x11 xaw xext xmu xpm xt
 
 .include <bsd.port.mk>

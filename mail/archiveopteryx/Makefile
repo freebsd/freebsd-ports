@@ -14,8 +14,7 @@ LICENSE=	MIT
 
 BUILD_DEPENDS=	jam:${PORTSDIR}/devel/jam
 
-USE_BZIP2=	yes
-USES=	perl5
+USES=	perl5 tar:bzip2
 USE_PERL5=	build
 USE_PGSQL=	yes
 WANT_PGSQL_VER=	91+

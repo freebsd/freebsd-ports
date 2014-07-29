@@ -5,7 +5,6 @@ PORTNAME=	urweb
 PORTVERSION=	20140704
 CATEGORIES=	lang www
 MASTER_SITES=	http://www.impredicative.com/ur/
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	beyert@cs.ucr.edu
 COMMENT=	Ultimate host for embedded domain-specific languages
@@ -18,7 +17,7 @@ BUILD_DEPENDS=	mlton:${PORTSDIR}/lang/mlton
 CONFIGURE_ENV=	CCARGS="-I${LOCALBASE}/include"
 
 GNU_CONFIGURE=	yes
-USES=		gmake libtool
+USES=		gmake libtool tar:tgz
 USE_LDCONFIG=	yes
 USE_OPENSSL=	yes
 ONLY_FOR_ARCHS=	i386 amd64

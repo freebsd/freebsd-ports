@@ -15,9 +15,8 @@ COMMENT=	Edje is a complex graphical design and layout engine
 LICENSE=	BSD2CLAUSE
 
 DIST_SUBDIR=	e17
-USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
-USES=		pathfix pkgconfig shared-mime-info lua
+USES=		pathfix pkgconfig shared-mime-info lua tar:bzip2
 USE_EFL=	eina eet evas ecore eio embryo libtool_hack librt_hack
 USE_EFL_EVAS_LOADERS=	eet jpeg png
 USE_EFL_ECORE=	evas file imf imf_evas

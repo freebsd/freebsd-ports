@@ -13,7 +13,6 @@ MASTER_SITES=	http://mirror.racket-lang.org/installers/${PORTVERSION}/ \
 		http://racket.infogroep.be/${PORTVERSION}/
 
 DISTNAME=	${PORTNAME}${PKGNAMESUFFIX}-${PORTVERSION}-src
-EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	${PORTNAME}${PKGNAMESUFFIX}/${PORTVERSION}
 
 MAINTAINER=	olgeni@FreeBSD.org
@@ -50,7 +49,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 CPPFLAGS+=	-I${LOCALBASE}/include
 
 WRKSRC=		${WRKDIR}/racket-${PORTVERSION}/src
-USES=		iconv libtool
+USES=		iconv libtool tar:tgz
 USE_LDCONFIG=	yes
 
 ONLY_FOR_ARCHS=	i386 amd64

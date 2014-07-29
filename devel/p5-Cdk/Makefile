@@ -7,7 +7,6 @@ CATEGORIES=	devel perl5
 MASTER_SITES=	ftp://dickey.his.com/cdk/
 PKGNAMEPREFIX=	p5-
 DISTNAME=	cdk-perl-${PORTVERSION:C,^[0-9]\.,,}
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl5 module for Curses Development Kit
@@ -16,7 +15,7 @@ LICENSE=	BSD4CLAUSE
 
 LIB_DEPENDS=	libcdk.so:${PORTSDIR}/devel/cdk
 
-USES=		perl5
+USES=		perl5 tar:tgz
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	pure_install
 

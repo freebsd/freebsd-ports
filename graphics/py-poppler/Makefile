@@ -3,7 +3,7 @@
 
 PORTNAME=	poppler
 PORTVERSION=	0.12.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics python
 MASTER_SITES=	https://launchpad.net/poppler-python/trunk/development/+download/ \
 		http://launchpadlibrarian.net/30270080/ \
@@ -18,7 +18,7 @@ LIB_DEPENDS=	libpoppler-glib.so:${PORTSDIR}/graphics/poppler-glib
 
 USE_PYTHON=	yes
 GNU_CONFIGURE=	yes
-USES=		gmake pkgconfig
+USES=		gmake libtool pkgconfig
 USE_GNOME=	atk pygtk2
 
 .include <bsd.port.mk>

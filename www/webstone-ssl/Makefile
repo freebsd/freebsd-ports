@@ -7,13 +7,13 @@ CATEGORIES=	www benchmarks
 MASTER_SITES=	http://crypto.stanford.edu/~nagendra/projects/WebStone/download/
 PKGNAMESUFFIX=	-ssl
 DISTNAME=	WebStone-SSL-${PORTVERSION}
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	World wide web server benchmarking with SSL support
 
 WRKSRC=		${WRKDIR}/WebStone${PORTVERSION}/src
 
+USES=		tar:tgz
 USE_OPENSSL=	yes
 USE_AUTOTOOLS=	autoconf213
 ALL_TARGET=	install

@@ -8,25 +8,16 @@ MASTER_SITES=	http://userfw.net/files/release/ \
 		http://imax.in.ua/files/ \
 		http://projects.ukrweb.net/files/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	gelraen.ua@gmail.com
 COMMENT=	Modular packet filter
 
-LICENSE=	BSD
+LICENSE=	BSD2CLAUSE
 
 SSP_UNSAFE=	kernel module does not support ssp
-USE_XZ=		yes
-USES=		cmake:outsource
+USES=		cmake:outsource kmod tar:xz
 USE_LDCONFIG=	yes
 
-KMODDIR?=	/boot/modules
-PLIST_SUB+=	KMODDIR=${KMODDIR}
-
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 800000
-BROKEN=		does not compile on FreeBSD 7.x
-.endif
 
 .if !exists(${SRC_BASE}/sys/sys/module.h)
 IGNORE=		requires kernel source files
@@ -38,5 +29,6 @@ BROKEN=		Does not compile on powerpc
 
 CMAKE_ARGS+=	-DDOMAIN_STUB:BOOL=OFF
 CMAKE_ARGS+=	-DOPCODE_VERIFICATION:BOOL=OFF
+CMAKE_ARGS+=	-DKMODDIR="${KMODDIR}"
 
 .include <bsd.port.post.mk>

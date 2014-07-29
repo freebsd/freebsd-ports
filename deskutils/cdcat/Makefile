@@ -30,8 +30,7 @@ OPTIONS_DEFINE=	DOCS
 CONFIGURE_WRKSRC=	${WRKSRC}/src
 BUILD_WRKSRC=	${CONFIGURE_WRKSRC}
 
-USE_BZIP2=	yes
-USES=		qmake:norecursive
+USES=		qmake:norecursive tar:bzip2
 USE_QT4=	corelib gui xml linguist_build moc_build uic_build
 QMAKE_ARGS=	INCLUDEPATH+="${L7Z_WRKSRC}/Lib7Zip" \
 		INCLUDEPATH+="${MIF_WRKSRC}/MediaInfoLib/Source" \

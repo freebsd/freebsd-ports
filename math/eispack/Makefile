@@ -32,10 +32,10 @@ OPTIONS_DEFINE=	PROFILE
 
 .if ${PORT_OPTIONS:MPROFILE}
 .if defined(NOPROFILE) || defined(NO_PROFILE) || defined(WITHOUT_PROFILE)
-IGNORE =	you have defined WITH_PROFILE, but have also defined\
+IGNORE=		you have defined WITH_PROFILE, but have also defined\
 WITHOUT_PROFILE, NOPROFILE, or NO_PROFILE
 .elif !exists(/usr/lib/libc_p.a)
-IGNORE  =	you have chosen WITH_PROFILE, but have not installed the\
+IGNORE =	you have chosen WITH_PROFILE, but have not installed the\
 base system profiling libraries
 .endif
 PLIST_FILES+=	lib/libeispack_p.a
@@ -43,7 +43,7 @@ PLIST_FILES+=	lib/libeispack_p.a
 MAKE_ENV+=	NO_PROFILE=yes
 .endif
 
-SRCS =	csroot.f epslon.f pythag.f bakvec.f balanc.f balbak.f bandr.f \
+SRCS=	csroot.f epslon.f pythag.f bakvec.f balanc.f balbak.f bandr.f \
 	bandv.f bisect.f bqr.f cbabk2.f cbal.f cg.f ch.f cinvit.f combak.f \
 	comhes.f comlr.f comlr2.f comqr.f comqr2.f cortb.f corth.f elmbak.f \
 	elmhes.f eltran.f figi.f figi2.f hqr.f hqr2.f htrib3.f htribk.f \

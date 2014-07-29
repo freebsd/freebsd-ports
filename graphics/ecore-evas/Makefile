@@ -15,9 +15,8 @@ COMMENT=	Enlightenment core abstraction library (evas module)
 LICENSE=	BSD
 
 DIST_SUBDIR=	e17
-USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
-USES=		gmake pkgconfig
+USES=		gmake pkgconfig tar:bzip2
 USE_EFL=	evas ecore libtool_hack
 USE_EFL_ECORE=	input input_evas
 USE_LDCONFIG=	yes

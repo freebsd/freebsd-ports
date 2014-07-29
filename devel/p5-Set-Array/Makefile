@@ -7,7 +7,6 @@ CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:RSAVAGE
 PKGNAMEPREFIX=	p5-
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Arrays as objects with set operations
@@ -20,7 +19,7 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-Deep>=0:${PORTSDIR}/devel/p5-Test-Deep \
 		p5-Test-Pod>=0:${PORTSDIR}/devel/p5-Test-Pod
 
-USES=		perl5
+USES=		perl5 tar:tgz
 USE_PERL5=	configure
 
 .include <bsd.port.mk>

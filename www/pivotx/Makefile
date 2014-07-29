@@ -8,7 +8,6 @@ MASTER_SITES=	SF/pivot-weblog/PivotX \
 		http://pivotx.net/files/ \
 		http://pivotx.net/files/archived/
 DISTNAME=	pivotx_${PORTVERSION}
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	fumifumi@abacustech.jp
 COMMENT=	Software to help you maintain dynamic sites such as weblogs
@@ -29,7 +28,7 @@ PHPDOM_DESC=	Use PHP:DOM instead of SimpleXML
 
 WANT_PHP_WEB=	yes
 USE_PHP=	session gettext xml tokenizer gd pcre
-USES+=		gettext
+USES+=		gettext tar:tgz
 
 .if ${PORT_OPTIONS:MPHPDOM}
 USE_PHP+=	dom

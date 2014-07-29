@@ -11,8 +11,7 @@ COMMENT=	Software for production and maintenance of web sites
 
 OPTIONS_DEFINE=	DOCS
 
-USES=		gmake
-USE_BZIP2=	yes
+USES=		gmake tar:bzip2
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-gwsmake=no --enable-iswmake=no
 

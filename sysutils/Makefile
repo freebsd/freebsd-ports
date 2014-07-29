@@ -1034,6 +1034,7 @@
     SUBDIR += xen-tools
     SUBDIR += xfburn
     SUBDIR += xfce4-battery-plugin
+    SUBDIR += xfce4-bsdcpufreq-plugin
     SUBDIR += xfce4-cpugraph-plugin
     SUBDIR += xfce4-diskperf-plugin
     SUBDIR += xfce4-fsguard-plugin

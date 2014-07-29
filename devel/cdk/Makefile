@@ -8,14 +8,13 @@ PORTEPOCH=	1
 CATEGORIES=	devel
 MASTER_SITES=	ftp://invisible-island.net/cdk/
 DISTNAME=	${PORTNAME}-${PORTVERSION:R}-${PORTVERSION:E}
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Curses Development Kit for speedy development of full screen programs
 
 LICENSE=	BSD
 
-USES=		ncurses gmake
+USES=		ncurses gmake tar:tgz
 GNU_CONFIGURE=	yes
 PORTDOCS=	COPYING EXPANDING INSTALL NOTES README TODO
 MAKE_JOBS_UNSAFE=	yes

@@ -8,7 +8,7 @@ CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 DISTNAME=	auth-ldap-${PORTVERSION}
 
-MAINTAINER=	snb@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	LDAP authentication plugin for OpenVPN
 
 USES=		objc

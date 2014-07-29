@@ -6,7 +6,6 @@ PORTVERSION=	2.3.1
 PORTREVISION=	11
 CATEGORIES=	misc
 MASTER_SITES=	https://sites.google.com/site/makovick/projects/
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GKrellM plugin reading data from helium thermometer at Strahov, Prague
@@ -15,7 +14,7 @@ BUILD_DEPENDS=	${LOCALBASE}/include/gkrellm2/gkrellm.h:${PORTSDIR}/sysutils/gkre
 LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl
 RUN_DEPENDS=	gkrellm:${PORTSDIR}/sysutils/gkrellm2
 
-USES=		pkgconfig
+USES=		pkgconfig tar:tgz
 
 PLIST_FILES=	libexec/gkrellm2/plugins/helium.so
 

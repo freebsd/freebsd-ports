@@ -5,12 +5,11 @@ PORTNAME=	mapchan
 PORTVERSION=	3.2
 CATEGORIES=	sysutils converters
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	bsam@FreeBSD.org
 COMMENT=	Transform the input and output of a terminal (SCO Unix alike)
 
-USES=		iconv
+USES=		iconv tar:tgz
 WRKSRC=		${WRKDIR}/${PORTNAME}
 MAKE_ENV=	STAGEDIR=${STAGEDIR} MAPDIR=${STAGEDIR}${PREFIX}/etc/${PORTNAME}
 CFLAGS+=	-I${LOCALBASE}/include

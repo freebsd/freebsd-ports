@@ -5,7 +5,6 @@ PORTVERSION=	9
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/Milestone%20${PORTVERSION}
 DISTNAME=	TheButterflyEffect-M${PORTVERSION}.src
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	johans@FreeBSD.org
 COMMENT=	The Butterfly Effect
@@ -13,7 +12,7 @@ COMMENT=	The Butterfly Effect
 BUILD_DEPENDS=	${LOCALBASE}/bin/unzip:${PORTSDIR}/archivers/unzip
 LIB_DEPENDS=	libexecinfo.so:${PORTSDIR}/devel/libexecinfo
 
-USES=		qmake gmake
+USES=		qmake gmake tar:tgz
 USE_QT4=	corelib gui moc_build rcc_build svg uic_build xml
 WRKSRC=		${WRKDIR}/TheButterflyEffect-M${PORTVERSION}rc3
 

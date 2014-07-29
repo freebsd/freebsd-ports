@@ -7,7 +7,6 @@ PORTREVISION=	5
 CATEGORIES=	graphics parallel
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-3.1g2.tgz
 DISTNAME=	${PORTNAME}-3.1g2
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Distributed rendering package for Persistence of Vision Ray Tracer
@@ -18,7 +17,7 @@ LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png
 RUN_DEPENDS=	povray31:${PORTSDIR}/graphics/povray31 \
 		pvmd:${PORTSDIR}/net/pvm
 
-USES=		perl5
+USES=		perl5 tar:tgz
 USE_PERL5=	build
 USE_XORG=	x11
 

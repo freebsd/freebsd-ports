@@ -16,7 +16,6 @@ LIB_DEPENDS=	libcdio.so:${PORTSDIR}/sysutils/libcdio \
 		libsndfile.so:${PORTSDIR}/audio/libsndfile \
 		libvorbis.so:${PORTSDIR}/audio/libvorbis
 
-USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_SDL=	sdl net
 USE_GL=		gl glu
@@ -28,7 +27,7 @@ SUB_FILES=	pkg-message
 CONFIGURE_ARGS+=--disable-alsa --disable-alsatest \
 		--with-sdl-prefix=${LOCALBASE}
 
-USES=		iconv pkgconfig:build
+USES=		iconv pkgconfig:build tar:bzip2
 
 OPTIONS_DEFINE=	NLS DOCS JACK
 OPTIONS_MULTI=	EMU

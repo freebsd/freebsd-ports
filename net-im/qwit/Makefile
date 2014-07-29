@@ -11,8 +11,7 @@ DISTNAME=	qwit-${PORTVERSION}-src
 MAINTAINER=	sokolov@TrueBSD.org
 COMMENT=	Qt4-based lightweight Twitter client
 
-USES=		qmake
-USE_BZIP2=	yes
+USES=		qmake tar:bzip2
 USE_QT4=	gui network xml moc_build rcc_build \
 		uic_build
 post-patch:

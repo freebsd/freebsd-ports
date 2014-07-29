@@ -30,9 +30,8 @@ OPTIONS_DEFINE+=	GDBM
 
 .else	# !defined(PKGNAMESUFFIX)
 
-USES=		iconv gmake perl5
+USES=		iconv gmake perl5 tar:bzip2
 USE_AUTOTOOLS=	libltdl
-USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_SUBMAKE=	yes
 USE_LDCONFIG=	${PREFIX}/lib/${PORTNAME}

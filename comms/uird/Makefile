@@ -6,12 +6,11 @@ PORTVERSION=	1.1
 CATEGORIES=	comms
 MASTER_SITES=	http://kbinstuff.googlepages.com/ \
 		http://redundancy.redundancy.org/mirror/
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	lx@FreeBSD.org
 COMMENT=	The Universal IR Receiver Daemon
 
-USES=		perl5 gmake
+USES=		perl5 gmake tar:tgz
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 ALL_TARGET=	${PORTNAME}

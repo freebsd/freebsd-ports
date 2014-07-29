@@ -17,9 +17,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libgnutls.so:${PORTSDIR}/security/gnutls
 
-USE_BZIP2=	yes
 USE_AUTOTOOLS=	libtool
-USES=		pkgconfig
+USES=		pkgconfig tar:bzip2
 USE_APACHE=	22
 GNU_CONFIGURE=	yes
 

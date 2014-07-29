@@ -5,13 +5,12 @@ PORTNAME=	scrypt
 PORTVERSION=	1.1.6
 CATEGORIES=	security
 MASTER_SITES=	http://www.tarsnap.com/scrypt/
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Key Derivation Function
 
 GNU_CONFIGURE=	yes
-USES=	gmake
+USES=	gmake tar:tgz
 USE_LDCONFIG=	yes
 
 PLIST_FILES=	bin/scrypt \

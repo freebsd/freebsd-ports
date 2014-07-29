@@ -7,7 +7,6 @@ PORTREVISION=	8
 CATEGORIES=	games
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.//g}-src
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	glewis@FreeBSD.org
 COMMENT=	Dungeon explorin', slashin', hackin' game
@@ -19,7 +18,7 @@ LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-USES=		gmake
+USES=		gmake tar:tgz
 MAKE_ENV=	GRAPHICS="${GRAPHICS}"
 PLIST_SUB=	HACKNAME="${HACKNAME}"
 

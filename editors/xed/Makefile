@@ -8,12 +8,11 @@ CATEGORIES=	editors
 MASTER_SITES=	${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	editors
 DISTNAME=	${PORTNAME}${PORTVERSION}
-EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Text editor for X
 
-USES=		imake
+USES=		imake tar:Z
 USE_XORG=	xaw
 
 pre-build:

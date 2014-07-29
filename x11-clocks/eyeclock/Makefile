@@ -7,7 +7,6 @@ PORTREVISION=	3
 CATEGORIES=	x11-clocks
 MASTER_SITES=	http://ftp.vector.co.jp/pack/unix/personal/tokei/
 DISTNAME=	eyeclk20
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Clock with eyes following the mouse pointer
@@ -15,6 +14,7 @@ COMMENT=	Clock with eyes following the mouse pointer
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 MAKE_ENV=	X11BASE=${LOCALBASE}
 USE_XORG=	x11 xau xdmcp xpm xt ice
+USES=		tar:tgz
 
 post-patch:
 	@${REINPLACE_CMD} -e "s#gcc#${CC}#" ${WRKSRC}/Makefile

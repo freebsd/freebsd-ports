@@ -12,8 +12,7 @@ COMMENT=	System call tracer
 
 LICENSE=	BSD3CLAUSE
 
-USES=		shebangfix perl5	# perl5 for strace-graph
-USE_BZIP2=	yes
+USES=		shebangfix perl5	# perl5 for strace-graph tar:bzip2
 GNU_CONFIGURE=	yes
 ONLY_FOR_ARCHS=	i386
 

@@ -7,7 +7,6 @@ PORTREVISION=	3
 CATEGORIES=	www
 MASTER_SITES=	http://www.w3.org/People/Raggett/
 DISTNAME=	tidy4aug00
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Fixes and tidies up HTML files
@@ -15,12 +14,11 @@ COMMENT=	Fixes and tidies up HTML files
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${FILESDIR}/COPYRIGHT
 
+USES=		tar:tgz
 ALL_TARGET=	tidy
 DOCFILES=	Overview.html tidy.gif release-notes.html grid.gif
 
 OPTIONS_DEFINE=	DOCS
-
-.include <bsd.port.options.mk>
 
 do-configure:
 	${REINPLACE_CMD} -e 's|tidy|tidy4|' ${WRKSRC}/man_page.txt
@@ -28,11 +26,9 @@ do-configure:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/tidy ${STAGEDIR}${PREFIX}/bin/tidy4
 	${INSTALL_MAN}	${WRKSRC}/man_page.txt	${STAGEDIR}${PREFIX}/man/man1/tidy4.1
-.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for docfile in ${DOCFILES}
 	${INSTALL_MAN} ${WRKSRC}/${docfile} ${STAGEDIR}${DOCSDIR}/
 .endfor
-.endif
 
 .include <bsd.port.mk>

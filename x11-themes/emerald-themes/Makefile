@@ -11,8 +11,7 @@ COMMENT=	Themes for the Emerald Window Decorator
 BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash
 
 GNU_CONFIGURE=	yes
-USE_BZIP2=	yes
-USES=		gmake shebangfix
+USES=		gmake shebangfix tar:bzip2
 USE_AUTOTOOLS=	autoconf:env automake:env aclocal:env autoheader:env
 SHEBANG_FILES=	themes/import.sh
 

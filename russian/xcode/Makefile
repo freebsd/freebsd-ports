@@ -16,10 +16,11 @@ PLIST_FILES=	bin/xcode
 NO_WRKSUBDIR=	yes
 MAKEFILE=	makefile
 ALL_TARGET=	xcode
-CFLAGS+=	-DD_KOI
 
-NO_STAGE=	yes
+post-patch:
+	${REINPLACE_CMD} -e 's,gcc -g,${CC} ${CFLAGS},' ${WRKSRC}/makefile
+
 do-install:
-	@ ${INSTALL_PROGRAM} ${WRKSRC}/xcode ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/xcode ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>

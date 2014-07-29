@@ -14,9 +14,8 @@ COMMENT=	Miscellaneous GNU functions
 
 WRKSRC=		${WRKDIR}/binutils-${PORTVERSION}/libiberty
 
-USES=		gmake
+USES=		gmake tar:bzip2
 
-USE_BZIP2=	yes
 CONFIGURE_ARGS=	--enable-install-libiberty
 GNU_CONFIGURE=	yes
 

@@ -8,7 +8,6 @@ CATEGORIES=	math elisp
 MASTER_SITES=	http://proofgeneral.inf.ed.ac.uk/releases/
 PKGNAMESUFFIX=	-${EMACS_NAME}
 DISTNAME=	ProofGeneral-${PORTVERSION}
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	beyert@cs.ucr.edu
 COMMENT=	Generic interface for proof assistants
@@ -21,7 +20,7 @@ RUN_DEPENDS=	${LOCALBASE}/share/icons/hicolor/index.theme:${PORTSDIR}/misc/hicol
 
 USE_EMACS=	yes
 INSTALLS_ICONS=	yes
-USES=	gmake perl5 shebangfix
+USES=	gmake perl5 shebangfix tar:tgz
 SHEBANG_FILES=	lego/legotags coq/coqtags isar/isartags
 
 .include <bsd.port.pre.mk>

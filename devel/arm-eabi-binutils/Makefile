@@ -11,9 +11,8 @@ MAINTAINER=	kientzle@FreeBSD.org
 COMMENT=	GNU binutils for vanilla ARM cross-development
 
 GNU_CONFIGURE=	yes
-USES=		gmake
+USES=		gmake tar:bzip2
 
-USE_BZIP2=	yes
 CONFIGURE_ARGS=	--disable-nls --target=${PKGNAMEPREFIX:S/-$//} --enable-werror=no
 INFO_PATH=	${PKGNAMEPREFIX:S/-$//}/info
 

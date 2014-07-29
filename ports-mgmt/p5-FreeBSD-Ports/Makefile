@@ -11,9 +11,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl modules for parsing FreeBSD's Ports INDEX file
 
-USE_BZIP2=	yes
 
-USES=		perl5
+USES=		perl5 tar:bzip2
 USE_PERL5=	configure
 
 .include <bsd.port.mk>

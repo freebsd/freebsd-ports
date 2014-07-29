@@ -25,13 +25,5 @@ www/routers2/extras/templates/template-mrtg-ping
 www/routers2/extras/templates/template-mrtg-pnsclient
 www/routers2/extras/winalert.conf
 www/routers2/extras/winalert.pl
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/buildwan.txt
-%%PORTDOCS%%%%DOCSDIR%%/graphprune.txt
-%%PORTDOCS%%%%DOCSDIR%%/mrtg-nrpe.txt
-%%PORTDOCS%%%%DOCSDIR%%/mrtg-pnsclient.txt
-%%PORTDOCS%%%%DOCSDIR%%/rrd-archive.txt
-%%PORTDOCS%%%%DOCSDIR%%/winalert.txt
 @dirrm www/routers2/extras/templates
 @dirrm www/routers2/extras
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

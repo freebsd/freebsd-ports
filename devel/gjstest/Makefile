@@ -25,8 +25,7 @@ LIB_DEPENDS=	libgflags.so:${PORTSDIR}/devel/gflags \
 ALL_TARGET=	default
 CPPFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/libxml2
 CXXFLAGS+=	-L${LOCALBASE}/lib
-USE_BZIP2=	yes
-USES=		gmake
+USES=		gmake tar:bzip2
 
 PROJECTHOST=	google-js-test
 SNAPSHOT=	20130304

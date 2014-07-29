@@ -6,14 +6,13 @@ PORTVERSION=	1.4.8
 CATEGORIES=	security
 MASTER_SITES=	http://www.immunitysec.com/downloads/
 DISTNAME=	SP${PORTVERSION:tl:C/\.//g}
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tool looking for vulnerabilities in web applications
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}openssl>=0:${PORTSDIR}/security/py-openssl
 
-USES=		shebangfix
+USES=		shebangfix tar:tgz
 SHEBANG_FILES=	*.py
 USE_PYTHON=	yes
 NO_BUILD=	yes

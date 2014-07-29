@@ -61,7 +61,6 @@ WGET_DESC=		for downloading remote files (http, https, ftp)
 
 MAKE_JOBS_UNSAFE=	yes
 
-USE_BZIP2=	yes
 NO_STAGE=	yes
 
 USE_RC_SUBR=	liquidsoap
@@ -72,7 +71,7 @@ NO_OCAML_RUNDEPENDS=	yes
 USE_AUTOTOOLS=	autoconf:env automake:env
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=
-USES=		gmake pkgconfig
+USES=		gmake pkgconfig tar:bzip2
 
 CONFIGURE_ARGS=	--disable-gui --localstatedir=/var
 CFLAGS+=	-I${LOCALBASE}/${OCAML_LIBDIR}

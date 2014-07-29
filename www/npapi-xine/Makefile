@@ -14,8 +14,7 @@ COMMENT=	Embed Xine player into browser
 
 LIB_DEPENDS=	libxine.so:${PORTSDIR}/multimedia/libxine
 
-USES=		pkgconfig webplugin:native
-USE_BZIP2=	yes
+USES=		pkgconfig webplugin:native tar:bzip2
 GNU_CONFIGURE=	yes
 WEBPLUGIN_NAME=	#
 WEBPLUGIN_FILES=	xineplugin.so

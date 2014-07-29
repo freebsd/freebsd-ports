@@ -19,6 +19,7 @@ share/pixmaps/gtick_32x32.xpm
 %%NLS%%share/locale/fr/LC_MESSAGES/gtick.mo
 %%NLS%%share/locale/ga/LC_MESSAGES/gtick.mo
 %%NLS%%share/locale/gl/LC_MESSAGES/gtick.mo
+%%NLS%%share/locale/hu/LC_MESSAGES/gtick.mo
 %%NLS%%share/locale/id/LC_MESSAGES/gtick.mo
 %%NLS%%share/locale/it/LC_MESSAGES/gtick.mo
 %%NLS%%share/locale/ko/LC_MESSAGES/gtick.mo

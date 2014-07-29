@@ -1,0 +1,6 @@
+include/libserialport.h
+lib/libserialport.a
+lib/libserialport.so
+lib/libserialport.so.0
+lib/libserialport.so.0.0.0
+libdata/pkgconfig/libserialport.pc

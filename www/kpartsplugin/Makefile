@@ -12,8 +12,7 @@ COMMENT=	Browser file viewer using KDE technology
 
 USE_KDE4=	kdehier kdelibs kdeprefix automoc4
 USE_QT4=	corelib gui moc_build qmake_build rcc_build uic_build
-USE_BZIP2=	yes
-USES=		cmake webplugin:native
+USES=		cmake webplugin:native tar:bzip2
 CMAKE_ARGS=	-DNSPLUGIN_INSTALL_DIR:PATH="${WEBPLUGIN_DIR}"
 
 PORTDATE=	20120723

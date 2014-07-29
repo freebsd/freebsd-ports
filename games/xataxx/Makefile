@@ -7,14 +7,13 @@ PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	XCONTRIB/../R5contrib
 DISTNAME=	${PORTNAME}
-EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Strategy game of position and movement for X Window System
 
 OPTIONS_DEFINE=	DOCS
 
-USES=		imake
+USES=		imake tar:Z
 USE_XORG=	x11 xext
 
 post-install:

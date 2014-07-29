@@ -14,8 +14,7 @@ LICENSE=	MIT
 
 LIB_DEPENDS=	libexpat.so:${PORTSDIR}/textproc/expat2
 
-USES=		gmake iconv libtool:keepla
-USE_BZIP2=	yes
+USES=		gmake iconv libtool:keepla tar:bzip2
 USE_LDCONFIG=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib ${ICONV_LIB}

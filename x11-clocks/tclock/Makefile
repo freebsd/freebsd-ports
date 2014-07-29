@@ -7,13 +7,12 @@ PORTREVISION=	2
 CATEGORIES=	x11-clocks
 MASTER_SITES=	http://www.linta.de/distfiles/ \
 		ftp://ftp.uni-potsdam.de/pub/X11/tools/clocks/
-EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	aehlig@linta.de
 COMMENT=	Transparent analog clock for x11
 
 NO_WRKSUBDIR=	yes
-USES=		imake
+USES=		imake tar:Z
 USE_XORG=	x11 xext
 PLIST_FILES=	bin/tclock man/man1/${PORTNAME}.1.gz
 

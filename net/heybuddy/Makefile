@@ -7,7 +7,6 @@ PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://launchpad.net/${PORTNAME}/${PORTVERSION:R}/${PORTVERSION}/+download/ \
 		http://freebsd.grindcore.ch/distfiles/
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Supposedly light, feature free identi.ca client
@@ -31,7 +30,7 @@ OPTIONS_DEFINE=	NLS
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}
-USES+=		gettext
+USES+=		gettext tar:tgz
 PLIST_SUB+=	NLS=""
 .else
 PLIST_SUB+=	NLS="@comment "

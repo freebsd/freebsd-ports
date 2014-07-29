@@ -13,8 +13,6 @@ COMMENT=	Nonsense text generator
 NO_BUILD=	yes
 NO_ARCH=	yes
 
-.include <bsd.port.options.mk>
-
 post-configure:
 		${REINPLACE_CMD} -e "s,/usr/local,${PREFIX}," ${WRKSRC}/nonsense
 		${SED} -e "s^%%PREFIX%%^${PREFIX}^g" \

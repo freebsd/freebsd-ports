@@ -2,121 +2,89 @@
 # $FreeBSD$
 
 PORTNAME=	gauche
-PORTVERSION=	0.9.3.3
-PORTREVISION=	1
+PORTVERSION=	0.9.4
 CATEGORIES=	lang scheme
-MASTER_SITES=	SF/${PORTNAME}/Gauche/
+MASTER_SITES=	SF/${PORTNAME}/Gauche
 DISTNAME=	Gauche-${PORTVERSION}
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Scheme script interpreter with multibyte character handling
 
-OPTIONS_DEFINE=	GDBM SLIB DOCS MANPAGES
-OPTIONS_SINGLE=	THREADS MULTIBYTE
-OPTIONS_SINGLE_THREADS=	PTHREADS NO_THREADS
-OPTIONS_SINGLE_MULTIBYTE=UTF8 EUCJP SJIS NO_MULTIBYTE
-OPTIONS_DEFAULT=PTHREADS UTF8 MANPAGES
-SLIB_DESC=	Create catalogue for SLIB port
-PTHREADS_DESC=	Enable POSIX thread support
-NO_THREADS_DESC=No threading support
-EUCJP_DESC=	EUC-JP encoding support
-SJIS_DESC=	Shift_JIS encoding support
-NO_MULTIBYTE_DESC=No multibyte character encoding support
-NO_OPTIONS_SORT=yes
+LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKSRC}/COPYING
 
-# breaks in ext/uvecor.c on some locales
-MAKE_ENV=	LANG=C
-# avoids a problem with with ccache's pre-processor optimization
-MAKE_ENV+=	CCACHE_CPP2=1
-
-DATADIR?=	${PREFIX}/share/${PORTNAME}-0.9
-
+USES=		iconv makeinfo tar:tgz
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-tls=none \
-		--with-iconv=${ICONV_PREFIX}
-PLIST_SUB=	VERSION="${PORTVERSION}" \
-		TARGET="${CONFIGURE_TARGET}"
-USES=		iconv
+		${ICONV_CONFIGURE_BASE:S/lib//}
 USE_LDCONFIG=	yes
 MAKE_JOBS_UNSAFE=yes
 
-NO_STAGE=	yes
+PLIST_SUB=	VERSION="${PORTVERSION}" \
+		TARGET="${CONFIGURE_TARGET}"
+
+# breaks in ext/uvecor.c on some locales
+MAKE_ENV+=	LANG=C
+# avoids a problem with with ccache's pre-processor optimization
+MAKE_ENV+=	CCACHE_CPP2=1
+
+INFO=		gauche-refe gauche-refj
+
+BROKEN_ia64=	Does not build with ${ARCH}
+BROKEN_powerpc=	Does not build with ${ARCH}
+BROKEN_sparc=	Does not build with ${ARCH}
+
+OPTIONS_DEFINE=		GDBM THREADS SLIB
+OPTIONS_RADIO=		MULTIBYTE
+OPTIONS_RADIO_MULTIBYTE=	EUCJP SJIS UTF8
+OPTIONS_DEFAULT=	THREADS UTF8
+OPTIONS_SUB=		yes
+
+EUCJP_DESC=		EUC-JP encoding support
+EUCJP_CONFIGURE_ON=	--enable-multibyte=euc-jp
+GDBM_LIB_DEPENDS=	libgdbm.so:${PORTSDIR}/databases/gdbm
+GDBM_CONFIGURE_ON=	--with-local=${LOCALBASE}
+SLIB_DESC=		Create catalogue for SLIB port
+SLIB_BUILD_DEPENDS=	slib>0:${PORTSDIR}/lang/slib
+SLIB_CONFIGURE_ON=	--with-slib=${LOCALBASE}/share/slib
+SLIB_CONFIGURE_OFF=	--with-slib=${WRKDIR}
+SJIS_DESC=		Shift_JIS encoding support
+SJIS_CONFIGURE_ON=	--enable-multibyte=sjis
+THREADS_CONFIGURE_ON=	--enable-threads=pthreads
+THREADS_CONFIGURE_OFF=	--enable-threads=no
+UTF8_CONFIGURE_ON=	--enable-multibyte=utf-8
+
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MDOCS}
-USES+=		makeinfo
-INFO=		gauche-refe gauche-refj
-.endif
-
-.if ${PORT_OPTIONS:MMANPAGES}
-
-MAN1=		gosh.1 gauche-cesconv.1 gauche-config.1 gauche-install.1 \
-		gauche-package.1
-
-.else
-MANPREFIX=	${WRKDIR}
-.endif
-
-.if ${PORT_OPTIONS:MGDBM}
-CONFIGURE_ARGS+=--with-local=${LOCALBASE}
-LIB_DEPENDS+=	libgdbm.so:${PORTSDIR}/databases/gdbm
-PLIST_SUB+=	GDBM=""
-.else
-PLIST_SUB+=	GDBM="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MSLIB}
-BUILD_DEPENDS+=	slib>=0:${PORTSDIR}/lang/slib
-CONFIGURE_ARGS+=--with-slib=${LOCALBASE}/share/slib
-PLIST_SUB+=	SLIB=""
-.else
-CONFIGURE_ARGS+=--with-slib=${WRKDIR}
-PLIST_SUB+=	SLIB="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MPTHREADS}
-CONFIGURE_ARGS+=	--enable-threads=pthreads
-.else
-CONFIGURE_ARGS+=	--enable-threads=no
-.endif
-
-.if ${PORT_OPTIONS:MUTF8}
-CONFIGURE_ARGS+=	--enable-multibyte=utf-8
-.elif ${PORT_OPTIONS:MEUCJP}
-CONFIGURE_ARGS+=	--enable-multibyte=euc-jp
-.elif ${PORT_OPTIONS:MSJIS}
-CONFIGURE_ARGS+=	--enable-multibyte=sjis
-.else
+.if !${PORT_OPTIONS:MEUCJP} && !${PORT_OPTIONS:MSJIS} && !${PORT_OPTIONS:MUTF8}
 CONFIGURE_ARGS+=	--enable-multibyte=none
 .endif
 
-.include <bsd.port.pre.mk>
-
-NOT_FOR_ARCHS=		ia64 powerpc sparc64
-NOT_FOR_ARCHS_REASON=	Does not compile on ia64, powerpc, or sparc64
-
 post-patch:
-.if ! ${PORT_OPTIONS:MDOCS}
-	@${REINPLACE_CMD} -e 's|all: info|all:|' ${WRKSRC}/doc/Makefile.in
-.endif
+	@${REINPLACE_CMD} -e \
+		's|-lpthread|-pthread|' ${WRKSRC}/configure
 
 post-install:
-	${STRIP_CMD} ${PREFIX}/bin/gosh
-	${MKDIR} ${PREFIX}/share/gauche/site/lib/.packages
-	${TOUCH} ${PREFIX}/share/gauche/site/lib/.packages/.keepme
-	${TOUCH} ${PREFIX}/lib/gauche-0.9/site/${CONFIGURE_TARGET}/.keepme
-	${MKDIR} ${PREFIX}/share/gauche/${PORTVERSION}/lib/.packages
-	${TOUCH} ${PREFIX}/share/gauche/${PORTVERSION}/lib/.packages/.keepme
-	${MKDIR} ${DOCSDIR}
-	${TOUCH} ${DOCSDIR}/.keepme
-	${MKDIR} ${EXAMPLESDIR}
-	${TOUCH} ${EXAMPLESDIR}/.keepme
-.if ${PORT_OPTIONS:MDOCS}
-	${INSTALL_DATA} ${WRKSRC}/doc/*.info.gz ${WRKSRC}/doc/*.info-[1-7].gz ${PREFIX}/info/
-.endif
+	@${TOUCH} ${STAGEDIR}${PREFIX}/lib/gauche-0.9/site/${CONFIGURE_TARGET}/.keepme
+	@${MKDIR} ${STAGEDIR}${DATADIR}/${PORTVERSION}/lib/.packages
+	@${TOUCH} ${STAGEDIR}${DATADIR}/${PORTVERSION}/lib/.packages/.keepme
+	@${MKDIR} ${STAGEDIR}${DATADIR}/site/lib/.packages
+	@${TOUCH} ${STAGEDIR}${DATADIR}/site/lib/.packages/.keepme
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/gauche-0.9/site/lib/.packages
+	@${TOUCH} ${STAGEDIR}${PREFIX}/share/gauche-0.9/site/lib/.packages/.keepme
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	@${TOUCH} ${STAGEDIR}${DOCSDIR}/.keepme
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	@${TOUCH} ${STAGEDIR}${EXAMPLESDIR}/.keepme
+.for i in gauche-config gosh
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${i}
+.endfor
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libgauche-0.9.so.[0-9].*
+.for i in gauche-config gosh *.so
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/gauche-0.9/${PORTVERSION}/${CONFIGURE_TARGET}/${i}
+.endfor
 
 regression-test: build
-	cd ${WRKSRC} && ${MAKE} check
+	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} check
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

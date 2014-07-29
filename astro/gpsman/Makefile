@@ -5,14 +5,13 @@ PORTNAME=	gpsman
 PORTVERSION=	6.4.4.2
 CATEGORIES=	astro tk geography
 MASTER_SITES=	SF/${PORTNAME}/distrib
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	david@catwhisker.org
 COMMENT=	Tcl/Tk-based GPS management utility
 
 OPTIONS_DEFINE=	DOCS
 
-USES+=		tk:wrapper,run
+USES+=		tk:wrapper,run tar:tgz
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 GPSMANDIR=	${PREFIX}/lib/${PORTNAME}

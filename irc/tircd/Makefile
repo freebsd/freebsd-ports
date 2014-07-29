@@ -5,7 +5,6 @@ PORTNAME=	tircd
 PORTVERSION=	0.30
 CATEGORIES=	irc
 MASTER_SITES=	GOOGLE_CODE
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	gavin@FreeBSD.org
 COMMENT=	IRC proxy to Twitter
@@ -20,7 +19,7 @@ RUN_DEPENDS=	p5-JSON-Any>=0:${PORTSDIR}/converters/p5-JSON-Any \
 		p5-POE>=0:${PORTSDIR}/devel/p5-POE \
 		p5-POE-Filter-IRCD>=0:${PORTSDIR}/irc/p5-POE-Filter-IRCD
 
-USES=		perl5
+USES=		perl5 tar:tgz
 USE_PERL5=	patch build run
 NO_BUILD=	yes
 

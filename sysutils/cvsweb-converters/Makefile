@@ -16,9 +16,8 @@ RUN_DEPENDS=	p5-URI>=0:${PORTSDIR}/net/p5-URI \
 		p5-Time-modules>=0:${PORTSDIR}/devel/p5-Time-modules
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
-USES=		perl5
+USES=		perl5 tar:bzip2
 NO_BUILD=	yes
-USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 
 PLIST_FILES=	bin/commitlog2cvsweb bin/cvsrdiff2cvsweb \

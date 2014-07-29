@@ -23,10 +23,9 @@ LIB_DEPENDS=	libvorbis.so:${PORTSDIR}/audio/libvorbis \
 BUILD_DEPENDS=	${LOCALBASE}/include/mxml.h:${PORTSDIR}/textproc/mxml
 RUN_DEPENDS=	${LOCALBASE}/share/${PORTNAME}/base/default.cfg:${PORTSDIR}/games/ufoai-data
 
-USE_BZIP2=	yes
 USE_GL=		yes
 USE_SDL=	sdl image mixer ttf
-USES=		gettext gmake openal:soft pkgconfig
+USES=		gettext gmake openal:soft pkgconfig tar:bzip2
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--enable-release
 CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}

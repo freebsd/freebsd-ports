@@ -6,7 +6,6 @@ PORTVERSION=	0.03
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	DateTime support for Catalyst
@@ -18,7 +17,7 @@ RUN_DEPENDS=	p5-Catalyst-Runtime>=5.7000:${PORTSDIR}/www/p5-Catalyst-Runtime \
 		p5-DateTime>=0:${PORTSDIR}/devel/p5-DateTime
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
-USES=		perl5
+USES=		perl5 tar:tgz
 USE_PERL5=	configure
 
 .include <bsd.port.mk>

@@ -12,8 +12,7 @@ COMMENT=	Command-line tool to play audio and video files
 LICENSE=	LGPL20
 
 GNU_CONFIGURE=	yes
-USES=		gmake pkgconfig
-USE_BZIP2=	yes
+USES=		gmake pkgconfig tar:bzip2
 USE_GNOME=	gtk20
 CONFIGURE_ENV=	NCURSES5_CONFIG=/usr/bin/true
 LDFLAGS+=	-lncurses -L${LOCALBASE}/lib

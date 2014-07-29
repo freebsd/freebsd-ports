@@ -10,7 +10,6 @@ MASTER_SITES=	http://download.polytechnic.edu.na/pub2/openpkg1/sources/DST/vcg/ 
 		http://ftp.sjtu.edu.cn/sites/ftp.openpkg.org/sources/DST/vcg/ \
 		ftp://ftp.cs.uni-sb.de/pub/graphics/vcg/
 DISTNAME=	${PORTNAME}.20050204
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Visualization Tool for compiler graphs
@@ -19,7 +18,7 @@ LICENSE=	GPLv2 # (or later)
 
 WRKSRC=		${WRKDIR}/${PORTNAME}.${PORTVERSION}
 
-USES=		imake:env
+USES=		imake:env tar:tgz
 USE_XORG=	x11 xext
 MAKE_JOBS_UNSAFE=	yes
 

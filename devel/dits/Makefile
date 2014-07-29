@@ -9,9 +9,8 @@ MASTER_SITES=	http://codeconcepts.com/
 MAINTAINER=	greg@codeconcepts.com
 COMMENT=	Data integrity verifying disk exercising test tool
 
-USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
-USES=		gmake
+USES=		gmake tar:bzip2
 
 PLIST_FILES=	bin/dits \
 		man/man1/dits.1.gz

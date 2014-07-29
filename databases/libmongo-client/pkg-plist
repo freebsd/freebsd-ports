@@ -9,9 +9,9 @@ include/mongo-client/sync-gridfs.h
 include/mongo-client/sync-gridfs-chunk.h
 include/mongo-client/sync-gridfs-stream.h
 include/mongo-client/mongo.h
-lib/libmongo-client.so.3
+lib/libmongo-client.so.0.3.4
+lib/libmongo-client.so.0
 lib/libmongo-client.so
-lib/libmongo-client.la
 lib/libmongo-client.a
 libdata/pkgconfig/libmongo-client.pc
 @dirrm include/mongo-client

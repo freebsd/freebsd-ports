@@ -12,9 +12,8 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GNOME app to post to blogs
 
-USE_BZIP2=	yes
 USE_PYTHON=	yes
-USES=		gettext gmake pkgconfig
+USES=		gettext gmake pkgconfig tar:bzip2
 GNU_CONFIGURE=	yes
 USE_GNOME=	gnomehack gnomeprefix pygnome2 intlhack
 CPPFLAGS+=	-I${LOCALBASE}/include

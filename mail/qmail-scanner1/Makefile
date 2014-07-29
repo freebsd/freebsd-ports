@@ -7,7 +7,6 @@ PORTREVISION=	3
 CATEGORIES=	mail security
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.r/rc/}
-EXTRACT_SUFX=	.tgz
 PKGNAMESUFFIX=	1
 
 MAINTAINER= ports@FreeBSD.org
@@ -23,7 +22,7 @@ SUB_LIST=	SPOOLDIR=${SPOOLDIR}
 
 CONFLICTS=	qmail-scanner-2.*
 
-USES=		qmail perl5
+USES=		qmail perl5 tar:tgz
 
 QMAIL_QUEUE=	${QMAIL_PREFIX}/bin/qmail-queue
 

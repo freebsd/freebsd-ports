@@ -9,3 +9,16 @@
      }
  
      $params->{realname}  ||= $user_entry->get_value("displayName");
+--- token.cgi.dist	2014-06-03 00:27:29.279355734 +0000
++++ token.cgi	2014-06-03 00:37:48.727359133 +0000
+@@ -122,6 +122,10 @@
+     my $login_name = $cgi->param('loginname')
+       or ThrowUserError("login_needed_for_password_change");
+ 
++    if ($login_name =~ /[@.]FreeBSD\.org$/i) {
++	ThrowUserError("password_change_requests_not_allowed");
++    }
++
+     check_email_syntax($login_name);
+     my $user = Bugzilla::User->check($login_name);
+ 

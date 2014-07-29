@@ -15,7 +15,7 @@ COMMENT=	Extensible hardware simulation framework with MC68K support
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
 MAKE_ENV=	PROJECT_BASE=${STAGEDIR}${PREFIX} WRKSRC=${WRKSRC} WISH=${WISH}
 
-USES+=		tk
+USES=		tk
 MAKE_JOBS_UNSAFE=	yes
 
 pre-patch:

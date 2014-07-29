@@ -12,8 +12,7 @@ COMMENT=	General Applet Interface Library
 
 LIB_DEPENDS=	libgtkglext-x11-1.0.so:${PORTSDIR}/x11-toolkits/gtkglext
 
-USE_BZIP2=	yes
-USES=		pkgconfig
+USES=		pkgconfig tar:bzip2
 USE_GL=		gl
 USE_SDL=	sdl
 USE_GNOME=	libgnomeui

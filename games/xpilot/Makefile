@@ -9,8 +9,7 @@ MASTER_SITES=	SF/${PORTNAME}game/${PORTNAME}-4/${PORTNAME}-${PORTVERSION}
 MAINTAINER=	lme@FreeBSD.org
 COMMENT=	Xpilot(client) and xpilots(server)
 
-USE_BZIP2=	yes
 USE_XORG=	x11 xext
-USES=		imake
+USES=		imake tar:bzip2
 
 .include <bsd.port.mk>

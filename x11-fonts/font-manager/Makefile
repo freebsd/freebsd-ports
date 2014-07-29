@@ -17,11 +17,10 @@ LIB_DEPENDS=	libsqlite3.so:${PORTSDIR}/databases/sqlite3
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/libxml2.py:${PORTSDIR}/textproc/py-libxml2 \
 		${PYTHON_PKGNAMEPREFIX}sqlite3>0:${PORTSDIR}/databases/py-sqlite3
 
-USE_BZIP2=	yes
 USE_PYTHON=	2
 USE_GNOME=	pygtk2
 GNU_CONFIGURE=	yes
-USES=		gmake pkgconfig
+USES=		gmake pkgconfig tar:bzip2
 
 PORTDATA=	*
 

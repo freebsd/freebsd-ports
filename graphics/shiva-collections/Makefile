@@ -8,8 +8,7 @@ MASTER_SITES=	http://download.opengtl.org/
 MAINTAINER=	avilla@FreeBSD.org
 COMMENT=	Collection of kernels for OpenGTL
 
-USE_BZIP2=	yes
-USES=		cmake
+USES=		cmake tar:bzip2
 NO_BUILD=	yes
 
 .include <bsd.port.mk>

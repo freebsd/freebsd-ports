@@ -6,14 +6,13 @@ PORTVERSION=	4.5.0
 CATEGORIES=	mail java
 MASTER_SITES=	SF/davmail/davmail/${PORTVERSION}
 DISTNAME=	${PORTNAME}-src-${PORTVERSION}-${REVISION}
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	john.c.prather@gmail.com
 COMMENT=	POP/IMAP/SMTP/Caldav/Carddav/LDAP Exchange Gateway
 
 LICENSE=	GPLv2
 
-USES=		dos2unix
+USES=		dos2unix tar:tgz
 DOS2UNIX_FILES=	build.xml
 USE_ANT=	yes
 USE_JAVA=	yes

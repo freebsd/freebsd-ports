@@ -7599,6 +7599,7 @@
 @dirrmtry %%WWWDIR%%/mibs/xirrus
 @dirrmtry %%WWWDIR%%/mibs/zyxel
 @dirrmtry %%WWWDIR%%/mibs
+@dirrmtry %%WWWDIR%%/rrd
 @dirrmtry %%WWWDIR%%/scripts/agent-local/munin-scripts
 @dirrmtry %%WWWDIR%%/scripts/agent-local
 @dirrmtry %%WWWDIR%%/scripts/watchmaillog

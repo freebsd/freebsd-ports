@@ -7,14 +7,13 @@ PORTREVISION=	3
 CATEGORIES=	net
 MASTER_SITES=	SF \
 		http://fakehalo.deadpig.org/%SUBDIR%/
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Portable/multi-platform lightweight TCP socket scripting
 
 OPTIONS_DEFINE=	DOCS EXAMPLES GTK1
 
-USES=		ncurses shebangfix
+USES=		ncurses shebangfix tar:tgz
 SHEBANG_FILES=	examples/*.ruleset examples/gui/*.ruleset \
 		examples/ncurses/*.ruleset
 SHEBANG_LANG=	netscript

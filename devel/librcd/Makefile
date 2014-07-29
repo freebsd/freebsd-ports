@@ -10,9 +10,8 @@ MASTER_SITES=	http://dside.dyndns.org/files/rusxmms/ \
 MAINTAINER=	fluffy@FreeBSD.org
 COMMENT=	Library used by rusxmms for autodetection of Russian charset
 
-USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
-USES=		gmake pathfix
+USES=		gmake pathfix tar:bzip2
 USE_LDCONFIG=	yes
 
 .include <bsd.port.mk>

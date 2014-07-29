@@ -13,9 +13,8 @@ COMMENT=	Freedesktop.org EFL compatibility layer
 LICENSE=	BSD
 
 DIST_SUBDIR=	e17
-USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
-USES=		pathfix pkgconfig
+USES=		pathfix pkgconfig tar:bzip2
 USE_EFL=	eet eina ecore libtool_hack librt_hack
 USE_EFL_ECORE=	file
 USE_LDCONFIG=	yes

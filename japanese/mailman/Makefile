@@ -10,7 +10,6 @@ MASTER_SITES=	http://www.python.jp/doc/contrib/mailman/_static/ \
 		LOCAL
 MASTER_SITE_SUBDIR=	tota/${PORTNAME}
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.j/+j/}
-EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	mailman
 
 MAINTAINER=	tota@FreeBSD.org
@@ -24,7 +23,7 @@ CONFLICTS=	mailman-2.1.*
 PORTSCOUT=	limit:.*\.j\d+$$
 
 USE_AUTOTOOLS=	autoconf
-USES=		gettext
+USES=		gettext tar:tgz
 USE_PYTHON=	2
 USE_RC_SUBR=	mailman
 

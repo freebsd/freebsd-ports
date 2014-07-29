@@ -6,7 +6,6 @@ PORTVERSION=	3.5
 PORTREVISION=	3
 CATEGORIES=	databases
 MASTER_SITES=	http://hackmysql.com/scripts/
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	lippe@FreeBSD.org
 COMMENT=	Mysqlreport makes a friendly report of important MySQL status values
@@ -19,7 +18,7 @@ RUN_DEPENDS=	p5-DBD-mysql>=0:${PORTSDIR}/databases/p5-DBD-mysql \
 
 OPTIONS_DEFINE=	DOCS
 
-USES=		perl5 shebangfix
+USES=		perl5 shebangfix tar:tgz
 NO_BUILD=	yes
 
 PLIST_FILES=	bin/mysqlreport

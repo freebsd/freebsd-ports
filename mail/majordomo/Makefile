@@ -8,12 +8,11 @@ CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.nuug.no/pub/anders/distfiles/ \
 		ftp://ftp.sgi.com/other/majordomo/1.94.5/ \
 		ftp://ftp.greatcircle.com/pub/majordomo/1.94.5/
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER= ports@FreeBSD.org
 COMMENT=	Mailing list manager
 
-USES=		shebangfix perl5
+USES=		shebangfix perl5 tar:tgz
 
 SHEBANG_FILES=	contrib/sequencer
 

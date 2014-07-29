@@ -5,14 +5,13 @@ PORTNAME=	clhep
 PORTVERSION=	2.1.0.1
 CATEGORIES=	science
 MASTER_SITES=	http://wwwasd.web.cern.ch/wwwasd/lhc++/clhep/DISTRIBUTION/tarFiles/
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Object-oriented toolkit for particle physics applications by CERN
 
 WRKSRC=		${WRKDIR}/${PORTVERSION}/${PORTNAME:tu}
 
-USES=		gmake perl5
+USES=		gmake perl5 tar:tgz
 USE_PERL5=	build
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-gmake

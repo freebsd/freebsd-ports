@@ -16,9 +16,8 @@ RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/podsleuth.pc:${PORTSDIR}/misc/podsle
 		${LOCALBASE}/libdata/pkgconfig/ndesk-dbus-glib-1.0.pc:${PORTSDIR}/devel/ndesk-dbus-glib
 
 GNU_CONFIGURE=	yes
-USE_BZIP2=	yes
 NO_STAGE=	yes
-USES=		gmake pathfix pkgconfig
+USES=		gmake pathfix pkgconfig tar:bzip2
 USE_GNOME=	gtksharp20
 
 .include <bsd.port.mk>

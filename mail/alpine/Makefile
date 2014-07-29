@@ -6,7 +6,6 @@ PORTREVISION?=	2
 CATEGORIES?=	mail news ipv6
 MASTER_SITES=	http://patches.freeiz.com/alpine/release/src/
 DIST_SUBDIR=	alpine-${PORTVERSION}
-EXTRACT_SUFX=	.tar.xz
 
 MAINTAINER=	mbeis@xs4all.nl
 COMMENT?=	Mail and news client descended from Pine
@@ -30,7 +29,7 @@ CONS25_DESC=	Add a patch to support color for default console
 MAILDIR_DESC=	Add a patch for maildir support
 .endif
 
-USES=		libtool
+USES=		libtool tar:xz
 
 MAKE_JOBS_UNSAFE=	yes
 

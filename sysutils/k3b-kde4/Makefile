@@ -15,8 +15,7 @@ LIB_DEPENDS=	libcdda_paranoia.so:${PORTSDIR}/audio/cdparanoia \
 RUN_DEPENDS=	cdrecord:${PORTSDIR}/sysutils/cdrtools
 BUILD_DEPENDS=	cdrecord:${PORTSDIR}/sysutils/cdrtools
 
-USE_BZIP2=	yes
-USES=		cmake shared-mime-info pkgconfig
+USES=		cmake shared-mime-info pkgconfig tar:bzip2
 CMAKE_ARGS=	-DK3B_BUILD_K3BSETUP:BOOL=OFF \
 		-DK3B_ENABLE_MUSICBRAINZ:BOOL=OFF
 USE_KDE4=	automoc4 kdeprefix kdelibs libkcddb

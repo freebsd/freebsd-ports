@@ -5,7 +5,6 @@ PORTVERSION=	0.8.6
 PORTREVISION=	4
 CATEGORIES=	math
 MASTER_SITES=	http://www.cyut.edu.tw/~ckhung/dl/
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	kevlo@FreeBSD.org
 COMMENT=	Interactive tutorial for algorithms and data structures
@@ -23,7 +22,7 @@ LIBFILES=	BST.pm Board.pm Collection.pm Configurable.pm DCEdge.pm \
 		RecCanvas.pm RecDialog.pm TreeNode.pm Vector.pm Vector2.pm \
 		Vector3.pm Vertex.pm basic.pl utilalgo
 
-USES=		shebangfix perl5
+USES=		shebangfix perl5 tar:tgz
 SHEBANG_FILES=	algotutor
 
 post-patch:

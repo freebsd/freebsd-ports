@@ -2,10 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	MathJax
-PORTVERSION=	2.3
+PORTVERSION=	2.4
 CATEGORIES=	www
 
-MAINTAINER=	cs@FreeBSD.org
+MAINTAINER=	lukasz.stelmach@iem.pw.edu.pl
 COMMENT=	Cross-browser JavaScript display engine for mathematics
 
 NO_BUILD=	yes
@@ -13,7 +13,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	mathjax
 GH_TAGNAME=	v${PORTVERSION}
 
-WRKSRC=	${WRKDIR}/${GH_ACCOUNT}-${PORTNAME}-705548f
+WRKSRC=	${WRKDIR}/${GH_ACCOUNT}-${PORTNAME}-f75c5d5
 
 # Changing permissions of 30k files with find -exec (COPYTREE) is way
 # too slow.

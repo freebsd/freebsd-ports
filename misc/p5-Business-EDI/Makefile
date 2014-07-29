@@ -7,7 +7,6 @@ CATEGORIES=	misc perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:JOEATZ
 PKGNAMEPREFIX=	p5-
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	m.ne@gmx.net
 COMMENT=	Class for generating EDI objects and subobjects
@@ -24,7 +23,7 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 WRKSRC=		${WRKDIR}/atz-${PORTNAME}-327e01f
 
-USES=		perl5
+USES=		perl5 tar:tgz
 USE_PERL5=	configure
 
 .include <bsd.port.mk>

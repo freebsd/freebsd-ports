@@ -6,7 +6,6 @@ PORTVERSION=	1.0.0
 PORTREVISION=	6
 CATEGORIES=	net-mgmt
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/1.0
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Nagiostat parses performance-data from Nagios and generates graphs
@@ -14,7 +13,7 @@ COMMENT=	Nagiostat parses performance-data from Nagios and generates graphs
 RUN_DEPENDS=	rrdtool:${PORTSDIR}/databases/rrdtool \
 		nagios:${PORTSDIR}/net-mgmt/nagios
 
-USES=		perl5
+USES=		perl5 tar:tgz
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 NAGIOSDIR?=	/var/spool/nagios

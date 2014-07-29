@@ -8,7 +8,6 @@ CATEGORIES=	math
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	${PORTNAME}/${PORTVERSION}
 DISTNAME=	${PORTNAME}-${PORTVERSION}.src
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	Powerful script-based vector graphics language
@@ -36,7 +35,7 @@ MAKE_JOBS_UNSAFE=	yes
 
 ONLY_FOR_ARCHS=	i386 amd64
 
-USES=		gmake perl5
+USES=		gmake perl5 tar:tgz
 USE_AUTOTOOLS=	autoconf aclocal
 USE_GHOSTSCRIPT=yes
 USE_GL=	glut

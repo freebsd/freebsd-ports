@@ -1,3 +1,5 @@
+@owner %%WWWOWN%%
+@group %%WWWGRP%%
 www/glpi/plugins/tracker/ajax/plugin_tracker.functionalities.tabs.php
 www/glpi/plugins/tracker/docs/CHANGELOG.TXT
 www/glpi/plugins/tracker/docs/LISEZMOI.TXT
@@ -161,6 +163,8 @@ www/glpi/plugins/tracker/scripts/tracker_fullsync.php
 www/glpi/plugins/tracker/scripts/tracker_fullsync.sh
 www/glpi/plugins/tracker/setup.php
 www/glpi/plugins/tracker/tool/parselog.pl
+@group
+@owner
 @dirrm www/glpi/plugins/tracker/tool
 @dirrm www/glpi/plugins/tracker/scripts
 @dirrm www/glpi/plugins/tracker/report

@@ -8,12 +8,11 @@ CATEGORIES=	japanese
 MASTER_SITES=	http://www.omronsoft.co.jp/SP/pcunix/sdk/wnn/
 PKGNAMESUFFIX=	-lib
 DISTNAME=	Wnn7SDK
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Wnn7 client library
 
-USES=		imake
+USES=		imake tar:tgz
 USE_LDCONFIG=	yes
 WRKSRC=		${WRKDIR}/src
 PORTDOCS=	README
@@ -29,12 +28,12 @@ post-patch:
 
 # Warning: we cannot use USE_IMAKE.
 do-build:
-	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} make World -f Makefile.ini
+	(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} make World -f Makefile.ini)
 
 post-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/include/wnn7/wnn
 	${INSTALL_DATA} ${WRKSRC}/Wnn/include/*.h ${STAGEDIR}${PREFIX}/include/wnn7/wnn
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
-	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
+	(cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR})
 
 .include <bsd.port.mk>

@@ -7,12 +7,12 @@ CATEGORIES=		games
 MASTER_SITES=		${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	games/arcade
 DISTNAME=		dr_mario
-EXTRACT_SUFX=		.tar.Z
 
 MAINTAINER=		ports@FreeBSD.org
-COMMENT=	Very simple Tetris-style game
+COMMENT=		Very simple Tetris-style game
 
 ALL_TARGET=
+USES=			tar:Z
 
 OPTIONS_DEFINE=	DOCS
 

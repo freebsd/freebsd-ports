@@ -420,6 +420,8 @@ man/man1/anki.1.gz
 %%DATADIR%%/designer/icons/edit.png
 %%DATADIR%%/designer/icons/editclear.png
 %%DATADIR%%/designer/icons/editdelete.png
+%%DATADIR%%/designer/icons/emblem-favorite-dark.png
+%%DATADIR%%/designer/icons/emblem-favorite-off.png
 %%DATADIR%%/designer/icons/emblem-favorite.png
 %%DATADIR%%/designer/icons/emblem-important.png
 %%DATADIR%%/designer/icons/fileclose.png
@@ -625,6 +627,8 @@ man/man1/anki.1.gz
 %%DATADIR%%/tests/support/diffmodels2-1.apkg
 %%DATADIR%%/tests/support/diffmodels2-2.apkg
 %%DATADIR%%/tests/support/diffmodels2.anki
+%%DATADIR%%/tests/support/diffmodeltemplates-1.apkg
+%%DATADIR%%/tests/support/diffmodeltemplates-2.apkg
 %%DATADIR%%/tests/support/fake.png
 %%DATADIR%%/tests/support/invalid-ords.anki
 %%DATADIR%%/tests/support/media.apkg
@@ -663,9 +667,6 @@ man/man1/anki.1.gz
 %%DATADIR%%/tests/test_models.py
 %%DATADIR%%/tests/test_models.pyc
 %%DATADIR%%/tests/test_models.pyo
-%%DATADIR%%/tests/test_remote_sync.py
-%%DATADIR%%/tests/test_remote_sync.pyc
-%%DATADIR%%/tests/test_remote_sync.pyo
 %%DATADIR%%/tests/test_sched.py
 %%DATADIR%%/tests/test_sched.pyc
 %%DATADIR%%/tests/test_sched.pyo

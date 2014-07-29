@@ -5,12 +5,11 @@ PORTNAME=	pal
 PORTVERSION=	0.4.3
 CATEGORIES=	deskutils
 MASTER_SITES=	SF/${PORTNAME}cal/${PORTNAME}/${PORTVERSION}
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	h.skuhra@gmail.com
 COMMENT=	Calendar application
 
-USES=		pkgconfig gettext gmake
+USES=		pkgconfig gettext gmake tar:tgz
 USE_GNOME=	glib20
 ALL_TARGET=
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/src

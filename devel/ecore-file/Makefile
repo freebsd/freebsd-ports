@@ -15,10 +15,9 @@ COMMENT=	Enlightenment core abstraction library (file module)
 LICENSE=	BSD
 
 DIST_SUBDIR=	e17
-USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_EFL=	ecore libtool_hack
-USES=		gmake pkgconfig
+USES=		gmake pkgconfig tar:bzip2
 USE_LDCONFIG=	yes
 BUILD_WRKSRC=	${WRKSRC}/src/lib/ecore_file
 INSTALL_WRKSRC=	${BUILD_WRKSRC}

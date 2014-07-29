@@ -6,7 +6,6 @@ PORTVERSION=	0.0.8
 PORTREVISION=	4
 CATEGORIES=	audio
 MASTER_SITES=	SF/heaven/Audio%20Applications/Jack%20Related/jack_convolve/
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple C library for partitioned convolution
@@ -19,7 +18,7 @@ LIB_DEPENDS=	libfftw3.so:${PORTSDIR}/math/fftw3 \
 		libsamplerate.so:${PORTSDIR}/audio/libsamplerate \
 		libsndfile.so:${PORTSDIR}/audio/libsndfile
 
-USES=		gmake pkgconfig
+USES=		gmake pkgconfig tar:tgz
 USE_LDCONFIG=	yes
 
 post-patch:

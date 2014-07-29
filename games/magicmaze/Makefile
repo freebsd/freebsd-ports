@@ -13,7 +13,7 @@ COMMENT=	Simple and low-tech monster-bashing maze game
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	ruby19-sdl>=0:${PORTSDIR}/devel/ruby-sdl
+RUN_DEPENDS=	ruby${RUBY_SUFFIX}-sdl>=0:${PORTSDIR}/devel/ruby-sdl
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION:S/./_/g}
 
@@ -30,7 +30,7 @@ DOC_FILES1=	README.TXT
 
 DOCSRCDIR2=	${WRKSRC}/doc
 DOCSDIR2=	${DOCSDIR}/doc
-DOC_FILES2=	BUGS.TXT TODO.TXT
+DOC_FILES2=	BUGS.TXT
 
 OPTIONS_DEFINE=	DOCS
 
@@ -48,9 +48,8 @@ do-install:
 	${LN} -sf ${DATADIR}/data/gfx/icon.png \
 		${STAGEDIR}${PREFIX}/share/pixmaps/${PORTNAME}.png
 
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${DOC_FILES1:S|^|${DOCSRCDIR1}/|} ${STAGEDIR}${DOCSDIR}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR2}
+	${INSTALL_DATA} ${DOC_FILES1:S|^|${DOCSRCDIR1}/|} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${DOC_FILES2:S|^|${DOCSRCDIR2}/|} ${STAGEDIR}${DOCSDIR2}
 
 .include <bsd.port.mk>

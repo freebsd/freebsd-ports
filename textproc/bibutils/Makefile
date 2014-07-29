@@ -5,14 +5,13 @@ PORTVERSION=	5.0
 CATEGORIES=	textproc
 MASTER_SITES=	SF/${PORTNAME}/
 DISTNAME=	${PORTNAME}_${PORTVERSION}_src
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	pgj@FreeBSD.org
 COMMENT=	Program set interconverts between various bibliography formats
 
 LICENSE=	GPLv2
 
-USES=	gmake
+USES=	gmake tar:tgz
 
 WRKSRC=		${WRKDIR}/${PORTNAME}_${PORTVERSION}
 

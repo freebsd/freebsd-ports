@@ -7,7 +7,6 @@ PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	SF/smm/smm/${PORTVERSION}
 DISTNAME=	smm611
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	edwin@mavetju.org
 COMMENT=	Graphical mudclient with mapper
@@ -17,7 +16,7 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/libitk.so:${PORTSDIR}/x11-toolkits/itk \
 		${LOCALBASE}/lib/libitcl.so:${PORTSDIR}/lang/itcl
 
 WRKSRC=		${WRKDIR}/smm/Install.unix
-USES=		gmake tk
+USES=		gmake tk tar:tgz
 EXTRACT_AFTER_ARGS=--exclude CVS
 
 MAKE_ENV+=	STAGEDIR=${STAGEDIR}

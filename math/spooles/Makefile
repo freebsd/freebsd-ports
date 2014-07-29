@@ -10,7 +10,6 @@ MASTER_SITES=	http://www.netlib.org/linalg/spooles/
 PKGNAMESUFFIX=	-mpich
 .endif
 DISTNAME=	${PORTNAME}.${PORTVERSION}
-EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	spooles
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
@@ -21,7 +20,7 @@ COMMENT=	SParse Object Oriented Linear Equations Solver
 BUILD_DEPENDS=	${LOCALBASE}/lib/libmpich.a:${PORTSDIR}/net/mpich2
 .endif
 
-USES=		gmake
+USES=		gmake tar:tgz
 
 .if defined(WITH_MPI)
 PLIST_SUB+=	MPI=""

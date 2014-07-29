@@ -13,7 +13,7 @@ COMMENT=	Diagnose unhealthy DNS domains
 
 RUN_DEPENDS=	dig:${PORTSDIR}/dns/bind-tools
 
-USE_BZIP2=	yes
+USES=		tar:bzip2
 
 AUX_DIR=	lib/doc
 AUX_FILES=	doc-1.awk doc-3.awk doc-4.awk INFO RFC.XXXX
@@ -21,7 +21,7 @@ AUX_FILES=	doc-1.awk doc-3.awk doc-4.awk INFO RFC.XXXX
 do-build:
 	@${MV} ${WRKSRC}/doc ${WRKSRC}/doc.org
 	@${SED} -e 's|$${PREFIX}|${PREFIX}|g' -e 's|$${AUX_DIR}|${AUX_DIR}|g' ${WRKSRC}/doc.org \
-	> ${WRKSRC}/doc
+		> ${WRKSRC}/doc
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/${AUX_DIR}

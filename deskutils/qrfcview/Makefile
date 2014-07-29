@@ -6,12 +6,11 @@ PORTVERSION=	0.62
 PORTREVISION=	5
 CATEGORIES=	deskutils
 MASTER_SITES=	CENKES BERLIOS
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Graphical RFC viewer
 
-USES=		qmake
+USES=		qmake tar:tgz
 USE_QT4=	gui network corelib uic_build moc_build rcc_build
 PLIST_FILES=	bin/qRFCView
 PORTDOCS=	*

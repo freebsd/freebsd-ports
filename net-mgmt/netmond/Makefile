@@ -8,7 +8,6 @@ CATEGORIES=	net-mgmt
 MASTER_SITES=	http://freebsd.unixfreunde.de/sources/:daemon \
 		ftp://ftp.risp.ru/pub/RinetSoftware/:daemon \
 		http://vfom.narod.ru/download/:docs
-EXTRACT_SUFX=	.tgz
 DISTFILES=	${PORTNAME}-2.2-b6${EXTRACT_SUFX}:daemon
 EXTRACT_ONLY=	${PORTNAME}-2.2-b6${EXTRACT_SUFX}
 
@@ -22,7 +21,7 @@ GROUPS=	${USERS}
 
 GNU_CONFIGURE=	yes
 DISABLE_MAKE_JOBS=yes
-USES=		bison
+USES=		bison tar:tgz
 CFLAGS+=	-Wno-return-type
 
 USE_RC_SUBR=	netmond

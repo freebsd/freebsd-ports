@@ -6,13 +6,12 @@ PORTVERSION=	0.6.3
 PORTREVISION=	4
 CATEGORIES=	emulators
 MASTER_SITES=	http://www.117.ne.jp/~show/pc8801/
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PC-8801 emulator for X
 
 USE_XORG=	x11 xext
-USES=		gmake
+USES=		gmake tar:tgz
 MAKE_ENV=	DATADIR="${DATADIR}" _CC="${CC}" _CFLAGS="${CFLAGS}" \
 		_CXX="${CXX}" LD="${CXX}" PROGRAM="${PORTNAME}"
 MAKE_ARGS=	ARCH="freebsd"

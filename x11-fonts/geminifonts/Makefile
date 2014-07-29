@@ -9,7 +9,6 @@ MASTER_SITES=	http://www.brama.com/compute/unix/
 PKGNAMEPREFIX=	koi8-u-
 PKGNAMESUFFIX=	-x11
 DISTNAME=	x-koi8u
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	Ukrainian KOI8 fonts for X11R6 (koi8-u)
@@ -18,7 +17,7 @@ BUILD_DEPENDS=	bdftopcf:${PORTSDIR}/x11-fonts/bdftopcf \
 		mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir \
 		mkfontscale:${PORTSDIR}/x11-fonts/mkfontscale
 
-USES=		perl5
+USES=		perl5 tar:tgz
 USE_PERL5=	build
 USE_XORG=	x11
 NO_WRKSUBDIR=	yes
@@ -29,9 +28,6 @@ post-patch:
 	${REINPLACE_CMD} -e 's/\.Z/.gz/g' \
 	    -e 's|DESTDIR =.*|MDESTDIR=${STAGEDIR}${LOCALBASE}/lib/X11/fonts/koi8-u-gemini|' \
 	${WRKSRC}/Makefile
-
-post-install:
-	@${CAT} ${PKGMESSAGE}
 
 # This will  allow one to  use just this  fonts for both,  the Ukrainian
 # koi8-u and the Russian koi8-r encodings. Since koi8-u is a superset of

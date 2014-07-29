@@ -5,12 +5,11 @@ PORTNAME=	proxytunnel
 PORTVERSION=	1.9.0
 CATEGORIES=	security
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}%20source%20tarballs/${PORTNAME}%20${PORTVERSION}
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Connects stdin and stdout to an origin server through an HTTPS proxy
 
-USES=		pkgconfig gmake
+USES=		pkgconfig gmake tar:tgz
 
 ALL_TARGET=	${PORTNAME}
 

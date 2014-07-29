@@ -6,7 +6,6 @@ PORTVERSION=	1.96.1
 PORTREVISION=	12
 CATEGORIES=	games gnome
 MASTER_SITES=	http://eseb.net/ftp/gno3dtet/
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNOME version of the classic 3D-ified T*tris
@@ -15,7 +14,7 @@ LICENSE=	GPLv2
 
 EXTRACT_DEPENDS=	intltoolize:${PORTSDIR}/textproc/intltool
 
-USES=		pathfix gmake pkgconfig
+USES=		pathfix gmake pkgconfig tar:tgz
 USE_GNOME=	gnomeprefix intlhack libgnomeui librsvg2
 USE_AUTOTOOLS=	autoheader automake aclocal autoconf
 ACLOCAL_ARGS=	-I m4 -I ${ACLOCAL_DIR} -I ${LOCALBASE}/share/aclocal

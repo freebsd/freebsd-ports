@@ -8,7 +8,6 @@ CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=dwcjr
 DISTNAME=	DevVNC_unix
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Display X and Win32 desktops on remote X/Win32/Java displays
@@ -16,7 +15,7 @@ COMMENT=	Display X and Win32 desktops on remote X/Win32/Java displays
 LICENSE=	GPLv2
 
 WRKSRC=		${WRKDIR}/unix/vnc_unixsrc
-USES=		imake shebangfix perl5
+USES=		imake shebangfix perl5 tar:tgz
 SHEBANG_FILES=	vncserver
 USE_XORG=	ice sm x11 xaw xext xmu xt xpm
 ALL_TARGET=	World

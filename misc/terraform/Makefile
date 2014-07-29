@@ -7,7 +7,6 @@ DISTVERSIONPREFIX=	src-
 PORTREVISION=	2
 CATEGORIES=	misc gnome
 MASTER_SITES=	GOOGLE_CODE
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Interactive height field generation and manipulation program
@@ -19,7 +18,7 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/libtrio.a:${PORTSDIR}/devel/trio
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-USES=		pathfix gettext gmake pkgconfig
+USES=		pathfix gettext gmake pkgconfig tar:tgz
 USE_GCC=	yes
 USE_GNOME=	gnomehier libgnomeprintui libgnomeui
 USE_AUTOTOOLS=	automake:env

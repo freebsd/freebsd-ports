@@ -7,14 +7,13 @@ PORTREVISION=	2
 CATEGORIES=	comms hamradio
 MASTER_SITES=	http://contribs.martymac.org/FreeBSD-ports/distfiles/ \
 		LOCAL/martymac
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	martymac@FreeBSD.org
 COMMENT=	Commandline tool that performs SDR with RTL2832-based USB sticks
 
 LICENSE=	GPLv2
 
-USES=		gmake pkgconfig libtool
+USES=		gmake pkgconfig libtool tar:tgz
 USE_AUTOTOOLS=	autoconf:env aclocal:env automake:env libtoolize:env
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip

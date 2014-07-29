@@ -1,9 +1,9 @@
 bin/xmailbox
 lib/X11/app-defaults/XMailbox
 man/man1/xmailbox.1.gz
-%%PORTDOCS%%share/doc/xmailbox/DISCLAIMER
-%%PORTDOCS%%share/doc/xmailbox/README
-share/xmailbox/dingdong.au
-share/xmailbox/ugotmail.au
-%%PORTDOCS%%@dirrm share/doc/xmailbox
-@dirrm share/xmailbox
+%%PORTDOCS%%%%DOCSDIR%%/DISCLAIMER
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%DATADIR%%/dingdong.au
+%%DATADIR%%/ugotmail.au
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm %%DATADIR%%

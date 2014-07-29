@@ -6,7 +6,6 @@ PORTVERSION=	2.10
 PORTREVISION=	1
 CATEGORIES=	mail security
 MASTER_SITES=	SF
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER= ports@FreeBSD.org
 COMMENT=	Content/Anti-virus Scanner for qmail
@@ -21,7 +20,7 @@ BUILD_DEPENDS+=	reformime:${PORTSDIR}/mail/maildrop \
 
 CONFLICTS=	qmail-scanner-1.* qmail-scanner1-*
 
-USES=		qmail perl5
+USES=		qmail perl5 tar:tgz
 
 SPOOLDIR?=	/var/spool/qscand
 PLIST_SUB=	SPOOLDIR=${SPOOLDIR}

@@ -5,7 +5,6 @@ PORTVERSION=	2.9i
 PORTREVISION=	3
 CATEGORIES=	www ipv6
 MASTER_SITES=	http://www.gedanken.org.uk/software/wwwoffle/download/
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Caching proxy server for HTTP and FTP designed for dial-up hosts
@@ -14,7 +13,7 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	libgnutls.so:${PORTSDIR}/security/gnutls
 
-USES=		perl5 gmake
+USES=		perl5 gmake tar:tgz
 
 USE_RC_SUBR=	${PORTNAME}d
 

@@ -6,7 +6,6 @@ DISTVERSION=	1_11
 CATEGORIES=	multimedia
 MASTER_SITES=	SF/${PORTNAME}.berlios
 MASTER_SITE_SUBDIR=	tstools
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	fbsd@opal.com
 COMMENT=	MPEG transport, program, and elementary stream tools
@@ -15,7 +14,7 @@ LICENSE=	MPL
 
 MAKE_JOBS_UNSAFE=	yes
 
-USES=		gmake
+USES=		gmake tar:tgz
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}"
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}

@@ -7,12 +7,11 @@ PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	games/multiplayer
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Multi-player memory game
 
-USES=		imake
+USES=		imake tar:tgz
 USE_XORG=	x11 xext
 
 post-install:

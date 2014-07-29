@@ -5,12 +5,11 @@ PORTNAME=	x026
 PORTVERSION=	1.2
 CATEGORIES=	deskutils
 MASTER_SITES=	SF/x3270/${PORTNAME}/${PORTVERSION}
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	saper@saper.info
 COMMENT=	IBM 026 Keypunch Emulator for the X Window System
 
-USES=		imake
+USES=		imake tar:tgz
 USE_XORG=	xaw7 xpm xt
 
 PLIST_FILES=	bin/${PORTNAME} \

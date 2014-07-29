@@ -13,8 +13,7 @@ COMMENT=	GIMP Save For Web plugin
 LIB_DEPENDS=	libgimp-2.0.so:${PORTSDIR}/graphics/gimp-app
 BUILD_DEPENDS=	p5-XML-Parser>=0:${PORTSDIR}/textproc/p5-XML-Parser
 
-USE_BZIP2=	yes
-USES=		gettext gmake pkgconfig pathfix perl5
+USES=		gettext gmake pkgconfig pathfix perl5 tar:bzip2
 USE_PERL5=	build
 GNU_CONFIGURE=	yes
 USE_GNOME=	intltool

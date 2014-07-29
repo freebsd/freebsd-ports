@@ -7,14 +7,13 @@ PORTREVISION=	7
 CATEGORIES=	x11-fm
 MASTER_SITES=	http://xdiskusage.sourceforge.net/ \
 		http://www.gnu-darwin.org/distfiles/
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Show where disk space is taken up
 
 LIB_DEPENDS=	libfltk.so:${PORTSDIR}/x11-toolkits/fltk
 
-USES=		gmake
+USES=		gmake tar:tgz
 
 CXXFLAGS+=	`fltk-config --cxxflags`
 LDFLAGS+=	`fltk-config --ldflags`

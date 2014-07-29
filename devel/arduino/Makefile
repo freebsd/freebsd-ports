@@ -8,7 +8,6 @@ PORTEPOCH=	1
 CATEGORIES=	devel java lang
 MASTER_SITES=	GOOGLE_CODE
 DISTNAME=	${PORTNAME}-${PORTVERSION}-linux32
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	leres@ee.lbl.gov
 COMMENT=	Open-source electronics prototyping platform
@@ -18,7 +17,7 @@ RUN_DEPENDS=	${JAVA_HOME}/jre/lib/ext/RXTXcomm.jar:${PORTSDIR}/comms/rxtx \
 		${LOCALBASE}/avr/include/avr/io.h:${PORTSDIR}/devel/avr-libc
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
-USES=		dos2unix
+USES=		dos2unix tar:tgz
 DOS2UNIX_REGEX=	.*\(\.\(c|cpp|h|hex|html|ino|lst|txt\)|Makefile\)
 
 USE_JAVA=	1.6+
