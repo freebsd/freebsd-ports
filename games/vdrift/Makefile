@@ -21,6 +21,7 @@ LIB_DEPENDS=	libvorbis.so:${PORTSDIR}/audio/libvorbis \
 		libboost_thread.so:${PORTSDIR}/devel/boost-libs
 RUN_DEPENDS=	${LOCALBASE}/share/${PORTNAME}/settings/VDrift.config:${PORTSDIR}/games/vdrift-data
 
+USES=		tar:bzip2
 USE_GL=		glew
 USE_SDL=	sdl image net gfx
 
@@ -46,7 +47,7 @@ SCONS_ARGS+=	release=1
 .endif
 
 .if ${PORT_OPTIONS:MNLS}
-USES+=	gettext tar:bzip2
+USES+=		gettext
 PLIST_SUB+=	NLS=""
 FLAG_NLS=	true
 .else
