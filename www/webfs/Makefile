@@ -10,8 +10,6 @@ MASTER_SITES=	http://dl.bytesex.org/releases/webfs/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple http server for static content
 
-BROKEN=		Fails post-patch
-
 RUN_DEPENDS=	${LOCALBASE}/etc/mime.types:${PORTSDIR}/misc/mime-support
 
 WRKSRC=		${WRKDIR}/${DISTNAME:S/_/-/}
@@ -22,7 +20,6 @@ PLIST_FILES=	sbin/webfsd man/man1/webfsd.1
 
 OPTIONS_DEFINE=		OPENSSL
 OPENSSL_MAKE_ENV=	LDLIBS="-lssl -lcrypto" USE_DIET=no
-OPENSSL_MAKE_ENV_OFF=	USE_SSL=no
 
 MIMEFILE?=	${LOCALBASE}/etc/mime.types
 
@@ -34,7 +31,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|/etc/mime.types|${MIMEFILE}|' ${WRKSRC}/GNUmakefile
 	@${REINPLACE_CMD} -e 's|/etc/mime.types|${MIMEFILE}|' ${WRKSRC}/webfsd.man
 .if empty(PORT_OPTIONS:MOPENSSL)
-	@${REINPLACE_CMD} -e 's|USE_SSL      := yes|USE_SSL      := no|' ${WRKSRC}/Make.config
+	@${REINPLACE_CMD} -e '/^USE_SSL.*:=/s/:=.*/:= no/' ${WRKSRC}/GNUmakefile
 .endif
 
 do-install:
