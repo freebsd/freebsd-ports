@@ -16,9 +16,7 @@ OPTIONS_DEFINE=	TWISTED HTML
 TWISTED_DESC=	enable running in threads
 HTML_DESC=	enable HTML output
 
-# bypass infrastructure bug (taken from www/py-django)
-OPTIONSFILE=	${PORT_DBDIR}/py-${PORTNAME}/options
-
+USES=		tar:bzip2
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_AUTOPLIST=	yes
@@ -26,7 +24,7 @@ PYDISTUTILS_AUTOPLIST=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MTWISTED}
-USES+=		twisted tar:bzip2
+USES+=		twisted
 .endif
 
 .if ${PORT_OPTIONS:MHTML}
