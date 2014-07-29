@@ -8,11 +8,13 @@ bin/taiclockd
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL-FreeBSD
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @mode 0755
-@exec mkdir %D/etc/clockspeed
 etc/clockspeed/leapsecs.dat
-@unexec if [ -f %D/etc/rc.d/clockspeed.sh ]; then cmp -s %D/etc/rc.d/clockspeed.sh.sample %D/etc/rc.d/clockspeed.sh && rm -f %D/etc/rc.d/clockspeed.sh || echo "If you are permanently removing this port, you should do a ``rm -f ${PKG_PREFIX}/etc/rc.d/clockspeed.sh`` to remove startup files left." | fmt ; fi
-etc/rc.d/clockspeed.sh.sample
-@unexec rm %D/etc/clockspeed/atto.tmp 2>/dev/null || true
-@unexec rm %D/etc/clockspeed/atto 2>/dev/null || true
-@unexec rm %D/etc/clockspeed/adjust 2>/dev/null || true
-@unexec rmdir %D/etc/clockspeed 2>/dev/null || echo "If you are permanently removing this port, you should do a ``rm -Rf ${PKG_PREFIX}/etc/clockspeed`` to remove any configuration files left." | fmt
+@sample etc/rc.d/clockspeed.sh.sample
+man/man1/clockadd.1.gz
+man/man1/clockspeed.1.gz
+man/man1/clockview.1.gz
+man/man1/sntpclock.1.gz
+man/man1/taiclock.1.gz
+man/man1/taiclockd.1.gz
+@dirrmtry %%ETCDIR%%
+@unexec echo "If you are permanently removing this port, you should do a ``rm -Rf ${PKG_PREFIX}/etc/clockspeed`` to remove any configuration files left." | fmt
