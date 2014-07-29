@@ -6346,7 +6346,11 @@ show-dev-warnings:
 	@${ECHO_MSG} "${m}"
 .endfor
 	@${ECHO_MSG}
+.if defined(DEV_WARNING_FATAL)
+	@${FALSE}
+.else
 	@sleep ${DEV_WARNING_WAIT}
+.endif
 .endif
 
 .if defined(DEV_ERROR)
