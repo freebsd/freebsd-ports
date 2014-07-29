@@ -14,6 +14,7 @@ include/cppconn/sqlstring.h
 include/cppconn/warning.h
 include/mysql_connection.h
 include/mysql_driver.h
+include/mysql_error.h
 lib/libmysqlcppconn-static.a
 lib/libmysqlcppconn.so
 lib/libmysqlcppconn.so.7.%%PORTVERSION%%
