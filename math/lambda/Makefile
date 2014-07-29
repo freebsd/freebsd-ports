@@ -11,7 +11,7 @@ COMMENT=	Lambda calculus interpreter
 
 LICENSE=	GPLv2
 
-USES=		perl5
+USES=		perl5 readline
 USE_PERL5=	build
 GNU_CONFIGURE=	yes
 

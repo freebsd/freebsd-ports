@@ -12,7 +12,7 @@ COMMENT=	A toolbox for the implementation of morphological analysers
 
 WRKSRC=		${WRKDIR}/${PORTNAME:tu}/src
 INSTALL_TARGET=	install maninstall libinstall
-USES=		gmake
+USES=		gmake readline
 USE_LDCONFIG=	yes
 
 .include <bsd.port.mk>
