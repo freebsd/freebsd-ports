@@ -23,7 +23,7 @@ COMMENT?=	Fast x86 and x86-64 disassembler library
 LICENSE=	GPLv3
 
 USES=		dos2unix
-USE_XZ =	yes
+USE_XZ=		yes
 
 .if defined(PYTHON_SLAVEPORT)
 USE_PYTHON=		2

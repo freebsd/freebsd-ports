@@ -11,7 +11,7 @@ DISTNAME=	Mysterie-${PORTNAME}-${HASH}
 MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	Decompiler for Python's .pyc and .pyo files
 
-HASH	=	3956a5a
+HASH=		3956a5a
 USE_PYTHON=	2
 USE_PYDISTUTILS=yes
 REINPLACE_ARGS=	-i ""

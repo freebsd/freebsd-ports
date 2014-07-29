@@ -29,7 +29,7 @@ FONTLIST=	batang10 batang10b batang12 batang12b batang14 batang14b \
 		gulim16b gulim18 gulim18b gulim20 gulim20b gulim24 gulim24b \
 		hline10 hline12 hline14 hline16 hline18 hline20 hline24
 
-FONTLIST_MANUAL =	batang10 batang10b gulim10 gulim10b
+FONTLIST_MANUAL=	batang10 batang10b gulim10 gulim10b
 
 BDFTOPCF=	${PREFIX}/bin/bdftopcf
 MKFONTDIR=	${PREFIX}/bin/mkfontdir

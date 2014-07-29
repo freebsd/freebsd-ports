@@ -41,7 +41,7 @@ NO_STAGE=	yes
 USES+=		tk:84,85
 .if ${PORT_OPTIONS:MTHREADS}
 THR_CPP=	${PTHREAD_CFLAGS}
-THR_LD =	${PTHREAD_LIBS}
+THR_LD=		${PTHREAD_LIBS}
 .endif
 
 post-extract:

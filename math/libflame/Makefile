@@ -21,7 +21,7 @@ GNU_CONFIGURE=	yes
 USE_CSTD=	c99
 USES=		gmake
 
-CONFIGURE_ARGS	=	--enable-dynamic-build --enable-static-build
+CONFIGURE_ARGS=		--enable-dynamic-build --enable-static-build
 
 OPTIONS_DEFINE=	BLAS3_CNTL BUILTIN_BLAS CBLAS EXTERNAL_LAPACK GOTOBLAS \
 		LAPACK2FLAME LAPACK_SUBPROBLEMS OPENMP SHARED STATIC \
@@ -48,9 +48,9 @@ CONFIGURE_ARGS+=	--disable-blas3-front-end-cntl-trees
 .endif
 
 .if ${PORT_OPTIONS:MBUILTIN_BLAS}
-IGNORE =	: BUILTIN_BLAS is an experimental option, for testing purposes only
+IGNORE=		: BUILTIN_BLAS is an experimental option, for testing purposes only
 .if ${PORT_OPTIONS:MCBLAS} || ${PORT_OPTIONS:MGOTOBLAS}
-IGNORE =	: BUILTIN_BLAS is incompatible with CBLAS and GOTOBLAS
+IGNORE=		: BUILTIN_BLAS is incompatible with CBLAS and GOTOBLAS
 .endif
 CONFIGURE_ARGS+=	--enable-builtin-blas
 .else
@@ -58,9 +58,9 @@ CONFIGURE_ARGS+=	--disable-builtin-blas
 .endif
 
 .if ${PORT_OPTIONS:MCBLAS}
-IGNORE =	: CBLAS yields an incomplete library, and is for testing purposes only
+IGNORE=		: CBLAS yields an incomplete library, and is for testing purposes only
 .if ${PORT_OPTIONS:MGOTOBLAS}
-IGNORE =	: CBLAS is incompatible with GOTOBLAS
+IGNORE=		: CBLAS is incompatible with GOTOBLAS
 .endif
 CONFIGURE_ARGS+=	--enable-cblas-interfaces
 .else
@@ -87,7 +87,7 @@ CONFIGURE_ARGS+=	--enable-default-${b:tl}-blocksize=${${b}_BLOCKSIZE}
 
 .if ${PORT_OPTIONS:MLAPACK2FLAME}
 .if ${PORT_OPTIONS:MLAPACK_SUBPROBLEMS}
-IGNORE =	: LAPACK2FLAME is incompatible with LAPACK_SUBPROBLEMS
+IGNORE=		: LAPACK2FLAME is incompatible with LAPACK_SUBPROBLEMS
 .endif
 CONFIGURE_ARGS+=	--enable-lapack2flame
 .else
@@ -96,7 +96,7 @@ CONFIGURE_ARGS+=	--disable-lapack2flame
 
 .if ${PORT_OPTIONS:MLAPACK_SUBPROBLEMS}
 .if ! ${PORT_OPTIONS:MEXTERNAL_LAPACK}
-IGNORE =	: LAPACK_SUBPROBLEMS requires EXTERNAL_LAPACK
+IGNORE=		: LAPACK_SUBPROBLEMS requires EXTERNAL_LAPACK
 .endif
 CONFIGURE_ARGS+=	--enable-external-lapack-for-subproblems
 .else
@@ -131,7 +131,7 @@ RUN_DEPENDS +=	${LOCALBASE}/lib/libatlas.so:${PORTSDIR}/math/atlas
 BLAS=		-lptcblas
 .elif ${WITH_BLAS} == gotoblas
 RUN_DEPENDS +=	${LOCALBASE}/lib/libgoto2p.so:${PORTSDIR}/math/gotoblas
-BLAS =		-lgoto2p
+BLAS=			-lgoto2p
 .elif ${WITH_BLAS} == reference
 RUN_DEPENDS +=	${LOCALBASE}/lib/libblas.so:${PORTSDIR}/math/blas
 BLAS=		-lblas
@@ -146,15 +146,15 @@ BLAS=		-lgslcblas
 .if ${PORT_OPTIONS:MBUILTIN_BLAS}
 RUN_DEPENDS +=	${LOCALBASE}/lib/libatlas.so:${PORTSDIR}/math/atlas
 .endif
-LAPACK =	-lalapack -lptcblas -lptf77blas
+LAPACK=		-lalapack -lptcblas -lptf77blas
 .elif ${WITH_BLAS} == gotoblas
 .if ${PORT_OPTIONS:MBUILTIN_BLAS}
 RUN_DEPENDS +=	${LOCALBASE}/lib/libgoto2p.so:${PORTSDIR}/math/gotoblas
 .endif
-LAPACK =	-lgoto2p
+LAPACK=		-lgoto2p
 .elif !empty(WITH_BLAS:Mreference*)
 RUN_DEPENDS +=	${LOCALBASE}/lib/liblapack.so:${PORTSDIR}/math/lapack
-LAPACK =	-llapack
+LAPACK=		-llapack
 .if ${PORT_OPTIONS:MBUILTIN_BLAS} || ${PORT_OPTIONS:MCBLAS}
 RUN_DEPENDS +=	${LOCALBASE}/lib/libblas.so:${PORTSDIR}/math/blas
 LAPACK+=	-lblas
@@ -164,10 +164,10 @@ LAPACK+=	-lblas
 
 .if ${PORT_OPTIONS:MOPENMP}
 .if ${PORT_OPTIONS:MTHREADS}
-IGNORE =	OPENMP is incompatible with THREADS
+IGNORE=		OPENMP is incompatible with THREADS
 .endif
 .if !empty(CC:M*clang*)
-IGNORE =	clang does not support OPENMP, use THREADS instead
+IGNORE=		clang does not support OPENMP, use THREADS instead
 .endif
 OPENMP_CFLAGS ?=	-fopenmp
 CFLAGS+=		${OPENMP_CFLAGS}

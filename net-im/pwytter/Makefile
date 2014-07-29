@@ -25,7 +25,7 @@ USE_PYDISTUTILS=	yes
 PYDISTUTILS_AUTOPLIST=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-DOS2UNIX_GLOB = *.py
+DOS2UNIX_GLOB=	 *.py
 
 post-patch:
 	@${RM} -rf ${WRKSRC}/twclient/simplejson

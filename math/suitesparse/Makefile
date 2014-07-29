@@ -51,12 +51,12 @@ LAPACK=		-lopenblasp
 .elif ${WITH_BLAS} == gotoblas
 LIB_DEPENDS+=	libgoto2.so:${PORTSDIR}/math/gotoblas
 LIB_DEPENDS+=	liblapack.so:${PORTSDIR}/math/lapack
-BLAS =		-lgoto2p
-LAPACK =	-lgoto2p
+BLAS=		-lgoto2p
+LAPACK=		-lgoto2p
 .elif ${WITH_BLAS} == atlas
 LIB_DEPENDS+=	libatlas.so:${PORTSDIR}/math/atlas
 BLAS=		-lptf77blas
-LAPACK =	-lalapack -lptcblas
+LAPACK=		-lalapack -lptcblas
 .endif
 
 .if ${ARCH} == "sparc64"
@@ -73,9 +73,9 @@ SVERSION=1
 .if defined (WITH_METIS)
 METIS=${LOCALBASE}/lib/libmetis.a
 METIS_PATH=${LOCALBASE}/include/metis
-CHOLMOD_CONFIG =
+CHOLMOD_CONFIG=	
 .else
-CHOLMOD_CONFIG =	-DNPARTITION
+CHOLMOD_CONFIG=		-DNPARTITION
 .endif
 
 post-patch:

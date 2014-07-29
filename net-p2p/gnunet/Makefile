@@ -19,7 +19,7 @@ LIB_DEPENDS=	libunistring.so:${PORTSDIR}/devel/libunistring \
 		libgcrypt.so:${PORTSDIR}/security/libgcrypt \
 		libextractor.so:${PORTSDIR}/textproc/libextractor
 
-OPTIONS_DEFINE =	HTTP
+OPTIONS_DEFINE=		HTTP
 
 HTTP_DESC=	Enable HTTP transport via libmicrohttpd
 MYSQL_DESC=	Use MySQL for the data store and cache
@@ -35,7 +35,7 @@ USE_AUTOTOOLS=	libltdl libtool
 USES=		iconv gmake
 USE_LDCONFIG=	yes
 
-CONFIGURE_ARGS =	--with-daemon-home-dir=${GNUNET_DAEMON_DIR} \
+CONFIGURE_ARGS=		--with-daemon-home-dir=${GNUNET_DAEMON_DIR} \
 			--with-daemon-config-dir=${PREFIX}/etc \
 			--with-extractor=${LOCALBASE} \
 			--with-libcurl=${LOCALBASE} \
@@ -44,7 +44,7 @@ CONFIGURE_ARGS =	--with-daemon-home-dir=${GNUNET_DAEMON_DIR} \
 			--with-ltdl-include=${LOCALBASE}/include \
 			--with-ltdl-lib=${LOCALBASE}/lib
 
-GROUPS =	gnunet
+GROUPS=		gnunet
 USERS=		gnunet
 
 MAN1=	gnunet-arm.1 gnunet-core.1 gnunet-directory.1 gnunet-download.1 \
@@ -73,7 +73,7 @@ report.sh
 .endif
 
 .if ${PORT_OPTIONS:MHTTP}
-BROKEN =	WITH_HTTP requires libmicrohttpd 0.9.18 or higher
+BROKEN=		WITH_HTTP requires libmicrohttpd 0.9.18 or higher
 LIB_DEPENDS+=		libmicrohttpd.so:${PORTSDIR}/www/libmicrohttpd
 CONFIGURE_ARGS+=	--with-microhttpd=${LOCALBASE}
 PLIST_SUB+=		HTTP=""

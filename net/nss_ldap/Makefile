@@ -53,7 +53,7 @@ CFLAGS+="-DHAVE_LOGIN_CLASSES"
 .endif
 
 .if ${PORT_OPTIONS:MSASL}
-WANT_OPENLDAP_SASL	 = YES
+WANT_OPENLDAP_SASL=	 yes
 .endif
 
 post-extract:

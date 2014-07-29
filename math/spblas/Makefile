@@ -15,7 +15,7 @@ USE_GCC=	yes
 USE_LDCONFIG=	yes
 
 HEADERS=	blas_enum.h blas_sparse.h blas_sparse_proto.h
-HDIR =		include/spblas
+HDIR=		include/spblas
 MAKE_ENV=	LIB=spblas SHLIB_MAJOR="${SHLIB_MAJOR}" \
 		SRCCONF=/dev/null SRCS="${SRCS}"
 
@@ -33,10 +33,10 @@ SRCS=		nist_spblas.cc
 
 .if ${PORT_OPTIONS:MPROFILE}
 .if defined(NOPROFILE) || defined(NO_PROFILE) || defined(WITHOUT_PROFILE)
-IGNORE =	you have defined WITH_PROFILE, but have also defined\
+IGNORE=		you have defined WITH_PROFILE, but have also defined\
 WITHOUT_PROFILE, NOPROFILE, or NO_PROFILE
 .elif !exists(/usr/lib/libc_p.a)
-IGNORE  =	you have chosen WITH_PROFILE, but have not installed the\
+IGNORE=		you have chosen WITH_PROFILE, but have not installed the\
 base system profiling libraries
 .endif
 PLIST_FILES+=	lib/libspblas_p.a
