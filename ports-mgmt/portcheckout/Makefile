@@ -11,10 +11,12 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Checkout and build ports and all depending ports
 
 USES=		shebangfix perl5
-SHEBANG_FILES=	portcheckout.pl
-MAN1=		portcheckout.1
-MANCOMPRESSED=	maybe
-PLIST_FILES=	bin/portcheckout
+SHEBANG_FILES=	${PORTNAME}.pl
+PLIST_FILES=	bin/${PORTNAME} man/man1/${PORTNAME}.1.gz
 
-NO_STAGE=	yes
+post-patch:
+	${REINPLACE_CMD} -e 's/cvs checkout/& -P/g; \
+		s/\(exec\) \(pod2text\)/\1 "\2"/;' \
+		${WRKSRC}/${PORTNAME}.pl
+
 .include <bsd.port.mk>
