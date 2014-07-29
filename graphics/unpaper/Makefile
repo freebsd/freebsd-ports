@@ -4,7 +4,7 @@
 PORTNAME=	unpaper
 PORTVERSION=	0.3
 CATEGORIES=	graphics
-MASTER_SITES=	CENKES BERLIOS
+MASTER_SITES=	https://www.flameeyes.eu/files/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Post-processing tool for scanned sheets of paper
