@@ -1,3 +1,5 @@
+@owner %%WWWOWN%%
+@group %%WWWGRP%%
 www/glpi/plugins/reports/docs/CHANGELOG.txt
 www/glpi/plugins/reports/docs/LISEZMOI.txt
 www/glpi/plugins/reports/docs/README.txt
@@ -103,6 +105,8 @@ www/glpi/plugins/reports/report/statticketsbypriority/statticketsbypriority.en_G
 www/glpi/plugins/reports/report/statticketsbypriority/statticketsbypriority.fr_FR.php
 www/glpi/plugins/reports/report/statticketsbypriority/statticketsbypriority.php
 www/glpi/plugins/reports/setup.php
+@group
+@owner
 @dirrm www/glpi/plugins/reports/report/statticketsbypriority
 @dirrm www/glpi/plugins/reports/report/statnightticketsbypriority
 @dirrm www/glpi/plugins/reports/report/rules
