@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	qjail
-PORTVERSION=	3.5
+PORTVERSION=	3.6
 CATEGORIES=	sysutils
 MASTER_SITES=	SF/${PORTNAME}
 
@@ -12,7 +12,7 @@ COMMENT=	Utility to quickly deploy and manage jails
 USES=		tar:bzip2
 NO_BUILD=	yes
 
-CONFLICTS_INSTALL=	qjail-2.* qjail-3.0 qjail-3.1 
+CONFLICTS_INSTALL=	qjail-2.* qjail-3.0 qjail-3.1
 
 do-install:
 .for i in qjail qjail.vnet.be qjail.vnet.ng
