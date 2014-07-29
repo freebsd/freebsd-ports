@@ -5,12 +5,11 @@ PORTNAME=	pcal
 PORTVERSION=	4.11.0
 CATEGORIES=	print
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PostScript calendar program
 
-USES=		shebangfix gmake
+USES=		shebangfix gmake tar:tgz
 
 MAKE_ENV=	HOST_CC="${CC}"
 ALL_TARGET=

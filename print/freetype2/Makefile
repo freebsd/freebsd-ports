@@ -29,17 +29,10 @@ OPTIONS_DEFINE=		LCD_FILTERING PNG
 LCD_FILTERING_DESC?=	Sub-pixel rendering (patented)
 PNG_DESC=		Png compressed OpenType embedded bitmaps support
 
-.include <bsd.port.options.mk>
+LCD_FILTERING_CFLAGS=	-DFT_CONFIG_OPTION_SUBPIXEL_RENDERING
 
-.if ${PORT_OPTIONS:MLCD_FILTERING}
-CFLAGS+=	-DFT_CONFIG_OPTION_SUBPIXEL_RENDERING
-.endif
-
-.if ${PORT_OPTIONS:MPNG}
-LIB_DEPENDS+=	libpng15.so:${PORTSDIR}/graphics/png
-.else
-CONFIGURE_ARGS+=--without-png
-.endif
+PNG_LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png
+PNG_CONFIGURE_OFF=	--without-png
 
 pre-patch:
 	@${REINPLACE_CMD} -e 's|[(]libdir[)]/pkgconfig|(prefix)/libdata/pkgconfig|g' \

@@ -7,11 +7,11 @@ PORTREVISION=	2
 CATEGORIES=	print
 MASTER_SITES=	${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	utilities
-EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Pic format to fig format converter
 
+USES=		tar:Z
 WRKSRC=		${WRKDIR}/${PORTNAME}
 CFLAGS+=	-Wno-return-type
 PLIST_FILES=	bin/pic2fig man/man1/pic2fig.1.gz
