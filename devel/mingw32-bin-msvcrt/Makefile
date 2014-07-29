@@ -17,17 +17,13 @@ COMMENT=	Headers and Libraries for Windows cross-development
 
 CONFLICTS=	mingw-bin-msvcrt-[0-9]*
 
-USE_XZ=		yes
+USES=		tar:xz
 
 RUNTIMEVERSION=	4.0.3-1
 APIVERSION=	4.0.3-1
 
 NO_MTREE=	yes
 NO_WRKSUBDIR=	yes
-
-.if defined(INSTALL_AS_USER)
-MAKE_ARGS+=	INSTALL_AS_USER=yes
-.endif
 
 post-extract:
 	@${CP} ${FILESDIR}/Makefile ${WRKDIR}
