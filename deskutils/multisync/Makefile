@@ -3,7 +3,7 @@
 
 PORTNAME?=	multisync
 PORTVERSION=	0.82
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	deskutils
 MASTER_SITES=	SF/multisync/OldFiles
 DISTNAME=	multisync-${PORTVERSION}
@@ -13,10 +13,11 @@ COMMENT?=	Synchronize calendars, addressbooks, and other PIM data
 
 WRKSRC?=	${WRKDIR}/${PORTNAME}-${PORTVERSION}
 WRKSRCMASTER=	${WRKDIR}/multisync-${PORTVERSION}
-USE_BZIP2=	yes
 USE_GNOME=	gnomeprefix libgnomeui
-USES=		gmake pathfix pkgconfig
-USE_AUTOTOOLS=	automake:env libtool
+USES=		gmake libtool pathfix pkgconfig tar:bzip2
+USE_AUTOTOOLS=	libtoolize aclocal autoconf automake
+AUTOMAKE_ARGS=	--add-missing
+GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib
 MAKE_JOBS_UNSAFE=	yes
@@ -29,8 +30,5 @@ pre-configure:
 .endfor
 	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \
 		's|-lpthread||'
-
-post-configure:
-	${CP} ${LIBTOOL} ${WRKSRC}/libtool
 
 .include <bsd.port.mk>
