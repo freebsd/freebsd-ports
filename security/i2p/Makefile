@@ -2,14 +2,13 @@
 # $FreeBSD$
 
 PORTNAME=	i2p
-PORTVERSION=	0.9.11
+PORTVERSION=	0.9.14
 CATEGORIES=	security java net-p2p
 MASTER_SITES=	SF/${PORTNAME:tl}/${PORTVERSION} \
 		http://download.i2p2.no/releases/${PORTVERSION}/ \
 		http://download2.geti2p.com/${PORTVERSION}/ \
 		http://download.geti2p.com/${PORTVERSION}/ \
 		http://download.i2p2.de/releases/${PORTVERSION}/ \
-		https://dl.dropboxusercontent.com/u/18621288/I2P/${PORTVERSION}/ \
 		https://launchpad.net/i2p/trunk/${PORTVERSION}/+download/ \
 		https://googledrive.com/host/0B4jHEq5G7_EPWV9UeERwdGplZXc/${PORTVERSION}/
 DISTFILES=	i2psource_${PORTVERSION}${EXTRACT_SUFX}
@@ -24,7 +23,7 @@ LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 LICENSE_DISTFILES=	i2psource_${PORTVERSION}${EXTRACT_SUFX}
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libgmp.a:${PORTSDIR}/math/gmp
-LIB_DEPENDS=	libiconv.so.3:${PORTSDIR}/converters/libiconv
+LIB_DEPENDS=	libiconv.so:${PORTSDIR}/converters/libiconv
 RUN_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
 
 ONLY_FOR_ARCHS=	i386 amd64
