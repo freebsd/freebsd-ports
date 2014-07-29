@@ -16,12 +16,8 @@ USES=		gmake
 
 OPTIONS_DEFINE=	DOCS
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MDOCS}
 post-install:
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_MAN} ${WRKSRC}/readme ${STAGEDIR}${DOCSDIR}/README
-.endif
 
 .include <bsd.port.mk>

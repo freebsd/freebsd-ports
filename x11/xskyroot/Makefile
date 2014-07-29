@@ -20,4 +20,5 @@ NO_WRKSUBDIR=	yes
 USES=		imake
 USE_XORG=	x11
 PLIST_FILES=	bin/xskyroot
+
 .include <bsd.port.mk>
