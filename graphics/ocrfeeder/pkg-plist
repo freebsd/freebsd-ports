@@ -1,29 +1,5 @@
 bin/ocrfeeder
 bin/ocrfeeder-cli
-%%NLS%%lib/locale/ca/LC_MESSAGES/ocrfeeder.mo
-%%NLS%%lib/locale/ca@valencia/LC_MESSAGES/ocrfeeder.mo
-%%NLS%%lib/locale/cs/LC_MESSAGES/ocrfeeder.mo
-%%NLS%%lib/locale/da/LC_MESSAGES/ocrfeeder.mo
-%%NLS%%lib/locale/de/LC_MESSAGES/ocrfeeder.mo
-%%NLS%%lib/locale/el/LC_MESSAGES/ocrfeeder.mo
-%%NLS%%lib/locale/en_GB/LC_MESSAGES/ocrfeeder.mo
-%%NLS%%lib/locale/eo/LC_MESSAGES/ocrfeeder.mo
-%%NLS%%lib/locale/es/LC_MESSAGES/ocrfeeder.mo
-%%NLS%%lib/locale/fr/LC_MESSAGES/ocrfeeder.mo
-%%NLS%%lib/locale/gl/LC_MESSAGES/ocrfeeder.mo
-%%NLS%%lib/locale/hu/LC_MESSAGES/ocrfeeder.mo
-%%NLS%%lib/locale/it/LC_MESSAGES/ocrfeeder.mo
-%%NLS%%lib/locale/nb/LC_MESSAGES/ocrfeeder.mo
-%%NLS%%lib/locale/pl/LC_MESSAGES/ocrfeeder.mo
-%%NLS%%lib/locale/pt/LC_MESSAGES/ocrfeeder.mo
-%%NLS%%lib/locale/pt_BR/LC_MESSAGES/ocrfeeder.mo
-%%NLS%%lib/locale/ro/LC_MESSAGES/ocrfeeder.mo
-%%NLS%%lib/locale/sl/LC_MESSAGES/ocrfeeder.mo
-%%NLS%%lib/locale/sv/LC_MESSAGES/ocrfeeder.mo
-%%NLS%%lib/locale/uk/LC_MESSAGES/ocrfeeder.mo
-%%NLS%%lib/locale/zh_CN/LC_MESSAGES/ocrfeeder.mo
-%%NLS%%lib/locale/zh_HK/LC_MESSAGES/ocrfeeder.mo
-%%NLS%%lib/locale/zh_TW/LC_MESSAGES/ocrfeeder.mo
 %%PYTHON_SITELIBDIR%%/ocrfeeder/__init__.py
 %%PYTHON_SITELIBDIR%%/ocrfeeder/__init__.pyc
 %%PYTHON_SITELIBDIR%%/ocrfeeder/__init__.pyo
@@ -174,6 +150,8 @@ bin/ocrfeeder-cli
 %%PYTHON_SITELIBDIR%%/ocrfeeder/util/lib.py
 %%PYTHON_SITELIBDIR%%/ocrfeeder/util/lib.pyc
 %%PYTHON_SITELIBDIR%%/ocrfeeder/util/lib.pyo
+man/man1/ocrfeeder.1.gz
+man/man1/ocrfeeder-cli.1.gz
 share/applications/ocrfeeder.desktop
 share/gnome/help/ocrfeeder/C/addingfolder.page
 share/gnome/help/ocrfeeder/C/addingimage.page
@@ -186,6 +164,7 @@ share/gnome/help/ocrfeeder/C/finetuning.page
 share/gnome/help/ocrfeeder/C/importingfromscanner.page
 share/gnome/help/ocrfeeder/C/importingpdf.page
 share/gnome/help/ocrfeeder/C/index.page
+share/gnome/help/ocrfeeder/C/legal.xml
 share/gnome/help/ocrfeeder/C/manualeditionandcorrection.page
 share/gnome/help/ocrfeeder/C/ocrconfiguration.page
 share/gnome/help/ocrfeeder/C/projects.page
@@ -201,6 +180,7 @@ share/gnome/help/ocrfeeder/cs/finetuning.page
 share/gnome/help/ocrfeeder/cs/importingfromscanner.page
 share/gnome/help/ocrfeeder/cs/importingpdf.page
 share/gnome/help/ocrfeeder/cs/index.page
+share/gnome/help/ocrfeeder/cs/legal.xml
 share/gnome/help/ocrfeeder/cs/manualeditionandcorrection.page
 share/gnome/help/ocrfeeder/cs/ocrconfiguration.page
 share/gnome/help/ocrfeeder/cs/projects.page
@@ -216,6 +196,7 @@ share/gnome/help/ocrfeeder/de/finetuning.page
 share/gnome/help/ocrfeeder/de/importingfromscanner.page
 share/gnome/help/ocrfeeder/de/importingpdf.page
 share/gnome/help/ocrfeeder/de/index.page
+share/gnome/help/ocrfeeder/de/legal.xml
 share/gnome/help/ocrfeeder/de/manualeditionandcorrection.page
 share/gnome/help/ocrfeeder/de/ocrconfiguration.page
 share/gnome/help/ocrfeeder/de/projects.page
@@ -231,10 +212,59 @@ share/gnome/help/ocrfeeder/es/finetuning.page
 share/gnome/help/ocrfeeder/es/importingfromscanner.page
 share/gnome/help/ocrfeeder/es/importingpdf.page
 share/gnome/help/ocrfeeder/es/index.page
+share/gnome/help/ocrfeeder/es/legal.xml
 share/gnome/help/ocrfeeder/es/manualeditionandcorrection.page
 share/gnome/help/ocrfeeder/es/ocrconfiguration.page
 share/gnome/help/ocrfeeder/es/projects.page
 share/gnome/help/ocrfeeder/es/unpaper.page
+share/gnome/help/ocrfeeder/fr/addingfolder.page
+share/gnome/help/ocrfeeder/fr/addingimage.page
+share/gnome/help/ocrfeeder/fr/automaticrecognition.page
+share/gnome/help/ocrfeeder/fr/deskewing.page
+share/gnome/help/ocrfeeder/fr/documentgeneration.page
+share/gnome/help/ocrfeeder/fr/figures/areas-edition.png
+share/gnome/help/ocrfeeder/fr/figures/content-areas.png
+share/gnome/help/ocrfeeder/fr/finetuning.page
+share/gnome/help/ocrfeeder/fr/importingfromscanner.page
+share/gnome/help/ocrfeeder/fr/importingpdf.page
+share/gnome/help/ocrfeeder/fr/index.page
+share/gnome/help/ocrfeeder/fr/legal.xml
+share/gnome/help/ocrfeeder/fr/manualeditionandcorrection.page
+share/gnome/help/ocrfeeder/fr/ocrconfiguration.page
+share/gnome/help/ocrfeeder/fr/projects.page
+share/gnome/help/ocrfeeder/fr/unpaper.page
+share/gnome/help/ocrfeeder/gl/addingfolder.page
+share/gnome/help/ocrfeeder/gl/addingimage.page
+share/gnome/help/ocrfeeder/gl/automaticrecognition.page
+share/gnome/help/ocrfeeder/gl/deskewing.page
+share/gnome/help/ocrfeeder/gl/documentgeneration.page
+share/gnome/help/ocrfeeder/gl/figures/areas-edition.png
+share/gnome/help/ocrfeeder/gl/figures/content-areas.png
+share/gnome/help/ocrfeeder/gl/finetuning.page
+share/gnome/help/ocrfeeder/gl/importingfromscanner.page
+share/gnome/help/ocrfeeder/gl/importingpdf.page
+share/gnome/help/ocrfeeder/gl/index.page
+share/gnome/help/ocrfeeder/gl/legal.xml
+share/gnome/help/ocrfeeder/gl/manualeditionandcorrection.page
+share/gnome/help/ocrfeeder/gl/ocrconfiguration.page
+share/gnome/help/ocrfeeder/gl/projects.page
+share/gnome/help/ocrfeeder/gl/unpaper.page
+share/gnome/help/ocrfeeder/ru/addingfolder.page
+share/gnome/help/ocrfeeder/ru/addingimage.page
+share/gnome/help/ocrfeeder/ru/automaticrecognition.page
+share/gnome/help/ocrfeeder/ru/deskewing.page
+share/gnome/help/ocrfeeder/ru/documentgeneration.page
+share/gnome/help/ocrfeeder/ru/figures/areas-edition.png
+share/gnome/help/ocrfeeder/ru/figures/content-areas.png
+share/gnome/help/ocrfeeder/ru/finetuning.page
+share/gnome/help/ocrfeeder/ru/importingfromscanner.page
+share/gnome/help/ocrfeeder/ru/importingpdf.page
+share/gnome/help/ocrfeeder/ru/index.page
+share/gnome/help/ocrfeeder/ru/legal.xml
+share/gnome/help/ocrfeeder/ru/manualeditionandcorrection.page
+share/gnome/help/ocrfeeder/ru/ocrconfiguration.page
+share/gnome/help/ocrfeeder/ru/projects.page
+share/gnome/help/ocrfeeder/ru/unpaper.page
 share/gnome/help/ocrfeeder/sl/addingfolder.page
 share/gnome/help/ocrfeeder/sl/addingimage.page
 share/gnome/help/ocrfeeder/sl/automaticrecognition.page
@@ -246,19 +276,72 @@ share/gnome/help/ocrfeeder/sl/finetuning.page
 share/gnome/help/ocrfeeder/sl/importingfromscanner.page
 share/gnome/help/ocrfeeder/sl/importingpdf.page
 share/gnome/help/ocrfeeder/sl/index.page
+share/gnome/help/ocrfeeder/sl/legal.xml
 share/gnome/help/ocrfeeder/sl/manualeditionandcorrection.page
 share/gnome/help/ocrfeeder/sl/ocrconfiguration.page
 share/gnome/help/ocrfeeder/sl/projects.page
 share/gnome/help/ocrfeeder/sl/unpaper.page
+share/gnome/help/ocrfeeder/uk/addingfolder.page
+share/gnome/help/ocrfeeder/uk/addingimage.page
+share/gnome/help/ocrfeeder/uk/automaticrecognition.page
+share/gnome/help/ocrfeeder/uk/deskewing.page
+share/gnome/help/ocrfeeder/uk/documentgeneration.page
+share/gnome/help/ocrfeeder/uk/figures/areas-edition.png
+share/gnome/help/ocrfeeder/uk/figures/content-areas.png
+share/gnome/help/ocrfeeder/uk/finetuning.page
+share/gnome/help/ocrfeeder/uk/importingfromscanner.page
+share/gnome/help/ocrfeeder/uk/importingpdf.page
+share/gnome/help/ocrfeeder/uk/index.page
+share/gnome/help/ocrfeeder/uk/legal.xml
+share/gnome/help/ocrfeeder/uk/manualeditionandcorrection.page
+share/gnome/help/ocrfeeder/uk/ocrconfiguration.page
+share/gnome/help/ocrfeeder/uk/projects.page
+share/gnome/help/ocrfeeder/uk/unpaper.page
+share/locale/ca/LC_MESSAGES/ocrfeeder.mo
+share/locale/ca@valencia/LC_MESSAGES/ocrfeeder.mo
+share/locale/cs/LC_MESSAGES/ocrfeeder.mo
+share/locale/da/LC_MESSAGES/ocrfeeder.mo
+share/locale/de/LC_MESSAGES/ocrfeeder.mo
+share/locale/el/LC_MESSAGES/ocrfeeder.mo
+share/locale/en_GB/LC_MESSAGES/ocrfeeder.mo
+share/locale/eo/LC_MESSAGES/ocrfeeder.mo
+share/locale/es/LC_MESSAGES/ocrfeeder.mo
+share/locale/fr/LC_MESSAGES/ocrfeeder.mo
+share/locale/gl/LC_MESSAGES/ocrfeeder.mo
+share/locale/hu/LC_MESSAGES/ocrfeeder.mo
+share/locale/it/LC_MESSAGES/ocrfeeder.mo
+share/locale/nb/LC_MESSAGES/ocrfeeder.mo
+share/locale/pl/LC_MESSAGES/ocrfeeder.mo
+share/locale/pt/LC_MESSAGES/ocrfeeder.mo
+share/locale/pt_BR/LC_MESSAGES/ocrfeeder.mo
+share/locale/ro/LC_MESSAGES/ocrfeeder.mo
+share/locale/ru/LC_MESSAGES/ocrfeeder.mo
+share/locale/sl/LC_MESSAGES/ocrfeeder.mo
+share/locale/sr/LC_MESSAGES/ocrfeeder.mo
+share/locale/sr@latin/LC_MESSAGES/ocrfeeder.mo
+share/locale/sv/LC_MESSAGES/ocrfeeder.mo
+share/locale/uk/LC_MESSAGES/ocrfeeder.mo
+share/locale/zh_CN/LC_MESSAGES/ocrfeeder.mo
+share/locale/zh_HK/LC_MESSAGES/ocrfeeder.mo
+share/locale/zh_TW/LC_MESSAGES/ocrfeeder.mo
 %%DATADIR%%/icons/detect_icon.svg
 %%DATADIR%%/icons/ocr.svg
 %%DATADIR%%/icons/ocrfeeder.svg
 %%DATADIR%%/icons/window_icon.png
+%%DATADIR%%/menubar.ui
 %%DATADIR%%/spell-checker.ui
 @dirrm %%DATADIR%%/icons
 @dirrm %%DATADIR%%
+@dirrm share/gnome/help/ocrfeeder/uk/figures
+@dirrm share/gnome/help/ocrfeeder/uk
 @dirrm share/gnome/help/ocrfeeder/sl/figures
 @dirrm share/gnome/help/ocrfeeder/sl
+@dirrm share/gnome/help/ocrfeeder/ru/figures
+@dirrm share/gnome/help/ocrfeeder/ru
+@dirrm share/gnome/help/ocrfeeder/gl/figures
+@dirrm share/gnome/help/ocrfeeder/gl
+@dirrm share/gnome/help/ocrfeeder/fr/figures
+@dirrm share/gnome/help/ocrfeeder/fr
 @dirrm share/gnome/help/ocrfeeder/es/figures
 @dirrm share/gnome/help/ocrfeeder/es
 @dirrm share/gnome/help/ocrfeeder/de/figures
@@ -273,52 +356,3 @@ share/gnome/help/ocrfeeder/sl/unpaper.page
 @dirrm %%PYTHON_SITELIBDIR%%/ocrfeeder/odf
 @dirrm %%PYTHON_SITELIBDIR%%/ocrfeeder/feeder
 @dirrm %%PYTHON_SITELIBDIR%%/ocrfeeder
-%%NLS%%@dirrmtry lib/locale/ca/LC_MESSAGES
-%%NLS%%@dirrmtry lib/locale/ca
-%%NLS%%@dirrmtry lib/locale/ca@valencia/LC_MESSAGES
-%%NLS%%@dirrmtry lib/locale/ca@valencia
-%%NLS%%@dirrmtry lib/locale/cs/LC_MESSAGES
-%%NLS%%@dirrmtry lib/locale/cs
-%%NLS%%@dirrmtry lib/locale/da/LC_MESSAGES
-%%NLS%%@dirrmtry lib/locale/da
-%%NLS%%@dirrmtry lib/locale/de/LC_MESSAGES
-%%NLS%%@dirrmtry lib/locale/de
-%%NLS%%@dirrmtry lib/locale/el/LC_MESSAGES
-%%NLS%%@dirrmtry lib/locale/el
-%%NLS%%@dirrmtry lib/locale/en_GB/LC_MESSAGES
-%%NLS%%@dirrmtry lib/locale/en_GB
-%%NLS%%@dirrmtry lib/locale/eo/LC_MESSAGES
-%%NLS%%@dirrmtry lib/locale/eo
-%%NLS%%@dirrmtry lib/locale/es/LC_MESSAGES
-%%NLS%%@dirrmtry lib/locale/es
-%%NLS%%@dirrmtry lib/locale/fr/LC_MESSAGES
-%%NLS%%@dirrmtry lib/locale/fr
-%%NLS%%@dirrmtry lib/locale/gl/LC_MESSAGES
-%%NLS%%@dirrmtry lib/locale/gl
-%%NLS%%@dirrmtry lib/locale/hu/LC_MESSAGES
-%%NLS%%@dirrmtry lib/locale/hu
-%%NLS%%@dirrmtry lib/locale/it/LC_MESSAGES
-%%NLS%%@dirrmtry lib/locale/it
-%%NLS%%@dirrmtry lib/locale/nb/LC_MESSAGES
-%%NLS%%@dirrmtry lib/locale/nb
-%%NLS%%@dirrmtry lib/locale/pl/LC_MESSAGES
-%%NLS%%@dirrmtry lib/locale/pl
-%%NLS%%@dirrmtry lib/locale/pt/LC_MESSAGES
-%%NLS%%@dirrmtry lib/locale/pt
-%%NLS%%@dirrmtry lib/locale/pt_BR/LC_MESSAGES
-%%NLS%%@dirrmtry lib/locale/pt_BR
-%%NLS%%@dirrmtry lib/locale/ro/LC_MESSAGES
-%%NLS%%@dirrmtry lib/locale/ro
-%%NLS%%@dirrmtry lib/locale/sl/LC_MESSAGES
-%%NLS%%@dirrmtry lib/locale/sl
-%%NLS%%@dirrmtry lib/locale/sv/LC_MESSAGES
-%%NLS%%@dirrmtry lib/locale/sv
-%%NLS%%@dirrmtry lib/locale/uk/LC_MESSAGES
-%%NLS%%@dirrmtry lib/locale/uk
-%%NLS%%@dirrmtry lib/locale/zh_CN/LC_MESSAGES
-%%NLS%%@dirrmtry lib/locale/zh_CN
-%%NLS%%@dirrmtry lib/locale/zh_HK/LC_MESSAGES
-%%NLS%%@dirrmtry lib/locale/zh_HK
-%%NLS%%@dirrmtry lib/locale/zh_TW/LC_MESSAGES
-%%NLS%%@dirrmtry lib/locale/zh_TW
-%%NLS%%@dirrmtry lib/locale
