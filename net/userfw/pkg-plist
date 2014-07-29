@@ -29,5 +29,3 @@ include/userfw/modules/ng_userfw_connector.h
 %%KMODDIR%%/userfw_ipfw.ko
 %%KMODDIR%%/userfw_log.ko
 %%KMODDIR%%/userfw_multiruleset.ko
-@exec /usr/sbin/kldxref /%%KMODDIR%%
-@unexec /usr/sbin/kldxref /%%KMODDIR%%
