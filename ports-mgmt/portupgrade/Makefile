@@ -3,7 +3,7 @@
 
 PORTNAME=	portupgrade
 PORTVERSION=	2.4.12
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	2
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	SF/portupgrade/pkgtools/dist/ \
