@@ -1,10 +1,10 @@
 # Created by: Vanilla I. Shu <vanilla@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/devel/glib20/Makefile 19719 2014-06-01 17:28:03Z kwm $
+#   $MCom: ports/trunk/devel/glib20/Makefile 19784 2014-07-25 19:59:33Z gusi $
 
 PORTNAME=	glib
 PORTVERSION=	2.40.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -32,6 +32,7 @@ USE_PYTHON=	yes
 PYTHON_PY3K_PLIST_HACK=	yes
 CONFIGURE_ARGS=	--disable-gtk-doc --with-html-dir=${PREFIX}/share/doc \
 		--disable-man --without-xml-catalog \
+		--enable-static=yes \
 		--with-pcre=system \
 		--disable-fam
 CONFIGURE_ENV=	ac_cv_header_sys_inotify_h=
