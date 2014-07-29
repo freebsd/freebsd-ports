@@ -18,24 +18,15 @@ USE_PHP=	zlib
 
 WRKSRC=		${WRKDIR}/tracker
 NO_BUILD=	yes
-PKGMESSAGE=	${WRKDIR}/pkg-message
-CPIOARGS=	--quiet -pdum -R
+CPIOARGS=	--quiet -pdum
+SUB_FILES=	pkg-message
+SUB_LIST=	GLPIPLUGINDIR="${GLPIPLUGINDIR}"
+PLIST_SUB=	WWWOWN="${WWWOWN}" WWWGRP="${WWWGRP}"
 
 GLPIPLUGINDIR?=	www/glpi/plugins/tracker
 
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
-
-post-configure:
-	@${SED} -e 's,%%PREFIX%%,${PREFIX},g' \
-	  -e 's,%%GLPIPLUGINDIR%%,${GLPIPLUGINDIR},g' pkg-message > ${PKGMESSAGE}
-
 do-install:
-	@${MKDIR} -m 0755 ${PREFIX}/${GLPIPLUGINDIR}
-	@cd ${WRKSRC} && ${FIND} * -print | ${CPIO} ${CPIOARGS} ${WWWOWN}:${WWWGRP} ${PREFIX}/${GLPIPLUGINDIR}
-	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${PREFIX}/${GLPIPLUGINDIR}
+	@${MKDIR} -m 0755 ${STAGEDIR}${PREFIX}/${GLPIPLUGINDIR}
+	@cd ${WRKSRC} && ${FIND} * -print | ${CPIO} ${CPIOARGS} ${STAGEDIR}${PREFIX}/${GLPIPLUGINDIR}
 
-post-install:
-	@${CAT} ${PKGMESSAGE}
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
