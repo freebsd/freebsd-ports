@@ -9,6 +9,7 @@ DISTNAME=	${UPPORTNAME}${TAXYEAR}_${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	US tax prep software
 
+USES=		tar:tgz
 PLIST=		${WRKDIR}/pkg-plist
 SUB_FILES=	pkg-plist
 SUB_LIST=	TAXYEAR=${TAXYEAR}
@@ -18,7 +19,7 @@ UPPORTNAME=	OpenTaxSolver
 .if !defined(WITHOUT_X11)
 USE_GL=		yes
 USE_XORG=	xmu xext x11
-USES=		pkgconfig tar:tgz
+USES+=		pkgconfig
 CPPFLAGS+=	$$(pkg-config --cflags-only-I glu xext xmu)
 LDFLAGS+=	$$(pkg-config --libs-only-L glu xext xmu)
 SUB_LIST+=	X11=
