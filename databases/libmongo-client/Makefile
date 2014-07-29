@@ -3,6 +3,7 @@
 
 PORTNAME=	libmongo-client
 PORTVERSION=	0.1.6.3
+PORTREVISION=	1
 CATEGORIES=	databases
 
 MAINTAINER=	gd.workbox@gmail.com
@@ -15,9 +16,9 @@ GH_ACCOUNT=	algernon
 GH_TAGNAME=	${PORTNAME}-${PORTVERSION}
 GH_COMMIT=	ff123ed # should be 9cbb488, but does not
 
-USE_AUTOTOOLS=	automake autoconf libtool
+USE_AUTOTOOLS=	automake autoconf libtoolize
 GNU_CONFIGURE=	yes
-USES=		pkgconfig gmake pathfix
+USES=		libtool pkgconfig gmake pathfix
 USE_GNOME=	glib20
 USE_LDCONFIG=	yes
 CONFIGURE_ENV+=	PKG_CONFIG_DIR=${LOCALBASE}/libdata/pkgconfig
