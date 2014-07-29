@@ -14,12 +14,12 @@ hbase/bin/rolling-restart.sh
 hbase/bin/start-hbase.sh
 hbase/bin/stop-hbase.sh
 hbase/bin/zookeepers.sh
-hbase/conf/hadoop-metrics2-hbase.properties
-hbase/conf/hbase-env.sh
-hbase/conf/hbase-policy.xml
-hbase/conf/hbase-site.xml
-hbase/conf/log4j.properties
-hbase/conf/regionservers
+%%EXAMPLESDIR%%/conf/hadoop-metrics2-hbase.properties
+%%EXAMPLESDIR%%/conf/hbase-env.sh
+%%EXAMPLESDIR%%/conf/hbase-policy.xml
+%%EXAMPLESDIR%%/conf/hbase-site.xml
+%%EXAMPLESDIR%%/conf/log4j.properties
+%%EXAMPLESDIR%%/conf/regionservers
 hbase/hbase-webapps/master/WEB-INF/web.xml
 hbase/hbase-webapps/master/index.html
 hbase/hbase-webapps/regionserver/WEB-INF/web.xml
@@ -9947,7 +9947,6 @@ hbase/lib/zookeeper-3.4.6.jar
 %%PORTDOCS%%%%DOCSDIR%%/zookeeper/zk.sasl.auth.html
 %%PORTDOCS%%%%DOCSDIR%%/zookeeper/zookeeper.html
 @dirrm hbase/bin
-@dirrm hbase/conf
 @dirrm hbase/hbase-webapps/master/WEB-INF
 @dirrm hbase/hbase-webapps/master
 @dirrm hbase/hbase-webapps/regionserver/WEB-INF
@@ -10464,6 +10463,8 @@ hbase/lib/zookeeper-3.4.6.jar
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/xref-test
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/zookeeper
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm %%EXAMPLESDIR%%/conf
+@dirrm %%EXAMPLESDIR%%
 @dirrmtry %%ETCDIR%%
 @cwd /
 @owner %%HBASE_USER%%
