@@ -1,29 +1,7 @@
---- CMakeLists.txt.orig	2013-03-25 10:45:20.000000000 +0100
-+++ CMakeLists.txt	2014-01-31 14:35:27.000000000 +0100
-@@ -38,7 +38,7 @@
- 
- if(COMMAND cmake_policy AND POLICY CMP0015)
- 	cmake_policy(SET CMP0015 NEW)
--endif(COMMAND cmake_policy)
-+endif(COMMAND cmake_policy AND POLICY CMP0015)
- 
- #-----------------
- # CPPFLAGS, CXXFLAGS and LDFLAGS from the environment
-@@ -221,7 +221,7 @@
- software free of charge under the GNU General Public License
- (http://www.gnu.org/licenses/). You can also purchase commercial MySQL
- licenses from ${CPACK_PACKAGE_VENDOR} if you do not wish to be
--bound by the terms of the GPL. See the chapter "Licensing and Support"
-+bound by the terms of the GPL. See the chapter \"Licensing and Support\"
- in the manual for further info.")
- 
- IF(EXISTS "${CMAKE_SOURCE_DIR}/COPYING")
-@@ -249,17 +249,9 @@
- 
- IF(WIN32)
-   FILE(WRITE "${CMAKE_SOURCE_DIR}/win/config.cmake" "SET(CONNECTOR_PRODUCT_VERSION ${MYSQLCPPCONN_VERSION})
--SET( LICENSE_FILENAME "${CPACK_RESOURCE_FILE_LICENSE}")")
-+SET( LICENSE_FILENAME ${CPACK_RESOURCE_FILE_LICENSE})")
+--- CMakeLists.txt.orig	2014-07-24 20:53:44.000000000 +0200
++++ CMakeLists.txt	2014-07-29 12:53:28.000000000 +0200
+@@ -261,14 +261,6 @@
+   SET(CPACK_GENERATOR "TGZ")
  ENDIF(WIN32)
  
 -INSTALL(FILES
@@ -35,5 +13,5 @@
 -	DESTINATION "." OPTIONAL)
 -
  SET(COMMON_IGNORE_FILES "/CMakeFiles/" "/Testing/" "/.bzr/" "_CPack_Packages/"
-     ".cmake$" "~" ".swp" ".log" ".gz" ".directory$" "CMakeCache.txt" "Makefile"
+     "~" ".swp" ".log" ".gz" ".directory$" "CMakeCache.txt" "Makefile"
  	"install_manifest.txt")
