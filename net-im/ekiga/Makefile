@@ -3,7 +3,7 @@
 
 PORTNAME=	ekiga
 PORTVERSION=	4.0.1
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	net-im
 MASTER_SITES=	GNOME
 #MASTER_SITES=	http://www.ekiga.org/admin/downloads/latest/sources/ekiga_${PORTVERSION}/
@@ -102,12 +102,6 @@ CONFIGURE_ARGS+=--disable-ldap
 PLIST_SUB+=	LDAP="@comment "
 .endif
 
-.if defined(WITH_PLUGINS)
-PLIST_SUB+=	PLUGINS=""
-.else
-PLIST_SUB+=	PLUGINS="@comment "
-.endif
-
 .if ${PORT_OPTIONS:MNOTIFY}
 LIB_DEPENDS+=	libnotify.so:${PORTSDIR}/devel/libnotify
 CONFIGURE_ARGS+=--enable-notify
@@ -163,6 +157,12 @@ USE_GNOME+=	gnomedocutils
 .else
 CONFIGURE_ARGS+=--disable-gdu
 PLIST_SUB+=	GNOMEHELP="@comment "
+.endif
+
+.if defined(WITH_PLUGINS)
+PLIST_SUB+=	PLUGINS=""
+.else
+PLIST_SUB+=	PLUGINS="@comment "
 .endif
 
 post-install:
