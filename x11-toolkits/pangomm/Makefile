@@ -12,6 +12,7 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	C++ wrapper for Pango
 
+USES=		tar:xz
 
 .if !defined(REFERENCE_PORT)
 
@@ -19,7 +20,7 @@ BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4
 
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-USES=		gmake pathfix pkgconfig tar:xz
+USES+=		gmake pathfix pkgconfig
 USE_GNOME=	cairomm glibmm pango
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
