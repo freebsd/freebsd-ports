@@ -14,6 +14,7 @@ COMMENT=	Some useful routines of C programming (current stable version)
 
 LICENSE=	LGPL20
 
+USES=		tar:xz
 PORTSCOUT=	limitw:1,even
 
 .if !defined(REFERENCE_PORT)
@@ -25,7 +26,7 @@ USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
 # iconv:wchar_t - our iconv in base doesn't support utf-8 -> wchar_t (boooo)
 # (wchar_t is used by glibmm, rawtherapee triggered this)
-USES=		gettext gmake iconv:wchar_t pathfix pkgconfig shebangfix perl5 tar:xz
+USES+=		gettext gmake iconv:wchar_t pathfix pkgconfig shebangfix perl5
 USE_GNOME=	ltverhack
 USE_PYTHON=	yes
 PYTHON_PY3K_PLIST_HACK=	yes
