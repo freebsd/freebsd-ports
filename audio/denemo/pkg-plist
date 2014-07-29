@@ -580,6 +580,8 @@ share/applications/denemo.desktop
 %%DATADIR%%/actions/bitmaps/six.svg
 %%DATADIR%%/actions/bitmaps/sp.png
 %%DATADIR%%/actions/bitmaps/spp.png
+%%DATADIR%%/actions/bitmaps/suspension.eps
+%%DATADIR%%/actions/bitmaps/suspension.svg
 %%DATADIR%%/actions/bitmaps/three.svg
 %%DATADIR%%/actions/bitmaps/timesig.C22.svg
 %%DATADIR%%/actions/bitmaps/timesig.C44.svg
@@ -1032,6 +1034,10 @@ share/applications/denemo.desktop
 %%DATADIR%%/actions/menus/ObjectMenu/ChordMenu/AddBelowTop/AddHighestDownPerfect4.xml
 %%DATADIR%%/actions/menus/ObjectMenu/ChordMenu/AddBelowTop/AddHighestDownPerfect5.scm
 %%DATADIR%%/actions/menus/ObjectMenu/ChordMenu/AddBelowTop/AddHighestDownPerfect5.xml
+%%DATADIR%%/actions/menus/ObjectMenu/ChordMenu/ChangeEnharmonicDown.scm
+%%DATADIR%%/actions/menus/ObjectMenu/ChordMenu/ChangeEnharmonicDown.xml
+%%DATADIR%%/actions/menus/ObjectMenu/ChordMenu/ChangeEnharmonicUp.scm
+%%DATADIR%%/actions/menus/ObjectMenu/ChordMenu/ChangeEnharmonicUp.xml
 %%DATADIR%%/actions/menus/ObjectMenu/ChordMenu/ChangePrintDuration/ChangePrintDuration0.scm
 %%DATADIR%%/actions/menus/ObjectMenu/ChordMenu/ChangePrintDuration/ChangePrintDuration0.xml
 %%DATADIR%%/actions/menus/ObjectMenu/ChordMenu/ChangePrintDuration/ChangePrintDuration1.scm
@@ -1099,8 +1105,12 @@ share/applications/denemo.desktop
 %%DATADIR%%/actions/menus/ObjectMenu/Directives/Markings/DynamicText.xml
 %%DATADIR%%/actions/menus/ObjectMenu/Directives/Markings/FreeFermata.scm
 %%DATADIR%%/actions/menus/ObjectMenu/Directives/Markings/FreeFermata.xml
+%%DATADIR%%/actions/menus/ObjectMenu/Directives/Markings/FreeSegno.scm
+%%DATADIR%%/actions/menus/ObjectMenu/Directives/Markings/FreeSegno.xml
 %%DATADIR%%/actions/menus/ObjectMenu/Directives/Markings/MetronomeMark.scm
 %%DATADIR%%/actions/menus/ObjectMenu/Directives/Markings/MetronomeMark.xml
+%%DATADIR%%/actions/menus/ObjectMenu/Directives/Markings/MusicGlyph.scm
+%%DATADIR%%/actions/menus/ObjectMenu/Directives/Markings/MusicGlyph.xml
 %%DATADIR%%/actions/menus/ObjectMenu/Directives/Markings/RehearsalMark.scm
 %%DATADIR%%/actions/menus/ObjectMenu/Directives/Markings/RehearsalMark.xml
 %%DATADIR%%/actions/menus/ObjectMenu/Directives/Markings/Spanning/BeamingOff.scm
@@ -1188,6 +1198,8 @@ share/applications/denemo.desktop
 %%DATADIR%%/actions/menus/ObjectMenu/Directives/PrintLayout/NoLineBreak.xml
 %%DATADIR%%/actions/menus/ObjectMenu/Directives/PrintLayout/PageBreak.scm
 %%DATADIR%%/actions/menus/ObjectMenu/Directives/PrintLayout/PageBreak.xml
+%%DATADIR%%/actions/menus/ObjectMenu/Directives/PrintLayout/StaffSpacer.scm
+%%DATADIR%%/actions/menus/ObjectMenu/Directives/PrintLayout/StaffSpacer.xml
 %%DATADIR%%/actions/menus/ObjectMenu/Directives/Typesetter/AutoAccidentals.scm
 %%DATADIR%%/actions/menus/ObjectMenu/Directives/Typesetter/AutoAccidentals.xml
 %%DATADIR%%/actions/menus/ObjectMenu/Directives/Typesetter/Hide.scm
@@ -1248,6 +1260,8 @@ share/applications/denemo.desktop
 %%DATADIR%%/actions/menus/ObjectMenu/Key/SharpenInitialKeysigs.xml
 %%DATADIR%%/actions/menus/ObjectMenu/Key/SharpenKeysig.scm
 %%DATADIR%%/actions/menus/ObjectMenu/Key/SharpenKeysig.xml
+%%DATADIR%%/actions/menus/ObjectMenu/Lyrics/EditLyricAtCursor.scm
+%%DATADIR%%/actions/menus/ObjectMenu/Lyrics/EditLyricAtCursor.xml
 %%DATADIR%%/actions/menus/ObjectMenu/Lyrics/TypesetVersesAtEnd.scm
 %%DATADIR%%/actions/menus/ObjectMenu/Lyrics/TypesetVersesAtEnd.xml
 %%DATADIR%%/actions/menus/ObjectMenu/MeasureMenu/AddDuplicateMeasure.scm
@@ -1258,6 +1272,8 @@ share/applications/denemo.desktop
 %%DATADIR%%/actions/menus/ObjectMenu/MeasureMenu/CheckTupletsInMeasure.xml
 %%DATADIR%%/actions/menus/ObjectMenu/MeasureMenu/DeleteEmptyMeasures.scm
 %%DATADIR%%/actions/menus/ObjectMenu/MeasureMenu/DeleteEmptyMeasures.xml
+%%DATADIR%%/actions/menus/ObjectMenu/MeasureMenu/IgnoreMeasureDurationError.scm
+%%DATADIR%%/actions/menus/ObjectMenu/MeasureMenu/IgnoreMeasureDurationError.xml
 %%DATADIR%%/actions/menus/ObjectMenu/MeasureMenu/MergeWithNextMeasure.scm
 %%DATADIR%%/actions/menus/ObjectMenu/MeasureMenu/MergeWithNextMeasure.xml
 %%DATADIR%%/actions/menus/ObjectMenu/MeasureMenu/Repeats/CloseReopenRepeat.scm
@@ -1451,6 +1467,8 @@ share/applications/denemo.desktop
 %%DATADIR%%/actions/menus/ObjectMenu/NotesRests/ChordComment.xml
 %%DATADIR%%/actions/menus/ObjectMenu/NotesRests/Directives/DeleteLilyPondOnNote.scm
 %%DATADIR%%/actions/menus/ObjectMenu/NotesRests/Directives/DeleteLilyPondOnNote.xml
+%%DATADIR%%/actions/menus/ObjectMenu/NotesRests/DisplaceHorizontally.scm
+%%DATADIR%%/actions/menus/ObjectMenu/NotesRests/DisplaceHorizontally.xml
 %%DATADIR%%/actions/menus/ObjectMenu/NotesRests/EditDuration/Breve.scm
 %%DATADIR%%/actions/menus/ObjectMenu/NotesRests/EditDuration/Breve.xml
 %%DATADIR%%/actions/menus/ObjectMenu/NotesRests/EditDuration/Longa.scm
@@ -1480,10 +1498,10 @@ share/applications/denemo.desktop
 %%DATADIR%%/actions/menus/ObjectMenu/NotesRests/EditNote/AddDotSelectionSwitcher.xml
 %%DATADIR%%/actions/menus/ObjectMenu/NotesRests/EditNote/CautionaryAccidental.scm
 %%DATADIR%%/actions/menus/ObjectMenu/NotesRests/EditNote/CautionaryAccidental.xml
-%%DATADIR%%/actions/menus/ObjectMenu/NotesRests/EditNote/ChangeEnharmonicDown.scm
-%%DATADIR%%/actions/menus/ObjectMenu/NotesRests/EditNote/ChangeEnharmonicDown.xml
-%%DATADIR%%/actions/menus/ObjectMenu/NotesRests/EditNote/ChangeEnharmonicUp.scm
-%%DATADIR%%/actions/menus/ObjectMenu/NotesRests/EditNote/ChangeEnharmonicUp.xml
+%%DATADIR%%/actions/menus/ObjectMenu/NotesRests/EditNote/ChangeNoteEnharmonicDown.scm
+%%DATADIR%%/actions/menus/ObjectMenu/NotesRests/EditNote/ChangeNoteEnharmonicDown.xml
+%%DATADIR%%/actions/menus/ObjectMenu/NotesRests/EditNote/ChangeNoteEnharmonicUp.scm
+%%DATADIR%%/actions/menus/ObjectMenu/NotesRests/EditNote/ChangeNoteEnharmonicUp.xml
 %%DATADIR%%/actions/menus/ObjectMenu/NotesRests/EditNote/Ficta.scm
 %%DATADIR%%/actions/menus/ObjectMenu/NotesRests/EditNote/Ficta.xml
 %%DATADIR%%/actions/menus/ObjectMenu/NotesRests/EditNote/FlattenNote.scm
@@ -1532,6 +1550,8 @@ share/applications/denemo.desktop
 %%DATADIR%%/actions/menus/ObjectMenu/NotesRests/Markings/Articulations/AccentSelectionSwitcher.xml
 %%DATADIR%%/actions/menus/ObjectMenu/NotesRests/Markings/Articulations/ArpeggioSelectionSwitcher.scm
 %%DATADIR%%/actions/menus/ObjectMenu/NotesRests/Markings/Articulations/ArpeggioSelectionSwitcher.xml
+%%DATADIR%%/actions/menus/ObjectMenu/NotesRests/Markings/Articulations/ArticulationOutsideSlur.scm
+%%DATADIR%%/actions/menus/ObjectMenu/NotesRests/Markings/Articulations/ArticulationOutsideSlur.xml
 %%DATADIR%%/actions/menus/ObjectMenu/NotesRests/Markings/Articulations/DownbowSelectionSwitcher.scm
 %%DATADIR%%/actions/menus/ObjectMenu/NotesRests/Markings/Articulations/DownbowSelectionSwitcher.xml
 %%DATADIR%%/actions/menus/ObjectMenu/NotesRests/Markings/Articulations/FermataSelectionSwitcher.scm
@@ -1618,6 +1638,16 @@ share/applications/denemo.desktop
 %%DATADIR%%/actions/menus/ObjectMenu/NotesRests/Markings/FiguredBass/AdjustFiguredBassHeights.xml
 %%DATADIR%%/actions/menus/ObjectMenu/NotesRests/Markings/FiguredBass/PlaceFiguredBassBelow.scm
 %%DATADIR%%/actions/menus/ObjectMenu/NotesRests/Markings/FiguredBass/PlaceFiguredBassBelow.xml
+%%DATADIR%%/actions/menus/ObjectMenu/NotesRests/Markings/Ornaments/Claveciniste/ToggleSuspension.scm
+%%DATADIR%%/actions/menus/ObjectMenu/NotesRests/Markings/Ornaments/Claveciniste/ToggleSuspension.xml
+%%DATADIR%%/actions/menus/ObjectMenu/NotesRests/Markings/Ornaments/OrnamentAccidentalBelow.scm
+%%DATADIR%%/actions/menus/ObjectMenu/NotesRests/Markings/Ornaments/OrnamentAccidentalBelow.xml
+%%DATADIR%%/actions/menus/ObjectMenu/NotesRests/Markings/Ornaments/OrnamentFlat.scm
+%%DATADIR%%/actions/menus/ObjectMenu/NotesRests/Markings/Ornaments/OrnamentFlat.xml
+%%DATADIR%%/actions/menus/ObjectMenu/NotesRests/Markings/Ornaments/OrnamentSharp.scm
+%%DATADIR%%/actions/menus/ObjectMenu/NotesRests/Markings/Ornaments/OrnamentSharp.xml
+%%DATADIR%%/actions/menus/ObjectMenu/NotesRests/Markings/Ornaments/ToggleDownPrall.scm
+%%DATADIR%%/actions/menus/ObjectMenu/NotesRests/Markings/Ornaments/ToggleDownPrall.xml
 %%DATADIR%%/actions/menus/ObjectMenu/NotesRests/Markings/Ornaments/ToggleMordent.scm
 %%DATADIR%%/actions/menus/ObjectMenu/NotesRests/Markings/Ornaments/ToggleMordent.xml
 %%DATADIR%%/actions/menus/ObjectMenu/NotesRests/Markings/Ornaments/TogglePrall.scm
@@ -1652,6 +1682,8 @@ share/applications/denemo.desktop
 %%DATADIR%%/actions/menus/ObjectMenu/NotesRests/Markings/Strings/Fingerings/Finger5.xml
 %%DATADIR%%/actions/menus/ObjectMenu/NotesRests/Markings/Strings/Fingerings/FingeringSwap.scm
 %%DATADIR%%/actions/menus/ObjectMenu/NotesRests/Markings/Strings/Fingerings/FingeringSwap.xml
+%%DATADIR%%/actions/menus/ObjectMenu/NotesRests/Markings/Strings/Fingerings/TweakFingeringPosition.scm
+%%DATADIR%%/actions/menus/ObjectMenu/NotesRests/Markings/Strings/Fingerings/TweakFingeringPosition.xml
 %%DATADIR%%/actions/menus/ObjectMenu/NotesRests/Markings/Strings/RHFinger.scm
 %%DATADIR%%/actions/menus/ObjectMenu/NotesRests/Markings/Strings/RHFinger.xml
 %%DATADIR%%/actions/menus/ObjectMenu/NotesRests/Markings/Strings/StringNum.scm
@@ -1705,6 +1737,8 @@ share/applications/denemo.desktop
 %%DATADIR%%/actions/menus/ObjectMenu/NotesRests/Markings/TextMarks/ToggleFine.xml
 %%DATADIR%%/actions/menus/ObjectMenu/NotesRests/Markings/TextMarks/ToggleSegno.scm
 %%DATADIR%%/actions/menus/ObjectMenu/NotesRests/Markings/TextMarks/ToggleSegno.xml
+%%DATADIR%%/actions/menus/ObjectMenu/NotesRests/NoteheadControl/IndividualNoteheadSize.scm
+%%DATADIR%%/actions/menus/ObjectMenu/NotesRests/NoteheadControl/IndividualNoteheadSize.xml
 %%DATADIR%%/actions/menus/ObjectMenu/NotesRests/NoteheadControl/NeoMensuralNotehead.scm
 %%DATADIR%%/actions/menus/ObjectMenu/NotesRests/NoteheadControl/NeoMensuralNotehead.xml
 %%DATADIR%%/actions/menus/ObjectMenu/NotesRests/NoteheadSizes/NormalSizeNotehead.scm
@@ -1797,6 +1831,8 @@ share/applications/denemo.desktop
 %%DATADIR%%/actions/menus/ObjectMenu/NotesRests/StemControl/StartUpStems.xml
 %%DATADIR%%/actions/menus/ObjectMenu/NotesRests/TiedNotes/InsertTiedNoteDuration.scm
 %%DATADIR%%/actions/menus/ObjectMenu/NotesRests/TiedNotes/InsertTiedNoteDuration.xml
+%%DATADIR%%/actions/menus/ObjectMenu/NotesRests/TiedNotes/RepeatTie.scm
+%%DATADIR%%/actions/menus/ObjectMenu/NotesRests/TiedNotes/RepeatTie.xml
 %%DATADIR%%/actions/menus/ObjectMenu/NotesRests/TiedNotes/Shape/ShapeTieFlatter.scm
 %%DATADIR%%/actions/menus/ObjectMenu/NotesRests/TiedNotes/Shape/ShapeTieFlatter.xml
 %%DATADIR%%/actions/menus/ObjectMenu/NotesRests/TiedNotes/Shape/ShapeTieHigher.scm
@@ -1837,6 +1873,10 @@ share/applications/denemo.desktop
 %%DATADIR%%/actions/menus/ObjectMenu/NotesRests/Transpose/ShiftUp.xml
 %%DATADIR%%/actions/menus/ObjectMenu/NotesRests/Tremolo.scm
 %%DATADIR%%/actions/menus/ObjectMenu/NotesRests/Tremolo.xml
+%%DATADIR%%/actions/menus/ObjectMenu/NotesRests/TremoloDownward.scm
+%%DATADIR%%/actions/menus/ObjectMenu/NotesRests/TremoloDownward.xml
+%%DATADIR%%/actions/menus/ObjectMenu/NotesRests/TremoloUpward.scm
+%%DATADIR%%/actions/menus/ObjectMenu/NotesRests/TremoloUpward.xml
 %%DATADIR%%/actions/menus/ObjectMenu/NotesRests/Tuplets/CreateTriplet.scm
 %%DATADIR%%/actions/menus/ObjectMenu/NotesRests/Tuplets/CreateTriplet.xml
 %%DATADIR%%/actions/menus/ObjectMenu/NotesRests/Tuplets/CreateTripletSlurred.scm
@@ -1862,6 +1902,8 @@ share/applications/denemo.desktop
 %%DATADIR%%/actions/menus/ObjectMenu/Score/AccompanistsScore.xml
 %%DATADIR%%/actions/menus/ObjectMenu/Score/CheckScore.scm
 %%DATADIR%%/actions/menus/ObjectMenu/Score/CheckScore.xml
+%%DATADIR%%/actions/menus/ObjectMenu/Score/DisplayEditingTime.scm
+%%DATADIR%%/actions/menus/ObjectMenu/Score/DisplayEditingTime.xml
 %%DATADIR%%/actions/menus/ObjectMenu/Score/EditProlog.scm
 %%DATADIR%%/actions/menus/ObjectMenu/Score/EditProlog.xml
 %%DATADIR%%/actions/menus/ObjectMenu/Score/LilyPondDefinition.scm
@@ -1963,6 +2005,8 @@ share/applications/denemo.desktop
 %%DATADIR%%/actions/menus/ObjectMenu/Score/Typesetter/ScoreIndent.xml
 %%DATADIR%%/actions/menus/ObjectMenu/Score/Typesetter/SetFontSize.scm
 %%DATADIR%%/actions/menus/ObjectMenu/Score/Typesetter/SetFontSize.xml
+%%DATADIR%%/actions/menus/ObjectMenu/Score/Typesetter/SetMargin.scm
+%%DATADIR%%/actions/menus/ObjectMenu/Score/Typesetter/SetMargin.xml
 %%DATADIR%%/actions/menus/ObjectMenu/Score/Typesetter/SystemSystemPadding.scm
 %%DATADIR%%/actions/menus/ObjectMenu/Score/Typesetter/SystemSystemPadding.xml
 %%DATADIR%%/actions/menus/ObjectMenu/Score/Typesetter/ToggleCurveControl.scm
@@ -1993,6 +2037,8 @@ share/applications/denemo.desktop
 %%DATADIR%%/actions/menus/ObjectMenu/StaffMenu/FillEmptyMeasures.xml
 %%DATADIR%%/actions/menus/ObjectMenu/StaffMenu/FixSlursInStaff.scm
 %%DATADIR%%/actions/menus/ObjectMenu/StaffMenu/FixSlursInStaff.xml
+%%DATADIR%%/actions/menus/ObjectMenu/StaffMenu/InsertStaff/CouleStaff.scm
+%%DATADIR%%/actions/menus/ObjectMenu/StaffMenu/InsertStaff/CouleStaff.xml
 %%DATADIR%%/actions/menus/ObjectMenu/StaffMenu/InsertStaff/DynamicsStaff.scm
 %%DATADIR%%/actions/menus/ObjectMenu/StaffMenu/InsertStaff/DynamicsStaff.xml
 %%DATADIR%%/actions/menus/ObjectMenu/StaffMenu/InsertStaff/MIDI/CreateClickStaffForMidi.scm
@@ -2053,6 +2099,8 @@ share/applications/denemo.desktop
 %%DATADIR%%/actions/menus/ObjectMenu/StaffMenu/StaffPropertiesMenu/Ambitus.xml
 %%DATADIR%%/actions/menus/ObjectMenu/StaffMenu/StaffPropertiesMenu/ChordStaff.scm
 %%DATADIR%%/actions/menus/ObjectMenu/StaffMenu/StaffPropertiesMenu/ChordStaff.xml
+%%DATADIR%%/actions/menus/ObjectMenu/StaffMenu/StaffPropertiesMenu/FretDiagrams/FretBoards.scm
+%%DATADIR%%/actions/menus/ObjectMenu/StaffMenu/StaffPropertiesMenu/FretDiagrams/FretBoards.xml
 %%DATADIR%%/actions/menus/ObjectMenu/StaffMenu/StaffPropertiesMenu/InstrumentName.scm
 %%DATADIR%%/actions/menus/ObjectMenu/StaffMenu/StaffPropertiesMenu/InstrumentName.xml
 %%DATADIR%%/actions/menus/ObjectMenu/StaffMenu/StaffPropertiesMenu/NonPrintingStaff.scm
@@ -2093,6 +2141,10 @@ share/applications/denemo.desktop
 %%DATADIR%%/actions/menus/ObjectMenu/StaffMenu/Voices/InitialVoiceThree.xml
 %%DATADIR%%/actions/menus/ObjectMenu/StaffMenu/Voices/InitialVoiceTwo.scm
 %%DATADIR%%/actions/menus/ObjectMenu/StaffMenu/Voices/InitialVoiceTwo.xml
+%%DATADIR%%/actions/menus/ObjectMenu/StaffMenu/Voices/MergeDifferentlyDottedOff.scm
+%%DATADIR%%/actions/menus/ObjectMenu/StaffMenu/Voices/MergeDifferentlyDottedOff.xml
+%%DATADIR%%/actions/menus/ObjectMenu/StaffMenu/Voices/MergeDifferentlyDottedOn.scm
+%%DATADIR%%/actions/menus/ObjectMenu/StaffMenu/Voices/MergeDifferentlyDottedOn.xml
 %%DATADIR%%/actions/menus/ObjectMenu/StaffMenu/Voices/MergeRests.scm
 %%DATADIR%%/actions/menus/ObjectMenu/StaffMenu/Voices/MergeRests.xml
 %%DATADIR%%/actions/menus/ObjectMenu/StaffMenu/Voices/NewVoice.scm
@@ -2427,6 +2479,7 @@ share/applications/denemo.desktop
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/AbbreviatedNotes.denemo
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/AllFeaturesExplained.denemo
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/CautionaryAccidental.denemo
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ChordDiagrams.denemo
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/CrescendoHalfWay.denemo
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/Cues.denemo
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ForcingBreaks.denemo
@@ -2452,15 +2505,15 @@ share/applications/denemo.desktop
 share/fonts/truetype/denemo/Denemo.ttf
 share/fonts/truetype/denemo/emmentaler.ttf
 share/fonts/truetype/denemo/feta.ttf
-%%NLS%%share/locale/cs/LC_MESSAGES/denemo.mo
-%%NLS%%share/locale/de/LC_MESSAGES/denemo.mo
-%%NLS%%share/locale/en_GB/LC_MESSAGES/denemo.mo
-%%NLS%%share/locale/es/LC_MESSAGES/denemo.mo
-%%NLS%%share/locale/fr/LC_MESSAGES/denemo.mo
-%%NLS%%share/locale/it/LC_MESSAGES/denemo.mo
-%%NLS%%share/locale/ja/LC_MESSAGES/denemo.mo
-%%NLS%%share/locale/pl/LC_MESSAGES/denemo.mo
-%%NLS%%share/locale/sv/LC_MESSAGES/denemo.mo
+share/locale/cs/LC_MESSAGES/denemo.mo
+share/locale/de/LC_MESSAGES/denemo.mo
+share/locale/en_GB/LC_MESSAGES/denemo.mo
+share/locale/es/LC_MESSAGES/denemo.mo
+share/locale/fr/LC_MESSAGES/denemo.mo
+share/locale/it/LC_MESSAGES/denemo.mo
+share/locale/ja/LC_MESSAGES/denemo.mo
+share/locale/pl/LC_MESSAGES/denemo.mo
+share/locale/sv/LC_MESSAGES/denemo.mo
 share/pixmaps/denemo.png
 @dirrm share/fonts/truetype/denemo
 @dirrmtry share/fonts/truetype
@@ -2485,6 +2538,7 @@ share/pixmaps/denemo.png
 @dirrm %%DATADIR%%/actions/menus/ObjectMenu/StaffMenu/Voices/Part-Combining
 @dirrm %%DATADIR%%/actions/menus/ObjectMenu/StaffMenu/Voices
 @dirrm %%DATADIR%%/actions/menus/ObjectMenu/StaffMenu/StaffPropertiesMenu/Tablature
+@dirrm %%DATADIR%%/actions/menus/ObjectMenu/StaffMenu/StaffPropertiesMenu/FretDiagrams
 @dirrm %%DATADIR%%/actions/menus/ObjectMenu/StaffMenu/StaffPropertiesMenu
 @dirrm %%DATADIR%%/actions/menus/ObjectMenu/StaffMenu/StaffGroupings
 @dirrm %%DATADIR%%/actions/menus/ObjectMenu/StaffMenu/PrintEffects
@@ -2517,6 +2571,7 @@ share/pixmaps/denemo.png
 @dirrm %%DATADIR%%/actions/menus/ObjectMenu/NotesRests/Markings/TextMarks
 @dirrm %%DATADIR%%/actions/menus/ObjectMenu/NotesRests/Markings/Strings/Fingerings
 @dirrm %%DATADIR%%/actions/menus/ObjectMenu/NotesRests/Markings/Strings
+@dirrm %%DATADIR%%/actions/menus/ObjectMenu/NotesRests/Markings/Ornaments/Claveciniste
 @dirrm %%DATADIR%%/actions/menus/ObjectMenu/NotesRests/Markings/Ornaments
 @dirrm %%DATADIR%%/actions/menus/ObjectMenu/NotesRests/Markings/FiguredBass
 @dirrm %%DATADIR%%/actions/menus/ObjectMenu/NotesRests/Markings/Articulations
