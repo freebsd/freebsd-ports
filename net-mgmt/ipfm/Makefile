@@ -13,11 +13,7 @@ COMMENT=	Bandwidth analysis tool
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--localstatedir=/var
 
-MAN5=		ipfm.conf.5
-MAN8=		ipfm.8
-
-NO_STAGE=	yes
 post-install:
-	@${STRIP_CMD} ${PREFIX}/sbin/ipfm
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/sbin/ipfm
 
 .include <bsd.port.mk>
