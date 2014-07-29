@@ -3,7 +3,7 @@
 
 PORTNAME=	cppunit
 PORTVERSION=	1.12.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	SF
 
@@ -12,7 +12,7 @@ COMMENT=	C++ port of the JUnit framework for unit testing
 
 OPTIONS_DEFINE=	DOXYGEN DOCS
 
-USE_AUTOTOOLS=	libtool
+USES=		libtool
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 

@@ -1,9 +1,8 @@
 bin/DllPlugInTester
 bin/cppunit-config
-lib/libcppunit-1.12.so
 lib/libcppunit-1.12.so.1
+lib/libcppunit-1.12.so.1.0.0
 lib/libcppunit.a
-lib/libcppunit.la
 lib/libcppunit.so
 libdata/pkgconfig/cppunit.pc
 man/man1/cppunit-config.1.gz
