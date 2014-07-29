@@ -5,7 +5,7 @@ PORTNAME=	namazu
 PORTVERSION=	${NAMAZU_PORTVERSION}
 CATEGORIES+=	databases www textproc
 MASTER_SITES=	http://www.namazu.org/stable/
-PKGNAMESUFFIX=	2
+PKGNAMESUFFIX=	3
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Full-text search system intended for easy use
@@ -13,8 +13,8 @@ COMMENT=	Full-text search system intended for easy use
 BUILD_DEPENDS=	p5-File-MMagic>=0:${PORTSDIR}/devel/p5-File-MMagic
 RUN_DEPENDS=	p5-File-MMagic>=0:${PORTSDIR}/devel/p5-File-MMagic
 
-USES=		gettext iconv perl5
-USE_AUTOTOOLS=	libtool
+USES=		gettext iconv libtool perl5
+GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-perl5="${PERL}" \
 		--with-libintl-prefix=${LOCALBASE} \
 		${ICONV_CONFIGURE_ARG}
@@ -23,7 +23,6 @@ USE_LDCONFIG=	yes
 OPTIONS_DEFINE=	DOCS
 
 .include "${.CURDIR}/Makefile.common"
-
 
 post-patch:
 	@${REINPLACE_CMD} -e '/^SUBDIRS/s|doc||g' ${WRKSRC}/Makefile.in
