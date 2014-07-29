@@ -22,6 +22,5 @@ CONFLICTS_INSTALL=	pkg-config-*
 
 post-install:
 	${LN} -sf pkgconf ${STAGEDIR}${PREFIX}/bin/pkg-config
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/pkgconf
 
 .include <bsd.port.mk>
