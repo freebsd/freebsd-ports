@@ -75,7 +75,7 @@ CONFIGURE_ARGS+=--disable-qt
 LIB_DEPENDS+=	libpackagekit-glib2.so:${PORTSDIR}/ports-mgmt/packagekit
 
 CONFIGURE_ARGS+=--enable-qt
-LIB_DEPENDS+=	libcppunit-1.12.so:${PORTSDIR}/devel/cppunit
+LIB_DEPENDS+=	libcppunit.so:${PORTSDIR}/devel/cppunit
 USE_QT4+=	dbus gui xml sql moc_build
 #.include "${PORTSDIR}/Mk/bsd.qt.mk"
 .endif
