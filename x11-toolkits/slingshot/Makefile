@@ -11,7 +11,6 @@ MASTER_SITES=	ftp://ftp.x.org/R5contrib/ \
 MASTER_SITE_SUBDIR=     cy
 
 DISTNAME=	SlingShot${PORTVERSION}
-EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	Supplemental Libraries to extend Xview
@@ -20,7 +19,7 @@ LIB_DEPENDS=	libxview.so:${PORTSDIR}/x11-toolkits/xview
 
 WRKSRC=		${WRKDIR}/sspkg2.1
 USE_LDCONFIG=	yes
-USES=		gmake
+USES=		gmake tar:Z
 MAKE_JOBS_UNSAFE=	yes
 MAKE_ENV=	OPENWINHOME=${LOCALBASE}
 

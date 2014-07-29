@@ -7,7 +7,6 @@ PORTREVISION=	7
 CATEGORIES=	x11-fm
 MASTER_SITES=	ftp://ftp.ma.utexas.edu/pub/mzou/
 DISTNAME=	EZFM-${PORTVERSION:R}-src
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	EZWGL-based file manager for X Window System
@@ -17,7 +16,7 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
 		libEZ.so:${PORTSDIR}/graphics/EZWGL
 
-USES=		gmake
+USES=		gmake tar:tgz
 
 WRKSRC=		${WRKDIR}/EZFM-${PORTVERSION}
 
@@ -28,7 +27,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/${file} ${STAGEDIR}${DATADIR}
 .endfor
 	@${MKDIR} ${STAGEDIR}${DATADIR}/ezfmIcons
-	cd ${WRKSRC}/ezfmIcons && ${COPYTREE_SHARE} \* ${STAGEDIR}${DATADIR}/ezfmIcons
+	(cd ${WRKSRC}/ezfmIcons && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR}/ezfmIcons)
 	${INSTALL_MAN} ${WRKSRC}/ezfm.1 ${STAGEDIR}${PREFIX}/man/man1
 
 .include <bsd.port.mk>
