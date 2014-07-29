@@ -22,23 +22,15 @@ RUN_DEPENDS=	p5-Net-SNMP>=0:${PORTSDIR}/net-mgmt/p5-Net-SNMP \
 USES=		perl5
 WRKSRC=		${WRKDIR}/agent_tracker
 NO_BUILD=	yes
-PKGMESSAGE=	${WRKDIR}/pkg-message
+SUB_FILES=	pkg-message
+#PKGMESSAGE=	${WRKDIR}/pkg-message
+SUB_LIST=	TRACKERAGENTDIR="${TRACKERAGENTDIR}"
 CPIOARGS=	--quiet -pdum
 
 TRACKERAGENTDIR?=	share/tracker_agent
 
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
-
-post-configure:
-	@${SED} -e 's,%%PREFIX%%,${PREFIX},g' \
-	  -e 's,%%TRACKERAGENTDIR%%,${TRACKERAGENTDIR},g' pkg-message > ${PKGMESSAGE}
-
 do-install:
-	@${MKDIR} -m 0755 ${PREFIX}/${TRACKERAGENTDIR}
-	@cd ${WRKSRC} && ${FIND} * -print | ${CPIO} ${CPIOARGS} ${PREFIX}/${TRACKERAGENTDIR}
+	@${MKDIR} -m 0755 ${STAGEDIR}${PREFIX}/${TRACKERAGENTDIR}
+	@cd ${WRKSRC} && ${FIND} * -print | ${CPIO} ${CPIOARGS} ${STAGEDIR}${PREFIX}/${TRACKERAGENTDIR}
 
-post-install:
-	@${CAT} ${PKGMESSAGE}
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
