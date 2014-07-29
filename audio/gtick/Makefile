@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gtick
-PORTVERSION=	0.5.3
+PORTVERSION=	0.5.4
 CATEGORIES=	audio
 MASTER_SITES=	http://www.antcom.de/gtick/download/ CENKES
 
