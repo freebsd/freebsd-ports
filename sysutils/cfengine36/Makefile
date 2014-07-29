@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	cfengine
-PORTVERSION=	3.6.0
+PORTVERSION=	3.6.1
 PORTEPOCH=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	https://s3.amazonaws.com/cfengine.package-repos/tarballs/
@@ -24,6 +24,7 @@ CONFLICTS=	cfengine-[234]*
 
 USE_RC_SUBR=	cf-execd cf-serverd cf-monitord
 
+MAKE_JOBS_UNSAFE=	yes
 USE_LDCONFIG=	yes
 USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
@@ -65,5 +66,9 @@ LDFLAGS+=		-L${LOCALBASE}/lib/mysql
 CONFIGURE_ARGS+=	--with-libvirt=${LOCALBASE}
 LIB_DEPENDS+=		libvirt.so:${PORTSDIR}/devel/libvirt
 .endif
+
+post-install:
+	@cd ${STAGEDIR}${PREFIX}/libexec/cfengine && \
+		${LN} -s libpromises.so.3.0.6 libpromises.so.3
 
 .include <bsd.port.post.mk>
