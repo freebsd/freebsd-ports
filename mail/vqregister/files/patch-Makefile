@@ -6,10 +6,11 @@
  
 -VDIR = /home/vpopmail
 +VDIR?= /home/vpopmail
- CC = gcc
+-CC = gcc
++CC ?= gcc
  BIN = vqregister
 -DEFS = -I$(VDIR)/include -I/usr/local/mysql/include
-+DEFS = -I$(VDIR)/include -I${LOCALBASE}/include/mysql
++DEFS = -I$(VDIR)/include -I${LOCALBASE}/include/mysql ${CFLAGS}
  LINKDEFS =
 -LIBS = -L$(VDIR)/lib -lvpopmail -lcrypt -L/usr/local/mysql/lib/mysql -lmysqlclient
 +LIBS = -L$(VDIR)/lib -lvpopmail -lcrypt -L${LOCALBASE}/lib/mysql -lmysqlclient
