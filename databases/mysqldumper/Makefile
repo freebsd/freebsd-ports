@@ -2,42 +2,34 @@
 # $FreeBSD$
 
 PORTNAME=	mysqldumper
-PORTVERSION=	1.24.2
-PORTREVISION=	2
+PORTVERSION=	1.24.4
 CATEGORIES=	databases
 MASTER_SITES=	SF/${PORTNAME}/MySQLDumper/
 DISTNAME=	MySQLDumper${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Tool for backing up MySQL databases
 
 LICENSE=	GPLv2
 
 RUN_DEPENDS=	p5-DBI>=1.48:${PORTSDIR}/databases/p5-DBI
 
-USE_MYSQL=	yes
-USES=		perl5 zip
-USE_PHP=	session mysql zlib ftp
+OPTIONS_DEFINE=	APACHE LIGHTTPD
+OPTIONS_DEFAULT=APACHE
 
 NO_BUILD=	yes
+USE_MYSQL=	yes
+USE_PHP=	ftp mysql session zlib
+USES=		perl5 zip
+
+PLIST_SUB=	WWWGRP=${WWWGRP} WWWOWN=${WWWOWN}
 WRKSRC=		${WRKDIR}/msd${PORTVERSION}
 
-OPTIONS_DEFINE=	APACHE LIGHTTPD
-OPTIONS_DEFAULT=	APACHE
-PLIST_SUB=	WWWOWN="${WWWOWN}" WWWGRP="${WWWGRP}"
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MAPACHE}
-USE_APACHE_RUN=	22+
-.endif
-
-.if ${PORT_OPTIONS:MLIGHTTPD}
-RUN_DEPENDS+=	lighttpd:${PORTSDIR}/www/lighttpd
-.endif
+APACHE_USE=		APACHE_RUN=22+
+LIGHTTPD_RUN_DEPENDS=	${LOCALBASE}/sbin/lighttpd:${PORTSDIR}/www/lighttpd
 
 do-install:
-	@${MKDIR} ${STAGEDIR}${WWWDIR}
-	${CP} -a ${WRKDIR}/msd${PORTVERSION}/ ${STAGEDIR}${WWWDIR}
+	${MKDIR} ${STAGEDIR}${WWWDIR}/
+	cd ${WRKSRC}/ && ${COPYTREE_SHARE} . ${STAGEDIR}${WWWDIR}/
 
 .include <bsd.port.mk>
