@@ -20,8 +20,8 @@ OPTIONS_DEFINE=	DOCS
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/doc/slnr
-	@cd ${WRKSRC}; \
-		${INSTALL_DATA} ${DOCFILES} ${STAGEDIR}${DOCSDIR}
+	@(cd ${WRKSRC}; \
+		${INSTALL_DATA} ${DOCFILES} ${STAGEDIR}${DOCSDIR})
 	${INSTALL_MAN} ${WRKSRC}/other/slnr.1 ${STAGEDIR}${MANPREFIX}/man/man1
 	${INSTALL_PROGRAM} ${WRKSRC}/slnr ${STAGEDIR}${PREFIX}/bin
 
