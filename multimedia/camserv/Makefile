@@ -27,25 +27,14 @@ OPTIONS_DEFINE=	IMLIB2 PIXBUF V4L DOCS
 OPTIONS_DEFAULT=IMLIB2
 OPTIONS_SUB=	yes
 
-.include <bsd.port.options.mk>
+IMLIB2_USE=	EFL=imlib2
+IMLIB2_CONFIGURE_OFF=	ac_cv_path_IMLIB2_CONFIG=no
 
-.if ${PORT_OPTIONS:MIMLIB2}
-USE_EFL+=	imlib2
-.else
-CONFIGURE_ENV+=	ac_cv_path_IMLIB2_CONFIG=no
-.endif
+PIXBUF_USE=	GNOME=gdkpixbuf
+PIXBUF_CONFIGURE_OFF=	ac_cv_path_GDKPIXBUF_CONFIG=no
 
-.if ${PORT_OPTIONS:MPIXBUF}
-USE_GNOME+=	gdkpixbuf
-.else
-CONFIGURE_ENV+=	ac_cv_path_GDKPIXBUF_CONFIG=no
-.endif
-
-.if ${PORT_OPTIONS:MV4L}
-BUILD_DEPENDS+=	v4l_compat>0:${PORTSDIR}/multimedia/v4l_compat
-.else
-CONFIGURE_ENV=	ac_cv_header_linux_videodev_h=no
-.endif
+V4L_BUILD_DEPENDS=	v4l_compat>0:${PORTSDIR}/multimedia/v4l_compat
+V4L_CONFIGURE_OFF=	ac_cv_header_linux_videodev_h=no
 
 post-patch:
 	@${REINPLACE_CMD} -e \
