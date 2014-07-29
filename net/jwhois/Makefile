@@ -3,14 +3,13 @@
 
 PORTNAME=	jwhois
 PORTVERSION=	4.0
-#PORTREVISION=	0
 PORTREVISION=	3
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	jwhois
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=AImproved WHOIS client capable of selecting server to query
+COMMENT=	Improved WHOIS client capable of selecting server to query
 
 LICENSE=	GPLv3
 
@@ -21,15 +20,9 @@ LDFLAGS+=	-L${PREFIX}/lib
 CONFIGURE_ARGS=	--localstatedir=${PREFIX}/var/jwhois
 
 OPTIONS_DEFINE=	NLS
+OPTIONS_SUB=	yes
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MNLS}
-PLIST_SUB=	NLS=""
-.else
-CONFIGURE_ARGS+=	--disable-nls
-PLIST_SUB=	NLS="@comment "
-.endif
+NLS_CONFIGURE_ENABLE=	nls
 
 INSTALL_TARGET=	install-strip
 

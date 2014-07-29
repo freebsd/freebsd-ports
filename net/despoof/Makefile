@@ -7,7 +7,6 @@ PORTREVISION=	3
 CATEGORIES=	net security
 MASTER_SITES=	${MASTER_SITE_PACKETSTORM}
 MASTER_SITE_SUBDIR=	UNIX/misc
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Command-line anti-spoofing detection utility
@@ -15,6 +14,7 @@ COMMENT=	Command-line anti-spoofing detection utility
 BUILD_DEPENDS=	${LIBNET_CONFIG}:${PORTSDIR}/net/libnet10
 
 LIBNET_CONFIG?=	${LOCALBASE}/bin/libnet10-config
+USES=		tar:tgz
 
 OPTIONS_DEFINE=	DOCS
 

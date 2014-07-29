@@ -8,7 +8,6 @@ CATEGORIES=	net games
 MASTER_SITES=	${MASTER_SITE_LOCAL:S|%SUBDIR%|glewis/dgd|} \
 		http://ftp.dworkin.nl/dgd/lib/
 DISTNAME=	2.4.5-for-1.4
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	glewis@FreeBSD.org
 COMMENT=	LPmud mudlib, for use with DGD
@@ -17,6 +16,7 @@ RUN_DEPENDS=	${LOCALBASE}/sbin/dgd:${PORTSDIR}/net/dgd
 
 NO_PACKAGE=	May not be used for monetary gain
 NO_CDROM=	${NO_PACKAGE}
+USES=		tar:tgz
 
 DIST_SUBDIR=	dgd
 WRKSRC=		${WRKDIR}/mud
@@ -28,7 +28,7 @@ post-extract:
 	@${CP} ${FILESDIR}/Makefile.bin ${WRKSRC}/Makefile
 
 post-patch:
-	cd ${WRKSRC} && ${FIND} . -name '*.orig' -delete
+	(cd ${WRKSRC} && ${FIND} . -name '*.orig' -delete)
 
 do-configure:
 	${REINPLACE_CMD} -e "s:%%DATADIR%%:${DATADIR}:" ${WRKSRC}/lpmud.dgd
@@ -39,8 +39,8 @@ do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/etc/${PORTNAME}
 	${INSTALL_DATA} ${WRKSRC}/lpmud.dgd ${STAGEDIR}${PREFIX}/etc/${PORTNAME}/
 	${MKDIR} ${STAGEDIR}${DATADIR}/lpmud
-	cd ${WRKSRC}/2.4.5 && ${FIND} . \
-		| ${CPIO} -pdmu -R ${SHAREOWN}:${SHAREGRP} ${STAGEDIR}${DATADIR}/lpmud
+	(cd ${WRKSRC}/2.4.5 && ${FIND} . \
+		| ${CPIO} -pdmu -R ${SHAREOWN}:${SHAREGRP} ${STAGEDIR}${DATADIR}/lpmud)
 	# Install an RC script for dgd-lpmud
 	${CAT} ${FILESDIR}/dgd-lpmud.sh | ${SED} -e "s:%%PREFIX%%:${PREFIX}:" \
 		-e "s:%%DATADIR%%:${DATADIR}:" > \
