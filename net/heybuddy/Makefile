@@ -13,6 +13,7 @@ COMMENT=	Supposedly light, feature free identi.ca client
 
 LICENSE=	GPLv3
 
+USES=		tar:tgz
 USE_PYTHON=	yes
 USE_GNOME=	desktopfileutils pygtk2
 
@@ -30,7 +31,7 @@ OPTIONS_DEFINE=	NLS
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}
-USES+=		gettext tar:tgz
+USES+=		gettext
 PLIST_SUB+=	NLS=""
 .else
 PLIST_SUB+=	NLS="@comment "
