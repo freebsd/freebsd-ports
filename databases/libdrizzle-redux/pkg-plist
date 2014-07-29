@@ -22,9 +22,9 @@ include/libdrizzle-5.1/verbose.h
 include/libdrizzle-5.1/version.h
 include/libdrizzle-5.1/visibility.h
 lib/libdrizzle.a
-lib/libdrizzle.la
 lib/libdrizzle.so
 lib/libdrizzle.so.9
+lib/libdrizzle.so.9.0.0
 %%PORTDOCS%%%%DOCSDIR%%/libdrizzle.pdf
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrmtry include/libdrizzle-5.1
