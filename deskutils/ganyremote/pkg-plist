@@ -1,4 +1,5 @@
 bin/ganyremote
+share/appdata/ganyremote.appdata.xml
 share/applications/ganyremote.desktop
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
@@ -23,6 +24,7 @@ share/pixmaps/ganyremote.png
 share/pixmaps/ganyremote_flash.png
 share/pixmaps/ganyremote_light.png
 share/pixmaps/ganyremote_off.png
+share/pixmaps/ganyremote_small.png
 @dirrmtry share/locale/sv_SE/LC_MESSAGES
 @dirrmtry share/locale/sv_SE
 @dirrmtry share/locale/sk_SK/LC_MESSAGES
@@ -46,3 +48,4 @@ share/pixmaps/ganyremote_off.png
 @dirrmtry share/locale/cs_CZ/LC_MESSAGES
 @dirrmtry share/locale/cs_CZ
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrmtry share/appdata
