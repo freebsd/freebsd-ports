@@ -33,6 +33,21 @@ CONFIGURE_ARGS=	--enable-ttygid \
 		--with-xpm-library=${LOCALBASE}/lib
 PLIST_FILES=	bin/rxvt man/man1/${PORTNAME}.1.gz
 
+BIG5_CONFIGURE_ON=	--enable-big5
+GB_CONFIGURE_ON=	--enable-gb
+GREEK_CONFIGURE_ON=	--enable-greek
+# enable half width/height shadows scrollbar
+HALF_SHADOW_CONFIGURE_ON=	--enable-half-shadow
+KANJI_CONFIGURE_ON=	--enable-kanji
+MENUBAR_CONFIGURE_ON=	--enable-menubar
+NEXT_CONFIGURE_ON=	--enable-next-scroll
+TRANSPARENCY_CONFIGURE_ON=	--enable-transparency
+# make resources checking via XGetDefault()
+XGETDEFAULT_CONFIGURE_ON=	--enable-xgetdefault
+# XIM (X Input Method) protocol support
+XIM_CONFIGURE_ON=	--enable-xim
+XTERM_CONFIGURE_ON=	--enable-xterm-scroll
+
 .include <bsd.port.pre.mk>
 
 # fails to build with new utmpx
@@ -40,53 +55,6 @@ PLIST_FILES=	bin/rxvt man/man1/${PORTNAME}.1.gz
 CONFIGURE_ARGS+=	--disable-utmp --disable-wtmp
 .else
 CONFIGURE_ARGS+=	--enable-utmp --enable-wtmp
-.endif
-
-.if ${PORT_OPTIONS:MBIG5}
-CONFIGURE_ARGS+=	--enable-big5
-.endif
-
-.if ${PORT_OPTIONS:MGB}
-CONFIGURE_ARGS+=	--enable-gb
-.endif
-
-.if ${PORT_OPTIONS:MGREEK}
-CONFIGURE_ARGS+=	--enable-greek
-.endif
-
-# enable half width/height shadows scrollbar
-.if ${PORT_OPTIONS:MHALF_SHADOW}
-CONFIGURE_ARGS+=	--enable-half-shadow
-.endif
-
-.if ${PORT_OPTIONS:MKANJI}
-CONFIGURE_ARGS+=	--enable-kanji
-.endif
-
-.if ${PORT_OPTIONS:MMENUBAR}
-CONFIGURE_ARGS+=	--enable-menubar
-.endif
-
-.if ${PORT_OPTIONS:MNEXT}
-CONFIGURE_ARGS+=	--enable-next-scroll
-.endif
-
-.if ${PORT_OPTIONS:MTRANSPARENCY}
-CONFIGURE_ARGS+=	--enable-transparency
-.endif
-
-# make resources checking via XGetDefault()
-.if ${PORT_OPTIONS:MXGETDEFAULT}
-CONFIGURE_ARGS+=	--enable-xgetdefault
-.endif
-
-# XIM (X Input Method) protocol support
-.if ${PORT_OPTIONS:MXIM}
-CONFIGURE_ARGS+=	--enable-xim
-.endif
-
-.if ${PORT_OPTIONS:MXTERM}
-CONFIGURE_ARGS+=	--enable-xterm-scroll
 .endif
 
 post-patch:
