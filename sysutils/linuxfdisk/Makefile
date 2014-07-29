@@ -8,7 +8,6 @@ MASTER_SITES=	http://ftp.sunet.se/pub/Linux/kernel.org/linux/utils/util-linux/v2
 		http://ftp.be.debian.org/pub/linux/utils/util-linux/v2.11/ \
 		ftp://segfault.kiev.ua/pub/
 DISTNAME=	util-linux-${PORTVERSION}
-EXTRACT_SUFX=	.tar.bz2
 
 MAINTAINER=	netch@netch.kiev.ua
 COMMENT=	Fdisk, a partition tables manipulator, from util-linux
