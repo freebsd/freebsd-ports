@@ -8,7 +8,6 @@ CATEGORIES=	x11
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-src/${PORTVERSION} \
 		http://acsys.anu.edu.au/~tpot/%SUBDIR%/
 
-
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	Manipulate X cut buffers from the commandline
 

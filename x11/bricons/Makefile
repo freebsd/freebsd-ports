@@ -7,14 +7,13 @@ DISTVERSIONPREFIX=	athena-
 PORTREVISION=	2
 CATEGORIES=	x11
 MASTER_SITES=	XCONTRIB/../R5contrib
-EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Quick start up utility for applications on an X display
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-USES=		imake perl5
+USES=		imake perl5 tar:Z
 USE_PERL5=	build
 USE_XORG=	xaw
 
