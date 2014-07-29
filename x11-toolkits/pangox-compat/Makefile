@@ -13,11 +13,10 @@ COMMENT=	Depricated pangoX support.
 
 BUILD_DEPENDS=	pango>=1.34.0:${PORTSDIR}/x11-toolkits/pango
 
-USE_XZ=		yes
 USE_XORG=	x11 ice
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
-USES=		gmake pathfix pkgconfig
+USES=		gmake pathfix pkgconfig tar:xz
 USE_GNOME=	glib20 pango
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

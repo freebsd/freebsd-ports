@@ -14,8 +14,7 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre
 
-USES=		pkgconfig
-USE_XZ=		yes
+USES=		pkgconfig tar:xz
 USE_RC_SUBR=	${PORTNAME}
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc

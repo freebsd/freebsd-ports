@@ -10,9 +10,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Perl implementation of Mac OS X plutil
 
-USES=		shebangfix perl5
+USES=		shebangfix perl5 tar:xz
 USE_PERL5=	run
-USE_XZ=		yes
 NO_BUILD=	yes
 
 SHEBANG_FILES=	${PORTNAME}.pl

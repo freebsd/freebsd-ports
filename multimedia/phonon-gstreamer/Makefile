@@ -19,8 +19,7 @@ USE_KDE4=	kdehier kdeprefix automoc4
 USE_QT4=	corelib gui opengl phonon \
 		qmake_build moc_build rcc_build uic_build
 USE_XORG=	x11
-USE_XZ=		yes
-USES=		cmake pkgconfig
+USES=		cmake pkgconfig tar:xz
 
 SUB_FILES=	pkg-message
 

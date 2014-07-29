@@ -12,8 +12,7 @@ COMMENT=	Common automake macros for MATE
 
 PORTSCOUT=	limitw:1,even
 
-USES=		gmake pkgconfig:both
-USE_XZ=		yes
+USES=		gmake pkgconfig:both tar:xz
 USE_MATE=	autogen
 USE_AUTOTOOLS=	aclocal:env autoconf:env automake:env
 GNU_CONFIGURE=	yes

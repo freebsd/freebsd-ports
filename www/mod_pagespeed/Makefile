@@ -27,8 +27,7 @@ LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png \
 		libopencv_legacy.so:${PORTSDIR}/graphics/opencv \
 		libexecinfo.so:${PORTSDIR}/devel/libexecinfo
 
-USES=		gmake pkgconfig
-USE_XZ=		yes
+USES=		gmake pkgconfig tar:xz
 USE_BINUTILS=	yes
 USE_APACHE=	22
 USE_PYTHON=	yes

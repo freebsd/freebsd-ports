@@ -15,9 +15,8 @@ LICENSE_COMB=	multi
 
 LIB_DEPENDS=	libHX.so:${PORTSDIR}/lang/libhx
 
-USES=		pkgconfig perl5
+USES=		pkgconfig perl5 tar:xz
 USE_GNOME=	libxml2
-USE_XZ=		yes
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	libcrypto_LIBS="-L/usr/lib -lcrypto" \

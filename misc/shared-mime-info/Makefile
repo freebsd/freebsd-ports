@@ -11,10 +11,9 @@ MASTER_SITES=	http://people.freedesktop.org/~hadess/
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	MIME types database from the freedesktop.org project
 
-USE_XZ=		yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-update-mimedb
-USES=		pathfix pkgconfig gettext gmake
+USES=		pathfix pkgconfig gettext gmake tar:xz
 USE_GNOME=	glib20 libxml2 intltool intlhack
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

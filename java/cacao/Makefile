@@ -14,9 +14,8 @@ LICENSE=	GPLv2
 BUILD_DEPENDS=	${LOCALBASE}/share/classpath/glibj.zip:${PORTSDIR}/java/classpath
 RUN_DEPENDS=	${LOCALBASE}/share/classpath/glibj.zip:${PORTSDIR}/java/classpath
 
-USES=		gmake
+USES=		gmake tar:xz
 GNU_CONFIGURE=	yes
-USE_XZ=		yes
 
 MAN1=		cacao.1
 

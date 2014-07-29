@@ -22,8 +22,7 @@ RUN_DEPENDS=	pkexec:${PORTSDIR}/sysutils/polkit
 
 PORTSCOUT=	limitw:1,even
 
-USES=		gettext gmake pathfix pkgconfig
-USE_XZ=		yes
+USES=		gettext gmake pathfix pkgconfig tar:xz
 USE_MATE=	autogen common:build docutils intlhack libmatekeyring \
 		panel
 USE_XORG=	x11 xext xproto xrandr xrender

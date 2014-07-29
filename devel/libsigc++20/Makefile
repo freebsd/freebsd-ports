@@ -13,11 +13,10 @@ COMMENT=	Callback Framework for C++
 BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4
 
 USE_AUTOTOOLS=	libtool
-USE_XZ=		yes
 USE_PERL5=	build
 LATEST_LINK=	libsigc++20
 USE_LDCONFIG=	yes
-USES=		gmake pathfix perl5
+USES=		gmake pathfix perl5 tar:xz
 GNU_CONFIGURE=	yes
 
 PLIST_SUB=	VERSION="2.0" API_VERSION="2.0"

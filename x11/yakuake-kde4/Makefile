@@ -13,8 +13,7 @@ COMMENT=	Drop-down terminal emulator for KDE
 
 LICENSE=	GPLv2
 
-USE_XZ=		yes
-USES=		cmake gettext
+USES=		cmake gettext tar:xz
 USE_KDE4=	automoc4 kdelibs kdeprefix
 USE_QT4=	qmake_build moc_build rcc_build uic_build
 INSTALLS_ICONS=	yes

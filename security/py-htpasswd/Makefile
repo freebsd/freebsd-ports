@@ -11,9 +11,8 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	graudeejs@gmail.com
 COMMENT=	Replacement for htpasswd
 
-USES=		shebangfix
+USES=		shebangfix tar:xz
 USE_PYTHON=	yes
-USE_XZ=		yes
 
 PLIST_FILES=	bin/${PORTNAME}.py
 

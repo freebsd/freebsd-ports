@@ -12,10 +12,9 @@ COMMENT=	Display a tree of processes
 
 LICENSE=	APACHE20
 
-USE_XZ=		yes
 GNU_CONFIGURE=	yes
 MAKEFILE=	GNUmakefile
-USES=		gmake
+USES=		gmake tar:xz
 
 MAN1=		dtpstree.1
 PLIST_FILES=	bin/dtpstree \

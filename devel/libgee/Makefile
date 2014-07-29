@@ -15,8 +15,7 @@ BUILD_DEPENDS=	valac:${PORTSDIR}/lang/vala
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-introspection=yes
-USE_XZ=		yes
-USES=		gmake libtool:keepla pathfix pkgconfig
+USES=		gmake libtool:keepla pathfix pkgconfig tar:xz
 USE_GNOME=	glib20 gnomehier introspection:build
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip

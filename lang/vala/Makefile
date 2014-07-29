@@ -13,8 +13,7 @@ COMMENT=	Programming language and compiler that converts Vala code into C code
 
 LICENSE=	LGPL21
 
-USES=		bison gettext gmake libtool:keepla pathfix pkgconfig
-USE_XZ=		yes
+USES=		bison gettext gmake libtool:keepla pathfix pkgconfig tar:xz
 USE_GNOME=	glib20 gnomeprefix libxslt introspection:build
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include

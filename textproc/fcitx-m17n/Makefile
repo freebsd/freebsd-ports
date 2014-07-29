@@ -14,8 +14,7 @@ COMMENT=	Multilingualization support for Fcitx
 LIB_DEPENDS=	libfcitx-config.so:${PORTSDIR}/chinese/fcitx \
 		libm17n.so:${PORTSDIR}/devel/m17n-lib
 
-USE_XZ=		yes
-USES=		cmake gettext pkgconfig
+USES=		cmake gettext pkgconfig tar:xz
 USE_GNOME=	intltool
 
 .include <bsd.port.mk>

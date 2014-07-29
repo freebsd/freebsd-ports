@@ -15,8 +15,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 BROKEN=		Unfetchable
 
-USES=		iconv gmake perl5
-USE_XZ=		yes
+USES=		iconv gmake perl5 tar:xz
 USE_PERL5=	build
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 MAKE_ARGS=	BASEDIR="${STAGEDIR}"

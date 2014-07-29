@@ -19,8 +19,7 @@ BUILD_DEPENDS=	ffmpeg:${PORTSDIR}/multimedia/ffmpeg \
 		rst2man:${PORTSDIR}/textproc/py-docutils
 RUN_DEPENDS=	ffmpeg:${PORTSDIR}/multimedia/ffmpeg
 
-USE_XZ=		yes
-USES=		gmake iconv ncurses pkgconfig
+USES=		gmake iconv ncurses pkgconfig tar:xz
 HAS_CONFIGURE=	yes
 CONFIGURE_ENV=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 		PTHREAD_LIBS="${PTHREAD_LIBS}" \

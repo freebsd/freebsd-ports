@@ -16,8 +16,7 @@ RUN_DEPENDS=	${LOCALBASE}/share/icons/hicolor/index.theme:${PORTSDIR}/misc/hicol
 
 PORTSCOUT=	limitw:1,even
 
-USES=		gettext gmake pathfix pkgconfig
-USE_XZ=		yes
+USES=		gettext gmake pathfix pkgconfig tar:xz
 USE_GNOME=	intlhack
 USE_AUTOTOOLS=	aclocal:env autoconf:env automake:env
 GNU_CONFIGURE=	yes
