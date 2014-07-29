@@ -18,39 +18,37 @@ RUN_DEPENDS=	${LOCALBASE}/www/routers2/routers2.cgi:${PORTSDIR}/net-mgmt/routers
 WRKSRC=		${WRKDIR}/routers2-v${PORTVERSION}/extras
 
 USES=		perl5
-
 NO_BUILD=	YES
+PORTDOCS=	README *.txt
 
-NO_STAGE=	yes
+OPTIONS_DEFINE=	DOCS
+
+.include <bsd.port.options.mk>
+
 post-patch:
-	for file in buildwan.pl cfgmaker_host.pl 95.pl ; do \
-		${REINPLACE_CMD} -e 's|%%PERL%%|${PERL}|' ${WRKSRC}/$$file; \
-	done
-	for file in cfgmaker_host.pl ; do \
-		${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|' ${WRKSRC}/$$file; \
-	done
+	${REINPLACE_CMD} -e 's|%%PERL%%|${PERL}|' \
+		-e 's|%%LOCALBASE%%|${LOCALBASE}|' \
+		${WRKSRC}/buildwan.pl \
+		${WRKSRC}/cfgmaker_host.pl \
+		${WRKSRC}/95.pl
 
 do-install:
-		${MKDIR} -m 755 ${PREFIX}/www/routers2/extras
-.if !defined(NOPORTDOCS)
-		${MKDIR} -m 755 ${DOCSDIR}
-		for file in README *.txt; do \
-			${INSTALL_DATA} ${WRKSRC}/$$file ${DOCSDIR}; \
-		done
+	${MKDIR} ${STAGEDIR}${PREFIX}/www/routers2/extras/templates
+	cd ${WRKSRC}; ${INSTALL_SCRIPT} buildwan.pl cfgmaker_host.pl \
+		check_vmware.pl check_foundry checkagent gather.pl \
+		getstats.sh graphprune.pl mrtg-apache mrtg-nrpe.pl \
+		mrtg-nrpe.sh mrtg-pnsclient.pl mrtg-portsinuse.pl \
+		rrd-archive-clean.pl rrd-archive.pl rrdextend.pl \
+		winalert.pl targetnames/targetnames.pl \
+		${STAGEDIR}${PREFIX}/www/routers2/extras
+	cd ${WRKSRC}; ${INSTALL_DATA} mrtg-nrpe.cfg mrtg-pnsclient.cfg \
+		rrd-archive.conf winalert.conf \
+		${STAGEDIR}${PREFIX}/www/routers2/extras
+	cd ${WRKSRC}; ${INSTALL_DATA} mrtg-templates/* \
+		${STAGEDIR}${PREFIX}/www/routers2/extras/templates
+.if ${PORT_OPTIONS:MDOCS}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC}; ${INSTALL_DATA} README *.txt ${STAGEDIR}${DOCSDIR}
 .endif
-		for file in buildwan.pl cfgmaker_host.pl check_vmware.pl check_foundry checkagent \
-			gather.pl getstats.sh graphprune.pl mrtg-apache mrtg-nrpe.pl mrtg-nrpe.sh \
-			mrtg-pnsclient.pl mrtg-portsinuse.pl rrd-archive-clean.pl \
-			rrd-archive.pl rrdextend.pl \
-			winalert.pl targetnames/targetnames.pl; do \
-			${INSTALL_SCRIPT} ${WRKSRC}/$$file ${PREFIX}/www/routers2/extras; \
-		done
-		for file in mrtg-nrpe.cfg mrtg-pnsclient.cfg rrd-archive.conf winalert.conf ; do \
-			${INSTALL_DATA} ${WRKSRC}/$$file ${PREFIX}/www/routers2/extras; \
-		done
-		${MKDIR} -m 755 ${PREFIX}/www/routers2/extras/templates
-		for file in mrtg-templates/* ; do \
-			${INSTALL_DATA} ${WRKSRC}/$$file ${PREFIX}/www/routers2/extras/templates; \
-		done
 
 .include <bsd.port.mk>
