@@ -30,7 +30,8 @@ CONFIGURE_ARGS+=	--with-pkgconfdir=${PREFIX}/etc \
 			${ICONV_CONFIGURE_BASE} \
 			--localstatedir=/var \
 			--disable-bundled-libevent \
-			--with-libevent-header=${LOCALBASE}/include
+			--with-libevent-header=${LOCALBASE}/include \
+			--with-libevent-lib=${LOCALBASE}/lib
 
 OPTIONS_DEFINE=PAM KRB5 LDAP SENDFILE KERBEROS DBUS MYSQL ACL TCPWRAP
 OPTIONS_DEFAULT=KERBEROS DBUS TCPWRAP
