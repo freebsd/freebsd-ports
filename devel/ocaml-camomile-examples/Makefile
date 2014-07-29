@@ -14,7 +14,7 @@ COMMENT=	Example programs for Camomile library
 
 WRKSRC=		${WRKDIR}/examples
 NO_BUILD=	yes
-USE_BZIP2=	yes
+USES=	tar:bzip2
 EXAMPLESDIR=	${PREFIX}/share/examples/ocaml/${PORTNAME}
 
 do-install:

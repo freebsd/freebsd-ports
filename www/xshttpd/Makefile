@@ -17,7 +17,7 @@ RUN_DEPENDS=	run-mailcap:${PORTSDIR}/misc/mime-support \
 
 CONFLICTS_INSTALL=	xshttpd-devel-[0-9]* publicfile-[0-9]*
 
-USE_BZIP2=	yes
+USES=	tar:bzip2
 USE_RC_SUBR=	xshttpd
 GNU_CONFIGURE=	yes
 

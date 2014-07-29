@@ -11,7 +11,7 @@ COMMENT=	STAnd-aLONE system tray
 
 LICENSE=	GPLv2
 
-USE_BZIP2=	yes
+USES=	tar:bzip2
 USE_XORG=	xpm
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-native-kde \

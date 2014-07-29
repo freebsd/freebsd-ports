@@ -18,7 +18,7 @@ LIB_DEPENDS=	libapr-1.so:${PORTSDIR}/devel/apr1 \
 
 OPTIONS_DEFINE=	DOCS
 
-USE_BZIP2=	yes
+USES=	tar:bzip2
 USE_AUTOTOOLS=	aclocal autoheader automake autoconf
 AUTOMAKE_ARGS=	--add-missing
 

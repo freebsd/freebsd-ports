@@ -17,7 +17,7 @@ LICENSE_TEXT=	"THE BEER-WARE LICENCE": Philipp Wuensche <cryx-ports@h3q.com> \
 		you think this stuff is worth it, you can buy me a beer in return.
 LICENSE_PERMS=	auto-accept
 
-USE_BZIP2=	yes
+USES=	tar:bzip2
 
 PERIODICDIR?=	${PREFIX}/etc/periodic
 REPORTDIR?=	${PREFIX}/jailaudit/reports

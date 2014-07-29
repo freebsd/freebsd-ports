@@ -16,7 +16,7 @@ LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png
 
 CONFLICTS=	shaaft-[0-9]*
 
-USE_BZIP2=	yes
+USES=	tar:bzip2
 USE_SDL=	image mixer sdl
 USE_GL=		gl
 USE_XORG=	x11

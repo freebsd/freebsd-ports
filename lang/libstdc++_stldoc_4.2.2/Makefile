@@ -13,7 +13,7 @@ DISTNAME=	libstdc++-html-USERS-4.2.2
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNU libstdc++ API documentation
 
-USE_BZIP2=	yes
+USES=	tar:bzip2
 
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes

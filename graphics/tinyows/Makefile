@@ -13,7 +13,7 @@ COMMENT=		High Performance WFS-T server
 LIB_DEPENDS=		libxml2.so:${PORTSDIR}/textproc/libxml2
 BUILD_DEPENDS=		${LOCALBASE}/lib/postgresql/postgis-2.1.so:${PORTSDIR}/databases/postgis21
 
-USE_BZIP2=		YES
+USES=		tar:bzip2
 GNU_CONFIGURE=		YES
 
 OPTIONS_DEFINE=		FASTCGI

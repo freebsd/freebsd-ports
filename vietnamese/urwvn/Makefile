@@ -11,7 +11,7 @@ DISTNAME=	urwvn-${PORTVERSION}-ttf
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Vietnamese version of the standard PostScript fonts from URW++
 
-USE_BZIP2=	yes
+USES=	tar:bzip2
 NO_BUILD=	yes
 
 TTF=	CMConcrete8v.ttf CMConcreteItalic8v.ttf CMConcreteSlanted8v.ttf \

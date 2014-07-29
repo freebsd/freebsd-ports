@@ -12,7 +12,7 @@ COMMENT=	Highly configurable FTP proxy
 
 LICENSE=	GPLv2
 
-USE_BZIP2=	yes
+USES=	tar:bzip2
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-logpath=/var/log \
 		--enable-crypt \

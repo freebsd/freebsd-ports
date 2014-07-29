@@ -14,7 +14,7 @@ COMMENT=	Native PHP syntax highlighting engine
 WRKSRC=		${WRKDIR}/geshi
 PLIST=		${WRKDIR}/PLIST
 
-USE_BZIP2=	yes
+USES=	tar:bzip2
 USE_PHP=	yes
 DEFAULT_PHP_VER=	5
 NO_BUILD=	yes

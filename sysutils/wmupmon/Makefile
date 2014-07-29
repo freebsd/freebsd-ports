@@ -11,7 +11,7 @@ MASTER_SITES=	http://j-z-s.com/projects/downloads/
 MAINTAINER=	rhurlin@gwdg.de
 COMMENT=	Uptime showing dockapp with a similar look to wmcpuload
 
-USE_BZIP2=	yes
+USES=	tar:bzip2
 USE_XORG=	xpm
 USE_AUTOTOOLS=	autoheader
 CONFIGURE_ARGS=	--program-prefix=""

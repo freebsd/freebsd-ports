@@ -9,7 +9,7 @@ MASTER_SITES=	http://www.prawda.newmail.ru/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	English-Russian translator
 
-USE_BZIP2=	yes
+USES=	tar:bzip2
 NO_WRKSUBDIR=	yes
 USE_XORG=	x11 xaw xmu xt sm
 CXXFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib

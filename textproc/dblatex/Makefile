@@ -14,7 +14,7 @@ BUILD_DEPENDS=	${LOCALBASE}/share/texmf-local/tex/latex/ifxetex/ifxetex.sty:${PO
 RUN_DEPENDS=	xsltproc:${PORTSDIR}/textproc/libxslt \
 		${LOCALBASE}/share/xml/docbook/4.2:${PORTSDIR}/textproc/docbook-xml
 
-USE_BZIP2=	yes
+USES=	tar:bzip2
 USE_TEX=	tex
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes

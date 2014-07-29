@@ -13,7 +13,7 @@ COMMENT=	Add/Modify LDAP entries using template forms
 LICENSE=	BSD
 
 MAKEFILE=	BSDmakefile
-USE_BZIP2=	yes
+USES=	tar:bzip2
 USE_OPENLDAP=	24
 LDFLAGS+=	-L${LOCALBASE}/lib -llber
 

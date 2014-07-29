@@ -11,7 +11,7 @@ DISTNAME=	${PORTNAME}${PKGNAMESUFFIX}-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Vega Strike data files
 
-USE_BZIP2=	yes
+USES=	tar:bzip2
 NO_BUILD=	yes
 
 MANUAL_PACKAGE_BUILD=huge

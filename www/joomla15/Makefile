@@ -15,7 +15,7 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE.php
 
 FETCH_CMD=	fetch -Rr
-USE_BZIP2=	yes
+USES=	tar:bzip2
 NO_BUILD=	yes
 USE_MYSQL=	yes
 USE_PHP=	mysql pcre xml zlib session gd pdf

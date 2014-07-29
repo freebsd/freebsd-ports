@@ -10,7 +10,7 @@ MASTER_SITES=	http://tx97.net/pub/distfiles/ \
 MAINTAINER=	vmagerya@gmail.com
 COMMENT=	LALR(1) parser generator. Similar in function to yacc and bison
 
-USE_BZIP2=	yes
+USES=	tar:bzip2
 MAKEFILE=	/dev/null
 ALL_TARGET=	${PORTNAME}
 

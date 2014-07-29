@@ -15,7 +15,7 @@ RUN_DEPENDS=	${LOCALBASE}/bin/nmap:${PORTSDIR}/security/nmap \
 		${PYTHON_PKGNAMEPREFIX}sqlite3>0:${PORTSDIR}/databases/py-sqlite3
 
 INSTALLS_ICONS=	yes
-USE_BZIP2=	yes
+USES=	tar:bzip2
 USE_GNOME=	pygtk2
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes

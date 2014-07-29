@@ -16,7 +16,7 @@ WANT_PHP_MOD=	yes
 IGNORE_WITH_PHP=5
 
 WRKSRC=		${WRKDIR}/phppdflib
-USE_BZIP2=	yes
+USES=	tar:bzip2
 NO_BUILD=	yes
 
 MYADMDIR?=	www/data/phppdflib

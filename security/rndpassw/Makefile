@@ -10,7 +10,7 @@ COMMENT=	CLI password generator
 
 LICENSE=	BSD3CLAUSE
 
-USE_BZIP2=	yes
+USES=	tar:bzip2
 
 PLIST_FILES=	bin/rndpassw \
 		man/man1/rndpassw.1.gz

@@ -14,7 +14,7 @@ COMMENT=	GTK+ 2.0 Lila additional themes
 WRKSRC=		${WRKDIR}/lila-gtk-extras
 NO_BUILD=	yes
 
-USE_BZIP2=	yes
+USES=	tar:bzip2
 USE_GNOME=	gtk20
 
 .SILENT:

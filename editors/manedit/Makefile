@@ -13,7 +13,7 @@ COMMENT=	UNIX manual page editor and viewer
 WRKSRC=		${WRKDIR}/${DISTNAME}/${PORTNAME}
 
 MAKEFILE=	Makefile.FreeBSD
-USE_BZIP2=	yes
+USES=	tar:bzip2
 USE_GNOME=	gtk12
 
 MAKE_ARGS=	STAGEDIR="$(STAGEDIR)"

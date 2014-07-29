@@ -15,7 +15,7 @@ COMMENT=	Sendmail spam control and canceling filter, based on Milter API
 IGNORE=		requires Sendmail 8.12; upgrade the base system
 .endif
 
-USE_BZIP2=		yes
+USES=		tar:bzip2
 USE_AUTOTOOLS=	autoconf
 
 GNU_CONFIGURE=		yes

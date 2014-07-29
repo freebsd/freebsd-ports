@@ -11,7 +11,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Serve web-server's content via FTP
 
 
-USE_BZIP2=	yes
+USES=	tar:bzip2
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:R}
 USE_APACHE=	22
 HAS_CONFIGURE=	yes

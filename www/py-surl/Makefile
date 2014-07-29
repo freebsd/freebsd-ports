@@ -13,7 +13,7 @@ COMMENT=	URL shortening command line application
 
 LICENSE=	GPLv3
 
-USE_BZIP2=	yes
+USES=	tar:bzip2
 USE_PYTHON=	2
 USE_PYDISTUTILS=yes
 

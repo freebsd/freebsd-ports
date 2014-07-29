@@ -6,7 +6,7 @@ PORTVERSION=	1.0.4
 CATEGORIES=	devel
 MASTER_SITES=	http://people.freebsd.org/~alfred/sources/replay/
 DISTNAME=	replay-${PORTVERSION}
-USE_BZIP2=	yes
+USES=	tar:bzip2
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Program that helps you fix a build interactively

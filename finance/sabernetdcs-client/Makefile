@@ -20,7 +20,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyro>=0:${PORTSDIR}/devel/py-pyro
 USE_GNOME=	pygtk2
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
-USE_BZIP2=	yes
+USES=	tar:bzip2
 DOCSDIR=	${PREFIX}/share/doc/sndcs
 DATADIR=	${PREFIX}/share/sndcs
 

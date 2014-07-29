@@ -9,7 +9,7 @@ MASTER_SITES=	SF/${PORTNAME}/
 MAINTAINER=	rakuco@FreeBSD.org
 COMMENT=	Enhanced replacement for GNU stow written in C++
 
-USE_BZIP2=	yes
+USES=	tar:bzip2
 GNU_CONFIGURE=	yes
 
 .if defined(WITH_DEBUG)

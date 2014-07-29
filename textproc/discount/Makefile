@@ -13,7 +13,7 @@ COMMENT=	A C implementation of the Markdown markup language
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
-USE_BZIP2=	yes
+USES=	tar:bzip2
 HAS_CONFIGURE=	yes
 CONFIGURE_SCRIPT=configure.sh
 CONFIGURE_ARGS=	--prefix=${PREFIX} \

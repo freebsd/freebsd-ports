@@ -12,7 +12,7 @@ COMMENT=	DFUI curses frontend
 LIB_DEPENDS=	libaura3.so:${PORTSDIR}/devel/libaura \
 		libdfui4.so:${PORTSDIR}/devel/libdfui
 
-USE_BZIP2=	yes
+USES=	tar:bzip2
 
 PLIST_FILES=	bin/dfuife_curses
 

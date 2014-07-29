@@ -11,7 +11,7 @@ COMMENT=	File and block device wiping utility
 
 LICENSE=	GPLv2
 
-USE_BZIP2=	yes
+USES=	tar:bzip2
 GNU_CONFIGURE=	yes
 
 PLIST_FILES=	bin/wipe man/man1/wipe.1.gz

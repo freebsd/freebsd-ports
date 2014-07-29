@@ -11,7 +11,7 @@ MASTER_SITES=	http://www.ibiblio.org/icpld/download/ \
 MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	Internet connection performance logging daemon
 
-USE_BZIP2=	yes
+USES=	tar:bzip2
 GNU_CONFIGURE=	yes
 
 PORTDOCS=	README

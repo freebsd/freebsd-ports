@@ -10,7 +10,7 @@ MASTER_SITES=	GNOME
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Sound files for use with GNOME 2
 
-USE_BZIP2=	yes
+USES=	tar:bzip2
 NO_BUILD=	yes
 USE_GNOME=	gnomehier
 MAKE_ENV=	prefix=${PREFIX}

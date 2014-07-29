@@ -21,7 +21,7 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/cdb:${PORTSDIR}/databases/tinycdb
 SKKDIR?=	share/skk
 SKK_JISYO_TYPE?=L M S
 
-USE_BZIP2=		yes
+USES=		tar:bzip2
 NO_WRKSUBDIR=		yes
 EXTRACT_CMD=		${CP}
 EXTRACT_BEFORE_ARGS=	-p

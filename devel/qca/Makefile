@@ -11,7 +11,7 @@ DISTNAME=	qca-${PORTVERSION}
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Cross-platform crypto API for Qt
 
-USE_BZIP2=	yes
+USES=	tar:bzip2
 USE_QT4=	corelib qmake_build moc_build
 HAS_CONFIGURE=	yes
 QT_NONSTANDARD=	yes

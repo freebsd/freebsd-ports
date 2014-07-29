@@ -14,7 +14,7 @@ COMMENT=	Loader for ionCube-encoded PHP files
 
 ONLY_FOR_ARCHS=	i386 amd64
 NO_BUILD=	yes
-USE_BZIP2=	yes
+USES=	tar:bzip2
 USE_PHP=	yes
 
 SUB_FILES=	pkg-message

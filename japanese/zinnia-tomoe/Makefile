@@ -16,7 +16,7 @@ RUN_DEPENDS=	zinnia:${PORTSDIR}/japanese/zinnia
 
 LICENSE=	LGPL21
 
-USE_BZIP2=	yes
+USES=	tar:bzip2
 GNU_CONFIGURE=	yes
 
 .include <bsd.port.mk>

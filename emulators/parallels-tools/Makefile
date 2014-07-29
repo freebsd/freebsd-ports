@@ -11,7 +11,7 @@ MAINTAINER=	bland@FreeBSD.org
 COMMENT=	Parallels Desktop Tools for FreeBSD
 
 SSP_UNSAFE=	kernel module does not support ssp
-USE_BZIP2=	yes
+USES=	tar:bzip2
 
 ONLY_FOR_ARCHS=	amd64 i386
 

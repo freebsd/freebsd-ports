@@ -14,7 +14,7 @@ COMMENT=	KDE version of the poster utility
 
 LICENSE=	GPLv2
 
-USE_BZIP2=	yes
+USES=	tar:bzip2
 ALL_TARGET=	poster
 WRKSRC=		${WRKDIR}/${DISTNAME}-20060221
 

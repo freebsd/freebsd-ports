@@ -15,7 +15,7 @@ RUN_DEPENDS=	fluxbox:${PORTSDIR}/x11-wm/fluxbox
 
 INSTALL_DIR=	${PREFIX}/share/fluxbox/styles/
 
-USE_BZIP2=	yes
+USES=	tar:bzip2
 USE_XORG=	x11
 NO_BUILD=	yes
 

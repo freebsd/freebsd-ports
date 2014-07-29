@@ -11,7 +11,7 @@ MASTER_SITE_SUBDIR=	X11/xutils
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Memory and swap monitoring dockapp
 
-USE_BZIP2=	yes
+USES=	tar:bzip2
 USE_XORG=	xpm
 
 PLIST_FILES=	bin/wmmemfree man/man1/${PORTNAME}.1.gz

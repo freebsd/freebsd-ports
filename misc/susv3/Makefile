@@ -12,7 +12,7 @@ COMMENT=	Single UNIX Specification Version 3
 
 RESTRICTED=	Redistribution of the documents is not permitted
 
-USE_BZIP2=	yes
+USES=	tar:bzip2
 NO_BUILD=	yes
 PORTDOCS=	*
 

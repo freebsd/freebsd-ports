@@ -12,7 +12,7 @@ COMMENT=	Console ncurses-based AIM, ICQ, IRC, and Lily client
 LICENSE=	GPLv2
 
 GNU_CONFIGURE=	yes
-USE_BZIP2=	yes
+USES=	tar:bzip2
 
 PORTDOCS=	FAQ README commands.txt keyboard.txt
 

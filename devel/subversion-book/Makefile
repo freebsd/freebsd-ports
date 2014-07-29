@@ -17,7 +17,7 @@ COMMENT=	Subversion Documentation HTML/PDF
 # http://svnbook.red-bean.com/en/1.7/svn.copyright.html
 LICENSE=	CDDL
 
-USE_BZIP2=	yes
+USES=	tar:bzip2
 NO_BUILD=	yes
 
 OPTIONS_SUB=		yes

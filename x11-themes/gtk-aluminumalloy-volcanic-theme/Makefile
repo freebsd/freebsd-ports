@@ -19,7 +19,7 @@ FLAVOR?=	volcanic
 THEME_NAME=	AluminumAlloy-${FLAVOR:tu:C/^(.).*$/\1/g}${FLAVOR:C/^(.)//}
 WRKSRC=		${WRKDIR}/${THEME_NAME}
 
-USE_BZIP2=	yes
+USES=	tar:bzip2
 NO_BUILD=	yes
 
 .if ${TYPE} == gtk

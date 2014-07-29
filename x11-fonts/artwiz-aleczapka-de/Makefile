@@ -11,7 +11,7 @@ MAINTAINER=	herbert.skuhra@gmx.at
 COMMENT=	A set of (improved) artwiz fonts
 
 NO_BUILD=	yes
-USE_BZIP2=	yes
+USES=	tar:bzip2
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
 FONTS=	anorexia.de aqui.de cure.de drift.de edges.de fkp.de gelly.de \

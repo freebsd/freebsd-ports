@@ -16,7 +16,7 @@ RUN_DEPENDS=	${LOCALBASE}/bin/pildriver.py:${PORTSDIR}/graphics/py-imaging \
 
 NO_BUILD=	yes
 
-USE_BZIP2=	yes
+USES=	tar:bzip2
 USE_PYTHON=	yes
 
 DOCSDIR=	${PREFIX}/share/doc/py-${PORTNAME}

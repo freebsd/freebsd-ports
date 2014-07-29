@@ -15,7 +15,7 @@ LICENSE=	GPLv2
 
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/version.hpp:${PORTSDIR}/devel/boost-libs
 
-USE_BZIP2=	yes
+USES=	tar:bzip2
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-wx-config=${WX_CONFIG}
 USE_WX=		2.8+

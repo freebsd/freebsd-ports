@@ -9,7 +9,7 @@ MASTER_SITES=	http://www.vuxml.org/files/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	VuXML Query Tool
 
-USE_BZIP2=	yes
+USES=	tar:bzip2
 GNU_CONFIGURE=	yes
 
 do-install:

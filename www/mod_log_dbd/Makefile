@@ -13,7 +13,7 @@ COMMENT=	Uses APR DBD to store Apache access logs in a database
 
 
 USE_APACHE=	22
-USE_BZIP2=	yes
+USES=	tar:bzip2
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-apache=${PREFIX}
 

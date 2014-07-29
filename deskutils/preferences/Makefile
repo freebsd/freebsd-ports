@@ -13,7 +13,7 @@ COMMENT=	GNUstep workspace manager
 LICENSE_COMB=	multi
 LICENSE=	GPLv2 LGPL21
 
-USE_BZIP2=	yes
+USES=	tar:bzip2
 USE_GNUSTEP=	yes
 USE_GNUSTEP_BACK=	yes
 USE_GNUSTEP_BUILD=	yes

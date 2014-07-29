@@ -10,7 +10,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Skimpy XML parsing and grafting library for C language
 
 GNU_CONFIGURE=	yes
-USE_BZIP2=	yes
+USES=	tar:bzip2
 USE_LDCONFIG=	yes
 
 NO_STAGE=	yes

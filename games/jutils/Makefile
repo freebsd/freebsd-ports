@@ -9,7 +9,7 @@ MASTER_SITES=	LOCAL/loader
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Common utilities for Java Game Technology Group projects
 
-USE_BZIP2=	yes
+USES=	tar:bzip2
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
 JAVA_OS=	native

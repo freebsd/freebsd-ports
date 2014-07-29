@@ -12,7 +12,7 @@ COMMENT=	Python bindings for Internationalized Domain Name toolkit 2
 
 LIB_DEPENDS=	libidnkitlite.so:${PORTSDIR}/dns/idnkit2
 
-USE_BZIP2=		yes
+USES=		tar:bzip2
 USE_PYTHON=		2
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_AUTOPLIST=	yes

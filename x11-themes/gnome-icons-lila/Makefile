@@ -18,7 +18,7 @@ RESTRICTED=	${REASON}
 
 NO_WRKSUBDIR=	yes
 
-USE_BZIP2=	yes
+USES=	tar:bzip2
 
 .include "${.CURDIR}/../gnome-icons/bsd.gnome-icons.mk"
 .include <bsd.port.mk>

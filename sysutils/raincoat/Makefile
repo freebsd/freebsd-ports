@@ -13,7 +13,7 @@ COMMENT=		BIOS flash utility for the Microsoft Xbox
 # Xbox is i386
 ONLY_FOR_ARCHS=		i386
 
-USE_BZIP2=		yes
+USES=		tar:bzip2
 
 PORTDOCS=		README
 

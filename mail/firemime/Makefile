@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.firestuff.org/projects/ \
 MAINTAINER= ports@FreeBSD.org
 COMMENT=	Callback-based interface for parsing MIME-encoded messages
 
-USE_BZIP2=	yes
+USES=	tar:bzip2
 HAS_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}

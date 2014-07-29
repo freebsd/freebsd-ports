@@ -13,7 +13,7 @@ LICENSE=	BSD
 
 NO_PACKAGE=	Needs to be built uniquely for each host
 
-USE_BZIP2=	yes
+USES=	tar:bzip2
 USE_LDCONFIG=	yes
 
 NO_STAGE=	yes

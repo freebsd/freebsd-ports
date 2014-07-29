@@ -15,7 +15,7 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	ginga-freebsd@ginganet.org
 COMMENT=	X11 20-dot Kanji font 'Kappa20dot + ayu font'
 
-USE_BZIP2=	yes
+USES=	tar:bzip2
 AYUDISTNAME=	ayu20gothic-1.6
 AYU_SUFFIX=	.tar.gz
 

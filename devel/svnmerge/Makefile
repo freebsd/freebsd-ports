@@ -17,7 +17,7 @@ EXPIRATION_DATE=	2014-08-22
 
 RUN_DEPENDS=	${LOCALBASE}/bin/svn:${PORTSDIR}/devel/subversion16
 
-USE_BZIP2=	yes
+USES=	tar:bzip2
 USE_PYTHON=	yes
 NO_BUILD=	yes
 

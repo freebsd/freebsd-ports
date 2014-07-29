@@ -9,7 +9,7 @@ MASTER_SITES=	SF
 MAINTAINER=	gelraen.ua@gmail.com
 COMMENT=	Provides intercommunication between DC++ hub and IRC channel
 
-USE_BZIP2=	yes
+USES=	tar:bzip2
 HAS_CONFIGURE=	yes
 
 USE_RC_SUBR=	irc2dc

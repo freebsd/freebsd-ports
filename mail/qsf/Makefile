@@ -13,7 +13,7 @@ COMMENT=	Small fast spam filter intended to be used with procmail
 OPTIONS_DEFINE=	GDBM MYSQL SQLITE2
 SQLITE2_DESC=	SQLite2 support
 
-USE_BZIP2=	yes
+USES=	tar:bzip2
 GNU_CONFIGURE=	yes
 
 PLIST_FILES=	bin/qsf \

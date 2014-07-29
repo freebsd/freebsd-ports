@@ -10,7 +10,7 @@ COMMENT=	Utility for removing files based on when they were last accessed
 
 LICENSE=	GPLv2
 
-USE_BZIP2=	yes
+USES=	tar:bzip2
 
 GNU_CONFIGURE=	yes
 

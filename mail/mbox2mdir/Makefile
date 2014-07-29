@@ -11,7 +11,7 @@ COMMENT=	Mbox to qmail's Maildir converter written in C++
 
 LICENSE=	GPLv2
 
-USE_BZIP2=	yes
+USES=	tar:bzip2
 
 PLIST_FILES=	bin/mbox2mdir
 

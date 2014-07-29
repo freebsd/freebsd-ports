@@ -15,7 +15,7 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/libpng.a:${PORTSDIR}/graphics/png \
 		${LOCALBASE}/lib/libjpeg.a:${PORTSDIR}/graphics/jpeg
 
 USE_XORG=	xpm x11
-USE_BZIP2=	yes
+USES=	tar:bzip2
 
 PLIST_FILES=	bin/iiview man/man1/iiview.1.gz
 
