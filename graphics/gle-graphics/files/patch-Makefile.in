@@ -1,0 +1,11 @@
+--- ./Makefile.in.orig	2014-07-28 01:58:20.000000000 +0200
++++ ./Makefile.in	2014-07-28 01:58:44.000000000 +0200
+@@ -101,7 +101,7 @@
+ INSTALL_DATA=@INSTALL_DATA@
+ MKDIR_P=@MKDIR_P@
+ 
+-PKGCONFIGDIR=$(INSTALL_LIB)/pkgconfig
++PKGCONFIGDIR=$(PREFIX)/libdata/pkgconfig
+ MANDIR=@mandir@
+ 
+ GLE_VERSION=@GLE_VERSION@
