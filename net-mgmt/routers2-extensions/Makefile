@@ -21,24 +21,23 @@ WRKSRC=		${WRKDIR}/routers2-v${PORTVERSION}/extensions
 USES=		perl5
 
 NO_BUILD=	YES
+PORTDOCS=	README *.txt extension.cgi.pl
 
-NO_STAGE=	yes
+OPTIONS_DEFINE=	DOCS
+
+.include <bsd.port.options.mk>
+
 post-patch:
-	for file in *.cgi ; do \
-		${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|' ${WRKSRC}/$$file; \
-	done
+	${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|' ${WRKSRC}/*.cgi
 
 do-install:
-		${MKDIR} -m 755 ${PREFIX}/www/routers2/extensions
-
-.if !defined(NOPORTDOCS)
-		${MKDIR} -m 755 ${DOCSDIR}
-		for file in README *.txt extension.cgi.pl; do \
-			${INSTALL_DATA} ${WRKSRC}/$$file ${DOCSDIR}; \
-		done
+	${MKDIR} ${STAGEDIR}${PREFIX}/www/routers2/extensions
+	${INSTALL_SCRIPT} ${WRKSRC}/*.cgi \
+		${STAGEDIR}${PREFIX}/www/routers2/extensions
+.if ${PORT_OPTIONS:MDOCS}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC}; ${INSTALL_DATA} README *.txt extension.cgi.pl \
+		${STAGEDIR}${DOCSDIR}
 .endif
-		for file in *.cgi; do \
-			${INSTALL_SCRIPT} ${WRKSRC}/$$file ${PREFIX}/www/routers2/extensions; \
-		done
 
 .include <bsd.port.mk>
