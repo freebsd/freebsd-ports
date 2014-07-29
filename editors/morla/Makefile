@@ -3,7 +3,7 @@
 
 PORTNAME=	morla
 PORTVERSION=	0.16.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	editors textproc
 MASTER_SITES=	http://www.morlardf.net/src/ \
 		http://nivi.interfree.it/distfiles/${PORTNAME}/${PORTVERSION}/
@@ -25,7 +25,7 @@ GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--with-gconf=auto
-USES=		gettext pkgconfig
+USES=		gettext pkgconfig libtool
 USE_GNOME=	gconf2 libgtkhtml libxslt
 USE_LDCONFIG=	${PREFIX}/lib/${PORTNAME}
 
