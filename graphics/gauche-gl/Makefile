@@ -15,6 +15,7 @@ COMMENT=	OpenGL binding for Gauche
 BUILD_DEPENDS=	gosh:${PORTSDIR}/lang/gauche
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
+USES=		tar:tgz
 USE_XORG=	ice sm
 USE_GL=		glut
 GNU_CONFIGURE=	yes
@@ -25,7 +26,7 @@ DOCSDIR=	${PREFIX}/share/doc/gauche/${PORTNAME}
 PLIST_SUB=	TARGET="${CONFIGURE_TARGET}"
 
 .if !defined(NOPORTDOCS)
-USES=		makeinfo tar:tgz
+USES+=		makeinfo
 INFO=		gauche-gl-refe gauche-gl-refj
 .endif
 
