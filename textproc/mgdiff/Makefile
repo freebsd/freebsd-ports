@@ -18,6 +18,6 @@ SUB_FILES=	pkg-message
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/X11/mgdiff
-	@${INSTALL_DATA} ${WRKSRC}/mgdiff.x[bp]m ${STAGEDIR}${PREFIX}/lib/X11/mgdiff
+	${INSTALL_DATA} ${WRKSRC}/mgdiff.x[bp]m ${STAGEDIR}${PREFIX}/lib/X11/mgdiff
 
 .include <bsd.port.mk>
