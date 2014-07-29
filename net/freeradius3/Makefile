@@ -42,10 +42,11 @@ MAKE_JOBS_SAFE=	yes
 
 PLIST_SUB=	PORTVERSION=${DISTVERSION} LIBVER=0${PORTVERSION:C/\./0/g}
 
+OPTIONS_SUB=	yes
 OPTIONS_DEFINE=	USER KERBEROS HEIMDAL HEIMDAL_PORT LDAP MYSQL \
 		PGSQL UNIXODBC FIREBIRD REDIS PYTHON RUBY \
 		EXPERIMENTAL UDPFROMTO DEVELOPER EDIR PERL REST \
-		FREETDS IDN SSL_PORT DOCS
+		FREETDS IDN SSL_PORT DOCS SQLITE3
 OPTIONS_DEFAULT=USER PERL
 
 USER_DESC=		Run as user freeradius, group freeradius
@@ -59,6 +60,9 @@ DEVELOPER_DESC=		Enable developer options
 EDIR_DESC=		Enable eDirectory support (implies LDAP)
 REST_DESC=		Enable RESTful API support
 SSL_PORT_DESC=		Use OpenSSL from the ports collection
+
+SQLITE3_CONFIGURE_WITH=rlm_sql_sqlite
+SQLITE3_LIB_DEPENDS=	libsqlite3.so:${PORTSDIR}/databases/sqlite3
 
 .include <bsd.port.options.mk>
 
@@ -327,7 +331,6 @@ CONFIGURE_ARGS+=--with-logdir=${LOGDIR} \
 		--without-rlm_opendirectory \
 		--without-rlm_sql_db2 \
 		--without-rlm_sql_iodbc \
-		--without-rlm_sql_sqlite \
 		--without-rlm_sql_sybase \
 		--without-rlm_yubikey \
 		--without-rlm_sql_oracle \

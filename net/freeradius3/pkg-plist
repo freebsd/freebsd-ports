@@ -238,6 +238,9 @@ include/freeradius/udpfromto.h
 %%LIBDIR%%/rlm_sqlippool.a
 %%LIBDIR%%/rlm_sqlippool.la
 %%LIBDIR%%/rlm_sqlippool.so
+%%SQLITE3%%%%LIBDIR%%/rlm_sql_sqlite.a
+%%SQLITE3%%%%LIBDIR%%/rlm_sql_sqlite.la
+%%SQLITE3%%%%LIBDIR%%/rlm_sql_sqlite.so
 %%LIBDIR%%/rlm_unix.a
 %%LIBDIR%%/rlm_unix.la
 %%LIBDIR%%/rlm_unix.so
