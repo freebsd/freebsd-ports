@@ -17,7 +17,7 @@ LICENSE=	GPLv2
 PLIST_FILES=	bin/ddate man/man1/ddate.1.gz
 
 GNU_CONFIGURE=	yes
-USE_XZ=		yes
+USES=		tar:xz
 
 CONFIGURE_ARGS=	--disable-libuuid --disable-libblkid --disable-libmount \
 		--disable-mount --disable-losetup --disable-fsck \

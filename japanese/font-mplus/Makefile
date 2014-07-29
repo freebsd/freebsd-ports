@@ -19,7 +19,7 @@ RUN_DEPENDS=	mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir \
 		mkfontscale:${PORTSDIR}/x11-fonts/mkfontscale \
 		fc-cache:${PORTSDIR}/x11-fonts/fontconfig
 
-USE_XZ=		yes
+USES=		tar:xz
 NO_BUILD=	yes
 PKGINSTALL=	${WRKDIR}/pkg-install
 PKGDEINSTALL=	${WRKDIR}/pkg-install

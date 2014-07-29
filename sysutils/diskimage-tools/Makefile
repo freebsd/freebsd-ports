@@ -13,7 +13,7 @@ COMMENT=	Convenience tools for manipulating disk images
 LICENSE=	BSD
 
 NO_BUILD=	yes
-USE_XZ=		yes
+USES=		tar:xz
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/sbin

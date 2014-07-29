@@ -11,7 +11,7 @@ COMMENT=	Decodes binary EDID information from monitors
 
 LICENSE=	MIT
 
-USE_XZ=		yes
+USES=		tar:xz
 
 PLIST_FILES=	bin/edid-decode
 
