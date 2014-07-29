@@ -2,7 +2,7 @@
 
 PORTNAME=	localize
 PORTVERSION=	0.0.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	textproc gnustep
 MASTER_SITES=	http://www.eskimo.com/~pburns/Localize/files/
 DISTNAME=	Localize-20040424
@@ -19,5 +19,7 @@ USE_GNUSTEP_INSTALL=	yes
 
 WRKSRC=		${WRKDIR}/Localize
 
-NO_STAGE=	yes
+post-install:
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/GNUstep/Local/Applications/Localize.app/Localize
+
 .include <bsd.port.mk>
