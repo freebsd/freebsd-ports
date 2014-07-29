@@ -3,7 +3,7 @@
 
 PORTNAME=	cinepaint
 DISTVERSION=	1.0-4
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}/CinePaint/CinePaint-${DISTVERSION}
 
@@ -25,7 +25,7 @@ OPTIONS_DEFINE=	OYRANOS PRINT
 OYRANOS_DESC=	ICC profile support via Oyranos
 PRINT_DESC=	Gutenprint (gimp-print) plugin
 
-USES=		desktop-file-utils gettext gmake pkgconfig
+USES=		desktop-file-utils gettext gmake libtool pkgconfig
 USE_XORG=	xmu
 USE_GNOME=	gtk20
 USE_GHOSTSCRIPT_RUN=yes
