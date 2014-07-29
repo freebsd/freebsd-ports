@@ -11,8 +11,7 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Common automake macros for GNOME 2 and GNOME 3
 
-USE_XZ=		yes
-USES=		gmake pkgconfig
+USES=		gmake pkgconfig tar:xz
 GNU_CONFIGURE=	yes
 
 .include <bsd.port.mk>

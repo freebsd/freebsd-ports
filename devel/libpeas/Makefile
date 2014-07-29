@@ -14,10 +14,9 @@ COMMENT=	Next evolution of the Gedit plugins engine
 
 BUILD_DEPENDS=	valac:${PORTSDIR}/lang/vala
 
-USE_XZ=		yes
 USE_PYTHON=	2
 USE_LDCONFIG=	yes
-USES=		gettext gmake libtool:keepla pathfix pkgconfig
+USES=		gettext gmake libtool:keepla pathfix pkgconfig tar:xz
 USE_GNOME=	gtk30 introspection:build
 INSTALLS_ICONS=	yes
 GNU_CONFIGURE=	yes

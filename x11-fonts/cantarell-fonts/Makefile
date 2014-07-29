@@ -11,8 +11,7 @@ COMMENT=	Cantarell, a Humanist sans-serif font family
 
 LIB_DEPENDS=	libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig
 
-USES=		gmake pkgconfig
-USE_XZ=		yes
+USES=		gmake pkgconfig tar:xz
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-configdir=${PREFIX}/etc/fonts/conf.avail
 FONTSDIR=	share/fonts/cantarell

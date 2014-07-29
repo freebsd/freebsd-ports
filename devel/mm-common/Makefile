@@ -12,8 +12,7 @@ COMMENT=	Common build infrastructure for the GNOME C++ binding libraries
 
 LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl
 
-USE_XZ=		yes
-USES=		gmake pathfix
+USES=		gmake pathfix tar:xz
 GNU_CONFIGURE=	yes
 
 .include <bsd.port.mk>

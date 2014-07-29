@@ -14,8 +14,7 @@ COMMENT=	FUSE based implementation of the well-known unionfs
 PLIST_FILES=	bin/unionfs \
 		man/man8/unionfs-fuse.8.gz
 
-USES=		fuse cmake
-USE_XZ=		yes
+USES=		fuse cmake tar:xz
 
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

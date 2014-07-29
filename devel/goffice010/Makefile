@@ -15,9 +15,8 @@ COMMENT=	GLib/GTK+ set of document centric objects and utilities
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USE_XZ=		yes
 USE_GNOME=	gnomeprefix gtk30 intlhack libgsf librsvg2
-USES=		gettext gmake libtool:keepla pathfix pkgconfig
+USES=		gettext gmake libtool:keepla pathfix pkgconfig tar:xz
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include

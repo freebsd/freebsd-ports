@@ -13,9 +13,8 @@ COMMENT=	GObject collection library
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-introspection=yes
-USE_XZ=		yes
 USE_GNOME=	glib20 gnomehier introspection:build
-USES=		gmake pathfix pkgconfig
+USES=		gmake pathfix pkgconfig tar:xz
 USE_LDCONFIG=	yes
 
 .include <bsd.port.mk>

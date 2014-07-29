@@ -11,8 +11,7 @@ COMMENT=	Lists of the country, language, and currency iso names
 
 LICENSE=	LGPL21
 
-USE_XZ=		yes
-USES=		pathfix gettext gmake
+USES=		pathfix gettext gmake tar:xz
 GNU_CONFIGURE=	yes
 NO_ARCH=	yes
 

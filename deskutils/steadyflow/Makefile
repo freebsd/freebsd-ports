@@ -18,8 +18,7 @@ LIB_DEPENDS=	libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib \
 		libnotify.so:${PORTSDIR}/devel/libnotify
 BUILD_DEPENDS=	valac:${PORTSDIR}/lang/vala
 
-USE_XZ=	yes
-USES=		cmake pkgconfig gettext
+USES=		cmake pkgconfig gettext tar:xz
 GLIB_SCHEMAS=	net.launchpad.steadyflow.gschema.xml
 USE_GNOME=	glib20 gtk30 intltool
 INSTALLS_ICONS=	yes

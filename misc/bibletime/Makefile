@@ -14,8 +14,7 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	libclucene-core.so:${PORTSDIR}/textproc/clucene \
 		libsword.so:${PORTSDIR}/misc/sword
 
-USES=		cmake:outsource
-USE_XZ=		yes
+USES=		cmake:outsource tar:xz
 USE_OPENSSL=	yes
 USE_QT4=	corelib dbus gui iconengines network phonon qtestlib script \
 		svg webkit xml linguist_build moc_build qmake_build \

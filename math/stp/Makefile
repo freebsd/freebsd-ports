@@ -14,9 +14,8 @@ LICENSE=	MIT
 LIB_DEPENDS=	libboost_program_options.so:${PORTSDIR}/devel/boost-libs \
 		libboost_system.so:${PORTSDIR}/devel/boost-libs
 
-USES=		bison:build cmake perl5
+USES=		bison:build cmake perl5 tar:xz
 USE_PERL5=	build
-USE_XZ=		yes
 CMAKE_ARGS=	-DFL_LIBRARY=/usr/lib/libfl.a
 
 .include <bsd.port.pre.mk>

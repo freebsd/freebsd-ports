@@ -12,9 +12,8 @@ COMMENT=	Simple image scanning application for KDE
 
 LIB_DEPENDS=	libksane.so:${PORTSDIR}/graphics/libksane
 
-USE_XZ=		yes
 USE_KDE4=	kdelibs kdeprefix kdehier automoc4
 USE_QT4=	qmake_build moc_build rcc_build uic_build
-USES=		cmake:outsource
+USES=		cmake:outsource tar:xz
 
 .include <bsd.port.mk>

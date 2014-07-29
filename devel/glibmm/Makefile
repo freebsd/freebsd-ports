@@ -13,7 +13,6 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	C++ interfaces for glib2
 
-USE_XZ=		yes
 
 PLIST_SUB=	VERSION="2.4" API_VERSION="2.4"
 
@@ -21,7 +20,7 @@ PLIST_SUB=	VERSION="2.4" API_VERSION="2.4"
 
 BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4
 
-USES=		gettext gmake libtool:keepla pathfix perl5 pkgconfig
+USES=		gettext gmake libtool:keepla pathfix perl5 pkgconfig tar:xz
 USE_GNOME=	glib20 libsigc++20
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes

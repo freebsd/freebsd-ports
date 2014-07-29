@@ -20,10 +20,9 @@ CONFIGURE_ENV=	FORCE_UNSAFE_CONFIGURE=1
 CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib
 
-USES=		gmake perl5
+USES=		gmake perl5 tar:xz
 USE_LDCONFIG=	yes
 USE_PERL5=	build
-USE_XZ=		yes
 
 PLIST_FILES=	bin/dir \
 		bin/dircolors \

@@ -17,8 +17,7 @@ LIB_DEPENDS=	libboost_system.so:${PORTSDIR}/devel/boost-libs \
 		libpcre.so:${PORTSDIR}/devel/pcre \
 		libquvi.so:${PORTSDIR}/multimedia/libquvi
 
-USES=		pkgconfig
-USE_XZ=		yes
+USES=		pkgconfig tar:xz
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-boost=${LOCALBASE}
 

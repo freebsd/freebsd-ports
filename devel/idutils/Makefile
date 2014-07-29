@@ -16,8 +16,7 @@ LICENSE=	GPLv3
 
 OPTIONS_DEFINE=	NLS
 
-USES=		charsetfix
-USE_XZ=		yes
+USES=		charsetfix tar:xz
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	EMACS='no'
 CPPFLAGS+=	-I${LOCALBASE}/include

@@ -12,8 +12,7 @@ COMMENT=	Collection of backgrounds for MATE
 
 PORTSCOUT=	limitw:1,even
 
-USES=		gettext gmake pathfix
-USE_XZ=		yes
+USES=		gettext gmake pathfix tar:xz
 USE_MATE=	autogen common:build intlhack
 USE_GNOME=	glib20
 USE_AUTOTOOLS=	aclocal:env autoconf:env automake:env

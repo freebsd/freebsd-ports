@@ -11,9 +11,8 @@ DISTNAME=	${PORTNAME}${PKGNAMESUFFIX}-${PORTVERSION}
 MAINTAINER=	rnejdl@ringofsaturn.com
 COMMENT=	MegaGlest data files
 
-USES=		dos2unix
+USES=		dos2unix tar:xz
 DOS2UNIX_GLOB=	*.log *.ini *.html *.txt *.lng
-USE_XZ=		yes
 NO_BUILD=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}

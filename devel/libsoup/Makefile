@@ -16,11 +16,10 @@ BUILD_DEPENDS=	glib-networking>=2.29.18:${PORTSDIR}/net/glib-networking
 LIB_DEPENDS=	libgcrypt.so:${PORTSDIR}/security/libgcrypt
 RUN_DEPENDS=	glib-networking>=2.29.18:${PORTSDIR}/net/glib-networking
 
-USE_XZ=		yes
 
 .if !defined(REFERENCE_PORT)
 
-USES=		gettext gmake libtool:keepla pathfix pkgconfig
+USES=		gettext gmake libtool:keepla pathfix pkgconfig tar:xz
 USE_GNOME=	gnomehier glib20 libxml2 referencehack intltool
 USE_SQLITE=	3
 USE_LDCONFIG=	yes

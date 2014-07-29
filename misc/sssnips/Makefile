@@ -11,8 +11,7 @@ COMMENT=	Shell script snippets written by Peter Pentchev
 
 LICENSE=	BSD2CLAUSE
 
-USE_XZ=		yes
-USES=		gmake
+USES=		gmake tar:xz
 MAKE_ENV=	BINGRP=wheel MANDIR=${MANPREFIX}/man/man
 
 PLIST_FILES=	${PROGRAMS:S@^@bin/@} \

@@ -20,10 +20,9 @@ LIB_DEPENDS=	libenchant.so:${PORTSDIR}/textproc/enchant \
 		libcurl.so:${PORTSDIR}/ftp/curl \
 		libsoup-2.4.so:${PORTSDIR}/devel/libsoup
 
-USE_XZ=		yes
 USE_GSTREAMER=	yes
 USE_XORG=	xt
-USES=		bison gmake pkgconfig gettext perl5
+USES=		bison gmake pkgconfig gettext perl5 tar:xz
 USE_AUTOTOOLS=	libtool
 USE_GNOME=	gtk30 introspection:build libxslt ltverhack
 USE_SQLITE=	yes

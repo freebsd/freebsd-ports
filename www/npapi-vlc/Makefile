@@ -13,8 +13,7 @@ COMMENT=	Embeds vlc-player in web-browsers
 LIB_DEPENDS=	libvlc.so:${PORTSDIR}/multimedia/vlc \
 		libxul.so:${PORTSDIR}/www/libxul
 
-USES=	webplugin:native pkgconfig
-USE_XZ=	yes
+USES=	webplugin:native pkgconfig tar:xz
 USE_GNOME=	gtk20
 WEBPLUGIN_NAME=	#
 WEBPLUGIN_FILES=libvlcplugin.so

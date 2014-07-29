@@ -17,9 +17,8 @@ RUN_DEPENDS=	p5-RPC-XML>=0:${PORTSDIR}/net/p5-RPC-XML \
 
 PROJECTHOST=	eiskaltdc
 
-USE_XZ=		yes
 NO_BUILD=	yes
-USES=		perl5
+USES=		perl5 tar:xz
 USE_PERL5=	run
 
 MAN1=	${PORTNAME}.1

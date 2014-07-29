@@ -13,11 +13,10 @@ COMMENT=	Common subroutines for UCL mbone applications
 OPTIONS_DEFINE=	IPV6
 
 WRKSRC=		${WRKDIR}/common
-USES=		uidfix
+USES=		uidfix tar:xz
 GNU_CONFIGURE=	yes
 USE_OPENSSL=	yes
 IPV6_CONFIGURE_ENABLE=	ipv6
-USE_XZ=		yes
 MAKE_ENV=	WITHOUT_PROFILE=yes __MAKE_CONF=/dev/null SRCCONF=/dev/null
 INSTALL_WRKSRC=	${WRKSRC}/src
 

@@ -8,8 +8,7 @@ MASTER_SITES=	GNU
 MAINTAINER=	johans@FreeBSD.org
 COMMENT=	Tool to indent the C preprocessor directives
 
-USE_XZ=		yes
-USES=		charsetfix gmake	# gmake is needed for -jX builds
+USES=		charsetfix gmake tar:xz	# gmake is needed for -jX builds
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 

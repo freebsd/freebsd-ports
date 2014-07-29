@@ -11,8 +11,7 @@ COMMENT=	The GNU diff utilities
 
 LIB_DEPENDS=	libsigsegv.so:${PORTSDIR}/devel/libsigsegv
 
-USES=		charsetfix
-USE_XZ=		yes
+USES=		charsetfix tar:xz
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--program-prefix=g
 
