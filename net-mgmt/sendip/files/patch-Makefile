@@ -1,5 +1,5 @@
---- Makefile.orig	Tue Jan 28 13:03:48 2003
-+++ Makefile	Tue Jan 28 13:04:35 2003
+--- Makefile.orig	2002-10-12 19:28:00.000000000 +0200
++++ Makefile	2014-07-27 16:43:13.000000000 +0200
 @@ -1,23 +1,23 @@
  #configureable stuff
 -PREFIX ?= /usr/local
@@ -34,3 +34,12 @@
  
  PROGS= sendip
  BASEPROTOS= ipv4.so ipv6.so
+@@ -39,7 +39,7 @@
+ $(CC) -o $@ $(LDFLAGS) $(CFLAGS) $+ ; \
+ fi"
+ 
+-sendip.1:	./help2man $(PROGS) $(PROTOS) VERSION
++sendip.1:	help2man $(PROGS) $(PROTOS) VERSION
+ 			./help2man -n "Send arbitrary IP packets" -N >sendip.1
+ 
+ sendip.spec:	sendip.spec.in VERSION
