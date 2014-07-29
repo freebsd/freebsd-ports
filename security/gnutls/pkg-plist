@@ -4,10 +4,10 @@ bin/gnutls-cli
 bin/gnutls-cli-debug
 bin/gnutls-serv
 bin/ocsptool
-bin/p11tool
+%%P11KIT%%bin/p11tool
 bin/psktool
 bin/srptool
-bin/tpmtool
+%%TPM%%bin/tpmtool
 include/gnutls/abstract.h
 include/gnutls/compat.h
 include/gnutls/crypto.h
