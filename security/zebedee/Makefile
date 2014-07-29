@@ -20,9 +20,7 @@ EXAMPLES=	vncviewer.zbd vncserver.zbd server.key server.id client1.key \
 		client2.key clients.id
 DOCS=		README.txt LICENCE.txt CHANGES.txt zebedee.html ftpgw.tcl.html
 
-OPTIONS_DEFINE=	DOCS
-
-.include <bsd.port.options.mk>
+OPTIONS_DEFINE=	DOCS EXAMPLES
 
 post-patch:
 	@${REINPLACE_CMD} \
@@ -40,11 +38,9 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/${e} ${STAGEDIR}${EXAMPLESDIR}
 .endfor
 
-.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for d in ${DOCS}
 	${INSTALL_DATA} ${WRKSRC}/${d} ${STAGEDIR}${DOCSDIR}
 .endfor
-.endif
 
 .include <bsd.port.mk>
