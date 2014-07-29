@@ -1,0 +1,4 @@
+%%SITE_PERL%%/mach/auto/Email/Simple/FromHandle/.packlist
+%%SITE_PERL%%/Email/Simple/FromHandle.pm
+@dirrmtry %%SITE_PERL%%/Email/Simple
+@dirrmtry %%SITE_PERL%%/mach/auto/Email/Simple/FromHandle
