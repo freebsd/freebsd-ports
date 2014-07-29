@@ -11,6 +11,7 @@ DISTNAME=	${PORTNAME:S/x/X/}-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A drop in replacement for the "dialog" or "cdialog" programs
 
+USES=		tar:bzip2
 USE_GNOME=	gtk12
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
@@ -24,7 +25,7 @@ OPTIONS_DEFINE=	DOCS NLS
 CONFIGURE_ARGS+=	--disable-nls
 PLIST_SUB+=	NLS="@comment "
 .else
-USES+=		gettext tar:bzip2
+USES+=		gettext
 PLIST_SUB+=	NLS=""
 .endif
 
