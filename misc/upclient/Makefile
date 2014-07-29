@@ -47,7 +47,7 @@ do-install:
 		${STAGEDIR}${PREFIX}/etc/upclient.conf.sample
 	${INSTALL_SCRIPT} ${WRKSRC}/scripts/upchk ${WRKSRC}/scripts/clientchk \
 		${STAGEDIR}${PREFIX}/sbin
-	@cd ${WRKSRC}/src; ${MAKE_CMD} destdir=${STAGEDIR} install-locales
+	@(cd ${WRKSRC}/src; ${MAKE_CMD} destdir=${STAGEDIR} install-locales)
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for file in ${DOC_FILES}
 	${INSTALL_DATA} ${WRKSRC}/${file} ${STAGEDIR}${DOCSDIR}

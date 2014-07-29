@@ -6,7 +6,6 @@ PORTVERSION=	2.0
 CATEGORIES=	misc geography
 MASTER_SITES=	http://edcftp.cr.usgs.gov/pub/software/gctpc/
 DISTNAME=	${PORTNAME}${PORTVERSION:S/.//g}
-EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	USGS General Cartographic Transformation Package (GCTP)
@@ -15,7 +14,7 @@ OPTIONS_DEFINE=	DOCS
 
 WRKSRC=		${WRKDIR}/${PORTNAME}/source
 
-USES=		gmake
+USES=		gmake tar:Z
 ALL_TARGET=	libgctpc.so.1
 USE_LDCONFIG=	yes
 MAKE_JOBS_UNSAFE=	yes
