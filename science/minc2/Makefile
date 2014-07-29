@@ -1,22 +1,11 @@
 # Created by: jbacon
 # $FreeBSD$
 
-############################################################################
-# http://www.bic.mni.mcgill.ca/software/minc/
-# is the ultimate source for MINC, and will always contain the latest
-# source release.  If this port is not up to date enough for you,
-# you can download the latest sources and build manually.  On FreeBSD,
-# you must configure with the environment variable LDFLAGS set to
-# ${LOCALBASE}/lib so that the configure script will find libnetcdf.
-# Of course, the netcdf port must be installed first.
-
 PORTNAME=	minc
-PORTVERSION=	2.0.18
-PORTREVISION=	2
+PORTVERSION=	2.2.00
 PORTEPOCH=	1
 CATEGORIES=	science biology
-MASTER_SITES=	http://packages.bic.mni.mcgill.ca/tgz/ \
-		http://www.nitrc.org/frs/download.php/801/
+MASTER_SITES=	GH
 PKGNAMESUFFIX=	2
 
 MAINTAINER=	ports@FreeBSD.org
@@ -24,18 +13,35 @@ COMMENT=	Medical Imaging NetCDF
 
 LICENSE=	BSD
 
-BROKEN=		Fails to build
+LIB_DEPENDS=	libhdf5.so:${PORTSDIR}/science/hdf5 \
+		libnetcdf.so:${PORTSDIR}/science/netcdf
+RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
 
-LIB_DEPENDS=	libnetcdf.so:${PORTSDIR}/science/netcdf \
-		libhdf5.so:${PORTSDIR}/science/hdf5
+USE_GITHUB=	yes
+GH_ACCOUNT=	BIC-MNI
+GH_TAGNAME=	release-${PORTVERSION}
+GH_COMMIT=	6f2f5b9
 
-USES=		libtool
-USE_LDCONFIG=	yes
-CPPFLAGS+=	${PTHREAD_CFLAGS} -I${LOCALBASE}/include -DH5_USE_16_API
-LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
+USES=		bison gmake libtool perl5 shebangfix
+SHEBANG_FILES=	progs/mincview/mincview
+USE_PERL5=	build
+USE_AUTOTOOLS=	libtoolize aclocal autoheader automake autoconf
+LIBTOOLIZE_ARGS=--copy --force
+ACLOCAL_ARGS=	-I m4 --automake-acdir=${ACLOCAL_DIR}
+AUTOMAKE_ARGS=	--add-missing --copy --force-missing
 CONFIGURE_ARGS=	--enable-shared=yes --enable-static=yes
+INSTALL_TARGET=	install-strip
+USE_LDCONFIG=	yes
+
+CFLAGS+=	-Wno-error=return-type
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 CONFLICTS=	minc-1* zh-tk-[0-9]*
-LATEST_LINK=	minc2
+
+pre-patch:
+	@${RM} -f ${WRKSRC}/ac_config_aux/*
+	@${RM} -f ${WRKSRC}/progs/minccalc/gram.[ch]
+	@${RM} -f ${WRKSRC}/progs/mincgen/ncgentab.[ch]
 
 .include <bsd.port.mk>
