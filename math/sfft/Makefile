@@ -65,10 +65,10 @@ CFLAGS+=	-O3 -ffast-math
 
 .if ${PORT_OPTIONS:MPROFILE}
 .if defined(NOPROFILE) || defined(NO_PROFILE) || defined(WITHOUT_PROFILE)
-IGNORE =	you have defined WITH_PROFILE, but have also defined\
+IGNORE=		you have defined WITH_PROFILE, but have also defined\
 WITHOUT_PROFILE, NOPROFILE, or NO_PROFILE
 .elif !exists(/usr/lib/libc_p.a)
-IGNORE  =	you have chosen WITH_PROFILE, but have not installed the\
+IGNORE=		you have chosen WITH_PROFILE, but have not installed the\
 base system profiling libraries
 .endif
 PLIST_FILES+=	lib/libsfft_p.a

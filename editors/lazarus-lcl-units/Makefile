@@ -12,5 +12,6 @@ LCL_INTERFACE=	#
 
 MASTERDIR=	${.CURDIR}/../../editors/lazarus
 
-OPT	=	"-Fu../../lcl/ -Fu../lcl -Fu../../lcl/forms -Fu../../lcl/nonwin32 -Fu../../lcl/widgetset -Fi../../lcl/include"
+OPT=		"-Fu../../lcl/ -Fu../lcl -Fu../../lcl/forms -Fu../../lcl/nonwin32 -Fu../../lcl/widgetset -Fi../../lcl/include"
+
 .include "${MASTERDIR}/Makefile"

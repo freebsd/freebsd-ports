@@ -19,7 +19,7 @@ LICENSE=		GPLv2
 
 BENCHMARK_SCRIPT=	R-benchmark-25.R
 USES=	cran:auto-plist
-WRKSRC =		${WRKDIR}/${PORTNAME}
+WRKSRC=			${WRKDIR}/${PORTNAME}
 
 .if defined(MAINTAINER_MODE)
 USES+=	dos2unix

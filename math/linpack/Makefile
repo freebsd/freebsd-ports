@@ -22,7 +22,7 @@ USE_LDCONFIG=	yes
 DIST_SUBDIR=	${PORTNAME}
 NO_WRKSUBDIR=	yes
 
-SRCS =	cchdc.f cchdd.f cchex.f cchud.f cgbco.f cgbdi.f cgbfa.f cgbsl.f \
+SRCS=	cchdc.f cchdd.f cchex.f cchud.f cgbco.f cgbdi.f cgbfa.f cgbsl.f \
 	cgeco.f cgedi.f cgefa.f cgesl.f cgtsl.f chico.f chidi.f chifa.f \
 	chisl.f chpco.f chpdi.f chpfa.f chpsl.f cmach.f cpbco.f cpbdi.f \
 	cpbfa.f cpbsl.f cpoco.f cpodi.f cpofa.f cposl.f cppco.f cppdi.f \

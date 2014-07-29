@@ -36,7 +36,7 @@ MAKE_ENV+=		"XLAPACKE_LIBNAME=${XLAPACKE_LIBNAME}"
 .endif
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/${PORTNAME}
-WRKSRC_LEGACY =	${WRKDIR}/lapacke
+WRKSRC_LEGACY=	${WRKDIR}/lapacke
 
 .if exists(${LOCALBASE}/lib/libgoto2p.so)
 WITH_BLAS?=	gotoblas
@@ -89,10 +89,10 @@ PLIST_FILES+=	lib/lib${XLAPACKE_LIBNAME}.a \
 
 .if ${PORT_OPTIONS:MPROFILE}
 .if defined(NOPROFILE) || defined(NO_PROFILE) || defined(WITHOUT_PROFILE)
-IGNORE =	you have defined WITH_PROFILE, but have also defined\
+IGNORE=		you have defined WITH_PROFILE, but have also defined\
 WITHOUT_PROFILE, NOPROFILE, or NO_PROFILE
 .elif !exists(/usr/lib/libc_p.a)
-IGNORE	=	you have chosen WITH_PROFILE, but have not installed the\
+IGNORE=		you have chosen WITH_PROFILE, but have not installed the\
 base system profiling libraries
 .endif
 PLIST_FILES+=	lib/lib${LAPACKE_LIBNAME}_p.a \

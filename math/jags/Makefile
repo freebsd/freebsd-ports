@@ -58,7 +58,7 @@ LIB_DEPENDS+=	libblas.so:${PORTSDIR}/math/blas
 LIB_DEPENDS+=	liblapack.so:${PORTSDIR}/math/lapack
 CONFIGURE_ARGS=	--with-lapack="-llapack" --with-blas="-lblas"
 .else
-IGNORE =	: invalid value for WITH_BLAS: ${WITH_BLAS}
+IGNORE=		: invalid value for WITH_BLAS: ${WITH_BLAS}
 .endif
 
 post-patch:

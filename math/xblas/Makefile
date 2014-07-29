@@ -27,7 +27,7 @@ STATIC_DESC=	Build a non-PIC archive
 PLIST_DIRS=	${HDIR}
 PLIST_FILES=	${HEADERS:S|^|${HDIR}/|}
 SHLIB_MAJOR=	0
-WRKSRC =	${WRKDIR}/xblas-${PORTVERSION}
+WRKSRC=		${WRKDIR}/xblas-${PORTVERSION}
 
 .include <bsd.port.options.mk>
 

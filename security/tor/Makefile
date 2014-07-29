@@ -37,7 +37,7 @@ USE_OPENSSL=	yes
 USE_RC_SUBR=	tor
 SUB_FILES=	pkg-message
 
-GROUPS =	_tor
+GROUPS=		_tor
 USERS=		_tor
 
 CONFLICTS=	tor-devel-[0-9]*

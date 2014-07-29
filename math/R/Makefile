@@ -52,8 +52,8 @@ PLIST_SUB=		RMATH_SOVERSION="${RMATH_SOVERSION}"
 USE_LDCONFIG=		yes
 .else # LIBRMATH_SLAVEPORT
 ALL_TARGET=		all
-INSTALL_TARGET =	install
-CONFIGURE_ARGS =	--enable-memory-profiling rdocdir=${DOCSDIR} \
+INSTALL_TARGET=		install
+CONFIGURE_ARGS=		--enable-memory-profiling rdocdir=${DOCSDIR} \
 			--with-system-bzlib --with-system-zlib
 CONFIGURE_ENV+=		FCFLAGS="${FFLAGS}" \
 			INSTALL_DATA="${INSTALL} ${COPY} ${_SHROWNGRP} -m 644" \
@@ -65,7 +65,7 @@ OPTIONS_DEFINE+=	ATLAS ICU PCRE_PORT THREADS
 
 ATLAS_DESC=		Use ATLAS instead of BLAS/LAPACK
 ICU_DESC=		Use ICU for collation in multibyte locales
-PCRE_PORT_DESC =	Use devel/pcre instead of the bundled PCRE
+PCRE_PORT_DESC=		Use devel/pcre instead of the bundled PCRE
 
 OPTIONS_DEFAULT+=	ICU PCRE_PORT THREADS
 .if !defined(LIBR_SLAVEPORT)
