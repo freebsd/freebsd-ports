@@ -7,11 +7,11 @@ PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	apps/www/mirroring
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	demon@FreeBSD.org
 COMMENT=	Download web sites without user interaction by following links
 
+USES=		tar:tgz
 ALL_TARGET=
 
 PLIST_FILES=	bin/webcrawl man/man1/webcrawl.1.gz
