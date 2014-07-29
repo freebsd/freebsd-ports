@@ -19,6 +19,7 @@ LICENSE_FILE=	${WRKSRC}/gnu-COPYING-GPL
 
 CONFLICTS=	ja-mailman-2.1.*
 
+USES=		tar:tgz
 USE_AUTOTOOLS=	autoconf
 USE_PYTHON=	2
 USE_RC_SUBR=	mailman
@@ -76,7 +77,7 @@ MTA_DESC=	Integrate with which MTA?
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}
-USES+=		gettext tar:tgz
+USES+=		gettext
 PLIST_SUB+=	NLS=""
 .else
 PLIST_SUB+=	NLS="@comment "
