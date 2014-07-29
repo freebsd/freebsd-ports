@@ -36,7 +36,7 @@ HBASE_GROUP=	hbase
 USERS=		${HBASE_USER}
 GROUPS=		${HBASE_GROUP}
 
-SUB_FILES=	hbase-env-dist.sh
+SUB_FILES=	hbase-env-dist.sh pkg-message
 USE_RC_SUBR=    hbase_master hbase_regionserver
 SUB_LIST=	HBASE_USER="${HBASE_USER}" \
 		JAVA_HOME="${JAVA_HOME}" \
@@ -63,8 +63,8 @@ post-build:
 do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/hbase/bin
 	cd ${HBASE_DIST}/bin && ${INSTALL_SCRIPT} *.sh hbase ${STAGEDIR}${PREFIX}/hbase/bin/
-	${MKDIR} ${STAGEDIR}${ETCDIR}
-	cd ${HBASE_DIST} && ${COPYTREE_SHARE} conf ${STAGEDIR}${PREFIX}/hbase/
+	${MKDIR} ${STAGEDIR}${ETCDIR} ${STAGEDIR}${EXAMPLESDIR}
+	cd ${HBASE_DIST} && ${COPYTREE_SHARE} conf ${STAGEDIR}${EXAMPLESDIR}/
 	${INSTALL_DATA} ${WRKDIR}/hbase-env-dist.sh ${STAGEDIR}${ETCDIR}/
 	cd ${HBASE_DIST}/docs && ${COPYTREE_SHARE} "*" ${STAGEDIR}${DOCSDIR}/
 	cd ${HBASE_DIST} && ${COPYTREE_SHARE} hbase-webapps ${STAGEDIR}${PREFIX}/hbase/
