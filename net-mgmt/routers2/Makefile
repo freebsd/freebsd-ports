@@ -23,38 +23,37 @@ RUN_DEPENDS=	p5-Convert-ASN1>=0:${PORTSDIR}/converters/p5-Convert-ASN1 \
 		${LOCALBASE}/bin/mrtg:${PORTSDIR}/net-mgmt/mrtg
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-v${PORTVERSION}
-
 USES=		perl5
-
 NO_BUILD=	YES
+PLIST_SUB=	WWWOWN=${WWWOWN} WWWGRP=${WWWGRP}
+PORTDOCS=	*
 
-NO_STAGE=	yes
+OPTIONS_DEFINE=	DOCS
+
+.include <bsd.port.options.mk>
+
 post-patch:
-	@${RM} ${WRKSRC}/extras/targetnames/BER.pm ${WRKSRC}/extras/targetnames/SNMP_*.pm
-	for file in routers2.cgi.pl routers2.conf ; do \
-		${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|' ${WRKSRC}/$$file; \
-	done
+	@${RM} ${WRKSRC}/extras/targetnames/BER.pm \
+		${WRKSRC}/extras/targetnames/SNMP_*.pm
+	${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|' \
+		${WRKSRC}/routers2.cgi.pl ${WRKSRC}/routers2.conf
 
 do-install:
-		${MKDIR} -m 755 ${PREFIX}/www/routers2
-		${MKDIR} -m 755 ${PREFIX}/www/routers2/rrdicons
-		${MKDIR} -m 755 ${PREFIX}/www/routers2/graphs
-		${MKDIR} -m 755 /var/db/rrdtool
-		${CHOWN} ${WWWOWN}:${WWWGRP} /var/db/rrdtool
-		${CHOWN} ${WWWOWN}:${WWWGRP} ${PREFIX}/www/routers2/graphs
-
-.if !defined(NOPORTDOCS)
-		${MKDIR} -m 755 ${DOCSDIR}
-		for file in CHANGES README doc/* ; do \
-			${INSTALL_DATA} ${WRKSRC}/$$file ${DOCSDIR}; \
-		done
+	${MKDIR} ${STAGEDIR}${PREFIX}/www/routers2 \
+		${STAGEDIR}${PREFIX}/www/routers2/rrdicons \
+		${STAGEDIR}${PREFIX}/www/routers2/graphs \
+		${STAGEDIR}/var/db/rrdtool
+	${INSTALL_DATA} ${WRKSRC}/routers2.conf \
+		${STAGEDIR}${PREFIX}/etc/routers2.conf.sample
+	${INSTALL_DATA} ${WRKSRC}/rrdicons/* \
+		${STAGEDIR}${PREFIX}/www/routers2/rrdicons
+	${INSTALL_SCRIPT} ${WRKSRC}/routers2.cgi.pl \
+		${STAGEDIR}${PREFIX}/www/routers2/routers2.cgi
+.if ${PORT_OPTIONS:MDOCS}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC}; \
+		${INSTALL_DATA} CHANGES README doc/* ${STAGEDIR}${DOCSDIR}
 .endif
-		${INSTALL_DATA} ${WRKSRC}/routers2.conf ${PREFIX}/etc/routers2.conf.sample
-		${INSTALL_DATA} ${WRKSRC}/rrdicons/* ${PREFIX}/www/routers2/rrdicons
-		${INSTALL_SCRIPT} ${WRKSRC}/routers2.cgi.pl ${PREFIX}/www/routers2/routers2.cgi
-#		for file in mrtg cfgmaker indexmaker; do \
-#			${INSTALL_SCRIPT} ${WRKSRC}/bin/$$file ${PREFIX}/bin/; \
-#		done
 
 #post-install:
 #.if !defined(BATCH)
