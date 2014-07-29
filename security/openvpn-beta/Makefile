@@ -15,7 +15,7 @@ LICENSE=	GPLv2
 
 CONFLICTS_INSTALL=	openvpn-[0-9]* openvpn-beta-[0-9]*
 
-USE_XZ=		yes
+USES=		tar:xz
 
 GNU_CONFIGURE=	yes
 CFLAGS+=	-I${LOCALBASE}/include

@@ -18,7 +18,7 @@ RUN_DEPENDS=	${LOCALBASE}/share/icons/hicolor/index.theme:${PORTSDIR}/misc/hicol
 		xset:${PORTSDIR}/x11/xset
 
 SNAPDATE=	20130919
-USE_XZ=		yes
+USES=		tar:xz
 GNU_CONFIGURE=	yes
 
 post-patch:

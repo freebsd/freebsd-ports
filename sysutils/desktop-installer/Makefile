@@ -14,7 +14,7 @@ LICENSE=	BSD
 
 RUN_DEPENDS=	auto-admin>=0.3.3:${PORTSDIR}/sysutils/auto-admin
 
-USE_XZ=		yes
+USES=		tar:xz
 
 NO_BUILD=	yes
 

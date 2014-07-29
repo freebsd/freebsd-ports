@@ -13,7 +13,7 @@ LICENSE=	GPLv3
 
 LIB_DEPENDS+=	libspf2.so:${PORTSDIR}/mail/libspf2
 
-USE_XZ=		yes
+USES=		tar:xz
 USE_RC_SUBR=	milter-callback
 USE_GCC=	any
 

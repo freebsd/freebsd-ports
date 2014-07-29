@@ -13,7 +13,7 @@ EXTRACT_ONLY=
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	TeX backend for Jade, DSSSL processor for SGML/XML documents
 
-USE_XZ=		yes
+USES=		tar:xz
 USE_TEX=	texlive texmf pdftex xmltex fmtutil
 TEXHASHDIRS=	${TEXMFDISTDIR}
 EXTRACT_AFTER_ARGS=| ${TAR} -xf - -C ${STAGEDIR}${PREFIX}/share \

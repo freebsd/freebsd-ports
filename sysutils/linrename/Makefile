@@ -18,7 +18,7 @@ COMMENT=	Rename multiple files using substitution
 BUILD_WRKSRC=	${WRKSRC}/misc-utils
 INSTALL_WRKSRC=	${WRKSRC}/misc-utils
 
-USE_XZ=		yes
+USES=		tar:xz
 
 CPPFLAGS+=	-I../include \
 		-DHAVE_DIRFD -DHAVE_ERR_H -DHAVE_LANGINFO_H -DHAVE_LOCALE_H \

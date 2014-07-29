@@ -12,7 +12,7 @@ COMMENT=	C/C++ library with common data structures and functions
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-USE_XZ=		yes
+USES=		tar:xz
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	libtool

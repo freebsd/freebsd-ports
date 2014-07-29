@@ -11,7 +11,7 @@ COMMENT=	Collection of audacious skins
 
 BUILD_DEPENDS=	audacious:${PORTSDIR}/multimedia/audacious
 
-USE_XZ=		yes
+USES=		tar:xz
 NO_BUILD=	yes
 
 DATADIR=	${PREFIX}/share/audacious

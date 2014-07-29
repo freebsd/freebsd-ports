@@ -13,7 +13,7 @@ COMMENT=	Wrapper for running the "best" available WEB browser
 LICENSE=	BSD
 
 NO_BUILD=	yes
-USE_XZ=		yes
+USES=		tar:xz
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/webbrowser ${STAGEDIR}${PREFIX}/bin

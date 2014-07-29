@@ -12,7 +12,7 @@ COMMENT=	Collection of Faenza and Faience icons for the MATE desktop
 
 PORTSCOUT=	limitw:1,even
 
-USE_XZ=		yes
+USES=		tar:xz
 NO_BUILD=	yes
 INSTALLS_ICONS=	yes
 
