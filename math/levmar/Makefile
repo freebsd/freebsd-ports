@@ -6,7 +6,6 @@ PORTVERSION=	2.6
 PORTREVISION=	2
 CATEGORIES=	math
 MASTER_SITES=	http://users.ics.forth.gr/~lourakis/levmar/
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	phd_kimberlite@yahoo.co.jp
 COMMENT=	GPL-licensed library implementing the Levenberg-Marquardt algorithm
@@ -15,7 +14,7 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USE_LDCONFIG=	yes
-USES=		fortran
+USES=		fortran tar:tgz
 
 OPTIONS_DEFINE=	DOCS EXAMPLES PROFILE
 PROFILE_DESC=	Build a profiling library

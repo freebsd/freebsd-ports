@@ -6,7 +6,6 @@ PORTVERSION=	1.5.0
 PORTREVISION=	3
 CATEGORIES=	japanese
 MASTER_SITES=	http://www.ongs.co.jp/software/xdtp/
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	XML document transfer program
@@ -15,7 +14,7 @@ LICENSE=	BSD
 
 LIB_DEPENDS=	libglibmm-2.4.so:${PORTSDIR}/devel/glibmm
 
-USES=		pkgconfig
+USES=		pkgconfig tar:tgz
 USE_LDCONFIG=	yes
 USE_GNOME=	libxml2 libxslt
 GNU_CONFIGURE=	yes

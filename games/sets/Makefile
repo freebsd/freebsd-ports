@@ -7,7 +7,6 @@ PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://www.linuxmotors.com/sets/downloads/ \
 		SF/nemysisfreebsdp/${CATEGORIES}/:icons
-EXTRACT_SUFX=	.tgz
 DISTFILES=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX} \
 		${PORTNAME}.png:icons
 EXTRACT_ONLY=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX}
@@ -17,7 +16,7 @@ COMMENT=	This is an implementation of the sets game
 
 LICENSE=	GPLv3
 
-USES=		gmake
+USES=		gmake tar:tgz
 USE_SDL=	sdl image
 ALL_TARGET=	${PORTNAME}
 

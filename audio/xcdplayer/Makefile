@@ -6,12 +6,11 @@ PORTVERSION=	2.2
 PORTREVISION=	4
 CATEGORIES=	audio
 MASTER_SITES=	XCONTRIB/../R5contrib
-EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	CD player for X
 
-USES=		imake
+USES=		imake tar:Z
 USE_XORG=	xbitmaps xaw
 
 PLIST_FILES=	bin/xcdplayer lib/X11/app-defaults/XCdplayer \

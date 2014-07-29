@@ -6,7 +6,6 @@ PORTVERSION=	1.13
 CATEGORIES=	audio
 MASTER_SITES=	http://www.ladspa.org/download/
 DISTNAME=	ladspa_sdk_${PORTVERSION}
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	arved@FreeBSD.org
 COMMENT=	Linux Audio Developer's Simple Plugin API
@@ -15,7 +14,7 @@ LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/doc/COPYING
 
 WRKSRC=		${WRKDIR}/ladspa_sdk
-USES=		gmake
+USES=		gmake tar:tgz
 USE_LDCONFIG=	yes
 PROGRAM_FILES=	analyseplugin applyplugin listplugins
 PLUGIN_FILES=	amp.so delay.so filter.so noise.so sine.so

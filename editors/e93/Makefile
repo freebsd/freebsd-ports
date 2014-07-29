@@ -6,7 +6,6 @@ PORTVERSION=	1.4.2
 CATEGORIES=	editors tcl
 MASTER_SITES=	ftp://ftp.e93.org/pub/
 DISTNAME=	${PORTNAME}-${PORTVERSION:R}r${PORTVERSION:E}X
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Nifty editor based on Tcl
@@ -15,7 +14,7 @@ LICENSE=	GPLv2
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-USES=		gmake tcl
+USES=		gmake tcl tar:tgz
 USE_XORG=	x11 xinerama
 MAKE_ARGS=	PREFIX="${PREFIX}" \
 		TCL_INCLUDE="-I${TCL_INCLUDEDIR}" \

@@ -6,12 +6,11 @@ PORTREVISION=	4
 CATEGORIES=	math
 MASTER_SITES=	SF
 PKGNAMESUFFIX=	-qt4
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	makc@FreeBSD.org
 COMMENT=	3D plotting widgets for scientific data and math expressions
 
-USES=		dos2unix qmake
+USES=		dos2unix qmake tar:tgz
 USE_QT4=	gui moc_build opengl
 USE_GL=		glu
 USE_LDCONFIG=	yes

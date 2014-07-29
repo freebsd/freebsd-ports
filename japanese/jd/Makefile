@@ -8,7 +8,6 @@ CATEGORIES=	japanese www
 MASTER_SITES=	SFJP
 MASTER_SITE_SUBDIR=	jd4linux/61281
 DISTNAME=	${PORTNAME}-${PORTVERSION}-140601
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	townwear@gmail.com
 COMMENT=	2ch browser
@@ -19,7 +18,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libgnutls.so:${PORTSDIR}/security/gnutls \
 		libgcrypt.so:${PORTSDIR}/security/libgcrypt
 
-USES=		iconv libtool
+USES=		iconv libtool tar:tgz
 USE_AUTOTOOLS=	autoconf automake libtoolize
 USE_GNOME=	gtk20 gtkmm24 libgnomeui
 

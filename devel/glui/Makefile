@@ -6,12 +6,11 @@ PORTVERSION=	2.36
 PORTREVISION=	2
 CATEGORIES=	devel graphics
 MASTER_SITES=	SF/${PORTNAME}/Source/${PORTVERSION}
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GLUT-based C++ user interface library
 
-USES=		gmake
+USES=		gmake tar:tgz
 USE_GL=		glut
 USE_XORG=	xmu xext x11 xi
 USE_LDCONFIG=	yes

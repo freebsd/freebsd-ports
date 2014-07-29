@@ -6,7 +6,6 @@ PORTVERSION=	7.5.233
 CATEGORIES=	cad
 MASTER_SITES=	http://opencircuitdesign.com/magic/archive/ \
 		http://fossies.org/linux/misc/
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Interactive editor for VLSI layouts
@@ -17,7 +16,7 @@ LIB_DEPENDS=	libBLT25.so:${PORTSDIR}/x11-toolkits/blt
 
 CONFIGURE_WRKSRC=	${WRKSRC}/scripts
 
-USES+=		gmake tk:build
+USES+=		gmake tk:build tar:tgz
 USE_XORG=	ice xext xi xmu
 USE_GL=		gl
 GNU_CONFIGURE=	yes

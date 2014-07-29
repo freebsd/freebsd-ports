@@ -6,7 +6,6 @@ PORTREVISION=	12
 CATEGORIES=	net
 MASTER_SITES=	http://www.erlang.org/contrib/
 DISTNAME=	xmlrpc-${PORTVERSION}
-EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	erlang
 
 MAINTAINER=	olgeni@FreeBSD.org
@@ -17,7 +16,7 @@ RUN_DEPENDS=	erl:${PORTSDIR}/lang/erlang
 
 PLIST_SUB=      VERSION="${PORTVERSION}"
 
-USES=		gmake
+USES=		gmake tar:tgz
 WRKSRC=		${WRKDIR}/xmlrpc-${PORTVERSION}
 
 PORTDOCS=	*

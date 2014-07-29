@@ -6,7 +6,6 @@ PORTVERSION=	0.9.${PORTVER}
 CATEGORIES=	comms
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-0.9.5
 DISTNAME=	syncterm-src-${PORTVER}
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	shurd@FreeBSD.org
 COMMENT=	ANSI-BBS terminal which supports telnet, rlogin, and SSH
@@ -14,7 +13,7 @@ COMMENT=	ANSI-BBS terminal which supports telnet, rlogin, and SSH
 LICENSE=	GPLv2
 
 WRKSRC=		${WRKDIR}/syncterm-${PORTVER}/src/syncterm
-USES=		gmake
+USES=		gmake tar:tgz
 MAKEFILE=	GNUmakefile
 MAKE_ARGS+=	DONT_CLOBBER_CC=please
 PORTVER=	20140603

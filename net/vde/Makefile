@@ -5,7 +5,6 @@ PORTNAME=	vde
 PORTVERSION=	1.5.7
 CATEGORIES=	net
 MASTER_SITES=	SF/${PORTNAME}/OldFiles
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	User-mode virtual ethernet infrastructure
@@ -17,7 +16,7 @@ CONFLICTS=	vde2-[0-9]*
 MAKE_ARGS=	CC="${CC}"
 USE_LDCONFIG=	yes
 USE_CSTD=	gnu89
-USES=		gmake
+USES=		gmake tar:tgz
 
 CFLAGS+=	-fPIC
 

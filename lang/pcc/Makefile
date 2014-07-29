@@ -7,14 +7,13 @@ CATEGORIES=	lang
 MASTER_SITES=	ftp://pcc.ludd.ltu.se/pub/pcc-releases/ \
 		http://pcc.ludd.ltu.se/ftp/pub/pcc-releases/ \
 		ftp://226.net120.skekraft.net/pcc-releases/
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	joel@FreeBSD.org
 COMMENT=	Portable C Compiler
 
 ONLY_FOR_ARCHS=	i386 amd64
 
-USES=		gmake
+USES=		gmake tar:tgz
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	YACC=${YACC}
 

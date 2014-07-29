@@ -6,7 +6,6 @@ PORTVERSION=	2.3.1
 CATEGORIES=	graphics
 MASTER_SITES=	http://spiegl.de/qiv/download/ \
 		http://www.predatorlabs.net/dl/
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	danilo@FreeBSD.org
 COMMENT=	Small, fast GDK/Imlib2 image viewer
@@ -17,7 +16,7 @@ LIB_DEPENDS=	libImlib2.so:${PORTSDIR}/graphics/imlib2 \
 		liblcms2.so:${PORTSDIR}/graphics/lcms2 \
 		libexif.so:${PORTSDIR}/graphics/libexif
 
-USES=		gmake pkgconfig
+USES=		gmake pkgconfig tar:tgz
 USE_GNOME=	gtk20
 
 PLIST_FILES=	bin/qiv man/man1/qiv.1.gz

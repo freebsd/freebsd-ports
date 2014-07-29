@@ -6,7 +6,6 @@ PORTVERSION=	1.16
 CATEGORIES=	audio
 MASTER_SITES=	http://www.ladspa.org/download/
 DISTNAME=	${PORTNAME}_src_${PORTVERSION}
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The Computer Music Toolkit - a collection of LADSPA plugins
@@ -17,7 +16,7 @@ RUN_DEPENDS=	${LOCALBASE}/include/ladspa.h:${PORTSDIR}/audio/ladspa
 WRKSRC=		${WRKDIR}/${PORTNAME}
 BUILD_WRKSRC=	${WRKDIR}/${PORTNAME}/src
 
-USES=		gmake
+USES=		gmake tar:tgz
 MAKEFILE=	makefile
 MAKE_ARGS=	CXX="${CXX}" \
 		CXXFLAGS="${CXXFLAGS} -fPIC -I${LOCALBASE}/include"

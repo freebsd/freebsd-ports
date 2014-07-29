@@ -6,7 +6,6 @@ PORTREVISION=	3
 CATEGORIES=	devel
 MASTER_SITES=	http://codef00.com/projects/
 DISTNAME=	debugger-${PORTVERSION}
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	itechbear@gmail.com
 COMMENT=	Cross-platform x86/x86-64 debugger based on Qt 4
@@ -15,7 +14,7 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	libboost_thread.so:${PORTSDIR}/devel/boost-libs
 
-USES=		qmake
+USES=		qmake tar:tgz
 USE_QT4=	gui network xml moc_build rcc_build uic_build
 QMAKE_ARGS=	DEFAULT_PLUGIN_PATH="${PREFIX}/libexec/${PORTNAME}"
 

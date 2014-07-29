@@ -5,12 +5,11 @@ PORTNAME=	xbomb
 PORTVERSION=	2.2a
 CATEGORIES=	games
 MASTER_SITES=	http://www.gedanken.org.uk/software/xbomb/download/
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Minesweeper with a couple of grid types
 
-USES=		pkgconfig
+USES=		pkgconfig tar:tgz
 USE_XORG=	xaw7
 
 do-build:

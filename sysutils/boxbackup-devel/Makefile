@@ -7,7 +7,6 @@ CATEGORIES=	sysutils
 MASTER_SITES=	http://www.boxbackup.org/snapshots/%SUBDIR%/
 PKGNAMESUFFIX=	${CLIENT_OR_SERVER}-devel
 DISTNAME=	${PORTNAME}-${SVNVERSION}
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Open source, completely automatic on-line backup system for Unix
@@ -21,7 +20,7 @@ SVNVERSION=	0.11_trunk_2979
 
 NO_LATEST_LINK=	yes
 
-USES=		perl5
+USES=		perl5 tar:tgz
 USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	autoconf aclocal autoheader

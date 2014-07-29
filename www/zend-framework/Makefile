@@ -5,7 +5,6 @@ PORTNAME=	ZendFramework
 PORTVERSION=	2.3.1
 CATEGORIES=	www
 MASTER_SITES=	https://packages.zendframework.com/releases/${DISTNAME}/
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	wg@FreeBSD.org
 COMMENT=	Framework for developing PHP web applications
@@ -17,7 +16,7 @@ CONFLICTS=	ZendFramework-1.*
 NO_BUILD=	yes
 USE_PHP=	spl
 WANT_PHP_WEB=	yes
-USES=		gettext
+USES=		gettext tar:tgz
 
 SUB_FILES=	pkg-message
 

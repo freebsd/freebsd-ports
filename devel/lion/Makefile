@@ -5,14 +5,13 @@ PORTNAME=	lion
 DISTVERSION=	20060630
 CATEGORIES=	devel net
 MASTER_SITES=	http://www.lundman.net/ftp/
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	molterSPAM@gufiSPAM.org
 COMMENT=	Multi-platform, event-driven, simple networking library
 
 # TODO
 # add support for SSL/TLS/OpenSSL
-USES=		gmake
+USES=		gmake tar:tgz
 WRKSRC=		${WRKDIR}/${PORTNAME}
 ALL_TARGET=	default
 

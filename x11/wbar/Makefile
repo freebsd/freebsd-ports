@@ -6,7 +6,6 @@ PORTVERSION=	2.3.4
 PORTREVISION=	0
 CATEGORIES=	x11
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	quick launch bar for fluxbox, WindowMaker, Xfce, etc
@@ -15,7 +14,7 @@ LICENSE=	GPLv3
 
 CONFIGURE_ARGS=	--exec-prefix=${PREFIX}
 
-USES=		pkgconfig gettext gmake
+USES=		pkgconfig gettext gmake tar:tgz
 USE_EFL=	imlib2
 
 GNU_CONFIGURE=	yes

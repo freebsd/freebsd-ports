@@ -5,12 +5,11 @@ PORTVERSION=	1.4
 CATEGORIES=	net-mgmt
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}_${PORTVERSION}
 DISTNAME=	${PORTNAME}_${PORTVERSION}
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	nistor@snickers.org
 COMMENT=	SNMP trap handler/translator/swiss-army-knife
 
-USES=		perl5 shebangfix
+USES=		perl5 shebangfix tar:tgz
 USE_RC_SUBR=	snmptt
 
 RUN_DEPENDS=	net-snmp>=0:${PORTSDIR}/net-mgmt/net-snmp \

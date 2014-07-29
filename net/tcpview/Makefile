@@ -6,14 +6,13 @@ PORTVERSION=	1.0
 PORTREVISION=	6
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.cac.washington.edu/pub/noc-tools/tcpview/
-EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	Motif-based TCP/IP protocol analyzer
 
 MAKE_JOBS_UNSAFE=	yes
 
-USES=		bison motif
+USES=		bison motif tar:Z
 MAKE_ARGS=	PREFIX=${STAGEDIR}${PREFIX}
 
 post-patch:

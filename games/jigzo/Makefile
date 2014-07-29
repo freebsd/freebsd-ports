@@ -7,7 +7,6 @@ PORTREVISION=	7
 CATEGORIES=	games
 MASTER_SITES=	http://www.iua.upf.es/~mdeboer/resorama/jigzo/ \
 		http://mirror.amdmi3.ru/distfiles/
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	OpenGL jigsaw puzzle game
@@ -15,7 +14,7 @@ COMMENT=	OpenGL jigsaw puzzle game
 LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png \
 		libjpeg.so:${PORTSDIR}/graphics/jpeg
 
-USES=		gmake
+USES=		gmake tar:tgz
 USE_SDL=	sdl mixer
 USE_GL=		gl
 MAKE_ARGS=	CXX=${CXX}

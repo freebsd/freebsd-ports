@@ -7,12 +7,11 @@ PORTREVISION=	2
 CATEGORIES=	deskutils
 MASTER_SITES=	ftp://ftp.x.org/R5contrib/
 DISTNAME=	${PORTNAME}${PORTVERSION}
-EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	joerg@FreeBSD.org
 COMMENT=	PostIt (R) messages onto your X11 screen
 
-USES=		imake
+USES=		imake tar:Z
 USE_XORG=	ice sm x11 xaw xext xmu xpm xt
 WRKSRC=		${WRKDIR}/xpostit
 

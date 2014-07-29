@@ -6,7 +6,6 @@ PORTVERSION=	0.4.1b
 PORTREVISION=	19
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	http://www.meowfishies.com/code/bpm/
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Graphical BSD ports collection manager
@@ -15,7 +14,7 @@ RUN_DEPENDS=	portupgrade:${PORTSDIR}/ports-mgmt/portupgrade \
   		gnomesu:${PORTSDIR}/security/libgnomesu \
 		gdialog:${PORTSDIR}/x11/zenity
 
-USES=		desktop-file-utils pkgconfig
+USES=		desktop-file-utils pkgconfig tar:tgz
 USE_GNOME=	gtk20
 
 MAKE_ENV+=	OSTYPE="${OPSYS}"

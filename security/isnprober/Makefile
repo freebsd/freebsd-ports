@@ -7,7 +7,6 @@ CATEGORIES=	security
 MASTER_SITES=	ftp://ftp.ubizen.com/tools/ \
 		${MASTER_SITE_PACKETSTORM}
 MASTER_SITE_SUBDIR=	UNIX/scanners
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	onatan@gmail.com
 COMMENT=	PenTest tool for TCP Initial Sequence Numbers research
@@ -17,7 +16,7 @@ RUN_DEPENDS=	p5-Net-RawIP>=0:${PORTSDIR}/net/p5-Net-RawIP
 PLIST_FILES=	bin/${PORTNAME}
 PORTDOCS=	README
 
-USES=		perl5 shebangfix
+USES=		perl5 shebangfix tar:tgz
 USE_PERL5=	run
 NO_BUILD=	yes
 

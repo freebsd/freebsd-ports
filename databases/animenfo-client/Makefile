@@ -6,14 +6,13 @@ CATEGORIES=	databases
 MASTER_SITES=	http://www.animenfo.com/extension/files/
 PKGNAMESUFFIX=	-client${PKGNAMESUFFIX2}
 DISTNAME=	${PORTNAME}-client
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	AnimeNfo client
 
 LICENSE=	GPLv2
 
-USES=		gmake
+USES=		gmake tar:tgz
 PLIST_FILES=	bin/animenfo-client
 
 do-install:

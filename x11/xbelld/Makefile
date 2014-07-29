@@ -7,14 +7,13 @@ PORTREVISION=	4
 CATEGORIES=	x11
 MASTER_SITES=	http://www.meowfishies.com/code/
 DISTNAME=	${PORTNAME}-0.2beta2
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	chip-set@mail.ru
 COMMENT=	XBellD is a small daemon for replacing the standard X terminal bell
 
 LIB_DEPENDS=	libaudiofile.so:${PORTSDIR}/audio/libaudiofile
 
-USES=		imake
+USES=		imake tar:tgz
 USE_XORG=	ice sm xtrap xmu xt
 USE_GNOME=	esound
 

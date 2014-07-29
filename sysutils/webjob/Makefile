@@ -6,12 +6,11 @@ PORTVERSION=	1.9.0
 PORTREVISION=	1
 CATEGORIES=	sysutils security
 MASTER_SITES=	SF
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	klm@uidzero.org
 COMMENT=	Download and execute a program over HTTP/HTTPS
 
-USES=		perl5 shebangfix
+USES=		perl5 shebangfix tar:tgz
 SHEBANG_FILES=	tools/xshar/xshar
 GNU_CONFIGURE=	yes
 USE_PERL5=	build

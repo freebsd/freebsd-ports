@@ -7,7 +7,6 @@ PORTREVISION=	10
 CATEGORIES=	games
 MASTER_SITES=	SF
 DISTNAME=	${TRUEPORTNAME}-${PORTVERSION:S/.//g}
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	glewis@FreeBSD.org
 COMMENT=	Dungeon explorin', slashin', hackin' game
@@ -15,7 +14,7 @@ COMMENT=	Dungeon explorin', slashin', hackin' game
 WRKSRC=		${WRKDIR}/${TRUEPORTNAME}-${PORTVERSION}
 LATEST_LINK=	${TRUEPORTNAME}33${PKGNAMESUFFIX}
 
-USES=		gmake
+USES=		gmake tar:tgz
 MAKE_ENV=	GRAPHICS="${GRAPHICS}"
 PLIST_SUB=	HACKNAME="${HACKNAME}" \
 		HACKEXT="${HACKEXT}"

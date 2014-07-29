@@ -5,7 +5,6 @@ PORTNAME=	cbb
 DISTVERSION=	0.9.5b
 CATEGORIES=	finance deskutils
 MASTER_SITES=	http://download.gna.org/cbb/
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	kline@thought.org
 COMMENT=	Checkbook balancing tool
@@ -13,7 +12,7 @@ COMMENT=	Checkbook balancing tool
 LICENSE=	GPLv2
 
 NO_BUILD=	yes
-USES=		shebangfix perl5 tk
+USES=		shebangfix perl5 tk tar:tgz
 SHEBANG_FILES=	tcl/*.tcl */*.pl contrib/*
 SHEBANG_LANG=	perl tk
 GNU_CONFIGURE=	yes

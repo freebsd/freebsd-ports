@@ -8,7 +8,6 @@ CATEGORIES=	net parallel
 MASTER_SITES=	NL
 MASTER_SITE_SUBDIR=	pvm3/xpvm
 DISTNAME=	XPVM.src.${PORTVERSION}
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Graphical console and monitor for PVM
@@ -16,7 +15,7 @@ COMMENT=	Graphical console and monitor for PVM
 BUILD_DEPENDS=	${LOCALBASE}/lib/libpvm3.a:${PORTSDIR}/net/pvm
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-USES=		tk:84
+USES=		tk:84 tar:tgz
 USE_GCC=	yes
 MAKE_JOBS_UNSAFE=	yes
 

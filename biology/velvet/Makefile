@@ -7,7 +7,6 @@ PORTREVISION=	1
 CATEGORIES=	biology
 MASTER_SITES=	http://www.ebi.ac.uk/~zerbino/velvet/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	mzaki@m.u-tokyo.ac.jp
 COMMENT=	Sequence assembler for very short reads
@@ -18,7 +17,7 @@ MAXKMERLENGTH?=	31
 VELVET_CATEGORIES?=	2
 MAKE_ENV+=	MAXKMERLENGTH=${MAXKMERLENGTH} CATEGORIES=${VELVET_CATEGORIES}
 
-USES=		perl5 gmake shebangfix
+USES=		perl5 gmake shebangfix tar:tgz
 USE_PERL5=	run
 
 BINARIES=	velvetg velveth

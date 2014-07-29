@@ -7,7 +7,6 @@ PORTREVISION=	1
 CATEGORIES=	archivers
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 DISTNAME=	ha0999
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ak@FreeBSD.org
 COMMENT=	File archiver based on HSC compression method
@@ -20,7 +19,7 @@ NO_WRKSUBDIR=	yes
 PLIST_FILES=	bin/ha
 MAKEFILE=	makefile.nix
 ALL_TARGET=	ha
-USES=		gmake
+USES=		gmake tar:tgz
 
 post-patch:
 	@${REINPLACE_CMD} 's,<malloc.h>,<stdlib.h>,' \

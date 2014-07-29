@@ -8,7 +8,6 @@ MASTER_SITES=	http://downloads.pf.itd.nrl.navy.mil/mgen/mgen4/ \
 	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	miwi
 DISTNAME=	src-${PORTNAME}-${PORTVERSION}
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	IP network performance tests and measurements
@@ -18,7 +17,7 @@ COMMENT=	IP network performance tests and measurements
 ONLY_FOR_ARCHS=	i386
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-USES=		gmake
+USES=		gmake tar:tgz
 
 PLIST_FILES=	bin/mgen
 PORTDOCS=	README.TXT VERSION.TXT mgen.html example.mgn

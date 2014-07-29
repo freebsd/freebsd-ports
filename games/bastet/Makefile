@@ -6,7 +6,6 @@ PORTVERSION=	0.43
 PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	http://fph.altervista.org/prog/files/
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Ncurses Tetris clone which is harder than every other Tetris
@@ -15,7 +14,7 @@ LICENSE=	GPLv3 # (or later)
 
 LIB_DEPENDS=	libboost_program_options.so:${PORTSDIR}/devel/boost-libs
 
-USES=		gmake ncurses
+USES=		gmake ncurses tar:tgz
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

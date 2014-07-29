@@ -8,7 +8,6 @@ CATEGORIES=	science
 MASTER_SITES=	http://ruby.chemie.uni-freiburg.de/~martin/chemtool/
 
 DISTNAME=	ct17a15
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	maho@FreeBSD.org
 COMMENT=	Drawing organic molecules easily and store them (developer version)
@@ -20,7 +19,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-1.7alpha15/
 USE_GNOME=	gtk20
 #USE_AUTOTOOLS=	autoconf213
 GNU_CONFIGURE=	yes
-USES=		gettext gmake pkgconfig
+USES=		gettext gmake pkgconfig tar:tgz
 CONFIGURE_ARGS=	--enable-emf=yes
 PKGNAMESUFFIX=	-devel
 MAKE_ARGS+=	MAKE=${MAKE_CMD}

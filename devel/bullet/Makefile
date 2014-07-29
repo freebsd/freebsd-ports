@@ -7,7 +7,6 @@ CATEGORIES=	devel
 PORTREVISION=	1
 MASTER_SITES=	GOOGLE_CODE
 DISTNAME=	${PORTNAME}-${PORTVERSION}-${SVN_COMMIT}
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	3D collision detection and rigid body dynamics library
@@ -17,7 +16,7 @@ LICENSE=	ZLIB
 USE_GL=		gl glu glut
 USE_XORG=	x11
 
-USES=		cmake
+USES=		cmake tar:tgz
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-pthread

@@ -6,7 +6,6 @@ PORTVERSION=		3.10.0
 PORTREVISION=		1
 CATEGORIES=		security sysutils
 MASTER_SITES=		SF
-EXTRACT_SUFX=		.tgz
 
 MAINTAINER=		klm@uidzero.org
 COMMENT=		System baselining and evidence collection tool
@@ -15,7 +14,7 @@ LICENSE=		BSD3CLAUSE APACHE20 MIT
 LICENSE_COMB=		multi
 
 GNU_CONFIGURE=		yes
-USES=			perl5 shebangfix
+USES=			perl5 shebangfix tar:tgz
 USE_PERL5=		run build fixpacklist
 SHEBANG_FILES= \
 			${WRKSRC}/tools/dig/ftimes-crv2dbi.pl \

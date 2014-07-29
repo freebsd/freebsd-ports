@@ -7,7 +7,6 @@ PORTREVISION=	4
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	apps/graphics/viewers/svga
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Console graphics viewer using the svga console graphics library
@@ -15,7 +14,7 @@ COMMENT=	Console graphics viewer using the svga console graphics library
 LIB_DEPENDS=	libvga.so:${PORTSDIR}/graphics/svgalib \
 		libjpeg.so:${PORTSDIR}/graphics/jpeg
 
-USES=		gmake
+USES=		gmake tar:tgz
 ALL_TARGET=	seejpeg
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

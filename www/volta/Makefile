@@ -7,7 +7,6 @@ PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://dl.dropbox.com/u/7234177/Releases/ \
 		http://projects.martini.nu/volta/chrome/site/
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	mahlon@martini.nu
 COMMENT=	High performance, low resource URI rewriter for Squid
@@ -16,7 +15,7 @@ LICENSE=	BSD3CLAUSE
 
 LIB_DEPENDS=	libcdb.so:${PORTSDIR}/databases/tinycdb
 
-USES=		gmake pkgconfig lua
+USES=		gmake pkgconfig lua tar:tgz
 ALL_TARGET=	${PORTNAME}
 NO_INSTALL=	yes
 

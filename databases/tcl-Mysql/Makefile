@@ -7,7 +7,6 @@ PORTREVISION=	7
 CATEGORIES=	databases tcl
 MASTER_SITES=	SF/tcl-sql/tcl-sql/${PORTVERSION}
 DISTNAME=	tcl-sql-${PORTVERSION}
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	TCL module for accessing MySQL databases
@@ -17,7 +16,7 @@ OPTIONS_DEFINE=	DOCS
 PATCH_DEPENDS=	rcsdiff:${PORTSDIR}/devel/rcs
 
 USE_MYSQL=	41+
-USES=		tcl
+USES=		tcl tar:tgz
 TCL_NODOT=	tcl${TCL_VER:S/.//}
 WRKSRC=		${WRKDIR}/tcl-sql
 LIB_NAME=	libTclMySQL.so.1

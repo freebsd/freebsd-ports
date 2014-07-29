@@ -7,7 +7,6 @@ PORTREVISION=	6
 CATEGORIES=	multimedia
 MASTER_SITES=	SF/${PORTNAME}/OpenQuicktime%20v1/${PORTVERSION}b
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Portable library for handling Apple's QuickTime(TM) files
@@ -16,7 +15,7 @@ LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg
 
 GNU_CONFIGURE=	yes
 USE_GNOME=	gtk12
-USES=		gmake
+USES=		gmake tar:tgz
 USE_LDCONFIG=	yes
 PKGDEINSTALL=	${PKGINSTALL}
 

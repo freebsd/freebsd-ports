@@ -6,7 +6,6 @@ PORTVERSION=	2.15
 CATEGORIES=	graphics perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	GraphViz - Perl interface to the GraphViz graphing tool
@@ -19,7 +18,7 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/dot:${PORTSDIR}/graphics/graphviz \
 		p5-XML-Twig>=3.38:${PORTSDIR}/textproc/p5-XML-Twig
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-USES=		perl5
+USES=		perl5 tar:tgz
 USE_PERL5=	configure
 
 .include <bsd.port.mk>

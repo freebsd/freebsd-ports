@@ -7,13 +7,12 @@ PORTREVISION=	5
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/v${PORTVERSION}
 DISTNAME=	${PORTNAME}_v${PORTVERSION}
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Clone of the strategy board game 'Blokus'
 
 GNU_CONFIGURE=	yes
-USES=		gmake
+USES=		gmake tar:tgz
 USE_GL=		gl
 USE_WX=		2.8
 WX_UNICODE=	yes

@@ -6,12 +6,11 @@ PORTVERSION=	4.8
 CATEGORIES=	biology
 MASTER_SITES=	http://abacus.gene.ucl.ac.uk/software/
 DISTNAME=	${PORTNAME}${PORTVERSION}
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Phylogenetic Analysis by Maximum Likelihood (PAML)
 
-USES=		gmake
+USES=		gmake tar:tgz
 WRKSRC=		${WRKDIR}/${PORTNAME}${PORTVERSION}/src
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}"
 

@@ -6,7 +6,6 @@ PORTVERSION=	7.149
 CATEGORIES=	biology
 MASTER_SITES=	http://mafft.cbrc.jp/alignment/software/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-without-extensions-src
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	cartwright@asu.edu
 COMMENT=	Multiple alignment program for amino acid or nucleotide sequences
@@ -18,7 +17,7 @@ OPTIONS_DEFINE=	DOCS EXAMPLES
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}-without-extensions
 BUILD_WRKSRC=	${WRKSRC}/core
 
-USES=		gmake shebangfix
+USES=		gmake shebangfix tar:tgz
 
 SHEBANG_FILES=	core/mafftash_premafft.tmpl
 

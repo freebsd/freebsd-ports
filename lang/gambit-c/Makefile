@@ -7,7 +7,6 @@ PORTEPOCH=	1
 CATEGORIES=	lang
 MASTER_SITES=	http://www.iro.umontreal.ca/~gambit/download/gambit/v4.6/source/
 DISTNAME=	gambc-${DISTVERSION}
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Gambit programming system where the compiler generates portable C code
@@ -16,7 +15,7 @@ LICENSE=	APACHE20
 
 MAN1=		gsi.1
 
-USES=		gmake
+USES=		gmake tar:tgz
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS =--enable-single-host --enable-gcc-opts
 CONFIGURE_ARGS+=--prefix=${PREFIX} --docdir=${PREFIX}/share/doc/gambit-c

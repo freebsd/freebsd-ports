@@ -7,12 +7,11 @@ PORTREVISION=	1
 CATEGORIES=	ftp
 MASTER_SITES=	http://www.ftpproxy.org/download/ \
 		http://www.ftpproxy.org/download/older_releases/
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	philippe@le-berre.com
 COMMENT=	ftp proxy
 
-USES=		gmake
+USES=		gmake tar:tgz
 MAKE_JOBS_UNSAFE=	yes
 MAKE_ARGS=	CC="${CC}"
 

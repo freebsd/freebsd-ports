@@ -6,7 +6,6 @@ PORTVERSION=	0.2
 PORTREVISION=	5
 CATEGORIES=	dns
 MASTER_SITES=	http://www.linux.it/~md/software/
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	rafan@FreeBSD.org
 COMMENT=	RRDtool frontend for BIND statistics
@@ -15,7 +14,7 @@ RUN_DEPENDS=	rrdtool>=0:${PORTSDIR}/databases/rrdtool	\
 		p5-File-Tail>=0:${PORTSDIR}/devel/p5-File-Tail
 
 NO_BUILD=	yes
-USES=		perl5 shebangfix
+USES=		perl5 shebangfix tar:tgz
 SHEBANG_FILES=	bindgraph.pl bindgraph.cgi
 
 CGIDIR?=	${PREFIX}/www/cgi-bin

@@ -9,14 +9,13 @@ MASTER_SITES=	ftp://ftp.psg.com/pub/modula-2/coco/ \
 		ftp://ftp.ssw.uni-linz.ac.at/pub/Coco/C/ \
 		http://www.scifac.ru.ac.za/coco/
 DISTNAME=	${PORTNAME}c${PORTVERSION:S/.//}
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Compiler generator that combines the functionality of lex and yacc
 
 NO_WRKSUBDIR=	yes
 
-USES=		dos2unix
+USES=		dos2unix tar:tgz
 MAKE_ENV=	CRFRAMES="${WRKSRC}/frames"
 MAKEFILE=	unix.mk
 ALL_TARGET=	all1

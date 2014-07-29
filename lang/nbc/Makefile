@@ -10,7 +10,6 @@ CATEGORIES=		lang
 MASTER_SITES=		SF
 MASTER_SITE_SUBDIR=	bricxcc/NBC_NXC/NBC%20release%20${PORTVERSION:S/.r/%20r/}
 DISTNAME=		${PORTNAME}-${PORTVERSION}.src
-EXTRACT_SUFX=		.tgz
 
 MAINTAINER=		rene@FreeBSD.org
 COMMENT=		Programming language for the LEGO MINDSTORMS NXT
@@ -24,7 +23,7 @@ ROBOCTL_DESC=		Include roboctl to communicate with the NXT
 
 ROBOCTL_RUN_DEPENDS=	legoctl:${PORTSDIR}/devel/roboctl
 
-USES=			dos2unix gmake
+USES=			dos2unix gmake tar:tgz
 USE_FPC=		fcl-base fcl-image
 
 PLIST_FILES=		bin/nbc \

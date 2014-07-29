@@ -9,12 +9,11 @@ MASTER_SITES=	http://www.dsmit.com/cons/stable/ \
 		http://www.gnu.org/software/cons/stable/ \
 		ftp://ftp.gnu.org/pub/gnu/cons/ \
 		http://www.baldmt.com/cons/stable/
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	rv@gnu.org
 COMMENT=	Perl-based Make Replacement
 
-USES=		perl5
+USES=		perl5 tar:tgz
 NO_BUILD=	yes
 PLIST_SUB=	CONS_VER=${PORTVERSION}
 

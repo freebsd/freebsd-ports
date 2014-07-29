@@ -5,7 +5,6 @@ PORTNAME=	openpgpsdk
 PORTVERSION=	0.9
 CATEGORIES=	security
 MASTER_SITES=	http://openpgp.nominet.org.uk/downloads/
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	OpenPGP SDK
@@ -13,7 +12,7 @@ COMMENT=	OpenPGP SDK
 BUILD_DEPENDS=	gpg2:${PORTSDIR}/security/gnupg
 LIB_DEPENDS=	libcunit.so:${PORTSDIR}/devel/cunit
 
-USES=		perl5
+USES=		perl5 tar:tgz
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--without-idea --with-cunit=${LOCALBASE}
 

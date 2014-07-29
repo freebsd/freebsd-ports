@@ -7,7 +7,6 @@ PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
-EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	PECL
 
 MAINTAINER=	mm@FreeBSD.org
@@ -20,7 +19,7 @@ OPTIONS_DEFINE=	X11
 X11_LIB_DEPENDS=	libMagickWand-6.Q*.so:${PORTSDIR}/graphics/ImageMagick
 X11_LIB_DEPENDS_OFF=	libMagickWand-6.Q*.so:${PORTSDIR}/graphics/ImageMagick-nox11
 
-USES=		pkgconfig
+USES=		pkgconfig tar:tgz
 USE_PHP=	yes
 USE_PHPEXT=	yes
 

@@ -8,12 +8,11 @@ CATEGORIES=	japanese
 MASTER_SITES=	http://www.omronsoft.co.jp/SP/pcunix/sdk/wnn/
 PKGNAMESUFFIX=	-lib
 DISTNAME=	Wnn7SDK
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Wnn7 client library
 
-USES=		imake
+USES=		imake tar:tgz
 USE_LDCONFIG=	yes
 WRKSRC=		${WRKDIR}/src
 PORTDOCS=	README

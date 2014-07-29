@@ -7,7 +7,6 @@ PORTREVISION=	1
 CATEGORIES=	graphics tk
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}${PORTVERSION}
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PNG support for Tcl/Tk
@@ -15,7 +14,7 @@ COMMENT=	PNG support for Tcl/Tk
 LICENSE=	BSD
 LICENSE_FILE=	${WRKSRC}/license.terms
 
-USES+=		tk
+USES+=		tk tar:tgz
 GNU_CONFIGURE=	yes
 
 CONFIGURE_ARGS=	--with-tcl=${TCL_LIBDIR} \

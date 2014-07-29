@@ -7,7 +7,6 @@ PORTREVISION=	1
 CATEGORIES=	sysutils linux
 MASTER_SITES=	http://download.crashplan.com/installs/linux/install/CrashPlan/
 DISTNAME=	CrashPlan_3.6.3_Linux
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	wg@FreeBSD.org
 COMMENT=	Backs up data to remote servers or hard drives
@@ -20,7 +19,7 @@ WRKSRC=		${WRKDIR}/CrashPlan-install
 USE_LINUX=	yes
 USE_LINUX_APPS=	expat fontconfig xorglibs
 USE_RC_SUBR=	crashplan
-USES=		shebangfix
+USES=		shebangfix tar:tgz
 
 SHEBANG_FILES=	scripts/CrashPlanEngine scripts/CrashPlanDesktop
 

@@ -8,7 +8,6 @@ CATEGORIES=	sysutils
 MASTER_SITES=	http://tuxera.com/opensource/
 PKGNAMEPREFIX=	fusefs-
 DISTNAME=	${PORTNAME}-3g_ntfsprogs-${PORTVERSION}
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Mount NTFS partitions (read/write) and disk images
@@ -17,7 +16,7 @@ LICENSE=	GPLv2
 
 CONFLICTS_BUILD=	bonobo-1.*
 CONFLICTS_INSTALL=	ntfsprogs-*
-USES=		fuse pkgconfig iconv libtool
+USES=		fuse pkgconfig iconv libtool tar:tgz
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--exec-prefix=${PREFIX} --disable-mount-helper \

@@ -5,7 +5,6 @@ PORTNAME=	coccinelle
 DISTVERSION=	1.0.0-rc19
 CATEGORIES=	devel
 MASTER_SITES=	http://coccinelle.lip6.fr/distrib/
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	avg@icyb.net.ua
 COMMENT=	Program matching and transformation engine
@@ -14,7 +13,7 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre
 
-USES=		gmake perl5 pkgconfig:build
+USES=		gmake perl5 pkgconfig:build tar:tgz
 GNU_CONFIGURE=	yes
 USE_PERL5=	build
 USE_PYTHON=	yes

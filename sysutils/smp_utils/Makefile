@@ -6,12 +6,11 @@ PORTVERSION=	0.98
 PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://sg.danny.cz/sg/p/
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	delphij@FreeBSD.org
 COMMENT=	Utilities to send SAS Serial Management Protocol requests
 
-USES=		gmake libtool
+USES=		gmake libtool tar:tgz
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 .include <bsd.port.pre.mk>

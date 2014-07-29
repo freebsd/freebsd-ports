@@ -6,7 +6,6 @@ PORTVERSION=	0.64
 CATEGORIES=	security
 MASTER_SITES=	http://log2timeline.net/files/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	nobutaka@FreeBSD.org
 COMMENT=	Log file parser for computer forensic investigations
@@ -38,7 +37,7 @@ BUILD_DEPENDS=	p5-Archive-Zip>=0:${PORTSDIR}/archivers/p5-Archive-Zip \
 		p5-libwww>=0:${PORTSDIR}/www/p5-libwww
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-USES=		perl5
+USES=		perl5 tar:tgz
 USE_PERL5=	configure
 WRKSRC=	${WRKDIR}/${PORTNAME}
 

@@ -5,14 +5,13 @@ PORTNAME=	sqlcached
 PORTVERSION=	r6
 CATEGORIES=	databases net
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ivoras@FreeBSD.org
 COMMENT=	Cache daemon using SQL for data manipulation
 
 LIB_DEPENDS=	libsqlite.so:${PORTSDIR}/databases/sqlite2
 
-USES=		readline
+USES=		readline tar:tgz
 
 LDFLAGS+=	-L${LOCALBASE}/lib
 

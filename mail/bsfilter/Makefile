@@ -7,7 +7,6 @@ PORTREVISION=	1
 CATEGORIES=	mail ruby
 MASTER_SITES=	SFJP
 MASTER_SITE_SUBDIR=	bsfilter/59804
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	yasu@utahime.org
 COMMENT=	Bayesian spam filter written in Ruby
@@ -18,7 +17,7 @@ RUN_DEPENDS=	${RUBY_PKGNAMEPREFIX}gdbm>=0:${PORTSDIR}/databases/ruby-gdbm
 
 NO_BUILD=	yes
 USE_RUBY=	yes
-USES=		shebangfix
+USES=		shebangfix tar:tgz
 SHEBANG_FILES=	bsfilter/bsfilter
 ruby_OLD_CMD=	/usr/bin/env ruby
 

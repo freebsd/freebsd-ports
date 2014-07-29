@@ -7,7 +7,6 @@ PORTREVISION=	4
 CATEGORIES=	sysutils
 MASTER_SITES=	SF
 PKGNAMESUFFIX=	${CLIENT_OR_SERVER}
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Open source, completely automatic on-line backup system for Unix
@@ -16,7 +15,7 @@ LICENSE=	BSD GPLv2
 LICENSE_COMB=	dual
 LICENSE_FILE=	${WRKSRC}/LICENSE-DUAL.txt
 
-USES=		perl5
+USES=		perl5 tar:tgz
 USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	autoconf aclocal autoheader

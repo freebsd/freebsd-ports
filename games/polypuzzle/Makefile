@@ -6,12 +6,11 @@ PORTVERSION=	1.6
 PORTREVISION=	1
 CATEGORIES=	games tcl tk
 MASTER_SITES=	ftp://ibiblio.org/pub/Linux/games/
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tessellation puzzle game
 
-USES= 		tk:84,run
+USES= 		tk:84,run tar:tgz
 WRKSRC=		${WRKDIR}/${PORTNAME}
 NO_BUILD=	yes
 

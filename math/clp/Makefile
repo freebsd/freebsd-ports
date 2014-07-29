@@ -7,14 +7,13 @@ PORTREVISION=	3
 CATEGORIES=	math
 MASTER_SITES=	http://www.coin-or.org/download/source/Clp/ \
 		http://www.mavetju.org/download/adopted/
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	co9co9@gmail.com
 COMMENT=	Linear Programming Solver
 
 LIB_DEPENDS=	liblapack.so:${PORTSDIR}/math/lapack
 
-USES=		fortran libtool
+USES=		fortran libtool tar:tgz
 CXXFLAGS+=	-ffast-math -fomit-frame-pointer
 
 GNU_CONFIGURE=	yes

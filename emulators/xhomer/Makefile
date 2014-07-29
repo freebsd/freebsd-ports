@@ -7,12 +7,11 @@ PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	emulators
 MASTER_SITES=	http://xhomer.isani.org/xhomer/
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Emulator for the DEC Pro 350 computer
 
-USES=		gmake
+USES=		gmake tar:tgz
 USE_XORG=	xt sm ice xext x11
 ALL_TARGET=	clean xhomer
 INSTALL_TARGET=

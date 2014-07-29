@@ -5,7 +5,6 @@ PORTNAME=	re2
 PORTVERSION=	20140304
 CATEGORIES=	devel
 MASTER_SITES=	GOOGLE_CODE
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	jlaffaye@FreeBSD.org
 COMMENT=	Fast C++ regex library
@@ -14,7 +13,7 @@ LICENSE=	BSD3CLAUSE
 
 MAKE_ARGS=	CXX="${CXX}" CXXFLAGS="${CXXFLAGS}" prefix=${PREFIX}
 USE_LDCONFIG=	yes
-USES=		compiler:c++11-lang gmake
+USES=		compiler:c++11-lang gmake tar:tgz
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 

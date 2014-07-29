@@ -7,7 +7,6 @@ PORTREVISION=	4
 CATEGORIES=	emulators
 MASTER_SITES=	http://contribs.martymac.org/FreeBSD-ports/distfiles/ \
 		LOCAL/martymac
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	martymac@FreeBSD.org
 COMMENT=	Gamecube and Wii Emulator
@@ -27,7 +26,7 @@ USE_WX=		3.0+
 WX_UNICODE=	yes
 USE_GL=	gl glew glu
 
-USES=		dos2unix cmake iconv openal pkgconfig
+USES=		dos2unix cmake iconv openal pkgconfig tar:tgz
 DOS2UNIX_REGEX=	.*\.(h|c|cpp)
 
 # Disable ALSA (emulated) and ao (buggy)

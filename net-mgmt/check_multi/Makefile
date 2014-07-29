@@ -7,14 +7,13 @@ CATEGORIES=	net-mgmt
 #PKGNAMEPREFIX=	nagios-
 #DISTNAME=	${PORTNAME}-${PORTVERSION}.current
 MASTER_SITES=	ftp://ftp.dinoex.de/pub/FreeBSD/distfiles/
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Multi-purpose wrapper plugin for Nagios
 
 LICENSE=	GPLv2
 
-USES=		shebangfix perl5
+USES=		shebangfix perl5 tar:tgz
 USE_PERL5=	run
 NO_BUILD=	yes
 

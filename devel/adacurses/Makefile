@@ -7,14 +7,13 @@ PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	ftp://invisible-island.net/AdaCurses/
 DISTNAME=	AdaCurses-${PORTVERSION}
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	marino@FreeBSD.org
 COMMENT=	Ada95 bindings for ncurses
 
 LICENSE=	MIT
 
-USES=		ada gmake ncurses:port
+USES=		ada gmake ncurses:port tar:tgz
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-ada-include=${PREFIX}/include/adacurses \
 		--with-ada-objects=${PREFIX}/lib/adacurses \

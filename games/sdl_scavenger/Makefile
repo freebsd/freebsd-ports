@@ -8,7 +8,6 @@ PORTEPOCH=	1
 CATEGORIES=	games
 MASTER_SITES=	SF/sdlscavenger/
 DISTNAME=	sdlscav-145_2014_01_01
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	nemysis@FreeBSD.org
 COMMENT=	Lode Runner like game
@@ -17,7 +16,7 @@ LICENSE=	GPLv1
 
 WRKSRC=		${WRKDIR}/sdlscav-145
 
-USES=		gmake
+USES=		gmake tar:tgz
 USE_SDL=	sdl image mixer
 USE_GCC=	yes
 ALL_TARGET=

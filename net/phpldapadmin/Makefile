@@ -7,14 +7,13 @@ PORTREVISION=	7
 PORTEPOCH=	1
 CATEGORIES=	net www
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-php5/${PORTVERSION}
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	matthew@FreeBSD.org
 COMMENT=	PHP application to administer LDAP over the web
 
 LICENSE=	GPLv2
 
-USES=		cpe
+USES=		cpe tar:tgz
 CPE_VENDOR=	deon_george
 
 NO_ARCH=	yes

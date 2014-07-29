@@ -5,7 +5,6 @@ PORTNAME=	shx
 PORTVERSION=	0.2.4
 CATEGORIES=	net-p2p
 MASTER_SITES=	http://synhxd.sourceforge.net/releases/
-EXTRACT_SUFX=	.tgz
 
 PATCH_SITES=	${MASTER_SITES}
 PATCHFILES=	${DISTNAME}.diff.gz
@@ -28,7 +27,7 @@ HAL_DESC=		Compile MegaHAL (enables hal command)
 XMMS_DESC=		Enable trackname command
 NOIPV4_DESC=		IPv6 support (disables IPv4 support)
 
-USES=		readline
+USES=		readline tar:tgz
 MAKEFILE=	makefile
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=

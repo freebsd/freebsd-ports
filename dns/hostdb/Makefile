@@ -5,14 +5,13 @@ PORTNAME=	hostdb
 PORTVERSION=	1.004
 CATEGORIES=	dns
 MASTER_SITES=	GOOGLE_CODE
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	rodrigc@FreeBSD.org
 COMMENT=	Generate DNS and DHCP config files from single source
 
 LICENSE=	GPLv2
 
-USES=		shebangfix
+USES=		shebangfix tar:tgz
 
 NO_BUILD=	yes
 

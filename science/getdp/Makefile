@@ -7,7 +7,6 @@ PORTREVISION=	3
 CATEGORIES=	science
 MASTER_SITES=	http://www.geuz.org/getdp/src/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-source
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	stephen@FreeBSD.org
 COMMENT=	Rather general finite element solver using mixed finite elements
@@ -15,7 +14,7 @@ COMMENT=	Rather general finite element solver using mixed finite elements
 LIB_DEPENDS=	libgsl.so:${PORTSDIR}/math/gsl	\
 		liblapack.so:${PORTSDIR}/math/lapack
 
-USES=		fortran gmake
+USES=		fortran gmake tar:tgz
 GNU_CONFIGURE=	yes
 # Using --enable-sparskit instead of math/petsc.  The maintainer couldn't get
 # the math/petsc to work.  This is a bmake/gmake clash.

@@ -9,14 +9,13 @@ MASTER_SITES=	SUNSITE/games/strategy \
 		SF/nemysisfreebsdp/${CATEGORIES}/:icons
 DISTFILES=	${PORTNAME}${EXTRACT_SUFX} \
 		${PORTNAME}.png:icons
-EXTRACT_SUFX=	.tar.Z
 EXTRACT_ONLY=	${PORTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	games@FreeBSD.org
 COMMENT=	Throw stones into free columns
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
-USES=		imake
+USES=		imake tar:Z
 USE_XORG=	x11 xext
 USE_CSTD=	gnu89
 

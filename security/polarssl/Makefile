@@ -5,7 +5,6 @@ PORTVERSION=	1.2.10
 DISTVERSIONSUFFIX=	-gpl
 CATEGORIES=	security devel
 MASTER_SITES=	http://polarssl.org/download/
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	jase@FreeBSD.org
 COMMENT=	Open Source embedded SSL/TLS cryptographic library
@@ -18,7 +17,7 @@ URL_SUFFIX=	?do=yes
 FETCH_ARGS=	-pRro ${DISTFILES}
 ALL_TARGET=	no_test
 
-USES=	gmake
+USES=	gmake tar:tgz
 USE_LDCONFIG=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}

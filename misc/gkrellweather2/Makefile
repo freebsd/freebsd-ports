@@ -5,7 +5,6 @@ PORTNAME=	gkrellweather
 PORTVERSION=	2.0.8
 CATEGORIES=	misc geography
 MASTER_SITES=	https://sites.google.com/site/makovick/projects/
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Weather plugin for GKrellM
@@ -15,7 +14,7 @@ LICENSE=	GPLv2 # (or later)
 BUILD_DEPENDS=	${LOCALBASE}/include/gkrellm2/gkrellm.h:${PORTSDIR}/sysutils/gkrellm2
 RUN_DEPENDS=	gkrellm:${PORTSDIR}/sysutils/gkrellm2
 
-USES=		gettext gmake pkgconfig
+USES=		gettext gmake pkgconfig tar:tgz
 MAKE_ENV=	enable_nls=1
 ALL_TARGET=	gkrellweather.so
 
