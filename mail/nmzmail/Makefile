@@ -3,7 +3,7 @@
 
 PORTNAME=	nmzmail
 PORTVERSION=	0.1.3
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	mail
 MASTER_SITES=	http://www.ecademix.com/JohannesHofmann/ CENKES
 

@@ -37,9 +37,9 @@ include/namazu/util.h
 include/namazu/var.h
 include/namazu/wakati.h
 lib/libnmz.a
-lib/libnmz.la
 lib/libnmz.so
-lib/libnmz.so.8
+lib/libnmz.so.7
+lib/libnmz.so.7.1.3
 libexec/namazu.cgi
 %%PORTDOCS%%%%DOCSDIR%%/en/manual.html
 %%PORTDOCS%%%%DOCSDIR%%/en/nmz.html
