@@ -19,10 +19,10 @@ PLIST_FILES=	bin/newsfetch \
 		man/man1/newsfetch.1.gz
 
 do-configure:
-	cd ${WRKSRC} && ( \
-	${ECHO_CMD} "PROG= newsfetch"; \
-	${ECHO_CMD} "SRCS=" *.c; \
-	${ECHO_CMD} ".include <bsd.prog.mk>"; \
-	) > Makefile
+	(cd ${WRKSRC} && ( \
+		${ECHO_CMD} "PROG= newsfetch"; \
+		${ECHO_CMD} "SRCS=" *.c; \
+		${ECHO_CMD} ".include <bsd.prog.mk>"; \
+			) > Makefile)
 
 .include <bsd.port.mk>
