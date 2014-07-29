@@ -17,7 +17,7 @@ LIB_DEPENDS=	libgtkglext-x11-1.0.so:${PORTSDIR}/x11-toolkits/gtkglext
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:R}
 
-USES=		desktop-file-utils gettext gmake pathfix pkgconfig \ tar:bzip2
+USES=		desktop-file-utils gettext gmake pathfix pkgconfig tar:bzip2 \
 		shared-mime-info
 USE_GNOME=	gnomeprefix intlhack libgnomeui
 USE_GL=		gl
