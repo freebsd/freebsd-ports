@@ -11,7 +11,7 @@ MASTER_SITES=	http://ports.internal.vlink.ru/distfiles/
 MAINTAINER=	dsh@wizard.volgograd.ru
 COMMENT=	Python Managesieve Server
 
-USE_BZIP2=	yes
+USES=	tar:bzip2
 USE_PYTHON=	yes
 USE_RC_SUBR=	${PORTNAME}
 

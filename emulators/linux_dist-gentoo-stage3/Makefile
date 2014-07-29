@@ -11,7 +11,7 @@ COMMENT=	Files from Gentoo distribution, for Linux compatibility
 
 RESTRICTED=	binaries licensed under GNU GPL without accompanying source
 
-USE_BZIP2=		YES
+USES=		tar:bzip2
 DIST_SUBDIR=		gentoo-linux
 NO_BUILD=		YES
 ONLY_FOR_ARCHS=		i386 amd64

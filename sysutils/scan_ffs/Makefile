@@ -9,7 +9,7 @@ MASTER_SITES=	http://www.ranner.eu/stuff/
 MAINTAINER=	michael@ranner.eu
 COMMENT=	Scan_ffs recovers lost disklabel
 
-USE_BZIP2=	yes
+USES=	tar:bzip2
 
 PLIST_FILES=	sbin/scan_ffs man/man8/scan_ffs.8.gz
 

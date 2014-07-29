@@ -16,7 +16,7 @@ DISTNAME=	gdb-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PowerPC simulator (PSIM) running in the GNU GDB 6
 
-USE_BZIP2=	yes
+USES=	tar:bzip2
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-psim --target=powerpc-freebsd-elf \
 		--program-suffix=psim \

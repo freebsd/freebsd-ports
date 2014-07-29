@@ -11,7 +11,7 @@ COMMENT=	Another hyper make utility
 
 LICENSE=	GPLv1
 
-USE_BZIP2=        yes
+USES=        tar:bzip2
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--datarootdir=${DATADIR}

@@ -12,7 +12,7 @@ DISTNAME=	opengl-man-657-plusmissing
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Section 3 manpages for OpenGL: gl, glx, glu, gle, glut
 
-USE_BZIP2=	yes
+USES=	tar:bzip2
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 

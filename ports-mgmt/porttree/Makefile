@@ -11,7 +11,7 @@ COMMENT=	Show dependences of FreeBSD port as pseudo graphical tree
 
 LICENSE=	MIT
 
-USE_BZIP2=	yes
+USES=	tar:bzip2
 USE_PYTHON=	yes
 
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}networkx>=1.5:${PORTSDIR}/math/py-networkx

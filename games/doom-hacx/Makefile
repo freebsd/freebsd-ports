@@ -12,7 +12,7 @@ EXTRACT_SUFX=	.bz2
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Full TC using the Doom II engine
 
-USE_BZIP2=	yes
+USES=	tar:bzip2
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 

@@ -15,7 +15,7 @@ LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png
 
 CONFLICTS=	criticalmass-*
 
-USE_BZIP2=	yes
+USES=	tar:bzip2
 USE_SDL=	mixer image sdl
 USE_GL=		yes
 USE_GCC=	any

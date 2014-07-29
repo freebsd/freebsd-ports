@@ -14,7 +14,7 @@ COMMENT=	FreeImage library python wrapper
 LIB_DEPENDS=	libfreeimage.so:${PORTSDIR}/graphics/freeimage
 
 WRKSRC=		${WRKDIR}/FreeImagePy-${PORTVERSION}
-USE_BZIP2=	yes
+USES=	tar:bzip2
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
 PYDISTUTILS_AUTOPLIST=	yes

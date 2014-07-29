@@ -13,7 +13,7 @@ LICENSE=	BSD
 
 LIB_DEPENDS=	libgd.so:${PORTSDIR}/graphics/gd
 
-USE_BZIP2=	yes
+USES=	tar:bzip2
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 

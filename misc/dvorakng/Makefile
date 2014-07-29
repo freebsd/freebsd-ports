@@ -10,7 +10,7 @@ MASTER_SITES=	http://www.free.of.pl/n/nopik/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Dvorak typing tutor
 
-USE_BZIP2=	yes
+USES=	tar:bzip2
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 MAKE_ARGS=	CC="${CC}" CXX="${CXX}" CFLAGS="${CFLAGS} ${CPPFLAGS}" \

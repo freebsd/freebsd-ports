@@ -13,7 +13,7 @@ DIST_SUBDIR=	python
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Secure pickle-like module
 
-USE_BZIP2=	yes
+USES=	tar:bzip2
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_AUTOPLIST=	yes

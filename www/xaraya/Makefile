@@ -13,7 +13,7 @@ LICENSE=	GPLv2
 
 OPTIONS_DEFINE=	PGSQL MYSQL
 
-USE_BZIP2=	yes
+USES=	tar:bzip2
 USE_PHP=	pcre xml simplexml
 NO_BUILD=	yes
 

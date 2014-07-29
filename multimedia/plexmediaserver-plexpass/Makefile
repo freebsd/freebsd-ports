@@ -11,7 +11,7 @@ DISTNAME=	PlexMediaServer-${PORTVERSION}-${PLEX_BUILD}-freebsd-amd64
 MAINTAINER=	feld@FreeBSD.org
 COMMENT=	The Plex Media Server component
 
-USE_BZIP2=	yes
+USES=	tar:bzip2
 PLEX_BUILD=	3e7f93c
 NO_BUILD=	yes
 WRKSRC=	${WRKDIR}/PlexMediaServer-${PORTVERSION}-${PLEX_BUILD}

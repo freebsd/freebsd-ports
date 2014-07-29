@@ -11,7 +11,7 @@ COMMENT=	Node builder for Doom
 
 LICENSE=	GPLv2
 
-USE_BZIP2=	yes
+USES=	tar:bzip2
 GNU_CONFIGURE=	yes
 
 OPTIONS_DEFINE=	DOCS

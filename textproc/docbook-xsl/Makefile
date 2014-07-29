@@ -15,7 +15,7 @@ BUILD_DEPENDS=	xmlcatmgr:${PORTSDIR}/textproc/xmlcatmgr
 RUN_DEPENDS=	docbook>=0:${PORTSDIR}/textproc/docbook \
 		xmlcatmgr:${PORTSDIR}/textproc/xmlcatmgr
 
-USE_BZIP2=	yes
+USES=	tar:bzip2
 NO_BUILD=	yes
 
 INSTDIR=	share/xsl/docbook

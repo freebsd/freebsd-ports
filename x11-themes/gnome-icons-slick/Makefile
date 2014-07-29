@@ -18,7 +18,7 @@ COMMENT=	Slick Icons for Gnome
 
 RESTRICTED=	${REASON}
 
-USE_BZIP2=	yes
+USES=	tar:bzip2
 WRKSRC=		"${WRKDIR}/Slick"
 
 .include "${.CURDIR}/../gnome-icons/bsd.gnome-icons.mk"

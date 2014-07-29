@@ -12,7 +12,7 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Monsters, explosions, destruction game for X Window System
 
-USE_BZIP2=	yes
+USES=	tar:bzip2
 USE_GL=		glu
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}" LIBS="${LIBS}"
 

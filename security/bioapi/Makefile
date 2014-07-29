@@ -12,7 +12,7 @@ MAINTAINER= ports@FreeBSD.org
 COMMENT=	BioAPI library implementation
 
 USE_AUTOTOOLS=	libtool
-USE_BZIP2=	yes
+USES=	tar:bzip2
 GNU_CONFIGURE=	yes
 # Problems reported with higher optimization levels
 CFLAGS+=	-O

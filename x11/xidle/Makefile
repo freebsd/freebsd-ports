@@ -11,7 +11,7 @@ MASTER_SITE_SUBDIR=	novel
 MAINTAINER=	novel@FreeBSD.org
 COMMENT=	Run a program on X inactivity
 
-USE_BZIP2=	yes
+USES=	tar:bzip2
 CFLAGS+=	-I${LOCALBASE}/include -D__dead=static
 MAKE_ARGS+=	X11LIBDIR="${LOCALBASE}/lib" \
 		CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}"

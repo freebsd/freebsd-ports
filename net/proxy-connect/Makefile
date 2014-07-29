@@ -11,7 +11,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}
 MAINTAINER=	skreuzer@FreeBSD.org
 COMMENT=	Command to make network connections via SOCKS and HTTPS proxies
 
-USE_BZIP2=	yes
+USES=	tar:bzip2
 
 EXENAME=	${PORTNAME}
 

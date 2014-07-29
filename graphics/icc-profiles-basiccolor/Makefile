@@ -10,7 +10,7 @@ COMMENT=	CMYK ICC profiles for ISO Printing conditions (ISO 12647-2)
 
 MAINTAINER=	bsam@FreeBSD.org
 
-USE_BZIP2=	yes
+USES=	tar:bzip2
 GNU_CONFIGURE=	yes
 
 SYSCOLORDIR=	share/color

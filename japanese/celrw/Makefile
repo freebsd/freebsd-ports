@@ -9,7 +9,7 @@ MASTER_SITES=	http://www.nurs.or.jp/~kurati/celrw/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Cellular phone-number read/write tool (in Japan only)
 
-USE_BZIP2=	yes
+USES=	tar:bzip2
 GNU_CONFIGURE=	yes
 MAKE_ARGS=	VERSION="${PORTVERSION}" OPTFLAGS="${CFLAGS}"
 ALL_TARGET=	${PORTNAME}

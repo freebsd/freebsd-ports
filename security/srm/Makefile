@@ -15,7 +15,7 @@ COMMENT=	Secure rm, a utility which destroys file contents before unlinking
 LICENSE=	MIT
 
 CONFLICTS=	secure_delete-[0-9]*
-USE_BZIP2=	yes
+USES=	tar:bzip2
 
 GNU_CONFIGURE=	yes
 

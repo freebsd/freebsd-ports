@@ -9,7 +9,7 @@ MASTER_SITES=	http://files.nothingisreal.com/software/gpp/
 MAINTAINER=	jos@catnook.com
 COMMENT=	The Generic Preprocessor
 
-USE_BZIP2=	yes
+USES=	tar:bzip2
 GNU_CONFIGURE=	yes
 
 PLIST_FILES=	bin/gpp man/man1/gpp.1.gz

@@ -14,7 +14,7 @@ LEGAL=		Redistribution not authorized
 
 GNU_CONFIGURE=	yes
 USE_GNOME=      gtk20
-USE_BZIP2=      yes
+USES=      tar:bzip2
 DOWNLOAD_URL=   http://www.keldon.net/rftg/
 
 NO_STAGE=	yes

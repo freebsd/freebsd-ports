@@ -10,7 +10,7 @@ MASTER_SITES=	http://www.stud.uni-karlsruhe.de/~uedc/mplayer/ \
 MAINTAINER=	riggs@rrr.de
 COMMENT=	Font pack for the mplayer OSD and SUB
 
-USE_BZIP2=	yes
+USES=	tar:bzip2
 NO_BUILD=	yes
 
 FONTDIRS=	cyrillic koi8r-font iso-8859-1/arial-14 \

@@ -11,7 +11,7 @@ MASTER_SITES=	http://www.wa.apana.org.au/~dean/sources/ \
 MAINTAINER= ports@FreeBSD.org
 COMMENT=	Implementation of the HashCash/MIME specification
 
-USE_BZIP2=	yes
+USES=	tar:bzip2
 HAS_CONFIGURE=	yes
 
 MAKE_JOBS_UNSAFE=yes

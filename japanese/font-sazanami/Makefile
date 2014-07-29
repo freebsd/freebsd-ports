@@ -12,7 +12,7 @@ COMMENT=	Sazanami Japanese TrueType fonts
 
 RUN_DEPENDS=	fc-cache:${PORTSDIR}/x11-fonts/fontconfig
 
-USE_BZIP2=	yes
+USES=	tar:bzip2
 NO_BUILD=	yes
 PKGINSTALL=	${WRKDIR}/pkg-install
 PKGDEINSTALL=	${WRKDIR}/pkg-install

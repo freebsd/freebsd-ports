@@ -15,7 +15,7 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/django/bin/django-admin.py:${PORTSDIR}/www/py-
 
 LICENSE=	MIT
 
-USE_BZIP2=	yes
+USES=	tar:bzip2
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_AUTOPLIST=	yes

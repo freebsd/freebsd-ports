@@ -24,7 +24,7 @@ USE_GNOME=	gtk12
 MAKE_ARGS=	-D xsteak
 .endif
 WRKSRC=		${WRKDIR}/Steak
-USE_BZIP2=	yes
+USES=	tar:bzip2
 
 .if defined(WITHOUT_XSTEAK)
 PLIST_SUB+=	NOXSTEAK:="@comment "

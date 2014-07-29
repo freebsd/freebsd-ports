@@ -12,7 +12,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Access X selection from command line
 
 CONFLICTS=	xsel-conrad-[0-9]*
-USE_BZIP2=	yes
+USES=	tar:bzip2
 USE_XORG=	xmu xaw xt xproto xkbfile
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib -lXt -lXaw -lX11 -lXmu

@@ -11,7 +11,7 @@ COMMENT=	Simple tool for recording VNC sessions
 
 GNU_CONFIGURE=	yes
 
-USE_BZIP2=	yes
+USES=	tar:bzip2
 
 PLIST_FILES=	bin/rfbproxy \
 		man/man1/rfbproxy.1.gz

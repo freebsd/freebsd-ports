@@ -11,7 +11,7 @@ COMMENT=	Displays information about a user using either "<br>" or "\n" breaks
 
 LICENSE=	BSD2CLAUSE
 
-USE_BZIP2=	yes
+USES=	tar:bzip2
 
 PLIST_FILES=	bin/usrinfo man/man1/usrinfo.1.gz
 

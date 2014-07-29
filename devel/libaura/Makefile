@@ -10,7 +10,7 @@ MASTER_SITE_SUBDIR=	philip
 MAINTAINER=	rodrigo@FreeBSD.org
 COMMENT=	Library of Assorted Useful Reusable Abstractions
 
-USE_BZIP2=	yes
+USES=	tar:bzip2
 USE_LDCONFIG=	yes
 
 SONAME=		${SOLINK}.3

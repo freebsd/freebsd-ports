@@ -12,7 +12,7 @@ DISTNAME=	u-boot-${PORTVERSION}
 MAINTAINER=	ray@FreeBSD.org
 COMMENT=	The mkimage utility of the u-boot bootloader
 
-USE_BZIP2=	yes
+USES=	tar:bzip2
 BUILD_WRKSRC=	${WRKSRC}/tools
 MAKEFILE=	BSDmakefile
 

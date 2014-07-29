@@ -16,7 +16,7 @@ RUN_DEPENDS=	fc-cache:${PORTSDIR}/x11-fonts/fontconfig
 
 CONFLICTS=	ja-ipa-ttfonts-[0-9]*
 
-USE_BZIP2=	yes
+USES=	tar:bzip2
 NO_BUILD=	yes
 PKGINSTALL=	${WRKDIR}/pkg-install
 PKGDEINSTALL=	${WRKDIR}/pkg-install

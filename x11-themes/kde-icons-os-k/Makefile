@@ -9,7 +9,7 @@ DISTNAME=	OS-K_v115
 COMMENT=	KDE OS-K iconset
 
 BROKEN=		Unfetchable
-USE_BZIP2=	yes
+USES=	tar:bzip2
 WRKSRC=		${WRKDIR}/OS-K
 PLIST_FILE_PATTERN_EXTRA=	-v "^\./(buildset|README)"
 

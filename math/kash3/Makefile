@@ -22,7 +22,7 @@ OPTLIB_DESC=		Install optional functions library
 
 PLIST_SUB=	OPTLIB=${OPTLIB}
 
-USE_BZIP2=	yes
+USES=	tar:bzip2
 USE_LINUX=	yes
 
 SUB_FILES=	${PORTNAME}

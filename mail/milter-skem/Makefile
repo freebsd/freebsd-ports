@@ -9,7 +9,7 @@ MASTER_SITES=	http://virtual-estates.net/skem/
 MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	Cache earlier sendmail's verdicts for the relays
 
-USE_BZIP2=	yes
+USES=	tar:bzip2
 
 PLIST_FILES=	sbin/skem \
 		man/man8/skem.8.gz

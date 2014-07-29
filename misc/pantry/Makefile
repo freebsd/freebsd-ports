@@ -9,7 +9,7 @@ MASTER_SITES=	http://www.smileystation.com/pantry/downloads/
 MAINTAINER=	earl@eeg3.net
 COMMENT=	Command-line nutrition analysis program
 
-USE_BZIP2=	yes
+USES=	tar:bzip2
 GNU_CONFIGURE=	yes
 
 .include <bsd.port.mk>

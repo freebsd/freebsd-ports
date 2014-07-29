@@ -11,7 +11,7 @@ COMMENT=	A fast and stable php opcode cacher
 
 LICENSE=	BSD
 
-USE_BZIP2=	yes
+USES=	tar:bzip2
 USE_PHP=	yes
 USE_PHPIZE=	yes
 

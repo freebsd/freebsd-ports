@@ -12,7 +12,7 @@ DISTNAME=	ACE-${PORTVERSION:C/\.0$//}-html
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The ACE+TAO HTML documentation
 
-USE_BZIP2=	yes
+USES=	tar:bzip2
 WRKSRC=		${WRKDIR}/html
 NO_BUILD=	yes
 PLIST=		${WRKDIR}/pkg-plist

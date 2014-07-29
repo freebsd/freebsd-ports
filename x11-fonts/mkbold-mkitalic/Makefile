@@ -14,7 +14,7 @@ CONFLICTS=	mkbold-[0-9]* mkitalic-[0-9]*
 
 PLIST_FILES=	bin/mkbold bin/mkitalic bin/mkbolditalic
 PORTDOCS=	ALGORITHM ALGORITHM.eucJP LICENSE README README.eucJP
-USE_BZIP2=	yes
+USES=	tar:bzip2
 
 post-install:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}

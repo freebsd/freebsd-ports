@@ -15,7 +15,7 @@ COMMENT=	Spiffy Flickr API library using JSON
 
 LICENSE=	APACHE20
 
-USE_BZIP2=	yes
+USES=	tar:bzip2
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_AUTOPLIST=	yes

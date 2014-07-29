@@ -12,7 +12,7 @@ COMMENT=	Charset conversion utility with language and encoding autodetection
 
 LIB_DEPENDS=	librcc.so:${PORTSDIR}/devel/librcc
 
-USE_BZIP2=	yes
+USES=	tar:bzip2
 GNU_CONFIGURE=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include

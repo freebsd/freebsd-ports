@@ -15,7 +15,7 @@ LICENSE=	GPLv2
 
 ONLY_FOR_ARCHS=	i386 amd64 ia64
 
-USE_BZIP2=	yes
+USES=	tar:bzip2
 MAKE_ENV+=	DOCSDIR="${DOCSDIR}"
 
 PLIST_FILES=	sbin/dmidecode \

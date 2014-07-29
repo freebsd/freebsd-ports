@@ -12,7 +12,7 @@ DISTNAME=	${PORTNAME}.8_${PORTVERSION:S/.//}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Kernel module and program for SkyStar2/SkyStar2.8A
 
-USE_BZIP2=	yes
+USES=	tar:bzip2
 
 NO_STAGE=	yes
 .include <bsd.port.pre.mk>

@@ -11,7 +11,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 MAINTAINER=	sahil@FreeBSD.org
 COMMENT=	Simple chart library for Python
 
-USE_BZIP2=	yes
+USES=	tar:bzip2
 USE_PYTHON_RUN=	yes
 
 PORTDOCS=	README

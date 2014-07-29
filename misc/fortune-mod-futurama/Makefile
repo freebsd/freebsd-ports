@@ -11,7 +11,7 @@ MASTER_SITES=	http://www.netmeister.org/apps/ \
 MAINTAINER=	freebsd@skysmurf.nl
 COMMENT=	Compilation of quotes from the TV series "Futurama"
 
-USE_BZIP2=	yes
+USES=	tar:bzip2
 SUB_FILES=	pkg-message
 
 PLIST_FILES=	share/games/fortune/futurama share/games/fortune/futurama.dat

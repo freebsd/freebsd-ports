@@ -13,7 +13,7 @@ COMMENT=	Tool for fast loading mp3s into Nokia 5510
 LIB_DEPENDS=	libid3.so:${PORTSDIR}/audio/id3lib
 
 GNU_CONFIGURE=	yes
-USE_BZIP2=	yes
+USES=	tar:bzip2
 CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib
 

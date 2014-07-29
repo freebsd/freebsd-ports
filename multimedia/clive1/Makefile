@@ -22,7 +22,7 @@ CONFLICTS=	clive-[0-9]*
 
 GNU_CONFIGURE=	yes
 
-USE_BZIP2=	yes
+USES=	tar:bzip2
 # not compatible with 3.0
 USE_PYTHON=	2
 

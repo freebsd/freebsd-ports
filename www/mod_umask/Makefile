@@ -13,7 +13,7 @@ COMMENT=	Apache 2.x module to set umask of created files
 
 LICENSE=	APACHE20
 
-USE_BZIP2=	yes
+USES=	tar:bzip2
 GNU_CONFIGURE=	yes
 USE_APACHE=	22+
 

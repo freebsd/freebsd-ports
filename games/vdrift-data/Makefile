@@ -14,7 +14,7 @@ COMMENT=	Vdrift driving simulation data files
 
 LICENSE=	GPLv2
 
-USE_BZIP2=	yes
+USES=	tar:bzip2
 NO_BUILD=	yes
 DATADIR=	${PREFIX}/share/vdrift
 PLIST=		${WRKDIR}/pkg-plist

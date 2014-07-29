@@ -11,7 +11,7 @@ COMMENT=	POP3 daemon aimed to be small and secure
 
 PLIST_FILES=	bin/akpop3d man/man8/akpop3d.8.gz
 
-USE_BZIP2=	yes
+USES=	tar:bzip2
 GNU_CONFIGURE=	yes
 
 .if defined(WITH_SSL)

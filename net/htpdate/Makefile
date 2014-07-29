@@ -12,7 +12,7 @@ COMMENT=	Time synchronization over http utility
 
 LICENSE=	GPLv2 # (or later)
 
-USE_BZIP2=	yes
+USES=	tar:bzip2
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}"
 
 MANCOMPRESSED=	yes

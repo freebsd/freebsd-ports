@@ -11,7 +11,7 @@ COMMENT=	Allow dumping PKCS\#11 token content
 
 PROJECTHOST=	pkcs11-tools
 
-USE_BZIP2=	yes
+USES=	tar:bzip2
 USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
 

@@ -11,7 +11,7 @@ DISTNAME=	PQueue-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fibonacci-Heap based Priority-Queue Extension for Python
 
-USE_BZIP2=	yes
+USES=	tar:bzip2
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
 PYDISTUTILS_AUTOPLIST=	yes

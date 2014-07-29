@@ -18,7 +18,7 @@ BUILD_DEPENDS=	xmlcatmgr:${PORTSDIR}/textproc/xmlcatmgr
 RUN_DEPENDS=	docbook>=0:${PORTSDIR}/textproc/docbook \
 		xmlcatmgr:${PORTSDIR}/textproc/xmlcatmgr
 
-USE_BZIP2=	yes
+USES=	tar:bzip2
 NO_BUILD=	yes
 EXTRACT_AFTER_ARGS= --exclude=".*" --exclude="*.sh" --exclude "*.LOG"
 PKGINSTALL=	${WRKDIR}/pkg-install

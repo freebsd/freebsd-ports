@@ -10,7 +10,7 @@ MASTER_SITES=	http://www.theiling.de/downloads/
 MAINTAINER=	erik@bz.bzflag.bz
 COMMENT=	Cat with ASCII progress bar
 
-USE_BZIP2=	yes
+USES=	tar:bzip2
 NO_BUILD=	yes
 PLIST_FILES=	bin/bar
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
