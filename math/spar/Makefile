@@ -10,7 +10,7 @@ MASTER_SITES=	SF/${PORTNAME}/Spar/${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Modular math parser
 
-USES=		libtool
+USES=		libtool readline
 GNU_CONFIGURE=	yes
 USE_CSTD=	gnu89
 USE_LDCONFIG=	yes
