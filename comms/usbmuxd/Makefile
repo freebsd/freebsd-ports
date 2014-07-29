@@ -10,8 +10,7 @@ COMMENT=	Daemon for multiplexing connections over USB to iPhone/iPod Touch
 
 LIB_DEPENDS=	libplist.so:${PORTSDIR}/devel/libplist
 
-USE_BZIP2=	yes
-USES=		cmake pkgconfig
+USES=		cmake pkgconfig tar:bzip2
 USE_LDCONFIG=	yes
 
 PORTDOCS=	AUTHORS README README.devel

@@ -14,8 +14,7 @@ RUN_DEPENDS=	${LOCALBASE}/lib/iwidgets/iwidgets.tcl:${PORTSDIR}/x11-toolkits/iwi
 OPTIONS_DEFINE=	DOCS
 
 NO_BUILD=	yes
-USE_BZIP2=	yes
-USES+=		tk:run
+USES+=		tk:run tar:bzip2
 
 PORTDOCS=	AUTHORS COPYING CREDITS LICENSE NEWS README-General ChangeLog
 PLIST_FILES=	bin/redet \

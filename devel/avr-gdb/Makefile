@@ -13,8 +13,7 @@ DISTNAME=	gdb-${PORTVERSION}
 MAINTAINER=	joerg@FreeBSD.org
 COMMENT=	GNU GDB for the AVR target
 
-USES=		gmake
-USE_BZIP2=	yes
+USES=		gmake tar:bzip2
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--target=avr --program-prefix=avr --disable-nls

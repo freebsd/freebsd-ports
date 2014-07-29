@@ -13,8 +13,7 @@ COMMENT=	GTK2 interface to livejournals, ie www.livejournal.com
 LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl \
 		libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib
 
-USES=		pkgconfig gmake pathfix
-USE_BZIP2=	yes
+USES=		pkgconfig gmake pathfix tar:bzip2
 WANT_GNOME=	yes
 GNU_CONFIGURE=	yes
 USE_GNOME=	gnomeprefix gtk20 libxml2 intlhack

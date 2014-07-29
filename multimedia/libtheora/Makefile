@@ -14,8 +14,7 @@ COMMENT=	Theora video codec for the Ogg multimedia streaming system
 LIB_DEPENDS=	libvorbis.so:${PORTSDIR}/audio/libvorbis
 
 GNU_CONFIGURE=	yes
-USES=		libtool:keepla
-USE_BZIP2=	yes
+USES=		libtool:keepla tar:bzip2
 USE_LDCONFIG=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include 
 LIBS+=		-L${LOCALBASE}/lib

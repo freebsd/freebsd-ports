@@ -12,9 +12,8 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Editor for the freedesktop.org menu specification
 
-USE_BZIP2=	yes
 USE_GNOME=	gnomehack gnomeprefix pygnomedesktop intlhack
-USES=		gettext gmake pkgconfig
+USES=		gettext gmake pkgconfig tar:bzip2
 USE_PYTHON=	yes
 INSTALLS_ICONS=	yes
 GNU_CONFIGURE=	yes

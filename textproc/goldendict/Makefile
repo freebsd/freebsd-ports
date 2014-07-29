@@ -17,10 +17,9 @@ LIB_DEPENDS=	libhunspell-1.3.so:${PORTSDIR}/textproc/hunspell \
 		libexecinfo.so:${PORTSDIR}/devel/libexecinfo \
 		libvorbis.so:${PORTSDIR}/audio/libvorbis
 
-USE_BZIP2=	yes
 NO_WRKSUBDIR=	yes
 HAS_CONFIGURE=	yes
-USES=		dos2unix pkgconfig qmake
+USES=		dos2unix pkgconfig qmake tar:bzip2
 DOS2UNIX_FILES=	processwrapper.cc
 USE_XORG=	xtst
 USE_QT4=	corelib gui webkit phonon \

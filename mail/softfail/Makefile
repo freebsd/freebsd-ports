@@ -21,9 +21,8 @@ PLIST_SUB=	QMAIL_PREFIX=${QMAIL_PREFIX}
 
 PORTDOCS=	README softfail.sql
 
-USES=		qmail
+USES=		qmail tar:bzip2
 
-USE_BZIP2=	yes
 USE_MYSQL=	yes
 
 .if defined(QMAIL_SLAVEPORT) && ( ${QMAIL_SLAVEPORT} != "spamcontrol" && ${QMAIL_SLAVEPORT} != "ldap" )

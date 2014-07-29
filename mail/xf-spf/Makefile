@@ -12,8 +12,7 @@ COMMENT=	SPF checker for Qmail's SMTPEXTFORK patch
 
 LIB_DEPENDS+=	libspf2.so:${PORTSDIR}/mail/libspf2
 
-USES=		qmail
-USE_BZIP2=	yes
+USES=		qmail tar:bzip2
 USE_GCC=	any
 MAKE_JOBS_UNSAFE=	yes
 

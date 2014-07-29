@@ -17,8 +17,7 @@ LICENSE=	GPLv2
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/function.hpp:${PORTSDIR}/devel/boost-libs
 
 USE_RC_SUBR=	anytermd
-USE_BZIP2=	yes
-USES=		gmake iconv
+USES=		gmake iconv tar:bzip2
 USE_GCC=	any
 ALL_TARGET=	default_target
 PLIST_FILES=	man/man1/anytermd.1.gz \

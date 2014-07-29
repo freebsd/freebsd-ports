@@ -13,8 +13,7 @@ COMMENT=	Lightweight UPnP (TM) A/V Media Server
 LIB_DEPENDS=	libupnp.so:${PORTSDIR}/devel/upnp
 
 HAS_CONFIGURE=	yes
-USE_BZIP2=	yes
-USES=		gettext gmake pkgconfig
+USES=		gettext gmake pkgconfig tar:bzip2
 LDFLAGS+=	-L${LOCALBASE}/lib -lintl
 
 CFLAGS+=	-I${LOCALBASE}/include -I${WRKSRC}

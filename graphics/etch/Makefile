@@ -12,10 +12,9 @@ COMMENT=	Etch is an abstract time based animation library
 LICENSE=	LGPL21
 
 DIST_SUBDIR=	e17
-USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_EFL=	eina enesim libtool_hack
-USES=		pathfix pkgconfig
+USES=		pathfix pkgconfig tar:bzip2
 USE_LDCONFIG=	yes
 
 CONFIGURE_ARGS=	--disable-static

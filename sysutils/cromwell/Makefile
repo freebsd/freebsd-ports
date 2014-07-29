@@ -33,9 +33,8 @@ PLIST_FILES=		%%DATADIR%%/cromwell.bin \
 ONLY_FOR_ARCHS=		i386
 
 WRKSRC=			${WRKDIR}/cromwell
-USE_BZIP2=		yes
 USE_PERL5=		build
-USES=			gmake perl5
+USES=			gmake perl5 tar:bzip2
 MAKE_JOBS_UNSAFE=	yes
 
 NO_STAGE=	yes

@@ -11,8 +11,7 @@ PKGNAMESUFFIX=	-qt4
 MAINTAINER=	itetcu@FreeBSD.org
 COMMENT=	Graphical interface to git repositories
 
-USES=		qmake
-USE_BZIP2=	yes
+USES=		qmake tar:bzip2
 USE_QT4=	corelib gui moc_build rcc_build uic_build
 MAKE_JOBS_UNSAFE=	yes
 

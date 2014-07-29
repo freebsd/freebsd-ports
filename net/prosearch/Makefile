@@ -10,9 +10,8 @@ MASTER_SITES=	http://pro.setun.net/search/download/ SF/pro-search/pro-search/${P
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Powerful file search
 
-USES=		perl5
+USES=		perl5 tar:bzip2
 USE_PERL5=	run
-USE_BZIP2=	yes
 SUB_FILES=	pkg-message
 SUB_LIST=	SEARCHDIR=${SEARCHDIR}
 NO_BUILD=	yes

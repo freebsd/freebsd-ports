@@ -17,9 +17,8 @@ DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}${LLVM_SUFFIX}
 DATADIR=	${PREFIX}/share/${PORTNAME}${LLVM_SUFFIX}
 UNIQUENAME=	${PORTNAME}${LLVM_SUFFIX}
 
-USES=		compiler:c++11-lib gmake perl5
+USES=		compiler:c++11-lib gmake perl5 tar:bzip2
 GNU_CONFIGURE=	yes
-USE_BZIP2=	yes
 GNU_CONFIGURE_PREFIX=	${LLVM_PREFIX}
 USE_LDCONFIG=	${LLVM_PREFIX}/lib
 

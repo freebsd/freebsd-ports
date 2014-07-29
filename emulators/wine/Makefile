@@ -43,9 +43,8 @@ WINELIBDIR?=	${PREFIX}/lib
 USE_LDCONFIG=	${WINELIBDIR} ${WINELIBDIR}/wine
 .endif
 ONLY_FOR_ARCHS=	i386
-USES=		bison compiler:c11 gmake shebangfix
+USES=		bison compiler:c11 gmake shebangfix tar:bzip2
 SHEBANG_FILES=	tools/winemaker tools/winedump/function_grep.pl
-USE_BZIP2=	yes
 USE_GL=		glu
 USE_XORG=	xcomposite xcursor xi xpm xrandr xrender
 OPTIONS_SUB=	yes

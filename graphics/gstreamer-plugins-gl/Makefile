@@ -14,9 +14,8 @@ COMMENT=	GStreamer OpenGL video plugin
 LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png \
 		libjpeg.so:${PORTSDIR}/graphics/jpeg
 
-USE_BZIP2=	yes
 USE_LDCONFIG=	yes
-USES=	pathfix gettext gmake pkgconfig
+USES=	pathfix gettext gmake pkgconfig tar:bzip2
 USE_GSTREAMER=	yes
 USE_XORG=	ice x11
 USE_GL=		gl glu glew

@@ -10,8 +10,7 @@ MASTER_SITES=	ftp://ftp.altlinux.org/pub/people/ldv/utempter/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Interface to record user sessions to utmp and wtmp files
 
-USES=		gmake
-USE_BZIP2=	yes
+USES=		gmake tar:bzip2
 USE_LDCONFIG=	yes
 
 NO_STAGE=	yes

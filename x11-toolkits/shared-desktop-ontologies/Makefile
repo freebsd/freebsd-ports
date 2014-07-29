@@ -11,8 +11,7 @@ COMMENT=	Interoperability between desktops and collaborative environments
 CMAKE_ARGS+=	-DPKGCONFIG_INSTALL_DIR:PATH="libdata/pkgconfig/"
 INSTALL_TARGET=	install
 
-USE_BZIP2=	yes
-USES=		cmake pkgconfig
+USES=		cmake pkgconfig tar:bzip2
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|share/cmake/SharedDesktopOntologies|lib/cmake/SharedDesktopOntologies|' \

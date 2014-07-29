@@ -17,8 +17,7 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg
 
-USE_BZIP2=	yes
-USES=		gmake
+USES=		gmake tar:bzip2
 USE_GNOME=	gtk12
 USE_SDL=	sdl
 GNU_CONFIGURE=	yes

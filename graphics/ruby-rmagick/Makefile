@@ -12,7 +12,7 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Ruby binding for ImageMagick
 
-USES=		pkgconfig
+USES=		pkgconfig tar:bzip2
 BROKEN=		not staged
 
 OPTIONS_DEFINE=		X11
@@ -29,7 +29,6 @@ LIB_DEPENDS=	libMagickWand-6.Q*.so:${PORTSDIR}/graphics/ImageMagick
 LIB_DEPENDS=	libMagickWand-6.Q*.so:${PORTSDIR}/graphics/ImageMagick-nox11
 .endif
 
-USE_BZIP2=	yes
 USE_RUBY=	yes
 USE_RUBY_SETUP=	yes
 RUBY_SETUP=	setup.rb

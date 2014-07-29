@@ -23,9 +23,8 @@ ${NODE:tu}_DESC=	Install ${NODE} evas generic loader
 .endfor
 
 DIST_SUBDIR=	e17
-USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
-USES=		gmake pkgconfig
+USES=		gmake pkgconfig tar:bzip2
 USE_EFL=	evas librt_hack libtool_hack
 USE_LDCONFIG=	yes
 

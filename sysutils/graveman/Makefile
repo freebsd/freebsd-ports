@@ -15,9 +15,8 @@ LIB_DEPENDS=	libmng.so:${PORTSDIR}/graphics/libmng
 BUILD_DEPENDS=	cdrecord:${PORTSDIR}/sysutils/cdrtools
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
-USES=		pathfix pkgconfig gettext gmake
+USES=		pathfix pkgconfig gettext gmake tar:bzip2
 USE_GNOME=	libglade2 intlhack gnomeprefix
 CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib

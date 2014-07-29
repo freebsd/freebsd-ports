@@ -15,10 +15,9 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libpackagekit-qt.so:${PORTSDIR}/ports-mgmt/packagekit-qt4
 
-USE_BZIP2=	yes
 USE_KDE4=	automoc4 kdehier kdelibs kdeprefix
 USE_QT4=	moc_build qmake_build rcc_build uic_build
-USES=		cmake gettext pkgconfig
+USES=		cmake gettext pkgconfig tar:bzip2
 LDFLAGS+=	-L${LOCALBASE}/lib
 USE_LDCONFIG=	yes
 

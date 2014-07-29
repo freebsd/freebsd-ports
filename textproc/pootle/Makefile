@@ -21,8 +21,7 @@ BROKEN=		Does not install
 CONFLICTS=	${PYTHON_PKGNAMEPREFIX}django-profiles-[0-9]* \
 		${PYTHON_PKGNAMEPREFIX}django-registration-[0-9]*
 
-USE_BZIP2=	yes
-USES=		gettext
+USES=		gettext tar:bzip2
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
 PYDISTUTILS_PKGNAME=	Pootle

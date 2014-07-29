@@ -12,8 +12,7 @@ COMMENT=	Frontend to MiMMS (Multimedia Stream ripper)
 
 RUN_DEPENDS=	mimms:${PORTSDIR}/multimedia/mimms
 
-USES=		pkgconfig
-USE_BZIP2=	yes
+USES=		pkgconfig tar:bzip2
 GNU_CONFIGURE=	yes
 USE_GNOME=	gtk20
 CONFIGURE_ARGS+=--disable-nls

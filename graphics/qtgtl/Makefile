@@ -14,8 +14,7 @@ LICENSE=	LGPL20
 LIB_DEPENDS=	libGTLCore.so:${PORTSDIR}/graphics/opengtl
 
 USE_QT4=	corelib gui moc_build qmake_build rcc_build uic_build
-USES=		cmake:outsource pkgconfig
-USE_BZIP2=	yes
+USES=		cmake:outsource pkgconfig tar:bzip2
 USE_LDCONFIG=	yes
 
 DESCR=		${.CURDIR:H:H}/graphics/opengtl/pkg-descr

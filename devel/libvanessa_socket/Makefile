@@ -13,9 +13,8 @@ COMMENT=	Library that provides a simple layer for TCP/IP socket operations
 LIB_DEPENDS=	libvanessa_logger.so:${PORTSDIR}/devel/libvanessa_logger \
 		libpopt.so:${PORTSDIR}/devel/popt
 
-USE_BZIP2=	yes
 USE_AUTOTOOLS=	libtool
-USES=	pathfix
+USES=	pathfix tar:bzip2
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 

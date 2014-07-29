@@ -14,8 +14,7 @@ OPTIONS_DEFINE=	CCLIVE
 OPTIONS_DEFAULT=	CCLIVE
 CCLIVE_DESC=	Use cclive backend (instead of clive)
 
-USES=		qmake
-USE_BZIP2=	yes
+USES=		qmake tar:bzip2
 USE_QT4=	gui network xml moc_build rcc_build uic_build
 
 PLIST_FILES=	bin/abby

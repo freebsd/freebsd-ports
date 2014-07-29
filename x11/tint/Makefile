@@ -12,8 +12,7 @@ COMMENT=	Lightweight freedesktop-compliant panel/taskbar/systray/clock
 LIB_DEPENDS=	libcairo.so:${PORTSDIR}/graphics/cairo
 
 PROJECTHOST=	tint2
-USE_BZIP2=	yes
-USES=		cmake pkgconfig
+USES=		cmake pkgconfig tar:bzip2
 USE_GNOME=	pango glib20
 USE_XORG=	xinerama xrandr xdamage xcomposite
 USE_EFL=	imlib2

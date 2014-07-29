@@ -16,8 +16,7 @@ LIB_DEPENDS=	libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib \
 
 LICENSE=	LGPL21
 
-USES=		pkgconfig gmake
-USE_BZIP2=	yes
+USES=		pkgconfig gmake tar:bzip2
 USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
 USE_GNOME=	gnomehack glib20 intltool gnomedocutils ltverhack libxml2 \

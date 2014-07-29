@@ -9,8 +9,7 @@ MASTER_SITES=	http://www.zonov.org/${PORTNAME}/
 MAINTAINER=	zont@FreeBSD.org
 COMMENT=	Utility for reading, writing the contents of CMOS memory
 
-USES=		gmake
-USE_BZIP2=	yes
+USES=		gmake tar:bzip2
 
 ONLY_FOR_ARCHS=	amd64 i386
 

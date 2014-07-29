@@ -13,8 +13,7 @@ COMMENT=	Server for the Linux network block device (nbd)
 
 LICENSE=	GPLv2
 
-USE_BZIP2=	yes
-USES=		pkgconfig
+USES=		pkgconfig tar:bzip2
 USE_GNOME=	glib20
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-lfs --enable-syslog

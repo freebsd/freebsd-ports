@@ -9,10 +9,9 @@ MASTER_SITES=	http://distfiles.atheme.org/
 MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	Development framework for C
 
-USES=		gmake
+USES=		gmake tar:bzip2
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-USE_BZIP2=	yes
 
 post-patch:
 	@${REINPLACE_CMD} 's|$${libdir}/pkgconfig|$${prefix}/libdata/pkgconfig|g' \

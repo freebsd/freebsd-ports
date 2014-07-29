@@ -12,8 +12,7 @@ COMMENT=	Java source to byte-code compiler made available by IBM
 
 PLIST_SUB=	PORTVERSION=${PORTVERSION}
 GNU_CONFIGURE=	yes
-USES=		iconv gmake
-USE_BZIP2=	yes
+USES=		iconv gmake tar:bzip2
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib

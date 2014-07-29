@@ -11,8 +11,7 @@ DIST_SUBDIR=	GL
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	OpenGL widgets library
 
-USE_BZIP2=	yes
-USES=		motif pathfix pkgconfig
+USES=		motif pathfix pkgconfig tar:bzip2
 USE_LDCONFIG=	yes
 USE_GL=		gl
 USE_XORG=	x11 xt xext

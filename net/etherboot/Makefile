@@ -15,8 +15,7 @@ SSP_UNSAFE=	yes
 ONLY_FOR_ARCHS=	i386
 NO_PACKAGE=	lots of configuration necessary
 
-USES=		gmake perl5
-USE_BZIP2=	yes
+USES=		gmake perl5 tar:bzip2
 USE_PERL5=	build
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/src

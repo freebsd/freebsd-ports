@@ -22,10 +22,9 @@ RUN_DEPENDS=	showrgb:${PORTSDIR}/x11/rgb \
 MAKE_JOBS_UNSAFE=	yes
 CONFLICTS=	tridiavnc-[0-9]* vnc-[0-9]*
 WRKSRC=		${WRKDIR}/vnc_unixsrc
-USES=		imake shebangfix perl5
+USES=		imake shebangfix perl5 tar:bzip2
 SHEBANG_FILES=	vncserver
 CFLAGS+=	-Wno-return-type
-USE_BZIP2=	yes
 USE_XORG=	xaw
 ALL_TARGET=	World
 

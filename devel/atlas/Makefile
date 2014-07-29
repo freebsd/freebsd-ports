@@ -14,10 +14,9 @@ COMMENT=	C++ reference implementation of the Atlas protocol
 OPTIONS_DEFINE=	DOCS
 
 GNU_CONFIGURE=	yes
-USES=	pathfix
+USES=	pathfix tar:bzip2
 USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	YES
-USE_BZIP2=	YES
 MAKE_ARGS=	docdir=${DOCSDIR}
 
 .include <bsd.port.mk>

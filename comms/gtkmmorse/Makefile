@@ -14,9 +14,8 @@ LIB_DEPENDS=	libao.so:${PORTSDIR}/audio/libao \
 		libgtkmm-2.4.so:${PORTSDIR}/x11-toolkits/gtkmm24 \
 		libgconfmm-2.6.so:${PORTSDIR}/devel/gconfmm26
 
-USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
-USES=		pkgconfig
+USES=		pkgconfig tar:bzip2
 
 PLIST_FILES=	bin/gtkmmorse \
 		man/man1/gtkmmorse.1.gz

@@ -19,7 +19,6 @@ HTML_DESC=	enable HTML output
 # bypass infrastructure bug (taken from www/py-django)
 OPTIONSFILE=	${PORT_DBDIR}/py-${PORTNAME}/options
 
-USE_BZIP2=	yes
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_AUTOPLIST=	yes
@@ -27,7 +26,7 @@ PYDISTUTILS_AUTOPLIST=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MTWISTED}
-USES+=		twisted
+USES+=		twisted tar:bzip2
 .endif
 
 .if ${PORT_OPTIONS:MHTML}

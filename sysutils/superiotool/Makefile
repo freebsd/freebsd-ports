@@ -16,8 +16,7 @@ LIB_DEPENDS=	libpci.so:${PORTSDIR}/devel/libpci
 ONLY_FOR_ARCHS=	i386 amd64
 ONLY_FOR_ARCHS_REASON=The tool is for x86-specific hardware
 
-USE_BZIP2=	yes
-USES=		gmake
+USES=		gmake tar:bzip2
 
 PLIST_FILES=	sbin/superiotool \
 		man/man8/superiotool.8.gz

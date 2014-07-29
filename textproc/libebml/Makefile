@@ -12,8 +12,7 @@ COMMENT=	EBML (Extensible Binary Meta Language), sort of binary version of XML
 
 LICENSE=	LGPL21
 
-USES=		gmake
-USE_BZIP2=	yes
+USES=		gmake tar:bzip2
 BUILD_WRKSRC=	${WRKSRC}/make/linux
 INSTALL_WRKSRC=	${WRKSRC}/make/linux
 USE_LDCONFIG=	yes

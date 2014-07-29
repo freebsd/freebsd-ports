@@ -22,7 +22,6 @@ CONFLICTS=	epic5-0.[0-2]*
 GNU_CONFIGURE=	yes
 USE_OPENSSL=	yes
 PLIST_SUB+=	PORTVERSION=${PORTVERSION}
-USE_BZIP2=	yes
 CFLAGS:=	${CFLAGS:C/-O2/-g -O/g}
 
 OPTIONS_DEFINE=	IPV6 TCL PERL SSL TERMCAP DOCS
@@ -50,7 +49,7 @@ CONFIGURE_ARGS+=	--without-tcl
 # SITE_PERL and PERL_VERSION to create the path.
 #
 .if ${PORT_OPTIONS:MPERL}
-USES+=		perl5
+USES+=		perl5 tar:bzip2
 CONFIGURE_ARGS+=	--with-perl=${SITE_PERL}/../../${PERL_VERSION}/mach/CORE
 .else
 CONFIGURE_ARGS+=	--without-perl

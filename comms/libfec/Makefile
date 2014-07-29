@@ -15,8 +15,7 @@ COMMENT=	Several forward error correction (FEC) decoders
 MAKEFILE=	makefile
 
 GNU_CONFIGURE=	yes
-USES=		gmake
-USE_BZIP2=	yes
+USES=		gmake tar:bzip2
 USE_LDCONFIG=	yes
 ONLY_FOR_ARCHS=	i386 amd64
 PLIST_FILES=	include/fec.h		\

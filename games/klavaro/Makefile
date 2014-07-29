@@ -22,8 +22,7 @@ LIB_DEPENDS=	libpthread-stubs.so:${PORTSDIR}/devel/libpthread-stubs \
 		libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig \
 		libgtkdatabox.so:${PORTSDIR}/x11-toolkits/gtkdatabox
 
-USES=		pkgconfig gettext gmake iconv pathfix
-USE_BZIP2=	yes
+USES=		pkgconfig gettext gmake iconv pathfix tar:bzip2
 USE_XORG=	pixman x11 xau xcb xcomposite xcursor xdamage xdmcp xext \
 		xfixes xi xinerama xrandr xrender
 USE_GNOME=	gtk20

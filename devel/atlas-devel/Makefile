@@ -15,9 +15,8 @@ OPTIONS_DEFINE=	DOCS
 
 PKGNAMESUFFIX=	-devel
 GNU_CONFIGURE=	yes
-USES=		pathfix compiler:c++11-lib
+USES=		pathfix compiler:c++11-lib tar:bzip2
 USE_LDCONFIG=	YES
-USE_BZIP2=	YES
 MAKE_ARGS=	docdir=${DOCSDIR}
 CONFIGURE_ARGS+=--program-transform-name=
 

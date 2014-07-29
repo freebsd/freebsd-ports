@@ -13,8 +13,7 @@ COMMENT=	Lightweight library for vector and matrix math
 LICENSE=	LGPL21 MPL
 LICENSE_COMB=	multi
 
-USE_BZIP2=	yes
-USES=		cmake:outsource
+USES=		cmake:outsource tar:bzip2
 CMAKE_ENV+=	PKG_CONFIG_LIBDIR="${LOCALBASE}/libdata"
 NO_BUILD=	yes
 

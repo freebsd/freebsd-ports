@@ -19,10 +19,9 @@ CONFLICTS=	gammu-[1-9]* gammu-python-[1-9]*
 
 CMAKE_ARGS+=	-DINSTALL_LIBDATA_DIR=${LOCALBASE}/libdata
 
-USES=		cmake gettext pkgconfig
+USES=		cmake gettext pkgconfig tar:bzip2
 USE_PYTHON=	yes
 USE_GNOME=	glib20
-USE_BZIP2=	yes
 USE_LDCONFIG=	yes
 
 PORTDOCS=	*

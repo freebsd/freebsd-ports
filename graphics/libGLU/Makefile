@@ -10,8 +10,7 @@ DISTNAME=	glu-${PORTVERSION}
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	OpenGL utility library
 
-USE_BZIP2=	yes
-USES=		pathfix pkgconfig
+USES=		pathfix pkgconfig tar:bzip2
 USE_GL=		gl
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-static

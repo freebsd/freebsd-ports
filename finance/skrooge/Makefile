@@ -16,8 +16,7 @@ LIB_DEPENDS=	libofx.so:${PORTSDIR}/finance/libofx \
 		libgrantlee_gui.so:${PORTSDIR}/devel/grantlee \
 		libkactivities.so:${PORTSDIR}/x11/kactivities
 
-USE_BZIP2=	yes
-USES=		cmake:outsource gettext shared-mime-info
+USES=		cmake:outsource gettext shared-mime-info tar:bzip2
 USE_SQLITE=	yes
 USE_QT4=	qmake_build moc_build uic_build rcc_build designer_build \
 		corelib dbus gui script sql webkit xml sql-sqlite3_run

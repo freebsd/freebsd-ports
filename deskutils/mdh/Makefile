@@ -12,9 +12,8 @@ COMMENT=	GTK2-based toolbar, like a smaller GNOME panel
 
 LICENSE=	GPLv2 # (or later)
 
-USE_BZIP2=	yes
 USE_GNOME=	gtk20
-USES=		gmake pkgconfig
+USES=		gmake pkgconfig tar:bzip2
 GNU_CONFIGURE=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include

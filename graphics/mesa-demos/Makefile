@@ -11,8 +11,7 @@ DISTFILES=	mesa-demos-${PORTVERSION}${EXTRACT_SUFX}
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	OpenGL demos distributed with Mesa
 
-USE_BZIP2=	yes
-USES=		gmake pkgconfig
+USES=		gmake pkgconfig tar:bzip2
 GNU_CONFIGURE=	yes
 USE_GL=		glu glut glew
 USE_XORG=	glproto x11 xext xi xxf86vm xdamage xfixes dri2proto

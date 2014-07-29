@@ -17,8 +17,7 @@ CONFLICTS=	mingw-binutils-[0-9]* binutils-[0-9]*
 
 WRKSRC=		${WRKDIR}/binutils-${PORTVERSION}/bfd
 
-USES=		gmake
-USE_BZIP2=	yes
+USES=		gmake tar:bzip2
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-install-libbfd \
 		--enable-commonbfdlib \

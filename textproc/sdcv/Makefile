@@ -12,8 +12,7 @@ COMMENT=	Text-based utility for work with dictionaries in StarDict's format
 
 LICENSE=	GPLv2 # (or later)
 
-USE_BZIP2=	yes
-USES=		gettext pkgconfig readline
+USES=		gettext pkgconfig readline tar:bzip2
 USE_GNOME=	glib20
 USE_AUTOTOOLS=	libtoolize aclocal automake autoconf
 LIBTOOLIZE_ARGS=--copy --force

@@ -33,8 +33,7 @@ DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}${LLVM_SUFFIX}
 
 GNU_CONFIGURE=	yes
 GNU_CONFIGURE_PREFIX=	${LLVM_PREFIX}
-USES=		compiler:c++11-lib gmake perl5
-USE_BZIP2=	yes
+USES=		compiler:c++11-lib gmake perl5 tar:bzip2
 USE_PYTHON=	yes
 
 MAKE_ARGS=	CLANG_TBLGEN=${WRKSRC}/${RELTYPE}/bin/clang-tblgen \

@@ -13,8 +13,7 @@ COMMENT=	Graphical, easy to use math program
 
 CONFLICTS=	ump-1.[0-9]*
 
-USES=		gmake pkgconfig
-USE_BZIP2=	yes
+USES=		gmake pkgconfig tar:bzip2
 USE_GNOME=	gtk20
 USE_GL=		glu
 

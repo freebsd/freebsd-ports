@@ -11,8 +11,7 @@ COMMENT=	GUI for testing CD/DVD quality and transfer rate
 
 LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png
 
-USE_BZIP2=	yes
-USES=		gmake
+USES=		gmake tar:bzip2
 USE_QT4=	qmake_build moc_build rcc_build linguist_build corelib gui network sql
 QT_NONSTANDARD=	yes
 HAS_CONFIGURE=	yes

@@ -13,8 +13,7 @@ LICENSE=	GPLv3
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-USE_BZIP2=	yes
-USES=		gmake
+USES=		gmake tar:bzip2
 MAKEFILE=	makefile
 
 PORTDOCS=	ChangeLog README

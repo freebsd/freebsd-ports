@@ -20,9 +20,8 @@ COMMENT=	Secure Internet Live Conferencing (SILC) network toolkit
 
 CONFLICTS=	silc-client-1.1.* silc-irssi-client-1.1.*
 
-USES=		gmake perl5
+USES=		gmake perl5 tar:bzip2
 USE_AUTOTOOLS=	libtool
-USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-etcdir=${PREFIX}/etc/${PORTNAME}${PKGNAMESUFFIX} \
 		--with-simdir=${PREFIX}/lib/silcsim \

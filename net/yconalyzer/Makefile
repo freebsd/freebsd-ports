@@ -12,8 +12,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	TCP Traffic Analyzer
 
 GNU_CONFIGURE=	yes
-USE_BZIP2=	yes
-USES=		gmake
+USES=		gmake tar:bzip2
 
 PLIST_FILES=	bin/yconalyzer \
 		man/man8/yconalyzer.8.gz

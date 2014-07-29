@@ -10,8 +10,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Rogue-like game with easy ADOM-like user interface
 
-USE_BZIP2=	yes
-USES=		gmake
+USES=		gmake tar:bzip2
 MAKE_ARGS+=	VERSION=${PORTVERSION} DATA_DIR=${DATADIR}/
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 

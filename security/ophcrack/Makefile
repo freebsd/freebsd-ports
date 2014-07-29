@@ -14,8 +14,7 @@ LICENSE_COMB=	multi
 
 LIB_DEPENDS=	libexpat.so:${PORTSDIR}/textproc/expat2
 
-USES=		gmake
-USE_BZIP2=	yes
+USES=		gmake tar:bzip2
 GNU_CONFIGURE=	yes
 USE_OPENSSL=	yes
 

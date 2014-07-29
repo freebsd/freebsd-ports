@@ -13,7 +13,6 @@ COMMENT=	IPv6 network diagnostic tools
 
 LICENSE=	GPLv2
 
-USE_BZIP2=	yes
 USE_GCC=	any
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-suid-install
@@ -30,7 +29,7 @@ EXTRA_PATCHES+=	${FILESDIR}/extra-patch-rdnssd-rdnssd.h
 .endif
 
 .if ${PORT_OPTIONS:MNLS}
-USES+=		gettext
+USES+=		gettext tar:bzip2
 LDFLAGS+=	-lintl
 PLIST_SUB+=	NLS=""
 .else

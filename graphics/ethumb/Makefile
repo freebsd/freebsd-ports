@@ -15,9 +15,8 @@ LICENSE=	LGPL21
 LIB_DEPENDS=	libexif.so:${PORTSDIR}/graphics/libexif
 
 DIST_SUBDIR=	e17
-USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
-USES=		pathfix pkgconfig
+USES=		pathfix pkgconfig tar:bzip2
 USE_EFL=	eina evas ecore edje libtool_hack
 USE_EFL_ECORE=	evas file x11 input_evas
 USE_LDCONFIG=	yes

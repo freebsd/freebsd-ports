@@ -14,10 +14,9 @@ LICENSE=	GPLv2
 
 RUN_DEPENDS=	p5-Gtk2>=0:${PORTSDIR}/x11-toolkits/p5-Gtk2
 
-USES=		shebangfix
+USES=		shebangfix tar:bzip2
 SHEBANG_FILES=	telbook
 NO_BUILD=	yes
-USE_BZIP2=	yes
 
 PORTDOCS=	README
 PLIST_FILES=	bin/telbook

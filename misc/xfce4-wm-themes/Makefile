@@ -15,8 +15,7 @@ COMMENT=	Additional themes for xfwm4
 
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
-USE_BZIP2=	yes
 USE_XFCE=	configenv	# to get MASTER_SITE_SUBDIR something has to be defined
-USES=	gmake
+USES=	gmake tar:bzip2
 
 .include <bsd.port.mk>

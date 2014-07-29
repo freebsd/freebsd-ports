@@ -16,9 +16,8 @@ LIB_DEPENDS=	libdbus-1.so:${PORTSDIR}/devel/dbus \
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
-USE_BZIP2=	yes
 USE_GNOME=	gnomehack gnomeprefix intlhack gtk30
-USES=		gettext gmake pkgconfig
+USES=		gettext gmake pkgconfig tar:bzip2
 USE_XORG=	x11
 INSTALLS_ICONS=	yes
 GNU_CONFIGURE=	yes

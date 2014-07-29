@@ -12,8 +12,7 @@ COMMENT=	Binary packing utility that uses a genetic algorithm
 
 LICENSE=	GPLv3 # or later
 
-USE_BZIP2=	yes
-USES=		gmake	# parallel builds (-jX) are broken with BSD make(1)
+USES=		gmake	# parallel builds (-jX) are broken with BSD make(1) tar:bzip2
 
 PLIST_FILES=	bin/${PORTNAME} man/man1/${PORTNAME}.1.gz
 

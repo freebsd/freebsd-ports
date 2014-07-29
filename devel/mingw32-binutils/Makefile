@@ -15,8 +15,7 @@ COMMENT=	GNU Binutils for Windows cross-development
 
 BINUTILVERSION=	2.24
 
-USE_BZIP2=	yes
-USES=		gmake iconv
+USES=		gmake iconv tar:bzip2
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--target=${PKGNAMEPREFIX:S/-$//} \
 		--with-gcc --with-gnu-ld --with-gnu-as \

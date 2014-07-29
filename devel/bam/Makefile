@@ -11,8 +11,7 @@ COMMENT=	Fast and flexible build system using Lua
 
 LICENSE=	ZLIB
 
-USES=		compiler
-USE_BZIP2=	yes
+USES=		compiler tar:bzip2
 
 PLIST_FILES=	bin/bam
 

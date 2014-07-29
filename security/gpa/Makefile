@@ -17,8 +17,7 @@ LIB_DEPENDS=	libassuan.so:${PORTSDIR}/security/libassuan \
 BUILD_DEPENDS=	gpgv2:${PORTSDIR}/security/gnupg
 RUN_DEPENDS=	gpgv2:${PORTSDIR}/security/gnupg
 
-USES=		gmake pkgconfig
-USE_BZIP2=	yes
+USES=		gmake pkgconfig tar:bzip2
 USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	GPGKEYS_LDAP="${LOCALBASE}/libexec/gpg2keys_ldap" \

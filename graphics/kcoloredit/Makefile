@@ -11,10 +11,9 @@ DIST_SUBDIR=	KDE/extragear
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Palette files editor for KDE
 
-USE_BZIP2=	yes
 USE_KDE4=	kdelibs kdeprefix kdehier automoc4
 USE_QT4=	corelib qmake_build moc_build rcc_build uic_build
-USES=		cmake
+USES=		cmake tar:bzip2
 
 APP_VER=	2.0.0
 EXTRA_VER=	4.4.0

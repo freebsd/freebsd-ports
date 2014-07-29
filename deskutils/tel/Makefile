@@ -10,8 +10,7 @@ MASTER_SITES=	CENKES BERLIOS
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Little console-based phone book manager
 
-USE_BZIP2=	yes
-USES=		gettext
+USES=		gettext tar:bzip2
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
 NO_STAGE=	yes

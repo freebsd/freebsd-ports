@@ -11,9 +11,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Showing moving blobs
 
 USE_XORG=	xpm
-USE_BZIP2=	yes
 USE_GNOME=	gtk20
-USES=		pkgconfig
+USES=		pkgconfig tar:bzip2
 GNU_CONFIGURE=	yes
 
 PLIST_FILES=	bin/wmblob man/man1/wmblob.1.gz

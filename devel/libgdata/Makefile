@@ -13,9 +13,8 @@ COMMENT=	GLib based implementation of the GData protocol
 
 LIB_DEPENDS=	libsoup-gnome-2.4.so:${PORTSDIR}/devel/libsoup-gnome
 
-USE_BZIP2=	yes
 USE_LDCONFIG=	yes
-USES=		gettext gmake libtool:keepla pathfix pkgconfig
+USES=		gettext gmake libtool:keepla pathfix pkgconfig tar:bzip2
 GNU_CONFIGURE=	yes
 USE_GNOME=	glib20 intltool introspection:build
 CPPFLAGS+=	-I${LOCALBASE}/include 

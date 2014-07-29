@@ -12,9 +12,8 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Implementation of the FreeDesktop Desktop Menu Spec
 
-USE_BZIP2=	yes
 USE_GNOME=	gnomeprefix intlhack glib20 ltverhack introspection:build
-USES=		pkgconfig gettext gmake pathfix
+USES=		pkgconfig gettext gmake pathfix tar:bzip2
 USE_AUTOTOOLS=	libtool
 USE_PYTHON=	2
 USE_LDCONFIG=	yes

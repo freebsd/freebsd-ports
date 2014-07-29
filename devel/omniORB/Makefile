@@ -12,8 +12,7 @@ PLIST_SUB+=	SONUM=${PORTVERSION:C/.*\.//}
 GNU_CONFIGURE=	yes
 USE_PYTHON=	yes
 USE_OPENSSL=	yes
-USES=		gmake pkgconfig
-USE_BZIP2=	yes
+USES=		gmake pkgconfig tar:bzip2
 USE_LDCONFIG=	yes
 MAKEFILE=	GNUmakefile
 CONFIGURE_ENV+=	PYTHON=${PYTHON_CMD}

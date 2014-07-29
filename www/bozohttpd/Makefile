@@ -12,14 +12,13 @@ COMMENT=	The bozotic HTTP server
 
 LICENSE=	BSD2CLAUSE
 
-USE_BZIP2=	YES
 USE_RC_SUBR=	bozohttpd
 
 #options handling
 OPTIONS_DEFINE=		HTPASSWD SSL CGI
 OPTIONS_DEFAULT=	SSL CGI
 
-USES=		uidfix
+USES=		uidfix tar:bzip2
 
 HTPASSWD_DESC=		Enable htpassword support
 SSL_DESC=		Enable SSL support

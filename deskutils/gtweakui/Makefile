@@ -12,8 +12,7 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Collection of simple dialogs as a front end to GConf
 
-USE_BZIP2=	yes
-USES=		gmake pathfix pkgconfig
+USES=		gmake pathfix pkgconfig tar:bzip2
 USE_GNOME=	gnomeprefix libgnomeui gconf2 libglade2 intlhack
 GNU_CONFIGURE=	yes
 

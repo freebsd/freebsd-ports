@@ -12,8 +12,7 @@ COMMENT=	Combination of R1Q2 and R1GL with SDL code from Quake2Forge
 
 LIB_DEPENDS=	libexecinfo.so:${PORTSDIR}/devel/libexecinfo
 
-USE_BZIP2=	yes
-USES=		gmake
+USES=		gmake tar:bzip2
 
 OPTIONS_DEFINE=	CLIENT DEDICATED GAME
 OPTIONS_DEFAULT=	CLIENT DEDICATED

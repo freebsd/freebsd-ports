@@ -12,8 +12,7 @@ COMMENT=	LaTeX source editor for KDE4
 
 LICENSE=	GPLv2 # (or later)
 
-USE_BZIP2=	yes
-USES=		cmake
+USES=		cmake tar:bzip2
 USE_KDE4=	automoc4 kate kdelibs kdeprefix
 USE_QT4=	moc_build qmake_build rcc_build uic_build
 

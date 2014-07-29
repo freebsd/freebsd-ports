@@ -13,8 +13,7 @@ DIST_SUBDIR=	${PORTNAME}
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Lightweight library for vector and matrix math
 
-USE_BZIP2=	yes
-USES=		cmake
+USES=		cmake tar:bzip2
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTNAME}-b23437e61a07
 

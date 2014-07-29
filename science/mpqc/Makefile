@@ -11,9 +11,8 @@ MAINTAINER=	maho@FreeBSD.org
 COMMENT=	The massively parallel quantum computing library and program
 
 GNU_CONFIGURE=	yes
-USES=		fortran gmake perl5
+USES=		fortran gmake perl5 tar:bzip2
 USE_AUTOTOOLS=	autoconf
-USE_BZIP2=	yes
 USE_LDCONFIG=	yes
 
 OPTIONS_DEFINE=	DOCS

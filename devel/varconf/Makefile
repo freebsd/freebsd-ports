@@ -15,8 +15,7 @@ LIB_DEPENDS=	libsigc-2.0.so:${PORTSDIR}/devel/libsigc++20
 OPTIONS_DEFINE=	DOCS
 
 GNU_CONFIGURE=	yes
-USE_BZIP2=	yes
-USES=		compiler:c++11-lib libtool:keepla pathfix pkgconfig
+USES=		compiler:c++11-lib libtool:keepla pathfix pkgconfig tar:bzip2
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
 

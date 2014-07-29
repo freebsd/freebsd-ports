@@ -11,8 +11,7 @@ COMMENT=	Configuration file parser generator
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/flex:${PORTSDIR}/textproc/flex
 
-USE_BZIP2=	yes
-USES=		bison perl5 gmake
+USES=		bison perl5 gmake tar:bzip2
 DATE=		20120801
 MAKE_ARGS+=	FLEX=${LOCALBASE}/bin/flex
 MAKE_JOBS_UNSAFE=yes

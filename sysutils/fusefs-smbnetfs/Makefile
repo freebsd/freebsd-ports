@@ -22,8 +22,7 @@ GNOME_KEYRING_LIB_DEPENDS=	libgnome-keyring.so:${PORTSDIR}/security/libgnome-key
 
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}-${PORTVERSION}
 
-USE_BZIP2=	yes
-USES=		fuse iconv pkgconfig
+USES=		fuse iconv pkgconfig tar:bzip2
 
 GNU_CONFIGURE=	yes
 CFLAGS+=	-I${LOCALBASE}/include

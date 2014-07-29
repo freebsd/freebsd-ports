@@ -11,8 +11,7 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Version of the popular TetriNET multiplayer Tetris clone
 
-USE_BZIP2=	yes
-USES=		pathfix gettext gmake pkgconfig
+USES=		pathfix gettext gmake pkgconfig tar:bzip2
 USE_GNOME=	esound gnomeprefix libgnomeui
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include

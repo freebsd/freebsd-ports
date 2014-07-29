@@ -16,8 +16,7 @@ COMMENT=	Easier, more portable Modula-3 distribution for building CVSup
 
 NO_STAGE=	yes
 
-USES=		gmake
-USE_BZIP2=	yes
+USES=		gmake tar:bzip2
 
 .include <bsd.port.pre.mk>
 

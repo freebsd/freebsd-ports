@@ -9,8 +9,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/7.1.0
 MAINTAINER=	nobutaka@FreeBSD.org
 COMMENT=	dd program useful for computer forensics
 
-USE_BZIP2=	yes
-USES=		gettext iconv gmake
+USES=		gettext iconv gmake tar:bzip2
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib

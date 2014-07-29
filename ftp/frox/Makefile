@@ -14,8 +14,7 @@ COMMENT=	Transparent FTP proxy with caching support
 
 LICENSE=	GPLv2
 
-USES=		gmake
-USE_BZIP2=	yes
+USES=		gmake tar:bzip2
 GNU_CONFIGURE=	yes
 
 USE_RC_SUBR=	frox

@@ -13,10 +13,9 @@ COMMENT=	Fast, stable, compatible, and secure Quake II client
 
 LICENSE=	GPLv2
 
-USE_BZIP2=	yes
 USE_SDL=	sdl
 USE_GL=		glut
-USES=		dos2unix
+USES=		dos2unix tar:bzip2
 DOS2UNIX_FILES=	src/vanctf/g_local.h
 
 GNU_CONFIGURE=	yes

@@ -13,8 +13,7 @@ COMMENT=	Corewars evolver - generates warriors using genetic algorithms
 
 LICENSE=	GPLv1 # (or later)
 
-USE_BZIP2=	yes
-USES=		gmake dos2unix
+USES=		gmake dos2unix tar:bzip2
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 OPTIONS_DEFINE=	VISITOOL
