@@ -1,6 +1,6 @@
---- configure.orig	2013-01-30 18:44:11.000000000 +0100
-+++ configure	2013-04-20 10:54:05.213563665 +0200
-@@ -4680,9 +4680,9 @@
+--- configure.orig	2014-06-21 01:12:25.000000000 +0200
++++ configure	2014-07-30 00:01:20.820891824 +0200
+@@ -4720,9 +4720,9 @@
  astheaderdir='${includedir}/asterisk'
  astlibdir='${libdir}/asterisk'
  astmandir='${mandir}'
@@ -12,7 +12,7 @@
  astkeydir='${astvarlibdir}'
  astspooldir='${localstatedir}/spool/asterisk'
  astlogdir='${localstatedir}/log/asterisk'
-@@ -4705,8 +4705,6 @@
+@@ -4745,8 +4745,6 @@
  case "${host_os}" in
       freebsd*)
       ac_default_prefix=/usr/local
@@ -21,7 +21,7 @@
       ;;
       openbsd*)
       ac_default_prefix=/usr/local
-@@ -18262,6 +18260,8 @@
+@@ -18493,6 +18491,8 @@
  
  	cat confdefs.h - <<_ACEOF >conftest.$ac_ext
  /* end confdefs.h.  */
@@ -30,7 +30,7 @@
   #include <ifaddrs.h>
  int
  main ()
-@@ -25941,7 +25941,7 @@
+@@ -26268,7 +26268,7 @@
  
  	fi
  
@@ -39,3 +39,81 @@
  
  	if test "${HAS_OPENH323:-unset}" != "unset"; then
  	   { $as_echo "$as_me:${as_lineno-$LINENO}: checking OpenH323 installation validity" >&5
+@@ -26366,13 +26366,13 @@
+       ast_ext_lib_check_save_CFLAGS="${CFLAGS}"
+       CFLAGS="${CFLAGS} "
+       as_ac_Lib=`$as_echo "ac_cv_lib_lua5.2_${pbxfuncname}" | $as_tr_sh`
+-{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for ${pbxfuncname} in -llua5.2" >&5
+-$as_echo_n "checking for ${pbxfuncname} in -llua5.2... " >&6; }
++{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for ${pbxfuncname} in -llua-5.2" >&5
++$as_echo_n "checking for ${pbxfuncname} in -llua-5.2... " >&6; }
+ if eval \${$as_ac_Lib+:} false; then :
+   $as_echo_n "(cached) " >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-llua5.2 ${pbxlibdir} -lm $LIBS"
++LIBS="-llua-5.2 ${pbxlibdir} -lm $LIBS"
+ cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+ /* end confdefs.h.  */
+ 
+@@ -26414,18 +26414,18 @@
+ 
+    # now check for the header.
+    if test "${AST_LUA_FOUND}" = "yes"; then
+-      LUA_LIB="${pbxlibdir} -llua5.2 -lm"
++      LUA_LIB="${pbxlibdir} -llua-5.2 -lm"
+       # if --with-LUA=DIR has been specified, use it.
+       if test "x${LUA_DIR}" != "x"; then
+          LUA_INCLUDE="-I${LUA_DIR}/include"
+       fi
+       LUA_INCLUDE="${LUA_INCLUDE} "
+-      if test "xlua5.2/lua.h" = "x" ; then	# no header, assume found
++      if test "xlua52/lua.h" = "x" ; then	# no header, assume found
+          LUA_HEADER_FOUND="1"
+       else				# check for the header
+          ast_ext_lib_check_saved_CPPFLAGS="${CPPFLAGS}"
+          CPPFLAGS="${CPPFLAGS} ${LUA_INCLUDE}"
+-         ac_fn_c_check_header_mongrel "$LINENO" "lua5.2/lua.h" "ac_cv_header_lua5_2_lua_h" "$ac_includes_default"
++         ac_fn_c_check_header_mongrel "$LINENO" "lua52/lua.h" "ac_cv_header_lua5_2_lua_h" "$ac_includes_default"
+ if test "x$ac_cv_header_lua5_2_lua_h" = xyes; then :
+   LUA_HEADER_FOUND=1
+ else
+@@ -26478,13 +26478,13 @@
+       ast_ext_lib_check_save_CFLAGS="${CFLAGS}"
+       CFLAGS="${CFLAGS} "
+       as_ac_Lib=`$as_echo "ac_cv_lib_lua5.1_${pbxfuncname}" | $as_tr_sh`
+-{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for ${pbxfuncname} in -llua5.1" >&5
+-$as_echo_n "checking for ${pbxfuncname} in -llua5.1... " >&6; }
++{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for ${pbxfuncname} in -llua-5.1" >&5
++$as_echo_n "checking for ${pbxfuncname} in -llua-5.1... " >&6; }
+ if eval \${$as_ac_Lib+:} false; then :
+   $as_echo_n "(cached) " >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-llua5.1 ${pbxlibdir} -lm $LIBS"
++LIBS="-llua-5.1 ${pbxlibdir} -lm $LIBS"
+ cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+ /* end confdefs.h.  */
+ 
+@@ -26526,18 +26526,18 @@
+ 
+    # now check for the header.
+    if test "${AST_LUA_FOUND}" = "yes"; then
+-      LUA_LIB="${pbxlibdir} -llua5.1 -lm"
++      LUA_LIB="${pbxlibdir} -llua-5.1 -lm"
+       # if --with-LUA=DIR has been specified, use it.
+       if test "x${LUA_DIR}" != "x"; then
+          LUA_INCLUDE="-I${LUA_DIR}/include"
+       fi
+       LUA_INCLUDE="${LUA_INCLUDE} "
+-      if test "xlua5.1/lua.h" = "x" ; then	# no header, assume found
++      if test "xlua51/lua.h" = "x" ; then	# no header, assume found
+          LUA_HEADER_FOUND="1"
+       else				# check for the header
+          ast_ext_lib_check_saved_CPPFLAGS="${CPPFLAGS}"
+          CPPFLAGS="${CPPFLAGS} ${LUA_INCLUDE}"
+-         ac_fn_c_check_header_mongrel "$LINENO" "lua5.1/lua.h" "ac_cv_header_lua5_1_lua_h" "$ac_includes_default"
++         ac_fn_c_check_header_mongrel "$LINENO" "lua51/lua.h" "ac_cv_header_lua5_1_lua_h" "$ac_includes_default"
+ if test "x$ac_cv_header_lua5_1_lua_h" = xyes; then :
+   LUA_HEADER_FOUND=1
+ else
