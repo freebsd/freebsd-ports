@@ -1,103 +1,87 @@
-# Created by: roland.jesse@gmx.net
+# Created by: Roland Jesse <roland.jesse@gmx.net>
 # $FreeBSD$
 
-PORTNAME=		squeak
-PORTVERSION=		4.10.2
-CATEGORIES=		lang
-##################################################
-MASTER_SITES=		http://www.squeakvm.org/unix/release/:vmsrc \
-			http://ftp.squeak.org/${IMAGEVERSION}/:src \
-			ftp://squeak.org/4.1/:sqsrc \
-			http://squeak.610t.org/patches/:mainsrc
-DISTFILES=		Squeak-${VM_VERSION}-src${EXTRACT_SUFX}:vmsrc \
-			Squeak${IMAGEVERSION}.zip:src \
-			${SQUEAK_SRC}.gz:sqsrc
-EXTRACT_ONLY=		Squeak-${VM_VERSION}-src${EXTRACT_SUFX}
+PORTNAME=	squeak
+PORTVERSION=	4.10.2
+CATEGORIES=	lang
+MASTER_SITES=	http://www.squeakvm.org/unix/release/:vmsrc \
+		http://ftp.squeak.org/${IMAGE_VERSION}/:src \
+		ftp://squeak.org/4.1/:sqsrc \
+		http://squeak.610t.org/patches/:mainsrc
+DISTFILES=	Squeak-${VM_VERSION}-src${EXTRACT_SUFX}:vmsrc \
+		Squeak${IMAGE_VERSION}.zip:src \
+		${SQUEAK_SRC}.gz:sqsrc
+EXTRACT_ONLY=	Squeak-${VM_VERSION}-src${EXTRACT_SUFX}
+DIST_SUBDIR=	squeak
 
-##################################################
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=		Full Smalltalk 80 with portability to UNIX, Mac, and Windows
+COMMENT=	Full Smalltalk 80 with portability to Unix, Mac, and Windows
 
-LICENSE=		APACHE20 MIT
-LICENSE_COMB=		multi
+LICENSE=	APACHE20 MIT
+LICENSE_COMB=	multi
 
 # Don't set USE_ZIP as this breaks EXTRACT_CMD.
-BUILD_DEPENDS=		${UNZIP_CMD}:${PORTSDIR}/archivers/unzip \
-			cmake:${PORTSDIR}/devel/cmake \
-			v4l_compat>=1.0.20120501:${PORTSDIR}/multimedia/v4l_compat
-LIB_DEPENDS=		libaudio.so:${PORTSDIR}/audio/nas \
-			libffi.so:${PORTSDIR}/devel/libffi \
-			libasound.so:${PORTSDIR}/audio/alsa-lib \
-			libpulse-simple.so:${PORTSDIR}/audio/pulseaudio \
-			libgstreamer.so:${PORTSDIR}/multimedia/gstreamer \
-			libv4l2.so:${PORTSDIR}/multimedia/libv4l
+BUILD_DEPENDS=	${UNZIP_CMD}:${PORTSDIR}/archivers/unzip \
+		cmake:${PORTSDIR}/devel/cmake \
+		v4l_compat>=1.0.20120501:${PORTSDIR}/multimedia/v4l_compat
+LIB_DEPENDS=	libaudio.so:${PORTSDIR}/audio/nas \
+		libffi.so:${PORTSDIR}/devel/libffi \
+		libasound.so:${PORTSDIR}/audio/alsa-lib \
+		libpulse-simple.so:${PORTSDIR}/audio/pulseaudio \
+		libv4l2.so:${PORTSDIR}/multimedia/libv4l
 
-##################################################
-VM_VERSION=		${PORTVERSION}.${SVNVERSION}
-SVNVERSION=		2614
-IMAGEVERSION=		4.3
-SQUEAK_SRC=		SqueakV41.sources
-SQUEAK_LIB_DIR=		${PORTVERSION}-${SVNVERSION}
-USES=			pkgconfig
+ONLY_FOR_ARCHS=	i386 amd64 powerpc
 
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
+USES=		pkgconfig
+USE_GCC=	any
+USE_GL=		gl
+HAS_CONFIGURE=	yes
+USE_GSTREAMER=	yes
+VM_VERSION=	${PORTVERSION}.${SVN_VERSION}
+SVN_VERSION=	2614
+IMAGE_VERSION=	4.3
+SQUEAK_SRC=	SqueakV41.sources
+SQUEAK_LIB_DIR=	${PORTVERSION}-${SVN_VERSION}
 
-##################################################
-DIST_SUBDIR=		squeak
-ONLY_FOR_ARCHS=		i386 amd64 powerpc
-MAN1=			squeak.1
-USE_GCC=		any
-USE_GL=			gl
-HAS_CONFIGURE=		yes
-
-# Plugin image must be writable, because of it copy to user's ~/.npsqueak/ and
-# be updated.
-SHAREMODE=		644
-
-# shared Libaries are to be installed in:
-LDCONFIG_DIRS=		${PREFIX}/lib/squeak/${VM_VERSION}
-
-IMAGES=		Squeak${IMAGEVERSION}/Squeak${IMAGEVERSION}.image \
-		Squeak${IMAGEVERSION}/Squeak${IMAGEVERSION}.changes
-
-##################################################
-# Configure and Build
 WRKSRC=			${WRKDIR}/Squeak-${VM_VERSION}-src
 CONFIGURE_WRKSRC=	${WRKSRC}/build
 BUILD_WRKSRC=		${CONFIGURE_WRKSRC}
 INSTALL_WRKSRC=		${CONFIGURE_WRKSRC}
 CONFIGURE_SCRIPT=	../unix/cmake/configure
-CONFIGURE_ARGS+=	--prefix=${PREFIX}
-
+CONFIGURE_ARGS=		--prefix=${PREFIX}
 CMAKE_SOURCE_PATH=	../unix
 
-SUB_FILES=		pkg-message
-SUB_LIST=		SQUEAK_LIB_DIR=${SQUEAK_LIB_DIR}
+SUB_FILES=	pkg-message
+SUB_LIST=	SQUEAK_LIB_DIR=${SQUEAK_LIB_DIR}
+PLIST_SUB=	SQUEAK_LIB_DIR=${SQUEAK_LIB_DIR}
 
-PLIST_SUB=		SQUEAK_LIB_DIR=${SQUEAK_LIB_DIR}
+# Plugin image must be writable, because of it copy to user's ~/.npsqueak/ and
+# be updated.
+SHAREMODE=	644
 
-##################################################
+IMAGES=		Squeak${IMAGE_VERSION}/Squeak${IMAGE_VERSION}.image \
+		Squeak${IMAGE_VERSION}/Squeak${IMAGE_VERSION}.changes
+
+.include <bsd.port.pre.mk>
+
 post-patch:
-
 # Fix utmp.h
 .if ${OSVERSION} > 900007
-	@${REINPLACE_CMD} \
-		-e "s,<utmp.h>,<utmpx.h>,g" \
+	@${REINPLACE_CMD} -e 's,<utmp.h>,<utmpx.h>,' \
 		${WRKSRC}/unix/plugins/PseudoTTYPlugin/openpty.h
 .endif
 
-##################################################
 pre-configure:
 	@${MKDIR} ${CONFIGURE_WRKSRC}
 
-##################################################
 post-install:
-	${GUNZIP_CMD} -c ${DISTDIR}/${DIST_SUBDIR}/${SQUEAK_SRC}.gz > ${WRKDIR}/${SQUEAK_SRC} && ${INSTALL_DATA} ${WRKDIR}/${SQUEAK_SRC} ${PREFIX}/lib/squeak/${SQUEAK_LIB_DIR}/
-	(cd ${DISTDIR}/${DIST_SUBDIR} && ${UNZIP_CMD} -u Squeak${IMAGEVERSION}.zip -d ${WRKDIR})
-.for f in ${IMAGES}
-	(cd ${WRKDIR} && ${INSTALL_DATA} ${f} ${PREFIX}/lib/squeak/)
-.endfor
-	@${CAT} ${PKGMESSAGE}
+	${GUNZIP_CMD} -c ${DISTDIR}/${DIST_SUBDIR}/${SQUEAK_SRC}.gz > \
+		${WRKDIR}/${SQUEAK_SRC} && ${INSTALL_DATA} \
+		${WRKDIR}/${SQUEAK_SRC} \
+			${STAGEDIR}${PREFIX}/lib/squeak/${SQUEAK_LIB_DIR}
+	(cd ${DISTDIR}/${DIST_SUBDIR} && ${UNZIP_CMD} -u \
+		Squeak${IMAGE_VERSION}.zip -d ${WRKDIR})
+	${INSTALL_DATA} ${IMAGES:S,^,${WRKDIR}/,} \
+		${STAGEDIR}${PREFIX}/lib/squeak
 
 .include <bsd.port.post.mk>
