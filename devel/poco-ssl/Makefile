@@ -23,7 +23,8 @@ CONFIGURE_ARGS=	--prefix=${PREFIX} --config=FreeBSD
 USE_LDCONFIG=	yes
 
 OPTIONS_DEFINE=	TEST SAMPLES MYSQL SQLITE ODBC
-OPTIONS_DEFAULT=	MYSQL SQLITE
+OPTIONS_DEFAULT=MYSQL SQLITE
+OPTIONS_SUB=	yes
 SAMPLES_DESC=	Build sample programs
 
 TEST_CONFIGURE_OFF=	--no-tests
@@ -37,5 +38,19 @@ MYSQL_CONFIGURE_OFF=	--omit=Data/MySQL
 
 SQLITE_USE=		SQLITE=yes
 SQLITE_CONFIGURE_OFF=	--omit=Data/SQLite
+
+.include <bsd.port.options.mk>
+
+post-patch:
+.if empty(PORT_OPTIONS:MTEST)
+	@${REINPLACE_CMD} -e '/^all:/s/tests//' ${WRKSRC}/Makefile
+.endif
+.if empty(PORT_OPTIONS:MSAMPLES)
+	@${REINPLACE_CMD} -e '/^all:/s/samples//' ${WRKSRC}/Makefile
+.endif
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/*d
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/*d.so.*
 
 .include <bsd.port.mk>
