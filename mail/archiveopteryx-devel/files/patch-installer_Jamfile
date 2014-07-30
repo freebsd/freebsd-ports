@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- installer/Jamfile.orig
++++ installer/Jamfile
+@@ -5,7 +5,7 @@
+ Build installer : installer.cpp ;
+ 
+ ObjectDefines installer.cpp :
+-     LIBDIR='\"$(LIBDIR)\"'
++     LIBDIR='\"$(LIBDATADIR)\"'
+      CONFIGDIR='\"$(CONFIGDIR)\"'
+      LOGFILE='\"$(LOGFILE)\"'
+      LOGFILEMODE='\"$(LOGFILEMODE)\"'
