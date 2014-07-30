@@ -3,6 +3,7 @@
 
 PORTNAME=	libvanessa_socket
 PORTVERSION=	0.0.12
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://horms.net/projects/vanessa/download/vanessa_socket/${PORTVERSION}/
 DISTNAME=	vanessa_socket-${PORTVERSION}
@@ -13,8 +14,7 @@ COMMENT=	Library that provides a simple layer for TCP/IP socket operations
 LIB_DEPENDS=	libvanessa_logger.so:${PORTSDIR}/devel/libvanessa_logger \
 		libpopt.so:${PORTSDIR}/devel/popt
 
-USE_AUTOTOOLS=	libtool
-USES=	pathfix tar:bzip2
+USES=		libtool pathfix tar:bzip2
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 
