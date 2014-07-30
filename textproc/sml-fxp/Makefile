@@ -36,12 +36,12 @@ RUN_DEPENDS+=	xvcg:${PORTSDIR}/graphics/vcg
 
 .if ${PORT_OPTIONS:MSTABILITATION} || empty(PORT_OPTIONS:MMLTON)
 .if ${PORT_OPTIONS:MDEVEL}
-BUILD_DEPENDS+=	smlnj-devel>=110.65:${PORTSDIR}/lang/sml-nj-devel
+BUILD_DEPENDS+=	smlnj>=110.65:${PORTSDIR}/lang/smlnj
 
 MAKE_ENV+=	SMLNJ_DEVEL=yes
 .else
-BUILD_DEPENDS+=	smlnj>=0:${PORTSDIR}/lang/sml-nj
-RUN_DEPENDS+=	smlnj>=0:${PORTSDIR}/lang/sml-nj
+BUILD_DEPENDS+=	smlnj>=0:${PORTSDIR}/lang/smlnj
+RUN_DEPENDS+=	smlnj>=0:${PORTSDIR}/lang/smlnj
 
 MAKE_ENV+=	SMLNJ=yes
 .endif
@@ -69,7 +69,7 @@ PLIST_SUB+=	STABLE="@comment " STABLE_DEVEL="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MSTABILITATION} || !empty(PORT_OPTIONS:MDEVEL)
-RUN_DEPENDS+=	smlnj-devel>=110.65:${PORTSDIR}/lang/sml-nj-devel
+RUN_DEPENDS+=	smlnj>=110.65:${PORTSDIR}/lang/smlnj
 .endif
 
 .if ${PORT_OPTIONS:MMLTON}
