@@ -14,16 +14,17 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Configuration database system for GNOME
 
-
 LICENSE=	LGPL20
 LICENSE_FILE=	${WRKSRC}/COPYING
+
+USES=		tar:bzip2
 
 .if !defined(REFERENCE_PORT)
 
 LIB_DEPENDS=	libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib \
 		libpolkit-gobject-1.so:${PORTSDIR}/sysutils/polkit
 
-USES=		pathfix gettext gmake pkgconfig tar:bzip2
+USES+=		pathfix gettext gmake pkgconfig
 USE_GNOME=	gnomehier orbit2 gtk20 libxml2 ltverhack \
 		referencehack intlhack dconf introspection:build
 USE_LDCONFIG=	yes
