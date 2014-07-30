@@ -42,6 +42,7 @@ CONFIGURE_ARGS=	--docdir=${DOCSDIR} \
 		--with-lmdb=${LOCALBASE} \
 		--enable-fhs
 
+BUILD_DEPENDS+=	${LOCALBASE}/include/pcre.h:${PORTSDIR}/devel/pcre
 LIB_DEPENDS+=	libpcre.so:${PORTSDIR}/devel/pcre \
 		liblmdb.so:${PORTSDIR}/databases/lmdb
 
