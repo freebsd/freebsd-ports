@@ -1,0 +1,11 @@
+--- config/_arch-n-opsys.orig	2012-07-28 05:32:38.000000000 +0200
++++ config/_arch-n-opsys	2013-06-12 21:46:19.925992679 +0200
+@@ -83,6 +83,8 @@
+     HEAP_OPSYS=bsd
+     case `uname -m` in
+       *86) ARCH=x86;;
++    # Fall back to x86 compatibility mode.
++      amd64) ARCH=x86;;
+       *) exit 1;;
+     esac
+     ;;
