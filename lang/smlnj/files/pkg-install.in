@@ -1,7 +1,7 @@
 #!/bin/sh
 # This file was automatically created - don't modify it!
 #%%SOURCEINFO-START%%
-# source version: $Id: pkg-install.in,v 1.17 2007/08/30 13:09:47 joemann Exp $
+# source version: $Id: $
 # installed by port/package: %%SOURCEINFO-PACKAGE%%
 # installed from file: %%SOURCEINFO-FILE%%
 #%%SOURCEINFO-END%%
@@ -138,10 +138,22 @@ which() {
 
 #%%PKG-INSTALL-START%%
 install_self_to() {
-	local pkgname myself target oldversion
+	local pkgname myself target oldversion tmpfile tmpfile_gz
 	PREFIX="$1"
 	pkgname="$2"
-	myself=`realpath "$0"`
+	if [ "$0" = "/bin/sh" ]
+	then	# We're stdin of a shell (installation from binary package).
+		# Recover original script from its b64encoded compressed source.
+		tmpfile=`mktemp "/tmp/$ME.XXXXXX"`
+		tmpfile_gz=`mktemp "/tmp/$ME.gz.XXXXXX"`
+		trap "rm -f $tmpfile $tmpfile_gz" EXIT
+		b64decode -p > $tmpfile_gz << '~EOF~'
+~EOF~
+		gunzip -cf $tmpfile_gz > $tmpfile || die "decompression of script source for $ME failed."
+		myself=$tmpfile
+	else
+		myself=`realpath "$0"`
+	fi
 	target="$PREFIX/bin/$ME"
 	MYSELF_INSTALLED="$target"
 	if [ -e "$target" ]
@@ -158,11 +170,11 @@ install_self_to() {
 			then
 				oldmd5=`sed -e '/^#%%PKG-INSTALL-START%%$/,/^#%%PKG-INSTALL-END%%$/d' \
 	    					-e '/^#%%SOURCEINFO-START%%$/,/^#%%SOURCEINFO-END%%$/d' \
-	    					-e 's?%%PREFIX%%?'"$PREFIX"'?g' "$target" | \
+	    					-e 's?\%\%PREFIX\%\%?'"$PREFIX"'?g' "$target" | \
 				        md5 -q`
 				newmd5=`sed -e '/^#%%PKG-INSTALL-START%%$/,/^#%%PKG-INSTALL-END%%$/d' \
 	    					-e '/^#%%SOURCEINFO-START%%$/,/^#%%SOURCEINFO-END%%$/d' \
-	    					-e 's?%%PREFIX%%?'"$PREFIX"'?g' "$myself" | \
+	    					-e 's?\%\%PREFIX\%\%?'"$PREFIX"'?g' "$myself" | \
 				       md5 -q`
 				if [ "$newmd5" = "$oldmd5" ]
 				then
@@ -180,10 +192,10 @@ install_self_to() {
 	if sed -e '/^#%%PKG-INSTALL-START%%$/,/^#%%PKG-INSTALL-END%%$/d' \
 	       -e 's?%%SOURCEINFO-PACKAGE%%?'"$pkgname"'?g' \
 	       -e 's?%%SOURCEINFO-FILE%%?'"$myself"'?g' \
-	       -e 's?%%PREFIX%%?'"$PREFIX"'?g' "$0" > "$target" && \
+	       -e 's?\%\%PREFIX\%\%?'"$PREFIX"'?g' "$myself" > "$target" && \
 	   chmod +x "$target"
 	then
-		say "$0 (version $VERSION) installed as $target."
+		say "$myself (version $VERSION) installed as $target."
 		return
 	else
 		die "failed to install $ME (version $VERSION) as $target."

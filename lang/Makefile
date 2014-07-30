@@ -305,8 +305,7 @@
     SUBDIR += slisp
     SUBDIR += smalltalk
     SUBDIR += sml-mode.el
-    SUBDIR += sml-nj
-    SUBDIR += sml-nj-devel
+    SUBDIR += smlnj
     SUBDIR += snobol4
     SUBDIR += spidermonkey17
     SUBDIR += spidermonkey170

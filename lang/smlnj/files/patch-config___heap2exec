@@ -1,0 +1,33 @@
+--- config/_heap2exec	2006-04-20 17:28:53.000000000 +0200
++++ config/_heap2exec	2013-06-14 22:18:55.050990989 +0200
+@@ -83,6 +83,7 @@
+ A_PROG=
+ A_FLAGS=
+ A_LIBS=
++AS_FLAGS=
+ 
+ case ${OPSYS} in
+ 	darwin)
+@@ -96,6 +97,13 @@
+ 		A_PROG=${CC}
+ 		A_FLAGS=-Wl,--export-dynamic
+ 		A_LIBS=-lm
++		case `uname -m` in
++			amd64)
++				SO_FLAGS="${SO_FLAGS} -m32"
++				A_FLAGS="${A_FLAGS} -m32"
++				AS_FLAGS="${AS_FLAGS} -m32"
++				;;
++		esac
+ 		;;
+ 	linux)
+ 		SO_PROG=${CC}
+@@ -116,7 +124,7 @@
+ RESULT=0
+ if ${H2A} "$heapfile" "$execfile".s ; then
+ 	if [ -f "$execfile".s ] ; then
+-		if ${CC} -c -o "$execfile".o "$execfile".s ; then
++		if ${CC} -c ${AS_FLAGS} -o "$execfile".o "$execfile".s ; then
+ 			rm "$execfile".s
+ 		else
+ 			rm "$execfile".s
