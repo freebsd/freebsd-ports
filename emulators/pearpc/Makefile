@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pearpc
-PORTVERSION=	0.4
-PORTREVISION=	5
+PORTVERSION=	0.5
 CATEGORIES=	emulators
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}.0
 
@@ -12,61 +11,50 @@ COMMENT=	PowerPC architecture emulator
 
 LICENSE=	GPLv2
 
-GNU_CONFIGURE=	yes
+USES=		tar:bzip2
 USE_XORG=	x11
-MAN1=		ppc.1
-SUB_FILES=	pkg-message
+GNU_CONFIGURE=	yes
 
-PLIST_FILES=	bin/ppc etc/ppccfg.example %%DATADIR%%/video.x
+BROKEN_ia64=	Internal compiler error on ia64
+
+PORTEXAMPLES=	ppccfg.example
+PLIST_FILES=	bin/ppc man/man1/ppc.1.gz %%DATADIR%%/video.x
 PLIST_DIRS=	%%DATADIR%%
 
-OPTIONS_DEFINE=	SDL OPTIMIZED_CFLAGS DEBUG
-SDL_DESC=	Use SDL for user interface
+OPTIONS_DEFINE=		DEBUG EXAMPLES OPTIMIZED_CFLAGS SDL
 
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
+DEBUG_CONFIGURE_ENABLE=	debug
+OPTIMIZED_CFLAGS_CFLAGS=	-O3 -ffast-math
+OPTIMIZED_CFLAGS_CONFIGURE_ENABLE=	fpo
+SDL_USE=		sdl=sdl
+SDL_CONFIGURE_ON=	--enable-ui=sdl
+SDL_CONFIGURE_OFF=	--enable-ui=x11
 
-.if ${ARCH} == "ia64"
-BROKEN=		Internal compiler error on ia64
-.endif
+.include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MSDL}
-CONFIGURE_ARGS+=	--enable-ui=sdl
-USE_SDL=	sdl
-.else
-CONFIGURE_ARGS+=	--enable-ui=x11
-.endif
-
-.if ${PORT_OPTIONS:MOPTIMIZED_CFLAGS}
-CFLAGS+=	-O3 -ffast-math
-.else
-CONFIGURE_ARGS+=	--disable-fpo
-.endif
-
-.if ${PORT_OPTIONS:MDEBUG}
-CONFIGURE_ARGS+=	--enable-profiling	# implies --enable-debug
-.endif
-
-.if ${ARCH} == "i386"
-BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm
-CONFIGURE_ARGS+=	--enable-cpu=jitc_x86
+.if ${ARCH} == "amd64" || ${ARCH} == "i386"
+USE_GCC=	yes
 .else
 CONFIGURE_ARGS+=	--enable-cpu=generic
 .endif
 
-post-extract:
-	@${REINPLACE_CMD} -e 's|-g -O2||;s|-O2||' ${WRKSRC}/configure
-	@${REINPLACE_CMD} -e 's|PROCESS_CPUTIME|THREAD_CPUTIME|' \
+post-patch:
+	@${REINPLACE_CMD} -e \
+		's|-O3|| ; \
+		 s|^\(x86_64\)|amd64\* \| \1| ; \
+		 s|-g -O2||' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e \
+		 's|video\.x"|${DATADIR}/&|' ${WRKSRC}/ppccfg.example
+	@${REINPLACE_CMD} -e \
+		's|PROCESS_CPUTIME|THREAD_CPUTIME|' \
 		${WRKSRC}/src/system/osapi/posix/systimer.cc
-	@${REINPLACE_CMD} -e 's|video\.x"|${DATADIR}/&|' \
-		${WRKSRC}/ppccfg.example
 
 post-install:
-	@${MKDIR} ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/video.x ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/ppccfg.example ${PREFIX}/etc
-	@${ECHO_CMD}
-	@${CAT} ${PKGMESSAGE}
-	@${ECHO_CMD}
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	(cd ${WRKSRC} && ${INSTALL_DATA} video.x \
+		${STAGEDIR}${DATADIR})
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	(cd ${WRKSRC} && ${INSTALL_DATA} ppccfg.example \
+		${STAGEDIR}${EXAMPLESDIR})
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
