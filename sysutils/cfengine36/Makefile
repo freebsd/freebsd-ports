@@ -30,6 +30,7 @@ USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
 USES=		gmake libtool
 CFLAGS+=	-Wno-return-type
+CPPFLAGS+=	-I${LOCALBASE}/include
 # EXAMPLESDIR=	${PREFIX}/share/examples/cfengine3
 DOCSDIR=	${PREFIX}/share/doc/cfengine
 CONFIGURE_ARGS=	--docdir=${DOCSDIR} \
@@ -42,7 +43,6 @@ CONFIGURE_ARGS=	--docdir=${DOCSDIR} \
 		--with-lmdb=${LOCALBASE} \
 		--enable-fhs
 
-BUILD_DEPENDS+=	${LOCALBASE}/include/pcre.h:${PORTSDIR}/devel/pcre
 LIB_DEPENDS+=	libpcre.so:${PORTSDIR}/devel/pcre \
 		liblmdb.so:${PORTSDIR}/databases/lmdb
 
