@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	wmconfig
-PORTVERSION=	1.4.5
+PORTVERSION=	1.4.7
 CATEGORIES=	x11-wm
-MASTER_SITES=	http://www.arrishq.net/files/
+MASTER_SITES=	https://www.arrishq.net/files/
 
 MAINTAINER=	net@arrishq.net
 COMMENT=	Menu generation tool for X window managers
