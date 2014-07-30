@@ -3,7 +3,7 @@
 
 PORTNAME=	openvas-libraries
 PORTVERSION=	2.0.3
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	security
 MASTER_SITES=	http://wald.intevation.org/frs/download.php/600/
 

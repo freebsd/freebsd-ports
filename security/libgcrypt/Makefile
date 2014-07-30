@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libgcrypt
-PORTVERSION=	1.5.3
-PORTREVISION=	3
+PORTVERSION=	1.6.1
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_GNUPG}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -17,10 +16,12 @@ LICENSE_COMB=	multi
 BUILD_DEPENDS=	libgpg-error>=1.8:${PORTSDIR}/security/libgpg-error
 RUN_DEPENDS=	libgpg-error>=1.8:${PORTSDIR}/security/libgpg-error
 
-USES=		libtool:oldver makeinfo tar:bzip2
+USES=		libtool makeinfo tar:bzip2
 USE_CSTD=	gnu89
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	MAKEINFO="makeinfo --no-split"
+CONFIGURE_TARGET=${ARCH:S/amd64/x86_64/}-portbld-${OPSYS:tl}${OSREL}
+INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
 
 DOCS=		AUTHORS ChangeLog ChangeLog-2011 INSTALL NEWS README \
@@ -39,14 +40,21 @@ CONFIGURE_ARGS+=	--disable-asm
 .if (${OSVERSION} < 900033)
 CONFIGURE_ARGS+=	--disable-aesni-support
 .endif
+
+.elif ${ARCH} == "amd64"
+.if (${OSVERSION} < 900000)
+USE_GCC=	yes
+.endif
+
 .endif
 
 post-patch:
-	@${RM} -f ${WRKSRC}/doc/gcrypt.info*
+	${RM} -f ${WRKSRC}/doc/gcrypt.info*
+	${REINPLACE_CMD} -e 's|ALIGN (3)|ALIGN (2)|g' ${WRKSRC}/mpi/i386/*.S
 
 .if ${PORT_OPTIONS:MDOCS}
 post-install:
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${STAGEDIR}${DOCSDIR}
 .endif
 

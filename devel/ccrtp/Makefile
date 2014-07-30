@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ccrtp
-PORTVERSION=	2.0.6
-PORTREVISION=	4
+PORTVERSION=	2.0.9
 CATEGORIES=	devel
 MASTER_SITES=	GNU
 
@@ -19,7 +18,7 @@ USE_LDCONFIG=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib
-INFO=		ccrtp
+INFO=	ccrtp
 
 post-patch:
 	@cd ${WRKSRC}/src && \
@@ -28,5 +27,8 @@ post-patch:
 post-configure:
 	${FIND} ${WRKSRC} -name Makefile | ${XARGS} \
 	    ${REINPLACE_CMD} -e 's|-l-pthread|-pthread|g'
+
+post-stage:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libccrtp.so.2.0.6
 
 .include <bsd.port.mk>
