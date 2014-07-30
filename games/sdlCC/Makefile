@@ -9,6 +9,8 @@ MASTER_SITES=	http://jcatki.no-ip.org/files/
 MAINTAINER=	games@FreeBSD.org
 COMMENT=	Extensible Chinese checkers game using SDL
 
+LICENSE=	GPLv2
+
 USES=		libtool:keepla # ltdl used, .la may be needed to load plugins
 USE_SDL=	image mixer sdl
 GNU_CONFIGURE=	yes
