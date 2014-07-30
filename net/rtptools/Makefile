@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	rtptools
-PORTVERSION=	1.18
+PORTVERSION=	1.20
 CATEGORIES=	net mbone
 MASTER_SITES=	http://www.cs.columbia.edu/IRT/software/rtptools/download/
 
