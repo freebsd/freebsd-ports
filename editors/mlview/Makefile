@@ -3,7 +3,7 @@
 
 PORTNAME=	mlview
 PORTVERSION=	0.8
-PORTREVISION=	14
+PORTREVISION=	15
 CATEGORIES=	editors gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -11,8 +11,8 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tree oriented XML editor for Gnome
 
-USE_AUTOTOOLS=	autoconf libtool
-USES=		pathfix gmake iconv pkgconfig tar:bzip2
+USE_AUTOTOOLS=	autoconf
+USES=		libtool pathfix gmake iconv pkgconfig tar:bzip2
 USE_GNOME=	eel2 gnomeprefix gtksourceview libgnomeui
 USE_LDCONFIG=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include `pkg-config --cflags gnome-vfs-2.0 libgnomeui-2.0`
