@@ -2,20 +2,22 @@
 
 PORTNAME=	libpuzzle
 PORTVERSION=	0.11
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.pureftpd.org/pub/pure-ftpd/misc/libpuzzle/releases/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library to find similar pictures
 
-LICENSE=	BSD
+LICENSE=	ISCL
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libgd.so:${PORTSDIR}/graphics/gd
 
-USES=	tar:bzip2
+USES=		libtool tar:bzip2
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
+INSTALL_TARGET=	install-strip
 
 PORTDOCS=	AUTHORS NEWS README THANKS
 
