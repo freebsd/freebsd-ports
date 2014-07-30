@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	rt
-PORTVERSION=	4.0.20
-PORTREVISION=	2
+PORTVERSION=	4.0.21
 CATEGORIES=	www
 MASTER_SITES=	http://download.bestpractical.com/pub/rt/release/ \
 		SF/requesttracker/
