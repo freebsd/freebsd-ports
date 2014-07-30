@@ -2,17 +2,18 @@
 # $FreeBSD$
 
 PORTNAME=	deadbeef
-PORTVERSION=	0.5.5
-PORTREVISION=	8
+PORTVERSION=	0.6.2
 CATEGORIES=	audio
-MASTER_SITES=	SF/${PORTNAME}
+MASTER_SITES=	SF/${PORTNAME}/${PORTVERSION}${PKGNAMESUFFIX}
+PKGNAMESUFFIX=	-rc4
+DISTNAME=	${PORTNAME}-${PORTVERSION}${PKGNAMESUFFIX}
 
 MAINTAINER=	vg@FreeBSD.org
 COMMENT=	Ultimate music player for Unix-like systems
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2 LGPL21
+LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash
 LIB_DEPENDS=	libsamplerate.so:${PORTSDIR}/audio/libsamplerate \
 		libmad.so:${PORTSDIR}/audio/libmad \
 		libexecinfo.so:${PORTSDIR}/devel/libexecinfo
@@ -21,22 +22,22 @@ GNU_CONFIGURE=	yes
 USES=		gmake pkgconfig gettext iconv shebangfix tar:bzip2 desktop-file-utils \
 		libtool
 USE_LDCONFIG=	yes
-CONFIGURE_ARGS=	--disable-alsa --disable-nullout
-CPPFLAGS+=	-I../dumb/dumb-kode54/include -I${LOCALBASE}/include
+CONFIGURE_ARGS=	--disable-alsa --disable-nullout --disable-gtk3
+CPPFLAGS+=	-I../dumb/dumb-kode54/include -I../../plugins/libmp4ff -I../../plugins/gme/game-music-emu-0.6pre -I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib -lexecinfo -lintl
 WANT_GNOME=	yes
 INSTALLS_ICONS=	yes
-CONFIGURE_ENV+=	CONFIG_SHELL="${LOCALBASE}/bin/bash"
 SHEBANG_FILES=	yasmwrapper.sh
 INSTALL_TARGET=	install-strip
 
 OPTIONS_DEFINE=	PULSEAUDIO GUI VFS LASTFM ART EQ SID FFAP VTX HOTKEYS OGG FFMPEG \
 		FLAC SNDFILE WAV CDDA GME DUMB NOTIFY MUSEPACK WILD TTA DCA AAC \
-		MMS SHN AO SHELLEXEC NLS M3U PSF ADP DSP MONO2STEREO CONVERTER VFS_ZIP
+		MMS SHN AO SHELLEXEC NLS M3U PSF ADP DSP MONO2STEREO CONVERTER VFS_ZIP \
+		ALAC PLTBROWSER WMA
 OPTIONS_DEFAULT=	GUI VFS LASTFM ART EQ SID FFAP VTX HOSTKEYS OGG FFMPEG \
 			FLAC SNDFILE WAV CDDA GME DUMB NOTIFY MUSEPACK WILD TTA DCA \
 			AAC MMS SHN AO SHELLEXEC M3U PSF ADP DSP MONO2STEREO CONVERTER VFS_ZIP \
-			HOtKEYS
+			HOTKEYS ALAC PLTBROWSER WMA
 PULSEAUDIO_DESC=	PulseAudio output plugin (unsupported)
 GUI_DESC=		standard GTK2 user interface plugin
 VFS_DESC=		HTTP streaming vfs plugin
@@ -63,6 +64,9 @@ DSP_DESC=		libsamplerate (SRC) plugin
 MONO2STEREO_DESC=	mono2stereo DSP plugin
 CONVERTER_DESC=		Build converter
 VFS_ZIP_DESC=		ZIP support
+ALAC_DESC=		ALAC plugin
+PLTBROWSER_DESC=	Playlist browser gui plugin
+WMA_DESC=		WMA plugin
 
 OPTIONS_SUB=	yes
 
@@ -152,6 +156,12 @@ MONO2STEREO_CONFIGURE_OFF=	--disable-mono2stereo
 
 VFS_ZIP_LIB_DEPENDS=	libzip.so:${PORTSDIR}/archivers/libzip
 VFS_ZIP_CONFIGURE_OFF=	--disable-vfs-zip
+
+ALAC_CONFIGURE_OFF=		--disable-alac
+
+PLTBROWSER_CONFIGURE_OFF=	--disable-pltbrowser
+
+WMA_CONFIGURE_OFF=		--disable-wma
 
 .include <bsd.port.options.mk>
 
