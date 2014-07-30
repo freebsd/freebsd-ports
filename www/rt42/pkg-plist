@@ -34,6 +34,7 @@ bin/rt-mailgate
 %%SITE_PERL%%/RT/Action/NotifyAsComment.pm
 %%SITE_PERL%%/RT/Action/NotifyGroup.pm
 %%SITE_PERL%%/RT/Action/NotifyGroupAsComment.pm
+%%SITE_PERL%%/RT/Action/NotifyOwnerOrAdminCc.pm
 %%SITE_PERL%%/RT/Action/OpenOnStarted.pm
 %%SITE_PERL%%/RT/Action/RecordComment.pm
 %%SITE_PERL%%/RT/Action/RecordCorrespondence.pm
@@ -476,6 +477,8 @@ sbin/standalone_httpd
 %%PORTDOCS%%%%DOCSDIR%%/upgrade/4.2.2/content
 %%PORTDOCS%%%%DOCSDIR%%/upgrade/4.2.2/schema.mysql
 %%PORTDOCS%%%%DOCSDIR%%/upgrade/4.2.4/content
+%%PORTDOCS%%%%DOCSDIR%%/upgrade/4.2.6/content
+%%PORTDOCS%%%%DOCSDIR%%/upgrade/4.2.6/schema.mysql
 %%PORTDOCS%%%%DOCSDIR%%/upgrade/generate-rtaddressregexp
 %%PORTDOCS%%%%DOCSDIR%%/upgrade/sanity-check-stylesheets.pl
 %%PORTDOCS%%%%DOCSDIR%%/upgrade/shrink_cgm_table.pl
@@ -1606,6 +1609,7 @@ sbin/standalone_httpd
 %%PORTDOCS%%@dirrmtry %%DOCSDIR%%/upgrade/4.2.1
 %%PORTDOCS%%@dirrmtry %%DOCSDIR%%/upgrade/4.2.2
 %%PORTDOCS%%@dirrmtry %%DOCSDIR%%/upgrade/4.2.4
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/upgrade/4.2.6
 %%PORTDOCS%%@dirrmtry %%DOCSDIR%%/upgrade
 %%PORTDOCS%%@dirrmtry %%DOCSDIR%%
 @dirrmtry %%DATADIR%%/etc
