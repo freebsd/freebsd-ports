@@ -57,6 +57,42 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="31c09848-1829-11e4-bf04-60a44c524f57">
+    <topic>tor -- traffic confirmation attack</topic>
+    <affects>
+      <package>
+	<name>tor</name>
+	<range><lt>0.2.4.23</lt></range>
+      </package>
+      <package>
+	<name>tor-devel</name>
+	<range><lt>0.2.5.6.a</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Tor Project reports:</p>
+	<blockquote cite="https://lists.torproject.org/pipermail/tor-announce/2014-July/000094.html">
+	  <p>Tor before 0.2.4.23 and 0.2.5 before 0.2.5.6-alpha maintains a
+	    circuit after an inbound RELAY_EARLY cell is received by a client,
+	    which makes it easier for remote attackers to conduct
+	    traffic-confirmation attacks by using the pattern of RELAY and
+	    RELAY_EARLY cells as a means of communicating information about
+	    hidden service names.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://lists.torproject.org/pipermail/tor-announce/2014-July/000094.html</url>
+      <url>https://blog.torproject.org/blog/tor-security-advisory-relay-early-traffic-confirmation-attack</url>
+      <cvename>CVE-2014-5117</cvename>
+    </references>
+    <dates>
+      <discovery>2014-07-30</discovery>
+      <entry>2014-07-30</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="13419364-1685-11e4-bf04-60a44c524f57">
     <topic>i2p -- Multiple Vulnerabilities</topic>
     <affects>
