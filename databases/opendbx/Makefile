@@ -3,7 +3,7 @@
 
 PORTNAME=	opendbx
 PORTVERSION=	1.4.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	databases
 MASTER_SITES=	http://www.linuxnetworks.de/opendbx/download/
 
@@ -12,11 +12,11 @@ COMMENT=	C library for accessing databases with a single API
 
 LICENSE=	LGPL21
 
-USES=		gmake
-USE_AUTOTOOLS=	libtool
+USES=		gmake libtool
 
 CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
 LDFLAGS+=	${PTHREAD_LIBS} -L${WRKSRC}/lib -L${LOCALBASE}/lib
+GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--with-backends="${CONFIGURE_MODULES}"
 
 USE_LDCONFIG=	${PREFIX}/lib/opendbx
