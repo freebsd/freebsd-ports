@@ -3,7 +3,7 @@
 #   $MCom: ports/audio/solfege/Makefile,v 1.7 2007/09/09 23:47:50 mezz Exp $
 
 PORTNAME=	solfege
-PORTVERSION=	3.20.6
+PORTVERSION=	3.22.2
 CATEGORIES=	audio
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-stable/${PORTVERSION}
 PKGNAMESUFFIX=	-nosound
@@ -11,41 +11,40 @@ PKGNAMESUFFIX=	-nosound
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Free eartraining software
 
-BUILD_DEPENDS=	${STYLESHEET}:${PORTSDIR}/textproc/docbook-xsl \
+LICENSE=	GPLv3
+
+BUILD_DEPENDS=	docbook-xsl>0:${PORTSDIR}/textproc/docbook-xsl \
 		txt2man:${PORTSDIR}/textproc/txt2man
 
-USE_GNOME=	pygtk2
-NO_STAGE=	yes
-WANT_GNOME=	yes
-USE_PYTHON=	yes
 USES=		display gettext gmake makeinfo pathfix pkgconfig
+USE_GNOME=	pygtk2
+USE_PYTHON=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	ac_cv_path_XML2PO=""
 CONFIGURE_ARGS=	--disable-oss-sound \
 		--enable-docbook-stylesheet=${STYLESHEET}
-MAKE_ARGS=	skipmanual=yes
-
-MAN1=		solfege.1
-
-STYLESHEET=	${LOCALBASE}/share/xsl/docbook/xhtml/chunk.xsl
+MAKE_ARGS=	nopycompile=YES skipmanual=yes
 
 # Restrict to stable (even) versions, indicated by the second component.
 PORTSCOUT=	limitw:1,even
 
-.include <bsd.port.pre.mk>
+OPTIONS_DEFINE=	GNOME
 
-.if ${HAVE_GNOME:Mpygnomeextras}!=""
-USE_GNOME+=	pygnomeextras
-.endif
+GNOME_USE=	GNOME=pygnomeextras
+
+STYLESHEET=	${LOCALBASE}/share/xsl/docbook/xhtml/chunk.xsl
 
 post-patch:
-	@${GREP} -lR "/usr/bin/python" ${WRKSRC} | ${XARGS} \
-		${REINPLACE_CMD} -e 's|/usr/bin/python|${SETENV} python|g'
-	@${REINPLACE_CMD} -e 's|type=sequencer-device|type=fake-synth|g ; \
-		 s|/usr/bin|${LOCALBASE}/bin|g' ${WRKSRC}/default.config
-	@${REINPLACE_CMD} -e 's|(datadir)/locale|(prefix)/share/locale|g' \
-		${WRKSRC}/po/Makefile
-	@${REINPLACE_CMD} -i '' -e 's|/bin/bash|/bin/sh|g' \
-		${WRKSRC}/exercises/standard/lesson-files/bin/csound-play-harmonic-interval.sh
+	@${REINPLACE_CMD} -e \
+		's|cp --parents|${PAX} -rw|' ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e \
+		's|type=sequencer-device|type=fake-synth| ; \
+		 s|/usr/bin|${LOCALBASE}/bin|' ${WRKSRC}/default.config
+	@${FIND} ${WRKSRC} -name "*.py" | ${XARGS} ${REINPLACE_CMD} -e \
+		's|.*\(#!\).*|\1${PYTHON_CMD}|'
 
-.include <bsd.port.post.mk>
+post-install:
+	@(cd ${STAGEDIR}${PREFIX} && ${PYTHON_CMD} -m compileall \
+		-d ${PREFIX} -f ${DATADIR_REL})
+
+.include <bsd.port.mk>
