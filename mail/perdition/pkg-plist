@@ -70,5 +70,5 @@ sbin/perdition.imap4s
 sbin/perdition.imaps
 %%PORTDOCS%%%%DOCSDIR%%/perdition-pam.sample
 @dirrmtry etc/perdition
-@dirrmtry etc/openldap/schema
+%%LDAP%%@dirrmtry etc/openldap/schema
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
