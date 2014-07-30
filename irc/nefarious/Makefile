@@ -22,8 +22,8 @@ OPTIONS_DEFINE=	SSL CHROOT DOCS
 CHROOT_DESC=	Chroot the irc daemon within INSTALL_PREFIX
 
 SSL_CONFIGURE_ENABLE=	ssl
-
-.include <bsd.port.options.mk>
+SSL_USE=		OPENSSL=yes
+CHROOT_CONFIGURE_ON=	--with-chroot=${INSTALL_PREFIX}
 
 .if defined(NEFARIUS_INSTALL_PREFIX)
 INSTALL_PREFIX=${NEFARIUS_INSTALL_PREFIX}
@@ -31,14 +31,6 @@ INSTALL_PREFIX=${NEFARIUS_INSTALL_PREFIX}
 INSTALL_PREFIX=${PREFIX}/${PORTNAME}
 .endif
 STAGEPREFIX=${STAGEDIR}${INSTALL_PREFIX}
-
-.if ${PORT_OPTIONS:MSSL}
-USE_OPENSSL=	yes
-.endif
-
-.if ${PORT_OPTIONS:MCHROOT}
-CONFIGURE_ARGS+=	--with-chroot=${INSTALL_PREFIX}
-.endif
 
 .if defined(NEFARIOUS_DOMAIN)
 CONFIGURE_ARGS+=	--with-domain=${NEFARIOUS_DOMAIN}
@@ -67,16 +59,17 @@ pre-configure:
 	@${ECHO_CMD} "NEFARIOUS_DOMAIN         - Domain to use for IRCd"
 
 do-install:
-	${MKDIR} ${STAGEPREFIX}/bin ${STAGEPREFIX}/lib/help
+	@${MKDIR} ${STAGEPREFIX}/bin ${STAGEPREFIX}/lib/help
 	${INSTALL_PROGRAM} ${WRKSRC}/ircd/ircd ${STAGEPREFIX}/bin
 	${INSTALL_DATA} ${WRKSRC}/ircd/chkconf ${STAGEPREFIX}/bin
 	${INSTALL_DATA} ${WRKSRC}/doc/example.conf ${STAGEPREFIX}/lib
 	${INSTALL_MAN} ${WRKSRC}/doc/ircd.8 ${STAGEDIR}${MANPREFIX}/man/man8
-.if ${PORT_OPTIONS:MDOCS}
-	cd ${WRKSRC}/help && \
+	(cd ${WRKSRC}/help && \
 		${COPYTREE_SHARE} users ${STAGEPREFIX}/lib/help && \
-		${COPYTREE_SHARE} opers ${STAGEPREFIX}/lib/help
-	cd ${STAGEPREFIX}/lib/help/opers && ${CP} ${SYMLINKS} ../users
-.endif
+		${COPYTREE_SHARE} opers ${STAGEPREFIX}/lib/help)
+	(cd ${STAGEPREFIX}/lib/help/opers && ${CP} ${SYMLINKS} ../users)
+
+post-install:
+	${STRIP_CMD} ${STAGEPREFIX}/bin/chkconf
 
 .include <bsd.port.mk>
