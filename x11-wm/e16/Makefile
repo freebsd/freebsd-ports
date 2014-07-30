@@ -14,11 +14,10 @@ SOUND_DESC=	Sound support via pulseaudio/libsndfile
 
 USE_XORG=	compositeproto damageproto xextproto x11 xbitmaps xcomposite xdamage \
 		xext xfixes xft xinerama xrandr xrender xxf86vm
-USES=		gettext gmake iconv pkgconfig shebangfix
+USES=		gettext gmake iconv libtool pkgconfig shebangfix
 SHEBANG_FILES=	scripts/e_gen_menu
 USE_EFL=	imlib2
 CFLAGS+=	-Wno-unused-parameter
-USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-dependency-tracking \
 		--disable-rpath --enable-mans SHELL=/bin/sh
