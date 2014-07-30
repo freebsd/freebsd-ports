@@ -6,7 +6,8 @@ PORTREVISION=	6
 CATEGORIES=	graphics print
 MASTER_SITES=	ftp://ftp.foolabs.com/pub/xpdf/ \
 		${MASTER_SITE_TEX_CTAN} \
-		http://mirrors.rit.edu/zi/
+		http://mirrors.rit.edu/zi/ \
+		http://komquats.com/distfiles/
 MASTER_SITE_SUBDIR=	support/xpdf
 
 MAINTAINER=	cy@FreeBSD.org
