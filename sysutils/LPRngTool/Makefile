@@ -3,60 +3,30 @@
 
 PORTNAME=	LPRngTool
 PORTVERSION=	1.3.2
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	sysutils print
-MASTER_SITES=	ftp://ftp.lprng.com/pub/%SUBDIR%/ \
-		ftp://ftp.cise.ufl.edu/pub/mirrors/%SUBDIR%/ \
-		ftp://ftp.cs.umn.edu/pub/%SUBDIR%/ \
-		ftp://ftp.informatik.uni-hamburg.de/pub/os/unix/utils/%SUBDIR%/ \
-		ftp://ftp.uni-paderborn.de/pub/unix/printer/%SUBDIR%/
-MASTER_SITE_SUBDIR=	LPRng/LPRngTool
+MASTER_SITES=	SF/lprng/lprngtool/LRPngTool-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Configuration Tool for LPRng
 
+LICENSE=	GPLv2
+
 BUILD_DEPENDS=	a2ps:${PORTSDIR}/print/a2ps \
-		wish:${PORTSDIR}/x11-toolkits/tk-wrapper
+		mpage:${PORTSDIR}/print/mpage
 
-#RUN_DEPENDS=	ifhp:${PORTSDIR}/print/ifhp
-
+USES=		tar:tgz tk
 USE_GHOSTSCRIPT_BUILD=	yes
-USES=		tk tar:tgz
-
-.if defined(SYSCONFDIR)
-PLIST_SUB+=	CWD="" SYSCONFDIR="${SYSCONFDIR:S,^/,,}"
-.else
-SYSCONFDIR=	${PREFIX}/etc
-PLIST_SUB+=	CWD="@comment " SYSCONFDIR="${SYSCONFDIR:S,^${PREFIX}/,,}"
-.endif
-
 GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	ac_cv_path_WISH=${WISH}
+CONFIGURE_ARGS=	--with-spool_directory=/var/spool/lpd
 USE_LDCONFIG=	yes
 
-CONFIGURE_ARGS+=	--with-spool_directory=/var/spool/lpd \
-			--with-sysconfdir="${SYSCONFDIR}"
-
-MAN1=		lprngtool.1
-
-NO_STAGE=	yes
-pre-everything::
-	@${ECHO_MSG} "If you want to replace the default printing system with LPRng, use:"
-	@${ECHO_MSG} "  make PREFIX=/usr SYSCONFDIR=/etc clean all install"
-	@if [ "${PREFIX}" = "/usr" -a ! -d /usr/man ] ; then \
-		${ECHO_MSG} "The man pages will be installed in /usr/man." ; \
-		${ECHO_MSG} "You should make a symbolic link /usr/share/man from /usr/man"; \
-		${ECHO_MSG} "   ln -s /usr/share/man /usr/man"; \
-		${ECHO_MSG} "If you do not, you will retain the old FreeBSD man pages."; \
-		${ECHO_MSG} "See the hier(7) man page for details of the FreeBSD file system"; \
-		${ECHO_MSG} "layout.  Configure is not equipped to determine the location of"; \
-		${ECHO_MSG} 'man pages and defaults to $${PREFIX}/man, which is incorrect for FreeBSD.'; \
-		exit 1; \
-	fi
-	@${ECHO_MSG} "Configuring with '${CONFIGURE_ARGS}'"
-
-post-install:
-	@if [ ! -f ${SYSCONFDIR}/lprngtool.conf ]; then \
-		${CP} ${SYSCONFDIR}/lprngtool.conf.sample ${SYSCONFDIR}/lprngtool.conf; \
-	fi
+post-patch:
+	@${REINPLACE_CMD} -e \
+		's|=freebsd|=generic|' ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e \
+		'/cp $$p.sample $$p;/d ; \
+		 /chmod 644 $$p;/d' ${WRKSRC}/postinstall.generic.sh
 
 .include <bsd.port.mk>
