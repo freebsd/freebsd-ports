@@ -2,7 +2,7 @@
 
 PORTNAME=	powerdns
 PORTVERSION=	3.3.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	dns ipv6
 MASTER_SITES=	http://downloads.powerdns.com/releases/
 DISTNAME=	pdns-${PORTVERSION}

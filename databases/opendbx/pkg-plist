@@ -2,14 +2,14 @@ bin/odbx-sql
 include/odbx.h
 include/opendbx/api
 include/opendbx/api.h
-lib/libopendbxplus.a
-lib/libopendbxplus.la
 lib/libopendbx.a
-lib/libopendbx.la
+lib/libopendbx.so
+lib/libopendbx.so.1
+lib/libopendbx.so.1.2.0
+lib/libopendbxplus.a
 lib/libopendbxplus.so
 lib/libopendbxplus.so.1
-lib/libopendbx.so
-lib/libopendbx.so.3
+lib/libopendbxplus.so.1.0.0
 libdata/pkgconfig/opendbx.pc
 libdata/pkgconfig/opendbxplus.pc
 %%DATADIR%%/keywords
@@ -18,33 +18,31 @@ libdata/pkgconfig/opendbxplus.pc
 %%NLS%%share/locale/en@quot/LC_MESSAGES/opendbx.mo
 %%NLS%%share/locale/en@quot/LC_MESSAGES/opendbx-utils.mo
 %%PGSQL%%lib/opendbx/libpgsqlbackend.a
-%%PGSQL%%lib/opendbx/libpgsqlbackend.la
 %%PGSQL%%lib/opendbx/libpgsqlbackend.so
-%%PGSQL%%lib/opendbx/libpgsqlbackend.so.3
+%%PGSQL%%lib/opendbx/libpgsqlbackend.so.1
+%%PGSQL%%lib/opendbx/libpgsqlbackend.so.1.2.0
 %%MYSQL%%lib/opendbx/libmysqlbackend.a
-%%MYSQL%%lib/opendbx/libmysqlbackend.la
 %%MYSQL%%lib/opendbx/libmysqlbackend.so
-%%MYSQL%%lib/opendbx/libmysqlbackend.so.3
+%%MYSQL%%lib/opendbx/libmysqlbackend.so.1
+%%MYSQL%%lib/opendbx/libmysqlbackend.so.1.2.0
 %%SQLITE%%lib/opendbx/libsqlitebackend.a
-%%SQLITE%%lib/opendbx/libsqlitebackend.la
 %%SQLITE%%lib/opendbx/libsqlitebackend.so
-%%SQLITE%%lib/opendbx/libsqlitebackend.so.3
+%%SQLITE%%lib/opendbx/libsqlitebackend.so.1
+%%SQLITE%%lib/opendbx/libsqlitebackend.so.1.2.0
 %%SQLITE3%%lib/opendbx/libsqlite3backend.a
-%%SQLITE3%%lib/opendbx/libsqlite3backend.la
 %%SQLITE3%%lib/opendbx/libsqlite3backend.so
-%%SQLITE3%%lib/opendbx/libsqlite3backend.so.3
+%%SQLITE3%%lib/opendbx/libsqlite3backend.so.1
+%%SQLITE3%%lib/opendbx/libsqlite3backend.so.1.2.0
 %%MSSQL%%lib/opendbx/libmssqlbackend.a
-%%MSSQL%%lib/opendbx/libmssqlbackend.la
 %%MSSQL%%lib/opendbx/libmssqlbackend.so
-%%MSSQL%%lib/opendbx/libmssqlbackend.so.3
+%%MSSQL%%lib/opendbx/libmssqlbackend.so.1
+%%MSSQL%%lib/opendbx/libmssqlbackend.so.1.2.0
 %%SYBASE%%lib/opendbx/libsybasebackend.a
-%%SYBASE%%lib/opendbx/libsybasebackend.la
 %%SYBASE%%lib/opendbx/libsybasebackend.so
-%%SYBASE%%lib/opendbx/libsybasebackend.so.3
+%%SYBASE%%lib/opendbx/libsybasebackend.so.1
+%%SYBASE%%lib/opendbx/libsybasebackend.so.1.2.0
 @dirrm include/opendbx
 @dirrm lib/opendbx
 @dirrm %%DATADIR%%
 %%NLS%%@dirrmtry share/locale/en@quot/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/en@quot
-%%NLS%%@dirrmtry share/locale/de/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/de
