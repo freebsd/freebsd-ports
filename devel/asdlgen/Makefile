@@ -11,7 +11,7 @@ DISTFILES=	asdlGen.tar.gz
 MAINTAINER= ports@FreeBSD.org
 COMMENT=	Interoperable serializers for C,C++,Haskell,Icon,Java,ML
 
-BUILD_DEPENDS=	smlnj-devel>=110.65:${PORTSDIR}/lang/sml-nj-devel
+BUILD_DEPENDS=	smlnj>=110.65:${PORTSDIR}/lang/smlnj
 
 USES=		dos2unix
 DOS2UNIX_FILES=	src/icon/libasdl.icn

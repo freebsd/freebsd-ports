@@ -8,7 +8,7 @@ DOCSRCDIR='%%PREFIX%%/smlnj/cml/doc'
 if [ ! -d "$DOCSRCDIR" ]
 then
 	echo "CML doc sources not found in directory $DOCSRCDIR"
-	echo "Install lang/sml-nj-devel with option WITH_EVERYTHING"
+	echo "Install lang/smlnj with option EVERYTHING"
 	exit 1
 fi
 
