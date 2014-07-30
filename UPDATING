@@ -5,6 +5,20 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20140730:
+  AFFECTS: users of security/libgcrypt
+  AUTHOR: pi@FreeBSD.org
+
+  libgcrypt has been updated to 1.6.1 and all shared libraries versions have
+  been bumped. So you need to rebuild all applications that depend on
+  libgcrypt.
+
+  # portmaster -r libgcrypt
+    or
+  # portupgrade -fr security/libgcrypt
+    or
+  # pkg install -fR security/libgcrypt
+
 20140728:
   AFFECTS: users of net/GeoIP
   AUTHOR: adamw@FreeBSD.org

@@ -4,7 +4,7 @@ PORTNAME=	libotr
 PORTVERSION=	3.2.1
 # Please do not bump PORTREVISION for this port unless you have
 # confirmed via testing that it is necessary
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	security net-im net
 MASTER_SITES=	http://www.c-s.li/ports/ \
 		https://otr.cypherpunks.ca/

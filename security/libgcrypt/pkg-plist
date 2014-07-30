@@ -1,9 +1,10 @@
+bin/mpicalc
 bin/dumpsexp
 bin/hmac256
 bin/libgcrypt-config
 include/gcrypt.h
-include/gcrypt-module.h
-lib/libgcrypt.la
 lib/libgcrypt.so
-lib/libgcrypt.so.19
+lib/libgcrypt.so.20
+lib/libgcrypt.so.20.0.1
+man/man1/hmac256.1.gz
 share/aclocal/libgcrypt.m4

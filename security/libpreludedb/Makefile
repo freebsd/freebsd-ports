@@ -3,7 +3,7 @@
 
 PORTNAME=	libpreludedb
 PORTVERSION=	1.0.1p1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	security
 MASTER_SITES=	https://www.prelude-ids.org/attachments/download/287/
 
