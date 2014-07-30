@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	tor
-DISTVERSION=	0.2.5.5-alpha
-PORTREVISION=	1
+DISTVERSION=	0.2.5.6-alpha
 CATEGORIES=	security net ipv6
 MASTER_SITES=	TOR
 PKGNAMESUFFIX=	-devel
@@ -57,7 +56,6 @@ CONFIGURE_ARGS+=	--disable-gcc-hardening
 
 .if ${PORT_OPTIONS:MBUFFEREVENTS}
 CONFIGURE_ARGS+=	--enable-bufferevents
-BROKEN=	some functions are hidden from the test binaries that use them WITH_BUFFEREVENTS
 .else
 CONFIGURE_ARGS+=	--disable-bufferevents
 .endif
