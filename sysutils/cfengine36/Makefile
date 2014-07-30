@@ -29,8 +29,10 @@ USE_LDCONFIG=	yes
 USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
 USES=		gmake libtool
+USE_AUTOTOOLS=	autoconf:env automake:env libtoolize:env
 CFLAGS+=	-Wno-return-type
 CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 # EXAMPLESDIR=	${PREFIX}/share/examples/cfengine3
 DOCSDIR=	${PREFIX}/share/doc/cfengine
 CONFIGURE_ARGS=	--docdir=${DOCSDIR} \
@@ -42,34 +44,25 @@ CONFIGURE_ARGS=	--docdir=${DOCSDIR} \
 		--with-pcre=${LOCALBASE} \
 		--with-lmdb=${LOCALBASE} \
 		--enable-fhs
+INSTALL_TARGET=	install-strip
 
 LIB_DEPENDS+=	libpcre.so:${PORTSDIR}/devel/pcre \
 		liblmdb.so:${PORTSDIR}/databases/lmdb
 
 OPTIONS_DEFINE=	PGSQL MYSQL LIBVIRT
 
-.include <bsd.port.pre.mk>
+PGSQL_USES=		pgsql
+PGSQL_CONFIGURE_ON=	--with-postgresql=${LOCALBASE}
 
-.if ${PORT_OPTIONS:MPGSQL}
-USE_PGSQL=		yes
-CONFIGURE_ARGS+=	--with-postgresql=${LOCALBASE}
-LIB_DEPENDS+=		libpq.so:${PORTSDIR}/databases/postgresql${PGSQL_VER}-client
-.endif
+MYSQL_USE=		MYSQL=yes
+MYSQL_CONFIGURE_ON=	--with-mysql=${LOCALBASE}
+MYSQL_LIB_DEPENDS=		libmysqlclient.so:${PORTSDIR}/${_MYSQL_CLIENT}
+MYSQL_LDFLAGS=		-L${LOCALBASE}/lib/mysql
 
-.if ${PORT_OPTIONS:MMYSQL}
-USE_MYSQL=		yes
-CONFIGURE_ARGS+=	--with-mysql=${LOCALBASE}
-LIB_DEPENDS+=		libmysqlclient.so:${PORTSDIR}/${_MYSQL_CLIENT}
-LDFLAGS+=		-L${LOCALBASE}/lib/mysql
-.endif
+LIBVIRT_CONFIGURE_ON=	--with-libvirt=${LOCALBASE}
+LIBVIRT_LIB_DEPENDS+=		libvirt.so:${PORTSDIR}/devel/libvirt
 
-.if ${PORT_OPTIONS:MLIBVIRT}
-CONFIGURE_ARGS+=	--with-libvirt=${LOCALBASE}
-LIB_DEPENDS+=		libvirt.so:${PORTSDIR}/devel/libvirt
-.endif
+pre-configure:
+	@cd ${WRKSRC}; autoreconf -Wno-portability --force --install -I m4
 
-post-install:
-	@cd ${STAGEDIR}${PREFIX}/libexec/cfengine && \
-		${LN} -s libpromises.so.3.0.6 libpromises.so.3
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
