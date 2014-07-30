@@ -3,6 +3,7 @@
 
 PORTNAME=	cdcat
 PORTVERSION=	2.3.1
+PORTREVISION=	1
 CATEGORIES=	deskutils
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION} \
 		GOOGLE_CODE:lib7zip
@@ -14,18 +15,15 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Qt based tool for offline CD/DVD/disk catalogs
 
-BROKEN=		Fails to build after mediainfo split
-
 LICENSE=	GPLv2 MPL
 LICENSE_COMB=	multi
 
 BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/archivers/p7zip:patch \
-		${NONEXISTENT}:${PORTSDIR}/multimedia/mediainfo:build \
 		cryptopp>0:${PORTSDIR}/security/cryptopp
 LIB_DEPENDS=	libtar.so:${PORTSDIR}/devel/libtar \
-		libexif.so:${PORTSDIR}/graphics/libexif
-
-OPTIONS_DEFINE=	DOCS
+		libexif.so:${PORTSDIR}/graphics/libexif \
+		libmediainfo.so:${PORTSDIR}/multimedia/libmediainfo \
+		libzen.so:${PORTSDIR}/multimedia/libzen
 
 CONFIGURE_WRKSRC=	${WRKSRC}/src
 BUILD_WRKSRC=	${CONFIGURE_WRKSRC}
@@ -33,21 +31,14 @@ BUILD_WRKSRC=	${CONFIGURE_WRKSRC}
 USES=		qmake:norecursive tar:bzip2
 USE_QT4=	corelib gui xml linguist_build moc_build uic_build
 QMAKE_ARGS=	INCLUDEPATH+="${L7Z_WRKSRC}/Lib7Zip" \
-		INCLUDEPATH+="${MIF_WRKSRC}/MediaInfoLib/Source" \
-		INCLUDEPATH+="${MIF_WRKSRC}/ZenLib/Source" \
 		LIBS+="${L7Z_WRKSRC}/Lib7Zip/lib7zip.a" \
-		LIBS+="${MIF_WRKSRC}/MediaInfoLib/Project/GNU/Library/.libs/libmediainfo.a" \
-		LIBS+="${MIF_WRKSRC}/ZenLib/Project/GNU/Library/.libs/libzen.a" \
 		LIBS+="${LOCALBASE}/lib/libcryptopp.a" \
-		LIBS+="-lz -lbz2 -ltar -lexif" \
+		LIBS+="-lz -lbz2 -ltar -lexif -lmediainfo -lzen" \
 		DEFINES+="MEDIAINFO_STATIC" \
 		DEFINES+="MEDIAINFO_UNICODE" \
 		DEFINES+="USE_LIBEXIF"
 QMAKE_SOURCE_PATH=	${BUILD_WRKSRC}/${PORTNAME}.pro
 INSTALLS_ICONS=	yes
-
-# spoof tinderbox: build deps for multimedia/mediainfo
-USE_AUTOTOOLS=	autoconf:env automake:env libtool:env
 
 PORTDOCS=	Authors ChangeLog README TRANSLATORS_README
 PLIST_FILES=	bin/${PORTNAME} %%DATADIR%%/${PORTNAME}.png
@@ -63,6 +54,8 @@ PLIST_DIRS=	%%DATADIR%%/translations %%DATADIR%%
 DESKTOP_ENTRIES="CdCat" "Hyper's CD Catalog" "${DATADIR}/${PORTNAME}.png" \
 		"${PORTNAME}" "AudioVideo;Qt;" ""
 
+OPTIONS_DEFINE=	DOCS
+
 L7Z_NAME=	lib7zip
 L7Z_VERSION=	1.6.5
 L7Z_DISTFILE=	${L7Z_NAME}-${L7Z_VERSION}.tar.gz
@@ -70,8 +63,7 @@ L7Z_WRKSRC=	${WRKDIR}/${L7Z_NAME}
 
 .include <bsd.port.pre.mk>
 
-P7Z_WRKSRC=	$$(cd ${PORTSDIR}/archivers/p7zip && ${MAKE} -V WRKSRC)
-MIF_WRKSRC=	$$(cd ${PORTSDIR}/multimedia/mediainfo && ${MAKE} -V WRKSRC)
+P7Z_WRKSRC=	$$(cd ${PORTSDIR}/archivers/p7zip && ${MAKE_CMD} -V WRKSRC)
 
 post-extract:
 	@${GZCAT} ${DISTDIR}/${L7Z_DISTFILE} | (cd ${WRKDIR} && ${TAR} -xf -)
