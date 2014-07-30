@@ -3,6 +3,7 @@
 
 PORTNAME=	libvanessa_adt
 PORTVERSION=	0.0.9
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://horms.net/projects/vanessa/download/vanessa_adt/${PORTVERSION}/
 DISTNAME=	vanessa_adt-${PORTVERSION}
@@ -14,8 +15,7 @@ LIB_DEPENDS=	libvanessa_logger.so:${PORTSDIR}/devel/libvanessa_logger
 
 USE_LDCONFIG=	yes
 
-USES=	tar:bzip2
-USE_AUTOTOOLS=	libtool
+USES=		libtool tar:bzip2
 GNU_CONFIGURE=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include
