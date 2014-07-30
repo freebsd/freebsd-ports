@@ -3,7 +3,7 @@
 
 PORTNAME=	loudmouth
 PORTVERSION=	1.4.3
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	net-im gnome
 MASTER_SITES=	GNOME
 
@@ -12,10 +12,10 @@ COMMENT=	Lightweight Jabber client library
 
 LIB_DEPENDS=	libidn.so:${PORTSDIR}/dns/libidn
 
-USES=		gettext gmake pkgconfig tar:bzip2
-USE_AUTOTOOLS=	libtool
+USES=		gettext gmake libtool pathfix pkgconfig tar:bzip2
+GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-USE_GNOME=	gnomehack glib20 ltverhack
+USE_GNOME=	glib20
 CONFIGURE_ARGS=	--disable-gtk-doc
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-Wl,-Bsymbolic -L${LOCALBASE}/lib
