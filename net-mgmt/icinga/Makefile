@@ -3,6 +3,7 @@
 
 PORTNAME=	icinga
 PORTVERSION=	1.11.5
+PORTREVISION=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	https://github.com/Icinga/${PORTNAME}-core/releases/download/v${PORTVERSION}/
 
@@ -12,7 +13,6 @@ COMMENT=	Enterprise grade open source monitoring system based on Nagios
 LICENSE=	GPLv2
 
 LIB_DEPENDS=	libgd.so:${PORTSDIR}/graphics/gd
-RUN_DEPENDS=	${LOCALBASE}/libexec/nagios/check_nagios:${PORTSDIR}/net-mgmt/nagios-plugins
 
 USES=		iconv gmake
 USE_AUTOTOOLS=	autoconf libltdl
@@ -74,9 +74,14 @@ SUB_LIST=	PREFIX=${PREFIX} \
 		${PLIST_SUB}
 
 OPTIONS_DEFINE=		IDOUTILS
-OPTIONS_DEFAULT=	IDOUTILS
+OPTIONS_RADIO=		PLUGINS
+OPTIONS_RADIO_PLUGINS=	MONPLUGINS NAGPLUGINS
+OPTIONS_DEFAULT=	IDOUTILS MONPLUGINS
 
 IDOUTILS_DESC=		Enable Icinga Data Objects support
+
+MONPLUGINS_RUN_DEPENDS=	${LOCALBASE}/libexec/nagios/check_nagios:${PORTSDIR}/net-mgmt/monitoring-plugins
+NAGPLUGINS_RUN_DEPENDS=	${LOCALBASE}/libexec/nagios/check_nagios:${PORTSDIR}/net-mgmt/nagios-plugins
 
 .include <bsd.port.options.mk>
 

@@ -2,6 +2,7 @@
 
 PORTNAME=	icinga2
 DISTVERSION=	2.0.1
+PORTREVISION=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://github.com/Icinga/${PORTNAME}/archive/v${DISTVERSION}.tar.gz?dummy=/
 
@@ -12,8 +13,7 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	libboost_system.so:${PORTSDIR}/devel/boost-libs \
 		libexecinfo.so:${PORTSDIR}/devel/libexecinfo # for better debugging
-RUN_DEPENDS=	${LOCALBASE}/libexec/nagios/check_nagios:${PORTSDIR}/net-mgmt/monitoring-plugins \
-		${LOCALBASE}/bin/bash:${PORTSDIR}/shells/bash
+RUN_DEPENDS=	${LOCALBASE}/bin/bash:${PORTSDIR}/shells/bash
 
 USES=		bison cmake
 USE_LDCONFIG=	yes
@@ -21,10 +21,15 @@ USE_LDCONFIG=	yes
 USE_RC_SUBR=	${PORTNAME}
 
 OPTIONS_DEFINE=		DOCS
-OPTIONS_SINGLE=		BACKEND
-OPTIONS_SINGLE_BACKEND=	MYSQL PGSQL
+OPTIONS_MULTI=		BACKEND
+OPTIONS_MULTI_BACKEND=	MYSQL PGSQL
+OPTIONS_RADIO=		PLUGINS
+OPTIONS_RADIO_PLUGINS=	MONPLUGINS NAGPLUGINS
 
-OPTIONS_DEFAULT=	MYSQL
+OPTIONS_DEFAULT=	MYSQL MONPLUGINS
+
+MONPLUGINS_RUN_DEPENDS=	${LOCALBASE}/libexec/nagios/check_nagios:${PORTSDIR}/net-mgmt/monitoring-plugins
+NAGPLUGINS_RUN_DEPENDS=	${LOCALBASE}/libexec/nagios/check_nagios:${PORTSDIR}/net-mgmt/nagios-plugins
 
 MYSQL_CMAKE_ON=	-DWITH_MYSQL:BOOL=true
 PGSQL_CMAKE_ON=	-DWITH_PGSQL:BOOL=true
