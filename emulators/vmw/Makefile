@@ -17,25 +17,22 @@ SBINS=		vmw vmshrink vmftp
 
 OPTIONS_DEFINE=	DOCS
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MDOCS}
 PORTDOCS=	README-eucj.TXT README-sjis.TXT README.TXT
 .for i in ${SBINS}
 PORTDOCS+=	${i}-eucj.txt ${i}-sjis.txt ${i}.txt
 .endfor
-.endif
 .for i in ${SBINS}
 PLIST_FILES+=	sbin/${i}
 .endfor
+
+post-patch:
+#	@${REINPLACE_CMD} -e 's/=/?=/' ${WRKSRC}/Makefile.FreeBSD
 
 do-install:
 .for i in ${SBINS}
 	${INSTALL_PROGRAM} ${WRKSRC}/${i} ${STAGEDIR}${PREFIX}/sbin/
 .endfor
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
-	@cd ${WRKSRC}/.. && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}/
-.endif
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	(cd ${WRKSRC}/.. && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}/)
 
 .include <bsd.port.mk>
