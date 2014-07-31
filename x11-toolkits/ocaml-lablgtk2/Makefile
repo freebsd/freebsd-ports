@@ -9,7 +9,7 @@ MASTER_SITES=	http://forge.ocamlcore.org/frs/download.php/979/ \
 PKGNAMEPREFIX=	ocaml-
 DISTNAME=	lablgtk-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bf@FreeBSD.org
 COMMENT=	An Objective Caml interface to GTK+ 2.x
 
 LICENSE=	LGPL21
@@ -43,7 +43,6 @@ CONFIGURE_ENV=	CAMLP4O="camlp4 pa_o.cmo pa_op.cmo pr_dump.cmo"
 
 PATTERN=	[[:space:]]*(do|then)?[[:space:]]*)cp([[:space:]]
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDOCS}
@@ -128,17 +127,19 @@ post-patch:
 		-e 's,^(${PATTERN}+.*INSTALLDIR),\1\$${BSD_INSTALL_DATA} \3,' \
 		-e 's,^(${PATTERN}+.*BINDIR),\1\$${BSD_INSTALL_SCRIPT} \3,' \
 		-e 's,^(${PATTERN}+.*LIBDIR),\1\$${BSD_INSTALL_DATA} \3,' \
+		-e 's,(touch)( "\$$\(DESTDIR\)\$$\(OCAMLLDCONF\)"),${TRUE}\2,' \
+		-e 's,(-ldconf )("\$$\(DESTDIR\)\$$\(OCAMLLDCONF\)"),\1ignore,' \
 		${WRKSRC}/src/Makefile
 
 post-install:
 .if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	@cd ${WRKSRC} ; ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	@cd ${WRKSRC} ; ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
 .endif
 .if ${PORT_OPTIONS:MEXAMPLES}
-	@${MKDIR} ${EXAMPLESDIR}
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	@cd ${WRKSRC}/examples ; ${COPYTREE_SHARE} \
-	"*.ml *.png *.rgb *.xpm text ${EXAMPLES_SUBDIRS}" ${EXAMPLESDIR}
+	"*.ml *.png *.rgb *.xpm text ${EXAMPLES_SUBDIRS}" ${STAGEDIR}${EXAMPLESDIR}
 .endif
 
 .include <bsd.port.mk>
