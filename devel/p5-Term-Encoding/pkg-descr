@@ -1,4 +1,4 @@
-Term::Encoding is a simple module to detect an encoding the current
-terminal expects, in various ways.
+Term::Encoding is a simple module to detect an encoding the current terminal
+expects, in various ways.
 
 WWW: http://search.cpan.org/dist/Term-Encoding/
