@@ -518,8 +518,6 @@ man/man1/calc.1.gz
 %%DATADIR%%/varargs.cal
 %%DATADIR%%/xx_print.cal
 %%DATADIR%%/zeta2.cal
-@dirrmtry man/man1
-@dirrmtry man
 @dirrm %%DATADIR%%/help
 @dirrm %%DATADIR%%/custom
 @dirrm %%DATADIR%%/custhelp

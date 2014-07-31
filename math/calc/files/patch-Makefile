@@ -1,6 +1,6 @@
---- Makefile.orig	2013-09-27 10:55:28.000000000 +0200
-+++ Makefile	2013-12-29 21:49:45.000000000 +0100
-@@ -585,7 +585,7 @@ HAVE_UNUSED=
+--- ./Makefile.orig	2013-09-27 08:55:28.000000000 +0000
++++ ./Makefile	2014-07-31 11:42:54.000000000 +0000
+@@ -585,7 +585,7 @@
  
  #INCDIR= /usr/local/include
  #INCDIR= /dev/env/DJDIR/include
@@ -9,7 +9,7 @@
  
  # Where to install calc related things
  #
-@@ -624,15 +624,15 @@ INCDIR= /usr/include
+@@ -624,15 +624,15 @@
  #
  #BINDIR= /usr/local/bin
  #BINDIR= /dev/env/DJDIR/bin
@@ -28,7 +28,7 @@
  
  # NOTE: Do not set CALC_INCDIR to /usr/include or /usr/local/include!!!
  #	Always be sure that the CALC_INCDIR path ends in /calc to avoid
-@@ -699,7 +699,7 @@ SCRIPTDIR= ${BINDIR}/cscript
+@@ -699,7 +699,7 @@
  #
  # If in doubt, use T=
  #
@@ -37,7 +37,7 @@
  
  # where man pages are installed
  #
-@@ -710,7 +710,7 @@ T=
+@@ -710,7 +710,7 @@
  #MANDIR=
  #MANDIR= /usr/local/man/man1
  #MANDIR= /usr/man/man1
@@ -46,7 +46,7 @@
  #MANDIR= /dev/env/DJDIR/man/man1
  #MANDIR= /usr/man/u_man/man1
  #MANDIR= /usr/contrib/man/man1
-@@ -837,14 +837,14 @@ CALCRC= ${CALC_SHAREDIR}/startup:~/.calc
+@@ -837,14 +837,14 @@
  #
  # If in doubt, set USE_READLINE, READLINE_LIB and READLINE_INCLUDE to nothing.
  #
@@ -67,7 +67,7 @@
  #
  #READLINE_LIB= -L/usr/gnu/lib -lreadline
  #READLINE_EXTRAS= -lhistory -lncurses
-@@ -869,7 +869,7 @@ READLINE_INCLUDE=
+@@ -869,7 +869,7 @@
  #CALCPAGER= more
  #CALCPAGER= pg
  #CALCPAGER= cat
@@ -76,7 +76,7 @@
  #CALCPAGER= less.exe -ci
  
  # Debug/Optimize options for ${CC} and ${LCC}
-@@ -978,8 +978,8 @@ CALC_ENV= CALCPATH=./cal LD_LIBRARY_PATH
+@@ -978,8 +978,8 @@
  # MKDIR_ARG= -p			# use mkdir -p when creating paths
  # MKDIR_ARG=			# use if system does not understand mkdir -p
  #
@@ -87,7 +87,7 @@
  
  # Some out of date operating systems require/want an executable to
  # end with a certain file extension.  Some compiler systems such as
-@@ -1012,35 +1012,36 @@ LIB_EXT_VE= ${LIB_EXT}.${VE}
+@@ -1012,35 +1012,36 @@
  
  # standard utilities used during make
  #
@@ -137,7 +137,7 @@
  # assume the X11 makedepend tool for the depend rule
  MAKEDEPEND= makedepend
  STRIP= strip
-@@ -1248,13 +1249,15 @@ LIBCUSTCALC_STATIC=
+@@ -1248,13 +1249,15 @@
  #
  CCWARN= -Wall -W -Wno-comment
  CCWERR=
@@ -157,7 +157,7 @@
  #
  endif
  
-@@ -1516,7 +1519,8 @@ ICFLAGS= ${COMMON_CFLAGS} ${CC_STATIC}
+@@ -1516,7 +1519,8 @@
  else
  ICFLAGS= ${COMMON_CFLAGS} ${CC_SHARE}
  endif
@@ -167,3 +167,39 @@
  
  # Required flags to link files for calc
  #
+@@ -1728,7 +1732,7 @@
+     PURIFY="${PURIFY}" \
+     Q="${Q}" \
+     RANLIB="${RANLIB}" \
+-    RM=${RM} \
++    RM="${RM}" \
+     RMDIR=${RMDIR} \
+     SCRIPTDIR="${SCRIPTDIR}" \
+     SED=${SED} \
+@@ -1768,7 +1772,7 @@
+     MKDIR=${MKDIR} \
+     MV=${MV} \
+     Q="${Q}" \
+-    RM=${RM} \
++    RM="${RM}" \
+     RMDIR=${RMDIR} \
+     SCRIPTDIR="${SCRIPTDIR}" \
+     SED=${SED} \
+@@ -1797,7 +1801,7 @@
+     MKDIR=${MKDIR} \
+     MV=${MV} \
+     Q="${Q}" \
+-    RM=${RM} \
++    RM="${RM}" \
+     RMDIR=${RMDIR} \
+     SCRIPTDIR="${SCRIPTDIR}" \
+     T=${T} \
+@@ -1826,7 +1830,7 @@
+     MKDIR=${MKDIR} \
+     MV=${MV} \
+     Q="${Q}" \
+-    RM=${RM} \
++    RM="${RM}" \
+     RMDIR=${RMDIR} \
+     SCRIPTDIR="${SCRIPTDIR}" \
+     SED=${SED} \
