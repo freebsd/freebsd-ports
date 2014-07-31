@@ -2,20 +2,25 @@
 # $FreeBSD$
 
 PORTNAME=	Jabber-Lite
-PORTVERSION=	0.8
+PORTVERSION=	0.8.1
 CATEGORIES=	net-im perl5
 MASTER_SITES=	CPAN
-MASTER_SITE_SUBDIR=	Jabber
+MASTER_SITE_SUBDIR=	CPAN:BEECEE
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Standalone library for communicating with Jabber servers
 
-RUN_DEPENDS=	p5-Digest-SHA1>=0:${PORTSDIR}/security/p5-Digest-SHA1 \
-		p5-Authen-SASL>=0:${PORTSDIR}/security/p5-Authen-SASL \
-		p5-IO-Socket-SSL>=0:${PORTSDIR}/security/p5-IO-Socket-SSL
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
 
-USES=		perl5
+BUILD_DEPENDS=	p5-Authen-SASL>=0:${PORTSDIR}/security/p5-Authen-SASL \
+		p5-Digest-SHA1>=0:${PORTSDIR}/security/p5-Digest-SHA1 \
+		p5-IO-Socket-SSL>=0:${PORTSDIR}/security/p5-IO-Socket-SSL \
+		p5-Net-DNS>=0:${PORTSDIR}/dns/p5-Net-DNS
+RUN_DEPENDS:=	${BUILD_DEPENDS}
+
 USE_PERL5=	configure
+USES=		perl5
 
 .include <bsd.port.mk>
