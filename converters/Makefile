@@ -38,7 +38,6 @@
     SUBDIR += iconv
     SUBDIR += iconv-extra
     SUBDIR += iconv-rfc1345
-    SUBDIR += igbinary
     SUBDIR += ish
     SUBDIR += libb64
     SUBDIR += libiconv
@@ -124,6 +123,7 @@
     SUBDIR += pdf2djvu
     SUBDIR += pear-Services_JSON
     SUBDIR += pecl-fribidi
+    SUBDIR += pecl-igbinary
     SUBDIR += php5-bsdconv
     SUBDIR += php5-iconv
     SUBDIR += php5-mbstring
