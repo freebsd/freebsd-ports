@@ -3,16 +3,17 @@
 
 PORTNAME=	libiptcdata
 PORTVERSION=	1.0.4
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library for manipulating IPTC metadata stored in image files
 
-USE_AUTOTOOLS=	libtool
-USES=		pkgconfig iconv pathfix
+USES=		pkgconfig iconv libtool pathfix
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-nls
+INSTALL_TARGET=	install-strip
 
 .include <bsd.port.mk>

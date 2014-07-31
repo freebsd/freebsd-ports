@@ -7,10 +7,9 @@ include/libiptcdata/iptc-mem.h
 include/libiptcdata/iptc-tag.h
 include/libiptcdata/iptc-utils.h
 include/libiptcdata/_stdint.h
-lib/libiptcdata.a
-lib/libiptcdata.la
 lib/libiptcdata.so
-lib/libiptcdata.so.3
+lib/libiptcdata.so.0
+lib/libiptcdata.so.0.3.3
 libdata/pkgconfig/libiptcdata.pc
 share/gtk-doc/html/libiptcdata/home.png
 share/gtk-doc/html/libiptcdata/ch01.html
