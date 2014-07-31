@@ -1,19 +1,32 @@
 @unexec %D/etc/rc.d/sockd.sh forcestop 2>/dev/null || true
 bin/socksify
-etc/sockd.conf.example
-etc/socks.conf.example
+@sample etc/sockd.conf.sample
+@sample etc/socks.conf.sample
 include/socks.h
 lib/libdsocks.so
 lib/libsocks.a
 lib/libsocks.so
-lib/libsocks.so.1
+lib/libsocks.so.0
+lib/libsocks.so.0.1.1
 sbin/sockd
+man/man1/socksify.1.gz
+man/man5/sockd.conf.5.gz
+man/man5/socks.conf.5.gz
+man/man8/sockd.8.gz
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sockd-basic.conf
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sockd-chaining.conf
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/socks-simple-withoutnameserver.conf
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/socks-simple.conf
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%
 %%PORTDOCS%%%%DOCSDIR%%/README.socksify
 %%PORTDOCS%%%%DOCSDIR%%/README.survey
 %%PORTDOCS%%%%DOCSDIR%%/README.usage
 %%PORTDOCS%%%%DOCSDIR%%/SOCKS4.protocol
 %%PORTDOCS%%%%DOCSDIR%%/SOCKS4A.protocol
+%%PORTDOCS%%%%DOCSDIR%%/UPGRADE
+%%PORTDOCS%%%%DOCSDIR%%/contrib/sockd-stat.awk
 %%PORTDOCS%%%%DOCSDIR%%/rfc1928.txt
 %%PORTDOCS%%%%DOCSDIR%%/rfc1929.txt
 %%PORTDOCS%%%%DOCSDIR%%/rfc1961.txt
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/contrib
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
