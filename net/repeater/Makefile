@@ -11,30 +11,28 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	UltraVNC repeater
 
 USES=		zip
-USE_RC_SUBR=	repeater
+USE_RC_SUBR=	${PORTNAME}
 WRKSRC=		${WRKDIR}/Ver${PORTVERSION:C/\.//}
-ALL_TARGET=	repeater
+ALL_TARGET=	${PORTNAME}
 
 REP_USER?=	uvncrep
 REP_GROUP?=	uvncrep
+USERS=		${REP_USER}
+GROUPS=		${REP_GROUP}
 
-SUB_FILES=	pkg-install pkg-message
-SUB_LIST=	REP_USER=${REP_USER} REP_GROUP=${REP_GROUP}
+SUB_FILES=	pkg-message
 
-PLIST_FILES=	sbin/repeater etc/uvncrepeater.ini.sample
 PORTDOCS=	changelog.txt readme.txt ultravncrepeaterlinuxport.html
 
-NO_STAGE=	yes
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/repeater ${PREFIX}/sbin/repeater
-	${INSTALL_DATA} ${WRKSRC}/uvncrepeater.ini ${PREFIX}/etc/uvncrepeater.ini.sample
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
-.endif
+OPTIONS_DEFINE=	DOCS
 
-post-install:
-	@${SETENV} @PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
-	@${CAT} ${PKGMESSAGE}
+post-patch:
+	@${REINPLACE_CMD} -e 's|g++|${CXX}|' ${WRKSRC}/Makefile
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/sbin
+	${INSTALL_DATA} ${WRKSRC}/uvncrepeater.ini ${STAGEDIR}${PREFIX}/etc/uvncrepeater.ini.sample
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	(cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR})
 
 .include <bsd.port.mk>

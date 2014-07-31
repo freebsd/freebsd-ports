@@ -286,5 +286,6 @@ unifi:*:975:
 minetest:*:976:
 ums:*:979:
 hbase:*:980:
+uvncrep:*:981:
 nogroup:*:65533:
 nobody:*:65534:
