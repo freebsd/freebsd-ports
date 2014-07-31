@@ -2,7 +2,7 @@
 
 PORTNAME=	aqbanking
 PORTVERSION=	5.0.25
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	finance
 MASTER_SITES=	http://www.aquamaniac.de/sites/download/download.php?package=03&release=95&file=01&dummy=/
 
