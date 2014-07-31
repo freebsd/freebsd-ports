@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	dfvfs
-PORTVERSION=	20140604
+PORTVERSION=	20140727
 CATEGORIES=	security devel python
 MASTER_SITES=	https://googledrive.com/host/0B3fBvzttpiiSZTI3MWV6di1fRDg/ \
 		LOCAL/antoine
@@ -13,9 +13,11 @@ COMMENT=	Digital Forensics Virtual File System
 
 LICENSE=	APACHE20
 
-RUN_DEPENDS=	libewf>=0:${PORTSDIR}/devel/libewf \
+RUN_DEPENDS=	libbde>=a:${PORTSDIR}/devel/libbde \
+		libewf>=0:${PORTSDIR}/devel/libewf \
 		libqcow>=a:${PORTSDIR}/devel/libqcow \
 		libsmdev>=a:${PORTSDIR}/devel/libsmdev \
+		libsmraw>=a:${PORTSDIR}/devel/libsmraw \
 		libvhdi>=e:${PORTSDIR}/devel/libvhdi \
 		libvmdk>=e:${PORTSDIR}/devel/libvmdk \
 		libvshadow>=0:${PORTSDIR}/devel/libvshadow \
