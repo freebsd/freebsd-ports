@@ -3,7 +3,7 @@
 
 PORTNAME=	gthumb
 PORTVERSION=	2.14.1
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	graphics
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -14,7 +14,7 @@ COMMENT=	Image viewer and browser for the GNOME 2 environment
 LIB_DEPENDS=	libunique-1.0.so:${PORTSDIR}/x11-toolkits/unique
 RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/gsettings-desktop-schemas.pc:${PORTSDIR}/devel/gsettings-desktop-schemas
 
-USES=		bison gettext gmake pathfix pkgconfig tar:xz
+USES=		bison gettext gmake libtool pathfix pkgconfig tar:xz
 USE_GNOME=	gnomeprefix intlhack gnomedocutils gconf2
 WANT_GSTREAMER=	yes
 USE_LDCONFIG=	yes
