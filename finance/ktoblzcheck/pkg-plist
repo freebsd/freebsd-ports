@@ -1,10 +1,9 @@
 bin/ktoblzcheck
 include/iban.h
 include/ktoblzcheck.h
-lib/libktoblzcheck.a
-lib/libktoblzcheck.la
 lib/libktoblzcheck.so
-lib/libktoblzcheck.so.6
+lib/libktoblzcheck.so.1
+lib/libktoblzcheck.so.1.5.22
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/ktoblzcheck.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/ktoblzcheck.pyc
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/ktoblzcheck.pyo
