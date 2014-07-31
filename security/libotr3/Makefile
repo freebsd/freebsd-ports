@@ -24,9 +24,10 @@ LIB_DEPENDS=	libgpg-error.so:${PORTSDIR}/security/libgpg-error \
 CONFLICTS=	libotr-*
 
 USE_AUTOTOOLS=	autoconf
-USES=		libtool
+USES=		libtool cpe
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
+CPE_VENDOR=	cypherpunks
 
 verify: checksum
 	gpg --verify ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX}.asc

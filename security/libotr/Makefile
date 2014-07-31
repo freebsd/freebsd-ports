@@ -20,8 +20,9 @@ LIB_DEPENDS=	libgpg-error.so:${PORTSDIR}/security/libgpg-error \
 CONFLICTS=	libotr3-*
 
 GNU_CONFIGURE=	yes
-USES=		libtool pathfix
+USES=		libtool pathfix cpe
 USE_LDCONFIG=	yes
+CPE_VENDOR=	cypherpunks
 
 .include <bsd.port.options.mk>
 
