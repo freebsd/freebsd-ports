@@ -1,12 +1,3 @@
-%%PERL5_MAN3%%/MDOM::Dumper.3.gz
-%%PERL5_MAN3%%/MDOM::Element.3.gz
-%%PERL5_MAN3%%/MDOM::Node.3.gz
-%%PERL5_MAN3%%/MDOM::Token.3.gz
-%%PERL5_MAN3%%/MDOM::Token::Comment.3.gz
-%%PERL5_MAN3%%/MDOM::Token::Separator.3.gz
-%%PERL5_MAN3%%/MDOM::Token::Whitespace.3.gz
-%%PERL5_MAN3%%/Makefile::DOM.3.gz
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Makefile/DOM/.packlist
 %%SITE_PERL%%/MDOM/Assignment.pm
 %%SITE_PERL%%/MDOM/Command.pm
 %%SITE_PERL%%/MDOM/Directive.pm
@@ -29,10 +20,19 @@
 %%SITE_PERL%%/MDOM/Unknown.pm
 %%SITE_PERL%%/MDOM/Util.pm
 %%SITE_PERL%%/Makefile/DOM.pm
-@dirrmtry %%SITE_PERL%%/Makefile
-@dirrmtry %%SITE_PERL%%/MDOM/Token
-@dirrmtry %%SITE_PERL%%/MDOM/Rule
-@dirrmtry %%SITE_PERL%%/MDOM/Document
-@dirrmtry %%SITE_PERL%%/MDOM
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Makefile/DOM
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Makefile/DOM/.packlist
+%%PERL5_MAN3%%/MDOM::Dumper.3.gz
+%%PERL5_MAN3%%/MDOM::Element.3.gz
+%%PERL5_MAN3%%/MDOM::Node.3.gz
+%%PERL5_MAN3%%/MDOM::Token.3.gz
+%%PERL5_MAN3%%/MDOM::Token::Comment.3.gz
+%%PERL5_MAN3%%/MDOM::Token::Separator.3.gz
+%%PERL5_MAN3%%/MDOM::Token::Whitespace.3.gz
+%%PERL5_MAN3%%/Makefile::DOM.3.gz
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Makefile/DOM
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Makefile
+@dirrmtry %%SITE_PERL%%/Makefile
+@dirrm %%SITE_PERL%%/MDOM/Token
+@dirrm %%SITE_PERL%%/MDOM/Rule
+@dirrm %%SITE_PERL%%/MDOM/Document
+@dirrm %%SITE_PERL%%/MDOM
