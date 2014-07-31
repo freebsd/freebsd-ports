@@ -1,7 +1,7 @@
-############################################################################
-# Please create a config file in %%PREFIX%%/etc                            #
-# A sample configuration file is installed as uvncrepeater.ini.sample      #
-#                                                                          #
-# To enable UVNC Repeater, put the following to your /etc/rc.conf:         #
-#      repeater_enable="YES"                                               #
-############################################################################
+
+Please edit %%PREFIX%%/etc/uvncrepeater.ini before using UltraVNC
+Repeater!
+
+To enable UVNC Repeater, put the following in your /etc/rc.conf:
+	repeater_enable="YES"
+
