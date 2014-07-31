@@ -17,9 +17,10 @@ COMMENT=	Hadoop database, a distributed, scalable, big data store
 LICENSE=	APACHE20
 
 BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash \
+		cmake:${PORTSDIR}/devel/cmake \
 		${LOCALBASE}/share/java/maven3/bin/mvn:${PORTSDIR}/devel/maven3
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash \
-		${LOCALBASE}/zookeeper/bin/zkServer.sh:${PORTSDIR}/devel/zookeeper
+		yarn:${PORTSDIR}/devel/hadoop2
 
 USE_JAVA=	yes
 JAVA_VERSION=	1.7+
