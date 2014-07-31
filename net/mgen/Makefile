@@ -18,28 +18,31 @@ ONLY_FOR_ARCHS=	i386
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 USES=		gmake tar:tgz
+MAKEFILE=	Makefile.freebsd
 
 PLIST_FILES=	bin/mgen
 PORTDOCS=	README.TXT VERSION.TXT mgen.html example.mgn
 
-NO_STAGE=	yes
+OPTIONS_DEFINE=	DOCS
+
 post-patch:
-	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/unix/Makefile.common \
+	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' \
+		${WRKSRC}/unix/Makefile.common \
 		${WRKSRC}/protolib/unix/Makefile.common
 
-	@${REINPLACE_CMD} -e 's|%%PTHREAD_CFLAGS%%|${PTHREAD_CFLAGS}|g' ${WRKSRC}/unix/Makefile.freebsd \
-	                ${WRKSRC}/protolib/unix/Makefile.freebsd
+	@${REINPLACE_CMD} -e 's|%%PTHREAD_CFLAGS%%|${PTHREAD_CFLAGS}|g; \
+		s|g++|${CXX}|; s|gcc|${CC}|; /CFLAGS =/s|$$|${CFLAGS}|' \
+		${WRKSRC}/unix/Makefile.freebsd \
+		${WRKSRC}/protolib/unix/Makefile.freebsd
 
 do-build:
-	cd ${WRKSRC}/unix && ${MAKE_CMD} -f Makefile.freebsd ${PORTNAME}
+	${DO_MAKE_BUILD} -C ${WRKSRC}/unix ${PORTNAME}
 
 do-install:
-	${INSTALL_PROGRAM}	${WRKSRC}/unix/mgen ${PREFIX}/bin
-.ifndef(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/unix/mgen ${STAGEDIR}${PREFIX}/bin
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for FILE in ${PORTDOCS}
-	@${INSTALL_DATA} ${WRKSRC}/${FILE} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${FILE} ${STAGEDIR}${DOCSDIR}
 .endfor
-.endif
 
 .include <bsd.port.mk>
