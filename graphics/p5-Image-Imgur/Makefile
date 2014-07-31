@@ -10,10 +10,14 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Perl extension for uploading images to http://imgur.com
 
-RUN_DEPENDS=	p5-Moose>=0:${PORTSDIR}/devel/p5-Moose \
-		p5-libwww>=0:${PORTSDIR}/www/p5-libwww
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
 
-USES=		perl5 tar:tgz
+BUILD_DEPENDS=	p5-Moose>=0:${PORTSDIR}/devel/p5-Moose \
+		p5-libwww>=0:${PORTSDIR}/www/p5-libwww
+RUN_DEPENDS:=	${BUILD_DEPENDS}
+
 USE_PERL5=	configure
+USES=		perl5 tar:tgz
 
 .include <bsd.port.mk>
