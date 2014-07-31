@@ -57,6 +57,36 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="2f90556f-18c6-11e4-9cc4-5453ed2e2b49">
+    <topic>kdelibs -- KAuth PID Reuse Flaw</topic>
+    <affects>
+      <package>
+	<name>kdelibs</name>
+	<range><lt>4.12.5_3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Martin Sandsmark reports:</p>
+	<blockquote cite="http://lists.kde.org/?l=kde-announce&amp;m=140674898412923&amp;w=2">
+	  <p>The KAuth framework uses polkit-1 API which tries to authenticate
+	    using the requestors PID. This is prone to PID reuse race
+	    conditions.</p>
+	  <p>This potentially allows a malicious application to pose as another
+	    for authentication purposes when executing privileged actions.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2014-5033</cvename>
+      <mlist>http://lists.kde.org/?l=kde-announce&amp;m=140674898412923&amp;w=2</mlist>
+    </references>
+    <dates>
+      <discovery>2014-07-30</discovery>
+      <entry>2014-07-31</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="9defb2d6-1404-11e4-8cae-20cf30e32f6d">
     <topic>bugzilla -- Cross Site Request Forgery</topic>
     <affects>
