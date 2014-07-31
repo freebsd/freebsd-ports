@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	bmpp
-PORTVERSION=	3.8.2
+PORTVERSION=	3.16.0
 CATEGORIES=	graphics perl5
 MASTER_SITES=	SF/dktools/dktools/dktools-${PORTVERSION}
 DISTNAME=	dktools-${PORTVERSION}
@@ -25,6 +25,8 @@ CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc/dktools\
 CONFIGURE_ENV=	ac_cv_header_sys_termios_h=no
 
 ALL_TARGET=	bmpp
+MAKEFILE=	GNUmakefile
+USES=		gmake
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
@@ -37,6 +39,8 @@ pre-patch:
 	@${REINPLACE_CMD} -e 's@#include <dk3conf.h>@#include <stdio.h>@p'\
 			  -e 's@#include <stdio.h>@#include <dk3conf.h>@'\
 		${WRKSRC}/dk3types.h
+	${REINPLACE_CMD} 's|-e "/^SOVERS/cSOVERS=$$VERSNO"|"s/^\(SOVERS.*\)/SOVERS=$$VERSNO/"|'\
+		${WRKSRC}/configure
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bmpp ${STAGEDIR}${PREFIX}/bin
