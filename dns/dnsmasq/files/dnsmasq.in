@@ -3,7 +3,7 @@
 # $FreeBSD$
 #
 # PROVIDE: dnsmasq
-# REQUIRE: SERVERS
+# REQUIRE: SERVERS ldconfig
 # BEFORE:  DAEMON named
 # KEYWORD: shutdown
 #
