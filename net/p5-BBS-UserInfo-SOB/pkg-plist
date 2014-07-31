@@ -1,8 +1,8 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/BBS/UserInfo/SOB/.packlist
 %%SITE_PERL%%/BBS/UserInfo/SOB.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/BBS/UserInfo/SOB/.packlist
 %%PERL5_MAN3%%/BBS::UserInfo::SOB.3.gz
-@dirrmtry %%SITE_PERL%%/BBS/UserInfo
-@dirrmtry %%SITE_PERL%%/BBS
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/BBS/UserInfo/SOB
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/BBS/UserInfo/SOB
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/BBS/UserInfo
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/BBS
+@dirrmtry %%SITE_PERL%%/BBS/UserInfo
+@dirrmtry %%SITE_PERL%%/BBS
