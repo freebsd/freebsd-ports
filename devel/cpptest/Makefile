@@ -13,12 +13,9 @@ COMMENT=	Unit testing framework for handling automated tests in C++
 LICENSE=	LGPL3
 
 GNU_CONFIGURE=	yes
-USES=		gmake libtool
+USES=		gmake libtool pathfix
+INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
 MAKE_ARGS=	CC=${CC} CCC=${CXX}
-
-post-install:
-	@${MV} ${STAGEDIR}${PREFIX}/lib/pkgconfig/libcpptest.pc ${STAGEDIR}${PREFIX}/libdata/pkgconfig/libcpptest.pc
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libcpptest.so.0.0.7
 
 .include <bsd.port.mk>
