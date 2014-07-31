@@ -6,12 +6,11 @@ PORTVERSION=	1.2
 CATEGORIES=	security
 MASTER_SITES=	http://www.semprixd.com/shares/ports/
 
-MAINTAINER= ports@FreeBSD.org
+MAINTAINER= 	ports@FreeBSD.org
 COMMENT=	Hash cracker that precomputes plaintext - ciphertext pairs in advance
 
 USES=		dos2unix
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "ia64" || ${ARCH} == "powerpc" || ${ARCH} == "sparc64"
@@ -24,9 +23,9 @@ post-patch:
 
 do-install:
 .for f in rcrack rtgen rtdump rtsort
-	${INSTALL_PROGRAM} ${WRKSRC}/${f} ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/${f} ${STAGEDIR}${PREFIX}/bin
 .endfor
-	${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/charset.txt ${EXAMPLESDIR}
+	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/charset.txt ${STAGEDIR}${EXAMPLESDIR}
 
 .include <bsd.port.post.mk>

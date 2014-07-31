@@ -2,5 +2,5 @@ bin/rcrack
 bin/rtgen
 bin/rtdump
 bin/rtsort
-%%EXAMPLESDIR%%/charset.txt
-@dirrm %%EXAMPLESDIR%%
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/charset.txt
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
