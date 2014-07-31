@@ -16,7 +16,7 @@ WRKSRC=		${WRKDIR}/${DISTNAME:S/_/-/}
 USES=		gmake
 MAKEFILE=	GNUmakefile
 
-PLIST_FILES=	sbin/webfsd man/man1/webfsd.1
+PLIST_FILES=	sbin/webfsd man/man1/webfsd.1.gz
 
 OPTIONS_DEFINE=		OPENSSL
 OPENSSL_MAKE_ENV=	LDLIBS="-lssl -lcrypto" USE_DIET=no
