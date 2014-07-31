@@ -3,6 +3,7 @@
 
 PORTNAME=	Test-Singleton
 PORTVERSION=	1.03
+PORTREVISION=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:TPG
@@ -11,11 +12,12 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Test for Singleton classes
 
-RUN_DEPENDS=	p5-Class-Singleton>=0:${PORTSDIR}/devel/p5-Class-Singleton \
-		p5-Test-Simple>=0:${PORTSDIR}/devel/p5-Test-Simple
-BUILD_DEPENDS:=	${RUN_DEPENDS}
+LICENSE=	GPLv2
 
-USES=		perl5
+BUILD_DEPENDS=	p5-Class-Singleton>=0:${PORTSDIR}/devel/p5-Class-Singleton
+RUN_DEPENDS:=	${BUILD_DEPENDS}
+
 USE_PERL5=	configure
+USES=		perl5
 
 .include <bsd.port.mk>
