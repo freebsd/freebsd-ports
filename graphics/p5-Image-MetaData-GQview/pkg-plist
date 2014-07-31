@@ -1,7 +1,8 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Image/MetaData/GQview/.packlist
+%%SITE_PERL%%/Image/MetaData/.perltidyrc
 %%SITE_PERL%%/Image/MetaData/GQview.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Image/MetaData/GQview/.packlist
 %%PERL5_MAN3%%/Image::MetaData::GQview.3.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Image/MetaData/GQview
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Image/MetaData/GQview
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Image/MetaData
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Image
 @dirrmtry %%SITE_PERL%%/Image/MetaData

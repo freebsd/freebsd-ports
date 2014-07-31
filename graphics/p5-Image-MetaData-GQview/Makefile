@@ -2,15 +2,19 @@
 # $FreeBSD$
 
 PORTNAME=	Image-MetaData-GQview
-PORTVERSION=	1.9
+PORTVERSION=	2.0.0
 CATEGORIES=	graphics perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
+DISTNAME=	${PORTNAME}-v${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Perl extension for GQview image metadata
 
-USES=		perl5
+LICENSE=	GPLv2 GPLv3
+LICENSE_COMB=	dual
+
 USE_PERL5=	configure
+USES=		perl5
 
 .include <bsd.port.mk>
