@@ -1,7 +1,7 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/What/.packlist
 %%SITE_PERL%%/What.pm
 %%SITE_PERL%%/What/MTA.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/What/.packlist
 %%PERL5_MAN3%%/What.3.gz
 %%PERL5_MAN3%%/What::MTA.3.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/What
-@dirrmtry %%SITE_PERL%%/What
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/What
+@dirrm %%SITE_PERL%%/What
