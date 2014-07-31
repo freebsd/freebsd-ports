@@ -28,7 +28,7 @@ RUN_DEPENDS=	mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir \
 
 USE_XORG=	x11 xext
 MAKE_ENV=	FILESDIR=${FILESDIR}
-MAKE_ARGS+=	CC="${CC}" CFLAGS="${CFLAGS}"
+MAKE_ARGS=	CC="${CC}"
 
 NO_STAGE=	yes
 .include <bsd.port.mk>
