@@ -3,6 +3,7 @@
 
 PORTNAME=	libgcrypt
 PORTVERSION=	1.6.1
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_GNUPG}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -45,6 +46,7 @@ CONFIGURE_ARGS+=	--disable-aesni-support
 .if (${OSVERSION} < 900000)
 USE_GCC=	yes
 .endif
+CONFIGURE_ARGS+=	--disable-drng-support
 
 .endif
 
