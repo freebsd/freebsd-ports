@@ -13,9 +13,14 @@ COMMENT=	Command Line Progress Bar
 WRKSRC=		${WRKDIR}/bar-${PORTVERSION}
 GNU_CONFIGURE=	yes
 MAKE_ARGS+=	CFLAGS+="${CFLAGS}"
-CONFIGURE_ARGS=	--disable-use-m64
 
 PLIST_FILES=	bin/bar \
 		man/man1/bar.1.gz
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if empty(ARCH:M*64)
+CONFIGURE_ARGS=	--disable-use-m64
+.endif
+
+.include <bsd.port.post.mk>
