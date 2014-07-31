@@ -6,14 +6,13 @@ PORTVERSION=	20071101
 PORTREVISION=	1
 CATEGORIES=	lang devel
 MASTER_SITES=	${MASTER_SITE_GCC}
-MASTER_SITE_SUBDIR= \
-		libstdc++/doxygen
+MASTER_SITE_SUBDIR=	libstdc++/doxygen
 DISTNAME=	libstdc++-html-USERS-4.2.2
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNU libstdc++ API documentation
 
-USES=	tar:bzip2
+USES=		tar:bzip2
 
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
@@ -24,16 +23,16 @@ NO_WRKSUBDIR=	yes
 
 PORTDOCS=	stldoc
 
-NO_STAGE=	yes
+OPTIONS_DEFINE=	DOCS
+
+.include <bsd.port.options.mk>
+
 do-install:
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR} ${DOCSDIR}/stldoc
-	    cd ${WRKSRC}/html_user-4.2.20071101 && \
-	    ${FIND} . -type f | \
-	    ${XARGS} -J % ${INSTALL_DATA} % ${DOCSDIR}/stldoc &&
-	    ${CHMOD} 755 ${DOCSDIR} ${DOCSDIR}/stldoc
+.if ${PORT_OPTIONS:MDOCS}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}/stldoc
+	(cd ${WRKSRC}/html_user-4.2.20071101 && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}/stldoc)
 .else
-	@${ECHO} "NOPORTDOCS is set -- installing nothing."
+	@${ECHO} "Enable the DOCS option to install documentation -- installing nothing."
 .endif
 
 .include <bsd.port.mk>
