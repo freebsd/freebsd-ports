@@ -11,11 +11,15 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Produce an atom feed from subversion commits
 
-BUILD_DEPENDS=	p5-XML-Atom-SimpleFeed>=0:${PORTSDIR}/textproc/p5-XML-Atom-SimpleFeed
+LICENSE=	BSD3CLAUSE
+
+BUILD_DEPENDS=	p5-XML-Atom-SimpleFeed>=0.80:${PORTSDIR}/textproc/p5-XML-Atom-SimpleFeed
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-USES=		perl5
 USE_PERL5=	modbuild
-PLIST_FILES=	bin/subatom man/man1/subatom.1.gz
+USES=		perl5
+
+PLIST_FILES=	bin/subatom \
+		man/man1/subatom.1.gz
 
 .include <bsd.port.mk>
