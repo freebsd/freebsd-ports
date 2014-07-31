@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libqcow
-DISTVERSION=	alpha-20140328
+DISTVERSION=	alpha-20140729
 CATEGORIES=	devel
 MASTER_SITES=	https://googledrive.com/host/0B3fBvzttpiiSSzlxcHFxRC0zYTA/ \
 		LOCAL/antoine
@@ -15,6 +15,7 @@ LICENSE=	LGPL3
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-python --with-libintl-prefix=${LOCALBASE} ${ICONV_CONFIGURE_ARG}
 USES=		fuse gettext iconv libtool pathfix pkgconfig
+USE_OPENSSL=	yes
 USE_PYTHON=	2
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
