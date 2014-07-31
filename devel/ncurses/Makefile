@@ -124,10 +124,12 @@ post-install:
 . for f in ${DOCS}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}/
 . endfor
+.if ${OSTYP} != FreeBSD || ${OSVERSION} > 900000
 	${RM} -f ${STAGEDIR}${PREFIX}/lib/libncurses.so \
 		${STAGEDIR}${PREFIX}/lib/libncursesw.so
 	${ECHO} "INPUT(libncurses.so.${RELEASE:R} AS_NEEDED(-ltinfo))" > ${STAGEDIR}${PREFIX}/lib/libncurses.so
 	${ECHO} "INPUT(libncursesw.so.${RELEASE:R} AS_NEEDED(-ltinfow))" > ${STAGEDIR}${PREFIX}/lib/libncursesw.so
+.endif
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/*.so.5.9
 
 .include <bsd.port.mk>
