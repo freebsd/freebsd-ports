@@ -2,32 +2,27 @@
 # $FreeBSD$
 
 PORTNAME=	clhep
-PORTVERSION=	2.1.0.1
+PORTVERSION=	2.2.0.1
 CATEGORIES=	science
 MASTER_SITES=	http://wwwasd.web.cern.ch/wwwasd/lhc++/clhep/DISTRIBUTION/tarFiles/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Object-oriented toolkit for particle physics applications by CERN
 
+LICENSE=	GPLv3 LGPL3
+LICENSE_COMB=	multi
+
 WRKSRC=		${WRKDIR}/${PORTVERSION}/${PORTNAME:tu}
 
-USES=		gmake perl5 tar:tgz
+USES=		cmake:outsource perl5 tar:tgz
 USE_PERL5=	build
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--enable-gmake
 USE_LDCONFIG=	yes
 
 PLIST_SUB=	VERSION="${PORTVERSION}"
 
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 700000
-BROKEN=	Does not compile on FreeBSD 6.X
-.endif
-
 post-patch:
-	@${FIND} ${WRKSRC} -name "configure" | ${XARGS} ${REINPLACE_CMD} -e \
-		 '/AM_CXXFLAGS=/s|-O ||g'
+	@${REINPLACE_CMD} -e \
+		'/DESTINATION/s|lib$${LIB_SUFFIX}|libdata|' \
+		${WRKSRC}/cmake/Modules/ClhepToolchain.cmake
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
