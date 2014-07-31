@@ -264,6 +264,7 @@
     SUBDIR += cpan-upload-http
     SUBDIR += cppcheck
     SUBDIR += cppi
+    SUBDIR += cpptest
     SUBDIR += cppunit
     SUBDIR += cproto
     SUBDIR += cpuflags
