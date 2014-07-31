@@ -3,6 +3,7 @@
 
 PORTNAME=	Net-RBLClient
 PORTVERSION=	0.5
+PORTREVISION=	1
 CATEGORIES=	dns perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -10,13 +11,15 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Queries multiple Realtime Blackhole Lists in parallel
 
-BUILD_DEPENDS=	p5-Net-DNS>=0:${PORTSDIR}/dns/p5-Net-DNS \
-		p5-Time-HiRes>=0:${PORTSDIR}/devel/p5-Time-HiRes
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
+
+BUILD_DEPENDS=	p5-Net-DNS>=0:${PORTSDIR}/dns/p5-Net-DNS
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-WRKSRC=		${WRKDIR}/RBLCLient-${PORTVERSION}
-
-USES=		perl5
 USE_PERL5=	configure
+USES=		perl5
+
+WRKSRC=		${WRKDIR}/RBLCLient-${PORTVERSION}
 
 .include <bsd.port.mk>
