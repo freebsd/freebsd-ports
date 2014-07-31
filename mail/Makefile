@@ -123,7 +123,6 @@
     SUBDIR += exilog
     SUBDIR += exim
     SUBDIR += exim-doc-html
-    SUBDIR += exim-doc-info
     SUBDIR += exim-doc-pdf
     SUBDIR += exim-doc-postscript
     SUBDIR += exim-ldap2
@@ -506,7 +505,6 @@
     SUBDIR += postfix-postfwd
     SUBDIR += postfix-tls
     SUBDIR += postfix210
-    SUBDIR += postfix27
     SUBDIR += postfix28
     SUBDIR += postfix29
     SUBDIR += postfixadmin

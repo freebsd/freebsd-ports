@@ -119,7 +119,6 @@
     SUBDIR += freebsd-doc-tr
     SUBDIR += freebsd-doc-zh_cn
     SUBDIR += freebsd-doc-zh_tw
-    SUBDIR += freecode-submit
     SUBDIR += freeguide
     SUBDIR += ftdi-eeprom
     SUBDIR += fxload
@@ -146,7 +145,6 @@
     SUBDIR += gkrellshoot2
     SUBDIR += gkrellweather2
     SUBDIR += gkx86info2
-    SUBDIR += gman
     SUBDIR += gnome-devel-docs
     SUBDIR += gnome-icon-theme
     SUBDIR += gnome-icon-theme-extras

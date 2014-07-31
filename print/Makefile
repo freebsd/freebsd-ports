@@ -86,7 +86,6 @@
     SUBDIR += ghostscript9-agpl
     SUBDIR += ghostscript9-agpl-nox11
     SUBDIR += ghostscript9-nox11
-    SUBDIR += ghostview
     SUBDIR += gimp-gutenprint
     SUBDIR += gl2ps
     SUBDIR += gnome-cups-manager
