@@ -11,7 +11,10 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Base class of BBS::UserInfo::XXX
 
-USES=		perl5
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
+
 USE_PERL5=	configure
+USES=		perl5
 
 .include <bsd.port.mk>
