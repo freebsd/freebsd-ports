@@ -1,4 +1,3 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/SVG/DOM2/.packlist
 %%SITE_PERL%%/SVG/DOM2.pm
 %%SITE_PERL%%/SVG/DOM2/Attribute/Colour.pm
 %%SITE_PERL%%/SVG/DOM2/Attribute/Metric.pm
@@ -22,21 +21,22 @@
 %%SITE_PERL%%/SVG/DOM2/Element/Shape/Font.pm
 %%SITE_PERL%%/SVG/DOM2/Element/Shape/Stroke.pm
 %%SITE_PERL%%/SVG/DOM2/Element/Text.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/SVG/DOM2/.packlist
 %%PERL5_MAN3%%/SVG::DOM2.3.gz
 %%PERL5_MAN3%%/SVG::DOM2::Attribute::Transform.3.gz
 %%PERL5_MAN3%%/SVG::DOM2::Element::Document.3.gz
-%%PERL5_MAN3%%/SVG::DOM2::Element::Shape.3.gz
 %%PERL5_MAN3%%/SVG::DOM2::Element::MetaData.3.gz
+%%PERL5_MAN3%%/SVG::DOM2::Element::Shape.3.gz
 %%PERL5_MAN3%%/SVG::DOM2::Element::Shape::Fill.3.gz
 %%PERL5_MAN3%%/SVG::DOM2::Element::Shape::Font.3.gz
 %%PERL5_MAN3%%/SVG::DOM2::Element::Shape::Stroke.3.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/SVG/DOM2
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/SVG/DOM2
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/SVG
-@dirrmtry %%SITE_PERL%%/SVG/DOM2/Element/Definition/linearGradient
-@dirrmtry %%SITE_PERL%%/SVG/DOM2/Element/Definition
-@dirrmtry %%SITE_PERL%%/SVG/DOM2/Element/MetaData
-@dirrmtry %%SITE_PERL%%/SVG/DOM2/Element/Shape
-@dirrmtry %%SITE_PERL%%/SVG/DOM2/Attribute
-@dirrmtry %%SITE_PERL%%/SVG/DOM2/Element
-@dirrmtry %%SITE_PERL%%/SVG/DOM2
+@dirrm %%SITE_PERL%%/SVG/DOM2/Element/Shape
+@dirrm %%SITE_PERL%%/SVG/DOM2/Element/MetaData
+@dirrm %%SITE_PERL%%/SVG/DOM2/Element/Definition/linearGradient
+@dirrm %%SITE_PERL%%/SVG/DOM2/Element/Definition
+@dirrm %%SITE_PERL%%/SVG/DOM2/Element
+@dirrm %%SITE_PERL%%/SVG/DOM2/Attribute
+@dirrm %%SITE_PERL%%/SVG/DOM2
 @dirrmtry %%SITE_PERL%%/SVG
