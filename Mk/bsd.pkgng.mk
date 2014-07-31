@@ -31,51 +31,32 @@ PLIST_REINPLACE:=	${PLIST_REINPLACE:Nstopdaemon}
 
 ACTUAL-PACKAGE-DEPENDS?= \
 	if [ "${_LIB_RUN_DEPENDS}" != "  " ]; then \
-		${PKG_QUERY} "%n: {origin: %o, version: \"%v\"}" " " ${_LIB_RUN_DEPENDS:C,[^:]*:([^:]*):?.*,\1,:C,${PORTSDIR}/,,} 2>/dev/null || : ; \
+		${PKG_QUERY} "\"%n\": {origin: %o, version: \"%v\"}" " " ${_LIB_RUN_DEPENDS:C,[^:]*:([^:]*):?.*,\1,:C,${PORTSDIR}/,,} 2>/dev/null || : ; \
 	fi
 
 create-manifest:
-	@${MKDIR} ${METADIR}
-	@${ECHO_CMD} "name: ${PKGNAMEPREFIX}${PORTNAME}${PKGNAMESUFFIX}" > ${MANIFESTF} 
-	@${ECHO_CMD} "version: ${PKGVERSION}" >> ${MANIFESTF}
-	@${ECHO_CMD} "origin: ${PKGORIGIN}" >> ${MANIFESTF}
-	@${ECHO_CMD} "comment: |" >> ${MANIFESTF}
-	@${ECHO_CMD} "  "${COMMENT:Q} >> ${MANIFESTF}
-	@${ECHO_CMD} "maintainer: ${MAINTAINER}" >> ${MANIFESTF}
-	@${ECHO_CMD} "prefix: ${PREFIX}" >> ${MANIFESTF}
-.if defined(NO_ARCH)
-	@${ECHO_CMD} "arch: `${PKG_BIN} config abi | ${CUT} -d: -f1,2`:*" >> ${MANIFESTF}
-.endif
-.if defined(WWW)
-	@${ECHO_CMD} "www: ${WWW}" >> ${MANIFESTF}
-.endif
-	@${ECHO_CMD} "deps: " >> ${MANIFESTF}
-	@${ACTUAL-PACKAGE-DEPENDS} | ${GREP} -v -E ${PKG_IGNORE_DEPENDS} | ${SORT} -u | ${SED} 's/^/  /' >> ${MANIFESTF}
-	@${ECHO_CMD} -n "categories: [" >> ${MANIFESTF}
-.for cat in ${CATEGORIES:u}
-	@${ECHO_CMD} -n "${cat}," >> ${MANIFESTF}
-.endfor
-	@${ECHO_CMD} "]" >> ${MANIFESTF}
-.if defined(LICENSE_COMB)
-	@${ECHO_CMD} "licenselogic: ${LICENSE_COMB}" >> ${MANIFESTF}
-.else
-	@${ECHO_CMD} "licenselogic: single" >> ${MANIFESTF}
-.endif
-	@${ECHO_CMD} -n "licenses: [" >> ${MANIFESTF}
-.for lic in ${LICENSE:u}
-	@${ECHO_CMD} -n "${lic}," >> ${MANIFESTF}
-.endfor
-	@${ECHO_CMD} "]" >> ${MANIFESTF}
-	@${ECHO_CMD} -n "users: [" >> ${MANIFESTF}
-.for user in ${USERS:u}
-	@${ECHO_CMD} -n "${user}, " >> ${MANIFESTF}
-.endfor
-	@${ECHO_CMD} "]" >> ${MANIFESTF}
-	@${ECHO_CMD} -n "groups: [" >> ${MANIFESTF}
-.for group in ${GROUPS:u}
-	@${ECHO_CMD} -n "${group}, " >> ${MANIFESTF}
-.endfor
-	@${ECHO_CMD} "]" >> ${MANIFESTF}
+	@${MKDIR} ${METADIR}; \
+	(\
+		echo "name: \"${PKGBASE}\"" ; \
+		echo "version: \"${PKGVERSION}\"" ; \
+		echo "origin: ${PKGORIGIN}" ; \
+		echo "comment: <<EOD" ; \
+		echo ${COMMENT:Q} ; \
+		echo "EOD" ; \
+		echo "maintainer: ${MAINTAINER}" ; \
+		echo "prefix: ${PREFIX}" ; \
+		[ -z "${WWW}" ] || echo "www: ${WWW}" ; \
+		echo "deps: { "; \
+		${ACTUAL-PACKAGE-DEPENDS} | ${GREP} -v -E ${PKG_IGNORE_DEPENDS} | ${SORT} -u ; \
+		echo "}" ; \
+		echo "categories: [ ${CATEGORIES:u:S/$/,/} ]" ; \
+		l=${LICENSE_COMB} ; \
+		[ -n "${NO_ARCH}" ] && echo "arch : `${PKG_BIN} config abi | ${CUT} -d: -f1,2`:*" ; \
+		echo "licenselogic: $${l:-single}" ; \
+		[ -z "${LICENSE}" ] || echo "licenses: [ ${LICENSE:u:S/$/,/} ]" ; \
+		[ -z "${USERS}" ] || echo "users: [ ${USERS:u:S/$/,/} ]" ; \
+		[ -z "${GROUPS}" ] || echo "groups: [ ${GROUPS:u:S/$/,/} ]" ; \
+	) > ${MANIFESTF}
 	@${ECHO_CMD} -n "options: {" >> ${MANIFESTF}
 .for opt in ${COMPLETE_OPTIONS_LIST}
 	@[ -z "${PORT_OPTIONS:M${opt}}" ] || match="on" ; ${ECHO_MSG} -n " ${opt}: $${match:-off}," >> ${MANIFESTF}
