@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pianobar
-PORTVERSION=	2013.09.15
-PORTREVISION=	4
+PORTVERSION=	2014.06.08
 CATEGORIES=	audio
 MASTER_SITES=	http://6xq.net/projects/${PORTNAME}/
 
@@ -17,7 +16,8 @@ LIB_DEPENDS=	libao.so:${PORTSDIR}/audio/libao \
 		libmad.so:${PORTSDIR}/audio/libmad \
 		libgnutls.so:${PORTSDIR}/security/gnutls \
 		libjson.so:${PORTSDIR}/devel/json-c \
-		libgcrypt.so:${PORTSDIR}/security/libgcrypt
+		libgcrypt.so:${PORTSDIR}/security/libgcrypt \
+		libavcodec.so:${PORTSDIR}/multimedia/ffmpeg
 
 PLIST_FILES=	bin/pianobar \
 		man/man1/pianobar.1.gz
