@@ -11,9 +11,13 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Simple way to write filesystems in Perl using FUSE
 
-RUN_DEPENDS=	p5-Fuse>=0:${PORTSDIR}/sysutils/p5-Fuse
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
 
-USES=		perl5
+BUILD_DEPENDS=	p5-Fuse>=0:${PORTSDIR}/sysutils/p5-Fuse
+RUN_DEPENDS:=	${BUILD_DEPENDS}
+
 USE_PERL5=	configure
+USES=		perl5
 
 .include <bsd.port.mk>
