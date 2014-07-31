@@ -8,31 +8,28 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
-COMMENT=	A pastebin web application to upload snippets of text
+COMMENT=	Pastebin web application to upload snippets of text
+
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	p5-IO-All>=0:${PORTSDIR}/devel/p5-IO-All \
-		p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
-		p5-Spiffy>=0:${PORTSDIR}/devel/p5-Spiffy
+		p5-Spiffy>=0:${PORTSDIR}/devel/p5-Spiffy \
+		p5-libwww>=0:${PORTSDIR}/www/p5-libwww
 RUN_DEPENDS:=	${BUILD_DEPENDS}
-
-USES=		shebangfix perl5
-USE_PERL5=	configure
-SHEBANG_FILES=	nopaste
 
 OPTIONS_DEFINE=	X11
 X11_DESC=	X11 Clipboard support
 
-.include <bsd.port.options.mk>
+USE_PERL5=	configure
+USES=		shebangfix perl5
 
-.if ${PORT_OPTIONS:MX11}
-BUILD_DEPENDS+=	p5-Clipboard>=0:${PORTSDIR}/x11/p5-Clipboard
-.else
-EXTRA_PATCHES+=	${FILESDIR}/extrapatch-lib-WebService-NoPaste.pm
-.endif
+SHEBANG_FILES=	nopaste
+
+X11_BUILD_DEPENDS=	p5-Clipboard>=0:${PORTSDIR}/x11/p5-Clipboard
+X11_EXTRA_PATCHES_OFF=	${FILESDIR}/extrapatch-lib-WebService-NoPaste.pm
 
 post-patch:
-.if ! ${PORT_OPTIONS:MX11}
-	@${RM} ${WRKSRC}/lib/WebService/NoPaste.pm.orig
-.endif
+	-@${RM} ${WRKSRC}/lib/WebService/NoPaste.pm.orig
 
 .include <bsd.port.mk>
