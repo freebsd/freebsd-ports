@@ -1,9 +1,9 @@
 # $FreeBSD$
 
-PORTNAME=	ajaxplorer
-PORTVERSION=	5.0.4
+PORTNAME=	pydio
+PORTVERSION=	5.2.3
 CATEGORIES=	www
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/stable-channel/${PORTVERSION}
+MASTER_SITES=	SF/ajaxplorer/${PORTNAME}/stable-channel/${PORTVERSION}
 DISTNAME=	${PORTNAME}-core-${PORTVERSION}
 
 MAINTAINER=	madpilot@FreeBSD.org
@@ -20,7 +20,8 @@ SHEBANG_FILES=	plugins/core.mq/ws-server.php \
 USE_PHP=	dom mcrypt gd
 DOS2UNIX_REGEX=	.*\.php
 WANT_PHP_WEB=	yes
-SUB_FILES=	pkg-deinstall pkg-install pkg-message
+SUB_FILES=	pkg-deinstall pkg-message
+SUB_LIST+=	GOWDIR=${WWWDIR:H}
 
 post-patch:
 	@${RM} -f ${WRKSRC}/plugins/gui.ajax/res/themes/vision/images/mimes/16/._users-folder.png
@@ -32,8 +33,6 @@ do-install:
 	${MKDIR} ${STAGEDIR}${WWWDIR}
 	(cd ${WRKSRC} && ${COPYTREE_SHARE} "* .htaccess" ${STAGEDIR}${WWWDIR})
 	${INSTALL_DATA} ${WRKDIR}/bootstrap_*.php.sample ${STAGEDIR}${WWWDIR}/conf
-	${INSTALL_DATA} ${FILESDIR}/4.2.3-5.0.0-db-upgrade.sql ${STAGEDIR}${WWWDIR}/conf
-	${CHOWN} -R ${WWWOWN}:${WWWGRP} ${STAGEDIR}${WWWDIR}
 
 post-install:
 	@${ECHO_CMD} '@exec ${CHOWN} -R ${WWWOWN}:${WWWGRP} ${WWWDIR}' >> ${TMPPLIST}

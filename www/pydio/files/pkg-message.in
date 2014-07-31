@@ -1,0 +1,38 @@
+************************************************************************
+
+Ajaxplorer has been installed in %%WWWDIR%%.
+
+You need to configure your webserver to publish that directory.
+
+Please also read http://ajaxplorer.info/documentation/administration/
+for further details on how to secure and configure your installation.
+
+************************************************************************
+
+************************************************************************
+
+WARNING: If you are upgrading from ajaxplorer (the
+old project name) version 5.0.4 please note that the project
+changed it's name and files have been moved to a new location.
+
+The old configuration files need to be moved from the old
+location to the new intallation. and some files need
+to be deleted.
+Please run the following commands (adjust paths if necessary):
+ # rm %%GOWDIR%%/ajaxplorer/data/cache/i18n/*.ser
+ # rm %%GOWDIR%%/ajaxplorer/data/cache/*.ser
+ # cp -R %%GOWDIR%%/ajaxplorer/* %%WWWDIR%%/
+
+Also, if you're using database backends, update scripts
+for mysql and sqlite are available in these locations:
+
+%%WWWDIR%%/conf/5.2.0.sql
+%%WWWDIR%%/conf/5.2.0.sqlite
+
+Finally you'll need to update your webserver configuration to point
+to the new installation directory %%WWWDIR%%.
+
+Please also read the upgrading notes at:
+http://pyd.io/pydio-core-5.2.0#Upgrading
+
+************************************************************************
