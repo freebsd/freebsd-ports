@@ -24,18 +24,3 @@
  		if (xic)
  			fInputContext = new TInputContext(xic);
  			
-@@ -657,7 +657,14 @@
- {
- 	time = CurrentTime;	// ignore time for now
- 
-+#if 0
-+	Pietro Cerutti <gahr@gahr.ch> 
-+	We may not be the active window
-+	anymore by this time
-+
- 	ASSERT(sPointerGrabWindow == this);
-+#endif
-+	if(sPointerGrabWindow != this) return;
- 
- 	XUngrabPointer(sDisplay, time);
- 	
