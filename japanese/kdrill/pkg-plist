@@ -1,11 +1,13 @@
 bin/kdrill
 bin/makedic
 bin/makeedict
-share/dict/kdrill/fullkatahira.edic
-share/dict/kdrill/hira.edic
-share/dict/kdrill/hiraplus.edic
-share/dict/kdrill/kata.edic
-share/dict/kdrill/kataplus.edic
 lib/X11/app-defaults/KDrill
-@dirrm share/dict/kdrill
-@dirrmtry share/dict
+man/man1/kdrill.1.gz
+man/man1/makedic.1.gz
+man/man1/makeedict.1.gz
+%%DATADIR%%/fullkatahira.edic
+%%DATADIR%%/hira.edic
+%%DATADIR%%/hiraplus.edic
+%%DATADIR%%/kata.edic
+%%DATADIR%%/kataplus.edic
+@dirrm %%DATADIR%%
