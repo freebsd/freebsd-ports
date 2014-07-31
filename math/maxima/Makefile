@@ -6,7 +6,7 @@ PORTVERSION=	5.31.3
 CATEGORIES=	math lisp tk
 MASTER_SITES=	SF/maxima/Maxima-source/${PORTVERSION}-source
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bf@FreeBSD.org
 COMMENT=	Symbolic mathematics program
 
 LICENSE=	GPLv2
@@ -26,7 +26,6 @@ CONFIGURE_ARGS+=	--prefix=${PREFIX} \
 			--with-wish=${WISH} \
 			${LISPSELECT}
 
-MAN1=	maxima.1
 INFO=	maxima imaxima xmaxima
 
 PLIST_SUB=	BINDIR=${BINDIRECTORY}
@@ -44,7 +43,6 @@ CMUCL_DESC=	Build with CMU Common Lisp
 GCL_DESC=	Build with GNU Common Lisp
 SBCL_DESC=	Build with Steel Bank Common Lisp
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 # Lisp to build with. Define only ONE of these!
@@ -117,11 +115,6 @@ post-patch:
 pre-build:
 	@${FIND} ${WRKSRC} \( -name '*.bak' -o -name '*.fbsd10bak' -o \
 	-name '*.orig' \) -delete
-
-post-install:
-	@${ECHO_MSG} ""
-	@${CAT} ${PKGMESSAGE}
-	@${ECHO_MSG} ""
 
 check regression-test test: build
 	@cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} \
