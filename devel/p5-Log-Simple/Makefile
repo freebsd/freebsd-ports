@@ -10,7 +10,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Basic runtime logger
 
-USES=		perl5
+LICENSE=	GPLv2
+
 USE_PERL5=	configure
+USES=		perl5
 
 .include <bsd.port.mk>
