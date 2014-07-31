@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mirall
-PORTVERSION=	1.6.0
-PORTREVISION=	1
+PORTVERSION=	1.6.2
 CATEGORIES=	deskutils
 MASTER_SITES=	http://download.owncloud.com/desktop/stable/
 
@@ -30,9 +29,11 @@ CONFLICTS=	owncloud-csync-[0-9]*
 OPTIONS_DEFINE=	DOCS
 
 DOCS_BUILD_DEPENDS=	sphinx-build:${PORTSDIR}/textproc/py-sphinx
-DOCS_USE=		TEX=latex:build,dvipsk
+DOCS_USE=		TEX=dvipsk:build,latex:build
 DOCS_CMAKE_ON=		WITH_DOC=true
 DOCS_ALL_TARGET=	all doc-html doc-pdf
+
+.include <bsd.port.options.mk>
 
 post-patch:
 	@${REINPLACE_CMD} -e \
@@ -41,10 +42,8 @@ post-patch:
 post-build:
 	@(cd ${WRKSRC} && ${CP} -f sync-exclude.lst sync-exclude.lst.sample)
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MDOCS}
 post-install:
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	(cd ${INSTALL_WRKSRC}/doc/latex && ${INSTALL_DATA} *.pdf \
 		${STAGEDIR}${DOCSDIR})
