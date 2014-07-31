@@ -1,10 +1,10 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Yahoo/BBAuth/.packlist
 %%SITE_PERL%%/Yahoo/BBAuth.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Yahoo/BBAuth/.packlist
+%%PERL5_MAN3%%/Yahoo::BBAuth.3.gz
 %%WWWDIR%%/cgi-bin/testMAIL.cgi
 %%WWWDIR%%/cgi-bin/testPHOTOS.cgi
-%%PERL5_MAN3%%/Yahoo::BBAuth.3.gz
-@dirrmtry %%WWWDIR%%/cgi-bin
-@dirrmtry %%WWWDIR%%
-@dirrmtry %%SITE_PERL%%/Yahoo
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Yahoo/BBAuth
+@dirrm %%WWWDIR%%/cgi-bin
+@dirrm %%WWWDIR%%
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Yahoo/BBAuth
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Yahoo
+@dirrmtry %%SITE_PERL%%/Yahoo

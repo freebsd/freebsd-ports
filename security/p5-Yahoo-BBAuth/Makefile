@@ -5,23 +5,26 @@ PORTNAME=	Yahoo-BBAuth
 PORTVERSION=	0.50
 CATEGORIES=	security www perl5
 MASTER_SITES=	CPAN
-MASTER_SITE_SUBDIR=	Yahoo
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Perl interface to the Yahoo! Browser-Based Authentication
 
-RUN_DEPENDS=	p5-Class-Accessor>=0:${PORTSDIR}/devel/p5-Class-Accessor \
-		p5-JSON>=0:${PORTSDIR}/converters/p5-JSON \
-		p5-libwww>=0:${PORTSDIR}/www/p5-libwww
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
 
-USES=		perl5 shebangfix
+BUILD_DEPENDS=	p5-Class-Accessor>=0:${PORTSDIR}/devel/p5-Class-Accessor \
+		p5-JSON>=0:${PORTSDIR}/converters/p5-JSON \
+		p5-libwww>=5.6:${PORTSDIR}/www/p5-libwww
+RUN_DEPENDS:=	${BUILD_DEPENDS}
+
 USE_PERL5=	configure
+USES=		perl5 shebangfix
 
 SHEBANG_FILES=	eg/*.cgi
 
 post-install:
-	${MKDIR} ${STAGEDIR}${WWWDIR}/cgi-bin
-	${INSTALL_SCRIPT} ${WRKSRC}/eg/* ${STAGEDIR}${WWWDIR}/cgi-bin
+	${MKDIR} ${STAGEDIR}${WWWDIR}/cgi-bin/
+	${INSTALL_SCRIPT} ${WRKSRC}/eg/* ${STAGEDIR}${WWWDIR}/cgi-bin/
 
 .include <bsd.port.mk>
