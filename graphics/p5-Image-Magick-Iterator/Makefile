@@ -6,16 +6,16 @@ PORTVERSION=	0.01
 PORTREVISION=	4
 CATEGORIES=	graphics perl5
 MASTER_SITES=	CPAN
-MASTER_SITE_SUBDIR=	Image
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Sequentially read Image::Magick object from a filehandle
 
-RUN_DEPENDS=	convert:${PORTSDIR}/graphics/ImageMagick \
-		p5-Image-PBMlib>=0:${PORTSDIR}/graphics/p5-Image-PBMlib
+BUILD_DEPENDS=	ImageMagick>=0:${PORTSDIR}/graphics/ImageMagick \
+		p5-Image-PBMlib>=1.05:${PORTSDIR}/graphics/p5-Image-PBMlib
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-USES=		perl5
 USE_PERL5=	configure
+USES=		perl5
 
 .include <bsd.port.mk>
