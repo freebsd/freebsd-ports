@@ -13,6 +13,7 @@ COMMENT=	Command Line Progress Bar
 WRKSRC=		${WRKDIR}/bar-${PORTVERSION}
 GNU_CONFIGURE=	yes
 MAKE_ARGS+=	CFLAGS+="${CFLAGS}"
+CONFIGURE_ARGS=	--disable-use-m64
 
 PLIST_FILES=	bin/bar \
 		man/man1/bar.1.gz
