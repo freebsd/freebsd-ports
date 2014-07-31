@@ -2,13 +2,13 @@
 # $FreeBSD$
 
 PORTNAME=	ejabberd
-PORTVERSION=	14.05
+PORTVERSION=	14.07
 CATEGORIES=	net-im
 MASTER_SITES=	http://www.process-one.net/downloads/${PORTNAME}/${PORTVERSION}/:p1 \
 		http://distfiles.pirateparty.in/%SUBDIR%/:deps \
 		${MASTER_SITE_LOCAL:S/$/:deps/}
 MASTER_SITE_SUBDIR=	ashish/:deps
-DISTFILES+=	${PORTNAME}-${PORTVERSION}.tgz:p1 ejabberd-deps-0.tar.xz:deps
+DISTFILES+=	${PORTNAME}-${PORTVERSION}.tgz:p1 ejabberd-deps-1.tar.xz:deps
 
 MAINTAINER=	ashish@FreeBSD.org
 COMMENT=	Free and Open Source distributed fault-tolerant Jabber server
@@ -30,11 +30,11 @@ USES=		gmake pkgconfig
 USE_RC_SUBR=	${PORTNAME}
 NOPRECIOUSMAKEVARS=	yes
 
-OPTIONS_DEFINE=	ODBC PAM DOCS HTTP STUN JSON MYSQL PGSQL LAGER ICONV
+OPTIONS_DEFINE=	ODBC PAM DOCS HTTP JSON MYSQL PGSQL LAGER ICONV
 OPTIONS_DEFAULT=	LAGER ICONV
 
 MAKE_ENV=	PORTVERSION=${PORTVERSION}
-CONFIGURE_ARGS+=--localstatedir=/var --with-openssl=${OPENSSLBASE} --with-expat=${LOCALBASE}
+CONFIGURE_ARGS+=--localstatedir=/var
 MAKE_ARGS=	"CPPFLAGS=${CPPFLAGS}" "CFLAGS=${CFLAGS}" "LDFLAGS=${LDFLAGS}"
 CPPFLAGS+=	-I${LOCALBASE}/include
 CFLAGS+=	-I${LOCALBASE}/include
@@ -49,14 +49,12 @@ SUB_LIST=	PORTNAME=${PORTNAME} PORTVERSION=${PORTVERSION} \
 
 OPTIONS_SUB=		yes
 HTTP_DESC=	HTTP support
-STUN_DESC=	STUN support
 LAGER_DESC=	LAGER logger
 PAM_CONFIGURE_ENABLE=	pam
 ODBC_CONFIGURE_ENABLE=	odbc
 LAGER_CONFIGURE_ENABLE=	lager
 HTTP_CONFIGURE_ENABLE=	http
 JSON_CONFIGURE_ENABLE=	json
-STUN_CONFIGURE_ENABLE=	stun
 MYSQL_CONFIGURE_ENABLE=	mysql
 PGSQL_CONFIGURE_ENABLE=	pgsql
 ICONV_CONFIGURE_ENABLE=	iconv
@@ -78,6 +76,8 @@ post-install:
 .if ${PORT_OPTIONS:MPAM}
 	${INSTALL} -m 444 ${FILESDIR}/pam_ejabberd ${STAGEDIR}${PREFIX}/etc/pam.d/ejabberd
 .endif
-	@${CAT} ${PKGMESSAGE}
+.for _file in p1_tls_drv.so expat_erl.so p1_yaml.so esip_drv.so p1_sha.so jiffy.so ezlib_drv.so iconv.so stringprep.so
+	-@[ -f ${STAGEDIR}${PREFIX}/lib/erlang/lib/ejabberd-${PORTVERSION}/priv/lib/${_file} ] && ${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/erlang/lib/ejabberd-${PORTVERSION}/priv/lib/${_file}
+.endfor
 
 .include <bsd.port.post.mk>
