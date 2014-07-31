@@ -94,9 +94,9 @@ post-install:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	@${INSTALL_DATA} ${WRKSRC}/ruby/* ${STAGEDIR}${EXAMPLESDIR}
 .endif
-	@${INSTALL_DATA} ${WRKSRC}/conf/kismet.conf \
+	@${MV} ${STAGEDIR}${PREFIX}/etc/kismet.conf \
 		${STAGEDIR}${PREFIX}/etc/kismet.conf.sample
-	@${INSTALL_DATA} ${WRKSRC}/conf/kismet_drone.conf \
+	@${MV} ${STAGEDIR}${PREFIX}/etc/kismet_drone.conf \
 		${STAGEDIR}${PREFIX}/etc/kismet_drone.conf.sample
 
 .include <bsd.port.mk>
