@@ -1,0 +1,8 @@
+Cask is a project management tool for Emacs that helps automate the package
+development cycle; development, dependencies, testing, building, packaging and
+more.
+
+Cask can also be used to manage dependencies for your local Emacs
+configuration.
+
+WWW: https://github.com/cask/cask
