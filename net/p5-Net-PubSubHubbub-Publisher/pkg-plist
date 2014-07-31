@@ -1,9 +1,9 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/PubSubHubbub/Publisher/.packlist
-%%SITE_PERL%%/Net/PubSubHubbub/Publisher.pm
 bin/pubsubhubbub-publish
+%%SITE_PERL%%/Net/PubSubHubbub/Publisher.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/PubSubHubbub/Publisher/.packlist
 %%PERL5_MAN3%%/Net::PubSubHubbub::Publisher.3.gz
-@dirrmtry %%SITE_PERL%%/Net/PubSubHubbub
-@dirrmtry %%SITE_PERL%%/Net
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/PubSubHubbub/Publisher
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/PubSubHubbub/Publisher
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/PubSubHubbub
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net
+@dirrmtry %%SITE_PERL%%/Net/PubSubHubbub
+@dirrmtry %%SITE_PERL%%/Net
