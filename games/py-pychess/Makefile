@@ -2,75 +2,64 @@
 # $FreeBSD$
 
 PORTNAME=	pychess
-DISTVERSION=	0.10rc1
-PORTREVISION=	2
-#PORTEPOCH=	0
+PORTVERSION=	0.10.1
 CATEGORIES=	games python
-MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE} \
-		http://nivi.interfree.it/distfiles/${PORTNAME}/
+MASTER_SITES=	http://www.pychess.org/download/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GTK chess client written in Python
 
+LICENSE=	GPLv2 # (or later)
+
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>=3-2.5.1_1:${PORTSDIR}/databases/py-sqlite3
 
-INSTALLS_ICONS=	yes
-
-OPTIONS_DEFINE=	PYGSTREAMER CRAFTY GNUCHESS PHALANX SJENG STOCKFISH
-PYGSTREAMER_DESC=	Install gst-python for audio support
-CRAFTY_DESC=	Install crafty (chess engine)
-GNUCHESS_DESC=	Install gnuchess (chess engine)
-PHALANX_DESC=	Install phalanx (chess engine)
-SJENG_DESC=	Install sjeng (chess engine)
-STOCKFISH_DESC=	Install stockfish (chess engine)
-
-OPTIONSFILE=	${PORT_DBDIR}/py-${PORTNAME}/options
-
-PYDISTUTILS_PKGVERSION=	${DISTVERSION}
-
+USES=		desktop-file-utils gettext
 USE_GNOME=	pygnomedesktop
-USES=		gettext
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
+PYDISTUTILS_AUTOPLIST=	yes
+INSTALLS_ICONS=	yes
 
-REINPLACE_ARGS=	-i.bak -e 's,%%PREFIX%%,${PREFIX},' -e 's,share/games/pychess,${DATADIR},' -e '1s,/usr/bin/python,/usr/bin/env python${PYTHON_VER},'
+OPTIONS_DEFINE=		PYGSTREAMER
+OPTIONS_GROUP=		ENGINES
+OPTIONS_GROUP_ENGINES=	CRAFTY GNUCHESS PHALANX SJENG STOCKFISH
 
-.if !defined(NO_INSTALL_MANPAGES)
-MAN1=	${PORTNAME}.1
-MANCOMPRESSED=	yes
-.else
-MAKE_ENV+=	NO_INSTALL_MANPAGES=${NO_INSTALL_MANPAGES}
-.endif
+CRAFTY_DESC=		Use crafty
+CRAFTY_RUN_DEPENDS=	crafty:${PORTSDIR}/games/crafty
+ENGINES_DESC=		Chess Engines
+GNUCHESS_DESC=		Use gnuchess
+GNUCHESS_RUN_DEPENDS=	gnuchess:${PORTSDIR}/games/gnuchess
+PHALANX_DESC=		Use phalanx
+PHALANX_RUN_DEPENDS=	phalanx:${PORTSDIR}/games/phalanx
+SJENG_DESC=		Use sjeng
+SJENG_RUN_DEPENDS+=	sjeng:${PORTSDIR}/games/sjeng
+STOCKFISH_DESC=		Use stockfish
+STOCKFISH_RUN_DEPENDS=	stockfish:${PORTSDIR}/games/stockfish
+PYGSTREAMER_DESC=	Install gst-python for audio support
+PYGSTREAMER_USE=	gstreamer=python
 
-NO_STAGE=	yes
 post-patch:
-	cd ${WRKSRC} && ${REINPLACE_CMD} ${PORTNAME} ${PYSETUP} lib/pychess/widgets/newGameDialog.py lib/pychess/Players/PyChess.py
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MPYGSTREAMER}
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}gstreamer>=0.10.8:${PORTSDIR}/multimedia/py-gstreamer
-.endif
-
-.if ${PORT_OPTIONS:MCRAFTY}
-RUN_DEPENDS+=	crafty:${PORTSDIR}/games/crafty
-.endif
-
-.if ${PORT_OPTIONS:MGNUCHESS}
-RUN_DEPENDS+=	gnuchess:${PORTSDIR}/games/gnuchess
-.endif
-
-.if ${PORT_OPTIONS:MPHALANX}
-RUN_DEPENDS+=	phalanx:${PORTSDIR}/games/phalanx
-.endif
-
-.if ${PORT_OPTIONS:MSJENG}
-RUN_DEPENDS+=	sjeng:${PORTSDIR}/games/sjeng
-.endif
-
-.if ${PORT_OPTIONS:MSTOCKFISH}
-RUN_DEPENDS+=	stockfish:${PORTSDIR}/games/stockfish
-.endif
+	@${REINPLACE_CMD} -e \
+		's|share/man|man|' ${WRKSRC}/setup.py
+	@${REINPLACE_CMD} -e \
+		's|gtk.gdk.threads_init()|gobject.threads_init()|' \
+		${WRKSRC}/lib/pychess/Main.py
+	@${REINPLACE_CMD} -e \
+		'/^#!/d' ${WRKSRC}/lib/pychess/Players/PyChess.py
+	@${REINPLACE_CMD} -e \
+		's|"games"|""| ; \
+		 s|"share/games"|""| ; \
+		 s|"local/share"|""| ; \
+		 s|"local/games"|""| ; \
+		 s|"local/share/games"|""|' \
+		${WRKSRC}/lib/pychess/System/prefix.py
+	@${REINPLACE_CMD} -e \
+		's|/usr/share|${PREFIX}/share|' \
+		${WRKSRC}/lib/pychess/widgets/newGameDialog.py
+	@${REINPLACE_CMD} -e \
+		's|"/usr/share/sounds",|| ; \
+		 s|/usr/local/share|${LOCALBASE}/share|' \
+		${WRKSRC}/lib/pychess/widgets/preferencesDialog.py
 
 .include <bsd.port.mk>
