@@ -179,6 +179,7 @@
     SUBDIR += c4
     SUBDIR += calibrator
     SUBDIR += capstone
+    SUBDIR += cask
     SUBDIR += catch
     SUBDIR += cbind
     SUBDIR += cbrowser
