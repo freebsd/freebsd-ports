@@ -13,7 +13,6 @@
     SUBDIR += abyssws
     SUBDIR += ach
     SUBDIR += adzap
-    SUBDIR += ajaxplorer
     SUBDIR += amphetadesk
     SUBDIR += analog
     SUBDIR += anyremote2html
@@ -1711,6 +1710,7 @@
     SUBDIR += py-wsgiauth
     SUBDIR += py-zope.app.wsgi
     SUBDIR += pyblosxom
+    SUBDIR += pydio
     SUBDIR += pyjamas
     SUBDIR += pylot
     SUBDIR += pyweblib

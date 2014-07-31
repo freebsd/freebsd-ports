@@ -1,19 +1,14 @@
+@owner www
+@group www
 %%WWWDIR%%/.htaccess
 %%WWWDIR%%/base.conf.php
 %%WWWDIR%%/cmd.php
 %%WWWDIR%%/conf/.htaccess
 %%WWWDIR%%/conf/RELEASE_NOTE
 %%WWWDIR%%/conf/VERSION
-@unexec if cmp -s %B/bootstrap_conf.php.sample %B/bootstrap_conf.php; then rm -f %B/bootstrap_conf.php; fi
-%%WWWDIR%%/conf/bootstrap_conf.php.sample
-@exec if [ ! -f %b/bootstrap_conf.php ] ; then cp -p %B/%f %B/bootstrap_conf.php; fi
-@unexec if cmp -s %B/bootstrap_context.php.sample %B/bootstrap_context.php; then rm -f %B/bootstrap_context.php; fi
-%%WWWDIR%%/conf/bootstrap_context.php.sample
-@exec if [ ! -f %b/bootstrap_context.php ] ; then cp -p %B/%f %B/bootstrap_context.php; fi
-@unexec if cmp -s %B/bootstrap_repositories.php.sample %B/bootstrap_repositories.php; then rm -f %B/bootstrap_repositories.php; fi
-%%WWWDIR%%/conf/bootstrap_repositories.php.sample
-@exec if [ ! -f %b/bootstrap_repositories.php ] ; then cp -p %B/%f %B/bootstrap_repositories.php; fi
-%%WWWDIR%%/conf/4.2.3-5.0.0-db-upgrade.sql
+@sample %%WWWDIR%%/conf/bootstrap_conf.php.sample
+@sample %%WWWDIR%%/conf/bootstrap_context.php.sample
+@sample %%WWWDIR%%/conf/bootstrap_repositories.php.sample
 %%WWWDIR%%/conf/extensions.conf.php
 %%WWWDIR%%/conf/index.html
 %%WWWDIR%%/conf/mime.types
@@ -41,12 +36,12 @@
 %%WWWDIR%%/core/classes/class.ConfService.php
 %%WWWDIR%%/core/classes/class.HTMLWriter.php
 %%WWWDIR%%/core/classes/class.HttpClient.php
+%%WWWDIR%%/core/classes/class.PydioSdkGenerator.php
 %%WWWDIR%%/core/classes/class.RecycleBinManager.php
 %%WWWDIR%%/core/classes/class.Repository.php
 %%WWWDIR%%/core/classes/class.SystemTextEncoding.php
 %%WWWDIR%%/core/classes/class.UnixProcess.php
 %%WWWDIR%%/core/classes/class.UserSelection.php
-%%WWWDIR%%/core/classes/compat.php
 %%WWWDIR%%/core/classes/dibi.compact.php
 %%WWWDIR%%/core/classes/http_class/LICENSE.txt
 %%WWWDIR%%/core/classes/http_class/http_class.php
@@ -330,6 +325,7 @@
 %%WWWDIR%%/core/doc/INSTALL.txt
 %%WWWDIR%%/core/doc/LICENSE.txt
 %%WWWDIR%%/core/doc/LICENSE_until3.2.4.txt
+%%WWWDIR%%/core/doc/PREVIOUS_RELEASES
 %%WWWDIR%%/core/doc/TROUBLESHOOTING.txt
 %%WWWDIR%%/core/doc/ajaxplorer-manual-2.37-dist.html
 %%WWWDIR%%/core/doc/hooks.json
@@ -348,6 +344,7 @@
 %%WWWDIR%%/core/tests/test.PHPVersion.php
 %%WWWDIR%%/core/tests/test.PHP_APC.php
 %%WWWDIR%%/core/tests/test.PHP_OB.php
+%%WWWDIR%%/core/tests/test.PHP_magic_quotes.php
 %%WWWDIR%%/core/tests/test.SSLEncryption.php
 %%WWWDIR%%/core/tests/test.ServerEncoding.php
 %%WWWDIR%%/core/tests/test.Upload.php
@@ -378,6 +375,7 @@
 %%WWWDIR%%/phpunit/AJXP/Tests/Suite/CoreStorages.php
 %%WWWDIR%%/phpunit/HOWTO
 %%WWWDIR%%/plugins/access.ajxp_conf/admin.png
+%%WWWDIR%%/plugins/access.ajxp_conf/ajxp_conf.css
 %%WWWDIR%%/plugins/access.ajxp_conf/ajxp_confActions.xml
 %%WWWDIR%%/plugins/access.ajxp_conf/class.ConfigEditor.js
 %%WWWDIR%%/plugins/access.ajxp_conf/class.ajxp_confAccessDriver.php
@@ -402,6 +400,21 @@
 %%WWWDIR%%/plugins/access.ajxp_shared/manifest.xml
 %%WWWDIR%%/plugins/access.ajxp_shared/plugin_doc.html
 %%WWWDIR%%/plugins/access.ajxp_shared/share.png
+%%WWWDIR%%/plugins/access.ajxp_user/class.UserDashboardDriver.php
+%%WWWDIR%%/plugins/access.ajxp_user/class.UserDashboardHome.js
+%%WWWDIR%%/plugins/access.ajxp_user/class.UserProfileEditor.js
+%%WWWDIR%%/plugins/access.ajxp_user/class.WebDAVprefsEditor.js
+%%WWWDIR%%/plugins/access.ajxp_user/dashboard.css
+%%WWWDIR%%/plugins/access.ajxp_user/i18n/de.php
+%%WWWDIR%%/plugins/access.ajxp_user/i18n/en.php
+%%WWWDIR%%/plugins/access.ajxp_user/i18n/es.php
+%%WWWDIR%%/plugins/access.ajxp_user/i18n/fr.php
+%%WWWDIR%%/plugins/access.ajxp_user/i18n/hu.php
+%%WWWDIR%%/plugins/access.ajxp_user/i18n/pt.php
+%%WWWDIR%%/plugins/access.ajxp_user/i18n/si.php
+%%WWWDIR%%/plugins/access.ajxp_user/manifest.xml
+%%WWWDIR%%/plugins/access.ajxp_user/plugin_doc.html
+%%WWWDIR%%/plugins/access.ajxp_user/share.png
 %%WWWDIR%%/plugins/access.dropbox/class.dropboxAccessDriver.php
 %%WWWDIR%%/plugins/access.dropbox/class.dropboxWrapper.php
 %%WWWDIR%%/plugins/access.dropbox/dropbox-php/API.php
@@ -561,6 +574,19 @@
 %%WWWDIR%%/plugins/access.webdav/i18n/conf/pt.php
 %%WWWDIR%%/plugins/access.webdav/manifest.xml
 %%WWWDIR%%/plugins/access.webdav/plugin_doc.html
+%%WWWDIR%%/plugins/action.avatar/class.AvatarProvider.php
+%%WWWDIR%%/plugins/action.avatar/i18n/conf/en.php
+%%WWWDIR%%/plugins/action.avatar/i18n/conf/es.php
+%%WWWDIR%%/plugins/action.avatar/i18n/conf/fr.php
+%%WWWDIR%%/plugins/action.avatar/i18n/conf/pt.php
+%%WWWDIR%%/plugins/action.avatar/manifest.xml
+%%WWWDIR%%/plugins/action.avatar/plugin_doc.html
+%%WWWDIR%%/plugins/action.cart/class.CartManager.js
+%%WWWDIR%%/plugins/action.cart/class.CartManager.php
+%%WWWDIR%%/plugins/action.cart/class.LocalCartNodeProvider.js
+%%WWWDIR%%/plugins/action.cart/i18n/en.php
+%%WWWDIR%%/plugins/action.cart/i18n/fr.php
+%%WWWDIR%%/plugins/action.cart/manifest.xml
 %%WWWDIR%%/plugins/action.powerfs/class.PowerFSController.php
 %%WWWDIR%%/plugins/action.powerfs/i18n/conf/en.php
 %%WWWDIR%%/plugins/action.powerfs/i18n/conf/fr.php
@@ -570,6 +596,10 @@
 %%WWWDIR%%/plugins/action.powerfs/i18n/pt.php
 %%WWWDIR%%/plugins/action.powerfs/manifest.xml
 %%WWWDIR%%/plugins/action.powerfs/plugin_doc.html
+%%WWWDIR%%/plugins/action.quicksend/class.QuicksendManager.js
+%%WWWDIR%%/plugins/action.quicksend/i18n/en.php
+%%WWWDIR%%/plugins/action.quicksend/i18n/fr.php
+%%WWWDIR%%/plugins/action.quicksend/manifest.xml
 %%WWWDIR%%/plugins/action.scheduler/class.AjxpScheduler.php
 %%WWWDIR%%/plugins/action.scheduler/i18n/en.php
 %%WWWDIR%%/plugins/action.scheduler/i18n/fr.php
@@ -602,9 +632,11 @@
 %%WWWDIR%%/plugins/action.share/class.ShareCenter.php
 %%WWWDIR%%/plugins/action.share/manifest.xml
 %%WWWDIR%%/plugins/action.share/plugin_doc.html
+%%WWWDIR%%/plugins/action.share/qrcode.js
 %%WWWDIR%%/plugins/action.share/res/404.html
 %%WWWDIR%%/plugins/action.share/res/button_cancel.png
 %%WWWDIR%%/plugins/action.share/res/dl.png
+%%WWWDIR%%/plugins/action.share/res/favi.png
 %%WWWDIR%%/plugins/action.share/res/grid_t.png
 %%WWWDIR%%/plugins/action.share/res/i18n/ca.php
 %%WWWDIR%%/plugins/action.share/res/i18n/conf/en.php
@@ -673,6 +705,10 @@
 %%WWWDIR%%/plugins/auth.multi/login_patch.xml
 %%WWWDIR%%/plugins/auth.multi/manifest.xml
 %%WWWDIR%%/plugins/auth.multi/plugin_doc.html
+%%WWWDIR%%/plugins/auth.radius/class.radiusAuthDriver.php
+%%WWWDIR%%/plugins/auth.radius/i18n/conf/en.php
+%%WWWDIR%%/plugins/auth.radius/manifest.xml
+%%WWWDIR%%/plugins/auth.radius/plugin_doc.html
 %%WWWDIR%%/plugins/auth.remote/class.remoteAuthDriver.php
 %%WWWDIR%%/plugins/auth.remote/cms_auth_functions.php
 %%WWWDIR%%/plugins/auth.remote/glueCode.php
@@ -702,7 +738,8 @@
 %%WWWDIR%%/plugins/auth.smb/manifest.xml
 %%WWWDIR%%/plugins/auth.smb/plugin_doc.html
 %%WWWDIR%%/plugins/auth.sql/class.sqlAuthDriver.php
-%%WWWDIR%%/plugins/auth.sql/create.sql
+%%WWWDIR%%/plugins/auth.sql/create.mysql
+%%WWWDIR%%/plugins/auth.sql/create.pgsql
 %%WWWDIR%%/plugins/auth.sql/create.sqlite
 %%WWWDIR%%/plugins/auth.sql/i18n/conf/en.php
 %%WWWDIR%%/plugins/auth.sql/i18n/conf/fr.php
@@ -711,7 +748,10 @@
 %%WWWDIR%%/plugins/auth.sql/plugin_doc.html
 %%WWWDIR%%/plugins/boot.conf/class.AjxpInstaller.js
 %%WWWDIR%%/plugins/boot.conf/class.BootConfLoader.php
+%%WWWDIR%%/plugins/boot.conf/i18n/conf/en.php
+%%WWWDIR%%/plugins/boot.conf/i18n/conf/fr.php
 %%WWWDIR%%/plugins/boot.conf/i18n/en.php
+%%WWWDIR%%/plugins/boot.conf/i18n/fr.php
 %%WWWDIR%%/plugins/boot.conf/i18n/pt.php
 %%WWWDIR%%/plugins/boot.conf/manifest.xml
 %%WWWDIR%%/plugins/conf.serial/class.AJXP_SerialUser.php
@@ -724,7 +764,8 @@
 %%WWWDIR%%/plugins/conf.sql/README.txt
 %%WWWDIR%%/plugins/conf.sql/class.AJXP_SqlUser.php
 %%WWWDIR%%/plugins/conf.sql/class.sqlConfDriver.php
-%%WWWDIR%%/plugins/conf.sql/create.sql
+%%WWWDIR%%/plugins/conf.sql/create.mysql
+%%WWWDIR%%/plugins/conf.sql/create.pgsql
 %%WWWDIR%%/plugins/conf.sql/create.sqlite
 %%WWWDIR%%/plugins/conf.sql/i18n/conf/en.php
 %%WWWDIR%%/plugins/conf.sql/i18n/conf/fr.php
@@ -796,19 +837,25 @@
 %%WWWDIR%%/plugins/core.log/class.AJXP_Logger.php
 %%WWWDIR%%/plugins/core.log/class.AbstractLogDriver.php
 %%WWWDIR%%/plugins/core.log/manifest.xml
+%%WWWDIR%%/plugins/core.log/plugin_doc.html
 %%WWWDIR%%/plugins/core.mailer/AjxpMailer.css
 %%WWWDIR%%/plugins/core.mailer/class.AjxpMailer.js
 %%WWWDIR%%/plugins/core.mailer/class.AjxpMailer.php
 %%WWWDIR%%/plugins/core.mailer/i18n/en.php
 %%WWWDIR%%/plugins/core.mailer/i18n/fr.php
 %%WWWDIR%%/plugins/core.mailer/i18n/pt.php
+%%WWWDIR%%/plugins/core.mailer/layout/download.png
+%%WWWDIR%%/plugins/core.mailer/layout/en.html
+%%WWWDIR%%/plugins/core.mailer/layout/fr.html
 %%WWWDIR%%/plugins/core.mailer/manifest.xml
+%%WWWDIR%%/plugins/core.mailer/plugin_doc.html
 %%WWWDIR%%/plugins/core.meta/manifest.xml
 %%WWWDIR%%/plugins/core.metastore/interface.MetaStoreProvider.php
 %%WWWDIR%%/plugins/core.metastore/manifest.xml
 %%WWWDIR%%/plugins/core.mq/class.AjxpMqObserver.js
 %%WWWDIR%%/plugins/core.mq/class.MqManager.php
 %%WWWDIR%%/plugins/core.mq/manifest.xml
+%%WWWDIR%%/plugins/core.mq/plugin_doc.html
 %%WWWDIR%%/plugins/core.mq/vendor/phpws/.buildpath
 %%WWWDIR%%/plugins/core.mq/vendor/phpws/.project
 %%WWWDIR%%/plugins/core.mq/vendor/phpws/client.html
@@ -835,6 +882,7 @@
 %%WWWDIR%%/plugins/core.notifications/interface.AJXP_FeedStore.php
 %%WWWDIR%%/plugins/core.notifications/interface.AJXP_MessageExchanger.php
 %%WWWDIR%%/plugins/core.notifications/manifest.xml
+%%WWWDIR%%/plugins/core.notifications/plugin_doc.html
 %%WWWDIR%%/plugins/core.notifications/res/css/notification_center.css
 %%WWWDIR%%/plugins/core.notifications/res/i18n/de.php
 %%WWWDIR%%/plugins/core.notifications/res/i18n/en.php
@@ -1305,6 +1353,14 @@
 %%WWWDIR%%/plugins/editor.video/video-js/LICENSE.txt
 %%WWWDIR%%/plugins/editor.video/video-js/video-js.css
 %%WWWDIR%%/plugins/editor.video/video-js/video.js
+%%WWWDIR%%/plugins/editor.webodf/class.WebodfEditor.js
+%%WWWDIR%%/plugins/editor.webodf/frame.php
+%%WWWDIR%%/plugins/editor.webodf/i18n/conf/en.php
+%%WWWDIR%%/plugins/editor.webodf/i18n/conf/fr.php
+%%WWWDIR%%/plugins/editor.webodf/i18n/en.php
+%%WWWDIR%%/plugins/editor.webodf/i18n/fr.php
+%%WWWDIR%%/plugins/editor.webodf/manifest.xml
+%%WWWDIR%%/plugins/editor.webodf/plugin_doc.html
 %%WWWDIR%%/plugins/editor.zoho/agent/files/.htaccess
 %%WWWDIR%%/plugins/editor.zoho/agent/save_zoho.php
 %%WWWDIR%%/plugins/editor.zoho/class.ZohoEditor.js
@@ -1326,7 +1382,8 @@
 %%WWWDIR%%/plugins/editor.zoho/manifest.xml
 %%WWWDIR%%/plugins/editor.zoho/plugin_doc.html
 %%WWWDIR%%/plugins/feed.sql/class.AJXP_SqlFeedStore.php
-%%WWWDIR%%/plugins/feed.sql/create.sql
+%%WWWDIR%%/plugins/feed.sql/create.mysql
+%%WWWDIR%%/plugins/feed.sql/create.pgsql
 %%WWWDIR%%/plugins/feed.sql/create.sqlite
 %%WWWDIR%%/plugins/feed.sql/manifest.xml
 %%WWWDIR%%/plugins/gui.ajax/AjaXplorerOrange.png
@@ -1404,6 +1461,7 @@
 %%WWWDIR%%/plugins/gui.ajax/res/js/lib/prototype/carousel.js
 %%WWWDIR%%/plugins/gui.ajax/res/js/lib/prototype/cookiejar.js
 %%WWWDIR%%/plugins/gui.ajax/res/js/lib/prototype/corners.js
+%%WWWDIR%%/plugins/gui.ajax/res/js/lib/prototype/cssfx.js
 %%WWWDIR%%/plugins/gui.ajax/res/js/lib/prototype/jsProgressBarHandler.js
 %%WWWDIR%%/plugins/gui.ajax/res/js/lib/prototype/proto.history.js
 %%WWWDIR%%/plugins/gui.ajax/res/js/lib/prototype/proto.menu.js
@@ -1950,6 +2008,7 @@
 %%WWWDIR%%/plugins/gui.ajax/res/themes/umbra/images/actions/16/player_play.png
 %%WWWDIR%%/plugins/gui.ajax/res/themes/umbra/images/actions/16/player_stop.png
 %%WWWDIR%%/plugins/gui.ajax/res/themes/umbra/images/actions/16/public_url.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/umbra/images/actions/16/qr-code.png
 %%WWWDIR%%/plugins/gui.ajax/res/themes/umbra/images/actions/16/reload.png
 %%WWWDIR%%/plugins/gui.ajax/res/themes/umbra/images/actions/16/search.png
 %%WWWDIR%%/plugins/gui.ajax/res/themes/umbra/images/actions/16/share.png
@@ -2040,6 +2099,7 @@
 %%WWWDIR%%/plugins/gui.ajax/res/themes/umbra/images/actions/22/player_stop.png
 %%WWWDIR%%/plugins/gui.ajax/res/themes/umbra/images/actions/22/printer1.png
 %%WWWDIR%%/plugins/gui.ajax/res/themes/umbra/images/actions/22/public_url.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/umbra/images/actions/22/qr-code.png
 %%WWWDIR%%/plugins/gui.ajax/res/themes/umbra/images/actions/22/reload.png
 %%WWWDIR%%/plugins/gui.ajax/res/themes/umbra/images/actions/22/share.png
 %%WWWDIR%%/plugins/gui.ajax/res/themes/umbra/images/actions/22/system_search.png
@@ -2120,6 +2180,7 @@
 %%WWWDIR%%/plugins/gui.ajax/res/themes/umbra/images/actions/32/player_stop.png
 %%WWWDIR%%/plugins/gui.ajax/res/themes/umbra/images/actions/32/preferences_system.png
 %%WWWDIR%%/plugins/gui.ajax/res/themes/umbra/images/actions/32/preferences_system_login.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/umbra/images/actions/32/qr-code.png
 %%WWWDIR%%/plugins/gui.ajax/res/themes/umbra/images/actions/32/reload.png
 %%WWWDIR%%/plugins/gui.ajax/res/themes/umbra/images/actions/32/share.png
 %%WWWDIR%%/plugins/gui.ajax/res/themes/umbra/images/actions/32/system_log_out.png
@@ -2315,6 +2376,7 @@
 %%WWWDIR%%/plugins/gui.ajax/res/themes/vision/css/ajaxplorer.css
 %%WWWDIR%%/plugins/gui.ajax/res/themes/vision/css/allz.css
 %%WWWDIR%%/plugins/gui.ajax/res/themes/vision/css/allz_list.txt
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/css/animate-custom.css
 %%WWWDIR%%/plugins/gui.ajax/res/themes/vision/css/font-awesome.css
 %%WWWDIR%%/plugins/gui.ajax/res/themes/vision/css/media.css
 %%WWWDIR%%/plugins/gui.ajax/res/themes/vision/css/modal.jpg
@@ -2778,6 +2840,7 @@
 %%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/tree-odd-even-bg.png
 %%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/vgrabber.gif
 %%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/white_by.png
+%%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/white_logo-ajxp.png
 %%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/white_logo.png
 %%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/yellowled.png
 %%WWWDIR%%/plugins/gui.ajax/widget_sample.html
@@ -2809,6 +2872,11 @@
 %%WWWDIR%%/plugins/gui.mobile/i18n/conf/pt.php
 %%WWWDIR%%/plugins/gui.mobile/manifest.xml
 %%WWWDIR%%/plugins/gui.mobile/plugin_doc.html
+%%WWWDIR%%/plugins/gui.user/class.UserGuiController.js
+%%WWWDIR%%/plugins/gui.user/class.UserGuiController.php
+%%WWWDIR%%/plugins/gui.user/i18n/en.php
+%%WWWDIR%%/plugins/gui.user/i18n/fr.php
+%%WWWDIR%%/plugins/gui.user/manifest.xml
 %%WWWDIR%%/plugins/index.html
 %%WWWDIR%%/plugins/index.lucene/Zend/Exception.php
 %%WWWDIR%%/plugins/index.lucene/Zend/Search/Exception.php
@@ -2916,7 +2984,8 @@
 %%WWWDIR%%/plugins/log.sql/README.txt
 %%WWWDIR%%/plugins/log.sql/arrow_down_margin.png
 %%WWWDIR%%/plugins/log.sql/class.sqlLogDriver.php
-%%WWWDIR%%/plugins/log.sql/create.sql
+%%WWWDIR%%/plugins/log.sql/create.mysql
+%%WWWDIR%%/plugins/log.sql/create.pgsql
 %%WWWDIR%%/plugins/log.sql/create.sqlite
 %%WWWDIR%%/plugins/log.sql/i18n/conf/en.php
 %%WWWDIR%%/plugins/log.sql/i18n/conf/fr.php
@@ -2938,6 +3007,14 @@
 %%WWWDIR%%/plugins/mailer.phpmailer-lite/class.PhpMailLiteMailer.php
 %%WWWDIR%%/plugins/mailer.phpmailer-lite/lib/class.phpmailer-lite.php
 %%WWWDIR%%/plugins/mailer.phpmailer-lite/manifest.xml
+%%WWWDIR%%/plugins/meta.comments/class.CommentsMetaManager.php
+%%WWWDIR%%/plugins/meta.comments/class.CommentsPanel.js
+%%WWWDIR%%/plugins/meta.comments/comments_feed.css
+%%WWWDIR%%/plugins/meta.comments/i18n/conf/en.php
+%%WWWDIR%%/plugins/meta.comments/i18n/en.php
+%%WWWDIR%%/plugins/meta.comments/i18n/fr.php
+%%WWWDIR%%/plugins/meta.comments/manifest.xml
+%%WWWDIR%%/plugins/meta.comments/plugin_doc.html
 %%WWWDIR%%/plugins/meta.exif/class.ExifCellRenderer.js
 %%WWWDIR%%/plugins/meta.exif/class.ExifMetaManager.php
 %%WWWDIR%%/plugins/meta.exif/class.GeoConversion.php
@@ -3023,6 +3100,11 @@
 %%WWWDIR%%/plugins/meta.svn/plugin_doc.html
 %%WWWDIR%%/plugins/meta.svn/svn_executor.inc.php
 %%WWWDIR%%/plugins/meta.svn/svn_lib.inc.php
+%%WWWDIR%%/plugins/meta.syncable/class.ChangesTracker.php
+%%WWWDIR%%/plugins/meta.syncable/create.mysql
+%%WWWDIR%%/plugins/meta.syncable/create.sqlite
+%%WWWDIR%%/plugins/meta.syncable/manifest.xml
+%%WWWDIR%%/plugins/meta.syncable/plugin_doc.html
 %%WWWDIR%%/plugins/meta.user/class.MetaCellRenderer.js
 %%WWWDIR%%/plugins/meta.user/class.UserMetaManager.php
 %%WWWDIR%%/plugins/meta.user/css/blue.png
@@ -3086,17 +3168,10 @@
 %%WWWDIR%%/plugins/mq.serial/class.AJXP_SerialMessageExchanger.php
 %%WWWDIR%%/plugins/mq.serial/manifest.xml
 %%WWWDIR%%/plugins/mq.sql/class.AJXP_SqlMessageExchanger.php
-%%WWWDIR%%/plugins/mq.sql/create.sql
+%%WWWDIR%%/plugins/mq.sql/create.mysql
+%%WWWDIR%%/plugins/mq.sql/create.pgsql
 %%WWWDIR%%/plugins/mq.sql/create.sqlite
 %%WWWDIR%%/plugins/mq.sql/manifest.xml
-%%WWWDIR%%/plugins/notify.phpmail-lite/class.NotifierFormEnricher.js
-%%WWWDIR%%/plugins/notify.phpmail-lite/class.PhpMailLiteNotifier.php
-%%WWWDIR%%/plugins/notify.phpmail-lite/conf.notify.phpmail-lite.inc
-%%WWWDIR%%/plugins/notify.phpmail-lite/i18n/conf/en.php
-%%WWWDIR%%/plugins/notify.phpmail-lite/i18n/conf/fr.php
-%%WWWDIR%%/plugins/notify.phpmail-lite/i18n/conf/pt.php
-%%WWWDIR%%/plugins/notify.phpmail-lite/manifest.xml.deprecated
-%%WWWDIR%%/plugins/notify.phpmail-lite/plugin_doc.html
 %%WWWDIR%%/plugins/shorten.bitly/class.BitlyShortener.php
 %%WWWDIR%%/plugins/shorten.bitly/i18n/conf/en.php
 %%WWWDIR%%/plugins/shorten.bitly/i18n/conf/fr.php
@@ -3148,603 +3223,623 @@
 %%WWWDIR%%/publicLet.inc.php
 %%WWWDIR%%/rest.php
 %%WWWDIR%%/runTests.php
-@dirrm %%WWWDIR%%/plugins/uploader.plupload
-@dirrm %%WWWDIR%%/plugins/uploader.jumploader/i18n/conf
-@dirrm %%WWWDIR%%/plugins/uploader.jumploader/i18n
-@dirrm %%WWWDIR%%/plugins/uploader.jumploader
-@dirrm %%WWWDIR%%/plugins/uploader.html/i18n/conf
-@dirrm %%WWWDIR%%/plugins/uploader.html/i18n
-@dirrm %%WWWDIR%%/plugins/uploader.html
-@dirrm %%WWWDIR%%/plugins/uploader.flex/i18n/conf
-@dirrm %%WWWDIR%%/plugins/uploader.flex/i18n
-@dirrm %%WWWDIR%%/plugins/uploader.flex
-@dirrm %%WWWDIR%%/plugins/shorten.multi/i18n/conf
-@dirrm %%WWWDIR%%/plugins/shorten.multi/i18n
-@dirrm %%WWWDIR%%/plugins/shorten.multi
-@dirrm %%WWWDIR%%/plugins/shorten.bitly/i18n/conf
-@dirrm %%WWWDIR%%/plugins/shorten.bitly/i18n
-@dirrm %%WWWDIR%%/plugins/shorten.bitly
-@dirrm %%WWWDIR%%/plugins/notify.phpmail-lite/i18n/conf
-@dirrm %%WWWDIR%%/plugins/notify.phpmail-lite/i18n
-@dirrm %%WWWDIR%%/plugins/notify.phpmail-lite
-@dirrm %%WWWDIR%%/plugins/mq.sql
-@dirrm %%WWWDIR%%/plugins/mq.serial
-@dirrm %%WWWDIR%%/plugins/metastore.xattr
-@dirrm %%WWWDIR%%/plugins/metastore.serial/i18n/conf
-@dirrm %%WWWDIR%%/plugins/metastore.serial/i18n
-@dirrm %%WWWDIR%%/plugins/metastore.serial
-@dirrm %%WWWDIR%%/plugins/metastore.s3/i18n/conf
-@dirrm %%WWWDIR%%/plugins/metastore.s3/i18n
-@dirrm %%WWWDIR%%/plugins/metastore.s3
-@dirrm %%WWWDIR%%/plugins/meta.watch/icons/8
-@dirrm %%WWWDIR%%/plugins/meta.watch/icons/64
-@dirrm %%WWWDIR%%/plugins/meta.watch/icons/32
-@dirrm %%WWWDIR%%/plugins/meta.watch/icons/22
-@dirrm %%WWWDIR%%/plugins/meta.watch/icons/16
-@dirrm %%WWWDIR%%/plugins/meta.watch/icons/128
-@dirrm %%WWWDIR%%/plugins/meta.watch/icons/12
-@dirrm %%WWWDIR%%/plugins/meta.watch/icons
-@dirrm %%WWWDIR%%/plugins/meta.watch/i18n
-@dirrm %%WWWDIR%%/plugins/meta.watch
-@dirrm %%WWWDIR%%/plugins/meta.user/img/64
-@dirrm %%WWWDIR%%/plugins/meta.user/img/48
-@dirrm %%WWWDIR%%/plugins/meta.user/img/32
-@dirrm %%WWWDIR%%/plugins/meta.user/img/22
-@dirrm %%WWWDIR%%/plugins/meta.user/img/16
-@dirrm %%WWWDIR%%/plugins/meta.user/img
-@dirrm %%WWWDIR%%/plugins/meta.user/i18n/conf
-@dirrm %%WWWDIR%%/plugins/meta.user/i18n
-@dirrm %%WWWDIR%%/plugins/meta.user/css
-@dirrm %%WWWDIR%%/plugins/meta.user
-@dirrm %%WWWDIR%%/plugins/meta.svn/images/actions/32
-@dirrm %%WWWDIR%%/plugins/meta.svn/images/actions/22
-@dirrm %%WWWDIR%%/plugins/meta.svn/images/actions/16
-@dirrm %%WWWDIR%%/plugins/meta.svn/images/actions
-@dirrm %%WWWDIR%%/plugins/meta.svn/images
-@dirrm %%WWWDIR%%/plugins/meta.svn/i18n/conf
-@dirrm %%WWWDIR%%/plugins/meta.svn/i18n
-@dirrm %%WWWDIR%%/plugins/meta.svn
-@dirrm %%WWWDIR%%/plugins/meta.simple_lock/icons/8
-@dirrm %%WWWDIR%%/plugins/meta.simple_lock/icons/32
-@dirrm %%WWWDIR%%/plugins/meta.simple_lock/icons/22
-@dirrm %%WWWDIR%%/plugins/meta.simple_lock/icons/16
-@dirrm %%WWWDIR%%/plugins/meta.simple_lock/icons/12
-@dirrm %%WWWDIR%%/plugins/meta.simple_lock/icons
-@dirrm %%WWWDIR%%/plugins/meta.simple_lock/i18n/conf
-@dirrm %%WWWDIR%%/plugins/meta.simple_lock/i18n
-@dirrm %%WWWDIR%%/plugins/meta.simple_lock
-@dirrm %%WWWDIR%%/plugins/meta.quota/img/32
-@dirrm %%WWWDIR%%/plugins/meta.quota/img/22
-@dirrm %%WWWDIR%%/plugins/meta.quota/img/16
-@dirrm %%WWWDIR%%/plugins/meta.quota/img
-@dirrm %%WWWDIR%%/plugins/meta.quota/i18n/conf
-@dirrm %%WWWDIR%%/plugins/meta.quota/i18n
-@dirrm %%WWWDIR%%/plugins/meta.quota
-@dirrm %%WWWDIR%%/plugins/meta.mount/i18n/conf
-@dirrm %%WWWDIR%%/plugins/meta.mount/i18n
-@dirrm %%WWWDIR%%/plugins/meta.mount
-@dirrm %%WWWDIR%%/plugins/meta.git/images/actions/32
-@dirrm %%WWWDIR%%/plugins/meta.git/images/actions/22
-@dirrm %%WWWDIR%%/plugins/meta.git/images/actions/16
-@dirrm %%WWWDIR%%/plugins/meta.git/images/actions
-@dirrm %%WWWDIR%%/plugins/meta.git/images
-@dirrm %%WWWDIR%%/plugins/meta.git/i18n/conf
-@dirrm %%WWWDIR%%/plugins/meta.git/i18n
-@dirrm %%WWWDIR%%/plugins/meta.git
-@dirrm %%WWWDIR%%/plugins/meta.filehasher/i18n/conf
-@dirrm %%WWWDIR%%/plugins/meta.filehasher/i18n
-@dirrm %%WWWDIR%%/plugins/meta.filehasher
-@dirrm %%WWWDIR%%/plugins/meta.exif/i18n/conf
-@dirrm %%WWWDIR%%/plugins/meta.exif/i18n
-@dirrm %%WWWDIR%%/plugins/meta.exif
-@dirrm %%WWWDIR%%/plugins/mailer.phpmailer-lite/lib
-@dirrm %%WWWDIR%%/plugins/mailer.phpmailer-lite
-@dirrm %%WWWDIR%%/plugins/log.text/i18n/conf
-@dirrm %%WWWDIR%%/plugins/log.text/i18n
-@dirrm %%WWWDIR%%/plugins/log.text
-@dirrm %%WWWDIR%%/plugins/log.syslog/i18n/conf
-@dirrm %%WWWDIR%%/plugins/log.syslog/i18n
-@dirrm %%WWWDIR%%/plugins/log.syslog
-@dirrm %%WWWDIR%%/plugins/log.sql/i18n/conf
-@dirrm %%WWWDIR%%/plugins/log.sql/i18n
-@dirrm %%WWWDIR%%/plugins/log.sql
-@dirrm %%WWWDIR%%/plugins/index.lucene/resources/images/32
-@dirrm %%WWWDIR%%/plugins/index.lucene/resources/images/22
-@dirrm %%WWWDIR%%/plugins/index.lucene/resources/images/16
-@dirrm %%WWWDIR%%/plugins/index.lucene/resources/images
-@dirrm %%WWWDIR%%/plugins/index.lucene/resources/i18n/conf
-@dirrm %%WWWDIR%%/plugins/index.lucene/resources/i18n
-@dirrm %%WWWDIR%%/plugins/index.lucene/resources
-@dirrm %%WWWDIR%%/plugins/index.lucene/Zend/Search/Lucene/Storage/File
-@dirrm %%WWWDIR%%/plugins/index.lucene/Zend/Search/Lucene/Storage/Directory
-@dirrm %%WWWDIR%%/plugins/index.lucene/Zend/Search/Lucene/Storage
-@dirrm %%WWWDIR%%/plugins/index.lucene/Zend/Search/Lucene/Search/Weight
-@dirrm %%WWWDIR%%/plugins/index.lucene/Zend/Search/Lucene/Search/Similarity
-@dirrm %%WWWDIR%%/plugins/index.lucene/Zend/Search/Lucene/Search/QueryEntry
-@dirrm %%WWWDIR%%/plugins/index.lucene/Zend/Search/Lucene/Search/Query/Preprocessing
-@dirrm %%WWWDIR%%/plugins/index.lucene/Zend/Search/Lucene/Search/Query
-@dirrm %%WWWDIR%%/plugins/index.lucene/Zend/Search/Lucene/Search/Highlighter
-@dirrm %%WWWDIR%%/plugins/index.lucene/Zend/Search/Lucene/Search
-@dirrm %%WWWDIR%%/plugins/index.lucene/Zend/Search/Lucene/Index/TermsStream
-@dirrm %%WWWDIR%%/plugins/index.lucene/Zend/Search/Lucene/Index/SegmentWriter
-@dirrm %%WWWDIR%%/plugins/index.lucene/Zend/Search/Lucene/Index
-@dirrm %%WWWDIR%%/plugins/index.lucene/Zend/Search/Lucene/Document
-@dirrm %%WWWDIR%%/plugins/index.lucene/Zend/Search/Lucene/Analysis/TokenFilter
-@dirrm %%WWWDIR%%/plugins/index.lucene/Zend/Search/Lucene/Analysis/Analyzer/Common/Utf8Num
-@dirrm %%WWWDIR%%/plugins/index.lucene/Zend/Search/Lucene/Analysis/Analyzer/Common/Utf8
-@dirrm %%WWWDIR%%/plugins/index.lucene/Zend/Search/Lucene/Analysis/Analyzer/Common/TextNum
-@dirrm %%WWWDIR%%/plugins/index.lucene/Zend/Search/Lucene/Analysis/Analyzer/Common/Text
-@dirrm %%WWWDIR%%/plugins/index.lucene/Zend/Search/Lucene/Analysis/Analyzer/Common
-@dirrm %%WWWDIR%%/plugins/index.lucene/Zend/Search/Lucene/Analysis/Analyzer
-@dirrm %%WWWDIR%%/plugins/index.lucene/Zend/Search/Lucene/Analysis
-@dirrm %%WWWDIR%%/plugins/index.lucene/Zend/Search/Lucene
-@dirrm %%WWWDIR%%/plugins/index.lucene/Zend/Search
-@dirrm %%WWWDIR%%/plugins/index.lucene/Zend
-@dirrm %%WWWDIR%%/plugins/index.lucene
-@dirrm %%WWWDIR%%/plugins/gui.mobile/i18n/conf
-@dirrm %%WWWDIR%%/plugins/gui.mobile/i18n
-@dirrm %%WWWDIR%%/plugins/gui.mobile
-@dirrm %%WWWDIR%%/plugins/gui.light/i18n/conf
-@dirrm %%WWWDIR%%/plugins/gui.light/i18n
-@dirrm %%WWWDIR%%/plugins/gui.light
-@dirrm %%WWWDIR%%/plugins/gui.ios/i18n/conf
-@dirrm %%WWWDIR%%/plugins/gui.ios/i18n
-@dirrm %%WWWDIR%%/plugins/gui.ios
-@dirrm %%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/overlays/8
-@dirrm %%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/overlays/12
-@dirrm %%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/overlays
-@dirrm %%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/mimes/64
-@dirrm %%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/mimes/16
-@dirrm %%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/mimes
-@dirrm %%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/i18n
-@dirrm %%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/awesome
-@dirrm %%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/32
-@dirrm %%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/22
-@dirrm %%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/16
-@dirrm %%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions
-@dirrm %%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images
-@dirrm %%WWWDIR%%/plugins/gui.ajax/res/themes/vision/html
-@dirrm %%WWWDIR%%/plugins/gui.ajax/res/themes/vision/css/pnghack
-@dirrm %%WWWDIR%%/plugins/gui.ajax/res/themes/vision/css/pie
-@dirrm %%WWWDIR%%/plugins/gui.ajax/res/themes/vision/css
-@dirrm %%WWWDIR%%/plugins/gui.ajax/res/themes/vision
-@dirrm %%WWWDIR%%/plugins/gui.ajax/res/themes/umbra/images/overlays/8
-@dirrm %%WWWDIR%%/plugins/gui.ajax/res/themes/umbra/images/overlays/12
-@dirrm %%WWWDIR%%/plugins/gui.ajax/res/themes/umbra/images/overlays
-@dirrm %%WWWDIR%%/plugins/gui.ajax/res/themes/umbra/images/mimes/64
-@dirrm %%WWWDIR%%/plugins/gui.ajax/res/themes/umbra/images/mimes/16
-@dirrm %%WWWDIR%%/plugins/gui.ajax/res/themes/umbra/images/mimes
-@dirrm %%WWWDIR%%/plugins/gui.ajax/res/themes/umbra/images/i18n
-@dirrm %%WWWDIR%%/plugins/gui.ajax/res/themes/umbra/images/actions/32
-@dirrm %%WWWDIR%%/plugins/gui.ajax/res/themes/umbra/images/actions/22
-@dirrm %%WWWDIR%%/plugins/gui.ajax/res/themes/umbra/images/actions/16
-@dirrm %%WWWDIR%%/plugins/gui.ajax/res/themes/umbra/images/actions
-@dirrm %%WWWDIR%%/plugins/gui.ajax/res/themes/umbra/images
-@dirrm %%WWWDIR%%/plugins/gui.ajax/res/themes/umbra/html
-@dirrm %%WWWDIR%%/plugins/gui.ajax/res/themes/umbra/css/pnghack
-@dirrm %%WWWDIR%%/plugins/gui.ajax/res/themes/umbra/css/pie
-@dirrm %%WWWDIR%%/plugins/gui.ajax/res/themes/umbra/css
-@dirrm %%WWWDIR%%/plugins/gui.ajax/res/themes/umbra
-@dirrm %%WWWDIR%%/plugins/gui.ajax/res/themes/oxygen/images/overlays/8
-@dirrm %%WWWDIR%%/plugins/gui.ajax/res/themes/oxygen/images/overlays/12
-@dirrm %%WWWDIR%%/plugins/gui.ajax/res/themes/oxygen/images/overlays
-@dirrm %%WWWDIR%%/plugins/gui.ajax/res/themes/oxygen/images/mimes/64
-@dirrm %%WWWDIR%%/plugins/gui.ajax/res/themes/oxygen/images/mimes/16
-@dirrm %%WWWDIR%%/plugins/gui.ajax/res/themes/oxygen/images/mimes
-@dirrm %%WWWDIR%%/plugins/gui.ajax/res/themes/oxygen/images/i18n
-@dirrm %%WWWDIR%%/plugins/gui.ajax/res/themes/oxygen/images/actions/32
-@dirrm %%WWWDIR%%/plugins/gui.ajax/res/themes/oxygen/images/actions/22
-@dirrm %%WWWDIR%%/plugins/gui.ajax/res/themes/oxygen/images/actions/16
-@dirrm %%WWWDIR%%/plugins/gui.ajax/res/themes/oxygen/images/actions
-@dirrm %%WWWDIR%%/plugins/gui.ajax/res/themes/oxygen/images
-@dirrm %%WWWDIR%%/plugins/gui.ajax/res/themes/oxygen/css/pnghack
-@dirrm %%WWWDIR%%/plugins/gui.ajax/res/themes/oxygen/css
-@dirrm %%WWWDIR%%/plugins/gui.ajax/res/themes/oxygen
-@dirrm %%WWWDIR%%/plugins/gui.ajax/res/themes
-@dirrm %%WWWDIR%%/plugins/gui.ajax/res/js/lib/xpath
-@dirrm %%WWWDIR%%/plugins/gui.ajax/res/js/lib/webfx
-@dirrm %%WWWDIR%%/plugins/gui.ajax/res/js/lib/scriptaculous/src
-@dirrm %%WWWDIR%%/plugins/gui.ajax/res/js/lib/scriptaculous
-@dirrm %%WWWDIR%%/plugins/gui.ajax/res/js/lib/prototype
-@dirrm %%WWWDIR%%/plugins/gui.ajax/res/js/lib/modernizr
-@dirrm %%WWWDIR%%/plugins/gui.ajax/res/js/lib/md5
-@dirrm %%WWWDIR%%/plugins/gui.ajax/res/js/lib/leightbox
-@dirrm %%WWWDIR%%/plugins/gui.ajax/res/js/lib
-@dirrm %%WWWDIR%%/plugins/gui.ajax/res/js/ajaxplorer/interfaces
-@dirrm %%WWWDIR%%/plugins/gui.ajax/res/js/ajaxplorer
-@dirrm %%WWWDIR%%/plugins/gui.ajax/res/js
-@dirrm %%WWWDIR%%/plugins/gui.ajax/res/i18n/conf
-@dirrm %%WWWDIR%%/plugins/gui.ajax/res/i18n
-@dirrm %%WWWDIR%%/plugins/gui.ajax/res/html
-@dirrm %%WWWDIR%%/plugins/gui.ajax/res
-@dirrm %%WWWDIR%%/plugins/gui.ajax
-@dirrm %%WWWDIR%%/plugins/feed.sql
-@dirrm %%WWWDIR%%/plugins/editor.zoho/images/mimes/64
-@dirrm %%WWWDIR%%/plugins/editor.zoho/images/mimes/16
-@dirrm %%WWWDIR%%/plugins/editor.zoho/images/mimes
-@dirrm %%WWWDIR%%/plugins/editor.zoho/images
-@dirrm %%WWWDIR%%/plugins/editor.zoho/i18n/conf
-@dirrm %%WWWDIR%%/plugins/editor.zoho/i18n
-@dirrm %%WWWDIR%%/plugins/editor.zoho/agent/files
-@dirrm %%WWWDIR%%/plugins/editor.zoho/agent
-@dirrm %%WWWDIR%%/plugins/editor.zoho
-@dirrm %%WWWDIR%%/plugins/editor.video/video-js
-@dirrm %%WWWDIR%%/plugins/editor.video/i18n/conf
-@dirrm %%WWWDIR%%/plugins/editor.video/i18n
-@dirrm %%WWWDIR%%/plugins/editor.video
-@dirrm %%WWWDIR%%/plugins/editor.text/i18n/conf
-@dirrm %%WWWDIR%%/plugins/editor.text/i18n
-@dirrm %%WWWDIR%%/plugins/editor.text
-@dirrm %%WWWDIR%%/plugins/editor.soundmanager/sm/swf
-@dirrm %%WWWDIR%%/plugins/editor.soundmanager/sm/shared
-@dirrm %%WWWDIR%%/plugins/editor.soundmanager/sm/script
-@dirrm %%WWWDIR%%/plugins/editor.soundmanager/sm/360-player/script
-@dirrm %%WWWDIR%%/plugins/editor.soundmanager/sm/360-player
-@dirrm %%WWWDIR%%/plugins/editor.soundmanager/sm
-@dirrm %%WWWDIR%%/plugins/editor.soundmanager/i18n/conf
-@dirrm %%WWWDIR%%/plugins/editor.soundmanager/i18n
-@dirrm %%WWWDIR%%/plugins/editor.soundmanager
-@dirrm %%WWWDIR%%/plugins/editor.pixlr/images/actions/32
-@dirrm %%WWWDIR%%/plugins/editor.pixlr/images/actions/22
-@dirrm %%WWWDIR%%/plugins/editor.pixlr/images/actions/16
-@dirrm %%WWWDIR%%/plugins/editor.pixlr/images/actions
-@dirrm %%WWWDIR%%/plugins/editor.pixlr/images
-@dirrm %%WWWDIR%%/plugins/editor.pixlr/i18n/conf
-@dirrm %%WWWDIR%%/plugins/editor.pixlr/i18n
-@dirrm %%WWWDIR%%/plugins/editor.pixlr
-@dirrm %%WWWDIR%%/plugins/editor.other/resources/images/actions/32
-@dirrm %%WWWDIR%%/plugins/editor.other/resources/images/actions/22
-@dirrm %%WWWDIR%%/plugins/editor.other/resources/images/actions/16
-@dirrm %%WWWDIR%%/plugins/editor.other/resources/images/actions
-@dirrm %%WWWDIR%%/plugins/editor.other/resources/images
-@dirrm %%WWWDIR%%/plugins/editor.other/resources/i18n/conf
-@dirrm %%WWWDIR%%/plugins/editor.other/resources/i18n
-@dirrm %%WWWDIR%%/plugins/editor.other/resources
-@dirrm %%WWWDIR%%/plugins/editor.other
-@dirrm %%WWWDIR%%/plugins/editor.openlayer/openlayer/theme/default/img
-@dirrm %%WWWDIR%%/plugins/editor.openlayer/openlayer/theme/default
-@dirrm %%WWWDIR%%/plugins/editor.openlayer/openlayer/theme
-@dirrm %%WWWDIR%%/plugins/editor.openlayer/openlayer/img
-@dirrm %%WWWDIR%%/plugins/editor.openlayer/openlayer
-@dirrm %%WWWDIR%%/plugins/editor.openlayer/i18n/conf
-@dirrm %%WWWDIR%%/plugins/editor.openlayer/i18n
-@dirrm %%WWWDIR%%/plugins/editor.openlayer
-@dirrm %%WWWDIR%%/plugins/editor.infopanel
-@dirrm %%WWWDIR%%/plugins/editor.imagick/i18n/conf
-@dirrm %%WWWDIR%%/plugins/editor.imagick/i18n
-@dirrm %%WWWDIR%%/plugins/editor.imagick
-@dirrm %%WWWDIR%%/plugins/editor.exif/images/actions/32
-@dirrm %%WWWDIR%%/plugins/editor.exif/images/actions/22
-@dirrm %%WWWDIR%%/plugins/editor.exif/images/actions/16
-@dirrm %%WWWDIR%%/plugins/editor.exif/images/actions
-@dirrm %%WWWDIR%%/plugins/editor.exif/images
-@dirrm %%WWWDIR%%/plugins/editor.exif/i18n/conf
-@dirrm %%WWWDIR%%/plugins/editor.exif/i18n
-@dirrm %%WWWDIR%%/plugins/editor.exif
-@dirrm %%WWWDIR%%/plugins/editor.etherpad/i18n/conf
-@dirrm %%WWWDIR%%/plugins/editor.etherpad/i18n
-@dirrm %%WWWDIR%%/plugins/editor.etherpad/etherpad-client
-@dirrm %%WWWDIR%%/plugins/editor.etherpad
-@dirrm %%WWWDIR%%/plugins/editor.eml/img/64
-@dirrm %%WWWDIR%%/plugins/editor.eml/img/16
-@dirrm %%WWWDIR%%/plugins/editor.eml/img
-@dirrm %%WWWDIR%%/plugins/editor.eml/i18n/conf
-@dirrm %%WWWDIR%%/plugins/editor.eml/i18n
-@dirrm %%WWWDIR%%/plugins/editor.eml
-@dirrm %%WWWDIR%%/plugins/editor.diaporama/i18n/conf
-@dirrm %%WWWDIR%%/plugins/editor.diaporama/i18n
-@dirrm %%WWWDIR%%/plugins/editor.diaporama
-@dirrm %%WWWDIR%%/plugins/editor.codemirror/img
-@dirrm %%WWWDIR%%/plugins/editor.codemirror/i18n/conf
-@dirrm %%WWWDIR%%/plugins/editor.codemirror/i18n
-@dirrm %%WWWDIR%%/plugins/editor.codemirror/css
-@dirrm %%WWWDIR%%/plugins/editor.codemirror/CodeMirror/js
-@dirrm %%WWWDIR%%/plugins/editor.codemirror/CodeMirror/css
-@dirrm %%WWWDIR%%/plugins/editor.codemirror/CodeMirror/contrib/xquery/js
-@dirrm %%WWWDIR%%/plugins/editor.codemirror/CodeMirror/contrib/xquery/css
-@dirrm %%WWWDIR%%/plugins/editor.codemirror/CodeMirror/contrib/xquery
-@dirrm %%WWWDIR%%/plugins/editor.codemirror/CodeMirror/contrib/sql/js
-@dirrm %%WWWDIR%%/plugins/editor.codemirror/CodeMirror/contrib/sql/css
-@dirrm %%WWWDIR%%/plugins/editor.codemirror/CodeMirror/contrib/sql
-@dirrm %%WWWDIR%%/plugins/editor.codemirror/CodeMirror/contrib/scheme/js
-@dirrm %%WWWDIR%%/plugins/editor.codemirror/CodeMirror/contrib/scheme/css
-@dirrm %%WWWDIR%%/plugins/editor.codemirror/CodeMirror/contrib/scheme
-@dirrm %%WWWDIR%%/plugins/editor.codemirror/CodeMirror/contrib/python/js
-@dirrm %%WWWDIR%%/plugins/editor.codemirror/CodeMirror/contrib/python/css
-@dirrm %%WWWDIR%%/plugins/editor.codemirror/CodeMirror/contrib/python
-@dirrm %%WWWDIR%%/plugins/editor.codemirror/CodeMirror/contrib/plsql/js
-@dirrm %%WWWDIR%%/plugins/editor.codemirror/CodeMirror/contrib/plsql/css
-@dirrm %%WWWDIR%%/plugins/editor.codemirror/CodeMirror/contrib/plsql
-@dirrm %%WWWDIR%%/plugins/editor.codemirror/CodeMirror/contrib/php/js
-@dirrm %%WWWDIR%%/plugins/editor.codemirror/CodeMirror/contrib/php/css
-@dirrm %%WWWDIR%%/plugins/editor.codemirror/CodeMirror/contrib/php
-@dirrm %%WWWDIR%%/plugins/editor.codemirror/CodeMirror/contrib/ometa/js
-@dirrm %%WWWDIR%%/plugins/editor.codemirror/CodeMirror/contrib/ometa/css
-@dirrm %%WWWDIR%%/plugins/editor.codemirror/CodeMirror/contrib/ometa
-@dirrm %%WWWDIR%%/plugins/editor.codemirror/CodeMirror/contrib/lua/js
-@dirrm %%WWWDIR%%/plugins/editor.codemirror/CodeMirror/contrib/lua/css
-@dirrm %%WWWDIR%%/plugins/editor.codemirror/CodeMirror/contrib/lua
-@dirrm %%WWWDIR%%/plugins/editor.codemirror/CodeMirror/contrib/java/js
-@dirrm %%WWWDIR%%/plugins/editor.codemirror/CodeMirror/contrib/java/css
-@dirrm %%WWWDIR%%/plugins/editor.codemirror/CodeMirror/contrib/java
-@dirrm %%WWWDIR%%/plugins/editor.codemirror/CodeMirror/contrib/groovy
-@dirrm %%WWWDIR%%/plugins/editor.codemirror/CodeMirror/contrib/freemarker/js
-@dirrm %%WWWDIR%%/plugins/editor.codemirror/CodeMirror/contrib/freemarker/css
-@dirrm %%WWWDIR%%/plugins/editor.codemirror/CodeMirror/contrib/freemarker
-@dirrm %%WWWDIR%%/plugins/editor.codemirror/CodeMirror/contrib/csharp/js
-@dirrm %%WWWDIR%%/plugins/editor.codemirror/CodeMirror/contrib/csharp/css
-@dirrm %%WWWDIR%%/plugins/editor.codemirror/CodeMirror/contrib/csharp
-@dirrm %%WWWDIR%%/plugins/editor.codemirror/CodeMirror/contrib
-@dirrm %%WWWDIR%%/plugins/editor.codemirror/CodeMirror
-@dirrm %%WWWDIR%%/plugins/editor.codemirror
-@dirrm %%WWWDIR%%/plugins/editor.ckeditor/i18n/conf
-@dirrm %%WWWDIR%%/plugins/editor.ckeditor/i18n
-@dirrm %%WWWDIR%%/plugins/editor.ckeditor
-@dirrm %%WWWDIR%%/plugins/editor.browser/resources/other
-@dirrm %%WWWDIR%%/plugins/editor.browser/resources/images/actions/32
-@dirrm %%WWWDIR%%/plugins/editor.browser/resources/images/actions/22
-@dirrm %%WWWDIR%%/plugins/editor.browser/resources/images/actions/16
-@dirrm %%WWWDIR%%/plugins/editor.browser/resources/images/actions
-@dirrm %%WWWDIR%%/plugins/editor.browser/resources/images
-@dirrm %%WWWDIR%%/plugins/editor.browser/resources/i18n
-@dirrm %%WWWDIR%%/plugins/editor.browser/resources
-@dirrm %%WWWDIR%%/plugins/editor.browser
-@dirrm %%WWWDIR%%/plugins/editor.audio/i18n/conf
-@dirrm %%WWWDIR%%/plugins/editor.audio/i18n
-@dirrm %%WWWDIR%%/plugins/editor.audio
-@dirrm %%WWWDIR%%/plugins/editor.ajxp_role/i18n/conf
-@dirrm %%WWWDIR%%/plugins/editor.ajxp_role/i18n
-@dirrm %%WWWDIR%%/plugins/editor.ajxp_role
-@dirrm %%WWWDIR%%/plugins/editor.ajxp_repository/i18n/conf
-@dirrm %%WWWDIR%%/plugins/editor.ajxp_repository/i18n
-@dirrm %%WWWDIR%%/plugins/editor.ajxp_repository
-@dirrm %%WWWDIR%%/plugins/editor.ajxp_plugin/i18n/conf
-@dirrm %%WWWDIR%%/plugins/editor.ajxp_plugin/i18n
-@dirrm %%WWWDIR%%/plugins/editor.ajxp_plugin
-@dirrm %%WWWDIR%%/plugins/downloader.http/resources/images/64
-@dirrm %%WWWDIR%%/plugins/downloader.http/resources/images/32
-@dirrm %%WWWDIR%%/plugins/downloader.http/resources/images/22
-@dirrm %%WWWDIR%%/plugins/downloader.http/resources/images/16
-@dirrm %%WWWDIR%%/plugins/downloader.http/resources/images
-@dirrm %%WWWDIR%%/plugins/downloader.http/resources/i18n
-@dirrm %%WWWDIR%%/plugins/downloader.http/resources
-@dirrm %%WWWDIR%%/plugins/downloader.http/bookmarklet
-@dirrm %%WWWDIR%%/plugins/downloader.http
-@dirrm %%WWWDIR%%/plugins/core.uploader/i18n/conf
-@dirrm %%WWWDIR%%/plugins/core.uploader/i18n
-@dirrm %%WWWDIR%%/plugins/core.uploader
-@dirrm %%WWWDIR%%/plugins/core.notifications/templates/short
-@dirrm %%WWWDIR%%/plugins/core.notifications/templates/long
-@dirrm %%WWWDIR%%/plugins/core.notifications/templates/group
-@dirrm %%WWWDIR%%/plugins/core.notifications/templates/block
-@dirrm %%WWWDIR%%/plugins/core.notifications/templates
-@dirrm %%WWWDIR%%/plugins/core.notifications/res/img/32
-@dirrm %%WWWDIR%%/plugins/core.notifications/res/img/22
-@dirrm %%WWWDIR%%/plugins/core.notifications/res/img/16
-@dirrm %%WWWDIR%%/plugins/core.notifications/res/img
-@dirrm %%WWWDIR%%/plugins/core.notifications/res/i18n
-@dirrm %%WWWDIR%%/plugins/core.notifications/res/css
-@dirrm %%WWWDIR%%/plugins/core.notifications/res
-@dirrm %%WWWDIR%%/plugins/core.notifications
-@dirrm %%WWWDIR%%/plugins/core.mq/vendor/phpws/tests
-@dirrm %%WWWDIR%%/plugins/core.mq/vendor/phpws
-@dirrm %%WWWDIR%%/plugins/core.mq/vendor
-@dirrm %%WWWDIR%%/plugins/core.mq
-@dirrm %%WWWDIR%%/plugins/core.metastore
-@dirrm %%WWWDIR%%/plugins/core.meta
-@dirrm %%WWWDIR%%/plugins/core.mailer/i18n
-@dirrm %%WWWDIR%%/plugins/core.mailer
-@dirrm %%WWWDIR%%/plugins/core.log
-@dirrm %%WWWDIR%%/plugins/core.index
-@dirrm %%WWWDIR%%/plugins/core.conf/i18n/conf
-@dirrm %%WWWDIR%%/plugins/core.conf/i18n
-@dirrm %%WWWDIR%%/plugins/core.conf
-@dirrm %%WWWDIR%%/plugins/core.auth/i18n/conf
-@dirrm %%WWWDIR%%/plugins/core.auth/i18n
-@dirrm %%WWWDIR%%/plugins/core.auth
-@dirrm %%WWWDIR%%/plugins/core.ajaxplorer/i18n/conf
-@dirrm %%WWWDIR%%/plugins/core.ajaxplorer/i18n
-@dirrm %%WWWDIR%%/plugins/core.ajaxplorer
-@dirrm %%WWWDIR%%/plugins/core.access
-@dirrm %%WWWDIR%%/plugins/conf.sql/i18n/conf
-@dirrm %%WWWDIR%%/plugins/conf.sql/i18n
-@dirrm %%WWWDIR%%/plugins/conf.sql
-@dirrm %%WWWDIR%%/plugins/conf.serial/i18n/conf
-@dirrm %%WWWDIR%%/plugins/conf.serial/i18n
-@dirrm %%WWWDIR%%/plugins/conf.serial
-@dirrm %%WWWDIR%%/plugins/boot.conf/i18n
-@dirrm %%WWWDIR%%/plugins/boot.conf
-@dirrm %%WWWDIR%%/plugins/auth.sql/i18n/conf
-@dirrm %%WWWDIR%%/plugins/auth.sql/i18n
-@dirrm %%WWWDIR%%/plugins/auth.sql
-@dirrm %%WWWDIR%%/plugins/auth.smb/i18n/conf
-@dirrm %%WWWDIR%%/plugins/auth.smb/i18n
-@dirrm %%WWWDIR%%/plugins/auth.smb
-@dirrm %%WWWDIR%%/plugins/auth.serial/i18n/conf
-@dirrm %%WWWDIR%%/plugins/auth.serial/i18n
-@dirrm %%WWWDIR%%/plugins/auth.serial
-@dirrm %%WWWDIR%%/plugins/auth.remote_ajxp/i18n/conf
-@dirrm %%WWWDIR%%/plugins/auth.remote_ajxp/i18n
-@dirrm %%WWWDIR%%/plugins/auth.remote_ajxp
-@dirrm %%WWWDIR%%/plugins/auth.remote/i18n/conf
-@dirrm %%WWWDIR%%/plugins/auth.remote/i18n
-@dirrm %%WWWDIR%%/plugins/auth.remote
-@dirrm %%WWWDIR%%/plugins/auth.multi/i18n/conf
-@dirrm %%WWWDIR%%/plugins/auth.multi/i18n
-@dirrm %%WWWDIR%%/plugins/auth.multi
-@dirrm %%WWWDIR%%/plugins/auth.ldap/i18n/conf
-@dirrm %%WWWDIR%%/plugins/auth.ldap/i18n
-@dirrm %%WWWDIR%%/plugins/auth.ldap
-@dirrm %%WWWDIR%%/plugins/auth.ftp/i18n/conf
-@dirrm %%WWWDIR%%/plugins/auth.ftp/i18n
-@dirrm %%WWWDIR%%/plugins/auth.ftp
-@dirrm %%WWWDIR%%/plugins/auth.basic_http/i18n/conf
-@dirrm %%WWWDIR%%/plugins/auth.basic_http/i18n
-@dirrm %%WWWDIR%%/plugins/auth.basic_http
-@dirrm %%WWWDIR%%/plugins/action.updater/i18n/conf
-@dirrm %%WWWDIR%%/plugins/action.updater/i18n
-@dirrm %%WWWDIR%%/plugins/action.updater
-@dirrm %%WWWDIR%%/plugins/action.skeleton/res/images/22
-@dirrm %%WWWDIR%%/plugins/action.skeleton/res/images/16
-@dirrm %%WWWDIR%%/plugins/action.skeleton/res/images
-@dirrm %%WWWDIR%%/plugins/action.skeleton/res/i18n/conf
-@dirrm %%WWWDIR%%/plugins/action.skeleton/res/i18n
-@dirrm %%WWWDIR%%/plugins/action.skeleton/res
-@dirrm %%WWWDIR%%/plugins/action.skeleton
+@dirrm %%WWWDIR%%/conf/templates
+@dirrm %%WWWDIR%%/conf
+@dirrm %%WWWDIR%%/core/classes/http_class
+@dirrm %%WWWDIR%%/core/classes/packer
+@dirrm %%WWWDIR%%/core/classes/sabredav/ajaxplorer
+@dirrm %%WWWDIR%%/core/classes/sabredav/lib/Sabre/CalDAV/Backend
+@dirrm %%WWWDIR%%/core/classes/sabredav/lib/Sabre/CalDAV/Exception
+@dirrm %%WWWDIR%%/core/classes/sabredav/lib/Sabre/CalDAV/Notifications/Notification
+@dirrm %%WWWDIR%%/core/classes/sabredav/lib/Sabre/CalDAV/Notifications
+@dirrm %%WWWDIR%%/core/classes/sabredav/lib/Sabre/CalDAV/Principal
+@dirrm %%WWWDIR%%/core/classes/sabredav/lib/Sabre/CalDAV/Property
+@dirrm %%WWWDIR%%/core/classes/sabredav/lib/Sabre/CalDAV/Schedule
+@dirrm %%WWWDIR%%/core/classes/sabredav/lib/Sabre/CalDAV
+@dirrm %%WWWDIR%%/core/classes/sabredav/lib/Sabre/CardDAV/Backend
+@dirrm %%WWWDIR%%/core/classes/sabredav/lib/Sabre/CardDAV/Property
+@dirrm %%WWWDIR%%/core/classes/sabredav/lib/Sabre/CardDAV
+@dirrm %%WWWDIR%%/core/classes/sabredav/lib/Sabre/DAV/Auth/Backend
+@dirrm %%WWWDIR%%/core/classes/sabredav/lib/Sabre/DAV/Auth
+@dirrm %%WWWDIR%%/core/classes/sabredav/lib/Sabre/DAV/Browser/assets/icons
+@dirrm %%WWWDIR%%/core/classes/sabredav/lib/Sabre/DAV/Browser/assets
+@dirrm %%WWWDIR%%/core/classes/sabredav/lib/Sabre/DAV/Browser
+@dirrm %%WWWDIR%%/core/classes/sabredav/lib/Sabre/DAV/Exception
+@dirrm %%WWWDIR%%/core/classes/sabredav/lib/Sabre/DAV/FS
+@dirrm %%WWWDIR%%/core/classes/sabredav/lib/Sabre/DAV/FSExt
+@dirrm %%WWWDIR%%/core/classes/sabredav/lib/Sabre/DAV/Locks/Backend
+@dirrm %%WWWDIR%%/core/classes/sabredav/lib/Sabre/DAV/Locks
+@dirrm %%WWWDIR%%/core/classes/sabredav/lib/Sabre/DAV/Mount
+@dirrm %%WWWDIR%%/core/classes/sabredav/lib/Sabre/DAV/PartialUpdate
+@dirrm %%WWWDIR%%/core/classes/sabredav/lib/Sabre/DAV/Property
+@dirrm %%WWWDIR%%/core/classes/sabredav/lib/Sabre/DAV/Tree
+@dirrm %%WWWDIR%%/core/classes/sabredav/lib/Sabre/DAV
+@dirrm %%WWWDIR%%/core/classes/sabredav/lib/Sabre/DAVACL/Exception
+@dirrm %%WWWDIR%%/core/classes/sabredav/lib/Sabre/DAVACL/PrincipalBackend
+@dirrm %%WWWDIR%%/core/classes/sabredav/lib/Sabre/DAVACL/Property
+@dirrm %%WWWDIR%%/core/classes/sabredav/lib/Sabre/DAVACL
+@dirrm %%WWWDIR%%/core/classes/sabredav/lib/Sabre/HTTP
+@dirrm %%WWWDIR%%/core/classes/sabredav/lib/Sabre
+@dirrm %%WWWDIR%%/core/classes/sabredav/lib
+@dirrm %%WWWDIR%%/core/classes/sabredav/vendor/composer
+@dirrm %%WWWDIR%%/core/classes/sabredav/vendor/sabre/vobject/bin
+@dirrm %%WWWDIR%%/core/classes/sabredav/vendor/sabre/vobject/lib/Sabre/VObject/Component
+@dirrm %%WWWDIR%%/core/classes/sabredav/vendor/sabre/vobject/lib/Sabre/VObject/Property
+@dirrm %%WWWDIR%%/core/classes/sabredav/vendor/sabre/vobject/lib/Sabre/VObject/Splitter
+@dirrm %%WWWDIR%%/core/classes/sabredav/vendor/sabre/vobject/lib/Sabre/VObject
+@dirrm %%WWWDIR%%/core/classes/sabredav/vendor/sabre/vobject/lib/Sabre
+@dirrm %%WWWDIR%%/core/classes/sabredav/vendor/sabre/vobject/lib
+@dirrm %%WWWDIR%%/core/classes/sabredav/vendor/sabre/vobject/tests/Sabre/VObject/Component
+@dirrm %%WWWDIR%%/core/classes/sabredav/vendor/sabre/vobject/tests/Sabre/VObject/Property
+@dirrm %%WWWDIR%%/core/classes/sabredav/vendor/sabre/vobject/tests/Sabre/VObject/Splitter
+@dirrm %%WWWDIR%%/core/classes/sabredav/vendor/sabre/vobject/tests/Sabre/VObject
+@dirrm %%WWWDIR%%/core/classes/sabredav/vendor/sabre/vobject/tests/Sabre
+@dirrm %%WWWDIR%%/core/classes/sabredav/vendor/sabre/vobject/tests
+@dirrm %%WWWDIR%%/core/classes/sabredav/vendor/sabre/vobject
+@dirrm %%WWWDIR%%/core/classes/sabredav/vendor/sabre
+@dirrm %%WWWDIR%%/core/classes/sabredav/vendor
+@dirrm %%WWWDIR%%/core/classes/sabredav
+@dirrm %%WWWDIR%%/core/classes/securimage/gdfonts
+@dirrm %%WWWDIR%%/core/classes/securimage/images
+@dirrm %%WWWDIR%%/core/classes/securimage/words
+@dirrm %%WWWDIR%%/core/classes/securimage
+@dirrm %%WWWDIR%%/core/classes
+@dirrm %%WWWDIR%%/core/doc
+@dirrm %%WWWDIR%%/core/tests
+@dirrm %%WWWDIR%%/core
+@dirrmtry %%WWWDIR%%/data/cache
+@dirrmtry %%WWWDIR%%/data/files
+@dirrmtry %%WWWDIR%%/data/logs
+@dirrmtry %%WWWDIR%%/data/personal
+@dirrmtry %%WWWDIR%%/data/plugins/auth.serial
+@dirrmtry %%WWWDIR%%/data/plugins/conf.serial
+@dirrmtry %%WWWDIR%%/data/plugins
+@dirrmtry %%WWWDIR%%/data/public
+@dirrmtry %%WWWDIR%%/data/tmp
+@dirrmtry %%WWWDIR%%/data
+@dirrm %%WWWDIR%%/phpunit/AJXP/Tests/Atomics
+@dirrm %%WWWDIR%%/phpunit/AJXP/Tests/Core
+@dirrm %%WWWDIR%%/phpunit/AJXP/Tests/Suite
+@dirrm %%WWWDIR%%/phpunit/AJXP/Tests
+@dirrm %%WWWDIR%%/phpunit/AJXP
+@dirrm %%WWWDIR%%/phpunit
+@dirrm %%WWWDIR%%/plugins/access.ajxp_conf/i18n
+@dirrm %%WWWDIR%%/plugins/access.ajxp_conf
+@dirrm %%WWWDIR%%/plugins/access.ajxp_shared/i18n
+@dirrm %%WWWDIR%%/plugins/access.ajxp_shared
+@dirrm %%WWWDIR%%/plugins/access.ajxp_user/i18n
+@dirrm %%WWWDIR%%/plugins/access.ajxp_user
+@dirrm %%WWWDIR%%/plugins/access.dropbox/dropbox-php/Exception
+@dirrm %%WWWDIR%%/plugins/access.dropbox/dropbox-php/OAuth
+@dirrm %%WWWDIR%%/plugins/access.dropbox/dropbox-php
+@dirrm %%WWWDIR%%/plugins/access.dropbox/i18n/conf
+@dirrm %%WWWDIR%%/plugins/access.dropbox/i18n
+@dirrm %%WWWDIR%%/plugins/access.dropbox
+@dirrm %%WWWDIR%%/plugins/access.fs/i18n/conf
+@dirrm %%WWWDIR%%/plugins/access.fs/i18n
+@dirrm %%WWWDIR%%/plugins/access.fs
+@dirrm %%WWWDIR%%/plugins/access.ftp/i18n/conf
+@dirrm %%WWWDIR%%/plugins/access.ftp/i18n
+@dirrm %%WWWDIR%%/plugins/access.ftp
+@dirrm %%WWWDIR%%/plugins/access.hpcloud/HPCloud_Patch/Storage/ObjectStorage
+@dirrm %%WWWDIR%%/plugins/access.hpcloud/HPCloud_Patch/Storage
+@dirrm %%WWWDIR%%/plugins/access.hpcloud/HPCloud_Patch/Transport
+@dirrm %%WWWDIR%%/plugins/access.hpcloud/HPCloud_Patch
+@dirrm %%WWWDIR%%/plugins/access.hpcloud/i18n/conf
+@dirrm %%WWWDIR%%/plugins/access.hpcloud/i18n
+@dirrm %%WWWDIR%%/plugins/access.hpcloud
+@dirrm %%WWWDIR%%/plugins/access.imap/resources/i18n/conf
+@dirrm %%WWWDIR%%/plugins/access.imap/resources/i18n
+@dirrm %%WWWDIR%%/plugins/access.imap/resources/images/16
+@dirrm %%WWWDIR%%/plugins/access.imap/resources/images/22
+@dirrm %%WWWDIR%%/plugins/access.imap/resources/images/32
+@dirrm %%WWWDIR%%/plugins/access.imap/resources/images/64
+@dirrm %%WWWDIR%%/plugins/access.imap/resources/images
+@dirrm %%WWWDIR%%/plugins/access.imap/resources
+@dirrm %%WWWDIR%%/plugins/access.imap
+@dirrm %%WWWDIR%%/plugins/access.mysql/resources/css
+@dirrm %%WWWDIR%%/plugins/access.mysql/resources/i18n/conf
+@dirrm %%WWWDIR%%/plugins/access.mysql/resources/i18n
+@dirrm %%WWWDIR%%/plugins/access.mysql/resources/images/actions/16
+@dirrm %%WWWDIR%%/plugins/access.mysql/resources/images/actions/22
+@dirrm %%WWWDIR%%/plugins/access.mysql/resources/images/actions
+@dirrm %%WWWDIR%%/plugins/access.mysql/resources/images/mimes/16
+@dirrm %%WWWDIR%%/plugins/access.mysql/resources/images/mimes
+@dirrm %%WWWDIR%%/plugins/access.mysql/resources/images
+@dirrm %%WWWDIR%%/plugins/access.mysql/resources/js
+@dirrm %%WWWDIR%%/plugins/access.mysql/resources
+@dirrm %%WWWDIR%%/plugins/access.mysql
+@dirrm %%WWWDIR%%/plugins/access.remote_fs/i18n/conf
+@dirrm %%WWWDIR%%/plugins/access.remote_fs/i18n
+@dirrm %%WWWDIR%%/plugins/access.remote_fs
+@dirrm %%WWWDIR%%/plugins/access.s3/aS3StreamWrapper/lib/wrapper
+@dirrm %%WWWDIR%%/plugins/access.s3/aS3StreamWrapper/lib
+@dirrm %%WWWDIR%%/plugins/access.s3/aS3StreamWrapper
+@dirrm %%WWWDIR%%/plugins/access.s3/i18n/conf
+@dirrm %%WWWDIR%%/plugins/access.s3/i18n
+@dirrm %%WWWDIR%%/plugins/access.s3
+@dirrm %%WWWDIR%%/plugins/access.sftp/i18n/conf
+@dirrm %%WWWDIR%%/plugins/access.sftp/i18n
+@dirrm %%WWWDIR%%/plugins/access.sftp
+@dirrm %%WWWDIR%%/plugins/access.smb/i18n/conf
+@dirrm %%WWWDIR%%/plugins/access.smb/i18n
+@dirrm %%WWWDIR%%/plugins/access.smb
+@dirrm %%WWWDIR%%/plugins/access.webdav/i18n/conf
+@dirrm %%WWWDIR%%/plugins/access.webdav/i18n
+@dirrm %%WWWDIR%%/plugins/access.webdav
+@dirrm %%WWWDIR%%/plugins/action.avatar/i18n/conf
+@dirrm %%WWWDIR%%/plugins/action.avatar/i18n
+@dirrm %%WWWDIR%%/plugins/action.avatar
+@dirrm %%WWWDIR%%/plugins/action.cart/i18n
+@dirrm %%WWWDIR%%/plugins/action.cart
+@dirrm %%WWWDIR%%/plugins/action.powerfs/i18n/conf
+@dirrm %%WWWDIR%%/plugins/action.powerfs/i18n
+@dirrm %%WWWDIR%%/plugins/action.powerfs
+@dirrm %%WWWDIR%%/plugins/action.quicksend/i18n
+@dirrm %%WWWDIR%%/plugins/action.quicksend
+@dirrm %%WWWDIR%%/plugins/action.scheduler/i18n
+@dirrm %%WWWDIR%%/plugins/action.scheduler/icons/16
+@dirrm %%WWWDIR%%/plugins/action.scheduler/icons/22
+@dirrm %%WWWDIR%%/plugins/action.scheduler/icons/64
+@dirrm %%WWWDIR%%/plugins/action.scheduler/icons
+@dirrm %%WWWDIR%%/plugins/action.scheduler
 @dirrm %%WWWDIR%%/plugins/action.share/res/i18n/conf
 @dirrm %%WWWDIR%%/plugins/action.share/res/i18n
 @dirrm %%WWWDIR%%/plugins/action.share/res
 @dirrm %%WWWDIR%%/plugins/action.share
-@dirrm %%WWWDIR%%/plugins/action.scheduler/icons/64
-@dirrm %%WWWDIR%%/plugins/action.scheduler/icons/22
-@dirrm %%WWWDIR%%/plugins/action.scheduler/icons/16
-@dirrm %%WWWDIR%%/plugins/action.scheduler/icons
-@dirrm %%WWWDIR%%/plugins/action.scheduler/i18n
-@dirrm %%WWWDIR%%/plugins/action.scheduler
-@dirrm %%WWWDIR%%/plugins/action.powerfs/i18n/conf
-@dirrm %%WWWDIR%%/plugins/action.powerfs/i18n
-@dirrm %%WWWDIR%%/plugins/action.powerfs
-@dirrm %%WWWDIR%%/plugins/access.webdav/i18n/conf
-@dirrm %%WWWDIR%%/plugins/access.webdav/i18n
-@dirrm %%WWWDIR%%/plugins/access.webdav
-@dirrm %%WWWDIR%%/plugins/access.smb/i18n/conf
-@dirrm %%WWWDIR%%/plugins/access.smb/i18n
-@dirrm %%WWWDIR%%/plugins/access.smb
-@dirrm %%WWWDIR%%/plugins/access.sftp/i18n/conf
-@dirrm %%WWWDIR%%/plugins/access.sftp/i18n
-@dirrm %%WWWDIR%%/plugins/access.sftp
-@dirrm %%WWWDIR%%/plugins/access.s3/i18n/conf
-@dirrm %%WWWDIR%%/plugins/access.s3/i18n
-@dirrm %%WWWDIR%%/plugins/access.s3/aS3StreamWrapper/lib/wrapper
-@dirrm %%WWWDIR%%/plugins/access.s3/aS3StreamWrapper/lib
-@dirrm %%WWWDIR%%/plugins/access.s3/aS3StreamWrapper
-@dirrm %%WWWDIR%%/plugins/access.s3
-@dirrm %%WWWDIR%%/plugins/access.remote_fs/i18n/conf
-@dirrm %%WWWDIR%%/plugins/access.remote_fs/i18n
-@dirrm %%WWWDIR%%/plugins/access.remote_fs
-@dirrm %%WWWDIR%%/plugins/access.mysql/resources/js
-@dirrm %%WWWDIR%%/plugins/access.mysql/resources/images/mimes/16
-@dirrm %%WWWDIR%%/plugins/access.mysql/resources/images/mimes
-@dirrm %%WWWDIR%%/plugins/access.mysql/resources/images/actions/22
-@dirrm %%WWWDIR%%/plugins/access.mysql/resources/images/actions/16
-@dirrm %%WWWDIR%%/plugins/access.mysql/resources/images/actions
-@dirrm %%WWWDIR%%/plugins/access.mysql/resources/images
-@dirrm %%WWWDIR%%/plugins/access.mysql/resources/i18n/conf
-@dirrm %%WWWDIR%%/plugins/access.mysql/resources/i18n
-@dirrm %%WWWDIR%%/plugins/access.mysql/resources/css
-@dirrm %%WWWDIR%%/plugins/access.mysql/resources
-@dirrm %%WWWDIR%%/plugins/access.mysql
-@dirrm %%WWWDIR%%/plugins/access.imap/resources/images/64
-@dirrm %%WWWDIR%%/plugins/access.imap/resources/images/32
-@dirrm %%WWWDIR%%/plugins/access.imap/resources/images/22
-@dirrm %%WWWDIR%%/plugins/access.imap/resources/images/16
-@dirrm %%WWWDIR%%/plugins/access.imap/resources/images
-@dirrm %%WWWDIR%%/plugins/access.imap/resources/i18n/conf
-@dirrm %%WWWDIR%%/plugins/access.imap/resources/i18n
-@dirrm %%WWWDIR%%/plugins/access.imap/resources
-@dirrm %%WWWDIR%%/plugins/access.imap
-@dirrm %%WWWDIR%%/plugins/access.hpcloud/i18n/conf
-@dirrm %%WWWDIR%%/plugins/access.hpcloud/i18n
-@dirrm %%WWWDIR%%/plugins/access.hpcloud/HPCloud_Patch/Transport
-@dirrm %%WWWDIR%%/plugins/access.hpcloud/HPCloud_Patch/Storage/ObjectStorage
-@dirrm %%WWWDIR%%/plugins/access.hpcloud/HPCloud_Patch/Storage
-@dirrm %%WWWDIR%%/plugins/access.hpcloud/HPCloud_Patch
-@dirrm %%WWWDIR%%/plugins/access.hpcloud
-@dirrm %%WWWDIR%%/plugins/access.ftp/i18n/conf
-@dirrm %%WWWDIR%%/plugins/access.ftp/i18n
-@dirrm %%WWWDIR%%/plugins/access.ftp
-@dirrm %%WWWDIR%%/plugins/access.fs/i18n/conf
-@dirrm %%WWWDIR%%/plugins/access.fs/i18n
-@dirrm %%WWWDIR%%/plugins/access.fs
-@dirrm %%WWWDIR%%/plugins/access.dropbox/i18n/conf
-@dirrm %%WWWDIR%%/plugins/access.dropbox/i18n
-@dirrm %%WWWDIR%%/plugins/access.dropbox/dropbox-php/OAuth
-@dirrm %%WWWDIR%%/plugins/access.dropbox/dropbox-php/Exception
-@dirrm %%WWWDIR%%/plugins/access.dropbox/dropbox-php
-@dirrm %%WWWDIR%%/plugins/access.dropbox
-@dirrm %%WWWDIR%%/plugins/access.ajxp_shared/i18n
-@dirrm %%WWWDIR%%/plugins/access.ajxp_shared
-@dirrm %%WWWDIR%%/plugins/access.ajxp_conf/i18n
-@dirrm %%WWWDIR%%/plugins/access.ajxp_conf
+@dirrm %%WWWDIR%%/plugins/action.skeleton/res/i18n/conf
+@dirrm %%WWWDIR%%/plugins/action.skeleton/res/i18n
+@dirrm %%WWWDIR%%/plugins/action.skeleton/res/images/16
+@dirrm %%WWWDIR%%/plugins/action.skeleton/res/images/22
+@dirrm %%WWWDIR%%/plugins/action.skeleton/res/images
+@dirrm %%WWWDIR%%/plugins/action.skeleton/res
+@dirrm %%WWWDIR%%/plugins/action.skeleton
+@dirrm %%WWWDIR%%/plugins/action.updater/i18n/conf
+@dirrm %%WWWDIR%%/plugins/action.updater/i18n
+@dirrm %%WWWDIR%%/plugins/action.updater
+@dirrm %%WWWDIR%%/plugins/auth.basic_http/i18n/conf
+@dirrm %%WWWDIR%%/plugins/auth.basic_http/i18n
+@dirrm %%WWWDIR%%/plugins/auth.basic_http
+@dirrm %%WWWDIR%%/plugins/auth.ftp/i18n/conf
+@dirrm %%WWWDIR%%/plugins/auth.ftp/i18n
+@dirrm %%WWWDIR%%/plugins/auth.ftp
+@dirrm %%WWWDIR%%/plugins/auth.ldap/i18n/conf
+@dirrm %%WWWDIR%%/plugins/auth.ldap/i18n
+@dirrm %%WWWDIR%%/plugins/auth.ldap
+@dirrm %%WWWDIR%%/plugins/auth.multi/i18n/conf
+@dirrm %%WWWDIR%%/plugins/auth.multi/i18n
+@dirrm %%WWWDIR%%/plugins/auth.multi
+@dirrm %%WWWDIR%%/plugins/auth.radius/i18n/conf
+@dirrm %%WWWDIR%%/plugins/auth.radius/i18n
+@dirrm %%WWWDIR%%/plugins/auth.radius
+@dirrm %%WWWDIR%%/plugins/auth.remote/i18n/conf
+@dirrm %%WWWDIR%%/plugins/auth.remote/i18n
+@dirrm %%WWWDIR%%/plugins/auth.remote
+@dirrm %%WWWDIR%%/plugins/auth.remote_ajxp/i18n/conf
+@dirrm %%WWWDIR%%/plugins/auth.remote_ajxp/i18n
+@dirrm %%WWWDIR%%/plugins/auth.remote_ajxp
+@dirrm %%WWWDIR%%/plugins/auth.serial/i18n/conf
+@dirrm %%WWWDIR%%/plugins/auth.serial/i18n
+@dirrm %%WWWDIR%%/plugins/auth.serial
+@dirrm %%WWWDIR%%/plugins/auth.smb/i18n/conf
+@dirrm %%WWWDIR%%/plugins/auth.smb/i18n
+@dirrm %%WWWDIR%%/plugins/auth.smb
+@dirrm %%WWWDIR%%/plugins/auth.sql/i18n/conf
+@dirrm %%WWWDIR%%/plugins/auth.sql/i18n
+@dirrm %%WWWDIR%%/plugins/auth.sql
+@dirrm %%WWWDIR%%/plugins/boot.conf/i18n/conf
+@dirrm %%WWWDIR%%/plugins/boot.conf/i18n
+@dirrm %%WWWDIR%%/plugins/boot.conf
+@dirrm %%WWWDIR%%/plugins/conf.serial/i18n/conf
+@dirrm %%WWWDIR%%/plugins/conf.serial/i18n
+@dirrm %%WWWDIR%%/plugins/conf.serial
+@dirrm %%WWWDIR%%/plugins/conf.sql/i18n/conf
+@dirrm %%WWWDIR%%/plugins/conf.sql/i18n
+@dirrm %%WWWDIR%%/plugins/conf.sql
+@dirrm %%WWWDIR%%/plugins/core.access
+@dirrm %%WWWDIR%%/plugins/core.ajaxplorer/i18n/conf
+@dirrm %%WWWDIR%%/plugins/core.ajaxplorer/i18n
+@dirrm %%WWWDIR%%/plugins/core.ajaxplorer
+@dirrm %%WWWDIR%%/plugins/core.auth/i18n/conf
+@dirrm %%WWWDIR%%/plugins/core.auth/i18n
+@dirrm %%WWWDIR%%/plugins/core.auth
+@dirrm %%WWWDIR%%/plugins/core.conf/i18n/conf
+@dirrm %%WWWDIR%%/plugins/core.conf/i18n
+@dirrm %%WWWDIR%%/plugins/core.conf
+@dirrm %%WWWDIR%%/plugins/core.index
+@dirrm %%WWWDIR%%/plugins/core.log
+@dirrm %%WWWDIR%%/plugins/core.mailer/i18n
+@dirrm %%WWWDIR%%/plugins/core.mailer/layout
+@dirrm %%WWWDIR%%/plugins/core.mailer
+@dirrm %%WWWDIR%%/plugins/core.meta
+@dirrm %%WWWDIR%%/plugins/core.metastore
+@dirrm %%WWWDIR%%/plugins/core.mq/vendor/phpws/tests
+@dirrm %%WWWDIR%%/plugins/core.mq/vendor/phpws
+@dirrm %%WWWDIR%%/plugins/core.mq/vendor
+@dirrm %%WWWDIR%%/plugins/core.mq
+@dirrm %%WWWDIR%%/plugins/core.notifications/res/css
+@dirrm %%WWWDIR%%/plugins/core.notifications/res/i18n
+@dirrm %%WWWDIR%%/plugins/core.notifications/res/img/16
+@dirrm %%WWWDIR%%/plugins/core.notifications/res/img/22
+@dirrm %%WWWDIR%%/plugins/core.notifications/res/img/32
+@dirrm %%WWWDIR%%/plugins/core.notifications/res/img
+@dirrm %%WWWDIR%%/plugins/core.notifications/res
+@dirrm %%WWWDIR%%/plugins/core.notifications/templates/block
+@dirrm %%WWWDIR%%/plugins/core.notifications/templates/group
+@dirrm %%WWWDIR%%/plugins/core.notifications/templates/long
+@dirrm %%WWWDIR%%/plugins/core.notifications/templates/short
+@dirrm %%WWWDIR%%/plugins/core.notifications/templates
+@dirrm %%WWWDIR%%/plugins/core.notifications
+@dirrm %%WWWDIR%%/plugins/core.uploader/i18n/conf
+@dirrm %%WWWDIR%%/plugins/core.uploader/i18n
+@dirrm %%WWWDIR%%/plugins/core.uploader
+@dirrm %%WWWDIR%%/plugins/downloader.http/bookmarklet
+@dirrm %%WWWDIR%%/plugins/downloader.http/resources/i18n
+@dirrm %%WWWDIR%%/plugins/downloader.http/resources/images/16
+@dirrm %%WWWDIR%%/plugins/downloader.http/resources/images/22
+@dirrm %%WWWDIR%%/plugins/downloader.http/resources/images/32
+@dirrm %%WWWDIR%%/plugins/downloader.http/resources/images/64
+@dirrm %%WWWDIR%%/plugins/downloader.http/resources/images
+@dirrm %%WWWDIR%%/plugins/downloader.http/resources
+@dirrm %%WWWDIR%%/plugins/downloader.http
+@dirrm %%WWWDIR%%/plugins/editor.ajxp_plugin/i18n/conf
+@dirrm %%WWWDIR%%/plugins/editor.ajxp_plugin/i18n
+@dirrm %%WWWDIR%%/plugins/editor.ajxp_plugin
+@dirrm %%WWWDIR%%/plugins/editor.ajxp_repository/i18n/conf
+@dirrm %%WWWDIR%%/plugins/editor.ajxp_repository/i18n
+@dirrm %%WWWDIR%%/plugins/editor.ajxp_repository
+@dirrm %%WWWDIR%%/plugins/editor.ajxp_role/i18n/conf
+@dirrm %%WWWDIR%%/plugins/editor.ajxp_role/i18n
+@dirrm %%WWWDIR%%/plugins/editor.ajxp_role
+@dirrm %%WWWDIR%%/plugins/editor.audio/i18n/conf
+@dirrm %%WWWDIR%%/plugins/editor.audio/i18n
+@dirrm %%WWWDIR%%/plugins/editor.audio
+@dirrm %%WWWDIR%%/plugins/editor.browser/resources/i18n
+@dirrm %%WWWDIR%%/plugins/editor.browser/resources/images/actions/16
+@dirrm %%WWWDIR%%/plugins/editor.browser/resources/images/actions/22
+@dirrm %%WWWDIR%%/plugins/editor.browser/resources/images/actions/32
+@dirrm %%WWWDIR%%/plugins/editor.browser/resources/images/actions
+@dirrm %%WWWDIR%%/plugins/editor.browser/resources/images
+@dirrm %%WWWDIR%%/plugins/editor.browser/resources/other
+@dirrm %%WWWDIR%%/plugins/editor.browser/resources
+@dirrm %%WWWDIR%%/plugins/editor.browser
+@dirrm %%WWWDIR%%/plugins/editor.ckeditor/i18n/conf
+@dirrm %%WWWDIR%%/plugins/editor.ckeditor/i18n
+@dirrm %%WWWDIR%%/plugins/editor.ckeditor
+@dirrm %%WWWDIR%%/plugins/editor.codemirror/CodeMirror/contrib/csharp/css
+@dirrm %%WWWDIR%%/plugins/editor.codemirror/CodeMirror/contrib/csharp/js
+@dirrm %%WWWDIR%%/plugins/editor.codemirror/CodeMirror/contrib/csharp
+@dirrm %%WWWDIR%%/plugins/editor.codemirror/CodeMirror/contrib/freemarker/css
+@dirrm %%WWWDIR%%/plugins/editor.codemirror/CodeMirror/contrib/freemarker/js
+@dirrm %%WWWDIR%%/plugins/editor.codemirror/CodeMirror/contrib/freemarker
+@dirrm %%WWWDIR%%/plugins/editor.codemirror/CodeMirror/contrib/groovy
+@dirrm %%WWWDIR%%/plugins/editor.codemirror/CodeMirror/contrib/java/css
+@dirrm %%WWWDIR%%/plugins/editor.codemirror/CodeMirror/contrib/java/js
+@dirrm %%WWWDIR%%/plugins/editor.codemirror/CodeMirror/contrib/java
+@dirrm %%WWWDIR%%/plugins/editor.codemirror/CodeMirror/contrib/lua/css
+@dirrm %%WWWDIR%%/plugins/editor.codemirror/CodeMirror/contrib/lua/js
+@dirrm %%WWWDIR%%/plugins/editor.codemirror/CodeMirror/contrib/lua
+@dirrm %%WWWDIR%%/plugins/editor.codemirror/CodeMirror/contrib/ometa/css
+@dirrm %%WWWDIR%%/plugins/editor.codemirror/CodeMirror/contrib/ometa/js
+@dirrm %%WWWDIR%%/plugins/editor.codemirror/CodeMirror/contrib/ometa
+@dirrm %%WWWDIR%%/plugins/editor.codemirror/CodeMirror/contrib/php/css
+@dirrm %%WWWDIR%%/plugins/editor.codemirror/CodeMirror/contrib/php/js
+@dirrm %%WWWDIR%%/plugins/editor.codemirror/CodeMirror/contrib/php
+@dirrm %%WWWDIR%%/plugins/editor.codemirror/CodeMirror/contrib/plsql/css
+@dirrm %%WWWDIR%%/plugins/editor.codemirror/CodeMirror/contrib/plsql/js
+@dirrm %%WWWDIR%%/plugins/editor.codemirror/CodeMirror/contrib/plsql
+@dirrm %%WWWDIR%%/plugins/editor.codemirror/CodeMirror/contrib/python/css
+@dirrm %%WWWDIR%%/plugins/editor.codemirror/CodeMirror/contrib/python/js
+@dirrm %%WWWDIR%%/plugins/editor.codemirror/CodeMirror/contrib/python
+@dirrm %%WWWDIR%%/plugins/editor.codemirror/CodeMirror/contrib/scheme/css
+@dirrm %%WWWDIR%%/plugins/editor.codemirror/CodeMirror/contrib/scheme/js
+@dirrm %%WWWDIR%%/plugins/editor.codemirror/CodeMirror/contrib/scheme
+@dirrm %%WWWDIR%%/plugins/editor.codemirror/CodeMirror/contrib/sql/css
+@dirrm %%WWWDIR%%/plugins/editor.codemirror/CodeMirror/contrib/sql/js
+@dirrm %%WWWDIR%%/plugins/editor.codemirror/CodeMirror/contrib/sql
+@dirrm %%WWWDIR%%/plugins/editor.codemirror/CodeMirror/contrib/xquery/css
+@dirrm %%WWWDIR%%/plugins/editor.codemirror/CodeMirror/contrib/xquery/js
+@dirrm %%WWWDIR%%/plugins/editor.codemirror/CodeMirror/contrib/xquery
+@dirrm %%WWWDIR%%/plugins/editor.codemirror/CodeMirror/contrib
+@dirrm %%WWWDIR%%/plugins/editor.codemirror/CodeMirror/css
+@dirrm %%WWWDIR%%/plugins/editor.codemirror/CodeMirror/js
+@dirrm %%WWWDIR%%/plugins/editor.codemirror/CodeMirror
+@dirrm %%WWWDIR%%/plugins/editor.codemirror/css
+@dirrm %%WWWDIR%%/plugins/editor.codemirror/i18n/conf
+@dirrm %%WWWDIR%%/plugins/editor.codemirror/i18n
+@dirrm %%WWWDIR%%/plugins/editor.codemirror/img
+@dirrm %%WWWDIR%%/plugins/editor.codemirror
+@dirrm %%WWWDIR%%/plugins/editor.diaporama/i18n/conf
+@dirrm %%WWWDIR%%/plugins/editor.diaporama/i18n
+@dirrm %%WWWDIR%%/plugins/editor.diaporama
+@dirrm %%WWWDIR%%/plugins/editor.eml/i18n/conf
+@dirrm %%WWWDIR%%/plugins/editor.eml/i18n
+@dirrm %%WWWDIR%%/plugins/editor.eml/img/16
+@dirrm %%WWWDIR%%/plugins/editor.eml/img/64
+@dirrm %%WWWDIR%%/plugins/editor.eml/img
+@dirrm %%WWWDIR%%/plugins/editor.eml
+@dirrm %%WWWDIR%%/plugins/editor.etherpad/etherpad-client
+@dirrm %%WWWDIR%%/plugins/editor.etherpad/i18n/conf
+@dirrm %%WWWDIR%%/plugins/editor.etherpad/i18n
+@dirrm %%WWWDIR%%/plugins/editor.etherpad
+@dirrm %%WWWDIR%%/plugins/editor.exif/i18n/conf
+@dirrm %%WWWDIR%%/plugins/editor.exif/i18n
+@dirrm %%WWWDIR%%/plugins/editor.exif/images/actions/16
+@dirrm %%WWWDIR%%/plugins/editor.exif/images/actions/22
+@dirrm %%WWWDIR%%/plugins/editor.exif/images/actions/32
+@dirrm %%WWWDIR%%/plugins/editor.exif/images/actions
+@dirrm %%WWWDIR%%/plugins/editor.exif/images
+@dirrm %%WWWDIR%%/plugins/editor.exif
+@dirrm %%WWWDIR%%/plugins/editor.imagick/i18n/conf
+@dirrm %%WWWDIR%%/plugins/editor.imagick/i18n
+@dirrm %%WWWDIR%%/plugins/editor.imagick
+@dirrm %%WWWDIR%%/plugins/editor.infopanel
+@dirrm %%WWWDIR%%/plugins/editor.openlayer/i18n/conf
+@dirrm %%WWWDIR%%/plugins/editor.openlayer/i18n
+@dirrm %%WWWDIR%%/plugins/editor.openlayer/openlayer/img
+@dirrm %%WWWDIR%%/plugins/editor.openlayer/openlayer/theme/default/img
+@dirrm %%WWWDIR%%/plugins/editor.openlayer/openlayer/theme/default
+@dirrm %%WWWDIR%%/plugins/editor.openlayer/openlayer/theme
+@dirrm %%WWWDIR%%/plugins/editor.openlayer/openlayer
+@dirrm %%WWWDIR%%/plugins/editor.openlayer
+@dirrm %%WWWDIR%%/plugins/editor.other/resources/i18n/conf
+@dirrm %%WWWDIR%%/plugins/editor.other/resources/i18n
+@dirrm %%WWWDIR%%/plugins/editor.other/resources/images/actions/16
+@dirrm %%WWWDIR%%/plugins/editor.other/resources/images/actions/22
+@dirrm %%WWWDIR%%/plugins/editor.other/resources/images/actions/32
+@dirrm %%WWWDIR%%/plugins/editor.other/resources/images/actions
+@dirrm %%WWWDIR%%/plugins/editor.other/resources/images
+@dirrm %%WWWDIR%%/plugins/editor.other/resources
+@dirrm %%WWWDIR%%/plugins/editor.other
+@dirrm %%WWWDIR%%/plugins/editor.pixlr/i18n/conf
+@dirrm %%WWWDIR%%/plugins/editor.pixlr/i18n
+@dirrm %%WWWDIR%%/plugins/editor.pixlr/images/actions/16
+@dirrm %%WWWDIR%%/plugins/editor.pixlr/images/actions/22
+@dirrm %%WWWDIR%%/plugins/editor.pixlr/images/actions/32
+@dirrm %%WWWDIR%%/plugins/editor.pixlr/images/actions
+@dirrm %%WWWDIR%%/plugins/editor.pixlr/images
+@dirrm %%WWWDIR%%/plugins/editor.pixlr
+@dirrm %%WWWDIR%%/plugins/editor.soundmanager/i18n/conf
+@dirrm %%WWWDIR%%/plugins/editor.soundmanager/i18n
+@dirrm %%WWWDIR%%/plugins/editor.soundmanager/sm/360-player/script
+@dirrm %%WWWDIR%%/plugins/editor.soundmanager/sm/360-player
+@dirrm %%WWWDIR%%/plugins/editor.soundmanager/sm/script
+@dirrm %%WWWDIR%%/plugins/editor.soundmanager/sm/shared
+@dirrm %%WWWDIR%%/plugins/editor.soundmanager/sm/swf
+@dirrm %%WWWDIR%%/plugins/editor.soundmanager/sm
+@dirrm %%WWWDIR%%/plugins/editor.soundmanager
+@dirrm %%WWWDIR%%/plugins/editor.text/i18n/conf
+@dirrm %%WWWDIR%%/plugins/editor.text/i18n
+@dirrm %%WWWDIR%%/plugins/editor.text
+@dirrm %%WWWDIR%%/plugins/editor.video/i18n/conf
+@dirrm %%WWWDIR%%/plugins/editor.video/i18n
+@dirrm %%WWWDIR%%/plugins/editor.video/video-js
+@dirrm %%WWWDIR%%/plugins/editor.video
+@dirrm %%WWWDIR%%/plugins/editor.webodf/i18n/conf
+@dirrm %%WWWDIR%%/plugins/editor.webodf/i18n
+@dirrm %%WWWDIR%%/plugins/editor.webodf
+@dirrm %%WWWDIR%%/plugins/editor.zoho/agent/files
+@dirrm %%WWWDIR%%/plugins/editor.zoho/agent
+@dirrm %%WWWDIR%%/plugins/editor.zoho/i18n/conf
+@dirrm %%WWWDIR%%/plugins/editor.zoho/i18n
+@dirrm %%WWWDIR%%/plugins/editor.zoho/images/mimes/16
+@dirrm %%WWWDIR%%/plugins/editor.zoho/images/mimes/64
+@dirrm %%WWWDIR%%/plugins/editor.zoho/images/mimes
+@dirrm %%WWWDIR%%/plugins/editor.zoho/images
+@dirrm %%WWWDIR%%/plugins/editor.zoho
+@dirrm %%WWWDIR%%/plugins/feed.sql
+@dirrm %%WWWDIR%%/plugins/gui.ajax/res/html
+@dirrm %%WWWDIR%%/plugins/gui.ajax/res/i18n/conf
+@dirrm %%WWWDIR%%/plugins/gui.ajax/res/i18n
+@dirrm %%WWWDIR%%/plugins/gui.ajax/res/js/ajaxplorer/interfaces
+@dirrm %%WWWDIR%%/plugins/gui.ajax/res/js/ajaxplorer
+@dirrm %%WWWDIR%%/plugins/gui.ajax/res/js/lib/leightbox
+@dirrm %%WWWDIR%%/plugins/gui.ajax/res/js/lib/md5
+@dirrm %%WWWDIR%%/plugins/gui.ajax/res/js/lib/modernizr
+@dirrm %%WWWDIR%%/plugins/gui.ajax/res/js/lib/prototype
+@dirrm %%WWWDIR%%/plugins/gui.ajax/res/js/lib/scriptaculous/src
+@dirrm %%WWWDIR%%/plugins/gui.ajax/res/js/lib/scriptaculous
+@dirrm %%WWWDIR%%/plugins/gui.ajax/res/js/lib/webfx
+@dirrm %%WWWDIR%%/plugins/gui.ajax/res/js/lib/xpath
+@dirrm %%WWWDIR%%/plugins/gui.ajax/res/js/lib
+@dirrm %%WWWDIR%%/plugins/gui.ajax/res/js
+@dirrm %%WWWDIR%%/plugins/gui.ajax/res/themes/oxygen/css/pnghack
+@dirrm %%WWWDIR%%/plugins/gui.ajax/res/themes/oxygen/css
+@dirrm %%WWWDIR%%/plugins/gui.ajax/res/themes/oxygen/images/actions/16
+@dirrm %%WWWDIR%%/plugins/gui.ajax/res/themes/oxygen/images/actions/22
+@dirrm %%WWWDIR%%/plugins/gui.ajax/res/themes/oxygen/images/actions/32
+@dirrm %%WWWDIR%%/plugins/gui.ajax/res/themes/oxygen/images/actions
+@dirrm %%WWWDIR%%/plugins/gui.ajax/res/themes/oxygen/images/i18n
+@dirrm %%WWWDIR%%/plugins/gui.ajax/res/themes/oxygen/images/mimes/16
+@dirrm %%WWWDIR%%/plugins/gui.ajax/res/themes/oxygen/images/mimes/64
+@dirrm %%WWWDIR%%/plugins/gui.ajax/res/themes/oxygen/images/mimes
+@dirrm %%WWWDIR%%/plugins/gui.ajax/res/themes/oxygen/images/overlays/12
+@dirrm %%WWWDIR%%/plugins/gui.ajax/res/themes/oxygen/images/overlays/8
+@dirrm %%WWWDIR%%/plugins/gui.ajax/res/themes/oxygen/images/overlays
+@dirrm %%WWWDIR%%/plugins/gui.ajax/res/themes/oxygen/images
+@dirrm %%WWWDIR%%/plugins/gui.ajax/res/themes/oxygen
+@dirrm %%WWWDIR%%/plugins/gui.ajax/res/themes/umbra/css/pie
+@dirrm %%WWWDIR%%/plugins/gui.ajax/res/themes/umbra/css/pnghack
+@dirrm %%WWWDIR%%/plugins/gui.ajax/res/themes/umbra/css
+@dirrm %%WWWDIR%%/plugins/gui.ajax/res/themes/umbra/html
+@dirrm %%WWWDIR%%/plugins/gui.ajax/res/themes/umbra/images/actions/16
+@dirrm %%WWWDIR%%/plugins/gui.ajax/res/themes/umbra/images/actions/22
+@dirrm %%WWWDIR%%/plugins/gui.ajax/res/themes/umbra/images/actions/32
+@dirrm %%WWWDIR%%/plugins/gui.ajax/res/themes/umbra/images/actions
+@dirrm %%WWWDIR%%/plugins/gui.ajax/res/themes/umbra/images/i18n
+@dirrm %%WWWDIR%%/plugins/gui.ajax/res/themes/umbra/images/mimes/16
+@dirrm %%WWWDIR%%/plugins/gui.ajax/res/themes/umbra/images/mimes/64
+@dirrm %%WWWDIR%%/plugins/gui.ajax/res/themes/umbra/images/mimes
+@dirrm %%WWWDIR%%/plugins/gui.ajax/res/themes/umbra/images/overlays/12
+@dirrm %%WWWDIR%%/plugins/gui.ajax/res/themes/umbra/images/overlays/8
+@dirrm %%WWWDIR%%/plugins/gui.ajax/res/themes/umbra/images/overlays
+@dirrm %%WWWDIR%%/plugins/gui.ajax/res/themes/umbra/images
+@dirrm %%WWWDIR%%/plugins/gui.ajax/res/themes/umbra
+@dirrm %%WWWDIR%%/plugins/gui.ajax/res/themes/vision/css/pie
+@dirrm %%WWWDIR%%/plugins/gui.ajax/res/themes/vision/css/pnghack
+@dirrm %%WWWDIR%%/plugins/gui.ajax/res/themes/vision/css
+@dirrm %%WWWDIR%%/plugins/gui.ajax/res/themes/vision/html
+@dirrm %%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/16
+@dirrm %%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/22
+@dirrm %%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions/32
+@dirrm %%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/actions
+@dirrm %%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/awesome
+@dirrm %%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/i18n
+@dirrm %%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/mimes/16
+@dirrm %%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/mimes/64
+@dirrm %%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/mimes
+@dirrm %%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/overlays/12
+@dirrm %%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/overlays/8
+@dirrm %%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images/overlays
+@dirrm %%WWWDIR%%/plugins/gui.ajax/res/themes/vision/images
+@dirrm %%WWWDIR%%/plugins/gui.ajax/res/themes/vision
+@dirrm %%WWWDIR%%/plugins/gui.ajax/res/themes
+@dirrm %%WWWDIR%%/plugins/gui.ajax/res
+@dirrm %%WWWDIR%%/plugins/gui.ajax
+@dirrm %%WWWDIR%%/plugins/gui.ios/i18n/conf
+@dirrm %%WWWDIR%%/plugins/gui.ios/i18n
+@dirrm %%WWWDIR%%/plugins/gui.ios
+@dirrm %%WWWDIR%%/plugins/gui.light/i18n/conf
+@dirrm %%WWWDIR%%/plugins/gui.light/i18n
+@dirrm %%WWWDIR%%/plugins/gui.light
+@dirrm %%WWWDIR%%/plugins/gui.mobile/i18n/conf
+@dirrm %%WWWDIR%%/plugins/gui.mobile/i18n
+@dirrm %%WWWDIR%%/plugins/gui.mobile
+@dirrm %%WWWDIR%%/plugins/gui.user/i18n
+@dirrm %%WWWDIR%%/plugins/gui.user
+@dirrm %%WWWDIR%%/plugins/index.lucene/Zend/Search/Lucene/Analysis/Analyzer/Common/Text
+@dirrm %%WWWDIR%%/plugins/index.lucene/Zend/Search/Lucene/Analysis/Analyzer/Common/TextNum
+@dirrm %%WWWDIR%%/plugins/index.lucene/Zend/Search/Lucene/Analysis/Analyzer/Common/Utf8
+@dirrm %%WWWDIR%%/plugins/index.lucene/Zend/Search/Lucene/Analysis/Analyzer/Common/Utf8Num
+@dirrm %%WWWDIR%%/plugins/index.lucene/Zend/Search/Lucene/Analysis/Analyzer/Common
+@dirrm %%WWWDIR%%/plugins/index.lucene/Zend/Search/Lucene/Analysis/Analyzer
+@dirrm %%WWWDIR%%/plugins/index.lucene/Zend/Search/Lucene/Analysis/TokenFilter
+@dirrm %%WWWDIR%%/plugins/index.lucene/Zend/Search/Lucene/Analysis
+@dirrm %%WWWDIR%%/plugins/index.lucene/Zend/Search/Lucene/Document
+@dirrm %%WWWDIR%%/plugins/index.lucene/Zend/Search/Lucene/Index/SegmentWriter
+@dirrm %%WWWDIR%%/plugins/index.lucene/Zend/Search/Lucene/Index/TermsStream
+@dirrm %%WWWDIR%%/plugins/index.lucene/Zend/Search/Lucene/Index
+@dirrm %%WWWDIR%%/plugins/index.lucene/Zend/Search/Lucene/Search/Highlighter
+@dirrm %%WWWDIR%%/plugins/index.lucene/Zend/Search/Lucene/Search/Query/Preprocessing
+@dirrm %%WWWDIR%%/plugins/index.lucene/Zend/Search/Lucene/Search/Query
+@dirrm %%WWWDIR%%/plugins/index.lucene/Zend/Search/Lucene/Search/QueryEntry
+@dirrm %%WWWDIR%%/plugins/index.lucene/Zend/Search/Lucene/Search/Similarity
+@dirrm %%WWWDIR%%/plugins/index.lucene/Zend/Search/Lucene/Search/Weight
+@dirrm %%WWWDIR%%/plugins/index.lucene/Zend/Search/Lucene/Search
+@dirrm %%WWWDIR%%/plugins/index.lucene/Zend/Search/Lucene/Storage/Directory
+@dirrm %%WWWDIR%%/plugins/index.lucene/Zend/Search/Lucene/Storage/File
+@dirrm %%WWWDIR%%/plugins/index.lucene/Zend/Search/Lucene/Storage
+@dirrm %%WWWDIR%%/plugins/index.lucene/Zend/Search/Lucene
+@dirrm %%WWWDIR%%/plugins/index.lucene/Zend/Search
+@dirrm %%WWWDIR%%/plugins/index.lucene/Zend
+@dirrm %%WWWDIR%%/plugins/index.lucene/resources/i18n/conf
+@dirrm %%WWWDIR%%/plugins/index.lucene/resources/i18n
+@dirrm %%WWWDIR%%/plugins/index.lucene/resources/images/16
+@dirrm %%WWWDIR%%/plugins/index.lucene/resources/images/22
+@dirrm %%WWWDIR%%/plugins/index.lucene/resources/images/32
+@dirrm %%WWWDIR%%/plugins/index.lucene/resources/images
+@dirrm %%WWWDIR%%/plugins/index.lucene/resources
+@dirrm %%WWWDIR%%/plugins/index.lucene
+@dirrm %%WWWDIR%%/plugins/log.sql/i18n/conf
+@dirrm %%WWWDIR%%/plugins/log.sql/i18n
+@dirrm %%WWWDIR%%/plugins/log.sql
+@dirrm %%WWWDIR%%/plugins/log.syslog/i18n/conf
+@dirrm %%WWWDIR%%/plugins/log.syslog/i18n
+@dirrm %%WWWDIR%%/plugins/log.syslog
+@dirrm %%WWWDIR%%/plugins/log.text/i18n/conf
+@dirrm %%WWWDIR%%/plugins/log.text/i18n
+@dirrm %%WWWDIR%%/plugins/log.text
+@dirrm %%WWWDIR%%/plugins/mailer.phpmailer-lite/lib
+@dirrm %%WWWDIR%%/plugins/mailer.phpmailer-lite
+@dirrm %%WWWDIR%%/plugins/meta.comments/i18n/conf
+@dirrm %%WWWDIR%%/plugins/meta.comments/i18n
+@dirrm %%WWWDIR%%/plugins/meta.comments
+@dirrm %%WWWDIR%%/plugins/meta.exif/i18n/conf
+@dirrm %%WWWDIR%%/plugins/meta.exif/i18n
+@dirrm %%WWWDIR%%/plugins/meta.exif
+@dirrm %%WWWDIR%%/plugins/meta.filehasher/i18n/conf
+@dirrm %%WWWDIR%%/plugins/meta.filehasher/i18n
+@dirrm %%WWWDIR%%/plugins/meta.filehasher
+@dirrm %%WWWDIR%%/plugins/meta.git/i18n/conf
+@dirrm %%WWWDIR%%/plugins/meta.git/i18n
+@dirrm %%WWWDIR%%/plugins/meta.git/images/actions/16
+@dirrm %%WWWDIR%%/plugins/meta.git/images/actions/22
+@dirrm %%WWWDIR%%/plugins/meta.git/images/actions/32
+@dirrm %%WWWDIR%%/plugins/meta.git/images/actions
+@dirrm %%WWWDIR%%/plugins/meta.git/images
+@dirrm %%WWWDIR%%/plugins/meta.git
+@dirrm %%WWWDIR%%/plugins/meta.mount/i18n/conf
+@dirrm %%WWWDIR%%/plugins/meta.mount/i18n
+@dirrm %%WWWDIR%%/plugins/meta.mount
+@dirrm %%WWWDIR%%/plugins/meta.quota/i18n/conf
+@dirrm %%WWWDIR%%/plugins/meta.quota/i18n
+@dirrm %%WWWDIR%%/plugins/meta.quota/img/16
+@dirrm %%WWWDIR%%/plugins/meta.quota/img/22
+@dirrm %%WWWDIR%%/plugins/meta.quota/img/32
+@dirrm %%WWWDIR%%/plugins/meta.quota/img
+@dirrm %%WWWDIR%%/plugins/meta.quota
+@dirrm %%WWWDIR%%/plugins/meta.simple_lock/i18n/conf
+@dirrm %%WWWDIR%%/plugins/meta.simple_lock/i18n
+@dirrm %%WWWDIR%%/plugins/meta.simple_lock/icons/12
+@dirrm %%WWWDIR%%/plugins/meta.simple_lock/icons/16
+@dirrm %%WWWDIR%%/plugins/meta.simple_lock/icons/22
+@dirrm %%WWWDIR%%/plugins/meta.simple_lock/icons/32
+@dirrm %%WWWDIR%%/plugins/meta.simple_lock/icons/8
+@dirrm %%WWWDIR%%/plugins/meta.simple_lock/icons
+@dirrm %%WWWDIR%%/plugins/meta.simple_lock
+@dirrm %%WWWDIR%%/plugins/meta.svn/i18n/conf
+@dirrm %%WWWDIR%%/plugins/meta.svn/i18n
+@dirrm %%WWWDIR%%/plugins/meta.svn/images/actions/16
+@dirrm %%WWWDIR%%/plugins/meta.svn/images/actions/22
+@dirrm %%WWWDIR%%/plugins/meta.svn/images/actions/32
+@dirrm %%WWWDIR%%/plugins/meta.svn/images/actions
+@dirrm %%WWWDIR%%/plugins/meta.svn/images
+@dirrm %%WWWDIR%%/plugins/meta.svn
+@dirrm %%WWWDIR%%/plugins/meta.syncable
+@dirrm %%WWWDIR%%/plugins/meta.user/css
+@dirrm %%WWWDIR%%/plugins/meta.user/i18n/conf
+@dirrm %%WWWDIR%%/plugins/meta.user/i18n
+@dirrm %%WWWDIR%%/plugins/meta.user/img/16
+@dirrm %%WWWDIR%%/plugins/meta.user/img/22
+@dirrm %%WWWDIR%%/plugins/meta.user/img/32
+@dirrm %%WWWDIR%%/plugins/meta.user/img/48
+@dirrm %%WWWDIR%%/plugins/meta.user/img/64
+@dirrm %%WWWDIR%%/plugins/meta.user/img
+@dirrm %%WWWDIR%%/plugins/meta.user
+@dirrm %%WWWDIR%%/plugins/meta.watch/i18n
+@dirrm %%WWWDIR%%/plugins/meta.watch/icons/12
+@dirrm %%WWWDIR%%/plugins/meta.watch/icons/128
+@dirrm %%WWWDIR%%/plugins/meta.watch/icons/16
+@dirrm %%WWWDIR%%/plugins/meta.watch/icons/22
+@dirrm %%WWWDIR%%/plugins/meta.watch/icons/32
+@dirrm %%WWWDIR%%/plugins/meta.watch/icons/64
+@dirrm %%WWWDIR%%/plugins/meta.watch/icons/8
+@dirrm %%WWWDIR%%/plugins/meta.watch/icons
+@dirrm %%WWWDIR%%/plugins/meta.watch
+@dirrm %%WWWDIR%%/plugins/metastore.s3/i18n/conf
+@dirrm %%WWWDIR%%/plugins/metastore.s3/i18n
+@dirrm %%WWWDIR%%/plugins/metastore.s3
+@dirrm %%WWWDIR%%/plugins/metastore.serial/i18n/conf
+@dirrm %%WWWDIR%%/plugins/metastore.serial/i18n
+@dirrm %%WWWDIR%%/plugins/metastore.serial
+@dirrm %%WWWDIR%%/plugins/metastore.xattr
+@dirrm %%WWWDIR%%/plugins/mq.serial
+@dirrm %%WWWDIR%%/plugins/mq.sql
+@dirrm %%WWWDIR%%/plugins/shorten.bitly/i18n/conf
+@dirrm %%WWWDIR%%/plugins/shorten.bitly/i18n
+@dirrm %%WWWDIR%%/plugins/shorten.bitly
+@dirrm %%WWWDIR%%/plugins/shorten.multi/i18n/conf
+@dirrm %%WWWDIR%%/plugins/shorten.multi/i18n
+@dirrm %%WWWDIR%%/plugins/shorten.multi
+@dirrm %%WWWDIR%%/plugins/uploader.flex/i18n/conf
+@dirrm %%WWWDIR%%/plugins/uploader.flex/i18n
+@dirrm %%WWWDIR%%/plugins/uploader.flex
+@dirrm %%WWWDIR%%/plugins/uploader.html/i18n/conf
+@dirrm %%WWWDIR%%/plugins/uploader.html/i18n
+@dirrm %%WWWDIR%%/plugins/uploader.html
+@dirrm %%WWWDIR%%/plugins/uploader.jumploader/i18n/conf
+@dirrm %%WWWDIR%%/plugins/uploader.jumploader/i18n
+@dirrm %%WWWDIR%%/plugins/uploader.jumploader
+@dirrm %%WWWDIR%%/plugins/uploader.plupload
 @dirrm %%WWWDIR%%/plugins
-@dirrm %%WWWDIR%%/phpunit/AJXP/Tests/Suite
-@dirrm %%WWWDIR%%/phpunit/AJXP/Tests/Core
-@dirrm %%WWWDIR%%/phpunit/AJXP/Tests/Atomics
-@dirrm %%WWWDIR%%/phpunit/AJXP/Tests
-@dirrm %%WWWDIR%%/phpunit/AJXP
-@dirrm %%WWWDIR%%/phpunit
-@dirrm %%WWWDIR%%/core/tests
-@dirrm %%WWWDIR%%/core/doc
-@dirrmtry %%WWWDIR%%/data/tmp
-@dirrmtry %%WWWDIR%%/data/public
-@dirrmtry %%WWWDIR%%/data/plugins/conf.serial
-@dirrmtry %%WWWDIR%%/data/plugins/auth.serial
-@dirrmtry %%WWWDIR%%/data/plugins
-@dirrmtry %%WWWDIR%%/data/personal
-@dirrmtry %%WWWDIR%%/data/logs
-@dirrmtry %%WWWDIR%%/data/files
-@dirrmtry %%WWWDIR%%/data/cache
-@dirrmtry %%WWWDIR%%/data
-@dirrm %%WWWDIR%%/core/classes/securimage/words
-@dirrm %%WWWDIR%%/core/classes/securimage/images
-@dirrm %%WWWDIR%%/core/classes/securimage/gdfonts
-@dirrm %%WWWDIR%%/core/classes/securimage
-@dirrm %%WWWDIR%%/core/classes/sabredav/vendor/sabre/vobject/tests/Sabre/VObject/Splitter
-@dirrm %%WWWDIR%%/core/classes/sabredav/vendor/sabre/vobject/tests/Sabre/VObject/Property
-@dirrm %%WWWDIR%%/core/classes/sabredav/vendor/sabre/vobject/tests/Sabre/VObject/Component
-@dirrm %%WWWDIR%%/core/classes/sabredav/vendor/sabre/vobject/tests/Sabre/VObject
-@dirrm %%WWWDIR%%/core/classes/sabredav/vendor/sabre/vobject/tests/Sabre
-@dirrm %%WWWDIR%%/core/classes/sabredav/vendor/sabre/vobject/tests
-@dirrm %%WWWDIR%%/core/classes/sabredav/vendor/sabre/vobject/lib/Sabre/VObject/Splitter
-@dirrm %%WWWDIR%%/core/classes/sabredav/vendor/sabre/vobject/lib/Sabre/VObject/Property
-@dirrm %%WWWDIR%%/core/classes/sabredav/vendor/sabre/vobject/lib/Sabre/VObject/Component
-@dirrm %%WWWDIR%%/core/classes/sabredav/vendor/sabre/vobject/lib/Sabre/VObject
-@dirrm %%WWWDIR%%/core/classes/sabredav/vendor/sabre/vobject/lib/Sabre
-@dirrm %%WWWDIR%%/core/classes/sabredav/vendor/sabre/vobject/lib
-@dirrm %%WWWDIR%%/core/classes/sabredav/vendor/sabre/vobject/bin
-@dirrm %%WWWDIR%%/core/classes/sabredav/vendor/sabre/vobject
-@dirrm %%WWWDIR%%/core/classes/sabredav/vendor/sabre
-@dirrm %%WWWDIR%%/core/classes/sabredav/vendor/composer
-@dirrm %%WWWDIR%%/core/classes/sabredav/vendor
-@dirrm %%WWWDIR%%/core/classes/sabredav/lib/Sabre/HTTP
-@dirrm %%WWWDIR%%/core/classes/sabredav/lib/Sabre/DAVACL/Property
-@dirrm %%WWWDIR%%/core/classes/sabredav/lib/Sabre/DAVACL/PrincipalBackend
-@dirrm %%WWWDIR%%/core/classes/sabredav/lib/Sabre/DAVACL/Exception
-@dirrm %%WWWDIR%%/core/classes/sabredav/lib/Sabre/DAVACL
-@dirrm %%WWWDIR%%/core/classes/sabredav/lib/Sabre/DAV/Tree
-@dirrm %%WWWDIR%%/core/classes/sabredav/lib/Sabre/DAV/Property
-@dirrm %%WWWDIR%%/core/classes/sabredav/lib/Sabre/DAV/PartialUpdate
-@dirrm %%WWWDIR%%/core/classes/sabredav/lib/Sabre/DAV/Mount
-@dirrm %%WWWDIR%%/core/classes/sabredav/lib/Sabre/DAV/Locks/Backend
-@dirrm %%WWWDIR%%/core/classes/sabredav/lib/Sabre/DAV/Locks
-@dirrm %%WWWDIR%%/core/classes/sabredav/lib/Sabre/DAV/FSExt
-@dirrm %%WWWDIR%%/core/classes/sabredav/lib/Sabre/DAV/FS
-@dirrm %%WWWDIR%%/core/classes/sabredav/lib/Sabre/DAV/Exception
-@dirrm %%WWWDIR%%/core/classes/sabredav/lib/Sabre/DAV/Browser/assets/icons
-@dirrm %%WWWDIR%%/core/classes/sabredav/lib/Sabre/DAV/Browser/assets
-@dirrm %%WWWDIR%%/core/classes/sabredav/lib/Sabre/DAV/Browser
-@dirrm %%WWWDIR%%/core/classes/sabredav/lib/Sabre/DAV/Auth/Backend
-@dirrm %%WWWDIR%%/core/classes/sabredav/lib/Sabre/DAV/Auth
-@dirrm %%WWWDIR%%/core/classes/sabredav/lib/Sabre/DAV
-@dirrm %%WWWDIR%%/core/classes/sabredav/lib/Sabre/CardDAV/Property
-@dirrm %%WWWDIR%%/core/classes/sabredav/lib/Sabre/CardDAV/Backend
-@dirrm %%WWWDIR%%/core/classes/sabredav/lib/Sabre/CardDAV
-@dirrm %%WWWDIR%%/core/classes/sabredav/lib/Sabre/CalDAV/Schedule
-@dirrm %%WWWDIR%%/core/classes/sabredav/lib/Sabre/CalDAV/Property
-@dirrm %%WWWDIR%%/core/classes/sabredav/lib/Sabre/CalDAV/Principal
-@dirrm %%WWWDIR%%/core/classes/sabredav/lib/Sabre/CalDAV/Notifications/Notification
-@dirrm %%WWWDIR%%/core/classes/sabredav/lib/Sabre/CalDAV/Notifications
-@dirrm %%WWWDIR%%/core/classes/sabredav/lib/Sabre/CalDAV/Exception
-@dirrm %%WWWDIR%%/core/classes/sabredav/lib/Sabre/CalDAV/Backend
-@dirrm %%WWWDIR%%/core/classes/sabredav/lib/Sabre/CalDAV
-@dirrm %%WWWDIR%%/core/classes/sabredav/lib/Sabre
-@dirrm %%WWWDIR%%/core/classes/sabredav/lib
-@dirrm %%WWWDIR%%/core/classes/sabredav/ajaxplorer
-@dirrm %%WWWDIR%%/core/classes/sabredav
-@dirrm %%WWWDIR%%/core/classes/packer
-@dirrm %%WWWDIR%%/core/classes/http_class
-@dirrm %%WWWDIR%%/core/classes
-@dirrm %%WWWDIR%%/core
-@dirrm %%WWWDIR%%/conf/templates
-@dirrm %%WWWDIR%%/conf
 @dirrmtry %%WWWDIR%%

@@ -5,6 +5,32 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20140722:
+  AFFECTS: users of www/ajaxplorer
+  AUTHOR: madpilot@FreeBSD.org
+
+  The ajaxplorer project was renamed to pydio.
+
+  Due to this update some manual steps will need to be performed
+  after updating the port.
+
+  IMPORTANT: Perform a backup of the ajaxplorer installation and
+  the databases backing it(if you're using that feature).
+
+  First manually remove the ajaxplorer port and install www/pydio
+  afterwards.
+
+  Further steps will be avbailable in the pkg-message, which can
+  be shown with these commands:
+
+  # pkg info -D pydio
+
+  # pkg_info -D pydio
+
+  Please also read the upgrading notes at:
+
+  http://pyd.io/pydio-core-5.2.0#Upgrading
+
 20140730:
   AFFECTS: users of security/libgcrypt
   AUTHOR: pi@FreeBSD.org
