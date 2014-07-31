@@ -13,4 +13,3 @@ lib/libcpptest.so
 lib/libcpptest.so.0
 lib/libcpptest.so.0.0.7
 libdata/pkgconfig/libcpptest.pc
-@dirrmtry lib/pkgconfig
