@@ -12,15 +12,20 @@ $FreeBSD$
  
  # /share/doc/ejabberd
  PACKAGE_TARNAME = @PACKAGE_TARNAME@
-@@ -41,7 +41,7 @@
+@@ -41,10 +41,10 @@
  MSGSDIR = $(PRIVDIR)/msgs
  
  # /var/lib/ejabberd/
 -SPOOLDIR = $(DESTDIR)@localstatedir@/lib/ejabberd
 +SPOOLDIR = $(DESTDIR)@localstatedir@/spool/ejabberd
  
- # /var/lock/ejabberdctl
- CTLLOCKDIR = $(DESTDIR)@localstatedir@/lock/ejabberdctl
+-# /var/lock/ejabberdctl
+-CTLLOCKDIR = $(DESTDIR)@localstatedir@/lock/ejabberdctl
++# /var/run/ejabberdctl
++CTLLOCKDIR = $(DESTDIR)@localstatedir@/run/ejabberdctl
+ 
+ # /var/lib/ejabberd/.erlang.cookie
+ COOKIEFILE = $(SPOOLDIR)/.erlang.cookie
 @@ -109,25 +109,22 @@
  	#
  	# Configuration files
@@ -54,15 +59,6 @@ $FreeBSD$
  	#
  	# Init script
  	$(SED) -e "s*@ctlscriptpath@*$(SBINDIR)*" \
-@@ -151,6 +148,8 @@
- 	# Binary C programs
- 	$(INSTALL) -d $(PBINDIR)
- 	$(INSTALL) -m 750 $(O_USER) tools/captcha.sh $(PBINDIR)
-+	-[ -f deps/p1_pam/priv/bin/epam ] \
-+		&& $(INSTALL) -m 750 $(O_USER) deps/p1_pam/priv/bin/epam $(PBINDIR)
- 	#
- 	# Binary system libraries
- 	$(INSTALL) -d $(SODIR)
 @@ -177,6 +176,7 @@
  	chmod -R 750 $(LOGDIR)
  	#
