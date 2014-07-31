@@ -11,6 +11,7 @@ MASTER_SITE_SUBDIR=	markp
 MAINTAINER=	gd.workbox@gmail.com
 COMMENT=	Client and server for the RFC1312 message protocol
 
+USES=		readline
 USE_RC_SUBR=	mesgd
 USE_AUTOTOOLS=	aclocal autoheader autoconf automake
 AUTOMAKE_ARGS+=	--add-missing
