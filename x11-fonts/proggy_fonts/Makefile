@@ -35,13 +35,11 @@ USE_XORG=	x11
 USES=		zip
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
-XFONTDIR=	${PREFIX}/lib/X11/fonts/local
+XFONTDIR=	${STAGEDIR}${PREFIX}/lib/X11/fonts/local
 
-NO_STAGE=	yes
 do-install:
 	@${MKDIR} ${XFONTDIR}
 	@${CP} ${ALREADY_UNZIP} ${WRKDIR}
 	@${INSTALL_DATA} ${WRKDIR}/*.pcf* ${XFONTDIR}
-	@(cd ${XFONTDIR}; mkfontdir)
 
 .include <bsd.port.mk>
