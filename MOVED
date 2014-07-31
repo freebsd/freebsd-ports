@@ -6357,3 +6357,8 @@ lang/sml-nj-devel|lang/smlnj|2014-07-30|The -devel was updated and is now produc
 lang/sml-nj|lang/smlnj|2014-07-30|Use lang/smlnj as newer version
 www/ajaxplorer|www/pydio|2014-07-31|Project renamed
 converters/igbinary|converters/pecl-igbinary|2014-07-31|The project has been moved to PECL
+mail/postfix27||2014-07-31|Has expired: No longer supported by upstream
+misc/freecode-submit||2014-07-31|Has expired: This software is obsolete. Freecode does not accept updates anymore.
+mail/exim-doc-info||2014-07-31|Has expired: yes
+misc/gman||2014-07-31|Has expired: Depends on expiring ghostview
+print/ghostview|print/gv|2014-07-31|Has expired: project dead nearly a decade ago; use print/gv instead
