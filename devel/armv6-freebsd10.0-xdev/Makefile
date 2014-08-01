@@ -7,6 +7,9 @@ X_TARGET_ARCH=	armv6
 
 .include <bsd.port.options.mk>
 
+ONLY_FOR_ARCHS=	i386 amd64
+ONLY_FOR_ARCHS_REASON=Used on i386/amd64 to cross compile arm
+
 .if ${OPSYS} != FreeBSD
 IGNORE=	Only supported on FreeBSD
 .endif
