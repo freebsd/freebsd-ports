@@ -30,7 +30,7 @@ To use Exim instead of sendmail on startup:
    'daily_submit_queuerun' to "NO" in periodic.conf(5),
    if you intend to manage queue runners / deliveries closely.
 *) Set the 'exim_enable' rc.conf(5) variable to 'YES'.
-*) Start exim with '%%RC_DIR%%/exim%%RC_SUFX%% start'.
+*) Start exim with '%%PREFIX%%/etc/rc.d/exim start'.
 
 You may also want to configure newsyslog(8) to rotate Exim log files:
 

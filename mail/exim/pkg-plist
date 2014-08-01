@@ -54,11 +54,3 @@
 %%EXIM%%@owner root
 %%EXIM%%@group wheel
 %%EXIM%%@exec install -d -o %%EXIM_USER%% -g %%EXIM_GROUP%% /%%LOGDIR%%
-%%SO_1024%%@owner %%EXIM_USER%%
-%%SO_1024%%@group %%EXIM_GROUP%%
-%%SO_1024%%@cwd /
-%%SO_1024%%@dirrmtry var/spool/spamooborona
-%%SO_1024%%@cwd %%RESETPREFIX%%
-%%SO_1024%%@owner root
-%%SO_1024%%@group wheel
-%%SO_1024%%@exec install -d -o %%EXIM_USER%% -g %%EXIM_GROUP%% /var/spool/spamooborona

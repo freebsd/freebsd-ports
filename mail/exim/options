@@ -50,7 +50,7 @@ OPTIONS_DEFAULT+=	AUTH_CRAM_MD5 \
 
 OPTIONS_RADIO_TLS=	TLS GNUTLS
 TLS_DESC=	TLS support
-OPTIONS_RADIO_LS=	SA_EXIM SO_1024 KAS
+OPTIONS_RADIO_LS=	SA_EXIM KAS
 LS_DESC=	Local scan patch
 OPTIONS_RADIO_SRSR=	SRS SRS_ALT
 SRSR_DESC=	Sender Rewriting Scheme
@@ -110,7 +110,6 @@ READLINE_DESC=		Enable readline(3) library
 REDIS_DESC=		Enable redis lookups (experimental)
 SASLAUTHD_DESC=		Enable use of Cyrus SASL auth daemon
 SA_EXIM_DESC=		Build with Spamassassin local scan
-SO_1024_DESC=		Build with Spamooborona-1024 local scan
 SPF_DESC=		Enable Sender Policy Framework checking
 SQLITE_DESC=		Enable SQLite lookups
 SRS_DESC=		Enable Sender Rewriting Scheme
