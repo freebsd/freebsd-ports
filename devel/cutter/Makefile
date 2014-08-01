@@ -11,7 +11,7 @@ MAINTAINER=	romain@FreeBSD.org
 COMMENT=	Unit Testing Framework for C and C++
 
 LIB_DEPENDS=	libcairo.so:${PORTSDIR}/graphics/cairo \
-		libpangocairo.so:${PORTSDIR}/x11-toolkits/pango
+		libpangocairo-1.0.so:${PORTSDIR}/x11-toolkits/pango
 
 CPPFLAGS+=	"-I${LOCALBASE}/include"
 CONFIGURE_ARGS=	--disable-gtk-doc-html --with-html-dir=${PREFIX}/share/doc
