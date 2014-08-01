@@ -1,857 +1,188 @@
 bin/groonga
 bin/groonga-benchmark
-bin/groonga-suggest-create-dataset
+%%SUGGEST%%bin/groonga-suggest-create-dataset
 %%SUGGEST%%bin/groonga-suggest-httpd
 %%SUGGEST%%bin/groonga-suggest-learner
-etc/groonga/groonga.conf
-etc/groonga/httpd/fastcgi.conf
-etc/groonga/httpd/fastcgi.conf.default
-etc/groonga/httpd/fastcgi_params
-etc/groonga/httpd/fastcgi_params.default
-etc/groonga/httpd/groonga-httpd.conf
-etc/groonga/httpd/html/50x.html
-etc/groonga/httpd/html/index.html
-etc/groonga/httpd/koi-utf
-etc/groonga/httpd/koi-win
-etc/groonga/httpd/mime.types
-etc/groonga/httpd/mime.types.default
-etc/groonga/httpd/nginx.conf.default
-etc/groonga/httpd/scgi_params
-etc/groonga/httpd/scgi_params.default
-etc/groonga/httpd/uwsgi_params
-etc/groonga/httpd/uwsgi_params.default
-etc/groonga/httpd/win-utf
-etc/groonga/synonyms.tsv
+%%ETCDIR%%/groonga.conf
+%%ETCDIR%%/httpd/fastcgi.conf
+%%ETCDIR%%/httpd/fastcgi.conf.default
+%%ETCDIR%%/httpd/fastcgi_params
+%%ETCDIR%%/httpd/fastcgi_params.default
+%%ETCDIR%%/httpd/groonga-httpd.conf
+%%ETCDIR%%/httpd/html/50x.html
+%%ETCDIR%%/httpd/html/index.html
+%%ETCDIR%%/httpd/koi-utf
+%%ETCDIR%%/httpd/koi-win
+%%ETCDIR%%/httpd/mime.types
+%%ETCDIR%%/httpd/mime.types.default
+%%ETCDIR%%/httpd/nginx.conf.default
+%%ETCDIR%%/httpd/scgi_params
+%%ETCDIR%%/httpd/scgi_params.default
+%%ETCDIR%%/httpd/uwsgi_params
+%%ETCDIR%%/httpd/uwsgi_params.default
+%%ETCDIR%%/httpd/win-utf
+%%ETCDIR%%/synonyms.tsv
 include/groonga/groonga.h
 include/groonga/groonga/nfkc.h
 include/groonga/groonga/normalizer.h
 include/groonga/groonga/plugin.h
 include/groonga/groonga/tokenizer.h
 lib/groonga/plugins/query_expanders/tsv.a
-lib/groonga/plugins/query_expanders/tsv.la
 lib/groonga/plugins/query_expanders/tsv.so
 lib/groonga/plugins/suggest/suggest.a
-lib/groonga/plugins/suggest/suggest.la
 lib/groonga/plugins/suggest/suggest.so
 lib/groonga/plugins/table/table.a
-lib/groonga/plugins/table/table.la
 lib/groonga/plugins/table/table.so
 %%MECAB%%lib/groonga/plugins/tokenizers/mecab.a
-%%MECAB%%lib/groonga/plugins/tokenizers/mecab.la
 %%MECAB%%lib/groonga/plugins/tokenizers/mecab.so
 lib/libgroonga.a
-lib/libgroonga.la
 lib/libgroonga.so
 lib/libgroonga.so.0
+lib/libgroonga.so.0.0.0
 libdata/pkgconfig/groonga.pc
-%%PORTDOCS%%man/ja/man1/groonga.1
 sbin/groonga-httpd
 sbin/groonga-httpd-restart
-%%PORTDOCS%%%%DOCSDIR%%/en/html/_sources/reference/commands_not_implemented/add.txt
-%%PORTDOCS%%%%DOCSDIR%%/en/html/_sources/reference/commands_not_implemented/get.txt
-%%PORTDOCS%%%%DOCSDIR%%/en/html/_sources/reference/commands_not_implemented/set.txt
-%%PORTDOCS%%%%DOCSDIR%%/en/html/_sources/reference/executables/grnslap.txt
-%%PORTDOCS%%%%DOCSDIR%%/en/html/_sources/reference/executables/grntest.txt
-%%PORTDOCS%%%%DOCSDIR%%/en/html/_sources/reference/executables/groonga-httpd.txt
-%%PORTDOCS%%%%DOCSDIR%%/en/html/_sources/reference/executables/groonga-server-http.txt
-%%PORTDOCS%%%%DOCSDIR%%/en/html/_sources/reference/executables/groonga-suggest-create-dataset.txt
-%%PORTDOCS%%%%DOCSDIR%%/en/html/_sources/reference/executables/groonga.txt
-%%PORTDOCS%%%%DOCSDIR%%/en/html/_sources/reference/functions/edit_distance.txt
-%%PORTDOCS%%%%DOCSDIR%%/en/html/_sources/reference/functions/geo_distance.txt
-%%PORTDOCS%%%%DOCSDIR%%/en/html/_sources/reference/functions/geo_in_circle.txt
-%%PORTDOCS%%%%DOCSDIR%%/en/html/_sources/reference/functions/geo_in_rectangle.txt
-%%PORTDOCS%%%%DOCSDIR%%/en/html/_sources/reference/functions/now.txt
-%%PORTDOCS%%%%DOCSDIR%%/en/html/_sources/reference/functions/query.txt
-%%PORTDOCS%%%%DOCSDIR%%/en/html/_sources/reference/functions/rand.txt
-%%PORTDOCS%%%%DOCSDIR%%/en/html/_sources/reference/functions/snippet_html.txt
-%%PORTDOCS%%%%DOCSDIR%%/en/html/_sources/reference/grn_expr/query_syntax.txt
-%%PORTDOCS%%%%DOCSDIR%%/en/html/_sources/reference/grn_expr/script_syntax.txt
-%%PORTDOCS%%%%DOCSDIR%%/en/html/_sources/reference/query_expanders/tsv.txt
-%%PORTDOCS%%%%DOCSDIR%%/en/html/_sources/reference/commands/cache_limit.txt
-%%PORTDOCS%%%%DOCSDIR%%/en/html/_sources/reference/commands/check.txt
-%%PORTDOCS%%%%DOCSDIR%%/en/html/_sources/reference/commands/clearlock.txt
-%%PORTDOCS%%%%DOCSDIR%%/en/html/_sources/reference/commands/column_create.txt
-%%PORTDOCS%%%%DOCSDIR%%/en/html/_sources/reference/commands/column_list.txt
-%%PORTDOCS%%%%DOCSDIR%%/en/html/_sources/reference/commands/column_remove.txt
-%%PORTDOCS%%%%DOCSDIR%%/en/html/_sources/reference/commands/define_selector.txt
-%%PORTDOCS%%%%DOCSDIR%%/en/html/_sources/reference/commands/defrag.txt
-%%PORTDOCS%%%%DOCSDIR%%/en/html/_sources/reference/commands/delete.txt
-%%PORTDOCS%%%%DOCSDIR%%/en/html/_sources/reference/commands/dump.txt
-%%PORTDOCS%%%%DOCSDIR%%/en/html/_sources/reference/commands/load.txt
-%%PORTDOCS%%%%DOCSDIR%%/en/html/_sources/reference/commands/log_level.txt
-%%PORTDOCS%%%%DOCSDIR%%/en/html/_sources/reference/commands/log_put.txt
-%%PORTDOCS%%%%DOCSDIR%%/en/html/_sources/reference/commands/log_reopen.txt
-%%PORTDOCS%%%%DOCSDIR%%/en/html/_sources/reference/commands/normalize.txt
-%%PORTDOCS%%%%DOCSDIR%%/en/html/_sources/reference/commands/quit.txt
-%%PORTDOCS%%%%DOCSDIR%%/en/html/_sources/reference/commands/register.txt
-%%PORTDOCS%%%%DOCSDIR%%/en/html/_sources/reference/commands/select.txt
-%%PORTDOCS%%%%DOCSDIR%%/en/html/_sources/reference/commands/shutdown.txt
-%%PORTDOCS%%%%DOCSDIR%%/en/html/_sources/reference/commands/status.txt
-%%PORTDOCS%%%%DOCSDIR%%/en/html/_sources/reference/commands/suggest.txt
-%%PORTDOCS%%%%DOCSDIR%%/en/html/_sources/reference/commands/table_create.txt
-%%PORTDOCS%%%%DOCSDIR%%/en/html/_sources/reference/commands/table_list.txt
-%%PORTDOCS%%%%DOCSDIR%%/en/html/_sources/reference/commands/table_remove.txt
-%%PORTDOCS%%%%DOCSDIR%%/en/html/_sources/reference/api/grn_expr.txt
-%%PORTDOCS%%%%DOCSDIR%%/en/html/_sources/reference/command/command_version.txt
-%%PORTDOCS%%%%DOCSDIR%%/en/html/_sources/reference/command/output_format.txt
-%%PORTDOCS%%%%DOCSDIR%%/en/html/_sources/reference/command/return_code.txt
-%%PORTDOCS%%%%DOCSDIR%%/en/html/_sources/reference/api.txt
-%%PORTDOCS%%%%DOCSDIR%%/en/html/_sources/reference/cast.txt
-%%PORTDOCS%%%%DOCSDIR%%/en/html/_sources/reference/command.txt
-%%PORTDOCS%%%%DOCSDIR%%/en/html/_sources/reference/executables.txt
-%%PORTDOCS%%%%DOCSDIR%%/en/html/_sources/reference/function.txt
-%%PORTDOCS%%%%DOCSDIR%%/en/html/_sources/reference/grn_expr.txt
-%%PORTDOCS%%%%DOCSDIR%%/en/html/_sources/reference/indexing.txt
-%%PORTDOCS%%%%DOCSDIR%%/en/html/_sources/reference/log.txt
-%%PORTDOCS%%%%DOCSDIR%%/en/html/_sources/reference/normalizers.txt
-%%PORTDOCS%%%%DOCSDIR%%/en/html/_sources/reference/output.txt
-%%PORTDOCS%%%%DOCSDIR%%/en/html/_sources/reference/pseudo_column.txt
-%%PORTDOCS%%%%DOCSDIR%%/en/html/_sources/reference/query_expanders.txt
-%%PORTDOCS%%%%DOCSDIR%%/en/html/_sources/reference/tables.txt
-%%PORTDOCS%%%%DOCSDIR%%/en/html/_sources/reference/tokenizers.txt
-%%PORTDOCS%%%%DOCSDIR%%/en/html/_sources/reference/types.txt
-%%PORTDOCS%%%%DOCSDIR%%/en/html/_sources/contribution/documentation/c-api.txt
-%%PORTDOCS%%%%DOCSDIR%%/en/html/_sources/contribution/documentation/i18n.txt
-%%PORTDOCS%%%%DOCSDIR%%/en/html/_sources/contribution/development/com.txt
-%%PORTDOCS%%%%DOCSDIR%%/en/html/_sources/contribution/development/document.txt
-%%PORTDOCS%%%%DOCSDIR%%/en/html/_sources/contribution/development/query.txt
-%%PORTDOCS%%%%DOCSDIR%%/en/html/_sources/contribution/development/release.txt
-%%PORTDOCS%%%%DOCSDIR%%/en/html/_sources/contribution/development/test.txt
-%%PORTDOCS%%%%DOCSDIR%%/en/html/_sources/contribution/development.txt
-%%PORTDOCS%%%%DOCSDIR%%/en/html/_sources/contribution/documentation.txt
-%%PORTDOCS%%%%DOCSDIR%%/en/html/_sources/contribution/report.txt
-%%PORTDOCS%%%%DOCSDIR%%/en/html/_sources/troubleshooting/different_results_with_the_same_keyword.txt
-%%PORTDOCS%%%%DOCSDIR%%/en/html/_sources/server/gqtp.txt
-%%PORTDOCS%%%%DOCSDIR%%/en/html/_sources/server/http.txt
-%%PORTDOCS%%%%DOCSDIR%%/en/html/_sources/server/package.txt
-%%PORTDOCS%%%%DOCSDIR%%/en/html/_sources/server/http/comparison.txt
-%%PORTDOCS%%%%DOCSDIR%%/en/html/_sources/server/http/groonga-httpd.txt
-%%PORTDOCS%%%%DOCSDIR%%/en/html/_sources/server/http/groonga.txt
-%%PORTDOCS%%%%DOCSDIR%%/en/html/_sources/characteristic.txt
-%%PORTDOCS%%%%DOCSDIR%%/en/html/_sources/community.txt
-%%PORTDOCS%%%%DOCSDIR%%/en/html/_sources/contribution.txt
-%%PORTDOCS%%%%DOCSDIR%%/en/html/_sources/development.txt
-%%PORTDOCS%%%%DOCSDIR%%/en/html/_sources/geolocation_search.txt
-%%PORTDOCS%%%%DOCSDIR%%/en/html/_sources/index.txt
-%%PORTDOCS%%%%DOCSDIR%%/en/html/_sources/install.txt
-%%PORTDOCS%%%%DOCSDIR%%/en/html/_sources/limitations.txt
-%%PORTDOCS%%%%DOCSDIR%%/en/html/_sources/news.txt
-%%PORTDOCS%%%%DOCSDIR%%/en/html/_sources/reference.txt
-%%PORTDOCS%%%%DOCSDIR%%/en/html/_sources/server.txt
-%%PORTDOCS%%%%DOCSDIR%%/en/html/_sources/spec.txt
-%%PORTDOCS%%%%DOCSDIR%%/en/html/_sources/suggest.txt
-%%PORTDOCS%%%%DOCSDIR%%/en/html/_sources/troubleshooting.txt
-%%PORTDOCS%%%%DOCSDIR%%/en/html/_sources/tutorial.txt
-%%PORTDOCS%%%%DOCSDIR%%/en/html/_sources/news/0.x.txt
-%%PORTDOCS%%%%DOCSDIR%%/en/html/_sources/news/1.0.x.txt
-%%PORTDOCS%%%%DOCSDIR%%/en/html/_sources/news/1.1.x.txt
-%%PORTDOCS%%%%DOCSDIR%%/en/html/_sources/news/1.2.x.txt
-%%PORTDOCS%%%%DOCSDIR%%/en/html/_sources/news/senna.txt
-%%PORTDOCS%%%%DOCSDIR%%/en/html/_sources/spec/gqtp.txt
-%%PORTDOCS%%%%DOCSDIR%%/en/html/_sources/spec/search.txt
-%%PORTDOCS%%%%DOCSDIR%%/en/html/_sources/install/centos.txt
-%%PORTDOCS%%%%DOCSDIR%%/en/html/_sources/install/debian.txt
-%%PORTDOCS%%%%DOCSDIR%%/en/html/_sources/install/fedora.txt
-%%PORTDOCS%%%%DOCSDIR%%/en/html/_sources/install/mac_os_x.txt
-%%PORTDOCS%%%%DOCSDIR%%/en/html/_sources/install/others.txt
-%%PORTDOCS%%%%DOCSDIR%%/en/html/_sources/install/solaris.txt
-%%PORTDOCS%%%%DOCSDIR%%/en/html/_sources/install/ubuntu.txt
-%%PORTDOCS%%%%DOCSDIR%%/en/html/_sources/install/windows.txt
-%%PORTDOCS%%%%DOCSDIR%%/en/html/_sources/tutorial/data.txt
-%%PORTDOCS%%%%DOCSDIR%%/en/html/_sources/tutorial/drilldown.txt
-%%PORTDOCS%%%%DOCSDIR%%/en/html/_sources/tutorial/index.txt
-%%PORTDOCS%%%%DOCSDIR%%/en/html/_sources/tutorial/introduction.txt
-%%PORTDOCS%%%%DOCSDIR%%/en/html/_sources/tutorial/lexicon.txt
-%%PORTDOCS%%%%DOCSDIR%%/en/html/_sources/tutorial/match_columns.txt
-%%PORTDOCS%%%%DOCSDIR%%/en/html/_sources/tutorial/micro_blog.txt
-%%PORTDOCS%%%%DOCSDIR%%/en/html/_sources/tutorial/network.txt
-%%PORTDOCS%%%%DOCSDIR%%/en/html/_sources/tutorial/patricia_trie.txt
-%%PORTDOCS%%%%DOCSDIR%%/en/html/_sources/tutorial/query_expansion.txt
-%%PORTDOCS%%%%DOCSDIR%%/en/html/_sources/tutorial/search.txt
-%%PORTDOCS%%%%DOCSDIR%%/en/html/_sources/development/travis-ci.txt
-%%PORTDOCS%%%%DOCSDIR%%/en/html/_sources/suggest/completion.txt
-%%PORTDOCS%%%%DOCSDIR%%/en/html/_sources/suggest/correction.txt
-%%PORTDOCS%%%%DOCSDIR%%/en/html/_sources/suggest/introduction.txt
-%%PORTDOCS%%%%DOCSDIR%%/en/html/_sources/suggest/suggestion.txt
-%%PORTDOCS%%%%DOCSDIR%%/en/html/_sources/suggest/tutorial.txt
-%%PORTDOCS%%%%DOCSDIR%%/en/html/reference/commands/cache_limit.html
-%%PORTDOCS%%%%DOCSDIR%%/en/html/reference/commands/check.html
-%%PORTDOCS%%%%DOCSDIR%%/en/html/reference/commands/clearlock.html
-%%PORTDOCS%%%%DOCSDIR%%/en/html/reference/commands/column_create.html
-%%PORTDOCS%%%%DOCSDIR%%/en/html/reference/commands/column_list.html
-%%PORTDOCS%%%%DOCSDIR%%/en/html/reference/commands/column_remove.html
-%%PORTDOCS%%%%DOCSDIR%%/en/html/reference/commands/define_selector.html
-%%PORTDOCS%%%%DOCSDIR%%/en/html/reference/commands/defrag.html
-%%PORTDOCS%%%%DOCSDIR%%/en/html/reference/commands/delete.html
-%%PORTDOCS%%%%DOCSDIR%%/en/html/reference/commands/dump.html
-%%PORTDOCS%%%%DOCSDIR%%/en/html/reference/commands/load.html
-%%PORTDOCS%%%%DOCSDIR%%/en/html/reference/commands/log_level.html
-%%PORTDOCS%%%%DOCSDIR%%/en/html/reference/commands/log_put.html
-%%PORTDOCS%%%%DOCSDIR%%/en/html/reference/commands/log_reopen.html
-%%PORTDOCS%%%%DOCSDIR%%/en/html/reference/commands/normalize.html
-%%PORTDOCS%%%%DOCSDIR%%/en/html/reference/commands/quit.html
-%%PORTDOCS%%%%DOCSDIR%%/en/html/reference/commands/register.html
-%%PORTDOCS%%%%DOCSDIR%%/en/html/reference/commands/select.html
-%%PORTDOCS%%%%DOCSDIR%%/en/html/reference/commands/shutdown.html
-%%PORTDOCS%%%%DOCSDIR%%/en/html/reference/commands/status.html
-%%PORTDOCS%%%%DOCSDIR%%/en/html/reference/commands/suggest.html
-%%PORTDOCS%%%%DOCSDIR%%/en/html/reference/commands/table_create.html
-%%PORTDOCS%%%%DOCSDIR%%/en/html/reference/commands/table_list.html
-%%PORTDOCS%%%%DOCSDIR%%/en/html/reference/commands/table_remove.html
-%%PORTDOCS%%%%DOCSDIR%%/en/html/reference/functions/edit_distance.html
-%%PORTDOCS%%%%DOCSDIR%%/en/html/reference/functions/geo_distance.html
-%%PORTDOCS%%%%DOCSDIR%%/en/html/reference/functions/geo_in_circle.html
-%%PORTDOCS%%%%DOCSDIR%%/en/html/reference/functions/geo_in_rectangle.html
-%%PORTDOCS%%%%DOCSDIR%%/en/html/reference/functions/now.html
-%%PORTDOCS%%%%DOCSDIR%%/en/html/reference/functions/query.html
-%%PORTDOCS%%%%DOCSDIR%%/en/html/reference/functions/rand.html
-%%PORTDOCS%%%%DOCSDIR%%/en/html/reference/functions/snippet_html.html
-%%PORTDOCS%%%%DOCSDIR%%/en/html/reference/query_expanders/tsv.html
-%%PORTDOCS%%%%DOCSDIR%%/en/html/reference/api/grn_expr.html
-%%PORTDOCS%%%%DOCSDIR%%/en/html/reference/api.html
-%%PORTDOCS%%%%DOCSDIR%%/en/html/reference/cast.html
-%%PORTDOCS%%%%DOCSDIR%%/en/html/reference/command.html
-%%PORTDOCS%%%%DOCSDIR%%/en/html/reference/executables.html
-%%PORTDOCS%%%%DOCSDIR%%/en/html/reference/function.html
-%%PORTDOCS%%%%DOCSDIR%%/en/html/reference/grn_expr.html
-%%PORTDOCS%%%%DOCSDIR%%/en/html/reference/indexing.html
-%%PORTDOCS%%%%DOCSDIR%%/en/html/reference/log.html
-%%PORTDOCS%%%%DOCSDIR%%/en/html/reference/normalizers.html
-%%PORTDOCS%%%%DOCSDIR%%/en/html/reference/output.html
-%%PORTDOCS%%%%DOCSDIR%%/en/html/reference/pseudo_column.html
-%%PORTDOCS%%%%DOCSDIR%%/en/html/reference/query_expanders.html
-%%PORTDOCS%%%%DOCSDIR%%/en/html/reference/tables.html
-%%PORTDOCS%%%%DOCSDIR%%/en/html/reference/tokenizers.html
-%%PORTDOCS%%%%DOCSDIR%%/en/html/reference/types.html
-%%PORTDOCS%%%%DOCSDIR%%/en/html/reference/command/command_version.html
-%%PORTDOCS%%%%DOCSDIR%%/en/html/reference/command/output_format.html
-%%PORTDOCS%%%%DOCSDIR%%/en/html/reference/command/return_code.html
-%%PORTDOCS%%%%DOCSDIR%%/en/html/reference/executables/grnslap.html
-%%PORTDOCS%%%%DOCSDIR%%/en/html/reference/executables/grntest.html
-%%PORTDOCS%%%%DOCSDIR%%/en/html/reference/executables/groonga-httpd.html
-%%PORTDOCS%%%%DOCSDIR%%/en/html/reference/executables/groonga-server-http.html
-%%PORTDOCS%%%%DOCSDIR%%/en/html/reference/executables/groonga-suggest-create-dataset.html
-%%PORTDOCS%%%%DOCSDIR%%/en/html/reference/executables/groonga.html
-%%PORTDOCS%%%%DOCSDIR%%/en/html/reference/grn_expr/query_syntax.html
-%%PORTDOCS%%%%DOCSDIR%%/en/html/reference/grn_expr/script_syntax.html
-%%PORTDOCS%%%%DOCSDIR%%/en/html/reference/commands_not_implemented/add.html
-%%PORTDOCS%%%%DOCSDIR%%/en/html/reference/commands_not_implemented/get.html
-%%PORTDOCS%%%%DOCSDIR%%/en/html/reference/commands_not_implemented/set.html
-%%PORTDOCS%%%%DOCSDIR%%/en/html/_static/ajax-loader.gif
-%%PORTDOCS%%%%DOCSDIR%%/en/html/_static/basic.css
-%%PORTDOCS%%%%DOCSDIR%%/en/html/_static/comment-bright.png
-%%PORTDOCS%%%%DOCSDIR%%/en/html/_static/comment-close.png
-%%PORTDOCS%%%%DOCSDIR%%/en/html/_static/comment.png
-%%PORTDOCS%%%%DOCSDIR%%/en/html/_static/doctools.js
-%%PORTDOCS%%%%DOCSDIR%%/en/html/_static/down-pressed.png
-%%PORTDOCS%%%%DOCSDIR%%/en/html/_static/down.png
-%%PORTDOCS%%%%DOCSDIR%%/en/html/_static/favicon.ico
-%%PORTDOCS%%%%DOCSDIR%%/en/html/_static/file.png
-%%PORTDOCS%%%%DOCSDIR%%/en/html/_static/groonga.css
-%%PORTDOCS%%%%DOCSDIR%%/en/html/_static/header-background.png
-%%PORTDOCS%%%%DOCSDIR%%/en/html/_static/jp.png
-%%PORTDOCS%%%%DOCSDIR%%/en/html/_static/jquery.js
-%%PORTDOCS%%%%DOCSDIR%%/en/html/_static/logo.png
-%%PORTDOCS%%%%DOCSDIR%%/en/html/_static/minus.png
-%%PORTDOCS%%%%DOCSDIR%%/en/html/_static/navigation-bar.png
-%%PORTDOCS%%%%DOCSDIR%%/en/html/_static/plus.png
-%%PORTDOCS%%%%DOCSDIR%%/en/html/_static/pygments.css
-%%PORTDOCS%%%%DOCSDIR%%/en/html/_static/searchtools.js
-%%PORTDOCS%%%%DOCSDIR%%/en/html/_static/underscore.js
-%%PORTDOCS%%%%DOCSDIR%%/en/html/_static/up-pressed.png
-%%PORTDOCS%%%%DOCSDIR%%/en/html/_static/up.png
-%%PORTDOCS%%%%DOCSDIR%%/en/html/_static/us.png
-%%PORTDOCS%%%%DOCSDIR%%/en/html/_static/websupport.js
-%%PORTDOCS%%%%DOCSDIR%%/en/html/contribution/documentation/c-api.html
-%%PORTDOCS%%%%DOCSDIR%%/en/html/contribution/documentation/i18n.html
-%%PORTDOCS%%%%DOCSDIR%%/en/html/contribution/development/com.html
-%%PORTDOCS%%%%DOCSDIR%%/en/html/contribution/development/document.html
-%%PORTDOCS%%%%DOCSDIR%%/en/html/contribution/development/query.html
-%%PORTDOCS%%%%DOCSDIR%%/en/html/contribution/development/release.html
-%%PORTDOCS%%%%DOCSDIR%%/en/html/contribution/development/test.html
-%%PORTDOCS%%%%DOCSDIR%%/en/html/contribution/development.html
-%%PORTDOCS%%%%DOCSDIR%%/en/html/contribution/documentation.html
-%%PORTDOCS%%%%DOCSDIR%%/en/html/contribution/report.html
-%%PORTDOCS%%%%DOCSDIR%%/en/html/troubleshooting/different_results_with_the_same_keyword.html
-%%PORTDOCS%%%%DOCSDIR%%/en/html/news/0.x.html
-%%PORTDOCS%%%%DOCSDIR%%/en/html/news/1.0.x.html
-%%PORTDOCS%%%%DOCSDIR%%/en/html/news/1.1.x.html
-%%PORTDOCS%%%%DOCSDIR%%/en/html/news/1.2.x.html
-%%PORTDOCS%%%%DOCSDIR%%/en/html/news/senna.html
-%%PORTDOCS%%%%DOCSDIR%%/en/html/spec/gqtp.html
-%%PORTDOCS%%%%DOCSDIR%%/en/html/spec/search.html
-%%PORTDOCS%%%%DOCSDIR%%/en/html/tutorial/data.html
-%%PORTDOCS%%%%DOCSDIR%%/en/html/tutorial/drilldown.html
-%%PORTDOCS%%%%DOCSDIR%%/en/html/tutorial/index.html
-%%PORTDOCS%%%%DOCSDIR%%/en/html/tutorial/introduction.html
-%%PORTDOCS%%%%DOCSDIR%%/en/html/tutorial/lexicon.html
-%%PORTDOCS%%%%DOCSDIR%%/en/html/tutorial/match_columns.html
-%%PORTDOCS%%%%DOCSDIR%%/en/html/tutorial/micro_blog.html
-%%PORTDOCS%%%%DOCSDIR%%/en/html/tutorial/network.html
-%%PORTDOCS%%%%DOCSDIR%%/en/html/tutorial/patricia_trie.html
-%%PORTDOCS%%%%DOCSDIR%%/en/html/tutorial/query_expansion.html
-%%PORTDOCS%%%%DOCSDIR%%/en/html/tutorial/search.html
-%%PORTDOCS%%%%DOCSDIR%%/en/html/install/centos.html
-%%PORTDOCS%%%%DOCSDIR%%/en/html/install/debian.html
-%%PORTDOCS%%%%DOCSDIR%%/en/html/install/fedora.html
-%%PORTDOCS%%%%DOCSDIR%%/en/html/install/mac_os_x.html
-%%PORTDOCS%%%%DOCSDIR%%/en/html/install/others.html
-%%PORTDOCS%%%%DOCSDIR%%/en/html/install/solaris.html
-%%PORTDOCS%%%%DOCSDIR%%/en/html/install/ubuntu.html
-%%PORTDOCS%%%%DOCSDIR%%/en/html/install/windows.html
-%%PORTDOCS%%%%DOCSDIR%%/en/html/development/travis-ci.html
-%%PORTDOCS%%%%DOCSDIR%%/en/html/suggest/completion.html
-%%PORTDOCS%%%%DOCSDIR%%/en/html/suggest/correction.html
-%%PORTDOCS%%%%DOCSDIR%%/en/html/suggest/introduction.html
-%%PORTDOCS%%%%DOCSDIR%%/en/html/suggest/suggestion.html
-%%PORTDOCS%%%%DOCSDIR%%/en/html/suggest/tutorial.html
-%%PORTDOCS%%%%DOCSDIR%%/en/html/.buildinfo
-%%PORTDOCS%%%%DOCSDIR%%/en/html/characteristic.html
-%%PORTDOCS%%%%DOCSDIR%%/en/html/community.html
-%%PORTDOCS%%%%DOCSDIR%%/en/html/contribution.html
-%%PORTDOCS%%%%DOCSDIR%%/en/html/development.html
-%%PORTDOCS%%%%DOCSDIR%%/en/html/genindex.html
-%%PORTDOCS%%%%DOCSDIR%%/en/html/geolocation_search.html
-%%PORTDOCS%%%%DOCSDIR%%/en/html/index.html
-%%PORTDOCS%%%%DOCSDIR%%/en/html/install.html
-%%PORTDOCS%%%%DOCSDIR%%/en/html/limitations.html
-%%PORTDOCS%%%%DOCSDIR%%/en/html/news.html
-%%PORTDOCS%%%%DOCSDIR%%/en/html/objects.inv
-%%PORTDOCS%%%%DOCSDIR%%/en/html/reference.html
-%%PORTDOCS%%%%DOCSDIR%%/en/html/search.html
-%%PORTDOCS%%%%DOCSDIR%%/en/html/searchindex.js
-%%PORTDOCS%%%%DOCSDIR%%/en/html/server.html
-%%PORTDOCS%%%%DOCSDIR%%/en/html/spec.html
-%%PORTDOCS%%%%DOCSDIR%%/en/html/suggest.html
-%%PORTDOCS%%%%DOCSDIR%%/en/html/troubleshooting.html
-%%PORTDOCS%%%%DOCSDIR%%/en/html/tutorial.html
-%%PORTDOCS%%%%DOCSDIR%%/en/html/server/gqtp.html
-%%PORTDOCS%%%%DOCSDIR%%/en/html/server/http.html
-%%PORTDOCS%%%%DOCSDIR%%/en/html/server/package.html
-%%PORTDOCS%%%%DOCSDIR%%/en/html/server/http/comparison.html
-%%PORTDOCS%%%%DOCSDIR%%/en/html/server/http/groonga-httpd.html
-%%PORTDOCS%%%%DOCSDIR%%/en/html/server/http/groonga.html
-%%PORTDOCS%%%%DOCSDIR%%/en/html/_images/geo-points.png
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/_sources/reference/commands_not_implemented/add.txt
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/_sources/reference/commands_not_implemented/get.txt
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/_sources/reference/commands_not_implemented/set.txt
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/_sources/reference/executables/grnslap.txt
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/_sources/reference/executables/grntest.txt
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/_sources/reference/executables/groonga-httpd.txt
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/_sources/reference/executables/groonga-server-http.txt
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/_sources/reference/executables/groonga-suggest-create-dataset.txt
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/_sources/reference/executables/groonga.txt
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/_sources/reference/functions/edit_distance.txt
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/_sources/reference/functions/geo_distance.txt
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/_sources/reference/functions/geo_in_circle.txt
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/_sources/reference/functions/geo_in_rectangle.txt
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/_sources/reference/functions/now.txt
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/_sources/reference/functions/query.txt
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/_sources/reference/functions/rand.txt
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/_sources/reference/functions/snippet_html.txt
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/_sources/reference/grn_expr/query_syntax.txt
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/_sources/reference/grn_expr/script_syntax.txt
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/_sources/reference/query_expanders/tsv.txt
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/_sources/reference/commands/cache_limit.txt
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/_sources/reference/commands/check.txt
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/_sources/reference/commands/clearlock.txt
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/_sources/reference/commands/column_create.txt
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/_sources/reference/commands/column_list.txt
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/_sources/reference/commands/column_remove.txt
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/_sources/reference/commands/define_selector.txt
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/_sources/reference/commands/defrag.txt
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/_sources/reference/commands/delete.txt
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/_sources/reference/commands/dump.txt
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/_sources/reference/commands/load.txt
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/_sources/reference/commands/log_level.txt
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/_sources/reference/commands/log_put.txt
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/_sources/reference/commands/log_reopen.txt
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/_sources/reference/commands/normalize.txt
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/_sources/reference/commands/quit.txt
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/_sources/reference/commands/register.txt
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/_sources/reference/commands/select.txt
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/_sources/reference/commands/shutdown.txt
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/_sources/reference/commands/status.txt
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/_sources/reference/commands/suggest.txt
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/_sources/reference/commands/table_create.txt
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/_sources/reference/commands/table_list.txt
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/_sources/reference/commands/table_remove.txt
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/_sources/reference/api/grn_expr.txt
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/_sources/reference/command/command_version.txt
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/_sources/reference/command/output_format.txt
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/_sources/reference/command/return_code.txt
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/_sources/reference/api.txt
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/_sources/reference/cast.txt
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/_sources/reference/command.txt
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/_sources/reference/executables.txt
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/_sources/reference/function.txt
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/_sources/reference/grn_expr.txt
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/_sources/reference/indexing.txt
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/_sources/reference/log.txt
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/_sources/reference/normalizers.txt
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/_sources/reference/output.txt
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/_sources/reference/pseudo_column.txt
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/_sources/reference/query_expanders.txt
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/_sources/reference/tables.txt
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/_sources/reference/tokenizers.txt
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/_sources/reference/types.txt
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/_sources/contribution/documentation/c-api.txt
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/_sources/contribution/documentation/i18n.txt
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/_sources/contribution/development/com.txt
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/_sources/contribution/development/document.txt
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/_sources/contribution/development/query.txt
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/_sources/contribution/development/release.txt
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/_sources/contribution/development/test.txt
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/_sources/contribution/development.txt
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/_sources/contribution/documentation.txt
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/_sources/contribution/report.txt
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/_sources/troubleshooting/different_results_with_the_same_keyword.txt
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/_sources/server/gqtp.txt
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/_sources/server/http.txt
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/_sources/server/package.txt
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/_sources/server/http/comparison.txt
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/_sources/server/http/groonga-httpd.txt
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/_sources/server/http/groonga.txt
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/_sources/characteristic.txt
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/_sources/community.txt
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/_sources/contribution.txt
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/_sources/development.txt
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/_sources/geolocation_search.txt
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/_sources/index.txt
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/_sources/install.txt
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/_sources/limitations.txt
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/_sources/news.txt
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/_sources/reference.txt
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/_sources/server.txt
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/_sources/spec.txt
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/_sources/suggest.txt
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/_sources/troubleshooting.txt
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/_sources/tutorial.txt
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/_sources/news/0.x.txt
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/_sources/news/1.0.x.txt
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/_sources/news/1.1.x.txt
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/_sources/news/1.2.x.txt
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/_sources/news/senna.txt
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/_sources/spec/gqtp.txt
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/_sources/spec/search.txt
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/_sources/install/centos.txt
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/_sources/install/debian.txt
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/_sources/install/fedora.txt
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/_sources/install/mac_os_x.txt
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/_sources/install/others.txt
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/_sources/install/solaris.txt
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/_sources/install/ubuntu.txt
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/_sources/install/windows.txt
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/_sources/tutorial/data.txt
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/_sources/tutorial/drilldown.txt
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/_sources/tutorial/index.txt
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/_sources/tutorial/introduction.txt
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/_sources/tutorial/lexicon.txt
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/_sources/tutorial/match_columns.txt
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/_sources/tutorial/micro_blog.txt
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/_sources/tutorial/network.txt
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/_sources/tutorial/patricia_trie.txt
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/_sources/tutorial/query_expansion.txt
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/_sources/tutorial/search.txt
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/_sources/development/travis-ci.txt
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/_sources/suggest/completion.txt
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/_sources/suggest/correction.txt
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/_sources/suggest/introduction.txt
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/_sources/suggest/suggestion.txt
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/_sources/suggest/tutorial.txt
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/reference/commands/cache_limit.html
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/reference/commands/check.html
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/reference/commands/clearlock.html
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/reference/commands/column_create.html
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/reference/commands/column_list.html
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/reference/commands/column_remove.html
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/reference/commands/define_selector.html
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/reference/commands/defrag.html
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/reference/commands/delete.html
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/reference/commands/dump.html
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/reference/commands/load.html
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/reference/commands/log_level.html
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/reference/commands/log_put.html
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/reference/commands/log_reopen.html
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/reference/commands/normalize.html
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/reference/commands/quit.html
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/reference/commands/register.html
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/reference/commands/select.html
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/reference/commands/shutdown.html
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/reference/commands/status.html
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/reference/commands/suggest.html
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/reference/commands/table_create.html
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/reference/commands/table_list.html
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/reference/commands/table_remove.html
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/reference/functions/edit_distance.html
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/reference/functions/geo_distance.html
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/reference/functions/geo_in_circle.html
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/reference/functions/geo_in_rectangle.html
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/reference/functions/now.html
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/reference/functions/query.html
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/reference/functions/rand.html
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/reference/functions/snippet_html.html
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/reference/query_expanders/tsv.html
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/reference/api/grn_expr.html
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/reference/api.html
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/reference/cast.html
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/reference/command.html
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/reference/executables.html
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/reference/function.html
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/reference/grn_expr.html
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/reference/indexing.html
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/reference/log.html
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/reference/normalizers.html
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/reference/output.html
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/reference/pseudo_column.html
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/reference/query_expanders.html
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/reference/tables.html
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/reference/tokenizers.html
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/reference/types.html
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/reference/command/command_version.html
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/reference/command/output_format.html
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/reference/command/return_code.html
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/reference/executables/grnslap.html
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/reference/executables/grntest.html
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/reference/executables/groonga-httpd.html
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/reference/executables/groonga-server-http.html
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/reference/executables/groonga-suggest-create-dataset.html
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/reference/executables/groonga.html
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/reference/grn_expr/query_syntax.html
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/reference/grn_expr/script_syntax.html
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/reference/commands_not_implemented/add.html
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/reference/commands_not_implemented/get.html
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/reference/commands_not_implemented/set.html
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/_static/ajax-loader.gif
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/_static/basic.css
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/_static/comment-bright.png
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/_static/comment-close.png
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/_static/comment.png
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/_static/doctools.js
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/_static/down-pressed.png
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/_static/down.png
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/_static/favicon.ico
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/_static/file.png
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/_static/groonga.css
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/_static/header-background.png
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/_static/jp.png
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/_static/jquery.js
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/_static/logo.png
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/_static/minus.png
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/_static/navigation-bar.png
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/_static/plus.png
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/_static/pygments.css
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/_static/searchtools.js
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/_static/underscore.js
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/_static/up-pressed.png
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/_static/up.png
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/_static/us.png
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/_static/websupport.js
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/contribution/documentation/c-api.html
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/contribution/documentation/i18n.html
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/contribution/development/com.html
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/contribution/development/document.html
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/contribution/development/query.html
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/contribution/development/release.html
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/contribution/development/test.html
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/contribution/development.html
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/contribution/documentation.html
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/contribution/report.html
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/troubleshooting/different_results_with_the_same_keyword.html
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/news/0.x.html
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/news/1.0.x.html
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/news/1.1.x.html
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/news/1.2.x.html
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/news/senna.html
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/spec/gqtp.html
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/spec/search.html
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/tutorial/data.html
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/tutorial/drilldown.html
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/tutorial/index.html
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/tutorial/introduction.html
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/tutorial/lexicon.html
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/tutorial/match_columns.html
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/tutorial/micro_blog.html
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/tutorial/network.html
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/tutorial/patricia_trie.html
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/tutorial/query_expansion.html
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/tutorial/search.html
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/install/centos.html
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/install/debian.html
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/install/fedora.html
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/install/mac_os_x.html
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/install/others.html
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/install/solaris.html
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/install/ubuntu.html
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/development.html
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/development/travis-ci.html
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/genindex.html
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/install/windows.html
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/suggest/completion.html
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/suggest/correction.html
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/suggest/introduction.html
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/suggest/suggestion.html
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/suggest/tutorial.html
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/.buildinfo
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/characteristic.html
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/community.html
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/contribution.html
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/geolocation_search.html
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/index.html
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/install.html
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/limitations.html
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/news.html
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/objects.inv
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/reference.html
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/search.html
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/searchindex.js
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/server.html
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/spec.html
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/suggest.html
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/troubleshooting.html
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/tutorial.html
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/server/gqtp.html
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/server/http.html
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/server/package.html
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/server/http/comparison.html
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/server/http/groonga-httpd.html
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/server/http/groonga.html
-%%PORTDOCS%%%%DOCSDIR%%/ja/html/_images/geo-points.png
-share/groonga/examples/dictionary/edict/edict-import.sh
-share/groonga/examples/dictionary/edict/edict2grn.rb
-share/groonga/examples/dictionary/eijiro/eijiro-import.sh
-share/groonga/examples/dictionary/eijiro/eijiro2grn.rb
-share/groonga/examples/dictionary/gene95/gene-import.sh
-share/groonga/examples/dictionary/gene95/gene2grn.rb
-share/groonga/examples/dictionary/html/css/dictionary.css
-share/groonga/examples/dictionary/html/css/smoothness/images/ui-bg_flat_0_aaaaaa_40x100.png
-share/groonga/examples/dictionary/html/css/smoothness/images/ui-bg_flat_75_ffffff_40x100.png
-share/groonga/examples/dictionary/html/css/smoothness/images/ui-bg_glass_55_fbf9ee_1x400.png
-share/groonga/examples/dictionary/html/css/smoothness/images/ui-bg_glass_65_ffffff_1x400.png
-share/groonga/examples/dictionary/html/css/smoothness/images/ui-bg_glass_75_dadada_1x400.png
-share/groonga/examples/dictionary/html/css/smoothness/images/ui-bg_glass_75_e6e6e6_1x400.png
-share/groonga/examples/dictionary/html/css/smoothness/images/ui-bg_glass_95_fef1ec_1x400.png
-share/groonga/examples/dictionary/html/css/smoothness/images/ui-bg_highlight-soft_75_cccccc_1x100.png
-share/groonga/examples/dictionary/html/css/smoothness/images/ui-icons_222222_256x240.png
-share/groonga/examples/dictionary/html/css/smoothness/images/ui-icons_2e83ff_256x240.png
-share/groonga/examples/dictionary/html/css/smoothness/images/ui-icons_454545_256x240.png
-share/groonga/examples/dictionary/html/css/smoothness/images/ui-icons_888888_256x240.png
-share/groonga/examples/dictionary/html/css/smoothness/images/ui-icons_cd0a0a_256x240.png
-share/groonga/examples/dictionary/html/css/smoothness/jquery-ui-1.8.12.custom.css
-share/groonga/examples/dictionary/html/index.html
-share/groonga/examples/dictionary/html/js/dictionary.js
-share/groonga/examples/dictionary/html/js/jquery-1.6.0.min.js
-share/groonga/examples/dictionary/html/js/jquery-ui-1.8.12.min.js
-share/groonga/examples/dictionary/init-db.sh
-share/groonga/examples/dictionary/jmdict/jmdict.rb
-share/groonga/examples/dictionary/readme.txt
-share/groonga/html/admin/css/groonga-admin.css
-share/groonga/html/admin/css/redmond/images/ui-bg_flat_0_aaaaaa_40x100.png
-share/groonga/html/admin/css/redmond/images/ui-bg_flat_55_fbec88_40x100.png
-share/groonga/html/admin/css/redmond/images/ui-bg_glass_75_d0e5f5_1x400.png
-share/groonga/html/admin/css/redmond/images/ui-bg_glass_85_dfeffc_1x400.png
-share/groonga/html/admin/css/redmond/images/ui-bg_glass_95_fef1ec_1x400.png
-share/groonga/html/admin/css/redmond/images/ui-bg_gloss-wave_55_5c9ccc_500x100.png
-share/groonga/html/admin/css/redmond/images/ui-bg_inset-hard_100_f5f8f9_1x100.png
-share/groonga/html/admin/css/redmond/images/ui-bg_inset-hard_100_fcfdfd_1x100.png
-share/groonga/html/admin/css/redmond/images/ui-icons_217bc0_256x240.png
-share/groonga/html/admin/css/redmond/images/ui-icons_2e83ff_256x240.png
-share/groonga/html/admin/css/redmond/images/ui-icons_469bdd_256x240.png
-share/groonga/html/admin/css/redmond/images/ui-icons_6da8d5_256x240.png
-share/groonga/html/admin/css/redmond/images/ui-icons_cd0a0a_256x240.png
-share/groonga/html/admin/css/redmond/images/ui-icons_d8e7f3_256x240.png
-share/groonga/html/admin/css/redmond/images/ui-icons_f9bd01_256x240.png
-share/groonga/html/admin/css/redmond/jquery-ui-1.8.18.custom.css
-share/groonga/html/admin/favicon.ico
-share/groonga/html/admin/favicon.png
-share/groonga/html/admin/favicon.svg
-share/groonga/html/admin/images/groonga.png
-share/groonga/html/admin/images/groonga.svg
-share/groonga/html/admin/images/loading.gif
-share/groonga/html/admin/index.html
-share/groonga/html/admin/js/groonga-admin.js
-share/groonga/html/admin/js/jquery-1.7.2.min.js
-share/groonga/html/admin/js/jquery-ui-1.8.18.custom.min.js
-share/groonga/html/admin/js/jquery.flot-0.7.min.js
-share/groonga/html/admin/js/jquery.flot.license.txt
-share/groonga/html/admin/js/jquery.json-2.2.min.js
-share/groonga/images/logo/groonga-icon-foreground-white.png
-share/groonga/images/logo/groonga-icon-foreground-white.svg
-share/groonga/images/logo/groonga-icon-full-size.png
-share/groonga/images/logo/groonga-icon-full-size.svg
-share/groonga/images/logo/groonga-icon.png
-share/groonga/images/logo/groonga-icon.svg
-share/groonga/images/logo/groonga-logo-foreground-white.png
-share/groonga/images/logo/groonga-logo-foreground-white.svg
-share/groonga/images/logo/groonga-logo.png
-share/groonga/images/logo/groonga-logo.svg
-share/groonga/images/logo/groonga-powered-by-banner-bar-foreground-white.png
-share/groonga/images/logo/groonga-powered-by-banner-bar-foreground-white.svg
-share/groonga/images/logo/groonga-powered-by-banner-bar.png
-share/groonga/images/logo/groonga-powered-by-banner-bar.svg
-share/groonga/images/logo/groonga-powered-by-banner-foreground-white.png
-share/groonga/images/logo/groonga-powered-by-banner-foreground-white.svg
-share/groonga/images/logo/groonga-powered-by-banner-large.png
-share/groonga/images/logo/groonga-powered-by-banner-large.svg
-share/groonga/images/logo/groonga-powered-by-banner.png
-share/groonga/images/logo/groonga-powered-by-banner.svg
-share/groonga/images/logo/mroonga-icon-foreground-white.png
-share/groonga/images/logo/mroonga-icon-foreground-white.svg
-share/groonga/images/logo/mroonga-icon-full-size.png
-share/groonga/images/logo/mroonga-icon-full-size.svg
-share/groonga/images/logo/mroonga-icon.png
-share/groonga/images/logo/mroonga-icon.svg
-share/groonga/images/logo/mroonga-logo-foreground-white.png
-share/groonga/images/logo/mroonga-logo-foreground-white.svg
-share/groonga/images/logo/mroonga-logo.png
-share/groonga/images/logo/mroonga-logo.svg
-share/groonga/images/logo/nroonga-icon-foreground-white.png
-share/groonga/images/logo/nroonga-icon-foreground-white.svg
-share/groonga/images/logo/nroonga-icon-full-size.png
-share/groonga/images/logo/nroonga-icon-full-size.svg
-share/groonga/images/logo/nroonga-icon.png
-share/groonga/images/logo/nroonga-icon.svg
-share/groonga/images/logo/nroonga-logo-foreground-white.png
-share/groonga/images/logo/nroonga-logo-foreground-white.svg
-share/groonga/images/logo/nroonga-logo.png
-share/groonga/images/logo/nroonga-logo.svg
-share/groonga/images/logo/rroonga-icon-foreground-white.png
-share/groonga/images/logo/rroonga-icon-foreground-white.svg
-share/groonga/images/logo/rroonga-icon-full-size.png
-share/groonga/images/logo/rroonga-icon-full-size.svg
-share/groonga/images/logo/rroonga-icon.png
-share/groonga/images/logo/rroonga-icon.svg
-share/groonga/images/logo/rroonga-logo-foreground-white.png
-share/groonga/images/logo/rroonga-logo-foreground-white.svg
-share/groonga/images/logo/rroonga-logo.png
-share/groonga/images/logo/rroonga-logo.svg
-share/groonga/munin/plugins/groonga_cpu_load
-share/groonga/munin/plugins/groonga_cpu_time
-share/groonga/munin/plugins/groonga_disk
-share/groonga/munin/plugins/groonga_memory
-share/groonga/munin/plugins/groonga_n_records
-share/groonga/munin/plugins/groonga_query_performance
-share/groonga/munin/plugins/groonga_status
-share/groonga/munin/plugins/groonga_throughput
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/ja/html/tutorial
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/ja/html/troubleshooting
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/ja/html/suggest
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/ja/html/spec
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/ja/html/server/http
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/ja/html/server
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/ja/html/reference/query_expanders
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/ja/html/reference/grn_expr
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/ja/html/reference/functions
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/ja/html/reference/executables
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/ja/html/reference/commands_not_implemented
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/ja/html/reference/commands
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/ja/html/reference/command
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/ja/html/reference/api
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/ja/html/reference
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/ja/html/news
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/ja/html/install
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/ja/html/development
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/ja/html/contribution/documentation
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/ja/html/contribution/development
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/ja/html/contribution
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/ja/html/_static
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/ja/html/_sources/tutorial
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/ja/html/_sources/troubleshooting
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/ja/html/_sources/suggest
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/ja/html/_sources/spec
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/ja/html/_sources/server/http
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/ja/html/_sources/server
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/ja/html/_sources/reference/query_expanders
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/ja/html/_sources/reference/grn_expr
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/ja/html/_sources/reference/functions
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/ja/html/_sources/reference/executables
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/ja/html/_sources/reference/commands_not_implemented
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/ja/html/_sources/reference/commands
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/ja/html/_sources/reference/command
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/ja/html/_sources/reference/api
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/ja/html/_sources/reference
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/ja/html/_sources/news
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/ja/html/_sources/install
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/ja/html/_sources/development
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/ja/html/_sources/contribution/documentation
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/ja/html/_sources/contribution/development
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/ja/html/_sources/contribution
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/ja/html/_sources
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/ja/html/_images
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/ja/html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/ja
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/en/html/tutorial
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/en/html/troubleshooting
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/en/html/suggest
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/en/html/spec
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/en/html/server/http
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/en/html/server
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/en/html/reference/query_expanders
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/en/html/reference/grn_expr
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/en/html/reference/functions
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/en/html/reference/executables
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/en/html/reference/commands_not_implemented
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/en/html/reference/commands
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/en/html/reference/command
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/en/html/reference/api
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/en/html/reference
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/en/html/news
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/en/html/install
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/en/html/development
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/en/html/contribution/documentation
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/en/html/contribution/development
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/en/html/contribution
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/en/html/_static
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/en/html/_sources/tutorial
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/en/html/_sources/troubleshooting
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/en/html/_sources/suggest
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/en/html/_sources/spec
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/en/html/_sources/server/http
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/en/html/_sources/server
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/en/html/_sources/reference/query_expanders
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/en/html/_sources/reference/grn_expr
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/en/html/_sources/reference/functions
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/en/html/_sources/reference/executables
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/en/html/_sources/reference/commands_not_implemented
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/en/html/_sources/reference/commands
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/en/html/_sources/reference/command
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/en/html/_sources/reference/api
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/en/html/_sources/reference
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/en/html/_sources/news
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/en/html/_sources/install
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/en/html/_sources/development
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/en/html/_sources/contribution/documentation
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/en/html/_sources/contribution/development
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/en/html/_sources/contribution
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/en/html/_sources
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/en/html/_images
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/en/html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/en
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm share/groonga/munin/plugins
-@dirrm share/groonga/munin
-@dirrm share/groonga/images/logo
-@dirrm share/groonga/images
-@dirrm share/groonga/html/admin/js
-@dirrm share/groonga/html/admin/images
-@dirrm share/groonga/html/admin/css/redmond/images
-@dirrm share/groonga/html/admin/css/redmond
-@dirrm share/groonga/html/admin/css
-@dirrm share/groonga/html/admin
-@dirrm share/groonga/html
-@dirrm share/groonga/examples/dictionary/jmdict
-@dirrm share/groonga/examples/dictionary/html/js
-@dirrm share/groonga/examples/dictionary/html/css/smoothness/images
-@dirrm share/groonga/examples/dictionary/html/css/smoothness
-@dirrm share/groonga/examples/dictionary/html/css
-@dirrm share/groonga/examples/dictionary/html
-@dirrm share/groonga/examples/dictionary/gene95
-@dirrm share/groonga/examples/dictionary/eijiro
-@dirrm share/groonga/examples/dictionary/edict
-@dirrm share/groonga/examples/dictionary
-@dirrm share/groonga/examples
-@dirrm share/groonga
-@dirrm lib/groonga/plugins/tokenizers
+%%DATADIR%%/examples/dictionary/edict/edict-import.sh
+%%DATADIR%%/examples/dictionary/edict/edict2grn.rb
+%%DATADIR%%/examples/dictionary/eijiro/eijiro-import.sh
+%%DATADIR%%/examples/dictionary/eijiro/eijiro2grn.rb
+%%DATADIR%%/examples/dictionary/gene95/gene-import.sh
+%%DATADIR%%/examples/dictionary/gene95/gene2grn.rb
+%%DATADIR%%/examples/dictionary/html/css/dictionary.css
+%%DATADIR%%/examples/dictionary/html/css/smoothness/images/ui-bg_flat_0_aaaaaa_40x100.png
+%%DATADIR%%/examples/dictionary/html/css/smoothness/images/ui-bg_flat_75_ffffff_40x100.png
+%%DATADIR%%/examples/dictionary/html/css/smoothness/images/ui-bg_glass_55_fbf9ee_1x400.png
+%%DATADIR%%/examples/dictionary/html/css/smoothness/images/ui-bg_glass_65_ffffff_1x400.png
+%%DATADIR%%/examples/dictionary/html/css/smoothness/images/ui-bg_glass_75_dadada_1x400.png
+%%DATADIR%%/examples/dictionary/html/css/smoothness/images/ui-bg_glass_75_e6e6e6_1x400.png
+%%DATADIR%%/examples/dictionary/html/css/smoothness/images/ui-bg_glass_95_fef1ec_1x400.png
+%%DATADIR%%/examples/dictionary/html/css/smoothness/images/ui-bg_highlight-soft_75_cccccc_1x100.png
+%%DATADIR%%/examples/dictionary/html/css/smoothness/images/ui-icons_222222_256x240.png
+%%DATADIR%%/examples/dictionary/html/css/smoothness/images/ui-icons_2e83ff_256x240.png
+%%DATADIR%%/examples/dictionary/html/css/smoothness/images/ui-icons_454545_256x240.png
+%%DATADIR%%/examples/dictionary/html/css/smoothness/images/ui-icons_888888_256x240.png
+%%DATADIR%%/examples/dictionary/html/css/smoothness/images/ui-icons_cd0a0a_256x240.png
+%%DATADIR%%/examples/dictionary/html/css/smoothness/jquery-ui-1.8.12.custom.css
+%%DATADIR%%/examples/dictionary/html/index.html
+%%DATADIR%%/examples/dictionary/html/js/dictionary.js
+%%DATADIR%%/examples/dictionary/html/js/jquery-1.7.2.min.js
+%%DATADIR%%/examples/dictionary/html/js/jquery-ui-1.8.18.custom.min.js
+%%DATADIR%%/examples/dictionary/init-db.sh
+%%DATADIR%%/examples/dictionary/jmdict/jmdict.rb
+%%DATADIR%%/examples/dictionary/readme.txt
+%%DATADIR%%/html/admin/css/groonga-admin.css
+%%DATADIR%%/html/admin/css/redmond/images/ui-bg_flat_0_aaaaaa_40x100.png
+%%DATADIR%%/html/admin/css/redmond/images/ui-bg_flat_55_fbec88_40x100.png
+%%DATADIR%%/html/admin/css/redmond/images/ui-bg_glass_75_d0e5f5_1x400.png
+%%DATADIR%%/html/admin/css/redmond/images/ui-bg_glass_85_dfeffc_1x400.png
+%%DATADIR%%/html/admin/css/redmond/images/ui-bg_glass_95_fef1ec_1x400.png
+%%DATADIR%%/html/admin/css/redmond/images/ui-bg_gloss-wave_55_5c9ccc_500x100.png
+%%DATADIR%%/html/admin/css/redmond/images/ui-bg_inset-hard_100_f5f8f9_1x100.png
+%%DATADIR%%/html/admin/css/redmond/images/ui-bg_inset-hard_100_fcfdfd_1x100.png
+%%DATADIR%%/html/admin/css/redmond/images/ui-icons_217bc0_256x240.png
+%%DATADIR%%/html/admin/css/redmond/images/ui-icons_2e83ff_256x240.png
+%%DATADIR%%/html/admin/css/redmond/images/ui-icons_469bdd_256x240.png
+%%DATADIR%%/html/admin/css/redmond/images/ui-icons_6da8d5_256x240.png
+%%DATADIR%%/html/admin/css/redmond/images/ui-icons_cd0a0a_256x240.png
+%%DATADIR%%/html/admin/css/redmond/images/ui-icons_d8e7f3_256x240.png
+%%DATADIR%%/html/admin/css/redmond/images/ui-icons_f9bd01_256x240.png
+%%DATADIR%%/html/admin/css/redmond/jquery-ui-1.8.18.custom.css
+%%DATADIR%%/html/admin/favicon.ico
+%%DATADIR%%/html/admin/favicon.png
+%%DATADIR%%/html/admin/favicon.svg
+%%DATADIR%%/html/admin/images/groonga.png
+%%DATADIR%%/html/admin/images/groonga.svg
+%%DATADIR%%/html/admin/images/loading.gif
+%%DATADIR%%/html/admin/index.html
+%%DATADIR%%/html/admin/index.ja.html
+%%DATADIR%%/html/admin/js/groonga-admin.js
+%%DATADIR%%/html/admin/js/groonga-admin.ja.js
+%%DATADIR%%/html/admin/js/jquery-1.7.2.min.js
+%%DATADIR%%/html/admin/js/jquery-ui-1.8.18.custom.min.js
+%%DATADIR%%/html/admin/js/jquery.flot-0.7.min.js
+%%DATADIR%%/html/admin/js/jquery.flot.license.txt
+%%DATADIR%%/images/logo/groonga-icon-foreground-white.png
+%%DATADIR%%/images/logo/groonga-icon-foreground-white.svg
+%%DATADIR%%/images/logo/groonga-icon-full-size.png
+%%DATADIR%%/images/logo/groonga-icon-full-size.svg
+%%DATADIR%%/images/logo/groonga-icon.png
+%%DATADIR%%/images/logo/groonga-icon.svg
+%%DATADIR%%/images/logo/groonga-logo-foreground-white.png
+%%DATADIR%%/images/logo/groonga-logo-foreground-white.svg
+%%DATADIR%%/images/logo/groonga-logo.png
+%%DATADIR%%/images/logo/groonga-logo.svg
+%%DATADIR%%/images/logo/groonga-powered-by-banner-bar-foreground-white.png
+%%DATADIR%%/images/logo/groonga-powered-by-banner-bar-foreground-white.svg
+%%DATADIR%%/images/logo/groonga-powered-by-banner-bar.png
+%%DATADIR%%/images/logo/groonga-powered-by-banner-bar.svg
+%%DATADIR%%/images/logo/groonga-powered-by-banner-foreground-white.png
+%%DATADIR%%/images/logo/groonga-powered-by-banner-foreground-white.svg
+%%DATADIR%%/images/logo/groonga-powered-by-banner-large.png
+%%DATADIR%%/images/logo/groonga-powered-by-banner-large.svg
+%%DATADIR%%/images/logo/groonga-powered-by-banner.png
+%%DATADIR%%/images/logo/groonga-powered-by-banner.svg
+%%DATADIR%%/images/logo/mroonga-icon-foreground-white.png
+%%DATADIR%%/images/logo/mroonga-icon-foreground-white.svg
+%%DATADIR%%/images/logo/mroonga-icon-full-size.png
+%%DATADIR%%/images/logo/mroonga-icon-full-size.svg
+%%DATADIR%%/images/logo/mroonga-icon.png
+%%DATADIR%%/images/logo/mroonga-icon.svg
+%%DATADIR%%/images/logo/mroonga-logo-foreground-white.png
+%%DATADIR%%/images/logo/mroonga-logo-foreground-white.svg
+%%DATADIR%%/images/logo/mroonga-logo.png
+%%DATADIR%%/images/logo/mroonga-logo.svg
+%%DATADIR%%/images/logo/nroonga-icon-foreground-white.png
+%%DATADIR%%/images/logo/nroonga-icon-foreground-white.svg
+%%DATADIR%%/images/logo/nroonga-icon-full-size.png
+%%DATADIR%%/images/logo/nroonga-icon-full-size.svg
+%%DATADIR%%/images/logo/nroonga-icon.png
+%%DATADIR%%/images/logo/nroonga-icon.svg
+%%DATADIR%%/images/logo/nroonga-logo-foreground-white.png
+%%DATADIR%%/images/logo/nroonga-logo-foreground-white.svg
+%%DATADIR%%/images/logo/nroonga-logo.png
+%%DATADIR%%/images/logo/nroonga-logo.svg
+%%DATADIR%%/images/logo/rroonga-icon-foreground-white.png
+%%DATADIR%%/images/logo/rroonga-icon-foreground-white.svg
+%%DATADIR%%/images/logo/rroonga-icon-full-size.png
+%%DATADIR%%/images/logo/rroonga-icon-full-size.svg
+%%DATADIR%%/images/logo/rroonga-icon.png
+%%DATADIR%%/images/logo/rroonga-icon.svg
+%%DATADIR%%/images/logo/rroonga-logo-foreground-white.png
+%%DATADIR%%/images/logo/rroonga-logo-foreground-white.svg
+%%DATADIR%%/images/logo/rroonga-logo.png
+%%DATADIR%%/images/logo/rroonga-logo.svg
+%%DATADIR%%/munin/plugins/groonga_cpu_load_
+%%DATADIR%%/munin/plugins/groonga_cpu_time_
+%%DATADIR%%/munin/plugins/groonga_disk_
+%%DATADIR%%/munin/plugins/groonga_memory_
+%%DATADIR%%/munin/plugins/groonga_n_records_
+%%DATADIR%%/munin/plugins/groonga_query_performance_
+%%DATADIR%%/munin/plugins/groonga_status_
+%%DATADIR%%/munin/plugins/groonga_throughput_
+@dirrm %%DATADIR%%/munin/plugins
+@dirrm %%DATADIR%%/munin
+@dirrm %%DATADIR%%/images/logo
+@dirrm %%DATADIR%%/images
+@dirrm %%DATADIR%%/html/admin/js
+@dirrm %%DATADIR%%/html/admin/images
+@dirrm %%DATADIR%%/html/admin/css/redmond/images
+@dirrm %%DATADIR%%/html/admin/css/redmond
+@dirrm %%DATADIR%%/html/admin/css
+@dirrm %%DATADIR%%/html/admin
+@dirrm %%DATADIR%%/html
+@dirrm %%DATADIR%%/examples/dictionary/jmdict
+@dirrm %%DATADIR%%/examples/dictionary/html/js
+@dirrm %%DATADIR%%/examples/dictionary/html/css/smoothness/images
+@dirrm %%DATADIR%%/examples/dictionary/html/css/smoothness
+@dirrm %%DATADIR%%/examples/dictionary/html/css
+@dirrm %%DATADIR%%/examples/dictionary/html
+@dirrm %%DATADIR%%/examples/dictionary/gene95
+@dirrm %%DATADIR%%/examples/dictionary/eijiro
+@dirrm %%DATADIR%%/examples/dictionary/edict
+@dirrm %%DATADIR%%/examples/dictionary
+@dirrm %%DATADIR%%/examples
+@dirrm %%DATADIR%%
+%%MECAB%%@dirrm lib/groonga/plugins/tokenizers
 @dirrm lib/groonga/plugins/table
 @dirrm lib/groonga/plugins/suggest
 @dirrm lib/groonga/plugins/query_expanders
@@ -859,6 +190,6 @@ share/groonga/munin/plugins/groonga_throughput
 @dirrm lib/groonga
 @dirrm include/groonga/groonga
 @dirrm include/groonga
-@dirrm etc/groonga/httpd/html
-@dirrm etc/groonga/httpd
-@dirrm etc/groonga
+@dirrm %%ETCDIR%%/httpd/html
+@dirrm %%ETCDIR%%/httpd
+@dirrm %%ETCDIR%%
