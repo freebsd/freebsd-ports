@@ -189,6 +189,7 @@ CONFIGURE_ARGS+=	--disable-threads
 .if defined(LIBR_SLAVEPORT)
 
 CONFIGURE_ARGS+=	--disable-BLAS-shlib --without-pic --without-x
+USES+=			readline
 
 .else # LIBR_SLAVEPORT
 
