@@ -3,7 +3,7 @@
 
 PORTNAME=	pypersrc
 PORTVERSION=	20120106
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	http://www.jimbrooks.org/software/pypersrc/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
