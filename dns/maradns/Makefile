@@ -4,7 +4,7 @@
 PORTNAME=	maradns
 PORTVERSION=	2.0.09
 CATEGORIES=	dns
-MASTER_SITES=	http://www.maradns.org/download/2.0/${PORTVERSION}/\
+MASTER_SITES=	http://maradns.samiam.org/download/2.0/${PORTVERSION}/\
 		SF/${PORTNAME}/MaraDNS/${PORTVERSION}/
 
 MAINTAINER=	mat@FreeBSD.org
@@ -27,8 +27,6 @@ GROUPS=		bind
 INSTALL_TARGET=	install PREFIX=${STAGEDIR}${PREFIX}
 
 OPTIONS_DEFINE=	IPV6 DOCS EXAMPLES
-OPTIONS_DEFAULT=	IPV6
-IPV6_DESC=	With support for IPv6
 
 IPV6_CONFIGURE_ON=	--ipv6
 
