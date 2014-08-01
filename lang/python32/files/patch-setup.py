@@ -1,5 +1,5 @@
---- ./setup.py.orig	2013-05-16 02:33:58.000000000 +1000
-+++ ./setup.py	2013-12-01 21:08:17.425989640 +1100
+--- setup.py.orig	2013-05-15 18:33:58.000000000 +0200
++++ setup.py	2014-07-27 11:00:57.000000000 +0200
 @@ -21,7 +21,7 @@
  COMPILED_WITH_PYDEBUG = hasattr(sys, 'gettotalrefcount')
  
@@ -20,15 +20,6 @@
          self.compiler.set_executables(**args)
  
          # Not only do we write the builddir cookie, but we manually install
-@@ -629,7 +629,7 @@
-         # use the same library for the readline and curses modules.
-         if 'curses' in readline_termcap_library:
-             curses_library = readline_termcap_library
--        elif self.compiler.find_library_file(lib_dirs, 'ncursesw'):
-+        elif self.compiler.find_library_file(lib_dirs, 'XXXncursesw'):
-             curses_library = 'ncursesw'
-         elif self.compiler.find_library_file(lib_dirs, 'ncurses'):
-             curses_library = 'ncurses'
 @@ -668,7 +668,7 @@
                                                       'termcap'):
                  readline_libs.append('termcap')
@@ -38,39 +29,16 @@
                                     extra_link_args=readline_extra_link_args,
                                     libraries=readline_libs) )
          else:
-@@ -1187,12 +1187,13 @@
-         # provided by the ncurses library.
-         panel_library = 'panel'
-         if curses_library.startswith('ncurses'):
--            if curses_library == 'ncursesw':
-+            if curses_library == 'XXXncursesw':
-                 # Bug 1464056: If _curses.so links with ncursesw,
-                 # _curses_panel.so must link with panelw.
-                 panel_library = 'panelw'
-             curses_libs = [curses_library]
-             exts.append( Extension('_curses', ['_cursesmodule.c'],
-+                                  library_dirs = ['/usr/lib'], 
-                                    libraries = curses_libs) )
-         elif curses_library == 'curses' and platform != 'darwin':
-                 # OSX has an old Berkeley curses, not good enough for
-@@ -1205,6 +1206,7 @@
-                 curses_libs = ['curses']
- 
-             exts.append( Extension('_curses', ['_cursesmodule.c'],
-+                                   library_dirs = ['/usr/lib'],
-                                    libraries = curses_libs) )
-         else:
-             missing.append('_curses')
-@@ -1373,7 +1375,7 @@
+@@ -1373,7 +1373,7 @@
              macros = dict()
              libraries = []
  
 -        elif platform in ('freebsd4', 'freebsd5', 'freebsd6', 'freebsd7', 'freebsd8'):
-+        elif platform in ('freebsd7', 'freebsd8', 'freebsd9', 'freebsd10'):
++        elif platform in ('freebsd7', 'freebsd8', 'freebsd9', 'freebsd10', 'freebsd11'):
              # FreeBSD's P1003.1b semaphore support is very experimental
              # and has many known problems. (as of June 2008)
              macros = dict()
-@@ -1416,9 +1418,12 @@
+@@ -1416,9 +1416,12 @@
          # End multiprocessing
  
          # Platform-specific libraries
@@ -86,13 +54,37 @@
              exts.append( Extension('ossaudiodev', ['ossaudiodev.c']) )
          else:
              missing.append('ossaudiodev')
-@@ -1935,8 +1940,7 @@
-           # If you change the scripts installed here, you also need to
-           # check the PyBuildScripts command above, and change the links
-           # created by the bininstall target in Makefile.pre.in
--          scripts = ["Tools/scripts/pydoc3", "Tools/scripts/idle3",
--                     "Tools/scripts/2to3"]
-+          scripts = []
-         )
+@@ -1443,6 +1446,18 @@
+         if '_tkinter' not in [e.name for e in self.extensions]:
+             missing.append('_tkinter')
  
- # --install-platlib
++        #############################
++        # Backport Commit: http://hg.python.org/cpython/rev/e5607874e8ff
++        # Backport Issue: http://bugs.python.org/issue18517
++        #############################
++##         # Uncomment these lines if you want to play with xxmodule.c
++##         ext = Extension('xx', ['xxmodule.c'])
++##         self.extensions.append(ext)
++        if 'd' not in sys.abiflags:
++            ext = Extension('xxlimited', ['xxlimited.c'],
++                            define_macros=[('Py_LIMITED_API', 1)])
++            self.extensions.append(ext)
++
+         return missing
+ 
+     def detect_tkinter_darwin(self, inc_dirs, lib_dirs):
+@@ -1641,14 +1656,6 @@
+                         )
+         self.extensions.append(ext)
+ 
+-##         # Uncomment these lines if you want to play with xxmodule.c
+-##         ext = Extension('xx', ['xxmodule.c'])
+-##         self.extensions.append(ext)
+-        if 'd' not in sys.abiflags:
+-            ext = Extension('xxlimited', ['xxlimited.c'],
+-                            define_macros=[('Py_LIMITED_API', 1)])
+-            self.extensions.append(ext)
+-
+         # XXX handle these, but how to detect?
+         # *** Uncomment and edit for PIL (TkImaging) extension only:
+         #       -DWITH_PIL -I../Extensions/Imaging/libImaging  tkImaging.c \
