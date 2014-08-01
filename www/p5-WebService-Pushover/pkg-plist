@@ -1,6 +1,7 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/WebService/Pushover/.packlist
+%%SITE_PERL%%/WebService/Pushover.json
 %%SITE_PERL%%/WebService/Pushover.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/WebService/Pushover/.packlist
 %%PERL5_MAN3%%/WebService::Pushover.3.gz
-@dirrmtry %%SITE_PERL%%/WebService
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WebService/Pushover
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/WebService/Pushover
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WebService
+@dirrmtry %%SITE_PERL%%/WebService
