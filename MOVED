@@ -6362,3 +6362,7 @@ misc/freecode-submit||2014-07-31|Has expired: This software is obsolete. Freecod
 mail/exim-doc-info||2014-07-31|Has expired: yes
 misc/gman||2014-07-31|Has expired: Depends on expiring ghostview
 print/ghostview|print/gv|2014-07-31|Has expired: project dead nearly a decade ago; use print/gv instead
+mail/getlive||2014-08-01|Has expired: GetLive project has been declared dead due to MS account conversion
+print/ifxetex||2014-08-01|Has expired: Very outdated and fully contained in texlive-texmf
+lang/dragonegg46-33||2014-08-01|Has expired: Dead upstream, impractical to build on 10 and later
+lang/dragonegg47-33||2014-08-01|Has expired: Dead upstream, impractical to build on 10 and later
