@@ -8,6 +8,7 @@ libexec/mame/testkeys
 libexec/mame/unidasm
 %%PORTDOCS%%%%DOCSDIR%%/docs/SDL.txt
 %%PORTDOCS%%%%DOCSDIR%%/docs/config.txt
+%%PORTDOCS%%%%DOCSDIR%%/docs/floppy.txt
 %%PORTDOCS%%%%DOCSDIR%%/docs/hlsl.txt
 %%PORTDOCS%%%%DOCSDIR%%/docs/imgtool.txt
 %%PORTDOCS%%%%DOCSDIR%%/docs/license.txt
@@ -87,12 +88,15 @@ libexec/mame/unidasm
 %%DATADIR%%/hash/cbm2_flop.xml
 %%DATADIR%%/hash/cbm8096_flop.xml
 %%DATADIR%%/hash/cbm8296_flop.xml
+%%DATADIR%%/hash/cc40_cart.xml
 %%DATADIR%%/hash/cd32.xml
 %%DATADIR%%/hash/cdi.xml
 %%DATADIR%%/hash/cdtv.xml
 %%DATADIR%%/hash/channelf.xml
 %%DATADIR%%/hash/coco_cart.xml
+%%DATADIR%%/hash/coco_flop.xml
 %%DATADIR%%/hash/coleco.xml
+%%DATADIR%%/hash/compclr2_flop.xml
 %%DATADIR%%/hash/compis.xml
 %%DATADIR%%/hash/comx35_flop.xml
 %%DATADIR%%/hash/copera.xml
@@ -121,10 +125,16 @@ libexec/mame/unidasm
 %%DATADIR%%/hash/gba.xml
 %%DATADIR%%/hash/gbcolor.xml
 %%DATADIR%%/hash/genius.xml
+%%DATADIR%%/hash/gl2000.xml
+%%DATADIR%%/hash/gl6000sl.xml
+%%DATADIR%%/hash/glcolor.xml
 %%DATADIR%%/hash/gmaster.xml
 %%DATADIR%%/hash/gp32.xml
 %%DATADIR%%/hash/gx4000.xml
 %%DATADIR%%/hash/horizon.xml
+%%DATADIR%%/hash/hp9835a_rom.xml
+%%DATADIR%%/hash/hp9845a_rom.xml
+%%DATADIR%%/hash/hp9845b_rom.xml
 %%DATADIR%%/hash/hx20_flop.xml
 %%DATADIR%%/hash/ibm5140.xml
 %%DATADIR%%/hash/ibm5150.xml
@@ -156,6 +166,7 @@ libexec/mame/unidasm
 %%DATADIR%%/hash/m5.xml
 %%DATADIR%%/hash/mac_flop.xml
 %%DATADIR%%/hash/mac_hdd.xml
+%%DATADIR%%/hash/mbc200.xml
 %%DATADIR%%/hash/mbc55x.xml
 %%DATADIR%%/hash/mc1502_flop.xml
 %%DATADIR%%/hash/megacd.xml
@@ -173,8 +184,10 @@ libexec/mame/unidasm
 %%DATADIR%%/hash/msx.hsi
 %%DATADIR%%/hash/msx1_cart.xml
 %%DATADIR%%/hash/msx1_cass.xml
+%%DATADIR%%/hash/msx1_flop.xml
 %%DATADIR%%/hash/msx2.hsi
 %%DATADIR%%/hash/msx2_cart.xml
+%%DATADIR%%/hash/msx2_flop.xml
 %%DATADIR%%/hash/myvision.xml
 %%DATADIR%%/hash/mz2000_cass.xml
 %%DATADIR%%/hash/mz2000_flop.xml
@@ -187,6 +200,9 @@ libexec/mame/unidasm
 %%DATADIR%%/hash/neogeo.xml
 %%DATADIR%%/hash/nes.hsi
 %%DATADIR%%/hash/nes.xml
+%%DATADIR%%/hash/nes_ade.xml
+%%DATADIR%%/hash/nes_datach.xml
+%%DATADIR%%/hash/nes_kstudio.xml
 %%DATADIR%%/hash/nes_ntbrom.xml
 %%DATADIR%%/hash/next.xml
 %%DATADIR%%/hash/ngp.xml
@@ -200,6 +216,7 @@ libexec/mame/unidasm
 %%DATADIR%%/hash/orion_flop.xml
 %%DATADIR%%/hash/orionpro_flop.xml
 %%DATADIR%%/hash/osborne1.xml
+%%DATADIR%%/hash/osborne2.xml
 %%DATADIR%%/hash/p500_flop.xml
 %%DATADIR%%/hash/partner_cass.xml
 %%DATADIR%%/hash/partner_flop.xml
@@ -249,6 +266,9 @@ libexec/mame/unidasm
 %%DATADIR%%/hash/samcoupe_flop.xml
 %%DATADIR%%/hash/sat_cart.xml
 %%DATADIR%%/hash/saturn.xml
+%%DATADIR%%/hash/sawatte.xml
+%%DATADIR%%/hash/sc3000_cart.xml
+%%DATADIR%%/hash/sc3000_cass.xml
 %%DATADIR%%/hash/scv.xml
 %%DATADIR%%/hash/segacd.xml
 %%DATADIR%%/hash/sf7000.xml
@@ -278,6 +298,7 @@ libexec/mame/unidasm
 %%DATADIR%%/hash/super6.xml
 %%DATADIR%%/hash/superpet_flop.xml
 %%DATADIR%%/hash/supracan.xml
+%%DATADIR%%/hash/sv8000.xml
 %%DATADIR%%/hash/svi318_cart.xml
 %%DATADIR%%/hash/svi318_cass.xml
 %%DATADIR%%/hash/svi318_flop.xml
