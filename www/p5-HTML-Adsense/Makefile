@@ -5,18 +5,18 @@ PORTNAME=	HTML-Adsense
 PORTVERSION=	0.2
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
-MASTER_SITE_SUBDIR=	HTML
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Create adsense widgets easily
 
-RUN_DEPENDS=	p5-Class-Accessor>=0:${PORTSDIR}/devel/p5-Class-Accessor
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
 
-USES=		perl5
+BUILD_DEPENDS=	p5-Class-Accessor>=0:${PORTSDIR}/devel/p5-Class-Accessor
+RUN_DEPENDS:=	${BUILD_DEPENDS}
+
 USE_PERL5=	configure
-
-post-patch:
-	${RM} -f ${WRKSRC}/lib/HTML/._Adsense.pm
+USES=		perl5
 
 .include <bsd.port.mk>
