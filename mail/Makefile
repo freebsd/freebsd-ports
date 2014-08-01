@@ -149,7 +149,6 @@
     SUBDIR += ftrack
     SUBDIR += gbuffy
     SUBDIR += gensig
-    SUBDIR += getlive
     SUBDIR += getmail
     SUBDIR += gkrellmmailwatch2
     SUBDIR += gld

@@ -49,8 +49,6 @@
     SUBDIR += dlv
     SUBDIR += dmd1
     SUBDIR += dmd2
-    SUBDIR += dragonegg46-33
-    SUBDIR += dragonegg47-33
     SUBDIR += ecl
     SUBDIR += elan
     SUBDIR += elixir
