@@ -46,6 +46,7 @@ EXTRA_PATCHES=	${PATCHDIR}/extra-patch-stty.c
 
 post-build:
 	@${REINPLACE_CMD} -e "s/ lib / /g" ${WRKSRC}/Makefile
+	@${TOUCH} ${WRKSRC}/doc/coreutils.info
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/g* \
