@@ -1,8 +1,8 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/Mechanize/SpamCop/.packlist
 %%SITE_PERL%%/WWW/Mechanize/SpamCop.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/Mechanize/SpamCop/.packlist
 %%PERL5_MAN3%%/WWW::Mechanize::SpamCop.3.gz
-@dirrmtry %%SITE_PERL%%/WWW/Mechanize
-@dirrmtry %%SITE_PERL%%/WWW
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/Mechanize/SpamCop
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/Mechanize/SpamCop
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/Mechanize
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW
+@dirrmtry %%SITE_PERL%%/WWW/Mechanize
+@dirrmtry %%SITE_PERL%%/WWW
