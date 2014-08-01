@@ -56,7 +56,7 @@ pre-install:
 	${FIND} ${WRK_SRC} -type d | ${SORT} -r | ${SED} -e "s,${WRK_SRC},@dirrm %%PHPDOCDIR%%," >> ${PLIST}
 
 do-install:
-	@${MKDIR} ${PHPDOCDIR}
+	@${MKDIR} ${STAGEDIR}${PHPDOCDIR}
 	${FIND} ${WRK_SRC} -type d | ${SED} -e "s,${WRK_SRC},${STAGEDIR}${PHPDOCDIR}/," | ${XARGS} ${MKDIR}
 	for f in `${FIND} ${WRK_SRC} -type f ! -name '.*' ! -name pkg-plist | ${SED} -e 's,${WRK_SRC},,'`; do \
 		${INSTALL_DATA} ${WRK_SRC}/$$f ${STAGEDIR}${PHPDOCDIR}/$$f; \
