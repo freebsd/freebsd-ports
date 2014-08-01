@@ -1,0 +1,8 @@
+bin/bucardo
+%%PERL5_MAN3%%/Bucardo.3.gz
+%%SITE_PERL%%/Bucardo.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Bucardo/.packlist
+man/man1/bucardo.1pm.gz
+%%DATADIR%%/bucardo.schema
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Bucardo
+@dirrmtry %%DATADIR%%
