@@ -10,9 +10,13 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	SpamCop reporting automation
 
-RUN_DEPENDS=	p5-WWW-Mechanize>=0:${PORTSDIR}/www/p5-WWW-Mechanize
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
 
-USES=		perl5
+BUILD_DEPENDS=	p5-WWW-Mechanize>=0:${PORTSDIR}/www/p5-WWW-Mechanize
+RUN_DEPENDS:=	${BUILD_DEPENDS}
+
 USE_PERL5=	configure
+USES=		perl5
 
 .include <bsd.port.mk>
