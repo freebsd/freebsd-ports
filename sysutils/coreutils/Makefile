@@ -1,9 +1,7 @@
-# Created by: Jason Harris <jharris@widomaker.com>
 # $FreeBSD$
 
 PORTNAME=	coreutils
-PORTVERSION=	8.22
-PORTREVISION=	2
+PORTVERSION=	8.23
 CATEGORIES=	sysutils textproc
 MASTER_SITES=	GNU
 
@@ -13,7 +11,7 @@ COMMENT=	Free Software Foundation core utilities
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-CONFLICTS=	id-utils-[0-9]* linux-gid-[0-9]*
+CONFLICTS=	idutils-[0-9]*
 
 MAKE_JOBS_UNSAFE=	yes
 
