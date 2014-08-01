@@ -2,6 +2,11 @@ bin/gtklp
 bin/gtklpq
 man/man1/gtklp.1.gz
 man/man1/gtklpq.1.gz
+share/icons/hicolor/16x16/apps/gtklp.xpm
+share/icons/hicolor/24x24/apps/gtklp.xpm
+share/icons/hicolor/32x32/apps/gtklp.xpm
+share/icons/hicolor/48x48/apps/gtklp.xpm
+share/icons/hicolor/64x64/apps/gtklp.xpm
 share/locale/ca/LC_MESSAGES/gtklp.mo
 share/locale/ca_ES/LC_MESSAGES/gtklp.mo
 share/locale/chs/LC_MESSAGES/gtklp.mo
@@ -22,13 +27,13 @@ share/locale/ru/LC_MESSAGES/gtklp.mo
 share/locale/uk_UA/LC_MESSAGES/gtklp.mo
 share/locale/zh_CN/LC_MESSAGES/gtklp.mo
 share/locale/zh_TW/LC_MESSAGES/gtklp.mo
-@dirrmtry share/locale/ca_ES/LC_MESSAGES
-@dirrmtry share/locale/ca_ES
-@dirrmtry share/locale/chs/LC_MESSAGES
-@dirrmtry share/locale/chs
-@dirrmtry share/locale/cht/LC_MESSAGES
-@dirrmtry share/locale/cht
-@dirrmtry share/locale/cz/LC_MESSAGES
-@dirrmtry share/locale/cz
 @dirrmtry share/locale/uk_UA/LC_MESSAGES
 @dirrmtry share/locale/uk_UA
+@dirrmtry share/locale/cz/LC_MESSAGES
+@dirrmtry share/locale/cz
+@dirrmtry share/locale/cht/LC_MESSAGES
+@dirrmtry share/locale/cht
+@dirrmtry share/locale/chs/LC_MESSAGES
+@dirrmtry share/locale/chs
+@dirrmtry share/locale/ca_ES/LC_MESSAGES
+@dirrmtry share/locale/ca_ES
