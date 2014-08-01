@@ -14,8 +14,6 @@ DISTNAME=	${PORTNAME}
 MAINTAINER=	jmohacsi@bsd.hu
 COMMENT=	Test bind() semantics of IPv6 sockets
 
-BROKEN=		no distinfo provided
-
 USES=		tar:tgz
 
 PLIST_FILES=	bin/bindtest bin/bindtest.sh man/man1/bindtest.1.gz
