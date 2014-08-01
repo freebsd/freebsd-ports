@@ -837,7 +837,6 @@ GNUstep/System/Library/Images/common_Info.tiff
 @dirrm GNUstep/System/Library/Headers/gnustep/gui
 @dirrm GNUstep/System/Library/Headers/GNUstepGUI
 @dirrm GNUstep/System/Library/Headers/Cocoa
-@dirrm GNUstep/System/Library/Headers/AppKit
 %%PORTDOCS%%@dirrm GNUstep/System/Library/Documentation/User/Gui/GuiUser
 %%PORTDOCS%%@dirrm GNUstep/System/Library/Documentation/User/Gui
 %%PORTDOCS%%@dirrm GNUstep/System/Library/Documentation/Developer/Gui/ProgrammingManual
