@@ -302,6 +302,7 @@ USE_PHP_BUILD=	yes
 
 .if ${PHP_MODNAME} == "readline"
 CONFIGURE_ARGS+=--with-readline=/usr
+USES+=		readline
 .endif
 
 .if ${PHP_MODNAME} == "recode"
