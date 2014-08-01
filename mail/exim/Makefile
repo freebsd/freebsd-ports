@@ -3,7 +3,7 @@
 
 PORTNAME=	exim
 PORTVERSION?=	${EXIM_VERSION}
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	mail ipv6
 MASTER_SITES=	${MASTER_SITE_EXIM:S/$/:exim/}
 MASTER_SITE_SUBDIR=	exim4/:exim
@@ -57,7 +57,6 @@ PGSQL_USE=	pgsql=yes
 REDIS_LIB_DEPENDS=	libhiredis.so:${PORTSDIR}/databases/hiredis
 SASLAUTHD_RUN_DEPENDS=	${LOCALBASE}/sbin/saslauthd:${PORTSDIR}/security/cyrus-sasl2-saslauthd
 SA_EXIM_RUN_DEPENDS=	${LOCALBASE}/bin/spamc:${PORTSDIR}/mail/spamassassin
-SO_1024_LDFLAGS=	-lz
 SPF_LIB_DEPENDS=	libspf2.so:${PORTSDIR}/mail/libspf2
 SQLITE_USE=	sqlite=yes
 SQLITE_USES=	pkgconfig
@@ -88,14 +87,8 @@ MASTER_SITE_SUBDIR+=	sa-exim/:sa_exim
 DISTFILES+=	sa-exim-${SA_EXIM_VERSION}.tar.gz:sa_exim
 .endif
 
-.if ${PORT_OPTIONS:MSO_1024} || defined(FETCH_ALL)
-MASTER_SITES+=	ftp://ftp.renatasystems.org/pub/FreeBSD/ports/distfiles/:so_1024
-DISTFILES+=	spamooborona1024-src-${SO_1024_VERSION}.tar.gz:so_1024
-.endif
-
 EXIM_VERSION=	4.83
 SA_EXIM_VERSION=4.2
-SO_1024_VERSION=3.2
 EXIM_INSTALL_ARG+=	"-no_chown" "-no_symlink"
 
 .if !defined(EXIMON_ONLY)
@@ -519,10 +512,6 @@ post-extract:
 .if ${PORT_OPTIONS:MSA_EXIM}
 	@cd ${WRKDIR} && ${TAR} ${EXTRACT_BEFORE_ARGS} ${_DISTDIR}/sa-exim-${SA_EXIM_VERSION}.tar.gz ${EXTRACT_AFTER_ARGS}
 .endif
-.if ${PORT_OPTIONS:MSO_1024}
-	@cd ${WRKDIR} && ${TAR} ${EXTRACT_BEFORE_ARGS} ${_DISTDIR}/spamooborona1024-src-${SO_1024_VERSION}.tar.gz ${EXTRACT_AFTER_ARGS}
-	@cd ${WRKDIR} && ${PATCH} --quiet < ${FILESDIR}/extra-patch-so_1024-delimiter
-.endif
 
 do-configure:
 	@${MKDIR} ${WRKSRC}/Local
@@ -550,11 +539,6 @@ do-configure:
 	@${REINPLACE_CMD} -e 's,/usr/bin/spamc,${LOCALBASE}/bin/spamc,' \
 	    ${WRKDIR}/sa-exim-${SA_EXIM_VERSION}/sa-exim.conf
 .endif
-.if ${PORT_OPTIONS:MSO_1024}
-	@${REINPLACE_CMD} -E -e 's/^(LOCAL_SCAN_SOURCE=).*/\1Local\/local_scan_1024.c/' \
-		${WRKSRC}/OS/Makefile-Default
-	@${CP} ${WRKDIR}/local_scan_1024.c ${WRKSRC}/Local
-.endif
 	@${REINPLACE_CMD} -E -e 's/XX_STRIPCMD_XX/${STRIP_CMD:S,/,\/,g}/' \
 		${WRKSRC}/OS/Makefile-FreeBSD
 	@(cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} configure)
@@ -576,9 +560,6 @@ post-install:
 .for script in ${DAILY_SCRIPTS}
 	${INSTALL_SCRIPT} ${WRKDIR}/${script}.sh ${STAGEDIR}${PREFIX}/etc/periodic/daily/${script}
 .endfor
-.endif
-.if ${PORT_OPTIONS:MSO_1024}
-	@${MKDIR} -m 750 ${STAGEDIR}var/spool/spamooborona
 .endif
 	@${MKDIR} -m 750 ${STAGEDIR}${LOGDIR}
 	@${INSTALL_MAN} ${WRKSRC}/doc/exim.8 ${STAGEDIR}${MAN8PREFIX}/man/man8
