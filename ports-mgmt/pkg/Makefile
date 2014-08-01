@@ -78,9 +78,7 @@ pre-everything::
 .if defined(WITH_PKGNG)
 PKG_DEPENDS=
 .undef INSTALLS_DEPENDS
-.if !exists(${LOCALBASE}/sbin/pkg)
 PKG_BIN=	${WRKSRC}/src/pkg-static
-.endif
 .endif
 
 post-install:
