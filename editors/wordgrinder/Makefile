@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	wordgrinder
-PORTVERSION=	0.3.3
+PORTVERSION=	0.5.1
 CATEGORIES=	editors
-MASTER_SITES=	SF
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}
 
 MAINTAINER=	vmagerya@gmail.com
 COMMENT=	Simple Unicode-aware console-based word processor
@@ -13,35 +13,31 @@ LICENSE=	MIT
 
 RUN_DEPENDS=	${LUA_MODLIBDIR}/lfs.so:${PORTSDIR}/devel/luafilesystem
 
-USES=		lua:51 tar:bzip2
-
-MAN1=		wordgrinder.1
+USES=		lua:52 tar:bzip2 gmake
 
 PLIST_DIRS=	share/doc/wordgrinder
-PLIST_FILES=	bin/wordgrinder share/doc/wordgrinder/README.wg
+PLIST_FILES=	bin/wordgrinder \
+		share/doc/wordgrinder/README.wg \
+		man/man1/wordgrinder.1.gz
 
-NO_STAGE=	yes
 post-patch:
-	${REINPLACE_CMD} -e 's,^PREFIX =.*$$,PREFIX = "${PREFIX}",' \
-		-e 's,/usr/include/lua5.1,${LUA_INCDIR},' \
-		-e 's,command = "lua ,command = "${LUA_CMD} ,' \
-		-e '/curses_exe =/s,$$,\
-		CLINKFLAGS = {PARENT\, "-L${LUA_LIBDIR}"}\,,' \
-		-e 's,lua5.1,lua,' \
-		-e 's,install -D,install,' \
-		${WRKSRC}/pmfile
-	${REINPLACE_CMD} 's,^LUACOMPILER =.*$$,LUACOMPILER = "${LUAC_CMD}",' \
-		${WRKSRC}/tools/lua.pm
-	${REINPLACE_CMD} "/CCOMPILER = /s,gcc,cc ," ${WRKSRC}/tools/c.pm
-	${REINPLACE_CMD} "/CC=/s,gcc,cc ," ${WRKSRC}/pm
+	${REINPLACE_CMD} \
+		-e '/hide = /s/@//' \
+		-e '/cc := gcc/s|gcc|${CC}|' \
+		-e '/INCLUDES := /s|= .*|= -I${LUA_INCDIR}|' \
+		-e '/ldflags := /s|=|= -L${LUA_LIBDIR}|' \
+		-e 's|-llua5.2|-llua-${LUA_VER}|' \
+		-e 's|@lua|${LUA_CMD}|' \
+		-e '/PREFIX = /d' \
+		-e '/install /s|$$(PRE|$$(DESTDIR)$$(PRE|' \
+		-e '/install /s|-D||' \
+		-e '/install /s|share/man/man1|man/man1|' \
+		${WRKSRC}/Makefile
 
-do-build:
-	(cd ${WRKSRC}; ./pm)
+pre-install:
+	${MKDIR} ${STAGEDIR}${PREFIX}/share/doc/wordgrinder
 
-do-install:
-	${MKDIR} ${PREFIX}/bin ${PREFIX}/man/man1
-	${MKDIR} ${PREFIX}/share/doc/wordgrinder
-	(cd ${WRKSRC}; ./pm install)
-	${STRIP_CMD} ${PREFIX}/bin/wordgrinder
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/wordgrinder
 
 .include <bsd.port.mk>
