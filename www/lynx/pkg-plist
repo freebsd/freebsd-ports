@@ -93,6 +93,9 @@ man/man1/lynx.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/test/circle.html
 %%PORTDOCS%%%%DOCSDIR%%/test/square.html
 %%PORTDOCS%%%%DOCSDIR%%/test/triangle.html
+%%PORTDOCS%%%%DOCSDIR%%/test/X
+%%PORTDOCS%%%%DOCSDIR%%/test/image.jpg
+%%PORTDOCS%%%%DOCSDIR%%/test/nobody
 %%PORTDOCS%%share/lynx_help/COPYHEADER
 %%PORTDOCS%%share/lynx_help/COPYING
 %%PORTDOCS%%share/lynx_help/Lynx_users_guide.html.gz
