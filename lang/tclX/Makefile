@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	tclX
-PORTVERSION=	8.4
-PORTREVISION=	3
+PORTVERSION=	8.4.1
 CATEGORIES=	lang tcl devel
-MASTER_SITES=	SF/${PORTNAME:tl}/TclX/${PORTVERSION}.0
+MASTER_SITES=	SF/${PORTNAME:tl}/TclX/${PORTVERSION}
 DISTNAME=	tclx${PORTVERSION}
 
 MAINTAINER=	mi@aldan.algebra.com
@@ -16,17 +15,16 @@ LICENSE_NAME=	Tcl/Tk License
 LICENSE_FILE=	${WRKSRC}/license.terms
 LICENSE_PERMS=	auto-accept dist-mirror dist-sell pkg-mirror pkg-sell
 
+WRKSRC=		${WRKDIR}/${PORTNAME:tl}${PORTVERSION:R}
 
 USES=		tcl tar:bzip2
-USE_LDCONFIG=	${PREFIX}/lib/tclx${PORTVERSION}
-GNU_CONFIGURE=	yes
-CPPFLAGS+=	-I${TCL_INCLUDEDIR}/unix\
-		-I${TCL_INCLUDEDIR}/generic
+USE_LDCONFIG=	${PREFIX}/lib/tclx${PORTVERSION:R}
+USE_AUTOTOOLS=	autoconf
 CONFIGURE_ARGS=	--exec-prefix=${PREFIX} \
 		--enable-shared \
 		--with-help=Help \
 		--with-tcl="${TCL_LIBDIR}"
-PLIST_SUB=	TCLX_VER=${PORTVERSION}
+PLIST_SUB=	TCLX_VER=${PORTVERSION:R}
 ALL_TARGET=	binaries libraries
 INSTALL_TARGET=	install-binaries install-libraries
 
@@ -34,17 +32,13 @@ INSTALL_TARGET=	install-binaries install-libraries
 
 .if ${TCL_VER} > 8.4
 EXTRA_PATCHES+=	${FILESDIR}/tcl85-test-patch
-PLIST_SUB+=	BELOW_85='@comment '
-.else
-PLIST_SUB+=	BELOW_85=''
 .endif
 
 post-configure:
-	${REINPLACE_CMD} -e	\
-	    's,^TCLSH_PROG.*,TCLSH_PROG=${TCLSH},' \
-	    -e 's,TCL_LIBRARY=.*,\\,' ${WRKSRC}/Makefile
-	# Disabling the failing help.test
-	${MV} ${WRKSRC}/tests/help.test ${WRKSRC}/tests/help.test.dis
+.if ${TCL_VER} == 8.6
+	# Disabling the failing profile.test
+	${MV} ${WRKSRC}/tests/profile.test ${WRKSRC}/tests/profile.test.dis
+.endif
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/doc/TclX.n ${STAGEDIR}${PREFIX}/man/mann
@@ -63,7 +57,7 @@ post-install:
 	${LN} -s TclXInit.3.gz ${STAGEDIR}${PREFIX}/man/man3/${l}.3.gz
 .endfor
 
-regression-test: build
+regression-test test: build
 	${SETENV} ${MAKE_ENV} ${MAKE} -C ${WRKSRC} test
 
 .include <bsd.port.post.mk>

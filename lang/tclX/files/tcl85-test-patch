@@ -56,20 +56,22 @@ Tcl-versions, should still do that...
  ERRORCODE]
 --- tests/string.test	2002-09-25 20:19:02.000000000 -0400
 +++ tests/string.test	2009-10-13 18:25:03.000000000 -0400
-@@ -47,9 +47,19 @@
+@@ -47,9 +47,21 @@
  } 0 {E}
  
 +switch $tcl_version {
 +8.3	{
 +	set anticipate "syntax error in expression \"4x-3\""
 +} 8.4 {
-+	puts stderr "tcl_version is $tcl_version"
 +	set anticipate "syntax error in expression \"4x-3\": extra tokens at end of expression"
-+} default {
++} 8.5 {
 +	set anticipate {invalid bareword "x"
 +in expression "4_@_x-3";
 +should be "$x" or "{x}" or "x(...)" or ...}
-+}}
++} default {
++	set anticipate {invalid bareword "4x"
++in expression "4x-3";
++should be "$4x" or "{4x}" or "4x(...)" or ...}
 +
  Test string-1.7 {cindex tests} {
 -    cindex ABCDEFG lenx-3
