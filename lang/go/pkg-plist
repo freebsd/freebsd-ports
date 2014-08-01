@@ -4355,7 +4355,7 @@ go/test/zerodivide.go
 @dirrm go/doc/progs
 @dirrm go/doc
 @dirrm go/include/plan9/386
-@dirrm go/include/plan9/%%ARCH%%
+@dirrm go/include/plan9/amd64
 @dirrm go/include/plan9/arm
 @dirrm go/include/plan9
 @dirrm go/include
