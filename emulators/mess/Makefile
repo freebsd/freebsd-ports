@@ -2,13 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	mess
-PORTVERSION=	0.152${PATCHSUFFIX}
-PORTREVISION=	1
+PORTVERSION=	0.154${PATCHSUFFIX}
 CATEGORIES=	emulators
-MASTER_SITES=	http://mame.mirrors.zippykid.com/releases/ \
+MASTER_SITES=	http://mamedev.mameworld.info/releases/ \
 		http://emumovies.com/aarongiles/releases/ \
 		http://mamedev.org/updates/:patchsets
-DISTFILES=	mame${PORTVERSION:S/.//:C/p[0-9]*$//}s.zip \
+DISTFILES=	mame${PORTVERSION:S/.//:C/p[0-9]*$//}s${EXTRACT_SUFX} \
 		${UPDATE_PATCHES:C/$/.zip:patchsets/}
 DIST_SUBDIR=	mame
 
@@ -21,15 +20,16 @@ LIB_DEPENDS=	libFLAC.so:${PORTSDIR}/audio/flac \
 		libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig
 RUN_DEPENDS=	liberation-fonts-ttf>=0:${PORTSDIR}/x11-fonts/liberation-fonts-ttf
 
-OPTIONS_DEFINE=	BUILTIN_DEBUGGER DEBUG DOCS EXAMPLES SDL2
-BUILTIN_DEBUGGER_DESC=	Builtin debugger support
-SDL2_DESC=	SDL2 libraries support
-
 NO_WRKSUBDIR=	yes
 
-USES=		dos2unix gmake pkgconfig shebangfix
-DOS2UNIX_FILES=	src/emu/netlist/nl_base.h \
-		src/emu/netlist/pstate.h
+USES=		dos2unix gmake pkgconfig shebangfix zip
+DOS2UNIX_FILES=	src/lib/lib7z/CpuArch.h \
+		src/lib/lua/luaconf.h \
+		src/osd/eigccx86.h \
+		src/osd/eminline.h \
+		src/osd/sdl/osinline.h \
+		src/osd/sdl/sdlsync_ntc.c \
+		src/osd/sdl/sdlsync_os2.c
 SHEBANG_FILES=	src/emu/cpu/m6502/m6502make.py \
 		src/emu/cpu/m6809/m6809make.py \
 		src/emu/cpu/mcs96/mcs96make.py \
@@ -40,10 +40,22 @@ USE_PYTHON_BUILD=2
 MAKE_ENV=	NOWERROR=1 USE_NETWORK=1 \
 		LD="${CXX}" PYTHON="${PYTHON_CMD}" \
 		OPT_FLAGS="${CXXFLAGS}" GCC_LDFLAGS="${LDFLAGS}" \
-		TARGET="${PORTNAME}" FULLNAME="${PORTNAME}"
+		TARGET="${PORTNAME}" FULLNAME="${PORTNAME}" \
+		SDL_NETWORK="pcap"
 MAKEFILE=	makefile
 
 SUB_FILES=	pkg-message
+
+OPTIONS_DEFINE=		BUILTIN_DEBUGGER DEBUG DOCS EXAMPLES SDL2
+
+BUILTIN_DEBUGGER_DESC=	Builtin debugger support
+BUILTIN_DEBUGGER_USE=	QT4=gui,moc_build,qmake_build
+BUILTIN_DEBUGGER_MAKE_ENV_OFF=\
+			NO_DEBUGGER=1 NO_USE_QTDEBUG=1
+DEBUG_MAKE_ENV=		DEBUG=1
+SDL2_DESC=		SDL2 libraries support
+SDL2_USE=		SDL=sdl2,ttf2
+SDL2_MAKE_ENV=		SDL_LIBVER="sdl2"
 
 PATCHLEVEL=	# none
 
@@ -56,24 +68,9 @@ UPDATE_PATCHES!=	/usr/bin/jot -s " " \
 
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MBUILTIN_DEBUGGER}
-USE_QT4=	gui moc_build qmake_build
-.else
-MAKE_ENV+=	NO_DEBUGGER=1 NO_USE_QTDEBUG=1
-.endif
-
-.if ${PORT_OPTIONS:MSDL2}
-USE_SDL=	sdl2 ttf2
-MAKE_ENV+=	SDL_LIBVER="sdl2"
-.else
+.if empty(PORT_OPTIONS:MSDL2)
 USE_SDL=	sdl ttf
 .endif
-
-.if ${PORT_OPTIONS:MDEBUG}
-MAKE_ENV+=	DEBUG=1
-.endif
-
-.include <bsd.port.pre.mk>
 
 .if ${ARCH} == "ia64" || ${ARCH} == "powerpc" || ${ARCH} == "sparc64"
 BROKEN=		Does not install on ia64, powerpc, or sparc64
@@ -94,20 +91,18 @@ post-extract:
 
 post-patch:
 	@${REINPLACE_CMD} -e \
-		'/^BUILD_EXPAT /s|^|#| ; \
-		 /^BUILD_ZLIB /s|^|#| ; \
-		 /^BUILD_FLAC /s|^|#| ; \
-		 /^BUILD_JPEGLIB /s|^|#| ; \
-		 /^CC /s|^|#| ; \
-		 /^LD /s|^|#| ; \
-		 /^PYTHON /s|^|#| ; \
+		's|^\(BUILD_EXPAT \)|#\1| ; \
+		 s|^\(BUILD_ZLIB \)|#\1| ; \
+		 s|^\(BUILD_FLAC \)|#\1| ; \
+		 s|^\(BUILD_JPEGLIB \)|#\1| ; \
+		 s|^\(CC \)|#\1| ; \
+		 s|^\(LD \)|#\1| ; \
+		 s|^\(PYTHON \)|#\1| ; \
 		 s|-O$$(OPTIMIZE)|| ; \
 		 /--warn-common/s|= -Wl,|= $$(GCC_LDFLAGS) -Wl,| ; \
 		 /LDFLAGS/s|-s|| ; \
 		 /LIBS/s|-lstdc++|| ; \
 		 /LIBS/s|-lpthread|-pthread|' ${WRKSRC}/makefile
-	@${REINPLACE_CMD} -e \
-		'/realloc/s|^|// |' ${WRKSRC}/src/emu/emualloc.h
 	@${REINPLACE_CMD} -e \
 		'/LIBS/s|-lpthread|-pthread| ; \
 		 /-isystem/s|^|#| ; \
@@ -132,4 +127,4 @@ do-install:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	(cd ${FILESDIR} && ${INSTALL_DATA} mess.ini ${STAGEDIR}${EXAMPLESDIR})
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
