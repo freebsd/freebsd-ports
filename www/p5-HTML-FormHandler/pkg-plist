@@ -60,6 +60,7 @@
 %%SITE_PERL%%/HTML/FormHandler/I18N/hu_hu.pm
 %%SITE_PERL%%/HTML/FormHandler/I18N/it_it.pm
 %%SITE_PERL%%/HTML/FormHandler/I18N/ja_jp.pm
+%%SITE_PERL%%/HTML/FormHandler/I18N/ar_kw.pm
 %%SITE_PERL%%/HTML/FormHandler/I18N/pt_br.pm
 %%SITE_PERL%%/HTML/FormHandler/I18N/ru_ru.pm
 %%SITE_PERL%%/HTML/FormHandler/I18N/sv_se.pm
@@ -242,6 +243,7 @@
 %%PERL5_MAN3%%/HTML::FormHandler::I18N::hu_hu.3.gz
 %%PERL5_MAN3%%/HTML::FormHandler::I18N::it_it.3.gz
 %%PERL5_MAN3%%/HTML::FormHandler::I18N::ja_jp.3.gz
+%%PERL5_MAN3%%/HTML::FormHandler::I18N::ar_kw.3.gz
 %%PERL5_MAN3%%/HTML::FormHandler::I18N::pt_br.3.gz
 %%PERL5_MAN3%%/HTML::FormHandler::I18N::ru_ru.3.gz
 %%PERL5_MAN3%%/HTML::FormHandler::I18N::sv_se.3.gz
