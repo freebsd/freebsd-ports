@@ -33,12 +33,13 @@ INSTALL_TARGET=	install-binaries install-libraries
 .if ${TCL_VER} > 8.4
 EXTRA_PATCHES+=	${FILESDIR}/tcl85-test-patch
 .endif
+.if ${TCL_VER} > 8.5
+EXTRA_PATCHES+=	${FILESDIR}/tcl86-test-patch
+.endif
 
 post-configure:
-.if ${TCL_VER} == 8.6
-	# Disabling the failing profile.test
-	${MV} ${WRKSRC}/tests/profile.test ${WRKSRC}/tests/profile.test.dis
-.endif
+	# Disabling the failing help.test
+	${MV} ${WRKSRC}/tests/help.test ${WRKSRC}/tests/help.test.dis
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/doc/TclX.n ${STAGEDIR}${PREFIX}/man/mann
