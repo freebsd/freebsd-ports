@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	DBD-mysql
-PORTVERSION=	4.027
+PORTVERSION=	4.028
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -27,5 +27,8 @@ OPTIONS_DEFINE=	SSL
 SSL_BUILD_DEPENDS=	p5-Crypt-SSLeay>=0:${PORTSDIR}/security/p5-Crypt-SSLeay
 SSL_RUN_DEPENDS=	${SSL_BUILD_DEPENDS}
 SSL_CONFIGURE_ON=	--ssl
+
+post-stage:
+	${STRIP_CMD} ${STAGEDIR}${SITE_PERL}/${PERL_ARCH}/auto/DBD/mysql/mysql.so
 
 .include <bsd.port.mk>
