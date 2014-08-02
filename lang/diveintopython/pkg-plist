@@ -1,338 +1,335 @@
-%%DOCSDIR%%/appendix/about.html
-%%DOCSDIR%%/appendix/abstracts.html
-%%DOCSDIR%%/appendix/examples.html
-%%DOCSDIR%%/appendix/fdl.html
-%%DOCSDIR%%/appendix/fdl_aggregation.html
-%%DOCSDIR%%/appendix/fdl_applicability.html
-%%DOCSDIR%%/appendix/fdl_collections.html
-%%DOCSDIR%%/appendix/fdl_combining.html
-%%DOCSDIR%%/appendix/fdl_copying.html
-%%DOCSDIR%%/appendix/fdl_copyinginquantity.html
-%%DOCSDIR%%/appendix/fdl_future.html
-%%DOCSDIR%%/appendix/fdl_howto.html
-%%DOCSDIR%%/appendix/fdl_modifications.html
-%%DOCSDIR%%/appendix/fdl_termination.html
-%%DOCSDIR%%/appendix/fdl_translation.html
-%%DOCSDIR%%/appendix/furtherreading.html
-%%DOCSDIR%%/appendix/history.html
-%%DOCSDIR%%/appendix/license.html
-%%DOCSDIR%%/appendix/license_terms.html
-%%DOCSDIR%%/appendix/tips.html
-%%DOCSDIR%%/diveintopython.css
-%%DOCSDIR%%/download/diveintopython-common-%%VERSION%%.zip
-%%DOCSDIR%%/download/diveintopython-examples-%%VERSION%%.zip
-%%DOCSDIR%%/download/diveintopython-html-%%VERSION%%.zip
-%%DOCSDIR%%/download/diveintopython-html-flat-%%VERSION%%.zip
-%%DOCSDIR%%/download/diveintopython-pdf-%%VERSION%%.zip
-%%DOCSDIR%%/download/diveintopython-text-%%VERSION%%.zip
-%%DOCSDIR%%/download/diveintopython-word-%%VERSION%%.zip
-%%DOCSDIR%%/download/diveintopython-xml-%%VERSION%%.zip
-%%DOCSDIR%%/dynamic_functions/index.html
-%%DOCSDIR%%/dynamic_functions/stage1.html
-%%DOCSDIR%%/dynamic_functions/stage2.html
-%%DOCSDIR%%/dynamic_functions/stage3.html
-%%DOCSDIR%%/dynamic_functions/stage4.html
-%%DOCSDIR%%/dynamic_functions/stage5.html
-%%DOCSDIR%%/dynamic_functions/stage6.html
-%%DOCSDIR%%/dynamic_functions/summary.html
-%%DOCSDIR%%/file_handling/all_together.html
-%%DOCSDIR%%/file_handling/file_objects.html
-%%DOCSDIR%%/file_handling/for_loops.html
-%%DOCSDIR%%/file_handling/index.html
-%%DOCSDIR%%/file_handling/more_on_modules.html
-%%DOCSDIR%%/file_handling/os_module.html
-%%DOCSDIR%%/file_handling/summary.html
-%%DOCSDIR%%/functional_programming/all_together.html
-%%DOCSDIR%%/functional_programming/data_centric.html
-%%DOCSDIR%%/functional_programming/dynamic_import.html
-%%DOCSDIR%%/functional_programming/filtering_lists.html
-%%DOCSDIR%%/functional_programming/finding_the_path.html
-%%DOCSDIR%%/functional_programming/index.html
-%%DOCSDIR%%/functional_programming/mapping_lists.html
-%%DOCSDIR%%/functional_programming/summary.html
-%%DOCSDIR%%/getting_to_know_python/declaring_functions.html
-%%DOCSDIR%%/getting_to_know_python/documenting_functions.html
-%%DOCSDIR%%/getting_to_know_python/everything_is_an_object.html
-%%DOCSDIR%%/getting_to_know_python/indenting_code.html
-%%DOCSDIR%%/getting_to_know_python/index.html
-%%DOCSDIR%%/getting_to_know_python/testing_modules.html
-%%DOCSDIR%%/html_processing/all_together.html
-%%DOCSDIR%%/html_processing/basehtmlprocessor.html
-%%DOCSDIR%%/html_processing/dialect.html
-%%DOCSDIR%%/html_processing/dictionary_based_string_formatting.html
-%%DOCSDIR%%/html_processing/extracting_data.html
-%%DOCSDIR%%/html_processing/index.html
-%%DOCSDIR%%/html_processing/introducing_sgmllib.html
-%%DOCSDIR%%/html_processing/locals_and_globals.html
-%%DOCSDIR%%/html_processing/quoting_attribute_values.html
-%%DOCSDIR%%/html_processing/summary.html
-%%DOCSDIR%%/http_web_services/alltogether.html
-%%DOCSDIR%%/http_web_services/debugging.html
-%%DOCSDIR%%/http_web_services/etags.html
-%%DOCSDIR%%/http_web_services/gzip_compression.html
-%%DOCSDIR%%/http_web_services/http_features.html
-%%DOCSDIR%%/http_web_services/index.html
-%%DOCSDIR%%/http_web_services/redirects.html
-%%DOCSDIR%%/http_web_services/review.html
-%%DOCSDIR%%/http_web_services/summary.html
-%%DOCSDIR%%/http_web_services/user_agent.html
-%%DOCSDIR%%/images/callouts/1.png
-%%DOCSDIR%%/images/callouts/10.png
-%%DOCSDIR%%/images/callouts/2.png
-%%DOCSDIR%%/images/callouts/3.png
-%%DOCSDIR%%/images/callouts/4.png
-%%DOCSDIR%%/images/callouts/5.png
-%%DOCSDIR%%/images/callouts/6.png
-%%DOCSDIR%%/images/callouts/7.png
-%%DOCSDIR%%/images/callouts/8.png
-%%DOCSDIR%%/images/callouts/9.png
-%%DOCSDIR%%/images/caution.png
-%%DOCSDIR%%/images/diveintopython.png
-%%DOCSDIR%%/images/dot.png
-%%DOCSDIR%%/images/important.png
-%%DOCSDIR%%/images/note.png
-%%DOCSDIR%%/images/tip.png
-%%DOCSDIR%%/images/warning.png
-%%DOCSDIR%%/index.html
-%%DOCSDIR%%/installing_python/debian.html
-%%DOCSDIR%%/installing_python/index.html
-%%DOCSDIR%%/installing_python/macos9.html
-%%DOCSDIR%%/installing_python/macosx.html
-%%DOCSDIR%%/installing_python/redhat.html
-%%DOCSDIR%%/installing_python/shell.html
-%%DOCSDIR%%/installing_python/source.html
-%%DOCSDIR%%/installing_python/summary.html
-%%DOCSDIR%%/installing_python/windows.html
-%%DOCSDIR%%/native_data_types/chef.html
-%%DOCSDIR%%/native_data_types/declaring_variables.html
-%%DOCSDIR%%/native_data_types/formatting_strings.html
-%%DOCSDIR%%/native_data_types/fudd.html
-%%DOCSDIR%%/native_data_types/index.html
-%%DOCSDIR%%/native_data_types/joining_lists.html
-%%DOCSDIR%%/native_data_types/lists.html
-%%DOCSDIR%%/native_data_types/mapping_lists.html
-%%DOCSDIR%%/native_data_types/olde.html
-%%DOCSDIR%%/native_data_types/summary.html
-%%DOCSDIR%%/native_data_types/tuples.html
-%%DOCSDIR%%/object_oriented_framework/class_attributes.html
-%%DOCSDIR%%/object_oriented_framework/defining_classes.html
-%%DOCSDIR%%/object_oriented_framework/importing_modules.html
-%%DOCSDIR%%/object_oriented_framework/index.html
-%%DOCSDIR%%/object_oriented_framework/instantiating_classes.html
-%%DOCSDIR%%/object_oriented_framework/private_functions.html
-%%DOCSDIR%%/object_oriented_framework/special_class_methods.html
-%%DOCSDIR%%/object_oriented_framework/special_class_methods2.html
-%%DOCSDIR%%/object_oriented_framework/summary.html
-%%DOCSDIR%%/object_oriented_framework/userdict.html
-%%DOCSDIR%%/performance_tuning/dictionary_lookups.html
-%%DOCSDIR%%/performance_tuning/index.html
-%%DOCSDIR%%/performance_tuning/list_operations.html
-%%DOCSDIR%%/performance_tuning/regular_expressions.html
-%%DOCSDIR%%/performance_tuning/string_manipulation.html
-%%DOCSDIR%%/performance_tuning/summary.html
-%%DOCSDIR%%/performance_tuning/timeit.html
-%%DOCSDIR%%/power_of_introspection/all_together.html
-%%DOCSDIR%%/power_of_introspection/and_or.html
-%%DOCSDIR%%/power_of_introspection/built_in_functions.html
-%%DOCSDIR%%/power_of_introspection/filtering_lists.html
-%%DOCSDIR%%/power_of_introspection/getattr.html
-%%DOCSDIR%%/power_of_introspection/index.html
-%%DOCSDIR%%/power_of_introspection/lambda_functions.html
-%%DOCSDIR%%/power_of_introspection/optional_arguments.html
-%%DOCSDIR%%/power_of_introspection/summary.html
-%%DOCSDIR%%/refactoring/handling_changing_requirements.html
-%%DOCSDIR%%/refactoring/index.html
-%%DOCSDIR%%/refactoring/postscript.html
-%%DOCSDIR%%/refactoring/refactoring.html
-%%DOCSDIR%%/refactoring/summary.html
-%%DOCSDIR%%/regular_expressions/index.html
-%%DOCSDIR%%/regular_expressions/n_m_syntax.html
-%%DOCSDIR%%/regular_expressions/phone_numbers.html
-%%DOCSDIR%%/regular_expressions/roman_numerals.html
-%%DOCSDIR%%/regular_expressions/street_addresses.html
-%%DOCSDIR%%/regular_expressions/summary.html
-%%DOCSDIR%%/regular_expressions/verbose.html
-%%DOCSDIR%%/scripts_and_streams/all_together.html
-%%DOCSDIR%%/scripts_and_streams/caching.html
-%%DOCSDIR%%/scripts_and_streams/child_nodes.html
-%%DOCSDIR%%/scripts_and_streams/command_line_arguments.html
-%%DOCSDIR%%/scripts_and_streams/handlers_by_node_type.html
-%%DOCSDIR%%/scripts_and_streams/index.html
-%%DOCSDIR%%/scripts_and_streams/stdin_stdout_stderr.html
-%%DOCSDIR%%/scripts_and_streams/summary.html
-%%DOCSDIR%%/soap_web_services/debugging.html
-%%DOCSDIR%%/soap_web_services/first_steps.html
-%%DOCSDIR%%/soap_web_services/google.html
-%%DOCSDIR%%/soap_web_services/index.html
-%%DOCSDIR%%/soap_web_services/install.html
-%%DOCSDIR%%/soap_web_services/introspection.html
-%%DOCSDIR%%/soap_web_services/summary.html
-%%DOCSDIR%%/soap_web_services/troubleshooting.html
-%%DOCSDIR%%/soap_web_services/wsdl.html
-%%DOCSDIR%%/toc/index.html
-%%DOCSDIR%%/unit_testing/diving_in.html
-%%DOCSDIR%%/unit_testing/index.html
-%%DOCSDIR%%/unit_testing/romantest.html
-%%DOCSDIR%%/unit_testing/stage_1.html
-%%DOCSDIR%%/unit_testing/stage_2.html
-%%DOCSDIR%%/unit_testing/stage_3.html
-%%DOCSDIR%%/unit_testing/stage_4.html
-%%DOCSDIR%%/unit_testing/stage_5.html
-%%DOCSDIR%%/unit_testing/testing_for_failure.html
-%%DOCSDIR%%/unit_testing/testing_for_sanity.html
-%%DOCSDIR%%/unit_testing/testing_for_success.html
-%%DOCSDIR%%/xml_processing/attributes.html
-%%DOCSDIR%%/xml_processing/index.html
-%%DOCSDIR%%/xml_processing/packages.html
-%%DOCSDIR%%/xml_processing/parsing_xml.html
-%%DOCSDIR%%/xml_processing/searching.html
-%%DOCSDIR%%/xml_processing/summary.html
-%%DOCSDIR%%/xml_processing/unicode.html
-%%EXAMPLESDIR%%/BaseHTMLProcessor.py
-%%EXAMPLESDIR%%/LICENSE.txt
-%%EXAMPLESDIR%%/apihelper.py
-%%EXAMPLESDIR%%/apihelpertest.py
-%%EXAMPLESDIR%%/argecho.py
-%%EXAMPLESDIR%%/autosize.py
-%%EXAMPLESDIR%%/builddialectexamples.py
-%%EXAMPLESDIR%%/colorize.py
-%%EXAMPLESDIR%%/dialect.py
-%%EXAMPLESDIR%%/fibonacci.py
-%%EXAMPLESDIR%%/fileinfo.py
-%%EXAMPLESDIR%%/fileinfo_fromdict.py
-%%EXAMPLESDIR%%/fullpath.py
-%%EXAMPLESDIR%%/kgp/binary.xml
-%%EXAMPLESDIR%%/kgp/husserl.xml
-%%EXAMPLESDIR%%/kgp/kant.xml
-%%EXAMPLESDIR%%/kgp/kgp.dtd
-%%EXAMPLESDIR%%/kgp/kgp.py
-%%EXAMPLESDIR%%/kgp/russiansample.xml
-%%EXAMPLESDIR%%/kgp/stderr.py
-%%EXAMPLESDIR%%/kgp/stdout.py
-%%EXAMPLESDIR%%/kgp/template.xml
-%%EXAMPLESDIR%%/kgp/test.xml
-%%EXAMPLESDIR%%/kgp/thanks.xml
-%%EXAMPLESDIR%%/kgp/toolbox.py
-%%EXAMPLESDIR%%/kgptest.py
-%%EXAMPLESDIR%%/makerealworddoc.py
-%%EXAMPLESDIR%%/odbchelper.py
-%%EXAMPLESDIR%%/odbchelpertest.py
-%%EXAMPLESDIR%%/openanything.py
-%%EXAMPLESDIR%%/parsephone.py
-%%EXAMPLESDIR%%/piglatin.py
-%%EXAMPLESDIR%%/plural-rules.en
-%%EXAMPLESDIR%%/plural.py
-%%EXAMPLESDIR%%/plural/stage1/plural1.py
-%%EXAMPLESDIR%%/plural/stage1/pluraltest1.py
-%%EXAMPLESDIR%%/plural/stage2/plural2.py
-%%EXAMPLESDIR%%/plural/stage2/pluraltest2.py
-%%EXAMPLESDIR%%/plural/stage3/plural3.py
-%%EXAMPLESDIR%%/plural/stage3/pluraltest3.py
-%%EXAMPLESDIR%%/plural/stage4/plural4.py
-%%EXAMPLESDIR%%/plural/stage4/pluraltest4.py
-%%EXAMPLESDIR%%/plural/stage5/plural5.py
-%%EXAMPLESDIR%%/plural/stage5/pluraltest5.py
-%%EXAMPLESDIR%%/plural/stage5/rules.en
-%%EXAMPLESDIR%%/plural/stage6/plural6.py
-%%EXAMPLESDIR%%/plural/stage6/pluraltest6.py
-%%EXAMPLESDIR%%/plural/stage6/rules.en
-%%EXAMPLESDIR%%/pluraltest.py
-%%EXAMPLESDIR%%/pyfontify.py
-%%EXAMPLESDIR%%/regression.py
-%%EXAMPLESDIR%%/roman.py
-%%EXAMPLESDIR%%/roman/stage1/roman1.py
-%%EXAMPLESDIR%%/roman/stage1/romantest1.py
-%%EXAMPLESDIR%%/roman/stage2/roman2.py
-%%EXAMPLESDIR%%/roman/stage2/romantest2.py
-%%EXAMPLESDIR%%/roman/stage3/roman3.py
-%%EXAMPLESDIR%%/roman/stage3/romantest3.py
-%%EXAMPLESDIR%%/roman/stage4/roman4.py
-%%EXAMPLESDIR%%/roman/stage4/romantest4.py
-%%EXAMPLESDIR%%/roman/stage5/roman5.py
-%%EXAMPLESDIR%%/roman/stage5/romantest5.py
-%%EXAMPLESDIR%%/roman/stage6/roman61.py
-%%EXAMPLESDIR%%/roman/stage6/roman62.py
-%%EXAMPLESDIR%%/roman/stage6/romantest61.py
-%%EXAMPLESDIR%%/roman/stage6/romantest62.py
-%%EXAMPLESDIR%%/roman/stage7/roman71.py
-%%EXAMPLESDIR%%/roman/stage7/roman72.py
-%%EXAMPLESDIR%%/roman/stage7/romantest71.py
-%%EXAMPLESDIR%%/roman/stage7/romantest72.py
-%%EXAMPLESDIR%%/roman/stage8/roman81.py
-%%EXAMPLESDIR%%/roman/stage8/roman82.py
-%%EXAMPLESDIR%%/roman/stage8/roman83.py
-%%EXAMPLESDIR%%/roman/stage8/romantest81.py
-%%EXAMPLESDIR%%/roman/stage8/romantest82.py
-%%EXAMPLESDIR%%/roman/stage8/romantest83.py
-%%EXAMPLESDIR%%/roman/stage9/roman9.py
-%%EXAMPLESDIR%%/roman/stage9/romantest9.py
-%%EXAMPLESDIR%%/romantest.py
-%%EXAMPLESDIR%%/search.py
-%%EXAMPLESDIR%%/soundex.py
-%%EXAMPLESDIR%%/soundex/stage1/soundex1a.py
-%%EXAMPLESDIR%%/soundex/stage1/soundex1b.py
-%%EXAMPLESDIR%%/soundex/stage1/soundex1c.py
-%%EXAMPLESDIR%%/soundex/stage1/soundex1d.py
-%%EXAMPLESDIR%%/soundex/stage1/soundex1e.py
-%%EXAMPLESDIR%%/soundex/stage2/soundex2a.py
-%%EXAMPLESDIR%%/soundex/stage2/soundex2b.py
-%%EXAMPLESDIR%%/soundex/stage2/soundex2c.py
-%%EXAMPLESDIR%%/soundex/stage3/soundex3a.py
-%%EXAMPLESDIR%%/soundex/stage3/soundex3b.py
-%%EXAMPLESDIR%%/soundex/stage3/soundex3c.py
-%%EXAMPLESDIR%%/soundex/stage3/soundex3d.py
-%%EXAMPLESDIR%%/soundex/stage4/soundex4a.py
-%%EXAMPLESDIR%%/soundex/stage4/soundex4b.py
-%%EXAMPLESDIR%%/soundex/stage4/soundex4c.py
-%%EXAMPLESDIR%%/soundex/stage4/soundex4d.py
-%%EXAMPLESDIR%%/soundextest.py
-%%EXAMPLESDIR%%/statsout.py
-%%EXAMPLESDIR%%/unicode2koi8r.py
-%%EXAMPLESDIR%%/urllister.py
-@dirrm %%DOCSDIR%%/xml_processing
-@dirrm %%DOCSDIR%%/unit_testing
-@dirrm %%DOCSDIR%%/toc
-@dirrm %%DOCSDIR%%/soap_web_services
-@dirrm %%DOCSDIR%%/scripts_and_streams
-@dirrm %%DOCSDIR%%/regular_expressions
-@dirrm %%DOCSDIR%%/refactoring
-@dirrm %%DOCSDIR%%/power_of_introspection
-@dirrm %%DOCSDIR%%/performance_tuning
-@dirrm %%DOCSDIR%%/object_oriented_framework
-@dirrm %%DOCSDIR%%/native_data_types
-@dirrm %%DOCSDIR%%/installing_python
-@dirrm %%DOCSDIR%%/images/callouts
-@dirrm %%DOCSDIR%%/images
-@dirrm %%DOCSDIR%%/http_web_services
-@dirrm %%DOCSDIR%%/html_processing
-@dirrm %%DOCSDIR%%/getting_to_know_python
-@dirrm %%DOCSDIR%%/functional_programming
-@dirrm %%DOCSDIR%%/file_handling
-@dirrm %%DOCSDIR%%/dynamic_functions
-@dirrm %%DOCSDIR%%/download
-@dirrm %%DOCSDIR%%/appendix
+%%WORD%%%%DOCSDIR%%/diveintopython.doc
+%%PDF%%%%DOCSDIR%%/diveintopython.pdf
+%%TEXT%%%%DOCSDIR%%/diveintopython.txt
+%%HTML%%%%DOCSDIR%%/html/appendix/about.html
+%%HTML%%%%DOCSDIR%%/html/appendix/abstracts.html
+%%HTML%%%%DOCSDIR%%/html/appendix/examples.html
+%%HTML%%%%DOCSDIR%%/html/appendix/fdl.html
+%%HTML%%%%DOCSDIR%%/html/appendix/fdl_aggregation.html
+%%HTML%%%%DOCSDIR%%/html/appendix/fdl_applicability.html
+%%HTML%%%%DOCSDIR%%/html/appendix/fdl_collections.html
+%%HTML%%%%DOCSDIR%%/html/appendix/fdl_combining.html
+%%HTML%%%%DOCSDIR%%/html/appendix/fdl_copying.html
+%%HTML%%%%DOCSDIR%%/html/appendix/fdl_copyinginquantity.html
+%%HTML%%%%DOCSDIR%%/html/appendix/fdl_future.html
+%%HTML%%%%DOCSDIR%%/html/appendix/fdl_howto.html
+%%HTML%%%%DOCSDIR%%/html/appendix/fdl_modifications.html
+%%HTML%%%%DOCSDIR%%/html/appendix/fdl_termination.html
+%%HTML%%%%DOCSDIR%%/html/appendix/fdl_translation.html
+%%HTML%%%%DOCSDIR%%/html/appendix/furtherreading.html
+%%HTML%%%%DOCSDIR%%/html/appendix/history.html
+%%HTML%%%%DOCSDIR%%/html/appendix/license.html
+%%HTML%%%%DOCSDIR%%/html/appendix/license_terms.html
+%%HTML%%%%DOCSDIR%%/html/appendix/tips.html
+%%HTML%%%%DOCSDIR%%/html/diveintopython.css
+%%HTML_FLAT%%%%DOCSDIR%%/html/diveintopython.html
+%%HTML%%%%DOCSDIR%%/html/dynamic_functions/index.html
+%%HTML%%%%DOCSDIR%%/html/dynamic_functions/stage1.html
+%%HTML%%%%DOCSDIR%%/html/dynamic_functions/stage2.html
+%%HTML%%%%DOCSDIR%%/html/dynamic_functions/stage3.html
+%%HTML%%%%DOCSDIR%%/html/dynamic_functions/stage4.html
+%%HTML%%%%DOCSDIR%%/html/dynamic_functions/stage5.html
+%%HTML%%%%DOCSDIR%%/html/dynamic_functions/stage6.html
+%%HTML%%%%DOCSDIR%%/html/dynamic_functions/summary.html
+%%HTML%%%%DOCSDIR%%/html/file_handling/all_together.html
+%%HTML%%%%DOCSDIR%%/html/file_handling/file_objects.html
+%%HTML%%%%DOCSDIR%%/html/file_handling/for_loops.html
+%%HTML%%%%DOCSDIR%%/html/file_handling/index.html
+%%HTML%%%%DOCSDIR%%/html/file_handling/more_on_modules.html
+%%HTML%%%%DOCSDIR%%/html/file_handling/os_module.html
+%%HTML%%%%DOCSDIR%%/html/file_handling/summary.html
+%%HTML%%%%DOCSDIR%%/html/functional_programming/all_together.html
+%%HTML%%%%DOCSDIR%%/html/functional_programming/data_centric.html
+%%HTML%%%%DOCSDIR%%/html/functional_programming/dynamic_import.html
+%%HTML%%%%DOCSDIR%%/html/functional_programming/filtering_lists.html
+%%HTML%%%%DOCSDIR%%/html/functional_programming/finding_the_path.html
+%%HTML%%%%DOCSDIR%%/html/functional_programming/index.html
+%%HTML%%%%DOCSDIR%%/html/functional_programming/mapping_lists.html
+%%HTML%%%%DOCSDIR%%/html/functional_programming/summary.html
+%%HTML%%%%DOCSDIR%%/html/getting_to_know_python/declaring_functions.html
+%%HTML%%%%DOCSDIR%%/html/getting_to_know_python/documenting_functions.html
+%%HTML%%%%DOCSDIR%%/html/getting_to_know_python/everything_is_an_object.html
+%%HTML%%%%DOCSDIR%%/html/getting_to_know_python/indenting_code.html
+%%HTML%%%%DOCSDIR%%/html/getting_to_know_python/index.html
+%%HTML%%%%DOCSDIR%%/html/getting_to_know_python/testing_modules.html
+%%HTML%%%%DOCSDIR%%/html/history.xml
+%%HTML%%%%DOCSDIR%%/html/html_processing/all_together.html
+%%HTML%%%%DOCSDIR%%/html/html_processing/basehtmlprocessor.html
+%%HTML%%%%DOCSDIR%%/html/html_processing/dialect.html
+%%HTML%%%%DOCSDIR%%/html/html_processing/dictionary_based_string_formatting.html
+%%HTML%%%%DOCSDIR%%/html/html_processing/extracting_data.html
+%%HTML%%%%DOCSDIR%%/html/html_processing/index.html
+%%HTML%%%%DOCSDIR%%/html/html_processing/introducing_sgmllib.html
+%%HTML%%%%DOCSDIR%%/html/html_processing/locals_and_globals.html
+%%HTML%%%%DOCSDIR%%/html/html_processing/quoting_attribute_values.html
+%%HTML%%%%DOCSDIR%%/html/html_processing/summary.html
+%%HTML%%%%DOCSDIR%%/html/http_web_services/alltogether.html
+%%HTML%%%%DOCSDIR%%/html/http_web_services/debugging.html
+%%HTML%%%%DOCSDIR%%/html/http_web_services/etags.html
+%%HTML%%%%DOCSDIR%%/html/http_web_services/gzip_compression.html
+%%HTML%%%%DOCSDIR%%/html/http_web_services/http_features.html
+%%HTML%%%%DOCSDIR%%/html/http_web_services/index.html
+%%HTML%%%%DOCSDIR%%/html/http_web_services/redirects.html
+%%HTML%%%%DOCSDIR%%/html/http_web_services/review.html
+%%HTML%%%%DOCSDIR%%/html/http_web_services/summary.html
+%%HTML%%%%DOCSDIR%%/html/http_web_services/user_agent.html
+%%IMAGES%%%%DOCSDIR%%/html/images/callouts/1.png
+%%IMAGES%%%%DOCSDIR%%/html/images/callouts/10.png
+%%IMAGES%%%%DOCSDIR%%/html/images/callouts/2.png
+%%IMAGES%%%%DOCSDIR%%/html/images/callouts/3.png
+%%IMAGES%%%%DOCSDIR%%/html/images/callouts/4.png
+%%IMAGES%%%%DOCSDIR%%/html/images/callouts/5.png
+%%IMAGES%%%%DOCSDIR%%/html/images/callouts/6.png
+%%IMAGES%%%%DOCSDIR%%/html/images/callouts/7.png
+%%IMAGES%%%%DOCSDIR%%/html/images/callouts/8.png
+%%IMAGES%%%%DOCSDIR%%/html/images/callouts/9.png
+%%IMAGES%%%%DOCSDIR%%/html/images/caution.png
+%%IMAGES%%%%DOCSDIR%%/html/images/diveintopython.png
+%%IMAGES%%%%DOCSDIR%%/html/images/dot.png
+%%IMAGES%%%%DOCSDIR%%/html/images/important.png
+%%IMAGES%%%%DOCSDIR%%/html/images/note.png
+%%IMAGES%%%%DOCSDIR%%/html/images/tip.png
+%%IMAGES%%%%DOCSDIR%%/html/images/warning.png
+%%HTML%%%%DOCSDIR%%/html/index.html
+%%HTML%%%%DOCSDIR%%/html/installing_python/debian.html
+%%HTML%%%%DOCSDIR%%/html/installing_python/index.html
+%%HTML%%%%DOCSDIR%%/html/installing_python/macos9.html
+%%HTML%%%%DOCSDIR%%/html/installing_python/macosx.html
+%%HTML%%%%DOCSDIR%%/html/installing_python/redhat.html
+%%HTML%%%%DOCSDIR%%/html/installing_python/shell.html
+%%HTML%%%%DOCSDIR%%/html/installing_python/source.html
+%%HTML%%%%DOCSDIR%%/html/installing_python/summary.html
+%%HTML%%%%DOCSDIR%%/html/installing_python/windows.html
+%%HTML%%%%DOCSDIR%%/html/native_data_types/chef.html
+%%HTML%%%%DOCSDIR%%/html/native_data_types/declaring_variables.html
+%%HTML%%%%DOCSDIR%%/html/native_data_types/formatting_strings.html
+%%HTML%%%%DOCSDIR%%/html/native_data_types/fudd.html
+%%HTML%%%%DOCSDIR%%/html/native_data_types/index.html
+%%HTML%%%%DOCSDIR%%/html/native_data_types/joining_lists.html
+%%HTML%%%%DOCSDIR%%/html/native_data_types/lists.html
+%%HTML%%%%DOCSDIR%%/html/native_data_types/mapping_lists.html
+%%HTML%%%%DOCSDIR%%/html/native_data_types/olde.html
+%%HTML%%%%DOCSDIR%%/html/native_data_types/summary.html
+%%HTML%%%%DOCSDIR%%/html/native_data_types/tuples.html
+%%HTML%%%%DOCSDIR%%/html/object_oriented_framework/class_attributes.html
+%%HTML%%%%DOCSDIR%%/html/object_oriented_framework/defining_classes.html
+%%HTML%%%%DOCSDIR%%/html/object_oriented_framework/importing_modules.html
+%%HTML%%%%DOCSDIR%%/html/object_oriented_framework/index.html
+%%HTML%%%%DOCSDIR%%/html/object_oriented_framework/instantiating_classes.html
+%%HTML%%%%DOCSDIR%%/html/object_oriented_framework/private_functions.html
+%%HTML%%%%DOCSDIR%%/html/object_oriented_framework/special_class_methods.html
+%%HTML%%%%DOCSDIR%%/html/object_oriented_framework/special_class_methods2.html
+%%HTML%%%%DOCSDIR%%/html/object_oriented_framework/summary.html
+%%HTML%%%%DOCSDIR%%/html/object_oriented_framework/userdict.html
+%%HTML%%%%DOCSDIR%%/html/performance_tuning/dictionary_lookups.html
+%%HTML%%%%DOCSDIR%%/html/performance_tuning/index.html
+%%HTML%%%%DOCSDIR%%/html/performance_tuning/list_operations.html
+%%HTML%%%%DOCSDIR%%/html/performance_tuning/regular_expressions.html
+%%HTML%%%%DOCSDIR%%/html/performance_tuning/string_manipulation.html
+%%HTML%%%%DOCSDIR%%/html/performance_tuning/summary.html
+%%HTML%%%%DOCSDIR%%/html/performance_tuning/timeit.html
+%%HTML%%%%DOCSDIR%%/html/power_of_introspection/all_together.html
+%%HTML%%%%DOCSDIR%%/html/power_of_introspection/and_or.html
+%%HTML%%%%DOCSDIR%%/html/power_of_introspection/built_in_functions.html
+%%HTML%%%%DOCSDIR%%/html/power_of_introspection/filtering_lists.html
+%%HTML%%%%DOCSDIR%%/html/power_of_introspection/getattr.html
+%%HTML%%%%DOCSDIR%%/html/power_of_introspection/index.html
+%%HTML%%%%DOCSDIR%%/html/power_of_introspection/lambda_functions.html
+%%HTML%%%%DOCSDIR%%/html/power_of_introspection/optional_arguments.html
+%%HTML%%%%DOCSDIR%%/html/power_of_introspection/summary.html
+%%HTML%%%%DOCSDIR%%/html/refactoring/handling_changing_requirements.html
+%%HTML%%%%DOCSDIR%%/html/refactoring/index.html
+%%HTML%%%%DOCSDIR%%/html/refactoring/postscript.html
+%%HTML%%%%DOCSDIR%%/html/refactoring/refactoring.html
+%%HTML%%%%DOCSDIR%%/html/refactoring/summary.html
+%%HTML%%%%DOCSDIR%%/html/regular_expressions/index.html
+%%HTML%%%%DOCSDIR%%/html/regular_expressions/n_m_syntax.html
+%%HTML%%%%DOCSDIR%%/html/regular_expressions/phone_numbers.html
+%%HTML%%%%DOCSDIR%%/html/regular_expressions/roman_numerals.html
+%%HTML%%%%DOCSDIR%%/html/regular_expressions/street_addresses.html
+%%HTML%%%%DOCSDIR%%/html/regular_expressions/summary.html
+%%HTML%%%%DOCSDIR%%/html/regular_expressions/verbose.html
+%%HTML%%%%DOCSDIR%%/html/scripts_and_streams/all_together.html
+%%HTML%%%%DOCSDIR%%/html/scripts_and_streams/caching.html
+%%HTML%%%%DOCSDIR%%/html/scripts_and_streams/child_nodes.html
+%%HTML%%%%DOCSDIR%%/html/scripts_and_streams/command_line_arguments.html
+%%HTML%%%%DOCSDIR%%/html/scripts_and_streams/handlers_by_node_type.html
+%%HTML%%%%DOCSDIR%%/html/scripts_and_streams/index.html
+%%HTML%%%%DOCSDIR%%/html/scripts_and_streams/stdin_stdout_stderr.html
+%%HTML%%%%DOCSDIR%%/html/scripts_and_streams/summary.html
+%%HTML%%%%DOCSDIR%%/html/soap_web_services/debugging.html
+%%HTML%%%%DOCSDIR%%/html/soap_web_services/first_steps.html
+%%HTML%%%%DOCSDIR%%/html/soap_web_services/google.html
+%%HTML%%%%DOCSDIR%%/html/soap_web_services/index.html
+%%HTML%%%%DOCSDIR%%/html/soap_web_services/install.html
+%%HTML%%%%DOCSDIR%%/html/soap_web_services/introspection.html
+%%HTML%%%%DOCSDIR%%/html/soap_web_services/summary.html
+%%HTML%%%%DOCSDIR%%/html/soap_web_services/troubleshooting.html
+%%HTML%%%%DOCSDIR%%/html/soap_web_services/wsdl.html
+%%HTML%%%%DOCSDIR%%/html/toc/index.html
+%%HTML%%%%DOCSDIR%%/html/unit_testing/diving_in.html
+%%HTML%%%%DOCSDIR%%/html/unit_testing/index.html
+%%HTML%%%%DOCSDIR%%/html/unit_testing/romantest.html
+%%HTML%%%%DOCSDIR%%/html/unit_testing/stage_1.html
+%%HTML%%%%DOCSDIR%%/html/unit_testing/stage_2.html
+%%HTML%%%%DOCSDIR%%/html/unit_testing/stage_3.html
+%%HTML%%%%DOCSDIR%%/html/unit_testing/stage_4.html
+%%HTML%%%%DOCSDIR%%/html/unit_testing/stage_5.html
+%%HTML%%%%DOCSDIR%%/html/unit_testing/testing_for_failure.html
+%%HTML%%%%DOCSDIR%%/html/unit_testing/testing_for_sanity.html
+%%HTML%%%%DOCSDIR%%/html/unit_testing/testing_for_success.html
+%%HTML%%%%DOCSDIR%%/html/xml_processing/attributes.html
+%%HTML%%%%DOCSDIR%%/html/xml_processing/index.html
+%%HTML%%%%DOCSDIR%%/html/xml_processing/packages.html
+%%HTML%%%%DOCSDIR%%/html/xml_processing/parsing_xml.html
+%%HTML%%%%DOCSDIR%%/html/xml_processing/searching.html
+%%HTML%%%%DOCSDIR%%/html/xml_processing/summary.html
+%%HTML%%%%DOCSDIR%%/html/xml_processing/unicode.html
+%%DOCSDIR%%/py/BaseHTMLProcessor.py
+%%DOCSDIR%%/py/LICENSE.txt
+%%DOCSDIR%%/py/apihelper.py
+%%DOCSDIR%%/py/apihelpertest.py
+%%DOCSDIR%%/py/argecho.py
+%%DOCSDIR%%/py/autosize.py
+%%DOCSDIR%%/py/builddialectexamples.py
+%%DOCSDIR%%/py/colorize.py
+%%DOCSDIR%%/py/dialect.py
+%%DOCSDIR%%/py/fibonacci.py
+%%DOCSDIR%%/py/fileinfo.py
+%%DOCSDIR%%/py/fileinfo_fromdict.py
+%%DOCSDIR%%/py/fullpath.py
+%%DOCSDIR%%/py/kgp/binary.xml
+%%DOCSDIR%%/py/kgp/husserl.xml
+%%DOCSDIR%%/py/kgp/kant.xml
+%%DOCSDIR%%/py/kgp/kgp.dtd
+%%DOCSDIR%%/py/kgp/kgp.py
+%%DOCSDIR%%/py/kgp/russiansample.xml
+%%DOCSDIR%%/py/kgp/stderr.py
+%%DOCSDIR%%/py/kgp/stdout.py
+%%DOCSDIR%%/py/kgp/template.xml
+%%DOCSDIR%%/py/kgp/test.xml
+%%DOCSDIR%%/py/kgp/thanks.xml
+%%DOCSDIR%%/py/kgp/toolbox.py
+%%DOCSDIR%%/py/kgptest.py
+%%DOCSDIR%%/py/makerealworddoc.py
+%%DOCSDIR%%/py/odbchelper.py
+%%DOCSDIR%%/py/odbchelpertest.py
+%%DOCSDIR%%/py/openanything.py
+%%DOCSDIR%%/py/parsephone.py
+%%DOCSDIR%%/py/piglatin.py
+%%DOCSDIR%%/py/plural-rules.en
+%%DOCSDIR%%/py/plural.py
+%%DOCSDIR%%/py/plural/stage1/plural1.py
+%%DOCSDIR%%/py/plural/stage1/pluraltest1.py
+%%DOCSDIR%%/py/plural/stage2/plural2.py
+%%DOCSDIR%%/py/plural/stage2/pluraltest2.py
+%%DOCSDIR%%/py/plural/stage3/plural3.py
+%%DOCSDIR%%/py/plural/stage3/pluraltest3.py
+%%DOCSDIR%%/py/plural/stage4/plural4.py
+%%DOCSDIR%%/py/plural/stage4/pluraltest4.py
+%%DOCSDIR%%/py/plural/stage5/plural5.py
+%%DOCSDIR%%/py/plural/stage5/pluraltest5.py
+%%DOCSDIR%%/py/plural/stage5/rules.en
+%%DOCSDIR%%/py/plural/stage6/plural6.py
+%%DOCSDIR%%/py/plural/stage6/pluraltest6.py
+%%DOCSDIR%%/py/plural/stage6/rules.en
+%%DOCSDIR%%/py/pluraltest.py
+%%DOCSDIR%%/py/pyfontify.py
+%%DOCSDIR%%/py/regression.py
+%%DOCSDIR%%/py/roman.py
+%%DOCSDIR%%/py/roman/stage1/roman1.py
+%%DOCSDIR%%/py/roman/stage1/romantest1.py
+%%DOCSDIR%%/py/roman/stage2/roman2.py
+%%DOCSDIR%%/py/roman/stage2/romantest2.py
+%%DOCSDIR%%/py/roman/stage3/roman3.py
+%%DOCSDIR%%/py/roman/stage3/romantest3.py
+%%DOCSDIR%%/py/roman/stage4/roman4.py
+%%DOCSDIR%%/py/roman/stage4/romantest4.py
+%%DOCSDIR%%/py/roman/stage5/roman5.py
+%%DOCSDIR%%/py/roman/stage5/romantest5.py
+%%DOCSDIR%%/py/roman/stage6/roman61.py
+%%DOCSDIR%%/py/roman/stage6/roman62.py
+%%DOCSDIR%%/py/roman/stage6/romantest61.py
+%%DOCSDIR%%/py/roman/stage6/romantest62.py
+%%DOCSDIR%%/py/roman/stage7/roman71.py
+%%DOCSDIR%%/py/roman/stage7/roman72.py
+%%DOCSDIR%%/py/roman/stage7/romantest71.py
+%%DOCSDIR%%/py/roman/stage7/romantest72.py
+%%DOCSDIR%%/py/roman/stage8/roman81.py
+%%DOCSDIR%%/py/roman/stage8/roman82.py
+%%DOCSDIR%%/py/roman/stage8/roman83.py
+%%DOCSDIR%%/py/roman/stage8/romantest81.py
+%%DOCSDIR%%/py/roman/stage8/romantest82.py
+%%DOCSDIR%%/py/roman/stage8/romantest83.py
+%%DOCSDIR%%/py/roman/stage9/roman9.py
+%%DOCSDIR%%/py/roman/stage9/romantest9.py
+%%DOCSDIR%%/py/romantest.py
+%%DOCSDIR%%/py/search.py
+%%DOCSDIR%%/py/soundex.py
+%%DOCSDIR%%/py/soundex/stage1/soundex1a.py
+%%DOCSDIR%%/py/soundex/stage1/soundex1b.py
+%%DOCSDIR%%/py/soundex/stage1/soundex1c.py
+%%DOCSDIR%%/py/soundex/stage1/soundex1d.py
+%%DOCSDIR%%/py/soundex/stage1/soundex1e.py
+%%DOCSDIR%%/py/soundex/stage2/soundex2a.py
+%%DOCSDIR%%/py/soundex/stage2/soundex2b.py
+%%DOCSDIR%%/py/soundex/stage2/soundex2c.py
+%%DOCSDIR%%/py/soundex/stage3/soundex3a.py
+%%DOCSDIR%%/py/soundex/stage3/soundex3b.py
+%%DOCSDIR%%/py/soundex/stage3/soundex3c.py
+%%DOCSDIR%%/py/soundex/stage3/soundex3d.py
+%%DOCSDIR%%/py/soundex/stage4/soundex4a.py
+%%DOCSDIR%%/py/soundex/stage4/soundex4b.py
+%%DOCSDIR%%/py/soundex/stage4/soundex4c.py
+%%DOCSDIR%%/py/soundex/stage4/soundex4d.py
+%%DOCSDIR%%/py/soundextest.py
+%%DOCSDIR%%/py/statsout.py
+%%DOCSDIR%%/py/unicode2koi8r.py
+%%DOCSDIR%%/py/urllister.py
+%%HTML%%@dirrm %%DOCSDIR%%/html/appendix
+%%HTML%%@dirrm %%DOCSDIR%%/html/dynamic_functions
+%%HTML%%@dirrm %%DOCSDIR%%/html/file_handling
+%%HTML%%@dirrm %%DOCSDIR%%/html/functional_programming
+%%HTML%%@dirrm %%DOCSDIR%%/html/getting_to_know_python
+%%HTML%%@dirrm %%DOCSDIR%%/html/html_processing
+%%HTML%%@dirrm %%DOCSDIR%%/html/http_web_services
+%%IMAGES%%@dirrmtry %%DOCSDIR%%/html/images/callouts
+%%IMAGES%%@dirrmtry %%DOCSDIR%%/html/images
+%%HTML%%@dirrm %%DOCSDIR%%/html/installing_python
+%%HTML%%@dirrm %%DOCSDIR%%/html/native_data_types
+%%HTML%%@dirrm %%DOCSDIR%%/html/object_oriented_framework
+%%HTML%%@dirrm %%DOCSDIR%%/html/performance_tuning
+%%HTML%%@dirrm %%DOCSDIR%%/html/power_of_introspection
+%%HTML%%@dirrm %%DOCSDIR%%/html/refactoring
+%%HTML%%@dirrm %%DOCSDIR%%/html/regular_expressions
+%%HTML%%@dirrm %%DOCSDIR%%/html/scripts_and_streams
+%%HTML%%@dirrm %%DOCSDIR%%/html/soap_web_services
+%%HTML%%@dirrm %%DOCSDIR%%/html/toc
+%%HTML%%@dirrm %%DOCSDIR%%/html/unit_testing
+%%HTML%%@dirrm %%DOCSDIR%%/html/xml_processing
+%%IMAGES%%@dirrmtry %%DOCSDIR%%/html
+@dirrm %%DOCSDIR%%/py/kgp
+@dirrm %%DOCSDIR%%/py/plural/stage1
+@dirrm %%DOCSDIR%%/py/plural/stage2
+@dirrm %%DOCSDIR%%/py/plural/stage3
+@dirrm %%DOCSDIR%%/py/plural/stage4
+@dirrm %%DOCSDIR%%/py/plural/stage5
+@dirrm %%DOCSDIR%%/py/plural/stage6
+@dirrm %%DOCSDIR%%/py/plural
+@dirrm %%DOCSDIR%%/py/roman/stage1
+@dirrm %%DOCSDIR%%/py/roman/stage2
+@dirrm %%DOCSDIR%%/py/roman/stage3
+@dirrm %%DOCSDIR%%/py/roman/stage4
+@dirrm %%DOCSDIR%%/py/roman/stage5
+@dirrm %%DOCSDIR%%/py/roman/stage6
+@dirrm %%DOCSDIR%%/py/roman/stage7
+@dirrm %%DOCSDIR%%/py/roman/stage8
+@dirrm %%DOCSDIR%%/py/roman/stage9
+@dirrm %%DOCSDIR%%/py/roman
+@dirrm %%DOCSDIR%%/py/soundex/stage1
+@dirrm %%DOCSDIR%%/py/soundex/stage2
+@dirrm %%DOCSDIR%%/py/soundex/stage3
+@dirrm %%DOCSDIR%%/py/soundex/stage4
+@dirrm %%DOCSDIR%%/py/soundex
+@dirrm %%DOCSDIR%%/py
 @dirrm %%DOCSDIR%%
-@dirrm %%EXAMPLESDIR%%/soundex/stage4
-@dirrm %%EXAMPLESDIR%%/soundex/stage3
-@dirrm %%EXAMPLESDIR%%/soundex/stage2
-@dirrm %%EXAMPLESDIR%%/soundex/stage1
-@dirrm %%EXAMPLESDIR%%/soundex
-@dirrm %%EXAMPLESDIR%%/roman/stage9
-@dirrm %%EXAMPLESDIR%%/roman/stage8
-@dirrm %%EXAMPLESDIR%%/roman/stage7
-@dirrm %%EXAMPLESDIR%%/roman/stage6
-@dirrm %%EXAMPLESDIR%%/roman/stage5
-@dirrm %%EXAMPLESDIR%%/roman/stage4
-@dirrm %%EXAMPLESDIR%%/roman/stage3
-@dirrm %%EXAMPLESDIR%%/roman/stage2
-@dirrm %%EXAMPLESDIR%%/roman/stage1
-@dirrm %%EXAMPLESDIR%%/roman
-@dirrm %%EXAMPLESDIR%%/plural/stage6
-@dirrm %%EXAMPLESDIR%%/plural/stage5
-@dirrm %%EXAMPLESDIR%%/plural/stage4
-@dirrm %%EXAMPLESDIR%%/plural/stage3
-@dirrm %%EXAMPLESDIR%%/plural/stage2
-@dirrm %%EXAMPLESDIR%%/plural/stage1
-@dirrm %%EXAMPLESDIR%%/plural
-@dirrm %%EXAMPLESDIR%%/kgp
-@dirrm %%EXAMPLESDIR%%
