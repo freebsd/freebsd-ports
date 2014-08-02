@@ -31,6 +31,9 @@ USE_CSTD=	gnu89
 SUB_FILES=	tome4
 MAKE_JOBS_UNSAFE=yes
 
+post-patch:
+	@${REINPLACE_CMD} -e 's|gcc|${CC}|' ${WRKSRC}/src/lua/Makefile \
+		${WRKSRC}/src/luabitop/Makefile ${WRKSRC}/build/te4core.lua
 pre-build:
 	@${REINPLACE_CMD} 's|%%LOCALBASE%%|${LOCALBASE}|' ${WRKSRC}/premake4.lua
 	(cd ${WRKSRC} && premake4 gmake)
