@@ -14,27 +14,37 @@ COMMENT=	Dialect/harmony of Standard ML of New Jersey and Objective Caml
 WRKSRC=		${WRKDIR}/${PORTNAME}-0.92
 
 ONLY_FOR_ARCHS=	i386
+MAKE_JOBS_UNSAFE=	yes
 
 HAS_CONFIGURE=	yes
-CONFIGURE_ARGS+=	\
-		-prefix ${PREFIX}
+CONFIGURE_ARGS+=--prefix ${PREFIX}
 
 USES=		gmake
 ALL_TARGET=	all opt opt.opt
 INSTALL_TARGET=	install installopt
 
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
+OPTIONS_DEFINE=	DOCS
+
+post-patch:
+	@${FIND} ${WRKSRC} -name Makefile | ${XARGS} \
+		${REINPLACE_CMD} -e 's|gcc|${CC}|'
+	@${REINPLACE_CMD} -e '/freebsd/s/3-9/0-9/; \
+		/aspp=/s|gcc|${CC}|; /mksharedlib=/s|gcc|${CC}|' \
+		${WRKSRC}/configure
+
+do-install:
+	${DO_MAKE_BUILD} -C ${WRKSRC} PREFIX="${STAGEDIR}${PREFIX}" ${INSTALL_TARGET}
+	@${REINPLACE_CMD} -i '' -e 's|${STAGEDIR}||' ${STAGEDIR}${PREFIX}/lib/nml/ld.conf
 
 post-install:
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/Changes ${WRKSRC}/LICENSE ${WRKSRC}/README ${DOCSDIR}
-	${MKDIR} ${DATADIR}/contrib/emacs
-	${MKDIR} ${DATADIR}/contrib/vim
-	${INSTALL_DATA} ${WRKSRC}/contrib/emacs/* ${DATADIR}/contrib/emacs
-	${INSTALL_DATA} ${WRKSRC}/contrib/vim/* ${DATADIR}/contrib/vim
-.endif
-	@${STRIP_CMD} ${PREFIX}/bin/ncamlrun
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/Changes ${WRKSRC}/LICENSE ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DATADIR}/contrib/emacs
+	@${MKDIR} ${STAGEDIR}${DATADIR}/contrib/vim
+	${INSTALL_DATA} ${WRKSRC}/contrib/emacs/* ${STAGEDIR}${DATADIR}/contrib/emacs
+	${INSTALL_DATA} ${WRKSRC}/contrib/vim/* ${STAGEDIR}${DATADIR}/contrib/vim
+.for i in ncamlrun nmlc nlex nmakegen nyacc nmlo
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/$i
+.endfor
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
