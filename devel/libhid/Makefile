@@ -3,7 +3,7 @@
 
 PORTNAME=	libhid
 PORTVERSION=	0.2.16
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	http://alioth.debian.org/frs/download.php/1958/
 
