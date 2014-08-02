@@ -1,5 +1,5 @@
---- Makefile.in.orig	Sun Feb 29 15:42:32 2004
-+++ Makefile.in	Mon Sep 15 01:39:29 2008
+--- ./Makefile.in.orig	2004-02-29 09:42:32.000000000 -0500
++++ ./Makefile.in	2014-08-02 10:45:11.000000000 -0400
 @@ -9,10 +9,12 @@
  datadir		= @datadir@
  localstatedir   = @localstatedir@
@@ -15,7 +15,7 @@
  		  @CURSES@
  LDFLAGS		= @LDFLAGS@
  LIBS            = @LIBS@
-@@ -32,15 +34,15 @@
+@@ -32,15 +34,13 @@
  	$(CC) $(LDFLAGS) -o enigma $(ENIGMA) $(LIBS)
  
  install: enigma
@@ -23,18 +23,16 @@
 -	-chown root.games $(bindir)/enigma && chmod 2755 $(bindir)/enigma
 -	#$(INSTALL_DATA) $(srcdir)/enigma.1 $(mandir)/man1/enigma.1
 -	mkdir -p $(datadir)/enigma
-+	$(INSTALL_PROGRAM) enigma $(bindir)/$(PACKAGE_NAME)
-+	-chown root:games $(bindir)/$(PACKAGE_NAME) && chmod 2755 $(bindir)/$(PACKAGE_NAME)
-+	#$(INSTALL_DATA) $(srcdir)/enigma.1 $(mandir)/man1/$(PACKAGE_NAME).1
-+	mkdir -p $(datadir)/$(PACKAGE_NAME)
++	$(INSTALL_PROGRAM) enigma $(DESTDIR)$(bindir)/$(PACKAGE_NAME)
++	#$(INSTALL_DATA) $(srcdir)/enigma.1 $(DESTDIR)$(mandir)/man1/$(PACKAGE_NAME).1
++	mkdir -p $(DESTDIR)$(datadir)/$(PACKAGE_NAME)
  	for i in $(srcdir)/levels/*.set $(srcdir)/levels/*.level; do \
 -		$(INSTALL_DATA) $$i $(datadir)/enigma; \
-+		$(INSTALL_DATA) $$i $(datadir)/$(PACKAGE_NAME); \
++		$(INSTALL_DATA) $$i $(DESTDIR)$(datadir)/$(PACKAGE_NAME); \
  	done
 -	mkdir -p $(localstatedir)/enigma
 -	-chown root.games $(localstatedir)/enigma && chmod 2770 $(localstatedir)/enigma
-+	mkdir -p $(localstatedir)/$(PACKAGE_NAME)
-+	-chown root:games $(localstatedir)/$(PACKAGE_NAME) && chmod 2770 $(localstatedir)/$(PACKAGE_NAME)
++	mkdir -p $(DESTDIR)$(localstatedir)/$(PACKAGE_NAME)
  
  clean:
  	rm -f *.o enigma
