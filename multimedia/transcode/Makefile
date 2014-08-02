@@ -3,7 +3,7 @@
 
 PORTNAME=	transcode
 PORTVERSION=	1.1.7
-PORTREVISION=	14
+PORTREVISION=	15
 CATEGORIES=	multimedia
 MASTER_SITES=	http://cdn.bitbucket.org/france/transcode-tcforge/downloads/
 
@@ -22,188 +22,100 @@ WANT_SDL=	yes
 WANT_GNOME=	yes
 USE_AUTOTOOLS=	libtoolize
 CPPFLAGS+=	-isystem ${LOCALBASE}/include
-CONFIGURE_ENV=	SDL_CONFIG="${SDL_CONFIG}"
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS+=	--enable-oss
 
 NO_OPTIONS_SORT=	yes
-OPTIONS_DEFINE=	OPTIMIZED_CFLAGS X11 MPEG2 BKTR POSTPROC FREETYPE LAME XVID \
-		X264 OGG VORBIS THEORA DVDREAD DV QUICKTIME LZO LIBA52 \
-		FAAC XML MJPEGTOOLS SDL IMAGEMAGICK JPEG ICONV V4L
+OPTIONS_DEFINE=		OPTIMIZED_CFLAGS X11 MPEG2 BKTR POSTPROC FREETYPE LAME XVID \
+			X264 OGG VORBIS THEORA DVDREAD DV QUICKTIME LZO A52 \
+			FAAC LIBXML2 MJPEGTOOLS SDL IMAGEMAGICK JPEG ICONV V4L
 OPTIONS_DEFAULT=	LAME DVDREAD JPEG ICONV
-BKTR_DESC=	Bktr capture card support
-POSTPROC_DESC=	Libpostproc support
-DVDREAD_DESC=	Libdvdread support
-LZO_DESC=	LZO compression support
-LIBA52_DESC=	a52 support (as default decoder)
-XML_DESC=	Libxml2 XML support
+BKTR_DESC=		Bktr capture card support
+POSTPROC_DESC=		Libpostproc support
+DVDREAD_DESC=		Libdvdread support
+LZO_DESC=		LZO compression support
 
-.include <bsd.port.pre.mk>
+X11_USE=			xorg=xv,xaw,xpm
+X11_CONFIGURE_WITH=		x
 
-.if ${PORT_OPTIONS:MX11}
-USE_XORG=	xv xaw xpm
-CONFIGURE_ARGS+=	--with-x
-.else
-CONFIGURE_ARGS+=	--without-x
-.endif
+MPEG2_LIB_DEPENDS=		libmpeg2.so:${PORTSDIR}/multimedia/libmpeg2
+MPEG2_CONFIGURE_ENABLE=		libmpeg2 libmpeg2convert
 
-.if ${PORT_OPTIONS:MMPEG2}
-LIB_DEPENDS+=	libmpeg2.so:${PORTSDIR}/multimedia/libmpeg2
-CONFIGURE_ARGS+=	--enable-libmpeg2 --enable-libmpeg2convert
-.else
-CONFIGURE_ARGS+=	--disable-libmpeg2
-.endif
+BKTR_CONFIGURE_ENABLE=		bktr
 
-.if ${PORT_OPTIONS:MBKTR}
-CONFIGURE_ARGS+=	--enable-bktr
-.endif
+POSTPROC_CONFIGURE_ENABLE=	libpostproc
 
-.if ${PORT_OPTIONS:MPOSTPROC}
-CONFIGURE_ARGS+=	--enable-libpostproc
-.else
-CONFIGURE_ARGS+=	--disable-libpostproc
-.endif
+FREETYPE_LIB_DEPENDS=		libfreetype.so:${PORTSDIR}/print/freetype2
+FREETYPE_CONFIGURE_ENABLE=	freetype2
 
-.if ${PORT_OPTIONS:MFREETYPE}
-LIB_DEPENDS+=	libfreetype.so:${PORTSDIR}/print/freetype2
-CONFIGURE_ARGS+=	--enable-freetype2
-.else
-CONFIGURE_ARGS+=	--disable-freetype2
-.endif
+LAME_LIB_DEPENDS=		libmp3lame.so:${PORTSDIR}/audio/lame
+LAME_CONFIGURE_ENABLE=		lame
+LAME_CONFIGURE_ON=		--with-lame-prefix=${LOCALBASE}
 
-.if ${PORT_OPTIONS:MLAME}
-LIB_DEPENDS+=	libmp3lame.so:${PORTSDIR}/audio/lame
-CONFIGURE_ARGS+=	--with-lame-prefix=${LOCALBASE} --enable-lame
-.else
-CONFIGURE_ARGS+=	--disable-lame
-.endif
+XVID_LIB_DEPENDS=		libxvidcore.so:${PORTSDIR}/multimedia/xvid
+XVID_CONFIGURE_ENABLE=		xvid
+XVID_CONFIGURE_ON=		--with-xvid-prefix=${LOCALBASE}
 
-.if ${PORT_OPTIONS:MXVID}
-LIB_DEPENDS+=	libxvidcore.so:${PORTSDIR}/multimedia/xvid
-CONFIGURE_ARGS+=	--with-xvid-prefix=${LOCALBASE} --enable-xvid
-.else
-CONFIGURE_ARGS+=	--disable-xvid
-.endif
+X264_LIB_DEPENDS=		libx264.so:${PORTSDIR}/multimedia/x264
+X264_CONFIGURE_ENABLE=		x264
 
-.if ${PORT_OPTIONS:MX264}
-LIB_DEPENDS+=	libx264.so:${PORTSDIR}/multimedia/x264
-CONFIGURE_ARGS+=	--enable-x264
-.else
-CONFIGURE_ARGS+=	--disable-x264
-.endif
+OGG_LIB_DEPENDS=		libogg.so:${PORTSDIR}/audio/libogg
+OGG_CONFIGURE_ENABLE=		ogg
 
-.if ${PORT_OPTIONS:MOGG}
-LIB_DEPENDS+=	libogg.so:${PORTSDIR}/audio/libogg
-CONFIGURE_ARGS+=	--enable-ogg
-.else
-CONFIGURE_ARGS+=	--disable-ogg
-.endif
+VORBIS_LIB_DEPENDS=		libvorbis.so:${PORTSDIR}/audio/libvorbis
+VORBIS_CONFIGURE_ENABLE=	vorbis
 
-.if ${PORT_OPTIONS:MVORBIS}
-LIB_DEPENDS+=	libvorbis.so:${PORTSDIR}/audio/libvorbis
-CONFIGURE_ARGS+=	--enable-vorbis
-.else
-CONFIGURE_ARGS+=	--disable-vorbis
-.endif
+THEORA_LIB_DEPENDS=		libtheora.so:${PORTSDIR}/multimedia/libtheora
+THEORA_CONFIGURE_ENABLE=	theora
 
-.if ${PORT_OPTIONS:MTHEORA}
-LIB_DEPENDS+=	libtheora.so:${PORTSDIR}/multimedia/libtheora
-CONFIGURE_ARGS+=	--enable-theora
-.else
-CONFIGURE_ARGS+=	--disable-theora
-.endif
+DVDREAD_LIB_DEPENDS=		libdvdread.so:${PORTSDIR}/multimedia/libdvdread
+DVDREAD_CONFIGURE_ENABLE=	libdvdread
+DVDREAD_CONFIGURE_ON=		--with-libdvdread-prefix=${LOCALBASE}
 
-.if ${PORT_OPTIONS:MDVDREAD}
-LIB_DEPENDS+=	libdvdread.so:${PORTSDIR}/multimedia/libdvdread
-CONFIGURE_ARGS+=	--with-libdvdread-prefix=${LOCALBASE} --enable-libdvdread
-.else
-CONFIGURE_ARGS+=	--disable-libdvdread
-.endif
+DV_LIB_DEPENDS=			libdv.so:${PORTSDIR}/multimedia/libdv
+DV_CONFIGURE_ENABLE=		libdv
 
-.if ${PORT_OPTIONS:MDV}
-LIB_DEPENDS+=	libdv.so:${PORTSDIR}/multimedia/libdv
-CONFIGURE_ARGS+=	--enable-libdv
-.else
-CONFIGURE_ARGS+=	--disable-libdv
-.endif
+QUICKTIME_LIB_DEPENDS=		libquicktime.so:${PORTSDIR}/multimedia/libquicktime
+QUICKTIME_CONFIGURE_ENABLE=	libquicktime
 
-.if ${PORT_OPTIONS:MQUICKTIME}
-LIB_DEPENDS+=	libquicktime.so:${PORTSDIR}/multimedia/libquicktime
-CONFIGURE_ARGS+=	--enable-libquicktime
-.else
-CONFIGURE_ARGS+=	--disable-libquicktime
-.endif
+LZO_LIB_DEPENDS=		liblzo2.so:${PORTSDIR}/archivers/lzo2
+LZO_CONFIGURE_ENABLE=		lzo
+LZO_CONFIGURE_ON=		--with-lzo-prefix=${LOCALBASE} --with-lzo-includes=${LOCALBASE}
 
-.if ${PORT_OPTIONS:MLZO}
-LIB_DEPENDS+=	liblzo2.so:${PORTSDIR}/archivers/lzo2
-CONFIGURE_ARGS+=	--with-lzo-prefix=${LOCALBASE} --with-lzo-includes=${LOCALBASE} \
-			--enable-lzo
-.else
-CONFIGURE_ARGS+=	--disable-lzo
-.endif
+A52_LIB_DEPENDS=		liba52.so:${PORTSDIR}/audio/liba52
+A52_CONFIGURE_ENABLE=		a52
+A52_CONFIGURE_ON=		--with-a52-prefix=${LOCALBASE}
 
-.if ${PORT_OPTIONS:MLIBA52}
-LIB_DEPENDS+=	liba52.so:${PORTSDIR}/audio/liba52
-CONFIGURE_ARGS+=	--with-a52-prefix=${LOCALBASE} --enable-a52
-.else
-CONFIGURE_ARGS+=	--disable-a52
-.endif
+FAAC_LIB_DEPENDS=		libfaac.so:${PORTSDIR}/audio/faac
+FAAC_CONFIGURE_ENABLE=		faac
+FAAC_CONFIGURE_ON=		--with-faac-prefix=${LOCALBASE}
 
-.if ${PORT_OPTIONS:MFAAC}
-LIB_DEPENDS+=	libfaac.so:${PORTSDIR}/audio/faac
-CONFIGURE_ARGS+=	--with-faac-prefix=${LOCALBASE} --enable-faac
-.else
-CONFIGURE_ARGS+=	--disable-faac
-.endif
+LIBXML2_USE=			GNOME=libxml2
+LIBXML2_CONFIGURE_ENABLE=	libxml2
 
-.if ${PORT_OPTIONS:MXML}
-USE_GNOME+=	libxml2
-CONFIGURE_ARGS+=	--enable-libxml2
-.else
-CONFIGURE_ARGS+=	--disable-libxml2
-.endif
+MJPEGTOOLS_LIB_DEPENDS=		liblavjpeg.so:${PORTSDIR}/multimedia/mjpegtools
+MJPEGTOOLS_CONFIGURE_ENABLE=	mjpegtools
 
-.if ${PORT_OPTIONS:MMJPEGTOOLS}
-LIB_DEPENDS+=	liblavjpeg.so:${PORTSDIR}/multimedia/mjpegtools
-CONFIGURE_ARGS+=	--enable-mjpegtools
-.else
-CONFIGURE_ARGS+=	--disable-mjpegtools
-.endif
+SDL_USE=			SDL=sdl
+SDL_CONFIGURE_ENABLE=		sdl
+SDL_CONFIGURE_ENV_ON=		SDL_CONFIG="${SDL_CONFIG}"
 
-.if ${PORT_OPTIONS:MSDL}
-USE_SDL+=	sdl
-CONFIGURE_ARGS+=	--enable-sdl
-.else
-CONFIGURE_ARGS+=	--disable-sdl
-.endif
+IMAGEMAGICK_LIB_DEPENDS=	libMagickWand-6.Q*.so:${PORTSDIR}/graphics/ImageMagick
+IMAGEMAGICK_CONFIGURE_ENABLE=	imagemagick
+IMAGEMAGICK_CONFIGURE_ON=	--with-imagemagick-prefix=${LOCALBASE}
 
-.if ${PORT_OPTIONS:MIMAGEMAGICK}
-LIB_DEPENDS+=	libMagickWand-6.Q*.so:${PORTSDIR}/graphics/ImageMagick
-CONFIGURE_ARGS+=	--with-imagemagick-prefix=${LOCALBASE} --enable-imagemagick
-.else
-CONFIGURE_ARGS+=	--disable-imagemagick
-.endif
+JPEG_LIB_DEPENDS=		libjpeg.so:${PORTSDIR}/graphics/jpeg
+JPEG_CONFIGURE_ENABLE=		libjpeg
+JPEG_CONFIGURE_ON=		--with-libjpeg-prefix=${LOCALBASE}
 
-.if ${PORT_OPTIONS:MJPEG}
-LIB_DEPENDS+=	libjpeg.so:${PORTSDIR}/graphics/jpeg
-CONFIGURE_ARGS+=	--with-libjpeg-prefix=${LOCALBASE} --enable-libjpeg
-.else
-CONFIGURE_ARGS+=	--disable-libjpeg
-.endif
+ICONV_USES=			iconv
+ICONV_CONFIGURE_ENABLE=		iconv
+ICONV_CONFIGURE_ON=		${ICONV_CONFIGURE_ARG}
 
-.if ${PORT_OPTIONS:MICONV}
-USES+=		iconv
-CONFIGURE_ARGS+=	--enable-iconv ${ICONV_CONFIGURE_ARG}
-.else
-CONFIGURE_ARGS+=	--disable-iconv
-.endif
+V4L_BUILD_DEPENDS=		${LOCALBASE}/include/linux/videodev2.h:${PORTSDIR}/multimedia/v4l_compat
+V4L_CONFIGURE_ENABLE=		v4l
 
-.if ${PORT_OPTIONS:MV4L}
-BUILD_DEPENDS+=	${LOCALBASE}/include/linux/videodev2.h:${PORTSDIR}/multimedia/v4l_compat
-CONFIGURE_ARGS+=	--enable-v4l
-.else
-CONFIGURE_ARGS+=	--disable-v4l
-.endif
+.include <bsd.port.options.mk>
 
 post-extract:
 	@${RM} ${WRKSRC}/import/v4l/videodev*
@@ -254,4 +166,4 @@ pre-install:
 		${SED}  -e 's|^|man/|' \
 			-e 's|$$|.gz|' >> ${PLIST})
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
