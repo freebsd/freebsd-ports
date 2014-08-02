@@ -38,6 +38,18 @@ include/syslog-ng/iv_thread.h
 include/syslog-ng/iv_tls.h
 include/syslog-ng/iv_wait.h
 include/syslog-ng/iv_work.h
+include/syslog-ng/ivykis/iv.h
+include/syslog-ng/ivykis/iv_avl.h
+include/syslog-ng/ivykis/iv_event.h
+include/syslog-ng/ivykis/iv_event_raw.h
+include/syslog-ng/ivykis/iv_fd_pump.h
+include/syslog-ng/ivykis/iv_list.h
+include/syslog-ng/ivykis/iv_popen.h
+include/syslog-ng/ivykis/iv_signal.h
+include/syslog-ng/ivykis/iv_thread.h
+include/syslog-ng/ivykis/iv_tls.h
+include/syslog-ng/ivykis/iv_wait.h
+include/syslog-ng/ivykis/iv_work.h
 include/syslog-ng/logmatcher.h
 include/syslog-ng/logmpx.h
 include/syslog-ng/logmsg.h
@@ -88,6 +100,11 @@ include/syslog-ng/filter/filter-re.h
 include/syslog-ng/filter/filter-pri.h
 include/syslog-ng/filter/filter-pipe.h
 include/syslog-ng/filter/filter-expr-parser.h
+include/syslog-ng/libtest/mock-transport.h
+include/syslog-ng/libtest/msg_parse_lib.h
+include/syslog-ng/libtest/proto_lib.h
+include/syslog-ng/libtest/template_lib.h
+include/syslog-ng/libtest/testutils.h
 include/syslog-ng/logproto/logproto-client.h
 include/syslog-ng/logproto/logproto-server.h
 include/syslog-ng/logproto/logproto-buffered-server.h
@@ -115,7 +132,7 @@ include/syslog-ng/rewrite/rewrite-set.h
 include/syslog-ng/rewrite/rewrite-subst.h
 include/syslog-ng/rewrite/rewrite-expr-parser.h
 include/syslog-ng/template/templates.h
-lib/libsyslog-ng-3.5.4.1.so
+lib/libsyslog-ng-3.5.5.so
 lib/libsyslog-ng.so
 lib/syslog-ng/libafamqp.so
 lib/syslog-ng/libaffile.so
@@ -134,7 +151,9 @@ lib/syslog-ng/liblinux-kmsg-format.so
 lib/syslog-ng/libsyslog-ng-crypto.so
 lib/syslog-ng/libsyslogformat.so
 lib/syslog-ng/libsystem-source.so
+lib/syslog-ng/libtest/libsyslog-ng-test.a
 libdata/pkgconfig/syslog-ng.pc
+libdata/pkgconfig/syslog-ng-test.pc
 man/man1/loggen.1.gz
 man/man1/pdbtool.1.gz
 man/man1/syslog-ng-ctl.1.gz
@@ -168,12 +187,14 @@ share/syslog-ng/xsd/patterndb-4.xsd
 @dirrm share/syslog-ng/include/scl
 @dirrm share/syslog-ng/include
 @dirrm share/syslog-ng
+@dirrm lib/syslog-ng/libtest
 @dirrm lib/syslog-ng
 @dirrm include/syslog-ng/filter
+@dirrm include/syslog-ng/ivykis
+@dirrm include/syslog-ng/libtest
 @dirrm include/syslog-ng/logproto
 @dirrm include/syslog-ng/parser
 @dirrm include/syslog-ng/rewrite
 @dirrm include/syslog-ng/template
 @dirrm include/syslog-ng
-@exec mkdir -p %D/etc/patterndb.d
-@dirrmtry etc/patterndb.d
+@dirrm etc/patterndb.d
