@@ -1,26 +1,15 @@
 bin/stellarium
 man/man1/stellarium.1.gz
-share/appdata/stellarium.appdata.xml
-share/applications/stellarium.desktop
-share/icons/hicolor/128x128/apps/stellarium.png
-share/icons/hicolor/16x16/apps/stellarium.png
-share/icons/hicolor/256x256/apps/stellarium.png
-share/icons/hicolor/32x32/apps/stellarium.png
-share/icons/hicolor/48x48/apps/stellarium.png
-share/icons/hicolor/512x512/apps/stellarium.png
-share/icons/hicolor/64x64/apps/stellarium.png
-share/pixmaps/stellarium.xpm
 %%DATADIR%%/data/DejaVuSans.ttf
 %%DATADIR%%/data/DejaVuSansMono.ttf
 %%DATADIR%%/data/base_locations.bin.gz
-%%DATADIR%%/data/constellations_boundaries.dat
 %%DATADIR%%/data/countryCodes.dat
 %%DATADIR%%/data/default_config.ini
+%%DATADIR%%/data/default_shortcuts.json
 %%DATADIR%%/data/iso3166-1-alpha-2.utf8
 %%DATADIR%%/data/iso639-1.utf8
 %%DATADIR%%/data/ssystem.ini
 %%DATADIR%%/data/stellarium.ico
-%%DATADIR%%/data/updates.json
 %%DATADIR%%/landscapes/garching/description.ar.utf8
 %%DATADIR%%/landscapes/garching/description.be.utf8
 %%DATADIR%%/landscapes/garching/description.bg.utf8
@@ -31,30 +20,12 @@ share/pixmaps/stellarium.xpm
 %%DATADIR%%/landscapes/garching/description.pt_BR.utf8
 %%DATADIR%%/landscapes/garching/description.ru.utf8
 %%DATADIR%%/landscapes/garching/description.uk.utf8
-%%DATADIR%%/landscapes/garching/fogridge.png
 %%DATADIR%%/landscapes/garching/garching-gl1.png
 %%DATADIR%%/landscapes/garching/garching-gl2.png
 %%DATADIR%%/landscapes/garching/garching-gl3.png
 %%DATADIR%%/landscapes/garching/garching-gl4.png
 %%DATADIR%%/landscapes/garching/garching-ground3.png
 %%DATADIR%%/landscapes/garching/landscape.ini
-%%DATADIR%%/landscapes/geneva/CMakeLists.txt
-%%DATADIR%%/landscapes/geneva/description.de.utf8
-%%DATADIR%%/landscapes/geneva/description.en.utf8
-%%DATADIR%%/landscapes/geneva/description.fr.utf8
-%%DATADIR%%/landscapes/geneva/description.pt_BR.utf8
-%%DATADIR%%/landscapes/geneva/description.ru.utf8
-%%DATADIR%%/landscapes/geneva/horizon_Geneve.txt
-%%DATADIR%%/landscapes/geneva/landscape.ini
-%%DATADIR%%/landscapes/grossmugl/description.de.utf8
-%%DATADIR%%/landscapes/grossmugl/description.en.utf8
-%%DATADIR%%/landscapes/grossmugl/description.fr.utf8
-%%DATADIR%%/landscapes/grossmugl/description.pt_BR.utf8
-%%DATADIR%%/landscapes/grossmugl/description.ru.utf8
-%%DATADIR%%/landscapes/grossmugl/grossmugl_leeberg_crop11.25_2048.png
-%%DATADIR%%/landscapes/grossmugl/grossmugl_leeberg_fog_crop22.5_w512.png
-%%DATADIR%%/landscapes/grossmugl/grossmugl_leeberg_illum_crop0_2048.png
-%%DATADIR%%/landscapes/grossmugl/landscape.ini
 %%DATADIR%%/landscapes/guereins/description.ar.utf8
 %%DATADIR%%/landscapes/guereins/description.be.utf8
 %%DATADIR%%/landscapes/guereins/description.bg.utf8
@@ -65,7 +36,6 @@ share/pixmaps/stellarium.xpm
 %%DATADIR%%/landscapes/guereins/description.pt_BR.utf8
 %%DATADIR%%/landscapes/guereins/description.ru.utf8
 %%DATADIR%%/landscapes/guereins/description.uk.utf8
-%%DATADIR%%/landscapes/guereins/fog.png
 %%DATADIR%%/landscapes/guereins/guereins1.png
 %%DATADIR%%/landscapes/guereins/guereins2.png
 %%DATADIR%%/landscapes/guereins/guereins3.png
@@ -86,7 +56,6 @@ share/pixmaps/stellarium.xpm
 %%DATADIR%%/landscapes/hurricane/description.pt_BR.utf8
 %%DATADIR%%/landscapes/hurricane/description.ru.utf8
 %%DATADIR%%/landscapes/hurricane/description.uk.utf8
-%%DATADIR%%/landscapes/hurricane/fogridge.png
 %%DATADIR%%/landscapes/hurricane/hurricane1.png
 %%DATADIR%%/landscapes/hurricane/hurricane2.png
 %%DATADIR%%/landscapes/hurricane/hurricane3.png
@@ -97,7 +66,6 @@ share/pixmaps/stellarium.xpm
 %%DATADIR%%/landscapes/hurricane/hurricane8.png
 %%DATADIR%%/landscapes/hurricane/hurricaneb.png
 %%DATADIR%%/landscapes/hurricane/landscape.ini
-%%DATADIR%%/landscapes/jupiter/description.be.utf8
 %%DATADIR%%/landscapes/jupiter/description.en.utf8
 %%DATADIR%%/landscapes/jupiter/description.fr.utf8
 %%DATADIR%%/landscapes/jupiter/description.pt_BR.utf8
@@ -128,7 +96,6 @@ share/pixmaps/stellarium.xpm
 %%DATADIR%%/landscapes/moon/description.ru.utf8
 %%DATADIR%%/landscapes/moon/description.uk.utf8
 %%DATADIR%%/landscapes/moon/landscape.ini
-%%DATADIR%%/landscapes/neptune/description.be.utf8
 %%DATADIR%%/landscapes/neptune/description.en.utf8
 %%DATADIR%%/landscapes/neptune/description.fr.utf8
 %%DATADIR%%/landscapes/neptune/description.pt_BR.utf8
@@ -145,7 +112,6 @@ share/pixmaps/stellarium.xpm
 %%DATADIR%%/landscapes/ocean/description.pt_BR.utf8
 %%DATADIR%%/landscapes/ocean/description.ru.utf8
 %%DATADIR%%/landscapes/ocean/description.uk.utf8
-%%DATADIR%%/landscapes/ocean/fog.png
 %%DATADIR%%/landscapes/ocean/landscape.ini
 %%DATADIR%%/landscapes/ocean/ocean1.png
 %%DATADIR%%/landscapes/ocean/ocean2.png
@@ -180,9 +146,6 @@ share/pixmaps/stellarium.xpm
 %%DATADIR%%/landscapes/trees/description.uk.utf8
 %%DATADIR%%/landscapes/trees/landscape.ini
 %%DATADIR%%/landscapes/trees/trees_512.png
-%%DATADIR%%/landscapes/trees/trees_fog_512.png
-%%DATADIR%%/landscapes/trees/trees_illum_512.png
-%%DATADIR%%/landscapes/uranus/description.be.utf8
 %%DATADIR%%/landscapes/uranus/description.en.utf8
 %%DATADIR%%/landscapes/uranus/description.fr.utf8
 %%DATADIR%%/landscapes/uranus/description.pt_BR.utf8
@@ -205,11 +168,11 @@ share/pixmaps/stellarium.xpm
 %%DATADIR%%/nebulae/default/lmc_moshdr-4.png
 %%DATADIR%%/nebulae/default/m10.png
 %%DATADIR%%/nebulae/default/m100.png
-%%DATADIR%%/nebulae/default/m101-vasey.png
+%%DATADIR%%/nebulae/default/m101.png
 %%DATADIR%%/nebulae/default/m102.png
 %%DATADIR%%/nebulae/default/m103.png
 %%DATADIR%%/nebulae/default/m104.png
-%%DATADIR%%/nebulae/default/m105-vasey.png
+%%DATADIR%%/nebulae/default/m105.png
 %%DATADIR%%/nebulae/default/m106.png
 %%DATADIR%%/nebulae/default/m107.png
 %%DATADIR%%/nebulae/default/m108.png
@@ -217,7 +180,7 @@ share/pixmaps/stellarium.xpm
 %%DATADIR%%/nebulae/default/m11.png
 %%DATADIR%%/nebulae/default/m110.png
 %%DATADIR%%/nebulae/default/m12.png
-%%DATADIR%%/nebulae/default/m13-vasey.png
+%%DATADIR%%/nebulae/default/m13.png
 %%DATADIR%%/nebulae/default/m14.png
 %%DATADIR%%/nebulae/default/m15dumont.png
 %%DATADIR%%/nebulae/default/m16dumont.png
@@ -236,7 +199,7 @@ share/pixmaps/stellarium.xpm
 %%DATADIR%%/nebulae/default/m27dumont.png
 %%DATADIR%%/nebulae/default/m28.png
 %%DATADIR%%/nebulae/default/m29.png
-%%DATADIR%%/nebulae/default/m3-vasey.png
+%%DATADIR%%/nebulae/default/m3.png
 %%DATADIR%%/nebulae/default/m30.png
 %%DATADIR%%/nebulae/default/m31.png
 %%DATADIR%%/nebulae/default/m33bousquet.png
@@ -256,7 +219,7 @@ share/pixmaps/stellarium.xpm
 %%DATADIR%%/nebulae/default/m49.png
 %%DATADIR%%/nebulae/default/m5.png
 %%DATADIR%%/nebulae/default/m50.png
-%%DATADIR%%/nebulae/default/m51-vasey.png
+%%DATADIR%%/nebulae/default/m51.png
 %%DATADIR%%/nebulae/default/m52.png
 %%DATADIR%%/nebulae/default/m53.png
 %%DATADIR%%/nebulae/default/m54.png
@@ -269,8 +232,8 @@ share/pixmaps/stellarium.xpm
 %%DATADIR%%/nebulae/default/m60.png
 %%DATADIR%%/nebulae/default/m61.png
 %%DATADIR%%/nebulae/default/m62.png
-%%DATADIR%%/nebulae/default/m63-vasey.png
-%%DATADIR%%/nebulae/default/m64-vasey.png
+%%DATADIR%%/nebulae/default/m63.png
+%%DATADIR%%/nebulae/default/m64.png
 %%DATADIR%%/nebulae/default/m65.png
 %%DATADIR%%/nebulae/default/m66.png
 %%DATADIR%%/nebulae/default/m67.png
@@ -285,11 +248,11 @@ share/pixmaps/stellarium.xpm
 %%DATADIR%%/nebulae/default/m75.png
 %%DATADIR%%/nebulae/default/m76.png
 %%DATADIR%%/nebulae/default/m77-dss.png
-%%DATADIR%%/nebulae/default/m78-vasey.png
+%%DATADIR%%/nebulae/default/m78.png
 %%DATADIR%%/nebulae/default/m79.png
 %%DATADIR%%/nebulae/default/m80.png
-%%DATADIR%%/nebulae/default/m81-vasey.png
-%%DATADIR%%/nebulae/default/m82-vasey.png
+%%DATADIR%%/nebulae/default/m81.png
+%%DATADIR%%/nebulae/default/m82.png
 %%DATADIR%%/nebulae/default/m83.png
 %%DATADIR%%/nebulae/default/m84.png
 %%DATADIR%%/nebulae/default/m85.png
@@ -315,7 +278,6 @@ share/pixmaps/stellarium.xpm
 %%DATADIR%%/nebulae/default/n1499bousquet.png
 %%DATADIR%%/nebulae/default/n1532-darkskies.png
 %%DATADIR%%/nebulae/default/n2244bousquet.png
-%%DATADIR%%/nebulae/default/n2467-trev.png
 %%DATADIR%%/nebulae/default/n253bousquet.png
 %%DATADIR%%/nebulae/default/n281kepler.png
 %%DATADIR%%/nebulae/default/n2903oleg.png
@@ -340,8 +302,8 @@ share/pixmaps/stellarium.xpm
 %%DATADIR%%/nebulae/default/n7023kepler.png
 %%DATADIR%%/nebulae/default/n7129oleg.png
 %%DATADIR%%/nebulae/default/n7293.png
-%%DATADIR%%/nebulae/default/n7318-vasey.png
-%%DATADIR%%/nebulae/default/n7331-vasey.png
+%%DATADIR%%/nebulae/default/n7318kepler.png
+%%DATADIR%%/nebulae/default/n7331kepler.png
 %%DATADIR%%/nebulae/default/n869-884spano.png
 %%DATADIR%%/nebulae/default/n891oleg.png
 %%DATADIR%%/nebulae/default/nebula_textures.fab
@@ -357,33 +319,33 @@ share/pixmaps/stellarium.xpm
 %%DATADIR%%/nebulae/default/smc29-3.png
 %%DATADIR%%/nebulae/default/smc29-4.png
 %%DATADIR%%/nebulae/default/textures.json
-%%DATADIR%%/scripts/analemma.ssc
-%%DATADIR%%/scripts/common_objects.inc
-%%DATADIR%%/scripts/constellations_tour.ssc
-%%DATADIR%%/scripts/earth_1.ssc
-%%DATADIR%%/scripts/earth_2.ssc
-%%DATADIR%%/scripts/earth_3.ssc
-%%DATADIR%%/scripts/earth_4.ssc
-%%DATADIR%%/scripts/earth_5.ssc
-%%DATADIR%%/scripts/earth_6.ssc
-%%DATADIR%%/scripts/landscapes.ssc
-%%DATADIR%%/scripts/lunar_partial.ssc
-%%DATADIR%%/scripts/lunar_total.ssc
-%%DATADIR%%/scripts/phobos_phun_1.ssc
-%%DATADIR%%/scripts/phobos_phun_2.ssc
-%%DATADIR%%/scripts/phobos_phun_3.ssc
-%%DATADIR%%/scripts/phobos_phun_4.ssc
-%%DATADIR%%/scripts/phobos_phun_5.ssc
-%%DATADIR%%/scripts/screensaver.ssc
-%%DATADIR%%/scripts/sky_cultures.ssc
-%%DATADIR%%/scripts/solar_eclipse.ssc
-%%DATADIR%%/scripts/solar_system_screensaver.ssc
-%%DATADIR%%/scripts/startup.ssc
-%%DATADIR%%/scripts/sun.ssc
-%%DATADIR%%/scripts/supernova.ssc
-%%DATADIR%%/scripts/transit_of_venus.ssc
-%%DATADIR%%/scripts/triple_sunrise_and_sunsets.ssc
-%%DATADIR%%/scripts/zodiac.ssc
+%%SCRIPTS%%%%DATADIR%%/scripts/analemma.ssc
+%%SCRIPTS%%%%DATADIR%%/scripts/common_objects.inc
+%%SCRIPTS%%%%DATADIR%%/scripts/constellations_tour.ssc
+%%SCRIPTS%%%%DATADIR%%/scripts/earth_1.ssc
+%%SCRIPTS%%%%DATADIR%%/scripts/earth_2.ssc
+%%SCRIPTS%%%%DATADIR%%/scripts/earth_3.ssc
+%%SCRIPTS%%%%DATADIR%%/scripts/earth_4.ssc
+%%SCRIPTS%%%%DATADIR%%/scripts/earth_5.ssc
+%%SCRIPTS%%%%DATADIR%%/scripts/earth_6.ssc
+%%SCRIPTS%%%%DATADIR%%/scripts/landscapes.ssc
+%%SCRIPTS%%%%DATADIR%%/scripts/lunar_partial.ssc
+%%SCRIPTS%%%%DATADIR%%/scripts/lunar_total.ssc
+%%SCRIPTS%%%%DATADIR%%/scripts/phobos_phun_1.ssc
+%%SCRIPTS%%%%DATADIR%%/scripts/phobos_phun_2.ssc
+%%SCRIPTS%%%%DATADIR%%/scripts/phobos_phun_3.ssc
+%%SCRIPTS%%%%DATADIR%%/scripts/phobos_phun_4.ssc
+%%SCRIPTS%%%%DATADIR%%/scripts/phobos_phun_5.ssc
+%%SCRIPTS%%%%DATADIR%%/scripts/screensaver.ssc
+%%SCRIPTS%%%%DATADIR%%/scripts/sky_cultures.ssc
+%%SCRIPTS%%%%DATADIR%%/scripts/solar_eclipse.ssc
+%%SCRIPTS%%%%DATADIR%%/scripts/solar_system_screensaver.ssc
+%%SCRIPTS%%%%DATADIR%%/scripts/startup.ssc
+%%SCRIPTS%%%%DATADIR%%/scripts/sun.ssc
+%%SCRIPTS%%%%DATADIR%%/scripts/supernova.ssc
+%%SCRIPTS%%%%DATADIR%%/scripts/transit_of_venus.ssc
+%%SCRIPTS%%%%DATADIR%%/scripts/triple_sunrise_and_sunsets.ssc
+%%SCRIPTS%%%%DATADIR%%/scripts/zodiac.ssc
 %%DATADIR%%/skycultures/arabic/Bearer-of-the-Demons-Head.png
 %%DATADIR%%/skycultures/arabic/Book_of_Fixed_Stars3.png
 %%DATADIR%%/skycultures/arabic/CentaurAndThe-Beast-of-Prey.png
@@ -518,9 +480,7 @@ share/pixmaps/stellarium.xpm
 %%DATADIR%%/skycultures/indian/constellationsart.fab
 %%DATADIR%%/skycultures/indian/constellationship.fab
 %%DATADIR%%/skycultures/indian/description.ar.utf8
-%%DATADIR%%/skycultures/indian/description.be.utf8
 %%DATADIR%%/skycultures/indian/description.bs.utf8
-%%DATADIR%%/skycultures/indian/description.de.utf8
 %%DATADIR%%/skycultures/indian/description.en.utf8
 %%DATADIR%%/skycultures/indian/description.fr.utf8
 %%DATADIR%%/skycultures/indian/description.pt_BR.utf8
@@ -649,57 +609,6 @@ share/pixmaps/stellarium.xpm
 %%DATADIR%%/skycultures/polynesian/description.uk.utf8
 %%DATADIR%%/skycultures/polynesian/info.ini
 %%DATADIR%%/skycultures/polynesian/star_names.fab
-%%DATADIR%%/skycultures/romanian/CapraCuTreiIezi.png
-%%DATADIR%%/skycultures/romanian/CarulMare.png
-%%DATADIR%%/skycultures/romanian/CiobanulCuOile.png
-%%DATADIR%%/skycultures/romanian/CloscaCuPui.png
-%%DATADIR%%/skycultures/romanian/Coasa.png
-%%DATADIR%%/skycultures/romanian/FataCuColibita.png
-%%DATADIR%%/skycultures/romanian/Hora.png
-%%DATADIR%%/skycultures/romanian/JgheabulSiPutul.png
-%%DATADIR%%/skycultures/romanian/Tronul.png
-%%DATADIR%%/skycultures/romanian/arcasul.png
-%%DATADIR%%/skycultures/romanian/balaurul.png
-%%DATADIR%%/skycultures/romanian/barda.png
-%%DATADIR%%/skycultures/romanian/berbecul.png
-%%DATADIR%%/skycultures/romanian/calul.png
-%%DATADIR%%/skycultures/romanian/cantarul.png
-%%DATADIR%%/skycultures/romanian/carul-mic.png
-%%DATADIR%%/skycultures/romanian/catelul.png
-%%DATADIR%%/skycultures/romanian/chitul.png
-%%DATADIR%%/skycultures/romanian/constellation_names.eng.fab
-%%DATADIR%%/skycultures/romanian/constellation_names.ro.fab
-%%DATADIR%%/skycultures/romanian/constellations_boundaries.dat
-%%DATADIR%%/skycultures/romanian/constellationsart.fab
-%%DATADIR%%/skycultures/romanian/constellationship.fab
-%%DATADIR%%/skycultures/romanian/corbul.png
-%%DATADIR%%/skycultures/romanian/crapii.png
-%%DATADIR%%/skycultures/romanian/crucea-mare.png
-%%DATADIR%%/skycultures/romanian/crucea-mica.png
-%%DATADIR%%/skycultures/romanian/description.en.utf8
-%%DATADIR%%/skycultures/romanian/description.pt_BR.utf8
-%%DATADIR%%/skycultures/romanian/description.ro.utf8
-%%DATADIR%%/skycultures/romanian/description.ru.utf8
-%%DATADIR%%/skycultures/romanian/dulaul.png
-%%DATADIR%%/skycultures/romanian/fecioara.png
-%%DATADIR%%/skycultures/romanian/gemenii.png
-%%DATADIR%%/skycultures/romanian/info.ini
-%%DATADIR%%/skycultures/romanian/omul.png
-%%DATADIR%%/skycultures/romanian/porumbita.png
-%%DATADIR%%/skycultures/romanian/racul.png
-%%DATADIR%%/skycultures/romanian/rarita.png
-%%DATADIR%%/skycultures/romanian/sagetatorul.png
-%%DATADIR%%/skycultures/romanian/sarpele.png
-%%DATADIR%%/skycultures/romanian/scorpia.png
-%%DATADIR%%/skycultures/romanian/secera.png
-%%DATADIR%%/skycultures/romanian/sfredelul.png
-%%DATADIR%%/skycultures/romanian/star_names.fab
-%%DATADIR%%/skycultures/romanian/tapul.png
-%%DATADIR%%/skycultures/romanian/taurul.png
-%%DATADIR%%/skycultures/romanian/trisfetitele.png
-%%DATADIR%%/skycultures/romanian/vacarul.png
-%%DATADIR%%/skycultures/romanian/varsatorul.png
-%%DATADIR%%/skycultures/romanian/vierii.png
 %%DATADIR%%/skycultures/sami/constellation_names.eng.fab
 %%DATADIR%%/skycultures/sami/constellations_boundaries.dat
 %%DATADIR%%/skycultures/sami/constellationship.fab
@@ -718,7 +627,6 @@ share/pixmaps/stellarium.xpm
 %%DATADIR%%/skycultures/tongan/constellationsart.fab
 %%DATADIR%%/skycultures/tongan/constellationship.fab
 %%DATADIR%%/skycultures/tongan/description.ar.utf8
-%%DATADIR%%/skycultures/tongan/description.be.utf8
 %%DATADIR%%/skycultures/tongan/description.en.utf8
 %%DATADIR%%/skycultures/tongan/description.fr.utf8
 %%DATADIR%%/skycultures/tongan/description.pt_BR.utf8
@@ -844,20 +752,21 @@ share/pixmaps/stellarium.xpm
 %%DATADIR%%/stars/default/defaultStarsConfig.json
 %%DATADIR%%/stars/default/gcvs_hip_part.dat
 %%DATADIR%%/stars/default/name.fab
-%%DATADIR%%/stars/default/stars_0_0v0_5.cat
-%%DATADIR%%/stars/default/stars_1_0v0_5.cat
-%%DATADIR%%/stars/default/stars_2_0v0_5.cat
-%%DATADIR%%/stars/default/stars_3_1v0_3.cat
+%%DATADIR%%/stars/default/stars_0_0v0_3.cat
+%%DATADIR%%/stars/default/stars_1_0v0_3.cat
+%%DATADIR%%/stars/default/stars_2_0v0_3.cat
+%%DATADIR%%/stars/default/stars_3_1v0_2.cat
+%%MORE_STARS%%%%DATADIR%%/stars/default/stars_4_1v0_0.cat
+%%MORE_STARS%%%%DATADIR%%/stars/default/stars_5_2v0_0.cat
+%%MORE_STARS%%%%DATADIR%%/stars/default/stars_6_2v0_0.cat
+%%MORE_STARS%%%%DATADIR%%/stars/default/stars_7_2v0_0.cat
+%%MORE_STARS%%%%DATADIR%%/stars/default/stars_8_2v0_0.cat
 %%DATADIR%%/stars/default/stars_hip_cids_0v0_0.cat
 %%DATADIR%%/stars/default/stars_hip_sp_0v0_0.cat
 %%DATADIR%%/textures/amalthea.png
 %%DATADIR%%/textures/ariel.png
-%%DATADIR%%/textures/bianca.png
 %%DATADIR%%/textures/callisto.png
 %%DATADIR%%/textures/charon.png
-%%DATADIR%%/textures/comet.png
-%%DATADIR%%/textures/cometComa.png
-%%DATADIR%%/textures/cometTail.png
 %%DATADIR%%/textures/corona.png
 %%DATADIR%%/textures/deimos.png
 %%DATADIR%%/textures/dione.png
@@ -866,21 +775,17 @@ share/pixmaps/stellarium.xpm
 %%DATADIR%%/textures/earth_cmap.png
 %%DATADIR%%/textures/earthmap.png
 %%DATADIR%%/textures/enceladus.png
-%%DATADIR%%/textures/epimetheus.png
-%%DATADIR%%/textures/eros.png
 %%DATADIR%%/textures/europa.png
 %%DATADIR%%/textures/fog.png
 %%DATADIR%%/textures/fogridge.png
 %%DATADIR%%/textures/ganymede.png
-%%DATADIR%%/textures/gaspra.png
 %%DATADIR%%/textures/halo.png
 %%DATADIR%%/textures/haloLune.png
 %%DATADIR%%/textures/hyperion.png
 %%DATADIR%%/textures/iapetus.png
-%%DATADIR%%/textures/ida.png
 %%DATADIR%%/textures/io.png
-%%DATADIR%%/textures/janus.png
 %%DATADIR%%/textures/jupiter.png
+%%DATADIR%%/textures/logo24bits.png
 %%DATADIR%%/textures/lune.png
 %%DATADIR%%/textures/mars.png
 %%DATADIR%%/textures/mercury.png
@@ -888,7 +793,6 @@ share/pixmaps/stellarium.xpm
 %%DATADIR%%/textures/mimas.png
 %%DATADIR%%/textures/miranda.png
 %%DATADIR%%/textures/moon.png
-%%DATADIR%%/textures/moon_normals.png
 %%DATADIR%%/textures/neb.png
 %%DATADIR%%/textures/neb_dif.png
 %%DATADIR%%/textures/neb_gal.png
@@ -901,20 +805,17 @@ share/pixmaps/stellarium.xpm
 %%DATADIR%%/textures/nomap.png
 %%DATADIR%%/textures/oberon.png
 %%DATADIR%%/textures/phobos.png
-%%DATADIR%%/textures/phoebe.png
 %%DATADIR%%/textures/planet-indicator.png
 %%DATADIR%%/textures/pluto.png
 %%DATADIR%%/textures/pointeur2.png
 %%DATADIR%%/textures/pointeur4.png
 %%DATADIR%%/textures/pointeur5.png
-%%DATADIR%%/textures/prometheus.png
 %%DATADIR%%/textures/proteus.png
 %%DATADIR%%/textures/rhea.png
 %%DATADIR%%/textures/saturn.png
 %%DATADIR%%/textures/saturn_rings_radial.png
 %%DATADIR%%/textures/star16x16.png
 %%DATADIR%%/textures/sun.png
-%%DATADIR%%/textures/telescope.png
 %%DATADIR%%/textures/tethys.png
 %%DATADIR%%/textures/titan.png
 %%DATADIR%%/textures/titania.png
@@ -923,272 +824,6 @@ share/pixmaps/stellarium.xpm
 %%DATADIR%%/textures/uranus.png
 %%DATADIR%%/textures/uranus_rings.png
 %%DATADIR%%/textures/venus.png
-%%DATADIR%%/textures/vesta.png
-%%DATADIR%%/textures/zenith.png
-%%DATADIR%%/translations/stellarium-skycultures/aa.qm
-%%DATADIR%%/translations/stellarium-skycultures/ab.qm
-%%DATADIR%%/translations/stellarium-skycultures/ae.qm
-%%DATADIR%%/translations/stellarium-skycultures/af.qm
-%%DATADIR%%/translations/stellarium-skycultures/ak.qm
-%%DATADIR%%/translations/stellarium-skycultures/am.qm
-%%DATADIR%%/translations/stellarium-skycultures/an.qm
-%%DATADIR%%/translations/stellarium-skycultures/ar.qm
-%%DATADIR%%/translations/stellarium-skycultures/as.qm
-%%DATADIR%%/translations/stellarium-skycultures/ast.qm
-%%DATADIR%%/translations/stellarium-skycultures/av.qm
-%%DATADIR%%/translations/stellarium-skycultures/az.qm
-%%DATADIR%%/translations/stellarium-skycultures/ba.qm
-%%DATADIR%%/translations/stellarium-skycultures/be.qm
-%%DATADIR%%/translations/stellarium-skycultures/bg.qm
-%%DATADIR%%/translations/stellarium-skycultures/bh.qm
-%%DATADIR%%/translations/stellarium-skycultures/bi.qm
-%%DATADIR%%/translations/stellarium-skycultures/bn.qm
-%%DATADIR%%/translations/stellarium-skycultures/bo.qm
-%%DATADIR%%/translations/stellarium-skycultures/br.qm
-%%DATADIR%%/translations/stellarium-skycultures/bs.qm
-%%DATADIR%%/translations/stellarium-skycultures/ca.qm
-%%DATADIR%%/translations/stellarium-skycultures/ce.qm
-%%DATADIR%%/translations/stellarium-skycultures/ckb.qm
-%%DATADIR%%/translations/stellarium-skycultures/cs.qm
-%%DATADIR%%/translations/stellarium-skycultures/csb.qm
-%%DATADIR%%/translations/stellarium-skycultures/cv.qm
-%%DATADIR%%/translations/stellarium-skycultures/cy.qm
-%%DATADIR%%/translations/stellarium-skycultures/da.qm
-%%DATADIR%%/translations/stellarium-skycultures/de.qm
-%%DATADIR%%/translations/stellarium-skycultures/dv.qm
-%%DATADIR%%/translations/stellarium-skycultures/el.qm
-%%DATADIR%%/translations/stellarium-skycultures/en.qm
-%%DATADIR%%/translations/stellarium-skycultures/en_AU.qm
-%%DATADIR%%/translations/stellarium-skycultures/en_CA.qm
-%%DATADIR%%/translations/stellarium-skycultures/en_GB.qm
-%%DATADIR%%/translations/stellarium-skycultures/en_US.qm
-%%DATADIR%%/translations/stellarium-skycultures/eo.qm
-%%DATADIR%%/translations/stellarium-skycultures/es.qm
-%%DATADIR%%/translations/stellarium-skycultures/et.qm
-%%DATADIR%%/translations/stellarium-skycultures/eu.qm
-%%DATADIR%%/translations/stellarium-skycultures/fa.qm
-%%DATADIR%%/translations/stellarium-skycultures/fi.qm
-%%DATADIR%%/translations/stellarium-skycultures/fil.qm
-%%DATADIR%%/translations/stellarium-skycultures/fj.qm
-%%DATADIR%%/translations/stellarium-skycultures/fr.qm
-%%DATADIR%%/translations/stellarium-skycultures/fy.qm
-%%DATADIR%%/translations/stellarium-skycultures/ga.qm
-%%DATADIR%%/translations/stellarium-skycultures/gd.qm
-%%DATADIR%%/translations/stellarium-skycultures/gl.qm
-%%DATADIR%%/translations/stellarium-skycultures/gn.qm
-%%DATADIR%%/translations/stellarium-skycultures/gu.qm
-%%DATADIR%%/translations/stellarium-skycultures/haw.qm
-%%DATADIR%%/translations/stellarium-skycultures/he.qm
-%%DATADIR%%/translations/stellarium-skycultures/hi.qm
-%%DATADIR%%/translations/stellarium-skycultures/hne.qm
-%%DATADIR%%/translations/stellarium-skycultures/hr.qm
-%%DATADIR%%/translations/stellarium-skycultures/hrx.qm
-%%DATADIR%%/translations/stellarium-skycultures/ht.qm
-%%DATADIR%%/translations/stellarium-skycultures/hu.qm
-%%DATADIR%%/translations/stellarium-skycultures/hy.qm
-%%DATADIR%%/translations/stellarium-skycultures/ia.qm
-%%DATADIR%%/translations/stellarium-skycultures/id.qm
-%%DATADIR%%/translations/stellarium-skycultures/is.qm
-%%DATADIR%%/translations/stellarium-skycultures/it.qm
-%%DATADIR%%/translations/stellarium-skycultures/ja.qm
-%%DATADIR%%/translations/stellarium-skycultures/ka.qm
-%%DATADIR%%/translations/stellarium-skycultures/kg.qm
-%%DATADIR%%/translations/stellarium-skycultures/kk.qm
-%%DATADIR%%/translations/stellarium-skycultures/km.qm
-%%DATADIR%%/translations/stellarium-skycultures/kn.qm
-%%DATADIR%%/translations/stellarium-skycultures/ko.qm
-%%DATADIR%%/translations/stellarium-skycultures/ky.qm
-%%DATADIR%%/translations/stellarium-skycultures/la.qm
-%%DATADIR%%/translations/stellarium-skycultures/lb.qm
-%%DATADIR%%/translations/stellarium-skycultures/lo.qm
-%%DATADIR%%/translations/stellarium-skycultures/lt.qm
-%%DATADIR%%/translations/stellarium-skycultures/lv.qm
-%%DATADIR%%/translations/stellarium-skycultures/mai.qm
-%%DATADIR%%/translations/stellarium-skycultures/mi.qm
-%%DATADIR%%/translations/stellarium-skycultures/mk.qm
-%%DATADIR%%/translations/stellarium-skycultures/ml.qm
-%%DATADIR%%/translations/stellarium-skycultures/mn.qm
-%%DATADIR%%/translations/stellarium-skycultures/mo.qm
-%%DATADIR%%/translations/stellarium-skycultures/mr.qm
-%%DATADIR%%/translations/stellarium-skycultures/ms.qm
-%%DATADIR%%/translations/stellarium-skycultures/mt.qm
-%%DATADIR%%/translations/stellarium-skycultures/nan.qm
-%%DATADIR%%/translations/stellarium-skycultures/nb.qm
-%%DATADIR%%/translations/stellarium-skycultures/nds.qm
-%%DATADIR%%/translations/stellarium-skycultures/ne.qm
-%%DATADIR%%/translations/stellarium-skycultures/nl.qm
-%%DATADIR%%/translations/stellarium-skycultures/nn.qm
-%%DATADIR%%/translations/stellarium-skycultures/oc.qm
-%%DATADIR%%/translations/stellarium-skycultures/os.qm
-%%DATADIR%%/translations/stellarium-skycultures/pa.qm
-%%DATADIR%%/translations/stellarium-skycultures/pl.qm
-%%DATADIR%%/translations/stellarium-skycultures/pt.qm
-%%DATADIR%%/translations/stellarium-skycultures/pt_BR.qm
-%%DATADIR%%/translations/stellarium-skycultures/ro.qm
-%%DATADIR%%/translations/stellarium-skycultures/ru.qm
-%%DATADIR%%/translations/stellarium-skycultures/sah.qm
-%%DATADIR%%/translations/stellarium-skycultures/sco.qm
-%%DATADIR%%/translations/stellarium-skycultures/se.qm
-%%DATADIR%%/translations/stellarium-skycultures/si.qm
-%%DATADIR%%/translations/stellarium-skycultures/sk.qm
-%%DATADIR%%/translations/stellarium-skycultures/sl.qm
-%%DATADIR%%/translations/stellarium-skycultures/sm.qm
-%%DATADIR%%/translations/stellarium-skycultures/sq.qm
-%%DATADIR%%/translations/stellarium-skycultures/sr.qm
-%%DATADIR%%/translations/stellarium-skycultures/su.qm
-%%DATADIR%%/translations/stellarium-skycultures/sv.qm
-%%DATADIR%%/translations/stellarium-skycultures/sw.qm
-%%DATADIR%%/translations/stellarium-skycultures/ta.qm
-%%DATADIR%%/translations/stellarium-skycultures/te.qm
-%%DATADIR%%/translations/stellarium-skycultures/tg.qm
-%%DATADIR%%/translations/stellarium-skycultures/th.qm
-%%DATADIR%%/translations/stellarium-skycultures/tl.qm
-%%DATADIR%%/translations/stellarium-skycultures/tr.qm
-%%DATADIR%%/translations/stellarium-skycultures/tt.qm
-%%DATADIR%%/translations/stellarium-skycultures/ug.qm
-%%DATADIR%%/translations/stellarium-skycultures/uk.qm
-%%DATADIR%%/translations/stellarium-skycultures/uz.qm
-%%DATADIR%%/translations/stellarium-skycultures/vi.qm
-%%DATADIR%%/translations/stellarium-skycultures/wa.qm
-%%DATADIR%%/translations/stellarium-skycultures/xh.qm
-%%DATADIR%%/translations/stellarium-skycultures/zh_CN.qm
-%%DATADIR%%/translations/stellarium-skycultures/zh_HK.qm
-%%DATADIR%%/translations/stellarium-skycultures/zh_TW.qm
-%%DATADIR%%/translations/stellarium-skycultures/zu.qm
-%%DATADIR%%/translations/stellarium/aa.qm
-%%DATADIR%%/translations/stellarium/ab.qm
-%%DATADIR%%/translations/stellarium/ae.qm
-%%DATADIR%%/translations/stellarium/af.qm
-%%DATADIR%%/translations/stellarium/ak.qm
-%%DATADIR%%/translations/stellarium/am.qm
-%%DATADIR%%/translations/stellarium/an.qm
-%%DATADIR%%/translations/stellarium/ar.qm
-%%DATADIR%%/translations/stellarium/as.qm
-%%DATADIR%%/translations/stellarium/ast.qm
-%%DATADIR%%/translations/stellarium/av.qm
-%%DATADIR%%/translations/stellarium/az.qm
-%%DATADIR%%/translations/stellarium/ba.qm
-%%DATADIR%%/translations/stellarium/be.qm
-%%DATADIR%%/translations/stellarium/bg.qm
-%%DATADIR%%/translations/stellarium/bh.qm
-%%DATADIR%%/translations/stellarium/bi.qm
-%%DATADIR%%/translations/stellarium/bn.qm
-%%DATADIR%%/translations/stellarium/bo.qm
-%%DATADIR%%/translations/stellarium/br.qm
-%%DATADIR%%/translations/stellarium/bs.qm
-%%DATADIR%%/translations/stellarium/ca.qm
-%%DATADIR%%/translations/stellarium/ce.qm
-%%DATADIR%%/translations/stellarium/ckb.qm
-%%DATADIR%%/translations/stellarium/cs.qm
-%%DATADIR%%/translations/stellarium/csb.qm
-%%DATADIR%%/translations/stellarium/cv.qm
-%%DATADIR%%/translations/stellarium/cy.qm
-%%DATADIR%%/translations/stellarium/da.qm
-%%DATADIR%%/translations/stellarium/de.qm
-%%DATADIR%%/translations/stellarium/dv.qm
-%%DATADIR%%/translations/stellarium/el.qm
-%%DATADIR%%/translations/stellarium/en.qm
-%%DATADIR%%/translations/stellarium/en_AU.qm
-%%DATADIR%%/translations/stellarium/en_CA.qm
-%%DATADIR%%/translations/stellarium/en_GB.qm
-%%DATADIR%%/translations/stellarium/en_US.qm
-%%DATADIR%%/translations/stellarium/eo.qm
-%%DATADIR%%/translations/stellarium/es.qm
-%%DATADIR%%/translations/stellarium/et.qm
-%%DATADIR%%/translations/stellarium/eu.qm
-%%DATADIR%%/translations/stellarium/fa.qm
-%%DATADIR%%/translations/stellarium/fi.qm
-%%DATADIR%%/translations/stellarium/fil.qm
-%%DATADIR%%/translations/stellarium/fj.qm
-%%DATADIR%%/translations/stellarium/fr.qm
-%%DATADIR%%/translations/stellarium/fy.qm
-%%DATADIR%%/translations/stellarium/ga.qm
-%%DATADIR%%/translations/stellarium/gd.qm
-%%DATADIR%%/translations/stellarium/gl.qm
-%%DATADIR%%/translations/stellarium/gn.qm
-%%DATADIR%%/translations/stellarium/gu.qm
-%%DATADIR%%/translations/stellarium/gv.qm
-%%DATADIR%%/translations/stellarium/haw.qm
-%%DATADIR%%/translations/stellarium/he.qm
-%%DATADIR%%/translations/stellarium/hi.qm
-%%DATADIR%%/translations/stellarium/hne.qm
-%%DATADIR%%/translations/stellarium/hr.qm
-%%DATADIR%%/translations/stellarium/hrx.qm
-%%DATADIR%%/translations/stellarium/ht.qm
-%%DATADIR%%/translations/stellarium/hu.qm
-%%DATADIR%%/translations/stellarium/hy.qm
-%%DATADIR%%/translations/stellarium/ia.qm
-%%DATADIR%%/translations/stellarium/id.qm
-%%DATADIR%%/translations/stellarium/is.qm
-%%DATADIR%%/translations/stellarium/it.qm
-%%DATADIR%%/translations/stellarium/ja.qm
-%%DATADIR%%/translations/stellarium/ka.qm
-%%DATADIR%%/translations/stellarium/kg.qm
-%%DATADIR%%/translations/stellarium/kk.qm
-%%DATADIR%%/translations/stellarium/km.qm
-%%DATADIR%%/translations/stellarium/kn.qm
-%%DATADIR%%/translations/stellarium/ko.qm
-%%DATADIR%%/translations/stellarium/ky.qm
-%%DATADIR%%/translations/stellarium/la.qm
-%%DATADIR%%/translations/stellarium/lb.qm
-%%DATADIR%%/translations/stellarium/lo.qm
-%%DATADIR%%/translations/stellarium/lt.qm
-%%DATADIR%%/translations/stellarium/lv.qm
-%%DATADIR%%/translations/stellarium/mai.qm
-%%DATADIR%%/translations/stellarium/mi.qm
-%%DATADIR%%/translations/stellarium/mk.qm
-%%DATADIR%%/translations/stellarium/ml.qm
-%%DATADIR%%/translations/stellarium/mn.qm
-%%DATADIR%%/translations/stellarium/mo.qm
-%%DATADIR%%/translations/stellarium/mr.qm
-%%DATADIR%%/translations/stellarium/ms.qm
-%%DATADIR%%/translations/stellarium/mt.qm
-%%DATADIR%%/translations/stellarium/nan.qm
-%%DATADIR%%/translations/stellarium/nb.qm
-%%DATADIR%%/translations/stellarium/nds.qm
-%%DATADIR%%/translations/stellarium/ne.qm
-%%DATADIR%%/translations/stellarium/nl.qm
-%%DATADIR%%/translations/stellarium/nn.qm
-%%DATADIR%%/translations/stellarium/oc.qm
-%%DATADIR%%/translations/stellarium/os.qm
-%%DATADIR%%/translations/stellarium/pa.qm
-%%DATADIR%%/translations/stellarium/pl.qm
-%%DATADIR%%/translations/stellarium/pt.qm
-%%DATADIR%%/translations/stellarium/pt_BR.qm
-%%DATADIR%%/translations/stellarium/ro.qm
-%%DATADIR%%/translations/stellarium/ru.qm
-%%DATADIR%%/translations/stellarium/sah.qm
-%%DATADIR%%/translations/stellarium/sco.qm
-%%DATADIR%%/translations/stellarium/se.qm
-%%DATADIR%%/translations/stellarium/si.qm
-%%DATADIR%%/translations/stellarium/sk.qm
-%%DATADIR%%/translations/stellarium/sl.qm
-%%DATADIR%%/translations/stellarium/sm.qm
-%%DATADIR%%/translations/stellarium/sq.qm
-%%DATADIR%%/translations/stellarium/sr.qm
-%%DATADIR%%/translations/stellarium/su.qm
-%%DATADIR%%/translations/stellarium/sv.qm
-%%DATADIR%%/translations/stellarium/sw.qm
-%%DATADIR%%/translations/stellarium/ta.qm
-%%DATADIR%%/translations/stellarium/te.qm
-%%DATADIR%%/translations/stellarium/tg.qm
-%%DATADIR%%/translations/stellarium/th.qm
-%%DATADIR%%/translations/stellarium/tl.qm
-%%DATADIR%%/translations/stellarium/tr.qm
-%%DATADIR%%/translations/stellarium/tt.qm
-%%DATADIR%%/translations/stellarium/ug.qm
-%%DATADIR%%/translations/stellarium/uk.qm
-%%DATADIR%%/translations/stellarium/uz.qm
-%%DATADIR%%/translations/stellarium/vi.qm
-%%DATADIR%%/translations/stellarium/wa.qm
-%%DATADIR%%/translations/stellarium/xh.qm
-%%DATADIR%%/translations/stellarium/zh_CN.qm
-%%DATADIR%%/translations/stellarium/zh_HK.qm
-%%DATADIR%%/translations/stellarium/zh_TW.qm
-%%DATADIR%%/translations/stellarium/zu.qm
-@dirrm %%DATADIR%%/translations/stellarium
-@dirrm %%DATADIR%%/translations/stellarium-skycultures
-@dirrm %%DATADIR%%/translations
 @dirrm %%DATADIR%%/textures
 @dirrm %%DATADIR%%/stars/default
 @dirrm %%DATADIR%%/stars
@@ -1196,7 +831,6 @@ share/pixmaps/stellarium.xpm
 @dirrm %%DATADIR%%/skycultures/tupi
 @dirrm %%DATADIR%%/skycultures/tongan
 @dirrm %%DATADIR%%/skycultures/sami
-@dirrm %%DATADIR%%/skycultures/romanian
 @dirrm %%DATADIR%%/skycultures/polynesian
 @dirrm %%DATADIR%%/skycultures/norse
 @dirrm %%DATADIR%%/skycultures/navajo
@@ -1210,7 +844,7 @@ share/pixmaps/stellarium.xpm
 @dirrm %%DATADIR%%/skycultures/aztec
 @dirrm %%DATADIR%%/skycultures/arabic
 @dirrm %%DATADIR%%/skycultures
-@dirrm %%DATADIR%%/scripts
+%%SCRIPTS%%@dirrm %%DATADIR%%/scripts
 @dirrm %%DATADIR%%/nebulae/default
 @dirrm %%DATADIR%%/nebulae
 @dirrm %%DATADIR%%/landscapes/uranus
@@ -1223,12 +857,353 @@ share/pixmaps/stellarium.xpm
 @dirrm %%DATADIR%%/landscapes/jupiter
 @dirrm %%DATADIR%%/landscapes/hurricane
 @dirrm %%DATADIR%%/landscapes/guereins
-@dirrm %%DATADIR%%/landscapes/grossmugl
-@dirrm %%DATADIR%%/landscapes/geneva
 @dirrm %%DATADIR%%/landscapes/garching
 @dirrm %%DATADIR%%/landscapes
 @dirrm %%DATADIR%%/data
 @dirrm %%DATADIR%%
+share/applications/stellarium.desktop
+share/icons/hicolor/16x16/apps/stellarium.png
+share/icons/hicolor/32x32/apps/stellarium.png
+share/icons/hicolor/48x48/apps/stellarium.png
+share/icons/hicolor/64x64/apps/stellarium.png
+share/icons/hicolor/128x128/apps/stellarium.png
+share/icons/hicolor/256x256/apps/stellarium.png
+share/icons/hicolor/512x512/apps/stellarium.png
+share/locale/aa/LC_MESSAGES/stellarium-skycultures.mo
+share/locale/aa/LC_MESSAGES/stellarium.mo
+share/locale/ab/LC_MESSAGES/stellarium-skycultures.mo
+share/locale/ab/LC_MESSAGES/stellarium.mo
+share/locale/ae/LC_MESSAGES/stellarium-skycultures.mo
+share/locale/ae/LC_MESSAGES/stellarium.mo
+share/locale/af/LC_MESSAGES/stellarium-skycultures.mo
+share/locale/af/LC_MESSAGES/stellarium.mo
+share/locale/ak/LC_MESSAGES/stellarium-skycultures.mo
+share/locale/ak/LC_MESSAGES/stellarium.mo
+share/locale/am/LC_MESSAGES/stellarium-skycultures.mo
+share/locale/am/LC_MESSAGES/stellarium.mo
+share/locale/an/LC_MESSAGES/stellarium-skycultures.mo
+share/locale/an/LC_MESSAGES/stellarium.mo
+share/locale/ar/LC_MESSAGES/stellarium-skycultures.mo
+share/locale/ar/LC_MESSAGES/stellarium.mo
+share/locale/as/LC_MESSAGES/stellarium-skycultures.mo
+share/locale/as/LC_MESSAGES/stellarium.mo
+share/locale/ast/LC_MESSAGES/stellarium-skycultures.mo
+share/locale/ast/LC_MESSAGES/stellarium.mo
+share/locale/av/LC_MESSAGES/stellarium-skycultures.mo
+share/locale/av/LC_MESSAGES/stellarium.mo
+share/locale/az/LC_MESSAGES/stellarium-skycultures.mo
+share/locale/az/LC_MESSAGES/stellarium.mo
+share/locale/ba/LC_MESSAGES/stellarium-skycultures.mo
+share/locale/ba/LC_MESSAGES/stellarium.mo
+share/locale/be/LC_MESSAGES/stellarium-skycultures.mo
+share/locale/be/LC_MESSAGES/stellarium.mo
+share/locale/bg/LC_MESSAGES/stellarium-skycultures.mo
+share/locale/bg/LC_MESSAGES/stellarium.mo
+share/locale/bh/LC_MESSAGES/stellarium-skycultures.mo
+share/locale/bh/LC_MESSAGES/stellarium.mo
+share/locale/bi/LC_MESSAGES/stellarium-skycultures.mo
+share/locale/bi/LC_MESSAGES/stellarium.mo
+share/locale/bn/LC_MESSAGES/stellarium-skycultures.mo
+share/locale/bn/LC_MESSAGES/stellarium.mo
+share/locale/bo/LC_MESSAGES/stellarium-skycultures.mo
+share/locale/bo/LC_MESSAGES/stellarium.mo
+share/locale/br/LC_MESSAGES/stellarium-skycultures.mo
+share/locale/br/LC_MESSAGES/stellarium.mo
+share/locale/bs/LC_MESSAGES/stellarium-skycultures.mo
+share/locale/bs/LC_MESSAGES/stellarium.mo
+share/locale/ca/LC_MESSAGES/stellarium-skycultures.mo
+share/locale/ca/LC_MESSAGES/stellarium.mo
+share/locale/ce/LC_MESSAGES/stellarium-skycultures.mo
+share/locale/ce/LC_MESSAGES/stellarium.mo
+share/locale/ckb/LC_MESSAGES/stellarium-skycultures.mo
+share/locale/ckb/LC_MESSAGES/stellarium.mo
+share/locale/cs/LC_MESSAGES/stellarium-skycultures.mo
+share/locale/cs/LC_MESSAGES/stellarium.mo
+share/locale/cv/LC_MESSAGES/stellarium-skycultures.mo
+share/locale/cv/LC_MESSAGES/stellarium.mo
+share/locale/cy/LC_MESSAGES/stellarium-skycultures.mo
+share/locale/cy/LC_MESSAGES/stellarium.mo
+share/locale/da/LC_MESSAGES/stellarium-skycultures.mo
+share/locale/da/LC_MESSAGES/stellarium.mo
+share/locale/de/LC_MESSAGES/stellarium-skycultures.mo
+share/locale/de/LC_MESSAGES/stellarium.mo
+share/locale/dv/LC_MESSAGES/stellarium-skycultures.mo
+share/locale/dv/LC_MESSAGES/stellarium.mo
+share/locale/el/LC_MESSAGES/stellarium-skycultures.mo
+share/locale/el/LC_MESSAGES/stellarium.mo
+share/locale/en/LC_MESSAGES/stellarium-skycultures.mo
+share/locale/en/LC_MESSAGES/stellarium.mo
+share/locale/en_AU/LC_MESSAGES/stellarium-skycultures.mo
+share/locale/en_AU/LC_MESSAGES/stellarium.mo
+share/locale/en_CA/LC_MESSAGES/stellarium-skycultures.mo
+share/locale/en_CA/LC_MESSAGES/stellarium.mo
+share/locale/en_GB/LC_MESSAGES/stellarium-skycultures.mo
+share/locale/en_GB/LC_MESSAGES/stellarium.mo
+share/locale/en_US/LC_MESSAGES/stellarium-skycultures.mo
+share/locale/en_US/LC_MESSAGES/stellarium.mo
+share/locale/eo/LC_MESSAGES/stellarium-skycultures.mo
+share/locale/eo/LC_MESSAGES/stellarium.mo
+share/locale/es/LC_MESSAGES/stellarium-skycultures.mo
+share/locale/es/LC_MESSAGES/stellarium.mo
+share/locale/et/LC_MESSAGES/stellarium-skycultures.mo
+share/locale/et/LC_MESSAGES/stellarium.mo
+share/locale/eu/LC_MESSAGES/stellarium-skycultures.mo
+share/locale/eu/LC_MESSAGES/stellarium.mo
+share/locale/fa/LC_MESSAGES/stellarium-skycultures.mo
+share/locale/fa/LC_MESSAGES/stellarium.mo
+share/locale/fi/LC_MESSAGES/stellarium-skycultures.mo
+share/locale/fi/LC_MESSAGES/stellarium.mo
+share/locale/fil/LC_MESSAGES/stellarium-skycultures.mo
+share/locale/fil/LC_MESSAGES/stellarium.mo
+share/locale/fj/LC_MESSAGES/stellarium-skycultures.mo
+share/locale/fj/LC_MESSAGES/stellarium.mo
+share/locale/fr/LC_MESSAGES/stellarium-skycultures.mo
+share/locale/fr/LC_MESSAGES/stellarium.mo
+share/locale/fy/LC_MESSAGES/stellarium.mo
+share/locale/ga/LC_MESSAGES/stellarium-skycultures.mo
+share/locale/ga/LC_MESSAGES/stellarium.mo
+share/locale/gd/LC_MESSAGES/stellarium-skycultures.mo
+share/locale/gd/LC_MESSAGES/stellarium.mo
+share/locale/gl/LC_MESSAGES/stellarium-skycultures.mo
+share/locale/gl/LC_MESSAGES/stellarium.mo
+share/locale/gn/LC_MESSAGES/stellarium-skycultures.mo
+share/locale/gn/LC_MESSAGES/stellarium.mo
+share/locale/gu/LC_MESSAGES/stellarium-skycultures.mo
+share/locale/gu/LC_MESSAGES/stellarium.mo
+share/locale/gv/LC_MESSAGES/stellarium.mo
+share/locale/haw/LC_MESSAGES/stellarium-skycultures.mo
+share/locale/haw/LC_MESSAGES/stellarium.mo
+share/locale/he/LC_MESSAGES/stellarium-skycultures.mo
+share/locale/he/LC_MESSAGES/stellarium.mo
+share/locale/hi/LC_MESSAGES/stellarium-skycultures.mo
+share/locale/hi/LC_MESSAGES/stellarium.mo
+share/locale/hr/LC_MESSAGES/stellarium-skycultures.mo
+share/locale/hr/LC_MESSAGES/stellarium.mo
+share/locale/hrx/LC_MESSAGES/stellarium-skycultures.mo
+share/locale/hrx/LC_MESSAGES/stellarium.mo
+share/locale/ht/LC_MESSAGES/stellarium-skycultures.mo
+share/locale/ht/LC_MESSAGES/stellarium.mo
+share/locale/hu/LC_MESSAGES/stellarium-skycultures.mo
+share/locale/hu/LC_MESSAGES/stellarium.mo
+share/locale/hy/LC_MESSAGES/stellarium-skycultures.mo
+share/locale/hy/LC_MESSAGES/stellarium.mo
+share/locale/ia/LC_MESSAGES/stellarium-skycultures.mo
+share/locale/ia/LC_MESSAGES/stellarium.mo
+share/locale/id/LC_MESSAGES/stellarium-skycultures.mo
+share/locale/id/LC_MESSAGES/stellarium.mo
+share/locale/is/LC_MESSAGES/stellarium-skycultures.mo
+share/locale/is/LC_MESSAGES/stellarium.mo
+share/locale/it/LC_MESSAGES/stellarium-skycultures.mo
+share/locale/it/LC_MESSAGES/stellarium.mo
+share/locale/ja/LC_MESSAGES/stellarium-skycultures.mo
+share/locale/ja/LC_MESSAGES/stellarium.mo
+share/locale/ka/LC_MESSAGES/stellarium-skycultures.mo
+share/locale/ka/LC_MESSAGES/stellarium.mo
+share/locale/kg/LC_MESSAGES/stellarium-skycultures.mo
+share/locale/kg/LC_MESSAGES/stellarium.mo
+share/locale/kk/LC_MESSAGES/stellarium-skycultures.mo
+share/locale/kk/LC_MESSAGES/stellarium.mo
+share/locale/kn/LC_MESSAGES/stellarium-skycultures.mo
+share/locale/kn/LC_MESSAGES/stellarium.mo
+share/locale/ko/LC_MESSAGES/stellarium-skycultures.mo
+share/locale/ko/LC_MESSAGES/stellarium.mo
+share/locale/ky/LC_MESSAGES/stellarium-skycultures.mo
+share/locale/ky/LC_MESSAGES/stellarium.mo
+share/locale/la/LC_MESSAGES/stellarium-skycultures.mo
+share/locale/la/LC_MESSAGES/stellarium.mo
+share/locale/lb/LC_MESSAGES/stellarium-skycultures.mo
+share/locale/lb/LC_MESSAGES/stellarium.mo
+share/locale/lo/LC_MESSAGES/stellarium-skycultures.mo
+share/locale/lo/LC_MESSAGES/stellarium.mo
+share/locale/lt/LC_MESSAGES/stellarium-skycultures.mo
+share/locale/lt/LC_MESSAGES/stellarium.mo
+share/locale/lv/LC_MESSAGES/stellarium-skycultures.mo
+share/locale/lv/LC_MESSAGES/stellarium.mo
+share/locale/mi/LC_MESSAGES/stellarium-skycultures.mo
+share/locale/mi/LC_MESSAGES/stellarium.mo
+share/locale/mk/LC_MESSAGES/stellarium-skycultures.mo
+share/locale/mk/LC_MESSAGES/stellarium.mo
+share/locale/ml/LC_MESSAGES/stellarium-skycultures.mo
+share/locale/ml/LC_MESSAGES/stellarium.mo
+share/locale/mn/LC_MESSAGES/stellarium-skycultures.mo
+share/locale/mn/LC_MESSAGES/stellarium.mo
+share/locale/mo/LC_MESSAGES/stellarium-skycultures.mo
+share/locale/mo/LC_MESSAGES/stellarium.mo
+share/locale/mr/LC_MESSAGES/stellarium-skycultures.mo
+share/locale/mr/LC_MESSAGES/stellarium.mo
+share/locale/ms/LC_MESSAGES/stellarium-skycultures.mo
+share/locale/ms/LC_MESSAGES/stellarium.mo
+share/locale/mt/LC_MESSAGES/stellarium-skycultures.mo
+share/locale/mt/LC_MESSAGES/stellarium.mo
+share/locale/nan/LC_MESSAGES/stellarium-skycultures.mo
+share/locale/nan/LC_MESSAGES/stellarium.mo
+share/locale/nb/LC_MESSAGES/stellarium-skycultures.mo
+share/locale/nb/LC_MESSAGES/stellarium.mo
+share/locale/nl/LC_MESSAGES/stellarium-skycultures.mo
+share/locale/nl/LC_MESSAGES/stellarium.mo
+share/locale/nn/LC_MESSAGES/stellarium-skycultures.mo
+share/locale/nn/LC_MESSAGES/stellarium.mo
+share/locale/oc/LC_MESSAGES/stellarium-skycultures.mo
+share/locale/oc/LC_MESSAGES/stellarium.mo
+share/locale/os/LC_MESSAGES/stellarium-skycultures.mo
+share/locale/os/LC_MESSAGES/stellarium.mo
+share/locale/pa/LC_MESSAGES/stellarium-skycultures.mo
+share/locale/pa/LC_MESSAGES/stellarium.mo
+share/locale/pl/LC_MESSAGES/stellarium-skycultures.mo
+share/locale/pl/LC_MESSAGES/stellarium.mo
+share/locale/pt/LC_MESSAGES/stellarium-skycultures.mo
+share/locale/pt/LC_MESSAGES/stellarium.mo
+share/locale/pt_BR/LC_MESSAGES/stellarium-skycultures.mo
+share/locale/pt_BR/LC_MESSAGES/stellarium.mo
+share/locale/ro/LC_MESSAGES/stellarium-skycultures.mo
+share/locale/ro/LC_MESSAGES/stellarium.mo
+share/locale/ru/LC_MESSAGES/stellarium-skycultures.mo
+share/locale/ru/LC_MESSAGES/stellarium.mo
+share/locale/sah/LC_MESSAGES/stellarium-skycultures.mo
+share/locale/sah/LC_MESSAGES/stellarium.mo
+share/locale/sco/LC_MESSAGES/stellarium.mo
+share/locale/se/LC_MESSAGES/stellarium-skycultures.mo
+share/locale/se/LC_MESSAGES/stellarium.mo
+share/locale/si/LC_MESSAGES/stellarium-skycultures.mo
+share/locale/si/LC_MESSAGES/stellarium.mo
+share/locale/sk/LC_MESSAGES/stellarium-skycultures.mo
+share/locale/sk/LC_MESSAGES/stellarium.mo
+share/locale/sl/LC_MESSAGES/stellarium-skycultures.mo
+share/locale/sl/LC_MESSAGES/stellarium.mo
+share/locale/sm/LC_MESSAGES/stellarium-skycultures.mo
+share/locale/sm/LC_MESSAGES/stellarium.mo
+share/locale/sq/LC_MESSAGES/stellarium-skycultures.mo
+share/locale/sq/LC_MESSAGES/stellarium.mo
+share/locale/sr/LC_MESSAGES/stellarium-skycultures.mo
+share/locale/sr/LC_MESSAGES/stellarium.mo
+share/locale/su/LC_MESSAGES/stellarium-skycultures.mo
+share/locale/su/LC_MESSAGES/stellarium.mo
+share/locale/sv/LC_MESSAGES/stellarium-skycultures.mo
+share/locale/sv/LC_MESSAGES/stellarium.mo
+share/locale/sw/LC_MESSAGES/stellarium-skycultures.mo
+share/locale/sw/LC_MESSAGES/stellarium.mo
+share/locale/ta/LC_MESSAGES/stellarium-skycultures.mo
+share/locale/ta/LC_MESSAGES/stellarium.mo
+share/locale/te/LC_MESSAGES/stellarium-skycultures.mo
+share/locale/te/LC_MESSAGES/stellarium.mo
+share/locale/tg/LC_MESSAGES/stellarium-skycultures.mo
+share/locale/tg/LC_MESSAGES/stellarium.mo
+share/locale/th/LC_MESSAGES/stellarium-skycultures.mo
+share/locale/th/LC_MESSAGES/stellarium.mo
+share/locale/tl/LC_MESSAGES/stellarium-skycultures.mo
+share/locale/tl/LC_MESSAGES/stellarium.mo
+share/locale/tr/LC_MESSAGES/stellarium-skycultures.mo
+share/locale/tr/LC_MESSAGES/stellarium.mo
+share/locale/tt/LC_MESSAGES/stellarium-skycultures.mo
+share/locale/tt/LC_MESSAGES/stellarium.mo
+share/locale/uk/LC_MESSAGES/stellarium-skycultures.mo
+share/locale/uk/LC_MESSAGES/stellarium.mo
+share/locale/uz/LC_MESSAGES/stellarium-skycultures.mo
+share/locale/uz/LC_MESSAGES/stellarium.mo
+share/locale/vi/LC_MESSAGES/stellarium-skycultures.mo
+share/locale/vi/LC_MESSAGES/stellarium.mo
+share/locale/zh_CN/LC_MESSAGES/stellarium-skycultures.mo
+share/locale/zh_CN/LC_MESSAGES/stellarium.mo
+share/locale/zh_HK/LC_MESSAGES/stellarium-skycultures.mo
+share/locale/zh_HK/LC_MESSAGES/stellarium.mo
+share/locale/zh_TW/LC_MESSAGES/stellarium-skycultures.mo
+share/locale/zh_TW/LC_MESSAGES/stellarium.mo
+share/locale/zu/LC_MESSAGES/stellarium-skycultures.mo
+share/locale/zu/LC_MESSAGES/stellarium.mo
+share/pixmaps/stellarium.xpm
+@dirrmtry share/locale/zu/LC_MESSAGES
+@dirrmtry share/locale/zu
+@dirrmtry share/locale/zh_HK/LC_MESSAGES
+@dirrmtry share/locale/zh_HK
+@dirrmtry share/locale/tl/LC_MESSAGES
+@dirrmtry share/locale/tl
+@dirrmtry share/locale/te/LC_MESSAGES
+@dirrmtry share/locale/te
+@dirrmtry share/locale/sw/LC_MESSAGES
+@dirrmtry share/locale/sw
+@dirrmtry share/locale/su/LC_MESSAGES
+@dirrmtry share/locale/su
+@dirrmtry share/locale/sm/LC_MESSAGES
+@dirrmtry share/locale/sm
+@dirrmtry share/locale/si/LC_MESSAGES
+@dirrmtry share/locale/si
+@dirrmtry share/locale/se/LC_MESSAGES
+@dirrmtry share/locale/se
+@dirrmtry share/locale/sco/LC_MESSAGES
+@dirrmtry share/locale/sco
+@dirrmtry share/locale/sah/LC_MESSAGES
+@dirrmtry share/locale/sah
+@dirrmtry share/locale/os/LC_MESSAGES
+@dirrmtry share/locale/os
+@dirrmtry share/locale/nan/LC_MESSAGES
+@dirrmtry share/locale/nan
+@dirrmtry share/locale/mr/LC_MESSAGES
+@dirrmtry share/locale/mr
+@dirrmtry share/locale/mo/LC_MESSAGES
+@dirrmtry share/locale/mo
+@dirrmtry share/locale/mi/LC_MESSAGES
+@dirrmtry share/locale/mi
+@dirrmtry share/locale/lo/LC_MESSAGES
+@dirrmtry share/locale/lo
+@dirrmtry share/locale/lb/LC_MESSAGES
+@dirrmtry share/locale/lb
+@dirrmtry share/locale/la/LC_MESSAGES
+@dirrmtry share/locale/la
+@dirrmtry share/locale/ky/LC_MESSAGES
+@dirrmtry share/locale/ky
+@dirrmtry share/locale/kg/LC_MESSAGES
+@dirrmtry share/locale/kg
+@dirrmtry share/locale/ia/LC_MESSAGES
+@dirrmtry share/locale/ia
+@dirrmtry share/locale/hy/LC_MESSAGES
+@dirrmtry share/locale/hy
+@dirrmtry share/locale/ht/LC_MESSAGES
+@dirrmtry share/locale/ht
+@dirrmtry share/locale/hrx/LC_MESSAGES
+@dirrmtry share/locale/hrx
+@dirrmtry share/locale/haw/LC_MESSAGES
+@dirrmtry share/locale/haw
+@dirrmtry share/locale/gv/LC_MESSAGES
+@dirrmtry share/locale/gv
+@dirrmtry share/locale/gn/LC_MESSAGES
+@dirrmtry share/locale/gn
+@dirrmtry share/locale/gd/LC_MESSAGES
+@dirrmtry share/locale/gd
+@dirrmtry share/locale/fy/LC_MESSAGES
+@dirrmtry share/locale/fy
+@dirrmtry share/locale/fj/LC_MESSAGES
+@dirrmtry share/locale/fj
+@dirrmtry share/locale/fil/LC_MESSAGES
+@dirrmtry share/locale/fil
+@dirrmtry share/locale/en_US/LC_MESSAGES
+@dirrmtry share/locale/en_US
+@dirrmtry share/locale/dv/LC_MESSAGES
+@dirrmtry share/locale/dv
+@dirrmtry share/locale/cv/LC_MESSAGES
+@dirrmtry share/locale/cv
+@dirrmtry share/locale/ckb/LC_MESSAGES
+@dirrmtry share/locale/ckb
+@dirrmtry share/locale/ce/LC_MESSAGES
+@dirrmtry share/locale/ce
+@dirrmtry share/locale/bo/LC_MESSAGES
+@dirrmtry share/locale/bo
+@dirrmtry share/locale/bi/LC_MESSAGES
+@dirrmtry share/locale/bi
+@dirrmtry share/locale/bh/LC_MESSAGES
+@dirrmtry share/locale/bh
+@dirrmtry share/locale/ba/LC_MESSAGES
+@dirrmtry share/locale/ba
+@dirrmtry share/locale/av/LC_MESSAGES
+@dirrmtry share/locale/av
+@dirrmtry share/locale/an/LC_MESSAGES
+@dirrmtry share/locale/an
+@dirrmtry share/locale/ak/LC_MESSAGES
+@dirrmtry share/locale/ak
+@dirrmtry share/locale/ae/LC_MESSAGES
+@dirrmtry share/locale/ae
+@dirrmtry share/locale/ab/LC_MESSAGES
+@dirrmtry share/locale/ab
+@dirrmtry share/locale/aa/LC_MESSAGES
+@dirrmtry share/locale/aa
 @dirrmtry share/icons/hicolor/512x512/apps
 @dirrmtry share/icons/hicolor/512x512
-@dirrmtry share/appdata

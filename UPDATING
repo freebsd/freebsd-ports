@@ -5,6 +5,15 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20140802:
+  AFFECTS: users of astro/stellarium
+  AUTHOR: danfe@FreeBSD.org
+
+  Stellarium was updated to version 0.13.0.  It's a new major release, and
+  it is based on Qt version 5 now.  For those who are not comfortable with
+  upgrading to the new Qt, previous Stellarium version (0.12.4) was copied
+  over to `astro/stellarium-qt4' port.
+
 20140731:
   AFFECTS: users of www/ajaxplorer
   AUTHOR: madpilot@FreeBSD.org

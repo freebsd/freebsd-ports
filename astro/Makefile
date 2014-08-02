@@ -101,6 +101,7 @@
     SUBDIR += starplot
     SUBDIR += stars
     SUBDIR += stellarium
+    SUBDIR += stellarium-qt4
     SUBDIR += sunclock
     SUBDIR += swe
     SUBDIR += tclgeomap

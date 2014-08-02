@@ -2,11 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	stellarium
-PORTVERSION=	0.13.0
+PORTVERSION=	0.12.4
 CATEGORIES=	astro
 MASTER_SITES=	SF/${PORTNAME}/Stellarium-sources/${PORTVERSION}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 EXTRACT_ONLY:=	${DISTFILES}
+PKGNAMESUFFIX=	-qt4
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	3D photo-realistic sky renderer (planetarium)
@@ -15,15 +16,17 @@ LICENSE=	GPLv2
 
 USES=		cmake gettext iconv
 USE_GL=		gl
-USE_QT5=	qmake_build buildtools core concurrent declarative linguist
+USE_QT4=	moc_build rcc_build uic_build qmake_build \
+		corelib gui network opengl
 INSTALLS_ICONS=	yes
 
 PORTDOCS=	AUTHORS ChangeLog README
 
-OPTIONS_DEFINE=		MORE_STARS MULTIMEDIA DOCS
-OPTIONS_DEFAULT=	MULTIMEDIA
+OPTIONS_DEFINE=		MORE_STARS MULTIMEDIA SCRIPTING DOCS
+OPTIONS_DEFAULT=	MULTIMEDIA SCRIPTING
 MORE_STARS_DESC=	Install extra star catalogs (1.2GB)
-MULTIMEDIA_DESC=	Sound and video support
+MULTIMEDIA_DESC=	Sound and video support (via Phonon)
+SCRIPTING_DESC=		Scripting support
 
 .include <bsd.port.options.mk>
 
@@ -40,13 +43,26 @@ PLIST_SUB+=	MORE_STARS="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MMULTIMEDIA}
-USE_QT5+=	multimedia
+USE_QT4+=	phonon
 .else
 CMAKE_ARGS+=	-DENABLE_SOUND:BOOL=OFF
 .endif
 
-post-patch:
-	@${REINPLACE_CMD} -e '/ -Wno-unused-result/d' ${WRKSRC}/CMakeLists.txt
+.if ${PORT_OPTIONS:MSCRIPTING}
+USE_QT4+=	script
+PLIST_SUB+=	SCRIPTS=""
+.else
+CMAKE_ARGS+=	-DENABLE_SCRIPTING:BOOL=OFF
+PLIST_SUB+=	SCRIPTS="@comment "
+.endif
+
+post-patch: .SILENT
+	${REINPLACE_CMD} -e '/QTTEST/d' ${WRKSRC}/CMakeLists.txt
+# Avoid picking up the wrong `fixx11h.h' (`x11/kdelibs3' port installs one
+# that does not handle FontChange)
+	${GREP} -Rl --null fixx11h\\.h ${WRKSRC}/src ${WRKSRC}/plugins | \
+		${XARGS} -0 ${REINPLACE_CMD} -e 's/fixx11h\.h/fixx11qt4h.h/'
+	cd ${WRKSRC}/src/core/external && ${MV} fixx11h.h fixx11qt4h.h
 
 post-install:
 .if ${PORT_OPTIONS:MMORE_STARS}
