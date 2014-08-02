@@ -22,7 +22,7 @@
  	closedir(sysdir);
  	if (found)
  		return 0;
-+#elif defined(__FreeBSD__)
++#elif defined(__FreeBSD__) || defined(__DragonFly__)
 +	return 0;
  #endif
  	return -ENOSYS;
