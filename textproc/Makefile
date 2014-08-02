@@ -1139,6 +1139,7 @@
     SUBDIR += py-Tempita
     SUBDIR += py-asciinema
     SUBDIR += py-asv
+    SUBDIR += py-bugzillatools
     SUBDIR += py-charade
     SUBDIR += py-chardet
     SUBDIR += py-cloud_sptheme
