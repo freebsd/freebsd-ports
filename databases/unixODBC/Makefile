@@ -23,17 +23,13 @@ USE_LDCONFIG=	yes
 
 PORTDOCS=	*
 
-.include <bsd.port.options.mk>
-
 post-patch:
 	@${REINPLACE_CMD} -e \
 		'/\.ini/s|^|#|' ${WRKSRC}/Makefile.in
 
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC}/doc && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}
 	@${FIND} ${STAGEDIR}${DOCSDIR} -type f -name "*Makefile*" -delete
-.endif
 
 .include <bsd.port.mk>
