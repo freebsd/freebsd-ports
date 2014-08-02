@@ -2,7 +2,7 @@
 
 PORTNAME=	python27
 PORTVERSION=	2.7.8
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang python ipv6
 MASTER_SITES=	PYTHON
 MASTER_SITE_SUBDIR=	ftp/python/${PORTVERSION}
@@ -23,7 +23,7 @@ CPE_PRODUCT=	${CPE_VENDOR}
 CPE_VERSION=	${PORTVERSION}
 
 CONFIGURE_ARGS+=	--enable-shared
-CONFIGURE_ENV+=		OPT=""							# Null out OPT to respect user CFLAGS and remove optimizations
+CONFIGURE_ENV+=		ac_cv_opt_olimit_ok=no OPT=""				# Null out OPT to respect user CFLAGS and remove optimizations
 
 INSTALL_TARGET=		altinstall						# Don't want cloberring of unprefixed files
 SHAREMODE=		644							# Match upstream INSTALL_DATA=644, so we can STRIP shared libraries
