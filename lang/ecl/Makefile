@@ -9,6 +9,8 @@ MASTER_SITES=	SF/${PORTNAME}s/${PORTNAME}s/13.5/
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	ANSI Common Lisp implementation
 
+BROKEN=		Fails to link with new libgc
+
 LIB_DEPENDS=	libgmp.so:${PORTSDIR}/math/gmp
 
 MAKE_JOBS_UNSAFE=	yes
