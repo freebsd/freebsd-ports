@@ -57,6 +57,39 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="89ff45e3-1a57-11e4-bebd-000c2980a9f3">
+    <topic>samba -- remote code execution</topic>
+    <affects>
+      <package>
+	<name>samba4</name>
+	<range><ge>4.0.0</ge><lt>4.0.21</lt></range>
+      </package>
+      <package>
+	<name>samba41</name>
+	<range><ge>4.1.0</ge><lt>4.1.11</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Samba developers report:</p>
+	<blockquote cite="http://www.samba.org/samba/security/CVE-2014-3560">
+	  <p>A malicious browser can send packets that may overwrite the heap of
+	    the target nmbd NetBIOS name services daemon. It may be possible to
+	    use this to generate a remote code execution vulnerability as the
+	    superuser (root).</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2014-3560</cvename>
+      <url>http://www.samba.org/samba/security/CVE-2014-3560</url>
+    </references>
+    <dates>
+      <discovery>2014-07-31</discovery>
+      <entry>2014-08-02</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="90ca3ba5-19e6-11e4-8616-001b3856973b">
     <topic>gpgme -- heap-based buffer overflow in gpgsm status handler</topic>
     <affects>
