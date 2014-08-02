@@ -2,12 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	wcslib
-PORTVERSION=	4.13.4
-PORTREVISION=	3
+PORTVERSION=	4.23
 CATEGORIES=	astro
 MASTER_SITES=	ftp://ftp.atnf.csiro.au/pub/software/wcslib/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	danilo@FreeBSD.org
 COMMENT=	Library for parsing/generating FITS headers
 
 GNU_CONFIGURE=	yes
