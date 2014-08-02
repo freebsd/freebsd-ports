@@ -20,7 +20,7 @@ LICENSE=	GPLv2
 
 MANUAL_PACKAGE_BUILD=   huge
 
-USES=		zip
+USES=		zip:infozip
 WRKSRC=		${WRKDIR}/Nexuiz/sources/darkplaces
 MAKEFILE=	BSDmakefile
 MAKE_ARGS=	DP_FS_BASEDIR="${DATADIR}" CC="${CC}" \
@@ -89,10 +89,10 @@ PLIST_FILES+=	bin/${PORTNAME}-dedicated
 .endif
 
 post-extract:
-	@cd ${WRKDIR}/Nexuiz/sources && \
-		${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} \
+	@${EXTRACT_CMD} -qo \
 		${WRKDIR}/Nexuiz/sources/enginesource20091001.zip \
-		${EXTRACT_AFTER_ARGS}
+		-d ${WRKDIR}/Nexuiz/sources
+
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,/usr/X11R6,${LOCALBASE},' \
