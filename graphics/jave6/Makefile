@@ -3,7 +3,7 @@
 
 PORTNAME=	jave6
 PORTVERSION=	0.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	graphics java
 MASTER_SITES=	http://www.jave.de/developer/\
 		http://ikaria.informatik.uni-rostock.de/public_bsd/FreeBSD/
@@ -12,29 +12,20 @@ DISTNAME=	jave_6.0_i20060105
 MAINTAINER=	ad001@uni-rostock.de
 COMMENT=	Java ASCII-Art-Generator
 
+EXTRACT_AFTER_ARGS=	-d ${WRKDIR}/${DISTNAME}
+
 USES=		zip
-USE_JAVA=	YES
+USE_JAVA=	yes
 JAVA_VERSION=	1.6+
-NO_BUILD=	YES
+NO_BUILD=	yes
+
+SUB_FILES=	jave6 pkg-message
+SUB_LIST=	JAVA_VERSION=${JAVA_VERSION}
 DATADIR=	${JAVASHAREDIR}/${PORTNAME}
-LNKTARGET=	${PREFIX}/bin/jave6
-HLPSKRIPT=	jave6
 
-PLIST_SUB+=DATADIR=%%JAVASHAREDIR%%/${PORTNAME}
-
-NO_STAGE=	yes
 do-install:
-	@${ECHO} "Installing JavE6 files in ${DATADIR}..."
-	@${MKDIR} ${DATADIR}
-	@${CP} -rv ${WRKDIR}/* ${DATADIR}
-	@${ECHO} "creating start script ${LNKTARGET}..."
-	@${ECHO} "#!/bin/sh" > ${DATADIR}/${HLPSKRIPT}
-	@${ECHO} "JAVA_VERSION=${JAVA_VERSION} exec ${LOCALBASE}/bin/java -jar ${DATADIR}/jave.jar" >> ${DATADIR}/${HLPSKRIPT}
-	@${CHMOD} a+x ${DATADIR}/${HLPSKRIPT}
-	@${LN} -sf ${DATADIR}/${HLPSKRIPT} ${LNKTARGET}
-	@${ECHO} "done."
-
-post-install:
-	@${ECHO} "Errors may occur while running the program, as it will try to access ${DATADIR}/tmp/ for output."
+	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR}
 
 .include <bsd.port.mk>
