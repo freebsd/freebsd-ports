@@ -21,7 +21,7 @@ BUILD_DEPENDS=	gawk:${PORTSDIR}/lang/gawk\
 		unzip:${PORTSDIR}/archivers/unzip
 LIB_DEPENDS=	libxml2.so:${PORTSDIR}/textproc/libxml2
 
-USES=		gmake
+USES=		gmake readline
 
 USE_AUTOTOOLS=	libtool
 CONFIGURE_ARGS=	--with-readline\
