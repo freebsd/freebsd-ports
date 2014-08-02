@@ -1,12 +1,8 @@
 bin/nagstamon
 bin/nagstamon.py
-man/man1/nagstamon.1.gz
 %%PYTHON_SITELIBDIR%%/Nagstamon/Actions.py
 %%PYTHON_SITELIBDIR%%/Nagstamon/Actions.pyc
 %%PYTHON_SITELIBDIR%%/Nagstamon/Actions.pyo
-%%PYTHON_SITELIBDIR%%/Nagstamon/BeautifulSoup.py
-%%PYTHON_SITELIBDIR%%/Nagstamon/BeautifulSoup.pyc
-%%PYTHON_SITELIBDIR%%/Nagstamon/BeautifulSoup.pyo
 %%PYTHON_SITELIBDIR%%/Nagstamon/Config.py
 %%PYTHON_SITELIBDIR%%/Nagstamon/Config.pyc
 %%PYTHON_SITELIBDIR%%/Nagstamon/Config.pyo
@@ -40,24 +36,39 @@ man/man1/nagstamon.1.gz
 %%PYTHON_SITELIBDIR%%/Nagstamon/Server/Opsview.py
 %%PYTHON_SITELIBDIR%%/Nagstamon/Server/Opsview.pyc
 %%PYTHON_SITELIBDIR%%/Nagstamon/Server/Opsview.pyo
+%%PYTHON_SITELIBDIR%%/Nagstamon/Server/Thruk.py
+%%PYTHON_SITELIBDIR%%/Nagstamon/Server/Thruk.pyc
+%%PYTHON_SITELIBDIR%%/Nagstamon/Server/Thruk.pyo
+%%PYTHON_SITELIBDIR%%/Nagstamon/Server/Zabbix.py
+%%PYTHON_SITELIBDIR%%/Nagstamon/Server/Zabbix.pyc
+%%PYTHON_SITELIBDIR%%/Nagstamon/Server/Zabbix.pyo
 %%PYTHON_SITELIBDIR%%/Nagstamon/Server/__init__.py
 %%PYTHON_SITELIBDIR%%/Nagstamon/Server/__init__.pyc
 %%PYTHON_SITELIBDIR%%/Nagstamon/Server/__init__.pyo
+%%PYTHON_SITELIBDIR%%/Nagstamon/Server/op5Monitor.py
+%%PYTHON_SITELIBDIR%%/Nagstamon/Server/op5Monitor.pyc
+%%PYTHON_SITELIBDIR%%/Nagstamon/Server/op5Monitor.pyo
 %%PYTHON_SITELIBDIR%%/Nagstamon/__init__.py
 %%PYTHON_SITELIBDIR%%/Nagstamon/__init__.pyc
 %%PYTHON_SITELIBDIR%%/Nagstamon/__init__.pyo
 %%PYTHON_SITELIBDIR%%/Nagstamon/resources/LICENSE
 %%PYTHON_SITELIBDIR%%/Nagstamon/resources/acknowledge_dialog.ui
+%%PYTHON_SITELIBDIR%%/Nagstamon/resources/authentication_dialog.ui
 %%PYTHON_SITELIBDIR%%/Nagstamon/resources/close.png
 %%PYTHON_SITELIBDIR%%/Nagstamon/resources/close.svg
 %%PYTHON_SITELIBDIR%%/Nagstamon/resources/critical.wav
 %%PYTHON_SITELIBDIR%%/Nagstamon/resources/downtime_dialog.ui
+%%PYTHON_SITELIBDIR%%/Nagstamon/resources/history.png
+%%PYTHON_SITELIBDIR%%/Nagstamon/resources/history.svg
 %%PYTHON_SITELIBDIR%%/Nagstamon/resources/hostdown.wav
 %%PYTHON_SITELIBDIR%%/Nagstamon/resources/hosts.png
 %%PYTHON_SITELIBDIR%%/Nagstamon/resources/hosts.svg
+%%PYTHON_SITELIBDIR%%/Nagstamon/resources/menu.png
+%%PYTHON_SITELIBDIR%%/Nagstamon/resources/menu.svg
 %%PYTHON_SITELIBDIR%%/Nagstamon/resources/nagios.png
 %%PYTHON_SITELIBDIR%%/Nagstamon/resources/nagios.svg
 %%PYTHON_SITELIBDIR%%/Nagstamon/resources/nagstamon.1
+%%PYTHON_SITELIBDIR%%/Nagstamon/resources/nagstamon.appdata.xml
 %%PYTHON_SITELIBDIR%%/Nagstamon/resources/nagstamon.desktop
 %%PYTHON_SITELIBDIR%%/Nagstamon/resources/nagstamon.icns
 %%PYTHON_SITELIBDIR%%/Nagstamon/resources/nagstamon.ico
@@ -65,6 +76,8 @@ man/man1/nagstamon.1.gz
 %%PYTHON_SITELIBDIR%%/Nagstamon/resources/nagstamon.svg
 %%PYTHON_SITELIBDIR%%/Nagstamon/resources/nagstamon_acknowledged.png
 %%PYTHON_SITELIBDIR%%/Nagstamon/resources/nagstamon_acknowledged.svg
+%%PYTHON_SITELIBDIR%%/Nagstamon/resources/nagstamon_appindicator.png
+%%PYTHON_SITELIBDIR%%/Nagstamon/resources/nagstamon_appindicator.svg
 %%PYTHON_SITELIBDIR%%/Nagstamon/resources/nagstamon_black.png
 %%PYTHON_SITELIBDIR%%/Nagstamon/resources/nagstamon_black.svg
 %%PYTHON_SITELIBDIR%%/Nagstamon/resources/nagstamon_darkred.png
@@ -75,6 +88,8 @@ man/man1/nagstamon.1.gz
 %%PYTHON_SITELIBDIR%%/Nagstamon/resources/nagstamon_error.svg
 %%PYTHON_SITELIBDIR%%/Nagstamon/resources/nagstamon_flapping.png
 %%PYTHON_SITELIBDIR%%/Nagstamon/resources/nagstamon_flapping.svg
+%%PYTHON_SITELIBDIR%%/Nagstamon/resources/nagstamon_fresh.png
+%%PYTHON_SITELIBDIR%%/Nagstamon/resources/nagstamon_fresh.svg
 %%PYTHON_SITELIBDIR%%/Nagstamon/resources/nagstamon_green.png
 %%PYTHON_SITELIBDIR%%/Nagstamon/resources/nagstamon_green.svg
 %%PYTHON_SITELIBDIR%%/Nagstamon/resources/nagstamon_label.png
@@ -97,14 +112,22 @@ man/man1/nagstamon.1.gz
 %%PYTHON_SITELIBDIR%%/Nagstamon/resources/services.svg
 %%PYTHON_SITELIBDIR%%/Nagstamon/resources/settings.png
 %%PYTHON_SITELIBDIR%%/Nagstamon/resources/settings.svg
+%%PYTHON_SITELIBDIR%%/Nagstamon/resources/settings_action_dialog.ui
 %%PYTHON_SITELIBDIR%%/Nagstamon/resources/settings_dialog.ui
 %%PYTHON_SITELIBDIR%%/Nagstamon/resources/settings_server_dialog.ui
 %%PYTHON_SITELIBDIR%%/Nagstamon/resources/submit_check_result_dialog.ui
 %%PYTHON_SITELIBDIR%%/Nagstamon/resources/warning.wav
-%%PYTHON_SITELIBDIR%%/Nagstamon/resources/history.png
-%%PYTHON_SITELIBDIR%%/Nagstamon/resources/history.svg
-%%PYTHON_SITELIBDIR%%/Nagstamon/resources/authentication_dialog.ui
-%%PYTHON_SITELIBDIR%%/Nagstamon/resources/settings_action_dialog.ui
-@dirrm %%PYTHON_SITELIBDIR%%/Nagstamon/resources
-@dirrm %%PYTHON_SITELIBDIR%%/Nagstamon/Server
-@dirrm %%PYTHON_SITELIBDIR%%/Nagstamon
+%%PYTHON_SITELIBDIR%%/Nagstamon/thirdparty/BeautifulSoup.py
+%%PYTHON_SITELIBDIR%%/Nagstamon/thirdparty/BeautifulSoup.pyc
+%%PYTHON_SITELIBDIR%%/Nagstamon/thirdparty/BeautifulSoup.pyo
+%%PYTHON_SITELIBDIR%%/Nagstamon/thirdparty/__init__.py
+%%PYTHON_SITELIBDIR%%/Nagstamon/thirdparty/__init__.pyc
+%%PYTHON_SITELIBDIR%%/Nagstamon/thirdparty/__init__.pyo
+%%PYTHON_SITELIBDIR%%/Nagstamon/thirdparty/zabbix_api.py
+%%PYTHON_SITELIBDIR%%/Nagstamon/thirdparty/zabbix_api.pyc
+%%PYTHON_SITELIBDIR%%/Nagstamon/thirdparty/zabbix_api.pyo
+man/man1/nagstamon.1.gz
+@dirrmtry %%PYTHON_SITELIBDIR%%/Nagstamon/Server
+@dirrmtry %%PYTHON_SITELIBDIR%%/Nagstamon/resources
+@dirrmtry %%PYTHON_SITELIBDIR%%/Nagstamon/thirdparty
+@dirrmtry %%PYTHON_SITELIBDIR%%/Nagstamon
