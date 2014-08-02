@@ -510,6 +510,9 @@ bin/hg
 %%PYTHON_SITELIBDIR%%/mercurial/subrepo.py
 %%PYTHON_SITELIBDIR%%/mercurial/subrepo.pyc
 %%PYTHON_SITELIBDIR%%/mercurial/subrepo.pyo
+%%PYTHON_SITELIBDIR%%/mercurial/tagmerge.py
+%%PYTHON_SITELIBDIR%%/mercurial/tagmerge.pyc
+%%PYTHON_SITELIBDIR%%/mercurial/tagmerge.pyo
 %%PYTHON_SITELIBDIR%%/mercurial/tags.py
 %%PYTHON_SITELIBDIR%%/mercurial/tags.pyc
 %%PYTHON_SITELIBDIR%%/mercurial/tags.pyo
