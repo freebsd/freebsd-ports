@@ -3,56 +3,46 @@
 
 PORTNAME=	diveintopython
 PORTVERSION=	5.4
-#PORTREVISION=	1
+PORTREVISION=	1
 CATEGORIES=	lang python
 MASTER_SITES=	http://www.diveintopython.net/download/
-DISTNAME=	${PORTNAME}
-DISTFILES=	${DISTNAME}-html-${VERSIONSTR}${EXTRACT_SUFX} \
-		${DISTNAME}-html-flat-${VERSIONSTR}${EXTRACT_SUFX} \
-		${DISTNAME}-pdf-${VERSIONSTR}${EXTRACT_SUFX} \
-		${DISTNAME}-text-${VERSIONSTR}${EXTRACT_SUFX} \
-		${DISTNAME}-word-${VERSIONSTR}${EXTRACT_SUFX} \
-		${DISTNAME}-xml-${VERSIONSTR}${EXTRACT_SUFX} \
-		${DISTNAME}-common-${VERSIONSTR}${EXTRACT_SUFX} \
-		${DISTNAME}-examples-${VERSIONSTR}${EXTRACT_SUFX}
+DISTFILES=	#
 DIST_SUBDIR=	${PORTNAME}
-EXTRACT_ONLY=	${DISTNAME}-html-${VERSIONSTR}${EXTRACT_SUFX}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Free Python tutorial book that is "not For Dummies(tm)"
 
 LICENSE=	GFDL
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${VERSIONSTR}/html
+USES=		zip
 NO_BUILD=	yes
 
-USES=		zip
+OPTIONS_DEFINE=	HTML HTML_FLAT PDF TEXT WORD
+OPTIONS_DEFAULT=HTML PDF TEXT WORD
+OPTIONS_SUB=	yes
 
-PLIST_SUB=	VERSION="${VERSIONSTR}"
+HTML_DESC=	Dive Into Python in HTML form
+HTML_FLAT_DESC=	Dive Into Python in single HTML page
+PDF_DESC=	Dive Into Python in PDF form
+TEXT_DESC=	Dive Into Python in plain text form
+WORD_DESC=	Dive Into Python in MS Word doc form
 
-DIPDLDIR=	${DOCSDIR}/download
-VERSIONSTR=	${PORTVERSION:C|(\.[^.]*)\.([^.]*)$|\1-\2|}
+HTML_DISTFILES=	${PORTNAME}-html-${PORTVERSION}${EXTRACT_SUFX}
+HTML_FLAT_DISTFILES=	${PORTNAME}-html-flat-${PORTVERSION}${EXTRACT_SUFX}
+PDF_DISTFILES=	${PORTNAME}-pdf-${PORTVERSION}${EXTRACT_SUFX}
+TEXT_DISTFILES=	${PORTNAME}-text-${PORTVERSION}${EXTRACT_SUFX}
+WORD_DISTFILES=	${PORTNAME}-word-${PORTVERSION}${EXTRACT_SUFX}
 
-NO_STAGE=	yes
-post-patch:
-	@ ${FIND} ${WRKSRC} -name \*.html | ${XARGS} ${REINPLACE_CMD} \
-	  "s#http[^>]*\(download/${PORTNAME}-examples-${VERSIONSTR}.zip\)#\.\./\1#"
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MHTML*}
+PLIST_SUB+=	IMAGES=""
+.else
+PLIST_SUB+=	IMAGES="@comment "
+.endif
 
 do-install:
-	@ ${MKDIR} ${DIPDLDIR}
-	@ cd ${WRKSRC} && \
-	  ${FIND} . -name \*.html -o -name \*.css -o -name \*.png \
-	  | ${CPIO} --quiet -pdum -R ${SHAREOWN}:${SHAREGRP} ${DOCSDIR}
-	@ cd ${WRKSRC}/../py && ${FIND} * \
-	  | ${CPIO} --quiet -pdum -R ${SHAREOWN}:${SHAREGRP} ${EXAMPLESDIR}
-.for format in html html-flat pdf text word xml common examples
-	@ ${INSTALL_DATA} \
-	  ${DISTDIR}/${DIST_SUBDIR}/${PORTNAME}-${format}-${VERSIONSTR}.zip \
-	  ${DIPDLDIR}
-.endfor
-
-post-install:
-	@ ${CHMOD} -R ${SHAREMODE} ${DOCSDIR} ${EXAMPLESDIR}
-	@ ${CHMOD} -R ugo+X ${DOCSDIR} ${EXAMPLESDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	(cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR})
 
 .include <bsd.port.mk>
