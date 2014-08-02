@@ -1,3 +1,5 @@
+@owner cricket
+@group www
 cricket/cricket
 cricket/cricket-%%VERSION%%/CHANGES
 cricket/cricket-%%VERSION%%/COPYING
@@ -164,4 +166,4 @@ etc/cricket-conf.pl.dist
 @dirrm cricket/cricket-%%VERSION%%/doc/neta-paper
 @dirrm cricket/cricket-%%VERSION%%/doc
 @dirrm cricket/cricket-%%VERSION%%
-@dirrm cricket/
+@dirrmtry cricket/
