@@ -1,6 +1,9 @@
+# Description: SEM option patch. If SEM is enabled, enable the build properly
+# Not upstreamed
+
 --- setup.py.orig	2013-04-07 11:07:43.000000000 +0400
 +++ setup.py	2013-04-07 11:16:36.000000000 +0400
-@@ -1544,10 +1544,22 @@
+@@ -1551,10 +1551,22 @@
              macros = dict()
              libraries = []
  

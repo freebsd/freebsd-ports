@@ -1,6 +1,5 @@
-# Description: Fix out-of-tree build as a result of upstream #15819
-# Submitted by: rm (r318353)
-# Issue ID: http://bugs.python.org/issue15819#msg203348
+# Description: Link scripts in the same way Python3 does
+# Submitted by: mva
 
 # Description: Run pycompile only once
 # Submitted by: antoine (r350207)
@@ -10,21 +9,22 @@
 # Submitted by: antoine@ (r350207)
 # TODO: Upstream
 
---- ./Makefile.pre.in.orig	2013-11-10 07:36:41.000000000 +0000
-+++ ./Makefile.pre.in	2014-04-04 09:16:00.000000000 +0000
-@@ -285,9 +285,9 @@
+--- Makefile.pre.in.orig	2014-06-30 04:05:39.000000000 +0200
++++ Makefile.pre.in	2014-07-26 11:09:46.000000000 +0200
+@@ -868,6 +868,12 @@
+	(cd $(DESTDIR)$(LIBPC); $(LN) -s python-$(VERSION).pc python2.pc)
+	-rm -f $(DESTDIR)$(LIBPC)/python.pc
+	(cd $(DESTDIR)$(LIBPC); $(LN) -s python2.pc python.pc)
++	-rm -f $(DESTDIR)$(BINDIR)/idle
++	(cd $(DESTDIR)$(BINDIR); $(LN) -s idle$(VERSION) idle2)
++	-rm -f $(DESTDIR)$(BINDIR)/pydoc
++	(cd $(DESTDIR)$(BINDIR); $(LN) -s pydoc$(VERSION) pydoc2)
++	-rm -f $(DESTDIR)$(BINDIR)/2to3
++	(cd $(DESTDIR)$(BINDIR); $(LN) -s 2to3-$(VERSION) 2to3)
  
- ##########################################################################
- # AST
--AST_H_DIR=	Include
-+AST_H_DIR=	$(srcdir)/Include
- AST_H=		$(AST_H_DIR)/Python-ast.h
--AST_C_DIR=	Python
-+AST_C_DIR=	$(srcdir)/Python
- AST_C=		$(AST_C_DIR)/Python-ast.c
- AST_ASDL=	$(srcdir)/Parser/Python.asdl
- 
-@@ -1006,12 +1006,12 @@
+ # Install the interpreter with $(VERSION) affixed
+ # This goes into $(exec_prefix)
+@@ -1010,12 +1016,12 @@
  			$(DESTDIR)$(LIBDEST)/distutils/tests ; \
  	fi
  	PYTHONPATH=$(DESTDIR)$(LIBDEST)  $(RUNSHARED) \
@@ -39,7 +39,7 @@
  		-d $(LIBDEST) -f \
  		-x 'bad_coding|badsyntax|site-packages|lib2to3/tests/data' \
  		$(DESTDIR)$(LIBDEST)
-@@ -1089,8 +1089,8 @@
+@@ -1093,8 +1099,8 @@
  			if test "$(SO)" = .dll; then \
  				$(INSTALL_DATA) $(LDLIBRARY) $(DESTDIR)$(LIBPL) ; \
  			else \
