@@ -16,6 +16,8 @@ LICENSE=	BSD
 
 CONFLICTS=	socks5-[0-9]*
 
+BROKEN_i386=	see PR 192295, requests tweaked sysctls
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-socks-conf=${PREFIX}/etc/socks.conf \
 		--with-sockd-conf=${PREFIX}/etc/sockd.conf
