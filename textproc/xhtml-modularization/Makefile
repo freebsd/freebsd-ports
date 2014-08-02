@@ -7,17 +7,19 @@ PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.w3.org/TR/2001/REC-${PORTNAME}-${RECDATE}/
 DISTNAME=	${PORTNAME}
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	W3C's Modularization of XHTML DTDs and docs
 
 RUN_DEPENDS=	${XMLCATMGR}:${PORTSDIR}/textproc/xmlcatmgr
 
+USES=		tar:tgz
+
 RECDATE=	20010410
 
-NO_MTREE=	YES
-NO_BUILD=	YES
+SUB_FILES=	catalog.xml
+NO_MTREE=	yes
+NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${RECDATE}
 
 PLIST=		${WRKDIR}/PLIST
@@ -39,10 +41,6 @@ SGMLCAT_ADD=	${XMLCATMGR} -sc ${SGMLCAT} add CATALOG \
 SGMLCAT_RM=	${XMLCATMGR} -sc ${SGMLCAT} remove \
 		    ${PREFIX}/${dir_DTD}/xhtml.cat
 
-CATALOG_PORTS_SGML=	${PREFIX}/share/sgml/catalog.ports
-CATALOG_PORTS_XML=	${PREFIX}/share/xml/catalog.ports
-
-NO_STAGE=	yes
 .include "${.CURDIR}/contents.inc"
 
 # I'd much rather do this stuff in line with the actual installation
@@ -74,32 +72,24 @@ pre-install:
 	${ECHO} "@dirrm ${dir_EXAMPLES}" >> ${PLIST}
 
 do-install:
-	@[ -d ${PREFIX}/${dir_DTD} ] || \
-	    ${MKDIR} ${PREFIX}/${dir_DTD}
-	@[ -d ${PREFIX}/${dir_DOC}/images ] || \
-	    ${MKDIR} ${PREFIX}/${dir_DOC}/images
-	@[ -d ${PREFIX}/${dir_EXAMPLES} ] || \
-	    ${MKDIR} ${PREFIX}/${dir_EXAMPLES}
-	@[ -d ${PREFIX}/${dir_TEMPLATES} ] || \
-	    ${MKDIR} ${PREFIX}/${dir_TEMPLATES}
+	@${MKDIR} ${STAGEDIR}${PREFIX}/${dir_DTD}
 .for f in ${contents_DTD}
-	${INSTALL_DATA} ${WRKSRC}/DTD/${f} ${PREFIX}/${dir_DTD}/${f}
+	${INSTALL_DATA} ${WRKSRC}/DTD/${f} ${STAGEDIR}${PREFIX}/${dir_DTD}/${f}
 .endfor
+	@${MKDIR} ${STAGEDIR}${PREFIX}/${dir_DOC}/images
 .for f in ${contents_DOC}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${PREFIX}/${dir_DOC}/${f}
+	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${PREFIX}/${dir_DOC}/${f}
 .endfor
+	@${MKDIR} ${STAGEDIR}${PREFIX}/${dir_EXAMPLES}
 .for f in ${contents_EXAMPLES}
 	${INSTALL_DATA} ${WRKSRC}/DTD/examples/${f} \
-	    ${PREFIX}/${dir_EXAMPLES}/${f}
+	    ${STAGEDIR}${PREFIX}/${dir_EXAMPLES}/${f}
 .endfor
+	@${MKDIR} ${STAGEDIR}${PREFIX}/${dir_TEMPLATES}
 .for f in ${contents_TEMPLATES}
 	${INSTALL_DATA} ${WRKSRC}/DTD/templates/${f} \
-	    ${PREFIX}/${dir_TEMPLATES}/${f}
+	    ${STAGEDIR}${PREFIX}/${dir_TEMPLATES}/${f}
 .endfor
-	${SED} -e "s;@@PREFIX@@;${PREFIX};g" ${FILESDIR}/catalog.xml > \
-	    ${WRKDIR}/catalog.xml
-	${INSTALL_DATA} ${WRKDIR}/catalog.xml ${PREFIX}/${dir_DTD}/catalog.xml
-	${XMLCAT_ADD}
-	${SGMLCAT_ADD}
+	${INSTALL_DATA} ${WRKDIR}/catalog.xml ${STAGEDIR}${PREFIX}/${dir_DTD}/catalog.xml
 
 .include <bsd.port.mk>
