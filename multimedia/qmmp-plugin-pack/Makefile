@@ -1,11 +1,9 @@
 # $FreeBSD$
 
 PORTNAME=	qmmp-plugin-pack
-PORTVERSION=	0.7.4
-PORTREVISION=	1
+PORTVERSION=	0.8.0
 CATEGORIES=	multimedia
-MASTER_SITES=	http://qmmp.ylsoftware.com/files/plugins/ \
-		http://qmmp.googlecode.com/files/
+MASTER_SITES=	http://qmmp.ylsoftware.com/files/plugins/
 
 MAINTAINER=	liangtai.s16@gmail.com
 COMMENT=	Additional plug-ins for QMMP
@@ -13,14 +11,17 @@ COMMENT=	Additional plug-ins for QMMP
 LICENSE=	GPLv2
 
 LIB_DEPENDS=	libqmmpui.so:${PORTSDIR}/multimedia/qmmp
-BUILD_DEPENDS=	qmmp>=0.7.0:${PORTSDIR}/multimedia/qmmp
+BUILD_DEPENDS=	qmmp>=0.8.0:${PORTSDIR}/multimedia/qmmp
 
 USES=		cmake:outsource pkgconfig tar:bzip2
 USE_QT4=	corelib gui qmake_build rcc_build moc_build linguist_build
 USE_LDCONFIG=	yes
 
 OPTIONS_SUB=	yes
-OPTIONS_DEFINE=	FFAP MPG123 QSUI
+
+OPTIONS_MULTI=	PLUGINS
+OPTIONS_MULTI_PLUGINS=	FFAP MPG123 QSUI
+
 OPTIONS_DEFAULT=	FFAP MPG123 QSUI
 
 FFAP_DESC=		Support APE sound file
@@ -50,9 +51,15 @@ CMAKE_ARGS+=	-DCMAKE_REQUIRED_INCLUDES:PATH=${LOCALBASE}/include
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MFFAP} || ${PORT_OPTIONS:MMPG123}
+PLIST_SUB+=	INPUT=""
+.else
+PLIST_SUB+=	INPUT="@comment "
+.endif
+
 pre-configure:
 	@${RM} -f ${BUILD_WRKSRC}/CMakeCache.txt
-	@${REINPLACE_CMD} -e 's/IF[(]/&USE_QSUI AND /' \
-		${WRKSRC}/src/Ui/CMakeLists.txt
 
 .include <bsd.port.mk>

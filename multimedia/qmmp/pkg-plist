@@ -35,10 +35,12 @@ include/qmmpui/mediaplayer.h
 include/qmmpui/metadataformatter.h
 include/qmmpui/playlistdownloader.h
 include/qmmpui/playlistformat.h
+include/qmmpui/playlistgroup.h
 include/qmmpui/playlistitem.h
 include/qmmpui/playlistmanager.h
 include/qmmpui/playlistmodel.h
 include/qmmpui/playlistparser.h
+include/qmmpui/playlisttrack.h
 include/qmmpui/qmmpuisettings.h
 include/qmmpui/templateeditor.h
 include/qmmpui/uifactory.h
@@ -65,12 +67,14 @@ lib/qmmp/CommandLineOptions/libstatusoption.so
 %%COPYPASTE%%lib/qmmp/General/libcopypaste.so
 %%COVER%%lib/qmmp/General/libcovermanager.so
 %%FILEOPS%%lib/qmmp/General/libfileops.so
+%%GNOMEHOTKEY%%lib/qmmp/General/libgnomehotkey.so
 %%HAL%%lib/qmmp/General/libhal.so
 %%HOTKEY%%lib/qmmp/General/libhotkey.so
 %%KDENOTIFY%%lib/qmmp/General/libkdenotify.so
 %%LYRICS%%lib/qmmp/General/liblyrics.so
 %%MPRIS%%lib/qmmp/General/libmpris.so
 %%NOTIFIER%%lib/qmmp/General/libnotifier.so
+%%RGSCAN%%lib/qmmp/General/librgscan.so
 %%SCROBBLER%%lib/qmmp/General/libscrobbler.so
 %%STATICON%%lib/qmmp/General/libstatusicon.so
 %%SB%%lib/qmmp/General/libstreambrowser.so
@@ -87,6 +91,7 @@ lib/qmmp/CommandLineOptions/libstatusoption.so
 %%GME%%lib/qmmp/Input/libgme.so
 %%MUSEPACK%%lib/qmmp/Input/libmpc.so
 %%OPUS%%lib/qmmp/Input/libopus.so
+%%SID%%lib/qmmp/Input/libsid.so
 %%SNDFILE%%lib/qmmp/Input/libsndfile.so
 %%VORBIS%%lib/qmmp/Input/libvorbis.so
 %%WAVPACK%%lib/qmmp/Input/libwavpack.so
@@ -128,18 +133,6 @@ share/icons/hicolor/scalable/apps/qmmp-simple.svgz
 @dirrmtry share/icons/hicolor/32x32
 @dirrmtry share/icons/hicolor/16x16/apps
 @dirrmtry share/icons/hicolor/16x16
-@comment Insert PLIST.doc here
 @dirrm include/qmmp
 @dirrm include/qmmpui
-@dirrmtry lib/qmmp/CommandLineOptions
-@dirrmtry lib/qmmp/Effect
-@dirrmtry lib/qmmp/Engines
-@dirrmtry lib/qmmp/FileDialogs
-@dirrmtry lib/qmmp/General
-@dirrmtry lib/qmmp/Input
-@dirrmtry lib/qmmp/Output
-@dirrmtry lib/qmmp/PlayListFormats
-@dirrmtry lib/qmmp/Transports
-@dirrmtry lib/qmmp/Ui
-@dirrmtry lib/qmmp/Visual
-@dirrmtry lib/qmmp
+@comment Insert PLIST.doc here
