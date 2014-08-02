@@ -12,7 +12,7 @@ COMMENT=	System call tracer
 
 LICENSE=	BSD3CLAUSE
 
-USES=		shebangfix perl5	# perl5 for strace-graph tar:bzip2
+USES=		shebangfix perl5 tar:bzip2	# perl5 for strace-graph
 GNU_CONFIGURE=	yes
 ONLY_FOR_ARCHS=	i386
 
@@ -21,8 +21,6 @@ SHEBANG_FILES=	strace-graph
 PLIST_FILES=	bin/strace bin/strace-graph man/man1/strace.1.gz
 
 OPTIONS_DEFINE=	DOCS
-
-.include <bsd.port.options.mk>
 
 PORTDOCS=	AUTHORS COPYRIGHT CREDITS ChangeLog NEWS PORTING \
 		README README-freebsd README-svr4 TODO
