@@ -325,4 +325,10 @@ post-patch:
 		's|$$(top_builddir)/libpurple/libpurple.la|-lpurple|'
 .endif
 
+.if ${PORT_OPTIONS:MPERL}
+post-stage:
+	@${SED} -i '' -e 's|^${STAGEDIR}||g' \
+		${STAGEDIR}${PREFIX}/lib/purple-2/perl/auto/Purple/.packlist
+.endif
+
 .include <bsd.port.post.mk>
