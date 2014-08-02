@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	syslog-ng-incubator
-PORTVERSION=	0.3.2
+PORTVERSION=	0.3.3
 CATEGORIES=	sysutils
 MASTER_SITES=	http://packages.madhouse-project.org/syslog-ng/incubator/
 DISTFILES=	syslog-ng-incubator-${PORTVERSION}.tar.xz
