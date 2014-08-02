@@ -8,21 +8,25 @@ CATEGORIES=	graphics
 MASTER_SITES=	http://entropymine.com/jason/pngrewrite/ \
 		http://mirror.roe.ch/dist/pngrewrite/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	PNG palette optimizer
+
+LICENSE=	ZLIB
 
 LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png
 
+CFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib -lm -lpng -lz
 USES=		zip
+
 NO_WRKSUBDIR=	yes
 
 PLIST_FILES=	bin/pngrewrite
 
 do-build:
-	${CC} ${CFLAGS} -I${LOCALBASE}/include -L${LOCALBASE}/lib \
-		-o ${WRKSRC}/pngrewrite ${WRKSRC}/pngrewrite.c ${WRKSRC}/libpngrewrite.c -lpng -lz -lm
+	${CC} ${CFLAGS} ${LDFLAGS} -o ${WRKSRC}/pngrewrite ${WRKSRC}/libpngrewrite.c ${WRKSRC}/pngrewrite.c
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/pngrewrite ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/pngrewrite ${STAGEDIR}${PREFIX}/bin/
 
 .include <bsd.port.mk>
