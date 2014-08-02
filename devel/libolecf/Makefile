@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libolecf
-DISTVERSION=	alpha-20140329
-PORTREVISION=	1
+DISTVERSION=	alpha-20140801
 CATEGORIES=	devel
 MASTER_SITES=	https://googledrive.com/host/0B3fBvzttpiiSS0hEb0pjU2h6a2c/ \
 		LOCAL/antoine
@@ -15,7 +14,7 @@ LICENSE=	LGPL3
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-python --with-libintl-prefix=${LOCALBASE} ${ICONV_CONFIGURE_ARG}
-USES=		fuse gettext iconv libtool:keepla pathfix pkgconfig
+USES=		fuse gettext iconv libtool pathfix pkgconfig
 USE_PYTHON=	2
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
