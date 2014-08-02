@@ -8,12 +8,10 @@ include/libvshadow/extern.h
 include/libvshadow/features.h
 include/libvshadow/types.h
 lib/libvshadow.a
-lib/libvshadow.la
 lib/libvshadow.so
 lib/libvshadow.so.1
 lib/libvshadow.so.1.0.0
 %%PYTHON_SITELIBDIR%%/pyvshadow.a
-%%PYTHON_SITELIBDIR%%/pyvshadow.la
 %%PYTHON_SITELIBDIR%%/pyvshadow.so
 libdata/pkgconfig/libvshadow.pc
 man/man1/vshadowinfo.1.gz
