@@ -50,6 +50,7 @@
 %%DATADIR%%/plugins/README.txt
 %%DATADIR%%/renderers/AirPlayer.conf
 %%DATADIR%%/renderers/Android.conf
+%%DATADIR%%/renderers/AndroidChromecast.conf
 %%DATADIR%%/renderers/BlackBerryPlayBook-KalemSoftMP.conf
 %%DATADIR%%/renderers/Bravia4500.conf
 %%DATADIR%%/renderers/Bravia5500.conf
@@ -58,9 +59,8 @@
 %%DATADIR%%/renderers/BraviaEX620.conf
 %%DATADIR%%/renderers/BraviaHX.conf
 %%DATADIR%%/renderers/BraviaW.conf
+%%DATADIR%%/renderers/BraviaXBR.conf
 %%DATADIR%%/renderers/CambridgeAudioAzur752BD.conf
-%%DATADIR%%/renderers/Chromecast.conf
-%%DATADIR%%/renderers/Chromecast_Avia.conf
 %%DATADIR%%/renderers/DLinkDSM510.conf
 %%DATADIR%%/renderers/DirecTVHR.conf
 %%DATADIR%%/renderers/FreeboxHD.conf
@@ -117,6 +117,16 @@
 %%DATADIR%%/web/favicon.ico
 %%DATADIR%%/web/flowplayer.min.js
 %%DATADIR%%/web/functional.css
+%%DATADIR%%/web/img/flowplayer.png
+%%DATADIR%%/web/img/flowplayer@2x.png
+%%DATADIR%%/web/img/play_white.png
+%%DATADIR%%/web/img/play_white@x2.png
+%%DATADIR%%/web/img/play_white_rtl.png
+%%DATADIR%%/web/img/play_white_rtl@x2.png
+%%DATADIR%%/web/img/white.png
+%%DATADIR%%/web/img/white@x2.png
+%%DATADIR%%/web/img/white_rtl.png
+%%DATADIR%%/web/img/white_rtl@x2.png
 %%DATADIR%%/web/inputbackground-search.png
 %%DATADIR%%/web/jquery.min.js
 %%DATADIR%%/web/jquery.ums.js
@@ -127,29 +137,19 @@
 %%DATADIR%%/web/web-narrow.css
 %%DATADIR%%/web/web-wide.css
 %%DATADIR%%/web/web.css
+%%UMS_PROFILE_PATH%%/UMS.conf.sample
+%%UMS_PROFILE_PATH%%/WEB.conf.sample
 %%PORTDOCS%%@dirrmtry %%DOCSDIR%%/css
 %%PORTDOCS%%@dirrmtry %%DOCSDIR%%/images
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrmtry %%DATADIR%%/linux
 @dirrmtry %%DATADIR%%/plugins
 @dirrmtry %%DATADIR%%/renderers
+@dirrmtry %%DATADIR%%/web/img
 @dirrmtry %%DATADIR%%/web
 @dirrmtry %%DATADIR%%
-
-@comment - Added manually
-@owner ums
-@group ums
-
-@exec mkdir -p %%UMS_PROFILE_PATH%%
-%%UMS_PROFILE_PATH%%/UMS.conf.sample
-%%UMS_PROFILE_PATH%%/WEB.conf.sample
-@dirrmtry %%UMS_PROFILE_PATH%%
-
-@exec mkdir -p %%UMS_PID_DIR%%
-@dirrmtry %%UMS_PID_DIR%%
-
-@exec mkdir -p %%UMS_LOG_DIR%%
-@dirrmtry %%UMS_LOG_DIR%%
-
-@owner
-@group
+@cwd /
+@dirrm var/db/universal-media-server
+@dirrm var/log/universal-media-server
+@dirrm var/run/universal-media-server
+@cwd %%RESETPREFIX%%
