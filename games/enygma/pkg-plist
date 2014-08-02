@@ -1,4 +1,8 @@
+@mode 2755
+@group games
 bin/enygma
+@group
+@mode
 %%DATADIR%%/original.set
 %%DATADIR%%/original01.level
 %%DATADIR%%/original02.level
@@ -13,8 +17,10 @@ bin/enygma
 %%DATADIR%%/original11.level
 %%DATADIR%%/original12.level
 @dirrm %%DATADIR%%
-@exec mkdir -p %D/var/enygma
-@exec chgrp games %D/var/enygma
-@exec chmod 2770 %D/var/enygma
+@mode 2770
+@group games
+@exec install -d -g games -m 2770 %D/var/enygma
 @dirrm var/enygma
+@group
+@mode
 @dirrmtry var

@@ -11,7 +11,9 @@ DIST_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Text-based puzzle game
 
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENCE
+
 GNU_CONFIGURE=	yes
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
