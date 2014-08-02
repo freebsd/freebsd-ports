@@ -126,9 +126,6 @@ BROKEN=	ocamlc.opt seg-faults on ${ARCH}, please try to fix
 .endif
 
 post-extract:
-.if ${OCAML_ARCH} == power
-	${MV} ${WRKSRC}/asmrun/power-elf.S ${WRKSRC}/asmrun/power-bsd.S
-.endif
 .if ${PORT_OPTIONS:MDOCS}
 	@if ! (cd ${WRKDIR} && \
 	  ${TAR} xf ${_DISTDIR}${DOCSDISTNAME}-refman-html.tar.gz \
