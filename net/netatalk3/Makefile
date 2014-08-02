@@ -150,6 +150,10 @@ post-patch:
 		s|%%LOCALBASE%%|${LOCALBASE}|g' \
 		${WRKSRC}/configure
 
+post-stage:
+	@${RM} -f ${STAGEDIR}${PREFIX}/etc/afp.conf \
+		${STAGEDIR}${PREFIX}/etc/extmap.conf
+
 post-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/contrib/macusers/macusers \
 		${STAGEDIR}${PREFIX}/bin/macusers
