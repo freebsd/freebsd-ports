@@ -93,7 +93,6 @@ post-extract:
 		${WRKDIR}/Nexuiz/sources/enginesource20091001.zip \
 		-d ${WRKDIR}/Nexuiz/sources
 
-
 post-patch:
 	@${REINPLACE_CMD} -e 's,/usr/X11R6,${LOCALBASE},' \
 		${WRKSRC}/${MAKEFILE} ${WRKSRC}/makefile.inc
