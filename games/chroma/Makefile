@@ -39,5 +39,6 @@ SDL_PLIST_FILES=	bin/${PORTNAME}
 post-install:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}/
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}*
 
 .include <bsd.port.mk>
