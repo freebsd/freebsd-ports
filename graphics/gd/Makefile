@@ -19,7 +19,7 @@ LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
 
 CONFLICTS=	bazaar-1.*
 
-USES=		libtool:keepla pathfix pkgconfig shebangfix tar:xz
+USES=		tar:xz pkgconfig pathfix libtool:keepla shebangfix
 SHEBANG_FILES=	${WRKSRC}/src/bdftogd
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
