@@ -5,14 +5,20 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
-20140802:
-  AFFECTS: users of astro/stellarium
-  AUTHOR: danfe@FreeBSD.org
+20140803:
+  AFFECTS: users of security/p5-openxpki
+  AUTHOR: wg@FreeBSD.org
 
-  Stellarium was updated to version 0.13.0.  It's a new major release, and
-  it is based on Qt version 5 now.  For those who are not comfortable with
-  upgrading to the new Qt, previous Stellarium version (0.12.4) was copied
-  over to `astro/stellarium-qt4' port.
+  The following ports have been integrated into security/p5-openxpki:
+    security/p5-openxpki-client
+    security/p5-openxpki-client-sep
+    security/p5-openxpki-deployment
+
+  Before update make sure to remove the old packages:
+
+  # pkg remove security/p5-openxpki-client
+  # pkg remove security/p5-openxpki-client-sap
+  # pkg remove security/p5-openxpki-deployment
 
 20140731:
   AFFECTS: users of www/ajaxplorer
