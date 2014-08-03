@@ -125,6 +125,7 @@ CONFIGURE_ARGS+=	--disable-smtp
 LIB_DEPENDS+=		libdbi.so:${PORTSDIR}/databases/libdbi
 CONFIGURE_ENV+=		LIBDBI_LIBS="-ldbi"
 CONFIGURE_ARGS+=	--enable-sql
+LDFLAGS+=		-L${LOCALBASE}/lib
 PLIST_FILES+=		lib/syslog-ng/libafsql.so
 .else
 CONFIGURE_ARGS+=	--disable-sql
