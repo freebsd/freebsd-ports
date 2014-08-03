@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	pkg
-DISTVERSION=	1.4.0.pre-alpha2
+DISTVERSION=	1.4.0.pre-alpha3
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	\
 		http://highsecure.ru/distfiles/ \
