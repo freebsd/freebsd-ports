@@ -11,6 +11,11 @@ DISTNAME=	auth-ldap-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	LDAP authentication plugin for OpenVPN
 
+# Older GCC used to provide +alloc and other methods on the Object
+# class, newer GCC/libobjc version no longer to that.  The software
+# needs to learn to use the new Objective C world order:
+BROKEN=		Needs to be ported to a new Object base-class with +alloc.
+
 USES=		objc
 
 BUILD_DEPENDS=	re2c:${PORTSDIR}/devel/re2c \
