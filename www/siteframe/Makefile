@@ -3,7 +3,7 @@
 
 PORTNAME=	siteframe
 PORTVERSION=	5.0.2
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	www
 MASTER_SITES=	ftp://ftp.broadpool.net/pub/siteframe/
 
@@ -14,7 +14,7 @@ RUN_DEPENDS=	${LOCALBASE}/share/smarty/Smarty.class.php:${PORTSDIR}/www/smarty2
 
 USE_APACHE_RUN=	22+
 USE_PHP=	mysqli simplexml xml session gd
-DEFAULT_PHP_VER=	5
+DEFAULT_VERS=	php=5
 USE_MYSQL=	yes
 
 # where to install
@@ -30,14 +30,14 @@ SITEFRAMEDIR=	${WWWDIR}
 
 SUB_FILES=	pkg-message
 SUB_LIST=	DIR=${SITEFRAMEDIR}
+PLIST_SUB=	WWWOWN="${WWWOWN}"
 
-NO_STAGE=	yes
+do-extract:
+	@${MKDIR} ${WRKDIR}/${PORTNAME}
+	@ cd ${WRKDIR}/${PORTNAME}; ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${DISTDIR}/${DISTFILES} ${EXTRACT_AFTER_ARGS}
+
 do-install:
-	${MKDIR} ${SITEFRAMEDIR}/
-	${CP} -R ${WRKSRC}/* ${SITEFRAMEDIR}/
-	${CHOWN} -R ${WWWOWN} ${SITEFRAMEDIR}/
-
-post-install:
-	${CAT} ${PKGMESSAGE}
+	${MKDIR} ${STAGEDIR}${SITEFRAMEDIR}/
+	${CP} -R ${WRKDIR}/${PORTNAME}/* ${STAGEDIR}${SITEFRAMEDIR}/
 
 .include <bsd.port.mk>
