@@ -16,7 +16,7 @@ LIB_DEPENDS=	libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig \
 
 CONFLICTS?=	open-motif-*
 
-USES=		libtool tar:bzip2
+USES=		tar:bzip2 libtool
 USE_XORG=	sm ice xt xp xext x11 xextproto xrender xft
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes

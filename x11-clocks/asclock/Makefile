@@ -14,7 +14,7 @@ COMMENT=	Afterstep clock with some language extensions
 
 CONFLICTS=	asclock-gtk-[0-9]* asclock-xlib-[0-9]*
 
-USES=		imake tar:tgz
+USES=		tar:tgz imake
 USE_XORG=	xpm xext x11
 PLIST_FILES=	bin/asclock man/man1/asclock.1.gz
 

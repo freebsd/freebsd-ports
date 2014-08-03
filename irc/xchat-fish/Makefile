@@ -17,7 +17,7 @@ COMMENT=	Encryption plugin for XChat
 BUILD_DEPENDS=	${LOCALBASE}/lib/libmiracl.a:${PORTSDIR}/math/miracl
 RUN_DEPENDS=	xchat:${PORTSDIR}/irc/xchat
 
-USES=		dos2unix zip
+USES=		zip dos2unix
 NO_WRKSUBDIR=	yes
 DOCSDIR=	${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}
 CCFLAGS+=	-Wall -O2 -I${LOCALBASE}/include

@@ -14,7 +14,7 @@ COMMENT=	Tools and library routines for working with GIF images
 CONFLICTS=	libungif-[0-9]*
 PORTSCOUT=	limit:^4\.
 
-USES=		tar:bzip2 shebangfix libtool:oldver
+USES=		tar:bzip2 libtool:oldver shebangfix
 SHEBANG_FILES=	${WRKSRC}/util/gifburst
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
