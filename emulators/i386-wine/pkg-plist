@@ -822,7 +822,7 @@ lib32/libfreetype.so.6
 %%OSREL11%%lib32/libgcc_s.so.1
 lib32/libgettextpo.so.5
 %%OSREL11%%lib32/libglapi.so.0
-lib32/libgnutls.so.26
+lib32/libgnutls.so.28
 %%OSREL8%%lib32/libiconv.so.3
 %%OSREL9%%lib32/libiconv.so.3
 lib32/libintl.so.9
