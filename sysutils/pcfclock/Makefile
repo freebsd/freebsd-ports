@@ -15,17 +15,12 @@ USE_RC_SUBR=	pcfdate
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--without-linux
 
-MAN8=		pcfdate.8
-PLIST_FILES=	sbin/pcfdate
+PLIST_FILES=	man/man8/pcfdate.8.gz sbin/pcfdate
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "ia64" || ${ARCH} == "powerpc" || ${ARCH} == "sparc64"
 IGNORE=		not supported for architecture ${ARCH}
 .endif
-
-post-install:
-	PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
 .include <bsd.port.post.mk>
