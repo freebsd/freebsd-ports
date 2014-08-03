@@ -1,7 +1,7 @@
 ==============================================================================
 
 To use uhidd daemon for USB HID devices, depends on which sub class
-driver you want to attach, to avoid confilicts between the daemon and
+driver you want to attach, to avoid conflicts between the daemon and
 the kernel drivers, you should either use the command line option '-u'
 to instruct the daemon to detach active kernel drivers attached to
 a device, or you should remove some of those entries 'device ums',
@@ -13,7 +13,7 @@ you should also remove the relevant devd(8) rules in /etc/devd/usb.conf
 config file, so those modules will not be loaded automatically by devd(8)
 when devices are attached.
 
-If you want to run uhidd deamon at the startup, add the following lines to
+If you want to run uhidd daemon at the startup, add the following lines to
 /etc/rc.conf:
 
 	uhidd_flags="-kmohsu"
