@@ -9,7 +9,7 @@ MASTER_SITES=	ftp://ftp.jclark.com/pub/xml/
 DISTNAME=	${PORTNAME}
 
 MAINTAINER=	mike@vee.net
-COMMENT=	An XML parser written in Java
+COMMENT=	XML parser written in Java
 
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+

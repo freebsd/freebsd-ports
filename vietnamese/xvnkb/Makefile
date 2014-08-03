@@ -8,7 +8,7 @@ CATEGORIES=	vietnamese
 MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A Vietnamese input method for X-Window
+COMMENT=	Vietnamese input method for X-Window
 
 USE_GNOME=	gtk20
 

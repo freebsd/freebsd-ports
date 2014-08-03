@@ -10,7 +10,7 @@ MASTER_SITES=	http://www.fourmilab.ch/webtools/textogif/download/ \
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	nivit@FreeBSD.org
-COMMENT=	A Perl script to convert LaTeX formulas into GIFs
+COMMENT=	Perl script to convert LaTeX formulas into GIFs
 
 RUN_DEPENDS=	ppmtogif:${PORTSDIR}/graphics/netpbm
 

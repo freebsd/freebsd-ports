@@ -8,7 +8,7 @@ CATEGORIES=	textproc python
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 
 MAINTAINER=	kevlo@FreeBSD.org
-COMMENT=	A Python script that converts CHM files into PDF files
+COMMENT=	Python script that converts CHM files into PDF files
 
 LICENSE=	GPLv2
 

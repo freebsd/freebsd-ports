@@ -9,7 +9,7 @@ MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	nivit@FreeBSD.org
-COMMENT=	A program to replace LaTeX formulas in HTML files with images
+COMMENT=	Program to replace LaTeX formulas in HTML files with images
 
 LICENSE=	GPLv2
 

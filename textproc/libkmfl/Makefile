@@ -10,7 +10,7 @@ MASTER_SITES=	SF/kmfl/kmfl/${PORTVERSION} \
 DIST_SUBDIR=	kmfl
 
 MAINTAINER=	nikola.lecic@anthesphoria.net
-COMMENT=	An engine to interpret compiled KMFL keyboard tables
+COMMENT=	Engine to interpret compiled KMFL keyboard tables
 
 LIB_DEPENDS=	libkmflcomp.so:${PORTSDIR}/textproc/kmflcomp
 

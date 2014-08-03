@@ -9,7 +9,7 @@ MASTER_SITES=	http://pkgs.fedoraproject.org/repo/pkgs/publican/Publican-${PORTVE
 DISTNAME=	Publican-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Single source publishing tool based on DocBook XML.
+COMMENT=	Single source publishing tool based on DocBook XML
 
 USE_JAVA=	yes
 USES=		perl5

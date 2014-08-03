@@ -9,7 +9,7 @@ PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	knu@FreeBSD.org
-COMMENT=	A Ruby library to manipulate HTML/XML tree data structure
+COMMENT=	Ruby library to manipulate HTML/XML tree data structure
 
 OPTIONS_DEFINE=	DOCS
 

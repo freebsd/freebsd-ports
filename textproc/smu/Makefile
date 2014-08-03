@@ -8,7 +8,7 @@ MASTER_SITES=	http://s01.de/~tox/files/smu/ \
 		http://mirror.4bit.ws/
 
 MAINTAINER=	rodrigo@FreeBSD.org
-COMMENT=	A simple interpreter for a simplified markdown dialect
+COMMENT=	Simple interpreter for a simplified markdown dialect
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

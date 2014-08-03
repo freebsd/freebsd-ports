@@ -10,7 +10,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	python-xmltv-${PORTVERSION}
 
 MAINTAINER=	jun-g@daemonfreaks.com
-COMMENT=	A Python module that provides access to XMLTV TV listings
+COMMENT=	Python module that provides access to XMLTV TV listings
 
 LICENSE=	LGPL21
 

@@ -12,7 +12,7 @@ MASTER_SITE_SUBDIR=	dryice
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	An authoring and publishing environment for Emacs
+COMMENT=	Authoring and publishing environment for Emacs
 
 USE_EMACS=	yes
 USES=		gmake makeinfo

@@ -6,7 +6,7 @@ CATEGORIES=	textproc ruby
 MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
-COMMENT=	A text-to-HTML conversion tool for web writers
+COMMENT=	Text-to-HTML conversion tool for web writers
 
 RUN_DEPENDS=	rubygem-hoe>=1.7.0:${PORTSDIR}/devel/rubygem-hoe
 

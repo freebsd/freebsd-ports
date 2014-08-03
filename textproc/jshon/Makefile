@@ -6,7 +6,7 @@ PORTREVISION=	3
 CATEGORIES=	textproc
 
 MAINTAINER=	bdrewery@FreeBSD.org
-COMMENT=	json parser for the shell.
+COMMENT=	json parser for the shell
 
 LICENSE=	MIT
 

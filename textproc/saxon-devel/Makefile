@@ -12,7 +12,7 @@ DISTFILES=	${PORTNAME}b${PORTVERSION:S,.,-,g}j.zip:binary	\
 		${PORTNAME}-resources9-1-0-1.zip:resources
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	An XSLT 2.0 / XPath 2.0 / XQuery 1.0 processor for Java
+COMMENT=	XSLT 2.0 / XPath 2.0 / XQuery 1.0 processor for Java
 
 RUN_DEPENDS=	java:${PORTSDIR}/java/javavmwrapper
 

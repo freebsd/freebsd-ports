@@ -7,7 +7,7 @@ CATEGORIES=	textproc
 MASTER_SITES=	http://fallabs.com/${PORTNAME}/
 
 MAINTAINER=	lwhsu@FreeBSD.org
-COMMENT=	A full-text search system based on Tokyo Cabinet
+COMMENT=	Full-text search system based on Tokyo Cabinet
 
 LICENSE=	LGPL
 

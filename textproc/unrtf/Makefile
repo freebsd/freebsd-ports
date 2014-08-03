@@ -7,7 +7,7 @@ CATEGORIES=	textproc
 MASTER_SITES=	GNU
 
 MAINTAINER=	bf@FreeBSD.org
-COMMENT=	A converter from RTF to several formats, including HTML and LaTeX
+COMMENT=	Converter from RTF to several formats, including HTML and LaTeX
 
 LICENSE=	GPLv3
 

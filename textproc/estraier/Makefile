@@ -8,7 +8,7 @@ CATEGORIES=	textproc
 MASTER_SITES=	http://fallabs.com/estraier/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A full-text search system for personal use
+COMMENT=	Full-text search system for personal use
 
 LIB_DEPENDS=	libqdbm.so:${PORTSDIR}/databases/qdbm
 

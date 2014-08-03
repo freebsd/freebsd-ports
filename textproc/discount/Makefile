@@ -8,7 +8,7 @@ MASTER_SITES=	http://www.pell.portland.or.us/~orc/Code/discount/ \
 		LOCAL/jlaffaye
 
 MAINTAINER=	jlaffaye@FreeBSD.org
-COMMENT=	A C implementation of the Markdown markup language
+COMMENT=	C implementation of the Markdown markup language
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT

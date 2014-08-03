@@ -8,7 +8,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	hcoyote@ghostar.org
-COMMENT=	A perl-based implementation of the Textile syntax by Dean Allen
+COMMENT=	Perl-based implementation of the Textile syntax by Dean Allen
 
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual

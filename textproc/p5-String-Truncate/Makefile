@@ -8,7 +8,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	lth@FreeBSD.org
-COMMENT=	A module for when strings are too long to be displayed in...
+COMMENT=	Module for when strings are too long to be displayed in...
 
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual

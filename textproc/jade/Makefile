@@ -14,7 +14,7 @@ PATCHFILES=	jade_1.2.1-35.diff.gz
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	kuriyama@FreeBSD.org
-COMMENT=	An object-oriented SGML/XML parser toolkit and DSSSL engine
+COMMENT=	Object-oriented SGML/XML parser toolkit and DSSSL engine
 
 RUN_DEPENDS=	${XMLCATMGR}:${PORTSDIR}/textproc/xmlcatmgr
 
