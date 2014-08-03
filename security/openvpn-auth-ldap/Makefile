@@ -3,7 +3,7 @@
 
 PORTNAME=	openvpn-auth-ldap
 PORTVERSION=	2.0.3
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 DISTNAME=	auth-ldap-${PORTVERSION}
@@ -44,4 +44,6 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/auth-ldap.conf ${STAGEDIR}${EXAMPLESDIR}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+CC+=		${DEBUG_FLAGS}
+.include <bsd.port.post.mk>
