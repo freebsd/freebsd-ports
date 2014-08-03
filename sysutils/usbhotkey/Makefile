@@ -16,12 +16,13 @@ LIB_DEPENDS=	libhid.so:${PORTSDIR}/devel/libhid \
 
 USES=		gmake
 USE_RUBY=	yes
-HAS_CONFIGURE=	yes
+GNU_CONFIGURE=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include \
 		-I${LOCALBASE}/include/ruby-${RUBY_VER} \
 		-I${LOCALBASE}/include/ruby-${RUBY_VER}/${RUBY_ARCH}
 LDFLAGS+=	-L${LOCALBASE}/lib
+LIBS+=		-lX11
 
 OPTIONS_DEFINE=	GUI
 OPTIONS_DEFAULT=	GUI
@@ -30,5 +31,4 @@ GUI_DESC=	Enable GUI bits (via Imlib)
 GUI_LIB_DEPENDS=	libImlib.so:${PORTSDIR}/graphics/imlib
 GUI_CONFIGURE_OFF=	--without-Imlib
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
