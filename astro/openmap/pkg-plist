@@ -17,9 +17,9 @@
 %%DATADIR%%/manifest.txt
 %%DATADIR%%/omapplet.html
 %%DATADIR%%/openmap.jnlp
-%%DOCSDIR%%/AUTHORS
-%%DOCSDIR%%/LICENSE
-%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE
+%%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/api/Acme/IntHashtable.html
 %%PORTDOCS%%%%DOCSDIR%%/api/Acme/JPM/Encoders/GifEncoder.html
 %%PORTDOCS%%%%DOCSDIR%%/api/Acme/JPM/Encoders/ImageEncoder.html
