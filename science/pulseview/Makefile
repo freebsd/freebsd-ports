@@ -3,6 +3,7 @@
 
 PORTNAME=	pulseview
 PORTVERSION=	0.2.0
+PORTREVISION=	1
 CATEGORIES=	science cad
 MASTER_SITES=	http://sigrok.org/download/source/pulseview/
 
@@ -16,7 +17,7 @@ LIB_DEPENDS=	libboost_thread.so:${PORTSDIR}/devel/boost-libs \
 		libsigrokdecode.so:${PORTSDIR}/devel/libsigrokdecode
 
 USES=		cmake gmake pkgconfig
-USE_QT4=	corelib gui moc qmake rcc uic
+USE_QT4=	corelib gui moc_build qmake_build rcc_build uic_build
 CMAKE_ARGS+=	-DCMAKE_INSTALL_MANDIR:PATH=${MANPREFIX}/man
 PLIST_FILES=	bin/pulseview man/man1/pulseview.1.gz
 
