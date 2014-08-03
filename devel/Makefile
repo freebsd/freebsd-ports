@@ -1007,6 +1007,7 @@
     SUBDIR += libfortuna
     SUBDIR += libfreefare
     SUBDIR += libftdi
+    SUBDIR += libftdi1
     SUBDIR += libg19
     SUBDIR += libg19draw
     SUBDIR += libgalago
