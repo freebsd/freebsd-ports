@@ -69,8 +69,6 @@ share/vala/vapi/plank.vapi
 @dirrm %%DATADIR%%/themes/Default
 @dirrm %%DATADIR%%/themes
 @dirrm %%DATADIR%%
-%%NLS%%@dirrmtry share/locale/sr@latin/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/sr@latin
 %%NLS%%@dirrmtry share/locale/sma/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/sma
-@dirrm include/plank
+@dirrmtry include/plank
