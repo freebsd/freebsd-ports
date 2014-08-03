@@ -140,6 +140,7 @@
     SUBDIR += ezmlm-idx
     SUBDIR += ezmlm-web
     SUBDIR += faces
+    SUBDIR += fastforward
     SUBDIR += fdm
     SUBDIR += fetchmail
     SUBDIR += filtermail
