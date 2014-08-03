@@ -3,6 +3,7 @@
 
 PORTNAME=	bmon
 PORTVERSION=	3.3
+PORTREVISION=	1
 CATEGORIES=	net
 
 MAINTAINER=	michelle@sorbs.net
