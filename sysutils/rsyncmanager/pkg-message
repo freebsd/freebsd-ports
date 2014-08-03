@@ -7,4 +7,3 @@ To use rsyncmanager, be sure to include
 rsyncmanager_enable="YES"
 
 in rc.conf
-
