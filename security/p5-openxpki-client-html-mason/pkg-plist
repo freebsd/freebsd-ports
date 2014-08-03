@@ -1,3 +1,9 @@
+%%PERL5_MAN3%%/OpenXPKI::Client::HTML::Mason.3.gz
+%%PERL5_MAN3%%/OpenXPKI::Client::HTML::Mason::ApacheHandler.3.gz
+%%PERL5_MAN3%%/OpenXPKI::Client::HTML::Mason::CRR.3.gz
+%%PERL5_MAN3%%/OpenXPKI::Client::HTML::Mason::Config.3.gz
+%%PERL5_MAN3%%/OpenXPKI::Client::HTML::Mason::Javascript.3.gz
+%%PERL5_MAN3%%/OpenXPKI::Client::HTML::Mason::Menu.3.gz
 %%SITE_PERL%%/OpenXPKI/Client/HTML/Mason.pm
 %%SITE_PERL%%/OpenXPKI/Client/HTML/Mason/ApacheHandler.pm
 %%SITE_PERL%%/OpenXPKI/Client/HTML/Mason/CRR.pm
@@ -5,11 +11,6 @@
 %%SITE_PERL%%/OpenXPKI/Client/HTML/Mason/Javascript.pm
 %%SITE_PERL%%/OpenXPKI/Client/HTML/Mason/Menu.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/OpenXPKI/Client/HTML/Mason/.packlist
-%%PERL5_MAN3%%/OpenXPKI::Client::HTML::Mason.3.gz
-%%PERL5_MAN3%%/OpenXPKI::Client::HTML::Mason::CRR.3.gz
-%%PERL5_MAN3%%/OpenXPKI::Client::HTML::Mason::Config.3.gz
-%%PERL5_MAN3%%/OpenXPKI::Client::HTML::Mason::Javascript.3.gz
-%%PERL5_MAN3%%/OpenXPKI::Client::HTML::Mason::Menu.3.gz
 %%PORTDOCS%%%%DOCSDIR%%/htdocs/Menu/Query/index.html
 %%PORTDOCS%%%%DOCSDIR%%/htdocs/Renderer/Command/default.mhtml
 %%PORTDOCS%%%%DOCSDIR%%/htdocs/Renderer/Service/GET_AUTHENTICATION_STACK.mhtml
@@ -30,7 +31,6 @@
 %%PORTDOCS%%%%DOCSDIR%%/htdocs/authentication/x509.mhtml
 %%PORTDOCS%%%%DOCSDIR%%/htdocs/authentication/x509_webserver.mhtml
 %%PORTDOCS%%%%DOCSDIR%%/htdocs/autohandler
-%%PORTDOCS%%%%DOCSDIR%%/htdocs/binary/autohandler
 %%PORTDOCS%%%%DOCSDIR%%/htdocs/binary/dhandler
 %%PORTDOCS%%%%DOCSDIR%%/htdocs/binary/get_certificate.crt
 %%PORTDOCS%%%%DOCSDIR%%/htdocs/binary/get_certificate.html
@@ -94,6 +94,8 @@
 %%PORTDOCS%%%%DOCSDIR%%/htdocs/service/api/super_search.html
 %%PORTDOCS%%%%DOCSDIR%%/htdocs/service/autohandler
 %%PORTDOCS%%%%DOCSDIR%%/htdocs/service/close_form.mhtml
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/service/create_crr/cert_full_info.html
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/service/create_crr/cert_info.html
 %%PORTDOCS%%%%DOCSDIR%%/htdocs/service/create_crr/error.mhtml
 %%PORTDOCS%%%%DOCSDIR%%/htdocs/service/create_crr/form.html
 %%PORTDOCS%%%%DOCSDIR%%/htdocs/service/create_crr/highlight_error.mhtml
@@ -136,6 +138,8 @@
 %%PORTDOCS%%%%DOCSDIR%%/htdocs/service/loginagain.html
 %%PORTDOCS%%%%DOCSDIR%%/htdocs/service/logout.html
 %%PORTDOCS%%%%DOCSDIR%%/htdocs/service/open_form.mhtml
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/service/reset_token/unblock_pin.html
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/service/reset_token/unblock_reset.mhtml
 %%PORTDOCS%%%%DOCSDIR%%/htdocs/service/send_form.mhtml
 %%PORTDOCS%%%%DOCSDIR%%/htdocs/service/smartcard_personalization/failure.mhtml
 %%PORTDOCS%%%%DOCSDIR%%/htdocs/service/smartcard_personalization/get_certificate_request.mhtml
@@ -164,6 +168,8 @@
 %%PORTDOCS%%%%DOCSDIR%%/htdocs/service/workflow/activity/continue.html
 %%PORTDOCS%%%%DOCSDIR%%/htdocs/service/workflow/activity/continue_issuance.html
 %%PORTDOCS%%%%DOCSDIR%%/htdocs/service/workflow/activity/dhandler
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/service/workflow/activity/enroll_add_authentication.html
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/service/workflow/activity/enroll_deny_authentication.html
 %%PORTDOCS%%%%DOCSDIR%%/htdocs/service/workflow/activity/fail_workflow.html
 %%PORTDOCS%%%%DOCSDIR%%/htdocs/service/workflow/activity/issue_certificate.html
 %%PORTDOCS%%%%DOCSDIR%%/htdocs/service/workflow/activity/persist_csr.html
@@ -187,40 +193,40 @@
 %%PORTDOCS%%%%DOCSDIR%%/htdocs/syshandler
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/eg/openxpki-mason-cgi.conf
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/eg/openxpki-mason-mod_perl.conf
-%%PORTDATA%%%%DATADIR%%/bin/openxpki.cgi
-%%PORTDATA%%@dirrmtry %%DATADIR%%/bin
-%%PORTDATA%%@dirrmtry %%DATADIR%%
-%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/eg
-%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/htdocs/service/workflow/activity
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/htdocs/service/workflow
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/htdocs/service/smartcard_personalization
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/htdocs/service/info
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/htdocs/service/create_csr/bulk
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/htdocs/service/create_csr
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/htdocs/service/create_crr
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/htdocs/service/api
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/htdocs/service
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/htdocs/lib/html
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/htdocs/lib
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/htdocs/images
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/htdocs/errors
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/htdocs/css
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/htdocs/binary
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/htdocs/authentication
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/htdocs/Request
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/htdocs/Renderer/Service
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/htdocs/Renderer/Command
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/htdocs/Renderer
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/htdocs/Menu/Query
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/htdocs/Menu
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/htdocs
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/OpenXPKI/Client/HTML/Mason
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/OpenXPKI/Client/HTML
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/OpenXPKI/Client
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/OpenXPKI
+%%DATADIR%%/bin/openxpki.cgi
 @dirrmtry %%SITE_PERL%%/OpenXPKI/Client/HTML/Mason
 @dirrmtry %%SITE_PERL%%/OpenXPKI/Client/HTML
 @dirrmtry %%SITE_PERL%%/OpenXPKI/Client
 @dirrmtry %%SITE_PERL%%/OpenXPKI
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/OpenXPKI/Client/HTML/Mason
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/OpenXPKI/Client/HTML
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/OpenXPKI/Client
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/htdocs/Menu/Query
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/htdocs/Menu
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/htdocs/Renderer/Command
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/htdocs/Renderer/Service
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/htdocs/Renderer
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/htdocs/Request
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/htdocs/authentication
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/htdocs/binary
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/htdocs/css
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/htdocs/errors
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/htdocs/images
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/htdocs/lib/html
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/htdocs/lib
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/htdocs/service/api
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/htdocs/service/create_crr
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/htdocs/service/create_csr/bulk
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/htdocs/service/create_csr
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/htdocs/service/info
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/htdocs/service/reset_token
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/htdocs/service/smartcard_personalization
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/htdocs/service/workflow/activity
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/htdocs/service/workflow
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/htdocs/service
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/htdocs
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/eg
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%
+@dirrmtry %%DATADIR%%/bin
+@dirrmtry %%DATADIR%%
