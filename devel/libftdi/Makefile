@@ -1,9 +1,8 @@
-# Created by: Olexandr Davydenko <o.davydenko@gmail.com>
 # $FreeBSD$
 
 PORTNAME=	libftdi
 PORTVERSION=	0.20
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	http://www.intra2net.com/en/developer/libftdi/download/
 
@@ -14,11 +13,16 @@ OPTIONS_DEFINE+=	BOOST PYTHON
 BOOST_DESC=		Build with boost
 PYTHON_DESC=		Python bindings
 
-USE_AUTOTOOLS=		autoconf libtool automake
+USES=			pathfix pkgconfig libtool
+USE_AUTOTOOLS=		autoconf automake
 GNU_CONFIGURE=		yes
 CFLAGS+=		-I${LOCALBASE}/include
 USE_LDCONFIG=		yes
-USES=			pathfix pkgconfig
+INSTALL_TARGET=		install-strip
+
+BUILD_DEPENDS=	${LOCALBASE}/bin/autoreconf-2.69:${PORTSDIR}/devel/autoconf \
+		${LOCALBASE}/bin/automake-1.14:${PORTSDIR}/devel/automake \
+		${LOCALBASE}/bin/libtoolize:${PORTSDIR}/devel/libtool
 
 PORTDOCS=		COPYING.LIB ChangeLog README
 
@@ -49,12 +53,13 @@ OPTIONS_DEFINE=		DOCS
 OPTIONS_DEFAULT=	DOCS
 
 post-patch:
-	@${REINPLACE_CMD} -E -e \
+	${REINPLACE_CMD} -E -e \
 		's:\$$\(libdir\)/pkgconfig:${PREFIX}/libdata/pkgconfig:' \
 		${WRKSRC}/Makefile.am ${WRKSRC}/Makefile.in
 
 pre-configure:
-	@cd ${WRKSRC} && ${AUTORECONF} --force --install
+	cd ${WRKSRC} && ${AUTORECONF} --force --install
+	echo "done pre-conf"
 
 post-install:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
