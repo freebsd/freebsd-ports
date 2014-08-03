@@ -1,11 +1,12 @@
---- configure.orig     Sat Aug  5 09:51:23 2006
-+++ configure  Sat Aug  5 09:57:47 2006
-@@ -2899,7 +2899,7 @@
- PyLIBP=${PY_STD_LIB}
- PyLIBPL=${PyLIBP}/config
- PyPYTHONLIBS=${PyLIBPL}/libpython${PyVERSION}.a
--PyLIBS=`grep "^LIB[SMC]=" ${PyLIBPL}/Makefile | cut -f2 -d= | tr '\011\012\015' '   '`
-+PyLIBS=`ldd $PYTHON_BIN | sed -n 's,^.* => [^ ]*/lib\(.*\)\.so[^ ]* \((.*)\),-l\1,p' | grep -v '^-lc$' | xargs echo`
- PyMODLIBS=`grep "^LOCALMODLIBS=" ${PyLIBPL}/Makefile | cut -f2 -d= | tr '\011\012\015' '   '`
- PyFRAMEWORK=`grep "^PYTHONFRAMEWORK=" ${PyLIBPL}/Makefile | cut -f2 -d= | tr '\011\012\015' '   '`
- PyFRAMEWORKDIR=`grep "^PYTHONFRAMEWORKDIR=" ${PyLIBPL}/Makefile | cut -f2 -d= | tr '\011\012\015' '   ' | awk '{print $1}'`
+--- ./configure.orig	2006-03-11 03:46:52.000000000 +0000
++++ ./configure	2014-08-02 22:49:33.000000000 +0000
+@@ -3013,7 +3013,7 @@
+ echo $ECHO_N "checking linker flags used to link Python... $ECHO_C" >&6
+ 
+ PyLFS=`grep "^LINKFORSHARED=" ${PyLIBPL}/Makefile | cut -f2 -d= | tr '\011\012\015' '   '`
+-PyLDFLAGS=`grep "^LDFLAGS=" ${PyLIBPL}/Makefile | cut -f2 -d= | tr '\011\012\015' '   '`
++PyLDFLAGS=`grep "^LDFLAGS=" ${PyLIBPL}/Makefile | sed 's,^LDFLAGS=,,' | tr '\011\012\015' '   '`
+ LDFLAGS="${LDFLAGS} ${PyLFS} ${PyLDFLAGS}"
+ LDFLAGS="${LDFLAGS} ${PY_LDFLAGS}"
+ echo "$as_me:$LINENO: result: $PY_LDFLAGS" >&5
+
