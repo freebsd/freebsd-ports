@@ -3,13 +3,15 @@
 
 PORTNAME=	scribe
 DISTVERSION=	2.2.2013.04.15
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
-MASTER_SITES=	https://github.com/facebook/scribe/tarball/${GITVERSION}/
+MASTER_SITES=	https://github.com/facebookarchive/scribe/tarball/${GITVERSION}/
 DISTNAME=	facebook-scribe-${GITVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Aggregating log data streamed in real time
+
+LICENSE=	APACHE20
 
 BUILD_DEPENDS=	fb303>0:${PORTSDIR}/devel/fb303 \
 		thrift:${PORTSDIR}/devel/thrift
@@ -21,7 +23,7 @@ RUN_DEPENDS=	p5-Class-Accessor>0:${PORTSDIR}/devel/p5-Class-Accessor \
 		${PYTHON_SITELIBDIR}/thrift/__init__.py:${PORTSDIR}/devel/py-thrift
 
 GITVERSION=	7359a09
-WRKSRC=		${WRKDIR}/${DISTNAME}
+WRKSRC=		${WRKDIR}/facebookarchive-${PORTNAME}-${GITVERSION}
 
 ACLOCAL_ARGS=	-I ./aclocal
 AUTOMAKE_ARGS=	-a
@@ -41,8 +43,8 @@ post-build:
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/${SITE_PERL_REL}/Scribe/Thrift
-	cd ${WRKSRC}/gen-perl && ${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/${SITE_PERL_REL}
+	(cd ${WRKSRC}/gen-perl && ${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/${SITE_PERL_REL})
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
-	cd ${WRKSRC}/examples && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR}
+	(cd ${WRKSRC}/examples && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR})
 
 .include <bsd.port.mk>
