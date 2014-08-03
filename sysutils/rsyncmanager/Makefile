@@ -16,26 +16,22 @@ USE_RUBY_FEATURES=	ruby18
 
 NO_BUILD=	yes
 
+PLIST_FILES=	bin/rsyncmanager.rb etc/rsyncmanager.xml.sample
 PORTDOCS=	README
 
 USE_RC_SUBR=	${PORTNAME}
 SUB_LIST=	RUBY_WITHOUT_SUFFIX="${RUBY_WITHOUT_SUFFIX}"
 
-NO_STAGE=	yes
+OPTIONS_DEFINE=	DOCS
+
 post-extract:
 	@${MV} ${WRKDIR}/${PORTNAME} ${WRKSRC}
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/bin/${PORTNAME}.rb ${PREFIX}/bin
-	${INSTALL_DATA} ${WRKSRC}/documentation/${PORTNAME}.xml ${PREFIX}/etc/${PORTNAME}.xml.sample
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-.for docfile in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/documentation/${docfile} ${DOCSDIR}
-.endfor
-.endif
-
-post-install:
-	@${CAT} ${PKGMESSAGE}
+	${INSTALL_SCRIPT} ${WRKSRC}/bin/${PORTNAME}.rb ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_DATA} ${WRKSRC}/documentation/${PORTNAME}.xml \
+		${STAGEDIR}${PREFIX}/etc/${PORTNAME}.xml.sample
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/documentation/README ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
