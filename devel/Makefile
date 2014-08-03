@@ -1189,6 +1189,7 @@
     SUBDIR += lm4tools
     SUBDIR += lmdbg
     SUBDIR += lndir
+    SUBDIR += lnphost
     SUBDIR += lockfree-malloc
     SUBDIR += log4c
     SUBDIR += log4cplus
