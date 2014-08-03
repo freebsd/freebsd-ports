@@ -1,11 +1,11 @@
---- ./configure.orig	2013-05-17 14:06:54.189515000 +0000
-+++ ./configure	2014-04-02 19:19:29.000000000 +0000
-@@ -14546,7 +14546,7 @@
+--- ./configure.orig	2013-08-30 16:26:19.388840000 +0000
++++ ./configure	2014-08-02 15:44:13.000000000 +0000
+@@ -14518,7 +14518,7 @@
    rm -f conf.gtktest
  
  
--CFLAGS="$CFLAGS -Wall -Werror -lm"
-+CFLAGS="$CFLAGS -Wall"
+-CFLAGS="$CFLAGS -Wall -Werror -Wempty-body -Wformat-security -Winit-self -Warray-bounds -Wimplicit-function-declaration -lm"
++CFLAGS="$CFLAGS -Wall -Wformat-security -Winit-self -Wimplicit-function-declaration"
  
  
  
