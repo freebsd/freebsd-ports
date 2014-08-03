@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	hg-git
-PORTVERSION=	0.6.0
+PORTVERSION=	0.6.1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,10 +14,17 @@ LICENSE=	GPLv2
 
 RUN_DEPENDS=	${PKGNAMEPREFIX}dulwich>=*:${PORTSDIR}/devel/dulwich \
 		mercurial>=*:${PORTSDIR}/devel/mercurial \
-		${PKGNAMEPREFIX}ordereddict>=1.1:${PORTSDIR}/devel/py-ordereddict
+
+PORTDOCS=	README.md
 
 USE_PYTHON=	2
 USE_PYDISTUTILS=yes
 PYDISTUTILS_AUTOPLIST=	yes
+
+OPTIONS_DEFINE=	DOCS
+
+post-install:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	(cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}/)
 
 .include <bsd.port.mk>
