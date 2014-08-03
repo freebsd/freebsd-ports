@@ -1108,6 +1108,7 @@
     SUBDIR += libregf
     SUBDIR += librelp
     SUBDIR += librest
+    SUBDIR += librevisa
     SUBDIR += libruin
     SUBDIR += libs11n
     SUBDIR += libserialport
