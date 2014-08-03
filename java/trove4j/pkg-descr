@@ -14,4 +14,4 @@ The GNU Trove library has two objectives:
    collections which store primitives directly will require less
    space and yield significant performance gains. 
 
-WWW: http://trove4j.sourceforge.net/
+WWW: https://bitbucket.org/robeden/trove/
