@@ -29,7 +29,7 @@ do-install:
 .for i in ${SBINS}
 	${INSTALL_PROGRAM} ${WRKSRC}/${i} ${STAGEDIR}${PREFIX}/sbin/
 .endfor
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	(cd ${WRKSRC}/.. && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}/)
 
 .include <bsd.port.mk>
