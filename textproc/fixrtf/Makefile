@@ -12,7 +12,7 @@ DISTFILES=	# none
 # considered as maintainer updates.
 
 MAINTAINER=	delphij@FreeBSD.org
-COMMENT=	A patch making it possible to embed PNGs into RTFs
+COMMENT=	Patch making it possible to embed PNGs into RTFs
 
 LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png
 

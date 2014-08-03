@@ -10,7 +10,7 @@ MASTER_SITE_SUBDIR=	CPAN:HINRIK
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	milki@FreeBSD.org
-COMMENT=	A pluggable Markov engine analogous to MegaHAL
+COMMENT=	Pluggable Markov engine analogous to MegaHAL
 
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual

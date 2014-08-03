@@ -6,7 +6,7 @@ PORTVERSION=	0.22.0
 CATEGORIES=	textproc
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A code-searching tool similar to ack but faster
+COMMENT=	Code-searching tool similar to ack but faster
 
 LICENSE=	APACHE20
 

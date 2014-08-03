@@ -10,7 +10,7 @@ DISTNAME=	tth_C
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	lx@FreeBSD.org
-COMMENT=	A TeX to HTML translator
+COMMENT=	TeX to HTML translator
 
 RUN_DEPENDS=	ppmtogif:${PORTSDIR}/graphics/netpbm
 

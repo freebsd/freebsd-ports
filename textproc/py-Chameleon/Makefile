@@ -9,7 +9,7 @@ MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	clsung@FreeBSD.org
-COMMENT=	A Python HTML/XML template language compiler
+COMMENT=	Python HTML/XML template language compiler
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes

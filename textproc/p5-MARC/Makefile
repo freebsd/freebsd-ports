@@ -8,7 +8,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	demon@FreeBSD.org
-COMMENT=	A module for manipulating bibliographic records in the USMARC format
+COMMENT=	Module for manipulating bibliographic records in the USMARC format
 
 USES=		perl5
 USE_PERL5=	configure

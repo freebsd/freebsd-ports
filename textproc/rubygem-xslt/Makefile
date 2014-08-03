@@ -8,7 +8,7 @@ MASTER_SITES=	RG
 DISTNAME=	ruby-xslt-${PORTVERSION}
 
 MAINTAINER=	ruby@FreeBSD.org
-COMMENT=	An XSLT processor in pure Ruby
+COMMENT=	XSLT processor in pure Ruby
 
 USE_GNOME=	libxslt
 USE_RUBY=	yes

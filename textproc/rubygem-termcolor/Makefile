@@ -7,7 +7,7 @@ CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	dhn@FreeBSD.org
-COMMENT=	A library for ANSII color formatting like HTML for output in terminal
+COMMENT=	Library for ANSII color formatting like HTML for output in terminal
 
 RUN_DEPENDS=	rubygem-highline>=1.5.0:${PORTSDIR}/devel/rubygem-highline
 

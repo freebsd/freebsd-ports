@@ -8,7 +8,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ivan@serezhkin.com
-COMMENT=	A collection of handy Perl::Critic policies
+COMMENT=	Collection of handy Perl::Critic policies
 
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual

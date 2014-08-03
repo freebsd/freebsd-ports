@@ -7,7 +7,7 @@ CATEGORIES=	textproc graphics
 MASTER_SITES=	http://www.lunabase.org/~faber/Vault/software/grap/
 
 MAINTAINER=	faber@lunabase.org
-COMMENT=	An implementation of Kernigan & Bentley's grap language
+COMMENT=	Implementation of Kernigan & Bentley's grap language
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=--with-freebsd-ports

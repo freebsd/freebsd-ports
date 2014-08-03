@@ -7,7 +7,7 @@ CATEGORIES=	textproc gnome
 MASTER_SITES=	http://perso.b2b2c.ca/sarrazip/dev/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A GNOME tool to find strings in a set of files
+COMMENT=	GNOME tool to find strings in a set of files
 
 LICENSE=	GPLv2 # (or later)
 

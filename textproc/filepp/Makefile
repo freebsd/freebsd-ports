@@ -7,7 +7,7 @@ CATEGORIES=	textproc
 MASTER_SITES=	http://www-users.york.ac.uk/~dm26/filepp/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A generic file preprocessor
+COMMENT=	Generic file preprocessor
 
 USES=		perl5 shebangfix
 GNU_CONFIGURE=	yes

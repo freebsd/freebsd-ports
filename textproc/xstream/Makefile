@@ -8,7 +8,7 @@ MASTER_SITES=	https://nexus.codehaus.org/content/repositories/releases/com/thoug
 DISTFILES=	${PORTNAME}-distribution-${PORTVERSION}-bin${EXTRACT_SUFX}
 
 MAINTAINER=	ale@FreeBSD.org
-COMMENT=	A simple library to serialize Java objects to XML
+COMMENT=	Simple library to serialize Java objects to XML
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

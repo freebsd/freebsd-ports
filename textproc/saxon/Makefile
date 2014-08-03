@@ -8,7 +8,7 @@ MASTER_SITES=	SF/${PORTNAME}/saxon6/${PORTVERSION}
 DISTNAME=	${PORTNAME}${PORTVERSION:S/./-/g}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	An XSLT 1.0 processor for Java
+COMMENT=	XSLT 1.0 processor for Java
 
 LICENSE=	MPL
 

@@ -8,7 +8,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	culot@FreeBSD.org
-COMMENT=	A simple module for extracting the text from a Microsoft Word file
+COMMENT=	Simple module for extracting the text from a Microsoft Word file
 
 LICENSE=	ART20
 

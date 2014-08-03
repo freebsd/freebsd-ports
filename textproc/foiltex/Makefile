@@ -10,7 +10,7 @@ MASTER_SITE_SUBDIR=	macros/latex/contrib/${PORTNAME}
 DISTFILES=	foiltex.dtx foiltex.ins
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A collection of LaTeX files for making foils
+COMMENT=	Collection of LaTeX files for making foils
 
 NO_CDROM=	Redistribution on a not-for-profit basis only
 

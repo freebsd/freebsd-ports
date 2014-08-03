@@ -8,7 +8,7 @@ CATEGORIES=	textproc
 MASTER_SITES=	http://tools.ietf.org/tools/xml2rfc2/cli/
 
 MAINTAINER=	marcus@FreeBSD.org
-COMMENT=	A tool to create RFCs and related documents from XML, as per RFC2629
+COMMENT=	Tool to create RFCs and related documents from XML, as per RFC2629
 
 LICENSE=	BSD3CLAUSE
 

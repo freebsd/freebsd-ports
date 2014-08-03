@@ -8,7 +8,7 @@ CATEGORIES=	textproc
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${APVER}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A toolbox to build shallow-transfer machine translation systems
+COMMENT=	Toolbox to build shallow-transfer machine translation systems
 
 BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash

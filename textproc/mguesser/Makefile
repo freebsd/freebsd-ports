@@ -7,7 +7,7 @@ CATEGORIES=	textproc
 MASTER_SITES=	http://www.mnogosearch.org/guesser/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A tool for guessing a text's charset and language
+COMMENT=	Tool for guessing a text's charset and language
 
 post-patch:
 	${REINPLACE_CMD} -E \

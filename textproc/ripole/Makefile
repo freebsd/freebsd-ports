@@ -7,7 +7,7 @@ CATEGORIES=	textproc
 MASTER_SITES=	http://www.pldaniels.com/ripole/
 
 MAINTAINER=	fcash@sd73.bc.ca
-COMMENT=	A small program designed to pull attachments out of OLE2 documents
+COMMENT=	Small program designed to pull attachments out of OLE2 documents
 
 ALL_TARGET=	default
 

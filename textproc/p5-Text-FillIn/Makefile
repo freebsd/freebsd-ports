@@ -8,7 +8,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	tobez@FreeBSD.org
-COMMENT=	A class implementing a fill-in template
+COMMENT=	Class implementing a fill-in template
 
 USES=		perl5
 USE_PERL5=	configure

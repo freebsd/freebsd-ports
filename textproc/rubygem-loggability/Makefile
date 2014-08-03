@@ -7,7 +7,7 @@ CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
-COMMENT=	A composable logging system built on the standard Logger library
+COMMENT=	Composable logging system built on the standard Logger library
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes

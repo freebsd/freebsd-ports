@@ -9,7 +9,7 @@ MASTER_SITES=	http://daringfireball.net/projects/downloads/
 DISTNAME=	Markdown_${PORTVERSION}
 
 MAINTAINER=	tobez@FreeBSD.org
-COMMENT=	A text-to-HTML conversion tool for web writers
+COMMENT=	Text-to-HTML conversion tool for web writers
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/License.text

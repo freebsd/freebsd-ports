@@ -8,7 +8,7 @@ CATEGORIES=	textproc
 MASTER_SITES=	SF
 
 MAINTAINER=	lichray@gmail.com
-COMMENT=	A free cross-platform English thesaurus
+COMMENT=	Free cross-platform English thesaurus
 
 LICENSE=	GPLv2
 

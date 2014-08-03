@@ -8,7 +8,7 @@ CATEGORIES=	textproc print www
 MASTER_SITES=	http://www.ecromedos.net/files/${PORTVERSION}/
 
 MAINTAINER=	nivit@FreeBSD.org
-COMMENT=	A document preparation system that allows concurrent publication
+COMMENT=	Document preparation system that allows concurrent publication
 
 RUN_DEPENDS=	convert:${PORTSDIR}/graphics/ImageMagick \
 		${PYTHON_SITELIBDIR}/libxml2.py:${PORTSDIR}/textproc/py-libxml2 \

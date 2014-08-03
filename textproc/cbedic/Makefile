@@ -8,7 +8,7 @@ CATEGORIES=	textproc
 MASTER_SITES=	SF/kbedic/CBE%20Dictionary/${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	An English-to-Bulgarian and Bulgarian-to-English dictionary
+COMMENT=	English-to-Bulgarian and Bulgarian-to-English dictionary
 
 LICENSE=	GPLv2
 

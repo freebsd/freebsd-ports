@@ -5,7 +5,7 @@ MASTERDIR=	${.CURDIR:H:H}/graphics/gd
 CATEGORIES=	ukrainian
 
 MAINTAINER=	mi@aldan.algebra.com
-COMMENT=	A graphics library for fast image creation with KOI8-U support
+COMMENT=	Graphics library for fast image creation with KOI8-U support
 
 BUILD_DEPENDS=  ${NONEXISTENT}:${PORTSDIR}/x11-fonts/geminifonts:fetch
 GD_FONTS=	${DISTDIR}/x-koi8u.tgz koi6x10.bdf koi6x13.bdf \

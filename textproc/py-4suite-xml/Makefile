@@ -9,7 +9,7 @@ MASTER_SITES=	ftp://ftp.4suite.org/pub/4Suite/ \
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A collection of Python tools for XML processing
+COMMENT=	Collection of Python tools for XML processing
 
 USES=	tar:bzip2
 REINPLACE_ARGS=	-i "" -E

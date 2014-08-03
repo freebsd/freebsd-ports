@@ -8,7 +8,7 @@ CATEGORIES=	textproc
 MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A modern style C++ library for working with XML data
+COMMENT=	Modern style C++ library for working with XML data
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

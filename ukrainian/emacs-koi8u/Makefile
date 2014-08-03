@@ -9,7 +9,7 @@ PKGNAMEPREFIX=	emacs-
 DISTFILES=	# none
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	KOI8-U coding system for [X]Emacs.
+COMMENT=	KOI8-U coding system for [X]Emacs
 
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes

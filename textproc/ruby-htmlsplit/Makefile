@@ -10,7 +10,7 @@ DISTNAME=	${PORTNAME}${PORTVERSION:S/.//g}
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	ruby@FreeBSD.org
-COMMENT=	A Ruby library to split an HTML document into tags and contents
+COMMENT=	Ruby library to split an HTML document into tags and contents
 
 USES=		zip
 USE_RUBY=	yes

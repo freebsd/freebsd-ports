@@ -9,7 +9,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	Reverend-${PORTVERSION}
 
 MAINTAINER=	nivit@FreeBSD.org
-COMMENT=	A simple Bayesian classifier written in Python
+COMMENT=	Simple Bayesian classifier written in Python
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes

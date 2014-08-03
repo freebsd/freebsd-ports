@@ -8,7 +8,7 @@ CATEGORIES=	textproc
 MASTER_SITES=	http://www.abisource.com/downloads/wv/${PORTVERSION}/
 
 MAINTAINER=	bf@FreeBSD.org
-COMMENT=	A library and executables to access Microsoft Word files
+COMMENT=	Library and executables to access Microsoft Word files
 
 LIB_DEPENDS=	libwmf.so:${PORTSDIR}/graphics/libwmf
 

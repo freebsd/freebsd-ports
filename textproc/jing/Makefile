@@ -8,7 +8,7 @@ MASTER_SITES=	http://jing-trang.googlecode.com/files/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.//g}
 
 MAINTAINER=	gabor@FreeBSD.org
-COMMENT=	A RELAX NG validator in Java
+COMMENT=	RELAX NG validator in Java
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/doc/copying.html

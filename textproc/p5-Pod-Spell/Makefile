@@ -7,7 +7,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	lth@FreeBSD.org
-COMMENT=	A formatter for spellchecking Pod
+COMMENT=	Formatter for spellchecking Pod
 
 LICENSE=	ART20
 

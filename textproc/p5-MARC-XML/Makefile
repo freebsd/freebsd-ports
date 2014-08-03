@@ -8,7 +8,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	demon@FreeBSD.org
-COMMENT=	An extension to the MARC-Record distribution for working with XML data
+COMMENT=	Extension to the MARC-Record distribution for working with XML data
 
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual

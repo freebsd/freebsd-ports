@@ -10,7 +10,7 @@ MASTER_SITES=	http://software.decisionsoft.com/software/ \
 DISTFILES=	xmlpp.pl
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	An XML pretty printer
+COMMENT=	XML pretty printer
 
 USES=		shebangfix perl5
 NO_WRKSUBDIR=	yes

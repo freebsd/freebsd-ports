@@ -10,7 +10,7 @@ EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	PECL
 
 MAINTAINER=	tabthorpe@FreeBSD.org
-COMMENT=	A PECL extension to create/apply binary and text patches
+COMMENT=	PECL extension to create/apply binary and text patches
 
 LICENSE=	PHP301
 

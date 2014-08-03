@@ -7,7 +7,7 @@ CATEGORIES=	textproc
 MASTER_SITES=	http://pldaniels.com/replaceit/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A light replacement to the combination of sed/awk/grep/head/tail
+COMMENT=	Light replacement to the combination of sed/awk/grep/head/tail
 
 LICENSE=	BSD
 LICENSE_FILE=	${WRKSRC}/LICENSE

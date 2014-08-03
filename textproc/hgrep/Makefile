@@ -8,7 +8,7 @@ MASTER_SITES=	http://www.acme.com/software/hgrep/
 DISTNAME=	${PORTNAME}_04oct1999
 
 MAINTAINER=	azet@azet.org
-COMMENT=	A nice Highlighting Hack for grep
+COMMENT=	Nice Highlighting Hack for grep
 
 WRKSRC=		${WRKDIR}/hgrep
 
