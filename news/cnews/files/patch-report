@@ -1,0 +1,17 @@
+*** util/report.old	Thu Sep 15 13:24:57 1994
+--- util/report	Fri Sep 30 16:57:05 1994
+***************
+*** 65,70 ****
+  	else
+  		cat $r
+  	fi
+! ) | mail $args		# some sites might want "/usr/lib/sendmail -t" instead
+  
+  # and the trap handles the exit status
+--- 65,70 ----
+  	else
+  		cat $r
+  	fi
+! ) | /usr/sbin/sendmail -t $args	# some sites might want "mail" instead
+  
+  # and the trap handles the exit status
