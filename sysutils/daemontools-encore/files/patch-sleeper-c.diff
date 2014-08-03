@@ -1,0 +1,33 @@
+--- sleeper.c.orig	2014-07-27 23:16:55.000000000 +0200
++++ sleeper.c	2014-07-27 23:18:11.000000000 +0200
+@@ -8,20 +8,18 @@
+   const char *name;
+   int ignored;
+   switch (sig) {
+-  case SIGALRM: name = "ALRM"; break;
+-  case SIGCONT: name = "CONT"; break;
+-  case SIGHUP: name = "HUP"; break;
+-  case SIGINT: name = "INT"; break;
+-  case SIGQUIT: name = "QUIT"; break;
+-  case SIGTERM: name = "TERM"; break;
+-  case SIGUSR1: name = "USR1"; break;
+-  case SIGUSR2: name = "USR2"; break;
+-  case SIGWINCH: name = "WINCH"; break;
+-  default: name = "unknown signal";
++  case SIGALRM: name = "Caught ALRM\n"; break;
++  case SIGCONT: name = "Caught CONT\n"; break;
++  case SIGHUP: name = "Caught HUP\n"; break;
++  case SIGINT: name = "Caught INT\n"; break;
++  case SIGQUIT: name = "Caught QUIT\n"; break;
++  case SIGTERM: name = "Caught TERM\n"; break;
++  case SIGUSR1: name = "Caught USR1\n"; break;
++  case SIGUSR2: name = "Caught USR2\n"; break;
++  case SIGWINCH: name = "Caught WINCH\n"; break;
++  default: name = "unknown signal\n";
+   }
+-  ignored = write(1, "Caught ", 7);
+   ignored = write(1, name, str_len(name));
+-  ignored = write(1, "\n", 1);
+   if (sig != SIGCONT)
+     _exit(1);
+ }
