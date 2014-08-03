@@ -1,30 +1,33 @@
 bin/pacpl
+%%ETCDIR%%/codecs.conf.sample
+%%ETCDIR%%/modules/sample.m
+%%ETCDIR%%/pacpl.conf.sample
+%%ETCDIR%%/pacpl.png
+libexec/PACPL-Convert
+%%KDE4%%libexec/PACPL-Konvert
 man/man1/pacpl.1.gz
-%%DATADIR%%/locale/en_US.po
-%%NLS%%%%DATADIR%%/locale/ca.po
-%%NLS%%%%DATADIR%%/locale/de.po
-%%NLS%%%%DATADIR%%/locale/es.po
-%%NLS%%%%DATADIR%%/locale/et.po
-%%NLS%%%%DATADIR%%/locale/fr_FR.po
-%%NLS%%%%DATADIR%%/locale/GR.po
-%%NLS%%%%DATADIR%%/locale/it_IT.po
-%%NLS%%%%DATADIR%%/locale/nl_NL.po
-%%NLS%%%%DATADIR%%/locale/pl.po
-%%NLS%%%%DATADIR%%/locale/pt.po
-%%NLS%%%%DATADIR%%/locale/ro.po
-%%NLS%%%%DATADIR%%/locale/ru_RU.po
-%%NLS%%%%DATADIR%%/locale/tr.po
-%%NLS%%%%DATADIR%%/locale/zh_CN.po
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/README.module
-%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-etc/pacpl/modules/sample.m
-etc/pacpl/pacpl.conf.sample
-etc/pacpl/codecs.conf.sample
+%%DATADIR%%/locale/GR.po
+%%DATADIR%%/locale/ca.po
+%%DATADIR%%/locale/de.po
+%%DATADIR%%/locale/en_US.po
+%%DATADIR%%/locale/es.po
+%%DATADIR%%/locale/et.po
+%%DATADIR%%/locale/fr_FR.po
+%%DATADIR%%/locale/it_IT.po
+%%DATADIR%%/locale/nl_NL.po
+%%DATADIR%%/locale/pl.po
+%%DATADIR%%/locale/pt.po
+%%DATADIR%%/locale/ro.po
+%%DATADIR%%/locale/ru_RU.po
+%%DATADIR%%/locale/tr.po
+%%DATADIR%%/locale/zh_CN.po
+%%KDE4%%share/kde4/services/ServiceMenus/pacpl.desktop
+%%KDE4%%@dirrmtry share/kde4/services/ServiceMenus
 @dirrm %%DATADIR%%/locale
 @dirrm %%DATADIR%%
-@dirrmtry etc/pacpl/modules
-@dirrmtry etc/pacpl
-%%KDE4%%@cwd %%KDE4_PREFIX%%
-%%KDE4%%share/kde4/services/ServiceMenus/pacpl.desktop
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrmtry %%ETCDIR%%/modules
+@dirrmtry %%ETCDIR%%
