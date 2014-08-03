@@ -1,113 +1,70 @@
-# Created by: Anish Mistry <amistry@am-productions.biz>
 # $FreeBSD$
 
-PORTNAME=	fusefs
-DISTVERSION=	0.3.9-pre1.20080208
-PORTREVISION=	11
-CATEGORIES=	sysutils
-MASTER_SITES=	http://mercurial.creo.hu/repos/fuse4bsd-hg/index.cgi/archive/ \
-    		http://mirrors.rit.edu/zi/fuse4bsd/ \
-  		LOCAL/bdrewery/${PORTNAME}/
-PKGNAMESUFFIX=	-kmod
-DISTNAME=	${HG_SHORTREV}
-DIST_SUBDIR=	fuse4bsd
+PORTNAME=	fusefs-kmod
+PORTVERSION=	0.263233
+CATEGORIES=	sysutils kld
 
-MAINTAINER=	mirror176@cox.net
-COMMENT=	Kernel module for fuse
+MAINTAINER=	dpejesh@yahoo.com
+COMMENT=	FUSE kernel module
+
+MASTER_SITES=	https://googledrive.com/host/0B0OQnKtejJEMQlpoTy11SG1nN2s/
+
+ONLY_FOR_ARCHS=	amd64 i386
+
+WRKSRC=		${WRKDIR}
+
+USE_RC_SUBR=	fusefs
+USES=		kmod uidfix
 
 BUILD_DEPENDS=	fusefs-libs>2.4.1:${PORTSDIR}/sysutils/fusefs-libs
 
-USE_RC_SUBR=	fusefs
-KMODDIR=	${PREFIX}/modules
-MAKE_ENV=	BINDIR="${PREFIX}/sbin" MANDIR="${MANPREFIX}/man/man" \
-		MOUNT="${SRC_BASE}/sbin/mount"
-WRKSRC=		${WRKDIR}/fuse4bsd-${HG_SHORTREV}
-DISABLE_SIZE=	yes
+MAKE_ENV=	BINDIR="${PREFIX}/sbin" \
+		MANDIR="${MANPREFIX}/man/man"
 
-OPTIONS_DEFINE=	AUTOSETUP DOCS
-AUTOSETUP_DESC=	Automatic global config file setup
-
-USES=		kmod uidfix
-
-DOCS_BUILD_DEPENDS=	deplate:${PORTSDIR}/textproc/ruby-deplate
+SUB_LIST+=	KMODDIR=${KMODDIR}
+SUB_FILES=	pkg-message
 
 .include <bsd.port.pre.mk>
 
-SETUP=		setup.sh
-HG_SHORTREV=	498acaef33b0
-
-TXT_DOCS=	doc.text
-HTML_DOCS=	Faq.html \
-		Implementation.html \
-		Quickstart.html \
-		article.css \
-		deplate-mini.png \
-		deplate.css \
-		doc.html \
-		heading-navbar.css \
-		home-grey.png \
-		mailto.png \
-		next-grey.png \
-		prev-grey.png \
-		remote.png \
-		serif.css \
-		tabbar-right.css
-
-.if ${OSVERSION} >= 900040
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-fuse_module__fuse_vnops.c
+.if ${OSVERSION} >= 800000 && ${OSVERSION} < 900000
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-8-fuse_vfsops.c
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-8-fuse_vnops.c
 .endif
-
-.if ${OSVERSION} >= 1000011
-EXTRA_PATCHES+=	${FILESDIR}/extrapatch-fuse_module__fuse_vnops.c
+.if ${OSVERSION} >= 900000 && ${OSVERSION} < 1000000
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-9-fuse_vfsops.c
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-9-fuse_vnops.c
 .endif
-
-.if exists(${SRC_BASE}/sys/fs/fuse)
+.if ${OSVERSION} >= 1000000
 IGNORE=		integrated into base
 .endif
-.if !exists(${SRC_BASE}/sbin/mount)
-IGNORE=		requires the userland sources to be installed. Set SRC_BASE if it is not in /usr/src
-.endif
 
-.if ${ARCH} != "i386" && ${ARCH} != "amd64"
-BROKEN=		Does not compile on other than i386/amd64
-.endif
+do-build:
+	cd ${WRKDIR}/modules/fuse; ${MAKE}
+	cd ${WRKDIR}/mount_fusefs; ${MAKE}
 
-.if ${PORT_OPTIONS:MAUTOSETUP}
-SUB_FILES+=	${SETUP}
-.else
-SUB_FILES+=	pkg-message
-.endif
-post-patch:
-	@${REINPLACE_CMD} -e 's/deplate.rb/deplate/g' \
-		${WRKSRC}/doc/Makefile
-	@${REINPLACE_CMD} -e 's|-I../inc|-I${SRC_BASE}/sys -I../inc|g' \
-		${WRKSRC}/mount_fusefs/Makefile
-
-post-configure:
-	@${CP} ${LOCALBASE}/include/fuse/fuse_kernel.h ${WRKSRC}/fuse_module
-
-post-build:
-.if ${PORT_OPTIONS:MDOCS}
-	@cd ${WRKSRC}/doc && make plaintext html_chunked
-.endif
+do-install:
+	${INSTALL_KLD} ${WRKSRC}/modules/fuse/fuse.ko ${STAGEDIR}${KMODDIR}
+	${INSTALL_MAN} ${WRKSRC}/mount_fusefs/mount_fusefs.8 ${STAGEDIR}${PREFIX}/man/man8
+	${INSTALL_PROGRAM} ${WRKSRC}/mount_fusefs/mount_fusefs ${STAGEDIR}${PREFIX}/sbin
 
 post-install:
-	${MKDIR} ${STAGEDIR}/usr/sbin
-	(cd ${STAGEDIR} && ${LN} -fs ${PREFIX}/sbin/mount_fusefs \
-		usr/sbin/mount_fusefs)
-.if ${PORT_OPTIONS:MAUTOSETUP} && !defined(PACKAGE_BUILDING)
-	@${ECHO} "Modifying global startup config files and loading module..."
-	@${SH} ${WRKDIR}/${SETUP}
-.endif
+	${CAT} ${PKGMESSAGE}
 
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${STAGEDIR}${DOCSDIR}/kmod/html
-.for i in ${TXT_DOCS}
-	${INSTALL_DATA} ${WRKSRC}/doc/plaintext_out/$i ${STAGEDIR}${DOCSDIR}/kmod
-.endfor
-.for i in ${HTML_DOCS}
-	${INSTALL_DATA} ${WRKSRC}/doc/html_chunked_out/$i ${STAGEDIR}${DOCSDIR}/kmod/html
-.endfor
-.endif
+SVN_REV=	263233
+SVN_MIRROR?=	http://svn.freebsd.org/base
+EXPDIR=		${WRKSRC}/src
+maintainer-tar:
+	${MKDIR} ${EXPDIR}
+	cd ${EXPDIR} && svn export -r ${SVN_REV} ${SVN_MIRROR}/head/sys/fs/fuse/ fs/fuse
+	cd ${EXPDIR} && svn export -r ${SVN_REV} ${SVN_MIRROR}/head/sys/modules/fuse/ modules/fuse
+	cd ${EXPDIR} && svn export -r ${SVN_REV} ${SVN_MIRROR}/head/sbin/mount_fusefs mount_fusefs
+	cd ${EXPDIR} && svn export -r ${SVN_REV} ${SVN_MIRROR}/head/sbin/mount/getmntopts.c mount_fusefs/getmntopts.c
+	cd ${EXPDIR} && svn export -r ${SVN_REV} ${SVN_MIRROR}/head/sbin/mount/mntopts.h mount_fusefs/
+	cd ${EXPDIR} && ${TAR} --uname root --uid 0 --gname wheel --gid 0 -zcvf ${DISTDIR}/${PORTNAME}-0.${SVN_REV}${EXTRACT_SUFX} fs modules mount_fusefs
+
+maintainer-check:
+	@new=`svn log -ql 1 ${SVN_MIRROR}@HEAD head/sys/fs/fuse | ${GREP} -v ^- | ${SED} -e 's| .*||; s|r||'`;\
+	old="${SVN_REV}";\
+	if [ "$${new}" -gt "$${old}" ]; then ${ECHO_MSG} "New fuse rev: r$${new} (was $${old})"; fi
 
 .include <bsd.port.post.mk>

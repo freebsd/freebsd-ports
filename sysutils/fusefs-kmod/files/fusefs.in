@@ -27,7 +27,7 @@
 name="fusefs"
 rcvar=fusefs_enable
 
-kmod="%%PREFIX%%/modules/fuse.ko"
+kmod="%%KMODDIR%%/fuse.ko"
 
 start_cmd="fusefs_start"
 stop_cmd="fusefs_stop"
