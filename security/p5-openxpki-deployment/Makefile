@@ -3,7 +3,7 @@
 
 PORTNAME=	openxpki-deployment
 PORTVERSION=	0.9.1386
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	security perl5
 MASTER_SITES=	SF/openxpki/openxpki/0.9.1300
 PKGNAMEPREFIX=	p5-
@@ -42,5 +42,8 @@ post-install:
 .if !defined(BATCH)
 	@sleep 9
 .endif
+
+DEPRECATED=	This port was merged with security/p5-openxpki
+EXPIRATION_DATE=	2014-09-03
 
 .include <bsd.port.mk>
