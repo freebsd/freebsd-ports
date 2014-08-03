@@ -21,6 +21,7 @@ SLAVEPORT=	gtk
 USE_GNOME=	gtk30 intlhack
 USES=		gettext pathfix desktop-file-utils
 INSTALLS_ICONS=	yes
+LDFLAGS+=	-linotify
 
 EXTRA_CONF_ARGS=--disable-cli \
 		--disable-daemon \

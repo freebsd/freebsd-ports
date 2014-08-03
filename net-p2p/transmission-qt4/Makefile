@@ -17,7 +17,6 @@ SLAVEPORT=	qt4
 QT_NONSTANDARD=	yes
 USE_QT4=	moc_build qmake_build rcc_build uic_build gui dbus network
 USES=		desktop-file-utils
-LDFLAGS+=	-lcrypto
 
 EXTRA_CONF_ARGS=--disable-cli \
 		--disable-daemon \
