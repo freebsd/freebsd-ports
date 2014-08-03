@@ -14,8 +14,6 @@ EXTRACT_ONLY=	pp4sty.zip leveldemo.zip
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Post processor for PDF presentations made with (La)TeX
 
-RUN_DEPENDS=	java:${PORTSDIR}/java/javavmwrapper
-
 USES=		zip
 USE_TEX=	latex
 USE_JAVA=	yes
@@ -37,27 +35,18 @@ PLIST_SUB=	STY_DIR="${STY_DIR:S,^${PREFIX}/,,}" \
 SUB_FILES=	ppower4.sh
 SUB_LIST=	JARFILE=${JAR_DIR}/pp4p.jar
 
-NO_STAGE=	yes
-do-install:
-# install docs?
-.if !defined(NOPORTDOCS)
-# install docs...
-	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/manual.pdf ${DOCSDIR}
-# ...and the examples, too!
-	@${MKDIR} ${EXAMPLESDIR}
-	@${INSTALL_DATA} ${EXAMPLE_FILES} ${EXAMPLESDIR}
-.endif
-# install data files
-	@${MKDIR} ${STY_DIR}
-	@${INSTALL_DATA} ${STY_FILES} ${STY_DIR}
-	@${MKDIR} ${JAR_DIR}
-	@${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/pp4p.jar ${JAR_DIR}
-# install wrapper script
-	@${INSTALL_SCRIPT} ${WRKDIR}/ppower4.sh ${PREFIX}/bin/ppower4
+OPTIONS_DEFINE=	DOCS
 
-post-install:
-	${SETENV} LOCALBASE=${LOCALBASE} PKG_PREFIX=${PREFIX} \
-		${SH} ${PKGDIR}/pkg-install ${PKGNAME} POST-INSTALL
+do-install:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/manual.pdf \
+		${STAGEDIR}${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${EXAMPLE_FILES} ${STAGEDIR}${EXAMPLESDIR}
+	@${MKDIR} ${STAGEDIR}${STY_DIR}
+	${INSTALL_DATA} ${STY_FILES} ${STAGEDIR}${STY_DIR}
+	@${MKDIR} ${STAGEDIR}${JAR_DIR}
+	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/pp4p.jar ${STAGEDIR}${JAR_DIR}
+	${INSTALL_SCRIPT} ${WRKDIR}/ppower4.sh ${STAGEDIR}${PREFIX}/bin/ppower4
 
 .include <bsd.port.mk>
