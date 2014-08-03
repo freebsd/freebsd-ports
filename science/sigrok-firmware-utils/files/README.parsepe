@@ -1,0 +1,11 @@
+The parsepe.py tool can list all sections and symbols from a PE (portable
+executable) binary file, and extract the contents of a symbol.
+
+usage:
+parsepe.py -l <filename>                list all sections and symbols in file
+parsepe.py -s <symbol> -x <filename>    extract symbol from file
+
+TODO:
+- currently only handles COFF symbol tables
+- can only extract external (global) symbols
+
