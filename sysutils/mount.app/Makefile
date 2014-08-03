@@ -17,7 +17,7 @@ USE_GNOME=	gtk12 glib12
 
 GNU_CONFIGURE=	yes
 
-LDFLAGS+=	-L${LOCALBASE}/lib -L${LOCALBASE}/lib -lintl
+LDFLAGS+=	-L${LOCALBASE}/lib -L${LOCALBASE}/lib
+LIBS+=		-lintl -lWUtil
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
