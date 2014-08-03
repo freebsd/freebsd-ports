@@ -6367,3 +6367,4 @@ print/ifxetex||2014-08-01|Has expired: Very outdated and fully contained in texl
 lang/dragonegg46-33||2014-08-01|Has expired: Dead upstream, impractical to build on 10 and later
 lang/dragonegg47-33||2014-08-01|Has expired: Dead upstream, impractical to build on 10 and later
 print/freetype-tools|print/texlive-texmf|2014-08-01|Has been incorporated in TeXLive
+sysutils/readlink||2014-08-03|Has expired: All features implemented in the base system since FreeBSD 8.3
