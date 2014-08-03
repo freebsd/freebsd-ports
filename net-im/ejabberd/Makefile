@@ -3,6 +3,7 @@
 
 PORTNAME=	ejabberd
 PORTVERSION=	14.07
+PORTREVISION=	1
 CATEGORIES=	net-im
 MASTER_SITES=	http://www.process-one.net/downloads/${PORTNAME}/${PORTVERSION}/:p1 \
 		http://distfiles.pirateparty.in/%SUBDIR%/:deps \
@@ -58,7 +59,7 @@ JSON_CONFIGURE_ENABLE=	json
 MYSQL_CONFIGURE_ENABLE=	mysql
 PGSQL_CONFIGURE_ENABLE=	pgsql
 ICONV_CONFIGURE_ENABLE=	iconv
-ICONV_USES=		iconv
+ICONV_USES=		iconv:wchar_t
 ICONV_LDFLAGS=		${ICONV_LIB}
 DOCS_MAKE_ARGS_OFF=	NOPORTDOCS=yes
 
