@@ -57,6 +57,33 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="90ca3ba5-19e6-11e4-8616-001b3856973b">
+    <topic>gpgme -- heap-based buffer overflow in gpgsm status handler</topic>
+    <affects>
+      <package>
+	<name>gpgme</name>
+	<range><lt>1.5.0</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Tomas Trnka reports:</p>
+	<blockquote cite="https://bugzilla.redhat.com/show_bug.cgi?id=1113267">
+	  <p>Gpgme contains a buffer overflow in the gpgsm status handler
+	    that could possibly be exploited using a specially crafted certificate.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2014-3564</cvename>
+      <url>https://bugzilla.redhat.com/show_bug.cgi?id=1113267</url>
+    </references>
+    <dates>
+      <discovery>2014-06-25</discovery>
+      <entry>2014-08-02</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="2f90556f-18c6-11e4-9cc4-5453ed2e2b49">
     <topic>kdelibs -- KAuth PID Reuse Flaw</topic>
     <affects>
