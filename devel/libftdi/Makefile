@@ -1,9 +1,8 @@
-# Created by: Olexandr Davydenko <o.davydenko@gmail.com>
 # $FreeBSD$
 
 PORTNAME=	libftdi
 PORTVERSION=	0.20
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	http://www.intra2net.com/en/developer/libftdi/download/
 
@@ -14,11 +13,12 @@ OPTIONS_DEFINE+=	BOOST PYTHON
 BOOST_DESC=		Build with boost
 PYTHON_DESC=		Python bindings
 
-USE_AUTOTOOLS=		autoconf libtool automake
+USES=			pathfix pkgconfig libtool
+USE_AUTOTOOLS=		autoconf automake
 GNU_CONFIGURE=		yes
 CFLAGS+=		-I${LOCALBASE}/include
 USE_LDCONFIG=		yes
-USES=			pathfix pkgconfig
+INSTALL_TARGET=		install-strip
 
 PORTDOCS=		COPYING.LIB ChangeLog README
 
