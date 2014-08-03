@@ -1,3 +1,5 @@
+@owner %%WWWOWN%%
+@group %%WWWGRP%%
 %%CGIDIR%%/tools/rebuild-benchmark
 %%CGIDIR%%/tools/mt-tmpl-preview
 %%CGIDIR%%/tools/remove-object
@@ -3571,7 +3573,12 @@
 @dirrm %%CGIDIR%%/php/lib
 @dirrm %%CGIDIR%%/php/tmpl
 @dirrm %%CGIDIR%%/php
+%%MYSQL%%@owner mysql
+%%MYSQL%%@group mysql
 @dirrmtry %%DB_DIR%%
+%%MYSQL%%@dirrmtry /var/db/mysql
+%%MYSQL%%@owner %%WWWOWN%%
+%%MYSQL%%@group %%WWWGRP%%
 @dirrm %%CGIDIR%%
 @dirrm %%DATADIR%%/mt-static/js/flash
 @dirrm %%DATADIR%%/mt-static/js/editor/editor
@@ -3816,6 +3823,8 @@
 @dirrm %%DATADIR%%/mt-static
 @dirrmtry %%DATADIR%%
 @dirrmtry www/cgi-bin
+@owner
+@group
 %%APACHE%%%%APACHEETCDIR%%/Includes/MT.conf
 %%APACHE%%@dirrmtry %%APACHEETCDIR%%/Includes
 %%APACHE%%@dirrmtry %%APACHEETCDIR%%

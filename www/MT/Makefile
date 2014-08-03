@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	MT
-PORTVERSION=	5.2.9
-PORTREVISION=	1
+PORTVERSION=	5.2.10
 PORTEPOCH=	1
 CATEGORIES?=	www
 MASTER_SITES?=	http://www.movabletype.org/downloads/stable/\
@@ -14,12 +13,15 @@ DISTNAME?=	MTOS-${PORTVERSION}
 MAINTAINER?=	takefu@airport.fm
 COMMENT?=	Web-based personal publishing system for weblogs
 
+LICENSE=	GPLv2
+
 CONFLICTS?=	de-MT-[2-5].* fr-MT-[2-5].* ja-MT-[2-5].* ru-MT-[2-5].*
 
 RUN_DEPENDS+=	p5-DBI>=1.21:${PORTSDIR}/databases/p5-DBI \
 		p5-Image-Size>=0:${PORTSDIR}/graphics/p5-Image-Size
 
 NO_OPTIONS_SORT=	yes
+OPTIONS_SUB=		yes
 OPTIONS_DEFINE=		APACHE SSL TLS PSGI\
 			OPTIONAL_MODULES ADDITIONAL_MODULES
 OPTIONS_DEFAULT=	MYSQL OPTIONAL_MODULES
@@ -37,14 +39,15 @@ SQLITE2_DESC=		SQLite2 database support[obsolete]
 
 DATADIR=	www/data
 CGIDIR=		www/cgi-bin/mt
-PLIST_SUB+=	DATADIR=${DATADIR} CGIDIR=${CGIDIR} DB_DIR=${DB_DIR}
-SUB_FILES+=	pkg-install
-SUB_LIST+=	DATADIR=${DATADIR} CGIDIR=${CGIDIR} DB_DIR=${DB_DIR}\
-		PACKAGENAME=${PKGNAMEPREFIX}${PORTNAME}\
-		WWWOWN=${WWWOWN} WWWGRP=${WWWGRP} STAGEDIR=${STAGEDIR}
 
-USES=		perl5
+SUB_LIST+=	CGIDIR=${CGIDIR}\
+		PACKAGENAME=${PKGNAMEPREFIX}${PORTNAME}
+PLIST_SUB+=	DATADIR=${DATADIR} CGIDIR=${CGIDIR} DB_DIR=${DB_DIR}\
+		WWWOWN=${WWWOWN} WWWGRP=${WWWGRP}
+
+USES=		perl5 shebangfix
 USE_PERL5=	run
+SHEBANG_FILES=	*.cgi
 NO_BUILD=	yes
 MT_DOCS_URL?=	http://www.movabletype.org/documentation/
 MT_UPGRADE_URL?=http://www.movabletype.org/documentation/installation/upgrade-movable-type.html
@@ -60,8 +63,8 @@ PLIST_SUB+=	LANG_RU="@comment "
 RUN_DEPENDS+=	p5-HTML-Parser>=0:${PORTSDIR}/www/p5-HTML-Parser\
 		p5-libwww>=0:${PORTSDIR}/www/p5-libwww\
 		p5-SOAP-Lite>=0.5:${PORTSDIR}/net/p5-SOAP-Lite\
-		convert:${PORTSDIR}/graphics/ImageMagick\
-		p5-GD>=0:${PORTSDIR}/graphics/p5-GD \
+		convert:${PORTSDIR}/graphics/ImageMagick-nox11\
+		p5-GD>=0:${PORTSDIR}/graphics/p5-GD\
 		p5-Imager>=0:${PORTSDIR}/graphics/p5-Imager \
 		p5-Crypt-DSA>=0:${PORTSDIR}/security/p5-Crypt-DSA\
 		p5-MIME-Base64>=0:${PORTSDIR}/converters/p5-MIME-Base64\
@@ -118,29 +121,27 @@ RUN_DEPENDS+=	p5-DBD-Oracle>=0.19:${PORTSDIR}/databases/p5-DBD-Oracle
 .if ${PORT_OPTIONS:MODBC}
 RUN_DEPENDS+=	p5-DBD-ODBC>=1.13:${PORTSDIR}/databases/p5-DBD-ODBC
 .endif
+
 .if ${PORT_OPTIONS:MAPACHE}
-USE_APACHE_RUN=	22+
+USE_APACHE_BUILD=	22+
 SUB_FILES+=	MT.conf
 SUB_LIST+=	APACHEETCDIR=${PREFIX}/${APACHEETCDIR}
-.include <bsd.port.pre.mk>
-. if ${APACHE_VERSION} == 24
-PLIST_SUB+=	APACHE="" APACHE24=""
-SUB_LIST+=	APACHE24=""
-. else
-PLIST_SUB+=	APACHE="" APACHE24="\#"
-SUB_LIST+=	APACHE24="\#"
-. endif
-.else
-PLIST_SUB+=	APACHE="@comment "
 .endif
+
+.include <bsd.port.pre.mk>
+
+.if ${PORT_OPTIONS:MAPACHE} && (${APACHE_VERSION} <= 22)
+SUB_LIST+=	APACHE22="" APACHE24="\#" MODULE=mod_alias.c
+.elif ${PORT_OPTIONS:MAPACHE} && (${APACHE_VERSION} >= 24)
+SUB_LIST+=	APACHE22="\#" APACHE24="" MODULE=alias_module
+.endif
+
 .if ${PORT_OPTIONS:MPSGI}
 RUN_DEPENDS+=	p5-CGI-PSGI>0:${PORTSDIR}/www/p5-CGI-PSGI\
 		p5-CGI-Emulate-PSGI>=0.06:${PORTSDIR}/www/p5-CGI-Emulate-PSGI\
 		p5-Plack>=0:${PORTSDIR}/www/p5-Plack\
 		p5-SOAP-Transport-HTTP-Plack>=0:${PORTSDIR}/www/p5-SOAP-Transport-HTTP-Plack
 .endif
-
-.include <bsd.port.pre.mk>
 
 pre-everything::
 	@${ECHO_CMD} "ATTENTION:"
@@ -171,10 +172,9 @@ do-install:
 	@${ECHO_MSG} "Installing data under ${PREFIX}/${DATADIR}/"
 	@${MKDIR} ${STAGEDIR}${PREFIX}/${DATADIR}
 	@cd ${WRKSRC} && ${CP} -R mt-static ${STAGEDIR}${PREFIX}/${DATADIR}
+	@${MKDIR} ${STAGEDIR}${DB_DIR}
 
 post-install:
-	@${SETENV} PKG_PREFIX=${PREFIX} STAGE=${STAGEDIR}\
-		${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL ${DB_DIR}
 	@${ECHO_MSG} "*****************************************************************"
 	@${ECHO_CMD} ""
 	@${ECHO_MSG} "You have just installed the movabletype."
