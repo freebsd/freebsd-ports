@@ -580,7 +580,7 @@ share/kde4/services/clementine-zune.protocol
 %%VISUALISATION%%share/clementine/projectm-presets/Zylot and Rovastar - Iouo Stone Morphic Fusion.milk
 %%VISUALISATION%%share/clementine/projectm-presets/[Ishan] - Life in the drains.milk
 %%VISUALISATION%%@dirrmtry share/clementine/projectm-presets
-@dirrmtry share/clementine
+%%VISUALISATION%%@dirrmtry share/clementine
 @dirrmtry share/icons/hicolor/64x64/apps
 @dirrmtry share/icons/hicolor/64x64
 @dirrmtry share/icons/hicolor/scalable/apps
