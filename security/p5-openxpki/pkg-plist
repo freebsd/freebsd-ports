@@ -1,251 +1,20 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/API.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/Backend/API.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/Backend/OpenSSL.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/Backend/OpenSSL.xs
-%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/Backend/OpenSSL/CLI.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/Backend/OpenSSL/Command.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/Backend/OpenSSL/Command/convert_cert.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/Backend/OpenSSL/Command/convert_crl.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/Backend/OpenSSL/Command/convert_key.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/Backend/OpenSSL/Command/convert_pkcs10.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/Backend/OpenSSL/Command/create_cert.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/Backend/OpenSSL/Command/create_key.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/Backend/OpenSSL/Command/create_key/DSA.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/Backend/OpenSSL/Command/create_key/EC.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/Backend/OpenSSL/Command/create_key/GOST2001.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/Backend/OpenSSL/Command/create_key/GOST2001CP.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/Backend/OpenSSL/Command/create_key/GOST94.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/Backend/OpenSSL/Command/create_key/GOST94CP.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/Backend/OpenSSL/Command/create_key/RSA.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/Backend/OpenSSL/Command/create_pkcs10.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/Backend/OpenSSL/Command/create_pkcs12.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/Backend/OpenSSL/Command/create_random.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/Backend/OpenSSL/Command/get_pkcs8_keytype.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/Backend/OpenSSL/Command/is_issuer.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/Backend/OpenSSL/Command/is_prime.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/Backend/OpenSSL/Command/issue_cert.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/Backend/OpenSSL/Command/issue_crl.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/Backend/OpenSSL/Command/list_algorithms.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/Backend/OpenSSL/Command/pkcs7_decrypt.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/Backend/OpenSSL/Command/pkcs7_encrypt.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/Backend/OpenSSL/Command/pkcs7_get_chain.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/Backend/OpenSSL/Command/pkcs7_sign.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/Backend/OpenSSL/Command/pkcs7_verify.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/Backend/OpenSSL/Config.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/Backend/OpenSSL/Engine.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/Backend/OpenSSL/Engine/GOST.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/Backend/OpenSSL/Engine/OpenSSL.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/Backend/OpenSSL/Engine/PKCS11.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/Backend/OpenSSL/Engine/nCipher.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/Backend/OpenSSL/XS.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/Backend/OpenSSL/XS/CRL.xs
-%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/Backend/OpenSSL/XS/PKCS10.xs
-%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/Backend/OpenSSL/XS/SPKAC.xs
-%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/Backend/OpenSSL/XS/X509.xs
-%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/CLI.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/CRL.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/CRR.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/CSR.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/Header.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/Object.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/PKCS7.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/Profile/Base.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/Profile/CRL.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/Profile/Certificate.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/Secret.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/Secret/Plain.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/Secret/Split.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/TokenManager.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/Tool/CreateJavaKeystore.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/Tool/CreateJavaKeystore/API.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/Tool/CreateJavaKeystore/CLI.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/Tool/CreateJavaKeystore/Command/create_keystore.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/Tool/CreateJavaKeystore/Engine/OpenSSL.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/Tool/PKCS7.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/Tool/PKCS7/API.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/Tool/PKCS7/CLI.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/Tool/PKCS7/Command/get_subject.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/Tool/PKCS7/Command/is_not_self_signed.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/Tool/PKCS7/Command/verify.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/Tool/PKCS7/Engine/OpenSSL.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/Tool/SCEP.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/Tool/SCEP/API.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/Tool/SCEP/CLI.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/Tool/SCEP/Command/create_certificate_reply.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/Tool/SCEP/Command/create_error_reply.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/Tool/SCEP/Command/create_pending_reply.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/Tool/SCEP/Command/get_message_type.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/Tool/SCEP/Command/get_pkcs10.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/Tool/SCEP/Command/get_signer_cert.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/Tool/SCEP/Command/get_transaction_id.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/Tool/SCEP/Engine/OpenSSL.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/Toolkit.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/VolatileVault.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/X509.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/DN.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/DateTime.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Debug.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Exception.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/FileUtils.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/LdapUtils.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Serialization/Fast.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Serialization/JSON.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Serialization/Simple.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/ACL.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/API.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/API/Default.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/API/Object.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/API/Secret.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/API/Visualization.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/API/Workflow.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Authentication.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Authentication/Anonymous.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Authentication/ClientSSO.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Authentication/ClientX509.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Authentication/External.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Authentication/LDAP.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Authentication/Password.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Authentication/X509.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Context.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/DBI.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/DBI/DBH.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/DBI/Driver.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/DBI/Driver/DB2.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/DBI/Driver/MySQL.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/DBI/Driver/Oracle.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/DBI/Driver/PostgreSQL.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/DBI/Driver/SQLite.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/DBI/Hash.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/DBI/SQL.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/DBI/Schema.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Init.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Log.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Log/Appender/DBI.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Log/NOOP.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Notification.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Notification/Dispatcher.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Notification/RT.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Session.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Session/Mock.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Activity.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Activity/CRLIssuance/DetermineNextCA.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Activity/CRLIssuance/GetCRLProfile.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Activity/CRLIssuance/IssueCRL.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Activity/CRLIssuance/PublishCRL.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Activity/CRR/PersistRequest.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Activity/CSR/ChangeNotBeforeOrAfter.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Activity/CSR/GenerateKey.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Activity/CSR/GeneratePKCS10.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Activity/CSR/PersistRequest.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Activity/CertIssuance/GetCertProfile.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Activity/CertIssuance/ImportCertData.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Activity/CertIssuance/Issue.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Activity/CertIssuance/PersistCertificate.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Activity/CertLdapPublish/AddMissingNode.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Activity/CertLdapPublish/ImportPublicData.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Activity/CertLdapPublish/PublicCertLdap.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Activity/DataExchange/Cleanup.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Activity/DataExchange/ExportLogs.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Activity/DataExchange/ExportWorkflowInstances.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Activity/DataExchange/ImportLogs.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Activity/DataExchange/ImportWorkflowInstances.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Activity/DataExchange/PackArchive.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Activity/DataExchange/PrepareEnv.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Activity/DataExchange/ReadArchive.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Activity/DataExchange/UnpackArchive.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Activity/DataExchange/WriteArchive.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Activity/PasswordSafe/RetrievePassword.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Activity/PasswordSafe/StorePassword.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Activity/SCEP/ExtractCSR.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Activity/SCEP/SetContextFromCSR.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Activity/SCEP/SetContextFromOriginalCert.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Activity/Skeleton.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Activity/SmartCard/CreateServerCSR.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Activity/SmartCard/ForkWorkflowInstances.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Activity/SmartCard/GetLDAPData.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Activity/SmartCard/PersistCSRs.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Activity/SmartCard/PublishCertificates.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Activity/SmartCard/WriteCertificateToInstall.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Activity/Tools/Approve.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Activity/Tools/CancelApprovals.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Activity/Tools/DetermineIssuingCA.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Activity/Tools/Export.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Activity/Tools/ForkWorkflowInstance.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Activity/Tools/Notification.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Activity/Tools/NotifyParentWorkflow.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Activity/Tools/SetErrorCode.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Activity/Tools/SetSource.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Activity/Tools/Sleep.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Condition/ACL.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Condition/AlwaysFalse.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Condition/AlwaysTrue.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Condition/Approved.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Condition/CRLSigningCAsLeft.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Condition/CertificateNotYetRevoked.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Condition/CheckCertTestResult.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Condition/CheckForkedWorkflowChildren.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Condition/CorrectNumberOfValidCerts.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Condition/CorrectTiming.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Condition/InitialEnrollmentOrRenewal.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Condition/IsCertificateIssuancePossible.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Condition/IsServerKeyGeneration.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Condition/IsValidSignatureWithRequestedDN.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Condition/Key.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Condition/LdapDnAvailable.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Condition/MoreCSRsToCreate.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Condition/MoreCertsToTest.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Condition/Server.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Condition/SignedUsingOriginalCertOrSelfSigned.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Condition/UseLdap.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Condition/ValidCSRSerialPresent.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Condition/WorkflowChildrenFailure.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Condition/WorkflowChildrenSuccessfullyFinished.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Condition/WorkflowCreator.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Observer/AddExecuteHistory.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Observer/Debug.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Observer/Log.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Persister/DBI.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Persister/DBI/SequenceId.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Validator/ApprovalSignature.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Validator/Bulk.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Validator/CertProfile.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Validator/CertRole.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Validator/CertSubject.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Validator/CertSubjectAltName.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Validator/CertSubjectAltNameParts.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Validator/CertSubjectParts.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Validator/Creator.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Validator/InvalidityTime.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Validator/KeyLength.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Validator/KeyReuse.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Validator/PKCS10.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Validator/PasswordQuality.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Validator/ReasonCode.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Validator/SPKAC.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Validator/UnusedID.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Validator/ValidityTime.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Service.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Service/Default.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Service/Default/Command.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Service/Default/Command/nop.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Service/SCEP.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Service/SCEP/Command.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Service/SCEP/Command/GetCACert.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Service/SCEP/Command/PKIOperation.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Template/Plugin/RandomPassword.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Tests.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Transport/Simple.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/VERSION.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Workflow/Factory.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/XML/Cache.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/XML/Config.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/i18n.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/OpenXPKI/.packlist
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/OpenXPKI/OpenXPKI.so
+bin/openxpkiadm
+bin/openxpkicli
+bin/openxpkicmd
+bin/openxpkictl
 %%PERL5_MAN3%%/OpenXPKI.3.gz
+%%PERL5_MAN3%%/OpenXPKI::Client.3.gz
+%%PERL5_MAN3%%/OpenXPKI::Client::API.3.gz
+%%PERL5_MAN3%%/OpenXPKI::Client::SCEP.3.gz
+%%PERL5_MAN3%%/OpenXPKI::Client::Simple.3.gz
+%%PERL5_MAN3%%/OpenXPKI::Client::UI.3.gz
+%%PERL5_MAN3%%/OpenXPKI::Client::UI::Certificate.3.gz
+%%PERL5_MAN3%%/OpenXPKI::Client::UI::Result.3.gz
+%%PERL5_MAN3%%/OpenXPKI::Client::UI::Workflow.3.gz
+%%PERL5_MAN3%%/OpenXPKI::Config.3.gz
+%%PERL5_MAN3%%/OpenXPKI::Config::Merge.3.gz
+%%PERL5_MAN3%%/OpenXPKI::Config::Test.3.gz
+%%PERL5_MAN3%%/OpenXPKI::Control.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Crypto::API.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Crypto::Backend::API.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Crypto::Backend::OpenSSL.3.gz
@@ -255,7 +24,6 @@
 %%PERL5_MAN3%%/OpenXPKI::Crypto::Backend::OpenSSL::Command::convert_crl.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Crypto::Backend::OpenSSL::Command::convert_key.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Crypto::Backend::OpenSSL::Command::convert_pkcs10.3.gz
-%%PERL5_MAN3%%/OpenXPKI::Crypto::Backend::OpenSSL::Command::create_cert.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Crypto::Backend::OpenSSL::Command::create_key.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Crypto::Backend::OpenSSL::Command::create_key::DSA.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Crypto::Backend::OpenSSL::Command::create_key::EC.3.gz
@@ -278,6 +46,7 @@
 %%PERL5_MAN3%%/OpenXPKI::Crypto::Backend::OpenSSL::Command::pkcs7_get_chain.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Crypto::Backend::OpenSSL::Command::pkcs7_sign.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Crypto::Backend::OpenSSL::Command::pkcs7_verify.3.gz
+%%PERL5_MAN3%%/OpenXPKI::Crypto::Backend::OpenSSL::Command::verify_cert.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Crypto::Backend::OpenSSL::Config.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Crypto::Backend::OpenSSL::Engine.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Crypto::Backend::OpenSSL::Engine::GOST.3.gz
@@ -291,7 +60,6 @@
 %%PERL5_MAN3%%/OpenXPKI::Crypto::CSR.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Crypto::Header.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Crypto::Object.3.gz
-%%PERL5_MAN3%%/OpenXPKI::Crypto::PKCS7.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Crypto::Profile::Base.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Crypto::Profile::CRL.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Crypto::Profile::Certificate.3.gz
@@ -307,8 +75,6 @@
 %%PERL5_MAN3%%/OpenXPKI::Crypto::Tool::PKCS7.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Crypto::Tool::PKCS7::API.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Crypto::Tool::PKCS7::CLI.3.gz
-%%PERL5_MAN3%%/OpenXPKI::Crypto::Tool::PKCS7::Command::get_subject.3.gz
-%%PERL5_MAN3%%/OpenXPKI::Crypto::Tool::PKCS7::Command::is_not_self_signed.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Crypto::Tool::PKCS7::Command::verify.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Crypto::Tool::PKCS7::Engine::OpenSSL.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Crypto::Tool::SCEP.3.gz
@@ -316,7 +82,9 @@
 %%PERL5_MAN3%%/OpenXPKI::Crypto::Tool::SCEP::CLI.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Crypto::Tool::SCEP::Command::create_certificate_reply.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Crypto::Tool::SCEP::Command::create_error_reply.3.gz
+%%PERL5_MAN3%%/OpenXPKI::Crypto::Tool::SCEP::Command::create_nextca_reply.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Crypto::Tool::SCEP::Command::create_pending_reply.3.gz
+%%PERL5_MAN3%%/OpenXPKI::Crypto::Tool::SCEP::Command::get_getcert_serial.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Crypto::Tool::SCEP::Command::get_message_type.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Crypto::Tool::SCEP::Command::get_pkcs10.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Crypto::Tool::SCEP::Command::get_signer_cert.3.gz
@@ -330,7 +98,6 @@
 %%PERL5_MAN3%%/OpenXPKI::Debug.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Exception.3.gz
 %%PERL5_MAN3%%/OpenXPKI::FileUtils.3.gz
-%%PERL5_MAN3%%/OpenXPKI::LdapUtils.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Serialization::Fast.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Serialization::JSON.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Serialization::Simple.3.gz
@@ -339,15 +106,19 @@
 %%PERL5_MAN3%%/OpenXPKI::Server::API.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Server::API::Default.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Server::API::Object.3.gz
+%%PERL5_MAN3%%/OpenXPKI::Server::API::Profile.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Server::API::Secret.3.gz
+%%PERL5_MAN3%%/OpenXPKI::Server::API::Smartcard.3.gz
+%%PERL5_MAN3%%/OpenXPKI::Server::API::Token.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Server::API::Visualization.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Server::API::Workflow.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Server::Authentication.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Server::Authentication::Anonymous.3.gz
+%%PERL5_MAN3%%/OpenXPKI::Server::Authentication::ChallengeX509.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Server::Authentication::ClientSSO.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Server::Authentication::ClientX509.3.gz
+%%PERL5_MAN3%%/OpenXPKI::Server::Authentication::Connector.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Server::Authentication::External.3.gz
-%%PERL5_MAN3%%/OpenXPKI::Server::Authentication::LDAP.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Server::Authentication::Password.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Server::Authentication::X509.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Server::Context.3.gz
@@ -365,99 +136,131 @@
 %%PERL5_MAN3%%/OpenXPKI::Server::Init.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Server::Log.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Server::Log::Appender::DBI.3.gz
+%%PERL5_MAN3%%/OpenXPKI::Server::Log::CLI.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Server::Log::NOOP.3.gz
-%%PERL5_MAN3%%/OpenXPKI::Server::Notification.3.gz
-%%PERL5_MAN3%%/OpenXPKI::Server::Notification::Dispatcher.3.gz
+%%PERL5_MAN3%%/OpenXPKI::Server::Notification::Base.3.gz
+%%PERL5_MAN3%%/OpenXPKI::Server::Notification::Handler.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Server::Notification::RT.3.gz
+%%PERL5_MAN3%%/OpenXPKI::Server::Notification::SMTP.3.gz
+%%PERL5_MAN3%%/OpenXPKI::Server::Notification::ServiceNow.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Server::Session.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Server::Session::Mock.3.gz
+%%PERL5_MAN3%%/OpenXPKI::Server::Watchdog.3.gz
+%%PERL5_MAN3%%/OpenXPKI::Server::Watchdog::WorkflowInstance.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Server::Workflow.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Activity.3.gz
-%%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Activity::CRLIssuance::DetermineNextCA.3.gz
-%%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Activity::CRLIssuance::GetCRLProfile.3.gz
-%%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Activity::CRLIssuance::IssueCRL.3.gz
-%%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Activity::CRLIssuance::PublishCRL.3.gz
+%%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Activity::CRLIssuance::CreateQueue.3.gz
+%%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Activity::CRR::MarkRevoked.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Activity::CRR::PersistRequest.3.gz
-%%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Activity::CSR::ChangeNotBeforeOrAfter.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Activity::CSR::GenerateKey.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Activity::CSR::GeneratePKCS10.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Activity::CSR::PersistRequest.3.gz
-%%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Activity::CertIssuance::GetCertProfile.3.gz
-%%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Activity::CertIssuance::ImportCertData.3.gz
-%%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Activity::CertIssuance::Issue.3.gz
-%%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Activity::CertIssuance::PersistCertificate.3.gz
-%%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Activity::CertLdapPublish::AddMissingNode.3.gz
-%%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Activity::CertLdapPublish::ImportPublicData.3.gz
-%%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Activity::CertLdapPublish::PublicCertLdap.3.gz
-%%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Activity::DataExchange::Cleanup.3.gz
-%%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Activity::DataExchange::ExportLogs.3.gz
-%%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Activity::DataExchange::ExportWorkflowInstances.3.gz
-%%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Activity::DataExchange::ImportLogs.3.gz
-%%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Activity::DataExchange::ImportWorkflowInstances.3.gz
-%%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Activity::DataExchange::PackArchive.3.gz
-%%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Activity::DataExchange::PrepareEnv.3.gz
-%%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Activity::DataExchange::ReadArchive.3.gz
-%%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Activity::DataExchange::UnpackArchive.3.gz
-%%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Activity::DataExchange::WriteArchive.3.gz
-%%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Activity::PasswordSafe::RetrievePassword.3.gz
-%%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Activity::PasswordSafe::StorePassword.3.gz
-%%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Activity::SCEP::ExtractCSR.3.gz
-%%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Activity::SCEP::SetContextFromCSR.3.gz
-%%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Activity::SCEP::SetContextFromOriginalCert.3.gz
+%%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Activity::CertIssuance::PublishCertificate.3.gz
+%%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Activity::CertRenewal::FetchOrgCertData.3.gz
+%%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Activity::NICE::CheckForRevocation.3.gz
+%%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Activity::NICE::FetchCertificate.3.gz
+%%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Activity::NICE::IssueCRL.3.gz
+%%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Activity::NICE::IssueCertificate.3.gz
+%%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Activity::NICE::RenewCertificate.3.gz
+%%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Activity::NICE::RevokeCertificate.3.gz
+%%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Activity::NICE::UnrevokeCertificate.3.gz
+%%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Activity::Noop.3.gz
+%%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Activity::Reports::CertExport::AddToQueue.3.gz
+%%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Activity::Reports::CertExport::GenerateExportFile.3.gz
+%%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Activity::Reports::CertExport::GetConfig.3.gz
+%%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Activity::Reports::CertExport::TagAsExported.3.gz
+%%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Activity::SCEPv2::CalcApprovals.3.gz
+%%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Activity::SCEPv2::EvaluateChallenge.3.gz
+%%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Activity::SCEPv2::EvaluateEligibility.3.gz
+%%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Activity::SCEPv2::EvaluateSignerTrust.3.gz
+%%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Activity::SCEPv2::ExtractCSR.3.gz
+%%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Activity::SCEPv2::FetchGroupPolicy.3.gz
+%%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Activity::SCEPv2::LoadRecentCertificate.3.gz
+%%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Activity::SCEPv2::RevokeExistingCerts.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Activity::Skeleton.3.gz
-%%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Activity::SmartCard::CreateServerCSR.3.gz
-%%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Activity::SmartCard::ForkWorkflowInstances.3.gz
-%%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Activity::SmartCard::GetLDAPData.3.gz
+%%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Activity::SmartCard::ApplyCSRPolicy.3.gz
+%%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Activity::SmartCard::CheckPrereqs.3.gz
+%%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Activity::SmartCard::ComputePUK.3.gz
+%%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Activity::SmartCard::CreateEscrowedKey.3.gz
+%%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Activity::SmartCard::CreatePKCS12.3.gz
+%%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Activity::SmartCard::FetchPUK.3.gz
+%%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Activity::SmartCard::GenerateActivationCode.3.gz
+%%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Activity::SmartCard::GeneratePUK.3.gz
+%%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Activity::SmartCard::GetOwnerByCardID.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Activity::SmartCard::PersistCSRs.3.gz
-%%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Activity::SmartCard::PublishCertificates.3.gz
-%%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Activity::SmartCard::WriteCertificateToInstall.3.gz
+%%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Activity::SmartCard::PublishCertificate.3.gz
+%%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Activity::SmartCard::RenameEscrowedKey.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Activity::Tools::Approve.3.gz
+%%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Activity::Tools::CalculateKeyId.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Activity::Tools::CancelApprovals.3.gz
-%%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Activity::Tools::DetermineIssuingCA.3.gz
+%%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Activity::Tools::Connector::GetValue.3.gz
+%%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Activity::Tools::Datapool::AppendToEntry.3.gz
+%%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Activity::Tools::Datapool::DeleteEntry.3.gz
+%%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Activity::Tools::Datapool::GetEntry.3.gz
+%%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Activity::Tools::Datapool::ModifyEntry.3.gz
+%%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Activity::Tools::Datapool::SetEntry.3.gz
+%%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Activity::Tools::Disconnect.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Activity::Tools::Export.3.gz
-%%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Activity::Tools::ForkWorkflowInstance.3.gz
-%%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Activity::Tools::Notification.3.gz
-%%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Activity::Tools::NotifyParentWorkflow.3.gz
+%%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Activity::Tools::GeneratePassword.3.gz
+%%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Activity::Tools::GetCertificateIdentifier.3.gz
+%%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Activity::Tools::Notify.3.gz
+%%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Activity::Tools::ParseCertificate.3.gz
+%%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Activity::Tools::Pause.3.gz
+%%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Activity::Tools::PublishCRL.3.gz
+%%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Activity::Tools::PublishCertificate.3.gz
+%%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Activity::Tools::RenderSubject.3.gz
+%%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Activity::Tools::RetrieveCertificate.3.gz
+%%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Activity::Tools::RevokeCertificate.3.gz
+%%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Activity::Tools::SetContext.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Activity::Tools::SetErrorCode.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Activity::Tools::SetSource.3.gz
-%%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Activity::Tools::Sleep.3.gz
+%%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Activity::Tools::WFArray.3.gz
+%%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Activity::Tools::WFHash.3.gz
+%%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Activity::Transfer::SCP.3.gz
+%%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Activity::WorkflowTest.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Condition::ACL.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Condition::AlwaysFalse.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Condition::AlwaysTrue.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Condition::Approved.3.gz
-%%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Condition::CRLSigningCAsLeft.3.gz
+%%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Condition::CertificateHasStatus.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Condition::CertificateNotYetRevoked.3.gz
-%%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Condition::CheckCertTestResult.3.gz
-%%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Condition::CheckForkedWorkflowChildren.3.gz
-%%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Condition::CorrectNumberOfValidCerts.3.gz
-%%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Condition::CorrectTiming.3.gz
-%%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Condition::InitialEnrollmentOrRenewal.3.gz
-%%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Condition::IsCertificateIssuancePossible.3.gz
+%%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Condition::CheckExistingCertificate.3.gz
+%%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Condition::Connector::IsValue.3.gz
+%%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Condition::DatapoolEntry.3.gz
+%%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Condition::DateTime.3.gz
+%%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Condition::HasRole.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Condition::IsServerKeyGeneration.3.gz
-%%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Condition::IsValidSignatureWithRequestedDN.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Condition::Key.3.gz
-%%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Condition::LdapDnAvailable.3.gz
-%%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Condition::MoreCSRsToCreate.3.gz
-%%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Condition::MoreCertsToTest.3.gz
-%%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Condition::Server.3.gz
-%%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Condition::SignedUsingOriginalCertOrSelfSigned.3.gz
-%%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Condition::UseLdap.3.gz
+%%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Condition::MaxIterationsNotReached.3.gz
+%%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Condition::NICE::IsCertificateIssued.3.gz
+%%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Condition::NICE::IsCertificatePending.3.gz
+%%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Condition::SCEPv2::ValidSCEPTID.3.gz
+%%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Condition::Smartcard::AuthCodesValid.3.gz
+%%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Condition::Smartcard::AuthIdValid.3.gz
+%%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Condition::SubjectMatchesPKCS10.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Condition::ValidCSRSerialPresent.3.gz
-%%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Condition::WorkflowChildrenFailure.3.gz
-%%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Condition::WorkflowChildrenSuccessfullyFinished.3.gz
+%%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Condition::WFArray.3.gz
+%%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Condition::WFHash.3.gz
+%%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Condition::WorkflowContext.3.gz
+%%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Condition::WorkflowContextBulk.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Condition::WorkflowCreator.3.gz
+%%PERL5_MAN3%%/OpenXPKI::Server::Workflow::NICE.3.gz
+%%PERL5_MAN3%%/OpenXPKI::Server::Workflow::NICE::Factory.3.gz
+%%PERL5_MAN3%%/OpenXPKI::Server::Workflow::NICE::Local.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Observer::Debug.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Observer::Log.3.gz
+%%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Pause.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Persister::DBI.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Persister::DBI::SequenceId.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Validator::ApprovalSignature.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Validator::Bulk.3.gz
+%%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Validator::CertIdentifierExists.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Validator::CertProfile.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Validator::CertRole.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Validator::CertSubject.3.gz
-%%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Validator::CertSubjectAltName.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Validator::CertSubjectAltNameParts.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Validator::CertSubjectParts.3.gz
+%%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Validator::Connector.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Validator::Creator.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Validator::InvalidityTime.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Validator::KeyLength.3.gz
@@ -465,80 +268,432 @@
 %%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Validator::PKCS10.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Validator::PasswordQuality.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Validator::ReasonCode.3.gz
+%%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Validator::Regex.3.gz
+%%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Validator::RelativeDate.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Validator::SPKAC.3.gz
-%%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Validator::UnusedID.3.gz
+%%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Validator::SmartcardPINUnblockAuthIDs.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Validator::ValidityTime.3.gz
+%%PERL5_MAN3%%/OpenXPKI::Server::Workflow::WFObject.3.gz
+%%PERL5_MAN3%%/OpenXPKI::Server::Workflow::WFObject::WFArray.3.gz
+%%PERL5_MAN3%%/OpenXPKI::Server::Workflow::WFObject::WFHash.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Service.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Service::Default.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Service::Default::Command.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Service::Default::Command::nop.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Service::SCEP.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Service::SCEP::Command.3.gz
+%%PERL5_MAN3%%/OpenXPKI::Service::SCEP::Command::GetCACaps.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Service::SCEP::Command::GetCACert.3.gz
+%%PERL5_MAN3%%/OpenXPKI::Service::SCEP::Command::GetNextCACert.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Service::SCEP::Command::PKIOperation.3.gz
+%%PERL5_MAN3%%/OpenXPKI::Template::Plugin::Certificate.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Template::Plugin::RandomPassword.3.gz
+%%PERL5_MAN3%%/OpenXPKI::Test::More.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Tests.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Transport::Simple.3.gz
 %%PERL5_MAN3%%/OpenXPKI::VERSION.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Workflow::Factory.3.gz
+%%PERL5_MAN3%%/OpenXPKI::Workflow::Handler.3.gz
 %%PERL5_MAN3%%/OpenXPKI::XML::Cache.3.gz
-%%PERL5_MAN3%%/OpenXPKI::XML::Config.3.gz
 %%PERL5_MAN3%%/OpenXPKI::i18n.3.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/OpenXPKI
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/XML
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Workflow
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Transport
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Template/Plugin
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Template
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Service/SCEP/Command
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Service/SCEP
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Service/Default/Command
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Service/Default
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Service
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Validator
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Persister/DBI
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Persister
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Observer
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Condition
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Activity/Tools
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Activity/SmartCard
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Activity/SCEP
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Activity/PasswordSafe
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Activity/DataExchange
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Activity/CertLdapPublish
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Activity/CertIssuance
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Activity/CSR
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Activity/CRR
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Activity/CRLIssuance
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Activity
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Session
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Notification
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Log/Appender
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Log
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/DBI/Driver
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/DBI
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Authentication
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/API
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Serialization
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/Tool/SCEP/Engine
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/Tool/SCEP/Command
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/Tool/SCEP
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/Tool/PKCS7/Engine
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/Tool/PKCS7/Command
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/Tool/PKCS7
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/Tool/CreateJavaKeystore/Engine
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/Tool/CreateJavaKeystore/Command
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/Tool/CreateJavaKeystore
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/Tool
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/Secret
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/Profile
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/Backend/OpenSSL/XS
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/Backend/OpenSSL/Engine
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Assert.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Client.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Client/API.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Client/SCEP.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Client/Simple.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Client/UI.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Client/UI/Bootstrap.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Client/UI/Certificate.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Client/UI/Crl.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Client/UI/Home.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Client/UI/Information.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Client/UI/Login.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Client/UI/Login/Passwd.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Client/UI/Result.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Client/UI/Secret.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Client/UI/Workflow.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Client/UI/Workflow/Metadata.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Config.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Config/Merge.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Config/Test.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Control.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/API.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/Backend/API.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/Backend/OpenSSL.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/Backend/OpenSSL.xs
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/Backend/OpenSSL/CLI.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/Backend/OpenSSL/Command.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/Backend/OpenSSL/Command/convert_cert.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/Backend/OpenSSL/Command/convert_crl.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/Backend/OpenSSL/Command/convert_key.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/Backend/OpenSSL/Command/convert_pkcs10.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/Backend/OpenSSL/Command/create_key.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/Backend/OpenSSL/Command/create_key/DSA.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/Backend/OpenSSL/Command/create_key/EC.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/Backend/OpenSSL/Command/create_key/GOST2001.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/Backend/OpenSSL/Command/create_key/GOST2001CP.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/Backend/OpenSSL/Command/create_key/GOST94.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/Backend/OpenSSL/Command/create_key/GOST94CP.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/Backend/OpenSSL/Command/create_key/RSA.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/Backend/OpenSSL/Command/create_pkcs10.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/Backend/OpenSSL/Command/create_pkcs12.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/Backend/OpenSSL/Command/create_random.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/Backend/OpenSSL/Command/get_pkcs8_keytype.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/Backend/OpenSSL/Command/is_issuer.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/Backend/OpenSSL/Command/is_prime.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/Backend/OpenSSL/Command/issue_cert.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/Backend/OpenSSL/Command/issue_crl.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/Backend/OpenSSL/Command/list_algorithms.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/Backend/OpenSSL/Command/pkcs7_decrypt.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/Backend/OpenSSL/Command/pkcs7_encrypt.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/Backend/OpenSSL/Command/pkcs7_get_chain.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/Backend/OpenSSL/Command/pkcs7_sign.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/Backend/OpenSSL/Command/pkcs7_verify.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/Backend/OpenSSL/Command/verify_cert.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/Backend/OpenSSL/Config.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/Backend/OpenSSL/Engine.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/Backend/OpenSSL/Engine/GOST.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/Backend/OpenSSL/Engine/OpenSSL.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/Backend/OpenSSL/Engine/PKCS11.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/Backend/OpenSSL/Engine/SafeNetProtectServer.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/Backend/OpenSSL/Engine/nCipher.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/Backend/OpenSSL/XS.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/Backend/OpenSSL/XS/CRL.xs
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/Backend/OpenSSL/XS/PKCS10.xs
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/Backend/OpenSSL/XS/SPKAC.xs
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/Backend/OpenSSL/XS/X509.xs
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/CLI.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/CRL.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/CRR.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/CSR.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/Header.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/Object.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/Profile/Base.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/Profile/CRL.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/Profile/Certificate.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/Secret.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/Secret/Plain.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/Secret/Split.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/TokenManager.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/Tool/CreateJavaKeystore.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/Tool/CreateJavaKeystore/API.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/Tool/CreateJavaKeystore/CLI.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/Tool/CreateJavaKeystore/Command/create_keystore.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/Tool/CreateJavaKeystore/Engine/OpenSSL.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/Tool/PKCS7.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/Tool/PKCS7/API.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/Tool/PKCS7/CLI.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/Tool/PKCS7/Command/verify.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/Tool/PKCS7/Engine/OpenSSL.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/Tool/SCEP.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/Tool/SCEP/API.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/Tool/SCEP/CLI.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/Tool/SCEP/Command/create_certificate_reply.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/Tool/SCEP/Command/create_error_reply.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/Tool/SCEP/Command/create_nextca_reply.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/Tool/SCEP/Command/create_pending_reply.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/Tool/SCEP/Command/get_getcert_serial.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/Tool/SCEP/Command/get_message_type.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/Tool/SCEP/Command/get_pkcs10.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/Tool/SCEP/Command/get_signer_cert.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/Tool/SCEP/Command/get_transaction_id.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/Tool/SCEP/Engine/OpenSSL.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/Toolkit.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/VolatileVault.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/X509.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/DN.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/DateTime.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Debug.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Exception.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/FileUtils.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/SOAP.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/SOAP/Revoke.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Serialization/Fast.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Serialization/JSON.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Serialization/Simple.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/ACL.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/API.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/API/Default.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/API/Object.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/API/Profile.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/API/Secret.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/API/Smartcard.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/API/Token.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/API/Visualization.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/API/Workflow.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Authentication.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Authentication/Anonymous.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Authentication/ChallengeX509.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Authentication/ClientSSO.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Authentication/ClientX509.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Authentication/Connector.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Authentication/External.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Authentication/Password.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Authentication/X509.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Context.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/DBI.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/DBI/DBH.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/DBI/Driver.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/DBI/Driver/DB2.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/DBI/Driver/MySQL.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/DBI/Driver/Oracle.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/DBI/Driver/PostgreSQL.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/DBI/Driver/SQLite.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/DBI/Hash.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/DBI/SQL.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/DBI/Schema.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Init.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Log.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Log/Appender/DBI.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Log/CLI.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Log/NOOP.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Notification/Base.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Notification/Handler.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Notification/RT.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Notification/SMTP.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Notification/ServiceNow.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Session.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Session/Mock.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Watchdog.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Watchdog/WorkflowInstance.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Activity.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Activity/CRLIssuance/CreateQueue.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Activity/CRR/MarkRevoked.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Activity/CRR/PersistRequest.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Activity/CSR/GenerateKey.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Activity/CSR/GeneratePKCS10.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Activity/CSR/PersistRequest.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Activity/CertIssuance/PublishCertificate.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Activity/CertRenewal/FetchOrgCertData.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Activity/NICE/CheckForRevocation.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Activity/NICE/FetchCertificate.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Activity/NICE/IssueCRL.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Activity/NICE/IssueCertificate.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Activity/NICE/RenewCertificate.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Activity/NICE/RevokeCertificate.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Activity/NICE/UnrevokeCertificate.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Activity/Noop.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Activity/Reports/CertExport/AddToQueue.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Activity/Reports/CertExport/GenerateExportFile.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Activity/Reports/CertExport/GetConfig.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Activity/Reports/CertExport/TagAsExported.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Activity/SCEPv2/CalcApprovals.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Activity/SCEPv2/EvaluateChallenge.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Activity/SCEPv2/EvaluateEligibility.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Activity/SCEPv2/EvaluateSignerTrust.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Activity/SCEPv2/ExtractCSR.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Activity/SCEPv2/FetchGroupPolicy.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Activity/SCEPv2/LoadRecentCertificate.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Activity/SCEPv2/RevokeExistingCerts.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Activity/Skeleton.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Activity/SmartCard/ApplyCSRPolicy.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Activity/SmartCard/CheckPrereqs.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Activity/SmartCard/ComputePUK.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Activity/SmartCard/CreateEscrowedKey.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Activity/SmartCard/CreatePKCS12.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Activity/SmartCard/FetchPUK.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Activity/SmartCard/GenerateActivationCode.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Activity/SmartCard/GeneratePUK.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Activity/SmartCard/GetOwnerByCardID.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Activity/SmartCard/PersistCSRs.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Activity/SmartCard/PublishCertificate.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Activity/SmartCard/RenameEscrowedKey.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Activity/Test.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Activity/Tools/Approve.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Activity/Tools/CalculateKeyId.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Activity/Tools/CancelApprovals.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Activity/Tools/Connector/GetValue.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Activity/Tools/Datapool/AppendToEntry.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Activity/Tools/Datapool/DeleteEntry.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Activity/Tools/Datapool/GetEntry.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Activity/Tools/Datapool/ModifyEntry.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Activity/Tools/Datapool/SetEntry.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Activity/Tools/Disconnect.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Activity/Tools/Export.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Activity/Tools/GeneratePassword.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Activity/Tools/GetCertificateIdentifier.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Activity/Tools/LoadCertificateMetadata.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Activity/Tools/Notify.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Activity/Tools/ParseCertificate.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Activity/Tools/Pause.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Activity/Tools/PersistCertificateMetadata.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Activity/Tools/PublishCRL.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Activity/Tools/PublishCertificate.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Activity/Tools/RenderSubject.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Activity/Tools/RetrieveCertificate.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Activity/Tools/RevokeCertificate.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Activity/Tools/SetContext.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Activity/Tools/SetErrorCode.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Activity/Tools/SetSource.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Activity/Tools/UpdateCertificateMetadata.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Activity/Tools/WFArray.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Activity/Tools/WFHash.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Activity/Transfer/SCP.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Activity/WorkflowTest.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Condition/ACL.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Condition/AlwaysFalse.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Condition/AlwaysTrue.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Condition/Approved.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Condition/CertificateHasStatus.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Condition/CertificateNotYetRevoked.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Condition/CheckExistingCertificate.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Condition/Connector/IsValue.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Condition/DatapoolEntry.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Condition/DateTime.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Condition/HasRole.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Condition/IsServerKeyGeneration.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Condition/Key.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Condition/MaxIterationsNotReached.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Condition/NICE/IsCertificateIssued.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Condition/NICE/IsCertificatePending.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Condition/SCEPv2/ValidSCEPTID.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Condition/Smartcard/AuthCodesValid.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Condition/Smartcard/AuthIdValid.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Condition/SubjectMatchesPKCS10.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Condition/ValidCSRSerialPresent.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Condition/WFArray.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Condition/WFHash.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Condition/WorkflowContext.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Condition/WorkflowContextBulk.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Condition/WorkflowCreator.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/InputField.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/NICE.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/NICE/Factory.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/NICE/Local.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Observer/AddExecuteHistory.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Observer/Debug.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Observer/Log.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Pause.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Persister/DBI.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Persister/DBI/SequenceId.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Stub.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Validator/ApprovalSignature.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Validator/Bulk.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Validator/CertIdentifierExists.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Validator/CertProfile.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Validator/CertRole.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Validator/CertSubject.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Validator/CertSubjectAltNameParts.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Validator/CertSubjectParts.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Validator/Connector.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Validator/Creator.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Validator/InvalidityTime.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Validator/KeyLength.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Validator/KeyReuse.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Validator/PKCS10.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Validator/PasswordQuality.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Validator/ReasonCode.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Validator/Regex.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Validator/RelativeDate.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Validator/SPKAC.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Validator/SmartcardPINUnblockAuthIDs.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Validator/ValidityTime.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/WFObject.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/WFObject/WFArray.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/WFObject/WFHash.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Service.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Service/Default.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Service/Default/Command.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Service/Default/Command/nop.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Service/SCEP.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Service/SCEP/Command.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Service/SCEP/Command/GetCACaps.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Service/SCEP/Command/GetCACert.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Service/SCEP/Command/GetNextCACert.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Service/SCEP/Command/PKIOperation.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Template.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Template/Plugin/Certificate.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Template/Plugin/RandomPassword.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Test/More.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Tests.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Transport/Simple.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/VERSION.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Workflow/Factory.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Workflow/Handler.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/XML/Cache.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/i18n.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/OpenXPKI/.packlist
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/OpenXPKI/OpenXPKI.so
+man/man1/openxpkiadm.1.gz
+man/man1/openxpkicli.1.gz
+man/man1/openxpkicmd.1.gz
+man/man1/openxpkictl.1.gz
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Client/UI/Login
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Client/UI/Workflow
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Client/UI
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Client
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Config
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/Backend/OpenSSL/Command/create_key
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/Backend/OpenSSL/Command
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/Backend/OpenSSL/Engine
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/Backend/OpenSSL/XS
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/Backend/OpenSSL
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/Backend
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/Profile
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/Secret
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/Tool/CreateJavaKeystore/Command
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/Tool/CreateJavaKeystore/Engine
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/Tool/CreateJavaKeystore
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/Tool/PKCS7/Command
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/Tool/PKCS7/Engine
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/Tool/PKCS7
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/Tool/SCEP/Command
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/Tool/SCEP/Engine
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/Tool/SCEP
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/Tool
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/SOAP
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Serialization
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/API
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Authentication
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/DBI/Driver
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/DBI
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Log/Appender
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Log
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Notification
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Session
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Watchdog
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Activity/CRLIssuance
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Activity/CRR
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Activity/CSR
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Activity/CertIssuance
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Activity/CertRenewal
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Activity/NICE
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Activity/Reports/CertExport
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Activity/Reports
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Activity/SCEPv2
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Activity/SmartCard
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Activity/Tools/Connector
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Activity/Tools/Datapool
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Activity/Tools
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Activity/Transfer
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Activity
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Condition/Connector
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Condition/NICE
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Condition/SCEPv2
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Condition/Smartcard
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Condition
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/NICE
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Observer
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Persister/DBI
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Persister
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Validator
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/WFObject
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Service/Default/Command
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Service/Default
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Service/SCEP/Command
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Service/SCEP
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Service
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Template/Plugin
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Template
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Test
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Transport
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Workflow
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/XML
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/OpenXPKI
