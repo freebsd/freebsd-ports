@@ -1060,6 +1060,7 @@
     SUBDIR += libmowgli
     SUBDIR += libmowgli2
     SUBDIR += libmpcbdm
+    SUBDIR += libmpsse
     SUBDIR += libmsiecf
     SUBDIR += libmsocket
     SUBDIR += libmtrie
