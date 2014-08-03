@@ -9,8 +9,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Free programmer for Xilinx Spartan S3E Starter Kit
 
 LIB_DEPENDS=	libftdi.so:${PORTSDIR}/devel/libftdi
-RUN_DEPENDS=	${LOCALBASE}/sbin/fxload:${PORTSDIR}/misc/fxload \
-		${LOCALBASE}/bin/cmake:${PORTSDIR}/devel/cmake
+BUILD_DEPENDS=	${LOCALBASE}/bin/cmake:${PORTSDIR}/devel/cmake
+RUN_DEPENDS=	${LOCALBASE}/sbin/fxload:${PORTSDIR}/misc/fxload
 
 USES=		tar:xz
 ALL_TARGET=	xc3sprog
@@ -18,7 +18,7 @@ ALL_TARGET=	xc3sprog
 PLIST_FILES=	bin/xc3sprog
 
 pre-configure:
-	cd ${WRKSRC} && cmake .
+	cd ${WRKSRC} && ${LOCALBASE}/bin/cmake .
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/xc3sprog ${STAGEDIR}${PREFIX}/bin
