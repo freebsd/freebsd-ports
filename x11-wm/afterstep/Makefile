@@ -3,7 +3,7 @@
 
 PORTNAME=	afterstep
 PORTVERSION=	1.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11-wm afterstep
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	dinoex
@@ -32,6 +32,7 @@ SRCDIRS=	afterstep \
 		modules/Wharf/ASSound
 
 OPTIONS_DEFINE=	HICOLOR_ICONS
+OPTIONS_DEFAULT=	HICOLOR_ICONS
 HICOLOR_ICONS_DESC=	Use hi-color icons
 
 .include <bsd.port.options.mk>
@@ -42,20 +43,20 @@ post-patch:
 			${WRKSRC}/configure.h \
 			${WRKSRC}/sample.steprc
 		@ for i in ${SRCDIRS}; do \
-			cd ${WRKSRC}/$$i; \
+			( cd ${WRKSRC}/$$i; \
 			${MV} Imakefile Imakefile.orig; \
-			${SED} -e 's/#ifdef AlphaArchitecture/#if defined(AlphaArchitecture) \&\& !defined(FreeBSDArchitecture)/' < Imakefile.orig  >  Imakefile; \
+			${SED} -e 's/#ifdef AlphaArchitecture/#if defined(AlphaArchitecture) \&\& !defined(FreeBSDArchitecture)/' < Imakefile.orig  >  Imakefile; ) \
 		done
 
 pre-build:
-		@ (cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${SH} MakeMakefiles)
+		(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${SH} MakeMakefiles)
 
 post-install:
-		@ ${MKDIR} ${STAGEDIR}${PREFIX}/lib/X11/afterstep/backgrounds/
+		${MKDIR} ${STAGEDIR}${PREFIX}/lib/X11/afterstep/backgrounds/
 		${INSTALL_DATA} ${WRKSRC}/backgrounds/* ${STAGEDIR}${PREFIX}/lib/X11/afterstep/backgrounds/
-		@ ${MKDIR} ${STAGEDIR}${PREFIX}/lib/X11/afterstep/sounds/
+		${MKDIR} ${STAGEDIR}${PREFIX}/lib/X11/afterstep/sounds/
 		${INSTALL_DATA} ${WRKSRC}/sounds/* ${STAGEDIR}${PREFIX}/lib/X11/afterstep/sounds/
-		@ ${MKDIR} ${STAGEDIR}${PREFIX}/include/X11/pixmaps/
+		${MKDIR} ${STAGEDIR}${PREFIX}/include/X11/pixmaps/
 .if ${PORT_OPTIONS:MHICOLOR_ICONS}
 		${INSTALL_DATA} ${WRKSRC}/icons/*.xpm ${STAGEDIR}${PREFIX}/include/X11/pixmaps/
 		${INSTALL_DATA} ${FILESDIR}/monitor_bsd.xpm ${STAGEDIR}${PREFIX}/include/X11/pixmaps/
@@ -66,7 +67,7 @@ post-install:
 		${INSTALL_DATA} ${WRKSRC}/icons/8bit/*.xpm ${STAGEDIR}${PREFIX}/include/X11/pixmaps/
 		${INSTALL_DATA} ${WRKSRC}/icons/eyecon.xpm ${STAGEDIR}${PREFIX}/include/X11/pixmaps/
 .endif
-		@ ${MKDIR} ${STAGEDIR}${PREFIX}/lib/X11/afterstep/doc/
+		${MKDIR} ${STAGEDIR}${PREFIX}/lib/X11/afterstep/doc/
 		@for i in CHANGES CREDITS README README.8bit INSTALL FAQ module-interface.txt; do \
 			${INSTALL_DATA} ${WRKSRC}/$$i ${STAGEDIR}${PREFIX}/lib/X11/afterstep/doc/; \
 		done
