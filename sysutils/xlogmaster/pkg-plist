@@ -28,6 +28,7 @@ etc/xlogmaster/sound/uniconify
 etc/xlogmaster/steelblue.gtkrc
 etc/xlogmaster/xlogmaster.gtkrc
 etc/xlogmaster/xlogmasterrc
+man/man1/xlogmaster.1.gz
 @dirrm etc/xlogmaster/database
 @dirrm etc/xlogmaster/output-plugins
 @dirrm etc/xlogmaster/scripts

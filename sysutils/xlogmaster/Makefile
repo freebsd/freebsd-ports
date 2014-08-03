@@ -14,18 +14,19 @@ USE_GNOME=	gtk12
 USES=		gmake makeinfo
 GNU_CONFIGURE=	yes
 
-MAN1=		xlogmaster.1
 INFO=		xlogmaster
 
 CPPFLAGS+=	-I${LOCALBASE}/include -DHAVE_DECL_GETOPT
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-NO_STAGE=	yes
 post-patch:
+	@${FIND} ${WRKSRC} -name Makefile.in -exec ${REINPLACE_CMD} -E \
+	'/(SHELL|cp -f|mkinstalldirs)/ s,XLM_(DB|HOME|LIB),DESTDIR)$$(&,g' {} \;
 	@${REINPLACE_CMD} -e \
 		's|getopt_long_only|getopt_long|g' ${WRKSRC}/src/xlogmaster.cc
 
 post-install:
-	${INSTALL_DATA} ${FILESDIR}/xlogmasterrc ${PREFIX}/etc/xlogmaster
+	${INSTALL_DATA} ${FILESDIR}/xlogmasterrc \
+		${STAGEDIR}${PREFIX}/etc/xlogmaster
 
 .include <bsd.port.mk>
