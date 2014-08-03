@@ -158,6 +158,7 @@
     SUBDIR += dae
     SUBDIR += daedalus
     SUBDIR += daemontools
+    SUBDIR += daemontools-encore
     SUBDIR += dar
     SUBDIR += dateutils
     SUBDIR += dc3dd
