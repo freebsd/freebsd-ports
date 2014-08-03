@@ -79,7 +79,7 @@
 +		fclose(pid_fd);
 +	}
 +
-+	umask(0177);
++	umask(0117); /* make socket group writeable */
 +
  	r = smfi_main();
  	if (r != MI_SUCCESS)
