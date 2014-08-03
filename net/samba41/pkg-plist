@@ -263,7 +263,6 @@ lib/samba/libinterfaces.so
 lib/samba/libkdc-samba4.so.2
 lib/samba/libkrb5-samba4.so.26
 lib/samba/libkrb5samba.so
-lib/samba/libldb-cmdline.so
 lib/samba/libldbsamba.so
 lib/samba/liblibcli_lsa3.so
 lib/samba/liblibcli_netlogon3.so
