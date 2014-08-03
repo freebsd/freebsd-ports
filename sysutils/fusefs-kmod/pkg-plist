@@ -1,24 +1,6 @@
-sbin/mount_fusefs
 man/man8/mount_fusefs.8.gz
-%%PORTDOCS%%%%DOCSDIR%%/kmod/doc.text
-%%PORTDOCS%%%%DOCSDIR%%/kmod/html/Faq.html
-%%PORTDOCS%%%%DOCSDIR%%/kmod/html/Implementation.html
-%%PORTDOCS%%%%DOCSDIR%%/kmod/html/Quickstart.html
-%%PORTDOCS%%%%DOCSDIR%%/kmod/html/article.css
-%%PORTDOCS%%%%DOCSDIR%%/kmod/html/deplate-mini.png
-%%PORTDOCS%%%%DOCSDIR%%/kmod/html/deplate.css
-%%PORTDOCS%%%%DOCSDIR%%/kmod/html/doc.html
-%%PORTDOCS%%%%DOCSDIR%%/kmod/html/heading-navbar.css
-%%PORTDOCS%%%%DOCSDIR%%/kmod/html/home-grey.png
-%%PORTDOCS%%%%DOCSDIR%%/kmod/html/mailto.png
-%%PORTDOCS%%%%DOCSDIR%%/kmod/html/next-grey.png
-%%PORTDOCS%%%%DOCSDIR%%/kmod/html/prev-grey.png
-%%PORTDOCS%%%%DOCSDIR%%/kmod/html/remote.png
-%%PORTDOCS%%%%DOCSDIR%%/kmod/html/serif.css
-%%PORTDOCS%%%%DOCSDIR%%/kmod/html/tabbar-right.css
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/kmod/html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/kmod
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%
+sbin/mount_fusefs
+@exec ln -fs %D/%F /usr/sbin
+@unexec rm -f /usr/sbin/mount_fusefs
 @cwd /
-usr/sbin/mount_fusefs
 %%KMODDIR%%/fuse.ko
