@@ -1,0 +1,12 @@
+diff -urN ../pre-conf/conf/substitutions conf/substitutions
+--- ../pre-conf/conf/substitutions	Thu Jan  1 01:00:00 1970
++++ conf/substitutions	Mon Aug  2 20:36:19 1999
+@@ -0,0 +1,8 @@
++# general substitutions file
++NEWSBIN	/usr/local/news/cnewsbin
++NEWSCTL	/usr/local/news/lib
++NEWSARTS	/var/news
++NEWSOV	/var/news/over.view
++NEWSPATH	/bin:/usr/bin:/usr/local/bin
++NEWSUMASK	022
++NEWSCONFIG	/usr/local/news/cnewsbin/config

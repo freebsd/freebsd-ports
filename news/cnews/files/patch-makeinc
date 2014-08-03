@@ -1,0 +1,7 @@
+diff -urN ../pre-conf/conf/makeinc conf/makeinc
+--- ../pre-conf/conf/makeinc	Thu Jan  1 01:00:00 1970
++++ conf/makeinc	Mon Aug  2 20:32:23 1999
+@@ -0,0 +1,3 @@
++# makefile substitutions file
++# how to include ../include/config.make
++INCLUDE		.include "../include/config.make"

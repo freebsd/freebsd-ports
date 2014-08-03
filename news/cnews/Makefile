@@ -44,10 +44,10 @@ DIST_SUBDIR=	${DISTNAME}
 NO_WRKSUBDIR=	yes
 MAKEFILE=	makefile
 SUB_FILES=	pkg-message
-MAN1=		checknews.1cn inews.1cn postnews.1cn readnews.1cn
-MAN5=		controlperm.5 news.5 newsctl.5 newsdb.5 newsoverview.5 \
+LMAN1=		checknews.1cn inews.1cn postnews.1cn readnews.1cn
+LMAN5=		controlperm.5 news.5 newsctl.5 newsdb.5 newsoverview.5 \
 		newssys.5
-MAN8=		cnewsdo.8cn expire.8cn explode.8cn mergeactive.8 \
+LMAN8=		cnewsdo.8cn expire.8cn explode.8cn mergeactive.8 \
 		mkhistory.8cn newsaux.8cn newsbatch.8cn newsmail.8cn \
 		newsmaint.8cn newsoverview.8 relaynews.8cn report.8cn \
 		rnews.8cn
@@ -121,9 +121,9 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/conf/config ${STAGEDIR}${NEWSBIN}/
 	cd ${WRKSRC} && ${MAKE} ${MAKE_ARGS} ${MAKE_FLAGS} ${MAKEFILE} install
 	cd ${WRKSRC} && ${MAKE} ${MAKE_ARGS} ${MAKE_FLAGS} ${MAKEFILE} ui readpostcheck
-	cd ${WRKSRC}/man && ${INSTALL_MAN} ${MAN1} ${STAGEDIR}${PREFIX}/man/man1/
-	cd ${WRKSRC}/man && ${INSTALL_MAN} ${MAN5} ${STAGEDIR}${PREFIX}/man/man5/
-	cd ${WRKSRC}/man && ${INSTALL_MAN} ${MAN8} ${STAGEDIR}${PREFIX}/man/man8/
+	cd ${WRKSRC}/man && ${INSTALL_MAN} ${LMAN1} ${STAGEDIR}${PREFIX}/man/man1/
+	cd ${WRKSRC}/man && ${INSTALL_MAN} ${LMAN5} ${STAGEDIR}${PREFIX}/man/man5/
+	cd ${WRKSRC}/man && ${INSTALL_MAN} ${LMAN8} ${STAGEDIR}${PREFIX}/man/man8/
 .if ${PORT_OPTIONS:MEXAMPLES}
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/newsctl
 	cd ${WRKSRC} && ${INSTALL_DATA} ${NO_EG_FILES:S,^,*/,} \
