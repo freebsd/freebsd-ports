@@ -57,6 +57,38 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="be5421ab-1b56-11e4-a767-5453ed2e2b49">
+    <topic>krfb -- Possible Denial of Service or code execution via integer overflow</topic>
+    <affects>
+      <package>
+	<name>krfb</name>
+	<range><lt>4.12.5_1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Albert Aastals Cid reports:</p>
+	<blockquote cite="http://lists.kde.org/?l=kde-announce&amp;m=140709940701878&amp;w=2">
+	  <p>krfb embeds libvncserver which embeds liblzo2, it contains various
+	    flaws that result in integer overflow problems.</p>
+	  <p>This potentially allows a malicious application to create a
+	    possible denial of service or code execution. Due to the need to
+	    exploit precise details of the target architecture and threading it
+	    is unlikely that remote code execution can be achieved in
+	    practice.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2014-4607</cvename>
+      <mlist>http://lists.kde.org/?l=kde-announce&amp;m=140709940701878&amp;w=2</mlist>
+    </references>
+    <dates>
+      <discovery>2014-08-03</discovery>
+      <entry>2014-08-03</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="89ff45e3-1a57-11e4-bebd-000c2980a9f3">
     <topic>samba -- remote code execution</topic>
     <affects>
