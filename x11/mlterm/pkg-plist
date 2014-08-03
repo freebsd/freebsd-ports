@@ -18,8 +18,8 @@ etc/mlterm/vfont
 etc/mlterm/xim
 lib/libkik.a
 lib/libkik.so
-lib/libkik.so.15
-lib/libkik.so.15.0.1
+lib/libkik.so.16
+lib/libkik.so.16.0.0
 lib/libmkf.a
 lib/libmkf.so
 lib/libmkf.so.16
