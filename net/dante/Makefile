@@ -30,13 +30,15 @@ USE_RC_SUBR=	sockd
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if ${OSVERSION} >= 1000044
 CONFIGURE_ARGS+=	--with-libc=libc.so.7
 .endif
 
-.include <bsd.port.options.mk>
+.if ${OPSYS} == FreeBSD && ${OSVERSION} > 1000000
+FORBIDDEN=	Building on 10+ triggers a nasty bug with unix domain sockets
+.endif
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/example/socks.conf ${STAGEDIR}${PREFIX}/etc/socks.conf.sample
@@ -54,4 +56,4 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/UPGRADE ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/contrib/sockd-stat.awk ${STAGEDIR}${DOCSDIR}/contrib/sockd-stat.awk
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
