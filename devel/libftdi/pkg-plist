@@ -15,12 +15,12 @@ include/ftdi.h
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/ftdi.pyc
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/%%PYDISTUTILS_EGGINFO%%
 lib/libftdi.a
+lib/libftdi.la
 lib/libftdi.so
-lib/libftdi.so.1
-lib/libftdi.so.1.20.0
+lib/libftdi.so.21
 %%BOOST%%lib/libftdipp.a
+%%BOOST%%lib/libftdipp.la
 %%BOOST%%lib/libftdipp.so
-%%BOOST%%lib/libftdipp.so.1
-%%BOOST%%lib/libftdipp.so.1.20.0
+%%BOOST%%lib/libftdipp.so.21
 libdata/pkgconfig/libftdi.pc
 %%BOOST%%libdata/pkgconfig/libftdipp.pc
