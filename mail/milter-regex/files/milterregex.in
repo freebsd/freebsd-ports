@@ -35,8 +35,8 @@ stop_postcmd="milterregex_poststop"
 milterregex_prestart() {
 	if test ! -d "${spooldir}"
 	then
-		mkdir -m 700 -p "${spooldir}"
-		chown mailnull:daemon "${spooldir}"
+		mkdir -m 750 -p "${spooldir}"
+		chown mailnull:mail "${spooldir}"
 	fi
 }
 
