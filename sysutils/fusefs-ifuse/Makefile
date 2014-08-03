@@ -2,12 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	ifuse
-PORTVERSION=	1.1.2
+PORTVERSION=	1.1.3
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.libimobiledevice.org/downloads/
 PKGNAMEPREFIX=	fusefs-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	danilo@FreeBSD.org
 COMMENT=	FUSE-based filesystem for mounting iOS devices over USB
 
 LICENSE=	LGPL21
