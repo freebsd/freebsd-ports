@@ -13,7 +13,8 @@ MAINTAINER=	bdrewery@FreeBSD.org
 COMMENT=	Securely execute PHP scripts under Apache
 
 GNU_CONFIGURE=	yes
-USE_AUTOTOOLS=	aclocal:env automake autoconf:env libtool:env
+USES=		libtool
+USE_AUTOTOOLS=	aclocal:env automake autoconf:env
 AUTOMAKE_ARGS+=	--add-missing
 SUB_FILES=	pkg-message
 
