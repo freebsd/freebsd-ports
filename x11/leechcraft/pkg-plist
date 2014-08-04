@@ -116,6 +116,7 @@ include/leechcraft/util/sll/assoccache.h
 include/leechcraft/util/sll/delayedexecutor.h
 include/leechcraft/util/sll/onetimerunner.h
 include/leechcraft/util/sll/prelude.h
+include/leechcraft/util/sll/qtutil.h
 include/leechcraft/util/sll/queuemanager.h
 include/leechcraft/util/sll/regexp.h
 include/leechcraft/util/sll/sllconfig.h
@@ -576,6 +577,8 @@ share/man/man1/leechcraft.1.gz
 %%AZOTH%%include/leechcraft/interfaces/azoth/ihavedirectedstatus.h
 %%AZOTH%%include/leechcraft/interfaces/azoth/ihaveentitytime.h
 %%AZOTH%%include/leechcraft/interfaces/azoth/ihavemicroblogs.h
+%%AZOTH%%include/leechcraft/interfaces/azoth/ihavepings.h
+%%AZOTH%%include/leechcraft/interfaces/azoth/ihavequeriableversion.h
 %%AZOTH%%include/leechcraft/interfaces/azoth/ihavesearch.h
 %%AZOTH%%include/leechcraft/interfaces/azoth/ihaveserverhistory.h
 %%AZOTH%%include/leechcraft/interfaces/azoth/ihaveservicediscovery.h
@@ -590,6 +593,7 @@ share/man/man1/leechcraft.1.gz
 %%AZOTH%%include/leechcraft/interfaces/azoth/imucperms.h
 %%AZOTH%%include/leechcraft/interfaces/azoth/iprotocol.h
 %%AZOTH%%include/leechcraft/interfaces/azoth/iprotocolplugin.h
+%%AZOTH%%include/leechcraft/interfaces/azoth/iprovidecommands.h
 %%AZOTH%%include/leechcraft/interfaces/azoth/iproxyobject.h
 %%AZOTH%%include/leechcraft/interfaces/azoth/iregmanagedaccount.h
 %%AZOTH%%include/leechcraft/interfaces/azoth/iresourceplugin.h
@@ -598,6 +602,7 @@ share/man/man1/leechcraft.1.gz
 %%AZOTH%%include/leechcraft/interfaces/azoth/isupportbookmarks.h
 %%AZOTH%%include/leechcraft/interfaces/azoth/isupportgeolocation.h
 %%AZOTH%%include/leechcraft/interfaces/azoth/isupportimport.h
+%%AZOTH%%include/leechcraft/interfaces/azoth/isupportlastactivity.h
 %%AZOTH%%include/leechcraft/interfaces/azoth/isupportmediacalls.h
 %%AZOTH%%include/leechcraft/interfaces/azoth/isupportmicroblogs.h
 %%AZOTH%%include/leechcraft/interfaces/azoth/isupportmood.h
@@ -626,6 +631,7 @@ share/man/man1/leechcraft.1.gz
 %%AZOTH%%lib/leechcraft/plugins/libleechcraft_azoth_lastseen.so
 %%AZOTH%%lib/leechcraft/plugins/libleechcraft_azoth_metacontacts.so
 %%AZOTH%%lib/leechcraft/plugins/libleechcraft_azoth_modnok.so
+%%AZOTH%%lib/leechcraft/plugins/libleechcraft_azoth_mucommands.so
 %%AZOTH%%lib/leechcraft/plugins/libleechcraft_azoth_murm.so
 %%AZOTH%%lib/leechcraft/plugins/libleechcraft_azoth_nativeemoticons.so
 %%AZOTH%%lib/leechcraft/plugins/libleechcraft_azoth_otroid.so
@@ -1406,6 +1412,8 @@ share/man/man1/leechcraft.1.gz
 %%AZOTH%%%%DATADIR%%/translations/leechcraft_azoth_modnok_es.qm
 %%AZOTH%%%%DATADIR%%/translations/leechcraft_azoth_modnok_ru_RU.qm
 %%AZOTH%%%%DATADIR%%/translations/leechcraft_azoth_modnok_uk_UA.qm
+%%AZOTH%%%%DATADIR%%/translations/leechcraft_azoth_mucommands_en.qm
+%%AZOTH%%%%DATADIR%%/translations/leechcraft_azoth_mucommands_ru_RU.qm
 %%AZOTH%%%%DATADIR%%/translations/leechcraft_azoth_murm_en.qm
 %%AZOTH%%%%DATADIR%%/translations/leechcraft_azoth_murm_ru_RU.qm
 %%AZOTH%%%%DATADIR%%/translations/leechcraft_azoth_nativeemoticons_en.qm
@@ -1952,6 +1960,8 @@ share/man/man1/leechcraft.1.gz
 %%POSHUKU%%%%DATADIR%%/translations/leechcraft_poshuku_cleanweb_pl.qm
 %%POSHUKU%%%%DATADIR%%/translations/leechcraft_poshuku_cleanweb_ru_RU.qm
 %%POSHUKU%%%%DATADIR%%/translations/leechcraft_poshuku_cleanweb_uk_UA.qm
+%%POSHUKU%%%%DATADIR%%/translations/leechcraft_poshuku_dcac_en.qm
+%%POSHUKU%%%%DATADIR%%/translations/leechcraft_poshuku_dcac_ru_RU.qm
 %%POSHUKU%%%%DATADIR%%/translations/leechcraft_poshuku_de.qm
 %%POSHUKU%%%%DATADIR%%/translations/leechcraft_poshuku_en.qm
 %%POSHUKU%%%%DATADIR%%/translations/leechcraft_poshuku_eo.qm
@@ -1998,6 +2008,8 @@ share/man/man1/leechcraft.1.gz
 %%POSHUKU%%%%DATADIR%%/translations/leechcraft_poshuku_onlinebookmarks_uk_UA.qm
 %%POSHUKU%%%%DATADIR%%/translations/leechcraft_poshuku_pl.qm
 %%POSHUKU%%%%DATADIR%%/translations/leechcraft_poshuku_ru_RU.qm
+%%POSHUKU%%%%DATADIR%%/translations/leechcraft_poshuku_speeddial_en.qm
+%%POSHUKU%%%%DATADIR%%/translations/leechcraft_poshuku_speeddial_ru_RU.qm
 %%POSHUKU%%%%DATADIR%%/translations/leechcraft_poshuku_tt.qm
 %%POSHUKU%%%%DATADIR%%/translations/leechcraft_poshuku_uk_UA.qm
 %%POSHUKU%%@dirrm include/leechcraft/interfaces/poshuku
