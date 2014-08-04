@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	nss
-PORTVERSION=	3.16.1
-PORTREVISION=	2
+PORTVERSION=	3.16.3
 #DISTVERSIONSUFFIX=	.with.ckbi.1.93
 CATEGORIES=	security
 MASTER_SITES=	MOZILLA/security/${PORTNAME}/releases/${DISTNAME:tu:C/[-.]/_/g}_RTM/src
@@ -12,7 +11,7 @@ MAINTAINER=	gecko@FreeBSD.org
 COMMENT=	Libraries to support development of security-enabled applications
 
 BUILD_DEPENDS=	zip:${PORTSDIR}/archivers/zip \
-		nspr>=4.10.3:${PORTSDIR}/devel/nspr \
+		nspr>=4.10.5:${PORTSDIR}/devel/nspr \
 		sqlite3>=3.7.15:${PORTSDIR}/databases/sqlite3
 LIB_DEPENDS=	libnspr4.so:${PORTSDIR}/devel/nspr \
 		libsqlite3.so:${PORTSDIR}/databases/sqlite3
@@ -21,7 +20,9 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/nss
 
 MAKE_JOBS_UNSAFE=	yes
 USE_LDCONFIG=	${PREFIX}/lib/nss
-USES=		gmake perl5
+USES=		cpe gmake perl5
+CPE_VENDOR=	mozilla
+CPE_PRODUCT=	network_security_services
 USE_PERL5=	build
 MAKE_ENV=	LIBRARY_PATH="${LOCALBASE}/lib" \
 		SQLITE_INCLUDE_DIR="${LOCALBASE}/include" \
