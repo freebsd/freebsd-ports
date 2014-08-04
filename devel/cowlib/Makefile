@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	cowlib
-PORTVERSION=	0.6.2
+PORTVERSION=	1.0.0
 CATEGORIES=	devel
 
 MAINTAINER=	olgeni@FreeBSD.org
@@ -14,9 +14,9 @@ PLIST_SUB=	VERSION="${PORTVERSION}"
 
 USES=		gmake
 USE_GITHUB=	yes
-GH_ACCOUNT=	extend
+GH_ACCOUNT=	ninenines
 GH_PROJECT=	cowlib
-GH_COMMIT=	e2ffefe 
+GH_COMMIT=	d544a49
 GH_TAGNAME=	${PORTVERSION}
 
 do-install:
