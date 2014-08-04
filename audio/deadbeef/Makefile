@@ -16,12 +16,11 @@ LICENSE=	GPLv2 LGPL21
 LICENSE_COMB=	dual
 
 LIB_DEPENDS=	libsamplerate.so:${PORTSDIR}/audio/libsamplerate \
-		libmad.so:${PORTSDIR}/audio/libmad \
-		libexecinfo.so:${PORTSDIR}/devel/libexecinfo
+		libmad.so:${PORTSDIR}/audio/libmad
 
 GNU_CONFIGURE=	yes
 USES=		gmake pkgconfig gettext iconv shebangfix tar:bzip2 desktop-file-utils \
-		libtool
+		libtool execinfo
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--disable-alsa --disable-nullout --disable-gtk3
 CPPFLAGS+=	-I../dumb/dumb-kode54/include -I../../plugins/libmp4ff -I../../plugins/gme/game-music-emu-0.6pre -I${LOCALBASE}/include
