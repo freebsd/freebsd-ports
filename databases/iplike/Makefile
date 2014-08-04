@@ -2,11 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	iplike
-PORTVERSION=	2.0.3
+PORTVERSION=	2.0.6
 CATEGORIES=	databases
 MASTER_SITES=	SF/opennms/IPLIKE/stable-2.0/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	danilo@FreeBSD.org
 COMMENT=	C implementation of the OpenNMS iplike stored procedure
 
 USES=		libtool pgsql
