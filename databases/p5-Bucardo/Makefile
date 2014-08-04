@@ -3,6 +3,7 @@
 
 PORTNAME=	Bucardo
 PORTVERSION=	5.1.1
+PORTREVISION=	1
 CATEGORIES=	databases perl5
 MASTER_SITES=	http://bucardo.org/downloads/ LOCAL/mat/${PORTNAME}
 PKGNAMEPREFIX=	p5-
@@ -24,7 +25,7 @@ USES=	perl5
 USE_PERL5=	configure
 
 post-patch:
-	@${REINPLACE_CMD} 's/INSTALL_BASE/DESTDIR/;s/bucardo_ctl.1pm/bucardo_ctl.1/' \
+	@${REINPLACE_CMD} 's/INSTALL_BASE/DESTDIR/;s/bucardo.1pm/bucardo.1/' \
 		${WRKSRC}/Makefile.PL
 	@${REINPLACE_CMD} 's=/usr/local=${PREFIX}=' ${WRKSRC}/Makefile.PL \
 		${WRKSRC}/bucardo ${WRKSRC}/dist/bucardo.rc
