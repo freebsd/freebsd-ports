@@ -15,7 +15,6 @@ COMMENT=	3D photo-realistic sky renderer (planetarium)
 LICENSE=	GPLv2
 
 USES=		cmake gettext iconv
-USE_GL=		gl
 USE_QT4=	moc_build rcc_build uic_build qmake_build \
 		corelib gui network opengl
 INSTALLS_ICONS=	yes
