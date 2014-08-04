@@ -10,6 +10,7 @@ MASTER_SITES=	ftp://ftp.feep.net/pub/software/PAM/pam_per_user/
 MAINTAINER=	pirzyk@FreeBSD.org
 COMMENT=	PAM module for per-user authentication
 
-USE_AUTOTOOLS=	libtool
+USES=		libtool
+GNU_CONFIGURE=	yes
 
 .include <bsd.port.mk>
