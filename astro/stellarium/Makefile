@@ -3,6 +3,7 @@
 
 PORTNAME=	stellarium
 PORTVERSION=	0.13.0
+PORTREVISION=	1
 CATEGORIES=	astro
 MASTER_SITES=	SF/${PORTNAME}/Stellarium-sources/${PORTVERSION}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
@@ -14,8 +15,8 @@ COMMENT=	3D photo-realistic sky renderer (planetarium)
 LICENSE=	GPLv2
 
 USES=		cmake gettext iconv
-USE_GL=		gl
-USE_QT5=	qmake_build buildtools core concurrent declarative linguist
+USE_QT5=	qmake_build buildtools_build linguisttools_build \
+		core concurrent declarative
 INSTALLS_ICONS=	yes
 
 PORTDOCS=	AUTHORS ChangeLog README
@@ -46,7 +47,7 @@ CMAKE_ARGS+=	-DENABLE_SOUND:BOOL=OFF
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e '/ -Wno-unused-result/d' ${WRKSRC}/CMakeLists.txt
+	@${REINPLACE_CMD} -e 's, -Wno-unused-result,,' ${WRKSRC}/CMakeLists.txt
 
 post-install:
 .if ${PORT_OPTIONS:MMORE_STARS}
