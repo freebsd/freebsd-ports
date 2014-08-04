@@ -540,7 +540,6 @@
     SUBDIR += moinmoin
     SUBDIR += monast
     SUBDIR += mongrel2
-    SUBDIR += moodle
     SUBDIR += moodle24
     SUBDIR += moodle25
     SUBDIR += moodle26

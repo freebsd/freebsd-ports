@@ -6368,3 +6368,5 @@ lang/dragonegg46-33||2014-08-01|Has expired: Dead upstream, impractical to build
 lang/dragonegg47-33||2014-08-01|Has expired: Dead upstream, impractical to build on 10 and later
 print/freetype-tools|print/texlive-texmf|2014-08-01|Has been incorporated in TeXLive
 sysutils/readlink||2014-08-03|Has expired: All features implemented in the base system since FreeBSD 8.3
+net-mgmt/bsd-airtools||2014-08-04|Has expired: "broken by removal of wicontrol ioctls from if_wavelan_ieee.h; domain disappeared"
+www/moodle||2014-08-04|Has expired: Upstream support ended
