@@ -15,11 +15,13 @@ LIB_DEPENDS=	libassuan.so:${PORTSDIR}/security/libassuan \
 		libgpg-error.so:${PORTSDIR}/security/libgpg-error
 
 GNU_CONFIGURE=	yes
-USES=		gmake libtool:keepla tar:bzip2
+USES=		cpe gmake libtool:keepla tar:bzip2
 USE_LDCONFIG=	yes
 
 CONFIGURE_ARGS=	--includedir=${PREFIX}/include/gpgme
 INSTALL_TARGET=	install-strip
+
+CPE_VENDOR=	gnu
 
 INFO=		gpgme
 PORTDOCS=	AUTHORS ChangeLog INSTALL NEWS README THANKS TODO
