@@ -1,0 +1,64 @@
+--- common/config.php.template.orig	2014-02-21 15:53:13.000000000 +0000
++++ common/config.php.template	2014-04-10 13:41:47.000000000 +0000
+@@ -1,10 +1,10 @@
+ <?php
+ 
+ // snp_pat: full directory where snp services are located
+-$snp_path='/var/www/html/snpservices';
++$snp_path='/usr/local/www/snpservices';
+ 
+ // SNPGraphServerID: Default Graph Server ID
+-$SNPGraphServerId = 6579;
++$SNPGraphServerId = 67063;
+ 
+ // rootZone: which is the ROOT zone
+ $rootZone = 3671;
+@@ -15,21 +15,21 @@
+ // MRTGConfigSource: mrtg csv data
+ // As a input, could be either a local (to be created from
+ // cached CNML file, or remote
+-$MRTGConfigSource='http://proves.elserrat.guifi.net/snpservices/graphs/cnml2mrtgcsv.php';
+-//$MRTGConfigSource='../data/guifi_mrtg.csv';
++$MRTGConfigSource='http://guifi.net/snpservices/graphs/cnml2mrtgcsv.php?server='.$SNPGraphServerId;
++//$MRTGConfigSource='/var/tmp/snpservices/data/guifi_mrtg.csv';
+ 
+ // CNMLSource: url for CNML node query, use sprintf syntax
+ // MySQL-drupal source
+-//$CNMLSource='http://proves.elserrat.guifi.net/guifi/cnml/%s/node';
++//$CNMLSource='http://guifi.net/guifi/cnml/%s/node';
+ // Cached CNML source (prefered)
+-$CNMLSource='http://proves.elserrat.guifi.net/snpservices/common/qnodes.php?nodes=%s';
++$CNMLSource='http://guifi.net/snpservices/common/qnodes.php?nodes=%s';
+ 
+-$CNMLData='../data/guifi.cnml';
++$CNMLData='/var/tmp/snpservices/data/guifi.cnml';
+ 
+ // rrdtool parameters
+-$rrdtool_path='/usr/bin/rrdtool';
+-$rrddb_path='/home1/comesfa/mrtg/logs/';
+-$rrdimg_path='/home1/comesfa/mrtg/images/';
++$rrdtool_path='/usr/local/bin/rrdtool';
++$rrddb_path='/var/tmp/snpservices/logs/';
++$rrdimg_path='/var/tmp/snpservices/images/';
+ 
+ // which version does have this server? 
+ // currently supported versions are:
+@@ -38,8 +38,7 @@
+ $rrdtool_version = "1.3";
+ 
+ // mrtg local header
+-$rrdtool_header='# PathAdd: /usr/local/rrdtool-1.2.12/bin
+-# LibAdd: /usr/local/rrdtool-1.2.12/lib/perl/5.8.8/i386-linux-thread-multi
++$rrdtool_header='PathAdd: /usr/local/bin/
+ HtmlDir: %s
+ ImageDir: %s 
+ LogDir: %s
+@@ -57,7 +56,7 @@
+      <TR><TD>Description:</TD><TD>ping</TD></TR>
+      <TR><TD>IP:</TD>         <TD>%s</TD></TR>
+      </TABLE>
+-Target[%s_ping]: `/etc/mrtg/ping.sh %s`
++Target[%s_ping]: `sh '.$snp_path.'/common/ping.sh %s`
+ MaxBytes[%s_ping]: 2000
+ Options[%s_ping]: growright,unknaszero,nopercent,gauge
+ LegendI[%s_ping]: Perduts %
