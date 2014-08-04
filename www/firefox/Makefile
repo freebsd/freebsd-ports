@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	firefox
-DISTVERSION=	30.0
-PORTREVISION=	2
+DISTVERSION=	31.0
 PORTEPOCH=	1
 CATEGORIES=	www ipv6
 MASTER_SITES=	MOZILLA/${PORTNAME}/releases/${DISTVERSION}/source \
@@ -13,15 +12,15 @@ DISTNAME=	${PORTNAME}-${DISTVERSION}.source
 MAINTAINER=	gecko@FreeBSD.org
 COMMENT=	Web browser based on the browser portion of Mozilla
 
-BUILD_DEPENDS=	nspr>=4.10.3:${PORTSDIR}/devel/nspr \
-		nss>=3.16:${PORTSDIR}/security/nss \
-		soundtouch>=1.7.0:${PORTSDIR}/audio/soundtouch \
+BUILD_DEPENDS=	nspr>=4.10.6:${PORTSDIR}/devel/nspr \
+		nss>=3.16.2:${PORTSDIR}/security/nss \
+		soundtouch>=1.8.0:${PORTSDIR}/audio/soundtouch \
 		harfbuzz>=0.9.25:${PORTSDIR}/print/harfbuzz \
 		graphite2>=1.2.4:${PORTSDIR}/graphics/graphite2 \
 		libvorbis>=1.3.4:${PORTSDIR}/audio/libvorbis \
 		opus>=1.1:${PORTSDIR}/audio/opus \
 		libvpx>=1.3.0:${PORTSDIR}/multimedia/libvpx \
-		sqlite3>=3.8.3.1:${PORTSDIR}/databases/sqlite3 \
+		sqlite3>=3.8.4.2:${PORTSDIR}/databases/sqlite3 \
 		${PYTHON_PKGNAMEPREFIX}sqlite3>0:${PORTSDIR}/databases/py-sqlite3 \
 		v4l_compat>0:${PORTSDIR}/multimedia/v4l_compat \
 		zip:${PORTSDIR}/archivers/zip \
@@ -78,11 +77,11 @@ CXXFLAGS+=	-O1
 .endif
 
 .if ${PORT_OPTIONS:MALSA}
-BUILD_DEPENDS+=	alsa-lib>=1.0.27.2_1:${PORTSDIR}/audio/alsa-lib
+RUN_DEPENDS+=	alsa-lib>=1.0.27.2_1:${PORTSDIR}/audio/alsa-lib
 .endif
 
 .if ${PORT_OPTIONS:MGSTREAMER}
-BUILD_DEPENDS+=	gstreamer1-libav>=1.2.4:${PORTSDIR}/multimedia/gstreamer1-libav
+RUN_DEPENDS+=	gstreamer1-libav>=1.2.4_1:${PORTSDIR}/multimedia/gstreamer1-libav
 .endif
 
 post-extract:

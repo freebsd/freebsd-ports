@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	firefox
-DISTVERSION=	24.6.0
-PORTREVISION=	2
+DISTVERSION=	24.7.0
 PORTEPOCH=	1
 CATEGORIES=	www ipv6
 MASTER_SITES=	MOZILLA/${PORTNAME}/releases/${DISTVERSION}esr/source
@@ -32,6 +31,7 @@ USE_AUTOTOOLS=	autoconf213:env
 USE_PYTHON_BUILD=2
 OBJDIR_BUILD=	# in-tree build broken after bug 789837
 USE_GECKO=	gecko
+CPE_PRODUCT=	${PORTNAME}_esr
 CONFLICTS=	firefox-2[0-35-9].* firefox-1[1-689].*
 MOZ_PKGCONFIG_FILES=	# empty
 USE_MOZILLA=	# empty
@@ -59,7 +59,7 @@ MOZ_OPTIONS=	--program-transform-name='s/firefox/${MOZILLA}/' \
 WRKSRC:=	${WRKDIR}/mozilla-esr24
 
 .if ${PORT_OPTIONS:MALSA}
-BUILD_DEPENDS+=	alsa-lib>=1.0.27.2_1:${PORTSDIR}/audio/alsa-lib
+RUN_DEPENDS+=	alsa-lib>=1.0.27.2_1:${PORTSDIR}/audio/alsa-lib
 .endif
 
 post-extract:

@@ -85,7 +85,8 @@ MOZILLA_VER?=	${PORTVERSION}
 MOZILLA_BIN?=	${PORTNAME}-bin
 MOZILLA_EXEC_NAME?=${MOZILLA}
 MOZ_RPATH?=	${MOZILLA}
-USES+=		compiler:c++11-lib gmake iconv perl5 pkgconfig desktop-file-utils
+USES+=		cpe compiler:c++11-lib gmake iconv perl5 pkgconfig desktop-file-utils
+CPE_VENDOR?=mozilla
 USE_PERL5=	build
 USE_XORG=	xext xrender xt
 
@@ -185,7 +186,7 @@ pixman_EXTRACT_AFTER_ARGS=	--exclude mozilla*/gfx/cairo/libpixman
 
 png_LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png
 png_MOZ_OPTIONS=	--with-system-png=${LOCALBASE}
-png_EXTRACT_AFTER_ARGS=	--exclude mozilla*/media/libpng
+#png_EXTRACT_AFTER_ARGS=	--exclude mozilla*/media/libpng
 
 .if exists(${FILESDIR}/patch-z-bug517422) || exists(${FILESDIR}/patch-zz-bug517422)
 soundtouch_LIB_DEPENDS=	libSoundTouch.so:${PORTSDIR}/audio/soundtouch
@@ -394,6 +395,15 @@ STRIP=	# ports/184285
 MOZ_OPTIONS+=	--disable-debug --enable-release
 .endif
 
+.if ${PORT_OPTIONS:MDTRACE}
+. if ${OSVERSION} < 1000510
+BROKEN=			dtrace -G crashes with C++ object files
+. endif
+MOZ_OPTIONS+=	--enable-dtrace
+LIBS+=			-lelf
+STRIP=
+.endif
+
 .if ${PORT_OPTIONS:MLOGGING} || ${PORT_OPTIONS:MDEBUG}
 MOZ_OPTIONS+=	--enable-logging
 .else
@@ -418,6 +428,17 @@ MOZ_OPTIONS+=	--disable-tests
 MOZ_OPTIONS+=	--disable-strip --disable-install-strip
 .else
 MOZ_OPTIONS+=	--enable-strip --enable-install-strip
+.endif
+
+# _MAKE_JOBS is only available after bsd.port.post.mk, thus cannot be
+# used in .mozconfig. And client.mk automatically uses -jN where N
+# is what multiprocessing.cpu_count() returns.
+.if defined(MAKE_JOBS_NUMBER)
+MOZ_MAKE_FLAGS+=-j${MAKE_JOBS_NUMBER}
+.endif
+
+.if defined(MOZ_MAKE_FLAGS)
+MOZ_MK_OPTIONS+=MOZ_MAKE_FLAGS="${MOZ_MAKE_FLAGS}"
 .endif
 
 MOZ_SED_ARGS+=	-e's|@CPPFLAGS@|${CPPFLAGS}|g'		\

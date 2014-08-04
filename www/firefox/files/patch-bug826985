@@ -151,8 +151,8 @@ index d46b5aa..e452223 100644
                ],
 diff --git toolkit/library/Makefile.in toolkit/library/Makefile.in
 index 9c16ffa..1db3794 100644
---- toolkit/library/Makefile.in
-+++ toolkit/library/Makefile.in
+--- toolkit/library/libxul.mk
++++ toolkit/library/libxul.mk
 @@ -182,6 +182,10 @@ endif
  
  EXTRA_DSO_LDOPTS += $(call EXPAND_LIBNAME_PATH,gkmedias,$(DIST)/lib)

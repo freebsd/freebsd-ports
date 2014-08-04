@@ -2,11 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	libxul
-DISTVERSION=	24.6.0
-PORTREVISION=	1
+DISTVERSION=	24.7.0
 CATEGORIES?=	www devel
-MASTER_SITES=	MOZILLA/firefox/releases/${DISTVERSION}esr/source \
-		https://ftp.mozilla.org/pub/mozilla.org/firefox/candidates/${DISTVERSION}esr-candidates/build1/source/
+MASTER_SITES=	MOZILLA/firefox/releases/${DISTVERSION}esr/source
 DISTNAME=	firefox-${DISTVERSION}esr.source
 
 MAINTAINER?=	gecko@FreeBSD.org
@@ -48,6 +46,7 @@ USE_LDCONFIG=	${PREFIX}/lib/${MOZILLA}
 MOZ_OPTIONS?=	--enable-application=xulrunner
 MOZ_EXTENSIONS=	default,cookie,permissions
 USE_GECKO=	gecko
+CPE_PRODUCT=	firefox_esr
 OBJDIR_BUILD=	# in-tree build broken after bug 789837
 MOZILLA_EXEC_NAME=xulrunner
 USE_MOZILLA=	# empty
@@ -64,7 +63,7 @@ MOZ_PKGCONFIG_FILES+=	mozilla-nss
 .endif
 
 .if ${PORT_OPTIONS:MALSA}
-BUILD_DEPENDS+=	alsa-lib>=1.0.27.2_1:${PORTSDIR}/audio/alsa-lib
+RUN_DEPENDS+=	alsa-lib>=1.0.27.2_1:${PORTSDIR}/audio/alsa-lib
 .endif
 
 post-patch:

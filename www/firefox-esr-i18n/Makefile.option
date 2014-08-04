@@ -99,6 +99,6 @@ OPTIONS_DEFAULT=LANG_AR LANG_BN LANG_BR LANG_CN LANG_ET LANG_DE LANG_FR \
 LANG_ACH_DESC?=	Acholi language support
 LANG_AS_DESC?=	Assamese language support
 LANG_CSB_DESC?=	Kashubian language support
-LANG_FF_DESC?=	Pulaar Fulfulde language support
+LANG_FF_DESC?=	Fulah language support
 LANG_KM_DESC?=	Khmer language support
 LANG_LIJ_DESC?=	Ligurian (Genoa) language support
