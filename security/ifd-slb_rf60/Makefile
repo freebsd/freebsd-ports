@@ -13,7 +13,7 @@ COMMENT=	PC/SC Lite driver for the Reflex 62 serial smart card reader
 
 LIB_DEPENDS=	libpcsclite.so:${PORTSDIR}/devel/pcsc-lite
 
-USES=	gmake
+USES=		gmake
 CFLAGS+=	-fPIC
 
 SUB_LIST=	pkg-message
@@ -23,6 +23,9 @@ OPTIONS_DEFINE=	DOCS
 
 PORTDOCS=	README
 PLIST_FILES=	lib/pcsc/drivers/libslb_rf60.so
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|gcc|${CC}|' ${WRKSRC}/Makefile
 
 do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/lib/pcsc/drivers/
