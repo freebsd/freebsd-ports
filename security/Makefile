@@ -598,10 +598,7 @@
     SUBDIR += p5-Yahoo-BBAuth
     SUBDIR += p5-dicewaregen
     SUBDIR += p5-openxpki
-    SUBDIR += p5-openxpki-client
     SUBDIR += p5-openxpki-client-html-mason
-    SUBDIR += p5-openxpki-client-scep
-    SUBDIR += p5-openxpki-deployment
     SUBDIR += p5-openxpki-i18n
     SUBDIR += pad
     SUBDIR += pam-mysql
