@@ -11,13 +11,13 @@ you update your ports collection, before attempting any port upgrades.
 
   The following ports have been integrated into security/p5-openxpki:
     security/p5-openxpki-client
-    security/p5-openxpki-client-sep
+    security/p5-openxpki-client-scep
     security/p5-openxpki-deployment
 
   Before update make sure to remove the old packages:
 
   # pkg remove security/p5-openxpki-client
-  # pkg remove security/p5-openxpki-client-sap
+  # pkg remove security/p5-openxpki-client-scep
   # pkg remove security/p5-openxpki-deployment
 
 20140802:
