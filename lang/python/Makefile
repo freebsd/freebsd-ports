@@ -3,7 +3,7 @@
 
 PORTNAME=	python
 PORTVERSION=	${PYTHON_DEFAULT}
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	2
 CATEGORIES=	lang python ipv6
 MASTER_SITES=	# empty
@@ -21,26 +21,20 @@ PLIST_FILES=	bin/2to3 \
 		bin/idle \
 		bin/pydoc \
 		bin/python \
-		bin/python-config \
-		bin/python-shared \
-		bin/python-shared-config
+		bin/python-config
 
 .include <bsd.port.pre.mk>
 
 .if ${PYTHON_MAJOR_VER} == 2
 RUN_DEPENDS+=	python2:${PORTSDIR}/lang/python2
-PLIST_FILES+=	bin/smtpd.py
 .elif ${PYTHON_MAJOR_VER} == 3
 RUN_DEPENDS+=	python3:${PORTSDIR}/lang/python3
 .endif
 
 do-install:
-.for file in python python-shared
-	${LN} -sf ${file}${PYTHON_MAJOR_VER} ${STAGEDIR}${PREFIX}/bin/${file}
-.endfor
+	${LN} -sf python${PYTHON_MAJOR_VER} ${STAGEDIR}${PREFIX}/bin/python
 	${LN} -sf 2to3-${PYTHON_MAJOR_VER} ${STAGEDIR}${PREFIX}/bin/2to3
 .if ${PYTHON_MAJOR_VER} == 2
-	${LN} -sf smtpd${PYTHON_MAJOR_VER}.py ${STAGEDIR}${PREFIX}/bin/smtpd.py
 .for file in idle pydoc
 	${LN} -sf ${file}${PYTHON_MAJOR_VER} ${STAGEDIR}${PREFIX}/bin/${file}
 .endfor
@@ -52,8 +46,6 @@ do-install:
 .endif
 	${LN} -sf python${PYTHON_MAJOR_VER}-config \
 		${STAGEDIR}${PREFIX}/bin/python-config
-	${LN} -sf python-shared${PYTHON_MAJOR_VER}-config \
-		${STAGEDIR}${PREFIX}/bin/python-shared-config
 
 # Major upgrade support
 PORTUPGRADE_CMD=	${LOCALBASE}/sbin/portupgrade
