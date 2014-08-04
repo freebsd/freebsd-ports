@@ -1,9 +1,9 @@
-# Created by: nemysis <nemysis@gmx.ch>
+# Created by: Rusmir Dusko <nemysis@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	viewnior
 PORTVERSION=	1.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 
 MAINTAINER=	nemysis@FreeBSD.org
@@ -19,7 +19,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	xsisqox
 GH_PROJECT=	Viewnior
 GH_TAGNAME=	${GH_COMMIT}
-GH_COMMIT=	6953b29
+GH_COMMIT=	fc0f5cb
 
 USES=		desktop-file-utils gmake pkgconfig
 USE_GNOME=	glib20 gtk20
@@ -28,7 +28,7 @@ AUTOMAKE_ARGS=	--add-missing --force
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
 
-PORTDOCS=	AUTHORS ChangeLog-20090517 NEWS README
+PORTDOCS=	AUTHORS NEWS README
 
 OPTIONS_DEFINE=	DOCS NLS
 OPTIONS_SUB=	yes

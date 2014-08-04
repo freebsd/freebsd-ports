@@ -7,7 +7,7 @@ Rotate, flip, crop, save, delete images
 Animation support
 Browse only selected images
 Navigation window
-Set image as wallpaper (GNOME2, GNOME3, XFCE, LXDE, FluxBox)
+Set image as wallpaper (GNOME2, GNOME3, XFCE, LXDE, FluxBox, Nitrogen)
 Simple interface
 Configurable mouse actions
 
@@ -17,4 +17,4 @@ and minimal interface. So here comes Viewnior - small and light,
 with no compromise with the quality of it's functions.
 The program is made with better integration in mind (follows Gnome HIG2)
 
-WWW: http://xsisqox.github.com/Viewnior/
+WWW: http://siyanpanayotov.com/project/viewnior/
