@@ -1,9 +1,9 @@
 # Created by: Gustau Perez i Querol <gustau.perez@gmail.com>
 # $FreeBSD$
-#   $MCom: ports/trunk/sysutils/cinnamon-settings-daemon/Makefile 19704 2014-05-28 09:16:09Z gusi $
+#   $MCom: ports/trunk/sysutils/cinnamon-settings-daemon/Makefile 19786 2014-07-31 10:24:00Z gusi $
 
 PORTNAME=	cinnamon-settings-daemon
-PORTVERSION=	2.2.3
+PORTVERSION=	2.2.4
 CATEGORIES=	sysutils gnome
 MASTER_SITES=	http://github.com/linuxmint/${PORTNAME}/archive/${PORTVERSION}.tar.gz?dummy=/
 DIST_SUBDIR=	gnome3
@@ -13,7 +13,7 @@ COMMENT=	GNOME 3 settings daemon
 
 BUILD_DEPENDS=	cinnamon-session:${PORTSDIR}/x11/cinnamon-session \
 		gnome-autogen.sh:${PORTSDIR}/devel/gnome-common \
-		${LOCALBASE}/libdata/pkgconfig/gsettings-desktop-schemas.pc:${PORTSDIR}/devel/gsettings-desktop-schemas \
+		gsettings-desktop-schemas>=0:${PORTSDIR}/devel/gsettings-desktop-schemas \
 		docbook-xsl>=0:${PORTSDIR}/textproc/docbook-xsl
 LIB_DEPENDS=	libcanberra-gtk3.so:${PORTSDIR}/audio/libcanberra-gtk3 \
 		libpolkit-gobject-1.so:${PORTSDIR}/sysutils/polkit \
@@ -26,7 +26,7 @@ LIB_DEPENDS=	libcanberra-gtk3.so:${PORTSDIR}/audio/libcanberra-gtk3 \
 		libgdbm.so:${PORTSDIR}/databases/gdbm \
 		libnotify.so:${PORTSDIR}/devel/libnotify
 RUN_DEPENDS=	cinnamon-session:${PORTSDIR}/x11/cinnamon-session \
-		${LOCALBASE}/libdata/pkgconfig/gsettings-desktop-schemas.pc:${PORTSDIR}/devel/gsettings-desktop-schemas
+		gsettings-desktop-schemas>=0:${PORTSDIR}/devel/gsettings-desktop-schemas
 
 USES=		gettext gmake libtool pathfix pkgconfig tar:xz
 USE_GNOME=	gnomehier gnomeprefix intlhack libgnomekbd \
@@ -58,28 +58,14 @@ GLIB_SCHEMAS=	org.cinnamon.settings-daemon.enums.xml \
 		org.cinnamon.settings-daemon.plugins.xrandr.gschema.xml \
 		org.cinnamon.settings-daemon.plugins.xsettings.gschema.xml \
 
+OPTIONS_SUB=	yes
 OPTIONS_DEFINE=	CUPS SMARTCARD
 OPTIONS_DEFAULT=CUPS SMARTCARD
 SMARTCARD_DESC=	Smartcard support
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MCUPS}
-LIB_DEPENDS+=	libcups.so:${PORTSDIR}/print/cups-client
-PLIST_SUB+=	CUPS=""
-.else
-PLIST_SUB+=	CUPS="@comment "
-CONFIGURE_ARGS+=--disable-cups
-.endif
-
-.if ${PORT_OPTIONS:MSMARTCARD}
-LIB_DEPENDS+=	libnss3.so:${PORTSDIR}/security/nss
-CONFIGURE_ARGS+=--enable-smartcard-support
-PLIST_SUB+=	SMARTCARD=""
-.else
-CONFIGURE_ARGS+=--disable-smartcard-support
-PLIST_SUB+=	SMARTCARD="@comment "
-.endif
+CUPS_CONFIGURE_ENABLE=	cups
+CUPS_LIB_DEPENDS=	libcups.so:${PORTSDIR}/print/cups-client
+SMARTCARD_CONFIGURE_ENABLE=	smartcard-support
+SMARTCARD_LIB_DEPENDS=	libnss3.so:${PORTSDIR}/security/nss
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/etc/gnome|${PREFIX}/etc/gnome|g' \

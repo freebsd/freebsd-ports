@@ -27,7 +27,6 @@ include/muffin/meta/util.h
 include/muffin/meta/window.h
 include/muffin/meta/workspace.h
 lib/libmuffin.a
-lib/libmuffin.la
 lib/libmuffin.so
 lib/libmuffin.so.0
 lib/libmuffin.so.0.0.0

@@ -1,15 +1,15 @@
 # Created by: Gustau Perez i Querol <gustau.perez@gmail.com>
 # $FreeBSD$
-#    $MCom: ports/trunk/lang/cjs/Makefile 19578 2014-04-25 21:50:30Z kwm $
+#    $MCom: ports/trunk/lang/cjs/Makefile 19787 2014-07-31 14:13:40Z gusi $
 
 PORTNAME=	cjs
-PORTVERSION=	2.2.0
+PORTVERSION=	2.2.1
 PORTREVISION=	1
 CATEGORIES=	lang gnome
 MASTER_SITES=	http://github.com/linuxmint/${PORTNAME}/archive/${PORTVERSION}.tar.gz?dummy=/
 DIST_SUBDIR=	gnome3
 
-MAINTAINER=	gustau.perez@gmail.com
+MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	JavaScript bindings based on gobject-introspection
 
 BUILD_DEPENDS=	gnome-autogen.sh:${PORTSDIR}/devel/gnome-common
@@ -18,7 +18,7 @@ LIB_DEPENDS=	libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib \
 
 CONFLICTS_BUILD=spidermonkey17-1.7.*
 
-USES=		gettext libtool:keepla gmake pathfix pkgconfig shebangfix
+USES=		gettext libtool gmake pathfix pkgconfig shebangfix
 USE_GNOME=	cairo glib20 gnomeprefix introspection:build \
 		intlhack
 USE_PYTHON_BUILD=yes

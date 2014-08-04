@@ -278,7 +278,6 @@ share/locale/zh_TW/LC_MESSAGES/cinnamon-control-center-timezones.mo
 share/polkit-1/rules.d/cinnamon-control-center.rules
 @dirrmtry share/locale/ilo/LC_MESSAGES
 @dirrmtry share/locale/ilo
-@dirrmtry share/desktop-directories
 @dirrm share/cinnamon-control-center/ui/datetime
 @dirrm share/cinnamon-control-center/ui
 @dirrm share/cinnamon-control-center/icons/hicolor/48x48/devices
@@ -302,4 +301,3 @@ share/polkit-1/rules.d/cinnamon-control-center.rules
 @dirrm lib/cinnamon-control-center-1
 @dirrm include/cinnamon-control-center-1/libcinnamon-control-center
 @dirrm include/cinnamon-control-center-1
-@dirrmtry etc/xdg/menus

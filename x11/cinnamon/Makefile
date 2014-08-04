@@ -1,18 +1,17 @@
 # Created by: Gustau Perez i Querol <gustau.perez@gmail.com>
 # $FreeBSD$
-#    $MCom: ports/trunk/x11/cinnamon/Makefile 19748 2014-06-23 08:06:53Z gusi $
+#    $MCom: ports/trunk/x11/cinnamon/Makefile 19786 2014-07-31 10:24:00Z gusi $
 
 PORTNAME=	cinnamon
-PORTVERSION=	2.2.13
-PORTREVISION=	1
+PORTVERSION=	2.2.14
 CATEGORIES=	x11 gnome
 MASTER_SITES=	http://github.com/linuxmint/${PORTNAME}/archive/${PORTVERSION}.tar.gz?dummy=/
 DIST_SUBDIR=	gnome3
 
-MAINTAINER=	gustau.perez@gmail.com
+MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Fork of GNOME Shell with layout similar to GNOME 2
 
-BUILD_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:${PORTSDIR}/security/ca_root_nss \
+BUILD_DEPENDS=	ca_root_nss>=0:${PORTSDIR}/security/ca_root_nss \
 		gnome-autogen.sh:${PORTSDIR}/devel/gnome-common
 LIB_DEPENDS=	libstartup-notification-1.so:${PORTSDIR}/x11/startup-notification \
 		libcaribou.so:${PORTSDIR}/accessibility/caribou \
@@ -27,14 +26,14 @@ LIB_DEPENDS=	libstartup-notification-1.so:${PORTSDIR}/x11/startup-notification \
 		libcjs.so:${PORTSDIR}/lang/cjs \
 		libcinnamon-menu-3.so:${PORTSDIR}/x11/cinnamon-menus \
 		libaccountsservice.so:${PORTSDIR}/sysutils/accountsservice
-RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/dbus-python.pc:${PORTSDIR}/devel/py-dbus \
-		${LOCALBASE}/share/certs/ca-root-nss.crt:${PORTSDIR}/security/ca_root_nss \
+RUN_DEPENDS=	py*-dbus>=0:${PORTSDIR}/devel/py-dbus \
+		ca_root_nss>=0:${PORTSDIR}/security/ca_root_nss \
 		gnome-themes-standard>=3.0.0:${PORTSDIR}/x11-themes/gnome-themes-standard \
 		cinnamon-control-center:${PORTSDIR}/sysutils/cinnamon-control-center \
 		cinnamon-translations>=0:${PORTSDIR}/misc/cinnamon-translations \
 		cinnamon-screensaver:${PORTSDIR}/x11/cinnamon-screensaver \
 		nemo:${PORTSDIR}/x11-fm/nemo \
-		${PYTHON_SITELIBDIR}/PIL/__init__.py:${PORTSDIR}/graphics/py-imaging \
+		py*-imaging>=0:${PORTSDIR}/graphics/py-imaging \
 		py*-lxml>=0:${PORTSDIR}/devel/py-lxml
 
 WRKSRC=		${WRKDIR}/Cinnamon-${PORTVERSION}
@@ -60,12 +59,7 @@ INSTALL_TARGET=	install-strip
 GLIB_SCHEMAS=	org.cinnamon.gschema.xml
 
 OPTIONS_DEFINE=	NLS
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MNLS}
-RUN_DEPENDS+=	cinnamon-translations>=0:${PORTSDIR}/misc/cinnamon-translations
-.endif
+NLS_RUN_DEPENDS=	cinnamon-translations>=0:${PORTSDIR}/misc/cinnamon-translations
 
 post-patch:
 	@${MKDIR} ${WRKSRC}/files${PREFIX}

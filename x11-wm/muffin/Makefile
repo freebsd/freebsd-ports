@@ -1,15 +1,15 @@
 # Created by: Gustau Perez i Querol <gustau.perez@gmail.com>
 # $FreeBSD$
-#    $MCom: ports/trunk/x11-wm/muffin/Makefile 19578 2014-04-25 21:50:30Z kwm $
+#    $MCom: ports/trunk/x11-wm/muffin/Makefile 19787 2014-07-31 14:13:40Z gusi $
 
 PORTNAME=	muffin
-PORTVERSION=	2.2.1
+PORTVERSION=	2.2.6
 PORTREVISION=	1
 CATEGORIES=	x11-wm gnome
 MASTER_SITES=	http://github.com/linuxmint/${PORTNAME}/archive/${PORTVERSION}.tar.gz?dummy=/
 DIST_SUBDIR=	gnome3
 
-MAINTAINER=	gustau.perez@gmail.com
+MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Compositing window manager forked from Mutter for use with Cinnamon
 
 BUILD_DEPENDS=	zenity3>=3.0.0:${PORTSDIR}/x11/zenity3 \
@@ -22,20 +22,21 @@ LIB_DEPENDS=	libstartup-notification-1.so:${PORTSDIR}/x11/startup-notification \
 		libcinnamon-desktop.so:${PORTSDIR}/x11/cinnamon-desktop
 RUN_DEPENDS=	zenity3>=3.0.0:${PORTSDIR}/x11/zenity3
 
-USES=		gettext libtool:keepla gmake pathfix pkgconfig
+USES=		gettext libtool gmake pathfix pkgconfig
 USE_GNOME=	gconf2 gnomedocutils gnomehier gnomeprefix gtk30 \
-		intlhack introspection:build
+		introspection:build
 USE_AUTOTOOLS=	libtoolize autoconf automake
-USE_CSTD=	gnu89
 USE_XORG=	x11 xext xrandr xcomposite xcursor xinerama ice sm
 USE_PYTHON=	yes
 USE_LDCONFIG=	yes
+USE_CSTD=	gnu89
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-INSTALL_TARGET=	install-strip
+PATHFIX_MAKEFILEIN=	Makefile.am
 CONFIGURE_ENV=	LIBS="-lexecinfo"
 CONFIGURE_ARGS=	--enable-compile-warnings=maximum
 GLIB_SCHEMAS=	org.cinnamon.muffin.gschema.xml
+INSTALL_TARGET=	install-strip
 
 pre-configure:
 		@cd ${WRKSRC} && ${SH} autogen.sh

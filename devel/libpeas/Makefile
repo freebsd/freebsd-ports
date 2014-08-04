@@ -1,9 +1,9 @@
 # Created by: Koop Mast <kwm@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/devel/libpeas/Makefile 19578 2014-04-25 21:50:30Z kwm $
+#   $MCom: ports/trunk/devel/libpeas/Makefile 19788 2014-08-02 10:19:13Z gusi $
 
 PORTNAME=	libpeas
-PORTVERSION=	1.10.0
+PORTVERSION=	1.10.1
 CATEGORIES=	devel gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -22,30 +22,16 @@ GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 INSTALL_TARGET=	install-strip
-CONFIGURE_ARGS+=--disable-glade-catalog
+CONFIGURE_ARGS+=--disable-glade-catalog \
+		--disable-python2
 
+OPTIONS_SUB=	yes
 OPTIONS_DEFINE=	PYTHON SEED
 OPTIONS_DEFAULT=PYTHON SEED
 SEED_DESC=	JavaScript support based on webkit-gtk3
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MSEED}
-CONFIGURE_ARGS+=--enable-seed=yes
-LIB_DEPENDS=	libseed-gtk3.so:${PORTSDIR}/devel/seed
-PLIST_SUB+=	SEED=""
-.else
-CONFIGURE_ARGS+=--enable-seed=no
-PLIST_SUB+=	SEED="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MPYTHON}
-CONFIGURE_ARGS+=--disable-python2 --enable-python3
-USE_GNOME+=	py3gobject3
-PLIST_SUB+=	PYTHONS=""
-.else
-CONFIGURE_ARGS+=--disable-python2 --disable-python3
-PLIST_SUB+=	PYTHONS="@comment "
-.endif
+SEED_LIB_DEPENDS=	libseed-gtk3.so:${PORTSDIR}/devel/seed
+SEED_CONFIGURE_ENABLE=	seed	
+PYTHON_USE=	GNOME=py3gobject3
+PYTHON_CONFIGURE_ENABLE=	python3
 
 .include <bsd.port.mk>

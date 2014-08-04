@@ -1,6 +1,6 @@
 # Created by: Gustau Perez i Querol <gustau.perez@gmail.com>
 # $FreeBSD$
-#   $MCom: ports/trunk/x11/cinnamon-screensaver/Makefile 19704 2014-05-28 09:16:09Z gusi $
+#   $MCom: ports/trunk/x11/cinnamon-screensaver/Makefile 19786 2014-07-31 10:24:00Z gusi $
 
 PORTNAME=	cinnamon-screensaver
 PORTVERSION=	2.2.3
@@ -18,7 +18,7 @@ LIB_DEPENDS=	libnotify.so:${PORTSDIR}/devel/libnotify \
 		libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib
 RUN_DEPENDS=	pam_helper:${PORTSDIR}/security/pam_helper \
 		gsettings-desktop-schemas>=3.2.0:${PORTSDIR}/devel/gsettings-desktop-schemas \
-		${LOCALBASE}/lib/pam_gnome_keyring.so:${PORTSDIR}/security/gnome-keyring
+		gnome-keyring>=0:${PORTSDIR}/security/gnome-keyring
 
 USES=		gettext gmake libtool pathfix pkgconfig tar:xz
 USE_XORG=	x11 xext xxf86vm xxf86misc xscrnsaver
@@ -39,14 +39,10 @@ post-patch:
 		${WRKSRC}/src/gs-auth-pam.c
 	@${REINPLACE_CMD} -e 's|find -m|find . -m|g' \
 		${WRKSRC}/files/Makefile.in
-#	@${REINPLACE_CMD} -e 's|@AUTH_SCHEME@|helper|g' \
-#		${WRKSRC}/src/Makefile.in
 	@${ECHO} "#define PASSWD_HELPER_PROGRAM \"/usr/local/bin/pam_helper\"" \
 		>> ${WRKSRC}/config.h.in
 
 post-install:
-#	${CHOWN} root ${PREFIX}/libexec/gnome-screensaver-dialog
-#	${CHMOD} +s ${PREFIX}/libexec/gnome-screensaver-dialog
 	${INSTALL_DATA} ${WRKDIR}/cinnamon-screensaver.pam \
 		${STAGEDIR}${PREFIX}/etc/pam.d/cinnamon-screensaver
 	${RM} -fr ${STAGEDIR}${PREFIX}/etc/pam.d/pam.d/

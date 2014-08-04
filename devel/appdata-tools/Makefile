@@ -24,7 +24,7 @@ GNU_CONFIGURE=	yes
 #CONFIGURE_ARGS=	--enable-introspection=yes
 USE_GITHUB=	yes
 USES=		gmake libtool:keepla pathfix pkgconfig
-USE_AUTOTOOLS=	libtool autoconf automake
+USE_AUTOTOOLS=	libtoolize autoconf automake
 USE_GNOME=	gdkpixbuf2 glib20 gnomehier introspection:build
 USE_LDCONFIG=	yes
 

@@ -1,6 +1,6 @@
 # Created by: Gustau Perez i Querol <gustau.perez@gmail.com>
 # $FreeBSD$
-#   $MCom: ports/trunk/x11/cinnamon-desktop/Makefile 19704 2014-05-28 09:16:09Z gusi $
+#   $MCom: ports/trunk/x11/cinnamon-desktop/Makefile 19786 2014-07-31 10:24:00Z gusi $
 
 PORTNAME=	cinnamon-desktop
 PORTVERSION=	2.2.3
@@ -12,10 +12,10 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Additional UI API for cinnamon
 
 BUILD_DEPENDS=	gnome-autogen.sh:${PORTSDIR}/devel/gnome-common \
-		${LOCALBASE}/libdata/pkgconfig/xkeyboard-config.pc:${PORTSDIR}/x11/xkeyboard-config \
-		${LOCALBASE}/libdata/pkgconfig/xkbfile.pc:${PORTSDIR}/x11/libxkbfile
-RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/xkeyboard-config.pc:${PORTSDIR}/x11/xkeyboard-config \
-		${LOCALBASE}/libdata/pkgconfig/xkbfile.pc:${PORTSDIR}/x11/libxkbfile
+		xkeyboard-config>=0:${PORTSDIR}/x11/xkeyboard-config \
+		libxkbfile>=0:${PORTSDIR}/x11/libxkbfile
+RUN_DEPENDS=	xkeyboard-config>=0:${PORTSDIR}/x11/xkeyboard-config \
+		libxkbfile>=0:${PORTSDIR}/x11/libxkbfile
 
 USE_XORG=	x11 xrandr xext
 USES=		gettext gmake libtool pathfix pkgconfig tar:xz

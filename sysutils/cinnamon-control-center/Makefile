@@ -1,18 +1,17 @@
 # Created by: Gustau Perez i Querol <gustau.perez@gmail.com>
 # $FreeBSD$
-#   $MCom: ports/trunk/sysutils/cinnamon-control-center/Makefile 19748 2014-06-23 08:06:53Z gusi $
+#   $MCom: ports/trunk/sysutils/cinnamon-control-center/Makefile 19786 2014-07-31 10:24:00Z gusi $
 
 PORTNAME=	cinnamon-control-center
-PORTVERSION=	2.2.9
-PORTREVISION=	1
+PORTVERSION=	2.2.10
 CATEGORIES=	sysutils gnome
 MASTER_SITES=	http://github.com/linuxmint/${PORTNAME}/archive/${PORTVERSION}.tar.gz?dummy=/
 DIST_SUBDIR=	gnome3
 
-MAINTAINER=	gustau.perez@gmail.com
+MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Control center for Cinnamon
 
-BUILD_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:${PORTSDIR}/security/ca_root_nss \
+BUILD_DEPENDS=	ca_root_nss>=0:${PORTSDIR}/security/ca_root_nss \
 		cinnamon-settings-daemon>=0:${PORTSDIR}/sysutils/cinnamon-settings-daemon \
 		gnome-autogen.sh:${PORTSDIR}/devel/gnome-common
 LIB_DEPENDS=	libstartup-notification-1.so:${PORTSDIR}/x11/startup-notification \
@@ -32,9 +31,9 @@ LIB_DEPENDS=	libstartup-notification-1.so:${PORTSDIR}/x11/startup-notification \
 		libclutter-gst-2.0.so:${PORTSDIR}/multimedia/clutter-gst \
 		libcinnamon-menu-3.so:${PORTSDIR}/x11/cinnamon-menus \
 		libgjs.so:${PORTSDIR}/lang/gjs
-RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/dbus-python.pc:${PORTSDIR}/devel/py-dbus \
+RUN_DEPENDS=	py*-dbus>=0:${PORTSDIR}/devel/py-dbus \
 		cinnamon-settings-daemon>=0:${PORTSDIR}/sysutils/cinnamon-settings-daemon \
-		${LOCALBASE}/share/certs/ca-root-nss.crt:${PORTSDIR}/security/ca_root_nss \
+		ca_root_nss>=0:${PORTSDIR}/security/ca_root_nss \
 		py*-lxml>=0:${PORTSDIR}/devel/py-lxml
 
 USES=		gettext gmake libtool pathfix pkgconfig
@@ -52,18 +51,11 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 INSTALL_TARGET=	install-strip
 
+OPTIONS_SUB=	yes
 OPTIONS_DEFINE=	CUPS
 OPTIONS_DEFAULT=CUPS
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MCUPS}
-LIB_DEPENDS+=	libcups.so:${PORTSDIR}/print/cups-client
-PLIST_SUB+=	CUPS=""
-.else
-CONFIGURE_ARGS+=--disable-cups
-PLIST_SUB+=	CUPS="@comment "
-.endif
+CUPS_CONFIGURE_ENABLE=	cups
+CUPS_LIB_DEPENDS=	libcups.so:${PORTSDIR}/print/cups-client
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|find|find ${WRKSRC}/files|g' \

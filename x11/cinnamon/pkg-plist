@@ -509,6 +509,7 @@ share/applications/cinnamon2d.desktop
 %%DATADIR%%/js/misc/params.js
 %%DATADIR%%/js/misc/pointerTracker.js
 %%DATADIR%%/js/misc/screenSaver.js
+%%DATADIR%%/js/misc/timers.js
 %%DATADIR%%/js/misc/util.js
 %%DATADIR%%/js/misc/windowUtils.js
 %%DATADIR%%/js/perf/core.js
