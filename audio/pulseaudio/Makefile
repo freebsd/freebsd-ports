@@ -21,13 +21,12 @@ LIB_DEPENDS=	libsamplerate.so:${PORTSDIR}/audio/libsamplerate \
 		libspeexdsp.so:${PORTSDIR}/audio/speex \
 		libdbus-1.so:${PORTSDIR}/devel/dbus \
 		libgdbm.so:${PORTSDIR}/databases/gdbm \
-		libexecinfo.so:${PORTSDIR}/devel/libexecinfo \
 		libck-connector.so:${PORTSDIR}/sysutils/consolekit
 
 USE_GNOME=	gnomehack glib20 intltool ltverhack
 USE_XORG=	x11 sm xtst ice
 USE_LDCONFIG=	yes
-USES=		gettext gmake pkgconfig
+USES=		gettext gmake pkgconfig execinfo
 GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	libltdl libtool
 MAKE_JOBS_UNSAFE=yes
