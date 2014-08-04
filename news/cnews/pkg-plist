@@ -194,6 +194,7 @@ man/man8/rnews.8cn.gz
 @cwd %%VARBASE%%
 @dirrmtry %%NEWSCTL%%
 @dirrmtry %%NEWSCTLBASE%%
+@dirrmtry %%NEWSOV%%
 @dirrmtry %%NEWSARTS%%/control
 @dirrmtry %%NEWSARTS%%/junk
 @dirrmtry %%NEWSARTS%%/news/announce/newusers
