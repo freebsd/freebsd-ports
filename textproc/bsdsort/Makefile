@@ -14,8 +14,6 @@ COMMENT=	BSD-licensed version of sort
 LICENSE=	BSD
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
-MANCOMPRESSED=	yes
-MAN1=		sort.1
 
 MAKE_ENV+=	BINDIR="${PREFIX}/bin" \
 		MANDIR="${MANPREFIX}/man/man" \
@@ -29,7 +27,6 @@ OPTIONS_DEFINE=		THREADS NLS OVERWRITE_BASE
 OVERWRITE_BASE_DESC=	Replaces base GNU sort
 OPTIONS_DEFAULT=	THREADS NLS
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MNLS}
@@ -50,15 +47,15 @@ PLIST_SUB+=	OVERWRITE_BASE="" NO_OVERWRITE_BASE="@comment "
 PLIST_SUB+=	OVERWRITE_BASE="@comment " NO_OVERWRITE_BASE=""
 .endif
 
-.if defined(WITH_OVERWRITE_BASE) && exists(${PREFIX}/bin/sort)
+.if defined(WITH_OVERWRITE_BASE) && exists(${STAGEDIR}${PREFIX}/bin/sort)
 pre-install:
-	${INSTALL_PROGRAM} ${PREFIX}/bin/sort ${PREFIX}/bin/gnusort
+	${INSTALL_PROGRAM} ${STAGEDIR}${PREFIX}/bin/sort ${STAGEDIR}${PREFIX}/bin/gnusort
 .endif
 
 post-install:
-	${LN} -s ${PREFIX}/bin/sort ${PREFIX}/bin/bsdsort
+	${LN} -s ${PREFIX}/bin/sort ${STAGEDIR}${PREFIX}/bin/bsdsort
 .if !defined(WITH_OVERWRITE_BASE)
-	${LN} -s /usr/bin/sort ${PREFIX}/bin/gnusort
+	${LN} -s /usr/bin/sort ${STAGEDIR}${PREFIX}/bin/gnusort
 .endif
 
 .include <bsd.port.post.mk>
