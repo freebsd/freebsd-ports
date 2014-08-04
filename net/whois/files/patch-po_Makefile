@@ -1,5 +1,5 @@
---- po/Makefile.orig	2013-03-30 02:31:41.000000000 +0100
-+++ po/Makefile	2014-01-20 17:52:17.051238058 +0100
+--- po/Makefile.orig	2014-06-08 18:22:54.000000000 +0200
++++ po/Makefile	2014-06-08 18:23:37.000000000 +0200
 @@ -1,4 +1,4 @@
 -prefix = /usr
 +prefix = ${PREFIX}
@@ -10,7 +10,7 @@
  
  POTFILES=../whois.c ../mkpasswd.c
  
-+.SUFFIXES:      .po .mo
++.SUFFIXES:	.po .mo
 +
  all: $(PACKAGE).pot $(CATALOGS)
  

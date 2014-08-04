@@ -1,0 +1,29 @@
+--- whois.conf.5.orig	2014-01-05 20:00:36.000000000 +0100
++++ whois.conf.5	2014-06-08 18:42:59.000000000 +0200
+@@ -1,10 +1,10 @@
+-.TH "WHOIS.CONF" "5" "9 April 2013" "Petr PÃ­saÅ" "Debian GNU/Linux"
++.TH "%%MWHOIST%%.CONF" "5" "9 April 2013" "Petr PÃ­saÅ" "Debian GNU/Linux"
+ 
+ .SH "NAME"
+-whois.conf \- alternative WHOIS servers list for whois client
++%%MWHOIS%%.conf \- alternative WHOIS servers list for whois client
+ 
+ .SH "SYNOPSIS"
+-.B /etc/whois.conf
++.B %%MWHOISCONF%%
+ 
+ .SH "DESCRIPTION"
+ This file contains a list of WHOIS servers which can augment or override
+@@ -37,10 +37,10 @@
+ ^as645(1[2-9]|2[0-9]|3[0-4])$    whois.example.net
+ 
+ .SH "FILES"
+-/etc/whois.conf
++%%MWHOISCONF%%
+ 
+ .SH "SEE ALSO"
+-\fBwhois\fP(1)
++\fB%%MWHOIS%%\fP(1)
+ 
+ .SH "AUTHOR"
+ This manual page was written by Petr PÃ­saÅ <\fIppisar@redhat.com\fP>

@@ -2,18 +2,16 @@
 # $FreeBSD$
 
 PORTNAME=	whois
-PORTVERSION=	5.0.23
+PORTVERSION=	5.1.4
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_DEBIAN_POOL}
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
-MAINTAINER=	lapo@lapo.it
+MAINTAINER=	coco@executive-computing.de
 COMMENT=	Marco d'Itri whois client
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
-
-BROKEN=		Unfetchable
 
 USES=		iconv gmake perl5 tar:xz
 USE_PERL5=	build
@@ -28,11 +26,21 @@ NLS_USES=	gettext
 .include <bsd.port.options.mk>
 
 post-patch:
-	@${REINPLACE_CMD} -e "s|%%LOCALBASE%%|${LOCALBASE}|g" ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e "s|%%MWHOISCONF%%|${PREFIX}/etc/mwhois.conf|g" ${WRKSRC}/whois.1
+	@${REINPLACE_CMD} -e "s|%%MWHOIS%%|mwhois|g" ${WRKSRC}/whois.1
+	@${REINPLACE_CMD} -e "s|%%MWHOIST%%|MWHOIS|g" ${WRKSRC}/whois.1
+	@${REINPLACE_CMD} -e "s|%%MWHOIST%%|MWHOIS|g" ${WRKSRC}/whois.conf.5
+	@${REINPLACE_CMD} -e "s|%%MWHOIS%%|mwhois|g" ${WRKSRC}/whois.conf.5
+	@${REINPLACE_CMD} -e "s|%%MWHOISCONF%%|${PREFIX}/etc/mwhois.conf|g" ${WRKSRC}/whois.conf.5
+	@${REINPLACE_CMD} -e "s|%%MWHOISCONF%%|${PREFIX}/etc/mwhois.conf|g" ${WRKSRC}/config.h
 .if ! ${PORT_OPTIONS:MNLS}
 	@${REINPLACE_CMD} -e "s| pos||" -e "s| install-pos||" \
 			-e "s|-lintl||" ${WRKSRC}/Makefile
 	@${REINPLACE_CMD} -e "s|# define ENABLE_NLS||" ${WRKSRC}/config.h
 .endif
+
+post-stage:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/mwhois
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/mkpasswd
 
 .include <bsd.port.mk>
