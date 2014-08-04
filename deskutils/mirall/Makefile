@@ -3,6 +3,7 @@
 
 PORTNAME=	mirall
 PORTVERSION=	1.6.2
+PORTREVISION=	1
 CATEGORIES=	deskutils
 MASTER_SITES=	http://download.owncloud.com/desktop/stable/
 
@@ -16,11 +17,11 @@ LIB_DEPENDS=	libinotify.so:${PORTSDIR}/devel/libinotify \
 		libneon.so:${PORTSDIR}/www/neon29
 
 USES=		cmake:outsource compiler:c++11-lang gmake pkgconfig tar:bzip2
-USE_QT4=	corelib dbus gui network qtestlib webkit xml \
+USE_QT4=	corelib dbus gui network qtestlib sql-sqlite3 webkit xml \
 		linguist_build moc_build qmake_build rcc_build uic_build
 CMAKE_ENV=	INOTIFY_LIB="${LOCALBASE}/lib"
-CMAKE_ARGS=	-DCMAKE_INSTALL_MANDIR:STRING=${MANPREFIX}/man/
-USE_SQLITE=	3
+CMAKE_ARGS=	-DCMAKE_INSTALL_MANDIR:STRING=${MANPREFIX}/man/ \
+		-DBUILD_WITH_QT4:BOOL=ON
 USE_LDCONFIG=	yes
 INSTALLS_ICONS=	yes
 
