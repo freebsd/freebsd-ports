@@ -93,17 +93,17 @@ lib/GraphicsMagick/config/type.mgk
 @exec mkdir -p %D/lib/GraphicsMagick/modules-Q%%Q%%/coders
 @exec mkdir -p %D/lib/GraphicsMagick/modules-Q%%Q%%/filters
 lib/libGraphicsMagick++.a
-lib/libGraphicsMagick++.la
 lib/libGraphicsMagick++.so
-lib/libGraphicsMagick++.so.9
+lib/libGraphicsMagick++.so.3
+lib/libGraphicsMagick++.so.3.6.3
 lib/libGraphicsMagick.a
-lib/libGraphicsMagick.la
 lib/libGraphicsMagick.so
-lib/libGraphicsMagick.so.14
+lib/libGraphicsMagick.so.3
+lib/libGraphicsMagick.so.3.11.1
 lib/libGraphicsMagickWand.a
-lib/libGraphicsMagickWand.la
 lib/libGraphicsMagickWand.so
-lib/libGraphicsMagickWand.so.8
+lib/libGraphicsMagickWand.so.2
+lib/libGraphicsMagickWand.so.2.6.1
 libdata/pkgconfig/GraphicsMagick++.pc
 libdata/pkgconfig/GraphicsMagick.pc
 libdata/pkgconfig/GraphicsMagickWand.pc
