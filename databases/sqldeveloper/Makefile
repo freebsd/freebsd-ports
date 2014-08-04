@@ -29,6 +29,8 @@ SUB_LIST=	JAVA_HOME=${JAVA_HOME} PORTNAME=${PORTNAME}
 
 PORTDOCS=	readme.html
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.pre.mk>
 
 .if !exists(${DISTDIR}/${DIST_SUBDIR}/${DISTNAME}${EXTRACT_SUFX})

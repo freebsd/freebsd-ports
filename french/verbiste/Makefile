@@ -10,7 +10,7 @@ MASTER_SITES=	http://perso.b2b2c.ca/sarrazip/dev/
 MAINTAINER=	dereckson@gmail.com
 COMMENT=	French verb conjugator/deconjugator
 
-OPTIONS_DEFINE=	GTK2 GNOME
+OPTIONS_DEFINE=	GTK2 GNOME DOCS EXAMPLES
 
 LICENSE=	GPLv2
 

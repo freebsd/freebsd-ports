@@ -24,6 +24,7 @@ DESKTOP_ENTRIES="gcompmgr" \
 		"DesktopSettings;Settings;GTK;" \
 		true
 
+OPTIONS_DEFINE=	DOCS
 
 post-patch:
 .for file in depcomp install-sh missing

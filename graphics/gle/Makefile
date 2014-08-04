@@ -20,6 +20,8 @@ USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 LIBS+=		-L${LOCALBASE}/lib -lXext
 
+OPTIONS_DEFINE=	DOCS
+
 post-patch:
 .for file in ex_angle.c ex_cut_round.c ex_raw.c extrude.c round_cap.c segment.c texgen.c
 	@${REINPLACE_CMD} -e "s/malloc.h/stdlib.h/g" ${WRKSRC}/src/${file}

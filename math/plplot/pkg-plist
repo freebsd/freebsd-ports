@@ -112,24 +112,24 @@ libdata/pkgconfig/plplotd.pc
 %%TCLTK%%man/man1/plserver.1.gz
 %%TCLTK%%man/man1/pltcl.1.gz
 man/man1/pltek.1.gz
-%%DOCSDIR%%/ABOUT
-%%DOCSDIR%%/AUTHORS
-%%DOCSDIR%%/COPYING.LIB
-%%DOCSDIR%%/ChangeLog.release
-%%DOCSDIR%%/Copyright
-%%DOCSDIR%%/FAQ
-%%DOCSDIR%%/NEWS
-%%DOCSDIR%%/PROBLEMS
-%%DOCSDIR%%/README
-%%DOCSDIR%%/README.1st.csa
-%%DOCSDIR%%/README.1st.nn
-%%DOCSDIR%%/README.csa
-%%DOCSDIR%%/README.drivers
-%%DOCSDIR%%/README.nn
-%%DOCSDIR%%/README.pkg-config
-%%DOCSDIR%%/README.release
-%%DOCSDIR%%/README.testing
-%%DOCSDIR%%/README.wxwidgets
+%%PORTDOCS%%%%DOCSDIR%%/ABOUT
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/COPYING.LIB
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog.release
+%%PORTDOCS%%%%DOCSDIR%%/Copyright
+%%PORTDOCS%%%%DOCSDIR%%/FAQ
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/PROBLEMS
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/README.1st.csa
+%%PORTDOCS%%%%DOCSDIR%%/README.1st.nn
+%%PORTDOCS%%%%DOCSDIR%%/README.csa
+%%PORTDOCS%%%%DOCSDIR%%/README.drivers
+%%PORTDOCS%%%%DOCSDIR%%/README.nn
+%%PORTDOCS%%%%DOCSDIR%%/README.pkg-config
+%%PORTDOCS%%%%DOCSDIR%%/README.release
+%%PORTDOCS%%%%DOCSDIR%%/README.testing
+%%PORTDOCS%%%%DOCSDIR%%/README.wxwidgets
 %%DATADIR%%/cglobe.map
 %%DATADIR%%/cmap0_alternate.pal
 %%DATADIR%%/cmap0_black_on_white.pal
@@ -637,7 +637,7 @@ man/man1/pltek.1.gz
 @dirrm %%DATADIR%%/examples/c
 @dirrm %%DATADIR%%/examples
 @dirrm %%DATADIR%%
-@dirrm %%DOCSDIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm lib/plplot/driversd
 @dirrm lib/plplot
 %%LUA%%@dirrm %%LUA_MODLIBDIR%%/plplot

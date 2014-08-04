@@ -1,5 +1,5 @@
 bin/pypanda
-%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/README
 %%DATADIR%%/camdown.jpg
 %%DATADIR%%/camrefresh.jpg
 %%DATADIR%%/pypanda.png
@@ -7,4 +7,4 @@ bin/pypanda
 %%DATADIR%%/pypanda.pyc
 %%DATADIR%%/pypanda.pyo
 @dirrm %%DATADIR%%
-@dirrm %%DOCSDIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

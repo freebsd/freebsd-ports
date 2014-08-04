@@ -14,4 +14,6 @@ USES=		gmake pkgconfig
 USE_GNOME=	gtk20 gnomevfs2 intlhack
 GNU_CONFIGURE=	yes
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.mk>

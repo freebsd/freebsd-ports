@@ -16,6 +16,8 @@ NO_BUILD=	yes
 USE_RUBY=	yes
 RUBY_NO_BUILD_DEPENDS=	yes
 
+OPTIONS_DEFINE=	DOCS
+
 post-patch:
 	@${REINPLACE_CMD} -E -e 's,share/man,man,' \
 		-e 's,(DOC|INS|MAN)PATH),DESTDIR)$$(&,' \

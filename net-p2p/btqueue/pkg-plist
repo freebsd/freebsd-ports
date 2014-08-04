@@ -467,8 +467,8 @@ bin/btshowmetainfo.py
 %%PYTHON_SITELIBDIR%%/khashmir/utkhashmir.pyo
 %%DATADIR%%/alias.conf
 %%DATADIR%%/ip2cc.db
-%%DOCSDIR%%/examples/interest.xml
-%%DOCSDIR%%/examples/tracker.xml
+%%PORTDOCS%%%%DOCSDIR%%/examples/interest.xml
+%%PORTDOCS%%%%DOCSDIR%%/examples/tracker.xml
 @dirrm %%PYTHON_SITELIBDIR%%/BitCrawler
 @dirrm %%PYTHON_SITELIBDIR%%/BitQueue
 @dirrm %%PYTHON_SITELIBDIR%%/BitTornado/BT1
@@ -476,5 +476,5 @@ bin/btshowmetainfo.py
 @dirrm %%PYTHON_SITELIBDIR%%/BitTorrent
 @dirrm %%PYTHON_SITELIBDIR%%/khashmir
 @dirrm %%DATADIR%%
-@dirrm %%DOCSDIR%%/examples
-@dirrm %%DOCSDIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/examples
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

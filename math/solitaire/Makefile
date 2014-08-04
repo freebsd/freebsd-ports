@@ -19,6 +19,8 @@ NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 STRIP=
 
+OPTIONS_DEFINE=	DOCS
+
 do-extract:
 	@${MKDIR} ${WRKDIR}
 	@${CP} -r ${DISTDIR}/sol.pl ${DISTDIR}/sol-test.txt ${WRKDIR}

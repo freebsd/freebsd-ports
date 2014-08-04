@@ -18,4 +18,6 @@ USE_OPENLDAP=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-docdir=${DOCSDIR}
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.mk>

@@ -42,23 +42,23 @@ libexec/freepwing/fpwsort
 libexec/freepwing/fpwsound
 libexec/freepwing/mkdirhier
 libexec/freepwing/perl.sh
-%%DOCSDIR%%/catdump.txt
-%%DOCSDIR%%/freepwing-01.html
-%%DOCSDIR%%/freepwing-02.html
-%%DOCSDIR%%/freepwing-03.html
-%%DOCSDIR%%/freepwing-04.html
-%%DOCSDIR%%/freepwing-05.html
-%%DOCSDIR%%/freepwing-06.html
-%%DOCSDIR%%/freepwing-07.html
-%%DOCSDIR%%/freepwing-08.html
-%%DOCSDIR%%/freepwing.css
-%%DOCSDIR%%/freepwing.html
+%%PORTDOCS%%%%DOCSDIR%%/catdump.txt
+%%PORTDOCS%%%%DOCSDIR%%/freepwing-01.html
+%%PORTDOCS%%%%DOCSDIR%%/freepwing-02.html
+%%PORTDOCS%%%%DOCSDIR%%/freepwing-03.html
+%%PORTDOCS%%%%DOCSDIR%%/freepwing-04.html
+%%PORTDOCS%%%%DOCSDIR%%/freepwing-05.html
+%%PORTDOCS%%%%DOCSDIR%%/freepwing-06.html
+%%PORTDOCS%%%%DOCSDIR%%/freepwing-07.html
+%%PORTDOCS%%%%DOCSDIR%%/freepwing-08.html
+%%PORTDOCS%%%%DOCSDIR%%/freepwing.css
+%%PORTDOCS%%%%DOCSDIR%%/freepwing.html
 %%DATADIR%%/catalogs/catalogs.txt
 %%DATADIR%%/catalogs/catalogs
 %%DATADIR%%/fpwutils.mk
 @dirrm %%DATADIR%%/catalogs
 @dirrm %%DATADIR%%
-@dirrm %%DOCSDIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm libexec/freepwing
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/FreePWING/FPWUtils
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/FreePWING
