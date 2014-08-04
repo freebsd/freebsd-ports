@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	jimtcl
-PORTVERSION=	0.74
+PORTVERSION=	0.75
 CATEGORIES=	lang tcl
 
 MAINTAINER=	bapt@FreeBSD.org
@@ -11,7 +11,7 @@ LICENSE=	BSD2CLAUSE
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	msteveb
-GH_COMMIT=	9a3562c
+GH_COMMIT=	cffd1a5
 
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--full \
@@ -21,6 +21,6 @@ CONFIGURE_ARGS=	--full \
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/jimsh \
-		${STAGEDIR}${PREFIX}/lib/libjim.so.0.74
+		${STAGEDIR}${PREFIX}/lib/libjim.so.0.75
 
 .include <bsd.port.mk>
