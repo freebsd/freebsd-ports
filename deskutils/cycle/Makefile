@@ -18,8 +18,6 @@ USE_WX=		3.0+
 WX_COMPS=	python
 NO_BUILD=	yes
 
-OPTIONS_DEFINE=	DOCS
-
 post-patch:
 	@${REINPLACE_CMD} -e 's,"msg","${PREFIX}/share/locale",' \
 		-e 's,"","${DOCSDIR}", ; s,"icons","${DATADIR}/icons",' \
