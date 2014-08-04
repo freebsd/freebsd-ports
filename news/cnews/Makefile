@@ -90,7 +90,9 @@ EXTRA_PATCHES+=	${FILESDIR}/sendmail.patch
 .endif
 
 pre-patch:
-	${CP} ${DISTDIR}/${DIST_SUBDIR}/${PGPVERIFY} ${WRKSRC}/${PGPVERIFY}
+	${SED} -e 's|/usr/bin/perl|${LOCALBASE}/bin/perl|' \
+		${DISTDIR}/${DIST_SUBDIR}/${PGPVERIFY} \
+		> ${WRKSRC}/${PGPVERIFY}
 
 pre-configure:
 .for i in conf/quiz.def conf/substitutions include/config.make
