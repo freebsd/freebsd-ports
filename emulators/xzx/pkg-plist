@@ -7,10 +7,10 @@ lib/xzx-pro/plus2.rom
 lib/xzx-pro/plus3.rom
 lib/xzx-pro/spectrum.rom
 man/man1/xzx.1.gz
-%%DOCSDIR%%/COPYRIGHT
-%%DOCSDIR%%/FAQ
-%%DOCSDIR%%/README
-@dirrm %%DOCSDIR%%
+%%PORTDOCS%%%%DOCSDIR%%/COPYRIGHT
+%%PORTDOCS%%%%DOCSDIR%%/FAQ
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @unexec rm -f %D/lib/xzx-pro/if1.rom
 @exec ln -f %D/lib/xzx-pro/if1-v2.rom %D/lib/xzx-pro/if1.rom
 @dirrm lib/xzx-pro

@@ -59,6 +59,6 @@ man/man7/alisp.7.gz
 %%DATADIR%%/unsort.l
 %%DATADIR%%/xeval.l
 %%DATADIR%%/zebra.l
-%%DOCSDIR%%/alisp.txt
+%%PORTDOCS%%%%DOCSDIR%%/alisp.txt
 @dirrm %%DATADIR%%
-@dirrm %%DOCSDIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

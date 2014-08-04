@@ -44,6 +44,8 @@ SUB_FILES=	pkg-message
 
 FONTS_FILE=	${WRKDIR}/fonts.dir
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_MSWINDOWS_LICENSE)

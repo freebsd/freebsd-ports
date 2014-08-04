@@ -1,5 +1,5 @@
 bin/sqldeveloper
-%%DOCSDIR%%/readme.html
+%%PORTDOCS%%%%DOCSDIR%%/readme.html
 %%DATADIR%%/configuration/bundles.info
 %%DATADIR%%/configuration/oracle.datamodeler.bundles.info
 %%DATADIR%%/configuration/oracle.ide.sqldev.bundles.info
@@ -1815,7 +1815,7 @@ bin/sqldeveloper
 %%DATADIR%%/svnkit/svnkit.jar
 %%DATADIR%%/svnkit/trilead.jar
 %%DATADIR%%/view-source-paths.lis
-@dirrmtry %%DOCSDIR%%
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%
 @dirrmtry %%DATADIR%%/configuration
 @dirrmtry %%DATADIR%%/dataminer/scripts
 @dirrmtry %%DATADIR%%/dataminer

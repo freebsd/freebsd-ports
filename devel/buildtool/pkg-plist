@@ -28,13 +28,13 @@ share/buildtool/bt_logic/texinfo.subr
 share/buildtool/templates/README.bt
 share/buildtool/templates/bt_config.conf.in
 share/buildtool/templates/pkgflags
-%%DOCSDIR%%/CHANGES
-%%DOCSDIR%%/COPYING
-%%DOCSDIR%%/DIFFS.bt_sh
-%%DOCSDIR%%/PEOPLE
-%%DOCSDIR%%/README
-%%DOCSDIR%%/TODO
-@dirrm %%DOCSDIR%%
+%%PORTDOCS%%%%DOCSDIR%%/CHANGES
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/DIFFS.bt_sh
+%%PORTDOCS%%%%DOCSDIR%%/PEOPLE
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/TODO
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm libexec/buildtool
 @dirrm share/buildtool/bt_config
 @dirrm share/buildtool/bt_logic

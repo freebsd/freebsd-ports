@@ -25,6 +25,8 @@ DOCSDIR=	${PREFIX}/share/doc/lib${PORTNAME}-${PORTVERSION}
 
 PCRE_CONFIG?=	${LOCALBASE}/bin/pcre-config
 
+OPTIONS_DEFINE=	DOCS
+
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's| ../COPYING|| ; \

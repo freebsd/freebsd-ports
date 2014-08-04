@@ -12,4 +12,6 @@ COMMENT=	Set of portable software build utilities
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	-p ${PREFIX} -d ${DOCSDIR}
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.mk>

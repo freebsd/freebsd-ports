@@ -230,9 +230,9 @@ man/man1/soldumper.1.gz
 %%DATADIR%%/GnashG.png
 %%DATADIR%%/gnash-splash.swf
 %%DATADIR%%/gnash_128_96.ico
-%%DOCSDIR%%/gnashref.html
-%%DOCSDIR%%/gnashuser.html
-%%DOCSDIR%%/images/rtmp.png
+%%PORTDOCS%%%%DOCSDIR%%/gnashref.html
+%%PORTDOCS%%%%DOCSDIR%%/gnashuser.html
+%%PORTDOCS%%%%DOCSDIR%%/images/rtmp.png
 %%GTK2%%share/icons/hicolor/32x32/apps/gnash.xpm
 %%KDE4%%share/icons/hicolor/32x32/apps/klash.xpm
 share/locale/cs/LC_MESSAGES/gnash.mo
@@ -255,8 +255,8 @@ share/locale/zh_TW/LC_MESSAGES/gnash.mo
 @dirrmtry share/icons/hicolor/32x32
 @dirrmtry share/icons/hicolor
 @dirrmtry share/icons
-@dirrm %%DOCSDIR%%/images
-@dirrm %%DOCSDIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/images
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%DATADIR%%
 @dirrm lib/gnash
 %%CYGNAL%%@dirrmtry lib/cygnal/plugins

@@ -272,68 +272,68 @@ bin/fnping
 %%PYTHON_SITELIBDIR%%/Fnorb/script/fnping.pyc
 %%PYTHON_SITELIBDIR%%/Fnorb/script/fnping.pyo
 %%PYTHON_SITELIBDIR%%/%%PYDISTUTILS_EGGINFO%%
-%%DOCSDIR%%/CHANGES
-%%DOCSDIR%%/LICENSE.HTML
-%%DOCSDIR%%/MANIFEST.in
-%%DOCSDIR%%/README
-%%DOCSDIR%%/README.jython
-%%DOCSDIR%%/examples/hello-world/HelloWorld.idl
-%%DOCSDIR%%/examples/hello-world/README
-%%DOCSDIR%%/examples/hello-world/client.py
-%%DOCSDIR%%/examples/hello-world/server.py
-%%DOCSDIR%%/examples/misc/Example.idl
-%%DOCSDIR%%/examples/misc/README
-%%DOCSDIR%%/examples/misc/client.py
-%%DOCSDIR%%/examples/misc/server.py
-%%DOCSDIR%%/examples/naming/README
-%%DOCSDIR%%/examples/naming/Thermometer.idl
-%%DOCSDIR%%/examples/naming/client.py
-%%DOCSDIR%%/examples/naming/server.py
-%%DOCSDIR%%/examples/threaded/HelloWorld.idl
-%%DOCSDIR%%/examples/threaded/README
-%%DOCSDIR%%/examples/threaded/client.py
-%%DOCSDIR%%/examples/threaded/server.py
-%%DOCSDIR%%/examples/tkinter/README
-%%DOCSDIR%%/examples/tkinter/TicToc.idl
-%%DOCSDIR%%/examples/tkinter/client.py
-%%DOCSDIR%%/examples/tkinter/server.py
-%%DOCSDIR%%/examples/unions/README
-%%DOCSDIR%%/examples/unions/Unions.idl
-%%DOCSDIR%%/examples/unions/client.py
-%%DOCSDIR%%/examples/unions/server.py
-%%DOCSDIR%%/tests/datatransfer/DataTransferServer.py
-%%DOCSDIR%%/tests/datatransfer/alltests.py
-%%DOCSDIR%%/tests/datatransfer/chartest.py
-%%DOCSDIR%%/tests/datatransfer/datatransfer.idl
-%%DOCSDIR%%/tests/datatransfer/fixedtest.py
-%%DOCSDIR%%/tests/datatransfer/longtest.py
-%%DOCSDIR%%/tests/datatransfer/orbrunner.py
-%%DOCSDIR%%/tests/datatransfer/seqtest.py
-%%DOCSDIR%%/tests/datatransfer/serverrunner.py
-%%DOCSDIR%%/tests/datatransfer/shorttest.py
-%%DOCSDIR%%/tests/datatransfer/wchartest.py
-%%DOCSDIR%%/tests/datatransfer/wstringtest.py
-%%DOCSDIR%%/tests/interop/CharClient.cpp
-%%DOCSDIR%%/tests/interop/CharServer.cpp
-%%DOCSDIR%%/tests/interop/Client.h
-%%DOCSDIR%%/tests/interop/FixedClient.cpp
-%%DOCSDIR%%/tests/interop/FixedServer.cpp
-%%DOCSDIR%%/tests/interop/Makefile.omniorb
-%%DOCSDIR%%/tests/interop/Makefile.orbacus
-%%DOCSDIR%%/tests/interop/Makefile.tao
-%%DOCSDIR%%/tests/interop/README
-%%DOCSDIR%%/tests/interop/Server.h
-%%DOCSDIR%%/tests/interop/TestCharsClient.py
-%%DOCSDIR%%/tests/interop/TestCharsServer.py
-%%DOCSDIR%%/tests/interop/TestChars_impl.cpp
-%%DOCSDIR%%/tests/interop/TestChars_impl.h
-%%DOCSDIR%%/tests/interop/TestFixedClient.py
-%%DOCSDIR%%/tests/interop/TestFixedServer.py
-%%DOCSDIR%%/tests/interop/TestFixed_impl.cpp
-%%DOCSDIR%%/tests/interop/TestFixed_impl.h
-%%DOCSDIR%%/tests/interop/TestInterop.idl
-%%DOCSDIR%%/tests/interop/Utils.cpp
-%%DOCSDIR%%/tests/interop/Utils.h
+%%PORTDOCS%%%%DOCSDIR%%/CHANGES
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE.HTML
+%%PORTDOCS%%%%DOCSDIR%%/MANIFEST.in
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/README.jython
+%%PORTDOCS%%%%DOCSDIR%%/examples/hello-world/HelloWorld.idl
+%%PORTDOCS%%%%DOCSDIR%%/examples/hello-world/README
+%%PORTDOCS%%%%DOCSDIR%%/examples/hello-world/client.py
+%%PORTDOCS%%%%DOCSDIR%%/examples/hello-world/server.py
+%%PORTDOCS%%%%DOCSDIR%%/examples/misc/Example.idl
+%%PORTDOCS%%%%DOCSDIR%%/examples/misc/README
+%%PORTDOCS%%%%DOCSDIR%%/examples/misc/client.py
+%%PORTDOCS%%%%DOCSDIR%%/examples/misc/server.py
+%%PORTDOCS%%%%DOCSDIR%%/examples/naming/README
+%%PORTDOCS%%%%DOCSDIR%%/examples/naming/Thermometer.idl
+%%PORTDOCS%%%%DOCSDIR%%/examples/naming/client.py
+%%PORTDOCS%%%%DOCSDIR%%/examples/naming/server.py
+%%PORTDOCS%%%%DOCSDIR%%/examples/threaded/HelloWorld.idl
+%%PORTDOCS%%%%DOCSDIR%%/examples/threaded/README
+%%PORTDOCS%%%%DOCSDIR%%/examples/threaded/client.py
+%%PORTDOCS%%%%DOCSDIR%%/examples/threaded/server.py
+%%PORTDOCS%%%%DOCSDIR%%/examples/tkinter/README
+%%PORTDOCS%%%%DOCSDIR%%/examples/tkinter/TicToc.idl
+%%PORTDOCS%%%%DOCSDIR%%/examples/tkinter/client.py
+%%PORTDOCS%%%%DOCSDIR%%/examples/tkinter/server.py
+%%PORTDOCS%%%%DOCSDIR%%/examples/unions/README
+%%PORTDOCS%%%%DOCSDIR%%/examples/unions/Unions.idl
+%%PORTDOCS%%%%DOCSDIR%%/examples/unions/client.py
+%%PORTDOCS%%%%DOCSDIR%%/examples/unions/server.py
+%%PORTDOCS%%%%DOCSDIR%%/tests/datatransfer/DataTransferServer.py
+%%PORTDOCS%%%%DOCSDIR%%/tests/datatransfer/alltests.py
+%%PORTDOCS%%%%DOCSDIR%%/tests/datatransfer/chartest.py
+%%PORTDOCS%%%%DOCSDIR%%/tests/datatransfer/datatransfer.idl
+%%PORTDOCS%%%%DOCSDIR%%/tests/datatransfer/fixedtest.py
+%%PORTDOCS%%%%DOCSDIR%%/tests/datatransfer/longtest.py
+%%PORTDOCS%%%%DOCSDIR%%/tests/datatransfer/orbrunner.py
+%%PORTDOCS%%%%DOCSDIR%%/tests/datatransfer/seqtest.py
+%%PORTDOCS%%%%DOCSDIR%%/tests/datatransfer/serverrunner.py
+%%PORTDOCS%%%%DOCSDIR%%/tests/datatransfer/shorttest.py
+%%PORTDOCS%%%%DOCSDIR%%/tests/datatransfer/wchartest.py
+%%PORTDOCS%%%%DOCSDIR%%/tests/datatransfer/wstringtest.py
+%%PORTDOCS%%%%DOCSDIR%%/tests/interop/CharClient.cpp
+%%PORTDOCS%%%%DOCSDIR%%/tests/interop/CharServer.cpp
+%%PORTDOCS%%%%DOCSDIR%%/tests/interop/Client.h
+%%PORTDOCS%%%%DOCSDIR%%/tests/interop/FixedClient.cpp
+%%PORTDOCS%%%%DOCSDIR%%/tests/interop/FixedServer.cpp
+%%PORTDOCS%%%%DOCSDIR%%/tests/interop/Makefile.omniorb
+%%PORTDOCS%%%%DOCSDIR%%/tests/interop/Makefile.orbacus
+%%PORTDOCS%%%%DOCSDIR%%/tests/interop/Makefile.tao
+%%PORTDOCS%%%%DOCSDIR%%/tests/interop/README
+%%PORTDOCS%%%%DOCSDIR%%/tests/interop/Server.h
+%%PORTDOCS%%%%DOCSDIR%%/tests/interop/TestCharsClient.py
+%%PORTDOCS%%%%DOCSDIR%%/tests/interop/TestCharsServer.py
+%%PORTDOCS%%%%DOCSDIR%%/tests/interop/TestChars_impl.cpp
+%%PORTDOCS%%%%DOCSDIR%%/tests/interop/TestChars_impl.h
+%%PORTDOCS%%%%DOCSDIR%%/tests/interop/TestFixedClient.py
+%%PORTDOCS%%%%DOCSDIR%%/tests/interop/TestFixedServer.py
+%%PORTDOCS%%%%DOCSDIR%%/tests/interop/TestFixed_impl.cpp
+%%PORTDOCS%%%%DOCSDIR%%/tests/interop/TestFixed_impl.h
+%%PORTDOCS%%%%DOCSDIR%%/tests/interop/TestInterop.idl
+%%PORTDOCS%%%%DOCSDIR%%/tests/interop/Utils.cpp
+%%PORTDOCS%%%%DOCSDIR%%/tests/interop/Utils.h
 @dirrm %%PYTHON_SITELIBDIR%%/Fnorb/script
 @dirrm %%PYTHON_SITELIBDIR%%/Fnorb/parser
 @dirrm %%PYTHON_SITELIBDIR%%/Fnorb/orb
@@ -346,14 +346,14 @@ bin/fnping
 @dirrm %%PYTHON_SITELIBDIR%%/Fnorb/cos
 @dirrm %%PYTHON_SITELIBDIR%%/Fnorb/compiler
 @dirrm %%PYTHON_SITELIBDIR%%/Fnorb
-@dirrm %%DOCSDIR%%/tests/interop
-@dirrm %%DOCSDIR%%/tests/datatransfer
-@dirrm %%DOCSDIR%%/tests
-@dirrm %%DOCSDIR%%/examples/unions
-@dirrm %%DOCSDIR%%/examples/tkinter
-@dirrm %%DOCSDIR%%/examples/threaded
-@dirrm %%DOCSDIR%%/examples/naming
-@dirrm %%DOCSDIR%%/examples/misc
-@dirrm %%DOCSDIR%%/examples/hello-world
-@dirrm %%DOCSDIR%%/examples
-@dirrm %%DOCSDIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/tests/interop
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/tests/datatransfer
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/tests
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/examples/unions
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/examples/tkinter
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/examples/threaded
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/examples/naming
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/examples/misc
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/examples/hello-world
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/examples
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

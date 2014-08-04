@@ -25,7 +25,7 @@ CONFIGURE_ARGS=	--datadir="${PREFIX}/lib" \
 		--with-lib3ds-prefix="${LOCALBASE}"
 CPPFLAGS+=	-I${LOCALBASE}/include
 
-OPTIONS_DEFINE=	EXAMPLES
+OPTIONS_DEFINE=	DOCS EXAMPLES
 
 post-patch:
 	@${REINPLACE_CMD} -e '36s,static ,,' ${WRKSRC}/src/tools/tool_disc.c

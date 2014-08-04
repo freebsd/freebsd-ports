@@ -31,6 +31,8 @@ EXTRACT_AFTER_ARGS=	${WRKDIR}
 MAKE_ENV=	FONTSDIR=${FONTSDIR}
 PLIST_SUB=	FONTSDIR=${FONTSDIR}
 
+OPTIONS_DEFINE=	DOCS
+
 post-extract:
 	@${MV} ${WRKDIR}/maru14.bdf.v13.gz ${WRKDIR}/maru14.bdf.gz
 	@${MV} ${WRKDIR}/maru18.bdf.v10.gz ${WRKDIR}/maru18.bdf.gz
@@ -41,7 +43,7 @@ pre-build:
 	@(cd ${WRKDIR}; ${SED} -f m18to16.sed < maru18.bdf > maru16.bdf)
 
 post-install:
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${FILESDIR}/LICENSE ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

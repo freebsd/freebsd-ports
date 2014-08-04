@@ -16,4 +16,6 @@ USES=		gmake perl5
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-pkgdocdir=${DOCSDIR}
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.mk>

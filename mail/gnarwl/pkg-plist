@@ -3,15 +3,15 @@ etc/gnarwl.cfg.sample
 man/man8/damnit.8.gz
 man/man8/gnarwl.8.gz
 sbin/damnit
-%%DOCSDIR%%/AUTHORS
-%%DOCSDIR%%/FAQ.gz
-%%DOCSDIR%%/HISTORY.gz
-%%DOCSDIR%%/INSTALL
-%%DOCSDIR%%/ISPEnv.schema
-%%DOCSDIR%%/ISPEnv2.schema
-%%DOCSDIR%%/LICENSE
-%%DOCSDIR%%/README
-%%DOCSDIR%%/example.ldif
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/FAQ.gz
+%%PORTDOCS%%%%DOCSDIR%%/HISTORY.gz
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/ISPEnv.schema
+%%PORTDOCS%%%%DOCSDIR%%/ISPEnv2.schema
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/example.ldif
 var/lib/gnarwl/.forward
 var/lib/gnarwl/badheaders.db.sample
 var/lib/gnarwl/blacklist.db.sample
@@ -19,7 +19,7 @@ var/lib/gnarwl/badheaders.txt.sample
 var/lib/gnarwl/blacklist.txt.sample
 var/lib/gnarwl/header.txt.sample
 var/lib/gnarwl/footer.txt.sample
-@dirrm %%DOCSDIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm var/lib/gnarwl/bin
 @dirrm var/lib/gnarwl/block
 @dirrm var/lib/gnarwl

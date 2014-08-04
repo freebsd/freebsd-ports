@@ -1,4 +1,4 @@
 bin/solitaire
-%%DOCSDIR%%/sol.pl
-%%DOCSDIR%%/sol-test.txt
-@dirrm %%DOCSDIR%%
+%%PORTDOCS%%%%DOCSDIR%%/sol.pl
+%%PORTDOCS%%%%DOCSDIR%%/sol-test.txt
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

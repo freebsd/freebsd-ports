@@ -122,16 +122,16 @@ man/man1/fvwm.1.gz
 share/applications/fvwmi.desktop
 share/applications/mini-fvwmi.desktop
 share/applications/opale.desktop
-%%DOCSDIR%%/docs/building.html
-%%DOCSDIR%%/docs/metisse-architecture.png
-%%DOCSDIR%%/docs/running.html
-%%DOCSDIR%%/docs/using.html
-%%DOCSDIR%%/index.html
-%%DOCSDIR%%/metisse.css
-%%DOCSDIR%%/no3d.png
-%%DOCSDIR%%/up.jpg
-@dirrm %%DOCSDIR%%/docs
-@dirrm %%DOCSDIR%%
+%%PORTDOCS%%%%DOCSDIR%%/docs/building.html
+%%PORTDOCS%%%%DOCSDIR%%/docs/metisse-architecture.png
+%%PORTDOCS%%%%DOCSDIR%%/docs/running.html
+%%PORTDOCS%%%%DOCSDIR%%/docs/using.html
+%%PORTDOCS%%%%DOCSDIR%%/index.html
+%%PORTDOCS%%%%DOCSDIR%%/metisse.css
+%%PORTDOCS%%%%DOCSDIR%%/no3d.png
+%%PORTDOCS%%%%DOCSDIR%%/up.jpg
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/docs
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 share/fvwm-insitu/ConfigFvwmBacker
 share/fvwm-insitu/ConfigFvwmButtons
 share/fvwm-insitu/ConfigFvwmDefaults

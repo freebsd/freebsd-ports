@@ -14,6 +14,8 @@ RUN_DEPENDS=	${PYGAME}
 
 USE_PYTHON=	yes
 
+OPTIONS_DEFINE=	DOCS
+
 do-build:
 	${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${WRKSRC}
 	${PYTHON_CMD} -O ${PYTHON_LIBDIR}/compileall.py ${WRKSRC}

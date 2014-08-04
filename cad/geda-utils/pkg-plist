@@ -17,11 +17,11 @@ bin/sarlacc_sym
 bin/smash_megafile
 bin/tragesym
 man/man1/grenum.1.gz
-%%DOCSDIR%%/readmes/README.grenum
-%%DOCSDIR%%/readmes/README.gsch2pcb
-%%DOCSDIR%%/readmes/README.olib
-%%DOCSDIR%%/readmes/README.tragesym
-%%DATADIR%%/system-gschlasrc
+%%PORTDOCS%%%%DOCSDIR%%/readmes/README.grenum
+%%PORTDOCS%%%%DOCSDIR%%/readmes/README.gsch2pcb
+%%PORTDOCS%%%%DOCSDIR%%/readmes/README.olib
+%%PORTDOCS%%%%DOCSDIR%%/readmes/README.tragesym
+%%PORTDOCS%%%%DATADIR%%/system-gschlasrc
 @dirrmtry %%DATADIR%%
-@dirrmtry %%DOCSDIR%%/readmes
-@dirrmtry %%DOCSDIR%%
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/readmes
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%
