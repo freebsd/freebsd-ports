@@ -29,11 +29,11 @@ USE_PERL5=	patch build
 
 UNMAKESELF=	${LOCALBASE}/bin/unmakeself
 
-.if defined(WITH_NVIDIA_GL)
-RUN_DEPENDS+=	${LINUXBASE}/usr/lib/libGL.so.1:${PORTSDIR}/x11/nvidia-driver
-.else
-USE_LINUX_APPS+=	dri
-.endif
+#.if defined(WITH_NVIDIA_GL)
+#RUN_DEPENDS+=	${LINUXBASE}/usr/lib/libGL.so.1:${PORTSDIR}/x11/nvidia-driver
+#.else
+#USE_LINUX_APPS+=	dri
+#.endif
 
 # Fixed by the first post-patch target line?  Also, linprocfs needs to be mounted.
 #.if ${OSVERSION} >= 900000 && ${ARCH} == "amd64"
