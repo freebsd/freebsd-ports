@@ -18,11 +18,10 @@ COMMENT=	Cross-platform music player based on Amarok 1.4
 
 LICENSE=	GPLv3
 
-LIB_DEPENDS=	libexecinfo.so:${PORTSDIR}/devel/libexecinfo \
-		libtag.so:${PORTSDIR}/audio/taglib \
+LIB_DEPENDS=	libtag.so:${PORTSDIR}/audio/taglib \
 		libchromaprint.so:${PORTSDIR}/audio/chromaprint \
 		libprotobuf.so:${PORTSDIR}/devel/protobuf \
- 	 	libqca.so:${PORTSDIR}/devel/qca \
+		libqca.so:${PORTSDIR}/devel/qca \
 		libqjson.so:${PORTSDIR}/devel/qjson \
 		libfftw3.so:${PORTSDIR}/math/fftw3 \
 		libechonest.so:${PORTSDIR}/audio/libechonest
@@ -33,7 +32,7 @@ BUILD_DEPENDS=	${LOCALBASE}/include/boost/shared_ptr.hpp:${PORTSDIR}/devel/boost
 LATEST_LINK=	${PORTNAME}${PKGNAMESUFFIX}
 PROJECTHOST=	${PORTNAME}${PKGNAMESUFFIX}
 
-USES=		compiler:c++11-lib cmake pkgconfig desktop-file-utils
+USES=		compiler:c++11-lib cmake pkgconfig desktop-file-utils execinfo
 USE_GL=		glew
 USE_QT4=	dbus gui xml qmake_build uic_build moc_build rcc_build \
 		linguist_build network sql opengl qtestlib corelib webkit \
