@@ -33,44 +33,31 @@ DOCS=		AUTHORS ChangeLog FAQ INSTALL NEWS README TODO \
 		doc/prosper-structure.eps doc/prosper-structure.fig \
 		doc/prosper-tour.pdf doc/prosper-tour.ps doc/prosper-tour.tex \
 		doc/rotation.ps doc/rotation.tex
-EXAMPLES_DIR=	doc/doc-examples
 
-NO_STAGE=	yes
+OPTIONS_DEFINE=	DOCS EXAMPLES
+
 post-extract:
 	@(cd ${WRKDIR}/contrib-prosper-1.0.0 && ${FIND} . | \
 		${CPIO} --quiet -dump ${WRKSRC}/contrib)
 
 do-install:
-	@${MKDIR} ${PROSPERDIR}/contrib/img
-	@${MKDIR} ${PROSPERDIR}/designer
-	@${MKDIR} ${PROSPERDIR}/img
-	${INSTALL_DATA} ${WRKSRC}/*.sty ${PROSPERDIR}
-	${INSTALL_DATA} ${WRKSRC}/*.cls ${PROSPERDIR}
-	${INSTALL_DATA} ${WRKSRC}/img/*.gif ${PROSPERDIR}/img
-	${INSTALL_DATA} ${WRKSRC}/img/*.ps  ${PROSPERDIR}/img
-	${INSTALL_DATA} ${WRKSRC}/contrib/*.sty ${PROSPERDIR}/contrib
-	${INSTALL_DATA} ${WRKSRC}/contrib/*.ps  ${PROSPERDIR}/contrib
-	${INSTALL_DATA} ${WRKSRC}/contrib/*.tex ${PROSPERDIR}/contrib
-	${INSTALL_DATA} ${WRKSRC}/contrib/img/*.ps ${PROSPERDIR}/contrib/img
-	${INSTALL_DATA} ${WRKSRC}/contrib/img/*.eps ${PROSPERDIR}/contrib/img
-	${INSTALL_DATA} ${WRKSRC}/contrib/img/*.gif ${PROSPERDIR}/contrib/img
-	${INSTALL_DATA} ${WRKSRC}/designer/prosper* ${PROSPERDIR}/designer
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-.for FILE in ${DOCS}
-	@${INSTALL_DATA} ${WRKSRC}/${FILE} ${DOCSDIR}
-.endfor
-	@${ECHO_MSG} "===> Documentation installed in ${DOCSDIR}."
-.endif
-.if !defined(NOPORTEXAMPLES)
-	@${MKDIR} ${EXAMPLESDIR}
-.for FILE in ${EXAMPLES_DIR}/Example*
-	@${INSTALL_DATA} ${WRKSRC}/${FILE} ${EXAMPLESDIR}
-.endfor
-	@${ECHO_MSG} "===> Examples installed in ${EXAMPLESDIR}."
-.endif
-
-post-install:
-	${MKTEXLSR}
+	@${MKDIR} ${STAGEDIR}${PROSPERDIR}/contrib/img
+	@${MKDIR} ${STAGEDIR}${PROSPERDIR}/designer
+	@${MKDIR} ${STAGEDIR}${PROSPERDIR}/img
+	${INSTALL_DATA} ${WRKSRC}/*.sty ${STAGEDIR}${PROSPERDIR}
+	${INSTALL_DATA} ${WRKSRC}/*.cls ${STAGEDIR}${PROSPERDIR}
+	${INSTALL_DATA} ${WRKSRC}/img/*.gif ${STAGEDIR}${PROSPERDIR}/img
+	${INSTALL_DATA} ${WRKSRC}/img/*.ps  ${STAGEDIR}${PROSPERDIR}/img
+	(cd ${WRKSRC}/contrib && ${INSTALL_DATA} *.sty *.ps *.tex \
+		${STAGEDIR}${PROSPERDIR}/contrib)
+	(cd ${WRKSRC}/contrib/img && ${INSTALL_DATA} *.ps *.eps *.gif \
+		${STAGEDIR}${PROSPERDIR}/contrib/img)
+	${INSTALL_DATA} ${WRKSRC}/designer/prosper* \
+		${STAGEDIR}${PROSPERDIR}/designer
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	(cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${STAGEDIR}${DOCSDIR})
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/doc-examples/Example* \
+		${STAGEDIR}${EXAMPLESDIR}
 
 .include <bsd.port.mk>
