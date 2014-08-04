@@ -11,7 +11,9 @@ COMMENT=	Platform-neutral API for system level and libc like functions
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/nspr/build
 
-USES=		gmake
+USES=		cpe gmake
+CPE_VENDOR=	mozilla
+CPE_PRODUCT=	netscape_portable_runtime
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_SCRIPT=../configure
