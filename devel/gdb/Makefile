@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gdb
-PORTVERSION=	7.7.1
+PORTVERSION=	7.8
 CATEGORIES=	devel
 MASTER_SITES=	GNU
 
@@ -11,7 +11,7 @@ COMMENT=	GNU GDB of newer version than comes with the system
 
 LICENSE=	GPLv3
 
-USES=		iconv gmake libtool tar:bzip2
+USES=		iconv gmake libtool tar:xz
 USE_CSTD=	gnu89
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CONFIGURED_M4=m4 CONFIGURED_BISON=byacc
@@ -101,9 +101,9 @@ do-install:
 .endif
 
 .if ${PORT_OPTIONS:MPYTHON}
-	(cd ${WRKSRC}/gdb; ${MAKE_CMD} DESTDIR=${STAGEDIR} install-python )
+	(cd ${WRKSRC}/gdb; ${GMAKE} DESTDIR=${STAGEDIR} install-python )
 	(cd ${WRKSRC}/gdb/data-directory ; \
-		${MAKE_CMD} DESTDIR=${STAGEDIR} install-python )
+		${GMAKE} DESTDIR=${STAGEDIR} install-python )
 .endif
 
 .if ${PORT_OPTIONS:MPYTHON}
