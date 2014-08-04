@@ -17,14 +17,13 @@ LICENSE=	GPLv3
 
 BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash	\
 		${LOCALBASE}/lib/libopenNURBS.a:${PORTSDIR}/graphics/opennurbs
-LIB_DEPENDS=	libexecinfo.so:${PORTSDIR}/devel/libexecinfo
 
 CONFLICTS=	texlive-base-*
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 MAKE_JOBS_UNSAFE=yes
 
-USES=		gmake qmake
+USES=		execinfo gmake qmake
 USE_LDCONFIG=	yes
 USE_QT4=	qmake_build codecs-cn codecs-jp codecs-kr codecs-tw corelib \
 		designer gui help imageformats moc_build network opengl rcc_build script \
