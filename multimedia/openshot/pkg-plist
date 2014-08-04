@@ -1,5 +1,7 @@
 bin/openshot
 bin/openshot-render
+man/man1/openshot.1.gz
+man/man1/openshot-render.1.gz
 %%PYTHON_SITELIBDIR%%/openshot/__init__.py
 %%PYTHON_SITELIBDIR%%/openshot/__init__.pyc
 %%PYTHON_SITELIBDIR%%/openshot/__init__.pyo
