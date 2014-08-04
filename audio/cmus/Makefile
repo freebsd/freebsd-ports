@@ -3,6 +3,7 @@
 
 PORTNAME=	cmus
 PORTVERSION=	2.5.1
+PORTREVISION=	1
 CATEGORIES=	audio
 
 MAINTAINER=	h.skuhra@gmail.com
