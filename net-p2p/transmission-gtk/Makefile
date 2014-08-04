@@ -1,12 +1,13 @@
 # $FreeBSD$
 
 PKGNAMESUFFIX=	-gtk
-PORTREVISION=	2
+PORTREVISION=	3
 
 MAINTAINER=	crees@FreeBSD.org
 COMMENT=	Fast and lightweight GTK+2 BitTorrent client
 
 LIB_DEPENDS=	${GEN_LIB_DEPENDS} \
+		libinotify.so:${PORTSDIR}/devel/libinotify \
 		libnotify.so:${PORTSDIR}/devel/libnotify \
 		libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib
 
