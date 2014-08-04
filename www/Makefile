@@ -539,6 +539,7 @@
     SUBDIR += mohawk
     SUBDIR += moinmoin
     SUBDIR += monast
+    SUBDIR += mongoose
     SUBDIR += mongrel2
     SUBDIR += moodle24
     SUBDIR += moodle25
