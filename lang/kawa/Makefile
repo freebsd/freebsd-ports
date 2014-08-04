@@ -15,12 +15,11 @@ LICENSE=	MIT
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/makeinfo:${PORTSDIR}/print/texinfo
 
-USES=		gmake libtool readline
+USES=		gmake readline
 USE_JAVA=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-kawa-frontend \
-		--with-java-source=${JAVA_PORT_VERSION} \
-		--with-libtool
+		--with-java-source=${JAVA_PORT_VERSION}
 CONFIGURE_ENV+=	MAKEINFO=${LOCALBASE}/bin/makeinfo
 MAKE_ENV+=	READLINE_LIB_PATH=${LOCALBASE}/lib
 
