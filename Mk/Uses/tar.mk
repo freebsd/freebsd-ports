@@ -16,7 +16,9 @@ tar_ARGS?=	none
 EXTRACT_SUFX?=	.tar.xz
 .elif ${tar_ARGS} == lzma
 EXTRACT_SUFX?=	.tar.lzma
-.elif ${tar_ARGS} == bzip2
+.elif ${tar_ARGS} == txz
+EXTRACT_SUFX?=	.txz
+.elif ${tar_ARGS} == bzip2 || ${tar_ARGS} == bz2
 EXTRACT_SUFX?=	.tar.bz2
 .elif ${tar_ARGS} == tgz
 EXTRACT_SUFX?=	.tgz
