@@ -11,7 +11,7 @@ include/mpc/mpcmath.h
 include/mpc/reader.h
 include/mpc/streaminfo.h
 lib/libmpcdec.a
-lib/libmpcdec.la
 lib/libmpcdec.so
-lib/libmpcdec.so.7
+lib/libmpcdec.so.6
+lib/libmpcdec.so.6.1.0
 @dirrm include/mpc
