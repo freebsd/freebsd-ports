@@ -2,10 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	the_silver_searcher
-PORTVERSION=	0.22.0
+PORTVERSION=	0.24.0
 CATEGORIES=	textproc
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Code-searching tool similar to ack but faster
 
 LICENSE=	APACHE20
@@ -15,7 +15,7 @@ LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre
 USE_GITHUB=	yes
 GH_ACCOUNT=	ggreer
 GH_TAGNAME=	${PORTVERSION}
-GH_COMMIT=	9303d2b
+GH_COMMIT=	7b24ee5
 
 ACLOCAL_ARGS+=	-I ${ACLOCAL_DIR}
 AUTOMAKE_ARGS+=	--add-missing
