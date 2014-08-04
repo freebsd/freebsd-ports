@@ -22,13 +22,13 @@ RUN_DEPENDS=	pkexec:${PORTSDIR}/sysutils/polkit
 
 PORTSCOUT=	limitw:1,even
 
-USES=		gettext gmake pathfix pkgconfig tar:xz
+USES=		gettext gmake libtool pathfix pkgconfig tar:xz
 USE_MATE=	autogen common:build docutils intlhack libmatekeyring \
 		panel
 USE_XORG=	x11 xext xproto xrandr xrender
 USE_GNOME=	cairo glib20 gnomehier gtk20
 INSTALLS_OMF=	yes
-USE_AUTOTOOLS=	aclocal:env autoconf:env automake:env libtool libtoolize:env
+USE_AUTOTOOLS=	aclocal:env autoconf:env automake:env libtoolize:env
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
 CONFIGURE_ARGS=	--with-doc-dir=${PREFIX}/share/doc \
