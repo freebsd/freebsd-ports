@@ -6371,3 +6371,6 @@ sysutils/readlink||2014-08-03|Has expired: All features implemented in the base 
 net-mgmt/bsd-airtools||2014-08-04|Has expired: "broken by removal of wicontrol ioctls from if_wavelan_ieee.h; domain disappeared"
 www/moodle||2014-08-04|Has expired: Upstream support ended
 databases/bucardo|databases/p5-Bucardo|2014-08-04|Dupplicate
+security/p5-openxpki-client|security/p5-openxpki|2014-08-04|Has expired: now incorporated within security/p5-openxpki
+security/p5-openxpki-client-scep|security/p5-openxpki|2014-08-04|Has expired: now incorporated within security/p5-openxpki
+security/p5-openxpki-deployment|security/p5-openxpki|2014-08-04|Has expired: now incorporated within security/p5-openxpki
