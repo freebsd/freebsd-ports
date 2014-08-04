@@ -3,21 +3,22 @@
 
 PORTNAME=	poker-eval
 PORTVERSION=	0.138
+PORTREVISION=	1
 CATEGORIES=	games python
 MASTER_SITES=	http://download.gna.org/pokersource/sources/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	py${PORTNAME}-${PORTVERSION:E}.0
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	games@FreeBSD.org
 COMMENT=	Python adaptor for the poker-eval toolkit
 
 LIB_DEPENDS=	libpoker-eval.so:${PORTSDIR}/games/poker-eval
 
 LICENSE=	GPLv3
 
-USES=		pkgconfig
+USES=		libtool pkgconfig
 USE_PYTHON=	2
-USE_AUTOTOOLS=	aclocal autoconf automake libtool
+USE_AUTOTOOLS=	aclocal autoconf automake
 ACLOCAL_ARGS=	-I config
 AUTOMAKE_ARGS=	--add-missing
 CONFIGURE_ARGS=	PYTHON=""
