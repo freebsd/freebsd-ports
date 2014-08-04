@@ -2,55 +2,55 @@
 # $FreeBSD$
 
 PORTNAME=	thunderbird
-DISTVERSION=	24.6.0
-PORTREVISION=	3
+DISTVERSION=	31.0
 CATEGORIES=	mail news net-im ipv6
 MASTER_SITES=	MOZILLA/${PORTNAME}/releases/${DISTVERSION}/source \
-		https://ftp.mozilla.org/pub/mozilla.org/${PORTNAME}/candidates/${DISTVERSION}-candidates/build2/source/
+		https://ftp.mozilla.org/pub/mozilla.org/${PORTNAME}/candidates/${DISTVERSION}-candidates/build1/source/
 DISTFILES=	${PORTNAME}-${DISTVERSION}.source${EXTRACT_SUFX}
 EXTRACT_ONLY=	${PORTNAME}-${DISTVERSION}.source${EXTRACT_SUFX}
 
 MAINTAINER=	gecko@FreeBSD.org
 COMMENT=	Mozilla Thunderbird is standalone mail and news that stands above
 
-BUILD_DEPENDS=	nspr>=4.10.2:${PORTSDIR}/devel/nspr \
-		nss>=3.15.4:${PORTSDIR}/security/nss \
-		sqlite3>=3.7.17:${PORTSDIR}/databases/sqlite3 \
-		${PYTHON_PKGNAMEPREFIX}sqlite3>0:${PORTSDIR}/databases/py-sqlite3 \
-		cairo>=1.10.2_1,1:${PORTSDIR}/graphics/cairo \
-		soundtouch>=1.7.0:${PORTSDIR}/audio/soundtouch \
-		harfbuzz>=0.9.16:${PORTSDIR}/print/harfbuzz \
-		graphite2>=1.2.3:${PORTSDIR}/graphics/graphite2 \
+BUILD_DEPENDS=	nspr>=4.10.6:${PORTSDIR}/devel/nspr \
+		nss>=3.16:${PORTSDIR}/security/nss \
+		soundtouch>=1.8.0:${PORTSDIR}/audio/soundtouch \
+		harfbuzz>=0.9.25:${PORTSDIR}/print/harfbuzz \
+		graphite2>=1.2.4:${PORTSDIR}/graphics/graphite2 \
 		libvorbis>=1.3.4:${PORTSDIR}/audio/libvorbis \
 		opus>=1.1:${PORTSDIR}/audio/opus \
+		libvpx>=1.3.0:${PORTSDIR}/multimedia/libvpx \
+		sqlite3>=3.8.4.2:${PORTSDIR}/databases/sqlite3 \
+		${PYTHON_PKGNAMEPREFIX}sqlite3>0:${PORTSDIR}/databases/py-sqlite3 \
 		v4l_compat>0:${PORTSDIR}/multimedia/v4l_compat \
 		zip:${PORTSDIR}/archivers/zip \
 		unzip:${PORTSDIR}/archivers/unzip
+#		cairo>=1.12.16,2:${PORTSDIR}/graphics/cairo \
+
 LIB_DEPENDS=	libv4l2.so:${PORTSDIR}/multimedia/libv4l
 
-EM_VERSION=	1.6
-L_VERSION=	2.6.5
+EM_VERSION=	1.7
+L_VERSION=	3.3
 
 SSP_UNSAFE=	yes
 USE_AUTOTOOLS=	autoconf213:env
 USE_PYTHON_BUILD=2
 OBJDIR_BUILD=	# in-tree build broken after bug 789837
 USE_GECKO=	gecko
-USE_MOZILLA=	# empty
+USE_MOZILLA=	-cairo
 
 WANT_GNOME=	yes
-USE_QT4=	# empty
+USE_QT5=	# empty
 QT_NONSTANDARD=	yes
 ALL_TARGET=	default
 USE_GL=		gl
 USES=		dos2unix tar:bzip2
 DOS2UNIX_FILES=	mozilla/media/webrtc/trunk/webrtc/system_wrappers/source/spreadsortlib/spreadsort.hpp
 
-MOZ_PROTOCOLS=	http,ftp,file,viewsource,res,data,wyciwyg,websocket
 MOZ_OPTIONS=	--program-transform-name='s/thunderbird/${MOZILLA}/' \
 	--enable-single-profile --disable-profilesharing \
 	--enable-application=mail --enable-official-branding
-MOZ_MK_OPTIONS=	MOZ_MOZ_THUNDERBIRD=1 MAIL_PKG_SHARED=1
+MOZ_MK_OPTIONS=	MOZ_THUNDERBIRD=1 MAIL_PKG_SHARED=1
 MOZ_EXPORT=		MOZ_THUNDERBIRD=1 MAIL_PKG_SHARED=1
 MOZ_PKGCONFIG_FILES=
 
@@ -74,13 +74,34 @@ OPTIONS_DEFAULT:=${OPTIONS_DEFAULT:S/GSTREAMER//}
 
 .include <bsd.port.pre.mk>
 
-WRKSRC=		${WRKDIR}/comm-esr24
+WRKSRC=		${WRKDIR}/comm-esr31
 MOZSRC:=	${WRKSRC}/mozilla
 
 XPI_LIBDIR=	${PREFIX}/lib/xpi
 
+# avoid clang 3.2/3.3 crash in js/src/jsgc.cpp on refillFreeList<(js::AllowGC)1>
+# http://svnweb.freebsd.org/changeset/base/255804
+.if ${CHOSEN_COMPILER_TYPE} == clang && ${ARCH} == i386 && ${OSVERSION} < 1000056
+. if ${PORT_OPTIONS:MOPTIMIZED_CFLAGS}
+BROKEN=		Cannot build with OPTIMIZED_CFLAGS option due to \
+		a ${CHOSEN_COMPILER_TYPE} bug: unset the option or \
+		use FAVORITE_COMPILER=gcc in Makefile.local/make.conf
+# apply workaround only for -O2 or greater
+. elif ${CXXFLAGS:M-O*} && ! ${CXXFLAGS:M-O[01]}
+.  if ${MACHINE_CPU:Msse2}
+CXXFLAGS+=	-msse2
+.  else
+CXXFLAGS+=	-O1
+.  endif
+. endif
+.endif
+
 .if ${PORT_OPTIONS:MALSA}
-BUILD_DEPENDS+=	alsa-lib>=1.0.27.2_1:${PORTSDIR}/audio/alsa-lib
+RUN_DEPENDS+=	alsa-lib>=1.0.27.2_1:${PORTSDIR}/audio/alsa-lib
+.endif
+
+.if ${PORT_OPTIONS:MGSTREAMER}
+RUN_DEPENDS+=	gstreamer1-libav>=1.2.4_1:${PORTSDIR}/multimedia/gstreamer1-libav
 .endif
 
 .if ${PORT_OPTIONS:MENIGMAIL}
@@ -89,7 +110,7 @@ DISTFILES+=	${EM_DISTFILE}:enigmail
 RUN_DEPENDS+=	gpg:${PORTSDIR}/security/gnupg
 EM_DISTNAME=	enigmail-${EM_VERSION}
 EM_DISTFILE=	${EM_DISTNAME}.tar.gz
-EM_XPI_FILE=	${MOZ_OBJDIR}/mozilla/dist/bin/${EM_DISTNAME}-${OPSYS:tl}-${ARCH:S/amd64/x86_64/}.xpi
+EM_XPI_FILE=	${WRKSRC}/mailnews/extensions/enigmail/build/${EM_DISTNAME}-${OPSYS:tl}-${ARCH:S/amd64/x86_64/:S/i386/x86/}-gcc3.xpi
 EM_ORIG_ID=	{847b3a00-7ab1-11d4-8f02-006008948af5}
 EM_ID=		${PORTNAME}@mozilla-enigmail.org
 EM_ID_RFILES=	${XPI_LIBDIR}/${EM_ID}/install.rdf \
@@ -123,10 +144,12 @@ post-patch:
 		${WRKSRC}/mail/app/nsMailApp.cpp
 .if ${PORT_OPTIONS:MENIGMAIL}
 	@${REINPLACE_CMD} -e 's,/usr/bin/perl,${PERL},' \
-		${WRKSRC}/mailnews/extensions/enigmail/makemake
+		${WRKSRC}/mailnews/extensions/enigmail/util/fixlang.pl \
+		${WRKSRC}/mailnews/extensions/enigmail/util/make-lang-xpi.pl
 	@${REINPLACE_CMD} -e '/^xpi/s/$$/ all/' \
+		-e '/^all/s/ xpi//' \
 		-e '/^XPI_MODULE_VERS/s/= .*/= ${EM_VERSION}/' \
-		${WRKSRC}/mailnews/extensions/enigmail/Makefile.in
+		${WRKSRC}/mailnews/extensions/enigmail/Makefile
 	@${REINPLACE_CMD} -e '/em:version/s,>[^<]*<,>${EM_VERSION}<,' \
 		-e '/em:maxVersion/s/pre//' \
 		${WRKSRC}/mailnews/extensions/enigmail/package/install.rdf
@@ -138,11 +161,13 @@ pre-configure:
 	(cd ${MOZSRC}/js/src/ && ${AUTOCONF})
 
 .if ${PORT_OPTIONS:MENIGMAIL}
+post-configure:
+	cd ${WRKSRC}/mailnews/extensions/enigmail/ && \
+		${SETENV} ${MAKE_ENV} ./configure
+
 post-build:
-	cd ${WRKSRC}/mailnews/extensions/enigmail && \
-		./makemake -r -o ${MOZ_OBJDIR}
 	${SETENV} ${MAKE_ENV} ${MAKE_CMD} -j${MAKE_JOBS_NUMBER} all xpi \
-		-C ${MOZ_OBJDIR}/mailnews/extensions/enigmail
+		-C ${WRKSRC}/mailnews/extensions/enigmail
 .endif
 
 port-pre-install:

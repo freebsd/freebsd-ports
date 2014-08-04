@@ -251,7 +251,7 @@ index 87db361..7947626 100644
 +MOZ_NATIVE_SOUNDTOUCH=)
 +
 +if test -n "$MOZ_NATIVE_SOUNDTOUCH"; then
-+    PKG_CHECK_MODULES(MOZ_SOUNDTOUCH, soundtouch >= 1.7.0)
++    PKG_CHECK_MODULES(MOZ_SOUNDTOUCH, soundtouch >= 1.8.0)
 +
 +    AC_LANG_SAVE
 +    AC_LANG_CPLUSPLUS
@@ -423,10 +423,10 @@ index 00e77e7..55f48ab 100644
          }, {
            'dependencies': [
              '<(DEPTH)/third_party/opus/opus.gyp:opus'
-diff --git toolkit/library/Makefile.in toolkit/library/Makefile.in
+diff --git toolkit/library/libxul.mk toolkit/library/libxul.mk
 index d42137a..695e75a8 100644
---- toolkit/library/Makefile.in
-+++ toolkit/library/Makefile.in
+--- toolkit/library/libxul.mk
++++ toolkit/library/libxul.mk
 @@ -77,6 +77,34 @@ ifdef MOZ_NATIVE_HUNSPELL
  EXTRA_DSO_LDOPTS += $(MOZ_HUNSPELL_LIBS)
  endif
