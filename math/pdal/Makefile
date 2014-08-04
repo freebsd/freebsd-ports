@@ -3,7 +3,7 @@
 
 PORTNAME=	pdal
 PORTVERSION=	0.9.8
-CATEGORIES=	databases math graphics
+CATEGORIES=	math databases graphics
 MASTER_SITES=	http://github.com/PDAL/PDAL/archive/${PORTVERSION}.tar.gz?dummy=/
 
 MAINTAINER=	coder@tuxfamily.org
