@@ -1,7 +1,13 @@
 @unexec /bin/echo "===>" Stopping bopm...
 @unexec /usr/bin/killall bopm 2>/dev/null || true
 bin/bopm
+@owner bopm
+@group bopm
+@mode 640
 etc/bopm.conf.sample
+@owner
+@group
+@mode
 include/opm.h
 include/opm_error.h
 include/opm_types.h
@@ -11,3 +17,4 @@ lib/libopm.so.0
 lib/libopm.so
 lib/libopm.la
 lib/libopm.a
+@exec install -d -m 750 -o bopm -g bopm %%LOGDIR%% 2>/dev/null || true
