@@ -27,22 +27,14 @@ SUB_LIST=	LOGDIR=${LOGDIR}
 USERS=	bopm
 GROUPS=	bopm
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} \
 		-e 's,data_DATA = bopm.conf.sample,data_DATA =,g' \
-		-e 's,$(sysconfdir)/bopm.conf,$(sysconfdir)/bopm.conf.sample,g' \
-		${WRKSRC}/Makefile.in
+		-e 's,$$(sysconfdir)/bopm.conf,$$(DESTDIR)&.sample,g' \
+		-e '/localstatedir/d' ${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} \
 		-e 's,/some/path/bopm.pid,${LOGDIR}/bopm.pid,g' \
 		-e 's,/some/path/scan.log,${LOGDIR}/scan.log,g' \
 		${WRKSRC}/bopm.conf.sample
-
-post-install:
-	@${CHOWN} ${USERS}:${GROUPS} ${LOGDIR}
-	@${CHMOD} 750 ${LOGDIR}
-	@${CHOWN} ${USERS}:${GROUPS} ${PREFIX}/etc/bopm.conf.sample
-	@${CHMOD} 640 ${PREFIX}/etc/bopm.conf.sample
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
