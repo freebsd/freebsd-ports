@@ -3,7 +3,7 @@
 
 PORTNAME=	octave
 PORTVERSION=	3.8.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	math
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	octave
@@ -20,7 +20,7 @@ BUILD_DEPENDS=	gnuplot:${PORTSDIR}/math/gnuplot \
 RUN_DEPENDS=	gnuplot:${PORTSDIR}/math/gnuplot \
 		gsed:${PORTSDIR}/textproc/gsed \
 		${LOCALBASE}/bin/makeinfo:${PORTSDIR}/print/texinfo
-LIB_DEPENDS=	libGraphicsMagick.so.14:${PORTSDIR}/graphics/GraphicsMagick \
+LIB_DEPENDS=	libGraphicsMagick.so:${PORTSDIR}/graphics/GraphicsMagick \
 		libarpack.so:${PORTSDIR}/math/arpack \
 		libcurl.so:${PORTSDIR}/ftp/curl \
 		libfftw3.so:${PORTSDIR}/math/fftw3 \

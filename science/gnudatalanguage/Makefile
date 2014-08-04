@@ -3,7 +3,7 @@
 
 PORTNAME=	gnudatalanguage
 DISTVERSION=	0.9.4
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	science lang
 MASTER_SITES=	SF/${PORTNAME}/gdl/${DISTVERSION}
 .if defined(BUILD_PYTHON_MODULE)
@@ -65,7 +65,7 @@ PLIST_SUB+=	MASTER=""
 .endif
 
 .if !defined(WITHOUT_GRAPHICSMAGICK)
-LIB_DEPENDS+=	libGraphicsMagick.so.14:${PORTSDIR}/graphics/GraphicsMagick
+LIB_DEPENDS+=	libGraphicsMagick.so:${PORTSDIR}/graphics/GraphicsMagick
 CMAKE_ARGS+=	-DGRAPHICSMAGICK:BOOL=YES
 .else
 CMAKE_ARGS+=	-DGRAPHICSMAGICK:BOOL=NO
