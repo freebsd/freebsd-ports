@@ -20,19 +20,10 @@ LIB_DEPENDS=	libenchant.so:${PORTSDIR}/textproc/enchant \
 		libcurl.so:${PORTSDIR}/ftp/curl \
 		libsoup-2.4.so:${PORTSDIR}/devel/libsoup
 
-<<<<<<< HEAD
 USE_GSTREAMER=	yes
 USE_XORG=	xt
 USES=		bison gettext gmake libtool:keepla perl5 pkgconfig tar:xz
 USE_GNOME=	gtk20 libxslt introspection:build
-=======
-USE_PYTHON_BUILD=	2
-USE_GSTREAMER=	yes
-USE_XORG=	xt
-USES=		bison gmake pkgconfig gettext perl5 tar:xz
-USE_AUTOTOOLS=	libtool
-USE_GNOME=	gtk20 introspection:build libxslt ltverhack
->>>>>>> 8aeb7e061fcefefeb950c49bfe8773656105b202
 USE_SQLITE=	yes
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
