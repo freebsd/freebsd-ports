@@ -78,6 +78,7 @@
     SUBDIR += grepcidr
     SUBDIR += grepip
     SUBDIR += gsnmp
+    SUBDIR += guifi-snpservices
     SUBDIR += hastmon
     SUBDIR += hawk
     SUBDIR += horde3-nic
