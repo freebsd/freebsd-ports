@@ -3,15 +3,16 @@
 
 PORTNAME=	mailx
 PORTVERSION=	12.4
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	mail ipv6
 MASTER_SITES=	SF/heirloom/heirloom-${PORTNAME}/${PORTVERSION}
 PKGNAMEPREFIX=	heirloom-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	jamie@dyslexicfish.net
 COMMENT=	BSD mail utility with MIME, IMAP, POP3, SMTP, and S/MIME extensions
 
-OPTIONS_DEFINE=	IPV6 DOCS
+OPTIONS_DEFINE=		IPV6 DOCS SENDMAIL_PORT
+SENDMAIL_PORT_DESC=	Use sendmail from ports instead of base
 
 CONFLICTS=	mailx-[0-9]*
 
@@ -20,7 +21,6 @@ USES=		iconv tar:bzip2
 USE_OPENSSL=	yes
 MAKE_ARGS=	PREFIX="${PREFIX}" \
 		SYSCONFDIR="${PREFIX}/etc" \
-		SENDMAIL="/usr/sbin/sendmail" \
 		CPPFLAGS="${CPPFLAGS}" \
 		LDFLAGS="${LDFLAGS}"
 
@@ -33,6 +33,13 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 
 .if ${PORT_OPTIONS:MIPV6}
 MAKE_ARGS+=	IPv6="-DHAVE_IPv6_FUNCS"
+.endif
+
+.if ${PORT_OPTIONS:MSENDMAIL_PORT}
+MAKE_ARGS+=	SENDMAIL="${LOCALBASE}/sbin/sendmail"
+RUN_DEPENDS=	${LOCALBASE}/sbin/sendmail:${PORTSDIR}/mail/sendmail
+.else
+MAKE_ARGS+=	SENDMAIL="/usr/sbin/sendmail"
 .endif
 
 do-install:
