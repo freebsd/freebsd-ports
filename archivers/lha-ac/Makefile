@@ -22,7 +22,8 @@ MAN1_JA=	lha-ac.1
 PLIST_FILES+=	${__MANPAGES}
 
 OPTIONS_DEFINE=	NLS
-NLS_CONFIGURE_ENABLE=	multibyte-filename=auto
+NLS_CONFIGURE_ON=	--enable-multibyte-filename=auto
+NLS_CONFIGURE_OFF=	--disable-multibyte-filename
 
 do-install:
 	-${MKDIR} ${STAGEDIR}${PREFIX}/man/ja/man1
