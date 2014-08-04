@@ -1,0 +1,6 @@
+bin/alt_getopt
+bin/alt_getopt.sh
+bin/runawk
+man/man1/alt_getopt.1.gz
+man/man1/runawk.1.gz
+man/man3/runawk_modules.3.gz

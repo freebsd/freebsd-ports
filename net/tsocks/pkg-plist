@@ -8,5 +8,5 @@ man/man8/tsocks.8.gz
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tsocks.conf.complex.example
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tsocks.conf.simple.example
 %%PORTDOCS%%%%DOCSDIR%%/README
-@dirrm %%EXAMPLESDIR%%
-@dirrm %%DOCSDIR%%
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

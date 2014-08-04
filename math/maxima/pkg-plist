@@ -5,6 +5,7 @@ info/maxima-index.lisp
 %%LISPBINARY%%lib/maxima/%%PORTVERSION%%/%%BINDIR%%/%%LISPBIN%%
 lib/maxima/%%PORTVERSION%%/%%BINDIR%%/%%MAXIMABIN%%
 libexec/maxima/%%PORTVERSION%%/mgnuplot
+man/man1/maxima.1.gz
 %%DATADIR%%/%%PORTVERSION%%/%%DATADIR%%-init.lisp
 %%DATADIR%%/%%PORTVERSION%%/demo/array.dem
 %%DATADIR%%/%%PORTVERSION%%/demo/cf.dem

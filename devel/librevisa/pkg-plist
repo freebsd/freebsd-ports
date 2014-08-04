@@ -1,0 +1,10 @@
+include/visa.h
+include/visatype.h
+lib/libvisa.a
+lib/libvisa.so
+lib/libvisa.so.0
+lib/libvisa.so.0.0.0
+libdata/pkgconfig/librevisa.pc
+man/man3/viClose.3visa.gz
+man/man3/viOpenDefaultRM.3visa.gz
+man/man7/visa.7visa.gz

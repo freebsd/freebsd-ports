@@ -3,7 +3,7 @@
 
 PORTNAME=	t1lib
 PORTVERSION=	5.1.2
-PORTREVISION=	2
+PORTREVISION=	3
 PORTEPOCH=	1
 CATEGORIES=	devel
 MASTER_SITES=	SUNSITE/libs/graphics/ \
@@ -14,8 +14,9 @@ COMMENT=	Type 1 font rasterization library for Unix/X11
 
 LICENSE=	LGPL20
 
-USES=		gmake
-USE_AUTOTOOLS=	libtool
+USES=		gmake libtool
+USE_AUTOTOOLS=	libtoolize
+GNU_CONFIGURE=	yes
 ALL_TARGET=	without_doc
 USE_LDCONFIG=	yes
 

@@ -15,8 +15,7 @@ RUN_DEPENDS=	rarian-sk-config:${PORTSDIR}/textproc/rarian
 
 PORTSCOUT=	limitw:1,even
 
-USES=		gettext gmake pathfix pkgconfig
-USE_XZ=		yes
+USES=		gettext gmake pathfix pkgconfig tar:xz
 USE_MATE=	docutils
 USE_GNOME=	gnomehier glib20 gtk20 intlhack
 INSTALLS_OMF=	yes

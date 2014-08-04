@@ -4,6 +4,7 @@ etc/smartd_warning.sh
 man/man5/smartd.conf.5.gz
 man/man8/smartd.8.gz
 man/man8/smartctl.8.gz
+man/man8/update-smart-drivedb.8.gz
 sbin/smartctl
 sbin/smartd
 sbin/update-smart-drivedb
@@ -11,3 +12,4 @@ sbin/update-smart-drivedb
 @dirrm %%DATADIR%%
 @dirrmtry etc/periodic/daily
 @dirrmtry etc/periodic
+@dirrmtry etc/smartd_warning.d

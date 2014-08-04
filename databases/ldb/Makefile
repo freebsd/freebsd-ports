@@ -1,8 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=		ldb
-PORTVERSION=		1.1.16
-PORTREVISION=		1
+PORTVERSION=		1.1.17
+PORTREVISION=		0
 PORTEPOCH=		0
 CATEGORIES=		databases
 MASTER_SITES=		${MASTER_SITE_SAMBA}
@@ -31,6 +31,9 @@ CONFIGURE_ARGS+=	--prefix=${PREFIX} \
 			--infodir=${PREFIX}/${INFO_PATH}/${INFO_SUBDIR}
 # Support staging
 DESTDIRNAME=		--destdir
+
+OPTIONS_DEFINE=		MANPAGES
+MANPAGES_DESC=		Build and install manpages (requires textproc/docbook-xsl)
 
 .include <bsd.port.options.mk>
 

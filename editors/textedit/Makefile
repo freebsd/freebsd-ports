@@ -13,7 +13,7 @@ COMMENT=	Basic text editor for GNUstep
 
 BROKEN=		Does not link
 
-USE_BZIP2=	yes
+USES=	tar:bzip2
 USE_GNUSTEP=	yes
 USE_GNUSTEP_BACK=	yes
 USE_GNUSTEP_BUILD=	yes

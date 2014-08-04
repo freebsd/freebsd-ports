@@ -17,6 +17,7 @@
     SUBDIR += anubis
     SUBDIR += archivemail
     SUBDIR += archiveopteryx
+    SUBDIR += archiveopteryx-devel
     SUBDIR += archivesmtp
     SUBDIR += archmbox
     SUBDIR += ask
@@ -123,7 +124,6 @@
     SUBDIR += exilog
     SUBDIR += exim
     SUBDIR += exim-doc-html
-    SUBDIR += exim-doc-info
     SUBDIR += exim-doc-pdf
     SUBDIR += exim-doc-postscript
     SUBDIR += exim-ldap2
@@ -141,6 +141,7 @@
     SUBDIR += ezmlm-idx
     SUBDIR += ezmlm-web
     SUBDIR += faces
+    SUBDIR += fastforward
     SUBDIR += fdm
     SUBDIR += fetchmail
     SUBDIR += filtermail
@@ -151,7 +152,6 @@
     SUBDIR += gbuffy
     SUBDIR += geary
     SUBDIR += gensig
-    SUBDIR += getlive
     SUBDIR += getmail
     SUBDIR += gkrellmmailwatch2
     SUBDIR += gld
@@ -508,7 +508,6 @@
     SUBDIR += postfix-postfwd
     SUBDIR += postfix-tls
     SUBDIR += postfix210
-    SUBDIR += postfix27
     SUBDIR += postfix28
     SUBDIR += postfix29
     SUBDIR += postfixadmin

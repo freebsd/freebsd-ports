@@ -12,7 +12,7 @@ COMMENT=	Java Game Controller API
 BUILD_DEPENDS=	${JAVALIBDIR}/jutils/jutils.jar:${PORTSDIR}/games/jutils
 RUN_DEPENDS=	${JAVALIBDIR}/jutils/jutils.jar:${PORTSDIR}/games/jutils
 
-USE_BZIP2=	yes
+USES=	tar:bzip2
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
 JAVA_OS=	native

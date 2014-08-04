@@ -27,7 +27,7 @@ CONFIGURE_ENV=	JPEG_CFLAGS="-I${LOCALBASE}/include" \
 CONFIGURE_ARGS=	--enable-threads=pthread --enable-shared
 USE_LDCONFIG=	yes
 CONFLICTS=	djvulibre-nox11-3*
-WRKSRC =	${WRKDIR}/${DISTNAME:R}
+WRKSRC=		${WRKDIR}/${DISTNAME:R}
 
 PORTDOCS=	djvu2spec.djvu djvu3spec.djvu djvuchanges.txt lizard2002.djvu lizard2007.djvu
 

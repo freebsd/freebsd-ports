@@ -20,6 +20,10 @@ LICENSE_PERMS=	auto-accept
 
 RUN_DEPENDS=	acroreadwrapper>=0.0.20110529:${PORTSDIR}/print/acroreadwrapper
 
+FORBIDDEN=	No longer maintained upstream since 2013-06-26
+DEPRECATED=	No longer maintained upstream since 2013-06-26
+EXPIRATION_DATE=2014-08-31
+
 USES=		tar:bzip2
 RESTRICTED=	Must fill out redistribution form at http://www.adobe.com/products/acrobat/distribute.html
 ONLY_FOR_ARCHS=	amd64 i386

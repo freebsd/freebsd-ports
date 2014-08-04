@@ -23,8 +23,7 @@ LIB_DEPENDS=	libgmp.so:${PORTSDIR}/math/gmp
 #PATCHFILES!=	/usr/bin/jot -s " " -w patch%02d ${PATCHLEVEL} 1 ${PATCHLEVEL}
 #PATCH=		${LOCALBASE}/bin/gpatch
 
-USES=		libtool:keepla
-USE_XZ=		yes
+USES=		libtool:keepla tar:xz
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-gmp=${LOCALBASE}
 

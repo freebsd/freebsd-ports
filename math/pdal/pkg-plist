@@ -1,0 +1,122 @@
+bin/pc2pc
+bin/pcequal
+bin/pcinfo
+bin/pcpipeline
+bin/pcquery
+bin/pdal-config
+include/pdal/Bounds.hpp
+include/pdal/Dimension.hpp
+include/pdal/Endian.hpp
+include/pdal/FileUtils.hpp
+include/pdal/Filter.hpp
+include/pdal/FilterIterator.hpp
+include/pdal/GDALUtils.hpp
+include/pdal/GlobalEnvironment.hpp
+include/pdal/Log.hpp
+include/pdal/Metadata.hpp
+include/pdal/MultiFilter.hpp
+include/pdal/MultiFilterIterator.hpp
+include/pdal/Object.hpp
+include/pdal/Options.hpp
+include/pdal/PipelineManager.hpp
+include/pdal/PipelineReader.hpp
+include/pdal/PipelineWriter.hpp
+include/pdal/PointBuffer.hpp
+include/pdal/Range.hpp
+include/pdal/Reader.hpp
+include/pdal/ReaderIterator.hpp
+include/pdal/Schema.hpp
+include/pdal/SpatialReference.hpp
+include/pdal/Stage.hpp
+include/pdal/StageBase.hpp
+include/pdal/StageFactory.hpp
+include/pdal/StageIterator.hpp
+include/pdal/StreamFactory.hpp
+include/pdal/ThreadEnvironment.hpp
+include/pdal/UserCallback.hpp
+include/pdal/Utils.hpp
+include/pdal/Vector.hpp
+include/pdal/Writer.hpp
+include/pdal/XMLSchema.hpp
+include/pdal/drivers/buffer/Reader.hpp
+include/pdal/drivers/caris/CloudIterator.hpp
+include/pdal/drivers/caris/CloudReader.hpp
+include/pdal/drivers/faux/Reader.hpp
+include/pdal/drivers/faux/Writer.hpp
+include/pdal/drivers/las/Header.hpp
+include/pdal/drivers/las/Reader.hpp
+include/pdal/drivers/las/ReaderBase.hpp
+include/pdal/drivers/las/SummaryData.hpp
+include/pdal/drivers/las/Support.hpp
+include/pdal/drivers/las/VariableLengthRecord.hpp
+include/pdal/drivers/las/Writer.hpp
+include/pdal/drivers/mrsid/Reader.hpp
+include/pdal/drivers/nitf/Reader.hpp
+include/pdal/drivers/nitf/Writer.hpp
+include/pdal/drivers/oci/Reader.hpp
+include/pdal/drivers/oci/Writer.hpp
+include/pdal/drivers/oci/common.hpp
+include/pdal/drivers/oci/oci_wrapper.h
+include/pdal/drivers/p2g/Writer.hpp
+include/pdal/drivers/pgpointcloud/Reader.hpp
+include/pdal/drivers/pgpointcloud/Writer.hpp
+include/pdal/drivers/pgpointcloud/common.hpp
+include/pdal/drivers/pipeline/Reader.hpp
+include/pdal/drivers/qfit/Reader.hpp
+include/pdal/drivers/soci/Reader.hpp
+include/pdal/drivers/soci/Writer.hpp
+include/pdal/drivers/soci/common.hpp
+include/pdal/drivers/terrasolid/Reader.hpp
+include/pdal/drivers/text/Writer.hpp
+include/pdal/filters/ByteSwap.hpp
+include/pdal/filters/Cache.hpp
+include/pdal/filters/Chipper.hpp
+include/pdal/filters/Color.hpp
+include/pdal/filters/Colorization.hpp
+include/pdal/filters/Crop.hpp
+include/pdal/filters/Decimation.hpp
+include/pdal/filters/HexBin.hpp
+include/pdal/filters/InPlaceReprojection.hpp
+include/pdal/filters/Index.hpp
+include/pdal/filters/Mosaic.hpp
+include/pdal/filters/PointBufferCache.hpp
+include/pdal/filters/Predicate.hpp
+include/pdal/filters/Programmable.hpp
+include/pdal/filters/Reprojection.hpp
+include/pdal/filters/Scaling.hpp
+include/pdal/filters/Selector.hpp
+include/pdal/filters/Stats.hpp
+include/pdal/gitsha.h
+include/pdal/pdal_config.hpp
+include/pdal/pdal_defines.h
+include/pdal/pdal_error.hpp
+include/pdal/pdal_export.hpp
+include/pdal/pdal_internal.hpp
+include/pdal/pdal_macros.hpp
+include/pdal/pdal_types.hpp
+include/pdal/plang/BufferedInvocation.hpp
+include/pdal/plang/Invocation.hpp
+include/pdal/plang/PythonEnvironment.hpp
+include/pdal/plang/Script.hpp
+include/pdal/third/nanoflann.hpp
+lib/libpdal.so
+lib/libpdal.so.0
+@dirrmtry include/pdal/drivers/buffer
+@dirrmtry include/pdal/drivers/caris
+@dirrmtry include/pdal/drivers/faux
+@dirrmtry include/pdal/drivers/las
+@dirrmtry include/pdal/drivers/mrsid
+@dirrmtry include/pdal/drivers/nitf
+@dirrmtry include/pdal/drivers/oci
+@dirrmtry include/pdal/drivers/p2g
+@dirrmtry include/pdal/drivers/pgpointcloud
+@dirrmtry include/pdal/drivers/pipeline
+@dirrmtry include/pdal/drivers/qfit
+@dirrmtry include/pdal/drivers/soci
+@dirrmtry include/pdal/drivers/terrasolid
+@dirrmtry include/pdal/drivers/text
+@dirrmtry include/pdal/drivers
+@dirrmtry include/pdal/filters
+@dirrmtry include/pdal/plang
+@dirrmtry include/pdal/third
+@dirrmtry include/pdal

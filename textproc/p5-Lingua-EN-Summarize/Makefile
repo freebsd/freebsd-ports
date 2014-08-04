@@ -9,7 +9,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A simple tool for summarizing bodies of English text
+COMMENT=	Simple tool for summarizing bodies of English text
 
 BUILD_DEPENDS=	p5-HTML-Summary>=0:${PORTSDIR}/www/p5-HTML-Summary \
 		p5-HTML-Parser>=0:${PORTSDIR}/www/p5-HTML-Parser

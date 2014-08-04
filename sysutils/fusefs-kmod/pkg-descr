@@ -1,3 +1,3 @@
-Kernel module for fusefs based filesystems.
+Kernel module for fusefs based filesystems,
+backported from 10.x to 8.x and 9.x.
 
-WWW: http://fuse4bsd.creo.hu/

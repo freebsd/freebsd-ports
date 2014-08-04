@@ -1,0 +1,48 @@
+--- Makefile.in.orig
++++ Makefile.in
+@@ -201,7 +201,7 @@
+ GSL_INCLUDES = -I ./gsl
+ GSL_BFLAGS = -g $(GSL_INCLUDES) -thread
+ GSL_OFLAGS = $(GSL_INCLUDES) -thread
+-GSL_CFLAGS = @GSL_CFLAGS@ $(CPPFLAGS) $(CFLAGS) -DHAVE_INLINE -DHAVE_FENV -g -O2
++GSL_CFLAGS = @GSL_CFLAGS@ $(CPPFLAGS) $(CFLAGS) -DHAVE_INLINE -DHAVE_FENV
+ 
+ gsl/%.cmi : gsl/%.mli
+ 	$(OCAMLC) -c $(GSL_BFLAGS) $<
+@@ -264,10 +264,7 @@
+ units/%.cmo : units/%.ml
+ 	$(OCAMLC) -c $(UNITS_BFLAGS) $<
+ 
+-units/%.o : units/%.ml
+-	$(OCAMLOPT) -c $(UNITS_OFLAGS) $<
+-
+-units/%.cmx : units/%.ml
++units/%.o units/%.cmx : units/%.ml
+ 	$(OCAMLOPT) -c $(UNITS_OFLAGS) $<
+ 
+ 
+@@ -278,22 +275,15 @@
+ %.cmo : %.ml
+ 	$(OCAMLC) -c $(BFLAGS) $<
+ 
+-%.o : %.ml
+-	$(OCAMLOPT) -c $(OFLAGS) $<
+-
+-%.cmx : %.ml
++%.o %.cmx : %.ml
+ 	$(OCAMLOPT) -c $(OFLAGS) $<
+ 
+ %.ml : %.mll
+ 	$(OCAMLLEX) $<
+ 
+-%.ml : %.mly
++%.ml %.mli : %.mly
+ 	$(OCAMLYACC) -v $<
+ 
+-%.mli : %.mly
+-	$(OCAMLYACC) -v $<
+-
+-
+ 
+ # Emacs tags
+ ############

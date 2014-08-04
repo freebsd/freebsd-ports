@@ -10,7 +10,7 @@ DISTNAME=	${PORTNAME}-2005-10-21
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	SBLive!, Audigy, and Audigy2 driver for FreeBSD
 
-USE_BZIP2=	yes
+USES=	tar:bzip2
 NO_STAGE=	yes
 
 NO_PACKAGE=	should be recompiled for a particular FreeBSD kernel

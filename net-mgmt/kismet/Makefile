@@ -46,14 +46,14 @@ CONFIGURE_ARGS+=--disable-pcre
 .endif
 
 .if ${PORT_OPTIONS:MSETUID}
-GROUPS =	kismet
+GROUPS=		kismet
 CONFIGURE_ARGS+=--with-suidgroup=wheel
-INSTALL_TARGET =	suidinstall
+INSTALL_TARGET=		suidinstall
 PLIST_SUB+=	SUID="" SUIDGROUP="${GROUPS}"
 PKGMESSAGE=	${WRKDIR}/suid_pkg-message
 SUB_FILES+=	suid_pkg-message
 .else
-INSTALL_TARGET =	install
+INSTALL_TARGET=		install
 CONFIGURE_ARGS+=--without-suidgroup
 PLIST_SUB+=	SUID="@comment " SUIDGROUP=""
 .endif
@@ -94,9 +94,9 @@ post-install:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	@${INSTALL_DATA} ${WRKSRC}/ruby/* ${STAGEDIR}${EXAMPLESDIR}
 .endif
-	@${INSTALL_DATA} ${WRKSRC}/conf/kismet.conf \
+	@${MV} ${STAGEDIR}${PREFIX}/etc/kismet.conf \
 		${STAGEDIR}${PREFIX}/etc/kismet.conf.sample
-	@${INSTALL_DATA} ${WRKSRC}/conf/kismet_drone.conf \
+	@${MV} ${STAGEDIR}${PREFIX}/etc/kismet_drone.conf \
 		${STAGEDIR}${PREFIX}/etc/kismet_drone.conf.sample
 
 .include <bsd.port.mk>

@@ -41,7 +41,7 @@ LDFLAGS+=	-Wl,-z,interpose
 
 .if ${PORT_OPTIONS:MPROFILE}
 .if !exists(/usr/lib/libc_p.a)
-IGNORE  =	you have chosen WITH_PROFILE, but have not installed the\
+IGNORE=		you have chosen WITH_PROFILE, but have not installed the\
 base system profiling libraries
 .endif
 PLIST_FILES+=	lib/libmissing_p.a

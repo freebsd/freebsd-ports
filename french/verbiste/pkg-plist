@@ -23,22 +23,22 @@ man/man3/verbiste.3.gz
 %%HASGUI%%share/locale/fr/LC_MESSAGES/verbiste.mo
 %%HASGUI%%share/locale/el/LC_MESSAGES/verbiste.mo
 %%HASGUI%%share/pixmaps/verbiste.png
-%%DOCSDIR%%/AUTHORS
-%%DOCSDIR%%/COPYING
-%%DOCSDIR%%/INSTALL
-%%DOCSDIR%%/THANKS
-%%DOCSDIR%%/HACKING
-%%DOCSDIR%%/LISEZMOI
-%%DOCSDIR%%/NEWS
-%%DOCSDIR%%/README
-%%DOCSDIR%%/TODO
-%%EXAMPLESDIR%%/FrenchDeconjugatorTester.java
-%%EXAMPLESDIR%%/README
-%%EXAMPLESDIR%%/conjugator.c
-%%EXAMPLESDIR%%/deconjugator.c
-%%EXAMPLESDIR%%/test-french-deconjugator.pl
-%%EXAMPLESDIR%%/trans-tenses.pl
-%%EXAMPLESDIR%%/generate-all-forms.pl
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/THANKS
+%%PORTDOCS%%%%DOCSDIR%%/HACKING
+%%PORTDOCS%%%%DOCSDIR%%/LISEZMOI
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/TODO
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/FrenchDeconjugatorTester.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/README
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/conjugator.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/deconjugator.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test-french-deconjugator.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/trans-tenses.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/generate-all-forms.pl
 %%DATADIR%%-0.1/COPYING
 %%DATADIR%%-0.1/conjugation-el.xml
 %%DATADIR%%-0.1/conjugation-fr.xml
@@ -53,8 +53,8 @@ man/man3/verbiste.3.gz
 %%HASGTK%%@dirrmtry share/texmf/tex
 %%HASGTK%%@dirrmtry share/texmf
 @dirrm %%DATADIR%%-0.1
-@dirrm %%EXAMPLESDIR%%
-@dirrm %%DOCSDIR%%
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm include/verbiste-0.1/verbiste
 @dirrm include/verbiste-0.1
 @dirrmtry man/fr/man3

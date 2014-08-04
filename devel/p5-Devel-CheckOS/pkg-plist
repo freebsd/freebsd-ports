@@ -64,6 +64,7 @@ man/man1/use-devel-assertos.1.gz
 %%SITE_PERL%%/Devel/AssertOS.pm
 %%SITE_PERL%%/Devel/AssertOS/AIX.pm
 %%SITE_PERL%%/Devel/AssertOS/Amiga.pm
+%%SITE_PERL%%/Devel/AssertOS/Android.pm
 %%SITE_PERL%%/Devel/AssertOS/Apple.pm
 %%SITE_PERL%%/Devel/AssertOS/BSDOS.pm
 %%SITE_PERL%%/Devel/AssertOS/BeOS.pm

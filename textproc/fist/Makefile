@@ -7,7 +7,7 @@ CATEGORIES=	textproc
 MASTER_SITES=	ftp://ftp.fourmilab.ch/pub/fist/
 
 MAINTAINER=	swills@FreeBSD.org
-COMMENT=	An emphatic message generator
+COMMENT=	Emphatic message generator
 
 GNU_CONFIGURE=	yes
 PLIST_FILES=	bin/fist man/man1/fist.1.gz

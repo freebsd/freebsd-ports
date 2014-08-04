@@ -6,7 +6,7 @@ CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
-COMMENT=	A fast, open source text processor and publishing toolchain
+COMMENT=	Fast, open source text processor and publishing toolchain
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes

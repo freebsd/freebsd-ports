@@ -13,8 +13,7 @@ COMMENT=	MATE calculator tool based on the old calctool for OpenWindows
 
 PORTSCOUT=	limitw:1,even
 
-USES=		gettext gmake pathfix pkgconfig
-USE_XZ=		yes
+USES=		gettext gmake pathfix pkgconfig tar:xz
 USE_MATE=	autogen common:build docutils intlhack
 USE_GNOME=	glib20 gnomehier gtk20 libxml2
 USE_AUTOTOOLS=	aclocal:env autoconf:env automake:env libtool libtoolize:env

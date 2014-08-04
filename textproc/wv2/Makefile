@@ -8,7 +8,7 @@ CATEGORIES=	textproc
 MASTER_SITES=	SF/wvware/
 
 MAINTAINER=	fluffy@FreeBSD.org
-COMMENT=	A library providing routines to access Microsoft Word files
+COMMENT=	Library providing routines to access Microsoft Word files
 
 USE_GNOME=	libgsf
 GNU_CONFIGURE=	yes

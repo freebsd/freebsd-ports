@@ -14,7 +14,7 @@ COMMENT=	Distributed OpenSSL session caching tools
 
 CONFLICTS=	distcache-devel-*
 
-USE_BZIP2=	yes
+USES=	tar:bzip2
 USE_RC_SUBR=	dc_server
 USE_AUTOTOOLS=	libtool
 USE_OPENSSL=	yes

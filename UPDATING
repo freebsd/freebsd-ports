@@ -5,12 +5,76 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20140803:
+  AFFECTS: users of security/p5-openxpki
+  AUTHOR: wg@FreeBSD.org
+
+  The following ports have been integrated into security/p5-openxpki:
+    security/p5-openxpki-client
+    security/p5-openxpki-client-sep
+    security/p5-openxpki-deployment
+
+  Before update make sure to remove the old packages:
+
+  # pkg remove security/p5-openxpki-client
+  # pkg remove security/p5-openxpki-client-sap
+  # pkg remove security/p5-openxpki-deployment
+
+20140802:
+  AFFECTS: users of astro/stellarium
+  AUTHOR: danfe@FreeBSD.org
+
+  Stellarium was updated to version 0.13.0.  It's a new major release, and
+  it is based on Qt version 5 now.  For those who are not comfortable with
+  upgrading to the new Qt, previous Stellarium version (0.12.4) was copied
+  over to `astro/stellarium-qt4' port.
+
+20140731:
+  AFFECTS: users of www/ajaxplorer
+  AUTHOR: madpilot@FreeBSD.org
+
+  The ajaxplorer project was renamed to pydio.
+
+  Due to this update some manual steps will need to be performed
+  after updating the port.
+
+  IMPORTANT: Perform a backup of the ajaxplorer installation and
+  the databases backing it(if you're using that feature).
+
+  First manually remove the ajaxplorer port and install www/pydio
+  afterwards.
+
+  Further steps will be avbailable in the pkg-message, which can
+  be shown with these commands:
+
+  # pkg info -D pydio
+
+  # pkg_info -D pydio
+
+  Please also read the upgrading notes at:
+
+  http://pyd.io/pydio-core-5.2.0#Upgrading
+
+20140730:
+  AFFECTS: users of security/libgcrypt
+  AUTHOR: pi@FreeBSD.org
+
+  libgcrypt has been updated to 1.6.1 and all shared libraries versions have
+  been bumped. So you need to rebuild all applications that depend on
+  libgcrypt.
+
+  # portmaster -r libgcrypt
+    or
+  # portupgrade -fr security/libgcrypt
+    or
+  # pkg install -fR security/libgcrypt
+
 20140728:
   AFFECTS: users of net/GeoIP
   AUTHOR: adamw@FreeBSD.org
 
   GeoIP no longer ships with the GeoIP database. To continue using GeoIP,
-  you MUST fetch it first by running geoipupdate.sh.
+  you MUST fetch the database after upgrading by running geoipupdate.sh.
 
 20140728:
   AFFECTS: users of security/libtasn1 and any port that depends on it
@@ -61,7 +125,8 @@ you update your ports collection, before attempting any port upgrades.
   All applications that used libevent1 must be rebuilt.
 
   Please remove libevent1 before upgrading, by running:
-  	pkg delete -f libevent
+
+	pkg delete -f libevent
 
 20140723:
   AFFECTS: users of security/scanlogd
@@ -71,8 +136,8 @@ you update your ports collection, before attempting any port upgrades.
   scanlogd user and group must be removed before updating to not conflict
   with the one created by the port:
 
-    pw userdel scanlogd
-    pw groupdel scanlogd
+	pw userdel scanlogd
+	pw groupdel scanlogd
 
 20140723:
   AFFECTS: users of TeX
@@ -85,9 +150,9 @@ you update your ports collection, before attempting any port upgrades.
   AFFECTS: users of mail/exim
   AUTHOR: vsevolod@FreeBSD.org
 
-  The behaviour of expansion of arguments to math comparison functions (<, <=,
-  =, =>, >) was unexpected, expanding the values twice. Please update your
-  configuration if you have relied on such an expansion.
+  The behaviour of expansion of arguments to math comparison functions (<,
+  <=, =, =>, >) was unexpected, expanding the values twice. Please update
+  your configuration if you have relied on such an expansion.
 
 20140722:
   AFFECTS: users of multimedia/mediainfo
@@ -106,7 +171,7 @@ you update your ports collection, before attempting any port upgrades.
 
 20140714:
   AFFECTS: users of databases/db6
-  AUTHOR:  mandree@FreeBSD.org
+  AUTHOR: mandree@FreeBSD.org
 
   Oracle Berkeley DB 6 has been upgraded to version 6.1.19.  Since the
   previous 6.0 version, the log file format has changed in 6.1.
@@ -168,7 +233,7 @@ you update your ports collection, before attempting any port upgrades.
   AUTHOR: robak@FreeBSD.org
 
   The lang/rust port was updated to 0.11 and is now only working on FreeBSD
-  versions 10 and 11 - the 9.x support has been removed by upstream.
+  versions 10 and 11 -- the 9.x support has been removed by upstream.
 
 20140709:
   AFFECTS: users of security/pam-pgsql
@@ -330,8 +395,8 @@ you update your ports collection, before attempting any port upgrades.
   AUTHOR: gecko@FreeBSD.org
 
   Gecko ports were switched to use more system libraries. Some of them
-  must be built with certain options unset (default).
-  - audio/soundtouch has to be installed with INTEGER_SAMPLES option disabled
+  must be built with certain options unset (default).  `audio/soundtouch'
+  has to be installed with INTEGER_SAMPLES option disabled.
 
 20140604:
   AFFECTS: users of dns/dnscrypt-proxy
@@ -1151,7 +1216,8 @@ you update your ports collection, before attempting any port upgrades.
 
   The default path for overview files has changed.
   Rebuild your overview files after the update with:
-  su - news /usr/local/libexec/cnews/nov/initov
+
+	su - news /usr/local/libexec/cnews/nov/initov
 
 20131217:
   AFFECTS: users of databases/ruby-bdb or ports-mgmt/portupgrade and databases/db5 or databases/db6
@@ -3338,9 +3404,10 @@ you update your ports collection, before attempting any port upgrades.
   AFFECTS: users of net/activemq
   AUTHOR: tj@FreeBSD.org
 
-  After reinstalling the port if you wish to use the datastore used before
-  or have any undelivered persistent messages add the following to rc.conf
-    activemq_data=/usr/local/activemq
+  After reinstalling the port, if you wish to use the datastore used before
+  or have any undelivered persistent messages add the following to rc.conf:
+
+	activemq_data=/usr/local/activemq
 
 20121022:
   AFFECTS: users of net/samba36
@@ -4106,8 +4173,9 @@ you update your ports collection, before attempting any port upgrades.
   AFFECTS: users of graphics/gdal
   AUTHOR: sunpoet@FreeBSD.org
 
-  Language bindings (Perl, PHP, Python and Ruby) have been moved to separate
+  Language bindings (Perl, PHP, Python, and Ruby) were moved to separate
   ports. Please install them if required. The new ports are:
+
     Perl binding:   graphics/p5-Geo-GDAL
     PHP binding:    graphics/php-gdal
     Python binding: graphics/py-gdal

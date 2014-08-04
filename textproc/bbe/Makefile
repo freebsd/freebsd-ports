@@ -7,7 +7,7 @@ CATEGORIES=	textproc
 MASTER_SITES=	SF/${PORTNAME}-/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A sed-like editor for binary files
+COMMENT=	Sed-like editor for binary files
 
 LICENSE=	GPLv2
 

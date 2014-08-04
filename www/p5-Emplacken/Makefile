@@ -11,7 +11,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Manage multiple plack apps with a directory of config files
 
-RUN_DEPENDS=	p5-Class-Load>=0:${PORTSDIR}/devel/p5-Class-Load \
+LICENSE=	ART20
+
+BUILD_DEPENDS=	p5-Class-Load>=0:${PORTSDIR}/devel/p5-Class-Load \
 		p5-Config-Any>=0:${PORTSDIR}/devel/p5-Config-Any \
 		p5-File-Pid>=0:${PORTSDIR}/devel/p5-File-Pid \
 		p5-List-AllUtils>=0:${PORTSDIR}/devel/p5-List-AllUtils \
@@ -24,8 +26,9 @@ RUN_DEPENDS=	p5-Class-Load>=0:${PORTSDIR}/devel/p5-Class-Load \
 		p5-Text-Template>=0:${PORTSDIR}/textproc/p5-Text-Template \
 		p5-autodie>=0:${PORTSDIR}/devel/p5-autodie \
 		p5-namespace-autoclean>=0:${PORTSDIR}/devel/p5-namespace-autoclean
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-USES=		perl5
 USE_PERL5=	configure
+USES=		perl5
 
 .include <bsd.port.mk>

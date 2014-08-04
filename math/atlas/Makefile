@@ -70,7 +70,7 @@ PORT${i}=	*
 ARCHDEFFLAG=	-Si archdef 0
 .    endif
 .  else
-IGNORE =	: You have set WITH_ARCHDEF, but have not defined ARCHDEF
+IGNORE=		: You have set WITH_ARCHDEF, but have not defined ARCHDEF
 .  endif
 .endif
 

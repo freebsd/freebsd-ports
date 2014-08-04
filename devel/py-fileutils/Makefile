@@ -11,7 +11,7 @@ DISTNAME=	FileUtils-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	File I/O related functions and classes
 
-USE_BZIP2=		yes
+USES=		tar:bzip2
 USE_PYTHON=		yes
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_AUTOPLIST=	yes

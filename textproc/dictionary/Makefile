@@ -10,7 +10,7 @@ MASTER_SITES=	http://me.in-berlin.de/~myrkr/dictionary/ \
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A dictionary client for Emacs
+COMMENT=	Dictionary client for Emacs
 
 USE_EMACS=	yes
 

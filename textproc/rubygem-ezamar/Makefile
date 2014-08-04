@@ -7,7 +7,7 @@ CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A lightweight and simple templating engine for Ruby
+COMMENT=	Lightweight and simple templating engine for Ruby
 
 USE_RUBY=	yes
 

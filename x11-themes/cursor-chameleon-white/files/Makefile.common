@@ -1,4 +1,4 @@
-USE_BZIP2=	yes
+USES=	tar:bzip2
 NO_BUILD=	yes
 PKGMESSAGE?=	${.CURDIR}/../../x11-themes/cursor-chameleon-white/pkg-message
 

@@ -10,7 +10,7 @@ EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	ruby@FreeBSD.org
-COMMENT=	A non evaling template engine for ruby
+COMMENT=	Non evaling template engine for ruby
 
 USE_RUBY=	yes
 NO_BUILD=	yes

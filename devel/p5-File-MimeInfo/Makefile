@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	File-MimeInfo
-PORTVERSION=	0.22
+PORTVERSION=	0.26
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -20,6 +20,6 @@ USES=		perl5
 USE_PERL5=	configure
 
 regression-test:
-	cd ${WRKSRC} && ${PERL5} ${PL_BUILD} test
+	cd ${WRKSRC} && ${MAKE} test
 
 .include <bsd.port.mk>

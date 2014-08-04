@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	pkg
-DISTVERSION=	1.3.3
+DISTVERSION=	1.3.4
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	\
 		http://files.etoilebsd.net/${PORTNAME}/ \
@@ -78,9 +78,7 @@ pre-everything::
 .if defined(WITH_PKGNG)
 PKG_DEPENDS=
 .undef INSTALLS_DEPENDS
-.if !exists(${LOCALBASE}/sbin/pkg)
 PKG_BIN=	${WRKSRC}/src/pkg-static
-.endif
 .endif
 
 post-install:

@@ -2,45 +2,48 @@
 # $FreeBSD$
 
 PORTNAME=	lbreakout2
-PORTVERSION=	2.6
-PORTREVISION=	5
+PORTVERSION=	2.6.4
 CATEGORIES=	games
-MASTER_SITES=	SF/lgames/${PORTNAME}/${PORTVERSION}
+MASTER_SITES=	SF/lgames/${PORTNAME}/${PORTVERSION:R}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	The polished successor to LBreakout
+COMMENT=	Breakout-style arcade game
+
+LICENSE=	GPLv2 # (or later)
 
 LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png
 
-USE_SDL=	mixer net sdl
 USES=		gmake
+USE_SDL=	mixer net sdl
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-sdl-net \
 		--localstatedir=/var/games \
-		--disable-nls
+		--with-docdir=${PREFIX}/share/doc
 
-CPPFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/libpng15
-LDFLAGS+=	-L${LOCALBASE}/lib
+CPPFLAGS+=	$$(libpng-config --I_opts)
+LDFLAGS+=	$$(libpng-config --L_opts)
 
-NO_STAGE=	yes
+PKGDEINSTALL=	${PKGINSTALL}
+
+OPTIONS_DEFINE=		DOCS NLS
+OPTIONS_SUB=		yes
+
+NLS_USES=		gettext
+NLS_CONFIGURE_ENABLE=	nls
+
 post-patch:
 	@${REINPLACE_CMD} -e \
-		's|== "-D|= "-D|g' ${WRKSRC}/configure
+		'/if test/s|==|=|' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e \
-		's|client docs|client|g' ${WRKSRC}/Makefile.in
+		's|/icons|/pixmaps|' ${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e \
-		's|: install-data-local|:|g' ${WRKSRC}/client/Makefile.in
+		'/LDADD =/s|$$| @INTLLIBS@| ; \
+		 s|: install-data-local|:|' ${WRKSRC}/client/Makefile.in
+	@${REINPLACE_CMD} -e \
+		'/LDADD =/s|$$| @INTLLIBS@|' ${WRKSRC}/server/Makefile.in
 
 post-install:
-	${INSTALL_DATA} ${WRKSRC}/client/empty.hscr ${DATADIR}
-	@${CHOWN} root:games ${PREFIX}/bin/lbreakout2
-	@${CHMOD} g+s ${PREFIX}/bin/lbreakout2
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/docs/*.html ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/docs/*.jpg ${DOCSDIR}
-.endif
-	@${SETENV} "PKG_PREFIX=${PREFIX}" \
-		${SH} ${.CURDIR}/pkg-install ${PKGNAME} POST-INSTALL
+	(cd ${WRKSRC}/client && ${INSTALL_DATA} empty.hscr \
+		${STAGEDIR}${DATADIR})
 
 .include <bsd.port.mk>

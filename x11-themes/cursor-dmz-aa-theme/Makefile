@@ -10,7 +10,7 @@ DISTNAME=	vanilla-dmz-aa-${PORTVERSION}
 MAINTAINER=	flz@FreeBSD.org
 COMMENT=	The DMZ AA style neutral scalable cursor theme
 
-USE_BZIP2=	yes
+USES=	tar:bzip2
 NO_BUILD=	yes
 
 WRKSRC=		${WRKDIR}

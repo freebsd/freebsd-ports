@@ -70,7 +70,6 @@
     SUBDIR += foxitreader
     SUBDIR += fpdf
     SUBDIR += freetype
-    SUBDIR += freetype-tools
     SUBDIR += freetype2
     SUBDIR += frescobaldi
     SUBDIR += ft2demos
@@ -86,7 +85,6 @@
     SUBDIR += ghostscript9-agpl
     SUBDIR += ghostscript9-agpl-nox11
     SUBDIR += ghostscript9-nox11
-    SUBDIR += ghostview
     SUBDIR += gimp-gutenprint
     SUBDIR += gl2ps
     SUBDIR += gnome-cups-manager
@@ -112,7 +110,6 @@
     SUBDIR += html2latex
     SUBDIR += html2ps
     SUBDIR += hyperlatex
-    SUBDIR += ifxetex
     SUBDIR += indexinfo
     SUBDIR += it-acroread8
     SUBDIR += jabref

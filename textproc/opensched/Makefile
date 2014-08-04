@@ -8,7 +8,7 @@ CATEGORIES=	textproc
 MASTER_SITES=	http://hitachi-id.com/dlsoftware/opensched/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A project scheduler
+COMMENT=	Project scheduler
 
 LICENSE=	GPLv2
 

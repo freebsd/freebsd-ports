@@ -10,7 +10,7 @@ MAINTAINER=	ricardo.areis@gmail.com
 COMMENT=	Find kernel modules by string
 
 NO_BUILD=	yes
-USE_BZIP2=	yes
+USES=	tar:bzip2
 
 PLIST_FILES=	sbin/kldfind man/man8/kldfind.8.gz
 

@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	graphviz
-PORTVERSION=	2.36.0
-PORTREVISION=	6
+PORTVERSION=	2.38.0
+PORTREVISION=	0
 CATEGORIES=	graphics tk
 MASTER_SITES=	http://www.graphviz.org/pub/graphviz/ARCHIVE/
 
@@ -17,7 +17,7 @@ LIB_DEPENDS+=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
 		libexpat.so:${PORTSDIR}/textproc/expat2 \
 		libgd.so:${PORTSDIR}/${GD_PORT}
 
-USES=		bison gmake libtool:oldver pathfix pkgconfig shebangfix
+USES=		gmake bison libtool:oldver pkgconfig pathfix shebangfix
 USE_AUTOTOOLS=	libltdl
 GNU_CONFIGURE=	yes
 LDFLAGS+=	-L${LOCALBASE}/lib
@@ -171,7 +171,7 @@ BROKEN=	guile is too old
 .endif
 
 .if ${PORT_OPTIONS:MMING}
-BROKEN=	incomplete, uses removed libgraph
+BROKEN=	Ming incomplete, uses removed libgraph
 .endif
 
 .if ${PORT_OPTIONS:MRUBY}

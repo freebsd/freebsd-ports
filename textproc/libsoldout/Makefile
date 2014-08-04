@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 MAKEFILE=	BSDmakefile
 USE_LDCONFIG=	yes
-USE_BZIP2=	yes
+USES=	tar:bzip2
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/libsoldout.so.1 ${STAGEDIR}${PREFIX}/lib

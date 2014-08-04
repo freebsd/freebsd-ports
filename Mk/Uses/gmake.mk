@@ -12,7 +12,9 @@ _INCLUDE_USES_GMAKE_MK=	yes
 
 .if defined(gmake_ARGS)
 .if ${gmake_ARGS} == lite
+.if !exists(${LOCALBASE}/bin/gmake)
 _GMAKE_EXT=	-lite
+.endif
 .else
 IGNORE=	Incorrect 'USES+= gmake:${gmake_ARGS}' gmake has only one valid argument: lite
 .endif

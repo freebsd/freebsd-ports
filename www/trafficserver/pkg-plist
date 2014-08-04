@@ -27,7 +27,6 @@ bin/traffic_logstats
 bin/traffic_manager
 bin/traffic_sac
 bin/traffic_server
-bin/traffic_shell
 bin/trafficserver
 bin/tspush
 bin/tstop
@@ -62,21 +61,29 @@ include/atscppapi/Url.h
 include/atscppapi/noncopyable.h
 include/atscppapi/shared_ptr.h
 include/atscppapi/utils.h
+lib/libatscppapi.la
 lib/libatscppapi.so
-lib/libatscppapi.so.4
-lib/libatscppapi.so.4.1.2
+lib/libatscppapi.so.5
+lib/libtsmgmt.la
 lib/libtsmgmt.so
-lib/libtsmgmt.so.4
-lib/libtsmgmt.so.4.1.2
+lib/libtsmgmt.so.5
+lib/libtsmgmtshare.la
+lib/libtsmgmtshare.so
+lib/libtsmgmtshare.so.5
+lib/libtsutil.la
 lib/libtsutil.so
-lib/libtsutil.so.4
-lib/libtsutil.so.4.1.2
+lib/libtsutil.so.5
+libexec/trafficserver/cacheurl.la
 libexec/trafficserver/cacheurl.so
+libexec/trafficserver/conf_remap.la
 libexec/trafficserver/conf_remap.so
+libexec/trafficserver/gzip.la
 libexec/trafficserver/gzip.so
-libexec/trafficserver/header_filter.so
+libexec/trafficserver/libloader.la
 libexec/trafficserver/libloader.so
+libexec/trafficserver/regex_remap.la
 libexec/trafficserver/regex_remap.so
+libexec/trafficserver/stats_over_http.la
 libexec/trafficserver/stats_over_http.so
 %%SITE_PERL%%/Apache/TS.pm
 %%SITE_PERL%%/Apache/TS/AdminClient.pm
@@ -85,7 +92,6 @@ libexec/trafficserver/stats_over_http.so
 %%PERL5_MAN3%%/Apache::TS.3.gz
 %%PERL5_MAN3%%/Apache::TS::AdminClient.3.gz
 %%PERL5_MAN3%%/Apache::TS::Config::Records.3.gz
-man/man1/traffic_shell.1.gz
 @owner www
 %%ETCDIR%%/body_factory/default/.body_factory_info
 %%ETCDIR%%/body_factory/default/README
@@ -138,70 +144,9 @@ man/man1/traffic_shell.1.gz
 @exec chown -f www %D/%%ETCDIR%%/snapshots
 @owner root
 %%ETCDIR%%/trafficserver-release
-share/doc/trafficserver/trafficshell/config_alarms.1
-share/doc/trafficserver/trafficshell/config_cache.1
-share/doc/trafficserver/trafficshell/config_clock.1
-share/doc/trafficserver/trafficshell/config_dns.1
-share/doc/trafficserver/trafficshell/config_get.1
-share/doc/trafficserver/trafficshell/config_hard-restart.1
-share/doc/trafficserver/trafficshell/config_hostdb.1
-share/doc/trafficserver/trafficshell/config_http.1
-share/doc/trafficserver/trafficshell/config_icp.1
-share/doc/trafficserver/trafficshell/config_logging.1
-share/doc/trafficserver/trafficshell/config_name.1
-share/doc/trafficserver/trafficshell/config_network.1
-share/doc/trafficserver/trafficshell/config_parent.1
-share/doc/trafficserver/trafficshell/config_port-tunnels.1
-share/doc/trafficserver/trafficshell/config_remap.1
-share/doc/trafficserver/trafficshell/config_reset-stats.1
-share/doc/trafficserver/trafficshell/config_restart.1
-share/doc/trafficserver/trafficshell/config_root.1
-share/doc/trafficserver/trafficshell/config_scheduled-update.1
-share/doc/trafficserver/trafficshell/config_security.1
-share/doc/trafficserver/trafficshell/config_set.1
-share/doc/trafficserver/trafficshell/config_socks.1
-share/doc/trafficserver/trafficshell/config_ssl.1
-share/doc/trafficserver/trafficshell/config_start.1
-share/doc/trafficserver/trafficshell/config_stop.1
-share/doc/trafficserver/trafficshell/config_upgrade.1
-share/doc/trafficserver/trafficshell/config_virtual-ip.1
-share/doc/trafficserver/trafficshell/disable.1
-share/doc/trafficserver/trafficshell/enable.1
-share/doc/trafficserver/trafficshell/exit.1
-share/doc/trafficserver/trafficshell/show_alarms.1
-share/doc/trafficserver/trafficshell/show_cache-stats.1
-share/doc/trafficserver/trafficshell/show_cache.1
-share/doc/trafficserver/trafficshell/show_cluster.1
-share/doc/trafficserver/trafficshell/show_dns-resolver.1
-share/doc/trafficserver/trafficshell/show_dns-stats.1
-share/doc/trafficserver/trafficshell/show_hostdb-stats.1
-share/doc/trafficserver/trafficshell/show_hostdb.1
-share/doc/trafficserver/trafficshell/show_http-stats.1
-share/doc/trafficserver/trafficshell/show_http-trans-stats.1
-share/doc/trafficserver/trafficshell/show_http.1
-share/doc/trafficserver/trafficshell/show_icp-stats.1
-share/doc/trafficserver/trafficshell/show_icp.1
-share/doc/trafficserver/trafficshell/show_logging-stats.1
-share/doc/trafficserver/trafficshell/show_logging.1
-share/doc/trafficserver/trafficshell/show_network.1
-share/doc/trafficserver/trafficshell/show_parent.1
-share/doc/trafficserver/trafficshell/show_port-tunnels.1
-share/doc/trafficserver/trafficshell/show_proxy-stats.1
-share/doc/trafficserver/trafficshell/show_proxy.1
-share/doc/trafficserver/trafficshell/show_remap.1
-share/doc/trafficserver/trafficshell/show_scheduled-update.1
-share/doc/trafficserver/trafficshell/show_security.1
-share/doc/trafficserver/trafficshell/show_socks.1
-share/doc/trafficserver/trafficshell/show_ssl.1
-share/doc/trafficserver/trafficshell/show_status.1
-share/doc/trafficserver/trafficshell/show_version.1
-share/doc/trafficserver/trafficshell/show_virtual-ip.1
 @dirrm %%SITE_PERL%%/Apache/TS/Config
 @dirrm %%SITE_PERL%%/Apache/TS
 @dirrm %%SITE_PERL%%/Apache
-@dirrm share/trafficserver
-@dirrm share/doc/trafficserver/trafficshell
-@dirrm share/doc/trafficserver
 @dirrm libexec/trafficserver
 @dirrm include/ts
 @dirrm include/atscppapi

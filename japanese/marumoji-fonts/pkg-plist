@@ -34,8 +34,8 @@
 %%FONTSDIR%%/maru18b.pcf.gz
 %%FONTSDIR%%/maru18bi.pcf.gz
 %%FONTSDIR%%/maru18i.pcf.gz
-%%DOCSDIR%%/LICENSE
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE
 @exec cd %D/%%FONTSDIR%% ; mkfontdir
 @unexec cd %D/%%FONTSDIR%% ; mkfontdir
 @unexec if [ `wc -c %D/%%FONTSDIR%%/fonts.dir | awk '{print $1}'` = 2 ]; then rm -f %D/%%FONTSDIR%%/fonts.dir; fi
-@dirrm %%DOCSDIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

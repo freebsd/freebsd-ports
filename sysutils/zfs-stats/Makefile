@@ -3,6 +3,7 @@
 
 PORTNAME=	zfs-stats
 PORTVERSION=	1.2.2
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://cloud.github.com/downloads/mmatuska/zfs-stats/
 
@@ -11,15 +12,14 @@ COMMENT=	Display human-readable ZFS statistics
 
 LICENSE=	BSD2CLAUSE
 
-USES=		perl5
+USES=		perl5 shebangfix
 
 NO_BUILD=	yes
+SHEBANG_FILES=	zfs-*
+perl_OLD_CMD=	/usr/bin/env -iS perl
 
 PLIST_FILES=	bin/zfs-stats \
 		bin/zfs-mon
-
-post-patch:
-	@${REINPLACE_CMD} -e "s|/usr/bin/env -iS perl|${PERL}|g" ${WRKSRC}/zfs-stats
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/zfs-stats ${STAGEDIR}${PREFIX}/bin/zfs-stats

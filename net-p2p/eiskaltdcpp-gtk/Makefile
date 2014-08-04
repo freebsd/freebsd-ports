@@ -20,9 +20,8 @@ BUILD_DEPENDS+=	chrpath:${PORTSDIR}/devel/chrpath
 CMAKE_ARGS+=	-DBUILD_LIB:BOOL=OFF
 PROJECTHOST=	eiskaltdc
 
-USE_XZ=		yes
 USE_GCC=	yes
-USES=		cmake gettext
+USES=		cmake gettext tar:xz
 USE_OPENSSL=	yes
 
 MAN1=		${PORTNAME}.1

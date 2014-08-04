@@ -11,7 +11,7 @@ COMMENT=	Multipole-accelerated inductance analysis program
 
 HAS_CONFIGURE=	yes
 CONFIGURE_SCRIPT=	config
-WRKSRC =	${WRKDIR}/fasthenry-3.0wr
+WRKSRC=		${WRKDIR}/fasthenry-3.0wr
 
 NO_STAGE=	yes
 post-patch:

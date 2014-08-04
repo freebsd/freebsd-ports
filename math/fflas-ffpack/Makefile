@@ -48,7 +48,7 @@ USES+=		fortran
 CONFIGURE_ARGS+=	--with-gsl="${LOCALBASE}"
 LIB_DEPENDS+=	libgslcblas.so:${PORTSDIR}/math/gsl
 .else
-IGNORE =	unknown value of WITH_BLAS: ${WITH_BLAS}
+IGNORE=		unknown value of WITH_BLAS: ${WITH_BLAS}
 .endif
 
 .if ${PORT_OPTIONS:MDOXYGEN}

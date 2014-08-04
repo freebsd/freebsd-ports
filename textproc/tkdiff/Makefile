@@ -8,7 +8,7 @@ CATEGORIES=	textproc tk
 MASTER_SITES=	SF
 
 MAINTAINER=	kevlo@FreeBSD.org
-COMMENT=	A Tk frontend for diff(1)
+COMMENT=	Tk frontend for diff(1)
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

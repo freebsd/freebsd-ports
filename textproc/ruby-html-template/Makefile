@@ -9,7 +9,7 @@ PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A Ruby library to use HTML as a template file from CGI scripts
+COMMENT=	Ruby library to use HTML as a template file from CGI scripts
 
 BROKEN=		Not stage friendly, no more public distfiles
 

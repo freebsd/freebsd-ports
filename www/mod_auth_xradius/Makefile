@@ -13,7 +13,7 @@ COMMENT=	Enables RADIUS authentication
 
 
 USE_APACHE=	22
-USE_BZIP2=	yes
+USES=	tar:bzip2
 GNU_CONFIGURE=	yes
 
 PLIST_FILES=	${APACHEMODDIR}/mod_auth_xradius.so

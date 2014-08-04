@@ -2,11 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	rtptools
-PORTVERSION=	1.18
+PORTVERSION=	1.20
 CATEGORIES=	net mbone
 MASTER_SITES=	http://www.cs.columbia.edu/IRT/software/rtptools/download/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	cjpugmed@gmail.com
 COMMENT=	Set of tools to record, playback, and monitor RTPv2 data streams
 
 GNU_CONFIGURE=	yes

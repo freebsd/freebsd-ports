@@ -1,4 +1,4 @@
 bin/fcsh
 %%JAVAJARDIR%%/flex-sdk/fcsh.jar
-%%DOCSDIR%%/FlexCompilerShell-license.txt
-@dirrm %%DOCSDIR%%
+%%PORTDOCS%%%%DOCSDIR%%/FlexCompilerShell-license.txt
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

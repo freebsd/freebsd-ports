@@ -25,6 +25,8 @@ SUB_LIST=	PORTNAME=${PORTNAME}
 SCRIPTS=	aasdoc acompc amxmlc asdoc compc copylocale digest \
 		fcsh fdb mxmlc optimizer
 
+OPTIONS_DEFINE=	DOCS
+
 post-extract:
 	${RM} ${WRKSRC}/bin/*.bat ${WRKSRC}/bin/*.exe
 
@@ -33,17 +35,17 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/${i}.sh ${STAGEDIR}${PREFIX}/bin/${i}
 .endfor
 
-	${MKDIR} ${STAGEDIR}${JAVAJARDIR}/${PORTNAME}
+	@${MKDIR} ${STAGEDIR}${JAVAJARDIR}/${PORTNAME}
 	${INSTALL_DATA} ${WRKSRC}/lib/*.jar ${STAGEDIR}${JAVAJARDIR}/${PORTNAME}/
 	${INSTALL_DATA} ${WRKSRC}/ant/lib/*.jar ${STAGEDIR}${JAVAJARDIR}/${PORTNAME}/
 
-	${MKDIR} ${STAGEDIR}${DATADIR}/frameworks
+	@${MKDIR} ${STAGEDIR}${DATADIR}/frameworks
 	${CP} -r ${WRKSRC}/frameworks/ ${STAGEDIR}${DATADIR}/frameworks/
 
-	${MKDIR} ${STAGEDIR}${DATADIR}/asdoc/templates
+	@${MKDIR} ${STAGEDIR}${DATADIR}/asdoc/templates
 	${CP} -r ${WRKSRC}/asdoc/templates/ ${STAGEDIR}${DATADIR}/asdoc/templates/
 
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${CP} -r ${WRKSRC}/*.htm ${STAGEDIR}${DOCSDIR}/
 
 .include <bsd.port.mk>

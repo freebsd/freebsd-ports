@@ -15,9 +15,8 @@ LICENSE_COMB=	dual
 
 LIB_DEPENDS=	libwebkitgtk-1.0.so:${PORTSDIR}/www/webkit-gtk2
 
-USE_XZ=		yes
 USE_GNOME=	gconf2 gnomeprefix
-USES=		gettext gmake pathfix pkgconfig
+USES=		gettext gmake pathfix pkgconfig tar:xz
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-silent-rules \
 		--with-gtk=2.0

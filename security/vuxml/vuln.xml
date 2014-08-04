@@ -57,6 +57,164 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="be5421ab-1b56-11e4-a767-5453ed2e2b49">
+    <topic>krfb -- Possible Denial of Service or code execution via integer overflow</topic>
+    <affects>
+      <package>
+	<name>krfb</name>
+	<range><lt>4.12.5_1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Albert Aastals Cid reports:</p>
+	<blockquote cite="http://lists.kde.org/?l=kde-announce&amp;m=140709940701878&amp;w=2">
+	  <p>krfb embeds libvncserver which embeds liblzo2, it contains various
+	    flaws that result in integer overflow problems.</p>
+	  <p>This potentially allows a malicious application to create a
+	    possible denial of service or code execution. Due to the need to
+	    exploit precise details of the target architecture and threading it
+	    is unlikely that remote code execution can be achieved in
+	    practice.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2014-4607</cvename>
+      <mlist>http://lists.kde.org/?l=kde-announce&amp;m=140709940701878&amp;w=2</mlist>
+    </references>
+    <dates>
+      <discovery>2014-08-03</discovery>
+      <entry>2014-08-03</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="89ff45e3-1a57-11e4-bebd-000c2980a9f3">
+    <topic>samba -- remote code execution</topic>
+    <affects>
+      <package>
+	<name>samba4</name>
+	<range><ge>4.0.0</ge><lt>4.0.21</lt></range>
+      </package>
+      <package>
+	<name>samba41</name>
+	<range><ge>4.1.0</ge><lt>4.1.11</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Samba developers report:</p>
+	<blockquote cite="http://www.samba.org/samba/security/CVE-2014-3560">
+	  <p>A malicious browser can send packets that may overwrite the heap of
+	    the target nmbd NetBIOS name services daemon. It may be possible to
+	    use this to generate a remote code execution vulnerability as the
+	    superuser (root).</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2014-3560</cvename>
+      <url>http://www.samba.org/samba/security/CVE-2014-3560</url>
+    </references>
+    <dates>
+      <discovery>2014-07-31</discovery>
+      <entry>2014-08-02</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="90ca3ba5-19e6-11e4-8616-001b3856973b">
+    <topic>gpgme -- heap-based buffer overflow in gpgsm status handler</topic>
+    <affects>
+      <package>
+	<name>gpgme</name>
+	<range><lt>1.5.0</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Tomas Trnka reports:</p>
+	<blockquote cite="https://bugzilla.redhat.com/show_bug.cgi?id=1113267">
+	  <p>Gpgme contains a buffer overflow in the gpgsm status handler
+	    that could possibly be exploited using a specially crafted certificate.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2014-3564</cvename>
+      <url>https://bugzilla.redhat.com/show_bug.cgi?id=1113267</url>
+    </references>
+    <dates>
+      <discovery>2014-06-25</discovery>
+      <entry>2014-08-02</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="2f90556f-18c6-11e4-9cc4-5453ed2e2b49">
+    <topic>kdelibs -- KAuth PID Reuse Flaw</topic>
+    <affects>
+      <package>
+	<name>kdelibs</name>
+	<range><lt>4.12.5_3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Martin Sandsmark reports:</p>
+	<blockquote cite="http://lists.kde.org/?l=kde-announce&amp;m=140674898412923&amp;w=2">
+	  <p>The KAuth framework uses polkit-1 API which tries to authenticate
+	    using the requestors PID. This is prone to PID reuse race
+	    conditions.</p>
+	  <p>This potentially allows a malicious application to pose as another
+	    for authentication purposes when executing privileged actions.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2014-5033</cvename>
+      <mlist>http://lists.kde.org/?l=kde-announce&amp;m=140674898412923&amp;w=2</mlist>
+    </references>
+    <dates>
+      <discovery>2014-07-30</discovery>
+      <entry>2014-07-31</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="31c09848-1829-11e4-bf04-60a44c524f57">
+    <topic>tor -- traffic confirmation attack</topic>
+    <affects>
+      <package>
+	<name>tor</name>
+	<range><lt>0.2.4.23</lt></range>
+      </package>
+      <package>
+	<name>tor-devel</name>
+	<range><lt>0.2.5.6.a</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Tor Project reports:</p>
+	<blockquote cite="https://lists.torproject.org/pipermail/tor-announce/2014-July/000094.html">
+	  <p>Tor before 0.2.4.23 and 0.2.5 before 0.2.5.6-alpha maintains a
+	    circuit after an inbound RELAY_EARLY cell is received by a client,
+	    which makes it easier for remote attackers to conduct
+	    traffic-confirmation attacks by using the pattern of RELAY and
+	    RELAY_EARLY cells as a means of communicating information about
+	    hidden service names.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://lists.torproject.org/pipermail/tor-announce/2014-July/000094.html</url>
+      <url>https://blog.torproject.org/blog/tor-security-advisory-relay-early-traffic-confirmation-attack</url>
+      <cvename>CVE-2014-5117</cvename>
+    </references>
+    <dates>
+      <discovery>2014-07-30</discovery>
+      <entry>2014-07-30</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="13419364-1685-11e4-bf04-60a44c524f57">
     <topic>i2p -- Multiple Vulnerabilities</topic>
     <affects>

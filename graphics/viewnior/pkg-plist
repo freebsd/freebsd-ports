@@ -44,7 +44,3 @@ share/icons/hicolor/scalable/apps/viewnior.svg
 %%DATADIR%%/vnr-preferences-dialog.ui
 @dirrm %%DATADIR%%/pixmaps
 @dirrm %%DATADIR%%
-%%NLS%%@dirrmtry share/locale/oc/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/oc
-%%NLS%%@dirrmtry share/locale/ca@valencia/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/ca@valencia

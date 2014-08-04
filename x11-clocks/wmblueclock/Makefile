@@ -11,7 +11,7 @@ MASTER_SITE_SUBDIR=	X11/xutils
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple dockable clock application
 
-USE_BZIP2=	yes
+USES=	tar:bzip2
 USE_XORG=	x11 xau xdmcp xext xpm
 
 PLIST_FILES=	bin/wmblueclock man/man1/${PORTNAME}.1.gz

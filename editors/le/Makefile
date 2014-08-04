@@ -14,7 +14,7 @@ COMMENT=	Text editor with block and binary operations
 
 LICENSE=	GPLv3
 
-USE_BZIP2=	yes
+USES=	tar:bzip2
 GNU_CONFIGURE=	yes
 
 MAKE_JOBS_UNSAFE=	yes

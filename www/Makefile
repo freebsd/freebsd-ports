@@ -13,7 +13,6 @@
     SUBDIR += abyssws
     SUBDIR += ach
     SUBDIR += adzap
-    SUBDIR += ajaxplorer
     SUBDIR += amphetadesk
     SUBDIR += analog
     SUBDIR += anyremote2html
@@ -540,8 +539,8 @@
     SUBDIR += mohawk
     SUBDIR += moinmoin
     SUBDIR += monast
+    SUBDIR += mongoose
     SUBDIR += mongrel2
-    SUBDIR += moodle
     SUBDIR += moodle24
     SUBDIR += moodle25
     SUBDIR += moodle26
@@ -1495,6 +1494,7 @@
     SUBDIR += py-django-classy-tags
     SUBDIR += py-django-cms
     SUBDIR += py-django-crispy-forms
+    SUBDIR += py-django-datetime-widget
     SUBDIR += py-django-debug-toolbar
     SUBDIR += py-django-devel
     SUBDIR += py-django-dpaste
@@ -1711,6 +1711,7 @@
     SUBDIR += py-wsgiauth
     SUBDIR += py-zope.app.wsgi
     SUBDIR += pyblosxom
+    SUBDIR += pydio
     SUBDIR += pyjamas
     SUBDIR += pylot
     SUBDIR += pyweblib

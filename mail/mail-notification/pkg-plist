@@ -6,7 +6,6 @@ share/gnome/help/mail-notification/C/figures/mail.png
 share/gnome/help/mail-notification/C/mail-notification.xml
 share/gnome/help/mail-notification/C/software-license.xml
 %%GMAIL%%%%DATADIR%%/gmail.png
-%%HOTMAIL%%%%DATADIR%%/hotmail.png
 %%DATADIR%%/logo.png
 %%DATADIR%%/new-mail.wav
 %%DATADIR%%/mailbox-properties-dialog.glade

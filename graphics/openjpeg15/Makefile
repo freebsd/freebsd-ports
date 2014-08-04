@@ -21,4 +21,6 @@ DOS2UNIX_FILES=	libopenjpeg/opj_malloc.h
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.mk>

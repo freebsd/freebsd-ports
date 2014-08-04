@@ -23,6 +23,8 @@ CONFIGURE_ARGS=	--with-oss
 
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}-pro
 
+OPTIONS_DEFINE=	DOCS
+
 pre-configure:
 	@${REINPLACE_CMD} 's,(pkglibdir),(datadir)/doc/@PACKAGE@,' ${WRKSRC}/doc/Makefile.in
 

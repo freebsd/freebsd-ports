@@ -10,7 +10,7 @@ MASTER_SITES= http://roy.marples.name/downloads/openresolv/ \
 MAINTAINER=	roy@marples.name
 COMMENT=	Resolvconf compatible framework for managing resolv.conf
 
-USE_BZIP2=	yes
+USES=	tar:bzip2
 
 SUB_FILES=	pkg-deinstall pkg-message
 PKGDEINSTALL=	${WRKDIR}/pkg-deinstall

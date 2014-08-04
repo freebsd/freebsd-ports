@@ -298,7 +298,6 @@ bin/jave6
 %%DATADIR%%/icons/icon.ico
 %%DATADIR%%/icons/icon.xpm
 %%DATADIR%%/jave.jar
-%%DATADIR%%/jave6
 %%DATADIR%%/javeplayer.jar
 %%DATADIR%%/pattern/pattern.jcf
 %%DATADIR%%/readme.txt

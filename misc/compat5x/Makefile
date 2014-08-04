@@ -21,7 +21,7 @@ RUN_DEPENDS=	${LOCALBASE}/share/compat/locale/UTF-8/LC_CTYPE:${PORTSDIR}/misc/lo
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-USE_BZIP2=	yes
+USES=	tar:bzip2
 NO_BUILD=	yes
 ONLY_FOR_ARCHS=	amd64 i386 sparc64
 TARGET_DIR=	${PREFIX}/lib/compat

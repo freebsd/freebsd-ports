@@ -12,8 +12,7 @@ COMMENT=	Logging library for C++
 
 OPTIONS_DEFINE=	DOCS
 
-USES=		libtool:keepla pathfix
-USE_XZ=		yes
+USES=		libtool:keepla pathfix tar:xz
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-threads=yes

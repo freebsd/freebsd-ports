@@ -12,7 +12,7 @@ COMMENT=	Lightweight UDP-based dynamic DNS updater
 LICENSE=	BSD
 
 MAKEFILE=	BSDmakefile
-USE_BZIP2=	yes
+USES=	tar:bzip2
 
 USE_RC_SUBR=	ddns_client ddns_server
 

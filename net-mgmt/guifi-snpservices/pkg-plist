@@ -1,0 +1,63 @@
+%%WWWDIR%%/README
+%%WWWDIR%%/common/cnml2ov2.php
+%%WWWDIR%%/common/config.php.template
+%%WWWDIR%%/common/config.php.template.orig
+%%WWWDIR%%/common/misc.php
+%%WWWDIR%%/common/misc.php.orig
+%%WWWDIR%%/common/mrtg.sh
+%%WWWDIR%%/common/ping.sh
+%%WWWDIR%%/common/ping.sh.orig
+%%WWWDIR%%/common/qnodes.php
+%%WWWDIR%%/common/qnodes.php.orig
+%%WWWDIR%%/common/refresh.sh
+%%WWWDIR%%/common/refresh_cnml.php
+%%WWWDIR%%/common/refresh_cnml.php.orig
+%%WWWDIR%%/common/refresh_mrtg.php
+%%WWWDIR%%/common/refresh_mrtg.php.orig
+%%WWWDIR%%/common/rrdtool.php
+%%WWWDIR%%/debian/README.Debian
+%%WWWDIR%%/debian/changelog
+%%WWWDIR%%/debian/compat
+%%WWWDIR%%/debian/control
+%%WWWDIR%%/debian/copyright
+%%WWWDIR%%/debian/cron.d
+%%WWWDIR%%/debian/dirs
+%%WWWDIR%%/debian/docs
+%%WWWDIR%%/debian/rules
+%%WWWDIR%%/debian/snpservices.1
+%%WWWDIR%%/debian/snpservices.config
+%%WWWDIR%%/debian/snpservices.install
+%%WWWDIR%%/debian/snpservices.logrotate
+%%WWWDIR%%/debian/snpservices.manpages
+%%WWWDIR%%/debian/snpservices.postinst
+%%WWWDIR%%/debian/snpservices.postrm
+%%WWWDIR%%/debian/snpservices.templates
+%%WWWDIR%%/debian/watch.ex
+%%WWWDIR%%/graphs/LICENSE.txt
+%%WWWDIR%%/graphs/cnml2mrtgcsv.php
+%%WWWDIR%%/graphs/cnml2mrtgcsv.php.orig
+%%WWWDIR%%/graphs/config.php
+%%WWWDIR%%/graphs/graphs.php
+%%WWWDIR%%/graphs/mrtgcsv2mrtgcfg.php
+%%WWWDIR%%/graphs/mrtgcsv2mrtgcfg.php.orig
+%%WWWDIR%%/graphs/refresh.php
+%%WWWDIR%%/index.php
+%%WWWDIR%%/index.php.orig
+%%WWWDIR%%/misc/xml2ov2.php
+%%WWWDIR%%/services/availability.php
+%%WWWDIR%%/services/example.php
+%%WWWDIR%%/services/graph.php
+%%WWWDIR%%/services/liveping.php
+%%WWWDIR%%/services/livetraceroute.php
+%%WWWDIR%%/services/stats.php
+%%WWWDIR%%/tools/guinux/config.php.guinux
+%%WWWDIR%%/tools/guinux/snpconfig.pl
+%%WWWDIR%%/tools/guinux/snpservices.conf
+@dirrmtry %%WWWDIR%%/tools/guinux
+@dirrmtry %%WWWDIR%%/tools
+@dirrmtry %%WWWDIR%%/services
+@dirrmtry %%WWWDIR%%/misc
+@dirrmtry %%WWWDIR%%/graphs
+@dirrmtry %%WWWDIR%%/debian
+@dirrmtry %%WWWDIR%%/common
+@dirrmtry %%WWWDIR%%

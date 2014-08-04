@@ -15,7 +15,7 @@ COMMENT?=	Simple front-end to w3m for emacs
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USE_BZIP2=	yes
+USES=	tar:bzip2
 USE_EMACS=	yes
 
 SNAPDATE=	20140622

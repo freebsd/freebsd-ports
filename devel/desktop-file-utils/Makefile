@@ -11,9 +11,8 @@ MASTER_SITES=	http://freedesktop.org/software/${PORTNAME}/releases/
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Couple of command line utilities for working with desktop entries
 
-USES=		gettext gmake pkgconfig
+USES=		gettext gmake pkgconfig tar:xz
 USE_GNOME=	glib20
-USE_XZ=		yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--without-lispdir
 CONFIGURE_ENV=	EMACS="no"

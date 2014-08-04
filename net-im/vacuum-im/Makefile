@@ -14,8 +14,7 @@ LICENSE=	GPLv3
 
 PROJECTHOST=	${PORTNAME}${PKGNAMESUFFIX}
 
-USE_XZ=	yes
-USES=		cmake
+USES=		cmake tar:xz
 USE_XORG=	xscrnsaver
 USE_LDCONFIG=	yes
 USE_QT4=	gui xml qmake_build uic_build moc_build rcc_build \

@@ -25,4 +25,6 @@ USE_LDCONFIG=	yes
 USE_GNOME=	intltool
 MAKE_JOBS_UNSAFE=	yes
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.mk>

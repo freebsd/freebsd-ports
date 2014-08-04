@@ -10,7 +10,7 @@ MAINTAINER=	lapo@lapo.it
 COMMENT=	Command-line rc.conf ordering and cleaning tool
 
 PLIST_FILES=	bin/rclean
-USE_BZIP2=	yes
+USES=	tar:bzip2
 
 do-build:
 	@(cd ${WRKSRC}; ${CC} -o ${PORTNAME} ${PORTNAME}.c)

@@ -153,13 +153,13 @@ setusercontext()
 
     if [ ${user} = ${LEOFS_USER} ]
     then
-	return
+        return
     fi
 
     if [ ${user} != root ]
     then
-	echo "Must be run as ${LEOFS_USER} user or root (or set LEOFS_USER)" >&2
-	exit 1
+        echo "Must be run as ${LEOFS_USER} user or root (or set LEOFS_USER)" >&2
+        exit 1
     fi
 
     # Restart as LEOFS_USER
@@ -187,17 +187,17 @@ gen_config()
 
     args=`PATH=${ERTS_PATH}:${PATH} \
         ${LEOFS_BASEDIR}/bin/cuttlefish \
-	-i ${LEOFS_BASEDIR}/etc/${LEOFS_SERVER}.schema \
-	-c ${LEOFS_ETCDIR}/${LEOFS_SERVER}.conf \
-	-d ${cfg_dir}`
+        -i ${LEOFS_BASEDIR}/etc/${LEOFS_SERVER}.schema \
+        -c ${LEOFS_ETCDIR}/${LEOFS_SERVER}.conf \
+        -d ${cfg_dir}`
 
     app_config=`echo ${args} | sed -nEe 's/^.*(app\.[0-9.]*\.config).*$/\1/p'`
     vm_args=`echo ${args} | sed -nEe 's/^.*(vm\.[0-9.]*\.args).*$/\1/p'`
 
     if [ -z "${app_config}" -o  -z "${vm_args}" ]
     then
-	echo "Failed to parse ${LEOFS_SERVER}.conf" >&2
-	exit 1
+        echo "Failed to parse ${LEOFS_SERVER}.conf" >&2
+        exit 1
     fi
 
     # Sanity check the app.config file
@@ -248,10 +248,10 @@ make_env()
     snmp_cfg=`sed -nEe 's/^-config *(.*)$/\1.config/p' ${LEOFS_DBDIR}/etc/vm.args`
 
     sed -nEe 's:^.*dir, *"((%%LEOFS_DBDIR%%|%%LEOFS_LOGDIR%%)[^"]*)".*$:\1:p' \
-	${LEOFS_DBDIR}/etc/app.config ${snmp_cfg} | sort -u |
+        ${LEOFS_DBDIR}/etc/app.config ${snmp_cfg} | sort -u |
     while read dir
     do
-	mkdir -p "${dir}"
+        mkdir -p "${dir}"
     done
 }
 
@@ -268,15 +268,15 @@ nodetool()
     name_arg=`egrep '^-s?name' ${vmargs_path}`
     if [ -z "${name_arg}" ]
     then
-	echo "vm.args needs either -name or -sname parameter" >&2 
-	exit 1
+        echo "vm.args needs either -name or -sname parameter" >&2 
+        exit 1
     fi
 
     cookie_arg=`grep '^-setcookie' ${vmargs_path}`
     if [ -z "${cookie_arg}" ]
     then
-	echo "vm.args needs a -setcookie parameter" 2>&2
-	exit 1
+        echo "vm.args needs a -setcookie parameter" 2>&2
+        exit 1
     fi
 
     ${ERTS_PATH}/escript ${ERTS_PATH}/nodetool ${name_arg} ${cookie_arg} ${cmd}
@@ -293,17 +293,17 @@ check_node()
      
     if [ "${expected_state}" = DOWN ]
     then
-	if [ ${status} -eq 0 ]
-	then
-	    echo "Node is already running" >&2
-	    exit 1
-	fi
+        if [ ${status} -eq 0 ]
+        then
+            echo "Node is already running" >&2
+            exit 1
+        fi
     else
-	if [ ${status} -ne 0 ]
-	then
-	    echo "Node is not running" >&2
-	    exit 1
-	fi
+        if [ ${status} -ne 0 ]
+        then
+            echo "Node is not running" >&2
+            exit 1
+        fi
     fi
 }
 
@@ -318,15 +318,15 @@ remsh()
     name_arg=`egrep '^-s?name' ${vmargs_path}`
     if [ -z "${name_arg}" ]
     then
-	echo "vm.args needs either -name or -sname parameter" >&2 
-	exit 1
+        echo "vm.args needs either -name or -sname parameter" >&2 
+        exit 1
     fi
 
     cookie_arg=`grep '^-setcookie' ${vmargs_path}`
     if [ -z "${cookie_arg}" ]
     then
-	echo "vm.args needs a -setcookie parameter" 2>&2
-	exit 1
+        echo "vm.args needs a -setcookie parameter" 2>&2
+        exit 1
     fi
 
     # Extract the name type and name from the name_arg for remsh
@@ -558,6 +558,8 @@ register_cmd restart
 #-------------------------------------------------------------------------------
 cmd_start()
 {
+    local i res
+
     case "$1" in
         help_summary)
             echo "Launch the application"
@@ -577,7 +579,21 @@ cmd_start()
     export HEART_COMMAND="${PROGPATH} ${LEOFS_SERVER} start"
 
     ${ERTS_PATH}/run_erl -daemon ${LEOFS_PIPE} ${LEOFS_LOGDIR} \
-	"exec ${PROGPATH} ${LEOFS_SERVER} console $@" 2>&1
+        "exec ${PROGPATH} ${LEOFS_SERVER} console $@" 2>&1
+    res=$?
+
+    if [ "${res}" -ne 0 ]
+    then
+        exit ${res}
+    fi
+
+    # Wait up to 1 minute for the node to start responding on ping.
+    for i in `jot 60`
+    do
+        nodetool ping >/dev/null 2>&1 || exit 0
+        sleep 1
+    done
+    exit 1
 }
 
 register_cmd start
@@ -610,19 +626,19 @@ cmd_stop()
 
     if [ "${res}" -ne 0 ]
     then
-	if [ -z "${pid}" ]
-	then
-	    echo "${LEOFS_SERVER} is not running"
-	else
-	    echo "Failed to stop ${LEOFS_SERVER}"
-	fi
+        if [ -z "${pid}" ]
+        then
+            echo "${LEOFS_SERVER} is not running"
+        else
+            echo "Failed to stop ${LEOFS_SERVER}"
+        fi
         exit ${res}
     fi
 
     # Wait up to 1 minute for the process to terminate.
     for i in `jot 60`
     do
-	kill -0 ${pid} 2>/dev/null || exit 0
+        kill -0 ${pid} 2>/dev/null || exit 0
         sleep 1
     done
     echo "Failed to terminate the ${LEOFS_SERVER} process (pid ${pid})"

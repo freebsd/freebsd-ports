@@ -3,7 +3,7 @@
 
 PORTNAME=	cricket
 PORTVERSION=	1.0.5
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	net-mgmt
 MASTER_SITES=	SF
 
@@ -25,34 +25,28 @@ SUB_FILES=	pkg-message
 USERS=	cricket
 GROUPS=	www
 
-NO_STAGE=	yes
+CRICKETBASE=	${STAGEDIR}${PREFIX}/cricket
+
 .include <bsd.port.pre.mk>
 
 post-patch:
-	@${REINPLACE_CMD} -e 's,/home/cricket,${PREFIX},g' \
+	${REINPLACE_CMD} -e 's,/home/cricket,${PREFIX},g' \
 		${WRKSRC}/cricket-conf.pl.sample
-	@${REINPLACE_CMD} -e 's,/usr/local/net/bin/ssh,/usr/bin/ssh,g' \
+	${REINPLACE_CMD} -e 's,/usr/local/net/bin/ssh,/usr/bin/ssh,g' \
 		${WRKSRC}/sample-config/news-server/Defaults
 
 do-install:
-	@${MKDIR} -m 755 ${PREFIX}/cricket/cricket-${PORTVERSION}
-	@${CP} -R ${WRKSRC}/* ${PREFIX}/cricket/cricket-${PORTVERSION}
-	@${FIND} ${PREFIX}/cricket/cricket-${PORTVERSION} -name \*.orig -or \
+	${MKDIR} -m 755 ${CRICKETBASE}/cricket-${PORTVERSION}
+	${CP} -R ${WRKSRC}/* ${CRICKETBASE}/cricket-${PORTVERSION}
+	${FIND} ${CRICKETBASE}/cricket-${PORTVERSION} -name \*.orig -or \
 		-name \*.bak | ${XARGS} ${RM} -f
-	${CHOWN} -R ${USERS}:${GROUPS} ${PREFIX}/cricket
-	@if [ -L ${PREFIX}/cricket/cricket ]; then \
-		${ECHO_MSG} "Updating ${PREFIX}/cricket/cricket symbolic link"; \
-		${RM} ${PREFIX}/cricket/cricket; \
-	fi
-	${LN} -s ${PREFIX}/cricket/cricket-${PORTVERSION} \
-		${PREFIX}/cricket/cricket
-	@if [ -f ${LOCALBASE}/cricket/compile ] ; then \
+	${LN} -s cricket-${PORTVERSION} \
+		${CRICKETBASE}/cricket
+	if [ -f ${LOCALBASE}/cricket/compile ] ; then \
 		${ECHO_MSG} "You should migrate manually to use new cricket"; \
 		${ECHO_MSG} "installation scheme."; \
 	fi
-	@${INSTALL_DATA} ${WRKSRC}/cricket-conf.pl.sample ${PREFIX}/etc/cricket-conf.pl.dist
-
-post-install:
-	@${CAT} ${PKGMESSAGE}
+	${INSTALL_DATA} ${WRKSRC}/cricket-conf.pl.sample \
+		${STAGEDIR}${PREFIX}/etc/cricket-conf.pl.dist
 
 .include <bsd.port.post.mk>

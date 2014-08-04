@@ -161,6 +161,7 @@
     SUBDIR += dae
     SUBDIR += daedalus
     SUBDIR += daemontools
+    SUBDIR += daemontools-encore
     SUBDIR += dar
     SUBDIR += dateutils
     SUBDIR += dc3dd
@@ -769,7 +770,6 @@
     SUBDIR += rdiff-backup
     SUBDIR += rdiff-backup-devel
     SUBDIR += rdup
-    SUBDIR += readlink
     SUBDIR += realsync
     SUBDIR += recoverdm
     SUBDIR += reed

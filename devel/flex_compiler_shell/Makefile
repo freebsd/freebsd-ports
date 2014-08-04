@@ -23,10 +23,12 @@ WRKSRC=		${WRKDIR}
 NO_BUILD=	YES
 SUB_FILES=	fcsh
 
+OPTIONS_DEFINE=	DOCS
+
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/fcsh ${STAGEDIR}${PREFIX}/bin/
 	${INSTALL_DATA} ${WRKSRC}/lib/fcsh.jar ${STAGEDIR}${JAVAJARDIR}/flex-sdk/
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/FlexCompilerShell-license.txt ${STAGEDIR}${DOCSDIR}/
 
 .include <bsd.port.mk>

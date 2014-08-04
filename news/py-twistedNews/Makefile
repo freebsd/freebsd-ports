@@ -14,12 +14,9 @@ COMMENT=	NNTP protocol implementation with client and server
 
 LICENSE=	MIT
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}twistedCore>=${PORTVERSION}:${PORTSDIR}/devel/py-twistedCore
-RUN_DEPENDS:=	${BUILD_DEPENDS}
-
 USE_PYTHON=	2
 USE_PYDISTUTILS=yes
 PYDISTUTILS_AUTOPLIST=	yes
-USES=		tar:bzip2
+USES=		tar:bzip2 twisted
 
 .include <bsd.port.mk>

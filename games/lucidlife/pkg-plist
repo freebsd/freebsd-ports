@@ -343,20 +343,20 @@ share/pixmaps/lucidlife.png
 %%DATADIR%%/patterns/lpa/synthesis/make_hustler.glf
 %%DATADIR%%/patterns/lpa/synthesis/make_osc.glf
 %%DATADIR%%/patterns/lpa/synthesis/make_pole.glf
-%%DOCSDIR%%/billiard.gif
-%%DOCSDIR%%/blinker_horizontal.gif
-%%DOCSDIR%%/blinker_vertical.gif
-%%DOCSDIR%%/draw.png
-%%DOCSDIR%%/glf_format.html
-%%DOCSDIR%%/glider.gif
-%%DOCSDIR%%/grab.png
-%%DOCSDIR%%/index.html
-%%DOCSDIR%%/max.gif
-%%DOCSDIR%%/patterns.html
-%%DOCSDIR%%/pulsar.gif
-%%DOCSDIR%%/select.png
-%%DOCSDIR%%/style.css
-%%DOCSDIR%%/window.gif
+%%PORTDOCS%%%%DOCSDIR%%/billiard.gif
+%%PORTDOCS%%%%DOCSDIR%%/blinker_horizontal.gif
+%%PORTDOCS%%%%DOCSDIR%%/blinker_vertical.gif
+%%PORTDOCS%%%%DOCSDIR%%/draw.png
+%%PORTDOCS%%%%DOCSDIR%%/glf_format.html
+%%PORTDOCS%%%%DOCSDIR%%/glider.gif
+%%PORTDOCS%%%%DOCSDIR%%/grab.png
+%%PORTDOCS%%%%DOCSDIR%%/index.html
+%%PORTDOCS%%%%DOCSDIR%%/max.gif
+%%PORTDOCS%%%%DOCSDIR%%/patterns.html
+%%PORTDOCS%%%%DOCSDIR%%/pulsar.gif
+%%PORTDOCS%%%%DOCSDIR%%/select.png
+%%PORTDOCS%%%%DOCSDIR%%/style.css
+%%PORTDOCS%%%%DOCSDIR%%/window.gif
 @dirrm %%DATADIR%%/patterns/lpa/synthesis
 @dirrm %%DATADIR%%/patterns/lpa/spaceships
 @dirrm %%DATADIR%%/patterns/lpa/space_fillers
@@ -401,4 +401,4 @@ share/pixmaps/lucidlife.png
 @dirrm %%DATADIR%%/icons
 @dirrm %%DATADIR%%/graphics
 @dirrm %%DATADIR%%
-@dirrm %%DOCSDIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

@@ -6486,3 +6486,21 @@ devel/cl-trivial-gray-streams-clisp||2014-07-28|Has expired: Depends on deprecat
 lang/clisp||2014-07-28|Has expired: development has ceased, not staged
 print/texpower|print/texlive-texmf|2014-07-28|Has been incorporated in TeXLive
 print/tex-mfpic|print/texlive-texmf|2014-07-28|Has been incorporated in TeXLive
+lang/sml-nj-devel|lang/smlnj|2014-07-30|The -devel was updated and is now production-ready
+lang/sml-nj|lang/smlnj|2014-07-30|Use lang/smlnj as newer version
+www/ajaxplorer|www/pydio|2014-07-31|Project renamed
+converters/igbinary|converters/pecl-igbinary|2014-07-31|The project has been moved to PECL
+mail/postfix27||2014-07-31|Has expired: No longer supported by upstream
+misc/freecode-submit||2014-07-31|Has expired: This software is obsolete. Freecode does not accept updates anymore.
+mail/exim-doc-info||2014-07-31|Has expired: yes
+misc/gman||2014-07-31|Has expired: Depends on expiring ghostview
+print/ghostview|print/gv|2014-07-31|Has expired: project dead nearly a decade ago; use print/gv instead
+mail/getlive||2014-08-01|Has expired: GetLive project has been declared dead due to MS account conversion
+print/ifxetex||2014-08-01|Has expired: Very outdated and fully contained in texlive-texmf
+lang/dragonegg46-33||2014-08-01|Has expired: Dead upstream, impractical to build on 10 and later
+lang/dragonegg47-33||2014-08-01|Has expired: Dead upstream, impractical to build on 10 and later
+print/freetype-tools|print/texlive-texmf|2014-08-01|Has been incorporated in TeXLive
+sysutils/readlink||2014-08-03|Has expired: All features implemented in the base system since FreeBSD 8.3
+net-mgmt/bsd-airtools||2014-08-04|Has expired: "broken by removal of wicontrol ioctls from if_wavelan_ieee.h; domain disappeared"
+www/moodle||2014-08-04|Has expired: Upstream support ended
+databases/bucardo|databases/p5-Bucardo|2014-08-04|Dupplicate

@@ -11,7 +11,7 @@ COMMENT=	Three-dimensional capacitance extraction program
 
 HAS_CONFIGURE=	yes
 CONFIGURE_SCRIPT=	config
-WRKSRC =	${WRKDIR}/fastcap-2.0wr
+WRKSRC=		${WRKDIR}/fastcap-2.0wr
 
 BINFILES=	busgen capgen cubegen fastcap pipedgen pyragen
 

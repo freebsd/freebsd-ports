@@ -15,8 +15,7 @@ LIB_DEPENDS=	libkdevplatforminterfaces.so:${PORTSDIR}/devel/kdevplatform
 
 USE_KDE4=	kdehier kdelibs kdeprefix automoc4
 USE_QT4=	moc_build qmake_build rcc_build uic_build
-USE_XZ=		yes
-USES=		cmake
+USES=		cmake tar:xz
 
 OPTIONS_DEFINE=	NLS
 OPTIONS_SUB=	yes

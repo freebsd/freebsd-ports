@@ -9,7 +9,7 @@ PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A Ruby library that automatically inserts form data into HTML
+COMMENT=	Ruby library that automatically inserts form data into HTML
 
 BROKEN=		Not stage friendly, no more public distfiles
 

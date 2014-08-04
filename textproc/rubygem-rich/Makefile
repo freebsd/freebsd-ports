@@ -7,7 +7,7 @@ CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
-COMMENT=	An opinionated WYSIWYG editor for Rails based on CKEditor
+COMMENT=	Opinionated WYSIWYG editor for Rails based on CKEditor
 
 RUN_DEPENDS=	rubygem-jquery-rails>=0:${PORTSDIR}/www/rubygem-jquery-rails \
 		rubygem-kaminari>=0:${PORTSDIR}/www/rubygem-kaminari \

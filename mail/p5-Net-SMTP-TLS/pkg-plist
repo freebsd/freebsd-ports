@@ -1,5 +1,5 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/SMTP/TLS/.packlist
 %%SITE_PERL%%/Net/SMTP/TLS.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/SMTP/TLS/.packlist
 %%PERL5_MAN3%%/Net::SMTP::TLS.3.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/SMTP/TLS
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/SMTP

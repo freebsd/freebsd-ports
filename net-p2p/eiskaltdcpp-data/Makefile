@@ -15,7 +15,7 @@ LICENSE=	GPLv3
 
 PROJECTHOST=	eiskaltdc
 
-USE_XZ=		yes
+USES=		tar:xz
 NO_BUILD=	yes
 INSTALLS_ICONS=	yes
 

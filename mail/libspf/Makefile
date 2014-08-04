@@ -13,7 +13,7 @@ COMMENT=	Sender Policy Framework (SPF) library and client
 
 MAKE_JOBS_UNSAFE=yes
 
-USE_BZIP2=	yes
+USES=	tar:bzip2
 USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes
 

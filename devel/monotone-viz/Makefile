@@ -3,11 +3,11 @@
 
 PORTNAME=	monotone-viz
 PORTVERSION=	1.0.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	devel
 MASTER_SITES=	http://oandrieu.nerim.net/monotone-viz/
 
-MAINTAINER= ports@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Visual interface for Monotone VCS with revision graphs
 
 LICENSE=	GPLv2
@@ -28,5 +28,7 @@ MAKE_JOBS_UNSAFE=	yes
 
 PLIST_FILES=	bin/monotone-viz
 
-NO_STAGE=	yes
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/monotone-viz
+
 .include <bsd.port.mk>

@@ -20,5 +20,4 @@ lots of things at(1) does that runwhen doesn't:
 - It doesn't check access control files - thus it doesn't gratuitously 
   deny users.
 
-Author:	Paul Jarc <prj@po.cwru.edu>
 WWW: http://code.dogmap.org/runwhen/

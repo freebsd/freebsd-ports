@@ -12,7 +12,7 @@ COMMENT=	Tools for automating system management
 
 LICENSE=	BSD
 
-USE_XZ=		yes
+USES=		tar:xz
 
 NO_BUILD=	yes
 

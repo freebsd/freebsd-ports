@@ -13,7 +13,7 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	saurbier@math.uni-bielefeld.de
 COMMENT=	Ruby interface to ncurses
 
-USE_BZIP2=	yes
+USES=	tar:bzip2
 
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes

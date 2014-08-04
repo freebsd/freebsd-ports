@@ -1,17 +1,19 @@
+# Patch based on lang/python34/files/patch-Makefile.pre.in
+
 # Description: Remove duplicate CFLAGS, CPPFLAGS, LDFLAGS by stripping CONFIGURE_*
 # Submitted by: koobs (r326729)
 # TODO: Upstream
-
-# Description: Fix out-of-tree build as a result of upstream #15819
-# Submitted by: rm (r318353)
-# Issue ID: http://bugs.python.org/issue15819#msg203348
 
 # Description: Run ranlib before installing the library read-only
 # Submitted by: antoine@ (r350207)
 # TODO: Upstream
 
---- ./Makefile.pre.in.orig	2014-03-09 19:40:23.000000000 +1100
-+++ ./Makefile.pre.in	2014-04-20 23:28:30.086226530 +1000
+# Description: Create symlinks for non-ABI-suffixed python*-config and ABI-suffixed python-*.pc
+# Submitted by: antoine@ (r358029)
+# TODO: Upstream
+
+--- Makefile.pre.in.orig	2014-03-09 09:40:23.000000000 +0100
++++ Makefile.pre.in	2014-07-15 08:23:56.000000000 +0200
 @@ -70,18 +70,18 @@
  OPT=		@OPT@
  BASECFLAGS=	@BASECFLAGS@
@@ -81,7 +83,20 @@
  
  ############################################################################
  # Header files
-@@ -1205,8 +1205,8 @@
+@@ -972,12 +972,6 @@
+ 	else true; \
+ 	fi
+ 	(cd $(DESTDIR)$(BINDIR); $(LN) -s python$(VERSION)$(EXE) python3$(EXE))
+-	-if test "$(VERSION)" != "$(LDVERSION)"; then \
+-		rm -f $(DESTDIR)$(BINDIR)/python$(VERSION)-config; \
+-		(cd $(DESTDIR)$(BINDIR); $(LN) -s python$(LDVERSION)-config python$(VERSION)-config); \
+-		rm -f $(DESTDIR)$(LIBPC)/python-$(LDVERSION).pc; \
+-		(cd $(DESTDIR)$(LIBPC); $(LN) -s python-$(VERSION).pc python-$(LDVERSION).pc); \
+-	fi
+ 	-rm -f $(DESTDIR)$(BINDIR)/python3-config
+ 	(cd $(DESTDIR)$(BINDIR); $(LN) -s python$(VERSION)-config python3-config)
+ 	-rm -f $(DESTDIR)$(LIBPC)/python3.pc
+@@ -1205,8 +1199,8 @@
  			if test "$(SHLIB_SUFFIX)" = .dll; then \
  				$(INSTALL_DATA) $(LDLIBRARY) $(DESTDIR)$(LIBPL) ; \
  			else \
@@ -91,3 +106,16 @@
  			fi; \
  		else \
  			echo Skip install of $(LIBRARY) - use make frameworkinstall; \
+@@ -1223,6 +1217,12 @@
+ 	$(INSTALL_SCRIPT) $(srcdir)/Modules/makesetup $(DESTDIR)$(LIBPL)/makesetup
+ 	$(INSTALL_SCRIPT) $(srcdir)/install-sh $(DESTDIR)$(LIBPL)/install-sh
+ 	$(INSTALL_SCRIPT) python-config $(DESTDIR)$(BINDIR)/python$(LDVERSION)-config
++	-if test "$(VERSION)" != "$(LDVERSION)"; then \
++		rm -f $(DESTDIR)$(BINDIR)/python$(VERSION)-config; \
++		(cd $(DESTDIR)$(BINDIR); $(LN) -s python$(LDVERSION)-config python$(VERSION)-config); \
++		rm -f $(DESTDIR)$(LIBPC)/python-$(LDVERSION).pc; \
++		(cd $(DESTDIR)$(LIBPC); $(LN) -s python-$(VERSION).pc python-$(LDVERSION).pc); \
++	fi
+ 	rm python-config
+ 	@if [ -s Modules/python.exp -a \
+ 		"`echo $(MACHDEP) | sed 's/^\(...\).*/\1/'`" = "aix" ]; then \

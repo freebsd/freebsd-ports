@@ -13,7 +13,7 @@ LICENSE=	BSD
 
 OPTIONS_DEFINE=	DOCS
 
-USE_BZIP2=	yes
+USES=	tar:bzip2
 NO_BUILD=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	troydhanson

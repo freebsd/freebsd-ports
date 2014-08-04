@@ -13,7 +13,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A cool set of icons for the most common usage
 
 NO_BUILD=	yes
-USE_BZIP2=	yes
+USES=	tar:bzip2
 WRKSRC=	${WRKDIR}/Buuf
 USE_GNOME=	gtk20
 INSTALLS_ICONS=	yes

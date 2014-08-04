@@ -1,0 +1,4 @@
+ocsinventory-ng server is installed
+
+You still need to cd to %%DATADIR%% and run ./setup.sh there.
+ ( or manually configure it. )

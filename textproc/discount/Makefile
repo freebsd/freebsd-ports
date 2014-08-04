@@ -8,12 +8,12 @@ MASTER_SITES=	http://www.pell.portland.or.us/~orc/Code/discount/ \
 		LOCAL/jlaffaye
 
 MAINTAINER=	jlaffaye@FreeBSD.org
-COMMENT=	A C implementation of the Markdown markup language
+COMMENT=	C implementation of the Markdown markup language
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
-USE_BZIP2=	yes
+USES=	tar:bzip2
 HAS_CONFIGURE=	yes
 CONFIGURE_SCRIPT=configure.sh
 CONFIGURE_ARGS=	--prefix=${PREFIX} \

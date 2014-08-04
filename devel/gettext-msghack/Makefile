@@ -12,7 +12,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Alter gettext po files in special ways
 
 NO_BUILD=	yes
-USE_BZIP2=	yes
+USES=	tar:bzip2
 USE_PYTHON=	yes
 PLIST_FILES=	bin/${PORTNAME}
 

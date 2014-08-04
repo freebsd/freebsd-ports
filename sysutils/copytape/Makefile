@@ -7,6 +7,7 @@ CATEGORIES=		sysutils
 MASTER_SITES=		${MASTER_SITE_COMP_SOURCES}
 MASTER_SITE_SUBDIR=	unix/volume10
 DISTNAME=		copytape
+EXTRACT_SUFX=		.Z
 
 MAINTAINER=		sjroz@verizon.net
 COMMENT=		Program that is used to duplicate magtapes
@@ -19,7 +20,6 @@ EXTRACT_CMD=		zcat
 EXTRACT_BEFORE_ARGS=
 EXTRACT_AFTER_ARGS=	| gunshar -d ${WRKDIR}
 
-USES=		tar:Z
 CFLAGS+=	-Wno-return-type
 # XXX upstream puts CFLAGS in CC
 MAKE_ARGS+=	CC="${CC} ${CFLAGS}"

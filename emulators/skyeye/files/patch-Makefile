@@ -1,11 +1,37 @@
---- Makefile.orig	Thu Dec 21 16:55:34 2006
-+++ Makefile	Thu Dec 21 16:59:30 2006
+--- Makefile.orig	2006-12-16 12:12:09.000000000 -0500
++++ Makefile	2014-07-29 21:02:50.000000000 -0400
+@@ -20,7 +20,7 @@
+ # Author Chen Yu <yuchen@tsinghua.edu.cn>
+ 
+ 
+-prefix = /usr/local
++prefix = ${PREFIX}
+ exec_prefix = ${prefix}
+ 
+ host_alias = i686-pc-cygwin
+@@ -48,14 +48,14 @@
+ INSTALL_DATA = ${INSTALL} -m 644
+ 
+ #CC = gcc-3.3
+-CC = gcc
++CC ?= gcc
+ #CC = gcc-4.0
+ CC_FOR_BUILD = $(CC)
+ 
+ AR = ar
+ AR_FLAGS = rc
+ RANLIB = ranlib
+-MAKEINFO = makeinfo
++MAKEINFO ?= makeinfo
+ 
+ SUPPORT_ARCH_DEF = -DARM 
+ 
 @@ -85,7 +85,7 @@
  endif
  endif
  
 -CFLAGS = -g -O2 -D_FILE_OFFSET_BITS=64 -DSTANDALONE -DDEFAULT_INLINE=0 -DMODET $(EXTRA_CFLAGS) $(SIM_EXTRA_CFLAGS) $(SUPPORT_ARCH_DEF) -I.
-+CFLAGS = -g -O2 -fno-strict-aliasing -D_FILE_OFFSET_BITS=64 -DSTANDALONE -DDEFAULT_INLINE=0 -DMODET $(EXTRA_CFLAGS) $(SIM_EXTRA_CFLAGS) $(SUPPORT_ARCH_DEF) -I. -I$(LOCALBASE)/include
++CFLAGS += -g -fno-strict-aliasing -D_FILE_OFFSET_BITS=64 -DSTANDALONE -DDEFAULT_INLINE=0 -DMODET $(EXTRA_CFLAGS) $(SIM_EXTRA_CFLAGS) $(SUPPORT_ARCH_DEF) -I. -I$(LOCALBASE)/include
  
  ARM_COMMON_PATH= arch/arm/common
  ARM_DBCT_PATH= arch/arm/dbct

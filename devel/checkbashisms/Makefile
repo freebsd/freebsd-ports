@@ -11,8 +11,7 @@ COMMENT=	Debian script that checks for bash-isms
 
 LICENSE=	GPLv2
 
-USES=		perl5 shebangfix
-USE_XZ=		yes
+USES=		perl5 shebangfix tar:xz
 USE_PERL5=	run
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/devscripts-${PORTVERSION}

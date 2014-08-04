@@ -13,9 +13,8 @@ LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 GNU_CONFIGURE=	yes
-USES=		gmake
+USES=		gmake tar:xz
 USE_LDCONFIG=	yes
-USE_XZ=		yes
 
 CONFIGURE_ARGS+=--without-ewf --without-gmp
 MAKE_ENV+=	HOST_CC=${CC}

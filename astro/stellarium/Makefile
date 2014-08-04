@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	stellarium
-PORTVERSION=	0.12.4
+PORTVERSION=	0.13.0
 PORTREVISION=	1
 CATEGORIES=	astro
 MASTER_SITES=	SF/${PORTNAME}/Stellarium-sources/${PORTVERSION}
@@ -15,9 +15,8 @@ COMMENT=	3D photo-realistic sky renderer (planetarium)
 LICENSE=	GPLv2
 
 USES=		cmake gettext iconv
-USE_GL=		glu
-USE_QT4=	moc_build rcc_build uic_build qmake_build \
-		corelib gui network opengl script
+USE_QT5=	qmake_build buildtools_build linguisttools_build \
+		core concurrent declarative
 INSTALLS_ICONS=	yes
 
 PORTDOCS=	AUTHORS ChangeLog README
@@ -25,7 +24,7 @@ PORTDOCS=	AUTHORS ChangeLog README
 OPTIONS_DEFINE=		MORE_STARS MULTIMEDIA DOCS
 OPTIONS_DEFAULT=	MULTIMEDIA
 MORE_STARS_DESC=	Install extra star catalogs (1.2GB)
-MULTIMEDIA_DESC=	Sound and video support (via Phonon)
+MULTIMEDIA_DESC=	Sound and video support
 
 .include <bsd.port.options.mk>
 
@@ -42,18 +41,13 @@ PLIST_SUB+=	MORE_STARS="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MMULTIMEDIA}
-USE_QT4+=	phonon
+USE_QT5+=	multimedia
 .else
 CMAKE_ARGS+=	-DENABLE_SOUND:BOOL=OFF
 .endif
 
-post-patch: .SILENT
-	${REINPLACE_CMD} -e '/QTTEST/d' ${WRKSRC}/CMakeLists.txt
-# Avoid picking up the wrong `fixx11h.h' (`x11/kdelibs3' port installs one
-# that does not handle FontChange)
-	${GREP} -Rl --null fixx11h\\.h ${WRKSRC}/src ${WRKSRC}/plugins | \
-		${XARGS} -0 ${REINPLACE_CMD} -e 's/fixx11h\.h/fixx11qt4h.h/'
-	cd ${WRKSRC}/src/core/external && ${MV} fixx11h.h fixx11qt4h.h
+post-patch:
+	@${REINPLACE_CMD} -e 's, -Wno-unused-result,,' ${WRKSRC}/CMakeLists.txt
 
 post-install:
 .if ${PORT_OPTIONS:MMORE_STARS}

@@ -9,7 +9,7 @@ DISTNAME=	yaml-${PORTVERSION}
 DIST_SUBDIR=	repacked
 
 MAINTAINER=	jpaetzel@FreeBSD.org
-COMMENT=	A YAML 1.1 parser and emitter written in C
+COMMENT=	YAML 1.1 parser and emitter written in C
 
 GNU_CONFIGURE=	yes
 USES=	pathfix

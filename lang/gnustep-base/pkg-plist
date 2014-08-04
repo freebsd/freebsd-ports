@@ -869,17 +869,8 @@ etc/gdomap_if
 @dirrm GNUstep/System/Library/Libraries/gnustep-base/Versions/%%BASEVERSION%%/Resources/NSTimeZones/zones/America
 @dirrm GNUstep/System/Library/Libraries/gnustep-base/Versions/%%BASEVERSION%%/Resources/NSTimeZones/zones/Africa
 @dirrm GNUstep/System/Library/Libraries/gnustep-base/Versions/%%BASEVERSION%%/Resources/NSTimeZones/zones
-@dirrm GNUstep/System/Library/Libraries/gnustep-base/Versions/%%BASEVERSION%%/Resources/NSTimeZones/zones/Europe
-@dirrm GNUstep/System/Library/Libraries/gnustep-base/Versions/%%BASEVERSION%%/Resources/NSTimeZones/zones/Asia
-@dirrm GNUstep/System/Library/Libraries/gnustep-base/Versions/%%BASEVERSION%%/Resources/NSTimeZones/zones/America
-@dirrm GNUstep/System/Library/Libraries/gnustep-base/Versions/%%BASEVERSION%%/Resources/NSTimeZones/zones
 @dirrm GNUstep/System/Library/Libraries/gnustep-base/Versions/%%BASEVERSION%%/Resources/NSTimeZones
 @dirrm GNUstep/System/Library/Libraries/gnustep-base/Versions/%%BASEVERSION%%/Resources/GSTLS
-@dirrm GNUstep/System/Library/Libraries/gnustep-base/Versions/%%BASEVERSION%%/Resources
-@dirrm GNUstep/System/Library/Libraries/gnustep-base/Versions/%%BASEVERSION%%
-@dirrm GNUstep/System/Library/Libraries/gnustep-base/Versions
-@dirrm GNUstep/System/Library/Libraries/gnustep-base
-@dirrm GNUstep/System/Library/Libraries/gnustep-base/Versions/%%BASEVERSION%%/Resources/NSTimeZones
 @dirrm GNUstep/System/Library/Libraries/gnustep-base/Versions/%%BASEVERSION%%/Resources/Languages
 @dirrm GNUstep/System/Library/Libraries/gnustep-base/Versions/%%BASEVERSION%%/Resources/Korean.lproj
 @dirrm GNUstep/System/Library/Libraries/gnustep-base/Versions/%%BASEVERSION%%/Resources/Italian.lproj

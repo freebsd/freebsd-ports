@@ -12,7 +12,7 @@ DISTNAME=	mps.${PORTVERSION}
 MAINTAINER=	delphij@FreeBSD.org
 COMMENT=	Secure small and high performance POP3 server
 
-USE_BZIP2=	yes
+USES=	tar:bzip2
 
 MAKE_ENV+=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" PTHREAD_LIBS="${PTHREAD_LIBS}" \
 		INSTALL_PROGRAM="${INSTALL_PROGRAM}" \

@@ -20,7 +20,7 @@ LIB_DEPENDS=	libt1.so:${PORTSDIR}/devel/t1lib \
 		libfreetype.so:${PORTSDIR}/print/freetype2 \
 		libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig
 
-USES=		pkgconfig gmake
+USES=		gmake pkgconfig
 USE_GL=		glut
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	ac_cv_lib_zzip_zzip_file_open=no

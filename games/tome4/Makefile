@@ -34,6 +34,7 @@ MAKE_JOBS_UNSAFE=yes
 pre-build:
 	@${REINPLACE_CMD} 's|%%LOCALBASE%%|${LOCALBASE}|' ${WRKSRC}/premake4.lua
 	(cd ${WRKSRC} && premake4 gmake)
+	@${REINPLACE_CMD} 's|gcc|${CC}|' ${WRKSRC}/build/*.make
 	@${REINPLACE_CMD} 's|-lpthread|-pthread|' ${WRKSRC}/build/TEngine.make
 
 do-install:

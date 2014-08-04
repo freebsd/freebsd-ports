@@ -13,7 +13,7 @@ COMMENT=	Aggressive optimizing Scheme compiler
 
 LIB_DEPENDS=	libgc.so:${PORTSDIR}/devel/boehm-gc
 
-USE_BZIP2=	yes
+USES=	tar:bzip2
 ONLY_FOR_ARCHS=	i386 amd64 sparc64
 ONLY_FOR_ARCHS_REASON=	has not been bootstrapped on other platforms yet
 

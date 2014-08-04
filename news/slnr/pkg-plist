@@ -1,8 +1,8 @@
 bin/slnr
 man/man1/slnr.1.gz
-%%DOCSDIR%%/LICENSE
-%%DOCSDIR%%/default.dot.slnrrc
-%%DOCSDIR%%/porting.notes
-%%DOCSDIR%%/slnr.doc
-%%DOCSDIR%%/soup12.doc
-@dirrm %%DOCSDIR%%
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE
+%%PORTDOCS%%%%DOCSDIR%%/default.dot.slnrrc
+%%PORTDOCS%%%%DOCSDIR%%/porting.notes
+%%PORTDOCS%%%%DOCSDIR%%/slnr.doc
+%%PORTDOCS%%%%DOCSDIR%%/soup12.doc
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

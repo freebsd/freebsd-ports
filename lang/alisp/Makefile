@@ -12,6 +12,8 @@ COMMENT=	Interpreter for purely symbolic LISP
 USES=		uidfix
 USE_LDCONFIG=	yes
 
+OPTIONS_DEFINE=	DOCS
+
 post-patch:	.SILENT
 	${REINPLACE_CMD} -E -e 's/cc/$$(CC)/' \
 		-e '/^CFLAGS/{s/=/+=/;s/-g//;s/-O//;}' \

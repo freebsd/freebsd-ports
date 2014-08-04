@@ -23,7 +23,7 @@ post-patch: post-patch-zhkon2
 post-patch-zhkon2:
 	@${REINPLACE_CMD} -e 's,/dev/vga,/dev/ttyv0,g' ${WRKSRC}/src/term.c \
 		${WRKSRC}/src/display/vga.c
-	@cd ${WRKSRC} && ${PATCH} < ${.CURDIR}/files/patch-lib::coding.c
+	@cd ${WRKSRC} && ${PATCH} < ${.CURDIR}/files/patch-lib__coding.c
 	@cd ${WRKSRC} && ${PATCH} < ${.CURDIR}/files/patch-kon.cfg.FreeBSD
 
 post-build: post-build-zhkon2

@@ -1,0 +1,43 @@
+--- base/runtime/objs/makefile.orig	2012-04-18 02:28:08.000000000 +0200
++++ base/runtime/objs/makefile	2014-06-30 20:25:38.000000000 +0200
+@@ -5,10 +5,10 @@
+ 
+ SHELL =		/bin/sh
+ MAKE =		make
+-CC =		cc
+-CPP =		/lib/cpp
++CC ?=		cc
++CPP ?=		/lib/cpp
+ LD_LIBS =
+-AS =		as
++AS ?=		as
+ AR =		ar
+ ARFLAGS =	rcv
+ RANLIB =	ranlib
+@@ -38,7 +38,7 @@
+ CLIB_DIR =	$(ROOT_DIR)/c-libs
+ CONFIG_DIR =	$(ROOT_DIR)/config
+ 
+-CFLAGS =	-O
++CFLAGS ?=	-O
+ 
+ INCLUDES =	-I$(OBJS_DIR) -I$(INC_DIR)
+ GC_INCLUDES =	$(INCLUDES) -I$(GC_DIR)
+@@ -329,7 +329,7 @@
+ #
+ MK_ARGS =		VERSION="$(VERSION)" \
+ 			MAKE="$(MAKE)" \
+-			CC="$(CC)" CFLAGS="$(CFLAGS)" DEFS="$(DEFS)" \
++			CC="$(CC)" CFLAGS="$(CFLAGS)" DEFS='$(DEFS)' \
+ 			AR="$(AR)" ARFLAGS="$(ARFLAGS)" \
+ 			RANLIB="$(RANLIB)" \
+ 			INCLUDES="$(GC_INCLUDES) -I../bytecode"
+@@ -420,7 +420,7 @@
+ #
+ LIB_MK_ARGS =		VERSION="$(VERSION)" \
+ 			MAKE="$(MAKE)" \
+-			CC="$(CC)" CFLAGS="$(CFLAGS)" DEFS="$(DEFS)" \
++			CC="$(CC)" CFLAGS="$(CFLAGS)" DEFS='$(DEFS)' \
+ 			AR="$(AR)" ARFLAGS="$(ARFLAGS)" \
+ 			RANLIB="$(RANLIB)" \
+ 			INCLUDES="$(LIB_INCLUDES)"

@@ -7,7 +7,7 @@ CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
-COMMENT=	A module for using Systax highlighting in Ruby
+COMMENT=	Module for using Systax highlighting in Ruby
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes

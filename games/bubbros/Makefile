@@ -14,7 +14,7 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/pygame/__init__.py:${PORTSDIR}/devel/py-game
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 USE_PYTHON=	yes
-USE_BZIP2=	yes
+USES=	tar:bzip2
 
 NO_STAGE=	yes
 post-patch:

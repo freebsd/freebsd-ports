@@ -11,7 +11,7 @@ COMMENT=	Clone of the proprietary enscript program from Adobe Systems
 
 OPTIONS_DEFINE=	DOCS
 
-USE_BZIP2=	yes
+USES=	tar:bzip2
 
 MAKEFILE=	makefile
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}"

@@ -7,7 +7,7 @@ CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
-COMMENT=	A fast Markdown converter for ruby based on discount
+COMMENT=	Fast Markdown converter for ruby based on discount
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes

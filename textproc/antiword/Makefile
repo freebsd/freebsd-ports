@@ -8,7 +8,7 @@ CATEGORIES=	textproc
 MASTER_SITES=	http://www.winfield.demon.nl/linux/
 
 MAINTAINER=	leeym@FreeBSD.org
-COMMENT=	An application for displaying Microsoft(R) Word documents
+COMMENT=	Application for displaying Microsoft(R) Word documents
 
 LICENSE=	GPLv2
 

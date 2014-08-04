@@ -14,7 +14,7 @@ BUILD_DEPENDS=	nkf:${PORTSDIR}/japanese/nkf
 LIB_DEPENDS=	libapr-1.so:${PORTSDIR}/devel/apr1
 
 USE_AUTOTOOLS=	libtool
-USE_BZIP2=	YES
+USES=	tar:bzip2
 USE_BDB=	42
 GNU_CONFIGURE=	YES
 USE_RUBY=	YES

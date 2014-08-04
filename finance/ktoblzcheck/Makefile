@@ -3,6 +3,7 @@
 
 PORTNAME=	ktoblzcheck
 PORTVERSION=	1.45
+PORTREVISION=	1
 CATEGORIES=	finance german
 MASTER_SITES=	SF/${PORTNAME}
 
@@ -11,8 +12,8 @@ COMMENT=	Check bank codes of German banks
 
 LICENSE=	LGPL21
 
-USES=		pathfix
-USE_AUTOTOOLS=	libtool
+USES=		libtool pathfix
+GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
 OPTIONS_DEFINE=	PYTHON

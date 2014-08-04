@@ -9,7 +9,7 @@ DISTNAME=	${PORTNAME}
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A pager utility that speaks Vietnamese
+COMMENT=	Pager utility that speaks Vietnamese
 
 ALL_TARGET=	clobber all
 MAN1=		vnless.1 vnlesskey.1

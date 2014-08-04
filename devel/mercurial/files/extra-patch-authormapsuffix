@@ -1,26 +1,5 @@
---- hgext/convert/__init__.py.orig	2014-06-01 17:15:14.000000000 -0400
-+++ hgext/convert/__init__.py	2014-06-22 16:11:35.609199105 -0400
-@@ -85,6 +85,9 @@
- 
-     Empty lines and lines starting with a ``#`` are ignored.
- 
-+    The authormapsuffix can be used to append set text to each
-+    post-authormap-translated author name.
-+
-     The filemap is a file that allows filtering and remapping of files
-     and directories. Each line can contain one of the following
-     directives::
-@@ -314,6 +317,8 @@
-            _('import up to source revision REV'), _('REV')),
-           ('A', 'authormap', '',
-            _('remap usernames using this file'), _('FILE')),
-+          ('', 'authormapsuffix', '',
-+           _('append this suffix to remapped author names'), _('SUFFIX')),
-           ('', 'filemap', '',
-            _('remap file names using contents of file'), _('FILE')),
-           ('', 'splicemap', '',
---- hgext/convert/convcmd.py.orig	2014-06-01 17:15:14.000000000 -0400
-+++ hgext/convert/convcmd.py	2014-06-22 16:11:35.610199033 -0400
+--- ./hgext/convert/convcmd.py.orig	2014-08-01 23:22:55.000000000 +0000
++++ ./hgext/convert/convcmd.py	2014-08-02 06:58:26.000000000 +0000
 @@ -103,12 +103,15 @@
          self.commitcache = {}
          self.authors = {}
@@ -37,7 +16,7 @@
          # Read first the dst author map if any
          authorfile = self.dest.authorfile()
          if authorfile and os.path.exists(authorfile):
-@@ -356,7 +359,7 @@
+@@ -360,7 +363,7 @@
                  continue
  
              srcauthor = srcauthor.strip()
@@ -46,121 +25,12 @@
              if self.authors.get(srcauthor) in (None, dstauthor):
                  msg = _('mapping author %s to %s\n')
                  self.ui.debug(msg % (srcauthor, dstauthor))
-@@ -370,7 +373,8 @@
+@@ -374,7 +377,7 @@
  
      def cachecommit(self, rev):
          commit = self.source.getcommit(rev)
 -        commit.author = self.authors.get(commit.author, commit.author)
-+        commit.author = self.authors.get(commit.author,
-+                                         commit.author + self.authormapsuffix)
++        commit.author = self.authors.get(commit.author, commit.author + self.authormapsuffix)
          # If commit.branch is None, this commit is coming from the source
          # repository's default branch and destined for the default branch in the
          # destination repository. For such commits, passing a literal "None"
---- tests/test-convert-authormap.t.orig	2014-06-01 17:15:14.000000000 -0400
-+++ tests/test-convert-authormap.t	2014-06-22 16:11:35.610199033 -0400
-@@ -10,6 +10,8 @@
-   $ cd orig
-   $ echo foo > foo
-   $ HGUSER='user name' hg ci -qAm 'foo'
-+  $ echo bar > bar
-+  $ HGUSER='user name 2' hg ci -qAm 'bar'
-   $ cd ..
- 
- Explicit --authors
-@@ -26,13 +28,19 @@
-   scanning source...
-   sorting...
-   converting...
--  0 foo
-+  1 foo
-+  0 bar
-   writing author map file $TESTTMP/new/.hg/authormap (glob)
-   $ cat new/.hg/authormap
-   user name=Long User Name
-   $ hg -Rnew log
--  changeset:   0:d89716e88087
-+  changeset:   1:263e7765e4b7
-   tag:         tip
-+  user:        user name 2
-+  date:        Thu Jan 01 00:00:00 1970 +0000
-+  summary:     bar
-+  
-+  changeset:   0:d89716e88087
-   user:        Long User Name
-   date:        Thu Jan 01 00:00:00 1970 +0000
-   summary:     foo
-@@ -48,11 +56,72 @@
-   scanning source...
-   sorting...
-   converting...
--  0 foo
-+  1 foo
-+  0 bar
-   $ hg -Rnew log
--  changeset:   0:d89716e88087
-+  changeset:   1:263e7765e4b7
-   tag:         tip
-+  user:        user name 2
-+  date:        Thu Jan 01 00:00:00 1970 +0000
-+  summary:     bar
-+  
-+  changeset:   0:d89716e88087
-   user:        Long User Name
-   date:        Thu Jan 01 00:00:00 1970 +0000
-   summary:     foo
-   
-+  $ rm -rf new
-+
-+Use authormapsuffix together with authormap
-+
-+  $ cat > authormap.txt <<EOF
-+  > user name = username
-+  > user name 2 = username2
-+  > EOF
-+  $ hg convert --authormap authormap.txt --authormapsuffix '@test.org' orig new
-+  initializing destination new repository
-+  scanning source...
-+  sorting...
-+  converting...
-+  1 foo
-+  0 bar
-+  writing author map file $TESTTMP/new/.hg/authormap
-+  $ cat new/.hg/authormap
-+  user name 2=username2@test.org
-+  user name=username@test.org
-+  $ hg -Rnew log
-+  changeset:   1:aeeaab422b32
-+  tag:         tip
-+  user:        username2@test.org
-+  date:        Thu Jan 01 00:00:00 1970 +0000
-+  summary:     bar
-+  
-+  changeset:   0:51317d63da9e
-+  user:        username@test.org
-+  date:        Thu Jan 01 00:00:00 1970 +0000
-+  summary:     foo
-+  
-+  $ rm -rf new
-+
-+Use authormapsuffix stand alone
-+
-+  $ hg convert --authormapsuffix '@test.org' orig new
-+  initializing destination new repository
-+  scanning source...
-+  sorting...
-+  converting...
-+  1 foo
-+  0 bar
-+  $ hg -Rnew log
-+  changeset:   1:94e0dcfe3b0d
-+  tag:         tip
-+  user:        user name 2@test.org
-+  date:        Thu Jan 01 00:00:00 1970 +0000
-+  summary:     bar
-+  
-+  changeset:   0:e2ff155c86b8
-+  user:        user name@test.org
-+  date:        Thu Jan 01 00:00:00 1970 +0000
-+  summary:     foo
-+  
-+

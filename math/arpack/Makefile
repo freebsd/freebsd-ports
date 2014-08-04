@@ -22,7 +22,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 MAKE_JOBS_UNSAFE=	yes
 USES=		fortran
 USE_LDCONFIG=	yes
-WRKSRC =	${WRKDIR}/ARPACK
+WRKSRC=		${WRKDIR}/ARPACK
 
 # The following lapack symbols in arpack are renamed to avoid conflicts with other
 # lapack libraries:

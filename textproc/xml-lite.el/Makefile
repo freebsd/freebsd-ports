@@ -11,7 +11,7 @@ DISTNAME=	${PORTNAME}
 EXTRACT_SUFX=	# empty
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A simple XML-editing for GNU Emacs
+COMMENT=	Simple XML-editing for GNU Emacs
 
 USE_EMACS=	yes
 NO_WRKSUBDIR=	yes

@@ -17,6 +17,8 @@ RUN_DEPENDS=	p5-DBI>=1.48:${PORTSDIR}/databases/p5-DBI
 OPTIONS_DEFINE=	APACHE LIGHTTPD
 OPTIONS_DEFAULT=APACHE
 
+PORTSCOUT=	limit:^[0-9\.]*$$
+
 NO_BUILD=	yes
 USE_MYSQL=	yes
 USE_PHP=	ftp mysql session zlib

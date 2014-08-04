@@ -2,68 +2,65 @@
 # $FreeBSD$
 
 PORTNAME=	uhub
-PORTVERSION=	0.4.0
-PORTREVISION=	1
+PORTVERSION=	0.4.1
+DISTVERSIONSUFFIX=	-src
 CATEGORIES=	net-p2p
 MASTER_SITES=	http://www.extatic.org/downloads/uhub/
-DISTFILES=	${PORTNAME}-${PORTVERSION}-src${EXTRACT_SUFX}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	High performance peer-to-peer hub for the ADC network
 
 LICENSE=	GPLv3
 
-USES=		gmake perl5
-USE_PERL5=	build
-USE_SQLITE=	yes
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-USE_RC_SUBR=	uhub
 USERS=		uhub
 GROUPS=		uhub
-SHAREGRP=	uhub
-SHAREMODE=	640
 
-MAKEFILE=	${WRKSRC}/GNUmakefile
+USES=		cmake perl5
+USE_RC_SUBR=	uhub
+USE_PERL5=	build
 
-OPTIONS_DEFINE=	DEBUG OPENSSL
-OPENSSL_DESC=	Enable OpenSSL Support (experimental)
+CFLAGS+=	-fPIC -I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
-NO_STAGE=	yes
+OPTIONS_DEFINE=		OPENSSL SQLITE
+OPTIONS_DEFAULT=	OPENSSL SQLITE
+OPTIONS_SUB=		yes
+
+OPENSSL_USE=		openssl=yes
+OPENSSL_CMAKE_OFF=	-DSSL_SUPPORT:BOOL=OFF
+SQLITE_USE=		sqlite=yes
+SQLITE_CMAKE_OFF=	-DSQLITE_SUPPORT:BOOL=OFF
+
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MOPENSSL}
-USE_OPENSSL=	yes
-MAKE_ARGS+=	USE_SSL=YES
-.else
-MAKE_ARGS+=	USE_SSL=NO
-.endif
-
-.if ${PORT_OPTIONS:MDEBUG}
-CFLAGS+=	-ggdb -DDEBUG
-.else
-CFLAGS+=	-DNDEBUG
-.endif
-
-.include <bsd.port.pre.mk>
-
-CFLAGS+=	-I./src/ -I${LOCALBASE}/include
-MAKE_ARGS+=	UHUB_PREFIX="${PREFIX}" UHUB_CONF_DIR="${PREFIX}/etc/uhub" \
-		SILENT=NO CC="${CC}" CFLAGS="${CFLAGS}"
-
 post-patch:
-	@${REINPLACE_CMD} -e 's|/etc/uhub/|${PREFIX}&|' ${WRKSRC}/doc/uhub.conf
-	@${REINPLACE_CMD} -e 's|/etc/uhub/|${PREFIX}&|' ${WRKSRC}/src/uhub.h
+	@${REINPLACE_CMD} -e \
+		'/DESTINATION/s|^|#|' ${WRKSRC}/CMakeLists.txt
+	@${REINPLACE_CMD} -e \
+		's| /usr/lib/| ${PREFIX}/lib/|g ; \
+		 s|=/etc/uhub/|=${ETCDIR}/|g' ${WRKSRC}/doc/uhub.conf
+	@${REINPLACE_CMD} -e \
+		's|"/etc/uhub/|"${ETCDIR}/|' ${WRKSRC}/src/uhub.h
 
 do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/uhub ${PREFIX}/bin/uhub
-	@${MKDIR} ${PREFIX}/etc/uhub
-	@${INSTALL_DATA} ${WRKSRC}/doc/uhub.conf ${PREFIX}/etc/uhub/uhub.conf.sample
-	@${INSTALL_DATA} ${WRKSRC}/doc/users.conf ${PREFIX}/etc/uhub/users.conf.sample
-	@${INSTALL_DATA} /dev/null ${PREFIX}/etc/uhub/motd.txt.sample
-	@${INSTALL_DATA} /dev/null ${PREFIX}/etc/uhub/rules.txt.sample
-.for i in uhub.conf users.conf motd.txt rules.txt
-	@[ ! -f ${PREFIX}/etc/uhub/${i} ] \
-	&& ${CP} -p ${PREFIX}/etc/uhub/${i}.sample ${PREFIX}/etc/uhub/${i}
+	(cd ${INSTALL_WRKSRC} && ${INSTALL_PROGRAM} uhub \
+		${STAGEDIR}${PREFIX}/bin)
+.if ${PORT_OPTIONS:MSQLITE}
+	(cd ${INSTALL_WRKSRC} && ${INSTALL_PROGRAM} uhub-passwd \
+		${STAGEDIR}${PREFIX}/bin)
+.endif
+	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/uhub
+	(cd ${INSTALL_WRKSRC} && ${INSTALL_LIB} mod_*.so \
+		${STAGEDIR}${PREFIX}/lib/uhub)
+	@${MKDIR} ${STAGEDIR}${ETCDIR}
+.for i in uhub.conf users.conf
+	(cd ${WRKSRC}/doc && ${INSTALL_DATA} ${i} \
+		${STAGEDIR}${ETCDIR}/${i}.sample)
+.endfor
+.for i in motd.txt rules.txt
+	@${ECHO_CMD} -n > ${STAGEDIR}${ETCDIR}/${i}.sample
 .endfor
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

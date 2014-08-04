@@ -15,7 +15,7 @@ COMMENT=	IPv6 enabled cvs.  You can use IPv6 connection when using pserver
 CONFLICTS=	cvsnt-[12]* cvs+ipv6-[12]*
 
 GNU_CONFIGURE=	yes
-USE_BZIP2=	yes
+USES=	tar:bzip2
 CONFIGURE_ARGS=	--enable-ipv6 --without-gssapi \
 		--with-editor="vi" \
 		--with-tmpdir="/tmp"

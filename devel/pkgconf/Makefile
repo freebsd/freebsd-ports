@@ -2,6 +2,7 @@
 
 PORTNAME=	pkgconf
 PORTVERSION=	0.9.6
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://rabbit.dereferenced.org/~nenolod/distfiles/ \
 		http://files.etoilebsd.net/pkgconf/
@@ -22,6 +23,5 @@ CONFLICTS_INSTALL=	pkg-config-*
 
 post-install:
 	${LN} -sf pkgconf ${STAGEDIR}${PREFIX}/bin/pkg-config
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/pkgconf
 
 .include <bsd.port.mk>

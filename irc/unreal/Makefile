@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Unreal
-PORTVERSION=	3.2.10.3
+PORTVERSION=	3.2.10.4
 CATEGORIES=	irc ipv6
 MASTER_SITES=	http://www.unrealircd.com/downloads/
 DISTNAME=	${PORTNAME}${PORTVERSION}

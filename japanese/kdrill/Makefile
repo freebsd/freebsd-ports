@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	kdrill
-PORTVERSION=	6.4
-PORTREVISION=	2
+PORTVERSION=	6.5
 CATEGORIES=	japanese
 MASTER_SITES=	http://www.bolthole.com/kdrill/
 DISTNAME=	${PORTNAME}${PORTVERSION}
@@ -11,36 +10,27 @@ DISTNAME=	${PORTNAME}${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Program to quiz you on the meanings of Kanji
 
-# Explictly state HTML'ized man pages in packing list since not all are
-# generated from imake.
-XFREE86_HTML_MAN=no
-MAN1=		kdrill.1 makedic.1 makeedict.1
+RUN_DEPENDS=	xjdic:${PORTSDIR}/japanese/edict
 
 USES=		imake
-MANCOMPRESSED=	yes
 USE_XORG=	ice sm x11 xaw xext xmu xpm xt
 
-RUN_DEPENDS+=	xjdic:${PORTSDIR}/japanese/edict
-
-NO_STAGE=	yes
-post-build:
-	@cd ${WRKSRC}/makedic && ${MAKE} ${MAKE_ENV} clean all
-
 DATADIR=	${PREFIX}/share/dict/kdrill
+
+post-build:
+	@(cd ${WRKSRC}/makedic && ${DO_MAKE_BUILD} ${ALL_TARGET})
+
 post-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/makedic/makedic ${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/makedic/makeedict ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/makedic/makedic.1 \
-	    ${PREFIX}/man/man1
-	${GZIP_CMD} ${PREFIX}/man/man1/makedic.1
-	${INSTALL_MAN} ${WRKSRC}/makedic/makeedict.1 \
-	    ${PREFIX}/man/man1
-	${GZIP_CMD} ${PREFIX}/man/man1/makeedict.1
-	${MKDIR} ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/makedic/fullkatahira.edic ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/makedic/hira.edic ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/makedic/hiraplus.edic ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/makedic/kata.edic ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/makedic/kataplus.edic ${DATADIR}
+.for i in makedic makeedict
+	(cd ${WRKSRC}/makedic && ${INSTALL_PROGRAM} ${i} \
+		${STAGEDIR}${PREFIX}/bin)
+	(cd ${WRKSRC}/makedic && ${INSTALL_MAN} ${i}.1 \
+		${STAGEDIR}${MANPREFIX}/man/man1)
+.endfor
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+.for i in fullkatahira.edic hira.edic hiraplus.edic kata.edic kataplus.edic
+	(cd ${WRKSRC}/makedic && ${INSTALL_DATA} ${i} \
+		${STAGEDIR}${DATADIR})
+.endfor
 
 .include <bsd.port.mk>

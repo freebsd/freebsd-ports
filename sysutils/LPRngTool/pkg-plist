@@ -1,13 +1,11 @@
 bin/lprngtool
+@sample etc/lprngtool.conf.sample
 libexec/filters/atalkprint
 libexec/filters/ncpprint
-libexec/filters/smbprint
 libexec/filters/printerdb
+libexec/filters/smbprint
 libexec/filters/testpage.asc
 libexec/filters/testpage.ps
 libexec/filters/testpage-a4.ps
+man/man1/lprngtool.1.gz
 @dirrmtry libexec/filters
-%%CWD%%@cwd /
-@unexec if cmp -s %D/%%SYSCONFDIR%%/lprngtool.conf %D/%%SYSCONFDIR%%/lprngtool.conf.sample; then rm -f %D/%%SYSCONFDIR%%/lprngtool.conf; fi
-%%SYSCONFDIR%%/lprngtool.conf.sample
-@exec [ -f %B/lprngtool.conf ] || cp %B/%f %B/lprngtool.conf

@@ -10,7 +10,7 @@ DISTNAME=	${PORTNAME}-0.49.10-p3
 MAINTAINER=	dsh@vlink.ru
 COMMENT=	FidoNet Technology Network (FTN) compatible mailer for Unix systems
 
-USE_BZIP2=	yes
+USES=	tar:bzip2
 GNU_CONFIGURE=	yes
 
 .if defined(WITH_QICO_AMIGA4D)

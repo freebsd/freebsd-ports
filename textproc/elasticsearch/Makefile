@@ -8,7 +8,7 @@ MASTER_SITES=	http://download.elasticsearch.org/${PORTNAME}/${PORTNAME}/ \
 		http://mirrors.rit.edu/zi/
 
 MAINTAINER=	tj@FreeBSD.org
-COMMENT=	A full-text search engine for Java
+COMMENT=	Full-text search engine for Java
 
 LICENSE=	APACHE20
 

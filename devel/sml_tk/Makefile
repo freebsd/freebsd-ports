@@ -28,7 +28,7 @@ NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MSMLNJDEVEL}
-BUILD_DEPENDS+=	smlnj-devel>=65:${PORTSDIR}/lang/sml-nj-devel
+BUILD_DEPENDS+=	smlnj>=65:${PORTSDIR}/lang/smlnj
 .endif
 .if ${PORT_OPTIONS:MPOLYML}
 BUILD_DEPENDS+=	poly:${PORTSDIR}/lang/polyml

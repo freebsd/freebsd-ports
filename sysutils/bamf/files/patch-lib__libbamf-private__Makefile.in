@@ -1,0 +1,20 @@
+--- ./lib/libbamf-private/Makefile.in.orig	2013-08-30 16:26:20.552840000 +0000
++++ ./lib/libbamf-private/Makefile.in	2014-08-02 15:33:08.000000000 +0000
+@@ -705,7 +705,7 @@
+ 	--interface-prefix org.ayatana.bamf \
+ 	$<; \
+ 	# Adding '_' prefix to generated private functions \
+-	$(SED) "s/bamf_dbus/_bamf_dbus/g" -i \
++	$(SED) -i "" "s/bamf_dbus/_bamf_dbus/g" \
+ 	$@ $(shell basename $@ .c).h
+ 
+ .NOTPARALLEL:
+@@ -717,7 +717,7 @@
+ 	--interface-prefix org.ayatana.bamf \
+ 	$<; \
+ 	# Adding '_' prefix to generated private functions \
+-	$(SED) "s/bamf_dbus_item/_bamf_dbus_item/g" -i \
++	$(SED) -i "" "s/bamf_dbus_item/_bamf_dbus_item/g" \
+ 	$@ $(shell basename $@ .c).h
+ 
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.

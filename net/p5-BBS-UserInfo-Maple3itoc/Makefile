@@ -11,9 +11,13 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Get user information of Maple3itoc-style BBS
 
-RUN_DEPENDS=	p5-Expect>=0:${PORTSDIR}/lang/p5-Expect
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
 
-USES=		perl5
+BUILD_DEPENDS=	p5-Expect>=0:${PORTSDIR}/lang/p5-Expect
+RUN_DEPENDS:=	${BUILD_DEPENDS}
+
 USE_PERL5=	configure
+USES=		perl5
 
 .include <bsd.port.mk>

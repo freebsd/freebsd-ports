@@ -1,0 +1,35 @@
+commit 6ddaacd
+Author: Ginn Chen <ginn.chen@oracle.com>
+Date:   Wed Nov 30 07:23:46 2011 +0800
+
+    Bug 702179 dtrace probes are not installed on Solaris with static js lib r=glandium
+---
+ configure.in       | 2 +-
+ js/src/Makefile.in | 2 --
+ 2 files changed, 1 insertion(+), 3 deletions(-)
+
+diff --git configure.in configure.in
+index 66549c1..75b848d 100644
+--- configure.in
++++ configure.in
+@@ -966,7 +966,7 @@ MOZ_BZ2_LIBS='$(call EXPAND_LIBNAME_PATH,bz2,$(DEPTH)/modules/libbz2/src)'
+ MOZ_PNG_CFLAGS="-I$_objdir/dist/include" # needed for freetype compilation
+ MOZ_PNG_LIBS='$(call EXPAND_LIBNAME_PATH,mozpng,$(DEPTH)/media/libpng)'
+ 
+-MOZ_JS_STATIC_LIBS='$(call EXPAND_LIBNAME_PATH,js_static,$(LIBXUL_DIST)/lib)'
++MOZ_JS_STATIC_LIBS='$(call EXPAND_LIBNAME_PATH,js_static,$(DEPTH)/js/src)'
+ MOZ_JS_SHARED_LIBS='$(call EXPAND_LIBNAME_PATH,mozjs,$(LIBXUL_DIST)/lib)'
+ MOZ_FIX_LINK_PATHS='-Wl,-rpath-link,$(LIBXUL_DIST)/bin -Wl,-rpath-link,$(prefix)/lib'
+ XPCOM_FROZEN_LDOPTS='$(call EXPAND_LIBNAME_PATH,xul mozalloc,$(LIBXUL_DIST)/bin)'
+diff --git js/src/Makefile.in js/src/Makefile.in
+index e28160a..28ca5e8 100644
+--- js/src/Makefile.in
++++ js/src/Makefile.in
+@@ -35,7 +35,6 @@ ifdef JS_SHARED_LIBRARY
+ FORCE_SHARED_LIB = 1
+ endif
+ FORCE_STATIC_LIB = 1
+-DIST_INSTALL = 1
+ 
+ ###############################################
+ # BEGIN include sources for low-level code shared with mfbt

@@ -13,7 +13,7 @@ LICENSE=	BSD3CLAUSE
 
 LIB_DEPENDS=	libexpat.so:${PORTSDIR}/textproc/expat2
 
-USE_XZ=		yes
+USES=		tar:xz
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-expat="${LOCALBASE}"
 

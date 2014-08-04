@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 ALL_TARGET=	default
 
-USE_BZIP2=	yes
+USES=	tar:bzip2
 PLIST_FILES=	bin/ttyload man/man1/ttyload.1.gz
 PORTDOCS=	README
 

@@ -11,6 +11,8 @@ DISTNAME=	${PORTNAME}${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Progressive Networks RealAudio Proxy Kit 3.0 beta 1
 
+BROKEN=		Unfetchable
+
 ALL_TARGET=	raproxy
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}"
 

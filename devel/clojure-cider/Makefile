@@ -2,6 +2,7 @@
 
 PORTNAME=	clojure-cider
 PORTVERSION=	0.6.0
+PORTREVISION=	1
 CATEGORIES=	devel elisp
 DISTNAME=	cider-${PORTVERSION}
 
@@ -21,8 +22,9 @@ USE_EMACS=	yes
 NO_BUILD=	yes
 
 RUN_DEPENDS+=	clojure-mode.el>0:${PORTSDIR}/lang/clojure-mode.el \
-		pkg-info.el>0:${PORTSDIR}/devel/pkg-info.el \
-		dash.el>0:${PORTSDIR}/devel/dash.el
+		dash.el>0:${PORTSDIR}/devel/dash.el \
+		epl.el>0:${PORTSDIR}/devel/epl.el \
+		pkg-info.el>0:${PORTSDIR}/devel/pkg-info.el
 
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/cider-client.el \

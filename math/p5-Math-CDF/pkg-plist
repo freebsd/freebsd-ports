@@ -3,6 +3,6 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/CDF/CDF.so
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/CDF/autosplit.ix
 %%PERL5_MAN3%%/Math::CDF.3.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/CDF
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/CDF
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Math

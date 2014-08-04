@@ -2,12 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	leechcraft
-PORTVERSION=	0.6.65
-PORTREVISION=	1
+PORTVERSION=	0.6.70
 CATEGORIES=	x11
 MASTER_SITES=	http://dist.leechcraft.org/LeechCraft/0.6.70/
 DISTNAME=	${PORTNAME}-${PORTVERSION}
-DISTNAME=	${PORTNAME}-${PORTVERSION}-${LC_REV}
+#DISTNAME=	${PORTNAME}-${PORTVERSION}-${LC_REV}
 
 MAINTAINER=	vg@FreeBSD.org
 COMMENT=	Cross-platform modular live environment
@@ -15,7 +14,7 @@ COMMENT=	Cross-platform modular live environment
 LIB_DEPENDS=	libqwt6.so:${PORTSDIR}/x11-toolkits/qwt6 \
 		libboost_program_options.so:${PORTSDIR}/devel/boost-libs
 
-LC_REV=		1526-g7fdb92a
+#LC_REV=		1526-g7fdb92a
 INSTALLS_ICONS=	yes
 MAKE_JOBS_UNSAFE=yes
 USE_LDCONFIG=	yes

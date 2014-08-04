@@ -12,7 +12,7 @@ COMMENT=	Handling Mode-Switching USB Devices
 
 LICENSE=	GPLv2
 
-USE_BZIP2=	yes
+USES=	tar:bzip2
 
 pre-patch:
 		${REINPLACE_CMD} 's/gcc/${CC}/' ${WRKSRC}/Makefile

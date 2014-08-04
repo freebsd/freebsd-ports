@@ -9,6 +9,8 @@ CATEGORIES=	editors
 MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	Advanced cross-platform text editor
 
+LICENSE=	GPLv3
+
 LIB_DEPENDS=	#
 
 OPTIONS_SINGLE=		FOX

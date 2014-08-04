@@ -8,7 +8,7 @@ CATEGORIES=	textproc
 MASTER_SITES=	http://www.maplefish.com/todd/
 
 MAINTAINER=	culot@FreeBSD.org
-COMMENT=	A document preparation system using an Almost Free Text input format
+COMMENT=	Document preparation system using an Almost Free Text input format
 
 LICENSE=	CART
 LICENSE_GROUPS=	FSF OSI

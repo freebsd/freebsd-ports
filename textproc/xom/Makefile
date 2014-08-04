@@ -2,13 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	xom
-PORTVERSION=	1.1
-PORTREVISION=	2
+PORTVERSION=	1.2.10
 PORTEPOCH=	1
 CATEGORIES=	textproc java
 MASTER_SITES=	http://www.cafeconleche.org/XOM/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	danilo@FreeBSD.org
 COMMENT=	Open source (LGPL), tree-based API for processing XML with Java
 
 RUN_DEPENDS=	${JAVALIBDIR}/xml-apis.jar:${PORTSDIR}/textproc/xerces-j \
@@ -19,23 +18,19 @@ JAVA_VERSION=	1.6+
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/XOM
 
+OPTIONS_DEFINE=	DOCS
+
 PLIST_FILES=	%%JAVAJARDIR%%/${PORTNAME}.jar
 PORTDOCS=	overview.html apidocs
 PORTEXAMPLES=	xom-samples.jar
 
 do-install:
-	@${ECHO_MSG} -n ">> Installing JAR as ${JAVAJARDIR}/${PORTNAME}.jar..."
 	@${MKDIR} ${STAGEDIR}${JAVAJARDIR}
 	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}-${PORTVERSION}.jar ${STAGEDIR}${JAVAJARDIR}/${PORTNAME}.jar
-	@${ECHO_MSG} " [ DONE ]"
-	@${ECHO_MSG} -n ">> Installing samples in ${EXAMPLESDIR}..."
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
-	@${INSTALL_DATA} ${WRKSRC}/xom-samples.jar ${STAGEDIR}${EXAMPLESDIR}/
-	@${ECHO_MSG} " [ DONE ]"
-	@${ECHO_MSG} -n ">> Installing documentation in ${DOCSDIR}..."
+	${INSTALL_DATA} ${WRKSRC}/xom-samples.jar ${STAGEDIR}${EXAMPLESDIR}/
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}/apidocs
 	cd ${WRKSRC}/ && ${FIND} ${PORTDOCS} \
 	  | ${CPIO} -pdmu -R ${SHAREOWN}:${SHAREGRP} ${STAGEDIR}${DOCSDIR} > /dev/null 2>&1
-	@${ECHO_MSG} " [ DONE ]"
 
 .include <bsd.port.mk>

@@ -12,7 +12,7 @@ COMMENT=	Framework that allows to access digital cameras
 
 LIB_DEPENDS=	libgphoto2.so:${PORTSDIR}/graphics/libgphoto2
 
-USE_BZIP2=	yes
+USES=	tar:bzip2
 USE_GNUSTEP=	yes
 USE_GNUSTEP_BACK=	yes
 USE_GNUSTEP_BUILD=	yes

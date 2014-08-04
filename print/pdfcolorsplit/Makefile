@@ -18,7 +18,7 @@ RUN_DEPENDS=	pdftk:${PORTSDIR}/print/pdftk \
 
 USE_GHOSTSCRIPT_RUN=	yes
 USE_PYTHON=	yes
-USE_XZ=		yes
+USES=		tar:xz
 
 PLIST_FILES=	bin/${PORTNAME}
 

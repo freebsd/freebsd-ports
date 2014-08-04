@@ -1,9 +1,9 @@
 # $FreeBSD$
 
 PORTNAME=	ocsinventory-ng
-PORTVERSION=	2.0.5
+PORTVERSION=	2.1.2
 CATEGORIES=	net-mgmt
-MASTER_SITES=	https://launchpadlibrarian.net/99500930/
+MASTER_SITES=	http://launchpadlibrarian.net/179739296/
 DISTNAME=	OCSNG_UNIX_SERVER-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
@@ -24,21 +24,16 @@ USES=		perl5
 USE_APACHE_RUN=	22+
 USE_MYSQL=	41+
 WANT_PHP_WEB=	yes
-DEFAULT_PHP_VER=	5
 USE_PHP=	mysql pcre zlib session xml gd zip openssl mbstring
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME}
-
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
+SUB_FILES=	pkg-message
 
 do-install:
-	@${MKDIR} ${DATADIR}
-	@(cd ${WRKSRC}/ && ${COPYTREE_SHARE} "Apache binutils dtd etc ocsreports" ${DATADIR}/)
-	@${INSTALL_SCRIPT} ${WRKSRC}/setup.sh ${DATADIR}/
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}/
-.endif
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	@(cd ${WRKSRC}/ && ${COPYTREE_SHARE} "Apache binutils dtd etc ocsreports" ${STAGEDIR}${DATADIR}/)
+	@${INSTALL_SCRIPT} ${WRKSRC}/setup.sh ${STAGEDIR}${DATADIR}/
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}/
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

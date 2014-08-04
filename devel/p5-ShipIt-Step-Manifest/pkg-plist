@@ -1,8 +1,8 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/ShipIt/Step/Manifest/.packlist
 %%SITE_PERL%%/ShipIt/Step/Manifest.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/ShipIt/Step/Manifest/.packlist
 %%PERL5_MAN3%%/ShipIt::Step::Manifest.3.gz
-@dirrmtry %%SITE_PERL%%/ShipIt/Step
-@dirrmtry %%SITE_PERL%%/ShipIt
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/ShipIt/Step/Manifest
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/ShipIt/Step/Manifest
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/ShipIt/Step
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/ShipIt
+@dirrmtry %%SITE_PERL%%/ShipIt/Step
+@dirrmtry %%SITE_PERL%%/ShipIt

@@ -9,7 +9,7 @@ DISTNAME=	${PORTNAME}-install
 DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	thierry@FreeBSD.org
-COMMENT=	A tool to take notes, annotate documents (including PDF), and more
+COMMENT=	Tool to take notes, annotate documents (including PDF), and more
 
 LICENSE=	GPLv2
 

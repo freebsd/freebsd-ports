@@ -12,7 +12,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Moshi's Grounation cursors
 
 NO_BUILD=	yes
-USE_BZIP2=	yes
+USES=	tar:bzip2
 
 WRKSRC=		${WRKDIR}/Grounation-${PORTVERSION}
 

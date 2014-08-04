@@ -3,6 +3,7 @@
 
 PORTNAME=	ncurses
 DISTVERSION=	${RELEASE}-20140629
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	ftp://invisible-island.net/${PORTNAME}/current/
 MASTER_SITE_SUBDIR=	${PORTNAME}/current
@@ -84,6 +85,8 @@ DEBUG_CONFIGURE_WITH=	debug
 
 OPTIONS_SUB=yes
 
+.include <bsd.port.options.mk>
+
 post-extract:
 	@${MKDIR} ${WIDEC_WRKSRC}
 	@${MKDIR} ${NOWIDEC_WRKSRC}
@@ -124,10 +127,12 @@ post-install:
 . for f in ${DOCS}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}/
 . endfor
+.if ${OPSYS} != FreeBSD || ${OSVERSION} > 900000
 	${RM} -f ${STAGEDIR}${PREFIX}/lib/libncurses.so \
 		${STAGEDIR}${PREFIX}/lib/libncursesw.so
 	${ECHO} "INPUT(libncurses.so.${RELEASE:R} AS_NEEDED(-ltinfo))" > ${STAGEDIR}${PREFIX}/lib/libncurses.so
 	${ECHO} "INPUT(libncursesw.so.${RELEASE:R} AS_NEEDED(-ltinfow))" > ${STAGEDIR}${PREFIX}/lib/libncursesw.so
+.endif
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/*.so.5.9
 
 .include <bsd.port.mk>

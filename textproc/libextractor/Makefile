@@ -2,146 +2,76 @@
 # $FreeBSD$
 
 PORTNAME=	libextractor
-PORTVERSION=	0.6.2
-PORTREVISION=	16
+PORTVERSION=	1.3
 CATEGORIES=	textproc
 MASTER_SITES=	GNU
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library for keyword extraction
 
-USE_GNOME=	glib20 gtk20
-USES=		pathfix pkgconfig
+LICENSE=	GPLv3 # (or later)
+
+USES=		iconv gettext libtool makeinfo pathfix pkgconfig
+USE_GNOME=	gtk20
 USE_PYTHON=	yes
 USE_AUTOTOOLS=	libltdl
 GNU_CONFIGURE=	yes
-USE_LDCONFIG=	${PREFIX}/lib/libextractor
-CONFIGURE_ARGS=	--disable-ltdl-install
-CPPFLAGS+=	-I${LOCALBASE}/include/ffmpeg0 -I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib/ffmpeg0 -L${LOCALBASE}/lib
+CONFIGURE_ARGS=	--with-gtk-version=2 \
+		--with-ltdl=${LOCALBASE}
+INSTALL_TARGET=	install-strip
+USE_LDCONFIG=	yes
 MAKE_JOBS_UNSAFE=	yes
 
-EXTRACT_AFTER_ARGS=	--exclude libltdl
+CPPFLAGS+=	$$(pkg-config --cflags gtk+-2.0) \
+		-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib ${ICONV_LIB}
 
-MAN1=	extract.1
-MAN3=	libextractor.3
+INFO=		libextractor
 
-OPTIONS_DEFINE=	EXIV2 FLAC MPEG2 VORBIS GSF POPPLER RPM QT FFMPEG
-GSF_DESC=	GSF (OLE2 (MS office) support)
-RPM_DESC=	RPM support
-OPTIONS_DEFAULT=	EXIV2 FLAC MPEG2 VORBIS GSF POPPLER RPM QT FFMPEG
+OPTIONS_DEFINE=		EXIV2 FFMPEG FLAC GIF GSF GSTREAMER MPEG2 MP4 \
+			RPM SMF TIDY VORBIS
+OPTIONS_DEFAULT=	EXIV2 FFMPEG FLAC GIF GSF GSTREAMER MPEG2 MP4 \
+			RPM SMF TIDY VORBIS
+OPTIONS_SUB=		yes
 
-NO_STAGE=	yes
+EXIV2_LIB_DEPENDS=	libexiv2.so:${PORTSDIR}/graphics/exiv2
+EXIV2_CONFIGURE_ENV=	EXIV2_H="<exiv2/image.hpp>"
+EXIV2_CONFIGURE_ENV_OFF=	EXIV2_H=""
+FLAC_LIB_DEPENDS=	libFLAC.so:${PORTSDIR}/audio/flac
+FLAC_CONFIGURE_ENV_OFF= ac_cv_lib_FLAC_FLAC__stream_decoder_init_stream=no
+FFMPEG_LIB_DEPENDS=	libavcodec.so:${PORTSDIR}/multimedia/ffmpeg
+FFMPEG_CONFIGURE_ENABLE=	ffmpeg
+GIF_LIB_DEPENDS=	libgif.so:${PORTSDIR}/graphics/giflib
+GIF_CONFIGURE_ENV_OFF=	ac_cv_lib_gif_DGifOpen=no
+GSF_DESC=		GSF (OLE2 (MS office) support)
+GSF_USE=		gnome=libgsf
+GSF_CONFIGURE_ENV_OFF=	ac_cv_lib_gsf_1_gsf_init=no
+GSTREAMER_USE=		gstreamer1=yes
+GSTREAMER_CONFIGURE_WITH=	gstreamer
+MPEG2_LIB_DEPENDS=	libmpeg2.so:${PORTSDIR}/multimedia/libmpeg2
+MPEG2_CONFIGURE_ENV_OFF=	ac_cv_lib_mpeg2_mpeg2_init=no
+MP4_LIB_DEPENDS=	libmp4v2.so:${PORTSDIR}/multimedia/mp4v2
+MP4_CONFIGURE_ENV_OFF=	ac_cv_lib_mp4v2_MP4ReadProvider=no
+RPM_DESC=		RPM support
+RPM_LIB_DEPENDS=	librpm.so:${PORTSDIR}/archivers/rpm4
+RPM_CONFIGURE_ENV=	ac_cv_lib_rpm_rpmReadPackageFile=yes
+RPM_CONFIGURE_ENV_OFF=	ac_cv_lib_rpm_rpmReadPackageFile=no
+SMF_DESC=		Standard MIDI file support via LibSMF
+SMF_LIB_DEPENDS=	libsmf.so:${PORTSDIR}/audio/libsmf
+SMF_CONFIGURE_ENV_OFF=	ac_cv_lib_smf_smf_load_from_memory=no
+TIDY_LIB_DEPENDS=	libtidy.so:${PORTSDIR}/www/tidy-lib
+TIDY_CONFIGURE_ENV=	TIDY_H="<tidy/tidy.h>"
+TIDY_CONFIGURE_ENV_OFF=	TIDY_H=""
+VORBIS_LIB_DEPENDS=	libvorbisfile.so:${PORTSDIR}/audio/libvorbis
+VORBIS_CONFIGURE_ENV_OFF=	ac_cv_lib_vorbisfile_ov_open_callbacks=no
+
 post-patch:
-	@${FIND} ${WRKSRC} -type f | ${XARGS} ${TOUCH} -f
-	@${REINPLACE_CMD} \
-		-e 's|-lpthread|${PTHREAD_LIBS}|g' \
-		-e 's|-lavcodec|-lavcodec0|g' \
-		-e 's|-lavformat|-lavformat0|g' \
-		-e 's|-lswscale|-lswscale0|g' \
-		-e 's|-lavutil|-lavutil0|g' \
-		${WRKSRC}/src/plugins/Makefile.*
-	@${REINPLACE_CMD} -e 's|-lc_r|${PTHREAD_LIBS}|g' \
-		-e 's|-lstdc++||g' \
-		${WRKSRC}/configure
+	@${REINPLACE_CMD} -e \
+		's|-lstdc++|| ; \
+		 s|-lc_r|-pthread| ; \
+		 s|<exiv2/image.hpp>|$${EXIV2_H}| ; \
+		 s|<tidy/tidy.h>|$${TIDY_H}|' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e \
+		's|-lpthread|-pthread|' ${WRKSRC}/src/plugins/Makefile.in
 
-check: build install
-	@(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} check)
-
-#regression-test: check
-
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == i386
-BROKEN=	does not package
-.endif
-
-# libextractor's configure logic is: if exiv2 is present it will add support
-# for it, if not present then it will not add support for it, but it cannot
-# be disabled if present
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MEXIV2}
-LIB_DEPENDS+=	libexiv2.so:${PORTSDIR}/graphics/exiv2
-PLIST_SUB+=	EXIV2=""
-.else
-PLIST_SUB+=	EXIV2="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MFLAC}
-LIB_DEPENDS+=	libFLAC.so:${PORTSDIR}/audio/flac
-PLIST_SUB+=	FLAC=""
-.else
-PLIST_SUB+=	FLAC="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MMPEG2}
-LIB_DEPENDS+=	libmpeg2.so:${PORTSDIR}/multimedia/libmpeg2
-PLIST_SUB+=	MPEG2=""
-.else
-PLIST_SUB+=	MPEG2="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MVORBIS}
-LIB_DEPENDS+=	libvorbisfile.so:${PORTSDIR}/audio/libvorbis
-PLIST_SUB+=	VORBIS=""
-.else
-PLIST_SUB+=	VORBIS="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MGSF}
-LIB_DEPENDS+=	libgsf-1.so:${PORTSDIR}/devel/libgsf
-PLIST_SUB+=	GSF=""
-.else
-PLIST_SUB+=	GSF="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MPOPPLER}
-LIB_DEPENDS+=	libpoppler.so:${PORTSDIR}/graphics/poppler
-PLIST_SUB+=	POPPLER=""
-.else
-PLIST_SUB+=	POPPLER="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MRPM}
-LIB_DEPENDS+=	librpm.so:${PORTSDIR}/archivers/rpm4
-PLIST_SUB+=	RPM=""
-.else
-PLIST_SUB+=	RPM="@comment "
-.endif
-
-# QT can be disabled
-.if ${PORT_OPTIONS:MQT}
-LIB_DEPENDS+=	libQtGui.so:${PORTSDIR}/x11-toolkits/qt4-gui
-LDFLAGS+=	-L${LOCALBASE}/lib -L${LOCALBASE}/lib/qt4
-CONFIGURE_ARGS+=--with-qt=${LOCALBASE}
-PLIST_SUB+=	QT=""
-.else
-CONFIGURE_ARGS+=--with-qt=no
-PLIST_SUB+=	QT="@comment "
-.endif
-
-# FFMPEG can be disabled
-.if ${PORT_OPTIONS:MFFMPEG}
-LIB_DEPENDS+=	libavformat0.so:${PORTSDIR}/multimedia/ffmpeg0
-LIB_DEPENDS+=	libavcodec0.so:${PORTSDIR}/multimedia/ffmpeg0
-LIB_DEPENDS+=	libswscale0.so:${PORTSDIR}/multimedia/ffmpeg0
-LIB_DEPENDS+=	libavutil0.so:${PORTSDIR}/multimedia/ffmpeg0
-CONFIGURE_ARGS+=--enable-ffmpeg
-PLIST_SUB+=	FFMPEG=""
-.else
-CONFIGURE_ARGS+=--disable-ffmpeg
-PLIST_SUB+=	FFMPEG="@comment "
-.endif
-
-patch-autotools-libtool::
-	@(cd ${PATCH_WRKSRC}; \
-	for f in ${LIBTOOLFILES}; do \
-		${CP} $$f $$f.tmp; \
-		${SED} -e "/^ltmain=/s^\$$ac_aux_dir/ltmain.sh^${LTMAIN}^g" \
-			$$f.tmp > $$f; \
-		${RM} $$f.tmp; \
-	done);
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -58,7 +58,39 @@
 %%DATADIR%%/Resources/Plug-ins/Framework.bundle/Contents/Resources/Platforms/Shared/Libraries/RestrictedPython/tests/testUtiliities.py
 %%DATADIR%%/Resources/Plug-ins/Framework.bundle/Contents/Resources/Platforms/Shared/Libraries/RestrictedPython/tests/unpack.py
 %%DATADIR%%/Resources/Plug-ins/Framework.bundle/Contents/Resources/Platforms/Shared/Libraries/RestrictedPython/tests/verify.py
+%%DATADIR%%/Resources/Plug-ins/Framework.bundle/Contents/Resources/Platforms/Shared/Libraries/binascii_plus.py
 %%DATADIR%%/Resources/Plug-ins/Framework.bundle/Contents/Resources/Platforms/Shared/Libraries/cerealizer/__init__.py
+%%DATADIR%%/Resources/Plug-ins/Framework.bundle/Contents/Resources/Platforms/Shared/Libraries/crypto/LICENSE.txt
+%%DATADIR%%/Resources/Plug-ins/Framework.bundle/Contents/Resources/Platforms/Shared/Libraries/crypto/__init__.py
+%%DATADIR%%/Resources/Plug-ins/Framework.bundle/Contents/Resources/Platforms/Shared/Libraries/crypto/cipher/__init__.py
+%%DATADIR%%/Resources/Plug-ins/Framework.bundle/Contents/Resources/Platforms/Shared/Libraries/crypto/cipher/aes.py
+%%DATADIR%%/Resources/Plug-ins/Framework.bundle/Contents/Resources/Platforms/Shared/Libraries/crypto/cipher/aes_cbc.py
+%%DATADIR%%/Resources/Plug-ins/Framework.bundle/Contents/Resources/Platforms/Shared/Libraries/crypto/cipher/aes_sbox_analysis.py
+%%DATADIR%%/Resources/Plug-ins/Framework.bundle/Contents/Resources/Platforms/Shared/Libraries/crypto/cipher/arc4.py
+%%DATADIR%%/Resources/Plug-ins/Framework.bundle/Contents/Resources/Platforms/Shared/Libraries/crypto/cipher/base.py
+%%DATADIR%%/Resources/Plug-ins/Framework.bundle/Contents/Resources/Platforms/Shared/Libraries/crypto/cipher/cbc.py
+%%DATADIR%%/Resources/Plug-ins/Framework.bundle/Contents/Resources/Platforms/Shared/Libraries/crypto/cipher/ccm.py
+%%DATADIR%%/Resources/Plug-ins/Framework.bundle/Contents/Resources/Platforms/Shared/Libraries/crypto/cipher/icedoll.py
+%%DATADIR%%/Resources/Plug-ins/Framework.bundle/Contents/Resources/Platforms/Shared/Libraries/crypto/cipher/rijndael.py
+%%DATADIR%%/Resources/Plug-ins/Framework.bundle/Contents/Resources/Platforms/Shared/Libraries/crypto/cipher/tkip_encr.py
+%%DATADIR%%/Resources/Plug-ins/Framework.bundle/Contents/Resources/Platforms/Shared/Libraries/crypto/cipher/trolldoll.py
+%%DATADIR%%/Resources/Plug-ins/Framework.bundle/Contents/Resources/Platforms/Shared/Libraries/crypto/cipher/wep.py
+%%DATADIR%%/Resources/Plug-ins/Framework.bundle/Contents/Resources/Platforms/Shared/Libraries/crypto/common.py
+%%DATADIR%%/Resources/Plug-ins/Framework.bundle/Contents/Resources/Platforms/Shared/Libraries/crypto/entropy/__init__.py
+%%DATADIR%%/Resources/Plug-ins/Framework.bundle/Contents/Resources/Platforms/Shared/Libraries/crypto/entropy/pagingEntropy.py
+%%DATADIR%%/Resources/Plug-ins/Framework.bundle/Contents/Resources/Platforms/Shared/Libraries/crypto/entropy/prn_rijndael.py
+%%DATADIR%%/Resources/Plug-ins/Framework.bundle/Contents/Resources/Platforms/Shared/Libraries/crypto/errors.py
+%%DATADIR%%/Resources/Plug-ins/Framework.bundle/Contents/Resources/Platforms/Shared/Libraries/crypto/hash/__init__.py
+%%DATADIR%%/Resources/Plug-ins/Framework.bundle/Contents/Resources/Platforms/Shared/Libraries/crypto/hash/hash.py
+%%DATADIR%%/Resources/Plug-ins/Framework.bundle/Contents/Resources/Platforms/Shared/Libraries/crypto/hash/md5Hash.py
+%%DATADIR%%/Resources/Plug-ins/Framework.bundle/Contents/Resources/Platforms/Shared/Libraries/crypto/hash/sha1Hash.py
+%%DATADIR%%/Resources/Plug-ins/Framework.bundle/Contents/Resources/Platforms/Shared/Libraries/crypto/keyedHash/__init__.py
+%%DATADIR%%/Resources/Plug-ins/Framework.bundle/Contents/Resources/Platforms/Shared/Libraries/crypto/keyedHash/hmacHash.py
+%%DATADIR%%/Resources/Plug-ins/Framework.bundle/Contents/Resources/Platforms/Shared/Libraries/crypto/keyedHash/michael.py
+%%DATADIR%%/Resources/Plug-ins/Framework.bundle/Contents/Resources/Platforms/Shared/Libraries/crypto/keyedHash/pbkdf2.py
+%%DATADIR%%/Resources/Plug-ins/Framework.bundle/Contents/Resources/Platforms/Shared/Libraries/crypto/keyedHash/prf_dot11.py
+%%DATADIR%%/Resources/Plug-ins/Framework.bundle/Contents/Resources/Platforms/Shared/Libraries/crypto/keyedHash/tkip_key_mixing.py
+%%DATADIR%%/Resources/Plug-ins/Framework.bundle/Contents/Resources/Platforms/Shared/Libraries/crypto/keyedHash/tkip_mic.py
 %%DATADIR%%/Resources/Plug-ins/Framework.bundle/Contents/Resources/Platforms/Shared/Libraries/daemon.py
 %%DATADIR%%/Resources/Plug-ins/Framework.bundle/Contents/Resources/Platforms/Shared/Libraries/dateutil/__init__.py
 %%DATADIR%%/Resources/Plug-ins/Framework.bundle/Contents/Resources/Platforms/Shared/Libraries/dateutil/easter.py
@@ -229,6 +261,7 @@
 %%DATADIR%%/Resources/Plug-ins/Framework.bundle/Contents/Resources/Versions/2/Models/Metadata/common_models.pym
 %%DATADIR%%/Resources/Plug-ins/Framework.bundle/Contents/Resources/Versions/2/Models/Metadata/common_records.pym
 %%DATADIR%%/Resources/Plug-ins/Framework.bundle/Contents/Resources/Versions/2/Models/Metadata/common_templates.pym
+%%DATADIR%%/Resources/Plug-ins/Framework.bundle/Contents/Resources/Versions/2/Models/Metadata/extra_models.pym
 %%DATADIR%%/Resources/Plug-ins/Framework.bundle/Contents/Resources/Versions/2/Models/Metadata/movie_models.pym
 %%DATADIR%%/Resources/Plug-ins/Framework.bundle/Contents/Resources/Versions/2/Models/Metadata/music_models.pym
 %%DATADIR%%/Resources/Plug-ins/Framework.bundle/Contents/Resources/Versions/2/Models/Metadata/photo_models.pym
@@ -240,6 +273,7 @@
 %%DATADIR%%/Resources/Plug-ins/Framework.bundle/Contents/Resources/Versions/2/Python/Framework/api/cloudkit.py
 %%DATADIR%%/Resources/Plug-ins/Framework.bundle/Contents/Resources/Versions/2/Python/Framework/api/constkit.py
 %%DATADIR%%/Resources/Plug-ins/Framework.bundle/Contents/Resources/Versions/2/Python/Framework/api/corekit.py
+%%DATADIR%%/Resources/Plug-ins/Framework.bundle/Contents/Resources/Versions/2/Python/Framework/api/cryptokit.py
 %%DATADIR%%/Resources/Plug-ins/Framework.bundle/Contents/Resources/Versions/2/Python/Framework/api/datakit.py
 %%DATADIR%%/Resources/Plug-ins/Framework.bundle/Contents/Resources/Versions/2/Python/Framework/api/helperkit.py
 %%DATADIR%%/Resources/Plug-ins/Framework.bundle/Contents/Resources/Versions/2/Python/Framework/api/localekit.py
@@ -353,7 +387,10 @@
 %%DATADIR%%/Resources/Plug-ins/IMDB.bundle/Contents/Info.plist
 %%DATADIR%%/Resources/Plug-ins/IMDB.bundle/Contents/Resources/attribution.png
 %%DATADIR%%/Resources/Plug-ins/IMDB.bundle/Contents/Resources/icon-default.png
+%%DATADIR%%/Resources/Plug-ins/IMDB.bundle/Contents/Services/ServiceInfo.plist
+%%DATADIR%%/Resources/Plug-ins/IMDB.bundle/Contents/Services/URL/IVA/ServiceCode.pys
 %%DATADIR%%/Resources/Plug-ins/IMDB.bundle/Contents/VERSION
+%%DATADIR%%/Resources/Plug-ins/IMDB.bundle/README.md
 %%DATADIR%%/Resources/Plug-ins/LastFM.bundle/Contents/Code/__init__.py
 %%DATADIR%%/Resources/Plug-ins/LastFM.bundle/Contents/DefaultPrefs.json
 %%DATADIR%%/Resources/Plug-ins/LastFM.bundle/Contents/Info.plist
@@ -1224,6 +1261,7 @@
 %%DATADIR%%/Resources/Plug-ins/PlexThemeMusic.bundle/Contents/Info.plist
 %%DATADIR%%/Resources/Plug-ins/PlexThemeMusic.bundle/Contents/Resources/icon-default.png
 %%DATADIR%%/Resources/Plug-ins/PlexThemeMusic.bundle/Contents/VERSION
+%%DATADIR%%/Resources/Plug-ins/PlexThemeMusic.bundle/README.md
 %%DATADIR%%/Resources/Plug-ins/Scanners.bundle/Contents/Info.plist
 %%DATADIR%%/Resources/Plug-ins/Scanners.bundle/Contents/Resources/Common/AudioFiles.py
 %%DATADIR%%/Resources/Plug-ins/Scanners.bundle/Contents/Resources/Common/Filter.py
@@ -1273,6 +1311,7 @@
 %%DATADIR%%/Resources/Plug-ins/Scanners.bundle/Contents/Resources/Series/Plex Series Scanner.py
 %%DATADIR%%/Resources/Plug-ins/Scanners.bundle/Contents/Resources/icon-default.png
 %%DATADIR%%/Resources/Plug-ins/Scanners.bundle/Contents/VERSION
+%%DATADIR%%/Resources/Plug-ins/Scanners.bundle/README.md
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Info.plist
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Resources/icon-default.png
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.4tube/ServiceInfo.plist
@@ -1346,8 +1385,6 @@
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.eurogamer/URL/Eurogamer/ServiceCode.pys
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.euronews/ServiceInfo.plist
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.euronews/URL/Euronews/ServiceCode.pys
-%%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.europafilmtreasures/ServiceInfo.plist
-%%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.europafilmtreasures/URL/EuropaFilmTreasures/ServiceCode.pys
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.extreme/ServiceInfo.plist
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.extreme/URL/extreme/ServiceCode.pys
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.facebook/ServiceInfo.plist
@@ -1466,6 +1503,8 @@
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.nme/URL/NME/ServiceCode.pys
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.nos/ServiceInfo.plist
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.nos/URL/NOS/ServiceCode.pys
+%%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.npo/ServiceInfo.plist
+%%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.npo/URL/NPO/ServiceCode.pys
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.nytimes.lens/ServiceInfo.plist
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.nytimes.lens/URL/Lens/ServiceCode.pys
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.orftvthek/ServiceInfo.plist
@@ -1508,6 +1547,8 @@
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.rutube/URL/Rutube/ServiceCode.pys
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.rutv/ServiceInfo.plist
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.rutv/URL/RU TV/ServiceCode.pys
+%%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.sapo/ServiceInfo.plist
+%%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.sapo/URL/Sapo/ServiceCode.pys
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.schweizerfernsehen/ServiceInfo.plist
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.schweizerfernsehen/URL/Schweizer Fernsehen/ServiceCode.pys
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.showcase/ServiceInfo.plist
@@ -1606,8 +1647,6 @@
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.urplay/URL/URPlay/ServiceCode.pys
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.ustream/ServiceInfo.plist
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.ustream/URL/Ustream/ServiceCode.pys
-%%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.uzgv2/ServiceInfo.plist
-%%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.uzgv2/URL/Uitzending Gemist/ServiceCode.pys
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.vesti/ServiceInfo.plist
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.vesti/URL/Vesti/ServiceCode.pys
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.vevo/ServiceInfo.plist
@@ -1695,11 +1734,13 @@
 %%DATADIR%%/Resources/Plug-ins/System.bundle/Contents/Strings/ko.json
 %%DATADIR%%/Resources/Plug-ins/System.bundle/Contents/VERSION
 %%DATADIR%%/Resources/Plug-ins/The-Movie-Database.bundle/Contents/Code/__init__.py
+%%DATADIR%%/Resources/Plug-ins/The-Movie-Database.bundle/Contents/Code/countrycode.py
 %%DATADIR%%/Resources/Plug-ins/The-Movie-Database.bundle/Contents/DefaultPrefs.json
 %%DATADIR%%/Resources/Plug-ins/The-Movie-Database.bundle/Contents/Info.plist
 %%DATADIR%%/Resources/Plug-ins/The-Movie-Database.bundle/Contents/Resources/attribution.png
 %%DATADIR%%/Resources/Plug-ins/The-Movie-Database.bundle/Contents/Resources/icon-default.png
 %%DATADIR%%/Resources/Plug-ins/The-Movie-Database.bundle/Contents/VERSION
+%%DATADIR%%/Resources/Plug-ins/The-Movie-Database.bundle/README.md
 %%DATADIR%%/Resources/Plug-ins/TheTVDB.bundle/Contents/Code/__init__.py
 %%DATADIR%%/Resources/Plug-ins/TheTVDB.bundle/Contents/Info.plist
 %%DATADIR%%/Resources/Plug-ins/TheTVDB.bundle/Contents/Resources/attribution.png
@@ -1726,10 +1767,10 @@
 %%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/fonts/opensans-regular-webfont.svg
 %%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/fonts/opensans-regular-webfont.ttf
 %%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/fonts/opensans-regular-webfont.woff
-%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/fonts/plex.eot
-%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/fonts/plex.svg
-%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/fonts/plex.ttf
-%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/fonts/plex.woff
+%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/fonts/plex-icons.eot
+%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/fonts/plex-icons.svg
+%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/fonts/plex-icons.ttf
+%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/fonts/plex-icons.woff
 %%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/img/blank.png
 %%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/img/devices/android.png
 %%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/img/devices/android@2x.png
@@ -2955,6 +2996,8 @@
 %%DATADIR%%/libminiupnpc.so.8
 %%DATADIR%%/libmp3lame.so.0
 %%DATADIR%%/libnatpmp.so.1
+%%DATADIR%%/libopencv_core.so.2.4
+%%DATADIR%%/libopencv_imgproc.so.2.4
 %%DATADIR%%/libpython2.7.so
 %%DATADIR%%/libpython2.7.so.1
 %%DATADIR%%/librtmp.so.0
@@ -2977,6 +3020,11 @@
 @dirrmtry %%DATADIR%%/Resources/Plug-ins/Framework.bundle/Contents/Resources/Platforms/Shared/Libraries/RestrictedPython/tests
 @dirrmtry %%DATADIR%%/Resources/Plug-ins/Framework.bundle/Contents/Resources/Platforms/Shared/Libraries/RestrictedPython
 @dirrmtry %%DATADIR%%/Resources/Plug-ins/Framework.bundle/Contents/Resources/Platforms/Shared/Libraries/cerealizer
+@dirrmtry %%DATADIR%%/Resources/Plug-ins/Framework.bundle/Contents/Resources/Platforms/Shared/Libraries/crypto/cipher
+@dirrmtry %%DATADIR%%/Resources/Plug-ins/Framework.bundle/Contents/Resources/Platforms/Shared/Libraries/crypto/entropy
+@dirrmtry %%DATADIR%%/Resources/Plug-ins/Framework.bundle/Contents/Resources/Platforms/Shared/Libraries/crypto/hash
+@dirrmtry %%DATADIR%%/Resources/Plug-ins/Framework.bundle/Contents/Resources/Platforms/Shared/Libraries/crypto/keyedHash
+@dirrmtry %%DATADIR%%/Resources/Plug-ins/Framework.bundle/Contents/Resources/Platforms/Shared/Libraries/crypto
 @dirrmtry %%DATADIR%%/Resources/Plug-ins/Framework.bundle/Contents/Resources/Platforms/Shared/Libraries/dateutil/zoneinfo
 @dirrmtry %%DATADIR%%/Resources/Plug-ins/Framework.bundle/Contents/Resources/Platforms/Shared/Libraries/dateutil
 @dirrmtry %%DATADIR%%/Resources/Plug-ins/Framework.bundle/Contents/Resources/Platforms/Shared/Libraries/pyamf/adapters
@@ -3023,6 +3071,9 @@
 @dirrmtry %%DATADIR%%/Resources/Plug-ins/HTbackdrops.bundle
 @dirrmtry %%DATADIR%%/Resources/Plug-ins/IMDB.bundle/Contents/Code
 @dirrmtry %%DATADIR%%/Resources/Plug-ins/IMDB.bundle/Contents/Resources
+@dirrmtry %%DATADIR%%/Resources/Plug-ins/IMDB.bundle/Contents/Services/URL/IVA
+@dirrmtry %%DATADIR%%/Resources/Plug-ins/IMDB.bundle/Contents/Services/URL
+@dirrmtry %%DATADIR%%/Resources/Plug-ins/IMDB.bundle/Contents/Services
 @dirrmtry %%DATADIR%%/Resources/Plug-ins/IMDB.bundle/Contents
 @dirrmtry %%DATADIR%%/Resources/Plug-ins/IMDB.bundle
 @dirrmtry %%DATADIR%%/Resources/Plug-ins/LastFM.bundle/Contents/Code
@@ -3190,9 +3241,6 @@
 @dirrmtry %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.euronews/URL/Euronews
 @dirrmtry %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.euronews/URL
 @dirrmtry %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.euronews
-@dirrmtry %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.europafilmtreasures/URL/EuropaFilmTreasures
-@dirrmtry %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.europafilmtreasures/URL
-@dirrmtry %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.europafilmtreasures
 @dirrmtry %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.extreme/URL/extreme
 @dirrmtry %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.extreme/URL
 @dirrmtry %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.extreme
@@ -3366,6 +3414,9 @@
 @dirrmtry %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.nos/URL/NOS
 @dirrmtry %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.nos/URL
 @dirrmtry %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.nos
+@dirrmtry %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.npo/URL/NPO
+@dirrmtry %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.npo/URL
+@dirrmtry %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.npo
 @dirrmtry %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.nytimes.lens/URL/Lens
 @dirrmtry %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.nytimes.lens/URL
 @dirrmtry %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.nytimes.lens
@@ -3424,6 +3475,9 @@
 @dirrmtry %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.rutv/URL/RU TV
 @dirrmtry %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.rutv/URL
 @dirrmtry %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.rutv
+@dirrmtry %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.sapo/URL/Sapo
+@dirrmtry %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.sapo/URL
+@dirrmtry %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.sapo
 @dirrmtry %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.schweizerfernsehen/URL/Schweizer Fernsehen
 @dirrmtry %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.schweizerfernsehen/URL
 @dirrmtry %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.schweizerfernsehen
@@ -3569,9 +3623,6 @@
 @dirrmtry %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.ustream/URL/Ustream
 @dirrmtry %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.ustream/URL
 @dirrmtry %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.ustream
-@dirrmtry %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.uzgv2/URL/Uitzending Gemist
-@dirrmtry %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.uzgv2/URL
-@dirrmtry %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.uzgv2
 @dirrmtry %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.vesti/URL/Vesti
 @dirrmtry %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.vesti/URL
 @dirrmtry %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.vesti

@@ -179,6 +179,7 @@
     SUBDIR += c4
     SUBDIR += calibrator
     SUBDIR += capstone
+    SUBDIR += cask
     SUBDIR += catch
     SUBDIR += cbind
     SUBDIR += cbrowser
@@ -264,6 +265,7 @@
     SUBDIR += cpan-upload-http
     SUBDIR += cppcheck
     SUBDIR += cppi
+    SUBDIR += cpptest
     SUBDIR += cppunit
     SUBDIR += cproto
     SUBDIR += cpuflags
@@ -1006,6 +1008,7 @@
     SUBDIR += libfortuna
     SUBDIR += libfreefare
     SUBDIR += libftdi
+    SUBDIR += libftdi1
     SUBDIR += libg19
     SUBDIR += libg19draw
     SUBDIR += libgalago
@@ -1061,6 +1064,7 @@
     SUBDIR += libmowgli
     SUBDIR += libmowgli2
     SUBDIR += libmpcbdm
+    SUBDIR += libmpsse
     SUBDIR += libmsiecf
     SUBDIR += libmsocket
     SUBDIR += libmtrie
@@ -1107,6 +1111,8 @@
     SUBDIR += libregf
     SUBDIR += librelp
     SUBDIR += librest
+    SUBDIR += librevisa
+    SUBDIR += librevisa-vish
     SUBDIR += libruin
     SUBDIR += libs11n
     SUBDIR += libserialport
@@ -1123,6 +1129,7 @@
     SUBDIR += libslang2
     SUBDIR += libslave
     SUBDIR += libsmdev
+    SUBDIR += libsmraw
     SUBDIR += libsoup
     SUBDIR += libsoup-gnome
     SUBDIR += libsoup-reference
@@ -1188,6 +1195,7 @@
     SUBDIR += lm4tools
     SUBDIR += lmdbg
     SUBDIR += lndir
+    SUBDIR += lnphost
     SUBDIR += lockfree-malloc
     SUBDIR += log4c
     SUBDIR += log4cplus
@@ -1862,6 +1870,7 @@
     SUBDIR += p5-Devel-Caller-IgnoreNamespaces
     SUBDIR += p5-Devel-Caller-Perl
     SUBDIR += p5-Devel-Callsite
+    SUBDIR += p5-Devel-CheckBin
     SUBDIR += p5-Devel-CheckCompiler
     SUBDIR += p5-Devel-CheckLib
     SUBDIR += p5-Devel-CheckOS
@@ -3912,6 +3921,7 @@
     SUBDIR += py-twistedCore
     SUBDIR += py-twistedFlow
     SUBDIR += py-twistedRunner
+    SUBDIR += py-tzlocal
     SUBDIR += py-ua_parser
     SUBDIR += py-ujson
     SUBDIR += py-uncompyle2

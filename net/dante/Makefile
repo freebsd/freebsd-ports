@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	dante
-PORTVERSION=	1.3.2
-CATEGORIES=	net security
+PORTVERSION=	1.4.0
+CATEGORIES=	net security ipv6
 MASTER_SITES=	ftp://ftp.inet.no/pub/socks/ \
 		ftp://ftp.nuug.no/pub/anders/distfiles/ \
 		http://atreides.freenix.no/~anders/ \
@@ -12,7 +12,11 @@ MASTER_SITES=	ftp://ftp.inet.no/pub/socks/ \
 MAINTAINER=	anders@FreeBSD.org
 COMMENT=	Circuit-level firewall/proxy
 
+LICENSE=	BSD
+
 CONFLICTS=	socks5-[0-9]*
+
+BROKEN_i386=	see PR 192295, requests tweaked sysctls
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-socks-conf=${PREFIX}/etc/socks.conf \
@@ -20,25 +24,36 @@ CONFIGURE_ARGS=	--with-socks-conf=${PREFIX}/etc/socks.conf \
 CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib
 
+USES=	libtool
 USE_LDCONFIG=	yes
-
 USE_RC_SUBR=	sockd
 
-LICENSE=	BSD
+OPTIONS_DEFINE=	DOCS EXAMPLES
 
-MAN1=	socksify.1
-MAN5=	sockd.conf.5 socks.conf.5
-MAN8=	sockd.8
+.include <bsd.port.options.mk>
 
-NO_STAGE=	yes
-post-install:
-	@${INSTALL_DATA} ${WRKSRC}/example/socks.conf ${PREFIX}/etc/socks.conf.example
-	@${INSTALL_DATA} ${WRKSRC}/example/sockd.conf ${PREFIX}/etc/sockd.conf.example
-.if !defined(NOPORTDOCS)
-	${INSTALL} -d -m 555 ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/doc/README* ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/doc/rfc* ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/doc/SOCKS4*.protocol ${DOCSDIR}
+.if ${OSVERSION} >= 1000044
+CONFIGURE_ARGS+=	--with-libc=libc.so.7
 .endif
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} > 1000000
+FORBIDDEN=	Building on 10+ triggers a nasty bug with unix domain sockets
+.endif
+
+post-install:
+	${INSTALL_DATA} ${WRKSRC}/example/socks.conf ${STAGEDIR}${PREFIX}/etc/socks.conf.sample
+	${INSTALL_DATA} ${WRKSRC}/example/sockd.conf ${STAGEDIR}${PREFIX}/etc/sockd.conf.sample
+	${INSTALL} -d -m 555 ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/example/sockd-basic.conf ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/example/sockd-chaining.conf ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/example/socks-simple-withoutnameserver.conf ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/example/socks-simple.conf ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL} -d -m 555 ${STAGEDIR}${DOCSDIR}
+	${INSTALL} -d -m 555 ${STAGEDIR}${DOCSDIR}/contrib
+	${INSTALL_DATA} ${WRKSRC}/doc/README* ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/rfc* ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/SOCKS4*.protocol ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/UPGRADE ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/contrib/sockd-stat.awk ${STAGEDIR}${DOCSDIR}/contrib/sockd-stat.awk
 
 .include <bsd.port.mk>

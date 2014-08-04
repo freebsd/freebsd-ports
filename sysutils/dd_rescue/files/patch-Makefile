@@ -1,23 +1,29 @@
---- Makefile.orig	2013-08-13 06:29:50.000000000 +0900
-+++ Makefile	2014-01-18 17:48:01.000000000 +0900
-@@ -6,10 +6,6 @@
+--- Makefile.orig	2014-05-27 20:31:21.000000000 +0900
++++ Makefile	2014-06-29 01:15:59.000000000 +0900
+@@ -6,10 +6,7 @@
  
  DESTDIR = 
  
 -CC = gcc
--RPM_OPT_FLAGS = -Os -Wall -g
+-RPM_OPT_FLAGS = -Os -Wall -g -D_FORTIFY_SOURCE=2
 -CFLAGS = $(RPM_OPT_FLAGS) $(EXTRA_CFLAGS) -DHAVE_CONFIG_H
 -CFLAGS_OPT = $(CFLAGS) -O3
++CFLAGS_OPT = $(CFLAGS) -DHAVE_CONFIG_H
  INSTALL = install
  INSTALLFLAGS = -s
  prefix = $(DESTDIR)/usr
-@@ -26,15 +22,9 @@
- INSTASROOT = -o root -g root
- LIBDIR = /usr/lib
+@@ -32,7 +29,7 @@
+ LIB = lib
+ LIBDIR = /usr/$(LIB)
  COMPILER = $(shell $(CC) --version | head -n1)
--DEFINES = -DVERSION=\"$(VERSION)\"  -D__COMPILER__="\"$(COMPILER)\""
-+DEFINES = -DVERSION=\"$(VERSION)\"  -D__COMPILER__="\"$(COMPILER)\"" -DHAVE_CONFIG_H
+-DEFINES = -DVERSION=\"$(VERSION)\"  -D__COMPILER__="\"$(COMPILER)\"" # -DPLUGSEARCH="\"$(LIBDIR)\""
++DEFINES = -DVERSION=\"$(VERSION)\"  -D__COMPILER__="\"$(COMPILER)\"" -DHAVE_CONFIG_H # -DPLUGSEARCH="\"$(LIBDIR)\""
  OUT = -o dd_rescue
+ 
+ LZOP = $(shell type -p lzop || type -P true)
+@@ -46,12 +43,6 @@
+   HAVE_LZO=0
+ endif
  
 -ifeq ($(CC),wcl386)
 -  CFLAGS = "-ox -wx $(EXTRA_CFLAGS)"
@@ -25,15 +31,15 @@
 -  OUT = ""
 -endif
 -
- MACH := $(shell uname -m | tr A-Z a-z | sed 's/i[3456]86/i386/')
+ HAVE_AVX2 := $(shell echo "" | $(CC) -mavx2 -xc - 2>&1 | grep unrecognized || echo 1)
+ HAVE_SSE42 := $(shell echo "" | $(CC) -msse4.2 -xc - 2>&1 | grep unrecognized || echo 1)
  
- ifeq ($(MACH),i386)
-@@ -75,7 +65,7 @@
- 	$(CC) $(CFLAGS) -DNO_LIBDL $(DEFINES) $< $(OUT) $(OBJECTS) $(LIBDIR)/libfallocate.a
+@@ -180,7 +171,7 @@
+ 	$(CC) $(CFLAGS) -DNO_LIBDL $(DEFINES) $< $(OUT) $(OBJECTS) $(OBJECTS2) $(LIBDIR)/libfallocate.a
  
- dd_rescue: dd_rescue.c $(HEADERS) $(OBJECTS)
--	$(CC) $(CFLAGS) $(DEFINES) $< $(OUT) $(OBJECTS) -ldl
-+	$(CC) $(CFLAGS) $(DEFINES) $< $(OUT) $(OBJECTS)
+ dd_rescue: dd_rescue.c $(HEADERS) $(OBJECTS) $(OBJECTS2)
+-	$(CC) $(CFLAGS) $(DEFINES) $< $(OUT) $(OBJECTS) $(OBJECTS2) -ldl
++	$(CC) $(CFLAGS) $(DEFINES) $< $(OUT) $(OBJECTS) $(OBJECTS2)
  
- libfalloc-dl: dd_rescue
- 
+ md5: md5.c md5.h hash.h config.h
+ 	$(CC) $(CFLAGS_OPT) -DMD5_MAIN -o $@ $<

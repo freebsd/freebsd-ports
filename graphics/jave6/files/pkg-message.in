@@ -1,0 +1,6 @@
+=============================================================
+
+Errors may occur while running the program, as it will try to
+access %%DATADIR%%/tmp/ for output.
+
+=============================================================

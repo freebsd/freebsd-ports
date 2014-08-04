@@ -9,7 +9,7 @@ MASTER_SITES=	http://www.jbidwatcher.com/download/
 MAINTAINER=	shurd@FreeBSD.org
 COMMENT=	Java-based application allowing you to monitor eBay auctions
 
-USE_BZIP2=	yes
+USES=	tar:bzip2
 USE_JAVA=	yes
 USE_ANT=	yes
 ALL_TARGET=	jar

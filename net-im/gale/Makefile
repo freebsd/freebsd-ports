@@ -3,22 +3,21 @@
 
 PORTNAME=	gale
 PORTVERSION=	0.99f
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net-im
 MASTER_SITES=	http://download.ofb.net/${PORTNAME}/
 DISTNAME=	${PORTNAME}-${PORTVERSION}ruit
 
-MAINTAINER= ports@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Secure instant messaging system
 
 LIB_DEPENDS=	libgc.so:${PORTSDIR}/devel/boehm-gc \
 		libwwwcore.so:${PORTSDIR}/www/libwww \
 		libadns.so:${PORTSDIR}/dns/adns
 
-USES=		iconv
+USES=		iconv libtool
+GNU_CONFIGURE=	yes
 USE_GNOME=	glib12
-USE_AUTOTOOLS=	libtool
-LIBTOOLFILES=	configure liboop/configure
 USE_OPENSSL=	yes
 USE_LDCONFIG=	yes
 MAKE_JOBS_UNSAFE=	yes
@@ -29,12 +28,8 @@ CPPFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib \
 LDFLAGS+=	-L${LOCALBASE}/lib
 
 # cheesy hack - test-oop doesn't build, but we don't care.
-NO_STAGE=	yes
 pre-configure:
 	${REINPLACE_CMD} -e 's/\(^noinst_PROGRAMS =.*\)test-oop/\1/' \
-			${WRKSRC}/liboop/Makefile.in
-
-post-install:
-	@${CAT} ${PKGMESSAGE}
+		${WRKSRC}/liboop/Makefile.in
 
 .include <bsd.port.mk>

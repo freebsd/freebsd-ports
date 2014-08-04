@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 NEED_ROOT=	yes
 
-USES=		shebangfix tar:tgz
+USES=		tar:tgz shebangfix
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--have-resn
 USE_RC_SUBR=	spamilter

@@ -33,6 +33,9 @@ OPTIONS_SUB=	yes
 NLS_CONFIGURE_ENABLE=	nls
 NLS_USES=	gettext
 
+# Wrong versioning upstream, Upstream use GTK3 in newer Versions
+PORTSCOUT=	ignore:1
+
 .include <bsd.port.options.mk>
 
 post-patch:

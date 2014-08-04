@@ -23,6 +23,7 @@
     SUBDIR += autobackupmysql
     SUBDIR += bbdb
     SUBDIR += beansdb
+    SUBDIR += bucardo
     SUBDIR += buzhug
     SUBDIR += c3p0
     SUBDIR += cassandra

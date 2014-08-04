@@ -9,7 +9,7 @@ CATEGORIES=	textproc
 MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A full-text search system
+COMMENT=	Full-text search system
 
 BUILD_DEPENDS=	qdbm>=1.8.77:${PORTSDIR}/databases/qdbm
 # check configure for min version of qdbm.

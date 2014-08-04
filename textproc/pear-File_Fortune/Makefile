@@ -7,7 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	textproc pear
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	An interface for reading from and writing to fortune files
+COMMENT=	Interface for reading from and writing to fortune files
 
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
 RUN_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear

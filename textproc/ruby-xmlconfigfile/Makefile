@@ -10,7 +10,7 @@ DISTNAME=	xml-configfile-${PORTVERSION}
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A Ruby module for easy handling of XML configuration files
+COMMENT=	Ruby module for easy handling of XML configuration files
 
 OPTIONS_DEFINE=	DOCS
 

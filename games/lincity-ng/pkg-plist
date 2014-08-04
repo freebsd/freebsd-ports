@@ -1,14 +1,14 @@
 bin/lincity-ng
 share/applications/lincity-ng.desktop
-%%DOCSDIR%%/COPYING
-%%DOCSDIR%%/COPYING-data.txt
-%%DOCSDIR%%/COPYING-fonts.txt
-%%DOCSDIR%%/CREDITS
-%%DOCSDIR%%/README
-%%DOCSDIR%%/RELNOTES
-%%DOCSDIR%%/TODO
-%%DOCSDIR%%/lincityconfig.xml
-%%DOCSDIR%%/userconfig.xml
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/COPYING-data.txt
+%%PORTDOCS%%%%DOCSDIR%%/COPYING-fonts.txt
+%%PORTDOCS%%%%DOCSDIR%%/CREDITS
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/RELNOTES
+%%PORTDOCS%%%%DOCSDIR%%/TODO
+%%PORTDOCS%%%%DOCSDIR%%/lincityconfig.xml
+%%PORTDOCS%%%%DOCSDIR%%/userconfig.xml
 %%DATADIR%%/colour.pal
 %%DATADIR%%/fonts/sans.ttf
 %%DATADIR%%/gui/allgone.xml
@@ -1675,4 +1675,4 @@ share/pixmaps/lincity-ng.png
 @dirrm %%DATADIR%%/gui
 @dirrm %%DATADIR%%/fonts
 @dirrm %%DATADIR%%
-@dirrm %%DOCSDIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

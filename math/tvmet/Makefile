@@ -22,7 +22,7 @@ CONFIGURE_ARGS=	--with-cxx=${CXX}
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MCPPUNIT}
-LIB_DEPENDS+=	libcppunit-1.12.so:${PORTSDIR}/devel/cppunit
+LIB_DEPENDS+=	libcppunit.so:${PORTSDIR}/devel/cppunit
 CONFIGURE_ARGS+=	--with-cppunit-prefix=${LOCALBASE}
 .else
 CONFIGURE_ENV+=	ac_cv_path_CPPUNIT_CONFIG=no

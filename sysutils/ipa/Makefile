@@ -11,7 +11,7 @@ COMMENT=	Pluggable accounting system
 
 LICENSE=	BSD
 
-USE_BZIP2=	yes
+USES=	tar:bzip2
 GNU_CONFIGURE=	yes
 USE_RC_SUBR=	ipa
 

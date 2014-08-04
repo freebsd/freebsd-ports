@@ -3,122 +3,62 @@ include/deadbeef/deadbeef.h
 %%GUI%%include/deadbeef/gtkui_api.h
 %%ADP%%lib/deadbeef/adplug.a
 %%ADP%%lib/deadbeef/adplug.so
-%%ADP%%lib/deadbeef/adplug.so.0
-%%ADP%%lib/deadbeef/adplug.so.0.0.0
 %%CDDA%%lib/deadbeef/cdda.a
 %%CDDA%%lib/deadbeef/cdda.so
-%%CDDA%%lib/deadbeef/cdda.so.0
-%%CDDA%%lib/deadbeef/cdda.so.0.0.0
 %%FFAP%%lib/deadbeef/ffap.a
 %%FFAP%%lib/deadbeef/ffap.so
-%%FFAP%%lib/deadbeef/ffap.so.0
-%%FFAP%%lib/deadbeef/ffap.so.0.0.0
 %%FFMPEG%%lib/deadbeef/ffmpeg.a
 %%FFMPEG%%lib/deadbeef/ffmpeg.so
-%%FFMPEG%%lib/deadbeef/ffmpeg.so.0
-%%FFMPEG%%lib/deadbeef/ffmpeg.so.0.0.0
 %%FLAC%%lib/deadbeef/flac.a
 %%FLAC%%lib/deadbeef/flac.so
-%%FLAC%%lib/deadbeef/flac.so.0
-%%FLAC%%lib/deadbeef/flac.so.0.0.0
 %%HOTKEYS%%lib/deadbeef/hotkeys.so
 %%HOTKEYS%%lib/deadbeef/hotkeys.a
-%%HOTKEYS%%lib/deadbeef/hotkeys.so.0
-%%HOTKEYS%%lib/deadbeef/hotkeys.so.0.0.0
 lib/deadbeef/mpgmad.a
 lib/deadbeef/mpgmad.so
-lib/deadbeef/mpgmad.so.0
-lib/deadbeef/mpgmad.so.0.0.0
-%%MUSEPACK%%lib/deadbeef/musepack.so.0
-%%MUSEPACK%%lib/deadbeef/musepack.so.0.0.0
 %%MUSEPACK%%lib/deadbeef/musepack.so
 %%MUSEPACK%%lib/deadbeef/musepack.a
 lib/deadbeef/oss.a
 lib/deadbeef/oss.so
-lib/deadbeef/oss.so.0
-lib/deadbeef/oss.so.0.0.0
 %%PULSEAUDIO%%lib/deadbeef/pulse.a
 %%PULSEAUDIO%%lib/deadbeef/pulse.so
-%%PULSEAUDIO%%lib/deadbeef/pulse.so.0
-%%PULSEAUDIO%%lib/deadbeef/pulse.so.0.0.0
 %%SNDFILE%%lib/deadbeef/sndfile.a
 %%SNDFILE%%lib/deadbeef/sndfile.so
-%%SNDFILE%%lib/deadbeef/sndfile.so.0
-%%SNDFILE%%lib/deadbeef/sndfile.so.0.0.0
 %%VFS%%lib/deadbeef/vfs_curl.a
 %%VFS%%lib/deadbeef/vfs_curl.so
-%%VFS%%lib/deadbeef/vfs_curl.so.0
-%%VFS%%lib/deadbeef/vfs_curl.so.0.0.0
 %%OGG%%lib/deadbeef/vorbis.a
 %%OGG%%lib/deadbeef/vorbis.so
-%%OGG%%lib/deadbeef/vorbis.so.0
-%%OGG%%lib/deadbeef/vorbis.so.0.0.0
 %%VTX%%lib/deadbeef/vtx.a
 %%VTX%%lib/deadbeef/vtx.so
-%%VTX%%lib/deadbeef/vtx.so.0
-%%VTX%%lib/deadbeef/vtx.so.0.0.0
 %%WAV%%lib/deadbeef/wavpack.a
 %%WAV%%lib/deadbeef/wavpack.so
-%%WAV%%lib/deadbeef/wavpack.so.0
-%%WAV%%lib/deadbeef/wavpack.so.0.0.0
-%%WILD%%lib/deadbeef/wildmidi.so.0
-%%WILD%%lib/deadbeef/wildmidi.so.0.0.0
 %%WILD%%lib/deadbeef/wildmidi.so
 %%WILD%%lib/deadbeef/wildmidi.a
-%%TTA%%lib/deadbeef/tta.so.0
-%%TTA%%lib/deadbeef/tta.so.0.0.0
 %%TTA%%lib/deadbeef/tta.so
 %%TTA%%lib/deadbeef/tta.a
-%%DCA%%lib/deadbeef/dca.so.0
-%%DCA%%lib/deadbeef/dca.so.0.0.0
 %%DCA%%lib/deadbeef/dca.so
 %%DCA%%lib/deadbeef/dca.a
-%%AAC%%lib/deadbeef/aac.so.0
-%%AAC%%lib/deadbeef/aac.so.0.0.0
 %%AAC%%lib/deadbeef/aac.so
 %%AAC%%lib/deadbeef/aac.a
-%%MMS%%lib/deadbeef/mms.so.0
-%%MMS%%lib/deadbeef/mms.so.0.0.0
 %%MMS%%lib/deadbeef/mms.so
 %%MMS%%lib/deadbeef/mms.a
-%%SHN%%lib/deadbeef/ddb_shn.so.0
-%%SHN%%lib/deadbeef/ddb_shn.so.0.0.0
 %%SHN%%lib/deadbeef/ddb_shn.a
 %%SHN%%lib/deadbeef/ddb_shn.so
-%%SHELLEXEC%%lib/deadbeef/shellexec.so.0
-%%SHELLEXEC%%lib/deadbeef/shellexec.so.0.0.0
 %%SHELLEXEC%%lib/deadbeef/shellexec.so
 %%SHELLEXEC%%lib/deadbeef/shellexec.a
-%%SHELLEXEC%%lib/deadbeef/shellexecui_gtk2.so.0
-%%SHELLEXEC%%lib/deadbeef/shellexecui_gtk2.so.0.0.0
 %%SHELLEXEC%%lib/deadbeef/shellexecui_gtk2.so
 %%SHELLEXEC%%lib/deadbeef/shellexecui_gtk2.a
-%%LASTFM%%lib/deadbeef/lastfm.so.0
-%%LASTFM%%lib/deadbeef/lastfm.so.0.0.0
 %%LASTFM%%lib/deadbeef/lastfm.so
 %%LASTFM%%lib/deadbeef/lastfm.a
 %%ART%%lib/deadbeef/artwork.a
 %%ART%%lib/deadbeef/artwork.so
-%%ART%%lib/deadbeef/artwork.so.0
-%%ART%%lib/deadbeef/artwork.so.0.0.0
-%%SID%%lib/deadbeef/sid.so.0
-%%SID%%lib/deadbeef/sid.so.0.0.0
 %%SID%%lib/deadbeef/sid.so
 %%SID%%lib/deadbeef/sid.a
-%%EQ%%lib/deadbeef/supereq.so.0
-%%EQ%%lib/deadbeef/supereq.so.0.0.0
 %%EQ%%lib/deadbeef/supereq.so
 %%EQ%%lib/deadbeef/supereq.a
-%%GME%%lib/deadbeef/gme.so.0
-%%GME%%lib/deadbeef/gme.so.0.0.0
 %%GME%%lib/deadbeef/gme.so
 %%GME%%lib/deadbeef/gme.a
 %%DUMB%%lib/deadbeef/ddb_dumb.a
 %%DUMB%%lib/deadbeef/ddb_dumb.so
-%%DUMB%%lib/deadbeef/ddb_dumb.so.0
-%%DUMB%%lib/deadbeef/ddb_dumb.so.0.0.0
-%%NOTIFY%%lib/deadbeef/notify.so.0
-%%NOTIFY%%lib/deadbeef/notify.so.0.0.0
 %%NOTIFY%%lib/deadbeef/notify.so
 %%NOTIFY%%lib/deadbeef/notify.a
 share/applications/deadbeef.desktop
@@ -134,47 +74,40 @@ share/applications/deadbeef.desktop
 %%DOCSDIR%%/translators.txt
 %%DOCSDIR%%/help.ru.txt
 %%DOCSDIR%%/help.pt_BR.txt
-%%GUI%%lib/deadbeef/ddb_gui_GTK2.so.0
-%%GUI%%lib/deadbeef/ddb_gui_GTK2.so.0.0.0
 %%GUI%%lib/deadbeef/ddb_gui_GTK2.so
 %%GUI%%lib/deadbeef/ddb_gui_GTK2.a
-%%DSP%%lib/deadbeef/dsp_libsrc.so.0
-%%DSP%%lib/deadbeef/dsp_libsrc.so.0.0.0
 %%DSP%%lib/deadbeef/dsp_libsrc.so
 %%DSP%%lib/deadbeef/dsp_libsrc.a
 %%MONO2STEREO%%lib/deadbeef/ddb_mono2stereo.so
 %%MONO2STEREO%%lib/deadbeef/ddb_mono2stereo.a
-%%MONO2STEREO%%lib/deadbeef/ddb_mono2stereo.so.0
-%%MONO2STEREO%%lib/deadbeef/ddb_mono2stereo.so.0.0.0
 %%M3U%%lib/deadbeef/m3u.so
-%%M3U%%lib/deadbeef/m3u.so.0
-%%M3U%%lib/deadbeef/m3u.so.0.0.0
 %%M3U%%lib/deadbeef/m3u.a
-%%PSF%%lib/deadbeef/ddb_ao.so.0
-%%PSF%%lib/deadbeef/ddb_ao.so.0.0.0
-%%PSF%%lib/deadbeef/ddb_ao.a
 %%PSF%%lib/deadbeef/ddb_ao.so
-%%CONVERTER%%lib/deadbeef/converter.so.0
-%%CONVERTER%%lib/deadbeef/converter.so.0.0.0
+%%PSF%%lib/deadbeef/ddb_ao.a
 %%CONVERTER%%lib/deadbeef/converter.so
-%%CONVERTER%%lib/deadbeef/converter_gtk2.so.0
-%%CONVERTER%%lib/deadbeef/converter_gtk2.so.0.0.0
-%%CONVERTER%%lib/deadbeef/converter_gtk2.so
 %%CONVERTER%%lib/deadbeef/converter.a
+%%CONVERTER%%lib/deadbeef/converter_gtk2.so
 %%CONVERTER%%lib/deadbeef/converter_gtk2.a
 %%CONVERTER%%lib/deadbeef/convpresets/AAC_(Nero_FAAC).txt
+%%CONVERTER%%lib/deadbeef/convpresets/ALAC.txt
 %%CONVERTER%%lib/deadbeef/convpresets/FLAC_(compression_level_5).txt
 %%CONVERTER%%lib/deadbeef/convpresets/MP3_CBR_320_Kbps_(Lame).txt
 %%CONVERTER%%lib/deadbeef/convpresets/MP3_VBR_192Kbps_(Lame).txt
 %%CONVERTER%%lib/deadbeef/convpresets/MS_RIFF_WAV.txt
 %%CONVERTER%%lib/deadbeef/convpresets/MusePack.txt
+%%CONVERTER%%lib/deadbeef/convpresets/Ogg_FLAC.txt
 %%CONVERTER%%lib/deadbeef/convpresets/Ogg_Vorbis_(-q_5).txt
+%%CONVERTER%%lib/deadbeef/convpresets/Opus.txt
 %%CONVERTER%%lib/deadbeef/convpresets/TTA.txt
 %%CONVERTER%%lib/deadbeef/convpresets/WavPack.txt
-%%VFS_ZIP%%lib/deadbeef/vfs_zip.so.0
-%%VFS_ZIP%%lib/deadbeef/vfs_zip.so.0.0.0
 %%VFS_ZIP%%lib/deadbeef/vfs_zip.so
 %%VFS_ZIP%%lib/deadbeef/vfs_zip.a
+%%ALAC%%lib/deadbeef/alac.so
+%%ALAC%%lib/deadbeef/alac.a
+%%PLTBROWSER%%lib/deadbeef/pltbrowser_gtk2.so
+%%PLTBROWSER%%lib/deadbeef/pltbrowser_gtk2.a
+%%WMA%%lib/deadbeef/wma.so
+%%WMA%%lib/deadbeef/wma.a
 %%NLS%%share/locale/be/LC_MESSAGES/deadbeef.mo
 %%NLS%%share/locale/tr/LC_MESSAGES/deadbeef.mo
 %%NLS%%share/locale/bg/LC_MESSAGES/deadbeef.mo
@@ -185,6 +118,7 @@ share/applications/deadbeef.desktop
 %%NLS%%share/locale/el/LC_MESSAGES/deadbeef.mo
 %%NLS%%share/locale/en_GB/LC_MESSAGES/deadbeef.mo
 %%NLS%%share/locale/es/LC_MESSAGES/deadbeef.mo
+%%NLS%%share/locale/eu/LC_MESSAGES/deadbeef.mo
 %%NLS%%share/locale/fa/LC_MESSAGES/deadbeef.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/deadbeef.mo
 %%NLS%%share/locale/gl/LC_MESSAGES/deadbeef.mo
@@ -194,11 +128,14 @@ share/applications/deadbeef.desktop
 %%NLS%%share/locale/id/LC_MESSAGES/deadbeef.mo
 %%NLS%%share/locale/it/LC_MESSAGES/deadbeef.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/deadbeef.mo
+%%NLS%%share/locale/kk/LC_MESSAGES/deadbeef.mo
+%%NLS%%share/locale/km/LC_MESSAGES/deadbeef.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/deadbeef.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/deadbeef.mo
 %%NLS%%share/locale/pt/LC_MESSAGES/deadbeef.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/deadbeef.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/deadbeef.mo
+%%NLS%%share/locale/si_LK/LC_MESSAGES/deadbeef.mo
 %%NLS%%share/locale/sk/LC_MESSAGES/deadbeef.mo
 %%NLS%%share/locale/sr/LC_MESSAGES/deadbeef.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/deadbeef.mo
@@ -206,20 +143,15 @@ share/applications/deadbeef.desktop
 %%NLS%%share/locale/vi/LC_MESSAGES/deadbeef.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/deadbeef.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/deadbeef.mo
-%%NLS%%share/locale/kk/LC_MESSAGES/deadbeef.mo
-%%NLS%%share/locale/km/LC_MESSAGES/deadbeef.mo
 %%NLS%%share/locale/lg/LC_MESSAGES/deadbeef.mo
-%%NLS%%share/locale/eo/LC_MESSAGES/deadbeef.mo
 %%NLS%%share/locale/sl/LC_MESSAGES/deadbeef.mo
 %%NLS%%share/locale/ro/LC_MESSAGES/deadbeef.mo
 %%NLS%%share/locale/te/LC_MESSAGES/deadbeef.mo
 %%NLS%%share/locale/fi/LC_MESSAGES/deadbeef.mo
 %%NLS%%share/locale/lt/LC_MESSAGES/deadbeef.mo
 %%NLS%%share/locale/cs/LC_MESSAGES/deadbeef.mo
-%%NLS%%share/locale/si/LC_MESSAGES/deadbeef.mo
 %%NLS%%share/locale/et/LC_MESSAGES/deadbeef.mo
 %%NLS%%share/locale/ug/LC_MESSAGES/deadbeef.mo
-%%NLS%%share/locale/nb/LC_MESSAGES/deadbeef.mo
 %%NLS%%share/locale/sr@latin/LC_MESSAGES/deadbeef.mo
 %%DATADIR%%/pixmaps/noartwork.png
 share/icons/hicolor/16x16/apps/deadbeef.png
@@ -263,10 +195,20 @@ share/icons/hicolor/scalable/apps/deadbeef.svg
 @dirrmtry share/icons/hicolor/scalable
 @dirrmtry share/icons/hicolor
 @dirrmtry share/icons
+%%NLS%%@dirrmtry share/locale/si_LK/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/si_LK
+%%NLS%%@dirrmtry share/locale/kk/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/kk
 %%NLS%%@dirrmtry share/locale/km/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/km
 %%NLS%%@dirrmtry share/locale/lg/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/lg
+%%NLS%%@dirrmtry share/locale/sr@latin/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/sr@latin
+%%NLS%%@dirrmtry share/locale/te/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/te
+%%NLS%%@dirrmtry share/locale/ug/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/ug
 @dirrm %%DOCSDIR%%
 @dirrm %%DATADIR%%/pixmaps
 @dirrm %%DATADIR%%

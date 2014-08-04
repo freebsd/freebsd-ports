@@ -13,7 +13,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Polar is a smooth and simple cursor set
 
 NO_BUILD=	yes
-USE_BZIP2=	yes
+USES=	tar:bzip2
 
 WRKSRC=		${WRKDIR}
 

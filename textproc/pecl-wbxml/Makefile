@@ -10,7 +10,7 @@ EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	PECL
 
 MAINTAINER=	flo@FreeBSD.org
-COMMENT=	A PECL extension that provides WBXML conversion capabilities
+COMMENT=	PECL extension that provides WBXML conversion capabilities
 
 LIB_DEPENDS=	libwbxml2.so:${PORTSDIR}/textproc/wbxml2
 

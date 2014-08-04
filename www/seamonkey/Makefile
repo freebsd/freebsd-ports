@@ -3,7 +3,7 @@
 
 PORTNAME=	seamonkey
 DISTVERSION=	2.26.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES?=	www mail news editors irc ipv6
 MASTER_SITES=	MOZILLA/${PORTNAME}/releases/${DISTVERSION}/source \
 		https://ftp.mozilla.org/pub/mozilla.org/${PORTNAME}/candidates/${DISTVERSION}-candidates/build1/source/
@@ -30,7 +30,7 @@ BUILD_DEPENDS=	nspr>=4.10.3:${PORTSDIR}/devel/nspr \
 
 LIB_DEPENDS=	libv4l2.so:${PORTSDIR}/multimedia/libv4l
 
-EM_VERSION=	1.6.1_pre20140112
+EM_VERSION=	1.7
 L_VERSION=	3.1
 
 SSP_UNSAFE=	yes
@@ -104,11 +104,11 @@ CXXFLAGS+=	-O1
 .endif
 
 .if ${PORT_OPTIONS:MALSA}
-BUILD_DEPENDS+=	alsa-lib>=1.0.27.2_1:${PORTSDIR}/audio/alsa-lib
+RUN_DEPENDS+=	alsa-lib>=1.0.27.2_1:${PORTSDIR}/audio/alsa-lib
 .endif
 
 .if ${PORT_OPTIONS:MGSTREAMER}
-BUILD_DEPENDS+=	gstreamer1-libav>=1.2.4:${PORTSDIR}/multimedia/gstreamer1-libav
+RUN_DEPENDS+=	gstreamer1-libav>=1.2.4_1:${PORTSDIR}/multimedia/gstreamer1-libav
 .endif
 
 .if ! ${PORT_OPTIONS:MMAILNEWS}
@@ -121,19 +121,17 @@ MOZ_OPTIONS+=	--disable-ldap --enable-mailnews
 MOZ_OPTIONS+=	--enable-ldap --enable-mailnews
 .endif
 .if ${PORT_OPTIONS:MENIGMAIL}
-#MASTER_SITES+=	https://www.enigmail.net/download/source/:enigmail
-MASTER_SITES+=	https://dev.gentoo.org/~polynomial-c/mozilla/:enigmail
+MASTER_SITES+=	https://www.enigmail.net/download/source/:enigmail
 DISTFILES+=	${EM_DISTFILE}:enigmail
 RUN_DEPENDS+=	gpg:${PORTSDIR}/security/gnupg
 EM_DISTNAME=	enigmail-${EM_VERSION}
-EM_DISTFILE=	${EM_DISTNAME}.tar.xz
+EM_DISTFILE=	${EM_DISTNAME}.tar.gz
 EM_XPI_FILE=	${WRKSRC}/mailnews/extensions/enigmail/build/${EM_DISTNAME}-${OPSYS:tl}-${ARCH:S/amd64/x86_64/:S/i386/x86/}-gcc3.xpi
 EM_ORIG_ID=	{847b3a00-7ab1-11d4-8f02-006008948af5}
 EM_ID=		${PORTNAME}@mozilla-enigmail.org
 EM_ID_RFILES=	${XPI_LIBDIR}/${EM_ID}/install.rdf \
 		${XPI_LIBDIR}/${EM_ID}/components/enigmail.js \
 		${XPI_LIBDIR}/${EM_ID}/modules/enigmailCommon.jsm
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-mailnews-extensions-enigmail-config-getOsTarget.pl
 .endif
 .endif
 
@@ -173,6 +171,7 @@ post-patch:
 		${WRKSRC}/mailnews/extensions/enigmail/util/fixlang.pl \
 		${WRKSRC}/mailnews/extensions/enigmail/util/make-lang-xpi.pl
 	@${REINPLACE_CMD} -e '/^xpi/s/$$/ all/' \
+		-e '/^all/s/ xpi//' \
 		-e '/^XPI_MODULE_VERS/s/= .*/= ${EM_VERSION}/' \
 		${WRKSRC}/mailnews/extensions/enigmail/Makefile
 	@${REINPLACE_CMD} -e '/em:version/s,>[^<]*<,>${EM_VERSION}<,' \

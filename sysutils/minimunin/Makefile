@@ -9,7 +9,7 @@ MASTER_SITES=	http://erdgeist.org/arts/software/minimunin/
 MAINTAINER=	erdgeist@erdgeist.org
 COMMENT=	Tiny munin-node implementation written in pure bourne shell
 
-USE_BZIP2=	yes
+USES=	tar:bzip2
 PLIST_FILES=	bin/minimunin
 SUB_FILES=	pkg-message
 

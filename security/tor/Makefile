@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	tor
-DISTVERSION=	0.2.4.22
+DISTVERSION=	0.2.4.23
 CATEGORIES=	security net ipv6
 MASTER_SITES=	TOR
 
@@ -37,7 +37,7 @@ USE_OPENSSL=	yes
 USE_RC_SUBR=	tor
 SUB_FILES=	pkg-message
 
-GROUPS =	_tor
+GROUPS=		_tor
 USERS=		_tor
 
 CONFLICTS=	tor-devel-[0-9]*

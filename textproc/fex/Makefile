@@ -8,7 +8,7 @@ MASTER_SITES=	http://semicomplete.googlecode.com/files/ \
 		http://mirrors.rit.edu/zi/
 
 MAINTAINER=	zi@FreeBSD.org
-COMMENT=	A powerful field extraction tool
+COMMENT=	Powerful field extraction tool
 
 LICENSE=	APACHE20
 

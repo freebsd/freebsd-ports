@@ -11,7 +11,7 @@ MASTER_SITE_SUBDIR=	knu
 MAINTAINER=	knu@FreeBSD.org
 COMMENT=	Tool to edit files in-place through given filter commands
 
-USE_BZIP2=	yes
+USES=	tar:bzip2
 USE_RUBY=	yes
 
 MAKE_ARGS=	PREFIX="${PREFIX}" MANPREFIX="${MANPREFIX}"

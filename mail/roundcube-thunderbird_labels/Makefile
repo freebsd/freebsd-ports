@@ -14,7 +14,7 @@ LICENSE=	GPLv2
 
 RUN_DEPENDS=	roundcube>=0.5:${PORTSDIR}/mail/roundcube
 
-USE_BZIP2=	yes
+USES=	tar:bzip2
 NO_BUILD=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}

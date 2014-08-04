@@ -2,12 +2,14 @@
 
 PORTNAME=	msgpack
 PORTVERSION=	0.5.7
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://msgpack.org/releases/cpp/
 
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Binary-based efficient data interchange format focused on performance
 
+USES=		libtool
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 

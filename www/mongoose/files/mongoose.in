@@ -1,0 +1,39 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+# PROVIDE: mongoose
+# REQUIRE: daemon
+
+# Define these mongoose_* variables in one of these files:
+#       /etc/rc.conf
+#       /etc/rc.conf.local
+#       /etc/rc.conf.d/mongoose
+#
+# mongoose_enable		Set to "YES" to run mongoose.
+# mongoose_flags		Flags passed to mongoose, see mongoose --help
+
+. /etc/rc.subr
+
+name="mongoose"
+rcvar=mongoose_enable
+command="%%PREFIX%%/bin/mongoose"
+
+#
+# DO NOT CHANGE THESE DEFAULT VALUES HERE
+#
+mongoose_enable=${mongoose_enable-"NO"}
+mongoose_flags=${mongoose_flags-"/var/empty"}
+mongoose_pidfile=${mongoose_pidfile-"/var/run/mongoose"}
+
+start_cmd="mongoose_start"
+
+load_rc_config $name
+
+mongoose_start () {
+	echo "Starting mongoose."
+	/usr/sbin/daemon -p $mongoose_pidfile $command $mongoose_flags >/dev/null 2>&1
+}
+
+run_rc_command "$1"

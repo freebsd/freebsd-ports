@@ -9,7 +9,7 @@ MASTER_SITES=	SF
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Check if a hostname is blacklisted
 
-USE_BZIP2=	yes
+USES=	tar:bzip2
 GNU_CONFIGURE=	yes
 PLIST_FILES=	bin/${PORTNAME} \
 		man/man1/surblhost.1.gz

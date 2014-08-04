@@ -142,6 +142,7 @@
     SUBDIR += pnetcdf
     SUBDIR += psi3
     SUBDIR += psychopy
+    SUBDIR += pulseview
     SUBDIR += py-DendroPy
     SUBDIR += py-coards
     SUBDIR += py-h5py
@@ -172,6 +173,9 @@
     SUBDIR += rubygem-ai4r
     SUBDIR += rubygem-netcdf
     SUBDIR += sigrok-cli
+    SUBDIR += sigrok-firmware
+    SUBDIR += sigrok-firmware-fx2lafw
+    SUBDIR += sigrok-firmware-utils
     SUBDIR += silo
     SUBDIR += simlib
     SUBDIR += simsmith

@@ -16,9 +16,8 @@ LIB_DEPENDS=	libevent.so:${PORTSDIR}/devel/libevent2 \
 
 WRKSRC=	${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-USES=	pkgconfig fuse scons
+USES=	pkgconfig fuse scons tar:xz
 USE_OPENSSL=	yes
-USE_XZ=	yes
 WITH_OPENSSL_PORT=	yes
 
 PLIST_FILES=	bin/ori \

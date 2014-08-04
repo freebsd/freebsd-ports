@@ -1,8 +1,9 @@
 %%SITE_PERL%%/MooX/ConfigFromFile.pm
-%%SITE_PERL%%/MooX/ConfigFromFile/ConfigData.pm
 %%SITE_PERL%%/MooX/ConfigFromFile/Role.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/MooX/ConfigFromFile/.packlist
 %%PERL5_MAN3%%/MooX::ConfigFromFile.3.gz
-%%PERL5_MAN3%%/MooX::ConfigFromFile::ConfigData.3.gz
 %%PERL5_MAN3%%/MooX::ConfigFromFile::Role.3.gz
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooX/ConfigFromFile
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooX
 @dirrm %%SITE_PERL%%/MooX/ConfigFromFile
 @dirrmtry %%SITE_PERL%%/MooX

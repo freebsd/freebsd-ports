@@ -2,47 +2,32 @@
 # $FreeBSD$
 
 PORTNAME=	zoinks
-PORTVERSION=	0.3.7
-PORTREVISION=	4
+PORTVERSION=	0.4.1
 CATEGORIES=	editors
 MASTER_SITES=	http://zoinks.mikelockwood.com/download/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	X11 programmer's editor and development environment
 
-.if defined(WITH_IMLIB)
-USE_GNOME=	imlib
-CONFIGURE_ARGS+=	--enable-imlib
-.else
-CONFIGURE_ARGS+=	--disable-imlib
-.endif
+LICENSE=	GPLv2 # (or later)
 
 USE_XORG=	xpm
 GNU_CONFIGURE=	yes
 
-NO_STAGE=	yes
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
-OPTIONS_DEFINE=	NLS
+OPTIONS_DEFINE=		IMLIB NLS
+OPTIONS_SUB=		yes
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MNLS}
-USES+=		gettext
-PLIST_SUB+=	NLS=""
-.else
-CONFIGURE_ARGS+=--disable-nls
-PLIST_SUB+=	NLS="@comment "
-.endif
-
-pre-everything::
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} "Zoinks can be built with optional support for calculating image sizes"
-	@${ECHO_MSG} "and image thumbnail creation for HTML files."
-	@${ECHO_MSG} "These features require the Gnome imlib library."
-	@${ECHO_MSG} "Use WITH_IMLIB=yes to enable these features."
-	@${ECHO_MSG} ""
+IMLIB_USE=		GNOME=imlib
+IMLIB_CONFIGURE_ENABLE=	imlib
+NLS_USES=		gettext
+NLS_CONFIGURE_ENABLE=	nls
 
 post-patch:
+	@${REINPLACE_CMD} -e \
+		's|^MY_CXXFLAGS|#&|' ${WRKSRC}/configure
 	@${FIND} ${WRKSRC} -name *.xpm | ${XARGS} ${REINPLACE_CMD} -e \
 		's|^"|(char *)"|g'
 

@@ -52,6 +52,10 @@ TEX_MAINTAINER=	hrs@FreeBSD.org
 # default TeX distribution.  "texlive"
 TEX_DEFAULT?=	texlive
 
+.if ${TEX_DEFAULT} != texlive
+IGNORE=		Only 'texlive' is supported as value for TEX_DEFAULT
+.endif
+
 TEXMFDIR?=	share/texmf
 TEXMFDISTDIR?=	share/texmf-dist
 TEXMFLOCALDIR?=	share/texmf-local

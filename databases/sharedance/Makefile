@@ -14,7 +14,7 @@ LIB_DEPENDS=	libevent.so:${PORTSDIR}/devel/libevent2
 
 CONFIGURE_ARGS=	--with-largefile
 GNU_CONFIGURE=	yes
-USE_BZIP2=	yes
+USES=	tar:bzip2
 CFLAGS+=	-I${LOCALBASE}/include/event2/compat \
 		-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib/event2

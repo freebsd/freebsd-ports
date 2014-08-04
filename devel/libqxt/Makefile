@@ -13,7 +13,7 @@ COMMENT=	Extension library for Qt
 BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash
 
 USE_BDB=	44+
-USE_BZIP2=	yes
+USES=		tar:bzip2
 USE_QT4=	qmake_build moc_build rcc_build corelib gui gui \
 		designer
 USE_LDCONFIG=	${PREFIX}/lib/qxt

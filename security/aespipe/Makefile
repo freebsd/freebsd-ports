@@ -15,7 +15,7 @@ LICENSE=	GPLv2
 
 RUN_DEPENDS=	gpg:${PORTSDIR}/security/gnupg
 
-USE_BZIP2=	yes
+USES=	tar:bzip2
 
 GNU_CONFIGURE=	yes
 PLIST_FILES=	bin/aespipe man/man1/aespipe.1.gz

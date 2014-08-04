@@ -357,6 +357,7 @@ share/postgresql/snowball_create.sql
 %%TZDATA%%share/postgresql/timezone/Antarctica/Rothera
 %%TZDATA%%share/postgresql/timezone/Antarctica/South_Pole
 %%TZDATA%%share/postgresql/timezone/Antarctica/Syowa
+%%TZDATA%%share/postgresql/timezone/Antarctica/Troll
 %%TZDATA%%share/postgresql/timezone/Antarctica/Vostok
 %%TZDATA%%share/postgresql/timezone/Arctic/Longyearbyen
 %%TZDATA%%share/postgresql/timezone/Asia/Aden

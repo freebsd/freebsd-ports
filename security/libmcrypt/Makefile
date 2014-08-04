@@ -10,10 +10,12 @@ MASTER_SITES=	SF/mcrypt/Libmcrypt/${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Multi-cipher cryptographic library (used in PHP)
 
-USES=		libtool:oldver
-GNU_CONFIGURE=	yes
+LICENSE=	LGPL21
+
 CONFIGURE_ARGS=	--enable-static
+GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
+USES=		libtool:oldver
 
 .include <bsd.port.mk>

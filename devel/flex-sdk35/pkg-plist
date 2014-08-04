@@ -1215,9 +1215,9 @@ bin/optimizer
 %%DATADIR%%/frameworks/themes/Wooden/preview.jpg
 %%DATADIR%%/frameworks/themes/Wooden/wooden_bg.jpg
 %%DATADIR%%/frameworks/winFonts.ser
-%%DOCSDIR%%/license-mpl.htm
-%%DOCSDIR%%/readme-open.htm
-@dirrmtry %%DOCSDIR%%
+%%PORTDOCS%%%%DOCSDIR%%/license-mpl.htm
+%%PORTDOCS%%%%DOCSDIR%%/readme-open.htm
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%
 @dirrmtry %%DATADIR%%/frameworks/themes/Wooden
 @dirrmtry %%DATADIR%%/frameworks/themes/Smoke
 @dirrmtry %%DATADIR%%/frameworks/themes/Institutional

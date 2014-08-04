@@ -1,0 +1,9 @@
+bin/poly
+bin/polyc
+bin/polyimport
+lib/libpolymain.a
+lib/libpolyml.a
+libdata/pkgconfig/polyml.pc
+man/man1/poly.1.gz
+man/man1/polyc.1.gz
+man/man1/polyimport.1.gz

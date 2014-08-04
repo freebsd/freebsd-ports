@@ -1,0 +1,31 @@
+--- Makefile.FreeBSD.orig	2006-03-17 21:17:36.000000000 +0100
++++ Makefile.FreeBSD	2014-08-03 18:48:01.000000000 +0200
+@@ -2,14 +2,14 @@
+ #
+ # Copyright (c) 2006 Ken Kato
+ 
+-AS = as
+-ASFLAGS =
++AS ?= as
++ASFLAGS ?=
+ 
+-CC = gcc
+-CFLAGS = -O2
++CC ?= gcc
++CFLAGS ?= -O2
+ 
+-LD = gcc
+-LDFLAGS =
++LD ?= ${CC}
++LDFLAGS ?=
+ 
+ # replace the following line if you prefer inline version
+ # of vmcall functions (vmcall.c) -- works only with gcc
+@@ -20,6 +20,6 @@
+ 
+ VMWLIB =
+ SHRLIB =
+-FTPLIB = -L/usr/local/lib -liconv
++FTPLIB ?= -L/usr/local/lib -liconv
+ 
+ include Makefile.inc

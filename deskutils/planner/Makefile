@@ -12,8 +12,7 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Project management application for GNOME 2
 
-USE_XZ=		yes
-USES=		pathfix gettext gmake pkgconfig
+USES=		pathfix gettext gmake pkgconfig tar:xz
 USE_GNOME=	gnomeprefix intlhack libgnomeui libgnomeprintui \
 		libgsf desktopfileutils
 WANT_GNOME=	yes

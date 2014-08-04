@@ -24,6 +24,10 @@ SRCDIR=		${SRC_BASE}/usr.bin/telnet
 IGNORE=		need to build this port with the source code of telnet
 .endif
 
+.if ${OSVERSION} > 1100000
+BROKEN=		does not build
+.endif
+
 do-extract:
 	@${MKDIR} ${WRKDIR}
 	@${CP} -R ${SRCDIR} ${WRKSRC}

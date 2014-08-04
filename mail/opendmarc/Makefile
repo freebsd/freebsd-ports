@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	opendmarc
-PORTVERSION=	1.2.0
-PORTREVISION=	1
+PORTVERSION=	1.3.0
 CATEGORIES=	mail security
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	${PORTNAME} \
@@ -37,6 +36,6 @@ post-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/mail
 	${INSTALL_DATA} \
 		${WRKSRC}/opendmarc/opendmarc.conf.sample ${STAGEDIR}${PREFIX}/etc/mail
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libopendmarc.so.1
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libopendmarc.so.2
 
 .include <bsd.port.mk>

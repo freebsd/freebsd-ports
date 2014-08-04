@@ -7,7 +7,7 @@ CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	markun@onohara.to
-COMMENT=	A simple wrapper for parsing OPML files
+COMMENT=	Simple wrapper for parsing OPML files
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes

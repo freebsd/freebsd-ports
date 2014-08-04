@@ -14,8 +14,7 @@ LICENSE=	MPL
 
 LIB_DEPENDS=	libpt.so:${PORTSDIR}/devel/ptlib
 
-USE_XZ=	yes
-USES=		gmake pathfix pkgconfig
+USES=		gmake pathfix pkgconfig tar:xz
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 

@@ -25,7 +25,7 @@ USES=		pathfix perl5 pkgconfig
 USE_PERL5=	build
 USE_LDCONFIG=	yes
 
-CONFIGURE_ARGS =	--enable-shared --enable-threads --disable-fortran
+CONFIGURE_ARGS=		--enable-shared --enable-threads --disable-fortran
 CONFIGURE_ENV=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 		PTHREAD_LIBS="${PTHREAD_LIBS}"
 
@@ -37,7 +37,7 @@ INFO=	fftw3
 INSTALL_TARGET=	install-pkgconfigDATA install-libLTLIBRARIES install-exec
 .endif
 
-OPTIONS_DEFINE =	G77_WRAPPERS OPENMP OPTIMIZED_CFLAGS
+OPTIONS_DEFINE=		G77_WRAPPERS OPENMP OPTIMIZED_CFLAGS
 
 G77_WRAPPERS_DESC=	Alter Fortran wrappers for use with g77
 OPENMP_DESC=		Build OpenMP multithreaded libraries
@@ -83,7 +83,7 @@ CONFIGURE_ARGS+=--enable-long-double
 FFTW3_SUFX=	q
 FFTW3_PKGNAMESUFFIX=	-quad
 CONFIGURE_ARGS+=--enable-quad-precision
-ONLY_FOR_ARCHS =	i386 amd64
+ONLY_FOR_ARCHS=		i386 amd64
 USE_GCC=	yes
 .endif
 

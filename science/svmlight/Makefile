@@ -23,6 +23,8 @@ USES=		gmake
 USE_LDCONFIG=	yes
 PKGMESSAGE=	${WRKSRC}/LICENSE.txt
 
+OPTIONS_DEFINE=	DOCS
+
 do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/include/svmlight
 	${INSTALL_DATA} ${WRKSRC}/*.h ${STAGEDIR}${PREFIX}/include/svmlight

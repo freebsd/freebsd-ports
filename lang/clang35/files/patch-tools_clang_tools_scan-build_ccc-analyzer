@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- tools/clang/tools/scan-build/ccc-analyzer.orig
++++ tools/clang/tools/scan-build/ccc-analyzer
+@@ -31,7 +31,7 @@
+ my $DefaultCXXCompiler;
+ my $IsCXX;
+ 
+-if (`uname -a` =~ m/Darwin/) {
++if (`uname -a` =~ m/(Darwin|FreeBSD)/) {
+   $DefaultCCompiler = 'clang';
+   $DefaultCXXCompiler = 'clang++';
+ } else {

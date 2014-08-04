@@ -3,7 +3,7 @@
 
 PORTNAME=	aqualung
 DISTVERSION=	0.9beta11
-PORTREVISION=	19
+PORTREVISION=	20
 CATEGORIES=	audio
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${DISTVERSION} \
  		http://wickedmachine.net/mirror/
@@ -26,7 +26,6 @@ LIB_DEPENDS=	libsamplerate.so:${PORTSDIR}/audio/libsamplerate \
 		libcdio.so:${PORTSDIR}/sysutils/libcdio \
 		libmp3lame.so:${PORTSDIR}/audio/lame \
 		libavcodec.so:${PORTSDIR}/multimedia/ffmpeg \
-		libstrfunc.so:${PORTSDIR}/devel/libstrfunc \
 		libwavpack.so:${PORTSDIR}/audio/wavpack \
 		libxslt.so:${PORTSDIR}/textproc/libxslt \
 		libcddb.so:${PORTSDIR}/audio/libcddb \

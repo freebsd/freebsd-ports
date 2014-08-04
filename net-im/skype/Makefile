@@ -21,7 +21,7 @@ OPTIONS_DEFAULT=	VIDEO
 
 NO_BUILD=	yes
 
-USE_BZIP2=	yes
+USES=	tar:bzip2
 USE_LINUX=	yes
 USE_LINUX_APPS+=alsalib alsa-plugins-oss expat fontconfig libasyncns \
 		libsigcpp20

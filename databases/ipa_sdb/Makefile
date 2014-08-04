@@ -11,7 +11,7 @@ COMMENT=	IPA simple database module
 
 BUILD_DEPENDS=	${LOCALBASE}/include/ipa_mod.h:${PORTSDIR}/sysutils/ipa
 
-USE_BZIP2=	yes
+USES=	tar:bzip2
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 

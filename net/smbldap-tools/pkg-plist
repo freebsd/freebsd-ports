@@ -16,12 +16,7 @@ sbin/smbldap-userinfo
 sbin/smbldap-userlist
 sbin/smbldap-usermod
 sbin/smbldap-usershow
-@exec mkdir -p %D/etc/smbldap-tools
-@unexec if cmp -s %D/etc/smbldap-tools/smbldap.conf %D/etc/smbldap-tools/smbldap.conf.sample; then rm -f %D/etc/smbldap-tools/smbldap.conf; fi
-etc/smbldap-tools/smbldap.conf.sample
-@exec [ -f %D/etc/smbldap-tools/smbldap.conf ] || cp %B/%f %D/etc/smbldap-tools/smbldap.conf
-@unexec if cmp -s %D/etc/smbldap-tools/smbldap_bind.conf %D/etc/smbldap-tools/smbldap_bind.conf.sample; then rm -f %D/etc/smbldap-tools/smbldap_bind.conf; fi
-etc/smbldap-tools/smbldap_bind.conf.sample
-@exec [ -f %D/etc/smbldap-tools/smbldap_bind.conf ] || cp %B/%f %D/etc/smbldap-tools/smbldap_bind.conf
+@sample %%ETCDIR%%/smbldap.conf.sample
+@sample %%ETCDIR%%/smbldap_bind.conf.sample
 %%SITE_PERL%%/smbldap_tools.pm
-@dirrmtry etc/smbldap-tools
+@dirrmtry %%ETCDIR%%

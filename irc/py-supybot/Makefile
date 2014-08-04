@@ -11,7 +11,7 @@ DISTNAME=	Supybot-${PORTVERSION}
 MAINTAINER=	dhn@FreeBSD.org
 COMMENT=	Supybot - A Superb Python IRC bot
 
-USE_BZIP2=	yes
+USES=	tar:bzip2
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGVERSION=	0.83.1+darcs

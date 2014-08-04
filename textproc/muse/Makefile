@@ -12,7 +12,7 @@ MASTER_SITE_SUBDIR=	dryice
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	An authoring and publishing environment for Emacs
+COMMENT=	Authoring and publishing environment for Emacs
 
 USE_EMACS=	yes
 USES=		gmake makeinfo
@@ -21,34 +21,22 @@ INFO=		muse
 
 LISPDIR=	${PREFIX}/${EMACS_SITE_LISPDIR}/${PORTNAME}
 
-.if !defined(NOPORTDOCS)
 PORTDOCS=	AUTHORS ChangeLog ChangeLog.1 ChangeLog.2 ChangeLog.3 NEWS \
 		README scripts COPYING
-.endif
 
-NO_STAGE=	yes
+OPTIONS_DEFINE=	DOCS
+
 post-install:
-	${MKDIR} ${LISPDIR}/contrib
-.for i in *
-	${CP} -R ${WRKSRC}/contrib/${i} ${LISPDIR}/contrib
-.endfor
-
-	${MKDIR} ${LISPDIR}/experimental
-.for i in *
-	${INSTALL_DATA} ${WRKSRC}/experimental/${i} ${LISPDIR}/experimental
-.endfor
-
-	${MKDIR} ${EXAMPLESDIR}
-.for i in *
-	${CP} -R ${WRKSRC}/examples/${i} ${EXAMPLESDIR}
-.endfor
-
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-.for i in ${PORTDOCS}
-	${CP} -R ${WRKSRC}/${i} ${DOCSDIR}
-.endfor
-.endif
+	@${MKDIR} ${STAGEDIR}${LISPDIR}/contrib
+	(cd ${WRKSRC} && ${COPYTREE_SHARE} contrib  ${STAGEDIR}${LISPDIR})
+	${INSTALL_DATA} ${WRKSRC}/experimental/* \
+		${STAGEDIR}${LISPDIR}/experimental
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	(cd ${WRKSRC}/examples && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR})
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|scripts||:S|^|${WRKSRC}/|} \
+		${STAGEDIR}${DOCSDIR}
+	(cd ${WRKSRC} && ${COPYTREE_SHARE} scripts ${STAGEDIR}${DOCSDIR})
 
 .include <bsd.port.pre.mk>
 

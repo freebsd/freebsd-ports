@@ -39,13 +39,13 @@ include/msgpack/zbuffer.hpp
 include/msgpack/zone.h
 include/msgpack/zone.hpp
 lib/libmsgpack.a
-lib/libmsgpack.la
 lib/libmsgpack.so
 lib/libmsgpack.so.3
+lib/libmsgpack.so.3.0.0
 lib/libmsgpackc.a
-lib/libmsgpackc.la
 lib/libmsgpackc.so
 lib/libmsgpackc.so.2
+lib/libmsgpackc.so.2.0.0
 @dirrm include/msgpack/type/tr1
 @dirrm include/msgpack/type
 @dirrm include/msgpack

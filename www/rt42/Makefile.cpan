@@ -235,9 +235,9 @@ MYSQL_DEPS=	p5-DBD-mysql>=2.1018:${PORTSDIR}/databases/p5-DBD-mysql
 ORACLE_DEPS=	p5-DBD-Oracle>0:${PORTSDIR}/databases/p5-DBD-Oracle
 
 ### --- PGSQL ---
-### DBD::Pg 1.43
+### DBD::Pg 3.2.1
 
-PGSQL_DEPS=	p5-DBD-Pg>=1.43:${PORTSDIR}/databases/p5-DBD-Pg
+PGSQL_DEPS=	p5-DBD-Pg32=3.2.1:${PORTSDIR}/databases/p5-DBD-Pg32
 
 ### --- SQLITE ---
 ### DBD::SQLite 1.00
@@ -306,3 +306,4 @@ HTML_DOC_DEPS=	p5-HTML-Parser>0:${PORTSDIR}/www/p5-HTML-Parser
 ### --- AVOID ---
 ###     'DBD::Oracle' => [qw(1.23)],
 ###     'Devel::StackTrace' => [qw(1.28 1.29)],
+###	'DBD::Pg' => [qw(3.3.0)],

@@ -14,7 +14,7 @@ PATCHFILES=	${PORTNAME}${PORTVERSION}.patch.gz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Program for Internet News & Email with Chinese(BIG-5) support
 
-USE_BZIP2=	yes
+USES=	tar:bzip2
 
 .if defined(WITH_SSL)
 USE_OPENSSL=	yes

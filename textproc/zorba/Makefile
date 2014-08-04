@@ -9,7 +9,7 @@ MASTER_SITES=	https://launchpadlibrarian.net/119058962/
 DISTNAME=	${PORTNAME}-src-${PORTVERSION}
 
 MAINTAINER=	gahr@FreeBSD.org
-COMMENT=	A general purpose C++ XQuery processor
+COMMENT=	General purpose C++ XQuery processor
 
 LICENSE=	APACHE20
 

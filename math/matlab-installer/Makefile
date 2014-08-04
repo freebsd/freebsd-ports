@@ -19,7 +19,7 @@ RUN_DEPENDS=	mount_cd9660_image:${PORTSDIR}/sysutils/diskimage-tools \
 		webbrowser:${PORTSDIR}/www/webbrowser \
 		${LINUXBASE}/usr/bin/gfortran:${PORTSDIR}/devel/linux-f10-devtools
 
-USE_XZ=		yes
+USES=		tar:xz
 USE_LINUX=	yes
 USE_LINUX_APPS=	ncurses-base dri
 USE_JAVA=	yes

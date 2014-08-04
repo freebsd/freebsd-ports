@@ -15,19 +15,16 @@ RUN_DEPENDS=	${LOCALBASE}/bin/multilog:${PORTSDIR}/sysutils/daemontools
 
 WRKSRC=		${WRKDIR}/admin/${DISTNAME}
 
-MAN1=		uschedule.1 uschedulecmd.1 uscheduleconf.1 uschedulecp.1 \
-		uscheduleedit.1 uschedulelist.1 uschedulerm.1 \
-		uscheduleruntimelimit.1
-MAN7=		uschedule_intro.7
-MAN8=		uscheduled.8
 PORTDOCS=	ChangeLog NEWS SECURITY-BUG
 bin=		uschedule uschedulecmd uscheduleconf uschedulecp \
 		uscheduleedit uschedulelist uschedulerm uscheduleruntimelimit
 sbin=		uscheduled
-PLIST_FILES=	${bin:S,^,bin/,}
-PLIST_FILES+=	${sbin:S,^,sbin/,}
+PLIST_FILES=	${bin:S,^,bin/,} ${bin:S,^,man/man1/,:S,$,.1.gz,} \
+		man/man7/uschedule_intro.7.gz man/man8/uscheduled.8.gz \
+		sbin/uscheduled
 
-NO_STAGE=	yes
+OPTIONS_DEFINE=	DOCS
+
 pre-build:
 	${ECHO_CMD} "${CC}" > ${WRKSRC}/src/conf-cc
 	${ECHO_CMD} "${CFLAGS}" > ${WRKSRC}/src/conf-cflags
@@ -36,17 +33,16 @@ regression-test: build
 	cd ${WRKSRC} && ${MAKE} check
 
 do-install:
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	cd ${WRKSRC}/src && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
-.endif
-.for section in 1 7 8
-	cd ${WRKSRC}/doc && ${INSTALL_MAN} ${MAN${section}} \
- 	    ${MAN${section}PREFIX}/man/man${section}
-.endfor
-.for d in bin sbin
-	cd ${WRKSRC}/command && ${INSTALL_PROGRAM} ${${d}} ${PREFIX}/${d}
-.endfor
-	@${CAT} pkg-message
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	(cd ${WRKSRC}/src && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR})
+	(cd ${WRKSRC}/command && ${INSTALL_PROGRAM} ${bin} \
+		${STAGEDIR}${PREFIX}/bin)
+	${INSTALL_PROGRAM} ${WRKSRC}/command/${sbin} ${STAGEDIR}${PREFIX}/sbin
+	(cd ${WRKSRC}/doc && ${INSTALL_MAN} ${bin:S,$,.1,} \
+		${STAGEDIR}${MANPREFIX}/man/man1)
+	${INSTALL_MAN} ${WRKSRC}/doc/uschedule_intro.7 \
+		${STAGEDIR}${MANPREFIX}/man/man7
+	${INSTALL_MAN} ${WRKSRC}/doc/uscheduled.8 \
+		${STAGEDIR}${MANPREFIX}/man/man8
 
 .include <bsd.port.mk>

@@ -15,9 +15,8 @@ BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-
 		${LOCALBASE}/libdata/pkgconfig/dbus-glib-1.pc:${PORTSDIR}/devel/dbus-glib
 LIB_DEPENDS=	libfcitx-config.so:${PORTSDIR}/chinese/fcitx
 
-USE_XZ=		yes
 USE_GNOME=	intltool gnomehack
-USES=		cmake gettext pkgconfig
+USES=		cmake gettext pkgconfig tar:xz
 
 OPTIONS_DEFINE=	GTK2 GTK3
 OPTIONS_DEFAULT=GTK2

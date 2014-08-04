@@ -3,6 +3,7 @@
 
 PORTNAME=	svxlink
 PORTVERSION=	13.12
+PORTREVISION=	1
 CATEGORIES=	comms hamradio
 MASTER_SITES=	SF/svxlink/svxlink/${PORTVERSION}
 

@@ -2,34 +2,32 @@
 # $FreeBSD$
 
 PORTNAME=	trafficserver
-PORTVERSION=	4.1.2
-PORTREVISION=	4
+PORTVERSION=	5.0.0
 CATEGORIES=	www
 MASTER_SITES=	APACHE/${PORTNAME}
 
-MAINTAINER=	jnlin@csie.nctu.edu.tw
+MAINTAINER=	gaod@hychen.org
 COMMENT=	Fast, scalable and extensible HTTP proxy server
 
 LICENSE=	APACHE20
 
-LIB_DEPENDS=	libexecinfo.so:${PORTSDIR}/devel/libexecinfo \
-		libpcre.so:${PORTSDIR}/devel/pcre \
-		libxml2.so:${PORTSDIR}/textproc/libxml2 \
-		libboost_system.so:${PORTSDIR}/devel/boost-libs \
+LIB_DEPENDS=	libboost_system.so:${PORTSDIR}/devel/boost-libs \
 		libcurl.so:${PORTSDIR}/ftp/curl \
+		libexecinfo.so:${PORTSDIR}/devel/libexecinfo \
 		libhwloc.so:${PORTSDIR}/devel/hwloc \
-		libluajit-${LUA_VER}.so:${PORTSDIR}/lang/luajit
+		libpcre.so:${PORTSDIR}/devel/pcre \
+		libxml2.so:${PORTSDIR}/textproc/libxml2
 
 GNU_CONFIGURE=	yes
-USES=		gmake libtool lua:51 perl5 pkgconfig tar:bzip2 tcl
-USE_AUTOTOOLS=	aclocal autoconf autoheader automake
-AUTOMAKE_ARGS=	-a -c -f
-USE_OPENSSL=	yes
-USE_SQLITE=	yes
-USE_RC_SUBR=	${PORTNAME}
+USES=	gmake perl5 pkgconfig tar:bzip2 tcl
+USE_AUTOTOOLS=	aclocal autoconf automake libtool
 USE_LDCONFIG=	yes
-USE_PERL5=	run build fixpacklist
+USE_OPENSSL=	yes
+USE_RC_SUBR=	${PORTNAME}
+USE_SQLITE=	yes
+
 ONLY_FOR_ARCHS=	i386 amd64
+
 USERS=		www
 GROUPS=		nogroup
 
@@ -48,6 +46,8 @@ CONFIGURE_ARGS=	--with-libxml2=${LOCALBASE} \
 		--enable-cppapi \
 		--with-user=${USERS} \
 		--with-group=${GROUPS}
+
+ACLOCAL_ARGS=	-I build
 
 OPTIONS_DEFINE=	WCCP INTERIM
 OPTIONS_RADIO=	MEMMAN
@@ -73,6 +73,11 @@ CONFIGURE_ARGS+=	--enable-freelist
 CONFIGURE_ARGS+=	--disable-freelist
 .else
 FORBIDDEN=	No allocation strategy selected
+.endif
+
+.if ${OSVERSION} >= 900033 && exists(/usr/bin/clang)
+CC=		clang
+CXX=		clang++
 .endif
 
 post-install:

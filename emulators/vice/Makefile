@@ -24,7 +24,7 @@ LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png \
 
 RESTRICTED=	ROMs are copyrighted by Commodore Business Machines
 
-USES=		iconv:patch pkgconfig gmake makeinfo
+USES=		iconv:patch gmake pkgconfig makeinfo
 USE_XORG=	xpm ice sm xext xv xt x11 xmu
 USE_XORG+=	xrender xinerama xi xrandr xcursor xcomposite xdamage xfixes
 GNU_CONFIGURE=	yes

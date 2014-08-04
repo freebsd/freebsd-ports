@@ -1,6 +1,6 @@
-%%PERL5_MAN3%%/Text::Emoticon.3.gz
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/Emoticon/.packlist
 %%SITE_PERL%%/Text/Emoticon.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/Emoticon/.packlist
+%%PERL5_MAN3%%/Text::Emoticon.3.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/Emoticon
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text
 @dirrmtry %%SITE_PERL%%/Text

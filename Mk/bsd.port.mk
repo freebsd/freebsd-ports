@@ -1184,7 +1184,8 @@ STRIPBIN=	${STRIP_CMD}
 # ${FILEDIR}/patch-* files from them.
 
 .if !target(makepatch)
-makepatch: ${FILESDIR}
+makepatch:
+	@${MKDIR} ${FILESDIR}
 	@(cd ${PATCH_WRKSRC}; \
 		for i in `find . -type f -name '*.orig'`; do \
 			ORG=$$i; \
@@ -3254,7 +3255,7 @@ options-message:
 	@${ECHO_MSG} "===>  Found saved configuration for ${_OPTIONS_READ}"
 .endif
 
-${FILESDIR} ${PKG_DBDIR} ${PREFIX} ${WRKDIR} ${WRKSRC}:
+${PKG_DBDIR} ${PREFIX} ${WRKDIR} ${WRKSRC}:
 	@${MKDIR} ${.TARGET}
 
 # Warn user about deprecated packages.  Advisory only.
@@ -5322,6 +5323,16 @@ missing:
 		_origin=$${dir##${PORTSDIR}/}; \
 		if ! $$(${ECHO_CMD} $${_origins} | ${GREP} -q $${_origin}); then \
 			${ECHO_CMD} $${_origin}; \
+		fi; \
+	done
+
+# shwo missing dependencies by name
+missing-packages:
+	@_packages=$$(${PKG_INFO} -aq); \
+	for dir in $$(${ALL-DEPENDS-LIST}); do \
+		_p=$$(cd $$dir; ${MAKE} -VPKGNAME); \
+		if ! $$(${ECHO_CMD} $${_packages} | ${GREP} -q $${_p}); then \
+			${ECHO_CMD} $${_p}; \
 		fi; \
 	done
 

@@ -10,7 +10,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-unix/${PORTVERSION} \
 MAINTAINER=	danilo@FreeBSD.org
 COMMENT=	Translator from LaTeX to RTF
 
-USES=		shebangfix
+USES=		shebangfix makeinfo
 SHEBANG_FILES=	${WRKSRC}/scripts/latex2png
 
 OPTIONS_DEFINE= LATEX2PNG

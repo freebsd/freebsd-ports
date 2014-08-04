@@ -12,7 +12,7 @@ COMMENT=	Converts plain ASCII text into PNG bitmap images
 
 LIB_DEPENDS=	libgd.so:${PORTSDIR}/graphics/gd
 
-USE_BZIP2=	yes
+USES=	tar:bzip2
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-gd
 CFLAGS+=	-DDEFAULT_FONTPATH='\"${FONTROOTDIR}/TTF:${FONTROOTDIR}/Type1:${FONTROOTDIR}\"'

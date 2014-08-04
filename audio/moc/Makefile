@@ -3,7 +3,7 @@
 
 PORTNAME=	moc
 PORTVERSION=	2.4.4
-PORTREVISION=	14
+PORTREVISION=	15
 CATEGORIES=	audio
 MASTER_SITES=	ftp://ftp.daper.net/pub/soft/moc/stable/
 
@@ -33,7 +33,7 @@ MP3_CONFIGURE_OFF=	--without-mp3
 
 MUSEPACK_LIB_DEPENDS=	libmpcdec.so:${PORTSDIR}/audio/musepack \
 		libtag_c.so:${PORTSDIR}/audio/taglib
-MUSE_PACK_PLIST_FILES=	lib/moc/decoder_plugins/libmusepack_decoder.a \
+MUSEPACK_PLIST_FILES=	lib/moc/decoder_plugins/libmusepack_decoder.a \
 		lib/moc/decoder_plugins/libmusepack_decoder.so
 MUSEPACK_CONFIGURE_OFF=	--without-musepack
 

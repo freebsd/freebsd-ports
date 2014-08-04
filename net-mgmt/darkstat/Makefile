@@ -11,7 +11,7 @@ COMMENT=	Network statistics gatherer and reporter
 
 USE_RC_SUBR=	darkstat
 
-USE_BZIP2=	yes
+USES=	tar:bzip2
 GNU_CONFIGURE=	yes
 
 PORTDOCS=	AUTHORS INSTALL README

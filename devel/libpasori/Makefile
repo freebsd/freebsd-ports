@@ -12,7 +12,7 @@ DISTNAME=	${PORTNAME}${PORTVERSION}
 MAINTAINER=	sarumaru@jp.FreeBSD.org
 COMMENT=	FeliCa read/write library for Sony RC-S320 USB FeliCa R/W(PaSoRi)
 
-USE_BZIP2=	yes
+USES=	tar:bzip2
 USE_LDCONFIG=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
