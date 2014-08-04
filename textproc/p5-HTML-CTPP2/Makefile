@@ -22,7 +22,8 @@ USE_PERL5=	configure
 CC=		${CXX}
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|' \
-	    ${WRKSRC}/Makefile.PL
+	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|; \
+		/^my $$CXX/s|g++|${CXX}|; /^my $$CC/s|gcc|${CC}|' \
+		${WRKSRC}/Makefile.PL
 
 .include <bsd.port.mk>
