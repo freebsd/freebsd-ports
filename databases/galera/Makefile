@@ -16,10 +16,9 @@ LICENSE=	GPLv2
 BUILD_DEPENDS=	checkmk:${PORTSDIR}/devel/libcheck \
 		doxygen:${PORTSDIR}/devel/doxygen \
 		${PYTHON_PKGNAMEPREFIX}cloud_sptheme>=0:${PORTSDIR}/textproc/py-cloud_sptheme
-LIB_DEPENDS=	libboost_date_time.so:${PORTSDIR}/devel/boost-libs \
-		libexecinfo.so:${PORTSDIR}/devel/libexecinfo
+LIB_DEPENDS=	libboost_date_time.so:${PORTSDIR}/devel/boost-libs
 
-USES=		scons shebangfix
+USES=		execinfo scons shebangfix
 
 USE_CXXSTD=	c++11
 USE_LDCONFIG=	yes

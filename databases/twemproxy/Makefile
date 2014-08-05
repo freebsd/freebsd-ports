@@ -12,7 +12,7 @@ COMMENT=	Fast, light-weight proxy for memcached and redis
 
 LICENSE=	APACHE20
 
-LIB_DEPENDS=	libexecinfo.so:${PORTSDIR}/devel/libexecinfo
+USES=		execinfo
 
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib -lexecinfo
