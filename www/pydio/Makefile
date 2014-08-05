@@ -11,6 +11,8 @@ COMMENT=	Ajax web file management system
 
 LICENSE=	AGPLv3
 
+PORTSCOUT=	limitw:1,even
+
 NO_BUILD=	yes
 USES=		dos2unix shebangfix
 php_OLD_CMD=	/php
