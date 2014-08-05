@@ -9,7 +9,7 @@ MASTER_SITES=	SF/xmpppy/PyIRCt/${PORTVERSION}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	irc-transport-${PORTVERSION}
 
-MAINTAINER= ports@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Xmpp to irc transport
 
 RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/xmpp/__init__.py:${PORTSDIR}/net-im/py-xmpppy \
@@ -28,23 +28,22 @@ DDIR=		${PYTHON_SITELIBDIR}/xmpp/irc
 
 PORTSCOUT=	limit:^0\.4[1-4]
 
-NO_STAGE=	yes
+OPTIONS_DEFINE=	DOCS
+
 post-patch:
 	@${GREP} -lr '/usr/bin/python' ${WRKSRC} | \
 		${XARGS} ${REINPLACE_CMD} -e "s,/usr/bin/python,${PYTHON_CMD}," \
 			-e "s!/etc/jabber/jabber-irc.conf!${PREFIX}/etc/${PORTNAME:S.-..}.conf!"
 
 do-install:
-	@${INSTALL} -d ${DDIR}
-	@${INSTALL_SCRIPT} ${WRKSRC}/irc.py ${DDIR}/
-	@${INSTALL_DATA} ${FILES:M*jep*:S.^.${WRKSRC}/.} ${DDIR}/
-	@${INSTALL_DATA} ${WRKSRC}/transport.ini ${PREFIX}/etc/${PORTNAME:S.-..}.conf.sample
-	@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${DDIR}
-	@${PYTHON_CMD} -O ${PYTHON_LIBDIR}/compileall.py ${DDIR}
-	@${CHMOD} -R a-w ${DDIR}
-.ifndef NOPORTDOCS
-	@${INSTALL} -d ${DOCSDIR}
-	@${INSTALL} ${PORTDOCS:S.^.${WRKSRC}/.} ${DOCSDIR}/
-.endif
+	@${INSTALL} -d ${STAGEDIR}${DDIR}
+	${INSTALL_SCRIPT} ${WRKSRC}/irc.py ${STAGEDIR}${DDIR}/
+	${INSTALL_DATA} ${FILES:M*jep*:S.^.${WRKSRC}/.} ${STAGEDIR}${DDIR}/
+	${INSTALL_DATA} ${WRKSRC}/transport.ini ${STAGEDIR}${PREFIX}/etc/${PORTNAME:S.-..}.conf.sample
+	${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py -d ${DDIR} ${STAGEDIR}${DDIR}
+	${PYTHON_CMD} -O ${PYTHON_LIBDIR}/compileall.py -d ${DDIR} ${STAGEDIR}${DDIR}
+	@${CHMOD} -R a-w ${STAGEDIR}${DDIR}
+	@${INSTALL} -d ${STAGEDIR}${DOCSDIR}
+	${INSTALL} ${PORTDOCS:S.^.${WRKSRC}/.} ${STAGEDIR}${DOCSDIR}/
 
 .include <bsd.port.mk>
