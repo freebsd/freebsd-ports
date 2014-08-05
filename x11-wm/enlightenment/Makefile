@@ -13,12 +13,11 @@ COMMENT=	Artistic X window manager
 
 LICENSE=	BSD
 
-LIB_DEPENDS=	libexecinfo.so:${PORTSDIR}/devel/libexecinfo \
-		libxcb-keysyms.so:${PORTSDIR}/x11/xcb-util-keysyms
+LIB_DEPENDS=	libxcb-keysyms.so:${PORTSDIR}/x11/xcb-util-keysyms
 
 DIST_SUBDIR=	e17
 GNU_CONFIGURE=	yes
-USES=		pathfix iconv gmake pkgconfig tar:bzip2
+USES=		execinfo pathfix iconv gmake pkgconfig tar:bzip2
 USE_EFL=	eina eet evas ecore eio edbus efreet edje \
 		libtool_hack librt_hack modarch_hack
 USE_EFL_EVAS_LOADERS=	eet jpeg png
