@@ -3,7 +3,7 @@
 # handle dependency on libexecinfo
 #
 # Feature:	execinfo
-# Usage:	USES=exexinfo
+# Usage:	USES=execinfo
 #
 # Take no arguments
 
