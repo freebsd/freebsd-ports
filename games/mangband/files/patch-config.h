@@ -1,6 +1,6 @@
---- config.h.orig	Sun Jan  7 07:21:32 2001
-+++ config.h	Fri Jan 12 00:04:41 2001
-@@ -79,7 +79,7 @@
+--- ./config.h.orig	2014-08-05 15:15:31.000000000 +0200
++++ ./config.h	2014-08-05 15:17:19.486687132 +0200
+@@ -137,7 +137,7 @@
  /*
   * OPTION: Use the POSIX "termios" methods in "main-gcu.c"
   */
@@ -9,7 +9,7 @@
  
  /*
   * OPTION: Use the "termio" methods in "main-gcu.c"
-@@ -107,7 +107,7 @@
+@@ -155,7 +155,7 @@
   * OPTION: Use the "curs_set()" call in "main-gcu.c".
   * Hack -- This option will not work on most BSD machines
   */
@@ -18,7 +18,7 @@
  # define USE_CURS_SET
  #endif
  
-@@ -582,7 +582,7 @@
+@@ -570,7 +570,7 @@
  /*
   * OPTION: Attempt to prevent all "cheating"
   */

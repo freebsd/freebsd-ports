@@ -1,7 +1,10 @@
-bin/mangclient
+@group games
+@mode 2550
 bin/mangband
-etc/mangband.cfg
-%%EXAMPLESDIR%%/mangrc
+@mode
+@group
+bin/mangclient
+@sample %%ETCDIR%%mangband.cfg
 %%DATADIR%%/data/scores.raw
 %%DATADIR%%/edit/artifact.txt
 %%DATADIR%%/edit/ego_item.txt
@@ -33,6 +36,8 @@ etc/mangband.cfg
 %%DATADIR%%/text/news.txt
 %%DATADIR%%/text/option.txt
 %%DATADIR%%/text/version.txt
+@group games
+@mode 0660
 %%DATADIR%%/user/font-ami.prf
 %%DATADIR%%/user/font-ibm.prf
 %%DATADIR%%/user/font-sdl.prf
@@ -87,16 +92,17 @@ etc/mangband.cfg
 %%DATADIR%%/xtra/font/nethack10x19-10.hex
 %%DATADIR%%/xtra/graf/16x16.bmp
 %%DATADIR%%/xtra/graf/mask.bmp
-@dirrm %%DATADIR%%/xtra/graf
-@dirrm %%DATADIR%%/xtra/font
-@dirrm %%DATADIR%%/xtra/Sound
-@dirrm %%DATADIR%%/xtra
-@dirrm %%DATADIR%%/user
-@dirrm %%DATADIR%%/text
-@dirrm %%DATADIR%%/save
-@dirrm %%DATADIR%%/help
-@dirrm %%DATADIR%%/file
+@mode
+@group
+dirrm %%DATADIR%%/data
 @dirrm %%DATADIR%%/edit
-@dirrm %%DATADIR%%/data
+@dirrm %%DATADIR%%/file
+@dirrm %%DATADIR%%/help
+@dirrm %%DATADIR%%/save
+@dirrm %%DATADIR%%/text
+@dirrm %%DATADIR%%/user
+@dirrm %%DATADIR%%/xtra/Sound
+@dirrm %%DATADIR%%/xtra/font
+@dirrm %%DATADIR%%/xtra/graf
+@dirrm %%DATADIR%%/xtra
 @dirrm %%DATADIR%%
-@dirrm %%EXAMPLESDIR%%
