@@ -3,6 +3,7 @@
 
 PORTNAME=	mupdf
 PORTVERSION=	1.5
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	graphics
 MASTER_SITES=	GOOGLE_CODE \
@@ -14,15 +15,14 @@ COMMENT=	Lightweight PDF viewer and toolkit
 
 LICENSE=	AGPLv3
 
-LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2 \
+LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl \
+		libfreetype.so:${PORTSDIR}/print/freetype2 \
 		libjpeg.so:${PORTSDIR}/graphics/jpeg \
 		libjbig2dec.so:${PORTSDIR}/graphics/jbig2dec \
 		libopenjp2.so:${PORTSDIR}/graphics/openjpeg
 
-MAKE_ARGS+=	build=release prefix=${PREFIX} verbose=1 mandir=${PREFIX}/man \
-			HAVE_X11=yes \
-			XCFLAGS="`pkg-config --cflags freetype2` -I ${LOCALBASE}/include" \
-			XLIBS="`pkg-config --libs freetype2 libopenjp2 x11 xext` -ljpeg -ljbig2dec"
+LIBS+=		-L${LOCALBASE}/lib
+MAKE_ARGS=	build=release prefix=${PREFIX} mandir=${PREFIX}/man verbose=yes
 USES=		pkgconfig gmake
 USE_XORG=	x11 xext
 
@@ -36,12 +36,6 @@ JS_DESC=	JavaScript support (V8 engine)
 
 .include <bsd.port.options.mk>
 
-.if ${CC:T:Mclang} == "clang"
-CFLAGS+=	-no-integrated-as
-.elif ${ARCH} == "amd64" || ${ARCH} == "i386"
-CFLAGS+=	-mfpmath=sse
-.endif
-
 .if ${PORT_OPTIONS:MSCROLL}
 EXTRA_PATCHES+=	${FILESDIR}/scroll_hack-platform__x11__pdfapp.c
 .endif
@@ -52,12 +46,21 @@ MAKE_ARGS+=	V8_PRESENT=1 V8LIBS=-lv8
 .endif
 
 post-patch:
-	${REINPLACE_CMD} -e 's/-pipe -O2 //' \
+	@${REINPLACE_CMD} -e 's/-pipe -O2 //' \
 		-e 's|/usr/local|${LOCALBASE}|' \
+		-e 's/Linux/FreeBSD/' \
 		${WRKSRC}/Makerules
-	${RM} -r ${WRKSRC}/thirdparty/*
+	@${REINPLACE_CMD} '/^CFLAGS/s|$$| -I${LOCALBASE}/include|' \
+		${WRKSRC}/Makefile
+	@${RM} -r ${WRKSRC}/thirdparty/*
+
+post-build:
+	(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_FLAGS} \
+		${MAKEFILE} ${MAKE_ARGS} OUT=build/pic XCFLAGS=-fpic libs)
 
 post-install:
+	${INSTALL_DATA} ${WRKSRC}/build/pic/libmupdf.a \
+		${STAGEDIR}${PREFIX}/lib/libmupdf_pic.a
 	${MV} ${STAGEDIR}${PREFIX}/bin/mupdf-x11 ${STAGEDIR}${PREFIX}/bin/mupdf
 .for binary in mudraw mutool mujstest mupdf
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${binary}
