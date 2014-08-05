@@ -2,32 +2,22 @@
 # $FreeBSD$
 
 PORTNAME=	lamprop
-PORTVERSION=	1.3.3
+PORTVERSION=	1.5.0
 CATEGORIES=	science
-MASTER_SITES=	http://rsmith.home.xs4all.nl/software/
+MASTER_SITES=	http://rsmith.home.xs4all.nl/files/
 
 MAINTAINER=	rsmith@xs4all.nl
 COMMENT=	Calculates properties of fiber reinforced composites
 
-PLIST_FILES=	bin/lamprop
+LICENSE=	BSD2CLAUSE
 
-MAN1=		lamprop.1
-MAN5=		lamprop.5
-MANCOMPRESSED=	yes
+RUN_DEPENDS=	${PYNUMPY}
 
-LICENSE=	BSD
-LICENSE_FILE=	${WRKSRC}/LICENSE
+USES=		zip
+USE_PYTHON=	yes
+PYTHON_VERSION=	python2.7
 
-.if defined(NOPORTDOCS)
-MAKE_ENV=	NOPORTDOCS=yes
-.else
-PORTDOCS=	LICENSE README NEWS
-.endif
-
-NO_STAGE=	yes
-post-patch:
-	@${REINPLACE_CMD} -e \
-		's|-pipe||; s|-fmerge-constants||; s|-fno-unit-at-a-time||; s|--fast-math||' \
-		 ${WRKSRC}/Makefile
+do-install:
+	cd ${WRKSRC} && ${MAKE} PREFIX=${STAGEDIR}${PREFIX} install
 
 .include <bsd.port.mk>
