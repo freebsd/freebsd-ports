@@ -30,10 +30,9 @@ LIB_DEPENDS=	libcairo.so:${PORTSDIR}/graphics/cairo \
 		libxcb-util.so:${PORTSDIR}/x11/xcb-util \
 		libxcb-cursor.so:${PORTSDIR}/x11/xcb-util-cursor \
 		libxcb-keysyms.so:${PORTSDIR}/x11/xcb-util-keysyms \
-		libxcb-icccm.so:${PORTSDIR}/x11/xcb-util-wm \
-		libexecinfo.so:${PORTSDIR}/devel/libexecinfo
+		libxcb-icccm.so:${PORTSDIR}/x11/xcb-util-wm
 
-USES=		cmake iconv pkgconfig lua tar:xz
+USES=		cmake execinfo iconv pkgconfig lua tar:xz
 CMAKE_ARGS+=	-DSYSCONFDIR=${PREFIX}/etc
 USE_EFL=	imlib2
 USE_GNOME=	glib20 pango gdkpixbuf2

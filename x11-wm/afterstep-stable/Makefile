@@ -13,7 +13,6 @@ MAINTAINER=	glewis@FreeBSD.org
 COMMENT=	A stable version of the AfterStep window manager
 
 LIB_DEPENDS=	libdbus-1.so:${PORTSDIR}/devel/dbus \
-		libexecinfo.so:${PORTSDIR}/devel/libexecinfo \
 		libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig \
 		libfreetype.so:${PORTSDIR}/print/freetype2 \
 		libgif.so:${PORTSDIR}/graphics/giflib \
@@ -22,7 +21,7 @@ LIB_DEPENDS=	libdbus-1.so:${PORTSDIR}/devel/dbus \
 		libtiff.so:${PORTSDIR}/graphics/tiff
 RUN_DEPENDS=	xli:${PORTSDIR}/graphics/xli
 
-USES=		gmake pkgconfig shebangfix tar:bzip2
+USES=		execinfo gmake pkgconfig shebangfix tar:bzip2
 USE_GNOME=	atk cairo gdkpixbuf2 glib20 gtk20 librsvg2 pango
 USE_XORG+=	ice sm x11 xcomposite xcursor xdamage xext xfixes xi xinerama \
 		xrandr xrender
