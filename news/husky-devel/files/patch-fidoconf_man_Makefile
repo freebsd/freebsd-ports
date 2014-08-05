@@ -1,6 +1,6 @@
---- man/Makefile.orig	Wed Feb  5 14:51:47 2003
-+++ man/Makefile	Wed Oct 19 20:57:40 2005
-@@ -20,7 +20,7 @@
+--- fidoconf/man/Makefile.orig	2009-03-22 21:04:17.000000000 +0000
++++ fidoconf/man/Makefile	2013-03-25 00:12:55.000000000 +0000
+@@ -20,7 +20,7 @@ MAN1DIR   = $(DESTDIR)$(MANDIR)$(DIRSEP)
  
  all:
  
@@ -9,7 +9,7 @@
  
  copy:
  	$(MKDIR) $(MKDIROPT) $(MAN1DIR)
-@@ -28,7 +28,7 @@
+@@ -28,7 +28,7 @@ copy:
  
  link:
  	cd $(MAN1DIR)$(DIRSEP); \
