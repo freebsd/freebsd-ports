@@ -1,0 +1,30 @@
+--- htick/doc/Makefile.orig	2011-03-23 19:30:40.000000000 +0000
++++ htick/doc/Makefile	2014-08-02 22:23:11.957742250 +0000
+@@ -19,7 +19,7 @@ endif
+ all: html info dvi
+ 
+ ifdef HTMLDIR
+-html: htick.html htick.rus.html
++html: htick.html
+ else
+ html:
+ 	@echo
+@@ -33,7 +33,7 @@ dvi:
+ endif
+ 
+ ifdef INFODIR
+-info: htick.info htick.rus.info
++info: htick.info
+ else
+ info:
+ 	@echo
+@@ -73,8 +73,7 @@ install: info html dvi
+ 	@echo .
+ ifdef INFODIR
+ 	-$(MKDIR) $(MKDIROPT) $(DESTDIR)$(INFODIR)
+-	$(INSTALL) $(IMOPT) htick.info htick.rus.info $(DESTDIR)$(INFODIR)
+-	-install-info --info-dir=$(DESTDIR)$(INFODIR)  $(DESTDIR)$(INFODIR)$(DIRSEP)htick.info
++	$(INSTALL) $(IMOPT) htick.info $(DESTDIR)$(INFODIR)
+ endif
+ ifdef HTMLDIR
+ 	-$(MKDIR) $(MKDIROPT) $(DESTDIR)$(HTMLDIR)

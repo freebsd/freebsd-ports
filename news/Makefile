@@ -17,9 +17,10 @@
     SUBDIR += golded+
     SUBDIR += gup
     SUBDIR += hellanzb
+    SUBDIR += husky-areafix-devel
     SUBDIR += husky-base
-    SUBDIR += husky-base-devel
     SUBDIR += husky-bsopack
+    SUBDIR += husky-devel
     SUBDIR += husky-fidoconf
     SUBDIR += husky-fidoconf-devel
     SUBDIR += husky-hpt
@@ -29,6 +30,7 @@
     SUBDIR += husky-hpucode
     SUBDIR += husky-htick
     SUBDIR += husky-htick-devel
+    SUBDIR += husky-huskylib-devel
     SUBDIR += husky-msged
     SUBDIR += husky-nltools
     SUBDIR += husky-smapi
