@@ -3,6 +3,7 @@
 
 PORTNAME=	netcdf-cxx
 PORTVERSION=	4.2.1
+PORTREVISION=	1
 CATEGORIES=	science
 MASTER_SITES=	https://github.com/Unidata/${PORTNAME}4/archive/v${PORTVERSION}.tar.gz?dummy=/ \
 		LOCAL/sunpoet
@@ -18,7 +19,7 @@ CPPFLAGS+=	-I${LOCALBASE}/include -fPIC -DPIC
 GNU_CONFIGURE=	yes
 LDFLAGS+=	-L${LOCALBASE}/lib
 USE_LDCONFIG=	yes
-USES=		pathfix
+USES=		libtool pathfix
 WRKSRC=		${WRKDIR}/${PORTNAME}4-${PORTVERSION}
 
 post-install:
