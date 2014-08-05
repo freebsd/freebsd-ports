@@ -3,7 +3,7 @@
 
 PORTNAME=	libopensync
 PORTVERSION=	0.39
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	devel
 MASTER_SITES=	http://www.opensync.org/download/releases/${PORTVERSION}/
 

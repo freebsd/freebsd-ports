@@ -2,7 +2,7 @@
 
 PORTNAME=	expense
 PORTVERSION=	0.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	finance gnustep
 MASTER_SITES=	http://www.eskimo.com/~pburns/Expense/files/
 DISTNAME=	Expense-${PORTVERSION}

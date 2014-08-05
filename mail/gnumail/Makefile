@@ -3,7 +3,7 @@
 
 PORTNAME=	gnumail
 PORTVERSION=	1.2.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	mail gnustep
 MASTER_SITES=	http://download.gna.org/gnustep-nonfsf/
 DISTNAME=	GNUMail-${PORTVERSION}

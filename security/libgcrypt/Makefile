@@ -2,7 +2,7 @@
 
 PORTNAME=	libgcrypt
 PORTVERSION=	1.6.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_GNUPG}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -16,7 +16,7 @@ LICENSE_COMB=	multi
 BUILD_DEPENDS=	libgpg-error>=1.8:${PORTSDIR}/security/libgpg-error
 RUN_DEPENDS=	libgpg-error>=1.8:${PORTSDIR}/security/libgpg-error
 
-USES=		libtool:keepla makeinfo tar:bzip2
+USES=		libtool makeinfo tar:bzip2
 USE_CSTD=	gnu89
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	MAKEINFO="makeinfo --no-split"

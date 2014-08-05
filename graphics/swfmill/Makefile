@@ -3,7 +3,7 @@
 
 PORTNAME=	swfmill
 PORTVERSION=	0.3.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	http://swfmill.org/releases/
 
