@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	lilypond
-PORTVERSION=	2.19.10
+PORTVERSION=	2.19.11
 CATEGORIES=	print audio
 MASTER_SITES=	http://download.linuxaudio.org/lilypond/sources/v${PORTVERSION:R}/
 PKGNAMESUFFIX=	-devel
@@ -80,6 +80,8 @@ PLIST_SUB+=	NLS="@comment "
 .endif
 
 post-patch:
+	${FIND} ${WRKSRC} -name "*.cc" | ${XARGS} \
+	    ${REINPLACE_CMD} -e 's|isinf[ ]*(|::isinf(|g' -e 's|isnan|::isnan|g'
 	${REINPLACE_CMD} -e 's|<FlexLexer.h>|"/usr/include/FlexLexer.h"|' \
 	    ${WRKSRC}/lily/include/includable-lexer.hh
 .if !${PORT_OPTIONS:MNLS}
