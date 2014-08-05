@@ -18,14 +18,13 @@ BUILD_DEPENDS=	${LOCALBASE}/libexec/gnome-settings-daemon:${PORTSDIR}/sysutils/g
 LIB_DEPENDS=	libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib \
 		libgnome-keyring.so:${PORTSDIR}/security/libgnome-keyring \
 		libnotify.so:${PORTSDIR}/devel/libnotify \
-		libexecinfo.so:${PORTSDIR}/devel/libexecinfo \
 		libupower-glib.so:${PORTSDIR}/sysutils/upower
 RUN_DEPENDS=	${LOCALBASE}/libexec/gnome-settings-daemon:${PORTSDIR}/sysutils/gnome-settings-daemon \
     		${LOCALBASE}/sbin/console-kit-daemon:${PORTSDIR}/sysutils/consolekit \
 		${LOCALBASE}/bin/xdpyinfo:${PORTSDIR}/x11/xdpyinfo
 
 INSTALLS_ICONS=	yes
-USES=		gettext gmake pathfix pkgconfig tar:bzip2
+USES=		execinfo gettext gmake pathfix pkgconfig tar:bzip2
 USE_XORG=	ice sm xau xrandr
 USE_GNOME=	gnomeprefix intlhack gconf2
 GNOME_DESKTOP_VERSION=2
