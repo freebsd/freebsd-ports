@@ -2,30 +2,88 @@
 # $FreeBSD$
 
 PORTNAME=	apache-openoffice
-PORTVERSION=	4.0.1
-PORTREVISION=	4
+PORTVERSION=	4.1.0
 CATEGORIES=	editors java
-MASTER_SITES=	http://www.apache.org/dist/openoffice/${PORTVERSION}/source/ \
-		ftp://ftp.riken.jp/net/apache/openoffice/${PORTVERSION}/source/ \
-		${MASTER_SITE_LOCAL:S@%SUBDIR%@maho/openoffice@}:extsrc
-DISTFILES+=	${OOOSRC} unowinreg.dll ${EXTSRC}:extsrc
+MASTER_SITES=	${MASTER_SITE_APACHE:S@%SUBDIR%@openoffice/${PORTVERSION}/source@} \
+		${MASTER_SITE_LOCAL:S@%SUBDIR%@truckman/openoffice@}:extsrc
+.if defined(LANG_PKGNAME)
+PKGNAMEPREFIX=		${LANG_PKGNAME}-
+.endif
+.if defined(LANG_SUFFIX)
+PKGNAMESUFFIX=		-${LANG_SUFFIX}
+.endif
+DISTFILES=	${OOOSRC} unowinreg.dll ${EXTSRC}:extsrc
 EXTRACT_ONLY=	${OOOSRC} ${EXTSRC}
 
+MAINTAINER=	office@FreeBSD.org
 #de facto maintainer is maho@FreeBSD.org
 #Frequent Patch submitters should optionally sign Apache iCLA
-MAINTAINER=	office@FreeBSD.org
 COMMENT=	Integrated wordprocessor/dbase/spreadsheet/drawing/chart/browser
 
 LICENSE=	APACHE20
 
+BUILD_DEPENDS=								\
+		p5-Archive-Zip>=0:${PORTSDIR}/archivers/p5-Archive-Zip	\
+		${LOCALBASE}/bin/unzip:${PORTSDIR}/archivers/unzip	\
+		zip:${PORTSDIR}/archivers/zip				\
+		ant:${PORTSDIR}/devel/apache-ant			\
+		dmake:${PORTSDIR}/devel/dmake				\
+		epm:${PORTSDIR}/devel/epm				\
+		${LOCALBASE}/bin/gperf:${PORTSDIR}/devel/gperf		\
+		imake:${PORTSDIR}/devel/imake				\
+		gpatch:${PORTSDIR}/devel/patch				\
+		${LOCALBASE}/bin/vigra-config:${PORTSDIR}/graphics/vigra \
+		${JAVALIBDIR}/commons-httpclient.jar:${PORTSDIR}/java/jakarta-commons-httpclient \
+		${JAVALIBDIR}/commons-lang.jar:${PORTSDIR}/java/jakarta-commons-lang \
+		${JAVALIBDIR}/junit.jar:${PORTSDIR}/java/junit		\
+		${JAVALIBDIR}/bsh.jar:${PORTSDIR}/lang/bsh		\
+		bash:${PORTSDIR}/shells/bash				\
+		${JAVALIBDIR}/saxon9.jar:${PORTSDIR}/textproc/saxon-devel \
+		${JAVALIBDIR}/lucene-core-3.6.2.jar:${PORTSDIR}/textproc/lucene \
+		p5-libwww>=0:${PORTSDIR}/www/p5-libwww
+#		mdds>=0.9.0:${PORTSDIR}/devel/mdds
+LIB_DEPENDS=								\
+		libapr-1.so:${PORTSDIR}/devel/apr1			\
+		libcurl.so:${PORTSDIR}/ftp/curl				\
+		libcairo.so:${PORTSDIR}/graphics/cairo			\
+		libpoppler-glib.so:${PORTSDIR}/graphics/poppler-glib	\
+		libgraphite.so:${PORTSDIR}/graphics/silgraphite		\
+		libCoinMP.so:${PORTSDIR}/math/coinmp			\
+		libfreetype.so:${PORTSDIR}/print/freetype2		\
+		libnss3.so:${PORTSDIR}/security/nss			\
+		libexpat.so:${PORTSDIR}/textproc/expat2			\
+		libhunspell-1.3.so:${PORTSDIR}/textproc/hunspell	\
+		libtextcat.so:${PORTSDIR}/textproc/libtextcat		\
+		libhyphen.so:${PORTSDIR}/textproc/hyphen		\
+		librdf.so:${PORTSDIR}/textproc/redland			\
+		libserf-1.so:${PORTSDIR}/www/serf
+#		libjpeg.so:${PORTSDIR}/graphics/jpeg
+RUN_DEPENDS=	${LOCALBASE}/share/icons/hicolor/index.theme:${PORTSDIR}/misc/hicolor-icon-theme \
+		${JAVALIBDIR}/commons-httpclient.jar:${PORTSDIR}/java/jakarta-commons-httpclient \
+		${JAVALIBDIR}/bsh.jar:${PORTSDIR}/lang/bsh \
+		${JAVALIBDIR}/saxon9.jar:${PORTSDIR}/textproc/saxon-devel \
+		${LOCALBASE}/lib/X11/fonts/ChromeOS/Arimo-Bold.ttf:${PORTSDIR}/x11-fonts/croscorefonts-fonts-ttf
+
+SVNREVISION=		1589052
+OOOSRC=			apache-openoffice-${PORTVERSION}-r${SVNREVISION}-src${EXTRACT_SUFX}
+EXTSRC=			ApacheOpenOffice.ext_sources.${PORTVERSION}.r${SVNREVISION}_1${EXTRACT_SUFX}
+
+OOODIR=			openoffice4
+INSTALLATION_BASEDIR?=	openoffice-${PORTVERSION}
+EXECBASE?=		openoffice-${PORTVERSION}
+DIST_SUBDIR=		openoffice
+SIMPLEOSVER=		${OSREL:C/\.//g}
+
 NO_LATEST_LINK=	yes
+
+ONLY_FOR_ARCHS=	i386 amd64
 
 USE_GNOME=	gtk20 libxslt libidl glib20
 USE_XORG=	x11 ice xaw xau xext xrender xrandr \
 		xi xt xcursor xdamage xcomposite xfixes
 USE_GL=		gl glu
 USE_GSTREAMER=	yes
-USE_GCC=	any
+USE_GCC=	yes
 USE_PYTHON=	yes
 USES+=		bison perl5 gmake pkgconfig tar:bzip2 desktop-file-utils
 USE_PERL5=	build
@@ -37,22 +95,22 @@ OPTIONS_DEFAULT=GCONF GNOMEVFS
 GNOMEVFS_DESC=	Enable GNOME Virtual File System
 CCACHE_DESC=	Mimimize compile time of C/C++ programs
 
-.include "${.CURDIR}/files/Makefile.localized"
-
-USE_JAVA=	yes
-JAVA_BUILD=	jdk
-JAVA_VENDOR=	openjdk
-JAVA_VERSION=	1.6+
-
 GCONF_USE=	GNOME=gconf2
 GCONF_CONFIGURE_OFF=--disable-gconf
 
 GNOMEVFS_USE=	GNOME=gnomevfs2
 GNOMEVFS_CONFIGURE_OFF=--disable-gnome-vfs
 
+.include <bsd.port.options.mk>
+
 .include <bsd.port.pre.mk>
 
-ONLY_FOR_ARCHS=	i386 amd64
+.include <${FILESDIR}/Makefile.localized>
+
+USE_JAVA=	yes
+JAVA_BUILD=	jdk
+JAVA_VENDOR=	openjdk
+JAVA_VERSION=	1.6+
 
 .if ${ARCH} == amd64
 FREEBSD_ENV_SET=	FreeBSDAMDEnv.Set.sh
@@ -60,35 +118,15 @@ FREEBSD_ENV_SET=	FreeBSDAMDEnv.Set.sh
 FREEBSD_ENV_SET=	FreeBSDX86Env.Set.sh
 .endif
 
-OOOSRC=			apache-openoffice-${PORTVERSION}-r${SVNREVISION}-src${EXTRACT_SUFX}
-EXTSRC=			ApacheOpenOffice.ext_sources.${PORTVERSION}.r${SVNREVISION}${EXTRACT_SUFX}
-OOODIR=			openoffice4
-SVNREVISION=		1524958
-INSTALLATION_BASEDIR?=	openoffice-${PORTVERSION}
-EXECBASE?=		openoffice-${PORTVERSION}
-DIST_SUBDIR=		openoffice
-SIMPLEOSVER=		${OSREL:C/\.//g}
+LOCALIZED_LANG?=	en-US
 
 PACKAGE_PREFIX=		Apache_OpenOffice
+
 .if ${ARCH} == amd64
 PACKAGE_MIDDLE=		${PORTVERSION}_${OPSYS}_x86-64
 .else
 PACKAGE_MIDDLE=		${PORTVERSION}_${OPSYS}_x86
 .endif
-
-LOCALIZED_LANG?=	en-US
-.if defined(LANG_PKGNAME)
-PKGNAMEPREFIX=		${LANG_PKGNAME}-
-.endif
-.if defined(LANG_SUFFIX)
-PKGNAMESUFFIX=		-${LANG_SUFFIX}
-.endif
-
-RUN_DEPENDS+=	${LOCALBASE}/share/icons/hicolor/index.theme:${PORTSDIR}/misc/hicolor-icon-theme \
-		${JAVALIBDIR}/commons-httpclient.jar:${PORTSDIR}/java/jakarta-commons-httpclient \
-		${JAVALIBDIR}/bsh.jar:${PORTSDIR}/lang/bsh \
-		${JAVALIBDIR}/saxon9.jar:${PORTSDIR}/textproc/saxon-devel \
-		${LOCALBASE}/lib/X11/fonts/ChromeOS/Arimo-Bold.ttf:${PORTSDIR}/x11-fonts/croscorefonts-fonts-ttf
 
 .if ${PORT_OPTIONS:MCCACHE} || defined(WITH_CCACHE)
 BUILD_DEPENDS+=	ccache:${PORTSDIR}/devel/ccache
@@ -100,43 +138,7 @@ OOOCC=		${CC}
 OOOCXX=		${CXX}
 .endif
 CONFIGURE_ENV+=	CC="${OOOCC}" CXX="${OOOCXX}"		\
-		PATH=${WRKSRC}/solenv/bin:$$PATH	\
-		CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
-
-LIB_DEPENDS=	libcairo.so:${PORTSDIR}/graphics/cairo \
-		libexpat.so:${PORTSDIR}/textproc/expat2 \
-		libjpeg.so:${PORTSDIR}/graphics/jpeg \
-		libcurl.so:${PORTSDIR}/ftp/curl \
-		libhunspell-1.3.so:${PORTSDIR}/textproc/hunspell \
-		libpoppler-glib.so:${PORTSDIR}/graphics/poppler-glib \
-		librdf.so:${PORTSDIR}/textproc/redland \
-		libtextcat.so:${PORTSDIR}/textproc/libtextcat \
-		libfreetype.so:${PORTSDIR}/print/freetype2 \
-		libapr-1.so:${PORTSDIR}/devel/apr1 \
-		libCoinMP.so:${PORTSDIR}/math/coinmp \
-		libserf-1.so:${PORTSDIR}/www/serf \
-		libfreetype.so:${PORTSDIR}/print/freetype2 \
-		libtextcat.so:${PORTSDIR}/textproc/libtextcat
-
-BUILD_DEPENDS+=	zip:${PORTSDIR}/archivers/zip \
-		${LOCALBASE}/bin/unzip:${PORTSDIR}/archivers/unzip \
-		gpatch:${PORTSDIR}/devel/patch \
-		p5-Archive-Zip>=0:${PORTSDIR}/archivers/p5-Archive-Zip \
-		bash:${PORTSDIR}/shells/bash \
-		imake:${PORTSDIR}/devel/imake \
-		${LOCALBASE}/bin/gperf:${PORTSDIR}/devel/gperf \
-		ant:${PORTSDIR}/devel/apache-ant \
-		${LOCALBASE}/lib/libboost_regex.a:${PORTSDIR}/devel/boost-libs \
-		${LOCALBASE}/bin/vigra-config:${PORTSDIR}/graphics/vigra \
-		${JAVALIBDIR}/junit.jar:${PORTSDIR}/java/junit \
-		${JAVALIBDIR}/commons-httpclient.jar:${PORTSDIR}/java/jakarta-commons-httpclient \
-		${JAVALIBDIR}/commons-lang.jar:${PORTSDIR}/java/jakarta-commons-lang \
-		${JAVALIBDIR}/lucene-core-3.6.2.jar:${PORTSDIR}/textproc/lucene \
-		${JAVALIBDIR}/bsh.jar:${PORTSDIR}/lang/bsh \
-		${JAVALIBDIR}/saxon9.jar:${PORTSDIR}/textproc/saxon-devel \
-		epm:${PORTSDIR}/devel/epm \
-		dmake:${PORTSDIR}/devel/dmake \
-		p5-libwww>=0:${PORTSDIR}/www/p5-libwww
+		PATH=${WRKSRC}/solenv/bin:$$PATH
 
 USE_AUTOTOOLS=	autoconf
 GNU_CONFIGURE=	yes
@@ -149,59 +151,59 @@ SUB_LIST=	EXECBASE=${EXECBASE} OOOTAG=${OOOTAG} OOODIR=${OOODIR}
 MAKE_JOBS_NUMBER=	4
 .endif
 
-CONFIGURE_ARGS+=	--enable-verbose \
-			--enable-symbols=small \
-			--enable-crashdump \
-			--with-vendor="FreeBSD ports system"	\
-			--with-epm=${LOCALBASE}/bin/epm \
-			--with-gnu-patch=${LOCALBASE}/bin/gpatch	\
-			--with-gperf=${LOCALBASE}/bin/gperf	\
-			--x-includes=${LOCALBASE}/include	\
-			--x-libraries=${LOCALBASE}lib	\
-			--with-system-libxml 		\
-			--with-system-libxslt 		\
-			--with-system-cairo --enable-cairo \
-			--with-system-boost 		\
-			--with-system-zlib		\
-			--with-system-python		\
-			--with-system-expat		\
-			--with-system-openssl		\
-			--with-system-curl		\
-			--with-system-poppler \
-			--with-system-redland \
-			--with-system-libtextcat \
-			--with-system-vigra \
-			--with-system-stdlibs \
-			--with-system-apr \
-			--with-system-apr-util \
-			--with-system-coinmp \
-			--with-system-apache-commons=yes \
+CONFIGURE_ARGS+=	--with-system-apache-commons=yes \
 			--with-commons-codec-jar=${JAVALIBDIR}/commons-codec.jar \
-			--with-commons-lang-jar=${JAVALIBDIR}/commons-lang.jar	\
+			--with-commons-lang-jar=${JAVALIBDIR}/commons-lang.jar \
 			--with-commons-httpclient-jar=${JAVALIBDIR}/commons-httpclient.jar \
-			--with-commons-logging-jar=${JAVALIBDIR}/commons-logging.jar	\
-			--with-system-lucene \
-			--with-lucene-core-jar=${JAVALIBDIR}/lucene-core-3.6.2.jar	\
-			--with-lucene-analyzers-jar=${JAVALIBDIR}/lucene-analyzers-3.6.2.jar	\
+			--with-commons-logging-jar=${JAVALIBDIR}/commons-logging.jar \
+			--with-system-apr				\
+			--with-system-apr-util				\
+			--with-system-beanshell				\
+			--with-beanshell-jar=${JAVALIBDIR}/bsh.jar	\
+			--enable-category-b				\
+			--with-system-cairo --enable-cairo		\
+			--with-system-coinmp				\
+			--with-system-curl				\
+			--enable-crashdump				\
+			--enable-dbus					\
+			--with-epm=${LOCALBASE}/bin/epm			\
+			--with-system-expat				\
+			--disable-fetch-external			\
+			--without-fonts					\
+			--with-gnu-patch=${LOCALBASE}/bin/gpatch	\
+			--with-gperf=${LOCALBASE}/bin/gperf		\
+			--enable-gstreamer				\
+			--with-system-graphite				\
+			--with-system-hunspell				\
+			--with-system-hyphen				\
 			--with-junit=${LOCALBASE}/share/java/classes/junit.jar \
-			--with-package-format="archive" \
-			--enable-gstreamer \
-			--enable-wiki-publisher \
-			--enable-dbus \
-			--enable-opengl \
-			--enable-category-b \
-			--enable-lockdown \
-			--with-system-hunspell \
-			--with-system-saxon     \
-			--with-saxon-jar=${JAVALIBDIR}/saxon9.jar  \
-			--with-system-beanshell	\
-			--with-beanshell-jar=${JAVALIBDIR}/bsh.jar \
-			--without-fonts \
-			--with-system-serf
-#			--with-system-jpeg
-#			--enable-pdfimport
-#			--without-stlport --disable-mozilla \
-#			--with-system-graphite \
+			--with-system-libtextcat			\
+			--with-system-libxml				\
+			--with-system-libxslt				\
+			--enable-lockdown				\
+			--with-system-lucene				\
+			--with-lucene-core-jar=${JAVALIBDIR}/lucene-core-3.6.2.jar \
+			--with-lucene-analyzers-jar=${JAVALIBDIR}/lucene-analyzers-3.6.2.jar \
+			--with-system-nss				\
+			--enable-opengl					\
+			--with-system-openssl				\
+			--with-package-format="archive"			\
+			--with-system-poppler				\
+			--with-system-python				\
+			--with-system-redland				\
+			--with-system-saxon				\
+			--with-saxon-jar=${JAVALIBDIR}/saxon9.jar	\
+			--with-system-serf				\
+			--with-system-stdlibs				\
+			--enable-symbols=small				\
+			--without-stlport				\
+			--with-vendor="FreeBSD ports system"		\
+			--enable-verbose				\
+			--with-system-vigra				\
+			--enable-wiki-publisher				\
+			--x-includes={LOCALBASE}/include		\
+			--x-libraries=${LOCALBASE}lib			\
+			--with-system-zlib
 
 #OOOEXTENSIONS+=		minimizer/presentation-minimizer.oxt
 #OOOEXTENSIONS+=		presenter/presenter-screen.oxt
@@ -232,10 +234,6 @@ pre-everything::
 
 post-extract:
 	@${CP} ${DISTDIR}/${DIST_SUBDIR}/unowinreg.dll ${WRKSRC}/external/unowinreg/
-#	@${MKDIR} ${WRKSRC}/../ext_sources
-#	@${MV} ${WRKDIR}/aoo/ext_sources/* ${WRKSRC}/../ext_sources/
-#	@${RM} -rf ${WRKSRC}/l10n
-	@${MKDIR} ${WRKSRC}/../ext_sources
 	@${RM} -rf ${WRKSRC}/l10n
 
 post-patch:
@@ -270,9 +268,13 @@ do-install:
 	@${REINPLACE_CMD} -e 's/^UserInstallation.*$$/USERINSTALLATION/' ${STAGEDIR}${PREFIX}/${INSTALLATION_BASEDIR}/${OOODIR}/program/bootstraprc
 	@${REINPLACE_CMD} -e 's/USERINSTALLATION/UserInstallation=$$SYSUSERCONFIG\/\.openoffice\.org-devel\/4/' ${STAGEDIR}${PREFIX}/${INSTALLATION_BASEDIR}/openoffice4/program/bootstraprc
 	@${MKDIR} ${STAGEDIR}${PREFIX}/${INSTALLATION_BASEDIR}/extensions/
-	@cd ${WRKSRC}/solver/4??/unxfbsd?.pro/bin/ ; ${INSTALL_DATA} ${OOOEXTENSIONS} ${STAGEDIR}${PREFIX}/${INSTALLATION_BASEDIR}/extensions/
+	@cd ${WRKSRC}/solver/4?0/unxfbsd?.pro/bin/ ; ${INSTALL_DATA} ${OOOEXTENSIONS} ${STAGEDIR}${PREFIX}/${INSTALLATION_BASEDIR}/extensions/
 
 post-install:
+	@${FIND} ${STAGEDIR}${PREFIX}/${INSTALLATION_BASEDIR}/openoffice4/program -type f \( -name '*.so*' -or -name '*.bin' \) -print0 | ${XARGS} -0 -n1 ${STRIP_CMD}
+	@for prog in crashrep pagein uri-encode javaldx regmerge regview; do \
+		${STRIP_CMD} ${STAGEDIR}${PREFIX}/${INSTALLATION_BASEDIR}/openoffice4/program/$${prog}; \
+	done
 	@${FIND} ${STAGEDIR}${PREFIX}/${INSTALLATION_BASEDIR} -type d -exec ${CHMOD} 755 {} \;
 	@${ECHO_MSG} "===>  Add wrapper scripts";
 	@${CP} ${FILESDIR}/openoffice-wrapper ${WRKDIR}/
@@ -295,8 +297,6 @@ post-install:
 	@${ECHO_CMD} "share/licenses/${PKGNAME}/catalog.mk" >> ${TMPPLIST}
 	@${ECHO_CMD} "share/licenses/${PKGNAME}/LICENSE"    >> ${TMPPLIST}
 	@${ECHO_CMD} "share/licenses/${PKGNAME}/APACHE20"   >> ${TMPPLIST}
-	@${ECHO_CMD} "@dirrm share/licenses/${PKGNAME}"     >> ${TMPPLIST}
-	@${ECHO_CMD} "@dirrm share/licenses"                >> ${TMPPLIST}
 	@cd ${STAGEDIR}${PREFIX} ; ${FIND} -s bin \( -type f -or -type l \) -name "${EXECBASE}*" >> ${TMPPLIST}
 	@cd ${STAGEDIR}${PREFIX} ; ${FIND} -s ${INSTALLATION_BASEDIR} \( -type f -or -type l \) >> ${TMPPLIST}
 	@cd ${STAGEDIR}${PREFIX} ; ${FIND} ${INSTALLATION_BASEDIR} -type d | ${SORT} -r | \
@@ -338,4 +338,5 @@ post-install:
 	@${ECHO_CMD} "@unexec ${PREFIX}/bin/gtk-update-icon-cache -q -f %D/share/icons/hicolor 2>/dev/null || ${TRUE}" >> ${TMPPLIST}
 
 .include <${FILESDIR}/Makefile.others>
+
 .include <bsd.port.post.mk>
