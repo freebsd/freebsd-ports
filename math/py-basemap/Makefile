@@ -9,47 +9,29 @@ MASTER_SITES=	SF/matplotlib/matplotlib-toolkits/${PORTNAME}-${PORTVERSION}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Plots data on map projections (with continental and political boundaries)
+COMMENT=	Plots data on map projections with continental and political boundaries
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/matplotlib/:${PORTSDIR}/math/py-matplotlib
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
+PYDISTUTILS_AUTOPLIST=	yes
 
 DATADIR=	${PREFIX}/share/py-${PORTNAME}-data
 EXAMPLESDIR=	${PREFIX}/share/examples/py-${PORTNAME}
 
 MAKE_ENV=	BASEMAP_DATA_PATH=${DATADIR}
 
-PLISTDIR=	${PYTHON_SITELIBDIR}/matplotlib/toolkits/basemap \
-		${PYTHON_SITELIBDIR}/shapelib \
-		${PYTHON_SITELIBDIR}/dbflib \
-		${PYTHON_SITELIBDIR}/dbflibc.so \
-		${PYTHON_SITELIBDIR}/shptree.so \
-		${PYTHON_SITELIBDIR}/shapelibc.so \
-		${PYTHON_SITELIBDIR}/pyproj.so \
-		${DATADIR}
-.if !defined(NOPORTDOCS)
-PLISTDIR+=	${EXAMPLESDIR}
-.endif
+OPTIONS_DEFINE=	EXAMPLES
 
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
+PORTEXAMPLES=	*
+
 post-patch:
 	@${GREP} -lR "share/basemap" ${WRKSRC} | ${XARGS} ${REINPLACE_CMD} \
 		-e "s,share/basemap,share/py-basemap-data,g"
 
 post-install:
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${EXAMPLESDIR}
-	${CP} -R ${WRKSRC}/examples/ ${EXAMPLESDIR}
-.endif
-.for dir in ${PLISTDIR}
-	@${FIND} ${dir} ! -type d | \
-		${SED} 's,^${PREFIX}/,,' >> ${TMPPLIST}
-	@${FIND} ${dir} -type d | ${SORT} -r | \
-		${SED} 's,^${PREFIX}/,@dirrm ,' >> ${TMPPLIST}
-.endfor
-	@${ECHO} "@unexec rmdir %D/${PYTHONPREFIX_SITELIBDIR:S;${PREFIX}/;;}/matplotlib/toolkits 2> /dev/null || true" >> ${TMPPLIST}
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	cd ${WRKSRC}/examples && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
