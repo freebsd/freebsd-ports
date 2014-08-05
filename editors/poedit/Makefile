@@ -32,8 +32,6 @@ LDFLAGS+=	-L${BDB_LIB_DIR} -L${LOCALBASE}/lib ${PTHREAD_LIBS}
 OPTIONS_DEFINE=	NLS
 OPTIONS_SUB=yes
 
-.include <bsd.port.options.mk>
-
 NLS_USES= gettext
 NLS_CONFIGURE_ENABLE= nls
 
