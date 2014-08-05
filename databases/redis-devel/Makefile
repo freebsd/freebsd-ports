@@ -14,7 +14,7 @@ COMMENT=	Persistent key-value database with built-in net interface
 
 LICENSE=	BSD3CLAUSE
 
-LIB_DEPENDS=	libexecinfo.so:${PORTSDIR}/devel/libexecinfo
+USES=		execinfo
 
 OPTIONS_DEFINE=	TESTS
 OPTIONS_RADIO=	EXTLUA
