@@ -13,10 +13,9 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GNOME 2 version of xdm display manager
 
 BUILD_DEPENDS=	zenity:${PORTSDIR}/x11/zenity \
-    		${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-codes
+		${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-codes
 LIB_DEPENDS=	libck-connector.so:${PORTSDIR}/sysutils/consolekit \
 		libpolkit-gtk-1.so:${PORTSDIR}/sysutils/polkit-gnome \
-    		libexecinfo.so:${PORTSDIR}/devel/libexecinfo \
 		libupower-glib.so:${PORTSDIR}/sysutils/upower \
 		libxklavier.so:${PORTSDIR}/x11/libxklavier \
 		libcanberra-gtk.so:${PORTSDIR}/audio/libcanberra
@@ -35,7 +34,7 @@ USE_XORG=	dmx dmxproto
 INSTALLS_ICONS=	yes
 USE_RC_SUBR=	gdm
 USE_GNOME_SUBR=	yes
-USES=		pathfix gettext gmake pkgconfig tar:xz
+USES=		execinfo gettext gmake pathfix pkgconfig tar:xz
 USE_GNOME=	intlhack gnomehier gconf2 librsvg2 \
 		gnomedocutils gnomeprefix gnomepanel
 GCONF_SCHEMAS=	gdm-simple-greeter.schemas
