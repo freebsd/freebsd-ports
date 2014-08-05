@@ -7,4 +7,4 @@ is read back into R and the database is deleted all automatically behind the
 scenes making the database's existence transparent to the user who only
 specifies the SQL statement.
 
-WWW:    https://code.google.com/p/sqldf/
+WWW: https://code.google.com/p/sqldf
