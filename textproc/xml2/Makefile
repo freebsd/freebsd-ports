@@ -24,5 +24,7 @@ PLIST_FILES=	bin/xml2 \
 		bin/html2 \
 		bin/2html
 
-NO_STAGE=	yes
+post-patch:
+	@${REINPLACE_CMD} '/ln -sf/ s|$$(DESTDIR)||' ${WRKSRC}/Makefile.in
+
 .include <bsd.port.mk>
