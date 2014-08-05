@@ -8,7 +8,7 @@ CATEGORIES=	databases
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}-opensource-${PORTVERSION}
 
-MAINTAINER= ports@FreeBSD.org
+MAINTAINER=	michelle@sorbs.net
 COMMENT=	Universal SQL/Application Server
 
 LICENSE=	GPLv2
@@ -21,9 +21,10 @@ BUILD_DEPENDS=	gawk:${PORTSDIR}/lang/gawk\
 		unzip:${PORTSDIR}/archivers/unzip
 LIB_DEPENDS=	libxml2.so:${PORTSDIR}/textproc/libxml2
 
-USES=		gmake readline
+USES=		gmake libtool readline uidfix
+USE_AUTOTOOLS=	autoheader aclocal
 
-USE_AUTOTOOLS=	libtool
+GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-readline\
 		--without-jdk2\
 		--without-jdk3\
@@ -41,13 +42,12 @@ MAKE_ENV=	PATH=${LOCALBASE}/bin:${PATH}\
 USE_RC_SUBR=	virtuoso
 USERS=		virtuoso
 GROUPS=		virtuoso
+SUB_FILES=	pkg-message
 
-CHECK_PORT=	/usr/bin/nc -z localhost $$\1 2>\&1
+CHECK_PORT=	nc -z localhost $$\1 2>\&1
 
 OPTIONS_DEFINE=		IMAGEMAGICK KERBEROS LDAP IODBC
-#OPTIONS_DEFINE+=		MONO PERL PHP4 PHP5 PYTHON RUBY
 
-NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD}\
 		-e 's,-lpthreads,${PTHREAD_LIBS},g'\
@@ -59,7 +59,7 @@ post-patch:
 		-e 's,netstat -an.*grep.*$$\([a-zA-Z0-9]*\).*grep LISTEN,${CHECK_PORT},'
 
 post-install:
-	PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
+	${FIND} ${STAGEDIR} -name "*.ini" -exec ${MV} {} {}.sample \; -print
 
 check:
 	${SETENV} -u HOST ${MAKE_ENV} ${MAKE} -C ${WRKSRC} check
@@ -87,7 +87,7 @@ PLIST_SUB+=	WITH_IODBC="@comment "
 
 .if ${PORT_OPTIONS:MKERBEROS}
 CONFIGURE_ARGS+=--enable-krb=${LOCALBASE}
-LIB_DEPENDS+=	libkrb5.so.3:${PORTSDIR}/security/krb5
+LIB_DEPENDS+=	libkrb5.so:${PORTSDIR}/security/krb5
 .else
 CONFIGURE_ARGS+=--disable-krb
 .endif
@@ -98,38 +98,5 @@ USE_OPENLDAP=	yes
 .else
 CONFIGURE_ARGS+=--disable-openldap
 .endif
-
-# XXX broken (does not build, requires gc.h)
-#.if ${PORT_OPTIONS:MMONO}
-#CONFIGURE_ARGS+=--enable-mono
-#.endif
-
-# XXX broken (requires perl to be built with -Dusemultiplicity)
-#.if ${PORT_OPTIONS:MPERL}
-#CONFIGURE_ARGS+=--enable-perl
-#USE_PERL5=	yes
-#.endif
-
-# XXX broken (no libphp)
-#.if ${PORT_OPTIONS:MPHP4}
-#CONFIGURE_ARGS+=--enable-php4
-#.endif
-
-# XXX broken (no libphp)
-#.if ${PORT_OPTIONS:MPHP5}
-#CONFIGURE_ARGS+=--enable-php5
-#.endif
-
-# XXX broken (USE_PYTHON does not work with OPTIONS)
-#.if ${PORT_OPTIONS:MPYTHON}
-#CONFIGURE_ARGS+=--enable-python
-#USE_PYTHON=	yes
-#.endif
-
-# XXX broken (USE_LIBRUBY does not work with OPTIONS)
-#.if ${PORT_OPTIONS:MRUBY}
-#CONFIGURE_ARGS+=--enable-ruby
-#USE_LIBRUBY=	yes
-#.endif
 
 .include <bsd.port.mk>
