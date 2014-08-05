@@ -1,0 +1,3 @@
+Please copy and edit the sample configuration file before enabling the server:
+
+cp %%PREFIX%%/lib/virtuoso/db/virtuoso.ini.sample %%PREFIX%%/lib/virtuoso/db/virtuoso.ini

@@ -1,11 +1,9 @@
+@owner virtuoso
+@group virtuoso
 bin/inifile
-%%WITH_IODBC%%bin/isql-iodbc
 bin/isql-vt
-%%WITH_IODBC%%bin/isqlw-iodbc
 bin/isqlw-vt
-%%WITH_IODBC%%bin/odbc_mail
 bin/virt_mail
-%%WITH_IODBC%%bin/virtuoso-iodbc-t
 bin/virtuoso-t
 lib/hibernate/virt_dialect.jar
 lib/jdbc-2.0/virtjdbc2.jar
@@ -14,40 +12,152 @@ lib/jdbc-3.0/virtjdbc3ssl.jar
 lib/jdbc-4.0/virtjdbc4.jar
 lib/jdbc-4.0/virtjdbc4ssl.jar
 lib/jena/virt_jena.jar
-%%WITH_IODBC%%lib/libvirtuoso-iodbc-t.a
-%%WITH_IODBC%%lib/libvirtuoso-iodbc-t.la
 lib/libvirtuoso-t.a
-lib/libvirtuoso-t.la
 lib/sesame/create-virtuoso.xsl
 lib/sesame/create.xsl
 lib/sesame/virt_sesame.jar
 lib/sesame/virt_sesame2.jar
 lib/sesame/virt_sesame3.jar
 lib/virtodbc.a
-lib/virtodbc.la
 lib/virtodbc.so
 lib/virtodbc_r.a
-lib/virtodbc_r.la
 lib/virtodbc_r.so
 lib/virtodbcu.a
-lib/virtodbcu.la
 lib/virtodbcu.so
 lib/virtodbcu_r.a
-lib/virtodbcu_r.la
 lib/virtodbcu_r.so
 lib/virtuoso/hosting/creolewiki.a
-lib/virtuoso/hosting/creolewiki.la
 lib/virtuoso/hosting/creolewiki.so
-%%WITH_IMAGEMAGICK%%lib/virtuoso/hosting/im.a
-%%WITH_IMAGEMAGICK%%lib/virtuoso/hosting/im.la
-%%WITH_IMAGEMAGICK%%lib/virtuoso/hosting/im.so
 lib/virtuoso/hosting/mediawiki.a
-lib/virtuoso/hosting/mediawiki.la
 lib/virtuoso/hosting/mediawiki.so
 lib/virtuoso/hosting/wikiv.a
-lib/virtuoso/hosting/wikiv.la
 lib/virtuoso/hosting/wikiv.so
-virtuoso/db/virtuoso.ini
+lib/virtuoso/vsp/admin/index_left.vsp
+lib/virtuoso/vsp/admin_style.html
+lib/virtuoso/vsp/bugsfixed.html
+lib/virtuoso/vsp/default.css
+lib/virtuoso/vsp/demo-index.html
+lib/virtuoso/vsp/downfr.html
+lib/virtuoso/vsp/images/PoweredByVirtuoso.gif
+lib/virtuoso/vsp/images/PoweredByVirtuosoSmall2.jpg
+lib/virtuoso/vsp/images/VirtuosoSplash2.jpg
+lib/virtuoso/vsp/images/about_32.png
+lib/virtuoso/vsp/images/atom.png
+lib/virtuoso/vsp/images/atom03.png
+lib/virtuoso/vsp/images/bg.jpg
+lib/virtuoso/vsp/images/bl-arrow.jpg
+lib/virtuoso/vsp/images/bl-house.jpg
+lib/virtuoso/vsp/images/blog-active.png
+lib/virtuoso/vsp/images/bloglogo.jpg
+lib/virtuoso/vsp/images/bpel-lg.jpg
+lib/virtuoso/vsp/images/bpel-sm.jpg
+lib/virtuoso/vsp/images/bugsfixed.gif
+lib/virtuoso/vsp/images/conductor-lg.jpg
+lib/virtuoso/vsp/images/conductor-sm.jpg
+lib/virtuoso/vsp/images/cross.gif
+lib/virtuoso/vsp/images/dash-sm.jpg
+lib/virtuoso/vsp/images/dir.gif
+lib/virtuoso/vsp/images/dir_prop.gif
+lib/virtuoso/vsp/images/docs_16.png
+lib/virtuoso/vsp/images/echo_prototype.png
+lib/virtuoso/vsp/images/exit.gif
+lib/virtuoso/vsp/images/featdemo.gif
+lib/virtuoso/vsp/images/foaf.gif
+lib/virtuoso/vsp/images/generic.gif
+lib/virtuoso/vsp/images/globe_xl.jpg
+lib/virtuoso/vsp/images/help_32.png
+lib/virtuoso/vsp/images/home.gif
+lib/virtuoso/vsp/images/html401.gif
+lib/virtuoso/vsp/images/http-lg.jpg
+lib/virtuoso/vsp/images/http-sm.jpg
+lib/virtuoso/vsp/images/hzline1.jpg
+lib/virtuoso/vsp/images/isql-lg.jpg
+lib/virtuoso/vsp/images/isql-sm.jpg
+lib/virtuoso/vsp/images/jdbcdemo.gif
+lib/virtuoso/vsp/images/line.gif
+lib/virtuoso/vsp/images/line.jpg
+lib/virtuoso/vsp/images/logobg.jpg
+lib/virtuoso/vsp/images/mailto.gif
+lib/virtuoso/vsp/images/menutpl.gif
+lib/virtuoso/vsp/images/mxml.gif
+lib/virtuoso/vsp/images/nav_arrrow1.gif
+lib/virtuoso/vsp/images/newfeatures.gif
+lib/virtuoso/vsp/images/oplhome.gif
+lib/virtuoso/vsp/images/opml.gif
+lib/virtuoso/vsp/images/opsys_32.png
+lib/virtuoso/vsp/images/opts_16.png
+lib/virtuoso/vsp/images/prop.gif
+lib/virtuoso/vsp/images/rdf.gif
+lib/virtuoso/vsp/images/rdf48.gif
+lib/virtuoso/vsp/images/repl-sm.jpg
+lib/virtuoso/vsp/images/rss201.gif
+lib/virtuoso/vsp/images/score.gif
+lib/virtuoso/vsp/images/sel_nav2_grad2.gif
+lib/virtuoso/vsp/images/sel_nav_grad2.gif
+lib/virtuoso/vsp/images/sky_blu_grad.gif
+lib/virtuoso/vsp/images/slvnav.jpg
+lib/virtuoso/vsp/images/soap-lg.jpg
+lib/virtuoso/vsp/images/soap-sm.jpg
+lib/virtuoso/vsp/images/soap_r3_1.png
+lib/virtuoso/vsp/images/soap_r3_2.jpg
+lib/virtuoso/vsp/images/soap_r3_3.jpg
+lib/virtuoso/vsp/images/solndemo.gif
+lib/virtuoso/vsp/images/sqlxml-lg.jpg
+lib/virtuoso/vsp/images/stl_blu1_grad.gif
+lib/virtuoso/vsp/images/stl_blu2_grad.gif
+lib/virtuoso/vsp/images/support_32.png
+lib/virtuoso/vsp/images/tick.gif
+lib/virtuoso/vsp/images/tour_16.png
+lib/virtuoso/vsp/images/vadmin.gif
+lib/virtuoso/vsp/images/vblog2_32.png
+lib/virtuoso/vsp/images/vblog_32.png
+lib/virtuoso/vsp/images/vbloglogo.gif
+lib/virtuoso/vsp/images/vdbdsn-lg.jpg
+lib/virtuoso/vsp/images/vdbdsn-sm.jpg
+lib/virtuoso/vsp/images/vdemo.gif
+lib/virtuoso/vsp/images/vdocs.gif
+lib/virtuoso/vsp/images/vdocs2_32.png
+lib/virtuoso/vsp/images/vdocs_32.png
+lib/virtuoso/vsp/images/vdoctitle1.jpg
+lib/virtuoso/vsp/images/virtblck.gif
+lib/virtuoso/vsp/images/virtblck.jpg
+lib/virtuoso/vsp/images/virtuoso_banner.gif
+lib/virtuoso/vsp/images/virtv.gif
+lib/virtuoso/vsp/images/vlogin.gif
+lib/virtuoso/vsp/images/vprodinf.gif
+lib/virtuoso/vsp/images/vrthome.gif
+lib/virtuoso/vsp/images/vrtnews.gif
+lib/virtuoso/vsp/images/vsales.gif
+lib/virtuoso/vsp/images/vsoftdwn.gif
+lib/virtuoso/vsp/images/vsupport.gif
+lib/virtuoso/vsp/images/wa-lg.jpg
+lib/virtuoso/vsp/images/wa-sm.jpg
+lib/virtuoso/vsp/images/web_16.png
+lib/virtuoso/vsp/images/webdav-lg.jpg
+lib/virtuoso/vsp/images/webdav-sm.jpg
+lib/virtuoso/vsp/images/wnew_16.png
+lib/virtuoso/vsp/images/xml.gif
+lib/virtuoso/vsp/index.html
+lib/virtuoso/vsp/index1.html
+lib/virtuoso/vsp/knownissues.html
+lib/virtuoso/vsp/leftfr.html
+lib/virtuoso/vsp/mainfr.html
+lib/virtuoso/vsp/newfeatures.html
+lib/virtuoso/vsp/releasenotes.css
+lib/virtuoso/vsp/releasenotes.html
+lib/virtuoso/vsp/robots.txt
+lib/virtuoso/vsp/vsmx/close_16.gif
+lib/virtuoso/vsp/vsmx/default.css
+lib/virtuoso/vsp/vsmx/minus.gif
+lib/virtuoso/vsp/vsmx/msg.vspx
+lib/virtuoso/vsp/vsmx/oper.vspx
+lib/virtuoso/vsp/vsmx/plus.gif
+lib/virtuoso/vsp/vsmx/slvnav.jpg
+lib/virtuoso/vsp/vsmx/stl_blu1_grad.gif
+lib/virtuoso/vsp/vsmx/vsmx.vspx
+lib/virtuoso/vsp/vsmx/vsmx_msg.xsl
+lib/virtuoso/vsp/vsmx/vsmx_oper.xsl
+lib/virtuoso/vsp/vsmx/vsmx_res.xsl
 virtuoso/doc/AUTHORS
 virtuoso/doc/COPYING
 virtuoso/doc/CREDITS
@@ -2252,153 +2362,28 @@ virtuoso/vad/rdf_mappers_dav.vad
 virtuoso/vad/sparql_demo_dav.vad
 virtuoso/vad/syncml_dav.vad
 virtuoso/vad/tutorial_dav.vad
-virtuoso/vsp/admin/index_left.vsp
-virtuoso/vsp/admin_style.html
-virtuoso/vsp/bugsfixed.html
-virtuoso/vsp/default.css
-virtuoso/vsp/demo-index.html
-virtuoso/vsp/downfr.html
-virtuoso/vsp/images/PoweredByVirtuoso.gif
-virtuoso/vsp/images/PoweredByVirtuosoSmall2.jpg
-virtuoso/vsp/images/VirtuosoSplash2.jpg
-virtuoso/vsp/images/about_32.png
-virtuoso/vsp/images/atom.png
-virtuoso/vsp/images/atom03.png
-virtuoso/vsp/images/bg.jpg
-virtuoso/vsp/images/bl-arrow.jpg
-virtuoso/vsp/images/bl-house.jpg
-virtuoso/vsp/images/blog-active.png
-virtuoso/vsp/images/bloglogo.jpg
-virtuoso/vsp/images/bpel-lg.jpg
-virtuoso/vsp/images/bpel-sm.jpg
-virtuoso/vsp/images/bugsfixed.gif
-virtuoso/vsp/images/conductor-lg.jpg
-virtuoso/vsp/images/conductor-sm.jpg
-virtuoso/vsp/images/cross.gif
-virtuoso/vsp/images/dash-sm.jpg
-virtuoso/vsp/images/dir.gif
-virtuoso/vsp/images/dir_prop.gif
-virtuoso/vsp/images/docs_16.png
-virtuoso/vsp/images/echo_prototype.png
-virtuoso/vsp/images/exit.gif
-virtuoso/vsp/images/featdemo.gif
-virtuoso/vsp/images/foaf.gif
-virtuoso/vsp/images/generic.gif
-virtuoso/vsp/images/globe_xl.jpg
-virtuoso/vsp/images/help_32.png
-virtuoso/vsp/images/home.gif
-virtuoso/vsp/images/html401.gif
-virtuoso/vsp/images/http-lg.jpg
-virtuoso/vsp/images/http-sm.jpg
-virtuoso/vsp/images/hzline1.jpg
-virtuoso/vsp/images/isql-lg.jpg
-virtuoso/vsp/images/isql-sm.jpg
-virtuoso/vsp/images/jdbcdemo.gif
-virtuoso/vsp/images/line.gif
-virtuoso/vsp/images/line.jpg
-virtuoso/vsp/images/logobg.jpg
-virtuoso/vsp/images/mailto.gif
-virtuoso/vsp/images/menutpl.gif
-virtuoso/vsp/images/mxml.gif
-virtuoso/vsp/images/nav_arrrow1.gif
-virtuoso/vsp/images/newfeatures.gif
-virtuoso/vsp/images/oplhome.gif
-virtuoso/vsp/images/opml.gif
-virtuoso/vsp/images/opsys_32.png
-virtuoso/vsp/images/opts_16.png
-virtuoso/vsp/images/prop.gif
-virtuoso/vsp/images/rdf.gif
-virtuoso/vsp/images/rdf48.gif
-virtuoso/vsp/images/repl-sm.jpg
-virtuoso/vsp/images/rss201.gif
-virtuoso/vsp/images/score.gif
-virtuoso/vsp/images/sel_nav2_grad2.gif
-virtuoso/vsp/images/sel_nav_grad2.gif
-virtuoso/vsp/images/sky_blu_grad.gif
-virtuoso/vsp/images/slvnav.jpg
-virtuoso/vsp/images/soap-lg.jpg
-virtuoso/vsp/images/soap-sm.jpg
-virtuoso/vsp/images/soap_r3_1.png
-virtuoso/vsp/images/soap_r3_2.jpg
-virtuoso/vsp/images/soap_r3_3.jpg
-virtuoso/vsp/images/solndemo.gif
-virtuoso/vsp/images/sqlxml-lg.jpg
-virtuoso/vsp/images/stl_blu1_grad.gif
-virtuoso/vsp/images/stl_blu2_grad.gif
-virtuoso/vsp/images/support_32.png
-virtuoso/vsp/images/tick.gif
-virtuoso/vsp/images/tour_16.png
-virtuoso/vsp/images/vadmin.gif
-virtuoso/vsp/images/vblog2_32.png
-virtuoso/vsp/images/vblog_32.png
-virtuoso/vsp/images/vbloglogo.gif
-virtuoso/vsp/images/vdbdsn-lg.jpg
-virtuoso/vsp/images/vdbdsn-sm.jpg
-virtuoso/vsp/images/vdemo.gif
-virtuoso/vsp/images/vdocs.gif
-virtuoso/vsp/images/vdocs2_32.png
-virtuoso/vsp/images/vdocs_32.png
-virtuoso/vsp/images/vdoctitle1.jpg
-virtuoso/vsp/images/virtblck.gif
-virtuoso/vsp/images/virtblck.jpg
-virtuoso/vsp/images/virtuoso_banner.gif
-virtuoso/vsp/images/virtv.gif
-virtuoso/vsp/images/vlogin.gif
-virtuoso/vsp/images/vprodinf.gif
-virtuoso/vsp/images/vrthome.gif
-virtuoso/vsp/images/vrtnews.gif
-virtuoso/vsp/images/vsales.gif
-virtuoso/vsp/images/vsoftdwn.gif
-virtuoso/vsp/images/vsupport.gif
-virtuoso/vsp/images/wa-lg.jpg
-virtuoso/vsp/images/wa-sm.jpg
-virtuoso/vsp/images/web_16.png
-virtuoso/vsp/images/webdav-lg.jpg
-virtuoso/vsp/images/webdav-sm.jpg
-virtuoso/vsp/images/wnew_16.png
-virtuoso/vsp/images/xml.gif
-virtuoso/vsp/index.html
-virtuoso/vsp/index1.html
-virtuoso/vsp/knownissues.html
-virtuoso/vsp/leftfr.html
-virtuoso/vsp/mainfr.html
-virtuoso/vsp/newfeatures.html
-virtuoso/vsp/releasenotes.css
-virtuoso/vsp/releasenotes.html
-virtuoso/vsp/robots.txt
-virtuoso/vsp/vsmx/close_16.gif
-virtuoso/vsp/vsmx/default.css
-virtuoso/vsp/vsmx/minus.gif
-virtuoso/vsp/vsmx/msg.vspx
-virtuoso/vsp/vsmx/oper.vspx
-virtuoso/vsp/vsmx/plus.gif
-virtuoso/vsp/vsmx/slvnav.jpg
-virtuoso/vsp/vsmx/stl_blu1_grad.gif
-virtuoso/vsp/vsmx/vsmx.vspx
-virtuoso/vsp/vsmx/vsmx_msg.xsl
-virtuoso/vsp/vsmx/vsmx_oper.xsl
-virtuoso/vsp/vsmx/vsmx_res.xsl
-@dirrm virtuoso/vsp/vsmx
-@dirrm virtuoso/vsp/images
-@dirrm virtuoso/vsp/admin
-@dirrm virtuoso/vsp
-@dirrm virtuoso/vad
-@dirrm virtuoso/doc/images/ui
-@dirrm virtuoso/doc/images/tree
-@dirrm virtuoso/doc/images/rth
-@dirrm virtuoso/doc/images/misc
-@dirrm virtuoso/doc/images/mac
-@dirrm virtuoso/doc/images/inst
-@dirrm virtuoso/doc/images
-@dirrm virtuoso/doc/html
-@dirrm virtuoso/doc
-@dirrm virtuoso/db
-@dirrm virtuoso
-@dirrm lib/virtuoso/hosting
-@dirrm lib/virtuoso
-@dirrm lib/sesame
-@dirrm lib/jena
-@dirrm lib/jdbc-4.0
-@dirrm lib/jdbc-3.0
-@dirrm lib/jdbc-2.0
-@dirrm lib/hibernate
+@dirrmtry lib/hibernate
+@dirrmtry lib/jdbc-2.0
+@dirrmtry lib/jdbc-3.0
+@dirrmtry lib/jdbc-4.0
+@dirrmtry lib/jena
+@dirrmtry lib/sesame
+@dirrmtry lib/virtuoso/db
+@dirrmtry lib/virtuoso/hosting
+@dirrmtry lib/virtuoso/vsp/admin
+@dirrmtry lib/virtuoso/vsp/images
+@dirrmtry lib/virtuoso/vsp/vsmx
+@dirrmtry lib/virtuoso/vsp
+@dirrmtry lib/virtuoso
+@dirrmtry virtuoso/doc/html
+@dirrmtry virtuoso/doc/images/inst
+@dirrmtry virtuoso/doc/images/mac
+@dirrmtry virtuoso/doc/images/misc
+@dirrmtry virtuoso/doc/images/rth
+@dirrmtry virtuoso/doc/images/tree
+@dirrmtry virtuoso/doc/images/ui
+@dirrmtry virtuoso/doc/images
+@dirrmtry virtuoso/doc
+@dirrmtry virtuoso/vad
+@dirrmtry virtuoso
+@sample lib/virtuoso/db/virtuoso.ini.sample
