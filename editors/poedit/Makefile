@@ -4,7 +4,7 @@
 
 PORTNAME=	poedit
 PORTVERSION=	1.4.6.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	editors
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/1.4.6/
 
@@ -29,9 +29,17 @@ INSTALLS_ICONS=	yes
 CPPFLAGS+=	-I${BDB_INCLUDE_DIR} -I${LOCALBASE}/include ${PTHREAD_CFLAGS}
 LDFLAGS+=	-L${BDB_LIB_DIR} -L${LOCALBASE}/lib ${PTHREAD_LIBS}
 
+OPTIONS_DEFINE=	NLS
+OPTIONS_SUB=yes
+
+.include <bsd.port.options.mk>
+
+NLS_USES= gettext
+NLS_CONFIGURE_ENABLE= nls
+
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's/for version in .*;/for version in ${BDB_VER};/ ; \
-		 s/-ldb-$$version/-l${BDB_LIB_NAME}/' ${WRKSRC}/configure
+		s/-ldb-$$version/-l${BDB_LIB_NAME}/' ${WRKSRC}/configure
 
 .include <bsd.port.mk>
