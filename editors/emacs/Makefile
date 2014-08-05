@@ -3,7 +3,7 @@
 
 PORTNAME=	emacs
 PORTVERSION=	${EMACS_VER}
-PORTREVISION?=	6
+PORTREVISION?=	7
 PORTEPOCH=	3
 CATEGORIES=	editors ipv6
 MASTER_SITES=	${MASTER_SITE_GNU}
@@ -230,8 +230,9 @@ add-plist-data:
 .endfor
 	@${ECHO} "@unexec rmdir %D/${DATADIR_REL}/${EMACS_VER} 2>/dev/null || true" >>${TMPPLIST}
 
-.if ${PORT_OPTIONS:MSOURCES}
 post-install:
+	@${RM} -rf ${STAGEDIR}/var/games/emacs
+.if ${PORT_OPTIONS:MSOURCES}
 	@${MKDIR} ${STAGEDIR}${DATADIR}/${EMACS_VER}/src
 	@${INSTALL_DATA} ${WRKSRC}/src/*.[ch] ${STAGEDIR}${DATADIR}/${EMACS_VER}/src
 	@${INSTALL_DATA} ${WRKSRC}/sources.el ${STAGEDIR}${DATADIR}/${EMACS_VER}/site-lisp/site-start.el
