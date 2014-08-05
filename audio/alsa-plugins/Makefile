@@ -3,7 +3,7 @@
 
 PORTNAME=	alsa-plugins
 PORTVERSION=	1.0.27
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio
 MASTER_SITES=	ALSA/plugins \
 		GENTOO/distfiles
@@ -14,7 +14,7 @@ COMMENT=	ALSA compatibility library plugins
 LIB_DEPENDS=	libasound.so:${PORTSDIR}/audio/alsa-lib
 
 GNU_CONFIGURE=	yes
-USES=		tar:bzip2 pkgconfig
+USES=		tar:bzip2 pkgconfig libtool:keepla
 LDFLAGS+=	-L${LOCALBASE}/lib
 EXTRA_PATCHES+=	${FILESDIR}/alsa-plugins.patch
 
