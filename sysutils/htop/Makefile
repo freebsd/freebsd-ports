@@ -10,8 +10,6 @@ MASTER_SITES=	SF
 MAINTAINER=	gaod@hychen.org
 COMMENT=	Better top(1) - interactive process viewer
 
-LIB_DEPENDS=	libexecinfo.so:${PORTSDIR}/devel/libexecinfo
-
 OPTIONS_DEFINE=	LSOF
 OPTIONS_DEFAULT=LSOF
 
@@ -22,7 +20,7 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib -lexecinfo
 
 CONFIGURE_ARGS=	--with-proc=/compat/linux/proc --enable-unicode
-USES=		ncurses libtool
+USES=		ncurses libtool execinfo
 USE_AUTOTOOLS=	autoconf aclocal automake
 ACLOCAL_ARGS=	-I ${ACLOCAL_DIR}
 
