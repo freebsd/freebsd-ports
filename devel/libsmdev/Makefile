@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libsmdev
-DISTVERSION=	alpha-20140529
+DISTVERSION=	alpha-20140803
 CATEGORIES=	devel
 MASTER_SITES=	https://googledrive.com/host/0B3fBvzttpiiSNEJFQ1FqanFYVUU/ \
 		LOCAL/antoine
