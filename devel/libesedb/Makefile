@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	libesedb
-# If/When moving from experimental to alpha, override DISTNAME to prevent PORTEPOCH
-DISTVERSION=	experimental-20140406
+# If/When moving from experimental to alpha, switch to DISTVERSIONPREFIX to prevent PORTEPOCH
+DISTVERSION=	experimental-20140803
 CATEGORIES=	devel
 MASTER_SITES=	https://googledrive.com/host/0B3fBvzttpiiSN082cmxsbHB0anc/ \
 		LOCAL/antoine
