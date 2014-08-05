@@ -15,7 +15,7 @@ DIST_SUBDIR=	lapack
 MAINTAINER?=	maho@FreeBSD.org
 COMMENT?=	A library of Fortran 77 subroutines for linear algebra
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		fortran
