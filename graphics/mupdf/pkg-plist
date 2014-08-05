@@ -69,6 +69,7 @@ include/mupdf/pdf/xref.h
 include/mupdf/tiff.h
 include/mupdf/xps.h
 lib/libmupdf.a
+lib/libmupdf_pic.a
 man/man1/mudraw.1.gz
 man/man1/mupdf.1.gz
 man/man1/mutool.1.gz
