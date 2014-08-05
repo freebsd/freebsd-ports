@@ -3,6 +3,7 @@
 
 PORTNAME=	libssh
 DISTVERSION=	0.6.1
+PORTREVISION=	1
 CATEGORIES=	security devel
 MASTER_SITES=	http://git.libssh.org/projects/libssh.git/snapshot/ \
 		LOCAL/fluffy
