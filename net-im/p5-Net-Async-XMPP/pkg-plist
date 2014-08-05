@@ -4,7 +4,9 @@
 %%PERL5_MAN3%%/Net::Async::XMPP::Server.3.gz
 %%SITE_PERL%%/Net/Async/XMPP.pm
 %%SITE_PERL%%/Net/Async/XMPP/Client.pm
+%%SITE_PERL%%/Net/Async/XMPP/Client.pod
 %%SITE_PERL%%/Net/Async/XMPP/Protocol.pm
+%%SITE_PERL%%/Net/Async/XMPP/Protocol.pod
 %%SITE_PERL%%/Net/Async/XMPP/Server.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Async/XMPP/.packlist
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Async/XMPP
