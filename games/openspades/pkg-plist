@@ -1,0 +1,32 @@
+bin/openspades
+man/man6/openspades.6.gz
+share/applications/openspades.desktop
+share/icons/hicolor/128x128/apps/openspades.png
+share/icons/hicolor/16x16/apps/openspades.png
+share/icons/hicolor/24x24/apps/openspades.png
+share/icons/hicolor/256x256/apps/openspades.png
+share/icons/hicolor/32x32/apps/openspades.png
+share/icons/hicolor/48x48/apps/openspades.png
+share/icons/hicolor/64x64/apps/openspades.png
+share/icons/hicolor/96x96/apps/openspades.png
+share/menu/openspades
+share/pixmaps/openspades.xpm
+@dirrmtry share/icons/hicolor/128x128/apps
+@dirrmtry share/icons/hicolor/128x128
+@dirrmtry share/icons/hicolor/16x16/apps
+@dirrmtry share/icons/hicolor/16x16
+@dirrmtry share/icons/hicolor/24x24/apps
+@dirrmtry share/icons/hicolor/24x24
+@dirrmtry share/icons/hicolor/256x256/apps
+@dirrmtry share/icons/hicolor/256x256
+@dirrmtry share/icons/hicolor/32x32/apps
+@dirrmtry share/icons/hicolor/32x32
+@dirrmtry share/icons/hicolor/48x48/apps
+@dirrmtry share/icons/hicolor/48x48
+@dirrmtry share/icons/hicolor/64x64/apps
+@dirrmtry share/icons/hicolor/64x64
+@dirrmtry share/icons/hicolor/96x96/apps
+@dirrmtry share/icons/hicolor/96x96
+@dirrmtry share/icons/hicolor
+@dirrmtry share/icons
+@dirrmtry share/menu

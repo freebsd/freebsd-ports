@@ -681,6 +681,7 @@
     SUBDIR += openpref
     SUBDIR += opensfx
     SUBDIR += opensonic
+    SUBDIR += openspades
     SUBDIR += openssn
     SUBDIR += opensurge
     SUBDIR += openttd
