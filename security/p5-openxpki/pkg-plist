@@ -9,11 +9,13 @@ bin/openxpkictl
 %%PERL5_MAN3%%/OpenXPKI::Client::Simple.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Client::UI.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Client::UI::Certificate.3.gz
+%%PERL5_MAN3%%/OpenXPKI::Client::UI::Home.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Client::UI::Result.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Client::UI::Workflow.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Config.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Config::Merge.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Config::Test.3.gz
+%%PERL5_MAN3%%/OpenXPKI::Connector::FakeValidity.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Control.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Crypto::API.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Crypto::Backend::API.3.gz
@@ -32,8 +34,10 @@ bin/openxpkictl
 %%PERL5_MAN3%%/OpenXPKI::Crypto::Backend::OpenSSL::Command::create_key::GOST94.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Crypto::Backend::OpenSSL::Command::create_key::GOST94CP.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Crypto::Backend::OpenSSL::Command::create_key::RSA.3.gz
+%%PERL5_MAN3%%/OpenXPKI::Crypto::Backend::OpenSSL::Command::create_params.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Crypto::Backend::OpenSSL::Command::create_pkcs10.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Crypto::Backend::OpenSSL::Command::create_pkcs12.3.gz
+%%PERL5_MAN3%%/OpenXPKI::Crypto::Backend::OpenSSL::Command::create_pkey.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Crypto::Backend::OpenSSL::Command::create_random.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Crypto::Backend::OpenSSL::Command::get_pkcs8_keytype.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Crypto::Backend::OpenSSL::Command::is_issuer.3.gz
@@ -72,11 +76,6 @@ bin/openxpkictl
 %%PERL5_MAN3%%/OpenXPKI::Crypto::Tool::CreateJavaKeystore::CLI.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Crypto::Tool::CreateJavaKeystore::Command::create_keystore.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Crypto::Tool::CreateJavaKeystore::Engine::OpenSSL.3.gz
-%%PERL5_MAN3%%/OpenXPKI::Crypto::Tool::PKCS7.3.gz
-%%PERL5_MAN3%%/OpenXPKI::Crypto::Tool::PKCS7::API.3.gz
-%%PERL5_MAN3%%/OpenXPKI::Crypto::Tool::PKCS7::CLI.3.gz
-%%PERL5_MAN3%%/OpenXPKI::Crypto::Tool::PKCS7::Command::verify.3.gz
-%%PERL5_MAN3%%/OpenXPKI::Crypto::Tool::PKCS7::Engine::OpenSSL.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Crypto::Tool::SCEP.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Crypto::Tool::SCEP::API.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Crypto::Tool::SCEP::CLI.3.gz
@@ -110,6 +109,7 @@ bin/openxpkictl
 %%PERL5_MAN3%%/OpenXPKI::Server::API::Secret.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Server::API::Smartcard.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Server::API::Token.3.gz
+%%PERL5_MAN3%%/OpenXPKI::Server::API::UI.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Server::API::Visualization.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Server::API::Workflow.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Server::Authentication.3.gz
@@ -201,10 +201,12 @@ bin/openxpkictl
 %%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Activity::Tools::Datapool::SetEntry.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Activity::Tools::Disconnect.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Activity::Tools::Export.3.gz
+%%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Activity::Tools::GenerateKey.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Activity::Tools::GeneratePassword.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Activity::Tools::GetCertificateIdentifier.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Activity::Tools::Notify.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Activity::Tools::ParseCertificate.3.gz
+%%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Activity::Tools::ParsePKCS10.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Activity::Tools::Pause.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Activity::Tools::PublishCRL.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Activity::Tools::PublishCertificate.3.gz
@@ -306,17 +308,19 @@ bin/openxpkictl
 %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Client/UI/Bootstrap.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Client/UI/Certificate.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Client/UI/Crl.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Client/UI/Handle/Profile.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Client/UI/Home.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Client/UI/Information.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Client/UI/Login.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Client/UI/Login/Passwd.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Client/UI/Plain.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Client/UI/Profile.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Client/UI/Result.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Client/UI/Secret.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Client/UI/Workflow.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Client/UI/Workflow/Metadata.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Config.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Config/Merge.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Config/Test.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Connector/FakeValidity.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Control.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/API.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/Backend/API.pm
@@ -336,8 +340,10 @@ bin/openxpkictl
 %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/Backend/OpenSSL/Command/create_key/GOST94.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/Backend/OpenSSL/Command/create_key/GOST94CP.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/Backend/OpenSSL/Command/create_key/RSA.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/Backend/OpenSSL/Command/create_params.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/Backend/OpenSSL/Command/create_pkcs10.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/Backend/OpenSSL/Command/create_pkcs12.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/Backend/OpenSSL/Command/create_pkey.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/Backend/OpenSSL/Command/create_random.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/Backend/OpenSSL/Command/get_pkcs8_keytype.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/Backend/OpenSSL/Command/is_issuer.pm
@@ -381,11 +387,6 @@ bin/openxpkictl
 %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/Tool/CreateJavaKeystore/CLI.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/Tool/CreateJavaKeystore/Command/create_keystore.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/Tool/CreateJavaKeystore/Engine/OpenSSL.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/Tool/PKCS7.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/Tool/PKCS7/API.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/Tool/PKCS7/CLI.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/Tool/PKCS7/Command/verify.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/Tool/PKCS7/Engine/OpenSSL.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/Tool/SCEP.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/Tool/SCEP/API.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/Tool/SCEP/CLI.pm
@@ -421,6 +422,7 @@ bin/openxpkictl
 %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/API/Secret.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/API/Smartcard.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/API/Token.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/API/UI.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/API/Visualization.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/API/Workflow.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Authentication.pm
@@ -513,11 +515,13 @@ bin/openxpkictl
 %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Activity/Tools/Datapool/SetEntry.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Activity/Tools/Disconnect.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Activity/Tools/Export.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Activity/Tools/GenerateKey.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Activity/Tools/GeneratePassword.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Activity/Tools/GetCertificateIdentifier.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Activity/Tools/LoadCertificateMetadata.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Activity/Tools/Notify.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Activity/Tools/ParseCertificate.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Activity/Tools/ParsePKCS10.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Activity/Tools/Pause.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Activity/Tools/PersistCertificateMetadata.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Activity/Tools/PublishCRL.pm
@@ -559,7 +563,6 @@ bin/openxpkictl
 %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Condition/WorkflowContext.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Condition/WorkflowContextBulk.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Condition/WorkflowCreator.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/InputField.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/NICE.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/NICE/Factory.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/NICE/Local.pm
@@ -621,11 +624,11 @@ man/man1/openxpkiadm.1.gz
 man/man1/openxpkicli.1.gz
 man/man1/openxpkicmd.1.gz
 man/man1/openxpkictl.1.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Client/UI/Login
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Client/UI/Workflow
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Client/UI/Handle
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Client/UI
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Client
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Config
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Connector
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/Backend/OpenSSL/Command/create_key
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/Backend/OpenSSL/Command
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/Backend/OpenSSL/Engine
@@ -637,9 +640,6 @@ man/man1/openxpkictl.1.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/Tool/CreateJavaKeystore/Command
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/Tool/CreateJavaKeystore/Engine
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/Tool/CreateJavaKeystore
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/Tool/PKCS7/Command
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/Tool/PKCS7/Engine
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/Tool/PKCS7
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/Tool/SCEP/Command
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/Tool/SCEP/Engine
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/Tool/SCEP
