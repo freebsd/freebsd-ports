@@ -57,6 +57,82 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="8aff07eb-1dbd-11e4-b6ba-3c970e169bc2">
+    <topic>OpenSSL -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>openssl</name>
+	<range><ge>1.0.1</ge><lt>1.0.1_14</lt></range>
+      </package>
+      <package>
+	<name>mingw32-openssl</name>
+	<range><ge>1.0.1</ge><lt>1.0.1i</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The OpenSSL Project reports:</p>
+	<blockquote cite="https://www.openssl.org/news/secadv_20140806.txt">
+	  <p>A flaw in OBJ_obj2txt may cause pretty printing functions
+	    such as X509_name_oneline, X509_name_print_ex et al. to leak
+	    some information from the stack. [CVE-2014-3508]</p>
+	  <p>The issue affects OpenSSL clients and allows a malicious
+	    server to crash the client with a null pointer dereference
+	    (read) by specifying an SRP ciphersuite even though it was
+	    not properly negotiated with the client. [CVE-2014-5139]</p>
+	  <p>If a multithreaded client connects to a malicious server
+	    using a resumed session and the server sends an ec point
+	    format extension it could write up to 255 bytes to freed
+	    memory. [CVE-2014-3509]</p>
+	  <p>An attacker can force an error condition which causes
+	    openssl to crash whilst processing DTLS packets due to
+	    memory being freed twice. This can be exploited through
+	    a Denial of Service attack. [CVE-2014-3505]</p>
+	  <p>An attacker can force openssl to consume large amounts
+	    of memory whilst processing DTLS handshake messages.
+	    This can be exploited through a Denial of Service
+	    attack. [CVE-2014-3506]</p>
+	  <p>By sending carefully crafted DTLS packets an attacker
+	    could cause openssl to leak memory. This can be exploited
+	    through a Denial of Service attack. [CVE-2014-3507]</p>
+	  <p>OpenSSL DTLS clients enabling anonymous (EC)DH
+	    ciphersuites are subject to a denial of service attack.
+	    A malicious server can crash the client with a null pointer
+	    dereference (read) by specifying an anonymous (EC)DH
+	    ciphersuite and sending carefully crafted handshake
+	    messages. [CVE-2014-3510]</p>
+	  <p>A flaw in the OpenSSL SSL/TLS server code causes the
+	    server to negotiate TLS 1.0 instead of higher protocol
+	    versions when the ClientHello message is badly
+	    fragmented. This allows a man-in-the-middle attacker
+	    to force a downgrade to TLS 1.0 even if both the server
+	    and the client support a higher protocol version, by
+	    modifying the client's TLS records. [CVE-2014-3511]</p>
+	  <p>A malicious client or server can send invalid SRP
+	    parameters and overrun an internal buffer.  Only
+	    applications which are explicitly set up for SRP
+	    use are affected. [CVE-2014-3512]</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://www.openssl.org/news/secadv_20140806.txt</url>
+      <cvename>CVE-2014-3505</cvename>
+      <cvename>CVE-2014-3506</cvename>
+      <cvename>CVE-2014-3507</cvename>
+      <cvename>CVE-2014-3508</cvename>
+      <cvename>CVE-2014-3509</cvename>
+      <cvename>CVE-2014-3510</cvename>
+      <cvename>CVE-2014-3511</cvename>
+      <cvename>CVE-2014-3512</cvename>
+      <cvename>CVE-2014-5139</cvename>
+    </references>
+    <dates>
+      <discovery>2014-08-06</discovery>
+      <entry>2014-08-06</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="be5421ab-1b56-11e4-a767-5453ed2e2b49">
     <topic>krfb -- Possible Denial of Service or code execution via integer overflow</topic>
     <affects>
