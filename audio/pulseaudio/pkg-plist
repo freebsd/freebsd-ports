@@ -13,6 +13,7 @@ bin/pulseaudio
 bin/qpaeq
 bin/start-pulseaudio-kde
 bin/start-pulseaudio-x11
+etc/bash_completion.d/pulseaudio-bash-completion.sh
 etc/dbus-1/system.d/pulseaudio-system.conf
 @unexec if cmp -s %D/etc/pulse/client.conf %D/etc/pulse/client.conf-dist; then rm -f %D/etc/pulse/client.conf; fi
 etc/pulse/client.conf-dist
@@ -206,6 +207,7 @@ man/man5/pulse-daemon.conf.5.gz
 %%ALSA%%share/pulseaudio/alsa-mixer/paths/analog-output-desktop-speaker.conf
 %%ALSA%%share/pulseaudio/alsa-mixer/paths/analog-output-headphones-2.conf
 %%ALSA%%share/pulseaudio/alsa-mixer/paths/analog-output-headphones.conf
+%%ALSA%%share/pulseaudio/alsa-mixer/paths/analog-output-lineout.conf
 %%ALSA%%share/pulseaudio/alsa-mixer/paths/analog-output-mono.conf
 %%ALSA%%share/pulseaudio/alsa-mixer/paths/analog-output-speaker-always.conf
 %%ALSA%%share/pulseaudio/alsa-mixer/paths/analog-output-speaker.conf
@@ -226,6 +228,7 @@ man/man5/pulse-daemon.conf.5.gz
 %%ALSA%%share/pulseaudio/alsa-mixer/profile-sets/native-instruments-audio8dj.conf
 %%ALSA%%share/pulseaudio/alsa-mixer/profile-sets/native-instruments-korecontroller.conf
 %%ALSA%%share/pulseaudio/alsa-mixer/profile-sets/native-instruments-traktor-audio10.conf
+%%ALSA%%share/pulseaudio/alsa-mixer/profile-sets/native-instruments-traktor-audio2.conf
 %%ALSA%%share/pulseaudio/alsa-mixer/profile-sets/native-instruments-traktor-audio6.conf
 %%ALSA%%share/pulseaudio/alsa-mixer/profile-sets/native-instruments-traktorkontrol-s4.conf
 share/locale/as/LC_MESSAGES/pulseaudio.mo

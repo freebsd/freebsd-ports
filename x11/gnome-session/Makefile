@@ -1,6 +1,6 @@
 # Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports-experimental/trunk/x11/gnome-session/Makefile 19534 2014-04-15 20:23:23Z gusi $
+#   $MCom: ports/trunk/x11/gnome-session/Makefile 19789 2014-08-05 07:43:54Z gusi $
 
 PORTNAME=	gnome-session
 PORTVERSION=	3.12.1
@@ -12,13 +12,12 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Session component for the GNOME 3 desktop
 
 LIB_DEPENDS=	libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib \
-		libexecinfo.so:${PORTSDIR}/devel/libexecinfo \
 		libjson-glib-1.0.so:${PORTSDIR}/devel/json-glib \
 		libupower-glib.so:${PORTSDIR}/sysutils/upower
 RUN_DEPENDS=	${LOCALBASE}/sbin/console-kit-daemon:${PORTSDIR}/sysutils/consolekit \
 		${LOCALBASE}/bin/xdpyinfo:${PORTSDIR}/x11/xdpyinfo
 
-USES=		gettext gmake pathfix pkgconfig tar:xz
+USES=		execinfo gettext gmake pathfix pkgconfig tar:xz
 USE_GNOME=	gnomedesktop3 gnomeprefix gtk30 intlhack intltool \
 		libxslt:build
 USE_XORG=	ice sm xau xext xtst xrender xtrans xcomposite

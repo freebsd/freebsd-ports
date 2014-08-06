@@ -1,6 +1,6 @@
 # Created by: Anders F Bjorklund <afb@users.sourceforge.net>
 # $FreeBSD$
-#   $MCom: ports/trunk/ports-mgmt/packagekit/Makefile 19010 2014-03-03 08:19:42Z kwm $
+#   $MCom: ports/trunk/ports-mgmt/packagekit/Makefile 19789 2014-08-05 07:43:54Z gusi $
 
 PORTNAME=	packagekit
 PORTVERSION=	0.8.9
@@ -11,13 +11,13 @@ DISTNAME=	PackageKit-${PORTVERSION}
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	A DBUS packaging abstraction layer
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/docbook2man:${PORTSDIR}/textproc/docbook-utils
-LIB_DEPENDS=	libexecinfo.so:${PORTSDIR}/devel/libexecinfo \
-		libpolkit-gobject-1.so:${PORTSDIR}/sysutils/polkit
+BUILD_DEPENDS=	docbook2man:${PORTSDIR}/textproc/docbook-utils
+LIB_DEPENDS=	libpolkit-gobject-1.so:${PORTSDIR}/sysutils/polkit
 RUN_DEPENDS=	lsof:${PORTSDIR}/sysutils/lsof
 
 USE_XZ=		yes
-USES=		gettext gmake iconv pathfix pkgconfig shared-mime-info
+USES=		execinfo gettext gmake iconv pathfix pkgconfig \
+		shared-mime-info
 USE_GNOME=	glib20 intltool introspection
 USE_LDCONFIG=	yes
 USE_SQLITE=	3

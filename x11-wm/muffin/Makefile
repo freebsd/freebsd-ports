@@ -1,6 +1,6 @@
 # Created by: Gustau Perez i Querol <gustau.perez@gmail.com>
 # $FreeBSD$
-#    $MCom: ports/trunk/x11-wm/muffin/Makefile 19787 2014-07-31 14:13:40Z gusi $
+#    $MCom: ports/trunk/x11-wm/muffin/Makefile 19789 2014-08-05 07:43:54Z gusi $
 
 PORTNAME=	muffin
 PORTVERSION=	2.2.6
@@ -16,13 +16,12 @@ BUILD_DEPENDS=	zenity3>=3.0.0:${PORTSDIR}/x11/zenity3 \
 		gnome-autogen.sh:${PORTSDIR}/devel/gnome-common \
 		gsettings-desktop-schemas>=3.4.0:${PORTSDIR}/devel/gsettings-desktop-schemas
 LIB_DEPENDS=	libstartup-notification-1.so:${PORTSDIR}/x11/startup-notification \
-		libexecinfo.so:${PORTSDIR}/devel/libexecinfo \
 		libclutter-glx-1.0.so:${PORTSDIR}/graphics/clutter \
 		libcanberra-gtk3.so:${PORTSDIR}/audio/libcanberra-gtk3 \
 		libcinnamon-desktop.so:${PORTSDIR}/x11/cinnamon-desktop
 RUN_DEPENDS=	zenity3>=3.0.0:${PORTSDIR}/x11/zenity3
 
-USES=		gettext libtool gmake pathfix pkgconfig
+USES=		execinfo gettext libtool gmake pathfix pkgconfig
 USE_GNOME=	gconf2 gnomedocutils gnomehier gnomeprefix gtk30 \
 		introspection:build
 USE_AUTOTOOLS=	libtoolize autoconf automake

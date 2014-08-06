@@ -1,6 +1,6 @@
 # Created by: Gustau Perez i Querol <gustau.perez@gmail.com>
 # $FreeBSD$
-#   $MCom: ports/trunk/x11/cinnamon-session/Makefile 19786 2014-07-31 10:24:00Z gusi $
+#   $MCom: ports/trunk/x11/cinnamon-session/Makefile 19789 2014-08-05 07:43:54Z gusi $
 
 PORTNAME=	cinnamon-session
 PORTVERSION=	2.2.2
@@ -13,14 +13,13 @@ COMMENT=	Session component for the cinnamon desktop
 
 BUILD_DEPENDS=	gnome-autogen.sh:${PORTSDIR}/devel/gnome-common
 LIB_DEPENDS=	libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib \
-		libexecinfo.so:${PORTSDIR}/devel/libexecinfo \
 		libjson-glib-1.0.so:${PORTSDIR}/devel/json-glib \
 		libupower-glib.so:${PORTSDIR}/sysutils/upower \
 		libcanberra.so:${PORTSDIR}/audio/libcanberra
 RUN_DEPENDS=	console-kit-daemon:${PORTSDIR}/sysutils/consolekit \
 		xdpyinfo:${PORTSDIR}/x11/xdpyinfo
 
-USES=		gettext gmake libtool pathfix pkgconfig tar:xz
+USES=		execinfo gettext gmake libtool pathfix pkgconfig tar:xz
 USE_XORG=	ice sm xau xext xtst xrender xtrans xcomposite
 USE_GL=		gl
 USE_GNOME=	gnomeprefix gtk30 intltool

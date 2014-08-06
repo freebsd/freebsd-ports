@@ -1,6 +1,6 @@
 # Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/x11/gdm/Makefile 19700 2014-05-28 07:16:35Z kwm $
+#   $MCom: ports/trunk/x11/gdm/Makefile 19789 2014-08-05 07:43:54Z gusi $
 
 PORTNAME=	gdm
 PORTVERSION=	3.12.2
@@ -21,7 +21,6 @@ LIB_DEPENDS=	libck-connector.so:${PORTSDIR}/sysutils/consolekit \
 		libnss3.so:${PORTSDIR}/security/nss \
 		libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig \
 		libaccountsservice.so:${PORTSDIR}/sysutils/accountsservice \
-		libexecinfo.so:${PORTSDIR}/devel/libexecinfo \
 		libcanberra-gtk3.so:${PORTSDIR}/audio/libcanberra-gtk3
 RUN_DEPENDS=	zenity3>=3.0.0:${PORTSDIR}/x11/zenity3 \
 		gnome-settings-daemon>=3.0.0:${PORTSDIR}/sysutils/gnome-settings-daemon \
@@ -45,7 +44,7 @@ USE_XORG=	dmx dmxproto
 INSTALLS_ICONS=	yes
 USE_RC_SUBR=	gdm
 USE_GNOME_SUBR=	yes
-USES=		gettext gmake libtool pathfix pkgconfig tar:xz
+USES=		execinfo gettext gmake libtool pathfix pkgconfig tar:xz
 USE_GNOME=	dconf gnomehier gnomeprefix intlhack introspection librsvg2
 GNU_CONFIGURE=	yes
 GLIB_SCHEMAS=	org.gnome.login-screen.gschema.xml
