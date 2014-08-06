@@ -3,7 +3,7 @@
 
 PORTNAME=	tuxguitar
 PORTVERSION=	1.2
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	audio java
 MASTER_SITES=	SF/${PORTNAME}/TuxGuitar/TuxGuitar-${PORTVERSION}:src \
 		${MASTER_SITE_LOCAL}/gahr/:fluid \
@@ -28,7 +28,7 @@ LIB_DEPENDS=	libfluidsynth.so:${PORTSDIR}/audio/fluidsynth \
 MAKE_ENV+=	PREFIX=${PREFIX} INSTALL_DOC_DIR=${DOCSDIR} \
 		INSTALL_SHARE_DIR=${DATADIR}
 
-USES=		gmake pkgconfig
+USES=		desktop-file-utils gmake pkgconfig
 USE_JAVA=	yes
 USE_ANT=	yes
 WITH_GECKO=	libxul
@@ -58,6 +58,8 @@ post-patch:
 	    s|path\.gervill=.*|path.gervill=${JAVAJARDIR}/gervill.jar|'
 	${FIND} ${WRKSRC}/.. -name GNUmakefile | ${XARGS} ${REINPLACE_CMD} -e '\
 	    s|-I$$(shell gcj -print-file-name=include/)|-I${JAVA_HOME}/include \
+	    -I${JAVA_HOME}/include/freebsd -I${LOCALBASE}/include|; \
+	    s|-I $$(shell $$(GCJ) -print-file-name=include/)|-I${JAVA_HOME}/include \
 	    -I${JAVA_HOME}/include/freebsd -I${LOCALBASE}/include|; \
 	    s|LDFLAGS\?=.*|LDFLAGS+=-L${LOCALBASE}/lib|; \
 	    s|CFLAGS\?=|CFLAGS+=|'
