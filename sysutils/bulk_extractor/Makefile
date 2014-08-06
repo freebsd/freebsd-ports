@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	bulk_extractor
-PORTVERSION=	1.4.4
-PORTREVISION=	2
+PORTVERSION=	1.5.0
 CATEGORIES=	sysutils
-MASTER_SITES=	http://www.digitalcorpora.org/downloads/bulk_extractor/
+MASTER_SITES=	http://digitalcorpora.org/downloads/bulk_extractor/
 
 MAINTAINER=	nobutaka@FreeBSD.org
 COMMENT=	Program that scans a disk image and extracts useful information
@@ -19,6 +18,7 @@ LIB_DEPENDS=	libafflib.so:${PORTSDIR}/sysutils/afflib \
 		libexpat.so:${PORTSDIR}/textproc/expat2
 
 USE_OPENSSL=	yes
+USE_SQLITE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-exiv2=true
 CPPFLAGS+=	-I${LOCALBASE}/include
