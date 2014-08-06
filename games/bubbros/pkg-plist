@@ -1,4 +1,7 @@
 bin/bubbros
+man/man1/BubBob.py.1.gz
+man/man1/Client.py.1.gz
+man/man1/bb.py.1.gz
 %%DATADIR%%/BubBob.py
 %%DATADIR%%/bubbob/Makefile
 %%DATADIR%%/bubbob/bb.py
@@ -86,6 +89,7 @@ bin/bubbros
 %%DATADIR%%/bubbob/ext7/image1-8.ppm
 %%DATADIR%%/bubbob/ext7/image1-9.ppm
 %%DATADIR%%/bubbob/ext7/music.wav
+%%DATADIR%%/bubbob/images.py
 %%DATADIR%%/bubbob/images/10000_0.ppm
 %%DATADIR%%/bubbob/images/10000_1.ppm
 %%DATADIR%%/bubbob/images/10000_2.ppm
@@ -293,7 +297,6 @@ bin/bubbros
 %%DATADIR%%/bubbob/images/water_still.ppm
 %%DATADIR%%/bubbob/images/water_surface.ppm
 %%DATADIR%%/bubbob/images/yellow_Hurry_up.ppm
-%%DATADIR%%/bubbob/images.py
 %%DATADIR%%/bubbob/levels/Arena.bin
 %%DATADIR%%/bubbob/levels/CompactLevels.py
 %%DATADIR%%/bubbob/levels/HouseOfFun.bin
@@ -315,6 +318,7 @@ bin/bubbros
 %%DATADIR%%/bubbob/patmap.py
 %%DATADIR%%/bubbob/player.py
 %%DATADIR%%/bubbob/ranking.py
+%%DATADIR%%/bubbob/save_rnglevel.py
 %%DATADIR%%/bubbob/setup.py
 %%DATADIR%%/bubbob/sounds/die.wav
 %%DATADIR%%/bubbob/sounds/extra.wav
@@ -329,9 +333,10 @@ bin/bubbros
 %%DATADIR%%/bubbob/sounds/yippee.wav
 %%DATADIR%%/bubbob/sprmap.py
 %%DATADIR%%/bubbob/statesaver.c
+%%DATADIR%%/bubbob/statesaver.py
 %%DATADIR%%/bubbob/statesaver.so
 %%DATADIR%%/bubbob/test_rnglevel.py
-%%DATADIR%%/bubbob/save_rnglevel.py
+%%DATADIR%%/bubbob/test_statesaver.py
 %%DATADIR%%/bubbob/tmp/pat00.ppm
 %%DATADIR%%/bubbob/tmp/pat01.ppm
 %%DATADIR%%/bubbob/tmp/pat02.ppm
@@ -444,6 +449,7 @@ bin/bubbros
 %%DATADIR%%/metaserver/metastruct.py
 %%DATADIR%%/metaserver/pipelayer.py
 %%DATADIR%%/metaserver/socketoverudp.py
+share/pixmaps/bubbros.png
 @dirrm %%DATADIR%%/bubbob/doc/images
 @dirrm %%DATADIR%%/bubbob/doc
 @dirrm %%DATADIR%%/bubbob/ext1
@@ -468,14 +474,3 @@ bin/bubbros
 @dirrm %%DATADIR%%/java
 @dirrm %%DATADIR%%/metaserver
 @dirrm %%DATADIR%%
-%%PORTDOCS%%%%DOCSDIR%%/BubBob.py.1
-%%PORTDOCS%%%%DOCSDIR%%/Client.py.1
-%%PORTDOCS%%%%DOCSDIR%%/Introduction.html
-%%PORTDOCS%%%%DOCSDIR%%/Makefile
-%%PORTDOCS%%%%DOCSDIR%%/authors.html
-%%PORTDOCS%%%%DOCSDIR%%/bb.py.1
-%%PORTDOCS%%%%DOCSDIR%%/crazybonuses.html
-%%PORTDOCS%%%%DOCSDIR%%/download.html
-%%PORTDOCS%%%%DOCSDIR%%/help.html
-%%PORTDOCS%%%%DOCSDIR%%/sshots.html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
