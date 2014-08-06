@@ -62,20 +62,6 @@ you update your ports collection, before attempting any port upgrades.
   GeoIP no longer ships with the GeoIP database. To continue using GeoIP,
   you MUST fetch the database after upgrading by running geoipupdate.sh.
 
-20140728:
-  AFFECTS: users of security/libtasn1 and any port that depends on it
-  AUTHOR: novel@FreeBSD.org
-
-  libtasn1 has been updated to 4.0 and all shared libraries versions have
-  been bumped. So you need to rebuild all applications that depend on
-  libtasn1.
-
-  # portmaster -r libtasn1
-    or
-  # portupgrade -fr security/libtasn1
-    or
-  # pkg install -fR security/libtasn1
-
 20140727:
   AFFECTS: users of comms/qpage
   AUTHOR: marino@FreeBSD.org
