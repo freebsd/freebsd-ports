@@ -2,5 +2,7 @@ bin/mednafen
 %%NLS%%share/locale/de/LC_MESSAGES/mednafen.mo
 %%NLS%%share/locale/es/LC_MESSAGES/mednafen.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/mednafen.mo
+%%DATADIR%%/c68k_op0.inc
+@dirrm %%DATADIR%%
 %%PORTDOCS%%%%DOCSDIR%%/mednafen.html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
