@@ -136,21 +136,21 @@ include/agg2/util/agg_color_conv.h
 include/agg2/util/agg_color_conv_rgb16.h
 include/agg2/util/agg_color_conv_rgb8.h
 lib/libagg.a
-lib/libagg.la
 lib/libagg.so
 lib/libagg.so.2
+lib/libagg.so.2.0.4
 lib/libaggfontfreetype.a
-lib/libaggfontfreetype.la
 lib/libaggfontfreetype.so
 lib/libaggfontfreetype.so.2
+lib/libaggfontfreetype.so.2.0.4
 lib/libaggplatformX11.a
-lib/libaggplatformX11.la
 lib/libaggplatformX11.so
 lib/libaggplatformX11.so.2
+lib/libaggplatformX11.so.2.0.4
 lib/libaggplatformsdl.a
-lib/libaggplatformsdl.la
 lib/libaggplatformsdl.so
 lib/libaggplatformsdl.so.2
+lib/libaggplatformsdl.so.2.0.4
 libdata/pkgconfig/libagg.pc
 share/aclocal/libagg.m4
 @dirrm include/agg2/util
