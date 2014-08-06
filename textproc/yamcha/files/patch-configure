@@ -1,0 +1,22 @@
+--- ./configure.orig	2014-08-06 17:30:04.739555036 +0200
++++ ./configure	2014-08-06 17:30:38.008555705 +0200
+@@ -20228,7 +20228,7 @@
+ echo "$as_me:$LINENO: result: $ac_cv_lib_stdcpp_main" >&5
+ echo "${ECHO_T}$ac_cv_lib_stdcpp_main" >&6
+ if test $ac_cv_lib_stdcpp_main = yes; then
+-  STDCPP_LIBS="-lstdc++"
++  STDCPP_LIBS=""
+ fi
+ 
+ ac_ext=cc
+@@ -20257,10 +20257,6 @@
+         fi
+ fi
+ 
+-if test -n "$GCC"; then
+-   CFLAGS="-O3  -Wno-deprecated -Wall"
+-   CXXFLAGS="-O3 -Wno-deprecated -Wall"
+-fi
+ 
+ 
+ 
