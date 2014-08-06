@@ -4,10 +4,10 @@
 PORTNAME=	vlogin
 PORTVERSION=	3.10.2
 PORTREVISION=	1
-CATEGORIES=		mail www
+CATEGORIES=	mail www
 DISTNAME=	${PORTNAME}-${PORTVERSION}-1.2.7
 
-MAINTAINER=	neil@darlow.co.uk
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Adds multi-site-hosting capabilities to SquirrelMail
 
 USE_SM_COMPAT=	yes
@@ -15,9 +15,6 @@ USE_SM_COMPAT=	yes
 DOCSDIR=	${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}${PKGNAMESUFFIX}
 
 OPTIONS_DEFINE=	DOCS
-
-.include <bsd.port.pre.mk>
-.include "${.CURDIR}/../squirrelmail/bsd.squirrelmail.mk"
 
 # We need to rearrange, install and cleanup documentation pre-install
 # because bsd.squirrelmail.mk installs everything under ${WRKSRC}/${PORTNAME}.
@@ -29,4 +26,5 @@ pre-install::
 	&& cd ${WRKSRC}/${PORTNAME} \
 	&& ${RM} -rf README docs
 
-.include <bsd.port.post.mk>
+.include "${.CURDIR}/../squirrelmail/bsd.squirrelmail.mk"
+.include <bsd.port.mk>
