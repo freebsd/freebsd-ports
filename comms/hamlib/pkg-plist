@@ -136,10 +136,12 @@ lib/hamlibtcl.so
 lib/tcl%%TCL_VER%%/hamlib/pkgIndex.tcl
 lib/libhamlib++.so
 lib/libhamlib++.so.2
+lib/libhamlib++.so.2.0.16
 lib/libhamlib++.a
 lib/libhamlib++.la
 lib/libhamlib.so
 lib/libhamlib.so.2
+lib/libhamlib.so.2.0.16
 lib/libhamlib.a
 lib/libhamlib.la
 libdata/pkgconfig/hamlib.pc
