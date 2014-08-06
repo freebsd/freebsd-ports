@@ -15,7 +15,7 @@
 PORTVERSION?=	0.0.${SVNREV}
 .if ${PORTNAME} == foswiki
 .if ${.TARGETS} == make-port
-PNAME=		
+PNAME=
 .else
 PNAME=		core
 .endif
@@ -40,7 +40,6 @@ PLIST_SUB+=	FWDIR=${FWDIR:S|^${PREFIX}/||}
 SUB_LIST+=	FWDIR=${FWDIR} FIND=${FIND} CHMOD=${CHMOD} CHOWN=${CHOWN} \
 		TOUCH=${TOUCH} WWWOWN=${WWWOWN} WWWGRP=${WWWGRP} \
 		CONFDIR=${CONFDIR}
-SUB_FILES+=	pkg-install
 MAINTAINER?=	glarkin@FreeBSD.org
 RUN_DEPENDS+=	${FWDEP:C/([^=<>]*)([=<>]*)(.*)/foswiki-\1\20.0.\3:${PORTSDIR}\/www\/foswiki-\1/}
 
@@ -60,12 +59,11 @@ create-plist:	extract
 	@${ECHO_CMD} '@dirrm %%FWDIR%%' >> ${PLIST}
 
 do-install:
-	@${INSTALL} -d ${FWDIR}/
-	@cd ${WRKSRC}/ && ${COPYTREE_SHARE} . ${FWDIR}/
+	@${INSTALL} -d ${STAGEDIR}${FWDIR}/
+	@cd ${WRKSRC}/ && ${COPYTREE_SHARE} . ${STAGEDIR}${FWDIR}/
 .if ${PORTNAME} == foswiki
-	@${INSTALL_DATA} ${WRKDIR}/LocalSite.cfg ${WWWDIR}/lib
+	@${INSTALL_DATA} ${WRKDIR}/LocalSite.cfg ${STAGEDIR}${WWWDIR}/lib/LocalSite.cfg.sample
 .endif
-	${SETENV} ${SCRIPTS_ENV} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
 make-fwdep: extract
 	@echo "FWDEP=`grep -v ^# ${WRKSRC}/lib/*[wW]iki/*/${PORTNAME}/DEPENDENCIES |\
@@ -124,4 +122,5 @@ make-port:
 		sed -E 's|.+[wW]iki:Main[./]||g;s|^|Author: |;s|  | |g;s| $$||;\
 		s|([a-z]) |\1, |;s|([a-z])([A-Z])|\1 \2|g' >> pkg-descr &&\
 	echo "WWW:	http://www.foswiki.org/Support/$$nnam" >> pkg-descr;\
+
 	done

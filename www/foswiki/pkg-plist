@@ -1,4 +1,6 @@
-%%NOAPACHE%%%%CONFDIR%%/foswiki.conf.sample
+%%NOAPACHE%%@sample %%CONFDIR%%/foswiki.conf.sample
+@owner %%WWWOWN%%
+@group %%WWWGRP%%
 %%WWWDIR%%/AUTHORS
 %%WWWDIR%%/COPYING
 %%WWWDIR%%/COPYRIGHT
@@ -10,6 +12,7 @@
 %%WWWDIR%%/bin/.htaccess.txt
 %%WWWDIR%%/bin/LocalLib.cfg
 %%WWWDIR%%/bin/LocalLib.cfg.txt
+@mode 555
 %%WWWDIR%%/bin/attach
 %%WWWDIR%%/bin/changes
 %%WWWDIR%%/bin/compare
@@ -38,7 +41,10 @@
 %%WWWDIR%%/bin/viewauth
 %%WWWDIR%%/bin/viewfile
 %%WWWDIR%%/bin/viewfileauth
+@mode 444
 @unexec if [ ! -s %%WWWDIR%%/data/.htpasswd ]; then rm -f %D/%%WWWDIR%%/data/.htpasswd; fi
+%%WWWDIR%%/data/Sandbox/CompareRevisionsAddOnDemoTopic.txt,v
+@mode 644
 %%WWWDIR%%/data/Main/AdminGroup.txt
 %%WWWDIR%%/data/Main/AdminUser.txt
 %%WWWDIR%%/data/Main/AdminUserLeftBar.txt
@@ -73,7 +79,6 @@
 %%WWWDIR%%/data/Sandbox/CommentPluginExamples.txt
 %%WWWDIR%%/data/Sandbox/CommentPluginTemplateExample.txt
 %%WWWDIR%%/data/Sandbox/CompareRevisionsAddOnDemoTopic.txt
-%%WWWDIR%%/data/Sandbox/CompareRevisionsAddOnDemoTopic.txt,v
 %%WWWDIR%%/data/Sandbox/PluginTestEmptyPlugin.txt
 %%WWWDIR%%/data/Sandbox/WebAtom.txt
 %%WWWDIR%%/data/Sandbox/WebChanges.txt
@@ -617,9 +622,12 @@
 %%WWWDIR%%/data/_default/WebSearchAdvanced.txt
 %%WWWDIR%%/data/_default/WebTopicList.txt
 %%WWWDIR%%/data/_empty/WebPreferences.txt
+@mode 644
 %%WWWDIR%%/data/mime.types
+@mode
 %%WWWDIR%%/foswiki_httpd_conf.txt
 %%WWWDIR%%/index.html
+@mode 444
 %%WWWDIR%%/lib/Assert.pm
 %%WWWDIR%%/lib/Foswiki.pm
 %%WWWDIR%%/lib/Foswiki.spec
@@ -1141,7 +1149,7 @@
 %%WWWDIR%%/lib/Foswiki/Validation.pm
 %%WWWDIR%%/lib/Foswiki/ValidationException.pm
 %%WWWDIR%%/lib/Foswiki/WebFilter.pm
-@unexec if [ "`md5 -q %D/%%WWWDIR%%/lib/LocalSite.cfg`" = "c648a70f925757e7e982a5a13d47cfe7" ]; then rm -f %D/%%WWWDIR%%/lib/LocalSite.cfg; fi
+%%WWWDIR%%/lib/LocalSite.cfg.sample
 %%WWWDIR%%/lib/MANIFEST
 %%WWWDIR%%/lib/Monitor.pm
 %%WWWDIR%%/lib/TWiki.pm
@@ -1181,6 +1189,7 @@
 %%WWWDIR%%/locale/uk.po
 %%WWWDIR%%/locale/zh-cn.po
 %%WWWDIR%%/locale/zh-tw.po
+@mode 644
 %%WWWDIR%%/pub-htaccess.txt
 %%WWWDIR%%/pub/System/BeginnersStartHere/BT_logo.gif
 %%WWWDIR%%/pub/System/BeginnersStartHere/Disney_logo.gif
@@ -5999,10 +6008,12 @@
 %%WWWDIR%%/pub/System/WabiSabi/wabisabi.gif
 %%WWWDIR%%/pub/System/WindowsInstallCookbook/cygwin-icon.gif
 %%WWWDIR%%/pub/System/WysiwygPlugin/wikiringlogo20x20.png
+@mode
 %%WWWDIR%%/readme.txt
 %%WWWDIR%%/robots.txt
 %%WWWDIR%%/root-htaccess.txt
 %%WWWDIR%%/subdir-htaccess.txt
+@mode 444
 %%WWWDIR%%/templates/attachtables.pattern01x00.tmpl
 %%WWWDIR%%/templates/backlinks.pattern01x00.tmpl
 %%WWWDIR%%/templates/foswiki.pattern01x00.tmpl
@@ -6119,6 +6130,7 @@
 %%WWWDIR%%/templates/viewsidebar.pattern.tmpl
 %%WWWDIR%%/templates/viewtopbar.pattern.tmpl
 %%WWWDIR%%/templates/viewtopicactionbuttons.tmpl
+@mode 555
 %%WWWDIR%%/tools/dependencies_installer.pl
 %%WWWDIR%%/tools/extender.pl
 %%WWWDIR%%/tools/extension_installer
@@ -6133,6 +6145,7 @@
 %%WWWDIR%%/tools/tml2html.pl
 %%WWWDIR%%/tools/upgrade_emails.pl
 %%WWWDIR%%/tools/yuicompressor.jar
+@mode
 %%WWWDIR%%/working/.htaccess
 %%WWWDIR%%/working/README
 %%WWWDIR%%/working/logs/README

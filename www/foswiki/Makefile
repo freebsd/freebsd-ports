@@ -9,12 +9,12 @@ DISTNAME=	Foswiki-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Free and open source enterprise wiki
 
+LICENSE=	GPLv2
+
 RUN_DEPENDS=	p5-Error>=0.15:${PORTSDIR}/lang/p5-Error \
 		p5-Algorithm-Diff>=1.1901:${PORTSDIR}/devel/p5-Algorithm-Diff \
 		p5-Text-Diff>=0.35:${PORTSDIR}/textproc/p5-Text-Diff \
 		p5-Sort-Maker>=0.06:${PORTSDIR}/devel/p5-Sort-Maker
-
-LICENSE=	GPLv2
 
 USES=		perl5 tar:tgz
 NO_BUILD=	yes
@@ -25,7 +25,6 @@ OPTINT_DESC=	Install Perl modules for intl character support
 OPTOTH_DESC=	Install other optional Perl modules
 APACHE_DESC=	Install Apache web server and sample config file
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MOPTINT}
@@ -52,8 +51,6 @@ PLIST_SUB+=	NOAPACHE=""
 PKGMESSAGE=	pkg-message-apache
 SUB_FILES+=	pkg-message-apache
 
-.include <bsd.port.pre.mk>
-
 CONFDIR_REL=	${APACHEETCDIR}/Includes
 CONFDIR=	${PREFIX}/${CONFDIR_REL}
 
@@ -64,14 +61,13 @@ PLIST_SUB+=	CONFDIR=${CONFDIR_REL}
 # the include performed after the USE_APACHE variable is set so
 # APACHE_VERSION can be tested above.
 
-.include <bsd.port.pre.mk>
-
 PLIST_SUB+=	NOAPACHE="@comment "
 PKGMESSAGE=	pkg-message-noapache
 SUB_FILES+=	pkg-message-noapache
 .endif
 
 SUB_FILES+=	LocalSite.cfg
+PLIST_SUB+=	WWWOWN=${WWWOWN} WWWGRP=${WWWGRP}
 
 post-patch:
 	@${RM} -rf ${WRKSRC}/lib/CPAN
@@ -96,9 +92,10 @@ post-patch:
 
 post-install:
 .if ${PORT_OPTIONS:MAPACHE}
-	@if [ -d "${CONFDIR}" ]; then \
+	@${MKDIR} ${STAGEDIR}${CONFDIR}
+	@if [ -d "${STAGEDIR}${CONFDIR}" ]; then \
 	  ${INSTALL_DATA} ${WRKSRC}/foswiki_httpd_conf.txt \
-		${CONFDIR}/foswiki.conf.sample; \
+		${STAGEDIR}${CONFDIR}/foswiki.conf.sample; \
 	else \
 	  ${ECHO_MSG} "" ; \
 	  ${ECHO_MSG} "Please check your Apache installation -" ; \
@@ -108,7 +105,6 @@ post-install:
 	  ${FALSE} ; \
 	fi
 .endif
-	@${CAT} ${PKGMESSAGE}
 
 .include "${.CURDIR}/bsd.foswiki.mk"
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
