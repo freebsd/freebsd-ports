@@ -3,7 +3,7 @@
 
 PORTNAME=	mopac
 PORTVERSION=	7.${MOPAC_SUBVERSION}
-PORTREVISION=	3
+PORTREVISION=	4
 PORTEPOCH=	1
 CATEGORIES=	biology
 MASTER_SITES=	SF/${PORTNAME}7/${PORTNAME}7/${PORTNAME}7-1.00
@@ -14,8 +14,8 @@ COMMENT=	Semi-empirical (MNDO, etc.) molecular orbital calculation
 
 LIB_DEPENDS=	libf2c.so:${PORTSDIR}/lang/f2c
 
-USES=		gmake
-USE_AUTOTOOLS=	aclocal automake autoconf libtool
+USES=		gmake libtool
+USE_AUTOTOOLS=	aclocal automake autoconf libtoolize
 ACLOCAL_ARGS=	-I ${LOCALBASE}/share/aclocal
 AUTOMAKE_ARGS=	--add-missing --copy
 USE_LDCONFIG=	yes
