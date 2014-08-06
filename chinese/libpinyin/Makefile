@@ -3,6 +3,7 @@
 
 PORTNAME=	libpinyin
 PORTVERSION=	0.7.91
+PORTREVISION=	1
 CATEGORIES=	chinese textproc
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}
 
@@ -11,9 +12,8 @@ COMMENT=	Library to deal with pinyin
 
 USE_BDB=	yes
 USE_GNOME=	glib20
-USES=		gettext gmake pathfix pkgconfig
+USES=		gettext gmake libtool pathfix pkgconfig
 GNU_CONFIGURE=	yes
-USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
 
 CONFIGURE_ARGS+=CPPFLAGS="-I${LOCALBASE}/include \
