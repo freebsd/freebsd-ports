@@ -59,7 +59,8 @@ post-patch:
 	${FIND} ${WRKSRC}/.. -name GNUmakefile | ${XARGS} ${REINPLACE_CMD} -e '\
 	    s|-I$$(shell gcj -print-file-name=include/)|-I${JAVA_HOME}/include \
 	    -I${JAVA_HOME}/include/freebsd -I${LOCALBASE}/include|; \
-	    s|LDFLAGS\?=.*|LDFLAGS?=-L${LOCALBASE}/lib|'
+	    s|LDFLAGS\?=.*|LDFLAGS+=-L${LOCALBASE}/lib|; \
+	    s|CFLAGS\?=|CFLAGS+=|'
 	${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g; \
 	    s|%%PREFIX%%|${PREFIX}|g; \
 	    s|%%JAVAJARDIR%%|${JAVAJARDIR}|g; \
@@ -85,8 +86,8 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/tuxguitar.jar ${STAGEDIR}${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/../misc/*.tg ${STAGEDIR}${DATADIR}
 	${INSTALL_DATA} ${WRKDIR}/8MBGMSFX.SF2 ${STAGEDIR}${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/../TuxGuitar-oss/jni/libtuxguitar-oss-jni.so ${STAGEDIR}${PREFIX}/lib
-	${INSTALL_DATA} ${WRKSRC}/../TuxGuitar-fluidsynth/jni/libtuxguitar-fluidsynth-jni.so ${STAGEDIR}${PREFIX}/lib
+	${INSTALL_PROGRAM} ${WRKSRC}/../TuxGuitar-oss/jni/libtuxguitar-oss-jni.so ${STAGEDIR}${PREFIX}/lib
+	${INSTALL_PROGRAM} ${WRKSRC}/../TuxGuitar-fluidsynth/jni/libtuxguitar-fluidsynth-jni.so ${STAGEDIR}${PREFIX}/lib
 .for p in ${PLUGINS}
 	${INSTALL_DATA} ${WRKSRC}/../TuxGuitar-${p}/tuxguitar-${p}.jar ${STAGEDIR}${DATADIR}/plugins
 .endfor
