@@ -14,14 +14,10 @@ LICENSE=	BSD
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		tar:xz
-MAN1=		downtimes.1
-MAN8=		downtimed.8
 USE_RC_SUBR=	${PORTNAME}
 GNU_CONFIGURE=	yes
 
-NO_STAGE=	yes
 post-install:
-		@${MKDIR} /var/db/downtimed
-		@${CAT} ${PKGMESSAGE}
+	${MKDIR} ${STAGEDIR}/var/db/downtimed
 
 .include <bsd.port.mk>
