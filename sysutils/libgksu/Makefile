@@ -3,6 +3,7 @@
 
 PORTNAME=	libgksu
 PORTVERSION=	2.0.12
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://people.debian.org/~kov/gksu/
 
@@ -16,11 +17,12 @@ LIB_DEPENDS=	libgtop-2.0.so:${PORTSDIR}/devel/libgtop \
 RUN_DEPENDS=	xauth:${PORTSDIR}/x11/xauth \
 		sudo:${PORTSDIR}/security/sudo
 
-USES=		desktop-file-utils gmake pkgconfig
+USES=		desktop-file-utils gmake libtool pkgconfig
 USE_GNOME=	glib20 gconf2
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--enable-gtk-doc=no
 GNU_CONFIGURE=	yes
 GCONF_SCHEMAS=	gksu.schemas
+LIBS+=		`pkg-config --libs gtk+-x11-2.0`
 
 .include <bsd.port.mk>
