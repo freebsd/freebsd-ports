@@ -3,11 +3,11 @@
 
 PORTNAME=	grub2-pcbsd
 PORTVERSION=	2.02p
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	sysutils
 MASTER_SITES=   http://www.pcbsd.org/~kris/software/ \
 		ftp://ftp.pcbsd.org/pub/software/
-DISTNAME=	grub-2.02_1
+DISTNAME=	grub-2.02_2
 
 MAINTAINER=	kmoore@FreeBSD.org
 COMMENT=	Multiboot boot loader
