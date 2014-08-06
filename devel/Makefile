@@ -233,8 +233,8 @@
     SUBDIR += clewn
     SUBDIR += clig
     SUBDIR += clisp-hyperspec
-    SUBDIR += cluttermm
     SUBDIR += clojure-cider
+    SUBDIR += cluttermm
     SUBDIR += cmake
     SUBDIR += cmake-fedora
     SUBDIR += cmake-gui
@@ -1192,6 +1192,7 @@
     SUBDIR += llvm32
     SUBDIR += llvm33
     SUBDIR += llvm34
+    SUBDIR += llvm35
     SUBDIR += lm4tools
     SUBDIR += lmdbg
     SUBDIR += lndir
@@ -2168,6 +2169,7 @@
     SUBDIR += p5-IO-Pipely
     SUBDIR += p5-IO-Prompt
     SUBDIR += p5-IO-Prompt-Tiny
+    SUBDIR += p5-IO-Prompter
     SUBDIR += p5-IO-Pty-Easy
     SUBDIR += p5-IO-SessionData
     SUBDIR += p5-IO-String
@@ -4043,8 +4045,6 @@
     SUBDIR += py3-gobject3
     SUBDIR += py3-xdg
     SUBDIR += py_static_check
-    SUBDIR += py3-dbus
-    SUBDIR += py3-gobject3
     SUBDIR += pybaz
     SUBDIR += pybugz
     SUBDIR += pychecker

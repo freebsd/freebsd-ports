@@ -37,6 +37,7 @@
     SUBDIR += clang32
     SUBDIR += clang33
     SUBDIR += clang34
+    SUBDIR += clang35
     SUBDIR += clay
     SUBDIR += clojure
     SUBDIR += clojure-mode.el
@@ -82,12 +83,12 @@
     SUBDIR += gcc
     SUBDIR += gcc-aux
     SUBDIR += gcc-ecj45
+    SUBDIR += gcc410
     SUBDIR += gcc46
     SUBDIR += gcc47
     SUBDIR += gcc47-aux
     SUBDIR += gcc48
     SUBDIR += gcc49
-    SUBDIR += gcc410
     SUBDIR += gcl
     SUBDIR += gforth
     SUBDIR += ghc

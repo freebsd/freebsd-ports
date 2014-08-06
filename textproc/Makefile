@@ -207,8 +207,8 @@
     SUBDIR += gsed
     SUBDIR += gtk-doc
     SUBDIR += gtkspell
-    SUBDIR += gtkspell3
     SUBDIR += gtkspell-reference
+    SUBDIR += gtkspell3
     SUBDIR += gu-aspell
     SUBDIR += gutenmark
     SUBDIR += gv-aspell
@@ -1225,7 +1225,6 @@
     SUBDIR += py3-libxml2
     SUBDIR += pychm
     SUBDIR += pystemmer
-    SUBDIR += py3-libxml2
     SUBDIR += qprint
     SUBDIR += qstardict
     SUBDIR += qt4-xml
@@ -1527,9 +1526,9 @@
     SUBDIR += xml-i18n-tools
     SUBDIR += xml-lite.el
     SUBDIR += xml-parse.el
-    SUBDIR += xml_ez_out
     SUBDIR += xml2
     SUBDIR += xml2rfc
+    SUBDIR += xml_ez_out
     SUBDIR += xmlada
     SUBDIR += xmlcatmgr
     SUBDIR += xmlcharent

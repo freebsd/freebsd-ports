@@ -584,8 +584,8 @@
     SUBDIR += opera-linuxplugins
     SUBDIR += orangehrm
     SUBDIR += oscommerce
-    SUBDIR += otter-browser
     SUBDIR += otrs
+    SUBDIR += otter-browser
     SUBDIR += owncloud
     SUBDIR += p5-AMF-Perl
     SUBDIR += p5-Acme-Monta
@@ -1802,9 +1802,9 @@
     SUBDIR += rubygem-hpricot
     SUBDIR += rubygem-html2haml
     SUBDIR += rubygem-http-cookie
-    SUBDIR += rubygem-httpi
     SUBDIR += rubygem-httparty
     SUBDIR += rubygem-httpclient
+    SUBDIR += rubygem-httpi
     SUBDIR += rubygem-innate
     SUBDIR += rubygem-jekyll
     SUBDIR += rubygem-journey
@@ -1865,9 +1865,9 @@
     SUBDIR += rubygem-rfacebook
     SUBDIR += rubygem-rfeedfinder
     SUBDIR += rubygem-rkelly-remix
-    SUBDIR += rubygem-rqrcode
     SUBDIR += rubygem-robotex
     SUBDIR += rubygem-robots
+    SUBDIR += rubygem-rqrcode
     SUBDIR += rubygem-savon
     SUBDIR += rubygem-scrapi
     SUBDIR += rubygem-scrubyt

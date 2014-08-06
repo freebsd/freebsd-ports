@@ -154,9 +154,9 @@
     SUBDIR += vmw
     SUBDIR += vxtools
     SUBDIR += wine
+    SUBDIR += wine-compholio
     SUBDIR += wine-devel
     SUBDIR += wine-doors
-    SUBDIR += wine-compholio
     SUBDIR += wine-gecko
     SUBDIR += wine-gecko-devel
     SUBDIR += wine-mono

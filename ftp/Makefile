@@ -1,4 +1,4 @@
-#T $FreeBSD$
+# $FreeBSD$
 #
 
     COMMENT = FTP client and server utilities

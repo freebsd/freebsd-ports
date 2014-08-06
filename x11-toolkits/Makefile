@@ -105,7 +105,6 @@
     SUBDIR += libsexymm
     SUBDIR += libunique3
     SUBDIR += libwnck
-    SUBDIR += libwnck3
     SUBDIR += libwnck-reference
     SUBDIR += libwnck3
     SUBDIR += libxaw3dxft

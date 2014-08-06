@@ -131,9 +131,9 @@
     SUBDIR += nagios-check_puppet
     SUBDIR += nagios-check_smartmon
     SUBDIR += nagios-check_tftp
-    SUBDIR += nagios-pf-plugin
     SUBDIR += nagios-geom
     SUBDIR += nagios-openldap-plugins
+    SUBDIR += nagios-pf-plugin
     SUBDIR += nagios-plugins
     SUBDIR += nagios-portaudit
     SUBDIR += nagios-silfreed-plugins
