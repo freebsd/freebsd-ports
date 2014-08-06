@@ -1,0 +1,38 @@
+%%PERL5_MAN3%%/Data::Perl.3.gz
+%%PERL5_MAN3%%/Data::Perl::Bool.3.gz
+%%PERL5_MAN3%%/Data::Perl::Code.3.gz
+%%PERL5_MAN3%%/Data::Perl::Collection::Array.3.gz
+%%PERL5_MAN3%%/Data::Perl::Collection::Hash.3.gz
+%%PERL5_MAN3%%/Data::Perl::Counter.3.gz
+%%PERL5_MAN3%%/Data::Perl::Number.3.gz
+%%PERL5_MAN3%%/Data::Perl::Role::Bool.3.gz
+%%PERL5_MAN3%%/Data::Perl::Role::Code.3.gz
+%%PERL5_MAN3%%/Data::Perl::Role::Collection::Array.3.gz
+%%PERL5_MAN3%%/Data::Perl::Role::Collection::Hash.3.gz
+%%PERL5_MAN3%%/Data::Perl::Role::Counter.3.gz
+%%PERL5_MAN3%%/Data::Perl::Role::Number.3.gz
+%%PERL5_MAN3%%/Data::Perl::Role::String.3.gz
+%%PERL5_MAN3%%/Data::Perl::String.3.gz
+%%SITE_PERL%%/Data/Perl.pm
+%%SITE_PERL%%/Data/Perl/Bool.pm
+%%SITE_PERL%%/Data/Perl/Code.pm
+%%SITE_PERL%%/Data/Perl/Collection/Array.pm
+%%SITE_PERL%%/Data/Perl/Collection/Hash.pm
+%%SITE_PERL%%/Data/Perl/Counter.pm
+%%SITE_PERL%%/Data/Perl/Number.pm
+%%SITE_PERL%%/Data/Perl/Role/Bool.pm
+%%SITE_PERL%%/Data/Perl/Role/Code.pm
+%%SITE_PERL%%/Data/Perl/Role/Collection/Array.pm
+%%SITE_PERL%%/Data/Perl/Role/Collection/Hash.pm
+%%SITE_PERL%%/Data/Perl/Role/Counter.pm
+%%SITE_PERL%%/Data/Perl/Role/Number.pm
+%%SITE_PERL%%/Data/Perl/Role/String.pm
+%%SITE_PERL%%/Data/Perl/String.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/Perl/.packlist
+@dirrmtry %%SITE_PERL%%/Data/Perl/Collection
+@dirrmtry %%SITE_PERL%%/Data/Perl/Role/Collection
+@dirrmtry %%SITE_PERL%%/Data/Perl/Role
+@dirrmtry %%SITE_PERL%%/Data/Perl
+@dirrmtry %%SITE_PERL%%/Data
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/Perl
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data
