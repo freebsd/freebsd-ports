@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	findlib
-PORTVERSION=	1.5.1
+PORTVERSION=	1.5.2
 CATEGORIES=	devel
 MASTER_SITES=	http://download.camlcity.org/download/
 PKGNAMEPREFIX=	ocaml-
@@ -30,6 +30,7 @@ TOOLBOX_CONFIGURE_ON=	-with-toolbox
 MAKE_JOBS_UNSAFE=	yes
 
 DOCSDIR=	${PREFIX}/share/doc/ocaml/${PORTNAME}
+PORTDOCS=	*
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,path="@SITELIB@,&:${PREFIX}/${OCAML_LIBDIR},' \
