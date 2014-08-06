@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	openxpki-i18n
-PORTVERSION=	0.14.0.1
+PORTVERSION=	0.19.0.1
 CATEGORIES=	security perl5
 PKGNAMEPREFIX=	p5-
 DISTNAME=	openxpki-${PORTVERSION}
@@ -20,7 +20,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	openxpki
 GH_PROJECT=	openxpki
 GH_TAGNAME=	${GH_COMMIT}
-GH_COMMIT=	66ee052
+GH_COMMIT=	9d772a8
 
 ### We can not go WITHOUT_NLS. Internationalization is needed
 ### even to use English language.
