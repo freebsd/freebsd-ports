@@ -3,7 +3,7 @@
 
 PORTNAME=	agg
 PORTVERSION=	2.5
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.antigrain.com/ \
 		http://freebsd.unixfreunde.de/sources/
@@ -16,7 +16,7 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2
 
 USE_XORG=	x11
-USES=		gmake pathfix pkgconfig
+USES=		gmake libtool pathfix pkgconfig
 USE_SDL=	sdl
 USE_AUTOTOOLS=	aclocal autoheader autoconf libtoolize automake
 ACLOCAL_ARGS=	-I ${LOCALBASE}/share/aclocal
