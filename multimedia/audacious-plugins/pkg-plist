@@ -24,6 +24,7 @@ lib/audacious/General/delete-files.so
 %%DBUS%%lib/audacious/General/gnomeshortcuts.so
 lib/audacious/General/gtkui.so
 lib/audacious/General/hotkey.so
+%%LIRC%%lib/audacious/General/lirc.so
 lib/audacious/General/lyricwiki.so
 %%NOTIFY%%lib/audacious/General/notify.so
 %%SCROBBLERPLUGIN%%lib/audacious/General/scrobbler.so
