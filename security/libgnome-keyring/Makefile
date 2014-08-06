@@ -14,7 +14,7 @@ LIB_DEPENDS=	libtasn1.so:${PORTSDIR}/security/libtasn1 \
 		libgcrypt.so:${PORTSDIR}/security/libgcrypt
 
 USES=		gettext gmake libtool:keepla pathfix pkgconfig tar:bzip2
-USE_GNOME=	gnomeprefix ltverhack intlhack gconf2
+USE_GNOME=	gnomeprefix intlhack gconf2
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
