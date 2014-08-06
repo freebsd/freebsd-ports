@@ -9,6 +9,8 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-2
 MAINTAINER=	mono@FreeBSD.org
 COMMENT=	MonoDevelop database support
 
+BROKEN=		Fails to build with monodevelop-5.0.1
+
 LICENSE=	MIT
 
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/monodevelop.pc:${PORTSDIR}/devel/monodevelop
