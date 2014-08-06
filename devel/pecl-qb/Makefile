@@ -17,5 +17,6 @@ CONFIGURE_ARGS=	--with-cpu=native
 USE_PHP=	yes
 USE_PHPEXT=	yes
 USES=		tar:tgz
+USE_GCC=	any
 
 .include <bsd.port.mk>
