@@ -4,7 +4,7 @@ bin/mangband
 @mode
 @group
 bin/mangclient
-@sample %%ETCDIR%%mangband.cfg
+@sample %%ETCDIR%%/mangband.cfg
 %%DATADIR%%/data/scores.raw
 %%DATADIR%%/edit/artifact.txt
 %%DATADIR%%/edit/ego_item.txt
@@ -94,7 +94,7 @@ bin/mangclient
 %%DATADIR%%/xtra/graf/mask.bmp
 @mode
 @group
-dirrm %%DATADIR%%/data
+@dirrm %%DATADIR%%/data
 @dirrm %%DATADIR%%/edit
 @dirrm %%DATADIR%%/file
 @dirrm %%DATADIR%%/help
