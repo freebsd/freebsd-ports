@@ -4,9 +4,9 @@
 PORTNAME=	avelsieve
 PORTVERSION=	1.9.7
 PORTREVISION=	3
-CATEGORIES=		mail www
+CATEGORIES=	mail www
 
-MAINTAINER=	neil@darlow.co.uk
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	SquirrelMail plugin for Server-Side Mail Filtering management
 
 pre-install:
@@ -14,6 +14,5 @@ pre-install:
 	${FIND} ${WRKSRC}/${SQUIRREL_PLUGIN_NAME} -type f \
 		\( -name '.cvsignore' -o -name '*.bak' -o -name '*.orig' \) -exec ${RM} {} \;
 
-.include <bsd.port.pre.mk>
 .include "${.CURDIR}/../squirrelmail/bsd.squirrelmail.mk"
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

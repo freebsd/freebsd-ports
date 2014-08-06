@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pgpdump
-PORTVERSION=	0.28
+PORTVERSION=	0.29
 CATEGORIES=	security
 MASTER_SITES=	http://www.mew.org/~kazu/proj/pgpdump/
 

@@ -7,9 +7,9 @@ include/libpinyin-%%VER%%/novel_types.h
 include/libpinyin-%%VER%%/pinyin.h
 include/libpinyin-%%VER%%/pinyin_custom2.h
 lib/libpinyin.a
-lib/libpinyin.la
 lib/libpinyin.so
 lib/libpinyin.so.2
+lib/libpinyin.so.2.0.0
 libdata/pkgconfig/libpinyin.pc
 man/man1/gen_binary_files.1.gz
 man/man1/gen_unigram.1.gz
