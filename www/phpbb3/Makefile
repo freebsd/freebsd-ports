@@ -9,7 +9,7 @@ DISTNAME=	phpBB-${PORTVERSION}
 PKGNAMESUFFIX=	3
 
 MAINTAINER=	appleboy.tw@gmail.com
-COMMENT=	A PHP-based bulletin board / discussion forum system
+COMMENT=	PHP-based bulletin board / discussion forum system
 
 LICENSE=	GPLv2
 

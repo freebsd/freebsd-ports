@@ -8,7 +8,7 @@ MASTER_SITES=	http://s3.amazonaws.com/cmsms/downloads/6491/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-full
 
 MAINTAINER=	wen@FreeBSD.org
-COMMENT=	A Simple Open Source CMS
+COMMENT=	Simple Open Source CMS
 
 USE_PHP=	mysql tokenizer gd
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}

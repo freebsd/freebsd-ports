@@ -9,7 +9,7 @@ MASTER_SITES=	http://samm.kiev.ua/sqstat/ \
 		SF/sqstat/sqstat/sqstat-${PORTVERSION}
 
 MAINTAINER=	sem@FreeBSD.org
-COMMENT=	A script which allows to look through active squid users connections
+COMMENT=	Script which allows to look through active squid users connections
 
 USE_PHP=	pcre session
 NO_BUILD=	yes

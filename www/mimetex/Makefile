@@ -10,7 +10,7 @@ DISTNAME=	${PORTNAME}
 DIST_SUBDIR=	${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	nivit@FreeBSD.org
-COMMENT=	A CGI script that lets you embed LaTeX math in your HTML pages
+COMMENT=	CGI script that lets you embed LaTeX math in your HTML pages
 
 LICENSE=	GPLv3
 

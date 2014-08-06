@@ -12,7 +12,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:a \
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	madpilot@FreeBSD.org
-COMMENT=	A fast redirector for squid
+COMMENT=	Fast redirector for squid
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

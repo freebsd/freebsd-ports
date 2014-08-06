@@ -10,7 +10,7 @@ DISTNAME=	redirector-${PORTVERSION}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A squid redirector used for blocking unwanted content
+COMMENT=	Squid redirector used for blocking unwanted content
 
 BROKEN=		Fails to checksum
 DEPRECATED=	Broken for more than 6 months

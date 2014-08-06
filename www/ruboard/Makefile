@@ -7,7 +7,7 @@ CATEGORIES=	www russian
 MASTER_SITES=	http://amsoft.ru/pub/ruboard/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A web based discussion board
+COMMENT=	Web based discussion board
 
 USES=		perl5
 

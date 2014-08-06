@@ -8,7 +8,7 @@ CATEGORIES=	www
 MASTER_SITES=	SF/${PORTNAME:tl}/${PORTNAME:tl}/${PORTNAME}%20${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A elegant personal publishing system with Smarty
+COMMENT=	Elegant personal publishing system with Smarty
 
 USE_PHP=	mysql pcre session
 NO_BUILD=	YES

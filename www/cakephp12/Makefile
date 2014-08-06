@@ -10,7 +10,7 @@ PKGNAMESUFFIX=	12
 DISTNAME=	${PORTNAME}-${PORTNAME}-${PORTVERSION}-${GITVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A framework for developing PHP web applications
+COMMENT=	Framework for developing PHP web applications
 
 GITVERSION=	0-ge6e50e8
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTNAME}-da67eb8

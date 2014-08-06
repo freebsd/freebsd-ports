@@ -9,7 +9,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	Webware-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A versatile web application server written in Python
+COMMENT=	Versatile web application server written in Python
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mx-base>0:${PORTSDIR}/lang/py-mx-base
 

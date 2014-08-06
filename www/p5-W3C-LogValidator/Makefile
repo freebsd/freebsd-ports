@@ -9,7 +9,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	toni.viemero@iki.fi
-COMMENT=	A comprehensive validation tool for webmasters and web developers
+COMMENT=	Comprehensive validation tool for webmasters and web developers
 
 BUILD_DEPENDS=	p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
 		p5-URI>=0:${PORTSDIR}/net/p5-URI \

@@ -8,7 +8,7 @@ CATEGORIES=	www mail
 MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A program to generate a cross-referenced HTML mail archive
+COMMENT=	Program to generate a cross-referenced HTML mail archive
 
 LIB_DEPENDS+=	libgdbm.so:${PORTSDIR}/databases/gdbm \
 		libpcre.so:${PORTSDIR}/devel/pcre

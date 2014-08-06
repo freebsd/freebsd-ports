@@ -10,7 +10,7 @@ DISTNAME=	ijb-zlib-11
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	An HTTP proxy server that eliminates ads
+COMMENT=	HTTP proxy server that eliminates ads
 
 ALL_TARGET=	# yes, an empty target.
 JDIR=		${PREFIX}/etc/junkbuster

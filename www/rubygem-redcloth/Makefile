@@ -8,7 +8,7 @@ MASTER_SITES=	RG
 DISTNAME=	RedCloth-${PORTVERSION}
 
 MAINTAINER=	ruby@FreeBSD.org
-COMMENT=	A module for using Textile in Ruby
+COMMENT=	Module for using Textile in Ruby
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes

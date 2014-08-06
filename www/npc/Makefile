@@ -7,7 +7,7 @@ CATEGORIES=	www
 MASTER_SITES=	http://www2.biglobe.ne.jp/%7Enir/soft/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	An animated web counter
+COMMENT=	Animated web counter
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
 MAKE_ARGS=	INDEX_DIR="${INDEX_DIR}"

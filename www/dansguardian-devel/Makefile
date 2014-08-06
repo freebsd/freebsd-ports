@@ -9,7 +9,7 @@ MASTER_SITES=	SF/dansguardian
 PKGNAMESUFFIX=	-devel
 
 MAINTAINER=	garga@FreeBSD.org
-COMMENT=	A fast, feature-rich web content filter for Squid proxy servers
+COMMENT=	Fast, feature-rich web content filter for Squid proxy servers
 
 LICENSE=	GPLv2
 

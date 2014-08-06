@@ -6,7 +6,7 @@ PORTVERSION=	0.9.7
 CATEGORIES=	www
 
 MAINTAINER=	ale@FreeBSD.org
-COMMENT=	A free open-source PHP accelerator & optimizer
+COMMENT=	Free open-source PHP accelerator & optimizer
 
 LICENSE=	GPLv2
 OPTIONS_DEFINE=	DOCCOMM DOCS EXAMPLES

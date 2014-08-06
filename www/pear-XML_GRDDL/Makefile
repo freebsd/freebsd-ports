@@ -6,7 +6,7 @@ PORTVERSION=	0.2.0
 CATEGORIES=	www pear
 
 MAINTAINER=	miwi@FreeBSD.org
-COMMENT=	A PHP library for dealing with GRDDL
+COMMENT=	PHP library for dealing with GRDDL
 
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear \
 		${PEARDIR}/HTTP/Request.php:${PORTSDIR}/www/pear-HTTP_Request \

@@ -12,7 +12,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	HTMLgen
 
 MAINTAINER=	python@FreeBSD.org
-COMMENT=	A Python library for the generation of HTML documents
+COMMENT=	Python library for the generation of HTML documents
 
 USE_PYTHON=	2
 NO_BUILD=	yes

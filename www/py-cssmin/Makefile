@@ -8,7 +8,7 @@ MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	loader@freebsdmall.com
-COMMENT=	A Python port of the YUI CSS compression algorithm
+COMMENT=	Python port of the YUI CSS compression algorithm
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes

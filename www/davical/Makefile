@@ -6,7 +6,7 @@ PORTVERSION=	1.1.2
 CATEGORIES?=	www
 
 MAINTAINER=	maurice@castro.aus.net
-COMMENT=	A simple CalDAV server using a postgres backend
+COMMENT=	Simple CalDAV server using a postgres backend
 
 LICENSE=	GPLv2 LGPL21
 LICENSE_COMB=	multi

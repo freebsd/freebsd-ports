@@ -9,7 +9,7 @@ MASTER_SITES=	SF/${PORTNAME}/v${PORTVERSION}/
 DISTNAME=	nibbleblogv302
 
 MAINTAINER=	marekholienka@gmail.com
-COMMENT=	A lightweight blog system for general use
+COMMENT=	Lightweight blog system for general use
 
 RUN_DEPENDS=	pear:${PORTSDIR}/devel/pear
 

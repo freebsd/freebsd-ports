@@ -7,7 +7,7 @@ CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	don@na.rim.or.jp
-COMMENT=	A scrAPI toolkit for Ruby
+COMMENT=	ScrAPI toolkit for Ruby
 
 BUILD_DEPENDS=	${LOCALBASE}/${SPEC_DIR}/tidy-1.1.2.gemspec:${PORTSDIR}/textproc/rubygem-tidy \
 		tidy:${PORTSDIR}/www/tidy-lib

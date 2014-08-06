@@ -9,7 +9,7 @@ CATEGORIES=	www devel python
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	An open-source web framework running on Google App Engine
+COMMENT=	Open-source web framework running on Google App Engine
 
 RUN_DEPENDS=	google-appengine>=1.1.0:${PORTSDIR}/www/google-appengine \
 		${PYTHON_PKGNAMEPREFIX}simplejson>1.9:${PORTSDIR}/devel/py-simplejson

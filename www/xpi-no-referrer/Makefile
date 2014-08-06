@@ -7,7 +7,7 @@ DISTVERSIONSUFFIX=	-fx
 CATEGORIES=	www
 
 MAINTAINER=	miwi@FreeBSD.org
-COMMENT=	An extension to Open URL without sending referrers information
+COMMENT=	Extension to Open URL without sending referrers information
 
 XPI_NUM=	1999
 XPI_ID=		{e806da17-8400-4b6b-9c34-1bb4fe84aedc}

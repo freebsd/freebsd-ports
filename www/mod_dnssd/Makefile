@@ -9,7 +9,7 @@ MASTER_SITES=	http://0pointer.de/lennart/projects/mod_dnssd/
 PKGNAMEPREFIX=	${APACHE_PKGNAMEPREFIX}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	An Apache module that provides DNS-SD capabilities
+COMMENT=	Apache module that provides DNS-SD capabilities
 
 LIB_DEPENDS=	libavahi-client.so:${PORTSDIR}/net/avahi-app
 

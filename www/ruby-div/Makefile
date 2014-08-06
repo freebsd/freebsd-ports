@@ -9,7 +9,7 @@ PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A web application server using dRuby and ERB2
+COMMENT=	Web application server using dRuby and ERB2
 
 BROKEN=		not staged
 

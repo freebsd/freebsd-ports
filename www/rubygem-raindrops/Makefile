@@ -7,7 +7,7 @@ CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
-COMMENT=	A real-time stats toolkit to show statistics for Rack HTTP servers
+COMMENT=	Real-time stats toolkit to show statistics for Rack HTTP servers
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes

@@ -10,7 +10,7 @@ DISTNAME=	v${PORTVERSION}
 DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	jpaetzel@FreeBSD.org
-COMMENT=	A user-profile application for Django
+COMMENT=	User-profile application for Django
 
 LICENSE=	BSD3CLAUSE
 

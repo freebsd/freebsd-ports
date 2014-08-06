@@ -7,7 +7,7 @@ CATEGORIES=	www
 MASTER_SITES=	SF/${PORTNAME}/XOOPS%20Core%20%28stable%20releases%29/XOOPS_${PORTVERSION}
 
 MAINTAINER=	wen@FreeBSD.org
-COMMENT=	A Dynamic Web CMS
+COMMENT=	Dynamic Web CMS
 
 USE_PHP=	mysql
 

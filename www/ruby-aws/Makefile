@@ -10,7 +10,7 @@ DISTNAME=	ruby-${PORTNAME}-${PORTVERSION}
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	don@na.rim.or.jp
-COMMENT=	A Ruby interface to Amazon Web Services
+COMMENT=	Ruby interface to Amazon Web Services
 
 CONFLICTS=	ruby-amazon-[0-9]*
 

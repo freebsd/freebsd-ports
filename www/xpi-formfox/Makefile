@@ -7,7 +7,7 @@ DISTVERSIONSUFFIX=	-fx
 CATEGORIES=	www
 
 MAINTAINER=	miwi@FreeBSD.org
-COMMENT=	An extension to display form's action
+COMMENT=	Extension to display form's action
 
 XPI_NUM=	1579
 XPI_ID=		formfox@daniel.steinbrook

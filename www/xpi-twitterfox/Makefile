@@ -7,7 +7,7 @@ DISTVERSIONSUFFIX=	-fx
 CATEGORIES=	www
 
 MAINTAINER=	miwi@FreeBSD.org
-COMMENT=	twitterFox firefox plugin.
+COMMENT=	twitterFox firefox plugin
 
 XPI_NUM=	5081
 XPI_ID=		twitternotifier@naan.net

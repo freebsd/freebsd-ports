@@ -11,7 +11,7 @@ DISTFILES=	${EYETHEMES:S/$/.zip/}
 DIST_SUBDIR=	${PKGNAMEPREFIX}${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A themes collection for eyeOS
+COMMENT=	Themes collection for eyeOS
 
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes

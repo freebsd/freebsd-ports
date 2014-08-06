@@ -7,7 +7,7 @@ CATEGORIES=	www
 MASTER_SITES=	http://www.clearsilver.net/downloads/
 
 MAINTAINER=	clsung@FreeBSD.org
-COMMENT=	A fast, powerful, and language-neutral template system
+COMMENT=	Fast, powerful, and language-neutral template system
 
 GNU_CONFIGURE=	yes
 USES=		gmake

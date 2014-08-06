@@ -9,7 +9,7 @@ MASTER_SITES=	http://www.kplaylist.net/archive.php?file=1.8.505&tar=true/
 DISTNAME=	${PORTNAME}.${PORTVERSION}
 
 MAINTAINER=	kevlo@FreeBSD.org
-COMMENT=	A PHP based music database
+COMMENT=	PHP based music database
 
 RUN_DEPENDS=	lame:${PORTSDIR}/audio/lame \
 		oggenc:${PORTSDIR}/audio/vorbis-tools \

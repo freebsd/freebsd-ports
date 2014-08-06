@@ -9,7 +9,7 @@ MASTER_SITES=	http://quixote.ca/releases/ \
 DISTNAME=	Quixote-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A framework for developing web applications in Python
+COMMENT=	Framework for developing web applications in Python
 
 RUN_DEPENDS+=	qpcheck.py:${PORTSDIR}/www/py-qpy
 

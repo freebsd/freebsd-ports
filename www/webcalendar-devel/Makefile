@@ -9,7 +9,7 @@ DISTNAME=	${PORTNAME:S/-devel//g}-${PORTVERSION}
 PORTSCOUT=	limit:^1\.2\. skipb:1
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A web-based calendar application
+COMMENT=	Web-based calendar application
 
 USE_PHP=	pcre session
 WANT_PHP_WEB=	yes

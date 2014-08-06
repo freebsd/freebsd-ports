@@ -9,7 +9,7 @@ MASTER_SITES=	# Undefined
 DISTFILES=	# Undefined
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A meta-port to install all the perl modules used by LiveJournal
+COMMENT=	Meta-port to install all the perl modules used by LiveJournal
 
 RUN_DEPENDS=	p5-Net-Telnet>=0:${PORTSDIR}/net/p5-Net-Telnet \
 		p5-Image-Size>=0:${PORTSDIR}/graphics/p5-Image-Size \

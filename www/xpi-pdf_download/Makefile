@@ -7,7 +7,7 @@ DISTVERSIONSUFFIX=	-fx
 CATEGORIES=	www
 
 MAINTAINER=	ale@FreeBSD.org
-COMMENT=	An extension to handle PDF files
+COMMENT=	Extension to handle PDF files
 
 XPI_ID=		{37E4D8EA-8BDA-4831-8EA1-89053939A250}
 XPI_NUM=	636

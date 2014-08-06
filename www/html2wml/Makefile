@@ -7,7 +7,7 @@ CATEGORIES=	www
 MASTER_SITES=	SF/htmlwml/Html2Wml/${PORTVERSION} http://maddingue.free.fr/softwares/download/Html2Wml/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A CGI that can do on-the-fly HTML to WML conversion
+COMMENT=	CGI that can do on-the-fly HTML to WML conversion
 
 RUN_DEPENDS=	p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
 		p5-Text-Template>=0:${PORTSDIR}/textproc/p5-Text-Template \

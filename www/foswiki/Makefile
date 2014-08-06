@@ -7,7 +7,7 @@ MASTER_SITES=	SF
 DISTNAME=	Foswiki-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A free and open source enterprise wiki
+COMMENT=	Free and open source enterprise wiki
 
 RUN_DEPENDS=	p5-Error>=0.15:${PORTSDIR}/lang/p5-Error \
 		p5-Algorithm-Diff>=1.1901:${PORTSDIR}/devel/p5-Algorithm-Diff \

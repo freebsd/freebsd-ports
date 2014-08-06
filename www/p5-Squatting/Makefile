@@ -9,7 +9,7 @@ MASTER_SITE_SUBDIR=	CPAN:BEPPU
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	tobez@FreeBSD.org
-COMMENT=	A Camping-inspired Web Microframework for Perl
+COMMENT=	Camping-inspired Web Microframework for Perl
 
 COMMON_DEPENDS=	p5-Continuity>=0.991:${PORTSDIR}/www/p5-Continuity \
 		p5-Class-C3-Componentised>0:${PORTSDIR}/devel/p5-Class-C3-Componentised \

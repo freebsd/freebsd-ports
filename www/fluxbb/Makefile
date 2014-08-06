@@ -7,7 +7,7 @@ CATEGORIES=	www
 MASTER_SITES=	http://fluxbb.org/download/releases/${PORTVERSION}/
 
 MAINTAINER=	wen@FreeBSD.org
-COMMENT=	A fast and lightweight PHP-powered discussion board
+COMMENT=	Fast and lightweight PHP-powered discussion board
 
 SUB_FILES=	pkg-message
 NO_BUILD=	yes

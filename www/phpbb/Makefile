@@ -8,7 +8,7 @@ MASTER_SITES=	SF/${PORTNAME}/phpBB%202/phpBB%20v${PORTVERSION}
 DISTNAME=	phpBB-${PORTVERSION}
 
 MAINTAINER=	liukang@cn.freebsd.org
-COMMENT=	A PHP-based bulletin board / discussion forum system
+COMMENT=	PHP-based bulletin board / discussion forum system
 
 LICENSE=	GPLv2
 

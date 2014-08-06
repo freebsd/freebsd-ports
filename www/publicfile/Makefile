@@ -8,7 +8,7 @@ CATEGORIES=	www ftp
 MASTER_SITES=	http://cr.yp.to/publicfile/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A secure, read-only, anonymous HTTP/FTP server
+COMMENT=	Secure, read-only, anonymous HTTP/FTP server
 
 RUN_DEPENDS=	setuidgid:${PORTSDIR}/sysutils/daemontools \
 		tcpserver:${PORTSDIR}/sysutils/ucspi-tcp

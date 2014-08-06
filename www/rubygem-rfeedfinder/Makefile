@@ -7,7 +7,7 @@ CATEGORIES=	www textproc rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	markun@onohara.to
-COMMENT=	A Ruby library to find the feed.
+COMMENT=	Ruby library to find the feed
 
 RUN_DEPENDS=	rubygem-hpricot>=0.6:${PORTSDIR}/www/rubygem-hpricot \
 		rubygem-htmlentities>=4.0.0:${PORTSDIR}/textproc/rubygem-htmlentities \
