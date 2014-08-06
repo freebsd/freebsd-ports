@@ -1,0 +1,21 @@
+%%PERL5_MAN3%%/Data::Perl::Bool::MooseLike.3.gz
+%%PERL5_MAN3%%/Data::Perl::Collection::Array::MooseLike.3.gz
+%%PERL5_MAN3%%/Data::Perl::Collection::Hash::MooseLike.3.gz
+%%PERL5_MAN3%%/Data::Perl::Number::MooseLike.3.gz
+%%PERL5_MAN3%%/Data::Perl::String::MooseLike.3.gz
+%%PERL5_MAN3%%/MooX::HandlesVia.3.gz
+%%SITE_PERL%%/Data/Perl/Bool/MooseLike.pm
+%%SITE_PERL%%/Data/Perl/Collection/Array/MooseLike.pm
+%%SITE_PERL%%/Data/Perl/Collection/Hash/MooseLike.pm
+%%SITE_PERL%%/Data/Perl/Number/MooseLike.pm
+%%SITE_PERL%%/Data/Perl/String/MooseLike.pm
+%%SITE_PERL%%/MooX/HandlesVia.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/MooX/HandlesVia/.packlist
+@dirrmtry %%SITE_PERL%%/Data/Perl/Bool
+@dirrmtry %%SITE_PERL%%/Data/Perl/Collection/Array
+@dirrmtry %%SITE_PERL%%/Data/Perl/Collection/Hash
+@dirrmtry %%SITE_PERL%%/Data/Perl/Number
+@dirrmtry %%SITE_PERL%%/Data/Perl/String
+@dirrmtry %%SITE_PERL%%/MooX
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooX/HandlesVia
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooX
