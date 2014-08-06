@@ -92,23 +92,23 @@ libdata/pkgconfig/dspam.pc
 %%PORTDOCS%%%%DOCSDIR%%/UPDATING
 %%PORTDOCS%%%%DOCSDIR%%/UPGRADING
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-%%MYSQL%%%%EXAMPLESDIR%%/mysql/mysql_objects-4.1.sql
-%%MYSQL%%%%EXAMPLESDIR%%/mysql/mysql_objects-space.sql
-%%MYSQL%%%%EXAMPLESDIR%%/mysql/mysql_objects-speed.sql
-%%MYSQL%%%%EXAMPLESDIR%%/mysql/purge-4.1.sql
-%%MYSQL%%%%EXAMPLESDIR%%/mysql/purge.sql
-%%MYSQL%%%%EXAMPLESDIR%%/mysql/virtual_user_aliases.sql
-%%MYSQL%%%%EXAMPLESDIR%%/mysql/virtual_users.sql
-%%MYSQL%%@dirrm %%EXAMPLESDIR%%/mysql
-%%PGSQL%%%%EXAMPLESDIR%%/pgsql/pgsql_objects.sql
-%%PGSQL%%%%EXAMPLESDIR%%/pgsql/purge.sql
-%%PGSQL%%%%EXAMPLESDIR%%/pgsql/purge-pe.sql
-%%PGSQL%%%%EXAMPLESDIR%%/pgsql/virtual_users.sql
-%%PGSQL%%@dirrm %%EXAMPLESDIR%%/pgsql
-%%SQLITE%%%%EXAMPLESDIR%%/sqlite/purge-2.sql
-%%SQLITE%%%%EXAMPLESDIR%%/sqlite/purge-3.sql
-%%SQLITE%%@dirrm %%EXAMPLESDIR%%/sqlite
-@dirrmtry %%EXAMPLESDIR%%
+%%PORTEXAMPLES%%%%MYSQL%%%%EXAMPLESDIR%%/mysql/mysql_objects-4.1.sql
+%%PORTEXAMPLES%%%%MYSQL%%%%EXAMPLESDIR%%/mysql/mysql_objects-space.sql
+%%PORTEXAMPLES%%%%MYSQL%%%%EXAMPLESDIR%%/mysql/mysql_objects-speed.sql
+%%PORTEXAMPLES%%%%MYSQL%%%%EXAMPLESDIR%%/mysql/purge-4.1.sql
+%%PORTEXAMPLES%%%%MYSQL%%%%EXAMPLESDIR%%/mysql/purge.sql
+%%PORTEXAMPLES%%%%MYSQL%%%%EXAMPLESDIR%%/mysql/virtual_user_aliases.sql
+%%PORTEXAMPLES%%%%MYSQL%%%%EXAMPLESDIR%%/mysql/virtual_users.sql
+%%PORTEXAMPLES%%%%MYSQL%%@dirrm %%EXAMPLESDIR%%/mysql
+%%PORTEXAMPLES%%%%PGSQL%%%%EXAMPLESDIR%%/pgsql/pgsql_objects.sql
+%%PORTEXAMPLES%%%%PGSQL%%%%EXAMPLESDIR%%/pgsql/purge.sql
+%%PORTEXAMPLES%%%%PGSQL%%%%EXAMPLESDIR%%/pgsql/purge-pe.sql
+%%PORTEXAMPLES%%%%PGSQL%%%%EXAMPLESDIR%%/pgsql/virtual_users.sql
+%%PORTEXAMPLES%%%%PGSQL%%@dirrm %%EXAMPLESDIR%%/pgsql
+%%PORTEXAMPLES%%%%SQLITE%%%%EXAMPLESDIR%%/sqlite/purge-2.sql
+%%PORTEXAMPLES%%%%SQLITE%%%%EXAMPLESDIR%%/sqlite/purge-3.sql
+%%PORTEXAMPLES%%%%SQLITE%%@dirrm %%EXAMPLESDIR%%/sqlite
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%
 %%WebUI%%%%WWWDIR%%/admins.sample
 %%WebUI%%%%WWWDIR%%/admin.cgi
 %%WebUI%%%%WWWDIR%%/admingraph.cgi

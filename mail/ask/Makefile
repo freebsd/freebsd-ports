@@ -17,7 +17,7 @@ BINS=		askfilter asksetup utils/asksenders
 SUB_FILES=	pkg-message
 PORTDOCS=	*
 
-OPTIONS_DEFINE=	DOCS
+OPTIONS_DEFINE=	DOCS EXAMPLES
 
 post-extract:
 	@${REINPLACE_CMD} -E \

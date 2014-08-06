@@ -11,8 +11,8 @@ COMMENT=	Version control system
 
 LICENSE=	GPLv2
 
-OPTIONS_DEFINE=		KERBEROS
-OPTIONS_DEFAULT=	KERBEROS
+OPTIONS_DEFINE=	KERBEROS EXAMPLES
+OPTIONS_DEFAULT=KERBEROS
 
 USES=		makeinfo tar:xz uidfix
 WRKSRC=		${WRKDIR}/call/cvs-build
@@ -37,6 +37,6 @@ BROKEN=	does not link
 .endif
 
 pre-install:
-	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/contrib
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/contrib
 
 .include <bsd.port.post.mk>

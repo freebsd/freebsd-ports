@@ -19,31 +19,31 @@ USE_PHP=	yes
 WANT_PHP_WEB=	yes
 DOS2UNIX_REGEX=	.*\.php
 
-EXAMPLESDIR=	${PREFIX}/share/examples/${PORTNAME}
 NO_BUILD=	yes
 SUB_FILES=	pkg-message
 SUB_LIST=	WWWDIR="${WWWDIR}" PORTNAME="${PORTNAME}"
-PLIST_SUB+=	WWWDIR=${WWWDIR} WWWOWN=${WWWOWN} WWWGRP=${WWWGRP} EXAMPLESDIR_REL=${EXAMPLESDIR_REL} \
-			PORTNAME=${PORTNAME}
+PLIST_SUB+=	WWWDIR=${WWWDIR} WWWOWN=${WWWOWN} WWWGRP=${WWWGRP} PORTNAME=${PORTNAME}
+
+OPTIONS_DEFINE=	EXAMPLES
 
 do-install:
-	@if [ ! -d ${STAGEDIR}${WWWDIR} ]; then ${MKDIR} ${STAGEDIR}${WWWDIR} ; fi
-	@cd ${WRKSRC} && ${COPYTREE_SHARE} docs ${STAGEDIR}${EXAMPLESDIR} && ${RM} -rf ${WRKSRC}/docs
-	@cd ${WRKSRC} && ${MV} vbv_learn_more.html ${STAGEDIR}${EXAMPLESDIR}/
-	@cd ${WRKSRC} && ${MV} mcs_learn_more.html ${STAGEDIR}${EXAMPLESDIR}/
-	@cd ${WRKSRC} && ${MV} robots_example.txt ${STAGEDIR}${EXAMPLESDIR}/
-	@cd ${WRKSRC} && ${MV} install.txt ${STAGEDIR}${EXAMPLESDIR}/
-	@cd ${WRKSRC} && ${MV} nddbc.html ${STAGEDIR}${EXAMPLESDIR}/
-	@cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${WWWDIR}/
-	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${STAGEDIR}${WWWDIR}
-	@${CHMOD} -R 0755 ${STAGEDIR}${WWWDIR}
-	@${CHMOD} 0777 ${STAGEDIR}${WWWDIR}/cache
-	@cd ${STAGEDIR}${WWWDIR}/images && ${FIND} . -type d -exec ${CHMOD} 0777 {} \;
-	@cd ${STAGEDIR}${WWWDIR}/includes/languages/english && ${FIND} html_includes -type d -exec ${CHMOD} 0777 {} \;
-	@${CHMOD} 0777 ${STAGEDIR}${WWWDIR}/media
-	@${CHMOD} 0777 ${STAGEDIR}${WWWDIR}/pub
-	@${CHMOD} 0777 ${STAGEDIR}${WWWDIR}/admin/backups
-	@${CHMOD} 0777 ${STAGEDIR}${WWWDIR}/admin/images/graphs
+	@${MKDIR} ${STAGEDIR}${WWWDIR}
+	(cd ${WRKSRC} && ${COPYTREE_SHARE} docs ${STAGEDIR}${EXAMPLESDIR} && ${RM} -rf ${WRKSRC}/docs
+	(cd ${WRKSRC} && ${MV} vbv_learn_more.html ${STAGEDIR}${EXAMPLESDIR}/)
+	(cd ${WRKSRC} && ${MV} mcs_learn_more.html ${STAGEDIR}${EXAMPLESDIR}/)
+	(cd ${WRKSRC} && ${MV} robots_example.txt ${STAGEDIR}${EXAMPLESDIR}/)
+	(cd ${WRKSRC} && ${MV} install.txt ${STAGEDIR}${EXAMPLESDIR}/)
+	(cd ${WRKSRC} && ${MV} nddbc.html ${STAGEDIR}${EXAMPLESDIR}/)
+	(cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${WWWDIR}/)
+	${CHOWN} -R ${WWWOWN}:${WWWGRP} ${STAGEDIR}${WWWDIR}
+	${CHMOD} -R 0755 ${STAGEDIR}${WWWDIR}
+	${CHMOD} 0777 ${STAGEDIR}${WWWDIR}/cache
+	(cd ${STAGEDIR}${WWWDIR}/images && ${FIND} . -type d -exec ${CHMOD} 0777 {} \;)
+	(cd ${STAGEDIR}${WWWDIR}/includes/languages/english && ${FIND} html_includes -type d -exec ${CHMOD} 0777 {} \;)
+	${CHMOD} 0777 ${STAGEDIR}${WWWDIR}/media
+	${CHMOD} 0777 ${STAGEDIR}${WWWDIR}/pub
+	${CHMOD} 0777 ${STAGEDIR}${WWWDIR}/admin/backups
+	${CHMOD} 0777 ${STAGEDIR}${WWWDIR}/admin/images/graphs
 	@${ECHO_CMD} '@exec ${CHOWN} -R ${WWWOWN}:${WWWGRP} ${WWWDIR:S|^${PREFIX}/|%D/|}' >> ${TMPPLIST}
 	@${ECHO_CMD} '@exec ${CHMOD} -R 0755 ${WWWDIR:S|^${PREFIX}/|%D/|}' >> ${TMPPLIST}
 	@${ECHO_CMD} '@exec ${CHMOD} 0777 ${WWWDIR}/cache' >> ${TMPPLIST}

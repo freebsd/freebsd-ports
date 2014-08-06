@@ -7,5 +7,5 @@ libdata/pkgconfig/sqlite.pc
 %%WITH_TCLWRAPPER%%lib/sqlite/libtclsqlite.so
 %%WITH_TCLWRAPPER%%lib/sqlite/pkgIndex.tcl
 %%WITH_TCLWRAPPER%%@dirrm lib/sqlite
-%%EXAMPLESDIR%%/example.tcl
-@dirrm %%EXAMPLESDIR%%
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example.tcl
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%

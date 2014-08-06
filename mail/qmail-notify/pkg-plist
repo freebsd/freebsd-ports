@@ -1,7 +1,7 @@
 bin/qmail-notify
-%%EXAMPLESDIR%%/cron.hourly
-%%EXAMPLESDIR%%/message.txt
-@dirrm %%EXAMPLESDIR%%
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cron.hourly
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/message.txt
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/TODO

@@ -1,4 +1,4 @@
 bin/snort-rep
 man/man1/snort-rep.1.gz
-%%EXAMPLESDIR%%/snort-rep-mail
-@dirrm share/examples/snort-rep
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/snort-rep-mail
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%

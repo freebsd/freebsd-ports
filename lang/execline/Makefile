@@ -16,7 +16,7 @@ WRKSRC=		${WRKDIR}/admin/${DISTNAME}
 DOCS=		package/CHANGES package/README package/THANKS package/TODO \
 		doc/*.html
 
-OPTIONS_DEFINE=	DOCS
+OPTIONS_DEFINE=	DOCS EXAMPLES
 
 do-configure:
 	${ECHO_CMD} "FreeBSD"	> ${WRKSRC}/src/sys/systype
@@ -31,7 +31,7 @@ do-configure:
 		${WRKSRC}/conf-compile/conf-ld
 
 do-build:
-	cd ${WRKSRC} && package/compile
+	(cd ${WRKSRC} && package/compile)
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/command/* ${STAGEDIR}${PREFIX}/bin

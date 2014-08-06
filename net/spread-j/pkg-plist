@@ -1,6 +1,6 @@
 %%JAVAJARDIR%%/%%PORTNAME%%-%%PORTVERSION%%.jar
-%%PORTDOCS%%%%EXAMPLESDIR%%/java/Flooder.java
-%%PORTDOCS%%%%EXAMPLESDIR%%/java/recThread.java
-%%PORTDOCS%%%%EXAMPLESDIR%%/java/User.java
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/java
-%%PORTDOCS%%@dirrmtry %%EXAMPLESDIR%%
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/java/Flooder.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/java/recThread.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/java/User.java
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/java
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%

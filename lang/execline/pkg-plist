@@ -98,7 +98,7 @@ lib/libexls1.a
 %%PORTDOCS%%%%DOCSDIR%%/upgrade.html
 %%PORTDOCS%%%%DOCSDIR%%/wait.html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-%%EXAMPLESDIR%%/execline-shell
-%%EXAMPLESDIR%%/execline-startup
-@dirrm %%EXAMPLESDIR%%
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/execline-shell
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/execline-startup
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
 @dirrm include/execline
