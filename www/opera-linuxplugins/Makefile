@@ -3,6 +3,7 @@
 
 PORTNAME=	opera
 PORTVERSION=	${OPERA_VER}
+PORTREVISION=	1
 CATEGORIES=	www linux
 MASTER_SITES=	ftp://opera.inode.at/${MASTER_SITES_VER_PATH}/ \
 		ftp://ftp.opera.com/pub/opera/${MASTER_SITES_VER_PATH}/ \
@@ -15,7 +16,7 @@ MASTER_SITES=	ftp://opera.inode.at/${MASTER_SITES_VER_PATH}/ \
 PKGNAMESUFFIX=	-linuxplugins
 DISTNAME=	${PORTNAME}-${OPERA_VER}-${OPERA_BUILD}.i386.linux
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Linux plugin support for the native Opera browser
 
 RUN_DEPENDS=	${LOCALBASE}/lib/opera/pluginwrapper/operapluginwrapper:${PORTSDIR}/${PKGCATEGORY}/opera

@@ -188,6 +188,7 @@
     SUBDIR += libxkbui
     SUBDIR += libxklavier
     SUBDIR += libxshmfence
+    SUBDIR += linux-c6-xorg-libs
     SUBDIR += linux-f10-xorg-libs
     SUBDIR += listres
     SUBDIR += lsw

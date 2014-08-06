@@ -20,10 +20,8 @@ PKGNAMEPREFIX=	linux-
 DISTNAME=	armyops250-linux
 EXTRACT_SUFX=	.run
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	acm@FreeBSD.org
 COMMENT=	America's Army (Linux version)
-
-BROKEN=		Unfetchable
 
 USE_LINUX=	yes
 NO_BUILD=	yes
@@ -33,7 +31,6 @@ NO_WRKSUBDIR=	yes
 ARMYDIR=	${PREFIX}/lib/${PORTNAME}
 INSTALL_DIR=	${INSTALL} -d -o ${BINOWN} -g ${BINGRP} -m ${BINMODE}
 
-NO_STAGE=	yes
 do-extract:
 	@${MKDIR} ${WRKSRC}
 	@cd ${WRKSRC} && \
@@ -42,25 +39,25 @@ do-extract:
 	@${MV} ${WRKSRC}/bin/armyops ${WRKSRC}/armyops
 
 do-install:
-	@${MKDIR} ${ARMYDIR}
+	@${MKDIR} ${STAGEDIR}${ARMYDIR}
 .for FILE in ArmyOps.xpm README.linux ArmyOps250_EULA.txt
-	@${INSTALL_DATA} ${WRKSRC}/${FILE} ${ARMYDIR}
+	@${INSTALL_DATA} ${WRKSRC}/${FILE} ${STAGEDIR}${ARMYDIR}
 .endfor
 .for FILE in armyops250.tar.bz2 binaries.tar.bz2
-	@${TAR} xfpj ${WRKSRC}/${FILE} -C ${ARMYDIR}/
+	@${TAR} xfpj ${WRKSRC}/${FILE} -C ${STAGEDIR}${ARMYDIR}/
 .endfor
 .for DIR in Animations Briefings Demos Help KarmaData Maps Movies Music Sounds StaticMeshes \
 	System Textures
 	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${ARMYDIR}/${DIR}
-	@${FIND} ${ARMYDIR}/${DIR} -type f -print0 | \
+	@${FIND} ${STAGEDIR}${ARMYDIR}/${DIR} -type f -print0 | \
 		${XARGS} -0 ${CHMOD} ${SHAREMODE}
-	@${FIND} ${ARMYDIR}/${DIR} -type d -print0 | \
+	@${FIND} ${STAGEDIR}${ARMYDIR}/${DIR} -type d -print0 | \
 		${XARGS} -0 ${CHMOD} ${BINMODE}
 .endfor
 .for FILE in System/armyops-bin System/server-bin System/pb/pbweb.x86
 	@${CHMOD} ${BINMODE} ${ARMYDIR}/${FILE}
 .endfor
-	@${INSTALL_SCRIPT} ${WRKSRC}/armyops ${ARMYDIR}
-	@${LN} -s ${ARMYDIR}/armyops ${PREFIX}/bin/armyops
+	@${INSTALL_SCRIPT} ${WRKSRC}/armyops ${STAGEDIR}${ARMYDIR}
+	@${LN} -s ${STAGEDIR}${ARMYDIR}/armyops ${STAGEDIR}${PREFIX}/bin/armyops
 
 .include <bsd.port.mk>

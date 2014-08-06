@@ -10,7 +10,7 @@ MASTER_SITES=	http://nice.freedesktop.org/releases/
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Library and transmitter that implements ICE-19
 
-USES=		gettext libtool:keepla pathfix pkgconfig
+USES=		gettext gmake libtool:keepla pathfix pkgconfig
 USE_LDCONFIG=	yes
 USE_GNOME=	glib20
 GNU_CONFIGURE=	yes
@@ -32,12 +32,10 @@ CONFIGURE_ARGS+=--disable-gupnp
 
 .if defined(LIBNICE_SLAVE)
 . if ${LIBNICE_SLAVE}==gstreamer010
-USES+=		gmake
 USE_GSTREAMER=	yes
 CONFIGURE_ARGS+=--without-gstreamer --with-gstreamer-0.10
 . endif
 . if ${LIBNICE_SLAVE}==gstreamer1
-USES+=		gmake
 USE_GSTREAMER1=	yes
 CONFIGURE_ARGS+=--with-gstreamer --without-gstreamer-0.10
 . endif

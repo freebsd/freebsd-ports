@@ -20,7 +20,7 @@ NO_BUILD=	yes
 DATADIR=	${PREFIX}/lib/${PKGNAMEPREFIX}${PORTNAME}
 SUB_FILES=	defcon
 
-OPTIONS_DEFINE=	NVIDIA DOCS
+OPTIONS_DEFINE=	NVIDIA
 NVIDIA_DESC=	support for nvidia
 
 .include <bsd.port.options.mk>

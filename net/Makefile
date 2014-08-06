@@ -355,6 +355,7 @@
     SUBDIR += linc-reference
     SUBDIR += linknx
     SUBDIR += linphone
+    SUBDIR += linux-c6-openldap
     SUBDIR += linux-f10-nss_ldap
     SUBDIR += linux-f10-openldap
     SUBDIR += linuxigd

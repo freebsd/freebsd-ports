@@ -1,0 +1,20 @@
+********************************************************************************
+
+You have just installed the Linux client for the SpiderOak service.
+
+Note that SpiderOak does not follow symbolic links when doing a backup scan,
+so if you want to backup, for example, your home directory, you cannot simply
+create a link under /compat/linux, but you have to use nullfs(5).
+If you do not do that, you can only backup files under ~/Desktop and
+~/Documents.
+
+Example with nullfs:
+
+    # mkdir /usr/compat/linux/home
+    # mount_nullfs /usr/home /usr/compat/linux/home
+
+You may want to add the following line to /etc/fstab
+
+/usr/home /usr/compat/linux/home nullfs rw 0 0
+
+********************************************************************************

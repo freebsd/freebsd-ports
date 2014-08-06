@@ -1,0 +1,7 @@
+If this is your first time installing flash each user must run:
+
+	nspluginwrapper -v -a -i
+
+If you are updating flash each user must run:
+
+	nspluginwrapper -v -a -u

@@ -1,5 +1,5 @@
 # Created by: Alex Semenyaka <alex@rinet.ru>
-# $FreeBSD$
+# $FreeBSD: head/misc/opencyc/Makefile 340722 2014-01-22 17:00:46Z mat $
 
 PORTNAME=	opencyc
 PORTVERSION=	0.7.0
@@ -18,7 +18,7 @@ NO_BUILD=	yes
 PLIST_SUB=	PORTVERSION="${PORTVERSION}"
 
 post-extract:
-	@cd ${WRKSRC}/doc && ${RM} '#migration.txt#' 'package-list.~1~' '.#faq' '.#migration.txt'
+	cd ${WRKSRC}/doc && ${RM} '#migration.txt#' 'package-list.~1~' '.#faq' '.#migration.txt'
 
 pre-patch:
 	@${BRANDELF} -t Linux ${WRKSRC}/run/bin/latest.bin

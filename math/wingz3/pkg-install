@@ -1,0 +1,63 @@
+#!/bin/sh
+if [ "$2" != "POST-INSTALL" ]; then
+  exit 0
+fi
+cat <<End_Of_License
+Wingz 1.4.2 is licensed as shareware defined as follows.
+
+Definition of Shareware
+-----------------------
+
+Shareware distribution gives users a chance to try software
+before buying it. If you try a Shareware program and continue
+using it, you are expected to register. Individual programs
+differ on details -- some request registration while others
+require it, some specify a maximum trial period. With
+registration, you get anything from the simple right to continue
+using the software to an updated program with printed manual.
+
+Copyright laws apply to both Shareware and commercial software,
+and the copyright holder retains all rights, with a few specific
+exceptions as stated below. Shareware authors are accomplished
+programmers, just like commercial authors, and the programs are
+of comparable quality. (In both cases, there are good programs
+and bad ones!) The main difference is in the method of
+distribution. The author specifically grants the right to copy
+and distribute the software, either to all and sundry or to a
+specific group. For example, some authors require written
+permission before a commercial disk vendor may copy their
+Shareware.
+
+Shareware is a distribution method, not a type of software. You
+should find software that suits your needs and pocketbook,
+whether it's commercial or Shareware. The Shareware system makes
+fitting your needs easier, because you can try before you buy.
+And because the overhead is low, prices are low also. Shareware
+has the ultimate money-back guarantee -- if you don't use the
+product, you don't pay for it.
+
+Disclaimer and Agreement
+------------------------
+
+Users of Wingz 1.4.2 must accept this disclaimer of warranty:
+
+"Wingz 1.4.2 is supplied as is. IISC disclaims all warranties,
+expressed or implied, including, without limitation, the
+warranties of merchantability and of fitness for any purpose.
+IISC assumes no liability for damages, direct or consequential,
+which may result from the use of Wingz 1.4.2"
+
+Wingz 1.4.2 is a "shareware program" and is provided at no charge
+to the user for evaluation. Feel free to share it with your
+friends, but do not give it away altered or as part of another
+system.  If you find this program useful and find that you are
+using Wingz 1.4.2 and continue to use Wingz 1.4.2 after a
+45 day trial period, you must make a registration payment to IISC.
+
+Commercial users of Wingz 1.4.2 must register and pay for their
+copies within 30 days of first use or their license is withdrawn.
+Site-License arrangements may be made by contacting IISC.
+Anyone distributing Wingz 1.4.2 for any kind of remuneration must
+first contact IISC for authorization (see the REGISTER file for the
+address).
+End_Of_License

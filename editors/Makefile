@@ -240,6 +240,7 @@
     SUBDIR += ssam
     SUBDIR += ssed
     SUBDIR += sted
+    SUBDIR += sublime
     SUBDIR += tamago
     SUBDIR += tea
     SUBDIR += teco

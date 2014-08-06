@@ -1,5 +1,5 @@
 # Created by: bsam
-# $FreeBSD$
+# $FreeBSD: head/emulators/linux_base-f10/Makefile 329540 2013-10-06 09:08:22Z antoine $
 
 PORTNAME=		f10
 PORTVERSION=		10
@@ -192,6 +192,10 @@ do-build:
 
 # Restore the status quo for usr/bin/*db4* files
 #	@${CHMOD} u-w ${WRKSRC}/usr/bin/*db4*
+
+# Install locales
+	@${MV} ${WRKSRC}/usr/lib/locale/locale-archive.tmpl \
+		${WRKSRC}/usr/lib/locale/locale-archive
 
 do-install:
 #

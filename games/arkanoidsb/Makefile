@@ -6,7 +6,7 @@ PORTVERSION=	1.3.2.10
 CATEGORIES=	games
 MASTER_SITES=	http://www.wegroup.org/downloads/
 
-MAINTAINER=	games@FreeBSD.org
+MAINTAINER=	nemysis@FreeBSD.org
 COMMENT=	Arkanoid and space game
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
@@ -20,6 +20,7 @@ USE_LINUX_APPS=	libogg sdlmixer sdlimage
 SUB_FILES=	${PORTNAME}.sh
 
 PORTDOCS=	README
+
 OPTIONS_DEFINE=	DOCS
 
 DESKTOP_ENTRIES="Arkanoid: Space Ball" "" "${PORTNAME}" \

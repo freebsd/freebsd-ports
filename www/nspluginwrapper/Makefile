@@ -1,9 +1,9 @@
 # Created by: Dave Grochowski
-# $FreeBSD$
+# $FreeBSD: head/www/nspluginwrapper/Makefile 343683 2014-02-10 20:59:11Z jkim $
 
 PORTNAME=	nspluginwrapper
 PORTVERSION=	1.4.4
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	www linux emulators
 MASTER_SITES=	http://nspluginwrapper.org/download/ \
 		LOCAL/jkim \
@@ -27,7 +27,7 @@ ONLY_FOR_ARCHS=	i386 amd64
 HAS_CONFIGURE=	yes
 USE_GNOME=	glib20 gtk20
 USE_LDCONFIG=	yes
-USE_LINUX=	f10
+USE_LINUX=	yes
 USE_LINUX_APPS=	gtk2
 USE_XORG=	x11 xext xt
 USES=		gmake pkgconfig

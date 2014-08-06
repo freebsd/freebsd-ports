@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $FreeBSD$
+# $FreeBSD: head/games/linux-nwnclient/files/nwmovies.pl 340872 2014-01-24 00:14:07Z mat $
 #
 
 # There is a Perl script that accompanies the NWMovies distfile, however, it

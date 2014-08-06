@@ -3,7 +3,7 @@
 
 PORTNAME=		afaapps
 PORTVERSION=		2.7
-PORTREVISION=		4
+PORTREVISION=		5
 CATEGORIES=		sysutils linux
 MASTER_SITES=		ftp://ftp.us.dell.com/scsi-raid/
 PKGNAMEPREFIX=		linux-
@@ -23,10 +23,13 @@ ONLY_FOR_ARCHS=	i386 amd64
 BRANDELF_FILES=	usr/sbin/afacli
 SRC_DISTFILES=	# empty, no sources available
 
-RPMFILE=	${PORTNAME}-${PORTVERSION}-2.${LINUX_RPM_ARCH}.rpm
+LINUX_RPM_ARCH=	i386
+RPMVERSION=	2
 EXTRACT_AFTER_ARGS=	-O ${RPMFILE} | ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} - ./usr/sbin/afacli.bin ./usr/sbin/getcfg.afa
 
-NO_STAGE=	yes
+PLIST_FILES=	usr/sbin/afacli  \
+				usr/sbin/getcfg.afa
+
 post-extract:
 	@${MV} ${WRKDIR}/usr/sbin/afacli.bin ${WRKDIR}/usr/sbin/afacli
 

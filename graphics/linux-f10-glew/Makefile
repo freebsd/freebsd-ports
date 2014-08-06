@@ -1,19 +1,18 @@
-# $FreeBSD$
+# $FreeBSD: head/graphics/linux-f10-glew/Makefile 340722 2014-01-22 17:00:46Z mat $
 
 PORTNAME=	glew
 PORTVERSION=	1.5.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics linux
-PKGNAMEPREFIX=	linux-f10-
-DISTNAME=	${PORTNAME}-${PORTVERSION}-${RPMVERSION}
 
 MAINTAINER=	eadler@FreeBSD.org
 COMMENT=	OpenGL Extension Wrangler Library (Linux Fedora 10)
 
 ONLY_FOR_ARCHS=	i386 amd64
+USE_LINUX=	f10
 USE_LINUX_RPM=	yes
 LINUX_NAME=	glew
-LINUX_DIST_VER=	10
+
 RPMVERSION=	1.fc10
 USE_LDCONFIG=	yes
 BRANDELF_DIRS=	usr/bin

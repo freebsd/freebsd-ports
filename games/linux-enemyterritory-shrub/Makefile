@@ -3,7 +3,7 @@
 
 PORTNAME=	shrub
 PORTVERSION=	1.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games linux
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	alepulver
@@ -15,7 +15,7 @@ COMMENT=	Shrub - An Enemy Territory Modification
 
 RUN_DEPENDS=	et:${PORTSDIR}/games/linux-enemyterritory
 
-USES=		zip
+USES=	zip
 USE_LINUX=	yes
 NO_WRKSUBDIR=	yes
 
@@ -37,7 +37,7 @@ do-install:
 .for f in et etded
 	${INSTALL_SCRIPT} ${WRKSRC}/${f}-${PORTNAME} ${STAGEDIR}${PREFIX}/bin
 .endfor
-	@${MKDIR} ${STAGEDIR}${DATADIR}
+	${MKDIR} ${STAGEDIR}${DATADIR}
 	${INSTALL_PROGRAM} ${WRKSRC}/qagame.mp.i386.so ${STAGEDIR}${DATADIR}
 
 .include <bsd.port.mk>

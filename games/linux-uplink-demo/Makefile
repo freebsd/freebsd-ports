@@ -25,7 +25,7 @@ SUB_FILES=	uplink
 SUB_LIST=	LINUXBASE=${LINUXBASE}
 DOCFILES=	license.txt mods.txt Readme-UplinkSupport.txt readme.txt
 
-OPTIONS_DEFINE=	NVIDIA DOCS
+OPTIONS_DEFINE=	NVIDIA
 NVIDIA_DESC=	support for nvidia
 
 .include <bsd.port.options.mk>
@@ -34,7 +34,7 @@ NVIDIA_DESC=	support for nvidia
 RUN_DEPENDS+=	${LINUXBASE}/usr/lib/libGL.so.1:${PORTSDIR}/x11/nvidia-driver
 USE_LINUX_APPS+=libglu
 .else
-USE_LINUX_APPS+=dri
+USE_LINUX_APPS+=	dri
 .endif
 
 do-extract:

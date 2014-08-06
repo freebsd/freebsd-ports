@@ -1,5 +1,5 @@
 # Created by: alepulver
-# $FreeBSD$
+# $FreeBSD: head/games/linux-enemyterritory-omni-bot-0660/Makefile 340722 2014-01-22 17:00:46Z mat $
 
 PORTNAME=	omni-bot
 PORTVERSION=	0.660
@@ -18,14 +18,14 @@ VERSTR=	${PORTVERSION:C/([0-9])\.([0-9]+)/\1\2/}
 PKGNAMESUFFIX=	-${VERSTR}
 PLIST_SUB=	VERSTR="${VERSTR}"
 
-USES=		zip
+USES=	zip
 USE_LINUX=	yes
 NO_WRKSUBDIR=	yes
 
 DATADIR=	${PREFIX}/lib/enemyterritory/${PORTNAME}-${VERSTR}
 DOCSDIR=	${PREFIX}/share/doc/enemyterritory-${PORTNAME}-${VERSTR}
 
-OPTIONS_DEFINE=	DOCS
+.include <bsd.port.options.mk>
 
 do-build:
 .for f in et etded

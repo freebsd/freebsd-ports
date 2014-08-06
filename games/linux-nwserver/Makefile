@@ -9,8 +9,8 @@ MASTER_SITES=	http://nwdownloads.bioware.com/neverwinternights/linux/${PORTVERSI
 PKGNAMEPREFIX=	linux-
 DISTNAME=	linuxserver${PORTVERSION:S/.//}
 
-MAINTAINER=	ports@freebsd.org
-COMMENT=	Neverwinter Nights Linux Dedicated Server
+MAINTAINER=	apeiron@coitusmentis.info
+COMMENT=	Neverwinter Nights Linux (x86) Dedicated Server
 
 OPTIONS_DEFINE=	DOCS
 

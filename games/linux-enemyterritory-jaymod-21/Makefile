@@ -3,7 +3,7 @@
 
 PORTNAME=	jaymod
 PORTVERSION=	2.1.7
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	games linux
 MASTER_SITES=	http://etmod.googlecode.com/files/ \
 		http://www.zenenterprises.biz/bud/jaymod/ \
@@ -21,8 +21,7 @@ PKGNAMESUFFIX=	-${VERSTR}
 PLIST_SUB=	VERSTR="${VERSTR}"
 
 USE_LINUX=	yes
-
-PORTSCOUT=	limit:^2\.1\.7
+USES=	shebangfix
 
 OPTIONS_DEFINE=	DOCS OMNIBOT
 OMNIBOT_DESC=	Install Omni-Bot 0.660 for bot support
@@ -33,10 +32,12 @@ DOCSDIR=	${PREFIX}/share/doc/enemyterritory-${PORTNAME}-${VERSTR}
 CLIENT_PK3=	${PORTNAME}-${PORTVERSION}.pk3
 PLIST_SUB+=	CLIENT_PK3="${CLIENT_PK3}"
 
-OB_VERSTR=	0660
-OMNIBOT_RUN_DEPENDS=	et-omni-bot-${OB_VERSTR}:${PORTSDIR}/games/linux-enemyterritory-omni-bot-${OB_VERSTR}
-
 .include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MOMNIBOT}
+OB_VERSTR=	0660
+RUN_DEPENDS+=	et-omni-bot-${OB_VERSTR}:${PORTSDIR}/games/linux-enemyterritory-omni-bot-${OB_VERSTR}
+.endif
 
 do-build:
 .for f in et etded
@@ -47,18 +48,15 @@ do-build:
 
 do-install:
 .for f in et etded
-	@${INSTALL_SCRIPT} ${WRKSRC}/${f}-${PORTNAME}-${VERSTR} ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/${f}-${PORTNAME}-${VERSTR} ${STAGEDIR}${PREFIX}/bin
 .endfor
-	@${MKDIR} ${STAGEDIR}${DATADIR}
-	@${INSTALL_PROGRAM} ${WRKSRC}/qagame.mp.i386.so ${STAGEDIR}${DATADIR}
-	@cd ${WRKSRC} && ${INSTALL_DATA} ${CLIENT_PK3} ${STAGEDIR}${DATADIR}
-.for f in jaymod.cfg server.cfg
-	@${CP} -p ${WRKSRC}/${f} ${STAGEDIR}${DATADIR}/${f}.sample
-.endfor
-	@${CP} -r ${WRKSRC}/linux ${WRKSRC}/mapscripts ${STAGEDIR}${DATADIR}
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-.for f in README.txt doc/jaymod.pdf
-	@cd ${WRKSRC} && ${INSTALL_DATA} ${f} ${STAGEDIR}${DOCSDIR}
-.endfor
+	${MKDIR} ${STAGEDIR}${DATADIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/qagame.mp.i386.so ${STAGEDIR}${DATADIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} ${CLIENT_PK3} *.cfg ${STAGEDIR}${DATADIR}
+	${CP} -r ${WRKSRC}/linux ${WRKSRC}/mapscripts ${STAGEDIR}${DATADIR}
+.if ${PORT_OPTIONS:MDOCS}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} README.txt doc/jaymod.pdf ${STAGEDIR}${DOCSDIR}
+.endif
 
 .include <bsd.port.mk>

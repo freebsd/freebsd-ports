@@ -1,0 +1,6 @@
+The freedesktop.org project provides a shared high-color desktop
+icon theme shell for use under both KDE and GNOME desktops. This
+is a glue port providing a symlink so that linux apps find their
+way around.
+
+WWW: http://www.freedesktop.org/Standards/icon-theme-spec

@@ -12,7 +12,7 @@ EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Scalable high-performance GUI Internet Mail User Agent
+COMMENT=	A scalable high-performance GUI internet Mail User Agent
 OPTIONS_DEFINE=	DOCS
 
 NO_WRKSUBDIR=	yes

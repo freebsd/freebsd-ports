@@ -1,0 +1,16 @@
+#!/bin/sh
+
+# The following combines the effects of ${WINGZ3}/bin/WingzPro
+# and the ${WINGZ3}/bin/wzenv (yes, it does set the LD_RUN_PATH,
+# while exporting the SHLIB_PATH).
+WINGZ3=_X11BASE_/Wingz3
+WZUSER="IISC"
+WZCOMPANY="IISC"
+WZPLATFORM=LINUX
+LD_RUN_PATH=$WINGZ3/lib/$WZPLATFORM:$LD_RUN_PATH
+WZBSDECHO=TRUE
+
+export WINGZ3 WZCOMPANY WZUSER WZPLATFORM SHLIB_PATH WZBSDECHO
+
+# Invoke the binary directly:
+exec ${WINGZ3}/bin/LINUX/WingzPro "$@"

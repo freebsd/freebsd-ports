@@ -66,7 +66,6 @@ bin/nwn
 %%DATADIR%%/nwn.ini
 %%DIAMOND%%%%DATADIR%%/nwncdkey.ini
 %%DATADIR%%/nwserver
-%%ORIGINAL%%%%DATADIR%%/override/._iit_medkit_001.tga
 %%ORIGINAL%%%%DATADIR%%/override/iit_medkit_001.tga
 %%DATADIR%%/override/iit_midmisc_029.tga
 %%DATADIR%%/override/load_legal.tga

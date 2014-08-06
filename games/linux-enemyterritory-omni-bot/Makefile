@@ -3,6 +3,7 @@
 
 PORTNAME=	omni-bot
 PORTVERSION=	0.831
+PORTREVISION=	1
 CATEGORIES=	games linux
 MASTER_SITES=	http://googledrive.com/host/0BzZDKd40GAICUkZTaDJQQ2FKRTg/
 PKGNAMEPREFIX=	linux-enemyterritory-
@@ -14,7 +15,7 @@ COMMENT=	Omni-Bot is a bot for Enemy Territory
 
 RUN_DEPENDS=	et:${PORTSDIR}/games/linux-enemyterritory
 
-USES=		zip
+USES=	zip
 USE_LINUX=	yes
 NO_WRKSUBDIR=	yes
 

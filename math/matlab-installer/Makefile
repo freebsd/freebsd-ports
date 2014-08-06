@@ -3,7 +3,7 @@
 
 PORTNAME=	matlab-installer
 PORTVERSION=	0.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math science java
 MASTER_SITES=	http://acadix.biz/Ports/distfiles/ \
 		http://personalpages.tds.net/~jwbacon/Ports/distfiles/
@@ -11,17 +11,15 @@ MASTER_SITES=	http://acadix.biz/Ports/distfiles/ \
 MAINTAINER=	jwbacon@tds.net
 COMMENT=	Easy installation of Linux Matlab(r) on FreeBSD
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 
-# Move devtools depend to USE_LINUX_APPS when possible
 RUN_DEPENDS=	mount_cd9660_image:${PORTSDIR}/sysutils/diskimage-tools \
 		auto-ask:${PORTSDIR}/sysutils/auto-admin \
 		webbrowser:${PORTSDIR}/www/webbrowser \
-		${LINUXBASE}/usr/bin/gfortran:${PORTSDIR}/devel/linux-f10-devtools
 
 USES=		tar:xz
 USE_LINUX=	yes
-USE_LINUX_APPS=	ncurses-base dri
+USE_LINUX_APPS=	ncurses-base dri devtools
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
 JAVA_OS=	linux

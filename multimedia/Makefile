@@ -82,6 +82,7 @@
     SUBDIR += gmtk
     SUBDIR += gnome-mplayer
     SUBDIR += gnome-subtitles
+    SUBDIR += google-hangout
     SUBDIR += gpac-libgpac
     SUBDIR += gpac-mp4box
     SUBDIR += gpodder
@@ -195,6 +196,8 @@
     SUBDIR += libxine
     SUBDIR += libxspf
     SUBDIR += libzen
+    SUBDIR += linux-c6-libtheora
+    SUBDIR += linux-c6-libv4l
     SUBDIR += linux-f10-libtheora
     SUBDIR += linux-f10-libv4l
     SUBDIR += linux-realplayer

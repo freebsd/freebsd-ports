@@ -1,4 +1,4 @@
-# $FreeBSD$
+# $FreeBSD: head/games/linux-coldwar-demo/Makefile 340092 2014-01-17 18:09:49Z mva $
 
 PORTNAME=	coldwar-demo
 PORTVERSION=	1.1

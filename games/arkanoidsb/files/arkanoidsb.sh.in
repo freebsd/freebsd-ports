@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $FreeBSD$
+# $FreeBSD: head/games/arkanoidsb/files/arkanoidsb.sh.in 331761 2013-10-27 11:58:23Z nemysis $
 #
 
 cd "%%DATADIR%%"

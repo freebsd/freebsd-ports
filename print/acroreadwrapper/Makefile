@@ -3,6 +3,7 @@
 
 PORTNAME=	acroreadwrapper
 PORTVERSION=	0.0.20130208
+PORTREVISION=	1
 CATEGORIES=	print
 MASTER_SITES=	http://people.allbsd.org/~hrs/FreeBSD/
 DISTNAME=	linux_adobe_kmod-${PORTVERSION:E}
@@ -23,7 +24,7 @@ PLIST_DIRS=	${RELKMODDIR}
 SUB_FILES=	acroread
 SUB_LIST=	ACROBASE8=${ACROBASE8} \
 		ACROBASE9=${ACROBASE9} \
-		ADOBE_LANG=${ADOBE_LANG:tu} \
+		ADOBE_LANG=${ADOBE_LANG:U} \
 		INSTALLDIR=${INSTALLDIR} \
 		LINUXBASE=${LINUXBASE} \
 		LINUXSH=${LINUXBASE}/bin/sh \
@@ -36,7 +37,7 @@ MAKE_ENV=	DESTDIR=${PREFIX}/
 ADOBEBASE=	Adobe
 ACROBASE8=	${ADOBEBASE}/Reader8
 ACROBASE9=	${ADOBEBASE}/Reader9
-PLUGINDIR=	lib/npapi/linux-acroread
+PLUGINDIR=	lib/browser_plugins/linux-acroread
 KMODDIR=	${PREFIX}/libexec/linux_adobe
 RELKMODDIR=	libexec/linux_adobe
 

@@ -1,5 +1,5 @@
 # Created by: Michael Durian <durian@shadetreesoftware.com>
-# $FreeBSD$
+# $FreeBSD: head/cad/linux-eagle5/Makefile 348405 2014-03-16 13:28:54Z riggs $
 
 PORTNAME=	eagle5
 PORTVERSION=	${EAGLEVERSION}
@@ -11,7 +11,7 @@ DISTNAME=	eagle-lin-${EAGLEVERSION}
 EXTRACT_SUFX=	.run
 
 MAINTAINER=	riggs@FreeBSD.org
-COMMENT=	Easy to use, yet powerful tool for designing printed circuit boards
+COMMENT=	An easy to use, yet powerful tool for designing printed circuit boards
 
 LICENSE=	Eagle
 LICENSE_NAME=	Eagle End User License Agreement

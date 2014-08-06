@@ -3,7 +3,7 @@
 
 PORTNAME=	linux_kdump
 PORTVERSION=	1.5
-PORTREVISION=	2
+PORTREVISION=	333
 CATEGORIES=	devel linux
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	marcel
@@ -11,9 +11,10 @@ MASTER_SITE_SUBDIR=	marcel
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	Linux-compatibility ktrace.out processor
 
-BUILD_DEPENDS=	${LINUXBASE}/usr/bin/gcc:${PORTSDIR}/emulators/linux_base-gentoo-stage3
+USE_LINUX=	yes
+USE_LINUX_APPS=	devtools
+BUILD_DEPENDS=	${RUN_DEPENDS} # USE_LINUX_APPS only sets RUN_DEPENDS
 
-USES=		uidfix
 ONLY_FOR_ARCHS=	i386 amd64
 NO_MANCOMPRESS=	yes
 PLIST_FILES=	bin/linux_kdump man/man1/linux_kdump.1.gz
@@ -30,16 +31,8 @@ IGNORE=	requires kernel source present in ${SRC_BASE}/sys
 .if !exists(${SRC_BASE}/usr.bin/ktrace/subr.c)
 IGNORE=	requires ktrace source present in ${SRC_BASE}/usr.bin/ktrace
 .endif
-.if exists(${LINUXBASE}/etc/fedora-release)
-IGNORE=	does not build with the default linux base, use the package instead
+.if ! (exists(${LINUXBASE}/etc/fedora-release) || exists(${LINUXBASE}/etc/centos-release))
+IGNORE=	does not build without a linux base, use the package instead
 .endif
-
-pre-install:
-	${MKDIR} ${STAGEDIR}/bin ${STAGEDIR}/man/man1
-
-post-install:
-	${MV} -i ${STAGEDIR}/bin/linux_kdump ${STAGEDIR}/${PREFIX}/bin
-	${MV} -i ${STAGEDIR}/man/man1/linux_kdump.1.gz ${STAGEDIR}/${PREFIX}/man/man1
-	${RMDIR} ${STAGEDIR}/bin ${STAGEDIR}/man/man1 ${STAGEDIR}/man
 
 .include <bsd.port.post.mk>

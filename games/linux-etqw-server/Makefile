@@ -13,20 +13,24 @@ PKGNAMESUFFIX=	-server
 DISTNAME=	ETQW${PKGNAMESUFFIX}-1.5-full.x86
 EXTRACT_SUFX=	.run
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ayu@commun.jp
 COMMENT=	Enemy Territory: QUAKE Wars Server for Linux
 
 NO_CDROM=	Redistribution is limited
 NO_PACKAGE=	Package will be 435MB, set FORCE_PACKAGE if you really want it
 NO_BUILD=	yes
 
+OPTIONS_DEFINE=	DOCS
+
 ONLY_FOR_ARCHS=	i386 amd64
-USE_LINUX=	yes
 USES=		zip:infozip
+USE_LINUX=	yes
 
 ETQWDIR=	${PREFIX}/lib/${PORTNAME}${PKGNAMESUFFIX}
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}${PKGNAMESUFFIX}
-OPTIONS_DEFINE=	DOCS
+
+.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 do-extract:
 	@${MKDIR} ${WRKSRC}
@@ -57,9 +61,11 @@ do-install:
 		${FIND} pb -type f \
 			-exec ${INSTALL_DATA} "{}" "${STAGEDIR}${ETQWDIR}/{}" \;
 
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for FILE in EULA.txt README.txt copyrights.txt etqwtv.txt readme_1_5_patch.txt server_readme.txt pb/PBEULA.txt
 	@${INSTALL_DATA} ${WRKSRC}/data/${FILE} ${STAGEDIR}${DOCSDIR}
 .endfor
+.endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

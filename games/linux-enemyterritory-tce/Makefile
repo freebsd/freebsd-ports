@@ -1,5 +1,5 @@
 # Created by: Jean-Yves Lefort <jylefort@FreeBSD.org>
-# $FreeBSD$
+# $FreeBSD: head/games/linux-enemyterritory-tce/Makefile 334056 2013-11-17 03:56:20Z danilo $
 
 PORTNAME=	enemyterritory-tce
 PORTVERSION=	0.49

@@ -1,19 +1,17 @@
 # Created by: Stas Timokhin <devel@stasyan.com>
-# $FreeBSD$
+# $FreeBSD: head/security/linux-f10-libgcrypt/Makefile 340722 2014-01-22 17:00:46Z mat $
 
 PORTNAME=	libgcrypt
 PORTVERSION=	1.4.4
+PORTREVISION=	1
 CATEGORIES=	security linux
-PKGNAMEPREFIX=	linux-f10-
-DISTNAME=	${PORTNAME}-${PORTVERSION}-${RPMVERSION}
 
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	General purpose crypto library based on code used in GnuPG
 
-FORBIDDEN=	http://www.freshports.org/vuxml.php?vid=689c2bf7-0701-11e3-9a25-002590860428
-
+USE_LINUX=	f10
 USE_LINUX_RPM=	yes
-LINUX_DIST_VER=	10
+
 RPMVERSION=	1.fc10
 USE_LDCONFIG=	yes
 

@@ -1,10 +1,10 @@
-# $FreeBSD$
+# $FreeBSD: head/java/linux-oracle-jdk18/Makefile 351369 2014-04-15 22:17:02Z jkim $
 
 PORTNAME=	jdk
 PORTVERSION=	${JDK_VERSION}.${JDK_UPDATE_VERSION}
 CATEGORIES=	java devel
 MASTER_SITES=	#
-PKGNAMEPREFIX=	linux-${JDK_VENDOR}-
+PKGNAMEPREFIX=	linux-oracle-
 DISTNAME=	jdk-${JDK_VERSION}u${JDK_UPDATE_VERSION}-linux-i586
 
 MAINTAINER=	java@FreeBSD.org
@@ -15,11 +15,12 @@ RUN_DEPENDS=	javavm:${PORTSDIR}/java/javavmwrapper
 OPTIONS_DEFINE=	DEMO
 DEMO_DESC=	Install demos and samples
 
+NO_CDROM=	License does not allow distribution with fee
 RESTRICTED=	Redistribution of repackaged binaries not permitted
 PKGNAMESUFFIX=	1${JDK_VERSION}
 
 WRKSRC=		${WRKDIR}/jdk${DL_JDK_VERSION}
-PLIST_SUB=	T=${APP_HOME:S/^${PREFIX}\///} PORTVERSION=${PORTVERSION}
+PLIST_SUB+=	T=${APP_HOME:S/^${PREFIX}\///} PORTVERSION=${PORTVERSION}
 
 NO_BUILD=	yes
 USE_LINUX=	yes
@@ -27,10 +28,9 @@ USE_LINUX_APPS=	xorglibs
 USES=		shebangfix
 ONLY_FOR_ARCHS=	i386 amd64
 
-JDK_VENDOR=		oracle
 JDK_VERSION=		8
 JDK_INTERNAL_VERSION=	1.${JDK_VERSION}.0
-JDK_UPDATE_VERSION=	11
+JDK_UPDATE_VERSION=	5
 .if ${JDK_UPDATE_VERSION} == 0
 DL_JDK_VERSION=		${JDK_INTERNAL_VERSION}
 .elif ${JDK_UPDATE_VERSION} <= 9
@@ -42,8 +42,7 @@ DOWNLOAD_URL=		http://www.oracle.com/technetwork/java/javase/downloads/index.htm
 
 APP_HOME=	${PREFIX}/${PKGNAMEPREFIX}${PORTNAME}${JDK_INTERNAL_VERSION}
 BIN_DIRS=	bin jre/bin
-LIB_DIRS=	${BIN_DIRS:S|bin$|lib|}
-SHEBANG_FILES=	${BIN_DIRS:S|$|/jcontrol|}
+SHEBANG_FILES=	bin/jcontrol jre/bin/jcontrol
 bash_CMD=	${SH}
 
 .include <bsd.port.pre.mk>
@@ -74,7 +73,8 @@ PLIST_SUB+=	DEMO="@comment "
 
 .if ${PORT_OPTIONS:MDEMO} && ${DEMO_WRKSRC} != ${WRKSRC}
 post-extract:
-	@cd ${DEMO_WRKSRC} && ${MV} demo sample ${WRKSRC}
+	@${MV} ${DEMO_WRKSRC}/demo ${WRKSRC}/
+	@${MV} ${DEMO_WRKSRC}/sample ${WRKSRC}/
 .endif
 
 post-patch:
@@ -83,7 +83,11 @@ post-patch:
 do-install:
 	@${MKDIR} ${STAGEDIR}${APP_HOME}
 	@cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${APP_HOME}
-	@cd ${STAGEDIR}${APP_HOME} && \
-	    ${CHMOD} ${BINMODE} ${BIN_DIRS:S|$|/*|} ${LIB_DIRS:S|$|/jexec|}
+	@cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${APP_HOME} \
+	    "-not ( -type d -name bin -prune )"
+	@cd ${WRKSRC} && ${COPYTREE_BIN} "${BIN_DIRS}" ${STAGEDIR}${APP_HOME}
+	@${INSTALL_SCRIPT} ${WRKSRC}/jre/lib/jexec \
+	    ${STAGEDIR}${APP_HOME}/jre/lib
+	@${INSTALL_SCRIPT} ${WRKSRC}/lib/jexec ${STAGEDIR}${APP_HOME}/lib
 
 .include <bsd.port.post.mk>

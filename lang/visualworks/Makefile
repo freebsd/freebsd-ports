@@ -10,7 +10,7 @@ DISTFILES=		BaseVisualWorks.tar.gz \
 EXTRACT_ONLY=
 
 MAINTAINER=		ports@FreeBSD.org
-COMMENT=		High performance Smalltalk environment
+COMMENT=		A high performance Smalltalk environment
 
 DIST_SUBDIR=		${SUBDIR}
 SUBDIR=			vwnc${PORTVERSION}
@@ -19,6 +19,7 @@ USE_LINUX=		yes
 USE_LINUX_APPS=		xorglibs
 ONLY_FOR_ARCHS=		i386 amd64
 NO_BUILD=		yes
+PLIST_FILES=		bin/visual
 MY_STARTUP_SCRIPT=	visual.sh
 
 RESTRICTED=		Redistribution is probably not permitted

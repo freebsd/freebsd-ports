@@ -1,5 +1,5 @@
 # Created by: Alexander Logvinov <ports@logvinov.com>
-# $FreeBSD$
+# $FreeBSD: head/games/linux-sof/Makefile 347508 2014-03-08 15:24:57Z antoine $
 
 PORTNAME=	sof
 PORTVERSION=	1.06a
@@ -13,6 +13,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Soldier of Fortune for Linux
 
 PATCH_DEPENDS=	xdelta:${PORTSDIR}/misc/xdelta
+
+OPTIONS_DEFINE=	DOCS
 
 USE_LINUX=	yes
 USE_LINUX_APPS=	xorglibs
@@ -31,8 +33,8 @@ SUB_FILES=	pkg-message
 IGNORE=		${PKGNAME} requires CDROM_MOUNT set to mount point of CD
 .endif
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 do-extract:
 	@${MKDIR} ${WRKSRC}/data ${WRKSRC}/patch
@@ -64,18 +66,18 @@ post-patch:
 	@${REINPLACE_CMD} -e "s|%%DATADIR%%|${DATADIR}|" ${WRKSRC}/data/${PORTNAME}
 
 do-install:
-	@${MKDIR} ${DATADIR}/base
-	${INSTALL_PROGRAM} ${WRKSRC}/data/${PORTNAME} ${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/data/${PORTNAME}-bin ${DATADIR}
-	@${BRANDELF} -t Linux ${DATADIR}/${PORTNAME}-bin
-	${INSTALL_DATA} ${WRKSRC}/data/kver.pub ${DATADIR}
+	@${MKDIR} ${STAGEDIR}${DATADIR}/base
+	${INSTALL_PROGRAM} ${WRKSRC}/data/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/data/${PORTNAME}-bin ${STAGEDIR}${DATADIR}
+	@${BRANDELF} -t Linux ${STAGEDIR}${DATADIR}/${PORTNAME}-bin
+	${INSTALL_DATA} ${WRKSRC}/data/kver.pub ${STAGEDIR}${DATADIR}
 	cd ${WRKSRC}/data && \
-		${FIND} . -name "*.so*" -exec ${INSTALL_PROGRAM} {} ${DATADIR}/{} \; && \
-		${FIND} base -name "*.pak" -exec ${INSTALL_DATA} {} ${DATADIR}/{} \;
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
+		${FIND} . -name "*.so*" -exec ${INSTALL_PROGRAM} {} ${STAGEDIR}${DATADIR}/{} \; && \
+		${FIND} base -name "*.pak" -exec ${INSTALL_DATA} {} ${STAGEDIR}${DATADIR}/{} \;
+.if ${PORT_OPTIONS:MDOCS}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for i in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/data/${i} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/data/${i} ${STAGEDIR}${DOCSDIR}
 .endfor
 .endif
 

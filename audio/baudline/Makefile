@@ -1,5 +1,5 @@
 # Created by: David Yeske <dyeske@gmail.com>
-# $FreeBSD$
+# $FreeBSD: head/audio/baudline/Makefile 348148 2014-03-14 02:20:32Z db $
 
 PORTNAME=	baudline
 PORTVERSION=	1.08
@@ -23,7 +23,7 @@ RESTRICTED=	author requests no distribution except from their site
 PORTDOCS=	README_unix.txt
 PLIST_FILES=	bin/baudline
 
-OPTIONS_DEFINE=		MPG123 DOCS
+OPTIONS_DEFINE=		MPG123
 OPTIONS_DEFAULT=	MPG123
 
 MMPG123_RUN_DEPENDS=	mpg123:${PORTSDIR}/audio/mpg123

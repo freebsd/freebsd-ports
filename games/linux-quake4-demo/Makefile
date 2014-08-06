@@ -1,5 +1,5 @@
 # Created by: alepulver
-# $FreeBSD$
+# $FreeBSD: head/games/linux-quake4-demo/Makefile 340722 2014-01-22 17:00:46Z mat $
 
 PORTNAME=	quake4
 PORTVERSION=	1.0

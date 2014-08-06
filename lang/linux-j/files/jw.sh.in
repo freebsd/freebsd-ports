@@ -1,5 +1,5 @@
 #!/bin/sh
-# $FreeBSD$
+# $FreeBSD: head/lang/linux-j/files/jw.sh.in 340872 2014-01-24 00:14:07Z mat $
 JPATHj%%PORTVERSION%%=%%PREFIX%%/lib/j
 export JPATHj%%PORTVERSION%%
 if [ ! -d ${HOME}/J ]

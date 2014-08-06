@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	firefox
-DISTVERSION=	31.0
+DISTVERSION=	27.0.1
 PORTEPOCH=	1
 CATEGORIES=	www ipv6
 MASTER_SITES=	MOZILLA/${PORTNAME}/releases/${DISTVERSION}/linux-i686/en-US
@@ -11,8 +11,7 @@ DISTNAME=	${PORTNAME}-${DISTVERSION}
 MAINTAINER=	gecko@FreeBSD.org
 COMMENT=	Web browser based on the browser portion of Mozilla
 
-USES=		tar:bzip2
-
+USES=	tar:bzip2 desktop-file-utils
 WANT_GTK218=	yes
 
 USE_LINUX_APPS=	dbusglib dbuslibs alsalib alsa-plugins-oss
