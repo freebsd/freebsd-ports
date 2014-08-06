@@ -16,38 +16,27 @@ USES=		zip
 USE_RC_SUBR=	binkd
 GNU_CONFIGURE=	yes
 
+USERS=		fido
+GROUPS=		fido
+
 MAKE_JOBS_UNSAFE=	yes
 
-MAN8=		binkd.8
+OPTIONS_DEFINE=	AMIGA4D DOCS HTTPS
+AMIGA4D_CONFIGUTE_WITH=	aso
+HTTPS_CONFIGURE_WITH=	https
 
-.if !defined(WITHOUT_AMIGA4D)
-CONFIGURE_ARGS+=	--with-aso
-.endif
-
-.if !defined(WITHOUT_HTTPS)
-CONFIGURE_ARGS+=	--with-https
-.endif
-
-NO_STAGE=	yes
 pre-configure:
 	@${RM} -rf ${WRKSRC}/mkfls/unix/CVS
 	@${CP} ${WRKSRC}/mkfls/unix/* ${WRKSRC}/
 	@${CHMOD} a+x ${WRKSRC}/configure
 
-pre-install:
-	@${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PORTNAME} PRE-INSTALL
-
 do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/binkd ${PREFIX}/sbin
-	@${INSTALL_MAN} ${WRKSRC}/binkd.8 ${MANPREFIX}/man/man8
-	@${INSTALL_DATA} ${WRKSRC}/binkd.cfg ${PREFIX}/etc/binkd.cfg.sample
-
-post-install:
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/!README ${DOCSDIR}/README
-	@${INSTALL_DATA} ${WRKSRC}/!README.FIX ${DOCSDIR}/README.FIX
-	@${INSTALL_DATA} ${WRKSRC}/!SRIF.TXT ${DOCSDIR}/SRIF.TXT
-.endif
+	@${INSTALL_PROGRAM} ${WRKSRC}/binkd ${STAGEDIR}${PREFIX}/sbin
+	${INSTALL_MAN} ${WRKSRC}/binkd.8 ${STAGEDIR}${MANPREFIX}/man/man8
+	${INSTALL_DATA} ${WRKSRC}/binkd.cfg ${STAGEDIR}${PREFIX}/etc/binkd.cfg.sample
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/!README ${STAGEDIR}${DOCSDIR}/README
+	${INSTALL_DATA} ${WRKSRC}/!README.FIX ${STAGEDIR}${DOCSDIR}/README.FIX
+	${INSTALL_DATA} ${WRKSRC}/!SRIF.TXT ${STAGEDIR}${DOCSDIR}/SRIF.TXT
 
 .include <bsd.port.mk>
