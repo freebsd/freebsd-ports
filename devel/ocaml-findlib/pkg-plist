@@ -47,89 +47,6 @@ man/man1/ocamlfind.1.gz
 man/man5/META.5.gz
 man/man5/findlib.conf.5.gz
 man/man5/site-lib.5.gz
-%%PORTDOCS%%%%DOCSDIR%%/DOCINFO
-%%PORTDOCS%%%%DOCSDIR%%/Makefile
-%%PORTDOCS%%%%DOCSDIR%%/QUICKSTART
-%%PORTDOCS%%%%DOCSDIR%%/QUICKSTART.xml
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/README.xml
-%%PORTDOCS%%%%DOCSDIR%%/common.xml
-%%PORTDOCS%%%%DOCSDIR%%/config.xml
-%%PORTDOCS%%%%DOCSDIR%%/guide-html/TIMESTAMP
-%%PORTDOCS%%%%DOCSDIR%%/guide-html/c157.html
-%%PORTDOCS%%%%DOCSDIR%%/guide-html/c188.html
-%%PORTDOCS%%%%DOCSDIR%%/guide-html/c274.html
-%%PORTDOCS%%%%DOCSDIR%%/guide-html/c348.html
-%%PORTDOCS%%%%DOCSDIR%%/guide-html/c37.html
-%%PORTDOCS%%%%DOCSDIR%%/guide-html/c380.html
-%%PORTDOCS%%%%DOCSDIR%%/guide-html/c74.html
-%%PORTDOCS%%%%DOCSDIR%%/guide-html/index.html
-%%PORTDOCS%%%%DOCSDIR%%/guide-html/p35.html
-%%PORTDOCS%%%%DOCSDIR%%/guide-html/quickstart.html
-%%PORTDOCS%%%%DOCSDIR%%/guide-html/x104.html
-%%PORTDOCS%%%%DOCSDIR%%/guide-html/x115.html
-%%PORTDOCS%%%%DOCSDIR%%/guide-html/x131.html
-%%PORTDOCS%%%%DOCSDIR%%/guide-html/x145.html
-%%PORTDOCS%%%%DOCSDIR%%/guide-html/x176.html
-%%PORTDOCS%%%%DOCSDIR%%/guide-html/x227.html
-%%PORTDOCS%%%%DOCSDIR%%/guide-html/x261.html
-%%PORTDOCS%%%%DOCSDIR%%/guide-html/x270.html
-%%PORTDOCS%%%%DOCSDIR%%/guide-html/x307.html
-%%PORTDOCS%%%%DOCSDIR%%/guide-html/x322.html
-%%PORTDOCS%%%%DOCSDIR%%/guide-html/x334.html
-%%PORTDOCS%%%%DOCSDIR%%/guide-html/x341.html
-%%PORTDOCS%%%%DOCSDIR%%/guide-html/x355.html
-%%PORTDOCS%%%%DOCSDIR%%/guide-html/x372.html
-%%PORTDOCS%%%%DOCSDIR%%/guide-html/x394.html
-%%PORTDOCS%%%%DOCSDIR%%/guide-html/x400.html
-%%PORTDOCS%%%%DOCSDIR%%/guide-html/x412.html
-%%PORTDOCS%%%%DOCSDIR%%/guide-html/x464.html
-%%PORTDOCS%%%%DOCSDIR%%/guide-html/x471.html
-%%PORTDOCS%%%%DOCSDIR%%/guide-html/x475.html
-%%PORTDOCS%%%%DOCSDIR%%/guide-html/x81.html
-%%PORTDOCS%%%%DOCSDIR%%/guide-html/x89.html
-%%PORTDOCS%%%%DOCSDIR%%/readme.dtd
-%%PORTDOCS%%%%DOCSDIR%%/ref-html/TIMESTAMP
-%%PORTDOCS%%%%DOCSDIR%%/ref-html/c1032.html
-%%PORTDOCS%%%%DOCSDIR%%/ref-html/index.html
-%%PORTDOCS%%%%DOCSDIR%%/ref-html/lib/Findlib.html
-%%PORTDOCS%%%%DOCSDIR%%/ref-html/lib/Fl_metascanner.html
-%%PORTDOCS%%%%DOCSDIR%%/ref-html/lib/Fl_package_base.html
-%%PORTDOCS%%%%DOCSDIR%%/ref-html/lib/Topfind.html
-%%PORTDOCS%%%%DOCSDIR%%/ref-html/lib/index.html
-%%PORTDOCS%%%%DOCSDIR%%/ref-html/lib/index_attributes.html
-%%PORTDOCS%%%%DOCSDIR%%/ref-html/lib/index_class_types.html
-%%PORTDOCS%%%%DOCSDIR%%/ref-html/lib/index_classes.html
-%%PORTDOCS%%%%DOCSDIR%%/ref-html/lib/index_exceptions.html
-%%PORTDOCS%%%%DOCSDIR%%/ref-html/lib/index_methods.html
-%%PORTDOCS%%%%DOCSDIR%%/ref-html/lib/index_module_types.html
-%%PORTDOCS%%%%DOCSDIR%%/ref-html/lib/index_modules.html
-%%PORTDOCS%%%%DOCSDIR%%/ref-html/lib/index_types.html
-%%PORTDOCS%%%%DOCSDIR%%/ref-html/lib/index_values.html
-%%PORTDOCS%%%%DOCSDIR%%/ref-html/lib/style.css
-%%PORTDOCS%%%%DOCSDIR%%/ref-html/lib/type_Findlib.html
-%%PORTDOCS%%%%DOCSDIR%%/ref-html/lib/type_Fl_metascanner.html
-%%PORTDOCS%%%%DOCSDIR%%/ref-html/lib/type_Fl_package_base.html
-%%PORTDOCS%%%%DOCSDIR%%/ref-html/lib/type_Topfind.html
-%%PORTDOCS%%%%DOCSDIR%%/ref-html/p1030.html
-%%PORTDOCS%%%%DOCSDIR%%/ref-html/p15.html
-%%PORTDOCS%%%%DOCSDIR%%/ref-html/p685.html
-%%PORTDOCS%%%%DOCSDIR%%/ref-html/r17.html
-%%PORTDOCS%%%%DOCSDIR%%/ref-html/r687.html
-%%PORTDOCS%%%%DOCSDIR%%/ref-html/r783.html
-%%PORTDOCS%%%%DOCSDIR%%/ref-html/r972.html
-%%PORTDOCS%%%%DOCSDIR%%/src/findlib.dsl
-%%PORTDOCS%%%%DOCSDIR%%/src/findlib.sgml
-%%PORTDOCS%%%%DOCSDIR%%/src/findlib_conf.mod
-%%PORTDOCS%%%%DOCSDIR%%/src/findlib_meta.mod
-%%PORTDOCS%%%%DOCSDIR%%/src/findlib_mli.mod
-%%PORTDOCS%%%%DOCSDIR%%/src/findlib_ocamlfind.mod
-%%PORTDOCS%%%%DOCSDIR%%/src/findlib_ref.dsl
-%%PORTDOCS%%%%DOCSDIR%%/src/findlib_ref.sgml
-%%PORTDOCS%%%%DOCSDIR%%/src/findlib_reference.sgml
-%%PORTDOCS%%%%DOCSDIR%%/src/findlib_reference.xml
-%%PORTDOCS%%%%DOCSDIR%%/src/findlib_sitelib.mod
-%%PORTDOCS%%%%DOCSDIR%%/src/findlib_topfind.mod
 @dirrm %%OCAML_SITELIBDIR%%/bigarray
 @dirrm %%OCAML_SITELIBDIR%%/bytes
 @dirrm %%OCAML_SITELIBDIR%%/camlp4
@@ -146,8 +63,3 @@ man/man5/site-lib.5.gz
 @dirrm %%OCAML_SITELIBDIR%%/threads
 @dirrm %%OCAML_SITELIBDIR%%/unix
 @dirrmtry %%OCAML_SITELIBDIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/guide-html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/ref-html/lib
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/ref-html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/src
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
