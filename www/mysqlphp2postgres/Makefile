@@ -13,6 +13,9 @@ COMMENT=	Convert MySQL calls in a PHP page into PostgreSQL calls
 ALL_TARGET=	default
 PLIST_FILES=	bin/mysqlphp2postgres
 
+post-patch:
+	@${REINPLACE_CMD} -e 's|gcc|${CC}|; s|-O2*|${CFLAGS}|' ${WRKSRC}/Makefile
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
 
