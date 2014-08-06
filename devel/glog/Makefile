@@ -10,11 +10,10 @@ MASTER_SITES=	GOOGLE_CODE
 MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	Library of C++ classes for flexible logging
 
-LIB_DEPENDS=	libexecinfo.so:${PORTSDIR}/devel/libexecinfo \
-		libgflags.so:${PORTSDIR}/devel/gflags
+LIB_DEPENDS=	libgflags.so:${PORTSDIR}/devel/gflags
 
 GNU_CONFIGURE=	yes
-USES=		pathfix libtool:keepla
+USES=		execinfo pathfix libtool:keepla
 USE_LDCONFIG=	yes
 PROJECTHOST=	google-glog
 

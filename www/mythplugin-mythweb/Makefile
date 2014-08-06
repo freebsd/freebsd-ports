@@ -8,7 +8,7 @@ PKGNAMEPREFIX=	mythplugin-
 DISTNAME=	mythweb-${PORTVERSION}
 
 MAINTAINER=	decke@FreeBSD.org
-COMMENT=	A frontend for scheduling and managing recordings on your MythTV Box
+COMMENT=	Frontend for scheduling and managing recordings on your MythTV Box
 
 RUN_DEPENDS=	p5-DBD-mysql>=0:${PORTSDIR}/databases/p5-DBD-mysql
 

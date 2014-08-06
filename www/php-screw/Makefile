@@ -9,7 +9,7 @@ DISTNAME=	php_screw-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A PHP script encryption tool
+COMMENT=	PHP script encryption tool
 
 CRYPTKEY?=	11152, 368, 192, 1281, 62
 

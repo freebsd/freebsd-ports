@@ -1,7 +1,7 @@
 bin/bg5pdf
 bin/gbpdf
 %%PYTHON_SITELIBDIR%%/bg5pdflib.so
-%%EXAMPLESDIR%%/genTest.py
-%%EXAMPLESDIR%%/test.big5
-%%EXAMPLESDIR%%/test.big5.pdf
-@dirrm %%EXAMPLESDIR%%
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/genTest.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test.big5
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test.big5.pdf
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%

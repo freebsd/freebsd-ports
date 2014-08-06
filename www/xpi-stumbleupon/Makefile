@@ -7,7 +7,7 @@ DISTVERSIONSUFFIX=	-fx+sm+mz
 CATEGORIES=	www
 
 MAINTAINER=	lapo@lapo.it
-COMMENT=	A collaborative surfing tool extension
+COMMENT=	Collaborative surfing tool extension
 
 LICENSE=	MPL
 

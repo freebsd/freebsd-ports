@@ -8,7 +8,7 @@ CATEGORIES=	www ipv6
 MASTER_SITES=	http://www.nazgul.ch/dev/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A fast, secure HTTP/1.1 CGI/1.1 SSL IPv4/IPv6 webserver
+COMMENT=	Fast, secure HTTP/1.1 CGI/1.1 SSL IPv4/IPv6 webserver
 
 LICENSE=	BSD
 

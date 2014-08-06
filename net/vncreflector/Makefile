@@ -20,7 +20,8 @@ WRKSRC=		${WRKDIR}/vnc_reflector
 OPTIONS_DEFINE=	DOCS
 
 post-patch:
-	${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|' ${WRKSRC}/Makefile
+	${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|; \
+		s|gcc|${CC}|' ${WRKSRC}/Makefile
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin

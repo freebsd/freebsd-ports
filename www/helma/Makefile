@@ -10,7 +10,7 @@ MASTER_SITES=	http://adele.helma.org/download/helma/${PORTVERSION}/ \
 DISTFILES=	helma-${PORTVERSION}.tar.gz helma-${PORTVERSION}-src.tar.gz
 
 MAINTAINER=	decke@FreeBSD.org
-COMMENT=	A Web application framework for fast and efficient scripting
+COMMENT=	Web application framework for fast and efficient scripting
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKBASE}/licenses/license.txt

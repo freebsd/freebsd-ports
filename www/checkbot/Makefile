@@ -8,7 +8,7 @@ CATEGORIES=	www perl5
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/Checkbot%20${PORTVERSION}
 
 MAINTAINER=	jadawin@FreeBSD.org
-COMMENT=	A WWW link verifier, similar to momspider
+COMMENT=	WWW link verifier, similar to momspider
 
 BUILD_DEPENDS=	p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
 		p5-URI>=0:${PORTSDIR}/net/p5-URI \

@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	relayd
-PORTVERSION=	5.4.20131122
-PORTREVISION=	4
+PORTVERSION=	5.5.20140730
 CATEGORIES=	net
 MASTER_SITES=	GH
 
@@ -12,34 +11,21 @@ COMMENT=	OpenBSD relay daemon
 LICENSE=	ISCL
 
 GH_ACCOUNT=	mmatuska
-GH_COMMIT=	a4f6140
+GH_COMMIT=	502fffe
 
 WRKSRC=		${WRKDIR}/${GH_ACCOUNT}-${GH_PROJECT}-${GH_COMMIT}/src/usr.sbin
 USES=		uidfix
 USE_GITHUB=	yes
 USE_RC_SUBR=	relayd
 
-BROKEN=		Abuse evbuffer API
-
-CFLAGS+=	-I${PREFIX}/include -Wall
+CFLAGS+=	-Wall
 
 MAKE_ARGS+=	BINDIR=${PREFIX}/sbin MANDIR=${PREFIX}/man/man
 
 USERS=		_relayd
 GROUPS=		_relayd
 
-OPTIONS_DEFINE=	LIBEVENT_STATIC
-LIBEVENT_STATIC_DESC=	Build with static libevent
-
 .include <bsd.port.pre.mk>
-
-.if ${PORT_OPTIONS:MLIBEVENT_STATIC}
-BUILD_DEPENDS=	${LOCALBASE}/lib/libevent.a:${PORTSDIR}/devel/libevent2
-MAKE_ARGS+=	LIBEVENT=${LOCALBASE}/lib/libevent.a
-.else
-LIB_DEPENDS=	libevent.so:${PORTSDIR}/devel/libevent2
-MAKE_ARGS+=	LIBEVENT=-levent
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' \

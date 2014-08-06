@@ -9,7 +9,7 @@ MASTER_SITES=	http://www.acme.com/software/micro_httpd/ \
 DISTNAME=	${PORTNAME}_14dec2001
 
 MAINTAINER=	user@unknown.nu
-COMMENT=	An extremely small web server
+COMMENT=	Extremely small web server
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 PLIST_FILES=	sbin/micro_httpd man/man8/micro_httpd.8.gz

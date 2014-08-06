@@ -8,7 +8,7 @@ DISTVERSIONSUFFIX=	-fx
 CATEGORIES=	www
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A lightweight vim-like editor for textareas
+COMMENT=	Lightweight vim-like editor for textareas
 
 XPI_NUM=	8529
 XPI_ID=		jv@eric.uhrhane

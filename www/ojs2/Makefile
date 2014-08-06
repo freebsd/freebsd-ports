@@ -11,7 +11,7 @@ MASTER_SITES=	http://pkp.sfu.ca/ojs/download/ \
 DISTNAME=	ojs-2.2.1
 
 MAINTAINER=	filiperocha@gmail.com
-COMMENT=	A journal management and publishing system
+COMMENT=	Journal management and publishing system
 
 DIST_SUBDIR=	${PORTNAME}
 

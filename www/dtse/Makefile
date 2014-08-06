@@ -9,7 +9,7 @@ MASTER_SITES=	http://apt.douglasthrift.net/files/${PORTNAME}/ \
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
 MAINTAINER=	douglas@douglasthrift.net
-COMMENT=	An indexing search engine for use on small websites
+COMMENT=	Indexing search engine for use on small websites
 
 LICENSE=	APACHE20
 

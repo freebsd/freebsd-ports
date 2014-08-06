@@ -7,7 +7,7 @@ DISTVERSIONSUFFIX=	-sm+fx+fn
 CATEGORIES=	www
 
 MAINTAINER=	gecko@FreeBSD.org
-COMMENT=	A security-enhancing Java/JS filtering extension
+COMMENT=	Security-enhancing Java/JS filtering extension
 
 XPI_ID=		{73a6fe31-595d-460b-a920-fcc0f8843232}
 XPI_NUM=	722

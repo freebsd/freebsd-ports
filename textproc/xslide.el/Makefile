@@ -17,27 +17,16 @@ PORTDOCS=	README.TXT TODO NEWS ChangeLog
 ELISPDIR=	${PREFIX}/share/emacs/site-lisp
 XELISPDIR=	${PREFIX}/lib/xemacs/site-lisp
 
-NO_STAGE=	yes
-do-install:
-	@${MKDIR} ${ELISPDIR} ${XELISPDIR}
-	(cd ${WRKSRC} && \
-		for f in xslide.el \
-			 xslide-abbrev.el \
-			 xslide-data.el \
-			 xslide-font.el \
-			 xslide-initial.xsl \
-			 xslide-process.el; \
-		do \
-		    ${INSTALL_DATA} $$f ${ELISPDIR}; \
-		    ${LN} -sf ${ELISPDIR}/$$f ${XELISPDIR}; \
-		done;)
-.ifndef NOPORTDOCS
-	@${MKDIR} ${DOCSDIR}
-	(cd ${WRKSRC} && \
-		${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR})
-.endif
+OPTIONS_DEFINE=	DOCS
 
-post-install:
-	@${CAT} ${PKGMESSAGE}
+do-install:
+	@${MKDIR} ${STAGEDIR}${ELISPDIR} ${STAGEDIR}${XELISPDIR}
+.for f in xslide.el xslide-abbrev.el xslide-data.el xslide-font.el \
+xslide-initial.xsl xslide-process.el
+	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${ELISPDIR}
+	${LN} -sf ${ELISPDIR}/${f} ${STAGEDIR}${XELISPDIR}
+.endfor
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

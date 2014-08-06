@@ -36,7 +36,7 @@ OPTIONS_DEFINE=	DOCS EXAMPLES
 CONFIGURE_ARGS+=	--with-libc=libc.so.7
 .endif
 
-.if ${OPSYS} == FreeBSD && ${OSVERSION} > 1000000
+.if ${OPSYS} == FreeBSD
 FORBIDDEN=	Building on 10+ triggers a nasty bug with unix domain sockets
 .endif
 

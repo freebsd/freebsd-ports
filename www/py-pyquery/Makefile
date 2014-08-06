@@ -8,7 +8,7 @@ MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	nivit@FreeBSD.org
-COMMENT=	A jquery-like library for python
+COMMENT=	Jquery-like library for python
 
 LICENSE=	BSD3CLAUSE
 

@@ -9,7 +9,7 @@ MASTER_SITES=	http://www.webdav.org/neon/
 DISTNAME=	neon-${PORTVERSION}
 
 MAINTAINER=	lev@FreeBSD.org
-COMMENT=	An HTTP and WebDAV client library for Unix systems
+COMMENT=	HTTP and WebDAV client library for Unix systems
 
 CONFLICTS=	neon2[^9]-[0-9]*
 

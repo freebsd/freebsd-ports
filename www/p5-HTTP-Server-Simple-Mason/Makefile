@@ -8,7 +8,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	demon@FreeBSD.org
-COMMENT=	An abstract baseclass for a standalone mason server
+COMMENT=	Abstract baseclass for a standalone mason server
 
 BUILD_DEPENDS=	p5-HTTP-Server-Simple>=0:${PORTSDIR}/www/p5-HTTP-Server-Simple \
 		p5-HTML-Mason>=0:${PORTSDIR}/www/p5-HTML-Mason \

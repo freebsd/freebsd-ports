@@ -9,7 +9,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A Perl interface to the Technorati web services interface
+COMMENT=	Perl interface to the Technorati web services interface
 
 BUILD_DEPENDS=	p5-XML-XPath>=0:${PORTSDIR}/textproc/p5-XML-XPath \
 		p5-Exception-Class>=0:${PORTSDIR}/devel/p5-Exception-Class \

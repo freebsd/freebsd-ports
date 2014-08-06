@@ -8,7 +8,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sahil@FreeBSD.org
-COMMENT=	A Perl interface to the web site notlong.com
+COMMENT=	Perl interface to the web site notlong.com
 
 BUILD_DEPENDS=	p5-libwww>=5.75:${PORTSDIR}/www/p5-libwww \
 		p5-URI>=1.27:${PORTSDIR}/net/p5-URI \

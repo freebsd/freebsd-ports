@@ -3,6 +3,7 @@
 
 PORTNAME=	vips
 PORTVERSION=	7.40.3
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.vips.ecs.soton.ac.uk/supported/${PORTVERSION:R}/
 
@@ -32,7 +33,7 @@ OPTIONS_DEFAULT+=	PYTHON
 .endif
 USES=		gettext gmake libtool pathfix perl5 pkgconfig shebangfix
 USE_PERL5=	build
-SHEBANG_FILES=	tools/vips-${PORTVERSION:R}
+SHEBANG_FILES=	tools/vips-${PORTVERSION:R} tools/vipsprofile
 USE_GNOME=	glib20 pango libxml2 libgsf
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes

@@ -1,57 +1,57 @@
-%%EXAMPLESDIR%%/data/books.dtd
-%%EXAMPLESDIR%%/data/books.xml
-%%EXAMPLESDIR%%/data/othello.xml
-%%EXAMPLESDIR%%/data/play.dtd
-%%EXAMPLESDIR%%/java/ExampleContentHandler.class
-%%EXAMPLESDIR%%/java/ExampleContentHandler.java
-%%EXAMPLESDIR%%/java/JDOMExample.class
-%%EXAMPLESDIR%%/java/JDOMExample.java
-%%EXAMPLESDIR%%/java/SaxonServlet.class
-%%EXAMPLESDIR%%/java/SaxonServlet.java
-%%EXAMPLESDIR%%/java/ShowBooks$1.class
-%%EXAMPLESDIR%%/java/ShowBooks$BookListHandler.class
-%%EXAMPLESDIR%%/java/ShowBooks$BooksHandler.class
-%%EXAMPLESDIR%%/java/ShowBooks$CategoryHandler.class
-%%EXAMPLESDIR%%/java/ShowBooks$ItemHandler.class
-%%EXAMPLESDIR%%/java/ShowBooks.class
-%%EXAMPLESDIR%%/java/ShowBooks.java
-%%EXAMPLESDIR%%/java/TraxExamples$1.class
-%%EXAMPLESDIR%%/java/TraxExamples$ModifyStylesheetFilter.class
-%%EXAMPLESDIR%%/java/TraxExamples$UserURIResolver.class
-%%EXAMPLESDIR%%/java/TraxExamples.class
-%%EXAMPLESDIR%%/java/TraxExamples.java
-%%EXAMPLESDIR%%/styles/bible.xsl
-%%EXAMPLESDIR%%/styles/books-attsets.xsl
-%%EXAMPLESDIR%%/styles/books-csv.xsl
-%%EXAMPLESDIR%%/styles/books-sql.xsl
-%%EXAMPLESDIR%%/styles/books-tle.xsl
-%%EXAMPLESDIR%%/styles/books.xsl
-%%EXAMPLESDIR%%/styles/play.xsl
-%%EXAMPLESDIR%%/styles/total.xsl
-%%EXAMPLESDIR%%/styles/tour10.xsl
-%%EXAMPLESDIR%%/styles/tour11.xsl
-%%EXAMPLESDIR%%/trax/exampleSimple2.out
-%%EXAMPLESDIR%%/trax/xml/baz.xml
-%%EXAMPLESDIR%%/trax/xml/embedded.xml
-%%EXAMPLESDIR%%/trax/xml/foo.xml
-%%EXAMPLESDIR%%/trax/xml/subdir1/foo2.xml
-%%EXAMPLESDIR%%/trax/xml/subdir1/subdir2/foo3.xml
-%%EXAMPLESDIR%%/trax/xsl/baz.xsl
-%%EXAMPLESDIR%%/trax/xsl/foo.xsl
-%%EXAMPLESDIR%%/trax/xsl/foo2.xsl
-%%EXAMPLESDIR%%/trax/xsl/foo3.xsl
-%%EXAMPLESDIR%%/trax/xsl/inc1/inc1.xsl
-%%EXAMPLESDIR%%/trax/xsl/inc1/inc2/inc2.xsl
-%%EXAMPLESDIR%%/trax/xsl/preamble.txt
-%%EXAMPLESDIR%%/trax/xsl/text.xsl
-@dirrm %%EXAMPLESDIR%%/trax/xsl/inc1/inc2
-@dirrm %%EXAMPLESDIR%%/trax/xsl/inc1
-@dirrm %%EXAMPLESDIR%%/trax/xsl
-@dirrm %%EXAMPLESDIR%%/trax/xml/subdir1/subdir2
-@dirrm %%EXAMPLESDIR%%/trax/xml/subdir1
-@dirrm %%EXAMPLESDIR%%/trax/xml
-@dirrm %%EXAMPLESDIR%%/trax
-@dirrm %%EXAMPLESDIR%%/styles
-@dirrm %%EXAMPLESDIR%%/java
-@dirrm %%EXAMPLESDIR%%/data
-@dirrm %%EXAMPLESDIR%%
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/data/books.dtd
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/data/books.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/data/othello.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/data/play.dtd
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/java/ExampleContentHandler.class
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/java/ExampleContentHandler.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/java/JDOMExample.class
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/java/JDOMExample.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/java/SaxonServlet.class
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/java/SaxonServlet.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/java/ShowBooks$1.class
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/java/ShowBooks$BookListHandler.class
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/java/ShowBooks$BooksHandler.class
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/java/ShowBooks$CategoryHandler.class
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/java/ShowBooks$ItemHandler.class
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/java/ShowBooks.class
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/java/ShowBooks.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/java/TraxExamples$1.class
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/java/TraxExamples$ModifyStylesheetFilter.class
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/java/TraxExamples$UserURIResolver.class
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/java/TraxExamples.class
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/java/TraxExamples.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/styles/bible.xsl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/styles/books-attsets.xsl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/styles/books-csv.xsl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/styles/books-sql.xsl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/styles/books-tle.xsl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/styles/books.xsl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/styles/play.xsl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/styles/total.xsl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/styles/tour10.xsl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/styles/tour11.xsl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/trax/exampleSimple2.out
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/trax/xml/baz.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/trax/xml/embedded.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/trax/xml/foo.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/trax/xml/subdir1/foo2.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/trax/xml/subdir1/subdir2/foo3.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/trax/xsl/baz.xsl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/trax/xsl/foo.xsl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/trax/xsl/foo2.xsl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/trax/xsl/foo3.xsl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/trax/xsl/inc1/inc1.xsl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/trax/xsl/inc1/inc2/inc2.xsl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/trax/xsl/preamble.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/trax/xsl/text.xsl
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/trax/xsl/inc1/inc2
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/trax/xsl/inc1
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/trax/xsl
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/trax/xml/subdir1/subdir2
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/trax/xml/subdir1
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/trax/xml
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/trax
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/styles
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/java
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/data
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%

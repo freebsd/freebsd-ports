@@ -3,7 +3,7 @@
 
 PORTNAME=	gkleds2
 PORTVERSION=	0.8.2
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	sysutils
 MASTER_SITES=	http://heim.ifi.uio.no/~oyvinha/files/files/
 DISTNAME=	gkleds-${PORTVERSION}
@@ -14,12 +14,14 @@ COMMENT=	GKrellM Leds for CapsLock, NumLock, and ScrollLock
 BUILD_DEPENDS=	${LOCALBASE}/include/gkrellm2/gkrellm.h:${PORTSDIR}/sysutils/gkrellm2
 RUN_DEPENDS=	gkrellm:${PORTSDIR}/sysutils/gkrellm2
 
-USES=		pkgconfig gmake
+USES=		gmake libtool pkgconfig
+GNU_CONFIGURE=	yes
 USE_XORG=	x11 xtst
 USE_GNOME=	gtk20
-USE_AUTOTOOLS=	libtool
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
+
+PLIST_FILES=	libexec/gkrellm2/plugins/gkleds.so
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-O2||g ; \

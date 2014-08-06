@@ -8,7 +8,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	lth@FreeBSD.org
-COMMENT=	A HTTP POE filter for HTTP clients or servers
+COMMENT=	HTTP POE filter for HTTP clients or servers
 
 BUILD_DEPENDS=	p5-POE>=1.003:${PORTSDIR}/devel/p5-POE \
 		p5-libwww>=0:${PORTSDIR}/www/p5-libwww \

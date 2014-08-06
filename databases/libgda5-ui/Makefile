@@ -2,7 +2,7 @@
 # $FreeBSD$
 #   $MCom: ports/trunk/databases/libgda5-ui/Makefile 17268 2013-04-01 05:13:11Z marcus $
 
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	databases gnome
 PKGNAMESUFFIX=	5-ui
 

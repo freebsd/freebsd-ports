@@ -10,7 +10,7 @@ MASTER_SITE_SUBDIR=lofi
 PKGNAMEPREFIX=	xmpppy-
 DISTNAME=	yahoo-transport-${PORTVERSION}
 
-MAINTAINER= ports@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Yahoo! transport for Jabber
 
 OPTIONS_DEFINE=	EJABBERD
@@ -34,7 +34,6 @@ SUB_LIST+=	PYTHON_CMD=${PYTHON_CMD} BINDIR=${PYTHON_SITELIBDIR}/xmpp/yahoo \
 USE_RC_SUBR=	${UNIQUENAME:S/-/_/}
 DDIR=		${PYTHON_SITELIBDIR}/xmpp/yahoo
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MEJABBERD}
@@ -58,25 +57,14 @@ post-patch:
 		${WRKSRC}/config_example.xml
 
 do-install:
-	@${INSTALL} -d ${DDIR}
-	@${INSTALL_DATA} ${FILES:S.^.${WRKSRC}/.} ${DDIR}/
-	@${INSTALL_SCRIPT} ${WRKSRC}/yahoo.py ${DDIR}/
-	@${MKDIR} ${DDIR}/curphoo
-	@${INSTALL_DATA} ${FILES_CURPHOO:S.^.${WRKSRC}/curphoo/.} ${DDIR}/curphoo/
-	@${INSTALL_DATA} ${WRKSRC}/config_example.xml ${PREFIX}/etc/${UNIQUENAME:S.-._.}.conf.sample
-	@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${DDIR}
-	@${PYTHON_CMD} -O ${PYTHON_LIBDIR}/compileall.py ${DDIR}
-	@${CHMOD} -R a-w ${DDIR}
-
-post-install:
-	@${ECHO_CMD}
-	@${ECHO_CMD} "****************************************************"
-	@${ECHO_CMD} "A sample configuration file has been installed in"
-	@${ECHO_CMD} "${PREFIX}/etc/${UNIQUENAME:S.-._.}.conf.sample"
-	@${ECHO_CMD} 
-	@${ECHO_CMD} "Follow the setup instructions at"
-	@${ECHO_CMD} "http://wiki.blathersource.org/wiki/index.php/PyYIMt."
-	@${ECHO_CMD} "****************************************************"
-	@${ECHO_CMD}
+	@${INSTALL} -d ${STAGEDIR}${DDIR}
+	${INSTALL_DATA} ${FILES:S.^.${WRKSRC}/.} ${STAGEDIR}${DDIR}/
+	${INSTALL_SCRIPT} ${WRKSRC}/yahoo.py ${STAGEDIR}${DDIR}/
+	@${MKDIR} ${STAGEDIR}${DDIR}/curphoo
+	${INSTALL_DATA} ${FILES_CURPHOO:S.^.${WRKSRC}/curphoo/.} ${STAGEDIR}${DDIR}/curphoo/
+	${INSTALL_DATA} ${WRKSRC}/config_example.xml ${STAGEDIR}${PREFIX}/etc/${UNIQUENAME:S.-._.}.conf.sample
+	${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py -d ${DDIR} ${STAGEDIR}${DDIR}
+	${PYTHON_CMD} -O ${PYTHON_LIBDIR}/compileall.py -d ${DDIR} ${STAGEDIR}${DDIR}
+	@${CHMOD} -R a-w ${STAGEDIR}${DDIR}
 
 .include <bsd.port.mk>

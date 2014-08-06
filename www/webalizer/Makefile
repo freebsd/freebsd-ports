@@ -13,7 +13,7 @@ DISTNAME=	${PORTNAME}-2.23-08-src
 DISTFILES=	${DISTNAME}.tgz:main
 
 MAINTAINER?=	dinoex@FreeBSD.org
-COMMENT=	A web server log file analysis program
+COMMENT=	Web server log file analysis program
 
 LICENSE=	GPLv2
 

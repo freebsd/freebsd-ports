@@ -9,7 +9,7 @@ MASTER_SITES=	http://joomlacode.org/gf/download/frsrelease/15898/68912/ \
 DISTNAME=	Joomla_${PORTVERSION}-Stable-Full_Package
 
 MAINTAINER=	robi@nunnisoft.ch
-COMMENT=	A dynamic web content management system (CMS)
+COMMENT=	Dynamic web content management system (CMS)
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE.php

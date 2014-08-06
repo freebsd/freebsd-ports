@@ -2,6 +2,7 @@
 
 PORTNAME=	gworkspace
 PORTVERSION=	0.9.2
+PORTREVISION=	1
 CATEGORIES=	deskutils gnustep
 #MASTER_SITES=	http://www.gnustep.it/enrico/gworkspace/
 MASTER_SITES=	${MASTER_SITE_GNUSTEP}

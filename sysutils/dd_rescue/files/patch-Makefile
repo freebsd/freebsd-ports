@@ -1,5 +1,5 @@
 --- Makefile.orig	2014-05-27 20:31:21.000000000 +0900
-+++ Makefile	2014-06-29 01:15:59.000000000 +0900
++++ Makefile	2014-08-06 21:41:59.000000000 +0900
 @@ -6,10 +6,7 @@
  
  DESTDIR = 
@@ -34,6 +34,15 @@
  HAVE_AVX2 := $(shell echo "" | $(CC) -mavx2 -xc - 2>&1 | grep unrecognized || echo 1)
  HAVE_SSE42 := $(shell echo "" | $(CC) -msse4.2 -xc - 2>&1 | grep unrecognized || echo 1)
  
+@@ -74,7 +65,7 @@
+ endif
+ endif
+ 
+-ifeq ($(MACH),x86_64)
++ifeq ($(MACH),amd64)
+ 	LIB = lib64
+ 	OBJECTS2 = find_nonzero_sse2.o
+ ifeq ($(HAVE_SSE42),1)
 @@ -180,7 +171,7 @@
  	$(CC) $(CFLAGS) -DNO_LIBDL $(DEFINES) $< $(OUT) $(OBJECTS) $(OBJECTS2) $(LIBDIR)/libfallocate.a
  

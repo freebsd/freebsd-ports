@@ -7,7 +7,7 @@ CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
-COMMENT=	A simple library to obey robots.txt files
+COMMENT=	Simple library to obey robots.txt files
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes

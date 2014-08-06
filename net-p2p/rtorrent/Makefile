@@ -22,8 +22,8 @@ SUB_FILES=	pkg-message
 
 PORTDOCS=	README
 
-OPTIONS_DEFINE=	XMLRPC IPV6 DOCS
-OPTIONS_DEFAULT=	XMLRPC
+OPTIONS_DEFINE=	XMLRPC IPV6 DOCS EXAMPLES
+OPTIONS_DEFAULT=XMLRPC
 XMLRPC_DESC=	Compile with xmlrpc-c support
 
 .include <bsd.port.options.mk>
@@ -60,9 +60,9 @@ post-patch:
 .endif
 
 post-install:
-	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/rtorrent.rc ${STAGEDIR}${EXAMPLESDIR}
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/${PORTDOCS} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

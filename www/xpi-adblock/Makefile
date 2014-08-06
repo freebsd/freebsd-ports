@@ -7,7 +7,7 @@ DISTVERSIONSUFFIX=	-fx+fl+mz+ns
 CATEGORIES=	www
 
 MAINTAINER=	miwi@FreeBSD.org
-COMMENT=	A content filtering extension
+COMMENT=	Content filtering extension
 
 XPI_NUM=	10
 XPI_ID=		{34274bf4-1d97-a289-e984-17e546307e4f}

@@ -9,7 +9,7 @@ MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	ports@caomhin.org
-COMMENT=	A light wrapper around Fedex's Web Services SOAP API using suds
+COMMENT=	Light wrapper around Fedex's Web Services SOAP API using suds
 
 LICENSE=	BSD
 

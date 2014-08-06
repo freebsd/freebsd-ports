@@ -9,7 +9,7 @@ MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 DISTNAME=	${PORTNAME}-${SNAPSHOT}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A set of useful Django applications
+COMMENT=	Set of useful Django applications
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/django/__init__.py:${PORTSDIR}/www/py-django \
 		${PYTHON_SITELIBDIR}/stripogram/__init__.py:${PORTSDIR}/textproc/py-stripogram \

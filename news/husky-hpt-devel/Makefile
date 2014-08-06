@@ -1,50 +1,29 @@
-# Created by: Oleg Sharoiko <os@rsu.ru>
 # $FreeBSD$
 
-PORTNAME=	hpt
-DISTVERSION=	1.4-rc5
+PORTNAME=	husky-hpt
 CATEGORIES=	news mail
-MASTER_SITES=	SF/husky/${PORTNAME}/1.4-RC5
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Highly Portable Tosser (full-featured FTN tosser). Development version
+MAINTAINER=	osharoiko@gmail.com
+COMMENT=	Husky FTN tosser (development version)
 
-LIB_DEPENDS=	libfidoconfig.so:${PORTSDIR}/news/husky-fidoconf-devel
+LIB_DEPENDS=	libfidoconfig.so:${PORTSDIR}/news/husky-fidoconf-devel \
+		libareafix.so:${PORTSDIR}/news/husky-areafix-devel
 
 CONFLICTS=	husky-hpt-[0-9]*
 
-.if !defined(WITHOUT_PERL)
-MAKE_ARGS+=	PERL=1
-USES=		perl5
-.else
-MAKE_ARGS+=	PERL=0
-.endif
-
-MAN1=		hpt.1 hptlink.1 hpttree.1 pktinfo.1 txt2pkt.1
-MANCOMPRESSED=	yes
+ALL_TARGET=	all doc
+INSTALL_TARGET=	install install-doc
 INFO=		hpt
 
-DOCSDIR=	${PREFIX}/share/doc/husky
-PORTDOCS=	hpt.html
+MASTERDIR=	${.CURDIR}/../husky-devel
+COMPONENT_SUBDIR=       hpt
 
-NO_STAGE=	yes
 post-patch:
-	@${REINPLACE_CMD} -e 's^/path/to/config^${PREFIX}/etc/fido/config^' \
+	${REINPLACE_CMD} -e 's^/path/to/config^${PREFIX}/etc/fido/config^' \
 		${WRKSRC}/man/hptlink.1
-	@${REINPLACE_CMD} -e 's^/some/path/config^${PREFIX}/etc/fido/config^' \
+	${REINPLACE_CMD} -e 's^/some/path/config^${PREFIX}/etc/fido/config^' \
 		${WRKSRC}/man/hpttree.1
-	@${REINPLACE_CMD} -e 's^/fido/etc/config^${PREFIX}/etc/fido/config^' \
+	${REINPLACE_CMD} -e 's^/fido/etc/config^${PREFIX}/etc/fido/config^' \
 		${WRKSRC}/man/txt2pkt.1
 
-post-build:
-.if !defined(NOPORTDOCS)
-	@cd ${WRKSRC}/doc && ${MAKE_CMD} ${MAKE_ARGS} all
-.endif
-
-post-install:
-.if !defined(NOPORTDOCS)
-	@cd ${WRKSRC}/doc && ${MAKE_CMD} ${MAKE_ARGS} install
-.endif
-
-.include "${.CURDIR}/../husky-base-devel/Makefile.inc"
 .include <bsd.port.mk>

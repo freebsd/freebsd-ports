@@ -7,7 +7,7 @@ CATEGORIES=	www
 MASTER_SITES=	http://freebsd.unixfreunde.de/sources/
 
 MAINTAINER=	miwi@FreeBSD.org
-COMMENT=	A state-of-the-art semantic personal publishing platform
+COMMENT=	State-of-the-art semantic personal publishing platform
 
 NO_BUILD=	yes
 USE_PHP=	mysql xml simplexml mbstring iconv gd

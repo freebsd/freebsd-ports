@@ -1,9 +1,8 @@
-# Created by: Kris Kennaway <kris@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	mailx
 PORTVERSION=	12.4
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	mail ipv6
 MASTER_SITES=	SF/heirloom/heirloom-${PORTNAME}/${PORTVERSION}
 PKGNAMEPREFIX=	heirloom-
@@ -11,8 +10,9 @@ PKGNAMEPREFIX=	heirloom-
 MAINTAINER=	jamie@dyslexicfish.net
 COMMENT=	BSD mail utility with MIME, IMAP, POP3, SMTP, and S/MIME extensions
 
-OPTIONS_DEFINE=		IPV6 DOCS SENDMAIL_PORT
-SENDMAIL_PORT_DESC=	Use sendmail from ports instead of base
+LICENSE=	BSD4CLAUSE
+
+OPTIONS_DEFINE=	IPV6 DOCS
 
 CONFLICTS=	mailx-[0-9]*
 
@@ -33,13 +33,6 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 
 .if ${PORT_OPTIONS:MIPV6}
 MAKE_ARGS+=	IPv6="-DHAVE_IPv6_FUNCS"
-.endif
-
-.if ${PORT_OPTIONS:MSENDMAIL_PORT}
-MAKE_ARGS+=	SENDMAIL="${LOCALBASE}/sbin/sendmail"
-RUN_DEPENDS=	${LOCALBASE}/sbin/sendmail:${PORTSDIR}/mail/sendmail
-.else
-MAKE_ARGS+=	SENDMAIL="/usr/sbin/sendmail"
 .endif
 
 do-install:

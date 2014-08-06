@@ -10,7 +10,7 @@ MASTER_SITE_SUBDIR=	source/w/wsgiauth
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	bamby@sippysoft.com
-COMMENT=	A WSGI authentication middleware
+COMMENT=	WSGI authentication middleware
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes

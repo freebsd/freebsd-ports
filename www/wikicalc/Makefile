@@ -7,7 +7,7 @@ MASTER_SITES=	http://www.peapodcast.com/sgi/downloads/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S,.,-,}
 
 MAINTAINER=	hrs@FreeBSD.org
-COMMENT=	An Open Source Wiki-Spreadsheet
+COMMENT=	Open Source Wiki-Spreadsheet
 
 RUN_DEPENDS=	p5-libwww>=0:${PORTSDIR}/www/p5-libwww
 

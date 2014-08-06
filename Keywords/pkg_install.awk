@@ -102,6 +102,7 @@ $1 == "@fmtutil" {
 	for (i = 2; i <= NF; i++)
 		print "@unexec rm -f "$i"; rmdir -p `dirname "$1"` 2>/dev/null"
 	print "@comment end " $0
+	next
 }
 
 # Print everything else as-is

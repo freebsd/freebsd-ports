@@ -7,7 +7,7 @@ CATEGORIES=	www textproc rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	markun@onohara.to
-COMMENT=	An extensible wrapper for Atom and RSS parsers
+COMMENT=	Extensible wrapper for Atom and RSS parsers
 
 RUN_DEPENDS=	rubygem-simple-rss>=1.1:${PORTSDIR}/www/rubygem-simple-rss \
 		rubygem-hpricot>=0.6:${PORTSDIR}/www/rubygem-hpricot \

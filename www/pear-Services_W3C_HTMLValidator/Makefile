@@ -7,7 +7,7 @@ PORTEPOCH=	1
 CATEGORIES=	www pear
 
 MAINTAINER=	miwi@FreeBSD.org
-COMMENT=	An Object Oriented Interface to the W3C HTML Validator service.
+COMMENT=	Object Oriented Interface to the W3C HTML Validator service
 
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear \
 		${PEARDIR}/HTTP/Request2.php:${PORTSDIR}/www/pear-HTTP_Request2

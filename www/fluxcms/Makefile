@@ -10,7 +10,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-snapshot-20090308
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	beat@FreeBSD.org
-COMMENT=	An extensible and flexible CMS based on PHP 5 and XML/XSLT
+COMMENT=	Extensible and flexible CMS based on PHP 5 and XML/XSLT
 
 NO_BUILD=	yes
 FLUXCMSDIR=	www/fluxcms

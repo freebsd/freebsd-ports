@@ -20,7 +20,7 @@ SUB_FILES=	pkg-message
 DOCS=		BUGS CHANGELOG pymsgauth.txt pymsgauth.html
 EXAMPLES=	pymsgauthrc-example
 
-OPTIONS_DEFINE=	DOCS
+OPTIONS_DEFINE=	DOCS EXAMPLES
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}

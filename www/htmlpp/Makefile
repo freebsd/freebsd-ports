@@ -8,7 +8,7 @@ MASTER_SITES=	http://legacy.imatix.com/pub/tools/
 DISTNAME=	htmlp42a
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A Perl script to allow easy creation of HTML from template files
+COMMENT=	Perl script to allow easy creation of HTML from template files
 
 USES=		perl5 shebangfix tar:tgz
 SHEBANG_FILES=	htmlpp

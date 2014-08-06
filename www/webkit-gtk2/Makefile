@@ -10,7 +10,7 @@ MASTER_SITES=	http://webkitgtk.org/releases/
 PKGNAMESUFFIX=	-gtk2
 
 MAINTAINER=	gnome@FreeBSD.org
-COMMENT=	An opensource browser engine
+COMMENT=	Opensource browser engine
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/flex:${PORTSDIR}/textproc/flex \
 		${LOCALBASE}/bin/gperf:${PORTSDIR}/devel/gperf \

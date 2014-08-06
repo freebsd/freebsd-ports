@@ -1,11 +1,7 @@
-Flowgrind grinds flows among hosts in your network. It is a tool similar
-to iperf, netperf to measure throughput and other metrics for TCP.
-Flowgrind is split into two components: the flowgrind daemon and the
-flowgrind controller. Using the controller, flows between any two systems
-running the flowgrind daemon can be setup (third party tests). At regular
-intervals during the test the controller collects and displays the
-measured results from the daemons. It can run multiple flows at once with
-the same or different settings and individually schedule every one.
-Test and control connection can optionally be diverted to different interfaces.
+Flowgrind is an advanced TCP traffic generator for testing and
+benchmarking Linux, FreeBSD, and Mac OS X TCP/IP stacks. In
+contrast to similar tools like iperf or netperf it features a
+distributed architecture, where throughput and other metrics are
+measured between arbitrary flowgrind server processes.
 
-WWW: http://launchpad.net/flowgrind
+WWW: http://flowgrind.net/

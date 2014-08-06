@@ -1,18 +1,18 @@
-# Created by: Oleg Sharoiko <os@rsu.ru>
 # $FreeBSD$
 
-PORTNAME=	smapi
-DISTVERSION=	2.4-rc5
+PORTNAME=	husky-smapi
 CATEGORIES=	news mail
-MASTER_SITES=	SF/husky/${PORTNAME}/2.4-RC5
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	MSGAPI for Husky Fidosoft Project. Development version
+MAINTAINER=	osharoiko@gmail.com
+COMMENT=	Husky FTN MSGAPI library (development version)
+
+LIB_DEPENDS=    libhusky.so:${PORTSDIR}/news/husky-huskylib-devel
 
 CONFLICTS=	husky-smapi-[0-9]*
 
 USE_LDCONFIG=	yes
 
-NO_STAGE=	yes
-.include "${.CURDIR}/../husky-base-devel/Makefile.inc"
+MASTERDIR=	${.CURDIR}/../husky-devel
+COMPONENT_SUBDIR=	smapi
+
 .include <bsd.port.mk>

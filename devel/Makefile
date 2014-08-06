@@ -1225,6 +1225,7 @@
     SUBDIR += lua-sysctl
     SUBDIR += luabind
     SUBDIR += luafilesystem
+    SUBDIR += luafilesystem-51
     SUBDIR += luajava
     SUBDIR += lutok
     SUBDIR += lwp

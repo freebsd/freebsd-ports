@@ -7,7 +7,7 @@ CATEGORIES=	www
 MASTER_SITES=	http://www.docebo.org/doceboCms/index.php?mn=docs&op=download&pi=5_4&id=86/
 
 MAINTAINER=	wen@FreeBSD.org
-COMMENT=	An Open Source e-Learning platform (LMS and LCMS)
+COMMENT=	Open Source e-Learning platform (LMS and LCMS)
 
 DEPRECATED=		Not maintained upstream
 EXPIRATION_DATE=	2014-08-22

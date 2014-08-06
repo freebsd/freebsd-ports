@@ -9,7 +9,7 @@ CATEGORIES=	www
 PKGNAMEPREFIX=	xpi-
 
 MAINTAINER=	kamikaze@bsdforen.de
-COMMENT=	A firefox extension to view HTTP headers
+COMMENT=	Firefox extension to view HTTP headers
 
 XPI_NUM=	3829
 XPI_ID=		{8f8fe09b-0bd3-4470-bc1b-8cad42b8203a}

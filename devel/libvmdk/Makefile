@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	libvmdk
-# If/When moving from experimental to alpha, override DISTNAME to prevent PORTEPOCH
-DISTVERSION=	experimental-20140421
+PORTVERSION=	20140803
+DISTVERSIONPREFIX=	alpha-
 CATEGORIES=	devel
 MASTER_SITES=	https://googledrive.com/host/0B3fBvzttpiiSQ1dOUmhqMkR2cm8/ \
 		LOCAL/antoine
@@ -19,7 +19,7 @@ USES=		fuse gettext iconv libtool pathfix pkgconfig
 USE_PYTHON=	2
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:E}
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 PORTDOCS=	AUTHORS ChangeLog
 

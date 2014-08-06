@@ -1,8 +1,8 @@
 include/GL/gle.h
 lib/libgle.a
-lib/libgle.la
 lib/libgle.so
-lib/libgle.so.4
+lib/libgle.so.3
+lib/libgle.so.3.1.0
 man/man3/gle.3gle.gz
 man/man3/gleExtrusion.3gle.gz
 man/man3/gleHelicoid.3gle.gz

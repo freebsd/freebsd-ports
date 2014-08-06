@@ -3,7 +3,7 @@
 
 PORTNAME=	gle
 PORTVERSION=	3.1.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}\
 		http://linas.org/gle/pub/ \
@@ -13,9 +13,9 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}\
 MAINTAINER=	ports@dclg.ca
 COMMENT=	GL Tubing and Extrusion Library
 
+USES=		libtool
 USE_XORG=	ice xt xmu
 USE_GL=		glut
-USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 LIBS+=		-L${LOCALBASE}/lib -lXext

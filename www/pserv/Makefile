@@ -8,7 +8,7 @@ MASTER_SITES=	SF
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	ale@FreeBSD.org
-COMMENT=	A portable and small webserver written in C
+COMMENT=	Portable and small webserver written in C
 
 LICENSE=	GPLv2
 

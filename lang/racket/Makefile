@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	racket
-PORTVERSION=	6.0.1
+PORTVERSION=	6.1
 CATEGORIES=	lang scheme
 MASTER_SITES=	http://mirror.racket-lang.org/installers/${PORTVERSION}/ \
 		http://www.cs.utah.edu/plt/installers/${PORTVERSION}/ \
@@ -32,10 +32,6 @@ CONFIGURE_ARGS=	--enable-shared --enable-pthread \
 
 .if defined(WITHOUT_X11)
 IGNORE=		requires X11; use lang/racket-textual instead
-.endif
-
-.if ${ARCH} == "i386"
-MANUAL_PACKAGE_BUILD=	i386 requires kern.maxdsiz="640M" to build
 .endif
 
 LIB_DEPENDS+=	libffi.so:${PORTSDIR}/devel/libffi		\

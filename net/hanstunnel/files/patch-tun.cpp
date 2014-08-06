@@ -1,9 +1,14 @@
-
-$FreeBSD$
-
---- tun.cpp.orig
-+++ tun.cpp
-@@ -41,8 +41,7 @@
+--- tun.cpp.orig	2010-02-17 10:30:21.000000000 -0500
++++ tun.cpp	2014-08-06 10:10:51.000000000 -0400
+@@ -21,6 +21,7 @@
+ #include "exception.h"
+ #include "utility.h"
+ 
++#include <sys/types.h>
+ #include <arpa/inet.h>
+ #include <netinet/in_systm.h>
+ #include <netinet/in.h>
+@@ -41,8 +42,7 @@
  
  	if (device != NULL)
  	{
@@ -13,7 +18,7 @@ $FreeBSD$
  	}
  	else
  		this->device[0] = 0;
-@@ -68,23 +67,17 @@
+@@ -68,23 +68,17 @@
  	string ips = Utility::formatIp(ip);
  	string destIps = Utility::formatIp(destIp);
  

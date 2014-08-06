@@ -19,12 +19,11 @@ LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
 		libmikmod.so:${PORTSDIR}/audio/libmikmod \
 		libvorbis.so:${PORTSDIR}/audio/libvorbis \
 		libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig \
-		libpcre.so:${PORTSDIR}/devel/pcre \
-		libexecinfo.so:${PORTSDIR}/devel/libexecinfo
+		libpcre.so:${PORTSDIR}/devel/pcre
 
 USE_GCC=	yes
 USE_XORG=	x11
-USES=		gmake pathfix pkgconfig tar:tgz
+USES=		execinfo gmake pathfix pkgconfig tar:tgz
 USE_LDCONFIG=	yes
 USE_GL=		yes
 USE_SQLITE=	yes

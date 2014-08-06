@@ -15,12 +15,9 @@ COMMENT=	Free, open-source, cross-platform bioinformatics toolkit
 
 LICENSE=	GPLv2
 
-.if !exists(/usr/include/execinfo.h)
-LIB_DEPENDS=	libexecinfo.so:${PORTSDIR}/devel/libexecinfo
-.endif
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
 
-USES=		qmake
+USES=		qmake execinfo
 USE_GL=		glu
 USE_QT4=	gui webkit xml svg linguist_build moc_build qmake_build \
 		qtestlib_build rcc_build uic_build imageformats_run \

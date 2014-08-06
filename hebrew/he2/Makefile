@@ -3,12 +3,14 @@
 
 PORTNAME=	he2
 PORTVERSION=	0.61
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	hebrew editors
 MASTER_SITES=	SF/${PORTNAME}/HebrewEditor/${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	cjpugmed@gmail.com
 COMMENT=	Editor for editing (primarily LaTeX) Hebrew files
+
+LICENSE=	GPLv2
 
 RUN_DEPENDS=	${LOCALBASE}/lib/X11/fonts/hebrew:${PORTSDIR}/hebrew/elmar-fonts
 

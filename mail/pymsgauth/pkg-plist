@@ -11,6 +11,6 @@ bin/pymsgauth-mail
 %%PORTDOCS%%%%DOCSDIR%%/pymsgauth.html
 %%PORTDOCS%%%%DOCSDIR%%/pymsgauth.txt
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-%%EXAMPLESDIR%%/pymsgauthrc-example
-@dirrm %%EXAMPLESDIR%%
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pymsgauthrc-example
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
 @dirrm %%DATADIR%%

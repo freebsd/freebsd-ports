@@ -8,7 +8,7 @@ MASTER_SITES=	SF/sitracker/stable/${PORTVERSION}/
 DISTNAME=	sit_${PORTVERSION}p1
 
 MAINTAINER=	carsten@sitracker.org
-COMMENT=	A PHP incident tracking system / Helpdesk
+COMMENT=	PHP incident tracking system / Helpdesk
 
 LICENSE=	GPLv2
 

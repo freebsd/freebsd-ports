@@ -21,7 +21,7 @@ USE_PYDISTUTILS=yes
 USES=		gettext
 DOCS=		AUTHORS ChangeLog CONTRIBUTORS COPYING README NEWS
 
-OPTIONS_DEFINE=	DOCS
+OPTIONS_DEFINE=	DOCS EXAMPLES
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|share/doc/gazpacho/examples|${EXAMPLESDIR}|g' ${WRKSRC}/setup.py

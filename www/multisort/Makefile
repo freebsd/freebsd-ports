@@ -8,7 +8,7 @@ MASTER_SITES=	http://www.xach.com/multisort/ \
 		http://mirror.mcx2.org/
 
 MAINTAINER=	rodrigo@FreeBSD.org
-COMMENT=	A small program to take multiple httpd logfiles into one
+COMMENT=	Small program to take multiple httpd logfiles into one
 
 LICENSE=	GPLv2
 

@@ -9,10 +9,9 @@ MASTER_SITES=	http://launchpad.net/${PORTNAME}/1.0/${PORTVERSION}/+download/
 MAINTAINER=	m.tsatsenko@gmail.com
 COMMENT=	C and C++ client library to the memcached server
 
-LIB_DEPENDS?=	libexecinfo.so:${PORTSDIR}/devel/libexecinfo \
-		libevent.so:${PORTSDIR}/devel/libevent2
+LIB_DEPENDS?=	libevent.so:${PORTSDIR}/devel/libevent2
 
-USES=		gmake pathfix pkgconfig perl5 libtool
+USES=		execinfo gmake pathfix pkgconfig perl5 libtool
 USE_PERL5=	build
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes

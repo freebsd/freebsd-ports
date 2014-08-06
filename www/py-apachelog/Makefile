@@ -10,7 +10,7 @@ MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE} \
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	miwi@FreeBSD.org
-COMMENT=	Python access log parser.
+COMMENT=	Python access log parser
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes

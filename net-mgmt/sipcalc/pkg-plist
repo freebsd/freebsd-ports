@@ -1,4 +1,5 @@
 bin/sipcalc
+man/man1/sipcalc.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/sipcalc.txt

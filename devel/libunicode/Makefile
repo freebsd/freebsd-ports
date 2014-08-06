@@ -4,7 +4,7 @@
 
 PORTNAME=	libunicode
 PORTVERSION=	0.4
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	devel gnome
 MASTER_SITES=	GNOME
 MASTER_SITE_SUBDIR=	sources/libunicode/0.4
@@ -13,8 +13,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}.gnome
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Library for manipulating Unicode characters and strings
 
-USE_AUTOTOOLS=	libtool
-USES=		gmake
+USES=		gmake libtool
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--localstatedir=${PREFIX}/share \

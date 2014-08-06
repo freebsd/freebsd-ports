@@ -38,7 +38,7 @@ include/racket/schvers.h
 include/racket/sconfig.h
 include/racket/stypes.h
 include/racket/uconfig.h
-lib/libracket3m-6.0.1.so
+lib/libracket3m-6.1.so
 lib/libracket3m.so
 lib/racket/buildinfo
 lib/racket/gracket
@@ -846,6 +846,7 @@ share/applications/slideshow.desktop
 %%PORTDOCS%%%%DOCSDIR%%/guide/exe.html
 %%PORTDOCS%%%%DOCSDIR%%/guide/exns.html
 %%PORTDOCS%%%%DOCSDIR%%/guide/figure.css
+%%PORTDOCS%%%%DOCSDIR%%/guide/figure.js
 %%PORTDOCS%%%%DOCSDIR%%/guide/finger.png
 %%PORTDOCS%%%%DOCSDIR%%/guide/firstclassunits.html
 %%PORTDOCS%%%%DOCSDIR%%/guide/for.html
@@ -1215,16 +1216,17 @@ share/applications/slideshow.desktop
 %%PORTDOCS%%%%DOCSDIR%%/inside/Bignums__Rationals__and_Complex_Numbers.html
 %%PORTDOCS%%%%DOCSDIR%%/inside/Custodians.html
 %%PORTDOCS%%%%DOCSDIR%%/inside/Evaluation.html
-%%PORTDOCS%%%%DOCSDIR%%/inside/Flags_and_Hooks.html
 %%PORTDOCS%%%%DOCSDIR%%/inside/Miscellaneous_Utilities.html
 %%PORTDOCS%%%%DOCSDIR%%/inside/Ports_and_the_Filesystem.html
 %%PORTDOCS%%%%DOCSDIR%%/inside/Procedures.html
 %%PORTDOCS%%%%DOCSDIR%%/inside/Structures.html
 %%PORTDOCS%%%%DOCSDIR%%/inside/Subprocesses.html
+%%PORTDOCS%%%%DOCSDIR%%/inside/Writing_Racket_Extensions.html
 %%PORTDOCS%%%%DOCSDIR%%/inside/blueboxes.rktd
 %%PORTDOCS%%%%DOCSDIR%%/inside/config.html
 %%PORTDOCS%%%%DOCSDIR%%/inside/contmarks.html
 %%PORTDOCS%%%%DOCSDIR%%/inside/doc-index.html
+%%PORTDOCS%%%%DOCSDIR%%/inside/embedding.html
 %%PORTDOCS%%%%DOCSDIR%%/inside/exceptions.html
 %%PORTDOCS%%%%DOCSDIR%%/inside/im_encodings.html
 %%PORTDOCS%%%%DOCSDIR%%/inside/im_env.html
@@ -1287,6 +1289,7 @@ share/applications/slideshow.desktop
 %%PORTDOCS%%%%DOCSDIR%%/make/stamp.sxref
 %%PORTDOCS%%%%DOCSDIR%%/manual-fonts.css
 %%PORTDOCS%%%%DOCSDIR%%/manual-racket.css
+%%PORTDOCS%%%%DOCSDIR%%/manual-racket.js
 %%PORTDOCS%%%%DOCSDIR%%/manual-style.css
 %%PORTDOCS%%%%DOCSDIR%%/math/Distribution_Types_and_Operations.html
 %%PORTDOCS%%%%DOCSDIR%%/math/Finite_Distribution_Families.html
@@ -1475,7 +1478,6 @@ share/applications/slideshow.desktop
 %%PORTDOCS%%%%DOCSDIR%%/mzlib/mzlib_async-channel.html
 %%PORTDOCS%%%%DOCSDIR%%/mzlib/mzlib_awk.html
 %%PORTDOCS%%%%DOCSDIR%%/mzlib/mzlib_class.html
-%%PORTDOCS%%%%DOCSDIR%%/mzlib/mzlib_class100.html
 %%PORTDOCS%%%%DOCSDIR%%/mzlib/mzlib_cm-accomplice.html
 %%PORTDOCS%%%%DOCSDIR%%/mzlib/mzlib_cm.html
 %%PORTDOCS%%%%DOCSDIR%%/mzlib/mzlib_cmdline.html
@@ -1600,6 +1602,7 @@ share/applications/slideshow.desktop
 %%PORTDOCS%%%%DOCSDIR%%/pict/Pict_Drawing_Adjusters.html
 %%PORTDOCS%%%%DOCSDIR%%/pict/Pict_Finders.html
 %%PORTDOCS%%%%DOCSDIR%%/pict/Rendering.html
+%%PORTDOCS%%%%DOCSDIR%%/pict/Tree_Layout.html
 %%PORTDOCS%%%%DOCSDIR%%/pict/blueboxes.rktd
 %%PORTDOCS%%%%DOCSDIR%%/pict/in.sxref
 %%PORTDOCS%%%%DOCSDIR%%/pict/index.html
@@ -1620,7 +1623,21 @@ share/applications/slideshow.desktop
 %%PORTDOCS%%%%DOCSDIR%%/pict/pict_11.png
 %%PORTDOCS%%%%DOCSDIR%%/pict/pict_110.png
 %%PORTDOCS%%%%DOCSDIR%%/pict/pict_111.png
+%%PORTDOCS%%%%DOCSDIR%%/pict/pict_112.png
+%%PORTDOCS%%%%DOCSDIR%%/pict/pict_113.png
+%%PORTDOCS%%%%DOCSDIR%%/pict/pict_114.png
+%%PORTDOCS%%%%DOCSDIR%%/pict/pict_115.png
+%%PORTDOCS%%%%DOCSDIR%%/pict/pict_116.png
+%%PORTDOCS%%%%DOCSDIR%%/pict/pict_117.png
+%%PORTDOCS%%%%DOCSDIR%%/pict/pict_118.png
+%%PORTDOCS%%%%DOCSDIR%%/pict/pict_119.png
 %%PORTDOCS%%%%DOCSDIR%%/pict/pict_12.png
+%%PORTDOCS%%%%DOCSDIR%%/pict/pict_120.png
+%%PORTDOCS%%%%DOCSDIR%%/pict/pict_121.png
+%%PORTDOCS%%%%DOCSDIR%%/pict/pict_122.png
+%%PORTDOCS%%%%DOCSDIR%%/pict/pict_123.png
+%%PORTDOCS%%%%DOCSDIR%%/pict/pict_124.png
+%%PORTDOCS%%%%DOCSDIR%%/pict/pict_125.png
 %%PORTDOCS%%%%DOCSDIR%%/pict/pict_13.png
 %%PORTDOCS%%%%DOCSDIR%%/pict/pict_14.png
 %%PORTDOCS%%%%DOCSDIR%%/pict/pict_15.png
@@ -2198,6 +2215,7 @@ share/applications/slideshow.desktop
 %%PORTDOCS%%%%DOCSDIR%%/raco/info_rkt.html
 %%PORTDOCS%%%%DOCSDIR%%/raco/link.html
 %%PORTDOCS%%%%DOCSDIR%%/raco/make.html
+%%PORTDOCS%%%%DOCSDIR%%/raco/matching-platform.html
 %%PORTDOCS%%%%DOCSDIR%%/raco/out0.sxref
 %%PORTDOCS%%%%DOCSDIR%%/raco/out1.sxref
 %%PORTDOCS%%%%DOCSDIR%%/raco/pkg.html
@@ -2222,6 +2240,7 @@ share/applications/slideshow.desktop
 %%PORTDOCS%%%%DOCSDIR%%/readline/stamp.sxref
 %%PORTDOCS%%%%DOCSDIR%%/redex/The_Redex_Reference.html
 %%PORTDOCS%%%%DOCSDIR%%/redex/autobib.css
+%%PORTDOCS%%%%DOCSDIR%%/redex/benchmark.html
 %%PORTDOCS%%%%DOCSDIR%%/redex/blueboxes.rktd
 %%PORTDOCS%%%%DOCSDIR%%/redex/doc-index.html
 %%PORTDOCS%%%%DOCSDIR%%/redex/in.sxref
@@ -2395,6 +2414,7 @@ share/applications/slideshow.desktop
 %%PORTDOCS%%%%DOCSDIR%%/reference/phantom-bytes.html
 %%PORTDOCS%%%%DOCSDIR%%/reference/pipeports.html
 %%PORTDOCS%%%%DOCSDIR%%/reference/places.html
+%%PORTDOCS%%%%DOCSDIR%%/reference/plumbers.html
 %%PORTDOCS%%%%DOCSDIR%%/reference/port-buffers.html
 %%PORTDOCS%%%%DOCSDIR%%/reference/port-lib.html
 %%PORTDOCS%%%%DOCSDIR%%/reference/port-ops.html
@@ -2494,6 +2514,8 @@ share/applications/slideshow.desktop
 %%PORTDOCS%%%%DOCSDIR%%/release/out0.sxref
 %%PORTDOCS%%%%DOCSDIR%%/release/out1.sxref
 %%PORTDOCS%%%%DOCSDIR%%/release/stamp.sxref
+%%PORTDOCS%%%%DOCSDIR%%/root-info.css
+%%PORTDOCS%%%%DOCSDIR%%/root-info.js
 %%PORTDOCS%%%%DOCSDIR%%/scheme/blueboxes.rktd
 %%PORTDOCS%%%%DOCSDIR%%/scheme/compat-exe.html
 %%PORTDOCS%%%%DOCSDIR%%/scheme/in.sxref
@@ -3063,6 +3085,10 @@ share/applications/slideshow.desktop
 %%PORTDOCS%%%%DOCSDIR%%/teachpack/pict_183.svg
 %%PORTDOCS%%%%DOCSDIR%%/teachpack/pict_184.svg
 %%PORTDOCS%%%%DOCSDIR%%/teachpack/pict_185.svg
+%%PORTDOCS%%%%DOCSDIR%%/teachpack/pict_186.svg
+%%PORTDOCS%%%%DOCSDIR%%/teachpack/pict_187.svg
+%%PORTDOCS%%%%DOCSDIR%%/teachpack/pict_188.svg
+%%PORTDOCS%%%%DOCSDIR%%/teachpack/pict_189.svg
 %%PORTDOCS%%%%DOCSDIR%%/teachpack/pict_19.png
 %%PORTDOCS%%%%DOCSDIR%%/teachpack/pict_19.svg
 %%PORTDOCS%%%%DOCSDIR%%/teachpack/pict_2.png
@@ -3525,11 +3551,14 @@ share/applications/slideshow.desktop
 %%DATADIR%%/collects/acks/compiled/acks_rkt.zo
 %%DATADIR%%/collects/compiler/cm-accomplice.rkt
 %%DATADIR%%/collects/compiler/cm.rkt
+%%DATADIR%%/collects/compiler/compilation-path.rkt
 %%DATADIR%%/collects/compiler/compile-file.rkt
 %%DATADIR%%/collects/compiler/compiled/cm-accomplice_rkt.dep
 %%DATADIR%%/collects/compiler/compiled/cm-accomplice_rkt.zo
 %%DATADIR%%/collects/compiler/compiled/cm_rkt.dep
 %%DATADIR%%/collects/compiler/compiled/cm_rkt.zo
+%%DATADIR%%/collects/compiler/compiled/compilation-path_rkt.dep
+%%DATADIR%%/collects/compiler/compiled/compilation-path_rkt.zo
 %%DATADIR%%/collects/compiler/compiled/compile-file_rkt.dep
 %%DATADIR%%/collects/compiler/compiled/compile-file_rkt.zo
 %%DATADIR%%/collects/compiler/compiled/compiler_rkt.dep
@@ -3781,6 +3810,7 @@ share/applications/slideshow.desktop
 %%DATADIR%%/collects/openssl/compiled/openssl_rkt.zo
 %%DATADIR%%/collects/openssl/compiled/sha1_rkt.dep
 %%DATADIR%%/collects/openssl/compiled/sha1_rkt.zo
+%%DATADIR%%/collects/openssl/dh4096.pem
 %%DATADIR%%/collects/openssl/libcrypto.rkt
 %%DATADIR%%/collects/openssl/libssl.rkt
 %%DATADIR%%/collects/openssl/main.rkt
@@ -4114,6 +4144,8 @@ share/applications/slideshow.desktop
 %%DATADIR%%/collects/racket/contract/private/compiled/opt_rkt.zo
 %%DATADIR%%/collects/racket/contract/private/compiled/opters_rkt.dep
 %%DATADIR%%/collects/racket/contract/private/compiled/opters_rkt.zo
+%%DATADIR%%/collects/racket/contract/private/compiled/orc_rkt.dep
+%%DATADIR%%/collects/racket/contract/private/compiled/orc_rkt.zo
 %%DATADIR%%/collects/racket/contract/private/compiled/out_rkt.dep
 %%DATADIR%%/collects/racket/contract/private/compiled/out_rkt.zo
 %%DATADIR%%/collects/racket/contract/private/compiled/parametric_rkt.dep
@@ -4148,6 +4180,7 @@ share/applications/slideshow.desktop
 %%DATADIR%%/collects/racket/contract/private/opt-guts.rkt
 %%DATADIR%%/collects/racket/contract/private/opt.rkt
 %%DATADIR%%/collects/racket/contract/private/opters.rkt
+%%DATADIR%%/collects/racket/contract/private/orc.rkt
 %%DATADIR%%/collects/racket/contract/private/out.rkt
 %%DATADIR%%/collects/racket/contract/private/parametric.rkt
 %%DATADIR%%/collects/racket/contract/private/prop.rkt
@@ -4270,6 +4303,7 @@ share/applications/slideshow.desktop
 %%DATADIR%%/collects/racket/private/class-c-new.rkt
 %%DATADIR%%/collects/racket/private/class-c-old.rkt
 %%DATADIR%%/collects/racket/private/class-internal.rkt
+%%DATADIR%%/collects/racket/private/class-undef.rkt
 %%DATADIR%%/collects/racket/private/class-wrapped.rkt
 %%DATADIR%%/collects/racket/private/classidmap.rkt
 %%DATADIR%%/collects/racket/private/compiled/base_rkt.dep
@@ -4284,6 +4318,8 @@ share/applications/slideshow.desktop
 %%DATADIR%%/collects/racket/private/compiled/class-c-old_rkt.zo
 %%DATADIR%%/collects/racket/private/compiled/class-internal_rkt.dep
 %%DATADIR%%/collects/racket/private/compiled/class-internal_rkt.zo
+%%DATADIR%%/collects/racket/private/compiled/class-undef_rkt.dep
+%%DATADIR%%/collects/racket/private/compiled/class-undef_rkt.zo
 %%DATADIR%%/collects/racket/private/compiled/class-wrapped_rkt.dep
 %%DATADIR%%/collects/racket/private/compiled/class-wrapped_rkt.zo
 %%DATADIR%%/collects/racket/private/compiled/classidmap_rkt.dep
@@ -4382,8 +4418,12 @@ share/applications/slideshow.desktop
 %%DATADIR%%/collects/racket/private/compiled/set-types_rkt.zo
 %%DATADIR%%/collects/racket/private/compiled/set_rkt.dep
 %%DATADIR%%/collects/racket/private/compiled/set_rkt.zo
+%%DATADIR%%/collects/racket/private/compiled/shared-body_rkt.dep
+%%DATADIR%%/collects/racket/private/compiled/shared-body_rkt.zo
 %%DATADIR%%/collects/racket/private/compiled/small-scheme_rkt.dep
 %%DATADIR%%/collects/racket/private/compiled/small-scheme_rkt.zo
+%%DATADIR%%/collects/racket/private/compiled/so-search_rkt.dep
+%%DATADIR%%/collects/racket/private/compiled/so-search_rkt.zo
 %%DATADIR%%/collects/racket/private/compiled/sort_rkt.dep
 %%DATADIR%%/collects/racket/private/compiled/sort_rkt.zo
 %%DATADIR%%/collects/racket/private/compiled/stream-cons_rkt.dep
@@ -4479,8 +4519,9 @@ share/applications/slideshow.desktop
 %%DATADIR%%/collects/racket/private/serialize.rkt
 %%DATADIR%%/collects/racket/private/set-types.rkt
 %%DATADIR%%/collects/racket/private/set.rkt
-%%DATADIR%%/collects/racket/private/shared-body.rktl
+%%DATADIR%%/collects/racket/private/shared-body.rkt
 %%DATADIR%%/collects/racket/private/small-scheme.rkt
+%%DATADIR%%/collects/racket/private/so-search.rkt
 %%DATADIR%%/collects/racket/private/sort.rkt
 %%DATADIR%%/collects/racket/private/stream-cons.rkt
 %%DATADIR%%/collects/racket/private/streams.rkt
@@ -4550,7 +4591,10 @@ share/applications/slideshow.desktop
 %%DATADIR%%/collects/racket/unit/lang/reader.rkt
 %%DATADIR%%/collects/racket/unsafe/compiled/ops_rkt.dep
 %%DATADIR%%/collects/racket/unsafe/compiled/ops_rkt.zo
+%%DATADIR%%/collects/racket/unsafe/compiled/undefined_rkt.dep
+%%DATADIR%%/collects/racket/unsafe/compiled/undefined_rkt.zo
 %%DATADIR%%/collects/racket/unsafe/ops.rkt
+%%DATADIR%%/collects/racket/unsafe/undefined.rkt
 %%DATADIR%%/collects/racket/vector.rkt
 %%DATADIR%%/collects/raco/all-tools.rkt
 %%DATADIR%%/collects/raco/command-name.rkt
@@ -4601,6 +4645,8 @@ share/applications/slideshow.desktop
 %%DATADIR%%/collects/setup/compiled/main-collects_rkt.zo
 %%DATADIR%%/collects/setup/compiled/main-doc_rkt.dep
 %%DATADIR%%/collects/setup/compiled/main-doc_rkt.zo
+%%DATADIR%%/collects/setup/compiled/matching-platform_rkt.dep
+%%DATADIR%%/collects/setup/compiled/matching-platform_rkt.zo
 %%DATADIR%%/collects/setup/compiled/option_rkt.dep
 %%DATADIR%%/collects/setup/compiled/option_rkt.zo
 %%DATADIR%%/collects/setup/compiled/pack_rkt.dep
@@ -4648,6 +4694,7 @@ share/applications/slideshow.desktop
 %%DATADIR%%/collects/setup/main-doc.rkt
 %%DATADIR%%/collects/setup/main.lch
 %%DATADIR%%/collects/setup/main.rkt
+%%DATADIR%%/collects/setup/matching-platform.rkt
 %%DATADIR%%/collects/setup/option.rkt
 %%DATADIR%%/collects/setup/pack.rkt
 %%DATADIR%%/collects/setup/parallel-build.rkt
@@ -5105,7 +5152,6 @@ share/applications/slideshow.desktop
 %%DATADIR%%/pkgs/compatibility-doc/mzlib/compiled/info_rkt.zo
 %%DATADIR%%/pkgs/compatibility-doc/mzlib/info.rkt
 %%DATADIR%%/pkgs/compatibility-doc/mzlib/scribblings/awk.scrbl
-%%DATADIR%%/pkgs/compatibility-doc/mzlib/scribblings/class100.scrbl
 %%DATADIR%%/pkgs/compatibility-doc/mzlib/scribblings/cmdline.scrbl
 %%DATADIR%%/pkgs/compatibility-doc/mzlib/scribblings/cml.scrbl
 %%DATADIR%%/pkgs/compatibility-doc/mzlib/scribblings/common.rkt
@@ -5113,8 +5159,6 @@ share/applications/slideshow.desktop
 %%DATADIR%%/pkgs/compatibility-doc/mzlib/scribblings/compile.scrbl
 %%DATADIR%%/pkgs/compatibility-doc/mzlib/scribblings/compiled/awk_scrbl.dep
 %%DATADIR%%/pkgs/compatibility-doc/mzlib/scribblings/compiled/awk_scrbl.zo
-%%DATADIR%%/pkgs/compatibility-doc/mzlib/scribblings/compiled/class100_scrbl.dep
-%%DATADIR%%/pkgs/compatibility-doc/mzlib/scribblings/compiled/class100_scrbl.zo
 %%DATADIR%%/pkgs/compatibility-doc/mzlib/scribblings/compiled/cmdline_scrbl.dep
 %%DATADIR%%/pkgs/compatibility-doc/mzlib/scribblings/compiled/cmdline_scrbl.zo
 %%DATADIR%%/pkgs/compatibility-doc/mzlib/scribblings/compiled/cml_scrbl.dep
@@ -5234,7 +5278,6 @@ share/applications/slideshow.desktop
 %%DATADIR%%/pkgs/compatibility-lib/mzlib/async-channel.rkt
 %%DATADIR%%/pkgs/compatibility-lib/mzlib/awk.rkt
 %%DATADIR%%/pkgs/compatibility-lib/mzlib/class.rkt
-%%DATADIR%%/pkgs/compatibility-lib/mzlib/class100.rkt
 %%DATADIR%%/pkgs/compatibility-lib/mzlib/cm-accomplice.rkt
 %%DATADIR%%/pkgs/compatibility-lib/mzlib/cm.rkt
 %%DATADIR%%/pkgs/compatibility-lib/mzlib/cmdline.rkt
@@ -5249,8 +5292,6 @@ share/applications/slideshow.desktop
 %%DATADIR%%/pkgs/compatibility-lib/mzlib/compiled/async-channel_rkt.zo
 %%DATADIR%%/pkgs/compatibility-lib/mzlib/compiled/awk_rkt.dep
 %%DATADIR%%/pkgs/compatibility-lib/mzlib/compiled/awk_rkt.zo
-%%DATADIR%%/pkgs/compatibility-lib/mzlib/compiled/class100_rkt.dep
-%%DATADIR%%/pkgs/compatibility-lib/mzlib/compiled/class100_rkt.zo
 %%DATADIR%%/pkgs/compatibility-lib/mzlib/compiled/class_rkt.dep
 %%DATADIR%%/pkgs/compatibility-lib/mzlib/compiled/class_rkt.zo
 %%DATADIR%%/pkgs/compatibility-lib/mzlib/compiled/cm-accomplice_rkt.dep
@@ -6789,6 +6830,8 @@ share/applications/slideshow.desktop
 %%DATADIR%%/pkgs/drracket/drracket/private/compiled/module-language_rkt.zo
 %%DATADIR%%/pkgs/drracket/drracket/private/compiled/multi-file-search_rkt.dep
 %%DATADIR%%/pkgs/drracket/drracket/private/compiled/multi-file-search_rkt.zo
+%%DATADIR%%/pkgs/drracket/drracket/private/compiled/named-undefined_rkt.dep
+%%DATADIR%%/pkgs/drracket/drracket/private/compiled/named-undefined_rkt.zo
 %%DATADIR%%/pkgs/drracket/drracket/private/compiled/number-snip_rkt.dep
 %%DATADIR%%/pkgs/drracket/drracket/private/compiled/number-snip_rkt.zo
 %%DATADIR%%/pkgs/drracket/drracket/private/compiled/palaka_rkt.dep
@@ -6807,6 +6850,8 @@ share/applications/slideshow.desktop
 %%DATADIR%%/pkgs/drracket/drracket/private/compiled/rep_rkt.zo
 %%DATADIR%%/pkgs/drracket/drracket/private/compiled/stack-checkpoint_rkt.dep
 %%DATADIR%%/pkgs/drracket/drracket/private/compiled/stack-checkpoint_rkt.zo
+%%DATADIR%%/pkgs/drracket/drracket/private/compiled/standalone-module-browser_rkt.dep
+%%DATADIR%%/pkgs/drracket/drracket/private/compiled/standalone-module-browser_rkt.zo
 %%DATADIR%%/pkgs/drracket/drracket/private/compiled/stick-figures_rkt.dep
 %%DATADIR%%/pkgs/drracket/drracket/private/compiled/stick-figures_rkt.zo
 %%DATADIR%%/pkgs/drracket/drracket/private/compiled/syncheck-debug_rkt.dep
@@ -6865,6 +6910,7 @@ share/applications/slideshow.desktop
 %%DATADIR%%/pkgs/drracket/drracket/private/module-language-tools.rkt
 %%DATADIR%%/pkgs/drracket/drracket/private/module-language.rkt
 %%DATADIR%%/pkgs/drracket/drracket/private/multi-file-search.rkt
+%%DATADIR%%/pkgs/drracket/drracket/private/named-undefined.rkt
 %%DATADIR%%/pkgs/drracket/drracket/private/number-snip.rkt
 %%DATADIR%%/pkgs/drracket/drracket/private/palaka.rkt
 %%DATADIR%%/pkgs/drracket/drracket/private/parse-logger-args.rkt
@@ -6874,6 +6920,7 @@ share/applications/slideshow.desktop
 %%DATADIR%%/pkgs/drracket/drracket/private/rectangle-intersect.rkt
 %%DATADIR%%/pkgs/drracket/drracket/private/rep.rkt
 %%DATADIR%%/pkgs/drracket/drracket/private/stack-checkpoint.rkt
+%%DATADIR%%/pkgs/drracket/drracket/private/standalone-module-browser.rkt
 %%DATADIR%%/pkgs/drracket/drracket/private/stick-figures.rkt
 %%DATADIR%%/pkgs/drracket/drracket/private/syncheck-debug.rkt
 %%DATADIR%%/pkgs/drracket/drracket/private/syncheck/annotate.rkt
@@ -8017,6 +8064,8 @@ share/applications/slideshow.desktop
 %%DATADIR%%/pkgs/games/cards/compiled/classes_rkt.zo
 %%DATADIR%%/pkgs/games/cards/compiled/constants_rkt.dep
 %%DATADIR%%/pkgs/games/cards/compiled/constants_rkt.zo
+%%DATADIR%%/pkgs/games/cards/compiled/generate_rkt.dep
+%%DATADIR%%/pkgs/games/cards/compiled/generate_rkt.zo
 %%DATADIR%%/pkgs/games/cards/compiled/info_rkt.dep
 %%DATADIR%%/pkgs/games/cards/compiled/info_rkt.zo
 %%DATADIR%%/pkgs/games/cards/compiled/main_rkt.dep
@@ -8030,59 +8079,113 @@ share/applications/slideshow.desktop
 %%DATADIR%%/pkgs/games/cards/compiled/utils_rkt.dep
 %%DATADIR%%/pkgs/games/cards/compiled/utils_rkt.zo
 %%DATADIR%%/pkgs/games/cards/constants.rkt
+%%DATADIR%%/pkgs/games/cards/generate.rkt
 %%DATADIR%%/pkgs/games/cards/hicolor/card-0-0.png
+%%DATADIR%%/pkgs/games/cards/hicolor/card-0-0@2x.png
 %%DATADIR%%/pkgs/games/cards/hicolor/card-0-1.png
+%%DATADIR%%/pkgs/games/cards/hicolor/card-0-1@2x.png
 %%DATADIR%%/pkgs/games/cards/hicolor/card-0-2.png
+%%DATADIR%%/pkgs/games/cards/hicolor/card-0-2@2x.png
 %%DATADIR%%/pkgs/games/cards/hicolor/card-0-3.png
+%%DATADIR%%/pkgs/games/cards/hicolor/card-0-3@2x.png
 %%DATADIR%%/pkgs/games/cards/hicolor/card-1-0.png
+%%DATADIR%%/pkgs/games/cards/hicolor/card-1-0@2x.png
 %%DATADIR%%/pkgs/games/cards/hicolor/card-1-1.png
+%%DATADIR%%/pkgs/games/cards/hicolor/card-1-1@2x.png
 %%DATADIR%%/pkgs/games/cards/hicolor/card-1-2.png
+%%DATADIR%%/pkgs/games/cards/hicolor/card-1-2@2x.png
 %%DATADIR%%/pkgs/games/cards/hicolor/card-1-3.png
+%%DATADIR%%/pkgs/games/cards/hicolor/card-1-3@2x.png
 %%DATADIR%%/pkgs/games/cards/hicolor/card-10-0.png
+%%DATADIR%%/pkgs/games/cards/hicolor/card-10-0@2x.png
 %%DATADIR%%/pkgs/games/cards/hicolor/card-10-1.png
+%%DATADIR%%/pkgs/games/cards/hicolor/card-10-1@2x.png
 %%DATADIR%%/pkgs/games/cards/hicolor/card-10-2.png
+%%DATADIR%%/pkgs/games/cards/hicolor/card-10-2@2x.png
 %%DATADIR%%/pkgs/games/cards/hicolor/card-10-3.png
+%%DATADIR%%/pkgs/games/cards/hicolor/card-10-3@2x.png
 %%DATADIR%%/pkgs/games/cards/hicolor/card-11-0.png
+%%DATADIR%%/pkgs/games/cards/hicolor/card-11-0@2x.png
 %%DATADIR%%/pkgs/games/cards/hicolor/card-11-1.png
+%%DATADIR%%/pkgs/games/cards/hicolor/card-11-1@2x.png
 %%DATADIR%%/pkgs/games/cards/hicolor/card-11-2.png
+%%DATADIR%%/pkgs/games/cards/hicolor/card-11-2@2x.png
 %%DATADIR%%/pkgs/games/cards/hicolor/card-11-3.png
+%%DATADIR%%/pkgs/games/cards/hicolor/card-11-3@2x.png
 %%DATADIR%%/pkgs/games/cards/hicolor/card-12-0.png
+%%DATADIR%%/pkgs/games/cards/hicolor/card-12-0@2x.png
 %%DATADIR%%/pkgs/games/cards/hicolor/card-12-1.png
+%%DATADIR%%/pkgs/games/cards/hicolor/card-12-1@2x.png
 %%DATADIR%%/pkgs/games/cards/hicolor/card-12-2.png
+%%DATADIR%%/pkgs/games/cards/hicolor/card-12-2@2x.png
 %%DATADIR%%/pkgs/games/cards/hicolor/card-12-3.png
+%%DATADIR%%/pkgs/games/cards/hicolor/card-12-3@2x.png
 %%DATADIR%%/pkgs/games/cards/hicolor/card-2-0.png
+%%DATADIR%%/pkgs/games/cards/hicolor/card-2-0@2x.png
 %%DATADIR%%/pkgs/games/cards/hicolor/card-2-1.png
+%%DATADIR%%/pkgs/games/cards/hicolor/card-2-1@2x.png
 %%DATADIR%%/pkgs/games/cards/hicolor/card-2-2.png
+%%DATADIR%%/pkgs/games/cards/hicolor/card-2-2@2x.png
 %%DATADIR%%/pkgs/games/cards/hicolor/card-2-3.png
+%%DATADIR%%/pkgs/games/cards/hicolor/card-2-3@2x.png
 %%DATADIR%%/pkgs/games/cards/hicolor/card-3-0.png
+%%DATADIR%%/pkgs/games/cards/hicolor/card-3-0@2x.png
 %%DATADIR%%/pkgs/games/cards/hicolor/card-3-1.png
+%%DATADIR%%/pkgs/games/cards/hicolor/card-3-1@2x.png
 %%DATADIR%%/pkgs/games/cards/hicolor/card-3-2.png
+%%DATADIR%%/pkgs/games/cards/hicolor/card-3-2@2x.png
 %%DATADIR%%/pkgs/games/cards/hicolor/card-3-3.png
+%%DATADIR%%/pkgs/games/cards/hicolor/card-3-3@2x.png
 %%DATADIR%%/pkgs/games/cards/hicolor/card-4-0.png
+%%DATADIR%%/pkgs/games/cards/hicolor/card-4-0@2x.png
 %%DATADIR%%/pkgs/games/cards/hicolor/card-4-1.png
+%%DATADIR%%/pkgs/games/cards/hicolor/card-4-1@2x.png
 %%DATADIR%%/pkgs/games/cards/hicolor/card-4-2.png
+%%DATADIR%%/pkgs/games/cards/hicolor/card-4-2@2x.png
 %%DATADIR%%/pkgs/games/cards/hicolor/card-4-3.png
+%%DATADIR%%/pkgs/games/cards/hicolor/card-4-3@2x.png
 %%DATADIR%%/pkgs/games/cards/hicolor/card-5-0.png
+%%DATADIR%%/pkgs/games/cards/hicolor/card-5-0@2x.png
 %%DATADIR%%/pkgs/games/cards/hicolor/card-5-1.png
+%%DATADIR%%/pkgs/games/cards/hicolor/card-5-1@2x.png
 %%DATADIR%%/pkgs/games/cards/hicolor/card-5-2.png
+%%DATADIR%%/pkgs/games/cards/hicolor/card-5-2@2x.png
 %%DATADIR%%/pkgs/games/cards/hicolor/card-5-3.png
+%%DATADIR%%/pkgs/games/cards/hicolor/card-5-3@2x.png
 %%DATADIR%%/pkgs/games/cards/hicolor/card-6-0.png
+%%DATADIR%%/pkgs/games/cards/hicolor/card-6-0@2x.png
 %%DATADIR%%/pkgs/games/cards/hicolor/card-6-1.png
+%%DATADIR%%/pkgs/games/cards/hicolor/card-6-1@2x.png
 %%DATADIR%%/pkgs/games/cards/hicolor/card-6-2.png
+%%DATADIR%%/pkgs/games/cards/hicolor/card-6-2@2x.png
 %%DATADIR%%/pkgs/games/cards/hicolor/card-6-3.png
+%%DATADIR%%/pkgs/games/cards/hicolor/card-6-3@2x.png
 %%DATADIR%%/pkgs/games/cards/hicolor/card-7-0.png
+%%DATADIR%%/pkgs/games/cards/hicolor/card-7-0@2x.png
 %%DATADIR%%/pkgs/games/cards/hicolor/card-7-1.png
+%%DATADIR%%/pkgs/games/cards/hicolor/card-7-1@2x.png
 %%DATADIR%%/pkgs/games/cards/hicolor/card-7-2.png
+%%DATADIR%%/pkgs/games/cards/hicolor/card-7-2@2x.png
 %%DATADIR%%/pkgs/games/cards/hicolor/card-7-3.png
+%%DATADIR%%/pkgs/games/cards/hicolor/card-7-3@2x.png
 %%DATADIR%%/pkgs/games/cards/hicolor/card-8-0.png
+%%DATADIR%%/pkgs/games/cards/hicolor/card-8-0@2x.png
 %%DATADIR%%/pkgs/games/cards/hicolor/card-8-1.png
+%%DATADIR%%/pkgs/games/cards/hicolor/card-8-1@2x.png
 %%DATADIR%%/pkgs/games/cards/hicolor/card-8-2.png
+%%DATADIR%%/pkgs/games/cards/hicolor/card-8-2@2x.png
 %%DATADIR%%/pkgs/games/cards/hicolor/card-8-3.png
+%%DATADIR%%/pkgs/games/cards/hicolor/card-8-3@2x.png
 %%DATADIR%%/pkgs/games/cards/hicolor/card-9-0.png
+%%DATADIR%%/pkgs/games/cards/hicolor/card-9-0@2x.png
 %%DATADIR%%/pkgs/games/cards/hicolor/card-9-1.png
+%%DATADIR%%/pkgs/games/cards/hicolor/card-9-1@2x.png
 %%DATADIR%%/pkgs/games/cards/hicolor/card-9-2.png
+%%DATADIR%%/pkgs/games/cards/hicolor/card-9-2@2x.png
 %%DATADIR%%/pkgs/games/cards/hicolor/card-9-3.png
+%%DATADIR%%/pkgs/games/cards/hicolor/card-9-3@2x.png
 %%DATADIR%%/pkgs/games/cards/hicolor/card-back.png
+%%DATADIR%%/pkgs/games/cards/hicolor/card-back@2x.png
 %%DATADIR%%/pkgs/games/cards/info.rkt
 %%DATADIR%%/pkgs/games/cards/locolor/card-0-0.png
 %%DATADIR%%/pkgs/games/cards/locolor/card-0-1.png
@@ -10488,12 +10591,18 @@ share/applications/slideshow.desktop
 %%DATADIR%%/pkgs/gui-lib/mrlib/private/aligned-pasteboard/tests/test-snip-lib.rkt
 %%DATADIR%%/pkgs/gui-lib/mrlib/private/aligned-pasteboard/tests/test.rkt
 %%DATADIR%%/pkgs/gui-lib/mrlib/private/aligned-pasteboard/tests/test2.rkt
+%%DATADIR%%/pkgs/gui-lib/mrlib/private/compiled/dot_rkt.dep
+%%DATADIR%%/pkgs/gui-lib/mrlib/private/compiled/dot_rkt.zo
+%%DATADIR%%/pkgs/gui-lib/mrlib/private/compiled/graph_rkt.dep
+%%DATADIR%%/pkgs/gui-lib/mrlib/private/compiled/graph_rkt.zo
 %%DATADIR%%/pkgs/gui-lib/mrlib/private/compiled/image-core-bitmap_rkt.dep
 %%DATADIR%%/pkgs/gui-lib/mrlib/private/compiled/image-core-bitmap_rkt.zo
 %%DATADIR%%/pkgs/gui-lib/mrlib/private/compiled/image-core-snipclass_rkt.dep
 %%DATADIR%%/pkgs/gui-lib/mrlib/private/compiled/image-core-snipclass_rkt.zo
 %%DATADIR%%/pkgs/gui-lib/mrlib/private/compiled/regmk_rkt.dep
 %%DATADIR%%/pkgs/gui-lib/mrlib/private/compiled/regmk_rkt.zo
+%%DATADIR%%/pkgs/gui-lib/mrlib/private/dot.rkt
+%%DATADIR%%/pkgs/gui-lib/mrlib/private/graph.rkt
 %%DATADIR%%/pkgs/gui-lib/mrlib/private/image-core-bitmap.rkt
 %%DATADIR%%/pkgs/gui-lib/mrlib/private/image-core-snipclass.rkt
 %%DATADIR%%/pkgs/gui-lib/mrlib/private/regmk.rkt
@@ -10547,30 +10656,33 @@ share/applications/slideshow.desktop
 %%DATADIR%%/pkgs/gui-lib/unstable/private/notify.rkt
 %%DATADIR%%/pkgs/gui-pkg-manager-lib/LICENSE.txt
 %%DATADIR%%/pkgs/gui-pkg-manager-lib/info.rkt
-%%DATADIR%%/pkgs/gui-pkg-manager-lib/pkg/gui/by-installed.rkt
-%%DATADIR%%/pkgs/gui-pkg-manager-lib/pkg/gui/by-list.rkt
-%%DATADIR%%/pkgs/gui-pkg-manager-lib/pkg/gui/by-migrate.rkt
-%%DATADIR%%/pkgs/gui-pkg-manager-lib/pkg/gui/by-source.rkt
-%%DATADIR%%/pkgs/gui-pkg-manager-lib/pkg/gui/common.rkt
-%%DATADIR%%/pkgs/gui-pkg-manager-lib/pkg/gui/compiled/by-installed_rkt.dep
-%%DATADIR%%/pkgs/gui-pkg-manager-lib/pkg/gui/compiled/by-installed_rkt.zo
-%%DATADIR%%/pkgs/gui-pkg-manager-lib/pkg/gui/compiled/by-list_rkt.dep
-%%DATADIR%%/pkgs/gui-pkg-manager-lib/pkg/gui/compiled/by-list_rkt.zo
-%%DATADIR%%/pkgs/gui-pkg-manager-lib/pkg/gui/compiled/by-migrate_rkt.dep
-%%DATADIR%%/pkgs/gui-pkg-manager-lib/pkg/gui/compiled/by-migrate_rkt.zo
-%%DATADIR%%/pkgs/gui-pkg-manager-lib/pkg/gui/compiled/by-source_rkt.dep
-%%DATADIR%%/pkgs/gui-pkg-manager-lib/pkg/gui/compiled/by-source_rkt.zo
-%%DATADIR%%/pkgs/gui-pkg-manager-lib/pkg/gui/compiled/common_rkt.dep
-%%DATADIR%%/pkgs/gui-pkg-manager-lib/pkg/gui/compiled/common_rkt.zo
-%%DATADIR%%/pkgs/gui-pkg-manager-lib/pkg/gui/compiled/filter-panel_rkt.dep
-%%DATADIR%%/pkgs/gui-pkg-manager-lib/pkg/gui/compiled/filter-panel_rkt.zo
-%%DATADIR%%/pkgs/gui-pkg-manager-lib/pkg/gui/compiled/main_rkt.dep
-%%DATADIR%%/pkgs/gui-pkg-manager-lib/pkg/gui/compiled/main_rkt.zo
-%%DATADIR%%/pkgs/gui-pkg-manager-lib/pkg/gui/compiled/settings_rkt.dep
-%%DATADIR%%/pkgs/gui-pkg-manager-lib/pkg/gui/compiled/settings_rkt.zo
-%%DATADIR%%/pkgs/gui-pkg-manager-lib/pkg/gui/filter-panel.rkt
-%%DATADIR%%/pkgs/gui-pkg-manager-lib/pkg/gui/main.rkt
-%%DATADIR%%/pkgs/gui-pkg-manager-lib/pkg/gui/settings.rkt
+%%DATADIR%%/pkgs/gui-pkg-manager-lib/pkg/compiled/gui_rkt.dep
+%%DATADIR%%/pkgs/gui-pkg-manager-lib/pkg/compiled/gui_rkt.zo
+%%DATADIR%%/pkgs/gui-pkg-manager-lib/pkg/gui.rkt
+%%DATADIR%%/pkgs/gui-pkg-manager-lib/pkg/gui/private/by-installed.rkt
+%%DATADIR%%/pkgs/gui-pkg-manager-lib/pkg/gui/private/by-list.rkt
+%%DATADIR%%/pkgs/gui-pkg-manager-lib/pkg/gui/private/by-migrate.rkt
+%%DATADIR%%/pkgs/gui-pkg-manager-lib/pkg/gui/private/by-source.rkt
+%%DATADIR%%/pkgs/gui-pkg-manager-lib/pkg/gui/private/catalog-update.rkt
+%%DATADIR%%/pkgs/gui-pkg-manager-lib/pkg/gui/private/common.rkt
+%%DATADIR%%/pkgs/gui-pkg-manager-lib/pkg/gui/private/compiled/by-installed_rkt.dep
+%%DATADIR%%/pkgs/gui-pkg-manager-lib/pkg/gui/private/compiled/by-installed_rkt.zo
+%%DATADIR%%/pkgs/gui-pkg-manager-lib/pkg/gui/private/compiled/by-list_rkt.dep
+%%DATADIR%%/pkgs/gui-pkg-manager-lib/pkg/gui/private/compiled/by-list_rkt.zo
+%%DATADIR%%/pkgs/gui-pkg-manager-lib/pkg/gui/private/compiled/by-migrate_rkt.dep
+%%DATADIR%%/pkgs/gui-pkg-manager-lib/pkg/gui/private/compiled/by-migrate_rkt.zo
+%%DATADIR%%/pkgs/gui-pkg-manager-lib/pkg/gui/private/compiled/by-source_rkt.dep
+%%DATADIR%%/pkgs/gui-pkg-manager-lib/pkg/gui/private/compiled/by-source_rkt.zo
+%%DATADIR%%/pkgs/gui-pkg-manager-lib/pkg/gui/private/compiled/catalog-update_rkt.dep
+%%DATADIR%%/pkgs/gui-pkg-manager-lib/pkg/gui/private/compiled/catalog-update_rkt.zo
+%%DATADIR%%/pkgs/gui-pkg-manager-lib/pkg/gui/private/compiled/common_rkt.dep
+%%DATADIR%%/pkgs/gui-pkg-manager-lib/pkg/gui/private/compiled/common_rkt.zo
+%%DATADIR%%/pkgs/gui-pkg-manager-lib/pkg/gui/private/compiled/filter-panel_rkt.dep
+%%DATADIR%%/pkgs/gui-pkg-manager-lib/pkg/gui/private/compiled/filter-panel_rkt.zo
+%%DATADIR%%/pkgs/gui-pkg-manager-lib/pkg/gui/private/compiled/settings_rkt.dep
+%%DATADIR%%/pkgs/gui-pkg-manager-lib/pkg/gui/private/compiled/settings_rkt.zo
+%%DATADIR%%/pkgs/gui-pkg-manager-lib/pkg/gui/private/filter-panel.rkt
+%%DATADIR%%/pkgs/gui-pkg-manager-lib/pkg/gui/private/settings.rkt
 %%DATADIR%%/pkgs/gui/LICENSE.txt
 %%DATADIR%%/pkgs/gui/info.rkt
 %%DATADIR%%/pkgs/htdp-doc/LICENSE.txt
@@ -13253,9 +13365,12 @@ share/applications/slideshow.desktop
 %%DATADIR%%/pkgs/pict-doc/pict/scribblings/compiled/pict-diagram_rkt.zo
 %%DATADIR%%/pkgs/pict-doc/pict/scribblings/compiled/pict_scrbl.dep
 %%DATADIR%%/pkgs/pict-doc/pict/scribblings/compiled/pict_scrbl.zo
+%%DATADIR%%/pkgs/pict-doc/pict/scribblings/compiled/tree-layout_scrbl.dep
+%%DATADIR%%/pkgs/pict-doc/pict/scribblings/compiled/tree-layout_scrbl.zo
 %%DATADIR%%/pkgs/pict-doc/pict/scribblings/more.scrbl
 %%DATADIR%%/pkgs/pict-doc/pict/scribblings/pict-diagram.rkt
 %%DATADIR%%/pkgs/pict-doc/pict/scribblings/pict.scrbl
+%%DATADIR%%/pkgs/pict-doc/pict/scribblings/tree-layout.scrbl
 %%DATADIR%%/pkgs/pict-lib/LICENSE.txt
 %%DATADIR%%/pkgs/pict-lib/info.rkt
 %%DATADIR%%/pkgs/pict-lib/pict/balloon.rkt
@@ -13272,16 +13387,31 @@ share/applications/slideshow.desktop
 %%DATADIR%%/pkgs/pict-lib/pict/compiled/flash_rkt.zo
 %%DATADIR%%/pkgs/pict-lib/pict/compiled/main_rkt.dep
 %%DATADIR%%/pkgs/pict-lib/pict/compiled/main_rkt.zo
+%%DATADIR%%/pkgs/pict-lib/pict/compiled/tree-layout_rkt.dep
+%%DATADIR%%/pkgs/pict-lib/pict/compiled/tree-layout_rkt.zo
 %%DATADIR%%/pkgs/pict-lib/pict/convert.rkt
 %%DATADIR%%/pkgs/pict-lib/pict/face.rkt
 %%DATADIR%%/pkgs/pict-lib/pict/flash.rkt
 %%DATADIR%%/pkgs/pict-lib/pict/main.rkt
+%%DATADIR%%/pkgs/pict-lib/pict/private/compiled/hv_rkt.dep
+%%DATADIR%%/pkgs/pict-lib/pict/private/compiled/hv_rkt.zo
+%%DATADIR%%/pkgs/pict-lib/pict/private/compiled/layout_rkt.dep
+%%DATADIR%%/pkgs/pict-lib/pict/private/compiled/layout_rkt.zo
 %%DATADIR%%/pkgs/pict-lib/pict/private/compiled/main_rkt.dep
 %%DATADIR%%/pkgs/pict-lib/pict/private/compiled/main_rkt.zo
+%%DATADIR%%/pkgs/pict-lib/pict/private/compiled/naive-layered_rkt.dep
+%%DATADIR%%/pkgs/pict-lib/pict/private/compiled/naive-layered_rkt.zo
 %%DATADIR%%/pkgs/pict-lib/pict/private/compiled/play-pict_rkt.dep
 %%DATADIR%%/pkgs/pict-lib/pict/private/compiled/play-pict_rkt.zo
+%%DATADIR%%/pkgs/pict-lib/pict/private/compiled/tidier_rkt.dep
+%%DATADIR%%/pkgs/pict-lib/pict/private/compiled/tidier_rkt.zo
+%%DATADIR%%/pkgs/pict-lib/pict/private/hv.rkt
+%%DATADIR%%/pkgs/pict-lib/pict/private/layout.rkt
 %%DATADIR%%/pkgs/pict-lib/pict/private/main.rkt
+%%DATADIR%%/pkgs/pict-lib/pict/private/naive-layered.rkt
 %%DATADIR%%/pkgs/pict-lib/pict/private/play-pict.rkt
+%%DATADIR%%/pkgs/pict-lib/pict/private/tidier.rkt
+%%DATADIR%%/pkgs/pict-lib/pict/tree-layout.rkt
 %%DATADIR%%/pkgs/pict-lib/texpict/balloon.rkt
 %%DATADIR%%/pkgs/pict-lib/texpict/code.rkt
 %%DATADIR%%/pkgs/pict-lib/texpict/compiled/balloon_rkt.dep
@@ -15337,10 +15467,14 @@ share/applications/slideshow.desktop
 %%DATADIR%%/pkgs/racket-doc/scribblings/inside/compiled/contmarks_scrbl.zo
 %%DATADIR%%/pkgs/racket-doc/scribblings/inside/compiled/custodians_scrbl.dep
 %%DATADIR%%/pkgs/racket-doc/scribblings/inside/compiled/custodians_scrbl.zo
+%%DATADIR%%/pkgs/racket-doc/scribblings/inside/compiled/embedding_scrbl.dep
+%%DATADIR%%/pkgs/racket-doc/scribblings/inside/compiled/embedding_scrbl.zo
 %%DATADIR%%/pkgs/racket-doc/scribblings/inside/compiled/eval_scrbl.dep
 %%DATADIR%%/pkgs/racket-doc/scribblings/inside/compiled/eval_scrbl.zo
 %%DATADIR%%/pkgs/racket-doc/scribblings/inside/compiled/exns_scrbl.dep
 %%DATADIR%%/pkgs/racket-doc/scribblings/inside/compiled/exns_scrbl.zo
+%%DATADIR%%/pkgs/racket-doc/scribblings/inside/compiled/extensions_scrbl.dep
+%%DATADIR%%/pkgs/racket-doc/scribblings/inside/compiled/extensions_scrbl.zo
 %%DATADIR%%/pkgs/racket-doc/scribblings/inside/compiled/hooks_scrbl.dep
 %%DATADIR%%/pkgs/racket-doc/scribblings/inside/compiled/hooks_scrbl.zo
 %%DATADIR%%/pkgs/racket-doc/scribblings/inside/compiled/info_rkt.dep
@@ -15379,8 +15513,10 @@ share/applications/slideshow.desktop
 %%DATADIR%%/pkgs/racket-doc/scribblings/inside/compiled/values_scrbl.zo
 %%DATADIR%%/pkgs/racket-doc/scribblings/inside/contmarks.scrbl
 %%DATADIR%%/pkgs/racket-doc/scribblings/inside/custodians.scrbl
+%%DATADIR%%/pkgs/racket-doc/scribblings/inside/embedding.scrbl
 %%DATADIR%%/pkgs/racket-doc/scribblings/inside/eval.scrbl
 %%DATADIR%%/pkgs/racket-doc/scribblings/inside/exns.scrbl
+%%DATADIR%%/pkgs/racket-doc/scribblings/inside/extensions.scrbl
 %%DATADIR%%/pkgs/racket-doc/scribblings/inside/hooks.scrbl
 %%DATADIR%%/pkgs/racket-doc/scribblings/inside/info.rkt
 %%DATADIR%%/pkgs/racket-doc/scribblings/inside/inside.scrbl
@@ -15678,6 +15814,8 @@ share/applications/slideshow.desktop
 %%DATADIR%%/pkgs/racket-doc/scribblings/reference/compiled/places-logging_scrbl.zo
 %%DATADIR%%/pkgs/racket-doc/scribblings/reference/compiled/places_scrbl.dep
 %%DATADIR%%/pkgs/racket-doc/scribblings/reference/compiled/places_scrbl.zo
+%%DATADIR%%/pkgs/racket-doc/scribblings/reference/compiled/plumbers_scrbl.dep
+%%DATADIR%%/pkgs/racket-doc/scribblings/reference/compiled/plumbers_scrbl.zo
 %%DATADIR%%/pkgs/racket-doc/scribblings/reference/compiled/port-buffers_scrbl.dep
 %%DATADIR%%/pkgs/racket-doc/scribblings/reference/compiled/port-buffers_scrbl.zo
 %%DATADIR%%/pkgs/racket-doc/scribblings/reference/compiled/port-lib_scrbl.dep
@@ -15794,10 +15932,14 @@ share/applications/slideshow.desktop
 %%DATADIR%%/pkgs/racket-doc/scribblings/reference/compiled/time_scrbl.zo
 %%DATADIR%%/pkgs/racket-doc/scribblings/reference/compiled/trace_scrbl.dep
 %%DATADIR%%/pkgs/racket-doc/scribblings/reference/compiled/trace_scrbl.zo
+%%DATADIR%%/pkgs/racket-doc/scribblings/reference/compiled/undefined_scrbl.dep
+%%DATADIR%%/pkgs/racket-doc/scribblings/reference/compiled/undefined_scrbl.zo
 %%DATADIR%%/pkgs/racket-doc/scribblings/reference/compiled/units_scrbl.dep
 %%DATADIR%%/pkgs/racket-doc/scribblings/reference/compiled/units_scrbl.zo
 %%DATADIR%%/pkgs/racket-doc/scribblings/reference/compiled/unix-paths_scrbl.dep
 %%DATADIR%%/pkgs/racket-doc/scribblings/reference/compiled/unix-paths_scrbl.zo
+%%DATADIR%%/pkgs/racket-doc/scribblings/reference/compiled/unsafe-undefined_scrbl.dep
+%%DATADIR%%/pkgs/racket-doc/scribblings/reference/compiled/unsafe-undefined_scrbl.zo
 %%DATADIR%%/pkgs/racket-doc/scribblings/reference/compiled/unsafe_scrbl.dep
 %%DATADIR%%/pkgs/racket-doc/scribblings/reference/compiled/unsafe_scrbl.zo
 %%DATADIR%%/pkgs/racket-doc/scribblings/reference/compiled/values_scrbl.dep
@@ -15876,6 +16018,7 @@ share/applications/slideshow.desktop
 %%DATADIR%%/pkgs/racket-doc/scribblings/reference/pipes.scrbl
 %%DATADIR%%/pkgs/racket-doc/scribblings/reference/places-logging.scrbl
 %%DATADIR%%/pkgs/racket-doc/scribblings/reference/places.scrbl
+%%DATADIR%%/pkgs/racket-doc/scribblings/reference/plumbers.scrbl
 %%DATADIR%%/pkgs/racket-doc/scribblings/reference/port-buffers.scrbl
 %%DATADIR%%/pkgs/racket-doc/scribblings/reference/port-lib.scrbl
 %%DATADIR%%/pkgs/racket-doc/scribblings/reference/port-line-counting.scrbl
@@ -15913,7 +16056,6 @@ share/applications/slideshow.desktop
 %%DATADIR%%/pkgs/racket-doc/scribblings/reference/strings.scrbl
 %%DATADIR%%/pkgs/racket-doc/scribblings/reference/struct-inspectors.scrbl
 %%DATADIR%%/pkgs/racket-doc/scribblings/reference/struct.scrbl
-%%DATADIR%%/pkgs/racket-doc/scribblings/reference/stx-certs.scrbl
 %%DATADIR%%/pkgs/racket-doc/scribblings/reference/stx-comp.scrbl
 %%DATADIR%%/pkgs/racket-doc/scribblings/reference/stx-expand.scrbl
 %%DATADIR%%/pkgs/racket-doc/scribblings/reference/stx-ops.scrbl
@@ -15935,8 +16077,10 @@ share/applications/slideshow.desktop
 %%DATADIR%%/pkgs/racket-doc/scribblings/reference/threads.scrbl
 %%DATADIR%%/pkgs/racket-doc/scribblings/reference/time.scrbl
 %%DATADIR%%/pkgs/racket-doc/scribblings/reference/trace.scrbl
+%%DATADIR%%/pkgs/racket-doc/scribblings/reference/undefined.scrbl
 %%DATADIR%%/pkgs/racket-doc/scribblings/reference/units.scrbl
 %%DATADIR%%/pkgs/racket-doc/scribblings/reference/unix-paths.scrbl
+%%DATADIR%%/pkgs/racket-doc/scribblings/reference/unsafe-undefined.scrbl
 %%DATADIR%%/pkgs/racket-doc/scribblings/reference/unsafe.scrbl
 %%DATADIR%%/pkgs/racket-doc/scribblings/reference/values.scrbl
 %%DATADIR%%/pkgs/racket-doc/scribblings/reference/vectors.scrbl
@@ -16182,6 +16326,9 @@ share/applications/slideshow.desktop
 %%DATADIR%%/pkgs/racket-doc/xml/xml.scrbl
 %%DATADIR%%/pkgs/racket-index/LICENSE.txt
 %%DATADIR%%/pkgs/racket-index/info.rkt
+%%DATADIR%%/pkgs/racket-index/rackunit/compiled/docs-complete_rkt.dep
+%%DATADIR%%/pkgs/racket-index/rackunit/compiled/docs-complete_rkt.zo
+%%DATADIR%%/pkgs/racket-index/rackunit/docs-complete.rkt
 %%DATADIR%%/pkgs/racket-index/scribblings/main/acks.scrbl
 %%DATADIR%%/pkgs/racket-index/scribblings/main/compiled/acks_scrbl.dep
 %%DATADIR%%/pkgs/racket-index/scribblings/main/compiled/acks_scrbl.zo
@@ -16220,6 +16367,8 @@ share/applications/slideshow.desktop
 %%DATADIR%%/pkgs/racket-index/scribblings/main/private/make-search.rkt
 %%DATADIR%%/pkgs/racket-index/scribblings/main/private/manuals.rkt
 %%DATADIR%%/pkgs/racket-index/scribblings/main/private/release.rkt
+%%DATADIR%%/pkgs/racket-index/scribblings/main/private/root-info.css
+%%DATADIR%%/pkgs/racket-index/scribblings/main/private/root-info.js
 %%DATADIR%%/pkgs/racket-index/scribblings/main/private/search-context.html
 %%DATADIR%%/pkgs/racket-index/scribblings/main/private/search-merge.js
 %%DATADIR%%/pkgs/racket-index/scribblings/main/private/search.js
@@ -16536,8 +16685,6 @@ share/applications/slideshow.desktop
 %%DATADIR%%/pkgs/readline-lib/info.rkt
 %%DATADIR%%/pkgs/readline-lib/readline/compiled/main_rkt.dep
 %%DATADIR%%/pkgs/readline-lib/readline/compiled/main_rkt.zo
-%%DATADIR%%/pkgs/readline-lib/readline/compiled/mzrl_rkt.dep
-%%DATADIR%%/pkgs/readline-lib/readline/compiled/mzrl_rkt.zo
 %%DATADIR%%/pkgs/readline-lib/readline/compiled/pread_rkt.dep
 %%DATADIR%%/pkgs/readline-lib/readline/compiled/pread_rkt.zo
 %%DATADIR%%/pkgs/readline-lib/readline/compiled/readline_rkt.dep
@@ -16546,12 +16693,14 @@ share/applications/slideshow.desktop
 %%DATADIR%%/pkgs/readline-lib/readline/compiled/rep-start_rkt.zo
 %%DATADIR%%/pkgs/readline-lib/readline/compiled/rep_rkt.dep
 %%DATADIR%%/pkgs/readline-lib/readline/compiled/rep_rkt.zo
+%%DATADIR%%/pkgs/readline-lib/readline/compiled/rktrl_rkt.dep
+%%DATADIR%%/pkgs/readline-lib/readline/compiled/rktrl_rkt.zo
 %%DATADIR%%/pkgs/readline-lib/readline/main.rkt
-%%DATADIR%%/pkgs/readline-lib/readline/mzrl.rkt
 %%DATADIR%%/pkgs/readline-lib/readline/pread.rkt
 %%DATADIR%%/pkgs/readline-lib/readline/readline.rkt
 %%DATADIR%%/pkgs/readline-lib/readline/rep-start.rkt
 %%DATADIR%%/pkgs/readline-lib/readline/rep.rkt
+%%DATADIR%%/pkgs/readline-lib/readline/rktrl.rkt
 %%DATADIR%%/pkgs/readline/LICENSE.txt
 %%DATADIR%%/pkgs/readline/info.rkt
 %%DATADIR%%/pkgs/realm/LICENSE.txt
@@ -16631,6 +16780,268 @@ share/applications/slideshow.desktop
 %%DATADIR%%/pkgs/realm/info.rkt
 %%DATADIR%%/pkgs/realm/readme.txt
 %%DATADIR%%/pkgs/realm/todo.txt
+%%DATADIR%%/pkgs/redex-benchmark/info.rkt
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark.rkt
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/compiled/run-benchmark_rkt.dep
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/compiled/run-benchmark_rkt.zo
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/compiled/run-generator_rkt.dep
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/compiled/run-generator_rkt.zo
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/models/all-info.rkt
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/models/compiled/all-info_rkt.dep
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/models/compiled/all-info_rkt.zo
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/models/delim-cont/compiled/delim-cont-1_rkt.dep
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/models/delim-cont/compiled/delim-cont-1_rkt.zo
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/models/delim-cont/compiled/delim-cont-2_rkt.dep
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/models/delim-cont/compiled/delim-cont-2_rkt.zo
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/models/delim-cont/compiled/delim-cont-3_rkt.dep
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/models/delim-cont/compiled/delim-cont-3_rkt.zo
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/models/delim-cont/compiled/delim-cont-info_rkt.dep
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/models/delim-cont/compiled/delim-cont-info_rkt.zo
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/models/delim-cont/compiled/delim-cont_rkt.dep
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/models/delim-cont/compiled/delim-cont_rkt.zo
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/models/delim-cont/compiled/generators_rkt.dep
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/models/delim-cont/compiled/generators_rkt.zo
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/models/delim-cont/compiled/test_rkt.dep
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/models/delim-cont/compiled/test_rkt.zo
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/models/delim-cont/compiled/util_rkt.dep
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/models/delim-cont/compiled/util_rkt.zo
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/models/delim-cont/delim-cont-1.rkt
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/models/delim-cont/delim-cont-2.rkt
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/models/delim-cont/delim-cont-3.rkt
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/models/delim-cont/delim-cont-info.rkt
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/models/delim-cont/delim-cont.rkt
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/models/delim-cont/generators.rkt
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/models/delim-cont/test.rkt
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/models/delim-cont/util.rkt
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/models/let-poly/compiled/generators_rkt.dep
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/models/let-poly/compiled/generators_rkt.zo
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/models/let-poly/compiled/let-poly-1_rkt.dep
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/models/let-poly/compiled/let-poly-1_rkt.zo
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/models/let-poly/compiled/let-poly-2_rkt.dep
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/models/let-poly/compiled/let-poly-2_rkt.zo
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/models/let-poly/compiled/let-poly-3_rkt.dep
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/models/let-poly/compiled/let-poly-3_rkt.zo
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/models/let-poly/compiled/let-poly-4_rkt.dep
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/models/let-poly/compiled/let-poly-4_rkt.zo
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/models/let-poly/compiled/let-poly-5_rkt.dep
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/models/let-poly/compiled/let-poly-5_rkt.zo
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/models/let-poly/compiled/let-poly-6_rkt.dep
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/models/let-poly/compiled/let-poly-6_rkt.zo
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/models/let-poly/compiled/let-poly-7_rkt.dep
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/models/let-poly/compiled/let-poly-7_rkt.zo
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/models/let-poly/compiled/let-poly-info_rkt.dep
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/models/let-poly/compiled/let-poly-info_rkt.zo
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/models/let-poly/compiled/util_rkt.dep
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/models/let-poly/compiled/util_rkt.zo
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/models/let-poly/generators.rkt
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/models/let-poly/let-poly-1.rkt
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/models/let-poly/let-poly-2.rkt
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/models/let-poly/let-poly-3.rkt
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/models/let-poly/let-poly-4.rkt
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/models/let-poly/let-poly-5.rkt
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/models/let-poly/let-poly-6.rkt
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/models/let-poly/let-poly-7.rkt
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/models/let-poly/let-poly-info.rkt
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/models/let-poly/util.rkt
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/models/list-machine/compiled/generators_rkt.dep
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/models/list-machine/compiled/generators_rkt.zo
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/models/list-machine/compiled/list-machine-1_rkt.dep
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/models/list-machine/compiled/list-machine-1_rkt.zo
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/models/list-machine/compiled/list-machine-2_rkt.dep
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/models/list-machine/compiled/list-machine-2_rkt.zo
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/models/list-machine/compiled/list-machine-3_rkt.dep
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/models/list-machine/compiled/list-machine-3_rkt.zo
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/models/list-machine/compiled/list-machine-info_rkt.dep
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/models/list-machine/compiled/list-machine-info_rkt.zo
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/models/list-machine/compiled/util_rkt.dep
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/models/list-machine/compiled/util_rkt.zo
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/models/list-machine/generators.rkt
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/models/list-machine/list-machine-1.rkt
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/models/list-machine/list-machine-2.rkt
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/models/list-machine/list-machine-3.rkt
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/models/list-machine/list-machine-info.rkt
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/models/list-machine/util.rkt
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/models/poly-stlc/compiled/generators_rkt.dep
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/models/poly-stlc/compiled/generators_rkt.zo
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/models/poly-stlc/compiled/poly-stlc-1_rkt.dep
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/models/poly-stlc/compiled/poly-stlc-1_rkt.zo
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/models/poly-stlc/compiled/poly-stlc-2_rkt.dep
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/models/poly-stlc/compiled/poly-stlc-2_rkt.zo
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/models/poly-stlc/compiled/poly-stlc-3_rkt.dep
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/models/poly-stlc/compiled/poly-stlc-3_rkt.zo
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/models/poly-stlc/compiled/poly-stlc-4_rkt.dep
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/models/poly-stlc/compiled/poly-stlc-4_rkt.zo
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/models/poly-stlc/compiled/poly-stlc-5_rkt.dep
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/models/poly-stlc/compiled/poly-stlc-5_rkt.zo
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/models/poly-stlc/compiled/poly-stlc-6_rkt.dep
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/models/poly-stlc/compiled/poly-stlc-6_rkt.zo
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/models/poly-stlc/compiled/poly-stlc-7_rkt.dep
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/models/poly-stlc/compiled/poly-stlc-7_rkt.zo
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/models/poly-stlc/compiled/poly-stlc-8_rkt.dep
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/models/poly-stlc/compiled/poly-stlc-8_rkt.zo
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/models/poly-stlc/compiled/poly-stlc-9_rkt.dep
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/models/poly-stlc/compiled/poly-stlc-9_rkt.zo
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/models/poly-stlc/compiled/poly-stlc-info_rkt.dep
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/models/poly-stlc/compiled/poly-stlc-info_rkt.zo
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/models/poly-stlc/compiled/util_rkt.dep
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/models/poly-stlc/compiled/util_rkt.zo
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/models/poly-stlc/generators.rkt
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/models/poly-stlc/poly-stlc-1.rkt
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/models/poly-stlc/poly-stlc-2.rkt
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/models/poly-stlc/poly-stlc-3.rkt
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/models/poly-stlc/poly-stlc-4.rkt
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/models/poly-stlc/poly-stlc-5.rkt
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/models/poly-stlc/poly-stlc-6.rkt
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/models/poly-stlc/poly-stlc-7.rkt
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/models/poly-stlc/poly-stlc-8.rkt
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/models/poly-stlc/poly-stlc-9.rkt
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/models/poly-stlc/poly-stlc-info.rkt
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/models/poly-stlc/util.rkt
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/models/rbtrees/compiled/generators_rkt.dep
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/models/rbtrees/compiled/generators_rkt.zo
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/models/rbtrees/compiled/rbtrees-1_rkt.dep
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/models/rbtrees/compiled/rbtrees-1_rkt.zo
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/models/rbtrees/compiled/rbtrees-2_rkt.dep
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/models/rbtrees/compiled/rbtrees-2_rkt.zo
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/models/rbtrees/compiled/rbtrees-3_rkt.dep
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/models/rbtrees/compiled/rbtrees-3_rkt.zo
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/models/rbtrees/compiled/rbtrees-info_rkt.dep
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/models/rbtrees/compiled/rbtrees-info_rkt.zo
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/models/rbtrees/compiled/util_rkt.dep
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/models/rbtrees/compiled/util_rkt.zo
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/models/rbtrees/generators.rkt
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/models/rbtrees/rbtrees-1.rkt
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/models/rbtrees/rbtrees-2.rkt
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/models/rbtrees/rbtrees-3.rkt
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/models/rbtrees/rbtrees-info.rkt
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/models/rbtrees/util.rkt
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/models/rvm/compiled/generators_rkt.dep
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/models/rvm/compiled/generators_rkt.zo
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/models/rvm/compiled/rvm-14_rkt.dep
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/models/rvm/compiled/rvm-14_rkt.zo
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/models/rvm/compiled/rvm-15_rkt.dep
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/models/rvm/compiled/rvm-15_rkt.zo
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/models/rvm/compiled/rvm-2_rkt.dep
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/models/rvm/compiled/rvm-2_rkt.zo
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/models/rvm/compiled/rvm-3_rkt.dep
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/models/rvm/compiled/rvm-3_rkt.zo
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/models/rvm/compiled/rvm-4_rkt.dep
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/models/rvm/compiled/rvm-4_rkt.zo
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/models/rvm/compiled/rvm-5_rkt.dep
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/models/rvm/compiled/rvm-5_rkt.zo
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/models/rvm/compiled/rvm-6_rkt.dep
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/models/rvm/compiled/rvm-6_rkt.zo
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/models/rvm/compiled/rvm-info_rkt.dep
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/models/rvm/compiled/rvm-info_rkt.zo
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/models/rvm/compiled/util_rkt.dep
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/models/rvm/compiled/util_rkt.zo
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/models/rvm/generators.rkt
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/models/rvm/rvm-14.rkt
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/models/rvm/rvm-15.rkt
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/models/rvm/rvm-2.rkt
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/models/rvm/rvm-3.rkt
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/models/rvm/rvm-4.rkt
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/models/rvm/rvm-5.rkt
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/models/rvm/rvm-6.rkt
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/models/rvm/rvm-info.rkt
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/models/rvm/util.rkt
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/models/stlc+lists/compiled/generators_rkt.dep
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/models/stlc+lists/compiled/generators_rkt.zo
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/models/stlc+lists/compiled/stlc-1_rkt.dep
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/models/stlc+lists/compiled/stlc-1_rkt.zo
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/models/stlc+lists/compiled/stlc-2_rkt.dep
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/models/stlc+lists/compiled/stlc-2_rkt.zo
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/models/stlc+lists/compiled/stlc-3_rkt.dep
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/models/stlc+lists/compiled/stlc-3_rkt.zo
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/models/stlc+lists/compiled/stlc-4_rkt.dep
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/models/stlc+lists/compiled/stlc-4_rkt.zo
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/models/stlc+lists/compiled/stlc-5_rkt.dep
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/models/stlc+lists/compiled/stlc-5_rkt.zo
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/models/stlc+lists/compiled/stlc-6_rkt.dep
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/models/stlc+lists/compiled/stlc-6_rkt.zo
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/models/stlc+lists/compiled/stlc-7_rkt.dep
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/models/stlc+lists/compiled/stlc-7_rkt.zo
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/models/stlc+lists/compiled/stlc-8_rkt.dep
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/models/stlc+lists/compiled/stlc-8_rkt.zo
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/models/stlc+lists/compiled/stlc-9_rkt.dep
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/models/stlc+lists/compiled/stlc-9_rkt.zo
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/models/stlc+lists/compiled/stlc-info_rkt.dep
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/models/stlc+lists/compiled/stlc-info_rkt.zo
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/models/stlc+lists/compiled/util_rkt.dep
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/models/stlc+lists/compiled/util_rkt.zo
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/models/stlc+lists/generators.rkt
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/models/stlc+lists/stlc-1.rkt
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/models/stlc+lists/stlc-2.rkt
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/models/stlc+lists/stlc-3.rkt
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/models/stlc+lists/stlc-4.rkt
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/models/stlc+lists/stlc-5.rkt
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/models/stlc+lists/stlc-6.rkt
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/models/stlc+lists/stlc-7.rkt
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/models/stlc+lists/stlc-8.rkt
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/models/stlc+lists/stlc-9.rkt
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/models/stlc+lists/stlc-info.rkt
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/models/stlc+lists/util.rkt
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/models/stlc-subst/compiled/generators_rkt.dep
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/models/stlc-subst/compiled/generators_rkt.zo
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/models/stlc-subst/compiled/stlc-sub-1_rkt.dep
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/models/stlc-subst/compiled/stlc-sub-1_rkt.zo
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/models/stlc-subst/compiled/stlc-sub-2_rkt.dep
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/models/stlc-subst/compiled/stlc-sub-2_rkt.zo
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/models/stlc-subst/compiled/stlc-sub-3_rkt.dep
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/models/stlc-subst/compiled/stlc-sub-3_rkt.zo
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/models/stlc-subst/compiled/stlc-sub-4_rkt.dep
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/models/stlc-subst/compiled/stlc-sub-4_rkt.zo
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/models/stlc-subst/compiled/stlc-sub-5_rkt.dep
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/models/stlc-subst/compiled/stlc-sub-5_rkt.zo
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/models/stlc-subst/compiled/stlc-sub-6_rkt.dep
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/models/stlc-subst/compiled/stlc-sub-6_rkt.zo
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/models/stlc-subst/compiled/stlc-sub-7_rkt.dep
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/models/stlc-subst/compiled/stlc-sub-7_rkt.zo
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/models/stlc-subst/compiled/stlc-sub-8_rkt.dep
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/models/stlc-subst/compiled/stlc-sub-8_rkt.zo
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/models/stlc-subst/compiled/stlc-sub-9_rkt.dep
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/models/stlc-subst/compiled/stlc-sub-9_rkt.zo
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/models/stlc-subst/compiled/stlc-sub-info_rkt.dep
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/models/stlc-subst/compiled/stlc-sub-info_rkt.zo
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/models/stlc-subst/compiled/util_rkt.dep
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/models/stlc-subst/compiled/util_rkt.zo
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/models/stlc-subst/generators.rkt
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/models/stlc-subst/stlc-sub-1.rkt
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/models/stlc-subst/stlc-sub-2.rkt
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/models/stlc-subst/stlc-sub-3.rkt
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/models/stlc-subst/stlc-sub-4.rkt
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/models/stlc-subst/stlc-sub-5.rkt
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/models/stlc-subst/stlc-sub-6.rkt
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/models/stlc-subst/stlc-sub-7.rkt
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/models/stlc-subst/stlc-sub-8.rkt
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/models/stlc-subst/stlc-sub-9.rkt
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/models/stlc-subst/stlc-sub-info.rkt
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/models/stlc-subst/util.rkt
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/models/util/compiled/info-util_rkt.dep
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/models/util/compiled/info-util_rkt.zo
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/models/util/info-util.rkt
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/private/compiled/gen-run_rkt.dep
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/private/compiled/gen-run_rkt.zo
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/private/compiled/graph-data_rkt.dep
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/private/compiled/graph-data_rkt.zo
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/private/compiled/logging_rkt.dep
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/private/compiled/logging_rkt.zo
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/private/compiled/plot-lines_rkt.dep
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/private/compiled/plot-lines_rkt.zo
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/private/compiled/rewrite_rkt.dep
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/private/compiled/rewrite_rkt.zo
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/private/compiled/rw-defs_rkt.dep
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/private/compiled/rw-defs_rkt.zo
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/private/gen-run.rkt
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/private/graph-data.rkt
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/private/logging.rkt
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/private/plot-lines.rkt
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/private/rewrite.rkt
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/private/rw-defs.rkt
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/run-benchmark.rkt
+%%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/run-generator.rkt
+%%DATADIR%%/pkgs/redex-benchmark/redex/compiled/benchmark_rkt.dep
+%%DATADIR%%/pkgs/redex-benchmark/redex/compiled/benchmark_rkt.zo
 %%DATADIR%%/pkgs/redex-doc/LICENSE.txt
 %%DATADIR%%/pkgs/redex-doc/info.rkt
 %%DATADIR%%/pkgs/redex-doc/redex/compiled/info_rkt.dep
@@ -16639,10 +17050,15 @@ share/applications/slideshow.desktop
 %%DATADIR%%/pkgs/redex-doc/redex/compiled/redex_scrbl.zo
 %%DATADIR%%/pkgs/redex-doc/redex/info.rkt
 %%DATADIR%%/pkgs/redex-doc/redex/redex.scrbl
+%%DATADIR%%/pkgs/redex-doc/redex/scribblings/benchmark.scrbl
+%%DATADIR%%/pkgs/redex-doc/redex/scribblings/compiled/benchmark_scrbl.dep
+%%DATADIR%%/pkgs/redex-doc/redex/scribblings/compiled/benchmark_scrbl.zo
 %%DATADIR%%/pkgs/redex-doc/redex/scribblings/compiled/dynamic-typesetting-and-macros_scrbl.dep
 %%DATADIR%%/pkgs/redex-doc/redex/scribblings/compiled/dynamic-typesetting-and-macros_scrbl.zo
 %%DATADIR%%/pkgs/redex-doc/redex/scribblings/compiled/info_rkt.dep
 %%DATADIR%%/pkgs/redex-doc/redex/scribblings/compiled/info_rkt.zo
+%%DATADIR%%/pkgs/redex-doc/redex/scribblings/compiled/mod-fx_rkt.dep
+%%DATADIR%%/pkgs/redex-doc/redex/scribblings/compiled/mod-fx_rkt.zo
 %%DATADIR%%/pkgs/redex-doc/redex/scribblings/compiled/ref_scrbl.dep
 %%DATADIR%%/pkgs/redex-doc/redex/scribblings/compiled/ref_scrbl.zo
 %%DATADIR%%/pkgs/redex-doc/redex/scribblings/compiled/tut-util_rkt.dep
@@ -16651,6 +17067,7 @@ share/applications/slideshow.desktop
 %%DATADIR%%/pkgs/redex-doc/redex/scribblings/compiled/tut_scrbl.zo
 %%DATADIR%%/pkgs/redex-doc/redex/scribblings/dynamic-typesetting-and-macros.scrbl
 %%DATADIR%%/pkgs/redex-doc/redex/scribblings/info.rkt
+%%DATADIR%%/pkgs/redex-doc/redex/scribblings/mod-fx.rkt
 %%DATADIR%%/pkgs/redex-doc/redex/scribblings/ref.scrbl
 %%DATADIR%%/pkgs/redex-doc/redex/scribblings/tut-util.rkt
 %%DATADIR%%/pkgs/redex-doc/redex/scribblings/tut.scrbl
@@ -16680,14 +17097,26 @@ share/applications/slideshow.desktop
 %%DATADIR%%/pkgs/redex-examples/redex/examples/compiled/contracts_rkt.zo
 %%DATADIR%%/pkgs/redex-examples/redex/examples/compiled/info_rkt.dep
 %%DATADIR%%/pkgs/redex-examples/redex/examples/compiled/info_rkt.zo
+%%DATADIR%%/pkgs/redex-examples/redex/examples/compiled/let-poly_rkt.dep
+%%DATADIR%%/pkgs/redex-examples/redex/examples/compiled/let-poly_rkt.zo
 %%DATADIR%%/pkgs/redex-examples/redex/examples/compiled/letrec_rkt.dep
 %%DATADIR%%/pkgs/redex-examples/redex/examples/compiled/letrec_rkt.zo
 %%DATADIR%%/pkgs/redex-examples/redex/examples/compiled/omega_rkt.dep
 %%DATADIR%%/pkgs/redex-examples/redex/examples/compiled/omega_rkt.zo
 %%DATADIR%%/pkgs/redex-examples/redex/examples/compiled/pi-calculus_rkt.dep
 %%DATADIR%%/pkgs/redex-examples/redex/examples/compiled/pi-calculus_rkt.zo
+%%DATADIR%%/pkgs/redex-examples/redex/examples/compiled/poly-stlc_rkt.dep
+%%DATADIR%%/pkgs/redex-examples/redex/examples/compiled/poly-stlc_rkt.zo
+%%DATADIR%%/pkgs/redex-examples/redex/examples/compiled/rbtrees_rkt.dep
+%%DATADIR%%/pkgs/redex-examples/redex/examples/compiled/rbtrees_rkt.zo
 %%DATADIR%%/pkgs/redex-examples/redex/examples/compiled/semaphores_rkt.dep
 %%DATADIR%%/pkgs/redex-examples/redex/examples/compiled/semaphores_rkt.zo
+%%DATADIR%%/pkgs/redex-examples/redex/examples/compiled/stlc+lists+subst_rkt.dep
+%%DATADIR%%/pkgs/redex-examples/redex/examples/compiled/stlc+lists+subst_rkt.zo
+%%DATADIR%%/pkgs/redex-examples/redex/examples/compiled/stlc+lists_rkt.dep
+%%DATADIR%%/pkgs/redex-examples/redex/examples/compiled/stlc+lists_rkt.zo
+%%DATADIR%%/pkgs/redex-examples/redex/examples/compiled/stlc-tests-lib_rkt.dep
+%%DATADIR%%/pkgs/redex-examples/redex/examples/compiled/stlc-tests-lib_rkt.zo
 %%DATADIR%%/pkgs/redex-examples/redex/examples/compiled/stlc_rkt.dep
 %%DATADIR%%/pkgs/redex-examples/redex/examples/compiled/stlc_rkt.zo
 %%DATADIR%%/pkgs/redex-examples/redex/examples/compiled/subject-reduction_rkt.dep
@@ -16770,6 +17199,7 @@ share/applications/slideshow.desktop
 %%DATADIR%%/pkgs/redex-examples/redex/examples/delim-cont/reduce.rkt
 %%DATADIR%%/pkgs/redex-examples/redex/examples/delim-cont/test.rkt
 %%DATADIR%%/pkgs/redex-examples/redex/examples/info.rkt
+%%DATADIR%%/pkgs/redex-examples/redex/examples/let-poly.rkt
 %%DATADIR%%/pkgs/redex-examples/redex/examples/letrec.rkt
 %%DATADIR%%/pkgs/redex-examples/redex/examples/list-machine/README.txt
 %%DATADIR%%/pkgs/redex-examples/redex/examples/list-machine/compiled/list-machine-typing_rkt.dep
@@ -16789,6 +17219,7 @@ share/applications/slideshow.desktop
 %%DATADIR%%/pkgs/redex-examples/redex/examples/list-machine/test.rkt
 %%DATADIR%%/pkgs/redex-examples/redex/examples/omega.rkt
 %%DATADIR%%/pkgs/redex-examples/redex/examples/pi-calculus.rkt
+%%DATADIR%%/pkgs/redex-examples/redex/examples/poly-stlc.rkt
 %%DATADIR%%/pkgs/redex-examples/redex/examples/r6rs/README
 %%DATADIR%%/pkgs/redex-examples/redex/examples/r6rs/compiled/r6rs-tests_rkt.dep
 %%DATADIR%%/pkgs/redex-examples/redex/examples/r6rs/compiled/r6rs-tests_rkt.zo
@@ -16841,7 +17272,11 @@ share/applications/slideshow.desktop
 %%DATADIR%%/pkgs/redex-examples/redex/examples/racket-machine/util.rkt
 %%DATADIR%%/pkgs/redex-examples/redex/examples/racket-machine/verification-test.rkt
 %%DATADIR%%/pkgs/redex-examples/redex/examples/racket-machine/verification.rkt
+%%DATADIR%%/pkgs/redex-examples/redex/examples/rbtrees.rkt
 %%DATADIR%%/pkgs/redex-examples/redex/examples/semaphores.rkt
+%%DATADIR%%/pkgs/redex-examples/redex/examples/stlc+lists+subst.rkt
+%%DATADIR%%/pkgs/redex-examples/redex/examples/stlc+lists.rkt
+%%DATADIR%%/pkgs/redex-examples/redex/examples/stlc-tests-lib.rkt
 %%DATADIR%%/pkgs/redex-examples/redex/examples/stlc.rkt
 %%DATADIR%%/pkgs/redex-examples/redex/examples/subject-reduction.rkt
 %%DATADIR%%/pkgs/redex-examples/redex/examples/subst.rkt
@@ -16855,8 +17290,6 @@ share/applications/slideshow.desktop
 %%DATADIR%%/pkgs/redex-gui-lib/redex/compiled/main_rkt.zo
 %%DATADIR%%/pkgs/redex-gui-lib/redex/gui.rkt
 %%DATADIR%%/pkgs/redex-gui-lib/redex/main.rkt
-%%DATADIR%%/pkgs/redex-gui-lib/redex/private/compiled/dot_rkt.dep
-%%DATADIR%%/pkgs/redex-gui-lib/redex/private/compiled/dot_rkt.zo
 %%DATADIR%%/pkgs/redex-gui-lib/redex/private/compiled/gen-trace_rkt.dep
 %%DATADIR%%/pkgs/redex-gui-lib/redex/private/compiled/gen-trace_rkt.zo
 %%DATADIR%%/pkgs/redex-gui-lib/redex/private/compiled/sexp-diffs_rkt.dep
@@ -16869,7 +17302,6 @@ share/applications/slideshow.desktop
 %%DATADIR%%/pkgs/redex-gui-lib/redex/private/compiled/stepper_rkt.zo
 %%DATADIR%%/pkgs/redex-gui-lib/redex/private/compiled/traces_rkt.dep
 %%DATADIR%%/pkgs/redex-gui-lib/redex/private/compiled/traces_rkt.zo
-%%DATADIR%%/pkgs/redex-gui-lib/redex/private/dot.rkt
 %%DATADIR%%/pkgs/redex-gui-lib/redex/private/gen-trace.rkt
 %%DATADIR%%/pkgs/redex-gui-lib/redex/private/sexp-diffs.rkt
 %%DATADIR%%/pkgs/redex-gui-lib/redex/private/show-derivations.rkt
@@ -17489,9 +17921,6 @@ share/applications/slideshow.desktop
 %%DATADIR%%/pkgs/scribble-lib/help/info.rkt
 %%DATADIR%%/pkgs/scribble-lib/help/search.rkt
 %%DATADIR%%/pkgs/scribble-lib/info.rkt
-%%DATADIR%%/pkgs/scribble-lib/rackunit/compiled/docs-complete_rkt.dep
-%%DATADIR%%/pkgs/scribble-lib/rackunit/compiled/docs-complete_rkt.zo
-%%DATADIR%%/pkgs/scribble-lib/rackunit/docs-complete.rkt
 %%DATADIR%%/pkgs/scribble-lib/scribble/HISTORY.txt
 %%DATADIR%%/pkgs/scribble-lib/scribble/base-render.rkt
 %%DATADIR%%/pkgs/scribble-lib/scribble/base.rkt
@@ -17643,6 +18072,7 @@ share/applications/slideshow.desktop
 %%DATADIR%%/pkgs/scribble-lib/scribble/manual-fonts.css
 %%DATADIR%%/pkgs/scribble-lib/scribble/manual-prefix.tex
 %%DATADIR%%/pkgs/scribble-lib/scribble/manual-racket.css
+%%DATADIR%%/pkgs/scribble-lib/scribble/manual-racket.js
 %%DATADIR%%/pkgs/scribble-lib/scribble/manual-struct.rkt
 %%DATADIR%%/pkgs/scribble-lib/scribble/manual-style.css
 %%DATADIR%%/pkgs/scribble-lib/scribble/manual-style.tex
@@ -17798,6 +18228,7 @@ share/applications/slideshow.desktop
 %%DATADIR%%/pkgs/scribble-lib/scriblib/compiled/render-cond_rkt.dep
 %%DATADIR%%/pkgs/scribble-lib/scriblib/compiled/render-cond_rkt.zo
 %%DATADIR%%/pkgs/scribble-lib/scriblib/figure.css
+%%DATADIR%%/pkgs/scribble-lib/scriblib/figure.js
 %%DATADIR%%/pkgs/scribble-lib/scriblib/figure.rkt
 %%DATADIR%%/pkgs/scribble-lib/scriblib/figure.tex
 %%DATADIR%%/pkgs/scribble-lib/scriblib/footnote.css
@@ -19149,6 +19580,7 @@ share/applications/slideshow.desktop
 %%DATADIR%%/pkgs/typed-racket-doc/typed-racket/scribblings/guide/typed-untyped-interaction.scrbl
 %%DATADIR%%/pkgs/typed-racket-doc/typed-racket/scribblings/guide/types.scrbl
 %%DATADIR%%/pkgs/typed-racket-doc/typed-racket/scribblings/guide/varargs.scrbl
+%%DATADIR%%/pkgs/typed-racket-doc/typed-racket/scribblings/internals.txt
 %%DATADIR%%/pkgs/typed-racket-doc/typed-racket/scribblings/reference/compatibility-languages.scrbl
 %%DATADIR%%/pkgs/typed-racket-doc/typed-racket/scribblings/reference/compiled/compatibility-languages_scrbl.dep
 %%DATADIR%%/pkgs/typed-racket-doc/typed-racket/scribblings/reference/compiled/compatibility-languages_scrbl.zo
@@ -19316,6 +19748,8 @@ share/applications/slideshow.desktop
 %%DATADIR%%/pkgs/typed-racket-lib/typed-racket/infer/compiled/constraints_rkt.zo
 %%DATADIR%%/pkgs/typed-racket-lib/typed-racket/infer/compiled/dmap_rkt.dep
 %%DATADIR%%/pkgs/typed-racket-lib/typed-racket/infer/compiled/dmap_rkt.zo
+%%DATADIR%%/pkgs/typed-racket-lib/typed-racket/infer/compiled/fail_rkt.dep
+%%DATADIR%%/pkgs/typed-racket-lib/typed-racket/infer/compiled/fail_rkt.zo
 %%DATADIR%%/pkgs/typed-racket-lib/typed-racket/infer/compiled/infer-unit_rkt.dep
 %%DATADIR%%/pkgs/typed-racket-lib/typed-racket/infer/compiled/infer-unit_rkt.zo
 %%DATADIR%%/pkgs/typed-racket-lib/typed-racket/infer/compiled/infer_rkt.dep
@@ -19329,6 +19763,7 @@ share/applications/slideshow.desktop
 %%DATADIR%%/pkgs/typed-racket-lib/typed-racket/infer/constraint-structs.rkt
 %%DATADIR%%/pkgs/typed-racket-lib/typed-racket/infer/constraints.rkt
 %%DATADIR%%/pkgs/typed-racket-lib/typed-racket/infer/dmap.rkt
+%%DATADIR%%/pkgs/typed-racket-lib/typed-racket/infer/fail.rkt
 %%DATADIR%%/pkgs/typed-racket-lib/typed-racket/infer/infer-unit.rkt
 %%DATADIR%%/pkgs/typed-racket-lib/typed-racket/infer/infer.rkt
 %%DATADIR%%/pkgs/typed-racket-lib/typed-racket/infer/promote-demote.rkt
@@ -19348,6 +19783,8 @@ share/applications/slideshow.desktop
 %%DATADIR%%/pkgs/typed-racket-lib/typed-racket/optimizer/compiled/box_rkt.zo
 %%DATADIR%%/pkgs/typed-racket-lib/typed-racket/optimizer/compiled/dead-code_rkt.dep
 %%DATADIR%%/pkgs/typed-racket-lib/typed-racket/optimizer/compiled/dead-code_rkt.zo
+%%DATADIR%%/pkgs/typed-racket-lib/typed-racket/optimizer/compiled/extflonum_rkt.dep
+%%DATADIR%%/pkgs/typed-racket-lib/typed-racket/optimizer/compiled/extflonum_rkt.zo
 %%DATADIR%%/pkgs/typed-racket-lib/typed-racket/optimizer/compiled/fixnum_rkt.dep
 %%DATADIR%%/pkgs/typed-racket-lib/typed-racket/optimizer/compiled/fixnum_rkt.zo
 %%DATADIR%%/pkgs/typed-racket-lib/typed-racket/optimizer/compiled/float-complex_rkt.dep
@@ -19383,6 +19820,7 @@ share/applications/slideshow.desktop
 %%DATADIR%%/pkgs/typed-racket-lib/typed-racket/optimizer/compiled/vector_rkt.dep
 %%DATADIR%%/pkgs/typed-racket-lib/typed-racket/optimizer/compiled/vector_rkt.zo
 %%DATADIR%%/pkgs/typed-racket-lib/typed-racket/optimizer/dead-code.rkt
+%%DATADIR%%/pkgs/typed-racket-lib/typed-racket/optimizer/extflonum.rkt
 %%DATADIR%%/pkgs/typed-racket-lib/typed-racket/optimizer/fixnum.rkt
 %%DATADIR%%/pkgs/typed-racket-lib/typed-racket/optimizer/float-complex.rkt
 %%DATADIR%%/pkgs/typed-racket-lib/typed-racket/optimizer/float.rkt
@@ -19400,6 +19838,9 @@ share/applications/slideshow.desktop
 %%DATADIR%%/pkgs/typed-racket-lib/typed-racket/optimizer/unboxed-tables.rkt
 %%DATADIR%%/pkgs/typed-racket-lib/typed-racket/optimizer/utils.rkt
 %%DATADIR%%/pkgs/typed-racket-lib/typed-racket/optimizer/vector.rkt
+%%DATADIR%%/pkgs/typed-racket-lib/typed-racket/private/class-literals.rkt
+%%DATADIR%%/pkgs/typed-racket-lib/typed-racket/private/compiled/class-literals_rkt.dep
+%%DATADIR%%/pkgs/typed-racket-lib/typed-racket/private/compiled/class-literals_rkt.zo
 %%DATADIR%%/pkgs/typed-racket-lib/typed-racket/private/compiled/parse-classes_rkt.dep
 %%DATADIR%%/pkgs/typed-racket-lib/typed-racket/private/compiled/parse-classes_rkt.zo
 %%DATADIR%%/pkgs/typed-racket-lib/typed-racket/private/compiled/parse-type_rkt.dep
@@ -19535,6 +19976,8 @@ share/applications/slideshow.desktop
 %%DATADIR%%/pkgs/typed-racket-lib/typed-racket/typecheck/compiled/tc-envops_rkt.zo
 %%DATADIR%%/pkgs/typed-racket-lib/typed-racket/typecheck/compiled/tc-expr-unit_rkt.dep
 %%DATADIR%%/pkgs/typed-racket-lib/typed-racket/typecheck/compiled/tc-expr-unit_rkt.zo
+%%DATADIR%%/pkgs/typed-racket-lib/typed-racket/typecheck/compiled/tc-expression_rkt.dep
+%%DATADIR%%/pkgs/typed-racket-lib/typed-racket/typecheck/compiled/tc-expression_rkt.zo
 %%DATADIR%%/pkgs/typed-racket-lib/typed-racket/typecheck/compiled/tc-funapp_rkt.dep
 %%DATADIR%%/pkgs/typed-racket-lib/typed-racket/typecheck/compiled/tc-funapp_rkt.zo
 %%DATADIR%%/pkgs/typed-racket-lib/typed-racket/typecheck/compiled/tc-if_rkt.dep
@@ -19570,6 +20013,8 @@ share/applications/slideshow.desktop
 %%DATADIR%%/pkgs/typed-racket-lib/typed-racket/typecheck/tc-app/compiled/signatures_rkt.zo
 %%DATADIR%%/pkgs/typed-racket-lib/typed-racket/typecheck/tc-app/compiled/tc-app-apply_rkt.dep
 %%DATADIR%%/pkgs/typed-racket-lib/typed-racket/typecheck/tc-app/compiled/tc-app-apply_rkt.zo
+%%DATADIR%%/pkgs/typed-racket-lib/typed-racket/typecheck/tc-app/compiled/tc-app-contracts_rkt.dep
+%%DATADIR%%/pkgs/typed-racket-lib/typed-racket/typecheck/tc-app/compiled/tc-app-contracts_rkt.zo
 %%DATADIR%%/pkgs/typed-racket-lib/typed-racket/typecheck/tc-app/compiled/tc-app-eq_rkt.dep
 %%DATADIR%%/pkgs/typed-racket-lib/typed-racket/typecheck/tc-app/compiled/tc-app-eq_rkt.zo
 %%DATADIR%%/pkgs/typed-racket-lib/typed-racket/typecheck/tc-app/compiled/tc-app-hetero_rkt.dep
@@ -19592,6 +20037,7 @@ share/applications/slideshow.desktop
 %%DATADIR%%/pkgs/typed-racket-lib/typed-racket/typecheck/tc-app/compiled/utils_rkt.zo
 %%DATADIR%%/pkgs/typed-racket-lib/typed-racket/typecheck/tc-app/signatures.rkt
 %%DATADIR%%/pkgs/typed-racket-lib/typed-racket/typecheck/tc-app/tc-app-apply.rkt
+%%DATADIR%%/pkgs/typed-racket-lib/typed-racket/typecheck/tc-app/tc-app-contracts.rkt
 %%DATADIR%%/pkgs/typed-racket-lib/typed-racket/typecheck/tc-app/tc-app-eq.rkt
 %%DATADIR%%/pkgs/typed-racket-lib/typed-racket/typecheck/tc-app/tc-app-hetero.rkt
 %%DATADIR%%/pkgs/typed-racket-lib/typed-racket/typecheck/tc-app/tc-app-keywords.rkt
@@ -19605,6 +20051,7 @@ share/applications/slideshow.desktop
 %%DATADIR%%/pkgs/typed-racket-lib/typed-racket/typecheck/tc-apply.rkt
 %%DATADIR%%/pkgs/typed-racket-lib/typed-racket/typecheck/tc-envops.rkt
 %%DATADIR%%/pkgs/typed-racket-lib/typed-racket/typecheck/tc-expr-unit.rkt
+%%DATADIR%%/pkgs/typed-racket-lib/typed-racket/typecheck/tc-expression.rkt
 %%DATADIR%%/pkgs/typed-racket-lib/typed-racket/typecheck/tc-funapp.rkt
 %%DATADIR%%/pkgs/typed-racket-lib/typed-racket/typecheck/tc-if.rkt
 %%DATADIR%%/pkgs/typed-racket-lib/typed-racket/typecheck/tc-lambda-unit.rkt
@@ -19649,6 +20096,8 @@ share/applications/slideshow.desktop
 %%DATADIR%%/pkgs/typed-racket-lib/typed-racket/types/compiled/resolve_rkt.zo
 %%DATADIR%%/pkgs/typed-racket-lib/typed-racket/types/compiled/struct-table_rkt.dep
 %%DATADIR%%/pkgs/typed-racket-lib/typed-racket/types/compiled/struct-table_rkt.zo
+%%DATADIR%%/pkgs/typed-racket-lib/typed-racket/types/compiled/structural_rkt.dep
+%%DATADIR%%/pkgs/typed-racket-lib/typed-racket/types/compiled/structural_rkt.zo
 %%DATADIR%%/pkgs/typed-racket-lib/typed-racket/types/compiled/substitute_rkt.dep
 %%DATADIR%%/pkgs/typed-racket-lib/typed-racket/types/compiled/substitute_rkt.zo
 %%DATADIR%%/pkgs/typed-racket-lib/typed-racket/types/compiled/subtype_rkt.dep
@@ -19674,6 +20123,7 @@ share/applications/slideshow.desktop
 %%DATADIR%%/pkgs/typed-racket-lib/typed-racket/types/remove-intersect.rkt
 %%DATADIR%%/pkgs/typed-racket-lib/typed-racket/types/resolve.rkt
 %%DATADIR%%/pkgs/typed-racket-lib/typed-racket/types/struct-table.rkt
+%%DATADIR%%/pkgs/typed-racket-lib/typed-racket/types/structural.rkt
 %%DATADIR%%/pkgs/typed-racket-lib/typed-racket/types/substitute.rkt
 %%DATADIR%%/pkgs/typed-racket-lib/typed-racket/types/subtype.rkt
 %%DATADIR%%/pkgs/typed-racket-lib/typed-racket/types/tc-error.rkt
@@ -19691,6 +20141,8 @@ share/applications/slideshow.desktop
 %%DATADIR%%/pkgs/typed-racket-lib/typed-racket/utils/compiled/disappeared-use_rkt.zo
 %%DATADIR%%/pkgs/typed-racket-lib/typed-racket/utils/compiled/disarm_rkt.dep
 %%DATADIR%%/pkgs/typed-racket-lib/typed-racket/utils/compiled/disarm_rkt.zo
+%%DATADIR%%/pkgs/typed-racket-lib/typed-racket/utils/compiled/early-return_rkt.dep
+%%DATADIR%%/pkgs/typed-racket-lib/typed-racket/utils/compiled/early-return_rkt.zo
 %%DATADIR%%/pkgs/typed-racket-lib/typed-racket/utils/compiled/literal-syntax-class_rkt.dep
 %%DATADIR%%/pkgs/typed-racket-lib/typed-racket/utils/compiled/literal-syntax-class_rkt.zo
 %%DATADIR%%/pkgs/typed-racket-lib/typed-racket/utils/compiled/mutated-vars_rkt.dep
@@ -19713,6 +20165,7 @@ share/applications/slideshow.desktop
 %%DATADIR%%/pkgs/typed-racket-lib/typed-racket/utils/compiled/utils_rkt.zo
 %%DATADIR%%/pkgs/typed-racket-lib/typed-racket/utils/disappeared-use.rkt
 %%DATADIR%%/pkgs/typed-racket-lib/typed-racket/utils/disarm.rkt
+%%DATADIR%%/pkgs/typed-racket-lib/typed-racket/utils/early-return.rkt
 %%DATADIR%%/pkgs/typed-racket-lib/typed-racket/utils/literal-syntax-class.rkt
 %%DATADIR%%/pkgs/typed-racket-lib/typed-racket/utils/mutated-vars.rkt
 %%DATADIR%%/pkgs/typed-racket-lib/typed-racket/utils/print-struct.rkt
@@ -19787,6 +20240,8 @@ share/applications/slideshow.desktop
 %%DATADIR%%/pkgs/typed-racket-more/info.rkt
 %%DATADIR%%/pkgs/typed-racket-more/typed/compiled/framework_rkt.dep
 %%DATADIR%%/pkgs/typed-racket-more/typed/compiled/framework_rkt.zo
+%%DATADIR%%/pkgs/typed-racket-more/typed/compiled/openssl_rkt.dep
+%%DATADIR%%/pkgs/typed-racket-more/typed/compiled/openssl_rkt.zo
 %%DATADIR%%/pkgs/typed-racket-more/typed/compiled/pict_rkt.dep
 %%DATADIR%%/pkgs/typed-racket-more/typed/compiled/pict_rkt.zo
 %%DATADIR%%/pkgs/typed-racket-more/typed/compiled/rackunit_rkt.dep
@@ -19857,10 +20312,23 @@ share/applications/slideshow.desktop
 %%DATADIR%%/pkgs/typed-racket-more/typed/net/smtp.rkt
 %%DATADIR%%/pkgs/typed-racket-more/typed/net/uri-codec.rkt
 %%DATADIR%%/pkgs/typed-racket-more/typed/net/url.rkt
+%%DATADIR%%/pkgs/typed-racket-more/typed/openssl.rkt
+%%DATADIR%%/pkgs/typed-racket-more/typed/openssl/compiled/md5_rkt.dep
+%%DATADIR%%/pkgs/typed-racket-more/typed/openssl/compiled/md5_rkt.zo
+%%DATADIR%%/pkgs/typed-racket-more/typed/openssl/compiled/sha1_rkt.dep
+%%DATADIR%%/pkgs/typed-racket-more/typed/openssl/compiled/sha1_rkt.zo
+%%DATADIR%%/pkgs/typed-racket-more/typed/openssl/compiled/types_rkt.dep
+%%DATADIR%%/pkgs/typed-racket-more/typed/openssl/compiled/types_rkt.zo
+%%DATADIR%%/pkgs/typed-racket-more/typed/openssl/md5.rkt
+%%DATADIR%%/pkgs/typed-racket-more/typed/openssl/sha1.rkt
+%%DATADIR%%/pkgs/typed-racket-more/typed/openssl/types.rkt
 %%DATADIR%%/pkgs/typed-racket-more/typed/pict.rkt
 %%DATADIR%%/pkgs/typed-racket-more/typed/private/compiled/framework-types_rkt.dep
 %%DATADIR%%/pkgs/typed-racket-more/typed/private/compiled/framework-types_rkt.zo
 %%DATADIR%%/pkgs/typed-racket-more/typed/private/framework-types.rkt
+%%DATADIR%%/pkgs/typed-racket-more/typed/racket/async-channel.rkt
+%%DATADIR%%/pkgs/typed-racket-more/typed/racket/compiled/async-channel_rkt.dep
+%%DATADIR%%/pkgs/typed-racket-more/typed/racket/compiled/async-channel_rkt.zo
 %%DATADIR%%/pkgs/typed-racket-more/typed/racket/compiled/draw_rkt.dep
 %%DATADIR%%/pkgs/typed-racket-more/typed/racket/compiled/draw_rkt.zo
 %%DATADIR%%/pkgs/typed-racket-more/typed/racket/compiled/gui_rkt.dep
@@ -20165,6 +20633,12 @@ share/applications/slideshow.desktop
 %%DATADIR%%/pkgs/unstable-lib/gui/compiled/snip_rkt.dep
 %%DATADIR%%/pkgs/unstable-lib/gui/compiled/snip_rkt.zo
 %%DATADIR%%/pkgs/unstable-lib/gui/pict.rkt
+%%DATADIR%%/pkgs/unstable-lib/gui/pict/align.rkt
+%%DATADIR%%/pkgs/unstable-lib/gui/pict/compiled/align_rkt.dep
+%%DATADIR%%/pkgs/unstable-lib/gui/pict/compiled/align_rkt.zo
+%%DATADIR%%/pkgs/unstable-lib/gui/pict/compiled/plt-logo_rkt.dep
+%%DATADIR%%/pkgs/unstable-lib/gui/pict/compiled/plt-logo_rkt.zo
+%%DATADIR%%/pkgs/unstable-lib/gui/pict/plt-logo.rkt
 %%DATADIR%%/pkgs/unstable-lib/gui/ppict.rkt
 %%DATADIR%%/pkgs/unstable-lib/gui/private/blur.rkt
 %%DATADIR%%/pkgs/unstable-lib/gui/private/compiled/blur_rkt.dep
@@ -21869,7 +22343,9 @@ share/applications/slideshow.desktop
 @dirrm %%DATADIR%%/pkgs/gui-lib/unstable/private
 @dirrm %%DATADIR%%/pkgs/gui-lib/unstable
 @dirrm %%DATADIR%%/pkgs/gui-lib
-@dirrm %%DATADIR%%/pkgs/gui-pkg-manager-lib/pkg/gui/compiled
+@dirrm %%DATADIR%%/pkgs/gui-pkg-manager-lib/pkg/compiled
+@dirrm %%DATADIR%%/pkgs/gui-pkg-manager-lib/pkg/gui/private/compiled
+@dirrm %%DATADIR%%/pkgs/gui-pkg-manager-lib/pkg/gui/private
 @dirrm %%DATADIR%%/pkgs/gui-pkg-manager-lib/pkg/gui
 @dirrm %%DATADIR%%/pkgs/gui-pkg-manager-lib/pkg
 @dirrm %%DATADIR%%/pkgs/gui-pkg-manager-lib
@@ -22358,6 +22834,8 @@ share/applications/slideshow.desktop
 @dirrm %%DATADIR%%/pkgs/racket-doc/xml/compiled
 @dirrm %%DATADIR%%/pkgs/racket-doc/xml
 @dirrm %%DATADIR%%/pkgs/racket-doc
+@dirrm %%DATADIR%%/pkgs/racket-index/rackunit/compiled
+@dirrm %%DATADIR%%/pkgs/racket-index/rackunit
 @dirrm %%DATADIR%%/pkgs/racket-index/scribblings/main/compiled
 @dirrm %%DATADIR%%/pkgs/racket-index/scribblings/main/private/compiled
 @dirrm %%DATADIR%%/pkgs/racket-index/scribblings/main/private
@@ -22431,6 +22909,33 @@ share/applications/slideshow.desktop
 @dirrm %%DATADIR%%/pkgs/realm/compiled
 @dirrm %%DATADIR%%/pkgs/realm
 @dirrm %%DATADIR%%/pkgs/redex
+@dirrm %%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/compiled
+@dirrm %%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/models/compiled
+@dirrm %%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/models/delim-cont/compiled
+@dirrm %%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/models/delim-cont
+@dirrm %%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/models/let-poly/compiled
+@dirrm %%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/models/let-poly
+@dirrm %%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/models/list-machine/compiled
+@dirrm %%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/models/list-machine
+@dirrm %%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/models/poly-stlc/compiled
+@dirrm %%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/models/poly-stlc
+@dirrm %%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/models/rbtrees/compiled
+@dirrm %%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/models/rbtrees
+@dirrm %%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/models/rvm/compiled
+@dirrm %%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/models/rvm
+@dirrm %%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/models/stlc+lists/compiled
+@dirrm %%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/models/stlc+lists
+@dirrm %%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/models/stlc-subst/compiled
+@dirrm %%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/models/stlc-subst
+@dirrm %%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/models/util/compiled
+@dirrm %%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/models/util
+@dirrm %%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/models
+@dirrm %%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/private/compiled
+@dirrm %%DATADIR%%/pkgs/redex-benchmark/redex/benchmark/private
+@dirrm %%DATADIR%%/pkgs/redex-benchmark/redex/benchmark
+@dirrm %%DATADIR%%/pkgs/redex-benchmark/redex/compiled
+@dirrm %%DATADIR%%/pkgs/redex-benchmark/redex
+@dirrm %%DATADIR%%/pkgs/redex-benchmark
 @dirrm %%DATADIR%%/pkgs/redex-doc/redex/compiled
 @dirrm %%DATADIR%%/pkgs/redex-doc/redex/scribblings/compiled
 @dirrm %%DATADIR%%/pkgs/redex-doc/redex/scribblings
@@ -22527,8 +23032,6 @@ share/applications/slideshow.desktop
 @dirrm %%DATADIR%%/pkgs/scribble-html-lib
 @dirrm %%DATADIR%%/pkgs/scribble-lib/help/compiled
 @dirrm %%DATADIR%%/pkgs/scribble-lib/help
-@dirrm %%DATADIR%%/pkgs/scribble-lib/rackunit/compiled
-@dirrm %%DATADIR%%/pkgs/scribble-lib/rackunit
 @dirrm %%DATADIR%%/pkgs/scribble-lib/scribble/base/compiled
 @dirrm %%DATADIR%%/pkgs/scribble-lib/scribble/base/lang/compiled
 @dirrm %%DATADIR%%/pkgs/scribble-lib/scribble/base/lang
@@ -22936,6 +23439,8 @@ share/applications/slideshow.desktop
 @dirrm %%DATADIR%%/pkgs/typed-racket-more/typed/mred
 @dirrm %%DATADIR%%/pkgs/typed-racket-more/typed/net/compiled
 @dirrm %%DATADIR%%/pkgs/typed-racket-more/typed/net
+@dirrm %%DATADIR%%/pkgs/typed-racket-more/typed/openssl/compiled
+@dirrm %%DATADIR%%/pkgs/typed-racket-more/typed/openssl
 @dirrm %%DATADIR%%/pkgs/typed-racket-more/typed/private/compiled
 @dirrm %%DATADIR%%/pkgs/typed-racket-more/typed/private
 @dirrm %%DATADIR%%/pkgs/typed-racket-more/typed/racket/compiled
@@ -22993,6 +23498,8 @@ share/applications/slideshow.desktop
 @dirrm %%DATADIR%%/pkgs/unstable-lib/automata
 @dirrm %%DATADIR%%/pkgs/unstable-lib/compiled
 @dirrm %%DATADIR%%/pkgs/unstable-lib/gui/compiled
+@dirrm %%DATADIR%%/pkgs/unstable-lib/gui/pict/compiled
+@dirrm %%DATADIR%%/pkgs/unstable-lib/gui/pict
 @dirrm %%DATADIR%%/pkgs/unstable-lib/gui/private/compiled
 @dirrm %%DATADIR%%/pkgs/unstable-lib/gui/private
 @dirrm %%DATADIR%%/pkgs/unstable-lib/gui

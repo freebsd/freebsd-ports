@@ -9,7 +9,7 @@ MASTER_SITE_SUBDIR=	CPAN:STASH
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	gblach@FreeBSD.org
-COMMENT=	A PSGI engine for Perl based on EV/libev
+COMMENT=	PSGI engine for Perl based on EV/libev
 
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual

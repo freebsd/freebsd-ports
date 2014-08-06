@@ -7,7 +7,7 @@ CATEGORIES=	www
 MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A web application framework
+COMMENT=	Web application framework
 
 USE_PHP=	yes
 WANT_PHP_WEB=	yes

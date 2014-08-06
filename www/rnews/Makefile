@@ -8,7 +8,7 @@ CATEGORIES=	www
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A server-side RSS aggregator written in PHP with MySQL
+COMMENT=	Server-side RSS aggregator written in PHP with MySQL
 
 NO_BUILD=	yes
 

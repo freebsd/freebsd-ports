@@ -28,7 +28,7 @@ CONFIGURE_ARGS=	--with-python=${PYTHON_CMD} \
 		--with-postgres-includes=${LOCALBASE}/include \
 		--with-mxdatetime-includes=${DATETIME_INC}
 
-OPTIONS_DEFINE=	ZOPE DOCS
+OPTIONS_DEFINE=	ZOPE DOCS EXAMPLES
 OPTIONS_SUB=	yes
 
 ZOPE_USES=	zope

@@ -7,7 +7,7 @@ DISTVERSIONSUFFIX=	-fx
 CATEGORIES=	www
 
 MAINTAINER=	kamikaze@bsdforen.de
-COMMENT=	A firefox extension to manipulate HTTP headers
+COMMENT=	Firefox extension to manipulate HTTP headers
 
 XPI_NUM=	967
 XPI_ID=		{b749fc7c-e949-447f-926c-3f4eed6accfe}

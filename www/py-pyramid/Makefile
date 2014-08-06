@@ -9,7 +9,7 @@ MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	clsung@FreeBSD.org
-COMMENT=	A small, fast, web development framework by the Pylons community
+COMMENT=	Small, fast, web development framework by the Pylons community
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Chameleon>=1.2.3:${PORTSDIR}/textproc/py-Chameleon \
 		${PYTHON_PKGNAMEPREFIX}PasteDeploy>=1.5.0:${PORTSDIR}/www/py-pastedeploy \
