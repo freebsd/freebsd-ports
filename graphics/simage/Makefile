@@ -5,7 +5,7 @@ PORTNAME=	simage
 PORTVERSION=	1.7.0
 PORTREVISION=	3
 CATEGORIES=	graphics
-MASTER_SITES=	http://ftp.coin3d.org/coin/src/all/
+MASTER_SITES=	https://bitbucket.org/Coin3D/coin/downloads/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library with image format loaders and front-ends
