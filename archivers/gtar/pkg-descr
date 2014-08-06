@@ -8,7 +8,7 @@ features that allow tar to be used for incremental and full backups.
 This distribution also includes rmt, the remote tape server.
 
 Note that this port will install these utilities with a 'g' prefix,
-e.g. gtar, but the texinfo documentation will refer to them without
-the 'g' prefix.
+e.g. gtar, but the man pages and info documentation will refer to
+them without the 'g' prefix.
 
 WWW: http://www.gnu.org/software/tar/
