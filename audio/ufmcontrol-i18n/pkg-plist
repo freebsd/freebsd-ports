@@ -66,6 +66,8 @@ share/nls/sv_SE.ISO8859-1/ufmcontrol.cat
 share/nls/sv_SE.ISO8859-15/ufmcontrol.cat
 share/nls/tr_TR.ISO8859-9/ufmcontrol.cat
 share/nls/uk_UA.ISO8859-5/ufmcontrol.cat
-@dirrm man/it.ISO8859-1/man1
-@dirrm man/it.ISO8859-1
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
+share/ufmcontrol
+@dirrmtry man/it.ISO8859-1/man1
+@dirrmtry man/it.ISO8859-1
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%
+@dirrmtry %%DATADIR%%
