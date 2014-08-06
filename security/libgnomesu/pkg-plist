@@ -9,7 +9,7 @@ libexec/gnomesu-backend
 libexec/gnomesu-pam-backend
 %%PORTDOCS%%%%DOCSDIR%%/api.html
 %%PORTDOCS%%%%DOCSDIR%%/libgnomesu.css
-%%EXAMPLESDIR%%/gnomesu-pam.sample
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gnomesu-pam.sample
 share/application-registry/gnomesu-nautilus.applications
 share/mime-info/gnomesu-nautilus.keys
 share/locale/az/LC_MESSAGES/libgnomesu-1.0.mo
@@ -51,5 +51,5 @@ share/locale/zh_CN/LC_MESSAGES/libgnomesu-1.0.mo
 share/locale/zh_TW/LC_MESSAGES/libgnomesu-1.0.mo
 @dirrm include/libgnomesu-1.0/libgnomesu
 @dirrm include/libgnomesu-1.0
-@dirrm %%EXAMPLESDIR%%
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%

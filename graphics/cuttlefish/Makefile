@@ -27,6 +27,8 @@ EXAMPLES=	japan-traces-small.config japan-traces.config \
 		nyxem-hosts-both.config \
 		witty-combined-small.config witty-combined.config
 
+OPTIONS_DEFINE=	EXAMPLES
+
 post-patch:
 	@${REINPLACE_CMD} -e "s|../lib|../lib/cuttlefish|" \
 		${WRKSRC}/bin/cuttlefish.pl
@@ -36,18 +38,18 @@ post-patch:
 .endfor
 
 do-install:
-	@${INSTALL_SCRIPT} ${WRKSRC}/bin/cuttlefish.pl ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/bin/cuttlefish.pl ${STAGEDIR}${PREFIX}/bin
 	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/cuttlefish
 	@${MKDIR} ${STAGEDIR}${DATADIR}
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 .for f in Canvas.pm Control.pm Histogram.pm Image.pm Legend.pm Map.pm Util.pm
-	@${INSTALL_DATA} ${WRKSRC}/lib/${f} ${STAGEDIR}${PREFIX}/lib/cuttlefish/${f}
+	${INSTALL_DATA} ${WRKSRC}/lib/${f} ${STAGEDIR}${PREFIX}/lib/cuttlefish/${f}
 .endfor
 .for f in ${EXAMPLES}
-	@${INSTALL_DATA} ${WRKSRC}/configs/${f} ${STAGEDIR}${EXAMPLESDIR}/${f}
+	${INSTALL_DATA} ${WRKSRC}/configs/${f} ${STAGEDIR}${EXAMPLESDIR}/${f}
 .endfor
 .for f in ${IMAGES}
-	@${INSTALL_DATA} ${WRKSRC}/images/${f} ${STAGEDIR}${DATADIR}/${f}
+	${INSTALL_DATA} ${WRKSRC}/images/${f} ${STAGEDIR}${DATADIR}/${f}
 .endfor
 
 .include <bsd.port.mk>

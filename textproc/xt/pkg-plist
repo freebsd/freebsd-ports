@@ -2,14 +2,14 @@ bin/xt
 bin/xt-xml4j
 bin/xt-xp
 %%JAVAJARDIR%%/xt.jar
-%%EXAMPLESDIR%%/date.xsl
-%%EXAMPLESDIR%%/nxml.xsl
-%%EXAMPLESDIR%%/slides.xml
-%%EXAMPLESDIR%%/slides.xsl
-%%EXAMPLESDIR%%/sort-uniq.xml
-%%EXAMPLESDIR%%/sort-uniq.xsl
-%%EXAMPLESDIR%%/split.xml
-%%EXAMPLESDIR%%/split.xsl
-%%EXAMPLESDIR%%/textfile.xml
-%%EXAMPLESDIR%%/textfile.xsl
-@dirrm %%EXAMPLESDIR%%
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/date.xsl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/nxml.xsl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/slides.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/slides.xsl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sort-uniq.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sort-uniq.xsl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/split.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/split.xsl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/textfile.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/textfile.xsl
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%

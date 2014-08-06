@@ -13,17 +13,17 @@ lib/ask/test.py
 man/man1/askfilter.1.gz
 man/man1/asksenders.1.gz
 man/man1/asksetup.1.gz
-%%EXAMPLESDIR%%/ask.rc
-%%EXAMPLESDIR%%/confirm_da.txt
-%%EXAMPLESDIR%%/confirm_de.txt
-%%EXAMPLESDIR%%/confirm_en.txt
-%%EXAMPLESDIR%%/confirm_es.txt
-%%EXAMPLESDIR%%/confirm_fi.txt
-%%EXAMPLESDIR%%/confirm_fr.txt
-%%EXAMPLESDIR%%/confirm_it.txt
-%%EXAMPLESDIR%%/confirm_nl.txt
-%%EXAMPLESDIR%%/confirm_ptbr.txt
-%%EXAMPLESDIR%%/ignorelist.txt
-%%EXAMPLESDIR%%/whitelist.txt
-@dirrm %%EXAMPLESDIR%%
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ask.rc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/confirm_da.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/confirm_de.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/confirm_en.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/confirm_es.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/confirm_fi.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/confirm_fr.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/confirm_it.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/confirm_nl.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/confirm_ptbr.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ignorelist.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/whitelist.txt
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
 @dirrm lib/ask

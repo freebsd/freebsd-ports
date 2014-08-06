@@ -17,6 +17,8 @@ CFLAGS+=	-fPIC
 USE_PYTHON=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
+OPTIONS_DEFINE=	EXAMPLES
+
 post-patch:
 	${REINPLACE_CMD} -e 's,/usr/bin/python,python,g'  ${WRKSRC}/bg5pdf
 

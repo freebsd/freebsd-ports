@@ -12,11 +12,11 @@ lib/cuttlefish/Util.pm
 %%DATADIR%%/japan-water.jpg
 %%DATADIR%%/world-day.jpg
 %%DATADIR%%/world-water.jpg
-%%EXAMPLESDIR%%/japan-traces-small.config
-%%EXAMPLESDIR%%/japan-traces.config
-%%EXAMPLESDIR%%/nyxem-hosts-both.config
-%%EXAMPLESDIR%%/witty-combined-small.config
-%%EXAMPLESDIR%%/witty-combined.config
-@dirrm %%EXAMPLESDIR%%
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/japan-traces-small.config
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/japan-traces.config
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/nyxem-hosts-both.config
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/witty-combined-small.config
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/witty-combined.config
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
 @dirrm %%DATADIR%%
 @dirrm lib/cuttlefish

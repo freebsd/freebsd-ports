@@ -20,6 +20,8 @@ TEXMFDIR?=	share/texmf
 GASTEXDIR=	${PREFIX}/${TEXMFDIR}/tex/latex/gastex
 GASDVIDIR=	${PREFIX}/${TEXMFDIR}/dvips/gastex
 
+OPTIONS_DEFINE=	EXAMPLES
+
 do-install:
 	@${MKDIR} ${STAGEDIR}${GASTEXDIR}
 	@${MKDIR} ${STAGEDIR}${GASDVIDIR}

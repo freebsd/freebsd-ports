@@ -19,7 +19,7 @@ USE_JAVA=	YES
 JAVA_VERSION=	1.6+
 NO_BUILD=	YES
 
-OPTIONS_DEFINE=	DOCS
+OPTIONS_DEFINE=	DOCS EXAMPLES
 
 OTHERDOCS=	copying.txt copyingjc.txt index.html
 PORTDOCS=	${OTHERDOCS} api
@@ -41,13 +41,13 @@ do-install:
 	@${ECHO_MSG} "  [ DONE ]"
 	@${ECHO_MSG} ">> Installing samples in ${EXAMPLESDIR}..."
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
-	cd ${WRKSRC}/demo && ${INSTALL_DATA} ${SAMPLES} ${STAGEDIR}${EXAMPLESDIR}/
+	(cd ${WRKSRC}/demo && ${INSTALL_DATA} ${SAMPLES} ${STAGEDIR}${EXAMPLESDIR}/)
 	@${ECHO_MSG} "  [ DONE ]"
 	@${ECHO_MSG} ">> Installing documentation in ${DOCSDIR}..."
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
-	cd ${WRKSRC}/doc && ${FIND} api \
-	  | ${CPIO} -pdmu -R ${SHAREOWN}:${SHAREGRP} ${STAGEDIR}${DOCSDIR} > /dev/null 2>&1
-	cd ${WRKSRC} && ${INSTALL_DATA} ${OTHERDOCS} ${STAGEDIR}${DOCSDIR}/
+	(cd ${WRKSRC}/doc && ${FIND} api \
+	  | ${CPIO} -pdmu -R ${SHAREOWN}:${SHAREGRP} ${STAGEDIR}${DOCSDIR} > /dev/null 2>&1)
+	(cd ${WRKSRC} && ${INSTALL_DATA} ${OTHERDOCS} ${STAGEDIR}${DOCSDIR}/)
 	@${ECHO_MSG} "  [ DONE ]"
 
 .include <bsd.port.mk>

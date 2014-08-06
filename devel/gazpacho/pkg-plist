@@ -246,10 +246,10 @@ share/applications/gazpacho.desktop
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
 %%PORTDOCS%%%%DOCSDIR%%/README
-%%EXAMPLESDIR%%/helloworld.glade
-%%EXAMPLESDIR%%/helloworld.py
-%%EXAMPLESDIR%%/uimanager.glade
-%%EXAMPLESDIR%%/uimanager.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/helloworld.glade
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/helloworld.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/uimanager.glade
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/uimanager.py
 %%DATADIR%%/catalogs/base.xml
 %%DATADIR%%/glade/dummy.glade
 %%DATADIR%%/glade/preferences.glade
@@ -344,7 +344,7 @@ share/locale/zh_CN/LC_MESSAGES/gazpacho.mo
 @dirrm %%DATADIR%%/glade
 @dirrmtry %%DATADIR%%/catalogs
 @dirrmtry %%DATADIR%%
-@dirrm %%EXAMPLESDIR%%
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
 @dirrm %%PYTHON_SITELIBDIR%%/gazpacho/widgets/base/menueditor
 @dirrm %%PYTHON_SITELIBDIR%%/gazpacho/widgets/base
 @dirrmtry %%PYTHON_SITELIBDIR%%/gazpacho/widgets

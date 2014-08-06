@@ -15,6 +15,8 @@ COMMENT=	Update your host name on any dynamic DNS service
 USE_RC_SUBR=	ez-ipupdate
 GNU_CONFIGURE=	yes
 
+OPTIONS_DEFINE=	EXAMPLES
+
 post-install:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	(cd ${WRKSRC} && ${INSTALL_DATA} example-*.conf ${STAGEDIR}${EXAMPLESDIR})

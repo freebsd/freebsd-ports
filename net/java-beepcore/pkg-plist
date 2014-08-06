@@ -6,15 +6,15 @@
 %%PORTDOCS%%%%DOCSDIR%%/LICENSE.txt
 %%PORTDOCS%%%%DOCSDIR%%/README.txt
 %%PORTDOCS%%%%DOCSDIR%%/README_SASL.htm
-%%EXAMPLESDIR%%/example.jar
-%%EXAMPLESDIR%%/org/beepcore/beep/example/Beepd.java
-%%EXAMPLESDIR%%/org/beepcore/beep/example/Bing.java
-%%EXAMPLESDIR%%/org/beepcore/beep/example/README_EXAMPLE
-%%EXAMPLESDIR%%/org/beepcore/beep/example/beepd-config.xml
-@dirrm %%EXAMPLESDIR%%/org/beepcore/beep/util
-@dirrm %%EXAMPLESDIR%%/org/beepcore/beep/example
-@dirrm %%EXAMPLESDIR%%/org/beepcore/beep
-@dirrm %%EXAMPLESDIR%%/org/beepcore
-@dirrm %%EXAMPLESDIR%%/org
-@dirrm %%EXAMPLESDIR%%
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example.jar
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/org/beepcore/beep/example/Beepd.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/org/beepcore/beep/example/Bing.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/org/beepcore/beep/example/README_EXAMPLE
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/org/beepcore/beep/example/beepd-config.xml
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/org/beepcore/beep/util
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/org/beepcore/beep/example
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/org/beepcore/beep
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/org/beepcore
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/org
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
