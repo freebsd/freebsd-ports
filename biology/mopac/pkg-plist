@@ -1,9 +1,9 @@
 bin/mopac7
 include/mopac7/libmopac7.h
 lib/libmopac7.a
-lib/libmopac7.la
 lib/libmopac7.so
 lib/libmopac7.so.0
+lib/libmopac7.so.0.0.0
 libdata/pkgconfig/libmopac7.pc
 libexec/mopac7
 @dirrm include/mopac7
