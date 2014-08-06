@@ -209,19 +209,16 @@ BBBike/Way.pm
 BBBike/Way/Metric.pm
 BBBike/Wizards.pm
 BBBike/bbbike
-@exec ln -fs %D/%F %D/bin/bbbike
-@unexec rm -f %D/bin/bbbike
+bin/bbbike
 BBBike/bbbike-activeperl.bat
 BBBike/bbbike-fast.bat
 BBBike/bbbike.bat
 BBBike/bbbike.pod
 BBBike/bbbikeapplet
 BBBike/bbbikeclient
-@exec ln -fs %D/%F %D/bin/bbbikeclient
-@unexec rm -f %D/bin/bbbikeclient
+bin/bbbikeclient
 BBBike/cbbbike
-@exec ln -fs %D/%F %D/bin/cbbbike
-@unexec rm -f %D/bin/cbbbike
+bin/cbbbike
 BBBike/cbbbike.bat
 BBBike/cgi/README
 BBBike/cgi/bbbike-data.cgi
@@ -248,8 +245,7 @@ BBBike/cgi/tinyhttpd
 BBBike/cgi/tinyhttpd.config
 BBBike/cgi/wapbbbike.cgi
 BBBike/cmdbbbike
-@exec ln -fs %D/%F %D/bin/cmdbbbike
-@unexec rm -f %D/bin/cmdbbbike
+bin/cmdbbbike
 BBBike/data/.modified
 BBBike/data/Berlin.coords.data
 BBBike/data/Potsdam.coords.data
@@ -1077,10 +1073,10 @@ BBBike/plugins/KaupertsPlugin.pm
 BBBike/plugins/MerkaartorPlugin.pm
 BBBike/plugins/MultiMap.pm
 BBBike/smsbbbike
-@exec ln -fs %D/%F %D/bin/smsbbbike
-@unexec rm -f %D/bin/smsbbbike
+bin/smsbbbike
 BBBike/tkbikepwr
 BBBike/tmp/.keep_me
+man/man1/bbbike.1.gz
 BBBike/lib/%%LOCAL_PERL_ARCH%%/BBBikeXS.pm
 BBBike/lib/%%LOCAL_PERL_ARCH%%/Strassen/Inline.pm
 BBBike/lib/%%LOCAL_PERL_ARCH%%/Strassen/Inline2.pm
