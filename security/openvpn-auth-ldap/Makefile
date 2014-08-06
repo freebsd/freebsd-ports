@@ -3,7 +3,7 @@
 
 PORTNAME=	openvpn-auth-ldap
 PORTVERSION=	2.0.3
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 DISTNAME=	auth-ldap-${PORTVERSION}
@@ -27,6 +27,8 @@ OPENVPN_WRKSRC=	`cd ${PORTSDIR}/security/openvpn; make -V WRKSRC`
 CONFIGURE_ARGS+=	--with-openldap=${LOCALBASE} \
 			--with-openvpn=${OPENVPN_WRKSRC}/include \
 			--with-objc-runtime=GNU
+# this issue would cause run-time trouble, so turn it into an error:
+OBJCFLAGS+=	-Werror=objc-method-access
 
 PORTDOCS=	README
 PORTEXAMPLES=	auth-ldap.conf
