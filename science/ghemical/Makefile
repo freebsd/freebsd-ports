@@ -3,7 +3,7 @@
 
 PORTNAME=	ghemical
 PORTVERSION=	3.0.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	science
 MASTER_SITES=	http://bioinformatics.org/ghemical/download/release20111012/	\
 		http://bioinformatics.org/ghemical/download/current
@@ -28,7 +28,14 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-gamess --enable-mpqc --enable-openbabel --enable-gtk --enable-threads --enable-mopac7
 PLIST_SUB=	GHEMICAL_VERSION="${PORTVERSION}"
 
+CPPFLAGS=	-I${LOCALBASE}/include
+
 MAKE_ENV=	PKG_CONFIG=${LOCALBASE}/pkg-config
 
-NO_STAGE=	yes
+OPTIONS_DEFINE=	NLS
+OPTIONS_SUB=	yes
+
+NLS_USES=	gettext
+NLS_CONFIGURE_ENABLE=	nls
+
 .include <bsd.port.mk>
