@@ -8,7 +8,7 @@ CATEGORIES=	www textproc
 MASTER_SITES=	SF
 
 MAINTAINER=	tobez@FreeBSD.org
-COMMENT=	A tool to merge and sort by date http log files
+COMMENT=	Tool to merge and sort by date http log files
 
 USES=	gmake
 GNU_CONFIGURE=	yes

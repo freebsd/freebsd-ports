@@ -7,7 +7,7 @@ CATEGORIES=	www
 PKGNAMESUFFIX=	22
 
 MAINTAINER=	pphillips@experts-exchange.com
-COMMENT=	A framework for developing PHP web applications
+COMMENT=	Framework for developing PHP web applications
 
 LICENSE=	MIT
 

@@ -7,7 +7,7 @@ CATEGORIES=	www benchmarks ftp ipv6
 MASTER_SITES=	http://dl.fefe.de/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A high performance webserver with scalability benchmark tools
+COMMENT=	High performance webserver with scalability benchmark tools
 
 BUILD_DEPENDS=	libowfat>=0.29:${PORTSDIR}/devel/libowfat
 

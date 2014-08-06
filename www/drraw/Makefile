@@ -9,7 +9,7 @@ MASTER_SITES=	http://web.taranis.org/drraw/dist/ \
 		http://christianserving.org/ports/mail/imapsync/
 
 MAINTAINER=	avg@icyb.net.ua
-COMMENT=	A simple web-based presentation front-end for RRDtool
+COMMENT=	Simple web-based presentation front-end for RRDtool
 
 RUN_DEPENDS+=	rrdtool>=0:${PORTSDIR}/databases/rrdtool
 

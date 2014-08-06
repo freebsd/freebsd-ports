@@ -8,7 +8,7 @@ MASTER_SITES=	http://pkqs.net/~sbeyer/tools/netstiff/
 DISTNAME=	${PORTNAME}_${PORTVERSION}.orig
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A powerful web page update checker
+COMMENT=	Powerful web page update checker
 
 LICENSE=	GPLv3
 

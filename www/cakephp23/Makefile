@@ -6,7 +6,7 @@ PORTVERSION=	2.3.6
 CATEGORIES=	www
 
 MAINTAINER=	pphillips@experts-exchange.com
-COMMENT=	A framework for developing PHP web applications
+COMMENT=	Framework for developing PHP web applications
 
 LICENSE=	MIT
 

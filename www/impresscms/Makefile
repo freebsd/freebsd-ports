@@ -8,7 +8,7 @@ MASTER_SITES=	SF/${PORTNAME}/ImpressCMS%20Official%20Releases/ImpressCMS%20${POR
 DISTNAME=	${PORTNAME}_${PORTVERSION}_final
 
 MAINTAINER=	wen@FreeBSD.org
-COMMENT=	A Community Developed Content Management System
+COMMENT=	Community Developed Content Management System
 
 USES=		zip
 USE_PHP=	mysql pcre session iconv xml gd

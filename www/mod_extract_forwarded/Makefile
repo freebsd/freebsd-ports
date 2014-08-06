@@ -9,7 +9,7 @@ MASTER_SITES=	http://www.openinfo.co.uk/apache/
 DISTNAME=	extract_forwarded-${DISTVERSION}
 
 MAINTAINER=	kuriyama@FreeBSD.org
-COMMENT=	An Apache module that can make proxied requests appear with client IP
+COMMENT=	Apache module that can make proxied requests appear with client IP
 
 OPTIONS_DEFINE=	YOSHFUJI
 YOSHFUJI_DESC=	yoshfuji patch (support IPv6 addr in config, etc)

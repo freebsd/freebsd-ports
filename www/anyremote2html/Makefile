@@ -7,7 +7,7 @@ CATEGORIES=	www deskutils
 MASTER_SITES=	SF/anyremote/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A web interface for anyRemote
+COMMENT=	Web interface for anyRemote
 
 RUN_DEPENDS=	anyremote:${PORTSDIR}/comms/anyremote
 

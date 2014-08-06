@@ -10,7 +10,7 @@ MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
-COMMENT=	A set of add-ons for the Epiphany web browser
+COMMENT=	Set of add-ons for the Epiphany web browser
 
 BUILD_DEPENDS=	epiphany:${PORTSDIR}/www/epiphany
 LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre \

@@ -9,7 +9,7 @@ MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	corsmith@gmail.com
-COMMENT=	A whitespace optimizer for CSS, HTML and XHTML output
+COMMENT=	Whitespace optimizer for CSS, HTML and XHTML output
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes

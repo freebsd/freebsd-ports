@@ -11,7 +11,7 @@ DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
 EXTRACT_ONLY=
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	An extensible continuous integration engine
+COMMENT=	Extensible continuous integration engine
 
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+

@@ -8,7 +8,7 @@ MASTER_SITES=	http://static.moinmo.in/files/
 DISTNAME=	moin-${PORTVERSION}
 
 MAINTAINER=	khsing.cn@gmail.com
-COMMENT=	A Python clone of WikiWiki
+COMMENT=	Python clone of WikiWiki
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/docs/licenses/COPYING

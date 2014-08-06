@@ -14,7 +14,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A fast and lightweight PHP-powered discussion board
+COMMENT=	Fast and lightweight PHP-powered discussion board
 
 BUILD_DEPENDS+=	${UNZIP_CMD}:${PORTSDIR}/archivers/unzip
 

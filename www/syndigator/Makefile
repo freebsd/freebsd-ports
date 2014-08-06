@@ -9,7 +9,7 @@ CATEGORIES=	www
 MASTER_SITES=	SF/${PORTNAME}/Syndigator/${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	An RSS feed reader based on Gtk2
+COMMENT=	RSS feed reader based on Gtk2
 
 RUN_DEPENDS=	p5-Text-Iconv>=0:${PORTSDIR}/converters/p5-Text-Iconv \
 		p5-Date-Manip>=0:${PORTSDIR}/devel/p5-Date-Manip \

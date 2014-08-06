@@ -10,7 +10,7 @@ MASTER_SITES=	http://www.linofee.org/~jel/webtools/src/ \
 DISTNAME=	jesred-1.2pl1
 
 MAINTAINER=	dsh@vlink.ru
-COMMENT=	A redirector for Squid
+COMMENT=	Redirector for Squid
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/jesred ${STAGEDIR}${PREFIX}/libexec

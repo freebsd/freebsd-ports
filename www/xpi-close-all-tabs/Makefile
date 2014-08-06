@@ -7,7 +7,7 @@ DISTVERSIONSUFFIX=	-fx
 CATEGORIES=	www
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A toolbar button to close all open tabs
+COMMENT=	Toolbar button to close all open tabs
 
 XPI_DISTNAME=	close_all_tabs
 XPI_ID=		closealltabs@jgadesign.net

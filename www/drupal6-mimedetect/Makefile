@@ -7,7 +7,7 @@ CATEGORIES=	www
 MASTER_SITES=	http://ftp.drupal.org/files/projects/
 
 MAINTAINER=	wenheping@gmail.com
-COMMENT=	An API for Consistent Server Side Mime Detection
+COMMENT=	API for Consistent Server Side Mime Detection
 
 USES=		drupal:6,module
 

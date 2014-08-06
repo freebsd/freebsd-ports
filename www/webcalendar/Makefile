@@ -9,7 +9,7 @@ MASTER_SITES=	SF/${PORTNAME:tl}/${PORTNAME:tl}%201.0/${PORTVERSION}
 PORTSCOUT=	limit:^1\.0\.
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A web-based calendar application
+COMMENT=	Web-based calendar application
 
 USE_PHP=	pcre session
 WANT_PHP_WEB=	yes

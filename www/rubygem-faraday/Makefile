@@ -7,7 +7,7 @@ CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	clsung@FreeBSD.org
-COMMENT=	A HTTP/REST API client library in Ruby
+COMMENT=	HTTP/REST API client library in Ruby
 
 RUN_DEPENDS=	rubygem-multipart-post>=1.1:${PORTSDIR}/www/rubygem-multipart-post
 

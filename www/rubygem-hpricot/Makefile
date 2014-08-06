@@ -7,7 +7,7 @@ CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
-COMMENT=	A Fast, Enjoyable HTML Parser for Ruby
+COMMENT=	Fast, Enjoyable HTML Parser for Ruby
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes

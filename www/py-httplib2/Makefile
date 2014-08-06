@@ -9,7 +9,7 @@ MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	lwhsu@FreeBSD.org
-COMMENT=	A comprehensive HTTP client library
+COMMENT=	Comprehensive HTTP client library
 
 LICENSE=	MIT
 

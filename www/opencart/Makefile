@@ -6,7 +6,7 @@ PORTVERSION=	1.5.6.4
 CATEGORIES=	www misc
 
 MAINTAINER=	wen@FreeBSD.org
-COMMENT=	An open source PHP-based online shopping cart system
+COMMENT=	Open source PHP-based online shopping cart system
 
 LICENSE=	GPLv3
 

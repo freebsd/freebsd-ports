@@ -8,7 +8,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A simple and fast HTML syntax checking package for perl 4 and perl 5
+COMMENT=	Simple and fast HTML syntax checking package for perl 4 and perl 5
 
 USES=		perl5
 USE_PERL5=	configure

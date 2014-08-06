@@ -9,7 +9,7 @@ DISTNAME=	drupal-${PORTVERSION}
 DIST_SUBDIR=	drupal
 
 MAINTAINER=	miwi@FreeBSD.org
-COMMENT=	A database driven web content management system (CMS)
+COMMENT=	Database driven web content management system (CMS)
 
 USES=		drupal:6
 

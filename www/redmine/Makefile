@@ -8,7 +8,7 @@ CATEGORIES=	www
 MASTER_SITES=	http://www.redmine.org/releases/
 
 MAINTAINER=	ruby@FreeBSD.org
-COMMENT=	A flexible project management web application
+COMMENT=	Flexible project management web application
 
 RUN_DEPENDS=	rubygem-rubytree>=0:${PORTSDIR}/devel/rubygem-rubytree \
 		rubygem-i18n>=0.4.2:${PORTSDIR}/devel/rubygem-i18n \

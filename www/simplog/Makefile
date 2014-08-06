@@ -10,7 +10,7 @@ DISTFILES=	${PORTNAME}-0.9.3.2.tar.gz:src \
 		${PORTNAME}_update_only-${PORTVERSION}.tar.gz:update
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A complete and powerful blogging tool
+COMMENT=	Complete and powerful blogging tool
 
 LICENSE=	GPLv2
 

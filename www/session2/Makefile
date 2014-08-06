@@ -10,7 +10,7 @@ MASTER_SITES=	http://quixote.idyll.org/session2/ \
 DISTNAME=	session2-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A quixote session manager with persistence support
+COMMENT=	Quixote session manager with persistence support
 
 USE_PYTHON=	2
 USE_PYDISTUTILS=	yes

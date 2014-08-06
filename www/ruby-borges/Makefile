@@ -9,7 +9,7 @@ PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	ruby@FreeBSD.org
-COMMENT=	A web application framework for Ruby that allows linear programming
+COMMENT=	Web application framework for Ruby that allows linear programming
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 

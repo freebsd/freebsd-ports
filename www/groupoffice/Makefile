@@ -8,7 +8,7 @@ CATEGORIES=	www
 MASTER_SITES=	SF/group-office/3.7
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A modular web application framework vor office
+COMMENT=	Modular web application framework vor office
 
 RESTRICTED=	Free for personal use only
 NO_BUILD=	yes

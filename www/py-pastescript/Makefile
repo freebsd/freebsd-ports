@@ -9,7 +9,7 @@ MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	wenheping@gmail.com
-COMMENT=	A pluggable command-line frontend
+COMMENT=	Pluggable command-line frontend
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cheetah>=2.0.1:${PORTSDIR}/devel/py-cheetah \
 		${PYTHON_PKGNAMEPREFIX}flup>0:${PORTSDIR}/www/py-flup \

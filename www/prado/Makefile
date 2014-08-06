@@ -10,7 +10,7 @@ PROJECTHOST=	prado3
 DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A framework for developing PHP web applications
+COMMENT=	Framework for developing PHP web applications
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 WRKSRCDOCS=	${WRKDIR}/${PORTNAME}-docs-${PORTVERSION:C|.r|-r|}

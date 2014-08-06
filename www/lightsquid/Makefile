@@ -8,7 +8,7 @@ CATEGORIES=	www
 MASTER_SITES=	SF
 
 MAINTAINER=	fluffy@FreeBSD.org
-COMMENT=	A light and fast web based squid proxy traffic analyser
+COMMENT=	Light and fast web based squid proxy traffic analyser
 
 OPTIONS_DEFINE=		GD DOCS
 OPTIONS_DEFAULT=	GD

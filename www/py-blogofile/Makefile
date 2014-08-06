@@ -10,7 +10,7 @@ MASTER_SITE_SUBDIR=	source/B/Blogofile
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	lwhsu@FreeBSD.org
-COMMENT=	A static website compiler and blog engine
+COMMENT=	Static website compiler and blog engine
 
 LICENSE=	MIT
 

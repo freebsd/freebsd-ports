@@ -10,7 +10,7 @@ MASTER_SITES=	ftp://sunsite.icm.edu.pl/pub/www/asWedit/ \
 DISTNAME=	asWedit-4.0-i386.linux
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	An easy to use HTML and text editor
+COMMENT=	Easy to use HTML and text editor
 
 RESTRICTED=	Commercial software
 

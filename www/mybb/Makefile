@@ -6,7 +6,7 @@ PORTVERSION=	1.6.9
 CATEGORIES=	www
 
 MAINTAINER=	miwi@FreeBSD.org
-COMMENT=	A PHP-based bulletin board / discussion forum system
+COMMENT=	PHP-based bulletin board / discussion forum system
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	${PORTNAME}

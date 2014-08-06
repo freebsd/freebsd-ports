@@ -8,7 +8,7 @@ CATEGORIES=	www
 MASTER_SITES=	http://kiza.kcore.de/media/software/snownews/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A text mode RSS newsreader
+COMMENT=	Text mode RSS newsreader
 
 USES=		gmake iconv perl5
 USE_PERL5=	build

@@ -8,7 +8,7 @@ CATEGORIES=	www net
 MASTER_SITES=	SF/monast/MonAst%20for%20Asterisk%201.4_1.6/1.4
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A monitoring and an operator panel interface for AsteriskTM
+COMMENT=	Monitoring and an operator panel interface for AsteriskTM
 
 USE_PYTHON=	yes
 USE_RC_SUBR=	monast

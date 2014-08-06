@@ -11,7 +11,7 @@ MASTER_SITE_SUBDIR=	swills
 DISTNAME=	mod_pagespeed_source_${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	An Apache module that automatically optimizes web pages
+COMMENT=	Apache module that automatically optimizes web pages
 
 BROKEN=		Does not link
 

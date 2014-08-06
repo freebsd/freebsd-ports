@@ -8,7 +8,7 @@ MASTER_SITES=	http://textpattern.com/file_download/57/ \
 		http://freebsd.unixfreunde.de/sources/
 
 MAINTAINER=	miwi@FreeBSD.org
-COMMENT=	A free, flexible, elegant, easy-to-use content management system
+COMMENT=	Free, flexible, elegant, easy-to-use content management system
 
 NO_BUILD=	YES
 WANT_PHP_WEB=	YES

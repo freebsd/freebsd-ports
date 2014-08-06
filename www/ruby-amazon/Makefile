@@ -10,7 +10,7 @@ DISTNAME=	ruby-${PORTNAME}-${PORTVERSION}
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	ruby@FreeBSD.org
-COMMENT=	A Ruby interface to Amazon's Web Services
+COMMENT=	Ruby interface to Amazon's Web Services
 
 CONFLICTS=	ruby-aws-[0-9]*
 

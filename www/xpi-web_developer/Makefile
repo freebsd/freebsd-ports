@@ -7,7 +7,7 @@ DISTVERSIONSUFFIX=	-fx+sm
 CATEGORIES=	www
 
 MAINTAINER=	gecko@FreeBSD.org
-COMMENT=	An extension to add various web developer tools
+COMMENT=	Extension to add various web developer tools
 
 XPI_NUM=	60
 XPI_ID=		{c45c406e-ab73-11d8-be73-000a95be3b12}

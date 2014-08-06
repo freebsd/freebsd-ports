@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.reportmagic.org/	\
 DISTNAME=	rmagic-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A web site statistics post-processor for Analog
+COMMENT=	Web site statistics post-processor for Analog
 
 USES=		perl5
 

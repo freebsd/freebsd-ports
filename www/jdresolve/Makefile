@@ -10,7 +10,7 @@ PATCH_SITES=	${MASTER_SITES}
 PATCHFILES=	patch-0.6.2b1.diff
 
 MAINTAINER=	christophe@labouisse.org
-COMMENT=	A IP addresse to hostname program for httpd log files
+COMMENT=	IP addresse to hostname program for httpd log files
 
 BUILD_DEPENDS=	p5-Net-DNS>=0:${PORTSDIR}/dns/p5-Net-DNS
 RUN_DEPENDS:=	${BUILD_DEPENDS}
