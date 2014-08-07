@@ -41,7 +41,6 @@ SGMLCAT_RM=	${XMLCATMGR} -sc ${SGMLCAT} remove \
 CATALOG_PORTS_SGML=	${PREFIX}/share/sgml/catalog.ports
 CATALOG_PORTS_XML=	${PREFIX}/share/xml/catalog.ports
 
-NO_STAGE=	yes
 .include "${.CURDIR}/contents.inc"
 
 # I'd much rather do this stuff in line with the actual installation
@@ -60,25 +59,20 @@ pre-install:
 	${ECHO} "@unexec ${SGMLCAT_RM}" >> ${PLIST}
 	${ECHO} "@exec ${SGMLCAT_ADD}" >> ${PLIST}
 	${ECHO} "@dirrm ${dir_DTD}" >> ${PLIST}
-	${ECHO} '@unexec rmdir %D share/xml/dtd 2>/dev/null || true' >> \
+	${ECHO} '@unexec rmdir %D/share/xml/dtd 2>/dev/null || true' >> \
 	    ${PLIST}
 	${ECHO} "@dirrm ${dir_DOC}" >> ${PLIST}
 
 do-install:
-	@[ -d ${PREFIX}/${dir_DTD} ] || \
-	    ${MKDIR} ${PREFIX}/${dir_DTD}
-	@[ -d ${PREFIX}/${dir_DOC} ] || \
-	    ${MKDIR} ${PREFIX}/${dir_DOC}
-.for f in ${contents_DTD}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${PREFIX}/${dir_DTD}/${f}
-.endfor
-.for f in ${contents_DOC}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${PREFIX}/${dir_DOC}/${f}
-.endfor
+	@${MKDIR} ${STAGEDIR}${PREFIX}/${dir_DTD}
+	@${MKDIR} ${STAGEDIR}${PREFIX}/${dir_DOC}
+	(cd ${WRKSRC} && ${INSTALL_DATA} ${contents_DTD} \
+		${STAGEDIR}${PREFIX}/${dir_DTD})
+	(cd ${WRKSRC} && ${INSTALL_DATA} ${contents_DOC} \
+		${STAGEDIR}${PREFIX}/${dir_DOC})
 	${SED} -e "s;@@PREFIX@@;${PREFIX};g" ${FILESDIR}/catalog.xml > \
 	    ${WRKDIR}/catalog.xml
-	${INSTALL_DATA} ${WRKDIR}/catalog.xml ${PREFIX}/${dir_DTD}/catalog.xml
-	${XMLCAT_ADD}
-	${SGMLCAT_ADD}
+	${INSTALL_DATA} ${WRKDIR}/catalog.xml \
+		${STAGEDIR}${PREFIX}/${dir_DTD}/catalog.xml
 
 .include <bsd.port.mk>
