@@ -16,29 +16,18 @@ LICENSE_COMB=	dual
 
 USES=		pure
 USE_GNOME=	libxml2 libxslt
+PORTDOCS=	README
+PORTEXAMPLES=	*
+OPTIONS_DEFINE=	DOCS EXAMPLES
 
 PLIST_FILES=	lib/pure/xml.pure \
 		lib/pure/xml.so
 
-NO_STAGE=	yes
-
-PORTDOCS=	README
-
-PORTEXAMPLES=	*
-
-OPTIONS_DEFINE=	DOCS EXAMPLES
-
-.include <bsd.port.options.mk>
-
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
-.endif
-
-.if ${PORT_OPTIONS:MEXAMPLES}
-	@${MKDIR} ${EXAMPLESDIR}
-	@(cd ${WRKSRC}/examples/ && ${COPYTREE_SHARE} . ${EXAMPLESDIR})
-.endif
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/pure/xml.so
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	@(cd ${WRKSRC}/examples/ && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR})
 
 .include <bsd.port.mk>
