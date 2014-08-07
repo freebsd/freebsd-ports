@@ -17,6 +17,7 @@ LIB_DEPENDS=	libexpat.so:${PORTSDIR}/textproc/expat2
 USES=		gmake libtool pathfix pkgconfig
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
+INSTALL_TARGET=	install-strip
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
