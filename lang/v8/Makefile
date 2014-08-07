@@ -6,7 +6,7 @@ PORTVERSION=	3.18.5
 CATEGORIES=	lang
 MASTER_SITES=	LOCAL/vanilla
 
-MAINTAINER=	vanilla@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Google's open source JavaScript engine
 
 LICENSE=	BSD3CLAUSE
