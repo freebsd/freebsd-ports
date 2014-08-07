@@ -29,7 +29,7 @@ CPE_UPDATE=	${ISCVERSION:C/.*-//:tl}
 .endif
 
 DEPRECATED=	Will be EOL as of September 2014.
-EXPIRATION_DATE=	2014-09-01
+EXPIRATION_DATE=	2014-09-30
 
 LIB_DEPENDS=	libxml2.so:${PORTSDIR}/textproc/libxml2
 
