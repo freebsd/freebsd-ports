@@ -1,0 +1,12 @@
+The NMSG format is an efficient encoding of typed, structured data into
+payloads which are packed into containers which can be transmitted over
+the network or stored to disk. libnmsg is the reference implementation
+of this format and provides an extensible interface for creating and
+parsing messages in NMSG format. The NMSG format relies on Google
+Protocol Buffers to encode the payload header. Individual NMSG payloads
+are distinguished by assigned vendor ID and message type values and
+libnmsg provides a modular interface for registering handlers for
+specific message types. libnmsg makes it easy to build new message
+types using the protobuf-c compiler.
+
+WWW: https://github.com/farsightsec/nmsg

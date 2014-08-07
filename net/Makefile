@@ -419,6 +419,7 @@
     SUBDIR += ngrep
     SUBDIR += nifmon
     SUBDIR += nload
+    SUBDIR += nmsg
     SUBDIR += nocatsplash
     SUBDIR += nos-ttb
     SUBDIR += nph
