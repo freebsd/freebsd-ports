@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	adacontrol
-PORTVERSION=	1.16r10
+PORTVERSION=	1.16r11
 CATEGORIES=	lang
 MASTER_SITES=	SF/adacontrol
 DISTNAME=	adactl-${PORTVERSION}-src
