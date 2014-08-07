@@ -2,12 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	hydrogen-devel
-PORTVERSION=	0.9.6b3
+PORTVERSION=	0.9.6r2
 CATEGORIES=	audio
 MASTER_SITES=	GH
 
 MAINTAINER=	FreeBSD@ShaneWare.Biz
-COMMENT=	An advanced drum machine
+COMMENT=	Advanced drum machine
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
@@ -20,8 +20,8 @@ LIB_DEPENDS+=	libsndfile.so:${PORTSDIR}/audio/libsndfile \
 USE_GITHUB=	yes
 GH_ACCOUNT=	hydrogen-music
 GH_PROJECT=	hydrogen
-GH_TAGNAME=	0.9.6-beta3
-GH_COMMIT=	97e8352
+GH_TAGNAME=	0.9.6-RC2
+GH_COMMIT=	2ff9010
 
 MAJORVERSION=	0.9.6
 USE_QT4=	corelib gui qmake_build linguist_build moc_build network \
@@ -29,23 +29,21 @@ USE_QT4=	corelib gui qmake_build linguist_build moc_build network \
 USES=		cmake:outsource desktop-file-utils pkgconfig
 CMAKE_ARGS+=	-DTHREADS_HAVE_PTHREAD_ARG:BOOL=ON
 USE_LDCONFIG=	yes
-MAKE_JOBS_SAFE=	yes
 CXXFLAGS+=	-I${LOCALBASE}/include/portaudio2 -I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib/portaudio2 -L${LOCALBASE}/lib
 
-OPTIONS_DEFINE=		JACK ALSA PORTAUDIO OSS LIBARCHIVE LASH LADSPA \
-			RDF RUBBERBAND
-OPTIONS_DEFAULT=	JACK OSS RDF
+OPTIONS_DEFINE=		JACK ALSA PORTAUDIO OSS LIBARCHIVE LASH LADSPA RDF RUBBERBAND
+OPTIONS_DEFAULT=	JACK LADSPA LIBARCHIVE OSS RDF
 
 LIBARCHIVE_DESC=	LibArchive support
-RUBBERBAND_DESC=	Rubberband for time stretching
+RUBBERBAND_DESC=	librubberband for time stretching
 RDF_DESC=		RDF File support
 
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MALSA}
 LIB_DEPENDS+=	libasound.so:${PORTSDIR}/audio/alsa-lib
-RUN_DEPENDS+=	${LOCALBASE}/lib/alsa-lib/libasound_module_pcm_oss.so:${PORTSDIR}/audio/alsa-plugins
+RUN_DEPENDS+=	alsa-plugins>=0:${PORTSDIR}/audio/alsa-plugins
 CMAKE_ARGS+=	-DWANT_ALSA:BOOL=ON
 .else
 CMAKE_ARGS+=	-DWANT_ALSA:BOOL=OFF
@@ -59,7 +57,7 @@ CMAKE_ARGS+=	-DWANT_JACK:BOOL=OFF -DWANT_JACKSESSION:BOOL=OFF
 .endif
 
 .if ${PORT_OPTIONS:MLADSPA}
-BUILD_DEPENDS+=	${LOCALBASE}/include/ladspa.h:${PORTSDIR}/audio/ladspa
+BUILD_DEPENDS+=	ladspa>=0:${PORTSDIR}/audio/ladspa
 RUN_DEPENDS+=	analyseplugin:${PORTSDIR}/audio/ladspa
 CMAKE_ARGS+=	-DWANT_LADSPA:BOOL=ON
 CMAKE_ARGS+=	-DLADSPA_LIBRARIES:STRING=${LOCALBASE}/lib/ladspa

@@ -1,18 +1,36 @@
---- ./CMakeLists.txt.orig	2013-02-22 05:23:51.000000000 +1030
-+++ ./CMakeLists.txt	2013-05-09 05:46:34.580378528 +0930
-@@ -88,10 +88,7 @@
+--- ./CMakeLists.txt.orig	2014-06-19 06:38:04.000000000 +0930
++++ ./CMakeLists.txt	2014-06-21 03:49:38.036536435 +0930
+@@ -21,8 +21,12 @@
+ SET(VERSION_PATCH "6")
+ SET(VERSION_SUFFIX "RC2")
+ 
+-#SET(VERSION "${VERSION_MAJOR}.${VERSION_MINOR}.${VERSION_PATCH}")
++SET(VERSION "${VERSION_MAJOR}.${VERSION_MINOR}.${VERSION_PATCH}")
+ 
++IF(LOCALBASE)
++LINK_DIRECTORIES("${LOCALBASE}/lib")
++INCLUDE_DIRECTORIES("${LOCALBASE}/include")
++ENDIF(LOCALBASE)
+ 
+ IF(VERSION_SUFFIX)
+ 	SET(DISPLAY_VERSION "${VERSION}-${VERSION_SUFFIX}")
+@@ -93,12 +97,12 @@
+ IF(APPLE)
+ 	SET(CMAKE_CXX_FLAGS "-O2")
+ ELSE()
+-	SET(CMAKE_CXX_FLAGS "-O2 -fno-implement-inlines")
++	SET(CMAKE_CXX_FLAGS "-O2 -fno-implement-inlines ${CMAKE_CXX_FLAGS}")
  ENDIF()
  
- #SET(CMAKE_CXX_FLAGS "-fno-implement-inlines -finline-small-functions -findirect-inlining -fpartial-inlining")
--SET(CMAKE_CXX_FLAGS "-O2 -fno-implement-inlines")
 -SET(CMAKE_CXX_FLAGS_RELEASE "")
++SET(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE}")
+ 
 -SET(CMAKE_CXX_FLAGS_DEBUG "-g ")#-Winline")
--
-+SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS}")
++SET(CMAKE_CXX_FLAGS_DEBUG "-g ${CMAKE_CXX_FLAGS_DEBUG}")#-Winline")
+ 
  
  IF(APPLE)
- 	#Compile for 32bit and 64bit intel macs
-@@ -106,9 +103,9 @@
+@@ -114,9 +118,9 @@
  MANDATORY_PKG(LIBSNDFILE)
  
  # TODO remove data from path
@@ -24,7 +42,7 @@
  IF(WIN32)
      SET(WANT_JACK FALSE)
      SET(Threads_PATH "C:/Program Files/GnuWin32")
-@@ -159,7 +156,7 @@
+@@ -167,7 +171,7 @@
  FIND_HELPER(LIBSNDFILE sndfile sndfile.h sndfile)
  FIND_HELPER(ALSA alsa alsa/asoundlib.h asound )
  FIND_LADSPA(LADSPA ladspa.h noise)
