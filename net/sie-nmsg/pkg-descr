@@ -1,0 +1,10 @@
+This package extends the libnmsg runtime <net/nmsg> to support the
+following message types:
+
+SIE/dnsdedupe
+SIE/newdomain
+SIE/qr
+SIE/reputation
+SIE/delay
+
+WWW: https://github.com/farsightsec/sie-nmsg
