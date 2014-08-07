@@ -3,7 +3,6 @@
 
 PORTNAME=	gcc47-aux
 PORTVERSION=	${SNAPSHOT}
-PORTREVISION=	4
 CATEGORIES=	lang
 MASTER_SITES=	http://downloads.dragonlace.net/src/:boot \
 		${MASTER_SITE_GCC}
