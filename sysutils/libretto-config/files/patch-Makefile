@@ -39,12 +39,12 @@
  
  install.bin:
 -	install -c -s $(OWNER) $(GROUP) $(MODE) $(PROGRAM) $(BINDIR)
-+	install -c -s $(OWNER) $(GROUP) $(MODE) $(PROGRAM) $(BINDIR)/$(PROGRAM_NAME)
++	install -c -s $(OWNER) $(GROUP) $(MODE) $(PROGRAM) $(DESTDIR)$(BINDIR)/$(PROGRAM_NAME)
  
  install.man:
 -	- mkdir $(MANDIR)/man$(MANSECT)
 -	install -c -m 644 libapm-${MANLANG}.man $(MANDIR)/man$(MANSECT)/libapm.$(MANSECT)
 -	
-+	${BSD_INSTALL_MAN} libapm-${MANLANG}.man $(MANDIR)/man$(MANSECT)/$(PROGRAM_NAME).$(MANSECT)
++	${BSD_INSTALL_MAN} libapm-${MANLANG}.man $(DESTDIR)$(MANDIR)/man$(MANSECT)/$(PROGRAM_NAME).$(MANSECT)
 +
 +libapm.o: libapm.h libapm.c
