@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	GraphViz2
-PORTVERSION=	2.29
+PORTVERSION=	2.30
 CATEGORIES=	graphics perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:RSAVAGE
@@ -20,7 +20,7 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/dot:${PORTSDIR}/graphics/graphviz \
 		p5-Class-Load>=0.17:${PORTSDIR}/devel/p5-Class-Load \
 		p5-Config-Tiny>=2.16:${PORTSDIR}/devel/p5-Config-Tiny \
 		p5-DBI>=1.616:${PORTSDIR}/databases/p5-DBI \
-		p5-DBIx-Admin-TableInfo>=2.11:${PORTSDIR}/databases/p5-DBIx-Admin-TableInfo \
+		p5-DBIx-Admin-TableInfo>=3:${PORTSDIR}/databases/p5-DBIx-Admin-TableInfo \
 		p5-Data-Section-Simple>=0.02:${PORTSDIR}/devel/p5-Data-Section-Simple \
 		p5-Date-Simple>=3.03:${PORTSDIR}/devel/p5-Date-Simple \
 		p5-File-HomeDir>=0.99:${PORTSDIR}/devel/p5-File-HomeDir \
@@ -30,6 +30,7 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/dot:${PORTSDIR}/graphics/graphviz \
 		p5-HTML-Tree>=4.2:${PORTSDIR}/www/p5-HTML-Tree \
 		p5-HTTP-Tiny>=0.012:${PORTSDIR}/www/p5-HTTP-Tiny \
 		p5-IPC-Run3>=0.046:${PORTSDIR}/devel/p5-IPC-Run3 \
+		p5-Lingua-EN-PluralToSingular>=0.14:${PORTSDIR}/textproc/p5-Lingua-EN-PluralToSingular \
 		p5-Log-Handler>=0.71:${PORTSDIR}/devel/p5-Log-Handler \
 		p5-Moo>=1.002000:${PORTSDIR}/devel/p5-Moo \
 		p5-Parse-RecDescent>=1.965.001:${PORTSDIR}/devel/p5-Parse-RecDescent \
