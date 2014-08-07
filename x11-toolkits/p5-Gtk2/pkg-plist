@@ -665,7 +665,6 @@
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/Gdk/Pango
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/Gdk/Event
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/Gdk/Cairo
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/Gdk
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/Buildable
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/Install
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/Gdk
