@@ -2,75 +2,48 @@
 # $FreeBSD$
 
 PORTNAME=	3dm
-PORTVERSION=	2.11.00.019
+PORTVERSION=	2.11.00.021
 PORTEPOCH=	1
 CATEGORIES=	sysutils
-MASTER_SITES=	http://a.aranea.brtsvcs.net/3dm2/ \
-		http://b.aranea.brtsvcs.net/3dm2/
-DISTFILES=	tdmCliBSD_${PORTVERSION}.tar.gz
+MASTER_SITES=	http://www.lsi.com/downloads/Public/SATA/SATA%20Common%20Files/3DM2_CLI-freebsd_10.2.2.1_9.5.5.1.zip?source=1/
+DISTFILES=	3DM2_CLI-freebsd_10.2.2.1_9.5.5.1.zip
 DIST_SUBDIR=	3dm2
 
 MAINTAINER=	takefu@airport.fm
 COMMENT=	3ware RAID controller monitoring daemon and web server
 
+RESTRICTED=	Source recipient must acknowledge license. Reproduction or redistribution prohibited. See http://www.lsi.com/Pages/user/eula.aspx
+
+FETCH_BEFORE_ARGS=	-o ${DISTDIR}/${DIST_SUBDIR}/${DISTFILES}
+
 USE_RC_SUBR=	3dm2
-
-SUB_FILES=	pkg-message
-
-OPTIONS_DEFINE=	SSLFIX
-SSLFIX_DESC=	Install KB16625-patched binaries
-OPTIONS_DEFAULT=	SSLFIX
-
-.include <bsd.port.options.mk>
-
-.if !empty(PORT_OPTIONS:MSSLFIX)
-DISTFILES+=	kb16625_${PORTVERSION}.tar.gz
-BINPREFIX=	${WRKSRC}/kb16625
-.else
-BINPREFIX=	${WRKSRC}
-.endif
-
+SUB_FILES=	pkg-message 3dm2.conf.sample
+SUB_LIST=	HOSTNAME=`hostname`
 ONLY_FOR_ARCHS=	i386 amd64
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
-
-BINSRC=		${BINPREFIX}/7x
+BINSRC=		${WRKSRC}/7x
 HELPSRC=	${WRKSRC}/en
-HELPDIR=	${PREFIX}/share/3dm2/help/en
-ETCDIR=		${PREFIX}/etc/3dm2
-MSGDIR=		${ETCDIR}/msg
+HELPDIR=	${DATADIR}2/help/en
+MSGDIR=		${ETCDIR}2/msg
 
 post-extract:
-	@${TAR} zxf ${WRKSRC}/tdm2Help.tgz -C ${WRKSRC}
-	@${TAR} zxf ${WRKSRC}/tdm2Msg.tgz -C ${WRKSRC}
-
-post-configure:
-	@${SED} -e 's,%%PREFIX%%,${PREFIX},g' \
-	< ${FILESDIR}/3dm2.conf.sample > ${WRKSRC}/3dm2.conf.sample
+	@${TAR} -xzf ${WRKSRC}/tdmCliBSD.tgz -C ${WRKSRC}
+	@${TAR} -xzf ${WRKSRC}/tdm2Help.tgz -C ${WRKSRC}
+	@${TAR} -xzf ${WRKSRC}/tdm2Msg.tgz -C ${WRKSRC}
 
 do-install:
-.for i in ${ETCDIR} ${MSGDIR} ${HELPDIR} \
-    ${HELPDIR}/css ${HELPDIR}/images ${HELPDIR}/scripts
-	${MKDIR} ${STAGEDIR}${PREFIX}${i}
-	# XXX rene not sure why ${PREFIX} is ommitted from ${i} here
-.endfor
-	${INSTALL_DATA} ${HELPSRC}/*.html ${STAGEDIR}${HELPDIR}
-	${INSTALL_DATA} ${HELPSRC}/*.gif ${STAGEDIR}${HELPDIR}
-	${INSTALL_DATA} ${HELPSRC}/*.jpg ${STAGEDIR}${HELPDIR}
-	${INSTALL_DATA} ${HELPSRC}/css/* ${STAGEDIR}${HELPDIR}/css
-	${INSTALL_DATA} ${HELPSRC}/images/* ${STAGEDIR}${HELPDIR}/images
-	${INSTALL_DATA} ${HELPSRC}/scripts/* ${STAGEDIR}${HELPDIR}/scripts
-
-	${INSTALL_PROGRAM} ${BINSRC}/3dm2.${ARCH:S,i386,x86,:S,amd64,x86_64,}\
+	@${MKDIR} ${STAGEDIR}${ETCDIR}2 ${STAGEDIR}${MSGDIR}
+	@cd ${HELPSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${HELPDIR}
+	${INSTALL_PROGRAM} ${BINSRC}/3dm2.${ARCH:S,i386,x86,:S,amd64,x86_64,} \
 		${STAGEDIR}${PREFIX}/sbin/3dm2
-
 	${INSTALL_DATA} ${WRKSRC}/tdm_msg_en ${STAGEDIR}${MSGDIR}
 	${INSTALL_DATA} ${WRKSRC}/tw_msg_en ${STAGEDIR}${MSGDIR}
-	${INSTALL_DATA} ${WRKSRC}/3dm2.conf.sample ${STAGEDIR}${ETCDIR}
+	${INSTALL_DATA} ${WRKSRC}/3dm2.conf.sample ${STAGEDIR}${ETCDIR}2
 
 # 3ware uses a hardcoded config dir location that doesn't match hier(9)
 
-	${MKDIR} ${STAGEDIR}/etc/3dm2
+	@${MKDIR} ${STAGEDIR}/etc/3dm2
 	(cd ${STAGEDIR} && ${LN} -s ${PREFIX}/etc/3dm2/3dm2.conf etc/3dm2/3dm2.conf)
 	(cd ${STAGEDIR} && ${LN} -s ${PREFIX}/etc/3dm2/3dm2.pem etc/3dm2/3dm2.pem)
 
