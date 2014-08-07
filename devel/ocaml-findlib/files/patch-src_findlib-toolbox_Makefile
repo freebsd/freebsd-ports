@@ -5,7 +5,7 @@
  
  install:
 -	cp make_wizard$(EXEC_SUFFIX) make_wizard.pattern $(prefix)$(OCAML_SITELIB)/findlib
-+	${BSD_INSTALL_DATA}  -d $(DESTDIR)$(prefix)$(OCAML_SITELIB)/findlib
++	${MKDIR} -p $(DESTDIR)$(prefix)$(OCAML_SITELIB)/findlib
 +	${BSD_INSTALL_DATA}  make_wizard$(EXEC_SUFFIX) make_wizard.pattern $(DESTDIR)$(prefix)$(OCAML_SITELIB)/findlib
  
  # uninstall: Nothing to do, because the removal of the findlib core also
