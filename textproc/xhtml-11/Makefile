@@ -40,20 +40,15 @@ SGMLCAT_RM=	${XMLCATMGR} -sc ${SGMLCAT} remove \
 DTDDIR=		share/xml/${PORTNAME}/1.1/dtd
 XSDDIR=		share/xml/${PORTNAME}/1.1/xsd
 
-NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -i '' 's|SGMLDECL "xml1.dcl"|-- SGMLDECL "xml1.dcl" --|g' \
 		 ${WRKSRC}/DTD/xhtml11.cat
 
 do-install:
-	${MKDIR} ${PREFIX}/${DTDDIR}
-	${INSTALL_DATA} ${WRKSRC}/DTD/* ${PREFIX}/${DTDDIR}
-	${INSTALL_DATA} ${FILESDIR}/catalog.xml ${PREFIX}/${DTDDIR}
-	${MKDIR} ${PREFIX}/${XSDDIR}
-	${INSTALL_DATA} ${WRKSRC}/SCHEMA/* ${PREFIX}/${XSDDIR}
-
-post-install:
-	${XMLCAT_ADD}
-	${SGMLCAT_ADD}
+	@${MKDIR} ${STAGEDIR}${PREFIX}/${DTDDIR}
+	${INSTALL_DATA} ${WRKSRC}/DTD/* ${STAGEDIR}${PREFIX}/${DTDDIR}
+	${INSTALL_DATA} ${FILESDIR}/catalog.xml ${STAGEDIR}${PREFIX}/${DTDDIR}
+	@${MKDIR} ${STAGEDIR}${PREFIX}/${XSDDIR}
+	${INSTALL_DATA} ${WRKSRC}/SCHEMA/* ${STAGEDIR}${PREFIX}/${XSDDIR}
 
 .include <bsd.port.mk>
