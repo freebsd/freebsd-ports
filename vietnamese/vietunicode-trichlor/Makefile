@@ -30,12 +30,9 @@ TTF=		vuUHoai_bold.ttf vuUHoai_bolditalic.ttf vuUHoai_italic.ttf \
 		vuThaHuong.ttf vuThaHuong_bold.ttf vuThaHuong_bolditalic.ttf \
 		vuThaHuong_italic.ttf vuUHoai.ttf
 
-NO_STAGE=	yes
 do-install:
-	@${MKDIR} ${FONTSDIR}
-.for i in ${TTF}
-	${INSTALL_DATA} ${WRKSRC}/${i} ${FONTSDIR}
-.endfor
+	@${MKDIR} ${STAGEDIR}${FONTSDIR}
+	(cd ${WRKSRC} && ${INSTALL_DATA} ${TTF} ${STAGEDIR}${FONTSDIR})
 
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/chinese/ttfm/Makefile.ttf"
