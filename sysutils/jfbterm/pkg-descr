@@ -1,9 +1,5 @@
-JFBTERM/ME takes advantages of framebuffer device to display
-multilingual text on console.
+JFBTERM/ME takes advantages of framebuffer device to display multilingual
+text on console.  This version is tailored for FreeBSD and based on
+jfbterm < http://sourceforge.jp/projects/jfbterm >.
 
-jfbterm
-WWW: http://sourceforge.jp/projects/jfbterm
-
-jfbterm for FreeBSD
-Author: Yusuke Baba <babayaga1@y8.dion.ne.jp>
 WWW: http://www.ac.auone-net.jp/~baba/jfbterm/

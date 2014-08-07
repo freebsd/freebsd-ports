@@ -1,11 +1,13 @@
+%%SETUID%%@mode 4555
 bin/jfbterm
-@unexec if cmp -s %D/etc/jfbterm.conf.sample %D/etc/jfbterm.conf; then rm -f %D/etc/jfbterm.conf; fi
-etc/jfbterm.conf.sample
-@exec if [ ! -f %D/etc/jfbterm.conf ]; then cp -p %D/%F %B/jfbterm.conf; fi
-%%PORTDATA%%share/misc/fonts/vt100-graphics.pcf.gz
-%%PORTDATA%%share/misc/jfbterm.termcap
-%%PORTDATA%%share/misc/jfbterm.terminfo
-%%PORTDATA%%@dirrmtry share/misc/fonts
-%%PORTDATA%%%%TERMCAP_ADD_RECORD%%
-%%PORTDATA%%%%TERMCAP_DEL_RECORD%%
-%%PORTDATA%%%%TIC%%
+%%SETUID%%@mode
+@sample etc/jfbterm.conf.sample
+man/man1/jfbterm.1.gz
+man/man5/jfbterm.conf.5.gz
+share/misc/fonts/vt100-graphics.pcf.gz
+share/misc/jfbterm.termcap
+share/misc/jfbterm.terminfo
+@dirrmtry share/misc/fonts
+%%TERMCAP_ADD_RECORD%%
+%%TERMCAP_DEL_RECORD%%
+%%TIC%%
