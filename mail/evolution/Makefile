@@ -12,7 +12,8 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Integrated mail, calendar and address book distributed suite
 
 BUILD_DEPENDS=	itstool:${PORTSDIR}/textproc/itstool \
-		highlight:${PORTSDIR}/textproc/highlight
+		highlight:${PORTSDIR}/textproc/highlight \
+		spamassassin:${PORTSDIR}/mail/spamassassin
 LIB_DEPENDS=	libnss3.so:${PORTSDIR}/security/nss \
 		libgcr-3.so:${PORTSDIR}/security/gcr \
 		libgtkspell3-3.so:${PORTSDIR}/textproc/gtkspell3 \
@@ -20,7 +21,8 @@ LIB_DEPENDS=	libnss3.so:${PORTSDIR}/security/nss \
 		libwebkitgtk-3.0.so:${PORTSDIR}/www/webkit-gtk3 \
 		libcanberra-gtk3.so:${PORTSDIR}/audio/libcanberra-gtk3 \
 		libnotify.so:${PORTSDIR}/devel/libnotify
-RUN_DEPENDS=	highlight:${PORTSDIR}/textproc/highlight
+RUN_DEPENDS=	highlight:${PORTSDIR}/textproc/highlight \
+		spamassassin:${PORTSDIR}/mail/spamassassin
 
 USES=		desktop-file-utils bison gettext gmake libtool \
 		pathfix perl5 pkgconfig tar:xz
