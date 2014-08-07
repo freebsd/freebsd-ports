@@ -80,7 +80,7 @@ if [ -n "$2" ]; then
 	    command_args="${command_args} --group-name ${miltermanager_gid}"
 	fi
 	if [ -n "${miltermanager_socket_gid}" ] ; then
-	    command_args="${command_args} --socket-group-name ${miltermanager_socket_gid}"
+	    command_args="${command_args} --unix-socket-group ${miltermanager_socket_gid}"
 	fi
 	if [ -n "${miltermanager_socket}" ] ; then
 	    command_args="${command_args} --connection-spec ${miltermanager_socket}"
@@ -119,7 +119,7 @@ else
 	    command_args="${command_args} --group-name ${miltermanager_gid}"
 	fi
 	if [ -n "${miltermanager_socket_gid}" ] ; then
-	    command_args="${command_args} --socket-group-name ${miltermanager_socket_gid}"
+	    command_args="${command_args} --unix-socket-group ${miltermanager_socket_gid}"
 	fi
 	if [ -n "${miltermanager_socket}" ] ; then
 	    command_args="${command_args} --connection-spec ${miltermanager_socket}"

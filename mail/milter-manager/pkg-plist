@@ -88,25 +88,21 @@ include/milter-manager/milter/manager/milter-manager.h
 include/milter-manager/milter/server.h
 include/milter-manager/milter/server/milter-server-context.h
 include/milter-manager/milter/server/milter-server-enum-types.h
-lib/libmilter-client.la
 lib/libmilter-client.so
 lib/libmilter-client.so.0
-lib/libmilter-core.la
+lib/libmilter-client.so.0.0.0
 lib/libmilter-core.so
 lib/libmilter-core.so.0
-lib/libmilter-manager.la
+lib/libmilter-core.so.0.0.0
 lib/libmilter-manager.so
 lib/libmilter-manager.so.0
-lib/libmilter-server.la
+lib/libmilter-manager.so.0.0.0
 lib/libmilter-server.so
 lib/libmilter-server.so.0
-lib/milter-manager/binding/ext/milter_client.la
+lib/libmilter-server.so.0.0.0
 lib/milter-manager/binding/ext/milter_client.so
-lib/milter-manager/binding/ext/milter_core.la
 lib/milter-manager/binding/ext/milter_core.so
-lib/milter-manager/binding/ext/milter_manager.la
 lib/milter-manager/binding/ext/milter_manager.so
-lib/milter-manager/binding/ext/milter_server.la
 lib/milter-manager/binding/ext/milter_server.so
 lib/milter-manager/binding/ext/rb-milter-client.h
 lib/milter-manager/binding/ext/rb-milter-core.h
@@ -116,6 +112,12 @@ lib/milter-manager/binding/lib/milter/client.rb
 lib/milter-manager/binding/lib/milter/client/command-line.rb
 lib/milter-manager/binding/lib/milter/client/composite-session.rb
 lib/milter-manager/binding/lib/milter/client/configuration.rb
+lib/milter-manager/binding/lib/milter/client/context-state.rb
+lib/milter-manager/binding/lib/milter/client/envelope-address.rb
+lib/milter-manager/binding/lib/milter/client/fallback-session.rb
+lib/milter-manager/binding/lib/milter/client/session-context.rb
+lib/milter-manager/binding/lib/milter/client/session.rb
+lib/milter-manager/binding/lib/milter/client/testing.rb
 lib/milter-manager/binding/lib/milter/core.rb
 lib/milter-manager/binding/lib/milter/core/callback.rb
 lib/milter-manager/binding/lib/milter/core/compatible.rb
@@ -150,38 +152,62 @@ lib/milter-manager/binding/lib/milter/manager/redhat-init-detector.rb
 lib/milter-manager/binding/lib/milter/manager/redhat-upstart-detector.rb
 lib/milter-manager/binding/lib/milter/server.rb
 lib/milter-manager/binding/lib/milter/server/testing.rb
-lib/milter-manager/libmilter.la
 lib/milter-manager/libmilter.so
 lib/milter-manager/libmilter.so.1
-lib/milter-manager/module/configuration/milter-manager-ruby-configuration.la
+lib/milter-manager/libmilter.so.1.0.1
 lib/milter-manager/module/configuration/milter-manager-ruby-configuration.so
 libdata/pkgconfig/libmilter.pc
 libdata/pkgconfig/milter-client.pc
 libdata/pkgconfig/milter-core.pc
 libdata/pkgconfig/milter-manager.pc
 libdata/pkgconfig/milter-server.pc
+man/ja/man1/milter-manager-log-analyzer.1.gz
+man/ja/man1/milter-manager.1.gz
+man/ja/man1/milter-performance-check.1.gz
+man/ja/man1/milter-report-statistics.1.gz
+man/ja/man1/milter-test-client.1.gz
+man/ja/man1/milter-test-server.1.gz
+man/man1/milter-manager-log-analyzer.1.gz
+man/man1/milter-manager.1.gz
+man/man1/milter-performance-check.1.gz
+man/man1/milter-report-statistics.1.gz
+man/man1/milter-test-client.1.gz
+man/man1/milter-test-server.1.gz
 sbin/milter-manager
-@dirrm lib/milter-manager/module/configuration
-@dirrm lib/milter-manager/module
-@dirrm lib/milter-manager/binding/lib/milter/server
-@dirrm lib/milter-manager/binding/lib/milter/manager
-@dirrm lib/milter-manager/binding/lib/milter/core
-@dirrm lib/milter-manager/binding/lib/milter/client
-@dirrm lib/milter-manager/binding/lib/milter
-@dirrm lib/milter-manager/binding/lib
-@dirrm lib/milter-manager/binding/ext
-@dirrm lib/milter-manager/binding
-@dirrm lib/milter-manager
-@dirrm include/milter-manager/milter/server
-@dirrm include/milter-manager/milter/manager
-@dirrm include/milter-manager/milter/core
-@dirrm include/milter-manager/milter/client
-@dirrm include/milter-manager/milter
+%%DATADIR%%/license/fdl.txt
+%%DATADIR%%/license/gpl.txt
+%%DATADIR%%/license/lgpl.txt
+%%DATADIR%%/license/ruby.ja.txt
+%%DATADIR%%/license/ruby.txt
+%%DATADIR%%/munin/plugins/milter_manager_
+%%DATADIR%%/munin/plugins/milter_manager_memory
+%%DATADIR%%/munin/plugins/postfix_processes
+%%DATADIR%%/munin/plugins/sendmail_processes
+@dirrmtry etc/cron.d
+@dirrm %%ETCDIR%%/applicable-conditions
+@dirrm %%ETCDIR%%/defaults
+@dirrm %%ETCDIR%%/models
+@dirrmtry %%ETCDIR%%
 @dirrm include/milter-manager/libmilter/libmilter
 @dirrm include/milter-manager/libmilter
+@dirrm include/milter-manager/milter/client
+@dirrm include/milter-manager/milter/core
+@dirrm include/milter-manager/milter/manager
+@dirrm include/milter-manager/milter/server
+@dirrm include/milter-manager/milter
 @dirrm include/milter-manager
-@dirrm %%ETCDIR%%/models
-@dirrm %%ETCDIR%%/defaults
-@dirrm %%ETCDIR%%/applicable-conditions
-@dirrmtry %%ETCDIR%%
-@dirrmtry etc/cron.d
+@dirrm lib/milter-manager/binding/ext
+@dirrm lib/milter-manager/binding/lib/milter/client
+@dirrm lib/milter-manager/binding/lib/milter/core
+@dirrm lib/milter-manager/binding/lib/milter/manager
+@dirrm lib/milter-manager/binding/lib/milter/server
+@dirrm lib/milter-manager/binding/lib/milter
+@dirrm lib/milter-manager/binding/lib
+@dirrm lib/milter-manager/binding
+@dirrm lib/milter-manager/module/configuration
+@dirrm lib/milter-manager/module
+@dirrm lib/milter-manager
+@dirrm %%DATADIR%%/license
+@dirrm %%DATADIR%%/munin/plugins
+@dirrm %%DATADIR%%/munin
+@dirrm %%DATADIR%%
