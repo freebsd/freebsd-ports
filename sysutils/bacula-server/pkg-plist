@@ -1,4 +1,4 @@
-@sample %%ETCDIR%%/bacula-barcodes.samples
+@sample %%ETCDIR%%/bacula-barcodes.sample
 @group bacula
 @sample %%ETCDIR%%/bacula-dir.conf.sample
 @group wheel
