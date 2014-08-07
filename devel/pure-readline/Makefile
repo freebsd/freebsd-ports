@@ -10,26 +10,19 @@ DIST_SUBDIR=	pure
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Readline interface for the Pure language
 
-LICENSE=	BSD GPLv3
+LICENSE=	BSD3CLAUSE GPLv3
 LICENSE_COMB=	dual
 
 USES=		pure readline
+PORTDOCS=	README
+OPTIONS_DEFINE=	DOCS
 
 PLIST_FILES=	lib/pure/readline.pure \
 		lib/pure/readline.so
 
-NO_STAGE=	yes
-
-PORTDOCS=	README
-
-OPTIONS_DEFINE=	DOCS
-
-.include <bsd.port.options.mk>
-
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
-.endif
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/pure/readline.so
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
