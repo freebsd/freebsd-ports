@@ -27,6 +27,8 @@ MAKE_ENV+=	PROCESSORS=${MAKE_JOBS_NUMBER}
 
 CONFLICTS_INSTALL=	gtkada3-*
 
+PORTSCOUT=		ignore:1
+
 OPTIONS_DEFINE=		DOCS NLS EXAMPLES
 
 .include <bsd.port.options.mk>
