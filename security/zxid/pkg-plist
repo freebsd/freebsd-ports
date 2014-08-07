@@ -3,7 +3,6 @@ bin/zxcall
 bin/zxcot
 bin/zxdecode
 bin/zxencdectest
-bin/zxid
 bin/zxidhlo
 bin/zxidhlowsf
 bin/zxidhrxmlwsc
@@ -13,15 +12,22 @@ bin/zxidsimple
 bin/zxidwsctool
 bin/zxlogview
 bin/zxpasswd
+include/zx/zx.h
+include/zxid/akbox.h
+include/zxid/aktab.h
 include/zxid/errmac.h
+include/zxid/hiios.h
+include/zxid/hiproto.h
 include/zxid/logprint.h
 include/zxid/macglue.h
 include/zxid/platform.h
+include/zxid/port.h
 include/zxid/saml2.h
 include/zxid/smimeutil.h
 include/zxid/tas3.h
 include/zxid/wsf.h
 include/zxid/yubikey.h
+include/zxid/zx.h
 include/zxid/zx-a-data.h
 include/zxid/zx-ac-data.h
 include/zxid/zx-as-data.h
@@ -86,7 +92,6 @@ include/zxid/zx-xenc-data.h
 include/zxid/zx-xml-data.h
 include/zxid/zx-xs-data.h
 include/zxid/zx-xsi-data.h
-include/zxid/zx.h
 include/zxid/zx_ext_pt.h
 include/zxid/zxid.h
 include/zxid/zxidconf.h
@@ -98,6 +103,7 @@ include/zxid/zxwsc.h
 lib/libzxid.a
 lib/libzxid.so
 lib/libzxid.so.0
+lib/libzxid.so.0.0
 %%PORTDOCS%%%%DOCSDIR%%/apache.pd
 %%PORTDOCS%%%%DOCSDIR%%/doc-end.pd
 %%PORTDOCS%%%%DOCSDIR%%/doc-inc.pd
@@ -125,3 +131,4 @@ lib/libzxid.so.0
 %%PORTDOCS%%%%DOCSDIR%%/zxid-wsf.pd
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm include/zxid
+@dirrm include/zx
