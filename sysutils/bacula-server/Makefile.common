@@ -1,8 +1,3 @@
-post-patch:
-# Change $(ECHO) to echo in some Makefile.in files
-	@${REINPLACE_CMD} -e 's|$$(ECHO)|echo|g' ${WRKSRC}/src/filed/Makefile.in \
-		${WRKSRC}/src/console/Makefile.in
-
 post-build:
 .if ${PKGNAMEPREFIX} == "nagios-check_"
 	${MAKE_CMD} -C ${WRKSRC}/examples/nagios/check_bacula
