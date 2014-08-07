@@ -5,4 +5,4 @@ written in FORTRAN.
 This allows people to write high-performance numerical code for
 applications that need linear algebra.
 
-WWW: https://bitbucket.org/mmottl/lacaml
+WWW: https://mmottl.github.io/lacaml/
