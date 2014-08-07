@@ -32,7 +32,6 @@ PHPBB_URL?=	phpBB2
 #
 # End of user-configurable variables.
 
-NO_STAGE=	yes
 # Set/override/append to variables from bsd.port.mk:
 #
 WRKSRC=		${WRKDIR}/phpBB2
@@ -40,6 +39,7 @@ NO_BUILD=	yes
 SUB_FILES=	pkg-message
 SUB_LIST=	PHPBB_URL="${PHPBB_URL}" \
 		PHPBBDIR="${PHPBBDIR}" \
+		HOSTNAME="${HOSTNAME}" \
 		DELETEFILES="${EXCEPTFILES}"
 PHPBB_VER=	${PORTVERSION:S/.//g:S/.//g}
 PLIST_SUB+=	PHPBBDIR=${PHPBBDIR} WWWOWN=${WWWOWN} WWWGRP=${WWWGRP}
@@ -49,13 +49,11 @@ PLIST_SUB+=	PHPBB_VER=${PHPBB_VER}
 #
 PHPBBDIR=	${WWWDOCROOT}/${PHPBB_URL}
 PKGOPTS=	${FILESDIR}/pkg-opts
-EXCEPTFILES=	${PREFIX}/${PHPBBDIR}/install/install.php \
-		${PREFIX}/${PHPBBDIR}/install/upgrade.php \
-		${PREFIX}/${PHPBBDIR}/install/update_to_latest.php
+EXCEPTFILES=	${STAGEDIR}${PREFIX}/${PHPBBDIR}/install/install.php \
+		${STAGEDIR}${PREFIX}/${PHPBBDIR}/install/upgrade.php \
+		${STAGEDIR}${PREFIX}/${PHPBBDIR}/install/update_to_latest.php
 
 OPTIONS_DEFINE=	DOCS
-
-.include <bsd.port.options.mk>
 
 options:
 	@ ${ECHO_MSG} "===>  Build options for ${PKGNAME}:"
@@ -75,28 +73,21 @@ post-patch:
 	@${RM} -f `${FIND} ${WRKSRC} -name '*.orig'`
 
 do-install:
-	@ ${MKDIR} -m 0775 ${PREFIX}/${PHPBBDIR}
+	@ ${MKDIR} -m 0775 ${STAGEDIR}${PREFIX}/${PHPBBDIR}
 	@ cd ${WRKSRC} && ${FIND} * \( -name config.php \
 	  ${EXCEPTFILES:S/^/-o -name /} \
 	  -o -name docs -a -prune -o -name contrib -a -prune \) -o -print \
-	  | ${TAR} cTf - - | ${TAR} xUCf ${PREFIX}/${PHPBBDIR} -
-	@ ${TOUCH} ${PREFIX}/${PHPBBDIR}/config.php
-	@ ${CHOWN} -R ${WWWOWN}:${WWWGRP} ${PREFIX}/${PHPBBDIR}
-	@ ${MKDIR} ${DATADIR}/contrib
-	@ cd ${WRKSRC} && ${INSTALL_DATA} ${EXCEPTFILES} ${DATADIR}
-	@ cd ${WRKSRC}/contrib && ${INSTALL_DATA} * ${DATADIR}/contrib
+	  | ${TAR} cTf - - | ${TAR} xUCf ${STAGEDIR}${PREFIX}/${PHPBBDIR} -
+	@ ${TOUCH} ${STAGEDIR}${PREFIX}/${PHPBBDIR}/config.php
+	@ ${MKDIR} ${STAGEDIR}${DATADIR}/contrib
+	@ cd ${WRKSRC} && ${INSTALL_DATA} ${EXCEPTFILES} ${STAGEDIR}${DATADIR}
+	@ cd ${WRKSRC}/contrib && ${INSTALL_DATA} * ${STAGEDIR}${DATADIR}/contrib
 
 post-install:
 #	@ cd ${DATADIR} && ${INSTALL} -c -o ${WWWOWN} -g ${WWWGRP} \
 #	  ${EXCEPTFILES} ${PREFIX}/${PHPBBDIR}
-.if ${PORT_OPTIONS:MDOCS}
-	@ ${MKDIR} ${DOCSDIR}
+	@ ${MKDIR} ${STAGEDIR}${DOCSDIR}
 	@ cd ${WRKSRC}/docs && ${FIND} * -type f -maxdepth 0 \! -name \*.bak \
-	  \! -name COPYING -exec ${INSTALL_DATA} {} ${DOCSDIR} \;
-.if !defined(BATCH)
-	@${SED} -e 's|%%HOSTNAME%%|${HOSTNAME}|; s|%%PHPBB_URL%%|${PHPBB_URL}|' \
-		${PKGMESSAGE}
-.endif
-.endif
+	  \! -name COPYING -exec ${INSTALL_DATA} {} ${STAGEDIR}${DOCSDIR} \;
 
 .include <bsd.port.mk>
