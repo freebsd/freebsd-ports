@@ -1,6 +1,15 @@
---- debootstrap.orig	2011-08-25 20:19:23.294346076 +0200
-+++ debootstrap	2011-08-25 20:22:42.850735086 +0200
-@@ -419,6 +419,10 @@
+--- ./debootstrap.orig	2014-02-07 10:25:58.000000000 -0500
++++ ./debootstrap	2014-08-06 19:34:46.435155899 -0400
+@@ -13,7 +13,7 @@
+ 	if [ -x /debootstrap/debootstrap ]; then
+ 		DEBOOTSTRAP_DIR=/debootstrap
+ 	else
+-		DEBOOTSTRAP_DIR=/usr/share/debootstrap
++		DEBOOTSTRAP_DIR=%%PREFIX%%/share/debootstrap
+ 	fi
+ fi
+ 
+@@ -425,6 +425,10 @@
  	esac
  fi
  

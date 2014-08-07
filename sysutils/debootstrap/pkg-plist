@@ -1,4 +1,7 @@
+@mode 0755
 sbin/debootstrap
+@mode
+man/man8/debootstrap.8.gz
 share/debootstrap/functions
 share/debootstrap/scripts/breezy
 share/debootstrap/scripts/dapper
@@ -32,7 +35,9 @@ share/debootstrap/scripts/sid
 share/debootstrap/scripts/squeeze
 share/debootstrap/scripts/stable
 share/debootstrap/scripts/testing
+share/debootstrap/scripts/trusty
 share/debootstrap/scripts/unstable
+share/debootstrap/scripts/utopic
 share/debootstrap/scripts/warty
 share/debootstrap/scripts/warty.buildd
 share/debootstrap/scripts/wheezy
