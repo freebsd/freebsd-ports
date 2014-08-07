@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	llvm
-PORTVERSION=	3.4
-PORTREVISION=	1
+PORTVERSION=	3.4.2
 CATEGORIES=	devel lang
 MASTER_SITES=	http://llvm.org/releases/${PORTVERSION}/
 DISTNAME=	${PORTNAME}-${PORTVERSION}.src
@@ -11,13 +10,13 @@ PKGNAMESUFFIX=	${LLVM_SUFFIX}
 MAINTAINER=	brooks@FreeBSD.org
 COMMENT=	Low Level Virtual Machine
 
-LLVM_SUFFIX=	${PORTVERSION:S/.//g:C/r.//}
+LLVM_SUFFIX=	${PORTVERSION:C/([0-9]\.[0-9]).*/\1/:S/.//g:C/r.//}
 LLVM_PREFIX=	${PREFIX}/llvm${LLVM_SUFFIX}
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}${LLVM_SUFFIX}
 DATADIR=	${PREFIX}/share/${PORTNAME}${LLVM_SUFFIX}
 UNIQUENAME=	${PORTNAME}${LLVM_SUFFIX}
 
-WRKSRC=		${WRKDIR}/llvm-${PORTVERSION}
+WRKSRC=		${WRKDIR}/llvm-${PORTVERSION}.src
 
 USES=		execinfo gmake perl5
 GNU_CONFIGURE=	yes
@@ -30,7 +29,7 @@ SUB_LIST=	LLVM_PREFIX="${LLVM_PREFIX}" LLVM_SUFFIX="${LLVM_SUFFIX}"
 # Suggested tweaks from http://llvm.org/docs/Packaging.html
 CONFIGURE_ARGS+=	--enable-shared
 MAKE_ARGS+=		REQUIRES_RTTI=1
-LIBNAME=		libLLVM-${DISTVERSION:C/rc[0-9]//}.so
+LIBNAME=		libLLVM-${DISTVERSION:C/([0-9]\.[0-9]).*/\1/:C/rc[0-9]//}.so
 
 CONFIGURE_ARGS+=	--enable-bindings=none
 CONFIGURE_ARGS+=	--enable-optimized
