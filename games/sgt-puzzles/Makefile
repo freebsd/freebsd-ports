@@ -17,6 +17,7 @@ GNU_CONFIGURE=	yes
 USES=		pkgconfig
 USE_GNOME=	gtk20
 CONFIGURE_ARGS=	--program-prefix=sgt-
+INSTALL_TARGET=	install-strip
 
 PUZZLE_LIST=	blackbox bridges cube dominosa fifteen filling flip \
 		galaxies guess inertia keen lightup loopy magnets map \
