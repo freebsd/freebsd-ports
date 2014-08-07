@@ -12,12 +12,13 @@ COMMENT=	S/MIME message signing, verification, encryption and decryption
 RUN_DEPENDS=	p5-ExtUtils-CChecker>=0:${PORTSDIR}/devel/p5-ExtUtils-CChecker \
 		p5-ExtUtils-PkgConfig>=0:${PORTSDIR}/devel/p5-ExtUtils-PkgConfig \
 		p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception \
-		/usr/local/lib/libcrypto.so:${PORTSDIR}/security/openssl
+		${LOCALBASE}/lib/libcrypto.so:${PORTSDIR}/security/openssl
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 LICENSE=	ART10
 
 USES=		perl5
+USE_OPENSSL=	yes
 USE_PERL5=	configure
 
 post-stage:
