@@ -566,6 +566,7 @@
     SUBDIR += p5-Lingua-EN-Numbers
     SUBDIR += p5-Lingua-EN-Numbers-Easy
     SUBDIR += p5-Lingua-EN-Numbers-Ordinate
+    SUBDIR += p5-Lingua-EN-PluralToSingular
     SUBDIR += p5-Lingua-EN-Sentence
     SUBDIR += p5-Lingua-EN-Squeeze
     SUBDIR += p5-Lingua-EN-Summarize

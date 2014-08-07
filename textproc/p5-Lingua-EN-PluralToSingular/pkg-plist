@@ -1,0 +1,10 @@
+bin/singular
+%%SITE_PERL%%/Lingua/EN/PluralToSingular.pm
+%%SITE_PERL%%/Lingua/EN/PluralToSingular.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua/EN/PluralToSingular/.packlist
+%%PERL5_MAN3%%/Lingua::EN::PluralToSingular.3.gz
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua/EN/PluralToSingular
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua/EN
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua
+@dirrmtry %%SITE_PERL%%/Lingua/EN
+@dirrmtry %%SITE_PERL%%/Lingua
