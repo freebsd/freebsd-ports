@@ -13,6 +13,8 @@
 %%DATADIR%%/install.php
 %%DATADIR%%/update_to_latest.php
 %%DATADIR%%/upgrade.php
+@owner %%WWWOWN%%
+@group %%WWWGRP%%
 %%PHPBBDIR%%/admin/admin_board.php
 %%PHPBBDIR%%/admin/admin_db_utilities.php
 %%PHPBBDIR%%/admin/admin_disallow.php
@@ -302,6 +304,8 @@
 %%PHPBBDIR%%/viewforum.php
 %%PHPBBDIR%%/viewonline.php
 %%PHPBBDIR%%/viewtopic.php
+@group
+@owner
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%PHPBBDIR%%/templates/subSilver/images/lang_english
 @dirrm %%PHPBBDIR%%/templates/subSilver/images
@@ -324,4 +328,3 @@
 @dirrm %%PHPBBDIR%%
 @dirrm %%DATADIR%%/contrib
 @dirrm %%DATADIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
