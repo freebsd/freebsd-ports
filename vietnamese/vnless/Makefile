@@ -12,13 +12,12 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Pager utility that speaks Vietnamese
 
 ALL_TARGET=	clobber all
-MAN1=		vnless.1 vnlesskey.1
+CFLAGS+=	-Wno-return-type
 
-NO_STAGE=	yes
-post-install:
-	@strip ${PREFIX}/bin/vnless*
-	@${CHMOD} a+rx ${PREFIX}/bin/vnless*
-	@${CHMOD} a+r ${PREFIX}/share/misc/vnless.help
-	@${CHMOD} a+r ${PREFIX}/man/man1/vnless*.1*
+PLIST_FILES=	bin/vnless \
+		bin/vnlesskey \
+		man/man1/vnless.1.gz \
+		man/man1/vnlesskey.1.gz \
+		share/misc/vnless.help
 
 .include <bsd.port.mk>

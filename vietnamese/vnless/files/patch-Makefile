@@ -1,5 +1,5 @@
---- Makefile.orig	Mon Feb 24 15:15:42 1992
-+++ Makefile	Tue Apr 13 18:24:18 1999
+--- Makefile.orig	1992-02-24 22:15:42.000000000 +0100
++++ Makefile	2014-08-07 18:09:42.383354763 +0200
 @@ -31,15 +31,15 @@
  # INSTALL_HELP is a list of the public version of the help file.
  # INSTALL_LESSMAN is a list of the public versions of the less manual page.
@@ -22,10 +22,14 @@
  
  
  # OPTIM is passed to the compiler and the loader.
-@@ -49,6 +49,7 @@
+@@ -47,8 +47,9 @@
+ #OPTIM = -O
+ 
  #CFLAGS = $(OPTIM)
- CFLAGS = -O
- LDFLAGS = 
+-CFLAGS = -O
+-LDFLAGS = 
++CFLAGS ?= -O
++LDFLAGS ?= 
 +LDLIBS = -lcompat
  
  
@@ -36,27 +40,27 @@
  install_less: vnless
 -	for f in $(INSTALL_LESS); do  rm -f $$f; cp vnless $$f;  done
 -	touch install_less
-+	@for f in $(INSTALL_LESS); do  rm -f $$f; cp vnless $$f;  done
++	$(BSD_INSTALL_PROGRAM) vnless $(DESTDIR)$(INSTALL_LESS)
  
  install_key: lesskey
 -	for f in $(INSTALL_KEY); do  rm -f $$f; cp lesskey $$f;  done
 -	touch install_key
-+	@for f in $(INSTALL_KEY); do  rm -f $$f; cp lesskey $$f;  done
++	$(BSD_INSTALL_PROGRAM) lesskey $(DESTDIR)$(INSTALL_KEY)
  
  install_help: less.help
 -	for f in $(INSTALL_HELP); do  rm -f $$f; cp less.help $$f;  done
 -	touch install_help
-+	@for f in $(INSTALL_HELP); do  rm -f $$f; cp less.help $$f;  done
++	$(BSD_INSTALL_DATA) less.help $(DESTDIR)$(INSTALL_HELP)
  
  install_lman: $(LESS_MANUAL) 
 -	for f in $(INSTALL_LESSMAN); do  rm -f $$f; cp $(LESS_MANUAL) $$f;  done
 -	touch install_lman
-+	@for f in $(INSTALL_LESSMAN); do  rm -f $$f; cp $(LESS_MANUAL) $$f;  done
++	$(BSD_INSTALL_MAN) $(LESS_MANUAL) $(DESTDIR)$(INSTALL_LESSMAN)
  
  install_kman: $(KEY_MANUAL)
 -	for f in $(INSTALL_KEYMAN); do  rm -f $$f; cp $(KEY_MANUAL) $$f;  done
 -	touch install_kman
-+	@for f in $(INSTALL_KEYMAN); do  rm -f $$f; cp $(KEY_MANUAL) $$f;  done
++	$(BSD_INSTALL_MAN) $(KEY_MANUAL) $(DESTDIR)$(INSTALL_KEYMAN)
  
  ##########################################################################
  # Maintenance
