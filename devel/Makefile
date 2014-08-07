@@ -2371,6 +2371,7 @@
     SUBDIR += p5-Module-Versions
     SUBDIR += p5-Module-Versions-Report
     SUBDIR += p5-Moo
+    SUBDIR += p5-MooX-Cmd
     SUBDIR += p5-MooX-ConfigFromFile
     SUBDIR += p5-MooX-File-ConfigDir
     SUBDIR += p5-MooX-HandlesVia
