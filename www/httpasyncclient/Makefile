@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	httpasyncclient
-DISTVERSION=	4.0.1
+DISTVERSION=	4.0.2
 CATEGORIES=	www java
 MASTER_SITES=	${MASTER_SITE_APACHE}
 MASTER_SITE_SUBDIR=	httpcomponents/${PORTNAME}/binary
