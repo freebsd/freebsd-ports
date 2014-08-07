@@ -56,6 +56,11 @@
     SUBDIR += bacula-client-static
     SUBDIR += bacula-docs
     SUBDIR += bacula-server
+    SUBDIR += bacula5-bat
+    SUBDIR += bacula5-client
+    SUBDIR += bacula5-client-static
+    SUBDIR += bacula5-docs
+    SUBDIR += bacula5-server
     SUBDIR += bamf
     SUBDIR += bashburn
     SUBDIR += batmon
