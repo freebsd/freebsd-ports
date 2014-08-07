@@ -3,6 +3,7 @@
 
 PORTNAME=	git
 PORTVERSION=	2.0.2
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	KERNEL_ORG
 MASTER_SITE_SUBDIR=	software/scm/git
@@ -30,6 +31,11 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 MAKE_ENV+=	V=1
 USE_OPENSSL=	yes
 USE_RC_SUBR=	git_daemon
+SHEBANG_FILES=	*.perl */*.perl */*/*.perl */*.pl */*/*.pl */*/*/*.pl \
+		contrib/hooks/update-paranoid \
+		contrib/credential/netrc/git-credential-netrc \
+		contrib/diff-highlight/diff-highlight \
+		contrib/buildsystems/generate contrib/contacts/git-contacts
 
 CONFIGURE_ARGS=	--enable-pthreads=-pthread ac_cv_header_libcharset_h=no
 
