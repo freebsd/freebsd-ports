@@ -1,5 +1,5 @@
 --- Makefile.orig	1995-12-17 04:00:46.000000000 +0800
-+++ Makefile	2011-09-05 11:35:47.000000000 +0800
++++ Makefile	2014-08-07 23:38:12.048102848 +0800
 @@ -2,17 +2,17 @@
  #	Kau Chauo Chinese Fanti Ming Fonts Version 1.05 For FreeBSD
  #
@@ -40,13 +40,19 @@
  
  kc24f:		tran.o kc24f.o
  	$(CC) $(CFLAGS) tran.o kc24f.o -o $@
-@@ -42,7 +46,9 @@ install:
- 	if [ ! -d $(CFONTDIR) ]; then mkdir $(CFONTDIR); fi
- 	cp kc*f.pcf.gz $(CFONTDIR)
- 	cp kc*x*.pcf.gz $(EFONTDIR)
-+	cp kc_fonts.alias $(CFONTDIR)
- 	mkfontdir $(CFONTDIR)
-+	cd ${PREFIX}/lib/X11/fonts/local ; cat kc_fonts.alias >> fonts.alias ; cp fonts.alias ..fonts.alias.. ; sort ..fonts.alias.. | uniq > fonts.alias ; rm ..fonts.alias..
- 	mkfontdir $(EFONTDIR)
+@@ -39,11 +43,10 @@ kca2et:		kca2et.o
+ 	$(CC) $(CFLAGS) kca2et.o -o $@
+ 
+ install:
+-	if [ ! -d $(CFONTDIR) ]; then mkdir $(CFONTDIR); fi
+-	cp kc*f.pcf.gz $(CFONTDIR)
+-	cp kc*x*.pcf.gz $(EFONTDIR)
+-	mkfontdir $(CFONTDIR)
+-	mkfontdir $(EFONTDIR)
++	if [ ! -d $(DESTDIR)$(CFONTDIR) ]; then mkdir $(DESTDIR)$(CFONTDIR); fi
++	cp kc*f.pcf.gz $(DESTDIR)$(CFONTDIR)
++	cp kc*x*.pcf.gz $(DESTDIR)$(EFONTDIR)
++	cp kc_fonts.alias $(DESTDIR)$(CFONTDIR)
  
  clean:
+ 	rm -f kc*.pcf.gz ascfont.* *.o *~ $(PROGS)
