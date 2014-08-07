@@ -235,6 +235,7 @@
     SUBDIR += tuxcards
     SUBDIR += vboxgtk
     SUBDIR += virt-manager
+    SUBDIR += vit
     SUBDIR += vnc2flv
     SUBDIR += vym
     SUBDIR += wammu
