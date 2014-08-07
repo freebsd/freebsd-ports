@@ -3,15 +3,15 @@
 
 PORTNAME=	jfbterm
 PORTVERSION=	0.6.1
-DISTVERSIONPREFIX=${OPSYS}-
-PORTREVISION=	5
+DISTVERSIONPREFIX=FreeBSD-
+PORTREVISION=	6
 CATEGORIES=	sysutils
-MASTER_SITES=	http://www.ac.auone-net.jp/~baba/${PORTNAME}/
+MASTER_SITES=	http://www.ac.auone-net.jp/~baba/jfbterm/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Multilingual terminal emulator for framebuffer
 
-LICENSE=	BSD
+LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 ONLY_FOR_ARCHS=	i386 amd64
@@ -25,7 +25,7 @@ PLIST_SUB+=	TERMCAP_ADD_RECORD="@exec ${TERMCAP_ADD_RECORD:S,^${PREFIX},%D,}" \
 
 CAP_MKDB?=	/usr/bin/cap_mkdb
 TIC?=		${LOCALBASE}/bin/tic
-TERMINFO_FILE?=	${PREFIX}/share/misc/${PORTNAME}.terminfo
+TERMINFO_FILE?=	${PREFIX}/share/misc/jfbterm.terminfo
 
 OPTIONS_DEFINE=		ICONV PNG SETUID TERMCAP UNIFONT
 OPTIONS_DEFAULT=	ICONV PNG SETUID TERMCAP UNIFONT
@@ -34,11 +34,12 @@ SETUID_DESC=		Install jfbterm with setuid bit set
 TERMCAP_DESC=		Add entry to termcap(5) file
 UNIFONT_DESC=		Install pan-unicode font
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MSETUID}
-BINMODE?=	4555
+PLIST_SUB+=	SETUID=""
+.else
+PLIST_SUB+=	SETUID="@comment "
 .endif
 
 ONLY_FOR_ARCHS+=amd64
@@ -47,11 +48,6 @@ ONLY_FOR_ARCHS+=amd64
 TERMCAP_FILE?=	/usr/share/misc/termcap
 .else
 TERMCAP_FILE?=	~/.termcap
-.endif
-
-.if !defined(NO_INSTALL_MANPAGES)
-MAN1=		${PORTNAME}.1
-MAN5=		${PORTNAME}.conf.5
 .endif
 
 .if ${PORT_OPTIONS:MICONV}
@@ -72,18 +68,18 @@ MAKE_ENV+=	WITHOUT_PNG=
 
 .if ${PORT_OPTIONS:MTERMCAP}
 TERMCAP_ADD_RECORD=	\
-	${ECHO_CMD} '\# begin of ${PORTNAME}.termcap' \
+	${ECHO_CMD} '\# begin of jfbterm.termcap' \
 		>>${TERMCAP_FILE}; \
-	${CAT} ${PREFIX}/share/misc/${PORTNAME}.termcap \
+	${CAT} ${PREFIX}/share/misc/jfbterm.termcap \
 		>>${TERMCAP_FILE}; \
-	${ECHO_CMD} '\# end of ${PORTNAME}.termcap' \
+	${ECHO_CMD} '\# end of jfbterm.termcap' \
 		>>${TERMCAP_FILE}; \
 	if [ -f ${TERMCAP_FILE}.db ]; then \
 		${CAP_MKDB} ${TERMCAP_FILE}; \
 	fi
 TERMCAP_DEL_RECORD=	\
-	${REINPLACE_CMD} -i '' '/^\# begin of ${PORTNAME}\.termcap/, \
-		/^\# end of ${PORTNAME}\.termcap/d' \
+	${REINPLACE_CMD} -i '' '/^\# begin of jfbterm\.termcap/, \
+		/^\# end of jfbterm\.termcap/d' \
 		${TERMCAP_FILE}; \
 	if [ -f ${TERMCAP_FILE}.db ]; then \
 		${CAP_MKDB} ${TERMCAP_FILE}; \
@@ -101,38 +97,32 @@ post-extract:	.SILENT
 	cd ${WRKSRC} && ${RM} -f \
 		aclocal.m4 config.* configure install-sh \
 		missing mkinstalldirs stamp-h* Makefile Makefile.in
-	${CP} ${WRKSRC}/${PORTNAME}.conf.sample.${OPSYS} \
-		${WRKSRC}/${PORTNAME}.conf.sample
+	${CP} ${WRKSRC}/jfbterm.conf.sample.FreeBSD \
+		${WRKSRC}/jfbterm.conf.sample
 
-post-patch:	.SILENT
+post-patch:
 	${REINPLACE_CMD} -e 's|/usr/local|${PREFIX}|g' \
-		-e 's|\(share\)/${PORTNAME}/\(fonts\)|\1/misc/\2|' \
+		-e 's|\(share\)/jfbterm/\(fonts\)|\1/misc/\2|' \
 		${WRKSRC}/*.[0-9] ${WRKSRC}/*.conf.sample
 .if !${PORT_OPTIONS:MTERMCAP}
 	${REINPLACE_CMD} '/^term/s/:.*/: xterm/' \
-		${WRKSRC}/${PORTNAME}.conf.sample
+		${WRKSRC}/jfbterm.conf.sample
 .endif
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
-	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.conf.sample ${PREFIX}/etc
-	if [ ! -f ${PREFIX}/etc/${PORTNAME}.conf ]; then \
-		${INSTALL_DATA} ${PREFIX}/etc/${PORTNAME}.conf.sample \
-			${PREFIX}/etc/${PORTNAME}.conf; \
-	fi
-.if !defined(NO_INSTALL_MANPAGES)
-	${INSTALL_MAN} ${WRKSRC}/${MAN1} ${MAN1PREFIX}/man/man1
-	${INSTALL_MAN} ${WRKSRC}/${MAN5} ${MAN5PREFIX}/man/man5
-.endif
-.if !defined(NOPORTDATA)
-	${INSTALL_DATA} ${WRKSRC}/termcap.${PORTNAME} ${PREFIX}/share/misc/${PORTNAME}.termcap
-	${INSTALL_DATA} ${WRKSRC}/terminfo.${PORTNAME} ${PREFIX}/share/misc/${PORTNAME}.terminfo
-	${MKDIR} ${PREFIX}/share/misc/fonts
-	${INSTALL_DATA} ${WRKSRC}/fonts/*.pcf.gz ${PREFIX}/share/misc/fonts
-. if ${PORT_OPTIONS:MTERMCAP}
-	${TERMCAP_ADD_RECORD}
-. endif
-	-${TIC} ${TERMINFO_FILE} 2>/dev/null
-.endif
+	${INSTALL_PROGRAM} ${WRKSRC}/jfbterm ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_DATA} ${WRKSRC}/jfbterm.conf.sample \
+		${STAGEDIR}${PREFIX}/etc
+	${INSTALL_MAN} ${WRKSRC}/jfbterm.1 \
+		${STAGEDIR}${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/jfbterm.conf.5 \
+		${STAGEDIR}${MANPREFIX}/man/man5
+	${INSTALL_DATA} ${WRKSRC}/termcap.jfbterm \
+		${STAGEDIR}${PREFIX}/share/misc/jfbterm.termcap
+	${INSTALL_DATA} ${WRKSRC}/terminfo.jfbterm \
+		${STAGEDIR}${PREFIX}/share/misc/jfbterm.terminfo
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/misc/fonts
+	${INSTALL_DATA} ${WRKSRC}/fonts/*.pcf.gz \
+		${STAGEDIR}${PREFIX}/share/misc/fonts
 
 .include <bsd.port.mk>
