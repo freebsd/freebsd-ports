@@ -174,7 +174,7 @@ post-install:
 	${MV} ${STAGEDIR}${ETCDIR}/bconsole.conf ${STAGEDIR}${ETCDIR}/bconsole.conf.sample
 .else
 	${INSTALL_SCRIPT} ${FILESDIR}/chio-bacula ${STAGEDIR}${PREFIX}/sbin
-	${INSTALL_DATA} ${FILESDIR}/bacula-barcodes ${STAGEDIR}${ETCDIR}/bacula-barcodes.samples
+	${INSTALL_DATA} ${FILESDIR}/bacula-barcodes ${STAGEDIR}${ETCDIR}/bacula-barcodes.sample
 	${CHMOD} o+x ${STAGEDIR}${PREFIX}/sbin/bsmtp
 .endif
 	for na in ${CONFFILES}; do \
