@@ -18,16 +18,13 @@ NO_BUILD=	yes
 
 TTF=		HAN_NOM_A.ttf HAN_NOM_B.ttf
 
-NO_STAGE=	yes
 post-patch:
 	@${MV} ${WRKSRC}/HAN\ NOM\ A.ttf ${WRKSRC}/HAN_NOM_A.ttf
 	@${MV} ${WRKSRC}/HAN\ NOM\ B.ttf ${WRKSRC}/HAN_NOM_B.ttf
 
 do-install:
-	@${MKDIR} ${FONTSDIR}
-.for i in ${TTF}
-	${INSTALL_DATA} ${WRKSRC}/${i} ${FONTSDIR}
-.endfor
+	@${MKDIR} ${STAGEDIR}${FONTSDIR}
+	(cd ${WRKSRC} && ${INSTALL_DATA} ${TTF} ${STAGEDIR}${FONTSDIR})
 
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/chinese/ttfm/Makefile.ttf"
