@@ -15,6 +15,8 @@ LICENSE=	LGPL21
 LIB_DEPENDS=	libblas.so:${PORTSDIR}/math/blas \
 		liblapack.so:${PORTSDIR}/math/lapack
 
+BROKEN=		Repository has been deleted, no more distfiles
+
 USE_OCAML=	yes
 USE_OCAML_FINDLIB=yes
 USE_OCAMLFIND_PLIST=yes
