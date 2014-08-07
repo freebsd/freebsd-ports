@@ -1801,6 +1801,7 @@
     SUBDIR += rubygem-heroku-nav
     SUBDIR += rubygem-hpricot
     SUBDIR += rubygem-html2haml
+    SUBDIR += rubygem-http
     SUBDIR += rubygem-http-cookie
     SUBDIR += rubygem-httpi
     SUBDIR += rubygem-httparty
