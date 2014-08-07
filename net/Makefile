@@ -1094,6 +1094,7 @@
     SUBDIR += shaperprobe
     SUBDIR += shelldap
     SUBDIR += shmux
+    SUBDIR += sie-nmsg
     SUBDIR += silc-client
     SUBDIR += silc-irssi-plugin
     SUBDIR += silc-server
