@@ -23,7 +23,7 @@ OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.options.mk>
 
-.if empty(PORT_OPTIONS:DOCS)
+.if empty(PORT_OPTIONS:MDOCS)
 IGNORE=		consists of only documentation, please enable DOCS and try again
 .endif
 
