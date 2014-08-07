@@ -636,6 +636,7 @@
     SUBDIR += p5-Net-Proxy
     SUBDIR += p5-Net-PubSubHubbub-Publisher
     SUBDIR += p5-Net-RTP
+    SUBDIR += p5-Net-RabbitFoot
     SUBDIR += p5-Net-RabbitMQ
     SUBDIR += p5-Net-Radius
     SUBDIR += p5-Net-Random
