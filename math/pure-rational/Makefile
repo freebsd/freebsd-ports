@@ -14,22 +14,14 @@ COMMENT=	Rational number library for the Pure language
 LICENSE=	GPLv3
 
 USES=		pure
+PORTDOCS=	README
+OPTIONS_DEFINE=	DOCS
 
 PLIST_FILES=	lib/pure/rational.pure \
 		lib/pure/rat_interval.pure
 
-NO_STAGE=	yes
-
-PORTDOCS=	README
-
-OPTIONS_DEFINE=	DOCS
-
-.include <bsd.port.options.mk>
-
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
-.endif
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
