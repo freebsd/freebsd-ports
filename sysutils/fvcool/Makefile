@@ -22,23 +22,15 @@ PLIST_FILES=	sbin/fvcool
 
 OPTIONS_DEFINE=	DOCS
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|@CC@|& ${CFLAGS}|; \
 		s|-O3||g ; s| -s | |g' ${BUILD_WRKSRC}/Makefile.in
 
 do-install: install-doc
-	${INSTALL_PROGRAM} ${WRKSRC}/fvcool ${PREFIX}/sbin/fvcool
-
-post-install:
-	@${CAT} ${PKGMESSAGE}
-
-.include <bsd.port.options.mk>
+	${INSTALL_PROGRAM} ${WRKSRC}/fvcool ${STAGEDIR}${PREFIX}/sbin/fvcool
 
 install-doc:
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${DOCSDIR}
-.endif
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
