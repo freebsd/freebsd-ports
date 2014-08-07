@@ -2,13 +2,6 @@
 
 bacula server was installed
 
-1) Important information about new version of bacula can be found in the
-   ReleaseNotes.
-
-   %%DOCSDIR%%/ReleaseNotes
-
-NOTE:
-
 An auto-changer manipulation script based on FreeBSDs
 chio command is included and installed at
 
@@ -54,12 +47,6 @@ to configure/compile a new kernel.
 Look at %%PREFIX%%/share/bacula/update_bacula_tables for
 database update procedure. Details can be found in the
 ReleaseNotes
-
-  Please read this file:
-
-	%%DOCSDIR%%/ReleaseNotes
-
-  as installed by docs port for the upgrade procedure.
 
 If you are using sqlite you need to run the make_sqlite_tables script as
 the bacula user. Do this using 'sudo su -m bacula'.
