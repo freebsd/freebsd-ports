@@ -2,6 +2,7 @@ bin/roxterm
 bin/roxterm-config
 man/man1/roxterm.1.gz
 man/man1/roxterm-config.1.gz
+share/appdata/roxterm.appdata.xml
 share/applications/roxterm.desktop
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
@@ -35,3 +36,4 @@ share/locale/uk/LC_MESSAGES/roxterm.mo
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/lib
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/en
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrmtry share/appdata
