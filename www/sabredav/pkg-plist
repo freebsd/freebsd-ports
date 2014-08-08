@@ -1,0 +1,749 @@
+www/sabredav/.gitignore
+www/sabredav/.travis.yml
+www/sabredav/bin/build.php
+www/sabredav/bin/generate_vcards
+www/sabredav/bin/googlecode_upload.py
+www/sabredav/bin/migrateto17.php
+www/sabredav/bin/migrateto20.php
+www/sabredav/bin/naturalselection
+www/sabredav/bin/sabredav
+www/sabredav/bin/sabredav.php
+www/sabredav/bin/vobject
+www/sabredav/ChangeLog.md
+www/sabredav/composer.json
+www/sabredav/composer.lock
+www/sabredav/examples/addressbookserver.php
+www/sabredav/examples/calendarserver.php
+www/sabredav/examples/fileserver.php
+www/sabredav/examples/groupwareserver.php
+www/sabredav/examples/simplefsserver.php
+www/sabredav/examples/sql/mysql.addressbook.sql
+www/sabredav/examples/sql/mysql.calendars.sql
+www/sabredav/examples/sql/mysql.locks.sql
+www/sabredav/examples/sql/mysql.principals.sql
+www/sabredav/examples/sql/mysql.propertystorage.sql
+www/sabredav/examples/sql/mysql.users.sql
+www/sabredav/examples/sql/pgsql.addressbook.sql
+www/sabredav/examples/sql/pgsql.calendars.sql
+www/sabredav/examples/sql/pgsql.locks.sql
+www/sabredav/examples/sql/pgsql.principals.sql
+www/sabredav/examples/sql/pgsql.propertystorage.sql
+www/sabredav/examples/sql/pgsql.users.sql
+www/sabredav/examples/sql/sqlite.addressbooks.sql
+www/sabredav/examples/sql/sqlite.calendars.sql
+www/sabredav/examples/sql/sqlite.locks.sql
+www/sabredav/examples/sql/sqlite.principals.sql
+www/sabredav/examples/sql/sqlite.propertystorage.sql
+www/sabredav/examples/sql/sqlite.users.sql
+www/sabredav/examples/webserver/apache2_htaccess.conf
+www/sabredav/examples/webserver/apache2_vhost.conf
+www/sabredav/examples/webserver/apache2_vhost_cgi.conf
+www/sabredav/lib/CalDAV/Backend/AbstractBackend.php
+www/sabredav/lib/CalDAV/Backend/BackendInterface.php
+www/sabredav/lib/CalDAV/Backend/NotificationSupport.php
+www/sabredav/lib/CalDAV/Backend/PDO.php
+www/sabredav/lib/CalDAV/Backend/SharingSupport.php
+www/sabredav/lib/CalDAV/Backend/SubscriptionSupport.php
+www/sabredav/lib/CalDAV/Backend/SyncSupport.php
+www/sabredav/lib/CalDAV/Calendar.php
+www/sabredav/lib/CalDAV/CalendarObject.php
+www/sabredav/lib/CalDAV/CalendarQueryParser.php
+www/sabredav/lib/CalDAV/CalendarQueryValidator.php
+www/sabredav/lib/CalDAV/CalendarRootNode.php
+www/sabredav/lib/CalDAV/Exception/InvalidComponentType.php
+www/sabredav/lib/CalDAV/ICalendar.php
+www/sabredav/lib/CalDAV/ICalendarObject.php
+www/sabredav/lib/CalDAV/ICSExportPlugin.php
+www/sabredav/lib/CalDAV/IShareableCalendar.php
+www/sabredav/lib/CalDAV/ISharedCalendar.php
+www/sabredav/lib/CalDAV/Notifications/Collection.php
+www/sabredav/lib/CalDAV/Notifications/ICollection.php
+www/sabredav/lib/CalDAV/Notifications/INode.php
+www/sabredav/lib/CalDAV/Notifications/INotificationType.php
+www/sabredav/lib/CalDAV/Notifications/Node.php
+www/sabredav/lib/CalDAV/Notifications/Notification/Invite.php
+www/sabredav/lib/CalDAV/Notifications/Notification/InviteReply.php
+www/sabredav/lib/CalDAV/Notifications/Notification/SystemStatus.php
+www/sabredav/lib/CalDAV/Plugin.php
+www/sabredav/lib/CalDAV/Principal/Collection.php
+www/sabredav/lib/CalDAV/Principal/IProxyRead.php
+www/sabredav/lib/CalDAV/Principal/IProxyWrite.php
+www/sabredav/lib/CalDAV/Principal/ProxyRead.php
+www/sabredav/lib/CalDAV/Principal/ProxyWrite.php
+www/sabredav/lib/CalDAV/Principal/User.php
+www/sabredav/lib/CalDAV/Property/AllowedSharingModes.php
+www/sabredav/lib/CalDAV/Property/Invite.php
+www/sabredav/lib/CalDAV/Property/ScheduleCalendarTransp.php
+www/sabredav/lib/CalDAV/Property/SupportedCalendarComponentSet.php
+www/sabredav/lib/CalDAV/Property/SupportedCalendarData.php
+www/sabredav/lib/CalDAV/Property/SupportedCollationSet.php
+www/sabredav/lib/CalDAV/Schedule/IMip.php
+www/sabredav/lib/CalDAV/Schedule/IOutbox.php
+www/sabredav/lib/CalDAV/Schedule/Outbox.php
+www/sabredav/lib/CalDAV/ShareableCalendar.php
+www/sabredav/lib/CalDAV/Subscriptions/ISubscription.php
+www/sabredav/lib/CalDAV/Subscriptions/Plugin.php
+www/sabredav/lib/CalDAV/Subscriptions/Subscription.php
+www/sabredav/lib/CalDAV/SharedCalendar.php
+www/sabredav/lib/CalDAV/SharingPlugin.php
+www/sabredav/lib/CalDAV/UserCalendars.php
+www/sabredav/lib/CardDAV/AddressBook.php
+www/sabredav/lib/CardDAV/AddressBookQueryParser.php
+www/sabredav/lib/CardDAV/AddressBookRoot.php
+www/sabredav/lib/CardDAV/Backend/AbstractBackend.php
+www/sabredav/lib/CardDAV/Backend/BackendInterface.php
+www/sabredav/lib/CardDAV/Backend/PDO.php
+www/sabredav/lib/CardDAV/Backend/SyncSupport.php
+www/sabredav/lib/CardDAV/Card.php
+www/sabredav/lib/CardDAV/IAddressBook.php
+www/sabredav/lib/CardDAV/ICard.php
+www/sabredav/lib/CardDAV/IDirectory.php
+www/sabredav/lib/CardDAV/Plugin.php
+www/sabredav/lib/CardDAV/Property/SupportedAddressData.php
+www/sabredav/lib/CardDAV/UserAddressBooks.php
+www/sabredav/lib/CardDAV/VCFExportPlugin.php
+www/sabredav/lib/DAV/Auth/Backend/AbstractBasic.php
+www/sabredav/lib/DAV/Auth/Backend/AbstractDigest.php
+www/sabredav/lib/DAV/Auth/Backend/Apache.php
+www/sabredav/lib/DAV/Auth/Backend/BackendInterface.php
+www/sabredav/lib/DAV/Auth/Backend/BasicCallBack.php
+www/sabredav/lib/DAV/Auth/Backend/File.php
+www/sabredav/lib/DAV/Auth/Backend/PDO.php
+www/sabredav/lib/DAV/Auth/Plugin.php
+www/sabredav/lib/DAV/Browser/assets/favicon.ico
+www/sabredav/lib/DAV/Browser/assets/openiconic/ICON-LICENSE
+www/sabredav/lib/DAV/Browser/assets/openiconic/open-iconic.css
+www/sabredav/lib/DAV/Browser/assets/openiconic/open-iconic.eot
+www/sabredav/lib/DAV/Browser/assets/openiconic/open-iconic.otf
+www/sabredav/lib/DAV/Browser/assets/openiconic/open-iconic.svg
+www/sabredav/lib/DAV/Browser/assets/openiconic/open-iconic.ttf
+www/sabredav/lib/DAV/Browser/assets/openiconic/open-iconic.woff
+www/sabredav/lib/DAV/Browser/assets/sabredav.css
+www/sabredav/lib/DAV/Browser/assets/sabredav.png
+www/sabredav/lib/DAV/Browser/GuessContentType.php
+www/sabredav/lib/DAV/Browser/MapGetToPropFind.php
+www/sabredav/lib/DAV/Browser/Plugin.php
+www/sabredav/lib/DAV/Browser/PropFindAll.php
+www/sabredav/lib/DAV/Client.php
+www/sabredav/lib/DAV/Collection.php
+www/sabredav/lib/DAV/CorePlugin.php
+www/sabredav/lib/DAV/Exception/BadRequest.php
+www/sabredav/lib/DAV/Exception/Conflict.php
+www/sabredav/lib/DAV/Exception/ConflictingLock.php
+www/sabredav/lib/DAV/Exception/FileNotFound.php
+www/sabredav/lib/DAV/Exception/Forbidden.php
+www/sabredav/lib/DAV/Exception/InsufficientStorage.php
+www/sabredav/lib/DAV/Exception/InvalidResourceType.php
+www/sabredav/lib/DAV/Exception/InvalidSyncToken.php
+www/sabredav/lib/DAV/Exception/LengthRequired.php
+www/sabredav/lib/DAV/Exception/Locked.php
+www/sabredav/lib/DAV/Exception/LockTokenMatchesRequestUri.php
+www/sabredav/lib/DAV/Exception/MethodNotAllowed.php
+www/sabredav/lib/DAV/Exception/NotAuthenticated.php
+www/sabredav/lib/DAV/Exception/NotFound.php
+www/sabredav/lib/DAV/Exception/NotImplemented.php
+www/sabredav/lib/DAV/Exception/PaymentRequired.php
+www/sabredav/lib/DAV/Exception/PreconditionFailed.php
+www/sabredav/lib/DAV/Exception/ReportNotSupported.php
+www/sabredav/lib/DAV/Exception/RequestedRangeNotSatisfiable.php
+www/sabredav/lib/DAV/Exception/ServiceUnavailable.php
+www/sabredav/lib/DAV/Exception/TooManyMatches.php
+www/sabredav/lib/DAV/Exception/UnsupportedMediaType.php
+www/sabredav/lib/DAV/Exception.php
+www/sabredav/lib/DAV/File.php
+www/sabredav/lib/DAV/FS/Directory.php
+www/sabredav/lib/DAV/FS/File.php
+www/sabredav/lib/DAV/FS/Node.php
+www/sabredav/lib/DAV/FSExt/Directory.php
+www/sabredav/lib/DAV/FSExt/File.php
+www/sabredav/lib/DAV/FSExt/Node.php
+www/sabredav/lib/DAV/ICollection.php
+www/sabredav/lib/DAV/IExtendedCollection.php
+www/sabredav/lib/DAV/IFile.php
+www/sabredav/lib/DAV/IMultiGet.php
+www/sabredav/lib/DAV/INode.php
+www/sabredav/lib/DAV/IProperties.php
+www/sabredav/lib/DAV/IQuota.php
+www/sabredav/lib/DAV/Locks/Backend/AbstractBackend.php
+www/sabredav/lib/DAV/Locks/Backend/BackendInterface.php
+www/sabredav/lib/DAV/Locks/Backend/File.php
+www/sabredav/lib/DAV/Locks/Backend/FS.php
+www/sabredav/lib/DAV/Locks/Backend/PDO.php
+www/sabredav/lib/DAV/Locks/LockInfo.php
+www/sabredav/lib/DAV/Locks/Plugin.php
+www/sabredav/lib/DAV/Mount/Plugin.php
+www/sabredav/lib/DAV/Node.php
+www/sabredav/lib/DAV/ObjectTree.php
+www/sabredav/lib/DAV/PartialUpdate/IFile.php
+www/sabredav/lib/DAV/PartialUpdate/IPatchSupport.php
+www/sabredav/lib/DAV/PartialUpdate/Plugin.php
+www/sabredav/lib/DAV/Property/GetLastModified.php
+www/sabredav/lib/DAV/Property/Href.php
+www/sabredav/lib/DAV/Property/HrefList.php
+www/sabredav/lib/DAV/Property/IHref.php
+www/sabredav/lib/DAV/Property/LockDiscovery.php
+www/sabredav/lib/DAV/Property/ResourceType.php
+www/sabredav/lib/DAV/Property/Response.php
+www/sabredav/lib/DAV/Property/ResponseList.php
+www/sabredav/lib/DAV/Property/SupportedLock.php
+www/sabredav/lib/DAV/Property/SupportedMethodSet.php
+www/sabredav/lib/DAV/Property/SupportedReportSet.php
+www/sabredav/lib/DAV/Property.php
+www/sabredav/lib/DAV/PropertyInterface.php
+www/sabredav/lib/DAV/PropertyStorage/Backend/BackendInterface.php
+www/sabredav/lib/DAV/PropertyStorage/Backend/PDO.php
+www/sabredav/lib/DAV/PropertyStorage/Plugin.php
+www/sabredav/lib/DAV/PropFind.php
+www/sabredav/lib/DAV/PropPatch.php
+www/sabredav/lib/DAV/Server.php
+www/sabredav/lib/DAV/ServerPlugin.php
+www/sabredav/lib/DAV/SimpleCollection.php
+www/sabredav/lib/DAV/SimpleFile.php
+www/sabredav/lib/DAV/StringUtil.php
+www/sabredav/lib/DAV/Sync/ISyncCollection.php
+www/sabredav/lib/DAV/Sync/Plugin.php
+www/sabredav/lib/DAV/TemporaryFileFilterPlugin.php
+www/sabredav/lib/DAV/Tree/Filesystem.php
+www/sabredav/lib/DAV/Tree.php
+www/sabredav/lib/DAV/URLUtil.php
+www/sabredav/lib/DAV/UUIDUtil.php
+www/sabredav/lib/DAV/Version.php
+www/sabredav/lib/DAV/XMLUtil.php
+www/sabredav/lib/DAVACL/AbstractPrincipalCollection.php
+www/sabredav/lib/DAVACL/Exception/AceConflict.php
+www/sabredav/lib/DAVACL/Exception/NeedPrivileges.php
+www/sabredav/lib/DAVACL/Exception/NoAbstract.php
+www/sabredav/lib/DAVACL/Exception/NotRecognizedPrincipal.php
+www/sabredav/lib/DAVACL/Exception/NotSupportedPrivilege.php
+www/sabredav/lib/DAVACL/IACL.php
+www/sabredav/lib/DAVACL/IPrincipal.php
+www/sabredav/lib/DAVACL/IPrincipalCollection.php
+www/sabredav/lib/DAVACL/Plugin.php
+www/sabredav/lib/DAVACL/Principal.php
+www/sabredav/lib/DAVACL/PrincipalBackend/AbstractBackend.php
+www/sabredav/lib/DAVACL/PrincipalBackend/BackendInterface.php
+www/sabredav/lib/DAVACL/PrincipalBackend/PDO.php
+www/sabredav/lib/DAVACL/PrincipalCollection.php
+www/sabredav/lib/DAVACL/Property/Acl.php
+www/sabredav/lib/DAVACL/Property/AclRestrictions.php
+www/sabredav/lib/DAVACL/Property/CurrentUserPrivilegeSet.php
+www/sabredav/lib/DAVACL/Property/Principal.php
+www/sabredav/lib/DAVACL/Property/SupportedPrivilegeSet.php
+www/sabredav/LICENSE
+www/sabredav/README.md
+www/sabredav/tests/bootstrap.php
+www/sabredav/tests/phpunit.xml
+www/sabredav/tests/Sabre/CalDAV/Backend/AbstractPDOTest.php
+www/sabredav/tests/Sabre/CalDAV/Backend/AbstractTest.php
+www/sabredav/tests/Sabre/CalDAV/Backend/Mock.php
+www/sabredav/tests/Sabre/CalDAV/Backend/MockSubscriptionSupport.php
+www/sabredav/tests/Sabre/CalDAV/Backend/PDOMySQLTest.php
+www/sabredav/tests/Sabre/CalDAV/Backend/PDOSqliteTest.php
+www/sabredav/tests/Sabre/CalDAV/CalendarObjectTest.php
+www/sabredav/tests/Sabre/CalDAV/CalendarQueryParserTest.php
+www/sabredav/tests/Sabre/CalDAV/CalendarQueryVAlarmTest.php
+www/sabredav/tests/Sabre/CalDAV/CalendarQueryValidatorTest.php
+www/sabredav/tests/Sabre/CalDAV/CalendarTest.php
+www/sabredav/tests/Sabre/CalDAV/ExpandEventsDoubleEventsTest.php
+www/sabredav/tests/Sabre/CalDAV/ExpandEventsDTSTARTandDTENDbyDayTest.php
+www/sabredav/tests/Sabre/CalDAV/ExpandEventsDTSTARTandDTENDTest.php
+www/sabredav/tests/Sabre/CalDAV/FreeBusyReportTest.php
+www/sabredav/tests/Sabre/CalDAV/FreeBusyRequestTest.php
+www/sabredav/tests/Sabre/CalDAV/GetEventsByTimerangeTest.php
+www/sabredav/tests/Sabre/CalDAV/ICSExportPluginTest.php
+www/sabredav/tests/Sabre/CalDAV/Notifications/CollectionTest.php
+www/sabredav/tests/Sabre/CalDAV/Notifications/NodeTest.php
+www/sabredav/tests/Sabre/CalDAV/Notifications/Notification/InviteReplyTest.php
+www/sabredav/tests/Sabre/CalDAV/Notifications/Notification/InviteTest.php
+www/sabredav/tests/Sabre/CalDAV/Notifications/Notification/SystemStatusTest.php
+www/sabredav/tests/Sabre/CalDAV/Issue166Test.php
+www/sabredav/tests/Sabre/CalDAV/Issue172Test.php
+www/sabredav/tests/Sabre/CalDAV/Issue203Test.php
+www/sabredav/tests/Sabre/CalDAV/Issue205Test.php
+www/sabredav/tests/Sabre/CalDAV/Issue211Test.php
+www/sabredav/tests/Sabre/CalDAV/Issue220Test.php
+www/sabredav/tests/Sabre/CalDAV/Issue228Test.php
+www/sabredav/tests/Sabre/CalDAV/JCalTransformTest.php
+www/sabredav/tests/Sabre/CalDAV/OutboxPostTest.php
+www/sabredav/tests/Sabre/CalDAV/PluginTest.php
+www/sabredav/tests/Sabre/CalDAV/Principal/CollectionTest.php
+www/sabredav/tests/Sabre/CalDAV/Principal/ProxyReadTest.php
+www/sabredav/tests/Sabre/CalDAV/Principal/ProxyWriteTest.php
+www/sabredav/tests/Sabre/CalDAV/Principal/UserTest.php
+www/sabredav/tests/Sabre/CalDAV/Property/AllowedSharingModesTest.php
+www/sabredav/tests/Sabre/CalDAV/Property/InviteTest.php
+www/sabredav/tests/Sabre/CalDAV/Property/ScheduleCalendarTranspTest.php
+www/sabredav/tests/Sabre/CalDAV/Property/SupportedCalendarComponentSetTest.php
+www/sabredav/tests/Sabre/CalDAV/Property/SupportedCalendarDataTest.php
+www/sabredav/tests/Sabre/CalDAV/Property/SupportedCollationSetTest.php
+www/sabredav/tests/Sabre/CalDAV/Schedule/IMip/Mock.php
+www/sabredav/tests/Sabre/CalDAV/Schedule/OutboxTest.php
+www/sabredav/tests/Sabre/CalDAV/ShareableCalendarTest.php
+www/sabredav/tests/Sabre/CalDAV/SharedCalendarTest.php
+www/sabredav/tests/Sabre/CalDAV/SharingPluginTest.php
+www/sabredav/tests/Sabre/CalDAV/Subscriptions/CreateSubscriptionTest.php
+www/sabredav/tests/Sabre/CalDAV/Subscriptions/PluginTest.php
+www/sabredav/tests/Sabre/CalDAV/Subscriptions/SubscriptionTest.php
+www/sabredav/tests/Sabre/CalDAV/TestUtil.php
+www/sabredav/tests/Sabre/CalDAV/UserCalendarsSharedCalendarsTest.php
+www/sabredav/tests/Sabre/CalDAV/UserCalendarsSubscriptionsTest.php
+www/sabredav/tests/Sabre/CalDAV/UserCalendarsTest.php
+www/sabredav/tests/Sabre/CalDAV/ValidateICalTest.php
+www/sabredav/tests/Sabre/CardDAV/AbstractPluginTest.php
+www/sabredav/tests/Sabre/CardDAV/AddressBookQueryParserTest.php
+www/sabredav/tests/Sabre/CardDAV/AddressBookQueryTest.php
+www/sabredav/tests/Sabre/CardDAV/AddressBookRootTest.php
+www/sabredav/tests/Sabre/CardDAV/AddressBookTest.php
+www/sabredav/tests/Sabre/CardDAV/Backend/AbstractPDOTest.php
+www/sabredav/tests/Sabre/CardDAV/Backend/Mock.php
+www/sabredav/tests/Sabre/CardDAV/Backend/PDOMySQLTest.php
+www/sabredav/tests/Sabre/CardDAV/Backend/PDOSqliteTest.php
+www/sabredav/tests/Sabre/CardDAV/CardTest.php
+www/sabredav/tests/Sabre/CardDAV/IDirectoryTest.php
+www/sabredav/tests/Sabre/CardDAV/MultiGetTest.php
+www/sabredav/tests/Sabre/CardDAV/PluginTest.php
+www/sabredav/tests/Sabre/CardDAV/Property/SupportedAddressDataTest.php
+www/sabredav/tests/Sabre/CardDAV/SogoStripContentTypeTest.php
+www/sabredav/tests/Sabre/CardDAV/TestUtil.php
+www/sabredav/tests/Sabre/CardDAV/UserAddressBooksTest.php
+www/sabredav/tests/Sabre/CardDAV/ValidateFilterTest.php
+www/sabredav/tests/Sabre/CardDAV/ValidateVCardTest.php
+www/sabredav/tests/Sabre/CardDAV/VCFExportTest.php
+www/sabredav/tests/Sabre/DAV/AbstractServer.php
+www/sabredav/tests/Sabre/DAV/Auth/Backend/AbstractBasicTest.php
+www/sabredav/tests/Sabre/DAV/Auth/Backend/AbstractDigestTest.php
+www/sabredav/tests/Sabre/DAV/Auth/Backend/AbstractPDOTest.php
+www/sabredav/tests/Sabre/DAV/Auth/Backend/ApacheTest.php
+www/sabredav/tests/Sabre/DAV/Auth/Backend/BasicCallBackTest.php
+www/sabredav/tests/Sabre/DAV/Auth/Backend/FileTest.php
+www/sabredav/tests/Sabre/DAV/Auth/Backend/Mock.php
+www/sabredav/tests/Sabre/DAV/Auth/Backend/PDOMySQLTest.php
+www/sabredav/tests/Sabre/DAV/Auth/Backend/PDOSqliteTest.php
+www/sabredav/tests/Sabre/DAV/Auth/PluginTest.php
+www/sabredav/tests/Sabre/DAV/BasicNodeTest.php
+www/sabredav/tests/Sabre/DAV/Browser/GuessContentTypeTest.php
+www/sabredav/tests/Sabre/DAV/Browser/MapGetToPropFindTest.php
+www/sabredav/tests/Sabre/DAV/Browser/PluginTest.php
+www/sabredav/tests/Sabre/DAV/ClientMock.php
+www/sabredav/tests/Sabre/DAV/ClientTest.php
+www/sabredav/tests/Sabre/DAV/CopyTest.php
+www/sabredav/tests/Sabre/DAV/Exception/LockedTest.php
+www/sabredav/tests/Sabre/DAV/Exception/PaymentRequiredTest.php
+www/sabredav/tests/Sabre/DAV/Exception/ServiceUnavailableTest.php
+www/sabredav/tests/Sabre/DAV/Exception/TooManyMatchesTest.php
+www/sabredav/tests/Sabre/DAV/ExceptionTest.php
+www/sabredav/tests/Sabre/DAV/FSExt/FileTest.php
+www/sabredav/tests/Sabre/DAV/FSExt/NodeTest.php
+www/sabredav/tests/Sabre/DAV/FSExt/ServerTest.php
+www/sabredav/tests/Sabre/DAV/GetIfConditionsTest.php
+www/sabredav/tests/Sabre/DAV/HttpDeleteTest.php
+www/sabredav/tests/Sabre/DAV/HTTPPreferParsingTest.php
+www/sabredav/tests/Sabre/DAV/HttpPutTest.php
+www/sabredav/tests/Sabre/DAV/Issue33Test.php
+www/sabredav/tests/Sabre/DAV/Locks/Backend/AbstractTest.php
+www/sabredav/tests/Sabre/DAV/Locks/Backend/FileTest.php
+www/sabredav/tests/Sabre/DAV/Locks/Backend/FSTest.php
+www/sabredav/tests/Sabre/DAV/Locks/Backend/PDOMySQLTest.php
+www/sabredav/tests/Sabre/DAV/Locks/Backend/PDOTest.php
+www/sabredav/tests/Sabre/DAV/Locks/MSWordTest.php
+www/sabredav/tests/Sabre/DAV/Locks/PluginTest.php
+www/sabredav/tests/Sabre/DAV/Mock/Collection.php
+www/sabredav/tests/Sabre/DAV/Mock/File.php
+www/sabredav/tests/Sabre/DAV/Mock/PropertiesCollection.php
+www/sabredav/tests/Sabre/DAV/Mount/PluginTest.php
+www/sabredav/tests/Sabre/DAV/ObjectTreeTest.php
+www/sabredav/tests/Sabre/DAV/PartialUpdate/FileMock.php
+www/sabredav/tests/Sabre/DAV/PartialUpdate/PluginTest.php
+www/sabredav/tests/Sabre/DAV/PartialUpdate/SpecificationTest.php
+www/sabredav/tests/Sabre/DAV/Property/GetLastModifiedTest.php
+www/sabredav/tests/Sabre/DAV/Property/HrefListTest.php
+www/sabredav/tests/Sabre/DAV/Property/HrefTest.php
+www/sabredav/tests/Sabre/DAV/Property/ResourceTypeTest.php
+www/sabredav/tests/Sabre/DAV/Property/ResponseListTest.php
+www/sabredav/tests/Sabre/DAV/Property/ResponseTest.php
+www/sabredav/tests/Sabre/DAV/Property/SupportedMethodSetTest.php
+www/sabredav/tests/Sabre/DAV/Property/SupportedReportSetTest.php
+www/sabredav/tests/Sabre/DAV/PropertyStorage/Backend/AbstractPDOTest.php
+www/sabredav/tests/Sabre/DAV/PropertyStorage/Backend/Mock.php
+www/sabredav/tests/Sabre/DAV/PropertyStorage/Backend/PDOMysqlTest.php
+www/sabredav/tests/Sabre/DAV/PropertyStorage/Backend/PDOSqliteTest.php
+www/sabredav/tests/Sabre/DAV/PropertyStorage/PluginTest.php
+www/sabredav/tests/Sabre/DAV/PropFindTest.php
+www/sabredav/tests/Sabre/DAV/PropPatchTest.php
+www/sabredav/tests/Sabre/DAV/ServerCopyMoveTest.php
+www/sabredav/tests/Sabre/DAV/ServerEventsTest.php
+www/sabredav/tests/Sabre/DAV/ServerMKCOLTest.php
+www/sabredav/tests/Sabre/DAV/ServerPluginTest.php
+www/sabredav/tests/Sabre/DAV/ServerPreconditionTest.php
+www/sabredav/tests/Sabre/DAV/ServerPropsInfiniteDepthTest.php
+www/sabredav/tests/Sabre/DAV/ServerPropsTest.php
+www/sabredav/tests/Sabre/DAV/ServerRangeTest.php
+www/sabredav/tests/Sabre/DAV/ServerSimpleTest.php
+www/sabredav/tests/Sabre/DAV/ServerUpdatePropertiesTest.php
+www/sabredav/tests/Sabre/DAV/SimpleFileTest.php
+www/sabredav/tests/Sabre/DAV/StringUtilTest.php
+www/sabredav/tests/Sabre/DAV/Sync/MockSyncCollection.php
+www/sabredav/tests/Sabre/DAV/Sync/PluginTest.php
+www/sabredav/tests/Sabre/DAV/TestPlugin.php
+www/sabredav/tests/Sabre/DAV/TemporaryFileFilterTest.php
+www/sabredav/tests/Sabre/DAV/Tree/FilesystemTest.php
+www/sabredav/tests/Sabre/DAV/TreeTest.php
+www/sabredav/tests/Sabre/DAV/UUIDUtilTest.php
+www/sabredav/tests/Sabre/DAV/XMLUtilTest.php
+www/sabredav/tests/Sabre/DAVACL/ACLMethodTest.php
+www/sabredav/tests/Sabre/DAVACL/AllowAccessTest.php
+www/sabredav/tests/Sabre/DAVACL/BlockAccessTest.php
+www/sabredav/tests/Sabre/DAVACL/Exception/AceConflictTest.php
+www/sabredav/tests/Sabre/DAVACL/Exception/NeedPrivilegesExceptionTest.php
+www/sabredav/tests/Sabre/DAVACL/Exception/NoAbstractTest.php
+www/sabredav/tests/Sabre/DAVACL/Exception/NotRecognizedPrincipalTest.php
+www/sabredav/tests/Sabre/DAVACL/Exception/NotSupportedPrivilegeTest.php
+www/sabredav/tests/Sabre/DAVACL/ExpandPropertiesTest.php
+www/sabredav/tests/Sabre/DAVACL/MockACLNode.php
+www/sabredav/tests/Sabre/DAVACL/MockPrincipal.php
+www/sabredav/tests/Sabre/DAVACL/PluginAdminTest.php
+www/sabredav/tests/Sabre/DAVACL/PluginPropertiesTest.php
+www/sabredav/tests/Sabre/DAVACL/PluginUpdatePropertiesTest.php
+www/sabredav/tests/Sabre/DAVACL/PrincipalBackend/AbstractPDOTest.php
+www/sabredav/tests/Sabre/DAVACL/PrincipalBackend/Mock.php
+www/sabredav/tests/Sabre/DAVACL/PrincipalBackend/PDOMySQLTest.php
+www/sabredav/tests/Sabre/DAVACL/PrincipalBackend/PDOSqliteTest.php
+www/sabredav/tests/Sabre/DAVACL/PrincipalCollectionTest.php
+www/sabredav/tests/Sabre/DAVACL/PrincipalPropertySearchTest.php
+www/sabredav/tests/Sabre/DAVACL/PrincipalSearchPropertySetTest.php
+www/sabredav/tests/Sabre/DAVACL/PrincipalTest.php
+www/sabredav/tests/Sabre/DAVACL/Property/ACLRestrictionsTest.php
+www/sabredav/tests/Sabre/DAVACL/Property/ACLTest.php
+www/sabredav/tests/Sabre/DAVACL/Property/CurrentUserPrivilegeSetTest.php
+www/sabredav/tests/Sabre/DAVACL/Property/PrincipalTest.php
+www/sabredav/tests/Sabre/DAVACL/Property/SupportedPrivilegeSetTest.php
+www/sabredav/tests/Sabre/DAVACL/SimplePluginTest.php
+www/sabredav/tests/Sabre/DAVServerTest.php
+www/sabredav/tests/Sabre/HTTP/ResponseMock.php
+www/sabredav/tests/Sabre/HTTP/SapiMock.php
+www/sabredav/tests/Sabre/TestUtil.php
+www/sabredav/vendor/autoload.php
+www/sabredav/vendor/composer/autoload_classmap.php
+www/sabredav/vendor/composer/autoload_namespaces.php
+www/sabredav/vendor/composer/autoload_psr4.php
+www/sabredav/vendor/composer/autoload_real.php
+www/sabredav/vendor/composer/ClassLoader.php
+www/sabredav/vendor/composer/installed.json
+www/sabredav/vendor/sabre/event/.gitignore
+www/sabredav/vendor/sabre/event/.travis.yml
+www/sabredav/vendor/sabre/event/ChangeLog
+www/sabredav/vendor/sabre/event/composer.json
+www/sabredav/vendor/sabre/event/lib/Sabre/Event/EventEmitter.php
+www/sabredav/vendor/sabre/event/lib/Sabre/Event/EventEmitterInterface.php
+www/sabredav/vendor/sabre/event/lib/Sabre/Event/EventEmitterTrait.php
+www/sabredav/vendor/sabre/event/lib/Sabre/Event/Version.php
+www/sabredav/vendor/sabre/event/LICENSE
+www/sabredav/vendor/sabre/event/README.md
+www/sabredav/vendor/sabre/event/tests/bootstrap.php
+www/sabredav/vendor/sabre/event/tests/phpunit.xml
+www/sabredav/vendor/sabre/event/tests/Sabre/Event/EventEmitterTest.php
+www/sabredav/vendor/sabre/http/.gitignore
+www/sabredav/vendor/sabre/http/.travis.yml
+www/sabredav/vendor/sabre/http/bin/EMPTY
+www/sabredav/vendor/sabre/http/ChangeLog
+www/sabredav/vendor/sabre/http/composer.json
+www/sabredav/vendor/sabre/http/examples/asyncclient.php
+www/sabredav/vendor/sabre/http/examples/basicauth.php
+www/sabredav/vendor/sabre/http/examples/client.php
+www/sabredav/vendor/sabre/http/examples/reverseproxy.php
+www/sabredav/vendor/sabre/http/examples/stringify.php
+www/sabredav/vendor/sabre/http/lib/Sabre/HTTP/Auth/AbstractAuth.php
+www/sabredav/vendor/sabre/http/lib/Sabre/HTTP/Auth/AWS.php
+www/sabredav/vendor/sabre/http/lib/Sabre/HTTP/Auth/Basic.php
+www/sabredav/vendor/sabre/http/lib/Sabre/HTTP/Auth/Digest.php
+www/sabredav/vendor/sabre/http/lib/Sabre/HTTP/Client.php
+www/sabredav/vendor/sabre/http/lib/Sabre/HTTP/ClientException.php
+www/sabredav/vendor/sabre/http/lib/Sabre/HTTP/ClientHttpException.php
+www/sabredav/vendor/sabre/http/lib/Sabre/HTTP/HttpException.php
+www/sabredav/vendor/sabre/http/lib/Sabre/HTTP/Message.php
+www/sabredav/vendor/sabre/http/lib/Sabre/HTTP/MessageDecoratorTrait.php
+www/sabredav/vendor/sabre/http/lib/Sabre/HTTP/MessageInterface.php
+www/sabredav/vendor/sabre/http/lib/Sabre/HTTP/Request.php
+www/sabredav/vendor/sabre/http/lib/Sabre/HTTP/RequestDecorator.php
+www/sabredav/vendor/sabre/http/lib/Sabre/HTTP/RequestInterface.php
+www/sabredav/vendor/sabre/http/lib/Sabre/HTTP/Response.php
+www/sabredav/vendor/sabre/http/lib/Sabre/HTTP/ResponseDecorator.php
+www/sabredav/vendor/sabre/http/lib/Sabre/HTTP/ResponseInterface.php
+www/sabredav/vendor/sabre/http/lib/Sabre/HTTP/Sapi.php
+www/sabredav/vendor/sabre/http/lib/Sabre/HTTP/URLUtil.php
+www/sabredav/vendor/sabre/http/lib/Sabre/HTTP/Util.php
+www/sabredav/vendor/sabre/http/lib/Sabre/HTTP/Version.php
+www/sabredav/vendor/sabre/http/LICENSE
+www/sabredav/vendor/sabre/http/README.md
+www/sabredav/vendor/sabre/http/tests/bootstrap.php
+www/sabredav/vendor/sabre/http/tests/phpcs/ruleset.xml
+www/sabredav/vendor/sabre/http/tests/phpunit.xml
+www/sabredav/vendor/sabre/http/tests/Sabre/HTTP/Auth/AWSTest.php
+www/sabredav/vendor/sabre/http/tests/Sabre/HTTP/Auth/BasicTest.php
+www/sabredav/vendor/sabre/http/tests/Sabre/HTTP/Auth/DigestTest.php
+www/sabredav/vendor/sabre/http/tests/Sabre/HTTP/ClientTest.php
+www/sabredav/vendor/sabre/http/tests/Sabre/HTTP/MessageDecoratorTest.php
+www/sabredav/vendor/sabre/http/tests/Sabre/HTTP/MessageTest.php
+www/sabredav/vendor/sabre/http/tests/Sabre/HTTP/RequestDecoratorTest.php
+www/sabredav/vendor/sabre/http/tests/Sabre/HTTP/RequestTest.php
+www/sabredav/vendor/sabre/http/tests/Sabre/HTTP/ResponseDecoratorTest.php
+www/sabredav/vendor/sabre/http/tests/Sabre/HTTP/ResponseTest.php
+www/sabredav/vendor/sabre/http/tests/Sabre/HTTP/SapiTest.php
+www/sabredav/vendor/sabre/http/tests/Sabre/HTTP/URLUtilTest.php
+www/sabredav/vendor/sabre/http/tests/Sabre/HTTP/UtilTest.php
+www/sabredav/vendor/sabre/vobject/.gitignore
+www/sabredav/vendor/sabre/vobject/.travis.yml
+www/sabredav/vendor/sabre/vobject/bin/bench.php
+www/sabredav/vendor/sabre/vobject/bin/fetch_windows_zones.php
+www/sabredav/vendor/sabre/vobject/bin/generate_vcards
+www/sabredav/vendor/sabre/vobject/bin/generateicalendardata.php
+www/sabredav/vendor/sabre/vobject/bin/vobject
+www/sabredav/vendor/sabre/vobject/ChangeLog.md
+www/sabredav/vendor/sabre/vobject/composer.json
+www/sabredav/vendor/sabre/vobject/lib/Sabre/VObject/Cli.php
+www/sabredav/vendor/sabre/vobject/lib/Sabre/VObject/Component/VAlarm.php
+www/sabredav/vendor/sabre/vobject/lib/Sabre/VObject/Component/VCalendar.php
+www/sabredav/vendor/sabre/vobject/lib/Sabre/VObject/Component/VCard.php
+www/sabredav/vendor/sabre/vobject/lib/Sabre/VObject/Component/VEvent.php
+www/sabredav/vendor/sabre/vobject/lib/Sabre/VObject/Component/VFreeBusy.php
+www/sabredav/vendor/sabre/vobject/lib/Sabre/VObject/Component/VJournal.php
+www/sabredav/vendor/sabre/vobject/lib/Sabre/VObject/Component/VTimeZone.php
+www/sabredav/vendor/sabre/vobject/lib/Sabre/VObject/Component/VTodo.php
+www/sabredav/vendor/sabre/vobject/lib/Sabre/VObject/Component.php
+www/sabredav/vendor/sabre/vobject/lib/Sabre/VObject/DateTimeParser.php
+www/sabredav/vendor/sabre/vobject/lib/Sabre/VObject/Document.php
+www/sabredav/vendor/sabre/vobject/lib/Sabre/VObject/ElementList.php
+www/sabredav/vendor/sabre/vobject/lib/Sabre/VObject/EofException.php
+www/sabredav/vendor/sabre/vobject/lib/Sabre/VObject/FreeBusyGenerator.php
+www/sabredav/vendor/sabre/vobject/lib/Sabre/VObject/includes.php
+www/sabredav/vendor/sabre/vobject/lib/Sabre/VObject/Node.php
+www/sabredav/vendor/sabre/vobject/lib/Sabre/VObject/Parameter.php
+www/sabredav/vendor/sabre/vobject/lib/Sabre/VObject/ParseException.php
+www/sabredav/vendor/sabre/vobject/lib/Sabre/VObject/Parser/Json.php
+www/sabredav/vendor/sabre/vobject/lib/Sabre/VObject/Parser/MimeDir.php
+www/sabredav/vendor/sabre/vobject/lib/Sabre/VObject/Parser/Parser.php
+www/sabredav/vendor/sabre/vobject/lib/Sabre/VObject/Property/Binary.php
+www/sabredav/vendor/sabre/vobject/lib/Sabre/VObject/Property/Boolean.php
+www/sabredav/vendor/sabre/vobject/lib/Sabre/VObject/Property/FlatText.php
+www/sabredav/vendor/sabre/vobject/lib/Sabre/VObject/Property/Float.php
+www/sabredav/vendor/sabre/vobject/lib/Sabre/VObject/Property/ICalendar/CalAddress.php
+www/sabredav/vendor/sabre/vobject/lib/Sabre/VObject/Property/ICalendar/Date.php
+www/sabredav/vendor/sabre/vobject/lib/Sabre/VObject/Property/ICalendar/DateTime.php
+www/sabredav/vendor/sabre/vobject/lib/Sabre/VObject/Property/ICalendar/Duration.php
+www/sabredav/vendor/sabre/vobject/lib/Sabre/VObject/Property/ICalendar/Period.php
+www/sabredav/vendor/sabre/vobject/lib/Sabre/VObject/Property/ICalendar/Recur.php
+www/sabredav/vendor/sabre/vobject/lib/Sabre/VObject/Property/Integer.php
+www/sabredav/vendor/sabre/vobject/lib/Sabre/VObject/Property/Text.php
+www/sabredav/vendor/sabre/vobject/lib/Sabre/VObject/Property/Time.php
+www/sabredav/vendor/sabre/vobject/lib/Sabre/VObject/Property/Unknown.php
+www/sabredav/vendor/sabre/vobject/lib/Sabre/VObject/Property/Uri.php
+www/sabredav/vendor/sabre/vobject/lib/Sabre/VObject/Property/UtcOffset.php
+www/sabredav/vendor/sabre/vobject/lib/Sabre/VObject/Property/VCard/Date.php
+www/sabredav/vendor/sabre/vobject/lib/Sabre/VObject/Property/VCard/DateAndOrTime.php
+www/sabredav/vendor/sabre/vobject/lib/Sabre/VObject/Property/VCard/DateTime.php
+www/sabredav/vendor/sabre/vobject/lib/Sabre/VObject/Property/VCard/LanguageTag.php
+www/sabredav/vendor/sabre/vobject/lib/Sabre/VObject/Property/VCard/TimeStamp.php
+www/sabredav/vendor/sabre/vobject/lib/Sabre/VObject/Property.php
+www/sabredav/vendor/sabre/vobject/lib/Sabre/VObject/Reader.php
+www/sabredav/vendor/sabre/vobject/lib/Sabre/VObject/RecurrenceIterator.php
+www/sabredav/vendor/sabre/vobject/lib/Sabre/VObject/Splitter/ICalendar.php
+www/sabredav/vendor/sabre/vobject/lib/Sabre/VObject/Splitter/SplitterInterface.php
+www/sabredav/vendor/sabre/vobject/lib/Sabre/VObject/Splitter/VCard.php
+www/sabredav/vendor/sabre/vobject/lib/Sabre/VObject/StringUtil.php
+www/sabredav/vendor/sabre/vobject/lib/Sabre/VObject/timezonedata/exchangezones.php
+www/sabredav/vendor/sabre/vobject/lib/Sabre/VObject/timezonedata/lotuszones.php
+www/sabredav/vendor/sabre/vobject/lib/Sabre/VObject/timezonedata/php-compat.php
+www/sabredav/vendor/sabre/vobject/lib/Sabre/VObject/timezonedata/windowszones.php
+www/sabredav/vendor/sabre/vobject/lib/Sabre/VObject/TimeZoneUtil.php
+www/sabredav/vendor/sabre/vobject/lib/Sabre/VObject/UUIDUtil.php
+www/sabredav/vendor/sabre/vobject/lib/Sabre/VObject/VCardConverter.php
+www/sabredav/vendor/sabre/vobject/lib/Sabre/VObject/Version.php
+www/sabredav/vendor/sabre/vobject/LICENSE
+www/sabredav/vendor/sabre/vobject/README.md
+www/sabredav/vendor/sabre/vobject/tests/bootstrap.php
+www/sabredav/vendor/sabre/vobject/tests/phpcs/ruleset.xml
+www/sabredav/vendor/sabre/vobject/tests/phpunit.xml
+www/sabredav/vendor/sabre/vobject/tests/Sabre/VObject/AttachIssueTest.php
+www/sabredav/vendor/sabre/vobject/tests/Sabre/VObject/CliTest.php
+www/sabredav/vendor/sabre/vobject/tests/Sabre/VObject/Component/VAlarmTest.php
+www/sabredav/vendor/sabre/vobject/tests/Sabre/VObject/Component/VCalendarTest.php
+www/sabredav/vendor/sabre/vobject/tests/Sabre/VObject/Component/VCardTest.php
+www/sabredav/vendor/sabre/vobject/tests/Sabre/VObject/Component/VEventTest.php
+www/sabredav/vendor/sabre/vobject/tests/Sabre/VObject/Component/VFreeBusyTest.php
+www/sabredav/vendor/sabre/vobject/tests/Sabre/VObject/Component/VJournalTest.php
+www/sabredav/vendor/sabre/vobject/tests/Sabre/VObject/Component/VTimeZoneTest.php
+www/sabredav/vendor/sabre/vobject/tests/Sabre/VObject/Component/VTodoTest.php
+www/sabredav/vendor/sabre/vobject/tests/Sabre/VObject/ComponentTest.php
+www/sabredav/vendor/sabre/vobject/tests/Sabre/VObject/DateTimeParserTest.php
+www/sabredav/vendor/sabre/vobject/tests/Sabre/VObject/DocumentTest.php
+www/sabredav/vendor/sabre/vobject/tests/Sabre/VObject/ElementListTest.php
+www/sabredav/vendor/sabre/vobject/tests/Sabre/VObject/EmClientTest.php
+www/sabredav/vendor/sabre/vobject/tests/Sabre/VObject/EmptyValueIssueTest.php
+www/sabredav/vendor/sabre/vobject/tests/Sabre/VObject/FreeBusyGeneratorTest.php
+www/sabredav/vendor/sabre/vobject/tests/Sabre/VObject/GoogleColonEscapingTest.php
+www/sabredav/vendor/sabre/vobject/tests/Sabre/VObject/issue153.vcf
+www/sabredav/vendor/sabre/vobject/tests/Sabre/VObject/Issue153Test.php
+www/sabredav/vendor/sabre/vobject/tests/Sabre/VObject/Issue154Test.php
+www/sabredav/vendor/sabre/vobject/tests/Sabre/VObject/Issue26Test.php
+www/sabredav/vendor/sabre/vobject/tests/Sabre/VObject/Issue36WorkAroundTest.php
+www/sabredav/vendor/sabre/vobject/tests/Sabre/VObject/Issue40Test.php
+www/sabredav/vendor/sabre/vobject/tests/Sabre/VObject/Issue48Test.php
+www/sabredav/vendor/sabre/vobject/tests/Sabre/VObject/Issue50Test.php
+www/sabredav/vendor/sabre/vobject/tests/Sabre/VObject/issue64.vcf
+www/sabredav/vendor/sabre/vobject/tests/Sabre/VObject/Issue64Test.php
+www/sabredav/vendor/sabre/vobject/tests/Sabre/VObject/Issue96Test.php
+www/sabredav/vendor/sabre/vobject/tests/Sabre/VObject/JCalTest.php
+www/sabredav/vendor/sabre/vobject/tests/Sabre/VObject/JCardTest.php
+www/sabredav/vendor/sabre/vobject/tests/Sabre/VObject/LineFoldingIssueTest.php
+www/sabredav/vendor/sabre/vobject/tests/Sabre/VObject/ParameterTest.php
+www/sabredav/vendor/sabre/vobject/tests/Sabre/VObject/Parser/JsonTest.php
+www/sabredav/vendor/sabre/vobject/tests/Sabre/VObject/Parser/QuotedPrintableTest.php
+www/sabredav/vendor/sabre/vobject/tests/Sabre/VObject/Property/BinaryTest.php
+www/sabredav/vendor/sabre/vobject/tests/Sabre/VObject/Property/BooleanTest.php
+www/sabredav/vendor/sabre/vobject/tests/Sabre/VObject/Property/CompoundTest.php
+www/sabredav/vendor/sabre/vobject/tests/Sabre/VObject/Property/FloatTest.php
+www/sabredav/vendor/sabre/vobject/tests/Sabre/VObject/Property/ICalendar/DateTimeTest.php
+www/sabredav/vendor/sabre/vobject/tests/Sabre/VObject/Property/ICalendar/DurationTest.php
+www/sabredav/vendor/sabre/vobject/tests/Sabre/VObject/Property/ICalendar/RecurTest.php
+www/sabredav/vendor/sabre/vobject/tests/Sabre/VObject/Property/TextTest.php
+www/sabredav/vendor/sabre/vobject/tests/Sabre/VObject/Property/VCard/DateAndOrTimeTest.php
+www/sabredav/vendor/sabre/vobject/tests/Sabre/VObject/Property/VCard/LanguageTagTest.php
+www/sabredav/vendor/sabre/vobject/tests/Sabre/VObject/PropertyTest.php
+www/sabredav/vendor/sabre/vobject/tests/Sabre/VObject/ReaderTest.php
+www/sabredav/vendor/sabre/vobject/tests/Sabre/VObject/RecurrenceIterator/ByMonthInDailyTest.php
+www/sabredav/vendor/sabre/vobject/tests/Sabre/VObject/RecurrenceIterator/FifthTuesdayProblemTest.php
+www/sabredav/vendor/sabre/vobject/tests/Sabre/VObject/RecurrenceIterator/IncorrectExpandTest.php
+www/sabredav/vendor/sabre/vobject/tests/Sabre/VObject/RecurrenceIterator/InfiniteLoopProblemTest.php
+www/sabredav/vendor/sabre/vobject/tests/Sabre/VObject/RecurrenceIterator/MainTest.php
+www/sabredav/vendor/sabre/vobject/tests/Sabre/VObject/RecurrenceIterator/MissingOverriddenTest.php
+www/sabredav/vendor/sabre/vobject/tests/Sabre/VObject/RecurrenceIterator/UntilRespectsTimezoneTest.ics
+www/sabredav/vendor/sabre/vobject/tests/Sabre/VObject/RecurrenceIterator/UntilRespectsTimezoneTest.php
+www/sabredav/vendor/sabre/vobject/tests/Sabre/VObject/SlashRTest.php
+www/sabredav/vendor/sabre/vobject/tests/Sabre/VObject/Splitter/ICalendarTest.php
+www/sabredav/vendor/sabre/vobject/tests/Sabre/VObject/Splitter/VCardTest.php
+www/sabredav/vendor/sabre/vobject/tests/Sabre/VObject/StringUtilTest.php
+www/sabredav/vendor/sabre/vobject/tests/Sabre/VObject/TimeZoneUtilTest.php
+www/sabredav/vendor/sabre/vobject/tests/Sabre/VObject/UUIDUtilTest.php
+www/sabredav/vendor/sabre/vobject/tests/Sabre/VObject/VCard21Test.php
+www/sabredav/vendor/sabre/vobject/tests/Sabre/VObject/VCardConverterTest.php
+www/sabredav/vendor/sabre/vobject/tests/Sabre/VObject/VersionTest.php
+@dirrm www/sabredav/vendor/sabre/vobject/tests/phpcs
+@dirrm www/sabredav/vendor/sabre/vobject/tests/Sabre/VObject/Splitter
+@dirrm www/sabredav/vendor/sabre/vobject/tests/Sabre/VObject/RecurrenceIterator
+@dirrm www/sabredav/vendor/sabre/vobject/tests/Sabre/VObject/Property/VCard
+@dirrm www/sabredav/vendor/sabre/vobject/tests/Sabre/VObject/Property/ICalendar
+@dirrm www/sabredav/vendor/sabre/vobject/tests/Sabre/VObject/Property
+@dirrm www/sabredav/vendor/sabre/vobject/tests/Sabre/VObject/Parser
+@dirrm www/sabredav/vendor/sabre/vobject/tests/Sabre/VObject/Component
+@dirrm www/sabredav/vendor/sabre/vobject/tests/Sabre/VObject
+@dirrm www/sabredav/vendor/sabre/vobject/tests/Sabre
+@dirrm www/sabredav/vendor/sabre/vobject/tests
+@dirrm www/sabredav/vendor/sabre/vobject/lib/Sabre/VObject/timezonedata
+@dirrm www/sabredav/vendor/sabre/vobject/lib/Sabre/VObject/Splitter
+@dirrm www/sabredav/vendor/sabre/vobject/lib/Sabre/VObject/Property/VCard
+@dirrm www/sabredav/vendor/sabre/vobject/lib/Sabre/VObject/Property/ICalendar
+@dirrm www/sabredav/vendor/sabre/vobject/lib/Sabre/VObject/Property
+@dirrm www/sabredav/vendor/sabre/vobject/lib/Sabre/VObject/Parser
+@dirrm www/sabredav/vendor/sabre/vobject/lib/Sabre/VObject/Component
+@dirrm www/sabredav/vendor/sabre/vobject/lib/Sabre/VObject
+@dirrm www/sabredav/vendor/sabre/vobject/lib/Sabre
+@dirrm www/sabredav/vendor/sabre/vobject/lib
+@dirrm www/sabredav/vendor/sabre/vobject/bin
+@dirrm www/sabredav/vendor/sabre/vobject
+@dirrm www/sabredav/vendor/sabre/http/tests/phpcs
+@dirrm www/sabredav/vendor/sabre/http/tests/Sabre/HTTP/Auth
+@dirrm www/sabredav/vendor/sabre/http/tests/Sabre/HTTP
+@dirrm www/sabredav/vendor/sabre/http/tests/Sabre
+@dirrm www/sabredav/vendor/sabre/http/tests
+@dirrm www/sabredav/vendor/sabre/http/lib/Sabre/HTTP/Auth
+@dirrm www/sabredav/vendor/sabre/http/lib/Sabre/HTTP
+@dirrm www/sabredav/vendor/sabre/http/lib/Sabre
+@dirrm www/sabredav/vendor/sabre/http/lib
+@dirrm www/sabredav/vendor/sabre/http/examples
+@dirrm www/sabredav/vendor/sabre/http/bin
+@dirrm www/sabredav/vendor/sabre/http
+@dirrm www/sabredav/vendor/sabre/event/tests/Sabre/Event
+@dirrm www/sabredav/vendor/sabre/event/tests/Sabre
+@dirrm www/sabredav/vendor/sabre/event/tests
+@dirrm www/sabredav/vendor/sabre/event/lib/Sabre/Event
+@dirrm www/sabredav/vendor/sabre/event/lib/Sabre
+@dirrm www/sabredav/vendor/sabre/event/lib
+@dirrm www/sabredav/vendor/sabre/event
+@dirrm www/sabredav/vendor/sabre
+@dirrm www/sabredav/vendor/composer
+@dirrm www/sabredav/vendor
+@dirrm www/sabredav/tests/Sabre/HTTP
+@dirrm www/sabredav/tests/Sabre/DAVACL/Property
+@dirrm www/sabredav/tests/Sabre/DAVACL/PrincipalBackend
+@dirrm www/sabredav/tests/Sabre/DAVACL/Exception
+@dirrm www/sabredav/tests/Sabre/DAVACL
+@dirrm www/sabredav/tests/Sabre/DAV/Tree
+@dirrm www/sabredav/tests/Sabre/DAV/Sync
+@dirrm www/sabredav/tests/Sabre/DAV/PropertyStorage/Backend
+@dirrm www/sabredav/tests/Sabre/DAV/PropertyStorage
+@dirrm www/sabredav/tests/Sabre/DAV/Property
+@dirrm www/sabredav/tests/Sabre/DAV/PartialUpdate
+@dirrm www/sabredav/tests/Sabre/DAV/Mount
+@dirrm www/sabredav/tests/Sabre/DAV/Mock
+@dirrm www/sabredav/tests/Sabre/DAV/Locks/Backend
+@dirrm www/sabredav/tests/Sabre/DAV/Locks
+@dirrm www/sabredav/tests/Sabre/DAV/FSExt
+@dirrm www/sabredav/tests/Sabre/DAV/Exception
+@dirrm www/sabredav/tests/Sabre/DAV/Browser
+@dirrm www/sabredav/tests/Sabre/DAV/Auth/Backend
+@dirrm www/sabredav/tests/Sabre/DAV/Auth
+@dirrm www/sabredav/tests/Sabre/DAV
+@dirrm www/sabredav/tests/Sabre/CardDAV/Property
+@dirrm www/sabredav/tests/Sabre/CardDAV/Backend
+@dirrm www/sabredav/tests/Sabre/CardDAV
+@dirrm www/sabredav/tests/Sabre/CalDAV/Subscriptions
+@dirrm www/sabredav/tests/Sabre/CalDAV/Schedule/IMip
+@dirrm www/sabredav/tests/Sabre/CalDAV/Schedule
+@dirrm www/sabredav/tests/Sabre/CalDAV/Property
+@dirrm www/sabredav/tests/Sabre/CalDAV/Principal
+@dirrm www/sabredav/tests/Sabre/CalDAV/Notifications/Notification
+@dirrm www/sabredav/tests/Sabre/CalDAV/Notifications
+@dirrm www/sabredav/tests/Sabre/CalDAV/Backend
+@dirrm www/sabredav/tests/Sabre/CalDAV
+@dirrm www/sabredav/tests/Sabre
+@dirrm www/sabredav/tests
+@dirrm www/sabredav/lib/DAVACL/Property
+@dirrm www/sabredav/lib/DAVACL/PrincipalBackend
+@dirrm www/sabredav/lib/DAVACL/Exception
+@dirrm www/sabredav/lib/DAVACL
+@dirrm www/sabredav/lib/DAV/Tree
+@dirrm www/sabredav/lib/DAV/Sync
+@dirrm www/sabredav/lib/DAV/PropertyStorage/Backend
+@dirrm www/sabredav/lib/DAV/PropertyStorage
+@dirrm www/sabredav/lib/DAV/Property
+@dirrm www/sabredav/lib/DAV/PartialUpdate
+@dirrm www/sabredav/lib/DAV/Mount
+@dirrm www/sabredav/lib/DAV/Locks/Backend
+@dirrm www/sabredav/lib/DAV/Locks
+@dirrm www/sabredav/lib/DAV/FSExt
+@dirrm www/sabredav/lib/DAV/FS
+@dirrm www/sabredav/lib/DAV/Exception
+@dirrm www/sabredav/lib/DAV/Browser/assets/openiconic
+@dirrm www/sabredav/lib/DAV/Browser/assets
+@dirrm www/sabredav/lib/DAV/Browser
+@dirrm www/sabredav/lib/DAV/Auth/Backend
+@dirrm www/sabredav/lib/DAV/Auth
+@dirrm www/sabredav/lib/DAV
+@dirrm www/sabredav/lib/CardDAV/Property
+@dirrm www/sabredav/lib/CardDAV/Backend
+@dirrm www/sabredav/lib/CardDAV
+@dirrm www/sabredav/lib/CalDAV/Subscriptions
+@dirrm www/sabredav/lib/CalDAV/Schedule
+@dirrm www/sabredav/lib/CalDAV/Property
+@dirrm www/sabredav/lib/CalDAV/Principal
+@dirrm www/sabredav/lib/CalDAV/Notifications/Notification
+@dirrm www/sabredav/lib/CalDAV/Notifications
+@dirrm www/sabredav/lib/CalDAV/Exception
+@dirrm www/sabredav/lib/CalDAV/Backend
+@dirrm www/sabredav/lib/CalDAV
+@dirrm www/sabredav/lib
+@dirrm www/sabredav/examples/webserver
+@dirrm www/sabredav/examples/sql
+@dirrm www/sabredav/examples
+@dirrm www/sabredav/bin
+@dirrm www/sabredav

@@ -1898,6 +1898,7 @@
     SUBDIR += rubygem-webrobots
     SUBDIR += rubygem-websocket
     SUBDIR += rubygem-yapra
+    SUBDIR += sabredav
     SUBDIR += sahi
     SUBDIR += sakai
     SUBDIR += samidare
