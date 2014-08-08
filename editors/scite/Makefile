@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	scite
-PORTVERSION=	3.4.1
+PORTVERSION=	3.4.4
 CATEGORIES=	editors gnome
 MASTER_SITES=	SF/scintilla/SciTE/${PORTVERSION}
 DISTNAME=	${PORTNAME}${PORTVERSION:S/.//g}
@@ -27,8 +27,7 @@ PORTDOCS=	*
 .include <bsd.port.options.mk>
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|[(]CC[)]|(CXX)|g ; s|[(]CCOMP[)]|(CC)|g ; \
-		s| -Os||g' ${WRKSRC}/makefile
+	@${REINPLACE_CMD} -e 's| -Os||g' ${WRKSRC}/makefile
 .if ${PORT_OPTIONS:MFULL_BUFFER_MENU}
 	@${REINPLACE_CMD} -e 's|30, "/Buffers|props.GetInt("buffers") > 30 ? props.GetInt("buffers") - 10 : 30, "/Buffers|g' ${WRKSRC}/SciTEGTK.cxx
 .endif

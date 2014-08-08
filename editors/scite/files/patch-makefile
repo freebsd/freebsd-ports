@@ -1,20 +1,21 @@
---- makefile.orig	2013-10-13 23:38:06.000000000 +0200
-+++ makefile	2014-01-27 15:50:05.858185668 +0100
-@@ -5,13 +5,6 @@
+--- ./makefile.orig	2014-07-25 07:00:13.000000000 -0400
++++ ./makefile	2014-08-07 21:57:08.000000000 -0400
+@@ -5,14 +5,6 @@
  # GNU make does not like \r\n line endings so should be saved to CVS in binary form.
  
  .SUFFIXES: .cxx .o .h .a .c
 -ifdef CLANG
--CC = clang -fsanitize=address --std=c++0x
--CCOMP = clang -fsanitize=address -Wno-empty-body
--else
--CC = g++
--CCOMP = gcc
+-# Can choose aspect to sanitize: address and undefined can simply change SANITIZE but for
+-# thread also need to create Position Independent Executable -> search online documentation
+-SANITIZE = address
+-#SANITIZE = undefined
+-CXX = clang++ -fsanitize=$(SANITIZE) --std=c++0x
+-CC = clang -fsanitize=$(SANITIZE) -Wno-empty-body
 -endif
- AR = ar
  
  ifdef GTK3
-@@ -24,7 +17,7 @@
+ GTKVERSION=gtk+-3.0
+@@ -24,7 +16,7 @@
  CONFIGFLAGS:=$(shell pkg-config --cflags $(GTKVERSION))
  CONFIGLIB:=$(shell pkg-config --libs $(GTKVERSION) gthread-2.0 gmodule-no-export-2.0)
  CONFIGTHREADS:=
@@ -23,15 +24,15 @@
  ifndef prefix
  ifdef gnomeprefix
    prefix=$(gnomeprefix)
-@@ -116,8 +109,9 @@
- $(PROG): SciTEGTK.o GUIGTK.o Widget.o \
- FilePath.o SciTEBase.o FileWorker.o Cookie.o Credits.o SciTEBuffers.o SciTEIO.o StringList.o Exporters.o StringHelpers.o \
+@@ -113,8 +105,9 @@
+ FilePath.o SciTEBase.o FileWorker.o Cookie.o Credits.o SciTEBuffers.o SciTEIO.o StringList.o \
+ Exporters.o  MatchMarker.o StringHelpers.o \
  PropSetFile.o MultiplexExtension.o DirectorExtension.o SciTEProps.o StyleDefinition.o StyleWriter.o Utf8_16.o \
 -	JobQueue.o GTKMutex.o IFaceTable.o $(COMPLIB) $(LUA_OBJS)
--	$(CC) `$(CONFIGTHREADS)` -rdynamic -Wl,--as-needed -Wl,--version-script lua.vers -DGTK $^ -o $@ $(CONFIGLIB) $(LIBDL) -lm -lstdc++
+-	$(CXX) `$(CONFIGTHREADS)` -rdynamic -Wl,--as-needed -Wl,--version-script lua.vers -DGTK $^ -o $@ $(CONFIGLIB) $(LIBDL) -lm -lstdc++
 +	JobQueue.o GTKMutex.o IFaceTable.o $(LUA_OBJS)
-+	$(CC) -DGTK $(CXXFLAGS) -rdynamic -Wl,--version-script lua.vers $(LDFLAGS) \
-+	-o $@ $^ -lscintilla -lscintilla_lexers -Wl,--as-needed $(CONFIGLIB)
++	$(CXX) -rdynamic -Wl,--version-script lua.vers -DGTK $(CXXFLAGS) $^ -o $@ \
++	$(LDFLAGS) -lscintilla -lscintilla_lexers -Wl,--as-needed $(CONFIGLIB)
  
  # Automatically generate header dependencies with "make deps"
  include deps.mak
