@@ -8,10 +8,12 @@ MASTER_SITES=		${MASTER_SITE_TEX_CTAN}
 MASTER_SITE_SUBDIR=	support/abc2mtex
 DISTNAME=		${PORTNAME}${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	joerg@FreeBSD.org
 COMMENT=	Music TeX converter from "abc" to MusiXTeX format
 
 RUN_DEPENDS=		musixtex:${PORTSDIR}/print/musixtex
+
+USE_GCC=	any
 
 NO_WRKSUBDIR=		yes
 
@@ -22,19 +24,19 @@ BIN_FILES=	abc2mtex abc2mtex \
 		search abc_search \
 		sort_in abc_sort_in
 
-NO_STAGE=	yes
 do-install:
 	cd ${WRKSRC}; \
-	${MKDIR} ${TEXMF}/doc/${PORTNAME}; \
-	${INSTALL_DATA} ${DOC_FILES} ${TEXMF}/doc/${PORTNAME}; \
-	${MKDIR} ${TEXMF}/doc/${PORTNAME}/examples; \
-	${INSTALL_DATA} ${EXAMPLE_FILES} ${TEXMF}/doc/${PORTNAME}/examples; \
-	${INSTALL_DATA} header.tex ${TEXMF}/tex/abc2mtex_header.tex
+	${MKDIR} ${STAGEDIR}/${TEXMF}/doc/${PORTNAME}; \
+	${MKDIR} ${STAGEDIR}/${TEXMF}/tex; \
+	${INSTALL_DATA} ${DOC_FILES} ${STAGEDIR}/${TEXMF}/doc/${PORTNAME}; \
+	${MKDIR} ${STAGEDIR}/${TEXMF}/doc/${PORTNAME}/examples; \
+	${INSTALL_DATA} ${EXAMPLE_FILES} ${STAGEDIR}/${TEXMF}/doc/${PORTNAME}/examples; \
+	${INSTALL_DATA} header.tex ${STAGEDIR}/${TEXMF}/tex/abc2mtex_header.tex
 	set -- ${BIN_FILES}; \
 	while [ $$# -gt 0 ] ; do \
 		src=$$1; tgt=$$2; shift; shift; \
-		${ECHO} "Installing $$src as ${PREFIX}/bin/$$tgt"; \
-		${INSTALL_PROGRAM} ${WRKSRC}/$$src ${PREFIX}/bin/$$tgt; \
+		${ECHO} "Installing $$src as ${STAGEDIR}/${PREFIX}/bin/$$tgt"; \
+		${INSTALL_PROGRAM} ${WRKSRC}/$$src ${STAGEDIR}/${PREFIX}/bin/$$tgt; \
 	done
 
 .include <bsd.port.mk>
