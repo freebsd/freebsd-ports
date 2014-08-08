@@ -8,7 +8,7 @@ CATEGORIES=	x11
 MASTER_SITES=	http://www.mired.org/downloads/
 
 MAINTAINER=	mwm@mired.org
-COMMENT=	An X utility for binding commands to a hot key
+COMMENT=	X utility for binding commands to a hot key
 
 WRKSRC=		${WRKDIR}/keylaunch
 USES=		perl5 gmake

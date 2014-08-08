@@ -8,7 +8,7 @@ CATEGORIES=	x11-clocks tk
 MASTER_SITES=	http://gromnizki.unixdev.net/soft/
 
 MAINTAINER=	gromnizki@unixdev.net
-COMMENT=	A Tcl/Tk-based timezone viewer
+COMMENT=	Tcl/Tk-based timezone viewer
 
 USES=		tk:84+,run
 NO_BUILD=	yes

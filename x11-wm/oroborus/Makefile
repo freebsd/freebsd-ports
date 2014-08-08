@@ -10,7 +10,7 @@ MASTER_SITES=	http://www.oroborus.org/debian/dists/sid/main/source/x11/ \
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	matt@peterson.org
-COMMENT=	A small and simple GNOME-compatible window manager
+COMMENT=	Small and simple GNOME-compatible window manager
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 

@@ -8,7 +8,7 @@ CATEGORIES=	x11-fm
 MASTER_SITES=	http://www.tundraware.com/Software/twander/
 
 MAINTAINER=	twander@tundraware.com
-COMMENT=	A Better Filesystem Browser
+COMMENT=	Better Filesystem Browser
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}tkinter>0:${PORTSDIR}/x11-toolkits/py-tkinter
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}tkinter>0:${PORTSDIR}/x11-toolkits/py-tkinter

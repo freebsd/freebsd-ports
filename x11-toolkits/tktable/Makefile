@@ -9,7 +9,7 @@ MASTER_SITES=	SF
 DISTNAME=	${PORTNAME:S/tk/Tk/}${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A table/matrix widget extension to Tk
+COMMENT=	Table/matrix widget extension to Tk
 
 LICENSE=	BSD
 LICENSE_FILE=	${WRKSRC}/license.txt

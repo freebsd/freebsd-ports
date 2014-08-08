@@ -10,7 +10,7 @@ PKGNAMEPREFIX=	ocaml-
 DISTNAME=	lablgtk-${PORTVERSION}
 
 MAINTAINER=	bf@FreeBSD.org
-COMMENT=	An Objective Caml interface to GTK+ 2.x
+COMMENT=	Objective Caml interface to GTK+ 2.x
 
 LICENSE=	LGPL21
 

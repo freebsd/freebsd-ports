@@ -9,7 +9,7 @@ MASTER_SITES=	https://opensource.conformal.com/snapshots/${PORTNAME}/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	zeising@FreeBSD.org
-COMMENT=	A small, dynamic tiling window manager for X11
+COMMENT=	Small, dynamic tiling window manager for X11
 
 LICENSE=	ISCL
 

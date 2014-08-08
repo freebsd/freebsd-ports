@@ -9,7 +9,7 @@ MASTER_SITES=	http://www.gnome-look.org/CONTENT/content-files/
 DISTNAME=	37099-HumanAzul
 
 MAINTAINER=	pneumann@gmail.com
-COMMENT=	A set of icons from the Ubuntu human look
+COMMENT=	Set of icons from the Ubuntu human look
 
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/HumanAzul

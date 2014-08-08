@@ -10,7 +10,7 @@ MASTER_SITE_SUBDIR=	stable
 DISTNAME=	AfterStep-${PORTVERSION}
 
 MAINTAINER=	glewis@FreeBSD.org
-COMMENT=	A stable version of the AfterStep window manager
+COMMENT=	Stable version of the AfterStep window manager
 
 LIB_DEPENDS=	libdbus-1.so:${PORTSDIR}/devel/dbus \
 		libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig \

@@ -8,7 +8,7 @@ MASTER_SITES=	LOCAL/gblach/e17/modules/
 PKGNAMEPREFIX=	e17-module-
 
 MAINTAINER=	gblach@FreeBSD.org
-COMMENT=	An e17 module which allows users to take screenshots
+COMMENT=	E17 module which allows users to take screenshots
 
 BUILD_DEPENDS=	enlightenment:${PORTSDIR}/x11-wm/enlightenment \
 		emprint:${PORTSDIR}/x11/emprint

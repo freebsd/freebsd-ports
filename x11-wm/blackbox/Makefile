@@ -8,7 +8,7 @@ CATEGORIES=	x11-wm
 MASTER_SITES=	SF/${PORTNAME}wm/${PORTNAME}wm/Blackbox%20${PORTVERSION}
 
 MAINTAINER=	A.J.Caines@halplant.com
-COMMENT=	A small and fast window manager for X11R6
+COMMENT=	Small and fast window manager for X11R6
 
 LICENSE=	MIT
 

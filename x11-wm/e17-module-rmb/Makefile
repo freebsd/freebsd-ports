@@ -8,7 +8,7 @@ MASTER_SITES=	LOCAL/gblach/e17/modules/
 PKGNAMEPREFIX=	e17-module-
 
 MAINTAINER=	gblach@FreeBSD.org
-COMMENT=	An e17 module to emulate right mouse button
+COMMENT=	E17 module to emulate right mouse button
 
 LICENSE=	GPLv3
 

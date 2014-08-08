@@ -8,7 +8,7 @@ MASTER_SITES=	LOCAL/gblach/e17/modules/
 PKGNAMEPREFIX=	e17-module-
 
 MAINTAINER=	gblach@FreeBSD.org
-COMMENT=	A module to set Alarms in Enlightenment 17
+COMMENT=	Module to set Alarms in Enlightenment 17
 
 LICENSE=	GPLv2
 

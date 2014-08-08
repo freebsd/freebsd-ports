@@ -10,7 +10,7 @@ MASTER_SITE_SUBDIR=	aqualightblue-gtk2
 DISTNAME=	aqualightblue-gtk2-default
 
 MAINTAINER=	philip@FreeBSD.org
-COMMENT=	A port of the GTK+ AquaLightBlue theme to GTK+ 2.0
+COMMENT=	Port of the GTK+ AquaLightBlue theme to GTK+ 2.0
 
 WRKSRC=		${WRKDIR}/AquaLightBlue
 

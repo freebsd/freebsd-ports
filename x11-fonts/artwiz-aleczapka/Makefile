@@ -8,7 +8,7 @@ CATEGORIES=	x11-fonts
 MASTER_SITES=	SF/artwizaleczapka/iso-8859-1/${PORTVERSION}
 
 MAINTAINER=	garga@FreeBSD.org
-COMMENT=	A set of (improved) artwiz fonts
+COMMENT=	Set of (improved) artwiz fonts
 
 NO_BUILD=	yes
 USES=		tar:bzip2

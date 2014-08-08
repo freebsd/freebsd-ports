@@ -8,7 +8,7 @@ CATEGORIES=	x11
 MASTER_SITES=	SF/gswitchit/OldFiles
 
 MAINTAINER=	gnome@FreeBSD.org
-COMMENT=	A little set of XML files useful for dealing with XKB rules
+COMMENT=	Little set of XML files useful for dealing with XKB rules
 
 USES=		gettext gmake iconv perl5
 USE_XORG=	x11
