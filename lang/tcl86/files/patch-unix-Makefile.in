@@ -1,5 +1,5 @@
 --- Makefile.in.orig	2013-09-19 22:17:13.000000000 +0200
-+++ Makefile.in	2014-04-28 10:32:43.000000000 +0200
++++ Makefile.in	2014-08-08 12:36:53.000000000 +0200
 @@ -54,6 +54,8 @@
  
  # Directory in which to install the include file tcl.h:
@@ -22,6 +22,15 @@
  
  # Package search path.
  TCL_PACKAGE_PATH	= @TCL_PACKAGE_PATH@
+@@ -152,7 +154,7 @@
+ # distribution, which is slower but guaranteed to work.
+ 
+ INSTALL_STRIP_PROGRAM   = -s
+-INSTALL_STRIP_LIBRARY   = -S -x
++INSTALL_STRIP_LIBRARY   = -s
+ 
+ INSTALL			= $(SHELL) $(UNIX_DIR)/install-sh -c
+ INSTALL_PROGRAM		= ${INSTALL}
 @@ -611,9 +613,9 @@
  # Start of rules
  #--------------------------------------------------------------------------
