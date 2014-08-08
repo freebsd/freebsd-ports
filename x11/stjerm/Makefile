@@ -7,7 +7,7 @@ CATEGORIES=	x11
 MASTER_SITES=	http://stjerm-terminal.googlecode.com/files/
 
 MAINTAINER=	lichray@gmail.com
-COMMENT=	A GTK+-based quake-like terminal emulator
+COMMENT=	GTK+-based quake-like terminal emulator
 
 USE_AUTOTOOLS=	aclocal autoheader automake
 AUTOMAKE_ARGS=	--add-missing

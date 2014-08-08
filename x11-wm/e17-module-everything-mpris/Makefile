@@ -8,7 +8,7 @@ MASTER_SITES=	LOCAL/gblach/e17/modules/
 PKGNAMEPREFIX=	e17-module-
 
 MAINTAINER=	gblach@FreeBSD.org
-COMMENT=	An e17 frontend module for mediaplayers that support mpris
+COMMENT=	E17 frontend module for mediaplayers that support mpris
 
 BUILD_DEPENDS=	enlightenment:${PORTSDIR}/x11-wm/enlightenment
 RUN_DEPENDS=	enlightenment:${PORTSDIR}/x11-wm/enlightenment

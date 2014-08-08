@@ -6,7 +6,7 @@ CATEGORIES=	x11-fonts
 MASTER_SITES=	LOCAL/rakuco
 
 MAINTAINER=	rakuco@FreeBSD.org
-COMMENT=	A monospace bitmap font, primarily aimed at programmers
+COMMENT=	Monospace bitmap font, primarily aimed at programmers
 
 LICENSE=	MIT
 

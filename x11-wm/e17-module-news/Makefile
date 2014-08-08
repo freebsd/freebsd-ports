@@ -8,7 +8,7 @@ MASTER_SITES=	LOCAL/gblach/e17/modules/
 PKGNAMEPREFIX=	e17-module-
 
 MAINTAINER=	gblach@FreeBSD.org
-COMMENT=	A module to display information feeds like Rss
+COMMENT=	Module to display information feeds like Rss
 
 LICENSE=	GPLv2
 

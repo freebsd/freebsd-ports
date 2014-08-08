@@ -7,7 +7,7 @@ CATEGORIES=	x11-themes enlightenment
 MASTER_SITES=	SF/enlightenment/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	gahr@FreeBSD.org
-COMMENT=	A set of themes for the e16 window manager
+COMMENT=	Set of themes for the e16 window manager
 
 DATADIR=	${PREFIX}/share/e16
 GNU_CONFIGURE=	yes

@@ -9,7 +9,7 @@ MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
-COMMENT=	A collection of backgrounds for GNOME 2
+COMMENT=	Collection of backgrounds for GNOME 2
 
 USES=		gettext gmake pathfix tar:bzip2
 GNU_CONFIGURE=	yes

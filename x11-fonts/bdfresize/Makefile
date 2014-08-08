@@ -8,7 +8,7 @@ CATEGORIES=	x11-fonts
 MASTER_SITES=	http://openlab.ring.gr.jp/efont/dist/tools/bdfresize/
 
 MAINTAINER=	sarumaru@jp.FreeBSD.org
-COMMENT=	A tool for resizing BDF format font
+COMMENT=	Tool for resizing BDF format font
 
 GNU_CONFIGURE=	yes
 PLIST_FILES=	bin/bdfresize \

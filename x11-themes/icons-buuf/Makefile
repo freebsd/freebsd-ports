@@ -10,7 +10,7 @@ DISTNAME=	Buuf_1.6-r2
 EXTRACT_SUFX=	_tar_bz2
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A cool set of icons for the most common usage
+COMMENT=	Cool set of icons for the most common usage
 
 NO_BUILD=	yes
 USES=	tar:bzip2

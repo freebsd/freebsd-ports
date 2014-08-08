@@ -10,7 +10,7 @@ MASTER_SITES=	http://kobyla.info/soft/distfiles/ \
 DISTNAME=	${PORTNAME}
 
 MAINTAINER=	garga@FreeBSD.org
-COMMENT=	A set of free fonts for X11 desktops
+COMMENT=	Set of free fonts for X11 desktops
 
 NO_BUILD=	yes
 USES=		tar:bzip2

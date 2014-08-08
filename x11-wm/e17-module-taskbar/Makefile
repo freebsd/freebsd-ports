@@ -8,7 +8,7 @@ MASTER_SITES=	LOCAL/gblach/e17/modules/
 PKGNAMEPREFIX=	e17-module-
 
 MAINTAINER=	gblach@FreeBSD.org
-COMMENT=	A classic taskbar module for e17
+COMMENT=	Classic taskbar module for e17
 
 LICENSE=	GPLv2
 

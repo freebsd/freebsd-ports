@@ -9,7 +9,7 @@ MASTER_SITES=	http://www.ne.jp/asahi/linux/timecop/software/ \
 		http://atreides.freenix.no/~anders/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A time/date applet for WindowMaker with fishes swimming around
+COMMENT=	Time/date applet for WindowMaker with fishes swimming around
 
 USE_GNOME=	gtk12
 

@@ -7,7 +7,7 @@ CATEGORIES=	x11-fonts
 MASTER_SITES=	http://sofia.nmsu.edu/~mleisher/Software/gbdfed/
 
 MAINTAINER=	lichray@gmail.com
-COMMENT=	A GTK2 bitmap font editor
+COMMENT=	GTK2 bitmap font editor
 
 LICENSE=	MIT
 

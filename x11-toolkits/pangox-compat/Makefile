@@ -9,7 +9,7 @@ MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
-COMMENT=	Depricated pangoX support.
+COMMENT=	Deprecated pangoX support
 
 BUILD_DEPENDS=	pango>=1.34.0:${PORTSDIR}/x11-toolkits/pango
 

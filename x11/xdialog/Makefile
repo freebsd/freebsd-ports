@@ -9,7 +9,7 @@ MASTER_SITES=	http://xdialog.free.fr/
 DISTNAME=	${PORTNAME:S/x/X/}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A drop in replacement for the "dialog" or "cdialog" programs
+COMMENT=	Drop in replacement for the "dialog" or "cdialog" programs
 
 USES=		tar:bzip2
 USE_GNOME=	gtk12

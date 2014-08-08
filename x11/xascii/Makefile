@@ -10,7 +10,7 @@ MASTER_SITES=	http://komquats.com/distfiles/ \
 WRKSRC=		${WRKDIR}
 
 MAINTAINER=	cy@FreeBSD.org
-COMMENT=	Display an ASCII table in decimal, octal, and hexadecimal.
+COMMENT=	Display an ASCII table in decimal, octal, and hexadecimal
 
 MAKE_ARGS+=	PREFIX=${PREFIX}
 USES=		imake

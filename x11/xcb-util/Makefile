@@ -9,7 +9,7 @@ CATEGORIES=	x11
 MASTER_SITES=	http://xcb.freedesktop.org/dist/
 
 MAINTAINER=	garga@FreeBSD.org
-COMMENT=	A module with libxcb/libX11 extension/replacement libraries
+COMMENT=	Module with libxcb/libX11 extension/replacement libraries
 
 XORG_CAT=	lib
 USES=		gmake tar:bzip2

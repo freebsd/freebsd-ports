@@ -9,7 +9,7 @@ MASTER_SITES=	http://fredrik.hubbe.net/x2vnc/
 DISTNAME=	${PORTNAME}-1.7.2
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A program to link multiple X and VNC servers together
+COMMENT=	Program to link multiple X and VNC servers together
 
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
