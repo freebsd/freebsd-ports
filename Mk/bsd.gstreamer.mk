@@ -71,7 +71,7 @@ GST1_MINIMAL_VERSION=	.0
 _GSTREAMER_PLUGINS= \
 		a52dec aalib amrnb amrwbdec cairo cdio \
 		cdparanoia dts dv faac faad flac flite \
-		gdkpixbuf gme gsm jack jpeg lame libcaca \
+		gdkpixbuf gme gnonlin gsm jack jpeg lame libcaca \
 		libmms libvisual mad mpeg2dec mpeg2enc neon ogg \
 		opencv opus pango resindvd schroedinger \
 		shout2 sidplay soundtouch soup speex taglib \
@@ -81,7 +81,7 @@ _GSTREAMER_PLUGINS= \
 .if defined(USE_GSTREAMER)
 _GSTREAMER_PLUGINS+= \
 		annodex bz2 cdaudio dvd esound ffmpeg fluendo-mp3 \
-		fluendo-mpegdemux gconf gio gl gnomevfs gnonlin hal \
+		fluendo-mpegdemux gconf gio gl gnomevfs hal \
 		ladspa libpng mm mp3 musepack nas pulse python qt4 \
 		sdl sndfile spc vdpau vp8 xvid
 .endif
