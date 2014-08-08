@@ -1,4 +1,4 @@
-# Created by: Charles RAPENNE <charles@bsd.zplay.eu>
+# Created by: Solène RAPENNE <charles@bsd.zplay.eu>
 # $FreeBSD$
 
 PORTNAME=	sxiv
@@ -7,7 +7,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	https://github.com/muennich/sxiv/archive/
 DISTNAME=	v${PORTVERSION}
 
-MAINTAINER=	charles@bsd.zplay.eu
+MAINTAINER=	solene@bsd.zplay.eu
 COMMENT=	Lightweight image viewer
 
 LICENSE=	GPLv2
