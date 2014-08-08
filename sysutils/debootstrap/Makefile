@@ -3,6 +3,7 @@
 
 PORTNAME=	debootstrap
 PORTVERSION=	1.0.60
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_DEBIAN}
 MASTER_SITE_SUBDIR=	pool/main/d/${PORTNAME}
@@ -11,11 +12,13 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 MAINTAINER=	lifanov@mail.lifanov.com
 COMMENT=	Install Debian base system into a directory
 
-RUN_DEPENDS=	wget:${PORTSDIR}/ftp/wget
+RUN_DEPENDS=	wget:${PORTSDIR}/ftp/wget \
+		dpkg:${PORTSDIR}/archivers/dpkg
 
 WRKSRC=		${WRKDIR}/${DISTNAME:S/_/-/}
 NO_BUILD=	yes
-USES=		gmake tar:xz
+USES=		gmake perl5 tar:xz
+USE_PERL5=	run
 MAKE_ARGS=	DESTDIR="${STAGEDIR}"
 
 ONLY_FOR_ARCHS=	i386 amd64

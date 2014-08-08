@@ -1,5 +1,5 @@
 --- ./debootstrap.orig	2014-02-07 10:25:58.000000000 -0500
-+++ ./debootstrap	2014-08-06 19:34:46.435155899 -0400
++++ ./debootstrap	2014-08-07 20:46:10.626600981 -0400
 @@ -13,7 +13,7 @@
  	if [ -x /debootstrap/debootstrap ]; then
  		DEBOOTSTRAP_DIR=/debootstrap
@@ -9,6 +9,19 @@
  	fi
  fi
  
+@@ -399,10 +399,10 @@
+ 
+ if in_path dpkg && \
+      dpkg --print-architecture >/dev/null 2>&1; then
+-	HOST_ARCH=`/usr/bin/dpkg --print-architecture`
++	HOST_ARCH=`%%PREFIX%%/bin/dpkg --print-architecture`
+ elif in_path udpkg && \
+      udpkg --print-architecture >/dev/null 2>&1; then
+-	HOST_ARCH=`/usr/bin/udpkg --print-architecture`
++	HOST_ARCH=`%%PREFIX%%/bin/udpkg --print-architecture`
+ elif [ -e $DEBOOTSTRAP_DIR/arch ]; then
+ 	HOST_ARCH=`cat $DEBOOTSTRAP_DIR/arch`
+ fi
 @@ -425,6 +425,10 @@
  	esac
  fi
@@ -20,3 +33,11 @@
  if [ -z "$ARCH" ]; then
  	ARCH=$HOST_ARCH
  fi
+@@ -621,7 +625,6 @@
+ 	if ! am_doing_phase second_stage; then
+ 		cp "$0"				 "$TARGET/debootstrap/debootstrap"
+ 		cp $DEBOOTSTRAP_DIR/functions	 "$TARGET/debootstrap/functions"
+-		cp $DEBOOTSTRAP_DIR/devices.tar.gz	 "$TARGET/debootstrap/devices.tar.gz"
+ 		cp $SCRIPT			 "$TARGET/debootstrap/suite-script"
+ 		echo "$ARCH"			>"$TARGET/debootstrap/arch"
+ 		echo "$SUITE"			>"$TARGET/debootstrap/suite"
