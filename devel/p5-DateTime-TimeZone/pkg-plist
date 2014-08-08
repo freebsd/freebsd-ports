@@ -5,9 +5,7 @@
 %%SITE_PERL%%/DateTime/TimeZone/Africa/Addis_Ababa.pm
 %%SITE_PERL%%/DateTime/TimeZone/Africa/Algiers.pm
 %%SITE_PERL%%/DateTime/TimeZone/Africa/Asmara.pm
-%%SITE_PERL%%/DateTime/TimeZone/Africa/Bamako.pm
 %%SITE_PERL%%/DateTime/TimeZone/Africa/Bangui.pm
-%%SITE_PERL%%/DateTime/TimeZone/Africa/Banjul.pm
 %%SITE_PERL%%/DateTime/TimeZone/Africa/Bissau.pm
 %%SITE_PERL%%/DateTime/TimeZone/Africa/Blantyre.pm
 %%SITE_PERL%%/DateTime/TimeZone/Africa/Brazzaville.pm
@@ -15,13 +13,10 @@
 %%SITE_PERL%%/DateTime/TimeZone/Africa/Cairo.pm
 %%SITE_PERL%%/DateTime/TimeZone/Africa/Casablanca.pm
 %%SITE_PERL%%/DateTime/TimeZone/Africa/Ceuta.pm
-%%SITE_PERL%%/DateTime/TimeZone/Africa/Conakry.pm
-%%SITE_PERL%%/DateTime/TimeZone/Africa/Dakar.pm
 %%SITE_PERL%%/DateTime/TimeZone/Africa/Dar_es_Salaam.pm
 %%SITE_PERL%%/DateTime/TimeZone/Africa/Djibouti.pm
 %%SITE_PERL%%/DateTime/TimeZone/Africa/Douala.pm
 %%SITE_PERL%%/DateTime/TimeZone/Africa/El_Aaiun.pm
-%%SITE_PERL%%/DateTime/TimeZone/Africa/Freetown.pm
 %%SITE_PERL%%/DateTime/TimeZone/Africa/Gaborone.pm
 %%SITE_PERL%%/DateTime/TimeZone/Africa/Harare.pm
 %%SITE_PERL%%/DateTime/TimeZone/Africa/Johannesburg.pm
@@ -31,7 +26,6 @@
 %%SITE_PERL%%/DateTime/TimeZone/Africa/Kinshasa.pm
 %%SITE_PERL%%/DateTime/TimeZone/Africa/Lagos.pm
 %%SITE_PERL%%/DateTime/TimeZone/Africa/Libreville.pm
-%%SITE_PERL%%/DateTime/TimeZone/Africa/Lome.pm
 %%SITE_PERL%%/DateTime/TimeZone/Africa/Luanda.pm
 %%SITE_PERL%%/DateTime/TimeZone/Africa/Lubumbashi.pm
 %%SITE_PERL%%/DateTime/TimeZone/Africa/Lusaka.pm
@@ -44,10 +38,7 @@
 %%SITE_PERL%%/DateTime/TimeZone/Africa/Nairobi.pm
 %%SITE_PERL%%/DateTime/TimeZone/Africa/Ndjamena.pm
 %%SITE_PERL%%/DateTime/TimeZone/Africa/Niamey.pm
-%%SITE_PERL%%/DateTime/TimeZone/Africa/Nouakchott.pm
-%%SITE_PERL%%/DateTime/TimeZone/Africa/Ouagadougou.pm
 %%SITE_PERL%%/DateTime/TimeZone/Africa/Porto_Novo.pm
-%%SITE_PERL%%/DateTime/TimeZone/Africa/Sao_Tome.pm
 %%SITE_PERL%%/DateTime/TimeZone/Africa/Tripoli.pm
 %%SITE_PERL%%/DateTime/TimeZone/Africa/Tunis.pm
 %%SITE_PERL%%/DateTime/TimeZone/Africa/Windhoek.pm
@@ -207,8 +198,8 @@
 %%SITE_PERL%%/DateTime/TimeZone/Asia/Beirut.pm
 %%SITE_PERL%%/DateTime/TimeZone/Asia/Bishkek.pm
 %%SITE_PERL%%/DateTime/TimeZone/Asia/Brunei.pm
+%%SITE_PERL%%/DateTime/TimeZone/Asia/Chita.pm
 %%SITE_PERL%%/DateTime/TimeZone/Asia/Choibalsan.pm
-%%SITE_PERL%%/DateTime/TimeZone/Asia/Chongqing.pm
 %%SITE_PERL%%/DateTime/TimeZone/Asia/Colombo.pm
 %%SITE_PERL%%/DateTime/TimeZone/Asia/Damascus.pm
 %%SITE_PERL%%/DateTime/TimeZone/Asia/Dhaka.pm
@@ -216,7 +207,6 @@
 %%SITE_PERL%%/DateTime/TimeZone/Asia/Dubai.pm
 %%SITE_PERL%%/DateTime/TimeZone/Asia/Dushanbe.pm
 %%SITE_PERL%%/DateTime/TimeZone/Asia/Gaza.pm
-%%SITE_PERL%%/DateTime/TimeZone/Asia/Harbin.pm
 %%SITE_PERL%%/DateTime/TimeZone/Asia/Hebron.pm
 %%SITE_PERL%%/DateTime/TimeZone/Asia/Ho_Chi_Minh.pm
 %%SITE_PERL%%/DateTime/TimeZone/Asia/Hong_Kong.pm
@@ -228,7 +218,6 @@
 %%SITE_PERL%%/DateTime/TimeZone/Asia/Kabul.pm
 %%SITE_PERL%%/DateTime/TimeZone/Asia/Kamchatka.pm
 %%SITE_PERL%%/DateTime/TimeZone/Asia/Karachi.pm
-%%SITE_PERL%%/DateTime/TimeZone/Asia/Kashgar.pm
 %%SITE_PERL%%/DateTime/TimeZone/Asia/Kathmandu.pm
 %%SITE_PERL%%/DateTime/TimeZone/Asia/Khandyga.pm
 %%SITE_PERL%%/DateTime/TimeZone/Asia/Kolkata.pm
@@ -258,6 +247,7 @@
 %%SITE_PERL%%/DateTime/TimeZone/Asia/Seoul.pm
 %%SITE_PERL%%/DateTime/TimeZone/Asia/Shanghai.pm
 %%SITE_PERL%%/DateTime/TimeZone/Asia/Singapore.pm
+%%SITE_PERL%%/DateTime/TimeZone/Asia/Srednekolymsk.pm
 %%SITE_PERL%%/DateTime/TimeZone/Asia/Taipei.pm
 %%SITE_PERL%%/DateTime/TimeZone/Asia/Tashkent.pm
 %%SITE_PERL%%/DateTime/TimeZone/Asia/Tbilisi.pm
@@ -280,7 +270,6 @@
 %%SITE_PERL%%/DateTime/TimeZone/Atlantic/Madeira.pm
 %%SITE_PERL%%/DateTime/TimeZone/Atlantic/Reykjavik.pm
 %%SITE_PERL%%/DateTime/TimeZone/Atlantic/South_Georgia.pm
-%%SITE_PERL%%/DateTime/TimeZone/Atlantic/St_Helena.pm
 %%SITE_PERL%%/DateTime/TimeZone/Atlantic/Stanley.pm
 %%SITE_PERL%%/DateTime/TimeZone/Australia/Adelaide.pm
 %%SITE_PERL%%/DateTime/TimeZone/Australia/Brisbane.pm
