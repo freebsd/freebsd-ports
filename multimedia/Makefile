@@ -287,6 +287,7 @@
     SUBDIR += py-ffmpeg
     SUBDIR += py-gstreamer
     SUBDIR += py-guessit
+    SUBDIR += py-gstreamer1
     SUBDIR += py-kaa-base
     SUBDIR += py-kaa-imlib2
     SUBDIR += py-kaa-metadata
@@ -299,6 +300,7 @@
     SUBDIR += py-soco
     SUBDIR += py-subliminal
     SUBDIR += py-tvnamer
+    SUBDIR += py3-gstreamer1
     SUBDIR += pyjama
     SUBDIR += pymp
     SUBDIR += qmmp
