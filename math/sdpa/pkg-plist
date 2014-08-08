@@ -1,5 +1,5 @@
 bin/sdpa
-share/sdpa/param.sdpa
-@dirrm share/sdpa
+%%DATADIR%%/param.sdpa
+@dirrm %%DATADIR%%
 %%PORTDOCS%%%%DOCSDIR%%/%%MANUALFILE%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
