@@ -1,0 +1,84 @@
+--- src/istgt_iscsi.c.orig	2012-10-28 00:26:36.000000000 +0200
++++ src/istgt_iscsi.c	2013-06-26 00:44:07.000000000 +0200
+@@ -670,16 +670,16 @@
+ 	if (rc < 0) {
+ 		now = time(NULL);
+ 		if (errno == ECONNRESET) {
+-			ISTGT_WARNLOG("Connection reset by peer (%s,time=%d)\n",
+-			    conn->initiator_name, (int)difftime(now, start));
++			ISTGT_WARNLOG("Connection reset by peer (%s,time=%.0f)\n",
++			    conn->initiator_name, difftime(now, start));
+ 			conn->state = CONN_STATE_EXITING;
+ 		} else if (errno == ETIMEDOUT) {
+-			ISTGT_WARNLOG("Operation timed out (%s,time=%d)\n",
+-			    conn->initiator_name, (int)difftime(now, start));
++			ISTGT_WARNLOG("Operation timed out (%s,time=%.0f)\n",
++			    conn->initiator_name, difftime(now, start));
+ 			conn->state = CONN_STATE_EXITING;
+ 		} else {
+-			ISTGT_ERRLOG("iscsi_read() failed (errno=%d,%s,time=%d)\n",
+-			    errno, conn->initiator_name, (int)difftime(now, start));
++			ISTGT_ERRLOG("iscsi_read() failed (errno=%d,%s,time=%.0f)\n",
++			    errno, conn->initiator_name, difftime(now, start));
+ 		}
+ 		return -1;
+ 	}
+@@ -762,8 +762,8 @@
+ 		rc = readv(conn->sock, &iovec[0], 4);
+ 		if (rc < 0) {
+ 			now = time(NULL);
+-			ISTGT_ERRLOG("readv() failed (%d,errno=%d,%s,time=%d)\n",
+-			    rc, errno, conn->initiator_name, (int)difftime(now, start));
++			ISTGT_ERRLOG("readv() failed (%d,errno=%d,%s,time=%.0f)\n",
++			    rc, errno, conn->initiator_name, difftime(now, start));
+ 			return -1;
+ 		}
+ 		if (rc == 0) {
+@@ -1257,8 +1257,8 @@
+ 		rc = writev(conn->sock, &iovec[0], 5);
+ 		if (rc < 0) {
+ 			now = time(NULL);
+-			ISTGT_ERRLOG("writev() failed (errno=%d,%s,time=%d)\n",
+-			    errno, conn->initiator_name, (int)difftime(now, start));
++			ISTGT_ERRLOG("writev() failed (errno=%d,%s,time=%.0f)\n",
++			    errno, conn->initiator_name, difftime(now, start));
+ 			return -1;
+ 		}
+ 		nbytes -= rc;
+@@ -3590,9 +3590,9 @@
+ 				if (rc < 0) {
+ 					now = time(NULL);
+ 					ISTGT_ERRLOG("MCS: CmdSN(%u) error ExpCmdSN=%u "
+-					    "(time=%d)\n",
++					    "(time=%.0f)\n",
+ 					    CmdSN, conn->sess->ExpCmdSN,
+-					    (int)difftime(now, start));
++					    difftime(now, start));
+ 					SESS_MTX_UNLOCK(conn);
+ 					return -1;
+ 				}
+--- src/istgt_lu_disk.c.orig	2012-10-28 00:26:36.000000000 +0200
++++ src/istgt_lu_disk.c	2013-06-26 00:44:05.000000000 +0200
+@@ -5288,9 +5288,9 @@
+ 						MTX_UNLOCK(&lu_task->trans_mutex);
+ 						now = time(NULL);
+ 						ISTGT_ERRLOG("timeout trans_cond CmdSN=%u "
+-						    "(time=%d)\n",
++						    "(time=%.0f)\n",
+ 						    lu_task->lu_cmd.CmdSN,
+-						    (int)difftime(now, start));
++						    difftime(now, start));
+ 						/* timeout */
+ 						return -1;
+ 					}
+@@ -5326,8 +5326,8 @@
+ 				if (rc == ETIMEDOUT) {
+ 					lu_task->error = 1;
+ 					now = time(NULL);
+-					ISTGT_ERRLOG("timeout trans_cond CmdSN=%u (time=%d)\n",
+-					    lu_task->lu_cmd.CmdSN, (int)difftime(now, start));
++					ISTGT_ERRLOG("timeout trans_cond CmdSN=%u (time=%.0f)\n",
++					    lu_task->lu_cmd.CmdSN, difftime(now, start));
+ 					return -1;
+ 				}
+ 				lu_task->error = 1;
