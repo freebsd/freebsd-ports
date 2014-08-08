@@ -1,0 +1,12 @@
+--- configure.in.orig	2014-08-04 08:34:39.000000000 +0200
++++ configure.in	2014-08-04 08:35:20.000000000 +0200
+@@ -30,7 +30,8 @@
+ AM_CONDITIONAL([MPC_CHAP], [test "x$enable_mpcchap" = xyes])
+ 
+ 
+-CHECK_VISIBILITY
++gl_VISIBILITY
++AM_CONDITIONAL([HAVE_VISIBILITY], [test "x$HAVE_VISIBILITY" = x1])
+ 
+ AC_CONFIG_FILES([
+ Makefile
