@@ -96,5 +96,5 @@ man/man8/zebra.8.gz
 @group %%ENABLE_GROUP%%
 @dirrmtry %%LOCALSTATE_DIR%%
 @dirrmtry %%ETCDIR%%
-@group root
-@owner wheel
+@group wheel
+@owner root
