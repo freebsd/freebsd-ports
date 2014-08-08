@@ -1,9 +1,9 @@
 bin/leafrogue
-share/rogue/leaf.msg
+share/rogue_s/leaf.msg
 %%PORTDOCS%%%%DOCSDIR%%/readme.txt
 %%PORTDOCS%%%%DOCSDIR%%/lf_rogue.html
 %%PORTDOCS%%%%DOCSDIR%%/lf_rogue.txt
 %%PORTDOCS%%%%DOCSDIR%%/guide.tex
 %%PORTDOCS%%%%DOCSDIR%%/guide.txt
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrmtry share/rogue
+@dirrmtry share/rogue_s
