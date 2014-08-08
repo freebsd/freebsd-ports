@@ -1,0 +1,17 @@
+--- Makefile.in.orig	2014-06-13 16:32:16.000000000 +0200
++++ Makefile.in	2014-08-08 20:04:46.000000000 +0200
+@@ -36809,6 +36773,14 @@
+ TARGET-target-libgcc=all
+ maybe-all-target-libgcc: all-target-libgcc
+ all-target-libgcc: configure-target-libgcc
++	cp ${HOST_SUBDIR}/gcc/libgcc.mvars gcc/
++	cp ${HOST_SUBDIR}/gcc/tconfig.h libgcc/
++	cp ${HOST_SUBDIR}/gcc/auto-host.h libgcc/
++	cp ${HOST_SUBDIR}/gcc/tm.h libgcc/
++	cp ${HOST_SUBDIR}/gcc/options.h libgcc/
++	cp ${HOST_SUBDIR}/gcc/insn-constants.h libgcc/
++	cp ${HOST_SUBDIR}/gcc/insn-modes.h libgcc/
++	cp ${HOST_SUBDIR}/gcc/gcov-iov.h libgcc/
+ 	@r=`${PWD_COMMAND}`; export r; \
+ 	s=`cd $(srcdir); ${PWD_COMMAND}`; export s; \
+ 	$(NORMAL_TARGET_EXPORTS)  \
