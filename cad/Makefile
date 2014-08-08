@@ -16,6 +16,7 @@
     SUBDIR += cascade
     SUBDIR += chipvault
     SUBDIR += cider
+    SUBDIR += cura-engine
     SUBDIR += dinotrace
     SUBDIR += dxf2fig
     SUBDIR += electric
