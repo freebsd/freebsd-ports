@@ -359,8 +359,8 @@ post-patch:
 		    ${WRKSRC}/Makefile.in
 		@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
 		    ${WRKSRC}/configure.in ${WRKSRC}/m4/aclocal.m4
-		@${REINPLACE_CMD} -e '1s|%%PREFIX%%|${PREFIX}|g' \
-		    ${WRKSRC}/script/findsmb.in
+		${REINPLACE_CMD} -e '\|^Libs:|d; s|^#Libs:|Libs:|g' \
+		    ${WRKSRC}/pkgconfig/*.pc.in
 ###
 ### end of common part
 ###
