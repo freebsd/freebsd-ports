@@ -1,0 +1,139 @@
+--- src/config.h.in.orig	2012-08-19 06:51:15.000000000 +0200
++++ src/config.h.in	2013-06-26 01:30:15.000000000 +0200
+@@ -54,8 +54,8 @@
+ /* Define to 1 if you have the `cam' library (-lcam). */
+ #undef HAVE_LIBCAM
+ 
+-/* Define to 1 if you have the `crypto' library (-lcrypto). */
+-#undef HAVE_LIBCRYPTO
++/* Define to 1 if you have the `md' library (-lmd). */
++#undef HAVE_LIBMD
+ 
+ /* Define to 1 if you have the `pthread' library (-lpthread). */
+ #undef HAVE_LIBPTHREAD
+--- src/istgt_md5.c.orig	2010-01-02 18:57:26.000000000 +0100
++++ src/istgt_md5.c	2013-06-26 01:35:24.000000000 +0200
+@@ -33,7 +33,8 @@
+ #include <stdint.h>
+ 
+ #include <stddef.h>
+-#include <openssl/md5.h>
++#include <sys/types.h>
++#include <md5.h>
+ 
+ #include "istgt.h"
+ #include "istgt_md5.h"
+@@ -41,34 +42,28 @@
+ int
+ istgt_md5init(ISTGT_MD5CTX *md5ctx)
+ {
+-	int rc;
+-
+ 	if (md5ctx == NULL)
+ 		return -1;
+-	rc = MD5_Init(&md5ctx->md5ctx);
+-	return rc;
++	MD5Init(&md5ctx->md5ctx);
++	return 1;
+ }
+ 
+ int
+ istgt_md5final(void *md5, ISTGT_MD5CTX *md5ctx)
+ {
+-	int rc;
+-
+ 	if (md5ctx == NULL || md5 == NULL)
+ 		return -1;
+-	rc = MD5_Final(md5, &md5ctx->md5ctx);
+-	return rc;
++	MD5Final(md5, &md5ctx->md5ctx);
++	return 1;
+ }
+ 
+ int
+ istgt_md5update(ISTGT_MD5CTX *md5ctx, const void *data, size_t len)
+ {
+-	int rc;
+-
+ 	if (md5ctx == NULL)
+ 		return -1;
+ 	if (data == NULL || len <= 0)
+ 		return 0;
+-	rc = MD5_Update(&md5ctx->md5ctx, data, len);
+-	return rc;
++	MD5Update(&md5ctx->md5ctx, data, len);
++	return 1;
+ }
+--- src/istgt_md5.h.orig	2010-01-02 18:57:26.000000000 +0100
++++ src/istgt_md5.h	2013-06-26 01:20:46.000000000 +0200
+@@ -30,7 +30,8 @@
+ 
+ #include <stddef.h>
+ 
+-#include <openssl/md5.h>
++#include <sys/types.h>
++#include <md5.h>
+ 
+ #define ISTGT_MD5DIGEST_LEN MD5_DIGEST_LENGTH
+ 
+--- configure.orig	2012-08-24 12:19:24.000000000 +0200
++++ configure	2013-06-26 01:23:49.000000000 +0200
+@@ -3472,13 +3472,13 @@
+ 
+ fi
+ 
+-{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for MD5_Update in -lcrypto" >&5
+-$as_echo_n "checking for MD5_Update in -lcrypto... " >&6; }
+-if ${ac_cv_lib_crypto_MD5_Update+:} false; then :
++{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for MD5Update in -lmd" >&5
++$as_echo_n "checking for MD5Update in -lmd... " >&6; }
++if ${ac_cv_lib_crypto_MD5Update+:} false; then :
+   $as_echo_n "(cached) " >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-lcrypto  $LIBS"
++LIBS="-lmd $LIBS"
+ cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+ /* end confdefs.h.  */
+ 
+@@ -3488,32 +3488,32 @@
+ #ifdef __cplusplus
+ extern "C"
+ #endif
+-char MD5_Update ();
++char MD5Update ();
+ int
+ main ()
+ {
+-return MD5_Update ();
++return MD5Update ();
+   ;
+   return 0;
+ }
+ _ACEOF
+ if ac_fn_c_try_link "$LINENO"; then :
+-  ac_cv_lib_crypto_MD5_Update=yes
++  ac_cv_lib_crypto_MD5Update=yes
+ else
+-  ac_cv_lib_crypto_MD5_Update=no
++  ac_cv_lib_crypto_MD5Update=no
+ fi
+ rm -f core conftest.err conftest.$ac_objext \
+     conftest$ac_exeext conftest.$ac_ext
+ LIBS=$ac_check_lib_save_LIBS
+ fi
+-{ $as_echo "$as_me:${as_lineno-$LINENO}: result: $ac_cv_lib_crypto_MD5_Update" >&5
+-$as_echo "$ac_cv_lib_crypto_MD5_Update" >&6; }
+-if test "x$ac_cv_lib_crypto_MD5_Update" = xyes; then :
++{ $as_echo "$as_me:${as_lineno-$LINENO}: result: $ac_cv_lib_crypto_MD5Update" >&5
++$as_echo "$ac_cv_lib_crypto_MD5Update" >&6; }
++if test "x$ac_cv_lib_crypto_MD5Update" = xyes; then :
+   cat >>confdefs.h <<_ACEOF
+-#define HAVE_LIBCRYPTO 1
++#define HAVE_LIBMD 1
+ _ACEOF
+ 
+-  LIBS="-lcrypto $LIBS"
++  LIBS="-lmd $LIBS"
+ 
+ fi
