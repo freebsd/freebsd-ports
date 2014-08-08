@@ -1,0 +1,16 @@
+%%DATADIR%%/config.inc.php
+%%DATADIR%%/dddbl.php
+%%DATADIR%%/handler/register_queue_handler.inc.php
+%%DATADIR%%/handler/register_result_handler.inc.php
+%%DATADIR%%/inc/DataObject.class.php
+%%DATADIR%%/inc/DataObjectPool.class.php
+%%DATADIR%%/inc/Queue.class.php
+%%DATADIR%%/inc/Singleton.class.php
+%%DATADIR%%/inc/database.func.php
+%%DATADIR%%/inc/exceptions/QueryException.class.php
+%%DATADIR%%/inc/exceptions/UnexpectedParameterTypeException.class.php
+@dirrm %%DATADIR%%
+@dirrm %%DATADIR%%/handler
+@dirrm %%DATADIR%%/inc/
+@dirrm %%DATADIR%%/inc/exceptions
+
