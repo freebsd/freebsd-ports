@@ -300,7 +300,6 @@ share/locale/tl/LC_MESSAGES/jokosher.mo
 share/locale/tr/LC_MESSAGES/jokosher.mo
 share/locale/uk/LC_MESSAGES/jokosher.mo
 share/locale/zh_CN/LC_MESSAGES/jokosher.mo
-share/mime/application/x-jokosher.xml
 share/mime/packages/jokosher.xml
 %%OMF%%share/omf/jokosher/jokosher-C.omf
 share/pixmaps/jokosher.png
@@ -316,23 +315,8 @@ share/pixmaps/jokosher.png
 @dirrm share/gnome/help/jokosher/C/figures
 @dirrm share/gnome/help/jokosher/C
 @dirrm share/gnome/help/jokosher
-@dirrmtry share/icons/hicolor/48x48/apps
-@dirrmtry share/icons/hicolor/48x48
-@dirrmtry share/icons/hicolor
-@dirrmtry share/icons
-@dirrmtry share/mime/application
 @dirrmtry share/locale/ace/LC_MESSAGES
 @dirrmtry share/locale/ace
 @dirrmtry share/locale/en_PH/LC_MESSAGES
 @dirrmtry share/locale/en_PH
-@dirrmtry share/locale/kk/LC_MESSAGES
-@dirrmtry share/locale/kk
-@dirrmtry share/locale/mr/LC_MESSAGES
-@dirrmtry share/locale/mr
-@dirrmtry share/locale/tl/LC_MESSAGES
-@dirrmtry share/locale/tl
 %%OMF%%@dirrm share/omf/jokosher
-@exec %%LOCALBASE%%/bin/update-desktop-database %D/share/applications 2>/dev/null || true
-@unexec %%LOCALBASE%%/bin/update-desktop-database %D/share/applications 2>/dev/null || true
-@exec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
-@unexec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
