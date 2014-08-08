@@ -176,6 +176,7 @@
     SUBDIR += multisync-syncml
     SUBDIR += myitcrm
     SUBDIR += nagaina
+    SUBDIR += nautilus-actions
     SUBDIR += nautilus-sendto
     SUBDIR += nemo-extensions
     SUBDIR += note
