@@ -1,6 +1,6 @@
---- ./setup.py.orig	2013-10-15 14:55:22.000000000 +0000
-+++ ./setup.py	2013-12-15 21:41:37.000000000 +0000
-@@ -45,7 +45,10 @@
+--- setup.py.orig	2014-08-03 18:09:32 +0000
++++ setup.py
+@@ -44,7 +44,10 @@
      ret = []
      for topdir in topdirs:
          for r, _ds, fs in os.walk(topdir):
