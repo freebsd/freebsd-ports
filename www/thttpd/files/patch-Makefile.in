@@ -1,6 +1,6 @@
 --- Makefile.in.orig	Tue Apr 24 19:21:06 2001
 +++ Makefile.in	Tue Apr 24 19:21:33 2001
-@@ -47,7 +47,7 @@
+@@ -47,7 +47,7 @@ CGIBINDIR =	$(WEBDIR)/cgi-bin
  # You shouldn't need to edit anything below here.
  
  CC =		@CC@
@@ -9,3 +9,44 @@
  DEFS =		@DEFS@
  INCLS =		-I.
  CFLAGS =	$(CCOPT) $(DEFS) $(INCLS)
+@@ -96,9 +96,7 @@ mime_types.h:	mime_types.txt
+ 
+ subdirs:
+ 	for i in $(SUBDIRS) ; do ( \
+-	    cd $$i ; \
+-	    pwd ; \
+-	    $(MAKE) $(MFLAGS) \
++	    $(MAKE) -C $$i $(MFLAGS) \
+ 		WEBDIR=$(WEBDIR) \
+ 		CGIBINDIR=$(CGIBINDIR) \
+ 		MANDIR=$(MANDIR) \
+@@ -118,9 +116,7 @@ install-man:
+ 
+ installsubdirs:
+ 	for i in $(SUBDIRS) ; do ( \
+-	    cd $$i ; \
+-	    pwd ; \
+-	    $(MAKE) $(MFLAGS) \
++	    $(MAKE) -C $$i $(MFLAGS) \
+ 		WEBDIR=$(WEBDIR) \
+ 		CGIBINDIR=$(CGIBINDIR) \
+ 		MANDIR=$(MANDIR) \
+@@ -137,16 +133,12 @@ distclean:	distcleansubdirs
+ 
+ cleansubdirs:
+ 	for i in $(SUBDIRS) ; do ( \
+-	    cd $$i ; \
+-	    pwd ; \
+-	    $(MAKE) $(MFLAGS) clean \
++	    $(MAKE) -C $$i $(MFLAGS) clean \
+ 	) ; done
+ 
+ distcleansubdirs:
+ 	for i in $(SUBDIRS) ; do ( \
+-	    cd $$i ; \
+-	    pwd ; \
+-	    $(MAKE) $(MFLAGS) distclean \
++	    $(MAKE) -C $$i $(MFLAGS) distclean \
+ 	) ; done
+ 
+ tags:
