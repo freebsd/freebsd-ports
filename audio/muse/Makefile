@@ -5,7 +5,7 @@ PORTNAME=	MuSE
 PORTVERSION=	0.9.2
 PORTREVISION=	14
 CATEGORIES=	audio
-MASTER_SITES=	http://files.dyne.org/muse/releases/
+MASTER_SITES=	http://files.dyne.org/.xsend.php?file=muse/releases/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Multiple Streaming Engine
@@ -31,23 +31,15 @@ PLIST_FILES=	bin/muse man/man1/muse.1.gz
 PLIST_FILES+=	share/locale/${lang}/LC_MESSAGES/muse.mo
 .endfor
 
+X11_USE=		GNOME=gtk20
+X11_CONFIGURE_OFF=	--without-x --with-rubik
+
+LAME_LIB_DEPENDS=	libmp3lame.so:${PORTSDIR}/audio/lame
+LAME_CONFIGURE_ENV=	ac_cv_header_lame_lame_h=no
+
+SNDFILE_LIB_DEPENDS=	libsndfile.so:${PORTSDIR}/audio/libsndfile
+
 .include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MX11}
-USE_GNOME+=	gtk20
-.else
-CONFIGURE_ARGS+=--without-x --with-rubik
-.endif
-
-.if ${PORT_OPTIONS:MLAME}
-LIB_DEPENDS+=	libmp3lame.so:${PORTSDIR}/audio/lame
-.else
-CONFIGURE_ENV+=	ac_cv_header_lame_lame_h=no
-.endif
-
-.if ${PORT_OPTIONS:MSNDFILE}
-LIB_DEPENDS+=	libsndfile.so:${PORTSDIR}/audio/libsndfile
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|machine/soundcard.h|sys/soundcard.h|' \
@@ -58,9 +50,7 @@ post-patch:
 .endif
 
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
-.endif
 
 .include <bsd.port.mk>
