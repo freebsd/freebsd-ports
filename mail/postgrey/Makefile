@@ -34,45 +34,42 @@ PGY_DIR?=	/var/db/postgrey
 
 USERS=		${PGY_USERNAME}
 GROUPS=		${PGY_GROUPNAME}
-MAN1=		${PORTNAME}.1 policy-test.1 postgreyreport.1
+MPAGES=		postgrey.1 policy-test.1 postgreyreport.1
 
 USES=		shebangfix perl5
-SHEBANG_FILES=	${WRKSRC}/postgrey
-
-NO_STAGE=	yes
+SHEBANG_FILES=	postgrey policy-test contrib/postgreyreport
 
 OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.options.mk>
 
 post-patch:
-	@${REINPLACE_CMD} -e 's#nogroup#${PGY_GROUPNAME}#' ${WRKSRC}/postgrey
-	@${REINPLACE_CMD} -e 's#/etc/main.cf#/etc/postfix/main.cf#' ${WRKSRC}/postgrey
-	@${REINPLACE_CMD} -e 's#/etc/postfix#${PREFIX}&#' ${WRKSRC}/postgrey ${WRKSRC}/postgrey_whitelist_*
-	@${REINPLACE_CMD} -e 's#/var/spool/postfix/postgrey#${PGY_DIR}#' ${WRKSRC}/postgrey ${WRKSRC}/contrib/postgreyreport
-
-pre-install:
-	@${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
+	@${REINPLACE_CMD} -e 's#nogroup#${PGY_GROUPNAME}#' \
+		-e 's#/etc/main.cf#/etc/postfix/main.cf#' ${WRKSRC}/postgrey
+	@${REINPLACE_CMD} -e 's#/etc/postfix#${PREFIX}&#' \
+		${WRKSRC}/postgrey ${WRKSRC}/postgrey_whitelist_*
+	@${REINPLACE_CMD} -e 's#/var/spool/postfix/postgrey#${PGY_DIR}#' \
+		${WRKSRC}/postgrey ${WRKSRC}/contrib/postgreyreport
 
 do-install:
-	@${POD2MAN} ${WRKSRC}/${PORTNAME} ${WRKSRC}/${PORTNAME}.1
-	@${POD2MAN} ${WRKSRC}/policy-test ${WRKSRC}/policy-test.1
-	@${POD2MAN} ${WRKSRC}/contrib/postgreyreport ${WRKSRC}/postgreyreport.1
-	@${INSTALL_SCRIPT} ${WRKSRC}/postgrey ${PREFIX}/sbin
-	@${INSTALL_SCRIPT} ${WRKSRC}/policy-test ${PREFIX}/sbin
-	@${INSTALL_SCRIPT} ${WRKSRC}/contrib/postgreyreport ${PREFIX}/sbin
-	@${INSTALL} -d ${PREFIX}/etc/postfix
+	${POD2MAN} ${WRKSRC}/${PORTNAME} ${WRKSRC}/${PORTNAME}.1
+	${POD2MAN} ${WRKSRC}/policy-test ${WRKSRC}/policy-test.1
+	${POD2MAN} ${WRKSRC}/contrib/postgreyreport ${WRKSRC}/postgreyreport.1
+	${INSTALL_SCRIPT} ${WRKSRC}/postgrey ${STAGEDIR}${PREFIX}/sbin
+	${INSTALL_SCRIPT} ${WRKSRC}/policy-test ${STAGEDIR}${PREFIX}/sbin
+	${INSTALL_SCRIPT} ${WRKSRC}/contrib/postgreyreport \
+		${STAGEDIR}${PREFIX}/sbin
+	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/postfix ${STAGEDIR}/${PGY_DIR}
 .for i in ${ETCFILES}
-	${INSTALL_DATA} ${WRKSRC}/postgrey_${i} ${PREFIX}/etc/postfix/dist-postgrey_${i}
+	${INSTALL_DATA} ${WRKSRC}/postgrey_${i} \
+		${STAGEDIR}${PREFIX}/etc/postfix/dist-postgrey_${i}
 .endfor
 
 .if ${PORT_OPTIONS:MDOCS}
-	@${INSTALL} -d ${DOCSDIR}
-	@cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	@cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
 .endif
-	@cd ${WRKSRC} && ${INSTALL_MAN} ${MAN1} ${MANPREFIX}/man/man1
-
-post-install:
-	@${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
+	@cd ${WRKSRC} && \
+		${INSTALL_MAN} ${MPAGES} ${STAGEDIR}${MANPREFIX}/man/man1
 
 .include <bsd.port.mk>

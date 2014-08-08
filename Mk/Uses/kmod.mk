@@ -11,7 +11,7 @@
 .if !defined(_INCLUDE_USES_KMOD_MK)
 _INCLUDE_USES_KMOD_MK=	yes
 
-_USES_POST=	kmod
+_USES_POST+=	kmod
 
 .if defined(kmod_ARGS)
 IGNORE=	USES=kmod takes no arguments

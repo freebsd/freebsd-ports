@@ -8,7 +8,7 @@ CATEGORIES=	x11-clocks windowmaker
 MASTER_SITES=	http://www.inxsoft.net/wmbinclock/
 
 MAINTAINER=	logix@foobar.franken.de
-COMMENT=	A binary clock in a windowmaker applet
+COMMENT=	Binary clock in a windowmaker applet
 
 PLIST_FILES=	bin/wmBinClock
 USES=		gmake

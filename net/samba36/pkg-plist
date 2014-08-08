@@ -1,6 +1,5 @@
 etc/%%SAMBA_CONFIG%%.sample
 bin/eventlogadm
-bin/findsmb
 bin/make_smbpasswd
 bin/net
 bin/nmblookup

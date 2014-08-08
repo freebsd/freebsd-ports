@@ -8,7 +8,7 @@ CATEGORIES=	x11-clocks
 MASTER_SITES=	http://www.bonnyswan.com/gtubeclock/downloads/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A nixie tube clock for GNOME
+COMMENT=	Nixie tube clock for GNOME
 
 USES=		pkgconfig pathfix
 USE_XORG=	x11

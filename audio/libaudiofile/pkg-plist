@@ -4,9 +4,9 @@ include/af_vfs.h
 include/audiofile.h
 include/aupvlist.h
 lib/libaudiofile.a
-lib/libaudiofile.la
 lib/libaudiofile.so
 lib/libaudiofile.so.1
+lib/libaudiofile.so.1.0.0
 libdata/pkgconfig/audiofile.pc
 man/man1/sfconvert.1.gz
 man/man1/sfinfo.1.gz

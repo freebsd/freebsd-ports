@@ -202,6 +202,7 @@ share/applications/hydrogen.desktop
 %%DATADIR%%/data/doc/img/PreferencesAppearance_V2.png
 %%DATADIR%%/data/doc/img/PreferencesAppearance.png
 %%DATADIR%%/data/doc/img/PreferencesAudioSystem_V2.png
+%%DATADIR%%/data/doc/img/PreferencesAudioSystem_V3.png
 %%DATADIR%%/data/doc/img/PreferencesAudioSystem.png
 %%DATADIR%%/data/doc/img/PreferencesGeneral_V2.png
 %%DATADIR%%/data/doc/img/PreferencesGeneral_V3.png
@@ -262,6 +263,7 @@ share/applications/hydrogen.desktop
 %%DATADIR%%/data/doc/manual.pot
 %%DATADIR%%/data/doc/MidiInstrumentMapping.ods
 %%DATADIR%%/data/doc/README.DOCUMENTATION.txt
+%%DATADIR%%/data/doc/TODO
 %%DATADIR%%/data/doc/tutorial_en.html
 %%DATADIR%%/data/doc/tutorial_fr.html
 %%DATADIR%%/data/doc/tutorial_fr.po
@@ -318,6 +320,8 @@ share/applications/hydrogen.desktop
 %%DATADIR%%/data/i18n/hydrogen.es.ts
 %%DATADIR%%/data/i18n/hydrogen.fr.qm
 %%DATADIR%%/data/i18n/hydrogen.fr.ts
+%%DATADIR%%/data/i18n/hydrogen.gl.qm
+%%DATADIR%%/data/i18n/hydrogen.gl.ts
 %%DATADIR%%/data/i18n/hydrogen.hr.qm
 %%DATADIR%%/data/i18n/hydrogen.hr.ts
 %%DATADIR%%/data/i18n/hydrogen.hu_HU.qm
@@ -334,6 +338,8 @@ share/applications/hydrogen.desktop
 %%DATADIR%%/data/i18n/hydrogen.pt_BR.ts
 %%DATADIR%%/data/i18n/hydrogen.ru.qm
 %%DATADIR%%/data/i18n/hydrogen.ru.ts
+%%DATADIR%%/data/i18n/hydrogen.sr.qm
+%%DATADIR%%/data/i18n/hydrogen.sr.ts
 %%DATADIR%%/data/i18n/hydrogen.sv.qm
 %%DATADIR%%/data/i18n/hydrogen.sv.ts
 %%DATADIR%%/data/i18n/stats.py

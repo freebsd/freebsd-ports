@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	lacaml
-PORTVERSION=	7.0.13
+PORTVERSION=	7.1.3
 CATEGORIES=	devel
-MASTER_SITES=	http://cdn.bitbucket.org/mmottl/lacaml/downloads/
+MASTER_SITES=	GH
 PKGNAMEPREFIX=	ocaml-
 
 MAINTAINER=	ports@FreeBSD.org
@@ -14,6 +14,12 @@ LICENSE=	LGPL21
 
 LIB_DEPENDS=	libblas.so:${PORTSDIR}/math/blas \
 		liblapack.so:${PORTSDIR}/math/lapack
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	mmottl
+GH_PROJECT=	${PORTNAME}
+GH_TAGNAME=	${PORTVERSION:S/^/v/}
+GH_COMMIT=	7731438
 
 USE_OCAML=	yes
 USE_OCAML_FINDLIB=yes
@@ -49,5 +55,7 @@ post-install:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	@(cd ${WRKSRC}/examples && ${COPYTREE_SHARE} . \
 		${STAGEDIR}${EXAMPLESDIR})
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/${OCAML_SITELIBDIR}/lacaml/*.cmxs
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/${OCAML_SITELIBDIR}/lacaml/*.so
 
 .include <bsd.port.mk>

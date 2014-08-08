@@ -1,0 +1,5 @@
+DDDBL is a Definition Driven DataBase Layer written in PHP. It uses PDO to
+support the work on all supported database systems and eases the handling
+of the query-results.
+
+WWW: http://www.dddbl.de/

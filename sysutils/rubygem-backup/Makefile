@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	backup
-PORTVERSION=	3.10.0
+PORTVERSION=	3.11.0
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 
@@ -23,8 +23,8 @@ RUN_DEPENDS=	rubygem-builder32>=3.2.2:${PORTSDIR}/devel/rubygem-builder32 \
 		rubygem-mail>=2.5.4:${PORTSDIR}/mail/rubygem-mail \
 		rubygem-mime-types>=1.23:${PORTSDIR}/misc/rubygem-mime-types \
 		rubygem-multi_json>=1.7.7:${PORTSDIR}/devel/rubygem-multi_json \
-		rubygem-multi_xml>=0.5.4:${PORTSDIR}/textproc/rubygem-multi_xml \
 		rubygem-multipart-post>=1.2.0:${PORTSDIR}/www/rubygem-multipart-post \
+		rubygem-multi_xml>=0.5.4:${PORTSDIR}/textproc/rubygem-multi_xml \
 		rubygem-net-scp>=1.1.2:${PORTSDIR}/security/rubygem-net-scp \
 		rubygem-net-sftp>=2.1.2:${PORTSDIR}/security/rubygem-net-sftp \
 		rubygem-net-ssh>=2.6.8:${PORTSDIR}/security/rubygem-net-ssh \

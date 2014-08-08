@@ -8,7 +8,7 @@ MASTER_SITES=	http://www.squidjam.com/matwm/pub/
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
 MAINTAINER=	sic_zer0@hotmail.com
-COMMENT=	A tiny interactive paint program that draws as your desktop wallpaper
+COMMENT=	Tiny interactive paint program that draws as your desktop wallpaper
 
 USE_XORG=	x11 xext
 PLIST_FILES=	bin/deskpaint

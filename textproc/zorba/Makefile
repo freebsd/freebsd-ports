@@ -13,8 +13,7 @@ COMMENT=	General purpose C++ XQuery processor
 
 LICENSE=	APACHE20
 
-LIB_DEPENDS=	libexecinfo.so:${PORTSDIR}/devel/libexecinfo \
-   		libxerces-c.so.3:${PORTSDIR}/textproc/xerces-c3 \
+LIB_DEPENDS=	libxerces-c.so.3:${PORTSDIR}/textproc/xerces-c3 \
 		libicudata.so:${PORTSDIR}/devel/icu \
 		libcurl.so:${PORTSDIR}/ftp/curl \
 		libtidy.so:${PORTSDIR}/www/tidy-lib \
@@ -31,7 +30,7 @@ CONFLICTS=	xqilla-[0-9]*
 USE_GNOME=	libxml2 libxslt
 USE_LDCONFIG=	yes
 USE_CXXSTD=	c++11
-USES=		cmake:outsource iconv compiler:c++11-lib
+USES=		cmake:outsource compiler:c++11-lib execinfo iconv
 CXXFLAGS+=	-I${LOCALBASE}/include -O1 # compiler hangs with -O2 on CURRENT
 LDFLAGS+=	-L${LOCALBASE}/lib
 CMAKE_ARGS=	-DCMAKE_REQUIRED_FLAGS:STRING="-I${LOCALBASE}/include -L${LOCALBASE}/lib" \
@@ -104,8 +103,15 @@ BUILD_DEPENDS+=	doxygen:${PORTSDIR}/devel/doxygen
 .endif
 
 post-patch:
+.if exists(/usr/lib/libexecinfo.so)
+	${REINPLACE_CMD} -e 's|%%LIBEXECINFO%%|/usr/lib/libexecinfo.so|' \
+	    ${WRKSRC}/CMakeLists.txt
+.else
+	${REINPLACE_CMD} -e 's|%%LIBEXECINFO%%|${LOCALBASE}/lib/libexecinfo.so|' \
+	    ${WRKSRC}/CMakeLists.txt
+.endif
 	${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
-	   ${WRKSRC}/CMakeLists.txt ${WRKSRC}/cmake_modules/FindPHP5.cmake
+	   ${WRKSRC}/cmake_modules/FindPHP5.cmake
 .if !${PORT_OPTIONS:MDOCS}
 	${REINPLACE_CMD} -e '531s|^|#|' ${WRKSRC}/CMakeLists.txt
 .endif

@@ -1,0 +1,66 @@
+--- Makefile.orig	1992-02-24 22:15:42.000000000 +0100
++++ Makefile	2014-08-07 18:09:42.383354763 +0200
+@@ -31,15 +31,15 @@
+ # INSTALL_HELP is a list of the public version of the help file.
+ # INSTALL_LESSMAN is a list of the public versions of the less manual page.
+ # INSTALL_KEYMAN is a list of the public versions of the lesskey manual page.
+-ROOT =  ../../VN 
++ROOT =  ${PREFIX}
+ INSTALL_LESS =		$(ROOT)/bin/vnless
+-INSTALL_KEY =		$(ROOT)/bin/lesskey
+-INSTALL_HELP =		$(ROOT)/man/less.help
+-INSTALL_LESSMAN =	$(ROOT)/man/vnless.1
+-INSTALL_KEYMAN =	$(ROOT)/man/lesskey.1
++INSTALL_KEY =		$(ROOT)/bin/vnlesskey
++INSTALL_HELP =		$(ROOT)/share/misc/vnless.help
++INSTALL_LESSMAN =	$(ROOT)/man/man1/vnless.1
++INSTALL_KEYMAN =	$(ROOT)/man/man1/vnlesskey.1
+ LESS_MANUAL =		less.man
+ KEY_MANUAL =		lesskey.man
+-HELPFILE =		$(ROOT)/man/less.help
++HELPFILE =		$(ROOT)/share/misc/vnless.help
+ 
+ 
+ # OPTIM is passed to the compiler and the loader.
+@@ -47,8 +47,9 @@
+ #OPTIM = -O
+ 
+ #CFLAGS = $(OPTIM)
+-CFLAGS = -O
+-LDFLAGS = 
++CFLAGS ?= -O
++LDFLAGS ?= 
++LDLIBS = -lcompat
+ 
+ 
+ ##########################################################################
+@@ -82,24 +83,19 @@
+ 	$(CC) $(CFLAGS) -c -DHELPFILE=\"$(HELPFILE)\" help.c
+ 
+ install_less: vnless
+-	for f in $(INSTALL_LESS); do  rm -f $$f; cp vnless $$f;  done
+-	touch install_less
++	$(BSD_INSTALL_PROGRAM) vnless $(DESTDIR)$(INSTALL_LESS)
+ 
+ install_key: lesskey
+-	for f in $(INSTALL_KEY); do  rm -f $$f; cp lesskey $$f;  done
+-	touch install_key
++	$(BSD_INSTALL_PROGRAM) lesskey $(DESTDIR)$(INSTALL_KEY)
+ 
+ install_help: less.help
+-	for f in $(INSTALL_HELP); do  rm -f $$f; cp less.help $$f;  done
+-	touch install_help
++	$(BSD_INSTALL_DATA) less.help $(DESTDIR)$(INSTALL_HELP)
+ 
+ install_lman: $(LESS_MANUAL) 
+-	for f in $(INSTALL_LESSMAN); do  rm -f $$f; cp $(LESS_MANUAL) $$f;  done
+-	touch install_lman
++	$(BSD_INSTALL_MAN) $(LESS_MANUAL) $(DESTDIR)$(INSTALL_LESSMAN)
+ 
+ install_kman: $(KEY_MANUAL)
+-	for f in $(INSTALL_KEYMAN); do  rm -f $$f; cp $(KEY_MANUAL) $$f;  done
+-	touch install_kman
++	$(BSD_INSTALL_MAN) $(KEY_MANUAL) $(DESTDIR)$(INSTALL_KEYMAN)
+ 
+ ##########################################################################
+ # Maintenance

@@ -14,15 +14,9 @@ COMMENT=	Kuo Chauo Chinese Fonts collection
 BUILD_DEPENDS=	bdftopcf:${PORTSDIR}/x11-fonts/bdftopcf
 RUN_DEPENDS=	mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir
 
-MAKE_JOBS_UNSAFE=yes
-
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == "sparc64"
-BROKEN=		Does not build on sparc64
-.endif
+#MAKE_JOBS_UNSAFE=yes
+BROKEN_sparc64=		Does not build on sparc64
 
 NO_WRKSUBDIR=	yes
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

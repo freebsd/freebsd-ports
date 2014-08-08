@@ -89,6 +89,9 @@ UNIQUE_DEFAULT_LINKS?=		no
 UNIQUE_FIND_PREFIX_FILES?=	# empty
 UNIQUE_FIND_SUFFIX_FILES?=	# empty
 
+_USES_POST+=	uniquefiles
+.endif # _INCLUDE_USES_UNIQUEFILES_MK
+
 .if defined(_POSTMKINCLUDED) && !defined(_INCLUDE_USES_UNIQUEFILES_POST_MK)
 _INCLUDE_USES_UNIQUEFILES_POST_MK=     yes
 
@@ -192,4 +195,3 @@ move-uniquefiles-plist:
 	fi
 
 .endif # defined(_POSTMKINCLUDED)
-.endif # _INCLUDE_USES_UNIQUEFILES_MK

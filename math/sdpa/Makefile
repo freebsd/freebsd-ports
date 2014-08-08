@@ -14,18 +14,16 @@ COMMENT=	Very efficient SDP (semidefinite programming) solver
 
 USES=		fortran gmake
 
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
-
 SRCDATE=	20090729
 MANUALFILE=	sdpa7-manual.pdf
 GNU_CONFIGURE=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}.${PORTVERSION}.src
+OPTIONS_DEFINE=	DOCS
 
 .if exists(${LOCALBASE}/lib/libgoto2.so)
-WITH_BLAS?=     gotoblas
+WITH_BLAS?=	gotoblas
 .elif exists(${LOCALBASE}/lib/libatlas.so)
-WITH_BLAS?=     atlas
+WITH_BLAS?=	atlas
 .else
 WITH_BLAS?=	reference
 .endif
@@ -56,12 +54,10 @@ post-patch:
 		${WRKSRC}/Makefile.in
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/sdpa ${PREFIX}/bin
-	@${MKDIR} ${DATADIR}
-	${INSTALL_DATA}    ${WRKSRC}/param.sdpa ${DATADIR}
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/doc/${MANUALFILE} ${DOCSDIR}
-.endif
+	${INSTALL_PROGRAM} ${WRKSRC}/sdpa ${STAGEDIR}${PREFIX}/bin
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA}    ${WRKSRC}/param.sdpa ${STAGEDIR}${DATADIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/${MANUALFILE} ${STAGEDIR}${DOCSDIR}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

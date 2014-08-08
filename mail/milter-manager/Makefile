@@ -2,11 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	milter-manager
-PORTVERSION=	1.8.6
+PORTVERSION=	2.0.4
 CATEGORIES=	mail ruby
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME:S/-/%20/}/${PORTVERSION}
 
-MAINTAINER= ports@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Super milter that can invoke several milters selectively
 
 LICENSE=	AGPLv3 GFDL GPLv3 LGPL3
@@ -22,34 +22,28 @@ MAKE_ARGS+=	pkgconfigdir=${PREFIX}/libdata/pkgconfig
 CONFIGURE_ARGS=	CPPFLAGS="-I${LOCALBASE}/include" \
 		--with-libev \
 		LDFLAGS="-L${LOCALBASE}/lib -lintl"
-USES=		gmake pkgconfig
+USES=		gmake pkgconfig libtool
 USE_GNOME=	glib20 intltool
 USE_LDCONFIG=	yes
 USE_RUBY=	yes
+INSTALL_TARGET=	install-strip
 
-NO_STAGE=	yes
-
-OPTIONS_DEFINE=	DOCS
+OPTIONS_DEFINE=	DOCS EXAMPLES
 
 .include <bsd.port.options.mk>
 
-MANLANG=	"" ja
-MAN1=		milter-manager-log-analyzer.1 milter-manager.1 milter-performance-check.1 \
-		milter-report-statistics.1 milter-test-client.1 milter-test-server.1
+MANLANG=       "" ja
 PORTDOCS=	*
 PORTEXAMPLES=	*
-PORTDATA=	*
 
 .if ${PORT_OPTIONS:MDOCS}
 CONFIGURE_ARGS+=--with-html-dir=${DOCSDIR}
 .else
 CONFIGURE_ARGS+=--with-html-dir=${WRKDIR}/doc
 .endif
-.ifdef NOPORTEXAMPLES
+
+.if ! ${PORT_OPTIONS:MEXAMPLES}
 EXAMPLESDIR=	${WRKDIR}/examples
-.endif
-.ifdef NOPORTDATA
-DATADIR=	${WRKDIR}/data
 .endif
 
 post-patch:

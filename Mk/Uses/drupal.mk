@@ -47,7 +47,7 @@ DOCSDIR?=	${DRUPAL_DOCSDIR}
 .endif
 
 .if ${_DRUPAL_COMP}
-_USES_POST=	drupal
+_USES_POST+=	drupal
 PKGNAMEPREFIX=  drupal${_DRUPAL_VERSION}-
 .if defined(DOC_FILES)
 OPTIONS_DEFINE=	DOCS

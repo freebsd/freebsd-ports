@@ -1,7 +1,5 @@
 bin/ump
-@unexec if cmp -s %D/etc/ump.conf %D/etc/ump.conf.dist; then rm -f %D/etc/ump.conf; fi
-etc/ump.conf.dist
-@exec [ -f %B/ump.conf ] || cp %B/%f %B/ump.conf
+@sample etc/ump.conf.sample
 %%DATADIR%%/ump-files/Black.ump
 %%DATADIR%%/ump-files/Blue.ump
 %%DATADIR%%/ump-files/Gray.ump

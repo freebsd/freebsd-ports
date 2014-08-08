@@ -1,7 +1,9 @@
 bin/jailaudit
 %%ETCDIR%%.conf.sample
 %%PERIODICDIR%%/security/410.jailaudit
+@exec install -d -o root -g wheel -m 755 %D/jailaudit/tmp
 @dirrmtry %%XTMPDIR%%
+@exec install -d -o root -g wheel -m 755 %D/jailaudit/reports
 @dirrmtry %%REPORTDIR%%
 @dirrmtry jailaudit
 @dirrmtry %%PERIODICDIR%%/security

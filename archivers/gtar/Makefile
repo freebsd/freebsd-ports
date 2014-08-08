@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	tar
-PORTVERSION=	1.27.1
+PORTVERSION=	1.28
 CATEGORIES=	archivers sysutils
 MASTER_SITES=	GNU
 PKGNAMEPREFIX=	g
@@ -41,6 +41,9 @@ STATIC_ARGS=	build
 .else
 STATIC_ARGS=	lib
 .endif
+
+# Tests 161 163 are known to fail because path resolution of ".."
+# in a removed directory fails.
 
 regression-test: build
 	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} check

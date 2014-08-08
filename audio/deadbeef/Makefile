@@ -3,11 +3,8 @@
 
 PORTNAME=	deadbeef
 PORTVERSION=	0.6.2
-PORTREVISION=	1
 CATEGORIES=	audio
-MASTER_SITES=	SF/${PORTNAME}/${PORTVERSION}${PKGNAMESUFFIX}
-PKGNAMESUFFIX=	-rc5
-DISTNAME=	${PORTNAME}-${PORTVERSION}${PKGNAMESUFFIX}
+MASTER_SITES=	SF/${PORTNAME}/
 
 MAINTAINER=	vg@FreeBSD.org
 COMMENT=	Ultimate music player for Unix-like systems
@@ -83,8 +80,8 @@ LASTFM_LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl
 LASTFM_CONFIGURE_OFF=	--disable-lfm
 
 ART_LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl \
+			libImlib2.so:${PORTSDIR}/graphics/imlib2 \
 			libjpeg.so:${PORTSDIR}/graphics/jpeg
-ART_USE=	efl=imlib2
 ART_CONFIGURE_OFF=	--disable-artwork --disable-artwork-imlib2
 
 EQ_CONFIGURE_OFF=	--disable-supereq

@@ -8,7 +8,7 @@ CATEGORIES=	lang
 MASTER_SITES=	LOCAL/vanilla
 PKGNAMESUFFIX=	-devel
 
-MAINTAINER=	vanilla@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Google's open source JavaScript engine
 
 LICENSE=	BSD3CLAUSE

@@ -10,7 +10,7 @@ EXTRACT_SUFX=
 EXTRACT_ONLY=
 
 MAINTAINER=	vvelox@vvelox.net
-COMMENT=	tool for setting the background in rox using a simple command.
+COMMENT=	Tool for setting the background in rox using a simple command
 
 RUN_DEPENDS=	${LOCALBASE}/bin/rox:${PORTSDIR}/x11-fm/rox-filer
 

@@ -8,7 +8,7 @@ MASTER_SITES=	LOCAL/gblach/e17/modules/
 PKGNAMEPREFIX=	e17-module-
 
 MAINTAINER=	gblach@FreeBSD.org
-COMMENT=	An e17 uptime and load average indicator module
+COMMENT=	E17 uptime and load average indicator module
 
 BUILD_DEPENDS=	enlightenment:${PORTSDIR}/x11-wm/enlightenment
 RUN_DEPENDS=	enlightenment:${PORTSDIR}/x11-wm/enlightenment

@@ -1,3 +1,5 @@
+@owner %%WWWOWN%%
+@group %%WWGRP%%
 %%PHPBBDIR%%/.htaccess
 %%PHPBBDIR%%/adm/images/arrow_down.gif
 %%PHPBBDIR%%/adm/images/arrow_left.gif
@@ -128,6 +130,7 @@
 %%PHPBBDIR%%/cache/.htaccess
 %%PHPBBDIR%%/cache/index.htm
 %%PHPBBDIR%%/common.php
+@sample %%PHPBBDIR%%/config.php.sample
 %%PHPBBDIR%%/cron.php
 %%PHPBBDIR%%/docs/AUTHORS
 %%PHPBBDIR%%/docs/CHANGELOG.html
@@ -1076,8 +1079,8 @@
 %%PHPBBDIR%%/viewonline.php
 %%PHPBBDIR%%/viewtopic.php
 %%PHPBBDIR%%/web.config
-@exec [ -f %D/%%PHPBBDIR%%/config.php ] || touch %D/%%PHPBBDIR%%/config.php
-@unexec [ -s %D/%%PHPBBDIR%%/config.php ] || rm -f %D/%%PHPBBDIR%%/config.php
+@group
+@owner
 @dirrm %%PHPBBDIR%%/styles/subsilver2/theme/images
 @dirrm %%PHPBBDIR%%/styles/subsilver2/theme
 @dirrm %%PHPBBDIR%%/styles/subsilver2/template

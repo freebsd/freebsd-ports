@@ -8,7 +8,7 @@ CATEGORIES=	x11
 MASTER_SITES=	SF
 
 MAINTAINER=	garga@FreeBSD.org
-COMMENT=	A customizable program to run programs, with tab-completion
+COMMENT=	Customizable program to run programs, with tab-completion
 
 LIB_DEPENDS=	libpopt.so:${PORTSDIR}/devel/popt
 

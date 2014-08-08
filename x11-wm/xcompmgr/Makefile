@@ -6,7 +6,7 @@ PORTVERSION=	1.1.6
 CATEGORIES=	x11-wm
 
 MAINTAINER=	x11@FreeBSD.org
-COMMENT=	A sample X compositing manager
+COMMENT=	Sample X compositing manager
 
 XORG_CAT=	app
 USE_XORG=	x11 xcomposite xfixes xdamage xrender

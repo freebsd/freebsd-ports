@@ -1,5 +1,5 @@
---- fcgi_util.c.orig	2009-07-08 17:16:29.816884000 +0800
-+++ fcgi_util.c	2009-07-09 08:43:09.222180000 +0800
+--- fcgi_util.c.orig
++++ fcgi_util.c
 @@ -268,13 +268,17 @@
      /* Get the user membership for the file's group.  If the
       * uid is a member, check the group bits. */

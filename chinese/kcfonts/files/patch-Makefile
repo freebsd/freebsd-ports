@@ -1,0 +1,58 @@
+--- Makefile.orig	1995-12-17 04:00:46.000000000 +0800
++++ Makefile	2014-08-07 23:38:12.048102848 +0800
+@@ -2,17 +2,17 @@
+ #	Kau Chauo Chinese Fanti Ming Fonts Version 1.05 For FreeBSD
+ #
+ #	All fonts source is contributed by Kau Chauo Business CO.
+-#	Converted by Chih-Hao Tsai & Pa on Taiwan
++#	Converted by Chih-Hao Tsai & PA on Taiwan
+ #
+-#	maintainer: Pa ( Pa@FreeBSD.ee.ntu.edu.tw )
++#	maintainer: PA ( PA@FreeBSD.ee.ntu.edu.tw )
+ #
+ 
+-CFONTDIR=/usr/X11R6/lib/X11/fonts/chinese
+-EFONTDIR=/usr/X11R6/lib/X11/fonts/misc
++CFONTDIR=${PREFIX}/lib/X11/fonts/local
++EFONTDIR=${PREFIX}/lib/X11/fonts/local
+ FONTS	=kc24f.pcf.gz kc15f.pcf.gz kc8x15.pcf.gz kc12x24.pcf.gz
+ PROGS	=kc24f kc15f kc8x15 kc12x24 kca2et
+ OBJS	=tran.o kc24f.o kc15f.o kc8x15.o kc12x24.o kca2et.o
+-CC	=gcc
++#CC	=gcc
+ 
+ all:	$(FONTS)
+ 
+@@ -22,10 +22,14 @@ kc15f.pcf.gz:	kc15f
+ 	./kc15f | bdftopcf | gzip - > kc15f.pcf.gz 
+ kc8x15.pcf.gz:	kca2et kc8x15
+ 	./kca2et kctext16.f00 ascfont.15 256 16 15
+-	./kc8x15 | bdftopcf | gzip - > kc8x15.pcf.gz
++	./kc8x15 > kc8x15.bdf
++	patch < kc8x15.diff
++	bdftopcf kc8x15.bdf | gzip - > kc8x15.pcf.gz
+ kc12x24.pcf.gz:	kca2et kc12x24
+ 	./kca2et kctext24.f00 ascfont.24 256 48 48
+-	./kc12x24 | bdftopcf | gzip - > kc12x24.pcf.gz
++	./kc12x24 > kc12x24.bdf
++	patch < kc12x24.diff
++	bdftopcf kc12x24.bdf | gzip - > kc12x24.pcf.gz
+ 
+ kc24f:		tran.o kc24f.o
+ 	$(CC) $(CFLAGS) tran.o kc24f.o -o $@
+@@ -39,11 +43,10 @@ kca2et:		kca2et.o
+ 	$(CC) $(CFLAGS) kca2et.o -o $@
+ 
+ install:
+-	if [ ! -d $(CFONTDIR) ]; then mkdir $(CFONTDIR); fi
+-	cp kc*f.pcf.gz $(CFONTDIR)
+-	cp kc*x*.pcf.gz $(EFONTDIR)
+-	mkfontdir $(CFONTDIR)
+-	mkfontdir $(EFONTDIR)
++	if [ ! -d $(DESTDIR)$(CFONTDIR) ]; then mkdir $(DESTDIR)$(CFONTDIR); fi
++	cp kc*f.pcf.gz $(DESTDIR)$(CFONTDIR)
++	cp kc*x*.pcf.gz $(DESTDIR)$(EFONTDIR)
++	cp kc_fonts.alias $(DESTDIR)$(CFONTDIR)
+ 
+ clean:
+ 	rm -f kc*.pcf.gz ascfont.* *.o *~ $(PROGS)

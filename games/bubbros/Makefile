@@ -2,46 +2,64 @@
 # $FreeBSD$
 
 PORTNAME=	bubbros
-PORTVERSION=	1.6
-PORTREVISION=	6
+PORTVERSION=	1.6.2
 CATEGORIES=	games
 MASTER_SITES=	SF/bub-n-bros/bub-n-bros/${PORTVERSION}
+DIST_SUBDIR=	python
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	games@FreeBSD.org
 COMMENT=	Multiplayer clone of the famous Bubble Bobble game
 
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/pygame/__init__.py:${PORTSDIR}/devel/py-game
+LICENSE=	MIT
+
+RUN_DEPENDS=	${PYGAME}
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 USE_PYTHON=	yes
-USES=	tar:bzip2
 
-NO_STAGE=	yes
+PORTDOCS=	*.html
+OPTIONS_DEFINE=	DOCS
+
+SUB_FILES=	${PORTNAME}
+
+DESKTOP_ENTRIES="Bub-n-Bros" "" "${PORTNAME}" \
+		"${PORTNAME}" "Game;ArcadeGame;" ""
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/X11R6|${LOCALBASE}|g' \
 		${WRKSRC}/display/setup.py
+	@${FIND} ${WRKSRC} -name "*.bak" -delete -or -name "*.orig" -delete \
+		-or -name "*.cvsignore" -delete
+	@${FIND} ${WRKSRC} -name CVS -print0 | ${XARGS} -0 ${RM} -fr
 
 do-build:
 	# Compile the statesaver extension module
 	cd ${WRKSRC}/bubbob; ${PYTHON_CMD} setup.py build_ext -i
 	# Compile the X-window client extension module
 	cd ${WRKSRC}/display; ${PYTHON_CMD} setup.py build_ext -i
+.for d in bubbob display
+	@(cd ${WRKSRC}/${d} && ${RM} -fr build)
+.endfor
 
 do-install:
-	@${MKDIR} ${DATADIR}
-	(cd ${WRKSRC}; tar --exclude build --exclude "*.orig" --exclude "*.bak" -cf - bubbob common display http2 java metaserver BubBob.py) | \
-		(cd ${DATADIR}; tar --unlink -xf -)
-	@${PRINTF} "#!/bin/sh\ncd ${DATADIR} && \
-		exec ${PYTHON_CMD} ${DATADIR}/BubBob.py\n" > ${WRKDIR}/bubbros.sh
+	@${REINPLACE_CMD} -e 's|%%PYTHON_CMD%%|${PYTHON_CMD}|' \
+		${WRKDIR}/${PORTNAME}
+	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/
+.for d in bubbob common display http2 java metaserver
+	@(cd ${WRKSRC} && ${COPYTREE_SHARE} ${d} ${STAGEDIR}${DATADIR})
+.endfor
+	${INSTALL_SCRIPT} ${WRKSRC}/BubBob.py ${STAGEDIR}${DATADIR}
 	# build different colors
-	@${PYTHON_CMD} ${DATADIR}/bubbob/images/buildcolors.py
-	@${INSTALL_SCRIPT} ${WRKDIR}/bubbros.sh ${PREFIX}/bin/bubbros
+	@${PYTHON_CMD} ${STAGEDIR}${DATADIR}/bubbob/images/buildcolors.py
+	${LN} -sf ${DATADIR}/http2/data/bob.png \
+		${STAGEDIR}${PREFIX}/share/pixmaps/${PORTNAME}.png
 
-post-install:
-.ifndef(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	(cd ${WRKSRC}/doc; tar -cf - .) | \
-		(cd ${DOCSDIR}; tar --unlink -xf -)
-.endif
+.for l in bubbob/statesaver.so display/xshm.so
+	${STRIP_CMD} ${STAGEDIR}${DATADIR}/${l}
+.endfor
+
+	${INSTALL_MAN} ${WRKSRC}/doc/*.1 ${STAGEDIR}${MAN1PREFIX}/man/man1/
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/doc/|} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

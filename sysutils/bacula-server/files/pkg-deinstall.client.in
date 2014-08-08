@@ -14,7 +14,7 @@ TMPFILE=/tmp/services-$RANDOM-$$
 case "$2" in
 "DEINSTALL")
 	# Delete entries in /etc/services
-        sed -e '/# Bacula port start/,/# Bacule port end/{' \
+        sed -e '/# Bacula port start/,/# Bacula port end/{' \
             -e 'd' \
             -e '}' /etc/services > $TMPFILE
         mv -f $TMPFILE /etc/services

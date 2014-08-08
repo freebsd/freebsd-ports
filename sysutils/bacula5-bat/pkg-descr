@@ -1,0 +1,13 @@
+bat is the GUI inteface for Bacula.
+
+Bacula is a set of computer programs that permit you (or the system
+administrator) to manage backup, recovery, and verification of
+computer data across a network of computers of different kinds.
+In technical terms, it is a network Client/Server based backup program.
+Bacula is relatively easy to use and efficient, while offering many
+advanced storage management features that make it easy to find and
+recover lost or damaged files. Due to its modular design, Bacula is
+scalable from small single computer systems to systems consisting of
+hundreds of computers located over a large network.
+
+WWW: http://www.bacula.org/

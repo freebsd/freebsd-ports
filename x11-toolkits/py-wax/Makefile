@@ -9,7 +9,7 @@ MASTER_SITES=	SF/${PORTNAME}gui/${PORTNAME}gui/${PORTNAME}-${PORTVERSION}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	nivit@FreeBSD.org
-COMMENT=	A user-friendly layer on top of wxPython
+COMMENT=	User-friendly layer on top of wxPython
 
 NO_BUILD=	yes
 USE_PYTHON=	yes

@@ -1,5 +1,5 @@
---- ./mod_fastcgi.c.orig	2008-11-09 15:31:03.000000000 +0100
-+++ ./mod_fastcgi.c	2013-03-27 18:51:40.000000000 +0100
+--- mod_fastcgi.c.orig
++++ mod_fastcgi.c
 @@ -753,6 +753,11 @@
              	continue;
              }

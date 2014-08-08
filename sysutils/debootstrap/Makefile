@@ -2,35 +2,35 @@
 # $FreeBSD$
 
 PORTNAME=	debootstrap
-PORTVERSION=	1.0.53
+PORTVERSION=	1.0.60
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_DEBIAN}
 MASTER_SITE_SUBDIR=	pool/main/d/${PORTNAME}
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	lifanov@mail.lifanov.com
 COMMENT=	Install Debian base system into a directory
 
-RUN_DEPENDS=	wget:${PORTSDIR}/ftp/wget
+RUN_DEPENDS=	wget:${PORTSDIR}/ftp/wget \
+		dpkg:${PORTSDIR}/archivers/dpkg
 
 WRKSRC=		${WRKDIR}/${DISTNAME:S/_/-/}
 NO_BUILD=	yes
-USES=		gmake
-MAKE_ARGS=	DESTDIR="${PREFIX}"
-
-MAN8=		debootstrap.8
+USES=		gmake perl5 tar:xz
+USE_PERL5=	run
+MAKE_ARGS=	DESTDIR="${STAGEDIR}"
 
 ONLY_FOR_ARCHS=	i386 amd64
 ONLY_FOR_ARCHS_REASON=	Debian GNU/kFreeBSD available only for i386 and amd64
 
-NO_STAGE=	yes
 post-patch:
-	@${REINPLACE_CMD} -e 's,/usr/share,${PREFIX}/share,g' \
+	@${REINPLACE_CMD} -e 's,%%PREFIX%%,${PREFIX},g' \
+		${WRKSRC}/Makefile \
 		${WRKSRC}/debootstrap
 
 post-install:
 	@${INSTALL_MAN} ${WRKSRC}/debootstrap.8 \
-		${MAN8PREFIX}/man/man8/debootstrap.8
-	@${CAT} ${PKGMESSAGE}
+		${STAGEDIR}${PREFIX}/man/man8/debootstrap.8
 
 .include <bsd.port.mk>

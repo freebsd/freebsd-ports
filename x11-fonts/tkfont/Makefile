@@ -9,7 +9,7 @@ MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	petef
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A Tk based replacement for xfontsel
+COMMENT=	Tk based replacement for xfontsel
 
 USES+=		tk:run
 RUN_DEPENDS+=	xlsfonts:${PORTSDIR}/x11-fonts/xlsfonts

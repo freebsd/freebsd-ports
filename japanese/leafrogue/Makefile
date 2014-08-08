@@ -3,7 +3,7 @@
 
 PORTNAME=	leafrogue
 PORTVERSION=	0.72
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	japanese games
 MASTER_SITES=	http://games.roguelife.org/~roguelike/leaf/dl/
 DISTNAME=	lfrog${PORTVERSION:S/.//}
@@ -19,8 +19,8 @@ DOC_FILES=	readme.txt lf_rogue.html lf_rogue.txt guide.tex guide.txt
 OPTIONS_DEFINE=	DOCS
 
 do-install:
-	${MKDIR} ${STAGEDIR}${PREFIX}/share/rogue
-	${INSTALL_DATA} ${WRKSRC}/leaf.msg ${STAGEDIR}${PREFIX}/share/rogue
+	${MKDIR} ${STAGEDIR}${PREFIX}/share/rogue_s
+	${INSTALL_DATA} ${WRKSRC}/leaf.msg ${STAGEDIR}${PREFIX}/share/rogue_s
 	${INSTALL_SCRIPT} ${FILESDIR}/leafrogue ${STAGEDIR}${PREFIX}/bin
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	for file in ${DOC_FILES}; do \

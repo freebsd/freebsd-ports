@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	bacula
-DISTVERSION=	5.2.12
-PORTREVISION?=	6
+DISTVERSION=	7.0.4
+PORTREVISION?=	0
 CATEGORIES?=	sysutils
 MASTER_SITES=	SF/bacula/bacula/${PORTVERSION}
 PKGNAMEPREFIX?=	#
@@ -12,28 +12,26 @@ PKGNAMESUFFIX?=	-server
 MAINTAINER=	dan@langille.org
 COMMENT?=	Network backup solution (server)
 
-USES+=		libtool:keepla
+USES+=		libtool:oldver
+
+CONFLICTS?=	bacula5-server-*
 
 LIB_DEPENDS+=	liblzo2.so:${PORTSDIR}/archivers/lzo2
 
 USERS=		bacula
 GROUPS=		${USERS}
 
-PLIST_SUB+=	MAJOR=${PORTVERSION:R:R}
+PLIST_SUB+=	LIB_VERSION=${PORTVERSION}
 
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
 CPPFLAGS+=	-I/usr/include/readline -I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+#LDFLAGS+=	-L${LOCALBASE}/lib
 
 OPTIONS_DEFINE?=	SQLITE3 MYSQL PGSQL MTX PYTHON NLS OPENSSL
 OPTIONS_DEFAULT?=	NLS OPENSSL PGSQL
 MTX_DESC=		Install mtx for control of autochanger devices
-
-OPENSSL_USE=	OPENSSL=yes
-OPENSSL_CONFIGURE_ON=	--with-openssl=${OPENSSLBASE}
-OPENSSL_CONFIGURE_OFF=	--with-openssl="no"
 
 .if ${PKGNAMESUFFIX} == "-client" || ${PKGNAMESUFFIX} == "-server"  #Till end of the file
 
@@ -66,6 +64,7 @@ CONFIGURE_ARGS+=--with-tcp-wrappers=/usr/lib \
 		--with-db-name=bacula \
 		--with-sbin-perm=755 \
 		--with-db-user=bacula \
+		--with-logdir=/var/log \
 		--with-baseport=9101
 
 .if defined(WITH_CLIENT_ONLY)
@@ -111,11 +110,11 @@ CONFFILES=		sd dir
 # Server default database
 
 MYSQL_CONFIGURE_ON=	--with-mysql=yes
-MYSQL_USE=	MYSQL=yes
+MYSQL_USE=		MYSQL=yes
 SQLITE3_CONFIGURE_ON=	--with-sqlite3=yes
 SQLITE3_LIB_DEPENDS=	libsqlite3.so:${PORTSDIR}/databases/sqlite3
 PGSQL_CONFIGURE_ON=	--with-postgresql=yes
-PGSQL_USES=	pgsql
+PGSQL_USES=		pgsql
 
 MTX_RUN_DEPENDS=	${LOCALBASE}/sbin/mtx:${PORTSDIR}/misc/mtx
 
@@ -131,42 +130,40 @@ DBTYPE=			postgresql
 SUB_LIST+=		REQ_MYSQL="" REQ_PGSQL=postgresql
 .endif
 PLIST_SUB+=		DBTYPE=${DBTYPE}
-
 .endif
 
 .if defined(WITH_CLIENT_ONLY)
-MP8+=	bacula-fd.8 bconsole.8
+MP8+=	bacula.8 bacula-fd.8 bconsole.8
 .else
-MP8+=	bacula.8 bacula-dir.8 bacula-sd.8 bcopy.8 bextract.8 bls.8 bscan.8 \
+MP8+=	bacula-dir.8 bacula-sd.8 bcopy.8 bextract.8 bls.8 bscan.8 \
 	btape.8 btraceback.8 dbcheck.8 bwild.8 bregex.8
-MP1+=	bsmtp.1 bacula-tray-monitor.1 bacula-bwxconsole.1
+MP1+=	bsmtp.1 bacula-tray-monitor.1
 .endif
 
 MAKE_ENV+=	MAN8="${MP8}" MAN1="${MP1}"
 
 post-patch:
-#	This port does not install docs.  See bacula-docs for that
+	# This port does not install docs.  See bacula-docs for that
 	${REINPLACE_CMD} -e '/docdir/d' ${WRKSRC}/Makefile.in
-#	Change $(ECHO) to echo in some Makefile.in files
+	# Change $(ECHO) to echo in some Makefile.in files
 	@${REINPLACE_CMD} -e 's|$$(ECHO)|echo|g' ${WRKSRC}/src/filed/Makefile.in \
 		${WRKSRC}/src/console/Makefile.in
-#	Default bconsole.conf is in ${ETCDIR}
+	# Default bconsole.conf is in ${ETCDIR}
 	@${REINPLACE_CMD} -e 's|./bconsole.conf|${ETCDIR}/bconsole.conf|g' ${WRKSRC}/src/console/console.c
 	@${REINPLACE_CMD} -e 's|^MAN8 =|MAN8 ?=|g' -e 's|^MAN1 =|MAN1 ?=|g' ${WRKSRC}/manpages/Makefile.in
 .if defined(WITH_CLIENT_ONLY)
-# 	In client port only install startup script out of script dir (see below post-install)
-# 	Dont mkdir ${PREFIX}/share/bacula cause it's empty
+	# In client port only install startup script out of script dir (see below post-install)
+	# Dont mkdir ${PREFIX}/share/bacula cause it's empty
 	@${REINPLACE_CMD} -e 's|^\(fd_subdirs = .*\)scripts\(.*\)|\1\2|g' ${WRKSRC}/Makefile.in
 	${REINPLACE_CMD} -e 's|\(.*$${MKDIR} $${DESTDIR}$${scriptdir}\)|#\1|g' ${WRKSRC}/Makefile.in
 .else
-#	In server port don't install filed
+	# In server port don't install filed
 	@${REINPLACE_CMD} -e '/^fd_subdirs = /s|src/filed||' -e 's|src/console||' \
 		-e 's|src/lib||' -e 's|src/findlib||' -e 's|@FD_PLUGIN_DIR@||' ${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e 's|../lib/|$$(LOCALBASE)/lib/|g' -e 's|../findlib/|$$(LOCALBASE)/lib/|g' ${WRKSRC}/src/dird/Makefile.in \
 		${WRKSRC}/src/stored/Makefile.in ${WRKSRC}/src/tools/Makefile.in
-	@${REINPLACE_CMD} -e 's|fd_plugins.h|filed/fd_plugins.h|g' -e 's|dir_plugins.h|dird/dir_plugins.h|g' -e 's|stored.h|stored/stored.h|g' \
-		${WRKSRC}/src/tools/bpluginfo.c
 .endif
+
 
 pre-install:
 	${MKDIR} ${STAGEDIR}${BACULA_DIR}
@@ -187,4 +184,5 @@ post-install:
 .else
 .include "${MASTERDIR}/Makefile.common"
 .endif # -client and -server are defined
+
 .include <bsd.port.mk>

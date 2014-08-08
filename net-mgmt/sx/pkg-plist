@@ -16,7 +16,7 @@ include/sx.h
 lib/libsx.so
 lib/libsx.so.0
 lib/libsx.so.0.0.0
-lib/sxclient/libsxf_aes256-12.so
+lib/sxclient/libsxf_aes256-13.so
 lib/sxclient/libsxf_aes256.so
 lib/sxclient/libsxf_attribs-11.so
 lib/sxclient/libsxf_attribs.so

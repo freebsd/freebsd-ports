@@ -428,41 +428,41 @@ llvm%%LLVM_SUFFIX%%/include/clang/Tooling/Refactoring.h
 llvm%%LLVM_SUFFIX%%/include/clang/Tooling/RefactoringCallbacks.h
 llvm%%LLVM_SUFFIX%%/include/clang/Tooling/ReplacementsYaml.h
 llvm%%LLVM_SUFFIX%%/include/clang/Tooling/Tooling.h
-llvm%%LLVM_SUFFIX%%/lib/clang/3.4/include/__wmmintrin_aes.h
-llvm%%LLVM_SUFFIX%%/lib/clang/3.4/include/__wmmintrin_pclmul.h
-llvm%%LLVM_SUFFIX%%/lib/clang/3.4/include/altivec.h
-llvm%%LLVM_SUFFIX%%/lib/clang/3.4/include/ammintrin.h
-llvm%%LLVM_SUFFIX%%/lib/clang/3.4/include/arm_neon.h
-llvm%%LLVM_SUFFIX%%/lib/clang/3.4/include/avx2intrin.h
-llvm%%LLVM_SUFFIX%%/lib/clang/3.4/include/avxintrin.h
-llvm%%LLVM_SUFFIX%%/lib/clang/3.4/include/bmi2intrin.h
-llvm%%LLVM_SUFFIX%%/lib/clang/3.4/include/bmiintrin.h
-llvm%%LLVM_SUFFIX%%/lib/clang/3.4/include/cpuid.h
-llvm%%LLVM_SUFFIX%%/lib/clang/3.4/include/emmintrin.h
-llvm%%LLVM_SUFFIX%%/lib/clang/3.4/include/f16cintrin.h
-llvm%%LLVM_SUFFIX%%/lib/clang/3.4/include/fma4intrin.h
-llvm%%LLVM_SUFFIX%%/lib/clang/3.4/include/fmaintrin.h
-llvm%%LLVM_SUFFIX%%/lib/clang/3.4/include/immintrin.h
-llvm%%LLVM_SUFFIX%%/lib/clang/3.4/include/lzcntintrin.h
-llvm%%LLVM_SUFFIX%%/lib/clang/3.4/include/mm3dnow.h
-llvm%%LLVM_SUFFIX%%/lib/clang/3.4/include/mm_malloc.h
-llvm%%LLVM_SUFFIX%%/lib/clang/3.4/include/mmintrin.h
-llvm%%LLVM_SUFFIX%%/lib/clang/3.4/include/module.map
-llvm%%LLVM_SUFFIX%%/lib/clang/3.4/include/nmmintrin.h
-llvm%%LLVM_SUFFIX%%/lib/clang/3.4/include/pmmintrin.h
-llvm%%LLVM_SUFFIX%%/lib/clang/3.4/include/popcntintrin.h
-llvm%%LLVM_SUFFIX%%/lib/clang/3.4/include/prfchwintrin.h
-llvm%%LLVM_SUFFIX%%/lib/clang/3.4/include/rdseedintrin.h
-llvm%%LLVM_SUFFIX%%/lib/clang/3.4/include/rtmintrin.h
-llvm%%LLVM_SUFFIX%%/lib/clang/3.4/include/shaintrin.h
-llvm%%LLVM_SUFFIX%%/lib/clang/3.4/include/smmintrin.h
-llvm%%LLVM_SUFFIX%%/lib/clang/3.4/include/tbmintrin.h
-llvm%%LLVM_SUFFIX%%/lib/clang/3.4/include/tmmintrin.h
-llvm%%LLVM_SUFFIX%%/lib/clang/3.4/include/unwind.h
-llvm%%LLVM_SUFFIX%%/lib/clang/3.4/include/wmmintrin.h
-llvm%%LLVM_SUFFIX%%/lib/clang/3.4/include/x86intrin.h
-llvm%%LLVM_SUFFIX%%/lib/clang/3.4/include/xmmintrin.h
-llvm%%LLVM_SUFFIX%%/lib/clang/3.4/include/xopintrin.h
+llvm%%LLVM_SUFFIX%%/lib/clang/3.4.2/include/__wmmintrin_aes.h
+llvm%%LLVM_SUFFIX%%/lib/clang/3.4.2/include/__wmmintrin_pclmul.h
+llvm%%LLVM_SUFFIX%%/lib/clang/3.4.2/include/altivec.h
+llvm%%LLVM_SUFFIX%%/lib/clang/3.4.2/include/ammintrin.h
+llvm%%LLVM_SUFFIX%%/lib/clang/3.4.2/include/arm_neon.h
+llvm%%LLVM_SUFFIX%%/lib/clang/3.4.2/include/avx2intrin.h
+llvm%%LLVM_SUFFIX%%/lib/clang/3.4.2/include/avxintrin.h
+llvm%%LLVM_SUFFIX%%/lib/clang/3.4.2/include/bmi2intrin.h
+llvm%%LLVM_SUFFIX%%/lib/clang/3.4.2/include/bmiintrin.h
+llvm%%LLVM_SUFFIX%%/lib/clang/3.4.2/include/cpuid.h
+llvm%%LLVM_SUFFIX%%/lib/clang/3.4.2/include/emmintrin.h
+llvm%%LLVM_SUFFIX%%/lib/clang/3.4.2/include/f16cintrin.h
+llvm%%LLVM_SUFFIX%%/lib/clang/3.4.2/include/fma4intrin.h
+llvm%%LLVM_SUFFIX%%/lib/clang/3.4.2/include/fmaintrin.h
+llvm%%LLVM_SUFFIX%%/lib/clang/3.4.2/include/immintrin.h
+llvm%%LLVM_SUFFIX%%/lib/clang/3.4.2/include/lzcntintrin.h
+llvm%%LLVM_SUFFIX%%/lib/clang/3.4.2/include/mm3dnow.h
+llvm%%LLVM_SUFFIX%%/lib/clang/3.4.2/include/mm_malloc.h
+llvm%%LLVM_SUFFIX%%/lib/clang/3.4.2/include/mmintrin.h
+llvm%%LLVM_SUFFIX%%/lib/clang/3.4.2/include/module.map
+llvm%%LLVM_SUFFIX%%/lib/clang/3.4.2/include/nmmintrin.h
+llvm%%LLVM_SUFFIX%%/lib/clang/3.4.2/include/pmmintrin.h
+llvm%%LLVM_SUFFIX%%/lib/clang/3.4.2/include/popcntintrin.h
+llvm%%LLVM_SUFFIX%%/lib/clang/3.4.2/include/prfchwintrin.h
+llvm%%LLVM_SUFFIX%%/lib/clang/3.4.2/include/rdseedintrin.h
+llvm%%LLVM_SUFFIX%%/lib/clang/3.4.2/include/rtmintrin.h
+llvm%%LLVM_SUFFIX%%/lib/clang/3.4.2/include/shaintrin.h
+llvm%%LLVM_SUFFIX%%/lib/clang/3.4.2/include/smmintrin.h
+llvm%%LLVM_SUFFIX%%/lib/clang/3.4.2/include/tbmintrin.h
+llvm%%LLVM_SUFFIX%%/lib/clang/3.4.2/include/tmmintrin.h
+llvm%%LLVM_SUFFIX%%/lib/clang/3.4.2/include/unwind.h
+llvm%%LLVM_SUFFIX%%/lib/clang/3.4.2/include/wmmintrin.h
+llvm%%LLVM_SUFFIX%%/lib/clang/3.4.2/include/x86intrin.h
+llvm%%LLVM_SUFFIX%%/lib/clang/3.4.2/include/xmmintrin.h
+llvm%%LLVM_SUFFIX%%/lib/clang/3.4.2/include/xopintrin.h
 llvm%%LLVM_SUFFIX%%/lib/libclang.a
 llvm%%LLVM_SUFFIX%%/lib/libclang.so
 llvm%%LLVM_SUFFIX%%/lib/libclangARCMigrate.a
@@ -493,8 +493,8 @@ man/man1/scan-build%%LLVM_SUFFIX%%.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/html/clang/clang.html
 %%PORTDOCS%%%%DOCSDIR%%/html/clang/manpage.css
 %%PORTDOCS%%%%DOCSDIR%%/ps/clang.ps
-@dirrm llvm%%LLVM_SUFFIX%%/lib/clang/3.4/include
-@dirrm llvm%%LLVM_SUFFIX%%/lib/clang/3.4
+@dirrm llvm%%LLVM_SUFFIX%%/lib/clang/3.4.2/include
+@dirrm llvm%%LLVM_SUFFIX%%/lib/clang/3.4.2
 @dirrm llvm%%LLVM_SUFFIX%%/lib/clang
 @dirrm llvm%%LLVM_SUFFIX%%/include/clang/Tooling
 @dirrm llvm%%LLVM_SUFFIX%%/include/clang/StaticAnalyzer/Frontend

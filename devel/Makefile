@@ -1749,6 +1749,7 @@
     SUBDIR += p5-Data-ParseBinary
     SUBDIR += p5-Data-Path
     SUBDIR += p5-Data-Peek
+    SUBDIR += p5-Data-Perl
     SUBDIR += p5-Data-Printer
     SUBDIR += p5-Data-Properties
     SUBDIR += p5-Data-Rand
@@ -2383,8 +2384,10 @@
     SUBDIR += p5-Module-Versions
     SUBDIR += p5-Module-Versions-Report
     SUBDIR += p5-Moo
+    SUBDIR += p5-MooX-Cmd
     SUBDIR += p5-MooX-ConfigFromFile
     SUBDIR += p5-MooX-File-ConfigDir
+    SUBDIR += p5-MooX-HandlesVia
     SUBDIR += p5-MooX-Options
     SUBDIR += p5-MooX-StrictConstructor
     SUBDIR += p5-MooX-Types-MooseLike
@@ -4224,6 +4227,7 @@
     SUBDIR += rubygem-blankslate
     SUBDIR += rubygem-blockenspiel
     SUBDIR += rubygem-bson
+    SUBDIR += rubygem-buftok
     SUBDIR += rubygem-bugspots
     SUBDIR += rubygem-builder
     SUBDIR += rubygem-builder31

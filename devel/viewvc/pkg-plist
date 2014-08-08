@@ -1,6 +1,3 @@
-@unexec if cmp -s %D/viewvc/cvsgraph.conf %D/viewvc/cvsgraph.conf.dist; then rm -f %D/viewvc/cvsgraph.conf; fi
-@unexec if cmp -s %D/viewvc/mimetypes.conf %D/viewvc/mimetypes.conf.dist; then rm -f %D/viewvc/mimetypes.conf; fi
-@unexec if cmp -s %D/viewvc/viewvc.conf %D/viewvc/viewvc.conf.dist; then rm -f %D/viewvc/viewvc.conf; fi
 viewvc/bin/cgi/query.cgi
 viewvc/bin/cgi/viewvc.cgi
 viewvc/bin/cvsdbadmin
@@ -16,8 +13,7 @@ viewvc/bin/wsgi/query.fcgi
 viewvc/bin/wsgi/query.wsgi
 viewvc/bin/wsgi/viewvc.fcgi
 viewvc/bin/wsgi/viewvc.wsgi
-viewvc/cvsgraph.conf.dist
-@exec [ -f %B/cvsgraph.conf ] || cp %B/%f %B/cvsgraph.conf
+@sample viewvc/cvsgraph.conf.sample
 viewvc/lib/PyFontify.py
 viewvc/lib/PyFontify.pyc
 viewvc/lib/accept.py
@@ -96,8 +92,7 @@ viewvc/lib/viewvc.py
 viewvc/lib/viewvc.pyc
 viewvc/lib/win32popen.py
 viewvc/lib/win32popen.pyc
-viewvc/mimetypes.conf.dist
-@exec [ -f %B/mimetypes.conf ] || cp %B/%f %B/mimetypes.conf
+@sample viewvc/mimetypes.conf.sample
 viewvc/templates-contrib/README
 viewvc/templates-contrib/newvc/README
 viewvc/templates-contrib/newvc/templates/diff.ezt
@@ -245,38 +240,37 @@ viewvc/templates/query_results.ezt
 viewvc/templates/revision.ezt
 viewvc/templates/roots.ezt
 viewvc/templates/rss.ezt
-viewvc/viewvc.conf.dist
-@exec [ -f %B/viewvc.conf ] || cp %B/%f %B/viewvc.conf
-@dirrm viewvc/templates/include
-@dirrm viewvc/templates/docroot/images
-@dirrm viewvc/templates/docroot
-@dirrm viewvc/templates-contrib/viewsvn/templates/include
-@dirrm viewvc/templates-contrib/viewsvn/templates/docroot/images/tortoisesvn
-@dirrm viewvc/templates-contrib/viewsvn/templates/docroot/images
-@dirrm viewvc/templates-contrib/viewsvn/templates/docroot
-@dirrm viewvc/templates-contrib/viewsvn/templates
-@dirrm viewvc/templates-contrib/viewsvn/screenshots
-@dirrm viewvc/templates-contrib/viewsvn/extras
-@dirrm viewvc/templates-contrib/viewsvn
-@dirrm viewvc/templates-contrib/newvc/templates/include
-@dirrm viewvc/templates-contrib/newvc/templates/docroot/images
-@dirrm viewvc/templates-contrib/newvc/templates/docroot
-@dirrm viewvc/templates-contrib/newvc/templates
-@dirrm viewvc/templates-contrib/newvc
-@dirrm viewvc/templates-contrib
-@dirrm viewvc/templates
-@dirrm viewvc/lib/vclib/svn
+@sample viewvc/viewvc.conf.sample
+@dirrm viewvc/bin/cgi
+@dirrm viewvc/bin/mod_python
+@dirrm viewvc/bin/wsgi
+@dirrm viewvc/bin
+@dirrm viewvc/lib/vcauth/forbidden
+@dirrm viewvc/lib/vcauth/forbiddenre
+@dirrm viewvc/lib/vcauth/svnauthz
+@dirrm viewvc/lib/vcauth
 @dirrm viewvc/lib/vclib/ccvs/rcsparse/test-data
 @dirrm viewvc/lib/vclib/ccvs/rcsparse
 @dirrm viewvc/lib/vclib/ccvs
+@dirrm viewvc/lib/vclib/svn
 @dirrm viewvc/lib/vclib
-@dirrm viewvc/lib/vcauth/svnauthz
-@dirrm viewvc/lib/vcauth/forbiddenre
-@dirrm viewvc/lib/vcauth/forbidden
-@dirrm viewvc/lib/vcauth
 @dirrm viewvc/lib
-@dirrm viewvc/bin/wsgi
-@dirrm viewvc/bin/mod_python
-@dirrm viewvc/bin/cgi
-@dirrm viewvc/bin
+@dirrm viewvc/templates/docroot/images
+@dirrm viewvc/templates/docroot
+@dirrm viewvc/templates/include
+@dirrm viewvc/templates
+@dirrm viewvc/templates-contrib/newvc/templates/docroot/images
+@dirrm viewvc/templates-contrib/newvc/templates/docroot
+@dirrm viewvc/templates-contrib/newvc/templates/include
+@dirrm viewvc/templates-contrib/newvc/templates
+@dirrm viewvc/templates-contrib/newvc
+@dirrm viewvc/templates-contrib/viewsvn/extras
+@dirrm viewvc/templates-contrib/viewsvn/screenshots
+@dirrm viewvc/templates-contrib/viewsvn/templates/docroot/images/tortoisesvn
+@dirrm viewvc/templates-contrib/viewsvn/templates/docroot/images
+@dirrm viewvc/templates-contrib/viewsvn/templates/docroot
+@dirrm viewvc/templates-contrib/viewsvn/templates/include
+@dirrm viewvc/templates-contrib/viewsvn/templates
+@dirrm viewvc/templates-contrib/viewsvn
+@dirrm viewvc/templates-contrib
 @dirrmtry viewvc

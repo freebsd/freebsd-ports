@@ -7,7 +7,7 @@ CATEGORIES=	x11-clocks
 MASTER_SITES=	http://opencircuitdesign.com/~tim/programs/dclock/archive/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A 7-segment digital clock with some optional features
+COMMENT=	7-segment digital clock with some optional features
 
 OPTIONS_DEFINE=	SOX XFT DOCS
 OPTIONS_DEFAULT=SOX XFT

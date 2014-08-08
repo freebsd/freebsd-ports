@@ -117,6 +117,7 @@
     SUBDIR += dansguardian
     SUBDIR += dansguardian-devel
     SUBDIR += davical
+    SUBDIR += dddbl
     SUBDIR += decss
     SUBDIR += deforaos-surfer
     SUBDIR += demoroniser
@@ -1790,6 +1791,7 @@
     SUBDIR += rubygem-faraday_middleware
     SUBDIR += rubygem-feed-normalizer
     SUBDIR += rubygem-feedzirra
+    SUBDIR += rubygem-flowdock
     SUBDIR += rubygem-geminabox
     SUBDIR += rubygem-gitlab-gollum-lib
     SUBDIR += rubygem-gitlab-grack
@@ -1803,6 +1805,7 @@
     SUBDIR += rubygem-heroku-nav
     SUBDIR += rubygem-hpricot
     SUBDIR += rubygem-html2haml
+    SUBDIR += rubygem-http
     SUBDIR += rubygem-http-cookie
     SUBDIR += rubygem-httparty
     SUBDIR += rubygem-httpclient
@@ -1898,6 +1901,7 @@
     SUBDIR += rubygem-webrobots
     SUBDIR += rubygem-websocket
     SUBDIR += rubygem-yapra
+    SUBDIR += sabredav
     SUBDIR += sahi
     SUBDIR += sakai
     SUBDIR += samidare

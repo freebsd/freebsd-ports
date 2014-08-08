@@ -10,7 +10,7 @@ EXTRACT_SUFX=	.otf
 EXTRACT_ONLY=
 
 MAINTAINER=	ashish@FreeBSD.org
-COMMENT=	A monospaced truetype font
+COMMENT=	Monospaced truetype font
 
 USE_XORG=	x11
 INSTALLS_TTF=	yes

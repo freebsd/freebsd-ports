@@ -52,6 +52,11 @@ PORTDOCS=	*
 CONFIGURE_ARGS+=	--disable-stack-for-recursion
 .endif
 
+# libedit
+.if ${PORT_OPTIONS:MLIBEDIT}
+CFLAGS+=	-I /usr/include/edit
+.endif
+
 # Optional knobs that accept positive integer parameters (see pcrebuild(3)):
 
 # Allow the use of very large patterns (> 64K) with the 8- and 16-bit

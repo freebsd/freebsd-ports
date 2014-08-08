@@ -715,79 +715,6 @@
 %%WWWDIR%%/3rdparty/fontawesome/font/fontawesome-webfont.svg
 %%WWWDIR%%/3rdparty/fontawesome/font/fontawesome-webfont.ttf
 %%WWWDIR%%/3rdparty/fontawesome/font/fontawesome-webfont.woff
-%%WWWDIR%%/3rdparty/getid3/extension.cache.dbm.php
-%%WWWDIR%%/3rdparty/getid3/extension.cache.mysql.php
-%%WWWDIR%%/3rdparty/getid3/extension.cache.sqlite3.php
-%%WWWDIR%%/3rdparty/getid3/getid3.lib.php
-%%WWWDIR%%/3rdparty/getid3/getid3.php
-%%WWWDIR%%/3rdparty/getid3/license.txt
-%%WWWDIR%%/3rdparty/getid3/module.archive.gzip.php
-%%WWWDIR%%/3rdparty/getid3/module.archive.rar.php
-%%WWWDIR%%/3rdparty/getid3/module.archive.szip.php
-%%WWWDIR%%/3rdparty/getid3/module.archive.tar.php
-%%WWWDIR%%/3rdparty/getid3/module.archive.zip.php
-%%WWWDIR%%/3rdparty/getid3/module.audio-video.asf.php
-%%WWWDIR%%/3rdparty/getid3/module.audio-video.bink.php
-%%WWWDIR%%/3rdparty/getid3/module.audio-video.flv.php
-%%WWWDIR%%/3rdparty/getid3/module.audio-video.matroska.php
-%%WWWDIR%%/3rdparty/getid3/module.audio-video.mpeg.php
-%%WWWDIR%%/3rdparty/getid3/module.audio-video.nsv.php
-%%WWWDIR%%/3rdparty/getid3/module.audio-video.quicktime.php
-%%WWWDIR%%/3rdparty/getid3/module.audio-video.real.php
-%%WWWDIR%%/3rdparty/getid3/module.audio-video.riff.php
-%%WWWDIR%%/3rdparty/getid3/module.audio-video.swf.php
-%%WWWDIR%%/3rdparty/getid3/module.audio-video.ts.php
-%%WWWDIR%%/3rdparty/getid3/module.audio.aa.php
-%%WWWDIR%%/3rdparty/getid3/module.audio.aac.php
-%%WWWDIR%%/3rdparty/getid3/module.audio.ac3.php
-%%WWWDIR%%/3rdparty/getid3/module.audio.au.php
-%%WWWDIR%%/3rdparty/getid3/module.audio.avr.php
-%%WWWDIR%%/3rdparty/getid3/module.audio.bonk.php
-%%WWWDIR%%/3rdparty/getid3/module.audio.dss.php
-%%WWWDIR%%/3rdparty/getid3/module.audio.dts.php
-%%WWWDIR%%/3rdparty/getid3/module.audio.flac.php
-%%WWWDIR%%/3rdparty/getid3/module.audio.la.php
-%%WWWDIR%%/3rdparty/getid3/module.audio.lpac.php
-%%WWWDIR%%/3rdparty/getid3/module.audio.midi.php
-%%WWWDIR%%/3rdparty/getid3/module.audio.mod.php
-%%WWWDIR%%/3rdparty/getid3/module.audio.monkey.php
-%%WWWDIR%%/3rdparty/getid3/module.audio.mp3.php
-%%WWWDIR%%/3rdparty/getid3/module.audio.mpc.php
-%%WWWDIR%%/3rdparty/getid3/module.audio.ogg.php
-%%WWWDIR%%/3rdparty/getid3/module.audio.optimfrog.php
-%%WWWDIR%%/3rdparty/getid3/module.audio.rkau.php
-%%WWWDIR%%/3rdparty/getid3/module.audio.shorten.php
-%%WWWDIR%%/3rdparty/getid3/module.audio.tta.php
-%%WWWDIR%%/3rdparty/getid3/module.audio.voc.php
-%%WWWDIR%%/3rdparty/getid3/module.audio.vqf.php
-%%WWWDIR%%/3rdparty/getid3/module.audio.wavpack.php
-%%WWWDIR%%/3rdparty/getid3/module.graphic.bmp.php
-%%WWWDIR%%/3rdparty/getid3/module.graphic.efax.php
-%%WWWDIR%%/3rdparty/getid3/module.graphic.gif.php
-%%WWWDIR%%/3rdparty/getid3/module.graphic.jpg.php
-%%WWWDIR%%/3rdparty/getid3/module.graphic.pcd.php
-%%WWWDIR%%/3rdparty/getid3/module.graphic.png.php
-%%WWWDIR%%/3rdparty/getid3/module.graphic.svg.php
-%%WWWDIR%%/3rdparty/getid3/module.graphic.tiff.php
-%%WWWDIR%%/3rdparty/getid3/module.misc.cue.php
-%%WWWDIR%%/3rdparty/getid3/module.misc.exe.php
-%%WWWDIR%%/3rdparty/getid3/module.misc.iso.php
-%%WWWDIR%%/3rdparty/getid3/module.misc.msoffice.php
-%%WWWDIR%%/3rdparty/getid3/module.misc.par2.php
-%%WWWDIR%%/3rdparty/getid3/module.misc.pdf.php
-%%WWWDIR%%/3rdparty/getid3/module.tag.apetag.php
-%%WWWDIR%%/3rdparty/getid3/module.tag.id3v1.php
-%%WWWDIR%%/3rdparty/getid3/module.tag.id3v2.php
-%%WWWDIR%%/3rdparty/getid3/module.tag.lyrics3.php
-%%WWWDIR%%/3rdparty/getid3/module.tag.xmp.php
-%%WWWDIR%%/3rdparty/getid3/write.apetag.php
-%%WWWDIR%%/3rdparty/getid3/write.id3v1.php
-%%WWWDIR%%/3rdparty/getid3/write.id3v2.php
-%%WWWDIR%%/3rdparty/getid3/write.lyrics3.php
-%%WWWDIR%%/3rdparty/getid3/write.metaflac.php
-%%WWWDIR%%/3rdparty/getid3/write.php
-%%WWWDIR%%/3rdparty/getid3/write.real.php
-%%WWWDIR%%/3rdparty/getid3/write.vorbiscomment.php
 %%WWWDIR%%/3rdparty/guzzle/common/Guzzle/Common/AbstractHasDispatcher.php
 %%WWWDIR%%/3rdparty/guzzle/common/Guzzle/Common/Collection.php
 %%WWWDIR%%/3rdparty/guzzle/common/Guzzle/Common/Event.php
@@ -873,17 +800,93 @@
 %%WWWDIR%%/3rdparty/guzzle/stream/Guzzle/Stream/StreamInterface.php
 %%WWWDIR%%/3rdparty/guzzle/stream/Guzzle/Stream/StreamRequestFactoryInterface.php
 %%WWWDIR%%/3rdparty/guzzle/stream/Guzzle/Stream/composer.json
-%%WWWDIR%%/3rdparty/isoft/mssql-bundle/Realestate/MssqlBundle/Driver/PDODblib/Connection.php
-%%WWWDIR%%/3rdparty/isoft/mssql-bundle/Realestate/MssqlBundle/Driver/PDODblib/Driver.php
-%%WWWDIR%%/3rdparty/isoft/mssql-bundle/Realestate/MssqlBundle/Platforms/DblibPlatform.php
-%%WWWDIR%%/3rdparty/isoft/mssql-bundle/Realestate/MssqlBundle/Readme.md
-%%WWWDIR%%/3rdparty/isoft/mssql-bundle/Realestate/MssqlBundle/RealestateMssqlBundle.php
-%%WWWDIR%%/3rdparty/isoft/mssql-bundle/Realestate/MssqlBundle/Schema/DblibSchemaManager.php
-%%WWWDIR%%/3rdparty/isoft/mssql-bundle/Realestate/MssqlBundle/Types/DateTimeType.php
-%%WWWDIR%%/3rdparty/isoft/mssql-bundle/Realestate/MssqlBundle/Types/DateType.php
-%%WWWDIR%%/3rdparty/isoft/mssql-bundle/Realestate/MssqlBundle/Types/RealestateDateTime.php
-%%WWWDIR%%/3rdparty/isoft/mssql-bundle/Realestate/MssqlBundle/Types/UniqueidentifierType.php
-%%WWWDIR%%/3rdparty/isoft/mssql-bundle/Realestate/MssqlBundle/composer.json
+%%WWWDIR%%/3rdparty/james-heinrich/getid3/.gitattributes
+%%WWWDIR%%/3rdparty/james-heinrich/getid3/README.md
+%%WWWDIR%%/3rdparty/james-heinrich/getid3/changelog.txt
+%%WWWDIR%%/3rdparty/james-heinrich/getid3/composer.json
+%%WWWDIR%%/3rdparty/james-heinrich/getid3/dependencies.txt
+%%WWWDIR%%/3rdparty/james-heinrich/getid3/getid3/extension.cache.dbm.php
+%%WWWDIR%%/3rdparty/james-heinrich/getid3/getid3/extension.cache.mysql.php
+%%WWWDIR%%/3rdparty/james-heinrich/getid3/getid3/extension.cache.sqlite3.php
+%%WWWDIR%%/3rdparty/james-heinrich/getid3/getid3/getid3.lib.php
+%%WWWDIR%%/3rdparty/james-heinrich/getid3/getid3/getid3.php
+%%WWWDIR%%/3rdparty/james-heinrich/getid3/getid3/module.archive.gzip.php
+%%WWWDIR%%/3rdparty/james-heinrich/getid3/getid3/module.archive.rar.php
+%%WWWDIR%%/3rdparty/james-heinrich/getid3/getid3/module.archive.szip.php
+%%WWWDIR%%/3rdparty/james-heinrich/getid3/getid3/module.archive.tar.php
+%%WWWDIR%%/3rdparty/james-heinrich/getid3/getid3/module.archive.zip.php
+%%WWWDIR%%/3rdparty/james-heinrich/getid3/getid3/module.audio-video.asf.php
+%%WWWDIR%%/3rdparty/james-heinrich/getid3/getid3/module.audio-video.bink.php
+%%WWWDIR%%/3rdparty/james-heinrich/getid3/getid3/module.audio-video.flv.php
+%%WWWDIR%%/3rdparty/james-heinrich/getid3/getid3/module.audio-video.matroska.php
+%%WWWDIR%%/3rdparty/james-heinrich/getid3/getid3/module.audio-video.mpeg.php
+%%WWWDIR%%/3rdparty/james-heinrich/getid3/getid3/module.audio-video.nsv.php
+%%WWWDIR%%/3rdparty/james-heinrich/getid3/getid3/module.audio-video.quicktime.php
+%%WWWDIR%%/3rdparty/james-heinrich/getid3/getid3/module.audio-video.real.php
+%%WWWDIR%%/3rdparty/james-heinrich/getid3/getid3/module.audio-video.riff.php
+%%WWWDIR%%/3rdparty/james-heinrich/getid3/getid3/module.audio-video.swf.php
+%%WWWDIR%%/3rdparty/james-heinrich/getid3/getid3/module.audio-video.ts.php
+%%WWWDIR%%/3rdparty/james-heinrich/getid3/getid3/module.audio.aa.php
+%%WWWDIR%%/3rdparty/james-heinrich/getid3/getid3/module.audio.aac.php
+%%WWWDIR%%/3rdparty/james-heinrich/getid3/getid3/module.audio.ac3.php
+%%WWWDIR%%/3rdparty/james-heinrich/getid3/getid3/module.audio.amr.php
+%%WWWDIR%%/3rdparty/james-heinrich/getid3/getid3/module.audio.au.php
+%%WWWDIR%%/3rdparty/james-heinrich/getid3/getid3/module.audio.avr.php
+%%WWWDIR%%/3rdparty/james-heinrich/getid3/getid3/module.audio.bonk.php
+%%WWWDIR%%/3rdparty/james-heinrich/getid3/getid3/module.audio.dss.php
+%%WWWDIR%%/3rdparty/james-heinrich/getid3/getid3/module.audio.dts.php
+%%WWWDIR%%/3rdparty/james-heinrich/getid3/getid3/module.audio.flac.php
+%%WWWDIR%%/3rdparty/james-heinrich/getid3/getid3/module.audio.la.php
+%%WWWDIR%%/3rdparty/james-heinrich/getid3/getid3/module.audio.lpac.php
+%%WWWDIR%%/3rdparty/james-heinrich/getid3/getid3/module.audio.midi.php
+%%WWWDIR%%/3rdparty/james-heinrich/getid3/getid3/module.audio.mod.php
+%%WWWDIR%%/3rdparty/james-heinrich/getid3/getid3/module.audio.monkey.php
+%%WWWDIR%%/3rdparty/james-heinrich/getid3/getid3/module.audio.mp3.php
+%%WWWDIR%%/3rdparty/james-heinrich/getid3/getid3/module.audio.mpc.php
+%%WWWDIR%%/3rdparty/james-heinrich/getid3/getid3/module.audio.ogg.php
+%%WWWDIR%%/3rdparty/james-heinrich/getid3/getid3/module.audio.optimfrog.php
+%%WWWDIR%%/3rdparty/james-heinrich/getid3/getid3/module.audio.rkau.php
+%%WWWDIR%%/3rdparty/james-heinrich/getid3/getid3/module.audio.shorten.php
+%%WWWDIR%%/3rdparty/james-heinrich/getid3/getid3/module.audio.tta.php
+%%WWWDIR%%/3rdparty/james-heinrich/getid3/getid3/module.audio.voc.php
+%%WWWDIR%%/3rdparty/james-heinrich/getid3/getid3/module.audio.vqf.php
+%%WWWDIR%%/3rdparty/james-heinrich/getid3/getid3/module.audio.wavpack.php
+%%WWWDIR%%/3rdparty/james-heinrich/getid3/getid3/module.graphic.bmp.php
+%%WWWDIR%%/3rdparty/james-heinrich/getid3/getid3/module.graphic.efax.php
+%%WWWDIR%%/3rdparty/james-heinrich/getid3/getid3/module.graphic.gif.php
+%%WWWDIR%%/3rdparty/james-heinrich/getid3/getid3/module.graphic.jpg.php
+%%WWWDIR%%/3rdparty/james-heinrich/getid3/getid3/module.graphic.pcd.php
+%%WWWDIR%%/3rdparty/james-heinrich/getid3/getid3/module.graphic.png.php
+%%WWWDIR%%/3rdparty/james-heinrich/getid3/getid3/module.graphic.svg.php
+%%WWWDIR%%/3rdparty/james-heinrich/getid3/getid3/module.graphic.tiff.php
+%%WWWDIR%%/3rdparty/james-heinrich/getid3/getid3/module.misc.cue.php
+%%WWWDIR%%/3rdparty/james-heinrich/getid3/getid3/module.misc.exe.php
+%%WWWDIR%%/3rdparty/james-heinrich/getid3/getid3/module.misc.iso.php
+%%WWWDIR%%/3rdparty/james-heinrich/getid3/getid3/module.misc.msoffice.php
+%%WWWDIR%%/3rdparty/james-heinrich/getid3/getid3/module.misc.par2.php
+%%WWWDIR%%/3rdparty/james-heinrich/getid3/getid3/module.misc.pdf.php
+%%WWWDIR%%/3rdparty/james-heinrich/getid3/getid3/module.tag.apetag.php
+%%WWWDIR%%/3rdparty/james-heinrich/getid3/getid3/module.tag.id3v1.php
+%%WWWDIR%%/3rdparty/james-heinrich/getid3/getid3/module.tag.id3v2.php
+%%WWWDIR%%/3rdparty/james-heinrich/getid3/getid3/module.tag.lyrics3.php
+%%WWWDIR%%/3rdparty/james-heinrich/getid3/getid3/module.tag.xmp.php
+%%WWWDIR%%/3rdparty/james-heinrich/getid3/getid3/write.apetag.php
+%%WWWDIR%%/3rdparty/james-heinrich/getid3/getid3/write.id3v1.php
+%%WWWDIR%%/3rdparty/james-heinrich/getid3/getid3/write.id3v2.php
+%%WWWDIR%%/3rdparty/james-heinrich/getid3/getid3/write.lyrics3.php
+%%WWWDIR%%/3rdparty/james-heinrich/getid3/getid3/write.metaflac.php
+%%WWWDIR%%/3rdparty/james-heinrich/getid3/getid3/write.php
+%%WWWDIR%%/3rdparty/james-heinrich/getid3/getid3/write.real.php
+%%WWWDIR%%/3rdparty/james-heinrich/getid3/getid3/write.vorbiscomment.php
+%%WWWDIR%%/3rdparty/james-heinrich/getid3/license.txt
+%%WWWDIR%%/3rdparty/james-heinrich/getid3/licenses/licence.gpl-10.txt
+%%WWWDIR%%/3rdparty/james-heinrich/getid3/licenses/licence.gpl-20.txt
+%%WWWDIR%%/3rdparty/james-heinrich/getid3/licenses/licence.gpl-30.txt
+%%WWWDIR%%/3rdparty/james-heinrich/getid3/licenses/licence.lgpl-30.txt
+%%WWWDIR%%/3rdparty/james-heinrich/getid3/licenses/licence.mpl-20.txt
+%%WWWDIR%%/3rdparty/james-heinrich/getid3/licenses/license.commercial.txt
+%%WWWDIR%%/3rdparty/james-heinrich/getid3/readme.txt
+%%WWWDIR%%/3rdparty/james-heinrich/getid3/structure.txt
 %%WWWDIR%%/3rdparty/js/chosen/LICENSE.md
 %%WWWDIR%%/3rdparty/js/chosen/README.md
 %%WWWDIR%%/3rdparty/js/chosen/VERSION
@@ -2763,6 +2766,7 @@
 %%WWWDIR%%/apps/activity/tests/hooksdeleteusertest.php
 %%WWWDIR%%/apps/activity/tests/mailqueuehandlertest.php
 %%WWWDIR%%/apps/activity/tests/navigationtest.php
+%%WWWDIR%%/apps/activity/tests/parameterhelpertest.php
 %%WWWDIR%%/apps/activity/tests/phpunit.xml
 %%WWWDIR%%/apps/activity/tests/usersettingstest.php
 %%WWWDIR%%/apps/admin_dependencies_chk/appinfo/app.php
@@ -7588,114 +7592,29 @@
 %%WWWDIR%%/core/css/share.css
 %%WWWDIR%%/core/css/styles.css
 %%WWWDIR%%/core/doc/admin/_images/100000000000003800000018D49F1CE7.png
-%%WWWDIR%%/core/doc/admin/_images/1000000000000050000000DB83B8FA5B.png
 %%WWWDIR%%/core/doc/admin/_images/10000000000000950000004412998BE7.png
 %%WWWDIR%%/core/doc/admin/_images/10000000000000A800000073F49785A6.png
 %%WWWDIR%%/core/doc/admin/_images/10000000000000B600000120706C3C75.png
 %%WWWDIR%%/core/doc/admin/_images/10000000000000CD000000ECA8DE7780.png
-%%WWWDIR%%/core/doc/admin/_images/10000000000000F1000000F56125BDBA.png
-%%WWWDIR%%/core/doc/admin/_images/10000000000000F1000000F6704F46D3.png
-%%WWWDIR%%/core/doc/admin/_images/10000000000000F300000068AF0ECD53.png
-%%WWWDIR%%/core/doc/admin/_images/10000000000000F40000019A110DD159.png
-%%WWWDIR%%/core/doc/admin/_images/10000000000000F5000000675DC5F68C.png
-%%WWWDIR%%/core/doc/admin/_images/10000000000000F500000067A8845EF8.png
-%%WWWDIR%%/core/doc/admin/_images/10000000000000F60000006754ED2A1E.png
-%%WWWDIR%%/core/doc/admin/_images/10000000000000F6000000685DFB3767.png
-%%WWWDIR%%/core/doc/admin/_images/100000000000012C0000009C444B4720.png
-%%WWWDIR%%/core/doc/admin/_images/100000000000013C0000017D4FC6CEF5.png
-%%WWWDIR%%/core/doc/admin/_images/10000000000001400000008A557EF7E3.png
-%%WWWDIR%%/core/doc/admin/_images/10000000000001440000005A2989832F.png
-%%WWWDIR%%/core/doc/admin/_images/1000000000000160000000DBB2FB0223.png
-%%WWWDIR%%/core/doc/admin/_images/1000000000000165000000D3FF2168AB.png
-%%WWWDIR%%/core/doc/admin/_images/1000000000000167000000B43E4BF478.png
-%%WWWDIR%%/core/doc/admin/_images/10000000000001800000009A9494E037.png
 %%WWWDIR%%/core/doc/admin/_images/10000000000001880000007EA4444400.png
-%%WWWDIR%%/core/doc/admin/_images/100000000000018B000000A090F31164.png
-%%WWWDIR%%/core/doc/admin/_images/100000000000018E000000C4BA62B2A3.png
-%%WWWDIR%%/core/doc/admin/_images/1000000000000193000001AE9AB8B0A2.png
-%%WWWDIR%%/core/doc/admin/_images/1000000000000194000000498325A766.png
-%%WWWDIR%%/core/doc/admin/_images/1000000000000194000000FAD39BC0D8.png
 %%WWWDIR%%/core/doc/admin/_images/10000000000001980000009271BE0D26.png
-%%WWWDIR%%/core/doc/admin/_images/100000000000019E0000004CD2A0F407.png
-%%WWWDIR%%/core/doc/admin/_images/10000000000001A3000000AAFE82893A.png
-%%WWWDIR%%/core/doc/admin/_images/10000000000001AC000000477C76808F.png
-%%WWWDIR%%/core/doc/admin/_images/10000000000001BF00000012349EAE2F.png
-%%WWWDIR%%/core/doc/admin/_images/10000000000001C1000000FE663748B2.png
-%%WWWDIR%%/core/doc/admin/_images/10000000000001C9000000AF9C1CE57F.png
-%%WWWDIR%%/core/doc/admin/_images/10000000000001CF00000176B0BE1EBC.png
 %%WWWDIR%%/core/doc/admin/_images/10000000000001D30000014DC251C948.png
-%%WWWDIR%%/core/doc/admin/_images/10000000000001E50000006E3ECDC427.png
 %%WWWDIR%%/core/doc/admin/_images/10000000000001FD000000DF8D2D7546.png
-%%WWWDIR%%/core/doc/admin/_images/1000000000000200000000BCCCC35DEB.png
 %%WWWDIR%%/core/doc/admin/_images/10000000000002170000004A27056037.png
-%%WWWDIR%%/core/doc/admin/_images/100000000000021C0000004CACBF786C.png
-%%WWWDIR%%/core/doc/admin/_images/10000000000002210000002DE3BE7515.png
-%%WWWDIR%%/core/doc/admin/_images/1000000000000227000000935D9B1EF6.png
-%%WWWDIR%%/core/doc/admin/_images/100000000000023B000000125381F51B.png
 %%WWWDIR%%/core/doc/admin/_images/1000000000000247000000A77440E4D3.png
-%%WWWDIR%%/core/doc/admin/_images/10000000000002720000013FB6EDA793.png
 %%WWWDIR%%/core/doc/admin/_images/100000000000027B0000011D10F70F88.png
 %%WWWDIR%%/core/doc/admin/_images/10000000000002840000016729388B7F.png
-%%WWWDIR%%/core/doc/admin/_images/1000000000000288000001A1D5BE4881.png
-%%WWWDIR%%/core/doc/admin/_images/1000000000000289000001A9D7F3941F.png
-%%WWWDIR%%/core/doc/admin/_images/10000000000002910000018B31D51F03.png
-%%WWWDIR%%/core/doc/admin/_images/1000000000000291000001951B69B9A6.png
-%%WWWDIR%%/core/doc/admin/_images/10000000000002950000019EF5732E36.png
 %%WWWDIR%%/core/doc/admin/_images/10000000000002950000021E245F6883.png
-%%WWWDIR%%/core/doc/admin/_images/1000000000000298000001870B0581FA.png
-%%WWWDIR%%/core/doc/admin/_images/1000000000000298000001874D3CA506.png
-%%WWWDIR%%/core/doc/admin/_images/100000000000029B0000018885B5282E.png
-%%WWWDIR%%/core/doc/admin/_images/10000000000002A6000000BFBE298238.png
-%%WWWDIR%%/core/doc/admin/_images/10000000000002B1000002258C08D304.png
-%%WWWDIR%%/core/doc/admin/_images/10000000000002B3000000365E1CD00D.png
-%%WWWDIR%%/core/doc/admin/_images/10000000000002BB000000266DB6AD1A.png
-%%WWWDIR%%/core/doc/admin/_images/10000000000002F3000000926CA65D02.png
-%%WWWDIR%%/core/doc/admin/_images/1000000000000304000001B964698779.png
-%%WWWDIR%%/core/doc/admin/_images/1000000000000336000000F38C3FAF84.png
 %%WWWDIR%%/core/doc/admin/_images/1000000000000372000002AF943ADDA0.png
-%%WWWDIR%%/core/doc/admin/_images/10000000000003730000002B6865E951.png
 %%WWWDIR%%/core/doc/admin/_images/10000000000003A60000011E274A1A28.png
 %%WWWDIR%%/core/doc/admin/_images/10000000000003A6000002A9C7A660BE.png
-%%WWWDIR%%/core/doc/admin/_images/10000000000003A800000039364066E4.png
 %%WWWDIR%%/core/doc/admin/_images/10000000000003B30000021B5EE5D338.png
 %%WWWDIR%%/core/doc/admin/_images/10000000000003DF00000071A41D8A1F.png
-%%WWWDIR%%/core/doc/admin/_images/10000000000003DF000000D953A456B6.png
-%%WWWDIR%%/core/doc/admin/_images/10000000000003E8000001524A147A04.png
-%%WWWDIR%%/core/doc/admin/_images/10000000000003EC000000AB60616FA7.png
-%%WWWDIR%%/core/doc/admin/_images/10000000000003FB000002359BAFB40E.png
-%%WWWDIR%%/core/doc/admin/_images/10000000000004010000017E4A6552BC.png
-%%WWWDIR%%/core/doc/admin/_images/1000000000000403000001632F0B76F6.png
-%%WWWDIR%%/core/doc/admin/_images/1000000000000404000000FCFC13E732.png
 %%WWWDIR%%/core/doc/admin/_images/10000000000004100000005657010336.png
-%%WWWDIR%%/core/doc/admin/_images/10000000000004170000016ACB5E15AE.png
-%%WWWDIR%%/core/doc/admin/_images/100000000000041D0000017D8D1BC4D9.png
-%%WWWDIR%%/core/doc/admin/_images/100000000000042500000163D2B339D5.png
-%%WWWDIR%%/core/doc/admin/_images/1000000000000427000000324F58266D.png
-%%WWWDIR%%/core/doc/admin/_images/100000000000042E000001D3EEB9978B.png
-%%WWWDIR%%/core/doc/admin/_images/100000000000042F000000CC3EDDE79E.png
-%%WWWDIR%%/core/doc/admin/_images/1000000000000430000000AF9D6E724E.png
-%%WWWDIR%%/core/doc/admin/_images/100000000000043000000164DA0CE8C9.png
-%%WWWDIR%%/core/doc/admin/_images/100000000000043200000169BCD20493.png
-%%WWWDIR%%/core/doc/admin/_images/100000000000044C000002B0B421E27E.png
-%%WWWDIR%%/core/doc/admin/_images/100000000000045800000197FE462F2B.png
-%%WWWDIR%%/core/doc/admin/_images/1000000000000462000000D44541CF9A.png
-%%WWWDIR%%/core/doc/admin/_images/100000000000046C000000C2D3E5CF30.png
 %%WWWDIR%%/core/doc/admin/_images/10000000000004770000008AAF3CFFDB.png
-%%WWWDIR%%/core/doc/admin/_images/10000000000004920000028D9C8DC2CB.png
 %%WWWDIR%%/core/doc/admin/_images/10000000000004C0000000795BB2C146.png
-%%WWWDIR%%/core/doc/admin/_images/10000000000004CA000002B52116BE0C.png
-%%WWWDIR%%/core/doc/admin/_images/10000000000004ED000000BE3B9E25D5.png
-%%WWWDIR%%/core/doc/admin/_images/1000000000000523000000C6F786381C.png
-%%WWWDIR%%/core/doc/admin/_images/100000000000052500000088DBB95005.png
-%%WWWDIR%%/core/doc/admin/_images/1000000000000525000000BE30CF0423.png
-%%WWWDIR%%/core/doc/admin/_images/1000000000000527000000A7AB409FE0.png
-%%WWWDIR%%/core/doc/admin/_images/100000000000052F000000C2867B7294.png
-%%WWWDIR%%/core/doc/admin/_images/1000000000000530000001410CF0028A.png
-%%WWWDIR%%/core/doc/admin/_images/100000000000053100000142D9A4C916.png
-%%WWWDIR%%/core/doc/admin/_images/1000000000000532000000285DDBBF37.png
 %%WWWDIR%%/core/doc/admin/_images/100000000000053A00000067708C8F53.png
 %%WWWDIR%%/core/doc/admin/_images/1000000000000552000000BF22E90239.png
-%%WWWDIR%%/core/doc/admin/_images/1000000000000557000002E148BAB6D4.png
 %%WWWDIR%%/core/doc/admin/_images/10000000000005970000006AE23997C9.png
 %%WWWDIR%%/core/doc/admin/_images/10000000000005AF00000074604B1A67.png
 %%WWWDIR%%/core/doc/admin/_images/10000000000005B90000007866D92D14.png
@@ -7707,7 +7626,6 @@
 %%WWWDIR%%/core/doc/admin/_images/10000000000005E6000000676902E040.png
 %%WWWDIR%%/core/doc/admin/_images/10000000000005EB000000A68BA73E2D.png
 %%WWWDIR%%/core/doc/admin/_images/10000000000005EC00000073E678DFEC.png
-%%WWWDIR%%/core/doc/admin/_images/10000000000005F30000030F1372448D.png
 %%WWWDIR%%/core/doc/admin/_images/10000000000005F70000005F0912E904.png
 %%WWWDIR%%/core/doc/admin/_images/10000000000005F70000007E43DB8026.png
 %%WWWDIR%%/core/doc/admin/_images/10000000000005FA0000005CE8491B77.png
@@ -7721,16 +7639,6 @@
 %%WWWDIR%%/core/doc/admin/_images/100000000000062A0000005F61A18950.png
 %%WWWDIR%%/core/doc/admin/_images/1000000000000631000000E19D116AA0.png
 %%WWWDIR%%/core/doc/admin/_images/100000000000063F00000090AAE1FA4A.png
-%%WWWDIR%%/core/doc/admin/_images/1000000000000668000002D29EAD9899.png
-%%WWWDIR%%/core/doc/admin/_images/100000000000066D000001AAD8CE8256.png
-%%WWWDIR%%/core/doc/admin/_images/10000201000002FC000001DC2DDAD2F1.png
-%%WWWDIR%%/core/doc/admin/_images/1000020100000359000000A8B848DE68.png
-%%WWWDIR%%/core/doc/admin/_images/10000201000005F90000029D8BA200FB.png
-%%WWWDIR%%/core/doc/admin/_images/custom_mount_config_gui-1.png
-%%WWWDIR%%/core/doc/admin/_images/custom_mount_config_gui-2.png
-%%WWWDIR%%/core/doc/admin/_images/custom_mount_config_gui-3.png
-%%WWWDIR%%/core/doc/admin/_images/custom_mount_config_gui-4.png
-%%WWWDIR%%/core/doc/admin/_images/edit_encrypted_file.png
 %%WWWDIR%%/core/doc/admin/_images/install-wizard-advanced.png
 %%WWWDIR%%/core/doc/admin/_images/install-wizard.png
 %%WWWDIR%%/core/doc/admin/_images/ldap-advanced-1-connection.png
@@ -7746,6 +7654,11 @@
 %%WWWDIR%%/core/doc/admin/_images/ldap-wizard-4-group.png
 %%WWWDIR%%/core/doc/admin/_images/oc_admin_app_page.png
 %%WWWDIR%%/core/doc/admin/_images/oc_admin_user_manage.png
+%%WWWDIR%%/core/doc/admin/_images/oc_personal_settings_dropdown_admin.png
+%%WWWDIR%%/core/doc/admin/_images/oc_select_an_app_window.png
+%%WWWDIR%%/core/doc/admin/_images/oc_updater_enable.png
+%%WWWDIR%%/core/doc/admin/_images/oc_updater_select.png
+%%WWWDIR%%/core/doc/admin/_images/remote_shares.png
 %%WWWDIR%%/core/doc/admin/_images/ucs-app-center-install.png
 %%WWWDIR%%/core/doc/admin/_images/ucs-app-center-module.png
 %%WWWDIR%%/core/doc/admin/_images/ucsint.png
@@ -7754,36 +7667,11 @@
 %%WWWDIR%%/core/doc/admin/_images/untrusted-domain.png
 %%WWWDIR%%/core/doc/admin/_images/win7features.jpg
 %%WWWDIR%%/core/doc/admin/_images/winserverroles.jpg
-%%WWWDIR%%/core/doc/admin/_sources/apps/activity/index.txt
-%%WWWDIR%%/core/doc/admin/_sources/apps/admin_dependencies_chk/index.txt
-%%WWWDIR%%/core/doc/admin/_sources/apps/files_antivirus/index.txt
-%%WWWDIR%%/core/doc/admin/_sources/apps/files_encryption/index.txt
-%%WWWDIR%%/core/doc/admin/_sources/apps/files_external/index.txt
-%%WWWDIR%%/core/doc/admin/_sources/apps/files_sharing/index.txt
-%%WWWDIR%%/core/doc/admin/_sources/apps/files_trashbin/index.txt
-%%WWWDIR%%/core/doc/admin/_sources/apps/files_versions/index.txt
-%%WWWDIR%%/core/doc/admin/_sources/apps/firstrunwizard/index.txt
-%%WWWDIR%%/core/doc/admin/_sources/apps/index.txt
-%%WWWDIR%%/core/doc/admin/_sources/apps/user_ldap/index.txt
-%%WWWDIR%%/core/doc/admin/_sources/apps/viewers/index.txt
-%%WWWDIR%%/core/doc/admin/_sources/config/apps.txt
-%%WWWDIR%%/core/doc/admin/_sources/config/code_locations.txt
-%%WWWDIR%%/core/doc/admin/_sources/config/default_parameters.txt
-%%WWWDIR%%/core/doc/admin/_sources/config/deleted_items.txt
-%%WWWDIR%%/core/doc/admin/_sources/config/index.txt
-%%WWWDIR%%/core/doc/admin/_sources/config/logging.txt
-%%WWWDIR%%/core/doc/admin/_sources/config/mail_parameters.txt
-%%WWWDIR%%/core/doc/admin/_sources/config/maintenance.txt
-%%WWWDIR%%/core/doc/admin/_sources/config/miscellaneous.txt
-%%WWWDIR%%/core/doc/admin/_sources/config/previews.txt
-%%WWWDIR%%/core/doc/admin/_sources/config/reverse_proxy_configurations.txt
-%%WWWDIR%%/core/doc/admin/_sources/config/session_info.txt
-%%WWWDIR%%/core/doc/admin/_sources/config/user_experience.txt
-%%WWWDIR%%/core/doc/admin/_sources/config/verification.txt
 %%WWWDIR%%/core/doc/admin/_sources/configuration/auth_ldap.txt
 %%WWWDIR%%/core/doc/admin/_sources/configuration/background_jobs.txt
 %%WWWDIR%%/core/doc/admin/_sources/configuration/configuration_3rdparty.txt
 %%WWWDIR%%/core/doc/admin/_sources/configuration/configuration_apps.txt
+%%WWWDIR%%/core/doc/admin/_sources/configuration/configuration_assets.txt
 %%WWWDIR%%/core/doc/admin/_sources/configuration/configuration_automation.txt
 %%WWWDIR%%/core/doc/admin/_sources/configuration/configuration_custom_clients.txt
 %%WWWDIR%%/core/doc/admin/_sources/configuration/configuration_database.txt
@@ -7792,7 +7680,6 @@
 %%WWWDIR%%/core/doc/admin/_sources/configuration/configuration_language.txt
 %%WWWDIR%%/core/doc/admin/_sources/configuration/configuration_logging.txt
 %%WWWDIR%%/core/doc/admin/_sources/configuration/configuration_mail.txt
-%%WWWDIR%%/core/doc/admin/_sources/configuration/configuration_maintenance.txt
 %%WWWDIR%%/core/doc/admin/_sources/configuration/configuration_preview.txt
 %%WWWDIR%%/core/doc/admin/_sources/configuration/configuration_reverseproxy.txt
 %%WWWDIR%%/core/doc/admin/_sources/configuration/configuration_users.txt
@@ -7801,9 +7688,9 @@
 %%WWWDIR%%/core/doc/admin/_sources/configuration/custom_mount_config_gui.txt
 %%WWWDIR%%/core/doc/admin/_sources/configuration/custom_user_backend.txt
 %%WWWDIR%%/core/doc/admin/_sources/configuration/index.txt
+%%WWWDIR%%/core/doc/admin/_sources/configuration/server_to_server_managing.txt
 %%WWWDIR%%/core/doc/admin/_sources/configuration/xsendfile.txt
 %%WWWDIR%%/core/doc/admin/_sources/contents.txt
-%%WWWDIR%%/core/doc/admin/_sources/cron/index.txt
 %%WWWDIR%%/core/doc/admin/_sources/index.txt
 %%WWWDIR%%/core/doc/admin/_sources/installation/index.txt
 %%WWWDIR%%/core/doc/admin/_sources/installation/installation_appliance.txt
@@ -7816,17 +7703,11 @@
 %%WWWDIR%%/core/doc/admin/_sources/installation/installation_wizard.txt
 %%WWWDIR%%/core/doc/admin/_sources/issues/index.txt
 %%WWWDIR%%/core/doc/admin/_sources/maintenance/backup.txt
+%%WWWDIR%%/core/doc/admin/_sources/maintenance/enable_maintenance.txt
 %%WWWDIR%%/core/doc/admin/_sources/maintenance/index.txt
 %%WWWDIR%%/core/doc/admin/_sources/maintenance/migrating.txt
 %%WWWDIR%%/core/doc/admin/_sources/maintenance/restore.txt
 %%WWWDIR%%/core/doc/admin/_sources/maintenance/update.txt
-%%WWWDIR%%/core/doc/admin/_sources/quota/index.txt
-%%WWWDIR%%/core/doc/admin/_sources/sharing_api/create_a_new_share.txt
-%%WWWDIR%%/core/doc/admin/_sources/sharing_api/delete_share.txt
-%%WWWDIR%%/core/doc/admin/_sources/sharing_api/get_all_shares.txt
-%%WWWDIR%%/core/doc/admin/_sources/sharing_api/get_information_about_a_known_share.txt
-%%WWWDIR%%/core/doc/admin/_sources/sharing_api/get_shares_from_a_specific_file_or_folder.txt
-%%WWWDIR%%/core/doc/admin/_sources/sharing_api/index.txt
 %%WWWDIR%%/core/doc/admin/_static/ajax-loader.gif
 %%WWWDIR%%/core/doc/admin/_static/basic.css
 %%WWWDIR%%/core/doc/admin/_static/bootstrap-responsive.css
@@ -7856,36 +7737,11 @@
 %%WWWDIR%%/core/doc/admin/_static/up-pressed.png
 %%WWWDIR%%/core/doc/admin/_static/up.png
 %%WWWDIR%%/core/doc/admin/_static/websupport.js
-%%WWWDIR%%/core/doc/admin/apps/activity/index.html
-%%WWWDIR%%/core/doc/admin/apps/admin_dependencies_chk/index.html
-%%WWWDIR%%/core/doc/admin/apps/files_antivirus/index.html
-%%WWWDIR%%/core/doc/admin/apps/files_encryption/index.html
-%%WWWDIR%%/core/doc/admin/apps/files_external/index.html
-%%WWWDIR%%/core/doc/admin/apps/files_sharing/index.html
-%%WWWDIR%%/core/doc/admin/apps/files_trashbin/index.html
-%%WWWDIR%%/core/doc/admin/apps/files_versions/index.html
-%%WWWDIR%%/core/doc/admin/apps/firstrunwizard/index.html
-%%WWWDIR%%/core/doc/admin/apps/index.html
-%%WWWDIR%%/core/doc/admin/apps/user_ldap/index.html
-%%WWWDIR%%/core/doc/admin/apps/viewers/index.html
-%%WWWDIR%%/core/doc/admin/config/apps.html
-%%WWWDIR%%/core/doc/admin/config/code_locations.html
-%%WWWDIR%%/core/doc/admin/config/default_parameters.html
-%%WWWDIR%%/core/doc/admin/config/deleted_items.html
-%%WWWDIR%%/core/doc/admin/config/index.html
-%%WWWDIR%%/core/doc/admin/config/logging.html
-%%WWWDIR%%/core/doc/admin/config/mail_parameters.html
-%%WWWDIR%%/core/doc/admin/config/maintenance.html
-%%WWWDIR%%/core/doc/admin/config/miscellaneous.html
-%%WWWDIR%%/core/doc/admin/config/previews.html
-%%WWWDIR%%/core/doc/admin/config/reverse_proxy_configurations.html
-%%WWWDIR%%/core/doc/admin/config/session_info.html
-%%WWWDIR%%/core/doc/admin/config/user_experience.html
-%%WWWDIR%%/core/doc/admin/config/verification.html
 %%WWWDIR%%/core/doc/admin/configuration/auth_ldap.html
 %%WWWDIR%%/core/doc/admin/configuration/background_jobs.html
 %%WWWDIR%%/core/doc/admin/configuration/configuration_3rdparty.html
 %%WWWDIR%%/core/doc/admin/configuration/configuration_apps.html
+%%WWWDIR%%/core/doc/admin/configuration/configuration_assets.html
 %%WWWDIR%%/core/doc/admin/configuration/configuration_automation.html
 %%WWWDIR%%/core/doc/admin/configuration/configuration_custom_clients.html
 %%WWWDIR%%/core/doc/admin/configuration/configuration_database.html
@@ -7894,7 +7750,6 @@
 %%WWWDIR%%/core/doc/admin/configuration/configuration_language.html
 %%WWWDIR%%/core/doc/admin/configuration/configuration_logging.html
 %%WWWDIR%%/core/doc/admin/configuration/configuration_mail.html
-%%WWWDIR%%/core/doc/admin/configuration/configuration_maintenance.html
 %%WWWDIR%%/core/doc/admin/configuration/configuration_preview.html
 %%WWWDIR%%/core/doc/admin/configuration/configuration_reverseproxy.html
 %%WWWDIR%%/core/doc/admin/configuration/configuration_users.html
@@ -7903,9 +7758,9 @@
 %%WWWDIR%%/core/doc/admin/configuration/custom_mount_config_gui.html
 %%WWWDIR%%/core/doc/admin/configuration/custom_user_backend.html
 %%WWWDIR%%/core/doc/admin/configuration/index.html
+%%WWWDIR%%/core/doc/admin/configuration/server_to_server_managing.html
 %%WWWDIR%%/core/doc/admin/configuration/xsendfile.html
 %%WWWDIR%%/core/doc/admin/contents.html
-%%WWWDIR%%/core/doc/admin/cron/index.html
 %%WWWDIR%%/core/doc/admin/genindex.html
 %%WWWDIR%%/core/doc/admin/index.html
 %%WWWDIR%%/core/doc/admin/installation/index.html
@@ -7919,66 +7774,53 @@
 %%WWWDIR%%/core/doc/admin/installation/installation_wizard.html
 %%WWWDIR%%/core/doc/admin/issues/index.html
 %%WWWDIR%%/core/doc/admin/maintenance/backup.html
+%%WWWDIR%%/core/doc/admin/maintenance/enable_maintenance.html
 %%WWWDIR%%/core/doc/admin/maintenance/index.html
 %%WWWDIR%%/core/doc/admin/maintenance/migrating.html
 %%WWWDIR%%/core/doc/admin/maintenance/restore.html
 %%WWWDIR%%/core/doc/admin/maintenance/update.html
 %%WWWDIR%%/core/doc/admin/objects.inv
-%%WWWDIR%%/core/doc/admin/quota/index.html
 %%WWWDIR%%/core/doc/admin/search.html
 %%WWWDIR%%/core/doc/admin/searchindex.js
-%%WWWDIR%%/core/doc/admin/sharing_api/create_a_new_share.html
-%%WWWDIR%%/core/doc/admin/sharing_api/delete_share.html
-%%WWWDIR%%/core/doc/admin/sharing_api/get_all_shares.html
-%%WWWDIR%%/core/doc/admin/sharing_api/get_information_about_a_known_share.html
-%%WWWDIR%%/core/doc/admin/sharing_api/get_shares_from_a_specific_file_or_folder.html
-%%WWWDIR%%/core/doc/admin/sharing_api/index.html
-%%WWWDIR%%/core/doc/user/_images/1000000000000163000000E9CDA84C92.png
-%%WWWDIR%%/core/doc/user/_images/1000000000000175000000FAB2A2B294.png
-%%WWWDIR%%/core/doc/user/_images/1000000000000195000000EF7E44082C.png
-%%WWWDIR%%/core/doc/user/_images/10000000000001CE000000F2E2084BA1.png
-%%WWWDIR%%/core/doc/user/_images/100000000000041D0000003D52225C0D.png
-%%WWWDIR%%/core/doc/user/_images/1000000000000453000001BFFCF48776.png
-%%WWWDIR%%/core/doc/user/_images/1000000000000467000002B63162E59B.png
-%%WWWDIR%%/core/doc/user/_images/10000000000004690000026615360BEB.png
-%%WWWDIR%%/core/doc/user/_images/100000000000046D0000015F4B5494A9.png
-%%WWWDIR%%/core/doc/user/_images/100000000000046F000000DEA2BFCD9B.png
-%%WWWDIR%%/core/doc/user/_images/1000000000000470000001B68AE60DD3.png
-%%WWWDIR%%/core/doc/user/_images/10000000000004710000014BBC34499D.png
-%%WWWDIR%%/core/doc/user/_images/100000000000047200000129CB014025.png
-%%WWWDIR%%/core/doc/user/_images/100000000000047700000219A3013A92.png
-%%WWWDIR%%/core/doc/user/_images/1000000000000479000002887E7F48EA.png
-%%WWWDIR%%/core/doc/user/_images/100000000000047A000000B727198874.png
-%%WWWDIR%%/core/doc/user/_images/100000000000047A000000FB86FF2A9A.png
-%%WWWDIR%%/core/doc/user/_images/100000000000047A0000011C6682A254.png
-%%WWWDIR%%/core/doc/user/_images/100000000000048100000245268CDB7A.png
+%%WWWDIR%%/core/doc/user/_images/apis_auth_google_drive.png
 %%WWWDIR%%/core/doc/user/_images/bookmark_addurl.png
 %%WWWDIR%%/core/doc/user/_images/bookmark_setting.png
-%%WWWDIR%%/core/doc/user/_images/calendar_createevent.png
+%%WWWDIR%%/core/doc/user/_images/calendar_create_event.png
+%%WWWDIR%%/core/doc/user/_images/calendar_create_event_repeat.png
+%%WWWDIR%%/core/doc/user/_images/calendar_create_event_share.png
+%%WWWDIR%%/core/doc/user/_images/calendar_create_new.png
+%%WWWDIR%%/core/doc/user/_images/calendar_default.png
+%%WWWDIR%%/core/doc/user/_images/calendar_edit_event.png
 %%WWWDIR%%/core/doc/user/_images/calendar_export.png
 %%WWWDIR%%/core/doc/user/_images/calendar_import.png
-%%WWWDIR%%/core/doc/user/_images/calendar_manage-calendars.png
 %%WWWDIR%%/core/doc/user/_images/calendar_newtimezone1.png
+%%WWWDIR%%/core/doc/user/_images/calendar_settings.png
+%%WWWDIR%%/core/doc/user/_images/contact_address_book_add.png
 %%WWWDIR%%/core/doc/user/_images/contact_bottombar.png
 %%WWWDIR%%/core/doc/user/_images/contact_crop.jpg
-%%WWWDIR%%/core/doc/user/_images/contact_del_ab.png
-%%WWWDIR%%/core/doc/user/_images/contact_emptycontact.png
-%%WWWDIR%%/core/doc/user/_images/contact_picture.jpg
+%%WWWDIR%%/core/doc/user/_images/contact_new.png
+%%WWWDIR%%/core/doc/user/_images/contact_picture.png
+%%WWWDIR%%/core/doc/user/_images/contact_picture_default.png
 %%WWWDIR%%/core/doc/user/_images/contact_syncopt.jpg
 %%WWWDIR%%/core/doc/user/_images/contact_thunderbird-Symbol_Gear.jpg
 %%WWWDIR%%/core/doc/user/_images/contact_thunderbird-Symbol_Impeller.jpg
 %%WWWDIR%%/core/doc/user/_images/contact_thunderbird-URL_config.jpg
 %%WWWDIR%%/core/doc/user/_images/contact_uploadbutton.png
 %%WWWDIR%%/core/doc/user/_images/contact_vcfpick.jpg
+%%WWWDIR%%/core/doc/user/_images/contacts_empty.png
+%%WWWDIR%%/core/doc/user/_images/contacts_settings.png
+%%WWWDIR%%/core/doc/user/_images/deleted_files.png
+%%WWWDIR%%/core/doc/user/_images/documents_personal_settings.png
 %%WWWDIR%%/core/doc/user/_images/dolphin_webdav.png
+%%WWWDIR%%/core/doc/user/_images/email_address_personal_settings.png
+%%WWWDIR%%/core/doc/user/_images/encryption_enabling.png
 %%WWWDIR%%/core/doc/user/_images/explorer_webdav.png
 %%WWWDIR%%/core/doc/user/_images/external_google_drive_1_sign_in.png
 %%WWWDIR%%/core/doc/user/_images/external_google_drive_2_verify.png
-%%WWWDIR%%/core/doc/user/_images/external_google_drive_3_create_project.png
-%%WWWDIR%%/core/doc/user/_images/external_google_drive_4_enable_api.png
 %%WWWDIR%%/core/doc/user/_images/external_google_drive_5_setup_ownCloud.png
 %%WWWDIR%%/core/doc/user/_images/external_google_drive_6_accept.png
 %%WWWDIR%%/core/doc/user/_images/files_versioning.png
+%%WWWDIR%%/core/doc/user/_images/full_name.png
 %%WWWDIR%%/core/doc/user/_images/gnome3_nautilus_webdav.png
 %%WWWDIR%%/core/doc/user/_images/kdes.png
 %%WWWDIR%%/core/doc/user/_images/kdes1.png
@@ -7989,6 +7831,12 @@
 %%WWWDIR%%/core/doc/user/_images/kdes6.png
 %%WWWDIR%%/core/doc/user/_images/kdes7.png
 %%WWWDIR%%/core/doc/user/_images/kdes9.png
+%%WWWDIR%%/core/doc/user/_images/language_personal_settings.png
+%%WWWDIR%%/core/doc/user/_images/new_project_google_drive.png
+%%WWWDIR%%/core/doc/user/_images/new_project_google_drive_api_settings.png
+%%WWWDIR%%/core/doc/user/_images/new_project_google_drive_branding.png
+%%WWWDIR%%/core/doc/user/_images/new_project_google_drive_new_client.png
+%%WWWDIR%%/core/doc/user/_images/notifications_personal_settings.png
 %%WWWDIR%%/core/doc/user/_images/oc_connect.png
 %%WWWDIR%%/core/doc/user/_images/oc_documents.png
 %%WWWDIR%%/core/doc/user/_images/oc_documents_col_edit.png
@@ -7998,10 +7846,21 @@
 %%WWWDIR%%/core/doc/user/_images/oc_filesweb.png
 %%WWWDIR%%/core/doc/user/_images/oc_filesweb_navigate.png
 %%WWWDIR%%/core/doc/user/_images/oc_filesweb_new.png
-%%WWWDIR%%/core/doc/user/_images/oc_ui.png
+%%WWWDIR%%/core/doc/user/_images/oc_main_web.png
+%%WWWDIR%%/core/doc/user/_images/oc_main_web_labelled.png
+%%WWWDIR%%/core/doc/user/_images/oc_personal_settings_dropdown.png
+%%WWWDIR%%/core/doc/user/_images/oc_personal_settings_window.png
+%%WWWDIR%%/core/doc/user/_images/oc_share_expiration_calendar.png
+%%WWWDIR%%/core/doc/user/_images/oc_share_with_options.png
 %%WWWDIR%%/core/doc/user/_images/oc_user_preferences.png
 %%WWWDIR%%/core/doc/user/_images/osx_webdav1.png
 %%WWWDIR%%/core/doc/user/_images/osx_webdav2.png
+%%WWWDIR%%/core/doc/user/_images/password_change.png
+%%WWWDIR%%/core/doc/user/_images/personal_settings.png
+%%WWWDIR%%/core/doc/user/_images/profile_picture_personal_settings.png
+%%WWWDIR%%/core/doc/user/_images/share_link.png
+%%WWWDIR%%/core/doc/user/_images/share_link_adding.png
+%%WWWDIR%%/core/doc/user/_images/usage_indicator.png
 %%WWWDIR%%/core/doc/user/_sources/bookmarks.txt
 %%WWWDIR%%/core/doc/user/_sources/contents.txt
 %%WWWDIR%%/core/doc/user/_sources/documents.txt
@@ -8013,6 +7872,7 @@
 %%WWWDIR%%/core/doc/user/_sources/files/filesweb.txt
 %%WWWDIR%%/core/doc/user/_sources/files/index.txt
 %%WWWDIR%%/core/doc/user/_sources/files/quota.txt
+%%WWWDIR%%/core/doc/user/_sources/files/server_to_server_using.txt
 %%WWWDIR%%/core/doc/user/_sources/files/sync.txt
 %%WWWDIR%%/core/doc/user/_sources/files/versioncontrol.txt
 %%WWWDIR%%/core/doc/user/_sources/index.txt
@@ -8026,8 +7886,8 @@
 %%WWWDIR%%/core/doc/user/_sources/pim/sync_thunderbird.txt
 %%WWWDIR%%/core/doc/user/_sources/pim/troubleshooting.txt
 %%WWWDIR%%/core/doc/user/_sources/userpreferences.txt
-%%WWWDIR%%/core/doc/user/_sources/web_guide/index.txt
 %%WWWDIR%%/core/doc/user/_sources/webinterface.txt
+%%WWWDIR%%/core/doc/user/_sources/whats_new.txt
 %%WWWDIR%%/core/doc/user/_static/ajax-loader.gif
 %%WWWDIR%%/core/doc/user/_static/basic.css
 %%WWWDIR%%/core/doc/user/_static/bootstrap-responsive.css
@@ -8068,6 +7928,7 @@
 %%WWWDIR%%/core/doc/user/files/filesweb.html
 %%WWWDIR%%/core/doc/user/files/index.html
 %%WWWDIR%%/core/doc/user/files/quota.html
+%%WWWDIR%%/core/doc/user/files/server_to_server_using.html
 %%WWWDIR%%/core/doc/user/files/sync.html
 %%WWWDIR%%/core/doc/user/files/versioncontrol.html
 %%WWWDIR%%/core/doc/user/genindex.html
@@ -8085,8 +7946,8 @@
 %%WWWDIR%%/core/doc/user/search.html
 %%WWWDIR%%/core/doc/user/searchindex.js
 %%WWWDIR%%/core/doc/user/userpreferences.html
-%%WWWDIR%%/core/doc/user/web_guide/index.html
 %%WWWDIR%%/core/doc/user/webinterface.html
+%%WWWDIR%%/core/doc/user/whats_new.html
 %%WWWDIR%%/core/fonts/LICENSE.txt
 %%WWWDIR%%/core/fonts/OpenSans-Bold.woff
 %%WWWDIR%%/core/fonts/OpenSans-Regular.ttf
@@ -8147,6 +8008,8 @@
 %%WWWDIR%%/core/img/actions/public.svg
 %%WWWDIR%%/core/img/actions/rename.png
 %%WWWDIR%%/core/img/actions/rename.svg
+%%WWWDIR%%/core/img/actions/search-white.png
+%%WWWDIR%%/core/img/actions/search-white.svg
 %%WWWDIR%%/core/img/actions/search.png
 %%WWWDIR%%/core/img/actions/search.svg
 %%WWWDIR%%/core/img/actions/settings.png
@@ -10015,6 +9878,7 @@
 %%WWWDIR%%/lib/private/connector/sabre/quotaplugin.php
 %%WWWDIR%%/lib/private/connector/sabre/request.php
 %%WWWDIR%%/lib/private/connector/sabre/server.php
+%%WWWDIR%%/lib/private/contacts/localaddressbook.php
 %%WWWDIR%%/lib/private/contactsmanager.php
 %%WWWDIR%%/lib/private/davclient.php
 %%WWWDIR%%/lib/private/db.php
@@ -10611,7 +10475,6 @@
 @dirrmtry %%WWWDIR%%/3rdparty/fontawesome/css
 @dirrmtry %%WWWDIR%%/3rdparty/fontawesome/font
 @dirrmtry %%WWWDIR%%/3rdparty/fontawesome
-@dirrmtry %%WWWDIR%%/3rdparty/getid3
 @dirrmtry %%WWWDIR%%/3rdparty/guzzle/common/Guzzle/Common/Exception
 @dirrmtry %%WWWDIR%%/3rdparty/guzzle/common/Guzzle/Common
 @dirrmtry %%WWWDIR%%/3rdparty/guzzle/common/Guzzle
@@ -10636,15 +10499,10 @@
 @dirrmtry %%WWWDIR%%/3rdparty/guzzle/stream/Guzzle
 @dirrmtry %%WWWDIR%%/3rdparty/guzzle/stream
 @dirrmtry %%WWWDIR%%/3rdparty/guzzle
-@dirrmtry %%WWWDIR%%/3rdparty/isoft/mssql-bundle/Realestate/MssqlBundle/Driver/PDODblib
-@dirrmtry %%WWWDIR%%/3rdparty/isoft/mssql-bundle/Realestate/MssqlBundle/Driver
-@dirrmtry %%WWWDIR%%/3rdparty/isoft/mssql-bundle/Realestate/MssqlBundle/Platforms
-@dirrmtry %%WWWDIR%%/3rdparty/isoft/mssql-bundle/Realestate/MssqlBundle/Schema
-@dirrmtry %%WWWDIR%%/3rdparty/isoft/mssql-bundle/Realestate/MssqlBundle/Types
-@dirrmtry %%WWWDIR%%/3rdparty/isoft/mssql-bundle/Realestate/MssqlBundle
-@dirrmtry %%WWWDIR%%/3rdparty/isoft/mssql-bundle/Realestate
-@dirrmtry %%WWWDIR%%/3rdparty/isoft/mssql-bundle
-@dirrmtry %%WWWDIR%%/3rdparty/isoft
+@dirrmtry %%WWWDIR%%/3rdparty/james-heinrich/getid3/getid3
+@dirrmtry %%WWWDIR%%/3rdparty/james-heinrich/getid3/licenses
+@dirrmtry %%WWWDIR%%/3rdparty/james-heinrich/getid3
+@dirrmtry %%WWWDIR%%/3rdparty/james-heinrich
 @dirrmtry %%WWWDIR%%/3rdparty/js/chosen
 @dirrmtry %%WWWDIR%%/3rdparty/js/md5
 @dirrmtry %%WWWDIR%%/3rdparty/js/strengthify
@@ -12150,62 +12008,28 @@
 @dirrmtry %%WWWDIR%%/core/css/images
 @dirrmtry %%WWWDIR%%/core/css
 @dirrmtry %%WWWDIR%%/core/doc/admin/_images
-@dirrmtry %%WWWDIR%%/core/doc/admin/_sources/apps/activity
-@dirrmtry %%WWWDIR%%/core/doc/admin/_sources/apps/admin_dependencies_chk
-@dirrmtry %%WWWDIR%%/core/doc/admin/_sources/apps/files_antivirus
-@dirrmtry %%WWWDIR%%/core/doc/admin/_sources/apps/files_encryption
-@dirrmtry %%WWWDIR%%/core/doc/admin/_sources/apps/files_external
-@dirrmtry %%WWWDIR%%/core/doc/admin/_sources/apps/files_sharing
-@dirrmtry %%WWWDIR%%/core/doc/admin/_sources/apps/files_trashbin
-@dirrmtry %%WWWDIR%%/core/doc/admin/_sources/apps/files_versions
-@dirrmtry %%WWWDIR%%/core/doc/admin/_sources/apps/firstrunwizard
-@dirrmtry %%WWWDIR%%/core/doc/admin/_sources/apps/user_ldap
-@dirrmtry %%WWWDIR%%/core/doc/admin/_sources/apps/viewers
-@dirrmtry %%WWWDIR%%/core/doc/admin/_sources/apps
-@dirrmtry %%WWWDIR%%/core/doc/admin/_sources/config
 @dirrmtry %%WWWDIR%%/core/doc/admin/_sources/configuration
-@dirrmtry %%WWWDIR%%/core/doc/admin/_sources/cron
 @dirrmtry %%WWWDIR%%/core/doc/admin/_sources/installation
 @dirrmtry %%WWWDIR%%/core/doc/admin/_sources/issues
 @dirrmtry %%WWWDIR%%/core/doc/admin/_sources/maintenance
-@dirrmtry %%WWWDIR%%/core/doc/admin/_sources/quota
-@dirrmtry %%WWWDIR%%/core/doc/admin/_sources/sharing_api
 @dirrmtry %%WWWDIR%%/core/doc/admin/_sources
 @dirrmtry %%WWWDIR%%/core/doc/admin/_static/img
 @dirrmtry %%WWWDIR%%/core/doc/admin/_static
-@dirrmtry %%WWWDIR%%/core/doc/admin/apps/activity
-@dirrmtry %%WWWDIR%%/core/doc/admin/apps/admin_dependencies_chk
-@dirrmtry %%WWWDIR%%/core/doc/admin/apps/files_antivirus
-@dirrmtry %%WWWDIR%%/core/doc/admin/apps/files_encryption
-@dirrmtry %%WWWDIR%%/core/doc/admin/apps/files_external
-@dirrmtry %%WWWDIR%%/core/doc/admin/apps/files_sharing
-@dirrmtry %%WWWDIR%%/core/doc/admin/apps/files_trashbin
-@dirrmtry %%WWWDIR%%/core/doc/admin/apps/files_versions
-@dirrmtry %%WWWDIR%%/core/doc/admin/apps/firstrunwizard
-@dirrmtry %%WWWDIR%%/core/doc/admin/apps/user_ldap
-@dirrmtry %%WWWDIR%%/core/doc/admin/apps/viewers
-@dirrmtry %%WWWDIR%%/core/doc/admin/apps
-@dirrmtry %%WWWDIR%%/core/doc/admin/config
 @dirrmtry %%WWWDIR%%/core/doc/admin/configuration
-@dirrmtry %%WWWDIR%%/core/doc/admin/cron
 @dirrmtry %%WWWDIR%%/core/doc/admin/installation
 @dirrmtry %%WWWDIR%%/core/doc/admin/issues
 @dirrmtry %%WWWDIR%%/core/doc/admin/maintenance
-@dirrmtry %%WWWDIR%%/core/doc/admin/quota
-@dirrmtry %%WWWDIR%%/core/doc/admin/sharing_api
 @dirrmtry %%WWWDIR%%/core/doc/admin
 @dirrmtry %%WWWDIR%%/core/doc/user/_images
 @dirrmtry %%WWWDIR%%/core/doc/user/_sources/external_storage
 @dirrmtry %%WWWDIR%%/core/doc/user/_sources/files
 @dirrmtry %%WWWDIR%%/core/doc/user/_sources/pim
-@dirrmtry %%WWWDIR%%/core/doc/user/_sources/web_guide
 @dirrmtry %%WWWDIR%%/core/doc/user/_sources
 @dirrmtry %%WWWDIR%%/core/doc/user/_static/img
 @dirrmtry %%WWWDIR%%/core/doc/user/_static
 @dirrmtry %%WWWDIR%%/core/doc/user/external_storage
 @dirrmtry %%WWWDIR%%/core/doc/user/files
 @dirrmtry %%WWWDIR%%/core/doc/user/pim
-@dirrmtry %%WWWDIR%%/core/doc/user/web_guide
 @dirrmtry %%WWWDIR%%/core/doc/user
 @dirrmtry %%WWWDIR%%/core/doc
 @dirrmtry %%WWWDIR%%/core/fonts
@@ -12371,6 +12195,7 @@
 @dirrmtry %%WWWDIR%%/lib/private/connector/sabre/exception
 @dirrmtry %%WWWDIR%%/lib/private/connector/sabre
 @dirrmtry %%WWWDIR%%/lib/private/connector
+@dirrmtry %%WWWDIR%%/lib/private/contacts
 @dirrmtry %%WWWDIR%%/lib/private/db
 @dirrmtry %%WWWDIR%%/lib/private/fileproxy
 @dirrmtry %%WWWDIR%%/lib/private/files/cache

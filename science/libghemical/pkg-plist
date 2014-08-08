@@ -37,9 +37,9 @@ include/ghemical/typerule.h
 include/ghemical/utility.h
 include/ghemical/v3d.h
 @dirrm include/ghemical
+lib/libghemical.so.5.0.1
 lib/libghemical.so.5
 lib/libghemical.so
-lib/libghemical.la
 lib/libghemical.a
 libdata/pkgconfig/libghemical.pc
 share/libghemical/%%LIBGHEMICAL_VERSION%%/amber/all_amino94_MOD.in

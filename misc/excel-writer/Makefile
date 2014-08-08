@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	excel-writer
-PORTVERSION=	13
+PORTVERSION=	14
 CATEGORIES=	misc
 MASTER_SITES=	http://sourceforge.net/projects/${SFPATH}/
 DISTNAME=	excel_writer_${PORTVERSION}

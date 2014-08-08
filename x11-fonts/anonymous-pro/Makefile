@@ -8,7 +8,7 @@ MASTER_SITES=	http://www.marksimonson.com/assets/content/fonts/
 DISTNAME=	AnonymousPro-${PORTVERSION}
 
 MAINTAINER=	nlopes.ml@gmail.com
-COMMENT=	A fixed width sans designed especially for coders
+COMMENT=	Fixed width sans designed especially for coders
 
 LICENSE=	OFL11
 

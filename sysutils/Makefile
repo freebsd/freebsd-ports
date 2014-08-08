@@ -57,6 +57,11 @@
     SUBDIR += bacula-client-static
     SUBDIR += bacula-docs
     SUBDIR += bacula-server
+    SUBDIR += bacula5-bat
+    SUBDIR += bacula5-client
+    SUBDIR += bacula5-client-static
+    SUBDIR += bacula5-docs
+    SUBDIR += bacula5-server
     SUBDIR += bamf
     SUBDIR += bashburn
     SUBDIR += batmon
@@ -742,6 +747,7 @@
     SUBDIR += py-ploy_ezjail
     SUBDIR += py-ploy_fabric
     SUBDIR += py-plumbum
+    SUBDIR += py-power
     SUBDIR += py-psutil
     SUBDIR += py-psutil121
     SUBDIR += py-pytsk

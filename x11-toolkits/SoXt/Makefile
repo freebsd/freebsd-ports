@@ -5,7 +5,7 @@ PORTNAME=	SoXt
 PORTVERSION=	1.3.0
 PORTREVISION=	5
 CATEGORIES=	x11-toolkits
-MASTER_SITES=	http://ftp.coin3d.org/coin/src/all/
+MASTER_SITES=	https://bitbucket.org/Coin3D/coin/downloads/
 
 MAINTAINER=	5u623l20@gmail.com
 COMMENT=	GUI binding for using Open Inventor with Xt/Motif

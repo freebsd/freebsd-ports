@@ -3,6 +3,7 @@
 
 PORTNAME=	mod_fastcgi
 PORTVERSION=	2.4.7
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://www.fastcgi.com/dist/ \
 		LOCAL/ohauer
@@ -12,7 +13,7 @@ DIST_SUBDIR=	apache2
 MAINTAINER=	apache@FreeBSD.org
 COMMENT=	Apache 2.2 fast-cgi module
 
-USE_APACHE=	22
+USE_APACHE=	22+
 AP_FAST_BUILD=	yes
 AP_GENPLIST=	yes
 SRC_FILE=	*.c

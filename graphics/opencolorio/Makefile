@@ -9,7 +9,7 @@ CATEGORIES=	graphics multimedia
 MAINTAINER?=	FreeBSD@Shaneware.biz
 COMMENT?=	Complete color management solution
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	imageworks
