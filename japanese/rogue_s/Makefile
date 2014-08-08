@@ -20,9 +20,7 @@ PATCHFILES=	rogue_s.patch04
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Japanized and message separated version of Rogue-clone: Version II
 
-.if !defined(NOPORTDATA)
 BUILD_DEPENDS=	nkf:${PORTSDIR}/japanese/nkf
-.endif
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 MAKEFILE=	Makefile.nix
@@ -30,15 +28,13 @@ ALL_TARGET=	rogue
 MAKE_ENV+=	DATADIR="${DATADIR}"
 
 SUB_FILES=	rogue_s.6
-MAN6=		rogue_s.6
-MANLANG=	ja
-MANCOMPRESSED=	no
 
-PLIST_FILES=	bin/rogue_s
+PLIST_FILES=	bin/rogue_s man/ja/man6/rogue_s.6.gz
 PORTDATA=	mesg mesg_E mesg_fj mesg_utmc
 PORTDOCS=	README README.1st README.doc options.doc rogue.doc
 
-NO_STAGE=	yes
+OPTIONS_DEFINE=	DOCS
+
 pre-patch:
 	@(\
 	  cd ${WRKSRC} ; \
@@ -47,7 +43,6 @@ pre-patch:
 	)
 
 post-build:
-.if !defined(NOPORTDATA)
 	${GZCAT} ${FILESDIR}/mesg_fj.gz > ${WRKDIR}/mesg_fj
 	@(\
 	  cd ${WRKDIR} ; \
@@ -55,25 +50,18 @@ post-build:
 		${AWK} '{if (/^\#/) x++} {if(x) print $$0}' | ${SH} \
 	)
 	nkf -e ${WRKDIR}/mesg_utmc > ${WRKDIR}/mesg_utmc.euc
-.endif
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/rogue ${PREFIX}/bin/rogue_s
-	${INSTALL_MAN} ${WRKDIR}/rogue_s.6 ${MAN6PREFIX}/man/ja/man6/rogue_s.6
-
-.if !defined(NOPORTDATA)
-	${MKDIR} ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/mesg ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/mesg_E ${DATADIR}
-	${INSTALL_DATA} ${WRKDIR}/mesg_fj ${DATADIR}
-	${INSTALL_DATA} ${WRKDIR}/mesg_utmc.euc ${DATADIR}/mesg_utmc
-.endif
-
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/rogue ${STAGEDIR}${PREFIX}/bin/rogue_s
+	${INSTALL_MAN} ${WRKDIR}/rogue_s.6 ${STAGEDIR}${MANPREFIX}/man/ja/man6/rogue_s.6
+	${MKDIR} ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/mesg ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/mesg_E ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKDIR}/mesg_fj ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKDIR}/mesg_utmc.euc ${STAGEDIR}${DATADIR}/mesg_utmc
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	for _file in ${PORTDOCS}; do \
-		${INSTALL_DATA} ${WRKSRC}/"$$_file" ${DOCSDIR} ; \
+		${INSTALL_DATA} ${WRKSRC}/"$$_file" ${STAGEDIR}${DOCSDIR} ; \
 	done
-.endif
 
 .include <bsd.port.mk>
