@@ -22,15 +22,6 @@
  
  # Package search path.
  TCL_PACKAGE_PATH	= @TCL_PACKAGE_PATH@
-@@ -152,7 +154,7 @@
- # distribution, which is slower but guaranteed to work.
- 
- INSTALL_STRIP_PROGRAM   = -s
--INSTALL_STRIP_LIBRARY   = -S -x
-+INSTALL_STRIP_LIBRARY   = -s
- 
- INSTALL			= $(SHELL) $(UNIX_DIR)/install-sh -c
- INSTALL_PROGRAM		= ${INSTALL}
 @@ -611,9 +613,9 @@
  # Start of rules
  #--------------------------------------------------------------------------
