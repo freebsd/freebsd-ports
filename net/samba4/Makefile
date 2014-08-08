@@ -24,6 +24,8 @@ SAMBA4_DISTNAME=	${SAMBA4_BASENAME}-${SAMBA4_VERSION:S|.p|pre|:S|.r|rc|:S|.t|tp|
 WRKSRC?=		${WRKDIR}/${DISTNAME}
 
 .if !defined(SAMBA4_SUBPORT)
+CPE_VENDOR=		samba
+CPE_PRODUCT=		samba
 # Directories
 VARDIR=			${DESTDIR}/var
 SAMBA4_RUNDIR=		${VARDIR}/run/${SAMBA4_PORTNAME}
@@ -63,7 +65,7 @@ CONFIGURE_ENV+=		PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 			PTHREAD_LDFLAGS="${PTHREAD_LIBS}"
 
 USE_PYTHON=		2
-USES=			shebangfix compiler perl5 pkgconfig iconv readline
+USES=			shebangfix compiler perl5 pkgconfig iconv readline cpe
 USE_PERL5=		build
 USE_LDCONFIG=		${SAMBA4_LIBDIR}
 WAF_TOOL=		buildtools/bin/waf

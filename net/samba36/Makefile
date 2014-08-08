@@ -20,6 +20,8 @@ PATCH_STRIP=		-p1
 EXTRA_PATCHES=		${PATCHDIR}/sernet.patch
 
 SAMBA_BASENAME=		samba
+CPE_VENDOR=		samba
+CPE_PRODUCT=		samba
 
 LATEST_LINK=		${PKGNAMEPREFIX}${PORTNAME}${PKGNAMESUFFIX}
 EXAMPLESDIR=		${PREFIX}/share/examples/${PKGNAMEPREFIX}${PORTNAME}${PKGNAMESUFFIX}
@@ -30,7 +32,7 @@ AUTOHEADER_ARGS=	${IPATHS}
 AUTOCONF_ARGS=		${IPATHS}
 
 GNU_CONFIGURE=		yes
-USES=			gmake pkgconfig iconv
+USES=			gmake pkgconfig iconv cpe
 USE_AUTOTOOLS=		autoconf autoheader
 USE_LDCONFIG=		${SAMBA_LIBDIR}
 # pkg-config is used to find talloc
@@ -483,6 +485,7 @@ pre-install:
 .endif
 
 post-install:
+	@${RM} -f ${STAGEDIR}/${PREFIX}/bin/findsmb
 .for sect in 1 3 5 7 8
 	@${MKDIR} ${STAGEDIR}${MAN${sect}PREFIX}/man/man${sect}
 .	for man in ${SAMBA_MAN${sect}}
