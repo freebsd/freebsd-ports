@@ -1,5 +1,5 @@
---- Makefile	Sat Oct  7 20:17:18 2006
-+++ Makefile.port	Tue Nov  7 22:14:53 2006
+--- Makefile.orig	2006-10-08 02:17:18.000000000 +0800
++++ Makefile	2014-08-08 10:52:12.448321292 +0800
 @@ -2,19 +2,19 @@
  APP_NAME = ump
  
@@ -24,7 +24,7 @@
  ## The next path will be required on some Mac-systems to compile
  ##FLAGS += -I/usr/X11/include/GL
  
-@@ -27,7 +27,7 @@
+@@ -27,7 +27,7 @@ AUTO_COMPLETION = -DUSE_AUTO_COMPLETION
  
  ## Choose your optimization level
  ##FLAGS += -O1
@@ -33,7 +33,7 @@
  ##FLAGS += -O3
  ##FLAGS += -Os
  
-@@ -44,9 +44,10 @@
+@@ -44,9 +44,10 @@ FLAGS += -O2
  ## Uncomment one or both of these if the compilation failes
  ## due to trunc undefined or log2 undefined
  ##FLAGS += -DDONT_HAVE_TRUNC
@@ -46,7 +46,7 @@
  
  ## If you'd like to compile with debuging info avaliable
  ##FLAGS += -ggdb
-@@ -90,7 +91,7 @@
+@@ -90,7 +91,7 @@ GUI_HEADER    = $(SRC)/main.h $(SRC)/pic
  # $< means the name of the first prerequisite
  
  $(APP_NAME): Makefile $(OBJ_FILES) main.o $(GUI_OBJ) addon_functions.o $(ASM_FILES)
@@ -55,7 +55,7 @@
  
  clean:
  	-rm -f $(OBJ_FILES)
-@@ -102,18 +103,16 @@
+@@ -102,18 +103,16 @@ clean:
  	-rm -f inliner
  
  text: Makefile $(OBJ_FILES) addon_functions.text.o $(ASM_FILES)
@@ -64,20 +64,24 @@
  
  
  install:
- 	install -s $(APP_NAME) $(BIN_DIR)/$(APP_NAME)
+-	install -s $(APP_NAME) $(BIN_DIR)/$(APP_NAME)
 -	chmod -c 755 $(BIN_DIR)/$(APP_NAME)
-+	chmod 755 $(BIN_DIR)/$(APP_NAME)
- 	install -d $(DATA_DIR)
+-	install -d $(DATA_DIR)
 -	install ump.conf $(DATA_DIR)
 -	chmod -c 644 $(DATA_DIR)/ump.conf
- 	install -d $(DATA_DIR)/ump-files
- 	install ump-files/* $(DATA_DIR)/ump-files
+-	install -d $(DATA_DIR)/ump-files
+-	install ump-files/* $(DATA_DIR)/ump-files
 -	chmod -c 644 $(DATA_DIR)/ump-files/*
-+	chmod 644 $(DATA_DIR)/ump-files/*
++	install -s $(APP_NAME) $(DESTDIR)$(BIN_DIR)/$(APP_NAME)
++	chmod 755 $(DESTDIR)$(BIN_DIR)/$(APP_NAME)
++	install -d $(DESTDIR)$(DATA_DIR)
++	install -d $(DESTDIR)$(DATA_DIR)/ump-files
++	install ump-files/* $(DESTDIR)$(DATA_DIR)/ump-files
++	chmod 644 $(DESTDIR)$(DATA_DIR)/ump-files/*
  
  uninstall:
  	rm -f $(BIN_DIR)/$(APP_NAME)
-@@ -123,108 +122,108 @@
+@@ -123,108 +122,108 @@ uninstall:
  
  
  main.o: $(FILES) Makefile $(GUI_HEADER) $(SRC)/vector.h $(SRC)/integer.h $(SRC)/real.h $(SRC)/complex.h $(SRC)/matrix.h $(SRC)/math2.h $(SRC)/vartypes.h $(SRC)/utf8_string.h $(SRC)/keyfile.h $(SRC)/picture.h $(SRC)/addon_functions.h $(SRC)/ump_3d_viewer.h

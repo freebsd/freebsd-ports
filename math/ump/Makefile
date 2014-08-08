@@ -3,7 +3,7 @@
 
 PORTNAME=	ump
 PORTVERSION=	0.8.6
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	math
 MASTER_SITES=	SF/u-m-p/u-m-p/${PORTVERSION}
 PKGNAMESUFFIX=	-math
@@ -25,14 +25,10 @@ MAKE_ENV+=	DATADIR="${DATADIR}"
 FIND_DIRS=	-type d
 FIND_DATA=	-type f
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|' ${WRKSRC}/src/main.cpp
 
 post-install:
-	${INSTALL_DATA} ${WRKSRC}/ump.conf ${PREFIX}/etc/ump.conf.dist
-.if !exists(${PREFIX}/etc/ump.conf)
-	${INSTALL_DATA} ${WRKSRC}/ump.conf ${PREFIX}/etc
-.endif
+	${INSTALL_DATA} ${WRKSRC}/ump.conf ${STAGEDIR}${PREFIX}/etc/ump.conf.sample
 
 .include <bsd.port.mk>
