@@ -3,7 +3,7 @@
 
 PORTNAME=	libtomcrypt
 PORTVERSION=	1.17
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	security
 MASTER_SITES=	http://libtom.org/files/
 DISTNAME=	crypt-${PORTVERSION}
@@ -11,19 +11,20 @@ DISTNAME=	crypt-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Comprehensive, modular, and portable cryptographic toolkit
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
-MAKEFILE=	makefile
-MAKE_ARGS=	DESTDIR="${STAGEDIR}" LIBPATH="${PREFIX}/lib" \
-		INCPATH="${PREFIX}/include" DATAPATH="${DOCSDIR}/pdf"
-
-USES=		gmake tar:bzip2
-ALL_TARGET=	library
+BUILD_DEPENDS=	libtool:${PORTSDIR}/devel/libtool
 
 CFLAGS+=	-I${LOCALBASE}/include
+EXTRALIBS=	-L${LOCALBASE}/lib
+MAKEFILE=	makefile.shared
+ALL_TARGET=	library
+MAKE_ARGS=	IGNORE_SPEED=yes INCPATH="${PREFIX}/include" \
+		LIBPATH="${PREFIX}/lib" EXTRALIBS="${EXTRALIBS}"
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+USES=		gmake libtool tar:bzip2
 
-OPTIONS_DEFINE=	DOCS
+OPTIONS_DEFINE=		DOCS
 OPTIONS_DEFAULT=	LIBTOMMATH
-OPTIONS_MULTI=	MATH
+OPTIONS_MULTI=		MATH
 OPTIONS_MULTI_MATH=	LIBTOMMATH TOMSFASTMATH GMP
 LIBTOMMATH_DESC=	Use LibTomMath
 TOMSFASTMATH_DESC=	Use TomsFastMath
@@ -33,24 +34,33 @@ TOMSFASTMATH_DESC=	Use TomsFastMath
 .if ${PORT_OPTIONS:MLIBTOMMATH}
 BUILD_DEPENDS+=	${LOCALBASE}/include/tommath.h:${PORTSDIR}/math/libtommath
 CFLAGS+=	-DLTM_DESC
+EXTRALIBS+=	-ltommath
 .endif
 
 .if ${PORT_OPTIONS:MTOMSFASTMATH}
 BUILD_DEPENDS+=	${LOCALBASE}/include/tfm.h:${PORTSDIR}/math/tomsfastmath
 CFLAGS+=	-DTFM_DESC
+EXTRALIBS+=	-ltfm
 .endif
 
 .if ${PORT_OPTIONS:MGMP}
-BUILD_DEPENDS+=	${LOCALBASE}/include/gmp.h:${PORTSDIR}/math/gmp
+LIB_DEPENDS+=	libgmp.so:${PORTSDIR}/math/gmp
 CFLAGS+=	-DGMP_DESC
+EXTRALIBS+=	-lgmp
 .endif
 
-.if ${PORT_OPTIONS:MDOCS}
-USE_TEX=	latex:build dvipdfmx:build
-PORTDOCS=	*
-.else
+.if ! ${PORT_OPTIONS:MDOCS}
 MAKE_ARGS+=	NODOCS=yes
 .endif
+
+post-patch:
+	${REINPLACE_CMD} -e 's|gcc|${CC}|' -e 's| make | $$(MAKE) |' \
+		-e 's|-g $$(GROUP)||' -e 's|-o $$(USER)||' \
+		${WRKSRC}/makefile.shared ${WRKSRC}/testprof/makefile.shared
+
+post-install:
+	${MKDIR} ${STAGEDIR}${DOCSDIR}/pdf
+	${INSTALL_DATA} ${WRKSRC}/doc/crypt.pdf ${STAGEDIR}${DOCSDIR}/pdf
 
 .if defined(MAINTAINER_MODE)
 test:	build

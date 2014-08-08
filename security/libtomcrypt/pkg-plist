@@ -13,3 +13,11 @@ include/tomcrypt_pkcs.h
 include/tomcrypt_prng.h
 include/tomcrypt_test.h
 lib/libtomcrypt.a
+lib/libtomcrypt.so
+lib/libtomcrypt.so.0
+lib/libtomcrypt_prof.a
+lib/libtomcrypt_prof.so
+lib/libtomcrypt_prof.so.0
+%%PORTDOCS%%%%DOCSDIR%%/pdf/crypt.pdf
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/pdf
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
