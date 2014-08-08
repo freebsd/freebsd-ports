@@ -1,23 +1,14 @@
 FSF gcc-4.x for Atmel AVR cross-development
 
 Included is the basic C++ compiler, although this is only of limited
-use without a libstdc++, and it is little tested.
+use without a libstdc++.
 
 Supported debugging formats: -gdwarf-2 [default], -gstabs
-Local patch added: OS_main attribute
 
 Locally added support for the following AVR devices:
 
-  ATmega32C1, ATmega64C1, ATmega32M1, ATmega64M1
-  ATmega16U4, ATmega32U4, ATmega32U6
-  ATmega128RFA1
-  M3000F, M3000S, M3001B
-  AT90SCR100
-  ATtiny13A
-  ATtiny87, ATtiny167, ATtiny327
-  AT90PWM81
-  ATxmega64A1, ATxmega128A1, ATxmega64A3, ATxmega128A3, ATxmega256A3,
-  ATxmega256A3B
+  ATmega64RFR2, ATmega644RFR2, ATmega128RFR2, ATmega1284RFR2,
+  ATmega256RFR2, ATmega2564RFR2
 
 WWW: http://gcc.gnu.org/
 WWW: http://www.nongnu.org/avr-libc/

@@ -1,4 +1,2 @@
-SHA256 (gcc-core-4.5.1.tar.bz2) = b57b37a83840b134572b042f170d7a9429863ba0308b56b403b35de6f0e0526a
-SIZE (gcc-core-4.5.1.tar.bz2) = 27974462
-SHA256 (gcc-g++-4.5.1.tar.bz2) = a5349ea8d531aa0a248484f426513e5d05b12915e5412d332c278f65d272ce48
-SIZE (gcc-g++-4.5.1.tar.bz2) = 6473733
+SHA256 (gcc-4.8.3.tar.bz2) = 6a8e4f11b185f4fe2ed9d7fc053e80f8c7e73f800c045f51f9d8bea33f080f1e
+SIZE (gcc-4.8.3.tar.bz2) = 86126808
