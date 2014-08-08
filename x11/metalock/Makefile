@@ -15,12 +15,14 @@ COMMENT=	Enhanced X11 screen locker
 LICENSE=	MIT
 LICENSE_FILE=	${WRKDIR}/${DISTNAME}/LICENSE
 
-USES=	tar:bzip2
+USES=		tar:bzip2
 USE_XORG=	x11 xt xproto xext xpm
 
 OPTIONS_DEFINE=	IMLIB2 XFT ULTRAGETOPT
 OPTIONS_DEFAULT=	IMLIB2 XFT ULTRAGETOPT
 ULTRAGETOPT_DESC=	Use Ultragetopt
+
+MAKE_JOBS_UNSAFE=	yes
 
 .include <bsd.port.options.mk>
 
