@@ -117,6 +117,7 @@
     SUBDIR += dansguardian
     SUBDIR += dansguardian-devel
     SUBDIR += davical
+    SUBDIR += dddbl
     SUBDIR += decss
     SUBDIR += deforaos-surfer
     SUBDIR += demoroniser
