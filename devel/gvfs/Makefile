@@ -4,7 +4,7 @@
 
 PORTNAME=	gvfs
 PORTVERSION=	1.12.3
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	devel gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -58,7 +58,7 @@ PLIST_SUB+=	SMB="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MCDDA}
-LIB_DEPENDS+=	libcdio_paranoia.so:${PORTSDIR}/sysutils/libcdio
+LIB_DEPENDS+=	libcdio_paranoia.so:${PORTSDIR}/sysutils/libcdio-paranoia
 PLIST_SUB+=	CDDA=""
 .else
 CONFIGURE_ARGS+=	--disable-cdda

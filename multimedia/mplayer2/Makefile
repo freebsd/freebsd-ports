@@ -2,7 +2,7 @@
 
 PORTNAME=	mplayer2
 PORTVERSION=	${MPLAYER2_PORT_VERSION}
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	multimedia audio
 MASTER_SITES=	LOCAL/gblach/
 
@@ -165,7 +165,7 @@ CONFIGURE_ARGS+=	--disable-smb
 .endif
 
 .if ${PORT_OPTIONS:MLIBCDIO}
-LIB_DEPENDS+=		libcdio.so:${PORTSDIR}/sysutils/libcdio
+LIB_DEPENDS+=		libcdio_paranoia.so:${PORTSDIR}/sysutils/libcdio-paranoia
 .else
 CONFIGURE_ARGS+=	--disable-libcdio
 .endif
