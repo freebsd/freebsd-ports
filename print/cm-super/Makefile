@@ -29,7 +29,7 @@ PLIST_SUB=	UPDMAP_SYS="${UPDMAP_SYS}" \
 		MACRODIR=${MACRODIR} \
 
 BUILD_DEPENDS=	updmap:${PORTSDIR}/print/texlive-base \
-		${PREFIX}/${TEXMFDIR}/web2c/texmf/web2c/updmap-hdr.cfg:${PORTSDIR}/print/texlive-infra
+		${PREFIX}/${TEXMFDIR}/web2c/updmap-hdr.cfg:${PORTSDIR}/print/texlive-infra
 
 UPDMAP_SYS=	${LOCALBASE}/bin/updmap-sys --quiet --progname=all
 MKTEXLSR=	${LOCALBASE}/bin/mktexlsr
