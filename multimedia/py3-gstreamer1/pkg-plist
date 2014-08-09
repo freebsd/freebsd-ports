@@ -1,8 +1,9 @@
-%%PYTHON_LIBDIR%%/site-packages/gi/overrides/Gst.py
-%%PYTHON_LIBDIR%%/site-packages/gi/overrides/GstPbutils.py
-%%PYTHON_LIBDIR%%/site-packages/gi/overrides/__pycache__/Gst.cpython-%%PYTVER%%.pyc
-%%PYTHON_LIBDIR%%/site-packages/gi/overrides/__pycache__/Gst.cpython-%%PYTVER%%.pyo
-%%PYTHON_LIBDIR%%/site-packages/gi/overrides/__pycache__/GstPbutils.cpython-%%PYTVER%%.pyc
-%%PYTHON_LIBDIR%%/site-packages/gi/overrides/__pycache__/GstPbutils.cpython-%%PYTVER%%.pyo
-%%PYTHON_LIBDIR%%/site-packages/gi/overrides/_gi_gst.la
-%%PYTHON_LIBDIR%%/site-packages/gi/overrides/_gi_gst.so
+%%PYTHON_SITELIBDIR%%/gi/overrides/__pycache__/Gst.cpython-%%PVERSION%%.pyc
+%%PYTHON_SITELIBDIR%%/gi/overrides/__pycache__/Gst.cpython-%%PVERSION%%.pyo
+%%PYTHON_SITELIBDIR%%/gi/overrides/__pycache__/GstPbutils.cpython-%%PVERSION%%.pyc
+%%PYTHON_SITELIBDIR%%/gi/overrides/__pycache__/GstPbutils.cpython-%%PVERSION%%.pyo
+%%PYTHON_SITELIBDIR%%/gi/overrides/Gst.py
+%%PYTHON_SITELIBDIR%%/gi/overrides/GstPbutils.py
+%%PYTHON_SITELIBDIR%%/gi/overrides/_gi_gst.la
+%%PYTHON_SITELIBDIR%%/gi/overrides/_gi_gst.so
+@dirrmtry %%PYTHON_SITELIBDIR%%/gi/overrides/__pycache__

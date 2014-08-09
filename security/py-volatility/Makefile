@@ -2,15 +2,16 @@
 # $FreeBSD$
 
 PORTNAME=	volatility
-PORTVERSION=	2.3.1
+PORTVERSION=	2.4
 CATEGORIES=	security python
-MASTER_SITES=	GOOGLE_CODE
+MASTER_SITES=	http://downloads.volatilityfoundation.org/releases/${PORTVERSION}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	antoine@FreeBSD.org
 COMMENT=	Advanced memory forensics framework
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}distorm>=0:${PORTSDIR}/devel/py-distorm \
 		${PYTHON_PKGNAMEPREFIX}imaging>=0:${PORTSDIR}/graphics/py-imaging \
@@ -25,7 +26,7 @@ PYDISTUTILS_AUTOPLIST=yes
 OPTIONS_DEFINE=	DOCS
 
 DATADIR=	${PREFIX}/share/py-${PORTNAME}
-PORTDOCS=	AUTHORS.txt CHANGELOG.txt CREDITS.txt README.txt
+PORTDOCS=	AUTHORS.txt CHANGELOG.txt CREDITS.txt LEGAL.txt README.txt
 DOCSDIR=	${PREFIX}/share/doc/py-${PORTNAME}
 
 .include <bsd.port.pre.mk>
@@ -33,9 +34,7 @@ DOCSDIR=	${PREFIX}/share/doc/py-${PORTNAME}
 PYDISTUTILS_INSTALLARGS+=--install-data ${DATADIR}
 
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
-.endif
 
 .include <bsd.port.post.mk>

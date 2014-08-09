@@ -14,6 +14,7 @@ LICENSE=	GPLv2
 DUMMYDATE=	20120501
 
 NO_BUILD=	yes
+NO_ARCH=	yes
 BASE_HEADERS=	input.h uinput.h videodev.h videodev2.h
 DVB_HEADERS=	audio.h ca.h dmx.h frontend.h net.h osd.h version.h video.h
 

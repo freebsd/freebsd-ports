@@ -1,0 +1,9 @@
+FSF gcc-4.10.x for Atmel AVR cross-development
+
+Included is the basic C++ compiler, although this is only of limited
+use without a libstdc++.
+
+Supported debugging formats: -gdwarf-2 [default], -gstabs
+
+WWW: http://gcc.gnu.org/
+WWW: http://www.nongnu.org/avr-libc/

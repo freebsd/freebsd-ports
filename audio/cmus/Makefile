@@ -3,7 +3,7 @@
 
 PORTNAME=	cmus
 PORTVERSION=	2.5.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 
 MAINTAINER=	h.skuhra@gmail.com
@@ -154,7 +154,7 @@ PLIST_SUB+=	CDDB="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MCDIO}
-LIB_DEPENDS+=	libcdio.so:${PORTSDIR}/sysutils/libcdio
+LIB_DEPENDS+=	libcdio_cdda.so:${PORTSDIR}/sysutils/libcdio-paranoia
 CONFIGURE_ARGS+=CONFIG_CDIO=y
 PLIST_SUB+=	CDIO=""
 .else

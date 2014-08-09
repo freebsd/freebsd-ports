@@ -1,7 +1,13 @@
-bin/psk31lx
 bin/twpsk
-share/psk31/psk31.ini
-share/psk31/psk31.cod
-share/psk31/Twpsk
-share/psk31/twpskHelp
-@dirrm share/psk31
+man/man1/twpsk.1.gz
+share/X11/app-defaults/Twpsk
+share/applications/twpsk.desktop
+share/pixmaps/twpsk.png
+%%DATADIR%%/psk31.cod
+%%DATADIR%%/twpskDir/Brag
+%%DATADIR%%/twpskDir/LongCQ
+%%DATADIR%%/twpskDir/ShortCQ
+@dirrmtry share/X11/app-defaults
+@dirrmtry share/X11
+@dirrmtry %%DATADIR%%/twpskDir
+@dirrmtry %%DATADIR%%

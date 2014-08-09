@@ -1,225 +1,229 @@
-@sample etc/bacula-web.conf.sample
-www/bacula-web/CONTACT
-www/bacula-web/COPYING
-www/bacula-web/ChangeLog
-www/bacula-web/README
-www/bacula-web/TODO
-www/bacula-web/array_fill.func.php
-www/bacula-web/classes.inc
-www/bacula-web/classes.inc.orig
-www/bacula-web/external_packages/phplot/ChangeLog
-www/bacula-web/external_packages/phplot/LICENSE.GPL
-www/bacula-web/external_packages/phplot/LICENSE.PHP_3_0
-www/bacula-web/external_packages/phplot/README
-www/bacula-web/external_packages/phplot/doc/imgs/graph1.png
-www/bacula-web/external_packages/phplot/doc/imgs/graph2.png
-www/bacula-web/external_packages/phplot/doc/imgs/graph3.png
-www/bacula-web/external_packages/phplot/doc/imgs/phplot-dia.png
-www/bacula-web/external_packages/phplot/doc/imgs/qstart_fig1.png
-www/bacula-web/external_packages/phplot/doc/imgs/qstart_fig2.png
-www/bacula-web/external_packages/phplot/doc/imgs/qstart_fig3.png
-www/bacula-web/external_packages/phplot/doc/imgs/qstart_fig4.png
-www/bacula-web/external_packages/phplot/doc/index.php
-www/bacula-web/external_packages/phplot/doc/internal_functions.html
-www/bacula-web/external_packages/phplot/doc/quickstart.html
-www/bacula-web/external_packages/phplot/doc/schema.html
-www/bacula-web/external_packages/phplot/doc/style.css
-www/bacula-web/external_packages/phplot/doc/user_functions.html
-www/bacula-web/external_packages/phplot/doc/user_internal_functions.html
-www/bacula-web/external_packages/phplot/examples/benjamingothic.ttf
-www/bacula-web/external_packages/phplot/examples/create_chart.php
-www/bacula-web/external_packages/phplot/examples/data.php
-www/bacula-web/external_packages/phplot/examples/data_date.php
-www/bacula-web/external_packages/phplot/examples/data_date2.php
-www/bacula-web/external_packages/phplot/examples/data_sample1.php
-www/bacula-web/external_packages/phplot/examples/data_sample2.php
-www/bacula-web/external_packages/phplot/examples/data_sample3.php
-www/bacula-web/external_packages/phplot/examples/data_sample4.php
-www/bacula-web/external_packages/phplot/examples/data_sample5.php
-www/bacula-web/external_packages/phplot/examples/example1.php
-www/bacula-web/external_packages/phplot/examples/example2.php
-www/bacula-web/external_packages/phplot/examples/example3.php
-www/bacula-web/external_packages/phplot/examples/example4.php
-www/bacula-web/external_packages/phplot/examples/example6.php
-www/bacula-web/external_packages/phplot/examples/example7.php
-www/bacula-web/external_packages/phplot/examples/example8.php
-www/bacula-web/external_packages/phplot/examples/example9.php
-www/bacula-web/external_packages/phplot/examples/format_chart.php
-www/bacula-web/external_packages/phplot/examples/inline_image.php
-www/bacula-web/external_packages/phplot/examples/test_setup.php
-www/bacula-web/external_packages/phplot/phplot.php
-www/bacula-web/external_packages/phplot/phplot_data.php
-www/bacula-web/external_packages/phplot/rgb.inc.php
-www/bacula-web/external_packages/smarty/COPYING.lib
-www/bacula-web/external_packages/smarty/Config_File.class.php
-www/bacula-web/external_packages/smarty/Smarty.class.php
-www/bacula-web/external_packages/smarty/Smarty_Compiler.class.php
-www/bacula-web/external_packages/smarty/debug.tpl
-www/bacula-web/external_packages/smarty/internals/core.assemble_plugin_filepath.php
-www/bacula-web/external_packages/smarty/internals/core.assign_smarty_interface.php
-www/bacula-web/external_packages/smarty/internals/core.create_dir_structure.php
-www/bacula-web/external_packages/smarty/internals/core.display_debug_console.php
-www/bacula-web/external_packages/smarty/internals/core.get_include_path.php
-www/bacula-web/external_packages/smarty/internals/core.get_microtime.php
-www/bacula-web/external_packages/smarty/internals/core.get_php_resource.php
-www/bacula-web/external_packages/smarty/internals/core.is_secure.php
-www/bacula-web/external_packages/smarty/internals/core.is_trusted.php
-www/bacula-web/external_packages/smarty/internals/core.load_plugins.php
-www/bacula-web/external_packages/smarty/internals/core.load_resource_plugin.php
-www/bacula-web/external_packages/smarty/internals/core.process_cached_inserts.php
-www/bacula-web/external_packages/smarty/internals/core.process_compiled_include.php
-www/bacula-web/external_packages/smarty/internals/core.read_cache_file.php
-www/bacula-web/external_packages/smarty/internals/core.rm_auto.php
-www/bacula-web/external_packages/smarty/internals/core.rmdir.php
-www/bacula-web/external_packages/smarty/internals/core.run_insert_handler.php
-www/bacula-web/external_packages/smarty/internals/core.smarty_include_php.php
-www/bacula-web/external_packages/smarty/internals/core.write_cache_file.php
-www/bacula-web/external_packages/smarty/internals/core.write_compiled_include.php
-www/bacula-web/external_packages/smarty/internals/core.write_compiled_resource.php
-www/bacula-web/external_packages/smarty/internals/core.write_file.php
-www/bacula-web/external_packages/smarty/plugins/block.textformat.php
-www/bacula-web/external_packages/smarty/plugins/compiler.assign.php
-www/bacula-web/external_packages/smarty/plugins/function.assign_debug_info.php
-www/bacula-web/external_packages/smarty/plugins/function.config_load.php
-www/bacula-web/external_packages/smarty/plugins/function.counter.php
-www/bacula-web/external_packages/smarty/plugins/function.cycle.php
-www/bacula-web/external_packages/smarty/plugins/function.debug.php
-www/bacula-web/external_packages/smarty/plugins/function.eval.php
-www/bacula-web/external_packages/smarty/plugins/function.fetch.php
-www/bacula-web/external_packages/smarty/plugins/function.html_checkboxes.php
-www/bacula-web/external_packages/smarty/plugins/function.html_image.php
-www/bacula-web/external_packages/smarty/plugins/function.html_options.php
-www/bacula-web/external_packages/smarty/plugins/function.html_radios.php
-www/bacula-web/external_packages/smarty/plugins/function.html_select_date.php
-www/bacula-web/external_packages/smarty/plugins/function.html_select_time.php
-www/bacula-web/external_packages/smarty/plugins/function.html_table.php
-www/bacula-web/external_packages/smarty/plugins/function.mailto.php
-www/bacula-web/external_packages/smarty/plugins/function.math.php
-www/bacula-web/external_packages/smarty/plugins/function.popup.php
-www/bacula-web/external_packages/smarty/plugins/function.popup_init.php
-www/bacula-web/external_packages/smarty/plugins/modifier.capitalize.php
-www/bacula-web/external_packages/smarty/plugins/modifier.cat.php
-www/bacula-web/external_packages/smarty/plugins/modifier.count_characters.php
-www/bacula-web/external_packages/smarty/plugins/modifier.count_paragraphs.php
-www/bacula-web/external_packages/smarty/plugins/modifier.count_sentences.php
-www/bacula-web/external_packages/smarty/plugins/modifier.count_words.php
-www/bacula-web/external_packages/smarty/plugins/modifier.date_format.php
-www/bacula-web/external_packages/smarty/plugins/modifier.debug_print_var.php
-www/bacula-web/external_packages/smarty/plugins/modifier.default.php
-www/bacula-web/external_packages/smarty/plugins/modifier.escape.php
-www/bacula-web/external_packages/smarty/plugins/modifier.fsize_format.php
-www/bacula-web/external_packages/smarty/plugins/modifier.indent.php
-www/bacula-web/external_packages/smarty/plugins/modifier.lower.php
-www/bacula-web/external_packages/smarty/plugins/modifier.nl2br.php
-www/bacula-web/external_packages/smarty/plugins/modifier.regex_replace.php
-www/bacula-web/external_packages/smarty/plugins/modifier.replace.php
-www/bacula-web/external_packages/smarty/plugins/modifier.spacify.php
-www/bacula-web/external_packages/smarty/plugins/modifier.string_format.php
-www/bacula-web/external_packages/smarty/plugins/modifier.strip.php
-www/bacula-web/external_packages/smarty/plugins/modifier.strip_tags.php
-www/bacula-web/external_packages/smarty/plugins/modifier.truncate.php
-www/bacula-web/external_packages/smarty/plugins/modifier.upper.php
-www/bacula-web/external_packages/smarty/plugins/modifier.wordwrap.php
-www/bacula-web/external_packages/smarty/plugins/outputfilter.trimwhitespace.php
-www/bacula-web/external_packages/smarty/plugins/shared.escape_special_chars.php
-www/bacula-web/external_packages/smarty/plugins/shared.make_timestamp.php
-www/bacula-web/external_packages/smarty_gettext-0.9/COPYING
-www/bacula-web/external_packages/smarty_gettext-0.9/ChangeLog
-www/bacula-web/external_packages/smarty_gettext-0.9/README
-www/bacula-web/external_packages/smarty_gettext-0.9/smarty_gettext.php
-www/bacula-web/external_packages/smarty_gettext-0.9/tsmarty2c.php
-www/bacula-web/images/backlast.gif
-www/bacula-web/images/backlastred.gif
-www/bacula-web/images/bg1.png
-www/bacula-web/images/bg2.png
-www/bacula-web/images/bg3.png
-www/bacula-web/images/bg4.png
-www/bacula-web/images/bg5.png
-www/bacula-web/images/bg6.png
-www/bacula-web/images/bg7.gif
-www/bacula-web/images/bg8.png
-www/bacula-web/images/empty.png
-www/bacula-web/images/end2.png
-www/bacula-web/images/end4.png
-www/bacula-web/images/refresh.gif
-www/bacula-web/images/s_error.gif
-www/bacula-web/images/s_ok.gif
-www/bacula-web/index.php
-www/bacula-web/index.php.orig
-www/bacula-web/js/mini/overlib_anchor_mini.js
-www/bacula-web/js/mini/overlib_crossframe_mini.js
-www/bacula-web/js/mini/overlib_cssstyle_mini.js
-www/bacula-web/js/mini/overlib_exclusive_mini.js
-www/bacula-web/js/mini/overlib_followscroll_mini.js
-www/bacula-web/js/mini/overlib_hideform_mini.js
-www/bacula-web/js/mini/overlib_mini.js
-www/bacula-web/js/mini/overlib_shadow_mini.js
-www/bacula-web/js/overlib.js
-www/bacula-web/js/overlib_anchor.js
-www/bacula-web/js/overlib_crossframe.js
-www/bacula-web/js/overlib_cssstyle.js
-www/bacula-web/js/overlib_exclusive.js
-www/bacula-web/js/overlib_followscroll.js
-www/bacula-web/js/overlib_hideform.js
-www/bacula-web/js/overlib_shadow.js
-www/bacula-web/lang.php
-www/bacula-web/locale/de/LC_MESSAGES/messages.mo
-www/bacula-web/locale/de/LC_MESSAGES/messages_de.po
-www/bacula-web/locale/en/LC_MESSAGES/messages.mo
-www/bacula-web/locale/en/LC_MESSAGES/messages.po
-www/bacula-web/locale/es/LC_MESSAGES/messages.mo
-www/bacula-web/locale/es/LC_MESSAGES/messages.po
-www/bacula-web/locale/fr/LC_MESSAGES/messages.mo
-www/bacula-web/locale/fr/LC_MESSAGES/messages.po.fr
-www/bacula-web/locale/it/LC_MESSAGES/messages.mo
-www/bacula-web/locale/it/LC_MESSAGES/messages_it.po
-www/bacula-web/messages.po
-www/bacula-web/paths.php
-www/bacula-web/report.php
-www/bacula-web/report.php.orig
-www/bacula-web/stats.php
-www/bacula-web/templates/css.tpl
-www/bacula-web/templates/footer.tpl
-www/bacula-web/templates/full_popup.tpl
-www/bacula-web/templates/full_popup.tpl.orig
-www/bacula-web/templates/generaldata.tpl
-www/bacula-web/templates/header.tpl
-www/bacula-web/templates/index.tpl
-www/bacula-web/templates/index.tpl.orig
-www/bacula-web/templates/last_run_report.tpl
-www/bacula-web/templates/report.tpl
-www/bacula-web/templates/report.tpl.orig
-www/bacula-web/templates/report_select.tpl
-www/bacula-web/templates/volumes.tpl
-www/bacula-web/templates/volumes.tpl.orig
-www/bacula-web/templates_c/blank
-www/bacula-web/test.php
-www/bacula-web/tsmarty2c.php
-@dirrm www/bacula-web/templates_c
-@dirrm www/bacula-web/templates
-@dirrm www/bacula-web/locale/it/LC_MESSAGES
-@dirrm www/bacula-web/locale/it
-@dirrm www/bacula-web/locale/fr/LC_MESSAGES
-@dirrm www/bacula-web/locale/fr
-@dirrm www/bacula-web/locale/es/LC_MESSAGES
-@dirrm www/bacula-web/locale/es
-@dirrm www/bacula-web/locale/en/LC_MESSAGES
-@dirrm www/bacula-web/locale/en
-@dirrm www/bacula-web/locale/de/LC_MESSAGES
-@dirrm www/bacula-web/locale/de
-@dirrm www/bacula-web/locale
-@dirrm www/bacula-web/js/mini
-@dirrm www/bacula-web/js
-@dirrm www/bacula-web/images
-@dirrm www/bacula-web/external_packages/smarty_gettext-0.9
-@dirrm www/bacula-web/external_packages/smarty/plugins
-@dirrm www/bacula-web/external_packages/smarty/internals
-@dirrm www/bacula-web/external_packages/smarty
-@dirrm www/bacula-web/external_packages/phplot/examples
-@dirrm www/bacula-web/external_packages/phplot/doc/imgs
-@dirrm www/bacula-web/external_packages/phplot/doc
-@dirrm www/bacula-web/external_packages/phplot
-@dirrm www/bacula-web/external_packages
-@dirrm www/bacula-web
-@unexec rmdir "/var/bacula-web/templates_c" >/dev/null 2>&1 || :
-@unexec rmdir "/var/bacula-web" >/dev/null 2>&1 || :
+@owner %%WWWOWN%%
+@group %%WWWGRP%%
+%%BASE%%/application/config/.htaccess
+%%BASE%%/application/config/config.php.sample
+%%BASE%%/application/libs/fileconfig.class.php
+%%BASE%%/application/locale/de_DE/LC_MESSAGES/messages.mo
+%%BASE%%/application/locale/de_DE/LC_MESSAGES/messages.po
+%%BASE%%/application/locale/en_EN/LC_MESSAGES/messages.mo
+%%BASE%%/application/locale/en_EN/LC_MESSAGES/messages.po
+%%BASE%%/application/locale/es_ES/LC_MESSAGES/messages.mo
+%%BASE%%/application/locale/es_ES/LC_MESSAGES/messages.po
+%%BASE%%/application/locale/fr_FR/LC_MESSAGES/messages.mo
+%%BASE%%/application/locale/fr_FR/LC_MESSAGES/messages.po
+%%BASE%%/application/locale/it_IT/LC_MESSAGES/messages.mo
+%%BASE%%/application/locale/it_IT/LC_MESSAGES/messages.po
+%%BASE%%/application/locale/nl_NL/LC_MESSAGES/messages.mo
+%%BASE%%/application/locale/nl_NL/LC_MESSAGES/messages.po
+%%BASE%%/application/locale/pt_BR/LC_MESSAGES/messages.mo
+%%BASE%%/application/locale/pt_BR/LC_MESSAGES/messages.po
+%%BASE%%/application/locale/sv_SV/LC_MESSAGES/messages.mo
+%%BASE%%/application/locale/sv_SV/LC_MESSAGES/messages.po
+%%BASE%%/application/models/clients.model.php
+%%BASE%%/application/models/database.model.php
+%%BASE%%/application/models/filesets.model.php
+%%BASE%%/application/models/jobs.model.php
+%%BASE%%/application/models/pools.model.php
+%%BASE%%/application/models/volumes.model.php
+%%BASE%%/application/view/backupjob-report.tpl
+%%BASE%%/application/view/cache/README
+%%BASE%%/application/view/client-report.tpl
+%%BASE%%/application/view/footer.tpl
+%%BASE%%/application/view/header.tpl
+%%BASE%%/application/view/index.tpl
+%%BASE%%/application/view/joblogs.tpl
+%%BASE%%/application/view/jobs.tpl
+%%BASE%%/application/view/pools.tpl
+%%BASE%%/application/view/style/default.css
+%%BASE%%/application/view/style/header.css
+%%BASE%%/application/view/style/images/canceled.png
+%%BASE%%/application/view/style/images/error.png
+%%BASE%%/application/view/style/images/home_w.png
+%%BASE%%/application/view/style/images/ok.png
+%%BASE%%/application/view/style/images/running.png
+%%BASE%%/application/view/style/images/search.png
+%%BASE%%/application/view/style/images/waiting.png
+%%BASE%%/application/view/style/images/warning.png
+%%BASE%%/application/view/style/table.css
+%%BASE%%/application/view/test.tpl
+%%BASE%%/backupjob-report.php
+%%BASE%%/client-report.php
+%%BASE%%/core/app/cerrorhandler.class.php
+%%BASE%%/core/app/classautoloader.class.php
+%%BASE%%/core/app/cmodel.class.php
+%%BASE%%/core/app/cview.class.php
+%%BASE%%/core/bweb.class.php
+%%BASE%%/core/const.inc.php
+%%BASE%%/core/db/cdb.class.php
+%%BASE%%/core/db/cdbquery.class.php
+%%BASE%%/core/db/cdbresult.class.php
+%%BASE%%/core/db/cdbutils.class.php
+%%BASE%%/core/external/phplot/COPYING
+%%BASE%%/core/external/phplot/ChangeLog
+%%BASE%%/core/external/phplot/Imagemaps.txt
+%%BASE%%/core/external/phplot/NEWS.txt
+%%BASE%%/core/external/phplot/NEWS_part1.txt
+%%BASE%%/core/external/phplot/README.txt
+%%BASE%%/core/external/phplot/contrib/README.txt
+%%BASE%%/core/external/phplot/contrib/color_range.example.php
+%%BASE%%/core/external/phplot/contrib/color_range.php
+%%BASE%%/core/external/phplot/contrib/color_range.test1.php
+%%BASE%%/core/external/phplot/contrib/color_range.test2.php
+%%BASE%%/core/external/phplot/contrib/data_table.example1.php
+%%BASE%%/core/external/phplot/contrib/data_table.example2.php
+%%BASE%%/core/external/phplot/contrib/data_table.example3.php
+%%BASE%%/core/external/phplot/contrib/data_table.php
+%%BASE%%/core/external/phplot/contrib/prune_labels.example.php
+%%BASE%%/core/external/phplot/contrib/prune_labels.php
+%%BASE%%/core/external/phplot/contrib/prune_labels.test.php
+%%BASE%%/core/external/phplot/phplot.php
+%%BASE%%/core/external/phplot/rgb.inc.php
+%%BASE%%/core/external/smarty-gettext/COPYING
+%%BASE%%/core/external/smarty-gettext/ChangeLog
+%%BASE%%/core/external/smarty-gettext/README
+%%BASE%%/core/external/smarty-gettext/smarty-gettext.php
+%%BASE%%/core/external/smarty-gettext/smarty_gettext.php
+%%BASE%%/core/external/smarty-gettext/tsmarty2c.php
+%%BASE%%/core/external/smarty/BUGS
+%%BASE%%/core/external/smarty/COPYING.lib
+%%BASE%%/core/external/smarty/ChangeLog
+%%BASE%%/core/external/smarty/FAQ
+%%BASE%%/core/external/smarty/INSTALL
+%%BASE%%/core/external/smarty/NEWS
+%%BASE%%/core/external/smarty/QUICK_START
+%%BASE%%/core/external/smarty/README
+%%BASE%%/core/external/smarty/RELEASE_NOTES
+%%BASE%%/core/external/smarty/TODO
+%%BASE%%/core/external/smarty/demo/configs/test.conf
+%%BASE%%/core/external/smarty/demo/index.php
+%%BASE%%/core/external/smarty/demo/templates/footer.tpl
+%%BASE%%/core/external/smarty/demo/templates/header.tpl
+%%BASE%%/core/external/smarty/demo/templates/index.tpl
+%%BASE%%/core/external/smarty/libs/Config_File.class.php
+%%BASE%%/core/external/smarty/libs/Smarty.class.php
+%%BASE%%/core/external/smarty/libs/Smarty_Compiler.class.php
+%%BASE%%/core/external/smarty/libs/debug.tpl
+%%BASE%%/core/external/smarty/libs/internals/core.assemble_plugin_filepath.php
+%%BASE%%/core/external/smarty/libs/internals/core.assign_smarty_interface.php
+%%BASE%%/core/external/smarty/libs/internals/core.create_dir_structure.php
+%%BASE%%/core/external/smarty/libs/internals/core.display_debug_console.php
+%%BASE%%/core/external/smarty/libs/internals/core.get_include_path.php
+%%BASE%%/core/external/smarty/libs/internals/core.get_microtime.php
+%%BASE%%/core/external/smarty/libs/internals/core.get_php_resource.php
+%%BASE%%/core/external/smarty/libs/internals/core.is_secure.php
+%%BASE%%/core/external/smarty/libs/internals/core.is_trusted.php
+%%BASE%%/core/external/smarty/libs/internals/core.load_plugins.php
+%%BASE%%/core/external/smarty/libs/internals/core.load_resource_plugin.php
+%%BASE%%/core/external/smarty/libs/internals/core.process_cached_inserts.php
+%%BASE%%/core/external/smarty/libs/internals/core.process_compiled_include.php
+%%BASE%%/core/external/smarty/libs/internals/core.read_cache_file.php
+%%BASE%%/core/external/smarty/libs/internals/core.rm_auto.php
+%%BASE%%/core/external/smarty/libs/internals/core.rmdir.php
+%%BASE%%/core/external/smarty/libs/internals/core.run_insert_handler.php
+%%BASE%%/core/external/smarty/libs/internals/core.smarty_include_php.php
+%%BASE%%/core/external/smarty/libs/internals/core.write_cache_file.php
+%%BASE%%/core/external/smarty/libs/internals/core.write_compiled_include.php
+%%BASE%%/core/external/smarty/libs/internals/core.write_compiled_resource.php
+%%BASE%%/core/external/smarty/libs/internals/core.write_file.php
+%%BASE%%/core/external/smarty/libs/plugins/block.textformat.php
+%%BASE%%/core/external/smarty/libs/plugins/compiler.assign.php
+%%BASE%%/core/external/smarty/libs/plugins/function.assign_debug_info.php
+%%BASE%%/core/external/smarty/libs/plugins/function.config_load.php
+%%BASE%%/core/external/smarty/libs/plugins/function.counter.php
+%%BASE%%/core/external/smarty/libs/plugins/function.cycle.php
+%%BASE%%/core/external/smarty/libs/plugins/function.debug.php
+%%BASE%%/core/external/smarty/libs/plugins/function.eval.php
+%%BASE%%/core/external/smarty/libs/plugins/function.fetch.php
+%%BASE%%/core/external/smarty/libs/plugins/function.html_checkboxes.php
+%%BASE%%/core/external/smarty/libs/plugins/function.html_image.php
+%%BASE%%/core/external/smarty/libs/plugins/function.html_options.php
+%%BASE%%/core/external/smarty/libs/plugins/function.html_radios.php
+%%BASE%%/core/external/smarty/libs/plugins/function.html_select_date.php
+%%BASE%%/core/external/smarty/libs/plugins/function.html_select_time.php
+%%BASE%%/core/external/smarty/libs/plugins/function.html_table.php
+%%BASE%%/core/external/smarty/libs/plugins/function.mailto.php
+%%BASE%%/core/external/smarty/libs/plugins/function.math.php
+%%BASE%%/core/external/smarty/libs/plugins/function.popup.php
+%%BASE%%/core/external/smarty/libs/plugins/function.popup_init.php
+%%BASE%%/core/external/smarty/libs/plugins/modifier.capitalize.php
+%%BASE%%/core/external/smarty/libs/plugins/modifier.cat.php
+%%BASE%%/core/external/smarty/libs/plugins/modifier.count_characters.php
+%%BASE%%/core/external/smarty/libs/plugins/modifier.count_paragraphs.php
+%%BASE%%/core/external/smarty/libs/plugins/modifier.count_sentences.php
+%%BASE%%/core/external/smarty/libs/plugins/modifier.count_words.php
+%%BASE%%/core/external/smarty/libs/plugins/modifier.date_format.php
+%%BASE%%/core/external/smarty/libs/plugins/modifier.debug_print_var.php
+%%BASE%%/core/external/smarty/libs/plugins/modifier.default.php
+%%BASE%%/core/external/smarty/libs/plugins/modifier.escape.php
+%%BASE%%/core/external/smarty/libs/plugins/modifier.indent.php
+%%BASE%%/core/external/smarty/libs/plugins/modifier.lower.php
+%%BASE%%/core/external/smarty/libs/plugins/modifier.nl2br.php
+%%BASE%%/core/external/smarty/libs/plugins/modifier.regex_replace.php
+%%BASE%%/core/external/smarty/libs/plugins/modifier.replace.php
+%%BASE%%/core/external/smarty/libs/plugins/modifier.spacify.php
+%%BASE%%/core/external/smarty/libs/plugins/modifier.string_format.php
+%%BASE%%/core/external/smarty/libs/plugins/modifier.strip.php
+%%BASE%%/core/external/smarty/libs/plugins/modifier.strip_tags.php
+%%BASE%%/core/external/smarty/libs/plugins/modifier.truncate.php
+%%BASE%%/core/external/smarty/libs/plugins/modifier.upper.php
+%%BASE%%/core/external/smarty/libs/plugins/modifier.wordwrap.php
+%%BASE%%/core/external/smarty/libs/plugins/outputfilter.trimwhitespace.php
+%%BASE%%/core/external/smarty/libs/plugins/shared.escape_special_chars.php
+%%BASE%%/core/external/smarty/libs/plugins/shared.make_timestamp.php
+%%BASE%%/core/global.inc.php
+%%BASE%%/core/graph/cgraph.class.php
+%%BASE%%/core/i18n/ctranslation.class.php
+%%BASE%%/core/utils/chttprequest.class.php
+%%BASE%%/core/utils/cutils.class.php
+%%BASE%%/core/utils/datetimeutil.class.php
+%%BASE%%/core/utils/file.class.php
+%%BASE%%/index.php
+%%BASE%%/joblogs.php
+%%BASE%%/jobs.php
+%%BASE%%/pools.php
+%%BASE%%/test.php
+@owner
+@group
+@dirrmtry %%BASE%%/application/config
+@dirrm %%BASE%%/application/libs
+@dirrm %%BASE%%/application/locale/de_DE/LC_MESSAGES
+@dirrm %%BASE%%/application/locale/de_DE
+@dirrm %%BASE%%/application/locale/en_EN/LC_MESSAGES
+@dirrm %%BASE%%/application/locale/en_EN
+@dirrm %%BASE%%/application/locale/es_ES/LC_MESSAGES
+@dirrm %%BASE%%/application/locale/es_ES
+@dirrm %%BASE%%/application/locale/fr_FR/LC_MESSAGES
+@dirrm %%BASE%%/application/locale/fr_FR
+@dirrm %%BASE%%/application/locale/it_IT/LC_MESSAGES
+@dirrm %%BASE%%/application/locale/it_IT
+@dirrm %%BASE%%/application/locale/nl_NL/LC_MESSAGES
+@dirrm %%BASE%%/application/locale/nl_NL
+@dirrm %%BASE%%/application/locale/pt_BR/LC_MESSAGES
+@dirrm %%BASE%%/application/locale/pt_BR
+@dirrm %%BASE%%/application/locale/sv_SV/LC_MESSAGES
+@dirrm %%BASE%%/application/locale/sv_SV
+@dirrm %%BASE%%/application/locale
+@dirrm %%BASE%%/application/models
+@dirrm %%BASE%%/application/view/cache
+@dirrm %%BASE%%/application/view/style/images
+@dirrm %%BASE%%/application/view/style
+@dirrm %%BASE%%/application/view
+@dirrmtry %%BASE%%/application
+@dirrm %%BASE%%/core/app
+@dirrm %%BASE%%/core/db
+@dirrm %%BASE%%/core/external/phplot/contrib
+@dirrm %%BASE%%/core/external/phplot
+@dirrm %%BASE%%/core/external/smarty/demo/configs
+@dirrm %%BASE%%/core/external/smarty/demo/templates
+@dirrm %%BASE%%/core/external/smarty/demo
+@dirrm %%BASE%%/core/external/smarty/libs/internals
+@dirrm %%BASE%%/core/external/smarty/libs/plugins
+@dirrm %%BASE%%/core/external/smarty/libs
+@dirrm %%BASE%%/core/external/smarty
+@dirrm %%BASE%%/core/external/smarty-gettext
+@dirrm %%BASE%%/core/external
+@dirrm %%BASE%%/core/graph
+@dirrm %%BASE%%/core/i18n
+@dirrm %%BASE%%/core/utils
+@dirrm %%BASE%%/core
+@dirrmtry %%BASE%%

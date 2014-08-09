@@ -35,6 +35,17 @@ MANPAGES_DESC=		Build and install manpages (requires textproc/docbook-xsl)
 
 .include <bsd.port.options.mk>
 
+.if defined(NO_PYTHON)
+CONFIGURE_ARGS+=	--disable-python
+.else
+USE_PYTHON_RUN=		yes
+PLIST_FILES+=		%%PYTHON_SITELIBDIR%%/tdb.so
+.endif
+
+.if defined(NO_PYTHON)
+
+.endif
+
 .include <bsd.port.pre.mk>
 
 .if ! ${PORT_OPTIONS:MMANPAGES}
@@ -44,7 +55,7 @@ BUILD_DEPENDS+=		${LOCALBASE}/share/xsl/docbook/manpages/docbook.xsl:${PORTSDIR}
 			xsltproc:${PORTSDIR}/textproc/libxslt
 .endif
 
-PLIST_FILES=		bin/tdbbackup \
+PLIST_FILES+=		bin/tdbbackup \
 			bin/tdbdump \
 			bin/tdbrestore \
 			bin/tdbtool \
@@ -63,15 +74,6 @@ MAKE_ENV+=		NOCOLOR=yes
 .if !defined(DISABLE_MAKE_JOBS) && !defined(MAKE_JOBS_UNSAFE)
 CONFIGURE_ARGS+=	--jobs=${MAKE_JOBS_NUMBER}
 _MAKE_JOBS+=		--jobs=${MAKE_JOBS_NUMBER}
-.endif
-
-.if defined(NO_PYTHON)
-CONFIGURE_ARGS+=	--disable-python
-.else
-USE_PYTHON_RUN=		yes
-PLIST_FILES+=		%%PYTHON_SITELIBDIR%%/tdb.so
-PLIST_DIRSTRY+=		%%PYTHON_SITELIBDIR%% \
-			%%PYTHON_LIBDIR%%
 .endif
 
 TDB_MAN8=		man/man8/tdbbackup.8.gz \

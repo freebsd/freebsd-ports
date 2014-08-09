@@ -1048,7 +1048,6 @@ lib/calibre/calibre/gui2/viewer/bookmarkmanager.py
 lib/calibre/calibre/gui2/viewer/bookmarkmanager_ui.py
 lib/calibre/calibre/gui2/viewer/config.py
 lib/calibre/calibre/gui2/viewer/config_ui.py
-lib/calibre/calibre/gui2/viewer/dictionary.py
 lib/calibre/calibre/gui2/viewer/documentview.py
 lib/calibre/calibre/gui2/viewer/flip.py
 lib/calibre/calibre/gui2/viewer/gestures.py
@@ -1157,7 +1156,6 @@ lib/calibre/calibre/utils/complete.py
 lib/calibre/calibre/utils/config.py
 lib/calibre/calibre/utils/config_base.py
 lib/calibre/calibre/utils/date.py
-lib/calibre/calibre/utils/dictclient.py
 lib/calibre/calibre/utils/file_associations.py
 lib/calibre/calibre/utils/filenames.py
 lib/calibre/calibre/utils/fonts/__init__.py
@@ -1596,6 +1594,7 @@ share/applications/calibre-lrfviewer.desktop
 %%DATADIR%%/images/dictionary.png
 %%DATADIR%%/images/diff.png
 %%DATADIR%%/images/document-encrypt.png
+%%DATADIR%%/images/document-import.png
 %%DATADIR%%/images/document-new.png
 %%DATADIR%%/images/document_open.png
 %%DATADIR%%/images/donate.png
@@ -1616,6 +1615,7 @@ share/applications/calibre-lrfviewer.desktop
 %%DATADIR%%/images/embed-fonts.png
 %%DATADIR%%/images/exec.png
 %%DATADIR%%/images/filter.png
+%%DATADIR%%/images/folder_saved_search.png
 %%DATADIR%%/images/font.png
 %%DATADIR%%/images/font_size_larger.png
 %%DATADIR%%/images/font_size_smaller.png

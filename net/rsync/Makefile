@@ -19,6 +19,11 @@ COMMENT=	Network file distribution/synchronization utility
 
 LICENSE=	GPLv3
 
+USES=		cpe
+
+CPE_VENDOR=	samba
+CPE_PRODUCT=	rsync
+
 PATCH_STRIP=	-p1
 GNU_CONFIGURE=	yes
 USE_RC_SUBR=	rsyncd

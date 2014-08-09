@@ -40,22 +40,22 @@
 + 
 + #mode 0666 is required for DriveA, alas
 + install: pcemu bootstrapper
-+ 	-mkdir ${LOCALPREFIX}/lib/pcemu \
-+ 		${LOCALPREFIX}/lib/pcemu/doc \
-+ 		${LOCALPREFIX}/lib/pcemu/font \
-+ 		${LOCALPREFIX}/lib/pcemu/C \
-+ 		${LOCALPREFIX}/bin
-+ 	install -c -s -o bin -g bin pcemu ${LOCALPREFIX}/bin/
++ 	-mkdir -p ${STAGEDIR}/${LOCALPREFIX}/lib/pcemu \
++ 		${STAGEDIR}/${LOCALPREFIX}/lib/pcemu/doc \
++ 		${STAGEDIR}/${LOCALPREFIX}/lib/pcemu/font \
++ 		${STAGEDIR}/${LOCALPREFIX}/lib/pcemu/C \
++ 		${STAGEDIR}/${LOCALPREFIX}/bin
++ 	install -c -s -o bin -g bin pcemu ${STAGEDIR}/${LOCALPREFIX}/bin/
 + 	install -c -m 666 bootstrap/display.bin \
-+ 		${LOCALPREFIX}/lib/pcemu/DriveA
++ 		${STAGEDIR}/${LOCALPREFIX}/lib/pcemu/DriveA
 + 	install -c -m 644 BUGS CHANGES README TODO  bootstrap/README.FreeBSD \
 + 		programs/lredir.readme \
-+ 		${LOCALPREFIX}/lib/pcemu/doc/
-+ 	rm -f ${LOCALPREFIX}/lib/pcemu/doc/report.ps.gz
-+ 	gzip --best < report.ps > ${LOCALPREFIX}/lib/pcemu/doc/report.ps.gz
-+ 	rm -f ${LOCALPREFIX}/lib/pcemu/font/vga.pcf.Z
-+ 	bdftopcf vga.bdf | compress > ${LOCALPREFIX}/lib/pcemu/font/vga.pcf.Z
-+ 	mkfontdir ${LOCALPREFIX}/lib/pcemu/font
++ 		${STAGEDIR}/${LOCALPREFIX}/lib/pcemu/doc/
++ 	rm -f ${STAGEDIR}/${LOCALPREFIX}/lib/pcemu/doc/report.ps.gz
++ 	gzip --best < report.ps > ${STAGEDIR}/${LOCALPREFIX}/lib/pcemu/doc/report.ps.gz
++ 	rm -f ${STAGEDIR}/${LOCALPREFIX}/lib/pcemu/font/vga.pcf.Z
++ 	bdftopcf vga.bdf | compress > ${STAGEDIR}/${LOCALPREFIX}/lib/pcemu/font/vga.pcf.Z
++ 	mkfontdir ${STAGEDIR}/${LOCALPREFIX}/lib/pcemu/font
 + 	install -c -m 644 programs/vga50.com programs/config.sys \
 + 		programs/dumpdisk.exe programs/lredir.exe programs/emufs.sys \
-+ 		${LOCALPREFIX}/lib/pcemu/C
++ 		${STAGEDIR}/${LOCALPREFIX}/lib/pcemu/C

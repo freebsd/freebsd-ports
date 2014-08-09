@@ -3,10 +3,11 @@
 
 PORTNAME=	istgt
 PORTVERSION=	20121028
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://www.peach.ne.jp/archives/istgt/
 
-MAINTAINER=	aoyama@peach.ne.jp
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	iSCSI target for openSUSE/Debian/NetBSD/FreeBSD
 
 SUB_FILES=	pkg-message

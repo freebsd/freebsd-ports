@@ -36,6 +36,17 @@ MANPAGES_DESC=		Build and install manpages (requires textproc/docbook-xsl)
 
 .include <bsd.port.options.mk>
 
+.if defined(NO_PYTHON)
+CONFIGURE_ARGS+=	--disable-python
+.else
+USE_PYTHON_RUN=		yes
+PLIST_FILES+=		include/pytalloc.h \
+			lib/libpytalloc-util.so \
+			lib/libpytalloc-util.so.2 \
+			%%PYTHON_SITELIBDIR%%/talloc.so \
+			%%PKGCONFIGDIR%%/pytalloc-util.pc
+.endif
+
 .include <bsd.port.pre.mk>
 
 .if ! ${PORT_OPTIONS:MMANPAGES}
@@ -45,7 +56,7 @@ BUILD_DEPENDS+=		${LOCALBASE}/share/xsl/docbook/manpages/docbook.xsl:${PORTSDIR}
 			xsltproc:${PORTSDIR}/textproc/libxslt
 .endif
 
-PLIST_FILES=		include/talloc.h \
+PLIST_FILES+=		include/talloc.h \
 			lib/libtalloc.so \
 			lib/libtalloc.so.2 \
 			%%PKGCONFIGDIR%%/talloc.pc
@@ -60,19 +71,6 @@ MAKE_ENV+=		NOCOLOR=yes
 .if !defined(DISABLE_MAKE_JOBS) && !defined(MAKE_JOBS_UNSAFE)
 CONFIGURE_ARGS+=	--jobs=${MAKE_JOBS_NUMBER}
 _MAKE_JOBS+=		--jobs=${MAKE_JOBS_NUMBER}
-.endif
-
-.if defined(NO_PYTHON)
-CONFIGURE_ARGS+=	--disable-python
-.else
-USE_PYTHON_RUN=		yes
-PLIST_FILES+=		include/pytalloc.h \
-			lib/libpytalloc-util.so \
-			lib/libpytalloc-util.so.2 \
-			%%PYTHON_SITELIBDIR%%/talloc.so \
-			%%PKGCONFIGDIR%%/pytalloc-util.pc
-PLIST_DIRSTRY+=		%%PYTHON_SITELIBDIR%% \
-			%%PYTHON_LIBDIR%%
 .endif
 
 TALLOC_MAN3=		man/man3/talloc.3.gz

@@ -125,6 +125,7 @@
     SUBDIR += gstreamer1-plugins-dts
     SUBDIR += gstreamer1-plugins-dv
     SUBDIR += gstreamer1-plugins-dvdread
+    SUBDIR += gstreamer1-plugins-gnonlin
     SUBDIR += gstreamer1-plugins-good
     SUBDIR += gstreamer1-plugins-kate
     SUBDIR += gstreamer1-plugins-mpeg2dec
@@ -292,6 +293,7 @@
     SUBDIR += py-gstreamer
     SUBDIR += py-gstreamer1
     SUBDIR += py-guessit
+    SUBDIR += py-gstreamer1
     SUBDIR += py-kaa-base
     SUBDIR += py-kaa-imlib2
     SUBDIR += py-kaa-metadata

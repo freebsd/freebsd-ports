@@ -10,6 +10,29 @@ in the release notes and/or placed into UPDATING.
 
 All ports committers are allowed to commit to this file.
 
+20140809:
+AUTHOR: mva@FreeBSD.org
+
+  The Python language bits of the poorts framework have been converted
+  to USES. Instead of USE_PYTHON, please use USES=python instead.
+
+    USE_PYTHON=yes becomes USES=python
+    USE_PYTHON=2.7+ becomes USES=python:2.7+
+    USE_PYTHON_BUILD=3.3 becomes USES=python:3.3,build
+    ...
+
+  Additionally, several Python specific feeatures have been converted
+  to USES-inspired PYTHON_FEATURES=<featureA>,<featureB>.
+
+    USE_PYDISTUTILS becomes PYTHON_FEATURES=distutils
+    PYDISTUTILS_AUTOPLIST becomes PYTHON_FEATURES=autoplist
+    ...
+
+  Please read the header comments of Uses/python.mk for more details
+  about the new and changed bits and pieces. You will find a list of
+  deprecated variables and how to replace them in your own ports at
+  the end of the header comment.
+
 20140715:
 AUTHOR: bapt@FreeBSD.org
 

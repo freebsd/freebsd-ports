@@ -129,6 +129,7 @@
     SUBDIR += nagios-check_netsnmp
     SUBDIR += nagios-check_ports
     SUBDIR += nagios-check_postgres
+    SUBDIR += nagios-check_relayd_status
     SUBDIR += nagios-check_puppet
     SUBDIR += nagios-check_smartmon
     SUBDIR += nagios-check_tftp
@@ -322,6 +323,7 @@
     SUBDIR += torrus
     SUBDIR += unifi2
     SUBDIR += unifi3
+    SUBDIR += victorops-nagios
     SUBDIR += vidalia
     SUBDIR += virt-viewer
     SUBDIR += virtinst

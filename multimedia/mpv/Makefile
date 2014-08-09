@@ -3,6 +3,7 @@
 
 PORTNAME=	mpv
 PORTVERSION=	0.4.2
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	multimedia audio
 MASTER_SITES=	GH:0 GHC:0 http://ftp.waf.io/pub/release/:1 \
@@ -79,7 +80,7 @@ LIBGUESS_CONFIGURE_ENABLE=	libguess
 LIRC_LIB_DEPENDS=		liblirc_client.so:${PORTSDIR}/comms/lirc
 LIRC_CONFIGURE_ENABLE=		lirc
 
-CDIO_LIB_DEPENDS=		libcdio.so:${PORTSDIR}/sysutils/libcdio
+CDIO_LIB_DEPENDS=		libcdio_paranoia.so:${PORTSDIR}/sysutils/libcdio-paranoia
 CDIO_CONFIGURE_ENABLE=		cdda
 
 LIBBLURAY_LIB_DEPENDS=		libbluray.so:${PORTSDIR}/multimedia/libbluray

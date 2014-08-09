@@ -1,0 +1,5 @@
+A plugin for Nagios to query relayd status. It returns a warning if not
+all hosts in a table are up and a critical if a table and/or redirect
+is totally down.
+
+Author: Daniel Werdermann <dwerdermann@web.de>

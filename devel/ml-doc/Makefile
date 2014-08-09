@@ -13,6 +13,8 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Language and tools for documenting Standard ML libraries
 
+BROKEN=		Fails to build on i386, fails to configure on amd64
+
 BUILD_DEPENDS=	smlnj>=110.71:${PORTSDIR}/lang/smlnj \
 		nsgmls:${PORTSDIR}/textproc/jade
 RUN_DEPENDS=	nsgmls:${PORTSDIR}/textproc/jade

@@ -2,21 +2,11 @@ based on https://github.com/dankamongmen/libdank/blob/master/libdank/compat-Free
 
 --- usb_stream/pcm_usb_stream.c.orig
 +++ usb_stream/pcm_usb_stream.c
-@@ -19,7 +19,9 @@
-  */
- 
- #define _GNU_SOURCE
-+#ifndef __FreeBSD__
- #include <byteswap.h>
-+#endif
- #include <sys/mman.h>
- #include <sys/shm.h>
- #include <sys/ioctl.h>
 @@ -79,6 +81,69 @@ typedef struct {
  static struct user_usb_stream *uus;
  static pthread_mutex_t uus_mutex = PTHREAD_MUTEX_INITIALIZER;
  
-+#ifdef __FreeBSD__
++#ifndef __linux__
 +/*
 + * Copyright (c) 2000-2011, Nick Black et al
 + * All rights reserved.
@@ -86,7 +76,7 @@ based on https://github.com/dankamongmen/libdank/blob/master/libdank/compat-Free
  		}
  
  
-+#ifndef __FreeBSD__
++#ifdef __linux__
  		uus->s = mremap(uus->s, sizeof(struct usb_stream), uus->s->read_size, MREMAP_MAYMOVE);
 +#else
 +		uus->s = mremap_compat(us->pfd.fd, uus->s, sizeof(struct usb_stream), uus->s->read_size, PROT_READ, MAP_SHARED);

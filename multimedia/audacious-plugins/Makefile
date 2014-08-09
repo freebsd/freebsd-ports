@@ -3,6 +3,7 @@
 
 PORTNAME=	audacious-plugins
 PORTVERSION=	3.5
+PORTREVISION=	1
 CATEGORIES=	multimedia audio
 MASTER_SITES=	http://distfiles.audacious-media-player.org/
 
@@ -251,7 +252,7 @@ CONFIGURE_ARGS+=--disable-sid
 .endif
 
 .if ${PORT_OPTIONS:MCDAUDIO}
-LIB_DEPENDS+=	libcdio.so:${PORTSDIR}/sysutils/libcdio \
+LIB_DEPENDS+=	libcdio_cdda.so:${PORTSDIR}/sysutils/libcdio-paranoia \
 		libcddb.so:${PORTSDIR}/audio/libcddb
 CONFIGURE_ARGS+=--enable-cdaudio
 PLIST_SUB+=	CDAUDIOPLUGIN=""

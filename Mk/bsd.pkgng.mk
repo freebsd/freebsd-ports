@@ -254,18 +254,18 @@ do-package: ${TMPPLIST}
 .if !target(check-already-installed)
 .if !defined(NO_PKG_REGISTER) && !defined(FORCE_PKG_REGISTER)
 check-already-installed:
-		@${ECHO_MSG} "===>  Checking if ${PKGORIGIN} already installed"; \
-		pkgname=`${PKG_INFO} -q -O ${PKGORIGIN}`; \
+		@${ECHO_MSG} "===>  Checking if ${PKGBASE} already installed"; \
+		pkgname=`${PKG_INFO} -q -O ${PKGBASE}`; \
 		if [ -n "$${pkgname}" ]; then \
 			v=`${PKG_VERSION} -t $${pkgname} ${PKGNAME}`; \
 			if [ "$${v}" = "<" ]; then \
-				${ECHO_CMD} "===>   An older version of ${PKGORIGIN} is already installed ($${pkgname})"; \
+				${ECHO_CMD} "===>   An older version of ${PKGBASE} is already installed ($${pkgname})"; \
 			else \
 				${ECHO_CMD} "===>   ${PKGNAME} is already installed"; \
 			fi; \
 			${ECHO_MSG} "      You may wish to \`\`make deinstall'' and install this port again"; \
 			${ECHO_MSG} "      by \`\`make reinstall'' to upgrade it properly."; \
-			${ECHO_MSG} "      If you really wish to overwrite the old port of ${PKGORIGIN}"; \
+			${ECHO_MSG} "      If you really wish to overwrite the old port of ${PKGBASE}"; \
 			${ECHO_MSG} "      without deleting it first, set the variable \"FORCE_PKG_REGISTER\""; \
 			${ECHO_MSG} "      in your environment or the \"make install\" command line."; \
 			exit 1; \
@@ -282,11 +282,11 @@ deinstall:
 		${SU_CMD} "${MAKE} ${.TARGET}"
 	@${ECHO_MSG} "===>  Returning to user credentials"
 .else
-	@${ECHO_MSG} "===>  Deinstalling for ${PKGORIGIN}"
-	@if ${PKG_INFO} -e ${PKGORIGIN}; then \
-		p=`${PKG_INFO} -q ${PKGORIGIN}`; \
+	@${ECHO_MSG} "===>  Deinstalling for ${PKGBASE}"
+	@if ${PKG_INFO} -e ${PKGBASE}; then \
+		p=`${PKG_INFO} -q -O ${PKGBASE}`; \
 		${ECHO_MSG} "===>   Deinstalling $${p}"; \
-		${PKG_DELETE} -f ${PKGORIGIN} ; \
+		${PKG_DELETE} -f ${PKGBASE} ; \
 	else \
 		${ECHO_MSG} "===>   ${PKGBASE} not installed, skipping"; \
 	fi

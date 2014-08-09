@@ -9,13 +9,13 @@ MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	joerg
 DISTNAME=	${PORTNAME}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	joerg@FreeBSD.org
 COMMENT=	The part of X11R3's xcalc featuring a slide rule
 
 USES=		imake
 USE_XORG=	x11 xext
+USE_GCC=	any
 MAN1=		sliderule.1
 PLIST_FILES=	bin/sliderule
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

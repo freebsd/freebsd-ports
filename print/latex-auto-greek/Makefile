@@ -10,6 +10,8 @@ MASTER_SITES=	http://waterdeep.physics.upatras.gr/~eelvex/files/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	LaTeX package for switching between greek/latintext automatically
 
+BROKEN=		Fails to install
+
 USE_TEX=	latex
 NO_BUILD=	YES
 PLIST_SUB=	TEXMFDIST=${TEXMFDIST} UPDMAP=${UPDMAP} \

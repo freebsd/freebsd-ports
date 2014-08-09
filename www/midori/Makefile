@@ -3,7 +3,7 @@
 
 PORTNAME=	midori
 PORTVERSION=	0.5.8
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	www xfce
 MASTER_SITES=	http://www.midori-browser.org/downloads/
 DISTNAME=	${PORTNAME}_${PORTVERSION}_all_
@@ -50,6 +50,7 @@ ZEITGEIST_DESC=	User logs activities
 LIB_DEPENDS+=	libwebkitgtk-1.0.so:${PORTSDIR}/www/webkit-gtk2
 USE_GNOME+=	gtk20
 CMAKE_ARGS+=	-DUSE_GTK3:BOOL=OFF
+PLIST_SUB+=	ONLY_WEBKIT1=""
 .endif
 
 .if ${PORT_OPTIONS:MGTK3}
@@ -60,8 +61,11 @@ CMAKE_ARGS+=	-DUSE_GTK3:BOOL=ON
 # Support the new WebKit2 API (>= 1.11.91)
 .if exists(${LOCALBASE}/libdata/pkgconfig/webkit2gtk-3.0.pc)
 CMAKE_ARGS+=	-DHALF_BRO_INCOM_WEBKIT2:BOOL=ON
+# Some extensions are not yet ported to the new API (WebKit2)
+PLIST_SUB+=	ONLY_WEBKIT1="@comment "
 .else
 CMAKE_ARGS+=	-DHALF_BRO_INCOM_WEBKIT2:BOOL=OFF
+PLIST_SUB+=	ONLY_WEBKIT1=""
 .endif
 
 .if ${PORT_OPTIONS:MGRANITE}
@@ -88,7 +92,7 @@ CMAKE_ARGS+=	-DUSE_ZEITGEIST:BOOL=ON
 CMAKE_ARGS+=	-DUSE_ZEITGEIST:BOOL=OFF
 .endif
 
-.if ${PORT_OPTIONS:MGIR}
+.if ${PORT_OPTIONS:MGIR} && ${PORT_OPTIONS:MGTK2}
 USE_GNOME+=	introspection:build
 CMAKE_ARGS+=	-DUSE_GIR:BOOL=ON
 PLIST_SUB+=	GIR=""

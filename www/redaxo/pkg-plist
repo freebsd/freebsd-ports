@@ -1,6 +1,5 @@
 @group www
 @owner www
-%%WWWDIR%%/.htaccess
 %%WWWDIR%%/_htaccess
 %%WWWDIR%%/_lastchanges.txt
 %%WWWDIR%%/_lizenz.txt
@@ -338,8 +337,8 @@
 %%WWWDIR%%/%%AP_NAME%%/include/addons/install/lib/api_package_download.php
 %%WWWDIR%%/%%AP_NAME%%/include/addons/install/lib/api_package_update.php
 %%WWWDIR%%/%%AP_NAME%%/include/addons/install/lib/api_package_upload.php
+%%WWWDIR%%/%%AP_NAME%%/include/addons/install/lib/archive.php
 %%WWWDIR%%/%%AP_NAME%%/include/addons/install/lib/exception.php
-%%WWWDIR%%/%%AP_NAME%%/include/addons/install/lib/helper.php
 %%WWWDIR%%/%%AP_NAME%%/include/addons/install/lib/packages.php
 %%WWWDIR%%/%%AP_NAME%%/include/addons/install/lib/webservice.php
 %%WWWDIR%%/%%AP_NAME%%/include/addons/install/pages/index.inc.php
@@ -453,6 +452,7 @@
 %%WWWDIR%%/%%AP_NAME%%/include/addons/xform/classes/basic/class.rex_xform.inc.php
 %%WWWDIR%%/%%AP_NAME%%/include/addons/xform/classes/basic/class.rex_xform_list.inc.php
 %%WWWDIR%%/%%AP_NAME%%/include/addons/xform/classes/basic/class.xform.action.abstract.inc.php
+%%WWWDIR%%/%%AP_NAME%%/include/addons/xform/classes/basic/class.xform.base.abstract.inc.php
 %%WWWDIR%%/%%AP_NAME%%/include/addons/xform/classes/basic/class.xform.validate.abstract.inc.php
 %%WWWDIR%%/%%AP_NAME%%/include/addons/xform/classes/basic/class.xform.value.abstract.inc.php
 %%WWWDIR%%/%%AP_NAME%%/include/addons/xform/classes/validate/class.xform.validate_compare.inc.php
@@ -486,7 +486,6 @@
 %%WWWDIR%%/%%AP_NAME%%/include/addons/xform/classes/value/class.xform.html.inc.php
 %%WWWDIR%%/%%AP_NAME%%/include/addons/xform/classes/value/class.xform.index.inc.php
 %%WWWDIR%%/%%AP_NAME%%/include/addons/xform/classes/value/class.xform.ip.inc.php
-%%WWWDIR%%/%%AP_NAME%%/include/addons/xform/classes/value/class.xform.jquery.inc.php
 %%WWWDIR%%/%%AP_NAME%%/include/addons/xform/classes/value/class.xform.lang_textarea.inc.php
 %%WWWDIR%%/%%AP_NAME%%/include/addons/xform/classes/value/class.xform.mediafile.inc.php
 %%WWWDIR%%/%%AP_NAME%%/include/addons/xform/classes/value/class.xform.objparams.inc.php
@@ -532,6 +531,7 @@
 %%WWWDIR%%/%%AP_NAME%%/include/addons/xform/plugins/email/lang/en_gb.lang
 %%WWWDIR%%/%%AP_NAME%%/include/addons/xform/plugins/email/pages/index.inc.php
 %%WWWDIR%%/%%AP_NAME%%/include/addons/xform/plugins/email/uninstall.inc.php
+%%WWWDIR%%/%%AP_NAME%%/include/addons/xform/plugins/geo/classes/value/class.xform.google_geocode.inc.php
 %%WWWDIR%%/%%AP_NAME%%/include/addons/xform/plugins/geo/config.inc.php
 %%WWWDIR%%/%%AP_NAME%%/include/addons/xform/plugins/geo/files/bg.png
 %%WWWDIR%%/%%AP_NAME%%/include/addons/xform/plugins/geo/files/bg_search.png
@@ -552,8 +552,8 @@
 %%WWWDIR%%/%%AP_NAME%%/include/addons/xform/plugins/geo/module/rex_geo_quicksand.in.php
 %%WWWDIR%%/%%AP_NAME%%/include/addons/xform/plugins/geo/module/rex_geo_quicksand.out.php
 %%WWWDIR%%/%%AP_NAME%%/include/addons/xform/plugins/geo/pages/ep_geotagging.inc.php
+%%WWWDIR%%/%%AP_NAME%%/include/addons/xform/plugins/geo/templates/default/value.google_geocode.tpl.php
 %%WWWDIR%%/%%AP_NAME%%/include/addons/xform/plugins/geo/uninstall.inc.php
-%%WWWDIR%%/%%AP_NAME%%/include/addons/xform/plugins/geo/xform/value/class.xform.google_geocode.inc.php
 %%WWWDIR%%/%%AP_NAME%%/include/addons/xform/plugins/manager/classes/action/class.xform.action_manage_db.inc.php
 %%WWWDIR%%/%%AP_NAME%%/include/addons/xform/plugins/manager/classes/basic/class.rex_xform_manager.inc.php
 %%WWWDIR%%/%%AP_NAME%%/include/addons/xform/plugins/manager/classes/basic/class.rex_xform_manager_table.inc.php
@@ -572,6 +572,11 @@
 %%WWWDIR%%/%%AP_NAME%%/include/addons/xform/plugins/manager/pages/table_edit.inc.php
 %%WWWDIR%%/%%AP_NAME%%/include/addons/xform/plugins/manager/pages/table_field.inc.php
 %%WWWDIR%%/%%AP_NAME%%/include/addons/xform/plugins/manager/pages/table_import.inc.php
+%%WWWDIR%%/%%AP_NAME%%/include/addons/xform/plugins/manager/templates/default/value.be_link.tpl.php
+%%WWWDIR%%/%%AP_NAME%%/include/addons/xform/plugins/manager/templates/default/value.be_manager_relation.tpl.php
+%%WWWDIR%%/%%AP_NAME%%/include/addons/xform/plugins/manager/templates/default/value.be_medialist.tpl.php
+%%WWWDIR%%/%%AP_NAME%%/include/addons/xform/plugins/manager/templates/default/value.be_mediapool.tpl.php
+%%WWWDIR%%/%%AP_NAME%%/include/addons/xform/plugins/manager/templates/default/value.be_table.tpl.php
 %%WWWDIR%%/%%AP_NAME%%/include/addons/xform/plugins/manager/uninstall.inc.php
 %%WWWDIR%%/%%AP_NAME%%/include/addons/xform/plugins/setup/config.inc.php
 %%WWWDIR%%/%%AP_NAME%%/include/addons/xform/plugins/setup/install.inc.php
@@ -581,7 +586,27 @@
 %%WWWDIR%%/%%AP_NAME%%/include/addons/xform/plugins/setup/module/module_out.inc
 %%WWWDIR%%/%%AP_NAME%%/include/addons/xform/plugins/setup/pages/index.inc.php
 %%WWWDIR%%/%%AP_NAME%%/include/addons/xform/plugins/setup/uninstall.inc.php
+%%WWWDIR%%/%%AP_NAME%%/include/addons/xform/templates/default/errors.tpl.php
+%%WWWDIR%%/%%AP_NAME%%/include/addons/xform/templates/default/form.tpl.php
+%%WWWDIR%%/%%AP_NAME%%/include/addons/xform/templates/default/value.article.tpl.php
+%%WWWDIR%%/%%AP_NAME%%/include/addons/xform/templates/default/value.captcha.tpl.php
+%%WWWDIR%%/%%AP_NAME%%/include/addons/xform/templates/default/value.captcha_calc.tpl.php
+%%WWWDIR%%/%%AP_NAME%%/include/addons/xform/templates/default/value.checkbox.tpl.php
+%%WWWDIR%%/%%AP_NAME%%/include/addons/xform/templates/default/value.checkbox_sql.tpl.php
+%%WWWDIR%%/%%AP_NAME%%/include/addons/xform/templates/default/value.datetime.tpl.php
+%%WWWDIR%%/%%AP_NAME%%/include/addons/xform/templates/default/value.fieldset.tpl.php
+%%WWWDIR%%/%%AP_NAME%%/include/addons/xform/templates/default/value.hidden.tpl.php
+%%WWWDIR%%/%%AP_NAME%%/include/addons/xform/templates/default/value.lang_textarea.tpl.php
+%%WWWDIR%%/%%AP_NAME%%/include/addons/xform/templates/default/value.mediafile.tpl.php
+%%WWWDIR%%/%%AP_NAME%%/include/addons/xform/templates/default/value.radio.tpl.php
+%%WWWDIR%%/%%AP_NAME%%/include/addons/xform/templates/default/value.resetbutton.tpl.php
+%%WWWDIR%%/%%AP_NAME%%/include/addons/xform/templates/default/value.select.tpl.php
+%%WWWDIR%%/%%AP_NAME%%/include/addons/xform/templates/default/value.showvalue.tpl.php
+%%WWWDIR%%/%%AP_NAME%%/include/addons/xform/templates/default/value.submit.tpl.php
+%%WWWDIR%%/%%AP_NAME%%/include/addons/xform/templates/default/value.text.tpl.php
+%%WWWDIR%%/%%AP_NAME%%/include/addons/xform/templates/default/value.textarea.tpl.php
 %%WWWDIR%%/%%AP_NAME%%/include/addons/xform/uninstall.inc.php
+%%WWWDIR%%/%%AP_NAME%%/include/addons/xform/update.inc.php
 %%WWWDIR%%/%%AP_NAME%%/include/clang.inc.php
 %%WWWDIR%%/%%AP_NAME%%/include/classes/class.compat.inc.php
 %%WWWDIR%%/%%AP_NAME%%/include/classes/class.i18n.inc.php
@@ -911,11 +936,13 @@
 @dirrmtry %%WWWDIR%%/%%AP_NAME%%/include/addons/xform/plugins/email/lang
 @dirrmtry %%WWWDIR%%/%%AP_NAME%%/include/addons/xform/plugins/email/pages
 @dirrmtry %%WWWDIR%%/%%AP_NAME%%/include/addons/xform/plugins/email
+@dirrmtry %%WWWDIR%%/%%AP_NAME%%/include/addons/xform/plugins/geo/classes/value
+@dirrmtry %%WWWDIR%%/%%AP_NAME%%/include/addons/xform/plugins/geo/classes
 @dirrmtry %%WWWDIR%%/%%AP_NAME%%/include/addons/xform/plugins/geo/files
 @dirrmtry %%WWWDIR%%/%%AP_NAME%%/include/addons/xform/plugins/geo/module
 @dirrmtry %%WWWDIR%%/%%AP_NAME%%/include/addons/xform/plugins/geo/pages
-@dirrmtry %%WWWDIR%%/%%AP_NAME%%/include/addons/xform/plugins/geo/xform/value
-@dirrmtry %%WWWDIR%%/%%AP_NAME%%/include/addons/xform/plugins/geo/xform
+@dirrmtry %%WWWDIR%%/%%AP_NAME%%/include/addons/xform/plugins/geo/templates/default
+@dirrmtry %%WWWDIR%%/%%AP_NAME%%/include/addons/xform/plugins/geo/templates
 @dirrmtry %%WWWDIR%%/%%AP_NAME%%/include/addons/xform/plugins/geo
 @dirrmtry %%WWWDIR%%/%%AP_NAME%%/include/addons/xform/plugins/manager/classes/action
 @dirrmtry %%WWWDIR%%/%%AP_NAME%%/include/addons/xform/plugins/manager/classes/basic
@@ -923,12 +950,16 @@
 @dirrmtry %%WWWDIR%%/%%AP_NAME%%/include/addons/xform/plugins/manager/classes
 @dirrmtry %%WWWDIR%%/%%AP_NAME%%/include/addons/xform/plugins/manager/lang
 @dirrmtry %%WWWDIR%%/%%AP_NAME%%/include/addons/xform/plugins/manager/pages
+@dirrmtry %%WWWDIR%%/%%AP_NAME%%/include/addons/xform/plugins/manager/templates/default
+@dirrmtry %%WWWDIR%%/%%AP_NAME%%/include/addons/xform/plugins/manager/templates
 @dirrmtry %%WWWDIR%%/%%AP_NAME%%/include/addons/xform/plugins/manager
 @dirrmtry %%WWWDIR%%/%%AP_NAME%%/include/addons/xform/plugins/setup/lang
 @dirrmtry %%WWWDIR%%/%%AP_NAME%%/include/addons/xform/plugins/setup/module
 @dirrmtry %%WWWDIR%%/%%AP_NAME%%/include/addons/xform/plugins/setup/pages
 @dirrmtry %%WWWDIR%%/%%AP_NAME%%/include/addons/xform/plugins/setup
 @dirrmtry %%WWWDIR%%/%%AP_NAME%%/include/addons/xform/plugins
+@dirrmtry %%WWWDIR%%/%%AP_NAME%%/include/addons/xform/templates/default
+@dirrmtry %%WWWDIR%%/%%AP_NAME%%/include/addons/xform/templates
 @dirrmtry %%WWWDIR%%/%%AP_NAME%%/include/addons/xform
 @dirrmtry %%WWWDIR%%/%%AP_NAME%%/include/addons
 @dirrmtry %%WWWDIR%%/%%AP_NAME%%/include/classes/util/socket
@@ -949,5 +980,5 @@
 @dirrmtry %%WWWDIR%%/%%AP_NAME%%/media
 @dirrmtry %%WWWDIR%%/%%AP_NAME%%
 @dirrmtry %%WWWDIR%%
-@owner
 @group
+@owner

@@ -1,4 +1,4 @@
-# Created by: Gustau Perez i Querol <gustau.perez@gmail.com>
+# Created by: michael johnson <ahze@ahze.net>
 # $FreeBSD$
 #   $MCom: ports/trunk/devel/py3-xdg/Makefile 19571 2014-04-25 18:12:46Z kwm $
 

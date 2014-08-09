@@ -4,8 +4,8 @@
 PORTNAME=	html2latex
 PORTVERSION=	0.9c
 CATEGORIES=	print
-# I can't seem to find the original dist site
-MASTER_SITES=	ftp://ftp.interface-business.de/pub/outgoing/
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	joerg
 
 MAINTAINER=	joerg@FreeBSD.org
 COMMENT=	Convert HTML document into LaTeX

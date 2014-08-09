@@ -1,22 +1,21 @@
---- makefile.orig	2013-08-31 05:20:24.000000000 +0200
-+++ makefile	2013-09-11 13:10:02.007909736 +0200
-@@ -7,14 +7,7 @@
+--- ./makefile.orig	2014-07-25 06:59:40.000000000 -0400
++++ ./makefile	2014-08-07 08:31:47.000000000 -0400
+@@ -7,14 +7,6 @@
  # Also works with ming32-make on Windows.
  
  .SUFFIXES: .cxx .c .o .h .a
 -ifdef CLANG
+-CXX = clang++
 -CC = clang
--CCOMP = clang
--else
--CC = g++
--CCOMP = gcc
+-# Can choose aspect to sanitize: address and undefined can simply change SANITIZE but for
+-# thread also need to create Position Independent Executable -> search online documentation
+-SANITIZE = address
+-#SANITIZE = undefined
 -endif
--AR = ar
-+AR = $(CXX) $(CXXFLAGS) $(LDFLAGS) -shared
  RANLIB = touch
  
  ifdef GTK3
-@@ -36,7 +29,8 @@
+@@ -36,7 +28,8 @@
  COMPLIB=..\bin\scintilla.a
  else
  DEL = rm -f
@@ -26,18 +25,22 @@
  endif
  
  vpath %.h ../src ../include ../lexlib
-@@ -68,16 +62,17 @@
- CXXTFLAGS:=--std=c++0x $(CTFLAGS)
+@@ -64,8 +57,7 @@
+ CTFLAGS=-DNDEBUG -Os $(CXXBASEFLAGS) $(THREADFLAGS)
+ endif
+ 
+-CFLAGS:=$(CTFLAGS)
+-CXXTFLAGS:=--std=c++0x $(CTFLAGS)
++CXXTFLAGS:=$(CTFLAGS)
  
  CONFIGFLAGS:=$(shell pkg-config --cflags $(GTKVERSION))
-+CONFIGLIBS:=$(shell pkg-config --libs $(GTKVERSION))
  MARSHALLER=scintilla-marshal.o
- 
+@@ -73,11 +65,11 @@
  .cxx.o:
- 	$(CC) $(CONFIGFLAGS) $(CXXTFLAGS) $(CXXFLAGS) -c $<
+ 	$(CXX) $(CONFIGFLAGS) $(CXXTFLAGS) $(CXXFLAGS) -c $<
  .c.o:
--	$(CCOMP) $(CONFIGFLAGS) $(CFLAGS) -w -c $<
-+	$(CCOMP) $(CONFIGFLAGS) $(CFLAGS) $(CXXFLAGS) -w -c $<
+-	$(CC) $(CONFIGFLAGS) $(CFLAGS) -w -c $<
++	$(CC) $(CONFIGFLAGS) $(CTFLAGS) $(CFLAGS) -w -c $<
  
  LEXOBJS:=$(addsuffix .o,$(basename $(notdir $(wildcard ../lexers/Lex*.cxx))))
  
@@ -46,7 +49,7 @@
  
  clean:
  	$(DEL) *.o $(COMPLIB) *.plist
-@@ -93,9 +88,11 @@
+@@ -93,9 +85,11 @@
  	ScintillaBase.o ContractionState.o Editor.o ExternalLexer.o PropSetSimple.o PlatGTK.o \
  	KeyMap.o LineMarker.o PositionCache.o ScintillaGTK.o CellBuffer.o CharacterCategory.o ViewStyle.o \
  	RESearch.o RunStyles.o Selection.o Style.o Indicator.o AutoComplete.o UniConversion.o XPM.o \
@@ -54,10 +57,10 @@
 -	$(AR) rc $@ $^
 -	$(RANLIB) $@
 +	$(MARSHALLER)
-+	$(AR) -o $@ $^ -Wl,--as-needed $(CONFIGLIBS)
++	$(CXX) $(CXXFLAGS) $(LDFLAGS) -shared -o $@ $^ -Wl,--as-needed $(CONFIGLIBS)
 +
 +$(LEXRLIB): $(LEXOBJS)
-+	$(AR) -o $@ $^ -Wl,--as-needed $(CONFIGLIBS)
++	$(CXX) $(CXXFLAGS) $(LDFLAGS) -shared -o $@ $^ -Wl,--as-needed $(CONFIGLIBS)
  
  # Automatically generate header dependencies with "make deps"
  include deps.mak

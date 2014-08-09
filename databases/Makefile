@@ -192,6 +192,7 @@
     SUBDIR += memcachedb
     SUBDIR += memcacheq
     SUBDIR += metakit
+    SUBDIR += monetdb
     SUBDIR += mongodb
     SUBDIR += mrtg-mysql-load
     SUBDIR += msql

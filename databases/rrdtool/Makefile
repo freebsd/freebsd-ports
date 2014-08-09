@@ -43,7 +43,6 @@ RUBY_MODULE_DESC=	Build RUBY bindings
 USE_PYTHON=	yes
 INSTALLS_EGGINFO=yes
 PYDISTUTILS_EGGINFO=py_rrdtool-0.2.2-${PYTHON_VERSION:S/thon//}.egg-info
-.include "${PORTSDIR}/Mk/bsd.python.mk"
 PLIST_SUB+=	WITH_PYTHON=""
 CONFIGURE_ARGS+=	--enable-python
 .else
