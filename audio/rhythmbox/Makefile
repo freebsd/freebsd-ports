@@ -100,7 +100,6 @@ CONFIGURE_ARGS+=	--disable-libnotify
 
 .if exists(${LOCALBASE}/libdata/pkgconfig/gst-python-0.10.pc)
 USE_PYTHON=	yes
-.include "${PORTSDIR}/Mk/bsd.python.mk"
 USE_GSTREAMER+=	python
 CONFIGURE_ARGS+=--enable-python
 PLIST_SUB+=	PYTHON=""

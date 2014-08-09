@@ -49,7 +49,6 @@ PLIST_SUB+=		WITH_PERL="@comment "
 
 .if ${PORT_OPTIONS:MPYTHON}
 USE_PYTHON=	yes
-.include "${PORTSDIR}/Mk/bsd.python.mk"
 CONFIGURE_ARGS+=	--with-python
 PLIST_SUB+=		WITH_PYTHON="" PYTHON_VER=${PYTHON_VER}
 .else

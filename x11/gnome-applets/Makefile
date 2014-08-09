@@ -39,7 +39,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 GCONF_SCHEMAS=	charpick.schemas drivemount.schemas geyes.schemas \
 		mixer.schemas multiload.schemas stickynotes.schemas
 
-OPTIONS_DEFINE=	MINI_COMMANDER NOTIFY
+OPTIONS_DEFINE=	MINI_COMMANDER NOTIFY PYTHON
 MINI_COMMANDER_DESC=	Mini-commander applet
 
 .include <bsd.port.options.mk>
@@ -62,16 +62,19 @@ PLIST_SUB+=	COMMANDER="@comment " OLDCOMMANDER=""
 WITH_GNOME=	yes 	 
 .endif
 
-.include <bsd.port.pre.mk>
-
-.if ( exists(${pygnomedesktop_DETECT}) ) || \
-	( ( ${HAVE_GNOME:Mpygnomedesktop}!="" ) && ${ARCH}!="sparc64" )
+.if ${PORT_OPTIONS:MPYTHON}
 USE_PYTHON=	yes
-.include "${PORTSDIR}/Mk/bsd.python.mk"
 USE_GNOME+=	pygnomedesktop
 PLIST_SUB+=	PYTHON=""
 .else
+CONFIGURE_ENV+=	ac_cv_path_PYTHON=none
 PLIST_SUB+=	PYTHON="@comment "
+.endif
+
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "sparc64" && ${PORT_OPTIONS:MPYTHON}
+IGNORE=		Python bindings for gnomedesktop are unsupported on ${ARCH}"
 .endif
 
 .if ${ARCH} != "i386" && ${ARCH} != "amd64"

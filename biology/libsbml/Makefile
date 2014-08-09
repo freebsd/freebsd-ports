@@ -25,7 +25,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MPYTHON}
-.include "../../Mk/bsd.python.mk"
+USE_PYTHON=		yes
 BUILD_DEPENDS+=		${LOCALBASE}/bin/python:${PORTSDIR}/lang/python
 CONFIGURE_ARGS+=	--with-python
 PLIST_SUB+=		WITH_PYTHON="" \
@@ -35,7 +35,7 @@ PLIST_SUB+=		WITH_PYTHON="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MRUBY}
-.include "../../Mk/bsd.ruby.mk"
+USE_RUBY=		yes
 BUILD_DEPENDS+=		${LOCALBASE}/bin/ruby:${PORTSDIR}/lang/ruby19
 CONFIGURE_ARGS+=	--with-ruby
 PLIST_SUB+=		WITH_RUBY=""

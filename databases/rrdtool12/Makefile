@@ -32,7 +32,6 @@ OPTIONS_DEFAULT=	PERL
 USE_PYTHON=	yes
 INSTALLS_EGGINFO=yes
 PYDISTUTILS_EGGINFO=py_rrdtool-0.2.1-${PYTHON_VERSION:S/thon//}.egg-info
-.include "${PORTSDIR}/Mk/bsd.python.mk"
 PLIST_SUB+=	WITH_PYTHON=""
 CONFIGURE_ARGS+=	--enable-python
 .else
@@ -42,7 +41,6 @@ PLIST_SUB+=	WITH_PYTHON="@comment "
 
 .if ${PORT_OPTIONS:MRUBY}
 USE_RUBY=	yes
-.include "${PORTSDIR}/Mk/bsd.ruby.mk"
 PLIST_SUB+=	WITH_RUBY=""
 CONFIGURE_ARGS+=	--enable-ruby
 .else

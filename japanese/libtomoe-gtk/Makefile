@@ -20,7 +20,7 @@ USE_LDCONFIG=	yes
 
 #OPTIONS=	GUCHARMAP	"Compile with gucharmap"		on
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 #.if defined(WITHOUT_GUCHARMAP)
 CONFIGURE_ARGS+=--with-gucharmap=no
@@ -32,7 +32,6 @@ PLIST_SUB+=	GUCHARMAP="@comment "
 
 .if exists(${LOCALBASE}/libdata/pkgconfig/pytomoe.pc)
 USE_PYTHON=	yes
-.include "${PORTSDIR}/Mk/bsd.python.mk"
 CONFIGURE_ENV+=	PYTHON_VERSION=${PYTHON_VERSION:S;python;;} \
 		pyexecdir=${PYTHON_SITELIBDIR}
 PLIST_SUB+=	PYTHON=""
@@ -41,4 +40,4 @@ CONFIGURE_ARGS+=--with-python=no
 PLIST_SUB+=	PYTHON="@comment "
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
