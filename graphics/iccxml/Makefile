@@ -10,6 +10,8 @@ DISTNAME=	IccXML-${PORTVERSION}
 MAINTAINER=	bsam@FreeBSD.org
 COMMENT=	Tools for reading and writing the ICC profile contents as XML files
 
+BROKEN=		Fails to build with sampleicc 1.6.8
+
 LIB_DEPENDS=	libSampleICC.so:${PORTSDIR}/graphics/sampleicc
 
 USES=		gmake pathfix pkgconfig libtool
