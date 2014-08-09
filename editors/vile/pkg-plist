@@ -1,5 +1,7 @@
 bin/vile
+bin/vile-libdir-path
 bin/vile-pager
+bin/vile-to-html
 %%PERL%%bin/vileget
 lib/vile/atr2ansi
 lib/vile/atr2html
