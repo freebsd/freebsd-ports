@@ -1,0 +1,5 @@
+This CDDA reader distribution reads audio from the
+CDROM directly as data, with no analog step between, and writes the
+data to a file or pipe as .wav, .aifc or as raw 16 bit linear PCM.
+
+WWW: http://www.gnu.org/software/libcdio/
