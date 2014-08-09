@@ -1,5 +1,5 @@
---- Makefile.orig	2012-11-17 16:21:50.000000000 +0400
-+++ Makefile	2014-05-16 14:41:24.000000000 +0400
+--- Makefile.orig	2012-11-17 07:21:50.000000000 -0500
++++ Makefile	2014-08-09 14:30:08.000000000 -0400
 @@ -5,7 +5,7 @@
  includedir = $(prefix)/include
  
@@ -9,12 +9,15 @@
  RANLIB = ranlib
  YACC = bison -d -t -v
  LEX = flex -8
-@@ -15,7 +15,7 @@
+@@ -13,9 +13,9 @@
+ LEXIFACE = flex -8 --prefix=interface
+ LEXCMATRIX = flex -8 --prefix=cmatrix
  RM = /bin/rm -f
- LDFLAGS = -lreadline -lz -ltermcap
+-LDFLAGS = -lreadline -lz -ltermcap
++LDFLAGS += -lreadline -lz -ltermcap
  FLOOKUPLDFLAGS = libfoma.a -lz
 -CFLAGS = -O3 -Wall -D_GNU_SOURCE -std=c99 -fvisibility=hidden -fPIC
-+CFLAGS += -Wall -D_GNU_SOURCE -std=c99 -fvisibility=hidden -fPIC
++CFLAGS += -Wall -D_GNU_SOURCE -std=c99 -fvisibility=hidden -fPIC ${CPPFLAGS}
  FOMAOBJS = foma.o stack.o iface.o lex.interface.o
  LIBOBJS = int_stack.o define.o determinize.o apply.o rewrite.o lexcread.o topsort.o flags.o minimize.o reverse.o extract.o sigma.o io.o structures.o constructions.o coaccessible.o utf8.o spelling.o dynarray.o mem.o stringhash.o trie.o lex.lexc.o lex.yy.o lex.cmatrix.o regex.tab.o
  
