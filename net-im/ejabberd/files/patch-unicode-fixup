@@ -1,0 +1,55 @@
+
+$FreeBSD$
+
+Erlang treats the files by default as utf-8, whereas these files have ISO-8859-1
+characters in them.
+
+--- ../deps/lhttpc/src/lhttpc.app.src.orig	2014-05-19 07:38:56.000000000 +0530
++++ ../deps/lhttpc/src/lhttpc.app.src	2014-08-07 13:17:49.172704645 +0530
+@@ -1,3 +1,4 @@
++%% coding: latin-1
+ %%% ----------------------------------------------------------------------------
+ %%% Copyright (c) 2009, Erlang Training and Consulting Ltd.
+ %%% All rights reserved.
+--- ../deps/lhttpc/src/lhttpc.erl.orig	2014-05-19 07:38:56.000000000 +0530
++++ ../deps/lhttpc/src/lhttpc.erl	2014-08-07 13:17:49.169705958 +0530
+@@ -1,3 +1,4 @@
++%% coding: latin-1
+ %%% ----------------------------------------------------------------------------
+ %%% Copyright (c) 2009, Erlang Training and Consulting Ltd.
+ %%% All rights reserved.
+--- ../deps/lhttpc/src/lhttpc_client.erl.orig	2014-05-19 07:38:56.000000000 +0530
++++ ../deps/lhttpc/src/lhttpc_client.erl	2014-08-07 13:17:49.171704902 +0530
+@@ -1,3 +1,4 @@
++%% coding: latin-1
+ %%% ----------------------------------------------------------------------------
+ %%% Copyright (c) 2009, Erlang Training and Consulting Ltd.
+ %%% All rights reserved.
+--- ../deps/lhttpc/src/lhttpc_lib.erl.orig	2014-05-19 07:38:56.000000000 +0530
++++ ../deps/lhttpc/src/lhttpc_lib.erl	2014-08-07 13:17:49.173704875 +0530
+@@ -1,3 +1,4 @@
++%% coding: latin-1
+ %%% ----------------------------------------------------------------------------
+ %%% Copyright (c) 2009, Erlang Training and Consulting Ltd.
+ %%% All rights reserved.
+--- ../deps/lhttpc/src/lhttpc_manager.erl.orig	2014-05-19 07:38:56.000000000 +0530
++++ ../deps/lhttpc/src/lhttpc_manager.erl	2014-08-07 13:17:49.171704902 +0530
+@@ -1,3 +1,4 @@
++%% coding: latin-1
+ %%% ----------------------------------------------------------------------------
+ %%% Copyright (c) 2009, Erlang Training and Consulting Ltd.
+ %%% All rights reserved.
+--- ../deps/lhttpc/src/lhttpc_sock.erl.orig	2014-05-19 07:38:56.000000000 +0530
++++ ../deps/lhttpc/src/lhttpc_sock.erl	2014-08-07 13:17:49.173704875 +0530
+@@ -1,3 +1,4 @@
++%% coding: latin-1
+ %%% ----------------------------------------------------------------------------
+ %%% Copyright (c) 2009, Erlang Training and Consulting Ltd.
+ %%% All rights reserved.
+--- ../deps/lhttpc/src/lhttpc_sup.erl.orig	2014-05-19 07:38:56.000000000 +0530
++++ ../deps/lhttpc/src/lhttpc_sup.erl	2014-08-07 13:17:49.170704704 +0530
+@@ -1,3 +1,4 @@
++%% coding: latin-1
+ %%% ----------------------------------------------------------------------------
+ %%% Copyright (c) 2009, Erlang Training and Consulting Ltd.
+ %%% All rights reserved.
