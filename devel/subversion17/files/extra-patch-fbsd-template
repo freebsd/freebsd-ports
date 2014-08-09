@@ -91,7 +91,7 @@
 +  svn_stringbuf_appendcstr(default_msg, "Approved by:\t" APR_EOL_STR);
 +  svn_stringbuf_appendcstr(default_msg, "Obtained from:\t" APR_EOL_STR);
 +  svn_stringbuf_appendcstr(default_msg, "MFC after:\t" APR_EOL_STR);
-+  svn_stringbuf_appendcstr(default_msg, "MFH:\t" APR_EOL_STR);
++  svn_stringbuf_appendcstr(default_msg, "MFH:\t\t" APR_EOL_STR);
 +  svn_stringbuf_appendcstr(default_msg, "Relnotes:\t" APR_EOL_STR);
 +  svn_stringbuf_appendcstr(default_msg, "Security:\t" APR_EOL_STR);
 +  svn_stringbuf_appendcstr(default_msg, "Sponsored by:\t"
