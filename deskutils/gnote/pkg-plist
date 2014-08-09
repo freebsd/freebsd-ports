@@ -31,6 +31,7 @@ lib/gnote/addins/%%VERSION%%/underline.la
 lib/gnote/addins/%%VERSION%%/underline.so
 %%APPLET%%libdata/bonobo/servers/GNOME_GnoteApplet.server
 %%APPLET%%libexec/gnote-applet
+man/man1/gnote.1.gz
 share/applications/gnote.desktop
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
