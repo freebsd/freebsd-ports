@@ -90,6 +90,7 @@ cbsd:*:150:
 rbldns:*:153:
 trircd:*:154:
 xorp:*:155:
+monetdb:*:156:
 sfs:*:171:
 agk:*:172:
 polipo:*:173:
