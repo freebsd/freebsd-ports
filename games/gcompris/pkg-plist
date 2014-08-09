@@ -44,6 +44,7 @@ lib/gcompris/libtarget.so
 lib/gcompris/libtraffic.so
 lib/gcompris/libwordprocessor.so
 lib/gcompris/libwordsgame.so
+share/appdata/gcompris.appdata.xml
 share/applications/gcompris-edit.desktop
 share/applications/gcompris.desktop
 %%DATADIR%%/boards/README
@@ -536,6 +537,8 @@ share/applications/gcompris.desktop
 %%DATADIR%%/boards/click_on_letter/carriage.svgz
 %%DATADIR%%/boards/click_on_letter/cloud.svgz
 %%DATADIR%%/boards/click_on_letter/default-en.desktop
+%%DATADIR%%/boards/click_on_letter/default-fr.desktop
+%%DATADIR%%/boards/click_on_letter/default-gd.desktop
 %%DATADIR%%/boards/click_on_letter/repeat.svg
 %%DATADIR%%/boards/click_on_letter_up.svg
 %%DATADIR%%/boards/click_on_letter_up.xml
@@ -2074,6 +2077,8 @@ share/applications/gcompris.desktop
 %%DATADIR%%/boards/hangman.svg
 %%DATADIR%%/boards/hangman.xml
 %%DATADIR%%/boards/hangman/back.svgz
+%%DATADIR%%/boards/hangman/default-fr.xml
+%%DATADIR%%/boards/hangman/default-gd.xml
 %%DATADIR%%/boards/hanoi.svg
 %%DATADIR%%/boards/hanoi.xml
 %%DATADIR%%/boards/hanoi_real.svg
@@ -2086,6 +2091,7 @@ share/applications/gcompris.desktop
 %%DATADIR%%/boards/helicogame.svg
 %%DATADIR%%/boards/hexagon.svg
 %%DATADIR%%/boards/hexagon.xml
+%%DATADIR%%/boards/hexagon/background.svgz
 %%DATADIR%%/boards/hexagon/strawberry.svg
 %%DATADIR%%/boards/hydroelectric.svg
 %%DATADIR%%/boards/hydroelectric.xml
@@ -4433,8 +4439,20 @@ share/applications/gcompris.desktop
 %%DATADIR%%/boards/shapegame.svg
 %%DATADIR%%/boards/shapegame/error.svg
 %%DATADIR%%/boards/shapegame/hand.svg
-%%DATADIR%%/boards/skins/README
 %%DATADIR%%/boards/skins/babytoy/README
+%%DATADIR%%/boards/skins/babytoy/bonus/README
+%%DATADIR%%/boards/skins/babytoy/bonus/flower_bad.png
+%%DATADIR%%/boards/skins/babytoy/bonus/flower_good.png
+%%DATADIR%%/boards/skins/babytoy/bonus/gnu_bad.png
+%%DATADIR%%/boards/skins/babytoy/bonus/gnu_good.png
+%%DATADIR%%/boards/skins/babytoy/bonus/lion_bad.png
+%%DATADIR%%/boards/skins/babytoy/bonus/lion_good.png
+%%DATADIR%%/boards/skins/babytoy/bonus/note_bad.png
+%%DATADIR%%/boards/skins/babytoy/bonus/note_good.png
+%%DATADIR%%/boards/skins/babytoy/bonus/smiley_bad.png
+%%DATADIR%%/boards/skins/babytoy/bonus/smiley_good.png
+%%DATADIR%%/boards/skins/babytoy/bonus/tux_bad.png
+%%DATADIR%%/boards/skins/babytoy/bonus/tux_good.png
 %%DATADIR%%/boards/skins/babytoy/cursors/default.png
 %%DATADIR%%/boards/skins/babytoy/skin.svg
 %%DATADIR%%/boards/skins/babytoy/skin.xml
@@ -4460,55 +4478,8 @@ share/applications/gcompris.desktop
 %%DATADIR%%/boards/skins/babytoy/timers/sablier7.png
 %%DATADIR%%/boards/skins/babytoy/timers/sablier8.png
 %%DATADIR%%/boards/skins/babytoy/timers/sablier9.png
-%%DATADIR%%/boards/skins/gartoon/README
-%%DATADIR%%/boards/skins/gartoon/bonus/README
-%%DATADIR%%/boards/skins/gartoon/bonus/flower_bad.png
-%%DATADIR%%/boards/skins/gartoon/bonus/flower_good.png
-%%DATADIR%%/boards/skins/gartoon/bonus/gnu_bad.png
-%%DATADIR%%/boards/skins/gartoon/bonus/gnu_good.png
-%%DATADIR%%/boards/skins/gartoon/bonus/lion_bad.png
-%%DATADIR%%/boards/skins/gartoon/bonus/lion_good.png
-%%DATADIR%%/boards/skins/gartoon/bonus/note_bad.png
-%%DATADIR%%/boards/skins/gartoon/bonus/note_good.png
-%%DATADIR%%/boards/skins/gartoon/bonus/smiley_bad.png
-%%DATADIR%%/boards/skins/gartoon/bonus/smiley_good.png
-%%DATADIR%%/boards/skins/gartoon/bonus/tux_bad.png
-%%DATADIR%%/boards/skins/gartoon/bonus/tux_good.png
-%%DATADIR%%/boards/skins/gartoon/cursors/circle.png
-%%DATADIR%%/boards/skins/gartoon/cursors/default.png
-%%DATADIR%%/boards/skins/gartoon/cursors/del.png
-%%DATADIR%%/boards/skins/gartoon/cursors/fill.png
-%%DATADIR%%/boards/skins/gartoon/cursors/fillcircle.png
-%%DATADIR%%/boards/skins/gartoon/cursors/fillrect.png
-%%DATADIR%%/boards/skins/gartoon/cursors/line.png
-%%DATADIR%%/boards/skins/gartoon/cursors/rect.png
-%%DATADIR%%/boards/skins/gartoon/cursors/select.png
-%%DATADIR%%/boards/skins/gartoon/skin.svg
-%%DATADIR%%/boards/skins/gartoon/skin.xml
-%%DATADIR%%/boards/skins/gartoon/timers/README
-%%DATADIR%%/boards/skins/gartoon/timers/clock1.png
-%%DATADIR%%/boards/skins/gartoon/timers/clock10.png
-%%DATADIR%%/boards/skins/gartoon/timers/clock2.png
-%%DATADIR%%/boards/skins/gartoon/timers/clock3.png
-%%DATADIR%%/boards/skins/gartoon/timers/clock4.png
-%%DATADIR%%/boards/skins/gartoon/timers/clock5.png
-%%DATADIR%%/boards/skins/gartoon/timers/clock6.png
-%%DATADIR%%/boards/skins/gartoon/timers/clock7.png
-%%DATADIR%%/boards/skins/gartoon/timers/clock8.png
-%%DATADIR%%/boards/skins/gartoon/timers/clock9.png
-%%DATADIR%%/boards/skins/gartoon/timers/sablier.gif
-%%DATADIR%%/boards/skins/gartoon/timers/sablier1.png
-%%DATADIR%%/boards/skins/gartoon/timers/sablier10.png
-%%DATADIR%%/boards/skins/gartoon/timers/sablier2.png
-%%DATADIR%%/boards/skins/gartoon/timers/sablier3.png
-%%DATADIR%%/boards/skins/gartoon/timers/sablier4.png
-%%DATADIR%%/boards/skins/gartoon/timers/sablier5.png
-%%DATADIR%%/boards/skins/gartoon/timers/sablier6.png
-%%DATADIR%%/boards/skins/gartoon/timers/sablier7.png
-%%DATADIR%%/boards/skins/gartoon/timers/sablier8.png
-%%DATADIR%%/boards/skins/gartoon/timers/sablier9.png
-%%DATADIR%%/boards/skins/gartoon/timers/sea.png
-%%DATADIR%%/boards/skins/gartoon/timers/tuxballoon.png
+%%DATADIR%%/boards/skins/babytoy/timers/sea.png
+%%DATADIR%%/boards/skins/babytoy/timers/tuxballoon.png
 %%DATADIR%%/boards/smallnumbers.svg
 %%DATADIR%%/boards/smallnumbers.xml
 %%DATADIR%%/boards/smallnumbers/dice0.svgz
@@ -4724,7 +4695,6 @@ share/applications/gcompris.desktop
 %%DATADIR%%/boards/voices/af/geography/romania.ogg
 %%DATADIR%%/boards/voices/af/geography/russia.ogg
 %%DATADIR%%/boards/voices/af/geography/salvador.ogg
-%%DATADIR%%/boards/voices/af/geography/serbia_montenegro.ogg
 %%DATADIR%%/boards/voices/af/geography/slovakia.ogg
 %%DATADIR%%/boards/voices/af/geography/slovenia.ogg
 %%DATADIR%%/boards/voices/af/geography/spain.ogg
@@ -4881,7 +4851,6 @@ share/applications/gcompris.desktop
 %%DATADIR%%/boards/voices/ar/geography/romania.ogg
 %%DATADIR%%/boards/voices/ar/geography/russia.ogg
 %%DATADIR%%/boards/voices/ar/geography/salvador.ogg
-%%DATADIR%%/boards/voices/ar/geography/serbia_montenegro.ogg
 %%DATADIR%%/boards/voices/ar/geography/slovakia.ogg
 %%DATADIR%%/boards/voices/ar/geography/slovenia.ogg
 %%DATADIR%%/boards/voices/ar/geography/spain.ogg
@@ -5031,7 +5000,6 @@ share/applications/gcompris.desktop
 %%DATADIR%%/boards/voices/ast/geography/romania.ogg
 %%DATADIR%%/boards/voices/ast/geography/russia.ogg
 %%DATADIR%%/boards/voices/ast/geography/salvador.ogg
-%%DATADIR%%/boards/voices/ast/geography/serbia_montenegro.ogg
 %%DATADIR%%/boards/voices/ast/geography/slovakia.ogg
 %%DATADIR%%/boards/voices/ast/geography/slovenia.ogg
 %%DATADIR%%/boards/voices/ast/geography/spain.ogg
@@ -5174,7 +5142,6 @@ share/applications/gcompris.desktop
 %%DATADIR%%/boards/voices/bg/geography/romania.ogg
 %%DATADIR%%/boards/voices/bg/geography/russia.ogg
 %%DATADIR%%/boards/voices/bg/geography/salvador.ogg
-%%DATADIR%%/boards/voices/bg/geography/serbia_montenegro.ogg
 %%DATADIR%%/boards/voices/bg/geography/slovakia.ogg
 %%DATADIR%%/boards/voices/bg/geography/slovenia.ogg
 %%DATADIR%%/boards/voices/bg/geography/spain.ogg
@@ -5349,7 +5316,6 @@ share/applications/gcompris.desktop
 %%DATADIR%%/boards/voices/br/geography/romania.ogg
 %%DATADIR%%/boards/voices/br/geography/russia.ogg
 %%DATADIR%%/boards/voices/br/geography/salvador.ogg
-%%DATADIR%%/boards/voices/br/geography/serbia_montenegro.ogg
 %%DATADIR%%/boards/voices/br/geography/slovakia.ogg
 %%DATADIR%%/boards/voices/br/geography/slovenia.ogg
 %%DATADIR%%/boards/voices/br/geography/spain.ogg
@@ -5513,7 +5479,6 @@ share/applications/gcompris.desktop
 %%DATADIR%%/boards/voices/cs/geography/romania.ogg
 %%DATADIR%%/boards/voices/cs/geography/russia.ogg
 %%DATADIR%%/boards/voices/cs/geography/salvador.ogg
-%%DATADIR%%/boards/voices/cs/geography/serbia_montenegro.ogg
 %%DATADIR%%/boards/voices/cs/geography/slovakia.ogg
 %%DATADIR%%/boards/voices/cs/geography/slovenia.ogg
 %%DATADIR%%/boards/voices/cs/geography/spain.ogg
@@ -5664,7 +5629,6 @@ share/applications/gcompris.desktop
 %%DATADIR%%/boards/voices/da/geography/romania.ogg
 %%DATADIR%%/boards/voices/da/geography/russia.ogg
 %%DATADIR%%/boards/voices/da/geography/salvador.ogg
-%%DATADIR%%/boards/voices/da/geography/serbia_montenegro.ogg
 %%DATADIR%%/boards/voices/da/geography/slovakia.ogg
 %%DATADIR%%/boards/voices/da/geography/slovenia.ogg
 %%DATADIR%%/boards/voices/da/geography/spain.ogg
@@ -5944,7 +5908,6 @@ share/applications/gcompris.desktop
 %%DATADIR%%/boards/voices/el/geography/rwanda.ogg
 %%DATADIR%%/boards/voices/el/geography/salvador.ogg
 %%DATADIR%%/boards/voices/el/geography/senegal.ogg
-%%DATADIR%%/boards/voices/el/geography/serbia_montenegro.ogg
 %%DATADIR%%/boards/voices/el/geography/sierra_leone.ogg
 %%DATADIR%%/boards/voices/el/geography/slovakia.ogg
 %%DATADIR%%/boards/voices/el/geography/slovenia.ogg
@@ -6066,11 +6029,13 @@ share/applications/gcompris.desktop
 %%DATADIR%%/boards/voices/en/geography/bahamas.ogg
 %%DATADIR%%/boards/voices/en/geography/belarus.ogg
 %%DATADIR%%/boards/voices/en/geography/belgium.ogg
+%%DATADIR%%/boards/voices/en/geography/belize.ogg
 %%DATADIR%%/boards/voices/en/geography/benin.ogg
 %%DATADIR%%/boards/voices/en/geography/bolivia.ogg
 %%DATADIR%%/boards/voices/en/geography/bosnia_herzegovina.ogg
 %%DATADIR%%/boards/voices/en/geography/botswana.ogg
 %%DATADIR%%/boards/voices/en/geography/brazil.ogg
+%%DATADIR%%/boards/voices/en/geography/brunei.ogg
 %%DATADIR%%/boards/voices/en/geography/bulgaria.ogg
 %%DATADIR%%/boards/voices/en/geography/burkina_faso.ogg
 %%DATADIR%%/boards/voices/en/geography/burundi.ogg
@@ -6130,6 +6095,7 @@ share/applications/gcompris.desktop
 %%DATADIR%%/boards/voices/en/geography/mali.ogg
 %%DATADIR%%/boards/voices/en/geography/mauritania.ogg
 %%DATADIR%%/boards/voices/en/geography/mexico.ogg
+%%DATADIR%%/boards/voices/en/geography/moldavia.ogg
 %%DATADIR%%/boards/voices/en/geography/moldova.ogg
 %%DATADIR%%/boards/voices/en/geography/montenegro.ogg
 %%DATADIR%%/boards/voices/en/geography/moroco.ogg
@@ -6147,6 +6113,7 @@ share/applications/gcompris.desktop
 %%DATADIR%%/boards/voices/en/geography/peru.ogg
 %%DATADIR%%/boards/voices/en/geography/poland.ogg
 %%DATADIR%%/boards/voices/en/geography/portugal.ogg
+%%DATADIR%%/boards/voices/en/geography/puerto_rico.ogg
 %%DATADIR%%/boards/voices/en/geography/republic_of_congo.ogg
 %%DATADIR%%/boards/voices/en/geography/romania.ogg
 %%DATADIR%%/boards/voices/en/geography/russia.ogg
@@ -6154,7 +6121,6 @@ share/applications/gcompris.desktop
 %%DATADIR%%/boards/voices/en/geography/salvador.ogg
 %%DATADIR%%/boards/voices/en/geography/senegal.ogg
 %%DATADIR%%/boards/voices/en/geography/serbia.ogg
-%%DATADIR%%/boards/voices/en/geography/serbia_montenegro.ogg
 %%DATADIR%%/boards/voices/en/geography/sierra_leone.ogg
 %%DATADIR%%/boards/voices/en/geography/slovakia.ogg
 %%DATADIR%%/boards/voices/en/geography/slovenia.ogg
@@ -6223,6 +6189,7 @@ share/applications/gcompris.desktop
 %%DATADIR%%/boards/voices/en/intro/erase_2clic.ogg
 %%DATADIR%%/boards/voices/en/intro/erase_clic.ogg
 %%DATADIR%%/boards/voices/en/intro/explore_farm_animals.ogg
+%%DATADIR%%/boards/voices/en/intro/explore_world_animals.ogg
 %%DATADIR%%/boards/voices/en/intro/explore_world_music.ogg
 %%DATADIR%%/boards/voices/en/intro/fifteen.ogg
 %%DATADIR%%/boards/voices/en/intro/followline.ogg
@@ -6246,6 +6213,10 @@ share/applications/gcompris.desktop
 %%DATADIR%%/boards/voices/en/intro/instruments.ogg
 %%DATADIR%%/boards/voices/en/intro/intro_gravity.ogg
 %%DATADIR%%/boards/voices/en/intro/land_safe.ogg
+%%DATADIR%%/boards/voices/en/intro/lang-nature.ogg
+%%DATADIR%%/boards/voices/en/intro/lang-object.ogg
+%%DATADIR%%/boards/voices/en/intro/lang-other.ogg
+%%DATADIR%%/boards/voices/en/intro/lang-people.ogg
 %%DATADIR%%/boards/voices/en/intro/leftright.ogg
 %%DATADIR%%/boards/voices/en/intro/lightsoff.ogg
 %%DATADIR%%/boards/voices/en/intro/louis_braille.ogg
@@ -6276,6 +6247,7 @@ share/applications/gcompris.desktop
 %%DATADIR%%/boards/voices/en/intro/memory_sound_tux.ogg
 %%DATADIR%%/boards/voices/en/intro/memory_tux.ogg
 %%DATADIR%%/boards/voices/en/intro/memory_wordnumber.ogg
+%%DATADIR%%/boards/voices/en/intro/mining.ogg
 %%DATADIR%%/boards/voices/en/intro/missing_letter.ogg
 %%DATADIR%%/boards/voices/en/intro/money.ogg
 %%DATADIR%%/boards/voices/en/intro/money_back.ogg
@@ -6316,11 +6288,13 @@ share/applications/gcompris.desktop
 %%DATADIR%%/boards/voices/en/intro/wordprocessor.ogg
 %%DATADIR%%/boards/voices/en/intro/wordsgame.ogg
 %%DATADIR%%/boards/voices/en/misc/README
+%%DATADIR%%/boards/voices/en/misc/about.ogg
 %%DATADIR%%/boards/voices/en/misc/awesome.ogg
 %%DATADIR%%/boards/voices/en/misc/back.ogg
 %%DATADIR%%/boards/voices/en/misc/by.ogg
 %%DATADIR%%/boards/voices/en/misc/check_answer.ogg
 %%DATADIR%%/boards/voices/en/misc/click_on_letter.ogg
+%%DATADIR%%/boards/voices/en/misc/configuration.ogg
 %%DATADIR%%/boards/voices/en/misc/congratulation.ogg
 %%DATADIR%%/boards/voices/en/misc/equal.ogg
 %%DATADIR%%/boards/voices/en/misc/fantastic.ogg
@@ -7017,7 +6991,6 @@ share/applications/gcompris.desktop
 %%DATADIR%%/boards/voices/eo/geography/romania.ogg
 %%DATADIR%%/boards/voices/eo/geography/russia.ogg
 %%DATADIR%%/boards/voices/eo/geography/salvador.ogg
-%%DATADIR%%/boards/voices/eo/geography/serbia_montenegro.ogg
 %%DATADIR%%/boards/voices/eo/geography/slovakia.ogg
 %%DATADIR%%/boards/voices/eo/geography/slovenia.ogg
 %%DATADIR%%/boards/voices/eo/geography/spain.ogg
@@ -7158,7 +7131,6 @@ share/applications/gcompris.desktop
 %%DATADIR%%/boards/voices/es/geography/romania.ogg
 %%DATADIR%%/boards/voices/es/geography/russia.ogg
 %%DATADIR%%/boards/voices/es/geography/salvador.ogg
-%%DATADIR%%/boards/voices/es/geography/serbia_montenegro.ogg
 %%DATADIR%%/boards/voices/es/geography/slovakia.ogg
 %%DATADIR%%/boards/voices/es/geography/slovenia.ogg
 %%DATADIR%%/boards/voices/es/geography/spain.ogg
@@ -8002,7 +7974,6 @@ share/applications/gcompris.desktop
 %%DATADIR%%/boards/voices/eu/geography/romania.ogg
 %%DATADIR%%/boards/voices/eu/geography/russia.ogg
 %%DATADIR%%/boards/voices/eu/geography/salvador.ogg
-%%DATADIR%%/boards/voices/eu/geography/serbia_montenegro.ogg
 %%DATADIR%%/boards/voices/eu/geography/slovakia.ogg
 %%DATADIR%%/boards/voices/eu/geography/slovenia.ogg
 %%DATADIR%%/boards/voices/eu/geography/spain.ogg
@@ -8155,7 +8126,6 @@ share/applications/gcompris.desktop
 %%DATADIR%%/boards/voices/fi/geography/romania.ogg
 %%DATADIR%%/boards/voices/fi/geography/russia.ogg
 %%DATADIR%%/boards/voices/fi/geography/salvador.ogg
-%%DATADIR%%/boards/voices/fi/geography/serbia_montenegro.ogg
 %%DATADIR%%/boards/voices/fi/geography/slovakia.ogg
 %%DATADIR%%/boards/voices/fi/geography/slovenia.ogg
 %%DATADIR%%/boards/voices/fi/geography/spain.ogg
@@ -8336,7 +8306,6 @@ share/applications/gcompris.desktop
 %%DATADIR%%/boards/voices/fr/geography/romania.ogg
 %%DATADIR%%/boards/voices/fr/geography/russia.ogg
 %%DATADIR%%/boards/voices/fr/geography/salvador.ogg
-%%DATADIR%%/boards/voices/fr/geography/serbia_montenegro.ogg
 %%DATADIR%%/boards/voices/fr/geography/slovakia.ogg
 %%DATADIR%%/boards/voices/fr/geography/slovenia.ogg
 %%DATADIR%%/boards/voices/fr/geography/spain.ogg
@@ -10044,6 +10013,7 @@ share/applications/gcompris.desktop
 %%DATADIR%%/boards/voices/gd/misc/click_on_letter.ogg
 %%DATADIR%%/boards/voices/gd/misc/configuration.ogg
 %%DATADIR%%/boards/voices/gd/misc/congratulation.ogg
+%%DATADIR%%/boards/voices/gd/misc/eat.wav
 %%DATADIR%%/boards/voices/gd/misc/equal.ogg
 %%DATADIR%%/boards/voices/gd/misc/fantastic.ogg
 %%DATADIR%%/boards/voices/gd/misc/good.ogg
@@ -10635,6 +10605,7 @@ share/applications/gcompris.desktop
 %%DATADIR%%/boards/voices/gd/words/yarn.ogg
 %%DATADIR%%/boards/voices/gd/words/yummy.ogg
 %%DATADIR%%/boards/voices/gd/words/zoo.ogg
+%%DATADIR%%/boards/voices/generate_voices_rcc.sh
 %%DATADIR%%/boards/voices/he/alphabet/10.ogg
 %%DATADIR%%/boards/voices/he/alphabet/100.ogg
 %%DATADIR%%/boards/voices/he/alphabet/11.ogg
@@ -10765,7 +10736,6 @@ share/applications/gcompris.desktop
 %%DATADIR%%/boards/voices/he/geography/romania.ogg
 %%DATADIR%%/boards/voices/he/geography/russia.ogg
 %%DATADIR%%/boards/voices/he/geography/salvador.ogg
-%%DATADIR%%/boards/voices/he/geography/serbia_montenegro.ogg
 %%DATADIR%%/boards/voices/he/geography/slovakia.ogg
 %%DATADIR%%/boards/voices/he/geography/slovenia.ogg
 %%DATADIR%%/boards/voices/he/geography/spain.ogg
@@ -10957,7 +10927,6 @@ share/applications/gcompris.desktop
 %%DATADIR%%/boards/voices/hi/geography/rwanda.ogg
 %%DATADIR%%/boards/voices/hi/geography/salvador.ogg
 %%DATADIR%%/boards/voices/hi/geography/senegal.ogg
-%%DATADIR%%/boards/voices/hi/geography/serbia_montenegro.ogg
 %%DATADIR%%/boards/voices/hi/geography/sierra_leone.ogg
 %%DATADIR%%/boards/voices/hi/geography/slovakia.ogg
 %%DATADIR%%/boards/voices/hi/geography/slovenia.ogg
@@ -11136,7 +11105,6 @@ share/applications/gcompris.desktop
 %%DATADIR%%/boards/voices/hu/geography/rwanda.ogg
 %%DATADIR%%/boards/voices/hu/geography/salvador.ogg
 %%DATADIR%%/boards/voices/hu/geography/senegal.ogg
-%%DATADIR%%/boards/voices/hu/geography/serbia_montenegro.ogg
 %%DATADIR%%/boards/voices/hu/geography/sierra_leone.ogg
 %%DATADIR%%/boards/voices/hu/geography/slovakia.ogg
 %%DATADIR%%/boards/voices/hu/geography/slovenia.ogg
@@ -11253,7 +11221,6 @@ share/applications/gcompris.desktop
 %%DATADIR%%/boards/voices/hu/intro/redraw.ogg
 %%DATADIR%%/boards/voices/hu/intro/redraw_symmetrical.ogg
 %%DATADIR%%/boards/voices/hu/intro/reversecount.ogg
-%%DATADIR%%/boards/voices/hu/intro/scalesboard weight.ogg
 %%DATADIR%%/boards/voices/hu/intro/scalesboard.ogg
 %%DATADIR%%/boards/voices/hu/intro/searace.ogg
 %%DATADIR%%/boards/voices/hu/intro/searace1player.ogg
@@ -11476,7 +11443,6 @@ share/applications/gcompris.desktop
 %%DATADIR%%/boards/voices/it/geography/romania.ogg
 %%DATADIR%%/boards/voices/it/geography/russia.ogg
 %%DATADIR%%/boards/voices/it/geography/salvador.ogg
-%%DATADIR%%/boards/voices/it/geography/serbia_montenegro.ogg
 %%DATADIR%%/boards/voices/it/geography/slovakia.ogg
 %%DATADIR%%/boards/voices/it/geography/slovenia.ogg
 %%DATADIR%%/boards/voices/it/geography/spain.ogg
@@ -11559,6 +11525,235 @@ share/applications/gcompris.desktop
 %%DATADIR%%/boards/voices/lt/alphabet/U016B.ogg
 %%DATADIR%%/boards/voices/lt/alphabet/U0173.ogg
 %%DATADIR%%/boards/voices/lt/alphabet/U017E.ogg
+%%DATADIR%%/boards/voices/lt/colors/black.ogg
+%%DATADIR%%/boards/voices/lt/colors/blue.ogg
+%%DATADIR%%/boards/voices/lt/colors/brown.ogg
+%%DATADIR%%/boards/voices/lt/colors/green.ogg
+%%DATADIR%%/boards/voices/lt/colors/grey.ogg
+%%DATADIR%%/boards/voices/lt/colors/orange.ogg
+%%DATADIR%%/boards/voices/lt/colors/pink.ogg
+%%DATADIR%%/boards/voices/lt/colors/purple.ogg
+%%DATADIR%%/boards/voices/lt/colors/red.ogg
+%%DATADIR%%/boards/voices/lt/colors/white.ogg
+%%DATADIR%%/boards/voices/lt/colors/yellow.ogg
+%%DATADIR%%/boards/voices/lt/geography/africa.ogg
+%%DATADIR%%/boards/voices/lt/geography/alaska.ogg
+%%DATADIR%%/boards/voices/lt/geography/albania.ogg
+%%DATADIR%%/boards/voices/lt/geography/algeria.ogg
+%%DATADIR%%/boards/voices/lt/geography/america.ogg
+%%DATADIR%%/boards/voices/lt/geography/angola.ogg
+%%DATADIR%%/boards/voices/lt/geography/antarctica.ogg
+%%DATADIR%%/boards/voices/lt/geography/argentina.ogg
+%%DATADIR%%/boards/voices/lt/geography/asia.ogg
+%%DATADIR%%/boards/voices/lt/geography/asia/afghanistan.ogg
+%%DATADIR%%/boards/voices/lt/geography/asia/armenia.ogg
+%%DATADIR%%/boards/voices/lt/geography/asia/azerbaijan.ogg
+%%DATADIR%%/boards/voices/lt/geography/asia/bahrain.ogg
+%%DATADIR%%/boards/voices/lt/geography/asia/bangladesh.ogg
+%%DATADIR%%/boards/voices/lt/geography/asia/bhutan.ogg
+%%DATADIR%%/boards/voices/lt/geography/asia/cambodia.ogg
+%%DATADIR%%/boards/voices/lt/geography/asia/china.ogg
+%%DATADIR%%/boards/voices/lt/geography/asia/cyprus.ogg
+%%DATADIR%%/boards/voices/lt/geography/asia/georgia.ogg
+%%DATADIR%%/boards/voices/lt/geography/asia/india.ogg
+%%DATADIR%%/boards/voices/lt/geography/asia/indonesia.ogg
+%%DATADIR%%/boards/voices/lt/geography/asia/iran.ogg
+%%DATADIR%%/boards/voices/lt/geography/asia/iraq.ogg
+%%DATADIR%%/boards/voices/lt/geography/asia/israel.ogg
+%%DATADIR%%/boards/voices/lt/geography/asia/japan.ogg
+%%DATADIR%%/boards/voices/lt/geography/asia/jordan.ogg
+%%DATADIR%%/boards/voices/lt/geography/asia/kazakhstan.ogg
+%%DATADIR%%/boards/voices/lt/geography/asia/kuwait.ogg
+%%DATADIR%%/boards/voices/lt/geography/asia/kyrgyzstan.ogg
+%%DATADIR%%/boards/voices/lt/geography/asia/laos.ogg
+%%DATADIR%%/boards/voices/lt/geography/asia/lebanon.ogg
+%%DATADIR%%/boards/voices/lt/geography/asia/malaysia.ogg
+%%DATADIR%%/boards/voices/lt/geography/asia/mongolia.ogg
+%%DATADIR%%/boards/voices/lt/geography/asia/myanmar.ogg
+%%DATADIR%%/boards/voices/lt/geography/asia/nepal.ogg
+%%DATADIR%%/boards/voices/lt/geography/asia/north_korea.ogg
+%%DATADIR%%/boards/voices/lt/geography/asia/oman.ogg
+%%DATADIR%%/boards/voices/lt/geography/asia/pakistan.ogg
+%%DATADIR%%/boards/voices/lt/geography/asia/palestine.ogg
+%%DATADIR%%/boards/voices/lt/geography/asia/philippines.ogg
+%%DATADIR%%/boards/voices/lt/geography/asia/qatar.ogg
+%%DATADIR%%/boards/voices/lt/geography/asia/russia.ogg
+%%DATADIR%%/boards/voices/lt/geography/asia/saudi_arabia.ogg
+%%DATADIR%%/boards/voices/lt/geography/asia/south_korea.ogg
+%%DATADIR%%/boards/voices/lt/geography/asia/sri_lanka.ogg
+%%DATADIR%%/boards/voices/lt/geography/asia/syria.ogg
+%%DATADIR%%/boards/voices/lt/geography/asia/taiwan.ogg
+%%DATADIR%%/boards/voices/lt/geography/asia/tajikistan.ogg
+%%DATADIR%%/boards/voices/lt/geography/asia/thailand.ogg
+%%DATADIR%%/boards/voices/lt/geography/asia/turkey.ogg
+%%DATADIR%%/boards/voices/lt/geography/asia/turkmenistan.ogg
+%%DATADIR%%/boards/voices/lt/geography/asia/united_arab_emirates.ogg
+%%DATADIR%%/boards/voices/lt/geography/asia/uzbekistan.ogg
+%%DATADIR%%/boards/voices/lt/geography/asia/vietnam.ogg
+%%DATADIR%%/boards/voices/lt/geography/asia/yemen.ogg
+%%DATADIR%%/boards/voices/lt/geography/austria.ogg
+%%DATADIR%%/boards/voices/lt/geography/bahamas.ogg
+%%DATADIR%%/boards/voices/lt/geography/belarus.ogg
+%%DATADIR%%/boards/voices/lt/geography/belgium.ogg
+%%DATADIR%%/boards/voices/lt/geography/belize.ogg
+%%DATADIR%%/boards/voices/lt/geography/benin.ogg
+%%DATADIR%%/boards/voices/lt/geography/bolivia.ogg
+%%DATADIR%%/boards/voices/lt/geography/bosnia_herzegovina.ogg
+%%DATADIR%%/boards/voices/lt/geography/botswana.ogg
+%%DATADIR%%/boards/voices/lt/geography/brazil.ogg
+%%DATADIR%%/boards/voices/lt/geography/bulgaria.ogg
+%%DATADIR%%/boards/voices/lt/geography/burkina_faso.ogg
+%%DATADIR%%/boards/voices/lt/geography/burundi.ogg
+%%DATADIR%%/boards/voices/lt/geography/cameroon.ogg
+%%DATADIR%%/boards/voices/lt/geography/canada.ogg
+%%DATADIR%%/boards/voices/lt/geography/central_african_republic.ogg
+%%DATADIR%%/boards/voices/lt/geography/chad.ogg
+%%DATADIR%%/boards/voices/lt/geography/chile.ogg
+%%DATADIR%%/boards/voices/lt/geography/colombia.ogg
+%%DATADIR%%/boards/voices/lt/geography/costa_rica.ogg
+%%DATADIR%%/boards/voices/lt/geography/croatia.ogg
+%%DATADIR%%/boards/voices/lt/geography/cuba.ogg
+%%DATADIR%%/boards/voices/lt/geography/cyprus.ogg
+%%DATADIR%%/boards/voices/lt/geography/czech.ogg
+%%DATADIR%%/boards/voices/lt/geography/democratic_republic_of_congo.ogg
+%%DATADIR%%/boards/voices/lt/geography/denmark.ogg
+%%DATADIR%%/boards/voices/lt/geography/djibouti.ogg
+%%DATADIR%%/boards/voices/lt/geography/dominican_republic.ogg
+%%DATADIR%%/boards/voices/lt/geography/ecuador.ogg
+%%DATADIR%%/boards/voices/lt/geography/egypt.ogg
+%%DATADIR%%/boards/voices/lt/geography/equatorial_guinea.ogg
+%%DATADIR%%/boards/voices/lt/geography/eritrea.ogg
+%%DATADIR%%/boards/voices/lt/geography/estonia.ogg
+%%DATADIR%%/boards/voices/lt/geography/ethiopia.ogg
+%%DATADIR%%/boards/voices/lt/geography/europe.ogg
+%%DATADIR%%/boards/voices/lt/geography/finland.ogg
+%%DATADIR%%/boards/voices/lt/geography/france.ogg
+%%DATADIR%%/boards/voices/lt/geography/french_guiana.ogg
+%%DATADIR%%/boards/voices/lt/geography/gabon.ogg
+%%DATADIR%%/boards/voices/lt/geography/gambia.ogg
+%%DATADIR%%/boards/voices/lt/geography/germany.ogg
+%%DATADIR%%/boards/voices/lt/geography/ghana.ogg
+%%DATADIR%%/boards/voices/lt/geography/greece.ogg
+%%DATADIR%%/boards/voices/lt/geography/greenland.ogg
+%%DATADIR%%/boards/voices/lt/geography/guatemala.ogg
+%%DATADIR%%/boards/voices/lt/geography/guinea.ogg
+%%DATADIR%%/boards/voices/lt/geography/guinea_bissau.ogg
+%%DATADIR%%/boards/voices/lt/geography/guyana.ogg
+%%DATADIR%%/boards/voices/lt/geography/haiti.ogg
+%%DATADIR%%/boards/voices/lt/geography/honduras.ogg
+%%DATADIR%%/boards/voices/lt/geography/hungary.ogg
+%%DATADIR%%/boards/voices/lt/geography/iceland.ogg
+%%DATADIR%%/boards/voices/lt/geography/ireland.ogg
+%%DATADIR%%/boards/voices/lt/geography/italy.ogg
+%%DATADIR%%/boards/voices/lt/geography/ivory_coast.ogg
+%%DATADIR%%/boards/voices/lt/geography/jamaica.ogg
+%%DATADIR%%/boards/voices/lt/geography/kenya.ogg
+%%DATADIR%%/boards/voices/lt/geography/latvia.ogg
+%%DATADIR%%/boards/voices/lt/geography/lesotho.ogg
+%%DATADIR%%/boards/voices/lt/geography/liberia.ogg
+%%DATADIR%%/boards/voices/lt/geography/libya.ogg
+%%DATADIR%%/boards/voices/lt/geography/lithuania.ogg
+%%DATADIR%%/boards/voices/lt/geography/luxembourg.ogg
+%%DATADIR%%/boards/voices/lt/geography/macedonia.ogg
+%%DATADIR%%/boards/voices/lt/geography/madagascar.ogg
+%%DATADIR%%/boards/voices/lt/geography/malawi.ogg
+%%DATADIR%%/boards/voices/lt/geography/mali.ogg
+%%DATADIR%%/boards/voices/lt/geography/mauritania.ogg
+%%DATADIR%%/boards/voices/lt/geography/mexico.ogg
+%%DATADIR%%/boards/voices/lt/geography/moldavia.ogg
+%%DATADIR%%/boards/voices/lt/geography/moldova.ogg
+%%DATADIR%%/boards/voices/lt/geography/montenegro.ogg
+%%DATADIR%%/boards/voices/lt/geography/moroco.ogg
+%%DATADIR%%/boards/voices/lt/geography/mozambique.ogg
+%%DATADIR%%/boards/voices/lt/geography/namibia.ogg
+%%DATADIR%%/boards/voices/lt/geography/netherland.ogg
+%%DATADIR%%/boards/voices/lt/geography/nicaragua.ogg
+%%DATADIR%%/boards/voices/lt/geography/niger.ogg
+%%DATADIR%%/boards/voices/lt/geography/nigeria.ogg
+%%DATADIR%%/boards/voices/lt/geography/north_america.ogg
+%%DATADIR%%/boards/voices/lt/geography/norway.ogg
+%%DATADIR%%/boards/voices/lt/geography/oceania.ogg
+%%DATADIR%%/boards/voices/lt/geography/oceania/american_samoa.ogg
+%%DATADIR%%/boards/voices/lt/geography/oceania/australia.ogg
+%%DATADIR%%/boards/voices/lt/geography/oceania/cook_islands.ogg
+%%DATADIR%%/boards/voices/lt/geography/oceania/east_timor.ogg
+%%DATADIR%%/boards/voices/lt/geography/oceania/fiji.ogg
+%%DATADIR%%/boards/voices/lt/geography/oceania/french_polynesia.ogg
+%%DATADIR%%/boards/voices/lt/geography/oceania/hawaii.ogg
+%%DATADIR%%/boards/voices/lt/geography/oceania/indonesia.ogg
+%%DATADIR%%/boards/voices/lt/geography/oceania/kiribati.ogg
+%%DATADIR%%/boards/voices/lt/geography/oceania/marshall_islands.ogg
+%%DATADIR%%/boards/voices/lt/geography/oceania/micronesia.ogg
+%%DATADIR%%/boards/voices/lt/geography/oceania/new_caledonia.ogg
+%%DATADIR%%/boards/voices/lt/geography/oceania/new_zealand.ogg
+%%DATADIR%%/boards/voices/lt/geography/oceania/northern_mariana_islands.ogg
+%%DATADIR%%/boards/voices/lt/geography/oceania/palau.ogg
+%%DATADIR%%/boards/voices/lt/geography/oceania/papua_new_guinea.ogg
+%%DATADIR%%/boards/voices/lt/geography/oceania/pitcairn_islands.ogg
+%%DATADIR%%/boards/voices/lt/geography/oceania/solomon_islands.ogg
+%%DATADIR%%/boards/voices/lt/geography/oceania/tonga.ogg
+%%DATADIR%%/boards/voices/lt/geography/oceania/tuvalu.ogg
+%%DATADIR%%/boards/voices/lt/geography/oceania/us_minor.ogg
+%%DATADIR%%/boards/voices/lt/geography/oceania/vanuatu.ogg
+%%DATADIR%%/boards/voices/lt/geography/panama.ogg
+%%DATADIR%%/boards/voices/lt/geography/paraguay.ogg
+%%DATADIR%%/boards/voices/lt/geography/peru.ogg
+%%DATADIR%%/boards/voices/lt/geography/poland.ogg
+%%DATADIR%%/boards/voices/lt/geography/portugal.ogg
+%%DATADIR%%/boards/voices/lt/geography/puerto_rico.ogg
+%%DATADIR%%/boards/voices/lt/geography/republic_of_congo.ogg
+%%DATADIR%%/boards/voices/lt/geography/romania.ogg
+%%DATADIR%%/boards/voices/lt/geography/russia.ogg
+%%DATADIR%%/boards/voices/lt/geography/rwanda.ogg
+%%DATADIR%%/boards/voices/lt/geography/salvador.ogg
+%%DATADIR%%/boards/voices/lt/geography/senegal.ogg
+%%DATADIR%%/boards/voices/lt/geography/serbia.ogg
+%%DATADIR%%/boards/voices/lt/geography/sierra_leone.ogg
+%%DATADIR%%/boards/voices/lt/geography/slovakia.ogg
+%%DATADIR%%/boards/voices/lt/geography/slovenia.ogg
+%%DATADIR%%/boards/voices/lt/geography/somalia.ogg
+%%DATADIR%%/boards/voices/lt/geography/south_africa.ogg
+%%DATADIR%%/boards/voices/lt/geography/south_america.ogg
+%%DATADIR%%/boards/voices/lt/geography/spain.ogg
+%%DATADIR%%/boards/voices/lt/geography/sudan.ogg
+%%DATADIR%%/boards/voices/lt/geography/suriname.ogg
+%%DATADIR%%/boards/voices/lt/geography/swaziland.ogg
+%%DATADIR%%/boards/voices/lt/geography/sweden.ogg
+%%DATADIR%%/boards/voices/lt/geography/switz.ogg
+%%DATADIR%%/boards/voices/lt/geography/tanzania.ogg
+%%DATADIR%%/boards/voices/lt/geography/togo.ogg
+%%DATADIR%%/boards/voices/lt/geography/tunisia.ogg
+%%DATADIR%%/boards/voices/lt/geography/turkey.ogg
+%%DATADIR%%/boards/voices/lt/geography/uganda.ogg
+%%DATADIR%%/boards/voices/lt/geography/ukraine.ogg
+%%DATADIR%%/boards/voices/lt/geography/united_kingdom.ogg
+%%DATADIR%%/boards/voices/lt/geography/uruguay.ogg
+%%DATADIR%%/boards/voices/lt/geography/usa.ogg
+%%DATADIR%%/boards/voices/lt/geography/venezuela.ogg
+%%DATADIR%%/boards/voices/lt/geography/western_sahara.ogg
+%%DATADIR%%/boards/voices/lt/geography/zambia.ogg
+%%DATADIR%%/boards/voices/lt/geography/zimbabwe.ogg
+%%DATADIR%%/boards/voices/lt/misc/awesome.ogg
+%%DATADIR%%/boards/voices/lt/misc/back.ogg
+%%DATADIR%%/boards/voices/lt/misc/by.ogg
+%%DATADIR%%/boards/voices/lt/misc/check_answer.ogg
+%%DATADIR%%/boards/voices/lt/misc/click_on_letter.ogg
+%%DATADIR%%/boards/voices/lt/misc/congratulation.ogg
+%%DATADIR%%/boards/voices/lt/misc/equal.ogg
+%%DATADIR%%/boards/voices/lt/misc/fantastic.ogg
+%%DATADIR%%/boards/voices/lt/misc/good.ogg
+%%DATADIR%%/boards/voices/lt/misc/great.ogg
+%%DATADIR%%/boards/voices/lt/misc/help.ogg
+%%DATADIR%%/boards/voices/lt/misc/level.ogg
+%%DATADIR%%/boards/voices/lt/misc/minus.ogg
+%%DATADIR%%/boards/voices/lt/misc/ok.ogg
+%%DATADIR%%/boards/voices/lt/misc/outof.ogg
+%%DATADIR%%/boards/voices/lt/misc/perfect.ogg
+%%DATADIR%%/boards/voices/lt/misc/plus.ogg
+%%DATADIR%%/boards/voices/lt/misc/quit.ogg
+%%DATADIR%%/boards/voices/lt/misc/super.ogg
+%%DATADIR%%/boards/voices/lt/misc/waytogo.ogg
+%%DATADIR%%/boards/voices/lt/misc/welcome.ogg
 %%DATADIR%%/boards/voices/mr/alphabet/10.ogg
 %%DATADIR%%/boards/voices/mr/alphabet/11.ogg
 %%DATADIR%%/boards/voices/mr/alphabet/12.ogg
@@ -11716,7 +11911,6 @@ share/applications/gcompris.desktop
 %%DATADIR%%/boards/voices/mr/geography/rwanda.ogg
 %%DATADIR%%/boards/voices/mr/geography/salvador.ogg
 %%DATADIR%%/boards/voices/mr/geography/senegal.ogg
-%%DATADIR%%/boards/voices/mr/geography/serbia_montenegro.ogg
 %%DATADIR%%/boards/voices/mr/geography/sierra_leone.ogg
 %%DATADIR%%/boards/voices/mr/geography/slovakia.ogg
 %%DATADIR%%/boards/voices/mr/geography/slovenia.ogg
@@ -11914,7 +12108,6 @@ share/applications/gcompris.desktop
 %%DATADIR%%/boards/voices/nb/geography/rwanda.ogg
 %%DATADIR%%/boards/voices/nb/geography/salvador.ogg
 %%DATADIR%%/boards/voices/nb/geography/senegal.ogg
-%%DATADIR%%/boards/voices/nb/geography/serbia_montenegro.ogg
 %%DATADIR%%/boards/voices/nb/geography/slovakia.ogg
 %%DATADIR%%/boards/voices/nb/geography/slovenia.ogg
 %%DATADIR%%/boards/voices/nb/geography/somalia.ogg
@@ -12076,7 +12269,6 @@ share/applications/gcompris.desktop
 %%DATADIR%%/boards/voices/nl/geography/romania.ogg
 %%DATADIR%%/boards/voices/nl/geography/russia.ogg
 %%DATADIR%%/boards/voices/nl/geography/salvador.ogg
-%%DATADIR%%/boards/voices/nl/geography/serbia_montenegro.ogg
 %%DATADIR%%/boards/voices/nl/geography/slovakia.ogg
 %%DATADIR%%/boards/voices/nl/geography/slovenia.ogg
 %%DATADIR%%/boards/voices/nl/geography/spain.ogg
@@ -12261,7 +12453,6 @@ share/applications/gcompris.desktop
 %%DATADIR%%/boards/voices/nn/geography/rwanda.ogg
 %%DATADIR%%/boards/voices/nn/geography/salvador.ogg
 %%DATADIR%%/boards/voices/nn/geography/senegal.ogg
-%%DATADIR%%/boards/voices/nn/geography/serbia_montenegro.ogg
 %%DATADIR%%/boards/voices/nn/geography/slovakia.ogg
 %%DATADIR%%/boards/voices/nn/geography/slovenia.ogg
 %%DATADIR%%/boards/voices/nn/geography/somalia.ogg
@@ -12464,7 +12655,6 @@ share/applications/gcompris.desktop
 %%DATADIR%%/boards/voices/pa/geography/rwanda.ogg
 %%DATADIR%%/boards/voices/pa/geography/salvador.ogg
 %%DATADIR%%/boards/voices/pa/geography/senegal.ogg
-%%DATADIR%%/boards/voices/pa/geography/serbia_montenegro.ogg
 %%DATADIR%%/boards/voices/pa/geography/sierra_leone.ogg
 %%DATADIR%%/boards/voices/pa/geography/slovakia.ogg
 %%DATADIR%%/boards/voices/pa/geography/slovenia.ogg
@@ -12669,7 +12859,6 @@ share/applications/gcompris.desktop
 %%DATADIR%%/boards/voices/pt/geography/rwanda.ogg
 %%DATADIR%%/boards/voices/pt/geography/salvador.ogg
 %%DATADIR%%/boards/voices/pt/geography/senegal.ogg
-%%DATADIR%%/boards/voices/pt/geography/serbia_montenegro.ogg
 %%DATADIR%%/boards/voices/pt/geography/sierra_leone.ogg
 %%DATADIR%%/boards/voices/pt/geography/slovakia.ogg
 %%DATADIR%%/boards/voices/pt/geography/slovenia.ogg
@@ -12918,7 +13107,6 @@ share/applications/gcompris.desktop
 %%DATADIR%%/boards/voices/pt_BR/geography/romania.ogg
 %%DATADIR%%/boards/voices/pt_BR/geography/russia.ogg
 %%DATADIR%%/boards/voices/pt_BR/geography/salvador.ogg
-%%DATADIR%%/boards/voices/pt_BR/geography/serbia_montenegro.ogg
 %%DATADIR%%/boards/voices/pt_BR/geography/slovakia.ogg
 %%DATADIR%%/boards/voices/pt_BR/geography/slovenia.ogg
 %%DATADIR%%/boards/voices/pt_BR/geography/spain.ogg
@@ -13236,7 +13424,6 @@ share/applications/gcompris.desktop
 %%DATADIR%%/boards/voices/ru/geography/romania.ogg
 %%DATADIR%%/boards/voices/ru/geography/russia.ogg
 %%DATADIR%%/boards/voices/ru/geography/salvador.ogg
-%%DATADIR%%/boards/voices/ru/geography/serbia_montenegro.ogg
 %%DATADIR%%/boards/voices/ru/geography/slovakia.ogg
 %%DATADIR%%/boards/voices/ru/geography/slovenia.ogg
 %%DATADIR%%/boards/voices/ru/geography/spain.ogg
@@ -13442,7 +13629,6 @@ share/applications/gcompris.desktop
 %%DATADIR%%/boards/voices/sk/geography/salvador.ogg
 %%DATADIR%%/boards/voices/sk/geography/senegal.ogg
 %%DATADIR%%/boards/voices/sk/geography/serbia.ogg
-%%DATADIR%%/boards/voices/sk/geography/serbia_montenegro.ogg
 %%DATADIR%%/boards/voices/sk/geography/sierra_leone.ogg
 %%DATADIR%%/boards/voices/sk/geography/slovakia.ogg
 %%DATADIR%%/boards/voices/sk/geography/slovenia.ogg
@@ -13605,7 +13791,6 @@ share/applications/gcompris.desktop
 %%DATADIR%%/boards/voices/sl/geography/romania.ogg
 %%DATADIR%%/boards/voices/sl/geography/russia.ogg
 %%DATADIR%%/boards/voices/sl/geography/salvador.ogg
-%%DATADIR%%/boards/voices/sl/geography/serbia_montenegro.ogg
 %%DATADIR%%/boards/voices/sl/geography/slovakia.ogg
 %%DATADIR%%/boards/voices/sl/geography/slovenia.ogg
 %%DATADIR%%/boards/voices/sl/geography/spain.ogg
@@ -13835,7 +14020,6 @@ share/applications/gcompris.desktop
 %%DATADIR%%/boards/voices/so/geography/romania.ogg
 %%DATADIR%%/boards/voices/so/geography/russia.ogg
 %%DATADIR%%/boards/voices/so/geography/salvador.ogg
-%%DATADIR%%/boards/voices/so/geography/serbia_montenegro.ogg
 %%DATADIR%%/boards/voices/so/geography/slovakia.ogg
 %%DATADIR%%/boards/voices/so/geography/slovenia.ogg
 %%DATADIR%%/boards/voices/so/geography/spain.ogg
@@ -13994,7 +14178,6 @@ share/applications/gcompris.desktop
 %%DATADIR%%/boards/voices/sr/geography/romania.ogg
 %%DATADIR%%/boards/voices/sr/geography/russia.ogg
 %%DATADIR%%/boards/voices/sr/geography/salvador.ogg
-%%DATADIR%%/boards/voices/sr/geography/serbia_montenegro.ogg
 %%DATADIR%%/boards/voices/sr/geography/slovakia.ogg
 %%DATADIR%%/boards/voices/sr/geography/slovenia.ogg
 %%DATADIR%%/boards/voices/sr/geography/spain.ogg
@@ -14153,7 +14336,6 @@ share/applications/gcompris.desktop
 %%DATADIR%%/boards/voices/sv/geography/romania.ogg
 %%DATADIR%%/boards/voices/sv/geography/russia.ogg
 %%DATADIR%%/boards/voices/sv/geography/salvador.ogg
-%%DATADIR%%/boards/voices/sv/geography/serbia_montenegro.ogg
 %%DATADIR%%/boards/voices/sv/geography/slovakia.ogg
 %%DATADIR%%/boards/voices/sv/geography/slovenia.ogg
 %%DATADIR%%/boards/voices/sv/geography/spain.ogg
@@ -14303,7 +14485,6 @@ share/applications/gcompris.desktop
 %%DATADIR%%/boards/voices/th/geography/romania.ogg
 %%DATADIR%%/boards/voices/th/geography/russia.ogg
 %%DATADIR%%/boards/voices/th/geography/salvador.ogg
-%%DATADIR%%/boards/voices/th/geography/serbia_montenegro.ogg
 %%DATADIR%%/boards/voices/th/geography/slovakia.ogg
 %%DATADIR%%/boards/voices/th/geography/slovenia.ogg
 %%DATADIR%%/boards/voices/th/geography/spain.ogg
@@ -14536,7 +14717,6 @@ share/applications/gcompris.desktop
 %%DATADIR%%/boards/voices/tr/geography/rwanda.ogg
 %%DATADIR%%/boards/voices/tr/geography/salvador.ogg
 %%DATADIR%%/boards/voices/tr/geography/senegal.ogg
-%%DATADIR%%/boards/voices/tr/geography/serbia_montenegro.ogg
 %%DATADIR%%/boards/voices/tr/geography/sierra_leone.ogg
 %%DATADIR%%/boards/voices/tr/geography/slovakia.ogg
 %%DATADIR%%/boards/voices/tr/geography/slovenia.ogg
@@ -14741,7 +14921,6 @@ share/applications/gcompris.desktop
 %%DATADIR%%/boards/voices/ur/geography/rwanda.ogg
 %%DATADIR%%/boards/voices/ur/geography/salvador.ogg
 %%DATADIR%%/boards/voices/ur/geography/senegal.ogg
-%%DATADIR%%/boards/voices/ur/geography/serbia_montenegro.ogg
 %%DATADIR%%/boards/voices/ur/geography/sierra_leone.ogg
 %%DATADIR%%/boards/voices/ur/geography/slovakia.ogg
 %%DATADIR%%/boards/voices/ur/geography/slovenia.ogg
@@ -14904,7 +15083,6 @@ share/applications/gcompris.desktop
 %%DATADIR%%/boards/voices/zh_CN/geography/romania.ogg
 %%DATADIR%%/boards/voices/zh_CN/geography/russia.ogg
 %%DATADIR%%/boards/voices/zh_CN/geography/salvador.ogg
-%%DATADIR%%/boards/voices/zh_CN/geography/serbia_montenegro.ogg
 %%DATADIR%%/boards/voices/zh_CN/geography/slovakia.ogg
 %%DATADIR%%/boards/voices/zh_CN/geography/slovenia.ogg
 %%DATADIR%%/boards/voices/zh_CN/geography/spain.ogg
@@ -15242,32 +15420,12 @@ share/locale/zh_TW/LC_MESSAGES/gcompris.mo
 share/locale/zu/LC_MESSAGES/gcompris.mo
 share/pixmaps/gcompris-edit.png
 share/pixmaps/gcompris.png
-@dirrmtry share/locale/zu/LC_MESSAGES
-@dirrmtry share/locale/zu
-@dirrmtry share/locale/zh_HK/LC_MESSAGES
-@dirrmtry share/locale/zh_HK
-@dirrmtry share/locale/ur/LC_MESSAGES
-@dirrmtry share/locale/ur
-@dirrmtry share/locale/te/LC_MESSAGES
-@dirrmtry share/locale/te
-@dirrmtry share/locale/sr_ME/LC_MESSAGES
-@dirrmtry share/locale/sr_ME
-@dirrmtry share/locale/sr@latin/LC_MESSAGES
-@dirrmtry share/locale/sr@latin
-@dirrmtry share/locale/so/LC_MESSAGES
-@dirrmtry share/locale/so
-@dirrmtry share/locale/rw/LC_MESSAGES
-@dirrmtry share/locale/rw
-@dirrmtry share/locale/oc/LC_MESSAGES
-@dirrmtry share/locale/oc
-@dirrmtry share/locale/mr/LC_MESSAGES
-@dirrmtry share/locale/mr
 @dirrmtry share/locale/gd/LC_MESSAGES
 @dirrmtry share/locale/gd
-@dirrmtry share/locale/dz/LC_MESSAGES
-@dirrmtry share/locale/dz
-@dirrmtry share/locale/ast/LC_MESSAGES
-@dirrmtry share/locale/ast
+@dirrmtry share/locale/so/LC_MESSAGES
+@dirrmtry share/locale/so
+@dirrmtry share/locale/sr_ME/LC_MESSAGES
+@dirrmtry share/locale/sr_ME
 @dirrm %%DATADIR%%/python/gcompris/utils
 @dirrm %%DATADIR%%/python/gcompris/timer
 @dirrm %%DATADIR%%/python/gcompris/sound
@@ -15374,6 +15532,11 @@ share/pixmaps/gcompris.png
 @dirrm %%DATADIR%%/boards/voices/mr/colors
 @dirrm %%DATADIR%%/boards/voices/mr/alphabet
 @dirrm %%DATADIR%%/boards/voices/mr
+@dirrm %%DATADIR%%/boards/voices/lt/misc
+@dirrm %%DATADIR%%/boards/voices/lt/geography/oceania
+@dirrm %%DATADIR%%/boards/voices/lt/geography/asia
+@dirrm %%DATADIR%%/boards/voices/lt/geography
+@dirrm %%DATADIR%%/boards/voices/lt/colors
 @dirrm %%DATADIR%%/boards/voices/lt/alphabet
 @dirrm %%DATADIR%%/boards/voices/lt
 @dirrm %%DATADIR%%/boards/voices/it/misc
@@ -15502,12 +15665,9 @@ share/pixmaps/gcompris.png
 @dirrm %%DATADIR%%/boards/submarine
 @dirrm %%DATADIR%%/boards/sounds
 @dirrm %%DATADIR%%/boards/smallnumbers
-@dirrm %%DATADIR%%/boards/skins/gartoon/timers
-@dirrm %%DATADIR%%/boards/skins/gartoon/cursors
-@dirrm %%DATADIR%%/boards/skins/gartoon/bonus
-@dirrm %%DATADIR%%/boards/skins/gartoon
 @dirrm %%DATADIR%%/boards/skins/babytoy/timers
 @dirrm %%DATADIR%%/boards/skins/babytoy/cursors
+@dirrm %%DATADIR%%/boards/skins/babytoy/bonus
 @dirrm %%DATADIR%%/boards/skins/babytoy
 @dirrm %%DATADIR%%/boards/skins
 @dirrm %%DATADIR%%/boards/shapegame
@@ -15641,4 +15801,5 @@ share/pixmaps/gcompris.png
 @dirrm %%DATADIR%%/boards/administration
 @dirrm %%DATADIR%%/boards
 @dirrm %%DATADIR%%
+@dirrmtry share/appdata
 @dirrm lib/gcompris
