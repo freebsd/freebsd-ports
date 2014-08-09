@@ -2,6 +2,7 @@
 
 PORTNAME=	samefile
 PORTVERSION=	2.15
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.schweikhardt.net/
 
@@ -13,6 +14,8 @@ CONFLICTS=	samesame-[0-9]*
 GNU_CONFIGURE=	yes
 
 CFLAGS+=	-ansi -pedantic -Wall -Wshadow -Wpointer-arith -Wbad-function-cast -Wcast-qual -Wcast-align -Wstrict-prototypes -Wmissing-prototypes -Wmissing-declarations -Wredundant-decls -Wnested-externs -Winline -Wno-long-long
+
+PLIST_FILES=	bin/samefile man/man1/samefile.1.gz
 
 post-build:
 	@${ECHO_MSG} "   >>>>                        <<<<"
