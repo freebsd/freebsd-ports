@@ -4,29 +4,32 @@ bin/rexx
 bin/rxqueue
 bin/rxstack
 include/rexxsaa.h
+lib/Regina-REXX/addons/libregutil.so
+lib/Regina-REXX/addons/librxtest1.so
+lib/Regina-REXX/addons/librxtest2.so
 lib/libregina.a
 lib/libregina.so
-lib/libregutil.so
-lib/librxtest1.so
-lib/librxtest2.so
 man/man1/regina.1.gz
 man/man1/regina-config.1.gz
 man/man1/rxqueue.1.gz
 man/man1/rxstack.1.gz
-%%DATADIR%%/animal.rexx
-%%DATADIR%%/block.rexx
-%%DATADIR%%/dateconv.rexx
 %%DATADIR%%/de.mtb
-%%DATADIR%%/dynfunc.rexx
 %%DATADIR%%/en.mtb
 %%DATADIR%%/es.mtb
-%%DATADIR%%/newstr.rexx
 %%DATADIR%%/no.mtb
 %%DATADIR%%/pl.mtb
 %%DATADIR%%/pt.mtb
-%%DATADIR%%/regutil.rexx
-%%DATADIR%%/rexxcps.rexx
 %%DATADIR%%/sv.mtb
-%%DATADIR%%/timeconv.rexx
 %%DATADIR%%/tr.mtb
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/animal.rexx
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/block.rexx
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/dateconv.rexx
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/dynfunc.rexx
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/newstr.rexx
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/regutil.rexx
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/rexxcps.rexx
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/timeconv.rexx
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
 @dirrm %%DATADIR%%
+@dirrm lib/Regina-REXX/addons
+@dirrm lib/Regina-REXX
