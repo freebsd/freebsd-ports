@@ -2,7 +2,7 @@
 
 PORTNAME=	musicpd
 PORTVERSION=	0.18.11
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio ipv6
 MASTER_SITES=	http://www.musicpd.org/download/mpd/${PORTVERSION:R}/
 DISTNAME=	mpd-${PORTVERSION}
@@ -150,7 +150,7 @@ CONFIGURE_ARGS+=--enable-bzip2 \
 		--enable-zzip \
 		--enable-iso9660
 LIB_DEPENDS+=	libzzip.so:${PORTSDIR}/devel/zziplib \
-		libiso9660.so:${PORTSDIR}/sysutils/libcdio
+		libcdio-paranoia.so:${PORTSDIR}/sysutils/libcdio-paranoia
 .else
 CONFIGURE_ARGS+=--disable-bzip2 \
 		--disable-zzip \
