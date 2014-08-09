@@ -1,0 +1,11 @@
+--- Makefile.local.orig	2014-06-25 10:30:10.000000000 +0000
++++ Makefile.local
+@@ -302,7 +302,7 @@ notmuch-shared: $(notmuch_client_modules
+ .PHONY: install
+ install: all install-man
+ 	mkdir -p "$(DESTDIR)$(prefix)/bin/"
+-	install notmuch-shared "$(DESTDIR)$(prefix)/bin/notmuch"
++	${BSD_INSTALL_PROGRAM} notmuch-shared "$(DESTDIR)$(prefix)/bin/notmuch"
+ ifeq ($(MAKECMDGOALS), install)
+ 	@echo ""
+ 	@echo "Notmuch is now installed to $(DESTDIR)$(prefix)"

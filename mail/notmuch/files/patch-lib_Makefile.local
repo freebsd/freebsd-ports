@@ -1,0 +1,16 @@
+--- lib/Makefile.local.orig	2014-06-25 10:30:10.000000000 +0000
++++ lib/Makefile.local
+@@ -92,11 +92,11 @@ install: install-$(dir)
+ 
+ install-$(dir): $(dir)/$(LIBNAME)
+ 	mkdir -p "$(DESTDIR)$(libdir)/"
+-	install -m0644 "$(lib)/$(LIBNAME)" "$(DESTDIR)$(libdir)/"
++	${BSD_INSTALL_LIB} "$(lib)/$(LIBNAME)" "$(DESTDIR)$(libdir)/"
+ 	ln -sf $(LIBNAME) "$(DESTDIR)$(libdir)/$(SONAME)"
+ 	ln -sf $(LIBNAME) "$(DESTDIR)$(libdir)/$(LINKER_NAME)"
+ 	mkdir -p "$(DESTDIR)$(includedir)"
+-	install -m0644 "$(srcdir)/$(lib)/notmuch.h" "$(DESTDIR)$(includedir)/"
++	${BSD_INSTALL_DATA} "$(srcdir)/$(lib)/notmuch.h" "$(DESTDIR)$(includedir)/"
+ 	$(LIBRARY_INSTALL_POST_COMMAND)
+ 
+ SRCS  := $(SRCS) $(libnotmuch_c_srcs) $(libnotmuch_cxx_srcs)
