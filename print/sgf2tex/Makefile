@@ -10,6 +10,8 @@ MASTER_SITES=	http://sporadic.stanford.edu/bump/
 MAINTAINER=	spcoltri@omcl.org
 COMMENT=	Convert a Go game record in SGF format into TeX and provide fonts to make a dvi
 
+BROKEN=		Fails to build
+
 USES=		shebangfix
 SHEBANG_FILES=	sgf2tex
 USE_TEX=	tex
