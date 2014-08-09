@@ -348,9 +348,15 @@ APACHE_PORT?=	www/apache${APACHE_VERSION}
 
 PLIST_SUB+=	APACHEMODDIR="${APACHEMODDIR}" \
 		APACHEINCLUDEDIR="${APACHEINCLUDEDIR}" \
-		APACHEETCDIR="${APACHEETCDIR}"
+		APACHEETCDIR="${APACHEETCDIR}" \
+		APACHE_VERSION="${APACHE_VERSION}"
+
+SUB_LIST+=	APACHEMODDIR="${APACHEMODDIR}" \
+		APACHEETCDIR="${APACHEETCDIR}" \
+		APACHE_VERSION="${APACHE_VERSION}"
 
 APACHE_PKGNAMEPREFIX=	ap${APACHE_VERSION}-
+
 .if defined(AP_FAST_BUILD)
 PKGNAMEPREFIX?=	${APACHE_PKGNAMEPREFIX}
 .endif
@@ -462,7 +468,6 @@ ap-gen-plist:
 .if defined(AP_GENPLIST)
 .	if !exists(${PLIST})
 	@${ECHO} "===>  Generating apache plist"
-# apache22
 	@${ECHO} "@unexec ${SED} -i '' -E '/LoadModule[[:blank:]]+%%AP_NAME%%_module/d' %D/%%APACHEETCDIR%%/httpd.conf" >> ${PLIST}
 	@${ECHO} "%%APACHEMODDIR%%/%%AP_MODULE%%" >> ${PLIST}
 	@${ECHO} "@exec %D/sbin/apxs -e ${AP_MOD_EN} -n %%AP_NAME%% %D/%F" >> ${PLIST}
@@ -493,6 +498,7 @@ do-install:
 .	endif
 . endif
 .endif
+
 .endif          # defined(AP_FAST_BUILD)
-.endif          # defined(AP_PORT_IS_MODULE)
+.endif          # defined(AP_PORT_IS_SERVER / AP_PORT_IS_MODULE)
 .endif          # defined(_POSTMKINCLUDED) && !defined(Apache_Post_Include)
