@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	grass
-PORTVERSION=	6.4.3
-PORTREVISION=	5
+PORTVERSION=	6.4.4
 PORTEPOCH=	2
 CATEGORIES=	databases geography
 MASTER_SITES=	http://grass.osgeo.org/%SUBDIR%/ \
@@ -74,6 +73,8 @@ PLIST_SUB=	GRASS_INST_DIR="${GRASS_INST_DIR}" \
 		VERSION="${PORTVERSION}" \
 		VER="${PORTVERSION:R:C/\.//}"
 
+BROKEN_sparc64=		Does not configure on sparc64
+
 OPTIONS_DEFINE=		ATLAS FFMPEG MOTIF MYSQL ODBC PGSQL SQLITE
 OPTIONS_DEFAULT=	PGSQL
 OPTIONS_SUB=		yes
@@ -113,10 +114,6 @@ BLASLIB=	blas
 LAPACKLIB=	lapack
 .endif
 
-.if ${ARCH} == "sparc64"
-BROKEN=		Does not configure on sparc64
-.endif
-
 .if !defined (GRASS_INST_DIR)
 GRASS_INST_DIR=	${PORTNAME}-${PORTVERSION}
 .endif
@@ -133,11 +130,30 @@ post-patch:
 		 /test /s| $${INST_DIR}| $${DESTDIR}$${INST_DIR}|g ; \
 		 /tar /s| $${INST_DIR}| $${DESTDIR}$${INST_DIR}|g ; \
 		 /chmod /s| $${INST_DIR}| $${DESTDIR}$${INST_DIR}|g ; \
-		 /GISBASE/s| $${INST_DIR}| $${DESTDIR}$${INST_DIR}|g' ${WRKSRC}/Makefile
+		 /tar /s| $${INST_DIR}| $${DESTDIR}$${INST_DIR}|g ; \
+		 s|> $${INST_DIR}|> $${DESTDIR}$${INST_DIR}|' ${WRKSRC}/Makefile
 	@${REINPLACE_CMD} -e \
 		's|^CC=.*|CC?=cc| ; \
 		 s|^CFLAGS=.*|CFLAGS+=-fno-common|' ${WRKSRC}/gem/Makefile
 	@${REINPLACE_CMD} -e \
 		's|= python|= ${PYTHON_CMD:T}|' ${WRKSRC}/include/Make/Platform.make.in
+
+post-install:
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/gem64
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/${GRASS_INST_DIR}/bin/*.*
+.for i in HTMLMAP PNG PS XDRIVER cairo
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/${GRASS_INST_DIR}/driver/${i}
+.endfor
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/${GRASS_INST_DIR}/driver/db/*
+.for i in bmif_to_cell clean_temp current_time_s_ms echo frame.* grocat \
+	i.ask i.find i.photo.* lock mod* mon.* poly_to_bmif r.watershed.* \
+	run set_data
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/${GRASS_INST_DIR}/etc/${i}
+.endfor
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/${GRASS_INST_DIR}/etc/form/form
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/${GRASS_INST_DIR}/etc/lister/*
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/${GRASS_INST_DIR}/etc/nviz2.2/nviz
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/${GRASS_INST_DIR}/lib/libgrass_*.so
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/${GRASS_INST_DIR}/tools/g.echo
 
 .include <bsd.port.mk>

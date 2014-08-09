@@ -268,7 +268,6 @@ bin/grass64
 %%GRASS_INST_DIR%%/bin/r3.timestamp
 %%GRASS_INST_DIR%%/bin/r3.to.rast
 %%GRASS_INST_DIR%%/bin/r3.univar
-%%GRASS_INST_DIR%%/bin/v.buffer
 %%GRASS_INST_DIR%%/bin/v.build
 %%GRASS_INST_DIR%%/bin/v.build.polylines
 %%GRASS_INST_DIR%%/bin/v.category
@@ -505,6 +504,7 @@ bin/grass64
 %%GRASS_INST_DIR%%/docs/html/d.what.vect.html
 %%GRASS_INST_DIR%%/docs/html/d.where.html
 %%GRASS_INST_DIR%%/docs/html/d.zoom.html
+%%GRASS_INST_DIR%%/docs/html/d_correlate.png
 %%GRASS_INST_DIR%%/docs/html/d_geodesic.png
 %%GRASS_INST_DIR%%/docs/html/d_polar_aspect.png
 %%GRASS_INST_DIR%%/docs/html/d_rhumbline.png
@@ -553,6 +553,7 @@ bin/grass64
 %%GRASS_INST_DIR%%/docs/html/g.tempfile.html
 %%GRASS_INST_DIR%%/docs/html/g.transform.html
 %%GRASS_INST_DIR%%/docs/html/g.version.html
+%%GRASS_INST_DIR%%/docs/html/g_parser_test.png
 %%GRASS_INST_DIR%%/docs/html/gis.m.html
 %%GRASS_INST_DIR%%/docs/html/gm_animate.html
 %%GRASS_INST_DIR%%/docs/html/gm_animate1.png
@@ -1195,7 +1196,6 @@ bin/grass64
 %%GRASS_INST_DIR%%/docs/html/tasscap3.jpg
 %%GRASS_INST_DIR%%/docs/html/tasscap4.jpg
 %%GRASS_INST_DIR%%/docs/html/tcurv.png
-%%GRASS_INST_DIR%%/docs/html/v.buffer.html
 %%GRASS_INST_DIR%%/docs/html/v.build.all.html
 %%GRASS_INST_DIR%%/docs/html/v.build.html
 %%GRASS_INST_DIR%%/docs/html/v.build.polylines.html
@@ -2085,6 +2085,7 @@ bin/grass64
 %%GRASS_INST_DIR%%/etc/nviz2.2/msgs/lv.msg
 %%GRASS_INST_DIR%%/etc/nviz2.2/msgs/nl.msg
 %%GRASS_INST_DIR%%/etc/nviz2.2/msgs/pl.msg
+%%GRASS_INST_DIR%%/etc/nviz2.2/msgs/ro.msg
 %%GRASS_INST_DIR%%/etc/nviz2.2/nviz
 %%GRASS_INST_DIR%%/etc/nviz2.2/scripts/ACS_utils.tcl
 %%GRASS_INST_DIR%%/etc/nviz2.2/scripts/assoc.tcl
@@ -2253,7 +2254,7 @@ bin/grass64
 %%GRASS_INST_DIR%%/etc/r.in.wms/wms.request
 %%GRASS_INST_DIR%%/etc/r.li.setup/area_query
 %%GRASS_INST_DIR%%/etc/r.li.setup/circle.txt
-%%GRASS_INST_DIR%%/etc/r.li.setup/masked_area_selection
+%%GRASS_INST_DIR%%/etc/r.li.setup/masked_area_selection.sh
 %%GRASS_INST_DIR%%/etc/r.li.setup/polygon.txt
 %%GRASS_INST_DIR%%/etc/r.li.setup/r.li.setup.main
 %%GRASS_INST_DIR%%/etc/r.li.setup/r.li.setup.procedures.tcl
@@ -2837,6 +2838,7 @@ bin/grass64
 %%GRASS_INST_DIR%%/locale/ko/LC_MESSAGES/grasslibs.mo
 %%GRASS_INST_DIR%%/locale/ko/LC_MESSAGES/grassmods.mo
 %%GRASS_INST_DIR%%/locale/lv/LC_MESSAGES/grasslibs.mo
+%%GRASS_INST_DIR%%/locale/lv/LC_MESSAGES/grasswxpy.mo
 %%GRASS_INST_DIR%%/locale/lv/LC_MESSAGES/grassmods.mo
 %%GRASS_INST_DIR%%/locale/ml/LC_MESSAGES/grasslibs.mo
 %%GRASS_INST_DIR%%/locale/ml/LC_MESSAGES/grasswxpy.mo
@@ -3234,7 +3236,6 @@ bin/grass64
 %%GRASS_INST_DIR%%/man/man1/raster3dintro.1
 %%GRASS_INST_DIR%%/man/man1/rasterintro.1
 %%GRASS_INST_DIR%%/man/man1/sql.1
-%%GRASS_INST_DIR%%/man/man1/v.buffer.1
 %%GRASS_INST_DIR%%/man/man1/v.build.1
 %%GRASS_INST_DIR%%/man/man1/v.build.all.1
 %%GRASS_INST_DIR%%/man/man1/v.build.polylines.1
