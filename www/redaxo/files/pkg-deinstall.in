@@ -24,6 +24,8 @@ fi
 fi
 if [ "$2" == "POST-DEINSTALL" ]; then
 if [ -d %%WWWDIR%% ]; then
+wf=`find %%WWWDIR%% -not -type d | wc -l`
+if [ $wf -ne 0 ]; then
 	echo ""
 	echo "-------------------------------------------------------------------------"
 	echo ""
@@ -33,5 +35,6 @@ if [ -d %%WWWDIR%% ]; then
 	echo ""
 	echo "-------------------------------------------------------------------------"
 	echo ""
+fi
 fi
 fi
