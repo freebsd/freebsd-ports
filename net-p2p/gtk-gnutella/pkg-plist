@@ -1,5 +1,6 @@
 bin/gtk-gnutella
 man/man1/gtk-gnutella.1.gz
+share/appdata/gtk-gnutella.appdata.xml
 share/applications/gtk-gnutella.desktop
 %%DATADIR%%/%%ARCH%%-%%OPSYS%%/gtk-gnutella.nm
 %%DATADIR%%/bogons.txt
@@ -9,6 +10,7 @@ share/applications/gtk-gnutella.desktop
 %%DATADIR%%/fr/FAQ
 %%DATADIR%%/geo-ip.txt
 %%DATADIR%%/geo-ipv6.txt
+%%DATADIR%%/gwcache.boot
 %%DATADIR%%/hostiles.txt
 %%DATADIR%%/ja/FAQ
 %%DATADIR%%/pixmaps/arrow_down.xpm
@@ -92,5 +94,6 @@ share/pixmaps/gtk-gnutella.svg
 @dirrm %%DATADIR%%/fr
 @dirrm %%DATADIR%%/en
 @dirrm %%DATADIR%%/el
-@dirrm %%DATADIR%%/%%ARCH%%-%%OPSYS%%
+@dirrm %%DATADIR%%/%%ARCH%%-freebsd
 @dirrm %%DATADIR%%
+@dirrmtry share/appdata
