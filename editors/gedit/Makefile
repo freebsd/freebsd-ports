@@ -32,21 +32,14 @@ PLIST_SUB=	VERSION="2.20"
 
 GCONF_SCHEMAS=	gedit.schemas gedit-file-browser.schemas
 
-.include <bsd.port.pre.mk>
+OPTIONS_DEFINE=	PYTHON
+OPTIONS_SUB=	yes
 
-.if ${HAVE_GNOME:Mpygtksourceview}!=""
-USE_PYTHON=	yes
-.include "${PORTSDIR}/Mk/bsd.python.mk"
-USE_GNOME+=	pygtksourceview
-CONFIGURE_ARGS+=--enable-python
-PLIST_SUB+=	PYTHON=""
-.else
-CONFIGURE_ARGS+=--disable-python
-PLIST_SUB+=	PYTHON="@comment "
-.endif
+PYTHON_CONFIGURE_ENABLE=python
+PYTHON_USE=		GNOME=pygtksourceview
 
 post-patch:
 	${REINPLACE_CMD} '/EGG_SMCLIENT_LIBS =/s/$$/ -lICE/' \
 		${WRKSRC}/gedit/smclient/Makefile.in
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

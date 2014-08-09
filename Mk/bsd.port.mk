@@ -394,10 +394,6 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 # USE_OCAML		- If set, this port relies on the OCaml language.
 #				  Implies inclusion of bsd.ocaml.mk.  (Also see
 #				  that file for more information on USE_OCAML*).
-# USE_PYTHON	- If set, this port relies on the Python language.
-#				  Implies inclusion of bsd.python.mk. (Also see
-#				  that file for more information on USE_PYTHON_*
-#				  and USE_PYDISTUTILS).
 # USE_RUBY		- If set, this port relies on the Ruby language.
 #				  Implies inclusion of bsd.ruby.mk.  (Also see
 #				  that file for more information on USE_RUBY_*).
@@ -1444,7 +1440,7 @@ PKGCOMPATDIR?=		${LOCALBASE}/lib/compat/pkg
 .endif
 
 .if defined(USE_PYTHON) || defined(USE_PYTHON_BUILD) || defined(USE_PYTHON_RUN)
-.include "${PORTSDIR}/Mk/bsd.python.mk"
+USES+=	python
 .endif
 
 .if defined(USE_EFL) || defined(WANT_EFL) || defined(USE_EFL_ESMART)
@@ -1888,10 +1884,6 @@ IGNORE=	Do not define STAGEDIR in command line
 
 .if defined(USE_PHP)
 .include "${PORTSDIR}/Mk/bsd.php.mk"
-.endif
-
-.if defined(USE_PYTHON)
-.include "${PORTSDIR}/Mk/bsd.python.mk"
 .endif
 
 .if defined(USE_WX) || defined(USE_WX_NOT)
