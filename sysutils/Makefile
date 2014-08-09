@@ -451,6 +451,7 @@
     SUBDIR += less
     SUBDIR += lfm
     SUBDIR += libcdio
+    SUBDIR += libcdio-paranoia
     SUBDIR += libchk
     SUBDIR += libfvde
     SUBDIR += libgksu
