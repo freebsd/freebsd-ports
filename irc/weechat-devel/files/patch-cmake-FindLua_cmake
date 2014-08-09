@@ -17,7 +17,7 @@
 -        PATHS /lib /usr/lib /usr/local/lib /usr/pkg/lib
 -        PATH_SUFFIXES lua51 lua5.1 lua-5.1
 +FIND_LIBRARY(LUA_LIBRARY
-+	NAMES lua
++	NAMES lua lua-5.1
 +	PATHS ${BSD_LUA_LIBDIR}
  )
  
