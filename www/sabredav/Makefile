@@ -41,8 +41,6 @@ WRKSRC=		${WRKDIR}/SabreDAV
 
 NO_BUILD=	yes
 
-USE_PHP=	yes
-
 do-install:
 	  ${MKDIR} ${STAGEDIR}/${WWWDIR}
 	  (cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}/${WWWDIR} )
