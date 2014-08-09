@@ -17,6 +17,7 @@ share/locale/pl/LC_MESSAGES/manaplus.mo
 share/locale/pt/LC_MESSAGES/manaplus.mo
 share/locale/pt_BR/LC_MESSAGES/manaplus.mo
 share/locale/ru/LC_MESSAGES/manaplus.mo
+share/locale/sv_SE/LC_MESSAGES/manaplus.mo
 share/locale/tr/LC_MESSAGES/manaplus.mo
 share/locale/zh_CN/LC_MESSAGES/manaplus.mo
 %%DATADIR%%/data/fonts/dejavusans-bold.ttf
@@ -47,6 +48,7 @@ share/locale/zh_CN/LC_MESSAGES/manaplus.mo
 %%DATADIR%%/data/graphics/flags/pt.png
 %%DATADIR%%/data/graphics/flags/pt_BR.png
 %%DATADIR%%/data/graphics/flags/ru.png
+%%DATADIR%%/data/graphics/flags/se.png
 %%DATADIR%%/data/graphics/flags/tr.png
 %%DATADIR%%/data/graphics/gui/browserbox.xml
 %%DATADIR%%/data/graphics/gui/bubble.png
@@ -588,5 +590,7 @@ share/pixmaps/manaplus.png
 @dirrm %%DATADIR%%/data/fonts
 @dirrm %%DATADIR%%/data
 @dirrm %%DATADIR%%
+@dirrmtry share/locale/sv_SE/LC_MESSAGES
+@dirrmtry share/locale/sv_SE
 @dirrmtry share/locale/nl_BE/LC_MESSAGES
 @dirrmtry share/locale/nl_BE
