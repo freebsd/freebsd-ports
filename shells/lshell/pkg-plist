@@ -1,8 +1,21 @@
 @shell bin/lshell
-man/man1/lshell.1.gz
 @sample etc/lshell.conf.sample
 etc/logrotate.d/lshell
-%%PYTHON_SITELIBDIR%%/lshell.py
-%%PYTHON_SITELIBDIR%%/lshell.pyc
-%%PYTHON_SITELIBDIR%%/lshell.pyo
+man/man1/lshell.1.gz
+%%PYTHON_SITELIBDIR%%/lshell/__init__.py
+%%PYTHON_SITELIBDIR%%/lshell/__init__.pyc
+%%PYTHON_SITELIBDIR%%/lshell/__init__.pyo
+%%PYTHON_SITELIBDIR%%/lshell/checkconfig.py
+%%PYTHON_SITELIBDIR%%/lshell/checkconfig.pyc
+%%PYTHON_SITELIBDIR%%/lshell/checkconfig.pyo
+%%PYTHON_SITELIBDIR%%/lshell/shellcmd.py
+%%PYTHON_SITELIBDIR%%/lshell/shellcmd.pyc
+%%PYTHON_SITELIBDIR%%/lshell/shellcmd.pyo
+%%PYTHON_SITELIBDIR%%/lshell/utils.py
+%%PYTHON_SITELIBDIR%%/lshell/utils.pyc
+%%PYTHON_SITELIBDIR%%/lshell/utils.pyo
+%%PORTDOCS%%%%DOCSDIR%%/CHANGES
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm %%PYTHON_SITELIBDIR%%/lshell
 @dirrmtry etc/logrotate.d
