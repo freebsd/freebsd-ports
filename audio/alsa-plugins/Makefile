@@ -2,86 +2,63 @@
 # $FreeBSD$
 
 PORTNAME=	alsa-plugins
-PORTVERSION=	1.0.27
-PORTREVISION=	3
+PORTVERSION=	1.0.28
 CATEGORIES=	audio
 MASTER_SITES=	ALSA/plugins \
 		GENTOO/distfiles
 
-MAINTAINER=	aragon@phat.za.net
+MAINTAINER=	jbeich@vfemail.net
 COMMENT=	ALSA compatibility library plugins
+
+LICENSE=	LGPL21 # or any later version
 
 LIB_DEPENDS=	libasound.so:${PORTSDIR}/audio/alsa-lib
 
 GNU_CONFIGURE=	yes
 USES=		tar:bzip2 pkgconfig libtool:keepla
-LDFLAGS+=	-L${LOCALBASE}/lib
 EXTRA_PATCHES+=	${FILESDIR}/alsa-plugins.patch
+INSTALL_TARGET=	install-strip
+CPPFLAGS+=	-I${.CURDIR}/../alsa-lib/files
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 OPTIONS_DEFAULT=BUFSZ_P2 IO_PTR
 OPTIONS_DEFINE=	JACK FFMPEG PULSEAUDIO SAMPLERATE SPEEX
-OPTIONS_SUB=	${OPTIONS_DEFINE}
+OPTIONS_SUB=	yes
 
 OPTIONS_GROUP=	OSS
 OPTIONS_GROUP_OSS=IO_PTR BLKCNT_P2 BUFSZ_P2 VERBOSE
 
 IO_PTR_DESC=	Precise playback/recording pointer
 BLKCNT_P2_DESC=	Restrict number of fragments to ^2 aligned
-BUFSZ_P2_DESC=	Restrict buffer size to ^2 aligned (breaks aplay)
+BUFSZ_P2_DESC=	Restrict buffer size to ^2 aligned
 VERBOSE_DESC=	Print debugging messages
+
+IO_PTR_CFLAGS=	-DFREEBSD_OSS_USE_IO_PTR
+BLKCNT_P2_CFLAGS=-DFREEBSD_OSS_BLKCNT_P2
+BUFSZ_P2_CFLAGS=-DFREEBSD_OSS_BUFSZ_P2
+VERBOSE_CFLAGS=	-DFREEBSD_OSS_DEBUG_VERBOSE
+
+JACK_LIB_DEPENDS=	libjack.so:${PORTSDIR}/audio/jack
+JACK_CONFIGURE_ENABLE=	jack
+
+FFMPEG_LIB_DEPENDS=	libavcodec.so:${PORTSDIR}/multimedia/ffmpeg
+FFMPEG_CONFIGURE_ENABLE=avcodec
+FFMPEG_CPPFLAGS=	-I${LOCALBASE}/include
+
+PULSEAUDIO_LIB_DEPENDS=	libpulse.so:${PORTSDIR}/audio/pulseaudio
+PULSEAUDIO_CONFIGURE_ENABLE=pulseaudio
+
+SAMPLERATE_LIB_DEPENDS=	libsamplerate.so:${PORTSDIR}/audio/libsamplerate
+SAMPLERATE_CONFIGURE_ENABLE=samplerate
+
+SPEEX_LIB_DEPENDS=	libspeex.so:${PORTSDIR}/audio/speex
+SPEEX_CONFIGURE_ON=	--with-speex=lib
+SPEEX_CONFIGURE_OFF=	--without-speex
 
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MIO_PTR}
-CFLAGS+=	-DFREEBSD_OSS_USE_IO_PTR
-.endif
-
-.if ${PORT_OPTIONS:MBLKCNT_P2}
-CFLAGS+=	-DFREEBSD_OSS_BLKCNT_P2
-.endif
-
-.if ${PORT_OPTIONS:MBUFSZ_P2}
-CFLAGS+=	-DFREEBSD_OSS_BUFSZ_P2
-.endif
-
-.if ${PORT_OPTIONS:MVERBOSE}
-CFLAGS+=	-DFREEBSD_OSS_DEBUG_VERBOSE
-.endif
-
-.if ${PORT_OPTIONS:MJACK}
-.if empty(PORT_OPTIONS:MSAMPLERATE)
+.if ${PORT_OPTIONS:MJACK} && empty(PORT_OPTIONS:MSAMPLERATE)
 IGNORE=			JACK audio support requires SAMPLERATE
-.endif
-LIB_DEPENDS+=		libjack.so:${PORTSDIR}/audio/jack
-.else
-CONFIGURE_ARGS+=	--disable-jack
-.endif
-
-.if ${PORT_OPTIONS:MFFMPEG}
-CONFIGURE_ARGS+=	--enable-avcodec
-CFLAGS+=		-I${LOCALBASE}/include
-LIB_DEPENDS+=		libavcodec.so:${PORTSDIR}/multimedia/ffmpeg
-.else
-CONFIGURE_ARGS+=	--disable-avcodec
-.endif
-
-.if ${PORT_OPTIONS:MPULSEAUDIO}
-LIB_DEPENDS+=		libpulse.so:${PORTSDIR}/audio/pulseaudio
-.else
-CONFIGURE_ARGS+=	--disable-pulseaudio
-.endif
-
-.if ${PORT_OPTIONS:MSAMPLERATE}
-LIB_DEPENDS+=		libsamplerate.so:${PORTSDIR}/audio/libsamplerate
-.else
-CONFIGURE_ARGS+=	--disable-samplerate
-.endif
-
-.if ${PORT_OPTIONS:MSPEEX}
-CONFIGURE_ARGS+=	--with-speex=lib
-LIB_DEPENDS+=		libspeex.so:${PORTSDIR}/audio/speex
-.else
-CONFIGURE_ARGS+=	--without-speex
 .endif
 
 post-patch:	.SILENT

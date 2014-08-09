@@ -42,14 +42,11 @@
  	oss->ext.private_data = oss;
 --- oss/pcm_oss.c.orig	2009-08-31 21:09:41.000000000 +0800
 +++ oss/pcm_oss.c	2009-09-28 14:54:12.000000000 +0800
-@@ -22,17 +22,48 @@
+@@ -22,17 +22,41 @@
  #include <sys/ioctl.h>
  #include <alsa/asoundlib.h>
  #include <alsa/pcm_external.h>
  #include <linux/soundcard.h>
-+#ifdef __FreeBSD__
-+#include <sys/param.h>
-+#endif
 +
 +#define ARRAY_SIZE(x)	(sizeof(x) / sizeof(*(x)))
 +
@@ -58,11 +55,7 @@
 +#define FREEBSD_OSS_RATE_MAX	384000
 +
 +#define FREEBSD_OSS_CHANNELS_MIN	1
-+#ifndef __DragonFly__
 +#define FREEBSD_OSS_CHANNELS_MAX	8
-+#else
-+#define FREEBSD_OSS_CHANNELS_MAX	2
-+#endif
 +
 +#define FREEBSD_OSS_BUFSZ_MAX	131072
 +#define FREEBSD_OSS_BLKCNT_MIN	2

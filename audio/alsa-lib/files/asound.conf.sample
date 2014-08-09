@@ -1,65 +1,13 @@
 #
 # FreeBSD/OSS
 #
-pcm_slave.oss {
-	pcm.type oss
-}
-
 pcm.!default {
 	type plug
-	slave oss
+	slave.pcm.type oss
 }
 
 ctl.!default {
 	type oss
-}
-
-#
-# Remap all possible surround stuffs.
-#
-pcm.!front {
-	type plug
-	slave oss
-}
-
-pcm.!rear {
-	type plug
-	slave oss
-}
-
-pcm.!center_lfe {
-	type plug
-	slave oss
-}
-
-pcm.!side {
-	type plug
-	slave oss
-}
-
-pcm.!surround40 {
-	type plug
-	slave oss
-}
-
-pcm.!surround41 {
-	type plug
-	slave oss
-}
-
-pcm.!surround50 {
-	type plug
-	slave oss
-}
-
-pcm.!surround51 {
-	type plug
-	slave oss
-}
-
-pcm.!surround71 {
-	type plug
-	slave oss
 }
 
 #
@@ -72,3 +20,17 @@ pcm.!surround71 {
 # ctl.!default {
 # 	type pulse
 # }
+
+#
+# Remap all possible surround stuffs.
+#
+pcm.!front pcm.default
+pcm.!rear pcm.default
+pcm.!center_lfe pcm.default
+pcm.!side pcm.default
+pcm.!surround21 pcm.default
+pcm.!surround40 pcm.default
+pcm.!surround41 pcm.default
+pcm.!surround50 pcm.default
+pcm.!surround51 pcm.default
+pcm.!surround71 pcm.default
