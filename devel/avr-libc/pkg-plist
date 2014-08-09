@@ -410,18 +410,6 @@ avr/lib/avr6/libprintf_flt.a
 avr/lib/avr6/libprintf_min.a
 avr/lib/avr6/libscanf_flt.a
 avr/lib/avr6/libscanf_min.a
-avr/lib/avrtiny10/crttn10.o
-avr/lib/avrtiny10/crttn20.o
-avr/lib/avrtiny10/crttn4.o
-avr/lib/avrtiny10/crttn40.o
-avr/lib/avrtiny10/crttn5.o
-avr/lib/avrtiny10/crttn9.o
-avr/lib/avrtiny10/libc.a
-avr/lib/avrtiny10/libm.a
-avr/lib/avrtiny10/libprintf_flt.a
-avr/lib/avrtiny10/libprintf_min.a
-avr/lib/avrtiny10/libscanf_flt.a
-avr/lib/avrtiny10/libscanf_min.a
 avr/lib/avrxmega2/crtx16a4.o
 avr/lib/avrxmega2/crtx16d4.o
 avr/lib/avrxmega2/crtx32a4.o
@@ -441,7 +429,6 @@ avr/lib/avrxmega4/libprintf_min.a
 avr/lib/avrxmega4/libscanf_flt.a
 avr/lib/avrxmega4/libscanf_min.a
 avr/lib/avrxmega5/crtx64a1.o
-avr/lib/avrxmega5/crtx64a1u.o
 avr/lib/avrxmega5/libc.a
 avr/lib/avrxmega5/libm.a
 avr/lib/avrxmega5/libprintf_flt.a
@@ -462,7 +449,6 @@ avr/lib/avrxmega6/libprintf_min.a
 avr/lib/avrxmega6/libscanf_flt.a
 avr/lib/avrxmega6/libscanf_min.a
 avr/lib/avrxmega7/crtx128a1.o
-avr/lib/avrxmega7/crtx128a1u.o
 avr/lib/avrxmega7/libc.a
 avr/lib/avrxmega7/libm.a
 avr/lib/avrxmega7/libprintf_flt.a
@@ -523,5 +509,4 @@ share/doc/avr-libc/AUTHORS
 @dirrm avr/lib/avrxmega5
 @dirrm avr/lib/avrxmega6
 @dirrm avr/lib/avrxmega7
-@dirrm avr/lib/avrtiny10
 @dirrm share/doc/avr-libc

@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	doxygen
-PORTVERSION=	1.8.3.1
-PORTREVISION=	1
+PORTVERSION=	1.8.7
 PORTEPOCH=	1
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.stack.nl/pub/users/dimitri/ \
@@ -16,15 +15,22 @@ COMMENT=	Documentation system for C, C++, and other languages
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	tmake:${PORTSDIR}/devel/tmake
+BUILD_DEPENDS=	tmake:${PORTSDIR}/devel/tmake \
+		flex>0:${PORTSDIR}/textproc/flex \
+		python:${PORTSDIR}/lang/python \
+		dvips:${PORTSDIR}/print/tex-dvipsk \
+		${LOCALBASE}/share/fonts/cm-super/README:${PORTSDIR}/print/cm-super
+
 LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png
 
 USES=		bison iconv perl5 gmake
+USE_PYTHON=	2
 ALL_TARGET=	all
 HAS_CONFIGURE=	yes
+MAKE_JOBS_UNSAFE=	yes
 QT_NONSTANDARD=	yes	# non-standard configure arguments
 CONFIGURE_ARGS=	--prefix ${PREFIX} --perl ${PERL} --make ${MAKE_CMD} \
-		--install "${INSTALL}"
+		--install "${INSTALL}" --flex ${LOCALBASE}/bin/flex
 REINPLACE_ARGS=	-i ''
 
 EXTRACT_AFTER_ARGS=	--exclude '*/libmd5'	\
@@ -45,7 +51,6 @@ PDFDOCS_DESC=	Install documentation in PDF format
 
 .if ${PORT_OPTIONS:MHTMLDOCS}
 ALL_TARGET+=	docs
-USE_PYTHON_BUILD=	yes
 BUILD_DEPENDS+=	dot:${PORTSDIR}/graphics/graphviz
 
 .if ${PORT_OPTIONS:MPDFDOCS}

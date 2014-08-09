@@ -3,16 +3,16 @@
 
 PORTNAME=	avr-libc
 PORTVERSION=	1.8.0
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	devel
 MASTER_SITES=	SAVANNAH
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER= ports@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C and math library for the Atmel AVR controller family
 
-LICENSE=	BSD
+LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	avr-as:${PORTSDIR}/devel/avr-binutils \
@@ -24,7 +24,6 @@ RUN_DEPENDS=	avr-as:${PORTSDIR}/devel/avr-binutils \
 
 OPTIONS_DEFINE=	DOCS
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ! ${PORT_OPTIONS:MDOCS}
@@ -35,7 +34,8 @@ NO_STAGE=	yes
 USE_TEX=	latex:build
 BUILD_DEPENDS+=	doxygen:${PORTSDIR}/devel/doxygen \
 		fig2dev:${PORTSDIR}/print/transfig \
-		jpegtopnm:${PORTSDIR}/graphics/netpbm
+		jpegtopnm:${PORTSDIR}/graphics/netpbm \
+		dvips:${PORTSDIR}/print/tex-dvipsk
 .endif
 
 USES=		gettext:build tar:bzip2 gmake
@@ -57,8 +57,8 @@ PLIST_DOC=
 # Sorry, the user is no longer be able to override the optimization and
 # debugging settings now.
 MAKE_ENV=	NO_CPU_CFLAGS=true
-CFLAGS=		-O
-CXXFLAGS=	-O
+CFLAGS+=	-O
+CXXFLAGS+=	-O
 
 post-patch:
 .if ! ${PORT_OPTIONS:MDOCS}
@@ -86,10 +86,10 @@ do-install:
 	        @for file in ${PLIST_FILES}; do \
 			${ECHO_CMD} $${file} >> ${TMPPLIST}; \
 	        done
-		(cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} ${MAKE_CMD} install)
-		${MKDIR} ${DOCSDIR}
-		${INSTALL_DATA} \
-			${WRKDIR}/${DISTNAME}/AUTHORS \
-			${DOCSDIR}
+		(cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} \
+			${MAKE_CMD} ${MAKE_ARGS} install)
+		${MKDIR} ${STAGEDIR}${DOCSDIR}
+		${INSTALL_DATA} ${WRKDIR}/${DISTNAME}/AUTHORS \
+			${STAGEDIR}/${DOCSDIR}
 
 .include <bsd.port.mk>

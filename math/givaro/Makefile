@@ -3,6 +3,7 @@
 
 PORTNAME=	givaro
 PORTVERSION=	3.5.0
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	https://forge.imag.fr/frs/download.php/133/ LOCAL/bf
 
@@ -16,9 +17,11 @@ LICENSE_PERMS=	auto-accept
 
 LIB_DEPENDS=	libgmp.so:${PORTSDIR}/math/gmp
 
+USES=		libtool
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-gmp="${LOCALBASE}"
 USE_LDCONFIG=	yes
+INSTALL_TARGET=	install-strip
 
 OPTIONS_DEFINE=	DOXYGEN
 
@@ -26,7 +29,7 @@ OPTIONS_DEFINE=	DOXYGEN
 
 .if ${PORT_OPTIONS:MDOXYGEN}
 BUILD_DEPENDS +=	doxygen:${PORTSDIR}/devel/doxygen
-CONFIGURE_ARGS+=	--enable-doc --with-docdir="${DOCSDIR}"
+CONFIGURE_ARGS+=	--enable-doc --with-docdir=${DOCSDIR}
 PLIST_SUB+=	DOXYGEN=""
 .else
 PLIST_SUB+=	DOXYGEN="@comment "
@@ -47,8 +50,8 @@ post-patch:
 
 .if ${PORT_OPTIONS:MDOXYGEN}
 post-install:
-	@${TOUCH} ${DOCSDIR}/givaro-dev-html/.keep-me
-
+	${MKDIR} ${STAGEDIR}${DOCSDIR}/givaro-dev-html/
+	${TOUCH} ${STAGEDIR}${DOCSDIR}/givaro-dev-html/.keep-me
 .endif
 
 check regression-test test: build

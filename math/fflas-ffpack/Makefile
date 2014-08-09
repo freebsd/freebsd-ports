@@ -3,7 +3,7 @@
 
 PORTNAME=	fflas-ffpack
 PORTVERSION=	1.4.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math
 MASTER_SITES=	http://linalg.org/ LOCAL/bf
 
@@ -14,10 +14,12 @@ LICENSE=	LGPL20
 
 LIB_DEPENDS=	libgmp.so:${PORTSDIR}/math/gmp
 
+USES=		shebangfix
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-gmp="${LOCALBASE}"
+SHEBANG_FILES=	fflas-ffpack-config.in
 
-OPTIONS_DEFINE=		DOXYGEN OPTIMIZED_CFLAGS
+OPTIONS_DEFINE=	DOXYGEN OPTIMIZED_CFLAGS
 
 .include <bsd.port.options.mk>
 
@@ -27,8 +29,8 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 .endif
 
 .if defined(MAINTAINER_MODE)
-CONFIGURE_ARGS+=	 --with-givaro="${LOCALBASE}"
-LIB_DEPENDS+=	libgivaro.so:${PORTSDIR}/math/givaro
+CONFIGURE_ARGS+=	--with-givaro="${LOCALBASE}"
+LIB_DEPENDS+=		libgivaro.so:${PORTSDIR}/math/givaro
 .else
 CONFIGURE_ARGS+=	--with-givaro=no
 .endif
@@ -48,7 +50,7 @@ USES+=		fortran
 CONFIGURE_ARGS+=	--with-gsl="${LOCALBASE}"
 LIB_DEPENDS+=	libgslcblas.so:${PORTSDIR}/math/gsl
 .else
-IGNORE=		unknown value of WITH_BLAS: ${WITH_BLAS}
+IGNORE =	unknown value of WITH_BLAS: ${WITH_BLAS}
 .endif
 
 .if ${PORT_OPTIONS:MDOXYGEN}
@@ -93,8 +95,8 @@ post-patch:
 
 .if ${PORT_OPTIONS:MDOXYGEN}
 post-install:
-	@${TOUCH} ${DOCSDIR}/fflas-ffpack-dev-html/.keep-me
-
+	${MKDIR} ${STAGEDIR}${DOCSDIR}/fflas-ffpack-dev-html
+	${TOUCH} ${STAGEDIR}${DOCSDIR}/fflas-ffpack-dev-html/.keep-me
 .endif
 
 .if defined(MAINTAINER_MODE)
