@@ -1,0 +1,22 @@
+etc/nagios/victorops.cfg-sample
+etc/nagios/victorops_email.cfg-sample
+etc/nagios/vo_test_svc.cfg-sample
+etc/nagios/vo_test_svc_cmd.cfg-sample
+etc/periodic/daily/400.victorops
+libexec/victorops/check_test_svc
+libexec/victorops/check_victorops_cmds
+libexec/victorops/check_victorops_forwarder
+libexec/victorops/do_victorops_heartbeat
+libexec/victorops/enqueue_alert
+libexec/victorops/forward_alert_file
+libexec/victorops/forward_alerts
+libexec/victorops/send_email_alert
+libexec/victorops/send_status
+libexec/victorops/stop_forwarder
+libexec/victorops/support_collect.sh
+libexec/victorops/url_encode.sed
+libexec/victorops/utils
+@dirrmtry etc/nagios
+@dirrmtry libexec/victorops
+@dirrmtry etc/periodic/daily
+@dirrmtry etc/periodic
