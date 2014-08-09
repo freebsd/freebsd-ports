@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	redaxo
-PORTVERSION=	4.6
+PORTVERSION=	4.6.1
 CATEGORIES=	www
 MASTER_SITES=	http://www.redaxo.org/files/
 DISTNAME=	${PORTNAME}${PORTVERSION:S/./_/g}
