@@ -57,6 +57,37 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="ad747a01-1fee-11e4-8ff1-f0def16c5c1b">
+    <topic>nginx -- inject commands into SSL session vulnerability</topic>
+    <affects>
+      <package>
+	<name>nginx</name>
+	<range><ge>1.6.0,2</ge><lt>1.6.4,2</lt></range>
+      </package>
+      <package>
+	<name>nginx-devel</name>
+	<range><ge>1.5.6</ge><lt>1.7.4</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The nginx project reports:</p>
+	<blockquote cite="http://mailman.nginx.org/pipermail/nginx-announce/2014/000144.html">
+	  <p>Security: pipelined commands were not discarded after STARTTLS
+	    command in SMTP proxy (CVE-2014-3556); the bug had appeared in 1.5.6.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2014-3556</cvename>
+      <url>http://mailman.nginx.org/pipermail/nginx-announce/2014/000144.html</url>
+    </references>
+    <dates>
+      <discovery>2014-08-05</discovery>
+      <entry>2014-08-09</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="8aff07eb-1dbd-11e4-b6ba-3c970e169bc2">
     <topic>OpenSSL -- multiple vulnerabilities</topic>
     <affects>
