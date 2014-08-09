@@ -88,12 +88,6 @@ SVNGROUP?=	svn
 SVNUSER?=	svn
 .endif
 
-.if ${PORT_OPTIONS:MSTATIC}
-PLIST_SUB+=	DYNAMIC_ENABLED="@comment "
-.else
-PLIST_SUB+=	DYNAMIC_ENABLED=""
-.endif
-
 .if make(repository)
 WITH_REPOSITORY_CREATION=	yes
 .endif

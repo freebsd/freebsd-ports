@@ -94,14 +94,10 @@ USES+=			gettext:build
 .  endif
 .  if ${PORT_OPTIONS:MBDB}
 BDB_BUILD_DEPENDS=	yes
-.else
 .  endif
 OLD_LIB_DEPENDS:=	${LIB_DEPENDS:S!^!${LOCALBASE}/lib/!:C!(\.so|\.[0-9]+)?:!.a:!}
 BUILD_DEPENDS+=		${OLD_LIB_DEPENDS}
 LIB_DEPENDS=
-PLIST_SUB+=		DYNAMIC_ENABLED="@comment "
-.else
-PLIST_SUB+=		DYNAMIC_ENABLED=""
 .endif
 
 .if make(repository)
@@ -282,7 +278,7 @@ _mkrepos:	.USE
 .endif
 
 svn-build-outputs-hack:
-	(cd ${WRKSRC} && ./gen-make.py --release --installed-libs libsvn_client,libsvn_delta,libsvn_diff,libsvn_fs,libsvn_ra,libsvn_repos,libsvn_subr,libsvn_wc)
-	${MV} ${WRKSRC}/build-outputs.mk ${FILESDIR}/build-outputs.mk
+	(cd ${WRKSRC} && python2 ./gen-make.py --release --installed-libs libsvn_client,libsvn_delta,libsvn_diff,libsvn_fs,libsvn_ra,libsvn_repos,libsvn_subr,libsvn_wc)
+	${MV} ${WRKSRC}/build-outputs.mk ${FILESDIR}/build-outputs.mk.addons
 
 .include <bsd.port.post.mk>

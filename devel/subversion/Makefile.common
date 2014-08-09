@@ -10,9 +10,11 @@ DIST_SUBDIR=	subversion18
 MASTER_SITE_SUBDIR=	subversion
 
 GNU_CONFIGURE=	yes
-USES+=		tar:bzip2 pkgconfig libtool
+USES+=		tar:bzip2 pkgconfig libtool cpe
 
 LICENSE=	APACHE20
+
+CPE_VENDOR=	apache
 
 CONFLICTS_INSTALL+=	${PKGNAMEPREFIX}${PORTNAME}${PKGNAMESUFFIX}-1.[^8].[0-9]*
 
