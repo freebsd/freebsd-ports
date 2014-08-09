@@ -3,7 +3,7 @@
 
 PORTNAME=	libdrizzle
 PORTVERSION=	0.8
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	databases
 MASTER_SITES=	http://launchpadlibrarian.net/41155299/ \
 		LOCAL/bdrewery/${PORTNAME}/
@@ -21,6 +21,7 @@ GNU_CONFIGURE=	yes
 USES=		gmake libtool
 CONFIGURE_ARGS+=--enable-libsqlite3
 USE_LDCONFIG=	yes
+INSTALL_TARGET=	install-strip
 
 SAMPLE_PROGS=	client pipe_query proxy server simple \
 		simple_multi sqlite_server

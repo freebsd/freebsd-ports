@@ -2,6 +2,7 @@
 
 PORTNAME=	nmsg
 PORTVERSION=	0.8.0
+PORTREVISION=	1
 # DISTNAME=	${PORTNAME}-${PORTVERSION}
 CATEGORIES=	net
 MASTER_SITES=	https://dl.farsightsecurity.com/dist/nmsg/

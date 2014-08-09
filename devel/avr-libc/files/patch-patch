@@ -1,0 +1,28 @@
+--- doc/api/patch-latex-Makefile.orig	1970-01-01 01:00:00.000000000 +0100
++++ doc/api/patch-latex-Makefile	2014-06-19 19:30:34.000000000 +0200
+@@ -0,0 +1,25 @@
++--- Makefile.orig	2014-06-19 19:30:00.000000000 +0200
+++++ Makefile	2014-06-19 19:13:27.000000000 +0200
++@@ -3,18 +3,18 @@
++ pdf: refman.pdf
++ 
++ refman.pdf: clean refman.tex
++-	pdflatex refman
+++	-pdflatex refman
++ 	makeindex refman.idx
++-	pdflatex refman
+++	-pdflatex refman
++ 	latex_count=8 ; \
++ 	while egrep -s 'Rerun (LaTeX|to get cross-references right)' refman.log && [ $$latex_count -gt 0 ] ;\
++ 	    do \
++ 	      echo "Rerunning latex...." ;\
++-	      pdflatex refman ;\
+++	      pdflatex refman || exit 0 ;\
++ 	      latex_count=`expr $$latex_count - 1` ;\
++ 	    done
++ 	makeindex refman.idx
++-	pdflatex refman
+++	-pdflatex refman
++ 
++ 
++ clean:

@@ -44,7 +44,6 @@ lib/libpartio.a
 %%PORTDOCS%%%%DOCSDIR%%/dynsections.js
 %%PORTDOCS%%%%DOCSDIR%%/files.html
 %%PORTDOCS%%%%DOCSDIR%%/ftv2blank.png
-%%PORTDOCS%%%%DOCSDIR%%/ftv2cl.png
 %%PORTDOCS%%%%DOCSDIR%%/ftv2doc.png
 %%PORTDOCS%%%%DOCSDIR%%/ftv2folderclosed.png
 %%PORTDOCS%%%%DOCSDIR%%/ftv2folderopen.png
@@ -52,9 +51,7 @@ lib/libpartio.a
 %%PORTDOCS%%%%DOCSDIR%%/ftv2link.png
 %%PORTDOCS%%%%DOCSDIR%%/ftv2mlastnode.png
 %%PORTDOCS%%%%DOCSDIR%%/ftv2mnode.png
-%%PORTDOCS%%%%DOCSDIR%%/ftv2mo.png
 %%PORTDOCS%%%%DOCSDIR%%/ftv2node.png
-%%PORTDOCS%%%%DOCSDIR%%/ftv2ns.png
 %%PORTDOCS%%%%DOCSDIR%%/ftv2plastnode.png
 %%PORTDOCS%%%%DOCSDIR%%/ftv2pnode.png
 %%PORTDOCS%%%%DOCSDIR%%/ftv2splitbar.png

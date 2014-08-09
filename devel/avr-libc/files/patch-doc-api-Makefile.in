@@ -1,0 +1,10 @@
+--- doc/api/Makefile.in-orig	2014-06-19 19:32:10.000000000 +0200
++++ doc/api/Makefile.in	2014-06-19 19:33:18.000000000 +0200
+@@ -505,6 +505,7 @@
+ latex_src/refman.tex: doxygen.config $(IMAGE_EPS) $(IMAGE_PNG)
+ 	doxygen doxygen.config
+ 	cp $(top_srcdir)/doc/api/avrs.png-save $(AVR_LIBC_USER_MANUAL)/avrs.png
++	cd latex_src && patch < ../patch-latex-Makefile
+ 	cd latex_src && \
+ 		sed -e '/tocdepth/s/1/2/' \
+ 		-e '/usepackage{doxygen}/s/$$/\\usepackage{longtable}/' \

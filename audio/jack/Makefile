@@ -3,13 +3,16 @@
 
 PORTNAME=	jackit
 PORTVERSION=	0.121.3
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	audio
 MASTER_SITES=	http://jackaudio.org/downloads/
 DISTNAME=	jack-audio-connection-kit-${PORTVERSION}
 
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Low latency audio server
+
+LICENSE=	GPLv2 LGPL21
+LICENSE_COMB=	multi
 
 LIB_DEPENDS=	libportaudio.so:${PORTSDIR}/audio/portaudio \
 		libsndfile.so:${PORTSDIR}/audio/libsndfile \
@@ -24,6 +27,7 @@ CONFIGURE_ARGS=	--enable-portaudio \
 		--with-default-tmpdir=/tmp
 CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib
+INSTALL_TARGET=	install-strip
 
 LATEST_LINK=	jack
 
