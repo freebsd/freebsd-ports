@@ -13,6 +13,8 @@ COMMENT=	Lazy functional language
 
 WRKSRC=		${WRKDIR}/src
 
+USES=		readline
+
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS} -DUSE_READLINE=1" \
 		LDFLAGS="${LDFLAGS} -lm -lreadline" OPTFLAGS=""
 
