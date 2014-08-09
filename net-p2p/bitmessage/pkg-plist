@@ -12,6 +12,9 @@ share/pybitmessage/api.pyo
 share/pybitmessage/api_client.py
 share/pybitmessage/api_client.pyc
 share/pybitmessage/api_client.pyo
+share/pybitmessage/bitmessagecurses/__init__.py
+share/pybitmessage/bitmessagecurses/__init__.pyc
+share/pybitmessage/bitmessagecurses/__init__.pyo
 share/pybitmessage/bitmessagemain.py
 share/pybitmessage/bitmessagemain.pyc
 share/pybitmessage/bitmessagemain.pyo
@@ -220,6 +223,12 @@ share/pybitmessage/translations/bitmessage_eo.ts
 share/pybitmessage/translations/bitmessage_fr.pro
 share/pybitmessage/translations/bitmessage_fr.qm
 share/pybitmessage/translations/bitmessage_fr.ts
+share/pybitmessage/translations/bitmessage_ja.pro
+share/pybitmessage/translations/bitmessage_ja.qm
+share/pybitmessage/translations/bitmessage_ja.ts
+share/pybitmessage/translations/bitmessage_nl.pro
+share/pybitmessage/translations/bitmessage_nl.qm
+share/pybitmessage/translations/bitmessage_nl.ts
 share/pybitmessage/translations/bitmessage_no.pro
 share/pybitmessage/translations/bitmessage_no.qm
 share/pybitmessage/translations/bitmessage_no.ts
@@ -229,17 +238,12 @@ share/pybitmessage/translations/bitmessage_ru.ts
 share/pybitmessage/translations/bitmessage_zh_cn.pro
 share/pybitmessage/translations/bitmessage_zh_cn.qm
 share/pybitmessage/translations/bitmessage_zh_cn.ts
-@dirrmtry share/pybitmessage/translations
-@dirrmtry share/pybitmessage/socks
-@dirrmtry share/pybitmessage/pyelliptic
-@dirrmtry share/pybitmessage/images
-@dirrmtry share/pybitmessage/bitmessageqt
-@dirrmtry share/pybitmessage
 @dirrmtry share/man/man1
 @dirrmtry share/man
-@dirrmtry share/icons/hicolor/scalable/apps
-@dirrmtry share/icons/hicolor/scalable
-@dirrmtry share/icons/hicolor/24x24/apps
-@dirrmtry share/icons/hicolor/24x24
-@dirrmtry share/icons/hicolor
-@dirrmtry share/icons
+@dirrmtry share/pybitmessage/bitmessagecurses
+@dirrmtry share/pybitmessage/bitmessageqt
+@dirrmtry share/pybitmessage/images
+@dirrmtry share/pybitmessage/pyelliptic
+@dirrmtry share/pybitmessage/socks
+@dirrmtry share/pybitmessage/translations
+@dirrmtry share/pybitmessage
