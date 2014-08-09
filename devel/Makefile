@@ -4040,6 +4040,7 @@
     SUBDIR += py_static_check
     SUBDIR += py3-dbus
     SUBDIR += py3-gobject3
+    SUBDIR += py3-xdg
     SUBDIR += pybaz
     SUBDIR += pybugz
     SUBDIR += pychecker
