@@ -1,8 +1,8 @@
-# Created by: Solène RAPENNE <charles@bsd.zplay.eu>
+# Created by: Solène RAPENNE <solene@bsd.zplay.eu>
 # $FreeBSD$
 
 PORTNAME=	sxiv
-PORTVERSION=	1.1.1
+PORTVERSION=	1.2
 CATEGORIES=	graphics
 MASTER_SITES=	https://github.com/muennich/sxiv/archive/
 DISTNAME=	v${PORTVERSION}
@@ -20,8 +20,12 @@ USE_XORG=	x11
 
 PLIST_FILES=	bin/sxiv \
 		man/man1/sxiv.1.gz \
-		share/sxiv/exec/image-info
+		share/sxiv/exec/image-info \
+		share/sxiv/exec/key-handler
 PLIST_DIRS=	share/sxiv/exec \
 		share/sxiv
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/sxiv
 
 .include <bsd.port.mk>
