@@ -11,10 +11,13 @@ then
   if [ `uname -p` = i386 ]
   then
     export LD_LIBRARY_PATH="$LOCALBASE/lib32":"$LOCALBASE/lib32/wine":"$LD_LIBRARY_PATH"
+    export LD_LIBRARY_PATH_RPATH="$LOCALBASE/lib32":"$LOCALBASE/lib32/wine":"$LD_LIBRARY_PATH_RPATH"
   else
     export LD_32_LIBRARY_PATH="$LOCALBASE/lib32":"$LOCALBASE/lib32/wine":"$LD_32_LIBRARY_PATH":/usr/lib32
+    export LD_32_LIBRARY_PATH_RPATH="$LOCALBASE/lib32":"$LOCALBASE/lib32/wine":"$LD_32_LIBRARY_PATH_RPATH":/usr/lib32
   fi
   export PATH="$LOCALBASE/bin32":"$PATH"
+  export __BINBOUNCE_BOOTSTRAP="1"
 fi
 
 exec "$LOCALBASE/bin32/$BINNAME" "$@"

@@ -7,8 +7,9 @@ MAINTAINER=	dbn@FreeBSD.org
 COMMENT=	32bit Microsoft Windows compatibility environment for 64bit FreeBSD
 
 # Use the wine port to do most of the heavy lifting
-MASTERDIR=	${.CURDIR}/../wine-devel
-PKGINSTALL=	${.CURDIR}/files/pkg-install
+SLAVEDIR?=	${.CURDIR}
+MASTERDIR=	${SLAVEDIR}/../wine-devel
+PKGINSTALL=	${SLAVEDIR}/files/pkg-install
 PKGDEINSTALL=	${PKGINSTALL}
 
 RUN_DEPENDS=	dri>0:${PORTSDIR}/graphics/dri
@@ -27,7 +28,7 @@ USE_LDCONFIG32=	${WINELIBDIR} ${WINELIBDIR}/wine
 # under FreeBSD/amd64
 post-install-script:
 	# Install bounce script to access the 32bit executables
-	${INSTALL_SCRIPT} ${.CURDIR}/files/binbounce ${STAGEDIR}${PREFIX}/bin/wine
+	${INSTALL_SCRIPT} ${SLAVEDIR}/files/binbounce ${STAGEDIR}${PREFIX}/bin/wine
 	for i in `grep ^bin ${TMPPLIST} | xargs -n1 basename` ; do \
 		[ "$${i}" = "wine" ] || ${LN} -f ${STAGEDIR}${PREFIX}/bin/wine ${STAGEDIR}${PREFIX}/bin/$${i} ; \
 		echo bin32/$${i} >> ${TMPPLIST} ; \
@@ -72,7 +73,7 @@ post-install-script:
 	fi
 	echo '@dirrm bin32' >> ${TMPPLIST}
 	# Install nvidia patching script
-	${INSTALL_SCRIPT} ${.CURDIR}/files/nvidia.sh ${STAGEDIR}${DATADIR}/patch-nvidia.sh
+	${INSTALL_SCRIPT} ${SLAVEDIR}/files/nvidia.sh ${STAGEDIR}${DATADIR}/patch-nvidia.sh
 	echo ${DATADIR:S|$(PREFIX)/||}/patch-nvidia.sh >> ${TMPPLIST}
 	@${CAT} ${PKGMESSAGE}
 
