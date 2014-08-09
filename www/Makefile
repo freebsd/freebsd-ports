@@ -2102,6 +2102,7 @@
     SUBDIR += vee
     SUBDIR += vertx
     SUBDIR += videocache
+    SUBDIR += vimb
     SUBDIR += visitors
     SUBDIR += volta
     SUBDIR += w3m
