@@ -40,3 +40,6 @@ lib/alsa-lib/libasound_module_pcm_vdownmix.so
 %%SPEEX%%lib/alsa-lib/libasound_module_rate_speexrate_medium.so
 %%PULSEAUDIO%%share/alsa/alsa.conf.d/50-pulseaudio.conf
 %%PULSEAUDIO%%share/alsa/alsa.conf.d/99-pulseaudio-default.conf.example
+%%PULSEAUDIO%%@dirrmtry share/alsa/alsa.conf.d
+%%PULSEAUDIO%%@dirrmtry share/alsa
+@dirrmtry lib/alsa-lib
