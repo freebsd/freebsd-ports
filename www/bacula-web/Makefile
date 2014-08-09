@@ -2,54 +2,58 @@
 # $FreeBSD$
 
 PORTNAME=	bacula-web
-DISTVERSION=	1.38.9
-PORTREVISION=	1
-CATEGORIES=	www
-MASTER_SITES=	SF/bacula/OldFiles
-DISTNAME=	bacula-gui-${DISTVERSION}
+DISTVERSION=	6.0.1
+CATEGORIES=	sysutils www
+MASTER_SITES=	http://www.bacula-web.org/files/bacula-web.org/downloads/
 
 MAINTAINER=	dan@langille.org
 COMMENT=	Bacula-web provides a summarized output of Bacula jobs
 
-RUN_DEPENDS=	${LOCALBASE}/share/pear/DB.php:${PORTSDIR}/databases/pear-DB
+LICENSE=	GPLv2
 
-NO_BUILD=	yes
-USE_PHP=	gd
+USES=		tar:tgz
+USE_PHP=	gd gettext session
 WANT_PHP_WEB=	yes
+NO_BUILD=	yes
+NO_WRKSUBDIR=	yes
 
-OPTIONS_DEFINE=		PGSQL
+BACULAWEB_HOME?=${WWWDIR}
+BASE=		${BACULAWEB_HOME:S|${PREFIX}/||}
+SUB_FILES=	pkg-message
+PLIST_SUB=	WWWOWN=${WWWOWN} WWWGRP=${WWWGRP} BASE=${BASE}
+
+OPTIONS_DEFINE=		MYSQL PGSQL SQLITE
 OPTIONS_DEFAULT=	PGSQL
 
-SUB_FILES=	pkg-message
-
 .include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MMYSQL}
+USE_MYSQL=		yes
+CONFIGURE_ARGS+=	--with-mysql=yes
+SUB_LIST+=		REQ_MYSQL=mysql
+USE_PHP+=		pdo_mysql
+.endif
 
 .if ${PORT_OPTIONS:MPGSQL}
 USE_PGSQL=		yes
 CONFIGURE_ARGS+=	--with-postgresql=yes
 SUB_LIST+=		REQ_PGSQL=postgresql
-USE_PHP+=		pgsql
-.else
-CONFIGURE_ARGS+=	--with-mysql=yes
-USE_MYSQL=		yes
-SUB_LIST+=		REQ_MYSQL=mysql
-USE_PHP+=		mysql
+USE_PHP+=		pdo_pgsql
+.endif
+
+.if ${PORT_OPTIONS:MSQLITE}
+USE_SQLITE=		yes
+CONFIGURE_ARGS+=	--with-sqlite=yes
+SUB_LIST+=		REQ_SQLITE=sqlite
+USE_PHP+=		pdo_sqlite
 .endif
 
 do-install:
-	@${ECHO} "Installing in ${PREFIX}/www/bacula-web"
-	${MKDIR} ${STAGEDIR}${PREFIX}/www/bacula-web
-	${CP} -R ${WRKSRC}/bacula-web/* ${STAGEDIR}${PREFIX}/www/bacula-web
-	${CHOWN} -R ${WWWOWN}:${WWWGRP} ${STAGEDIR}${PREFIX}/www/bacula-web
-	${MV} ${STAGEDIR}${PREFIX}/www/bacula-web/configs/bacula.conf ${STAGEDIR}${PREFIX}/etc/bacula-web.conf.sample; \
-	${RM} -rf ${STAGEDIR}${PREFIX}/www/bacula-web/configs; \
-
-	if [ ! -f /var/bacula-web/templates_c ]; then \
-		${MKDIR} ${STAGEDIR}/var/bacula-web/templates_c; \
-		${CHOWN} -R ${WWWOWN}:${WWWGRP} ${STAGEDIR}/var/bacula-web/templates_c; \
-	fi
-
-post-install:
-	@${CAT} ${PKGMESSAGE}
+	@${ECHO} "Installing in ${BACULAWEB_HOME}"
+	${MKDIR} ${STAGEDIR}${BACULAWEB_HOME}
+	cd ${WRKSRC} && ${COPYTREE_SHARE} application \
+		${STAGEDIR}${BACULAWEB_HOME}
+	cd ${WRKSRC} && ${COPYTREE_SHARE} core ${STAGEDIR}${BACULAWEB_HOME}
+	${INSTALL_DATA} ${WRKSRC}/*.php ${STAGEDIR}${BACULAWEB_HOME}
 
 .include <bsd.port.mk>
