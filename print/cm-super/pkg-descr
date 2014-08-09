@@ -7,3 +7,5 @@ Adobe StandardEncoding (585 glyphs per non-SC font and 468 glyphs
 per SC font), and could be reencoded to any of these encodings
 using standard dvips or pdftex facilities (the corresponding support
 files are also included).
+
+WWW: http://www.ctan.org/tex-archive/fonts/ps-type1/cm-super/
