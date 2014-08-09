@@ -1,0 +1,7 @@
+man/man8/p910nd.8.gz
+sbin/p910nd
+%%DATADIR%%/banner.pl
+%%DATADIR%%/client.pl
+@dirrmtry %%DATADIR%%
+@exec [ -d %%P910ND_RUNDIR%% ] || mkdir -p %%P910ND_RUNDIR%%
+@unexec if [ -z ${UPGRADE_PORT} ] ; then rmdir %%P910ND_RUNDIR%% 2>/dev/null; fi

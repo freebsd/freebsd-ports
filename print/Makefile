@@ -170,6 +170,7 @@
     SUBDIR += p5-PostScript-Simple
     SUBDIR += p5-Text-PDF
     SUBDIR += p5-XML-ApacheFOP
+    SUBDIR += p910nd
     SUBDIR += panda
     SUBDIR += papersize-default-a4
     SUBDIR += papersize-default-letter

@@ -1,0 +1,31 @@
+# $FreeBSD$
+
+PORTNAME=	p910nd
+PORTVERSION=	0.97
+CATEGORIES=	print net
+MASTER_SITES=	SF
+
+MAINTAINER=	kozlov.sergey.404@gmail.com
+COMMENT=	Port 9100+n printer daemon
+
+LICENSE=	GPLv2
+
+USES=		tar:bzip2
+
+USE_RC_SUBR=	p910nd
+
+P910ND_RUNDIR=	/var/run/${PORTNAME}
+PLIST_SUB=	P910ND_RUNDIR=${P910ND_RUNDIR}
+
+CFLAGS+=	-DLOCKFILE_DIR="\"${P910ND_RUNDIR}\"" -DUSE_WRAP
+
+do-build:
+	${CC} -o ${WRKSRC}/${PORTNAME} ${WRKSRC}/${PORTNAME}.c ${CFLAGS}
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/sbin
+	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.8 ${STAGEDIR}${MANPREFIX}/man/man8
+	${MKDIR} ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/*.pl ${STAGEDIR}${DATADIR}
+
+.include <bsd.port.mk>
