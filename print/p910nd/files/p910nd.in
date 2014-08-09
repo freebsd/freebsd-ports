@@ -1,0 +1,28 @@
+#!/bin/sh
+
+# $FreeBSD$
+# 
+# PROVIDE: p910nd
+# REQUIRE: DAEMON
+# BEFORE:  LOGIN
+# KEYWORD: shutdown
+#
+# Add the following line to /etc/rc.conf to enable p910nd:
+#
+#  p910nd_enable="YES"
+#  # optional
+#  p910nd_flags=""
+#
+# Note:
+# p910nd bind per default at the ipv6 address!
+# If you want p910nd binding at ipv4 address, you have
+# to use option 'p910nd_flags' with -i parameter
+
+. /etc/rc.subr
+
+name=p910nd
+rcvar=p910nd_enable
+command=%%PREFIX%%/sbin/p910nd
+
+load_rc_config $name 
+run_rc_command "$1"

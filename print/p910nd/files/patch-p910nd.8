@@ -1,0 +1,45 @@
+--- p910nd.8.orig	2013-07-07 17:52:31.000000000 +0300
++++ p910nd.8	2013-07-07 18:08:04.000000000 +0300
+@@ -11,7 +11,7 @@
+ .I p910nd
+ is a small daemon that copies any data received on the port
+ it is listening on to the corresponding printer port.
+-It is primarily intended for diskless Linux hosts running as printer drivers
++It is primarily intended for diskless hosts running as printer drivers
+ but there is no reason why it could not be used on diskful hosts.
+ Port 9100 is copied to /dev/lp0, 9101 to /dev/lp1 and 9102 to /dev/lp2.
+ The default is port 9100 to /dev/lp0.
+@@ -30,15 +30,6 @@
+ can be run as a standalone daemon or from (x)inetd.
+ It will automatically detect if it is running under (x)inetd.
+ .LP
+-A sample SysVinit script,
+-.IR p910nd.sh ,
+-is provided for operation as a daemon.
+-.I p910nd
+-will change its name under ps to match the printer port, i.e.
+-.I p9100d, p9101d
+-and
+-.IR p9102d .
+-.LP
+ When running under (x)inetd, the
+ .I /etc/inetd.conf
+ entry should look something like this (with tcpwrappers protection):
+@@ -74,7 +65,7 @@
+ spooler and sending all jobs to this host. You will probably
+ need to set up an intermediate queue anyway to provide print job filtering.
+ .LP
+-If built with USE_WRAP, it uses the libwrap library (tcpwrappers).
++It uses the libwrap library (tcpwrappers).
+ Access control can be done with /etc/hosts.allow
+ and /etc/hosts.deny. The service name is p910nd.
+ .SH DIAGNOSTICS
+@@ -83,7 +74,7 @@
+ .SH "SEE ALSO"
+ printcap(5), hosts_access(5)
+ .SH FILES
+-/var/run/p9100d.pid, /var/lock/subsys/p9100d, /etc/hosts.allow, /etc/hosts.deny
++/var/run/p9100d.pid, /tmp/p9100d, /etc/hosts.allow, /etc/hosts.deny
+ .SH COPYRIGHT
+ .I p910nd
+ is under the GNU Public License Version 2
