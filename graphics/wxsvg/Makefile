@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	wxsvg
-PORTVERSION=	1.4.2
+PORTVERSION=	1.5
 CATEGORIES=	graphics
 MASTER_SITES=	SF
 
@@ -23,6 +23,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	LIBAV_CFLAGS="${LIBAV_CFLAGS}" LIBAV_LIBS="${LIBAV_LIBS}"
 MAKE_ENV=	AM_CPPFLAGS="${LIBAV_CFLAGS}"
 USE_LDCONFIG=	yes
+INSTALL_TARGET=	install-strip
 
 post-extract:
 .for i in configure install-sh
