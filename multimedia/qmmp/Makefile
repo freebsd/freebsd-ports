@@ -90,7 +90,7 @@ FAAD_LIB_DEPENDS=	libfaad.so:${PORTSDIR}/audio/faad \
 FAAD_CMAKE_ON=	-DUSE_AAC:BOOL=TRUE
 FAAD_CMAKE_OFF=	-DUSE_AAC:BOOL=FALSE
 
-CDIO_LIB_DEPENDS=	libcdio.so:${PORTSDIR}/sysutils/libcdio
+CDIO_LIB_DEPENDS=	libcdio_paranoia.so:${PORTSDIR}/sysutils/libcdio-paranoia
 CDIO_CMAKE_ON=	-DUSE_CDA:BOOL=TRUE
 CDIO_CMAKE_OFF=	-DUSE_CDA:BOOL=FALSE
 
