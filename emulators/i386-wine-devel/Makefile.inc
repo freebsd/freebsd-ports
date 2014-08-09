@@ -73,11 +73,13 @@ ${PLIST}: fetch
 port-update:
 	${RM} -f ${.CURDIR}/distinfo ${.CURDIR}/distinfo~ ${.CURDIR}/pkg-plist.*
 .for osrel in 8 9 10 11
-	${MAKE} fetch OSREL=${osrel}
-	${MAKE} makesum OSREL=${osrel}
+.for suffix in -devel -compholio
+	${MAKE} fetch OSREL=${osrel} PKGNAMESUFFIX=${suffix}
+	${MAKE} makesum OSREL=${osrel} PKGNAMESUFFIX=${suffix}
 	${CAT} ${.CURDIR}/distinfo >> ${.CURDIR}/distinfo~
 	${RM} ${.CURDIR}/distinfo
-	${MAKE} pkg-plist.${osrel} PLIST=pkg-plist.${osrel} OSREL=${osrel}
+	[ "${suffix}" != "-devel" ] || ${MAKE} pkg-plist.${osrel} PLIST=pkg-plist.${osrel} OSREL=${osrel}
+.endfor
 .endfor
 	${MV} ${.CURDIR}/distinfo~ ${.CURDIR}/distinfo
 	python ${FILESDIR}/mergeplist.py ${.CURDIR}/pkg-plist.* > ${PLIST}
