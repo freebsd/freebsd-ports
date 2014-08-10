@@ -2,36 +2,41 @@
 # $FreeBSD$
 
 PORTNAME=	thunderbird_labels
-PORTVERSION=	0.8.1
+PORTVERSION=	1.0.0
 CATEGORIES=	mail
-MASTER_SITES=	http://rcmail-thunderbird-labels.googlecode.com/files/
+MASTER_SITES=	https://googledrive.com/host/
 PKGNAMEPREFIX=	roundcube-
+DISTNAME=	0B7cAkeuoAZKaMGVieHl4LTdEbWM
+EXTRACT_SUFX=
 
-MAINTAINER= ports@FreeBSD.org
+MAINTAINER=	moiseev@mezonplus.ru
 COMMENT=	Thunderbird Labels plugin for RoundCube webmail
 
 LICENSE=	GPLv2
 
 RUN_DEPENDS=	roundcube>=0.5:${PORTSDIR}/mail/roundcube
 
-USES=	tar:bzip2
+USES=		tar:bzip2
 NO_BUILD=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
-WWWDIR?=	${PREFIX}/www/roundcube/plugins/${PORTNAME}
+PLUGINDIR=	${WWWDIR:S,/${PORTNAME}$$,,}/roundcube/plugins/${PORTNAME}
+PLUGINDIR_REL=	${WWWDIR_REL:S,/${PORTNAME}$$,,}/roundcube/plugins/${PORTNAME}
+PLIST_SUB=	PLUGINDIR_REL="${PLUGINDIR_REL}"
 
 # This target is only meant to be used by the port maintainer.
 x-generate-plist: build
-	cd ${WRKSRC}; \
-	${FIND} . ! -type d ! -name '*.orig' | ${SORT} | \
-		${SED} -e "s,^\.,%%WWWDIR%%," >${.CURDIR}/pkg-plist.tmp ; \
-	${FIND} . -type d | ${SORT} -r | ${SED} \
-		-e "s,^\.$$,@dirrmtry %%WWWDIR%%," \
-		-e "s,^\.,@dirrm %%WWWDIR%%," >>${.CURDIR}/pkg-plist.tmp
+	make makeplist | \
+	${SED} \
+	    -e "s,^\(%%PLUGINDIR_REL%%/config\.inc\.php\.sample$$\),@sample \1," \
+	    -e "/^%%PLUGINDIR_REL%%\/config\.inc\.php$$/d" \
+	    -e "s,^\(@dirrm\)try\( %%PLUGINDIR_REL%%/\),\1\2," \
+	    >${.CURDIR}/pkg-plist.tmp
 
-NO_STAGE=	yes
 do-install:
-	${MKDIR} ${WWWDIR}
-	cd ${WRKSRC} && ${PAX} -r -w . ${WWWDIR}
+	${MKDIR} ${STAGEDIR}${PLUGINDIR}
+	cd ${WRKSRC} && ${COPYTREE_SHARE} \* ${STAGEDIR}${PLUGINDIR}
+	cd ${STAGEDIR}${PLUGINDIR} && \
+		${CP} config.inc.php config.inc.php.sample
 
 .include <bsd.port.mk>
