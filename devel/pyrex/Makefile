@@ -13,9 +13,8 @@ COMMENT=	Programming Language for writing Python extension modules
 
 LICENSE=	APACHE20
 
-USE_PYTHON=		2
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
+USES=		python:2
+PYTHON_FEATURES=autoplist distutils
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}/Manual
