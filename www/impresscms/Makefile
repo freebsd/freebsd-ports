@@ -2,12 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	impresscms
-PORTVERSION=	1.3.4
+PORTVERSION=	1.3.7
 CATEGORIES=	www
-MASTER_SITES=	SF/${PORTNAME}/ImpressCMS%20Official%20Releases/ImpressCMS%20${PORTVERSION}
+MASTER_SITES=	SF/${PORTNAME}/ImpressCMS%20Official%20Releases/ImpressCMS%201.3%20Branch/ImpressCMS%20${PORTVERSION}
 DISTNAME=	${PORTNAME}_${PORTVERSION}_final
 
-MAINTAINER=	wen@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Community Developed Content Management System
 
 USES=		zip
