@@ -2,45 +2,41 @@
 # $FreeBSD$
 
 PORTNAME=	nip2
-PORTVERSION=	7.40.2
+PORTVERSION=	7.40.3
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.vips.ecs.soton.ac.uk/supported/${PORTVERSION:R}/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Graphical user interface for VIPS
 
-OPTIONS_DEFINE=	DOCS
-LIB_DEPENDS=	libvips.so.38:${PORTSDIR}/graphics/vips \
-		libgoffice-*.so:${PORTSDIR}/devel/goffice \
-		libgsl.so:${PORTSDIR}/math/gsl \
+LICENSE=	GPLv2
+
+BUILD_DEPENDS=	xdg-open:${PORTSDIR}/devel/xdg-utils
+LIB_DEPENDS=	libgoffice-*.so:${PORTSDIR}/devel/goffice \
 		libgvc.so:${PORTSDIR}/graphics/graphviz \
-		libxml2.so:${PORTSDIR}/textproc/libxml2
-BUILD_DEPENDS=	xgettext:${PORTSDIR}/devel/gettext
+		libvips.so:${PORTSDIR}/graphics/vips \
+		libgsl.so:${PORTSDIR}/math/gsl
+RUN_DEPENDS=	xdg-open:${PORTSDIR}/devel/xdg-utils
 
-USES=		bison dos2unix gettext gmake pkgconfig
-USE_GNOME=	gnomemimedata glib20 gtk20
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--mandir=${PREFIX}/man
-CONFIGURE_ENV+=	XGETTEXT=${LOCALBASE}/bin/xgettext	\
-		LIBGVC_LIBS="-L${LOCALBASE}/lib/graphviz -lgvc"	\
-		LIBGVC_CFLAGS="-I${LOCALBASE}/include/graphviz"
+USES=		bison desktop-file-utils dos2unix gettext gmake pkgconfig \
+		shared-mime-info
 DOS2UNIX_GLOB=	*.def
-SUB_FILES=	run-nip2.sh
-# This port has no man-pages. It installs a number of HTML files,
-# which are available through the GUI's Help. For this reason, they
-# are always installed, regardless of the DOCS setting.
-# Somehow vendor's configure misses these:
-MAKE_ENV+=	UPDATE_MIME_DATABASE=update-mime-database	\
-		UPDATE_DESKTOP_DATABASE=update-desktop-database
-MANCOMPRESSED=	no
+USE_GNOME=	gnomemimedata gtk20 libxml2
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--disable-update-desktop \
+		--without-goffice
 
-post-install:
-	${INSTALL_SCRIPT} ${WRKDIR}/run-nip2.sh \
-	    ${STAGEDIR}/${PREFIX}/bin/
+SUB_FILES=	run-nip2.sh
+
+OPTIONS_DEFINE=	DOCS
 
 post-patch:
-	${REINPLACE_CMD} -e 's|/bin/bash|/bin/sh|g' \
-	    ${WRKSRC}/test/scripts/*
+	@${REINPLACE_CMD} -e \
+		's|/bin/bash|/bin/sh|' ${WRKSRC}/test/scripts/*
+
+post-install:
+	(cd ${WRKDIR} && ${INSTALL_SCRIPT} run-nip2.sh \
+		${STAGEDIR}/${PREFIX}/bin)
 
 test check: build
 	#
@@ -49,12 +45,6 @@ test check: build
 	# the log-file:
 	#	${WRKSRC}/test/test_all.sh.log
 	#
-	${GMAKE} -C ${WRKSRC} check
-
-.include <bsd.port.options.mk>
-
-.if empty(PORT_OPTIONS:MDOCS)
-EXTRACT_AFTER_ARGS+=	--exclude nipguide.pdf --exclude pdf
-.endif
+	(cd %{WRKSRC} && ${SETENV} {MAKE_ENV} ${MAKE_CMD} check)
 
 .include <bsd.port.mk>
