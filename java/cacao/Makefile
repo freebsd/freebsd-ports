@@ -17,8 +17,6 @@ RUN_DEPENDS=	${LOCALBASE}/share/classpath/glibj.zip:${PORTSDIR}/java/classpath
 USES=		gmake tar:xz
 GNU_CONFIGURE=	yes
 
-MAN1=		cacao.1
-
 CONFIGURE_ARGS=	--disable-test-dependency-checks \
 		--with-java-runtime-library=gnuclasspath \
 		--with-java-runtime-library-prefix=${PREFIX} \
