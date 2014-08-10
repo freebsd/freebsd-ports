@@ -7,12 +7,6 @@ bin/avr-gcc-ar
 bin/avr-gcc-nm
 bin/avr-gcc-ranlib
 bin/avr-gcov
-info/cpp.info
-info/cppinternals.info
-info/dir
-info/gcc.info
-info/gccinstall.info
-info/gccint.info
 lib/gcc/avr/4.8.3/avr25/libgcc.a
 lib/gcc/avr/4.8.3/avr25/libgcov.a
 lib/gcc/avr/4.8.3/avr25/tiny-stack/libgcc.a
