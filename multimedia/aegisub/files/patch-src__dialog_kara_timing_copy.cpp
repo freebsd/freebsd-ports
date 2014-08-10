@@ -1,8 +1,8 @@
 --- src/dialog_kara_timing_copy.cpp.orig
 +++ src/dialog_kara_timing_copy.cpp
-@@ -69,6 +69,13 @@
- #define TEXT_LABEL_SOURCE _("Source: ")
- #define TEXT_LABEL_DEST _("Dest: ")
+@@ -53,6 +53,13 @@
+ #include <wx/stattext.h>
+ #include <wx/string.h>
  
 +#ifdef _LIBCPP_VERSION
 +#define TO_STRING(x) std::to_string(x)
@@ -11,10 +11,10 @@
 +#define TO_STRING(x) boost::lexical_cast<std::string>(x)
 +#endif
 +
- class KaraokeLineMatchDisplay : public wxControl {
- 	typedef AssKaraoke::Syllable MatchSyllable;
- 
-@@ -358,7 +365,7 @@
+ namespace {
+ #define TEXT_LABEL_SOURCE _("Source: ")
+ #define TEXT_LABEL_DEST _("Dest: ")
+@@ -343,7 +350,7 @@
  		int duration = 0;
  		for (auto const& syl : match.src)
  			duration += syl.duration;

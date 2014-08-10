@@ -1,6 +1,6 @@
---- src/dialog_properties.cpp.orig
-+++ src/dialog_properties.cpp
-@@ -54,6 +54,15 @@
+--- src/dialog_properties.cpp.orig	2014-07-28 23:29:16.000000000 +0900
++++ src/dialog_properties.cpp	2014-08-05 20:27:38.000000000 +0900
+@@ -47,6 +47,15 @@
  #include <wx/stattext.h>
  #include <wx/textctrl.h>
  
@@ -13,24 +13,26 @@
 +#define TO_WSTRING(x) boost::lexical_cast<std::wstring>(x)
 +#endif
 +
- DialogProperties::DialogProperties(agi::Context *c)
- : wxDialog(c->parent, -1, _("Script Properties"))
- , c(c)
-@@ -145,7 +154,7 @@
+ namespace {
+ class DialogProperties {
+ 	wxDialog d;
+@@ -186,7 +195,7 @@
  
  	count += SetInfoIfDifferent("PlayResX", from_wx(ResX->GetValue()));
  	count += SetInfoIfDifferent("PlayResY", from_wx(ResY->GetValue()));
 -	count += SetInfoIfDifferent("WrapStyle", std::to_string(WrapStyle->GetSelection()));
 +	count += SetInfoIfDifferent("WrapStyle", TO_STRING(WrapStyle->GetSelection()));
  	count += SetInfoIfDifferent("ScaledBorderAndShadow", ScaleBorder->GetValue() ? "yes" : "no");
+ 	count += SetInfoIfDifferent("YCbCr Matrix", from_wx(YCbCrMatrix->GetValue()));
  
- 	if (count) c->ass->Commit(_("property changes"), AssFile::COMMIT_SCRIPTINFO);
-@@ -162,6 +171,6 @@
+@@ -204,8 +213,8 @@
  }
  
  void DialogProperties::OnSetFromVideo(wxCommandEvent &) {
--	ResX->SetValue(std::to_wstring(c->videoController->GetWidth()));
--	ResY->SetValue(std::to_wstring(c->videoController->GetHeight()));
-+	ResX->SetValue(TO_WSTRING(c->videoController->GetWidth()));
-+	ResY->SetValue(TO_WSTRING(c->videoController->GetHeight()));
+-	ResX->SetValue(std::to_wstring(c->project->VideoProvider()->GetWidth()));
+-	ResY->SetValue(std::to_wstring(c->project->VideoProvider()->GetHeight()));
++	ResX->SetValue(TO_WSTRING(c->project->VideoProvider()->GetWidth()));
++	ResY->SetValue(TO_WSTRING(c->project->VideoProvider()->GetHeight()));
  }
+ }
+ 

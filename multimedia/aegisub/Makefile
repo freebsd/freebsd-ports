@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	aegisub
-PORTVERSION=	3.1.3
+PORTVERSION=	3.2.0
 CATEGORIES=	multimedia
 MASTER_SITES=	http://ftp.aegisub.org/pub/archives/releases/source/:aegisub \
 		ftp://ftp.aegisub.org/pub/archives/releases/source/:aegisub \
@@ -17,8 +17,8 @@ LICENSE=	BSD3CLAUSE
 
 LIB_DEPENDS=	libboost_thread.so:${PORTSDIR}/devel/boost-libs \
 		libicui18n.so:${PORTSDIR}/devel/icu \
-		libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig \
-		libass.so:${PORTSDIR}/multimedia/libass
+		libass.so:${PORTSDIR}/multimedia/libass \
+		libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	FFMS
@@ -28,7 +28,7 @@ GH_COMMIT=	6b0e4a2
 
 WRKSRC=		${WRKDIR}/${DISTNAME}
 
-USES=		compiler:c++11-lib desktop-file-utils gmake gettext iconv \
+USES=		compiler:c++11-lib desktop-file-utils gettext gmake iconv \
 		pkgconfig tar:xz
 USE_GNOME=	intltool
 USE_WX=		3.0
@@ -36,12 +36,14 @@ WX_UNICODE=	yes
 WX_CONF_ARGS=	absolute
 USE_GL=		glu
 USE_CSTD=	c99
-USE_LUA=	5.1+
 GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	agi_cv_with_iconv=yes
 CONFIGURE_ARGS=	--disable-compiler-flags \
+		--disable-gcc-prec \
+		--disable-sanity-checks \
 		--disable-update-checker \
 		--without-libc++ \
-		--disable-gcc-prec
+		${ICONV_CONFIGURE_ARG}
 INSTALLS_ICONS=	yes
 
 PLIST_SUB=	VERSION="${PORTVERSION:R}"
@@ -49,8 +51,8 @@ PLIST_SUB=	VERSION="${PORTVERSION:R}"
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib ${ICONV_LIB}
 
-OPTIONS_DEFINE=		ALSA DOCS FFMPEG FFTW HUNSPELL OPENAL \
-			PORTAUDIO PULSEAUDIO
+OPTIONS_DEFINE=		ALSA DOCS FFMPEG FFTW HUNSPELL OPENAL PORTAUDIO \
+			PULSEAUDIO
 OPTIONS_DEFAULT=	FFMPEG FFTW HUNSPELL PULSEAUDIO
 
 ALSA_LIB_DEPENDS=	libasound.so:${PORTSDIR}/audio/alsa-lib
@@ -58,7 +60,7 @@ ALSA_CONFIGURE_OFF=	--without-alsa
 FFMPEG_LIB_DEPENDS=	libavcodec.so:${PORTSDIR}/multimedia/ffmpeg
 FFMPEG_CONFIGURE_ENV=	FFMS2_CFLAGS="${FFMS_CFLAGS}" \
 			FFMS2_LIBS="${FFMS_LIBS}"
-FFMPEG_CONFIGURE_OFF=	--without-ffms2
+FFMPEG_CONFIGURE_OFF=	--without-ffms
 FFMPEG_CPPFLAGS=	${FFMS_CFLAGS}
 FFTW_LIB_DEPENDS=	libfftw3.so:${PORTSDIR}/math/fftw3
 FFTW_CONFIGURE_OFF=	--without-fftw3
@@ -90,9 +92,21 @@ FFMS_LIBS=	${FFMS_WRKSRC}/src/core/.libs/libffms2.a \
 
 .if ${COMPILER_TYPE} == "gcc"
 USE_CXXSTD=	gnu++11
+.if empty(CFLAGS:M-march=*)
+CFLAGS_i386=	-march=pentium
+.endif
 .else
 USE_CXXSTD=	c++11
 CXXFLAGS+=	-Wno-c++11-narrowing
+.if ${COMPILER_VERSION} < 34
+BUILD_DEPENDS+=	${LOCALBASE}/lib/c++/libstdc++.so:${PORTSDIR}/devel/libc++ \
+		${LOCALBASE}/bin/clang34:${PORTSDIR}/lang/clang34
+CPP=		clang-cpp34
+CC=		clang34
+CXX=		clang++34
+CXXFLAGS+=	-nostdinc++ -isystem ${LOCALBASE}/include/c++/v1
+LDFLAGS+=	-L${LOCALBASE}lib/c++
+.endif
 .endif
 
 post-patch:
@@ -101,8 +115,13 @@ post-patch:
 	@${REINPLACE_CMD} -e \
 		's|".*build/|"./build/|' ${WRKSRC}/build/version.sh
 	@${REINPLACE_CMD} -e \
-		'/iconv_t/s|^|//|' \
-		${WRKSRC}/libaegisub/include/libaegisub/charset_conv.h
+		's|^CC=|CC?=| ; \
+		 /^CCOPT_/s|=.*|=| ; \
+		 /^CCDEBUG/s|=.*|=|' ${WRKSRC}/vendor/luajit/src/Makefile
+.if ${COMPILER_TYPE} == "gcc"
+	@${FIND} ${WRKSRC} -name "*.h" | ${XARGS} ${REINPLACE_CMD} -e \
+		'/virtual /s|= default;$$|{ }|'
+.endif
 
 pre-configure:
 .if ${PORT_OPTIONS:MFFMPEG}

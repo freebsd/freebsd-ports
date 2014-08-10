@@ -1,6 +1,6 @@
---- src/dialog_shift_times.cpp.orig
-+++ src/dialog_shift_times.cpp
-@@ -56,6 +56,13 @@
+--- src/dialog_shift_times.cpp.orig	2014-07-28 23:29:16.000000000 +0900
++++ src/dialog_shift_times.cpp	2014-08-05 20:21:09.000000000 +0900
+@@ -48,6 +48,13 @@
  #include <wx/sizer.h>
  #include <wx/textctrl.h>
  
@@ -11,15 +11,15 @@
 +#define TO_WSTRING(x) boost::lexical_cast<std::wstring>(x)
 +#endif
 +
- static wxString get_history_string(json::Object &obj) {
- 	wxString filename = to_wx(obj["filename"]);
- 	if (filename.empty())
-@@ -87,7 +94,7 @@
- 			int beg = (int64_t)(*it)["start"];
- 			int end = (int64_t)(*it)["end"];
+ namespace {
+ class DialogShiftTimes final : public wxDialog {
+ 	agi::Context *context;
+@@ -118,7 +125,7 @@
+ 			int beg = (int64_t)range["start"];
+ 			int end = (int64_t)range["end"];
  			if (beg == end)
 -				lines += std::to_wstring(beg);
 +				lines += TO_WSTRING(beg);
  			else
- 				lines += wxString::Format("%d-%d", beg, end);
+ 				lines += fmt_wx("%d-%d", beg, end);
  			if (it + 1 != sel.end())

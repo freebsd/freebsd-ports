@@ -1,8 +1,8 @@
 --- src/auto4_lua_dialog.cpp.orig
 +++ src/auto4_lua_dialog.cpp
-@@ -66,6 +66,13 @@
- #include <wx/valnum.h>
- #include <wx/window.h>
+@@ -60,6 +60,13 @@
+ #include <wx/stattext.h>
+ #include <wx/valgen.h>
  
 +#ifdef _LIBCPP_VERSION
 +#define TO_STRING(x) std::to_string(x)
@@ -11,10 +11,10 @@
 +#define TO_STRING(x) boost::lexical_cast<std::string>(x)
 +#endif
 +
+ using namespace agi::lua;
  namespace {
  	inline void get_if_right_type(lua_State *L, std::string &def) {
- 		if (lua_isstring(L, -1))
-@@ -256,7 +263,7 @@
+@@ -249,7 +256,7 @@
  			}
  
  			bool CanSerialiseValue() const override  { return true; }
@@ -23,7 +23,7 @@
  			void UnserialiseValue(const std::string &serialised) override { value = atoi(serialised.c_str()); }
  
  			wxControl *Create(wxWindow *parent) override {
-@@ -317,7 +324,7 @@
+@@ -287,7 +294,7 @@
  			}
  
  			bool CanSerialiseValue() const override { return true; }

@@ -1,14 +1,15 @@
 --- libaegisub/common/cajun/reader.cpp.orig
 +++ libaegisub/common/cajun/reader.cpp
-@@ -9,6 +9,7 @@
- #include "libaegisub/cajun/reader.h"
+@@ -10,6 +10,8 @@
  
+ #include <boost/interprocess/streams/bufferstream.hpp>
  #include <cassert>
 +#include <cstdio>
- #include <set>
- #include <sstream>
++#include <set>
  
-@@ -243,8 +244,16 @@
+ /*
+ 
+@@ -231,8 +233,16 @@
  }
  
  void Reader::MatchNumber(std::string& sNumber, InputStream& inputStream) {
