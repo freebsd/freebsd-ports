@@ -28,8 +28,7 @@ COMMENT=	Versatile DVD ripper and video transcoder
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	libtool:${PORTSDIR}/devel/libtool \
-		yasm:${PORTSDIR}/devel/yasm
+BUILD_DEPENDS=	yasm:${PORTSDIR}/devel/yasm
 LIB_DEPENDS=	libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig \
 		libfreetype.so:${PORTSDIR}/print/freetype2 \
 		libfribidi.so:${PORTSDIR}/converters/fribidi \
@@ -47,7 +46,7 @@ LIB_DEPENDS+=	libdvdcss.so.2:${PORTSDIR}/multimedia/libdvdcss
 .endif
 
 GNU_CONFIGURE=	yes
-USES=		gmake iconv libtool pkgconfig
+USES=		gmake iconv libtool:build pkgconfig
 USE_AUTOTOOLS=	autoconf:env automake:env
 USE_PYTHON_BUILD=	yes
 

@@ -2,6 +2,7 @@
 
 PORTNAME=	libtommath
 PORTVERSION=	0.42.0
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	http://libtom.org/files/
 DISTNAME=	ltm-${PORTVERSION}
@@ -28,10 +29,9 @@ post-patch:
 	${REINPLACE_CMD} -e 's|DESTDIR=|DESTDIR?=|' ${WRKSRC}/${MAKEFILE}
 
 .if ${PORT_OPTIONS:MSHARED}
-BUILD_DEPENDS=	libtool:${PORTSDIR}/devel/libtool
-USES+=		libtool:keepla
+USES+=		libtool:build
 USE_LDCONFIG=	yes
-PLIST_FILES+=	lib/libtommath.la lib/libtommath.so.0 lib/libtommath.so
+PLIST_FILES+=	lib/libtommath.so.0 lib/libtommath.so
 MAKEFILE=	makefile.shared
 .else
 MAKEFILE=	makefile

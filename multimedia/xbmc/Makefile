@@ -19,7 +19,6 @@ BUILD_DEPENDS=	enca:${PORTSDIR}/converters/enca \
 		unzip:${PORTSDIR}/archivers/unzip \
 		nasm:${PORTSDIR}/devel/nasm \
 		gtk-update-icon-cache:${PORTSDIR}/x11-toolkits/gtk20 \
-		libtool:${PORTSDIR}/devel/libtool \
 		swig2.0:${PORTSDIR}/devel/swig20
 LIB_DEPENDS=	libass.so:${PORTSDIR}/multimedia/libass \
 		libboost_thread.so:${PORTSDIR}/devel/boost-libs \
@@ -53,8 +52,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:${PORTSDIR}/databases/py-sqlite3 \
 		${PYTHON_PKGNAMEPREFIX}imaging>0:${PORTSDIR}/graphics/py-imaging \
 		xdpyinfo:${PORTSDIR}/x11/xdpyinfo
 
-USES=		gmake iconv:wchar_t libtool pkgconfig
-USE_AUTOTOOLS=	autoconf automake libltdl
+USES=		gmake iconv:wchar_t libtool:build pkgconfig
+USE_AUTOTOOLS=	autoconf:env automake:env libltdl
 GNU_CONFIGURE=	yes
 USE_XORG=	xt xmu xtst
 USE_GL=		glu

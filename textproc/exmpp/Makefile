@@ -10,8 +10,7 @@ COMMENT=	Fast and scalable library for XMPP written in Erlang/OTP
 
 LICENSE=	EPL
 
-BUILD_DEPENDS=	erlc:${PORTSDIR}/lang/erlang \
-		libtool:${PORTSDIR}/devel/libtool
+BUILD_DEPENDS=	erlc:${PORTSDIR}/lang/erlang
 RUN_DEPENDS=	erl:${PORTSDIR}/lang/erlang
 LIB_DEPENDS=	libexpat.so:${PORTSDIR}/textproc/expat2 \
 		libxml2.so:${PORTSDIR}/textproc/libxml2
@@ -34,7 +33,7 @@ CONFIGURE_ARGS+=--enable-static=yes \
 		--enable-escaping-using-cdata
 GNU_CONFIGURE_PREFIX=	"${PREFIX}/lib/erlang/lib"
 PLIST_SUB=	VERSION=${PORTVERSION}
-USE_AUTOTOOLS=	autoconf:env automake:env aclocal:env autoheader:env
+USE_AUTOTOOLS=	autoconf:env automake:env libtoolize:env
 USES=		libtool pkgconfig
 
 .include <bsd.port.options.mk>
