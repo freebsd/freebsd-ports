@@ -76,6 +76,7 @@ bin/exiftool
 %%PERL5_MAN3%%/Image::ExifTool::Lang::zh_cn.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::Lang::zh_tw.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::Leaf.3.gz
+%%PERL5_MAN3%%/Image::ExifTool::Lytro.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::M2TS.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::MIE.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::MIEUnits.3.gz
@@ -267,6 +268,7 @@ bin/exiftool
 %%SITE_PERL%%/Image/ExifTool/Lang/zh_cn.pm
 %%SITE_PERL%%/Image/ExifTool/Lang/zh_tw.pm
 %%SITE_PERL%%/Image/ExifTool/Leaf.pm
+%%SITE_PERL%%/Image/ExifTool/Lytro.pm
 %%SITE_PERL%%/Image/ExifTool/M2TS.pm
 %%SITE_PERL%%/Image/ExifTool/MIE.pm
 %%SITE_PERL%%/Image/ExifTool/MIEUnits.pod
