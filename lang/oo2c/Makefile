@@ -3,7 +3,7 @@
 
 PORTNAME=	oo2c
 PORTVERSION=	2.1.11
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang
 MASTER_SITES=	SF/ooc/ooc2/${PORTVERSION}
 DISTNAME=	${PORTNAME}_${BITS}-${PORTVERSION}
@@ -12,10 +12,11 @@ MAINTAINER=	johans@FreeBSD.org
 COMMENT=	Optimizing Oberon-2 compiler of University of Kaiserslautern, Germany
 
 BUILD_DEPENDS=	xsltproc:${PORTSDIR}/textproc/libxslt
+RUN_DEPENDS=	libtool:${PORTSDIR}/devel/libtool
 LIB_DEPENDS=	libgc.so:${PORTSDIR}/devel/boehm-gc
 
 DOCSDIR=	lib/${PORTNAME}
-USES=		gmake libtool tar:bzip2
+USES=		gmake libtool:build tar:bzip2
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 USE_CSTD=	gnu89
