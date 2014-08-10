@@ -1,0 +1,16 @@
+6502/65C02/R65C02/W65C02/65CE02/65816/DTV/65EL02 Turbo Assembler
+
+Key features:
+
+Open source, mostly portable C with minimal dependencies
+Familiar syntax to Omicron TASS and TASM.
+Supports 6502, 65C02, R65C02, W65C02, 65CE02, 65816, DTV, 65EL02
+Arbitrary-precision integers and bitstrings, double precision floating point nos
+Character and byte strings, array arithmetic
+Handles UTF-8, UTF-16 and 8 bit RAW encoded source files, unicode strings
+Supports Unicode identifiers with case folding and compatibility normalization
+Built-in "linker" with section support
+CPU or flat address space for creating huge binaries (e.g. cartridges)
+Conditional compilation, macros, struct/union structures, scopes.
+
+WWW: http://tass64.sourceforge.net/
