@@ -9,12 +9,13 @@ MASTER_SITES=	http://jcm.dsl.visi.com/freebsd/svnup/ \
 MAINTAINER=	jcm@visi.com
 COMMENT=	Lightweight program to pull source from an Apache Subversion server
 
-OPTIONS_DEFINE=	DOCS
-
 LICENSE=	BSD2CLAUSE
+
+OPTIONS_DEFINE=	DOCS
 
 LDFLAGS+=	-lmd -lssl
 USES=		tar:xz
+
 PORTDOCS=	ChangeLog
 
 post-patch:
