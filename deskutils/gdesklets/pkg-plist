@@ -733,10 +733,8 @@ share/locale/vi/LC_MESSAGES/gdesklets.mo
 share/locale/zh_CN/LC_MESSAGES/gdesklets.mo
 share/locale/zh_HK/LC_MESSAGES/gdesklets.mo
 share/locale/zh_TW/LC_MESSAGES/gdesklets.mo
-share/mime/application/x-gdesklets-display.xml
 share/mime/packages/gdesklets.xml
 share/pixmaps/gdesklets.png
-@dirrmtry share/mime/application
 @dirrmtry share/locale/zh_HK/LC_MESSAGES
 @dirrmtry share/locale/zh_HK
 @dirrmtry share/locale/rw/LC_MESSAGES
@@ -807,6 +805,3 @@ share/pixmaps/gdesklets.png
 @dirrm lib/gdesklets/Additions/bg
 @dirrm lib/gdesklets/Additions
 @dirrm lib/gdesklets
-@exec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
-@unexec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
-@dirrmtry share/icons/gnome/48x48/mimetypes
