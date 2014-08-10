@@ -1,16 +1,15 @@
 # $FreeBSD$
 
 PORTNAME=	distributive
-PORTVERSION=	0.3.1
-PORTREVISION=	5
+PORTVERSION=	0.4.4
 CATEGORIES=	math haskell
 
 MAINTAINER=	haskell@FreeBSD.org
-COMMENT=	Haskell 98 distributive functors -- Dual to Traversable
+COMMENT=	Distributive functors -- Dual to Traversable
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 
-USE_CABAL=	transformers>=0.3
+USE_CABAL=	tagged>=0.7 transformers-compat>=0.3
 
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

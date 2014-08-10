@@ -1,0 +1,4 @@
+Catching all exceptions raised within an enclosed computation, while
+remaining responsive to (external) asynchronous exceptions.
+
+WWW: https://github.com/jcristovao/enclosed-exceptions

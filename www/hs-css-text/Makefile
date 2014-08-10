@@ -1,16 +1,15 @@
 # $FreeBSD$
 
 PORTNAME=	css-text
-PORTVERSION=	0.1.1
-PORTREVISION=	10
+PORTVERSION=	0.1.2.1
 CATEGORIES=	www haskell
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	CSS parser and renderer
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 
-USE_CABAL=	attoparsec>=0.10 text>=0.11
+USE_CABAL=	attoparsec>=0.10.2.0 text>=0.11
 
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

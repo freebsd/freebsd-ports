@@ -2,31 +2,24 @@
 # $FreeBSD$
 
 PORTNAME=	X11
-PORTVERSION=	1.6.1.1
-PORTREVISION=	6
+PORTVERSION=	1.6.1.2
 CATEGORIES=	x11 haskell
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Binding to the X11 graphics library
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 
 USE_CABAL=	data-default
 USE_XORG=	x11 xrandr xext
 
-OPTIONS_DEFINE=		XINERAMA
-OPTIONS_DEFAULT=	XINERAMA
+FLAGS_DEFINE=		XINERAMA
+FLAGS_DEFAULT=		XINERAMA
 
-XINERAMA_DESC=	Build with Xinerama support
-
-.include "${.CURDIR}/../../lang/ghc/bsd.cabal.options.mk"
-
-.if ${PORT_OPTIONS:MXINERAMA}
-USE_XORG+=		xinerama
-CONFIGURE_ARGS+=	--configure-option="--with-xinerama"
-.else
-CONFIGURE_ARGS+=	--configure-option="--without-xinerama"
-.endif
+XINERAMA_DESC=			Build with Xinerama support
+XINERAMA_FLAG_XORG=		xinerama
+XINERAMA_FLAG_CONFIGURE_ON=	--configure-option="--with-xinerama"
+XINERAMA_FLAG_CONFIGURE_OFF=	--configure-option="--without-xinerama"
 
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

@@ -2,13 +2,13 @@
 
 PORTNAME=	zlib-bindings
 PORTVERSION=	0.1.1.3
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	archivers haskell
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Low-level bindings to the zlib package
 
-LICENSE=	BSD2CLAUSE
+LICENSE=	BSD3CLAUSE
 
 USE_CABAL=	zlib>=0.5.2.0
 

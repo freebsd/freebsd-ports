@@ -1,18 +1,16 @@
 # $FreeBSD$
 
 PORTNAME=	pointed
-PORTVERSION=	3.0.2
-PORTREVISION=	6
+PORTVERSION=	4.1
 CATEGORIES=	math haskell
 
 MAINTAINER=	haskell@FreeBSD.org
-COMMENT=	Haskell 98 pointed and copointed data
+COMMENT=	Pointed and copointed data
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 
-USE_CABAL=	comonad>=3 comonad-transformers>=3 data-default>=0.4 \
-		semigroupoids>=3.0 semigroups>=0.8.3.1 stm>=2.1.2.1 \
-		transformers>=0.2
+USE_CABAL=	comonad>=4 data-default-class>=0.0.1 semigroupoids>=4 \
+		semigroups>=0.8.3.1 stm>=2.1.2.1 tagged>=0.5
 
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

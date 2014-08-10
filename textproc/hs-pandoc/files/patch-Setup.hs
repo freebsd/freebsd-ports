@@ -1,15 +1,15 @@
---- ./Setup.hs.orig	2013-01-29 01:14:38.000000000 +0100
-+++ ./Setup.hs	2013-02-17 00:48:54.000000000 +0100
-@@ -8,7 +8,7 @@
+--- ./Setup.hs.orig	2013-12-09 04:22:42.000000000 +0100
++++ ./Setup.hs	2013-12-27 02:49:01.000000000 +0100
+@@ -9,7 +9,7 @@
  import Distribution.Simple.LocalBuildInfo
           (LocalBuildInfo(..), absoluteInstallDirs)
  import Distribution.Verbosity ( Verbosity, silent )
--import Distribution.Simple.InstallDirs (mandir, CopyDest (NoCopyDest))
-+import Distribution.Simple.InstallDirs (prefix, CopyDest (NoCopyDest))
+-import Distribution.Simple.InstallDirs (mandir, CopyDest (NoCopyDest), toPathTemplate)
++import Distribution.Simple.InstallDirs (prefix, CopyDest (NoCopyDest), toPathTemplate)
  import Distribution.Simple.Utils (installOrdinaryFiles, info)
+ import Distribution.Simple.Test (test)
  import Prelude hiding (catch)
- import System.Process ( rawSystem )
-@@ -53,7 +53,7 @@
+@@ -59,7 +59,7 @@
  installManpages :: PackageDescription -> LocalBuildInfo
                  -> Verbosity -> CopyDest -> IO ()
  installManpages pkg lbi verbosity copy =

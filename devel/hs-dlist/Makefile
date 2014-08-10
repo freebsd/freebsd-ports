@@ -2,14 +2,13 @@
 # $FreeBSD$
 
 PORTNAME=	dlist
-PORTVERSION=	0.5
-PORTREVISION=	13
+PORTVERSION=	0.7.1
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
-COMMENT=	List-like type supporting O(1) append for Haskell
+COMMENT=	Difference lists
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

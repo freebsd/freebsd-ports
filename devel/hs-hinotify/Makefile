@@ -1,14 +1,13 @@
 # $FreeBSD$
 
 PORTNAME=	hinotify
-PORTVERSION=	0.3.5
-PORTREVISION=	6
+PORTVERSION=	0.3.7
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Haskell binding to inotify
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 
 LIB_DEPENDS=	libinotify.so:${PORTSDIR}/devel/libinotify
 

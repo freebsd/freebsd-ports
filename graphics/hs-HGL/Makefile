@@ -2,14 +2,13 @@
 # $FreeBSD$
 
 PORTNAME=	HGL
-PORTVERSION=	3.2.0.2
-PORTREVISION=	14
+PORTVERSION=	3.2.0.5
 CATEGORIES=	graphics haskell
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Simple Haskell graphics library based on X11 or Win32
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 
 USE_CABAL=	X11
 

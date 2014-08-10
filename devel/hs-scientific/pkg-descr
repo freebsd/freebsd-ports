@@ -1,0 +1,4 @@
+Data.Scientific provides a space efficient and arbitrary precision
+scientific number type.
+
+WWW: https://github.com/basvandijk/scientific

@@ -1,14 +1,13 @@
 # $FreeBSD$
 
 PORTNAME=	syb-with-class
-PORTVERSION=	0.6.1.4
-PORTREVISION=	6
+PORTVERSION=	0.6.1.5
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Scrap Your Boilerplate With Class
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

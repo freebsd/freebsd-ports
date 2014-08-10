@@ -3,13 +3,13 @@
 
 PORTNAME=	arrows
 PORTVERSION=	0.4.4.1
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Haskell arrow classes and transformers
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 
 USE_CABAL=	Stream
 

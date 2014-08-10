@@ -1,14 +1,13 @@
 # $FreeBSD$
 
 PORTNAME=	path-pieces
-PORTVERSION=	0.1.2
-PORTREVISION=	6
+PORTVERSION=	0.1.4
 CATEGORIES=	www haskell
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Components of paths
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 
 USE_CABAL=	text>=0.5
 

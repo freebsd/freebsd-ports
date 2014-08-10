@@ -1,53 +1,58 @@
 # $FreeBSD$
 
 PORTNAME=	haskell-platform
-PORTVERSION=	2013.2.0.0
+PORTVERSION=	2014.2.0.0
 # Please note that the port *strictly depends* on certain versions of other
 # ports, so revisit the USE_CABAL line on bumping the portrevision.  Thanks!
-PORTREVISION=	4
+PORTREVISION=	0
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	The Haskell Platform
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 
 METAPORT=	yes
 
-USE_CABAL=	async==2.0.1.4_4 \
-		attoparsec==0.10.4.0_5 \
-		cgi==3001.1.7.5_4,1 \
-		fgl==5.4.2.4_9 \
-		GLUT==2.4.0.0_5,1 \
-		GLURaw==1.3.0.0_4 \
-		haskell-src==1.0.1.5_8 \
-		hashable==1.1.2.5_4,1 \
-		html==1.0.1.2_11 \
-		HTTP==4000.2.8_4 \
-		HUnit==1.2.5.2_4 \
-		mtl==2.1.2_6 \
-		network==2.4.1.2_4 \
-		OpenGL==2.8.0.0_4,1 \
-		OpenGLRaw==1.3.0.0_5 \
-		parallel==3.2.0.3_6 \
-		parsec==3.1.3_6 \
-		primitive==0.5.0.1_6 \
-		QuickCheck==2.6_4 \
-		random==1.0.1.1_8 \
-		regex-base==0.93.2_11 \
-		regex-compat==0.95.1_9 \
-		regex-posix==0.95.2_6 \
-		split==0.2.2_4 \
-		stm==2.4.2_4 \
-		syb==0.4.0_4 \
-		text==0.11.3.1_4 \
-		transformers==0.3.0.0_8 \
-		vector==0.10.0.1_6 \
-		xhtml==3000.2.1_8 \
-		zlib==0.5.4.1_4 \
-		cabal-install==1.16.0.2_4 \
-		alex==3.0.5_4 \
-		happy==1.18.10_6
+USE_CABAL=	async==2.0.1.5 \
+		attoparsec==0.10.4.0_6 \
+		case-insensitive==1.1.0.3 \
+		fgl==5.5.0.1 \
+		GLUT==2.5.1.1,1 \
+		GLURaw==1.4.0.1 \
+		haskell-src==1.0.1.6 \
+		hashable==1.2.2.0,1 \
+		html==1.0.1.2_12 \
+		HTTP==4000.2.10 \
+		HUnit==1.2.5.2_5 \
+		mtl==2.1.3.1 \
+		network==2.4.2.3 \
+		OpenGL==2.9.2.0,1 \
+		OpenGLRaw==1.5.0.0 \
+		parallel==3.2.0.4 \
+		parsec==3.1.5 \
+		primitive==0.5.2.1 \
+		QuickCheck==2.6_5 \
+		random==1.0.1.1_9 \
+		regex-base==0.93.2_12 \
+		regex-compat==0.95.1_10 \
+		regex-posix==0.95.2_7 \
+		split==0.2.2_5 \
+		stm==2.4.2_5 \
+		syb==0.4.1 \
+		text==1.1.0.0 \
+		unordered-containers==0.2.4.0 \
+		vector==0.10.9.1 \
+		zlib==0.5.4.1_5 \
+		cabal-install==1.18.0.5 \
+		alex==3.1.3 \
+		happy==1.19.4 \
+		hscolour==1.20.3_7,1
 
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
+
+.if ${GHC_VERSION} != 7.8.3
+IGNORE=		will not work: GHC ${GHC_VERSION} is not supported
+.endif
+
 .include <bsd.port.mk>

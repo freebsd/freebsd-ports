@@ -1,16 +1,15 @@
 # $FreeBSD$
 
 PORTNAME=	cryptohash
-PORTVERSION=	0.9.0
-PORTREVISION=	4
+PORTVERSION=	0.11.6
 CATEGORIES=	security haskell
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Collection of crypto hashes, fast, pure, and practical
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 
-USE_CABAL=	cereal>=0.2 crypto-api>=0.5 tagged>=0.1
+USE_CABAL=	byteable
 
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

@@ -3,13 +3,13 @@
 
 PORTNAME=	ghc-paths
 PORTVERSION=	0.1.0.9
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Knowledge of GHC's installation directories
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

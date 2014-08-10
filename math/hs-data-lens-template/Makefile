@@ -1,14 +1,13 @@
 # $FreeBSD$
 
 PORTNAME=	data-lens-template
-PORTVERSION=	2.1.7
-PORTREVISION=	7
+PORTVERSION=	2.1.8
 CATEGORIES=	math haskell
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Utilities for Data.Lens
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 
 USE_CABAL=	data-lens>=2.0
 

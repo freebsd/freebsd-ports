@@ -1,14 +1,13 @@
 # $FreeBSD$
 
 PORTNAME=	unordered-containers
-PORTVERSION=	0.2.3.1
-PORTREVISION=	4
+PORTVERSION=	0.2.4.0
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Efficient hashing-based container types
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 
 USE_CABAL=	hashable>=1.0.1.1
 

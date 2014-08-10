@@ -2,13 +2,13 @@
 
 PORTNAME=	asn1-data
 PORTVERSION=	0.7.1
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	ASN1 data reader and writer in RAW, BER, and DER forms
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 
 USE_CABAL=	cereal mtl text>=0.11
 

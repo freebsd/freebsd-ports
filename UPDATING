@@ -5,6 +5,21 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20140810:
+  AFFECTS: users of lang/ghc and */hs-*
+  AUTHOR: haskell@FreeBSD.org
+
+  The Glorious Glasgow Haskell Compiler has been updated to version
+  7.8.3 and Haskell Platform to 2014.2.0.0.  Hence it is recommended to
+  rebuild or reinstall all the dependent ports by one of the following
+  commands:
+
+  # portmaster -w -r ghc
+    or
+  # portupgrade -fr lang/ghc
+    or
+  # pkg upgrade
+
 20140803:
   AFFECTS: users of security/p5-openxpki
   AUTHOR: wg@FreeBSD.org

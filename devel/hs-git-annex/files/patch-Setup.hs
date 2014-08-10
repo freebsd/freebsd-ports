@@ -1,5 +1,5 @@
---- Setup.hs.orig	2013-08-27 21:23:35.000000000 +0100
-+++ Setup.hs	2013-12-08 17:28:34.656382191 +0000
+--- ./Setup.hs.orig	2014-01-22 21:23:18.000000000 +0100
++++ ./Setup.hs	2014-07-10 21:52:00.000000000 +0200
 @@ -19,6 +19,7 @@
  main = defaultMainWithHooks simpleUserHooks
  	{ preConf = configure
@@ -33,3 +33,9 @@
  	srcManpages = zip (repeat srcManDir)
  		<$> filterM doesFileExist manpages
  	srcManDir   = ""
+@@ -60,4 +70,4 @@
+ installDesktopFile copyDest verbosity pkg lbi =
+ 	DesktopFile.install $ dstBinDir </> "git-annex"
+   where
+-	dstBinDir = bindir $ absoluteInstallDirs pkg lbi copyDest
++	dstBinDir = bindir $ absoluteInstallDirs pkg lbi NoCopyDest

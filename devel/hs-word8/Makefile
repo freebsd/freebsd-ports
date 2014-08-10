@@ -1,14 +1,13 @@
 # $FreeBSD$
 
 PORTNAME=	word8
-PORTVERSION=	0.0.3
-PORTREVISION=	5
+PORTVERSION=	0.1.1
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Word8 library
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

@@ -2,14 +2,13 @@
 # $FreeBSD$
 
 PORTNAME=	Diff
-PORTVERSION=	0.2.0
-PORTREVISION=	5
+PORTVERSION=	0.3.0
 CATEGORIES=	textproc haskell
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	O(ND) diff algorithm in haskell
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

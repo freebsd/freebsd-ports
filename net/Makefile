@@ -203,12 +203,15 @@
     SUBDIR += howl
     SUBDIR += hping
     SUBDIR += hping-devel
+    SUBDIR += hs-connection
+    SUBDIR += hs-gsasl
     SUBDIR += hs-hostname
+    SUBDIR += hs-iproute
     SUBDIR += hs-maccatcher
     SUBDIR += hs-network
-    SUBDIR += hs-network-conduit
     SUBDIR += hs-network-info
     SUBDIR += hs-network-multicast
+    SUBDIR += hs-network-protocol-xmpp
     SUBDIR += hs-pcap
     SUBDIR += hs-publicsuffixlist
     SUBDIR += hs-sendfile

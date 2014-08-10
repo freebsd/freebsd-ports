@@ -2,13 +2,13 @@
 
 PORTNAME=	base-unicode-symbols
 PORTVERSION=	0.2.2.4
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Unicode alternatives for common functions and operators
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

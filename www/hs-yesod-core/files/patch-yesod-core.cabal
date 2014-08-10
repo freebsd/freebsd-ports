@@ -1,0 +1,40 @@
+--- ./yesod-core.cabal.orig	2014-06-09 09:45:07.000000000 +0200
++++ ./yesod-core.cabal	2014-07-13 01:09:02.000000000 +0200
+@@ -32,11 +32,7 @@
+                    , text                  >= 0.7
+                    , template-haskell
+                    , path-pieces           >= 0.1.2    && < 0.2
+-                   , hamlet                >= 1.1
+                    , shakespeare           >= 1.0      && < 2.1
+-                   , shakespeare-js        >= 1.0.2
+-                   , shakespeare-css       >= 1.0
+-                   , shakespeare-i18n      >= 1.0
+                    , blaze-builder         >= 0.2.1.4  && < 0.4
+                    , transformers          >= 0.2.2
+                    , mtl
+@@ -60,7 +56,6 @@
+                    , conduit               >= 1.0.11
+                    , resourcet             >= 0.4.9    && < 1.2
+                    , lifted-base           >= 0.1.2
+-                   , attoparsec-conduit
+                    , blaze-html            >= 0.5
+                    , blaze-markup          >= 0.5.1
+                    , data-default
+@@ -111,9 +106,6 @@
+                   ,wai
+                   ,yesod-core
+                   ,bytestring
+-                  ,hamlet
+-                  ,shakespeare-css
+-                  ,shakespeare-js
+                   ,text
+                   ,http-types
+                   , random
+@@ -142,7 +134,6 @@
+                   , criterion
+                   , bytestring
+                   , text
+-                  , hamlet
+                   , transformers
+                   , yesod-core
+                   , blaze-html

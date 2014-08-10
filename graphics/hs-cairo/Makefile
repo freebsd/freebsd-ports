@@ -1,17 +1,16 @@
 # $FreeBSD$
 
 PORTNAME=	cairo
-PORTVERSION=	0.12.4
-PORTREVISION=	6
+PORTVERSION=	0.12.5.3
 CATEGORIES=	graphics haskell
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Binding to the Cairo library
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 
 USES=		pkgconfig
-USE_CABAL=	gtk2hs-buildtools mtl
+USE_CABAL=	gtk2hs-buildtools mtl utf8-string>=0.2
 
 BUILD_DEPENDS+=	${LOCALBASE}/libdata/pkgconfig/cairo-pdf.pc:${PORTSDIR}/graphics/cairo
 
