@@ -2,13 +2,18 @@
 # $FreeBSD$
 
 PORTNAME=	passenger
-PORTVERSION=	4.0.45
+PORTVERSION=	4.0.48
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 PKGNAMEPREFIX=	rubygem-
 
 MAINTAINER=	osa@FreeBSD.org
 COMMENT=	Modules for running Ruby on Rails and Rack applications
+
+USES+=		cpe
+
+CPE_VENDOR=	phusion
+CPE_PRODUCT=	passenger
 
 OPTIONS_DEFINE=	DEBUG SYMLINK
 OPTIONS_SINGLE=	SERVER
