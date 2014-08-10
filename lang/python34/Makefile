@@ -3,7 +3,7 @@
 
 PORTNAME=	python34
 PORTVERSION=	3.4.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	lang python ipv6
 MASTER_SITES=	PYTHON
 MASTER_SITE_SUBDIR=	ftp/python/${PORTVERSION}
@@ -16,6 +16,7 @@ COMMENT=	Interpreted object-oriented programming language
 LICENSE=	PSFL
 
 USES=		cpe ncurses pkgconfig readline tar:xz
+USE_OPENSSL=	yes
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 

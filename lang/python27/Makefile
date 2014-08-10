@@ -2,7 +2,7 @@
 
 PORTNAME=	python27
 PORTVERSION=	2.7.8
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	lang python ipv6
 MASTER_SITES=	PYTHON
 MASTER_SITE_SUBDIR=	ftp/python/${PORTVERSION}
@@ -16,6 +16,7 @@ LICENSE=	PSFL
 
 USES=		cpe ncurses pkgconfig readline tar:xz
 USE_LDCONFIG=	yes
+USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
 
 CPE_VENDOR=	python
