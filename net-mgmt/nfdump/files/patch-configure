@@ -1,6 +1,6 @@
---- ./configure.orig	2013-03-02 18:24:29.000000000 +0100
-+++ ./configure	2013-03-27 20:43:21.000000000 +0100
-@@ -4945,7 +4945,7 @@
+--- configure.orig	2014-08-10 13:37:42.000000000 +0200
++++ configure	2014-08-10 13:39:21.000000000 +0200
+@@ -4975,7 +4975,7 @@
  
  
  # Check whether --enable-nfprofile was given.
@@ -9,7 +9,7 @@
    enableval=$enable_nfprofile;
  	{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for rrd_update in -lrrd" >&5
  $as_echo_n "checking for rrd_update in -lrrd... " >&6; }
-@@ -5069,7 +5069,7 @@
+@@ -5099,7 +5099,7 @@
  
  
  # Check whether --enable-nftrack was given.
