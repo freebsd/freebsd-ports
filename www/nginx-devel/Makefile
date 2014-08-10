@@ -612,15 +612,16 @@ CONFIGURE_ARGS+=--add-module=${WRKDIR}/openresty-memc-nginx-module-${GIT_MEMC_VE
 .endif
 
 .if ${PORT_OPTIONS:MMODSECURITY}
-NGINX_MODSECURITY_VERSION=	2.7.5
+NGINX_MODSECURITY_VERSION=	2.8.0
 LIB_DEPENDS+=	libpcre.so:${PORTSDIR}/devel/pcre \
-		libapr-1.so:${PORTSDIR}/devel/apr1
+		libapr-1.so:${PORTSDIR}/devel/apr1 \
+		libyajl.so:${PORTSDIR}/devel/yajl
 USE_APACHE=	22+
 USE_GNOME=	libxml2
 MASTER_SITES+=	http://www.modsecurity.org/tarball/${NGINX_MODSECURITY_VERSION}/:modsecurity
-DISTFILES+=	modsecurity-apache_${NGINX_MODSECURITY_VERSION}.tar.gz:modsecurity
-CONFIGURE_ARGS+=--add-module=${WRKDIR}/modsecurity-apache_${NGINX_MODSECURITY_VERSION}/nginx/modsecurity
-EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-nginx-modsecurity-config
+DISTFILES+=	modsecurity-${NGINX_MODSECURITY_VERSION}.tar.gz:modsecurity
+CONFIGURE_ARGS+=--add-module=${WRKDIR}/modsecurity-${NGINX_MODSECURITY_VERSION}/nginx/modsecurity
+EXTRA_PATCHES+=		${PATCHDIR}/extra-patch-nginx-modsecurity-configure
 .endif
 
 .if ${PORT_OPTIONS:MNAXSI}
@@ -951,12 +952,12 @@ post-patch:
 .if ${PORT_OPTIONS:MMODSECURITY}
 	@${REINPLACE_CMD} \
 		's!%%PREFIX%%!${LOCALBASE}!g' \
-		${WRKDIR}/modsecurity-apache_${NGINX_MODSECURITY_VERSION}/nginx/modsecurity/config
+		${WRKDIR}/modsecurity-${NGINX_MODSECURITY_VERSION}/configure
 .endif
 
 pre-configure:
 .if ${PORT_OPTIONS:MMODSECURITY}
-	( cd ${WRKDIR}/modsecurity-apache_${NGINX_MODSECURITY_VERSION} && \
+	( cd ${WRKDIR}/modsecurity-${NGINX_MODSECURITY_VERSION} && \
 		CC="${CC}" ./${CONFIGURE_SCRIPT} --enable-standalone-module && \
 		${MAKE} )
 .endif
