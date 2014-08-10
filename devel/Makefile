@@ -4613,6 +4613,7 @@
     SUBDIR += ta-lib
     SUBDIR += tailor
     SUBDIR += talloc
+    SUBDIR += tass
     SUBDIR += tbb
     SUBDIR += tcl-memchan
     SUBDIR += tcl-mmap
