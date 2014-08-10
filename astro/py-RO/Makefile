@@ -2,12 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	RO
-PORTVERSION=	3.5.0
+PORTVERSION=	3.5.1
 CATEGORIES=	astro python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	wen@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Package of Python astronomical utilities
 
 LICENSE=	MIT
@@ -22,9 +22,8 @@ MATPLOTLIB_DESC=	Add support for Matplotlib
 PYFITS_DESC=		Add Support for PyFITS
 PYGAME_DESC=		Add Support for PyGame
 
-USE_PYTHON=	yes
-USE_PYDISTUTILS=yes
-PYDISTUTILS_AUTOPLIST=	yes
+USES=			python
+PYTHON_FEATURES=	distutils autoplist
 
 MATPLOTLIB_RUN_DEPENDS=	${PKGNAMEPREFIX}matplotlib>=0.98:${PORTSDIR}/math/py-matplotlib
 PYFITS_RUN_DEPENDS=	${PKGNAMEPREFIX}pyfits>=1.1:${PORTSDIR}/astro/py-pyfits
