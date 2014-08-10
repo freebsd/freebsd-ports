@@ -1,5 +1,6 @@
 bin/tellico
 share/applications/kde4/tellico.desktop
+share/appdata/tellico.appdata.xml
 share/apps/kconf_update/tellico-1-3-update.pl
 share/apps/kconf_update/tellico-rename.upd
 share/apps/kconf_update/tellico.upd
@@ -120,7 +121,6 @@ share/apps/tellico/tellico2html.xsl
 share/apps/tellico/tellico2onix.xsl
 share/apps/tellico/tellicoui.rc
 share/apps/tellico/thegamesdb2tellico.xsl
-share/apps/tellico/tmdb2tellico.xsl
 share/apps/tellico/vhs-logo.png
 share/apps/tellico/vinoxml2tellico.xsl
 share/apps/tellico/welcome.html
@@ -375,6 +375,7 @@ share/mimelnk/application/x-tellico.desktop
 @dirrmtry share/mimelnk
 @dirrmtry share/locale/ia/LC_MESSAGES
 @dirrmtry share/locale/ia
+@dirrmtry share/appdata
 @dirrm share/doc/HTML/uk/tellico
 @dirrm share/doc/HTML/sv/tellico
 @dirrm share/doc/HTML/pt_BR/tellico
