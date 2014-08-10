@@ -1,0 +1,2184 @@
+bin/bq
+bin/gcloud
+bin/gcutil
+bin/git-credential-gcloud.sh
+bin/gsutil
+google-cloud-sdk/.install/bq-nix.manifest
+google-cloud-sdk/.install/bq-nix.snapshot.json
+google-cloud-sdk/.install/bq.manifest
+google-cloud-sdk/.install/bq.snapshot.json
+google-cloud-sdk/.install/compute.manifest
+google-cloud-sdk/.install/compute.snapshot.json
+google-cloud-sdk/.install/core-nix.manifest
+google-cloud-sdk/.install/core-nix.snapshot.json
+google-cloud-sdk/.install/core.manifest
+google-cloud-sdk/.install/core.snapshot.json
+google-cloud-sdk/.install/dns.manifest
+google-cloud-sdk/.install/dns.snapshot.json
+google-cloud-sdk/.install/gcutil-nix.manifest
+google-cloud-sdk/.install/gcutil-nix.snapshot.json
+google-cloud-sdk/.install/gcutil.manifest
+google-cloud-sdk/.install/gcutil.snapshot.json
+google-cloud-sdk/.install/gsutil-nix.manifest
+google-cloud-sdk/.install/gsutil-nix.snapshot.json
+google-cloud-sdk/.install/gsutil.manifest
+google-cloud-sdk/.install/gsutil.snapshot.json
+google-cloud-sdk/.install/pkg-core.manifest
+google-cloud-sdk/.install/pkg-core.snapshot.json
+google-cloud-sdk/.install/sql.manifest
+google-cloud-sdk/.install/sql.snapshot.json
+google-cloud-sdk/LICENSE
+google-cloud-sdk/README
+google-cloud-sdk/RELEASE_NOTES
+google-cloud-sdk/bin/bootstrapping/.default_components
+google-cloud-sdk/bin/bootstrapping/.install_configurations
+google-cloud-sdk/bin/bootstrapping/__init__.py
+google-cloud-sdk/bin/bootstrapping/bootstrapping.py
+google-cloud-sdk/bin/bootstrapping/bq.py
+google-cloud-sdk/bin/bootstrapping/gcutil.py
+google-cloud-sdk/bin/bootstrapping/gsutil.py
+google-cloud-sdk/bin/bootstrapping/install.py
+google-cloud-sdk/bin/bootstrapping/prerun.py
+google-cloud-sdk/bin/bootstrapping/print_env_info.py
+google-cloud-sdk/bin/bootstrapping/setup.py
+google-cloud-sdk/bin/bq
+google-cloud-sdk/bin/gcloud
+google-cloud-sdk/bin/gcutil
+google-cloud-sdk/bin/git-credential-gcloud.sh
+google-cloud-sdk/bin/gsutil
+google-cloud-sdk/completion.bash.inc
+google-cloud-sdk/completion.zsh.inc
+google-cloud-sdk/help/text.long/gcloud
+google-cloud-sdk/help/text.long/gcloud-auth
+google-cloud-sdk/help/text.long/gcloud-auth-activate-refresh-token
+google-cloud-sdk/help/text.long/gcloud-auth-activate-service-account
+google-cloud-sdk/help/text.long/gcloud-auth-git-helper
+google-cloud-sdk/help/text.long/gcloud-auth-list
+google-cloud-sdk/help/text.long/gcloud-auth-login
+google-cloud-sdk/help/text.long/gcloud-auth-print-access-token
+google-cloud-sdk/help/text.long/gcloud-auth-revoke
+google-cloud-sdk/help/text.long/gcloud-components
+google-cloud-sdk/help/text.long/gcloud-components-list
+google-cloud-sdk/help/text.long/gcloud-components-remove
+google-cloud-sdk/help/text.long/gcloud-components-restore
+google-cloud-sdk/help/text.long/gcloud-components-update
+google-cloud-sdk/help/text.long/gcloud-compute
+google-cloud-sdk/help/text.long/gcloud-compute-addresses
+google-cloud-sdk/help/text.long/gcloud-compute-addresses-get
+google-cloud-sdk/help/text.long/gcloud-compute-addresses-list
+google-cloud-sdk/help/text.long/gcloud-compute-addresses-release
+google-cloud-sdk/help/text.long/gcloud-compute-addresses-reserve
+google-cloud-sdk/help/text.long/gcloud-compute-config-ssh
+google-cloud-sdk/help/text.long/gcloud-compute-copy-files
+google-cloud-sdk/help/text.long/gcloud-compute-disks
+google-cloud-sdk/help/text.long/gcloud-compute-disks-create
+google-cloud-sdk/help/text.long/gcloud-compute-disks-delete
+google-cloud-sdk/help/text.long/gcloud-compute-disks-get
+google-cloud-sdk/help/text.long/gcloud-compute-disks-list
+google-cloud-sdk/help/text.long/gcloud-compute-disks-snapshot
+google-cloud-sdk/help/text.long/gcloud-compute-firewalls
+google-cloud-sdk/help/text.long/gcloud-compute-firewalls-create
+google-cloud-sdk/help/text.long/gcloud-compute-firewalls-delete
+google-cloud-sdk/help/text.long/gcloud-compute-firewalls-get
+google-cloud-sdk/help/text.long/gcloud-compute-firewalls-list
+google-cloud-sdk/help/text.long/gcloud-compute-firewalls-update
+google-cloud-sdk/help/text.long/gcloud-compute-forwarding-rules
+google-cloud-sdk/help/text.long/gcloud-compute-forwarding-rules-create
+google-cloud-sdk/help/text.long/gcloud-compute-forwarding-rules-delete
+google-cloud-sdk/help/text.long/gcloud-compute-forwarding-rules-get
+google-cloud-sdk/help/text.long/gcloud-compute-forwarding-rules-list
+google-cloud-sdk/help/text.long/gcloud-compute-forwarding-rules-set-target
+google-cloud-sdk/help/text.long/gcloud-compute-http-health-checks
+google-cloud-sdk/help/text.long/gcloud-compute-http-health-checks-create
+google-cloud-sdk/help/text.long/gcloud-compute-http-health-checks-get
+google-cloud-sdk/help/text.long/gcloud-compute-http-health-checks-list
+google-cloud-sdk/help/text.long/gcloud-compute-http-health-checks-update
+google-cloud-sdk/help/text.long/gcloud-compute-images
+google-cloud-sdk/help/text.long/gcloud-compute-images-create
+google-cloud-sdk/help/text.long/gcloud-compute-images-delete
+google-cloud-sdk/help/text.long/gcloud-compute-images-deprecate
+google-cloud-sdk/help/text.long/gcloud-compute-images-get
+google-cloud-sdk/help/text.long/gcloud-compute-images-list
+google-cloud-sdk/help/text.long/gcloud-compute-instances
+google-cloud-sdk/help/text.long/gcloud-compute-instances-add-access-config
+google-cloud-sdk/help/text.long/gcloud-compute-instances-add-metadata
+google-cloud-sdk/help/text.long/gcloud-compute-instances-add-tags
+google-cloud-sdk/help/text.long/gcloud-compute-instances-attach-disk
+google-cloud-sdk/help/text.long/gcloud-compute-instances-create
+google-cloud-sdk/help/text.long/gcloud-compute-instances-delete
+google-cloud-sdk/help/text.long/gcloud-compute-instances-delete-access-config
+google-cloud-sdk/help/text.long/gcloud-compute-instances-detach-disk
+google-cloud-sdk/help/text.long/gcloud-compute-instances-get
+google-cloud-sdk/help/text.long/gcloud-compute-instances-get-serial-port-output
+google-cloud-sdk/help/text.long/gcloud-compute-instances-list
+google-cloud-sdk/help/text.long/gcloud-compute-instances-remove-metadata
+google-cloud-sdk/help/text.long/gcloud-compute-instances-remove-tags
+google-cloud-sdk/help/text.long/gcloud-compute-instances-reset
+google-cloud-sdk/help/text.long/gcloud-compute-instances-set-disk-auto-delete
+google-cloud-sdk/help/text.long/gcloud-compute-instances-set-scheduling
+google-cloud-sdk/help/text.long/gcloud-compute-machine-types
+google-cloud-sdk/help/text.long/gcloud-compute-machine-types-get
+google-cloud-sdk/help/text.long/gcloud-compute-machine-types-list
+google-cloud-sdk/help/text.long/gcloud-compute-networks
+google-cloud-sdk/help/text.long/gcloud-compute-networks-create
+google-cloud-sdk/help/text.long/gcloud-compute-networks-delete
+google-cloud-sdk/help/text.long/gcloud-compute-networks-get
+google-cloud-sdk/help/text.long/gcloud-compute-networks-list
+google-cloud-sdk/help/text.long/gcloud-compute-operations
+google-cloud-sdk/help/text.long/gcloud-compute-operations-get
+google-cloud-sdk/help/text.long/gcloud-compute-operations-list
+google-cloud-sdk/help/text.long/gcloud-compute-project-info
+google-cloud-sdk/help/text.long/gcloud-compute-project-info-add-metadata
+google-cloud-sdk/help/text.long/gcloud-compute-project-info-get
+google-cloud-sdk/help/text.long/gcloud-compute-project-info-remove-metadata
+google-cloud-sdk/help/text.long/gcloud-compute-regions
+google-cloud-sdk/help/text.long/gcloud-compute-regions-get
+google-cloud-sdk/help/text.long/gcloud-compute-regions-list
+google-cloud-sdk/help/text.long/gcloud-compute-routes
+google-cloud-sdk/help/text.long/gcloud-compute-routes-create
+google-cloud-sdk/help/text.long/gcloud-compute-routes-delete
+google-cloud-sdk/help/text.long/gcloud-compute-routes-get
+google-cloud-sdk/help/text.long/gcloud-compute-routes-list
+google-cloud-sdk/help/text.long/gcloud-compute-snapshots
+google-cloud-sdk/help/text.long/gcloud-compute-snapshots-delete
+google-cloud-sdk/help/text.long/gcloud-compute-snapshots-get
+google-cloud-sdk/help/text.long/gcloud-compute-snapshots-list
+google-cloud-sdk/help/text.long/gcloud-compute-ssh
+google-cloud-sdk/help/text.long/gcloud-compute-target-instances
+google-cloud-sdk/help/text.long/gcloud-compute-target-instances-create
+google-cloud-sdk/help/text.long/gcloud-compute-target-instances-delete
+google-cloud-sdk/help/text.long/gcloud-compute-target-instances-get
+google-cloud-sdk/help/text.long/gcloud-compute-target-instances-list
+google-cloud-sdk/help/text.long/gcloud-compute-target-pools
+google-cloud-sdk/help/text.long/gcloud-compute-target-pools-add-health-check
+google-cloud-sdk/help/text.long/gcloud-compute-target-pools-add-instance
+google-cloud-sdk/help/text.long/gcloud-compute-target-pools-create
+google-cloud-sdk/help/text.long/gcloud-compute-target-pools-delete
+google-cloud-sdk/help/text.long/gcloud-compute-target-pools-get
+google-cloud-sdk/help/text.long/gcloud-compute-target-pools-get-health
+google-cloud-sdk/help/text.long/gcloud-compute-target-pools-list
+google-cloud-sdk/help/text.long/gcloud-compute-target-pools-remove-health-check
+google-cloud-sdk/help/text.long/gcloud-compute-target-pools-remove-instance
+google-cloud-sdk/help/text.long/gcloud-compute-target-pools-set-backup
+google-cloud-sdk/help/text.long/gcloud-compute-zones
+google-cloud-sdk/help/text.long/gcloud-compute-zones-get
+google-cloud-sdk/help/text.long/gcloud-compute-zones-list
+google-cloud-sdk/help/text.long/gcloud-config
+google-cloud-sdk/help/text.long/gcloud-config-list
+google-cloud-sdk/help/text.long/gcloud-config-set
+google-cloud-sdk/help/text.long/gcloud-config-unset
+google-cloud-sdk/help/text.long/gcloud-help
+google-cloud-sdk/help/text.long/gcloud-init
+google-cloud-sdk/help/text.long/gcloud-interactive
+google-cloud-sdk/help/text.long/gcloud-version
+google-cloud-sdk/install.bat
+google-cloud-sdk/install.sh
+google-cloud-sdk/lib/apiclient/__init__.py
+google-cloud-sdk/lib/apiclient/channel.py
+google-cloud-sdk/lib/apiclient/discovery.py
+google-cloud-sdk/lib/apiclient/errors.py
+google-cloud-sdk/lib/apiclient/http.py
+google-cloud-sdk/lib/apiclient/mimeparse.py
+google-cloud-sdk/lib/apiclient/model.py
+google-cloud-sdk/lib/apiclient/oauth.py
+google-cloud-sdk/lib/apiclient/push.py
+google-cloud-sdk/lib/apiclient/schema.py
+google-cloud-sdk/lib/argcomplete/__init__.py
+google-cloud-sdk/lib/argcomplete/completers.py
+google-cloud-sdk/lib/argcomplete/my_argparse.py
+google-cloud-sdk/lib/argcomplete/my_shlex.py
+google-cloud-sdk/lib/argcomplete/scripts/activate-global-python-argcomplete
+google-cloud-sdk/lib/argcomplete/scripts/python-argcomplete-check-easy-install-script
+google-cloud-sdk/lib/argcomplete/scripts/register-python-argcomplete
+google-cloud-sdk/lib/argparse/LICENSE.txt
+google-cloud-sdk/lib/argparse/NEWS.txt
+google-cloud-sdk/lib/argparse/README.txt
+google-cloud-sdk/lib/argparse/__init__.py
+google-cloud-sdk/lib/docker/__init__.py
+google-cloud-sdk/lib/docker/docker/__init__.py
+google-cloud-sdk/lib/docker/docker/auth/__init__.py
+google-cloud-sdk/lib/docker/docker/auth/auth.py
+google-cloud-sdk/lib/docker/docker/client.py
+google-cloud-sdk/lib/docker/docker/errors.py
+google-cloud-sdk/lib/docker/docker/unixconn/__init__.py
+google-cloud-sdk/lib/docker/docker/unixconn/unixconn.py
+google-cloud-sdk/lib/docker/docker/utils/__init__.py
+google-cloud-sdk/lib/docker/docker/utils/utils.py
+google-cloud-sdk/lib/gflags/AUTHORS
+google-cloud-sdk/lib/gflags/COPYING
+google-cloud-sdk/lib/gflags/ChangeLog
+google-cloud-sdk/lib/gflags/LICENSE
+google-cloud-sdk/lib/gflags/MANIFEST.in
+google-cloud-sdk/lib/gflags/Makefile
+google-cloud-sdk/lib/gflags/NEWS
+google-cloud-sdk/lib/gflags/PKG-INFO
+google-cloud-sdk/lib/gflags/README
+google-cloud-sdk/lib/gflags/__init__.py
+google-cloud-sdk/lib/gflags/gflags2man.py
+google-cloud-sdk/lib/gflags/gflags_validators.py
+google-cloud-sdk/lib/gflags/setup.cfg
+google-cloud-sdk/lib/gflags/setup.py
+google-cloud-sdk/lib/google/__init__.py
+google-cloud-sdk/lib/google/apputils/__init__.py
+google-cloud-sdk/lib/google/apputils/app.py
+google-cloud-sdk/lib/google/apputils/appcommands.py
+google-cloud-sdk/lib/google/apputils/basetest.py
+google-cloud-sdk/lib/google/apputils/datelib.py
+google-cloud-sdk/lib/google/apputils/debug.py
+google-cloud-sdk/lib/google/apputils/file_util.py
+google-cloud-sdk/lib/google/apputils/resources.py
+google-cloud-sdk/lib/google/apputils/run_script_module.py
+google-cloud-sdk/lib/google/apputils/setup_command.py
+google-cloud-sdk/lib/google/apputils/shellutil.py
+google-cloud-sdk/lib/google/apputils/stopwatch.py
+google-cloud-sdk/lib/googlecloudapis/__init__.py
+google-cloud-sdk/lib/googlecloudapis/apitools/__init__.py
+google-cloud-sdk/lib/googlecloudapis/apitools/base/__init__.py
+google-cloud-sdk/lib/googlecloudapis/apitools/base/py/__init__.py
+google-cloud-sdk/lib/googlecloudapis/apitools/base/py/app2.py
+google-cloud-sdk/lib/googlecloudapis/apitools/base/py/base_api.py
+google-cloud-sdk/lib/googlecloudapis/apitools/base/py/base_cli.py
+google-cloud-sdk/lib/googlecloudapis/apitools/base/py/batch.py
+google-cloud-sdk/lib/googlecloudapis/apitools/base/py/credentials_lib.py
+google-cloud-sdk/lib/googlecloudapis/apitools/base/py/encoding.py
+google-cloud-sdk/lib/googlecloudapis/apitools/base/py/exceptions.py
+google-cloud-sdk/lib/googlecloudapis/apitools/base/py/extra_types.py
+google-cloud-sdk/lib/googlecloudapis/apitools/base/py/http_wrapper.py
+google-cloud-sdk/lib/googlecloudapis/apitools/base/py/transfer.py
+google-cloud-sdk/lib/googlecloudapis/apitools/base/py/util.py
+google-cloud-sdk/lib/googlecloudapis/compute/__init__.py
+google-cloud-sdk/lib/googlecloudapis/compute/v1/__init__.py
+google-cloud-sdk/lib/googlecloudapis/compute/v1/compute_v1_client.py
+google-cloud-sdk/lib/googlecloudapis/compute/v1/compute_v1_messages.py
+google-cloud-sdk/lib/googlecloudapis/dns/__init__.py
+google-cloud-sdk/lib/googlecloudapis/dns/v1beta1/__init__.py
+google-cloud-sdk/lib/googlecloudapis/dns/v1beta1/dns_v1beta1_client.py
+google-cloud-sdk/lib/googlecloudapis/dns/v1beta1/dns_v1beta1_messages.py
+google-cloud-sdk/lib/googlecloudapis/manager/__init__.py
+google-cloud-sdk/lib/googlecloudapis/manager/v1beta2/__init__.py
+google-cloud-sdk/lib/googlecloudapis/manager/v1beta2/manager_v1beta2_client.py
+google-cloud-sdk/lib/googlecloudapis/manager/v1beta2/manager_v1beta2_messages.py
+google-cloud-sdk/lib/googlecloudapis/replicapool/__init__.py
+google-cloud-sdk/lib/googlecloudapis/replicapool/v1beta1/__init__.py
+google-cloud-sdk/lib/googlecloudapis/replicapool/v1beta1/replicapool_v1beta1_client.py
+google-cloud-sdk/lib/googlecloudapis/replicapool/v1beta1/replicapool_v1beta1_messages.py
+google-cloud-sdk/lib/googlecloudapis/resourceviews/__init__.py
+google-cloud-sdk/lib/googlecloudapis/resourceviews/v1beta1/__init__.py
+google-cloud-sdk/lib/googlecloudapis/resourceviews/v1beta1/resourceviews_v1beta1_client.py
+google-cloud-sdk/lib/googlecloudapis/resourceviews/v1beta1/resourceviews_v1beta1_messages.py
+google-cloud-sdk/lib/googlecloudapis/sqladmin/__init__.py
+google-cloud-sdk/lib/googlecloudapis/sqladmin/v1beta1/__init__.py
+google-cloud-sdk/lib/googlecloudapis/sqladmin/v1beta1/sqladmin_v1beta1_client.py
+google-cloud-sdk/lib/googlecloudapis/sqladmin/v1beta1/sqladmin_v1beta1_messages.py
+google-cloud-sdk/lib/googlecloudapis/sqladmin/v1beta3/__init__.py
+google-cloud-sdk/lib/googlecloudapis/sqladmin/v1beta3/sqladmin_v1beta3_client.py
+google-cloud-sdk/lib/googlecloudapis/sqladmin/v1beta3/sqladmin_v1beta3_messages.py
+google-cloud-sdk/lib/googlecloudsdk/__init__.py
+google-cloud-sdk/lib/googlecloudsdk/calliope/__init__.py
+google-cloud-sdk/lib/googlecloudsdk/calliope/actions.py
+google-cloud-sdk/lib/googlecloudsdk/calliope/arg_parsers.py
+google-cloud-sdk/lib/googlecloudsdk/calliope/base.py
+google-cloud-sdk/lib/googlecloudsdk/calliope/exceptions.py
+google-cloud-sdk/lib/googlecloudsdk/calliope/shell.py
+google-cloud-sdk/lib/googlecloudsdk/calliope/tokenizer.py
+google-cloud-sdk/lib/googlecloudsdk/calliope/usage_text.py
+google-cloud-sdk/lib/googlecloudsdk/compute/__init__.py
+google-cloud-sdk/lib/googlecloudsdk/compute/api/__init__.py
+google-cloud-sdk/lib/googlecloudsdk/compute/lib/__init__.py
+google-cloud-sdk/lib/googlecloudsdk/compute/lib/api_context_parser.py
+google-cloud-sdk/lib/googlecloudsdk/compute/lib/base_classes.py
+google-cloud-sdk/lib/googlecloudsdk/compute/lib/batch_helper.py
+google-cloud-sdk/lib/googlecloudsdk/compute/lib/constants.py
+google-cloud-sdk/lib/googlecloudsdk/compute/lib/firewalls_utils.py
+google-cloud-sdk/lib/googlecloudsdk/compute/lib/image_utils.py
+google-cloud-sdk/lib/googlecloudsdk/compute/lib/lister.py
+google-cloud-sdk/lib/googlecloudsdk/compute/lib/metadata_utils.py
+google-cloud-sdk/lib/googlecloudsdk/compute/lib/name_generator.py
+google-cloud-sdk/lib/googlecloudsdk/compute/lib/operations_utils.py
+google-cloud-sdk/lib/googlecloudsdk/compute/lib/path_simplifier.py
+google-cloud-sdk/lib/googlecloudsdk/compute/lib/property_selector.py
+google-cloud-sdk/lib/googlecloudsdk/compute/lib/request_helper.py
+google-cloud-sdk/lib/googlecloudsdk/compute/lib/resolvers.py
+google-cloud-sdk/lib/googlecloudsdk/compute/lib/resource_specs.py
+google-cloud-sdk/lib/googlecloudsdk/compute/lib/ssh_utils.py
+google-cloud-sdk/lib/googlecloudsdk/compute/lib/waiters.py
+google-cloud-sdk/lib/googlecloudsdk/compute/subcommands/__init__.py
+google-cloud-sdk/lib/googlecloudsdk/compute/subcommands/addresses/__init__.py
+google-cloud-sdk/lib/googlecloudsdk/compute/subcommands/addresses/get.py
+google-cloud-sdk/lib/googlecloudsdk/compute/subcommands/addresses/list.py
+google-cloud-sdk/lib/googlecloudsdk/compute/subcommands/addresses/release.py
+google-cloud-sdk/lib/googlecloudsdk/compute/subcommands/addresses/reserve.py
+google-cloud-sdk/lib/googlecloudsdk/compute/subcommands/config_ssh.py
+google-cloud-sdk/lib/googlecloudsdk/compute/subcommands/copy_files.py
+google-cloud-sdk/lib/googlecloudsdk/compute/subcommands/disks/__init__.py
+google-cloud-sdk/lib/googlecloudsdk/compute/subcommands/disks/create.py
+google-cloud-sdk/lib/googlecloudsdk/compute/subcommands/disks/delete.py
+google-cloud-sdk/lib/googlecloudsdk/compute/subcommands/disks/get.py
+google-cloud-sdk/lib/googlecloudsdk/compute/subcommands/disks/list.py
+google-cloud-sdk/lib/googlecloudsdk/compute/subcommands/disks/snapshot.py
+google-cloud-sdk/lib/googlecloudsdk/compute/subcommands/firewalls/__init__.py
+google-cloud-sdk/lib/googlecloudsdk/compute/subcommands/firewalls/create.py
+google-cloud-sdk/lib/googlecloudsdk/compute/subcommands/firewalls/delete.py
+google-cloud-sdk/lib/googlecloudsdk/compute/subcommands/firewalls/get.py
+google-cloud-sdk/lib/googlecloudsdk/compute/subcommands/firewalls/list.py
+google-cloud-sdk/lib/googlecloudsdk/compute/subcommands/firewalls/update.py
+google-cloud-sdk/lib/googlecloudsdk/compute/subcommands/forwarding_rules/__init__.py
+google-cloud-sdk/lib/googlecloudsdk/compute/subcommands/forwarding_rules/create.py
+google-cloud-sdk/lib/googlecloudsdk/compute/subcommands/forwarding_rules/delete.py
+google-cloud-sdk/lib/googlecloudsdk/compute/subcommands/forwarding_rules/get.py
+google-cloud-sdk/lib/googlecloudsdk/compute/subcommands/forwarding_rules/list.py
+google-cloud-sdk/lib/googlecloudsdk/compute/subcommands/forwarding_rules/set_target.py
+google-cloud-sdk/lib/googlecloudsdk/compute/subcommands/http_health_checks/__init__.py
+google-cloud-sdk/lib/googlecloudsdk/compute/subcommands/http_health_checks/create.py
+google-cloud-sdk/lib/googlecloudsdk/compute/subcommands/http_health_checks/get.py
+google-cloud-sdk/lib/googlecloudsdk/compute/subcommands/http_health_checks/list.py
+google-cloud-sdk/lib/googlecloudsdk/compute/subcommands/http_health_checks/update.py
+google-cloud-sdk/lib/googlecloudsdk/compute/subcommands/images/__init__.py
+google-cloud-sdk/lib/googlecloudsdk/compute/subcommands/images/create.py
+google-cloud-sdk/lib/googlecloudsdk/compute/subcommands/images/delete.py
+google-cloud-sdk/lib/googlecloudsdk/compute/subcommands/images/deprecate.py
+google-cloud-sdk/lib/googlecloudsdk/compute/subcommands/images/get.py
+google-cloud-sdk/lib/googlecloudsdk/compute/subcommands/images/list.py
+google-cloud-sdk/lib/googlecloudsdk/compute/subcommands/instances/__init__.py
+google-cloud-sdk/lib/googlecloudsdk/compute/subcommands/instances/add_access_config.py
+google-cloud-sdk/lib/googlecloudsdk/compute/subcommands/instances/add_metadata.py
+google-cloud-sdk/lib/googlecloudsdk/compute/subcommands/instances/add_tags.py
+google-cloud-sdk/lib/googlecloudsdk/compute/subcommands/instances/attach_disk.py
+google-cloud-sdk/lib/googlecloudsdk/compute/subcommands/instances/create.py
+google-cloud-sdk/lib/googlecloudsdk/compute/subcommands/instances/delete.py
+google-cloud-sdk/lib/googlecloudsdk/compute/subcommands/instances/delete_access_config.py
+google-cloud-sdk/lib/googlecloudsdk/compute/subcommands/instances/detach_disk.py
+google-cloud-sdk/lib/googlecloudsdk/compute/subcommands/instances/get.py
+google-cloud-sdk/lib/googlecloudsdk/compute/subcommands/instances/get_serial_port_output.py
+google-cloud-sdk/lib/googlecloudsdk/compute/subcommands/instances/list.py
+google-cloud-sdk/lib/googlecloudsdk/compute/subcommands/instances/remove_metadata.py
+google-cloud-sdk/lib/googlecloudsdk/compute/subcommands/instances/remove_tags.py
+google-cloud-sdk/lib/googlecloudsdk/compute/subcommands/instances/reset.py
+google-cloud-sdk/lib/googlecloudsdk/compute/subcommands/instances/set_disk_auto_delete.py
+google-cloud-sdk/lib/googlecloudsdk/compute/subcommands/instances/set_scheduling.py
+google-cloud-sdk/lib/googlecloudsdk/compute/subcommands/machine_types/__init__.py
+google-cloud-sdk/lib/googlecloudsdk/compute/subcommands/machine_types/get.py
+google-cloud-sdk/lib/googlecloudsdk/compute/subcommands/machine_types/list.py
+google-cloud-sdk/lib/googlecloudsdk/compute/subcommands/networks/__init__.py
+google-cloud-sdk/lib/googlecloudsdk/compute/subcommands/networks/create.py
+google-cloud-sdk/lib/googlecloudsdk/compute/subcommands/networks/delete.py
+google-cloud-sdk/lib/googlecloudsdk/compute/subcommands/networks/get.py
+google-cloud-sdk/lib/googlecloudsdk/compute/subcommands/networks/list.py
+google-cloud-sdk/lib/googlecloudsdk/compute/subcommands/operations/__init__.py
+google-cloud-sdk/lib/googlecloudsdk/compute/subcommands/operations/get.py
+google-cloud-sdk/lib/googlecloudsdk/compute/subcommands/operations/list.py
+google-cloud-sdk/lib/googlecloudsdk/compute/subcommands/project_info/__init__.py
+google-cloud-sdk/lib/googlecloudsdk/compute/subcommands/project_info/add_metadata.py
+google-cloud-sdk/lib/googlecloudsdk/compute/subcommands/project_info/get.py
+google-cloud-sdk/lib/googlecloudsdk/compute/subcommands/project_info/remove_metadata.py
+google-cloud-sdk/lib/googlecloudsdk/compute/subcommands/regions/__init__.py
+google-cloud-sdk/lib/googlecloudsdk/compute/subcommands/regions/get.py
+google-cloud-sdk/lib/googlecloudsdk/compute/subcommands/regions/list.py
+google-cloud-sdk/lib/googlecloudsdk/compute/subcommands/routes/__init__.py
+google-cloud-sdk/lib/googlecloudsdk/compute/subcommands/routes/create.py
+google-cloud-sdk/lib/googlecloudsdk/compute/subcommands/routes/delete.py
+google-cloud-sdk/lib/googlecloudsdk/compute/subcommands/routes/get.py
+google-cloud-sdk/lib/googlecloudsdk/compute/subcommands/routes/list.py
+google-cloud-sdk/lib/googlecloudsdk/compute/subcommands/snapshots/__init__.py
+google-cloud-sdk/lib/googlecloudsdk/compute/subcommands/snapshots/delete.py
+google-cloud-sdk/lib/googlecloudsdk/compute/subcommands/snapshots/get.py
+google-cloud-sdk/lib/googlecloudsdk/compute/subcommands/snapshots/list.py
+google-cloud-sdk/lib/googlecloudsdk/compute/subcommands/ssh.py
+google-cloud-sdk/lib/googlecloudsdk/compute/subcommands/target_instances/__init__.py
+google-cloud-sdk/lib/googlecloudsdk/compute/subcommands/target_instances/create.py
+google-cloud-sdk/lib/googlecloudsdk/compute/subcommands/target_instances/delete.py
+google-cloud-sdk/lib/googlecloudsdk/compute/subcommands/target_instances/get.py
+google-cloud-sdk/lib/googlecloudsdk/compute/subcommands/target_instances/list.py
+google-cloud-sdk/lib/googlecloudsdk/compute/subcommands/target_pools/__init__.py
+google-cloud-sdk/lib/googlecloudsdk/compute/subcommands/target_pools/add_health_check.py
+google-cloud-sdk/lib/googlecloudsdk/compute/subcommands/target_pools/add_instance.py
+google-cloud-sdk/lib/googlecloudsdk/compute/subcommands/target_pools/create.py
+google-cloud-sdk/lib/googlecloudsdk/compute/subcommands/target_pools/delete.py
+google-cloud-sdk/lib/googlecloudsdk/compute/subcommands/target_pools/get.py
+google-cloud-sdk/lib/googlecloudsdk/compute/subcommands/target_pools/get_health.py
+google-cloud-sdk/lib/googlecloudsdk/compute/subcommands/target_pools/list.py
+google-cloud-sdk/lib/googlecloudsdk/compute/subcommands/target_pools/remove_health_check.py
+google-cloud-sdk/lib/googlecloudsdk/compute/subcommands/target_pools/remove_instance.py
+google-cloud-sdk/lib/googlecloudsdk/compute/subcommands/target_pools/set_backup.py
+google-cloud-sdk/lib/googlecloudsdk/compute/subcommands/zones/__init__.py
+google-cloud-sdk/lib/googlecloudsdk/compute/subcommands/zones/get.py
+google-cloud-sdk/lib/googlecloudsdk/compute/subcommands/zones/list.py
+google-cloud-sdk/lib/googlecloudsdk/core/__init__.py
+google-cloud-sdk/lib/googlecloudsdk/core/cli.py
+google-cloud-sdk/lib/googlecloudsdk/core/config.json
+google-cloud-sdk/lib/googlecloudsdk/core/config.py
+google-cloud-sdk/lib/googlecloudsdk/core/credentials/__init__.py
+google-cloud-sdk/lib/googlecloudsdk/core/credentials/flow.py
+google-cloud-sdk/lib/googlecloudsdk/core/credentials/gce.py
+google-cloud-sdk/lib/googlecloudsdk/core/credentials/gitp2d.py
+google-cloud-sdk/lib/googlecloudsdk/core/credentials/legacy.py
+google-cloud-sdk/lib/googlecloudsdk/core/credentials/oauth2_landing.html
+google-cloud-sdk/lib/googlecloudsdk/core/credentials/oauth2_landing_error.html
+google-cloud-sdk/lib/googlecloudsdk/core/credentials/store.py
+google-cloud-sdk/lib/googlecloudsdk/core/exceptions.py
+google-cloud-sdk/lib/googlecloudsdk/core/log.py
+google-cloud-sdk/lib/googlecloudsdk/core/metrics.py
+google-cloud-sdk/lib/googlecloudsdk/core/properties.py
+google-cloud-sdk/lib/googlecloudsdk/core/resources.py
+google-cloud-sdk/lib/googlecloudsdk/core/updater/__init__.py
+google-cloud-sdk/lib/googlecloudsdk/core/updater/installers.py
+google-cloud-sdk/lib/googlecloudsdk/core/updater/local_state.py
+google-cloud-sdk/lib/googlecloudsdk/core/updater/schemas.py
+google-cloud-sdk/lib/googlecloudsdk/core/updater/snapshots.py
+google-cloud-sdk/lib/googlecloudsdk/core/updater/update_manager.py
+google-cloud-sdk/lib/googlecloudsdk/core/util/__init__.py
+google-cloud-sdk/lib/googlecloudsdk/core/util/console_io.py
+google-cloud-sdk/lib/googlecloudsdk/core/util/edit.py
+google-cloud-sdk/lib/googlecloudsdk/core/util/files.py
+google-cloud-sdk/lib/googlecloudsdk/core/util/platforms.py
+google-cloud-sdk/lib/googlecloudsdk/core/util/resource_printer.py
+google-cloud-sdk/lib/googlecloudsdk/core/workspaces.py
+google-cloud-sdk/lib/googlecloudsdk/dns/__init__.py
+google-cloud-sdk/lib/googlecloudsdk/dns/dnstools/__init__.py
+google-cloud-sdk/lib/googlecloudsdk/dns/dnstools/changes/__init__.py
+google-cloud-sdk/lib/googlecloudsdk/dns/dnstools/changes/get.py
+google-cloud-sdk/lib/googlecloudsdk/dns/dnstools/changes/list.py
+google-cloud-sdk/lib/googlecloudsdk/dns/dnstools/managed_zone/__init__.py
+google-cloud-sdk/lib/googlecloudsdk/dns/dnstools/managed_zone/create.py
+google-cloud-sdk/lib/googlecloudsdk/dns/dnstools/managed_zone/delete.py
+google-cloud-sdk/lib/googlecloudsdk/dns/dnstools/managed_zone/get.py
+google-cloud-sdk/lib/googlecloudsdk/dns/dnstools/managed_zone/list.py
+google-cloud-sdk/lib/googlecloudsdk/dns/dnstools/project_info/__init__.py
+google-cloud-sdk/lib/googlecloudsdk/dns/dnstools/project_info/get.py
+google-cloud-sdk/lib/googlecloudsdk/dns/dnstools/records/__init__.py
+google-cloud-sdk/lib/googlecloudsdk/dns/dnstools/records/edit.py
+google-cloud-sdk/lib/googlecloudsdk/dns/dnstools/records/list.py
+google-cloud-sdk/lib/googlecloudsdk/dns/util.py
+google-cloud-sdk/lib/googlecloudsdk/gcloud/__init__.py
+google-cloud-sdk/lib/googlecloudsdk/gcloud/gcloud.py
+google-cloud-sdk/lib/googlecloudsdk/gcloud/sdktools/auth/__init__.py
+google-cloud-sdk/lib/googlecloudsdk/gcloud/sdktools/auth/activate_refresh_token.py
+google-cloud-sdk/lib/googlecloudsdk/gcloud/sdktools/auth/activate_service_account.py
+google-cloud-sdk/lib/googlecloudsdk/gcloud/sdktools/auth/git_helper.py
+google-cloud-sdk/lib/googlecloudsdk/gcloud/sdktools/auth/list.py
+google-cloud-sdk/lib/googlecloudsdk/gcloud/sdktools/auth/login.py
+google-cloud-sdk/lib/googlecloudsdk/gcloud/sdktools/auth/print_access_token.py
+google-cloud-sdk/lib/googlecloudsdk/gcloud/sdktools/auth/revoke.py
+google-cloud-sdk/lib/googlecloudsdk/gcloud/sdktools/components/__init__.py
+google-cloud-sdk/lib/googlecloudsdk/gcloud/sdktools/components/list.py
+google-cloud-sdk/lib/googlecloudsdk/gcloud/sdktools/components/remove.py
+google-cloud-sdk/lib/googlecloudsdk/gcloud/sdktools/components/restore.py
+google-cloud-sdk/lib/googlecloudsdk/gcloud/sdktools/components/update.py
+google-cloud-sdk/lib/googlecloudsdk/gcloud/sdktools/config/__init__.py
+google-cloud-sdk/lib/googlecloudsdk/gcloud/sdktools/config/list.py
+google-cloud-sdk/lib/googlecloudsdk/gcloud/sdktools/config/set.py
+google-cloud-sdk/lib/googlecloudsdk/gcloud/sdktools/config/unset.py
+google-cloud-sdk/lib/googlecloudsdk/gcloud/sdktools/root/__init__.py
+google-cloud-sdk/lib/googlecloudsdk/gcloud/sdktools/root/help.py
+google-cloud-sdk/lib/googlecloudsdk/gcloud/sdktools/root/init.py
+google-cloud-sdk/lib/googlecloudsdk/gcloud/sdktools/root/interactive.py
+google-cloud-sdk/lib/googlecloudsdk/gcloud/sdktools/root/version.py
+google-cloud-sdk/lib/googlecloudsdk/sql/__init__.py
+google-cloud-sdk/lib/googlecloudsdk/sql/sql.py
+google-cloud-sdk/lib/googlecloudsdk/sql/tools/__init__.py
+google-cloud-sdk/lib/googlecloudsdk/sql/tools/backups/__init__.py
+google-cloud-sdk/lib/googlecloudsdk/sql/tools/backups/get.py
+google-cloud-sdk/lib/googlecloudsdk/sql/tools/backups/list.py
+google-cloud-sdk/lib/googlecloudsdk/sql/tools/flags/__init__.py
+google-cloud-sdk/lib/googlecloudsdk/sql/tools/flags/list.py
+google-cloud-sdk/lib/googlecloudsdk/sql/tools/instances/__init__.py
+google-cloud-sdk/lib/googlecloudsdk/sql/tools/instances/clone.py
+google-cloud-sdk/lib/googlecloudsdk/sql/tools/instances/create.py
+google-cloud-sdk/lib/googlecloudsdk/sql/tools/instances/delete.py
+google-cloud-sdk/lib/googlecloudsdk/sql/tools/instances/export.py
+google-cloud-sdk/lib/googlecloudsdk/sql/tools/instances/get.py
+google-cloud-sdk/lib/googlecloudsdk/sql/tools/instances/import.py
+google-cloud-sdk/lib/googlecloudsdk/sql/tools/instances/list.py
+google-cloud-sdk/lib/googlecloudsdk/sql/tools/instances/patch.py
+google-cloud-sdk/lib/googlecloudsdk/sql/tools/instances/reset_ssl_config.py
+google-cloud-sdk/lib/googlecloudsdk/sql/tools/instances/restart.py
+google-cloud-sdk/lib/googlecloudsdk/sql/tools/instances/restore_backup.py
+google-cloud-sdk/lib/googlecloudsdk/sql/tools/instances/set_root_password.py
+google-cloud-sdk/lib/googlecloudsdk/sql/tools/operations/__init__.py
+google-cloud-sdk/lib/googlecloudsdk/sql/tools/operations/get.py
+google-cloud-sdk/lib/googlecloudsdk/sql/tools/operations/list.py
+google-cloud-sdk/lib/googlecloudsdk/sql/tools/ssl_certs/__init__.py
+google-cloud-sdk/lib/googlecloudsdk/sql/tools/ssl_certs/create.py
+google-cloud-sdk/lib/googlecloudsdk/sql/tools/ssl_certs/delete.py
+google-cloud-sdk/lib/googlecloudsdk/sql/tools/ssl_certs/get.py
+google-cloud-sdk/lib/googlecloudsdk/sql/tools/ssl_certs/list.py
+google-cloud-sdk/lib/googlecloudsdk/sql/tools/tiers/__init__.py
+google-cloud-sdk/lib/googlecloudsdk/sql/tools/tiers/list.py
+google-cloud-sdk/lib/googlecloudsdk/sql/util.py
+google-cloud-sdk/lib/httplib2/LICENSE
+google-cloud-sdk/lib/httplib2/__init__.py
+google-cloud-sdk/lib/httplib2/cacerts.txt
+google-cloud-sdk/lib/httplib2/iri2uri.py
+google-cloud-sdk/lib/mimeparse/__init__.py
+google-cloud-sdk/lib/oauth2/__init__.py
+google-cloud-sdk/lib/oauth2client/__init__.py
+google-cloud-sdk/lib/oauth2client/anyjson.py
+google-cloud-sdk/lib/oauth2client/appengine.py
+google-cloud-sdk/lib/oauth2client/client.py
+google-cloud-sdk/lib/oauth2client/clientsecrets.py
+google-cloud-sdk/lib/oauth2client/crypt.py
+google-cloud-sdk/lib/oauth2client/django_orm.py
+google-cloud-sdk/lib/oauth2client/file.py
+google-cloud-sdk/lib/oauth2client/gce.py
+google-cloud-sdk/lib/oauth2client/keyring_storage.py
+google-cloud-sdk/lib/oauth2client/locked_file.py
+google-cloud-sdk/lib/oauth2client/multistore_file.py
+google-cloud-sdk/lib/oauth2client/old_run.py
+google-cloud-sdk/lib/oauth2client/tools.py
+google-cloud-sdk/lib/oauth2client/util.py
+google-cloud-sdk/lib/oauth2client/xsrfutil.py
+google-cloud-sdk/lib/protorpc/__init__.py
+google-cloud-sdk/lib/protorpc/definition.py
+google-cloud-sdk/lib/protorpc/descriptor.py
+google-cloud-sdk/lib/protorpc/generate.py
+google-cloud-sdk/lib/protorpc/generate_proto.py
+google-cloud-sdk/lib/protorpc/generate_python.py
+google-cloud-sdk/lib/protorpc/google_imports.py
+google-cloud-sdk/lib/protorpc/message_types.py
+google-cloud-sdk/lib/protorpc/messages.py
+google-cloud-sdk/lib/protorpc/non_sdk_imports.py
+google-cloud-sdk/lib/protorpc/protobuf.py
+google-cloud-sdk/lib/protorpc/protojson.py
+google-cloud-sdk/lib/protorpc/protourlencode.py
+google-cloud-sdk/lib/protorpc/registry.py
+google-cloud-sdk/lib/protorpc/remote.py
+google-cloud-sdk/lib/protorpc/transport.py
+google-cloud-sdk/lib/protorpc/util.py
+google-cloud-sdk/lib/protorpc/webapp/__init__.py
+google-cloud-sdk/lib/protorpc/webapp/forms.py
+google-cloud-sdk/lib/protorpc/webapp/google_imports.py
+google-cloud-sdk/lib/protorpc/webapp/service_handlers.py
+google-cloud-sdk/lib/protorpc/wsgi/__init__.py
+google-cloud-sdk/lib/protorpc/wsgi/service.py
+google-cloud-sdk/lib/protorpc/wsgi/util.py
+google-cloud-sdk/lib/requests/__init__.py
+google-cloud-sdk/lib/requests/adapters.py
+google-cloud-sdk/lib/requests/api.py
+google-cloud-sdk/lib/requests/auth.py
+google-cloud-sdk/lib/requests/certs.py
+google-cloud-sdk/lib/requests/compat.py
+google-cloud-sdk/lib/requests/cookies.py
+google-cloud-sdk/lib/requests/exceptions.py
+google-cloud-sdk/lib/requests/hooks.py
+google-cloud-sdk/lib/requests/models.py
+google-cloud-sdk/lib/requests/packages/__init__.py
+google-cloud-sdk/lib/requests/packages/charade/__init__.py
+google-cloud-sdk/lib/requests/packages/charade/big5freq.py
+google-cloud-sdk/lib/requests/packages/charade/big5prober.py
+google-cloud-sdk/lib/requests/packages/charade/chardistribution.py
+google-cloud-sdk/lib/requests/packages/charade/charsetgroupprober.py
+google-cloud-sdk/lib/requests/packages/charade/charsetprober.py
+google-cloud-sdk/lib/requests/packages/charade/codingstatemachine.py
+google-cloud-sdk/lib/requests/packages/charade/compat.py
+google-cloud-sdk/lib/requests/packages/charade/constants.py
+google-cloud-sdk/lib/requests/packages/charade/cp949prober.py
+google-cloud-sdk/lib/requests/packages/charade/escprober.py
+google-cloud-sdk/lib/requests/packages/charade/escsm.py
+google-cloud-sdk/lib/requests/packages/charade/eucjpprober.py
+google-cloud-sdk/lib/requests/packages/charade/euckrfreq.py
+google-cloud-sdk/lib/requests/packages/charade/euckrprober.py
+google-cloud-sdk/lib/requests/packages/charade/euctwfreq.py
+google-cloud-sdk/lib/requests/packages/charade/euctwprober.py
+google-cloud-sdk/lib/requests/packages/charade/gb2312freq.py
+google-cloud-sdk/lib/requests/packages/charade/gb2312prober.py
+google-cloud-sdk/lib/requests/packages/charade/hebrewprober.py
+google-cloud-sdk/lib/requests/packages/charade/jisfreq.py
+google-cloud-sdk/lib/requests/packages/charade/jpcntx.py
+google-cloud-sdk/lib/requests/packages/charade/langbulgarianmodel.py
+google-cloud-sdk/lib/requests/packages/charade/langcyrillicmodel.py
+google-cloud-sdk/lib/requests/packages/charade/langgreekmodel.py
+google-cloud-sdk/lib/requests/packages/charade/langhebrewmodel.py
+google-cloud-sdk/lib/requests/packages/charade/langhungarianmodel.py
+google-cloud-sdk/lib/requests/packages/charade/langthaimodel.py
+google-cloud-sdk/lib/requests/packages/charade/latin1prober.py
+google-cloud-sdk/lib/requests/packages/charade/mbcharsetprober.py
+google-cloud-sdk/lib/requests/packages/charade/mbcsgroupprober.py
+google-cloud-sdk/lib/requests/packages/charade/mbcssm.py
+google-cloud-sdk/lib/requests/packages/charade/sbcharsetprober.py
+google-cloud-sdk/lib/requests/packages/charade/sbcsgroupprober.py
+google-cloud-sdk/lib/requests/packages/charade/sjisprober.py
+google-cloud-sdk/lib/requests/packages/charade/universaldetector.py
+google-cloud-sdk/lib/requests/packages/charade/utf8prober.py
+google-cloud-sdk/lib/requests/packages/chardet/__init__.py
+google-cloud-sdk/lib/requests/packages/chardet/big5freq.py
+google-cloud-sdk/lib/requests/packages/chardet/big5prober.py
+google-cloud-sdk/lib/requests/packages/chardet/chardetect.py
+google-cloud-sdk/lib/requests/packages/chardet/chardistribution.py
+google-cloud-sdk/lib/requests/packages/chardet/charsetgroupprober.py
+google-cloud-sdk/lib/requests/packages/chardet/charsetprober.py
+google-cloud-sdk/lib/requests/packages/chardet/codingstatemachine.py
+google-cloud-sdk/lib/requests/packages/chardet/compat.py
+google-cloud-sdk/lib/requests/packages/chardet/constants.py
+google-cloud-sdk/lib/requests/packages/chardet/cp949prober.py
+google-cloud-sdk/lib/requests/packages/chardet/escprober.py
+google-cloud-sdk/lib/requests/packages/chardet/escsm.py
+google-cloud-sdk/lib/requests/packages/chardet/eucjpprober.py
+google-cloud-sdk/lib/requests/packages/chardet/euckrfreq.py
+google-cloud-sdk/lib/requests/packages/chardet/euckrprober.py
+google-cloud-sdk/lib/requests/packages/chardet/euctwfreq.py
+google-cloud-sdk/lib/requests/packages/chardet/euctwprober.py
+google-cloud-sdk/lib/requests/packages/chardet/gb2312freq.py
+google-cloud-sdk/lib/requests/packages/chardet/gb2312prober.py
+google-cloud-sdk/lib/requests/packages/chardet/hebrewprober.py
+google-cloud-sdk/lib/requests/packages/chardet/jisfreq.py
+google-cloud-sdk/lib/requests/packages/chardet/jpcntx.py
+google-cloud-sdk/lib/requests/packages/chardet/langbulgarianmodel.py
+google-cloud-sdk/lib/requests/packages/chardet/langcyrillicmodel.py
+google-cloud-sdk/lib/requests/packages/chardet/langgreekmodel.py
+google-cloud-sdk/lib/requests/packages/chardet/langhebrewmodel.py
+google-cloud-sdk/lib/requests/packages/chardet/langhungarianmodel.py
+google-cloud-sdk/lib/requests/packages/chardet/langthaimodel.py
+google-cloud-sdk/lib/requests/packages/chardet/latin1prober.py
+google-cloud-sdk/lib/requests/packages/chardet/mbcharsetprober.py
+google-cloud-sdk/lib/requests/packages/chardet/mbcsgroupprober.py
+google-cloud-sdk/lib/requests/packages/chardet/mbcssm.py
+google-cloud-sdk/lib/requests/packages/chardet/sbcharsetprober.py
+google-cloud-sdk/lib/requests/packages/chardet/sbcsgroupprober.py
+google-cloud-sdk/lib/requests/packages/chardet/sjisprober.py
+google-cloud-sdk/lib/requests/packages/chardet/universaldetector.py
+google-cloud-sdk/lib/requests/packages/chardet/utf8prober.py
+google-cloud-sdk/lib/requests/packages/urllib3/__init__.py
+google-cloud-sdk/lib/requests/packages/urllib3/_collections.py
+google-cloud-sdk/lib/requests/packages/urllib3/connection.py
+google-cloud-sdk/lib/requests/packages/urllib3/connectionpool.py
+google-cloud-sdk/lib/requests/packages/urllib3/exceptions.py
+google-cloud-sdk/lib/requests/packages/urllib3/fields.py
+google-cloud-sdk/lib/requests/packages/urllib3/filepost.py
+google-cloud-sdk/lib/requests/packages/urllib3/packages/__init__.py
+google-cloud-sdk/lib/requests/packages/urllib3/packages/ordered_dict.py
+google-cloud-sdk/lib/requests/packages/urllib3/packages/six.py
+google-cloud-sdk/lib/requests/packages/urllib3/packages/ssl_match_hostname/__init__.py
+google-cloud-sdk/lib/requests/packages/urllib3/packages/ssl_match_hostname/_implementation.py
+google-cloud-sdk/lib/requests/packages/urllib3/poolmanager.py
+google-cloud-sdk/lib/requests/packages/urllib3/request.py
+google-cloud-sdk/lib/requests/packages/urllib3/response.py
+google-cloud-sdk/lib/requests/packages/urllib3/util.py
+google-cloud-sdk/lib/requests/sessions.py
+google-cloud-sdk/lib/requests/setup.py
+google-cloud-sdk/lib/requests/status_codes.py
+google-cloud-sdk/lib/requests/structures.py
+google-cloud-sdk/lib/requests/test_requests.py
+google-cloud-sdk/lib/requests/utils.py
+google-cloud-sdk/lib/six/__init__.py
+google-cloud-sdk/lib/socks/__init__.py
+google-cloud-sdk/lib/uritemplate/__init__.py
+google-cloud-sdk/lib/uritemplate/uritemplate.py
+google-cloud-sdk/lib/websocket/__init__.py
+google-cloud-sdk/lib/yaml/__init__.py
+google-cloud-sdk/lib/yaml/composer.py
+google-cloud-sdk/lib/yaml/constructor.py
+google-cloud-sdk/lib/yaml/cyaml.py
+google-cloud-sdk/lib/yaml/dumper.py
+google-cloud-sdk/lib/yaml/emitter.py
+google-cloud-sdk/lib/yaml/error.py
+google-cloud-sdk/lib/yaml/events.py
+google-cloud-sdk/lib/yaml/loader.py
+google-cloud-sdk/lib/yaml/nodes.py
+google-cloud-sdk/lib/yaml/parser.py
+google-cloud-sdk/lib/yaml/reader.py
+google-cloud-sdk/lib/yaml/representer.py
+google-cloud-sdk/lib/yaml/resolver.py
+google-cloud-sdk/lib/yaml/scanner.py
+google-cloud-sdk/lib/yaml/serializer.py
+google-cloud-sdk/lib/yaml/tokens.py
+google-cloud-sdk/path.bash.inc
+google-cloud-sdk/path.zsh.inc
+google-cloud-sdk/platform/bq/LICENSE.txt
+google-cloud-sdk/platform/bq/MANIFEST.in
+google-cloud-sdk/platform/bq/README.txt
+google-cloud-sdk/platform/bq/bigquery_client.py
+google-cloud-sdk/platform/bq/bigquery_client_test.py
+google-cloud-sdk/platform/bq/bq.py
+google-cloud-sdk/platform/bq/discovery/httpswwwgoogleapiscom.bigquery.v2.rest.json
+google-cloud-sdk/platform/bq/ez_setup.py
+google-cloud-sdk/platform/bq/remove_pyreadline.py
+google-cloud-sdk/platform/bq/setup.py
+google-cloud-sdk/platform/bq/table_formatter.py
+google-cloud-sdk/platform/bq/table_formatter_test.py
+google-cloud-sdk/platform/gcutil/CHANGELOG
+google-cloud-sdk/platform/gcutil/LICENSE
+google-cloud-sdk/platform/gcutil/Makefile
+google-cloud-sdk/platform/gcutil/README
+google-cloud-sdk/platform/gcutil/VERSION
+google-cloud-sdk/platform/gcutil/gcutil
+google-cloud-sdk/platform/gcutil/lib/google_api_python_client/LICENSE
+google-cloud-sdk/platform/gcutil/lib/google_api_python_client/apiclient/__init__.py
+google-cloud-sdk/platform/gcutil/lib/google_api_python_client/apiclient/discovery.py
+google-cloud-sdk/platform/gcutil/lib/google_api_python_client/apiclient/errors.py
+google-cloud-sdk/platform/gcutil/lib/google_api_python_client/apiclient/ext/__init__.py
+google-cloud-sdk/platform/gcutil/lib/google_api_python_client/apiclient/http.py
+google-cloud-sdk/platform/gcutil/lib/google_api_python_client/apiclient/mimeparse.py
+google-cloud-sdk/platform/gcutil/lib/google_api_python_client/apiclient/model.py
+google-cloud-sdk/platform/gcutil/lib/google_api_python_client/apiclient/push.py
+google-cloud-sdk/platform/gcutil/lib/google_api_python_client/apiclient/schema.py
+google-cloud-sdk/platform/gcutil/lib/google_api_python_client/oauth2client/__init__.py
+google-cloud-sdk/platform/gcutil/lib/google_api_python_client/oauth2client/anyjson.py
+google-cloud-sdk/platform/gcutil/lib/google_api_python_client/oauth2client/appengine.py
+google-cloud-sdk/platform/gcutil/lib/google_api_python_client/oauth2client/client.py
+google-cloud-sdk/platform/gcutil/lib/google_api_python_client/oauth2client/clientsecrets.py
+google-cloud-sdk/platform/gcutil/lib/google_api_python_client/oauth2client/crypt.py
+google-cloud-sdk/platform/gcutil/lib/google_api_python_client/oauth2client/django_orm.py
+google-cloud-sdk/platform/gcutil/lib/google_api_python_client/oauth2client/file.py
+google-cloud-sdk/platform/gcutil/lib/google_api_python_client/oauth2client/gce.py
+google-cloud-sdk/platform/gcutil/lib/google_api_python_client/oauth2client/keyring_storage.py
+google-cloud-sdk/platform/gcutil/lib/google_api_python_client/oauth2client/locked_file.py
+google-cloud-sdk/platform/gcutil/lib/google_api_python_client/oauth2client/multistore_file.py
+google-cloud-sdk/platform/gcutil/lib/google_api_python_client/oauth2client/tools.py
+google-cloud-sdk/platform/gcutil/lib/google_api_python_client/oauth2client/util.py
+google-cloud-sdk/platform/gcutil/lib/google_api_python_client/oauth2client/xsrfutil.py
+google-cloud-sdk/platform/gcutil/lib/google_api_python_client/uritemplate/__init__.py
+google-cloud-sdk/platform/gcutil/lib/google_apputils/LICENSE
+google-cloud-sdk/platform/gcutil/lib/google_apputils/google/__init__.py
+google-cloud-sdk/platform/gcutil/lib/google_apputils/google/apputils/__init__.py
+google-cloud-sdk/platform/gcutil/lib/google_apputils/google/apputils/app.py
+google-cloud-sdk/platform/gcutil/lib/google_apputils/google/apputils/appcommands.py
+google-cloud-sdk/platform/gcutil/lib/google_apputils/google/apputils/basetest.py
+google-cloud-sdk/platform/gcutil/lib/google_apputils/google/apputils/datelib.py
+google-cloud-sdk/platform/gcutil/lib/google_apputils/google/apputils/debug.py
+google-cloud-sdk/platform/gcutil/lib/google_apputils/google/apputils/file_util.py
+google-cloud-sdk/platform/gcutil/lib/google_apputils/google/apputils/resources.py
+google-cloud-sdk/platform/gcutil/lib/google_apputils/google/apputils/run_script_module.py
+google-cloud-sdk/platform/gcutil/lib/google_apputils/google/apputils/setup_command.py
+google-cloud-sdk/platform/gcutil/lib/google_apputils/google/apputils/shellutil.py
+google-cloud-sdk/platform/gcutil/lib/google_apputils/google/apputils/stopwatch.py
+google-cloud-sdk/platform/gcutil/lib/google_compute_engine/gcutil_lib/__init__.py
+google-cloud-sdk/platform/gcutil/lib/google_compute_engine/gcutil_lib/address_cmds.py
+google-cloud-sdk/platform/gcutil/lib/google_compute_engine/gcutil_lib/address_cmds_test.py
+google-cloud-sdk/platform/gcutil/lib/google_compute_engine/gcutil_lib/api_context_parser.py
+google-cloud-sdk/platform/gcutil/lib/google_compute_engine/gcutil_lib/auth_helper.py
+google-cloud-sdk/platform/gcutil/lib/google_compute_engine/gcutil_lib/auth_helper_test.py
+google-cloud-sdk/platform/gcutil/lib/google_compute_engine/gcutil_lib/basic_cmds.py
+google-cloud-sdk/platform/gcutil/lib/google_compute_engine/gcutil_lib/basic_cmds_test.py
+google-cloud-sdk/platform/gcutil/lib/google_compute_engine/gcutil_lib/command_base.py
+google-cloud-sdk/platform/gcutil/lib/google_compute_engine/gcutil_lib/command_base_test.py
+google-cloud-sdk/platform/gcutil/lib/google_compute_engine/gcutil_lib/compute/v1.json
+google-cloud-sdk/platform/gcutil/lib/google_compute_engine/gcutil_lib/compute/v1beta16.json
+google-cloud-sdk/platform/gcutil/lib/google_compute_engine/gcutil_lib/disk_cmds.py
+google-cloud-sdk/platform/gcutil/lib/google_compute_engine/gcutil_lib/disk_cmds_test.py
+google-cloud-sdk/platform/gcutil/lib/google_compute_engine/gcutil_lib/firewall_cmds.py
+google-cloud-sdk/platform/gcutil/lib/google_compute_engine/gcutil_lib/firewall_cmds_test.py
+google-cloud-sdk/platform/gcutil/lib/google_compute_engine/gcutil_lib/flags_cache.py
+google-cloud-sdk/platform/gcutil/lib/google_compute_engine/gcutil_lib/forwarding_rule_cmds.py
+google-cloud-sdk/platform/gcutil/lib/google_compute_engine/gcutil_lib/forwarding_rule_cmds_test.py
+google-cloud-sdk/platform/gcutil/lib/google_compute_engine/gcutil_lib/gce_api.py
+google-cloud-sdk/platform/gcutil/lib/google_compute_engine/gcutil_lib/gcutil
+google-cloud-sdk/platform/gcutil/lib/google_compute_engine/gcutil_lib/gcutil.py
+google-cloud-sdk/platform/gcutil/lib/google_compute_engine/gcutil_lib/gcutil_errors.py
+google-cloud-sdk/platform/gcutil/lib/google_compute_engine/gcutil_lib/gcutil_flags.py
+google-cloud-sdk/platform/gcutil/lib/google_compute_engine/gcutil_lib/gcutil_logging.py
+google-cloud-sdk/platform/gcutil/lib/google_compute_engine/gcutil_lib/gcutil_unittest.py
+google-cloud-sdk/platform/gcutil/lib/google_compute_engine/gcutil_lib/http_health_check_cmds.py
+google-cloud-sdk/platform/gcutil/lib/google_compute_engine/gcutil_lib/http_health_check_cmds_test.py
+google-cloud-sdk/platform/gcutil/lib/google_compute_engine/gcutil_lib/image_cmds.py
+google-cloud-sdk/platform/gcutil/lib/google_compute_engine/gcutil_lib/image_cmds_test.py
+google-cloud-sdk/platform/gcutil/lib/google_compute_engine/gcutil_lib/instance_cmds.py
+google-cloud-sdk/platform/gcutil/lib/google_compute_engine/gcutil_lib/instance_cmds_test.py
+google-cloud-sdk/platform/gcutil/lib/google_compute_engine/gcutil_lib/kernel_cmds.py
+google-cloud-sdk/platform/gcutil/lib/google_compute_engine/gcutil_lib/kernel_cmds_test.py
+google-cloud-sdk/platform/gcutil/lib/google_compute_engine/gcutil_lib/machine_type_cmds.py
+google-cloud-sdk/platform/gcutil/lib/google_compute_engine/gcutil_lib/machine_type_cmds_test.py
+google-cloud-sdk/platform/gcutil/lib/google_compute_engine/gcutil_lib/metadata.py
+google-cloud-sdk/platform/gcutil/lib/google_compute_engine/gcutil_lib/metadata_lib.py
+google-cloud-sdk/platform/gcutil/lib/google_compute_engine/gcutil_lib/metadata_test.py
+google-cloud-sdk/platform/gcutil/lib/google_compute_engine/gcutil_lib/mock_api.py
+google-cloud-sdk/platform/gcutil/lib/google_compute_engine/gcutil_lib/mock_api_parser.py
+google-cloud-sdk/platform/gcutil/lib/google_compute_engine/gcutil_lib/mock_api_parser_test.py
+google-cloud-sdk/platform/gcutil/lib/google_compute_engine/gcutil_lib/mock_api_server.py
+google-cloud-sdk/platform/gcutil/lib/google_compute_engine/gcutil_lib/mock_api_server_test.py
+google-cloud-sdk/platform/gcutil/lib/google_compute_engine/gcutil_lib/mock_api_test.py
+google-cloud-sdk/platform/gcutil/lib/google_compute_engine/gcutil_lib/mock_api_types.py
+google-cloud-sdk/platform/gcutil/lib/google_compute_engine/gcutil_lib/mock_api_types_test.py
+google-cloud-sdk/platform/gcutil/lib/google_compute_engine/gcutil_lib/mock_get_pass.py
+google-cloud-sdk/platform/gcutil/lib/google_compute_engine/gcutil_lib/mock_lists.py
+google-cloud-sdk/platform/gcutil/lib/google_compute_engine/gcutil_lib/mock_metadata.py
+google-cloud-sdk/platform/gcutil/lib/google_compute_engine/gcutil_lib/mock_timer.py
+google-cloud-sdk/platform/gcutil/lib/google_compute_engine/gcutil_lib/move_cmds.py
+google-cloud-sdk/platform/gcutil/lib/google_compute_engine/gcutil_lib/move_cmds_test.py
+google-cloud-sdk/platform/gcutil/lib/google_compute_engine/gcutil_lib/network_cmds.py
+google-cloud-sdk/platform/gcutil/lib/google_compute_engine/gcutil_lib/network_cmds_test.py
+google-cloud-sdk/platform/gcutil/lib/google_compute_engine/gcutil_lib/old_mock_api.py
+google-cloud-sdk/platform/gcutil/lib/google_compute_engine/gcutil_lib/operation_cmds.py
+google-cloud-sdk/platform/gcutil/lib/google_compute_engine/gcutil_lib/operation_cmds_test.py
+google-cloud-sdk/platform/gcutil/lib/google_compute_engine/gcutil_lib/path_initializer.py
+google-cloud-sdk/platform/gcutil/lib/google_compute_engine/gcutil_lib/project_cmds.py
+google-cloud-sdk/platform/gcutil/lib/google_compute_engine/gcutil_lib/project_cmds_test.py
+google-cloud-sdk/platform/gcutil/lib/google_compute_engine/gcutil_lib/region_cmds.py
+google-cloud-sdk/platform/gcutil/lib/google_compute_engine/gcutil_lib/region_cmds_test.py
+google-cloud-sdk/platform/gcutil/lib/google_compute_engine/gcutil_lib/route_cmds.py
+google-cloud-sdk/platform/gcutil/lib/google_compute_engine/gcutil_lib/route_cmds_test.py
+google-cloud-sdk/platform/gcutil/lib/google_compute_engine/gcutil_lib/scopes.py
+google-cloud-sdk/platform/gcutil/lib/google_compute_engine/gcutil_lib/scopes_test.py
+google-cloud-sdk/platform/gcutil/lib/google_compute_engine/gcutil_lib/snapshot_cmds.py
+google-cloud-sdk/platform/gcutil/lib/google_compute_engine/gcutil_lib/snapshot_cmds_test.py
+google-cloud-sdk/platform/gcutil/lib/google_compute_engine/gcutil_lib/ssh_keys.py
+google-cloud-sdk/platform/gcutil/lib/google_compute_engine/gcutil_lib/ssh_keys_test.py
+google-cloud-sdk/platform/gcutil/lib/google_compute_engine/gcutil_lib/table/__init__.py
+google-cloud-sdk/platform/gcutil/lib/google_compute_engine/gcutil_lib/table/table.py
+google-cloud-sdk/platform/gcutil/lib/google_compute_engine/gcutil_lib/target_instance_cmds.py
+google-cloud-sdk/platform/gcutil/lib/google_compute_engine/gcutil_lib/target_instance_cmds_test.py
+google-cloud-sdk/platform/gcutil/lib/google_compute_engine/gcutil_lib/target_pool_cmds.py
+google-cloud-sdk/platform/gcutil/lib/google_compute_engine/gcutil_lib/target_pool_cmds_test.py
+google-cloud-sdk/platform/gcutil/lib/google_compute_engine/gcutil_lib/thread_pool.py
+google-cloud-sdk/platform/gcutil/lib/google_compute_engine/gcutil_lib/thread_pool_test.py
+google-cloud-sdk/platform/gcutil/lib/google_compute_engine/gcutil_lib/utils.py
+google-cloud-sdk/platform/gcutil/lib/google_compute_engine/gcutil_lib/utils_test.py
+google-cloud-sdk/platform/gcutil/lib/google_compute_engine/gcutil_lib/version.py
+google-cloud-sdk/platform/gcutil/lib/google_compute_engine/gcutil_lib/version_checker.py
+google-cloud-sdk/platform/gcutil/lib/google_compute_engine/gcutil_lib/version_checker_test.py
+google-cloud-sdk/platform/gcutil/lib/google_compute_engine/gcutil_lib/version_test.py
+google-cloud-sdk/platform/gcutil/lib/google_compute_engine/gcutil_lib/whoami.py
+google-cloud-sdk/platform/gcutil/lib/google_compute_engine/gcutil_lib/windows_password.py
+google-cloud-sdk/platform/gcutil/lib/google_compute_engine/gcutil_lib/windows_password_test.py
+google-cloud-sdk/platform/gcutil/lib/google_compute_engine/gcutil_lib/zone_cmds.py
+google-cloud-sdk/platform/gcutil/lib/google_compute_engine/gcutil_lib/zone_cmds_test.py
+google-cloud-sdk/platform/gcutil/lib/httplib2/LICENSE
+google-cloud-sdk/platform/gcutil/lib/httplib2/httplib2/__init__.py
+google-cloud-sdk/platform/gcutil/lib/httplib2/httplib2/cacerts.txt
+google-cloud-sdk/platform/gcutil/lib/httplib2/httplib2/iri2uri.py
+google-cloud-sdk/platform/gcutil/lib/httplib2/httplib2/socks.py
+google-cloud-sdk/platform/gcutil/lib/ipaddr/LICENSE
+google-cloud-sdk/platform/gcutil/lib/ipaddr/ipaddr/__init__.py
+google-cloud-sdk/platform/gcutil/lib/iso8601/LICENSE
+google-cloud-sdk/platform/gcutil/lib/iso8601/iso8601/__init__.py
+google-cloud-sdk/platform/gcutil/lib/iso8601/iso8601/iso8601.py
+google-cloud-sdk/platform/gcutil/lib/iso8601/iso8601/test_iso8601.py
+google-cloud-sdk/platform/gcutil/lib/python_gflags/AUTHORS
+google-cloud-sdk/platform/gcutil/lib/python_gflags/LICENSE
+google-cloud-sdk/platform/gcutil/lib/python_gflags/gflags.py
+google-cloud-sdk/platform/gcutil/lib/python_gflags/gflags2man.py
+google-cloud-sdk/platform/gcutil/lib/python_gflags/gflags_validators.py
+google-cloud-sdk/platform/gcutil/setup.py
+google-cloud-sdk/platform/gsutil/CHANGES.md
+google-cloud-sdk/platform/gsutil/CHECKSUM
+google-cloud-sdk/platform/gsutil/COPYING
+google-cloud-sdk/platform/gsutil/LICENSE.third_party
+google-cloud-sdk/platform/gsutil/MANIFEST.in
+google-cloud-sdk/platform/gsutil/README.md
+google-cloud-sdk/platform/gsutil/VERSION
+google-cloud-sdk/platform/gsutil/gslib/README
+google-cloud-sdk/platform/gsutil/gslib/__init__.py
+google-cloud-sdk/platform/gsutil/gslib/__main__.py
+google-cloud-sdk/platform/gsutil/gslib/aclhelpers.py
+google-cloud-sdk/platform/gsutil/gslib/addlhelp/__init__.py
+google-cloud-sdk/platform/gsutil/gslib/addlhelp/acls.py
+google-cloud-sdk/platform/gsutil/gslib/addlhelp/anon.py
+google-cloud-sdk/platform/gsutil/gslib/addlhelp/command_opts.py
+google-cloud-sdk/platform/gsutil/gslib/addlhelp/crc32c.py
+google-cloud-sdk/platform/gsutil/gslib/addlhelp/creds.py
+google-cloud-sdk/platform/gsutil/gslib/addlhelp/dev.py
+google-cloud-sdk/platform/gsutil/gslib/addlhelp/metadata.py
+google-cloud-sdk/platform/gsutil/gslib/addlhelp/naming.py
+google-cloud-sdk/platform/gsutil/gslib/addlhelp/prod.py
+google-cloud-sdk/platform/gsutil/gslib/addlhelp/projects.py
+google-cloud-sdk/platform/gsutil/gslib/addlhelp/subdirs.py
+google-cloud-sdk/platform/gsutil/gslib/addlhelp/support.py
+google-cloud-sdk/platform/gsutil/gslib/addlhelp/versions.py
+google-cloud-sdk/platform/gsutil/gslib/addlhelp/wildcards.py
+google-cloud-sdk/platform/gsutil/gslib/bucket_listing_ref.py
+google-cloud-sdk/platform/gsutil/gslib/command.py
+google-cloud-sdk/platform/gsutil/gslib/command_runner.py
+google-cloud-sdk/platform/gsutil/gslib/commands/__init__.py
+google-cloud-sdk/platform/gsutil/gslib/commands/acl.py
+google-cloud-sdk/platform/gsutil/gslib/commands/cat.py
+google-cloud-sdk/platform/gsutil/gslib/commands/compose.py
+google-cloud-sdk/platform/gsutil/gslib/commands/config.py
+google-cloud-sdk/platform/gsutil/gslib/commands/cors.py
+google-cloud-sdk/platform/gsutil/gslib/commands/cp.py
+google-cloud-sdk/platform/gsutil/gslib/commands/defacl.py
+google-cloud-sdk/platform/gsutil/gslib/commands/du.py
+google-cloud-sdk/platform/gsutil/gslib/commands/help.py
+google-cloud-sdk/platform/gsutil/gslib/commands/lifecycle.py
+google-cloud-sdk/platform/gsutil/gslib/commands/logging.py
+google-cloud-sdk/platform/gsutil/gslib/commands/ls.py
+google-cloud-sdk/platform/gsutil/gslib/commands/mb.py
+google-cloud-sdk/platform/gsutil/gslib/commands/mv.py
+google-cloud-sdk/platform/gsutil/gslib/commands/notification.py
+google-cloud-sdk/platform/gsutil/gslib/commands/perfdiag.py
+google-cloud-sdk/platform/gsutil/gslib/commands/rb.py
+google-cloud-sdk/platform/gsutil/gslib/commands/rm.py
+google-cloud-sdk/platform/gsutil/gslib/commands/setmeta.py
+google-cloud-sdk/platform/gsutil/gslib/commands/stat.py
+google-cloud-sdk/platform/gsutil/gslib/commands/test.py
+google-cloud-sdk/platform/gsutil/gslib/commands/update.py
+google-cloud-sdk/platform/gsutil/gslib/commands/version.py
+google-cloud-sdk/platform/gsutil/gslib/commands/versioning.py
+google-cloud-sdk/platform/gsutil/gslib/commands/web.py
+google-cloud-sdk/platform/gsutil/gslib/cred_types.py
+google-cloud-sdk/platform/gsutil/gslib/data/cacerts.txt
+google-cloud-sdk/platform/gsutil/gslib/exception.py
+google-cloud-sdk/platform/gsutil/gslib/file_part.py
+google-cloud-sdk/platform/gsutil/gslib/help_provider.py
+google-cloud-sdk/platform/gsutil/gslib/name_expansion.py
+google-cloud-sdk/platform/gsutil/gslib/no_op_auth_plugin.py
+google-cloud-sdk/platform/gsutil/gslib/parallelism_framework_util.py
+google-cloud-sdk/platform/gsutil/gslib/plurality_checkable_iterator.py
+google-cloud-sdk/platform/gsutil/gslib/project_id.py
+google-cloud-sdk/platform/gsutil/gslib/storage_uri_builder.py
+google-cloud-sdk/platform/gsutil/gslib/tests/__init__.py
+google-cloud-sdk/platform/gsutil/gslib/tests/test_Doption.py
+google-cloud-sdk/platform/gsutil/gslib/tests/test_acl.py
+google-cloud-sdk/platform/gsutil/gslib/tests/test_cat.py
+google-cloud-sdk/platform/gsutil/gslib/tests/test_command_runner.py
+google-cloud-sdk/platform/gsutil/gslib/tests/test_compose.py
+google-cloud-sdk/platform/gsutil/gslib/tests/test_cors.py
+google-cloud-sdk/platform/gsutil/gslib/tests/test_cp.py
+google-cloud-sdk/platform/gsutil/gslib/tests/test_cp_funcs.py
+google-cloud-sdk/platform/gsutil/gslib/tests/test_data/test.gif
+google-cloud-sdk/platform/gsutil/gslib/tests/test_data/test.mp3
+google-cloud-sdk/platform/gsutil/gslib/tests/test_defacl.py
+google-cloud-sdk/platform/gsutil/gslib/tests/test_du.py
+google-cloud-sdk/platform/gsutil/gslib/tests/test_file_part.py
+google-cloud-sdk/platform/gsutil/gslib/tests/test_gsutil.py
+google-cloud-sdk/platform/gsutil/gslib/tests/test_help.py
+google-cloud-sdk/platform/gsutil/gslib/tests/test_lifecycle.py
+google-cloud-sdk/platform/gsutil/gslib/tests/test_logging.py
+google-cloud-sdk/platform/gsutil/gslib/tests/test_ls.py
+google-cloud-sdk/platform/gsutil/gslib/tests/test_mv.py
+google-cloud-sdk/platform/gsutil/gslib/tests/test_naming.py
+google-cloud-sdk/platform/gsutil/gslib/tests/test_notification.py
+google-cloud-sdk/platform/gsutil/gslib/tests/test_oauth2_client.py
+google-cloud-sdk/platform/gsutil/gslib/tests/test_parallelism_framework.py
+google-cloud-sdk/platform/gsutil/gslib/tests/test_perfdiag.py
+google-cloud-sdk/platform/gsutil/gslib/tests/test_plurality_checkable_iterator.py
+google-cloud-sdk/platform/gsutil/gslib/tests/test_rm.py
+google-cloud-sdk/platform/gsutil/gslib/tests/test_setmeta.py
+google-cloud-sdk/platform/gsutil/gslib/tests/test_stat.py
+google-cloud-sdk/platform/gsutil/gslib/tests/test_thread_pool.py
+google-cloud-sdk/platform/gsutil/gslib/tests/test_update.py
+google-cloud-sdk/platform/gsutil/gslib/tests/test_util.py
+google-cloud-sdk/platform/gsutil/gslib/tests/test_versioning.py
+google-cloud-sdk/platform/gsutil/gslib/tests/test_web.py
+google-cloud-sdk/platform/gsutil/gslib/tests/test_wildcard_iterator.py
+google-cloud-sdk/platform/gsutil/gslib/tests/testcase/__init__.py
+google-cloud-sdk/platform/gsutil/gslib/tests/testcase/base.py
+google-cloud-sdk/platform/gsutil/gslib/tests/testcase/integration_testcase.py
+google-cloud-sdk/platform/gsutil/gslib/tests/testcase/unit_testcase.py
+google-cloud-sdk/platform/gsutil/gslib/tests/util.py
+google-cloud-sdk/platform/gsutil/gslib/third_party/__init__.py
+google-cloud-sdk/platform/gsutil/gslib/third_party/oauth2_plugin/__init__.py
+google-cloud-sdk/platform/gsutil/gslib/third_party/oauth2_plugin/oauth2_client.py
+google-cloud-sdk/platform/gsutil/gslib/third_party/oauth2_plugin/oauth2_helper.py
+google-cloud-sdk/platform/gsutil/gslib/third_party/oauth2_plugin/oauth2_plugin.py
+google-cloud-sdk/platform/gsutil/gslib/thread_pool.py
+google-cloud-sdk/platform/gsutil/gslib/util.py
+google-cloud-sdk/platform/gsutil/gslib/wildcard_iterator.py
+google-cloud-sdk/platform/gsutil/gsutil
+google-cloud-sdk/platform/gsutil/gsutil.py
+google-cloud-sdk/platform/gsutil/scripts/bucket_relocate.sh
+google-cloud-sdk/platform/gsutil/scripts/bucket_relocate_tests.sh
+google-cloud-sdk/platform/gsutil/setup.py
+google-cloud-sdk/platform/gsutil/third_party/boto/.travis.yml
+google-cloud-sdk/platform/gsutil/third_party/boto/CONTRIBUTING
+google-cloud-sdk/platform/gsutil/third_party/boto/LICENSE
+google-cloud-sdk/platform/gsutil/third_party/boto/MANIFEST.in
+google-cloud-sdk/platform/gsutil/third_party/boto/README.rst
+google-cloud-sdk/platform/gsutil/third_party/boto/bin/asadmin
+google-cloud-sdk/platform/gsutil/third_party/boto/bin/bundle_image
+google-cloud-sdk/platform/gsutil/third_party/boto/bin/cfadmin
+google-cloud-sdk/platform/gsutil/third_party/boto/bin/cq
+google-cloud-sdk/platform/gsutil/third_party/boto/bin/cwutil
+google-cloud-sdk/platform/gsutil/third_party/boto/bin/dynamodb_dump
+google-cloud-sdk/platform/gsutil/third_party/boto/bin/dynamodb_load
+google-cloud-sdk/platform/gsutil/third_party/boto/bin/elbadmin
+google-cloud-sdk/platform/gsutil/third_party/boto/bin/fetch_file
+google-cloud-sdk/platform/gsutil/third_party/boto/bin/glacier
+google-cloud-sdk/platform/gsutil/third_party/boto/bin/instance_events
+google-cloud-sdk/platform/gsutil/third_party/boto/bin/kill_instance
+google-cloud-sdk/platform/gsutil/third_party/boto/bin/launch_instance
+google-cloud-sdk/platform/gsutil/third_party/boto/bin/list_instances
+google-cloud-sdk/platform/gsutil/third_party/boto/bin/lss3
+google-cloud-sdk/platform/gsutil/third_party/boto/bin/mturk
+google-cloud-sdk/platform/gsutil/third_party/boto/bin/pyami_sendmail
+google-cloud-sdk/platform/gsutil/third_party/boto/bin/route53
+google-cloud-sdk/platform/gsutil/third_party/boto/bin/s3put
+google-cloud-sdk/platform/gsutil/third_party/boto/bin/sdbadmin
+google-cloud-sdk/platform/gsutil/third_party/boto/bin/taskadmin
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/__init__.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/auth.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/auth_handler.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/beanstalk/__init__.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/beanstalk/exception.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/beanstalk/layer1.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/beanstalk/response.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/beanstalk/wrapper.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/cacerts/__init__.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/cacerts/cacerts.txt
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/cloudformation/__init__.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/cloudformation/connection.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/cloudformation/stack.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/cloudformation/template.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/cloudfront/__init__.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/cloudfront/distribution.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/cloudfront/exception.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/cloudfront/identity.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/cloudfront/invalidation.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/cloudfront/logging.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/cloudfront/object.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/cloudfront/origin.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/cloudfront/signers.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/cloudsearch/__init__.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/cloudsearch/document.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/cloudsearch/domain.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/cloudsearch/layer1.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/cloudsearch/layer2.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/cloudsearch/optionstatus.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/cloudsearch/search.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/cloudsearch/sourceattribute.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/cloudtrail/__init__.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/cloudtrail/exceptions.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/cloudtrail/layer1.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/compat.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/connection.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/contrib/__init__.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/contrib/ymlmessage.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/core/README
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/core/__init__.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/core/auth.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/core/credentials.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/core/dictresponse.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/core/service.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/datapipeline/__init__.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/datapipeline/exceptions.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/datapipeline/layer1.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/directconnect/__init__.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/directconnect/exceptions.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/directconnect/layer1.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/dynamodb/__init__.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/dynamodb/batch.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/dynamodb/condition.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/dynamodb/exceptions.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/dynamodb/item.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/dynamodb/layer1.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/dynamodb/layer2.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/dynamodb/schema.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/dynamodb/table.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/dynamodb/types.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/dynamodb2/__init__.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/dynamodb2/exceptions.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/dynamodb2/fields.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/dynamodb2/items.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/dynamodb2/layer1.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/dynamodb2/results.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/dynamodb2/table.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/dynamodb2/types.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/ec2/__init__.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/ec2/address.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/ec2/attributes.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/ec2/autoscale/__init__.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/ec2/autoscale/activity.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/ec2/autoscale/group.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/ec2/autoscale/instance.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/ec2/autoscale/launchconfig.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/ec2/autoscale/limits.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/ec2/autoscale/policy.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/ec2/autoscale/request.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/ec2/autoscale/scheduled.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/ec2/autoscale/tag.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/ec2/blockdevicemapping.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/ec2/bundleinstance.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/ec2/buyreservation.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/ec2/cloudwatch/__init__.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/ec2/cloudwatch/alarm.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/ec2/cloudwatch/datapoint.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/ec2/cloudwatch/dimension.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/ec2/cloudwatch/listelement.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/ec2/cloudwatch/metric.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/ec2/connection.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/ec2/ec2object.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/ec2/elb/__init__.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/ec2/elb/attributes.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/ec2/elb/healthcheck.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/ec2/elb/instancestate.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/ec2/elb/listelement.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/ec2/elb/listener.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/ec2/elb/loadbalancer.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/ec2/elb/policies.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/ec2/elb/securitygroup.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/ec2/group.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/ec2/image.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/ec2/instance.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/ec2/instanceinfo.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/ec2/instancestatus.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/ec2/keypair.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/ec2/launchspecification.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/ec2/networkinterface.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/ec2/placementgroup.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/ec2/regioninfo.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/ec2/reservedinstance.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/ec2/securitygroup.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/ec2/snapshot.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/ec2/spotdatafeedsubscription.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/ec2/spotinstancerequest.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/ec2/spotpricehistory.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/ec2/tag.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/ec2/vmtype.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/ec2/volume.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/ec2/volumestatus.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/ec2/zone.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/ecs/__init__.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/ecs/item.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/elasticache/__init__.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/elasticache/layer1.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/elastictranscoder/__init__.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/elastictranscoder/exceptions.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/elastictranscoder/layer1.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/emr/__init__.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/emr/bootstrap_action.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/emr/connection.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/emr/emrobject.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/emr/instance_group.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/emr/step.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/exception.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/file/README
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/file/__init__.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/file/bucket.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/file/connection.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/file/key.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/file/simpleresultset.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/fps/__init__.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/fps/connection.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/fps/exception.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/fps/response.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/glacier/__init__.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/glacier/concurrent.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/glacier/exceptions.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/glacier/job.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/glacier/layer1.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/glacier/layer2.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/glacier/response.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/glacier/utils.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/glacier/vault.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/glacier/writer.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/gs/__init__.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/gs/acl.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/gs/bucket.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/gs/bucketlistresultset.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/gs/connection.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/gs/cors.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/gs/key.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/gs/lifecycle.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/gs/resumable_upload_handler.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/gs/user.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/handler.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/https_connection.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/iam/__init__.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/iam/connection.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/iam/summarymap.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/jsonresponse.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/kinesis/__init__.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/kinesis/exceptions.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/kinesis/layer1.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/manage/__init__.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/manage/cmdshell.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/manage/propget.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/manage/server.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/manage/task.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/manage/test_manage.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/manage/volume.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/mashups/__init__.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/mashups/interactive.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/mashups/iobject.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/mashups/order.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/mashups/server.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/mturk/__init__.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/mturk/connection.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/mturk/layoutparam.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/mturk/notification.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/mturk/price.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/mturk/qualification.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/mturk/question.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/mws/__init__.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/mws/connection.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/mws/exception.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/mws/response.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/opsworks/__init__.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/opsworks/exceptions.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/opsworks/layer1.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/plugin.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/provider.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/pyami/__init__.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/pyami/bootstrap.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/pyami/config.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/pyami/copybot.cfg
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/pyami/copybot.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/pyami/helloworld.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/pyami/installers/__init__.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/pyami/installers/ubuntu/__init__.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/pyami/installers/ubuntu/apache.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/pyami/installers/ubuntu/ebs.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/pyami/installers/ubuntu/installer.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/pyami/installers/ubuntu/mysql.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/pyami/installers/ubuntu/trac.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/pyami/launch_ami.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/pyami/scriptbase.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/pyami/startup.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/rds/__init__.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/rds/dbinstance.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/rds/dbsecuritygroup.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/rds/dbsnapshot.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/rds/dbsubnetgroup.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/rds/event.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/rds/optiongroup.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/rds/parametergroup.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/rds/regioninfo.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/rds/statusinfo.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/rds/vpcsecuritygroupmembership.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/redshift/__init__.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/redshift/exceptions.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/redshift/layer1.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/regioninfo.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/resultset.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/roboto/__init__.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/roboto/awsqueryrequest.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/roboto/awsqueryservice.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/roboto/param.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/route53/__init__.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/route53/connection.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/route53/exception.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/route53/hostedzone.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/route53/record.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/route53/status.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/route53/zone.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/s3/__init__.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/s3/acl.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/s3/bucket.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/s3/bucketlistresultset.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/s3/bucketlogging.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/s3/connection.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/s3/cors.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/s3/deletemarker.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/s3/key.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/s3/keyfile.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/s3/lifecycle.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/s3/multidelete.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/s3/multipart.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/s3/prefix.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/s3/resumable_download_handler.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/s3/tagging.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/s3/user.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/s3/website.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/sdb/__init__.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/sdb/connection.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/sdb/db/__init__.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/sdb/db/blob.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/sdb/db/key.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/sdb/db/manager/__init__.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/sdb/db/manager/sdbmanager.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/sdb/db/manager/xmlmanager.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/sdb/db/model.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/sdb/db/property.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/sdb/db/query.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/sdb/db/sequence.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/sdb/db/test_db.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/sdb/domain.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/sdb/item.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/sdb/queryresultset.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/sdb/regioninfo.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/services/__init__.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/services/bs.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/services/message.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/services/result.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/services/service.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/services/servicedef.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/services/sonofmmm.cfg
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/services/sonofmmm.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/services/submit.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/ses/__init__.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/ses/connection.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/ses/exceptions.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/sns/__init__.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/sns/connection.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/sqs/__init__.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/sqs/attributes.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/sqs/batchresults.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/sqs/bigmessage.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/sqs/connection.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/sqs/jsonmessage.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/sqs/message.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/sqs/queue.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/sqs/regioninfo.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/storage_uri.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/sts/__init__.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/sts/connection.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/sts/credentials.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/support/__init__.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/support/exceptions.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/support/layer1.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/swf/__init__.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/swf/exceptions.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/swf/layer1.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/swf/layer1_decisions.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/swf/layer2.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/utils.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/vpc/__init__.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/vpc/customergateway.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/vpc/dhcpoptions.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/vpc/internetgateway.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/vpc/networkacl.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/vpc/routetable.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/vpc/subnet.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/vpc/vpc.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/vpc/vpnconnection.py
+google-cloud-sdk/platform/gsutil/third_party/boto/boto/vpc/vpngateway.py
+google-cloud-sdk/platform/gsutil/third_party/boto/pylintrc
+google-cloud-sdk/platform/gsutil/third_party/boto/requirements.txt
+google-cloud-sdk/platform/gsutil/third_party/boto/scripts/git-release-notes.py
+google-cloud-sdk/platform/gsutil/third_party/boto/setup.cfg
+google-cloud-sdk/platform/gsutil/third_party/boto/setup.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/__init__.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/db/test_lists.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/db/test_password.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/db/test_query.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/db/test_sequence.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/devpay/__init__.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/devpay/test_s3.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/fps/__init__.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/fps/test.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/fps/test_verify_signature.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/integration/__init__.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/integration/beanstalk/test_wrapper.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/integration/cloudformation/__init__.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/integration/cloudformation/test_cert_verification.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/integration/cloudformation/test_connection.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/integration/cloudsearch/__init__.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/integration/cloudsearch/test_cert_verification.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/integration/cloudsearch/test_layers.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/integration/cloudtrail/__init__.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/integration/cloudtrail/test_cloudtrail.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/integration/datapipeline/test_layer1.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/integration/directconnect/__init__.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/integration/directconnect/test_directconnect.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/integration/dynamodb/__init__.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/integration/dynamodb/test_cert_verification.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/integration/dynamodb/test_layer1.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/integration/dynamodb/test_layer2.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/integration/dynamodb/test_table.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/integration/dynamodb2/__init__.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/integration/dynamodb2/forum_test_data.json
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/integration/dynamodb2/test_cert_verification.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/integration/dynamodb2/test_highlevel.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/integration/dynamodb2/test_layer1.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/integration/ec2/__init__.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/integration/ec2/autoscale/__init__.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/integration/ec2/autoscale/test_cert_verification.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/integration/ec2/autoscale/test_connection.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/integration/ec2/cloudwatch/__init__.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/integration/ec2/cloudwatch/test_cert_verification.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/integration/ec2/cloudwatch/test_connection.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/integration/ec2/elb/__init__.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/integration/ec2/elb/test_cert_verification.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/integration/ec2/elb/test_connection.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/integration/ec2/test_cert_verification.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/integration/ec2/test_connection.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/integration/ec2/vpc/__init__.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/integration/ec2/vpc/test_connection.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/integration/elasticache/__init__.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/integration/elasticache/test_layer1.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/integration/elastictranscoder/__init__.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/integration/elastictranscoder/test_cert_verification.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/integration/elastictranscoder/test_layer1.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/integration/emr/__init__.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/integration/emr/test_cert_verification.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/integration/glacier/__init__.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/integration/glacier/test_cert_verification.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/integration/glacier/test_layer1.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/integration/glacier/test_layer2.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/integration/gs/__init__.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/integration/gs/cb_test_harness.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/integration/gs/test_basic.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/integration/gs/test_generation_conditionals.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/integration/gs/test_resumable_downloads.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/integration/gs/test_resumable_uploads.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/integration/gs/test_storage_uri.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/integration/gs/test_versioning.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/integration/gs/testcase.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/integration/gs/util.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/integration/iam/__init__.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/integration/iam/test_cert_verification.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/integration/kinesis/__init__.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/integration/kinesis/test_kinesis.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/integration/mws/__init__.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/integration/mws/test.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/integration/opsworks/__init__.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/integration/opsworks/test_layer1.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/integration/rds/__init__.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/integration/rds/test_cert_verification.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/integration/rds/test_db_subnet_group.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/integration/rds/test_promote_modify.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/integration/redshift/__init__.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/integration/redshift/test_cert_verification.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/integration/redshift/test_layer1.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/integration/route53/__init__.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/integration/route53/test_cert_verification.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/integration/route53/test_resourcerecordsets.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/integration/route53/test_zone.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/integration/s3/__init__.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/integration/s3/mock_storage_service.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/integration/s3/other_cacerts.txt
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/integration/s3/test_bucket.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/integration/s3/test_cert_verification.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/integration/s3/test_connection.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/integration/s3/test_cors.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/integration/s3/test_encryption.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/integration/s3/test_https_cert_validation.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/integration/s3/test_key.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/integration/s3/test_mfa.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/integration/s3/test_multidelete.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/integration/s3/test_multipart.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/integration/s3/test_pool.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/integration/s3/test_versioning.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/integration/sdb/__init__.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/integration/sdb/test_cert_verification.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/integration/sdb/test_connection.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/integration/ses/__init__.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/integration/ses/test_cert_verification.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/integration/ses/test_connection.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/integration/sns/__init__.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/integration/sns/test_cert_verification.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/integration/sns/test_connection.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/integration/sns/test_sns_sqs_subscription.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/integration/sqs/__init__.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/integration/sqs/test_bigmessage.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/integration/sqs/test_cert_verification.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/integration/sqs/test_connection.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/integration/storage_uri/__init__.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/integration/storage_uri/test_storage_uri.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/integration/sts/__init__.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/integration/sts/test_cert_verification.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/integration/sts/test_session_token.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/integration/support/__init__.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/integration/support/test_cert_verification.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/integration/support/test_layer1.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/integration/swf/__init__.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/integration/swf/test_cert_verification.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/integration/swf/test_layer1.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/integration/swf/test_layer1_workflow_execution.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/mturk/__init__.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/mturk/_init_environment.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/mturk/all_tests.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/mturk/cleanup_tests.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/mturk/common.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/mturk/create_free_text_question_regex.doctest
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/mturk/create_hit.doctest
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/mturk/create_hit_binary.doctest
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/mturk/create_hit_external.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/mturk/create_hit_from_hit_type.doctest
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/mturk/create_hit_test.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/mturk/create_hit_with_qualifications.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/mturk/hit_persistence.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/mturk/mocks.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/mturk/reviewable_hits.doctest
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/mturk/run-doctest.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/mturk/search_hits.doctest
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/mturk/selenium_support.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/mturk/support.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/mturk/test_disable_hit.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/test.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/unit/__init__.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/unit/auth/__init__.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/unit/auth/test_query.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/unit/auth/test_sigv4.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/unit/beanstalk/__init__.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/unit/beanstalk/test_layer1.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/unit/cloudformation/__init__.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/unit/cloudformation/test_connection.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/unit/cloudformation/test_stack.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/unit/cloudfront/__init__.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/unit/cloudfront/test_distribution.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/unit/cloudfront/test_invalidation_list.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/unit/cloudfront/test_signed_urls.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/unit/cloudsearch/__init__.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/unit/cloudsearch/test_connection.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/unit/cloudsearch/test_document.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/unit/cloudsearch/test_exceptions.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/unit/cloudsearch/test_search.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/unit/cloudtrail/__init__.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/unit/cloudtrail/test_layer1.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/unit/directconnect/__init__.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/unit/directconnect/test_layer1.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/unit/dynamodb/__init__.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/unit/dynamodb/test_batch.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/unit/dynamodb/test_layer2.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/unit/dynamodb/test_types.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/unit/dynamodb2/__init__.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/unit/dynamodb2/test_layer1.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/unit/dynamodb2/test_table.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/unit/ec2/__init__.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/unit/ec2/autoscale/__init__.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/unit/ec2/autoscale/test_group.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/unit/ec2/cloudwatch/__init__.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/unit/ec2/cloudwatch/test_connection.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/unit/ec2/elb/__init__.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/unit/ec2/elb/test_attribute.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/unit/ec2/elb/test_listener.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/unit/ec2/elb/test_loadbalancer.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/unit/ec2/test_address.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/unit/ec2/test_blockdevicemapping.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/unit/ec2/test_connection.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/unit/ec2/test_instance.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/unit/ec2/test_instancestatus.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/unit/ec2/test_networkinterface.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/unit/ec2/test_securitygroup.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/unit/ec2/test_snapshot.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/unit/ec2/test_spotinstance.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/unit/ec2/test_volume.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/unit/elasticache/__init__.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/unit/elasticache/test_api_interface.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/unit/emr/test_connection.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/unit/emr/test_emr_responses.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/unit/emr/test_instance_group_args.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/unit/glacier/__init__.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/unit/glacier/test_concurrent.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/unit/glacier/test_job.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/unit/glacier/test_layer1.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/unit/glacier/test_layer2.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/unit/glacier/test_utils.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/unit/glacier/test_vault.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/unit/glacier/test_writer.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/unit/iam/__init__.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/unit/iam/test_connection.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/unit/manage/__init__.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/unit/manage/test_ssh.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/unit/mws/__init__.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/unit/mws/test_connection.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/unit/mws/test_response.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/unit/provider/__init__.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/unit/provider/test_provider.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/unit/rds/__init__.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/unit/rds/test_connection.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/unit/rds/test_snapshot.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/unit/route53/__init__.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/unit/route53/test_connection.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/unit/s3/__init__.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/unit/s3/test_bucket.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/unit/s3/test_connection.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/unit/s3/test_cors_configuration.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/unit/s3/test_key.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/unit/s3/test_keyfile.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/unit/s3/test_lifecycle.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/unit/s3/test_tagging.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/unit/s3/test_uri.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/unit/s3/test_website.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/unit/ses/__init__.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/unit/ses/test_identity.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/unit/sns/__init__.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/unit/sns/test_connection.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/unit/sqs/__init__.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/unit/sqs/test_connection.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/unit/sqs/test_message.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/unit/sqs/test_queue.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/unit/sts/__init__.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/unit/sts/test_connection.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/unit/sts/test_credentials.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/unit/swf/__init__.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/unit/swf/test_layer2_actors.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/unit/swf/test_layer2_domain.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/unit/swf/test_layer2_types.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/unit/test_connection.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/unit/test_exception.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/unit/utils/__init__.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/unit/utils/test_utils.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/unit/vpc/__init__.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/unit/vpc/test_customergateway.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/unit/vpc/test_dhcpoptions.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/unit/vpc/test_internetgateway.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/unit/vpc/test_networkacl.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/unit/vpc/test_routetable.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/unit/vpc/test_subnet.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/unit/vpc/test_vpc.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/unit/vpc/test_vpnconnection.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tests/unit/vpc/test_vpngateway.py
+google-cloud-sdk/platform/gsutil/third_party/boto/tox.ini
+google-cloud-sdk/platform/gsutil/third_party/crcmod/.hgeol
+google-cloud-sdk/platform/gsutil/third_party/crcmod/.hgignore
+google-cloud-sdk/platform/gsutil/third_party/crcmod/.hgtags
+google-cloud-sdk/platform/gsutil/third_party/crcmod/LICENSE
+google-cloud-sdk/platform/gsutil/third_party/crcmod/MANIFEST.in
+google-cloud-sdk/platform/gsutil/third_party/crcmod/README
+google-cloud-sdk/platform/gsutil/third_party/crcmod/changelog
+google-cloud-sdk/platform/gsutil/third_party/crcmod/docs/source/Makefile
+google-cloud-sdk/platform/gsutil/third_party/crcmod/docs/source/conf.py
+google-cloud-sdk/platform/gsutil/third_party/crcmod/docs/source/crcmod.predefined.rst
+google-cloud-sdk/platform/gsutil/third_party/crcmod/docs/source/crcmod.rst
+google-cloud-sdk/platform/gsutil/third_party/crcmod/docs/source/index.rst
+google-cloud-sdk/platform/gsutil/third_party/crcmod/docs/source/intro.rst
+google-cloud-sdk/platform/gsutil/third_party/crcmod/docs/source/make.bat
+google-cloud-sdk/platform/gsutil/third_party/crcmod/docs/source/make_predefined_table.py
+google-cloud-sdk/platform/gsutil/third_party/crcmod/python2/crcmod/__init__.py
+google-cloud-sdk/platform/gsutil/third_party/crcmod/python2/crcmod/_crcfunpy.py
+google-cloud-sdk/platform/gsutil/third_party/crcmod/python2/crcmod/crcmod.py
+google-cloud-sdk/platform/gsutil/third_party/crcmod/python2/crcmod/predefined.py
+google-cloud-sdk/platform/gsutil/third_party/crcmod/python2/crcmod/test.py
+google-cloud-sdk/platform/gsutil/third_party/crcmod/python2/src/_crcfunext.c
+google-cloud-sdk/platform/gsutil/third_party/crcmod/python3/crcmod/__init__.py
+google-cloud-sdk/platform/gsutil/third_party/crcmod/python3/crcmod/_crcfunpy.py
+google-cloud-sdk/platform/gsutil/third_party/crcmod/python3/crcmod/crcmod.py
+google-cloud-sdk/platform/gsutil/third_party/crcmod/python3/crcmod/predefined.py
+google-cloud-sdk/platform/gsutil/third_party/crcmod/python3/crcmod/test.py
+google-cloud-sdk/platform/gsutil/third_party/crcmod/python3/src/_crcfunext.c
+google-cloud-sdk/platform/gsutil/third_party/crcmod/setup.py
+google-cloud-sdk/platform/gsutil/third_party/crcmod/test/examples.py
+google-cloud-sdk/platform/gsutil/third_party/crcmod/test/test_crcmod.py
+google-cloud-sdk/platform/gsutil/third_party/crcmod_osx/LICENSE
+google-cloud-sdk/platform/gsutil/third_party/crcmod_osx/README.md
+google-cloud-sdk/platform/gsutil/third_party/crcmod_osx/crcmod/__init__.py
+google-cloud-sdk/platform/gsutil/third_party/crcmod_osx/crcmod/_crcfunext.so
+google-cloud-sdk/platform/gsutil/third_party/crcmod_osx/crcmod/_crcfunpy.py
+google-cloud-sdk/platform/gsutil/third_party/crcmod_osx/crcmod/crcmod.py
+google-cloud-sdk/platform/gsutil/third_party/crcmod_osx/crcmod/predefined.py
+google-cloud-sdk/platform/gsutil/third_party/crcmod_osx/crcmod/test.py
+google-cloud-sdk/platform/gsutil/third_party/google-api-python-client/.hgignore
+google-cloud-sdk/platform/gsutil/third_party/google-api-python-client/.hgtags
+google-cloud-sdk/platform/gsutil/third_party/google-api-python-client/CHANGELOG
+google-cloud-sdk/platform/gsutil/third_party/google-api-python-client/FAQ
+google-cloud-sdk/platform/gsutil/third_party/google-api-python-client/LICENSE
+google-cloud-sdk/platform/gsutil/third_party/google-api-python-client/MANIFEST.in
+google-cloud-sdk/platform/gsutil/third_party/google-api-python-client/MANIFEST_oauth2client.in
+google-cloud-sdk/platform/gsutil/third_party/google-api-python-client/Makefile
+google-cloud-sdk/platform/gsutil/third_party/google-api-python-client/README
+google-cloud-sdk/platform/gsutil/third_party/google-api-python-client/README_oauth2client
+google-cloud-sdk/platform/gsutil/third_party/google-api-python-client/TODO
+google-cloud-sdk/platform/gsutil/third_party/google-api-python-client/apiclient/__init__.py
+google-cloud-sdk/platform/gsutil/third_party/google-api-python-client/apiclient/channel.py
+google-cloud-sdk/platform/gsutil/third_party/google-api-python-client/apiclient/discovery.py
+google-cloud-sdk/platform/gsutil/third_party/google-api-python-client/apiclient/errors.py
+google-cloud-sdk/platform/gsutil/third_party/google-api-python-client/apiclient/http.py
+google-cloud-sdk/platform/gsutil/third_party/google-api-python-client/apiclient/mimeparse.py
+google-cloud-sdk/platform/gsutil/third_party/google-api-python-client/apiclient/model.py
+google-cloud-sdk/platform/gsutil/third_party/google-api-python-client/apiclient/sample_tools.py
+google-cloud-sdk/platform/gsutil/third_party/google-api-python-client/apiclient/schema.py
+google-cloud-sdk/platform/gsutil/third_party/google-api-python-client/describe.py
+google-cloud-sdk/platform/gsutil/third_party/google-api-python-client/expandsymlinks.py
+google-cloud-sdk/platform/gsutil/third_party/google-api-python-client/oauth2client/__init__.py
+google-cloud-sdk/platform/gsutil/third_party/google-api-python-client/oauth2client/anyjson.py
+google-cloud-sdk/platform/gsutil/third_party/google-api-python-client/oauth2client/appengine.py
+google-cloud-sdk/platform/gsutil/third_party/google-api-python-client/oauth2client/client.py
+google-cloud-sdk/platform/gsutil/third_party/google-api-python-client/oauth2client/clientsecrets.py
+google-cloud-sdk/platform/gsutil/third_party/google-api-python-client/oauth2client/crypt.py
+google-cloud-sdk/platform/gsutil/third_party/google-api-python-client/oauth2client/django_orm.py
+google-cloud-sdk/platform/gsutil/third_party/google-api-python-client/oauth2client/file.py
+google-cloud-sdk/platform/gsutil/third_party/google-api-python-client/oauth2client/gce.py
+google-cloud-sdk/platform/gsutil/third_party/google-api-python-client/oauth2client/keyring_storage.py
+google-cloud-sdk/platform/gsutil/third_party/google-api-python-client/oauth2client/locked_file.py
+google-cloud-sdk/platform/gsutil/third_party/google-api-python-client/oauth2client/multistore_file.py
+google-cloud-sdk/platform/gsutil/third_party/google-api-python-client/oauth2client/old_run.py
+google-cloud-sdk/platform/gsutil/third_party/google-api-python-client/oauth2client/tools.py
+google-cloud-sdk/platform/gsutil/third_party/google-api-python-client/oauth2client/util.py
+google-cloud-sdk/platform/gsutil/third_party/google-api-python-client/oauth2client/xsrfutil.py
+google-cloud-sdk/platform/gsutil/third_party/google-api-python-client/samples-index.py
+google-cloud-sdk/platform/gsutil/third_party/google-api-python-client/setpath.sh
+google-cloud-sdk/platform/gsutil/third_party/google-api-python-client/setup.py
+google-cloud-sdk/platform/gsutil/third_party/google-api-python-client/setup_oauth2client.py
+google-cloud-sdk/platform/gsutil/third_party/google-api-python-client/sitecustomize.py
+google-cloud-sdk/platform/gsutil/third_party/google-api-python-client/static/Credentials.png
+google-cloud-sdk/platform/gsutil/third_party/google-api-python-client/tools/gae-zip-creator.sh
+google-cloud-sdk/platform/gsutil/third_party/google-api-python-client/tox.ini
+google-cloud-sdk/platform/gsutil/third_party/google-api-python-client/upload-diffs.py
+google-cloud-sdk/platform/gsutil/third_party/google-api-python-client/uritemplate/__init__.py
+google-cloud-sdk/platform/gsutil/third_party/httplib2/.hgignore
+google-cloud-sdk/platform/gsutil/third_party/httplib2/CHANGELOG
+google-cloud-sdk/platform/gsutil/third_party/httplib2/MANIFEST.in
+google-cloud-sdk/platform/gsutil/third_party/httplib2/Makefile
+google-cloud-sdk/platform/gsutil/third_party/httplib2/README
+google-cloud-sdk/platform/gsutil/third_party/httplib2/README.md
+google-cloud-sdk/platform/gsutil/third_party/httplib2/index.html
+google-cloud-sdk/platform/gsutil/third_party/httplib2/libhttplib2.tex
+google-cloud-sdk/platform/gsutil/third_party/httplib2/python2/httplib2/__init__.py
+google-cloud-sdk/platform/gsutil/third_party/httplib2/python2/httplib2/cacerts.txt
+google-cloud-sdk/platform/gsutil/third_party/httplib2/python2/httplib2/iri2uri.py
+google-cloud-sdk/platform/gsutil/third_party/httplib2/python2/httplib2/socks.py
+google-cloud-sdk/platform/gsutil/third_party/httplib2/python2/httplib2/test/__init__.py
+google-cloud-sdk/platform/gsutil/third_party/httplib2/python2/httplib2/test/brokensocket/socket.py
+google-cloud-sdk/platform/gsutil/third_party/httplib2/python2/httplib2/test/functional/test_proxies.py
+google-cloud-sdk/platform/gsutil/third_party/httplib2/python2/httplib2/test/miniserver.py
+google-cloud-sdk/platform/gsutil/third_party/httplib2/python2/httplib2/test/other_cacerts.txt
+google-cloud-sdk/platform/gsutil/third_party/httplib2/python2/httplib2/test/smoke_test.py
+google-cloud-sdk/platform/gsutil/third_party/httplib2/python2/httplib2/test/test_no_socket.py
+google-cloud-sdk/platform/gsutil/third_party/httplib2/python2/httplib2test.py
+google-cloud-sdk/platform/gsutil/third_party/httplib2/python2/httplib2test_appengine.py
+google-cloud-sdk/platform/gsutil/third_party/httplib2/python3/README
+google-cloud-sdk/platform/gsutil/third_party/httplib2/python3/httplib2/__init__.py
+google-cloud-sdk/platform/gsutil/third_party/httplib2/python3/httplib2/cacerts.txt
+google-cloud-sdk/platform/gsutil/third_party/httplib2/python3/httplib2/iri2uri.py
+google-cloud-sdk/platform/gsutil/third_party/httplib2/python3/httplib2/test/other_cacerts.txt
+google-cloud-sdk/platform/gsutil/third_party/httplib2/python3/httplib2test.py
+google-cloud-sdk/platform/gsutil/third_party/httplib2/ref.tex
+google-cloud-sdk/platform/gsutil/third_party/httplib2/ref/about.html
+google-cloud-sdk/platform/gsutil/third_party/httplib2/ref/blank.png
+google-cloud-sdk/platform/gsutil/third_party/httplib2/ref/cache-objects.html
+google-cloud-sdk/platform/gsutil/third_party/httplib2/ref/contents.html
+google-cloud-sdk/platform/gsutil/third_party/httplib2/ref/contents.png
+google-cloud-sdk/platform/gsutil/third_party/httplib2/ref/http-objects.html
+google-cloud-sdk/platform/gsutil/third_party/httplib2/ref/httplib2-example.html
+google-cloud-sdk/platform/gsutil/third_party/httplib2/ref/images.idx
+google-cloud-sdk/platform/gsutil/third_party/httplib2/ref/img1.old
+google-cloud-sdk/platform/gsutil/third_party/httplib2/ref/img1.png
+google-cloud-sdk/platform/gsutil/third_party/httplib2/ref/img2.old
+google-cloud-sdk/platform/gsutil/third_party/httplib2/ref/img2.png
+google-cloud-sdk/platform/gsutil/third_party/httplib2/ref/index.html
+google-cloud-sdk/platform/gsutil/third_party/httplib2/ref/index.png
+google-cloud-sdk/platform/gsutil/third_party/httplib2/ref/modimages.idx
+google-cloud-sdk/platform/gsutil/third_party/httplib2/ref/module-httplib2.html
+google-cloud-sdk/platform/gsutil/third_party/httplib2/ref/modules.png
+google-cloud-sdk/platform/gsutil/third_party/httplib2/ref/next.png
+google-cloud-sdk/platform/gsutil/third_party/httplib2/ref/node2.html
+google-cloud-sdk/platform/gsutil/third_party/httplib2/ref/previous.png
+google-cloud-sdk/platform/gsutil/third_party/httplib2/ref/pyfav.png
+google-cloud-sdk/platform/gsutil/third_party/httplib2/ref/ref.css
+google-cloud-sdk/platform/gsutil/third_party/httplib2/ref/ref.html
+google-cloud-sdk/platform/gsutil/third_party/httplib2/ref/response-objects.html
+google-cloud-sdk/platform/gsutil/third_party/httplib2/ref/up.png
+google-cloud-sdk/platform/gsutil/third_party/httplib2/setup.py
+google-cloud-sdk/platform/gsutil/third_party/httplib2/upload-diffs.py
+google-cloud-sdk/platform/gsutil/third_party/python-gflags/AUTHORS
+google-cloud-sdk/platform/gsutil/third_party/python-gflags/COPYING
+google-cloud-sdk/platform/gsutil/third_party/python-gflags/ChangeLog
+google-cloud-sdk/platform/gsutil/third_party/python-gflags/MANIFEST.in
+google-cloud-sdk/platform/gsutil/third_party/python-gflags/Makefile
+google-cloud-sdk/platform/gsutil/third_party/python-gflags/NEWS
+google-cloud-sdk/platform/gsutil/third_party/python-gflags/README
+google-cloud-sdk/platform/gsutil/third_party/python-gflags/debian/README
+google-cloud-sdk/platform/gsutil/third_party/python-gflags/debian/changelog
+google-cloud-sdk/platform/gsutil/third_party/python-gflags/debian/compat
+google-cloud-sdk/platform/gsutil/third_party/python-gflags/debian/control
+google-cloud-sdk/platform/gsutil/third_party/python-gflags/debian/copyright
+google-cloud-sdk/platform/gsutil/third_party/python-gflags/debian/docs
+google-cloud-sdk/platform/gsutil/third_party/python-gflags/debian/rules
+google-cloud-sdk/platform/gsutil/third_party/python-gflags/gflags.py
+google-cloud-sdk/platform/gsutil/third_party/python-gflags/gflags2man.py
+google-cloud-sdk/platform/gsutil/third_party/python-gflags/gflags_validators.py
+google-cloud-sdk/platform/gsutil/third_party/python-gflags/setup.py
+google-cloud-sdk/platform/gsutil/third_party/retry-decorator/CHANGES.txt
+google-cloud-sdk/platform/gsutil/third_party/retry-decorator/LICENSE.txt
+google-cloud-sdk/platform/gsutil/third_party/retry-decorator/MANIFEST.in
+google-cloud-sdk/platform/gsutil/third_party/retry-decorator/Makefile
+google-cloud-sdk/platform/gsutil/third_party/retry-decorator/README.rst
+google-cloud-sdk/platform/gsutil/third_party/retry-decorator/retry_decorator/__init__.py
+google-cloud-sdk/platform/gsutil/third_party/retry-decorator/retry_decorator/retry_decorator.py
+google-cloud-sdk/platform/gsutil/third_party/retry-decorator/setup.py
+google-cloud-sdk/platform/gsutil/third_party/socksipy-branch/BUGS
+google-cloud-sdk/platform/gsutil/third_party/socksipy-branch/LICENSE
+google-cloud-sdk/platform/gsutil/third_party/socksipy-branch/MANIFEST
+google-cloud-sdk/platform/gsutil/third_party/socksipy-branch/README
+google-cloud-sdk/platform/gsutil/third_party/socksipy-branch/setup.py
+google-cloud-sdk/platform/gsutil/third_party/socksipy-branch/socks.py
+man/man1/gcloud-auth-activate-refresh-token.1.gz
+man/man1/gcloud-auth-activate-service-account.1.gz
+man/man1/gcloud-auth-git-helper.1.gz
+man/man1/gcloud-auth-list.1.gz
+man/man1/gcloud-auth-login.1.gz
+man/man1/gcloud-auth-print-access-token.1.gz
+man/man1/gcloud-auth-revoke.1.gz
+man/man1/gcloud-auth.1.gz
+man/man1/gcloud-components-list.1.gz
+man/man1/gcloud-components-remove.1.gz
+man/man1/gcloud-components-restore.1.gz
+man/man1/gcloud-components-update.1.gz
+man/man1/gcloud-components.1.gz
+man/man1/gcloud-compute-addresses-get.1.gz
+man/man1/gcloud-compute-addresses-list.1.gz
+man/man1/gcloud-compute-addresses-release.1.gz
+man/man1/gcloud-compute-addresses-reserve.1.gz
+man/man1/gcloud-compute-addresses.1.gz
+man/man1/gcloud-compute-config-ssh.1.gz
+man/man1/gcloud-compute-copy-files.1.gz
+man/man1/gcloud-compute-disks-create.1.gz
+man/man1/gcloud-compute-disks-delete.1.gz
+man/man1/gcloud-compute-disks-get.1.gz
+man/man1/gcloud-compute-disks-list.1.gz
+man/man1/gcloud-compute-disks-snapshot.1.gz
+man/man1/gcloud-compute-disks.1.gz
+man/man1/gcloud-compute-firewalls-create.1.gz
+man/man1/gcloud-compute-firewalls-delete.1.gz
+man/man1/gcloud-compute-firewalls-get.1.gz
+man/man1/gcloud-compute-firewalls-list.1.gz
+man/man1/gcloud-compute-firewalls-update.1.gz
+man/man1/gcloud-compute-firewalls.1.gz
+man/man1/gcloud-compute-forwarding-rules-create.1.gz
+man/man1/gcloud-compute-forwarding-rules-delete.1.gz
+man/man1/gcloud-compute-forwarding-rules-get.1.gz
+man/man1/gcloud-compute-forwarding-rules-list.1.gz
+man/man1/gcloud-compute-forwarding-rules-set-target.1.gz
+man/man1/gcloud-compute-forwarding-rules.1.gz
+man/man1/gcloud-compute-http-health-checks-create.1.gz
+man/man1/gcloud-compute-http-health-checks-get.1.gz
+man/man1/gcloud-compute-http-health-checks-list.1.gz
+man/man1/gcloud-compute-http-health-checks-update.1.gz
+man/man1/gcloud-compute-http-health-checks.1.gz
+man/man1/gcloud-compute-images-create.1.gz
+man/man1/gcloud-compute-images-delete.1.gz
+man/man1/gcloud-compute-images-deprecate.1.gz
+man/man1/gcloud-compute-images-get.1.gz
+man/man1/gcloud-compute-images-list.1.gz
+man/man1/gcloud-compute-images.1.gz
+man/man1/gcloud-compute-instances-add-access-config.1.gz
+man/man1/gcloud-compute-instances-add-metadata.1.gz
+man/man1/gcloud-compute-instances-add-tags.1.gz
+man/man1/gcloud-compute-instances-attach-disk.1.gz
+man/man1/gcloud-compute-instances-create.1.gz
+man/man1/gcloud-compute-instances-delete-access-config.1.gz
+man/man1/gcloud-compute-instances-delete.1.gz
+man/man1/gcloud-compute-instances-detach-disk.1.gz
+man/man1/gcloud-compute-instances-get-serial-port-output.1.gz
+man/man1/gcloud-compute-instances-get.1.gz
+man/man1/gcloud-compute-instances-list.1.gz
+man/man1/gcloud-compute-instances-remove-metadata.1.gz
+man/man1/gcloud-compute-instances-remove-tags.1.gz
+man/man1/gcloud-compute-instances-reset.1.gz
+man/man1/gcloud-compute-instances-set-disk-auto-delete.1.gz
+man/man1/gcloud-compute-instances-set-scheduling.1.gz
+man/man1/gcloud-compute-instances.1.gz
+man/man1/gcloud-compute-machine-types-get.1.gz
+man/man1/gcloud-compute-machine-types-list.1.gz
+man/man1/gcloud-compute-machine-types.1.gz
+man/man1/gcloud-compute-networks-create.1.gz
+man/man1/gcloud-compute-networks-delete.1.gz
+man/man1/gcloud-compute-networks-get.1.gz
+man/man1/gcloud-compute-networks-list.1.gz
+man/man1/gcloud-compute-networks.1.gz
+man/man1/gcloud-compute-operations-get.1.gz
+man/man1/gcloud-compute-operations-list.1.gz
+man/man1/gcloud-compute-operations.1.gz
+man/man1/gcloud-compute-project-info-add-metadata.1.gz
+man/man1/gcloud-compute-project-info-get.1.gz
+man/man1/gcloud-compute-project-info-remove-metadata.1.gz
+man/man1/gcloud-compute-project-info.1.gz
+man/man1/gcloud-compute-regions-get.1.gz
+man/man1/gcloud-compute-regions-list.1.gz
+man/man1/gcloud-compute-regions.1.gz
+man/man1/gcloud-compute-routes-create.1.gz
+man/man1/gcloud-compute-routes-delete.1.gz
+man/man1/gcloud-compute-routes-get.1.gz
+man/man1/gcloud-compute-routes-list.1.gz
+man/man1/gcloud-compute-routes.1.gz
+man/man1/gcloud-compute-snapshots-delete.1.gz
+man/man1/gcloud-compute-snapshots-get.1.gz
+man/man1/gcloud-compute-snapshots-list.1.gz
+man/man1/gcloud-compute-snapshots.1.gz
+man/man1/gcloud-compute-ssh.1.gz
+man/man1/gcloud-compute-target-instances-create.1.gz
+man/man1/gcloud-compute-target-instances-delete.1.gz
+man/man1/gcloud-compute-target-instances-get.1.gz
+man/man1/gcloud-compute-target-instances-list.1.gz
+man/man1/gcloud-compute-target-instances.1.gz
+man/man1/gcloud-compute-target-pools-add-health-check.1.gz
+man/man1/gcloud-compute-target-pools-add-instance.1.gz
+man/man1/gcloud-compute-target-pools-create.1.gz
+man/man1/gcloud-compute-target-pools-delete.1.gz
+man/man1/gcloud-compute-target-pools-get-health.1.gz
+man/man1/gcloud-compute-target-pools-get.1.gz
+man/man1/gcloud-compute-target-pools-list.1.gz
+man/man1/gcloud-compute-target-pools-remove-health-check.1.gz
+man/man1/gcloud-compute-target-pools-remove-instance.1.gz
+man/man1/gcloud-compute-target-pools-set-backup.1.gz
+man/man1/gcloud-compute-target-pools.1.gz
+man/man1/gcloud-compute-zones-get.1.gz
+man/man1/gcloud-compute-zones-list.1.gz
+man/man1/gcloud-compute-zones.1.gz
+man/man1/gcloud-compute.1.gz
+man/man1/gcloud-config-list.1.gz
+man/man1/gcloud-config-set.1.gz
+man/man1/gcloud-config-unset.1.gz
+man/man1/gcloud-config.1.gz
+man/man1/gcloud-help.1.gz
+man/man1/gcloud-init.1.gz
+man/man1/gcloud-interactive.1.gz
+man/man1/gcloud-version.1.gz
+man/man1/gcloud.1.gz
+@dirrmtry google-cloud-sdk/.install/.download
+@dirrmtry google-cloud-sdk/.install
+@dirrmtry google-cloud-sdk/bin/bootstrapping
+@dirrmtry google-cloud-sdk/bin
+@dirrmtry google-cloud-sdk/help/text.long
+@dirrmtry google-cloud-sdk/help
+@dirrmtry google-cloud-sdk/lib/apiclient
+@dirrmtry google-cloud-sdk/lib/argcomplete/scripts
+@dirrmtry google-cloud-sdk/lib/argcomplete
+@dirrmtry google-cloud-sdk/lib/argparse
+@dirrmtry google-cloud-sdk/lib/docker/docker/auth
+@dirrmtry google-cloud-sdk/lib/docker/docker/unixconn
+@dirrmtry google-cloud-sdk/lib/docker/docker/utils
+@dirrmtry google-cloud-sdk/lib/docker/docker
+@dirrmtry google-cloud-sdk/lib/docker
+@dirrmtry google-cloud-sdk/lib/gflags
+@dirrmtry google-cloud-sdk/lib/google/apputils
+@dirrmtry google-cloud-sdk/lib/google
+@dirrmtry google-cloud-sdk/lib/googlecloudapis/apitools/base/py
+@dirrmtry google-cloud-sdk/lib/googlecloudapis/apitools/base
+@dirrmtry google-cloud-sdk/lib/googlecloudapis/apitools
+@dirrmtry google-cloud-sdk/lib/googlecloudapis/compute/v1
+@dirrmtry google-cloud-sdk/lib/googlecloudapis/compute
+@dirrmtry google-cloud-sdk/lib/googlecloudapis/dns/v1beta1
+@dirrmtry google-cloud-sdk/lib/googlecloudapis/dns
+@dirrmtry google-cloud-sdk/lib/googlecloudapis/manager/v1beta2
+@dirrmtry google-cloud-sdk/lib/googlecloudapis/manager
+@dirrmtry google-cloud-sdk/lib/googlecloudapis/replicapool/v1beta1
+@dirrmtry google-cloud-sdk/lib/googlecloudapis/replicapool
+@dirrmtry google-cloud-sdk/lib/googlecloudapis/resourceviews/v1beta1
+@dirrmtry google-cloud-sdk/lib/googlecloudapis/resourceviews
+@dirrmtry google-cloud-sdk/lib/googlecloudapis/sqladmin/v1beta1
+@dirrmtry google-cloud-sdk/lib/googlecloudapis/sqladmin/v1beta3
+@dirrmtry google-cloud-sdk/lib/googlecloudapis/sqladmin
+@dirrmtry google-cloud-sdk/lib/googlecloudapis
+@dirrmtry google-cloud-sdk/lib/googlecloudsdk/calliope
+@dirrmtry google-cloud-sdk/lib/googlecloudsdk/compute/api
+@dirrmtry google-cloud-sdk/lib/googlecloudsdk/compute/lib
+@dirrmtry google-cloud-sdk/lib/googlecloudsdk/compute/subcommands/addresses
+@dirrmtry google-cloud-sdk/lib/googlecloudsdk/compute/subcommands/disks
+@dirrmtry google-cloud-sdk/lib/googlecloudsdk/compute/subcommands/firewalls
+@dirrmtry google-cloud-sdk/lib/googlecloudsdk/compute/subcommands/forwarding_rules
+@dirrmtry google-cloud-sdk/lib/googlecloudsdk/compute/subcommands/http_health_checks
+@dirrmtry google-cloud-sdk/lib/googlecloudsdk/compute/subcommands/images
+@dirrmtry google-cloud-sdk/lib/googlecloudsdk/compute/subcommands/instances
+@dirrmtry google-cloud-sdk/lib/googlecloudsdk/compute/subcommands/machine_types
+@dirrmtry google-cloud-sdk/lib/googlecloudsdk/compute/subcommands/networks
+@dirrmtry google-cloud-sdk/lib/googlecloudsdk/compute/subcommands/operations
+@dirrmtry google-cloud-sdk/lib/googlecloudsdk/compute/subcommands/project_info
+@dirrmtry google-cloud-sdk/lib/googlecloudsdk/compute/subcommands/regions
+@dirrmtry google-cloud-sdk/lib/googlecloudsdk/compute/subcommands/routes
+@dirrmtry google-cloud-sdk/lib/googlecloudsdk/compute/subcommands/snapshots
+@dirrmtry google-cloud-sdk/lib/googlecloudsdk/compute/subcommands/target_instances
+@dirrmtry google-cloud-sdk/lib/googlecloudsdk/compute/subcommands/target_pools
+@dirrmtry google-cloud-sdk/lib/googlecloudsdk/compute/subcommands/zones
+@dirrmtry google-cloud-sdk/lib/googlecloudsdk/compute/subcommands
+@dirrmtry google-cloud-sdk/lib/googlecloudsdk/compute
+@dirrmtry google-cloud-sdk/lib/googlecloudsdk/core/credentials
+@dirrmtry google-cloud-sdk/lib/googlecloudsdk/core/updater
+@dirrmtry google-cloud-sdk/lib/googlecloudsdk/core/util
+@dirrmtry google-cloud-sdk/lib/googlecloudsdk/core
+@dirrmtry google-cloud-sdk/lib/googlecloudsdk/dns/dnstools/changes
+@dirrmtry google-cloud-sdk/lib/googlecloudsdk/dns/dnstools/managed_zone
+@dirrmtry google-cloud-sdk/lib/googlecloudsdk/dns/dnstools/project_info
+@dirrmtry google-cloud-sdk/lib/googlecloudsdk/dns/dnstools/records
+@dirrmtry google-cloud-sdk/lib/googlecloudsdk/dns/dnstools
+@dirrmtry google-cloud-sdk/lib/googlecloudsdk/dns
+@dirrmtry google-cloud-sdk/lib/googlecloudsdk/gcloud/sdktools/auth
+@dirrmtry google-cloud-sdk/lib/googlecloudsdk/gcloud/sdktools/components
+@dirrmtry google-cloud-sdk/lib/googlecloudsdk/gcloud/sdktools/config
+@dirrmtry google-cloud-sdk/lib/googlecloudsdk/gcloud/sdktools/root
+@dirrmtry google-cloud-sdk/lib/googlecloudsdk/gcloud/sdktools
+@dirrmtry google-cloud-sdk/lib/googlecloudsdk/gcloud
+@dirrmtry google-cloud-sdk/lib/googlecloudsdk/sql/tools/backups
+@dirrmtry google-cloud-sdk/lib/googlecloudsdk/sql/tools/flags
+@dirrmtry google-cloud-sdk/lib/googlecloudsdk/sql/tools/instances
+@dirrmtry google-cloud-sdk/lib/googlecloudsdk/sql/tools/operations
+@dirrmtry google-cloud-sdk/lib/googlecloudsdk/sql/tools/ssl_certs
+@dirrmtry google-cloud-sdk/lib/googlecloudsdk/sql/tools/tiers
+@dirrmtry google-cloud-sdk/lib/googlecloudsdk/sql/tools
+@dirrmtry google-cloud-sdk/lib/googlecloudsdk/sql
+@dirrmtry google-cloud-sdk/lib/googlecloudsdk
+@dirrmtry google-cloud-sdk/lib/httplib2
+@dirrmtry google-cloud-sdk/lib/mimeparse
+@dirrmtry google-cloud-sdk/lib/oauth2
+@dirrmtry google-cloud-sdk/lib/oauth2client
+@dirrmtry google-cloud-sdk/lib/protorpc/webapp
+@dirrmtry google-cloud-sdk/lib/protorpc/wsgi
+@dirrmtry google-cloud-sdk/lib/protorpc
+@dirrmtry google-cloud-sdk/lib/requests/packages/charade
+@dirrmtry google-cloud-sdk/lib/requests/packages/chardet
+@dirrmtry google-cloud-sdk/lib/requests/packages/urllib3/packages/ssl_match_hostname
+@dirrmtry google-cloud-sdk/lib/requests/packages/urllib3/packages
+@dirrmtry google-cloud-sdk/lib/requests/packages/urllib3
+@dirrmtry google-cloud-sdk/lib/requests/packages
+@dirrmtry google-cloud-sdk/lib/requests
+@dirrmtry google-cloud-sdk/lib/six
+@dirrmtry google-cloud-sdk/lib/socks
+@dirrmtry google-cloud-sdk/lib/uritemplate
+@dirrmtry google-cloud-sdk/lib/websocket
+@dirrmtry google-cloud-sdk/lib/yaml
+@dirrmtry google-cloud-sdk/lib
+@dirrmtry google-cloud-sdk/platform/bq/discovery
+@dirrmtry google-cloud-sdk/platform/bq
+@dirrmtry google-cloud-sdk/platform/gcutil/lib/google_api_python_client/apiclient/ext
+@dirrmtry google-cloud-sdk/platform/gcutil/lib/google_api_python_client/apiclient
+@dirrmtry google-cloud-sdk/platform/gcutil/lib/google_api_python_client/oauth2client
+@dirrmtry google-cloud-sdk/platform/gcutil/lib/google_api_python_client/uritemplate
+@dirrmtry google-cloud-sdk/platform/gcutil/lib/google_api_python_client
+@dirrmtry google-cloud-sdk/platform/gcutil/lib/google_apputils/google/apputils
+@dirrmtry google-cloud-sdk/platform/gcutil/lib/google_apputils/google
+@dirrmtry google-cloud-sdk/platform/gcutil/lib/google_apputils
+@dirrmtry google-cloud-sdk/platform/gcutil/lib/google_compute_engine/gcutil_lib/compute
+@dirrmtry google-cloud-sdk/platform/gcutil/lib/google_compute_engine/gcutil_lib/table
+@dirrmtry google-cloud-sdk/platform/gcutil/lib/google_compute_engine/gcutil_lib
+@dirrmtry google-cloud-sdk/platform/gcutil/lib/google_compute_engine
+@dirrmtry google-cloud-sdk/platform/gcutil/lib/httplib2/httplib2
+@dirrmtry google-cloud-sdk/platform/gcutil/lib/httplib2
+@dirrmtry google-cloud-sdk/platform/gcutil/lib/ipaddr/ipaddr
+@dirrmtry google-cloud-sdk/platform/gcutil/lib/ipaddr
+@dirrmtry google-cloud-sdk/platform/gcutil/lib/iso8601/iso8601
+@dirrmtry google-cloud-sdk/platform/gcutil/lib/iso8601
+@dirrmtry google-cloud-sdk/platform/gcutil/lib/python_gflags
+@dirrmtry google-cloud-sdk/platform/gcutil/lib
+@dirrmtry google-cloud-sdk/platform/gcutil
+@dirrmtry google-cloud-sdk/platform/gsutil/gslib/addlhelp
+@dirrmtry google-cloud-sdk/platform/gsutil/gslib/commands
+@dirrmtry google-cloud-sdk/platform/gsutil/gslib/data
+@dirrmtry google-cloud-sdk/platform/gsutil/gslib/tests/test_data
+@dirrmtry google-cloud-sdk/platform/gsutil/gslib/tests/testcase
+@dirrmtry google-cloud-sdk/platform/gsutil/gslib/tests
+@dirrmtry google-cloud-sdk/platform/gsutil/gslib/third_party/oauth2_plugin
+@dirrmtry google-cloud-sdk/platform/gsutil/gslib/third_party
+@dirrmtry google-cloud-sdk/platform/gsutil/gslib
+@dirrmtry google-cloud-sdk/platform/gsutil/scripts
+@dirrmtry google-cloud-sdk/platform/gsutil/third_party/boto/bin
+@dirrmtry google-cloud-sdk/platform/gsutil/third_party/boto/boto/beanstalk
+@dirrmtry google-cloud-sdk/platform/gsutil/third_party/boto/boto/cacerts
+@dirrmtry google-cloud-sdk/platform/gsutil/third_party/boto/boto/cloudformation
+@dirrmtry google-cloud-sdk/platform/gsutil/third_party/boto/boto/cloudfront
+@dirrmtry google-cloud-sdk/platform/gsutil/third_party/boto/boto/cloudsearch
+@dirrmtry google-cloud-sdk/platform/gsutil/third_party/boto/boto/cloudtrail
+@dirrmtry google-cloud-sdk/platform/gsutil/third_party/boto/boto/contrib
+@dirrmtry google-cloud-sdk/platform/gsutil/third_party/boto/boto/core
+@dirrmtry google-cloud-sdk/platform/gsutil/third_party/boto/boto/datapipeline
+@dirrmtry google-cloud-sdk/platform/gsutil/third_party/boto/boto/directconnect
+@dirrmtry google-cloud-sdk/platform/gsutil/third_party/boto/boto/dynamodb
+@dirrmtry google-cloud-sdk/platform/gsutil/third_party/boto/boto/dynamodb2
+@dirrmtry google-cloud-sdk/platform/gsutil/third_party/boto/boto/ec2/autoscale
+@dirrmtry google-cloud-sdk/platform/gsutil/third_party/boto/boto/ec2/cloudwatch
+@dirrmtry google-cloud-sdk/platform/gsutil/third_party/boto/boto/ec2/elb
+@dirrmtry google-cloud-sdk/platform/gsutil/third_party/boto/boto/ec2
+@dirrmtry google-cloud-sdk/platform/gsutil/third_party/boto/boto/ecs
+@dirrmtry google-cloud-sdk/platform/gsutil/third_party/boto/boto/elasticache
+@dirrmtry google-cloud-sdk/platform/gsutil/third_party/boto/boto/elastictranscoder
+@dirrmtry google-cloud-sdk/platform/gsutil/third_party/boto/boto/emr
+@dirrmtry google-cloud-sdk/platform/gsutil/third_party/boto/boto/file
+@dirrmtry google-cloud-sdk/platform/gsutil/third_party/boto/boto/fps
+@dirrmtry google-cloud-sdk/platform/gsutil/third_party/boto/boto/glacier
+@dirrmtry google-cloud-sdk/platform/gsutil/third_party/boto/boto/gs
+@dirrmtry google-cloud-sdk/platform/gsutil/third_party/boto/boto/iam
+@dirrmtry google-cloud-sdk/platform/gsutil/third_party/boto/boto/kinesis
+@dirrmtry google-cloud-sdk/platform/gsutil/third_party/boto/boto/manage
+@dirrmtry google-cloud-sdk/platform/gsutil/third_party/boto/boto/mashups
+@dirrmtry google-cloud-sdk/platform/gsutil/third_party/boto/boto/mturk
+@dirrmtry google-cloud-sdk/platform/gsutil/third_party/boto/boto/mws
+@dirrmtry google-cloud-sdk/platform/gsutil/third_party/boto/boto/opsworks
+@dirrmtry google-cloud-sdk/platform/gsutil/third_party/boto/boto/pyami/installers/ubuntu
+@dirrmtry google-cloud-sdk/platform/gsutil/third_party/boto/boto/pyami/installers
+@dirrmtry google-cloud-sdk/platform/gsutil/third_party/boto/boto/pyami
+@dirrmtry google-cloud-sdk/platform/gsutil/third_party/boto/boto/rds
+@dirrmtry google-cloud-sdk/platform/gsutil/third_party/boto/boto/redshift
+@dirrmtry google-cloud-sdk/platform/gsutil/third_party/boto/boto/roboto
+@dirrmtry google-cloud-sdk/platform/gsutil/third_party/boto/boto/route53
+@dirrmtry google-cloud-sdk/platform/gsutil/third_party/boto/boto/s3
+@dirrmtry google-cloud-sdk/platform/gsutil/third_party/boto/boto/sdb/db/manager
+@dirrmtry google-cloud-sdk/platform/gsutil/third_party/boto/boto/sdb/db
+@dirrmtry google-cloud-sdk/platform/gsutil/third_party/boto/boto/sdb
+@dirrmtry google-cloud-sdk/platform/gsutil/third_party/boto/boto/services
+@dirrmtry google-cloud-sdk/platform/gsutil/third_party/boto/boto/ses
+@dirrmtry google-cloud-sdk/platform/gsutil/third_party/boto/boto/sns
+@dirrmtry google-cloud-sdk/platform/gsutil/third_party/boto/boto/sqs
+@dirrmtry google-cloud-sdk/platform/gsutil/third_party/boto/boto/sts
+@dirrmtry google-cloud-sdk/platform/gsutil/third_party/boto/boto/support
+@dirrmtry google-cloud-sdk/platform/gsutil/third_party/boto/boto/swf
+@dirrmtry google-cloud-sdk/platform/gsutil/third_party/boto/boto/vpc
+@dirrmtry google-cloud-sdk/platform/gsutil/third_party/boto/boto
+@dirrmtry google-cloud-sdk/platform/gsutil/third_party/boto/scripts
+@dirrmtry google-cloud-sdk/platform/gsutil/third_party/boto/tests/db
+@dirrmtry google-cloud-sdk/platform/gsutil/third_party/boto/tests/devpay
+@dirrmtry google-cloud-sdk/platform/gsutil/third_party/boto/tests/fps
+@dirrmtry google-cloud-sdk/platform/gsutil/third_party/boto/tests/integration/beanstalk
+@dirrmtry google-cloud-sdk/platform/gsutil/third_party/boto/tests/integration/cloudformation
+@dirrmtry google-cloud-sdk/platform/gsutil/third_party/boto/tests/integration/cloudsearch
+@dirrmtry google-cloud-sdk/platform/gsutil/third_party/boto/tests/integration/cloudtrail
+@dirrmtry google-cloud-sdk/platform/gsutil/third_party/boto/tests/integration/datapipeline
+@dirrmtry google-cloud-sdk/platform/gsutil/third_party/boto/tests/integration/directconnect
+@dirrmtry google-cloud-sdk/platform/gsutil/third_party/boto/tests/integration/dynamodb
+@dirrmtry google-cloud-sdk/platform/gsutil/third_party/boto/tests/integration/dynamodb2
+@dirrmtry google-cloud-sdk/platform/gsutil/third_party/boto/tests/integration/ec2/autoscale
+@dirrmtry google-cloud-sdk/platform/gsutil/third_party/boto/tests/integration/ec2/cloudwatch
+@dirrmtry google-cloud-sdk/platform/gsutil/third_party/boto/tests/integration/ec2/elb
+@dirrmtry google-cloud-sdk/platform/gsutil/third_party/boto/tests/integration/ec2/vpc
+@dirrmtry google-cloud-sdk/platform/gsutil/third_party/boto/tests/integration/ec2
+@dirrmtry google-cloud-sdk/platform/gsutil/third_party/boto/tests/integration/elasticache
+@dirrmtry google-cloud-sdk/platform/gsutil/third_party/boto/tests/integration/elastictranscoder
+@dirrmtry google-cloud-sdk/platform/gsutil/third_party/boto/tests/integration/emr
+@dirrmtry google-cloud-sdk/platform/gsutil/third_party/boto/tests/integration/glacier
+@dirrmtry google-cloud-sdk/platform/gsutil/third_party/boto/tests/integration/gs
+@dirrmtry google-cloud-sdk/platform/gsutil/third_party/boto/tests/integration/iam
+@dirrmtry google-cloud-sdk/platform/gsutil/third_party/boto/tests/integration/kinesis
+@dirrmtry google-cloud-sdk/platform/gsutil/third_party/boto/tests/integration/mws
+@dirrmtry google-cloud-sdk/platform/gsutil/third_party/boto/tests/integration/opsworks
+@dirrmtry google-cloud-sdk/platform/gsutil/third_party/boto/tests/integration/rds
+@dirrmtry google-cloud-sdk/platform/gsutil/third_party/boto/tests/integration/redshift
+@dirrmtry google-cloud-sdk/platform/gsutil/third_party/boto/tests/integration/route53
+@dirrmtry google-cloud-sdk/platform/gsutil/third_party/boto/tests/integration/s3
+@dirrmtry google-cloud-sdk/platform/gsutil/third_party/boto/tests/integration/sdb
+@dirrmtry google-cloud-sdk/platform/gsutil/third_party/boto/tests/integration/ses
+@dirrmtry google-cloud-sdk/platform/gsutil/third_party/boto/tests/integration/sns
+@dirrmtry google-cloud-sdk/platform/gsutil/third_party/boto/tests/integration/sqs
+@dirrmtry google-cloud-sdk/platform/gsutil/third_party/boto/tests/integration/storage_uri
+@dirrmtry google-cloud-sdk/platform/gsutil/third_party/boto/tests/integration/sts
+@dirrmtry google-cloud-sdk/platform/gsutil/third_party/boto/tests/integration/support
+@dirrmtry google-cloud-sdk/platform/gsutil/third_party/boto/tests/integration/swf
+@dirrmtry google-cloud-sdk/platform/gsutil/third_party/boto/tests/integration
+@dirrmtry google-cloud-sdk/platform/gsutil/third_party/boto/tests/mturk
+@dirrmtry google-cloud-sdk/platform/gsutil/third_party/boto/tests/unit/auth
+@dirrmtry google-cloud-sdk/platform/gsutil/third_party/boto/tests/unit/beanstalk
+@dirrmtry google-cloud-sdk/platform/gsutil/third_party/boto/tests/unit/cloudformation
+@dirrmtry google-cloud-sdk/platform/gsutil/third_party/boto/tests/unit/cloudfront
+@dirrmtry google-cloud-sdk/platform/gsutil/third_party/boto/tests/unit/cloudsearch
+@dirrmtry google-cloud-sdk/platform/gsutil/third_party/boto/tests/unit/cloudtrail
+@dirrmtry google-cloud-sdk/platform/gsutil/third_party/boto/tests/unit/directconnect
+@dirrmtry google-cloud-sdk/platform/gsutil/third_party/boto/tests/unit/dynamodb
+@dirrmtry google-cloud-sdk/platform/gsutil/third_party/boto/tests/unit/dynamodb2
+@dirrmtry google-cloud-sdk/platform/gsutil/third_party/boto/tests/unit/ec2/autoscale
+@dirrmtry google-cloud-sdk/platform/gsutil/third_party/boto/tests/unit/ec2/cloudwatch
+@dirrmtry google-cloud-sdk/platform/gsutil/third_party/boto/tests/unit/ec2/elb
+@dirrmtry google-cloud-sdk/platform/gsutil/third_party/boto/tests/unit/ec2
+@dirrmtry google-cloud-sdk/platform/gsutil/third_party/boto/tests/unit/elasticache
+@dirrmtry google-cloud-sdk/platform/gsutil/third_party/boto/tests/unit/emr
+@dirrmtry google-cloud-sdk/platform/gsutil/third_party/boto/tests/unit/glacier
+@dirrmtry google-cloud-sdk/platform/gsutil/third_party/boto/tests/unit/iam
+@dirrmtry google-cloud-sdk/platform/gsutil/third_party/boto/tests/unit/manage
+@dirrmtry google-cloud-sdk/platform/gsutil/third_party/boto/tests/unit/mws
+@dirrmtry google-cloud-sdk/platform/gsutil/third_party/boto/tests/unit/provider
+@dirrmtry google-cloud-sdk/platform/gsutil/third_party/boto/tests/unit/rds
+@dirrmtry google-cloud-sdk/platform/gsutil/third_party/boto/tests/unit/route53
+@dirrmtry google-cloud-sdk/platform/gsutil/third_party/boto/tests/unit/s3
+@dirrmtry google-cloud-sdk/platform/gsutil/third_party/boto/tests/unit/ses
+@dirrmtry google-cloud-sdk/platform/gsutil/third_party/boto/tests/unit/sns
+@dirrmtry google-cloud-sdk/platform/gsutil/third_party/boto/tests/unit/sqs
+@dirrmtry google-cloud-sdk/platform/gsutil/third_party/boto/tests/unit/sts
+@dirrmtry google-cloud-sdk/platform/gsutil/third_party/boto/tests/unit/swf
+@dirrmtry google-cloud-sdk/platform/gsutil/third_party/boto/tests/unit/utils
+@dirrmtry google-cloud-sdk/platform/gsutil/third_party/boto/tests/unit/vpc
+@dirrmtry google-cloud-sdk/platform/gsutil/third_party/boto/tests/unit
+@dirrmtry google-cloud-sdk/platform/gsutil/third_party/boto/tests
+@dirrmtry google-cloud-sdk/platform/gsutil/third_party/boto
+@dirrmtry google-cloud-sdk/platform/gsutil/third_party/crcmod/docs/source
+@dirrmtry google-cloud-sdk/platform/gsutil/third_party/crcmod/docs
+@dirrmtry google-cloud-sdk/platform/gsutil/third_party/crcmod/python2/crcmod
+@dirrmtry google-cloud-sdk/platform/gsutil/third_party/crcmod/python2/src
+@dirrmtry google-cloud-sdk/platform/gsutil/third_party/crcmod/python2
+@dirrmtry google-cloud-sdk/platform/gsutil/third_party/crcmod/python3/crcmod
+@dirrmtry google-cloud-sdk/platform/gsutil/third_party/crcmod/python3/src
+@dirrmtry google-cloud-sdk/platform/gsutil/third_party/crcmod/python3
+@dirrmtry google-cloud-sdk/platform/gsutil/third_party/crcmod/test
+@dirrmtry google-cloud-sdk/platform/gsutil/third_party/crcmod
+@dirrmtry google-cloud-sdk/platform/gsutil/third_party/crcmod_osx/crcmod
+@dirrmtry google-cloud-sdk/platform/gsutil/third_party/crcmod_osx
+@dirrmtry google-cloud-sdk/platform/gsutil/third_party/google-api-python-client/apiclient
+@dirrmtry google-cloud-sdk/platform/gsutil/third_party/google-api-python-client/oauth2client
+@dirrmtry google-cloud-sdk/platform/gsutil/third_party/google-api-python-client/static
+@dirrmtry google-cloud-sdk/platform/gsutil/third_party/google-api-python-client/tools
+@dirrmtry google-cloud-sdk/platform/gsutil/third_party/google-api-python-client/uritemplate
+@dirrmtry google-cloud-sdk/platform/gsutil/third_party/google-api-python-client
+@dirrmtry google-cloud-sdk/platform/gsutil/third_party/httplib2/python2/httplib2/test/brokensocket
+@dirrmtry google-cloud-sdk/platform/gsutil/third_party/httplib2/python2/httplib2/test/functional
+@dirrmtry google-cloud-sdk/platform/gsutil/third_party/httplib2/python2/httplib2/test
+@dirrmtry google-cloud-sdk/platform/gsutil/third_party/httplib2/python2/httplib2
+@dirrmtry google-cloud-sdk/platform/gsutil/third_party/httplib2/python2
+@dirrmtry google-cloud-sdk/platform/gsutil/third_party/httplib2/python3/httplib2/test
+@dirrmtry google-cloud-sdk/platform/gsutil/third_party/httplib2/python3/httplib2
+@dirrmtry google-cloud-sdk/platform/gsutil/third_party/httplib2/python3
+@dirrmtry google-cloud-sdk/platform/gsutil/third_party/httplib2/ref
+@dirrmtry google-cloud-sdk/platform/gsutil/third_party/httplib2
+@dirrmtry google-cloud-sdk/platform/gsutil/third_party/python-gflags/debian
+@dirrmtry google-cloud-sdk/platform/gsutil/third_party/python-gflags
+@dirrmtry google-cloud-sdk/platform/gsutil/third_party/retry-decorator/retry_decorator
+@dirrmtry google-cloud-sdk/platform/gsutil/third_party/retry-decorator
+@dirrmtry google-cloud-sdk/platform/gsutil/third_party/socksipy-branch
+@dirrmtry google-cloud-sdk/platform/gsutil/third_party
+@dirrmtry google-cloud-sdk/platform/gsutil
+@dirrmtry google-cloud-sdk/platform
+@dirrmtry google-cloud-sdk
