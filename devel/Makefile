@@ -1082,6 +1082,7 @@
     SUBDIR += libopkele
     SUBDIR += liborcus
     SUBDIR += libosinfo
+    SUBDIR += libosmocore
     SUBDIR += libowfat
     SUBDIR += libpafe
     SUBDIR += libpafe-ruby
