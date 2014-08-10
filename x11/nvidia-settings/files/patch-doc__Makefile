@@ -1,10 +1,10 @@
---- doc/Makefile.orig	2012-10-13 19:37:40.000000000 +0900
-+++ doc/Makefile	2012-10-13 19:38:21.000000000 +0900
+--- doc/Makefile.orig	2014-08-10 20:37:40.000000000 -0700
++++ doc/Makefile	2014-08-10 20:38:21.000000000 -0700
 @@ -74,7 +74,7 @@
  
  MANPAGE_install: $(MANPAGE)
  	$(MKDIR) $(MANDIR)
--	$(INSTALL) $(INSTALL_BIN_ARGS) $< $(MANDIR)/$(notdir $<)
+-	$(INSTALL) $(INSTALL_DOC_ARGS) $< $(MANDIR)/$(notdir $<)
 +	$(INSTALL_MAN) $< $(MANDIR)/$(notdir $<)
  
  clean clobber:
