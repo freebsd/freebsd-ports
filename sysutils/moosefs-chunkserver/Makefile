@@ -9,7 +9,7 @@ MASTER_SITES=	http://www.moosefs.org/tl_files/mfscode/ \
 PKGNAMESUFFIX=	-chunkserver
 DISTNAME=	mfs-${DISTVERSION}
 
-MAINTAINER=	chifeng@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Storing file data and synchronizing it among themselves
 
 LICENSE=	GPLv3

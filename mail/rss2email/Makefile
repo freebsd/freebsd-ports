@@ -6,7 +6,7 @@ PORTVERSION=	2.70
 CATEGORIES=	mail python
 MASTER_SITES=	http://www.allthingsrss.com/rss2email/
 
-MAINTAINER=	chifeng@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Read newsfeeds in your email client
 
 RUN_DEPENDS=	py*-feedparser>=0:${PORTSDIR}/textproc/py-feedparser \

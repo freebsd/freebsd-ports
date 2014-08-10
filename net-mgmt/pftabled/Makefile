@@ -7,7 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://www.wolfermann.org/
 
-MAINTAINER=	chifeng@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The pftabled is a tool to manage your pf tables remotely
 
 USE_RC_SUBR=	pftabled

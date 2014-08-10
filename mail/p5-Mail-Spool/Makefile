@@ -7,7 +7,7 @@ CATEGORIES=	mail perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	chifeng@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Pure Perl implementation of mail spooling, unspooling, and sending
 
 BUILD_DEPENDS=	p5-File-NFSLock>=0:${PORTSDIR}/devel/p5-File-NFSLock \
