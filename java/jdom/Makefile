@@ -36,7 +36,7 @@ ALL_TARGET+=	javadoc
 do-install:
 	@${MKDIR} ${STAGEDIR}${JAVAJARDIR}
 	${INSTALL_DATA} ${WRKSRC}/build/jdom.jar ${STAGEDIR}${JAVAJARDIR}
-	@${MKDIR} ${EXAMPLESDIR}
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	(cd ${WRKSRC}/build/samples/ && ${COPYTREE_SHARE} . \
 		${STAGEDIR}${EXAMPLESDIR})
 .if ${PORT_OPTIONS:MDOCS}
