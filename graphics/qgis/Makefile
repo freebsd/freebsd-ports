@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	qgis
-PORTVERSION=	2.2.0
-PORTREVISION=	7
+PORTVERSION=	2.4.0
 CATEGORIES=	graphics geography
 
 MAINTAINER=	rhurlin@gwdg.de
@@ -11,6 +10,7 @@ COMMENT=	Geographical Information System (GIS) data viewer
 
 LICENSE=	GPLv2
 
+BUILD_DEPENDS=	txt2tags:${PORTSDIR}/textproc/txt2tags
 LIB_DEPENDS=	libgeos.so:${PORTSDIR}/graphics/geos \
 		libproj.so:${PORTSDIR}/graphics/proj \
 		libgsl.so:${PORTSDIR}/math/gsl \
@@ -20,18 +20,14 @@ LIB_DEPENDS=	libgeos.so:${PORTSDIR}/graphics/geos \
 		libspatialindex.so:${PORTSDIR}/devel/spatialindex \
 		libexecinfo.so:${PORTSDIR}/devel/libexecinfo
 
-BUILD_DEPENDS=	txt2tags:${PORTSDIR}/textproc/txt2tags
-
 WRKSRC=	${WRKDIR}/${PORTNAME}-QGIS-${GH_COMMIT}
 
 USE_GITHUB=
 GH_ACCOUNT=	qgis
-GH_COMMIT=	1c3699e
+GH_COMMIT=	00ab94f
 GH_TAGNAME=	${GH_COMMIT}
 
-USES=		compiler:features bison cmake gmake
-### GCC can not build src/crssync/CMakeFiles/synccrsdb
-#USE_GCC=	4.8+
+USES=		bison cmake gmake
 USE_PYTHON=	yes
 USE_SQLITE=	yes
 USE_QT4=	gui svg xml network sql designer testlib linguist_build \
@@ -44,11 +40,16 @@ OPTIONS_DEFAULT=	POSTGIS PYTHON
 
 .include <bsd.port.options.mk>
 
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1000000
+USES+=		compiler:features
+.else
+USES+=		compiler:gcc-c++11-lib
+.endif
+
 .if ${PORT_OPTIONS:MGRASS}
 CMAKE_ARGS+=	-DWITH_GRASS:BOOL=TRUE -DGRASS_PREFIX=${LOCALBASE}/grass-6.4.3
 RUN_DEPENDS+=	${LOCALBASE}/lib/gdalplugins/gdal_GRASS.so:${PORTSDIR}/graphics/gdal-grass
 FORCE_MAKE_JOBS=	NO
-INFO=		qgis/grass/modules/qgis.g
 PLIST_SUB+=	GRASS=""
 .else
 CMAKE_ARGS+=	-DWITH_GRASS:BOOL=FALSE
