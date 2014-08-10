@@ -15,6 +15,11 @@ COMMENT=	Robust and small WWW server
 
 LICENSE=	BSD
 
+USES+=		cpe
+
+CPE_VENDOR=	igor_sysoev
+CPE_PRODUCT=	nginx
+
 NO_OPTIONS_SORT=	yes
 OPTIONS_DEFINE=	\
 	DEBUG \
