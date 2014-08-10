@@ -1,23 +1,35 @@
-%%WWWDIR%%/Changelog
-%%WWWDIR%%/README
-%%WWWDIR%%/localization/cs_CZ.inc
-%%WWWDIR%%/localization/de_DE.inc
-%%WWWDIR%%/localization/en_US.inc
-%%WWWDIR%%/localization/fr_FR.inc
-%%WWWDIR%%/localization/hu_HU.inc
-%%WWWDIR%%/localization/pl_PL.inc
-%%WWWDIR%%/localization/ru_RU.inc
-%%WWWDIR%%/skins/classic/tb_label.css
-%%WWWDIR%%/skins/classic/thunderbird_32.png
-%%WWWDIR%%/skins/default/tb_label.css
-%%WWWDIR%%/skins/default/thunderbird_32.png
-%%WWWDIR%%/skins/larry/tb_label.css
-%%WWWDIR%%/skins/larry/thunderbird_32.png
-%%WWWDIR%%/tb_label.js
-%%WWWDIR%%/thunderbird_labels.php
-@dirrm %%WWWDIR%%/skins/larry
-@dirrm %%WWWDIR%%/skins/default
-@dirrm %%WWWDIR%%/skins/classic
-@dirrm %%WWWDIR%%/skins
-@dirrm %%WWWDIR%%/localization
-@dirrmtry %%WWWDIR%%
+%%PLUGINDIR_REL%%/Changelog
+%%PLUGINDIR_REL%%/README
+%%PLUGINDIR_REL%%/composer.json
+@sample %%PLUGINDIR_REL%%/config.inc.php.sample
+%%PLUGINDIR_REL%%/localization/bg_BG.inc
+%%PLUGINDIR_REL%%/localization/ca_ES.inc
+%%PLUGINDIR_REL%%/localization/cs_CZ.inc
+%%PLUGINDIR_REL%%/localization/de_DE.inc
+%%PLUGINDIR_REL%%/localization/en_US.inc
+%%PLUGINDIR_REL%%/localization/es_ES.inc
+%%PLUGINDIR_REL%%/localization/fr_FR.inc
+%%PLUGINDIR_REL%%/localization/hu_HU.inc
+%%PLUGINDIR_REL%%/localization/it_IT.inc
+%%PLUGINDIR_REL%%/localization/lv_LV.inc
+%%PLUGINDIR_REL%%/localization/pl_PL.inc
+%%PLUGINDIR_REL%%/localization/ru_RU.inc
+%%PLUGINDIR_REL%%/localization/uk_UA.inc
+%%PLUGINDIR_REL%%/skins/classic/default/tb_label.css
+%%PLUGINDIR_REL%%/skins/classic/default/thunderbird_32.png
+%%PLUGINDIR_REL%%/skins/classic/tb_label.css
+%%PLUGINDIR_REL%%/skins/classic/thunderbird_32.png
+%%PLUGINDIR_REL%%/skins/default/tb_label.css
+%%PLUGINDIR_REL%%/skins/default/thunderbird_32.png
+%%PLUGINDIR_REL%%/skins/larry/tb_label.css
+%%PLUGINDIR_REL%%/skins/larry/thunderbird_24.png
+%%PLUGINDIR_REL%%/skins/larry/thunderbird_32.png
+%%PLUGINDIR_REL%%/tb_label.js
+%%PLUGINDIR_REL%%/thunderbird_labels.php
+@dirrm %%PLUGINDIR_REL%%/localization
+@dirrm %%PLUGINDIR_REL%%/skins/classic/default
+@dirrm %%PLUGINDIR_REL%%/skins/classic
+@dirrm %%PLUGINDIR_REL%%/skins/default
+@dirrm %%PLUGINDIR_REL%%/skins/larry
+@dirrm %%PLUGINDIR_REL%%/skins
+@dirrmtry %%PLUGINDIR_REL%%
