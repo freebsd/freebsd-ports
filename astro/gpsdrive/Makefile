@@ -22,7 +22,7 @@ USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-garmin
 CPPFLAGS+=	-I${LOCALBASE}/include
-LIBS+=		-L${LOCALBASE}/lib -lgmodule-2.0
+LIBS+=		-L${LOCALBASE}/lib -lgmodule-2.0 -lm
 MAKE_JOBS_UNSAFE=	yes
 
 OPTIONS_DEFINE=	NLS

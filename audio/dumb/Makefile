@@ -21,7 +21,7 @@ ALLEGRO_DESC=	Enable allegro support
 LIB_DEPENDS+=	liballeg.so:${PORTSDIR}/devel/allegro
 PLIST_SUB+=	ALLEGRO=""
 MAKE_ARGS=	_PORT_ALLEGRO_CFLAGS="`allegro-config --cflags`"
-MAKE_ARGS+=	LINK_ALLEGRO="`allegro-config --libs`"
+MAKE_ARGS+=	LINK_ALLEGRO="`allegro-config --libs` -lm"
 PKGNAMESUFFIX=	-allegro
 CONFLICTS=	dumb-[0-9]*
 .else

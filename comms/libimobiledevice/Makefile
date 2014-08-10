@@ -13,11 +13,13 @@ LICENSE?=	LGPL21
 
 SLAVE_PORT?=	no
 
-USES=		pkgconfig tar:bzip2
+USES=		pathfix pkgconfig tar:bzip2
+USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	openssl_LIBS=-lssl
-CFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+CONFIGURE_ARGS=	openssl_CFLAGS="-I${OPENSSLINC}" \
+		openssl_LIBS="-L${OPENSSLLIB} -lssl -lcrypto"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LIBS+=		-L${LOCALBASE}/lib
 
 .if ${SLAVE_PORT} == "no"
 
@@ -36,8 +38,6 @@ OPTIONS_DEFINE=	DOCS
 post-patch:
 	@${REINPLACE_CMD} -e 's, *@ssl_requires@,,' \
 		${WRKSRC}/${PORTNAME}*.pc.in
-	@${REINPLACE_CMD} -e 's,$$(libdir)/pkgconfig,${PREFIX}/libdata/pkgconfig,g' \
-		${WRKSRC}/Makefile.in
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

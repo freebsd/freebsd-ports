@@ -15,8 +15,20 @@ LIB_DEPENDS=	libid3.so:${PORTSDIR}/audio/id3lib
 RUN_DEPENDS=	cdparanoia:${PORTSDIR}/audio/cdparanoia
 
 GNU_CONFIGURE=	yes
-CFLAGS+=	-L${LOCALBASE}/lib
+CONFIGURE_ARGS=	ac_cv_lib_id3_ID3Tag_Link=yes
+CPPFLAGS+=	-I${LOCALBASE}/include
+LIBS+=		-L${LOCALBASE}/lib
 USES=		gmake pathfix pkgconfig
 USE_GNOME=	gtk20
+
+OPTIONS_DEFINE=	NLS
+OPTIONS_SUB=	yes
+NLS_USES=	gettext
+NLS_CONFIGURE_ENABLE=	nls
+
+post-patch:
+	@${REINPLACE_CMD} 's/-lstdc++/-lm/' ${WRKSRC}/configure
+	@${REINPLACE_CMD} '/^CCLD =/s/=.*/= $$(CXX)/' \
+		${WRKSRC}/plugins/Makefile.in ${WRKSRC}/src/Makefile.in
 
 .include <bsd.port.mk>
