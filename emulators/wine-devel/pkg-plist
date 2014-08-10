@@ -1564,6 +1564,7 @@ lib/wine/fakedlls/wmvcore.dll
 lib/wine/fakedlls/wnaspi32.dll
 lib/wine/fakedlls/wordpad.exe
 lib/wine/fakedlls/wow32.dll
+lib/wine/fakedlls/wpcap.dll
 lib/wine/fakedlls/write.exe
 lib/wine/fakedlls/ws2_32.dll
 lib/wine/fakedlls/wscript.exe
@@ -2123,6 +2124,7 @@ lib/wine/wmvcore.dll.so
 lib/wine/wnaspi32.dll.so
 lib/wine/wordpad.exe.so
 lib/wine/wow32.dll.so
+lib/wine/wpcap.dll.so
 lib/wine/write.exe.so
 lib/wine/ws2_32.dll.so
 lib/wine/wscript.exe.so
