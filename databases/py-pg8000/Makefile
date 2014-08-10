@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pg8000
-PORTVERSION=	1.9.12
+PORTVERSION=	1.9.14
 CATEGORIES=	databases python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,8 +12,7 @@ COMMENT=	Pure-Python Interface to the PostgreSQL Database
 
 LICENSE=	BSD3CLAUSE
 
-USE_PYTHON=		2
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
+USES=			python:2
+PYTHON_FEATURES=	distutils autoplist
 
 .include <bsd.port.mk>
