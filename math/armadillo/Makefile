@@ -1,17 +1,18 @@
 # $FreeBSD$
 
 PORTNAME=	armadillo
-PORTVERSION=	4.300.8
+PORTVERSION=	4.320.0
 CATEGORIES=	math
-MASTER_SITES=	SF/arma/
+MASTER_SITES=	SF/arma
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C++ linear algebra library
 
 LICENSE=	MPL
 
-LIB_DEPENDS=	liblapack.so:${PORTSDIR}/math/lapack	\
-		libboost_date_time.so:${PORTSDIR}/devel/boost-libs
+LIB_DEPENDS=	libboost_date_time.so:${PORTSDIR}/devel/boost-libs \
+		liblapack.so:${PORTSDIR}/math/lapack \
+		libhdf5.so:${PORTSDIR}/science/hdf5
 
 USES=		cmake
 USE_LDCONFIG=	yes
