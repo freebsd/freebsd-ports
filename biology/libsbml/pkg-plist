@@ -1,20 +1,25 @@
-libdata/pkgconfig/libsbml.pc
+include/sbml/AlgebraicRule.h
+include/sbml/AssignmentRule.h
 include/sbml/Compartment.h
 include/sbml/CompartmentType.h
 include/sbml/Constraint.h
 include/sbml/Delay.h
 include/sbml/Event.h
 include/sbml/EventAssignment.h
+include/sbml/ExpectedAttributes.h
 include/sbml/FunctionDefinition.h
 include/sbml/InitialAssignment.h
 include/sbml/KineticLaw.h
 include/sbml/ListOf.h
 include/sbml/LocalParameter.h
 include/sbml/Model.h
+include/sbml/ModifierSpeciesReference.h
 include/sbml/Parameter.h
 include/sbml/Priority.h
+include/sbml/RateRule.h
 include/sbml/Reaction.h
 include/sbml/Rule.h
+include/sbml/SBMLConstructorException.h
 include/sbml/SBMLDocument.h
 include/sbml/SBMLError.h
 include/sbml/SBMLErrorLog.h
@@ -28,6 +33,7 @@ include/sbml/SBMLVisitor.h
 include/sbml/SBMLWriter.h
 include/sbml/SBO.h
 include/sbml/SBase.h
+include/sbml/SimpleSpeciesReference.h
 include/sbml/Species.h
 include/sbml/SpeciesReference.h
 include/sbml/SpeciesType.h
@@ -38,12 +44,20 @@ include/sbml/Unit.h
 include/sbml/UnitDefinition.h
 include/sbml/UnitKind.h
 include/sbml/annotation/CVTerm.h
+include/sbml/annotation/Date.h
+include/sbml/annotation/ModelCreator.h
 include/sbml/annotation/ModelHistory.h
 include/sbml/annotation/RDFAnnotation.h
+include/sbml/annotation/RDFAnnotationParser.h
+include/sbml/common/common-documentation.h
+include/sbml/common/common-sbmlerror-codes.h
 include/sbml/common/common.h
 include/sbml/common/extern.h
+include/sbml/common/libsbml-config-common.h
+include/sbml/common/libsbml-config-packages.h
 include/sbml/common/libsbml-config.h
 include/sbml/common/libsbml-namespace.h
+include/sbml/common/libsbml-package.h
 include/sbml/common/libsbml-version.h
 include/sbml/common/operationReturnValues.h
 include/sbml/common/sbmlfwd.h
@@ -58,15 +72,77 @@ include/sbml/compress/unzip.h
 include/sbml/compress/zfstream.h
 include/sbml/compress/zip.h
 include/sbml/compress/zipfstream.h
+include/sbml/conversion/ConversionOption.h
+include/sbml/conversion/ConversionProperties.h
+include/sbml/conversion/SBMLConverter.h
+include/sbml/conversion/SBMLConverterRegister.h
+include/sbml/conversion/SBMLConverterRegistry.h
+include/sbml/conversion/SBMLFunctionDefinitionConverter.h
+include/sbml/conversion/SBMLIdConverter.h
+include/sbml/conversion/SBMLInferUnitsConverter.h
+include/sbml/conversion/SBMLInitialAssignmentConverter.h
+include/sbml/conversion/SBMLLevelVersionConverter.h
+include/sbml/conversion/SBMLLocalParameterConverter.h
+include/sbml/conversion/SBMLReactionConverter.h
+include/sbml/conversion/SBMLRuleConverter.h
+include/sbml/conversion/SBMLStripPackageConverter.h
+include/sbml/conversion/SBMLUnitsConverter.h
+include/sbml/extension/ASTBasePlugin.h
+include/sbml/extension/ISBMLExtensionNamespaces.h
+include/sbml/extension/RegisterExtensions.h
+include/sbml/extension/SBMLDocumentPlugin.h
+include/sbml/extension/SBMLDocumentPluginNotRequired.h
+include/sbml/extension/SBMLExtension.h
+include/sbml/extension/SBMLExtensionException.h
+include/sbml/extension/SBMLExtensionNamespaces.h
+include/sbml/extension/SBMLExtensionRegister.h
+include/sbml/extension/SBMLExtensionRegistry.h
+include/sbml/extension/SBaseExtensionPoint.h
+include/sbml/extension/SBasePlugin.h
+include/sbml/extension/SBasePluginCreator.h
+include/sbml/extension/SBasePluginCreatorBase.h
+include/sbml/math/ASTBase.h
+include/sbml/math/ASTBinaryFunctionNode.h
+include/sbml/math/ASTCSymbol.h
+include/sbml/math/ASTCSymbolAvogadroNode.h
+include/sbml/math/ASTCSymbolDelayNode.h
+include/sbml/math/ASTCSymbolTimeNode.h
+include/sbml/math/ASTCiFunctionNode.h
+include/sbml/math/ASTCiNumberNode.h
+include/sbml/math/ASTCnBase.h
+include/sbml/math/ASTCnExponentialNode.h
+include/sbml/math/ASTCnIntegerNode.h
+include/sbml/math/ASTCnRationalNode.h
+include/sbml/math/ASTCnRealNode.h
+include/sbml/math/ASTConstantNumberNode.h
+include/sbml/math/ASTFunction.h
+include/sbml/math/ASTFunctionBase.h
+include/sbml/math/ASTLambdaFunctionNode.h
+include/sbml/math/ASTNaryFunctionNode.h
 include/sbml/math/ASTNode.h
+include/sbml/math/ASTNumber.h
+include/sbml/math/ASTPiecewiseFunctionNode.h
+include/sbml/math/ASTQualifierNode.h
+include/sbml/math/ASTSemanticsNode.h
+include/sbml/math/ASTTypes.h
+include/sbml/math/ASTUnaryFunctionNode.h
 include/sbml/math/FormulaFormatter.h
 include/sbml/math/FormulaParser.h
 include/sbml/math/FormulaTokenizer.h
+include/sbml/math/L3FormulaFormatter.h
+include/sbml/math/L3Parser.h
+include/sbml/math/L3ParserSettings.h
 include/sbml/math/MathML.h
 include/sbml/units/FormulaUnitsData.h
 include/sbml/units/UnitFormulaFormatter.h
 include/sbml/units/UnitKindList.h
+include/sbml/util/ElementFilter.h
+include/sbml/util/IdFilter.h
+include/sbml/util/IdList.h
+include/sbml/util/IdentifierTransformer.h
 include/sbml/util/List.h
+include/sbml/util/MetaIdFilter.h
+include/sbml/util/PrefixTransformer.h
 include/sbml/util/Stack.h
 include/sbml/util/StringBuffer.h
 include/sbml/util/memory.h
@@ -84,16 +160,16 @@ include/sbml/validator/L3v1CompatibilityValidator.h
 include/sbml/validator/MathMLConsistencyValidator.h
 include/sbml/validator/ModelingPracticeValidator.h
 include/sbml/validator/OverdeterminedValidator.h
+include/sbml/validator/SBMLExternalValidator.h
+include/sbml/validator/SBMLInternalValidator.h
+include/sbml/validator/SBMLValidator.h
 include/sbml/validator/SBOConsistencyValidator.h
 include/sbml/validator/UnitConsistencyValidator.h
 include/sbml/validator/VConstraint.h
 include/sbml/validator/Validator.h
-include/sbml/validator/constraints/IdBase.h
-include/sbml/validator/constraints/MathMLBase.h
-include/sbml/validator/constraints/OverDeterminedCheck.h
-include/sbml/validator/constraints/UniqueIdBase.h
-include/sbml/validator/constraints/UniqueMetaId.h
-include/sbml/validator/constraints/UnitsBase.h
+include/sbml/xml/ExpatAttributes.h
+include/sbml/xml/ExpatHandler.h
+include/sbml/xml/ExpatParser.h
 include/sbml/xml/LibXMLAttributes.h
 include/sbml/xml/LibXMLHandler.h
 include/sbml/xml/LibXMLNamespaces.h
@@ -101,12 +177,14 @@ include/sbml/xml/LibXMLParser.h
 include/sbml/xml/LibXMLTranscode.h
 include/sbml/xml/XMLAttributes.h
 include/sbml/xml/XMLBuffer.h
+include/sbml/xml/XMLConstructorException.h
 include/sbml/xml/XMLError.h
 include/sbml/xml/XMLErrorLog.h
 include/sbml/xml/XMLExtern.h
 include/sbml/xml/XMLFileBuffer.h
 include/sbml/xml/XMLHandler.h
 include/sbml/xml/XMLInputStream.h
+include/sbml/xml/XMLLogOverride.h
 include/sbml/xml/XMLMemoryBuffer.h
 include/sbml/xml/XMLNamespaces.h
 include/sbml/xml/XMLNode.h
@@ -115,130 +193,66 @@ include/sbml/xml/XMLParser.h
 include/sbml/xml/XMLToken.h
 include/sbml/xml/XMLTokenizer.h
 include/sbml/xml/XMLTriple.h
-include/sbml/AlgebraicRule.h
-include/sbml/AssignmentRule.h
-include/sbml/ExpectedAttributes.h
-include/sbml/ModifierSpeciesReference.h
-include/sbml/RateRule.h
-include/sbml/SBMLConstructorException.h
-include/sbml/SimpleSpeciesReference.h
-include/sbml/annotation/Date.h
-include/sbml/annotation/ModelCreator.h
-include/sbml/annotation/RDFAnnotationParser.h
-include/sbml/common/libsbml-config-common.h
-include/sbml/conversion/ConversionOption.h
-include/sbml/conversion/ConversionProperties.h
-include/sbml/conversion/SBMLConverter.h
-include/sbml/conversion/SBMLConverterRegister.h
-include/sbml/conversion/SBMLConverterRegistry.h
-include/sbml/conversion/SBMLFunctionDefinitionConverter.h
-include/sbml/conversion/SBMLIdConverter.h
-include/sbml/conversion/SBMLInferUnitsConverter.h
-include/sbml/conversion/SBMLInitialAssignmentConverter.h
-include/sbml/conversion/SBMLLevelVersionConverter.h
-include/sbml/conversion/SBMLLocalParameterConverter.h
-include/sbml/conversion/SBMLReactionConverter.h
-include/sbml/conversion/SBMLRuleConverter.h
-include/sbml/conversion/SBMLStripPackageConverter.h
-include/sbml/conversion/SBMLUnitsConverter.h
-include/sbml/extension/ISBMLExtensionNamespaces.h
-include/sbml/extension/SBMLDocumentPlugin.h
-include/sbml/extension/SBMLDocumentPluginNotRequired.h
-include/sbml/extension/SBMLExtension.h
-include/sbml/extension/SBMLExtensionException.h
-include/sbml/extension/SBMLExtensionNamespaces.h
-include/sbml/extension/SBMLExtensionRegister.h
-include/sbml/extension/SBMLExtensionRegistry.h
-include/sbml/extension/SBaseExtensionPoint.h
-include/sbml/extension/SBasePlugin.h
-include/sbml/extension/SBasePluginCreator.h
-include/sbml/extension/SBasePluginCreatorBase.h
-include/sbml/math/L3FormulaFormatter.h
-include/sbml/math/L3Parser.h
-include/sbml/math/L3ParserSettings.h
-include/sbml/util/ElementFilter.h
-include/sbml/util/IdFilter.h
-include/sbml/util/IdList.h
-include/sbml/util/IdentifierTransformer.h
-include/sbml/util/MetaIdFilter.h
-include/sbml/validator/SBMLExternalValidator.h
-include/sbml/validator/SBMLInternalValidator.h
-include/sbml/validator/SBMLValidator.h
-include/sbml/xml/XMLConstructorException.h
-include/sbml/xml/XMLLogOverride.h
-lib/libsbml.so.5.10.0
-lib/libsbml.so.5
+include/sbml/xml/XercesAttributes.h
+include/sbml/xml/XercesHandler.h
+include/sbml/xml/XercesNamespaces.h
+include/sbml/xml/XercesParser.h
+include/sbml/xml/XercesTranscode.h
+lib/libsbml-static.a
 lib/libsbml.so
-lib/libsbml.a
-%%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/libsbml/_libsbml.so
-%%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/libsbml.pth
-%%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/%%SBML_EGGINFO%%
-%%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/libsbml/__init__.py
-%%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/libsbml/__init__.pyc
-%%WITH_PYTHON%%@dirrm %%PYTHON_SITELIBDIR%%/libsbml
-%%WITH_RUBY%%%%RUBY_SITELIBDIR%%/%%RUBY_ARCH%%/libSBML.so
+lib/libsbml.so.5
+lib/libsbml.so.5.10.2
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/libsbml.pth
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/libsbml/_libsbml.so
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/libsbml/libsbml.py
+%%RUBY%%%%RUBY_SITEARCHLIBDIR%%/libSBML.so
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/CMakeLists.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/README.txt
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/c/FormulaGraphvizFormatter.h
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/c/Makefile
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/c/Makefile.in
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/c/convertSBML.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/c/drawMath.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/c/echoSBML.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/c/evaluateMath.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/c/printMath.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/c/printSBML.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/c/readSBML.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/c/translateMath.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/c/util.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/c/util.h
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/c/CMakeLists.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/c/FormulaGraphvizFormatter.h
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/c/addCVTerms.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/c/addModelHistory.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/c/addingEvidenceCodes_1.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/c/addingEvidenceCodes_2.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/c/appendAnnotation.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/c/convertSBML.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/c/createExampleSBML.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/c/drawMath.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/c/echoSBML.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/c/evaluateMath.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/c/printAnnotation.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/c/printMath.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/c/printNotes.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/c/printRegisteredPackages.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/c/printSBML.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/c/printSupported.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/c/printUnits.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/c/promoteParameters.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/c/readSBML.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/c/stripPackage.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/c/translateL3Math.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/c/translateMath.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/c/unsetAnnotation.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/c/unsetNotes.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/c/util.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/c/util.h
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/c/validateSBML.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/c++/Makefile
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/c++/Makefile.in
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/c++/CMakeLists.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/c++/addCVTerms.cpp
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/c++/addCustomValidator.cpp
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/c++/addModelHistory.cpp
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/c++/addingEvidenceCodes_1.cpp
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/c++/addingEvidenceCodes_2.cpp
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/c++/addModelHistory.cpp
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/c++/appendAnnotation.cpp
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/c++/callExternalValidator.cpp
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/c++/convertReactions.cpp
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/c++/convertSBML.cpp
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/c++/createExampleSBML.cpp
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/c++/echoSBML.cpp
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/c++/printAnnotation.cpp
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/c++/printMath.cpp
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/c++/printNotes.cpp
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/c++/printSBML.cpp
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/c++/printUnits.cpp
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/c++/readSBML.cpp
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/c++/translateMath.cpp
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/c++/unsetAnnotation.cpp
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/c++/unsetNotes.cpp
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/c++/util.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/c++/util.h
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/c++/validateSBML.cpp
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/c++/CMakeLists.txt
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/c++/addCustomValidator.cpp
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/c++/callExternalValidator.cpp
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/c++/getAllElementsWithNotes.cpp
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/c++/inferUnits.cpp
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/c++/inlineFunctionDefintions.cpp
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/c++/layout/Makefile.in
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/c++/layout/CMakeLists.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/c++/layout/addLayout.cpp
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/c++/layout/convertLayout.cpp
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/c++/layout/example1-L3.cpp
@@ -247,19 +261,27 @@ lib/libsbml.a
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/c++/layout/example2.cpp
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/c++/layout/example3-L3.cpp
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/c++/layout/example3.cpp
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/c++/printAnnotation.cpp
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/c++/printMath.cpp
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/c++/printNotes.cpp
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/c++/printRegisteredPackages.cpp
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/c++/printSBML.cpp
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/c++/printSupported.cpp
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/c++/printUnits.cpp
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/c++/promoteParameters.cpp
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/c++/readSBML.cpp
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/c++/renameSId.cpp
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/c++/rngvalidator.cpp
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/c++/setIdFromNames.cpp
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/c++/setNamesFromIds.cpp
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/c++/stripPackage.cpp
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/c++/translateL3Math.cpp
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/csharp/Makefile
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/csharp/Makefile.in
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/csharp/echoSBML.cs
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/csharp/validateSBML.cs
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/c++/translateMath.cpp
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/c++/unsetAnnotation.cpp
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/c++/unsetNotes.cpp
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/c++/util.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/c++/util.h
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/c++/validateSBML.cpp
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/csharp/CMakeLists.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/csharp/GetAllElementsWithNotes.cs
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/csharp/SetIdFromNames.cs
@@ -272,6 +294,10 @@ lib/libsbml.a
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/csharp/callExternalValidator.cs
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/csharp/convertSBML.cs
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/csharp/createExampleSBML.cs
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/csharp/echoSBML.cs
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/csharp/evaluateCustomMath.cs
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/csharp/inlineInitialAssignments.cs
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/csharp/layout/CMakeLists.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/csharp/layout/example1-L3.cs
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/csharp/printAnnotation.cs
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/csharp/printMath.cs
@@ -282,53 +308,49 @@ lib/libsbml.a
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/csharp/printsupported.cs
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/csharp/promoteParameters.cs
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/csharp/readSBML.cs
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/csharp/replaceOneFD.cs
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/csharp/stripPackage.cs
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/csharp/translateMath.cs
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/csharp/unsetAnnotation.cs
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/csharp/unsetNotes.cs
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/java/Makefile
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/java/Makefile.in
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/csharp/validateSBML.cs
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/java/CMakeLists.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/java/README.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/java/addCVTerms.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/java/addCustomValidator.java
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/java/addModelHistory.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/java/addingEvidenceCodes_1.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/java/addingEvidenceCodes_2.java
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/java/appendAnnotation.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/java/callExternalValidator.java
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/java/convertSBML.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/java/createExampleSBML.java
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/java/echoSBML.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/java/evaluateCustomMath.java
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/java/evaluateMath.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/java/getAllElementsWithNotes.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/java/inlineInitialAssignments.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/java/layout/CMakeLists.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/java/layout/layout_example1.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/java/layout/layout_example1_L3.java
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/java/printAnnotation.java
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/java/printMath.java
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/java/printNotes.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/java/printRegisteredPackages.java
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/java/printSBML.java
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/java/printUnits.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/java/printsupported.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/java/promoteParameters.java
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/java/readSBML.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/java/replaceOneFD.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/java/setIdFromNames.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/java/stripPackage.java
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/java/translateMath.java
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/java/unsetAnnotation.java
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/java/unsetNotes.java
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/java/validateSBML.java
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/java/CMakeLists.txt
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/java/addCustomValidator.java
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/java/addingEvidenceCodes_1.java
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/java/addingEvidenceCodes_2.java
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/java/callExternalValidator.java
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/java/createExampleSBML.java
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/java/getAllElementsWithNotes.java
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/java/layout/layout_example1.java
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/java/layout/layout_example1_L3.java
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/java/printRegisteredPackages.java
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/java/printsupported.java
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/java/promoteParameters.java
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/java/setIdFromNames.java
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/java/stripPackage.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/layout-package.cmake
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/layout/README.txt
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/perl/convertSBML.pl
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/perl/evaluateMath.pl
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/perl/extractReactionInfo.pl
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/perl/extractReactions.pl
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/perl/printMath.pl
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/perl/printSBML.pl
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/perl/readSBML.pl
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/perl/translateMath.pl
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/perl/validateSBML.pl
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/perl/addCVTerms.pl
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/perl/addCustomValidator.pl
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/perl/addModelHistory.pl
@@ -336,20 +358,27 @@ lib/libsbml.a
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/perl/addingEvidenceCodes_2.pl
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/perl/appendAnnotation.pl
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/perl/callExternalValidator.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/perl/convertSBML.pl
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/perl/createExampleSBML.pl
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/perl/echoSBML.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/perl/evaluateMath.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/perl/extractReactionInfo.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/perl/extractReactions.pl
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/perl/layout/example1-L3.pl
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/perl/printAnnotation.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/perl/printMath.pl
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/perl/printNotes.pl
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/perl/printRegisteredPackages.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/perl/printSBML.pl
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/perl/printUnits.pl
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/perl/printsupported.pl
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/perl/promoteParameters.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/perl/readSBML.pl
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/perl/stripPackage.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/perl/translateMath.pl
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/perl/unsetAnnotation.pl
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/perl/unsetNotes.pl
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/python/echoSBML.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/python/validateSBML.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/perl/validateSBML.pl
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/python/addCVTerms.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/python/addCustomValidator.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/python/addModelHistory.py
@@ -359,7 +388,12 @@ lib/libsbml.a
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/python/callExternalValidator.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/python/convertSBML.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/python/createExampleSBML.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/python/createSimpleModel.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/python/echoSBML.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/python/evaluateCustomMath.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/python/getAllElementsWithNotes.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/python/inlineInitialAssignments.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/python/layout/convertLayout.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/python/layout/example1-L3.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/python/layout/example1.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/python/printAnnotation.py
@@ -371,11 +405,13 @@ lib/libsbml.a
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/python/printsupported.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/python/promoteParameters.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/python/readSBML.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/python/replaceOneFD.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/python/setIdFromNames.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/python/stripPackage.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/python/translateMath.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/python/unsetAnnotation.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/python/unsetNotes.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/python/validateSBML.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/r/addCVTerms.R
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/r/addModelHistory.R
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/r/addingEvidenceCodes_1.R
@@ -399,10 +435,6 @@ lib/libsbml.a
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/r/unsetAnnotation.R
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/r/unsetNotes.R
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/r/validateSBML.R
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ruby/convertSBML.rb
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ruby/echoSBML.rb
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ruby/printMath.rb
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ruby/validateSBML.rb
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ruby/addCVTerms.rb
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ruby/addCustomValidator.rb
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ruby/addModelHistory.rb
@@ -410,8 +442,12 @@ lib/libsbml.a
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ruby/addingEvidenceCodes_2.rb
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ruby/appendAnnotation.rb
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ruby/callExternalValidator.rb
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ruby/convertSBML.rb
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ruby/createExampleSBML.rb
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ruby/echoSBML.rb
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ruby/layout/example1-L3.rb
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ruby/printAnnotation.rb
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ruby/printMath.rb
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ruby/printNotes.rb
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ruby/printRegisteredPackages.rb
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ruby/printSBML.rb
@@ -423,7 +459,7 @@ lib/libsbml.a
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ruby/translateMath.rb
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ruby/unsetAnnotation.rb
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ruby/unsetNotes.rb
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ruby/layout/example1-L3.rb
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ruby/validateSBML.rb
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sample-models/README.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sample-models/from-spec/level-2/README.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sample-models/from-spec/level-2/algebraicrules.xml
@@ -438,6 +474,7 @@ lib/libsbml.a
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sample-models/from-spec/level-2/overdetermined.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sample-models/from-spec/level-2/twodimensional.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sample-models/from-spec/level-2/units.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sample-models/from-spec/level-3/README.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sample-models/from-spec/level-3/algebraicrules.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sample-models/from-spec/level-3/assignmentrules.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sample-models/from-spec/level-3/boundarycondition.xml
@@ -452,73 +489,40 @@ lib/libsbml.a
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sample-models/from-spec/level-3/membrane.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sample-models/from-spec/level-3/multicomp.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sample-models/from-spec/level-3/overdetermined.xml
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sample-models/from-spec/level-3/README.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sample-models/from-spec/level-3/twoalgebraicrules.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sample-models/from-spec/level-3/twodimensional.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/xslt/layout/layout2svg.xsl
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/c
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/c++/layout
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/c++
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/csharp/layout
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/csharp
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/java/layout
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/java
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/perl/layout
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/layout
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/perl
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/python/layout
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/python
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/r
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/ruby/layout
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/ruby
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/xslt/layout
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/xslt
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/sample-models/from-spec/level-3
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/sample-models/from-spec/level-2
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/sample-models/from-spec
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/sample-models
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/xslt/layout
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/xslt
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/ruby/layout
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/ruby
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/r
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/python/layout
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/python
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/perl/layout
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/perl
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/layout
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/java/layout
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/java
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/csharp/layout
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/csharp
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/c++/layout
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/c++
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/c
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
-@dirrm include/sbml/annotation
-@dirrm include/sbml/common
-@dirrm include/sbml/compress
-@dirrm include/sbml/conversion
-@dirrm include/sbml/extension
-@dirrm include/sbml/math
-@dirrm include/sbml/units
-@dirrm include/sbml/util
-@dirrm include/sbml/validator/constraints
-@dirrm include/sbml/validator
+%%PYTHON%%@dirrm %%PYTHON_SITELIBDIR%%/libsbml
 @dirrm include/sbml/xml
-@dirrm include/sbml/
-include/sbml/extension/ASTBasePlugin.h
-include/sbml/math/ASTBase.h
-include/sbml/math/ASTBinaryFunctionNode.h
-include/sbml/math/ASTCSymbol.h
-include/sbml/math/ASTCSymbolAvogadroNode.h
-include/sbml/math/ASTCSymbolDelayNode.h
-include/sbml/math/ASTCSymbolTimeNode.h
-include/sbml/math/ASTCiFunctionNode.h
-include/sbml/math/ASTCiNumberNode.h
-include/sbml/math/ASTCnBase.h
-include/sbml/math/ASTCnExponentialNode.h
-include/sbml/math/ASTCnIntegerNode.h
-include/sbml/math/ASTCnRationalNode.h
-include/sbml/math/ASTCnRealNode.h
-include/sbml/math/ASTConstantNumberNode.h
-include/sbml/math/ASTFunction.h
-include/sbml/math/ASTFunctionBase.h
-include/sbml/math/ASTLambdaFunctionNode.h
-include/sbml/math/ASTNaryFunctionNode.h
-include/sbml/math/ASTNumber.h
-include/sbml/math/ASTPiecewiseFunctionNode.h
-include/sbml/math/ASTQualifierNode.h
-include/sbml/math/ASTSemanticsNode.h
-include/sbml/math/ASTTypes.h
-include/sbml/math/ASTUnaryFunctionNode.h
-include/sbml/util/PrefixTransformer.h
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/c++/convertReactions.cpp
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/c++/layout/CMakeLists.txt
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/csharp/layout/CMakeLists.txt
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/java/layout/CMakeLists.txt
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/layout-package.cmake
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/python/layout/convertLayout.py
+@dirrm include/sbml/validator
+@dirrm include/sbml/util
+@dirrm include/sbml/units
+@dirrm include/sbml/math
+@dirrm include/sbml/extension
+@dirrm include/sbml/conversion
+@dirrm include/sbml/compress
+@dirrm include/sbml/common
+@dirrm include/sbml/annotation
+@dirrm include/sbml

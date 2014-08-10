@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	libsbml
-PORTVERSION=	5.10.0
+PORTVERSION=	5.10.2
 CATEGORIES=	biology devel
-MASTER_SITES=	SF
-MASTER_SITE_SUBDIR=	sbml/${PORTNAME}/${PORTVERSION}/stable
+MASTER_SITES=	SF/sbml/${PORTNAME}/${PORTVERSION}/stable
 DISTNAME=	libSBML-${PORTVERSION}-core-src
 
 MAINTAINER=	ports@FreeBSD.org
@@ -13,46 +12,39 @@ COMMENT=	API Library for Working with SBML File
 
 LICENSE=	LGPL21
 
-LIB_DEPENDS=	libxml2.so:${PORTSDIR}/textproc/libxml2
-
-OPTIONS_DEFINE=	PYTHON RUBY EXAMPLES
-
-USES=		gmake libtool
-GNU_CONFIGURE=	yes
-USE_LDCONFIG=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-.include <bsd.port.options.mk>
+USES=		cmake:outsource iconv	
+USE_GNOME=	libxml2
+USE_LDCONFIG=	yes
 
-.if ${PORT_OPTIONS:MPYTHON}
-USE_PYTHON=		yes
-BUILD_DEPENDS+=		${LOCALBASE}/bin/python:${PORTSDIR}/lang/python
-CONFIGURE_ARGS+=	--with-python
-PLIST_SUB+=		WITH_PYTHON="" \
-			SBML_EGGINFO=${PORTNAME}-${PORTVERSION}-${PYTHON_VERSION:S/thon//}.egg-info
-.else
-PLIST_SUB+=		WITH_PYTHON="@comment "
-.endif
+CFLAGS+=	-I${ICONV_PREFIX}/include
+LDFLAGS+=	-L${ICONV_PREFIX}/lib
 
-.if ${PORT_OPTIONS:MRUBY}
-USE_RUBY=		yes
-BUILD_DEPENDS+=		${LOCALBASE}/bin/ruby:${PORTSDIR}/lang/ruby19
-CONFIGURE_ARGS+=	--with-ruby
-PLIST_SUB+=		WITH_RUBY=""
-.else
-PLIST_SUB+=		WITH_RUBY="@comment "
-.endif
+OPTIONS_DEFINE=	EXAMPLES PYTHON RUBY
+OPTIONS_SUB=	yes
+
+PYTHON_BUILD_DEPENDS=	swig2.0:${PORTSDIR}/devel/swig20
+PYTHON_USE=		python=yes
+PYTHON_CMAKE_ON=	-DWITH_PYTHON:BOOL=ON \
+			-DPYTHON_INCLUDE_DIR:STRING="${PYTHON_INCLUDEDIR}" \
+			-DPYTHON_LIBRARY:STRING="${PYTHONBASE}/lib/lib${PYTHON_VERSION}.so" \
+			-DPYTHON_EXECUTABLE:STRING="${PYTHON_CMD}"
+
+RUBY_BUILD_DEPENDS=	swig2.0:${PORTSDIR}/devel/swig20
+RUBY_USE=		ruby=yes
+RUBY_CMAKE_ON=		-DWITH_RUBY:BOOL=ON
 
 post-patch:
-	${REINPLACE_CMD} -e 's#%%PREFIX%%#${STAGEDIR}${PREFIX}#' \
-		${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e \
+		's|/usr/local/include|${LOCALBASE}/include| ; \
+		s|/usr/local/lib|${LOCALBASE}/lib| ; \
+		/$${DOCUMENTATION_FILES}/s|^|#|' ${WRKSRC}/CMakeLists.txt
 
 post-install:
-.if ${PORT_OPTIONS:MEXAMPLES}
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
-	cd ${WRKSRC}/examples \
-		&& ${FIND} . -type f -name "._Makefile.in" -exec ${RM} -f {} \; \
-		&& ${FIND} . -type d -exec ${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/\{} \; \
-		&& ${FIND} . -type f -exec ${INSTALL_DATA} \{} ${STAGEDIR}${EXAMPLESDIR}/\{} \;
-.endif
+	@${TAR} -C ${WRKSRC}/examples --exclude "*Makefile*" -cf - . | \
+		${TAR} -C ${STAGEDIR}${EXAMPLESDIR} --unlink -xf -
+	@${CHMOD} -R a+rX ${STAGEDIR}${EXAMPLESDIR}
+
 .include <bsd.port.mk>
