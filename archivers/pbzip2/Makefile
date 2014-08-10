@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pbzip2
-PORTVERSION=	1.1.6
+PORTVERSION=	1.1.8
 CATEGORIES=	archivers
 MASTER_SITES=	http://compression.ca/pbzip2/
 DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
