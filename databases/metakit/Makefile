@@ -24,7 +24,7 @@ OPTIONS_DEFAULT=	PYTHON
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MPYTHON}
-USE_PYTHON=	yes
+USES+=		python
 CONFIGURE_ARGS+=	--with-python=${LOCALBASE}
 CATEGORIES+=	python
 PLIST_SUB+=	WITH_PYTHON=""
