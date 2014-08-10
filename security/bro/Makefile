@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	bro
-PORTVERSION=	2.2
-PORTREVISION=	1
+PORTVERSION=	2.3
 CATEGORIES=	security
 MASTER_SITES=	http://www.bro.org/downloads/release/
 
@@ -16,6 +15,8 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/bison:${PORTSDIR}/devel/bison \
 		${LOCALBASE}/bin/swig:${PORTSDIR}/devel/swig13
 LIB_DEPENDS=	libGeoIP.so:${PORTSDIR}/net/GeoIP
 
+SUB_LIST+=	PYTHON_CMD="${PYTHON_CMD}"
+
 USES=		cmake:outsource perl5
 USE_PYTHON=	yes
 
@@ -26,9 +27,8 @@ NO_MTREE=	yes
 PREFIX=${BRO_PREFIX}
 PLIST_SUB+=	CLEANUP_PREFIX=""
 .if ! defined(WITH_PKGNG) && ! exists(${BRO_PREFIX})
-NEED_ROOT=      yes
+NEED_ROOT=	yes
 .endif
-NO_MTREE=	yes
 .else
 PLIST_SUB+=	CLEANUP_PREFIX="@comment "
 .endif
@@ -43,8 +43,15 @@ CMAKE_ARGS+=	-D CMAKE_INSTALL_PREFIX:PATH=${PREFIX} \
 		-D INSTALL_AUX_TOOLS:BOOL=true \
 		-D BUILD_SHARED_LIBS:BOOL=true
 
-OPTIONS_DEFINE=	BROCCOLI BROCTL DEBUG IPSUMDUMP LBL_CF LBL_HF PERFTOOLS
-OPTIONS_DEFAULT=BROCCOLI BROCTL IPSUMDUMP LBL_CF LBL_HF
+BROUSER?=	bro
+BROGROUP?=	bro
+PLIST_SUB+=	BROUSER="$(BROUSER)" BROGROUP="$(BROGROUP)"
+
+USERS=		${BROUSER}
+GROUPS=		${BROGROUP}
+
+OPTIONS_DEFINE=	BROCCOLI BROCTL DEBUG IPSUMDUMP LBL_CF LBL_HF PERFTOOLS PORTS_SSL
+OPTIONS_DEFAULT=BROCCOLI BROCTL IPSUMDUMP LBL_CF LBL_HF PORTS_SSL
 
 BROCCOLI_DESC=	Build support for libbroccoli communications
 BROCTL_DESC=	Build BroControl support (requires BROCCOLI)
@@ -53,6 +60,7 @@ IPSUMDUMP_DESC=	Enables traffic summaries
 LBL_CF_DESC=	Unix time to formated time/date filter support
 LBL_HF_DESC=	Address to hostname filter support
 PERFTOOLS_DESC=	Use Perftools to improve memory & CPU usage
+PORTS_SSL_DESC=	Build with OpenSSL from ports (instead of base system)
 
 OPTIONS_EXCLUDE=NLS DOCS
 
@@ -109,6 +117,11 @@ RUN_DEPENDS+=	${LOCALBASE}/bin/pprof:${PORTSDIR}/devel/google-perftools
 CMAKE_ARGS+=	-D ENABLE_PERFTOOLS:BOOL=false
 .endif
 
+.if ${PORT_OPTIONS:MPORTS_SSL}
+WITH_OPENSSL_PORT=yes
+CMAKE_ARGS+=	-D CMAKE_EXE_LINKER_FLAGS="${OPENSSL_LDFLAGS}"
+.endif
+
 .if ${PORT_OPTIONS:MIPSUMDUMP}
 BUILD_DEPENDS+=	ipsumdump:${PORTSDIR}/net/ipsumdump
 RUN_DEPENDS+=	ipsumdump:${PORTSDIR}/net/ipsumdump
@@ -120,10 +133,14 @@ post-install:
 	# pkg_install needs PREFIX in order to make a package from STAGEDIR/PREFIX
 	@${MKDIR} ${PREFIX}
 .endif
+	@${MKDIR} ${STAGEDIR}${PREFIX}/logs
+.if ${PORT_OPTIONS:MBROCTL}
+	@${MKDIR} ${STAGEDIR}${PREFIX}/spool/tmp
+.endif
 	@${MKDIR} ${STAGEDIR}${PREFIX}/spool/installed-scripts-do-not-touch/auto
 	@${MKDIR} ${STAGEDIR}${PREFIX}/spool/installed-scripts-do-not-touch/site
 .for F in broctl.cfg
-	@${INSTALL_SCRIPT} ${INSTALL_WRKSRC}/aux/broctl/etc/${F} ${STAGEDIR}${PREFIX}/etc/${F}.example
+	@${INSTALL_DATA} ${INSTALL_WRKSRC}/aux/broctl/etc/${F} ${STAGEDIR}${PREFIX}/etc/${F}.example
 .endfor
 .for F in networks.cfg node.cfg
 	@${MV} ${WRKSRC}/aux/broctl/etc/${F} ${STAGEDIR}${PREFIX}/etc/${F}.example

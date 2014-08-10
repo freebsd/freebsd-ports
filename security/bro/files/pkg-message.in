@@ -5,6 +5,6 @@ are not deleted if you have edited them.  Instead
 the software will create a .sample file instead and the
 edited files will remain in place when you upgrade.  If you
 want to delete them, you have to delete them and the directory,
-%%PREFIX%%/etc/bro manually.
+%%PREFIX%%/etc manually.
 
 ********************PLEASE NOTE!!!***************************

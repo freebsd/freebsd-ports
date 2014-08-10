@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	broccoli
-PORTVERSION=	2.2
-PORTREVISION=	2
+PORTVERSION=	2.3
 CATEGORIES=	security
 MASTER_SITES=	http://www.bro.org/downloads/release/
 DISTNAME=	bro-${PORTVERSION}

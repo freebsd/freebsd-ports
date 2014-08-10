@@ -8,25 +8,15 @@ lib/libbroccoli.so
 lib/libbroccoli.so.5
 lib/libbroccoli.so.5.1.0
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/_broccoli_intern.so
-%%PYTHON%%@exec ln -f %%PREFIX%%/%%PYTHON_SITELIBDIR%%/_broccoli_intern.so %%LOCALBASE%%/%%PYTHON_SITELIBDIR%%/_broccoli_intern.so
-%%PYTHON%%@unexec rm -f %%LOCALBASE%%/%%PYTHON_SITELIBDIR%%/_broccoli_intern.so
-%%PYTHON%%%%PYTHON_SITELIBDIR%%/broccoli.py
-%%PYTHON%%@exec ln -f %%PREFIX%%/%%PYTHON_SITELIBDIR%%/broccoli.py %%LOCALBASE%%/%%PYTHON_SITELIBDIR%%/broccoli.py
 %%PYTHON%%@unexec rm -f %%LOCALBASE%%/%%PYTHON_SITELIBDIR%%/broccoli.py
 %%PYTHON%%@unexec rm -f %%LOCALBASE%%/%%PYTHON_SITELIBDIR%%/broccoli.pyc
 %%RUBY%%%%RUBY_SITELIBDIR%%/Broccoli/connection.rb
 %%RUBY%%%%RUBY_SITELIBDIR%%/Broccoli/event.rb
 %%RUBY%%%%RUBY_SITELIBDIR%%/Broccoli/record.rb
 %%RUBY%%%%RUBY_SITELIBDIR%%/broccoli.rb
-%%RUBY%%%%RUBY_SITEARCHLIBDIR%%/broccoli_ext.so
 %%RUBY%%@dirrmtry %%RUBY_SITELIBDIR%%/Broccoli
+%%RUBY%%%%RUBY_SITEARCHLIBDIR%%/broccoli_ext.so
 %%CLEANUP_PREFIX%%%%PORTDOCS%%@dirrmtry share
-%%CLEANUP_PREFIX%%%%RUBY%%@dirrmtry lib/ruby/site_ruby/1.9/i386-freebsd9
-%%CLEANUP_PREFIX%%%%RUBY%%@dirrmtry lib/ruby/site_ruby/1.9
-%%CLEANUP_PREFIX%%%%RUBY%%@dirrmtry lib/ruby/site_ruby
-%%CLEANUP_PREFIX%%%%RUBY%%@dirrmtry lib/ruby
-%%CLEANUP_PREFIX%%%%PYTHON%%@dirrmtry lib/python2.7/site-packages
-%%CLEANUP_PREFIX%%%%PYTHON%%@dirrmtry lib/python2.7
 %%CLEANUP_PREFIX%%@dirrmtry lib
 %%CLEANUP_PREFIX%%@dirrmtry include
 %%CLEANUP_PREFIX%%@dirrmtry etc
