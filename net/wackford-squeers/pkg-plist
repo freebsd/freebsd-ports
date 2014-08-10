@@ -1,3 +1,6 @@
+man/man1/wackford.1.gz
+man/man5/shyte.5.gz
+man/man8/squeers.8.gz
 bin/wackford
 bin/squeers
 etc/rc.d/squeers
