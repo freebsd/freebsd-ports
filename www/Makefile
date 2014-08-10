@@ -841,6 +841,7 @@
     SUBDIR += p5-Dancer-Logger-Log4perl
     SUBDIR += p5-Dancer-Plugin-ExtDirect
     SUBDIR += p5-Dancer-Plugin-Feed
+    SUBDIR += p5-Dancer-Plugin-Lexicon
     SUBDIR += p5-Dancer-Plugin-SiteMap
     SUBDIR += p5-Dancer-Plugin-ValidationClass
     SUBDIR += p5-Dancer-Session-Cookie
