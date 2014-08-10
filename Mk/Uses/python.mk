@@ -397,7 +397,10 @@ _PYTHON_VERSION_NONSUPPORTED=	${_PYTHON_VERSION_MAXIMUM} at most
 
 # If we have an unsupported version of Python, try another.
 .if defined(_PYTHON_VERSION_NONSUPPORTED)
-WARNING+=	"needs Python ${_PYTHON_VERSION_NONSUPPORTED}. But a port depending on this one specified ${_PYTHON_VERSION}"
+.if defined(PYTHON_VERSION) || defined(PYTHON_CMD)
+_PV:=		${_PYTHON_VERSION}	# preserve the specified python version
+WARNING+=	"needs Python ${_PYTHON_VERSION_NONSUPPORTED}. But a port depending on this one specified ${_PV}"
+.endif # defined(PYTHON_VERSION) || defined(PYTHON_CMD)
 .undef _PYTHON_VERSION
 .for ver in ${PYTHON2_DEFAULT} ${PYTHON3_DEFAULT} ${_PYTHON_VERSIONS}
 __VER=		${ver}
