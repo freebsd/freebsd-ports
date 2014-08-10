@@ -22,7 +22,7 @@ CONFLICTS=	emacs-19.* emacs21-[0-9]* emacs22-[0-9]* emacs23-[0-9]* \
 		emacs-nox11-[0-9]*
 
 EMACS_VER=	24.4.50
-EMACS_REV=	117564
+EMACS_REV=	117676
 GNU_CONFIGURE=	yes
 USES=		gmake makeinfo ncurses pkgconfig shebangfix tar:xz
 CPPFLAGS+=	-I${LOCALBASE}/include
@@ -95,6 +95,21 @@ SVG_CONFIGURE_WITH=	rsvg
 
 X11_CONFIGURE_WITH=	x
 X11_USE=	XORG=x11
+X11_PLIST_DIRSTRY_OFF=	share/icons/hicolor/scalable/mimetypes \
+			share/icons/hicolor/scalable/apps \
+			share/icons/hicolor/scalable \
+			share/icons/hicolor/48x48/apps \
+			share/icons/hicolor/48x48 \
+			share/icons/hicolor/32x32/apps \
+			share/icons/hicolor/32x32 \
+			share/icons/hicolor/24x24/apps \
+			share/icons/hicolor/24x24 \
+			share/icons/hicolor/16x16/apps \
+			share/icons/hicolor/16x16 \
+			share/icons/hicolor/128x128/apps \
+			share/icons/hicolor/128x128 \
+			share/icons/hicolor \
+			share/icons
 
 GTK2_USE=	GNOME=gtk20
 GTK2_CONFIGURE_ON=	--with-x-toolkit=gtk2
@@ -235,8 +250,9 @@ add-plist-data:
 pre-configure:
 	@cd ${WRKSRC} && ./autogen.sh
 
-.if ${PORT_OPTIONS:MSOURCES}
 post-install:
+	@${RM} -rf ${STAGEDIR}/var/games/emacs
+.if ${PORT_OPTIONS:MSOURCES}
 	@${MKDIR} ${STAGEDIR}${DATADIR}/${EMACS_VER}/src
 	@${INSTALL_DATA} ${WRKSRC}/src/*.[ch] ${STAGEDIR}${DATADIR}/${EMACS_VER}/src
 	@${INSTALL_DATA} ${WRKSRC}/sources.el ${STAGEDIR}${DATADIR}/${EMACS_VER}/site-lisp/site-start.el
