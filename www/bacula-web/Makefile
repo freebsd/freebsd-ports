@@ -4,7 +4,7 @@
 PORTNAME=	bacula-web
 DISTVERSION=	6.0.1
 PORTREVISION=	1
-CATEGORIES=	sysutils www
+CATEGORIES=	www sysutils
 MASTER_SITES=	http://www.bacula-web.org/files/bacula-web.org/downloads/
 
 MAINTAINER=	dan@langille.org
