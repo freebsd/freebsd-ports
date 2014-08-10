@@ -3,6 +3,7 @@
 
 PORTNAME=	plugdaemon
 PORTVERSION=	2.5.5
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	SF
 EXTRACT_SUFX=	.tgz
@@ -10,10 +11,10 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	lx@FreeBSD.org
 COMMENT=	Plug proxy daemon, forwards TCP/IP connections
 
-do-install:
+PLIST_FILES=	man/man1/plug.1.gz sbin/plug
 
+do-install:
 	${INSTALL_MAN} ${WRKSRC}/plug.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
 	${INSTALL_PROGRAM} ${WRKSRC}/plug ${STAGEDIR}${PREFIX}/sbin
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/sbin/plug
 
 .include <bsd.port.mk>
