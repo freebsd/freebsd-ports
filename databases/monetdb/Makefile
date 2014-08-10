@@ -208,7 +208,8 @@ CONFIGURE_ARGS+=	-with-password-backend=SHA512
 # Compile chokes with  version of flex on FreeBSD 8 and 9
 # with "unknown flag '-'"
 .if ${OPSYS} == FreeBSD && ${OSVERSION} < 1000000
-BUILD_DEPENDS+=	flex:${PORTSDIR}/textproc/flex
+BUILD_DEPENDS+=	${LOCALBASE}/bin/flex:${PORTSDIR}/textproc/flex
+CONFIGURE_ENV+=	LEX=${LOCALBASE}/bin/flex
 .endif
 
 pre-install:

@@ -1,6 +1,14 @@
---- configure.orig	2014-02-02 18:41:42.664332968 +0100
-+++ configure	2014-02-02 18:41:59.346331204 +0100
- 
+--- configure.orig	2013-11-20 11:27:41.000000000 +0000
++++ configure	2014-08-10 12:16:46.974210130 +0000
+@@ -17262,7 +17262,7 @@
+ 	;;
+ esac
+ case "$LEX" in
+-	flex*) : ;;
++	*flex*) : ;;
+ 	*)
+ 		if test "x$enable_jaql" = xyes; then
+ 			as_fn_error $? "MonetDB/JAQL requires flex" "$LINENO" 5
 @@ -17802,6 +17802,7 @@
  /* end confdefs.h.  */
  #include <stdio.h>
@@ -87,3 +95,4 @@
 +if  x"$have_zlib" = x"yes" ; then
  
  $as_echo "#define HAVE_LIBZ 1" >>confdefs.h
+ 
