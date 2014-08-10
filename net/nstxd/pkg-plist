@@ -1,3 +1,4 @@
+man/man8/nstxd.8.gz
 sbin/nstxd
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
