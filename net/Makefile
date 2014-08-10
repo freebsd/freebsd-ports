@@ -167,6 +167,7 @@
     SUBDIR += gogoc
     SUBDIR += googlecl
     SUBDIR += google-cloud-sdk
+    SUBDIR += google-daemon
     SUBDIR += gopher
     SUBDIR += gotthard
     SUBDIR += gpxe
