@@ -10,7 +10,7 @@ DISTFILES=	${PORTNAME}-${PORTVERSION}.tar.gz
 DISTFILES+=	${PORTNAME}-${PORTVERSION}-docs.tar.gz
 .endif
 
-MAINTAINER=	joehorn@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Dwoo is a PHP5 template engine
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
