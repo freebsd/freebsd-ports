@@ -11,8 +11,6 @@ DISTNAME=	crypt-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Comprehensive, modular, and portable cryptographic toolkit
 
-BUILD_DEPENDS=	libtool:${PORTSDIR}/devel/libtool
-
 CFLAGS+=	-I${LOCALBASE}/include
 EXTRALIBS=	-L${LOCALBASE}/lib
 MAKEFILE=	makefile.shared
@@ -20,7 +18,7 @@ ALL_TARGET=	library
 MAKE_ARGS=	IGNORE_SPEED=yes INCPATH="${PREFIX}/include" \
 		LIBPATH="${PREFIX}/lib" EXTRALIBS="${EXTRALIBS}"
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
-USES=		gmake libtool tar:bzip2
+USES=		gmake libtool:build tar:bzip2
 
 OPTIONS_DEFINE=		DOCS
 OPTIONS_DEFAULT=	LIBTOMMATH
