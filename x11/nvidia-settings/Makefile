@@ -4,8 +4,8 @@
 PORTNAME=	nvidia-settings
 PORTVERSION=	340.24
 CATEGORIES=	x11
-MASTER_SITES=	ftp://download.nvidia.com/XFree86/nvidia-settings \
-		ftp://download1.nvidia.com/XFree86/nvidia-settings
+MASTER_SITES=	ftp://download.nvidia.com/XFree86/nvidia-settings/ \
+		ftp://download1.nvidia.com/XFree86/nvidia-settings/
 
 MAINTAINER=	bland@FreeBSD.org
 COMMENT=	Display Control Panel for X NVidia driver
