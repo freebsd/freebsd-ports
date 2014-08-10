@@ -1,10 +1,10 @@
---- epan/Makefile.in.orig	2013-06-05 13:27:48.000000000 -0400
-+++ epan/Makefile.in	2013-06-08 17:55:04.000000000 -0400
-@@ -111,6 +111,7 @@ target_triplet = @target@
- DIST_COMMON = $(srcdir)/../Makefile.am.inc $(srcdir)/Makefile.am \
- 	$(srcdir)/Makefile.common $(srcdir)/Makefile.in \
- 	$(srcdir)/doxygen.cfg.in
-+LIBS = @LUA_LIBS@
+--- epan/Makefile.in.orig	2014-07-31 15:23:19.000000000 -0400
++++ epan/Makefile.in	2014-08-09 22:55:55.000000000 -0400
+@@ -150,6 +150,7 @@ DIST_COMMON = $(srcdir)/../Makefile.am.i
+ 	$(srcdir)/Makefile.in $(srcdir)/Makefile.am \
+ 	$(srcdir)/doxygen.cfg.in $(top_srcdir)/depcomp
  @HAVE_WARNINGS_AS_ERRORS_TRUE@am__append_1 = -Werror
- EXTRA_PROGRAMS = reassemble_test$(EXEEXT)
++LIBS = @LUA_LIBS@
+ EXTRA_PROGRAMS = reassemble_test$(EXEEXT) tvbtest$(EXEEXT) \
+ 	oids_test$(EXEEXT)
  subdir = epan
