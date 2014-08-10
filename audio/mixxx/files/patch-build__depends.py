@@ -67,7 +67,7 @@
          elif build.toolchain_is_msvs:
              # Validate the specified winlib directory exists
              mixxx_lib_path = SCons.ARGUMENTS.get('winlib', '..\\..\\..\\mixxx-win32lib-msvc100-release')
-@@ -851,16 +847,19 @@
+@@ -851,16 +847,20 @@
  
          elif build.platform_is_bsd:
              build.env.Append(CPPDEFINES='__BSD__')
@@ -77,7 +77,7 @@
 -            build.env.Append(LIBPATH=['/usr/lib/',
 -                                      '/usr/local/lib',
 -                                      '/usr/X11R6/lib'])
--            build.env.Append(LIBS='pthread')
+             build.env.Append(LIBS='pthread')
 +            build.env.Append(CPPPATH=['%%LOCALBASE%%/include/portaudio2',
 +                                      '%%LOCALBASE%%/include/qt4',
 +                                      '%%LOCALBASE%%/include'])

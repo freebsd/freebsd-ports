@@ -20,7 +20,7 @@ OBJS+=	mkplanexfw.o sha1.o
 OBJS+=	mkzcfw.o
 OBJS+=	wrt400n.o cyg_crc32.o
 
-LDFLAGS+=	-lmd -lssl -lz
+LDFLAGS+=	-lmd -lcrypto -lz
 
 INSTALL_PROGRAM?=	echo /usr/bin/install -C -o root -g bin -m 0644
 PREFIX?=	/usr/local

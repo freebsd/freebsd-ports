@@ -87,6 +87,9 @@ PLIST_SUB+=	HADOOP_ARCH=${_HADOOP_ARCH}
 post-patch:
 	@${REINPLACE_CMD} -e 's/ -DCPU=\\\\\\".*\\\\\\"//' \
 		${WRKSRC}/src/c++/libhdfs/configure
+	@${REINPLACE_CMD} 's/-lssl/-lcrypto/' \
+		${WRKSRC}/src/c++/pipes/configure \
+		${WRKSRC}/src/examples/pipes/configure
 .for f in ${FIX_GCC}
 	@${REINPLACE_CMD} -e 's/`gcc/`$$LTCC/' ${WRKSRC}/${f}
 .endfor

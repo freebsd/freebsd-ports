@@ -27,7 +27,7 @@ INSTALLS_OMF=	yes
 GCONF_SCHEMAS=	drivel.schemas
 
 CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+LIBS+=		-L${LOCALBASE}/lib -lm
 
 GTKSPELL_LIB_DEPENDS=	libgtkspell.so:${PORTSDIR}/textproc/gtkspell
 GTKSPELL_CONFIGURE_OFF=	--without-gtkspell

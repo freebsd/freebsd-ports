@@ -28,7 +28,7 @@ OPTIONS_DEFAULT=	JACK
 LIBARCHIVE_DESC=	LibArchive support
 
 post-patch:
-	${REINPLACE_CMD} -e "s|includes = \[\]|includes = \['-I${QT_INCDIR}/QtCore', '-I${QT_INCDIR}/QtXml', '-I${QT_INCDIR}/QtGui',  '-I${QT_INCDIR}', '-I${QT_INCDIR}/Qt', '-I${LOCALBASE}/include', '-I${LOCALBASE}/include/raptor2'\]|g; s|ldflags = \[\]|ldflags = \['-L${QT_LIBDIR}','-L${LOCALBASE}/lib'\,'-lQtCore', '-lQtGui', '-lQtXml', '-lQtNetwork', '${PTHREAD_LIBS}']|g" ${WRKSRC}/Sconstruct
+	${REINPLACE_CMD} -e "s|includes = \[\]|includes = \['-I${QT_INCDIR}/QtCore', '-I${QT_INCDIR}/QtXml', '-I${QT_INCDIR}/QtGui',  '-I${QT_INCDIR}', '-I${QT_INCDIR}/Qt', '-I${LOCALBASE}/include', '-I${LOCALBASE}/include/raptor2'\]|g; s|ldflags = \[\]|ldflags = \['-L${QT_LIBDIR}','-L${LOCALBASE}/lib'\,'-lQtCore', '-lQtGui', '-lQtXml', '-lQtNetwork']|g" ${WRKSRC}/Sconstruct
 
 .include <bsd.port.options.mk>
 
@@ -36,8 +36,6 @@ MAKE_ARGS+=	oss=1
 
 .if ${PORT_OPTIONS:MJACK}
 LIB_DEPENDS+=	libjack.so:${PORTSDIR}/audio/jack
-CPPFLAGS+=	${PTHREAD_CFLAGS}
-LDFLAGS+=	${PTHREAD_LIBS}
 MAKE_ARGS+=	jack=1
 .else
 MAKE_ARGS+=	jack=0
