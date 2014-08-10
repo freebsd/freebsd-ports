@@ -9,7 +9,7 @@ COMMENT=	Engine of slicing solution for RepRap 3D printers
 
 LICENSE=	AGPLv3
 
-USES=		gmake
+USES=		compiler:c++11-lang gmake
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	Ultimaker
