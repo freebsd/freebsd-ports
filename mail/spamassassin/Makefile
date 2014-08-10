@@ -27,7 +27,9 @@ RUN_DEPENDS=	${ALL_DEPENDS} \
 
 CONFLICTS?=	ja-spamassassin-[0-9]*
 
-USES=		perl5
+CPE_VENDOR=	apache
+
+USES=		perl5 cpe
 USE_PERL5=	configure
 USE_LDCONFIG=	yes
 
