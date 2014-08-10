@@ -1,5 +1,5 @@
---- src/gmxlib/thread_mpi/atomic.c.orig
-+++ src/gmxlib/thread_mpi/atomic.c
+--- src/external/thread_mpi/src/atomic.c.orig
++++ src/external/thread_mpi/src/atomic.c
 @@ -35,6 +35,14 @@
     files.
   */
