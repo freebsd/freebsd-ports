@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		tar:bzip2
 NO_BUILD=	yes
-WRKSRC=		${WRKDIR}
+EXTRACT_AFTER_ARGS=	--no-same-owner --no-same-permissions -C ${WRKSRC}
 
 SUB_FILES=	pkg-message
 SUB_LIST=	DISTNAME=${DISTNAME}
@@ -32,6 +32,9 @@ WANT_PHP_WEB=	yes
 APC_USE=	php=apc
 LDAP_USE=	php=ldap
 MEMCACHE_USE=	php=memcache
+
+pre-extract:
+	${MKDIR} ${WRKSRC}
 
 do-install:
 	${MKDIR} ${STAGEDIR}${WWWDIR}
