@@ -62,7 +62,7 @@ Notes:
     <affects>
       <package>
 	<name>nginx</name>
-	<range><ge>1.6.0,2</ge><lt>1.6.4,2</lt></range>
+	<range><ge>1.6.0,2</ge><lt>1.6.1,2</lt></range>
       </package>
       <package>
 	<name>nginx-devel</name>
