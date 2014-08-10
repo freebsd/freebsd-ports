@@ -29,15 +29,6 @@ RUN_DEPENDS=	p5-DBI>=0:${PORTSDIR}/databases/p5-DBI	\
 		p5-MIME-Lite>=0:${PORTSDIR}/mail/p5-MIME-Lite		\
 		p5-libwww>=0:${PORTSDIR}/www/p5-libwww
 
-SITE_PERL_REL?=lib/perl5/site_perl/${PERL_VER}
-SITE_PERL?=${LOCALBASE}/${SITE_PERL_REL}
-PLIST_SUB+=	PERL_VERSION=${PERL_VERSION} \
-			PERL_VER=${PERL_VER} \
-			PERL_ARCH=${PERL_ARCH} \
-			PERL5_MAN3=lib/perl5/${PERL_VER}/man/man3 \
-			SITE_PERL=${SITE_PERL_REL}
-
-
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MSQLITE3}
