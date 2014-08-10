@@ -42,4 +42,7 @@ CONFIGURE_ARGS+=	--disable-wordview
 post-patch:
 	@${REINPLACE_CMD} -e 's,%%PREFIX%%,${PREFIX},' ${WRKSRC}/doc/catdoc.1.in
 
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/*
+
 .include <bsd.port.mk>
