@@ -1,0 +1,133 @@
+bin/osmo-arfcn
+bin/osmo-auc-gen
+include/osmocom/codec/codec.h
+include/osmocom/core/application.h
+include/osmocom/core/backtrace.h
+include/osmocom/core/bits.h
+include/osmocom/core/bitvec.h
+include/osmocom/core/conv.h
+include/osmocom/core/crc16.h
+include/osmocom/core/crc16gen.h
+include/osmocom/core/crc32gen.h
+include/osmocom/core/crc64gen.h
+include/osmocom/core/crc8gen.h
+include/osmocom/core/crcgen.h
+include/osmocom/core/defs.h
+include/osmocom/core/gsmtap.h
+include/osmocom/core/gsmtap_util.h
+include/osmocom/core/linuxlist.h
+include/osmocom/core/linuxrbtree.h
+include/osmocom/core/logging.h
+include/osmocom/core/loggingrb.h
+include/osmocom/core/msgb.h
+include/osmocom/core/msgfile.h
+include/osmocom/core/panic.h
+include/osmocom/core/plugin.h
+include/osmocom/core/prim.h
+include/osmocom/core/process.h
+include/osmocom/core/rate_ctr.h
+include/osmocom/core/select.h
+include/osmocom/core/serial.h
+include/osmocom/core/signal.h
+include/osmocom/core/socket.h
+include/osmocom/core/statistics.h
+include/osmocom/core/strrb.h
+include/osmocom/core/talloc.h
+include/osmocom/core/timer.h
+include/osmocom/core/utils.h
+include/osmocom/core/write_queue.h
+include/osmocom/crypt/auth.h
+include/osmocom/crypt/gprs_cipher.h
+include/osmocom/gprs/gprs_bssgp.h
+include/osmocom/gprs/gprs_bssgp_bss.h
+include/osmocom/gprs/gprs_msgb.h
+include/osmocom/gprs/gprs_ns.h
+include/osmocom/gprs/gprs_ns_frgre.h
+include/osmocom/gprs/protocol/gsm_08_16.h
+include/osmocom/gprs/protocol/gsm_08_18.h
+include/osmocom/gsm/a5.h
+include/osmocom/gsm/abis_nm.h
+include/osmocom/gsm/comp128.h
+include/osmocom/gsm/comp128v23.h
+include/osmocom/gsm/gan.h
+include/osmocom/gsm/gsm0411_smc.h
+include/osmocom/gsm/gsm0411_smr.h
+include/osmocom/gsm/gsm0411_utils.h
+include/osmocom/gsm/gsm0480.h
+include/osmocom/gsm/gsm0502.h
+include/osmocom/gsm/gsm0808.h
+include/osmocom/gsm/gsm48.h
+include/osmocom/gsm/gsm48_ie.h
+include/osmocom/gsm/gsm_utils.h
+include/osmocom/gsm/l1sap.h
+include/osmocom/gsm/lapd_core.h
+include/osmocom/gsm/lapdm.h
+include/osmocom/gsm/meas_rep.h
+include/osmocom/gsm/mncc.h
+include/osmocom/gsm/prim.h
+include/osmocom/gsm/protocol/gsm_03_40.h
+include/osmocom/gsm/protocol/gsm_03_41.h
+include/osmocom/gsm/protocol/gsm_04_08.h
+include/osmocom/gsm/protocol/gsm_04_11.h
+include/osmocom/gsm/protocol/gsm_04_12.h
+include/osmocom/gsm/protocol/gsm_04_80.h
+include/osmocom/gsm/protocol/gsm_08_08.h
+include/osmocom/gsm/protocol/gsm_08_58.h
+include/osmocom/gsm/protocol/gsm_12_21.h
+include/osmocom/gsm/protocol/gsm_44_318.h
+include/osmocom/gsm/protocol/ipaccess.h
+include/osmocom/gsm/protocol/smpp34_osmocom.h
+include/osmocom/gsm/rsl.h
+include/osmocom/gsm/rxlev_stat.h
+include/osmocom/gsm/sysinfo.h
+include/osmocom/gsm/tlv.h
+include/osmocom/vty/buffer.h
+include/osmocom/vty/command.h
+include/osmocom/vty/logging.h
+include/osmocom/vty/misc.h
+include/osmocom/vty/telnet_interface.h
+include/osmocom/vty/vector.h
+include/osmocom/vty/vty.h
+lib/libosmocodec.a
+lib/libosmocodec.so
+lib/libosmocodec.so.0
+lib/libosmocodec.so.0.0.0
+lib/libosmocore.a
+lib/libosmocore.so
+lib/libosmocore.so.4
+lib/libosmocore.so.4.0.0
+lib/libosmogb.a
+lib/libosmogb.so
+lib/libosmogb.so.3
+lib/libosmogb.so.3.0.0
+lib/libosmogsm.a
+lib/libosmogsm.so
+lib/libosmogsm.so.5
+lib/libosmogsm.so.5.0.0
+lib/libosmovty.a
+lib/libosmovty.so
+lib/libosmovty.so.0
+lib/libosmovty.so.0.0.0
+libdata/pkgconfig/libosmocodec.pc
+libdata/pkgconfig/libosmocore.pc
+libdata/pkgconfig/libosmogb.pc
+libdata/pkgconfig/libosmogsm.pc
+libdata/pkgconfig/libosmovty.pc
+@dirrmtry include/osmocom/codec
+@dirrmtry include/osmocom/core
+@dirrmtry include/osmocom/crypt
+@dirrmtry include/osmocom/gprs/protocol
+@dirrmtry include/osmocom/gprs
+@dirrmtry include/osmocom/gsm/protocol
+@dirrmtry include/osmocom/gsm
+@dirrmtry include/osmocom/vty
+@dirrmtry include/osmocom
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/codec/html
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/codec
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/core/html
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/core
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/gsm/html
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/gsm
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/vty/html
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/vty
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%
