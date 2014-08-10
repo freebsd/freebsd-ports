@@ -85,7 +85,7 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/doc/${i} ${STAGEDIR}${DOCSDIR}
 .endfor
 .for i in ${AL_PORTDOCS_SUBDIR}
-	@${MKDIR} ${DOCSDIR}/${i}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}/${i}
 	(cd ${WRKSRC}/doc/${i} && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}/${i})
 .endfor
 
