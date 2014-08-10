@@ -11,8 +11,7 @@ LICENSE=	MIT
 
 LIB_DEPENDS=	libffi.so:${PORTSDIR}/devel/libffi
 
-USE_PYTHON_BUILD=	yes
-USES=			gmake shebangfix pkgconfig readline
+USES=			gmake pkgconfig python:build readline shebangfix
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	micropython

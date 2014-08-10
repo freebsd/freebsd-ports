@@ -15,10 +15,10 @@ LICENSE=	LGPL21
 
 RUN_DEPENDS=	pytest:${PORTSDIR}/devel/py-logilab-common
 
-WRKSRC=			${WRKDIR}/logilab-astroid-e003574ae51b
-MAKE_ENV=		NO_SETUPTOOLS=1
-USE_PYTHON=		yes
-USE_PYDISTUTILS=	yes
+USES=		python
+WRKSRC=		${WRKDIR}/logilab-astroid-e003574ae51b
+MAKE_ENV=	NO_SETUPTOOLS=1
+PYTHON_FEATURES=distutils
 
 .include <bsd.port.pre.mk>
 

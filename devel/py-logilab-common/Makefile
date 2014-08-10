@@ -13,8 +13,8 @@ COMMENT=	Common low-level libraries shared among logilab projects
 
 LICENSE=	LGPL20
 
+USES=		python
 MAKE_ENV=	NO_SETUPTOOLS=1
-USE_PYTHON=		yes
-USE_PYDISTUTILS=	yes
+PYTHON_FEATURES=distutils
 
 .include <bsd.port.mk>

@@ -19,8 +19,7 @@ LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
 
 USE_XORG=	x11 xext xmu
 USE_GL=		glew
-USES=		cmake:outsource compiler:features shebangfix
-USE_PYTHON=	3.4
+USES=		cmake:outsource compiler:features python:3.4 shebangfix
 CMAKE_ARGS+=	-DWITH_PYTHON_INSTALL:BOOL=OFF \
 		-DWITH_PYTHON_INSTALL_NUMPY:BOOL=OFF
 
