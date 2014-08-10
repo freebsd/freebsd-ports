@@ -13,7 +13,7 @@ All ports committers are allowed to commit to this file.
 20140809:
 AUTHOR: mva@FreeBSD.org
 
-  The Python language bits of the poorts framework have been converted
+  The Python language bits of the ports framework have been converted
   to USES. Instead of USE_PYTHON, please use USES=python instead.
 
     USE_PYTHON=yes becomes USES=python
@@ -21,7 +21,7 @@ AUTHOR: mva@FreeBSD.org
     USE_PYTHON_BUILD=3.3 becomes USES=python:3.3,build
     ...
 
-  Additionally, several Python specific feeatures have been converted
+  Additionally, several Python specific features have been converted
   to USES-inspired PYTHON_FEATURES=<featureA>,<featureB>.
 
     USE_PYDISTUTILS becomes PYTHON_FEATURES=distutils
