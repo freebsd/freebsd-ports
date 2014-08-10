@@ -294,4 +294,5 @@ _dnscrypt-proxy:*:978:65534::0:0:dnscrypt-proxy user:/var/empty:/usr/sbin/nologi
 ums:*:979:979::0:0:Universal Media Server:/nonexistent:/usr/sbin/nologin
 hbase:*:980:980::0:0:HBase user:/nonexistent:/usr/sbin/nologin
 uvncrep:*:981:981::0:0:UltraVNC Repeater daemon:/nonexistent:/usr/sbin/nologin
+bro:*:982:982::0:0:Bro Network Security Monitor:/nonexistent:/usr/sbin/nologin
 nobody:*:65534:65534::0:0:Unprivileged user:/nonexistent:/usr/sbin/nologin
