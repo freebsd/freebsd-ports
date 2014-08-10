@@ -2,21 +2,23 @@
 # $FreeBSD$
 
 PORTNAME=	hint
-PORTVERSION=	0.3.3.6
-PORTREVISION=	5
+PORTVERSION=	0.4.2.0
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Runtime Haskell interpreter (GHC API wrapper)
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 
-USE_CABAL=	ghc-mtl>=1.0.1.0 ghc-paths haskell-src MonadCatchIO-mtl>=0.3 \
+USE_CABAL=	exceptions extensible-exceptions ghc-mtl>=1.2.1 ghc-paths \
 		mtl random utf8-string
 
 INSTALL_PORTEXAMPLES=	cd ${WRKSRC}/examples && ${COPYTREE_SHARE} \* ${STAGEDIR}${EXAMPLESDIR}
 	
-INSTALL_PORTDATA=	${INSTALL_DATA} ${WRKSRC}/AUTHORS ${WRKSRC}/Changes \
+INSTALL_PORTDATA=	${INSTALL_DATA} \
+			    ${WRKSRC}/AUTHORS \
+			    ${WRKSRC}/README \
+			    ${WRKSRC}/CHANGELOG.markdown \
 			    ${STAGEDIR}${DATADIR}
 
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"

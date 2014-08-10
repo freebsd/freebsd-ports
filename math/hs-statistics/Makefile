@@ -2,17 +2,17 @@
 # $FreeBSD$
 
 PORTNAME=	statistics
-PORTVERSION=	0.10.3.1
-PORTREVISION=	4
+PORTVERSION=	0.13.2.1
 CATEGORIES=	math haskell
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Library of statistical types, data, and functions
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 
-USE_CABAL=	erf math-functions>=0.1.2 monad-par>=0.3.4 mwc-random>=0.11.0.0 \
-		primitive>=0.3 vector>=0.7.1 vector-algorithms>=0.4
+USE_CABAL=	aeson>=0.6.0.0 erf math-functions>=0.1.5.2 monad-par>=0.3.4 \
+		mwc-random>=0.13.0.0 primitive>=0.3 vector>=0.10 \
+		vector-algorithms>=0.4 vector-binary-instances>=0.2.1
 
 INSTALL_PORTDATA=	${INSTALL_DATA} ${WRKSRC}/README.markdown ${STAGEDIR}${DATADIR}
 

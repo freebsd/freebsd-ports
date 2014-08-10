@@ -2,13 +2,13 @@
 
 PORTNAME=	ReadArgs
 PORTVERSION=	1.2.1
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Simple command line argument parsing
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 
 USE_CABAL=	system-filepath>=0.4.7 text>=0.11.1.13
 

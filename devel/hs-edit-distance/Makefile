@@ -2,13 +2,13 @@
 
 PORTNAME=	edit-distance
 PORTVERSION=	0.2.1.2
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Levenshtein and restricted Damerau-Levenshtein edit distances
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 
 USE_CABAL=	random>=1.0
 

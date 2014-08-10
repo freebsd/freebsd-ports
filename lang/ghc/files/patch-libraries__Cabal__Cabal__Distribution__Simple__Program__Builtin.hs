@@ -1,46 +1,34 @@
---- ./libraries/Cabal/Cabal/Distribution/Simple/Program/Builtin.hs.orig	2012-11-23 17:07:58.000000000 +0100
-+++ ./libraries/Cabal/Cabal/Distribution/Simple/Program/Builtin.hs	2012-11-23 19:17:52.000000000 +0100
-@@ -46,7 +46,7 @@
-   ) where
- 
- import Distribution.Simple.Program.Types
--         ( Program(..), simpleProgram )
-+         ( Program(..), simpleProgram, simpleProgramFromEnvironment )
- import Distribution.Simple.Utils
-          ( findProgramLocation, findProgramVersion )
- 
-@@ -194,15 +194,15 @@
-   }
- 
+--- ./libraries/Cabal/Cabal/Distribution/Simple/Program/Builtin.hs.orig	2014-07-10 06:34:21.000000000 +0200
++++ ./libraries/Cabal/Cabal/Distribution/Simple/Program/Builtin.hs	2014-07-26 23:57:20.869626927 +0200
+@@ -198,13 +198,18 @@
  gccProgram :: Program
--gccProgram = (simpleProgram "gcc") {
-+gccProgram = (simpleProgramFromEnvironment "gcc" "CC") {
+ gccProgram = (simpleProgram "gcc") {
      programFindVersion = findProgramVersion "-dumpversion" id
++  , programFindLocation = \v p -> findProgramOnSearchPath v p "%%CC%%"
    }
  
  ranlibProgram :: Program
 -ranlibProgram = simpleProgram "ranlib"
-+ranlibProgram = simpleProgramFromEnvironment "ranlib" "RANLIB"
++ranlibProgram = (simpleProgram "ranlib") {
++    programFindLocation = \_v _p -> return (Just "%%RANLIB%%")
++  }
  
  arProgram :: Program
 -arProgram = simpleProgram "ar"
-+arProgram = simpleProgramFromEnvironment "ar" "AR"
++arProgram = (simpleProgram "ar") {
++    programFindLocation = \_v _p -> return (Just "%%AR%%")
++  }
  
  stripProgram :: Program
  stripProgram = simpleProgram "strip"
-@@ -255,13 +255,13 @@
+@@ -257,7 +262,9 @@
  greencardProgram = simpleProgram "greencard"
  
  ldProgram :: Program
 -ldProgram = simpleProgram "ld"
-+ldProgram = simpleProgramFromEnvironment "ld" "LD"
++ldProgram = (simpleProgram "ld") {
++    programFindLocation = \_v _p -> return (Just "%%LD%%")
++  }
  
  tarProgram :: Program
  tarProgram = simpleProgram "tar"
- 
- cppProgram :: Program
--cppProgram = simpleProgram "cpp"
-+cppProgram = simpleProgramFromEnvironment "cpp" "CPP"
- 
- pkgConfigProgram :: Program
- pkgConfigProgram = (simpleProgram "pkg-config") {

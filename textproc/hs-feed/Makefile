@@ -2,14 +2,13 @@
 # $FreeBSD$
 
 PORTNAME=	feed
-PORTVERSION=	0.3.8
-PORTREVISION=	13
+PORTVERSION=	0.3.9.2
 CATEGORIES=	textproc haskell
 
 MAINTAINER=	haskell@FreeBSD.org
-COMMENT=	Interfacing with RSS (v 0.9x, 2.x, 1.0) + Atom feeds in Haskell
+COMMENT=	Interfacing with RSS (v 0.9x, 2.x, 1.0) + Atom feeds
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 
 USE_CABAL=	utf8-string xml>=1.2.6
 

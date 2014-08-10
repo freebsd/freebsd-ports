@@ -1,0 +1,11 @@
+--- ./dia-base.cabal.orig	2012-09-11 09:44:42.000000000 +0200
++++ ./dia-base.cabal	2014-07-12 22:27:19.000000000 +0200
+@@ -27,7 +27,7 @@
+     Graphics.Diagrams
+ 
+   Build-Depends:
+-    base >= 4.0 && < 4.7,
++    base >= 4.0 && < 4.8,
+     deepseq >= 1.1 && < 1.4
+ 
+ 

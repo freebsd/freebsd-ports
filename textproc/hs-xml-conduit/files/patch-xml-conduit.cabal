@@ -1,0 +1,11 @@
+--- ./xml-conduit.cabal.orig	2014-05-23 05:44:22.000000000 +0200
++++ ./xml-conduit.cabal	2014-07-12 23:46:45.000000000 +0200
+@@ -31,8 +31,6 @@
+                    , conduit                   >= 1.0      && < 1.2
+                    , conduit-extra
+                    , resourcet                 >= 0.3      && < 1.2
+-                   , attoparsec-conduit        >= 1.0
+-                   , blaze-builder-conduit     >= 1.0
+                    , bytestring                >= 0.9
+                    , text                      >= 0.7
+                    , containers                >= 0.2

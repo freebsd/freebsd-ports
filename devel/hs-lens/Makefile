@@ -1,23 +1,21 @@
 # $FreeBSD$
 
 PORTNAME=	lens
-PORTVERSION=	3.9.0.2
-PORTREVISION=	4
+PORTVERSION=	4.3.3
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Lenses, Folds and Traversals
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 
-USE_CABAL=	bifunctors>=3 comonad>=3 comonad-transformers>=3 \
-		comonads-fd>=3 contravariant>=0.2.0.2 distributive>=0.3 \
-		generic-deriving hashable>=1.1.2.3 \
-		MonadCatchIO-transformers>=0.3 mtl>=2.0.1 parallel>=3.1.0.1 \
-		profunctor-extras>=3.3 profunctors>=3.2 reflection>=1.1.6 \
-		semigroupoids>=3 semigroups>=0.8.4 split tagged>=0.4.4 \
-		text>=0.11 transformers>=0.3 unordered-containers>=0.2 \
-		vector>=0.9 void>=0.5
+USE_CABAL=	aeson>=0.7.0.5 attoparsec>=0.10 bifunctors>=4 comonad>=4 \
+		contravariant>=0.3 distributive>=0.3 exceptions>=0.1.1 \
+		free>=4 hashable>=1.1.2.3 mtl>=2.0.1 parallel>=3.1.0.1 \
+		primitive>=0.4.0.1 profunctors>=4 reflection>=1.1.6 \
+		scientific>=0.3.2 semigroupoids>=4 semigroups>=0.8.4 \
+		split>=0.2 tagged>=0.4.4 text>=0.11 transformers-compat>=0.3 \
+		unordered-containers>=0.2 vector>=0.9 void>=0.5 zlib>=0.5.4
 
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

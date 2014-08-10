@@ -1,14 +1,13 @@
 # $FreeBSD$
 
 PORTNAME=	categories
-PORTVERSION=	1.0.5
-PORTREVISION=	5
+PORTVERSION=	1.0.6
 CATEGORIES=	math haskell
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Categories
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 
 USE_CABAL=	void>=0.5.4.2
 

@@ -1,14 +1,13 @@
 # $FreeBSD$
 
 PORTNAME=	SafeSemaphore
-PORTVERSION=	0.9.0
-PORTREVISION=	6
+PORTVERSION=	0.10.1
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Much safer replacement for QSemN, QSem, and SampleVar
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 
 USE_CABAL=	stm
 

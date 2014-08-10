@@ -1,0 +1,11 @@
+--- ./unix-time.cabal.orig	2014-07-16 02:47:31.000000000 +0200
++++ ./unix-time.cabal	2014-07-20 22:50:57.000000000 +0200
+@@ -15,8 +15,6 @@
+ Library
+   Default-Language:     Haskell2010
+   GHC-Options:          -Wall
+-  if impl(ghc >= 7.8)
+-    CC-Options:         -fPIC
+   Exposed-Modules:      Data.UnixTime
+   Other-Modules:        Data.UnixTime.Conv
+                         Data.UnixTime.Diff

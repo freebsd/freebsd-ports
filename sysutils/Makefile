@@ -385,6 +385,8 @@
     SUBDIR += hptcli
     SUBDIR += hs-angel
     SUBDIR += hs-cpu
+    SUBDIR += hs-ekg
+    SUBDIR += hs-ekg-core
     SUBDIR += htop
     SUBDIR += httplog
     SUBDIR += hwstat

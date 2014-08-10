@@ -1,14 +1,13 @@
 # $FreeBSD$
 
 PORTNAME=	entropy
-PORTVERSION=	0.2.1
-PORTREVISION=	9
+PORTVERSION=	0.3.2
 CATEGORIES=	security haskell
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Platform-independent entropy source
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

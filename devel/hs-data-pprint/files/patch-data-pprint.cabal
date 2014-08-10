@@ -1,0 +1,11 @@
+--- ./data-pprint.cabal.orig	2013-10-19 16:24:17.000000000 +0200
++++ ./data-pprint.cabal	2014-07-12 22:25:47.000000000 +0200
+@@ -68,7 +68,7 @@
+     System.IO.Parallel
+   other-modules:
+   build-depends:
+-    base >= 4.0 && < 4.7,
++    base >= 4.0 && < 4.8,
+     pretty >= 1.0 && < 1.2,
+     mtl >= 2.0 && < 2.2,
+     deepseq >= 1.1 && < 1.4,

@@ -1,14 +1,13 @@
 # $FreeBSD$
 
 PORTNAME=	reflection
-PORTVERSION=	1.3.2
-PORTREVISION=	4
+PORTVERSION=	1.5.1
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Reifies arbitrary terms into types that can be reflected back into terms
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 
 USE_CABAL=	tagged>=0.4.4
 

@@ -2,13 +2,13 @@
 
 PORTNAME=	sendfile
 PORTVERSION=	0.7.9
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	net haskell
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Portable sendfile library
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 
 USE_CABAL=	network>=2
 

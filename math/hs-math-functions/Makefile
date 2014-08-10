@@ -2,16 +2,15 @@
 # $FreeBSD$
 
 PORTNAME=	math-functions
-PORTVERSION=	0.1.3.0
-PORTREVISION=	5
+PORTVERSION=	0.1.5.2
 CATEGORIES=	math haskell
 
 MAINTAINER=	haskell@FreeBSD.org
-COMMENT=	Special mathematical functions and Chebyshev polynomials
+COMMENT=	Special functions and Chebyshev polynomials
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 
-USE_CABAL=	erf>=2 vector>=0.7
+USE_CABAL=	erf>=2 vector>=0.7 vector-th-unbox
 
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

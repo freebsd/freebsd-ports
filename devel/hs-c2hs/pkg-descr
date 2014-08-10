@@ -4,4 +4,4 @@ code with foreign imports and marshaling. Unlike writing foreign imports
 by hand (or using hsch2s), this ensures that C functions are imported with
 the correct Haskell types.
 
-WWW: http://www.cse.unsw.edu.au/~chak/haskell/c2hs/
+WWW: https://github.com/haskell/c2hs

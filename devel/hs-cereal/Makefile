@@ -1,14 +1,13 @@
 # $FreeBSD$
 
 PORTNAME=	cereal
-PORTVERSION=	0.3.5.2
-PORTREVISION=	7
+PORTVERSION=	0.4.0.1
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
-COMMENT=	Binary serialization library for Haskell
+COMMENT=	Binary serialization library
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

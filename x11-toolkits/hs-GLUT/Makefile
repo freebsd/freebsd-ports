@@ -2,17 +2,16 @@
 # $FreeBSD$
 
 PORTNAME=	GLUT
-PORTVERSION=	2.4.0.0
-PORTREVISION=	5
+PORTVERSION=	2.5.1.1
 PORTEPOCH=	1
 CATEGORIES=	x11-toolkits haskell
 
 MAINTAINER=	haskell@FreeBSD.org
-COMMENT=	Haskell binding for the OpenGL Utility Toolkit
+COMMENT=	Binding for the OpenGL Utility Toolkit
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 
-USE_CABAL=	OpenGL>=2.8 OpenGLRaw>=1.3
+USE_CABAL=	OpenGL>=2.8.0.0 OpenGLRaw>=1.3.0.0
 USE_GL=		glut
 
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"

@@ -106,6 +106,7 @@
     SUBDIR += hbase
     SUBDIR += hiredis
     SUBDIR += hk_classes
+    SUBDIR += hs-esqueleto
     SUBDIR += hs-mysql
     SUBDIR += hs-persistent
     SUBDIR += hs-persistent-sqlite

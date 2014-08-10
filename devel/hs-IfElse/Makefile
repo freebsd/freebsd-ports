@@ -2,13 +2,13 @@
 
 PORTNAME=	IfElse
 PORTVERSION=	0.85
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Anaphoric and miscellaneous useful control-flow
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 
 USE_CABAL=	mtl
 

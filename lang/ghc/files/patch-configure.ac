@@ -1,80 +1,20 @@
---- ./configure.ac.orig	2013-04-19 00:31:00.000000000 +0200
-+++ ./configure.ac	2013-04-30 19:30:40.381161098 +0200
-@@ -89,6 +89,59 @@
-   fi
-   WithGhc="$GHC"])
- 
-+# system libffi
-+
-+AC_ARG_WITH([system-libffi],
-+[AC_HELP_STRING([--with-system-libffi],
-+  [Use system provided libffi for RTS [default=no]])
-+])
-+
-+AS_IF([test "x$with_system_libffi" = "xyes"],
-+  [UseSystemLibFFI="YES"], [UseSystemLibFFI="NO"]
-+)
-+
-+AC_SUBST(UseSystemLibFFI)
-+
-+AC_ARG_WITH([ffi-includes],
-+[AC_HELP_STRING([--with-ffi-includes=ARG]
-+  [Find includes for libffi in ARG [default=system default]])
-+],
-+[
-+ if test "x$UseSystemLibFFI" != "xYES"; then
-+    AC_MSG_WARN([--with-ffi-includes will be ignored, --with-system-libffi not set])
-+ else
-+    FFIIncludeDir="$withval" LIBFFI_CFLAGS="-I $withval"
-+ fi
-+])
-+
-+AC_SUBST(FFIIncludeDir)
-+
-+AC_ARG_WITH([ffi-libraries],
-+[AC_HELP_STRING([--with-ffi-libraries=ARG]
-+  [Find libffi in ARG [default=system default]])
-+],
-+[
-+ if test "x$UseSystemLibFFI" != "xYES"; then
-+    AC_MSG_WARN([--with-ffi-libraries will be ignored, --with-system-libffi not set])
-+ else
-+    FFILibDir="$withval" LIBFFI_LDFLAGS="-L$withval"
-+ fi
-+])
-+
-+AC_SUBST(FFILibDir)
-+
-+AS_IF([test "$UseSystemLibFFI" = "YES"], [
-+ CFLAGS2="$CFLAGS"
-+ CFLAGS="$LIBFFI_CFLAGS $CFLAGS"
-+ LDFLAGS2="$LDFLAGS"
-+ LDFLAGS="$LIBFFI_LDFLAGS $LDFLAGS"
-+ AC_CHECK_LIB(ffi, ffi_call,
-+  [AC_CHECK_HEADERS([ffi.h], [break], [])
-+   AC_DEFINE([HAVE_LIBFFI], [1], [Define to 1 if you have libffi.])],
-+  [UseSystemLibFFI="NO"])
-+ CFLAGS="$CFLAGS2"
-+ LDFLAGS="$LDFLAGS2"
-+])
- 
- dnl ** Tell the make system which OS we are using
- dnl $OSTYPE is set by the operating system to "msys" or "cygwin" or something 
-@@ -379,6 +432,9 @@
- BuildingCrossCompiler=NO
- PortingCompiler=NO
+--- ./configure.ac.orig	2014-07-10 07:04:42.000000000 +0200
++++ ./configure.ac	2014-07-11 10:27:40.000000000 +0200
+@@ -435,6 +435,9 @@
+ dnl ** Building a cross compiler?
+ dnl --------------------------------------------------------------
  CrossCompiling=NO
 +
 +build=`echo $build | sed -e 's/amd64-/x86_64-/g; s/-freebsd.*$/-freebsd/g'`
 +
  # If 'host' and 'target' differ, then this means we are building a cross-compiler.
- if test "$host" != "$target" ; then
-     BuildingCrossCompiler=YES
-@@ -839,7 +895,6 @@
+ if test "$target" != "$host" ; then
+     CrossCompiling=YES
+@@ -914,7 +917,6 @@
  FP_VISIBILITY_HIDDEN
  
  dnl ** check for librt
 -AC_CHECK_LIB(rt, clock_gettime)
- AC_CHECK_FUNCS(clock_gettime timer_create timer_settime)
+ AC_CHECK_FUNCS(clock_gettime timer_settime)
  FP_CHECK_TIMER_CREATE
  

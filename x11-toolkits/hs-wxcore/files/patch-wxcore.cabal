@@ -1,11 +1,16 @@
---- ./wxcore.cabal.orig	2012-07-04 12:29:33.000000000 +0200
-+++ ./wxcore.cabal	2013-04-30 23:37:11.000000000 +0200
-@@ -80,7 +80,7 @@
+--- ./wxcore.cabal.orig	2014-03-22 22:01:18.000000000 +0100
++++ ./wxcore.cabal	2014-07-14 00:59:34.000000000 +0200
+@@ -78,11 +78,11 @@
+ 
+   if flag(splitBase)
      build-depends:
-       array >= 0.2 && < 0.5,
+-      array >= 0.2 && < 0.5,
++      array >= 0.2 && < 0.6,
        base >= 4 && < 5,
--      containers >= 0.2 && < 0.5
-+      containers >= 0.2 && < 0.6
+       containers >= 0.2 && < 0.6
    else
      build-depends:
-       array >= 0.1 && < 0.3,
+-      array >= 0.1 && < 0.3,
++      array >= 0.1 && < 0.6,
+       base >= 3 && < 4,
+       containers >= 0.1 && < 0.3

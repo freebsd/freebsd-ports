@@ -1,15 +1,13 @@
 # $FreeBSD$
 
 PORTNAME=	language-c
-PORTVERSION=	0.3.2.1
-PORTREVISION=	11
+PORTVERSION=	0.4.5
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
-COMMENT=	Analysis and generation of C code in Haskell
+COMMENT=	Analysis and generation of C code
 
-LICENSE=	BSD
-
+LICENSE=	BSD3CLAUSE
 USE_ALEX=	yes
 USE_HAPPY=	yes
 USE_CABAL=	syb

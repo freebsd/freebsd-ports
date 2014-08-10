@@ -1,0 +1,6 @@
+This is a library for the Web Distributed Authoring and Versioning
+(WebDAV) extensions to HTTP.  At present it supports a very small subset
+of client functionality.  In addition, there is an executable, hdav,
+which can be used for command-line operation.
+
+WWW: http://floss.scru.org/hDAV

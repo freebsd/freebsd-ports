@@ -3,7 +3,7 @@
 
 PORTNAME=	testpack
 PORTVERSION=	2.1.2.1
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org

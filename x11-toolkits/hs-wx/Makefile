@@ -1,16 +1,13 @@
 # $FreeBSD$
 
 PORTNAME=	wx
-PORTVERSION=	0.90.0.1
-PORTREVISION=	8
+PORTVERSION=	0.90.1.0
 CATEGORIES=	x11-toolkits haskell
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	wxHaskell
 
-USE_CABAL=	stm wxcore>=0.90
-
-BROKEN=		does not build with any of the supported wx
+USE_CABAL=	stm wxcore>=0.90.1.0
 
 USE_WX=		3.0
 WX_COMPS=	wx

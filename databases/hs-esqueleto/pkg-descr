@@ -1,0 +1,4 @@
+esqueleto is a bare bones, type-safe EDSL for SQL queries that works
+with unmodified persistent SQL backends.
+
+WWW: https://github.com/prowdsponsor/esqueleto

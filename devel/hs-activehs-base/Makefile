@@ -2,13 +2,13 @@
 
 PORTNAME=	activehs-base
 PORTVERSION=	0.3.0.2
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Basic definitions for activehs
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 
 USE_CABAL=	QuickCheck>=2.4
 

@@ -1,14 +1,13 @@
 # $FreeBSD$
 
 PORTNAME=	bifunctors
-PORTVERSION=	3.2.0.1
-PORTREVISION=	5
+PORTVERSION=	4.1.1.1
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
-COMMENT=	Haskell 98 bifunctors
+COMMENT=	Bifunctors
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 
 USE_CABAL=	semigroupoids semigroups>=0.8.3.1 tagged>=0.4.4
 

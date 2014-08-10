@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	yesod-routes
-PORTVERSION=	1.2.0
-PORTREVISION=	4
+PORTVERSION=	1.2.0.7
 CATEGORIES=	www haskell
 
 MAINTAINER=	haskell@FreeBSD.org
