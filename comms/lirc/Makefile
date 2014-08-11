@@ -3,7 +3,7 @@
 
 PORTNAME=	lirc
 PORTVERSION=	0.9.0
-PORTREVISION=	5
+PORTREVISION=	6
 PORTEPOCH=	1
 CATEGORIES=	comms
 MASTER_SITES=	SF/${PORTNAME}/LIRC/${PORTVERSION}
@@ -14,19 +14,19 @@ COMMENT=	Linux Infrared Remote Control
 
 BUILD_DEPENDS=	v4l_compat>=1.0.20110603:${PORTSDIR}/multimedia/v4l_compat
 
-USE_AUTOTOOLS=	libtool automake autoheader aclocal autoconf
-USES=		gmake tar:bzip2
-ACLOCAL_ARGS=	-I "${ACLOCAL_DIR}" -I ${LOCALBASE}/share/aclocal
+INSTALL_TARGET=	install-strip
+USES=		gmake libtool tar:bzip2
+USE_AUTOTOOLS=	libtoolize automake autoheader aclocal autoconf
+AUTOMAKE_ARGS=	-a -c -f
 USE_XORG=	sm x11
 USE_PYTHON=	yes
 USE_CSTD=	gnu89
-GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
-CONFIGURE_ARGS=		--enable-sandboxed --with-devdir=/var/run/lirc \
-			--sysconfdir=${PREFIX}/etc
-CPPFLAGS+=		-I${LOCALBASE}/include
-LDFLAGS+=		-L${LOCALBASE}/lib
+CONFIGURE_ARGS=	--enable-sandboxed --with-devdir=/var/run/lirc \
+		--sysconfdir=${PREFIX}/etc
+CPPFLAGS+=	-I${LOCALBASE}/include
+LIBS+=		-L${LOCALBASE}/lib
 
 OPTIONS_DEFINE=	MINIMAL DEBUG UARTLIRC DOCS EXAMPLES
 
@@ -63,10 +63,11 @@ CONFIGURE_ARGS+=	--enable-debug
 RUN_DEPENDS+=		uartlirc>=0.3:${PORTSDIR}/comms/uartlirc
 .endif
 
-# XXX: work around an issue with automake-1.13 erroring out on a
-#      non-existent m4 directory before libtoolize creates it
-pre-configure::
-	@${MKDIR} ${WRKSRC}/m4
+post-patch:
+	@${REINPLACE_CMD} \
+		-e 's/`$${LIBUSB_CONFIG} --libs`/-lusb/' \
+		-e 's/`$${LIBUSB_CONFIG} --cflags`//' \
+		${WRKSRC}/configure.ac
 
 post-install:
 .if ${PORT_OPTIONS:MDOCS}
