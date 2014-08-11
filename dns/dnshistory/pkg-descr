@@ -1,0 +1,7 @@
+Provide a means for storing a history of DNS/Name changes for the IP Addresses
+extracted from web log files. The major target being that multiple analyses of
+older log files do not require re-lookups of IP Address to FQDNs, and
+additionally maintain the accuracy of the lookup as it was then and not as it
+is now.
+
+WWW: http://www.stedee.id.au/dnshistory
