@@ -5,17 +5,47 @@
 #
 # PROVIDE: pksd
 # REQUIRE: DAEMON
+# KEYWORD: SHUTDOWN
+#
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# pksd_enable (bool):		Set to NO by default.
+#				Set it to YES to enable pksd.
+#
+# pksd_config (path):		Set to %%PREFIX%%/etc/pksd.conf
+#				by default.
+#
+# pksd_mailq_enable (bool):     Set to NO by default. Process incoming
+#                               mail queue of commands and key requests
+#                               (you will need to configure your mail
+#                               infrastructure to enable this. See:
+#                               %%PREFIX%%/share/doc/pks/README and
+#                               %%PREFIX%%/share/doc/pks/EMAIL for details.
+# 
+# pksd_queue_delay (int):       Periodically process incoming mail.
+#				Set to 60 seconds by default.
 
 . /etc/rc.subr
 
 name="pksd"
 rcvar=pksd_enable
-command="%%PREFIX%%/sbin/pksd"
-command_args="%%PREFIX%%/etc/${name}.conf &"
-required_files="%%PREFIX%%/etc/${name}.conf"
-start_precmd="pksd_precmd"
-start_postcmd="pksd_runqueue"
-stop_command="pksd_clean_stop"
+
+load_rc_config $name
+
+: ${pksd_enable:="NO"}
+: ${pksd_mailq_enable:="NO"}
+: ${pksd_config="%%PREFIX%%/etc/pksd.conf"}
+: ${pksd_queue_delay="60"}
+
+command="%%PREFIX%%/sbin/${name}"
+command_args="%%PREFIX%%/etc/${name}.conf"
+required_files="${pksd_config}"
+start_precmd="${name}_precmd"
+start_cmd="${name}_start"
+#start_postcmd="${name}_runqueue"
+stop_command="${name}_clean_stop"
+pidfile="/var/run/${name}.pid"
 
 pksd_precmd()
 {
@@ -31,14 +61,20 @@ pksd_precmd()
 	fi
 }
 
+pksd_start()
+{
+	echo "Starting pksd"
+        /usr/sbin/daemon -f -p ${pidfile} ${command} ${command_args}
+}
+
 pksd_runqueue()
 {
-	if [ -x %%PREFIX%%/bin/${name} -a -x %%PREFIX%%/bin/pks-queue-run.sh ]
+	if [ -x %%PREFIX%%/bin/${name}ctl -a -x %%PREFIX%%/bin/pks-queue-run.sh ] && checkyesno pksd_mailq_enable
         then
-        	echo "Doing queue run for ${name}."
-		sleep 5
-        	%%PREFIX%%/bin/pks-queue-run.sh %%PREFIX%%/etc/${name}.conf
-	fi
+        	echo "Doing queue run for ${name} every ${pksd_queue_delay} seconds."
+	        sleep 2
+        	%%PREFIX%%/bin/pks-queue-run.sh %%PREFIX%%/etc/${name}.conf ${pksd_queue_delay}
+  fi
 }
 
 pksd_clean_stop()

@@ -1,11 +1,38 @@
+Add the following lines to /etc/rc.conf.local or /etc/rc.conf to enable this service:
+
+ pksd_enable (bool):           Set to NO by default.
+                               Set it to YES to enable pksd.
+
+ pksd_config (path):           Set to %%PREFIX%%/etc/pksd.conf
+                               by default.
+
+ pksd_mailq_enable (bool):     Set to NO by default. Process incoming
+                               mail queue of commands and key requests
+                               (you will need to configure your mail
+                               infrastructure to enable this. See:
+                               %%PREFIX%%/share/doc/pks/README and
+                               %%PREFIX%%/share/doc/pks/EMAIL for details.
+ 
+ pksd_queue_delay (int):       Periodically process incoming mail.
+                               Set to 60 seconds by default.
+
+        #############################################
+
+          To enable adding keys via the web interface
+          please create a configuration file at:
+
+            %%PREFIX%%/etc/pksd.conf
+
+          Check sample file at:
+
+            %%PREFIX%%/etc/pksd.conf.sample
 
 
-	##################################
+          Also note that the database used by pks
+          sometimes needs to be created manually, to
+          do that refer to:
 
-	  To enable adding keys via the
-	  web interface please edit the
-	  configuration file at:
+            man 8 pksclient
 
-	   %%PREFIX%%/etc/pksd.conf
+        #############################################
 
-	##################################
