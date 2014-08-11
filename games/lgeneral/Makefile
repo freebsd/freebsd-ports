@@ -28,10 +28,6 @@ USE_CSTD=	gnu89
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-MAN1=		lgc-pg.1
-MAN6=		lgeneral.6
-
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MSOUND}
@@ -59,13 +55,13 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|/icons|/pixmaps|' ${WRKSRC}/Makefile.in
 
 post-install:
-	@${PREFIX}/bin/lgc-pg -s ${WRKDIR}/pg-data -d ${DATADIR}
-	@${FIND} ${DATADIR} | ${XARGS} ${CHOWN} ${SHAREOWN}:${SHAREGRP}
-	@${FIND} ${DATADIR} -type d | ${XARGS} ${CHMOD} a+rx
-	@${FIND} ${DATADIR} -type f | ${XARGS} ${CHMOD} ${SHAREMODE}
+	${STAGEDIR}${PREFIX}/bin/lgc-pg -s ${WRKDIR}/pg-data -d ${STAGEDIR}${DATADIR}
+	@${FIND} ${STAGEDIR}${DATADIR} | ${XARGS} ${CHOWN} ${SHAREOWN}:${SHAREGRP}
+	@${FIND} ${STAGEDIR}${DATADIR} -type d | ${XARGS} ${CHMOD} a+rx
+	@${FIND} ${STAGEDIR}${DATADIR} -type f | ${XARGS} ${CHMOD} ${SHAREMODE}
 .if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README.* ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README.* ${STAGEDIR}${DOCSDIR}
 .endif
 
 .include <bsd.port.post.mk>
