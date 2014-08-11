@@ -3,6 +3,7 @@
 
 PORTNAME=	mod_geoip2
 PORTVERSION=	1.2.9
+PORTREVISION=	1
 CATEGORIES=	www geography
 MASTER_SITES=	https://github.com/maxmind/geoip-api-mod_geoip2/archive/
 DISTNAME=	${PORTVERSION}

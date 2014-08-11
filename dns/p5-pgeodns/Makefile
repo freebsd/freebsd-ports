@@ -2,6 +2,7 @@
 
 PORTNAME=	pgeodns
 PORTVERSION=	1.41
+PORTREVISION=	1
 CATEGORIES=	dns perl5
 MASTER_SITES=	http://cloud.github.com/downloads/abh/pgeodns/
 PKGNAMEPREFIX=	p5-

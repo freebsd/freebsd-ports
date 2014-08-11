@@ -3,7 +3,7 @@
 
 PORTNAME=	ppolicy
 PORTVERSION=	2.6.6
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	mail python
 MASTER_SITES=	http://kmlinux.fjfi.cvut.cz/~vokac/activities/ppolicy/download/%SUBDIR%/ \
 		http://www.chifeng.name/dist/ppolicy/%SUBDIR%/

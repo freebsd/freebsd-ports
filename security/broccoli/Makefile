@@ -3,6 +3,7 @@
 
 PORTNAME=	broccoli
 PORTVERSION=	2.3
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://www.bro.org/downloads/release/
 DISTNAME=	bro-${PORTVERSION}

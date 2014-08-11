@@ -3,6 +3,7 @@
 
 PORTNAME=	net-geoip
 PORTVERSION=	0.07
+PORTREVISION=	1
 CATEGORIES=	net ruby geography
 MASTER_SITES=	http://geolite.maxmind.com/download/geoip/api/ruby/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
