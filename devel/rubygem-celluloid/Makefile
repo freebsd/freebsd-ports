@@ -11,7 +11,7 @@ COMMENT=	Build concurrent programs out of concurrent objects
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	rubygem-timers>=1.1.0:${PORTSDIR}/devel/rubygem-timers
+RUN_DEPENDS=	rubygem-timers1>=1.1.0:${PORTSDIR}/devel/rubygem-timers1
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
