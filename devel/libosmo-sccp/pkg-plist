@@ -1,0 +1,14 @@
+include/osmocom/sccp/sccp_types.h
+include/osmocom/sccp/sccp.h
+include/osmocom/mtp/mtp_level3.h
+include/osmocom/mtp/mtp_pcap.h
+include/osmocom/m2ua/m2ua_types.h
+include/osmocom/m2ua/m2ua_msg.h
+lib/libsccp.a
+lib/libmtp.a
+lib/libm2ua.a
+libdata/pkgconfig/libosmo-sccp.pc
+libdata/pkgconfig/libosmo-mtp.pc
+@dirrm include/osmocom/sccp
+@dirrm include/osmocom/mtp
+@dirrm include/osmocom/m2ua
