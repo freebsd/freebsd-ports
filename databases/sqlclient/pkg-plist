@@ -31,7 +31,6 @@ GNUstep/Local/Library/Headers/SQLClient/SQLClient.h
 GNUstep/Local/Library/Libraries/libSQLClient.so
 GNUstep/Local/Library/Libraries/libSQLClient.so.1.7
 GNUstep/Local/Library/Libraries/libSQLClient.so.1.7.0
-libdata/ldconfig/sqlclient
 @dirrmtry GNUstep/Local/Library/Headers/SQLClient
 @dirrmtry GNUstep/Local/Library/Documentation/SQLClient
 @dirrmtry GNUstep/Local/Library/Bundles/SQLClient/SQLite_libs.bundle/Resources
