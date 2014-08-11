@@ -36,13 +36,13 @@ STATIC_SUPPORT_DESC=		static linked support binaries
 
 # =====================================
 # modules
-# deprecated: ACCESS_COMPAT
-ACCESS_COMPAT_DESC=		Old group authorizations based on host (name or IP), deprecated by mod_authz_host
+# DESC from modules/*/config.m4 files
+ACCESS_COMPAT_DESC=		mod_access compatibility
 ACTIONS_DESC=			Action triggering on requests
 ALIAS_DESC=			Mapping of requests to different filesystem parts
-ALLOWMETHODS_DESC=		Easily restrict what HTTP methods can be used on the server
+ALLOWMETHODS_DESC=		Restrict allowed HTTP methods
 ASIS_DESC=			Sends files that contain their own HTTP headers
-AUTHNZ_FCGI_DESC=		Allows a FastCGI authorizer to handle the check_authn hook
+AUTHNZ_FCGI_DESC=		FastCGI authorizer-based authentication and authorization
 AUTHNZ_LDAP_DESC=		LDAP based authentication
 AUTHN_ANON_DESC=		Anonymous user authentication control
 AUTHN_CORE_DESC=		Core authentication module
@@ -53,21 +53,21 @@ AUTHN_SOCACHE_DESC=		Cached authentication control
 AUTHZ_CORE_DESC=		Core authorization provider vector module
 AUTHZ_DBD_DESC=			SQL based authorization and Login/Session support
 AUTHZ_DBM_DESC=			DBM-based authorization control
-AUTHZ_GROUPFILE_DESC=		Group authorization using plaintext files
+AUTHZ_GROUPFILE_DESC=		"require group" authorization control
 AUTHZ_HOST_DESC=		Host-based authorization control
-AUTHZ_OWNER_DESC=		Authorization based on file ownership
-AUTHZ_USER_DESC=		User Authorization
+AUTHZ_OWNER_DESC=		"require file-owner" authorization control
+AUTHZ_USER_DESC=		"require user" authorization control
 AUTH_BASIC_DESC=		Basic authentication
 AUTH_DIGEST_DESC=		RFC2617 Digest authentication
 AUTH_FORM_DESC=			Form authentication
 AUTOINDEX_DESC=			Directory listing
 
-BUCKETEER_DESC=			(dev) buckets manipulation filter, useful only for developers and testing purposes
+BUCKETEER_DESC=			(dev) buckets manipulation filter
 BUFFER_DESC=			Filter Buffering
 
 CACHE_DESC=			Dynamic file caching
 CACHE_DISK_DESC=		Disk caching module
-CACHE_SOCACHE_DESC=		Shared object cache (socache) based storage module for the HTTP caching filter
+CACHE_SOCACHE_DESC=		Shared object cacheing module
 CASE_FILTER_DESC=		(dev) example uppercase conversion filter
 CASE_FILTER_IN_DESC=		(dev) example uppercase conversion input filter
 CERN_META_DESC=			CERN-type meta files
@@ -86,9 +86,9 @@ DIR_DESC=			Directory request handling
 DUMPIO_DESC=			I/O dump filter
 
 ECHO_DESC=			(dev) example echo server
-ENV_DESC=			Modifies environment passed to CGI/SSI pages
-EXAMPLE_HOOKS_DESC=		(dev) example hook module
-EXAMPLE_IPC_DESC=		(dev) example IPC module
+ENV_DESC=			Clearing/setting of ENV vars
+EXAMPLE_HOOKS_DESC=		(dev) example hook callback handler module
+EXAMPLE_IPC_DESC=		(dev) Example of shared memory and mutex usage
 EXPIRES_DESC=			Expires header control
 EXT_FILTER_DESC=		External filter module
 
@@ -115,7 +115,7 @@ LOG_DEBUG_DESC=			Configurable debug logging
 LOG_FORENSIC_DESC=		Forensic logging
 LUA_DESC=			Apache Lua Framework
 
-MACRO_DESC=			Provides usage of macros within apache runtime configuration files
+MACRO_DESC=			Define and use macros in configuration files
 MIME_DESC=			Mapp file-ext. to MIME (recommended)
 MIME_MAGIC_DESC=		Automagically determining MIME type
 
@@ -137,7 +137,7 @@ PROXY_FTP_DESC=			FTP support module for mod_proxy
 PROXY_HTML_DESC=		Fix HTML Links in a Reverse Proxy
 PROXY_HTTP_DESC=		HTTP support module for mod_proxy
 PROXY_SCGI_DESC=		SCGI gateway module for mod_proxy
-PROXY_WSTUNNEL_DESC=		Websockets support module for mod_proxy
+PROXY_WSTUNNEL_DESC=		Websockets Tunnel module for mod_proxy
 
 RATELIMIT_DESC=			Output Bandwidth Limiting
 REFLECTOR_DESC=			Reflect request through the output filter stack
