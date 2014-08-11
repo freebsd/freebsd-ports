@@ -1,3 +1,4 @@
 #!/compat/linux/bin/sh
-%%VIDEO%% %%PREFIX%%/%%SKYPEDIR%%/skype --resources=%%PREFIX%%/%%SKYPEDIR%% --disable-api $@
-
+# --disable-api is required when the /compat/linux/var/lib/dbus/machine-id file is missing
+# --secondary allows to start another skype instance on the same machine
+%%VIDEO%%%%PREFIX%%/%%SKYPEDIR%%/skype --resources=%%PREFIX%%/%%SKYPEDIR%% $@
