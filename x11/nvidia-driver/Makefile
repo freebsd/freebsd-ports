@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	nvidia-driver
-DISTVERSION?=	331.67
+DISTVERSION?=	340.24
 # Always try to set PORTREVISION as it can be overridden by the slave ports
-PORTREVISION?=	1
+PORTREVISION?=	0
 CATEGORIES=	x11
 MASTER_SITES=	${MASTER_SITE_NVIDIA}
 # MASTER_SITE_SUBDIR has to be set later because it depends on NVVERSION
