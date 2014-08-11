@@ -30,9 +30,9 @@ include/libimobiledevice/sbservices.h
 include/libimobiledevice/screenshotr.h
 include/libimobiledevice/webinspector.h
 lib/libimobiledevice.a
-lib/libimobiledevice.la
 lib/libimobiledevice.so
 lib/libimobiledevice.so.4
+lib/libimobiledevice.so.4.0.1
 libdata/pkgconfig/libimobiledevice-1.0.pc
 man/man1/idevice_id.1.gz
 man/man1/idevicebackup.1.gz
