@@ -1,9 +1,8 @@
-# Created by: mgp
 # $FreeBSD$
 
 PORTNAME=	portrac
 PORTVERSION=	0.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	http://e-soul.org/distfiles/ \
 		http://home.e-soul.org/~mgp/distfiles/
@@ -11,7 +10,7 @@ MASTER_SITES=	http://e-soul.org/distfiles/ \
 MAINTAINER=	mgp@e-soul.org
 COMMENT=	Simple GUI tool for tracking port updates
 
-LICENSE=	BSD
+LICENSE=	BSD2CLAUSE
 
 PLIST_FILES=	bin/portrac \
 		share/portrac/portrac.png \
@@ -22,6 +21,10 @@ PLIST_DIRS=	share/portrac
 
 USES=		qmake tar:bzip2
 USE_QT4=	gui moc_build
+
+.if defined(WITH_PKGNG)
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-PortChecker.cc
+.endif
 
 do-install:
 		${INSTALL_PROGRAM} ${WRKDIR}/${DISTNAME}/portrac ${STAGEDIR}${PREFIX}/bin && \
