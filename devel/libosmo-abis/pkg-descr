@@ -1,0 +1,5 @@
+This is a library containing common/shared code regarding the A-bis
+interface between BTS and BSC. It implements drivers for mISDN and DAHDI
+based E1 cards, as well as some A-bis/IP dialects.
+
+WWW: http://openbsc.osmocom.org/trac/wiki/libosmo-abis

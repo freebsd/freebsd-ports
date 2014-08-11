@@ -1,0 +1,23 @@
+include/osmocom/abis/ipa.h
+include/osmocom/abis/trau_frame.h
+include/osmocom/abis/ipa_proxy.h
+include/osmocom/abis/ipaccess.h
+include/osmocom/abis/abis.h
+include/osmocom/abis/subchan_demux.h
+include/osmocom/abis/e1_input.h
+include/osmocom/abis/lapd.h
+include/osmocom/abis/lapd_pcap.h
+include/osmocom/trau/osmo_ortp.h
+lib/libosmoabis.so.3.0.0
+lib/libosmoabis.so.3
+lib/libosmoabis.so
+lib/libosmotrau.so.0.0.0
+lib/libosmotrau.so.0
+lib/libosmotrau.so
+lib/libosmoabis.a
+lib/libosmotrau.a
+libdata/pkgconfig/libosmoabis.pc
+libdata/pkgconfig/libosmotrau.pc
+@dirrm include/osmocom/abis
+@dirrm include/osmocom/trau
+@dirrmtry include/osmocom
