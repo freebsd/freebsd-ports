@@ -96,10 +96,5 @@ post-patch:
 		${WRKSRC}/camel/Makefile.in
 	@${REINPLACE_CMD} '/^test_imapx_LDADD =/s/=/= -lgobject-2.0 -lgthread-2.0/' \
 		${WRKSRC}/camel/providers/imapx/Makefile.in
-	@${REINPLACE_CMD} -e '/^test_contact_store_LDADD =/s|$$| ../addressbook/libebook/libebook-1.2.la|' \
-		-e '/^test_name_selector_LDADD =/s|$$| ../camel/libcamel-1.2.la -lgthread-2.0|' \
-		${WRKSRC}/libedataserverui/Makefile.in
-	@${REINPLACE_CMD} '/^soap_test_LDADD =/s/=/= -lgthread-2.0/' \
-		${WRKSRC}/servers/groupwise/Makefile.in
 
 .include <bsd.port.mk>
