@@ -978,7 +978,6 @@
     SUBDIR += switzerland
     SUBDIR += symbion-sslproxy
     SUBDIR += tclsasl
-    SUBDIR += termlog
     SUBDIR += tinc
     SUBDIR += tinyca
     SUBDIR += tinysu
