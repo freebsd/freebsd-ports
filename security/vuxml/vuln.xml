@@ -108,7 +108,7 @@ Notes:
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
 	<p>Subversion Project reports:</p>
-	<blockquote cite="INSERT URL HERE">
+	<blockquote cite="http://subversion.apache.org/security/CVE-2014-3522-advisory.txt">
 	  <p>Using the Serf RA layer of Subversion for HTTPS uses the apr_fnmatch API
 	    to handle matching wildcards in certificate Common Names and Subject
 	    Alternate Names.  However, apr_fnmatch is not designed for this purpose.
