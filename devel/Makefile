@@ -4637,7 +4637,7 @@
     SUBDIR += ta-lib
     SUBDIR += tailor
     SUBDIR += talloc
-    SUBDIR += tass
+    SUBDIR += tass64
     SUBDIR += tbb
     SUBDIR += tcl-memchan
     SUBDIR += tcl-mmap
