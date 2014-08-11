@@ -3,13 +3,14 @@
 
 PORTNAME=	GeoIP
 PORTVERSION=	1.6.0
+PORTREVISION=	1
 CATEGORIES=	net geography
 MASTER_SITES=	http://geolite.maxmind.com/download/geoip/api/c/
 
 MAINTAINER=	adamw@FreeBSD.org
 COMMENT=	Find the country that any IP address or hostname originates from
 
-USES=		libtool:oldver pathfix
+USES=		libtool pathfix
 USE_AUTOTOOLS=	aclocal automake libtoolize autoconf
 AUTOMAKE_ARGS=	--add-missing
 PATHFIX_MAKEFILEIN=	Makefile.am
