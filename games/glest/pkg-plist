@@ -3,5 +3,3 @@ bin/glest
 %%DATADIR%%/glest
 %%DATADIR%%/glest.ini
 %%PORTDOCS%%%%DOCSDIR%%/code_license.txt
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%
-@dirrmtry %%DATADIR%%
