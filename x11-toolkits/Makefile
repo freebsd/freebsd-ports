@@ -121,6 +121,9 @@
     SUBDIR += linux-f10-pango
     SUBDIR += linux-f10-qt45
     SUBDIR += linux-f10-tk85
+    SUBDIR += linux-f20-qt-mobility
+    SUBDIR += linux-f20-qt4
+    SUBDIR += linux-f20-qt4-gui
     SUBDIR += movingmotif
     SUBDIR += mowitz
     SUBDIR += mygui

@@ -1,0 +1,8 @@
+FLAC stands for Free Lossless Audio Codec. Grossly oversimplified, FLAC
+is similar to Ogg Vorbis, but lossless. The FLAC project consists of
+the stream format, reference encoders and decoders in library form,
+flac, a command-line program to encode and decode FLAC files, metaflac,
+a command-line metadata editor for FLAC files and input plugins for
+various music players.
+
+This package contains the FLAC libraries from Fedora 20.

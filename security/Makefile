@@ -312,6 +312,9 @@
     SUBDIR += linux-f10-libtasn1
     SUBDIR += linux-f10-nss
     SUBDIR += linux-f10-openssl
+    SUBDIR += linux-f20-audit-libs
+    SUBDIR += linux-f20-ca-certificates
+    SUBDIR += linux-f20-openssl-libs
     SUBDIR += lockdown
     SUBDIR += log2timeline
     SUBDIR += logcheck

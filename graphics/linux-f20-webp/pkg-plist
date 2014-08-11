@@ -1,0 +1,12 @@
+usr/lib/libwebp.so.4
+usr/lib/libwebp.so.4.0.3
+usr/lib/libwebpdemux.so.0
+usr/lib/libwebpdemux.so.0.0.1
+usr/lib/libwebpmux.so.0
+usr/lib/libwebpmux.so.0.0.1
+usr/share/doc/libwebp/AUTHORS
+usr/share/doc/libwebp/COPYING
+usr/share/doc/libwebp/NEWS
+usr/share/doc/libwebp/PATENTS
+usr/share/doc/libwebp/README
+@dirrmtry usr/share/doc/libwebp

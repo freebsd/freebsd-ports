@@ -1,0 +1,14 @@
+usr/lib/libaudio.so.2
+usr/lib/libaudio.so.2.4
+usr/share/X11/AuErrorDB
+%%PORTDOCS%%usr/%%DOCSDIR%%/FAQ
+%%PORTDOCS%%usr/%%DOCSDIR%%/HISTORY
+%%PORTDOCS%%usr/%%DOCSDIR%%/LICENSE_CLARIFICIATION
+%%PORTDOCS%%usr/%%DOCSDIR%%/README
+%%PORTDOCS%%usr/%%DOCSDIR%%/TODO
+@dirrmtry usr/lib
+@dirrmtry usr/share/X11
+%%PORTDOCS%%@dirrmtry usr/%%DOCSDIR%%
+@dirrmtry usr/share/doc
+@dirrmtry usr/share
+@dirrmtry usr

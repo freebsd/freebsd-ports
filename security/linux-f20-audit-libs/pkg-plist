@@ -1,0 +1,7 @@
+etc/libaudit.conf
+lib/libaudit.so.1
+lib/libaudit.so.1.0.0
+lib/libauparse.so.0
+lib/libauparse.so.0.0.0
+usr/share/man/man5/libaudit.conf.5.gz
+@dirrmtry lib

@@ -1,0 +1,8 @@
+usr/lib/libQtWebKit.so.4
+usr/lib/libQtWebKit.so.4.10
+usr/lib/libQtWebKit.so.4.10.3
+usr/lib/qt4/imports/QtWebKit/libqmlwebkitplugin.so
+usr/lib/qt4/imports/QtWebKit/qmldir
+@dirrmtry usr/lib/qt4/imports/QtWebKit
+@dirrmtry usr/lib/qt4/imports
+@dirrmtry usr/lib/qt4

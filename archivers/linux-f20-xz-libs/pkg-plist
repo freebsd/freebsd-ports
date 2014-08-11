@@ -1,0 +1,7 @@
+usr/lib/liblzma.so.5
+usr/lib/liblzma.so.5.0.99
+usr/share/doc/xz-libs/COPYING
+usr/share/doc/xz-libs/COPYING.GPLv2
+usr/share/doc/xz-libs/COPYING.GPLv3
+usr/share/doc/xz-libs/COPYING.LGPLv2.1
+@dirrmtry usr/share/doc/xz-libs

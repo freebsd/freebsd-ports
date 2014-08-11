@@ -427,6 +427,12 @@
     SUBDIR += linux-f10-openal-soft
     SUBDIR += linux-f10-pulseaudio-libs
     SUBDIR += linux-f10-sdl_mixer
+    SUBDIR += linux-f20-alsa-lib
+    SUBDIR += linux-f20-flac-libs
+    SUBDIR += linux-f20-gsm
+    SUBDIR += linux-f20-libogg
+    SUBDIR += linux-f20-libvorbis
+    SUBDIR += linux-f20-nas-libs
     SUBDIR += linux-fmodapi
     SUBDIR += linux-genpuid
     SUBDIR += linux-laudio

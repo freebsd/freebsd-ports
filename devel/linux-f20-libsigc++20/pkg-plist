@@ -1,0 +1,9 @@
+usr/lib/libsigc-2.0.so.0
+usr/lib/libsigc-2.0.so.0.0.0
+%%PORTDOCS%%usr/%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%usr/%%DOCSDIR%%/COPYING
+%%PORTDOCS%%usr/%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%usr/%%DOCSDIR%%/NEWS
+%%PORTDOCS%%usr/%%DOCSDIR%%/README
+%%PORTDOCS%%usr/%%DOCSDIR%%/TODO
+%%PORTDOCS%%@dirrmtry usr/%%DOCSDIR%%

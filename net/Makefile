@@ -170,9 +170,9 @@
     SUBDIR += go.net
     SUBDIR += gofish
     SUBDIR += gogoc
-    SUBDIR += googlecl
     SUBDIR += google-cloud-sdk
     SUBDIR += google-daemon
+    SUBDIR += googlecl
     SUBDIR += gopher
     SUBDIR += gotthard
     SUBDIR += gpxe

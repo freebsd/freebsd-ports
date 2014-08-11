@@ -1,0 +1,11 @@
+usr/lib/libogg.so.0
+usr/lib/libogg.so.0.8.0
+%%PORTDOCS%%usr/%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%usr/%%DOCSDIR%%/CHANGES
+%%PORTDOCS%%usr/%%DOCSDIR%%/COPYING
+%%PORTDOCS%%usr/%%DOCSDIR%%/README
+@dirrmtry usr/lib
+%%PORTDOCS%%@dirrmtry usr/%%DOCSDIR%%
+@dirrmtry usr/share/doc
+@dirrmtry usr/share
+@dirrmtry usr

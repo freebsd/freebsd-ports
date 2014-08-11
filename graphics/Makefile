@@ -574,6 +574,12 @@
     SUBDIR += linux-f10-sdl_ttf
     SUBDIR += linux-f10-tiff
     SUBDIR += linux-f10-ungif
+    SUBDIR += linux-f20-jpeg-turbo
+    SUBDIR += linux-f20-libdrm
+    SUBDIR += linux-f20-mesa-libGL
+    SUBDIR += linux-f20-mesa-libglapi
+    SUBDIR += linux-f20-png
+    SUBDIR += linux-f20-webp
     SUBDIR += linux-sdl_ttf
     SUBDIR += linux_glide
     SUBDIR += lprof-devel

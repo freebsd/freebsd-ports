@@ -106,6 +106,7 @@
     SUBDIR += avltree
     SUBDIR += avr-binutils
     SUBDIR += avr-gcc
+    SUBDIR += avr-gcc-devel
     SUBDIR += avr-gdb
     SUBDIR += avr-libc
     SUBDIR += avra
@@ -1216,6 +1217,17 @@
     SUBDIR += linux-f10-ncurses-base
     SUBDIR += linux-f10-nspr
     SUBDIR += linux-f10-sdl12
+    SUBDIR += linux-f20-dbus
+    SUBDIR += linux-f20-dbus-libs
+    SUBDIR += linux-f20-jsonc-libs
+    SUBDIR += linux-f20-libcap-ng
+    SUBDIR += linux-f20-libexpat
+    SUBDIR += linux-f20-libffi
+    SUBDIR += linux-f20-libsigc++20
+    SUBDIR += linux-f20-libsndfile
+    SUBDIR += linux-f20-libxslt
+    SUBDIR += linux-f20-orc
+    SUBDIR += linux-f20-tcp_wrappers-libs
     SUBDIR += linux-kmod-compat
     SUBDIR += linux_kdump
     SUBDIR += linux_libusb
@@ -4650,7 +4662,7 @@
     SUBDIR += ta-lib
     SUBDIR += tailor
     SUBDIR += talloc
-    SUBDIR += tass
+    SUBDIR += tass64
     SUBDIR += tbb
     SUBDIR += tcl-memchan
     SUBDIR += tcl-mmap

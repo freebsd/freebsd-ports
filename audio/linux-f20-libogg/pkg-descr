@@ -1,0 +1,5 @@
+Libogg is a library for manipulating Ogg bitstream file formats.
+Libogg supports both making Ogg bitstreams and getting packets from
+Ogg bitstreams.
+
+This package contains the libOgg libraries from Fedora 20.

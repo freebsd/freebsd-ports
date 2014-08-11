@@ -67,6 +67,7 @@
     SUBDIR += libzip
     SUBDIR += linux-f10-ucl
     SUBDIR += linux-f10-upx
+    SUBDIR += linux-f20-xz-libs
     SUBDIR += lrzip
     SUBDIR += lz4
     SUBDIR += lzip

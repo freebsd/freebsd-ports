@@ -1,0 +1,27 @@
+usr/bin/xmlcatalog
+usr/bin/xmllint
+usr/bin/xsltproc
+usr/lib/libexslt.so.0
+usr/lib/libexslt.so.0.8.17
+usr/lib/libxml2.so.2
+usr/lib/libxml2.so.2.9.1
+usr/lib/libxslt.so.1
+usr/lib/libxslt.so.1.1.28
+usr/share/doc/libxml2/AUTHORS
+usr/share/doc/libxml2/Copyright
+usr/share/doc/libxml2/NEWS
+usr/share/doc/libxml2/README
+usr/share/doc/libxml2/TODO
+%%PORTDOCS%%usr/%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%usr/%%DOCSDIR%%/ChangeLog.gz
+%%PORTDOCS%%usr/%%DOCSDIR%%/Copyright
+%%PORTDOCS%%usr/%%DOCSDIR%%/FEATURES
+%%PORTDOCS%%usr/%%DOCSDIR%%/NEWS
+%%PORTDOCS%%usr/%%DOCSDIR%%/README
+usr/share/man/man1/xmlcatalog.1.gz
+usr/share/man/man1/xmllint.1.gz
+usr/share/man/man1/xsltproc.1.gz
+usr/share/man/man3/libxml.3.gz
+@dirrmtry usr/lib/libxslt-plugins
+@dirrmtry usr/share/doc/libxml2
+%%PORTDOCS%%@dirrmtry usr/%%DOCSDIR%%

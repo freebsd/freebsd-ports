@@ -1,0 +1,10 @@
+usr/lib/libpng16.so.16
+usr/lib/libpng16.so.16.3.0
+usr/share/doc/libpng/CHANGES
+usr/share/doc/libpng/LICENSE
+usr/share/doc/libpng/README
+usr/share/doc/libpng/TODO
+usr/share/doc/libpng/example.c
+usr/share/doc/libpng/libpng-manual.txt
+usr/share/man/man5/png.5.gz
+@dirrmtry usr/share/doc/libpng
