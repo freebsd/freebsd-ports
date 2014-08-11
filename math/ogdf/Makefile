@@ -1,28 +1,27 @@
-# Created by: gahr
+# Created by: Pietro Cerutti <gahr@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	ogdf
 PORTVERSION=	2012.07
 CATEGORIES=	math
-MASTER_SITES=	${MASTER_SITE_LOCAL} \
+MASTER_SITES=	LOCAL/gahr \
 		http://people.freebsd.org/~gahr/distfiles/
-MASTER_SITE_SUBDIR=	gahr
-DISTNAME=	ogdf.v2012.07
+DISTNAME=	${PORTNAME}.v${PORTVERSION}
 
 MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	C++ class library for the automatic layout of diagrams
 
 LICENSE=	GPLv2
 
+USES=		zip
+USE_LDCONFIG=	yes
+USE_PYTHON_BUILD=	yes
+
+WRKSRC=		${WRKDIR}/${PORTNAME:tu}
+
 OPTIONS_DEFINE=	COIN ABACUS
 COIN_DESC=	Use the Coin Open Solver Interface (Osi)
 ABACUS_DESC=	Use the ABACUS branch-and-cut library
-
-USES=		zip
-USE_LDCONFIG=	yes
-USE_PYTHON=	build
-
-WRKSRC=		${WRKDIR}/${PORTNAME:tu}
 
 .include <bsd.port.options.mk>
 
@@ -43,18 +42,19 @@ USE_ABACUS=	false
 .endif
 
 post-patch:
-	${REINPLACE_CMD} -e '\
+	@${REINPLACE_CMD} -e '\
 	    s|%%CXX%%|${CXX}|g; \
 	    s|%%LOCALBASE%%|${LOCALBASE}|g; \
 	    s|%%USE_COIN%%|${USE_COIN}|g; \
 	    s|%%USE_ABACUS%%|${USE_ABACUS}|g' \
-	    ${WRKSRC}/makeMakefile.config
+		${WRKSRC}/makeMakefile.config
 
 do-configure:
 	cd ${WRKSRC} && ${PYTHON_CMD} makeMakefile.py
 
 do-install:
-	${INSTALL_DATA} ${WRKSRC}/_release/libOGDF.so ${STAGEDIR}${PREFIX}/lib/libOGDF.so.1
+	${INSTALL_DATA} ${WRKSRC}/_release/libOGDF.so \
+		${STAGEDIR}${PREFIX}/lib/libOGDF.so.1
 	${LN} -sf libOGDF.so.1 ${STAGEDIR}${PREFIX}/lib/libOGDF.so
 	cd ${WRKSRC} && ${COPYTREE_SHARE} ogdf ${STAGEDIR}${PREFIX}/include
 
