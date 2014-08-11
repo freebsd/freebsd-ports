@@ -29,7 +29,6 @@ libexec/gvfsd-afp-browse
 libexec/gvfsd
 libexec/gvfsd-archive
 libexec/gvfsd-burn
-%%CDDA%%libexec/gvfsd-cdda
 libexec/gvfsd-computer
 libexec/gvfsd-dav
 %%AVAHI%%libexec/gvfsd-dnssd
@@ -76,7 +75,6 @@ share/gvfs/mounts/afp-browse.mount
 share/gvfs/mounts/afp.mount
 %%DATADIR%%/mounts/archive.mount
 %%DATADIR%%/mounts/burn.mount
-%%CDDA%%%%DATADIR%%/mounts/cdda.mount
 %%DATADIR%%/mounts/computer.mount
 %%DATADIR%%/mounts/dav.mount
 %%AVAHI%%%%DATADIR%%/mounts/dav+sd.mount
