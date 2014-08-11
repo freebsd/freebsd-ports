@@ -109,7 +109,7 @@ PATCH_SITE_SUBDIR=	Versions/v2/2.7/changesets
 #PATCH_DIST_STRIP=	-p1
 PATCHFILES=	SQUID-2012_1.patch
 
-MAINTAINER=	tmseck@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	HTTP Caching Proxy
 
 SQUID_STABLE_VER=	9
