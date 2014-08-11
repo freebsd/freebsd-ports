@@ -29,23 +29,19 @@ SUB_FILES=		glest-wrapper pkg-message
 
 JAM_CMD=		${LOCALBASE}/bin/jam -qa
 
-OPTIONS_DEFINE=	EDITOR
+OPTIONS_DEFINE=	DOCS EDITOR
+OPTIONS_SUB=	yes
 EDITOR_DESC=	Build map editor
 
 EXTRACT_AFTER_ARGS=	-d ${WRKDIR}/${DISTNAME}
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
-.include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MEDITOR}
 USE_WX=		2.6+
 WX_CONF_ARGS=	relative
 WANT_UNICODE=	yes
-PLIST_SUB+=	EDITOR=""
 HAVE_EDITOR=	true
-.else
-PLIST_SUB+=	EDITOR="@comment "
 .endif
 
 pre-extract:
@@ -70,20 +66,15 @@ do-build:
 	@cd ${WRKSRC} && ${JAM_CMD}
 
 do-install:
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/docs/code_license.txt ${DOCSDIR}/code_license.txt
-.endif
-	@${MKDIR} ${DATADIR}
-	${INSTALL_PROGRAM} ${WRKSRC}/glest ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/mk/linux/glest.ini ${DATADIR}
-	${INSTALL_SCRIPT} ${WRKDIR}/glest-wrapper ${PREFIX}/bin/${PORTNAME}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/docs/code_license.txt ${STAGEDIR}${DOCSDIR}/code_license.txt
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/glest ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/mk/linux/glest.ini ${STAGEDIR}${DATADIR}
+	${INSTALL_SCRIPT} ${WRKDIR}/glest-wrapper ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
-.if defined(HAVE_EDITOR)
-	${INSTALL_PROGRAM} ${WRKSRC}/glest_editor ${PREFIX}/bin/
+.if ${PORT_OPTIONS:MEDITOR}
+	${INSTALL_PROGRAM} ${WRKSRC}/glest_editor ${STAGEDIR}${PREFIX}/bin/
 .endif
 
-post-install:
-	@${CAT} ${PKGMESSAGE}
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
