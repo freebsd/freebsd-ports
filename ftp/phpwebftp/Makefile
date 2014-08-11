@@ -2,31 +2,33 @@
 # $FreeBSD$
 
 PORTNAME=	phpwebftp
-PORTVERSION=	3.3
-PORTREVISION=	1
+PORTVERSION=	3.3b
 CATEGORIES=	ftp
-MASTER_SITES=	SF/${PORTNAME}/OldFiles
+MASTER_SITES=	SF/${PORTNAME}/phpWebFTP/phpWebFTP%203.3
 DISTNAME=	${PORTNAME}${PORTVERSION:S/.//}
 
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Set of PHP-scripts to manage FTP over the web
 
+LICENSE=	GPLv2
+
 USES=		zip
 NO_BUILD=	yes
 USE_PHP=	ftp
-PHPWEBFTPDIR?=	www/${PORTNAME}
-PLIST_SUB+=	PHPWEBFTPDIR=${PHPWEBFTPDIR} WWWOWN=${WWWOWN} WWWGRP=${WWWGRP}
 WRKSRC=		${WRKDIR}/${PORTNAME}
-INSTALL_DIRE=	${INSTALL} -d -m 0755 -o ${WWWOWN} -g ${WWWGRP}
-INSTALL_FILE=	${INSTALL} -m 0644 -o ${WWWOWN} -g ${WWWGRP}
 
-post-extract:
+PHPWEBFTPDIR?=	${WWWDIR_REL}
+PLIST_SUB+=	PHPWEBFTPDIR=${PHPWEBFTPDIR} WWWOWN=${WWWOWN} WWWGRP=${WWWGRP}
+SHAREOWN=	${WWWOWN}
+SHAREGRP=	${WWWGRP}
+
+post-patch:
 	@${FIND} -d ${WRKSRC} -name CVS -type d -exec ${RM} -R "{}" \;
+	@${RM} ${WRKSRC}/img/Thumbs.db
+	@${MV} ${WRKSRC}/config.inc.php ${WRKSRC}/config.inc.php.sample
 
 do-install:
-	${INSTALL_DIRE} ${PREFIX}/${PHPWEBFTPDIR}
-	(cd ${WRKSRC} && \
-		${FIND} * -type d -exec ${INSTALL_DIRE} "${STAGEDIR}${PREFIX}/${PHPWEBFTPDIR}/{}" \; && \
-		${FIND} -E * -type f -iregex ".*\.(php|html|css|gif|js)" \
-			-exec ${INSTALL_FILE} "{}" "${STAGEDIR}${PREFIX}/${PHPWEBFTPDIR}/{}" \;)
+	@${MKDIR} ${STAGEDIR}${PREFIX}/${PHPWEBFTPDIR}
+	(cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/${PHPWEBFTPDIR})
+
 .include <bsd.port.mk>
