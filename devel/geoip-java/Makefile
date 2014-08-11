@@ -2,6 +2,7 @@
 
 PORTNAME=	geoip
 PORTVERSION=	1.2.8
+PORTREVISION=	1
 CATEGORIES=	devel java
 MASTER_SITES=	http://www.maxmind.com/download/geoip/api/java/
 DISTNAME=	GeoIPJava-${PORTVERSION}

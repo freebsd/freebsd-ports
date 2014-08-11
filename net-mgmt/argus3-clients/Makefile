@@ -3,7 +3,7 @@
 
 PORTNAME=	argus-clients
 PORTVERSION=	3.0.6.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-mgmt security
 MASTER_SITES=	http://qosient.com/argus/src/ \
 		ftp://qosient.com/pub/argus/src/
