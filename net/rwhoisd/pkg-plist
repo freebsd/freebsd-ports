@@ -1,6 +1,8 @@
 bin/rwhois_deleter
 bin/rwhois_indexer
 bin/rwhois_repack
+man/man8/rwhois_indexer.8.gz
+man/man8/rwhoisd.8.gz
 sbin/rwhoisd
 %%ETCDIR%%/samples/a.com/attribute_defs/asn.tmpl
 %%ETCDIR%%/samples/a.com/attribute_defs/contact.tmpl
