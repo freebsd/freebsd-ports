@@ -13,7 +13,7 @@ COMMENT=	Route-finder for cyclists in Berlin and Brandenburg
 BUILD_DEPENDS=	p5-Inline>=0:${PORTSDIR}/devel/p5-Inline \
 		p5-CDB_File>=0:${PORTSDIR}/databases/p5-CDB_File
 RUN_DEPENDS=	p5-Tk>=0:${PORTSDIR}/x11-toolkits/p5-Tk \
-p5-Inline>=0:${PORTSDIR}/devel/p5-Inline \
+		p5-Inline>=0:${PORTSDIR}/devel/p5-Inline \
 		p5-CDB_File>=0:${PORTSDIR}/databases/p5-CDB_File
 
 USES=		perl5
@@ -23,7 +23,14 @@ MYDESTDIR=	${STAGEDIR}${PREFIX}/BBBike
 
 .include <bsd.port.pre.mk>
 
+# The following != assignment will generate a warning
+# with portlint et al. Problem is that the nearest
+# replacements ${PERL_VER}/${PERL_ARCH} do not work here:
+# the value of PERL_ARCH is always "mach" on FreeBSD systems,
+# but $Config{archname} here is something like "amd64-freebsd"
+.if exists(${PERL5})
 LOCAL_PERL_ARCH!=	${PERL5} -MConfig -e '$$x = qq{$$Config{version}/$$Config{archname}}; $$x =~ s{/}{\\\\/}g; print $$x'
+.endif
 PLIST_SUB=		LOCAL_PERL_ARCH=${LOCAL_PERL_ARCH}
 BBBIKE_PERL_EXE=	bbbike cbbbike bbbikeclient cmdbbbike smsbbbike
 
