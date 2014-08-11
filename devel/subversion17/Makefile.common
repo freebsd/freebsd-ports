@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	subversion
-PORTVERSION=	1.7.17
-PORTREVISION?=	2
+PORTVERSION=	1.7.18
+PORTREVISION?=	0
 CATEGORIES+=	devel
 MASTER_SITES=	${MASTER_SITE_APACHE}
 DIST_SUBDIR=	subversion17
@@ -76,10 +76,6 @@ STATIC_CONFIGURE_ON=		--enable-all-static
 
 # ===============================================================
 .include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MMOD_DONTDOTHAT} && !${PORT_OPTIONS:MMOD_DAV_SVN}
-IGNORE=	to build mod_dontdothat OPTION mod_dav_svn is required
-.endif
 
 .if ${PORT_OPTIONS:MKDE_KWALLET} && !${PORT_OPTIONS:MNLS}
 IGNORE= KWallet requires OPTION NLS set to ON
