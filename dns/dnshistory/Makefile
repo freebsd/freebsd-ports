@@ -13,7 +13,7 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre
 
-USE_BDB=	yes
+USE_BDB=	4.2+
 GNU_CONFIGURE=	yes
 
 PLIST_FILES=	bin/${PORTNAME} man/man1/${PORTNAME}.1.gz
