@@ -82,8 +82,8 @@ WEATHER_LIB_DEPENDS=	libgweather-3.so:${PORTSDIR}/net/libgweather
 WEATHER_CONFIGURE_ENABLE=	weather
 
 SPAMASSASSIN_CONFIGURE_ENABLE=	spamassassin
-SPAMASSASSIN_BUILD_DEPEND=	spamassassin:${PORTSDIR}/mail/spamassassin
-SPAMASSASSIN_RUN_DEPEND=	spamassassin:${PORTSDIR}/mail/spamassassin
+SPAMASSASSIN_BUILD_DEPENDS=	spamassassin:${PORTSDIR}/mail/spamassassin
+SPAMASSASSIN_RUN_DEPENDS=	spamassassin:${PORTSDIR}/mail/spamassassin
 
 BOGOFILTER_CONFIGURE_ENABLE=	bogofilter
 BOGOFILTER_BUILD_DEPENDS=	bogofilter:${PORTSDIR}/mail/bogofilter
