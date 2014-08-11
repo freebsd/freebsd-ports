@@ -10,7 +10,7 @@ MASTER_SITES=		http://sourceforge.net/projects/${PORTNAME}/files/active/src/:sou
 			http://sourceforge.net/projects/${PORTNAME}/files/active/tools/:tools
 PKGNAMEPREFIX=		${PYTHON_PKGNAMEPREFIX}
 DISTNAME=		${PORTNAME}_${PORTVERSION}
-DISTFILES+=	      	${DISTNAME}.tar.gz:source \
+DISTFILES+=		${DISTNAME}.tar.gz:source \
 			${DISTNAME}_demos.tar.gz:demo \
 			${DISTNAME}_tools.tar.gz:tools
 
@@ -35,23 +35,21 @@ ALL_TARGET=		fife-python
 INSTALL_TARGET=		install-python
 MAKE_ENV+=		SWIG=${LOCALBASE}/bin/swig2.0
 
+OPTIONS_DEFINE=		DOCS
+
 post-patch:
 	${REINPLACE_CMD} -e 's/X11R6/local/g; s/libpng/ligpng15/g' ${WRKSRC}/build/openbsd4-config.py && \
 		${MV} ${WRKSRC}/build/openbsd4-config.py ${WRKSRC}/build/${PYTHON_PLATFORM}-config.py
 
 OPTIONS_DEFINE=	DOCS
 
-.include <bsd.port.options.mk>
-
 post-install:
 	${MKDIR} ${STAGEDIR}${DATADIR}
 	${MV} ${WRKDIR}/tools ${STAGEDIR}${DATADIR}
 	${MV} ${WRKDIR}/demos ${STAGEDIR}${DATADIR}
-.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for FILE in README AUTHORS CHANGES COPYING
 	${MV} ${WRKSRC}/${FILE} ${STAGEDIR}${DOCSDIR}
 .endfor
-.endif
 
 .include <bsd.port.mk>

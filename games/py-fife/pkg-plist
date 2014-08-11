@@ -476,10 +476,10 @@
 %%DATADIR%%/tools/object_header.sh
 %%DATADIR%%/tools/pack_anim.py
 %%DATADIR%%/tools/ruleset_tester.py
-%%DOCSDIR%%/AUTHORS
-%%DOCSDIR%%/CHANGES
-%%DOCSDIR%%/COPYING
-%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/CHANGES
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/README
 @dirrm %%PYTHON_SITELIBDIR%%/fife/extensions/serializers
 @dirrm %%PYTHON_SITELIBDIR%%/fife/extensions/pychan/widgets/ext
 @dirrm %%PYTHON_SITELIBDIR%%/fife/extensions/pychan/widgets
