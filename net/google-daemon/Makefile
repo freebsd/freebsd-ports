@@ -3,6 +3,7 @@
 
 PORTNAME=	google-daemon
 PORTVERSION=	1.1.5
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	https://github.com/GoogleCloudPlatform/compute-image-packages/archive/${PORTVERSION}.tar.gz?dummy=/
 
