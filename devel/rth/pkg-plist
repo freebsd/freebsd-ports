@@ -1,3 +1,5 @@
+@owner %%WWWOWN%%
+@group %%WWWGRP%%
 www/rth/admin_page.php
 www/rth/adodb-4.65/adodb-csvlib.inc.php
 www/rth/adodb-4.65/adodb-datadict.inc.php
@@ -190,7 +192,7 @@ www/rth/api/ldap_api.php
 www/rth/api/log_api.php
 www/rth/api/news_api.php
 www/rth/api/project_api.php
-www/rth/api/properties_inc.php-dist
+@sample www/rth/api/properties_inc.php.sample
 www/rth/api/release_api.php
 www/rth/api/report_api.php
 www/rth/api/requirement_api.php
@@ -3198,6 +3200,8 @@ www/rth/user_edit_my_account_action.php
 www/rth/user_edit_my_account_page.php
 www/rth/user_edit_page.php
 www/rth/user_manage_page.php
+@group
+@owner
 @dirrmtry www/rth/sql
 @dirrmtry www/rth/phpmailer/language
 @dirrmtry www/rth/phpmailer
