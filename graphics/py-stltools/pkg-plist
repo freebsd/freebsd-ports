@@ -2,10 +2,6 @@ bin/stl2pdf
 bin/stl2pov
 bin/stl2ps
 bin/stlinfo
-%%PYTHON_SITELIBDIR%%/stltools-3.2-py2.7.egg-info/PKG-INFO
-%%PYTHON_SITELIBDIR%%/stltools-3.2-py2.7.egg-info/SOURCES.txt
-%%PYTHON_SITELIBDIR%%/stltools-3.2-py2.7.egg-info/dependency_links.txt
-%%PYTHON_SITELIBDIR%%/stltools-3.2-py2.7.egg-info/top_level.txt
 %%PYTHON_SITELIBDIR%%/stltools/__init__.py
 %%PYTHON_SITELIBDIR%%/stltools/__init__.pyc
 %%PYTHON_SITELIBDIR%%/stltools/__init__.pyo
@@ -28,6 +24,5 @@ bin/stlinfo
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/cube.stl
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/cube_bin.stl
 @dirrm %%PYTHON_SITELIBDIR%%/stltools
-@dirrm %%PYTHON_SITELIBDIR%%/stltools-3.2-py2.7.egg-info
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%

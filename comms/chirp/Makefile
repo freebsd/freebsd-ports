@@ -16,18 +16,18 @@ LICENSE=	GPLv3
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/serial:${PORTSDIR}/comms/py-serial \
 		${PYTHON_SITELIBDIR}/libxml2.py:${PORTSDIR}/textproc/py-libxml2
 
-USE_PYTHON=	YES
-USE_PYDISTUTILS=	YES
+USE_PYTHON=	yes
+USE_PYDISTUTILS=	yes
 
 OPTIONS_DEFINE=	DOCS
-
-.include <bsd.port.pre.mk>
 
 pre-configure:
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|' \
 		${WRKSRC}/chirpui/mainapp.py
 
+post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	@${INSTALL_DATA}  ${WRKSRC}/COPYING ${STAGEDIR}${DOCSDIR}
+	@${RMDIR} ${STAGEDIR}${PREFIX}/share/chirp/images
+	@${INSTALL_DATA} ${WRKSRC}/COPYING ${STAGEDIR}${DOCSDIR}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
