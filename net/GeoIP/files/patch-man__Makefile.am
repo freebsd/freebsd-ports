@@ -1,0 +1,17 @@
+--- ./man/Makefile.am.orig	2014-08-11 20:36:57.000000000 +0200
++++ ./man/Makefile.am	2014-08-11 20:38:56.000000000 +0200
+@@ -1,4 +1,4 @@
+-man_MANS = geoiplookup6.1 geoiplookup.1
++NOINST_man_MANS = geoiplookup6.1 geoiplookup.1
+ 
+ EXTRA_DIST = geoiplookup6.1.in geoiplookup.1.in
+ 
+@@ -20,7 +20,7 @@
+ LOOKUP_MAN = $(mandir)/man1/geoiplookup.1
+ LOOKUP6_MAN = $(mandir)/man1/geoiplookup6.1
+ 
+-install-data-hook:
++install-data-hook: $(NOINST_man_MANS)
+ 	cat geoiplookup.1 | sed s,DATADIR,$(pkgdatadir), > $(DESTDIR)$(LOOKUP_MAN)
+ 	cat geoiplookup6.1 | sed s,DATADIR,$(pkgdatadir), > $(DESTDIR)$(LOOKUP6_MAN)
+ 
