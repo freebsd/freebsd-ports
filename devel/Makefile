@@ -1105,6 +1105,7 @@
     SUBDIR += libopkele
     SUBDIR += liborcus
     SUBDIR += libosinfo
+    SUBDIR += libosmo-abis
     SUBDIR += libosmo-sccp
     SUBDIR += libosmocore
     SUBDIR += libowfat
