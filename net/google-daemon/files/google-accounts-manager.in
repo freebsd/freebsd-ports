@@ -4,6 +4,7 @@
 #
 # PROVIDE: google-accounts-manager
 # BEFORE: LOGIN
+# REQUIRE: syslogd
 # KEYWORD: shutdown
 #
 # Add the following line to /etc/rc.conf to enable google-accounts-manager:
