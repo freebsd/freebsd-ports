@@ -12,9 +12,9 @@ bin/pronto2lirc
 bin/xmode2
 include/lirc/lirc_client.h
 lib/liblirc_client.a
-lib/liblirc_client.la
 lib/liblirc_client.so
-lib/liblirc_client.so.2
+lib/liblirc_client.so.0
+lib/liblirc_client.so.0.2.1
 man/man1/ircat.1.gz
 man/man1/irexec.1.gz
 man/man1/irpty.1.gz
@@ -31,8 +31,6 @@ man/man8/lircmd.8.gz
 sbin/lircd
 sbin/lircmd
 @dirrm include/lirc
-@unexec if cmp -s %D/etc/lircd.conf.sample %D/etc/lircd.conf; then rm -f %D/etc/lircd.conf; fi
-etc/lircd.conf.sample
-@exec if [ ! -f %D/etc/lircd.conf ] ; then cp -p %D/%F %B/lircd.conf; fi
+@sample etc/lircd.conf.sample
 @exec mkdir -p /var/run/lirc
 @unexec rmdir /var/run/lirc 2> /dev/null || true
