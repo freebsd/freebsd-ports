@@ -3,7 +3,7 @@
 
 PORTNAME=	netperf
 PORTVERSION=	2.6.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	benchmarks ipv6
 MASTER_SITES=	ftp://ftp.netperf.org/netperf/ \
 		http://fossies.org/unix/misc/
@@ -25,6 +25,8 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	"transform="
 CONFIGURE_ARGS=	--program-prefix=""  --program-suffix="" --enable-dirty \
 		--enable-demo --enable-burst --enable-intervals
+
+INFO=		netperf
 
 .include <bsd.port.options.mk>
 
