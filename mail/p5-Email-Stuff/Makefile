@@ -21,4 +21,7 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USES=		perl5
 USE_PERL5=	configure
 
+DEPRECATED=	Deprecated in favour of mail/p5-Email-Stuffer
+EXPIRATION_DATE=	2014-10-15
+
 .include <bsd.port.mk>
