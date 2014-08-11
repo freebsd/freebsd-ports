@@ -1,9 +1,9 @@
 # Created by: Koop Mast <kwm@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/mail/evolution-mapi/Makefile 19619 2014-05-12 08:21:15Z gusi $
+#   $MCom: ports/trunk/mail/evolution-mapi/Makefile 19797 2014-08-11 14:09:34Z gusi $
 
 PORTNAME=	evolution-mapi
-PORTVERSION=	3.12.2
+PORTVERSION=	3.12.5
 CATEGORIES=	mail gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -23,6 +23,7 @@ GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include -Wno-error=format-nonliteral
 CFLAGS+=	-I${LOCALBASE}/include -Wno-error=format-nonliteral
 LDFLAGS+=	-L${LOCALBASE}/lib
+INSTALL_TARGET=	install-strip
 
 VERSION=	3.12
 PLIST_SUB=	VERSION=${VERSION}

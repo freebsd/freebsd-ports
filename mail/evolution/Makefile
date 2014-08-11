@@ -1,9 +1,9 @@
 # Created by: Ade Lovett <ade@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/mail/evolution/Makefile 19774 2014-07-14 10:44:24Z gusi $
+#   $MCom: ports/trunk/mail/evolution/Makefile 19797 2014-08-11 14:09:34Z gusi $
 
 PORTNAME=	evolution
-PORTVERSION=	3.12.4
+PORTVERSION=	3.12.5
 CATEGORIES=	mail gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -12,8 +12,7 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Integrated mail, calendar and address book distributed suite
 
 BUILD_DEPENDS=	itstool:${PORTSDIR}/textproc/itstool \
-		highlight:${PORTSDIR}/textproc/highlight \
-		spamassassin:${PORTSDIR}/mail/spamassassin
+		highlight:${PORTSDIR}/textproc/highlight
 LIB_DEPENDS=	libnss3.so:${PORTSDIR}/security/nss \
 		libgcr-3.so:${PORTSDIR}/security/gcr \
 		libgtkspell3-3.so:${PORTSDIR}/textproc/gtkspell3 \
@@ -21,8 +20,7 @@ LIB_DEPENDS=	libnss3.so:${PORTSDIR}/security/nss \
 		libwebkitgtk-3.0.so:${PORTSDIR}/www/webkit-gtk3 \
 		libcanberra-gtk3.so:${PORTSDIR}/audio/libcanberra-gtk3 \
 		libnotify.so:${PORTSDIR}/devel/libnotify
-RUN_DEPENDS=	highlight:${PORTSDIR}/textproc/highlight \
-		spamassassin:${PORTSDIR}/mail/spamassassin
+RUN_DEPENDS=	highlight:${PORTSDIR}/textproc/highlight
 
 USES=		desktop-file-utils bison gettext gmake libtool \
 		pathfix perl5 pkgconfig tar:xz
