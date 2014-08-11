@@ -1,6 +1,6 @@
 # $FreeBSD$
 
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	comms python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -21,11 +21,12 @@ BUILD_WRKSRC=	${WRKSRC}/cython
 INSTALL_WRKSRC=	${BUILD_WRKSRC}
 
 PLIST_FILES=	${PYTHONPREFIX_SITELIBDIR:S,^${PREFIX}/,,}/imobiledevice.a \
-		${PYTHONPREFIX_SITELIBDIR:S,^${PREFIX}/,,}/imobiledevice.la \
 		${PYTHONPREFIX_SITELIBDIR:S,^${PREFIX}/,,}/imobiledevice.so
 
 post-patch:
-	@${REINPLACE_CMD} -e 's,../src/libimobiledevice.la,${LOCALBASE}/lib/libimobiledevice.la,' \
+	@${REINPLACE_CMD} \
+		-e 's,../src/libimobiledevice.la,-limobiledevice,' \
+		-e 's/$$(imobiledevice_la_DEPENDENCIES)//' \
 		${BUILD_WRKSRC}/Makefile.in
 
 .include "${MASTERDIR}/Makefile"
