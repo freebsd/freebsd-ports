@@ -6,7 +6,7 @@ PORTVERSION=	20100510
 CATEGORIES=	misc
 MASTER_SITES=	http://FreeBSD.czest.pl/~wkoszek/ports/
 
-MAINTAINER=	wkoszek@FreeBSD.org
+MAINTAINER=	uffe@uffe.org
 COMMENT=	Firmware download to EZ-USB devices
 
 USES=		gmake
