@@ -15,3 +15,8 @@ bin/ripperX_plugin-musepack
 bin/ripperX_plugin_tester
 libdata/pkgconfig/ripperX.pc
 man/man1/ripperX.1.gz
+%%NLS%%share/locale/de/LC_MESSAGES/ripperX.mo
+%%NLS%%share/locale/en_GB/LC_MESSAGES/ripperX.mo
+%%NLS%%share/locale/es/LC_MESSAGES/ripperX.mo
+%%NLS%%share/locale/gl/LC_MESSAGES/ripperX.mo
+%%NLS%%share/locale/it/LC_MESSAGES/ripperX.mo
