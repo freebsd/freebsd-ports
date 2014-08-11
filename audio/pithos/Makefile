@@ -25,7 +25,7 @@ RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/xdg/__init__.py:${PORTSDIR}/devel/py3-xdg \
 USE_GNOME=	gtk30 py3gobject3
 USE_PYTHON=	3
 USE_PYDISTUTILS=yes
-USE_GSTREAMER=	core good bad
+USE_GSTREAMER=	core good bad soup
 PYDISTUTILS_AUTOPLIST=	yes
 INSTALLS_EGGINFO=	yes
 
