@@ -57,6 +57,193 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="69048656-2187-11e4-802c-20cf30e32f6d">
+    <topic>serf -- SSL Certificate Null Byte Poisoning</topic>
+    <affects>
+      <package>
+	<name>serf</name>
+	<range><lt>1.3.7</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>serf Development list reports:</p>
+	<blockquote cite="https://groups.google.com/forum/#!topic/serf-dev/NvgPoK6sFsc">
+	  <p>Serf provides APIs to retrieve information about a certificate.  These
+	    APIs return the information as NUL terminated strings (commonly called C
+	    strings).  X.509 uses counted length strings which may include a NUL byte.
+	    This means that a library user will interpret any information as ending
+	    upon seeing this NUL byte and will only see a partial value for that field.
+	  </p>
+	  <p>Attackers could exploit this vulnerability to create a certificate that a
+	    client will accept for a different hostname than the full certificate is
+	    actually for by embedding a NUL byte in the certificate.</p>
+	  <p>This can lead to a man-in-the-middle attack.  There are no known instances
+	    of this problem being exploited in the wild and in practice it should be
+	    difficult to actually exploit this vulnerability.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2014-3504</cvename>
+    </references>
+    <dates>
+      <discovery>2014-08-06</discovery>
+      <entry>2014-08-11</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="83a418cc-2182-11e4-802c-20cf30e32f6d">
+    <topic>subversion -- several vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>subversion17</name>
+	<range><ge>1.7.0</ge><lt>1.7.18</lt></range>
+      </package>
+      <package>
+	<name>subversion18</name>
+	<range><ge>1.8.0</ge><lt>1.8.10</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Subversion Project reports:</p>
+	<blockquote cite="http://subversion.apache.org/security/CVE-2014-3522-advisory.txt">
+	  <p>Using the Serf RA layer of Subversion for HTTPS uses the apr_fnmatch API
+	    to handle matching wildcards in certificate Common Names and Subject
+	    Alternate Names.  However, apr_fnmatch is not designed for this purpose.
+	    Instead it is designed to behave like common shell globbing.  In particular
+	    this means that '*' is not limited to a single label within a hostname
+	    (i.e. it will match '.').  But even further apr_fnmatch supports '?' and
+	    character classes (neither of which are part of the RFCs defining how
+	    certificate validation works).</p>
+	  <p>Subversion stores cached credentials by an MD5 hash based on the URL and
+	    the authentication realm of the server the credentials are cached for.
+	    MD5 has been shown to be subject to chosen plaintext hash collisions.
+	    This means it may be possible to generate an authentication realm which
+	    results in the same MD5 hash for a different URL.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2014-3522</cvename>
+      <cvename>CVE-2014-3528</cvename>
+      <url>http://subversion.apache.org/security/CVE-2014-3522-advisory.txt</url>
+      <url>http://subversion.apache.org/security/CVE-2014-3528-advisory.txt</url>
+    </references>
+    <dates>
+      <discovery>2014-08-06</discovery>
+      <entry>2014-08-11</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="ad747a01-1fee-11e4-8ff1-f0def16c5c1b">
+    <topic>nginx -- inject commands into SSL session vulnerability</topic>
+    <affects>
+      <package>
+	<name>nginx</name>
+	<range><ge>1.6.0,2</ge><lt>1.6.1,2</lt></range>
+      </package>
+      <package>
+	<name>nginx-devel</name>
+	<range><ge>1.5.6</ge><lt>1.7.4</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The nginx project reports:</p>
+	<blockquote cite="http://mailman.nginx.org/pipermail/nginx-announce/2014/000144.html">
+	  <p>Security: pipelined commands were not discarded after STARTTLS
+	    command in SMTP proxy (CVE-2014-3556); the bug had appeared in 1.5.6.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2014-3556</cvename>
+      <url>http://mailman.nginx.org/pipermail/nginx-announce/2014/000144.html</url>
+    </references>
+    <dates>
+      <discovery>2014-08-05</discovery>
+      <entry>2014-08-09</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="8aff07eb-1dbd-11e4-b6ba-3c970e169bc2">
+    <topic>OpenSSL -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>openssl</name>
+	<range><ge>1.0.1</ge><lt>1.0.1_14</lt></range>
+      </package>
+      <package>
+	<name>mingw32-openssl</name>
+	<range><ge>1.0.1</ge><lt>1.0.1i</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The OpenSSL Project reports:</p>
+	<blockquote cite="https://www.openssl.org/news/secadv_20140806.txt">
+	  <p>A flaw in OBJ_obj2txt may cause pretty printing functions
+	    such as X509_name_oneline, X509_name_print_ex et al. to leak
+	    some information from the stack. [CVE-2014-3508]</p>
+	  <p>The issue affects OpenSSL clients and allows a malicious
+	    server to crash the client with a null pointer dereference
+	    (read) by specifying an SRP ciphersuite even though it was
+	    not properly negotiated with the client. [CVE-2014-5139]</p>
+	  <p>If a multithreaded client connects to a malicious server
+	    using a resumed session and the server sends an ec point
+	    format extension it could write up to 255 bytes to freed
+	    memory. [CVE-2014-3509]</p>
+	  <p>An attacker can force an error condition which causes
+	    openssl to crash whilst processing DTLS packets due to
+	    memory being freed twice. This can be exploited through
+	    a Denial of Service attack. [CVE-2014-3505]</p>
+	  <p>An attacker can force openssl to consume large amounts
+	    of memory whilst processing DTLS handshake messages.
+	    This can be exploited through a Denial of Service
+	    attack. [CVE-2014-3506]</p>
+	  <p>By sending carefully crafted DTLS packets an attacker
+	    could cause openssl to leak memory. This can be exploited
+	    through a Denial of Service attack. [CVE-2014-3507]</p>
+	  <p>OpenSSL DTLS clients enabling anonymous (EC)DH
+	    ciphersuites are subject to a denial of service attack.
+	    A malicious server can crash the client with a null pointer
+	    dereference (read) by specifying an anonymous (EC)DH
+	    ciphersuite and sending carefully crafted handshake
+	    messages. [CVE-2014-3510]</p>
+	  <p>A flaw in the OpenSSL SSL/TLS server code causes the
+	    server to negotiate TLS 1.0 instead of higher protocol
+	    versions when the ClientHello message is badly
+	    fragmented. This allows a man-in-the-middle attacker
+	    to force a downgrade to TLS 1.0 even if both the server
+	    and the client support a higher protocol version, by
+	    modifying the client's TLS records. [CVE-2014-3511]</p>
+	  <p>A malicious client or server can send invalid SRP
+	    parameters and overrun an internal buffer.  Only
+	    applications which are explicitly set up for SRP
+	    use are affected. [CVE-2014-3512]</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://www.openssl.org/news/secadv_20140806.txt</url>
+      <cvename>CVE-2014-3505</cvename>
+      <cvename>CVE-2014-3506</cvename>
+      <cvename>CVE-2014-3507</cvename>
+      <cvename>CVE-2014-3508</cvename>
+      <cvename>CVE-2014-3509</cvename>
+      <cvename>CVE-2014-3510</cvename>
+      <cvename>CVE-2014-3511</cvename>
+      <cvename>CVE-2014-3512</cvename>
+      <cvename>CVE-2014-5139</cvename>
+    </references>
+    <dates>
+      <discovery>2014-08-06</discovery>
+      <entry>2014-08-06</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="be5421ab-1b56-11e4-a767-5453ed2e2b49">
     <topic>krfb -- Possible Denial of Service or code execution via integer overflow</topic>
     <affects>
