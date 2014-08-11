@@ -1440,7 +1440,7 @@ PKGCOMPATDIR?=		${LOCALBASE}/lib/compat/pkg
 .endif
 
 .if defined(USE_PYTHON) || defined(USE_PYTHON_BUILD) || defined(USE_PYTHON_RUN)
-USES+=	python
+USES+= python
 .endif
 
 .if defined(USE_EFL) || defined(WANT_EFL) || defined(USE_EFL_ESMART)
