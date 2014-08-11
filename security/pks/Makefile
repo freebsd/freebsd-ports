@@ -8,40 +8,51 @@ MASTER_SITES=		http://pks.sourceforge.net/:sf ${MASTER_SITE_LOCAL}:local
 MASTER_SITE_SUBDIR=	.:sf mandree:local
 DISTFILES=		pks-current.tgz:sf,local
 
-MAINTAINER=	gtodd@bellanet.org
+MAINTAINER=	tphilipp@potion-studios.com
 COMMENT=	PGP Public Key Server
 
-USE_BDB=		41 # 42 would be ok
-WRKSRC=			${WRKDIR}/${PORTNAME}
+LICENSE=        BSD4CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
+WRKSRC=		${WRKDIR}/${PORTNAME}
 
+USE_GCC=	any
+USE_BDB=	yes
+WANT_BDB_VER=	41 # pks dumps core with 42 and doesn't build with 43+
+
+OPTIONS_DEFINE= DOCS
+PORTDOCS=       pks_help.* README EMAIL
 GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	autoconf
 CONFIGURE_ARGS=	--datadir=${PREFIX}/share/pks --localstatedir=/var/pks \
-		--sysconfdir=${EXAMPLESDIR} \
+		--docdir=${PREFIX}/share/doc/pks --sysconfdir=${EXAMPLESDIR} \
 		--libdir=${LOCALBASE}/lib --with-libwrap
 MAKE_ENV+=	SUBDIRS=
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ENV=	DBLIB="-L${BDB_LIB_DIR} -l${BDB_LIB_NAME}" DBINC=-I${BDB_INCLUDE_DIR} DBHDR=db.h
 
-USE_RC_SUBR=	pksd
-MAN5=		pksd.conf.5
-MAN8=		pks-intro.8 pksclient.8 pksd.8 pksdctl.8 pks-mail.sh.8 \
-		pks-queue-run.sh.8 pgpsplit.8
 
-SUB_FILES=	pkg-message pkg-deinstall
+SUB_FILES=	pkg-message
+PKGMESSAGE=	${WRKDIR}/pkg-message
+
+USE_RC_SUBR=	pksd
+
+.include <bsd.port.options.mk>
+
+post-extract:
+	@${CP} -a ${FILESDIR}/EMAIL ${WRKSRC}
 
 post-install:
-	${INSTALL_DATA} ${WRKSRC}/pksd.conf ${PREFIX}/etc/pksd.conf.sample
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/pks_help.en ${WRKSRC}/pks_help.es ${WRKSRC}/pks_help.fr \
-	${WRKSRC}/pks_help.cz ${WRKSRC}/pks_help.de ${WRKSRC}/pks_help.ja \
-	${WRKSRC}/mail_intro ${DOCSDIR}
-	PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
-.endif
-	@${CAT} ${PKGMESSAGE}
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/pgpsplit
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/pksdctl
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/pksclient
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/sbin/pksd
+	${INSTALL_DATA}  ${WRKSRC}/pksd.conf ${STAGEDIR}${PREFIX}/etc/pksd.conf.sample
+	#${CHOWN} pksd:pksd /var/pks
 
-.include <bsd.port.post.mk>
+.if ${PORT_OPTIONS:MDOCS}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}/
+	cd ${WRKSRC}/ && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}/
+.endif
+
+.include <bsd.port.mk>

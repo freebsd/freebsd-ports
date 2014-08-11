@@ -1,0 +1,20 @@
+--- ./mkpksdconf.in.orig	2014-01-22 15:36:39.574285045 -0500
++++ ./mkpksdconf.in	2014-01-22 15:37:49.289280305 -0500
+@@ -44,7 +44,7 @@
+ 
+ cat << EOF
+ pks_bin_dir @bindir@
+-pid_dir @localstatedir@/db
++pid_dir /var/run
+ ### Set chroot_dir to make pksd chroot itself. Must be an absolute path.
+ # chroot_dir @prefix@
+ ### uid and gid for pksd to run as. Leave unset, or set to 0 to disable
+@@ -70,7 +70,7 @@
+ ###   of each message.
+ maintainer_email PGP Key Server Administrator <nobody>
+ mail_intro_file @datadir@/mail_intro
+-help_dir @datadir@
++help_dir @docdir@
+ mail_dir @localstatedir@/incoming
+ ### If you change this, make sure to put a corresponding help file in
+ ### the help_dir named above
