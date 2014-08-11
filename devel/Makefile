@@ -4315,7 +4315,6 @@
     SUBDIR += rubygem-fog-json
     SUBDIR += rubygem-font-awesome-rails
     SUBDIR += rubygem-foreman
-    SUBDIR += rubygem-foreman_api
     SUBDIR += rubygem-formatador
     SUBDIR += rubygem-gdata
     SUBDIR += rubygem-gem_plugin
