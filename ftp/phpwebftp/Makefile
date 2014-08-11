@@ -7,7 +7,7 @@ CATEGORIES=	ftp
 MASTER_SITES=	SF/${PORTNAME}/phpWebFTP/phpWebFTP%203.3
 DISTNAME=	${PORTNAME}${PORTVERSION:S/.//}
 
-MAINTAINER=	acm@FreeBSD.org
+MAINTAINER=	coco@executive-computing.de
 COMMENT=	Set of PHP-scripts to manage FTP over the web
 
 LICENSE=	GPLv2
