@@ -57,6 +57,50 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="83a418cc-2182-11e4-802c-20cf30e32f6d">
+    <topic>subversion -- several vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>subversion17</name>
+	<range><ge>1.7.0</ge><lt>1.7.18</lt></range>
+      </package>
+      <package>
+	<name>subversion18</name>
+	<range><ge>1.8.0</ge><lt>1.8.10</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Subversion Project reports:</p>
+	<blockquote cite="INSERT URL HERE">
+	  <p>Using the Serf RA layer of Subversion for HTTPS uses the apr_fnmatch API
+	    to handle matching wildcards in certificate Common Names and Subject
+	    Alternate Names.  However, apr_fnmatch is not designed for this purpose.
+	    Instead it is designed to behave like common shell globbing.  In particular
+	    this means that '*' is not limited to a single label within a hostname
+	    (i.e. it will match '.').  But even further apr_fnmatch supports '?' and
+	    character classes (neither of which are part of the RFCs defining how
+	    certificate validation works).</p>
+	  <p>Subversion stores cached credentials by an MD5 hash based on the URL and
+	    the authentication realm of the server the credentials are cached for.
+	    MD5 has been shown to be subject to chosen plaintext hash collisions.
+	    This means it may be possible to generate an authentication realm which
+	    results in the same MD5 hash for a different URL.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2014-3522</cvename>
+      <cvename>CVE-2014-3528</cvename>
+      <url>http://subversion.apache.org/security/CVE-2014-3522-advisory.txt</url>
+      <url>http://subversion.apache.org/security/CVE-2014-3528-advisory.txt</url>
+    </references>
+    <dates>
+      <discovery>2014-08-06</discovery>
+      <entry>2014-08-11</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="ad747a01-1fee-11e4-8ff1-f0def16c5c1b">
     <topic>nginx -- inject commands into SSL session vulnerability</topic>
     <affects>
