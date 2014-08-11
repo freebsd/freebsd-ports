@@ -101,7 +101,7 @@ Notes:
 	<range><ge>1.7.0</ge><lt>1.7.18</lt></range>
       </package>
       <package>
-	<name>subversion18</name>
+	<name>subversion</name>
 	<range><ge>1.8.0</ge><lt>1.8.10</lt></range>
       </package>
     </affects>
