@@ -10,7 +10,8 @@ PKGNAMESUFFIX=	13
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simplified Wrapper and Interface Generator
 
-USE_AUTOTOOLS=	autoconf:env libtool
+USE_AUTOTOOLS=	autoconf:env
+GNU_CONFIGURE=	yes
 
 VER=		${PORTVERSION:R}
 
@@ -64,5 +65,6 @@ post-install:
 	${LN} -f ${STAGEDIR}${PREFIX}/bin/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}${VER}
 	cd ${WRKSRC}/Examples && ${COPYTREE_SHARE} '*' ${STAGEDIR}${EXAMPLESDIR}/${PORTVERSION}
 	cd ${WRKSRC}/Doc && ${COPYTREE_SHARE} '*' ${STAGEDIR}${DOCSDIR}/${PORTVERSION}
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/*
 
 .include <bsd.port.post.mk>
