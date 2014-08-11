@@ -3,7 +3,7 @@
 
 PORTNAME=	portscout
 PORTVERSION=	0.8.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	http://mirror.inerd.com/FreeBSD/distfiles/${PORTNAME}/	\
 		http://www.atarininja.org/~wxs/distfiles/		\
@@ -15,15 +15,11 @@ COMMENT=	Tool to scan for new versions of FreeBSD ports
 OPTIONS_DEFINE=	SQLITE3 DOCS
 SQLITE3_DESC=	Use SQLite backend instead of PostgreSQL
 
-USES=		perl5
+USES=		perl5 shebangfix
 NO_BUILD=	yes
+SHEBANG_FILES=	${WRKSRC}/portscout.pl
 
 PORTDOCS=	UPDATING portscout-portconfig.txt xml-datasrc-example.xml
-
-#MAN1=		portscout.1
-
-USES=		shebangfix
-SHEBANG_FILES=	${WRKSRC}/portscout.pl
 
 RUN_DEPENDS=	p5-DBI>=0:${PORTSDIR}/databases/p5-DBI	\
 		p5-Proc-Queue>=0:${PORTSDIR}/devel/p5-Proc-Queue	\
@@ -32,15 +28,6 @@ RUN_DEPENDS=	p5-DBI>=0:${PORTSDIR}/databases/p5-DBI	\
 		p5-XML-XPath>=0:${PORTSDIR}/textproc/p5-XML-XPath	\
 		p5-MIME-Lite>=0:${PORTSDIR}/mail/p5-MIME-Lite		\
 		p5-libwww>=0:${PORTSDIR}/www/p5-libwww
-
-SITE_PERL_REL?=lib/perl5/site_perl/${PERL_VER}
-SITE_PERL?=${LOCALBASE}/${SITE_PERL_REL}
-PLIST_SUB+=	PERL_VERSION=${PERL_VERSION} \
-			PERL_VER=${PERL_VER} \
-			PERL_ARCH=${PERL_ARCH} \
-			PERL5_MAN3=lib/perl5/${PERL_VER}/man/man3 \
-			SITE_PERL=${SITE_PERL_REL}
-
 
 .include <bsd.port.options.mk>
 
@@ -99,10 +86,6 @@ do-install:
 
 	${INSTALL_DATA} ${WRKSRC}/portscout.conf ${STAGEDIR}${PREFIX}/etc/portscout.conf.sample
 
-post-install:
-	#@if [ ! -f ${PREFIX}/etc/portscout.conf ]; then \
-	#	${CP} -p ${PREFIX}/etc/portscout.conf.sample ${STAGEDIR}${PREFIX}/etc/portscout.conf; \
-	#fi
 .if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .	for f in ${PORTDOCS}

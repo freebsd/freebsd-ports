@@ -24,6 +24,7 @@ CONFLICTS=	py*-ro-[0-9]*
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|esdconf_DATA = esd.conf|esdconf_DATA = |g' \
+		-e '/^esd_LDADD =/s/$$/ -lm/' \
 		${WRKSRC}/Makefile.in
 
 post-install:

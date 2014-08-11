@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	vile
-PORTVERSION=	9.8m
+PORTVERSION=	9.8n
 CATEGORIES=	editors
 MASTER_SITES=	ftp://dickey.his.com/vile/current/ \
 		ftp://invisible-island.net/vile/current/ \
@@ -33,10 +33,10 @@ INSTALL_TARGET=	install install-doc install-html
 
 CONFLICTS_INSTALL=	vile-[0-9]*
 
-OPTIONS_DEFINE=		DOCS FILTERS ICONV PERL
+OPTIONS_DEFINE=		DOCS FILTERS FREETYPE ICONV PERL
 OPTIONS_RADIO=		MENUS
 OPTIONS_RADIO_MENUS=	MOTIF XAW XAW3D
-OPTIONS_DEFAULT=	FREETYPE ICONV
+OPTIONS_DEFAULT=	ICONV
 OPTIONS_SUB=		yes
 
 FILTERS_DESC=		Loadable filters
@@ -45,7 +45,7 @@ ICONV_USES=		iconv
 ICONV_CONFIGURE_ON=	--with-iconv ${ICONV_CONFIGURE_ARG}
 ICONV_CONFIGURE_OFF=	--without-iconv --without-locale
 MENUS_DESC=		Support for menus
-MOTIF_USE=		MOTIF=yes
+MOTIF_USES=		motif
 MOTIF_CONFIGURE_ON=	--with-screen=motif
 PERL_USES=		perl5
 PERL_CONFIGURE_WITH=	perl
@@ -82,7 +82,7 @@ post-patch:
 		${WRKSRC}/makefile.in
 	@${REINPLACE_CMD} -e \
 		'/^Icon/s|=.*|=${PREFIX}/share/pixmaps/vile.xpm| ; \
-		 /^Categories/s|Applicasion;||' \
+		 /^Categories/s|Application;||' \
 		${WRKSRC}/macros/*.desktop
 
 post-install:

@@ -1,17 +1,15 @@
 # $FreeBSD$
 
 PORTNAME=	data-lens
-PORTVERSION=	2.10.2
-PORTREVISION=	7
+PORTVERSION=	2.10.5
 CATEGORIES=	math haskell
 
 MAINTAINER=	haskell@FreeBSD.org
-COMMENT=	Haskell 98 lenses
+COMMENT=	Used to be Haskell 98 Lenses
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 
-USE_CABAL=	comonad>=1.1.1.3 comonad-transformers>=2.0 \
-		semigroupoids>=1.2.4 transformers>=0.2.0
+USE_CABAL=	comonad>=4.0 semigroupoids>=4.0
 
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

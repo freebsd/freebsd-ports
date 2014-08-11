@@ -10,13 +10,20 @@
 #			refer to .la libraries in this port.  As soon as all
 #			those dependent ports have some form of USES=libtool
 #			keepla can be removed.
+#		build	Add a build dependency on devel/libtool.  This can
+#			be used when a port does not generate its own libtool
+#			script and relies on the system to provide one.
 #
 # MAINTAINER:	autotools@FreeBSD.org
 
 .if !defined(_INCLUDE_USES_LIBTOOL_MK)
 _INCLUDE_USES_LIBTOOL_MK=	yes
 _USES_POST+=	libtool
-libtool_ARGS?=
+libtool_ARGS:=	${libtool_ARGS:C/,/ /}
+
+.if ${libtool_ARGS:Mbuild}
+BUILD_DEPENDS+=	libtool:${PORTSDIR}/devel/libtool
+.endif
 .endif
 
 .if defined(_POSTMKINCLUDED) && !defined(_INCLUDE_USES_LIBTOOL_POST_MK)
@@ -63,7 +70,7 @@ patch-libtool:
 .endif
 
 patch-lafiles:
-.if ${libtool_ARGS} == keepla || ${libtool_ARGS} == oldver
+.if ${libtool_ARGS:Mkeepla} || ${libtool_ARGS:Moldver}
 	@${FIND} ${STAGEDIR} -type f -name '*.la' |			\
 		${XARGS} ${SED} -i '' -e "/dependency_libs=/s/=.*/=''/"
 .else

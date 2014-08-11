@@ -1,0 +1,19 @@
+--- ./conduit-combinators.cabal.orig	2014-07-26 20:08:37.000000000 +0200
++++ ./conduit-combinators.cabal	2014-07-29 14:01:52.000000000 +0200
+@@ -20,7 +20,7 @@
+   build-depends:       base >= 4 && < 5
+                      , chunked-data
+                      , conduit >= 1.0.12
+-                     , conduit-extra >= 1.1.1
++                     , conduit-extra
+                      , transformers
+                      , transformers-base
+                      , primitive
+@@ -37,6 +37,7 @@
+                      , base64-bytestring        >= 0.1.1.1
+                      , resourcet
+                      , monad-control
++                     , streaming-commons
+   if os(windows)
+       cpp-options:     -DWINDOWS
+   else

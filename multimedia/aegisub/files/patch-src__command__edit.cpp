@@ -1,8 +1,8 @@
 --- src/command/edit.cpp.orig
 +++ src/command/edit.cpp
-@@ -68,6 +68,13 @@
- #include <wx/clipbrd.h>
+@@ -69,6 +69,13 @@
  #include <wx/fontdlg.h>
+ #include <wx/textentry.h>
  
 +#ifdef _LIBCPP_VERSION
 +#define TO_STRING(x) std::to_string(x) 
@@ -14,25 +14,25 @@
  namespace {
  	using namespace boost::adaptors;
  	using cmd::Command;
-@@ -450,13 +457,13 @@
- 		if (font.GetFaceName() != startfont.GetFaceName())
- 			set_tag(line, blocks, "\\fn", from_wx(font.GetFaceName()), sel_start, sel_end);
- 		if (font.GetPointSize() != startfont.GetPointSize())
--			set_tag(line, blocks, "\\fs", std::to_string(font.GetPointSize()), sel_start, sel_end);
-+			set_tag(line, blocks, "\\fs", TO_STRING(font.GetPointSize()), sel_start, sel_end);
- 		if (font.GetWeight() != startfont.GetWeight())
--			set_tag(line, blocks, "\\b", std::to_string(font.GetWeight() == wxFONTWEIGHT_BOLD), sel_start, sel_end);
-+			set_tag(line, blocks, "\\b", TO_STRING(font.GetWeight() == wxFONTWEIGHT_BOLD), sel_start, sel_end);
- 		if (font.GetStyle() != startfont.GetStyle())
--			set_tag(line, blocks, "\\i", std::to_string(font.GetStyle() == wxFONTSTYLE_ITALIC), sel_start, sel_end);
-+			set_tag(line, blocks, "\\i", TO_STRING(font.GetStyle() == wxFONTSTYLE_ITALIC), sel_start, sel_end);
- 		if (font.GetUnderlined() != startfont.GetUnderlined())
--			set_tag(line, blocks, "\\i", std::to_string(font.GetUnderlined()), sel_start, sel_end);
-+			set_tag(line, blocks, "\\i", TO_STRING(font.GetUnderlined()), sel_start, sel_end);
+@@ -516,13 +523,13 @@
+ 			if (font.GetFaceName() != startfont.GetFaceName())
+ 				do_set_tag("\\fn", from_wx(font.GetFaceName()));
+ 			if (font.GetPointSize() != startfont.GetPointSize())
+-				do_set_tag("\\fs", std::to_string(font.GetPointSize()));
++				do_set_tag("\\fs", TO_STRING(font.GetPointSize()));
+ 			if (font.GetWeight() != startfont.GetWeight())
+-				do_set_tag("\\b", std::to_string(font.GetWeight() == wxFONTWEIGHT_BOLD));
++				do_set_tag("\\b", TO_STRING(font.GetWeight() == wxFONTWEIGHT_BOLD));
+ 			if (font.GetStyle() != startfont.GetStyle())
+-				do_set_tag("\\i", std::to_string(font.GetStyle() == wxFONTSTYLE_ITALIC));
++				do_set_tag("\\i", TO_STRING(font.GetStyle() == wxFONTSTYLE_ITALIC));
+ 			if (font.GetUnderlined() != startfont.GetUnderlined())
+-				do_set_tag("\\i", std::to_string(font.GetUnderlined()));
++				do_set_tag("\\i", TO_STRING(font.GetUnderlined()));
  
- 		commit_text(c, _("set font"), sel_start, sel_end);
- 	}
-@@ -711,7 +718,7 @@
+ 			return shift;
+ 		});
+@@ -761,7 +768,7 @@
  }
  
  static void combine_karaoke(AssDialogue *first, AssDialogue *second) {

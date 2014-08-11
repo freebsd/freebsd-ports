@@ -1,18 +1,6 @@
 --- Makefile.orig	2008-12-09 11:07:06.000000000 +0100
 +++ Makefile	2013-11-05 17:07:34.000000000 +0100
-@@ -10,9 +10,10 @@
- VERSION=1.9.8
- 
- # define install target dirs
--prefix=/usr
-+prefix=/usr/local
- bindir=$(prefix)/bin
- datadir=$(prefix)/share
-+docsdir=/usr/local/share/doc/notecase
- 
- # define top of RPM build area
- topdir=/usr/src/redhat
-@@ -268,7 +269,6 @@
+@@ -268,7 +268,6 @@
   $(OBJ)/IOLayerRedirect.o $(OBJ)/FileExportDlg.o $(OBJ)/FormatIOTxt.o $(OBJ)/FindReplaceDlg.o \
   $(OBJ)/FindReplaceInfo.o $(OBJ)/LinkInfo.o $(OBJ)/LinkPropertiesDlg.o $(OBJ)/ExecuteFile.o \
   $(OBJ)/FileSaveAsDlg.o $(OBJ)/CircularBuffer.o $(OBJ)/FormatIOMMLX.o \
@@ -20,44 +8,16 @@
   $(OBJ)/ProgressDlg.o $(OBJ)/DocActionPix.o $(OBJ)/DocActionFinish.o $(OBJ)/DocActionFmt.o $(OBJ)/FmtInfo.o \
   $(OBJ)/FileAttachmentDlg.o $(OBJ)/DocActionAtt.o $(OBJ)/PixPropertiesDlg.o $(OBJ)/DocActionFinishDel.o \
   $(OBJ)/ShortcutsList.o $(OBJ)/ShortcutsListDlg.o $(OBJ)/DateTimeDlg.o $(OBJ)/AboutDlg.o $(OBJ)/EditDlg.o \
-@@ -601,18 +601,20 @@
- pouninstall:
- 	@rm -vf $(DESTDIR)$(datadir)/locale/*/LC_MESSAGES/notecase.mo
- 	@echo done uninstalling translations
--	
-+
-+docinstall:
-+	install -d -m 755 "$(DESTDIR)$(docsdir)"
-+	$(INSTALL) -m 644 -c docs/help.ncd "$(DESTDIR)$(docsdir)/help.ncd"
-+
+@@ -316,7 +315,7 @@
+ 	$(LD) $(OBJS) -o $(BIN)/notecase$(EXE) $(FLAGS) $(LDFLAGS) $(GTKLIBS)
+ else
+ $(BIN)/notecase$(EXE): updatesrc $(OBJS)
+-	$(LD) $(OBJS) -o $(BIN)/notecase$(EXE) $(FLAGS) $(LDFLAGS) $(GTKLIBS) > /dev/null
++	$(LD) $(OBJS) -o $(BIN)/notecase$(EXE) $(FLAGS) $(LDFLAGS) $(GTKLIBS) -lz > /dev/null
+ endif	
+ 
  #
- # install application
- #
- install: $(BIN)/notecase$(EXE) poinstall
- 	install -d -m 755 $(DESTDIR)$(bindir)
--	install -d -m 755 $(DESTDIR)$(datadir)/doc/notecase/
- 	install -d -m 755 $(DESTDIR)$(datadir)/applications/
- 	install -d -m 755 $(DESTDIR)$(datadir)/mime/packages/
- 	install -d -m 755 $(DESTDIR)$(datadir)/pixmaps/
- 	$(INSTALL) -m 755 $(BIN)/notecase$(EXE) "$(DESTDIR)$(bindir)/notecase$(EXE)"
--	$(INSTALL) -m 644 docs/help.ncd "$(DESTDIR)$(docdir)/notecase/help.ncd"
- 	$(INSTALL) -m 644 docs/notecase.xml "$(DESTDIR)$(datadir)/mime/packages/notecase.xml"
- 	$(Q)if [ -n "$(NOKIA_MAEMO_BUILD)" ]; then \
- 		$(INSTALL) -m 644 docs/notecase.desktop "$(DESTDIR)$(datadir)/applications/hildon/notecase.desktop"; \
-@@ -694,12 +696,6 @@
- 		echo 'pkg-config error detected $(shell pkg-config --cflags $(LIBS))';\
- 		exit 1;\
- 	fi;  
--	$(Q)if [ "$(HAVE_GTKSOURCEVIEW)" = "1" ]; then \
--		if [[ "$(TEST_SRCVIEW_VER)" < "2.4.1" ]]; then \
--		echo 'ERROR: gtksourceview package is too old ($(shell pkg-config --modversion gtksourceview-2.0))!';\
--		exit 1;\
--		fi;\
--	fi;
- 	$(Q)echo 'Configuration: GNOME_VFS=$(HAVE_GNOME_VFS);GTKSOURCEVIEW=$(HAVE_GTKSOURCEVIEW);DEBUG=$(DEBUG);PROFILE=$(PROFILE);BYTE_ORDER=$(BYTE_ORDER);PLATFORM=$(PLATFORM)' 
- 	$(Q)$(SED) 's/^Version:.*/Version:        $(VERSION)/' ./docs/notecase.spec
- 	$(Q)$(SED) 's/^Source:.*/Source:         $(archive)_src.tar.gz/' ./docs/notecase.spec
-@@ -820,7 +816,7 @@
+@@ -820,7 +819,7 @@
  #
  # Note: first "make" command forces generating correct help file path in "config.h"
  #

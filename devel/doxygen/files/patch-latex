@@ -1,0 +1,30 @@
+--- latex-patch.orig	1970-01-01 01:00:00.000000000 +0100
++++ latex-patch	2014-06-13 23:18:40.000000000 +0200
+@@ -0,0 +1,27 @@
++--- Makefile.orig	2014-06-13 23:14:28.000000000 +0200
+++++ Makefile	2014-06-13 23:18:27.000000000 +0200
++@@ -3,19 +3,19 @@
++ pdf: refman.pdf
++ 
++ refman.pdf: clean refman.tex
++-	pdflatex refman
+++	-pdflatex -interaction nonstopmode refman
++ 	makeindex refman.idx
++-	pdflatex refman
+++	-pdflatex -interaction nonstopmode refman
++ 	latex_count=8 ; \
++ 	while egrep -s 'Rerun (LaTeX|to get cross-references right)' refman.log && [ $$latex_count -gt 0 ] ;\
++ 	    do \
++ 	      echo "Rerunning latex...." ;\
++-	      pdflatex refman ;\
+++	      pdflatex -interaction nonstopmode refman ;\
++ 	      latex_count=`expr $$latex_count - 1` ;\
++ 	    done
++ 	makeindex refman.idx
++-	pdflatex refman
++-
+++	-pdflatex -interaction nonstopmode refman
+++	cp refman.pdf doxygen_manual.pdf
++ 
++ clean:
++ 	rm -f *.ps *.dvi *.aux *.toc *.idx *.ind *.ilg *.log *.out *.brf *.blg *.bbl refman.pdf

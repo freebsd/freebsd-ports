@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	nvidia-settings
-PORTVERSION=	331.67
+PORTVERSION=	340.24
 CATEGORIES=	x11
 MASTER_SITES=	ftp://download.nvidia.com/XFree86/nvidia-settings/ \
 		ftp://download1.nvidia.com/XFree86/nvidia-settings/
@@ -12,7 +12,8 @@ COMMENT=	Display Control Panel for X NVidia driver
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libvdpau.so:${PORTSDIR}/multimedia/libvdpau
+LIB_DEPENDS=	libjansson.so:${PORTSDIR}/devel/jansson \
+		libvdpau.so:${PORTSDIR}/multimedia/libvdpau
 
 USE_GNOME=	gtk20
 USES=		gmake pkgconfig tar:bzip2
@@ -22,7 +23,8 @@ USE_XORG=	xv xext
 PLIST_FILES=	bin/nvidia-settings \
 		man/man1/nvidia-settings.1.gz
 
-MAKE_ENV=	NV_VERBOSE= \
+MAKE_ENV=	NV_USE_BUNDLED_LIBJANSSON=0 \
+		NV_VERBOSE= \
 		STRIP_CMD=${TRUE} \
 		INSTALL_PROGRAM="${INSTALL_PROGRAM}" \
 		INSTALL_MAN="${INSTALL_MAN}" \

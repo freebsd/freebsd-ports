@@ -27,7 +27,7 @@ CONFLICTS=	dovecot-1.[0-9]*
 # port before updating this one.                                     #
 ######################################################################
 
-USES=		iconv libtool
+USES=		iconv libtool cpe
 USE_RC_SUBR=	dovecot
 
 GNU_CONFIGURE=	yes

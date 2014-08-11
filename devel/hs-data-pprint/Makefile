@@ -1,14 +1,13 @@
 # $FreeBSD$
 
 PORTNAME=	data-pprint
-PORTVERSION=	0.2.1.4
-PORTREVISION=	6
+PORTVERSION=	0.2.3
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Prettyprint and compare Data values
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 
 USE_CABAL=	mtl>=2.0 parallel>=3.1
 

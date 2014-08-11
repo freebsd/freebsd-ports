@@ -1,6 +1,5 @@
 bin/tomboy
 %%APPLET%%bin/tomboy-panel
-etc/gconf/schemas/tomboy.schemas
 lib/tomboy/Tomboy.exe
 lib/tomboy/Tomboy.exe.config
 lib/tomboy/Tomboy.exe.mdb

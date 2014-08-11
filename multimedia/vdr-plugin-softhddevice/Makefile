@@ -16,7 +16,7 @@ LIB_DEPENDS+=	libavcodec0.so:${PORTSDIR}/multimedia/ffmpeg0 \
 		libxcb-keysyms.so:${PORTSDIR}/x11/xcb-util-keysyms \
 		libasound.so:${PORTSDIR}/audio/alsa-lib
 
-USES=		pkgconfig tar:tgz
+USES=		compiler:features pkgconfig tar:tgz
 USE_XORG+=	xv x11 xcb xinerama
 USE_GL+=	gl glu
 PATCH_STRIP=	-p1
@@ -33,17 +33,25 @@ WRKSRC=		${WRKDIR}/${PLUGIN}-${PORTVERSION}
 OPTIONS_DEFINE=	VAAPI DOCS NLS
 VAAPI_DESC=	Enable vaapi support (experimental)
 
-.include <bsd.port.options.mk>
+.include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MVAAPI}
 LIB_DEPENDS+=	libva.so:${PORTSDIR}/multimedia/libva
 CONFIG+= 	-DUSE_VAAPI
 .endif
 
+.if !(${COMPILER_TYPE} == clang)
+USE_GCC=	yes
+.endif
+
 post-patch: post-patch-plugin
 	@${REINPLACE_CMD} \
 		-e 's,libavcodec,libavcodec0,g' \
 		${WRKSRC}/Makefile
+	@${CP} ${FILESDIR}/iatomic.h ${WRKSRC}
+	@${REINPLACE_CMD} \
+		-e 's,<alsa/iatomic.h>,"iatomic.h",' \
+		${WRKSRC}/*.c ${WRKSRC}/*.cpp
 
 pre-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/lib/vdr
@@ -54,4 +62,4 @@ post-install: post-install-pluginlocales
 	(cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR})
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

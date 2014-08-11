@@ -6718,3 +6718,33 @@ x11/gnome-panel||2014-13-03|Development has ceased in favour of gnome-shell
 deskutils/gnome-music|audio/gnome-music|2014-02-04|Makes more sense to have in under audio/
 deskutils/gnome-search-tool||2014-04-25|removed
 mail/california|deskutils/california|2014-05-24|Does not belong under mail/
+archivers/hs-zlib-conduit||2014-08-10|Removed: Deprecated in favor of conduit-extra
+devel/hs-IORefCAS||2014-08-10|Removed: Deprecated in favor of atomic-primops
+devel/hs-Tensor||2014-08-10|Removed: Deprecated
+devel/hs-StateVar||2014-08-10|Removed: Deprecated
+devel/hs-attempt||2014-08-10|Removed: Deprecated in favor of exceptions
+devel/hs-base64-conduit||2014-08-10|Removed: Deprecated in favor of conduit-combinators
+devel/hs-blaze-builder-conduit||2014-08-10|Removed: Deprecated in favor of conduit-extra
+devel/hs-drift|devel/hs-DrIFT|2014-08-10|Renamed: Converted to use the Cabal framework
+devel/hs-failure||2014-08-10|Removed: Deprecated in favor or exceptions
+devel/hs-filesystem-conduit||2014-08-10|Removed: Deprecated in favor of conduit-combinators
+devel/hs-haskeline||2014-08-10|Removed: Become part of GHC
+devel/hs-pool-conduit||2014-08-10|Removed: Deprecated in favor of resource-pool
+devel/hs-profunctor-extras||2014-08-10|The package has been absorbed into profunctors
+devel/hs-terminfo||2014-08-10|Removed: Become part of GHC
+devel/hs-transformers||2014-08-10|Removed: Become part of GHC
+math/hs-comonad-transformers||2014-08-10|Deprecated in favor of comonad
+math/hs-comonads-fd||2014-08-10|Deprecated in favor of comonad
+math/hs-groupoids||2014-08-10|Deprecated in favor of semigroupoids
+math/hs-semigroupoid-extras||2014-08-10|Deprecated in favor of semigroupoids
+net/hs-network-conduit||2014-08-10|Removed: Deprecated in favor of conduit-extra
+security/hs-tls-extra||2014-08-10|Removed: Deprecated in favor of tls
+textproc/hs-attoparsec-conduit||2014-08-10|Removed: Deprecated in favor of conduit-extra
+textproc/hs-xhtml||2014-08-10|Removed: Become part of GHC
+www/hs-hamlet||2014-08-10|Removed: Deprecated in favor of shakespeare
+www/hs-shakespeare-css||2014-08-10|Removed: Deprecated in favor of shakespeare
+www/hs-shakespeare-i18n||2014-08-10|Removed: Deprecated in favor of shakespeare
+www/hs-shakespeare-js||2014-08-10|Removed: Deprecated in favor of shakespeare
+www/hs-shakespeare-text||2014-08-10|Removed: Deprecated in favor of shakespeare
+www/hs-wai-test||2014-08-10|Removed: Deprecated in favor of wai-extra
+devel/rubygem-foreman_api||2014-08-11|Removed: Deprecated by upstream

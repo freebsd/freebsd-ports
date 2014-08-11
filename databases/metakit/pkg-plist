@@ -2,9 +2,8 @@ include/mk4.h
 include/mk4.inl
 include/mk4str.h
 include/mk4str.inl
+lib/libmk4.so
 lib/libmk4.so.0
-@exec ln -s libmk4.so.0 %D/lib/libmk4.so
-@rmtry lib/libmk4.so
 %%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/Mk4py.so
 %%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/metakit.py
 %%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/metakit.pyc

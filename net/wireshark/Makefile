@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME?=	wireshark
-PORTVERSION=	1.10.8
-PORTREVISION=	2
+PORTVERSION=	1.12.0
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://www.wireshark.org/download/src/ \
 		http://ftp.uni-kl.de/pub/wireshark/src/ \
@@ -21,12 +20,13 @@ COMMENT?=	Powerful network analyzer/capture tool
 DATADIR_NAME=	wireshark
 
 USE_PERL5=	build
-USE_PYTHON_BUILD=yes
-USES=		iconv gettext pkgconfig gmake perl5 tar:bzip2 libtool
+USES=		iconv gettext pkgconfig gmake perl5 tar:bzip2 libtool \
+    		python:build
 WANT_GNOME=	yes
 USE_OPENSSL=	yes
 CONFIGURE_ARGS+=	--program-transform-name="" \
-			--with-ssl=${OPENSSLBASE}
+			--with-ssl=${OPENSSLBASE} \
+			--with-qt=no
 USE_LDCONFIG=	yes
 DATADIR=	${PREFIX}/share/${DATADIR_NAME}
 CFLAGS+=	-funit-at-a-time
@@ -37,7 +37,7 @@ DESKTOP_ENTRIES=	"Wireshark" "Network Protocol Analyzer" \
 			"wireshark" "System;Monitor;GTK;" true
 
 .for x in capinfos editcap mergecap rawshark text2pcap dftest randpkt \
-    reordercap
+    reordercap captype
 .if defined(LITE)
 PLIST_SUB+=		${x:tu}="@comment $x not installed" \
     			${x:tu}_MAN="@comment $x not installed "
@@ -67,7 +67,8 @@ USE_XORG=		x11
 
 .if ${PORT_OPTIONS:MX11}
 PLIST_SUB+=	WIRESHARK=bin/wireshark WIRESHARK_MAN=""
-USE_GNOME+=	gtk20
+USE_GNOME+=	gtk30
+CONFIGURE_ARGS+=--with-gtk3=yes
 .else
 PLIST_SUB+=	WIRESHARK="@comment wireshark not built" \
 		WIRESHARK_MAN="@comment wireshark not built "

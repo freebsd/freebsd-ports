@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	ConfigFile
-PORTVERSION=	1.1.1
-PORTREVISION=	9
+PORTVERSION=	1.1.2
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org

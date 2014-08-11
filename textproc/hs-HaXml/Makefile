@@ -2,12 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	HaXml
-PORTVERSION=	1.24
-PORTREVISION=	4
+PORTVERSION=	1.24.1
 CATEGORIES=	textproc haskell
 
 MAINTAINER=	haskell@FreeBSD.org
-COMMENT=	Collection of utilities for using Haskell and XML together
+COMMENT=	Utilities for manipulating XML documents
 
 LICENSE=	LGPL21
 

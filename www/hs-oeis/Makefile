@@ -2,16 +2,15 @@
 # $FreeBSD$
 
 PORTNAME=	oeis
-PORTVERSION=	0.3.1
-PORTREVISION=	10
+PORTVERSION=	0.3.5
 CATEGORIES=	www haskell
 
 MAINTAINER=	haskell@FreeBSD.org
-COMMENT=	Haskell interface to the Online Encyclopedia of Integer Sequences
+COMMENT=	Interface to the Online Encyclopedia of Integer Sequences (OEIS)
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 
-USE_CABAL=	HTTP>=4000.0.2 network>=2
+USE_CABAL=	HTTP network
 
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

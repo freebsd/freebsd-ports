@@ -44,7 +44,6 @@ libdata/pkgconfig/libthai.pc
 %%DOXYGEN%%%%DOCSDIR%%/html/dynsections.js
 %%DOXYGEN%%%%DOCSDIR%%/html/files.html
 %%DOXYGEN%%%%DOCSDIR%%/html/ftv2blank.png
-%%DOXYGEN%%%%DOCSDIR%%/html/ftv2cl.png
 %%DOXYGEN%%%%DOCSDIR%%/html/ftv2doc.png
 %%DOXYGEN%%%%DOCSDIR%%/html/ftv2folderclosed.png
 %%DOXYGEN%%%%DOCSDIR%%/html/ftv2folderopen.png
@@ -52,9 +51,7 @@ libdata/pkgconfig/libthai.pc
 %%DOXYGEN%%%%DOCSDIR%%/html/ftv2link.png
 %%DOXYGEN%%%%DOCSDIR%%/html/ftv2mlastnode.png
 %%DOXYGEN%%%%DOCSDIR%%/html/ftv2mnode.png
-%%DOXYGEN%%%%DOCSDIR%%/html/ftv2mo.png
 %%DOXYGEN%%%%DOCSDIR%%/html/ftv2node.png
-%%DOXYGEN%%%%DOCSDIR%%/html/ftv2ns.png
 %%DOXYGEN%%%%DOCSDIR%%/html/ftv2plastnode.png
 %%DOXYGEN%%%%DOCSDIR%%/html/ftv2pnode.png
 %%DOXYGEN%%%%DOCSDIR%%/html/ftv2splitbar.png

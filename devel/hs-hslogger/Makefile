@@ -2,14 +2,13 @@
 # $FreeBSD$
 
 PORTNAME=	hslogger
-PORTVERSION=	1.2.1
-PORTREVISION=	6
+PORTVERSION=	1.2.4
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Versatile logging framework
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 
 USE_CABAL=	mtl network
 

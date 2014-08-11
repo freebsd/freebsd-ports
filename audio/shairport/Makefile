@@ -41,6 +41,7 @@ post-patch:
 		-e 's|$$FindBin.*|"${PREFIX}/bin/hairtunes";|' \
 		-e '/use FindBin;/d;s|/usr/bin/env perl|${PERL}|' \
 		${WRKSRC}/shairport.c ${WRKSRC}/shairport.pl
+	@${REINPLACE_CMD} 's/-lssl/-lcrypto/' ${WRKSRC}/Makefile
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME}.pl ${STAGEDIR}${PREFIX}/bin

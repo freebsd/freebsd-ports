@@ -17,9 +17,9 @@ LICENSE=	BSD2CLAUSE
 BUILD_DEPENDS=	${LOCALBASE}/include/${PYTHON_VERSION}/pygame/pygame.h:${PORTSDIR}/devel/py-game
 RUN_DEPENDS=	${LOCALBASE}/include/${PYTHON_VERSION}/pygame/pygame.h:${PORTSDIR}/devel/py-game
 
+USES=		python:2
 USE_GNOME=	atk
-USE_PYTHON=	2
-USE_PYDISTUTILS=yes
-PYDISTUTILS_AUTOPLIST=	yes
+
+PYTHON_FEATURES=	autoplist distutils
 
 .include <bsd.port.mk>

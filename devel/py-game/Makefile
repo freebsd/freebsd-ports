@@ -17,11 +17,10 @@ LICENSE=	LGPL21
 LIB_DEPENDS=	libsmpeg.so:${PORTSDIR}/multimedia/smpeg
 RUN_DEPENDS=	${PYNUMPY}
 
+USES=		python
 USE_SDL=	ttf image mixer sdl
 USE_GCC=	any
-USE_PYTHON=	yes
-USE_PYDISTUTILS=yes
-PYDISTUTILS_AUTOPLIST=	yes
+PYTHON_FEATURES=autoplist distutils
 
 SDLNOX11=	sdl-nox11-[0-9]*
 

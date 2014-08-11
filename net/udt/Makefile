@@ -36,8 +36,8 @@ post-install:
 	${INSTALL_PROGRAM} ${UDT_APPS:S|^|${WRKSRC:H}/app/udt-|} ${STAGEDIR}${PREFIX}/bin/
 .if ${PORT_OPTIONS:MDOCS}
 	# Installing documentation tree into ${DOCSDIR}
-	${MKDIR} ${DOCSDIR}
-	cd ${WRKSRC:H}/doc && ${COPYTREE_SHARE} \* ${STAGEDIR}${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC:H}/doc && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}
 .else
 EXTRACT_AFTER_ARGS+=	--exclude udt${PORTVERSION:R}/doc
 .endif

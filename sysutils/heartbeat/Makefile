@@ -22,7 +22,7 @@ LIB_DEPENDS=	libgnutls.so:${PORTSDIR}/security/gnutls \
 		libuuid.so:${PORTSDIR}/misc/e2fsprogs-libuuid \
 		libxml2.so:${PORTSDIR}/textproc/libxml2
 BUILD_DEPENDS=	bison:${PORTSDIR}/devel/bison
-PATCH_DEPENDS=	libtool:${PORTSDIR}/devel/libtool
+PATCH_DEPENDS=	libtoolize:${PORTSDIR}/devel/libtool
 
 USE_AUTOTOOLS=	autoconf autoheader automake aclocal libltdl libtoolize
 AUTOMAKE_ARGS+=	--add-missing --include-deps --copy

@@ -19,7 +19,7 @@ OPTIONS_SUB=	yes
 X11_BUILD_DEPENDS=	${LOCALBASE}/bin/type1inst:${PORTSDIR}/x11-fonts/p5-type1inst
 
 USES=		zip
-USE_TEX=	base texmf tetex
+USE_TEX=	texlive base texmf
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 PLIST_SUB=	UPDMAP_SYS="${UPDMAP_SYS}" \
@@ -27,6 +27,9 @@ PLIST_SUB=	UPDMAP_SYS="${UPDMAP_SYS}" \
 		MKTEXLSR="${MKTEXLSR}" \
 		TEXMFDIR=${TEXMFDIR} \
 		MACRODIR=${MACRODIR} \
+
+BUILD_DEPENDS=	updmap:${PORTSDIR}/print/texlive-base \
+		${PREFIX}/${TEXMFDIR}/web2c/updmap-hdr.cfg:${PORTSDIR}/print/texlive-infra
 
 UPDMAP_SYS=	${LOCALBASE}/bin/updmap-sys --quiet --progname=all
 MKTEXLSR=	${LOCALBASE}/bin/mktexlsr

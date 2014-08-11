@@ -1,14 +1,13 @@
 # $FreeBSD$
 
 PORTNAME=	socks
-PORTVERSION=	0.5.1
-PORTREVISION=	4
+PORTVERSION=	0.5.4
 CATEGORIES=	net haskell
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Socks proxy (version 5) implementation
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 
 USE_CABAL=	cereal>=0.3.1 network>=2.3
 

@@ -8,7 +8,7 @@ MASTER_SITES=	ftp://ftp.cs.uni-sb.de/pub/others/
 EXTRACT_SUFX=	.shar.gz
 PKGNAMESUFFIX=	21
 
-MAINTAINER=	chifeng@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Performance Test of Sequential File I/O (older version)
 
 CONFLICTS=	iozone-3.*

@@ -1,4 +1,4 @@
-A Haskell binding for the OpenGL graphics system (GL, version 2.1) and
+A Haskell binding for the OpenGL graphics system (GL, version 3.2) and
 its accompanying utility library (GLU, version 1.3).
 
 OpenGL is the industry's most widely used and supported 2D and 3D

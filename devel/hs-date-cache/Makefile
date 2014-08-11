@@ -2,13 +2,13 @@
 
 PORTNAME=	date-cache
 PORTVERSION=	0.3.0
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Date cacher
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

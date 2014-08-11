@@ -11,9 +11,8 @@ COMMENT=	Python source code checking tool to help hunting common bugs
 
 LICENSE=	BSD3CLAUSE
 
-USE_PYTHON=		2
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
+USES=		python
+PYTHON_FEATURES=autoplist distutils
 
 DOCS=		ChangeLog COPYRIGHT KNOWN_BUGS MAINTAINERS README TODO VERSION
 

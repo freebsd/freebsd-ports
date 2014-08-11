@@ -21,7 +21,7 @@ LICENSE=	GPLv2
 USE_PHP=	session mhash gettext mbstring pcre openssl xml
 WANT_PHP_WEB=	yes
 
-USES=		gettext tar:bzip2
+USES=		gettext tar:bzip2 cpe
 
 WRKSRC=		${WRKDIR}/${PORTNAME}.stable/${PORTNAME}
 

@@ -1,12 +1,13 @@
 # $FreeBSD$
 
 PORTNAME=	hxt-unicode
-PORTVERSION=	9.0.2
-PORTREVISION=	9
+PORTVERSION=	9.0.2.2
 CATEGORIES=	textproc haskell
 
 MAINTAINER=	haskell@FreeBSD.org
-COMMENT=	Unicode functions for UTF-8, iso-latin-* and other encodings
+COMMENT=	Unicode en-/decoding functions for utf8, iso-latin-* and other encodings
+
+LICENSE=	MIT
 
 USE_CABAL=	hxt-charproperties>=9
 

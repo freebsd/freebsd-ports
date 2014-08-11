@@ -8,7 +8,7 @@ CATEGORIES=	mail perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	chifeng@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	More casual approach to creating and sending Email
 
 BUILD_DEPENDS=	p5-prefork>=1.01:${PORTSDIR}/devel/p5-prefork \

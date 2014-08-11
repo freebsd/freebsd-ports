@@ -17,10 +17,8 @@ LICENSE=	GPLv3
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}tkinter>0:${PORTSDIR}/x11-toolkits/py-tkinter \
 		${PYTHON_SITELIBDIR}/PIL/__init__.py:${PORTSDIR}/graphics/py-imaging
 
-USES=	tar:bzip2
-USE_PYTHON=	yes
-USE_PYDISTUTILS=yes
-PYDISTUTILS_AUTOPLIST=	yes
+USES=		python tar:bzip2
+PYTHON_FEATURES=autoplist distutils
 
 PLIST_FILES=	share/pixmaps/pysolfc.png
 DATADIR=	${PREFIX}/share/PySolFC

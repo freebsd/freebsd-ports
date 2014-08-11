@@ -1,6 +1,6 @@
 --- src/ass_override.cpp.orig
 +++ src/ass_override.cpp
-@@ -49,6 +49,13 @@
+@@ -44,6 +44,13 @@
  #include <boost/range/adaptor/transformed.hpp>
  #include <functional>
  
@@ -14,17 +14,12 @@
  using namespace boost::adaptors;
  
  AssOverrideParameter::AssOverrideParameter(VariableDataType type, AssParameterClass classification)
-@@ -129,11 +136,11 @@
+@@ -126,7 +133,7 @@
  	if (classification == AssParameterClass::ALPHA)
- 		Set(str(boost::format("&H%02X&") % mid(0, new_value, 255)));
+ 		Set(agi::format("&H%02X&", mid(0, new_value, 255)));
  	else
 -		Set(std::to_string(new_value));
 +		Set(TO_STRING(new_value));
  }
  
  template<> void AssOverrideParameter::Set<double>(double new_value) {
--	Set(std::to_string(new_value));
-+	Set(TO_STRING(new_value));
- }
- 
- template<> void AssOverrideParameter::Set<bool>(bool new_value) {

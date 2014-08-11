@@ -1,17 +1,16 @@
 # $FreeBSD$
 
 PORTNAME=	semigroupoids
-PORTVERSION=	3.0.2
-PORTREVISION=	6
+PORTVERSION=	4.0.4
 CATEGORIES=	math haskell
 
 MAINTAINER=	haskell@FreeBSD.org
-COMMENT=	Haskell 98 semigroupoids: Category sans id
+COMMENT=	Semigroupoids: Category sans id
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 
-USE_CABAL=	comonad>=3.0 contravariant>=0.2.0.1 semigroups>=0.8.3.1 \
-		transformers>=0.2
+USE_CABAL=	comonad>=4 contravariant>=0.2.0.1 distributive>=0.2.2 \
+		semigroups>=0.8.3.1
 
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

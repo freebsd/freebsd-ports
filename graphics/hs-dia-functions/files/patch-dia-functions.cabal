@@ -1,0 +1,11 @@
+--- ./dia-functions.cabal.orig	2012-09-11 09:47:34.000000000 +0200
++++ ./dia-functions.cabal	2014-07-13 01:36:21.000000000 +0200
+@@ -30,7 +30,7 @@
+   Build-Depends:
+     data-pprint >= 0.2 && < 0.3,
+     dia-base >= 0.1 && < 0.2,
+-    base >= 4.0 && < 4.7,
++    base >= 4.0 && < 4.8,
+     containers >= 0.4 && < 0.6,
+     xhtml >= 3000.2 && < 3000.3,
+     mtl >= 2.0 && < 2.2,

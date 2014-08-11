@@ -1,5 +1,5 @@
---- Setup.lhs.orig	2013-02-06 07:07:21.000000000 +0100
-+++ Setup.lhs	2013-02-10 10:48:49.000000000 +0100
+--- ./Setup.lhs.orig	2013-02-06 07:07:21.000000000 +0100
++++ ./Setup.lhs	2014-07-13 22:44:31.000000000 +0200
 @@ -26,7 +26,7 @@
  import Data.Version( showVersion )
  import Distribution.Simple.LocalBuildInfo

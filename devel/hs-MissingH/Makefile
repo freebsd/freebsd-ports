@@ -2,14 +2,13 @@
 # $FreeBSD$
 
 PORTNAME=	MissingH
-PORTVERSION=	1.2.0.0
-PORTREVISION=	6
+PORTVERSION=	1.2.1.0
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
-COMMENT=	Large Haskell utility library
+COMMENT=	Large utility library
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 
 USE_CABAL=	hslogger HUnit mtl network parsec random regex-compat
 

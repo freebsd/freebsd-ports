@@ -9,7 +9,7 @@ MASTER_SITES=		http://www.moosefs.org/tl_files/mfscode/ \
 PKGNAMESUFFIX=		-master
 DISTNAME=		mfs-${DISTVERSION}
 
-MAINTAINER=		chifeng@gmail.com
+MAINTAINER=		ports@FreeBSD.org
 COMMENT=		Managing the whole filesystem and storing metadata
 
 LICENSE=		GPLv3

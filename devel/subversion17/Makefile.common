@@ -12,9 +12,11 @@ MASTER_SITE_SUBDIR=	subversion
 
 USE_KDE4=	# Used below if KWallet support is enabled
 GNU_CONFIGURE=	yes
-USES+=		tar:bzip2 pkgconfig libtool
+USES+=		tar:bzip2 pkgconfig libtool cpe
 
 LICENSE=	APACHE20
+
+CPE_VENDOR=	apache
 
 CONFLICTS_INSTALL+=	${PKGNAMEPREFIX}${PORTNAME}${PKGNAMESUFFIX}-1.[^7].[0-9]*
 
@@ -116,7 +118,7 @@ post-patch:
 	@${REINPLACE_CMD} "s#^swig_pydir =.*#swig_pydir = ${PYTHON_SITELIBDIR}/libsvn#" ${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} "s#^swig_pydir_extra =.*#swig_pydir_extra = ${PYTHON_SITELIBDIR}/svn#" ${WRKSRC}/Makefile.in
 .if defined(SVN_BUILD_BINDINGS)
-	@${CP} ${FILESDIR}/build-outputs.mk ${WRKSRC}
+	${CP} ${FILESDIR}/build-outputs.mk ${WRKSRC}
 .endif
 .if ${PORT_OPTIONS:MFREEBSD_TEMPLATE} && defined(ORGANIZATION)
 	@${ECHO_CMD} "#define ORGANIZATION_NAME \"${ORGANIZATION}\"" > ${WRKSRC}/subversion/freebsd-organization.h

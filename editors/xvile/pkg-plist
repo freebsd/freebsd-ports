@@ -4,7 +4,9 @@ bin/uxvile
 %%PERL%%bin/vileget
 bin/xshell.sh
 bin/xvile
+bin/xvile-libdir-path
 bin/xvile-pager
+bin/xvile-to-html
 lib/X11/app-defaults/UXVile
 lib/X11/app-defaults/XVile
 lib/vile/atr2ansi

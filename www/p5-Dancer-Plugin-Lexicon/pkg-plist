@@ -1,0 +1,5 @@
+%%PERL5_MAN3%%/Dancer::Plugin::Lexicon.3.gz
+%%SITE_PERL%%/Dancer/Plugin/Lexicon.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Dancer/Plugin/Lexicon/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Dancer/Plugin/Lexicon
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Dancer/Plugin

@@ -277,6 +277,7 @@
     SUBDIR += horde3-passwd
     SUBDIR += horde3-trean
     SUBDIR += hotcrp
+    SUBDIR += hs-DAV
     SUBDIR += hs-HTTP
     SUBDIR += hs-activehs
     SUBDIR += hs-authenticate
@@ -286,11 +287,12 @@
     SUBDIR += hs-fastcgi
     SUBDIR += hs-gitit
     SUBDIR += hs-hS3
-    SUBDIR += hs-hamlet
     SUBDIR += hs-happstack
     SUBDIR += hs-happstack-server
     SUBDIR += hs-heist
     SUBDIR += hs-hjsmin
+    SUBDIR += hs-http-client
+    SUBDIR += hs-http-client-tls
     SUBDIR += hs-http-conduit
     SUBDIR += hs-http-date
     SUBDIR += hs-http-reverse-proxy
@@ -301,10 +303,6 @@
     SUBDIR += hs-recaptcha
     SUBDIR += hs-scgi
     SUBDIR += hs-shakespeare
-    SUBDIR += hs-shakespeare-css
-    SUBDIR += hs-shakespeare-i18n
-    SUBDIR += hs-shakespeare-js
-    SUBDIR += hs-shakespeare-text
     SUBDIR += hs-snap
     SUBDIR += hs-snap-core
     SUBDIR += hs-snap-server
@@ -313,12 +311,14 @@
     SUBDIR += hs-wai-app-static
     SUBDIR += hs-wai-extra
     SUBDIR += hs-wai-logger
-    SUBDIR += hs-wai-test
     SUBDIR += hs-warp
+    SUBDIR += hs-warp-tls
     SUBDIR += hs-webkit
     SUBDIR += hs-xss-sanitize
     SUBDIR += hs-yesod
     SUBDIR += hs-yesod-auth
+    SUBDIR += hs-yesod-auth-hashdb
+    SUBDIR += hs-yesod-bin
     SUBDIR += hs-yesod-core
     SUBDIR += hs-yesod-form
     SUBDIR += hs-yesod-persistent
@@ -843,6 +843,7 @@
     SUBDIR += p5-Dancer-Logger-Log4perl
     SUBDIR += p5-Dancer-Plugin-ExtDirect
     SUBDIR += p5-Dancer-Plugin-Feed
+    SUBDIR += p5-Dancer-Plugin-Lexicon
     SUBDIR += p5-Dancer-Plugin-SiteMap
     SUBDIR += p5-Dancer-Plugin-ValidationClass
     SUBDIR += p5-Dancer-Session-Cookie
@@ -2104,6 +2105,7 @@
     SUBDIR += vee
     SUBDIR += vertx
     SUBDIR += videocache
+    SUBDIR += vimb
     SUBDIR += visitors
     SUBDIR += volta
     SUBDIR += w3m

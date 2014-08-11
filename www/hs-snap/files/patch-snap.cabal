@@ -1,0 +1,19 @@
+--- ./snap.cabal.orig	2014-07-03 21:45:03.000000000 +0200
++++ ./snap.cabal	2014-07-29 12:40:27.405965571 +0200
+@@ -186,7 +186,7 @@
+   else
+     build-depends:
+       base                      >= 4.4      && < 5,
+-      lens                      >= 3.7.6    && < 4.2
++      lens                      >= 3.7.6    && < 4.4
+ 
+   extensions:
+     BangPatterns,
+@@ -236,6 +236,7 @@
+     text                >= 0.11    && < 1.2
+ 
+   extensions:
++    TemplateHaskell
+     OverloadedStrings
+ 
+   ghc-prof-options: -prof -auto-all

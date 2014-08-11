@@ -2,14 +2,13 @@
 # $FreeBSD$
 
 PORTNAME=	uniplate
-PORTVERSION=	1.6.10
-PORTREVISION=	6
+PORTVERSION=	1.6.12
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Help writing simple, concise, and fast generic operations
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 
 USE_CABAL=	hashable>=1.1.2.3 syb unordered-containers>=0.2.1
 

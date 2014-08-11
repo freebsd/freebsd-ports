@@ -3,4 +3,4 @@ clearing, color output showing or hiding the cursor, and changing the
 title. Compatible with Windows and those Unixes with ANSI terminals, but
 only GHC is supported as a compiler.
 
-WWW: http://batterseapower.github.com/ansi-terminal
+WWW: https://github.com/feuerbach/ansi-terminal

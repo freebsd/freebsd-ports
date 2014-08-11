@@ -103,7 +103,6 @@ share/nmsg/base/xml.proto
 %%PORTDOCS%%%%DOCSDIR%%/html/encode_8pb-c_8h_source.html
 %%PORTDOCS%%%%DOCSDIR%%/html/files.html
 %%PORTDOCS%%%%DOCSDIR%%/html/ftv2blank.png
-%%PORTDOCS%%%%DOCSDIR%%/html/ftv2cl.png
 %%PORTDOCS%%%%DOCSDIR%%/html/ftv2doc.png
 %%PORTDOCS%%%%DOCSDIR%%/html/ftv2folderclosed.png
 %%PORTDOCS%%%%DOCSDIR%%/html/ftv2folderopen.png
@@ -111,9 +110,7 @@ share/nmsg/base/xml.proto
 %%PORTDOCS%%%%DOCSDIR%%/html/ftv2link.png
 %%PORTDOCS%%%%DOCSDIR%%/html/ftv2mlastnode.png
 %%PORTDOCS%%%%DOCSDIR%%/html/ftv2mnode.png
-%%PORTDOCS%%%%DOCSDIR%%/html/ftv2mo.png
 %%PORTDOCS%%%%DOCSDIR%%/html/ftv2node.png
-%%PORTDOCS%%%%DOCSDIR%%/html/ftv2ns.png
 %%PORTDOCS%%%%DOCSDIR%%/html/ftv2plastnode.png
 %%PORTDOCS%%%%DOCSDIR%%/html/ftv2pnode.png
 %%PORTDOCS%%%%DOCSDIR%%/html/ftv2splitbar.png

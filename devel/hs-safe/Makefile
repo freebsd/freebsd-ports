@@ -2,14 +2,13 @@
 # $FreeBSD$
 
 PORTNAME=	safe
-PORTVERSION=	0.3.3
-PORTREVISION=	9
+PORTVERSION=	0.3.7
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
-COMMENT=	Library for safe (pattern match free) functions
+COMMENT=	Library for safe (exception free) functions
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

@@ -12,7 +12,8 @@ COMMENT=	Temperature control for fermenting beer and other applications
 LICENSE=	BSD2CLAUSE
 
 USES=		readline
-MAKE_ARGS=	CFLAGS="${CFLAGS} -Wall -Wno-parentheses"
+MAKE_ARGS=	CFLAGS="${CFLAGS} -Wall -Wno-parentheses ${CPPFLAGS}" \
+		LFLAGS="${LDFLAGS}"
 NO_WRKSUBDIR=	yes
 
 PLIST_FILES=	bin/tempcontrol share/tempcontrol/temperaturecontrolrc.sample \

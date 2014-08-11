@@ -58,20 +58,17 @@ post-patch:
 
 do-install:
 	cd ${WRKSRC} && ${INSTALL_OPTS} DESTDIR=${STAGEDIR} ./install-sh ${PREFIX}
-
-post-install:
 .if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for FILE in ${DOCFILES1}
-	@${INSTALL_DATA} ${WRKSRC}/${FILE} ${DOCSDIR}/${FILE}
+	@${INSTALL_DATA} ${WRKSRC}/${FILE} ${STAGEDIR}${DOCSDIR}/${FILE}
 .endfor
 .for FILE in ${DOCFILES2}
-	@${INSTALL_DATA} ${WRKSRC}/documentation/${FILE} ${DOCSDIR}/${FILE}
+	@${INSTALL_DATA} ${WRKSRC}/documentation/${FILE} ${STAGEDIR}${DOCSDIR}/${FILE}
 .endfor
 .for DIR in stubs includes
-	@${CP} -rf ${WRKSRC}/documentation/${DIR} ${DOCSDIR}
+	@${CP} -rf ${WRKSRC}/documentation/${DIR} ${STAGEDIR}${DOCSDIR}
 .endfor
-	@${ECHO_MSG} "===> Docs installed in ${DOCSDIR}."
 .endif
 
 .include <bsd.port.mk>

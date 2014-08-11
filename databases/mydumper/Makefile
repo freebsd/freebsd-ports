@@ -20,7 +20,9 @@ USES=		cmake pkgconfig
 PLIST_FILES=	sbin/mydumper sbin/myloader
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|-Werror||' ${WRKSRC}/CMakeLists.txt
+	@${REINPLACE_CMD} \
+		-e '/link_libraries(mydumper/s/)$$/ -lm)/' \
+		-e 's|-Werror||' ${WRKSRC}/CMakeLists.txt
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/mydumper ${WRKSRC}/myloader ${STAGEDIR}${PREFIX}/sbin/

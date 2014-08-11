@@ -1,20 +1,20 @@
-Armadillo is a C++ linear algebra library (matrix maths) aiming towards a 
-good balance between speed and ease of use. The syntax is deliberately 
+Armadillo is a C++ linear algebra library (matrix maths) aiming towards
+a good balance between speed and ease of use. The syntax is deliberately
 similar to Matlab.
- 
-Integer, floating point and complex numbers are supported, as well as a 
-subset of trigonometric and statistics functions. Various matrix 
-decompositions are provided through optional integration with LAPACK, or 
-one of its high performance drop-in replacements (such as the 
+
+Integer, floating point and complex numbers are supported, as well as a
+subset of trigonometric and statistics functions. Various matrix
+decompositions are provided through optional integration with LAPACK, or
+one of its high performance drop-in replacements (such as the
 multi-threaded MKL or ACML libraries).
- 
-A delayed evaluation approach is employed (at compile-time) to combine 
-several operations into one and reduce (or eliminate) the need for 
-temporaries. This is accomplished through recursive templates and template 
-meta-programming.
- 
-Useful for conversion of research code into production environments, or if 
-C++ has been decided as the language of choice, due to speed and/or 
+
+A delayed evaluation approach is employed (at compile-time) to combine
+several operations into one and reduce (or eliminate) the need for
+temporaries. This is accomplished through recursive templates and
+template meta-programming.
+
+Useful for conversion of research code into production environments, or
+if C++ has been decided as the language of choice, due to speed and/or
 integration capabilities.
- 
+
 WWW: http://arma.sourceforge.net/

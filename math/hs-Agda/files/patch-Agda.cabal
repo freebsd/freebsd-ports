@@ -1,20 +1,11 @@
---- ./Agda.cabal.orig	2012-11-12 01:25:25.000000000 +0100
-+++ ./Agda.cabal	2013-05-03 23:08:18.000000000 +0200
-@@ -69,7 +69,7 @@
- 
-   build-depends:    base >= 4.2 && < 4.7,
-                     mtl >= 2.0 && < 2.2,
--                    QuickCheck >= 2.3 && < 2.6,
-+                    QuickCheck >= 2.3 && < 2.7,
-                     haskell-src-exts >= 1.9.6 && < 1.14,
+--- ./Agda.cabal.orig	2014-06-16 12:42:15.000000000 +0200
++++ ./Agda.cabal	2014-07-13 13:20:32.000000000 +0200
+@@ -76,7 +76,7 @@
+                     transformers == 0.3.*,
+                     -- mtl-2.1 contains a severe bug
+                     mtl >= 2.1.1 && < 2.2,
+-                    QuickCheck >= 2.7.5 && < 2.8,
++                    QuickCheck >= 2.6 && < 2.7,
+                     haskell-src-exts >= 1.9.6 && < 1.16,
                      containers >= 0.1 && < 0.6,
                      unordered-containers == 0.2.*,
-@@ -83,7 +83,7 @@
-                     haskeline >= 0.6.3.2 && < 0.8,
-                     xhtml == 3000.2.*,
-                     hashable >= 1.1.2.3 && < 1.2,
--                    hashtables == 1.0.*,
-+                    hashtables == 1.1.*,
-                     geniplate >= 0.6.0.3 && < 0.7,
-                     parallel < 3.3,
-                     deepseq == 1.3.*,

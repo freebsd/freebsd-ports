@@ -2,20 +2,23 @@
 # $FreeBSD$
 
 PORTNAME=	xpacman
-PORTVERSION=	1.0
-PORTREVISION=	3
+PORTVERSION=	1.002
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.nvg.unit.no/pub/pacman/
-DISTNAME=	pacman10
+DISTNAME=	pacman-1_002
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Old action game
 
-NO_WRKSUBDIR=	Does not unpack into subdir.
-USES=		imake zip
+LICENSE=	GPLv2
+
+RUN_DEPENDS+=	${LOCALBASE}/lib/X11/fonts/misc/9x18.pcf.gz:${PORTSDIR}/x11-fonts/font-misc-misc
+
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS+=--enable-doublesize
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 USE_XORG=	x11 xext
-MAN1=		pacman.1
 PLIST_FILES=	bin/pacman
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

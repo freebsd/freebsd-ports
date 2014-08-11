@@ -2,13 +2,13 @@
 
 PORTNAME=	maccatcher
 PORTVERSION=	2.1.5
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	net haskell
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Obtain the host MAC address on *NIX and Windows
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 
 USE_CABAL=	parsec
 

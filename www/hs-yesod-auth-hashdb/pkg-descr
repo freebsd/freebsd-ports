@@ -1,0 +1,5 @@
+This package is the Yesod.Auth.HashDB plugin, originally included in
+yesod-auth, but now modified to be more secure and placed in a separate
+package.
+
+WWW: http://www.yesodweb.com/

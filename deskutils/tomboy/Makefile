@@ -22,6 +22,7 @@ GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
 INSTALLS_OMF=	yes
 USE_LDCONFIG=	yes
+GCONF_SCHEMAS=	tomboy.schemas
 
 MAKE_JOBS_UNSAFE=yes
 
@@ -49,7 +50,7 @@ RUN_DEPENDS+=	${LOCALBASE}/lib/mono/gmime-sharp-2.6/gmime-sharp.dll:${PORTSDIR}/
 PLIST_SUB+=	EVOLUTION=""
 .else
 CONFIGURE_ARGS+=--disable-evolution
-PLIST_SUB+=	EVOLUTION="@comment"
+PLIST_SUB+=	EVOLUTION="@comment "
 .endif
 
 post-patch:

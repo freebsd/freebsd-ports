@@ -3,13 +3,13 @@
 
 PORTNAME=	filemanip
 PORTVERSION=	0.3.6.2
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Expressive file and directory manipulation for Haskell
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 
 USE_CABAL=	mtl unix-compat
 

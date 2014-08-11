@@ -1,16 +1,15 @@
 # $FreeBSD$
 
 PORTNAME=	monad-par
-PORTVERSION=	0.3.4.2
-PORTREVISION=	4
+PORTVERSION=	0.3.4.6
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Library for parallel programming based on a monad
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 
-USE_CABAL=	abstract-deque>=0.1.4 abstract-par monad-par-extras \
+USE_CABAL=	abstract-deque>=0.1.4 abstract-par monad-par-extras>=0.3 \
 		mtl>=2.0.1.0 mwc-random>=0.11 parallel>=3.1
 
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"

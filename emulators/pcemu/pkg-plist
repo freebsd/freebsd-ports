@@ -8,7 +8,6 @@ lib/pcemu/doc/README.FreeBSD
 lib/pcemu/doc/lredir.readme
 lib/pcemu/doc/report.ps.gz
 lib/pcemu/font/vga.pcf.Z
-@exec mkfontdir %B
 lib/pcemu/C/vga50.com
 lib/pcemu/C/config.sys
 lib/pcemu/C/dumpdisk.exe
@@ -17,5 +16,5 @@ lib/pcemu/C/emufs.sys
 lib/pcemu/DriveA
 @dirrmtry lib/pcemu/C
 @dirrmtry lib/pcemu/doc
-@dirrmtry lib/pcemu/font
+@fontsdir lib/pcemu/font
 @dirrmtry lib/pcemu

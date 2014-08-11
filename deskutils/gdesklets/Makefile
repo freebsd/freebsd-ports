@@ -18,8 +18,7 @@ OPTIONS_DEFINE=	GDBM
 WRKSRC=		${WRKDIR}/gDesklets-${PORTVERSION}
 
 USE_GNOME=	gnomeprefix intlhack librsvg2 pygnomeextras
-USE_PYTHON=	yes
-USES=		gettext gmake pkgconfig tar:bzip2 pathfix \
+USES=		gettext gmake pkgconfig python tar:bzip2 pathfix \
 		desktop-file-utils shared-mime-info libtool
 
 GNU_CONFIGURE=	yes
@@ -45,7 +44,5 @@ post-install:
 	@${TOUCH} ${STAGEDIR}${DATADIR}/Displays/.keep_me
 	@${MKDIR} ${STAGEDIR}${DATADIR}/Sensors
 	@${TOUCH} ${STAGEDIR}${DATADIR}/Sensors/.keep_me
-	@-update-mime-database ${STAGEDIR}${PREFIX}/share/mime
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>

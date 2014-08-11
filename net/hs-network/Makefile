@@ -1,14 +1,13 @@
 # $FreeBSD$
 
 PORTNAME=	network
-PORTVERSION=	2.4.1.2
-PORTREVISION=	4
+PORTVERSION=	2.4.2.3
 CATEGORIES=	net haskell
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Low-level networking interface
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 
 USE_CABAL=	parsec>=3.0
 

@@ -3,13 +3,13 @@
 
 PORTNAME=	zlib
 PORTVERSION=	0.5.4.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	archivers haskell
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Compression and decompression in the gzip and zlib formats
 
-LICENSE=	BSD2CLAUSE
+LICENSE=	BSD3CLAUSE
 
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

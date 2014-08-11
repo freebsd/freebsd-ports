@@ -2,13 +2,13 @@
 
 PORTNAME=	data-default-instances-base
 PORTVERSION=	0.0.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Default instances for types in base
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 
 USE_CABAL=	data-default-class
 

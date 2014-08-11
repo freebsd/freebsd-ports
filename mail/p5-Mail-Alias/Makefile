@@ -7,7 +7,7 @@ CATEGORIES=	mail perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	chifeng@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Mail::Alias
 
 USES=		perl5

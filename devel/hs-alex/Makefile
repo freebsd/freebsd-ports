@@ -2,14 +2,13 @@
 # $FreeBSD$
 
 PORTNAME=	alex
-PORTVERSION=	3.0.5
-PORTREVISION=	4
+PORTVERSION=	3.1.3
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Tool for generating lexical analysers in Haskell
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 
 USE_CABAL=	QuickCheck>=2
 

@@ -1,0 +1,14 @@
+Dancer::Plugin::Lexicon uses Locale::Maketext::Lexicon to provide I18N
+functionality to your Dancer application.
+
+Translations are stored in PO or MO (compiled PO) gettext files in the
+"languages/" dir. You can generate or update your PO files by
+automatically extracting translatable strings from your code and
+templates with xgettext.pl.
+
+The user's preferred language can be auto-detected from their browser
+settings, and the current language is automatically stored in the user's
+session. Including "lang=$lang_tag" in the query string change the
+user's language.
+
+WWW: http://search.cpan.org/dist/Dancer-Plugin-Lexicon/

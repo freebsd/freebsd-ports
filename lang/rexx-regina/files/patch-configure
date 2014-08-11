@@ -1,43 +1,11 @@
---- configure.orig	2014-07-05 22:07:04.000000000 +0000
-+++ configure
-@@ -3483,6 +3483,13 @@ case "$target" in
-          osis64bit=yes
-       fi
-       ;;
-+   *-dragonfly*)
-+      mach="`uname -m`"
-+      if test "$mach" = "x86_64"; then
-+         bitflag="64"
-+         osis64bit=yes
-+      fi
-+      ;;
-    *-freebsd*)
-       mach="`uname -m`"
-       if test "$mach" = "amd64"; then
-@@ -6178,7 +6185,7 @@ $as_echo_n "checking whether Posix Threa
-    save_cflags="$CFLAGS"
-    pthread_libs="pthreads pthread c_r c"
-    case "$target" in
--      *freebsd*)
-+      *freebsd*|*dragonfly*)
-          CFLAGS="$CFLAGS -pthread"
-          ;;
-    esac
-@@ -6232,7 +6239,7 @@ rm -f core conftest.err conftest.$ac_obj
-                ;;
-             *linux*)
-                ;;
--            *freebsd*)
-+            *freebsd*|*dragonfly*)
-                THREADING_COMPILE="-pthread -D_REENTRANT -DPOSIX -DREGINA_REENTRANT"
-                THREADING_LINK="-pthread"
-                ;;
-@@ -8654,7 +8661,13 @@ case "$target" in
+--- configure.orig	2012-10-16 06:34:08.000000000 +0200
++++ configure	2013-02-04 21:07:09.000000000 +0100
+@@ -8654,7 +8654,13 @@
                  SHLPRE="lib"
                  SHL_LD="ld -assert pure-text -o ${SHLPRE}${SHLFILE}${SHLPST} "'$('SHOFILES')'
                  ;;
 -        *-freebsd* | *openbsd*)
-+        *freebsd*|*dragonfly*)
++        *freebsd*)
 +                LD_RXLIB_A1="$ac_cv_prog_CC -shared ${LDFLAGS} -o \$(@)"
 +                LD_RXLIB_A2="$ac_cv_prog_CC -shared ${LDFLAGS} -o \$(@)"
 +                LD_RXLIB_UTILA="$ac_cv_prog_CC -shared ${LDFLAGS} -o \$(@)"
@@ -47,12 +15,3 @@
                  if test "$ac_cv_prog_CC" = "gcc" -o "$ac_cv_prog_CC" = "g++" -o "$ac_cv_prog_CC" = "clang"; then
                     LD_RXLIB_A1="$ac_cv_prog_CC -shared ${LDFLAGS} -o \$(@)"
                     LD_RXLIB_A2="$ac_cv_prog_CC -shared ${LDFLAGS} -o \$(@)"
-@@ -9403,7 +9416,7 @@ $as_echo_n "checking OS distribution nam
- $as_echo "$MYDISTRO" >&6; }
- else
-    case "$target" in
--      *freebsd* | *openbsd*)
-+      *freebsd* | *openbsd* | *dragonfly*)
-          MYDISTRO="`echo $target | cut -f3 -d-`"
-       ;;
-       *darwin*)

@@ -197,7 +197,7 @@ post-build:
 .endif
 
 post-install:
-	${INSTALL_DATA} ${WRKDIR}/${MOZILLA}.desktop ${PREFIX}/share/applications/
+	${INSTALL_DATA} ${WRKDIR}/${MOZILLA}.desktop ${STAGEDIR}${PREFIX}/share/applications/
 	${LN} -sf ${PREFIX}/lib/${MOZILLA}/chrome/icons/default/default48.png \
 		${STAGEDIR}${PREFIX}/share/pixmaps/${MOZILLA}.png
 .if ${PORT_OPTIONS:MLIGHTNING}

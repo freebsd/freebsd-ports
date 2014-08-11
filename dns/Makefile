@@ -58,6 +58,8 @@
     SUBDIR += ghtool
     SUBDIR += hesiod
     SUBDIR += hostdb
+    SUBDIR += hs-dns
+    SUBDIR += hs-gnuidn
     SUBDIR += idnkit
     SUBDIR += idnkit2
     SUBDIR += inadyn

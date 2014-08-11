@@ -3,7 +3,7 @@
 
 PORTNAME=	gexiv2
 PORTVERSION=	0.6.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	http://yorba.org/download/${PORTNAME}/${PORTVERSION:R}/
 DISTNAME=	lib${PORTNAME}_${PORTVERSION}
@@ -14,11 +14,10 @@ COMMENT=	GObject-based wrapper around Exiv2 library
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	libtool:${PORTSDIR}/devel/libtool \
-		gm4:${PORTSDIR}/devel/m4
+BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4
 LIB_DEPENDS=	libexiv2.so:${PORTSDIR}/graphics/exiv2
 
-USES=		gmake pkgconfig tar:xz
+USES=		gmake libtool:build pkgconfig tar:xz
 USE_GNOME=	glib20
 USE_LDCONFIG=	yes
 MAKE_ARGS=	REQUIRED_CFLAGS=""

@@ -1,14 +1,13 @@
 # $FreeBSD$
 
 PORTNAME=	skein
-PORTVERSION=	1.0.3
-PORTREVISION=	4
+PORTVERSION=	1.0.9
 CATEGORIES=	security haskell
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Skein, a family of cryptographic hash functions
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 
 USE_CABAL=	cereal>=0.3 crypto-api>=0.6 tagged>=0.2
 

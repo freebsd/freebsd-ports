@@ -6,7 +6,7 @@ PORTVERSION=	1.7
 CATEGORIES=	mail
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	chifeng@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fetches and delivers mail
 
 LICENSE=	ISCL

@@ -1,0 +1,25 @@
+--- src/definition.cpp-orig	2014-06-11 20:09:07.000000000 +0200
++++ src/definition.cpp	2014-06-11 20:12:32.000000000 +0200
+@@ -17,6 +17,7 @@
+ 
+ #include <ctype.h>
+ #include <qregexp.h>
++#include <sys/types.h>
+ #include "md5.h"
+ #include <stdio.h>
+ #include <stdlib.h>
+@@ -539,13 +540,11 @@
+ 
+ bool Definition::_docsAlreadyAdded(const QCString &doc,QCString &sigList)
+ {
+-  uchar md5_sig[16];
+   QCString sigStr(33);
+   // to avoid mismatches due to differences in indenting, we first remove
+   // double whitespaces...
+   QCString docStr = doc.simplifyWhiteSpace();
+-  MD5Buffer((const unsigned char *)docStr.data(),docStr.length(),md5_sig);
+-  MD5SigToString(md5_sig,sigStr.data(),33);
++  MD5Data((const unsigned char *)docStr.data(),docStr.length(),sigStr.data());
+   //printf("%s:_docsAlreadyAdded doc='%s' sig='%s' docSigs='%s'\n",
+   //    name().data(),doc.data(),sigStr.data(),sigList.data());
+   if (sigList.find(sigStr)==-1) // new docs, add signature to prevent re-adding it

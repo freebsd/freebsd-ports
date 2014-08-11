@@ -1,0 +1,10 @@
+--- ./yesod-test.cabal.orig	2014-06-09 09:47:25.000000000 +0200
++++ ./yesod-test.cabal	2014-07-13 02:06:10.000000000 +0200
+@@ -19,7 +19,6 @@
+                    , persistent                >= 1.0
+                    , transformers              >= 0.2.2
+                    , wai                       >= 1.3
+-                   , wai-test                  >= 1.3
+                    , wai-extra
+                    , network                   >= 2.2
+                    , http-types                >= 0.7

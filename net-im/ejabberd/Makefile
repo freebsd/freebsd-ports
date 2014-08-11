@@ -3,7 +3,7 @@
 
 PORTNAME=	ejabberd
 PORTVERSION=	14.07
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-im
 MASTER_SITES=	http://www.process-one.net/downloads/${PORTNAME}/${PORTVERSION}/:p1 \
 		http://distfiles.pirateparty.in/%SUBDIR%/:deps \

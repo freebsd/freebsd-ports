@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	bio
-PORTVERSION=	0.5.2
-PORTREVISION=	8
+PORTVERSION=	0.5.3
 CATEGORIES=	science haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -11,7 +10,7 @@ COMMENT=	Bioinformatics library
 
 LICENSE=	LGPL21
 
-USE_CABAL=	mtl parallel parsec QuickCheck>=2 tagsoup>=0.8
+USE_CABAL=	mtl parallel parsec QuickCheck>=2 random tagsoup>=0.8
 
 EXECUTABLE=	fastout flowclip flx frecover frename orf rselect-pe
 

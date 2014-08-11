@@ -10,11 +10,9 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	mva@FreeBSD.org
 COMMENT=	ATK accessibility wrapper for python
 
-USES=		pkgconfig
+USES=		pkgconfig python:2
 USE_GNOME=	atk
-USE_PYTHON=	2
-USE_PYDISTUTILS=yes
-PYDISTUTILS_AUTOPLIST=	yes
+PYTHON_FEATURES=autoplist distutils
 
 EXAMPLES=	atkaction.py atkapplication.py atkcapi.c atktext.py atkvalue.py \
 		msaaapplication.py msaacapi.cpp

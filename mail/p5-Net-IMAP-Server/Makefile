@@ -7,7 +7,7 @@ CATEGORIES=	mail perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	chifeng@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Single-threaded multiplexing IMAP server implementation
 
 BUILD_DEPENDS=	p5-Net-Server-Coro>=0.6:${PORTSDIR}/net/p5-Net-Server-Coro \

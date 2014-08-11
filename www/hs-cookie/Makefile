@@ -1,14 +1,13 @@
 # $FreeBSD$
 
 PORTNAME=	cookie
-PORTVERSION=	0.4.0.1
-PORTREVISION=	6
+PORTVERSION=	0.4.1.2
 CATEGORIES=	www haskell
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	HTTP cookie parsing and rendering
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 
 USE_CABAL=	blaze-builder>=0.2.1 data-default text>=0.7
 

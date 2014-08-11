@@ -33,7 +33,6 @@ libdata/pkgconfig/librtlsdr.pc
 %%PORTDOCS%%%%DOCSDIR%%/html/files.html
 %%PORTDOCS%%%%DOCSDIR%%/html/files.js
 %%PORTDOCS%%%%DOCSDIR%%/html/ftv2blank.png
-%%PORTDOCS%%%%DOCSDIR%%/html/ftv2cl.png
 %%PORTDOCS%%%%DOCSDIR%%/html/ftv2doc.png
 %%PORTDOCS%%%%DOCSDIR%%/html/ftv2folderclosed.png
 %%PORTDOCS%%%%DOCSDIR%%/html/ftv2folderopen.png
@@ -41,9 +40,7 @@ libdata/pkgconfig/librtlsdr.pc
 %%PORTDOCS%%%%DOCSDIR%%/html/ftv2link.png
 %%PORTDOCS%%%%DOCSDIR%%/html/ftv2mlastnode.png
 %%PORTDOCS%%%%DOCSDIR%%/html/ftv2mnode.png
-%%PORTDOCS%%%%DOCSDIR%%/html/ftv2mo.png
 %%PORTDOCS%%%%DOCSDIR%%/html/ftv2node.png
-%%PORTDOCS%%%%DOCSDIR%%/html/ftv2ns.png
 %%PORTDOCS%%%%DOCSDIR%%/html/ftv2plastnode.png
 %%PORTDOCS%%%%DOCSDIR%%/html/ftv2pnode.png
 %%PORTDOCS%%%%DOCSDIR%%/html/ftv2splitbar.png

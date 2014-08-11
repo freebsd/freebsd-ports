@@ -41,11 +41,9 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
 	${MKDIR} ${STAGEDIR}${ETCDIR} && \
 		${INSTALL} ${WRKSRC}/${PORTNAME}.ini ${STAGEDIR}${ETCDIR}/${PORTNAME}.ini.sample
-
-post-install:
 .if ${PORT_OPTIONS:MEXAMPLES}
-	${MKDIR} ${EXAMPLESDIR}
-	@cd ${WRKSRC}/examples && ${COPYTREE_SHARE} \* ${STAGEDIR}${EXAMPLESDIR}
+	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	@cd ${WRKSRC}/examples && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR}
 .endif
 
 .include <bsd.port.mk>

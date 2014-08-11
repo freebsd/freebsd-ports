@@ -15,4 +15,4 @@ Gtk2Hs features:
           o SourceView, an editor widget with syntax highlighting.
           o the Mozilla browser rendering engine in a Gtk+ widget
 
-WWW: http://haskell.org/gtk2hs/
+WWW: http://projects.haskell.org/gtk2hs/

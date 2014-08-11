@@ -1,8 +1,0 @@
-etc/rc.d/boa.sh.sample
-sbin/boa
-sbin/boa_indexer
-%%EXAMPLESDIR%%/boa.conf
-%%EXAMPLESDIR%%/cgi-test.cgi
-%%EXAMPLESDIR%%/nph-test.cgi
-%%EXAMPLESDIR%%/resolver.pl
-@dirrm %%EXAMPLESDIR%%

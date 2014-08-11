@@ -2,67 +2,49 @@
 
 PORTNAME=	libftdi
 PORTVERSION=	0.20
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel
 MASTER_SITES=	http://www.intra2net.com/en/developer/libftdi/download/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library (using libusb) to talk to FTDI chips
 
-OPTIONS_DEFINE+=	BOOST PYTHON
-BOOST_DESC=		Build with boost
+LICENSE=	GPLv2 LGPL21
+LICENSE_COMB=	multi
+LICENSE_FILE_GPLv2=	${WRKSRC}/COPYING.GPL
+LICENSE_FILE_LGPL21=	${WRKSRC}/COPYING.LIB
+
+USES=		cmake pkgconfig
+CMAKE_ARGS=	-DDOCUMENTATION:BOOL=OFF
+USE_LDCONFIG=	yes
+
+OPTIONS_DEFINE=	BOOST DOCS PYTHON
+OPTIONS_DEFAULT=BOOST DOCS PYTHON
+OPTIONS_SUB=	yes
+
+BOOST_DESC=		C++ bindings (requires Boost)
+BOOST_LIB_DEPENDS=	libboost_system.so:${PORTSDIR}/devel/boost-libs
+BOOST_CMAKE_ON=		-DFTDIPP:BOOL=ON
+BOOST_CMAKE_OFF=	-DFTDIPP:BOOL=OFF
+BOOST_CXXFLAGS=		-I${LOCALBASE}/include
+
 PYTHON_DESC=		Python bindings
-
-USES=			pathfix pkgconfig libtool
-USE_AUTOTOOLS=		autoconf automake
-GNU_CONFIGURE=		yes
-CFLAGS+=		-I${LOCALBASE}/include
-USE_LDCONFIG=		yes
-INSTALL_TARGET=		install-strip
-
-BUILD_DEPENDS=	${LOCALBASE}/bin/autoreconf-2.69:${PORTSDIR}/devel/autoconf \
-		${LOCALBASE}/bin/automake-1.14:${PORTSDIR}/devel/automake \
-		${LOCALBASE}/bin/libtoolize:${PORTSDIR}/devel/libtool
-
-PORTDOCS=		COPYING.LIB ChangeLog README
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MBOOST}
-PLIST_SUB+=		BOOST=""
-CONFIGURE_ARGS+=	--with-boost
-CXXFLAGS+=		"-I${LOCALBASE}/include"
-LIB_DEPENDS+=		libboost_system.so:${PORTSDIR}/devel/boost-libs
-.else
-PLIST_SUB+=		BOOST="@comment "
-CONFIGURE_ARGS+=	--without-boost
-.endif
-.if ${PORT_OPTIONS:MPYTHON}
-PLIST_SUB+=		PYTHON="" PYDISTUTILS_EGGINFO=${PYDISTUTILS_EGGINFO}
-CONFIGURE_ARGS+=	--enable-python-binding
-CONFIGURE_ENV+=		SWIG="${LOCALBASE}/bin/swig2.0"
-BUILD_DEPENDS+=		swig2.0:${PORTSDIR}/devel/swig20
-USE_PYTHON=		yes
-.else
-PLIST_SUB+=		PYTHON="@comment "
-.endif
-
-EXTRA_PATCHES=	${FILESDIR}/extra-patch-configure.in
-
-OPTIONS_DEFINE=		DOCS
-OPTIONS_DEFAULT=	DOCS
+PYTHON_BUILD_DEPENDS=	swig2.0:${PORTSDIR}/devel/swig20
+PYTHON_CMAKE_ON=	-DPYTHON_BINDINGS:BOOL=ON
+PYTHON_CMAKE_OFF=	-DPYTHON_BINDINGS:BOOL=OFF
+PYTHON_USES=		python
 
 post-patch:
-	${REINPLACE_CMD} -E -e \
-		's:\$$\(libdir\)/pkgconfig:${PREFIX}/libdata/pkgconfig:' \
-		${WRKSRC}/Makefile.am ${WRKSRC}/Makefile.in
-
-pre-configure:
-	cd ${WRKSRC} && ${AUTORECONF} --force --install
-	echo "done pre-conf"
+	@${REINPLACE_CMD} \
+		-e '/SET.*LIB_SUFFIX/s/64/""/' \
+		-e 's|lib$${LIB_SUFFIX}/pkgconfig|libdata/pkgconfig|' \
+		${WRKSRC}/CMakeLists.txt
+	@${REINPLACE_CMD} 's|SITEPACKAGE.*ABSOLUTE|SITEPACKAGE ${PYTHON_SITELIBDIR} ABSOLUTE|' \
+		${WRKSRC}/bindings/CMakeLists.txt
 
 post-install:
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}/
+	${PYTHON_CMD} -m compileall -d ${PYTHON_SITELIBDIR} ${STAGEDIR}${PYTHON_SITELIBDIR}
+	${PYTHON_CMD} -O -m compileall -d ${PYTHON_SITELIBDIR} ${STAGEDIR}${PYTHON_SITELIBDIR}
+	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/_ftdi.so
 
 .include <bsd.port.mk>

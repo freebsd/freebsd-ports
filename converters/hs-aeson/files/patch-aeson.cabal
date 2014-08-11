@@ -1,0 +1,11 @@
+--- ./aeson.cabal.orig	2014-05-16 17:43:52.000000000 +0200
++++ ./aeson.cabal	2014-07-12 19:15:00.000000000 +0200
+@@ -112,7 +112,7 @@
+       Data.Aeson.Types.Generic
+ 
+   build-depends:
+-    attoparsec >= 0.11.3.4,
++    attoparsec >= 0.10.4.0,
+     base == 4.*,
+     containers,
+     deepseq,

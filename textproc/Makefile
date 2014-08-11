@@ -223,8 +223,8 @@
     SUBDIR += hs-Diff
     SUBDIR += hs-HStringTemplate
     SUBDIR += hs-HaXml
+    SUBDIR += hs-appar
     SUBDIR += hs-attoparsec
-    SUBDIR += hs-attoparsec-conduit
     SUBDIR += hs-attoparsec-enumerator
     SUBDIR += hs-blaze-html
     SUBDIR += hs-blaze-markup
@@ -245,6 +245,7 @@
     SUBDIR += hs-hxt-unicode
     SUBDIR += hs-lhs2tex
     SUBDIR += hs-libxml
+    SUBDIR += hs-libxml-sax
     SUBDIR += hs-pandoc
     SUBDIR += hs-pandoc-types
     SUBDIR += hs-parsec
@@ -258,9 +259,10 @@
     SUBDIR += hs-tagsoup
     SUBDIR += hs-tagstream-conduit
     SUBDIR += hs-texmath
-    SUBDIR += hs-xhtml
+    SUBDIR += hs-uri
     SUBDIR += hs-xml
     SUBDIR += hs-xml-conduit
+    SUBDIR += hs-xml-hamlet
     SUBDIR += hs-xml-types
     SUBDIR += hs-xmlhtml
     SUBDIR += hs-yaml

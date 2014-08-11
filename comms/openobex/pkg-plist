@@ -23,7 +23,6 @@ libdata/pkgconfig/openobex.pc
 %%DOXYGEN%%%%DOCSDIR%%/html/dynsections.js
 %%DOXYGEN%%%%DOCSDIR%%/html/files.html
 %%DOXYGEN%%%%DOCSDIR%%/html/ftv2blank.png
-%%DOXYGEN%%%%DOCSDIR%%/html/ftv2cl.png
 %%DOXYGEN%%%%DOCSDIR%%/html/ftv2doc.png
 %%DOXYGEN%%%%DOCSDIR%%/html/ftv2folderclosed.png
 %%DOXYGEN%%%%DOCSDIR%%/html/ftv2folderopen.png
@@ -31,9 +30,7 @@ libdata/pkgconfig/openobex.pc
 %%DOXYGEN%%%%DOCSDIR%%/html/ftv2link.png
 %%DOXYGEN%%%%DOCSDIR%%/html/ftv2mlastnode.png
 %%DOXYGEN%%%%DOCSDIR%%/html/ftv2mnode.png
-%%DOXYGEN%%%%DOCSDIR%%/html/ftv2mo.png
 %%DOXYGEN%%%%DOCSDIR%%/html/ftv2node.png
-%%DOXYGEN%%%%DOCSDIR%%/html/ftv2ns.png
 %%DOXYGEN%%%%DOCSDIR%%/html/ftv2plastnode.png
 %%DOXYGEN%%%%DOCSDIR%%/html/ftv2pnode.png
 %%DOXYGEN%%%%DOCSDIR%%/html/ftv2splitbar.png
@@ -41,10 +38,10 @@ libdata/pkgconfig/openobex.pc
 %%DOXYGEN%%%%DOCSDIR%%/html/functions.html
 %%DOXYGEN%%%%DOCSDIR%%/html/functions_vars.html
 %%DOXYGEN%%%%DOCSDIR%%/html/globals.html
-%%DOXYGEN%%%%DOCSDIR%%/html/globals_0x66.html
-%%DOXYGEN%%%%DOCSDIR%%/html/globals_0x69.html
-%%DOXYGEN%%%%DOCSDIR%%/html/globals_0x6f.html
-%%DOXYGEN%%%%DOCSDIR%%/html/globals_0x74.html
+%%DOXYGEN%%%%DOCSDIR%%/html/globals_f.html
+%%DOXYGEN%%%%DOCSDIR%%/html/globals_i.html
+%%DOXYGEN%%%%DOCSDIR%%/html/globals_o.html
+%%DOXYGEN%%%%DOCSDIR%%/html/globals_t.html
 %%DOXYGEN%%%%DOCSDIR%%/html/globals_defs.html
 %%DOXYGEN%%%%DOCSDIR%%/html/globals_enum.html
 %%DOXYGEN%%%%DOCSDIR%%/html/globals_eval.html

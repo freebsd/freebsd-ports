@@ -1,16 +1,15 @@
 # $FreeBSD$
 
 PORTNAME=	fast-logger
-PORTVERSION=	0.3.1
-PORTREVISION=	7
+PORTVERSION=	2.2.0
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Fast logging system
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 
-USE_CABAL=	blaze-builder date-cache>=0.3 text unix-time
+USE_CABAL=	auto-update blaze-builder text
 
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

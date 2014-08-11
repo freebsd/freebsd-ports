@@ -1,10 +1,8 @@
-The Par monad(s) offer an alternative parallel programming API to that
-provided by the 'parallel' package. A Par monad allows the simple
-description of parallel computations, and can be used to add parallelism
-to pure Haskell code. The basic API is straightforward: a Par monad
-supports forking and simple communication in terms of IVars. This module
-is an interface module only. It provides a number of type clasess, but
-not an implementation. The type classes separate different levels of Par
+The 'Par' monad offers a parallel programming API based on dataflow
+programming.  To use the `Par` monad, install the monad-par package,
+which includes this package as a dependency.  This package is an
+abstract interface only.  It provides a number of type clasess, but not
+an implementation.  The type classes separate different levels of @Par@
 functionality.
 
 WWW: https://github.com/simonmar/monad-par

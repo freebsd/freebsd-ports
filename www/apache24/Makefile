@@ -2,6 +2,7 @@
 
 PORTNAME=	apache24
 PORTVERSION=	2.4.10
+PORTREVISION=	1
 CATEGORIES=	www ipv6
 MASTER_SITES=	${MASTER_SITE_APACHE_HTTPD}
 DISTNAME=	httpd-${PORTVERSION}
@@ -150,10 +151,10 @@ post-configure:
 post-install:
 	@${MKDIR} ${ETC_SUBDIRS:S|^|${STAGEDIR}${ETCDIR}/|}
 	${INSTALL_DATA} ${FILESDIR}/no-accf.conf ${STAGEDIR}${ETCDIR}/Includes/
-	${INSTALL_DATA} ${FILESDIR}/README_modules.d ${STAGEDIR}/${ETCDIR}/modules.d/
+	${INSTALL_DATA} ${FILESDIR}/README_modules.d ${STAGEDIR}${ETCDIR}/modules.d/
 # place for module configuration samples
 	@${MKDIR} ${STAGEDIR}/${EXAMPLESDIR}/modules.d
-	${INSTALL_DATA} ${FILESDIR}/README_modules.d ${STAGEDIR}/${EXAMPLESDIR}/modules.d
+	${INSTALL_DATA} ${FILESDIR}/README_modules.d ${STAGEDIR}${EXAMPLESDIR}/modules.d
 
 # suppress warning for non binary files
 	-@${STRIP_CMD} ${STAGEDIR}${PREFIX}/sbin/* \

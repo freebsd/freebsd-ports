@@ -8,7 +8,7 @@ MASTER_SITES=	http://www.iozone.org/src/current/
 DISTNAME=	${PORTNAME}${PORTVERSION:S/./_/}
 EXTRACT_SUFX=	.tar
 
-MAINTAINER=	chifeng@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Performance Test of Sequential File I/O
 
 CONFLICTS=	iozone-2.* iozone21-*
