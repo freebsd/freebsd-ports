@@ -30,7 +30,7 @@ SHEBANG_FILES=	examples/lightning_detector/bom libgeda/docs/*.dox \
 		gnetlist/docs/*.dox
 USE_GNOME=	gtk20
 USE_PERL5=	run
-USE_PYTHON=	run
+USE_PYTHON_RUN=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-libstroke=${LOCALBASE}
 USE_LDCONFIG=	yes
