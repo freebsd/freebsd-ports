@@ -34,6 +34,7 @@
     SUBDIR += dnscrypt-proxy
     SUBDIR += dnsflood
     SUBDIR += dnshijacker
+    SUBDIR += dnshistory
     SUBDIR += dnsjava
     SUBDIR += dnsmasq
     SUBDIR += dnsmasq-devel
