@@ -24,25 +24,13 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--includedir=${PREFIX}/include/${PORTNAME}
 
-OPTIONS_DEFINE=	MAN SVMCP
-OPTIONS_DEFAULT=MAN SVMCP
-MAN_DESC=	Build and install man pages
+OPTIONS_DEFINE=	SVMCP
+OPTIONS_DEFAULT=SVMCP
 SVMCP_DESC=	Install SableVM classpath
 
-.include <bsd.port.options.mk>
+SVMCP_RUN_DEPENDS=	${LOCALBASE}/lib/sablevm-classpath/libjavalang.so:${PORTSDIR}/java/sablevm-classpath
 
-.if ${PORT_OPTIONS:MMAN}
-MAN1=		java-sablevm.1 sablevm.1
-.endif
-
-.if ${PORT_OPTIONS:MSVMCP}
-RUN_DEPENDS+=	${LOCALBASE}/lib/sablevm-classpath/libjavalang.so:${PORTSDIR}/java/sablevm-classpath
-.endif
-
-post-extract:
+post-patch:
 	@${REINPLACE_CMD} -e 's,^subdirs=".*,,' ${WRKSRC}/configure
-.if empty(PORT_OPTIONS:MMAN)
-	@${REINPLACE_CMD} -e 's,^\(man_MANS = \).*,\1,' ${WRKSRC}/doc/Makefile.in
-.endif
 
 .include <bsd.port.mk>

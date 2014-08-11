@@ -14,6 +14,8 @@ lib/sablevm/bin/jdb
 lib/sablevm/include/jni.h
 lib/sablevm/include/jni_system_specific.h
 lib/sablevm/jre/bin
+man/man1/java-sablevm.1.gz
+man/man1/sablevm.1.gz
 %%DATADIR%%/AUTHORS
 %%DATADIR%%/LGPL-2.1
 %%DATADIR%%/LICENSE
