@@ -30,7 +30,7 @@ LINUX_RPM_ARCH=	i386
 .include <bsd.port.options.mk>
 
 .if ! ${PORT_OPTIONS:MNVIDIA_GL}
-USE_LINUX_APPS+=	dri
+#USE_LINUX_APPS+=	dri
 .endif
 
 
