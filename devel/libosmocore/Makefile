@@ -31,6 +31,9 @@ BUILD_DEPENDS+=	doxygen:${PORTSDIR}/devel/doxygen \
 .endif
 
 post-patch:
+.if ${PORT_OPTIONS:MDOCS}
+	${CP} ${WRKSRC}/Makefile.am.orig ${WRKSRC}/Makefile.am
+.endif
 	${REINPLACE_CMD} -e 's|pkgconfigdir.*|pkgconfigdir = ${PREFIX}/libdata/pkgconfig|g' \
 		${WRKSRC}/Makefile.am
 	${ECHO_CMD} ${PORTVERSION} > ${WRKSRC}/.tarball-version
