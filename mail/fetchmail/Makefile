@@ -91,6 +91,11 @@ CONFIGURE_ARGS+=	--enable-NTLM
 PORTDOCS+=	README.NTLM
 .endif
 
+post-patch:
+.if !exists(/usr/lib/libcom_err.so)
+	@${REINPLACE_CMD} -e "s,-lcom_err,,g" ${WRKSRC}/configure
+.endif
+
 post-build:
 	@${MAKE} -C ${WRKSRC} check
 
