@@ -43,6 +43,7 @@ bin/rexify
 %%PERL5_MAN3%%/Rex::Group::Lookup::DBI.3.gz
 %%PERL5_MAN3%%/Rex::Group::Lookup::File.3.gz
 %%PERL5_MAN3%%/Rex::Group::Lookup::INI.3.gz
+%%PERL5_MAN3%%/Rex::Group::Lookup::XML.3.gz
 %%PERL5_MAN3%%/Rex::Group::Lookup::YAML.3.gz
 %%PERL5_MAN3%%/Rex::Hardware.3.gz
 %%PERL5_MAN3%%/Rex::Helper::SSH2::Expect.3.gz
@@ -75,6 +76,7 @@ bin/rexify
 %%SITE_PERL%%/Rex/Cloud/Jiffybox.pm
 %%SITE_PERL%%/Rex/Cloud/OpenStack.pm
 %%SITE_PERL%%/Rex/Commands.pm
+%%SITE_PERL%%/Rex/Constants.pm
 %%SITE_PERL%%/Rex/Commands/Box.pm
 %%SITE_PERL%%/Rex/Commands/Cloud.pm
 %%SITE_PERL%%/Rex/Commands/Cron.pm
@@ -123,12 +125,14 @@ bin/rexify
 %%SITE_PERL%%/Rex/Group/Lookup/DBI.pm
 %%SITE_PERL%%/Rex/Group/Lookup/File.pm
 %%SITE_PERL%%/Rex/Group/Lookup/INI.pm
+%%SITE_PERL%%/Rex/Group/Lookup/XML.pm
 %%SITE_PERL%%/Rex/Group/Lookup/YAML.pm
 %%SITE_PERL%%/Rex/Hardware.pm
 %%SITE_PERL%%/Rex/Hardware/Host.pm
 %%SITE_PERL%%/Rex/Hardware/Kernel.pm
 %%SITE_PERL%%/Rex/Hardware/Memory.pm
 %%SITE_PERL%%/Rex/Hardware/Network.pm
+%%SITE_PERL%%/Rex/Hardware/Network/Darwin.pm
 %%SITE_PERL%%/Rex/Hardware/Network/FreeBSD.pm
 %%SITE_PERL%%/Rex/Hardware/Network/Linux.pm
 %%SITE_PERL%%/Rex/Hardware/Network/NetBSD.pm
@@ -248,6 +252,7 @@ bin/rexify
 %%SITE_PERL%%/Rex/Service.pm
 %%SITE_PERL%%/Rex/Service/ALT.pm
 %%SITE_PERL%%/Rex/Service/ALT/systemd.pm
+%%SITE_PERL%%/Rex/Service/Base.pm
 %%SITE_PERL%%/Rex/Service/Debian.pm
 %%SITE_PERL%%/Rex/Service/FreeBSD.pm
 %%SITE_PERL%%/Rex/Service/Gentoo.pm
@@ -272,6 +277,7 @@ bin/rexify
 %%SITE_PERL%%/Rex/Task.pm
 %%SITE_PERL%%/Rex/TaskList.pm
 %%SITE_PERL%%/Rex/TaskList/Base.pm
+%%SITE_PERL%%/Rex/TaskList/Parallel_ForkManager.pm
 %%SITE_PERL%%/Rex/Template.pm
 %%SITE_PERL%%/Rex/Test.pm
 %%SITE_PERL%%/Rex/Test/Base.pm

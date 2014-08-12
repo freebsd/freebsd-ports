@@ -1,13 +1,13 @@
 # $FreeBSD$
 
 PORTNAME=	Rex
-PORTVERSION=	0.46.1
+PORTVERSION=	0.51.2
 CATEGORIES=	sysutils perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:JFRIED
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	sam@cassiba.com
+MAINTAINER=	az@FreeBSD.org
 COMMENT=	Perl framework for automation and systems administration
 
 LICENSE=	APACHE20
@@ -23,7 +23,9 @@ BUILD_DEPENDS=	\
 	p5-String-Escape>=0:${PORTSDIR}/textproc/p5-String-Escape \
 	p5-XML-Simple>=0:${PORTSDIR}/textproc/p5-XML-Simple \
 	p5-YAML>=0:${PORTSDIR}/textproc/p5-YAML \
-	p5-List-MoreUtils>=0:${PORTSDIR}/lang/p5-List-MoreUtils
+	p5-List-MoreUtils>=0:${PORTSDIR}/lang/p5-List-MoreUtils \
+	p5-XML-LibXML>=0:${PORTSDIR}/textproc/p5-XML-LibXML \
+	p5-Parallel-ForkManager>=0:${PORTSDIR}/devel/p5-Parallel-ForkManager
 
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
