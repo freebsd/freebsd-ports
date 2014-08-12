@@ -2,13 +2,14 @@
 
 PORTNAME=	growl-for-linux
 PORTVERSION=	0.6.9
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	deskutils
 
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	Notification system compatible with Growl
 
-LICENSE=	BSD
+LICENSE=	BSD2CLAUSE
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	desktop-file-install:${PORTSDIR}/devel/desktop-file-utils
 LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl \
@@ -40,7 +41,7 @@ USE_GNOME=	gtk20
 USE_LDCONFIG=	yes
 USE_OPENSSL=	yes
 USE_SQLITE=	3
-USES=		pkgconfig
+USES=		libtool pkgconfig
 
 WITH_OPENSSL_PORT=	yes
 
