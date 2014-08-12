@@ -3,7 +3,7 @@
 
 PORTNAME=	flickcurl
 PORTVERSION=	1.25
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	www
 MASTER_SITES=	http://download.dajobe.org/flickcurl/
 
@@ -23,7 +23,7 @@ RAPTOR_DESC=	Use Raptor to serialize to triples
 OFFLINE_DESC=	Offline use of captured XML web service responses
 CAPTURE_DESC=	Capturing web service responses
 
-USES=		libtool:keepla pathfix pkgconfig
+USES=		libtool pathfix pkgconfig
 USE_GNOME=	libxml2
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-html-dir=${PREFIX}/share/doc
