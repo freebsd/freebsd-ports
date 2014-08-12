@@ -21,6 +21,7 @@
     SUBDIR += curvedns
     SUBDIR += ddclient
     SUBDIR += ddns
+    SUBDIR += denominator
     SUBDIR += dhisd
     SUBDIR += djbdns
     SUBDIR += djbdns-tools
