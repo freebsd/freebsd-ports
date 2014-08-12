@@ -39,14 +39,12 @@ CONTRIB_MODULES=	asdf			\
 			sb-rt			\
 			sb-simple-streams	\
 			sb-sprof
-MAN1=		sbcl.1
 NEWBOOTNAME=	${PORTNAME}-${PORTVERSION}-${ARCH}-freebsd${OSREL:R}
 ONLY_FOR_ARCHS=	i386 amd64
 ONLY_FOR_ARCHS_REASON=	is a native code compiler, and has not been ported to\
 this architecture yet
 SBCL_HOME=	${PREFIX}/lib/sbcl
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 CFLAGS+=	-fno-omit-frame-pointer
@@ -194,28 +192,28 @@ do-build:
 		${WRKSRC}/doc/sbcl.1
 
 do-install:
-	${MKDIR} ${SBCL_HOME}/
-	${INSTALL_PROGRAM} ${WRKSRC}/src/runtime/sbcl ${PREFIX}/bin/
-	${INSTALL_DATA} ${WRKSRC}/output/sbcl_core ${SBCL_HOME}/
+	${MKDIR} ${STAGEDIR}${SBCL_HOME}/
+	${INSTALL_PROGRAM} ${WRKSRC}/src/runtime/sbcl ${STAGEDIR}${PREFIX}/bin/
+	${INSTALL_DATA} ${WRKSRC}/output/sbcl_core ${STAGEDIR}${SBCL_HOME}/
 .for MOD in ${CONTRIB_MODULES}
-	${MKDIR} ${SBCL_HOME}/${MOD}
-	${INSTALL_DATA} ${WRKSRC}/contrib/${MOD}/*.lisp ${SBCL_HOME}/${MOD}/
-	${INSTALL_DATA} ${WRKSRC}/contrib/${MOD}/*.fasl ${SBCL_HOME}/${MOD}/
+	${MKDIR} ${STAGEDIR}${SBCL_HOME}/${MOD}
+	${INSTALL_DATA} ${WRKSRC}/contrib/${MOD}/*.lisp ${STAGEDIR}${SBCL_HOME}/${MOD}/
+	${INSTALL_DATA} ${WRKSRC}/contrib/${MOD}/*.fasl ${STAGEDIR}${SBCL_HOME}/${MOD}/
 	(if test -f ${WRKSRC}/contrib/${MOD}/${MOD}.asd; then ${INSTALL_DATA} \
-	    ${WRKSRC}/contrib/${MOD}/${MOD}.asd ${SBCL_HOME}/${MOD}/; fi)
+	    ${WRKSRC}/contrib/${MOD}/${MOD}.asd ${STAGEDIR}${SBCL_HOME}/${MOD}/; fi)
 .endfor
 .if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}/
-	${INSTALL_DATA} ${MANUALS:S,^, ${WRKSRC}/doc/manual/,g} ${DOCSDIR}/
-	${INSTALL_DATA} ${TEXTDOCS:S,^,${WRKSRC}/,g} ${DOCSDIR}/
-	${MKDIR} ${MODULESDOCS:C,/[^/]+$,,g:u:S,^,${DOCSDIR}/,g}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}/
+	${INSTALL_DATA} ${MANUALS:S,^, ${WRKSRC}/doc/manual/,g} ${STAGEDIR}${DOCSDIR}/
+	${INSTALL_DATA} ${TEXTDOCS:S,^,${WRKSRC}/,g} ${STAGEDIR}${DOCSDIR}/
+	${MKDIR} ${MODULESDOCS:C,/[^/]+$,,g:u:S,^,${STAGEDIR}${DOCSDIR}/,g}
 . for MODDOC in ${MODULESDOCS}
-	${INSTALL_DATA} ${WRKSRC}/contrib/${MODDOC} ${DOCSDIR}/${MODDOC}
+	${INSTALL_DATA} ${WRKSRC}/contrib/${MODDOC} ${STAGEDIR}${DOCSDIR}/${MODDOC}
 . endfor
 .endif
-	${INSTALL_MAN} ${WRKSRC}/doc/sbcl.1 ${MAN1PREFIX}/man/man1
-	${MKDIR} ${SBCL_HOME}/site-systems
-	@${TOUCH} ${SBCL_HOME}/site-systems/.keep_me
+	${INSTALL_MAN} ${WRKSRC}/doc/sbcl.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
+	${MKDIR} ${STAGEDIR}${SBCL_HOME}/site-systems
+	@${TOUCH} ${STAGEDIR}${SBCL_HOME}/site-systems/.keep_me
 
 check regression-test test: build
 	(cd ${WRKSRC}/tests && ${SETENV} CC="${CC}" ${SH} run-tests.sh)
