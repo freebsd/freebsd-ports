@@ -20,7 +20,6 @@ share/icons/hicolor/48x48/apps/flash-player-properties.png
 @dirrmtry share/icons
 @dirrmtry %%WEBPLUGIN_DIR%%
 @cwd /compat/linux
-usr/lib/libflashsupport.so
 @dirrmtry usr/lib
 @dirrmtry usr
 @cwd %%RESETPREFIX%%
