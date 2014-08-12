@@ -4379,6 +4379,7 @@
     SUBDIR += rubygem-main
     SUBDIR += rubygem-map
     SUBDIR += rubygem-mash
+    SUBDIR += rubygem-memoizable
     SUBDIR += rubygem-mercenary
     SUBDIR += rubygem-metaclass
     SUBDIR += rubygem-metaid
