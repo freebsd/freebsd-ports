@@ -11,6 +11,7 @@ COMMENT=	Perl extension to easily translate Moose code to Moo
 
 RUN_DEPENDS=	\
 	p5-Moo>=1.003000:${PORTSDIR}/devel/p5-Moo \
+	p5-Test-Requires>=0.06:${PORTSDIR}/devel/p5-Test-Requires \
 	p5-Type-Tiny>=0.016:${PORTSDIR}/devel/p5-Type-Tiny
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
