@@ -23,21 +23,17 @@ USE_SDL=	sdl mixer image net
 SCONS_ARGS=	installbindir=${PREFIX}/bin installdatadir=${DATADIR}
 
 PLIST_FILES=	bin/dangerdeep bin/crosssection bin/damagemodel \
-		bin/oceantest bin/portal bin/viewmodel
-PLIST_DIRS=	%%DATADIR%%
+		bin/oceantest bin/portal bin/viewmodel \
+		man/man6/dangerdeep.6.gz
 
-MAN6=		dangerdeep.6
 PORTDOCS=	CREDITS README
 
-NO_STAGE=	yes
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.pre.mk>
 
 .if defined(PACKAGE_BUILDING)
 SCONS_ARGS+=	usex86sse=-1	# disable MMX/SSE on the build cluster
-.endif
-
-.if ${OSVERSION} >= 1000000
-BROKEN=		Does not compile on FreeBSD 10
 .endif
 
 post-patch:
@@ -52,13 +48,11 @@ do-build:
 do-install:
 	@cd ${WRKSRC}/build/freebsd && \
 		${INSTALL_PROGRAM} dangerdeep crosssection damagemodel oceantest \
-			portal viewmodel ${PREFIX}/bin
+			portal viewmodel ${STAGEDIR}${PREFIX}/bin
 
-	${INSTALL_MAN} ${WRKSRC}/doc/man/dangerdeep.6 ${PREFIX}/man/man6
-
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
-.endif
+	${INSTALL_MAN} ${WRKSRC}/doc/man/dangerdeep.6 ${STAGEDIR}${PREFIX}/man/man6
+	${GZIP_CMD} ${STAGEDIR}${PREFIX}/man/man6/dangerdeep.6
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.post.mk>
