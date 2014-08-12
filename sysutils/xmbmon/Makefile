@@ -3,7 +3,7 @@
 
 PORTNAME=	xmbmon
 PORTVERSION=	205
-PORTREVISION=	13
+PORTREVISION=	14
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.nt.phys.kyushu-u.ac.jp/shimizu/download/${PORTNAME}/
 DISTNAME=	${PORTNAME}${PORTVERSION}
@@ -19,7 +19,6 @@ PATCHFILES+=	${PORTNAME}${PORTVERSION}_fflush.patch
 
 ONLY_FOR_ARCHS=	i386 amd64
 GNU_CONFIGURE=	yes
-BINMODE=	4555
 
 PORTDOCS=	ChangeLog ChangeLog.jp ReadMe ReadMe.jp ReadMe.tech
 
@@ -32,9 +31,14 @@ SMB_DESC=	Enable smb(4) support
 CLI_DESC=	CLI support only
 
 ASUS_PATCHFILES=	${PORTNAME}${PORTVERSION}_A7N8X-VM.patch
-X11_PLIST_FILES=	lib/X11/app-defaults/${PORTNAME} \
+X11_PLIST_FILES=	"@mode 4555"\
+			bin/xmbmon \
+			@mode\
+			lib/X11/app-defaults/XMBmon \
 			man/man1/${PORTNAME}.1x.gz
-CLI_PLIST_FILES=	bin/mbmon \
+CLI_PLIST_FILES=	"@mode 4555"\
+			bin/mbmon \
+			@mode\
 			man/man1/mbmon.1.gz
 
 .include <bsd.port.options.mk>
@@ -59,7 +63,9 @@ post-patch:
 do-install:
 .if ${PORT_OPTIONS:MX11}
 	${INSTALL_PROGRAM} ${WRKSRC}/xmbmon \
-		${STAGEDIR}${PREFIX}/lib/X11/app-defaults
+		${STAGEDIR}${PREFIX}/bin
+	${INSTALL_DATA} ${WRKSRC}/xmbmon.resources \
+		${STAGEDIR}${PREFIX}/lib/X11/app-defaults/XMBmon
 	${INSTALL_MAN} ${WRKSRC}/xmbmon.1x ${STAGEDIR}${MANPREFIX}/man/man1
 .endif
 .if ${PORT_OPTIONS:MCLI}
