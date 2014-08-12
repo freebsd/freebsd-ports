@@ -2,7 +2,7 @@
 
 PORTNAME=	kpathsea
 PORTVERSION=	6.1.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel
 MASTER_SITES=	ftp://tug.org/historic/systems/texlive/2012/
 PKGNAMEPREFIX=	tex-
@@ -12,7 +12,7 @@ DIST_SUBDIR=	TeX
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Path searching library for TeX
 
-USES=		gmake tar:xz
+USES=		gmake tar:xz libtool
 USE_LDCONFIG=	yes
 USE_TEX=	texlive
 EXTRACT_AFTER_ARGS=	${EXTRACT_FILES}
@@ -21,6 +21,6 @@ EXTRACT_FILES=	${DISTNAME}/build-aux \
 WRKSRC=		${WRKDIR}/${DISTNAME}/texk/kpathsea
 GNU_CONFIGURE=	yes
 
-INFO=	kpathsea
+INFO=		kpathsea
 
 .include <bsd.port.mk>
