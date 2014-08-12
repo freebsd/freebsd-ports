@@ -1,7 +1,6 @@
 # Created by: Adrian Chadd <adrian@FreeBSD.org>
 # $FreeBSD$
 
-NO_STAGE=	yes
 # Tunables not (yet) configurable via 'make config':
 # SQUID_{U,G}ID
 #   Which user/group Squid should run as (default: squid/squid).
@@ -115,7 +114,17 @@ COMMENT=	HTTP Caching Proxy
 SQUID_STABLE_VER=	9
 
 CONFLICTS_INSTALL=	squid-2.[^7]* squid3?-* cacheboy-[0-9]* lusca-head-[0-9]*
-USES=		perl5 tar:bzip2
+USES=		perl5 shebangfix tar:bzip2
+SHEBANG_FILES=	scripts/*.pl \
+		src/mk-globals-c.pl \
+		src/mk-string-arrays.pl \
+		contrib/rredir.pl \
+		contrib/user-agents.pl \
+		contrib/url-normalizer.pl \
+		helpers/basic_auth/multi-domain-NTLM/smb_auth.pl \
+		helpers/basic_auth/POP3/pop3.pl \
+		helpers/ntlm_auth/no_check/no_check.pl \
+		helpers/external_acl/wbinfo_group/wbinfo_group.pl
 GNU_CONFIGURE=	yes
 USE_RC_SUBR=	squid
 
@@ -390,13 +399,24 @@ CONFIGURE_ENV+=		GREP="${GREP}"
 PLIST_DIRS=	%%ETCDIR%%/icons libexec/squid
 PLIST_FILES=	${etc_files:S,^,etc/,} ${icon_files:S,^,%%ETCDIR%%/icons/,} \
 		${libexec:S,^,libexec/squid/,} ${sbin:S,^,sbin/,}
+PLIST_FILES+=	man/man8/cachemgr.cgi.8.gz \
+		man/man8/ncsa_auth.8.gz \
+		man/man8/pam_auth.8.gz \
+		man/man8/squid.8.gz \
+		man/man8/squid_db_auth.8.gz \
+		man/man8/squid_session.8.gz \
+		man/man8/squid_unix_group.8.gz \
+		%%ETCDIR%%/cachemgr.conf \
+		%%ETCDIR%%/mime.conf \
+		%%ETCDIR%%/msntauth.conf \
+		%%ETCDIR%%/squid.conf
 
 .for d in ${SQUID_LANGUAGES}
 PLIST_DIRS+=	%%ETCDIR%%/errors/${d}
 PLIST_FILES+=	${error_files:S,^,%%ETCDIR%%/errors/${d}/,}
 .endfor
 PLIST_DIRS+=	%%ETCDIR%%/errors
-PLIST_DIRSTRY+=	%%ETCDIR%%
+PLIST_DIRSTRY+=	%%ETCDIR%% /var/squid/logs /var/squid
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%SQUID_UID%%|${SQUID_UID}|g' \
@@ -405,35 +425,23 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
 	    ${WRKSRC}/helpers/basic_auth/SMB/Makefile.in \
 	    ${WRKSRC}/helpers/basic_auth/SMB/smb_auth.sh
-
-pre-install:
 # Prevent installation of .orig files by deleting them.
 	@${FIND} ${WRKSRC} -name '*.bak' -delete
 	@${FIND} ${WRKSRC} -name '*.orig' -delete
 
-pre-su-install:
-	@${SETENV} ${SCRIPTS_ENV} PKG_PREFIX=${PREFIX} \
-	    ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
-
 post-install:
 .if ${PORT_OPTIONS:MEXAMPLES}
-	@${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/helpers/basic_auth/DB/passwd.sql ${EXAMPLESDIR}
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/helpers/basic_auth/DB/passwd.sql \
+		${STAGEDIR}${EXAMPLESDIR}
 .endif
 .if ${PORT_OPTIONS:MPINGER}
-	${CHMOD} 4510 ${PREFIX}/libexec/squid/pinger; \
-	${CHGRP} ${SQUID_GID} ${PREFIX}/libexec/squid/pinger
+	${CHMOD} 4510 ${STAGEDIR}${PREFIX}/libexec/squid/pinger; \
+	${CHGRP} ${SQUID_GID} ${STAGEDIR}${PREFIX}/libexec/squid/pinger
 .endif
 .if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	cd ${WRKSRC} && ${INSTALL_DATA} ${docs} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} ${docs} ${STAGEDIR}${DOCSDIR}
 .endif
-	@${SETENV} PKG_PREFIX=${PREFIX} \
-	    ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
-
-	@${ECHO_CMD} "===> post-installation information for ${PKGNAME}:"
-	@${ECHO_CMD} ""
-	@${CAT} ${PKGMESSAGE}
-	@${ECHO_CMD} ""
 
 .include <bsd.port.post.mk>
