@@ -15,6 +15,7 @@ USES=		imake
 USE_GCC=	any
 USE_CSTD=	gnu89
 USE_XORG=	ice sm x11 xext xmu xt
+MAKE_JOBS_UNSAFE=	yes
 
 PORTDOCS=	*.jis dot.skkinput ChangeLog
 
