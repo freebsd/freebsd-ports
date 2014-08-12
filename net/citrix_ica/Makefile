@@ -3,7 +3,7 @@
 
 PORTNAME=	citrix_ica
 PORTVERSION=	12.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net comms linux
 MASTER_SITES=	#
 DISTNAME=	linuxx86_12.1.0.203066
@@ -13,7 +13,7 @@ COMMENT=	Citrix(R) Presentation Server(TM) client
 
 ONLY_FOR_ARCHS=	i386 amd64
 USE_LINUX=	yes
-USE_LINUX_APPS=	openmotif alsalib
+USE_LINUX_APPS=	alsalib gtk2 openmotif
 RESTRICTED=	License prohibits redistribution
 
 NO_WRKSUBDIR=	yes
