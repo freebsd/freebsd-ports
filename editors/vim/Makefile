@@ -36,7 +36,7 @@ MAKE_ARGS+=	CC="${CC}" CONF_ARGS="--prefix=${PREFIX} ${CSCOPE_ARG}" STRIP="${STR
 PATCH=		${LOCALBASE}/bin/gpatch
 PATCH_DIST_ARGS=--batch --directory ${WRKSRC} --forward --quiet --remove-empty-files ${PATCH_DIST_STRIP}
 REINPLACE_ARGS=	-i ''
-USES=		iconv pkgconfig shebangfix tar:bzip2
+USES=		cpe iconv pkgconfig shebangfix tar:bzip2
 WANT_GNOME=	yes
 
 PATCHLEVEL=	398
@@ -60,6 +60,8 @@ PLIST_SUB=	VIM_VER=${VIM_VER}
 PORTDATA=	*
 
 VIM_VER=	${PORTNAME}${PORTVERSION:R:S/.//g}
+
+CPE_VERSION=	${PORTVERSION:R}
 
 SLAVEDIRS=	editors/vim-lite
 
