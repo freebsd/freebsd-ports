@@ -1,0 +1,13 @@
+--- Makefile.in.orig	2014-08-01 19:27:14.584284459 -0700
++++ Makefile.in	2014-08-01 19:33:44.036046297 -0700
+@@ -3280,8 +3280,8 @@
+ 	for p in $$list; do \
+ 	  if test -f $$p; then \
+ 	    $(am__strip_dir) \
+-	    echo " ( cd '$(DESTDIR)$(libtestdir)' && $(RANLIB) $$f )"; \
+-	    ( cd "$(DESTDIR)$(libtestdir)" && $(RANLIB) $$f ) || exit $$?; \
++	    echo " ( cd '$(DESTDIR)$(libtestdir)' && $(RANLIB) $$p )"; \
++	    ( cd "$(DESTDIR)$(libtestdir)" && $(RANLIB) $$p ) || exit $$?; \
+ 	  else :; fi; \
+ 	done
+ 
