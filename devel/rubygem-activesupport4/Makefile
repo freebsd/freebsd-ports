@@ -3,6 +3,7 @@
 
 PORTNAME=	activesupport
 PORTVERSION=	4.0.2
+PORTREVISION=	1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	4
@@ -15,7 +16,7 @@ LICENSE=	MIT
 RUN_DEPENDS=	rubygem-i18n>=0.6.4:${PORTSDIR}/devel/rubygem-i18n \
 		rubygem-minitest4>=4.2:${PORTSDIR}/devel/rubygem-minitest4 \
 		rubygem-multi_json>=1.3:${PORTSDIR}/devel/rubygem-multi_json \
-		rubygem-thread_safe>=0.1:${PORTSDIR}/devel/rubygem-thread_safe \
+		rubygem-thread_safe1>=0.1:${PORTSDIR}/devel/rubygem-thread_safe1 \
 		rubygem-tzinfo>=0.3.37:${PORTSDIR}/devel/rubygem-tzinfo
 
 USE_RUBY=	yes
