@@ -5404,6 +5404,7 @@ textproc/it-ispell|textproc/it-aspell|2014-01-29|Removed, consider using aspell 
 textproc/nl-ispell|textproc/nl-aspell|2014-01-29|Removed, consider using aspell instead
 textproc/sk-ispell|textproc/sk-aspell|2014-01-29|Removed, consider using aspell instead
 ukrainian/ispell|ukrainian/aspell|2014-01-29|Removed, consider using aspell instead
+databases/p5-DBD-mysql52|databases/p5-DBD-mysql|2014-01-29|Depends on expired MySQL version
 audio/gsi||2014-01-30|Removed, abandonware
 multimedia/kino||2014-01-31|Has expired: Not developed since 2009, declared dead 05.08.2013 on there website
 x11-drivers/xf86-video-imstt||2014-01-31|Has expired: Broken, unsupported and unmaintained upstream
