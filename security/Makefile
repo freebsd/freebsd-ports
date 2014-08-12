@@ -964,6 +964,7 @@
     SUBDIR += starttls
     SUBDIR += stegdetect
     SUBDIR += steghide
+    SUBDIR += stoken
     SUBDIR += strobe
     SUBDIR += strongswan
     SUBDIR += stunnel
