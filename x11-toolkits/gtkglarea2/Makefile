@@ -20,5 +20,6 @@ USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-lib-GL
 INSTALL_TARGET=	install-strip
+LIBS+=		-lm
 
 .include <bsd.port.mk>

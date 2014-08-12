@@ -27,7 +27,8 @@ PORTDOCS=	*
 .include <bsd.port.options.mk>
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|share/man|man|' ${WRKSRC}/CMakeLists.txt
+	@${REINPLACE_CMD} -e 's|share/man|man|' -e '/set(all_libs/s/$$/ m/' \
+		${WRKSRC}/CMakeLists.txt
 
 post-install:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}

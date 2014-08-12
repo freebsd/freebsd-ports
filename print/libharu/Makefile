@@ -33,7 +33,6 @@ CMAKE_ARGS+=	-DLIBHPDF_EXAMPLES:BOOL=ON  \
 .endif
 
 post-install:
-	${LN} -s ${PREFIX}/lib/libhpdf.so \
-		${STAGEDIR}${PREFIX}/lib/libhpdf.so.${SOVERSION}
+	${LN} -s libhpdf.so ${STAGEDIR}${PREFIX}/lib/libhpdf.so.${SOVERSION}
 
 .include <bsd.port.mk>

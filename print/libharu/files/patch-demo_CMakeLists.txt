@@ -1,6 +1,14 @@
 --- demo/CMakeLists.txt.orig	2013-11-18 14:51:59.000000000 +0100
 +++ demo/CMakeLists.txt	2013-11-18 14:52:21.000000000 +0100
-@@ -86,15 +86,15 @@
+@@ -75,6 +75,7 @@
+       set_target_properties(${demo} PROPERTIES COMPILE_FLAGS ${DEMO_C_FLAGS})
+     endif(DEMO_C_FLAGS)
+   endforeach(demo)
++  target_link_libraries(text_demo2 m)
+     
+   # the grid_sheet demo needs extra defines
+   add_executable(grid_sheet grid_sheet.c)
+@@ -86,15 +87,15 @@
    # =======================================================================
    install(
      TARGETS ${demos_NAMES} ${demos_with_grid_NAMES} grid_sheet

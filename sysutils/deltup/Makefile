@@ -27,6 +27,7 @@ BZIP2_103=	1.0.3
 USE_OPENSSL=	yes
 USES=		gmake
 ALL_TARGET=	deltup
+MAKE_ARGS=	CC="${CC}" CXX="${CXX}" PREFIX="${PREFIX}"
 PLIST_FILES=	bin/deltup \
 		bin/bzip2_1.0.2 \
 		bin/bzip2_1.0.3 \
@@ -37,17 +38,17 @@ WRKSRC_BZIP2_103=	${WRKDIR}/bzip2-${BZIP2_103}
 PORTDOCS=	ChangeLog README
 
 post-patch:
-	@${REINPLACE_CMD} -e 's,%%PREFIX%%,${PREFIX},' ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e 's/CC/CXX/' -e 's,gcc,$${CXX},' ${WRKSRC}/Makefile
 
 pre-build:
 	@${REINPLACE_CMD} -e 's|-Wall -Winline -O2|-Wall -Winline -O2 ${CFLAGS}|' \
-		-e 's|CC=gcc|CC?=gcc|' \
-	${WRKSRC_BZIP2_102}/Makefile
+		${WRKSRC_BZIP2_102}/Makefile
 	@${REINPLACE_CMD} -e 's|-Wall -Winline -O -g|-Wall -Winline -O2 ${CFLAGS}|' \
-		-e 's|CC=gcc|CC?=gcc|' \
-	${WRKSRC_BZIP2_103}/Makefile
-	@cd ${WRKSRC_BZIP2_102}; ${MAKE_CMD} bzip2; \
-	cd ${WRKSRC_BZIP2_103}; ${MAKE_CMD} bzip2;
+		${WRKSRC_BZIP2_103}/Makefile
+	@(cd ${WRKSRC_BZIP2_102} && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} \
+		${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} bzip2)
+	@(cd ${WRKSRC_BZIP2_103} && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} \
+		${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} bzip2)
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/deltup ${STAGEDIR}${PREFIX}/bin
