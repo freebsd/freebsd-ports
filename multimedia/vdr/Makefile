@@ -3,7 +3,7 @@
 
 PORTNAME=	vdr
 PORTVERSION=	1.7.29
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	multimedia
 MASTER_SITES=	ftp://ftp.tvdr.de/vdr/Developer/
 
@@ -24,6 +24,7 @@ STB0899_SIGNAL_DESC=	STB0899 signal strength patch
 OPTIONS_DEFAULT=	IPTVPATCH TTXPATCH
 
 USES=		pkgconfig gettext iconv:wchar_t gmake shebangfix tar:bzip2
+USE_GCC=	any
 SHEBANG_FILES=	svdrpsend
 DIST_SUBDIR=	vdr
 PORTDOCS=	COPYING INSTALL MANUAL README HISTORY
