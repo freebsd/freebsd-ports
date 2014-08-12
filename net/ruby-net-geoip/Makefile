@@ -24,6 +24,10 @@ DOCS=	README
 
 OPTIONS_DEFINE=	DOCS
 
+BROKEN=			Does not build, use net/rubygem-geoip instead 
+DEPRECATED=		Broken
+EXPIRATION_DATE=	2014-09-12
+
 post-install:
 	@${MKDIR} ${STAGEDIR}${RUBY_MODDOCDIR}
 .for f in ${DOCS}
