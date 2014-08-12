@@ -6150,7 +6150,6 @@ sysutils/sysupdate||2014-06-21|Removed, no longer needed/relevant with FreeBSD i
 www/phpbb-devel|www/phpbb3|2014-06-22|Has expired: Use www/phpbb3 instead
 math/polymake||2014-06-22|Has expired: Does not build with any supported version of Perl
 www/phpsysinfo-dev|www/phpsysinfo|2014-06-22|Has expired: Use www/phpsysinfo instead
-sysutils/syslog-ng-devel|sysutils/syslog-ng|2014-06-23|Has expired: Use sysutils/syslog-ng instead
 print/pkg-texinfo|print/texinfo-minimal|2014-06-24|Has been renamed
 sysutils/pc-sysinstall|sysutils/pcbsd-utils|2014-06-24|Removed: pc-sysinstall is included in sysutils/pcbsd-utils
 print/texinfo-minimal|print/texinfo-lite|2014-06-24|Has been renamed
