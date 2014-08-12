@@ -21,5 +21,4 @@ USE_GNUSTEP_INSTALL=	yes
 
 WRKSRC=		${WRKDIR}/${DISTNAME}
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
