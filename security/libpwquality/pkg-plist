@@ -3,11 +3,11 @@ bin/pwscore
 etc/security/pwquality.conf
 include/pwquality.h
 lib/libpwquality.a
-lib/libpwquality.la
 lib/libpwquality.so
 lib/libpwquality.so.1
 lib/libpwquality.so.1.0.2
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/pwquality.so
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/pwquality-1.2.4-py2.7.egg-info
 libdata/pkgconfig/pwquality.pc
 man/man1/pwmake.1.gz
 man/man1/pwscore.1.gz
@@ -37,7 +37,6 @@ share/locale/ko/LC_MESSAGES/libpwquality.mo
 share/locale/ml/LC_MESSAGES/libpwquality.mo
 share/locale/mr/LC_MESSAGES/libpwquality.mo
 share/locale/mr_IN/LC_MESSAGES/libpwquality.mo
-share/locale/ms/LC_MESSAGES/libpwquality.mo
 share/locale/nb/LC_MESSAGES/libpwquality.mo
 share/locale/nl/LC_MESSAGES/libpwquality.mo
 share/locale/or/LC_MESSAGES/libpwquality.mo
