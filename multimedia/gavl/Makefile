@@ -17,7 +17,7 @@ USES=		pathfix pkgconfig libtool
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+LIBS+=		-L${LOCALBASE}/lib -lm
 CONFIGURE_ARGS=	--with-cpuflags=none --without-doxygen
 INSTALL_TARGET=	install-strip
 
