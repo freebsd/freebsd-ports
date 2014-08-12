@@ -1,5 +1,0 @@
-lib/libcap-ng.so.0
-lib/libcap-ng.so.0.0.0
-%%PORTDOCS%%usr/%%DOCSDIR%%/COPYING.LIB
-@dirrmtry lib
-%%PORTDOCS%%@dirrmtry usr/%%DOCSDIR%%

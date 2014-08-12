@@ -1,7 +1,0 @@
-usr/lib/libsndfile.so.1
-usr/lib/libsndfile.so.1.0.25
-%%PORTDOCS%%usr/%%DOCSDIR%%/AUTHORS
-%%PORTDOCS%%usr/%%DOCSDIR%%/COPYING
-%%PORTDOCS%%usr/%%DOCSDIR%%/NEWS
-%%PORTDOCS%%usr/%%DOCSDIR%%/README
-%%PORTDOCS%%@dirrmtry usr/%%DOCSDIR%%

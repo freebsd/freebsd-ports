@@ -1,4 +1,0 @@
-usr/lib/libGL.so.1
-usr/lib/libGL.so.1.2.0
-%%PORTDOCS%%usr/%%DOCSDIR%%/COPYING
-%%PORTDOCS%%@dirrmtry usr/%%DOCSDIR%%

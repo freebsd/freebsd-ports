@@ -1,8 +1,0 @@
-D-BUS is a system for sending messages between applications. It is
-used both for the system-wide message bus service, and as a
-per-user-login-session messaging facility.
-
-D-BUS contains some tools that require Xlib to be installed, those are
-in this separate package so server systems need not install X.
-
-Brought in from Fedora 20.

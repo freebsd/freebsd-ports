@@ -1,2 +1,0 @@
-A small and lightweight library that implements easy to use asynchronous
-wrappers around the libc NSS functions getaddrinfo(), res_query() and related.

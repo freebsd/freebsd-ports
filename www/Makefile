@@ -403,7 +403,6 @@
     SUBDIR += linux-c6-flashplugin11
     SUBDIR += linux-c6-qt47-webkit
     SUBDIR += linux-f10-flashplugin11
-    SUBDIR += linux-f20-webkit-qt4
     SUBDIR += linux-firefox
     SUBDIR += linux-libgtkembedmoz
     SUBDIR += linux-opera

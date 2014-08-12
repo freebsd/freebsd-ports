@@ -72,7 +72,6 @@
     SUBDIR += linux-systemsimcell
     SUBDIR += linux_base-c6
     SUBDIR += linux_base-f10
-    SUBDIR += linux_base-f20
     SUBDIR += linux_base-gentoo-stage3
     SUBDIR += linux_dist-gentoo-stage3
     SUBDIR += lisaem

@@ -1,8 +1,0 @@
-Ogg Vorbis is a fully open, non-proprietary, patent- and royalty-free,
-general-purpose compressed audio format for audio and music at fixed
-and variable bitrates.
-
-The libvorbis package contains runtime libraries for use in programs
-that support Ogg Vorbis.
-
-This package brings in the libvorbis libraries from Fedora 20.

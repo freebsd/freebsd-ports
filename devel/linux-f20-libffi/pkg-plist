@@ -1,5 +1,0 @@
-usr/lib/libffi.so.6
-usr/lib/libffi.so.6.0.1
-%%PORTDOCS%%usr/%%DOCSDIR%%/LICENSE
-%%PORTDOCS%%usr/%%DOCSDIR%%/README
-%%PORTDOCS%%@dirrmtry usr/%%DOCSDIR%%

@@ -1,8 +1,0 @@
-usr/bin/orc-bugreport
-usr/lib/liborc-0.4.so.0
-usr/lib/liborc-0.4.so.0.18.0
-usr/lib/liborc-test-0.4.so.0
-usr/lib/liborc-test-0.4.so.0.18.0
-%%PORTDOCS%%usr/%%DOCSDIR%%/COPYING
-%%PORTDOCS%%usr/%%DOCSDIR%%/README
-%%PORTDOCS%%@dirrmtry usr/%%DOCSDIR%%
