@@ -19,7 +19,9 @@ SVN_BUILD_ADDONS=	yes
 USE_APACHE=	22+
 
 CONFIGURE_ARGS+=	--with-apxs=${APXS} \
-			--with-apache-libexecdir
+			--with-apache-libexecdir \
+			--without-gnome-keyring \
+			--without-kwallet
 
 SUB_FILES=	pkg-install
 
