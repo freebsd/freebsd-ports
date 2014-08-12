@@ -20,7 +20,10 @@ INSTALL_WRKSRC=	${WRKSRC}/mDNSPosix
 MAKE_ARGS=	LDCONFIG=${TRUE} LOCALBASE=${PREFIX} MANPATH=${MANPREFIX}/man os=freebsd
 USE_LDCONFIG=	yes
 USE_RC_SUBR=	mdnsd mdnsresponderposix
-USES=		gmake
+USES=		cpe gmake
+
+CPE_VENDOR=	apple
+CPE_PRODUCT=	${PORTNAME:tl}
 
 EXTRA_BIN=	mDNSClientPosix mDNSIdentify mDNSNetMonitor mDNSProxyResponderPosix mDNSResponderPosix
 EXTRA_MAN1=	dns-sd.1
