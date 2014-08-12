@@ -3,10 +3,11 @@
 
 PORTNAME=	rkhunter
 PORTVERSION=	1.4.2
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	SF
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	lukasz@wasikowski.net
 COMMENT=	Rootkit detection tool
 
 LICENSE=	GPLv2
@@ -27,8 +28,10 @@ LSOF_RUN_DEPENDS=	lsof:${PORTSDIR}/sysutils/lsof
 NMAP_RUN_DEPENDS=	nmap:${PORTSDIR}/security/nmap
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|{SHAREDIR}/man/man8|{PREFIX}/man/man8|g' \
+	@${REINPLACE_CMD} -i '' -e 's|{SHAREDIR}/man/man8|{PREFIX}/man/man8|g' \
 		${WRKSRC}/installer.sh
+	@${REINPLACE_CMD} -i '' -e 's|RKHPREFIX|${PREFIX}|g' \
+		${WRKSRC}/files/${PORTNAME}.conf
 
 do-install:
 	cd ${WRKSRC} && ./installer.sh --layout custom ${STAGEDIR}${PREFIX} --install
@@ -40,7 +43,7 @@ do-install:
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/files/|} ${STAGEDIR}${DOCSDIR}
 
 post-install:
-	${REINPLACE_CMD} -i '' -e 's,${STAGEDIR},,' \
+	@${REINPLACE_CMD} -i '' -e 's|${STAGEDIR}||g' \
 		${STAGEDIR}${PREFIX}/bin/${PORTNAME} ${STAGEDIR}${PREFIX}/etc/${PORTNAME}.conf
 	${INSTALL_DATA} ${WRKSRC}/files/${PORTNAME}.conf ${STAGEDIR}${PREFIX}/etc/${PORTNAME}.conf.sample
 	${INSTALL_DATA} -m 640 ${WRKSRC}/files/programs_bad.dat ${STAGEDIR}${PREFIX}/var/lib/${PORTNAME}/db/programs_bad.dat.sample
