@@ -1,31 +1,30 @@
---- Makefile.orig	2007-02-19 13:14:08.000000000 +0100
-+++ Makefile	2007-07-17 23:42:11.000000000 +0200
-@@ -30,18 +30,18 @@
+--- Makefile.orig	2007-02-19 12:14:08 UTC
++++ Makefile
+@@ -30,9 +30,9 @@ MAP = lib$(PROJECT).map
  TARGETS = $(PROJECT) $(SHAREDLIB) $(STATICLIB)
  
  INSTALL = install
 -libdir = /usr/lib
 -libexecdir = /usr/lib
 -includedir = /usr/include
--DESTDIR =
-+libdir = /lib
-+libexecdir = /libexec
-+includedir = /include
-+DESTDIR = $(PREFIX)
++libdir = $(PREFIX)/lib
++libexecdir = $(PREFIX)/libexec
++includedir = $(PREFIX)/include
+ DESTDIR =
  
  WARNINGS = -W -Wall -Waggregate-return -Wcast-align -Wconversion \
- 	-Wdisabled-optimization -Wmissing-declarations \
+@@ -40,8 +40,8 @@ WARNINGS = -W -Wall -Waggregate-return -
  	-Wmissing-format-attribute -Wmissing-noreturn \
  	-Wmissing-prototypes -Wpointer-arith -Wredundant-decls \
  	-Wshadow -Wstrict-prototypes -Wwrite-strings
 -CPPFLAGS = -std=gnu99 $(WARNINGS) -DLIBEXECDIR=\"$(libexecdir)\"
 -CFLAGS = $(RPM_OPT_FLAGS)
 +CPPFLAGS = -std=gnu99 $(WARNINGS)
-+CFLAGS+= -DLIBEXECDIR=\"$(PREFIX)$(libexecdir)\"
++CFLAGS+= -DLIBEXECDIR=\"$(libexecdir)\"
  LDLIBS =
  
  all: $(TARGETS)
-@@ -63,15 +63,20 @@
+@@ -63,15 +63,20 @@ $(STATICLIB): iface.o
  
  iface.o: iface.c utempter.h
  
