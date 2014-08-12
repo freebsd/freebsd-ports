@@ -15,7 +15,6 @@ COMMENT=	The part of X11R3's xcalc featuring a slide rule
 USES=		imake
 USE_XORG=	x11 xext
 USE_GCC=	any
-MAN1=		sliderule.1
-PLIST_FILES=	bin/sliderule
+PLIST_FILES=	bin/sliderule man/man1/sliderule.1.gz
 
 .include <bsd.port.mk>
