@@ -32,6 +32,9 @@ OPTIONS_DEFINE=	DOCS EXAMPLES
 
 WRKSRC=	${WRKDIR}/${GH_ACCOUNT}-${GH_PROJECT}-${GH_COMMIT}/clients/perl/OpenXPKI-Client-HTML-Mason
 
+DEPRECATED=	security/p5-openxpki-0.15+ abandoned Mason UI technology in favor of FastCGI
+EXPIRATION_DATE=	2014-09-20
+
 pre-patch:
 	(cd ${WRKSRC} && ${FIND} ./* > MANIFEST)
 
