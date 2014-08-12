@@ -10,11 +10,14 @@ etc/games/armagetronad%%SUFFIX%%/examples/cvs_test/sumo_complete.cfg
 etc/games/armagetronad%%SUFFIX%%/examples/death_zone.cfg
 etc/games/armagetronad%%SUFFIX%%/examples/fortress_soccer.cfg
 etc/games/armagetronad%%SUFFIX%%/examples/single_use_turbo.cfg
+etc/games/armagetronad%%SUFFIX%%/examples/teamsumo.cfg
 etc/games/armagetronad%%SUFFIX%%/master.srv
 etc/games/armagetronad%%SUFFIX%%/rc.config
 etc/games/armagetronad%%SUFFIX%%/settings.cfg
+etc/games/armagetronad%%SUFFIX%%/settings_authentication.cfg
 etc/games/armagetronad%%SUFFIX%%/settings_dedicated.cfg
 etc/games/armagetronad%%SUFFIX%%/settings_visual.cfg
+etc/games/armagetronad%%SUFFIX%%/subcultures.srv
 share/doc/games/armagetronad%%SUFFIX%%/html/bugs.html
 share/doc/games/armagetronad%%SUFFIX%%/html/changelog.html
 share/doc/games/armagetronad%%SUFFIX%%/html/commands.html
@@ -46,6 +49,8 @@ share/games/armagetronad%%SUFFIX%%/language/english_base_notranslate.txt
 share/games/armagetronad%%SUFFIX%%/language/french.txt
 share/games/armagetronad%%SUFFIX%%/language/languages.txt
 share/games/armagetronad%%SUFFIX%%/language/languages.txt.in
+share/games/armagetronad%%SUFFIX%%/language/polish.txt
+share/games/armagetronad%%SUFFIX%%/language/polish_transliterated.txt
 share/games/armagetronad%%SUFFIX%%/language/spanish.txt
 share/games/armagetronad%%SUFFIX%%/language/update.py
 %%CLIENT%%share/games/armagetronad/models/cycle_body.mod
