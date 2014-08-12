@@ -587,12 +587,6 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #				  Installs all directories and files from ${WRKSRC}/doc
 #				  to ${DOCSDIR} except sed backup files.
 #
-# Boolean to control whether manpages are installed.
-#
-# NO_INSTALL_MANPAGES
-#				- If set, this port doesn't want to install any manpages.
-#				  Default: not set, i.e. manpages are installed by default.
-#
 # Set the following to specify all manpages that your port installs.
 # These manpages will be automatically listed in ${PLIST}.  Depending
 # on the setting of NO_MANCOMPRESS, the make rules will compress the
@@ -629,8 +623,8 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #				  "maybe".  "yes" means manpages are installed
 #				  compressed; "no" means they are not; "maybe" means
 #				  it changes depending on the value of NO_MANCOMPRESS.
-#				  Default: "yes" if USES=imake is set and NO_INSTALL_MANPAGES
-#				  is not set, and "no" otherwise.
+#				  Default: "yes" if USES=imake is set without the noman
+#				  argument, and "no" otherwise.
 #
 # Set the following to specify all .info files your port installs.
 #
