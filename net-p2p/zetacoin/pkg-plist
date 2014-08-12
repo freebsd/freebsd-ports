@@ -1,6 +1,6 @@
-%%EXECUTABLE%%
+%%NO_X11%%%%EXECUTABLE_DAEMON%%
+%%NO_X11%%@sample etc/%%PORTNAME%%.conf.sample
+%%CLI%%%%EXECUTABLE_CLI%%
+%%X11%%%%EXECUTABLE_QT%%
 %%X11%%share/applications/%%PORTNAME%%-qt.desktop
 %%X11%%share/pixmaps/%%PORTNAME%%.png
-%%HEADLESS%%@unexec if cmp -s %D/etc/%%PORTNAME%%.conf.sample %D/etc/%%PORTNAME%%.conf; then rm -f %D/etc/%%PORTNAME%%.conf; fi
-%%HEADLESS%%etc/%%PORTNAME%%.conf.sample
-%%HEADLESS%%@exec if [ ! -f %D/etc/%%PORTNAME%%.conf ] ; then cp -p %D/%F %B/%%PORTNAME%%.conf; fi
