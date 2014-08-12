@@ -3,6 +3,8 @@ bin/lged
 bin/lgeneral
 bin/ltrextract
 bin/shptool
+man/man1/lgc-pg.1.gz
+man/man6/lgeneral.6.gz
 share/applications/lgeneral.desktop
 %%PORTDOCS%%%%DOCSDIR%%/README.lgc-pg
 %%PORTDOCS%%%%DOCSDIR%%/README.lgeneral

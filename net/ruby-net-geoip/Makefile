@@ -3,6 +3,7 @@
 
 PORTNAME=	net-geoip
 PORTVERSION=	0.07
+PORTREVISION=	1
 CATEGORIES=	net ruby geography
 MASTER_SITES=	http://geolite.maxmind.com/download/geoip/api/ruby/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
@@ -22,6 +23,10 @@ INSTALL_TARGET=	site-install
 DOCS=	README
 
 OPTIONS_DEFINE=	DOCS
+
+BROKEN=			Does not build, use net/rubygem-geoip instead 
+DEPRECATED=		Broken
+EXPIRATION_DATE=	2014-09-12
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${RUBY_MODDOCDIR}

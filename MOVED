@@ -641,7 +641,6 @@ www/apache-jserv|www/tomcat6|2009-06-08|Has expired: superseded by tomcat
 lang/perl5.6||2009-06-08|Has expired: no longer under development, use lang/perl5.10 or lang/perl5.8
 multimedia/dplay|multimedia/playd|2009-06-10|Port renamed
 www/epiphany-webkit|www/epiphany|2009-06-10|Webkit backend isn't supported
-devel/avr-gcc-devel|devel/avr-gcc|2009-06-11|AVR-GCC 4.3.x becomes the default version
 japanese/slirc||2009-06-13|Removed
 chinese/wordpress||2009-06-13|Removed due to security vulnerabilities
 www/amaya||2009-06-13|Removed due to security vulnerabilities
@@ -5404,6 +5403,7 @@ textproc/it-ispell|textproc/it-aspell|2014-01-29|Removed, consider using aspell 
 textproc/nl-ispell|textproc/nl-aspell|2014-01-29|Removed, consider using aspell instead
 textproc/sk-ispell|textproc/sk-aspell|2014-01-29|Removed, consider using aspell instead
 ukrainian/ispell|ukrainian/aspell|2014-01-29|Removed, consider using aspell instead
+databases/p5-DBD-mysql52|databases/p5-DBD-mysql|2014-01-29|Depends on expired MySQL version
 audio/gsi||2014-01-30|Removed, abandonware
 multimedia/kino||2014-01-31|Has expired: Not developed since 2009, declared dead 05.08.2013 on there website
 x11-drivers/xf86-video-imstt||2014-01-31|Has expired: Broken, unsupported and unmaintained upstream
@@ -6250,7 +6250,7 @@ www/trac-TracDuplicates||2014-06-30|Has expired: Broken for more than 5 months
 mail/hotwayd||2014-06-30|Has expired: Protocol changed, software unusable
 mail/ilohamail-devel||2014-06-30|Has expired: Upstream disappeared
 games/tyrquake||2014-06-30|Has expired: Broken for more than 5 months
-net/gkrellmqst||2014-06-30|Has expired: GKrellM 1.X is no longer being developed, consider using 2.X.
+net/gkrellmqst||2014-06-30|Has expired: GKrellM 1.X is no longer being developed, consider using 2.X
 security/p5-Jifty-Plugin-OpenID||2014-06-30|Has expired: Broken for more than 5 months
 games/sumwars||2014-06-30|Has expired: Broken for more than 5 months
 audio/ruby-esound||2014-06-30|Has expired: Broken for more than 5 months
@@ -6259,21 +6259,21 @@ net-im/ysm||2014-06-30|Has expired: Broken for more than 5 months
 net-mgmt/send||2014-06-30|Has expired: Broken for more than 5 months
 net/p5-Jifty-Plugin-Authentication-Ldap||2014-06-30|Has expired: Broken for more than 5 months
 net-p2p/bittyrant||2014-06-30|Has expired: Broken for more than 5 months
-sysutils/gkrellm||2014-06-30|Has expired: GKrellM 1.X is no longer being developed, consider using 2.X.
-audio/gkrellmms||2014-06-30|Has expired: GKrellM 1.X is no longer being developed, consider using 2.X.
-audio/gkrellmvolume||2014-06-30|Has expired: GKrellM 1.X is no longer being developed, consider using 2.X.
-misc/gkrellmlaunch||2014-06-30|Has expired: GKrellM 1.X is no longer being developed, consider using 2.X.
-misc/gkrellmfmonitor||2014-06-30|Has expired: GKrellM 1.X is no longer being developed, consider using 2.X.
-misc/gkrellshoot||2014-06-30|Has expired: GKrellM 1.X is no longer being developed, consider using 2.X.
-polish/sms2||2014-06-30|Has expired: sms2 is no longer being developed, consider using alternative software.
+sysutils/gkrellm||2014-06-30|Has expired: GKrellM 1.X is no longer being developed, consider using 2.X
+audio/gkrellmms||2014-06-30|Has expired: GKrellM 1.X is no longer being developed, consider using 2.X
+audio/gkrellmvolume||2014-06-30|Has expired: GKrellM 1.X is no longer being developed, consider using 2.X
+misc/gkrellmlaunch||2014-06-30|Has expired: GKrellM 1.X is no longer being developed, consider using 2.X
+misc/gkrellmfmonitor||2014-06-30|Has expired: GKrellM 1.X is no longer being developed, consider using 2.X
+misc/gkrellshoot||2014-06-30|Has expired: GKrellM 1.X is no longer being developed, consider using 2.X
+polish/sms2||2014-06-30|Has expired: sms2 is no longer being developed, consider using alternative software
 x11-toolkits/py-wmdockapps||2014-06-30|Has expired: Crufty and nothing depends on this
 audio/tagger||2014-06-30|Has expired: Ancient, unmaintained
 www/mod_wsgi2|www/mod_wsgi3|2014-06-30|Has expired: No longer supported, please use www/mod_wsgi3 instead
 security/botan|security/botan110|2014-06-30|Has expired: Botan 1.8 have known bugs and is no longer supported upstream, migrate to security/botan110
 deskutils/checkrdf||2014-06-30|Removed: Abandonware, please consider using other software
 graphics/k3d||2014-06-30|Has expired: Broken for more than 5 months
-mail/cyrus-imapd2|mail/cyrus-imapd24|2014-06-30|Has expired: Cyrus IMAPd 2.1.X have been deprecated, consider using 2.4.X.
-mail/cyrus-imapd22|mail/cyrus-imapd24|2014-06-30|Has expired: No further releases of 2.2.X are planned, consider using 2.4.X.
+mail/cyrus-imapd2|mail/cyrus-imapd24|2014-06-30|Has expired: Cyrus IMAPd 2.1.X have been deprecated, consider using 2.4.X
+mail/cyrus-imapd22|mail/cyrus-imapd24|2014-06-30|Has expired: No further releases of 2.2.X are planned, consider using 2.4.X
 editors/xemacs||2014-06-30|Removed: unmaintained upstream
 editors/xemacs-devel||2014-06-30|Removed: unmaintained upstream
 chinese/xemacs||2014-06-30|Removed: unmaintained upstream
@@ -6439,13 +6439,12 @@ japanese/latex2html||2014-07-23|Depends on decomissioned teTeX
 japanese/platex209||2014-07-23|Depends on decomissioned teTeX
 japanese/platex-jsclasses||2014-07-23|Depends on decomissioned teTeX
 japanese/platex-otf||2014-07-23|Depends on decomissioned teTeX
-japanese/ptex|japaneses/tex-ptex|2014-07-23|Use TeXLive version
+japanese/ptex|japanese/tex-ptex|2014-07-23|Use TeXLive version
 japanese/dvipsk|print/tex-dvipsk|2014-07-23|Use TeXLive version
 print/dvipsk-tetex|print/tex-dvipsk|2014-07-23|Use TeXLive version
 print/dvipdfmx|print/tex-dvipdfmx|2014-07-23|Use TeXLive version
 print/jadetex|print/tex-jadetex|2014-07-23|Use TeXLive version
 japanese/teTeX|print/texlive-full|2014-07-23|Use TeXLive
-devel/libevent|devel/libevent2|2014-07-27|libevent2 replaced libevent
 chinese/big5con||2014-07-24|Has expired: Fails to build with new utmpx
 chinese/hztty||2014-07-24|Has expired: Fails to build with new utmpx
 irc/solid-ircd||2014-07-24|Has expired: Fails to build with new utmpx
@@ -6466,6 +6465,7 @@ sysutils/lookupd_ldap||2014-07-24|Has expired: Fails to build with new utmpx
 sysutils/p5-Sys-Utmp||2014-07-24|Has expired: Fails to build with new utmpx
 sysutils/syslog-ng2||2014-07-24|Has expired: Fails to build with new utmpx
 sysutils/yawho||2014-07-24|Has expired: Fails to build with new utmpx
+devel/libevent|devel/libevent2|2014-07-27|libevent2 replaced libevent
 devel/p5-MetaCPAN-API|devel/p5-MetaCPAN-Client|2014-07-27|Has expired: Use devel/p5-MetaCPAN-Client instead
 net-im/pidgin-facebookchat||2014-07-27|Has expired: obsolete, development has ceased, not staged
 net-im/gtkyahoo||2014-07-28|Has expired: Broken, unmaintained, unstaged, gtk12, i386 only
@@ -6491,7 +6491,7 @@ lang/sml-nj|lang/smlnj|2014-07-30|Use lang/smlnj as newer version
 www/ajaxplorer|www/pydio|2014-07-31|Project renamed
 converters/igbinary|converters/pecl-igbinary|2014-07-31|The project has been moved to PECL
 mail/postfix27||2014-07-31|Has expired: No longer supported by upstream
-misc/freecode-submit||2014-07-31|Has expired: This software is obsolete. Freecode does not accept updates anymore.
+misc/freecode-submit||2014-07-31|Has expired: This software is obsolete. Freecode does not accept updates anymore
 mail/exim-doc-info||2014-07-31|Has expired: yes
 misc/gman||2014-07-31|Has expired: Depends on expiring ghostview
 print/ghostview|print/gv|2014-07-31|Has expired: project dead nearly a decade ago; use print/gv instead
@@ -6748,3 +6748,4 @@ www/hs-shakespeare-js||2014-08-10|Removed: Deprecated in favor of shakespeare
 www/hs-shakespeare-text||2014-08-10|Removed: Deprecated in favor of shakespeare
 www/hs-wai-test||2014-08-10|Removed: Deprecated in favor of wai-extra
 devel/rubygem-foreman_api||2014-08-11|Removed: Deprecated by upstream
+security/termlog||2014-08-11|Has expired: Fails to build with new utmpx, unstaged, maintainer timeout

@@ -1108,6 +1108,7 @@
     SUBDIR += libopkele
     SUBDIR += liborcus
     SUBDIR += libosinfo
+    SUBDIR += libosmo-abis
     SUBDIR += libosmo-sccp
     SUBDIR += libosmocore
     SUBDIR += libowfat
@@ -4393,6 +4394,7 @@
     SUBDIR += rubygem-main
     SUBDIR += rubygem-map
     SUBDIR += rubygem-mash
+    SUBDIR += rubygem-memoizable
     SUBDIR += rubygem-mercenary
     SUBDIR += rubygem-metaclass
     SUBDIR += rubygem-metaid
@@ -4520,6 +4522,7 @@
     SUBDIR += rubygem-test-unit
     SUBDIR += rubygem-thor
     SUBDIR += rubygem-thread_safe
+    SUBDIR += rubygem-thread_safe1
     SUBDIR += rubygem-thrift
     SUBDIR += rubygem-tilt
     SUBDIR += rubygem-tilt1
@@ -4650,7 +4653,7 @@
     SUBDIR += ta-lib
     SUBDIR += tailor
     SUBDIR += talloc
-    SUBDIR += tass
+    SUBDIR += tass64
     SUBDIR += tbb
     SUBDIR += tcl-memchan
     SUBDIR += tcl-mmap

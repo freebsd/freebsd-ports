@@ -114,12 +114,18 @@ bin/ocrfeeder-cli
 %%PYTHON_SITELIBDIR%%/ocrfeeder/studio/__init__.py
 %%PYTHON_SITELIBDIR%%/ocrfeeder/studio/__init__.pyc
 %%PYTHON_SITELIBDIR%%/ocrfeeder/studio/__init__.pyo
+%%PYTHON_SITELIBDIR%%/ocrfeeder/studio/boxesarea.py
+%%PYTHON_SITELIBDIR%%/ocrfeeder/studio/boxesarea.pyc
+%%PYTHON_SITELIBDIR%%/ocrfeeder/studio/boxesarea.pyo
 %%PYTHON_SITELIBDIR%%/ocrfeeder/studio/customWidgets.py
 %%PYTHON_SITELIBDIR%%/ocrfeeder/studio/customWidgets.pyc
 %%PYTHON_SITELIBDIR%%/ocrfeeder/studio/customWidgets.pyo
 %%PYTHON_SITELIBDIR%%/ocrfeeder/studio/dataHolder.py
 %%PYTHON_SITELIBDIR%%/ocrfeeder/studio/dataHolder.pyc
 %%PYTHON_SITELIBDIR%%/ocrfeeder/studio/dataHolder.pyo
+%%PYTHON_SITELIBDIR%%/ocrfeeder/studio/pagesiconview.py
+%%PYTHON_SITELIBDIR%%/ocrfeeder/studio/pagesiconview.pyc
+%%PYTHON_SITELIBDIR%%/ocrfeeder/studio/pagesiconview.pyo
 %%PYTHON_SITELIBDIR%%/ocrfeeder/studio/project.py
 %%PYTHON_SITELIBDIR%%/ocrfeeder/studio/project.pyc
 %%PYTHON_SITELIBDIR%%/ocrfeeder/studio/project.pyo
@@ -201,6 +207,22 @@ share/gnome/help/ocrfeeder/de/manualeditionandcorrection.page
 share/gnome/help/ocrfeeder/de/ocrconfiguration.page
 share/gnome/help/ocrfeeder/de/projects.page
 share/gnome/help/ocrfeeder/de/unpaper.page
+share/gnome/help/ocrfeeder/el/addingfolder.page
+share/gnome/help/ocrfeeder/el/addingimage.page
+share/gnome/help/ocrfeeder/el/automaticrecognition.page
+share/gnome/help/ocrfeeder/el/deskewing.page
+share/gnome/help/ocrfeeder/el/documentgeneration.page
+share/gnome/help/ocrfeeder/el/figures/areas-edition.png
+share/gnome/help/ocrfeeder/el/figures/content-areas.png
+share/gnome/help/ocrfeeder/el/finetuning.page
+share/gnome/help/ocrfeeder/el/importingfromscanner.page
+share/gnome/help/ocrfeeder/el/importingpdf.page
+share/gnome/help/ocrfeeder/el/index.page
+share/gnome/help/ocrfeeder/el/legal.xml
+share/gnome/help/ocrfeeder/el/manualeditionandcorrection.page
+share/gnome/help/ocrfeeder/el/ocrconfiguration.page
+share/gnome/help/ocrfeeder/el/projects.page
+share/gnome/help/ocrfeeder/el/unpaper.page
 share/gnome/help/ocrfeeder/es/addingfolder.page
 share/gnome/help/ocrfeeder/es/addingimage.page
 share/gnome/help/ocrfeeder/es/automaticrecognition.page
@@ -308,6 +330,7 @@ share/locale/eo/LC_MESSAGES/ocrfeeder.mo
 share/locale/es/LC_MESSAGES/ocrfeeder.mo
 share/locale/fr/LC_MESSAGES/ocrfeeder.mo
 share/locale/gl/LC_MESSAGES/ocrfeeder.mo
+share/locale/he/LC_MESSAGES/ocrfeeder.mo
 share/locale/hu/LC_MESSAGES/ocrfeeder.mo
 share/locale/it/LC_MESSAGES/ocrfeeder.mo
 share/locale/nb/LC_MESSAGES/ocrfeeder.mo
@@ -344,6 +367,8 @@ share/locale/zh_TW/LC_MESSAGES/ocrfeeder.mo
 @dirrm share/gnome/help/ocrfeeder/fr
 @dirrm share/gnome/help/ocrfeeder/es/figures
 @dirrm share/gnome/help/ocrfeeder/es
+@dirrm share/gnome/help/ocrfeeder/el/figures
+@dirrm share/gnome/help/ocrfeeder/el
 @dirrm share/gnome/help/ocrfeeder/de/figures
 @dirrm share/gnome/help/ocrfeeder/de
 @dirrm share/gnome/help/ocrfeeder/cs/figures

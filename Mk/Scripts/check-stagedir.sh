@@ -193,11 +193,13 @@ pkg_get_recursive_deps() {
 lookup_dependency_dirs() {
 	: >${WRKDIR}/.run-depends-dirs
 	if [ -n "${WITH_PKGNG}" ]; then
-		echo "${PACKAGE_DEPENDS}" | while read pkg; do \
-		    PKG_CHECKED= pkg_get_recursive_deps "${pkg}"; done | \
-		    sort -u | \
-		    xargs ${PKG_QUERY} "%D" | sed -e 's,/$,,' | sort -u \
-		    >>${WRKDIR}/.run-depends-dirs
+		if [ -n "${PACKAGE_DEPENDS}" ]; then
+			echo "${PACKAGE_DEPENDS}" | while read pkg; do \
+			    PKG_CHECKED= pkg_get_recursive_deps "${pkg}"; \
+			    done | sort -u | xargs ${PKG_QUERY} "%D" | \
+			    sed -e 's,/$,,' | sort -u \
+			    >>${WRKDIR}/.run-depends-dirs
+		fi
 	else
 		# Evaluate ACTUAL-PACKAGE-DEPENDS
 		packagelist=

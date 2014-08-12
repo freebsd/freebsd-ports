@@ -973,6 +973,7 @@
     SUBDIR += starttls
     SUBDIR += stegdetect
     SUBDIR += steghide
+    SUBDIR += stoken
     SUBDIR += strobe
     SUBDIR += strongswan
     SUBDIR += stunnel
@@ -987,7 +988,6 @@
     SUBDIR += switzerland
     SUBDIR += symbion-sslproxy
     SUBDIR += tclsasl
-    SUBDIR += termlog
     SUBDIR += tinc
     SUBDIR += tinyca
     SUBDIR += tinysu

@@ -89,19 +89,18 @@ include/styx/xml_lim.h
 include/styx/xml_pim.h
 include/styx/xml_test_cim.h
 include/styx/xmllit_lim.h
-@dirrm include/styx
 lib/libdstyx.a
-lib/libdstyx.la
 lib/libdstyx.so
 lib/libdstyx.so.2
+lib/libdstyx.so.2.0.0
 lib/libdxml.a
-lib/libdxml.la
 lib/libdxml.so
 lib/libdxml.so.1
+lib/libdxml.so.1.0.0
 lib/libxstyx.a
-lib/libxstyx.la
 lib/libxstyx.so
 lib/libxstyx.so.2
+lib/libxstyx.so.2.0.0
 %%PORTDOCS%%%%DOCSDIR%%/bin__cim.htm
 %%PORTDOCS%%%%DOCSDIR%%/binimg.htm
 %%PORTDOCS%%%%DOCSDIR%%/binset.htm
@@ -254,11 +253,46 @@ lib/libxstyx.so.2
 %%PORTDOCS%%%%DOCSDIR%%/xml_pim.htm
 %%PORTDOCS%%%%DOCSDIR%%/xmllit_lim.htm
 %%PORTDOCS%%%%DOCSDIR%%/xstdosx.htm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example01/calc.sty
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example01/calctut.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example01/explist.calc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example01/mx
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example01/readme
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example02/mx
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example02/pl0.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example02/pl0.sty
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example02/readme
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example02/t
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example02/testpl0.pl0
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example02/todo
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example03/mx
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example03/pl0.sty
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example03/pl0c.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example03/pl0r.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example03/readme
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example03/t
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example03/testpl0.pl0
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example03/todo
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example04/calc.cpp
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example04/calc.sty
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example04/mx
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example04/pattern_file.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example04/readme
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example04/t
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example05/ide.config.in
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example05/mcfg.sty
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example05/mx
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example05/readme
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example06/ipl.sty
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example06/mx
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example06/readme
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example06/test.ipl
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pat/lstydoc_us.htm
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pat/pcmdbook.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pat/pcmddoc_us.htm
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pat/rstydoc_us.htm
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pat/tstydoc_us.htm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/readme
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/spe/ccnv.sty
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/spe/cdps.sty
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/spe/cmd.sty
@@ -273,8 +307,16 @@ lib/libxstyx.so.2
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/spe/xml1.lex
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/spe/xml2.lex
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/spe/xmllit.sty
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/spe/xsty
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/spe/xxml
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/spe
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/pat
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm include/styx
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/example01
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/example02
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/example03
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/example04
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/example05
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/example06
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/pat
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/spe
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%

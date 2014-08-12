@@ -9,7 +9,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION} \
 DISTFILES=	\
 	${PORTNAME}-${PORTVERSION}-source${EXTRACT_SUFX}
 
-MAINTAINER=	bf@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Common Lisp development system derived from the CMU CL system
 
 LIB_DEPENDS=	libgmp.so:${PORTSDIR}/math/gmp

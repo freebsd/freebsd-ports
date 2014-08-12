@@ -1,0 +1,18 @@
+@comment $FreeBSD$
+bin/stoken
+%%X11%%bin/stoken-gui
+include/stoken.h
+lib/libstoken.a
+lib/libstoken.so
+lib/libstoken.so.1
+lib/libstoken.so.1.2.0
+%%X11%%man/man1/stoken-gui.1.gz
+man/man1/stoken.1.gz
+%%X11%%share/applications/stoken-gui-small.desktop
+%%X11%%share/applications/stoken-gui.desktop
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/libstoken-test.c
+%%PORTDOCS%%%%DOCSDIR%%/sdtid-test.pl
+%%X11%%share/pixmaps/stoken-gui.png
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+libdata/pkgconfig/stoken.pc

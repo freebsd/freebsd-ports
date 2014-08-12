@@ -24,6 +24,10 @@ SVN_BUILD_ADDONS=	yes
 
 CATEGORIES+=	python
 
+CONFIGURE_ARGS+=	--without-gnome-keyring \
+			--without-kwallet \
+			--with-apxs=no
+
 ALL_TARGET=	swig-py-lib swig-py
 INSTALL_TARGET=	install-swig-py
 

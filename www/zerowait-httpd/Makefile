@@ -9,7 +9,7 @@ MASTER_SITES=	http://mirror.mcx2.org/
 PKGNAMESUFFIX=	-httpd
 DISTNAME=	0W-httpd-${PORTVERSION}
 
-MAINTAINER=	dhn@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Lightweight and fast http server
 
 USES=		gmake

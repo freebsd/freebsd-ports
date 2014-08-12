@@ -46,7 +46,6 @@ start_precmd="${name}_prestart"
 	echo "Creating data directory"
 	eval mkdir -p ${%%PORTNAME%%_datadir}
 	[ $? -eq 0 ] && chown -R ${%%PORTNAME%%_user}:${%%PORTNAME%%_group} ${%%PORTNAME%%_datadir}
-	ln -s ${%%PORTNAME%%_datadir} /.%%PORTNAME%%
 }
 
 %%PORTNAME%%_prestart()

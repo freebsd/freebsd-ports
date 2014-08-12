@@ -8,6 +8,8 @@ MASTER_SITES=	RG
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Framework for rapid API development with great conventions
 
+LICENSE=	MIT
+
 RUN_DEPENDS=	rubygem-activesupport>=0:${PORTSDIR}/devel/rubygem-activesupport \
 		rubygem-builder>=0:${PORTSDIR}/devel/rubygem-builder \
 		rubygem-hashie>=1.2.0:${PORTSDIR}/devel/rubygem-hashie \
@@ -21,6 +23,5 @@ RUN_DEPENDS=	rubygem-activesupport>=0:${PORTSDIR}/devel/rubygem-activesupport \
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
-
 
 .include <bsd.port.mk>

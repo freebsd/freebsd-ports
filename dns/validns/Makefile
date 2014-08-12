@@ -24,6 +24,9 @@ PLIST_FILES=	bin/${PORTNAME} \
 PORTDOCS=	Changes README installation.mdwn notes.mdwn \
 		technical-notes.mdwn todo.mdwn usage.mdwn
 
+MAKE_ARGS+=	INCPATH=-I${LOCALBASE}/include
+MAKE_ARGS+=	EXTRALPATH=-L${LOCALBASE}/lib
+
 OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.options.mk>

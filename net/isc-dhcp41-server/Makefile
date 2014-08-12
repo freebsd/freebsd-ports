@@ -103,6 +103,7 @@ USE_AUTOTOOLS=		aclocal libtoolize autoconf autoheader automake
 AUTOMAKE_ARGS=		--foreign --add-missing --copy
 CPPFLAGS+=		-I${LOCALBASE}/include
 LIBS+=			-L${LOCALBASE}/lib
+LDFLAGS+=		-L${LOCALBASE}/lib
 CONFIGURE_ARGS+=	--with-ldap
 .else
 PLIST_SUB+=	LDAP="@comment "

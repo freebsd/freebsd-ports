@@ -3,7 +3,7 @@
 
 PORTNAME=	ntopng
 PORTVERSION=	1.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	SF/ntop/${PORTNAME}:source1 \
 		http://geolite.maxmind.com/download/geoip/database/:source2 \

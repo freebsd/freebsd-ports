@@ -1,0 +1,60 @@
+From the English README and pksd_help.en files:
+
+If you have configured the mail server component of the key
+server, there is one more step you need to take so that the server
+can actually handle mail.  In your aliases file (usually one of
+/etc/aliases or /etc/mail/aliases), create the following lines:
+
+    pgp-public-keys: "|PREFIX/bin/pks-mail.sh PREFIX/etc/pksd.conf"
+    pgp: pgp-public-keys
+
+Or, if you are using qmail, create these files for use with the 
+dot-qmail(5) framework :
+
+cd /var/qmail/alias/
+echo "&pgp-public-keys@localhost" > .qmail-pgp
+echo "|preline /usr/local/bin/pks-mail.sh /usr/local/etc/pksd.conf" > .qmail-pgp-public-keys 
+
+You might also need to add aliases for the mail addresses you
+configured in pksd.conf.  
+
+You will also need to make sure the permissions on PREFIX/var/incoming
+allow both the mailer and whatever user the pksd program runs as
+to insert and delete files.
+
+OpenPGP public email key servers allow users to exchange public
+keys running using the Internet and properly configured e-mail
+servers.  This service exists only to help transfer keys between
+PGP users.  It does NOT attempt to guarantee that a key is a valid
+key; use the signatures on a key for that kind of security.
+
+Each keyserver processes requests in the form of mail messages.
+The commands for the server are entered on the Subject: line.
+---------------------------------------------- ======== -----
+Note that they should NOT be included in the body of the message.
+--------------------- === ---------------------------------------
+
+        To: pgp-public-keys@keys.pgp.net
+        From: johndoe@some.site.edu
+        Subject: help
+
+Sending your key to ONE server is enough.  After it processes your
+key, it will forward your add request to other servers automagically.
+
+For example, to add your key to the keyserver, or to update your key
+if it is already there, send a message similar to the following to any
+server:
+
+        To: pgp-public-keys@keys.pgp.net
+        From: johndoe@some.site.edu
+        Subject: add
+
+        -----BEGIN PGP PUBLIC KEY BLOCK-----
+        Version: 2.6
+
+        <blah blah blah>
+        -----END PGP PUBLIC KEY BLOCK-----
+
+COMPROMISED KEYS:  Create a Key Revocation Certificate (read the PGP
+docs on how to do that) and mail your key to the server once again,
+with the ADD command.

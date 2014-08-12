@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	thread_safe
-PORTVERSION=	0.1.3
+PORTVERSION=	0.3.4
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -10,8 +10,6 @@ MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Thread-safe collections and utilities for Ruby
 
 LICENSE=	APACHE20
-
-RUN_DEPENDS=	rubygem-atomic>=0:${PORTSDIR}/devel/rubygem-atomic
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes

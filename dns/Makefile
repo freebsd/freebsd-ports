@@ -21,6 +21,7 @@
     SUBDIR += curvedns
     SUBDIR += ddclient
     SUBDIR += ddns
+    SUBDIR += denominator
     SUBDIR += dhisd
     SUBDIR += djbdns
     SUBDIR += djbdns-tools
@@ -34,6 +35,7 @@
     SUBDIR += dnscrypt-proxy
     SUBDIR += dnsflood
     SUBDIR += dnshijacker
+    SUBDIR += dnshistory
     SUBDIR += dnsjava
     SUBDIR += dnsmasq
     SUBDIR += dnsmasq-devel
