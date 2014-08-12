@@ -3,6 +3,7 @@
 
 PORTNAME=	flashplugin
 PORTVERSION=	11.2r202.346
+PORTREVISION=	1
 CATEGORIES=	www multimedia linux
 MASTER_SITES=	http://fpdownload.macromedia.com/get/flashplayer/pdc/${PORTVERSION:C/r/\./}/
 PKGNAMEPREFIX=	linux-${USE_LINUX}-
