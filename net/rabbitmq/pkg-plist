@@ -75,6 +75,7 @@ lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_connection_sup.beam
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_control_main.beam
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_ctl_usage.beam
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_dead_letter.beam
+lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_diagnostics.beam
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_direct.beam
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_disk_monitor.beam
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_error_logger.beam
@@ -163,6 +164,7 @@ lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/tcp_listener_sup.beam
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/test_sup.beam
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/truncate.beam
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/vm_memory_monitor.beam
+lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/vm_memory_monitor_tests.beam
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/worker_pool.beam
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/worker_pool_sup.beam
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/worker_pool_worker.beam
