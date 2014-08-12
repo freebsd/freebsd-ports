@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	openxpki-i18n
-PORTVERSION=	0.19.0.1
+PORTVERSION=	0.20.0.1
 CATEGORIES=	security perl5
 PKGNAMEPREFIX=	p5-
 DISTNAME=	openxpki-${PORTVERSION}
@@ -13,14 +13,11 @@ COMMENT=	Perl based trustcenter software for PKI: i18n tools
 
 LICENSE=	APACHE20
 
-BUILD_DEPENDS=	p5-openxpki>=0.14:${PORTSDIR}/security/p5-openxpki
-RUN_DEPENDS:=	${BUILD_DEPENDS}
-
 USE_GITHUB=	yes
 GH_ACCOUNT=	openxpki
 GH_PROJECT=	openxpki
 GH_TAGNAME=	${GH_COMMIT}
-GH_COMMIT=	9d772a8
+GH_COMMIT=	d4dd0ab
 
 ### We can not go WITHOUT_NLS. Internationalization is needed
 ### even to use English language.

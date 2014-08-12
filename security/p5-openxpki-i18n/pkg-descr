@@ -1,14 +1,9 @@
-A collection of ports for the OpenXPKI suite - Perl based trustcenter 
-software for PKI: server and client parts along with deployment tools.
+Translation files for 
 
-p5-openxpki: server part and deployment tools
-p5-openxpki-i18n: internationalization of the user interface
-p5-openxpki-client-html-mason: web interface to local OpenXPKI daemon
+        security/p5-openxpki
 
-Dependencies of OpenXPKI ports ("A --> B" means that port B depends on port A):
+which is a Perl based trustcenter software for PKI: server and client parts
 
-  p5-openxpki-client-html-mason  <--  p5-openxpki  -->  p5-openxpki-i18n
-
-Notes: I18n is needed for the English interface too. 
+Note: I18n is needed for the English interface too.
 
 WWW: http://www.openxpki.org/
