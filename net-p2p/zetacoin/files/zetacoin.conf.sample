@@ -1,6 +1,6 @@
 rpcuser=myname
 #rpcpassword=YOU MUST SET A PASSWORD
-maxconnection=80
+maxconnections=80
 rpcallowip=127.0.0.1
 rpcport=17335
 port=17333
@@ -8,8 +8,3 @@ server=1
 daemon=1
 listen=1
 logtimestamps=1
-addnode=63.247.147.163
-addnode=105.236.111.72
-addnode=188.252.16.110
-addnode=54.212.51.236
-addnode=75.162.220.45
