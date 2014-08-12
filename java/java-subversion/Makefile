@@ -31,7 +31,10 @@ SVN_BUILD_ADDONS=	yes
 
 CONFIGURE_ARGS+=	--enable-javahl \
 			--with-jdk=${JAVA_HOME} \
-			--with-jikes=no
+			--with-jikes=no \
+			--without-gnome-keyring \
+			--without-kwallet \
+			--with-apxs=no
 			
 MAKE_JOBS_UNSAFE=	yes
 

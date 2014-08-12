@@ -25,6 +25,10 @@ SVN_BUILD_ADDONS=	yes
 
 CATEGORIES+=	ruby
 
+CONFIGURE_ARGS+=	--without-gnome-keyring \
+			--without-kwallet \
+			--with-apxs=no
+
 ALL_TARGET=	swig-rb-lib swig-rb
 INSTALL_TARGET=	install-swig-rb
 
