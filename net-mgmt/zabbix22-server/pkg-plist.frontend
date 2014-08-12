@@ -1,3 +1,4 @@
+%%WWWDIR%%/robots.txt
 %%WWWDIR%%/auditacts.php
 %%WWWDIR%%/jsrpc.php
 %%WWWDIR%%/dashboard.php
@@ -284,6 +285,7 @@
 %%WWWDIR%%/include/classes/helpers/CHtml.php
 %%WWWDIR%%/include/classes/helpers/CArrayHelper.php
 %%WWWDIR%%/include/classes/validators/CValidator.php
+%%WWWDIR%%/include/classes/validators/CDecimalValidator.php
 %%WWWDIR%%/include/classes/validators/CTimePeriodValidator.php
 %%WWWDIR%%/include/classes/validators/CTriggerFunctionValidator.php
 %%WWWDIR%%/include/classes/validators/CCollectionValidator.php
@@ -691,6 +693,8 @@
 %%WWWDIR%%/locale/lt/LC_MESSAGES/frontend.mo
 %%WWWDIR%%/locale/ro/LC_MESSAGES/frontend.po
 %%WWWDIR%%/locale/ro/LC_MESSAGES/frontend.mo
+%%WWWDIR%%/locale/vi/LC_MESSAGES/frontend.mo
+%%WWWDIR%%/locale/vi/LC_MESSAGES/frontend.po
 %%WWWDIR%%/locale/add_new_language.sh
 %%WWWDIR%%/conf/zabbix.conf.php.example
 %%WWWDIR%%/conf/maintenance.inc.php
@@ -921,6 +925,8 @@
 @dirrm %%WWWDIR%%/locale/lt
 @dirrm %%WWWDIR%%/locale/ro/LC_MESSAGES
 @dirrm %%WWWDIR%%/locale/ro
+@dirrm %%WWWDIR%%/locale/vi/LC_MESSAGES
+@dirrm %%WWWDIR%%/locale/vi
 @dirrm %%WWWDIR%%/locale
 @dirrm %%WWWDIR%%/conf
 @dirrm %%WWWDIR%%/js/jquery
