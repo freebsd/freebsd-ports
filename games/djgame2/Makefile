@@ -11,6 +11,9 @@ DISTNAME=	source-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	bluedj contains many popular online games
 
+DEPRECATED=	Unfetchable, upstream disappeared
+EXPIRATION_DATE=2014-08-31
+
 NO_BUILD=	yes
 USE_QT4=	gui qt3support qmake_build uic_build rcc_build moc_build svg
 USES=		dos2unix zip
