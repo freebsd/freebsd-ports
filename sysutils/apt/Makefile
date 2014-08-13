@@ -34,8 +34,6 @@ DPKGDIR?=	/var/db/dpkg
 APTDIR?=	/var/db/apt
 PLIST_SUB+=	APTDIR=${APTDIR:C,^/,,}
 
-.include <bsd.port.options.mk>
-
 post-patch:
 	${CP} ${FILESDIR}/https.cc ${FILESDIR}/https.h ${WRKSRC}/methods/
 	${REINPLACE_CMD} -e 's|@PREFIX@|${PREFIX}|g' -e \
@@ -64,9 +62,9 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/bin/libapt-pkg.so.3.11.0 ${STAGEDIR}${PREFIX}/lib
 	(cd ${STAGEDIR}${PREFIX}/lib; ${LN} -sf libapt-pkg.so.3.11.0 libapt-pkg.so.3.11; ${LN} -sf libapt-pkg.so.3.11.0 libapt-pkg.so)
 
-	${MKDIR} ${STAGEDIR}${PREFIX}/share/apt/keyrings
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/apt/keyrings
 
-	${MKDIR} ${STAGEDIR}${PREFIX}/libexec/apt/methods
+	@${MKDIR} ${STAGEDIR}${PREFIX}/libexec/apt/methods
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/methods/cdrom ${STAGEDIR}${PREFIX}/libexec/apt/methods
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/methods/copy ${STAGEDIR}${PREFIX}/libexec/apt/methods
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/methods/file ${STAGEDIR}${PREFIX}/libexec/apt/methods
@@ -79,17 +77,15 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/methods/rsh ${STAGEDIR}${PREFIX}/libexec/apt/methods
 	(cd ${STAGEDIR}${PREFIX}/libexec/apt/methods; ${LN} -sf rsh ssh; ${LN} -sf gzip bzip2)
 
-	${MKDIR} ${STAGEDIR}${PREFIX}/libexec/dpkg/methods/apt
+	@${MKDIR} ${STAGEDIR}${PREFIX}/libexec/dpkg/methods/apt
 	${INSTALL_DATA} ${WRKSRC}/scripts/dselect/desc.apt ${STAGEDIR}${PREFIX}/libexec/dpkg/methods/apt
 	${INSTALL_DATA} ${WRKSRC}/scripts/dselect/names ${STAGEDIR}${PREFIX}/libexec/dpkg/methods/apt
 	${INSTALL_SCRIPT} ${WRKSRC}/scripts/dselect/install ${STAGEDIR}${PREFIX}/libexec/dpkg/methods/apt
 	${INSTALL_SCRIPT} ${WRKSRC}/scripts/dselect/setup ${STAGEDIR}${PREFIX}/libexec/dpkg/methods/apt
 	${INSTALL_SCRIPT} ${WRKSRC}/scripts/dselect/update ${STAGEDIR}${PREFIX}/libexec/dpkg/methods/apt
 
-	${MKDIR} ${STAGEDIR}${PREFIX}/include/apt-pkg
-	for f in ${WRKSRC}/include/apt-pkg/*; do \
-		${INSTALL_DATA} $${f} ${STAGEDIR}${PREFIX}/include/apt-pkg; \
-	done
+	@${MKDIR} ${STAGEDIR}${PREFIX}/include/apt-pkg
+	${INSTALL_DATA} ${WRKSRC}/include/apt-pkg/* ${STAGEDIR}${PREFIX}/include/apt-pkg
 
 	${INSTALL_MAN} ${WRKSRC}/docs/apt-extracttemplates.1 ${STAGEDIR}${MANPREFIX}/man/man1
 	${INSTALL_MAN} ${WRKSRC}/docs/apt-ftparchive.1 ${STAGEDIR}${MANPREFIX}/man/man1
@@ -106,25 +102,20 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/docs/apt-key.8 ${STAGEDIR}${MANPREFIX}/man/man8
 	${INSTALL_MAN} ${WRKSRC}/docs/apt-secure.8 ${STAGEDIR}${MANPREFIX}/man/man8
 
-	${MKDIR} ${STAGEDIR}${PREFIX}/etc/apt/conf.d
+	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/apt/conf.d
 	${INSTALL_DATA} ${WRKSRC}/docs/examples/sources.list ${STAGEDIR}${PREFIX}/etc/apt/sources.list.sample
 	${INSTALL_DATA} ${WRKSRC}/docs/examples/apt.conf ${STAGEDIR}${PREFIX}/etc/apt/apt.conf.sample
 
-	${MKDIR} ${STAGEDIR}${APTDIR}/cache/archives/partial
-	${MKDIR} ${STAGEDIR}${APTDIR}/state/lists/partial
+	@${MKDIR} ${STAGEDIR}${APTDIR}/cache/archives/partial
+	@${MKDIR} ${STAGEDIR}${APTDIR}/state/lists/partial
 
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_MAN} ${WRKSRC}/AUTHORS ${STAGEDIR}${DOCSDIR}
 	${INSTALL_MAN} ${WRKSRC}/COPYING ${STAGEDIR}${DOCSDIR}
 	${INSTALL_MAN} ${WRKSRC}/COPYING.GPL ${STAGEDIR}${DOCSDIR}
 	${INSTALL_MAN} ${WRKSRC}/README.progress-reporting ${STAGEDIR}${DOCSDIR}
-.endif
-.if ${PORT_OPTIONS:MEXAMPLES}
-	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
-	for f in ${WRKSRC}/docs/examples/*; do \
-		${INSTALL_MAN} $${f} ${STAGEDIR}${EXAMPLESDIR}; \
-	done
-.endif
+
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_MAN} ${WRKSRC}/docs/examples/* ${STAGEDIR}${EXAMPLESDIR}
 
 .include <bsd.port.mk>
