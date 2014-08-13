@@ -11,6 +11,9 @@ CATEGORIES=	deskutils www
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Calendar application
 
+DEPRECATED=	EOL in April 2012
+EXPIRATION_DATE=	2014-08-20
+
 RUN_DEPENDS=	${LOCALBASE}/share/pear/Date/Holidays.php:${PORTSDIR}/devel/pear-Date_Holidays
 
 USE_HORDE=	base

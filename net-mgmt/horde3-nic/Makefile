@@ -11,6 +11,9 @@ MASTER_SITES=	CENKES http://freebsd.alaskaparadise.com/source/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Network service monitor
 
+DEPRECATED=	EOL in April 2012
+EXPIRATION_DATE=	2014-08-20
+
 USE_HORDE=	base pkg-message
 USES=		gettext
 PORTDOCS=	CHANGES CREDITS INSTALL TODO README

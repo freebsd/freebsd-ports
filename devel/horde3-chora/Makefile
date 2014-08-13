@@ -10,6 +10,9 @@ DIST_SUBDIR=	horde
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	CVS web-viewer
 
+DEPRECATED=	EOL in April 2012
+EXPIRATION_DATE=	2014-08-20
+
 #-----------------------------------------------------------------------
 NO_STAGE=	yes
 # You may define these options:

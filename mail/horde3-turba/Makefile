@@ -10,6 +10,9 @@ CATEGORIES=	mail www
 MAINTAINER= ports@FreeBSD.org
 COMMENT=	Contact management application
 
+DEPRECATED=	EOL in April 2012
+EXPIRATION_DATE=	2014-08-20
+
 USE_HORDE=	base
 USE_PHP=	ldap
 USES=		gettext
