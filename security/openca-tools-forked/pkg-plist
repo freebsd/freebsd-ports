@@ -1,0 +1,5 @@
+bin/openca-crmf
+bin/openca-scep
+bin/openca-sv
+man/man1/sign.1.gz
+man/man1/verify.1.gz

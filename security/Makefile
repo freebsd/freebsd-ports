@@ -354,6 +354,7 @@
     SUBDIR += op
     SUBDIR += openbsm
     SUBDIR += openbsm-devel
+    SUBDIR += openca-tools-forked
     SUBDIR += opencdk
     SUBDIR += openconnect
     SUBDIR += opencryptoki
