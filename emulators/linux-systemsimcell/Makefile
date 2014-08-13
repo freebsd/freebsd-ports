@@ -20,7 +20,7 @@ RESTRICTED=	Redistribution of pre-compiled binaries is not permitted
 SRC_DISTFILES=
 DIST_SUBDIR=	rpm
 ONLY_FOR_ARCHS=	i386
-USE_LINUX_APPS=	tcl85 tk85 blt
+USE_LINUX_APPS=	tcl84 tk84 blt
 USE_LINUX_RPM=	yes
 NOFETCHFILES=	systemsim-cell-3.1-25.f9.${ARCH}.rpm
 
