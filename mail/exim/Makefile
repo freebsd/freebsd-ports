@@ -3,7 +3,6 @@
 
 PORTNAME=	exim
 PORTVERSION?=	${EXIM_VERSION}
-PORTREVISION=	4
 CATEGORIES=	mail ipv6
 MASTER_SITES=	${MASTER_SITE_EXIM:S/$/:exim/}
 MASTER_SITE_SUBDIR=	exim4/:exim
@@ -87,7 +86,7 @@ MASTER_SITE_SUBDIR+=	sa-exim/:sa_exim
 DISTFILES+=	sa-exim-${SA_EXIM_VERSION}.tar.gz:sa_exim
 .endif
 
-EXIM_VERSION=	4.83
+EXIM_VERSION=	4.84
 SA_EXIM_VERSION=4.2
 EXIM_INSTALL_ARG+=	"-no_chown" "-no_symlink"
 
