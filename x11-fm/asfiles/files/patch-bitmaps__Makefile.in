@@ -1,0 +1,18 @@
+--- bitmaps/Makefile.in.orig	2014-08-13 10:06:22.257001172 +0800
++++ bitmaps/Makefile.in	2014-08-13 10:06:44.483997380 +0800
+@@ -100,12 +100,12 @@ Makefile: $(top_builddir)/config.status 
+ 
+ install-bitmapDATA: $(bitmap_DATA)
+ 	$(NORMAL_INSTALL)
+-	$(mkinstalldirs) $(bitmapdir)
++	$(mkinstalldirs) $(DESTDIR)$(bitmapdir)
+ 	list="$(bitmap_DATA)"; for p in $$list; do \
+ 	  if test -f $(srcdir)/$$p; then \
+-	    $(INSTALL_DATA) $(srcdir)/$$p $(bitmapdir)/$$p; \
++	    $(INSTALL_DATA) $(srcdir)/$$p $(DESTDIR)$(bitmapdir)/$$p; \
+ 	  else if test -f $$p; then \
+-	    $(INSTALL_DATA) $$p $(bitmapdir)/$$p; \
++	    $(INSTALL_DATA) $$p $(DESTDIR)$(bitmapdir)/$$p; \
+ 	  fi; fi; \
+ 	done
+ 
