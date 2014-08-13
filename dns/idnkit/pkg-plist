@@ -1,11 +1,7 @@
 bin/idnconv
 bin/runidn
-@unexec if cmp -s %D/etc/idn.conf %D/etc/idn.conf.sample; then rm -f %D/etc/idn.conf; fi
-etc/idn.conf.sample
-@exec [ ! -f %B/idn.conf ] && cp %B/%f %B/idn.conf
-@unexec if cmp -s %D/etc/idnalias.conf %D/etc/idnalias.conf.sample; then rm -f %D/etc/idnalias.conf; fi
-etc/idnalias.conf.sample
-@exec [ ! -f %B/idnalias.conf ] && cp %B/%f %B/idnalias.conf
+@sample etc/idn.conf.sample
+@sample etc/idnalias.conf.sample
 include/idn/api.h
 include/idn/assert.h
 include/idn/checker.h
