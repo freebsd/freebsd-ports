@@ -20,9 +20,9 @@ USE_LDCONFIG=	yes
 
 USES=		gmake
 
-MAN1=		hexwords.1 mleak.1 mpatrol.1 mprof.1 \
+XMAN1=		hexwords.1 mleak.1 mpatrol.1 mprof.1 \
 		mpsym.1 mptrace.1 mpedit.1
-MAN3=		libmpatrol.3 libmpalloc.3
+XMAN3=		libmpatrol.3 libmpalloc.3
 
 DOCS=		README mpatrol.dvi mpatrol.guide mpatrol.html mpatrol.info \
 		mpatrol.pdf mpatrol.ps mpatrol.texi mpatrol.txt refcard.dvi \
@@ -35,8 +35,8 @@ DOCSIMG=	cc1.eps cc1.jpg cc1.pdf \
 		mpatrol.eps mpatrol.jpg mpatrol.pdf mpatrol.txt \
 		test.eps test.jpg test.pdf \
 		trace.eps trace.jpg trace.pdf
+OPTIONS_DEFINE=	DOCS
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "amd64"
@@ -45,37 +45,35 @@ CFLAGS+=	-DENVIRON=\"ENVIRON_64\" -DMP_INIT_SUPPORT=0
 
 do-install:
 .for file in hexwords mpedit mpsym mupdate
-	${INSTALL_SCRIPT} ${WRKSRC}/../../bin/${file} ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/../../bin/${file} ${STAGEDIR}${PREFIX}/bin
 .endfor
 .for file in mpatrol mleak mptrace mprof
-	${INSTALL_PROGRAM} ${WRKSRC}/${file} ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/${file} ${STAGEDIR}${PREFIX}/bin
 .endfor
-.for file in ${MAN1}
-	${INSTALL_MAN} ${WRKSRC}/../../man/man1/${file} ${PREFIX}/man/man1
+.for file in ${XMAN1}
+	${INSTALL_MAN} ${WRKSRC}/../../man/man1/${file} ${STAGEDIR}${PREFIX}/man/man1
 .endfor
-.for file in ${MAN3}
-	${INSTALL_MAN} ${WRKSRC}/../../man/man3/${file} ${PREFIX}/man/man3
+.for file in ${XMAN3}
+	${INSTALL_MAN} ${WRKSRC}/../../man/man3/${file} ${STAGEDIR}${PREFIX}/man/man3
 .endfor
 .for lib in mpalloc mpatrol mpatrolmt
-	${INSTALL_DATA} ${WRKSRC}/lib${lib}.a ${PREFIX}/lib
-	${INSTALL_PROGRAM} ${WRKSRC}/lib${lib}.so.1 ${PREFIX}/lib
-	${LN} -sf ${PREFIX}/lib/lib${lib}.so.1 ${PREFIX}/lib/lib${lib}.so
+	${INSTALL_DATA} ${WRKSRC}/lib${lib}.a ${STAGEDIR}${PREFIX}/lib
+	${INSTALL_PROGRAM} ${WRKSRC}/lib${lib}.so.1 ${STAGEDIR}${PREFIX}/lib
+	${LN} -sf lib${lib}.so.1 ${STAGEDIR}${PREFIX}/lib/lib${lib}.so
 .endfor
-	${INSTALL_DATA} ${WRKSRC}/libmptools.a ${PREFIX}/lib
+	${INSTALL_DATA} ${WRKSRC}/libmptools.a ${STAGEDIR}${PREFIX}/lib
 .for file in mpatrol.h mpalloc.h mpdebug.h
-	${INSTALL_DATA} ${WRKSRC}/../../src/${file} ${PREFIX}/include
+	${INSTALL_DATA} ${WRKSRC}/../../src/${file} ${STAGEDIR}${PREFIX}/include
 .endfor
-	${MKDIR} ${PREFIX}/include/mpatrol
-	${INSTALL_DATA} ${WRKSRC}/../../tools/*.h ${PREFIX}/include/mpatrol
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${PREFIX}/include/mpatrol
+	${INSTALL_DATA} ${WRKSRC}/../../tools/*.h ${STAGEDIR}${PREFIX}/include/mpatrol
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for file in ${DOCS}
-	${INSTALL_DATA} ${WRKSRC}/../../doc/${file} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/../../doc/${file} ${STAGEDIR}${DOCSDIR}
 .endfor
-	@${MKDIR} ${DOCSDIR}/images
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}/images
 .for file in ${DOCSIMG}
-	${INSTALL_DATA} ${WRKSRC}/../../doc/images/${file} ${DOCSDIR}/images/
+	${INSTALL_DATA} ${WRKSRC}/../../doc/images/${file} ${STAGEDIR}${DOCSDIR}/images/
 .endfor
-.endif
 
 .include <bsd.port.post.mk>
