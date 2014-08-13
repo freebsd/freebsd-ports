@@ -188,6 +188,7 @@ lib/sbcl/sb-sprof/sb-sprof.lisp
 lib/sbcl/sb-sprof/test.lisp
 lib/sbcl/sbcl_core
 lib/sbcl/site-systems/.keep_me
+man/man1/sbcl.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/BUGS
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/CREDITS

@@ -10,19 +10,17 @@ MASTER_SITES=	SF/${PORTNAME}/ENMA/${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Sender authentication milter supporting SPF and Sender ID
 
-LICENSE=	BSD
+LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 OPTIONS_DEFINE=	LIBBIND
 LIBBIND_DESC=	Link against dns/libbind instead of dns/ldns
 
-HAS_CONFIGURE=	yes
-CONFIGURE_ARGS=	--prefix=${PREFIX} \
-		--mandir=${PREFIX}/man \
-		--with-ssl-incdir=${OPENSSLINC} \
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--with-ssl-incdir=${OPENSSLINC} \
 		--with-ssl-libdir=${OPENSSLLIB}
 
-USES=		gmake perl5
+USES=		gmake libtool perl5
 USE_RC_SUBR=	milter-enma
 USE_LDCONFIG=	yes
 USE_OPENSSL=	yes
@@ -68,5 +66,8 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}
 .  endfor
 .endif
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/sidfquery \
+		${STAGEDIR}${PREFIX}/lib/libsauth.so \
+		${STAGEDIR}${PREFIX}/libexec/enma
 
 .include <bsd.port.mk>

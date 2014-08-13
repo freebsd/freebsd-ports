@@ -1,0 +1,46 @@
+--- src/Makefile.in.orig	2014-08-13 10:01:12.336035299 +0800
++++ src/Makefile.in	2014-08-13 10:03:06.196001156 +0800
+@@ -118,10 +118,10 @@ maintainer-clean-binPROGRAMS:
+ 
+ install-binPROGRAMS: $(bin_PROGRAMS)
+ 	$(NORMAL_INSTALL)
+-	$(mkinstalldirs) $(bindir)
++	$(mkinstalldirs) $(DESTDIR)$(bindir)
+ 	list="$(bin_PROGRAMS)"; for p in $$list; do \
+ 	  if test -f $$p; then \
+-	    $(INSTALL_PROGRAM) $$p $(bindir)/`echo $$p|sed '$(transform)'`; \
++	    $(INSTALL_PROGRAM) $$p $(DESTDIR)$(bindir)/`echo $$p|sed '$(transform)'`; \
+ 	  else :; fi; \
+ 	done
+ 
+@@ -147,12 +147,12 @@ files: $(files_OBJECTS) $(files_DEPENDEN
+ 	$(LINK) $(files_OBJECTS) $(files_LDADD) $(LIBS)
+ install-man: $(MANS)
+ 	$(NORMAL_INSTALL)
+-	$(mkinstalldirs) $(mandir)/man1
++	$(mkinstalldirs) $(DESTDIR)$(mandir)/man1
+ 	sect=1;				\
+ 	inst=`echo "files" | sed '$(transform)'`.1; \
+ 	if test -f $(srcdir)/files.1; then file=$(srcdir)/files.1; \
+ 	else file=files.1; fi; \
+-	$(INSTALL_DATA) $$file $(mandir)/man$$sect/$$inst
++	$(INSTALL_DATA) $$file $(DESTDIR)$(mandir)/man$$sect/$$inst
+ 
+ uninstall-man:
+ 	inst=`echo "files" | sed '$(transform)'`.1; \
+@@ -161,12 +161,12 @@ uninstall-man:
+ 
+ install-offixDATA: $(offix_DATA)
+ 	$(NORMAL_INSTALL)
+-	$(mkinstalldirs) $(offixdir)
++	$(mkinstalldirs) $(DESTDIR)$(offixdir)
+ 	list="$(offix_DATA)"; for p in $$list; do \
+ 	  if test -f $(srcdir)/$$p; then \
+-	    $(INSTALL_DATA) $(srcdir)/$$p $(offixdir)/$$p; \
++	    $(INSTALL_DATA) $(srcdir)/$$p $(DESTDIR)$(offixdir)/$$p; \
+ 	  else if test -f $$p; then \
+-	    $(INSTALL_DATA) $$p $(offixdir)/$$p; \
++	    $(INSTALL_DATA) $$p $(DESTDIR)$(offixdir)/$$p; \
+ 	  fi; fi; \
+ 	done
+ 

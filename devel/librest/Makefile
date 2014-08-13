@@ -3,7 +3,7 @@
 
 PORTNAME=	rest
 PORTVERSION=	0.7.91
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel www
 MASTER_SITES=	GNOME
 
@@ -15,7 +15,7 @@ LICENSE=	LGPL21
 BUILD_DEPENDS=	ca_root_nss>0:${PORTSDIR}/security/ca_root_nss
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-USES=		gmake pathfix pkgconfig tar:xz
+USES=		gmake libtool pathfix pkgconfig tar:xz
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-ca-certificates=${LOCALBASE}/share/certs/ca-root-nss.crt
 USE_LDCONFIG=	yes

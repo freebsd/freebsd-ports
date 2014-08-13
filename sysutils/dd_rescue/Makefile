@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	dd_rescue
-PORTVERSION=	1.45
+PORTVERSION=	1.46
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.garloff.de/kurt/linux/ddrescue/ \
 		http://fossies.org/unix/privat/

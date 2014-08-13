@@ -5,6 +5,7 @@ PORTNAME=	thread_safe
 PORTVERSION=	0.1.3
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
+PKGNAMESUFFIX=	1
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Thread-safe collections and utilities for Ruby

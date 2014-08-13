@@ -3,7 +3,7 @@
 
 PORTNAME=	libopkele
 PORTVERSION=	2.0.4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel
 MASTER_SITES=	http://kin.klever.net/dist/
 
@@ -11,6 +11,7 @@ MAINTAINER=	zhoushuqun@gmail.com
 COMMENT=	C++ implementation of an OpenID decentralized identity system
 
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/shared_ptr.hpp:${PORTSDIR}/devel/boost-libs
+RUN_DEPENDS=	${LOCALBASE}/include/boost/shared_ptr.hpp:${PORTSDIR}/devel/boost-libs
 LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl \
 		libpcre.so:${PORTSDIR}/devel/pcre \
 		libexpat.so:${PORTSDIR}/textproc/expat2 \
@@ -18,7 +19,7 @@ LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl \
 		libxslt.so:${PORTSDIR}/textproc/libxslt
 
 USE_LDCONFIG=	yes
-USES=		gmake pkgconfig compiler:c++11-lang
+USES=		libtool gmake pkgconfig compiler:c++11-lang
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	"OPENSSL_CFLAGS=${CFLAGS} -l${OPENSSLINC}" \
 		OPENSSL_LIBS=-L${OPENSSLLIB}

@@ -3,7 +3,7 @@
 
 PORTNAME=	vdr
 PORTVERSION=	1.7.29
-PORTREVISION=	4
+PORTREVISION=	6
 CATEGORIES=	multimedia
 MASTER_SITES=	ftp://ftp.tvdr.de/vdr/Developer/
 
@@ -53,6 +53,10 @@ PLIST_SUB=	VDR_USER=${VDR_USER}
 PLIST_SUB+=	VDR_GROUP=${VDR_GROUP}
 
 .include <bsd.port.options.mk>
+
+.if ${ARCH} == "i386"
+USE_GCC=	any
+.endif
 
 EXTRA_PATCHES+=	${FILESDIR}/vdr-1.7.15-disable_ca_updates.patch
 .if ${PORT_OPTIONS:MIPTVPATCH}

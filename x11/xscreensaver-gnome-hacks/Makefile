@@ -16,27 +16,30 @@ CONFLICTS=	xscreensaver-[0-9]* xscreensaver-gnome-[0-9]*
 OPTIONS_DEFINE=	ALL_FORTUNES
 ALL_FORTUNES_DESC=	Enable support for all fortunes
 
+USES=		shebangfix
+SHEBANG_FILES=	${SS_SCRIPTS:S,^,driver/,}
 EXTRA_PATCHES=	${FILESDIR}/extra-patch-nodriver
 
 SS_SCRIPTS=	xscreensaver-getimage-desktop xscreensaver-getimage-file \
-		xscreensaver-getimage xscreensaver-getimage-video \
+		xscreensaver-getimage-video \
 		xscreensaver-text
+SS_PROGRAMS=	xscreensaver-getimage
 
-MAN1=		xscreensaver-getimage-desktop.1 xscreensaver-getimage-file.1 \
-		xscreensaver-getimage-video.1 xscreensaver-getimage.1 \
-		xscreensaver-text.1
-
-NO_STAGE=	yes
 post-build:
 	@cd ${WRKSRC}/driver && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_FLAGS} \
 		Makefile ${MAKE_ARGS} xscreensaver-getimage
 
 post-install-slave:
-	${MKDIR} ${PREFIX}/bin
+	${MKDIR} ${STAGEDIR}${PREFIX}/bin
 .for sf in ${SS_SCRIPTS}
-	${INSTALL_SCRIPT} ${WRKSRC}/driver/${sf} ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/driver/${sf} ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/driver/${sf}.man \
-		${MAN1PREFIX}/man/man1/${sf}.1
+		${STAGEDIR}${MAN1PREFIX}/man/man1/${sf}.1
+.endfor
+.for sf in ${SS_PROGRAMS}
+	${INSTALL_PROGRAM} ${WRKSRC}/driver/${sf} ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/driver/${sf}.man \
+		${STAGEDIR}${MAN1PREFIX}/man/man1/${sf}.1
 .endfor
 
 .include "${MASTERDIR}/Makefile"

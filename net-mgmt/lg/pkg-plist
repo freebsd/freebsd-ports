@@ -1,0 +1,13 @@
+%%PORTDOCS%%%%DOCSDIR%%/CHANGELOG
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%DATADIR%%/as.txt
+%%DATADIR%%/communities.txt
+%%DATADIR%%/makeaslist.pl
+%%DATADIR%%/makedb.pl
+%%WWWDIR%%/favicon.ico
+%%WWWDIR%%/lg.cgi
+%%WWWDIR%%/lg.conf
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%
+@dirrmtry %%DATADIR%%
+@dirrmtry %%WWWDIR%%

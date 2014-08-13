@@ -12,6 +12,9 @@ DISTNAME=	horde-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Common code-base used by Horde applications
 
+DEPRECATED=	EOL in April 2012
+EXPIRATION_DATE=	2014-08-20
+
 NO_STAGE=	yes
 #----------------------------------------------------------------------------
 # You may define these options:

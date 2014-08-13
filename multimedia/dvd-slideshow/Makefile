@@ -3,6 +3,7 @@
 
 PORTNAME=	dvd-slideshow
 PORTVERSION=	0.8.4
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}-2:main \
 		SF/${PORTNAME}/${PORTNAME}-themes/${THEMEVERSION}-1:themes
@@ -19,7 +20,7 @@ RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash \
 		sox:${PORTSDIR}/audio/sox \
 		dvdauthor:${PORTSDIR}/multimedia/dvdauthor \
 		jhead:${PORTSDIR}/graphics/jhead \
-		flvtool2:${PORTSDIR}/multimedia/ruby-flvtool2 \
+		flvtool2:${PORTSDIR}/multimedia/rubygem-flvtool2 \
 		${LOCALBASE}/lib/X11/fonts/urwfonts-ttf/README:${PORTSDIR}/x11-fonts/urwfonts-ttf \
 		cdrecord:${PORTSDIR}/sysutils/cdrtools
 

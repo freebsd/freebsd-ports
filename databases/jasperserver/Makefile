@@ -21,6 +21,9 @@ COMMENT=	Open Source Java Reporting Library
 LICENSE=	GPLv3 MIT APACHE20
 LICENSE_COMB=	multi
 
+DEPRECATED=	Unstaged, depends on expiring devel/maven2
+EXPIRATION_DATE=	2014-08-18
+
 BUILD_DEPENDS=	mvn:${PORTSDIR}/devel/maven2
 
 SRCDIR=		${WRKDIR}/jasperreports-server-cp-${PORTVERSION}-src

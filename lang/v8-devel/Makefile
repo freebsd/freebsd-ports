@@ -3,37 +3,39 @@
 
 PORTNAME=	v8
 PORTVERSION=	3.27.7
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	LOCAL/vanilla
 PKGNAMESUFFIX=	-devel
 
 MAINTAINER=	sunpoet@FreeBSD.org
-COMMENT=	Google's open source JavaScript engine
+COMMENT=	Open source JavaScript engine by Google
 
 LICENSE=	BSD3CLAUSE
 
-BUILD_DEPENDS=	python:${PORTSDIR}/lang/python
-LIB_DEPENDS=	libexecinfo.so:${PORTSDIR}/devel/libexecinfo \
-		libicui18n.so:${PORTSDIR}/devel/icu
+BUILD_DEPENDS=	${LOCALBASE}/bin/python:${PORTSDIR}/lang/python
+LIB_DEPENDS=	libicui18n.so:${PORTSDIR}/devel/icu
 
-CONFLICTS=	v8-3.19.*
+CONFLICTS_INSTALL=	v8-[0-9]*
 
-USES=		gmake shebangfix compiler tar:xz
-SHEBANG_FILES=	${WRKSRC}/build/gyp/gyp
-USE_PYTHON=	2
-USE_LDCONFIG=	yes
 ALL_TARGET=	native
 MAKE_ARGS=	library=shared use_system_icu=on
-MAKE_ENV+=	CC.host=${CC} CXX.host=${CXX} LINK.host=${CXX} LINK.target=${CXX}
+MAKE_ENV=	CC.host=${CC} CXX.host=${CXX} LINK.host=${CXX} LINK.target=${CXX}
+USE_LDCONFIG=	yes
+USE_PYTHON=	2
+USES=		compiler cpe execinfo gmake shebangfix tar:xz
+
+CPE_VENDOR=	google
+
+SHEBANG_FILES=	${WRKSRC}/build/gyp/gyp
 bash_CMD=	${SH}
 
 .include <bsd.port.pre.mk>
 
 .if ${COMPILER_TYPE} == clang
-MAKE_ENV+=	LINK=clang++ AR=/usr/bin/ar
-MAKE_ARGS+=	clang=on
 CFLAGS+=	-Wno-unused-private-field -Wno-unused-variable
+MAKE_ARGS+=	clang=on
+MAKE_ENV+=	LINK=clang++ AR=/usr/bin/ar
 .if ${COMPILER_VERSION} >= 33
 CFLAGS+=	-Wno-nested-anon-types -Wno-unused-function
 .endif
@@ -52,14 +54,8 @@ post-patch:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/out/native/d8 ${STAGEDIR}${PREFIX}/bin/d8
-	${INSTALL_LIB} -m 755 ${WRKSRC}/out/native/lib.target/libv8.so ${STAGEDIR}${PREFIX}/lib/libv8.so.1
-	${LN} -sf ${PREFIX}/lib/libv8.so.1 ${STAGEDIR}${PREFIX}/lib/libv8.so
-	${INSTALL_DATA} ${WRKSRC}/include/v8.h ${STAGEDIR}${PREFIX}/include
-	${INSTALL_DATA} ${WRKSRC}/include/v8-debug.h ${STAGEDIR}${PREFIX}/include
-	${INSTALL_DATA} ${WRKSRC}/include/v8-platform.h ${STAGEDIR}${PREFIX}/include
-	${INSTALL_DATA} ${WRKSRC}/include/v8-profiler.h ${STAGEDIR}${PREFIX}/include
-	${INSTALL_DATA} ${WRKSRC}/include/v8-testing.h ${STAGEDIR}${PREFIX}/include
-	${INSTALL_DATA} ${WRKSRC}/include/v8config.h ${STAGEDIR}${PREFIX}/include
-	${INSTALL_DATA} ${WRKSRC}/include/v8stdint.h ${STAGEDIR}${PREFIX}/include
+	cd ${WRKSRC}/include/ && ${INSTALL_DATA} *.h ${STAGEDIR}${PREFIX}/include/
+	${INSTALL_LIB} ${WRKSRC}/out/native/lib.target/libv8.so ${STAGEDIR}${PREFIX}/lib/libv8.so.1
+	${LN} -fs ${PREFIX}/lib/libv8.so.1 ${STAGEDIR}${PREFIX}/lib/libv8.so
 
 .include <bsd.port.post.mk>

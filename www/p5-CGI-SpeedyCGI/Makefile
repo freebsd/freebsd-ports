@@ -22,10 +22,8 @@ OPTIONS_DEFAULT=APACHE
 APACHE_DESC=	Build mod_speedycgi
 
 OPTIONS_SUB=	yes
-APACHE_USE=	APACHE=22
+APACHE_USE=	APACHE=22+
 APACHE_CONFIGURE_ENV_OFF=	WITHOUT_APACHE=yes
-
-.include <bsd.port.options.mk>
 
 post-patch:
 	@${REINPLACE_CMD} -e 's/__inline__//g' \

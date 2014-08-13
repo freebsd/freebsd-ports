@@ -3,7 +3,6 @@ bin/flickcurl-config
 bin/flickrdf
 include/flickcurl.h
 lib/libflickcurl.a
-lib/libflickcurl.la
 lib/libflickcurl.so
 lib/libflickcurl.so.0
 lib/libflickcurl.so.0.0.0

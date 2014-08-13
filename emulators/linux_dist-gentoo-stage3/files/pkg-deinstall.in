@@ -4,11 +4,11 @@
 case "$2" in
 DEINSTALL)
 	if [ -n "`mount | grep ^linproc`" ] || \
-		[ -d %%PREFIX%%/%%PREFIX_SUBDIR%%proc ]; then
+		[ -d %%STAGEDIR%%%%PREFIX%%/%%PREFIX_SUBDIR%%proc ]; then
 		echo ""
 		echo "You may need to do by hands:"
 		echo "  o  unmount linprocfs;"
-		echo "  o  delete %%PREFIX%%/%%PREFIX_SUBDIR%%proc;"
+		echo "  o  delete %%STAGEDIR%%%%PREFIX%%/%%PREFIX_SUBDIR%%proc;"
 		echo "  o  remove the description of linprocfs from /etc/fstab."
 		echo ""
 	fi

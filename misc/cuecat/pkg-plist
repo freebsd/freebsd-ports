@@ -1,6 +1,10 @@
 bin/cuecat
-bin/xcuecat
+%%X11%%bin/xcuecat
+man/man1/cuecat.1.gz
+%%X11%%man/man1/xcuecat.1.gz
 %%PYTHON_SITELIBDIR%%/barcode.py
+%%PYTHON_SITELIBDIR%%/barcode.pyc
 %%PYTHON_SITELIBDIR%%/barcode.pyo
 %%PYTHON_SITELIBDIR%%/cuecat.py
+%%PYTHON_SITELIBDIR%%/cuecat.pyc
 %%PYTHON_SITELIBDIR%%/cuecat.pyo

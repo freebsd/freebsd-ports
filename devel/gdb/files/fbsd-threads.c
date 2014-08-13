@@ -1502,14 +1502,14 @@ ps_err_e
 ps_pglobal_lookup (struct ps_prochandle *ph, const char *obj,
    const char *name, psaddr_t *sym_addr)
 {
-  struct minimal_symbol *ms;
+  struct bound_minimal_symbol ms;
   CORE_ADDR addr;
 
-  ms = lookup_minimal_symbol (name, NULL, NULL).minsym;
-  if (ms == NULL)
+  ms = lookup_minimal_symbol (name, NULL, NULL);
+  if (!ms.minsym) 
     return PS_NOSYM;
 
-  *sym_addr = ms->mginfo.value.address;
+  *sym_addr = BMSYMBOL_VALUE_ADDRESS (ms);
   return PS_OK;
 }
 

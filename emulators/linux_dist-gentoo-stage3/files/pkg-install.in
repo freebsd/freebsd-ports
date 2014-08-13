@@ -25,7 +25,7 @@ POST-INSTALL)
 	fi
 	echo ''
 	echo 'Running linux ldconfig...'
-	%%PREFIX%%/%%PREFIX_SUBDIR%%sbin/ldconfig -r %%PREFIX%%/%%PREFIX_SUBDIR%%
+	%%STAGEDIR%%%%PREFIX%%/%%PREFIX_SUBDIR%%sbin/ldconfig -r %%STAGEDIR%%%%PREFIX%%/%%PREFIX_SUBDIR%%
 	;;
 esac
 

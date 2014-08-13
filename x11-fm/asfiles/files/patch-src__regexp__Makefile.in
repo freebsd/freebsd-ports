@@ -1,0 +1,11 @@
+--- src/regexp/Makefile.in.orig	2014-08-13 10:08:01.168979415 +0800
++++ src/regexp/Makefile.in	2014-08-13 10:08:19.427980054 +0800
+@@ -174,7 +174,7 @@ install-exec: 
+ install-data: install-man
+ 	$(NORMAL_INSTALL)
+ 
+-install: install-exec install-data all
++install: install-exec all
+ 	@:
+ 
+ uninstall: uninstall-man

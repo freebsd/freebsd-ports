@@ -1,6 +1,6 @@
 include/librcd.h
 lib/librcd.a
-lib/librcd.la
 lib/librcd.so
-lib/librcd.so.1
+lib/librcd.so.0
+lib/librcd.so.0.1.14
 libdata/pkgconfig/librcd.pc

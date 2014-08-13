@@ -38,19 +38,15 @@ GEN_LIB_DEPENDS=libcurl.so:${PORTSDIR}/ftp/curl \
 GEN_RUN_DEPENDS=${LOCALBASE}/share/transmission/web/index.html:${PORTSDIR}/www/transmission-web
 
 # This is master port of transmission-*, so don't override USES definition 
-USES+=		gmake pkgconfig iconv
+USES+=		gmake iconv libtool pkgconfig
 USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib -lcrypto ${ICONV_LIB}
+LIBS+=		-L${LOCALBASE}/lib ${ICONV_LIB}
 CONFIGURE_ARGS=--with-zlib=/usr \
 		${EXTRA_CONF_ARGS}
-CONFIGURE_ENV+=	OPENSSL_LIBS=${OPENSSL_LDFLAGS}
-.if empty(OPENSSL_CFLAGS)
-CONFIGURE_ENV+=	OPENSSL_CFLAGS=-I${OPENSSLINC}
-.else
-CONFIGURE_ENV+=	OPENSSL_CFLAGS=${OPENSSL_CFLAGS},-I${OPENSSLINC}
-.endif
+CONFIGURE_ENV=	OPENSSL_CFLAGS="-I${OPENSSLINC}" \
+		OPENSSL_LIBS="-L${OPENSSLLIB} -lcrypto"
 EXTRA_CONF_ARGS?=--enable-cli \
 		 --disable-daemon \
 		 --without-gtk \
@@ -77,9 +73,8 @@ general-patch:
 		${WRKSRC}/libtransmission/utils.h
 .endif
 	@${REINPLACE_CMD} -e \
-		's|_pthread_flags=".*"|_pthread_flags="${PTHREAD_LIBS}"|g ; \
-		s|rt_clock_gettime=yes|rt_clock_gettime=no|g ; \
-		s|" == "|" = "|g ; s|$$with_ssl.*/usr;|${OPENSSLBASE};|g' \
+		's|rt_clock_gettime=yes|rt_clock_gettime=no|g ; \
+		s|" == "|" = "|g' \
 			${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|doc \\| \\|g' \
 		${WRKSRC}/Makefile.in

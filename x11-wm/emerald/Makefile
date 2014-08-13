@@ -22,12 +22,13 @@ USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
 
 CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
+LIBS+=		-L${LOCALBASE}/lib
 
 # XXX - might want to change that
 post-patch:
 	@${REINPLACE_CMD} 's|icons/gnome|icons/hicolor|' ${WRKSRC}/misc/Makefile.in
 	@${REINPLACE_CMD} -e 's|#define GDK_DISABLE_DEPRECATED||g' \
 	    -e 's|#define GTK_DISABLE_DEPRECATED||g' ${WRKSRC}/include/emerald.h
+	@${REINPLACE_CMD} '/^emerald_LDADD =/s/$$/ -lm/' ${WRKSRC}/src/Makefile.in
 
 .include <bsd.port.mk>

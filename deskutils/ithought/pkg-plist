@@ -1,13 +1,8 @@
 bin/ithought
-libexec/ithought/module_actions/libadvogato.la
 libexec/ithought/module_actions/libadvogato.so
-libexec/ithought/module_actions/libitep.la
 libexec/ithought/module_actions/libitep.so
-libexec/ithought/module_actions/libkuro5hin.la
 libexec/ithought/module_actions/libkuro5hin.so
-libexec/ithought/module_actions/liblivejournal.la
 libexec/ithought/module_actions/liblivejournal.so
-libexec/ithought/module_actions/libstdout.la
 libexec/ithought/module_actions/libstdout.so
 libexec/ithought/script_actions/stdout
 @dirrm libexec/ithought/module_actions

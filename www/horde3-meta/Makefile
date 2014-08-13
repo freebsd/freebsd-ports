@@ -11,6 +11,9 @@ DISTFILES=	# None
 MAINTAINER=	horde@FreeBSD.org
 COMMENT=	Meta port for the horde framework
 
+DEPRECATED=	EOL in April 2012
+EXPIRATION_DATE=	2014-08-20
+
 NO_BUILD=	yes
 LHORDEDIR?=	www/horde
 
