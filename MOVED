@@ -6406,3 +6406,4 @@ www/hs-wai-test||2014-08-10|Removed: Deprecated in favor of wai-extra
 devel/rubygem-foreman_api||2014-08-11|Removed: Deprecated by upstream
 security/termlog||2014-08-11|Has expired: Fails to build with new utmpx, unstaged, maintainer timeout
 games/linux-americasarmy||2014-08-13|Removed: Unsupported by upstream, distfile unavailable
+net/rsmb|net/mosquitto|2014-08-13|Superseded by net/mosquitto
