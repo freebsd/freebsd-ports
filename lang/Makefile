@@ -215,6 +215,7 @@
     SUBDIR += p5-Tcl
     SUBDIR += p5-Test-XPath
     SUBDIR += p5-Try-Tiny
+    SUBDIR += p5-Try-Tiny-Retry
     SUBDIR += p5-TryCatch
     SUBDIR += p5-ePerl
     SUBDIR += p5-signatures
