@@ -3,13 +3,14 @@
 
 PORTNAME=	whoson
 PORTVERSION=	2.05
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	SF
 
 MAINTAINER=	sem@FreeBSD.org
 COMMENT=	Implementation of `WHO iS ONline' protocol
 
-USE_AUTOTOOLS=	libtool
+USES=		libtool
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-config=${PREFIX}/etc/whoson.conf
 USE_LDCONFIG=	yes
