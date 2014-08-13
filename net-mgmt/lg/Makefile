@@ -12,6 +12,8 @@ COMMENT=	Looking Glass written in Perl as a CGI script
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+OPTIONS_DEFINE=	DOCS
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	Cougar
 GH_COMMIT=	0d53e4b
