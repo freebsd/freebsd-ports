@@ -105,6 +105,7 @@
     SUBDIR += jnettop
     SUBDIR += kismet
     SUBDIR += lanmap
+    SUBDIR += lg
     SUBDIR += libsmi
     SUBDIR += macroscope
     SUBDIR += mbrowse

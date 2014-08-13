@@ -1,0 +1,7 @@
+LG is a Looking Glass written in Perl as a CGI script. It can execute almost
+all BGP-related commands and do ping and traceroute in routers or relay these
+queries to other looking glasses. It supports both IPv4 and IPv6 commands, and
+is tested with Cisco, Zebra and Juniper. It can connect to router using either
+SSH, telnet or rsh protocol.
+
+WWW: http://wiki.version6.net/LG
