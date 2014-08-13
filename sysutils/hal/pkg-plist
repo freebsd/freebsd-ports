@@ -124,8 +124,6 @@ share/PolicyKit/policy/org.freedesktop.hal.wol.policy
 @dirrm %%DATADIR%%/dist
 @dirrm %%DATADIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrmtry share/PolicyKit/policy
-@dirrmtry share/PolicyKit
 @dirrm libexec/hal/scripts/freebsd
 @dirrm libexec/hal/scripts
 @dirrm libexec/hal
@@ -135,10 +133,10 @@ share/PolicyKit/policy/org.freedesktop.hal.wol.policy
 @dirrm etc/hal/fdi/information
 @dirrm etc/hal/fdi
 @dirrm etc/hal
+@unexec rm -f /var/lib/PolicyKit/user-haldaemon.auths 2>/dev/null || true
 @unexec rm -f /var/run/hald/hald.pid 2>/dev/null || true
-@unexec rm -rf /var/run/hald/hald-local 2>/dev/null || true
-@unexec rm -rf /var/run/hald/hald-runner 2>/dev/null || true
+@unexec rmdir /var/run/hald/hald-local 2>/dev/null || true
+@unexec rmdir /var/run/hald/hald-runner 2>/dev/null || true
 @unexec rmdir /var/run/hald 2>/dev/null || true
 @unexec rmdir /var/cache/hald 2>/dev/null || true
 @unexec rmdir /var/lib/hal 2>/dev/null || true
-@unexec rmdir /var/lib 2>/dev/null || true
