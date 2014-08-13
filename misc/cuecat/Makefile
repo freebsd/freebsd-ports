@@ -3,52 +3,44 @@
 
 PORTNAME=	cuecat
 PORTVERSION=	1.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	misc python
 MASTER_SITES=	http://www.mired.org/downloads/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tools for decoding and using the output of a :Cue:Cat(TM) wand scanner
 
-.if !defined(WITHOUT_X11)
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}tkinter>0:${PORTSDIR}/x11-toolkits/py-tkinter \
-		${PYTHON_SITELIBDIR}/Pmw/__init__.py:${PORTSDIR}/x11-toolkits/py-Pmw
-.endif
+USES=		python shebangfix
 
-NO_BUILD=	yes
-MAN1=		cuecat.1
-.if !defined(WITHOUT_X11)
-MAN1+=		xcuecat.1
-.endif
-USE_PYTHON=	yes
+SHEBANG_FILES=	*.py
+python_OLD_CMD=	/usr/opt/bin/python
+
 WRKSRC=		${WRKDIR}/cuecat
 
-NO_STAGE=	yes
-pre-install:
-	@${MV} ${WRKSRC}/cuecat.py ${WRKSRC}/cuecat.py-orig
-	@${SED} 's;/usr/opt/bin/python;${PYTHON_CMD};' ${WRKSRC}/cuecat.py-orig >${WRKSRC}/cuecat.py
-	@${MV} ${WRKSRC}/barcode.py ${WRKSRC}/barcode.py-orig
-	@${SED} 's;/usr/opt/bin/python;${PYTHON_CMD};' ${WRKSRC}/barcode.py-orig >${WRKSRC}/barcode.py
-.if !defined(WITHOUT_X11)
-	@${MV} ${WRKSRC}/xcuecat.py ${WRKSRC}/xcuecat.py-orig
-	@${SED} 's;/usr/opt/bin/python;${PYTHON_CMD};' ${WRKSRC}/xcuecat.py-orig >${WRKSRC}/xcuecat.py
-.endif
+OPTIONS_DEFINE=	X11
+OPTIONS_DEFAULT=X11
+OPTIONS_SUB=	yes
+
+X11_RUN_DEPENDS=${PYTHON_PKGNAMEPREFIX}tkinter>0:${PORTSDIR}/x11-toolkits/py-tkinter \
+		${PYTHON_PKGNAMEPREFIX}Pmw>0:${PORTSDIR}/x11-toolkits/py-Pmw
+
+.include <bsd.port.options.mk>
+
+do-build:
+	${PYTHON_CMD} -m compileall ${WRKSRC}
+	${PYTHON_CMD} -O -m compileall ${WRKSRC}
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/cuecat.py ${PYTHON_SITELIBDIR}
-	${INSTALL_SCRIPT} ${WRKSRC}/barcode.py ${PYTHON_SITELIBDIR}
-	${PYTHON_CMD} -O -c "import barcode, cuecat"
-	${LN} -sf ${PYTHON_SITELIBDIR}/cuecat.py ${PREFIX}/bin/cuecat
-	${INSTALL_MAN} ${WRKSRC}/cuecat.1 ${PREFIX}/man/man1
-.if !defined(WITHOUT_X11)
-	${INSTALL_SCRIPT} ${WRKSRC}/xcuecat.py ${PREFIX}/bin/xcuecat
-	${INSTALL_MAN} ${WRKSRC}/xcuecat.1 ${PREFIX}/man/man1
-.endif
-
-.if defined(WITHOUT_X11)
-post-install:
-	$(MV) ${TMPPLIST} ${TMPPLIST}.orig
-	${GREP} -v xcuecat ${TMPPLIST}.orig > ${TMPPLIST}
+	@${MKDIR} ${STAGEDIR}${PYTHON_SITELIBDIR}
+.for i in barcode cuecat
+	${INSTALL_SCRIPT} ${WRKSRC}/${i}.py ${STAGEDIR}${PYTHON_SITELIBDIR}
+	${INSTALL_DATA} ${WRKSRC}/${i}.py[co] ${STAGEDIR}${PYTHON_SITELIBDIR}
+.endfor
+	${LN} -sf ${PYTHON_SITELIBDIR}/cuecat.py ${STAGEDIR}${PREFIX}/bin/cuecat
+	${INSTALL_MAN} ${WRKSRC}/cuecat.1 ${STAGEDIR}${PREFIX}/man/man1
+.if ${PORT_OPTIONS:MX11}
+	${INSTALL_SCRIPT} ${WRKSRC}/xcuecat.py ${STAGEDIR}${PREFIX}/bin/xcuecat
+	${INSTALL_MAN} ${WRKSRC}/xcuecat.1 ${STAGEDIR}${PREFIX}/man/man1
 .endif
 
 .include <bsd.port.mk>
