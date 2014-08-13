@@ -11,6 +11,9 @@ CATEGORIES=	mail www
 MAINTAINER= ports@FreeBSD.org
 COMMENT=	Email-filter management application
 
+DEPRECATED=	EOL in April 2012
+EXPIRATION_DATE=	2014-08-20
+
 #-----------------------------------------------------------------------
 NO_STAGE=	yes
 # You may define this option:

@@ -9,6 +9,9 @@ CATEGORIES=	security www
 MAINTAINER= ports@FreeBSD.org
 COMMENT=	Horde wrapper around various Java SSH applets
 
+DEPRECATED=	EOL in April 2012
+EXPIRATION_DATE=	2014-08-20
+
 USE_HORDE=	base pkg-message
 USES=		gettext
 PORTDOCS=	README CHANGES CREDITS INSTALL RELEASE_NOTES

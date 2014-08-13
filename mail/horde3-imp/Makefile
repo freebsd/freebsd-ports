@@ -11,6 +11,9 @@ DISTFILES=	${PORTNAME}-h3-${PORTVERSION}${EXTRACT_SUFX}
 MAINTAINER= ports@FreeBSD.org
 COMMENT=	Webmail system for IMAP/POP3 mailboxes
 
+DEPRECATED=	EOL in April 2012
+EXPIRATION_DATE=	2014-08-20
+
 WRKSRC=		${WRKDIR}/${PORTNAME}-h3-${PORTVERSION}
 
 #-----------------------------------------------------------------------

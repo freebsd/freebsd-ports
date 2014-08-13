@@ -10,6 +10,9 @@ CATEGORIES=	mail www
 MAINTAINER= ports@FreeBSD.org
 COMMENT=	Mobile webmail system
 
+DEPRECATED=	EOL in April 2012
+EXPIRATION_DATE=	2014-08-20
+
 #-----------------------------------------------------------------------
 NO_STAGE=	yes
 # You may define these options:

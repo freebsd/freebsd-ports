@@ -9,6 +9,9 @@ CATEGORIES=	devel www
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Bug tracking/ticketing system
 
+DEPRECATED=	EOL in April 2012
+EXPIRATION_DATE=	2014-08-20
+
 USE_HORDE=	base pkg-message
 USES=		gettext
 PORTDOCS=	README CHANGES CREDITS INSTALL TODO lighttpd-whups.conf
