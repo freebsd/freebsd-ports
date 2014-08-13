@@ -11,6 +11,11 @@ DISTNAME=	cDonkey-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Open and free core client for the eDonkey protocol
 
+BROKEN=		no suitable distfile
+FORBIDDEN=	distfile got re-rolled
+DEPRECATED=	depends on deprecated db41 version
+EXPIRATION_DATE=2014-09-30
+
 WRKSRC=		${WRKDIR}/cDonkey-${PORTVERSION}
 
 USE_BDB=	41
