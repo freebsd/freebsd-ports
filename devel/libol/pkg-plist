@@ -1,5 +1,4 @@
 bin/libol-config
-bin/make_class
 include/libol/abstract_io.h
 include/libol/abstract_io.h.x
 include/libol/alist.h
@@ -30,7 +29,7 @@ include/libol/stream_buffer.h
 include/libol/werror.h
 include/libol/xalloc.h
 lib/libol.a
-lib/libol.la
 lib/libol.so
 lib/libol.so.0
+lib/libol.so.0.0.0
 @dirrm include/libol
