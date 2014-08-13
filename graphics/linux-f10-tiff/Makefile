@@ -11,7 +11,7 @@ DISTNAME=	${LINUX_NAME}-${PORTVERSION}-${RPMVERSION}
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	TIFF library, Linux/i386 binary (Linux Fedora 10)
 
-FORBIDDEN=	http://www.freshports.org/vuxml.php?vid=8816bf3a-7929-11df-bcce-0018f3e2eb82
+#FORBIDDEN=	http://www.freshports.org/vuxml.php?vid=8816bf3a-7929-11df-bcce-0018f3e2eb82
 
 CONFLICTS=	linux-tiff-[0-9]* linux-f8-tiff-[0-9]*
 

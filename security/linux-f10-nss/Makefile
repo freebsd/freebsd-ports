@@ -12,7 +12,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-${RPMVERSION}
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	Network Security Services (Linux Fedora 10)
 
-FORBIDDEN=	http://www.freshports.org/vuxml.php?vid=9ccfee39-3c3b-11df-9edc-000f20797ede
+#FORBIDDEN=	http://www.freshports.org/vuxml.php?vid=9ccfee39-3c3b-11df-9edc-000f20797ede
 
 CONFLICTS=	linux-f8-nss-[0-9]*
 

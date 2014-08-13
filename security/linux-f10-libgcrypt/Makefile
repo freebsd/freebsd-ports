@@ -10,7 +10,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-${RPMVERSION}
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	General purpose crypto library based on code used in GnuPG
 
-FORBIDDEN=	http://www.freshports.org/vuxml.php?vid=689c2bf7-0701-11e3-9a25-002590860428
+#FORBIDDEN=	http://www.freshports.org/vuxml.php?vid=689c2bf7-0701-11e3-9a25-002590860428
 
 USE_LINUX_RPM=	yes
 LINUX_DIST_VER=	10

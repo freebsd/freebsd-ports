@@ -12,7 +12,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-${RPMVERSION}
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	Lightweight Directory Access Protocol libraries (Linux Fedora 10)
 
-FORBIDDEN=	http://www.freshports.org/vuxml.php?vid=abad20bf-c1b4-11e3-a5ac-001b21614864
+#FORBIDDEN=	http://www.freshports.org/vuxml.php?vid=abad20bf-c1b4-11e3-a5ac-001b21614864
 
 USE_LINUX_RPM=	yes
 LINUX_DIST_VER=	10

@@ -11,7 +11,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-${RPMVERSION}
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	Linux/i386 binary port of Expat XML-parsing library (Linux Fedora 10)
 
-FORBIDDEN=	http://www.freshports.org/vuxml.php?vid=5f030587-e39a-11de-881e-001aa0166822
+#FORBIDDEN=	http://www.freshports.org/vuxml.php?vid=5f030587-e39a-11de-881e-001aa0166822
 
 CONFLICTS=	linux-expat-[0-9]* linux-f8-expat-[0-9]*
 
