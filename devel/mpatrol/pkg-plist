@@ -24,6 +24,15 @@ lib/libmpatrolmt.a
 lib/libmpatrolmt.so
 lib/libmpatrolmt.so.1
 lib/libmptools.a
+man/man1/hexwords.1.gz
+man/man1/mleak.1.gz
+man/man1/mpatrol.1.gz
+man/man1/mprof.1.gz
+man/man1/mpsym.1.gz
+man/man1/mptrace.1.gz
+man/man1/mpedit.1.gz
+man/man3/libmpatrol.3.gz
+man/man3/libmpalloc.3.gz
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/images/cc1.eps
 %%PORTDOCS%%%%DOCSDIR%%/images/cc1.jpg
