@@ -6,8 +6,8 @@ remote database) installed and configured, and you have to ensure that your
 PHP installation has been compiled with support for your database or
 database access method.  You have to create a database for phpBB3 to use,
 and ensure that this database may be accessed and changed by the user id
-under which your web server executes.  Further information on these
-installation procedures may be found in:
+under which your web server executes.  If you chose to install the
+documentation, further information may be found in:
 
   %%DOCSDIR%%/README.html
 
@@ -17,6 +17,6 @@ configure your installation of phpBB3:
   http://localhost/%%PHPBBURL%%/
 
 After configuring phpBB3 and ensuring that it is operational, you MUST
-remove or rename the install/ directory from %%PREFIX%%/%%PHPBBDIR%%:
+remove or rename the install/ directory from %%PREFIX%%/%%PHPBBDIR%%.
 
 ----------------------------------------------------------------------------
