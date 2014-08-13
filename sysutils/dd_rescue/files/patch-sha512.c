@@ -1,6 +1,13 @@
---- sha512.c.orig	2014-06-29 00:54:18.000000000 +0900
-+++ sha512.c	2014-06-29 00:54:36.000000000 +0900
-@@ -19,7 +19,7 @@
+--- sha512.c.orig	2014-08-07 02:38:59.000000000 +0900
++++ sha512.c	2014-08-13 23:04:15.000000000 +0900
+@@ -13,13 +13,14 @@
+ #endif
+ 
+ #include "sha512.h"
++#include "ffs.h"
+ #include <stdint.h>
+ #include <stdio.h>
+ #include <string.h>
  #include <netinet/in.h>
  #include <assert.h>
  #include <unistd.h>
