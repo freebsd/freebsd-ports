@@ -3,6 +3,7 @@
 
 PORTNAME=	syslog-ng
 PORTVERSION=	3.6.0a2
+PORTREVISION=	1
 PKGNAMESUFFIX=	-devel
 CATEGORIES=	sysutils
 DISTVERSION=	$(PORTVERSION:S/a/alpha/:S/b/beta/:S/r/rc/)
@@ -12,7 +13,8 @@ MASTER_SITES=	http://www.balabit.com/downloads/files/syslog-ng/open-source-editi
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	Powerful syslogd replacement
 
-LIB_DEPENDS=	libevtlog.so:${PORTSDIR}/sysutils/eventlog
+LIB_DEPENDS=	libevtlog.so:${PORTSDIR}/sysutils/eventlog \
+		libpcre.so:${PORTSDIR}/devel/pcre
 
 CONFLICTS?=	syslog-ng-[0-9]* syslog-ng[0-9]-[0-9]* \
 		syslog-ng[0-9][0-9]-[0-9]* \
@@ -22,15 +24,14 @@ WRKSRC=		$(WRKDIR)/$(PORTNAME)-$(DISTVERSION)
 MAKE_JOBS_UNSAFE=	yes
 OPTIONS_RADIO=	SSL
 OPTIONS_RADIO_SSL=	SYS_SSL PORTS_SSL
-OPTIONS_DEFINE=	TCP_WRAPPERS SQL SPOOF IPV6 PCRE SMTP JSON GEOIP DOCS REDIS
-OPTIONS_DEFAULT=	PORTS_SSL PCRE
+OPTIONS_DEFINE=	TCP_WRAPPERS SQL SPOOF IPV6 SMTP JSON GEOIP DOCS REDIS
+OPTIONS_DEFAULT=	PORTS_SSL
 SYS_SSL_DESC=		Build with OpenSSL support (from system)
 PORTS_SSL_DESC=		Build with OpenSSL support (from ports)
 TCP_WRAPPERS_DESC=	Build with TCP Wrappers
 SQL_DESC=		Build with database (libdbi) support
 SPOOF_DESC=		Build with spoof source support
 IPV6_DESC=		Build with IPV6 support
-PCRE_DESC=		Build with PCRE support
 SMTP_DESC=		Build with SMTP support
 JSON_DESC=		Build with JSON-C support
 GEOIP_DESC=		Build with GeoIP support
@@ -47,7 +48,8 @@ INSTALL_TARGET=	install-strip
 CONFIGURE_ARGS=	--sysconfdir=${LOCALBASE}/etc --localstatedir=/var/db \
 		--enable-dynamic-linking \
 		--enable-debug \
-		--datadir=${PREFIX}/share/syslog-ng/
+		--datadir=${PREFIX}/share/syslog-ng/ \
+		--enable-pcre
 
 BROKEN_sparc64=	Does not compile on sparc64: gcc core dump
 
@@ -87,13 +89,6 @@ CONFIGURE_ARGS+=	--disable-spoof-source
 CONFIGURE_ARGS+=	--enable-ipv6
 .else
 CONFIGURE_ARGS+=	--disable-ipv6
-.endif
-
-.if ${PORT_OPTIONS:MPCRE}
-CONFIGURE_ARGS+=	--enable-pcre
-LIB_DEPENDS+=		libpcre.so:${PORTSDIR}/devel/pcre
-.else
-CONFIGURE_ARGS+=	--disable-pcre
 .endif
 
 .if ${PORT_OPTIONS:MGEOIP}
