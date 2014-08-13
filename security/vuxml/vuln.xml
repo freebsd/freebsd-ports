@@ -57,6 +57,42 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="df7754c0-2294-11e4-b505-000c6e25e3e9">
+    <topic>chromium -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>chromium</name>
+	<range><lt>36.0.1985.143</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Google Chrome Releases reports:</p>
+	<blockquote cite="http://googlechromereleases.blogspot.nl">
+	  <p>12 security fixes in this release, including</p>
+	  <ul>
+	    <li>[390174] High CVE-2014-3165: Use-after-free in web sockets.
+	      Credit to Collin Payne.</li>
+	    <li>[398925] High CVE-2014-3166: Information disclosure in SPDY.
+	      Credit to Antoine Delignat-Lavaud.</li>
+	    <li>[400950] CVE-2014-3167: Various fixes from internal audits,
+	      fuzzing and other initiatives.</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2014-3165</cvename>
+      <cvename>CVE-2014-3166</cvename>
+      <cvename>CVE-2014-3167</cvename>
+      <url>http://googlechromereleases.blogspot.nl</url>
+    </references>
+    <dates>
+      <discovery>2014-08-12</discovery>
+      <entry>2014-08-13</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="69048656-2187-11e4-802c-20cf30e32f6d">
     <topic>serf -- SSL Certificate Null Byte Poisoning</topic>
     <affects>
