@@ -23,7 +23,9 @@ MAKE_ARGS=	library=shared use_system_icu=on
 MAKE_ENV=	CC.host=${CC} CXX.host=${CXX} LINK.host=${CXX} LINK.target=${CXX}
 USE_LDCONFIG=	yes
 USE_PYTHON=	2
-USES=		compiler execinfo gmake shebangfix tar:xz
+USES=		compiler cpe execinfo gmake shebangfix tar:xz
+
+CPE_VENDOR=	google
 
 SHEBANG_FILES=	${WRKSRC}/build/gyp/gyp
 bash_CMD=	${SH}
@@ -31,9 +33,9 @@ bash_CMD=	${SH}
 .include <bsd.port.pre.mk>
 
 .if ${COMPILER_TYPE} == clang
-MAKE_ENV+=	LINK=clang++ AR=/usr/bin/ar
-MAKE_ARGS+=	clang=on
 CFLAGS+=	-Wno-unused-private-field -Wno-unused-variable
+MAKE_ARGS+=	clang=on
+MAKE_ENV+=	LINK=clang++ AR=/usr/bin/ar
 .if ${COMPILER_VERSION} >= 33
 CFLAGS+=	-Wno-nested-anon-types -Wno-unused-function
 .endif
