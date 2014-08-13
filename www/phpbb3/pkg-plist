@@ -1,3 +1,6 @@
+@group %%WWWGRP%%
+@owner %%WWWOWN%%
+@mode 0644
 %%PHPBBDIR%%/.htaccess
 %%PHPBBDIR%%/adm/images/arrow_down.gif
 %%PHPBBDIR%%/adm/images/arrow_left.gif
@@ -128,6 +131,7 @@
 %%PHPBBDIR%%/cache/.htaccess
 %%PHPBBDIR%%/cache/index.htm
 %%PHPBBDIR%%/common.php
+@sample %%PHPBBDIR%%/config.php.sample
 %%PHPBBDIR%%/cron.php
 %%PHPBBDIR%%/docs/AUTHORS
 %%PHPBBDIR%%/docs/CHANGELOG.html
@@ -329,6 +333,7 @@
 %%PHPBBDIR%%/includes/functions_compress.php
 %%PHPBBDIR%%/includes/functions_content.php
 %%PHPBBDIR%%/includes/functions_convert.php
+%%PHPBBDIR%%/includes/functions_database_helper.php
 %%PHPBBDIR%%/includes/functions_display.php
 %%PHPBBDIR%%/includes/functions_install.php
 %%PHPBBDIR%%/includes/functions_jabber.php
@@ -966,62 +971,70 @@
 %%PHPBBDIR%%/viewonline.php
 %%PHPBBDIR%%/viewtopic.php
 %%PHPBBDIR%%/web.config
-@sample %%PHPBBDIR%%/config.php.sample
-@dirrm %%PHPBBDIR%%/styles/subsilver2/theme/images
-@dirrm %%PHPBBDIR%%/styles/subsilver2/theme
-@dirrm %%PHPBBDIR%%/styles/subsilver2/template
-@dirrm %%PHPBBDIR%%/styles/subsilver2/imageset/en
-@dirrm %%PHPBBDIR%%/styles/subsilver2/imageset
-@dirrm %%PHPBBDIR%%/styles/subsilver2
-@dirrm %%PHPBBDIR%%/styles/prosilver/theme/images
-@dirrm %%PHPBBDIR%%/styles/prosilver/theme
-@dirrm %%PHPBBDIR%%/styles/prosilver/template
-@dirrm %%PHPBBDIR%%/styles/prosilver/imageset/en
-@dirrm %%PHPBBDIR%%/styles/prosilver/imageset
-@dirrm %%PHPBBDIR%%/styles/prosilver
-@dirrm %%PHPBBDIR%%/styles
-@dirrm %%PHPBBDIR%%/store
-@dirrm %%PHPBBDIR%%/language/en/mods
-@dirrm %%PHPBBDIR%%/language/en/email
-@dirrm %%PHPBBDIR%%/language/en/acp
-@dirrm %%PHPBBDIR%%/language/en
-@dirrm %%PHPBBDIR%%/language
-@dirrm %%PHPBBDIR%%/install/schemas
-@dirrm %%PHPBBDIR%%/install/convertors
-@dirrm %%PHPBBDIR%%/install
-@dirrm %%PHPBBDIR%%/includes/utf/data
-@dirrm %%PHPBBDIR%%/includes/utf
-@dirrm %%PHPBBDIR%%/includes/ucp/info
-@dirrm %%PHPBBDIR%%/includes/ucp
-@dirrm %%PHPBBDIR%%/includes/search
-@dirrm %%PHPBBDIR%%/includes/questionnaire
-@dirrm %%PHPBBDIR%%/includes/mcp/info
-@dirrm %%PHPBBDIR%%/includes/mcp
-@dirrm %%PHPBBDIR%%/includes/hooks
-@dirrm %%PHPBBDIR%%/includes/diff
-@dirrm %%PHPBBDIR%%/includes/db
-@dirrm %%PHPBBDIR%%/includes/captcha/plugins
-@dirrm %%PHPBBDIR%%/includes/captcha
-@dirrm %%PHPBBDIR%%/includes/auth
+@group %%WWWGRP%%
+@owner %%WWWOWN%%
+@mode 0755
+@dirrmtry %%PHPBBDIR%%/adm/images
+@dirrmtry %%PHPBBDIR%%/adm/style
+@dirrmtry %%PHPBBDIR%%/adm
+@mode 0777
+@dirrmtry %%PHPBBDIR%%/cache
+@dirrmtry %%PHPBBDIR%%/docs
+@mode 0755
+@dirrmtry %%PHPBBDIR%%/download
+@mode 0777
+@dirrmtry %%PHPBBDIR%%/files
+@mode 0755
+@dirrmtry %%PHPBBDIR%%/images/avatars/gallery
+@mode 0777
+@dirrmtry %%PHPBBDIR%%/images/avatars/upload
+@mode 0755
+@dirrmtry %%PHPBBDIR%%/images/avatars
+@dirrm %%PHPBBDIR%%/images/icons/misc
+@dirrm %%PHPBBDIR%%/images/icons/smile
+@dirrm %%PHPBBDIR%%/images/icons
+@dirrm %%PHPBBDIR%%/images/ranks
+@dirrm %%PHPBBDIR%%/images/smilies
+@dirrmtry %%PHPBBDIR%%/images/upload_icons
+@dirrmtry %%PHPBBDIR%%/images
+@dirrm %%PHPBBDIR%%/includes/acm
 @dirrm %%PHPBBDIR%%/includes/acp/info
 @dirrm %%PHPBBDIR%%/includes/acp
-@dirrm %%PHPBBDIR%%/includes/acm
+@dirrm %%PHPBBDIR%%/includes/auth
+@dirrm %%PHPBBDIR%%/includes/captcha/plugins
+@dirrm %%PHPBBDIR%%/includes/captcha
+@dirrm %%PHPBBDIR%%/includes/db
+@dirrm %%PHPBBDIR%%/includes/diff
+@dirrm %%PHPBBDIR%%/includes/hooks
+@dirrm %%PHPBBDIR%%/includes/mcp/info
+@dirrm %%PHPBBDIR%%/includes/mcp
+@dirrm %%PHPBBDIR%%/includes/questionnaire
+@dirrm %%PHPBBDIR%%/includes/search
+@dirrm %%PHPBBDIR%%/includes/ucp/info
+@dirrm %%PHPBBDIR%%/includes/ucp
+@dirrm %%PHPBBDIR%%/includes/utf/data
+@dirrm %%PHPBBDIR%%/includes/utf
 @dirrm %%PHPBBDIR%%/includes
-@dirrmtry %%PHPBBDIR%%/images/upload_icons
-@dirrm %%PHPBBDIR%%/images/smilies
-@dirrm %%PHPBBDIR%%/images/ranks
-@dirrm %%PHPBBDIR%%/images/icons/smile
-@dirrm %%PHPBBDIR%%/images/icons/misc
-@dirrm %%PHPBBDIR%%/images/icons
-@dirrmtry %%PHPBBDIR%%/images/avatars/upload
-@dirrmtry %%PHPBBDIR%%/images/avatars/gallery
-@dirrmtry %%PHPBBDIR%%/images/avatars
-@dirrmtry %%PHPBBDIR%%/images
-@dirrm %%PHPBBDIR%%/files
-@dirrm %%PHPBBDIR%%/download
-@dirrm %%PHPBBDIR%%/docs
-@dirrm %%PHPBBDIR%%/cache
-@dirrm %%PHPBBDIR%%/adm/style
-@dirrm %%PHPBBDIR%%/adm/images
-@dirrm %%PHPBBDIR%%/adm
+@dirrm %%PHPBBDIR%%/install/convertors
+@dirrm %%PHPBBDIR%%/install/schemas
+@dirrm %%PHPBBDIR%%/install
+@dirrm %%PHPBBDIR%%/language/en/acp
+@dirrm %%PHPBBDIR%%/language/en/email
+@dirrm %%PHPBBDIR%%/language/en/mods
+@dirrm %%PHPBBDIR%%/language/en
+@dirrm %%PHPBBDIR%%/language
+@dirrm %%PHPBBDIR%%/store
+@dirrm %%PHPBBDIR%%/styles/prosilver/imageset/en
+@dirrm %%PHPBBDIR%%/styles/prosilver/imageset
+@dirrm %%PHPBBDIR%%/styles/prosilver/template
+@dirrm %%PHPBBDIR%%/styles/prosilver/theme/images
+@dirrm %%PHPBBDIR%%/styles/prosilver/theme
+@dirrm %%PHPBBDIR%%/styles/prosilver
+@dirrm %%PHPBBDIR%%/styles/subsilver2/imageset/en
+@dirrm %%PHPBBDIR%%/styles/subsilver2/imageset
+@dirrm %%PHPBBDIR%%/styles/subsilver2/template
+@dirrm %%PHPBBDIR%%/styles/subsilver2/theme/images
+@dirrm %%PHPBBDIR%%/styles/subsilver2/theme
+@dirrm %%PHPBBDIR%%/styles/subsilver2
+@dirrm %%PHPBBDIR%%/styles
 @dirrmtry %%PHPBBDIR%%
