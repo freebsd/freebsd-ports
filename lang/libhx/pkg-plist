@@ -12,12 +12,9 @@ include/libHX/option.h
 include/libHX/proc.h
 include/libHX/string.h
 include/libHX/wx_helper.hpp
-lib/libHX_rtcheck.a
-lib/libHX_rtcheck.la
 lib/libHX_rtcheck.so
-lib/libHX.a
-lib/libHX.la
 lib/libHX.so
-lib/libHX.so.29
+lib/libHX.so.28
+lib/libHX.so.28.1.0
 libdata/pkgconfig/libHX.pc
 @dirrm include/libHX
