@@ -1,7 +1,10 @@
-================================ A piece of advice ===================================
-- Install port security/p5-i18n (needed for English interface too).
-- Install your favorite database (enable utf-8 support if needed) and a web server.
-- Perform deployment procedure for openxpki in a regular way.
-- When asked for the name of the "openxpki user" answer "openxpki",
-  and do not forget to add a line: "User openxpki" to the zone of your
-  OpenXPI-related (virtual) web server in your web server configuration file.
+==================================================================
+- SCEP prerequisite binary and i18n files for UI installed.
+- Enable utf8 locale (e.g. en_US.utf8) for the translation staff to work
+  (translation is needed even for English language).
+- Install your favorite database (enable utf8 support) and a web server.
+- Perform deployment procedure for OpenXPKI in a regular way.
+- This port has created user:group as openxpki:openxpki for use with OpenXPKI server.
+  Add a line: "User openxpki" to configuration of your OpenXPKI-related web server.
+- Choose from two versions of the handler: based on CGI or FastCGI modules of perl.
+==================================================================
