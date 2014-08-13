@@ -3,7 +3,7 @@
 
 PORTNAME=	backuppc
 PORTVERSION=	3.3.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	sysutils
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	${PORTNAME}/${PORTNAME}/${PORTVERSION}
@@ -23,6 +23,8 @@ USE_RC_SUBR=	backuppc
 
 USES=		perl5
 NO_BUILD=	yes
+NO_PACKAGE=	Overwrites configuration files; set FORCE_PACKAGE if you want\
+		to build this package
 
 USERS=		backuppc
 GROUPS=		backuppc
