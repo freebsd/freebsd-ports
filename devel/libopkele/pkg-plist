@@ -17,8 +17,8 @@ include/opkele/uris.h
 include/opkele/util.h
 include/opkele/verify_op.h
 lib/libopkele.a
-lib/libopkele.la
 lib/libopkele.so
 lib/libopkele.so.3
+lib/libopkele.so.3.0.0
 libdata/pkgconfig/libopkele.pc
 @dirrm include/opkele
