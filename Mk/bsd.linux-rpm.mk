@@ -42,110 +42,68 @@ USE_LINUX_PREFIX=	yes
 NO_WRKSUBDIR=		yes
 NO_BUILD=			yes
 
-.	if ${ARCH} == "amd64" || ${ARCH} == "i386"
-.		if ${USE_LINUX} == "c6" || ${USE_LINUX} == "yes"
-# Do not build CentOS 6.5 ports if overridden by f10
-.			if defined(OVERRIDE_LINUX_BASE_PORT) && ${OVERRIDE_LINUX_NONBASE_PORTS} == "f10"
-IGNORE=		This port requires CentOS 6.5. Please remove OVERRIDE_LINUX_NONBASE_PORTS=f10 in /etc/make.conf.
-.			endif
-LINUX_RPM_ARCH?=	i686	# ?= because of nasty c5 qt ports
-.		elif ${USE_LINUX} == "f10"
-# Do not build Fedora 10 ports unless specifically overridden.
-.			if ! defined(OVERRIDE_LINUX_NONBASE_PORTS) || ${OVERRIDE_LINUX_NONBASE_PORTS} != "f10"
-IGNORE=		This port requires Fedora 10, yet Fedora 10 is heavily outdated and contains many vulnerable ports. If you really need it, add OVERRIDE_LINUX_NONBASE_PORTS=f10 in /etc/make.conf.
-.			endif
+.  if ${ARCH} == "amd64"
 LINUX_RPM_ARCH?=	i386	# the linuxulator does not yet support amd64 code
-.		else
-LINUX_RPM_ARCH?=	${ARCH}
-. 		endif
-
-.	elif ${ARCH} == "powerpc"
+.  elif ${ARCH} == "powerpc"
 LINUX_RPM_ARCH?=	ppc
-.	endif
+.  else
+LINUX_RPM_ARCH?=	${ARCH}
+.  endif
+
 .endif
 
 .if defined(_POSTMKINCLUDED) && !defined(Linux_RPM_Post_Include)
 
 Linux_RPM_Post_Include=	bsd.linux-rpm.mk
 
-.if ${USE_LINUX} == "f10"
-USE_LINUX?=	"f10"
-LINUX_DIST=	fedora
-LINUX_DIST_VER=	10
-.else
-LINUX_DIST=	centos
-LINUX_DIST_VER=	6.5
-.endif
+LINUX_DIST?=		fedora
+LINUX_DIST_VER?=	10
+.   if  !defined(OVERRIDE_LINUX_NONBASE_PORTS) && \
+        ${LINUX_DIST_VER} != 10
+IGNORE=		bsd.linux-rpm.mk test failed: package building defaults to linux-f10 ports, please define OVERRIDE_LINUX_NONBASE_PORTS to build other linux infrastructure ports
+.   endif
 
-.	if defined(LINUX_DIST)
+.  if defined(LINUX_DIST)
 DIST_SUBDIR?=	rpm/${LINUX_RPM_ARCH}/${LINUX_DIST}/${LINUX_DIST_VER}
 
-.		if ${LINUX_DIST} == "fedora"
+.    if ${LINUX_DIST} == "fedora"
 # we do not want to define MASTER_SITES and MASTER_SITE_* if they are already defined
 # ex.: MASTER_SITES=file:///...
-.			ifndef MASTER_SITES
+.      ifndef MASTER_SITES
 MASTER_SITES=			${MASTER_SITE_FEDORA_LINUX}
-.				if ${LINUX_DIST_VER} == 10
+.        if ${LINUX_DIST_VER} == 10
 MASTER_SITE_SUBDIR?=	../releases/${LINUX_DIST_VER}/Everything/${LINUX_RPM_ARCH}/os/Packages \
 			../updates/${LINUX_DIST_VER}/${LINUX_RPM_ARCH}
 MASTER_SITE_SRC_SUBDIR?=	../releases/${LINUX_DIST_VER}/Everything/source/SRPMS \
 				../updates/${LINUX_DIST_VER}/SRPMS
-.				else
+.        else
 MASTER_SITE_SUBDIR?=	${LINUX_DIST_VER}/${LINUX_RPM_ARCH}/os/Fedora/RPMS \
 			updates/${LINUX_DIST_VER}/${LINUX_RPM_ARCH}
 MASTER_SITE_SRC_SUBDIR?=	${LINUX_DIST_VER}/SRPMS \
 				updates/${LINUX_DIST_VER}/SRPMS
-.				endif
-.			endif
-.		elif ${LINUX_DIST} == "centos"
-MASTER_SITES_SUBDIR=	/centos/6/os/i386/Packages/
-.			if ${LINUX_DIST_VER} == "5" #needed for Qt...
-LINUX_RPM_ARCH=	i386
-MASTER_SITES_SUBDIR=	/centos/5/os/i386/Packages/
-.			endif
-
-.			ifndef MASTER_SITES
-MASTER_SITES=	${MASTER_SITE_CENTOS_LINUX}
-.				if ${LINUX_DIST_VER} == "6.5"
-.					if ! defined(PACKAGE_BUILDING)
-MASTER_SITES=	http://mirror.centos.org/centos/6/os/i386/Packages/
-MASTER_SITES_SUBDIR=	/centos/6/os/i386/Packages/
-.					else
-MASTER_SITES?=  http://vault.centos.org/%SUBDIR%/
-MASTER_SITES_SUBDIR=	/6.5/os/Source/SPackages/
-.					endif
-
-.				else
-MASTER_SITES=	http://vault.centos.org/${LINUX_DIST_VER}/os/i386/Packages/
-.				endif
-.			endif
-
-.		endif
-.	endif
-
-
-#.if ${USE_LINUX:L} == "yes" #redundant with bsd.port.mk fu
-#USE_LINUX=	c6
-#.endif
-PKGNAMEPREFIX?=			linux-${USE_LINUX}-
+.        endif
+.      endif
+.    else
+IGNORE=	unknown LINUX_DIST in port Makefile
+.    endif
+.  endif
+PKGNAMEPREFIX?=			linux-
 
 # DISTFILES and SRC_DISTFILES assume that there is only one bindist
 # and one src file.
-# Please, define them in the Makefile of the port in case this assumption
+# Please, define them n the Makefile of the port in case this assumption
 # is not true.
 
-DISTVERSION=	${PORTVERSION}-${RPMVERSION}
-DISTNAME?=		${PORTNAME}-${DISTVERSION}
 DISTFILES?=		${DISTNAME}${EXTRACT_SUFX}
-BIN_DISTFILES:=		${_DISTFILES}
+BIN_DISTFILES:=		${DISTFILES}
 SRC_DISTFILES?=		${DISTNAME}${SRC_SUFX}
 EXTRACT_ONLY?=		${BIN_DISTFILES:C/:[^:]+$//}
 
-.	if defined(PACKAGE_BUILDING)
+.  if defined(PACKAGE_BUILDING)
 DISTFILES+=		${SRC_DISTFILES}
 MASTER_SITE_SUBDIR+=	${MASTER_SITE_SRC_SUBDIR}
 ALWAYS_KEEP_DISTFILES=	yes
-.	endif
+.  endif
 
 EXTRACT_CMD?=			${TAR}
 EXTRACT_BEFORE_ARGS?=	-xf
@@ -161,39 +119,36 @@ BRANDELF_FILES?=
 .  if defined(PORTDOCS) && defined(NOPORTDOCS)
 pre-patch: linux-rpm-clean-portdocs
 
-.		if !target(linux-rpm-clean-portdocs)
+.    if !target(linux-rpm-clean-portdocs)
 linux-rpm-clean-portdocs:
-.			for x in ${PORTDOCS}
+.      for x in ${PORTDOCS}
 	@${RM} -f ${WRKDIR}/${DOCSDIR_REL}/${x}
-.			endfor
+.      endfor
 	@${RMDIR} ${WRKDIR}/${DOCSDIR_REL}
-.		endif
+.    endif
 .  endif
 
 .  if defined(AUTOMATIC_PLIST)
 
-.	if ${USE_LINUX} == "f10"
+.    if ${USE_LINUX} == "f10" || ${USE_LINUX:tl} == "yes"
 _LINUX_BASE_SUFFIX=		f10
-.	elif ${USE_LINUX} == "c6" || ${USE_LINUX:L} == "yes"
-USE_LINUX=	c6
-_LINUX_BASE_SUFFIX=		c6
-.	else
+.    else
 # other linux_base ports do not provide a pkg-plist file
-IGNORE=					uses AUTOMATIC_PLIST with an unsupported USE_LINUX, \"${USE_LINUX}\". Supported values are \"yes\", \"f10\" and \"c6\"
-.  endif
+IGNORE=					uses AUTOMATIC_PLIST with an unsupported USE_LINUX, \"${USE_LINUX}\". Supported values are \"yes\" and \"f10\"
+.    endif
 
 PLIST?=					${WRKDIR}/.PLIST.linux-rpm
 
 pre-install: linux-rpm-generate-plist
 
-.  if !target(linux-rpm-generate-plist)
+.    if !target(linux-rpm-generate-plist)
 linux-rpm-generate-plist:
 	cd ${WRKSRC} && \
 	${FIND} * ! -path "stage/*" ! -type d | ${SORT} > ${PLIST} && \
 	${FIND} * ! -path "stage*" -type d | ${SORT} | ${SED} -e 's|^|@dirrm |' > ${PLIST}.dirs
 	@${GREP} '^@dirrm' ${PORTSDIR}/emulators/linux_base-${_LINUX_BASE_SUFFIX}/pkg-plist | ${SED} 's:^@dirrmtry:@dirrm:g' | ${SORT} > ${PLIST}.shared-dirs
 	@${COMM} -1 -3 ${PLIST}.shared-dirs ${PLIST}.dirs | ${SORT} -r >> ${PLIST}
-.	endif
+.    endif
 .  endif
 
 .  if !target(do-install)

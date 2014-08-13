@@ -1,3 +1,0 @@
-#!/bin/sh
-export ICAROOT=%%CDIR%%
-exec $ICAROOT/wfcmgr

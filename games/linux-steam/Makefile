@@ -1,5 +1,5 @@
 # Created by: hideki
-# $FreeBSD$
+# $FreeBSD: head/games/linux-steam/Makefile 360314 2014-07-02 23:34:09Z marino $
 
 PORTNAME=	steam
 PORTVERSION=	1.1
@@ -10,8 +10,13 @@ DISTNAME=	hldsupdatetool.bin
 EXTRACT_SUFX=
 EXTRACT_ONLY=
 
-MAINTAINER=	chris@easymac.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Half Life and Source dedicated server using steam
+
+BUILD_DEPENDS=	${LINUX_BASE_PORT}
+
+DEPRECATED=	Unmaintained interactive port
+EXPIRATION_DATE=2014-08-20
 
 IS_INTERACTIVE=	yes
 USE_LINUX=	yes

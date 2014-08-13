@@ -3,19 +3,19 @@
 
 PORTNAME=	libssh2
 PORTVERSION=	0.18
-PORTREVISION=	1
 CATEGORIES=	security linux
 MASTER_SITES=	CRITICAL/rpm/${LINUX_RPM_ARCH}/fedora/${LINUX_DIST_VER}
+PKGNAMEPREFIX=	linux-f10-
+DISTNAME=	${PORTNAME}-${PORTVERSION}-${RPMVERSION}
 
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	Library implementing the SSH2 protocol (Linux Fedora 10)
 
 CONFLICTS=	linux-f8-libssh2-[0-9]*
 
-USE_LINUX=	f10
 USE_LINUX_RPM=	yes
 USE_LINUX_APPS=	openssl
-
+LINUX_DIST_VER=	10
 RPMVERSION=	7.fc9
 USE_LDCONFIG=	yes
 

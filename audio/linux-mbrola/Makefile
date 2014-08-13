@@ -1,5 +1,5 @@
 # Created by: trevor
-# $FreeBSD$
+# $FreeBSD: head/audio/linux-mbrola/Makefile 362027 2014-07-16 03:47:05Z adamw $
 
 PORTNAME=	mbrola
 PORTVERSION=	3.0.1
@@ -25,6 +25,8 @@ RESTRICTED=	for non-commercial, non-military applications only
 
 PLIST_FILES=	bin/mbrola
 PORTDOCS=	readme.txt
+
+OPTIONS_DEFINE=	DOCS
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/mbrola-linux-i386 ${STAGEDIR}${PREFIX}/bin/mbrola

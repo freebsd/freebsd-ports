@@ -1,5 +1,5 @@
 # Created by: Alexander Logvinov <ports@logvinov.com>
-# $FreeBSD$
+# $FreeBSD: head/games/linux-ssamtfe/Makefile 349210 2014-03-26 02:18:10Z swills $
 
 PORTNAME=	ssamtfe
 PORTVERSION=	1.05b3

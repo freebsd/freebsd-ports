@@ -1,5 +1,5 @@
 # Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
-# $FreeBSD$
+# $FreeBSD: head/games/linux-worldofgoo-demo/Makefile 349211 2014-03-26 02:24:37Z swills $
 
 PORTNAME=	worldofgoo
 PORTVERSION=	1.41

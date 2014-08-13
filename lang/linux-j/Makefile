@@ -1,5 +1,5 @@
 # Created by: js@jeannot.org
-# $FreeBSD$
+# $FreeBSD: head/lang/linux-j/Makefile 360810 2014-07-05 19:27:03Z olgeni $
 
 PORTNAME=	j
 PORTVERSION=	504b
@@ -11,7 +11,7 @@ DISTNAME=	j${PORTVERSION}_linux32
 DIST_SUBDIR=	${PKGNAMEPREFIX}${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A general purpose programming language
+COMMENT=	General purpose programming language
 
 LICENSE=	JSoftware
 LICENSE_NAME=	JSoftware End User License Agreement
@@ -46,9 +46,9 @@ do-install:
 	${BRANDELF} -t Linux ${STAGEDIR}${PREFIX}/lib/j/jconsole
 
 post-install:
+	${MV} ${STAGEDIR}${PREFIX}/man/man1/jconsole.1 ${STAGEDIR}${PREFIX}/man/man1/j-jconsole.1
 .if !defined(BATCH)
 	@${CAT} ${PKGMESSAGE}
 .endif
-	${MV} ${STAGEDIR}${PREFIX}/man/man1/jconsole.1 ${STAGEDIR}${PREFIX}/man/man1/j-jconsole.1 
 
 .include <bsd.port.mk>

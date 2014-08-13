@@ -1,9 +1,8 @@
 # Created by: ayu <ayunyan@gmail.com>
-# $FreeBSD$
+# $FreeBSD: head/games/linux-etqw-demo-server/Makefile 362015 2014-07-15 23:30:05Z adamw $
 
 PORTNAME=	etqw
 PORTVERSION=	2.0.r1
-PORTREVISION=	1
 CATEGORIES=	games linux
 MASTER_SITES=	${MASTER_SITE_IDSOFTWARE:S|$|etqw/|}
 PKGNAMEPREFIX=	linux-
@@ -11,7 +10,7 @@ PKGNAMESUFFIX=	-demo-server
 DISTNAME=	ETQW-demo2-server-full.r1.x86
 EXTRACT_SUFX=	.run
 
-MAINTAINER=	ayunyan@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Enemy Territory: QUAKE Wars Demo Server for Linux
 
 NO_CDROM=	Redistribution is limited
@@ -19,13 +18,12 @@ NO_PACKAGE=	Package will be 428MB, set FORCE_PACKAGE if you really want it
 NO_BUILD=	yes
 
 ONLY_FOR_ARCHS=	i386 amd64
-USES=		zip:infozip
 USE_LINUX=	yes
+USES=		zip:infozip
 
 ETQWDIR=	${PREFIX}/lib/${PORTNAME}${PKGNAMESUFFIX}
 
-.include <bsd.port.pre.mk>
-.include <bsd.port.options.mk>
+OPTIONS_DEFINE=	DOCS
 
 do-extract:
 	@${MKDIR} ${WRKSRC}
@@ -61,4 +59,4 @@ do-install:
 	@${INSTALL_DATA} ${WRKSRC}/data/${FILE} ${STAGEDIR}${DOCSDIR}
 .endfor
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

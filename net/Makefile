@@ -170,9 +170,9 @@
     SUBDIR += go.net
     SUBDIR += gofish
     SUBDIR += gogoc
-    SUBDIR += googlecl
     SUBDIR += google-cloud-sdk
     SUBDIR += google-daemon
+    SUBDIR += googlecl
     SUBDIR += gopher
     SUBDIR += gotthard
     SUBDIR += gpxe
@@ -360,7 +360,6 @@
     SUBDIR += linc-reference
     SUBDIR += linknx
     SUBDIR += linphone
-    SUBDIR += linux-c6-openldap
     SUBDIR += linux-f10-nss_ldap
     SUBDIR += linux-f10-openldap
     SUBDIR += linuxigd

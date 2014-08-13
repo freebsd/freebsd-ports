@@ -1,5 +1,5 @@
 # Created by: Janos Mohacsi <janos.mohacsi@bsd.hu>
-# $FreeBSD$
+# $FreeBSD: head/games/hohlin/Makefile 362015 2014-07-15 23:30:05Z adamw $
 
 PORTNAME=	hohlin
 PORTVERSION=	1.01
@@ -22,7 +22,7 @@ USE_LINUX_APPS=	xorglibs
 ONLY_FOR_ARCHS=	i386 amd64
 SHORTPORTVERSION=${PORTVERSION:C/([0-9]*)\.([0-9]*)/\1\2/}
 
-.include <bsd.port.options.mk>
+OPTIONS_DEFINE=	DOCS
 
 do-build:
 	${BRANDELF} -t Linux ${WRKSRC}/data/HoH

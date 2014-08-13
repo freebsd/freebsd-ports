@@ -1,5 +1,5 @@
 # Created by: msmith
-# $FreeBSD$
+# $FreeBSD: head/net/citrix_ica/Makefile 364689 2014-08-12 10:13:54Z marino $
 
 PORTNAME=	citrix_ica
 PORTVERSION=	12.1

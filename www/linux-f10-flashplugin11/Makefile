@@ -1,11 +1,14 @@
 # Created by: Naoki Tsurutani
-# $FreeBSD: head/www/linux-f10-flashplugin11/Makefile 342741 2014-02-05 15:56:41Z eadler $
+# $FreeBSD: head/www/linux-f10-flashplugin11/Makefile 361777 2014-07-14 12:44:27Z eadler $
 
 PORTNAME=	flashplugin
-PORTVERSION=	11.2r202.346
+PORTVERSION=	11.2r202.394
 CATEGORIES=	www multimedia linux
-MASTER_SITES=	http://fpdownload.macromedia.com/get/flashplayer/pdc/${PORTVERSION:C/r/\./}/
-DISTFILES=	install_flash_player_11_linux.i386.tar.gz
+MASTER_SITES=	http://fpdownload.macromedia.com/get/flashplayer/pdc/${PORTVERSION:C/r/\./}/:plugin \
+		LOCAL/nox:suplib
+PKGNAMEPREFIX=	linux-f10-
+DISTFILES=	install_flash_player_11_linux.i386.tar.gz:plugin \
+		linux-f10-flashsupport-9.0.1.i386.tar.gz:suplib
 DIST_SUBDIR=	${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	eadler@FreeBSD.org
@@ -13,16 +16,16 @@ COMMENT=	Adobe Flash Player NPAPI Plugin
 
 ONLY_FOR_ARCHS=	amd64 i386
 USE_LINUX=	yes
-USE_LINUX_APPS= alsalib alsa-plugins-oss openssl curl cyrus-sasl2 \
-		libssh2 nspr nss openldap gtk2
+USE_LINUX_APPS=	openssl curl cyrus-sasl2 libssh2 nspr nss openldap gtk2
 WANT_GNOME=	yes
 
 RESTRICTED=	Redistribution not allowed
+RESTRICTED_FILES=	${DISTFILES:Nlinux-f10-flashsupport*:C/:[^:]+$//}
 
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 
-USES=		webplugin:linux
+USES=		webplugin:linux	desktop-file-utils
 WEBPLUGIN_FILES=	libflashplayer.so
 
 OPTIONS_DEFINE=	GNOME
@@ -44,6 +47,7 @@ post-patch:
 do-install:
 	${MKDIR} ${STAGEDIR}${WEBPLUGIN_DIR} ${STAGEDIR}${LINUXBASE}/usr/lib
 	${INSTALL_LIB} ${WRKDIR}/libflashplayer.so ${STAGEDIR}${WEBPLUGIN_DIR}
+	${INSTALL_LIB} ${WRKDIR}/libflashsupport.so ${STAGEDIR}${LINUXBASE}/usr/lib
 	${INSTALL_PROGRAM} ${WRKDIR}/usr/bin/flash-player-properties ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_DATA} ${WRKDIR}/usr/share/applications/flash-player-properties.desktop ${STAGEDIR}${DESKTOPDIR}
 	(cd ${WRKDIR}/usr/share/icons && ${COPYTREE_SHARE} hicolor ${STAGEDIR}${PREFIX}/share/icons)

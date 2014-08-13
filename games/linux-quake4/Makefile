@@ -1,5 +1,5 @@
 # Created by: Ed Schouten <ed@fxq.nl>
-# $FreeBSD$
+# $FreeBSD: head/games/linux-quake4/Makefile 361946 2014-07-15 15:19:07Z adamw $
 
 PORTNAME=	quake4
 PORTVERSION=	1.4.2
@@ -12,7 +12,7 @@ PKGNAMEPREFIX=	linux-
 DISTNAME=	${PORTNAME}-${PKGNAMEPREFIX}${PORTVERSION}.x86
 EXTRACT_SUFX=	.run
 
-MAINTAINER=	acm@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Quake 4 for Linux
 
 USE_LINUX=	yes
@@ -25,7 +25,7 @@ PLIST_SUB+=	Q4DIR="${Q4DIR}" \
 		LINUXBASE="${LINUXBASE}"
 SUB_FILES=	pkg-message
 
-OPTIONS_DEFINE=	THREADS GERMANY
+OPTIONS_DEFINE=	THREADS GERMANY DOCS
 GERMANY_DESC=	Germany version
 
 OPTIONS_DEFAULT=	THREADS

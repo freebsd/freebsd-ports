@@ -1,14 +1,14 @@
 # Created by: Jose Alonso Cardenas Marquez <acm@FreeBSD.org>
-# $FreeBSD
+# $FreeBSD: head/games/linux-nerogame/Makefile 357690 2014-06-13 15:22:27Z danilo $
 
 PORTNAME=	nerogame
 PORTVERSION=	2.0
 CATEGORIES=	games linux
-MASTER_SITES=	http://z.cs.utexas.edu/users/nn/nero/downloads/
+MASTER_SITES=	SF/nero.mirror
 PKGNAMEPREFIX=	linux-
 DISTNAME=	nero2_linux_i386
 
-MAINTAINER=	acm@FreeBSD.org
+MAINTAINER=	craig001@lerwick.hopto.org
 COMMENT=	Neuro evolving robotic operatives the game
 
 USE_LINUX=	yes
@@ -49,15 +49,12 @@ do-install:
 .for DIRE in common nero
 	@${MKDIR} ${STAGEDIR}${PREFIX}/${DATADIR}/${DIRE}
 	@cd ${WRKSRC}/${DIRE} && \
-		${FIND} * -type d -exec ${MKDIR} "${PREFIX}/${DATADIR}/${DIRE}/{}" \; && \
+		${FIND} * -type d -exec ${MKDIR} "${STAGEDIR}${PREFIX}/${DATADIR}/${DIRE}/{}" \; && \
 			${FIND} * -type f -exec ${INSTALL_DATA} "{}" "${STAGEDIR}${PREFIX}/${DATADIR}/${DIRE}/{}" \;
 .endfor
 	${INSTALL_DATA} ${WRKSRC}/main.cs ${STAGEDIR}${PREFIX}/${DATADIR}
 
 	@${MKDIR} ${STAGEDIR}${PREFIX}/${DATADIR}/lib
 	${LN} -s ${PREFIX}/lib/${PKGNAMEPREFIX}${PORTNAME}/libopenal.so ${STAGEDIR}${PREFIX}/${DATADIR}/lib/libopenal.so
-
-post-install:
-	${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>

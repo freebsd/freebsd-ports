@@ -14,9 +14,9 @@ COMMENT=	Fortran 77 shared library (Linux Fedora 10)
 CONFLICTS=	linux-libg2c-[0-9]* linux-f8-libg2c-[0-9]*
 
 ONLY_FOR_ARCHS=	i386 amd64
-USE_LINUX=	f10
 USE_LINUX_RPM=	yes
 LINUX_NAME=	compat-libf2c-34
+LINUX_DIST_VER=	10
 RPMVERSION=	9
 USE_LDCONFIG=	yes
 SRC_DISTFILES=	compat-gcc-34-${PORTVERSION}-${RPMVERSION}.src.rpm

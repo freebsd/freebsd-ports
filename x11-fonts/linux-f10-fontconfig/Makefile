@@ -3,9 +3,10 @@
 
 PORTNAME=	fontconfig
 PORTVERSION=	2.6.0
-PORTREVISION=	1
 CATEGORIES=	x11-fonts linux
 MASTER_SITES=	CRITICAL/rpm/${LINUX_RPM_ARCH}/fedora/${LINUX_DIST_VER}
+PKGNAMEPREFIX=	linux-f10-
+DISTNAME=	${PORTNAME}-${PORTVERSION}-${RPMVERSION}
 
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	XML-based font configuration API for X Windows (Linux Fedora 10)
@@ -13,10 +14,9 @@ COMMENT=	XML-based font configuration API for X Windows (Linux Fedora 10)
 CONFLICTS=	linux-fontconfig-[0-9]* linux-f8-fontconfig-[0-9]*
 
 ONLY_FOR_ARCHS=	i386 amd64
-USE_LINUX=	f10
 USE_LINUX_RPM=	yes
 USE_LINUX_APPS=	expat
-
+LINUX_DIST_VER=	10
 RPMVERSION=	3.fc10
 BRANDELF_DIRS=	usr/bin
 USE_LDCONFIG=	yes

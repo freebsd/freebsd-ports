@@ -1,5 +1,5 @@
 # Created by: Yarema <yds@CoolRat.org>
-# $FreeBSD$
+# $FreeBSD: head/mail/mulberry/Makefile 349208 2014-03-26 01:51:58Z swills $
 
 PORTNAME=	mulberry
 PORTVERSION=	4.0.8
@@ -12,7 +12,7 @@ EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A scalable high-performance GUI internet Mail User Agent
+COMMENT=	Scalable high-performance GUI Internet Mail User Agent
 OPTIONS_DEFINE=	DOCS
 
 NO_WRKSUBDIR=	yes

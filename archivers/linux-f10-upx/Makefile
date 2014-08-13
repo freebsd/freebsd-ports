@@ -1,5 +1,5 @@
 # Created by: bsam
-# $FreeBSD: head/archivers/linux-f10-upx/Makefile 340722 2014-01-22 17:00:46Z mat $
+# $FreeBSD: head/archivers/linux-f10-upx/Makefile 360446 2014-07-03 19:06:07Z adamw $
 
 PORTNAME=		upx
 PORTVERSION=		3.03
@@ -13,9 +13,9 @@ COMMENT=		UPX, a high-performance executable packer (Linux Fedora 10)
 
 CONFLICTS=		linux-upx-[0-9]* linux-f8-upx-[0-9]*
 
-USE_LINUX=		f10
 USE_LINUX_RPM=		yes
 USE_LINUX_APPS=		ucl
+LINUX_DIST_VER=		10
 RPMVERSION=		1.fc10
 BRANDELF_FILES=		usr/bin/upx
 
@@ -24,5 +24,7 @@ DOCSDIR=		${PREFIX}/usr/share/doc/${PORTNAME}-${PORTVERSION}
 PORTDOCS=		BUGS COPYING LICENSE NEWS PROJECTS README README.1ST \
 			THANKS TODO elf-to-mem.txt filter.txt loader.txt selinux.txt
 DESCR=			${.CURDIR}/../${PORTNAME}/pkg-descr
+
+OPTIONS_DEFINE=		DOCS
 
 .include <bsd.port.mk>

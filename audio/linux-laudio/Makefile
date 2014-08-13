@@ -1,5 +1,5 @@
 # Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
-# $FreeBSD$
+# $FreeBSD: head/audio/linux-laudio/Makefile 349692 2014-03-30 22:39:10Z rene $
 
 PORTNAME=	laudio
 PORTVERSION=	0.4
@@ -13,7 +13,7 @@ COMMENT=	Free lossless audio codec
 
 ONLY_FOR_ARCHS=	amd64 i386
 
-USES=	tar:bzip2
+USES=		tar:bzip2
 USE_LINUX=	yes
 NO_BUILD=	yes
 

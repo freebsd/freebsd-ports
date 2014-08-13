@@ -3,9 +3,10 @@
 
 PORTNAME=	sqlite3
 PORTVERSION=	3.5.9
-PORTREVISION=	2
+PORTREVISION=	1
 CATEGORIES=	databases linux
 MASTER_SITES=	CRITICAL/rpm/${LINUX_RPM_ARCH}/fedora/${LINUX_DIST_VER}
+PKGNAMEPREFIX=	linux-f10-
 DISTNAME=	sqlite-${PORTVERSION}-${RPMVERSION}
 
 MAINTAINER=	emulation@FreeBSD.org
@@ -13,9 +14,8 @@ COMMENT=	Library that implements an embeddable SQL database engine (Linux Fedora
 
 CONFLICTS=	linux-f8-sqlite3-[0-9]*
 
-USE_LINUX=	f10
 USE_LINUX_RPM=	yes
-
+LINUX_DIST_VER=	10
 RPMVERSION=	4.fc10
 BRANDELF_FILES=	usr/bin/sqlite3
 USE_LDCONFIG=	yes

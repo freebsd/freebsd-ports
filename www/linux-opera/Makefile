@@ -1,8 +1,7 @@
-# $FreeBSD$
+# $FreeBSD: head/www/linux-opera/Makefile 362447 2014-07-21 16:17:27Z rene $
 
 PORTNAME=	opera
 PORTVERSION=	${OPERA_VER}
-PORTREVISION=	2
 CATEGORIES=	www linux
 MASTER_SITES=	ftp://ftp.opera.com/pub/opera/linux/${OPERA_VER:S/.//}/ \
 		ftp://ftp.sunet.se/pub/www/clients/Opera/linux/${OPERA_VER:S/.//}/ \
@@ -18,15 +17,14 @@ PKGNAMEPREFIX=	linux-
 DISTNAME=	${PORTNAME}-${OPERA_VER}-${OPERA_BUILD}.i386.linux
 
 MAINTAINER=	acm@FreeBSD.org
-COMMENT=	A blazingly fast, full-featured, standards-compliant browser
+COMMENT=	Blazingly fast, full-featured, standards-compliant browser
 
 RUN_DEPENDS=	update-mime-database:${PORTSDIR}/misc/shared-mime-info
 
-USE_XZ=		yes
 USE_LINUX=	yes
-USE_LINUX_APPS=	naslibs png xorglibs
+USE_LINUX_APPS=	gdkpixbuf gtk2 naslibs png sqlite3 xorglibs
 ONLY_FOR_ARCHS=	i386 amd64
-USES=	desktop-file-utils shared-mime-info
+USES=		desktop-file-utils shared-mime-info tar:xz
 WANT_GNOME=	yes
 INSTALLS_ICONS=	yes
 
@@ -40,9 +38,7 @@ DOCSDIR=	${PREFIX}/share/doc/${UNIQUENAME}
 RENAME=		opera lib/opera \
 		share/applications/opera-browser.desktop \
 		share/doc/opera share/opera man/man1/opera.1 \
-		share/mime/packages/opera-extension.xml \
-
-.include <bsd.port.pre.mk>
+		share/mime/packages/opera-extension.xml
 
 post-extract:
 	@${GUNZIP_CMD} ${WRKSRC}/share/man/man1/*.gz
@@ -113,4 +109,4 @@ post-patch:
 do-install:
 	@(cd ${WRKSRC} && ./install --repackage ${STAGEDIR}${PREFIX} --system --quiet --force)
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

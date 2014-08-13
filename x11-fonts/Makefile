@@ -119,7 +119,6 @@
     SUBDIR += libXft
     SUBDIR += liberation-fonts-ttf
     SUBDIR += libfontenc
-    SUBDIR += linux-c6-fontconfig
     SUBDIR += linux-f10-fontconfig
     SUBDIR += linuxlibertine
     SUBDIR += linuxlibertine-g

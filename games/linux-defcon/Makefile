@@ -1,5 +1,5 @@
 # Created by: Marcus von Appen <mva@sysfault.org
-# $FreeBSD$
+# $FreeBSD: head/games/linux-defcon/Makefile 362015 2014-07-15 23:30:05Z adamw $
 
 PORTNAME=	defcon
 PORTVERSION=	1.42
@@ -20,7 +20,7 @@ NO_BUILD=	yes
 DATADIR=	${PREFIX}/lib/${PKGNAMEPREFIX}${PORTNAME}
 SUB_FILES=	defcon
 
-OPTIONS_DEFINE=	NVIDIA
+OPTIONS_DEFINE=	NVIDIA DOCS
 NVIDIA_DESC=	support for nvidia
 
 .include <bsd.port.options.mk>

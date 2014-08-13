@@ -6,7 +6,8 @@ PORTVERSION=	1.2.6
 PORTREVISION=	3
 CATEGORIES=	graphics linux
 MASTER_SITES=	CRITICAL/rpm/${LINUX_RPM_ARCH}/fedora/${LINUX_DIST_VER}
-DISTNAME=	SDL_image-${PORTVERSION}-${RPMVERSION}
+PKGNAMEPREFIX=	linux-f10-
+DISTNAME=	${LINUX_NAME}-${PORTVERSION}-${RPMVERSION}
 
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	Simple library to load images as SDL interfaces (Linux Fedora 10)
@@ -14,11 +15,10 @@ COMMENT=	Simple library to load images as SDL interfaces (Linux Fedora 10)
 CONFLICTS=	linux-sdl_image-[0-9]* linux-f8-sdl_image-[0-9]*
 
 ONLY_FOR_ARCHS=	i386 amd64
-USE_LINUX=	f10
 USE_LINUX_RPM=	yes
 USE_LINUX_APPS=	jpeg png sdl12 tiff
 LINUX_NAME=	SDL_image
-
+LINUX_DIST_VER=	10
 RPMVERSION=	6.fc9
 BRANDELF_FILES=	usr/bin/showimage
 USE_LDCONFIG=	yes

@@ -1,5 +1,5 @@
---- ./mkioctls.linux.orig	2004-02-14 09:05:13.000000000 +0200
-+++ ./mkioctls.linux	2014-03-28 08:42:34.000000000 +0200
+--- mkioctls.linux.orig	Sat Feb 21 15:35:48 2004
++++ mkioctls.linux	Sat Feb 21 15:34:41 2004
 @@ -4,7 +4,7 @@
  TMP2FILE=/tmp/$$b.c
  OUTFILE=linux_ioctl.c

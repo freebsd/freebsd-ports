@@ -1,5 +1,5 @@
 # Created by: Alexander Logvinov <ports@logvinov.com>
-# $FreeBSD$
+# $FreeBSD: head/games/linux-unrealgold/Makefile 352986 2014-05-05 09:45:36Z bapt $
 
 PORTNAME=	unrealgold
 PORTVERSION=	436
@@ -105,7 +105,7 @@ do-extract:
 # Original CD
 .elif defined(ORIGINAL)
 .for dir in ${CDDIRS:NSystem:NMaps/UPak:NSounds/int} Manuals
-	@${LN} -sf ${CDROM_MOUNT}/${dir:U} ${WRKDIR}/source/${dir}
+	@${LN} -sf ${CDROM_MOUNT}/${dir:tu} ${WRKDIR}/source/${dir}
 .endfor
 .for _file in UDSDemo.u UPak.u
 	@${CP} ${CDROM_MOUNT}/SYSTEM/${_file} ${WRKDIR}/source/System

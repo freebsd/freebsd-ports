@@ -433,6 +433,7 @@
 %%ACRODIR%%/Adobe/Reader9/Resource/TypeSupport/Unicode/mappings/win/CP950.TXT
 %%ACRODIR%%/Adobe/Reader9/bin/UNINSTALL
 %%ACRODIR%%/Adobe/Reader9/bin/acroread
+%%MANINSTALLDIR%%/man1/acroread.1.gz
 @dirrm %%ACRODIR%%/Adobe/Reader9/bin
 @dirrm %%ACRODIR%%/Adobe/Reader9/Resource/TypeSupport/Unicode/mappings/win
 @dirrm %%ACRODIR%%/Adobe/Reader9/Resource/TypeSupport/Unicode/mappings/mac

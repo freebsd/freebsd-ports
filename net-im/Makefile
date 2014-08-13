@@ -144,7 +144,6 @@
     SUBDIR += sendxmpp
     SUBDIR += skype
     SUBDIR += skype-devel
-    SUBDIR += skype4
     SUBDIR += telepathy-butterfly
     SUBDIR += telepathy-farstream
     SUBDIR += telepathy-gabble

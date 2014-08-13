@@ -1,5 +1,5 @@
 # Created by: Edwin Groothuis <edwin@mavetju.org>
-# $FreeBSD: head/games/linux-skulltag/Makefile 340722 2014-01-22 17:00:46Z mat $
+# $FreeBSD: head/games/linux-skulltag/Makefile 363399 2014-07-29 21:43:17Z adamw $
 
 PORTNAME=	skulltag
 PORTVERSION=	0.9.8a
@@ -13,10 +13,10 @@ COMMENT=	Doom/Doom2/Heretic engine
 
 RUN_DEPENDS=	${LINUXBASE}/lib/libfmodexp-4.24.16.so:${PORTSDIR}/audio/linux-fmodapi
 
-USES=	tar:bzip2
 USE_LINUX=	yes
 USE_LINUX_APPS=	sdl12
-ONLY_FOR_ARCHS=	i386 amd64
+ONLY_FOR_ARCHS=	i386
+USES=	tar:bzip2
 NO_BUILD=	yes
 
 SUB_FILES=	skulltag.sh pkg-message

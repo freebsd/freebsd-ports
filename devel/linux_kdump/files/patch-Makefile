@@ -1,5 +1,5 @@
---- ./Makefile.orig	2004-02-14 09:05:13.000000000 +0200
-+++ ./Makefile	2014-03-28 08:43:01.000000000 +0200
+--- Makefile.orig	Wed Jul 19 21:27:48 2006
++++ Makefile	Wed Jul 19 21:43:08 2006
 @@ -2,14 +2,19 @@
  
  PROG=	linux_kdump
@@ -10,12 +10,9 @@
 +.endif
  CLEANFILES+=linux_ioctl.c syscallnames.c
  
--BINDIR=	/bin
--DESTDIR=${PREFIX}
--MANDIR=	/man/man
-+DESTDIR?=${STAGEDIR}${PREFIX}
-+BINDIR=	${PREFIX}/bin
-+MANDIR=	${PREFIX}/man/man
+ BINDIR=	/bin
+ DESTDIR=${PREFIX}
+ MANDIR=	/man/man
  SRCDIR?=/usr/src
 +LINUXBASE?=/compat/linux
  
@@ -24,13 +21,14 @@
  .PATH:	${SRCDIR}/usr.bin/ktrace
  
  default:	depend all
-@@ -23,4 +28,9 @@
+@@ -22,5 +27,10 @@
+ 
  linux_ioctl.c: mkioctls.linux
  	/bin/sh ${.CURDIR}/mkioctls.linux
- 
++
 +.if exists(${SRCDIR}/usr.bin/kdump/kdump_subr.h)
 +kdump_subr.c: ${SRCDIR}/usr.bin/kdump/mksubr
 +	/bin/sh ${SRCDIR}/usr.bin/kdump/mksubr ${LINUXBASE}/usr/include > ${.TARGET}
 +.endif
-+
+ 
  .include <bsd.prog.mk>

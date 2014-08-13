@@ -5,18 +5,13 @@ Q3PKGNAMEPREFIX?=	quake3-
 Q3DIR?=		${LOCALBASE}/share/quake3
 
 .if defined(PKGNAMEPREFIX) && ${PKGNAMEPREFIX} == ${Q3PKGNAMEPREFIX} && defined(OPTIONSMKINCLUDED)
-.  error include before <bsd.port.options.mk> if using Q3PKGNAMEPREFIX
+IGNORE=	is using Q3PKGNAMEPREFIX, but <bsd.port.options.mk> included too early
 .endif
 
 MAKE_ENV+=	Q3DIR="${Q3DIR}"
-PLIST_SUB+=	Q3DIR="${Q3DIR:S/${LOCALBASE}\///}"
+PLIST_SUB+=	Q3DIR="${Q3DIR:S|${LOCALBASE}/||}"
 SUB_LIST+=	Q3DIR="${Q3DIR}"
 
-.if ${PORTNAME} != "data"
+.if ${PORTNAME} != data
 RUN_DEPENDS+=	${Q3DIR}/baseq3/pak1.pk3:${PORTSDIR}/games/quake3-data
-.endif
-
-# When extracting ZIP archives, ask it to convert text files to Unix style
-.if defined(USE_ZIP)
-EXTRACT_BEFORE_ARGS=	-aqo
 .endif

@@ -671,7 +671,7 @@ usr/lib/libstdc++.so.6
 usr/lib/libstdc++.so.6.0.10
 usr/lib/libtic.so.5
 usr/lib/libtic.so.5.6
-usr/lib/locale/locale-archive
+usr/lib/locale/locale-archive.tmpl
 usr/libexec/gam_server
 usr/libexec/getconf/POSIX_V6_ILP32_OFF32
 usr/libexec/getconf/POSIX_V6_ILP32_OFFBIG

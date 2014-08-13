@@ -1,9 +1,9 @@
 # Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
-# $FreeBSD$
-.undef WANT_GTK218
+# $FreeBSD: head/www/linux-seamonkey/Makefile.common 363978 2014-08-04 09:11:25Z bapt $
+
 .if defined(OVERRIDE_LINUX_NONBASE_PORTS) && \
-    ${OVERRIDE_LINUX_NONBASE_PORTS} == "f10"
-.def WANT_GTK218
+    ${OVERRIDE_LINUX_NONBASE_PORTS} != "f10"
+.undef WANT_GTK218
 .endif
 
 CATEGORIES+=	linux
@@ -21,6 +21,9 @@ GTK218_FILES=	lib/libgio-2.0.so.0 \
 		usr/lib/libgtk-x11-2.0.so.0
 .endif
 
+USES+=		cpe
+CPE_VENDOR?=	mozilla
+CPE_TARGET_SW?=	linux
 NO_BUILD=	yes
 ONLY_FOR_ARCHS=	i386 amd64
 APP_NAME=	${PKGBASE}
@@ -76,7 +79,7 @@ post-patch:
 	@${DO_NADA} >>${PREFS_FILE}
 
 . if (${DISTVERSION:R:R} < 28 && ${PORTNAME} != "seamonkey") || \
- (${PORTNAME} == "seamonkey" && ${DISTVERSION:C/[0-9]*\.//:C/b.*//} < 25)
+ (${PORTNAME} == "seamonkey" && ${DISTVERSION:C/[0-9]*\.//:C/[ab].*//} < 25)
 	# dummy resident-unique for make about:memory's "measure"
 	@${REINPLACE_CMD} -i '' \
 		's,/proc/self/smaps\(.Private\),////////dev/null\1,' \

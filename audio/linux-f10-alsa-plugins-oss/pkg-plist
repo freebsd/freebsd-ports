@@ -1,4 +1,4 @@
-etc/alsa/pcm/pcm-oss.conf
+@sample etc/alsa/pcm/pcm-oss.conf.sample
 usr/lib/alsa-lib/libasound_module_ctl_oss.so
 usr/lib/alsa-lib/libasound_module_pcm_oss.so
 usr/share/doc/alsa-plugins-oss-1.0.21/COPYING
@@ -8,3 +8,4 @@ usr/share/doc/alsa-plugins-oss-1.0.21/README-pcm-oss
 @dirrmtry etc/alsa/pcm
 @dirrmtry etc/alsa
 @dirrmtry usr/lib/alsa-lib
+@unexec if [ -f %D/etc/asound.conf ]; then fgrep -v '/etc/alsa/pcm/pcm-oss.conf' <%D/etc/asound.conf >/tmp/asound.conf.new; mv /tmp/asound.conf.new %D/etc/asound.conf; fi

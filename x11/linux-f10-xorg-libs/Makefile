@@ -6,7 +6,7 @@ PORTVERSION=	7.4
 PORTREVISION=	1
 CATEGORIES=	x11 linux
 MASTER_SITES=	CRITICAL/rpm/${LINUX_RPM_ARCH}/fedora/${LINUX_DIST_VER}
-
+PKGNAMEPREFIX=	linux-f10-
 DISTFILES=	libICE-1.0.4-4.fc10.${LINUX_RPM_ARCH}.rpm \
 		libFS-1.0.1-2.fc10.${LINUX_RPM_ARCH}.rpm \
 		libSM-1.1.0-2.fc10.${LINUX_RPM_ARCH}.rpm \
@@ -90,10 +90,9 @@ CONFLICTS=		linux-xorg-libs-[0-9]* linux-f8-xorg-libs-[0-9]*
 MAINTAINER=		emulation@FreeBSD.org
 COMMENT=		Xorg libraries (Linux Fedora 10)
 
-USE_LINUX=	f10
 USE_LINUX_RPM=		yes
 USE_LINUX_APPS=		fontconfig
-
+LINUX_DIST_VER=		10
 USE_LDCONFIG=		yes
 
 post-install:

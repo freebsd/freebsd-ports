@@ -1,5 +1,5 @@
 # Created by: Jose Alonso Cardenas Marquez <acm@FreeBSD.org>
-# $FreeBSD$
+# $FreeBSD: head/games/linux-savage/Makefile 354288 2014-05-17 07:24:47Z eadler $
 
 PORTNAME=	savage
 PORTVERSION=	2.00e
@@ -20,7 +20,7 @@ COMMENT=	The Savage game (Linux version)
 USE_LINUX=	yes
 USE_LINUX_APPS=	libvorbis tiff
 NO_BUILD=	yes
-RESTRICTED=	Savage is freeware, but i am not sure of its license
+RESTRICTED=	Freeware, but license terms are unclear
 NO_PACKAGE=	Package will be 150MB, set FORCE_PACKAGE if you really want it
 PLIST_SUB+=	SAVAGEDIR="${SAVAGEDIR}"
 SUB_FILES=	pkg-message savage savage_editor
@@ -33,6 +33,7 @@ SAVAGEDIR=	lib/${PKGNAMEPREFIX}${PORTNAME}
 OPTIONS_DEFINE=	NVIDIA_GL
 NVIDIA_GL_DESC=	Support for nvidia
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 .include <bsd.port.pre.mk>
 
@@ -51,33 +52,34 @@ do-extract:
 		${TAR} xfz ${_DISTDIR}/${DISTFILES} --directory ${WRKSRC}
 
 do-install:
-	@${MKDIR} ${STAGEDIR}${PREFIX}/${SAVAGEDIR}
+	@${MKDIR} ${PREFIX}/${SAVAGEDIR}
 .for DIRE in graveyard game
-	@${MKDIR} ${STAGEDIR}${STAGEDIR}${PREFIX}/${SAVAGEDIR}/${DIRE}
+	@${MKDIR} ${PREFIX}/${SAVAGEDIR}/${DIRE}
 	@cd ${WRKSRC}/${DIRE} && \
-		${FIND} * -type d -exec ${MKDIR} "${STAGEDIR}${PREFIX}/${SAVAGEDIR}/${DIRE}/{}" \; && \
+		${FIND} * -type d -exec ${MKDIR} "${PREFIX}/${SAVAGEDIR}/${DIRE}/{}" \; && \
 			${FIND} * -type f -name "*.so" -exec ${INSTALL_PROGRAM} "{}" \
-				"${STAGEDIR}${PREFIX}/${SAVAGEDIR}/${DIRE}/{}" \; && \
+				"${PREFIX}/${SAVAGEDIR}/${DIRE}/{}" \; && \
 				${FIND} -E * -type f -iregex ".*\.(cfg|dat|db|dll|jpg|mcfg|objgroup|ogg|tga|txt|ttf|s2g|s2z)" \
-					-exec ${INSTALL_DATA} "{}" "${STAGEDIR}${PREFIX}/${SAVAGEDIR}/${DIRE}/{}" \;
+					-exec ${INSTALL_DATA} "{}" "${PREFIX}/${SAVAGEDIR}/${DIRE}/{}" \;
 .endfor
-	@${MKDIR} ${STAGEDIR}${PREFIX}/${SAVAGEDIR}/libs
+	@${MKDIR} ${PREFIX}/${SAVAGEDIR}/libs
 	@cd ${WRKSRC}/libs && \
-		${FIND} * -type f -exec ${INSTALL_PROGRAM} "{}" "${STAGEDIR}${PREFIX}/${SAVAGEDIR}/libs/{}" \;
+		${FIND} * -type f -exec ${INSTALL_PROGRAM} "{}" "${PREFIX}/${SAVAGEDIR}/libs/{}" \;
 
-	${INSTALL_PROGRAM} ${WRKSRC}/silverback.bin ${STAGEDIR}${PREFIX}/${SAVAGEDIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/silverback.bin ${PREFIX}/${SAVAGEDIR}
 
 .for FILE in savage savage_editor
-	${INSTALL_SCRIPT} ${WRKDIR}/${FILE} ${STAGEDIR}${PREFIX}/bin/${PKGNAMEPREFIX}${FILE}
+	${INSTALL_SCRIPT} ${WRKDIR}/${FILE} ${PREFIX}/bin/${PKGNAMEPREFIX}${FILE}
 .endfor
-	${LN} -s ${PREFIX}/${SAVAGEDIR}/libs/libfmod-3.75.so ${STAGEDIR}${PREFIX}/${SAVAGEDIR}/libs/libfmod.so
+	${LN} -s ${PREFIX}/${SAVAGEDIR}/libs/libfmod-3.75.so ${PREFIX}/${SAVAGEDIR}/libs/libfmod.so
 
 .if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${STAGEDIR}${PREFIX}/${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/licenses.txt ${STAGEDIR}${PREFIX}/${DOCSDIR}
+	@${MKDIR} ${PREFIX}/${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/licenses.txt ${PREFIX}/${DOCSDIR}
 .endif
 
 post-install:
+	@PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>

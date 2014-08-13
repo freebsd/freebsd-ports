@@ -2,4 +2,4 @@ bin/adom
 %%PORTDOCS%%%%DOCSDIR%%/adomfaq.txt
 %%PORTDOCS%%%%DOCSDIR%%/manual.doc
 %%PORTDOCS%%%%DOCSDIR%%/readme.1st
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%PORTDOCS%%@dirrm share/doc/adom

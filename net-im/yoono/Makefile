@@ -1,5 +1,5 @@
 # Created by: Nicola Vitale <nivit@FreeBSD.org>
-# $FreeBSD: head/net-im/yoono/Makefile 327756 2013-09-20 22:13:34Z bapt $
+# $FreeBSD: head/net-im/yoono/Makefile 349693 2014-03-30 22:55:15Z nivit $
 
 PORTNAME=	yoono
 PORTVERSION=	1.8.43
@@ -30,21 +30,18 @@ ONLY_FOR_ARCHS_REASON=	binary distribution
 SUB_FILES=	${PORTNAME} pkg-message
 SUB_LIST=	LINUXBASE=${LINUXBASE}
 
-USES=	tar:bzip2
 USE_LDCONFIG=	yes
 USE_LINUX=	yes
 USE_LINUX_APPS=	alsalib dbuslibs gtk2 xorglibs
+USES=	tar:bzip2
 
 WRKSRC=	${WRKDIR}/${PORTNAME}-desktop
 
 do-install:
 	${MKDIR} ${STAGEDIR}${DATADIR}
-	cd ${WRKSRC} && \
-	${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR}
+	(cd ${WRKSRC} && \
+	${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR})
 	${CHMOD} ${BINMODE} ${STAGEDIR}${DATADIR}/${PORTNAME}-desktop
 	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
-
-post-install:
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>

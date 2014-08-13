@@ -1,5 +1,5 @@
 # Created by: Jean-Yves Lefort <jylefort@FreeBSD.org>
-# $FreeBSD$
+# $FreeBSD: head/games/linux-virtual-jay-peak/Makefile 357654 2014-06-13 07:36:27Z olgeni $
 
 PORTNAME=	virtual-jay-peak
 PORTVERSION=	1.1a
@@ -10,7 +10,7 @@ PKGNAMEPREFIX=	linux-
 DISTNAME=	virtual_jay_peak_linux_1_1a
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A simulation of snowboarding at the Jay Peak resort in Vermont
+COMMENT=	Simulation of snowboarding at the Jay Peak resort in Vermont
 
 OPTIONS_DEFINE=	DOCS NVIDIA
 

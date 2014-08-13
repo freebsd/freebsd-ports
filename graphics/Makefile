@@ -553,14 +553,6 @@
     SUBDIR += linplasma
     SUBDIR += linux-XnViewMP
     SUBDIR += linux-adobesvg
-    SUBDIR += linux-c6-cairo
-    SUBDIR += linux-c6-dri
-    SUBDIR += linux-c6-dri-compat
-    SUBDIR += linux-c6-jpeg
-    SUBDIR += linux-c6-png
-    SUBDIR += linux-c6-sdl_image
-    SUBDIR += linux-c6-sdl_ttf
-    SUBDIR += linux-c6-tiff
     SUBDIR += linux-f10-cairo
     SUBDIR += linux-f10-dri
     SUBDIR += linux-f10-gdk-pixbuf
@@ -571,7 +563,6 @@
     SUBDIR += linux-f10-libmng
     SUBDIR += linux-f10-png
     SUBDIR += linux-f10-sdl_image
-    SUBDIR += linux-f10-sdl_ttf
     SUBDIR += linux-f10-tiff
     SUBDIR += linux-f10-ungif
     SUBDIR += linux-sdl_ttf

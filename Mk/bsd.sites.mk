@@ -20,7 +20,7 @@
 #
 # Note: all entries should terminate with a slash.
 #
-# $FreeBSD: head/Mk/bsd.sites.mk 356066 2014-06-01 09:01:42Z antoine $
+# $FreeBSD: head/Mk/bsd.sites.mk 364450 2014-08-09 15:44:27Z mva $
 #
 
 # Where to put distfiles that don't have any other master site
@@ -248,27 +248,6 @@ MASTER_SITE_EXIM+= \
 	ftp://ftp.fsckit.net/pub/exim/exim/%SUBDIR%/ \
 	ftp://idcnetwork.org/pub/exim/exim/%SUBDIR%/ \
 	http://ftp.exim.llorien.org/exim/%SUBDIR%
-.endif
-
-.if !defined(IGNORE_MASTER_SITE_CENTOS_LINUX)
-MASTER_SITE_CENTOS_LINUX+= \
-	http://mirror.centos.org/centos/6/os/i386/Packages/ \
-	http://vault.centos.org/6.5/os/Source/SPackages/ \
-	http://mirror.centos.org/%SUBDIR%/ \
-	http://vault.centos.org/%SUBDIR%/
-
-.endif
-
-.if !defined(IGNORE_MASTER_SITE_CENTOS_LINUX)
-MASTER_SITE_CENTOS_LINUX_UPDATES+= \
-	http://mirror.centos.org/centos/6/updates/i386/Packages/ \
-	http://vault.centos.org/6.5/updates/Source/SPackages/
-.endif
-
-.if !defined(IGNORE_MASTER_SITE_EPEL)
-MASTER_SITE_EPEL+= \
-	http://dl.fedoraproject.org/pub/epel/6/i386/ \
-	http://dl.fedoraproject.org/pub/epel/6/SRPMS/
 .endif
 
 .if !defined(IGNORE_MASTER_SITE_FEDORA_LINUX)
@@ -1045,22 +1024,13 @@ MASTER_SITE_PYTHON+= \
 
 .if !defined(IGNORE_MASTER_SITE_QMAIL)
 MASTER_SITE_QMAIL+= \
-	http://qmail.geto.net/%SUBDIR%/ \
-	http://qmail.palomine.net/%SUBDIR%/ \
-	http://qmail.mirrors.summersault.com/%SUBDIR%/ \
-	http://qmail.cdsinet.net/%SUBDIR%/ \
 	http://qmail.glasswings.com.au/%SUBDIR%/ \
 	http://qmail.psshee.com/%SUBDIR%/ \
 	http://mirrors.sunsite.dk/qmailwww/%SUBDIR%/ \
 	http://www.agria.hu/qmail/%SUBDIR%/ \
-	http://qmail.rhnet.is/%SUBDIR%/ \
-	http://mirrors.dataloss.nl/www.qmail.org/%SUBDIR%/ \
-	http://www.math.ntnu.no/mirror/www.qmail.org/%SUBDIR%/ \
 	http://qmail.netvisao.pt/%SUBDIR%/ \
 	http://qmail.ipg.sk/%SUBDIR%/ \
 	http://qmail.omnis.ch/%SUBDIR%/ \
-	http://qmail.asylog.net/%SUBDIR%/ \
-	http://qmail.blueyonder.co.uk/%SUBDIR%/ \
 	http://www.qmail.org/%SUBDIR%/
 .endif
 
@@ -1531,7 +1501,6 @@ MASTER_SITES_SUBDIRS=	APACHE_JAKARTA:${PORTNAME:S,-,/,}/source \
 			NETLIB:${PORTNAME} \
 			PERL_CPAN:${PORTNAME:C/-.*//} \
 			PNET:${PNET_MASTER_SITE_SUBDIR} \
-			PYTHON:${PYTHON_MASTER_SITE_SUBDIR} \
 			RUBY_DBI:${RUBY_DBI_MASTER_SITE_SUBDIR} \
 			RUBY_GNOME:${RUBY_GNOME_MASTER_SITE_SUBDIR} \
 			SAVANNAH:${PORTNAME:tl} \

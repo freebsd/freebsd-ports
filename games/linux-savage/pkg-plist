@@ -54,6 +54,7 @@ bin/linux-savage_editor
 %%SAVAGEDIR%%/game/settings/user_sound_options.cfg
 %%SAVAGEDIR%%/game/settings/user_tlgraphics_options.cfg
 %%SAVAGEDIR%%/game/settings/userkeys.cfg
+%%SAVAGEDIR%%/game/startup.cfg
 %%SAVAGEDIR%%/game/ui_game.cfg
 %%SAVAGEDIR%%/game/ui_main.cfg
 %%SAVAGEDIR%%/game/world/2castles.s2z
@@ -287,6 +288,7 @@ bin/linux-savage_editor
 %%SAVAGEDIR%%/libs/libpng12.so.0
 %%SAVAGEDIR%%/libs/libssl.so.0.9.8
 %%SAVAGEDIR%%/libs/libstdc++.so.6
+%%SAVAGEDIR%%/scripts.log
 %%SAVAGEDIR%%/silverback.bin
 %%PORTDOCS%%%%DOCSDIR%%/licenses.txt
 @dirrm %%SAVAGEDIR%%/graveyard/brushes/standard

@@ -1,5 +1,5 @@
 # Created by: Marcus von Appen <mva@sysfault.org>
-# $FreeBSD$
+# $FreeBSD: head/games/linux-ningpo-demo/Makefile 340092 2014-01-17 18:09:49Z mva $
 
 PORTNAME=	ningpo-demo
 PORTVERSION=	1.05.04

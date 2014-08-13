@@ -1,5 +1,5 @@
 # Created by: Yonatan <onatan@gmail.com>
-# $FreeBSD: head/biology/linux-foldingathome/Makefile 340722 2014-01-22 17:00:46Z mat $
+# $FreeBSD: head/biology/linux-foldingathome/Makefile 360932 2014-07-06 16:05:34Z vanilla $
 
 PORTNAME=	foldingathome
 PORTVERSION=	5.04

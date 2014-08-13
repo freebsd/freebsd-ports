@@ -1,21 +1,23 @@
 # Created by: bsam
-# $FreeBSD: head/textproc/linux-f10-expat/Makefile 340722 2014-01-22 17:00:46Z mat $
+# $FreeBSD: head/textproc/linux-f10-expat/Makefile 362316 2014-07-20 12:17:42Z rene $
 
 PORTNAME=	expat
 PORTVERSION=	2.0.1
-PORTREVISION=	1
 CATEGORIES=	textproc linux
 MASTER_SITES=	CRITICAL/rpm/${LINUX_RPM_ARCH}/fedora/${LINUX_DIST_VER}
+PKGNAMEPREFIX=	linux-f10-
+DISTNAME=	${PORTNAME}-${PORTVERSION}-${RPMVERSION}
 
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	Linux/i386 binary port of Expat XML-parsing library (Linux Fedora 10)
 
+FORBIDDEN=	http://www.freshports.org/vuxml.php?vid=5f030587-e39a-11de-881e-001aa0166822
+
 CONFLICTS=	linux-expat-[0-9]* linux-f8-expat-[0-9]*
 
 ONLY_FOR_ARCHS=	i386 amd64
-USE_LINUX=	f10
 USE_LINUX_RPM=	yes
-
+LINUX_DIST_VER=	10
 RPMVERSION=	5
 BRANDELF_FILES=	usr/bin/xmlwf
 USE_LDCONFIG=	yes

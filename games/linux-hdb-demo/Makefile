@@ -1,5 +1,5 @@
 # Created by: Marcus von Appen <mva@sysfault.org>
-# $FreeBSD$
+# $FreeBSD: head/games/linux-hdb-demo/Makefile 340092 2014-01-17 18:09:49Z mva $
 
 PORTNAME=	hdb-demo
 PORTVERSION=	1.0

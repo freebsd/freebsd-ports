@@ -8,17 +8,3 @@ Wingz was originally developed by Informix(R) but effective from January
 
 It is currently available for many different Unixes and Windowz together
 with other applications by IISG.
-
-The (much) older  version 142 is available separately  in the math/wingz
-port.
-
-Both this and the older ports use the linux-compat system, but hopefully
-that'll be invisible to the end user.
-
-IISG contact information
-------------------------
-In the Americas                 In Europe
-  us-sales@iisckc.com             iisc-info@iisc.co.uk
-  800.494.9464 or                 +44 (0) 171 628 6960
-
-WWW:	http://www.wingz.com/

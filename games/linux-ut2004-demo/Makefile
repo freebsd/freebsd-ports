@@ -1,5 +1,5 @@
 # Created by: Jean-Yves Lefort <jylefort@FreeBSD.org>
-# $FreeBSD$
+# $FreeBSD: head/games/linux-ut2004-demo/Makefile 362999 2014-07-26 23:59:59Z marino $
 
 PORTNAME=	ut2004-demo
 PORTVERSION=	3334
@@ -13,6 +13,9 @@ EXTRACT_SUFX=	.run
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Unreal Tournament 2004 demo
+
+DEPRECATED=	Unmaintained restricted ancient demo
+EXPIRATION_DATE=2014-08-20
 
 ONLY_FOR_ARCHS=	i386 amd64
 USE_LINUX=	yes

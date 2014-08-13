@@ -1,5 +1,5 @@
---- ./src/npw-config.c.orig	2011-07-01 06:18:57.000000000 +0300
-+++ ./src/npw-config.c	2014-03-28 07:33:35.829791175 +0200
+--- src/npw-config.c.orig	2011-06-30 23:18:57.000000000 -0400
++++ src/npw-config.c	2013-11-14 14:41:13.000000000 -0500
 @@ -133,8 +133,9 @@
  #if defined(__FreeBSD__)
  	{
@@ -12,7 +12,7 @@
  	  };
  	  dirs = freebsd_dirs;
  	}
-@@ -232,11 +233,14 @@
+@@ -232,11 +233,12 @@
  	"/usr/lib32/nsbrowser/plugins",				// XXX how unfortunate
  	"/usr/lib64/nsbrowser/plugins",
  #if defined(__FreeBSD__)
@@ -25,8 +25,6 @@
 +	"%%LOCALBASE%%/lib/firefox/plugins",
 +	"%%LOCALBASE%%/lib/seamonkey/plugins",
 +	"%%LOCALBASE%%/lib/browser_plugins/linux-f10-flashplugin",
-+	"%%LOCALBASE%%/lib/browser_plugins/linux-c6-flashplugin",
-+	"%%LOCALBASE%%/lib/browser_plugins/symlinks/linux-firefox",
 +	"%%LOCALBASE%%/Adobe/Reader8/ENU/Adobe/Reader8/Browser/intellinux",
 +	"%%LOCALBASE%%/Adobe/Reader9/ENU/Adobe/Reader9/Browser/intellinux",
  #endif

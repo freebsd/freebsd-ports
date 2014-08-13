@@ -1,5 +1,5 @@
 # Created by: alepulver
-# $FreeBSD: head/games/linux-enemyterritory-etpro/Makefile 340722 2014-01-22 17:00:46Z mat $
+# $FreeBSD: head/games/linux-enemyterritory-etpro/Makefile 347760 2014-03-10 14:49:26Z bapt $
 
 PORTNAME=	etpro
 PORTVERSION=	3.2.6

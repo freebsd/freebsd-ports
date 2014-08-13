@@ -169,7 +169,6 @@
     SUBDIR += libpbl
     SUBDIR += libsdb
     SUBDIR += libzdb
-    SUBDIR += linux-c6-sqlite3
     SUBDIR += linux-f10-sqlite3
     SUBDIR += linux-oracle-instantclient-basic
     SUBDIR += linux-oracle-instantclient-sdk

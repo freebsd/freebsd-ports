@@ -110,11 +110,6 @@
     SUBDIR += libxaw3dxft
     SUBDIR += libxfce4gui
     SUBDIR += libzvt
-    SUBDIR += linux-c6-gtk2
-    SUBDIR += linux-c6-openmotif
-    SUBDIR += linux-c6-pango
-    SUBDIR += linux-c6-qt47-x11
-    SUBDIR += linux-c6-tk85
     SUBDIR += linux-f10-blt
     SUBDIR += linux-f10-gtk2
     SUBDIR += linux-f10-openmotif

@@ -1,0 +1,18 @@
+Index: bin/googleearth
+@@ -8,6 +8,16 @@ if [ "${GOOGLEEARTH_DATA_PATH}" = "" ]; 
+   GOOGLEEARTH_DATA_PATH="$(dirname "$(readlink -f "$0")")"
+ fi
+ 
++ulimit -s 32768 2>/dev/null
++ 
++# For browser wrapper script (to use original LD_LIBRARY_PATH)
++if [ -n "${BROWSER}" ]
++then
++	export REAL_BROWSER="${BROWSER}"
++	export REAL_LD_LIBRARY_PATH="${LD_LIBRARY_PATH}"
++	export BROWSER=${GOOGLEEARTH_DATA_PATH}/bin/browserwrapper
++fi
++
+ LD_LIBRARY_PATH=.:${GOOGLEEARTH_DATA_PATH}:${LD_LIBRARY_PATH}
+ export LD_LIBRARY_PATH
+ 

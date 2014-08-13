@@ -1,5 +1,5 @@
 # Created by: hrs
-# $FreeBSD$
+# $FreeBSD: head/www/linux-libgtkembedmoz/Makefile 353366 2014-05-08 23:41:10Z bapt $
 
 PORTNAME=	libgtkembedmoz
 PORTVERSION=	0.0.20100806

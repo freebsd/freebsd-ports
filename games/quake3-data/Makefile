@@ -1,17 +1,16 @@
 # Created by: Nik Clayton <nik@FreeBSD.org>
-# $FreeBSD$
+# $FreeBSD: head/games/quake3-data/Makefile 361201 2014-07-08 08:51:31Z danfe $
 
 PORTNAME=	data
 DISTVERSION=	1.32b-3
 PORTREVISION=	2
 CATEGORIES=	games
-MASTER_SITES=	${MASTER_SITE_IDSOFTWARE}
-MASTER_SITE_SUBDIR=	quake3/linux
+MASTER_SITES=	IDSOFTWARE/quake3/linux
 PKGNAMEPREFIX=	${Q3PKGNAMEPREFIX}
 DISTNAME=	linuxq3apoint-${DISTVERSION}.x86
 EXTRACT_SUFX=	.run
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	games@FreeBSD.org
 COMMENT=	Quake III Arena data files
 
 DATADIR=	${Q3DIR}
@@ -32,8 +31,8 @@ TEAMARENA_DESC=		Install Quake III Team Arena data files
 do-extract:
 	@${RM} -rf ${WRKDIR}
 	@${MKDIR} ${WRKDIR}
-	@cd ${WRKDIR} && ${TAIL} +356 \
-		${_DISTDIR}/${DISTNAME}${EXTRACT_SUFX} | ${TAR} xzf -
+	@${TAIL} +356 ${_DISTDIR}/${DISTNAME}${EXTRACT_SUFX} | \
+		${TAR} xzf - -C ${WRKDIR}
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}

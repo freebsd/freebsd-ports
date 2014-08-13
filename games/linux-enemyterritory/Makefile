@@ -1,27 +1,37 @@
 # Created by: benlutz@datacomm.ch
-# $FreeBSD$
+# $FreeBSD: head/games/linux-enemyterritory/Makefile 356896 2014-06-07 11:44:03Z bar $
 
 PORTNAME=	enemyterritory
 PORTVERSION=	2.60b
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games linux
-MASTER_SITES=		${MASTER_SITE_IDSOFTWARE:S|$|et/:patch|}
-#MASTER_SITES=	${MASTER_SITE_IDSOFTWARE:S|$|et/linux/:full|}
+MASTER_SITES=	${MASTER_SITE_IDSOFTWARE:S|$|et/:patch|} \
+		${MASTER_SITE_IDSOFTWARE:S|$|et/linux/:full|}
 PKGNAMEPREFIX=	linux-
 DISTNAME=	et-linux-2.60b.x86
 DISTFILES=	et-linux-2.60.x86.run:full ET-2.60b.zip:patch
 
-MAINTAINER=	benlutz@datacomm.ch
+MAINTAINER=	bar@FreeBSD.org
 COMMENT=	Wolfenstein: Enemy Territory (Linux version)
 
 ONLY_FOR_ARCHS=	i386 amd64
-USES=	zip:infozip
 USE_LINUX=	yes
-NO_CDROM=	Redistribution is limited, see license
+USE_LINUX_APPS=	xorglibs
+USES=		zip:infozip
+NO_CDROM=	Redistribution limited
 ETDIR=		${PREFIX}/lib/${PORTNAME}
-INSTALL_DIR=	${INSTALL} -d -o ${BINOWN} -g ${BINGRP} -m ${BINMODE}
 PATCH_260B_DIR=	Enemy Territory 2.60b
-USE_LINUX_APPS=	dri
+
+OPTIONS_DEFINE=	DOCS NVIDIA_GL
+NVIDIA_GL_DESC=	Use GL driver from nvidia-driver
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MNVIDIA_GL}
+RUN_DEPENDS+=	${LINUXBASE}/usr/lib/libGL.so.1:${PORTSDIR}/x11/nvidia-driver
+.else
+USE_LINUX_APPS+=	dri
+.endif
 
 do-extract:
 	@${MKDIR} ${WRKSRC}
@@ -44,32 +54,25 @@ do-build:
 .endfor
 
 do-install:
-	${INSTALL_DIR} ${STAGEDIR}${ETDIR}
+	${MKDIR} ${STAGEDIR}${ETDIR}
 
 .for DIR in etmain etmain/video pb
-	${INSTALL_DIR} ${STAGEDIR}${ETDIR}/${DIR}
+	${MKDIR} ${STAGEDIR}${ETDIR}/${DIR}
 .endfor
 
-.if !defined(NOPORTDOCS)
-	${INSTALL_DIR} ${STAGEDIR}${DOCSDIR}
+.if ${PORT_OPTIONS:MDOCS}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${RMDIR} ${WRKSRC}/Docs/Help/_private
-	${CP} -R ${WRKSRC}/Docs/* ${STAGEDIR}${DOCSDIR}
-	${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${STAGEDIR}${DOCSDIR}/*
-	${FIND} ${STAGEDIR}${DOCSDIR}/* -type f -print0 | \
-		${XARGS} -0 ${CHMOD} ${SHAREMODE}
-	${FIND} ${STAGEDIR}${DOCSDIR}/* -type d -print0 | \
-		${XARGS} -0 ${CHMOD} ${BINMODE}
+	(cd ${WRKSRC}/Docs && \
+		${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR})
 .for FILE in CHANGES pb/PB_EULA.txt
 	${INSTALL_DATA} ${WRKSRC}/${FILE} ${STAGEDIR}${DOCSDIR}
 .endfor
 .endif
 
-	${CP} -R ${WRKSRC}/pb/htm ${STAGEDIR}${ETDIR}/pb
-	${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${STAGEDIR}${ETDIR}/pb/htm
-	${FIND} ${STAGEDIR}${ETDIR}/pb/htm -type f -print0 | \
-		${XARGS} -0 ${CHMOD} ${SHAREMODE}
-	${FIND} ${STAGEDIR}${ETDIR}/pb/htm -type d -print0 | \
-		${XARGS} -0 ${CHMOD} ${BINMODE}
+	${MKDIR} ${STAGEDIR}${ETDIR}/pb/htm
+	(cd ${WRKSRC}/pb/htm && \
+		${COPYTREE_SHARE} . ${STAGEDIR}${ETDIR}/pb/htm)
 
 	${INSTALL_SCRIPT} ${WRKSRC}/openurl.sh ${STAGEDIR}${ETDIR}
 	${INSTALL_DATA} ${WRKSRC}/etmain/video/etintro.roq \
@@ -87,7 +90,7 @@ do-install:
 .endfor
 	${INSTALL_PROGRAM} ${WRKSRC}/pb/pbweb.x86 ${STAGEDIR}${ETDIR}/pb
 
-	${INSTALL_DIR} ${STAGEDIR}${DATADIR}
+	${MKDIR} ${STAGEDIR}${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/ET.xpm ${STAGEDIR}${DATADIR}
 
 .for FILE in et.x86 etded.x86

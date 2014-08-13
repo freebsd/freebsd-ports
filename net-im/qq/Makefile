@@ -1,9 +1,9 @@
 # Created by: Kai Wang <kaiw27@gmail.com>
-# $FreeBSD$
+# $FreeBSD: head/net-im/qq/Makefile 351192 2014-04-13 09:18:40Z xmj $
 
 PORTNAME=	qq
 DISTVERSION=	v1.0.2-beta1_i386
-PORTREVISION=	3
+PORTREVISION=	2
 CATEGORIES=	net-im
 MASTER_SITES=	http://dl_dir.qq.com/linuxqq/
 DISTNAME=	linuxqq_${DISTVERSION}
@@ -22,18 +22,6 @@ SUB_FILES=	qq.sh
 SUB_LIST+=	QQDIR=${QQDIR}
 
 .include <bsd.port.pre.mk>
-
-pre-fetch:
-	@${ECHO_MSG}	""
-	@${ECHO_MSG}	"==============================================="
-	@${ECHO_MSG}    "QQ requires linux_base-f8 ports infrastructure."
-	@${ECHO_MSG}	"Press 'Ctrl-C' to stop now if you dont't have  "
-	@${ECHO_MSG}	"the right version installed.                   "
-	@${ECHO_MSG}	""
-	@${ECHO_MSG}	"Please read ${PORTSDIR}/UPDATING for how to    "
-	@${ECHO_MSG}	"install the linux_base-f8 ports.               "
-	@${ECHO_MSG}	"==============================================="
-	@${ECHO_MSG}	""
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/${QQDIR}

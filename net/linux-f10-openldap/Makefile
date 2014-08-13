@@ -1,18 +1,21 @@
 # Created by: peter
-# $FreeBSD: head/net/linux-f10-openldap/Makefile 340722 2014-01-22 17:00:46Z mat $
+# $FreeBSD: head/net/linux-f10-openldap/Makefile 362313 2014-07-20 11:59:59Z rene $
 
 PORTNAME=	openldap
 PORTVERSION=	2.4.12
-PORTREVISION=	2
+PORTREVISION=	1
 CATEGORIES=	net linux
 MASTER_SITES=	CRITICAL/rpm/${LINUX_RPM_ARCH}/fedora/${LINUX_DIST_VER}
+PKGNAMEPREFIX=	linux-f10-
+DISTNAME=	${PORTNAME}-${PORTVERSION}-${RPMVERSION}
 
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	Lightweight Directory Access Protocol libraries (Linux Fedora 10)
 
-USE_LINUX=	f10
-USE_LINUX_RPM=	yes
+FORBIDDEN=	http://www.freshports.org/vuxml.php?vid=abad20bf-c1b4-11e3-a5ac-001b21614864
 
+USE_LINUX_RPM=	yes
+LINUX_DIST_VER=	10
 RPMVERSION=	1.fc10
 USE_LDCONFIG=	yes
 DESCR=	${.CURDIR}/../openldap24-server/pkg-descr

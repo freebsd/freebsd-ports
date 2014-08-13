@@ -1,5 +1,5 @@
 # Created by: Igor Pokrovsky <tiamat@comset.net>
-# $FreeBSD$
+# $FreeBSD: head/games/linux-nwserver/Makefile 351187 2014-04-13 07:51:57Z xmj $
 
 PORTNAME=	nwserver
 PORTVERSION=	1.32
@@ -9,8 +9,8 @@ MASTER_SITES=	http://nwdownloads.bioware.com/neverwinternights/linux/${PORTVERSI
 PKGNAMEPREFIX=	linux-
 DISTNAME=	linuxserver${PORTVERSION:S/.//}
 
-MAINTAINER=	apeiron@coitusmentis.info
-COMMENT=	Neverwinter Nights Linux (x86) Dedicated Server
+MAINTAINER=	ports@freebsd.org
+COMMENT=	Neverwinter Nights Linux Dedicated Server
 
 OPTIONS_DEFINE=	DOCS
 

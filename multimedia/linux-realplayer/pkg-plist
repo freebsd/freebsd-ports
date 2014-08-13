@@ -1,5 +1,4 @@
 bin/realplay
-lib/RealPlayer/LICENSE
 lib/RealPlayer/README
 lib/RealPlayer/codecs/amrn.so
 lib/RealPlayer/codecs/amrw.so
@@ -231,9 +230,6 @@ lib/linux-mozilla/plugins/nphelix.xpt
 %%ICONS%%share/icons/hicolor/48x48/mimetypes/mime-video-ogg_48x48.png
 %%ICONS%%share/icons/hicolor/48x48/mimetypes/mime-video-rv_48x48.png
 %%ICONS%%share/icons/hicolor/48x48/mimetypes/mime-video-swf_48x48.png
-%%GNOME%%@dirrmtry share/application-registry
-%%GNOME%%@dirrmtry share/mime-info
-%%GNOME%%@dirrmtry share/pixmaps
 %%ICONS%%@dirrmtry share/icons/hicolor/48x48/apps
 %%ICONS%%@dirrmtry share/icons/hicolor/48x48/mimetypes
 %%ICONS%%@dirrmtry share/icons/hicolor/48x48
@@ -245,7 +241,8 @@ lib/linux-mozilla/plugins/nphelix.xpt
 %%ICONS%%@dirrmtry share/icons/hicolor/16x16/apps
 %%ICONS%%@dirrmtry share/icons/hicolor/16x16
 %%ICONS%%@dirrmtry share/icons/hicolor
-@cwd %%LINUXBASE%%
+%%ICONS%%@dirrmtry share/icons
+%%NLS%%@cwd %%LINUXBASE%%
 %%NLS%%usr/share/locale/de/LC_MESSAGES/realplay.mo
 %%NLS%%usr/share/locale/es/LC_MESSAGES/realplay.mo
 %%NLS%%usr/share/locale/fr/LC_MESSAGES/realplay.mo
@@ -257,3 +254,30 @@ lib/linux-mozilla/plugins/nphelix.xpt
 %%NLS%%usr/share/locale/pt_BR/LC_MESSAGES/realplay.mo
 %%NLS%%usr/share/locale/zh_CN/LC_MESSAGES/realplay.mo
 %%NLS%%usr/share/locale/zh_TW/LC_MESSAGES/realplay.mo
+%%NLS%%@dirrmtry usr/share/locale/de/LC_MESSAGES
+%%NLS%%@dirrmtry usr/share/locale/de
+%%NLS%%@dirrmtry usr/share/locale/es/LC_MESSAGES
+%%NLS%%@dirrmtry usr/share/locale/es
+%%NLS%%@dirrmtry usr/share/locale/fr/LC_MESSAGES
+%%NLS%%@dirrmtry usr/share/locale/fr
+%%NLS%%@dirrmtry usr/share/locale/hi/LC_MESSAGES
+%%NLS%%@dirrmtry usr/share/locale/hi
+%%NLS%%@dirrmtry usr/share/locale/it/LC_MESSAGES
+%%NLS%%@dirrmtry usr/share/locale/it
+%%NLS%%@dirrmtry usr/share/locale/ja/LC_MESSAGES
+%%NLS%%@dirrmtry usr/share/locale/ja
+%%NLS%%@dirrmtry usr/share/locale/ko/LC_MESSAGES
+%%NLS%%@dirrmtry usr/share/locale/ko
+%%NLS%%@dirrmtry usr/share/locale/pl/LC_MESSAGES
+%%NLS%%@dirrmtry usr/share/locale/pl
+%%NLS%%@dirrmtry usr/share/locale/pt_BR/LC_MESSAGES
+%%NLS%%@dirrmtry usr/share/locale/pt_BR
+%%NLS%%@dirrmtry usr/share/locale/zh_CN/LC_MESSAGES
+%%NLS%%@dirrmtry usr/share/locale/zh_CN
+%%NLS%%@dirrmtry usr/share/locale/zh_TW/LC_MESSAGES
+%%NLS%%@dirrmtry usr/share/locale/zh_TW
+%%NLS%%@dirrmtry usr/share/locale
+%%NLS%%@dirrmtry usr/share
+%%NLS%%@dirrmtry usr
+%%NLS%%@unexec rmdir "%%LINUXBASE%%" >/dev/null 2>&1 || :
+%%NLS%%@unexec rmdir "/compat" >/dev/null 2>&1 || :

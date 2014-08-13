@@ -72,6 +72,7 @@ lib/edith/help/trouble.html
 lib/edith/help/undoredo.html
 lib/edith/help/welcome.html
 lib/edith/help/windowsmenu.html
+man/man1/edith.1.gz
 @dirrm lib/edith/bin
 @dirrm lib/edith/defaults
 @dirrm lib/edith/help
