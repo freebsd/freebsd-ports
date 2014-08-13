@@ -8,7 +8,6 @@ CATEGORIES=	www net
 MASTER_SITES=	http://www.apsis.ch/pound/ \
 		ftp://ftp.nuug.no/pub/anders/distfiles/
 DISTNAME=	Pound-${PORTVERSION}
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Reverse proxy, load balancer and HTTP(S) frontend for web servers
@@ -16,44 +15,44 @@ COMMENT=	Reverse proxy, load balancer and HTTP(S) frontend for web servers
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/GPL.txt
 
+USES=		tar:tgz
 GNU_CONFIGURE=	yes
 USE_OPENSSL=	yes
 USE_RC_SUBR=	${PORTNAME}
 
 SUB_LIST=	NAME=${PORTNAME}
 
-MAN8=	pound.8 poundctl.8
-
 OPTIONS_DEFINE=	MSDAV PCRE
-OPTIONS_DEFAULT=	PCRE
+OPTIONS_DEFAULT=PCRE
 MSDAV_DESC=	Microsoft WebDAV extension support
 
-CONFIGURE_ARGS=	--disable-tcmalloc --disable-hoard
-PLIST_FILES=	sbin/pound sbin/poundctl
+PCRE_CONFIGUE_ENABLE=	pcreposix
+MSDAV_CONFIGURE_ENABLE=	msdav
+CONFIGURE_ARGS=		--disable-tcmalloc --disable-hoard
+
+PLIST_FILES=	sbin/pound \
+		sbin/poundctl \
+		man/man8/pound.8.gz \
+		man/man8/poundctl.8.gz
 PORTDOCS=	README FAQ CHANGELOG
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MMSDAV}
-CONFIGURE_ARGS+=	--enable-msdav
-.endif
 
 .if ${PORT_OPTIONS:MPCRE}
 LIB_DEPENDS+=		libpcre.so:${PORTSDIR}/devel/pcre
-CFLAGS+=		"-I${LOCALBASE}/include"
-CPPFLAGS+=		"-I${LOCALBASE}/include"
-LDFLAGS+=		"-L${LOCALBASE}/lib"
-.else
-CONFIGURE_ARGS+=	--disable-pcreposix
+CFLAGS+=		-I${LOCALBASE}/include
+CPPFLAGS+=		-I${LOCALBASE}/include
+LDFLAGS+=		-L${LOCALBASE}/lib
 .endif
 
-post-install:
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/pound ${WRKSRC}/poundctl \
+		${STAGEDIR}${PREFIX}/sbin
+	${INSTALL_MAN} ${WRKSRC}/pound.8 ${WRKSRC}/poundctl.8 \
+		${STAGEDIR}${MANPREFIX}/man/man8
 .if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-.for f in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
-.endfor
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
