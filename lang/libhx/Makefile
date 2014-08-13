@@ -3,6 +3,7 @@
 
 PORTNAME=	libHX
 PORTVERSION=	3.14.1
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	SF/${PORTNAME:tl}/${PORTNAME}/${PORTVERSION}
 
@@ -12,11 +13,11 @@ COMMENT=	C/C++ library with common data structures and functions
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-USES=		tar:xz
+USES=		libtool tar:xz
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
-USE_AUTOTOOLS=	libtool
-CONFIGURE_ARGS+=--with-pkgconfigdir=${LOCALBASE}/libdata/pkgconfig
+CONFIGURE_ARGS+=--with-pkgconfigdir=${PREFIX}/libdata/pkgconfig
+INSTALL_TARGET=	install-strip
 
 OPTIONS_DEFINE=	DOCS
 
