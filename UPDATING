@@ -11,14 +11,20 @@ you update your ports collection, before attempting any port upgrades.
 
   The Glorious Glasgow Haskell Compiler has been updated to version
   7.8.3 and Haskell Platform to 2014.2.0.0.  Hence it is recommended to
-  rebuild or reinstall all the dependent ports by one of the following
-  commands:
+  rebuild or reinstall all the dependent ports and the lang/ghc port
+  itself by one of the following commands:
 
   # portmaster -w -r ghc
     or
   # portupgrade -fr lang/ghc
-    or
-  # pkg upgrade
+
+  If you use pkg(8) then it is just safer to remove all the GHC-dependent
+  packages along with GHC and reinstall everything from scratch.
+  Something alone these lines may work:
+
+  # pkg query "%ro" > ghc-pkgs.txt
+  # pkg delete -y lang/ghc
+  # pkg install -y `cat ghc-pkgs.txt | grep -Ev "/hs-(haskeline|terminfo|transformers|xhtml)"
 
 20140803:
   AFFECTS: users of security/p5-openxpki
