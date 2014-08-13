@@ -163,6 +163,7 @@ share/applications/freeciv-server.desktop
 %%DATADIR%%/civ2.serv
 %%X11%%@unexec ggz-config --remove --modfile %D/%%DATADIR%%/civclient.dsc
 %%X11%%%%DATADIR%%/civclient.dsc
+%%X11%%etc/ggz.modules
 %%X11%%@exec ggz-config --install --modfile %D/%%DATADIR%%/civclient.dsc
 %%DATADIR%%/default/ai_effects.ruleset
 %%DATADIR%%/default/default.lua
@@ -3342,18 +3343,6 @@ share/icons/hicolor/64x64/apps/freeciv-server.png
 %%X11%%@dirrm %%DATADIR%%/wonders
 @dirrmtry %%DATADIR%%
 @dirrmtry share/appdata
-@dirrmtry share/icons/hicolor/64x64/apps
-@dirrmtry share/icons/hicolor/64x64
-@dirrmtry share/icons/hicolor/48x48/apps
-@dirrmtry share/icons/hicolor/48x48
-@dirrmtry share/icons/hicolor/32x32/apps
-@dirrmtry share/icons/hicolor/32x32
-@dirrmtry share/icons/hicolor/16x16/apps
-@dirrmtry share/icons/hicolor/16x16
-@dirrmtry share/icons/hicolor/128x128/apps
-@dirrmtry share/icons/hicolor/128x128
-@dirrmtry share/icons/hicolor
-@dirrmtry share/icons
 %%NLS%%@dirrm share/locale/gd/LC_MESSAGES
 %%NLS%%@dirrm share/locale/gd
 %%PORTDOCS%%@dirrmtry %%DOCSDIR%%
