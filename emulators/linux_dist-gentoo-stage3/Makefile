@@ -1,13 +1,16 @@
 # $FreeBSD$
 
 PORTNAME=	gentoo-stage3
-PORTVERSION=	20121213
+PORTVERSION=	20140812
 CATEGORIES=	emulators linux
 MASTER_SITES=	${MASTER_SITE_GENTOO}
 MASTER_SITE_SUBDIR=	releases/x86/autobuilds/current-stage3$-{GENTOO_OPTIMIZED}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Files from Gentoo distribution, for Linux compatibility
+
+LICENSE=	GPLv2 GPLv3
+LICENSE_COMB=	multi
 
 RESTRICTED=	binaries licensed under GNU GPL without accompanying source
 
@@ -17,7 +20,7 @@ NO_BUILD=		YES
 ONLY_FOR_ARCHS=		i386 amd64
 GENTOO_OPTIMIZED?=	i486
 SUB_FILES+=		pkg-message pkg-install pkg-deinstall
-SUB_LIST+=		PREFIX_SUBDIR="${PREFIX_SUBDIR}"
+SUB_LIST+=		PREFIX_SUBDIR="${PREFIX_SUBDIR}" STAGEDIR="${STAGEDIR}"
 PLIST_SUB+=		PREFIX_SUBDIR="${PREFIX_SUBDIR}"
 PLIST=			${PKGDIR}/pkg-plist.${GENTOO_OPTIMIZED}
 PKGMESSAGE=		${WRKDIR}/pkg-message
@@ -37,7 +40,6 @@ PKGNAMEPREFIX=	linux_dist-
 PREFIX_SUBDIR=	${PORTNAME}/
 .endif
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if !defined(PACKAGE_BUILDING) || (defined(PACKAGE_BUILDING) && !defined(LINUX_OSRELEASE) )
@@ -93,28 +95,28 @@ pre-fetch:
 	@${ECHO_MSG} ""
 
 do-install:
-	@${MKDIR} ${PREFIX}/${PREFIX_SUBDIR}
+	@${MKDIR} ${STAGEDIR}${PREFIX}/${PREFIX_SUBDIR}
 	@${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 	@${TAR} --exclude=./dev -xpy --exclude=./proc --exclude=./lib/udev \
 		--exclude=./lib/udev-state \
-		 -C ${PREFIX}/${PREFIX_SUBDIR} \
+		 -C ${STAGEDIR}${PREFIX}/${PREFIX_SUBDIR} \
 		-f ${DISTDIR}/${DIST_SUBDIR}/${DISTFILES}
-	@${CP} -p /etc/resolv.conf ${PREFIX}/${PREFIX_SUBDIR}/etc/
-	@${FIND} ${PREFIX}/${PREFIX_SUBDIR}bin ${PREFIX}/${PREFIX_SUBDIR}sbin/ \
-		${PREFIX}/${PREFIX_SUBDIR}usr/bin ${PREFIX}/${PREFIX_SUBDIR}/usr/sbin \
+	@${CP} -p /etc/resolv.conf ${STAGEDIR}${PREFIX}/${PREFIX_SUBDIR}/etc/
+	@${FIND} ${STAGEDIR}${PREFIX}/${PREFIX_SUBDIR}bin ${STAGEDIR}${PREFIX}/${PREFIX_SUBDIR}sbin/ \
+		${STAGEDIR}${PREFIX}/${PREFIX_SUBDIR}usr/bin ${STAGEDIR}${PREFIX}/${PREFIX_SUBDIR}/usr/sbin \
 		-type f -print0 | ${XARGS} -0 ${FILE} \
 		| ${GREP} ELF | ${CUT} -d : -f 1 | ${XARGS} ${BRANDELF} -t Linux
-	@${BRANDELF} -t Linux ${PREFIX}/${PREFIX_SUBDIR}/lib/ld-*.so
+	@${BRANDELF} -t Linux ${STAGEDIR}${PREFIX}/${PREFIX_SUBDIR}/lib/ld-*.so
 	@${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 	@${CAT} ${PKGMESSAGE}
 
 plist:
 	${TOUCH} pkg-plist.new
-	${FIND} /usr/local/gentoo-stage3 -type f -o -type l | ${SORT} | \
-		${SED} 's|/usr/local/gentoo-stage3/|%%PREFIX_SUBDIR%%|g' >>pkg-plist.new
-	${FIND} /usr/local/gentoo-stage3 -type d | ${SORT} -r | \
-		${SED} 's|/usr/local/gentoo-stage3/|@dirrm %%PREFIX_SUBDIR%%|g' | \
-		${GREP} -v '^/usr/local/gentoo-stage3$$' >>pkg-plist.new
+	${FIND} ${PREFIX}/${PREFIX_SUBDIR} -type f -o -type l | ${SORT} | \
+		${SED} 's|${PREFIX}/${PREFIX_SUBDIR}|%%PREFIX_SUBDIR%%|g' >>pkg-plist.new
+	${FIND} ${PREFIX}/${PREFIX_SUBDIR} -type d | ${SORT} -r | \
+		${SED} 's|${PREFIX}/${PREFIX_SUBDIR}|@dirrm %%PREFIX_SUBDIR%%|g' | \
+		${GREP} -v '^${PREFIX}/${PREFIX_SUBDIR}$$' >>pkg-plist.new
 	${ECHO_CMD} "@dirrmtry %%PREFIX_SUBDIR%%" >>pkg-plist.new
 
 update-port:
