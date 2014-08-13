@@ -1,9 +1,9 @@
 etc/whoson.conf.sample
 include/whoson.h
 lib/libwhoson.a
-lib/libwhoson.la
 lib/libwhoson.so
 lib/libwhoson.so.0
+lib/libwhoson.so.0.0.0
 man/man3/whoson.3.gz
 man/man3/wso_login.3.gz
 man/man3/wso_logout.3.gz
