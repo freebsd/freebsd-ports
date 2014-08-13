@@ -1,0 +1,18 @@
+--- pixmaps/Makefile.in.orig	2014-08-13 10:05:34.480008364 +0800
++++ pixmaps/Makefile.in	2014-08-13 10:05:56.990002894 +0800
+@@ -75,12 +75,12 @@ Makefile: $(top_builddir)/config.status 
+ 
+ install-pixmapDATA: $(pixmap_DATA)
+ 	$(NORMAL_INSTALL)
+-	$(mkinstalldirs) $(pixmapdir)
++	$(mkinstalldirs) $(DESTDIR)$(pixmapdir)
+ 	list="$(pixmap_DATA)"; for p in $$list; do \
+ 	  if test -f $(srcdir)/$$p; then \
+-	    $(INSTALL_DATA) $(srcdir)/$$p $(pixmapdir)/$$p; \
++	    $(INSTALL_DATA) $(srcdir)/$$p $(DESTDIR)$(pixmapdir)/$$p; \
+ 	  else if test -f $$p; then \
+-	    $(INSTALL_DATA) $$p $(pixmapdir)/$$p; \
++	    $(INSTALL_DATA) $$p $(DESTDIR)$(pixmapdir)/$$p; \
+ 	  fi; fi; \
+ 	done
+ 

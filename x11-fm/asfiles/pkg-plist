@@ -221,7 +221,7 @@ include/pixmaps/Workshop.xpm
 include/pixmaps/interface.xpm
 include/pixmaps/PDFOmni.xpm
 lib/X11/app-defaults/Files.ad
-@unexec rm -rf %B/Files
+man/man1/files.1.gz
 share/OffiX/FilesMagic
 share/OffiX/Filesrc
 @dirrm share/OffiX
