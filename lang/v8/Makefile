@@ -20,13 +20,15 @@ MAKE_ARGS=	library=shared
 MAKE_ENV=	CC.host=${CC} CXX.host=${CXX} LINK.host=${CXX} LINK.target=${CXX}
 USE_LDCONFIG=	yes
 USE_PYTHON=	2
-USES=		compiler execinfo gmake tar:xz
+USES=		compiler cpe execinfo gmake tar:xz
+
+CPE_VENDOR=	google
 
 .include <bsd.port.pre.mk>
 
 .if ${COMPILER_TYPE} == clang
-MAKE_ENV+=	LINK=clang++
 CFLAGS+=	-Wno-unused-private-field
+MAKE_ENV+=	LINK=clang++
 .if ${COMPILER_VERSION} >= 33
 CFLAGS+=	-Wno-nested-anon-types -Wno-unused-function
 .if ${COMPILER_VERSION} >= 34
