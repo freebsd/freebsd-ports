@@ -3,7 +3,7 @@
 
 PORTNAME=	pound
 PORTVERSION=	2.6
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www net
 MASTER_SITES=	http://www.apsis.ch/pound/ \
 		ftp://ftp.nuug.no/pub/anders/distfiles/
@@ -22,7 +22,7 @@ USE_RC_SUBR=	${PORTNAME}
 
 SUB_LIST=	NAME=${PORTNAME}
 
-OPTIONS_DEFINE=	MSDAV PCRE
+OPTIONS_DEFINE=	DOCS MSDAV PCRE
 OPTIONS_DEFAULT=PCRE
 MSDAV_DESC=	Microsoft WebDAV extension support
 
