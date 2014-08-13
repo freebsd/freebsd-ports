@@ -1,5 +1,12 @@
-%%INSTALLDIR%%/.htpasswd.autoindex-dist
-%%INSTALLDIR%%/config.php
+@owner %%WWWOWN%%
+@group %%WWWGRP%%
+@mode 644
+%%INSTALLDIR%%/.htpasswd.autoindex.sample
+@mode 664
+@unexec if cmp -s %D/%%INSTALLDIR%%/config.php.sample %D/%%INSTALLDIR%%/config.php; then rm -f %D/%%INSTALLDIR%%/config.php; fi
+%%INSTALLDIR%%/config.php.sample
+@exec if [ ! -f %D/%%INSTALLDIR%%/config.php ] ; then cp -p %D/%F %B/config.php; fi
+@mode
 %%INSTALLDIR%%/hidden_files
 %%INSTALLDIR%%/change_log.html
 %%INSTALLDIR%%/index.php
@@ -223,6 +230,8 @@
 %%INSTALLDIR%%/templates/simple_image_gallery/table_footer.tpl
 %%INSTALLDIR%%/templates/simple_image_gallery/table_header.tpl
 %%INSTALLDIR%%/templates/readme.html
+@owner
+@group
 @dirrm %%INSTALLDIR%%/classes
 @dirrm %%INSTALLDIR%%/index_icons/apache
 @dirrm %%INSTALLDIR%%/index_icons/kde
