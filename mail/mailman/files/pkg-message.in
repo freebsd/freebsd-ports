@@ -7,10 +7,20 @@ extensive post-installation instructions may be found in:
 
   %%DOCSDIR%%/FreeBSD-post-install-notes
 
-Note (1):  If you use an alternate MTA (meaning "not Sendmail"), you MUST
+Note (1):  - ESPECIALLY RELEVANT FOR USERS OF THE BINARY PACKAGE -
+The FreeBSD binary package is built for use with Sendmail, and it will
+not work properly with alternative MTAs such as Exim or Postfix.
+  In order for Mailman to work with an alternative mailer,
+the port must be installed from source, with proper options configured.
+
+The separate poudriere port can be used to locally build a binary
+package of Mailman with non-default options.
+
+- FOR USERS OF A PORT BUILT FROM SOURCE -
+If you use an alternate MTA (meaning "not Sendmail"), you MUST
 be sure that the correct value of MAIL_GID was used when this port or
 package was built.  You can choose your MTA with the correct MAIL_GID by
-running "make config" in the Mailman port directory.
+running "make config" in the Mailman port's directory.
 
 Note (2):  The entire Mailman installation resides under %%MAILMANDIR%%.
 The command-line scripts necessary to administer Mailman have been
