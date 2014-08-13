@@ -6,13 +6,14 @@ PORTVERSION=	0.13
 CATEGORIES=	www benchmarks ftp ipv6
 MASTER_SITES=	http://dl.fefe.de/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	coco@executive-computing.de
 COMMENT=	High performance webserver with scalability benchmark tools
+
+LICENSE=	GPLv2
 
 BUILD_DEPENDS=	libowfat>=0.29:${PORTSDIR}/devel/libowfat
 
-USE_BZIP2=	yes
-USES=		gmake
+USES=		gmake tar:bzip2
 USE_OPENSSL=	yes
 USE_RC_SUBR=	gatling
 
@@ -23,7 +24,8 @@ MAKEFILE=	GNUmakefile
 
 bin=		dl
 sbin=		gatling
-MAN8=		gatling.8
+GATLING8=	gatling.8
+PLIST_FILES=	man/man8/gatling.8.gz
 PORTDOCS=	CHANGES README README.antidos README.cgi README.ftp \
 		README.htaccess \
 		README.http README.performance README.prefetch README.proxy \
@@ -31,13 +33,13 @@ PORTDOCS=	CHANGES README README.antidos README.cgi README.ftp \
 PORTEXAMPLES=	run-gatling cgi acc getlinks hcat hitprofile matchiprange \
 		referrer
 
-OPTIONS_DEFINE=	BENCHMARKS SMB TLS ZLIB OPTIMIZED_CFLAGS
-OPTIONS_DEFAULT=	BENCHMARKS SMB TLS ZLIB OPTIMIZED_CFLAGS
+OPTIONS_DEFINE=	BENCHMARKS SMB TLS ZLIB OPTIMIZED_CFLAGS DOCS EXAMPLES DEBUG
+OPTIONS_SUB=	yes
+OPTIONS_DEFAULT=	BENCHMARKS SMB TLS ZLIB OPTIMIZED_CFLAGS DOCS EXAMPLES
 BENCHMARKS_DESC=	Install some benchmark programs
 TLS_DESC=		Build and install tlsgatling
 ZLIB_DESC=		Compress outgoing data
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MBENCHMARKS}
@@ -45,8 +47,9 @@ PORTDOCS+=	README.bindbench README.forkbench README.httpbench \
 		README.manymapbench README.mmapbench
 bin+=		bindbench forkbench forksbench httpbench ioerr manymapbench \
 		mktestdata mmapbench pthreadbench
-examples+=	prep run-bench
-MAN1+=		bench.1
+PORTEXAMPLES+=	prep run-bench
+BENCH1=		bench.1
+PLIST_FILES+=	man/man1/bench.1.gz
 MAKE_ENV+=	BENCHMARKS=1
 .endif
 
@@ -81,26 +84,22 @@ STRIP=
 BROKEN=		Does not compile on ia64, powerpc, or sparc64
 .endif
 
-PLIST_FILES=	${bin:S,^,bin/,} ${sbin:S,^,sbin/,} sbin/gatling_wrapper
+PLIST_FILES+=	${bin:S,^,bin/,} ${sbin:S,^,sbin/,} sbin/gatling_wrapper
 
 pre-install:
 	@cd ${WRKSRC} && ${CP} gatling.1 gatling.8
 
 do-install:
-	cd ${WRKSRC} && ${INSTALL_PROGRAM} ${bin} ${PREFIX}/bin
-	cd ${WRKSRC} && ${INSTALL_PROGRAM} ${sbin} ${PREFIX}/sbin
-	${INSTALL_SCRIPT} ${FILESDIR}/gatling_wrapper ${PREFIX}/sbin
-.if ${PORT_OPTIONS:MEXAMPLES}
-	${MKDIR} ${EXAMPLESDIR}
-	cd ${WRKSRC} && ${INSTALL_SCRIPT} ${PORTEXAMPLES} ${EXAMPLESDIR}
+	@cd ${WRKSRC} && ${INSTALL_PROGRAM} ${bin} ${STAGEDIR}${PREFIX}/bin
+	@cd ${WRKSRC} && ${INSTALL_PROGRAM} ${sbin} ${STAGEDIR}${PREFIX}/sbin
+	@${INSTALL_SCRIPT} ${FILESDIR}/gatling_wrapper ${STAGEDIR}${PREFIX}/sbin
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	@cd ${WRKSRC} && ${INSTALL_SCRIPT} ${PORTEXAMPLES} ${STAGEDIR}${EXAMPLESDIR}
+.if !empty(BENCH1)
+	@cd ${WRKSRC} && ${INSTALL_MAN} ${BENCH1} ${STAGEDIR}${MAN1PREFIX}/man/man1
 .endif
-.if !empty(MAN1)
-	cd ${WRKSRC} && ${INSTALL_MAN} ${MAN1} ${MAN1PREFIX}/man/man1
-.endif
-	cd ${WRKSRC} && ${INSTALL_MAN} ${MAN8} ${MAN8PREFIX}/man/man8
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
-.endif
+	@cd ${WRKSRC} && ${INSTALL_MAN} ${GATLING8} ${STAGEDIR}${MAN8PREFIX}/man/man8
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	@cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.post.mk>
