@@ -3,6 +3,7 @@
 
 PORTNAME=	phpbb
 PORTVERSION=	3.0.12
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	https://www.phpbb.com/files/release/
 PKGNAMESUFFIX=	3
