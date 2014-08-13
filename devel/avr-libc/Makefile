@@ -2,14 +2,13 @@
 # $FreeBSD$
 
 PORTNAME=	avr-libc
-PORTVERSION=	1.8.0
-PORTREVISION=	2
+PORTVERSION=	1.8.1
 PORTEPOCH=	1
 CATEGORIES=	devel
 MASTER_SITES=	SAVANNAH
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	joerg@FreeBSD.org
 COMMENT=	C and math library for the Atmel AVR controller family
 
 LICENSE=	BSD2CLAUSE
@@ -40,8 +39,6 @@ BUILD_DEPENDS+=	doxygen:${PORTSDIR}/devel/doxygen \
 
 USES=		gettext:build tar:bzip2 gmake
 HAS_CONFIGURE=	yes
-
-CONFLICTS=	avr-libc-devel-[0-9]*
 
 CONFIGURE_ENV=	CC=avr-gcc PREFIX=${PREFIX}
 .if ${PORT_OPTIONS:MDOCS}
