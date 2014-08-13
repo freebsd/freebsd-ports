@@ -131,7 +131,9 @@
 %%PHPBBDIR%%/cache/.htaccess
 %%PHPBBDIR%%/cache/index.htm
 %%PHPBBDIR%%/common.php
-@sample %%PHPBBDIR%%/config.php.sample
+@unexec if cmp -s %D/%%PHPBBDIR%%/config.php.sample %D/%%PHPBBDIR%%/config.php; then rm -f %D/%%PHPBBDIR%%/config.php; fi
+%%PHPBBDIR%%/config.php.sample
+@exec if [ ! -f %D/%%PHPBBDIR%%/config.php ] ; then cp -p %D/%F %B/config.php; fi
 %%PHPBBDIR%%/cron.php
 %%PHPBBDIR%%/docs/AUTHORS
 %%PHPBBDIR%%/docs/CHANGELOG.html
