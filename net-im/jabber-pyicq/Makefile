@@ -2,6 +2,7 @@
 
 PORTNAME=	pyicq
 PORTVERSION=	0.8.1.5
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	net-im
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
@@ -19,7 +20,7 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/OpenSSL/__init__.py:${PORTSDIR}/security/py-op
 		${PYTHON_SITELIBDIR}/PIL/__init__.py:${PORTSDIR}/graphics/py-imaging
 
 PROJECTHOST=	pyicqt
-OPTIONS_DEFINE=	TWISTED1 MYSQL
+OPTIONS_DEFINE=	DOCS EXAMPLES MYSQL TWISTED
 OPTIONS_DEFAULT=DAEMON
 OPTIONS_SINGLE=	SERVER
 OPTIONS_SINGLE_SERVER=	JABBER JABBERD EJABBERD DAEMON
@@ -27,7 +28,7 @@ JABBER_DESC=	Use with jabberd14 (net-im/jabber)
 JABBERD_DESC=	Use with jabberd 2.x (net-im/jabberd)
 EJABBERD_DESC=	Use with ejabberd (net-im/ejabberd)
 DAEMON_DESC=	Use builtin daemon
-TWISTED1_DESC=	Use old py-twisted 1.x
+TWISTED_DESC=	Use py-twisted
 
 NO_BUILD=	yes
 USE_PYTHON=	yes
@@ -39,9 +40,12 @@ SUB_LIST=	PYTHON_CMD=${LOCAL_PYTHON}
 
 INST_DIR=	${PREFIX}/lib/jabber/${PORTNAME}
 
-PORTDOCS=	NEWS README README.jabberd14 README.jabberd2 README.external
+PORTDOCS=	NEWS README
+PORTEXAMPLES=	db-setup.mysql jabber-pyicq.xml
 
-NO_STAGE=	yes
+MYSQL_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}MySQLdb>=0:${PORTSDIR}/databases/py-MySQLdb
+TWISTED_USES=		twisted:core,web,words
+
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MJABBER}
@@ -73,18 +77,6 @@ SUB_LIST+=	JABBER_REQUIRE="${JABBER_REQUIRE}" \
 		JABBER_PIDDIR="${JABBER_PIDDIR}" \
 		JABBER_SPOOLDIR="${JABBER_SPOOLDIR}"
 
-.if ${PORT_OPTIONS:MTWIESTED1}
-RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/twisted/__init__.py:${PORTSDIR}/devel/py-twisted
-.else
-RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/twisted/__init__.py:${PORTSDIR}/devel/py-twistedCore \
-		${PYTHON_SITELIBDIR}/twisted/web/__init__.py:${PORTSDIR}/www/py-twistedWeb \
-		${PYTHON_SITELIBDIR}/twisted/words/__init__.py:${PORTSDIR}/net-im/py-twistedWords
-.endif
-
-.if ${PORT_OPTIONS:MMYSQL}
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}MySQLdb>=0:${PORTSDIR}/databases/py-MySQLdb
-.endif
-
 SUB_LIST+=	JABBER_USER=${JABBER_USER}
 
 post-patch:
@@ -97,30 +89,18 @@ post-patch:
 		${WRKSRC}/PyICQt.py
 
 do-install:
-	@${MKDIR} ${INST_DIR}/src ${INST_DIR}/data
-	${INSTALL_SCRIPT} ${WRKSRC}/PyICQt.py ${INST_DIR}
-	${INSTALL_DATA} ${WRKSRC}/data/defaultAIMAvatar.png ${INST_DIR}/data
-	${INSTALL_DATA} ${WRKSRC}/data/defaultICQAvatar.png ${INST_DIR}/data
-	@${CP} -Rv ${WRKSRC}/src/* ${INST_DIR}/src
-	@${FIND} ${INST_DIR}/src/ -type d -exec ${CHMOD} 755 "{}" \;
-	@${FIND} ${INST_DIR}/src/ -type f -exec ${CHMOD} 644 "{}" \;
-	@${MKDIR} ${EXAMPLESDIR}/etc
-	${INSTALL_DATA} ${WRKSRC}/config_example.xml ${EXAMPLESDIR}/etc/jabber-pyicq.xml
-	${INSTALL_DATA} ${WRKSRC}/tools/db-setup.mysql ${EXAMPLESDIR}
-	@[ -f ${PREFIX}/etc/jabber-pyicq.xml ] || \
-		${CP} -v ${EXAMPLESDIR}/etc/jabber-pyicq.xml ${PREFIX}/etc/jabber-pyicq.xml
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-. for portdoc in ${PORTDOCS}
-	@if [ -f ${WRKDIR}/${portdoc} ]; then \
-		${INSTALL_DATA} ${WRKDIR}/${portdoc} ${DOCSDIR}/;  \
-	else \
-		${INSTALL_DATA} ${WRKSRC}/${portdoc} ${DOCSDIR}/;  \
-	fi
-. endfor
-.endif
-
-post-install:
-	@${CAT} ${PKGMESSAGE}
+	${MKDIR} ${STAGEDIR}${INST_DIR}/data/ ${STAGEDIR}${INST_DIR}/src/
+	${INSTALL_SCRIPT} ${WRKSRC}/PyICQt.py ${STAGEDIR}${INST_DIR}/
+	${INSTALL_DATA} ${WRKSRC}/data/defaultAIMAvatar.png ${STAGEDIR}${INST_DIR}/data/
+	${INSTALL_DATA} ${WRKSRC}/data/defaultICQAvatar.png ${STAGEDIR}${INST_DIR}/data/
+	${CP} -Rv ${WRKSRC}/src/* ${STAGEDIR}${INST_DIR}/src/
+	${FIND} ${STAGEDIR}${INST_DIR}/src/ -type d -exec ${CHMOD} 755 "{}" \;
+	${FIND} ${STAGEDIR}${INST_DIR}/src/ -type f -exec ${CHMOD} 644 "{}" \;
+	${INSTALL_DATA} ${WRKSRC}/config_example.xml ${STAGEDIR}${PREFIX}/etc/jabber-pyicq.xml.sample
+	${MKDIR} ${STAGEDIR}${DOCSDIR}/
+	cd ${WRKSRC}/ && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}/
+	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/
+	${INSTALL_DATA} ${WRKSRC}/config_example.xml ${STAGEDIR}${EXAMPLESDIR}/jabber-pyicq.xml
+	${INSTALL_DATA} ${WRKSRC}/tools/db-setup.mysql ${STAGEDIR}${EXAMPLESDIR}/
 
 .include <bsd.port.mk>
