@@ -3,6 +3,7 @@
 
 PORTNAME=	log4c
 PORTVERSION=	1.2.3
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	SF
 
@@ -16,8 +17,8 @@ OPTIONS_DEFAULT=EXPAT
 EXPAT_CONFIGURE_WITH=	expat
 EXPAT_LIB_DEPENDS=	libexpat.so:${PORTSDIR}/textproc/expat2
 
-USES=		pathfix
-USE_AUTOTOOLS=	libtool
+USES=		libtool pathfix
+GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include
