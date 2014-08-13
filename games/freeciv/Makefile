@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	freeciv
-PORTVERSION=	2.4.2
-PORTREVISION=	3
+PORTVERSION=	2.4.3
 CATEGORIES=	games
 MASTER_SITES=	SF/freeciv/Freeciv%20${PORTVERSION:R}/${PORTVERSION}
 
@@ -13,9 +12,8 @@ COMMENT=	Free turn-based multiplayer strategy
 RUN_DEPENDS=	hicolor-icon-theme>=0:${PORTSDIR}/misc/hicolor-icon-theme
 LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl
 
-USES=		gettext gmake iconv libtool pkgconfig tar:bzip2
+USES=		gettext gmake iconv libtool pkgconfig tar:bzip2 python
 USE_SQLITE=	yes
-USE_PYTHON=	yes
 USE_AUTOTOOLS=	libltdl
 GNU_CONFIGURE=	yes
 LDFLAGS+=	-L${LOCALBASE}/lib
@@ -63,15 +61,16 @@ PLIST_SUB+=	GTK="@comment "
 .endif
 
 post-patch:
-	@${FIND} ${WRKSRC} -name Makefile.in|${XARGS} ${REINPLACE_CMD} -e \
+	${FIND} ${WRKSRC} -name Makefile.in|${XARGS} ${REINPLACE_CMD} -e \
 		'/pkgdatadir/s|[(]datadir)/@PACKAGE@|(prefix)/${DATADIR_REL}|'
-	@${REINPLACE_CMD} 's/minor=99/minor=0/' ${WRKSRC}/configure
+	${REINPLACE_CMD} 's/minor=99/minor=0/' ${WRKSRC}/configure
 
 post-install:
 .if ${PORT_OPTIONS:MX11}
-	@${INSTALL_DATA} ${WRKSRC}/data/civclient.dsc ${STAGEDIR}${DATADIR}/
-	@cd ${STAGEDIR}/${PREFIX}/bin && ${LN} -s freeciv-gtk2 freeciv-client
+	${INSTALL_DATA} ${WRKSRC}/data/civclient.dsc ${STAGEDIR}${DATADIR}/
+	cd ${STAGEDIR}/${PREFIX}/bin && ${LN} -s freeciv-gtk2 freeciv-client
 .endif
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libfreeciv*.so
+	-${RMDIR} ${STAGEDIR}${PREFIX}/lib/fcai
 
 .include <bsd.port.mk>
