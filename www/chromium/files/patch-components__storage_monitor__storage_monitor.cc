@@ -1,5 +1,5 @@
---- ./components/storage_monitor/storage_monitor.cc.orig	2014-04-30 22:43:01.000000000 +0200
-+++ ./components/storage_monitor/storage_monitor.cc	2014-05-04 14:38:46.000000000 +0200
+--- ./components/storage_monitor/storage_monitor.cc.orig	2014-08-12 21:02:37.000000000 +0200
++++ ./components/storage_monitor/storage_monitor.cc	2014-08-13 09:56:57.000000000 +0200
 @@ -85,6 +85,7 @@
  
  void StorageMonitor::EnsureInitialized(base::Closure callback) {

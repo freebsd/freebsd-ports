@@ -1,6 +1,6 @@
---- ./chrome/common/chrome_paths.cc.orig	2014-04-30 22:42:23.000000000 +0200
-+++ ./chrome/common/chrome_paths.cc	2014-05-04 14:38:50.000000000 +0200
-@@ -440,10 +440,12 @@
+--- ./chrome/common/chrome_paths.cc.orig	2014-08-12 21:02:17.000000000 +0200
++++ ./chrome/common/chrome_paths.cc	2014-08-13 09:57:00.000000000 +0200
+@@ -471,10 +471,12 @@
        if (!base::PathExists(cur))  // We don't want to create this
          return false;
        break;
@@ -14,7 +14,7 @@
  #else
        cur = base::FilePath(FILE_PATH_LITERAL("/etc/chromium/policies"));
  #endif
-@@ -521,7 +523,7 @@
+@@ -552,7 +554,7 @@
  #endif
        break;
  
@@ -23,7 +23,7 @@
      case chrome::DIR_NATIVE_MESSAGING:
  #if defined(OS_MACOSX)
  #if defined(GOOGLE_CHROME_BUILD)
-@@ -547,7 +549,7 @@
+@@ -578,7 +580,7 @@
          return false;
        cur = cur.Append(FILE_PATH_LITERAL("NativeMessagingHosts"));
        break;

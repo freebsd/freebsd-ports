@@ -1,6 +1,6 @@
---- ./third_party/libjingle/libjingle.gyp.orig	2014-04-30 22:43:11.000000000 +0200
-+++ ./third_party/libjingle/libjingle.gyp	2014-05-04 14:38:48.000000000 +0200
-@@ -472,7 +472,7 @@
+--- ./third_party/libjingle/libjingle.gyp.orig	2014-08-12 21:02:51.000000000 +0200
++++ ./third_party/libjingle/libjingle.gyp	2014-08-13 09:56:58.000000000 +0200
+@@ -473,7 +473,7 @@
                ],
              }],
              # TODO(mallinath) - Enable SCTP for iOS.

@@ -1,6 +1,6 @@
---- net/quic/congestion_control/rtt_stats.cc.orig	2014-05-14 21:22:13.000000000 +0200
-+++ net/quic/congestion_control/rtt_stats.cc	2014-05-21 23:32:04.000000000 +0200
-@@ -63,7 +63,7 @@
+--- ./net/quic/congestion_control/rtt_stats.cc.orig	2014-08-12 21:02:38.000000000 +0200
++++ ./net/quic/congestion_control/rtt_stats.cc	2014-08-13 09:56:58.000000000 +0200
+@@ -73,7 +73,7 @@
    } else {
      mean_deviation_ = QuicTime::Delta::FromMicroseconds(
          kOneMinusBeta * mean_deviation_.ToMicroseconds() +

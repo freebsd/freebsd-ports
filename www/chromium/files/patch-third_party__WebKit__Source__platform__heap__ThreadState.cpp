@@ -1,6 +1,6 @@
---- ./third_party/WebKit/Source/heap/ThreadState.cpp.orig	2014-04-30 22:47:13.000000000 +0200
-+++ ./third_party/WebKit/Source/heap/ThreadState.cpp	2014-05-04 14:38:48.000000000 +0200
-@@ -43,13 +43,22 @@
+--- ./third_party/WebKit/Source/platform/heap/ThreadState.cpp.orig	2014-08-12 21:07:16.000000000 +0200
++++ ./third_party/WebKit/Source/platform/heap/ThreadState.cpp	2014-08-13 09:56:58.000000000 +0200
+@@ -45,13 +45,22 @@
  extern "C" void* __libc_stack_end;  // NOLINT
  #endif
  
@@ -24,7 +24,7 @@
          void* base;
          size_t size;
          int error = pthread_attr_getstack(&attr, &base, &size);
-@@ -57,6 +66,9 @@
+@@ -59,6 +68,9 @@
          pthread_attr_destroy(&attr);
          return reinterpret_cast<Address>(base) + size;
      }

@@ -1,6 +1,6 @@
---- ./base/security_unittest.cc.orig	2014-04-30 22:41:43.000000000 +0200
-+++ ./base/security_unittest.cc	2014-05-04 14:38:46.000000000 +0200
-@@ -159,7 +159,7 @@
+--- ./base/security_unittest.cc.orig	2014-08-12 21:01:28.000000000 +0200
++++ ./base/security_unittest.cc	2014-08-13 09:56:56.000000000 +0200
+@@ -160,7 +160,7 @@
  // FAILS_ is too clunky.
  void OverflowTestsSoftExpectTrue(bool overflow_detected) {
    if (!overflow_detected) {
