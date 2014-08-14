@@ -289,5 +289,6 @@ ums:*:979:
 hbase:*:980:
 uvncrep:*:981:
 bro:*:982:
+syncthing:*:983:
 nogroup:*:65533:
 nobody:*:65534:
