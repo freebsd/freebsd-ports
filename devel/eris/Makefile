@@ -3,7 +3,7 @@
 
 PORTNAME=	eris
 PORTVERSION=	1.3.23
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	devel
 MASTER_SITES=	SF/worldforge/Eris%201.4%20%28client%20lib%29/${PORTVERSION}/
 
@@ -19,6 +19,6 @@ LIB_DEPENDS=	libAtlas-0.6.so:${PORTSDIR}/devel/atlas-devel \
 CONFIGURE_ARGS= --disable-silent-rules
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-USES=		pathfix pkgconfig compiler:c++11-lib
+USES=		libtool pathfix pkgconfig compiler:c++11-lib
 
 .include <bsd.port.mk>
