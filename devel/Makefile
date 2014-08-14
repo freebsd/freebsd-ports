@@ -562,7 +562,6 @@
     SUBDIR += glade2
     SUBDIR += glade3
     SUBDIR += glademm
-    SUBDIR += glib-java
     SUBDIR += glib12
     SUBDIR += glib20
     SUBDIR += glib20-reference
