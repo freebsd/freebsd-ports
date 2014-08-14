@@ -1,11 +1,11 @@
---- ./chrome/app/chromium_strings.grd.orig	2014-04-30 22:42:53.000000000 +0200
-+++ ./chrome/app/chromium_strings.grd	2014-05-05 13:13:16.000000000 +0200
-@@ -1115,7 +1115,7 @@
+--- ./chrome/app/chromium_strings.grd.orig	2014-08-12 21:02:25.000000000 +0200
++++ ./chrome/app/chromium_strings.grd	2014-08-13 09:56:56.000000000 +0200
+@@ -1099,7 +1099,7 @@
        </message>
  
        <!-- ProcessSingleton -->
--      <if expr="is_linux">
-+      <if expr="is_linux or is_bsd">
-         <message name="IDS_PROFILE_IN_USE_LINUX" desc="Message shown when the browser cannot start because the profile is in use on a different host.">
+-      <if expr="is_linux or is_macosx">
++      <if expr="is_linux or is_macosx or is_bsd">
+         <message name="IDS_PROFILE_IN_USE_POSIX" desc="Message shown when the browser cannot start because the profile is in use on a different host.">
            The profile appears to be in use by another Chromium process (<ph name="PROCESS_ID">$1<ex>12345</ex></ph>) on another computer (<ph name="HOST_NAME">$2<ex>example.com</ex></ph>). Chromium has locked the profile so that it doesn't get corrupted. If you are sure no other processes are using this profile, you can unlock the profile and relaunch Chromium.
          </message>

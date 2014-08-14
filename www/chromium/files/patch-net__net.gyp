@@ -1,6 +1,6 @@
---- ./net/net.gyp.orig	2014-04-30 22:43:09.000000000 +0200
-+++ ./net/net.gyp	2014-05-04 14:38:48.000000000 +0200
-@@ -1472,9 +1472,10 @@
+--- ./net/net.gyp.orig	2014-08-12 21:02:41.000000000 +0200
++++ ./net/net.gyp	2014-08-13 09:56:57.000000000 +0200
+@@ -277,9 +277,10 @@
                }],
                ['os_bsd==1', {
                  'sources!': [
@@ -12,8 +12,8 @@
                  ],
                },{
                  'dependencies': [
-@@ -2130,7 +2131,7 @@
-         'websockets/websocket_throttle_test.cc',
+@@ -509,7 +510,7 @@
+         '<@(net_test_sources)',
        ],
        'conditions': [
 -        ['os_posix == 1 and OS != "mac" and OS != "ios" and OS != "android"', {
@@ -21,9 +21,9 @@
            'dependencies': [
              'balsa',
              'epoll_server',
-@@ -2413,6 +2414,11 @@
-             '../testing/android/native_test.gyp:native_test_native_code',
-           ]
+@@ -973,6 +974,11 @@
+               'dns/mock_mdns_socket_factory.h'
+             ]
          }],
 +        [ 'os_bsd == 1', {
 +          'sources!': [
@@ -31,5 +31,5 @@
 +          ],
 +        }],
        ],
-       'target_conditions': [
-         # These source files are excluded by default platform rules, but they
+       # TODO(jschuh): crbug.com/167187 fix size_t to int truncations.
+       'msvs_disabled_warnings': [4267, ],

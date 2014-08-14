@@ -1,9 +1,9 @@
---- ./chrome/browser/extensions/api/serial/serial_api.cc.orig	2014-04-30 22:42:00.000000000 +0200
-+++ ./chrome/browser/extensions/api/serial/serial_api.cc	2014-05-04 14:38:46.000000000 +0200
+--- ./chrome/browser/extensions/api/serial/serial_api.cc.orig	2014-08-12 21:01:44.000000000 +0200
++++ ./chrome/browser/extensions/api/serial/serial_api.cc	2014-08-13 09:56:56.000000000 +0200
 @@ -84,7 +84,7 @@
  
  void SerialGetDevicesFunction::Work() {
-   DCHECK(BrowserThread::CurrentlyOn(BrowserThread::FILE));
+   DCHECK_CURRENTLY_ON(BrowserThread::FILE);
 -
 +#if !defined(OS_FREEBSD) //XXX(rene) quick hack
    device::SerialDeviceInfoList devices;

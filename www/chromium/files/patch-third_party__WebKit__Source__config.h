@@ -1,5 +1,5 @@
---- ./third_party/WebKit/Source/config.h.orig	2014-04-30 22:47:23.000000000 +0200
-+++ ./third_party/WebKit/Source/config.h	2014-05-04 14:38:48.000000000 +0200
+--- ./third_party/WebKit/Source/config.h.orig	2014-08-12 21:07:17.000000000 +0200
++++ ./third_party/WebKit/Source/config.h	2014-08-13 09:56:58.000000000 +0200
 @@ -156,6 +156,6 @@
  #define SKIP_STATIC_CONSTRUCTORS_ON_GCC 1
  #endif

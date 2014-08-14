@@ -1,5 +1,5 @@
---- ./chrome/browser/extensions/api/music_manager_private/device_id_linux.cc.orig	2014-04-30 22:42:00.000000000 +0200
-+++ ./chrome/browser/extensions/api/music_manager_private/device_id_linux.cc	2014-05-04 14:38:46.000000000 +0200
+--- ./chrome/browser/extensions/api/music_manager_private/device_id_linux.cc.orig	2014-08-12 21:01:44.000000000 +0200
++++ ./chrome/browser/extensions/api/music_manager_private/device_id_linux.cc	2014-08-13 09:56:56.000000000 +0200
 @@ -4,6 +4,10 @@
  
  #include "chrome/browser/extensions/api/music_manager_private/device_id.h"

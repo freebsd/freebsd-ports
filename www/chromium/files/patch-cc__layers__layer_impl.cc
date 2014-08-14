@@ -1,8 +1,8 @@
---- ./cc/layers/layer_impl.cc.orig	2014-04-30 22:41:25.000000000 +0200
-+++ ./cc/layers/layer_impl.cc	2014-05-04 14:38:46.000000000 +0200
-@@ -1190,21 +1190,23 @@
-   scaled_scroll_bounds.SetSize(scale_factor * scaled_scroll_bounds.width(),
+--- ./cc/layers/layer_impl.cc.orig	2014-08-12 21:03:00.000000000 +0200
++++ ./cc/layers/layer_impl.cc	2014-08-13 09:56:56.000000000 +0200
+@@ -1215,21 +1215,23 @@
                                 scale_factor * scaled_scroll_bounds.height());
+   scaled_scroll_bounds = gfx::ToFlooredSize(scaled_scroll_bounds);
  
 -  gfx::Vector2dF max_offset(
 +  // (rene) prevent name collision with /usr/include/vm/vm_map.h on FreeBSD
