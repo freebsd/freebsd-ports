@@ -3,9 +3,7 @@
 @mode 644
 %%INSTALLDIR%%/.htpasswd.autoindex.sample
 @mode 664
-@unexec if cmp -s %D/%%INSTALLDIR%%/config.php.sample %D/%%INSTALLDIR%%/config.php; then rm -f %D/%%INSTALLDIR%%/config.php; fi
-%%INSTALLDIR%%/config.php.sample
-@exec if [ ! -f %D/%%INSTALLDIR%%/config.php ] ; then cp -p %D/%F %B/config.php; fi
+@sample %%INSTALLDIR%%/config.php.sample
 @mode
 %%INSTALLDIR%%/hidden_files
 %%INSTALLDIR%%/change_log.html
