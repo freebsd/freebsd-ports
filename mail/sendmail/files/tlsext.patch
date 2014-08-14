@@ -1,0 +1,13 @@
+--- sendmail/readcf.c.orig	2014-05-16 22:40:15.000000000 +0200
++++ sendmail/readcf.c	2014-08-14 18:05:59.000000000 +0200
+@@ -124,6 +124,10 @@
+ 		| SSL_OP_NO_TICKET
+ #endif
+ 		;
++#ifdef SSL_OP_TLSEXT_PADDING
++	Srv_SSL_Options &= ~SSL_OP_TLSEXT_PADDING;
++	Clt_SSL_Options &= ~SSL_OP_TLSEXT_PADDING;
++#endif
+ #endif /* STARTTLS */
+ 	if (DontLockReadFiles)
+ 		sff |= SFF_NOLOCK;
