@@ -961,6 +961,7 @@
     SUBDIR += seam-carving-gui
     SUBDIR += seejpeg
     SUBDIR += separate
+    SUBDIR += seq2gif
     SUBDIR += sharpconstruct
     SUBDIR += shiva-collections
     SUBDIR += shotwell
