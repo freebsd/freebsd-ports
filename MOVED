@@ -6410,3 +6410,4 @@ net/rsmb|net/mosquitto|2014-08-13|Superseded by net/mosquitto
 devel/kyua-atf-compat|devel/kyua|2014-08-14|Upstream merged all components into devel/kyua
 devel/kyua-cli|devel/kyua|2014-08-14|Upstream merged all components into devel/kyua
 devel/kyua-testers|devel/kyua|2014-08-14|Upstream merged all components into devel/kyua
+devel/glib-java||2014-08-14|Has expired: Unmaintained, outdated not depend on

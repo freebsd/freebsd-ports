@@ -1,7 +1,0 @@
-************************************************************************
-Libgtk-java was successfully installed.  In order to build and run GLib
-Java applications, you must add the following to your CLASSPATH:
-
-%%JAVAJARDIR%%/glib%%GLIB_API_VERSION%%.jar
-
-************************************************************************
