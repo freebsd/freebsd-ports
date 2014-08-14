@@ -11,7 +11,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-${RPMVERSION}
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	GLib bindings for D-Bus (Linux Fedora 10)
 
-FORBIDDEN=	http://www.freshports.org/vuxml.php?vid=77bb0541-c1aa-11e3-a5ac-001b21614864
+#FORBIDDEN=	http://www.freshports.org/vuxml.php?vid=77bb0541-c1aa-11e3-a5ac-001b21614864
 
 USE_LINUX_RPM=	yes
 USE_LINUX_APPS=	dbuslibs expat

@@ -11,7 +11,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-${RPMVERSION}
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	GNU Transport Layer Security library
 
-FORBIDDEN=	http://www.freshports.org/vuxml.php?vid=f645aa90-a3e8-11e3-a422-3c970e169bc2
+#FORBIDDEN=	http://www.freshports.org/vuxml.php?vid=f645aa90-a3e8-11e3-a422-3c970e169bc2
 
 USE_LINUX_RPM=	yes
 USE_LINUX_APPS=	libtasn1 libgcrypt libgpg-error

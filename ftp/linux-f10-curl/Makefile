@@ -18,7 +18,7 @@ ALWAYS_KEEP_DISTFILES=	YES
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	Command line tool for transferring files with URL syntax (Linux Fedora 10)
 
-FORBIDDEN=	http://www.freshports.org/vuxml.php?vid=9aecb94c-c1ad-11e3-a5ac-001b21614864
+#FORBIDDEN=	http://www.freshports.org/vuxml.php?vid=9aecb94c-c1ad-11e3-a5ac-001b21614864
 
 CONFLICTS=	linux-curl-[0-9]* linux-f8-curl-[0-9]*
 
