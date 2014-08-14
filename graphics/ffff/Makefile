@@ -14,6 +14,7 @@ COMMENT=	Fast Mandelbrot fractal generator
 USE_XORG=	x11 xmu xext
 USE_GL=		gl glut
 USES=		dos2unix zip
+USE_GCC=	any
 
 SOURCE=		FFFF3 FragmentProgram FragmentProgramARB10 GPUProgram \
 		PixelBuffer VertexProgram VertexProgramATI VertexProgramNV \
@@ -29,7 +30,6 @@ PLIST_FILES=	bin/ffff
 # contains x86 assembler
 ONLY_FOR_ARCHS=	i386
 
-NO_STAGE=	yes
 do-build:
 .for f in ${SOURCE}
 	${CXX} ${CXXFLAGS} -c ${WRKSRC}/${f}.cpp -o ${WRKSRC}/${f}.obj
@@ -37,6 +37,6 @@ do-build:
 	${CXX} ${LDFLAGS} ${SOURCE:C/(.*)/${WRKSRC}\/\1.obj/} -o ${WRKSRC}/${PORTNAME}
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>
