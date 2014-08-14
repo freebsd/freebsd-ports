@@ -17,12 +17,9 @@ USES=		fortran
 MAKE_JOBS_UNSAFE=	yes
 NO_WRKSUBDIR=		yes
 
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
-
 FFLAGS+=	-fno-automatic
-
 PORTDOCS=	doc_en.pdf doc_ger.pdf install.pdf
+OPTIONS_DEFINE=	DOCS
 
 post-patch:
 	@${REINPLACE_CMD} -E \
@@ -48,11 +45,9 @@ post-patch:
 				${WRKSRC}/bin/sceptre
 
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/install.pdf ${DOCSDIR}
-	cd ${WRKSRC}/doc ; ${INSTALL_DATA} ${PORTDOCS:Mdoc_*} ${DOCSDIR}
-.endif
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/install.pdf ${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC}/doc ; ${INSTALL_DATA} ${PORTDOCS:Mdoc_*} ${STAGEDIR}${DOCSDIR}
 
 .if !defined(BATCH)
 check test: install
@@ -60,4 +55,4 @@ check test: install
 	do ${WRKSRC}/bin/sceptre $${s%.d} ; done
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
