@@ -1,0 +1,24 @@
+--- ./etc/Makefile.in.orig	2007-02-16 08:55:15.000000000 +0100
++++ ./etc/Makefile.in	2014-08-14 19:47:04.000000000 +0200
+@@ -233,8 +233,8 @@
+ 	@list='$(pkgsysconf_DATA)'; for p in $$list; do \
+ 	  if test -f "$$p"; then d=; else d="$(srcdir)/"; fi; \
+ 	  f=$(am__strip_dir) \
+-	  echo " $(pkgsysconfDATA_INSTALL) '$$d$$p' '$(DESTDIR)$(pkgsysconfdir)/$$f'"; \
+-	  $(pkgsysconfDATA_INSTALL) "$$d$$p" "$(DESTDIR)$(pkgsysconfdir)/$$f"; \
++	  echo " $(pkgsysconfDATA_INSTALL) '$$d$$p' '$(DESTDIR)$(pkgsysconfdir)/$$f.sample'"; \
++	  $(pkgsysconfDATA_INSTALL) "$$d$$p" "$(DESTDIR)$(pkgsysconfdir)/$$f.sample"; \
+ 	done
+ 
+ uninstall-pkgsysconfDATA:
+@@ -386,8 +386,8 @@
+ 
+ install-data-local: servers
+ 	$(mkinstalldirs) $(DESTDIR)$(pkgsysconfdir); \
+-        echo " $(INSTALL) -m 600 $(srcdir)/servers $(DESTDIR)$(pkgsysconfdir)/servers"; \
+-        $(INSTALL) -m 600 $(srcdir)/servers $(DESTDIR)$(pkgsysconfdir)/servers
++        echo " $(INSTALL) -m 600 $(srcdir)/servers $(DESTDIR)$(pkgsysconfdir)/servers.sample"; \
++        $(INSTALL) -m 600 $(srcdir)/servers $(DESTDIR)$(pkgsysconfdir)/servers.sample
+ 
+ uninstall-local:
+ 	rm -f $(pkgsysconfdir)/servers
