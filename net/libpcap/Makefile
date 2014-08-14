@@ -20,18 +20,6 @@ MANPREFIX=	${PREFIX}/share
 PKGMESSAGE=	${FILESDIR}/pkg-message-base
 .endif
 
-
-MLINKS=		pcap_datalink_val_to_name.3 \
-		pcap_datalink_val_to_description.3 \
-		pcap_dump_open.3 pcap_dump_fopen.3 \
-		pcap_geterr.3 pcap_perror.3 \
-		pcap_inject.3 pcap_sendpacket.3 \
-		pcap_loop.3 pcap_dispatch.3 \
-		pcap_major_version.3 pcap_minor_version.3 \
-		pcap_next_ex.3 pcap_next.3 \
-		pcap_open_offline.3 pcap_fopen_offline.3 \
-		pcap_setnonblock.3 pcap_getnonblock.3
-
 PLIST_FILES+=	bin/pcap-config \
 		include/pcap/bluetooth.h \
 		include/pcap/bpf.h \
@@ -147,5 +135,7 @@ CFLAGS+=	-DHAVE_DEVICE_CLONING=1
 .if ${ARCH} == "amd64" || ${ARCH} == "sparc64"
 CFLAGS+=	-fPIC
 .endif
+
+CONFIGURE_ARGS+=	--enable-dbus=no
 
 .include <bsd.port.post.mk>
