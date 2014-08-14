@@ -12,4 +12,4 @@ implementation of test cases in a variety of programming languages.
 
 In effect, Kyua is intended to be a replacement for ATF.
 
-WWW: https://code.google.com/p/kyua/
+WWW: https://github.com/jmmv/kyua/
