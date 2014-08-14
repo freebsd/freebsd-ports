@@ -1,1 +1,229 @@
-@comment This packing list left intentionally empty
+bin/kyua
+etc/kyua/kyua.conf
+libexec/kyua-atf-tester
+libexec/kyua-plain-tester
+libexec/kyua-tap-tester
+man/man1/kyua-about.1.gz
+man/man1/kyua-atf-tester.1.gz
+man/man1/kyua-config.1.gz
+man/man1/kyua-db-exec.1.gz
+man/man1/kyua-db-migrate.1.gz
+man/man1/kyua-debug.1.gz
+man/man1/kyua-help.1.gz
+man/man1/kyua-list.1.gz
+man/man1/kyua-plain-tester.1.gz
+man/man1/kyua-report-html.1.gz
+man/man1/kyua-report-junit.1.gz
+man/man1/kyua-report.1.gz
+man/man1/kyua-tap-tester.1.gz
+man/man1/kyua-test.1.gz
+man/man1/kyua-tester.1.gz
+man/man1/kyua.1.gz
+man/man5/kyua-tester-list.5.gz
+man/man5/kyua-tester-result.5.gz
+man/man5/kyua.conf.5.gz
+man/man5/kyuafile.5.gz
+man/man7/kyua-atf-interface.7.gz
+man/man7/kyua-build-root.7.gz
+man/man7/kyua-plain-interface.7.gz
+man/man7/kyua-results-files.7.gz
+man/man7/kyua-tap-interface.7.gz
+man/man7/kyua-test-filters.7.gz
+%%DATADIR%%/misc/context.html
+%%DATADIR%%/misc/index.html
+%%DATADIR%%/misc/report.css
+%%DATADIR%%/misc/test_result.html
+%%DATADIR%%/store/migrate_v1_v2.sql
+%%DATADIR%%/store/migrate_v2_v3.sql
+%%DATADIR%%/store/schema_v3.sql
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Kyuafile.top
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/kyua.conf
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
+%%TEST%%tests/Kyuafile
+%%TEST%%tests/kyua/Kyuafile
+%%TEST%%tests/kyua/bootstrap/Kyuafile
+%%TEST%%tests/kyua/bootstrap/atf_helpers
+%%TEST%%tests/kyua/bootstrap/plain_helpers
+%%TEST%%tests/kyua/bootstrap/testsuite
+%%TEST%%tests/kyua/cli/Kyuafile
+%%TEST%%tests/kyua/cli/cmd_about_test
+%%TEST%%tests/kyua/cli/cmd_config_test
+%%TEST%%tests/kyua/cli/cmd_db_exec_test
+%%TEST%%tests/kyua/cli/cmd_debug_test
+%%TEST%%tests/kyua/cli/cmd_help_test
+%%TEST%%tests/kyua/cli/cmd_list_test
+%%TEST%%tests/kyua/cli/cmd_test_test
+%%TEST%%tests/kyua/cli/common_test
+%%TEST%%tests/kyua/cli/config_test
+%%TEST%%tests/kyua/cli/main_test
+%%TEST%%tests/kyua/engine/Kyuafile
+%%TEST%%tests/kyua/engine/config_test
+%%TEST%%tests/kyua/engine/context_test
+%%TEST%%tests/kyua/engine/drivers/Kyuafile
+%%TEST%%tests/kyua/engine/drivers/list_tests_helpers
+%%TEST%%tests/kyua/engine/drivers/list_tests_test
+%%TEST%%tests/kyua/engine/drivers/scan_results_test
+%%TEST%%tests/kyua/engine/exceptions_test
+%%TEST%%tests/kyua/engine/filters_test
+%%TEST%%tests/kyua/engine/kyuafile_test
+%%TEST%%tests/kyua/engine/metadata_test
+%%TEST%%tests/kyua/engine/report_junit_test
+%%TEST%%tests/kyua/engine/test_case_atf_helpers
+%%TEST%%tests/kyua/engine/test_case_plain_helpers
+%%TEST%%tests/kyua/engine/test_case_test
+%%TEST%%tests/kyua/engine/test_program_test
+%%TEST%%tests/kyua/engine/test_result_test
+%%TEST%%tests/kyua/engine/testers_test
+%%TEST%%tests/kyua/examples/Kyuafile
+%%TEST%%tests/kyua/examples/syntax_test
+%%TEST%%tests/kyua/integration/Kyuafile
+%%TEST%%tests/kyua/integration/cmd_about_test
+%%TEST%%tests/kyua/integration/cmd_config_test
+%%TEST%%tests/kyua/integration/cmd_db_exec_test
+%%TEST%%tests/kyua/integration/cmd_db_migrate_test
+%%TEST%%tests/kyua/integration/cmd_debug_test
+%%TEST%%tests/kyua/integration/cmd_help_test
+%%TEST%%tests/kyua/integration/cmd_list_test
+%%TEST%%tests/kyua/integration/cmd_report_html_test
+%%TEST%%tests/kyua/integration/cmd_report_junit_test
+%%TEST%%tests/kyua/integration/cmd_report_test
+%%TEST%%tests/kyua/integration/cmd_test_test
+%%TEST%%tests/kyua/integration/global_test
+%%TEST%%tests/kyua/integration/helpers/bad_test_program
+%%TEST%%tests/kyua/integration/helpers/bogus_test_cases
+%%TEST%%tests/kyua/integration/helpers/config
+%%TEST%%tests/kyua/integration/helpers/expect_all_pass
+%%TEST%%tests/kyua/integration/helpers/expect_some_fail
+%%TEST%%tests/kyua/integration/helpers/interrupts
+%%TEST%%tests/kyua/integration/helpers/metadata
+%%TEST%%tests/kyua/integration/helpers/simple_all_pass
+%%TEST%%tests/kyua/integration/helpers/simple_some_fail
+%%TEST%%tests/kyua/store/Kyuafile
+%%TEST%%tests/kyua/store/dbtypes_test
+%%TEST%%tests/kyua/store/exceptions_test
+%%TEST%%tests/kyua/store/layout_test
+%%TEST%%tests/kyua/store/metadata_test
+%%TEST%%tests/kyua/store/migrate_test
+%%TEST%%tests/kyua/store/read_backend_test
+%%TEST%%tests/kyua/store/read_transaction_test
+%%TEST%%tests/kyua/store/schema_inttest
+%%TEST%%tests/kyua/store/schema_v1.sql
+%%TEST%%tests/kyua/store/schema_v2.sql
+%%TEST%%tests/kyua/store/testdata_v1.sql
+%%TEST%%tests/kyua/store/testdata_v2.sql
+%%TEST%%tests/kyua/store/testdata_v3_1.sql
+%%TEST%%tests/kyua/store/testdata_v3_2.sql
+%%TEST%%tests/kyua/store/testdata_v3_3.sql
+%%TEST%%tests/kyua/store/testdata_v3_4.sql
+%%TEST%%tests/kyua/store/transaction_test
+%%TEST%%tests/kyua/store/write_backend_test
+%%TEST%%tests/kyua/store/write_transaction_test
+%%TEST%%tests/kyua/testers/Kyuafile
+%%TEST%%tests/kyua/testers/atf_helpers
+%%TEST%%tests/kyua/testers/atf_inttest
+%%TEST%%tests/kyua/testers/atf_list_test
+%%TEST%%tests/kyua/testers/atf_result_test
+%%TEST%%tests/kyua/testers/cli_test
+%%TEST%%tests/kyua/testers/env_test
+%%TEST%%tests/kyua/testers/error_test
+%%TEST%%tests/kyua/testers/fs_test
+%%TEST%%tests/kyua/testers/plain_helpers
+%%TEST%%tests/kyua/testers/plain_inttest
+%%TEST%%tests/kyua/testers/result_test
+%%TEST%%tests/kyua/testers/run_test
+%%TEST%%tests/kyua/testers/stacktrace_helper
+%%TEST%%tests/kyua/testers/stacktrace_test
+%%TEST%%tests/kyua/testers/tap_helpers
+%%TEST%%tests/kyua/testers/tap_inttest
+%%TEST%%tests/kyua/testers/tap_parser_test
+%%TEST%%tests/kyua/testers/text_test
+%%TEST%%tests/kyua/utils/Kyuafile
+%%TEST%%tests/kyua/utils/auto_array_test
+%%TEST%%tests/kyua/utils/cmdline/Kyuafile
+%%TEST%%tests/kyua/utils/cmdline/base_command_test
+%%TEST%%tests/kyua/utils/cmdline/commands_map_test
+%%TEST%%tests/kyua/utils/cmdline/exceptions_test
+%%TEST%%tests/kyua/utils/cmdline/globals_test
+%%TEST%%tests/kyua/utils/cmdline/options_test
+%%TEST%%tests/kyua/utils/cmdline/parser_test
+%%TEST%%tests/kyua/utils/cmdline/ui_test
+%%TEST%%tests/kyua/utils/config/Kyuafile
+%%TEST%%tests/kyua/utils/config/exceptions_test
+%%TEST%%tests/kyua/utils/config/keys_test
+%%TEST%%tests/kyua/utils/config/lua_module_test
+%%TEST%%tests/kyua/utils/config/nodes_test
+%%TEST%%tests/kyua/utils/config/parser_test
+%%TEST%%tests/kyua/utils/config/tree_test
+%%TEST%%tests/kyua/utils/datetime_test
+%%TEST%%tests/kyua/utils/env_test
+%%TEST%%tests/kyua/utils/format/Kyuafile
+%%TEST%%tests/kyua/utils/format/exceptions_test
+%%TEST%%tests/kyua/utils/format/formatter_test
+%%TEST%%tests/kyua/utils/fs/Kyuafile
+%%TEST%%tests/kyua/utils/fs/auto_cleaners_test
+%%TEST%%tests/kyua/utils/fs/exceptions_test
+%%TEST%%tests/kyua/utils/fs/lua_module_test
+%%TEST%%tests/kyua/utils/fs/operations_test
+%%TEST%%tests/kyua/utils/fs/path_test
+%%TEST%%tests/kyua/utils/logging/Kyuafile
+%%TEST%%tests/kyua/utils/logging/macros_test
+%%TEST%%tests/kyua/utils/logging/operations_test
+%%TEST%%tests/kyua/utils/memory_test
+%%TEST%%tests/kyua/utils/optional_test
+%%TEST%%tests/kyua/utils/passwd_test
+%%TEST%%tests/kyua/utils/process/Kyuafile
+%%TEST%%tests/kyua/utils/process/child_test
+%%TEST%%tests/kyua/utils/process/exceptions_test
+%%TEST%%tests/kyua/utils/process/fdstream_test
+%%TEST%%tests/kyua/utils/process/helpers
+%%TEST%%tests/kyua/utils/process/status_test
+%%TEST%%tests/kyua/utils/process/systembuf_test
+%%TEST%%tests/kyua/utils/releaser_test
+%%TEST%%tests/kyua/utils/sanity_test
+%%TEST%%tests/kyua/utils/signals/Kyuafile
+%%TEST%%tests/kyua/utils/signals/exceptions_test
+%%TEST%%tests/kyua/utils/signals/interrupts_test
+%%TEST%%tests/kyua/utils/signals/misc_test
+%%TEST%%tests/kyua/utils/signals/programmer_test
+%%TEST%%tests/kyua/utils/sqlite/Kyuafile
+%%TEST%%tests/kyua/utils/sqlite/c_gate_test
+%%TEST%%tests/kyua/utils/sqlite/database_test
+%%TEST%%tests/kyua/utils/sqlite/exceptions_test
+%%TEST%%tests/kyua/utils/sqlite/statement_test
+%%TEST%%tests/kyua/utils/sqlite/transaction_test
+%%TEST%%tests/kyua/utils/stream_test
+%%TEST%%tests/kyua/utils/text/Kyuafile
+%%TEST%%tests/kyua/utils/text/exceptions_test
+%%TEST%%tests/kyua/utils/text/operations_test
+%%TEST%%tests/kyua/utils/text/table_test
+%%TEST%%tests/kyua/utils/text/templates_test
+%%TEST%%tests/kyua/utils/units_test
+%%TEST%%@dirrm tests/kyua/utils/text
+%%TEST%%@dirrm tests/kyua/utils/sqlite
+%%TEST%%@dirrm tests/kyua/utils/signals
+%%TEST%%@dirrm tests/kyua/utils/process
+%%TEST%%@dirrm tests/kyua/utils/logging
+%%TEST%%@dirrm tests/kyua/utils/fs
+%%TEST%%@dirrm tests/kyua/utils/format
+%%TEST%%@dirrm tests/kyua/utils/config
+%%TEST%%@dirrm tests/kyua/utils/cmdline
+%%TEST%%@dirrm tests/kyua/utils
+%%TEST%%@dirrm tests/kyua/store
+%%TEST%%@dirrm tests/kyua/testers
+%%TEST%%@dirrm tests/kyua/integration/helpers
+%%TEST%%@dirrm tests/kyua/integration
+%%TEST%%@dirrm tests/kyua/examples
+%%TEST%%@dirrm tests/kyua/engine/drivers
+%%TEST%%@dirrm tests/kyua/engine
+%%TEST%%@dirrm tests/kyua/cli
+%%TEST%%@dirrm tests/kyua/bootstrap
+%%TEST%%@dirrm tests/kyua
+@dirrm %%DATADIR%%/store
+@dirrm %%DATADIR%%/misc
+@dirrm %%DATADIR%%
+@dirrm etc/kyua
