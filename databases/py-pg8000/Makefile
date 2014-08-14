@@ -12,7 +12,7 @@ COMMENT=	Pure-Python Interface to the PostgreSQL Database
 
 LICENSE=	BSD3CLAUSE
 
-USES=			python:2
-PYTHON_FEATURES=	distutils autoplist
+USES=		python:2
+USE_PYTHON=	distutils autoplist
 
 .include <bsd.port.mk>

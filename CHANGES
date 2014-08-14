@@ -22,10 +22,10 @@ AUTHOR: mva@FreeBSD.org
     ...
 
   Additionally, several Python specific features have been converted
-  to USES-inspired PYTHON_FEATURES=<featureA>,<featureB>.
+  to USES-inspired USE_PYTHON=<featureA>,<featureB>.
 
-    USE_PYDISTUTILS becomes PYTHON_FEATURES=distutils
-    PYDISTUTILS_AUTOPLIST becomes PYTHON_FEATURES=autoplist
+    USE_PYDISTUTILS becomes USE_PYTHON=distutils
+    PYDISTUTILS_AUTOPLIST becomes USE_PYTHON=autoplist
     ...
 
   Please read the header comments of Uses/python.mk for more details

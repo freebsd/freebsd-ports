@@ -11,6 +11,6 @@ MAINTAINER=	mva@FreeBSD.org
 COMMENT=	PyAL is a binding of OpenAL for Python
 
 USES=		openal:al python
-PYTHON_FEATURES=autoplist distutils
+USE_PYTHON=	autoplist distutils
 
 .include <bsd.port.mk>

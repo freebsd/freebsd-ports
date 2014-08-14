@@ -12,7 +12,7 @@ COMMENT=	ATK accessibility wrapper for python
 
 USES=		pkgconfig python:2
 USE_GNOME=	atk
-PYTHON_FEATURES=autoplist distutils
+USE_PYTHON=	autoplist distutils
 
 EXAMPLES=	atkaction.py atkapplication.py atkcapi.c atktext.py atkvalue.py \
 		msaaapplication.py msaacapi.cpp
