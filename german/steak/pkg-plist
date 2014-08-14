@@ -1,5 +1,5 @@
 bin/steak
-%%NOXSTEAK:%%bin/xsteak
+%%XSTEAK%%bin/xsteak
 %%DATADIR%%/iso2txt
 %%DATADIR%%/poll
 %%DATADIR%%/printbuffer
