@@ -18,6 +18,4 @@ OPTIONS_DEFINE=	#
 CFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/${PORTNAME}
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-NO_STAGE=	yes
-
 .include "${MASTERDIR}/Makefile"
