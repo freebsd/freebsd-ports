@@ -11,6 +11,8 @@ DISTNAME=	omniNotify-2-latest
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	CORBA Notification Service (CosNotification) for omniORB
 
+LICENSE=	GPLv2
+
 LIB_DEPENDS=	libomniORB4.so:${PORTSDIR}/devel/omniORB
 RUN_DEPENDS=	omniidl:${PORTSDIR}/devel/omniORB
 # parts of omniORB4 source tree is required to build
@@ -20,7 +22,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 CONFIGURE_WRKSRC=	${WRKSRC}/build
 BUILD_WRKSRC=	${CONFIGURE_WRKSRC}
 INSTALL_WRKSRC=	${CONFIGURE_WRKSRC}
-OMNIORB_WRKSRC!=	cd ${.CURDIR}/../omniORB && ${MAKE} -V WRKSRC
+OMNIORB_WRKSRC=	`cd ${PORTSDIR}/devel/omniORB && ${MAKE} -V WRKSRC`
 
 USES=		gmake
 USE_PYTHON=	yes
@@ -31,9 +33,7 @@ USE_LDCONFIG=	yes
 CONFIGURE_SCRIPT=	../configure
 CONFIGURE_ENV+=	PYTHON=${PYTHON_CMD}
 CONFIGURE_ARGS=	--with-omniorb=${LOCALBASE}
-
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
+OPTIONS_DEFINE=	EXAMPLES
 
 pre-configure:
 	@${MKDIR} ${CONFIGURE_WRKSRC}
@@ -44,9 +44,7 @@ post-patch:
 		${WRKSRC}/mk/beforeauto.mk.in
 
 post-install:
-.if !defined(NOPORTEXAMPLES)
-	@${MKDIR} ${EXAMPLESDIR}
-	@cd ${WRKSRC}/examples && ${COPYTREE_SHARE} . ${EXAMPLESDIR} "! ( -name \.cvsignore -o -name *\.orig )"
-.endif
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	@cd ${WRKSRC}/examples && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR} "! ( -name \.cvsignore -o -name *\.orig )"
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
