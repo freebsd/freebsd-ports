@@ -2,18 +2,17 @@
 # $FreeBSD$
 
 PORTNAME=	kyua-cli
-PORTVERSION=	0.8
-PORTREVISION=	3
+PORTVERSION=	0.9
 CATEGORIES=	devel
-MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
-PROJECTHOST=	kyua
+MASTER_SITES=	https://github.com/jmmv/kyua/releases/download/${PORTNAME}-${PORTVERSION}/ \
+		LOCAL/jmmv
 
 MAINTAINER=	jmmv@FreeBSD.org
 COMMENT=	Kyua (automated testing framework) - Command line interface
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 
-LIB_DEPENDS=	liblutok.so.3:${PORTSDIR}/devel/lutok
+LIB_DEPENDS=	liblutok.so:${PORTSDIR}/devel/lutok
 LIB_DEPENDS+=	libsqlite3.so:${PORTSDIR}/databases/sqlite3
 BUILD_DEPENDS=	kyua-testers>=0.2:${PORTSDIR}/devel/kyua-testers
 RUN_DEPENDS:=	${BUILD_DEPENDS}
