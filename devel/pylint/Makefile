@@ -16,7 +16,7 @@ LICENSE=	LGPL21
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}astroid>=1.1.0:${PORTSDIR}/devel/py-astroid
 
 USES=		python
-PYTHON_FEATURES=distutils
+USE_PYTHON=	distutils
 
 OPTIONS_DEFINE=	GUI
 

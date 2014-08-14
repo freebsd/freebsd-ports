@@ -15,6 +15,6 @@ LICENSE=	LGPL20
 
 USES=		python
 MAKE_ENV=	NO_SETUPTOOLS=1
-PYTHON_FEATURES=distutils
+USE_PYTHON=	distutils
 
 .include <bsd.port.mk>

@@ -13,7 +13,7 @@ COMMENT=	Dynamic Scripting for adaptive AI systems
 LICENSE=	ZLIB
 
 USES=		python
-PYTHON_FEATURES=autoplist distutils
+USE_PYTHON=	autoplist distutils
 
 OPTIONS_DEFINE=	DOCS
 

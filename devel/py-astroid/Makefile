@@ -18,7 +18,7 @@ RUN_DEPENDS=	pytest:${PORTSDIR}/devel/py-logilab-common
 USES=		python
 WRKSRC=		${WRKDIR}/logilab-astroid-e003574ae51b
 MAKE_ENV=	NO_SETUPTOOLS=1
-PYTHON_FEATURES=distutils
+USE_PYTHON=	distutils
 
 .include <bsd.port.pre.mk>
 

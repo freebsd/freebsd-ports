@@ -20,7 +20,7 @@ RUN_DEPENDS=	${PYNUMPY}
 USES=		python
 USE_SDL=	ttf image mixer sdl
 USE_GCC=	any
-PYTHON_FEATURES=autoplist distutils
+USE_PYTHON=	autoplist distutils
 
 SDLNOX11=	sdl-nox11-[0-9]*
 

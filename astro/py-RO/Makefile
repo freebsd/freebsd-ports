@@ -22,8 +22,8 @@ MATPLOTLIB_DESC=	Add support for Matplotlib
 PYFITS_DESC=		Add Support for PyFITS
 PYGAME_DESC=		Add Support for PyGame
 
-USES=			python
-PYTHON_FEATURES=	distutils autoplist
+USES=		python
+USE_PYTHON=	distutils autoplist
 
 MATPLOTLIB_RUN_DEPENDS=	${PKGNAMEPREFIX}matplotlib>=0.98:${PORTSDIR}/math/py-matplotlib
 PYFITS_RUN_DEPENDS=	${PKGNAMEPREFIX}pyfits>=1.1:${PORTSDIR}/astro/py-pyfits
