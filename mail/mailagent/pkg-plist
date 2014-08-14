@@ -30,19 +30,21 @@ lib/mailagent/help/remauth
 lib/mailagent/help/set
 lib/mailagent/help/setauth
 lib/mailagent/help/user
-lib/mailagent/examples/README
-lib/mailagent/examples/daemon
-lib/mailagent/examples/mailfolders
-lib/mailagent/examples/mchk
-lib/mailagent/examples/mhinc
-lib/mailagent/examples/nocmds
-lib/mailagent/examples/profile
-lib/mailagent/examples/rules
-lib/mailagent/examples/vacation
 man/man1/edusers.1.gz
 man/man1/mailagent.1.gz
 man/man1/mailhelp.1.gz
 man/man1/package.1.gz
+@exec [ -f %%ORGFILE%% ] || touch %%ORGFILE%% || true
+@unexec [ -s %%ORGFILE%% ] || rm -f %%ORGFILE%% || true
+%%EXAMPLESDIR%%/agent/README
+%%EXAMPLESDIR%%/agent/daemon
+%%EXAMPLESDIR%%/agent/mailfolders
+%%EXAMPLESDIR%%/agent/mchk
+%%EXAMPLESDIR%%/agent/mhinc
+%%EXAMPLESDIR%%/agent/nocmds
+%%EXAMPLESDIR%%/agent/profile
+%%EXAMPLESDIR%%/agent/rules
+%%EXAMPLESDIR%%/agent/vacation
 %%EXAMPLESDIR%%/misc/README
 %%EXAMPLESDIR%%/misc/fakesend/README
 %%EXAMPLESDIR%%/misc/fakesend/fakesend.pl
@@ -50,17 +52,14 @@ man/man1/package.1.gz
 %%EXAMPLESDIR%%/misc/fakesend/mh_profile
 %%EXAMPLESDIR%%/misc/getcost/README
 %%EXAMPLESDIR%%/misc/getcost/getcost
-%%EXAMPLESDIR%%/misc/getcost/getcost.bak
 %%EXAMPLESDIR%%/misc/getcost/rules
 %%EXAMPLESDIR%%/misc/getcost/spamconfig
 %%EXAMPLESDIR%%/misc/mime/README
 %%EXAMPLESDIR%%/misc/mime/rules
 %%EXAMPLESDIR%%/misc/mime/unmime
-%%EXAMPLESDIR%%/misc/mime/unmime.bak
 %%EXAMPLESDIR%%/misc/news/README
 %%EXAMPLESDIR%%/misc/news/ml.map
 %%EXAMPLESDIR%%/misc/news/newsgate
-%%EXAMPLESDIR%%/misc/news/newsgate.bak
 %%EXAMPLESDIR%%/misc/news/rules
 %%EXAMPLESDIR%%/misc/pbounce/README
 %%EXAMPLESDIR%%/misc/pbounce/mailagent.cf
@@ -76,8 +75,7 @@ man/man1/package.1.gz
 %%EXAMPLESDIR%%/misc/unkit/newcmd.cf
 %%EXAMPLESDIR%%/misc/unkit/rules
 %%EXAMPLESDIR%%/misc/unkit/unkit.pl
-@exec /bin/ln -sf %D/lib/mailagent/examples %D/%%EXAMPLESDIR%%/agent
-@unexec /bin/rm -f %D/%%EXAMPLESDIR%%/agent
+@dirrm %%EXAMPLESDIR%%/agent
 @dirrm %%EXAMPLESDIR%%/misc/unkit
 @dirrm %%EXAMPLESDIR%%/misc/shell
 @dirrm %%EXAMPLESDIR%%/misc/pbounce
@@ -87,6 +85,5 @@ man/man1/package.1.gz
 @dirrm %%EXAMPLESDIR%%/misc/fakesend
 @dirrm %%EXAMPLESDIR%%/misc
 @dirrm %%EXAMPLESDIR%%
-@dirrm lib/mailagent/examples
 @dirrm lib/mailagent/help
 @dirrm lib/mailagent

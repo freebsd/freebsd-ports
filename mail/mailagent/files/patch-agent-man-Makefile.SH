@@ -1,5 +1,5 @@
---- agent/man/Makefile.SH.orig	Sun Mar 18 03:31:22 2001
-+++ agent/man/Makefile.SH	Tue Sep  3 07:51:50 2002
+--- ./agent/man/Makefile.SH.orig	2006-08-24 22:24:12.000000000 +0900
++++ ./agent/man/Makefile.SH	2014-08-14 01:59:33.542700970 +0900
 @@ -85,8 +85,7 @@
  # Baseline for mailagent 3.0 netwide release.
  #
