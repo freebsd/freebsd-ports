@@ -150,7 +150,7 @@ CONFIGURE_ARGS+=--enable-bzip2 \
 		--enable-zzip \
 		--enable-iso9660
 LIB_DEPENDS+=	libzzip.so:${PORTSDIR}/devel/zziplib \
-		libcdio-paranoia.so:${PORTSDIR}/sysutils/libcdio-paranoia
+		libcdio_paranoia.so:${PORTSDIR}/sysutils/libcdio-paranoia
 .else
 CONFIGURE_ARGS+=--disable-bzip2 \
 		--disable-zzip \
