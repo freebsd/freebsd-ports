@@ -1,11 +1,11 @@
---- agent/filter/Makefile.orig	2014-06-20 11:27:19.802128926 -0300
-+++ agent/filter/Makefile	2014-06-20 11:29:16.092184615 -0300
-@@ -124,14 +124,14 @@
+--- ./agent/filter/Makefile.SH.orig	2006-08-24 22:24:12.000000000 +0900
++++ ./agent/filter/Makefile.SH	2014-08-14 01:59:33.536704870 +0900
+@@ -154,14 +154,14 @@
  install::
  	@for dir in $(PRIVLIB); do \
  	case '${MFLAGS}' in *[i]*) set +e;; esac; \
 -	(set -x; test -d $$dir || $(INSTALLDIR) $$dir); \
-+	(set -x; test -d $$dir || $(INSTALLDIR) $(INSTALL_PREFIX)$$dir); \
++	(set -x; test -d $(INSTALL_PREFIX)$$dir || $(INSTALLDIR) $(INSTALL_PREFIX)$$dir); \
  	done
  
  deinstall::

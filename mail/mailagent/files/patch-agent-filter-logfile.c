@@ -1,8 +1,8 @@
---- agent/filter/logfile.c.orig Fri Mar 17 12:59:44 2006
-+++ agent/filter/logfile.c      Fri Mar 17 13:02:25 2006
-@@ -47,6 +47,12 @@
- #include <stdio.h>
- #include <sys/types.h>
+--- ./agent/filter/logfile.c.orig	2008-08-19 17:44:07.000000000 +0900
++++ ./agent/filter/logfile.c	2014-08-14 01:59:33.539704490 +0900
+@@ -58,6 +58,12 @@
+ #endif
+ #endif	/* I_STDLIB */
  
 +#ifdef I_STRING
 +#include <string.h>

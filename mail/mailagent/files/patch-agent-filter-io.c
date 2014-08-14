@@ -1,6 +1,6 @@
---- agent/filter/io.c.orig	Wed Jul 29 02:41:11 1998
-+++ agent/filter/io.c	Mon Aug 10 21:01:22 1998
-@@ -120,6 +120,9 @@
+--- ./agent/filter/io.c.orig	2008-08-19 17:44:07.000000000 +0900
++++ ./agent/filter/io.c	2014-08-14 01:59:33.537704696 +0900
+@@ -141,6 +141,9 @@
  #ifdef I_SYS_IOCTL
  #include <sys/ioctl.h>
  #endif
@@ -10,9 +10,9 @@
  
  /*
   * The following should be defined in <sys/stat.h>.
-@@ -713,7 +716,7 @@
+@@ -739,7 +742,7 @@
  	 */
- 	
+ 
  	char **envp;			/* Environment pointer */
 -#ifdef UNION_WAIT
 +#if defined(UNION_WAIT) && (!defined(BSD) || BSD < 199306)
