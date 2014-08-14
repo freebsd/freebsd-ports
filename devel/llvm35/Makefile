@@ -1,17 +1,17 @@
 # $FreeBSD$
 
 PORTNAME=	llvm
-DISTVERSION=	3.5rc1
+DISTVERSION=	3.5.0rc2
 CATEGORIES=	devel lang
-MASTER_SITES=	http://llvm.org/pre-releases/3.5/rc1/
-DISTNAME=	${PORTNAME}.src-${DISTVERSION}.src
-#http://llvm.org/pre-releases/3.5/rc1/llvm.src-3.5rc1.src.tar.gz
+MASTER_SITES=	http://llvm.org/pre-releases/3.5/rc2/
+#http://llvm.org/pre-releases/3.5/rc2/llvm-3.5.0rc2.src.tar.xz
+DISTNAME=	${PORTNAME}-${DISTVERSION}.src
 PKGNAMESUFFIX=	${LLVM_SUFFIX}
 
 MAINTAINER=	brooks@FreeBSD.org
 COMMENT=	Low Level Virtual Machine
 
-LLVM_SUFFIX=	${PORTVERSION:S/.//g:C/r.//}
+LLVM_SUFFIX=	${PORTVERSION:C/([0-9]\.[0-9]).*/\1/:S/.//g:C/r.//}
 LLVM_PREFIX=	${PREFIX}/llvm${LLVM_SUFFIX}
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}${LLVM_SUFFIX}
 DATADIR=	${PREFIX}/share/${PORTNAME}${LLVM_SUFFIX}
@@ -19,7 +19,7 @@ UNIQUENAME=	${PORTNAME}${LLVM_SUFFIX}
 
 WRKSRC=		${WRKDIR}/llvm.src
 
-USES=		compiler:c++11-lib execinfo gmake perl5
+USES=		compiler:c++11-lib execinfo gmake perl5 tar:xz
 GNU_CONFIGURE=	yes
 GNU_CONFIGURE_PREFIX=	${LLVM_PREFIX}
 USE_LDCONFIG=	${LLVM_PREFIX}/lib
@@ -30,7 +30,7 @@ SUB_LIST=	LLVM_PREFIX="${LLVM_PREFIX}" LLVM_SUFFIX="${LLVM_SUFFIX}"
 # Suggested tweaks from http://llvm.org/docs/Packaging.html
 CONFIGURE_ARGS+=	--enable-shared
 MAKE_ARGS+=		REQUIRES_RTTI=1
-LIBNAME=		libLLVM-3.5.0svn.so
+LIBNAME=		libLLVM-3.5.so
 
 CONFIGURE_ARGS+=	--enable-bindings=none
 CONFIGURE_ARGS+=	--enable-optimized
