@@ -1684,6 +1684,7 @@
     SUBDIR += py-selector
     SUBDIR += py-selenium
     SUBDIR += py-slimmer
+    SUBDIR += py-slimit
     SUBDIR += py-slumber
     SUBDIR += py-splinter
     SUBDIR += py-surl
