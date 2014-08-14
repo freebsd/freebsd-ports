@@ -6,7 +6,6 @@ bin/systool
 include/sysfs/dlist.h
 include/sysfs/libsysfs.h
 lib/libsysfs.a
-lib/libsysfs.la
 lib/libsysfs.so
 lib/libsysfs.so.2
 lib/libsysfs.so.2.0.1
