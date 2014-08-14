@@ -3,6 +3,7 @@
 
 PORTNAME=	LPRng
 PORTVERSION=	3.8.C
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	sysutils print
 MASTER_SITES=	SF/${PORTNAME:tl}/${PORTNAME:tl}
@@ -22,8 +23,6 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-config_subdir="" \
 		--with-filterdir=${PREFIX}/libexec/filters \
 		--with-filter_path="${PREFIX}/bin:/bin:/usr/bin:${PREFIX}/sbin:/sbin:/usr/sbin" \
-		--with-lpd_conf_path=${SYSCONFDIR}/lpd.conf \
-		--with-lpd_perms_path=${SYSCONFDIR}/lpd.perms \
 		--with-printcap_path=/etc/printcap \
 		--with-ld_library_path="${PREFIX}/lib:/lib:/usr/lib:/${LOCALBASE}/lib"
 MAKE_ARGS=	INSTALLCONFIGEXAMPLES=""
@@ -49,14 +48,13 @@ NLS_CONFIGURE_ENV=	gt_cv_func_gnugettext1_libc=yes \
 NLS_LDFLAGS=		-lintl
 
 post-install:
-	@${MKDIR} ${STAGEDIR}${DATADIR}
 .for i in lpd.perms printcap
 	(cd ${WRKSRC}/conf && $ ${INSTALL_DATA} ${i} \
-		${STAGEDIR}${DATADIR}/${i}.sample)
+		${STAGEDIR}/${PREFIX}/etc/${i}.sample)
 .endfor
 .for i in lpd.conf
 	(cd ${WRKSRC}/src && $ ${INSTALL_DATA} ${i} \
-		${STAGEDIR}${DATADIR}/${i}.sample)
+		${STAGEDIR}/${PREFIX}/etc/${i}.sample)
 .endfor
 
 .include <bsd.port.mk>
