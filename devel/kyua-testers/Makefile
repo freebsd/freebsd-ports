@@ -2,11 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	kyua-testers
-PORTVERSION=	0.2
-PORTREVISION=	3
+PORTVERSION=	0.3
 CATEGORIES=	devel
-MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
-PROJECTHOST=	kyua
+MASTER_SITES=	https://github.com/jmmv/kyua/releases/download/${PORTNAME}-${PORTVERSION}/ \
+		LOCAL/jmmv
 
 MAINTAINER=	jmmv@FreeBSD.org
 COMMENT=	Kyua (automated testing framework) - Testers
