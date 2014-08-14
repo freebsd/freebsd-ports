@@ -35,9 +35,9 @@ include/wfmath-1.0/wfmath/vector_funcs.h
 include/wfmath-1.0/wfmath/wfmath.h
 include/wfmath-1.0/wfmath/wrapped_array.h
 include/wfmath-1.0/wfmath/zero.h
-lib/libwfmath-1.0.la
 lib/libwfmath-1.0.so
 lib/libwfmath-1.0.so.1
+lib/libwfmath-1.0.so.1.0.0
 libdata/pkgconfig/wfmath-1.0.pc
 @dirrm include/wfmath-1.0/wfmath
 @dirrm include/wfmath-1.0
