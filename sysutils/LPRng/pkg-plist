@@ -31,12 +31,11 @@ sbin/lpc
 sbin/lpd
 sbin/lprng_certs
 sbin/lprng_index_certs
-%%DATADIR%%/lpd.conf.sample
-%%DATADIR%%/lpd.perms.sample
-%%DATADIR%%/printcap.sample
+@sample etc/lpd.conf.sample
+@sample etc/lpd.perms.sample
+@sample etc/printcap.sample
 %%NLS%%share/locale/de/LC_MESSAGES/LPRng.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/LPRng.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/LPRng.mo
 %%NLS%%share/locale/vi/LC_MESSAGES/LPRng.mo
-@dirrm %%DATADIR%%
 @dirrm libexec/filters
