@@ -34,7 +34,7 @@
 -"BSD-x86_64",	"gcc:-DL_ENDIAN -DTERMIOS -O3 -Wall::${BSDthreads}:::SIXTY_FOUR_BIT_LONG RC4_CHUNK DES_INT DES_UNROLL:${x86_64_asm}:elf:dlfcn:bsd-gcc-shared:-fPIC::.so.\$(SHLIB_MAJOR).\$(SHLIB_MINOR)",
 +"BSD-sparc64",	"$ENV{'FREEBSDCC'}:-DB_ENDIAN -DTERMIOS -O3 -DMD32_REG_T=int -Wall $ENV{'CFLAGS'}::${BSDthreads}:::BN_LLONG RC2_CHAR RC4_CHUNK DES_INT DES_PTR DES_RISC2 BF_PTR:${sparcv9_asm}:dlfcn:bsd-gcc-shared:-fPIC::.so.\$(SHLIBVER)",
 +"BSD-ia64",	"$ENV{'FREEBSDCC'}:-DL_ENDIAN -DTERMIOS -O3 -Wall $ENV{'CFLAGS'}::${BSDthreads}:::SIXTY_FOUR_BIT_LONG RC4_CHUNK DES_UNROLL DES_INT:${ia64_asm}:dlfcn:bsd-gcc-shared:-fPIC::.so.\$(SHLIBVER)",
-+"BSD-x86_64",	"$ENV{'FREEBSDCC'}:-DL_ENDIAN -DTERMIOS -O3 -DMD32_REG_T=int -Wall $ENV{'CFLAGS'}::${BSDthreads}:::SIXTY_FOUR_BIT_LONG RC4_CHUNK DES_INT DES_UNROLL:${x86_64_asm}:elf:dlfcn:bsd-gcc-shared:-fPIC::.so.\$(SHLIBVER)",
++"BSD-x86_64",	"$ENV{'FREEBSDCC'}:-DL_ENDIAN -DTERMIOS -O3 -Wall $ENV{'CFLAGS'}::${BSDthreads}:::SIXTY_FOUR_BIT_LONG RC4_CHUNK DES_INT DES_UNROLL:${x86_64_asm}:elf:dlfcn:bsd-gcc-shared:-fPIC::.so.\$(SHLIBVER)",
 +"BSD-alpha",	"$ENV{'FREEBSDCC'}:-DL_ENDIAN -DTERMIOS -O -Wall $ENV{'CFLAGS'}::${BSDthreads}:::SIXTY_FOUR_BIT_LONG RC4_CHUNK DES_UNROLL DES_RISC1:${no_asm}:dlfcn:bsd-gcc-shared:-fPIC::.so.\$(SHLIBVER)",
  
  "bsdi-elf-gcc",     "gcc:-DPERL5 -DL_ENDIAN -fomit-frame-pointer -O3 -march=i486 -Wall::(unknown)::-ldl:BN_LLONG ${x86_gcc_des} ${x86_gcc_opts}:${x86_elf_asm}:dlfcn:bsd-gcc-shared:-fPIC::.so.\$(SHLIB_MAJOR).\$(SHLIB_MINOR)",
