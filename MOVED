@@ -6407,3 +6407,6 @@ devel/rubygem-foreman_api||2014-08-11|Removed: Deprecated by upstream
 security/termlog||2014-08-11|Has expired: Fails to build with new utmpx, unstaged, maintainer timeout
 games/linux-americasarmy||2014-08-13|Removed: Unsupported by upstream, distfile unavailable
 net/rsmb|net/mosquitto|2014-08-13|Superseded by net/mosquitto
+devel/kyua-atf-compat|devel/kyua|2014-08-14|Upstream merged all components into devel/kyua
+devel/kyua-cli|devel/kyua|2014-08-14|Upstream merged all components into devel/kyua
+devel/kyua-testers|devel/kyua|2014-08-14|Upstream merged all components into devel/kyua
