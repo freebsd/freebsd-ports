@@ -1,12 +1,12 @@
-etc/radiusclient-ng/dictionary
-etc/radiusclient-ng/dictionary.ascend
-etc/radiusclient-ng/dictionary.compat
-etc/radiusclient-ng/dictionary.merit
-etc/radiusclient-ng/dictionary.sip
-etc/radiusclient-ng/issue
-etc/radiusclient-ng/port-id-map
-etc/radiusclient-ng/radiusclient.conf
-etc/radiusclient-ng/servers
+@sample %%ETCDIR%%/dictionary.ascend.sample
+@sample %%ETCDIR%%/dictionary.compat.sample
+@sample %%ETCDIR%%/dictionary.merit.sample
+@sample %%ETCDIR%%/dictionary.sample
+@sample %%ETCDIR%%/dictionary.sip.sample
+@sample %%ETCDIR%%/issue.sample
+@sample %%ETCDIR%%/port-id-map.sample
+@sample %%ETCDIR%%/radiusclient.conf.sample
+@sample %%ETCDIR%%/servers.sample
 include/radiusclient-ng.h
 lib/libradiusclient-ng.a
 lib/libradiusclient-ng.so
@@ -17,4 +17,4 @@ sbin/radexample
 sbin/radiusclient
 sbin/radlogin
 sbin/radstatus
-@dirrm etc/radiusclient-ng
+@dirrmtry %%ETCDIR%%
