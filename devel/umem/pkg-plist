@@ -1,12 +1,10 @@
 include/sys/vmem.h
 include/umem.h
 lib/libumem.a
-lib/libumem.la
 lib/libumem.so
 lib/libumem.so.0
 lib/libumem.so.0.0.0
 lib/libumem_malloc.a
-lib/libumem_malloc.la
 lib/libumem_malloc.so
 lib/libumem_malloc.so.0
 lib/libumem_malloc.so.0.0.0
