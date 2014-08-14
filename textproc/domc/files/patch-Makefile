@@ -1,29 +1,17 @@
 --- Makefile.orig	Fri Sep 10 00:31:42 2004
 +++ Makefile	Mon Mar  7 14:48:36 2005
-@@ -1,17 +1,15 @@
+@@ -1,4 +1,4 @@
 -prefix     = /usr/local
-+prefix     = ${PREFIX}
++prefix    ?= /usr/local
  includedir = $(prefix)/include
  libdir     = $(prefix)/lib
  mandir     = $(prefix)/man
--CC         = gcc
- LIBNAME    = domc
- MAJVERSION = 0.8
- MINVERSION = 0.8.0
- ARNAME     = lib$(LIBNAME).a
--SONAME     = lib$(LIBNAME).so.$(MINVERSION)
--SOVERSION  = lib$(LIBNAME).so.$(MAJVERSION)
-+SONAME	   = lib$(LIBNAME).so.${SHLIB_MAJOR}
-+SOVERSION  = lib$(LIBNAME).so.${SHLIB_MAJOR}
- DISTRO     = $(LIBNAME)-$(MINVERSION)
--RPM_OPT_FLAGS = -O2
--CFLAGS     = -Wall -W -g -DMSGNO $(RPM_OPT_FLAGS) -I$(includedir) -L$(libdir)
-+CFLAGS     += -Wall -W -g -DMSGNO -I$(includedir) -L$(libdir)
- #CFLAGS     = -Wall -W -DMSGNO -I$(includedir) -L$(libdir) $(RPM_OPT_FLAGS) -ansi -pedantic -Wbad-function-cast -Wcast-align -Wcast-qual -Wchar-subscripts -Winline -Wmissing-prototypes -Wnested-externs -Wpointer-arith -Wredundant-decls -Wshadow -Wstrict-prototypes -Wwrite-strings -Wtraditional -Wconversion -Waggregate-return -Wno-parentheses
+@@ -16,10 +16,10 @@ CFLAGS     = -Wall -W -g -DMSGNO $(RPM_O
  OBJS       = src/expatls.o src/events.o src/node.o src/nodelist.o src/namednodemap.o src/dom.o src/timestamp.o src/wcwidth.o src/mbs.o
  MAN        = DOM_CharacterData.3m.gz DOM_Document.3m.gz DOM_Element.3m.gz DOM_Implementation.3m.gz DOM_NamedNodeMap.3m.gz DOM_Node.3m.gz DOM_NodeList.3m.gz DOM_Text.3m.gz
-@@ -19,12 +17,11 @@
- all: $(ARNAME)($(OBJS)) $(SONAME) src/defines.h
+ 
+-all: $(ARNAME)($(OBJS)) $(SONAME) src/defines.h
++all: $(SONAME) src/defines.h
  
  $(SONAME): $(OBJS)
 -	$(CC) -shared $(OBJS) -L$(libdir) -lmba -lexpat -Wl,-h,$(SOVERSION) -o $(SONAME)
@@ -31,24 +19,24 @@
  
  .c.a:
  	$(CC) $(CFLAGS) -c -o $*.o $<
- 	ar rv $@ $*.o
--	rm $*.o
- 
+@@ -29,16 +29,15 @@ $(SONAME): $(OBJS)
  .c.o:
  	$(CC) $(CFLAGS) -fpic -c -o $*.o $<
-@@ -33,12 +30,10 @@
+ 
++install: prefix=$(INSTDIR)
+ install: $(SONAME)
  	install -d $(libdir)
  	install -d $(includedir)
  	install -d $(mandir)/man3
 -	install -m 644 $(ARNAME) $(libdir)
 -	install -m 755 $(SONAME) $(libdir)
--	cd $(libdir) && ln -sf $(SONAME) $(SOVERSION) && ln -sf $(SONAME) lib$(LIBNAME).so
++	${BSD_INSTALL_LIB} $(SONAME) $(libdir)
+ 	cd $(libdir) && ln -sf $(SONAME) $(SOVERSION) && ln -sf $(SONAME) lib$(LIBNAME).so
 -	install -m 444 src/domc.h $(includedir)
-+	${BSD_INSTALL_DATA} $(SONAME) $(INSTDIR)/lib
-+	cd $(INSTDIR)/lib ; ln -sf $(SONAME) $(INSTDIR)/lib/lib$(LIBNAME).so
-+	${BSD_INSTALL_DATA} src/domc.h $(INSTDIR)/include
- 	-install -m 444 docs/man/*.3m.gz $(mandir)/man3
+-	-install -m 444 docs/man/*.3m.gz $(mandir)/man3
 -	-/sbin/ldconfig $(libdir)
++	${BSD_INSTALL_DATA} src/domc.h $(includedir)
++	${BSD_INSTALL_DATA} docs/man/*.3m.gz $(mandir)/man3
  
  zip:
  	cd .. && zip -lr $(DISTRO)/.$(DISTRO).zip $(DISTRO) -x $(DISTRO)/.* $(DISTRO)/docs/man/* $(DISTRO)/tests/utf8* $(DISTRO)/domc.lib $(DISTRO)/domc.dll $(DISTRO)/domc_s.lib
