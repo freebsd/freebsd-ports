@@ -446,6 +446,7 @@
     SUBDIR += unclutter
     SUBDIR += upclient
     SUBDIR += us-zipcodes
+    SUBDIR += usbids
     SUBDIR += usbrh-libusb
     SUBDIR += utftools
     SUBDIR += valspeak
