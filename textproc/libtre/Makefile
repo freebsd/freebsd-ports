@@ -29,8 +29,7 @@ NLS_USES=	gettext
 NLS_CONFIGURE_ENABLE=	nls
 OPTIMIZED_CFLAGS_CFLAGS= \
 		-Wuninitialized -ffast-math -finline-functions \
-		-fomit-frame-pointer -fexpensive-optimizations \
-		-fforce-mem -fforce-addr -O3
+		-fomit-frame-pointer -fexpensive-optimizations -O3
 PGO_CFLAGS=	-fprofile-generate
 PGO_LDFLAGS=	-fprofile-generate
 
