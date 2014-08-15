@@ -14,8 +14,8 @@ include/htp/htp.h
 include/htp/htp_base64.h
 include/htp/htp_multipart.h
 include/htp/htp_urlencoded.h
-lib/libhtp-0.5.12.so.1
-lib/libhtp-0.5.12.so.1.0.0
+lib/libhtp-%%PORTVERSION%%.so.1
+lib/libhtp-%%PORTVERSION%%.so.1.0.0
 lib/libhtp.a
 lib/libhtp.so
 libdata/pkgconfig/htp.pc
