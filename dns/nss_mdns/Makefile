@@ -14,12 +14,14 @@ COMMENT=	NSS module implementing multicast DNS name resolution
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+LIB_DEPENDS=	libavahi-client.so:${PORTSDIR}/net/avahi-app
+
+CONFLICTS_INSTALL=	mDNSResponder_nss-[0-9]*
+
 USE_AUTOTOOLS=	autoconf automake libtool
 USES=		gmake
 USE_LDCONFIG=	yes
 AUTOTOOLSFILES=	aclocal.m4
-
-LIB_DEPENDS+=	libavahi-client.so:${PORTSDIR}/net/avahi-app
 
 OPTIONS_DEFINE=	SEARCH_DOMAINS DOCS
 SEARCH_DOMAINS_DESC=	Honour search domains in resolv.conf
