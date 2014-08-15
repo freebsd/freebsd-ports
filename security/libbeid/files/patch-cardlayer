@@ -1,6 +1,8 @@
---- cardlayer/src/cache.cpp.orig
-+++ cardlayer/src/cache.cpp
-@@ -202,10 +202,8 @@
+Index: cardlayer/src/cache.cpp
+===================================================================
+--- cardlayer/src/cache.cpp	(revision 1614)
++++ cardlayer/src/cache.cpp	(working copy)
+@@ -203,10 +203,8 @@ void CCache::DiskStoreFile(const std::st
  		; // TODO: log
  	else
  	{
@@ -13,18 +15,11 @@
  		fclose(f);
  	}
  }
---- cardlayer/src/card.cpp.orig
-+++ cardlayer/src/card.cpp
-@@ -25,7 +25,7 @@
- 
- CCard::CCard(SCARDHANDLE hCard, CContext *poContext, CPinpad *poPinpad) :
- 	m_hCard(hCard), m_poContext(poContext), m_poPinpad(poPinpad),
--	m_oCache(poContext), m_ulLockCount(0), m_bSerialNrString(false),m_cardType(CARD_UNKNOWN)
-+	m_oCache(poContext), m_cardType(CARD_UNKNOWN), m_ulLockCount(0), m_bSerialNrString(false)
- {
- }
- 
-@@ -301,7 +301,7 @@
+Index: cardlayer/src/card.cpp
+===================================================================
+--- cardlayer/src/card.cpp	(revision 1614)
++++ cardlayer/src/card.cpp	(working copy)
+@@ -301,7 +301,7 @@ tCacheInfo CCard::GetCacheInfo(const std
  {
  	// By default no caching, card must implement this method
  	// to allow certain files to be cached (in a certain way).
@@ -33,9 +28,11 @@
  
  	return dontCache;
  }
---- cardlayer/src/pkcs15.cpp.orig
-+++ cardlayer/src/pkcs15.cpp
-@@ -27,7 +27,7 @@
+Index: cardlayer/src/pkcs15.cpp
+===================================================================
+--- cardlayer/src/pkcs15.cpp	(revision 1614)
++++ cardlayer/src/pkcs15.cpp	(working copy)
+@@ -27,7 +27,7 @@ namespace eIDMW
  {
  
    const static tPin PinInvalid = {false, "",0,0,0,0,0,0, 0, 0, 0, 0, 0,PIN_ENC_BCD,"",""};
@@ -44,19 +41,26 @@
    const static tPrivKey PrivKeyInvalid = {false, "", 0,0,0,0,0,0,0,"", 0,false};
  
    // Hardcoded Beid V1 PINs, keys, certs -- to be removed
-@@ -63,8 +63,7 @@
-   {
-   }
+@@ -59,13 +59,12 @@ namespace eIDMW
+   const std::string defaultEFODF       = "3F00DF005031";
  
--  CPKCS15::CPKCS15(CContext *poContext) :
--    m_poContext(poContext)
-+  CPKCS15::CPKCS15(CContext *poContext)
+ 
+-  CPKCS15::CPKCS15(void) : m_poContext(NULL), m_poParser(NULL)
++  CPKCS15::CPKCS15(void) : m_poParser(NULL)
    {
      Clear();
    }
---- cardlayer/src/pkcs15.h.orig
-+++ cardlayer/src/pkcs15.h
-@@ -90,7 +90,6 @@
+ 
+   CPKCS15::CPKCS15(CContext *poContext) :
+-    m_poContext(poContext),
+     m_poParser(NULL)
+   {
+     Clear();
+Index: cardlayer/src/pkcs15.h
+===================================================================
+--- cardlayer/src/pkcs15.h	(revision 1614)
++++ cardlayer/src/pkcs15.h	(working copy)
+@@ -90,7 +90,6 @@ namespace eIDMW
  
    private:
      CCard *m_poCard;
@@ -64,20 +68,11 @@
      PKCS15Parser *m_poParser;
  
  #ifdef WIN32
---- cardlayer/src/pkicard.cpp.orig
-+++ cardlayer/src/pkicard.cpp
-@@ -363,7 +363,7 @@
- tFileInfo CPkiCard::SelectFile(const std::string & csPath, bool bReturnFileInfo)
- {
- 	CByteArray oResp;
--    tFileInfo xFileInfo = {0};
-+    tFileInfo xFileInfo = {0,0,0};
- 
-     unsigned long ulPathLen = (unsigned long) csPath.size();
-     if (ulPathLen % 4 != 0 || ulPathLen == 0)
---- cardlayer/src/reader.cpp.orig
-+++ cardlayer/src/reader.cpp
-@@ -280,8 +280,7 @@
+Index: cardlayer/src/reader.cpp
+===================================================================
+--- cardlayer/src/reader.cpp	(revision 1614)
++++ cardlayer/src/reader.cpp	(working copy)
+@@ -280,8 +280,7 @@ std::string CReader::GetSerialNr()
      }
      catch(CMWException &e)
      {
@@ -87,9 +82,11 @@
          return m_oPKCS15.GetSerialNr();
      }
  }
---- cardlayer/src/threadpool.cpp.orig
-+++ cardlayer/src/threadpool.cpp
-@@ -79,7 +79,7 @@
+Index: cardlayer/src/threadpool.cpp
+===================================================================
+--- cardlayer/src/threadpool.cpp	(revision 1614)
++++ cardlayer/src/threadpool.cpp	(working copy)
+@@ -79,7 +79,7 @@ void CEventCallbackThread::Run()
  	m_bRunning = false;
  }
  
@@ -98,9 +95,11 @@
  {
  	m_bStop = true;
  }
---- cardlayer/src/threadpool.h.orig
-+++ cardlayer/src/threadpool.h
-@@ -42,7 +42,7 @@
+Index: cardlayer/src/threadpool.h
+===================================================================
+--- cardlayer/src/threadpool.h	(revision 1614)
++++ cardlayer/src/threadpool.h	(working copy)
+@@ -42,7 +42,7 @@ public:
  
  	void Run();
  
