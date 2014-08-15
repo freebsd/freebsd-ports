@@ -3,7 +3,7 @@
 #   $MCom: ports/trunk/www/gtkhtml4/Makefile 19578 2014-04-25 21:50:30Z kwm $
 
 PORTNAME=	gtkhtml
-PORTVERSION=	4.8.3
+PORTVERSION=	4.8.4
 CATEGORIES=	www gnome
 MASTER_SITES=	GNOME
 PKGNAMESUFFIX=	4
