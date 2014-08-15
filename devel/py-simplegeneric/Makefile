@@ -12,9 +12,7 @@ COMMENT=	Simple generic functions
 
 LICENSE=	ZPL21
 
-PYDISTUTILS_AUTOPLIST=	yes
-USE_PYDISTUTILS=yes
-USE_PYTHON=	yes
-USES=		zip
+PYTHON_FEATURES=autoplist,distutils
+USES=		python zip
 
 .include <bsd.port.mk>
