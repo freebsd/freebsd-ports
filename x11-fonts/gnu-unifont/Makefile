@@ -1,12 +1,12 @@
-# Created by: nrg milk <bsdports@gmail.com>
 # $FreeBSD$
 
 PORTNAME=	gnu-unifont
-PORTVERSION=	20140214
+PORTVERSION=	7.0.03
+PORTEPOCH=	1
 CATEGORIES=	x11-fonts
 MASTER_SITES=	${MASTER_SITE_GNU}
-MASTER_SITE_SUBDIR=unifont/unifont-6.3.${PORTVERSION}
-DISTNAME=	unifont-6.3.${PORTVERSION}.pcf
+MASTER_SITE_SUBDIR=unifont/unifont-${PORTVERSION}
+DISTNAME=	unifont-${PORTVERSION}.pcf
 EXTRACT_SUFX=	.gz
 EXTRACT_ONLY=
 

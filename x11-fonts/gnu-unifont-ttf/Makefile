@@ -1,12 +1,12 @@
-# Created by: nrg milk <bsdports@gmail.com>
 # $FreeBSD$
 
 PORTNAME=	gnu-unifont-ttf
-PORTVERSION=	20140214
+PORTVERSION=	7.0.03
+PORTEPOCH=	1
 CATEGORIES=	x11-fonts
 MASTER_SITES=	${MASTER_SITE_GNU}
-MASTER_SITE_SUBDIR=unifont/unifont-6.3.${PORTVERSION}
-DISTNAME=	unifont-6.3.${PORTVERSION}
+MASTER_SITE_SUBDIR=unifont/unifont-${PORTVERSION}
+DISTNAME=	unifont-${PORTVERSION}
 
 MAINTAINER=	bsdports@gmail.com
 COMMENT=	Unicode TrueType Font
@@ -22,13 +22,13 @@ WRKSRC_SUBDIR=	font/precompiled
 
 do-install:
 	@${MKDIR} ${INSTALLDIR}
-	${INSTALL_DATA} ${WRKSRC}/unifont-6.3.${PORTVERSION}.ttf \
+	${INSTALL_DATA} ${WRKSRC}/unifont-${PORTVERSION}.ttf \
 		${INSTALLDIR}/unifont.ttf
-	${INSTALL_DATA} ${WRKSRC}/unifont_csur-6.3.${PORTVERSION}.ttf \
+	${INSTALL_DATA} ${WRKSRC}/unifont_csur-${PORTVERSION}.ttf \
 		${INSTALLDIR}/unifont_csur.ttf
-	${INSTALL_DATA} ${WRKSRC}/unifont_upper-6.3.${PORTVERSION}.ttf \
+	${INSTALL_DATA} ${WRKSRC}/unifont_upper-${PORTVERSION}.ttf \
 		${INSTALLDIR}/unifont_upper.ttf
-	${INSTALL_DATA} ${WRKSRC}/unifont_upper_csur-6.3.${PORTVERSION}.ttf \
+	${INSTALL_DATA} ${WRKSRC}/unifont_upper_csur-${PORTVERSION}.ttf \
 		${INSTALLDIR}/unifont_upper_csur.ttf
 	${LOCALBASE}/bin/mkfontscale ${INSTALLDIR}
 	${LOCALBASE}/bin/mkfontdir ${INSTALLDIR}
