@@ -12,7 +12,7 @@ COMMENT=	Process utilities module for Python
 
 LICENSE=	BSD3CLAUSE
 
-PYTHON_FEATURES=autoplist,distutils
+USE_PYTHON=	autoplist distutils
 USES=		python
 
 post-install:

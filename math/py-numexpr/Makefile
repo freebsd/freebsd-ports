@@ -16,7 +16,7 @@ LICENSE=	MIT
 BUILD_DEPENDS=	${PYNUMPY}
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PYTHON_FEATURES=autoplist,distutils
+USE_PYTHON=	autoplist distutils
 USES=		python
 
 .include <bsd.port.mk>

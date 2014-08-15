@@ -15,7 +15,7 @@ COMMENT=	Generating safely-quoted html text from python code
 OPTIONS_DEFINE=	DOCS
 OPTIONSFILE=	${PORT_DBDIR}/py-${PORTNAME}/options
 
-PYTHON_FEATURES=autoplist,distutils
+USE_PYTHON=	autoplist distutils
 USES=		python:2
 
 PORTDOCS=	CHANGES.txt LICENSE.txt README.txt

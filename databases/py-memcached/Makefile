@@ -18,7 +18,7 @@ COMMENT=	Python API for memcached, a distributed memory cache daemon
 
 LICENSE=	PSFL
 
-PYTHON_FEATURES=autoplist,distutils
+USE_PYTHON=	autoplist distutils
 USES=		python
 
 .include <bsd.port.mk>

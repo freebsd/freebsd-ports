@@ -17,7 +17,7 @@ LICENSE=	LGPL3
 OPTIONS_DEFINE=	EXAMPLES
 OPTIONSFILE=	${PORT_DBDIR}/py-${PORTNAME}/options
 
-PYTHON_FEATURES=autoplist,distutils
+USE_PYTHON=	autoplist distutils
 USES=		python zip
 
 EXAMPLESDIR=	${PREFIX}/share/examples/py-${PORTNAME}

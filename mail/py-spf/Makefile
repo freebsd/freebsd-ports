@@ -16,7 +16,7 @@ LICENSE=	PSFL
 OPTIONS_DEFINE=	DOCS
 OPTIONSFILE=	${PORT_DBDIR}/py-${PORTNAME}/options
 
-PYTHON_FEATURES=autoplist,distutils
+USE_PYTHON=	autoplist distutils
 USES=		python shebangfix
 
 PLIST_FILES=	bin/spf.py

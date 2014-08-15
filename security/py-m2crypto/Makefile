@@ -17,7 +17,7 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/swig:${PORTSDIR}/devel/swig13
 
 PYDISTUTILS_BUILDARGS=	build_ext --openssl="${OPENSSLBASE}"
 USE_OPENSSL=	yes
-PYTHON_FEATURES=autoplist,distutils
+USE_PYTHON=	autoplist distutils
 USES=		python:2
 
 .include <bsd.port.mk>

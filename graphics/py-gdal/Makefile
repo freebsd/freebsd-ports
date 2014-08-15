@@ -20,7 +20,7 @@ LIB_DEPENDS=	libgdal.so:${PORTSDIR}/graphics/gdal
 OPTIONS_DEFINE=	NUMPY
 NUMPY_DESC=	Enable array support via NumPy
 
-PYTHON_FEATURES=autoplist,distutils
+USE_PYTHON=	autoplist distutils
 USES=		python shebangfix
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/swig/python
