@@ -20,10 +20,10 @@ PORTEXAMPLES=	adh.nex anolis.nex avian_ovomucoids.nex bglobin.nex \
 		cynmix.nex kim.nex primates.nex replicase.nex
 
 do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/mb ${STAGEDIR}${PREFIX}/bin/
+	${INSTALL_PROGRAM} ${WRKSRC}/mb ${STAGEDIR}${PREFIX}/bin/
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 .for file in ${PORTEXAMPLES}
-	@${INSTALL_DATA} ${WRKSRC}/${file} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/${file} ${STAGEDIR}${EXAMPLESDIR}
 .endfor
 
 .include <bsd.port.mk>
