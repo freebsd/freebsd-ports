@@ -1,6 +1,6 @@
---- unix/unix.c.orig	2009-01-24 02:31:26.000000000 +0300
-+++ unix/unix.c	2009-10-26 13:22:08.000000000 +0300
-@@ -610,7 +610,7 @@
+--- unix/unix.c.orig	2009-01-23 23:31:26 UTC
++++ unix/unix.c
+@@ -610,7 +610,7 @@ int mapname(__G__ renamed)
                   * else allow 8-bit characters (e.g. UTF-8) in filenames:
                   */
                  if (uO.cflxflag ||
