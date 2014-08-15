@@ -95,7 +95,7 @@ MAKE_PKGNAMES=	for i in "" +tls; do \
 	done done done done
 
 ALL_PKGNAMES!=	${MAKE_PKGNAMES}
-CONFLICTS2!=	${MAKE_PKGNAMES} | grep -v "${PORTNAME}${PKGNAMESUFFIX:S|${PKGNAMESUFFIX2}||}-8."
+CONFLICTS2!=	${MAKE_PKGNAMES} | grep -v "${PORTNAME}${PKGNAMESUFFIX}-8."
 CONFLICTS+=	${CONFLICTS2}
 
 # Build site.config.m4
