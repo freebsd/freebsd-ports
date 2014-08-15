@@ -3,6 +3,7 @@
 
 PORTNAME=	gwyddion
 PORTVERSION=	2.37
+PORTREVISION=	1
 CATEGORIES=	science graphics
 MASTER_SITES=	SF
 

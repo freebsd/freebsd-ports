@@ -2,7 +2,7 @@
 
 PORTNAME=	calligra-l10n
 PORTVERSION=	2.5.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	japanese editors kde
 
 MAINTAINER=	kde@FreeBSD.org
