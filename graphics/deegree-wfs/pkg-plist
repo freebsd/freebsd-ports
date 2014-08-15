@@ -1,3 +1,4 @@
+@exec chown %%WWWOWN%%:%%WWWGRP%% %D/%%TOMCATDIR%%/webapps/deegree-wfs
 %%TOMCATDIR%%/webapps/deegree-wfs/META-INF/MANIFEST.MF
 %%TOMCATDIR%%/webapps/deegree-wfs/WEB-INF/classes/log4j.properties
 %%TOMCATDIR%%/webapps/deegree-wfs/WEB-INF/classes/wfsrequestmapping.properties
@@ -255,4 +256,3 @@
 @dirrm %%TOMCATDIR%%/webapps/deegree-wfs/WEB-INF
 @dirrm %%TOMCATDIR%%/webapps/deegree-wfs/META-INF
 @dirrm %%TOMCATDIR%%/webapps/deegree-wfs
-@dirrm %%TOMCATDIR%%/webapps
