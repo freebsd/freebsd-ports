@@ -1,6 +1,6 @@
---- Makefile.in.orig	2011-05-25 11:07:28.000000000 +0200
-+++ Makefile.in	2011-11-12 16:01:22.000000000 +0100
-@@ -389,18 +389,18 @@
+--- Makefile.in.orig	2011-05-25 09:07:28 UTC
++++ Makefile.in
+@@ -389,18 +389,18 @@ MLI = camomileLibrary.mli camomileLibrar
  install: $(INSTALL) install-data
  
  install-without-ocamlfind:
@@ -16,36 +16,43 @@
 -	if [ -f camomile.cma ]; then cp -f camomile.cma '$(OCAMLLIB)'; fi
 -	if [ -f camomile.cmxa ]; then cp -f camomile.cmxa '$(OCAMLLIB)'; fi
 -	if [ -f camomile.a ]; then cp -f camomile.a '$(OCAMLLIB)'; fi
-+	${BSD_INSTALL_DIR} $(OCAMLLIB)
-+	${BSD_INSTALL_LIB} camomileLibrary.cmi '$(OCAMLLIB)'
-+	${BSD_INSTALL_LIB} camomileLibraryDefault.cmi '$(OCAMLLIB)'	
-+	${BSD_INSTALL_LIB} camomileLibraryDyn.cmi '$(OCAMLLIB)'	
-+	if [ -f camomileLibrary.cmx ]; then ${BSD_INSTALL_DATA} camomileLibrary.cmx '$(OCAMLLIB)'; fi
-+	if [ -f camomileLibrary.cma ]; then ${BSD_INSTALL_DATA} camomileLibrary.cma '$(OCAMLLIB)'; fi
-+	if [ -f camomileLibrary.cmxa ]; then ${BSD_INSTALL_DATA} camomileLibrary.cmxa '$(OCAMLLIB)'; fi
-+	if [ -f camomileLibraryDefault.cmx ]; then ${BSD_INSTALL_DATA} camomileLibraryDefault.cmx '$(OCAMLLIB)'; fi
-+	if [ -f camomileLibraryDyn.cmx ]; then ${BSD_INSTALL_DATA} camomileLibraryDyn.cmx '$(OCAMLLIB)'; fi
-+	if [ -f camomile.cma ]; then ${BSD_INSTALL_DATA} camomile.cma '$(OCAMLLIB)'; fi
-+	if [ -f camomile.cmxa ]; then ${BSD_INSTALL_DATA} camomile.cmxa '$(OCAMLLIB)'; fi
-+	if [ -f camomile.a ]; then ${BSD_INSTALL_DATA} camomile.a '$(OCAMLLIB)'; fi
++	mkdir -p '$(DESTDIR)$(OCAMLLIB)'
++	${BSD_INSTALL_LIB} camomileLibrary.cmi '$(DESTDIR)$(OCAMLLIB)'
++	${BSD_INSTALL_LIB} camomileLibraryDefault.cmi '$(DESTDIR)$(OCAMLLIB)'
++	${BSD_INSTALL_LIB} camomileLibraryDyn.cmi '$(DESTDIR)$(OCAMLLIB)'
++	if [ -f camomileLibrary.cmx ]; then ${BSD_INSTALL_DATA} camomileLibrary.cmx '$(DESTDIR)$(OCAMLLIB)'; fi
++	if [ -f camomileLibrary.cma ]; then ${BSD_INSTALL_DATA} camomileLibrary.cma '$(DESTDIR)$(OCAMLLIB)'; fi
++	if [ -f camomileLibrary.cmxa ]; then ${BSD_INSTALL_DATA} camomileLibrary.cmxa '$(DESTDIR)$(OCAMLLIB)'; fi
++	if [ -f camomileLibraryDefault.cmx ]; then ${BSD_INSTALL_DATA} camomileLibraryDefault.cmx '$(DESTDIR)$(OCAMLLIB)'; fi
++	if [ -f camomileLibraryDyn.cmx ]; then ${BSD_INSTALL_DATA} camomileLibraryDyn.cmx '$(DESTDIR)$(OCAMLLIB)'; fi
++	if [ -f camomile.cma ]; then ${BSD_INSTALL_DATA} camomile.cma '$(DESTDIR)$(OCAMLLIB)'; fi
++	if [ -f camomile.cmxa ]; then ${BSD_INSTALL_DATA} camomile.cmxa '$(DESTDIR)$(OCAMLLIB)'; fi
++	if [ -f camomile.a ]; then ${BSD_INSTALL_DATA} camomile.a '$(DESTDIR)$(OCAMLLIB)'; fi
  
  install-with-ocamlfind:
  	files= &&\
-@@ -418,13 +418,13 @@
- 	mkdir -p '$(DATADIR)'
- 	mkdir -p '$(DATADIR)'/camomile
- 	mkdir -p '$(DATADIR)'/camomile/database
+@@ -415,16 +415,14 @@ install-with-ocamlfind:
+ 	ocamlfind install camomile $$files META $(MLI) camomileLibrary.cmi camomileLibraryDefault.cmi camomileLibraryDyn.cmi
+ 
+ install-data:
+-	mkdir -p '$(DATADIR)'
+-	mkdir -p '$(DATADIR)'/camomile
+-	mkdir -p '$(DATADIR)'/camomile/database
 -	cp -f database/*.mar '$(DATADIR)'/camomile/database || true
-+	${BSD_INSTALL_DATA} database/*.mar '$(DATADIR)'/camomile/database || true
- 	mkdir -p '$(DATADIR)'/camomile/charmaps
+-	mkdir -p '$(DATADIR)'/camomile/charmaps
 -	cp -f charmaps/*.mar '$(DATADIR)'/camomile/charmaps || true
-+	${BSD_INSTALL_DATA} charmaps/*.mar '$(DATADIR)'/camomile/charmaps || true
- 	mkdir -p '$(DATADIR)'/camomile/mappings
+-	mkdir -p '$(DATADIR)'/camomile/mappings
 -	cp -f mappings/*.mar '$(DATADIR)'/camomile/mappings || true
-+	${BSD_INSTALL_DATA} mappings/*.mar '$(DATADIR)'/camomile/mappings || true
- 	mkdir -p '$(DATADIR)'/camomile/locales
+-	mkdir -p '$(DATADIR)'/camomile/locales
 -	cp -f locales/*.mar '$(DATADIR)'/camomile/locales || true
-+	${BSD_INSTALL_DATA} locales/*.mar '$(DATADIR)'/camomile/locales || true
++	mkdir -p '$(DESTDIR)$(DATADIR)'/camomile/database
++	${BSD_INSTALL_DATA} database/*.mar '$(DESTDIR)$(DATADIR)'/camomile/database || true
++	mkdir -p '$(DESTDIR)$(DATADIR)'/camomile/charmaps
++	${BSD_INSTALL_DATA} charmaps/*.mar '$(DESTDIR)$(DATADIR)'/camomile/charmaps || true
++	mkdir -p '$(DESTDIR)$(DATADIR)'/camomile/mappings
++	${BSD_INSTALL_DATA} mappings/*.mar '$(DESTDIR)$(DATADIR)'/camomile/mappings || true
++	mkdir -p '$(DESTDIR)$(DATADIR)'/camomile/locales
++	${BSD_INSTALL_DATA} locales/*.mar '$(DESTDIR)$(DATADIR)'/camomile/locales || true
  
  uninstall: $(UNINSTALL)
  
