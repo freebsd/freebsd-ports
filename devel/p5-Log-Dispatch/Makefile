@@ -1,8 +1,7 @@
-# Created by: Anton Berezin <tobez@tobez.org>
 # $FreeBSD$
 
 PORTNAME=	Log-Dispatch
-PORTVERSION=	2.41
+PORTVERSION=	2.42
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -12,7 +11,7 @@ COMMENT=	Suite of OO modules for logging messages to multiple outputs
 
 LICENSE=	ART20
 
-BUILD_DEPENDS=	p5-Class-Load>=0:${PORTSDIR}/devel/p5-Class-Load \
+BUILD_DEPENDS=	p5-Module-Runtime>=0:${PORTSDIR}/devel/p5-Module-Runtime \
 		p5-Dist-CheckConflicts>=0.02:${PORTSDIR}/devel/p5-Dist-CheckConflicts \
 		p5-Params-Validate>=0.15:${PORTSDIR}/devel/p5-Params-Validate
 RUN_DEPENDS:=	${BUILD_DEPENDS}
@@ -28,7 +27,7 @@ MAILSENDMAIL_DESC=	Mail::Sendmail support
 USES=		perl5
 USE_PERL5=	configure
 
-PORTDOCS=	Changes README
+PORTDOCS=	Changes README.md
 
 .include <bsd.port.options.mk>
 
