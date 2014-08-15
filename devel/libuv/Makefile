@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libuv
-PORTVERSION=	0.11.25
-PORTREVISION=	1
+PORTVERSION=	0.11.28
 CATEGORIES=	devel
 MASTER_SITES=	http://libuv.org/dist/v${PORTVERSION}/
 DISTNAME=	${PORTNAME}-v${PORTVERSION}
@@ -33,7 +32,7 @@ pre-configure:
 .if defined(MAINTAINER_MODE)
 regression-test:
 	(cd ${WRKSRC} && ./gyp_uv.py -f make &&	\
-	${SETENV} ${MAKE_ENV} ${MAKE_CMD} -C out && \
+	${SETENV} ${MAKE_ENV} ${GMAKE} -C out && \
 	./out/Debug/run-tests)
 .endif
 
