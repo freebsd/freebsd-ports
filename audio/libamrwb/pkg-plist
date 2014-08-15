@@ -21,7 +21,7 @@ include/amrwb/enc_util.h
 include/amrwb/if_rom.h
 include/amrwb/typedef.h
 lib/libamrwb.a
-lib/libamrwb.la
 lib/libamrwb.so
 lib/libamrwb.so.3
+lib/libamrwb.so.3.0.0
 @dirrmtry include/amrwb
