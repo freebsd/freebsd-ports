@@ -1,6 +1,6 @@
---- ebcdic.h.orig	Wed May  4 12:30:10 2005
-+++ ebcdic.h	Wed May  4 12:30:18 2005
-@@ -237,43 +237,43 @@
+--- ebcdic.h.orig	2008-03-21 12:04:22 UTC
++++ ebcdic.h
+@@ -237,43 +237,43 @@ ZCONST uch ascii[] = {
  
  #ifdef IZ_ISO2OEM_ARRAY
  ZCONST uch Far iso2oem_850[] = {

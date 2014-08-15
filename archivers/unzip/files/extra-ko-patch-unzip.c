@@ -1,6 +1,6 @@
---- unzip.c.orig	2009-04-17 03:26:52.000000000 +0900
-+++ unzip.c	2011-02-15 11:25:36.000000000 +0900
-@@ -664,7 +664,8 @@
+--- unzip.c.orig	2009-04-16 18:26:52 UTC
++++ unzip.c
+@@ -664,7 +664,8 @@ modifiers:\n\
    -j  junk paths (do not make directories)   -aa treat ALL files as text\n\
    -U  use escapes for all non-ASCII Unicode  -UU ignore any Unicode fields\n\
    -C  match filenames case-insensitively     -L  make (some) names \
@@ -10,7 +10,7 @@
  #else /* !VMS */
  static ZCONST char Far UnzipUsageLine4[] = "\
  modifiers:\n\
-@@ -1829,6 +1830,12 @@
+@@ -1829,6 +1830,12 @@ int uz_opts(__G__ pargc, pargv)
                          ++uO.cflxflag;
                      break;
  #endif /* UNIX */

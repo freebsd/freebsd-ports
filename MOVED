@@ -6414,3 +6414,7 @@ devel/glib-java||2014-08-14|Has expired: Unmaintained, outdated not depend on
 www/phpgedview|www/webtrees|2014-08-15|Has expired: Superceded by www/webtrees
 graphics/luxrays||2014-08-15|Has expired: No longer needed as luxrender bundles its own verion now
 net-mgmt/cflowd||2014-08-15|Has expired: Unmaintained 10 years, requires dozens of patches, unverifiable
+archivers/unzip-iconv|archivers/unzip|2014-08-15|Merged with archivers/unzip as a new non-default option
+chinese/unzip|archivers/unzip|2014-08-15|Merged with archivers/unzip as a new non-default option
+korean/unzip|archivers/unzip|2014-08-15|Merged with archivers/unzip as a new non-default option
+russian/unzip|archivers/unzip|2014-08-15|Merged with archivers/unzip as a new non-default option

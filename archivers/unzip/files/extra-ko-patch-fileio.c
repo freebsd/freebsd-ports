@@ -1,6 +1,6 @@
---- fileio.c.orig	Sun Feb 17 14:43:28 2002
-+++ fileio.c	Wed May 21 03:40:24 2003
-@@ -2135,8 +2135,9 @@
+--- fileio.c.orig	2009-04-20 00:03:44 UTC
++++ fileio.c
+@@ -2240,8 +2240,9 @@ int do_string(__G__ length, option)   /*
  
          /* translate the Zip entry filename coded in host-dependent "extended
             ASCII" into the compiler's (system's) internal text code page */
