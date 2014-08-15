@@ -3,7 +3,7 @@
 
 PORTNAME=	kover
 PORTVERSION=	6
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	print kde
 MASTER_SITES=	http://lisas.de/kover/
 

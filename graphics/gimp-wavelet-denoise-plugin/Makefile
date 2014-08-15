@@ -3,6 +3,7 @@
 
 PORTNAME=	wavelet-denoise
 PORTVERSION=	0.3.1
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://registry.gimp.org/files/
 PKGNAMEPREFIX=	gimp-

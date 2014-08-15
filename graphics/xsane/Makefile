@@ -3,7 +3,7 @@
 
 PORTNAME=	xsane
 PORTVERSION=	0.999
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.xsane.org/download/
 

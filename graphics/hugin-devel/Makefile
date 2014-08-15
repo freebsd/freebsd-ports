@@ -3,7 +3,7 @@
 
 PORTNAME=	hugin
 PORTVERSION=	2013.0
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-2013.0
 PKGNAMESUFFIX=	-devel
@@ -31,6 +31,8 @@ RUN_DEPENDS=	enblend>=3.1.r20080615:${PORTSDIR}/graphics/enblend \
 
 WRKSRC=		${WRKDIR}/hugin-2013.0.0
 CONFLICTS_INSTALL=	hugin-201[0-2]*
+
+IGNORE=		older than graphics/hugin
 
 OPTIONS_DEFINE=	PANOMATIC AUTOPANOSIFTC
 OPTIONS_DEFAULT=	PANOMATIC AUTOPANOSIFTC
@@ -79,7 +81,6 @@ MAN1=		align_image_stack.1 \
 		PTBatcherGUI.1 \
 		vig_optimize.1
 
-NO_STAGE=	yes
 post-configure:
 	${REINPLACE_CMD} \
 		's/-pthread;-D_THREAD_SAFE/-pthread -D_THREAD_SAFE/g' \

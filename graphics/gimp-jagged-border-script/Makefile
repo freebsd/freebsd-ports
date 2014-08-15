@@ -3,6 +3,7 @@
 
 PORTNAME=	jagged-border
 PORTVERSION=	0.2009.11.12
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://registry.gimp.org/files/
 PKGNAMEPREFIX=	gimp-

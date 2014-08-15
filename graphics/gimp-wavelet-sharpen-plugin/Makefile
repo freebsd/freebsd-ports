@@ -3,6 +3,7 @@
 
 PORTNAME=	wavelet-sharpen
 PORTVERSION=	0.1.2
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://registry.gimp.org/files/
 PKGNAMEPREFIX=	gimp-
