@@ -12,8 +12,7 @@ COMMENT=	Implements a XML/HTML/XHTML Markup safe string for Python
 
 LICENSE=	BSD3CLAUSE
 
-USE_PYTHON=	yes
-USE_PYDISTUTILS=yes
-PYDISTUTILS_AUTOPLIST=	yes
+PYTHON_FEATURES=autoplist,distutils
+USES=		python
 
 .include <bsd.port.mk>
