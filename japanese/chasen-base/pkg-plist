@@ -3,9 +3,9 @@ bin/chasen
 bin/chasen-config
 include/chasen.h
 lib/libchasen.a
-lib/libchasen.la
 lib/libchasen.so
 lib/libchasen.so.2
+lib/libchasen.so.2.0.4
 libexec/chasen/makeda
 libexec/chasen/makemat
 @dirrm libexec/chasen
