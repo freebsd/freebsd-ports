@@ -27,7 +27,7 @@ GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 PLIST_SUB=	VERSION="${GST_VERSION}"
 CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|DLFCN|dl|g' ${WRKSRC}/gst/__init__.py
