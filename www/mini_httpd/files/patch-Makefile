@@ -1,26 +1,22 @@
---- Makefile.orig	2002-11-01 23:02:57.000000000 +0000
-+++ Makefile	2010-12-23 14:02:54.000000000 +0000
-@@ -14,17 +14,20 @@
- # http://www.openssl.org/  Make sure the SSL_TREE definition points to the
+--- Makefile.orig	2014-08-11 21:13:49.000000000 +0200
++++ Makefile	2014-08-15 13:12:30.099236617 +0200
+@@ -15,16 +15,16 @@
  # tree with your OpenSSL installation - depending on how you installed it,
  # it may be in /usr/local instead of /usr/local/ssl.
-+.ifdef USE_OPENSSL
  #SSL_TREE =	/usr/local/ssl
 -#SSL_DEFS =	-DUSE_SSL
 +SSL_DEFS =	-DUSE_SSL
- #SSL_INC =	-I${SSL_TREE}/include
- #SSL_LIBS =	-L${SSL_TREE}/lib -lssl -lcrypto
+ #SSL_INC =	-I$(SSL_TREE)/include
+-#SSL_LIBS =	-L$(SSL_TREE)/lib -lssl -lcrypto
 +SSL_LIBS =	-lssl -lcrypto
-+.endif
  
  
  BINDIR =	/usr/local/sbin
  MANDIR =	/usr/local/man
--CC =		gcc
-+#CC =		gcc
- CDEFS =		${SSL_DEFS} ${SSL_INC}
--CFLAGS =	-O ${CDEFS}
-+CFLAGS +=	${CDEFS}
- #CFLAGS =	-g ${CDEFS}
+ CC =		cc
+ CDEFS =		$(SSL_DEFS) $(SSL_INC)
+-CFLAGS =	-O $(CDEFS) -ansi -pedantic -U__STRICT_ANSI__ -Wall -Wpointer-arith -Wshadow -Wcast-qual -Wcast-align -Wstrict-prototypes -Wmissing-prototypes -Wmissing-declarations -Wredundant-decls -Wno-long-long
++CFLAGS +=	$(CDEFS) -ansi -pedantic -U__STRICT_ANSI__ -Wall -Wpointer-arith -Wshadow -Wcast-qual -Wcast-align -Wstrict-prototypes -Wmissing-prototypes -Wmissing-declarations -Wredundant-decls -Wno-long-long
  LDFLAGS =	-s
- #LDFLAGS =	-g
+ LDLIBS =	$(CRYPT_LIB) $(SSL_LIBS) $(SYSV_LIBS)
+ 
