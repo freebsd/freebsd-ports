@@ -35,8 +35,8 @@
 -INSTALL=install -o root -m
 -BINPERM=02755 -s -g mail
 -REGPERM=0644
-+INSTALL=install -c -o bin -m
-+BINLPERM=02555 -s -g mail
++INSTALL=install -c -m
++BINLPERM=555 -s
 +BINSPERM=555 -s
 +REGPERM=0444
  
@@ -61,23 +61,26 @@
  
  cucipop: $(OBJS)
  	$(CC) $(CFLAGS) $(OBJS) -o $@ $(LDFLAGS) $(LIBS)
-@@ -67,12 +70,14 @@
+@@ -67,13 +70,15 @@
  $(MD5_OBJ): md5/md5c.c md5/md5.h
  	cd md5; $(CC) $(CFLAGS) -c md5c.c
  
 -install: $(BINS) $(MANS)
 -	$(INSTALL) $(BINPERM) $(BINS) $(BINDIR)
-+install: $(BINL) $(MANS) #$(BINS)
-+	$(INSTALL) $(BINLPERM) $(BINL) $(LIBEXECDIR)
-+#        $(INSTALL) $(BINSPERM) $(BINS) $(BINDIR)
- 	$(INSTALL) $(REGPERM) $(MANS) $(MANDIR)
+-	$(INSTALL) $(REGPERM) $(MANS) $(MANDIR)
 -	mkdir $(CUCIPOPLIB) 2>/dev/null; exit 0
 -	mkdir $(CUCIPOPBULLETINS) 2>/dev/null; exit 0
 -	@for a in $(BINS); do ls -l $(BINDIR)/$$a; done
-+	mkdir -p $(CUCIPOPLIB) 2>/dev/null; exit 0
-+	mkdir -p $(CUCIPOPBULLETINS) 2>/dev/null; exit 0
-+	@for a in $(BINL); do ls -l $(LIBEXECDIR)/$$a; done
-+#        @for a in $(BINS); do ls -l $(BINDIR)/$$a; done
- 	@for a in $(MANS); do ls -l $(MANDIR)/$$a; done
+-	@for a in $(MANS); do ls -l $(MANDIR)/$$a; done
++install: $(BINL) $(MANS) #$(BINS)
++	$(INSTALL) $(BINLPERM) $(BINL) $(DESTDIR)$(LIBEXECDIR)
++#	$(INSTALL) $(BINSPERM) $(BINS) $(DESTDIR)$(BINDIR)
++	$(INSTALL) $(REGPERM) $(MANS) $(DESTDIR)$(MANDIR)
++	mkdir -p $(DESTDIR)$(CUCIPOPLIB) 2>/dev/null; exit 0
++	mkdir -p $(DESTDIR)$(CUCIPOPBULLETINS) 2>/dev/null; exit 0
++	@for a in $(BINL); do ls -l $(DESTDIR)$(LIBEXECDIR)/$$a; done
++#	@for a in $(BINS); do ls -l $(DESTDIR)$(BINDIR)/$$a; done
++	@for a in $(MANS); do ls -l $(DESTDIR)$(MANDIR)/$$a; done
  
  deinstall:
+ 	cd $(BINDIR) && $(RM) $(BINS)
