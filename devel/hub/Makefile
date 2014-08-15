@@ -8,6 +8,8 @@ CATEGORIES=	devel
 MAINTAINER=	koukopoulos@gmail.com
 COMMENT=	Introduces git to GitHub
 
+LICENSE=	MIT
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	github
 GH_TAGNAME=	v${DISTVERSION}
