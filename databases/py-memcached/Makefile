@@ -16,8 +16,9 @@ DISTNAME=	python-${PORTNAME}-${PORTVERSION}
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Python API for memcached, a distributed memory cache daemon
 
-PYDISTUTILS_AUTOPLIST=	yes
-USE_PYDISTUTILS=yes
-USE_PYTHON=	yes
+LICENSE=	PSFL
+
+PYTHON_FEATURES=autoplist,distutils
+USES=		python
 
 .include <bsd.port.mk>
