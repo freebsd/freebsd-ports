@@ -22,8 +22,7 @@ ALL_TARGET=	native
 MAKE_ARGS=	library=shared use_system_icu=on
 MAKE_ENV=	CC.host=${CC} CXX.host=${CXX} LINK.host=${CXX} LINK.target=${CXX}
 USE_LDCONFIG=	yes
-USE_PYTHON=	2
-USES=		compiler cpe execinfo gmake shebangfix tar:xz
+USES=		compiler cpe execinfo gmake python:2 shebangfix tar:xz
 
 CPE_VENDOR=	google
 
