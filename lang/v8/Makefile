@@ -19,8 +19,7 @@ ALL_TARGET=	native
 MAKE_ARGS=	library=shared
 MAKE_ENV=	CC.host=${CC} CXX.host=${CXX} LINK.host=${CXX} LINK.target=${CXX}
 USE_LDCONFIG=	yes
-USE_PYTHON=	2
-USES=		compiler cpe execinfo gmake tar:xz
+USES=		compiler cpe execinfo gmake python:2 tar:xz
 
 CPE_VENDOR=	google
 
