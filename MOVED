@@ -6419,3 +6419,4 @@ chinese/unzip|archivers/unzip|2014-08-15|Merged with archivers/unzip as a new no
 korean/unzip|archivers/unzip|2014-08-15|Merged with archivers/unzip as a new non-default option
 russian/unzip|archivers/unzip|2014-08-15|Merged with archivers/unzip as a new non-default option
 mail/sendmail-sasl|mail/sendmail|2014-08-15|Removed: Use mail/sendmail instead
+print/cups-samba||2014-08-15|Removed: defunct for long, disappeared upstream
