@@ -16,7 +16,7 @@ include/amrnb/sp_dec.h
 include/amrnb/sp_enc.h
 include/amrnb/typedef.h
 lib/libamrnb.a
-lib/libamrnb.la
 lib/libamrnb.so
 lib/libamrnb.so.3
+lib/libamrnb.so.3.0.0
 @dirrmtry include/amrnb

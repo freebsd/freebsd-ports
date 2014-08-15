@@ -3,7 +3,7 @@
 
 PORTNAME=	libamrnb
 PORTVERSION=	11.0.0.0
-PORTEPOCH=	1
+PORTEPOCH=	2
 CATEGORIES=	audio
 MASTER_SITES=	http://www.penguin.cz/~utx/ftp/amr/ \
 		http://www.3gpp.org/ftp/Specs/archive/26_series/26.104/:SRC26104
@@ -27,8 +27,7 @@ BUILD_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
 
 RESTRICTED=	unclear legal status, probably need licenses from 3GPP and more
 
-USES=		gmake tar:bzip2
-USE_AUTOTOOLS=	libtool
+USES=		gmake tar:bzip2 libtool
 PORTDOCS=	AUTHORS COPYING ChangeLog NEWS README TODO readme.txt
 SUB_FILES=	pkg-message
 GNU_CONFIGURE=	yes
