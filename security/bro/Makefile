@@ -3,7 +3,7 @@
 
 PORTNAME=	bro
 PORTVERSION=	2.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES=	http://www.bro.org/downloads/release/
 
@@ -18,8 +18,7 @@ LIB_DEPENDS=	libGeoIP.so:${PORTSDIR}/net/GeoIP
 
 SUB_LIST+=	PYTHON_CMD="${PYTHON_CMD}"
 
-USES=		cmake:outsource perl5
-USE_PYTHON=	yes
+USES=		cmake:outsource perl5 python
 
 SUB_FILES=	pkg-message
 NO_MTREE=	yes
@@ -140,11 +139,8 @@ post-install:
 .endif
 	@${MKDIR} ${STAGEDIR}${PREFIX}/spool/installed-scripts-do-not-touch/auto
 	@${MKDIR} ${STAGEDIR}${PREFIX}/spool/installed-scripts-do-not-touch/site
-.for F in broctl.cfg
-	@${INSTALL_DATA} ${INSTALL_WRKSRC}/aux/broctl/etc/${F} ${STAGEDIR}${PREFIX}/etc/${F}.example
-.endfor
-.for F in networks.cfg node.cfg
-	@${MV} ${WRKSRC}/aux/broctl/etc/${F} ${STAGEDIR}${PREFIX}/etc/${F}.example
+.for F in broctl.cfg networks.cfg node.cfg
+	@${MV} ${STAGEDIR}${PREFIX}/etc/${F} ${STAGEDIR}${PREFIX}/etc/${F}.example
 .endfor
 .endif
 
