@@ -9,7 +9,7 @@ CATEGORIES=	graphics devel
 MASTER_SITES=	SF/${PORTNAME}		\
 		SF/${PORTNAME}/old
 DISTNAME=	CImg-${DISTVERSION}
-DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}_${PORTREVISION}
+DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}_${TARBALLREVISION}
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	The C++ Template Image Processing Library
@@ -26,6 +26,7 @@ LICENSE_PERMS_CeCILL=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 ONLY_FOR_ARCHS=	i386 amd64
 ONLY_FOR_ARCHS_REASON=	"invokes i386 asm"
 
+TARBALLREVISION=3
 USES=		zip
 WRKSRC=		${WRKDIR}/${DISTNAME:C/_/-/}
 BUILD_WRKSRC=	${WRKSRC}/examples
