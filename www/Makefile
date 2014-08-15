@@ -1431,7 +1431,6 @@
     SUBDIR += php55-tidy
     SUBDIR += phpbb
     SUBDIR += phpbb3
-    SUBDIR += phpgedview
     SUBDIR += phpgroupware
     SUBDIR += phpmp
     SUBDIR += phpmustache

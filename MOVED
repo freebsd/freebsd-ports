@@ -6411,3 +6411,6 @@ devel/kyua-atf-compat|devel/kyua|2014-08-14|Upstream merged all components into 
 devel/kyua-cli|devel/kyua|2014-08-14|Upstream merged all components into devel/kyua
 devel/kyua-testers|devel/kyua|2014-08-14|Upstream merged all components into devel/kyua
 devel/glib-java||2014-08-14|Has expired: Unmaintained, outdated not depend on
+www/phpgedview|www/webtrees|2014-08-15|Has expired: Superceded by www/webtrees
+graphics/luxrays||2014-08-15|Has expired: No longer needed as luxrender bundles its own verion now
+net-mgmt/cflowd||2014-08-15|Has expired: Unmaintained 10 years, requires dozens of patches, unverifiable
