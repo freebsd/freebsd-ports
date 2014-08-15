@@ -11,6 +11,7 @@
 
 . /etc/rc.subr
 
+export PATH=${PATH}:%%LOCALBASE%%/bin
 name=secondarynamenode
 rcvar=secondarynamenode_enable
 
