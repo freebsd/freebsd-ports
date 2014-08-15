@@ -1,0 +1,8 @@
+The shell agent allows you to start and manage shell commands via mcollective.
+
+It allows the running of long-running processes with a mechanism to check in
+on the output from these long-running processes, which is independent of the
+mcollective daemon process (the daemon can be restarted without interrupting
+the processes)
+
+WWW: https://github.com/puppetlabs/mcollective-shell-agent
