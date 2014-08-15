@@ -4,7 +4,7 @@
 	toxic -4
 
 + if your screen is unreadable, try to set
-	colour_theme:1;
+	native_colors=true;
   in your ~/.config/tox/toxic.conf
 
   (more parameters available - see %%DATADIR%%/toxic.conf.example )
