@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	munger
-PORTVERSION=	5.6
-PORTREVISION=	1
+PORTVERSION=	5.7
 CATEGORIES=	lang
 MASTER_SITES=	http://www.mammothcheese.ca/
 
@@ -12,7 +11,6 @@ COMMENT=	Static lisp interpreter with text processing abilities
 
 LIB_DEPENDS=	libtre.so:${PORTSDIR}/textproc/libtre
 
-DESTDIRNAME=	STAGEDIR
 DATADIR=	${PREFIX}/share/${PORTNAME}-${PORTVERSION}
 
 OPTIONS_DEFINE=	SQLITE
