@@ -505,6 +505,7 @@
     SUBDIR += mcollective-nrpe-agent
     SUBDIR += mcollective-puppet-agent
     SUBDIR += mcollective-shell-agent
+    SUBDIR += mcollective-shell-client
     SUBDIR += mcron
     SUBDIR += mcweject
     SUBDIR += mdcp
