@@ -1,4 +1,8 @@
-@exec chown %%WWWOWN%%:%%WWWGRP%% %D/%%TOMCATDIR%%/webapps/deegree-csw
+@owner %%WWWOWN%%
+@group %%WWWGRP%%
+@dirrm %%TOMCATDIR%%/webapps/deegree-csw
+@group wheel
+@group root
 %%TOMCATDIR%%/webapps/deegree-csw/META-INF/MANIFEST.MF
 %%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/classes/harvestrepository.properties
 %%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/classes/log4j.properties
