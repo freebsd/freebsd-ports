@@ -21,18 +21,14 @@ PKGMESSAGE=	${WRKDIR}/pkg-message
 DICS=		gcanna.cbd gcanna.cld gcannaf.ctd
 DICSFILE=	dics.dir.gpl_canna
 DICDIR=		${LOCALBASE}/share/canna/dic/canna
+OPTIONS_DEFINE=	DOCS
 
-NO_STAGE=	yes
 do-install:
+	@${MKDIR} ${STAGEDIR}${DICDIR}
 	cd ${WRKSRC} && \
-	${INSTALL} -c -g bin -m 664 -o bin ${DICS} ${DICSFILE} ${DICDIR}
+	${INSTALL} -c -g bin -m 664 -o bin ${DICS} ${DICSFILE} ${STAGEDIR}${DICDIR}
 	${INSTALL_DATA} ${WRKDIR}/README.FreeBSD ${WRKSRC}
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
-.endif
-
-post-install:
-	@${CAT} ${PKGMESSAGE}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
