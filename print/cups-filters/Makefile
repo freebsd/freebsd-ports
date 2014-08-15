@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	cups-filters
-PORTVERSION=	1.0.55
+PORTVERSION=	1.0.57
 CATEGORIES=	print
 MASTER_SITES=	http://www.openprinting.org/download/cups-filters/
 
