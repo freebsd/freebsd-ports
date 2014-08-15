@@ -13,8 +13,7 @@ COMMENT=	Utility to provide current weather conditions and forecasts
 
 LICENSE=	ISCL
 
-USE_PYTHON=	yes
-USES=		shebangfix tar:xz
+USES=		python shebangfix tar:xz
 
 PLIST_FILES=	bin/${PORTNAME} \
 		%%PYTHON_SITELIBDIR%%/${PORTNAME}.py \
@@ -32,6 +31,7 @@ python_CMD=	${PYTHON_CMD}
 PYCACHE_DIR=	# empty
 PYCACHE_FILE=	${PORTNAME}
 .else
+PLIST_DIRS=	%%PYTHON_SITELIBDIR%%/__pycache__
 PYCACHE_DIR=	__pycache__/
 PYCACHE_FILE=	${PORTNAME}.cpython-${PYTHON_SUFFIX}
 .endif
