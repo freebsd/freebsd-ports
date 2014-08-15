@@ -3,6 +3,7 @@
 
 PORTNAME=	ipa_sdb
 PORTVERSION=	1.1.1
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	SF/ipa-system/modules/ipa_sdb
 
@@ -11,7 +12,7 @@ COMMENT=	IPA simple database module
 
 BUILD_DEPENDS=	${LOCALBASE}/include/ipa_mod.h:${PORTSDIR}/sysutils/ipa
 
-USES=	tar:bzip2
+USES=		libtool tar:bzip2
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 
