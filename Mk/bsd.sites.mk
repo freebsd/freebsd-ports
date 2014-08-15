@@ -253,6 +253,12 @@ MASTER_SITE_EXIM+= \
 .if !defined(IGNORE_MASTER_SITE_FEDORA_LINUX)
 MASTER_SITE_FEDORA_LINUX+= \
 	http://archives.fedoraproject.org/pub/archive/fedora/linux/core/%SUBDIR%/ \
+	ftp://ftp.pbone.net/vol4/archive.fedoraproject.org/fedora/linux/core/%SUBDIR%/ \
+	ftp://mirror.solarvps.com/fedora/archive/fedora/linux/core/%SUBDIR%/ \
+	ftp://ftp.gmd.de/archives.fedoraproject.org/fedora/linux/core/%SUBDIR%/ \
+	ftp://mirror.fraunhofer.de/archives.fedoraproject.org/fedora/linux/core/%SUBDIR%/ \
+	ftp://linuxsoft.cern.ch/fedora/linux/core/%SUBDIR%/ \
+	ftp://ftp-mirror.bi.fraunhofer.de/archives.fedoraproject.org/fedora/linux/core/%SUBDIR%/ \
 	http://ftp.udl.es/pub/fedora/linux/core/%SUBDIR%/ \
 	http://ftp.sunet.se/pub/Linux/distributions/fedora/linux/core/%SUBDIR%/ \
 	ftp://ftp.sunet.se/pub/Linux/distributions/fedora/linux/core/%SUBDIR%/ \
@@ -262,7 +268,6 @@ MASTER_SITE_FEDORA_LINUX+= \
 	http://mirror.web-ster.com/fedora/core/%SUBDIR%/ \
 	ftp://mirror.web-ster.com/fedora/core/%SUBDIR%/ \
 	http://rpmfind.net/linux/fedora/core/%SUBDIR%/ \
-	ftp://rpmfind.net/linux/fedora/core/%SUBDIR%/ \
 	ftp://ftp.gtlib.gatech.edu/pub/fedora.redhat/linux/core/%SUBDIR%/ \
 	ftp://fedora.mirrors.tds.net/pub/fedora-core/%SUBDIR%/ \
 	http://ftp.ndlug.nd.edu/pub/fedora/linux/core/%SUBDIR%/ \
@@ -321,7 +326,6 @@ MASTER_SITE_FEDORA_LINUX+= \
 	http://ftp-stud.hs-esslingen.de/pub/fedora/linux/core/%SUBDIR%/ \
 	ftp://ftp-stud.hs-esslingen.de/pub/fedora/linux/core/%SUBDIR%/ \
 	http://ftp.uni-erlangen.de/pub/Linux/MIRROR.fedora/core/%SUBDIR%/ \
-	ftp://ftp.uni-muenster.de/pub/linux/distributions/fedora/linux/core/%SUBDIR%/ \
 	http://ftp.uni-bayreuth.de/linux/fedora/linux/core/%SUBDIR%/ \
 	ftp://ftp.uni-bayreuth.de/pub/linux/fedora/linux/core/%SUBDIR%/ \
 	ftp://ftp.fu-berlin.de/linux/fedora/core/%SUBDIR%/ \
@@ -481,7 +485,6 @@ MASTER_SITE_GENTOO+= \
 	ftp://ftp.snt.utwente.nl/pub/os/linux/gentoo/%SUBDIR%/ \
 	ftp://trumpetti.atm.tut.fi/gentoo/%SUBDIR%/ \
 	ftp://sunsite.cnlab-switch.ch/mirror/gentoo/%SUBDIR%/ \
-	ftp://ftp6.uni-muenster.de/pub/linux/distributions/gentoo/%SUBDIR%/ \
 	ftp://ftp.tu-clausthal.de/pub/linux/gentoo/%SUBDIR%/ \
 	ftp://sunsite.informatik.rwth-aachen.de/pub/Linux/gentoo/%SUBDIR%/ \
 	ftp://linux.rz.ruhr-uni-bochum.de/gentoo-mirror/%SUBDIR%/ \
