@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mozjpeg
-PORTVERSION=	2.0.1
+PORTVERSION=	2.1
 CATEGORIES=	graphics
 
 MAINTAINER=	horia@racoviceanu.com
@@ -13,7 +13,7 @@ LICENSE=	BSD3CLAUSE
 USE_GITHUB=	yes
 GH_ACCOUNT=	mozilla
 GH_TAGNAME=	${GH_COMMIT}
-GH_COMMIT=	e7a135b
+GH_COMMIT=	594b725
 
 USES=		libtool:oldver
 USE_AUTOTOOLS=	aclocal autoconf autoheader automake libtoolize
