@@ -3,12 +3,13 @@
 
 PORTNAME=	syncthing
 PORTVERSION=	0.9.4
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/archive/v${PORTVERSION}.tar.gz?dummy=/:group1 \
 		https://bitbucket.org/kardianos/osext/get/:group2 \
-		https://crypto.go.googlecode.com/archive/:group3 \
-		https://text.go.googlecode.com/archive/:group4 \
-		https://snappy-go.googlecode.com/archive/:group5 \
+		LOCAL/swills:group3 \
+		LOCAL/swills:group4 \
+		LOCAL/swills:group5 \
 		https://codeload.github.com/bkaradzic/go-lz4/legacy.tar.gz/77e2ba8?dummy=/:group6 \
 		https://codeload.github.com/calmh/xdr/legacy.tar.gz/e1714bb?dummy=/:group7 \
 		https://codeload.github.com/juju/ratelimit/legacy.tar.gz/f9f36d1?dummy=/:group8 \
@@ -16,9 +17,9 @@ MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/archive/v${PORTVERSION}
 		https://codeload.github.com/vitrun/qart/legacy.tar.gz/ccb109c?dummy=/:group10
 DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}:group1 \
 		5d3ddcf53a50${EXTRACT_SUFX}:group2 \
-		f3cebac2bd11c2bf03c15bfa4c66688ad02a0a40${EXTRACT_SUFX}:group3 \
-		d65bffbc88a153d23a6d2a864531e6e7c2cde59b${EXTRACT_SUFX}:group4 \
-		12e4b4183793ac4b061921e7980845e750679fd0${EXTRACT_SUFX}:group5 \
+		text.go-d65bffbc88a1${EXTRACT_SUFX}:group3 \
+		snappy-go-12e4b4183793${EXTRACT_SUFX}:group4 \
+		crypto.go-f3cebac2bd11${EXTRACT_SUFX}:group5 \
 		bkaradzic-go-lz4-77e2ba8${EXTRACT_SUFX}:group6 \
 		calmh-xdr-e1714bb${EXTRACT_SUFX}:group7 \
 		juju-ratelimit-f9f36d1${EXTACT_SUFX}:group8 \
