@@ -3,6 +3,7 @@
 
 PORTNAME=	rtfx
 PORTVERSION=	1.1
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	http://memberwebs.com/stef/software/rtfx/
 
