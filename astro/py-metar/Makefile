@@ -18,7 +18,7 @@ LICENSE=	GPLv2
 OPTIONS_DEFINE=	DOCS
 OPTIONSFILE=	${PORT_DBDIR}/${PORTNAME}/options
 
-PYTHON_FEATURES=autoplist,distutils
+USE_PYTHON=	autoplist distutils
 USES=		python:2 shebangfix
 
 PORTDOCS=	COPYING README THANKS librarydoc.txt

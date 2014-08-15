@@ -13,7 +13,7 @@ COMMENT=	Python Simple SOAP Library
 
 LICENSE=	LGPL3
 
-PYTHON_FEATURES=autoplist,distutils
+USE_PYTHON=	autoplist distutils
 USES=		python zip
 
 PROJECTHOST=	py${PORTNAME}

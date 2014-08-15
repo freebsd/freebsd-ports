@@ -16,7 +16,7 @@ LICENSE=	BSD3CLAUSE
 
 LIB_DEPENDS=	libleveldb.so:${PORTSDIR}/databases/leveldb
 
-PYTHON_FEATURES=autoplist,distutils
+USE_PYTHON=	autoplist distutils
 USES=		python tar:xz
 
 post-patch:

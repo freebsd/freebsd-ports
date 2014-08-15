@@ -13,7 +13,7 @@ LICENSE=	GPLv2 LGPL21
 LICENSE_COMB=	multi
 
 CONFIGURE_ARGS=	--enable-python
-PYTHON_FEATURES=autoplist,distutils
+USE_PYTHON=	autoplist distutils
 USES=		python:2
 
 BUILD_WRKSRC=	${WRKSRC}/py_ext

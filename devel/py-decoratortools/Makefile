@@ -14,7 +14,7 @@ COMMENT=	Class, function, and metaclass decorators
 LICENSE=	PSFL ZPL21
 LICENSE_COMB=	dual
 
-PYTHON_FEATURES=autoplist,distutils
+USE_PYTHON=	autoplist distutils
 USES=		python:2 zip
 
 .include <bsd.port.mk>
