@@ -1,6 +1,8 @@
---- pkcs11/src/asn1.c.orig
-+++ pkcs11/src/asn1.c
-@@ -253,7 +253,7 @@
+Index: pkcs11/src/asn1.c
+===================================================================
+--- pkcs11/src/asn1.c	(revision 1614)
++++ pkcs11/src/asn1.c	(working copy)
+@@ -253,7 +253,7 @@ for (; *p_cPath; p_cPath++)
     /* check if we are decoding inside a BIT STRING: iNumTag == parent_tag */
     /* first octet of bit string is the number of unused bits at the end of the bitstring */
     /* in CER/DER: unused bits are always zero. And if they aren't zero, we still don't need to know the nr. of unused bits */
@@ -9,9 +11,11 @@
        {
        p_cDat++;
        iLen--;
---- pkcs11/src/cal.cpp.orig
-+++ pkcs11/src/cal.cpp
-@@ -865,7 +865,7 @@
+Index: pkcs11/src/cal.cpp
+===================================================================
+--- pkcs11/src/cal.cpp	(revision 1614)
++++ pkcs11/src/cal.cpp	(working copy)
+@@ -945,7 +945,7 @@ CK_RV cal_get_card_data(CK_SLOT_ID hSlot
  	std::string szReader;
  	//	char cBuffer[250];
  	//	unsigned char ucBuffer[250];
@@ -20,9 +24,9 @@
  	CTLVBuffer oTLVBuffer;
  	P11_SLOT *pSlot = NULL;
  	CK_ATTRIBUTE ID_DATA[]= BEID_TEMPLATE_ID_DATA;
-@@ -1026,8 +1026,8 @@
+@@ -1141,8 +1141,8 @@ CK_RV cal_read_ID_files(CK_SLOT_ID hSlot
  	std::string szReader;
- 	char cBuffer[250];
+ 	char cBuffer[256];
  	//	unsigned char ucBuffer[250];
 -	char* plabel = NULL;
 -	char* pobjectID = NULL;
@@ -31,7 +35,7 @@
  	unsigned long ulLen=0;
  	CTLVBuffer oTLVBuffer;
  	CTLVBuffer oTLVBufferAddress;//need second buffer object, as memory is only freed when this object is destructed
-@@ -1061,7 +1061,7 @@
+@@ -1176,7 +1176,7 @@ CK_RV cal_read_ID_files(CK_SLOT_ID hSlot
  			pobjectID = BEID_OBJECTID_ID;
  			ret = p11_add_slot_ID_object(pSlot, ID_DATA, sizeof(ID_DATA)/sizeof(CK_ATTRIBUTE), CK_TRUE, CKO_DATA, CK_FALSE, &hObject,
  				(CK_VOID_PTR)plabel, (CK_ULONG)strlen(plabel),(CK_VOID_PTR) oFileData.GetBytes(),(CK_ULONG)oFileData.Size(),
@@ -40,7 +44,7 @@
  			if (ret) goto cleanup;
  
  			oTLVBuffer.ParseTLV(oFileData.GetBytes(), oFileData.Size());
-@@ -1075,7 +1075,7 @@
+@@ -1190,7 +1190,7 @@ CK_RV cal_read_ID_files(CK_SLOT_ID hSlot
  				oTLVBuffer.FillUTF8Data(ID_LABELS[i].tag, cBuffer, &ulLen);
  				plabel = ID_LABELS[i].name;
  				ret = p11_add_slot_ID_object(pSlot, ID_DATA, sizeof(ID_DATA)/sizeof(CK_ATTRIBUTE), CK_TRUE, CKO_DATA, CK_FALSE, &hObject,
@@ -49,7 +53,7 @@
  				if (ret) goto cleanup;
  			}
  			if(dataType != CACHED_DATA_TYPE_ALL){
-@@ -1087,7 +1087,7 @@
+@@ -1202,7 +1202,7 @@ CK_RV cal_read_ID_files(CK_SLOT_ID hSlot
  			pobjectID = BEID_OBJECTID_ADDRESS;
  			ret = p11_add_slot_ID_object(pSlot, ID_DATA, sizeof(ID_DATA)/sizeof(CK_ATTRIBUTE), CK_TRUE, CKO_DATA, CK_FALSE, &hObject,
  				(CK_VOID_PTR)plabel, (CK_ULONG)strlen(plabel),(CK_VOID_PTR) oFileData.GetBytes(),(CK_ULONG)oFileData.Size(),
@@ -58,7 +62,7 @@
  			if (ret) goto cleanup;
  			oTLVBufferAddress.ParseTLV(oFileData.GetBytes(), oFileData.Size());
  			nrOfItems = sizeof(ADDRESS_LABELS)/sizeof(BEID_DATA_LABELS_NAME);
-@@ -1099,7 +1099,7 @@
+@@ -1214,7 +1214,7 @@ CK_RV cal_read_ID_files(CK_SLOT_ID hSlot
  				plabel = ADDRESS_LABELS[i].name;
  				ret = p11_add_slot_ID_object(pSlot, ID_DATA, sizeof(ID_DATA)/sizeof(CK_ATTRIBUTE), CK_TRUE, CKO_DATA, CK_FALSE, &hObject,
  					(CK_VOID_PTR)plabel, (CK_ULONG)strlen(plabel),(CK_VOID_PTR) cBuffer,ulLen,
@@ -67,7 +71,7 @@
  				if (ret) goto cleanup;
  			}
  			if(dataType != CACHED_DATA_TYPE_ALL){
-@@ -1111,7 +1111,7 @@
+@@ -1226,7 +1226,7 @@ CK_RV cal_read_ID_files(CK_SLOT_ID hSlot
  			oFileData = oReader.ReadFile(BEID_FILE_PHOTO);
  			ret = p11_add_slot_ID_object(pSlot, ID_DATA, sizeof(ID_DATA)/sizeof(CK_ATTRIBUTE), CK_TRUE, CKO_DATA, CK_FALSE, &hObject,
  				(CK_VOID_PTR)plabel, (CK_ULONG)strlen(plabel),(CK_VOID_PTR) oFileData.GetBytes(),(CK_ULONG)oFileData.Size(),
@@ -76,9 +80,11 @@
  			if (ret) goto cleanup;
  			if(dataType != CACHED_DATA_TYPE_ALL){
  				break;
---- pkcs11/src/cal.h.orig
-+++ pkcs11/src/cal.h
-@@ -179,7 +179,7 @@
+Index: pkcs11/src/cal.h
+===================================================================
+--- pkcs11/src/cal.h	(revision 1614)
++++ pkcs11/src/cal.h	(working copy)
+@@ -184,7 +184,7 @@ extern "C" {
  
  typedef struct BEID_DATA_LABELS_NAME {
  	unsigned char	tag;
@@ -87,9 +93,11 @@
  }BEID_DATA_LABELS_NAME;
  
  #define BEID_LABEL_DATA_FILE		"DATA_FILE"
---- pkcs11/src/log.h.orig
-+++ pkcs11/src/log.h
-@@ -60,42 +60,42 @@
+Index: pkcs11/src/log.h
+===================================================================
+--- pkcs11/src/log.h	(revision 1614)
++++ pkcs11/src/log.h	(working copy)
+@@ -60,42 +60,42 @@ typedef struct P11_MAP_TYPE 
  
  static P11_MAP_TYPE const P11_CLASS_TYPES[]= 
  {  
@@ -160,7 +168,7 @@
  };
  
  static P11_MAP_TYPE const P11_ATTR_TYPES[]= {  
-@@ -159,7 +159,7 @@
+@@ -159,7 +159,7 @@ static P11_MAP_TYPE const P11_ATTR_TYPES
  	{ CKA_RESET_ON_INIT,    "CKA_RESET_ON_INIT",       0            },  
  	{ CKA_HAS_RESET,        "CKA_HAS_RESET",           0            },  
  	{ CKA_VENDOR_DEFINED,   "CKA_VENDOR_DEFINED",      0            },  

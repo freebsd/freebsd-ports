@@ -1,65 +1,42 @@
---- dialogs/src/dialogsgtk/beid-askaccess.c.orig
-+++ dialogs/src/dialogsgtk/beid-askaccess.c
-@@ -32,22 +32,15 @@
+Index: dialogs/src/dialogs.h
+===================================================================
+--- dialogs/src/dialogs.h	(revision 1614)
++++ dialogs/src/dialogs.h	(working copy)
+@@ -27,6 +27,7 @@
+ #ifndef __DIALOGS_H__
+ #define __DIALOGS_H__
+ 
++#include <sys/types.h>
+ #include <string>
+ 
+ #ifdef WIN32
+Index: dialogs/src/dialogsgtk/beid-askaccess.c
+===================================================================
+--- dialogs/src/dialogsgtk/beid-askaccess.c	(revision 1614)
++++ dialogs/src/dialogsgtk/beid-askaccess.c	(working copy)
+@@ -32,7 +32,7 @@
  
  
  enum { MSG_ACCESS_CARD_TITLE=1, MSG_ACCESS_CARD_QUESTION };
 -char* beid_messages[4][3]={
--                                    "en",   "beID: Card Access", 		"The application [%s] wants to access the eID card. Do you want to accept it?",
--                                    "nl",   "beID: Lezen Kaart", 		"Het Programma [%s] vraagt toegang tot de eID kaart. Wil U dit toelaten?",
--                                    "fr",   "beID: Lecture de Carte", 	"l'application [%s] essaye d'accéder à la carte eID. Acceptez-vous?",
--                                    "de",   "beID: Kartenzugriff", 		"Die Anwendung [%s] will auf die eID-Karte zugreifen. Möchten Sie akzeptieren?"
--                          };
 +static char const *const beid_messages[4][3]={
-+  { "en", "beID: Card Access", "The application [%s] wants to access the eID card. Do you want to accept it?" },
-+  { "nl", "beID: Lezen Kaart", "Het Programma [%s] vraagt toegang tot de eID kaart. Wil U dit toelaten?" },
-+  { "fr", "beID: Lecture de Carte", "l'Application [%s] essaye d'accéder à la carte eID. Acceptez-vous?" },
-+  { "de", "beID: Kartenzugriff", "Die Anwendung [%s] will auf die eID-Karte zugreifen. Möchten Sie akzeptieren?" }
-+};
- 
- #include "beid-i18n.h"
- 
--// event handler for delete-event. always approves the deletion
--///////////////////////////////////////////////////////////////
--static gboolean on_delete_event( GtkWidget *widget, GdkEvent* event, gpointer pindialog)
--{
--    return TRUE;
--}
--
- int main(int argc, char* argv[])
- {
- 	int			return_value;
-@@ -63,7 +56,7 @@
- 	{
- 		char message[2048];
- 		snprintf(message, sizeof(message)-2, _MSG_(MSG_ACCESS_CARD_QUESTION), caller_path);
--    	dialog=gtk_message_dialog_new(NULL,GTK_DIALOG_MODAL,GTK_MESSAGE_QUESTION,GTK_BUTTONS_OK_CANCEL,message);
-+    	dialog=gtk_message_dialog_new(NULL,GTK_DIALOG_MODAL,GTK_MESSAGE_QUESTION,GTK_BUTTONS_OK_CANCEL,"%s",message);
- 	}
- 	else
- 	{
---- dialogs/src/dialogsgtk/beid-askpin.c.orig
-+++ dialogs/src/dialogsgtk/beid-askpin.c
-@@ -35,12 +35,12 @@
+ 		{"en",   "beID: Card Access", 		"The application [%s] wants to access the eID card. Do you want to accept it?"},
+ 		{"nl",   "beID: Lezen Kaart", 		"Het Programma [%s] vraagt toegang tot de eID kaart. Wil U dit toelaten?"},
+ 		{"fr",   "beID: Lecture de Carte", 	"l'application [%s] essaye d'accéder à la carte eID. Acceptez-vous?"},
+Index: dialogs/src/dialogsgtk/beid-askpin.c
+===================================================================
+--- dialogs/src/dialogsgtk/beid-askpin.c	(revision 1614)
++++ dialogs/src/dialogsgtk/beid-askpin.c	(working copy)
+@@ -35,7 +35,7 @@
  #define EXIT_ERROR	2
  
  enum { MSG_PIN_CODE_REQUIRED=1, MSG_PLEASE_ENTER_PIN };
 -char* beid_messages[4][3]={
--									"en",	"beID: PIN Code Required",		"The application\n[%s]\nrequests your eID PIN code.",
--									"nl",	"beID: PINcode Vereist", 		"Het programma\n[%s]\nvraagt uw eID PINcode",
--									"fr",	"beID: Code PIN Necessaire",	"l'application\n[%s]\nvous demande votre code PIN eID",
--									"de",	"beID: PIN Code Required",		"Die Anwendung\n[%s]\nfragt um Ihren eID PIN-code" 
--							  };
 +static char const *const beid_messages[4][3]={
-+  { "en", "beID: PIN Code Required", "The application\n[%s]\nrequests your eID PIN code." },
-+  { "nl", "beID: PINcode Vereist", "Het programma\n[%s]\nvraagt uw eID PINcode" },
-+  { "fr", "beID: Code PIN Necessaire", "l'Application\n[%s]\nvous demande votre code PIN eID" },
-+  { "de", "beID: PIN Code Required", "Die Anwendung\n[%s]\nfragt um Ihren eID PIN-code" }
-+};
- 
- #include "beid-i18n.h"
- 
-@@ -58,7 +58,7 @@
+ 		{"en",	"beID: PIN Code Required",		"The application\n[%s]\nrequests your eID PIN code."},
+ 		{"nl",	"beID: PINcode Vereist", 		"Het programma\n[%s]\nvraagt uw eID PINcode"},
+ 		{"fr",	"beID: Code PIN Necessaire",	"l'application\n[%s]\nvous demande votre code PIN eID"},
+@@ -58,7 +58,7 @@ typedef struct
  ///////////////////////////////////////////////////////////////////////////////////////////
  void update_pin_label(PinDialogInfo *pindialog)
  {
@@ -68,45 +45,10 @@
  	gchar tmp[MAX_PIN_LENGTH*6];
  		  tmp[0]='\0';
  	for(i=0;i<strlen(pindialog->pin);i++)
-@@ -74,14 +74,14 @@
- 	{
- 		gtk_dialog_set_response_sensitive(GTK_DIALOG(pindialog->dialog),GTK_RESPONSE_OK, TRUE);
- 		gtk_dialog_set_default_response(GTK_DIALOG(pindialog->dialog),GTK_RESPONSE_OK);
--		gtk_widget_grab_focus(pindialog->okbutton);
-+		gtk_widget_grab_focus(GTK_WIDGET(pindialog->okbutton));
- 		
- 	}
- 	else
- 	{
- 		gtk_dialog_set_response_sensitive(GTK_DIALOG(pindialog->dialog), GTK_RESPONSE_OK, FALSE);
- 		gtk_dialog_set_default_response(GTK_DIALOG(pindialog->dialog),GTK_RESPONSE_CANCEL);
--		gtk_widget_grab_focus(pindialog->cancelbutton);
-+		gtk_widget_grab_focus(GTK_WIDGET(pindialog->cancelbutton));
- 	}
- }
- 
-@@ -210,7 +210,7 @@
-         char message[2048];
- 		pindialog_init(&pindialog);									// setup PinDialogInfo structure
-         snprintf(message, sizeof(message)-2, _MSG_(MSG_PLEASE_ENTER_PIN), caller_path);
--        pindialog.dialog=gtk_message_dialog_new(NULL,GTK_DIALOG_MODAL,GTK_MESSAGE_QUESTION,GTK_BUTTONS_NONE,message);
-+        pindialog.dialog=gtk_message_dialog_new(NULL,GTK_DIALOG_MODAL,GTK_MESSAGE_QUESTION,GTK_BUTTONS_NONE,"%s",message);
-     }
-     else
-     {
-@@ -218,8 +218,8 @@
-         exit(EXIT_ERROR);
-     }
- 
--	pindialog.cancelbutton=gtk_dialog_add_button(pindialog.dialog,GTK_STOCK_CANCEL,	GTK_RESPONSE_CANCEL);	
--	pindialog.okbutton	  =gtk_dialog_add_button(pindialog.dialog,GTK_STOCK_OK,		GTK_RESPONSE_OK);	
-+	pindialog.cancelbutton=GTK_BUTTON(gtk_dialog_add_button(GTK_DIALOG(pindialog.dialog),GTK_STOCK_CANCEL,GTK_RESPONSE_CANCEL));
-+	pindialog.okbutton=GTK_BUTTON(gtk_dialog_add_button(GTK_DIALOG(pindialog.dialog),GTK_STOCK_OK,GTK_RESPONSE_OK));
- 
- 	gtk_dialog_set_default_response(GTK_DIALOG(pindialog.dialog),GTK_RESPONSE_OK);
-     gtk_window_set_title(GTK_WINDOW(pindialog.dialog),_MSG_(MSG_PIN_CODE_REQUIRED));
---- dialogs/src/dialogsgtk/beid-badpin.c.orig
-+++ dialogs/src/dialogsgtk/beid-badpin.c
+Index: dialogs/src/dialogsgtk/beid-badpin.c
+===================================================================
+--- dialogs/src/dialogsgtk/beid-badpin.c	(revision 1614)
++++ dialogs/src/dialogsgtk/beid-badpin.c	(working copy)
 @@ -16,6 +16,7 @@
   * http://www.gnu.org/licenses/.
  **************************************************************************** */
@@ -115,63 +57,19 @@
  #include <gtk/gtk.h>
  #include <gtk/gtkenums.h>
  #include <gdk/gdkkeysyms.h>
-@@ -30,22 +31,23 @@
+@@ -31,7 +32,7 @@
  #define EXIT_ERROR		2
  
- enum { MSG_INCORRECT_PIN_CODE=1, MSG_N_ATTEMPTS_LEFT, MSG_LAST_ATTEMPT };
+ enum msgs { MSG_INCORRECT_PIN_CODE=1, MSG_N_ATTEMPTS_LEFT, MSG_LAST_ATTEMPT };
 -char* beid_messages[4][4]={
--                                    "en",   "beID: Incorrect PIN Code",    	"You have entered an incorrect PIN code.\nPlease note that you have only %d attempts left before your PIN is blocked.", 					"You have entered an incorrect PIN code.\nPlease note that at the next incorrect entry your PIN code will be blocked.",
--                                    "nl",   "beID: Foutive PINcode",    	"U hebt een foutive PIN code ingegeven.\nGelieve te noteren dat u nog slechts %d pogingen hebt alvorens uw PIN code geblokkeerd wordt.", 	"U hebt een foutive PIN code ingegeven.\nGelieve te noteren dat bij de volgende incorrecte ingave uw PIN code geblokkeerd wordt.",
--                                    "fr",   "beID: Code PIN incorrect",    	"Vous avez entré un code PIN incorrect.\nVeuillez noter qu'il ne vous reste plus que %d tentatives avant que votre PIN soit bloqué", 		"Vous avez entré un code PIN incorrect.\nVieullez noter qu'a la prochaine entree incorrecte votre code PIN sera bloqué",
--                                    "de",   "beID: Incorrect PIN Code",    	"You have entered an incorrect PIN code.\nPlease note that you have only %d attempts left before your PIN is blocked.", 					"You have entered an incorrect PIN code.\nPlease note that at the next incorrect entry your PIN code will be blocked."
--                              };
 +static char const *const beid_messages[4][4]={
-+  { "en", "beID: Incorrect PIN Code",
-+    "You have entered an incorrect PIN code.\nPlease note that you have only %d attempts left before your PIN is blocked.",
-+    "You have entered an incorrect PIN code.\nPlease note that at the next incorrect entry your PIN code will be blocked." },
-+  { "nl", "beID: Foutive PINcode",
-+    "U hebt een foutive PIN code ingegeven.\nGelieve te noteren dat u nog slechts %d pogingen hebt alvorens uw PIN code geblokkeerd wordt.",
-+    "U hebt een foutive PIN code ingegeven.\nGelieve te noteren dat bij de volgende incorrecte ingave uw PIN code geblokkeerd wordt." },
-+  { "fr", "beID: Code PIN incorrect",
-+    "Vous avez entré un code PIN incorrect.\nVeuillez noter qu'il ne vous reste plus que %d tentatives avant que votre PIN soit bloqué",
-+    "Vous avez entré un code PIN incorrect.\nVieullez noter qu'a la prochaine entree incorrecte votre code PIN sera bloqué" },
-+  { "de", "beID: Incorrect PIN Code",
-+    "You have entered an incorrect PIN code.\nPlease note that you have only %d attempts left before your PIN is blocked.",
-+    "You have entered an incorrect PIN code.\nPlease note that at the next incorrect entry your PIN code will be blocked." }
-+};
- 
- #include "beid-i18n.h"
- 
--// event handler for delete-event. always approves the deletion
--///////////////////////////////////////////////////////////////
--static gboolean on_delete_event( GtkWidget *widget, GdkEvent* event, gpointer pindialog)
--{
--    return TRUE;
--}
--
- int main(int argc, char* argv[])
- {
- 	int 		return_value=EXIT_ERROR;
-@@ -63,7 +65,7 @@
- 		if(attempts>1)
- 			snprintf(message,sizeof(message)-2,_MSG_(MSG_N_ATTEMPTS_LEFT),attempts);
- 		else
--			snprintf(message,sizeof(message)-2,_MSG_(MSG_LAST_ATTEMPT));
-+			snprintf(message,sizeof(message)-2,"%s",_MSG_(MSG_LAST_ATTEMPT));
- 	}
- 	else
- 	{
-@@ -71,7 +73,7 @@
- 		exit(EXIT_ERROR);
- 	}
- 	
--    dialog=gtk_message_dialog_new(NULL,GTK_DIALOG_MODAL,GTK_MESSAGE_WARNING,GTK_BUTTONS_OK,message);
-+    dialog=gtk_message_dialog_new(NULL,GTK_DIALOG_MODAL,GTK_MESSAGE_WARNING,GTK_BUTTONS_OK,"%s",message);
- 	gtk_dialog_set_default_response(GTK_DIALOG(dialog),GTK_RESPONSE_OK);
-     gtk_window_set_title(GTK_WINDOW(dialog),_MSG_(MSG_INCORRECT_PIN_CODE));
-     gtk_window_set_position(GTK_WINDOW(dialog), GTK_WIN_POS_CENTER);
---- dialogs/src/dialogsgtk/beid-changepin.c.orig
-+++ dialogs/src/dialogsgtk/beid-changepin.c
+ 		{"en",   "beID: Incorrect PIN Code",    	"You have entered an incorrect PIN code.\nPlease note that you have only %d attempts left before your PIN is blocked.", 					"You have entered an incorrect PIN code.\nPlease note that at the next incorrect entry your PIN code will be blocked."},
+ 		{"nl",   "beID: Foutive PINcode",    	"U hebt een foutive PIN code ingegeven.\nGelieve te noteren dat u nog slechts %d pogingen hebt alvorens uw PIN code geblokkeerd wordt.", 	"U hebt een foutive PIN code ingegeven.\nGelieve te noteren dat bij de volgende incorrecte ingave uw PIN code geblokkeerd wordt."},
+ 		{"fr",   "beID: Code PIN incorrect",    	"Vous avez entré un code PIN incorrect.\nVeuillez noter qu'il ne vous reste plus que %d tentatives avant que votre PIN soit bloqué", 		"Vous avez entré un code PIN incorrect.\nVieullez noter qu'a la prochaine entree incorrecte votre code PIN sera bloqué"},
+Index: dialogs/src/dialogsgtk/beid-changepin.c
+===================================================================
+--- dialogs/src/dialogsgtk/beid-changepin.c	(revision 1614)
++++ dialogs/src/dialogsgtk/beid-changepin.c	(working copy)
 @@ -17,6 +17,7 @@
   * http://www.gnu.org/licenses/.
  
@@ -180,67 +78,19 @@
  #include <gtk/gtk.h>
  #include <gtk/gtkenums.h>
  #include <gdk/gdkkeysyms.h>
-@@ -36,13 +37,20 @@
+@@ -37,7 +38,7 @@
  #define EXIT_ERROR	2
  
  enum { MSG_CHANGE_PIN_CODE=1, MSG_PLEASE_ENTER_OLD_AND_NEW_PINS, MSG_CURRENT_PIN, MSG_NEW_PIN, MSG_NEW_PIN_AGAIN };
 -char* beid_messages[4][6]={
--                                    "en",   "beID: Change PIN Code",      	"Request from Application [%s]:\n\nPlease enter your current eID PIN, followed by your new eID PIN (twice)", 									"Current PIN:", 		"New PIN:", 		"New PIN (again):",
--                                    "nl",   "beID: PIN Code Wijzigen",      "Verzoek van programma [%s]:\n\nGelieve Uw bestaande eID PIN code, en tweemaal uw nieuwe eID PINcode in te voeren.",							"Huidige PIN:",			"Nieuwe PIN:",		"Nieuwe PIN (opnieuw):",
--                                    "fr",   "beID: Changement de code PIN", "Demande de l'application [%s]:\n\nVeuillez entrer votre code PIN eID existant, suivi de votre nouveau code PIN eID (2 fois)", 					"Code PIN existant:", 	"Nouveau code PIN:","Nouveau code PIN (verification):",
--                                    "de",   "beID: PIN Code ändern",      	"Anfrage von Anwendug [%s]:\n\nBitte geben Sie ihren bestehenden eID PIN-Code, gefolgt von Ihrem neuen eID PIN-Code (zwei mal), ein", 	"Aktueller PIN-Code:", 	"Neuer PIN-Code:", 	"Neuer PIN-Code (noch einmal):"
--
--                              };
 +static char const *const beid_messages[4][6]={
-+  { "en", "beID: Change PIN Code",
-+    "Request from application [%s]:\n\nPlease enter your current eID PIN, followed by your new eID PIN (twice)",
-+    "Current PIN:", "New PIN:", "New PIN (again):" },
-+  { "nl", "beID: PIN Code Wijzigen",
-+    "Verzoek van programma [%s]:\n\nGelieve Uw bestaande eID PIN code, en tweemaal uw nieuwe eID PINcode in te voeren.",
-+    "Huidige PIN:", "Nieuwe PIN:", "Nieuwe PIN (opnieuw):" },
-+  { "fr", "beID: Changement de code PIN",
-+    "Demande de l'application [%s]:\n\nVeuillez entrer votre code PIN eID existant, suivi de votre nouveau code PIN eID (2 fois)",
-+    "Code PIN existant:", "Nouveau code PIN:", "Nouveau code PIN (verification):" },
-+  { "de", "beID: PIN Code ändern",
-+    "Anfrage von Anwendug [%s]:\n\nBitte geben Sie ihren bestehenden eID PIN-Code, gefolgt von Ihrem neuen eID PIN-Code (zwei mal), ein",
-+    "Aktueller PIN-Code:", "Neuer PIN-Code:", "Neuer PIN-Code (noch einmal):" }
-+};
- 
- #include "beid-i18n.h"
- 
-@@ -161,7 +169,7 @@
-     {
-         char message[2048];
-         snprintf(message, sizeof(message)-2, _MSG_(MSG_PLEASE_ENTER_OLD_AND_NEW_PINS), caller_path);
--    	pindialog.dialog=gtk_message_dialog_new(NULL,GTK_DIALOG_MODAL,GTK_MESSAGE_QUESTION,GTK_BUTTONS_NONE,message);
-+    	pindialog.dialog=gtk_message_dialog_new(NULL,GTK_DIALOG_MODAL,GTK_MESSAGE_QUESTION,GTK_BUTTONS_NONE,"%s",message);
-     }
-     else
-     {
-@@ -169,8 +177,8 @@
-         exit(EXIT_ERROR);
-     }
- 	
--	pindialog.cancelbutton	=gtk_dialog_add_button(pindialog.dialog,GTK_STOCK_CANCEL, GTK_RESPONSE_CANCEL);
--    pindialog.okbutton    	=gtk_dialog_add_button(pindialog.dialog,GTK_STOCK_OK,     GTK_RESPONSE_OK);
-+	pindialog.cancelbutton=GTK_BUTTON(gtk_dialog_add_button(GTK_DIALOG(pindialog.dialog),GTK_STOCK_CANCEL,GTK_RESPONSE_CANCEL));
-+	pindialog.okbutton=GTK_BUTTON(gtk_dialog_add_button(GTK_DIALOG(pindialog.dialog),GTK_STOCK_OK,GTK_RESPONSE_OK));
- 
- 	gtk_dialog_set_default_response(GTK_DIALOG(pindialog.dialog),GTK_RESPONSE_OK);
-     gtk_window_set_title(GTK_WINDOW(pindialog.dialog),_MSG_(MSG_CHANGE_PIN_CODE));
-@@ -234,8 +242,8 @@
- 	{
- 		case GTK_RESPONSE_OK:					// if the user chose OK
- 		{
--			char* oldpin=gtk_entry_get_text(GTK_ENTRY(pindialog.originalPinEntry));
--			char* newpin=gtk_entry_get_text(GTK_ENTRY(pindialog.newPin0Entry));
-+			char const *oldpin=gtk_entry_get_text(GTK_ENTRY(pindialog.originalPinEntry));
-+			char const *newpin=gtk_entry_get_text(GTK_ENTRY(pindialog.newPin0Entry));
- 			printf("%s:%s\n",oldpin,newpin);	// output the PINs to stdout
- 			return_value=EXIT_OK;				// and return OK
- 		}
---- dialogs/src/dialogsgtk/beid-i18n.h.orig
-+++ dialogs/src/dialogsgtk/beid-i18n.h
+ 		{"en",   "beID: Change PIN Code",      	"Request from Application [%s]:\n\nPlease enter your current eID PIN, followed by your new eID PIN (twice)", 									"Current PIN:", 		"New PIN:", 		"New PIN (again):"},
+ 		{"nl",   "beID: PIN Code Wijzigen",      "Verzoek van programma [%s]:\n\nGelieve Uw bestaande eID PIN code, en tweemaal uw nieuwe eID PINcode in te voeren.",							"Huidige PIN:",			"Nieuwe PIN:",		"Nieuwe PIN (opnieuw):"},
+ 		{"fr",   "beID: Changement de code PIN", "Demande de l'application [%s]:\n\nVeuillez entrer votre code PIN eID existant, suivi de votre nouveau code PIN eID (2 fois)", 					"Code PIN existant:", 	"Nouveau code PIN:","Nouveau code PIN (verification):"},
+Index: dialogs/src/dialogsgtk/beid-i18n.h
+===================================================================
+--- dialogs/src/dialogsgtk/beid-i18n.h	(revision 1614)
++++ dialogs/src/dialogsgtk/beid-i18n.h	(working copy)
 @@ -1,7 +1,7 @@
 -char* _MSG_(int msgnum)
 +char const *_MSG_(int msgnum)
@@ -252,87 +102,37 @@
      if(lang!=NULL && strlen(lang)==5 && lang[2]=='_')
      {
          int i;
---- dialogs/src/dialogsgtk/beid-spr-askpin.c.orig
-+++ dialogs/src/dialogsgtk/beid-spr-askpin.c
-@@ -34,12 +34,12 @@
+Index: dialogs/src/dialogsgtk/beid-spr-askpin.c
+===================================================================
+--- dialogs/src/dialogsgtk/beid-spr-askpin.c	(revision 1614)
++++ dialogs/src/dialogsgtk/beid-spr-askpin.c	(working copy)
+@@ -34,7 +34,7 @@
  #define EXIT_ERROR	2
  
  enum { MSG_PIN_CODE_REQUIRED=1, MSG_PLEASE_ENTER_PIN };
 -char* beid_messages[4][3]={
--                                    "en",   "beID: PIN Code Required",      "The application [%s] requests your eID PIN code on the secure pinpad reader:\n[%s]..",
--                                    "nl",   "beID: PINcode Vereist",        "Het programma [%s] vraagt uw eID PIN code in te geven op de beveiligde kaartlezer:\n[%s].",
--                                    "fr",   "beID: Code PIN Necessaire",    "l'application [%s] vous demande d'entrer votre code PIN eID sur le lecteur securise\n[%s]..",
--                                    "de",   "beID: PIN Code Required",      "Die Anwendung [%s] fragt um Ihren eID PIN-Code auf dem sicheren Kartenleser:\n[%s].."
--                              };
 +static char const* const beid_messages[4][3]={
-+  { "en", "beID: PIN Code Required", "The application [%s] requests your eID PIN code on the secure pinpad reader:\n[%s].." },
-+  { "nl", "beID: PINcode Vereist", "Het programma [%s] vraagt uw eID PIN code in te geven op de beveiligde kaartlezer:\n[%s].." },
-+  { "fr", "beID: Code PIN Necessaire", "l'Application [%s] vous demande d'entrer votre code PIN eID sur le lecteur securise\n[%s].." },
-+  { "de", "beID: PIN Code Required", "Die Anwendung [%s] fragt um Ihren eID PIN-Code auf dem sicheren Kartenleser:\n[%s].." }
-+};
- 
- #include "beid-i18n.h"
- 
-@@ -88,7 +88,7 @@
- 	// create new message dialog with CANCEL button in standard places, in center of user's screen
- 	///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
- 
--    pindialog.dialog=gtk_message_dialog_new(NULL,GTK_DIALOG_MODAL,GTK_MESSAGE_QUESTION,GTK_BUTTONS_NONE,message);
-+    pindialog.dialog=gtk_message_dialog_new(NULL,GTK_DIALOG_MODAL,GTK_MESSAGE_QUESTION,GTK_BUTTONS_NONE,"%s",message);
- 	gtk_dialog_set_default_response(GTK_DIALOG(pindialog.dialog),GTK_RESPONSE_OK);
-     gtk_window_set_title(GTK_WINDOW(pindialog.dialog),_MSG_(MSG_PIN_CODE_REQUIRED));
-     gtk_window_set_position(GTK_WINDOW(pindialog.dialog), GTK_WIN_POS_CENTER);
---- dialogs/src/dialogsgtk/beid-spr-changepin.c.orig
-+++ dialogs/src/dialogsgtk/beid-spr-changepin.c
-@@ -34,12 +34,12 @@
+ 		{"en",   "beID: PIN Code Required",      "The application [%s] requests your eID PIN code on the secure pinpad reader:\n[%s].."},
+ 		{"nl",   "beID: PINcode Vereist",        "Het programma [%s] vraagt uw eID PIN code in te geven op de beveiligde kaartlezer:\n[%s]."},
+ 		{"fr",   "beID: Code PIN Necessaire",    "l'application [%s] vous demande d'entrer votre code PIN eID sur le lecteur securise\n[%s].."},
+Index: dialogs/src/dialogsgtk/beid-spr-changepin.c
+===================================================================
+--- dialogs/src/dialogsgtk/beid-spr-changepin.c	(revision 1614)
++++ dialogs/src/dialogsgtk/beid-spr-changepin.c	(working copy)
+@@ -34,7 +34,7 @@
  #define EXIT_ERROR	2
  
  enum { MSG_CHANGE_PIN_CODE=1, MSG_PLEASE_CHANGE_PIN };
 -char* beid_messages[4][3]={
--                                    "en",   "beID: Change PIN Code",      		"Request from Application [%s]:\n\nPlease change your eID PIN code on the secure pinpad reader:\n[%s]..",
--                                    "nl",   "beID: Wijziging PINcode",        	"Verzoek van programma [%s]:\n\nGelieve uw eID PIN code op de beveiligde kaartlezer:\n[%s]\nte willen wijzigen.",
--                                    "fr",   "beID: Changement de code PIN",    	"Demande de l'application [%s]:\n\nVeuillez changer votre code PIN eID sur le lecteur securise\n[%s]..",
--                                    "de",   "beID: Change PIN Code",      		"Anfrage von Anwendug [%s]:\n\nPlease change your eID PIN code on the secure pinpad reader:\n[%s].."
--                              };
 +static char const *const beid_messages[4][3]={
-+  { "en", "beID: Change PIN Code", "Request from Application [%s]:\n\nPlease change your eID PIN code on the secure pinpad reader:\n[%s].." },
-+  { "nl", "beID: Wijziging PINcode", "Verzoek van programma [%s]:\n\nGelieve uw eID PIN code te wijzigen op de beveiligde kaartlezer:\n[%s].." },
-+  { "fr", "beID: Changement de code PIN", "Demande de l'application [%s]:\n\nVeuillez changer votre code PIN eID sur le lecteur securise\n[%s].." },
-+  { "de", "beID: Change PIN Code", "Anfrage von Anwendug [%s]:\n\nPlease change your eID PIN code on the secure pinpad reader:\n[%s].." }
-+};
- 
- #include "beid-i18n.h"
- 
-@@ -60,7 +60,6 @@
- 
- int main(int argc, char* argv[])
- {
--	char			pid_path[PATH_MAX];
- 	int 			return_value=EXIT_ERROR;
- 	PinDialogInfo 	pindialog;									// this struct contains all dialog objects
- 	char            caller_path[1024];
-@@ -89,7 +88,7 @@
-         exit(EXIT_ERROR);
-     }
- 	
--    pindialog.dialog=gtk_message_dialog_new(NULL,GTK_DIALOG_MODAL,GTK_MESSAGE_QUESTION,GTK_BUTTONS_NONE,message);
-+    pindialog.dialog=gtk_message_dialog_new(NULL,GTK_DIALOG_MODAL,GTK_MESSAGE_QUESTION,GTK_BUTTONS_NONE,"%s",message);
- 	gtk_dialog_set_default_response(GTK_DIALOG(pindialog.dialog),GTK_RESPONSE_OK);
-     gtk_window_set_title(GTK_WINDOW(pindialog.dialog),_MSG_(MSG_CHANGE_PIN_CODE));
-     gtk_window_set_position(GTK_WINDOW(pindialog.dialog), GTK_WIN_POS_CENTER);
---- dialogs/src/dialogs.h.orig
-+++ dialogs/src/dialogs.h
-@@ -27,6 +27,7 @@
- #ifndef __DIALOGS_H__
- #define __DIALOGS_H__
- 
-+#include <sys/types.h>
- #include <string>
- 
- #ifdef WIN32
---- dialogs/src/dialogsgtk/dlgs_gtk.cpp.orig
-+++ dialogs/src/dialogsgtk/dlgs_gtk.cpp
-@@ -56,12 +56,13 @@
+ 		{"en",   "beID: Change PIN Code",      		"Request from Application [%s]:\n\nPlease change your eID PIN code on the secure pinpad reader:\n[%s].."},
+ 		{"nl",   "beID: Wijziging PINcode",        	"Verzoek van programma [%s]:\n\nGelieve uw eID PIN code op de beveiligde kaartlezer:\n[%s]\nte willen wijzigen."},
+ 		{"fr",   "beID: Changement de code PIN",    	"Demande de l'application [%s]:\n\nVeuillez changer votre code PIN eID sur le lecteur securise\n[%s].."},
+Index: dialogs/src/dialogsgtk/dlgs_gtk.cpp
+===================================================================
+--- dialogs/src/dialogsgtk/dlgs_gtk.cpp	(revision 1614)
++++ dialogs/src/dialogsgtk/dlgs_gtk.cpp	(working copy)
+@@ -56,12 +56,13 @@ extern "C"
  
  	
  
@@ -345,28 +145,21 @@
 -    snprintf(log_txt,sizeof(log_txt),"%s:%s",comment,strerror_r(errno,err_txt,sizeof(err_txt)));
 +    strerror_r(errno,err_txt,sizeof(err_txt));
 +    snprintf(log_txt,sizeof(log_txt),"%s:%s",comment,err_txt);
-     mbstowcs(wide_log_txt,log_txt,sizeof(wide_log_txt));
+     mbstowcs(wide_log_txt,log_txt,sizeof(wide_log_txt)/sizeof(wchar_t));
      return MWLOG(level,mod,wide_log_txt);
  }
-@@ -112,7 +113,7 @@
- 	char count[4];
- 	MWLOG(LEV_DEBUG,MOD_DLG,L"eIDMW::DlgBadPin called");
- 
--	snprintf(count,sizeof(count)-2,"%1d",ulRemainingTries);
-+	snprintf(count,sizeof(count)-2,"%1lu",ulRemainingTries);
- 	char* response=sdialog_call_modal(QUOTEME(BEID_BADPIN_DIALOG),count);	
- 	free(response);
-     return DLG_OK;
---- dialogs/src/dialogsgtk/parent.c.orig
-+++ dialogs/src/dialogsgtk/parent.c
+Index: dialogs/src/dialogsgtk/parent.c
+===================================================================
+--- dialogs/src/dialogsgtk/parent.c	(revision 1614)
++++ dialogs/src/dialogsgtk/parent.c	(working copy)
 @@ -1,4 +1,6 @@
 +#include <stdio.h>
  #include <stdlib.h>
 +#include <unistd.h>
  #include "config.h"
  #include "parent.h"
- 
-@@ -9,7 +11,7 @@
+ #include <unistd.h>
+@@ -11,7 +13,7 @@ ssize_t get_parent_path(char* exec_path,
          char            proc_path[32];
          ssize_t         exec_path_len=-1;
  
@@ -375,30 +168,12 @@
          if((exec_path_len=readlink(proc_path,exec_path,exec_path_size-1))!=-1)
                  exec_path[exec_path_len]='\0';
          return exec_path_len;
---- dialogs/src/dialogsgtk/parent.h.orig
-+++ dialogs/src/dialogsgtk/parent.h
+Index: dialogs/src/dialogsgtk/parent.h
+===================================================================
+--- dialogs/src/dialogsgtk/parent.h	(revision 1614)
++++ dialogs/src/dialogsgtk/parent.h	(working copy)
 @@ -1,2 +1,4 @@
 +#include <sys/types.h>
 +
  ssize_t get_parent_path(char* exec_path, size_t exec_path_size);
  
---- dialogs/src/dialogsgtk/single_dialog.c.orig
-+++ dialogs/src/dialogsgtk/single_dialog.c
-@@ -40,14 +40,15 @@
- #define DPRINTF(format,args...) fprintf(stderr, format , ## args)
- #define DERROR(label) perror(label)
- #else
--#define DPRINTF
--#define DERROR
-+#define DPRINTF(format,args...)
-+#define DERROR(label)
- #endif
- 
- 
- /* the sdialog_call_modal function borrows from readpass.c in the OpenSSH distribution, whose Copyright is as follows: 
-  *
-  * START OF extra (C) NOTICE FOR sdialog_call_modal() 
-+ */
- 
- /* $OpenBSD: readpass.c,v 1.47 2006/08/03 03:34:42 deraadt Exp $ */
- /*
