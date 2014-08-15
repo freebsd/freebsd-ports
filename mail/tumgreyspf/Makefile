@@ -18,8 +18,7 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/spf.py:${PORTSDIR}/mail/py-spf
 OPTIONS_DEFINE=	DOCS
 
 NO_BUILD=	yes
-USE_PYTHON=	yes
-USES=		shebangfix
+USES=		python shebangfix
 
 PKGDEINSTALL=	${WRKDIR}/pkg-deinstall
 PKGINSTALL=	${WRKDIR}/pkg-install
@@ -61,11 +60,10 @@ post-patch:
 
 do-install:
 	${MKDIR} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/
-	cd ${WRKSRC}/ && \
-		${INSTALL_SCRIPT} tumgreyspf tumgreyspf-clean tumgreyspf-configtest tumgreyspf-stat ${STAGEDIR}${PREFIX}/bin/ && \
-		${INSTALL_SCRIPT} gentest ${STAGEDIR}${PREFIX}/bin/tumgreyspf-gentest && \
-		${INSTALL_SCRIPT} tumgreyspfsupp.py ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/ && \
-		${INSTALL_DATA} tumgreyspf.conf ${STAGEDIR}${PREFIX}/etc/tumgreyspf.conf.default
+	cd ${WRKSRC}/ && ${INSTALL_SCRIPT} tumgreyspf tumgreyspf-clean tumgreyspf-configtest tumgreyspf-stat ${STAGEDIR}${PREFIX}/bin/
+	cd ${WRKSRC}/ && ${INSTALL_SCRIPT} gentest ${STAGEDIR}${PREFIX}/bin/tumgreyspf-gentest
+	cd ${WRKSRC}/ && ${INSTALL_SCRIPT} tumgreyspfsupp.py ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/
+	cd ${WRKSRC}/ && ${INSTALL_DATA} tumgreyspf.conf ${STAGEDIR}${PREFIX}/etc/tumgreyspf.conf.default
 .if !exists(${PREFIX}/etc/tumgreyspf.conf)
 	${INSTALL_DATA} ${WRKSRC}/tumgreyspf.conf ${STAGEDIR}${PREFIX}/etc/
 .endif
