@@ -1,9 +1,8 @@
-# Created by: ijliao
 # $FreeBSD$
 
 PORTNAME=	libbgpdump
 PORTVERSION=	1.4.99.13
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net
 MASTER_SITES=	http://www.ris.ripe.net/source/bgpdump/
 EXTRACT_SUFX=	.tgz
@@ -15,7 +14,6 @@ LICENSE=	GPLv2
 
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-USE_GCC=	any
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
