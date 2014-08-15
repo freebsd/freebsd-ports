@@ -1,2 +1,5 @@
 bin/sic
 bin/sic-%%VERSION%%
+man/man1/sic.1.gz
+man/man5/sic-alias.5.gz
+man/man5/sic-server.5.gz
