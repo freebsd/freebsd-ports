@@ -1,4 +1,8 @@
-@exec chown %%WWWOWN%%:%%WWWGRP%% %D/%%TOMCATDIR%%/webapps/deegree-wcs
+@owner %%WWWOWN%%
+@group %%WWWGRP%%
+@dirrm %%TOMCATDIR%%/webapps/deegree-wcs
+@group wheel
+@group root
 %%TOMCATDIR%%/webapps/deegree-wcs/META-INF/MANIFEST.MF
 %%TOMCATDIR%%/webapps/deegree-wcs/WEB-INF/classes/log4j.properties
 %%TOMCATDIR%%/webapps/deegree-wcs/WEB-INF/conf/wcs/wcs_configuration.xml

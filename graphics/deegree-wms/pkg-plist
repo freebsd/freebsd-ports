@@ -1,4 +1,8 @@
-@exec chown %%WWWOWN%%:%%WWWGRP%% %D/%%TOMCATDIR%%/webapps/deegree-wms
+@owner %%WWWOWN%%
+@group %%WWWGRP%%
+@dirrm %%TOMCATDIR%%/webapps/deegree-wms
+@group wheel
+@group root
 %%TOMCATDIR%%/webapps/deegree-wms/META-INF/MANIFEST.MF
 %%TOMCATDIR%%/webapps/deegree-wms/WEB-INF/classes/log4j.properties
 %%TOMCATDIR%%/webapps/deegree-wms/WEB-INF/classes/org/apache/batik/util/resources/XMLResourceDescriptor.properties
