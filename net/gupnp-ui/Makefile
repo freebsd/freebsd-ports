@@ -21,8 +21,7 @@ GNU_CONFIGURE=	yes
 MAKE_ENV=	INSTALL_STRIP_FLAG=${STRIP}
 USE_GNOME=	gtk20
 USE_LDCONFIG=	yes
-USE_PYTHON=	yes
-USES=		libtool pathfix pkgconfig
+USES=		libtool pathfix pkgconfig python
 
 post-patch:
 	@${REINPLACE_CMD} -e '/^SUBDIRS = / s|tests||' ${WRKSRC}/Makefile.in
