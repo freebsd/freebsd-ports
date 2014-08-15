@@ -1,6 +1,6 @@
---- ./chrome/app/chrome_main_delegate.cc.orig	2014-04-30 22:42:53.000000000 +0200
-+++ ./chrome/app/chrome_main_delegate.cc	2014-05-04 14:38:46.000000000 +0200
-@@ -95,7 +95,7 @@
+--- ./chrome/app/chrome_main_delegate.cc.orig	2014-08-12 21:02:25.000000000 +0200
++++ ./chrome/app/chrome_main_delegate.cc	2014-08-13 09:56:56.000000000 +0200
+@@ -96,7 +96,7 @@
  #include "ui/base/x/x11_util.h"
  #endif
  
@@ -9,7 +9,7 @@
  #include "components/breakpad/app/breakpad_linux.h"
  #endif
  
-@@ -121,7 +121,7 @@
+@@ -122,7 +122,7 @@
      g_chrome_content_plugin_client = LAZY_INSTANCE_INITIALIZER;
  #endif
  
@@ -18,7 +18,7 @@
  base::LazyInstance<chrome::ChromeBreakpadClient>::Leaky
      g_chrome_breakpad_client = LAZY_INSTANCE_INITIALIZER;
  #endif
-@@ -243,7 +243,7 @@
+@@ -245,7 +245,7 @@
        // Needed for scrollbar related images.
        process_type == switches::kWorkerProcess ||
  #endif
@@ -27,7 +27,7 @@
        // The zygote process opens the resources for the renderers.
        process_type == switches::kZygoteProcess ||
  #endif
-@@ -457,7 +457,7 @@
+@@ -459,7 +459,7 @@
        std::string format_str =
            command_line.GetSwitchValueASCII(switches::kDiagnosticsFormat);
        if (format_str == "machine") {
@@ -36,7 +36,7 @@
        } else if (format_str == "log") {
          format = diagnostics::DiagnosticsWriter::LOG;
        } else {
-@@ -498,7 +498,7 @@
+@@ -500,7 +500,7 @@
        std::string format_str =
            command_line.GetSwitchValueASCII(switches::kDiagnosticsFormat);
        if (format_str == "machine") {
@@ -45,7 +45,7 @@
        } else if (format_str == "human") {
          format = diagnostics::DiagnosticsWriter::HUMAN;
        } else {
-@@ -630,7 +630,7 @@
+@@ -632,7 +632,7 @@
    std::string process_type =
        command_line.GetSwitchValueASCII(switches::kProcessType);
  
@@ -54,7 +54,7 @@
    breakpad::SetBreakpadClient(g_chrome_breakpad_client.Pointer());
  #endif
  
-@@ -748,7 +748,7 @@
+@@ -757,7 +757,7 @@
  #endif
    }
  
@@ -63,7 +63,7 @@
    // Zygote needs to call InitCrashReporter() in RunZygote().
    if (process_type != switches::kZygoteProcess) {
  #if defined(OS_ANDROID)
-@@ -760,7 +760,7 @@
+@@ -769,7 +769,7 @@
      breakpad::InitCrashReporter(process_type);
  #endif  // defined(OS_ANDROID)
    }
@@ -72,7 +72,7 @@
  
    // After all the platform Breakpads have been initialized, store the command
    // line for crash reporting.
-@@ -845,7 +845,7 @@
+@@ -854,7 +854,7 @@
    return process_type == switches::kNaClLoaderProcess ||
        process_type == switches::kRelauncherProcess;
  }

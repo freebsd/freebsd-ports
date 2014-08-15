@@ -1,6 +1,6 @@
---- ./content/app/content_main_runner.cc.orig	2014-04-30 22:41:44.000000000 +0200
-+++ ./content/app/content_main_runner.cc	2014-05-04 14:38:47.000000000 +0200
-@@ -86,10 +86,10 @@
+--- ./content/app/content_main_runner.cc.orig	2014-08-12 21:01:22.000000000 +0200
++++ ./content/app/content_main_runner.cc	2014-08-13 09:56:57.000000000 +0200
+@@ -88,10 +88,10 @@
  #include "base/posix/global_descriptors.h"
  #include "content/public/common/content_descriptors.h"
  
@@ -13,7 +13,7 @@
  #include "content/zygote/zygote_main.h"
  #endif
  
-@@ -343,7 +343,8 @@
+@@ -282,7 +282,8 @@
    int (*function)(const MainFunctionParams&);
  };
  
@@ -23,7 +23,7 @@
  // On platforms that use the zygote, we have a special subset of
  // subprocesses that are launched via the zygote.  This function
  // fills in some process-launching bits around ZygoteMain().
-@@ -471,7 +472,8 @@
+@@ -412,7 +413,8 @@
      }
    }
  

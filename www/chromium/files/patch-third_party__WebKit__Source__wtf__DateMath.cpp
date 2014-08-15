@@ -1,5 +1,5 @@
---- ./third_party/WebKit/Source/wtf/DateMath.cpp.orig	2014-04-30 22:47:16.000000000 +0200
-+++ ./third_party/WebKit/Source/wtf/DateMath.cpp	2014-05-04 14:38:48.000000000 +0200
+--- ./third_party/WebKit/Source/wtf/DateMath.cpp.orig	2014-08-12 21:07:13.000000000 +0200
++++ ./third_party/WebKit/Source/wtf/DateMath.cpp	2014-08-13 09:56:58.000000000 +0200
 @@ -80,6 +80,7 @@
  #include "StringExtras.h"
  

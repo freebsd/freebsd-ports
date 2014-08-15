@@ -5,6 +5,7 @@ share/applications/chromium-browser.desktop
 %%DATADIR%%/chrome-wrapper
 %%DATADIR%%/chrome_100_percent.pak
 %%DATADIR%%/content_resources.pak
+%%DATADIR%%/keyboard_resources.pak
 %%DATADIR%%/libffmpegsumo.so
 %%DATADIR%%/locales/am.pak
 %%DATADIR%%/locales/ar.pak
@@ -59,35 +60,9 @@ share/applications/chromium-browser.desktop
 %%DATADIR%%/locales/vi.pak
 %%DATADIR%%/locales/zh-CN.pak
 %%DATADIR%%/locales/zh-TW.pak
-%%DATADIR%%/product_logo_48.png
-%%DATADIR%%/protoc
+%%DATADIR%%/mksnapshot
 %%DATADIR%%/resources.pak
 %%DATADIR%%/resources/extension/demo/library.js
-%%DATADIR%%/resources/inspector/accelerometer.css
-%%DATADIR%%/resources/inspector/breakpointsList.css
-%%DATADIR%%/resources/inspector/buildSystemOnly.js
-%%DATADIR%%/resources/inspector/flameChart.css
-%%DATADIR%%/resources/inspector/sidebarPane.css
-%%DATADIR%%/resources/inspector/auditsPanel.css
-%%DATADIR%%/resources/inspector/AuditsPanel.js
-%%DATADIR%%/resources/inspector/breadcrumbList.css
-%%DATADIR%%/resources/inspector/canvasProfiler.css
-%%DATADIR%%/resources/inspector/cmdevtools.css
-%%DATADIR%%/resources/inspector/codemirror.css
-%%DATADIR%%/resources/inspector/CodeMirrorTextEditor.js
-%%DATADIR%%/resources/inspector/ConsolePanel.js
-%%DATADIR%%/resources/inspector/dataGrid.css
-%%DATADIR%%/resources/inspector/devtools.html
-%%DATADIR%%/resources/inspector/devtools_extension_api.js
-%%DATADIR%%/resources/inspector/elementsPanel.css
-%%DATADIR%%/resources/inspector/ElementsPanel.js
-%%DATADIR%%/resources/inspector/ExtensionServer.js
-%%DATADIR%%/resources/inspector/filter.css
-%%DATADIR%%/resources/inspector/filteredItemSelectionDialog.css
-%%DATADIR%%/resources/inspector/heapProfiler.css
-%%DATADIR%%/resources/inspector/HeapSnapshotWorker.js
-%%DATADIR%%/resources/inspector/helpScreen.css
-%%DATADIR%%/resources/inspector/inspector.css
 %%DATADIR%%/resources/inspector/Images/addIcon.png
 %%DATADIR%%/resources/inspector/Images/applicationCache.png
 %%DATADIR%%/resources/inspector/Images/back.png
@@ -148,39 +123,88 @@ share/applications/chromium-browser.desktop
 %%DATADIR%%/resources/inspector/Images/toolbarItemSelected.png
 %%DATADIR%%/resources/inspector/Images/trackHoriz.png
 %%DATADIR%%/resources/inspector/Images/trackVert.png
-%%DATADIR%%/resources/inspector/indexedDBViews.css
-%%DATADIR%%/resources/inspector/inspectorCommon.css
-%%DATADIR%%/resources/inspector/LayersPanel.js
-%%DATADIR%%/resources/inspector/layersPanel.css
 %%DATADIR%%/resources/inspector/Main.js
+%%DATADIR%%/resources/inspector/accelerometer.css
+%%DATADIR%%/resources/inspector/audits/AuditsPanel.js
+%%DATADIR%%/resources/inspector/auditsPanel.css
+%%DATADIR%%/resources/inspector/breadcrumbList.css
+%%DATADIR%%/resources/inspector/breakpointsList.css
+%%DATADIR%%/resources/inspector/buildSystemOnly.js
+%%DATADIR%%/resources/inspector/canvasProfiler.css
+%%DATADIR%%/resources/inspector/cmdevtools.css
+%%DATADIR%%/resources/inspector/codemirror.css
+%%DATADIR%%/resources/inspector/console/ConsolePanel.js
+%%DATADIR%%/resources/inspector/dataGrid.css
+%%DATADIR%%/resources/inspector/devices/DevicesView.js
+%%DATADIR%%/resources/inspector/devicesView.css
+%%DATADIR%%/resources/inspector/devtools.html
+%%DATADIR%%/resources/inspector/devtools_extension_api.js
+%%DATADIR%%/resources/inspector/elements/ElementsPanel.js
+%%DATADIR%%/resources/inspector/elementsPanel.css
+%%DATADIR%%/resources/inspector/extensions/ExtensionServer.js
+%%DATADIR%%/resources/inspector/filter.css
+%%DATADIR%%/resources/inspector/filteredItemSelectionDialog.css
+%%DATADIR%%/resources/inspector/flameChart.css
+%%DATADIR%%/resources/inspector/heapProfiler.css
+%%DATADIR%%/resources/inspector/helpScreen.css
+%%DATADIR%%/resources/inspector/indexedDBViews.css
+%%DATADIR%%/resources/inspector/inspector.css
+%%DATADIR%%/resources/inspector/inspectorCommon.css
+%%DATADIR%%/resources/inspector/layers/LayersPanel.js
+%%DATADIR%%/resources/inspector/layersPanel.css
 %%DATADIR%%/resources/inspector/navigatorView.css
+%%DATADIR%%/resources/inspector/network/NetworkPanel.js
 %%DATADIR%%/resources/inspector/networkLogView.css
 %%DATADIR%%/resources/inspector/networkPanel.css
-%%DATADIR%%/resources/inspector/NetworkPanel.js
 %%DATADIR%%/resources/inspector/overrides.css
 %%DATADIR%%/resources/inspector/panelEnablerView.css
+%%DATADIR%%/resources/inspector/profiler/ProfilesPanel.js
+%%DATADIR%%/resources/inspector/profiler/heap_snapshot_worker/HeapSnapshotWorker.js
 %%DATADIR%%/resources/inspector/profilesPanel.css
-%%DATADIR%%/resources/inspector/ProfilesPanel.js
-%%DATADIR%%/resources/inspector/resourcesPanel.css
-%%DATADIR%%/resources/inspector/ResourcesPanel.js
 %%DATADIR%%/resources/inspector/resourceView.css
+%%DATADIR%%/resources/inspector/resources/ResourcesPanel.js
+%%DATADIR%%/resources/inspector/resourcesPanel.css
 %%DATADIR%%/resources/inspector/revisionHistory.css
-%%DATADIR%%/resources/inspector/ScriptFormatterWorker.js
 %%DATADIR%%/resources/inspector/screencastView.css
+%%DATADIR%%/resources/inspector/script_formatter_worker/ScriptFormatterWorker.js
+%%DATADIR%%/resources/inspector/search/AdvancedSearchView.js
+%%DATADIR%%/resources/inspector/sidebarPane.css
+%%DATADIR%%/resources/inspector/source_frame/SourceFrame.js
+%%DATADIR%%/resources/inspector/sources/SourcesPanel.js
 %%DATADIR%%/resources/inspector/sourcesPanel.css
-%%DATADIR%%/resources/inspector/SourcesPanel.js
 %%DATADIR%%/resources/inspector/sourcesView.css
 %%DATADIR%%/resources/inspector/spectrum.css
 %%DATADIR%%/resources/inspector/splitView.css
-%%DATADIR%%/resources/inspector/TempStorageSharedWorker.js
-%%DATADIR%%/resources/inspector/textPrompt.css
+%%DATADIR%%/resources/inspector/suggestBox.css
+%%DATADIR%%/resources/inspector/temp_storage_shared_worker/TempStorageSharedWorker.js
+%%DATADIR%%/resources/inspector/timeline/TimelinePanel.js
 %%DATADIR%%/resources/inspector/timelinePanel.css
-%%DATADIR%%/resources/inspector/TimelinePanel.js
-%%DATADIR%%/xdg-settings
-@dirrm %%DATADIR%%/locales
-@dirrm %%DATADIR%%/resources/inspector/Images
-@dirrm %%DATADIR%%/resources/inspector
-@dirrm %%DATADIR%%/resources/extension/demo
-@dirrm %%DATADIR%%/resources/extension
-@dirrm %%DATADIR%%/resources
-@dirrm %%DATADIR%%
+share/icons/hicolor/128x128/apps/chrome.png
+share/icons/hicolor/22x22/apps/chrome.png
+share/icons/hicolor/24x24/apps/chrome.png
+share/icons/hicolor/256x256/apps/chrome.png
+share/icons/hicolor/48x48/apps/chrome.png
+share/icons/hicolor/64x64/apps/chrome.png
+@dirrmtry %%DATADIR%%/locales
+@dirrmtry %%DATADIR%%/resources/extension/demo
+@dirrmtry %%DATADIR%%/resources/extension
+@dirrmtry %%DATADIR%%/resources/inspector/Images
+@dirrmtry %%DATADIR%%/resources/inspector/audits
+@dirrmtry %%DATADIR%%/resources/inspector/console
+@dirrmtry %%DATADIR%%/resources/inspector/devices
+@dirrmtry %%DATADIR%%/resources/inspector/elements
+@dirrmtry %%DATADIR%%/resources/inspector/extensions
+@dirrmtry %%DATADIR%%/resources/inspector/layers
+@dirrmtry %%DATADIR%%/resources/inspector/network
+@dirrmtry %%DATADIR%%/resources/inspector/profiler/heap_snapshot_worker
+@dirrmtry %%DATADIR%%/resources/inspector/profiler
+@dirrmtry %%DATADIR%%/resources/inspector/resources
+@dirrmtry %%DATADIR%%/resources/inspector/script_formatter_worker
+@dirrmtry %%DATADIR%%/resources/inspector/search
+@dirrmtry %%DATADIR%%/resources/inspector/source_frame
+@dirrmtry %%DATADIR%%/resources/inspector/sources
+@dirrmtry %%DATADIR%%/resources/inspector/temp_storage_shared_worker
+@dirrmtry %%DATADIR%%/resources/inspector/timeline
+@dirrmtry %%DATADIR%%/resources/inspector
+@dirrmtry %%DATADIR%%/resources
+@dirrmtry %%DATADIR%%

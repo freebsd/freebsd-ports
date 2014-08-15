@@ -1,5 +1,5 @@
---- ./content/common/set_process_title_linux.h.orig	2014-04-30 22:41:44.000000000 +0200
-+++ ./content/common/set_process_title_linux.h	2014-05-04 14:38:47.000000000 +0200
+--- ./content/common/set_process_title_linux.h.orig	2014-08-12 21:01:26.000000000 +0200
++++ ./content/common/set_process_title_linux.h	2014-08-13 09:56:57.000000000 +0200
 @@ -5,6 +5,9 @@
  #ifndef CONTENT_COMMON_SET_PROCESS_TITLE_LINUX_H_
  #define CONTENT_COMMON_SET_PROCESS_TITLE_LINUX_H_

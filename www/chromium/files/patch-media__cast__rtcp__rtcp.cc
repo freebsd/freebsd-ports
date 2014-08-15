@@ -1,6 +1,6 @@
---- media/cast/rtcp/rtcp.cc.orig	2014-05-14 21:23:34.000000000 +0200
-+++ media/cast/rtcp/rtcp.cc	2014-05-22 09:51:16.000000000 +0200
-@@ -362,7 +362,7 @@
+--- ./media/cast/rtcp/rtcp.cc.orig	2014-08-12 21:02:56.000000000 +0200
++++ ./media/cast/rtcp/rtcp.cc	2014-08-13 09:56:57.000000000 +0200
+@@ -361,7 +361,7 @@
    int64 rtp_time_diff_ms = rtp_timestamp_diff / frequency_khz;
  
    // Sanity check.

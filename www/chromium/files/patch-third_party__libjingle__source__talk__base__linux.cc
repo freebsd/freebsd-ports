@@ -1,5 +1,5 @@
---- ./third_party/libjingle/source/talk/base/linux.cc.orig	2014-04-30 22:44:03.000000000 +0200
-+++ ./third_party/libjingle/source/talk/base/linux.cc	2014-05-04 14:38:48.000000000 +0200
+--- ./third_party/libjingle/source/talk/base/linux.cc.orig	2014-08-12 21:03:39.000000000 +0200
++++ ./third_party/libjingle/source/talk/base/linux.cc	2014-08-13 09:56:58.000000000 +0200
 @@ -25,7 +25,7 @@
   * ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
   */

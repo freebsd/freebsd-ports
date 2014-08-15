@@ -1,5 +1,5 @@
---- ./content/browser/geolocation/location_arbitrator_impl.cc.orig	2014-04-30 22:41:44.000000000 +0200
-+++ ./content/browser/geolocation/location_arbitrator_impl.cc	2014-05-04 14:38:47.000000000 +0200
+--- ./content/browser/geolocation/location_arbitrator_impl.cc.orig	2014-08-12 21:01:23.000000000 +0200
++++ ./content/browser/geolocation/location_arbitrator_impl.cc	2014-08-13 09:56:57.000000000 +0200
 @@ -160,7 +160,7 @@
  }
  
