@@ -152,6 +152,7 @@
     SUBDIR += svxlink
     SUBDIR += syncterm
     SUBDIR += tcpser
+    SUBDIR += telldus-core
     SUBDIR += thebridge
     SUBDIR += tilp2
     SUBDIR += tits
