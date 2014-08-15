@@ -222,9 +222,7 @@
 %%CACTIDIR%%/images/view_none.gif
 %%CACTIDIR%%/include/auth.php
 %%CACTIDIR%%/include/bottom_footer.php
-@unexec cmp -s %D/%%CACTIDIR%%/include/config.php.orig %D/%%CACTIDIR%%/include/config.php && rm -f %D/%%CACTIDIR%%/include/config.php || true
-%%CACTIDIR%%/include/config.php.orig
-@exec [ -f %D/%%CACTIDIR%%/include/config.php ] || cp %D/%%CACTIDIR%%/include/config.php.orig %D/%%CACTIDIR%%/include/config.php
+@sample %%CACTIDIR%%/include/config.php.sample
 %%CACTIDIR%%/include/global_form.php
 %%CACTIDIR%%/include/global.php
 %%CACTIDIR%%/include/global_arrays.php
@@ -444,8 +442,6 @@
 %%CACTIDIR%%/lib/utility.php
 %%CACTIDIR%%/lib/variables.php
 %%CACTIDIR%%/lib/xml.php
-%%CACTIDIR%%/log/.htaccess
-@unexec [ ! -s %%PREFIX%%/%%CACTIDIR%%/log/cacti.log ] && rm -f %%PREFIX%%/%%CACTIDIR%%/log/cacti.log
 %%CACTIDIR%%/logout.php
 %%CACTIDIR%%/plugins.php
 %%CACTIDIR%%/poller.php
@@ -464,7 +460,6 @@
 %%CACTIDIR%%/resource/snmp_queries/netware_cpu.xml
 %%CACTIDIR%%/resource/snmp_queries/netware_disk.xml
 %%CACTIDIR%%/rra.php
-%%CACTIDIR%%/rra/.htaccess
 %%CACTIDIR%%/script_server.php
 %%CACTIDIR%%/script_server.pl
 %%CACTIDIR%%/scripts/3com_cable_modem.pl
@@ -494,13 +489,11 @@
 %%CACTIDIR%%/user_admin.php
 %%CACTIDIR%%/utilities.php
 @dirrm %%CACTIDIR%%/scripts
-@dirrmtry %%CACTIDIR%%/rra
 @dirrm %%CACTIDIR%%/resource/snmp_queries
 @dirrm %%CACTIDIR%%/resource/script_server
 @dirrm %%CACTIDIR%%/resource/script_queries
 @dirrm %%CACTIDIR%%/resource
 @dirrmtry %%CACTIDIR%%/plugins
-@dirrmtry %%CACTIDIR%%/log
 @dirrm %%CACTIDIR%%/lib/adodb/lang
 @dirrm %%CACTIDIR%%/lib/adodb/drivers
 @dirrm %%CACTIDIR%%/lib/adodb/datadict
@@ -519,3 +512,14 @@
 @dirrm %%CACTIDIR%%/docs
 @dirrm %%CACTIDIR%%/cli
 @dirrmtry %%CACTIDIR%%
+@comment
+@comment Manage the new Cacti dirs from their prior default location.
+@comment
+@owner %%CACTIUSER%%
+@group %%CACTIGROUP%%
+@dirrmtry /var/log/cacti
+@dirrmtry /var/db/cacti/rra
+@dirrmtry /var/db/cacti/scripts
+@dirrmtry /var/db/cacti
+@group wheel
+@owner root
