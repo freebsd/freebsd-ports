@@ -1,0 +1,14 @@
+--- ./Makefile.orig	2014-08-15 13:00:51.378870503 +0000
++++ ./Makefile	2014-08-15 13:01:08.321869127 +0000
+@@ -1,4 +1,4 @@
+-CC=gcc
++CC?=cc
+ CCARGS=
+ 
+ all: 2048 2048_no_curses
+@@ -7,4 +7,4 @@
+ 	$(CC) $(CCARGS) 2048_curses.c -lcurses -o 2048
+ 
+ 2048_no_curses: 2048_no_curses.c
+-	gcc 2048_no_curses.c -o 2048_no_curses
++	${CC} 2048_no_curses.c -o 2048_no_curses
