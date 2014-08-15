@@ -13,7 +13,7 @@ COMMENT=	Text mode menu- and window-driven IM interface
 
 LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl
 
-USES=		iconv gmake pkgconfig
+USES=		iconv gmake pkgconfig shebangfix
 USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
@@ -21,6 +21,11 @@ CXXFLAGS+=	-I${LOCALBASE}/include
 CONFIGURE_ARGS=	--with-ssl --with-openssl
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 CONFLICTS=	centericq-[0-9]* centerim-devel-[0-9]*
+
+SHEBANG_FILES=	misc/cimformathistory misc/cimextracthistory.pl
+SHEBANG_LANG=	gawk
+gawk_OLD_CMD=	/bin/gawk
+gawk_CMD=	/usr/bin/awk
 
 OPTIONS_DEFINE=	NLS MULTIBYTE FRIBIDI MSN YAHOO AIM IRC JABBER GPGME RSS LJ GG
 
@@ -60,6 +65,8 @@ GPGME_CONFIGURE_OFF=	--with-gpgme-prefix=/nonexistent
 post-patch:
 	@${REINPLACE_CMD} -e '1 s|/usr/bin/python|/usr/bin/env python|' \
 		${WRKSRC}/misc/CenterIMLog2HTML.py
+	@${REINPLACE_CMD} -e 's|-R$$found_dir|-Wl,-rpath,$$found_dir|' \
+		${WRKSRC}/configure
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
