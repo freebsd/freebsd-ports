@@ -19,4 +19,7 @@ CFLAGS+=	-I${LOCALBASE}/include
 USE_PYTHON=	autoplist distutils
 USES=		python
 
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/cconv.so
+
 .include <bsd.port.mk>
