@@ -29,7 +29,6 @@ SUB_LIST=	LLVM_PREFIX="${LLVM_PREFIX}" LLVM_SUFFIX="${LLVM_SUFFIX}"
 CONFIGURE_ARGS+=	--enable-shared
 MAKE_ARGS+=		REQUIRES_RTTI=1
 LIBNAME=		libLLVM-${DISTVERSION:C/\.r[0-9]*//}svn.so
-LIBNAME_REAL=		libLLVM-${DISTVERSION:C/\.r[0-9]*//}.0svn.so
 
 CONFIGURE_ARGS+=	--enable-bindings=none
 CONFIGURE_ARGS+=	--enable-optimized
@@ -88,7 +87,7 @@ FIRST_COMMAND=	${COMMANDS:C/^/XXXX/1:MXXXX*:C/^XXXX//}
 
 STRIP_LIBS=	BugpointPasses.so \
 		LLVMHello.so \
-		${LIBNAME_REAL}.0 \
+		${LIBNAME}.0 \
 		libLTO.so
 
 .include <bsd.port.options.mk>
@@ -191,11 +190,9 @@ post-build:
 .endif
 
 post-install:
-	ln -sf ${LIBNAME_REAL} ${STAGEDIR}${LLVM_PREFIX}/lib/${LIBNAME}
-	${MV} ${STAGEDIR}${LLVM_PREFIX}/lib/${LIBNAME_REAL} \
-	    ${STAGEDIR}${LLVM_PREFIX}/lib/${LIBNAME_REAL}.0
-	${LN} -sf ${LIBNAME_REAL}.0 \
-	    ${STAGEDIR}${LLVM_PREFIX}/lib/${LIBNAME_REAL}
+	${MV} ${STAGEDIR}${LLVM_PREFIX}/lib/${LIBNAME} \
+	    ${STAGEDIR}${LLVM_PREFIX}/lib/${LIBNAME}.0
+	${LN} -sf ${LIBNAME}.0 ${STAGEDIR}${LLVM_PREFIX}/lib/${LIBNAME}
 	${STRIP_CMD} ${STRIP_LIBS:S|^|${STAGEDIR}${LLVM_PREFIX}/lib/|}
 	${INSTALL_SCRIPT} ${WRKDIR}/llvm-wrapper.sh \
 	    ${STAGEDIR}${PREFIX}/bin/${FIRST_COMMAND}${LLVM_SUFFIX}

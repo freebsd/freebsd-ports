@@ -95,7 +95,6 @@ llvm-devel/include/llvm/ADT/EquivalenceClasses.h
 llvm-devel/include/llvm/ADT/FoldingSet.h
 llvm-devel/include/llvm/ADT/GraphTraits.h
 llvm-devel/include/llvm/ADT/Hashing.h
-llvm-devel/include/llvm/ADT/ImmutableIntervalMap.h
 llvm-devel/include/llvm/ADT/ImmutableList.h
 llvm-devel/include/llvm/ADT/ImmutableMap.h
 llvm-devel/include/llvm/ADT/ImmutableSet.h
@@ -106,7 +105,6 @@ llvm-devel/include/llvm/ADT/IntrusiveRefCntPtr.h
 llvm-devel/include/llvm/ADT/MapVector.h
 llvm-devel/include/llvm/ADT/None.h
 llvm-devel/include/llvm/ADT/Optional.h
-llvm-devel/include/llvm/ADT/OwningPtr.h
 llvm-devel/include/llvm/ADT/PackedVector.h
 llvm-devel/include/llvm/ADT/PointerIntPair.h
 llvm-devel/include/llvm/ADT/PointerUnion.h
@@ -139,14 +137,16 @@ llvm-devel/include/llvm/ADT/VariadicFunction.h
 llvm-devel/include/llvm/ADT/edit_distance.h
 llvm-devel/include/llvm/ADT/ilist.h
 llvm-devel/include/llvm/ADT/ilist_node.h
+llvm-devel/include/llvm/ADT/iterator.h
 llvm-devel/include/llvm/ADT/iterator_range.h
 llvm-devel/include/llvm/Analysis/AliasAnalysis.h
 llvm-devel/include/llvm/Analysis/AliasSetTracker.h
-llvm-devel/include/llvm/Analysis/BlockFrequencyImpl.h
 llvm-devel/include/llvm/Analysis/BlockFrequencyInfo.h
+llvm-devel/include/llvm/Analysis/BlockFrequencyInfoImpl.h
 llvm-devel/include/llvm/Analysis/BranchProbabilityInfo.h
 llvm-devel/include/llvm/Analysis/CFG.h
 llvm-devel/include/llvm/Analysis/CFGPrinter.h
+llvm-devel/include/llvm/Analysis/CGSCCPassManager.h
 llvm-devel/include/llvm/Analysis/CallGraph.h
 llvm-devel/include/llvm/Analysis/CallGraphSCCPass.h
 llvm-devel/include/llvm/Analysis/CallPrinter.h
@@ -165,6 +165,7 @@ llvm-devel/include/llvm/Analysis/InstructionSimplify.h
 llvm-devel/include/llvm/Analysis/Interval.h
 llvm-devel/include/llvm/Analysis/IntervalIterator.h
 llvm-devel/include/llvm/Analysis/IntervalPartition.h
+llvm-devel/include/llvm/Analysis/JumpInstrTableInfo.h
 llvm-devel/include/llvm/Analysis/LazyCallGraph.h
 llvm-devel/include/llvm/Analysis/LazyValueInfo.h
 llvm-devel/include/llvm/Analysis/LibCallAliasAnalysis.h
@@ -218,6 +219,7 @@ llvm-devel/include/llvm/CodeGen/GCs.h
 llvm-devel/include/llvm/CodeGen/ISDOpcodes.h
 llvm-devel/include/llvm/CodeGen/IntrinsicLowering.h
 llvm-devel/include/llvm/CodeGen/JITCodeEmitter.h
+llvm-devel/include/llvm/CodeGen/JumpInstrTables.h
 llvm-devel/include/llvm/CodeGen/LatencyPriorityQueue.h
 llvm-devel/include/llvm/CodeGen/LexicalScopes.h
 llvm-devel/include/llvm/CodeGen/LinkAllAsmWriterComponents.h
@@ -338,6 +340,7 @@ llvm-devel/include/llvm/IR/Function.h
 llvm-devel/include/llvm/IR/GVMaterializer.h
 llvm-devel/include/llvm/IR/GetElementPtrTypeIterator.h
 llvm-devel/include/llvm/IR/GlobalAlias.h
+llvm-devel/include/llvm/IR/GlobalObject.h
 llvm-devel/include/llvm/IR/GlobalValue.h
 llvm-devel/include/llvm/IR/GlobalVariable.h
 llvm-devel/include/llvm/IR/IRBuilder.h
@@ -396,6 +399,7 @@ llvm-devel/include/llvm/LineEditor/LineEditor.h
 llvm-devel/include/llvm/LinkAllIR.h
 llvm-devel/include/llvm/LinkAllPasses.h
 llvm-devel/include/llvm/Linker/Linker.h
+llvm-devel/include/llvm/MC/ConstantPools.h
 llvm-devel/include/llvm/MC/MCAsmBackend.h
 llvm-devel/include/llvm/MC/MCAsmInfo.h
 llvm-devel/include/llvm/MC/MCAsmInfoCOFF.h
@@ -428,6 +432,7 @@ llvm-devel/include/llvm/MC/MCInstrDesc.h
 llvm-devel/include/llvm/MC/MCInstrInfo.h
 llvm-devel/include/llvm/MC/MCInstrItineraries.h
 llvm-devel/include/llvm/MC/MCLabel.h
+llvm-devel/include/llvm/MC/MCLinkerOptimizationHint.h
 llvm-devel/include/llvm/MC/MCMachOSymbolFlags.h
 llvm-devel/include/llvm/MC/MCMachObjectWriter.h
 llvm-devel/include/llvm/MC/MCModule.h
@@ -455,9 +460,12 @@ llvm-devel/include/llvm/MC/MCSubtargetInfo.h
 llvm-devel/include/llvm/MC/MCSymbol.h
 llvm-devel/include/llvm/MC/MCSymbolizer.h
 llvm-devel/include/llvm/MC/MCTargetAsmParser.h
+llvm-devel/include/llvm/MC/MCTargetOptions.h
+llvm-devel/include/llvm/MC/MCTargetOptionsCommandFlags.h
 llvm-devel/include/llvm/MC/MCValue.h
 llvm-devel/include/llvm/MC/MCWin64EH.h
 llvm-devel/include/llvm/MC/MCWinCOFFObjectWriter.h
+llvm-devel/include/llvm/MC/MCWinCOFFStreamer.h
 llvm-devel/include/llvm/MC/MachineLocation.h
 llvm-devel/include/llvm/MC/SectionKind.h
 llvm-devel/include/llvm/MC/SubtargetFeature.h
@@ -475,6 +483,7 @@ llvm-devel/include/llvm/Object/MachO.h
 llvm-devel/include/llvm/Object/MachOUniversal.h
 llvm-devel/include/llvm/Object/ObjectFile.h
 llvm-devel/include/llvm/Object/RelocVisitor.h
+llvm-devel/include/llvm/Object/StringTableBuilder.h
 llvm-devel/include/llvm/Object/SymbolicFile.h
 llvm-devel/include/llvm/Object/YAML.h
 llvm-devel/include/llvm/Option/Arg.h
@@ -485,12 +494,17 @@ llvm-devel/include/llvm/Option/OptTable.h
 llvm-devel/include/llvm/Option/Option.h
 llvm-devel/include/llvm/Pass.h
 llvm-devel/include/llvm/PassAnalysisSupport.h
+llvm-devel/include/llvm/PassInfo.h
 llvm-devel/include/llvm/PassManager.h
 llvm-devel/include/llvm/PassRegistry.h
 llvm-devel/include/llvm/PassSupport.h
+llvm-devel/include/llvm/ProfileData/InstrProf.h
+llvm-devel/include/llvm/ProfileData/InstrProfReader.h
+llvm-devel/include/llvm/ProfileData/InstrProfWriter.h
 llvm-devel/include/llvm/Support/AIXDataTypesFix.h
 llvm-devel/include/llvm/Support/ARMBuildAttributes.h
 llvm-devel/include/llvm/Support/ARMEHABI.h
+llvm-devel/include/llvm/Support/ARMWinEH.h
 llvm-devel/include/llvm/Support/AlignOf.h
 llvm-devel/include/llvm/Support/Allocator.h
 llvm-devel/include/llvm/Support/ArrayRecycler.h
@@ -517,10 +531,11 @@ llvm-devel/include/llvm/Support/Dwarf.h
 llvm-devel/include/llvm/Support/DynamicLibrary.h
 llvm-devel/include/llvm/Support/ELF.h
 llvm-devel/include/llvm/Support/Endian.h
+llvm-devel/include/llvm/Support/EndianStream.h
+llvm-devel/include/llvm/Support/Errc.h
 llvm-devel/include/llvm/Support/Errno.h
 llvm-devel/include/llvm/Support/ErrorHandling.h
 llvm-devel/include/llvm/Support/ErrorOr.h
-llvm-devel/include/llvm/Support/FEnv.h
 llvm-devel/include/llvm/Support/FileOutputBuffer.h
 llvm-devel/include/llvm/Support/FileSystem.h
 llvm-devel/include/llvm/Support/FileUtilities.h
@@ -546,6 +561,7 @@ llvm-devel/include/llvm/Support/MemoryBuffer.h
 llvm-devel/include/llvm/Support/MemoryObject.h
 llvm-devel/include/llvm/Support/Mutex.h
 llvm-devel/include/llvm/Support/MutexGuard.h
+llvm-devel/include/llvm/Support/OnDiskHashTable.h
 llvm-devel/include/llvm/Support/OutputBuffer.h
 llvm-devel/include/llvm/Support/Path.h
 llvm-devel/include/llvm/Support/PluginLoader.h
@@ -561,6 +577,7 @@ llvm-devel/include/llvm/Support/Registry.h
 llvm-devel/include/llvm/Support/RegistryParser.h
 llvm-devel/include/llvm/Support/SMLoc.h
 llvm-devel/include/llvm/Support/SaveAndRestore.h
+llvm-devel/include/llvm/Support/ScaledNumber.h
 llvm-devel/include/llvm/Support/Signals.h
 llvm-devel/include/llvm/Support/Solaris.h
 llvm-devel/include/llvm/Support/SourceMgr.h
@@ -581,16 +598,17 @@ llvm-devel/include/llvm/Support/UnicodeCharRanges.h
 llvm-devel/include/llvm/Support/Valgrind.h
 llvm-devel/include/llvm/Support/Watchdog.h
 llvm-devel/include/llvm/Support/Win64EH.h
+llvm-devel/include/llvm/Support/WindowsError.h
 llvm-devel/include/llvm/Support/YAMLParser.h
 llvm-devel/include/llvm/Support/YAMLTraits.h
 llvm-devel/include/llvm/Support/circular_raw_ostream.h
 llvm-devel/include/llvm/Support/raw_os_ostream.h
 llvm-devel/include/llvm/Support/raw_ostream.h
-llvm-devel/include/llvm/Support/system_error.h
 llvm-devel/include/llvm/Support/type_traits.h
 llvm-devel/include/llvm/TableGen/Error.h
 llvm-devel/include/llvm/TableGen/Main.h
 llvm-devel/include/llvm/TableGen/Record.h
+llvm-devel/include/llvm/TableGen/SetTheory.h
 llvm-devel/include/llvm/TableGen/StringMatcher.h
 llvm-devel/include/llvm/TableGen/StringToOffsetTable.h
 llvm-devel/include/llvm/TableGen/TableGenBackend.h
@@ -627,6 +645,7 @@ llvm-devel/include/llvm/Transforms/Utils/BypassSlowDivision.h
 llvm-devel/include/llvm/Transforms/Utils/Cloning.h
 llvm-devel/include/llvm/Transforms/Utils/CmpInstAnalysis.h
 llvm-devel/include/llvm/Transforms/Utils/CodeExtractor.h
+llvm-devel/include/llvm/Transforms/Utils/CtorUtils.h
 llvm-devel/include/llvm/Transforms/Utils/GlobalStatus.h
 llvm-devel/include/llvm/Transforms/Utils/IntegerDivision.h
 llvm-devel/include/llvm/Transforms/Utils/Local.h
@@ -641,12 +660,13 @@ llvm-devel/include/llvm/Transforms/Utils/SpecialCaseList.h
 llvm-devel/include/llvm/Transforms/Utils/UnifyFunctionExitNodes.h
 llvm-devel/include/llvm/Transforms/Utils/UnrollLoop.h
 llvm-devel/include/llvm/Transforms/Utils/ValueMapper.h
+llvm-devel/include/llvm/Transforms/Utils/VectorUtils.h
 llvm-devel/include/llvm/Transforms/Vectorize.h
 llvm-devel/lib/BugpointPasses.so
 llvm-devel/lib/LLVMHello.so
 llvm-devel/lib/libLLVM-3.5.0svn.so
-llvm-devel/lib/libLLVM-3.5.0svn.so.0
 llvm-devel/lib/libLLVM-3.5svn.so
+llvm-devel/lib/libLLVM-3.5svn.so.0
 llvm-devel/lib/libLLVMAArch64AsmParser.a
 llvm-devel/lib/libLLVMAArch64AsmPrinter.a
 llvm-devel/lib/libLLVMAArch64CodeGen.a
@@ -710,6 +730,7 @@ llvm-devel/lib/libLLVMPowerPCCodeGen.a
 llvm-devel/lib/libLLVMPowerPCDesc.a
 llvm-devel/lib/libLLVMPowerPCDisassembler.a
 llvm-devel/lib/libLLVMPowerPCInfo.a
+llvm-devel/lib/libLLVMProfileData.a
 llvm-devel/lib/libLLVMR600AsmPrinter.a
 llvm-devel/lib/libLLVMR600CodeGen.a
 llvm-devel/lib/libLLVMR600Desc.a
@@ -752,7 +773,9 @@ llvm-devel/lib/libLTO.a
 llvm-devel/lib/libLTO.so
 llvm-devel/share/llvm/cmake/AddLLVM.cmake
 llvm-devel/share/llvm/cmake/AddLLVMDefinitions.cmake
+llvm-devel/share/llvm/cmake/AddSphinxTarget.cmake
 llvm-devel/share/llvm/cmake/ChooseMSVCCRT.cmake
+llvm-devel/share/llvm/cmake/FindSphinx.cmake
 llvm-devel/share/llvm/cmake/GetSVN.cmake
 llvm-devel/share/llvm/cmake/HandleLLVMOptions.cmake
 llvm-devel/share/llvm/cmake/HandleLLVMStdlib.cmake
@@ -778,12 +801,22 @@ llvm-devel/share/llvm/cmake/TableGen.cmake
 %%LIT%%%%PYTHON_SITELIBDIR%%/lit-devel/util.py
 %%PORTDOCS%%%%DOCSDIR%%/html.tar.gz
 %%PORTDOCS%%%%DOCSDIR%%/html/.buildinfo
+%%PORTDOCS%%%%DOCSDIR%%/html/ARM-BE-bitcastfail.png
+%%PORTDOCS%%%%DOCSDIR%%/html/ARM-BE-bitcastsuccess.png
+%%PORTDOCS%%%%DOCSDIR%%/html/ARM-BE-ld1.png
+%%PORTDOCS%%%%DOCSDIR%%/html/ARM-BE-ldr.png
 %%PORTDOCS%%%%DOCSDIR%%/html/AliasAnalysis.html
 %%PORTDOCS%%%%DOCSDIR%%/html/AliasAnalysis.txt
 %%PORTDOCS%%%%DOCSDIR%%/html/Atomics.html
 %%PORTDOCS%%%%DOCSDIR%%/html/Atomics.txt
+%%PORTDOCS%%%%DOCSDIR%%/html/BackEnds.html
+%%PORTDOCS%%%%DOCSDIR%%/html/BackEnds.txt
+%%PORTDOCS%%%%DOCSDIR%%/html/BigEndianNEON.html
+%%PORTDOCS%%%%DOCSDIR%%/html/BigEndianNEON.txt
 %%PORTDOCS%%%%DOCSDIR%%/html/BitCodeFormat.html
 %%PORTDOCS%%%%DOCSDIR%%/html/BitCodeFormat.txt
+%%PORTDOCS%%%%DOCSDIR%%/html/BlockFrequencyTerminology.html
+%%PORTDOCS%%%%DOCSDIR%%/html/BlockFrequencyTerminology.txt
 %%PORTDOCS%%%%DOCSDIR%%/html/BranchWeightMetadata.html
 %%PORTDOCS%%%%DOCSDIR%%/html/BranchWeightMetadata.txt
 %%PORTDOCS%%%%DOCSDIR%%/html/Bugpoint.html
@@ -800,6 +833,8 @@ llvm-devel/share/llvm/cmake/TableGen.cmake
 %%PORTDOCS%%%%DOCSDIR%%/html/CompilerWriterInfo.txt
 %%PORTDOCS%%%%DOCSDIR%%/html/DebuggingJITedCode.html
 %%PORTDOCS%%%%DOCSDIR%%/html/DebuggingJITedCode.txt
+%%PORTDOCS%%%%DOCSDIR%%/html/Deficiencies.html
+%%PORTDOCS%%%%DOCSDIR%%/html/Deficiencies.txt
 %%PORTDOCS%%%%DOCSDIR%%/html/DeveloperPolicy.html
 %%PORTDOCS%%%%DOCSDIR%%/html/DeveloperPolicy.txt
 %%PORTDOCS%%%%DOCSDIR%%/html/Dummy.html
@@ -860,6 +895,8 @@ llvm-devel/share/llvm/cmake/TableGen.cmake
 %%PORTDOCS%%%%DOCSDIR%%/html/LangImpl7.txt
 %%PORTDOCS%%%%DOCSDIR%%/html/LangImpl8.html
 %%PORTDOCS%%%%DOCSDIR%%/html/LangImpl8.txt
+%%PORTDOCS%%%%DOCSDIR%%/html/LangIntro.html
+%%PORTDOCS%%%%DOCSDIR%%/html/LangIntro.txt
 %%PORTDOCS%%%%DOCSDIR%%/html/LangRef.html
 %%PORTDOCS%%%%DOCSDIR%%/html/LangRef.txt
 %%PORTDOCS%%%%DOCSDIR%%/html/Lexicon.html
@@ -976,6 +1013,8 @@ llvm-devel/share/llvm/cmake/TableGen.cmake
 %%PORTDOCS%%%%DOCSDIR%%/html/llvm-diff.txt
 %%PORTDOCS%%%%DOCSDIR%%/html/llvm-dis.html
 %%PORTDOCS%%%%DOCSDIR%%/html/llvm-dis.txt
+%%PORTDOCS%%%%DOCSDIR%%/html/llvm-dwarfdump.html
+%%PORTDOCS%%%%DOCSDIR%%/html/llvm-dwarfdump.txt
 %%PORTDOCS%%%%DOCSDIR%%/html/llvm-extract.html
 %%PORTDOCS%%%%DOCSDIR%%/html/llvm-extract.txt
 %%PORTDOCS%%%%DOCSDIR%%/html/llvm-link.html
@@ -1021,6 +1060,7 @@ llvm-devel/share/llvm/cmake/TableGen.cmake
 @dirrm llvm-devel/include/llvm/Target
 @dirrm llvm-devel/include/llvm/TableGen
 @dirrm llvm-devel/include/llvm/Support
+@dirrm llvm-devel/include/llvm/ProfileData
 @dirrm llvm-devel/include/llvm/Option
 @dirrm llvm-devel/include/llvm/Object
 @dirrm llvm-devel/include/llvm/MC/MCParser
