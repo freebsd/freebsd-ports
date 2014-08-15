@@ -2,6 +2,7 @@
 
 PORTNAME=	libmodbus
 PORTVERSION=	3.1.1
+PORTREVISION=	1
 CATEGORIES=	comms
 MASTER_SITES=	http://libmodbus.org/site_media/build/
 
@@ -12,6 +13,6 @@ LICENSE=	LGPL21
 
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-USES=		gmake pathfix
+USES=		gmake libtool pathfix
 
 .include <bsd.port.mk>
