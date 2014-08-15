@@ -1,8 +1,7 @@
-# Created by: Wen Heping <wen@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	Algorithm-KMeans
-PORTVERSION=	1.40
+PORTVERSION=	2.02
 CATEGORIES=	math perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:AVIKAK
