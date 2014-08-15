@@ -14,7 +14,7 @@ LICENSE_COMB=	dual
 
 LIB_DEPENDS=	libdns_sd.so:${PORTSDIR}/net/mDNSResponder
 
-CONFLICTS_INSTALL=	dns/nss_mdns
+CONFLICTS_INSTALL=	nss_mdns-[0-9]*
 
 WRKSRC=		${WRKDIR}/${PORTNAME:S/_nss//}-${PORTVERSION}
 
