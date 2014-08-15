@@ -13,7 +13,7 @@ PKGNAMESUFFIX?=	-core
 DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER?=	ports@FreeBSD.org
-COMMENT?=	A fork of Mupen64 Nintendo 64 emulator
+COMMENT?=	Fork of Mupen64 Nintendo 64 emulator
 
 #PROJECTHOST=	bsdistfiles
 USES=		gmake pkgconfig
@@ -27,9 +27,5 @@ OPTFLAGS=	#
 MAKE_ENV+=	PTHREAD_LIBS="${PTHREAD_LIBS}" OPTFLAGS="${OPTFLAGS}"
 OPTIONSFILE=	${PORT_DBDIR}/${PORTNAME}${PKGNAMESUFFIX}/options
 
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
-
-.include "${MASTERDIR}/Makefile.common"
-
-.include <bsd.port.post.mk>
+.include "${.CURDIR}/../mupen64plus-core/Makefile.common"
+.include <bsd.port.mk>

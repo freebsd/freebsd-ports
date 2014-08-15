@@ -2,18 +2,17 @@
 
 PORTNAME=	herbstluftwm
 PORTVERSION=	0.6.2
+PORTREVISION=	1
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://herbstluftwm.org/tarballs/
 
-MAINTAINER=	crshd@mail.com
+MAINTAINER=	udvzsolt@gmail.com
 COMMENT=	Manual tiling window manager for X11
 
 LICENSE=	BSD2CLAUSE
 
-RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
-
 USES=		gmake pkgconfig shebangfix
-SHEBANG_FILES=scripts/*.sh
+SHEBANG_FILES=	scripts/*.sh share/autostart share/*.sh
 USE_XORG=	x11 xinerama
 USE_GNOME=	glib20
 
@@ -21,8 +20,12 @@ MAKE_ARGS=	PREFIX=${PREFIX} SYSCONFDIR=${PREFIX}/etc \
 		DOCSDIR=${DOCSDIR} EXAMPLESDIR=${EXAMPLESDIR} \
 		MANDIR=${PREFIX}/man
 
-OPTIONS_DEFINE=	BASH ZSH DOCS EXAMPLES
+OPTIONS_DEFINE=	BASH ZSH DOCS EXAMPLES DEFAULTCONF
+DEFAULTCONF_DESC=Install default configuration (requires bash)
+OPTIONS_DEFAULT+=DEFAULTCONF
 OPTIONS_SUB=	yes
+
+DEFAULTCONF_RUN_DEPENDS=bash:${PORTSDIR}/shells/bash
 
 .include <bsd.port.options.mk>
 
@@ -40,5 +43,11 @@ post-patch:
 .if ! ${PORT_OPTIONS:MEXAMPLES}
 	${REINPLACE_CMD} -e '/EXAMPLESDIR/d' ${WRKSRC}/Makefile
 .endif
+.if ! ${PORT_OPTIONS:MDEFAULTCONF}
+	${REINPLACE_CMD} -e '/CONFIGDIR/d' ${WRKSRC}/Makefile
+.endif
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/herbst*
 
 .include <bsd.port.mk>

@@ -40,7 +40,7 @@
 #
 # Variables, which can be set by the port:
 #
-# PYTHON_FEATURES	- A list of additional features and functionality to
+# USE_PYTHON		- A list of additional features and functionality to
 #			  enable. Supported features are:
 #
 #	concurrent 	- Indicates that the port can be installed for
@@ -80,7 +80,7 @@
 #			  when defined. Use this for ports that do *not* use
 #			  standard Python packaging mechanisms such as
 #			  distutils, and support *both* Python 2.x and 3.x.
-#			  Not needed, if PYTHON_FEATURES=autoplist is set.
+#			  Not needed, if USE_PYTHON=autoplist is set.
 #
 #	pythonprefix	- Says that the port installs in ${PYTHONBASE} instead
 #			  of ${PREFIX}.
@@ -169,7 +169,7 @@
 #
 # There are PREFIX-clean variants of the PYTHON_*DIR variables above.
 # They are meant to be used by ports instead of the above variables, so the
-# ports respect ${PREFIX} (unless PYTHON_FEATURES=pythonprefix is specified).
+# ports respect ${PREFIX} (unless USE_PYTHON=pythonprefix is specified).
 #
 # PYTHONPREFIX_INCLUDEDIR	default: ${PREFIX}/include/${PYTHON_VERSION}
 # PYTHONPREFIX_LIBDIR		default: ${PREFIX}/lib/${PYTHON_VERSION}
@@ -197,16 +197,16 @@
 # Deprecated variables, which exist for compatibility and will be removed
 # soon:
 #
-# USE_PYDISTUTILS	- Deprecated, use PYTHON_FEATURES=distutils instead
+# USE_PYDISTUTILS	- Deprecated, use USE_PYTHON=distutils instead
 #
 # PYDISTUTILS_AUTOPLIST
-#			- Deprecated, use PYTHON_FEATURES=autoplist instead
+#			- Deprecated, use USE_PYTHON=autoplist instead
 #
 # PYTHON_PY3K_PLIST_HACK
-#			- Deprecated, use PYTHON_FEATURES=py3kplist instead
+#			- Deprecated, use USE_PYTHON=py3kplist instead
 #
 # PYDISTUTILS_NOEGGINFO
-#			- Deprecated, use PYTHON_FEATURES=noegginfo instead
+#			- Deprecated, use USE_PYTHON=noegginfo instead
 #
 # PYTHON_MASTER_SITES
 #			- Deprecated, use MASTER_SITE_PYTHON instead,
@@ -223,9 +223,9 @@
 #			  default: -py${PYTHON_SUFFIX}
 #
 # PYTHON_CONCURRENT_INSTALL
-#			- Deprecated, use PYTHON_FEATURES=concurrent instead
+#			- Deprecated, use USE_PYTHON=concurrent instead
 #
-# USE_PYTHON_PREFIX	- Deprecated, use PYTHON_FEATURES=pythonprefix instead
+# USE_PYTHON_PREFIX	- Deprecated, use USE_PYTHON=pythonprefix instead
 #
 # PYDISTUTILS_INSTALLNOSINGLE
 #			- Deprecated without replacement
@@ -247,44 +247,75 @@ python_ARGS=	#empty
 .endif
 
 # COMPAT KNOBS, remove them, once the tree is cleaned
+.undef _PY_COMPAT_OLD
+# We will reuse USE_PYTHON with a different meaning, so make sure that, while
+# we are in the transition phase from USE_PYTHON -> USES=python, it is mapped
+# and reassigned correctly
+.if defined(USE_PYTHON_BUILD) || defined(USE_PYTHON_RUN)
+# old style
+_PY_COMPAT_OLD= yes
+.elif defined(USE_PYTHON)
+.if ${USE_PYTHON} == "yes"
+# old style
+_PY_COMPAT_OLD= yes
+.elif ${USE_PYTHON:C/[-0-9.+]*//} == ""
+# old style X.Y, X.Y+, X.Y-, -X.Y, X.Y-Z.A
+_PY_COMPAT_OLD=	yes
+.endif # ${USE_PYTHON} == "yes" ...
+.endif # defined(USE_PYTHON_BUILD) || defined(USE_PYTHON_RUN)
+
+.if defined(_PY_COMPAT_OLD)
 .if defined(USE_PYTHON)
 .if ${USE_PYTHON} != "yes"
-python_ARGS=	${USE_PYTHON}
+python_ARGS:=	${USE_PYTHON}
 .endif
-.elif defined(USE_PYTHON_BUILD)
+.else
+.if defined(USE_PYTHON_BUILD)
 .if ${USE_PYTHON_BUILD} != "yes"
 python_ARGS=	${USE_PYTHON_BUILD},build
+.else
+python_ARGS=	build
 .endif
-.elif defined(USE_PYTHON_RUN)
+.endif # defined(USE_PYTHON_BUILD)
+.if defined(USE_PYTHON_RUN)
 .if ${USE_PYTHON_RUN} != "yes"
-python_ARGS=	${USE_PYTHON_RUN},run
+python_ARGS+=	${USE_PYTHON_RUN},run
+.else
+python_ARGS+=	run
 .endif
+.endif # defined(USE_PYTHON_RUN)
 .endif # defined(USE_PYTHON)
-.if !defined(PYTHON_FEATURES)
-PYTHON_FEATURES=
+# Everything passed to python_ARGS, undef USE_PYTHON, since we will reuse
+# it with a different meaning below
+.undef USE_PYTHON
+.endif # defined(_PY_COMPAT_OLD)
+.undef _PY_COMPAT_OLD
+
+.if !defined(USE_PYTHON)
+USE_PYTHON=
 .if defined(USE_PYDISTUTILS)
-PYTHON_FEATURES+=	distutils
+USE_PYTHON+=	distutils
 .endif
 .if defined(PYDISTUTILS_AUTOPLIST)
-PYTHON_FEATURES+=	autoplist
+USE_PYTHON+=	autoplist
 .endif
 .if defined(PYTHON_PY3K_PLIST_HACK)
-PYTHON_FEATURES+=	py3kplist
+USE_PYTHON+=	py3kplist
 .endif
 .if defined(PYTHON_CONCURRENT_INSTALL)
-PYTHON_FEATURES+=	concurrent
+USE_PYTHON+=	concurrent
 .endif
 .if defined(USE_PYTHON_PREFIX)
-PYTHON_FEATURES+=	pythonprefix
+USE_PYTHON+=	pythonprefix
 .endif
 .if defined(PYDISTUTILS_NOEGGINFO)
-PYTHON_FEATURES+=	noegginfo
+USE_PYTHON+=	noegginfo
 .endif
-.endif # !defined(PYTHON_FEATURES)
+.endif # !defined(USE_PYTHON)
 # COMPAT KNOBS END
 
 # Make each individual feature available as _PYTHON_FEATURE_<FEATURENAME>
-.for var in ${PYTHON_FEATURES:S/,/ /g}
+.for var in ${USE_PYTHON:S/,/ /g}
 _PYTHON_FEATURE_${var:tu}=	yes
 .endfor
 
@@ -468,10 +499,10 @@ _PYTHONPKGLIST=	${WRKDIR}/.PLIST.pymodtmp
 # What makes a port 'bound' to a certain python version?
 # - it installs data into PYTHON_SITELIBDIR, PYTHON_INCLUDEDIR, ...
 # - it links against libpython*.so
-# - it uses PYTHON_FEATURES=distutils
+# - it uses USE_PYTHON=distutils
 #
 .if defined(NO_STAGE) && defined(_PYTHON_FEATURE_CONCURRENT)
-BROKEN=		PYTHON_FEATURES=concurrent uses USES=uniquefiles, which is not stage-safe
+BROKEN=		USE_PYTHON=concurrent uses USES=uniquefiles, which is not stage-safe
 .endif
 
 .if defined(_PYTHON_FEATURE_CONCURRENT)

@@ -1,7 +1,4 @@
-@unexec if cmp -s %D/%%EXAMPLESDIR%%/etc/jabber-pyicq.xml %D/etc/jabber-pyicq.xml; then rm -f %D/etc/jabber-pyicq.xml; fi
-%%EXAMPLESDIR%%/db-setup.mysql
-%%EXAMPLESDIR%%/etc/jabber-pyicq.xml
-@exec [ -f %D/etc/jabber-pyicq.xml ] || cp %B/%f %D/etc/jabber-pyicq.xml
+@sample etc/jabber-pyicq.xml.sample
 lib/jabber/pyicq/PyICQt.py
 lib/jabber/pyicq/data/defaultAIMAvatar.png
 lib/jabber/pyicq/data/defaultICQAvatar.png
@@ -100,5 +97,3 @@ lib/jabber/pyicq/src/xmlconfig.py
 @dirrm lib/jabber/pyicq/data
 @dirrm lib/jabber/pyicq
 @dirrmtry lib/jabber
-@dirrm %%EXAMPLESDIR%%/etc
-@dirrm %%EXAMPLESDIR%%

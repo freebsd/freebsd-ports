@@ -12,9 +12,8 @@ COMMENT=	Text progressbar library for python
 
 LICENSE=	BSD3CLAUSE
 
-PYDISTUTILS_AUTOPLIST=	yes
-USE_PYDISTUTILS=yes
-USE_PYTHON=	2
+USE_PYTHON=	autoplist distutils
+USES=		python:2
 
 PROJECTHOST=	python-${PORTNAME}
 

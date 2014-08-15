@@ -1,6 +1,6 @@
---- process.c.orig	2009-03-06 04:25:10.000000000 +0300
-+++ process.c	2009-10-26 16:08:15.000000000 +0300
-@@ -101,10 +101,10 @@
+--- process.c.orig	2009-03-06 01:25:10 UTC
++++ process.c
+@@ -101,10 +101,10 @@ static ZCONST char Far CannotAllocateBuf
     /* do_seekable() strings */
  # ifdef UNIX
     static ZCONST char Far CannotFindZipfileDirMsg[] =

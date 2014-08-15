@@ -2,7 +2,7 @@
 
 PORTNAME=	libftdi
 PORTVERSION=	0.20
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	devel
 MASTER_SITES=	http://www.intra2net.com/en/developer/libftdi/download/
 
@@ -38,6 +38,7 @@ PYTHON_USES=		python
 
 post-patch:
 	@${REINPLACE_CMD} \
+		-e '/includedir/s|/$${PROJECT_NAME}||' \
 		-e '/SET.*LIB_SUFFIX/s/64/""/' \
 		-e 's|lib$${LIB_SUFFIX}/pkgconfig|libdata/pkgconfig|' \
 		${WRKSRC}/CMakeLists.txt

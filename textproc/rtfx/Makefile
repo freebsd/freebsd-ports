@@ -3,8 +3,9 @@
 
 PORTNAME=	rtfx
 PORTVERSION=	1.1
+PORTREVISION=	1
 CATEGORIES=	textproc
-MASTER_SITES=	http://memberwebs.com/stef/software/rtfx/
+MASTER_SITES=	http://thewalter.net/stef/software/rtfx/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	RTF to XML converter
@@ -12,18 +13,10 @@ COMMENT=	RTF to XML converter
 LIB_DEPENDS=	libmba.so:${PORTSDIR}/devel/libmba \
 		libdomc.so:${PORTSDIR}/textproc/domc
 
-HAS_CONFIGURE=	yes
-CONFIGURE_ARGS+=	--prefix=${PREFIX} --datarootdir=${PREFIX}
+GNU_CONFIGURE=	yes
 USES=		gmake
 
-PLIST_FILES=	bin/rtfx
-MAN1=		rtfx.1
+PLIST_FILES=	bin/${PORTNAME} \
+		man/man1/${PORTNAME}.1.gz
 
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == amd64 || ${ARCH} == sparc64
-BROKEN=		Does not compile on sparc64
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

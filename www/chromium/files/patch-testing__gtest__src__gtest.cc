@@ -1,5 +1,5 @@
---- ./testing/gtest/src/gtest.cc.orig	2014-04-30 22:43:26.000000000 +0200
-+++ ./testing/gtest/src/gtest.cc	2014-05-04 14:38:48.000000000 +0200
+--- ./testing/gtest/src/gtest.cc.orig	2014-08-12 21:03:10.000000000 +0200
++++ ./testing/gtest/src/gtest.cc	2014-08-13 09:56:58.000000000 +0200
 @@ -117,6 +117,10 @@
  
  #endif  // GTEST_OS_LINUX

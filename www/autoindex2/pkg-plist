@@ -1,5 +1,10 @@
-%%INSTALLDIR%%/.htpasswd.autoindex-dist
-%%INSTALLDIR%%/config.php
+@owner %%WWWOWN%%
+@group %%WWWGRP%%
+@mode 644
+%%INSTALLDIR%%/.htpasswd.autoindex.sample
+@mode 664
+@sample %%INSTALLDIR%%/config.php.sample
+@mode
 %%INSTALLDIR%%/hidden_files
 %%INSTALLDIR%%/change_log.html
 %%INSTALLDIR%%/index.php
@@ -223,6 +228,8 @@
 %%INSTALLDIR%%/templates/simple_image_gallery/table_footer.tpl
 %%INSTALLDIR%%/templates/simple_image_gallery/table_header.tpl
 %%INSTALLDIR%%/templates/readme.html
+@owner
+@group
 @dirrm %%INSTALLDIR%%/classes
 @dirrm %%INSTALLDIR%%/index_icons/apache
 @dirrm %%INSTALLDIR%%/index_icons/kde

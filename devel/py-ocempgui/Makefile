@@ -19,7 +19,6 @@ RUN_DEPENDS=	${LOCALBASE}/include/${PYTHON_VERSION}/pygame/pygame.h:${PORTSDIR}/
 
 USES=		python:2
 USE_GNOME=	atk
-
-PYTHON_FEATURES=	autoplist distutils
+USE_PYTHON=	autoplist distutils
 
 .include <bsd.port.mk>

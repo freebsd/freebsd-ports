@@ -15,8 +15,7 @@ LICENSE=	MIT
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlalchemy>=0.6.1:${PORTSDIR}/databases/py-sqlalchemy
 
-USE_PYTHON=	2
-USE_PYDISTUTILS=yes
-PYDISTUTILS_AUTOPLIST=	yes
+USE_PYTHON=	autoplist distutils
+USES=		python:2
 
 .include <bsd.port.mk>

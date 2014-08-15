@@ -33,7 +33,6 @@
     SUBDIR += cdpd
     SUBDIR += cdpr
     SUBDIR += centreon-clib
-    SUBDIR += cflowd
     SUBDIR += check_logfiles
     SUBDIR += check_multi
     SUBDIR += check_mysql_health

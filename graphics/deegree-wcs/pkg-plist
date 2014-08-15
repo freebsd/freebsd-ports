@@ -1,3 +1,8 @@
+@owner %%WWWOWN%%
+@group %%WWWGRP%%
+@dirrm %%TOMCATDIR%%/webapps/deegree-wcs
+@group wheel
+@group root
 %%TOMCATDIR%%/webapps/deegree-wcs/META-INF/MANIFEST.MF
 %%TOMCATDIR%%/webapps/deegree-wcs/WEB-INF/classes/log4j.properties
 %%TOMCATDIR%%/webapps/deegree-wcs/WEB-INF/conf/wcs/wcs_configuration.xml
@@ -2170,4 +2175,3 @@
 @dirrm %%TOMCATDIR%%/webapps/deegree-wcs/WEB-INF
 @dirrm %%TOMCATDIR%%/webapps/deegree-wcs/META-INF
 @dirrm %%TOMCATDIR%%/webapps/deegree-wcs
-@dirrm %%TOMCATDIR%%/webapps

@@ -13,7 +13,7 @@ COMMENT=	Python Lex-Yacc
 LICENSE=	BSD3CLAUSE
 
 USES=		python
-PYTHON_FEATURES=autoplist distutils
+USE_PYTHON=	autoplist distutils
 
 PORTDOCS=	ply.html internal.html README
 

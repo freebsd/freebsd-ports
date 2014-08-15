@@ -10,12 +10,12 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Another 'Internet Relay Chat' Client
 
-GNU_CONFIGURE=	yes
+LICENSE=	GPLv2
 
+GNU_CONFIGURE=	yes
 PLIST_SUB+=	VERSION="${PORTVERSION}"
 
-MAN1=		sic.1
-MAN5=		sic-alias.5 sic-server.5
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}-${PORTVERSION}
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -571,7 +571,6 @@
     SUBDIR += lua-gd
     SUBDIR += luminance
     SUBDIR += luminance-qt5
-    SUBDIR += luxrays
     SUBDIR += luxrender
     SUBDIR += mahotas
     SUBDIR += makehuman
@@ -966,6 +965,7 @@
     SUBDIR += seam-carving-gui
     SUBDIR += seejpeg
     SUBDIR += separate
+    SUBDIR += seq2gif
     SUBDIR += shared-color-profiles
     SUBDIR += sharpconstruct
     SUBDIR += shiva-collections

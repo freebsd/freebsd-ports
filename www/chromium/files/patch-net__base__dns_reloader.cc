@@ -1,5 +1,5 @@
---- ./net/base/dns_reloader.cc.orig	2014-04-30 22:43:05.000000000 +0200
-+++ ./net/base/dns_reloader.cc	2014-05-04 14:38:48.000000000 +0200
+--- ./net/base/dns_reloader.cc.orig	2014-08-12 21:02:39.000000000 +0200
++++ ./net/base/dns_reloader.cc	2014-08-13 09:56:57.000000000 +0200
 @@ -7,6 +7,9 @@
  #if defined(OS_POSIX) && !defined(OS_MACOSX) && !defined(OS_OPENBSD) && \
      !defined(OS_ANDROID)

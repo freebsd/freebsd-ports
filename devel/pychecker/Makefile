@@ -12,7 +12,7 @@ COMMENT=	Python source code checking tool to help hunting common bugs
 LICENSE=	BSD3CLAUSE
 
 USES=		python
-PYTHON_FEATURES=autoplist distutils
+USE_PYTHON=	autoplist distutils
 
 DOCS=		ChangeLog COPYRIGHT KNOWN_BUGS MAINTAINERS README TODO VERSION
 

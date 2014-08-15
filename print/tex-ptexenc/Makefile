@@ -2,7 +2,7 @@
 
 PORTNAME=	ptexenc
 PORTVERSION=	1.3.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	print
 MASTER_SITES=	ftp://tug.org/historic/systems/texlive/2012/
 PKGNAMEPREFIX=	tex-
@@ -12,7 +12,7 @@ DIST_SUBDIR=	TeX
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Library for Japanese pTeX and its tools
 
-USES=		tar:xz libtool:oldver
+USES=		tar:xz libtool
 USE_TEX=	texlive kpathsea
 USE_LDCONFIG=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME}/texk/ptexenc

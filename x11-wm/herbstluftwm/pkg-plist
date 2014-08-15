@@ -1,8 +1,8 @@
 bin/herbstclient
 bin/herbstluftwm
-etc/xdg/herbstluftwm/autostart
-etc/xdg/herbstluftwm/panel.sh
-etc/xdg/herbstluftwm/restartpanels.sh
+%%DEFAULTCONF%%etc/xdg/herbstluftwm/autostart
+%%DEFAULTCONF%%etc/xdg/herbstluftwm/panel.sh
+%%DEFAULTCONF%%etc/xdg/herbstluftwm/restartpanels.sh
 %%BASH%%etc/bash_completion.d/herbstclient-completion
 %%BASH%%@dirrmtry etc/bash_completion.d
 man/man1/herbstclient.1.gz
@@ -36,5 +36,5 @@ share/xsessions/herbstluftwm.desktop
 %%ZSH%%@dirrmtry share/zsh/functions/Completion
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm etc/xdg/herbstluftwm
-@dirrmtry etc/xdg
+%%DEFAULTCONF%%@dirrm etc/xdg/herbstluftwm
+%%DEFAULTCONF%%@dirrmtry etc/xdg

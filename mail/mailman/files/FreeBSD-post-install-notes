@@ -21,6 +21,12 @@ VERY IMPORTANT NOTE
 The Mailman port has a number of build time options.  Getting the values of
 some of these right is CRUCIAL if you want your Mailman installation to work!
 
+This is especially relevant to users of the binary package; the official
+package will build with default options, and will not support alternative
+mail server software (mail transfer agents, MTA) such as Exim, Postfix,
+or Qmail.  For that to happen, the package needs to be rebuilt with changed
+options.  The ports-mgmt/poudriere port (or package) can help with doing that.
+
 
 1) General post-installation instructions
 

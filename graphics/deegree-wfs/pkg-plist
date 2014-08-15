@@ -1,3 +1,8 @@
+@owner %%WWWOWN%%
+@group %%WWWGRP%%
+@dirrm %%TOMCATDIR%%/webapps/deegree-wfs
+@group wheel
+@group root
 %%TOMCATDIR%%/webapps/deegree-wfs/META-INF/MANIFEST.MF
 %%TOMCATDIR%%/webapps/deegree-wfs/WEB-INF/classes/log4j.properties
 %%TOMCATDIR%%/webapps/deegree-wfs/WEB-INF/classes/wfsrequestmapping.properties
@@ -255,4 +260,3 @@
 @dirrm %%TOMCATDIR%%/webapps/deegree-wfs/WEB-INF
 @dirrm %%TOMCATDIR%%/webapps/deegree-wfs/META-INF
 @dirrm %%TOMCATDIR%%/webapps/deegree-wfs
-@dirrm %%TOMCATDIR%%/webapps

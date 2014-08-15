@@ -1,5 +1,5 @@
---- ./content/public/test/browser_test_base.cc.orig	2014-04-30 22:41:51.000000000 +0200
-+++ ./content/public/test/browser_test_base.cc	2014-05-04 14:38:47.000000000 +0200
+--- ./content/public/test/browser_test_base.cc.orig	2014-08-12 21:01:19.000000000 +0200
++++ ./content/public/test/browser_test_base.cc	2014-08-13 09:56:57.000000000 +0200
 @@ -4,6 +4,10 @@
  
  #include "content/public/test/browser_test_base.h"

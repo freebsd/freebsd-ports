@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=		krb5
-PORTVERSION=		1.12.1
-PORTREVISION=		4
+PORTVERSION=		1.12.2
 CATEGORIES=		security
 MASTER_SITES=		http://web.mit.edu/kerberos/dist/${PORTNAME}/${PORTVERSION:C/^[0-9]*\.[0-9]*/&X/:C/X\.[0-9]*$//:C/X//}/
 DISTNAME=		${PORTNAME}-${PORTVERSION}-signed
@@ -26,13 +25,13 @@ KERBEROSV_URL=		http://web.mit.edu/kerberos/
 USE_PERL5=		build
 USE_LDCONFIG=		yes
 USE_CSTD=		gnu99
-USE_AUTOTOOLS=		libtool
-USES=		gettext gmake perl5
+GNU_CONFIGURE=		yes
+USES=			gettext gmake perl5 libtool:build
 CONFIGURE_ARGS?=	--enable-shared --without-system-verto
 CONFIGURE_ENV=		INSTALL="${INSTALL}" YACC="${YACC}"
 MAKE_ARGS=		INSTALL="${INSTALL}"
 
-OPTIONS_DEFINE=		KRB5_PDF KRB5_HTML DNS_FOR_REALM LDAP
+OPTIONS_DEFINE=		KRB5_PDF KRB5_HTML DNS_FOR_REALM LDAP READLINE
 OPTIONS_DEFAULT=	KRB5_PDF KRB5_HTML
 KRB5_PDF_DESC=		Install krb5 PDF documentation
 KRB5_HTML_DESC=		Install krb5 HTML documentation
@@ -66,6 +65,11 @@ CONFIGURE_ARGS+=	--with-ldap
 PLIST_SUB+=		LDAP=""
 .else
 PLIST_SUB+=		LDAP="@comment "
+.endif
+
+.if ${PORT_OPTIONS:MREADLINE}
+USES+=			readline:port
+CONFIGURE_ARGS+=	--with-readline
 .endif
 
 .include "${PORTSDIR}/Mk/bsd.openssl.mk"

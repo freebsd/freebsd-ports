@@ -670,9 +670,9 @@ llvm%%LLVM_SUFFIX%%/include/llvm/Transforms/Utils/VectorUtils.h
 llvm%%LLVM_SUFFIX%%/include/llvm/Transforms/Vectorize.h
 llvm%%LLVM_SUFFIX%%/lib/BugpointPasses.so
 llvm%%LLVM_SUFFIX%%/lib/LLVMHello.so
-llvm%%LLVM_SUFFIX%%/lib/libLLVM-3.5.0svn.so
-llvm%%LLVM_SUFFIX%%/lib/libLLVM-3.5.0svn.so.0
-llvm%%LLVM_SUFFIX%%/lib/libLLVM-3.5svn.so
+llvm%%LLVM_SUFFIX%%/lib/libLLVM-3.5.0.so
+llvm%%LLVM_SUFFIX%%/lib/libLLVM-3.5.so
+llvm%%LLVM_SUFFIX%%/lib/libLLVM-3.5.so.0
 llvm%%LLVM_SUFFIX%%/lib/libLLVMAArch64AsmParser.a
 llvm%%LLVM_SUFFIX%%/lib/libLLVMAArch64AsmPrinter.a
 llvm%%LLVM_SUFFIX%%/lib/libLLVMAArch64CodeGen.a

@@ -1,6 +1,6 @@
 include/dcdflib.h
 lib/libdcdflib.a
-lib/libdcdflib_p.a
+%%PROFILE%%lib/libdcdflib_p.a
 lib/libdcdflib.so
 lib/libdcdflib.so.1
 %%PORTDOCS%%%%DOCSDIR%%/README

@@ -1,3 +1,8 @@
+@owner %%WWWOWN%%
+@group %%WWWGRP%%
+@dirrm %%TOMCATDIR%%/webapps/deegree-wpvs
+@group wheel
+@group root
 %%TOMCATDIR%%/webapps/deegree-wpvs/META-INF/MANIFEST.MF
 %%TOMCATDIR%%/webapps/deegree-wpvs/WEB-INF/classes/log4j.properties
 %%TOMCATDIR%%/webapps/deegree-wpvs/WEB-INF/classes/wpvsclient.properties
@@ -2216,4 +2221,3 @@
 @dirrm %%TOMCATDIR%%/webapps/deegree-wpvs/WEB-INF
 @dirrm %%TOMCATDIR%%/webapps/deegree-wpvs/META-INF
 @dirrm %%TOMCATDIR%%/webapps/deegree-wpvs
-@dirrm %%TOMCATDIR%%/webapps

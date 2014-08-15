@@ -34,7 +34,6 @@ SUB_FILES=	pkg-message
 
 do-install:	# empty
 
-NO_STAGE=	yes
 post-install:
 	@${CAT} ${PKGMESSAGE}
 

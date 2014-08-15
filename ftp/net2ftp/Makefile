@@ -3,12 +3,15 @@
 
 PORTNAME=	net2ftp
 PORTVERSION=	0.98
+PORTREVISION=	1
 CATEGORIES=	ftp
 MASTER_SITES=	http://www.net2ftp.com/download/
 DISTNAME=	${PORTNAME}_v${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PHP scripts to work with ftp
+
+LICENSE=	GPLv2
 
 USES=		zip
 NO_BUILD=	YES
@@ -27,7 +30,6 @@ SUB_FILES+=	pkg-message
 # When creating a package, empty directories will not be generated
 # from the pkg tarball.  Therefore make sure no directories are empty.
 
-NO_STAGE=	yes
 post-patch:
 	 @cd ${WRKSRC}/files_to_upload ; \
 	 for emptydir in $$( ${FIND} . -type d -empty -print ) ; do \
@@ -48,25 +50,16 @@ install-app:
 	 for src in $$( ${FIND} . ! -name "settings*.inc.php" ) ; do \
 		  dst=${WWWDIR}$${src#.} ; \
 		  if ${TEST} -d $$src ; then \
-			   ${MKDIR} $$dst ; \
+			   ${MKDIR} ${STAGEDIR}$$dst ; \
 		  else \
-			   ${INSTALL_DATA} $$src $$dst ; \
+			   ${INSTALL_DATA} $$src ${STAGEDIR}$$dst ; \
 		  fi \
 	 done
 
 install-conf: install-app
 	 @cd ${WRKSRC}/files_to_upload ; \
-	 ${INSTALL_DATA} settings.inc.php ${WWWDIR}/settings.inc.php.sample ; \
-	 ${INSTALL_DATA} settings_authorizations.inc.php ${WWWDIR}/settings_authorizations.inc.php.sample ; \
-	 ${INSTALL_DATA} settings_screens.inc.php ${WWWDIR}/settings_screens.inc.php.sample
-	 @cd ${WWWDIR} ; \
-	 for CFGFILE in ${CFGFILES} ; do \
-		  if ${TEST} ! -f $${CFGFILE} ; then \
-			   ${CP} -p $${CFGFILE}.sample $${CFGFILE} ; \
-		  fi \
-	 done
-
-post-install:
-	 @${CAT} ${PKGMESSAGE}
+	 ${INSTALL_DATA} settings.inc.php ${STAGEDIR}${WWWDIR}/settings.inc.php.sample ; \
+	 ${INSTALL_DATA} settings_authorizations.inc.php ${STAGEDIR}${WWWDIR}/settings_authorizations.inc.php.sample ; \
+	 ${INSTALL_DATA} settings_screens.inc.php ${STAGEDIR}${WWWDIR}/settings_screens.inc.php.sample
 
 .include <bsd.port.mk>

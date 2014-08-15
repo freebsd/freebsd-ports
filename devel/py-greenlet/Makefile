@@ -13,10 +13,8 @@ COMMENT=	Light-weight microthreads for Python
 LICENSE=	MIT
 
 ONLY_FOR_ARCHS=	amd64 i386
-PYDISTUTILS_AUTOPLIST=	yes
-USE_PYDISTUTILS=yes
-USE_PYTHON=	yes
-USES=		zip
+USE_PYTHON=	autoplist distutils
+USES=		python zip
 
 post-build:
 	@${STRIP_CMD} ${WRKSRC}/greenlet.so

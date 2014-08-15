@@ -1,37 +1,57 @@
 # $FreeBSD$
 
 PORTNAME=	kyua
-PORTVERSION=	20140215
-PORTEPOCH=	1
+PORTVERSION=	0.10
+PORTEPOCH=	2
 CATEGORIES=	devel
-MASTER_SITES=	# none
-DISTFILES=	# none
-EXTRACT_ONLY=	# none
+MASTER_SITES=	https://github.com/jmmv/kyua/releases/download/${PORTNAME}-${PORTVERSION}/ \
+		LOCAL/jmmv
 
 MAINTAINER=	jmmv@FreeBSD.org
-COMMENT=	Kyua (automated testing framework) - Meta-port
+COMMENT=	Testing framework for infrastructure software
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 
-RUN_DEPENDS+=	${LOCALBASE}/bin/atf2kyua:${PORTSDIR}/devel/kyua-atf-compat
-RUN_DEPENDS+=	${LOCALBASE}/bin/kyua:${PORTSDIR}/devel/kyua-cli
-RUN_DEPENDS+=	${LOCALBASE}/libexec/kyua-atf-tester:${PORTSDIR}/devel/kyua-testers
+LIB_DEPENDS=	liblutok.so:${PORTSDIR}/devel/lutok
+LIB_DEPENDS+=	libsqlite3.so:${PORTSDIR}/databases/sqlite3
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-NO_BUILD=	yes
-NO_MTREE=	yes
+CONFLICTS=	kyua-atf-compat-[0-9]* kyua-cli-[0-9]* kyua-testers-[0-9]*
 
-do-install:	# empty
+GNU_CONFIGURE=	yes
+USES=		pkgconfig
 
-pre-everything::
-	@${ECHO_MSG} "This is a meta-port, meaning that it just depends on its subparts of the port."
-	@${ECHO_MSG} "It won't build and install all the parts until you have typed make install"
+TESTS_USER=	tests
+USERS=		${TESTS_USER}
+SUB_FILES=	kyua.conf
+SUB_LIST=	TESTS_USER=${TESTS_USER}
 
-.include <bsd.port.pre.mk>
+OPTIONS_DEFINE=	DOCS EXAMPLES TEST
+OPTIONS_DEFAULT=TEST
 
-.if make(package)
-.if !defined(DEPENDS_TARGET:Mpackage) || empty(DEPENDS_TARGET:Mpackage)
-DEPENDS_TARGET="package"
+OPTIONS_SUB=		yes
+TEST_CONFIGURE_WITH=	atf
+TEST_BUILD_DEPENDS=	atf>=0.20:${PORTSDIR}/devel/atf
+TEST_RUN_DEPENDS=	atf>=0.20:${PORTSDIR}/devel/atf
+
+.include <bsd.port.options.mk>
+
+CONFIGURE_ARGS+=	--without-doxygen
+CONFIGURE_ARGS+=	--docdir=${DOCSDIR}
+MAKE_FLAGS+=	examplesdir=${EXAMPLESDIR}
+MAKE_FLAGS+=	pkgdatadir=${DATADIR}
+
+.if ! ${PORT_OPTIONS:MDOCS}
+MAKE_FLAGS+=	doc_DATA=
 .endif
+.if ! ${PORT_OPTIONS:MEXAMPLES}
+MAKE_FLAGS+=	dist_examples_DATA=
 .endif
 
-.include <bsd.port.post.mk>
+post-install:
+	${MKDIR} ${STAGEDIR}${PREFIX}/etc/kyua/
+	${INSTALL_DATA} ${WRKDIR}/kyua.conf ${STAGEDIR}${PREFIX}/etc/kyua/
+	${INSTALL_DATA} ${WRKSRC}/examples/Kyuafile.top \
+		${STAGEDIR}${PREFIX}/tests/Kyuafile
+
+.include <bsd.port.mk>

@@ -16,8 +16,10 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	libcconv.so:${PORTSDIR}/chinese/cconv
 
 CFLAGS+=	-I${LOCALBASE}/include
-PYDISTUTILS_AUTOPLIST=	yes
-USE_PYDISTUTILS=yes
-USE_PYTHON=	yes
+USE_PYTHON=	autoplist distutils
+USES=		python
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/cconv.so
 
 .include <bsd.port.mk>

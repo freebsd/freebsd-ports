@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	openxpki
-PORTVERSION=	0.19.0.1
+PORTVERSION=	0.20.0.1
 CATEGORIES=	security perl5
 PKGNAMEPREFIX=	p5-
 DIST_SUBDIR=	openxpki
@@ -13,6 +13,8 @@ COMMENT=	Perl based trustcenter software for PKI: server and deployment
 LICENSE=	APACHE20
 
 BUILD_DEPENDS=	\
+	p5-openxpki-i18n>=0.20.0.1:${PORTSDIR}/security/p5-openxpki-i18n \
+	openca-tools-forked>=1.4.0:${PORTSDIR}/security/openca-tools-forked \
 	p5-Workflow>=0.31:${PORTSDIR}/devel/p5-Workflow \
 	p5-CGI-Session>=0:${PORTSDIR}/www/p5-CGI-Session \
 	p5-TimeDate>=0:${PORTSDIR}/devel/p5-TimeDate \
@@ -46,13 +48,14 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 CONFLICTS=	\
 	p5-openxpki-client-[0-9]* \
 	p5-openxpki-client-scep-[0-9]* \
-	p5-openxpki-client-deployment-[0-9]*
+	p5-openxpki-client-deployment-[0-9]* \
+	p5-openxpki-client-html-mason-[0-9]*
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	openxpki
 GH_PROJECT=	openxpki
 GH_TAGNAME=	${GH_COMMIT}
-GH_COMMIT=	9d772a8
+GH_COMMIT=	d4dd0ab
 
 USE_OPENSSL=	yes
 USE_PERL5=	configure

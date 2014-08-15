@@ -4,6 +4,7 @@
 %%BROCTL%%@exec mkdir -p %D/spool/tmp
 %%BROCTL%%@exec chown %%BROUSER%%:%%BROGROUP%% %D/spool
 %%BROCTL%%@exec chown %%BROUSER%%:%%BROGROUP%% %D/spool/tmp
+%%BROCTL%%@exec chown -R %%BROUSER%%:%%BROGROUP%% %D/spool/installed-scripts-do-not-touch
 bin/bro
 bin/bro-cut
 %%BROCTL%%bin/broctl
@@ -454,10 +455,7 @@ bin/bro-cut
 %%BROCTL%%@unexec rm -f %D/spool/installed-scripts-do-not-touch/site/local.bro
 %%BROCTL%%@dirrmtry spool/tmp
 %%BROCTL%%@dirrmtry spool/installed-scripts-do-not-touch/site
-%%BROCTL%%@dirrmtry spool/installed-scripts-do-not-touch/site
 %%BROCTL%%@dirrmtry spool/installed-scripts-do-not-touch/auto
-%%BROCTL%%@dirrmtry spool/installed-scripts-do-not-touch/auto
-%%BROCTL%%@dirrmtry spool/installed-scripts-do-not-touch
 %%BROCTL%%@dirrmtry spool/installed-scripts-do-not-touch
 %%BROCTL%%@dirrmtry spool
 %%BROCTL%%@dirrm %%DATADIR%%ctl/scripts/postprocessors
@@ -560,4 +558,4 @@ bin/bro-cut
 %%CLEANUP_PREFIX%%@dirrmtry etc
 %%CLEANUP_PREFIX%%@dirrmtry bin
 %%CLEANUP_PREFIX%%@dirrmtry %D
-%%BROCTL%%@exec su %%BROUSER%% -c '%D/bin/broctl install'
+%%BROCTL%%@exec su -fm %%BROUSER%% -c '%D/bin/broctl install'

@@ -1,0 +1,15 @@
+** Upgrade note from a previous version to mailagent-3.1.78_1 or later **
+
+In order to make building of this port non-interactive, the build-time
+manual configuration of FQDN and the organization name had been removed.
+
+Now you need to specify your domain's FQDN properly in ~/.mailagent file.
+
+Please run "mailagent -I" to make sure your ~/.mailagent is up-to-date,
+and set "domain" and "hidenet" configuration options appropriately.
+Please consult mailagent(1) for more details.
+
+This package is configured to read %%ORGFILE%%
+file to retrieve the name of your organization.  An empty file had been
+installed to suppress warning messages.  Please modify as necessary.
+

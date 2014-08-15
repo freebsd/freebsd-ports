@@ -14,7 +14,7 @@ LICENSE=	LGPL21
 
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-USES=		libtool
+USES+=		libtool
 
 SLAVEDIRS=	archivers/py-librtfcomp
 

@@ -8,7 +8,7 @@ PORTREVISION=		3
 CATEGORIES=		devel java
 MASTER_SITES=		SF/java-readline/java-readline/${PORTVERSION}
 
-MAINTAINER=	mkamm@gmx.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	JNI wrapper around GNU Readline / libedit / libgetline
 
 BUILD_DEPENDS=	${LOCALBASE}/include/editline/readline.h:${PORTSDIR}/devel/libedit

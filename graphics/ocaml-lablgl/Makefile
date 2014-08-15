@@ -14,30 +14,29 @@ COMMENT=	OpenGL interface for Objective Caml
 
 LICENSE=	BSD3CLAUSE
 
-WRKSRC=		${WRKDIR}/lablGL
-USES=		gmake
+CONFLICTS=	ocaml-notk-[0-9]* ocaml-nox11-[0-9]*
+
+USES=		gmake tk:84,85
 USE_XORG=	x11 xext xmu
 USE_GL=		glut
 USE_OCAML=	yes
 USE_OCAML_WASH=	yes
 ALL_TARGET=	all opt
 MAKE_JOBS_UNSAFE=	yes
-
-OPTIONS_DEFINE=	THREADS
-THREADS_DESC=	Threaded Tcl/Tk (must match lang/ocaml)
-
-OPTIONS_DEFAULT=	THREADS
-
-PATTERN=	[[:space:]]*(do|then)?[[:space:]]*)cp([[:space:]]
+WRKSRC=		${WRKDIR}/lablGL
 
 DOCSDIR=	${PREFIX}/share/doc/ocaml/lablgl
 EXAMPLESDIR=	${PREFIX}/share/examples/ocaml/lablgl
 
-CONFLICTS=	ocaml-notk-[0-9]* ocaml-nox11-[0-9]*
+PATTERN=	[[:space:]]*(do|then)?[[:space:]]*)cp([[:space:]]
+
+OPTIONS_DEFINE=	THREADS DOCS
+OPTIONS_DEFAULT=	THREADS
+
+THREADS_DESC=	Threaded Tcl/Tk (must match lang/ocaml)
 
 .include <bsd.port.options.mk>
 
-USES+=		tk:84,85
 .if ${PORT_OPTIONS:MTHREADS}
 THR_CPP=	${PTHREAD_CFLAGS}
 THR_LD=		${PTHREAD_LIBS}
@@ -74,13 +73,11 @@ pre-install:
 post-install:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/lablglut
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/togl
-	@(cd ${WRKSRC}/LablGlut/examples && ${COPYTREE_SHARE} \* \
+	@(cd ${WRKSRC}/LablGlut/examples && ${COPYTREE_SHARE} . \
 		${STAGEDIR}${EXAMPLESDIR}/lablglut '! -name Makefile')
-	@(cd ${WRKSRC}/Togl/examples && ${COPYTREE_SHARE} \* \
+	@(cd ${WRKSRC}/Togl/examples && ${COPYTREE_SHARE} . \
 		${STAGEDIR}${EXAMPLESDIR}/togl '! -name Makefile')
-.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
-.endif
+	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

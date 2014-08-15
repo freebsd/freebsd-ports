@@ -1,6 +1,6 @@
---- ./third_party/WebKit/Source/core/core.gyp.orig	2014-04-30 22:47:22.000000000 +0200
-+++ ./third_party/WebKit/Source/core/core.gyp	2014-05-04 14:38:48.000000000 +0200
-@@ -641,7 +641,7 @@
+--- ./third_party/WebKit/Source/core/core.gyp.orig	2014-08-12 21:07:11.000000000 +0200
++++ ./third_party/WebKit/Source/core/core.gyp	2014-08-13 09:56:58.000000000 +0200
+@@ -636,7 +636,7 @@
            # Due to a bug in gcc 4.6 in android NDK, we get warnings about uninitialized variable.
            'cflags': ['-Wno-uninitialized'],
          }],
@@ -9,7 +9,7 @@
            'sources/': [
              ['exclude', 'Linux\\.cpp$'],
            ],
-@@ -685,7 +685,7 @@
+@@ -675,7 +675,7 @@
          ['OS=="win" and buildtype=="Official"', {
            'msvs_shard': 19,
          }],

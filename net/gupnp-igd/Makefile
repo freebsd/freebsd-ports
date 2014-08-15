@@ -30,7 +30,7 @@ USE_LDCONFIG=	yes
 USES=		gmake libtool pathfix pkgconfig tar:xz
 
 PYTHON_CONFIGURE_ENABLE=python
-PYTHON_USE=		PYTHON=yes
+PYTHON_USES=		python
 
 post-patch:
 	@${REINPLACE_CMD} -e '/ --define-variable=/d' ${WRKSRC}/configure

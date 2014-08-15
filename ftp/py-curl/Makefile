@@ -18,9 +18,8 @@ LICENSE_COMB=	dual
 
 LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl
 
-PYDISTUTILS_AUTOPLIST=	yes
-USE_PYDISTUTILS=yes
-USE_PYTHON=	yes
+USE_PYTHON=	autoplist distutils
+USES=		python
 
 DATADIR=	${PREFIX}/share/py-curl
 DOCSDIR=	${PREFIX}/share/doc/py-curl

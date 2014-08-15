@@ -1,9 +1,9 @@
 # $FreeBSD$
 
 PORTNAME=	clang
-DISTVERSION=	3.5rc1
+DISTVERSION=	3.5.0rc2
 CATEGORIES=	lang devel
-MASTER_SITES=   http://llvm.org/pre-releases/3.5/rc1/
+MASTER_SITES=   http://llvm.org/pre-releases/3.5/rc2/
 PKGNAMESUFFIX=	${LLVM_SUFFIX}
 DISTNAME=	${CLANG_NAME}
 DISTFILES=	${CLANG_SOURCE} \
@@ -12,13 +12,13 @@ DISTFILES=	${CLANG_SOURCE} \
 MAINTAINER=	brooks@FreeBSD.org
 COMMENT=	C, Objective-C, and C++ compiler
 
-CLANG_NAME=	cfe.src-${DISTVERSION}.src
+CLANG_NAME=	cfe-${DISTVERSION}.src
 CLANG_SOURCE=	${CLANG_NAME}${EXTRACT_SUFX}
 CLANG_EXTRACT=	cfe.src
-LLVM_NAME=	llvm.src-${DISTVERSION}.src
+LLVM_NAME=	llvm-${DISTVERSION}.src
 LLVM_SOURCE=	${LLVM_NAME}${EXTRACT_SUFX}
 LLVM_EXTRACT=	llvm.src
-LIBNAME=	libLLVM-3.5svn.so
+LIBNAME=	libLLVM-3.5.so
 
 WRKSRC=		${WRKDIR}/${LLVM_EXTRACT}
 BUILD_WRKSRC=	${WRKSRC}/tools/clang
@@ -27,14 +27,14 @@ INSTALL_WRKSRC=	${WRKSRC}/tools/clang
 BUILD_DEPENDS+=	llc${LLVM_SUFFIX}:${PORTSDIR}/devel/llvm${LLVM_SUFFIX}
 RUN_DEPENDS+=	llc${LLVM_SUFFIX}:${PORTSDIR}/devel/llvm${LLVM_SUFFIX}
 
-LLVM_SUFFIX=	${PORTVERSION:S/.//g:C/r.*//}
+LLVM_SUFFIX=	${PORTVERSION:C/([0-9]\.[0-9]).*/\1/:S/.//g:C/r.//}
 LLVM_PREFIX=	${PREFIX}/llvm${LLVM_SUFFIX}
 DATADIR=	${PREFIX}/share/${PORTNAME}${LLVM_SUFFIX}
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}${LLVM_SUFFIX}
 
 GNU_CONFIGURE=	yes
 GNU_CONFIGURE_PREFIX=	${LLVM_PREFIX}
-USES=		compiler:c++11-lib gmake perl5
+USES=		compiler:c++11-lib gmake perl5 tar:xz
 USE_LDCONFIG=	yes
 USE_PYTHON_BUILD=	yes
 

@@ -565,7 +565,6 @@
     SUBDIR += glade2
     SUBDIR += glade3
     SUBDIR += glademm
-    SUBDIR += glib-java
     SUBDIR += glib12
     SUBDIR += glib20
     SUBDIR += glib20-reference
@@ -947,9 +946,6 @@
     SUBDIR += kimwitu
     SUBDIR += kyra
     SUBDIR += kyua
-    SUBDIR += kyua-atf-compat
-    SUBDIR += kyua-cli
-    SUBDIR += kyua-testers
     SUBDIR += lasi
     SUBDIR += lcov
     SUBDIR += leaktracer

@@ -2,22 +2,72 @@
 Cacti is now installed. If you intall it for the first time,
 you may have to follow this steps to make it work correctly:
 
-1. Create the MySQL database:
-# mysqladmin --user=root create cacti
-2. Create a mysql user/password for cacti:
-   (change user and/or password if required)
-# echo "GRANT ALL ON cacti.* TO cactiuser@localhost IDENTIFIED BY 'cactiuser'; FLUSH PRIVILEGES;" | mysql
-3. Import the default cacti database:
-# mysql cacti < %%PREFIX%%/%%CACTIDIR%%/cacti.sql
-4. Edit %%PREFIX%%/%%CACTIDIR%%/include/config.php.
-5. Add the line to cron jobs with the command:
-# crontab -u %%CACTIUSER%% -e
-*/5 * * * * %%LOCALBASE%%/bin/php %%PREFIX%%/%%CACTIDIR%%/poller.php > /dev/null 2>&1
-6. Add alias in apache config for the cacti dir:
-Alias /cacti "%%PREFIX%%/%%CACTIDIR%%/"
-7. Be sure apache gives an access to the directory ('Allow from' keywords).
-8. Open a cacti login page in your web browser and login with admin/admin.
+1. Create the MySQL database, a cacti user, and initialize:
+   a) CREATE DATABASE cacti;
+   b) Create a mysql user/password for cacti:
+      CREATE USER 'cacti'@'localhost' IDENTIFIED BY 'password';
+      FLUSH PRIVILEGES;
+   c) Add GRANTS:
+      GRANT ALL ON cacti.* TO 'cacti'@'localhost';
+      FLUSH PRIVILEGES;
+   d) Import the default cacti database:
+      mysql --database=cacti -ucacti -p < %%PREFIX%%/%%CACTIDIR%%/cacti.sql
 
-If you update cacti, open a login page, an updating process
-will start automatically.
+ NOTE:
+   * Cacti does not LOCK TABLES.
+
+2. Edit %%PREFIX%%/%%CACTIDIR%%/include/config.php from the template
+   config.php.orig.
+
+   PHP requires the time zone to be explicitly set rather that rely on
+   the system time zone, otherwise poller complains. I added the
+   following line to my config.php:
+
+   date_default_timezone_set('America/Los_Angeles');
+
+3. Add the following line to cron for %%CACTIUSER%%:
+*/5 * * * * %%LOCALBASE%%/bin/php %%PREFIX%%/%%CACTIDIR%%/poller.php > /dev/null 2>&1
+
+4. Example Apache 2.4 configuration:
+
+   LoadModule php5_module  libexec/apache22/libphp5.so
+
+   <FilesMatch "\.php$">
+       SetHandler application/x-httpd-php
+   </FilesMatch>
+   <FilesMatch "\.phps$">
+       SetHandler application/x-httpd-php-source
+   </FilesMatch>
+
+   DirectoryIndex index.php
+
+   DocumentRoot "/usr/local/share/cacti"
+ 
+   Alias /cacti "/usr/local/share/cacti/"
+   Alias /Cacti "/usr/local/share/cacti/"
+
+   <Directory "/usr/local/share/cacti">
+      Require all granted
+      AllowOverride None
+      Order Allow,deny
+      Allow from all
+   </Directory>
+
+5. Open a Cacti login page in your web browser and login with
+   admin/admin.
+
+If you update cacti, open a login page and an updating process will
+start automatically.
+
+NOTEs as of 10Aug2014:
+
+1) Cacti now better supports hier(7)
+
+   a) Cacti log files are now found under /var/log/cacti where you can
+      manage them using newsyslog.
+   b) Cacti RRD files are now found under /var/db/cacti/rra.
+
+2) The PERL paths in the Cacti PERL scripts have been updated to
+   /usr/local/bin.
+
 =======================================================================

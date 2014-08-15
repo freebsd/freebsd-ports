@@ -14,8 +14,7 @@ LICENSE=	GPLv2
 
 USES=		python:3
 USE_TEX=	latex:build
-
-PYTHON_FEATURES=	autoplist distutils
+USE_PYTHON=	autoplist distutils
 
 OPTIONS_DEFINE=		T1CODE KPATHSEA
 OPTIONS_DEFAULT=	T1CODE KPATHSEA

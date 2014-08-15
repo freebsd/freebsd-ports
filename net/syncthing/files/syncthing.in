@@ -1,0 +1,55 @@
+#!/bin/sh
+
+# $FreeBSD$
+#
+# PROVIDE: syncthing
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# syncthing_enable (bool):	Set to NO by default.
+#				Set it to YES to enable syncthing.
+# syncthing_user (user):        Set user to run syncthing.
+#                               Default is "syncthing".
+# syncthing_group (group):      Set group to run syncthing.
+#                               Default is "syncthing".
+# syncthing_dir (dir):          Set dir to run syncthing in.
+#                               Default is "/var/tmp/syncthing".
+
+. /etc/rc.subr
+
+name=syncthing
+rcvar=syncthing_enable
+
+load_rc_config $name
+
+: ${syncthing_enable:="NO"}
+: ${syncthing_user:="syncthing"}
+: ${syncthing_group:="syncthing"}
+: ${syncthing_dir:="/var/tmp/syncthing"}
+
+export STNORESTART=true
+export HOME=${syncthing_dir} 
+
+pidfile=/var/run/syncthing.pid
+procname="%%PREFIX%%/bin/syncthing"
+command="/usr/sbin/daemon"
+command_args="-f -p ${pidfile} ${procname} -home=${syncthing_dir} -no-browser ${syncthing_flags}"
+
+start_precmd=syncthing_startprecmd
+
+syncthing_startprecmd()
+{
+        if [ ! -e ${pidfile} ]; then
+                install -o ${syncthing_user} -g ${syncthing_group} /dev/null ${pidfile};
+        fi
+
+        if [ ! -d ${syncthing_dir} ]; then
+                install -d -o ${syncthing_user} -g ${syncthing_group} ${syncthing_dir}
+        fi
+
+}
+
+run_rc_command "$1"

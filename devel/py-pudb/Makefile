@@ -15,8 +15,7 @@ LICENSE=	MIT
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pygments>=1.0:${PORTSDIR}/textproc/py-pygments \
 		${PYTHON_PKGNAMEPREFIX}urwid>=1.1.1:${PORTSDIR}/devel/py-urwid
 
-PYDISTUTILS_AUTOPLIST=	yes
-USE_PYDISTUTILS=yes
-USE_PYTHON=	yes
+USE_PYTHON=	autoplist distutils
+USES=		python
 
 .include <bsd.port.mk>

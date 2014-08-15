@@ -11,21 +11,23 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library of C Routines for Cumulative Distribution Functions
 
 WRKSRC=		${WRKDIR}/dcdflib.c/src
-
 USE_LDCONFIG=	yes
-
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME:S/.c//}
+OPTIONS_DEFINE= DOCS
 
-NO_STAGE=	yes
+.if defined(NO_PROFILE)
+PLIST_SUB+=	PROFILE="@comment "
+.else
+PLIST_SUB+=	PROFILE=""
+.endif
+
 post-extract:
 	@${CP} ${FILESDIR}/Makefile.lib ${WRKSRC}/Makefile
 
 post-install:
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${PREFIX}/share/doc/dcdflib
-	@${INSTALL_DATA} ${WRKSRC}/../doc/dcdflib.chs ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/../doc/dcdflib.fdoc ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/../README ${DOCSDIR}
-.endif
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/../doc/dcdflib.chs ${STAGEDIR}${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/../doc/dcdflib.fdoc ${STAGEDIR}${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/../README ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

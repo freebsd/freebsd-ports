@@ -3,11 +3,11 @@
 
 PORTNAME=	gocr
 PORTVERSION=	0.50
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	http://www-e.uni-magdeburg.de/jschulen/ocr/
 
-MAINTAINER=	dhn@FreeBSD.org
+MAINTAINER=	freebsd-ports@dan.me.uk
 COMMENT=	OCR (Optical Character Recognition) program
 
 LICENSE=	GPLv2
@@ -50,6 +50,7 @@ post-patch:
 .endif
 
 post-install:
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/gocr
 .if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${DOC_FILES1:S|^|${DOCSRCDIR1}/|} ${STAGEDIR}${DOCSDIR}

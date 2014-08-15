@@ -18,8 +18,7 @@ CMAKE_ARGS=	-DBUILD_DOCS=OFF \
 		-DENABLE_GCOV=OFF \
 		-DUSE_VALGRIND=OFF
 USE_LDCONFIG=	yes
-USE_PYTHON_BUILD=	2
-USES=		cmake pkgconfig shebangfix tar:xz
+USES=		cmake pkgconfig python:2,build shebangfix tar:xz
 
 SHEBANG_FILES=	gen-config.py libhpack/huffman-gen.py
 python_OLD_CMD=	${SETENV} python

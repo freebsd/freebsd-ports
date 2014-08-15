@@ -3,23 +3,22 @@
 
 PORTNAME=	unzip
 PORTVERSION=	6.0
-PORTREVISION=	1
-CATEGORIES?=	archivers
+PORTREVISION=	2
+CATEGORIES=	archivers
 MASTER_SITES=	SF/infozip/UnZip%206.x%20%28latest%29/UnZip%20${PORTVERSION}/:main \
 		SF/infozip/UnZip%205.x%20and%20earlier/5.51/:unreduce
 DISTNAME=	${PORTNAME}60
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:main
 
-MAINTAINER?=	ehaupt@FreeBSD.org
-COMMENT?=	List, test, and extract compressed files in a ZIP archive
+MAINTAINER=	ehaupt@FreeBSD.org
+COMMENT=	List, test, and extract compressed files from a ZIP archive
 
 LICENSE=	Info-ZIP
 LICENSE_NAME=	Info-ZIP license
 LICENSE_FILE=	${WRKSRC}/LICENSE
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-CONFLICTS?=	unzip-iconv-[0-9]* zh-unzip-[0-9]* ko-unzip-[0-9]* ru-unzip-[0-9]*
-
+ALL_TARGET=	bsd
 MAKEFILE=	unix/Makefile
 MAKE_ARGS=	LF2="${STRIP}"
 .if defined(INSTALL_AS_INFOUNZIP)
@@ -27,50 +26,67 @@ UNZIP_NAME=	info-unzip
 .else
 UNZIP_NAME=	unzip
 .endif
-PLIST_FILES=	bin/${UNZIP_NAME} bin/funzip bin/unzipsfx bin/zipgrep bin/zipinfo
 PORTDOCS=	README WHERE
-MANPAGES=		${UNZIP_NAME}.1 funzip.1 unzipsfx.1 zipgrep.1 zipinfo.1
+MANPAGES=	${UNZIP_NAME}.1 funzip.1 unzipsfx.1 zipgrep.1 zipinfo.1
+PLIST_FILES=	bin/${UNZIP_NAME} bin/funzip bin/unzipsfx bin/zipgrep \
+		bin/zipinfo
+PLIST_FILES+=	${MANPAGES:C|^(.*)\.([1-9])$|man/man\2/\1.\2.gz|}
 
 LOCAL_UNZIP=	${CFLAGS} -DACORN_FTYPE_NFS -DWILD_STOP_AT_DIR \
 		-DUNICODE_SUPPORT -DUTF8_MAYBE_NATIVE -D_MBCS \
 		-DLARGE_FILE_SUPPORT
 
-.if defined(WITH_UNZIP_UNREDUCE)
-DISTFILES+=	unreduce_full.zip:unreduce
-EXTRACT_ONLY+=	${DISTNAME}${EXTRACT_SUFX}
-LOCAL_UNZIP+=	-DUSE_SMITH_CODE
-.endif
-
-.if defined(WITH_ICONV)
-PATCH_SITES+=		${MASTER_SITE_LOCAL}
-PATCH_SITE_SUBDIR=	nork
-PATCHFILES+=		unzip60-alt-iconv-utf8.patch
-PATCH_DIST_STRIP+=	-p1
-USES=			iconv
-CFLAGS+=		-I${LOCALBASE}/include -DNATIVE
-MAKE_ARGS+=		LFLAGS1="-L${LOCALBASE}/lib ${ICONV_LIB}"
-.endif
-
 MAKE_ENV=	LOCAL_UNZIP="${LOCAL_UNZIP}" \
 		D_USE_BZ2=-DUSE_BZIP2 L_BZ2=-lbz2
 
 .ifdef USE_UNZIP
-.error You have `USE_UNZIP' variable defined either in environment or in make(1) arguments. Please undefine and try again.
+.error You have "USE_UNZIP" variable defined in environment or in \
+	make(1) arguments. Please undefine and try again.
 .endif
 
-OPTIONS_DEFINE=	DOCS
+OPTIONS_DEFINE=		DOCS ICONV
+OPTIONS_RADIO=		RG1
+OPTIONS_RADIO_RG1=	CHINESE KOREAN RUSSIAN
 
-.include <bsd.port.pre.mk>
+RG1_DESC=		Localization
+CHINESE_DESC=		Chinese language support
+KOREAN_DESC=		Korean language support
+RUSSIAN_DESC=		CP866 and KOI8-R support
 
-.if ${ARCH} == "i386"
+ICONV_USES=		iconv
+
+.include <bsd.port.options.mk>
+
+.if ${ARCH} == i386
 ALL_TARGET=	freebsd
-.else
-ALL_TARGET=	bsd
 .endif
 
-.for m in ${MANPAGES}
-PLIST_FILES+=	man/man1/${m}.gz
-.endfor
+.if ${PORT_OPTIONS:MICONV}
+CFLAGS+=	-I${LOCALBASE}/include -DNATIVE
+MAKE_ARGS+=	LFLAGS1="-L${LOCALBASE}/lib ${ICONV_LIB}"
+EXTRA_PATCHES+=	${FILESDIR}/extra-iconv-patch-unix_unix.c \
+		${FILESDIR}/extra-iconv-patch-unix_unxcfg.h \
+		${FILESDIR}/extra-iconv-patch-unzip.c \
+		${FILESDIR}/extra-iconv-patch-unzpriv.h \
+		${FILESDIR}/extra-iconv-patch-zipinfo.c
+.endif
+
+.if ${PORT_OPTIONS:MCHINESE}
+CATEGORES+=	chinese
+EXTRA_PATCHES+=	${FILESDIR}/extra-zh-patch-fileio.c
+.endif
+
+.if ${PORT_OPTIONS:MKOREAN}
+CATEGORIES+=	korean
+EXTRA_PATCHES+=	${FILESDIR}/extra-ko-patch-fileio.c \
+		${FILESDIR}/extra-ko-patch-unzip.c \
+		${FILESDIR}/extra-ko-patch-unzip.h
+.endif
+
+.if ${PORT_OPTIONS:MRUSSIAN}
+CATEGORIES+=	russian
+EXTRA_PATCHES+=	${FILESDIR}/extra-ru-patch-ebcdic.h
+.endif
 
 .if !defined(INSTALL_AS_INFOUNZIP)
 pre-fetch:
@@ -79,29 +95,18 @@ pre-fetch:
 	@${ECHO} ""
 .endif
 
-.if defined(WITH_UNZIP_UNREDUCE)
-pre-build:
-	@(cd ${BUILD_WRKSRC}; ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} CFLAGS="${CFLAGS}" unzip)
-	@(cd ${WRKSRC}; \
-		./unzip -o ${_DISTDIR}unreduce_full.zip; \
-		${MV} unreduce_full.c unreduce.c)
-	@(cd ${BUILD_WRKSRC}; ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} clean)
-.endif
-
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/unzip ${STAGEDIR}${PREFIX}/bin/${UNZIP_NAME}
-.for f in funzip unzipsfx
-	${INSTALL_PROGRAM} ${WRKSRC}/${f} ${STAGEDIR}${PREFIX}/bin
-.endfor
+	${INSTALL_PROGRAM} ${WRKSRC}/unzip \
+		${STAGEDIR}${PREFIX}/bin/${UNZIP_NAME}
+	cd ${WRKSRC} && \
+		${INSTALL_PROGRAM} funzip unzipsfx ${STAGEDIR}${PREFIX}/bin
 	${LN} -sf ${UNZIP_NAME} ${STAGEDIR}${PREFIX}/bin/zipinfo
 	${INSTALL_SCRIPT} ${WRKSRC}/unix/zipgrep ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/man/unzip.1 ${STAGEDIR}${MAN1PREFIX}/man/man1/${UNZIP_NAME}.1
-.for f in ${MANPAGES:Nunzip.1:Ninfo-unzip.1}
-	${INSTALL_MAN} ${WRKSRC}/man/${f} ${STAGEDIR}${MAN1PREFIX}/man/man1
-.endfor
+	${INSTALL_MAN} ${WRKSRC}/man/unzip.1 \
+		${STAGEDIR}${MAN1PREFIX}/man/man1/${UNZIP_NAME}.1
+	cd ${WRKSRC}/man && ${INSTALL_MAN} ${MANPAGES:Nunzip.1:Ninfo-unzip.1} \
+		${STAGEDIR}${MAN1PREFIX}/man/man1
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-.for f in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}
-.endfor
+	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

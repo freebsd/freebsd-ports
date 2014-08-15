@@ -1,6 +1,6 @@
---- ./content/content_common.gypi.orig	2014-04-30 22:41:54.000000000 +0200
-+++ ./content/content_common.gypi	2014-05-04 14:38:47.000000000 +0200
-@@ -544,6 +544,21 @@
+--- ./content/content_common.gypi.orig	2014-08-12 21:01:27.000000000 +0200
++++ ./content/content_common.gypi	2014-08-13 09:56:57.000000000 +0200
+@@ -559,6 +559,21 @@
          'content.gyp:common_aidl',
        ],
      }],
@@ -19,6 +19,6 @@
 +        'common/sandbox_linux/sandbox_seccomp_bpf_linux.cc',
 +      ],
 +    }],
-     ['toolkit_uses_gtk == 1', {
+     ['use_pango == 1', {
        'dependencies': [
-         '../build/linux/system.gyp:gtk',
+         '../build/linux/system.gyp:pangocairo',

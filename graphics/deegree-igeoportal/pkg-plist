@@ -1,3 +1,8 @@
+@owner %%WWWOWN%%
+@group %%WWWGRP%%
+@dirrm %%TOMCATDIR%%/webapps/deegree-igeoportal
+@group wheel
+@group root
 %%TOMCATDIR%%/webapps/deegree-igeoportal/META-INF/MANIFEST.MF
 %%TOMCATDIR%%/webapps/deegree-igeoportal/README.txt
 %%TOMCATDIR%%/webapps/deegree-igeoportal/WEB-INF/classes/de/latlon/BBoxInputValidationListener.class
@@ -1846,4 +1851,3 @@
 @dirrm %%TOMCATDIR%%/webapps/deegree-igeoportal/WEB-INF
 @dirrm %%TOMCATDIR%%/webapps/deegree-igeoportal/META-INF
 @dirrm %%TOMCATDIR%%/webapps/deegree-igeoportal
-@dirrm %%TOMCATDIR%%/webapps

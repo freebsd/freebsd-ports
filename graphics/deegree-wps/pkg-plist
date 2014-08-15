@@ -1,3 +1,8 @@
+@owner %%WWWOWN%%
+@group %%WWWGRP%%
+@dirrm %%TOMCATDIR%%/webapps/deegree-wps
+@group wheel
+@group root
 %%TOMCATDIR%%/webapps/deegree-wps/META-INF/MANIFEST.MF
 %%TOMCATDIR%%/webapps/deegree-wps/WEB-INF/classes/log4j.properties
 %%TOMCATDIR%%/webapps/deegree-wps/WEB-INF/conf/wps/processConfigs/buffer_process_config.xml
@@ -54,4 +59,3 @@
 @dirrm %%TOMCATDIR%%/webapps/deegree-wps/WEB-INF
 @dirrm %%TOMCATDIR%%/webapps/deegree-wps/META-INF
 @dirrm %%TOMCATDIR%%/webapps/deegree-wps
-@dirrm %%TOMCATDIR%%/webapps

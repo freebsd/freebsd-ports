@@ -3,14 +3,15 @@
 
 PORTNAME=	psi
 PORTVERSION=	0.15
-PORTREVISION=	1
+PORTREVISION=	3
 CATEGORIES=	net-im
 MASTER_SITES=	SF/${PORTNAME}/Psi/${PORTVERSION}
 
 MAINTAINER=	makc@FreeBSD.org
 COMMENT=	Qt 4 based Jabber client
 
-LIB_DEPENDS=	libqca.so:${PORTSDIR}/devel/qca
+LIB_DEPENDS=	libqca.so:${PORTSDIR}/devel/qca \
+		libminizip.so:${PORTSDIR}/archivers/minizip
 RUN_DEPENDS=	qca-ossl>=2.0.0.b3:${PORTSDIR}/security/qca-ossl \
 		qca-gnupg>=2.0.0.b3:${PORTSDIR}/security/qca-gnupg
 
@@ -27,42 +28,30 @@ CONFIGURE_ENV=	QMAKE_ARGS='${QMAKE_ARGS}'
 DESTDIRNAME=	INSTALL_ROOT
 
 OPTIONS_DEFINE=	ASPELL ENCHANT DBUS DEBUG
-OPTIONS_DEFAULT=	ASPELL DBUS
+OPTIONS_DEFAULT=	ENCHANT DBUS
+OPTIONS_SUB=	yes # DEBUG
+
+DEBUG_CONFIGURE_ON=	--debug
+DEBUG_CONFIGURE_OFF=	--release  --no-separate-debug-info
+
+DBUS_USE=	QT4=dbus
+DBUS_CONFIGURE_OFF=	--disable-qdbus
 
 ASPELL_DESC=	Use aspell for spell checking
-ENCHANT_DESC=	Use Enchant for spell checking
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MDEBUG}
-CONFIGURE_ARGS+=	--debug
-PLIST_SUB+=	DEBUG=""
-.else
-CONFIGURE_ARGS+=	--release  --no-separate-debug-info
-PLIST_SUB+=	DEBUG="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MDBUS}
-USE_QT4+=	dbus
-.else
-CONFIGURE_ARGS+=	--disable-qdbus
-.endif
-
-.if ${PORT_OPTIONS:MASPELL}
-LIB_DEPENDS+=	libaspell.so:${PORTSDIR}/textproc/aspell
-CONFIGURE_ARGS+=	--with-aspell-inc=${LOCALBASE}/include \
+ASPELL_LIB_DEPENDS=	libaspell.so:${PORTSDIR}/textproc/aspell
+ASPELL_CONFIGURE_ON=	--with-aspell-inc=${LOCALBASE}/include \
 			--with-aspell-lib=${LOCALBASE}/lib
-.else
-CONFIGURE_ARGS+=	--disable-aspell
-.endif
+ASPELL_CONFIGURE_OFF=	--disable-aspell
 
-.if ${PORT_OPTIONS:MENCHANT}
-LIB_DEPENDS+=	libenchant.so:${PORTSDIR}/textproc/enchant
-.else
-CONFIGURE_ARGS+=	--disable-enchant
-.endif
+ENCHANT_DESC=	Use Enchant for spell checking
+ENCHANT_LIB_DEPENDS=	libenchant.so:${PORTSDIR}/textproc/enchant
+ENCHANT_CONFIGURE_OFF=	--disable-enchant
 
-post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/psi
+post-configure:
+# Reorder paths to always include internal socks.h (PR: 192270)
+	${REINPLACE_CMD} -e '/^INCPATH/s,-I\.,-I\. -Icutestuff,' \
+		${WRKSRC}/iris/src/irisnet/noncore/Makefile
+	${REINPLACE_CMD} -e '/^INCPATH/s,-I\.,-I\. -I../irisnet/noncore/cutestuff,' \
+		${WRKSRC}/iris/src/xmpp/Makefile
 
 .include <bsd.port.mk>

@@ -16,9 +16,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}greenlet>=0:${PORTSDIR}/devel/py-greenlet
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}greenlet>=0:${PORTSDIR}/devel/py-greenlet \
 		${PYTHON_PKGNAMEPREFIX}sqlite3>=0:${PORTSDIR}/databases/py-sqlite3
 
-PYDISTUTILS_AUTOPLIST=	yes
-USE_PYDISTUTILS=yes
-USE_PYTHON=	2
+USE_PYTHON=	autoplist distutils
+USES=		python:2
 
 post-build:
 	@${STRIP_CMD} ${WRKSRC}/gevent/_semaphore.so ${WRKSRC}/gevent/_util.so ${WRKSRC}/gevent/ares.so ${WRKSRC}/gevent/core.so

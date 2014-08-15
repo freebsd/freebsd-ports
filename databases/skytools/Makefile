@@ -2,40 +2,40 @@
 # $FreeBSD$
 
 PORTNAME=	skytools
-PORTVERSION=	2.1.12
-PORTREVISION=	1
+PORTVERSION=	3.2
 CATEGORIES=	databases
-MASTER_SITES=	http://pgfoundry.org/frs/download.php/2872/
+MASTER_SITES=	http://pgfoundry.org/frs/download.php/3622/
 
-MAINTAINER= ports@FreeBSD.org
+MAINTAINER=	sam@cassiba.com
 COMMENT=	PostgreSQL tools from Skype: walshipping, queueing, replication
 
 GNU_CONFIGURE=	yes
 USES=		gmake shebangfix
 
 USE_PGSQL=	yes
-WANT_PGSQL_VER=	91-
 USE_PYTHON=	2
 INSTALLS_EGGINFO=	yes
 
 python_OLD_CMD=	/usr/bin/env python
 python_CMD=	/usr/bin/env python2
-SHEBANG_FILES=	scripts/catsql.py scripts/bulk_loader.py \
-		scripts/cube_dispatcher.py scripts/queue_splitter.py \
+SHEBANG_FILES=	setup_pkgloader.py setup_skytools.py \
+		scripts/catsql.py scripts/data_maintainer.py \
+		scripts/find_sql_functions.py scripts/grantfu.py \
+		scripts/queue_loader.py scripts/queue_splitter.py \
 		scripts/queue_mover.py scripts/scriptmgr.py \
-		scripts/skytools_upgrade.py scripts/table_dispatcher.py
-
-MAN1=	bulk_loader.1 cube_dispatcher.1 londiste.1 pgqadm.1 queue_mover.1 \
-	queue_splitter.1 scriptmgr.1 skytools_upgrade.1 table_dispatcher.1 \
-	walmgr.1
-MAN5=	londiste.5
+		scripts/simple_consumer.py scripts/simple_local_consumer.py \
+		scripts/skytools_upgrade.py
 
 CONFIGURE_ARGS=	--with-python=${PYTHON_CMD} \
 		--docdir=${EXAMPLESDIR} \
 		--with-pgconfig=${LOCALBASE}/bin/pg_config
 
-NO_STAGE=	yes
 post-patch:
-	@${REINPLACE_CMD} -e 's=share/doc=share/examples=' ${WRKSRC}/setup.py
+	@${REINPLACE_CMD} -e 's=share/doc=share/examples=' ${WRKSRC}/setup_skytools.py
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/pgqd
+	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/skytools/*.so
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/postgresql/*.so
 
 .include <bsd.port.mk>

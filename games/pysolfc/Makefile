@@ -18,7 +18,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}tkinter>0:${PORTSDIR}/x11-toolkits/py-tkinte
 		${PYTHON_SITELIBDIR}/PIL/__init__.py:${PORTSDIR}/graphics/py-imaging
 
 USES=		python tar:bzip2
-PYTHON_FEATURES=autoplist distutils
+USE_PYTHON=	autoplist distutils
 
 PLIST_FILES=	share/pixmaps/pysolfc.png
 DATADIR=	${PREFIX}/share/PySolFC

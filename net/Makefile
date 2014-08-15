@@ -1159,6 +1159,9 @@
     SUBDIR += suckblow
     SUBDIR += sup
     SUBDIR += svnup
+    SUBDIR += syncthing
+    SUBDIR += syncthing-cli
+    SUBDIR += syncthing-discosrv
     SUBDIR += tableutil
     SUBDIR += tac_plus-libradius
     SUBDIR += tac_plus4

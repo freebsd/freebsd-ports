@@ -19,9 +19,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pygments>=0:${PORTSDIR}/textproc/py-pygments
 OPTIONS_DEFINE=	EXAMPLES NLS
 OPTIONS_SUB=	yes
 
-PYDISTUTILS_AUTOPLIST=	yes
-USE_PYDISTUTILS=yes
-USE_PYTHON=	yes
+USE_PYTHON=	autoplist distutils
+USES=		python
 
 PORTEXAMPLES=	light.theme sample-config sample.theme
 
