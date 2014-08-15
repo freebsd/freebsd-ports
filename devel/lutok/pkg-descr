@@ -14,4 +14,4 @@ library, Lutok adds several layers or abstraction and error checking
 that go against the original spirit of the Lua C API and thus degrade
 performance.
 
-WWW: https://code.google.com/p/lutok/
+WWW: https://github.com/jmmv/lutok/

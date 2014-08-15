@@ -5,7 +5,8 @@ PORTNAME=	lutok
 PORTVERSION=	0.4
 PORTREVISION=	5
 CATEGORIES=	devel
-MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
+MASTER_SITES=	https://github.com/jmmv/lutok/releases/download/${PORTNAME}-${PORTVERSION}/ \
+		LOCAL/jmmv
 
 MAINTAINER=	jmmv@FreeBSD.org
 COMMENT=	Lightweight C++ API for Lua
