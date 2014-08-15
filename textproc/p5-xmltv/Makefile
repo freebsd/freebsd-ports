@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xmltv
-PORTVERSION=	0.5.61
-PORTREVISION=	2
+PORTVERSION=	0.5.65
 CATEGORIES=	textproc perl5
 MASTER_SITES=	SF
 PKGNAMEPREFIX=	p5-
@@ -43,7 +42,11 @@ XMLTV_DEPENDS=	\
 	p5-HTTP-Cache-Transparent>=0:${PORTSDIR}/www/p5-HTTP-Cache-Transparent \
 	p5-IO-stringy>=0:${PORTSDIR}/devel/p5-IO-stringy \
 	p5-TimeDate>=0:${PORTSDIR}/devel/p5-TimeDate \
-	p5-File-Slurp>=0:${PORTSDIR}/devel/p5-File-Slurp
+	p5-File-Slurp>=0:${PORTSDIR}/devel/p5-File-Slurp \
+	p5-DateTime>=0:${PORTSDIR}/devel/p5-DateTime \
+	p5-DateTime-Format-Strptime>=0:${PORTSDIR}/devel/p5-DateTime-Format-Strptime \
+	p5-JSON>=0:${PORTSDIR}/converters/p5-JSON
+
 BUILD_DEPENDS=	${XMLTV_DEPENDS}
 RUN_DEPENDS=	${XMLTV_DEPENDS}
 
