@@ -1,0 +1,28 @@
+--- Makefile.orig	2014-08-15 18:26:37.000000000 -0400
++++ Makefile	2014-08-15 18:27:35.000000000 -0400
+@@ -38,7 +38,7 @@
+ CFLAGS+= -DHAVE_CONFIG_H
+ CFLAGS+= -D_U_="__attribute__((unused))"
+ 
+-.if ${MK_INET6_SUPPORT} != "no"
++.if empty(MK_INET6_SUPPORT:Mno)
+ SRCS+=	print-ip6.c print-ip6opts.c print-mobility.c print-ripng.c \
+ 	print-icmp6.c print-frag6.c print-rt6.c print-ospf6.c print-dhcp6.c
+ CFLAGS+=	-DINET6
+@@ -49,14 +49,14 @@
+ 
+ DPADD=	${LIBL} ${LIBPCAP}
+ LDADD=	-ll -lpcap
+-.if ${MK_OPENSSL} != "no" && !defined(RELEASE_CRUNCH)
++.if empty(MK_OPENSSL:Mno) && !defined(RELEASE_CRUNCH)
+ DPADD+= ${LIBCRYPTO}
+ LDADD+= -lcrypto
+ CFLAGS+= -I${DESTDIR}/usr/include/openssl
+ CFLAGS+= -DHAVE_LIBCRYPTO -DHAVE_RC5_H -DHAVE_CAST_H -DHAVE_OPENSSL_EVP_H
+ .endif
+ 
+-.if ${MK_PF} != "no"
++.if empty(MK_PF:Mno)
+ SRCS+=	print-pflog.c
+ CFLAGS+= -DHAVE_NET_PFVAR_H
+ .endif
