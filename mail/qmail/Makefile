@@ -439,7 +439,7 @@ DISTFILES+=	${SRS_LDAP_PATCH}:srs_ldap
 .if ${PORT_OPTIONS:MSMTP_AUTH_PATCH}
 MASTER_SITES+=	http://tomclegg.net/qmail/:smtp_auth \
 		${MASTER_SITE_LOCAL:S/$/:smtp_auth/}
-MASTER_SITE_SUBDIR+=	garga/qmail/:smtp_auth
+MASTER_SITE_SUBDIR+=	bdrewery/qmail/:smtp_auth
 DISTFILES+=	qmail-smtpd-auth-${SMTP_AUTH_VERSION}.tar.gz:smtp_auth
 EXTRACT_ONLY+=	qmail-smtpd-auth-${SMTP_AUTH_VERSION}.tar.gz
 MASTER_SITES+=	http://tomclegg.net/qmail/:close3
@@ -476,7 +476,7 @@ PATCHFILES+=	qmail-discard-double-bounces.patch:doublebounce
 .  if defined(SLAVE_SPAMCONTROL)
 SPF_SPAMCONTROL_PATCH=	qmail-spf-rc5.patch-spamcontrol-27_2
 PATCH_SITES+=		${MASTER_SITE_LOCAL:S/$/:spf_spamcontrol/}
-PATCH_SITE_SUBDIR+=	garga/qmail/:spf_spamcontrol
+PATCH_SITE_SUBDIR+=	bdrewery/qmail/:spf_spamcontrol
 PATCHFILES+=		${SPF_SPAMCONTROL_PATCH}:spf_spamcontrol
 .  else
 # XXX - Move change out of conflicting Makefile hunk
@@ -502,7 +502,7 @@ DOCFILES_WRKSRC+=	EXTTODO
 
 . if !empty(PORT_OPTIONS:MBIG_TODO_PATCH) || !empty(PORT_OPTIONS:MBIGTODO)
 MASTER_SITES+=	${MASTER_SITE_LOCAL:S/$/:ext_big_todo/}
-MASTER_SITE_SUBDIR+=	garga/qmail/:ext_big_todo
+MASTER_SITE_SUBDIR+=	bdrewery/qmail/:ext_big_todo
 EXT_BIG_TODO_PATCH=	ext_todo-20030105+big-todo.103.patch
 DISTFILES+=	${EXT_BIG_TODO_PATCH}:ext_big_todo
 . endif
@@ -512,17 +512,17 @@ DISTFILES+=	${EXT_BIG_TODO_PATCH}:ext_big_todo
 # XXX - Move qmail-todo out of conflicting Makefile hunk
 EXTTODO_PATCH=	ext_todo-20030105_spf_tls.patch
 MASTER_SITES+=	${MASTER_SITE_LOCAL:S/$/:exttodo/}
-MASTER_SITE_SUBDIR+=	garga/qmail/:exttodo
+MASTER_SITE_SUBDIR+=	bdrewery/qmail/:exttodo
 DISTFILES+=	${EXTTODO_PATCH}:exttodo
 .  else
 PATCH_SITES+=	${MASTER_SITE_LOCAL:S/$/:exttodo/}
-PATCH_SITE_SUBDIR+=	garga/qmail/:exttodo
+PATCH_SITE_SUBDIR+=	bdrewery/qmail/:exttodo
 PATCHFILES+=	ext_todo-20030105_spf.patch:exttodo
 .  endif
 . elif defined(SLAVE_MYSQL)
 PATCH_SITES+=	${MASTER_SITE_LOCAL:S/$/:exttodo/}
 PATCHFILES+=	ext_todo-20030105_mysql.patch:exttodo
-PATCH_SITE_SUBDIR+=	garga/qmail/:exttodo
+PATCH_SITE_SUBDIR+=	bdrewery/qmail/:exttodo
 . elif defined(SLAVE_TLS)
 PATCH_SITES+=	${MASTER_SITE_LOCAL:S/$/:exttodo/}
 PATCHFILES+=	ext_todo-20030105_tls.patch:exttodo
@@ -589,7 +589,7 @@ SMTPEXTFORK_PATCH=	smtpextfork-ldap-20060201_4.patch
 
 MASTER_SITES+=	http://www6.freebsdbrasil.com.br/~eksffa/l/dev/qmail-smtpextfork/patches/:extfork \
 		${MASTER_SITE_LOCAL:S/$/:extfork/}
-MASTER_SITE_SUBDIR+=	garga/qmail/:extfork
+MASTER_SITE_SUBDIR+=	bdrewery/qmail/:extfork
 DISTFILES+=	${SMTPEXTFORK_PATCH:S/$/:extfork/} \
 		README.smtpextfork:extfork
 .endif
@@ -597,14 +597,14 @@ DISTFILES+=	${SMTPEXTFORK_PATCH:S/$/:extfork/} \
 .if defined(SLAVE_LDAP) && ${PORT_OPTIONS:MSENDERCHECK4}
 PATCH_SITES+=	http://www6.freebsdbrasil.com.br/~eksffa/l/dev/qmail/:sendercheck4 \
 		${MASTER_SITE_LOCAL:S/$/:sendercheck4/}
-PATCH_SITE_SUBDIR+=	garga/qmail/:sendercheck4
+PATCH_SITE_SUBDIR+=	bdrewery/qmail/:sendercheck4
 PATCHFILES+=	qmail-ldap-1.03_qmail-smtpd_SENDERCHECK4.patch:sendercheck4
 .endif
 
 .if defined(SLAVE_LDAP) && ${PORT_OPTIONS:MGRTDELAY}
 PATCH_SITES+=	http://www6.freebsdbrasil.com.br/~eksffa/l/dev/qmail/:grtdelay \
 		${MASTER_SITE_LOCAL:S/$/:grtdelay/}
-PATCH_SITE_SUBDIR+=	garga/qmail/:grtdelay
+PATCH_SITE_SUBDIR+=	bdrewery/qmail/:grtdelay
 PATCHFILES+=	qmail-ldap-20060201-grtdelay.patch:grtdelay
 DOCFILES_WRKSRC+=	README.GREETDELAY
 .endif
@@ -612,7 +612,7 @@ DOCFILES_WRKSRC+=	README.GREETDELAY
 .if defined(SLAVE_LDAP) && ${PORT_OPTIONS:MENHACELOGS}
 PATCH_SITES+=	http://www6.freebsdbrasil.com.br/~eksffa/l/dev/qmail/:ldapenhacelog \
 		${MASTER_SITE_LOCAL:S/$/:ldapenhacelog/}
-PATCH_SITE_SUBDIR+=	garga/qmail/:ldapenhacelog
+PATCH_SITE_SUBDIR+=	bdrewery/qmail/:ldapenhacelog
 PATCHFILES+=	enhacelogging-ldap-20120221.patch:ldapenhacelog
 .endif
 
