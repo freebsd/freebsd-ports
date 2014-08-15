@@ -17,12 +17,17 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl
 
 USE_PYTHON_RUN=	yes
-USES=		iconv gmake perl5 pkgconfig
+USES=		iconv gmake perl5 pkgconfig shebangfix
 USE_PERL5=	run
 USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-ssl --with-openssl
 CONFLICTS=	centericq-[0-9]* centerim-[0-9]*
+
+SHEBANG_FILES=	misc/cimformathistory misc/cimextracthistory.pl
+SHEBANG_LANG=	gawk
+gawk_OLD_CMD=	/bin/gawk
+gawk_CMD=	/usr/bin/awk
 
 OPTIONS_DEFINE=	NLS MULTIBYTE FRIBIDI MSN YAHOO AIM IRC JABBER GPGME RSS LJ GG
 
@@ -62,6 +67,8 @@ GPGME_CONFIGURE_OFF=	--with-gpgme-prefix=/nonexistent
 post-patch:
 	@${REINPLACE_CMD} -e 's|/var/run/screen|/tmp/screens|' \
 		${WRKSRC}/src/icqconf.cc
+	@${REINPLACE_CMD} -e 's|-R$$found_dir|-Wl,-rpath,$$found_dir|' \
+		${WRKSRC}/configure
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
