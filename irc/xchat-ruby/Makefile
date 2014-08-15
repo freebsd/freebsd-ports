@@ -27,27 +27,25 @@ PORTEXAMPLES=	embedify.rb TimerSample.rb JFilter.rb JBanner.rb
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
-.include <bsd.port.options.mk>
-
 post-patch:
 	${REINPLACE_CMD} \
 		-e 's|^RUBY=.*|RUBY=${RUBY}|' \
 		-e 's|-lruby$$|-l${RUBY_NAME}|' \
 		-e 's|^ARCHDIR=.*|ARCHDIR=`$$(RUBY) ${FILESDIR}/rubypath.rb`|' \
+		-e '/^CC=/s|gcc|${CC}|' \
+		-e 's|^CFLAGS=|CFLAGS+=|' \
 		${WRKSRC}/Makefile
 
 do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/lib/xchat/plugins
 	${INSTALL_PROGRAM} ${WRKSRC}/xchat-ruby.so \
 		${STAGEDIR}${PREFIX}/lib/xchat/plugins/
-.if ${PORT_OPTIONS:MDOCS}
+
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S,^,${DOCSRC}/,} ${STAGEDIR}${DOCSDIR}/
-.endif
-.if ${PORT_OPTIONS:MEXAMPLES}
+
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${PORTEXAMPLES:S,^,${DOCSRC}/*/,} \
 		${STAGEDIR}${EXAMPLESDIR}/
-.endif
 
 .include <bsd.port.mk>
