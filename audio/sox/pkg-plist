@@ -4,7 +4,6 @@ bin/sox
 bin/soxi
 include/sox.h
 lib/libsox.a
-lib/libsox.la
 lib/libsox.so
 lib/libsox.so.2
 lib/libsox.so.2.0.1
