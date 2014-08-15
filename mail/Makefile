@@ -618,7 +618,6 @@
     SUBDIR += scam-backscatter
     SUBDIR += sccmilter
     SUBDIR += sendmail
-    SUBDIR += sendmail-sasl
     SUBDIR += sendok
     SUBDIR += sentinel
     SUBDIR += serialmail
