@@ -4,5 +4,20 @@ man/man1/toxic.1.gz
 man/man5/toxic.conf.5-e.gz
 man/man5/toxic.conf.5.gz
 %%DATADIR%%/DHTnodes
+%%DATADIR%%/DHTnodes-e
+%%DATADIR%%/DNSservers
+%%DATADIR%%/DNSservers-e
+%%DATADIR%%/sounds/ContactLogsIn.wav
+%%DATADIR%%/sounds/ContactLogsOut.wav
+%%DATADIR%%/sounds/Error.wav
+%%DATADIR%%/sounds/IncomingCall.wav
+%%DATADIR%%/sounds/LogIn.wav
+%%DATADIR%%/sounds/LogOut.wav
+%%DATADIR%%/sounds/NewMessage.wav
+%%DATADIR%%/sounds/OutgoingCall.wav
+%%DATADIR%%/sounds/TransferComplete.wav
+%%DATADIR%%/sounds/TransferPending.wav
 %%DATADIR%%/toxic.conf.example
+%%DATADIR%%/toxic.conf.example-e
+@dirrm %%DATADIR%%/sounds
 @dirrm %%DATADIR%%
