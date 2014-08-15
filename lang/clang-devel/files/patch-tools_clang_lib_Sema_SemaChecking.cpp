@@ -20,7 +20,7 @@ $FreeBSD: /tmp/pcvs/ports/lang/clang-devel/files/patch-tools_clang_lib_Sema_Sema
 +    const analyze_printf::ArgType &ATR = type;
 +    if (ATR.isValid() && !ATR.matchesType(S.Context, Ex->getType()))
 +      S.Diag(getLocationOfByte(CS.getStart()),
-+             diag::warn_printf_conversion_argument_type_mismatch)
++             diag::warn_format_conversion_argument_type_mismatch)
 +        << ATR.getRepresentativeType(S.Context) << Ex->getType()
 +        << getSpecifierRange(startSpecifier, specifierLen)
 +        << Ex->getSourceRange();
@@ -31,7 +31,7 @@ $FreeBSD: /tmp/pcvs/ports/lang/clang-devel/files/patch-tools_clang_lib_Sema_Sema
 +    const analyze_printf::ArgType &ATR2 = ArgType::CStrTy;
 +    if (ATR2.isValid() && !ATR2.matchesType(S.Context, Ex->getType()))
 +      S.Diag(getLocationOfByte(CS.getStart()),
-+             diag::warn_printf_conversion_argument_type_mismatch)
++             diag::warn_format_conversion_argument_type_mismatch)
 +        << ATR2.getRepresentativeType(S.Context) << Ex->getType()
 +        << getSpecifierRange(startSpecifier, specifierLen)
 +        << Ex->getSourceRange();
