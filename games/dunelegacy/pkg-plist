@@ -1,0 +1,33 @@
+bin/dunelegacy
+%%DATADIR%%/Dune2-Versions.txt
+%%DATADIR%%/LEGACY.PAK
+%%DATADIR%%/OPENSD2.PAK
+%%DATADIR%%/locale/English.en.po
+%%DATADIR%%/locale/French.fr.po
+%%DATADIR%%/locale/German.de.po
+%%DATADIR%%/locale/dunelegacy.pot
+%%DATADIR%%/maps/multiplayer/2P - 32x32 - X-Factor.ini
+%%DATADIR%%/maps/multiplayer/2P - 64x32 - Cliffs Of Rene.ini
+%%DATADIR%%/maps/multiplayer/2P - 64x64 - Bottle Neck.ini
+%%DATADIR%%/maps/multiplayer/2P - 64x64 - Broken Mountains.ini
+%%DATADIR%%/maps/multiplayer/2P - 64x64 - David's Pass.ini
+%%DATADIR%%/maps/multiplayer/2P - 64x64 - Face Off.ini
+%%DATADIR%%/maps/multiplayer/2P - 64x64 - Great Divide.ini
+%%DATADIR%%/maps/multiplayer/2P - 64x64 - Sanctuarys.ini
+%%DATADIR%%/maps/multiplayer/4P - 128x128 - The Sardaukar Outpost.ini
+%%DATADIR%%/maps/multiplayer/4P - 64x64 - Clear Path.ini
+%%DATADIR%%/maps/multiplayer/4P - 64x64 - Four Chambers.ini
+%%DATADIR%%/maps/multiplayer/4P - 64x64 - Four Courners.ini
+%%DATADIR%%/maps/multiplayer/4P - 64x64 - Sietch Stefan.ini
+%%DATADIR%%/maps/multiplayer/4P - 64x64 - Vast Armies Have Arrived.ini
+%%DATADIR%%/maps/singleplayer/2P - 32x128 - Canyon.ini
+%%DATADIR%%/maps/singleplayer/2P - 64x64 - Duality.ini
+%%DATADIR%%/maps/singleplayer/2P - 64x64 - North vs. South.ini
+%%DATADIR%%/maps/singleplayer/2P - 64x64 - Twin Fists.ini
+%%DATADIR%%/maps/singleplayer/3P - 64x32 - Middle Man.ini
+%%DATADIR%%/maps/singleplayer/5P - 128x128 - All against Atreides.ini
+@dirrmtry %%DATADIR%%/locale
+@dirrmtry %%DATADIR%%/maps/multiplayer
+@dirrmtry %%DATADIR%%/maps/singleplayer
+@dirrmtry %%DATADIR%%/maps
+@dirrmtry %%DATADIR%%
