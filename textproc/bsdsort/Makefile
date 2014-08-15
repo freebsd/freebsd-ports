@@ -24,37 +24,22 @@ MAKE_ENV+=	BINDIR="${PREFIX}/bin" \
 CFLAGS+=	-std=c99
 
 OPTIONS_DEFINE=		THREADS NLS OVERWRITE_BASE
-OVERWRITE_BASE_DESC=	Replaces base GNU sort
+OVERWRITE_BASE_DESC=	Replace base GNU sort
 OPTIONS_DEFAULT=	THREADS NLS
+OPTIONS_SUB=		yes
+
+NLS_MAKE_ENV_OFF=	WITHOUT_NLS=yes
+THREADS_MAKE_ENV=	WITH_THREADS=yes
 
 .include <bsd.port.pre.mk>
 
-.if ${PORT_OPTIONS:MNLS}
-PLIST_SUB+=	NLS=""
-.else
-MAKE_ENV+=	WITHOUT_NLS=yes
-PLIST_SUB+=	NLS="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MTHREADS}
-MAKE_ENV+=	WITH_THREADS=yes
-.endif
-
 .if ${PORT_OPTIONS:MOVERWRITE_BASE}
 PREFIX=		/usr
-PLIST_SUB+=	OVERWRITE_BASE="" NO_OVERWRITE_BASE="@comment "
-.else
-PLIST_SUB+=	OVERWRITE_BASE="@comment " NO_OVERWRITE_BASE=""
-.endif
-
-.if defined(WITH_OVERWRITE_BASE) && exists(${STAGEDIR}${PREFIX}/bin/sort)
-pre-install:
-	${INSTALL_PROGRAM} ${STAGEDIR}${PREFIX}/bin/sort ${STAGEDIR}${PREFIX}/bin/gnusort
 .endif
 
 post-install:
 	${LN} -s ${PREFIX}/bin/sort ${STAGEDIR}${PREFIX}/bin/bsdsort
-.if !defined(WITH_OVERWRITE_BASE)
+.if empty(OVERWRITE_BASE)
 	${LN} -s /usr/bin/sort ${STAGEDIR}${PREFIX}/bin/gnusort
 .endif
 
