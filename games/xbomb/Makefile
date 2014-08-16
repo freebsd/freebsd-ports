@@ -2,11 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	xbomb
-PORTVERSION=	2.2a
+PORTVERSION=	2.2b
 CATEGORIES=	games
 MASTER_SITES=	http://www.gedanken.org.uk/software/xbomb/download/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	danilo@FreeBSD.org
 COMMENT=	Minesweeper with a couple of grid types
 
 USES=		pkgconfig tar:tgz
