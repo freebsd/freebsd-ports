@@ -1,0 +1,11 @@
+--- configure.ac.orig	2014-08-07 23:37:03.000000000 -0700
++++ configure.ac	2014-08-15 00:54:12.000000000 -0700
+@@ -89,7 +89,7 @@
+ AM_CONDITIONAL(USE_OPENSSL, test x$with_ssl = xopenssl)
+ AM_CONDITIONAL(USE_GNUTLS, test x$with_ssl = xgnutls)
+ 
+-AC_DEFINE([DEFAULT_CONFIG], ["/etc/umurmur.conf"], [Default config])
++AC_DEFINE([DEFAULT_CONFIG], ["%%PREFIX%%/etc/umurmur.conf"], [Default config])
+ 
+ # Checks for header files.
+ AC_FUNC_ALLOCA
