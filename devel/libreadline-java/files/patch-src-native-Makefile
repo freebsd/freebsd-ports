@@ -1,6 +1,6 @@
---- src/native/Makefile.orig	2003-01-07 11:14:35.000000000 +0100
-+++ src/native/Makefile	2013-12-13 08:29:23.000000000 +0100
-@@ -38,25 +38,28 @@
+--- src/native/Makefile.orig	2003-01-07 05:14:35.000000000 -0500
++++ src/native/Makefile	2014-08-16 14:17:39.000000000 -0400
+@@ -38,25 +38,31 @@
  INCLUDES = -I "c:/Programme/DevStudio/VC/include" \
  			-I $(JAVAINCLUDE) -I $(JAVANATINC)
  LIB = "c:/Programme/DevStudio/VC/lib"
@@ -15,6 +15,9 @@
 -LIBPATH           = -L/usr/lib/termcap 
 +INCLUDES          = -I $(JAVAINCLUDE) -I $(JAVANATINC) -I $(LOCALBASE)/include
 +ifeq (JavaEditline,$(TG))
++LIBPATH           = -L$(LOCALBASE)/lib -rpath $(LOCALBASE)/lib
++endif
++ifeq (JavaReadline,$(TG))
 +LIBPATH           = -L$(LOCALBASE)/lib -rpath $(LOCALBASE)/lib
 +endif
  JavaReadline_LIBS = -lreadline -ltermcap -lhistory
@@ -35,7 +38,7 @@
  
  
  OBJECTS := org_gnu_readline_Readline.$(OBJ_EXT)
-@@ -69,13 +72,13 @@
+@@ -69,13 +75,13 @@
  lib: $(ROOTDIR)/$(LIB_PRE)$(TG).$(LIB_EXT)
  
  JavaReadline:
@@ -52,7 +55,7 @@
  
  $(ROOTDIR)/$(LIB_PRE)$(TG).$(LIB_EXT): $(OBJECTS)
  ifeq (MSC,$(WIN32))
-@@ -110,7 +113,7 @@
+@@ -110,7 +116,7 @@
  	                                   -c org_gnu_readline_Readline.c
  
  org_gnu_readline_Readline.h: $(BUILDDIR)/org/gnu/readline/Readline.class
