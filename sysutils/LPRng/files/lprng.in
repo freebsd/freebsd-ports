@@ -17,7 +17,7 @@ rcvar=lprng_enable
 
 command=%%PREFIX%%/sbin/lpd
 
-required_files="/etc/printcap %%SYSCONFDIR%%/lpd.conf %%SYSCONFDIR%%/lpd.perms"
+required_files="/etc/printcap %%PREFIX%%/etc/lpd.conf %%PREFIX%%/etc/lpd.perms"
 
 start_precmd=start_precmd
 
