@@ -2,18 +2,24 @@
 # $FreeBSD$
 
 PORTNAME=	umurmur
-PORTVERSION=	0.2.13
-PORTREVISION=	1
+PORTVERSION=	0.2.15
 CATEGORIES=	audio net
-MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 
 MAINTAINER=	ayu@commun.jp
 COMMENT=	Minimalistic Murmur (Mumble server)
 
+LICENSE=	BSD2CLAUSE
+
 LIB_DEPENDS=	libconfig.so:${PORTSDIR}/devel/libconfig \
 		libprotobuf-c.so:${PORTSDIR}/devel/protobuf-c
 
-USES=		gmake
+USE_GITHUB=	yes
+GH_ACCOUNT=	fatbob313
+GH_COMMIT=	17daa7e
+
+USES=		gmake libtool
+USE_AUTOTOOLS=	aclocal autoconf autoheader automake
+AUTOMAKE_ARGS=	--add-missing
 GNU_CONFIGURE=	yes
 USE_OPENSSL=	yes
 CONFIGURE_ARGS=	--with-ssl=openssl
@@ -24,7 +30,7 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/src/conf.h
+	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/configure.ac
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/src/conf.c
 	@${REINPLACE_CMD} \
 		-e 's|/etc/|${PREFIX}/etc/|g' ${WRKSRC}/umurmur.conf.example

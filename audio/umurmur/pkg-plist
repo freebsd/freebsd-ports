@@ -1,6 +1,3 @@
-@stopdaemon umurmur
-@unexec if cmp -s %D/etc/umurmur/umurmur.conf.sample %D/etc/umurmur/umurmur.conf; then rm -f %D/etc/umurmur/umurmur.conf; fi
-etc/umurmur/umurmur.conf.sample
-@exec if [ ! -f %D/etc/umurmur/umurmur.conf ] ; then cp -p %D/%F %B/umurmur/umurmur.conf; fi
+@sample etc/umurmur/umurmur.conf.sample
 bin/umurmurd
 @dirrmtry etc/umurmur
