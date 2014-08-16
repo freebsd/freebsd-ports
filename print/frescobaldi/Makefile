@@ -3,6 +3,7 @@
 
 PORTNAME=	frescobaldi
 PORTVERSION=	2.0.15
+PORTREVISION=	1
 CATEGORIES=	print kde
 MASTER_SITES=	https://github.com/wbsoft/frescobaldi/releases/download/v${PORTVERSION}/
 

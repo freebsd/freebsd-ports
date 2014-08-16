@@ -100,6 +100,7 @@
     SUBDIR += o2sms
     SUBDIR += obexapp
     SUBDIR += openobex
+    SUBDIR += owfs
     SUBDIR += p5-Cisco-UCS
     SUBDIR += p5-Device-Gsm
     SUBDIR += p5-Device-Modem
@@ -152,6 +153,7 @@
     SUBDIR += svxlink
     SUBDIR += syncterm
     SUBDIR += tcpser
+    SUBDIR += telldus-core
     SUBDIR += thebridge
     SUBDIR += tilp2
     SUBDIR += tits

@@ -3,10 +3,8 @@
 
 PORTNAME=	netcdf-cxx
 PORTVERSION=	4.2.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	science
-MASTER_SITES=	https://github.com/Unidata/${PORTNAME}4/archive/v${PORTVERSION}.tar.gz?dummy=/ \
-		LOCAL/sunpoet
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	C++ library for machine-independent, array-oriented data access
@@ -20,7 +18,12 @@ GNU_CONFIGURE=	yes
 LDFLAGS+=	-L${LOCALBASE}/lib
 USE_LDCONFIG=	yes
 USES=		libtool pathfix
-WRKSRC=		${WRKDIR}/${PORTNAME}4-${PORTVERSION}
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	Unidata
+GH_COMMIT=	b477274
+GH_PROJECT=	${PORTNAME}4
+GH_TAGNAME=	v${PORTVERSION}
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libnetcdf_c++4.so.1

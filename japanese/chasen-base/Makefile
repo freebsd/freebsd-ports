@@ -3,9 +3,9 @@
 
 PORTNAME=	chasen
 PORTVERSION=	2.4.5
+PORTREVISION=	1
 CATEGORIES=	japanese textproc
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_JP}
-MASTER_SITE_SUBDIR=     chasen-legacy/56305
+MASTER_SITES=	SOURCEFORGE_JP/chasen-legacy/56305
 PKGNAMESUFFIX=	-base
 
 MAINTAINER=	ports@FreeBSD.org
@@ -13,11 +13,11 @@ COMMENT=	Japanese Morphological Analysis System
 
 BUILD_DEPENDS=	${LOCALBASE}/include/darts.h:${PORTSDIR}/devel/darts
 
-USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-darts=${LOCALBASE}/include ${ICONV_CONFIGURE_BASE}
-USES=		iconv
+USES=		iconv libtool
 USE_LDCONFIG=	yes
+INSTALL_TARGET=	install-strip
 
 OPTIONS_DEFINE=	DOCS
 

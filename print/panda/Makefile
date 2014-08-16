@@ -3,7 +3,7 @@
 
 PORTNAME=	panda
 PORTVERSION=	0.5.4
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	print
 MASTER_SITES=	SF \
 		SAVANNAH \
@@ -26,7 +26,8 @@ CONFIGURE_ARGS=	--enable-berkeley-db
 USE_LDCONFIG=	yes
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
-CPPFLAGS+=	-I${BDB_INCLUDE_DIR} -I${LOCALBASE}/include ${PTHREAD_CFLAGS}
+CPPFLAGS+=	-I${BDB_INCLUDE_DIR} -I${LOCALBASE}/include -DHAVE_LIBPNG ${PTHREAD_CFLAGS}
+LIBS+=		-lpng
 LDFLAGS+=	-L${BDB_LIB_DIR} -L${LOCALBASE}/lib ${PTHREAD_LIBS}
 
 post-extract:
@@ -35,8 +36,9 @@ post-extract:
 .endfor
 
 post-patch:
-	@${REINPLACE_CMD} -e 's| -lpanda| $$(top_srcdir)/libpanda.la|g' \
+	${REINPLACE_CMD} -e 's| -lpanda| $$(top_srcdir)/libpanda.la|g' \
 		${WRKSRC}/examples/Makefile.in
+	${REINPLACE_CMD} -e 's,-ldb,-l${BDB_LIB_NAME},' ${WRKSRC}/configure
 
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/man/panda_*.3 ${STAGEDIR}${MANPREFIX}/man/man3

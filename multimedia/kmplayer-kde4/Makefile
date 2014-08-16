@@ -3,7 +3,7 @@
 
 PORTNAME=	kmplayer
 PORTVERSION=	0.11.3d
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	3
 CATEGORIES=	multimedia audio kde
 MASTER_SITES=	http://kmplayer.kde.org/pkgs/

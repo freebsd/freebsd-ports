@@ -1011,6 +1011,7 @@
     SUBDIR += tkpng
     SUBDIR += togl
     SUBDIR += truevision
+    SUBDIR += ttygif
     SUBDIR += tulip
     SUBDIR += tumble
     SUBDIR += uDrawGraph

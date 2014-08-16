@@ -3,6 +3,7 @@
 
 PORTNAME=	cxxtools
 PORTVERSION=	2.2.1
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.tntnet.org/download/
 
@@ -10,7 +11,7 @@ MAINTAINER=	nox@FreeBSD.org
 COMMENT=	Collection of general-purpose C++ classes
 
 PATCH_STRIP=	-p1
-USES=		iconv pathfix
+USES=		iconv libtool pathfix
 USE_CSTD=	gnu89
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include

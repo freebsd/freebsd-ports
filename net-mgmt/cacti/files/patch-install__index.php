@@ -5,7 +5,7 @@
  	$input["path_cactilog"]["default"] = read_config_option("path_cactilog");
  } else {
 -	$input["path_cactilog"]["default"] = $config["base_path"] . "/log/cacti.log";
-+	$input["path_cactilog"]["default"] = "/var/log/cacti/cacti.log";
++	$input["path_cactilog"]["default"] = "/var/log/cacti/log";
  }
  
  /* SNMP Version */

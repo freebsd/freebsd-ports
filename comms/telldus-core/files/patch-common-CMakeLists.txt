@@ -1,0 +1,29 @@
+--- common/CMakeLists.txt
++++ common/CMakeLists.txt
+@@ -54,16 +54,22 @@ ELSEIF (WIN32)
+ 	)
+ ELSEIF (CMAKE_SYSTEM_NAME MATCHES "FreeBSD")
+ 	#### FreeBSD ####
+-	FIND_LIBRARY(ICONV_LIBRARY iconv)
++	string(REGEX MATCH "(([0-9]+)\\.([0-9]+))-([A-Z0-9])+" FREEBSD "${CMAKE_SYSTEM_VERSION}")
++	set( FREEBSD_RELEASE "${CMAKE_MATCH_1}" )
+ 	ADD_DEFINITIONS( -D_FREEBSD )
+ 	LIST(APPEND  telldus-common_SRCS
+ 		Event_unix.cpp
+ 		EventHandler_unix.cpp
+ 		Socket_unix.cpp
+ 	)
+-	LIST(APPEND telldus-common_LIBRARIES
+-		${ICONV_LIBRARY}
+-	)
++
++	# FreeBSD 10 has iconv built in to libc
++	IF(FREEBSD_RELEASE LESS 10)
++		FIND_LIBRARY(ICONV_LIBRARY iconv)
++		LIST(APPEND telldus-common_LIBRARIES
++			${ICONV_LIBRARY}
++		)
++	ENDIF ()
+ ELSE (APPLE)
+ 	#### Linux ####
+ 	ADD_DEFINITIONS( -D_LINUX )

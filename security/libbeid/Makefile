@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	libbeid
-PORTVERSION=	4.0.6.1457
+PORTVERSION=	4.0.6.1614
 CATEGORIES=	security
 MASTER_SITES=	http://tijl.fastmail.fm/mirror/
 
@@ -22,6 +22,7 @@ DOS2UNIX_FILES=	common/src/datafile.cpp common/src/logbase.cpp \
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-static
+INSTALL_TARGET=	install-strip
 
 post-patch:
 	@${REINPLACE_CMD} -e '/svn_revision/d' -e '/SUBDIRS/s/xpi//' \

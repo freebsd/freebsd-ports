@@ -20,12 +20,25 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 RUN_DEPENDS=	rrdtool:${PORTSDIR}/databases/rrdtool
 
 PATCH_STRIP=	-p1
+USES=		shebangfix
 USE_MYSQL=	yes
 USE_PHP=	mysql pcre session sockets snmp xml
 WANT_PHP_WEB=	yes
 NO_BUILD=	yes
 PKGMESSAGE=	${WRKDIR}/pkg-message
 SUB_FILES=	pkg-message
+SHEBANG_FILES=	scripts/3com_cable_modem.pl \
+		scripts/diskfree.pl \
+		scripts/linux_memory.pl \
+		scripts/loadavg.pl \
+		scripts/loadavg_multi.pl \
+		scripts/ping.pl \
+		scripts/query_unix_partitions.pl \
+		scripts/unix_processes.pl \
+		scripts/unix_tcp_connections.pl \
+		scripts/unix_users.pl \
+		scripts/weatherbug.pl \
+		scripts/webhits.pl
 
 CACTIDIR?=	share/cacti
 CACTIUSER?=	cacti

@@ -348,7 +348,7 @@ do-install:
 	@${MKDIR} ${STAGEDIR}${DESKTOPDIR}
 	${INSTALL_DATA} ${WRKDIR}/chromium-browser.desktop ${STAGEDIR}${DESKTOPDIR}
 	${INSTALL_SCRIPT} ${WRKDIR}/chrome ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/out/${BUILDTYPE}/mksnapshot.${ARCH:S/i386/x86/:S/amd64/x64/} \
+	${INSTALL_PROGRAM} ${WRKSRC}/out/${BUILDTYPE}/mksnapshot.${ARCH:S/i386/ia32/:S/amd64/x64/} \
 		${STAGEDIR}${DATADIR}/mksnapshot
 
 .include <bsd.port.post.mk>

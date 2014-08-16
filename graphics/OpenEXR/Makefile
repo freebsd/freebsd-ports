@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	OpenEXR
-PORTVERSION=	2.1.0
-PORTREVISION=	3
+PORTVERSION=	2.2.0
+PORTREVISION=	2
 CATEGORIES=	graphics devel
 MASTER_SITES=	SAVANNAH/openexr/
 DISTNAME=	openexr-${DISTVERSION}
@@ -13,7 +13,8 @@ COMMENT=	High dynamic-range (HDR) image file format
 
 LICENSE=	BSD3CLAUSE
 
-LIB_DEPENDS=	libImath.so:${PORTSDIR}/graphics/ilmbase
+# exact version required to avoid hard-to-debug issues
+LIB_DEPENDS=	libImath-2_2.so.12:${PORTSDIR}/graphics/ilmbase
 
 WRKSRC=		${WRKDIR}/${DISTNAME}
 
@@ -21,6 +22,7 @@ USES=		compiler:features gmake libtool:keepla pathfix pkgconfig
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--disable-ilmbasetest --enable-imfexamples
 USE_LDCONFIG=	yes
+CPPFLAGS+=	-I. -I../IlmImf
 
 # must be linked with -l{thr|pthread} explicitly
 LDFLAGS+=	${PTHREAD_LIBS}
@@ -42,10 +44,17 @@ OPTIONS_SUB=	yes
 
 LARGE_STACK_CONFIGURE_ENABLE=	large-stack
 
-.include <bsd.port.options.mk>
+.include <bsd.port.pre.mk>
 
-MAJORVER=	2_1
-VER=	21
+# If default compiler is GCC, upgrade it because
+# g++ 4.2 is too old to auto-upgrade 0xffffffffffffffffl to
+# a long long integer constant - and has likely more issues.
+.if ${COMPILER_TYPE} == gcc
+USE_GCC=	yes
+.endif
+
+MAJORVER=	2_2
+VER=		22
 
 PLIST_SUB=	MAJORVER=${MAJORVER}
 PLIST_SUB+=	VER=${VER}
@@ -59,7 +68,7 @@ post-patch:
 		-e 's|$$(EXTRA_DIST)||' \
 		${WRKSRC}/doc/Makefile.am ${WRKSRC}/doc/Makefile.in
 
-# too many reports about compileration failures, so sanity check C++
+# too many reports about compilation failures, so sanity check C++
 # library
 _ilm_libcxx=${COMPILER_FEATURES:Mlib*c++}
 pre-configure:
@@ -79,11 +88,12 @@ regression-test regression test check:	build
 	@(cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} check)
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libIlmImf-Imf_${MAJORVER}.so.${VER}
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libIlmImf-${MAJORVER}.so.${VER}
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libIlmImfUtil-${MAJORVER}.so.${VER}
 
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${DOC_FILES1:S|^|${DOCSRCDIR1}/|} ${STAGEDIR}${DOCSDIR}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR2}
 	${INSTALL_DATA} ${DOC_FILES2:S|^|${DOCSRCDIR2}/|} ${STAGEDIR}${DOCSDIR2}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

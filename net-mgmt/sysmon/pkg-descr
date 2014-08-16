@@ -9,4 +9,4 @@ checking capabilities than other tools such as Rover, Nocmon
 Currently supported protocols include SMTP, IMAP, HTTP,TCP,
 UDP, NNTP, and PING tests.
 
-WWW: http://www.sysmon.org/
+WWW: http://puck.nether.net/sysmon/

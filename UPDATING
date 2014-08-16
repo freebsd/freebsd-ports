@@ -5,6 +5,21 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20140815:
+  AFFECTS: users of graphics/ilmbase and graphics/OpenEXR
+  AUTHOR: mandree@FreeBSD.org
+
+  The OpenEXR and ilmbase (Industrial Light and Magic) shared object
+  names have changed.  You must rebuild all packages that require either
+  of these libraries, by using one of these commands:
+
+  # portmaster -r ilmbase -r OpenEXR
+    or
+  # portupgrade -fr graphics/ilmbase graphics/OpenEXR
+
+  The PORTREVISIONS of all 500+ ports that require ilmbase/OpenEXR
+  have been bumped.
+
 20140810:
   AFFECTS: users of lang/ghc and */hs-*
   AUTHOR: haskell@FreeBSD.org

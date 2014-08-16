@@ -29,4 +29,7 @@ post-patch:
 	@${REINPLACE_CMD} -e '/^install:/,$$ s|$$([A-Z_]*DIR)|${STAGEDIR}&| g' \
 		${WRKSRC}/Makefile
 
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+
 .include <bsd.port.mk>

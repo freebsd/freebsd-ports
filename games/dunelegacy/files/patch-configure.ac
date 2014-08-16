@@ -1,0 +1,32 @@
+--- configure.ac.orig	2014-08-15 18:38:46.000000000 +0000
++++ configure.ac	2014-08-15 18:40:54.000000000 +0000
+@@ -16,13 +16,25 @@
+ 
+ AC_SUBST(dunelegacydatadir)
+ 
+-dnl Some flags for gcc
+-CXXFLAGS="-O3 -pipe -pedantic -Wall -Wextra -Wno-unused-parameter -DNDEBUG"
+ dnl Additional flags: -Wconversion -Wno-sign-conversion
+ 
+-dnl Some flags for clang
+-dnl CXXFLAGS="-O3 -pipe -pedantic -Weverything -Wno-sign-conversion -Wno-conversion -Wno-shadow -Wno-missing-noreturn -Wno-padded -Wno-packed -Wno-weak-vtables -Wno-c++11-narrowing -Wno-cast-align -Wno-unreachable-code -Wno-missing-prototypes -Wno-float-equal -Wno-global-constructors -Wno-exit-time-destructors -Wno-format-nonliteral -Wno-unused-macros -Wextra -Wno-unused-parameter"
++AC_MSG_CHECKING([if compiling with clang])
+ 
++AC_COMPILE_IFELSE(
++[AC_LANG_PROGRAM([], [[
++#ifndef __clang__
++       not clang
++#endif
++]])],
++[CLANG=yes], [CLANG=no])
++
++AC_MSG_RESULT([$CLANG])
++
++if test "x$CLANG" = xyes; then
++  CXXFLAGS="-std=c++11 -O3 -pipe -pedantic -Weverything -Wno-sign-conversion -Wno-conversion -Wno-shadow -Wno-missing-noreturn -Wno-padded -Wno-packed -Wno-weak-vtables -Wno-c++11-narrowing -Wno-cast-align -Wno-unreachable-code -Wno-missing-prototypes -Wno-float-equal -Wno-global-constructors -Wno-exit-time-destructors -Wno-format-nonliteral -Wno-unused-macros -Wextra -Wno-unused-parameter"
++else
++  CXXFLAGS="-O3 -pipe -pedantic -Wall -Wextra -Wno-unused-parameter -DNDEBUG"
++fi
+ 
+ dnl test for -ffp-contract=off (gcc >= 4.6) and use -mno-fused-madd instead
+ oldCFLAGS="$CFLAGS"

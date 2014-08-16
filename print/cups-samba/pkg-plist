@@ -1,5 +1,0 @@
-share/cups/drivers/cups6.inf
-share/cups/drivers/cups6.ini
-share/cups/drivers/cupsps6.dll
-share/cups/drivers/cupsui6.dll
-@dirrm share/cups/drivers

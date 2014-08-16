@@ -1,5 +1,5 @@
---- vm/Makefile.orig	2003-08-21 09:23:17.000000000 +0800
-+++ vm/Makefile	2011-10-03 16:34:23.000000000 +0800
+--- vm/Makefile.orig	2003-08-20 21:23:17.000000000 -0400
++++ vm/Makefile	2014-08-15 13:03:43.000000000 -0400
 @@ -19,8 +19,8 @@
  #LDASMOPT		= -lasm
  
@@ -11,7 +11,7 @@
  
  
  # End of configurable Makefile
-@@ -36,11 +36,11 @@ SRC			= grammar.c disasm.c dyn.c hdr.c m
+@@ -36,15 +36,15 @@
  OBJ			= $(SRC:.c=.o)
  SRC_DYN			= elfsh_etdyn.c
  OBJ_DYN			= $(SRC_DYN:.c=.o)
@@ -24,4 +24,9 @@
 +CFLAGS			+= -rdynamic -fPIC -g3 -Wall -Iinclude \
  			-I../libhash/include/ -I../libelfsh/include/ \
  			-DELFSH_INTERN $(DLOPT) $(ASMOPT) $(READLNOPT)
+ 
+-LDFLAGS			= -L../libelfsh/ -lelfsh -L../libhash/ -lhashelfsh \
++LDFLAGS			+= -L../libelfsh/ -lelfsh -L../libhash/ -lhashelfsh \
+ 			-rdynamic -g3 $(LDASMOPT) $(LDREADLNOPT) $(DLOPT)\
+ 			$(EXTRAOPT)
  

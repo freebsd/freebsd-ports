@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	delegate
-PORTVERSION=	9.9.10
-PORTREVISION=	2
+PORTVERSION=	9.9.11
 CATEGORIES=	net www
 MASTER_SITES=	ftp://ftp.delegate.org/pub/DeleGate/
 DISTNAME=	${PORTNAME}${PORTVERSION}

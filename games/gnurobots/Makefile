@@ -44,6 +44,7 @@ DESKTOP_ENTRIES="GNU Robots" "" "${PORTNAME}" \
 post-patch:
 	@${REINPLACE_CMD} -e 's|^CFLAGS=|#CFLAGS=|g' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|#include <pty.h>||g' ${WRKSRC}/src/ui-cmdwin.c
+	@${REINPLACE_CMD} -E 's,(readline.h|history.h),readline/\1,' ${WRKSRC}/src/ui-cmdwin.c
 
 post-install:
 	${INSTALL_DATA} ${_DISTDIR}/${PORTNAME}.png \

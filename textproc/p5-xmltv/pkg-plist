@@ -1,5 +1,7 @@
+bin/tv_augment_tz
 bin/tv_cat
 bin/tv_check
+bin/tv_count
 bin/tv_extractinfo_ar
 bin/tv_extractinfo_en
 bin/tv_find_grabbers
@@ -8,9 +10,8 @@ bin/tv_grab_ch_search
 bin/tv_grab_combiner
 bin/tv_grab_dk_dr
 bin/tv_grab_dtv_la
-bin/tv_grab_ee
 bin/tv_grab_es_laguiatv
-bin/tv_grab_es_miguiatv
+bin/tv_grab_eu_egon
 bin/tv_grab_eu_epgdata
 bin/tv_grab_fi
 bin/tv_grab_fi_sv
@@ -19,22 +20,26 @@ bin/tv_grab_fr_kazer
 bin/tv_grab_hr
 bin/tv_grab_huro
 bin/tv_grab_il
-bin/tv_grab_in
 bin/tv_grab_is
 bin/tv_grab_it
 bin/tv_grab_it_dvb
 bin/tv_grab_na_dd
-bin/tv_grab_na_icons
+bin/tv_grab_na_dtv
 bin/tv_grab_nl
 bin/tv_grab_no_gfeed
 bin/tv_grab_pt
 bin/tv_grab_pt_meo
 bin/tv_grab_se_swedb
+bin/tv_grab_se_tvzon
+bin/tv_grab_uk_atlas
 bin/tv_grab_uk_bleb
+bin/tv_grab_uk_guardian
 bin/tv_grab_uk_rt
+bin/tv_grab_uk_tvguide
 bin/tv_grab_za
 bin/tv_grep
 bin/tv_imdb
+bin/tv_merge
 bin/tv_remove_some_overlapping
 bin/tv_sort
 bin/tv_split
@@ -43,54 +48,9 @@ bin/tv_to_potatoe
 bin/tv_to_text
 bin/tv_validate_file
 bin/tv_validate_grabber
-man/man1/tv_cat.1.gz
-man/man1/tv_check.1.gz
-man/man1/tv_extractinfo_ar.1.gz
-man/man1/tv_extractinfo_en.1.gz
-man/man1/tv_find_grabbers.1.gz
-man/man1/tv_grab_ar.1.gz
-man/man1/tv_grab_ch_search.1.gz
-man/man1/tv_grab_combiner.1.gz
-man/man1/tv_grab_dk_dr.1.gz
-man/man1/tv_grab_dtv_la.1.gz
-man/man1/tv_grab_ee.1.gz
-man/man1/tv_grab_es_laguiatv.1.gz
-man/man1/tv_grab_es_miguiatv.1.gz
-man/man1/tv_grab_eu_epgdata.1.gz
-man/man1/tv_grab_fi.1.gz
-man/man1/tv_grab_fi_sv.1.gz
-man/man1/tv_grab_fr.1.gz
-man/man1/tv_grab_fr_kazer.1.gz
-man/man1/tv_grab_hr.1.gz
-man/man1/tv_grab_huro.1.gz
-man/man1/tv_grab_il.1.gz
-man/man1/tv_grab_in.1.gz
-man/man1/tv_grab_is.1.gz
-man/man1/tv_grab_it.1.gz
-man/man1/tv_grab_it_dvb.1.gz
-man/man1/tv_grab_na_dd.1.gz
-man/man1/tv_grab_na_icons.1.gz
-man/man1/tv_grab_nl.1.gz
-man/man1/tv_grab_no_gfeed.1.gz
-man/man1/tv_grab_pt.1.gz
-man/man1/tv_grab_pt_meo.1.gz
-man/man1/tv_grab_se_swedb.1.gz
-man/man1/tv_grab_uk_bleb.1.gz
-man/man1/tv_grab_uk_rt.1.gz
-man/man1/tv_grab_za.1.gz
-man/man1/tv_grep.1.gz
-man/man1/tv_imdb.1.gz
-man/man1/tv_remove_some_overlapping.1.gz
-man/man1/tv_sort.1.gz
-man/man1/tv_split.1.gz
-man/man1/tv_to_latex.1.gz
-man/man1/tv_to_potatoe.1.gz
-man/man1/tv_to_text.1.gz
-man/man1/tv_validate_file.1.gz
-man/man1/tv_validate_grabber.1.gz
 %%PERL5_MAN3%%/Configure.3.gz
 %%PERL5_MAN3%%/Configure::Writer.3.gz
-%%PERL5_MAN3%%/Lineup.3.gz
+%%PERL5_MAN3%%/Data::Recursive::Encode.3.gz
 %%PERL5_MAN3%%/Options.3.gz
 %%PERL5_MAN3%%/PreferredMethod.3.gz
 %%PERL5_MAN3%%/ValidateFile.3.gz
@@ -113,6 +73,7 @@ man/man1/tv_validate_grabber.1.gz
 %%SITE_PERL%%/XMLTV/Configure.pm
 %%SITE_PERL%%/XMLTV/Configure/Writer.pm
 %%SITE_PERL%%/XMLTV/DST.pm
+%%SITE_PERL%%/XMLTV/Data/Recursive/Encode.pm
 %%SITE_PERL%%/XMLTV/Date.pm
 %%SITE_PERL%%/XMLTV/Description.pm
 %%SITE_PERL%%/XMLTV/GUI.pm
@@ -121,7 +82,6 @@ man/man1/tv_validate_grabber.1.gz
 %%SITE_PERL%%/XMLTV/Grep.pm
 %%SITE_PERL%%/XMLTV/Gunzip.pm
 %%SITE_PERL%%/XMLTV/IMDB.pm
-%%SITE_PERL%%/XMLTV/Lineup.pm
 %%SITE_PERL%%/XMLTV/Memoize.pm
 %%SITE_PERL%%/XMLTV/Mode.pm
 %%SITE_PERL%%/XMLTV/Options.pm
@@ -138,6 +98,55 @@ man/man1/tv_validate_grabber.1.gz
 %%SITE_PERL%%/XMLTV/ValidateGrabber.pm
 %%SITE_PERL%%/XMLTV/Version.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/XMLTV/.packlist
+man/man1/tv_augment_tz.1.gz
+man/man1/tv_cat.1.gz
+man/man1/tv_check.1.gz
+man/man1/tv_count.1.gz
+man/man1/tv_extractinfo_ar.1.gz
+man/man1/tv_extractinfo_en.1.gz
+man/man1/tv_find_grabbers.1.gz
+man/man1/tv_grab_ar.1.gz
+man/man1/tv_grab_ch_search.1.gz
+man/man1/tv_grab_combiner.1.gz
+man/man1/tv_grab_dtv_la.1.gz
+man/man1/tv_grab_es_laguiatv.1.gz
+man/man1/tv_grab_eu_egon.1.gz
+man/man1/tv_grab_eu_epgdata.1.gz
+man/man1/tv_grab_fi.1.gz
+man/man1/tv_grab_fi_sv.1.gz
+man/man1/tv_grab_fr.1.gz
+man/man1/tv_grab_fr_kazer.1.gz
+man/man1/tv_grab_hr.1.gz
+man/man1/tv_grab_huro.1.gz
+man/man1/tv_grab_il.1.gz
+man/man1/tv_grab_is.1.gz
+man/man1/tv_grab_it.1.gz
+man/man1/tv_grab_it_dvb.1.gz
+man/man1/tv_grab_na_dd.1.gz
+man/man1/tv_grab_na_dtv.1.gz
+man/man1/tv_grab_nl.1.gz
+man/man1/tv_grab_no_gfeed.1.gz
+man/man1/tv_grab_pt.1.gz
+man/man1/tv_grab_pt_meo.1.gz
+man/man1/tv_grab_se_swedb.1.gz
+man/man1/tv_grab_se_tvzon.1.gz
+man/man1/tv_grab_uk_atlas.1.gz
+man/man1/tv_grab_uk_bleb.1.gz
+man/man1/tv_grab_uk_guardian.1.gz
+man/man1/tv_grab_uk_rt.1.gz
+man/man1/tv_grab_uk_tvguide.1.gz
+man/man1/tv_grab_za.1.gz
+man/man1/tv_grep.1.gz
+man/man1/tv_imdb.1.gz
+man/man1/tv_merge.1.gz
+man/man1/tv_remove_some_overlapping.1.gz
+man/man1/tv_sort.1.gz
+man/man1/tv_split.1.gz
+man/man1/tv_to_latex.1.gz
+man/man1/tv_to_potatoe.1.gz
+man/man1/tv_to_text.1.gz
+man/man1/tv_validate_file.1.gz
+man/man1/tv_validate_grabber.1.gz
 %%DATADIR%%/tv_grab_eu_epgdata/channel_ids
 %%DATADIR%%/tv_grab_huro/catmap.cz
 %%DATADIR%%/tv_grab_huro/catmap.hu
@@ -145,31 +154,60 @@ man/man1/tv_validate_grabber.1.gz
 %%DATADIR%%/tv_grab_huro/catmap.sk
 %%DATADIR%%/tv_grab_huro/jobmap
 %%DATADIR%%/tv_grab_it/channel_ids
+%%DATADIR%%/tv_grab_it_dvb/channel_ids
 %%DATADIR%%/tv_grab_it_dvb/sky_it.dict
 %%DATADIR%%/tv_grab_it_dvb/sky_it.themes
-%%DATADIR%%/tv_grab_it_dvb/channel_ids
+%%DATADIR%%/tv_grab_uk_atlas/cgi-bin/getatlas.pl
+%%DATADIR%%/tv_grab_uk_atlas/tv_grab_uk_atlas.map.channels.conf
+%%DATADIR%%/tv_grab_uk_atlas/tv_grab_uk_atlas.map.genres.conf
+%%DATADIR%%/tv_grab_uk_atlas/tv_grab_uk_atlas.pa.genres.conf
+%%DATADIR%%/tv_grab_uk_atlas/tv_grab_uk_atlas.user.map.conf
 %%DATADIR%%/tv_grab_uk_bleb/icon_urls
+%%DATADIR%%/tv_grab_uk_guardian/tv_grab_uk_guardian.map.conf
+%%DATADIR%%/tv_grab_uk_rt/channel_icons
 %%DATADIR%%/tv_grab_uk_rt/channel_ids
 %%DATADIR%%/tv_grab_uk_rt/channels_platforms
 %%DATADIR%%/tv_grab_uk_rt/lineups/freesat.map
+%%DATADIR%%/tv_grab_uk_rt/lineups/freesat.xml
+%%DATADIR%%/tv_grab_uk_rt/lineups/freesatfromsky.xml
+%%DATADIR%%/tv_grab_uk_rt/lineups/freesathd.xml
 %%DATADIR%%/tv_grab_uk_rt/lineups/freeview.map
+%%DATADIR%%/tv_grab_uk_rt/lineups/freeview.xml
+%%DATADIR%%/tv_grab_uk_rt/lineups/freeviewhd.xml
+%%DATADIR%%/tv_grab_uk_rt/lineups/lineups.xml
+%%DATADIR%%/tv_grab_uk_rt/lineups/saorview.map
+%%DATADIR%%/tv_grab_uk_rt/lineups/saorview.xml
+%%DATADIR%%/tv_grab_uk_rt/lineups/sky.xml
+%%DATADIR%%/tv_grab_uk_rt/lineups/skyhd.xml
+%%DATADIR%%/tv_grab_uk_rt/lineups/upcireland.xml
+%%DATADIR%%/tv_grab_uk_rt/lineups/upcirelandhd.xml
+%%DATADIR%%/tv_grab_uk_rt/lineups/virgin.xml
+%%DATADIR%%/tv_grab_uk_rt/lineups/virginhd.xml
+%%DATADIR%%/tv_grab_uk_rt/lineups/xmltv-lineups.xsl
 %%DATADIR%%/tv_grab_uk_rt/prog_titles_to_process
 %%DATADIR%%/tv_grab_uk_rt/regional_channels_by_postcode
 %%DATADIR%%/tv_grab_uk_rt/utf8_fixups
+%%DATADIR%%/tv_grab_uk_tvguide/tv_grab_uk_tvguide.map.conf
+%%DATADIR%%/xmltv-lineups.xsd
 %%DATADIR%%/xmltv.dtd
-%%DATADIR%%/xmltv-lineup.dtd
-www/cgi-bin/tv_pick.cgi
+%%CGIDIR%%/tv_pick.cgi
+@dirrm %%SITE_PERL%%/XMLTV/Ask
+@dirrm %%SITE_PERL%%/XMLTV/Configure
+@dirrm %%SITE_PERL%%/XMLTV/Data/Recursive
+@dirrm %%SITE_PERL%%/XMLTV/Data
+@dirrm %%SITE_PERL%%/XMLTV/ProgressBar
+@dirrm %%SITE_PERL%%/XMLTV
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/XMLTV
+@dirrm %%DATADIR%%/tv_grab_eu_epgdata
+@dirrm %%DATADIR%%/tv_grab_huro
+@dirrm %%DATADIR%%/tv_grab_it
+@dirrm %%DATADIR%%/tv_grab_it_dvb
+@dirrm %%DATADIR%%/tv_grab_uk_atlas/cgi-bin
+@dirrm %%DATADIR%%/tv_grab_uk_atlas
+@dirrm %%DATADIR%%/tv_grab_uk_bleb
+@dirrm %%DATADIR%%/tv_grab_uk_guardian
 @dirrm %%DATADIR%%/tv_grab_uk_rt/lineups
 @dirrm %%DATADIR%%/tv_grab_uk_rt
-@dirrm %%DATADIR%%/tv_grab_uk_bleb
-@dirrm %%DATADIR%%/tv_grab_it_dvb
-@dirrm %%DATADIR%%/tv_grab_it
-@dirrm %%DATADIR%%/tv_grab_huro
-@dirrm %%DATADIR%%/tv_grab_eu_epgdata
+@dirrm %%DATADIR%%/tv_grab_uk_tvguide
 @dirrm %%DATADIR%%
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/XMLTV
-@dirrm %%SITE_PERL%%/XMLTV/ProgressBar
-@dirrm %%SITE_PERL%%/XMLTV/Configure
-@dirrm %%SITE_PERL%%/XMLTV/Ask
-@dirrm %%SITE_PERL%%/XMLTV
-@dirrmtry www/cgi-bin
+@dirrmtry %%CGIDIR%%

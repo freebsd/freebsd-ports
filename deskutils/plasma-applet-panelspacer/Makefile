@@ -2,7 +2,7 @@
 
 PORTNAME=	panelspacer
 PORTVERSION=	0.2
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	deskutils kde
 MASTER_SITES=	http://danakil.free.fr/linux/releases/${PORTNAME}-${PORTVERSION}/
 PKGNAMEPREFIX=	plasma-applet-

@@ -1,9 +1,7 @@
 bin/ipa_sdb_dump
 include/ipa_sdb.h
 include/ipa_sdb_config.h
-lib/ipa_db_sdb.la
 lib/ipa_db_sdb.so
-lib/ipa_st_sdb.la
 lib/ipa_st_sdb.so
 man/man5/ipa_sdb.5.gz
 man/man8/ipa_db_sdb.8.gz

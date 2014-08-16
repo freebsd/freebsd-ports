@@ -3,6 +3,7 @@
 
 PORTNAME=	kde-l10n
 PORTVERSION=	${KDE4_VERSION}
+PORTREVISION=	1
 CATEGORIES=	misc kde spanish
 
 MAINTAINER=	kde@FreeBSD.org

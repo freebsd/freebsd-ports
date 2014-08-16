@@ -1,6 +1,18 @@
---- src/Makefile.in.orig	2014-06-07 13:35:52.417434266 +0800
-+++ src/Makefile.in	2014-06-07 13:36:02.841435177 +0800
-@@ -16,7 +16,7 @@ main.o:		main.c ../include/sehdr.h ../in
+--- src/Makefile.in.orig	2003-09-20 10:23:28.000000000 -0400
++++ src/Makefile.in	2014-08-15 12:59:59.000000000 -0400
+@@ -1,9 +1,9 @@
+ CC=gcc
+-INC=-I../include
++INC=-I../include ${CPPFLAGS}
+ CFLAGS=@CFLAGS@
+ PREFIX=@prefix@
+ BINDIR=$(PREFIX)/bin
+-LIBS=@LIBS@
++LIBS=@LIBS@ ${LDFLAGS}
+ 
+ elf:		main.o elf.o
+ 		$(CC) $(CFLAGS) $(INC) main.o elf.o -o elf $(LIBS)
+@@ -16,7 +16,7 @@
  		$(CC) $(CFLAGS) $(INC) -c main.c
  
  install:	elf

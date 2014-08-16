@@ -3,7 +3,7 @@
 
 PORTNAME=	arx-libertatis
 PORTVERSION=	1.0.3
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	games
 MASTER_SITES=	http://cloud.github.com/downloads/arx/ArxLibertatis/ \
 		http://mirror.amdmi3.ru/distfiles/

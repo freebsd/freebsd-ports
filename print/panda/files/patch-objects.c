@@ -1,5 +1,5 @@
---- objects.c.orig	Tue Apr 13 09:46:24 2004
-+++ objects.c	Wed Jun 27 23:25:53 2007
+--- ./objects.c.orig	2004-04-13 02:46:24.000000000 +0200
++++ ./objects.c	2014-08-15 19:09:39.000000000 +0200
 @@ -99,7 +99,7 @@
    created->children = (panda_child *) panda_xmalloc (sizeof (panda_child));
  

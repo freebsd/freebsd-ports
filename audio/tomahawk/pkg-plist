@@ -304,7 +304,7 @@ lib/cmake/Tomahawk/TomahawkLibraryDepends-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/Tomahawk/TomahawkLibraryDepends.cmake
 lib/cmake/Tomahawk/TomahawkUse.cmake
 lib/libtomahawk_account_google.so
-lib/libtomahawk_account_twitter.so
+%%QTWEETLIB%%lib/libtomahawk_account_twitter.so
 lib/libtomahawk_account_xmpp.so
 lib/libtomahawk_account_zeroconf.so
 lib/libtomahawk_infoplugin_charts.so

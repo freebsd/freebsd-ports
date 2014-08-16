@@ -104,6 +104,9 @@ pre-patch:
 	@${REINPLACE_CMD} -e 's|locate_file "libglib-2\.0\.so".*|v1="" \&\& v2="" \&\& v3=""|' \
 		-e 's|locate_file "openssl/md5\.h".*|v1=""|' ${WRKSRC}/configure.sh
 
+	@${REINPLACE_CMD} -e 's|gcc|${CC}|; s|g++|${CXX}|; /^INCLUDE/s|/usr/local|${LOCALBASE}|' \
+		${WRKSRC}/src/Makefile ${WRKSRC}/lib/Makefile
+
 do-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}/tools/oracle
 	${INSTALL_DATA} ${WRKSRC}/addon/netams.conf ${STAGEDIR}${PREFIX}/etc/netams.conf.sample

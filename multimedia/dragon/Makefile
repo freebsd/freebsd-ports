@@ -3,6 +3,7 @@
 
 PORTNAME=	dragon
 PORTVERSION=	${KDE4_VERSION}
+PORTREVISION=	1
 CATEGORIES=	multimedia kde
 MASTER_SITES=	KDE/${KDE4_BRANCH}/${PORTVERSION}/src
 # Avoid clash with devel/dragon

@@ -1,0 +1,8 @@
+OWFS -- 1-Wire file system.
+OWFS is an easy way to use the powerful 1-wire system of Dallas/Maxim.
+
+OWFS is a simple and flexible program to monitor and control the physical
+environment. You can write scripts to read temperature, flash lights, write
+to an LCD, log and graph, ...
+
+WWW: http://www.owfs.org/

@@ -17,9 +17,9 @@
 -	gcc -O ${CFLAGS} -c mpglib.c
 -	gcc -O ${CFLAGS} -c main.c
 -	gcc main.o mpglib.o -o ${NAME} -lm -lreadline -lncurses
-+	cc -O ${CFLAGS} -c mpglib.c
-+	cc -O ${CFLAGS} -c main.c
-+	cc main.o mpglib.o -o ${NAME} -lm -lreadline -lncurses
++	${CC} ${CFLAGS} ${CPPFLAGS} -c mpglib.c
++	${CC} ${CFLAGS} ${CPPFLAGS} -c main.c
++	${CC} ${CFLAGS} main.o mpglib.o -o ${NAME} ${LDFLAGS} -lm -lreadline -lncurses
  
  i386:
 -	gcc -Wall -O -c mpglib.c

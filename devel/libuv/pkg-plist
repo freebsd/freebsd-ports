@@ -1,5 +1,6 @@
 include/uv-bsd.h
 include/uv-errno.h
+include/uv-threadpool.h
 include/uv-unix.h
 include/uv-version.h
 include/uv.h

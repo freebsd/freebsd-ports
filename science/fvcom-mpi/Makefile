@@ -1,7 +1,7 @@
 # Created by: Jason Bacon <jwbacon@tds.net>
 # $FreeBSD$
 
-PORTREVISION=	3
+PORTREVISION=	4
 PKGNAMESUFFIX=	-openmpi
 
 MPIPREFIX=	mpi/openmpi/

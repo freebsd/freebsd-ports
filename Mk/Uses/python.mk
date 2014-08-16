@@ -315,7 +315,7 @@ USE_PYTHON+=	noegginfo
 # COMPAT KNOBS END
 
 # Make each individual feature available as _PYTHON_FEATURE_<FEATURENAME>
-.for var in ${USE_PYTHON:S/,/ /g}
+.for var in ${USE_PYTHON}
 _PYTHON_FEATURE_${var:tu}=	yes
 .endfor
 

@@ -289,6 +289,7 @@ go/misc/cgo/test/issue8148.go
 go/misc/cgo/test/issue8331.h
 go/misc/cgo/test/issue8331a.go
 go/misc/cgo/test/issue8331b.go
+go/misc/cgo/test/issue8441.go
 go/misc/cgo/test/setgid_linux.go
 go/misc/cgo/test/sleep_windows_386.go
 go/misc/cgo/testasan/main.go

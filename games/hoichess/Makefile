@@ -20,10 +20,12 @@ OPTIONS_DEFINE=	DOCS
 post-patch:
 	@${RM} ${WRKSRC}/src/lib/getopt.h
 	@${REINPLACE_CMD} -e '1,/^LDFLAG/d' ${WRKSRC}/src/Makefile.config
-	@${ECHO} 'INSTALL = ${INSTALL}' >>  ${WRKSRC}/src/Makefile.config
+	@${ECHO_CMD} 'INSTALL = ${INSTALL}' >>  ${WRKSRC}/src/Makefile.config
+	@${ECHO_CMD} 'CXXFLAGS += $${CPPFLAGS}' >> ${WRKSRC}/src/Makefile.config
 	@${REINPLACE_CMD} -Ee '/INSTALL|install/s/ -D / /' \
 		${WRKSRC}/src/Makefile ${WRKSRC}/Makefile
 	@${REINPLACE_CMD} -e '1,/^####/d' ${WRKSRC}/src/Makefile
+	@${ECHO_CMD} 'LIBPATH = ${LDFLAGS}' >> ${WRKSRC}/src/Makefile
 	@${REINPLACE_CMD} -e '/^prefix/s|= .*|= ${STAGEDIR}$${PREFIX}|' \
 		-e '/bindir/s/games/bin/; /mandir/s/share//' ${WRKSRC}/Makefile
 

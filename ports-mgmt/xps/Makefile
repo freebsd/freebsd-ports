@@ -14,7 +14,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	serpent7776
 GH_COMMIT=	719165b
 
-USE_PYTHON=	yes
+USES=		python
 NO_BUILD=	yes
 
 PLIST_FILES=	bin/xps \

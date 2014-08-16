@@ -2,13 +2,15 @@
 # $FreeBSD$
 
 PORTNAME=	sysmon
-PORTVERSION=	0.92.2
+PORTVERSION=	0.93
 CATEGORIES=	net-mgmt
 MASTER_SITES=	ftp://puck.nether.net/pub/jared/ \
 		http://titan.oxeo.com/mirror/sysmon.org/
 
 MAINTAINER=	mk@oxeo.com
 COMMENT=	Network tool designed for high performance and accurate monitoring
+
+LICENSE=	GPLv2
 
 DOCS=		Changes.html binaries.html config.html docs.html index.html \
 		jclient.jpg net-example.png sysmon.conf.man.html sysmon.jpg \

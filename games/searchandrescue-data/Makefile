@@ -8,17 +8,18 @@ MASTER_SITES=	SF/${PORTNAME:tl}/Data_Files/
 PKGNAMESUFFIX=	-data
 DISTNAME=	${PORTNAME}${PKGNAMESUFFIX}-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	games@FreeBSD.org
 COMMENT=	The data files for SearchAndRescue flight simulator
 
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
+STAGEDIR=	${WRKDIR}/.stage
+NO_ARCH=	yes
 
 DATADIR=	${PREFIX}/share/${PORTNAME:tl}
 
-NO_STAGE=	yes
 do-install:
-	${MKDIR} ${DATADIR}
-	cd ${WRKSRC} && ${COPYTREE_SHARE} \* ${DATADIR}
+	${MKDIR} ${STAGEDIR}${DATADIR}
+	cd ${WRKSRC} && ${COPYTREE_SHARE} \* ${STAGEDIR}${DATADIR}
 
 .include <bsd.port.mk>
