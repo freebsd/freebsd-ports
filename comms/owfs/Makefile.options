@@ -1,0 +1,62 @@
+# $FreeBSD$
+
+OPTIONS_DEFINE = OWDEBUG \
+	OWSHELL \
+	OWNET \
+	I2C \
+	OWHTTPD \
+	OWFTPD \
+	OWSERVER \
+	OWTAP \
+	OWMALLOC \
+	OWTRAFFIC \
+	OWMON \
+	OWCAPI \
+	OWPERL \
+	OWPHP \
+	OWPYTHON \
+	OWTCL \
+	PROFILING \
+	OWFS \
+	ZERO \
+	USB
+
+# Options disabled
+#	PARPORT	- linux/parport.h not available
+#	W1			- no support on FreeBSD
+
+
+OWDEBUG_DESC=		Enable debug output
+OWSHELL_DESC=		Enable CLI utils
+OWNET_DESC=		Enable network communication
+I2C_DESC=		Enable i2c (DS2482-x00) support (UNTESTED)
+OWHTTPD_DESC=		Enable owhttpd HTTP server
+OWFTPD_DESC=		Enable owftpd FTP server
+OWSERVER_DESC=		Enable owserver
+OWMALLOC_DESC=		Enable malloc checking
+OWTRAFFIC_DESC=		Enable debug bus traffic reports
+OWTAP_DESC=		Enable owtap module (X11)
+OWMON_DESC=		Enable owmon module (X11)
+OWCAPI_DESC=		Enable C API
+OWPERL_DESC=		Enable Perl binding
+OWPHP_DESC=		Enable PHP binding (BROKEN)
+OWPYTHON_DESC=		Enable Python binding 
+OWTCL_DESC=		Enable TCL binding
+PROFILING_DESC=		Enable profiling (BROKEN)
+OWFS_DESC=		Enable FUSE support (UNTESTED)
+ZERO_DESC=		Enable Zeroconf/bonjour (UNTESTED)
+USB_DESC=		Enable 1-Wire usb DS2490 support
+
+# Options disabled
+#PARPORT_DESC=		Enable 1-Wire parallel port DS1410E support
+#W1_DESC=Enable w1 support
+
+OPTIONS_DEFAULT=OWDEBUG\
+	OWSHELL\
+	OWNET\
+	OWHTTPD\
+	OWFTPD\
+	OWSERVER\
+	OWCAPI\
+	USB
+
