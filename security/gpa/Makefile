@@ -4,13 +4,13 @@
 PORTNAME=	gpa
 PORTVERSION=	0.9.4
 CATEGORIES=	security
-MASTER_SITES=	${MASTER_SITE_GNUPG}
-MASTER_SITE_SUBDIR=	gpa
+MASTER_SITES=	GNUPG/gpa
 
 MAINTAINER=	jhale@FreeBSD.org
 COMMENT=	GTK2+ frontend for the GNU Privacy Guard
 
 LICENSE=	GPLv3
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libassuan.so:${PORTSDIR}/security/libassuan \
 		libgpgme.so:${PORTSDIR}/security/gpgme
@@ -34,7 +34,7 @@ NLS_CONFIGURE_ENABLE=	nls
 .include <bsd.port.options.mk>
 
 .if !exists(${LOCALBASE}/bin/gpgsm)
-IGNORE=		requires gpgsm. (Re)Install security/gnupg with the GPGSM option ON, then rebuild security/gpgme if installed
+IGNORE=		requires gpgsm. (Re)Install security/gnupg with the GPGSM option ON
 .endif
 
 .include <bsd.port.mk>
