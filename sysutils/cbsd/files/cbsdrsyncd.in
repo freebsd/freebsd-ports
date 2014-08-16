@@ -10,6 +10,7 @@
 #
 
 . /etc/rc.subr
+. /etc/rc.conf
 
 name="cbsdrsyncd"
 rcvar=cbsdrsyncd_enable
@@ -17,7 +18,7 @@ rcvar=cbsdrsyncd_enable
 command="%%PREFIX%%/bin/rsync"
 command_args="--daemon"
 pidfile="/var/run/$name.pid"
-required_files="${cbsd_workdir}/etc/$name.conf"
+required_files="${cbsd_workdir}/etc/rsyncd.conf"
 
 # read configuration and set defaults
 load_rc_config "$name"

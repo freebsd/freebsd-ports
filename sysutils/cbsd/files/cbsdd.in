@@ -60,6 +60,7 @@ pidfile="/var/run/$name.pid"
 command_args="&"
 
 cbsdd_prestart() {
+	%%PREFIX%%/bin/cbsd task mode=flushall > /dev/null 2>&1
 	/usr/bin/find ${ftmpdir} -depth 1 -maxdepth 1 -type f -exec rm -f {} \;
 	%%PREFIX%%/bin/cbsd sysinv mode=update
 	%%PREFIX%%/bin/cbsd netinv
@@ -67,7 +68,7 @@ cbsdd_prestart() {
 	. ${inventory}
 
 	[ -n "$nat_enable" ] && %%PREFIX%%/bin/cbsd naton
-	/usr/sbin/daemon ${rcddir}/jails-astart start
+	/usr/sbin/daemon -f ${rcddir}/jails-astart start
 }
 
 cbsdd_prestop()
