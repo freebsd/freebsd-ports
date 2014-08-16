@@ -3,7 +3,7 @@
 
 PORTNAME=	tcltls
 PORTVERSION=	1.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel tcl
 MASTER_SITES=	SF/tls/tls/${PORTVERSION}
 DISTNAME=	tls${PORTVERSION}-src
@@ -27,7 +27,8 @@ CONFIGURE_ARGS+=--exec-prefix=${PREFIX} \
 
 TCLPKG=		tls${PORTVERSION}
 WRKSRC=		${WRKDIR}/${TCLPKG}
-PLIST_FILES=	lib/${TCLPKG}/lib${TCLPKG}.so \
+PLIST_FILES=	include/tls.h \
+		lib/${TCLPKG}/lib${TCLPKG}.so \
 		lib/${TCLPKG}/pkgIndex.tcl \
 		lib/${TCLPKG}/tls.tcl
 PLIST_DIRS=	lib/${TCLPKG}
