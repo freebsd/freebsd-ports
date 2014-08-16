@@ -25,9 +25,9 @@ include/timbl/Types.h
 include/timbl/XMLtools.h
 include/timbl/neighborSet.h
 lib/libtimbl.a
-lib/libtimbl.la
 lib/libtimbl.so
 lib/libtimbl.so.3
+lib/libtimbl.so.3.0.0
 libdata/pkgconfig/timbl.pc
 %%EXAMPLESDIR%%/cross_val.test
 %%EXAMPLESDIR%%/dimin.script

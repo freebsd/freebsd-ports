@@ -3,7 +3,7 @@
 
 PORTNAME=	timbl
 PORTVERSION=	6.4.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math
 MASTER_SITES=	http://ilk.uvt.nl/downloads/pub/software/
 
@@ -13,9 +13,8 @@ COMMENT=	Tilburg Memory Based Learner
 LIB_DEPENDS=	libxml2.so:${PORTSDIR}/textproc/libxml2
 
 GNU_CONFIGURE=	yes
-USES=		gmake pathfix pkgconfig
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+INSTALL_TARGET=	install-strip
+USES=		gmake libtool pathfix pkgconfig
 USE_LDCONFIG=	yes
 
 post-patch:
