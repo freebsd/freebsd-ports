@@ -117,7 +117,7 @@ CONFIGURE_ARGS+=--purple=0
 
 post-patch:
 	@${REINPLACE_CMD} \
-		-e "s|^EFLAGS=|EFLAGS=${LDFLAGS}|" \
+		-e "s|^\(EFLAGS=.*\)|\1 ${LDFLAGS}|" \
 		${WRKSRC}/configure
 
 	@${REINPLACE_CMD} \
