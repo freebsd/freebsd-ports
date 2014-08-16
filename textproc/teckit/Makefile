@@ -4,7 +4,7 @@
 PORTNAME=	teckit
 PORTVERSION=	2.5.1
 PORTREVISION=	1
-CATEGORIES=	textproc
+CATEGORIES=	textproc converters
 MASTER_SITES=	http://scripts.sil.org/svn-view/teckit/TAGS/ \
 		http://anthesphoria.net/FreeBSD/ports/distfiles/
 DISTNAME=	TECkit_${PORTVERSION:S|.|_|g}
