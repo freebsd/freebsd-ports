@@ -152,9 +152,6 @@ do-install:
 .endfor
 .endif
 
-post-install:
-	@${CAT} ${PKGMESSAGE}
-
 install-user: extract
 .if !defined(LANG)
 	@${ECHO_MSG} "Please call as:  make install-user LANG=<lang>"
