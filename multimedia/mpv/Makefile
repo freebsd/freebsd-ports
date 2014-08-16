@@ -3,6 +3,7 @@
 
 PORTNAME=	mpv
 PORTVERSION=	0.5.0
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	multimedia audio
 MASTER_SITES=	GH:0 GHC:0 http://ftp.waf.io/pub/release/:1 \
@@ -28,8 +29,7 @@ GH_COMMIT=	88f247c
 
 WAF_VERSION=	1.7.16
 
-USES=		compiler:c11 desktop-file-utils iconv lua pkgconfig
-USE_PYTHON_BUILD=	yes
+USES=		compiler:c11 desktop-file-utils iconv lua pkgconfig python:build
 USE_XORG=	x11 xv xxf86vm
 USE_LDCONFIG=	yes
 INSTALLS_ICONS=	yes
@@ -47,11 +47,12 @@ CONFIGURE_ARGS=	--prefix=${PREFIX} \
 		--disable-portaudio \
 		--disable-pdf
 
-OPTIONS_DEFINE=		BS2B ENCA LADSPA LCMS2 LIBGUESS LIRC
+OPTIONS_DEFINE=		BS2B ENCA LADSPA LCMS2 LIBGUESS LIRC ZSH
 OPTIONS_GROUP=		IN VO AO
 OPTIONS_GROUP_IN=	CDIO LIBBLURAY V4L QUVI SMB
 OPTIONS_GROUP_VO=	CACA OPENGL VAAPI VDPAU XINERAMA
 OPTIONS_GROUP_AO=	JACK PULSEAUDIO
+OPTIONS_SUB=		yes
 
 BS2B_DESC=	Enable Bauer Stereophonic-to-Binaural DSP support
 ENCA_DESC=	Enable encoding detection support
@@ -78,6 +79,10 @@ LIBGUESS_CONFIGURE_ENABLE=	libguess
 
 LIRC_LIB_DEPENDS=		liblirc_client.so:${PORTSDIR}/comms/lirc
 LIRC_CONFIGURE_ENABLE=		lirc
+
+ZSH_USES=			perl5
+ZSH_USE=			PERL5=build
+ZSH_CONFIGURE_ENABLE=		zsh-comp
 
 CDIO_LIB_DEPENDS=		libcdio_paranoia.so:${PORTSDIR}/sysutils/libcdio-paranoia
 CDIO_CONFIGURE_ENABLE=		cdda
@@ -125,6 +130,7 @@ post-extract:
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/pkgconfig/mpv.pc|data/pkgconfig/mpv.pc|g' \
+		-e 's|/zsh/vendor-completions|/zsh/site-functions|' \
 		${WRKSRC}/wscript_build.py
 	@${FIND} ${WRKSRC}/DOCS/man -name '*.rst' | ${XARGS} ${REINPLACE_CMD} \
 		-e 's|/usr/local|${PREFIX}|g'
