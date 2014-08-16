@@ -5,10 +5,10 @@
  		"path_cactilog" => array(
  			"friendly_name" => "Cacti Log File Path",
 -			"description" => "The path to your Cacti log file (if blank, defaults to <path_cacti>/log/cacti.log)",
-+			"description" => "The path to your Cacti log file (if blank, defaults to /var/log/cacti.log)",
++			"description" => "The path to your Cacti log file (if blank, defaults to /var/log/cacti/log)",
  			"method" => "filepath",
 -			"default" => $config["base_path"] . "/log/cacti.log",
-+			"default" => "/var/log/cacti/cacti.log",
++			"default" => "/var/log/cacti/log",
  			"max_length" => "255"
  			),
  		"pollerpaths_header" => array(
