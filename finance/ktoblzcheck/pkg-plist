@@ -3,15 +3,15 @@ include/iban.h
 include/ktoblzcheck.h
 lib/libktoblzcheck.so
 lib/libktoblzcheck.so.1
-lib/libktoblzcheck.so.1.5.22
+lib/libktoblzcheck.so.1.5.23
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/ktoblzcheck.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/ktoblzcheck.pyc
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/ktoblzcheck.pyo
 libdata/pkgconfig/ktoblzcheck.pc
 man/man1/ktoblzcheck.1.gz
-share/ktoblzcheck/bankdata_20131209.txt
-share/ktoblzcheck/bankdata_20140303.txt
-share/ktoblzcheck/bundesbank.pl
-share/ktoblzcheck/ibandata.txt
-share/ktoblzcheck/online_update.pl
-@dirrm share/ktoblzcheck
+%%DATADIR%%/bankdata_20140609.txt
+%%DATADIR%%/bankdata_20140908.txt
+%%DATADIR%%/bundesbank.pl
+%%DATADIR%%/ibandata.txt
+%%DATADIR%%/online_update.pl
+@dirrmtry %%DATADIR%%
