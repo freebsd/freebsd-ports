@@ -1,0 +1,11 @@
+--- ./src/Makefile.in.orig	2014-08-16 19:38:31.000000000 -0400
++++ ./src/Makefile.in	2014-08-16 19:38:57.000000000 -0400
+@@ -34,7 +34,7 @@
+ LDFLAGS         = @LDFLAGS@
+ SYS_INCLUDES    = @SYS_INCLUDES@
+ INCLUDE         = -I. -I./include -I$(top_include)
+-CFLAGS          = @CFLAGS@ $(INCLUDE) $(SYS_INCLUDES) $(DEFS)
++CFLAGS          = @CFLAGS@ $(INCLUDE) $(SYS_INCLUDES) @CPPFLAGS@ $(DEFS)
+ 
+ # Libraries
+ 
