@@ -13,13 +13,13 @@ DISTNAME=	python-musicbrainz2-${DISTVERSION}
 MAINTAINER=	jhale@FreeBSD.org
 COMMENT=	Next Generation Python bindings for MusicBrainz
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING.txt
 
 LIB_DEPENDS=	libdiscid.so:${PORTSDIR}/audio/libdiscid
 
-USE_PYTHON=	2
-USE_PYDISTUTILS=	yes
+USES=		python:2
+PYTHON_FEATURES=	autoplist distutils
 PYDISTUTILS_PKGNAME=	python-musicbrainz2
 
 .include <bsd.port.mk>
