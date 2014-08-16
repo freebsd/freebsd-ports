@@ -8,10 +8,10 @@
 -	install -D -m 644 gracetmpl.a $(LIB_PREFIX)/gracetmpl.a
 -	install -D -m 755 gracetmpldemo $(BIN_PREFIX)/gracetmpldemo
 -	install -D -m 755 gracetmpl-config $(BIN_PREFIX)/gracetmpl-config
-+	${BSD_INSTALL_DATA} gracetmpl.h $(INC_PREFIX)/gracetmpl.h
-+	${BSD_INSTALL_DATA} gracetmpl.a $(LIB_PREFIX)/libgracetmpl.a
-+	${BSD_INSTALL_PROGRAM} gracetmpldemo $(BIN_PREFIX)/gracetmpldemo
-+	${BSD_INSTALL_SCRIPT} gracetmpl-config $(BIN_PREFIX)/gracetmpl-config
++	${BSD_INSTALL_DATA} gracetmpl.h $(DESTDIR)$(INC_PREFIX)/gracetmpl.h
++	${BSD_INSTALL_DATA} gracetmpl.a $(DESTDIR)$(LIB_PREFIX)/libgracetmpl.a
++	${BSD_INSTALL_PROGRAM} gracetmpldemo $(DESTDIR)$(BIN_PREFIX)/gracetmpldemo
++	${BSD_INSTALL_SCRIPT} gracetmpl-config $(DESTDIR)$(BIN_PREFIX)/gracetmpl-config
  
  gracetmpl-config: gracetmpl-config.in Makefile.defs
  	sed -e 's!__PREFIX__!$(PREFIX)!g' \
