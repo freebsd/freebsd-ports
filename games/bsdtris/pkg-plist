@@ -1,1 +1,6 @@
+@group games
 bin/bsdtris
+@group
+man/man6/bsdtris.6.gz
+@exec touch /var/games/bsdtris.scores ; chmod 664 /var/games/bsdtris.scores ; chgrp games /var/games/bsdtris.scores
+@unexec if test ! -s /var/games/bsdtris.scores; then rm -f /var/games/bsdtris.scores; fi
