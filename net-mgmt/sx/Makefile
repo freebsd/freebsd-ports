@@ -3,6 +3,7 @@
 
 PORTNAME=	sx
 PORTVERSION=	0.4
+PORTREVISION=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://cdn.skylable.com/source/
 
