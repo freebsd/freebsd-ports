@@ -1,12 +1,7 @@
 bin/r2dtmf_detect
 bin/r2test
-@unexec if cmp -s %D/etc/r2proto.conf %D/etc/r2proto.conf-dist; then rm -f %D/etc/r2proto.conf; fi
-etc/r2proto.conf-dist
-@exec if test ! -e %D/etc/r2proto.conf; then cp -p %D/etc/r2proto.conf-dist %D/etc/r2proto.conf; fi
-@unexec if cmp -s %D/etc/r2test.conf %D/etc/r2test.conf-dist; then rm -f %D/etc/r2test.conf; fi
-etc/r2test.conf-dist
-@exec if test ! -e %D/etc/r2test.conf; then cp -p %D/etc/r2test.conf-dist %D/etc/r2test.conf; fi
-@exec false
+@sample etc/r2proto.conf.sample
+@sample etc/r2test.conf.sample
 include/openr2.h
 include/openr2/r2chan.h
 include/openr2/r2context.h
@@ -14,9 +9,9 @@ include/openr2/r2log.h
 include/openr2/r2proto.h
 include/openr2/r2utils.h
 lib/libopenr2.a
-lib/libopenr2.la
 lib/libopenr2.so
-lib/libopenr2.so.4
+lib/libopenr2.so.3
+lib/libopenr2.so.3.1.1
 man/man5/r2test.conf.5.gz
 man/man8/r2test.8.gz
 @dirrm include/openr2
