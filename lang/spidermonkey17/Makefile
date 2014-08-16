@@ -21,7 +21,7 @@ MAKE_ARGS+=	JS_THREADSAFE=YES \
 		LDFLAGS="-L${LOCALBASE}/lib"
 CFLAGS+=	-I${LOCALBASE}/include/nspr
 
-USES=		gmake
+USES=		gmake readline
 MAKEFILE=	Makefile.ref
 ALL_TARGET=	${OPSYS}`${UNAME} -r`_DBG.OBJ/js
 MAKE_ENV+=	CCC="${CXX}"
