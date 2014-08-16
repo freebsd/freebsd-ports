@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	leofs
-PORTVERSION=	1.0.2
-PORTREVISION=	2
+PORTVERSION=	1.1.0
 CATEGORIES=	databases
 
 MAINTAINER=	trociny@FreeBSD.org
@@ -23,8 +22,8 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/erlang16/bin/erlc:${PORTSDIR}/lang/erlang-runtim
 USE_GITHUB=	yes
 GH_ACCOUNT=	leo-project
 GH_PROJECT=	leofs
-GH_TAGNAME=	26c99d1
-GH_COMMIT=	26c99d1
+GH_TAGNAME=	f558d09
+GH_COMMIT=	f558d09
 
 LEOFS_USER=	leofs
 LEOFS_GROUP=	leofs
@@ -70,37 +69,45 @@ MAKE_JOBS_UNSAFE=yes
 MAKE_ENV=	PATH=${LOCALBASE}/lib/erlang16/bin:${PATH}
 
 LEOFS_DEPS=	\
-	leo-project/leo_gateway=${PORTVERSION}?498fa83:leo_gateway \
-	leo-project/leo_manager=${PORTVERSION}?ec208bc:leo_manager \
-	leo-project/leo_storage=${PORTVERSION}?b1e6112:leo_storage \
-	basho/bitcask=1.6.7?807b473:bitcask \
-	basho/eleveldb=1.4.7?98a465d:eleveldb \
-	basho/leveldb=1.4.7?b1678e6:leveldb \
+	leo-project/leo_gateway=${PORTVERSION}?977b207:leo_gateway \
+	leo-project/leo_manager=${PORTVERSION}?b955903:leo_manager \
+	leo-project/leo_storage=${PORTVERSION}?69b3957:leo_storage \
+	DeadZen/goldrush=0.1.6?71e6321:goldrush \
+	basho/cuttlefish=origin/develop?5ae951f:cuttlefish \
+	basho/eleveldb=1.4.10?a84b18c:eleveldb \
+	basho/lager=2.0.3?b6b6ceb:lager \
+	basho/leveldb=1.4.10?be8f1f4:leveldb \
 	boundary/bear=0.8.1?5f99806:bear \
-	boundary/folsom=0.8.1?015c646:folsom \
-	davisp/jiffy=0.8.5?d16a4fd:jiffy \
-	eproxus/meck=0.6.2?2447206:meck \
+	boundary/folsom=4824aec?4824aec:folsom \
+	davisp/jiffy=0.11.3?99867af:jiffy \
+	eproxus/meck=0.8.2?dde7590:meck \
 	extend/cowboy=0.8.6?9eaee45:cowboy \
+	extend/cowlib=0.6.2?e2ffefe:cowlib \
 	extend/ranch=0.8.4?4f70a16:ranch \
-	leo-project/erlang-lz4=0.2.1?74a475a:lz4 \
-	leo-project/leo_backend_db=1.0.3?502a3b5:leo_backend_db \
-	leo-project/leo_cache=0.4.20?501d8cd:leo_cache \
-	leo-project/leo_commons=1.0.1?90b1b96:leo_commons \
-	leo-project/leo_dcerl=0.2.8?2ca267d:leo_dcerl \
-	leo-project/leo_logger=1.0.2?7b90fad:leo_logger \
-	leo-project/leo_mcerl=0.2.10?1fb1ac8:leo_mcerl \
-	leo-project/leo_mq=1.0.3?f425615:leo_mq \
-	leo-project/leo_object_storage=1.0.4?54cf0f7:leo_object_storage \
-	leo-project/leo_ordning_reda=0.10.3?be722bb:leo_ordning_reda \
-	leo-project/leo_pod=0.6.0?9a7de8b:leo_pod \
-	leo-project/leo_redundant_manager=1.8.1?abb473a:leo_redundant_manager \
-	leo-project/leo_rpc=0.8.3?073ef14:leo_rpc \
-	leo-project/leo_s3_libs=1.0.1?4ada19b:leo_s3_libs \
-	leo-project/leo_statistics=1.0.2?7ba5f23:leo_statistics \
+	jcomellas/getopt=v0.4.3?659a28f:getopt \
+	leo-project/bitcask=1.7.0?97d9345:bitcask \
+	leo-project/erlang-lz4=0.2.2?80a5777:lz4 \
+	leo-project/erpcgen=0.2.2?2e9202d:erpcgen \
+	leo-project/leo_backend_db=1.0.8?b203e0f:leo_backend_db \
+	leo-project/leo_cache=0.4.23?77f7a07:leo_cache \
+	leo-project/leo_commons=1.0.4?31ab032:leo_commons \
+	leo-project/leo_dcerl=0.2.10?c8a9455:leo_dcerl \
+	leo-project/leo_logger=1.0.4?ae699ff:leo_logger \
+	leo-project/leo_mcerl=0.4.0?0d445f2:leo_mcerl \
+	leo-project/leo_mq=1.0.8?0c545de:leo_mq \
+	leo-project/leo_object_storage=1.1.0?ca62cc1:leo_object_storage \
+	leo-project/leo_ordning_reda=0.10.5?e334db6:leo_ordning_reda \
+	leo-project/leo_pod=0.6.2?cfd8557:leo_pod \
+	leo-project/leo_redundant_manager=1.8.4?0dada99:leo_redundant_manager \
+	leo-project/leo_rpc=0.8.8?11646d2:leo_rpc \
+	leo-project/leo_s3_libs=1.1.0?5d897af:leo_s3_libs \
+	leo-project/leo_statistics=1.0.4?5d68bdb:leo_statistics \
 	leo-project/libcutil=0.4.3?36b02d9:libcutil \
-	leo-project/savanna_agent=0.2.2?96f3420:savanna_agent \
-	leo-project/savanna_commons=0.6.3?b4e7fea:savanna_commons \
-	manopapad/proper=7d535ac?7d535ac:proper
+	leo-project/nfs_rpc_server=0.2.1?8231485:nfs_rpc_server \
+	leo-project/savanna_agent=0.4.2?916a878:savanna_agent \
+	leo-project/savanna_commons=0.8.4?aed58d4:savanna_commons \
+	manopapad/proper=7d535ac?7d535ac:proper \
+	seancribbs/neotoma=1.7.2?760928e:neotoma \
 
 .for dep in ${LEOFS_DEPS}
 .for account in ${dep:C,/.*$,,}
@@ -128,7 +135,7 @@ post-extract:
 	@${TAR} -C ${WRKSRC}/deps/${label} --strip-components 1 \
 		-xzf ${DISTDIR}/${DIST_SUBDIR}/${project}-${tagname}.tar.gz
 	@if [ -f "${WRKSRC}/deps/${label}/src/${label}.app.src" ]; then \
-	    ${REINPLACE_CMD} -e "s/{vsn, *git}/{vsn, \"${tagname}\"}/" \
+	    ${REINPLACE_CMD} -e "s|{vsn, *git}|{vsn, \"${tagname}\"}|" \
 		"${WRKSRC}/deps/${label}/src/${label}.app.src"; \
 	fi
 .endfor
@@ -157,6 +164,19 @@ post-patch:
 		${WRKSRC}/deps/leo_storage/priv/leo_storage.conf \
 		${WRKSRC}/deps/leo_storage/priv/leo_storage.schema \
 		${WRKSRC}/deps/leo_storage/snmp/snmpa_storage_0/leo_storage_snmp.config
+
+pre-build:
+	(cd ${WRKSRC}/deps/erpcgen && ${MAKE_ENV} ${MAKE})
+	(cd ${WRKSRC} && ${MAKE_ENV} ./deps/erpcgen/priv/erpcgen \
+		-a [svc_callback,xdr,hrl] deps/leo_gateway/src/leo_nfs_proto3.x)
+	(cd ${WRKSRC} && ${MAKE_ENV} ./deps/erpcgen/priv/erpcgen \
+		-a [svc_callback,xdr,hrl] deps/leo_gateway/src/leo_nfs_mount3.x)
+	(cd ${WRKSRC}/deps/nfs_rpc_server/src && \
+		${MAKE_ENV} erl -noshell -pa ../../erpcgen/ebin \
+		-eval 'erpcgen:file(pmap,    [xdrlib,clnt])' -s init stop)
+	(cd ${WRKSRC}/deps/nfs_rpc_server/src && \
+		${MAKE_ENV} erl -noshell -pa ../../erpcgen/ebin \
+		-eval 'erpcgen:file(nfs_rpc, [xdrlib,clnt])' -s init stop)
 
 FIND_ARGS=	"! -name *.bak ! -name *.orig"
 
@@ -220,6 +240,7 @@ do-install:
 		${STAGEDIR}${LEOFS_ETCDIR}/leo_manager_slave.conf.sample
 	${INSTALL_DATA} ${WRKSRC}/package/leo_storage/etc/leo_storage.conf \
 		${STAGEDIR}${LEOFS_ETCDIR}/leo_storage.conf.sample
+	${INSTALL_SCRIPT} ${WRKSRC}/leofs-adm ${STAGEDIR}${PREFIX}/sbin/leofs-adm
 .for f in ${LEOFS_SBIN_FILES}
 	${INSTALL_SCRIPT} ${WRKDIR}/sbin-${f} ${STAGEDIR}${PREFIX}/sbin/${f}
 .endfor
