@@ -27,5 +27,4 @@ do-install:
 	${MKDIR} ${STAGEDIR}${DATADIR}/
 	${INSTALL_DATA} ${WRKSRC}/mcodes/* ${STAGEDIR}${DATADIR}/
 
-
 .include <bsd.port.mk>
