@@ -22,7 +22,8 @@ PLIST_FILES=	bin/quftp man/man1/quftp.1.gz
 
 post-patch:
 	@${REINPLACE_CMD} -e \
-		's|^CFLAGS|#CFLAGS|' ${WRKSRC}/Makefile.in
+		'/^CFLAGS/s|+=.*|= ${CFLAGS} ${CPPFLAGS}|' \
+		${WRKSRC}/Makefile.in
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/quftp
