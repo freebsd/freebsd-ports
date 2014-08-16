@@ -21,7 +21,7 @@ LIB_DEPENDS=	libgmp.so:${PORTSDIR}/math/gmp \
 CONFLICTS_INSTALL=	guile-[0-9]*
 
 USE_AUTOTOOLS=	aclocal automake libltdl
-USES=		gmake ncurses pkgconfig
+USES=		gmake ncurses pkgconfig readline
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 LDFLAGS+=	-L${LOCALBASE}/lib
