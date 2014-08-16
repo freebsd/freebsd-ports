@@ -6423,4 +6423,3 @@ print/cups-samba||2014-08-15|Removed: defunct for long, disappeared upstream
 security/sguil-client|security/sguil|2014-08-16|Merged into new port security/sguil
 security/sguil-sensor|security/sguil|2014-08-16|Merged into new port security/sguil
 security/sguil-server|security/sguil|2014-08-16|Merged into new port security/sguil
-
