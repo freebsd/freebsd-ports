@@ -41,7 +41,7 @@ lib/libnmsg.a
 lib/libnmsg.so
 lib/libnmsg.so.6
 lib/libnmsg.so.6.0.0
-lib/nmsg/nmsg_msg8_base.so
+lib/nmsg/nmsg_msg9_base.so
 libdata/pkgconfig/libnmsg.pc
 man/man1/nmsgtool.1.gz
 share/nmsg/base/dns.proto
@@ -275,6 +275,6 @@ share/nmsg/base/xml.proto
 @dirrmtry lib/nmsg
 @dirrmtry share/nmsg/base
 @dirrmtry share/nmsg
-%%DOCS%%@dirrmtry %%DOCSDIR%%/html
-%%DOCS%%@dirrmtry %%DOCSDIR%%
-%%EXAMPLES%%@dirrmtry %%EXAMPLESDIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%EXAMPLES%%@dirrm %%EXAMPLESDIR%%

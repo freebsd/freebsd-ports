@@ -1,11 +1,11 @@
 # $FreeBSD$
 
 PORTNAME=	nmsg
-PORTVERSION=	0.8.0
-PORTREVISION=	1
+PORTVERSION=	0.9.0
 # DISTNAME=	${PORTNAME}-${PORTVERSION}
 CATEGORIES=	net
-MASTER_SITES=	https://dl.farsightsecurity.com/dist/nmsg/
+MASTER_SITES=	https://dl.farsightsecurity.com/dist/nmsg/ \
+		http://dl.farsightsecurity.com/dist/nmsg/
 
 MAINTAINER=	truckman@FreeBSD.org
 COMMENT=	Network message encapsulation system
@@ -40,7 +40,7 @@ CONFIGURE_ARGS+=	--with-pkgconfigdir='$${exec_prefix}/libdata/pkgconfig'
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libnmsg.so.6.0.0
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/nmsg/nmsg_msg8_base.so
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/nmsg/nmsg_msg9_base.so
 .if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}/html
 	${INSTALL_DATA} ${WRKSRC}/doc/doxygen/html/* ${STAGEDIR}${DOCSDIR}/html
