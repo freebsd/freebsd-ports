@@ -1,24 +1,23 @@
---- Makefile.orig	2013-02-20 00:15:00.000000000 +0400
-+++ Makefile	2013-04-16 11:00:30.120967135 +0400
-@@ -24,14 +24,16 @@
+--- Makefile.orig	2014-03-12 16:10:00.000000000 +0400
++++ Makefile	2014-08-16 18:57:38.000000000 +0400
+@@ -24,7 +24,7 @@
  # Change the installation path as needed. This automatically adjusts
  # the paths in src/luaconf.h, too. Note: PREFIX must be an absolute path!
  #
 -export PREFIX= /usr/local
 +#export PREFIX= /usr/local
+ export MULTILIB= lib
  ##############################################################################
  
- DPREFIX= $(DESTDIR)$(PREFIX)
- INSTALL_BIN=   $(DPREFIX)/bin
- INSTALL_LIB=   $(DPREFIX)/lib
-+INSTALL_LIBD=  $(DPREFIX)/libdata
+@@ -33,6 +33,7 @@
+ INSTALL_LIB=   $(DPREFIX)/$(MULTILIB)
  INSTALL_SHARE= $(DPREFIX)/share
  INSTALL_INC=   $(DPREFIX)/include/luajit-$(MAJVER).$(MINVER)
-+INSTALL_MAN=   $(DPREFIX)/man/man1
++INSTALL_LIBD=  $(DPREFIX)/libdata
  
  INSTALL_LJLIBD= $(INSTALL_SHARE)/luajit-$(VERSION)
  INSTALL_JITLIB= $(INSTALL_LJLIBD)/jit
-@@ -39,14 +41,14 @@
+@@ -40,14 +41,14 @@
  INSTALL_LMOD= $(INSTALL_LMODD)/$(ABIVER)
  INSTALL_CMODD= $(INSTALL_LIB)/lua
  INSTALL_CMOD= $(INSTALL_CMODD)/$(ABIVER)
@@ -36,7 +35,7 @@
  INSTALL_DYLIBNAME= libluajit-$(ABIVER).$(MAJVER).$(MINVER).$(RELVER).dylib
  INSTALL_DYLIBSHORT1= libluajit-$(ABIVER).dylib
  INSTALL_DYLIBSHORT2= libluajit-$(ABIVER).$(MAJVER).dylib
-@@ -56,12 +58,13 @@
+@@ -57,12 +58,13 @@
  INSTALL_DYN= $(INSTALL_LIB)/$(INSTALL_SONAME)
  INSTALL_SHORT1= $(INSTALL_LIB)/$(INSTALL_SOSHORT)
  INSTALL_SHORT2= $(INSTALL_LIB)/$(INSTALL_SOSHORT)
@@ -52,7 +51,7 @@
  UNINSTALL_DIRS= $(INSTALL_JITLIB) $(INSTALL_LJLIBD) $(INSTALL_INC) \
    $(INSTALL_LMOD) $(INSTALL_LMODD) $(INSTALL_CMOD) $(INSTALL_CMODD)
  
-@@ -110,10 +113,9 @@
+@@ -112,10 +114,9 @@
  	$(RM) $(INSTALL_TSYM) $(INSTALL_DYN) $(INSTALL_SHORT1) $(INSTALL_SHORT2)
  	cd src && test -f $(FILE_SO) && \
  	  $(INSTALL_X) $(FILE_SO) $(INSTALL_DYN) && \
@@ -65,7 +64,7 @@
  	cd etc && $(SED_PC) $(FILE_PC) > $(FILE_PC).tmp && \
  	  $(INSTALL_F) $(FILE_PC).tmp $(INSTALL_PC) && \
  	  $(RM) $(FILE_PC).tmp
-@@ -131,7 +133,6 @@
+@@ -133,7 +134,6 @@
  	for file in $(FILES_INC); do \
  	  $(UNINSTALL) $(INSTALL_INC)/$$file; \
  	  done

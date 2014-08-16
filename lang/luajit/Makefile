@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	luajit
-DISTVERSION=	2.0.2
+DISTVERSION=	2.0.3
 CATEGORIES=	lang
 MASTER_SITES=	http://luajit.org/download/
 DISTNAME=	LuaJIT-${DISTVERSION}
