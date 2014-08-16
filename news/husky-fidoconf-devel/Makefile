@@ -10,7 +10,7 @@ LIB_DEPENDS=	libsmapi.so:${PORTSDIR}/news/husky-smapi-devel
 
 CONFLICTS=	husky-fidoconf-[0-9]*
 
-USES+=		perl5 shebangfix
+USES+=		perl5 shebangfix makeinfo
 SHEBANG_FILES=	util/fconf2areasbbs.pl util/fconf2na.pl util/sq2fc.pl
 USE_LDCONFIG=   yes
 INSTALL_TARGET=	install install-man
