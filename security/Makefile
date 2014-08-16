@@ -910,9 +910,6 @@
     SUBDIR += sectok
     SUBDIR += secure_delete
     SUBDIR += sguil
-    SUBDIR += sguil-client
-    SUBDIR += sguil-sensor
-    SUBDIR += sguil-server
     SUBDIR += sha
     SUBDIR += shibboleth2-sp
     SUBDIR += shimmer
