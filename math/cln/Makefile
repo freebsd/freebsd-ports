@@ -3,6 +3,7 @@
 
 PORTNAME=	cln
 PORTVERSION=	1.3.2
+PORTREVISION=	1
 CATEGORIES=	math devel
 MASTER_SITES=	http://www.ginac.de/CLN/ \
 		http://www.mirrors.wiretapped.net/security/cryptography/libraries/math/cln/ \
@@ -13,32 +14,14 @@ COMMENT=	Class Library for Numbers
 
 LIB_DEPENDS=	libgmp.so:${PORTSDIR}/math/gmp
 
-USE_AUTOTOOLS=	libtool
-USES=		gmake pathfix pkgconfig tar:bzip2
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-gmp
+CONFIGURE_ARGS=	--with-gmp=${LOCALBASE}
+INSTALL_TARGET=	install-strip
+USES=		gmake libtool pathfix pkgconfig tar:bzip2
 USE_LDCONFIG=	yes
 
 INFO=		cln
 
-STRIP=		# none
+BROKEN_sparc64=	Does not compile on sparc64
 
-CFLAGS+=	-fPIC
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
-
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == "sparc64"
-BROKEN=		Does not compile on sparc64
-.endif
-
-post-patch:
-	@${REINPLACE_CMD} 's|/usr/local|${PREFIX}|' ${WRKSRC}/Makefile.in
-
-pre-build:
-.if exists(${LOCALBASE}/lib/libcln.so.3)
-BROKEN=		Does not compile when older version is installed. Please pkg_delete old cln first
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
