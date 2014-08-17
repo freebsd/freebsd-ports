@@ -10,7 +10,7 @@ MASTER_SITES=	SF/xbplayer/XStream%20Servers/ccXStream%20${PORTVERSION}%20for%20L
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Stream media files to XBox Media Center via XBMSP
 
-USES=		gmake
+USES=		gmake readline
 USE_RC_SUBR=	ccxstream
 
 PLIST_FILES=	bin/ccxtest \
@@ -24,14 +24,12 @@ SO_KEEPALICE_CFLAGS=	-DSO_KEEPALIVE
 TCP_NODELAY_DESC=	Build with TCP_NODELAY
 TCP_NODELAY_CFLAGS=	-DTCP_NODELAY
 
-.include <bsd.port.options.mk>
-
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/ccxstream ${STAGEDIR}${PREFIX}/sbin
 	${INSTALL_PROGRAM} ${WRKSRC}/ccxtest ${STAGEDIR}${PREFIX}/bin
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for i in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${DOCSDIR}/
+	${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${DOCSDIR}
 .endfor
 
 .include <bsd.port.mk>
