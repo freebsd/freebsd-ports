@@ -25,6 +25,9 @@ PATCHFILES=	#empty
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	HTTP Caching Proxy
 
+DEPRECATED=	Reached EOL when Squid Cache 3.3 was released (3.4 is out now)
+EXPIRATION_DATE=2014-09-15
+
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
