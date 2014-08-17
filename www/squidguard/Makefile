@@ -14,6 +14,9 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	madpilot@FreeBSD.org
 COMMENT=	Fast redirector for squid
 
+DEPRECATED=	Depends on www/squid which is two years past EOL
+EXPIRATION_DATE=2014-09-15
+
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
