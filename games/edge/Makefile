@@ -1,4 +1,4 @@
-# Created by: alepulver
+# Created by: Alejandro Pulver <alepulver@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	edge
@@ -18,23 +18,22 @@ LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual
 
 LIB_DEPENDS=	libvorbis.so:${PORTSDIR}/audio/libvorbis \
-		libGLEW.so:${PORTSDIR}/graphics/glew \
 		libjpeg.so:${PORTSDIR}/graphics/jpeg \
 		libpng15.so:${PORTSDIR}/graphics/png
 
-WRKSRC=		${WRKDIR}/Edge-${PORTVERSION}-source
-
 USES=		gmake tar:bzip2
+USE_GL=		glew
 USE_SDL=	sdl
 MAKEFILE=	Makefile.linux
 
-PORTDOCS=	*
+CFLAGS+=	-ffast-math
+WRKSRC=		${WRKDIR}/Edge-${PORTVERSION}-source
+
 PLIST_FILES=	bin/edge %%DMDIR%%/edge.wad
 PLIST_DIRSTRY=	%%DMDIR%%
+PORTDOCS=	*
 
-CFLAGS+=	-ffast-math
-
-DEFINE_OPTIONS=	DOCS
+OPTIONS_DEFINE=	DOCS
 
 post-extract:
 	@${TAR} -C ${WRKDIR} \
@@ -54,12 +53,14 @@ post-patch:
 		's|%%DMDIR%%|${DMDIR}|' ${WRKSRC}/src/e_main.cc
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/edge.linux ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+	${INSTALL_PROGRAM} ${WRKSRC}/edge.linux \
+		${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 	@${MKDIR} ${STAGEDIR}${DMDIR}
-	${INSTALL_DATA} ${WRKDIR}/Edge-${PORTVERSION}/edge.wad ${STAGEDIR}${DMDIR}
+	${INSTALL_DATA} ${WRKDIR}/Edge-${PORTVERSION}/edge.wad \
+		${STAGEDIR}${DMDIR}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${WRKDIR}/Edge-${PORTVERSION}/*.txt ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKDIR}/Edge-${PORTVERSION}/*.txt \
+		${STAGEDIR}${DOCSDIR}
 
 .include "${.CURDIR}/../doom-data/Makefile.include"
-
 .include <bsd.port.mk>
