@@ -1,0 +1,28 @@
+--- Makefile.in.orig	2014-08-15 14:55:42.253003285 +0800
++++ Makefile.in	2014-08-15 14:56:37.571000087 +0800
+@@ -33,17 +33,14 @@ sic	: $(OBJS)
+ 	$(CC) $(CFLAGS) $(OBJS) $(LDFLAGS) $(LIBS) -o sic
+ 
+ install	: all
+-	${INSTALL} -d -m 0755 $(bindir)
+-	${INSTALL} -m 0755 sic $(bindir)/sic-$(VERSION)
+-	if test -f $(bindir)/sic.old; then rm -f $(bindir)/sic.old; fi
+-	if test -f $(bindir)/sic; then mv $(bindir)/sic $(bindir)/sic.old; fi
+-	@rm -f $(bindir)/sic
+-	ln -s $(bindir)/sic-$(VERSION) $(bindir)/sic
+-	${INSTALL} -d -m 0755 $(mandir)/man1
+-	${INSTALL} -d -m 0755 $(mandir)/man5
+-	${INSTALL} -m 0644 man/sic.man $(mandir)/man1/sic.1
+-	${INSTALL} -m 0644 man/sic-alias.man $(mandir)/man5/sic-alias.5
+-	${INSTALL} -m 0644 man/sic-server.man $(mandir)/man5/sic-server.5
++	${INSTALL} -d -m 0755 $(DESTDIR)$(bindir)
++	${INSTALL} -m 0755 sic $(DESTDIR)$(bindir)/sic-$(VERSION)
++	ln -s sic-$(VERSION) $(DESTDIR)$(bindir)/sic
++	${INSTALL} -d -m 0755 $(DESTDIR)$(mandir)/man1
++	${INSTALL} -d -m 0755 $(DESTDIR)$(mandir)/man5
++	${INSTALL} -m 0644 man/sic.man $(DESTDIR)$(mandir)/man1/sic.1
++	${INSTALL} -m 0644 man/sic-alias.man $(DESTDIR)$(mandir)/man5/sic-alias.5
++	${INSTALL} -m 0644 man/sic-server.man $(DESTDIR)$(mandir)/man5/sic-server.5
+ 
+ man: man/sic.man man/sic-alias.man man/sic-server.man
+ 
