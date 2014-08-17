@@ -2192,6 +2192,7 @@
     SUBDIR += p5-IO-Pager
     SUBDIR += p5-IO-Pipely
     SUBDIR += p5-IO-Prompt
+    SUBDIR += p5-IO-Prompter
     SUBDIR += p5-IO-Prompt-Tiny
     SUBDIR += p5-IO-Pty-Easy
     SUBDIR += p5-IO-SessionData
