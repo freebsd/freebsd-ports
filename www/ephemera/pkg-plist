@@ -1,10 +1,16 @@
 bin/ephemera
 bin/add.munger
+bin/create.munger
 bin/delete.munger
 bin/extract.munger
 bin/replace.munger
-etc/ephemera.css
+bin/edit.munger
 etc/ephemera.config
+etc/ephemera.config.dist
 etc/rc.d/ephemera
 man/man8/ephemera.8.gz
+%%DATADIR%%/ephemera.css
+%%DATADIR%%/DroidSerif.ttf
+%%DATADIR%%/DroidSerif-Bold.ttf
+@dirrm %%DATADIR%%
 @unexec if cmp -s %D/etc/ephemera.config %D/etc/ephemera.config.dist; then rm -f %D/etc/ephemera.config; fi
