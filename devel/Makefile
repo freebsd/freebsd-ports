@@ -2287,6 +2287,7 @@
     SUBDIR += p5-Log-Any-Adapter-Syslog
     SUBDIR += p5-Log-Any-App
     SUBDIR += p5-Log-Contextual
+    SUBDIR += p5-Log-Defer
     SUBDIR += p5-Log-Dispatch
     SUBDIR += p5-Log-Dispatch-Array
     SUBDIR += p5-Log-Dispatch-Colorful
