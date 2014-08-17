@@ -1,8 +1,7 @@
-# Created by: jupengfei <jupengfei@gmail.com>
 # $FreeBSD$
 
 PORTNAME=	File-Map
-PORTVERSION=	0.61
+PORTVERSION=	0.62
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:LEONT
@@ -23,5 +22,8 @@ TEST_DEPENDS=	p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception \
 
 USES=		perl5
 USE_PERL5=	modbuild
+
+post-stage:
+	${STRIP_CMD} ${STAGEDIR}${SITE_PERL}/${PERL_ARCH}/auto/File/Map/Map.so
 
 .include <bsd.port.mk>
