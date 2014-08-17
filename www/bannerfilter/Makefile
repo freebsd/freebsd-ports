@@ -10,6 +10,9 @@ MASTER_SITES=	http://phroggy.com/files/unix/ \
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Squid redirect script for filtering web banners
 
+DEPRECATED=	Depends on www/squid which is two years past EOL
+EXPIRATION_DATE=2014-09-15
+
 LICENSE=	GPLv2
 
 RUN_DEPENDS=	squid:${PORTSDIR}/www/squid
