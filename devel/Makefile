@@ -3186,6 +3186,7 @@
     SUBDIR += pcl
     SUBDIR += pcre
     SUBDIR += pcre++
+    SUBDIR += pcsc-ada
     SUBDIR += pcsc-lite
     SUBDIR += pdcurses
     SUBDIR += pdcurses-the
