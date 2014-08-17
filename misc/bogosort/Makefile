@@ -10,7 +10,7 @@ MASTER_SITES=	http://www.lysator.liu.se/~qha/bogosort/ \
 DISTNAME=	${PORTNAME}
 DIST_SUBDIR=	${PORTNAME}/${PORTVERSION}
 
-MAINTAINER=	eadler@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Sort (or not) stdin using the bogo-sort algorithm
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}

@@ -9,7 +9,7 @@ MASTER_SITES=	DEBIAN
 MASTER_SITE_SUBDIR=	pool/main/m/moreutils
 DISTNAME=	moreutils_${PORTVERSION}
 
-MAINTAINER=	eadler@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Run programs in parallel
 
 LICENSE=	GPLv2

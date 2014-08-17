@@ -8,7 +8,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	SF/aa-project/aa-lib/1.4rc5
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.r/rc/}
 
-MAINTAINER=	eadler@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	ASCII art library
 
 LICENSE=	GPLv2
