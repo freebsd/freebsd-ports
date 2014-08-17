@@ -2,9 +2,4 @@ A sample implementaiton set of "L2TP-IPv6PD" client using mpd.
 "OCN IPv6", provided by NTT Communications Corp, was the first
 commercial tunnel service using "L2TP-IPv6PD".
 
-NOTE: This port runs on FreeBSD 6.3 and later.  If you want to run it
-on FreeBSD 6.2, you need to apply following diff to your ng_ksocket:
-
-http://www.freebsd.org/cgi/cvsweb.cgi/src/sys/netgraph/ng_ksocket.c.diff?r1=1.59&r2=1.60
-
 WWW: http://www.ocn.ne.jp/ipv6/service/pdf/ocnipv6uni_ver1.0.pdf
