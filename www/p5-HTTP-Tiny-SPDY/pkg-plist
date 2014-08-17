@@ -1,0 +1,8 @@
+%%SITE_PERL%%/HTTP/Tiny/SPDY.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/HTTP/Tiny/SPDY/.packlist
+%%PERL5_MAN3%%/HTTP::Tiny::SPDY.3.gz
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTTP/Tiny/SPDY
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTTP/Tiny
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTTP
+@dirrmtry %%SITE_PERL%%/HTTP/Tiny
+@dirrmtry %%SITE_PERL%%/HTTP
