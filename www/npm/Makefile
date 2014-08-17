@@ -14,13 +14,15 @@ LICENSE=	MIT
 OPTIONS_DEFINE=	NODE_DEVEL
 NODE_DEVEL_DESC=Use www/node-devel instead of www/node
 
-NO_BUILD=	yes
-USES=		tar:xz
-
 MAKE_ARGS=	npm_config_prefix=${STAGEDIR}${PREFIX}
+NO_BUILD=	yes
 REINPLACE_ARGS=	-i ''
+USES=		cpe tar:xz
 
 MANPREFIX=	${PREFIX}/lib/node_modules/npm
+
+CPE_VENDOR=	npmjs
+CPE_PRODUCT=	node_packaged_modules
 
 NODE_DEVEL_RUN_DEPENDS=	node-devel>=0.8.0:${PORTSDIR}/www/node-devel
 NODE_DEVEL_RUN_DEPENDS_OFF=	node>=0.8.0:${PORTSDIR}/www/node
