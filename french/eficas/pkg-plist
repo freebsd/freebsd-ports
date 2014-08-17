@@ -1613,6 +1613,9 @@
 %%EFICASDIR%%/Editeur/basestyle.py
 %%EFICASDIR%%/Editeur/basestyle.pyc
 %%EFICASDIR%%/Editeur/basestyle.pyo
+%%EFICASDIR%%/Editeur/cata2Xml.py
+%%EFICASDIR%%/Editeur/cata2Xml.pyc
+%%EFICASDIR%%/Editeur/cata2Xml.pyo
 %%EFICASDIR%%/Editeur/catadesc.py
 %%EFICASDIR%%/Editeur/catadesc.pyc
 %%EFICASDIR%%/Editeur/catadesc.pyo
@@ -1929,6 +1932,9 @@
 %%EFICASDIR%%/InterfaceQT4/getVersion.py
 %%EFICASDIR%%/InterfaceQT4/getVersion.pyc
 %%EFICASDIR%%/InterfaceQT4/getVersion.pyo
+%%EFICASDIR%%/InterfaceQT4/monBoutonSalome.py
+%%EFICASDIR%%/InterfaceQT4/monBoutonSalome.pyc
+%%EFICASDIR%%/InterfaceQT4/monBoutonSalome.pyo
 %%EFICASDIR%%/InterfaceQT4/monChoixCata.py
 %%EFICASDIR%%/InterfaceQT4/monChoixCata.pyc
 %%EFICASDIR%%/InterfaceQT4/monChoixCata.pyo
@@ -2301,6 +2307,9 @@
 %%EFICASDIR%%/UiQT4/aideQT.py
 %%EFICASDIR%%/UiQT4/aideQT.pyc
 %%EFICASDIR%%/UiQT4/aideQT.pyo
+%%EFICASDIR%%/UiQT4/desBoutonSalome.py
+%%EFICASDIR%%/UiQT4/desBoutonSalome.pyc
+%%EFICASDIR%%/UiQT4/desBoutonSalome.pyo
 %%EFICASDIR%%/UiQT4/desChoixCata.py
 %%EFICASDIR%%/UiQT4/desChoixCata.pyc
 %%EFICASDIR%%/UiQT4/desChoixCata.pyo
@@ -2453,6 +2462,24 @@
 %%EFICASDIR%%/Validation/__init__.py
 %%EFICASDIR%%/Validation/__init__.pyc
 %%EFICASDIR%%/Validation/__init__.pyo
+%%EFICASDIR%%/ZCracks/configuration_ZCRACKS.py
+%%EFICASDIR%%/ZCracks/configuration_ZCRACKS.pyc
+%%EFICASDIR%%/ZCracks/configuration_ZCRACKS.pyo
+%%EFICASDIR%%/ZCracks/monCode_Cata.py
+%%EFICASDIR%%/ZCracks/monCode_Cata.pyc
+%%EFICASDIR%%/ZCracks/monCode_Cata.pyo
+%%EFICASDIR%%/ZCracks/prefs.py
+%%EFICASDIR%%/ZCracks/prefs.pyc
+%%EFICASDIR%%/ZCracks/prefs.pyo
+%%EFICASDIR%%/ZCracks/prefs_ZCRACKS.py
+%%EFICASDIR%%/ZCracks/prefs_ZCRACKS.pyc
+%%EFICASDIR%%/ZCracks/prefs_ZCRACKS.pyo
+%%EFICASDIR%%/ZCracks/properties.py
+%%EFICASDIR%%/ZCracks/properties.pyc
+%%EFICASDIR%%/ZCracks/properties.pyo
+%%EFICASDIR%%/ZCracks/qtEficas_ZCracks.py
+%%EFICASDIR%%/ZCracks/qtEficas_ZCracks.pyc
+%%EFICASDIR%%/ZCracks/qtEficas_ZCracks.pyo
 %%EFICASDIR%%/convert/Parserv5/README
 %%EFICASDIR%%/convert/Parserv5/Translate.py
 %%EFICASDIR%%/convert/Parserv5/Translate.pyc
@@ -2514,12 +2541,18 @@
 %%EFICASDIR%%/generator/generator_CARMEL3D_frequentiel.py
 %%EFICASDIR%%/generator/generator_CARMEL3D_frequentiel.pyc
 %%EFICASDIR%%/generator/generator_CARMEL3D_frequentiel.pyo
+%%EFICASDIR%%/generator/generator_CARMELCND.py
+%%EFICASDIR%%/generator/generator_CARMELCND.pyc
+%%EFICASDIR%%/generator/generator_CARMELCND.pyo
 %%EFICASDIR%%/generator/generator_GroupMA.py
 %%EFICASDIR%%/generator/generator_GroupMA.pyc
 %%EFICASDIR%%/generator/generator_GroupMA.pyo
 %%EFICASDIR%%/generator/generator_SEP.py
 %%EFICASDIR%%/generator/generator_SEP.pyc
 %%EFICASDIR%%/generator/generator_SEP.pyo
+%%EFICASDIR%%/generator/generator_ZCracks.py
+%%EFICASDIR%%/generator/generator_ZCracks.pyc
+%%EFICASDIR%%/generator/generator_ZCracks.pyo
 %%EFICASDIR%%/generator/generator_aplat.py
 %%EFICASDIR%%/generator/generator_aplat.pyc
 %%EFICASDIR%%/generator/generator_aplat.pyo
@@ -2552,6 +2585,7 @@ bin/eficasQt
 @dirrm %%EFICASDIR%%/generator
 @dirrm %%EFICASDIR%%/convert/Parserv5
 @dirrm %%EFICASDIR%%/convert
+@dirrm %%EFICASDIR%%/ZCracks
 @dirrm %%EFICASDIR%%/Validation
 @dirrm %%EFICASDIR%%/UiQT4
 @dirrm %%EFICASDIR%%/Traducteur

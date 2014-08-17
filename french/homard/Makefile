@@ -3,6 +3,7 @@
 
 PORTNAME=	homard
 DISTVERSION=	10.6-3
+PORTREVISION=	1
 CATEGORIES=	french cad linux
 
 MAINTAINER=	thierry@FreeBSD.org
@@ -18,9 +19,8 @@ RESTRICTED=	The free downloading of HOMARD software is only allowed for coupling
 ONLY_FOR_ARCHS=	i386 amd64
 
 USE_LINUX=	yes
-USE_PYTHON=	yes
+USES=		python
 REINPLACE_ARGS=	-i ""
-NO_BUILD=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:R}
 
@@ -40,26 +40,18 @@ PLIST_SUB=	HOMARDDIR=${LHOMARDDIR} AHPY=${LHOMARDDIR}/${AHPY}			\
 
 OPTIONS_DEFINE=	DOCS
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == "i386"
-BITS=
-.else
-BITS=	64
-.endif
-
 pre-configure:
 .for sc in ${HOMARDSCRIPT}
 	${REINPLACE_CMD} -e "s|%%HOMARDDIR%%|${PREFIX}/apps/${OPSYS}|"	\
 		${WRKSRC}/${sc}
 .endfor
 
-post-build:
-	${BRANDELF} -t Linux ${WRKSRC}/Linux${BITS}/${HOMARDPG}
+do-build:
+	${BRANDELF} -t Linux ${WRKSRC}/Linux/${HOMARDPG}
 
 do-install:
 	${MKDIR} ${STAGEDIR}${HOMARDDIR} ${STAGEDIR}${PREFIX}/apps/${OPSYS}
-	${INSTALL_PROGRAM} ${WRKSRC}/Linux${BITS}/${HOMARDPG}	\
+	${INSTALL_PROGRAM} ${WRKSRC}/Linux/${HOMARDPG}	\
 		${STAGEDIR}${PREFIX}/apps/${OPSYS}
 	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME}_base	\
 		${STAGEDIR}${HOMARDDIR}/${PORTNAME}
@@ -76,8 +68,8 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/${doc} ${STAGEDIR}${DOCSDIR}
 .endfor
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
-	(cd ${WRKSRC}/Linux64/CAS_TESTS && ${COPYTREE_SHARE} .	\
+	(cd ${WRKSRC}/Linux/CAS_TESTS && ${COPYTREE_SHARE} .	\
 		${STAGEDIR}${EXAMPLESDIR})
 
 .include "${.CURDIR}/../../french/aster/bsd.aster.mk"
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
