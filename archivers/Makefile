@@ -204,7 +204,6 @@
     SUBDIR += unshield
     SUBDIR += untar
     SUBDIR += unzip
-    SUBDIR += unzip-iconv
     SUBDIR += unzoo
     SUBDIR += upx
     SUBDIR += wzip
