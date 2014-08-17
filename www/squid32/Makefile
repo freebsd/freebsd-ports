@@ -45,30 +45,7 @@ SQUID_STABLE_VER=	13
 
 CONFLICTS_INSTALL=	squid-2.[0-9].* squid33-* cacheboy-[0-9]* lusca-head-[0-9]*
 USES=		perl5 tar:bzip2 shebangfix
-SHEBANG_FILES=	scripts/AnnounceCache.pl \
-		scripts/access-log-matrix.pl \
-		scripts/cache-compare.pl \
-		scripts/cachetrace.pl \
-		scripts/check_cache.pl \
-		scripts/fileno-to-pathname.pl \
-		scripts/flag_truncs.pl \
-		scripts/icp-test.pl \
-		scripts/find-alive.pl \
-		scripts/trace-job.pl \
-		scripts/trace-master.pl \
-		scripts/icpserver.pl \
-		scripts/tcp-banger.pl \
-		scripts/udp-banger.pl \
-		scripts/upgrade-1.0-store.pl \
-		scripts/calc-must-ids.pl \
-		contrib/rredir.pl \
-		contrib/user-agents.pl \
-		contrib/url-normalizer.pl \
-		src/mk-globals-c.pl \
-		src/mk-string-arrays.pl \
-		tools/helper-mux.pl \
-		tools/helper-ok-dying.pl \
-		tools/helper-ok.pl
+SHEBANG_FILES=	scripts/*.pl contrib/*.pl src/*.pl tools/*.pl
 GNU_CONFIGURE=	yes
 USE_RC_SUBR=	squid
 
