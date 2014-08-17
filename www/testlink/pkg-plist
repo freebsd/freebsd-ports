@@ -220,6 +220,7 @@
 %%WWWDIR%%/gui/templates/testcases/containerOrder.tpl
 %%WWWDIR%%/gui/templates/testcases/containerOrderDnD.tpl
 %%WWWDIR%%/gui/templates/testcases/containerView.tpl
+%%WWWDIR%%/gui/templates/testcases/containerViewTestSuiteTextButtons.inc.tpl
 %%WWWDIR%%/gui/templates/testcases/inc_steps.tpl
 %%WWWDIR%%/gui/templates/testcases/inc_tcbody.tpl
 %%WWWDIR%%/gui/templates/testcases/inc_testsuite_viewer_ro.tpl
@@ -275,6 +276,7 @@
 %%WWWDIR%%/gui/themes/default/images/bar2.gif
 %%WWWDIR%%/gui/themes/default/images/brick.png
 %%WWWDIR%%/gui/themes/default/images/brick_go.png
+%%WWWDIR%%/gui/themes/default/images/bricks.png
 %%WWWDIR%%/gui/themes/default/images/btn_attach.gif
 %%WWWDIR%%/gui/themes/default/images/bug.png
 %%WWWDIR%%/gui/themes/default/images/bug1.gif
@@ -456,6 +458,12 @@
 %%WWWDIR%%/install/sql/alter_tables/1.9.10/mssql/DB.1.9.10/step1/db_data_update.sql
 %%WWWDIR%%/install/sql/alter_tables/1.9.10/mysql/DB.1.9.10/step1/db_data_update.sql
 %%WWWDIR%%/install/sql/alter_tables/1.9.10/postgres/DB.1.9.10/step1/db_data_update.sql
+%%WWWDIR%%/install/sql/alter_tables/1.9.11/mssql/DB.1.9.11/step1/db_schema_update.sql
+%%WWWDIR%%/install/sql/alter_tables/1.9.11/mssql/DB.1.9.11/stepZ/z_final_step.sql
+%%WWWDIR%%/install/sql/alter_tables/1.9.11/mysql/DB.1.9.11/step1/db_schema_update.sql
+%%WWWDIR%%/install/sql/alter_tables/1.9.11/mysql/DB.1.9.11/stepZ/z_final_step.sql
+%%WWWDIR%%/install/sql/alter_tables/1.9.11/postgres/DB.1.9.11/step1/db_schema_update.sql
+%%WWWDIR%%/install/sql/alter_tables/1.9.11/postgres/DB.1.9.11/stepZ/z_final_step.sql
 %%WWWDIR%%/install/sql/alter_tables/1.9.4/mssql/DB.1.5/step1/db_schema_update.sql
 %%WWWDIR%%/install/sql/alter_tables/1.9.4/mssql/DB.1.5/stepZ/z_final_step.sql
 %%WWWDIR%%/install/sql/alter_tables/1.9.4/mysql/DB.1.5/step1/db_schema_update.sql
@@ -529,6 +537,7 @@
 %%WWWDIR%%/lib/api/xmlrpc/v1/sample_clients/php/clientAddPlatformToTestPlan.php
 %%WWWDIR%%/lib/api/xmlrpc/v1/sample_clients/php/clientAddTestCaseToTestPlan.php
 %%WWWDIR%%/lib/api/xmlrpc/v1/sample_clients/php/clientAssignRequirements.php
+%%WWWDIR%%/lib/api/xmlrpc/v1/sample_clients/php/clientAssignTestCaseExecutionTask.php
 %%WWWDIR%%/lib/api/xmlrpc/v1/sample_clients/php/clientCheckDevKey.php
 %%WWWDIR%%/lib/api/xmlrpc/v1/sample_clients/php/clientCreateBuild.php
 %%WWWDIR%%/lib/api/xmlrpc/v1/sample_clients/php/clientCreateNTestCases.php
@@ -616,6 +625,7 @@
 %%WWWDIR%%/lib/execute/execHistory.php
 %%WWWDIR%%/lib/execute/execNavigator.php
 %%WWWDIR%%/lib/execute/execNotes.php
+%%WWWDIR%%/lib/execute/execPrint.php
 %%WWWDIR%%/lib/execute/execSetResults.php
 %%WWWDIR%%/lib/execute/getExecNotes.php
 %%WWWDIR%%/lib/functions/APIKey.class.php
@@ -5720,6 +5730,19 @@
 @dirrmtry %%WWWDIR%%/install/sql/alter_tables/1.9.4/mssql/DB.1.5
 @dirrmtry %%WWWDIR%%/install/sql/alter_tables/1.9.4/mssql
 @dirrmtry %%WWWDIR%%/install/sql/alter_tables/1.9.4
+@dirrmtry %%WWWDIR%%/install/sql/alter_tables/1.9.11/postgres/DB.1.9.11/stepZ
+@dirrmtry %%WWWDIR%%/install/sql/alter_tables/1.9.11/postgres/DB.1.9.11/step1
+@dirrmtry %%WWWDIR%%/install/sql/alter_tables/1.9.11/postgres/DB.1.9.11
+@dirrmtry %%WWWDIR%%/install/sql/alter_tables/1.9.11/postgres
+@dirrmtry %%WWWDIR%%/install/sql/alter_tables/1.9.11/mysql/DB.1.9.11/stepZ
+@dirrmtry %%WWWDIR%%/install/sql/alter_tables/1.9.11/mysql/DB.1.9.11/step1
+@dirrmtry %%WWWDIR%%/install/sql/alter_tables/1.9.11/mysql/DB.1.9.11
+@dirrmtry %%WWWDIR%%/install/sql/alter_tables/1.9.11/mysql
+@dirrmtry %%WWWDIR%%/install/sql/alter_tables/1.9.11/mssql/DB.1.9.11/stepZ
+@dirrmtry %%WWWDIR%%/install/sql/alter_tables/1.9.11/mssql/DB.1.9.11/step1
+@dirrmtry %%WWWDIR%%/install/sql/alter_tables/1.9.11/mssql/DB.1.9.11
+@dirrmtry %%WWWDIR%%/install/sql/alter_tables/1.9.11/mssql
+@dirrmtry %%WWWDIR%%/install/sql/alter_tables/1.9.11
 @dirrmtry %%WWWDIR%%/install/sql/alter_tables/1.9.10/postgres/DB.1.9.10/step1
 @dirrmtry %%WWWDIR%%/install/sql/alter_tables/1.9.10/postgres/DB.1.9.10
 @dirrmtry %%WWWDIR%%/install/sql/alter_tables/1.9.10/postgres
