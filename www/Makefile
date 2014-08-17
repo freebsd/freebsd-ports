@@ -1045,6 +1045,7 @@
     SUBDIR += p5-LWP-MediaTypes
     SUBDIR += p5-LWP-Online
     SUBDIR += p5-LWP-Protocol-PSGI
+    SUBDIR += p5-LWP-Protocol-connect
     SUBDIR += p5-LWP-Protocol-http10
     SUBDIR += p5-LWP-Protocol-https
     SUBDIR += p5-LWP-UserAgent-Determined
