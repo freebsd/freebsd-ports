@@ -3,6 +3,7 @@
 
 PORTNAME=	gsl
 PORTVERSION=	1.16
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	GNU
 
@@ -11,10 +12,11 @@ COMMENT=	The GNU Scientific Library - mathematical libs
 
 LICENSE=	GPLv3
 
-USES=		makeinfo
+USES=		libtool makeinfo pathfix
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	MAKEINFO='makeinfo --no-split'
+INSTALL_TARGET=	install-strip
 
 INFO=		gsl-ref
 
