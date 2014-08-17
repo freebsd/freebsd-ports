@@ -42,7 +42,6 @@
     SUBDIR += unfonts-core
     SUBDIR += unfonts-extra
     SUBDIR += uniksc
-    SUBDIR += unzip
     SUBDIR += xpdf
 
 .include <bsd.port.subdir.mk>

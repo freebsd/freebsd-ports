@@ -46,7 +46,6 @@
     SUBDIR += stardict-pc
     SUBDIR += tac+ia
     SUBDIR += tidyup-mail
-    SUBDIR += unzip
     SUBDIR += wordpress
     SUBDIR += xcode
     SUBDIR += xpi-tabextensions
