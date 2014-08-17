@@ -30,7 +30,7 @@ CONFIGURE_ARGS=	--enable-libwebpdecoder \
 		--enable-libwebpmux \
 		--with-pkgconfigdir=${PREFIX}/libdata/pkgconfig
 USE_LDCONFIG=	yes
-USES=		libtool
+USES=		compiler:c11 libtool
 
 X11_CONFIGURE_OFF=	build_vwebp=no
 X11_CONFIGURE_ON=	build_vwebp=yes
