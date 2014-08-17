@@ -5,33 +5,20 @@ PORTNAME=	squid
 PORTVERSION=	3.2.${SQUID_STABLE_VER}
 PORTREVISION=	3
 CATEGORIES=	www ipv6
-MASTER_SITES=	ftp://ftp.squid-cache.org/pub/%SUBDIR%/ \
-		http://mirrors.ccs.neu.edu/Squid/ \
-		ftp://ftp.fu-berlin.de/unix/www/squid/squid/ \
-		ftp://ftp.nl.uu.net/pub/unix/www/squid/ \
-		ftp://ftp.solnet.ch/mirror/squid/ \
-		ftp://ftp.ntua.gr/pub/www/Squid/squid/ \
-		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,net/www/squid,} \
-		http://www.squid-cache.org/Versions/v3/3.2/ \
+MASTER_SITES=	http://www.squid-cache.org/Versions/v3/3.2/ \
 		http://www2.us.squid-cache.org/Versions/v3/3.2/ \
-		http://www3.us.squid-cache.org/Versions/v3/3.2/ \
 		http://www1.at.squid-cache.org/Versions/v3/3.2/ \
 		http://www.eu.squid-cache.org/Versions/v3/3.2/ \
-		http://www1.ie.squid-cache.org/Versions/v3/3.2/ \
-		http://www1.jp.squid-cache.org/Versions/v3/3.2/ \
-		http://www1.za.squid-cache.org/Versions/v3/3.2/
+		http://www1.jp.squid-cache.org/Versions/v3/3.2/
 MASTER_SITE_SUBDIR=	squid
 PKGNAMESUFFIX=	32
 DIST_SUBDIR=	squid3.2
 
 PATCH_SITES=	http://www.squid-cache.org/%SUBDIR%/ \
 		http://www2.us.squid-cache.org/%SUBDIR%/ \
-		http://www3.us.squid-cache.org/%SUBDIR%/ \
 		http://www1.at.squid-cache.org/%SUBDIR%/ \
 		http://www.eu.squid-cache.org/%SUBDIR%/ \
-		http://www1.ie.squid-cache.org/%SUBDIR%/ \
-		http://www1.jp.squid-cache.org/%SUBDIR%/ \
-		http://www2.tw.squid-cache.org/%SUBDIR%/
+		http://www1.jp.squid-cache.org/%SUBDIR%/
 PATCH_SITE_SUBDIR=	Versions/v3/3.2/changesets
 PATCHFILES=	#empty
 
