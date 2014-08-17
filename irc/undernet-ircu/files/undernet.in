@@ -25,7 +25,7 @@ load_rc_config ${name}
 undernet_user="undernet"
 undernet_group="undernet"
 
-command="%%PREFIX%%/bin/ircd"
+command="%%PREFIX%%/sbin/ircd"
 pidfile="undernet.pid"
 piddir="/var/log/"
 required_files="${undernet_config}"
