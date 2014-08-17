@@ -3483,6 +3483,7 @@
     SUBDIR += popt
     SUBDIR += poslib
     SUBDIR += poxml
+    SUBDIR += ppl
     SUBDIR += premake
     SUBDIR += premake4
     SUBDIR += preps-gui
