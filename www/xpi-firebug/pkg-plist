@@ -702,6 +702,7 @@
 %%XPI_XPIDIR%%/locale/fr/firebug-amo.properties
 %%XPI_XPIDIR%%/locale/fr/firebug-tracing.properties
 %%XPI_XPIDIR%%/locale/fr/firebug.properties
+%%XPI_XPIDIR%%/locale/fr/keys.properties
 %%XPI_XPIDIR%%/locale/fr/selectors.properties
 %%XPI_XPIDIR%%/locale/he/cookies.properties
 %%XPI_XPIDIR%%/locale/he/firebug-amo.properties
