@@ -266,7 +266,7 @@ fix-packlist::
 
 # Starting with perl 5.20, the empty bootstrap files are not installed any
 # more.  As we don't need them anyway, remove it altogether.
-.if ${PERL_LEVEL} >= 502000
+.if ${PERL_LEVEL} < 502000
 fix-perl-bs:
 	-@${FIND} ${STAGEDIR} -name '*.bs' -size 0 -delete
 .endif
