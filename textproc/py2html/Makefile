@@ -14,7 +14,6 @@ COMMENT=	Python Highlighter for HTML
 USES=			shebangfix
 USE_PYTHON=		2
 USE_PYDISTUTILS=	yes
-INSTALLS_EGGINFO=	yes
 
 python_OLD_CMD=	/usr/bin/env python
 python_CMD=	${PYTHON_CMD}

@@ -19,7 +19,6 @@ USE_PYDISTUTILS=yes
 USES=		pathfix display
 USE_GNOME=	gnomeprefix pygnome2 pygnomedesktop
 PYDISTUTILS_PKGNAME=	gnome-sudoku
-INSTALLS_EGGINFO=	yes
 
 post-patch:
 	@${REINPLACE_CMD} \
