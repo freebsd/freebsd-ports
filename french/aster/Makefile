@@ -44,8 +44,7 @@ RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/Gnuplot:${PORTSDIR}/math/py-gnuplot	\
 		${SHELL_INSTALL_ASTER}:${PORTSDIR}/shells/${SHIADEP}		\
 		${LOCALBASE}/aster/ASTK/ASTK_SERV:${PORTSDIR}/cad/astk-serveur
 
-USES=		bison fortran tk
-USE_PYTHON=	2       # >2.5 and <3.0
+USES=		bison fortran tk python:2
 HAS_CONFIGURE=	yes
 MAKE_ENV=	INCLUDES="${LOCALBASE}/include ${LOCALBASE}/include/metis"
 REINPLACE_ARGS=	-i ""
@@ -173,7 +172,8 @@ WITH_ED=	vi
 INST_DAT=	elements
 INST_SH=	as_run parallel_cp
 PFX2FIX=	bin/as_run ${VE}/include/aster/asterc_config.h ${VE}/config.txt	\
-		${VE}/include/aster/asterf_config.h ${VE}/profile.sh
+		${VE}/include/aster/asterf_config.h ${VE}/profile.sh		\
+		${VE}/lib/aster/aster_pkginfo.py
 inst_dir=	${PREFIX}/${PORTNAME}
 tools_dir=	${PREFIX}/${PORTNAME}/outils
 tools=		kmetis onmetis pmetis gnuplot

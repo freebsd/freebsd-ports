@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	eficas
-DISTVERSION=	7.3.0-1
-PORTREVISION=	1
+DISTVERSION=	7.4.0-1
 CATEGORIES=	french cad
 
 MAINTAINER=	thierry@FreeBSD.org
@@ -16,9 +15,8 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/Pmw:${PORTSDIR}/x11-toolkits/py-Pmw	\
 		bash:${PORTSDIR}/shells/bash					\
 		${PYNUMPY}
 
-USES=		shebangfix
+USES=		shebangfix python
 USE_GCC=	yes # To be removed - Needed as a work-around for numpy, see PR ports/188114
-USE_PYTHON=	yes
 SHEBANG_FILES=	eficas eficasQt
 REINPLACE_ARGS=	-i ""
 NO_BUILD=	yes

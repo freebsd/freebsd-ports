@@ -430,7 +430,6 @@
 %%SERV%%%%ASTKDIR%%/asrun/utils.pyc
 %%SERV%%%%ASTKDIR%%/asrun/utils.pyo
 %%SERV%%%%ASTKDIR%%/bin/as_run
-%%SERV%%%%ASTKDIR%%/bin/auto_update.cron
 %%SERV%%%%ASTKDIR%%/bin/parallel_cp
 %%SERV%%%%ASTKDIR%%/etc/.mysql_connect_REX
 %%SERV%%%%ASTKDIR%%/etc/asrun
@@ -443,6 +442,9 @@
 %%SERV%%%%ASTKDIR%%/etc/plugins/aster4_calcul.py
 %%SERV%%%%ASTKDIR%%/etc/plugins/aster4_calcul.pyc
 %%SERV%%%%ASTKDIR%%/etc/plugins/aster4_calcul.pyo
+%%SERV%%%%ASTKDIR%%/etc/plugins/aster5.py
+%%SERV%%%%ASTKDIR%%/etc/plugins/aster5.pyc
+%%SERV%%%%ASTKDIR%%/etc/plugins/aster5.pyo
 %%SERV%%%%ASTKDIR%%/etc/plugins/ivanoe.py
 %%SERV%%%%ASTKDIR%%/etc/plugins/ivanoe.pyc
 %%SERV%%%%ASTKDIR%%/etc/plugins/ivanoe.pyo
@@ -571,6 +573,9 @@
 %%SERV%%%%ETCDIR%%/plugins/aster4_calcul.py
 %%SERV%%%%ETCDIR%%/plugins/aster4_calcul.pyc
 %%SERV%%%%ETCDIR%%/plugins/aster4_calcul.pyo
+%%SERV%%%%ETCDIR%%/plugins/aster5.py
+%%SERV%%%%ETCDIR%%/plugins/aster5.pyc
+%%SERV%%%%ETCDIR%%/plugins/aster5.pyo
 %%SERV%%%%ETCDIR%%/plugins/ivanoe.py
 %%SERV%%%%ETCDIR%%/plugins/ivanoe.pyc
 %%SERV%%%%ETCDIR%%/plugins/ivanoe.pyo
