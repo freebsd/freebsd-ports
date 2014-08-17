@@ -23,7 +23,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mutagen>=0:${PORTSDIR}/audio/py-mutagen \
 		${PYTHON_PKGNAMEPREFIX}qt4-xml>=0:${PORTSDIR}/textproc/py-qt4-xml
 
 USES=		gettext python:2 desktop-file-utils
-PYTHON_FEATURES=distutils
+USE_PYTHON=	distutils
 INSTALLS_ICONS=	yes
 
 OPTIONS_DEFINE=	ACOUSTID REPLAYGAIN
