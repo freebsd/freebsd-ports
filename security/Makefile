@@ -754,6 +754,7 @@
     SUBDIR += py-cerealizer
     SUBDIR += py-certify
     SUBDIR += py-clamav
+    SUBDIR += py-cpe
     SUBDIR += py-cracklib
     SUBDIR += py-cryptkit
     SUBDIR += py-cryptography
