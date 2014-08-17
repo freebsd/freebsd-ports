@@ -1012,17 +1012,7 @@ MASTER_SITE_PHP+= \
 
 .if !defined(IGNORE_MASTER_SITE_PYTHON)
 MASTER_SITE_PYTHON+= \
-	http://www.python.org/%SUBDIR%/ \
-	http://python.ilisys.com.au/%SUBDIR%/ \
-	http://www.linux.org.hk/mirror/python/%SUBDIR%/ \
-	http://mirrors.sunsite.dk/pythonwww/%SUBDIR%/ \
-	http://python.emdia.fi/%SUBDIR%/ \
-	http://SunSITE.Informatik.RWTH-Aachen.DE/python/%SUBDIR%/ \
-	http://www.auth.gr/mirrors/python/%SUBDIR%/ \
-	http://www.cwi.nl/www.python.org/%SUBDIR%/ \
-	http://gnu.kookel.org/ftp/www.python.org/%SUBDIR%/ \
-	http://python.holywar.net/%SUBDIR%/ \
-	http://mirrors.ccs.neu.edu/Python/pub/www.python.org/%SUBDIR%/
+	http://www.python.org/%SUBDIR%/
 .endif
 
 .if !defined(IGNORE_MASTER_SITE_QMAIL)
