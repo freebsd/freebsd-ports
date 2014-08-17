@@ -3,7 +3,7 @@
 
 PORTNAME=	cvsweb
 PORTVERSION=	3.0.6
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	devel www
 MASTER_SITES=	${MASTER_SITE_LOCAL} \
 		http://people.FreeBSD.org/~scop/cvsweb/
@@ -30,7 +30,8 @@ RUN_DEPENDS+=	enscript:${PORTSDIR}/print/enscript-${PAPERSIZE}
 
 CONFLICTS=	cvsweb-2.*
 
-USES=		perl5
+USES=		perl5 shebangfix
+SHEBANG_FILES=	cvsweb.cgi
 NO_BUILD=	yes
 
 .include <bsd.port.pre.mk>
@@ -75,9 +76,8 @@ SUB_FILES=	pkg-message
 SUB_LIST=	PREFIX="${PREFIX}" DOCSDIR="${DOCSDIR}"
 
 post-patch:
-	@${REINPLACE_CMD} -i '' -e 's,!!PERL!!,${PERL},' \
-			-e 's,!!PREFIX!!,${PREFIX},' \
-		${WRKSRC}/cvsweb.cgi
+	@${SED} -i '' -e 's,/usr/local/etc/,${PREFIX}/etc/,' \
+		-e 's,\(qw(hi.*)\),(\1),' ${WRKSRC}/cvsweb.cgi
 	@${REINPLACE_CMD} -i '' -e 's,!!PREFIX!!,${PREFIX},' \
 			-e 's,!!CVSROOT!!,${CVSROOT},' \
 			-e 's,!!TITLE!!,${TITLE},' \
