@@ -33,5 +33,6 @@ post-patch:
 post-install:
 	@cd ${WRKDIR}/${DISTNAME:S/-/-data-/} && \
 		${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR}/
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/libexec/${PORTNAME}
 
 .include <bsd.port.mk>
