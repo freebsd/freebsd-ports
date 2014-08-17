@@ -1,15 +1,18 @@
-# Created by: Sergey Skvortsov <skv@protey.ru>
 # $FreeBSD$
 
 PORTNAME=	BZ-Client
 PORTVERSION=	1.04
+PORTREVISION=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:JWIED
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	perl@FreeBSD.org
+MAINTAINER=	5u623l20@gmail.com
 COMMENT=	Client for the Bugzilla web services API
+
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	p5-XML-Parser>=0:${PORTSDIR}/textproc/p5-XML-Parser \
 		p5-XML-Writer>=0:${PORTSDIR}/textproc/p5-XML-Writer \
