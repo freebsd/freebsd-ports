@@ -13,6 +13,5 @@ COMMENT=	Display email status in tray
 USE_GNOME=	pygtk2
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
-INSTALLS_EGGINFO=	yes
 
 .include <bsd.port.mk>

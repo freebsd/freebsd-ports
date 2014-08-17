@@ -16,7 +16,6 @@ USES=		desktop-file-utils shared-mime-info
 USE_GNOME=	gconf2
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
-INSTALLS_EGGINFO=	yes
 GCONF_SCHEMAS=	glchess.schemas
 OPTIONS_DEFINE=	DOCS NLS
 
