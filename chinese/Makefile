@@ -127,7 +127,6 @@
     SUBDIR += ttf2pt1
     SUBDIR += ttfm
     SUBDIR += unrar
-    SUBDIR += unzip
     SUBDIR += ve
     SUBDIR += wenju
     SUBDIR += wordpress-zh_CN
