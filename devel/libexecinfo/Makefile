@@ -15,7 +15,7 @@ OPTIONS_DEFINE=	DOCS
 
 USES=		tar:bzip2 uidfix
 USE_LDCONFIG=	yes
-CPPFLAGS=	-fno-omit-frame-pointer
+CFLAGS=		-fno-omit-frame-pointer
 MAKE_FLAGS=	LIBDIR=${PREFIX}/lib \
 		INCLUDEDIR=${PREFIX}/include
 
