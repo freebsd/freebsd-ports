@@ -3,6 +3,7 @@
 
 PORTNAME=	flowgrind
 PORTVERSION=	0.7.1
+PORTREVISION=	1
 CATEGORIES=	benchmarks
 
 MAINTAINER=	lars@eggert.org
