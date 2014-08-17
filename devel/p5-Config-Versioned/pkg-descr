@@ -1,0 +1,7 @@
+Config::Versioned allows an application to access configuration parameters
+not only by parameter name, but also by version number. This allows for
+the configuration subsystem to store previous versions of the configuration
+parameters. When requesting the value for a specific attribute, the programmer
+specifies whether to fetch the most recent value or a previous value.
+
+WWW: http://search.cpan.org/dist/Config-Versioned/
