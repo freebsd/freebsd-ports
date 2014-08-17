@@ -3,25 +3,19 @@
 
 PORTNAME=	pop3lite
 PORTVERSION=	0.2.4a
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	mail
 MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Flexible, modular RFC-compliant POP3 daemon
 
-USE_AUTOTOOLS=	libtool libltdl
-USE_GNOME=	glib12
-USES=		gmake
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--disable-static
+USES=		gmake libtool
+USE_GNOME=	glib12
 USE_LDCONFIG=	yes
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
 
 INFO=		pop3lite-admin
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
-		${WRKSRC}/configure
 
 .include <bsd.port.mk>
