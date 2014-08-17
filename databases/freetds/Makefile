@@ -6,10 +6,9 @@ PORTVERSION=	0.64
 PORTREVISION=	11
 PORTEPOCH=	1
 CATEGORIES=	databases
-MASTER_SITES=	${MASTER_SITE_SUNSITE}
-MASTER_SITE_SUBDIR=	ALPHA/${PORTNAME}/stable
+MASTER_SITES=	http://pkgs.fedoraproject.org/repo/pkgs/${FEDORALOC}/
 
-MAINTAINER?=	cowbert@gmail.com
+MAINTAINER?=	ports@FreeBSD.org
 COMMENT=	Sybase/Microsoft TDS protocol library
 
 TDS_VER?=	5.0
@@ -22,6 +21,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--with-tdsver=${TDS_VER}
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
+FEDORALOC=	freetds/freetds-0.64.tar.gz/ecfee5d6c96932172a1f29fb215c9d23
 
 PORTDOCS=	*
 
