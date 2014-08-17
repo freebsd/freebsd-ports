@@ -1,4 +1,3 @@
-lib/xfce4/panel/plugins/libmailwatch.la
 lib/xfce4/panel/plugins/libmailwatch.so
 share/icons/hicolor/48x48/apps/xfce-newmail.png
 share/icons/hicolor/48x48/apps/xfce-nomail.png
