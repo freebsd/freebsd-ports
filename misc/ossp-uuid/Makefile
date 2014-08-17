@@ -13,7 +13,7 @@ MAINTAINER=	vd@FreeBSD.org
 COMMENT=	ISO-C API and CLI for generating Universally Unique Identifiers
 
 GNU_CONFIGURE=	yes
-USES=		libtool pathfix
+USES+=		libtool pathfix
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--with-cxx \
 		--includedir=${PREFIX}/include/ossp
