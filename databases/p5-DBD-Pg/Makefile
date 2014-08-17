@@ -1,8 +1,7 @@
-# Created by: James FitzGibbon <jfitz@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	DBD-Pg
-PORTVERSION=	3.3.0
+PORTVERSION=	3.4.0
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -18,5 +17,8 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		pgsql perl5
 USE_PERL5=	configure
+
+post-stage:
+	${STRIP_CMD} ${STAGEDIR}${SITE_PERL}/${PERL_ARCH}/auto/DBD/Pg/Pg.so
 
 .include <bsd.port.mk>
