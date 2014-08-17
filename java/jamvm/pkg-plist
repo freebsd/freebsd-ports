@@ -1,6 +1,7 @@
 bin/jamvm
-lib/libjvm.la
-lib/libjvm.a
+lib/libjvm.so
+lib/libjvm.so.0
+lib/libjvm.so.0.0.0
 %%WITH_ZIP%%lib/rt.jar
 %%WITH_ZIP%%%%DATADIR%%/classes.zip
 %%WITHOUT_ZIP%%%%DATADIR%%/classes/gnu/classpath/VMStackWalker.class

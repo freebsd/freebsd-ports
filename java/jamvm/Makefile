@@ -3,6 +3,7 @@
 
 PORTNAME=	jamvm
 PORTVERSION=	1.5.4
+PORTREVISION=	1
 CATEGORIES=	java devel
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/JamVM%20${PORTVERSION}
 
@@ -15,7 +16,7 @@ RUN_DEPENDS=	${LOCALBASE}/share/classpath/glibj.zip:${PORTSDIR}/java/classpath
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-classpath-install-dir=${LOCALBASE}
-USES=		gmake pkgconfig
+USES=		gmake libtool pkgconfig
 
 OPTIONS_DEFINE=	FFI ZIP
 OPTIONS_DEFAULT=FFI ZIP
