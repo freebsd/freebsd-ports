@@ -902,118 +902,118 @@ sbin/ulpt-cupsd.sh
 %%DATADIR%%/templates/trailer.tmpl
 %%DATADIR%%/templates/users.tmpl
 %%LIBUSB%%%%DATADIR%%/usb/org.cups.usb-quirks
-%%PORTDOCS%%%%DOCSDIR%%/ca/index.html
-%%PORTDOCS%%%%DOCSDIR%%/cs/index.html
-%%PORTDOCS%%%%DOCSDIR%%/cups-printable.css
-%%PORTDOCS%%%%DOCSDIR%%/cups.css
-%%PORTDOCS%%%%DOCSDIR%%/de/index.html
-%%PORTDOCS%%%%DOCSDIR%%/es/index.html
-%%PORTDOCS%%%%DOCSDIR%%/fr/index.html
-%%PORTDOCS%%%%DOCSDIR%%/help/accounting.html
-%%PORTDOCS%%%%DOCSDIR%%/help/api-array.html
-%%PORTDOCS%%%%DOCSDIR%%/help/api-cgi.html
-%%PORTDOCS%%%%DOCSDIR%%/help/api-cups.html
-%%PORTDOCS%%%%DOCSDIR%%/help/api-driver.html
-%%PORTDOCS%%%%DOCSDIR%%/help/api-filedir.html
-%%PORTDOCS%%%%DOCSDIR%%/help/api-filter.html
-%%PORTDOCS%%%%DOCSDIR%%/help/api-httpipp.html
-%%PORTDOCS%%%%DOCSDIR%%/help/api-mime.html
-%%PORTDOCS%%%%DOCSDIR%%/help/api-overview.html
-%%PORTDOCS%%%%DOCSDIR%%/help/api-ppd.html
-%%PORTDOCS%%%%DOCSDIR%%/help/api-ppdc.html
-%%PORTDOCS%%%%DOCSDIR%%/help/api-raster.html
-%%PORTDOCS%%%%DOCSDIR%%/help/cgi.html
-%%PORTDOCS%%%%DOCSDIR%%/help/glossary.html
-%%PORTDOCS%%%%DOCSDIR%%/help/kerberos.html
-%%PORTDOCS%%%%DOCSDIR%%/help/license.html
-%%PORTDOCS%%%%DOCSDIR%%/help/man-backend.html
-%%PORTDOCS%%%%DOCSDIR%%/help/man-cancel.html
-%%PORTDOCS%%%%DOCSDIR%%/help/man-cups-config.html
-%%PORTDOCS%%%%DOCSDIR%%/help/man-cups-lpd.html
-%%PORTDOCS%%%%DOCSDIR%%/help/man-cups-snmp.html
-%%PORTDOCS%%%%DOCSDIR%%/help/man-cupsaccept.html
-%%PORTDOCS%%%%DOCSDIR%%/help/man-cupsaddsmb.html
-%%PORTDOCS%%%%DOCSDIR%%/help/man-cupsd.html
-%%PORTDOCS%%%%DOCSDIR%%/help/man-cupsenable.html
-%%PORTDOCS%%%%DOCSDIR%%/help/man-cupstestdsc.html
-%%PORTDOCS%%%%DOCSDIR%%/help/man-cupstestppd.html
-%%PORTDOCS%%%%DOCSDIR%%/help/man-filter.html
-%%PORTDOCS%%%%DOCSDIR%%/help/man-ipptool.html
-%%PORTDOCS%%%%DOCSDIR%%/help/man-ipptoolfile.html
-%%PORTDOCS%%%%DOCSDIR%%/help/man-lp.html
-%%PORTDOCS%%%%DOCSDIR%%/help/man-lpadmin.html
-%%PORTDOCS%%%%DOCSDIR%%/help/man-lpc.html
-%%PORTDOCS%%%%DOCSDIR%%/help/man-lpinfo.html
-%%PORTDOCS%%%%DOCSDIR%%/help/man-lpmove.html
-%%PORTDOCS%%%%DOCSDIR%%/help/man-lpoptions.html
-%%PORTDOCS%%%%DOCSDIR%%/help/man-lppasswd.html
-%%PORTDOCS%%%%DOCSDIR%%/help/man-lpq.html
-%%PORTDOCS%%%%DOCSDIR%%/help/man-lpr.html
-%%PORTDOCS%%%%DOCSDIR%%/help/man-lprm.html
-%%PORTDOCS%%%%DOCSDIR%%/help/man-lpstat.html
-%%PORTDOCS%%%%DOCSDIR%%/help/man-mime.convs.html
-%%PORTDOCS%%%%DOCSDIR%%/help/man-mime.types.html
-%%PORTDOCS%%%%DOCSDIR%%/help/man-notifier.html
-%%PORTDOCS%%%%DOCSDIR%%/help/man-ppdc.html
-%%PORTDOCS%%%%DOCSDIR%%/help/man-ppdhtml.html
-%%PORTDOCS%%%%DOCSDIR%%/help/man-ppdi.html
-%%PORTDOCS%%%%DOCSDIR%%/help/man-ppdmerge.html
-%%PORTDOCS%%%%DOCSDIR%%/help/man-ppdpo.html
-%%PORTDOCS%%%%DOCSDIR%%/help/network.html
-%%PORTDOCS%%%%DOCSDIR%%/help/options.html
-%%PORTDOCS%%%%DOCSDIR%%/help/overview.html
-%%PORTDOCS%%%%DOCSDIR%%/help/policies.html
-%%PORTDOCS%%%%DOCSDIR%%/help/postscript-driver.html
-%%PORTDOCS%%%%DOCSDIR%%/help/ppd-compiler.html
-%%PORTDOCS%%%%DOCSDIR%%/help/raster-driver.html
-%%PORTDOCS%%%%DOCSDIR%%/help/ref-access_log.html
-%%PORTDOCS%%%%DOCSDIR%%/help/ref-classes-conf.html
-%%PORTDOCS%%%%DOCSDIR%%/help/ref-client-conf.html
-%%PORTDOCS%%%%DOCSDIR%%/help/ref-cups-files-conf.html
-%%PORTDOCS%%%%DOCSDIR%%/help/ref-cupsd-conf.html
-%%PORTDOCS%%%%DOCSDIR%%/help/ref-error_log.html
-%%PORTDOCS%%%%DOCSDIR%%/help/ref-mailto-conf.html
-%%PORTDOCS%%%%DOCSDIR%%/help/ref-page_log.html
-%%PORTDOCS%%%%DOCSDIR%%/help/ref-ppdcfile.html
-%%PORTDOCS%%%%DOCSDIR%%/help/ref-printers-conf.html
-%%PORTDOCS%%%%DOCSDIR%%/help/ref-snmp-conf.html
-%%PORTDOCS%%%%DOCSDIR%%/help/ref-subscriptions-conf.html
-%%PORTDOCS%%%%DOCSDIR%%/help/security.html
-%%PORTDOCS%%%%DOCSDIR%%/help/sharing.html
-%%PORTDOCS%%%%DOCSDIR%%/help/spec-banner.html
-%%PORTDOCS%%%%DOCSDIR%%/help/spec-cmp.html
-%%PORTDOCS%%%%DOCSDIR%%/help/spec-command.html
-%%PORTDOCS%%%%DOCSDIR%%/help/spec-design.html
-%%PORTDOCS%%%%DOCSDIR%%/help/spec-ipp.html
-%%PORTDOCS%%%%DOCSDIR%%/help/spec-pdf.html
-%%PORTDOCS%%%%DOCSDIR%%/help/spec-postscript.html
-%%PORTDOCS%%%%DOCSDIR%%/help/spec-ppd.html
-%%PORTDOCS%%%%DOCSDIR%%/help/spec-raster.html
-%%PORTDOCS%%%%DOCSDIR%%/help/spec-stp.html
-%%PORTDOCS%%%%DOCSDIR%%/help/translation.html
-%%PORTDOCS%%%%DOCSDIR%%/help/whatsnew.html
-%%PORTDOCS%%%%DOCSDIR%%/images/color-wheel.png
-%%PORTDOCS%%%%DOCSDIR%%/images/cups-block-diagram.png
-%%PORTDOCS%%%%DOCSDIR%%/images/cups-command-chain.png
-%%PORTDOCS%%%%DOCSDIR%%/images/cups-icon.png
-%%PORTDOCS%%%%DOCSDIR%%/images/cups-postscript-chain.png
-%%PORTDOCS%%%%DOCSDIR%%/images/cups-raster-chain.png
-%%PORTDOCS%%%%DOCSDIR%%/images/cups.png
-%%PORTDOCS%%%%DOCSDIR%%/images/left.gif
-%%PORTDOCS%%%%DOCSDIR%%/images/raster-organization.png
-%%PORTDOCS%%%%DOCSDIR%%/images/raster.png
-%%PORTDOCS%%%%DOCSDIR%%/images/right.gif
-%%PORTDOCS%%%%DOCSDIR%%/images/sample-image.png
-%%PORTDOCS%%%%DOCSDIR%%/images/sel.gif
-%%PORTDOCS%%%%DOCSDIR%%/images/smiley.jpg
-%%PORTDOCS%%%%DOCSDIR%%/images/unsel.gif
-%%PORTDOCS%%%%DOCSDIR%%/images/wait.gif
-%%PORTDOCS%%%%DOCSDIR%%/index.html
-%%PORTDOCS%%%%DOCSDIR%%/it/index.html
-%%PORTDOCS%%%%DOCSDIR%%/ja/index.html
-%%PORTDOCS%%%%DOCSDIR%%/pt_BR/index.html
-%%PORTDOCS%%%%DOCSDIR%%/robots.txt
-%%PORTDOCS%%%%DOCSDIR%%/ru/index.html
+%%DOCSDIR%%/ca/index.html
+%%DOCSDIR%%/cs/index.html
+%%DOCSDIR%%/cups-printable.css
+%%DOCSDIR%%/cups.css
+%%DOCSDIR%%/de/index.html
+%%DOCSDIR%%/es/index.html
+%%DOCSDIR%%/fr/index.html
+%%DOCSDIR%%/help/accounting.html
+%%DOCSDIR%%/help/api-array.html
+%%DOCSDIR%%/help/api-cgi.html
+%%DOCSDIR%%/help/api-cups.html
+%%DOCSDIR%%/help/api-driver.html
+%%DOCSDIR%%/help/api-filedir.html
+%%DOCSDIR%%/help/api-filter.html
+%%DOCSDIR%%/help/api-httpipp.html
+%%DOCSDIR%%/help/api-mime.html
+%%DOCSDIR%%/help/api-overview.html
+%%DOCSDIR%%/help/api-ppd.html
+%%DOCSDIR%%/help/api-ppdc.html
+%%DOCSDIR%%/help/api-raster.html
+%%DOCSDIR%%/help/cgi.html
+%%DOCSDIR%%/help/glossary.html
+%%DOCSDIR%%/help/kerberos.html
+%%DOCSDIR%%/help/license.html
+%%DOCSDIR%%/help/man-backend.html
+%%DOCSDIR%%/help/man-cancel.html
+%%DOCSDIR%%/help/man-cups-config.html
+%%DOCSDIR%%/help/man-cups-lpd.html
+%%DOCSDIR%%/help/man-cups-snmp.html
+%%DOCSDIR%%/help/man-cupsaccept.html
+%%DOCSDIR%%/help/man-cupsaddsmb.html
+%%DOCSDIR%%/help/man-cupsd.html
+%%DOCSDIR%%/help/man-cupsenable.html
+%%DOCSDIR%%/help/man-cupstestdsc.html
+%%DOCSDIR%%/help/man-cupstestppd.html
+%%DOCSDIR%%/help/man-filter.html
+%%DOCSDIR%%/help/man-ipptool.html
+%%DOCSDIR%%/help/man-ipptoolfile.html
+%%DOCSDIR%%/help/man-lp.html
+%%DOCSDIR%%/help/man-lpadmin.html
+%%DOCSDIR%%/help/man-lpc.html
+%%DOCSDIR%%/help/man-lpinfo.html
+%%DOCSDIR%%/help/man-lpmove.html
+%%DOCSDIR%%/help/man-lpoptions.html
+%%DOCSDIR%%/help/man-lppasswd.html
+%%DOCSDIR%%/help/man-lpq.html
+%%DOCSDIR%%/help/man-lpr.html
+%%DOCSDIR%%/help/man-lprm.html
+%%DOCSDIR%%/help/man-lpstat.html
+%%DOCSDIR%%/help/man-mime.convs.html
+%%DOCSDIR%%/help/man-mime.types.html
+%%DOCSDIR%%/help/man-notifier.html
+%%DOCSDIR%%/help/man-ppdc.html
+%%DOCSDIR%%/help/man-ppdhtml.html
+%%DOCSDIR%%/help/man-ppdi.html
+%%DOCSDIR%%/help/man-ppdmerge.html
+%%DOCSDIR%%/help/man-ppdpo.html
+%%DOCSDIR%%/help/network.html
+%%DOCSDIR%%/help/options.html
+%%DOCSDIR%%/help/overview.html
+%%DOCSDIR%%/help/policies.html
+%%DOCSDIR%%/help/postscript-driver.html
+%%DOCSDIR%%/help/ppd-compiler.html
+%%DOCSDIR%%/help/raster-driver.html
+%%DOCSDIR%%/help/ref-access_log.html
+%%DOCSDIR%%/help/ref-classes-conf.html
+%%DOCSDIR%%/help/ref-client-conf.html
+%%DOCSDIR%%/help/ref-cups-files-conf.html
+%%DOCSDIR%%/help/ref-cupsd-conf.html
+%%DOCSDIR%%/help/ref-error_log.html
+%%DOCSDIR%%/help/ref-mailto-conf.html
+%%DOCSDIR%%/help/ref-page_log.html
+%%DOCSDIR%%/help/ref-ppdcfile.html
+%%DOCSDIR%%/help/ref-printers-conf.html
+%%DOCSDIR%%/help/ref-snmp-conf.html
+%%DOCSDIR%%/help/ref-subscriptions-conf.html
+%%DOCSDIR%%/help/security.html
+%%DOCSDIR%%/help/sharing.html
+%%DOCSDIR%%/help/spec-banner.html
+%%DOCSDIR%%/help/spec-cmp.html
+%%DOCSDIR%%/help/spec-command.html
+%%DOCSDIR%%/help/spec-design.html
+%%DOCSDIR%%/help/spec-ipp.html
+%%DOCSDIR%%/help/spec-pdf.html
+%%DOCSDIR%%/help/spec-postscript.html
+%%DOCSDIR%%/help/spec-ppd.html
+%%DOCSDIR%%/help/spec-raster.html
+%%DOCSDIR%%/help/spec-stp.html
+%%DOCSDIR%%/help/translation.html
+%%DOCSDIR%%/help/whatsnew.html
+%%DOCSDIR%%/images/color-wheel.png
+%%DOCSDIR%%/images/cups-block-diagram.png
+%%DOCSDIR%%/images/cups-command-chain.png
+%%DOCSDIR%%/images/cups-icon.png
+%%DOCSDIR%%/images/cups-postscript-chain.png
+%%DOCSDIR%%/images/cups-raster-chain.png
+%%DOCSDIR%%/images/cups.png
+%%DOCSDIR%%/images/left.gif
+%%DOCSDIR%%/images/raster-organization.png
+%%DOCSDIR%%/images/raster.png
+%%DOCSDIR%%/images/right.gif
+%%DOCSDIR%%/images/sample-image.png
+%%DOCSDIR%%/images/sel.gif
+%%DOCSDIR%%/images/smiley.jpg
+%%DOCSDIR%%/images/unsel.gif
+%%DOCSDIR%%/images/wait.gif
+%%DOCSDIR%%/index.html
+%%DOCSDIR%%/it/index.html
+%%DOCSDIR%%/ja/index.html
+%%DOCSDIR%%/pt_BR/index.html
+%%DOCSDIR%%/robots.txt
+%%DOCSDIR%%/ru/index.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ulpt-cupsd.conf
 share/applications/cups.desktop
 %%ICONS%%share/icons/hicolor/128x128/apps/cups.png
@@ -1046,18 +1046,18 @@ share/locale/ru/cups_ru.po
 %%ICONS%%@dirrmtry share/icons/hicolor/128x128
 %%ICONS%%@dirrmtry share/icons/hicolor
 %%ICONS%%@dirrmtry share/icons
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/cs
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/ca
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/de
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/ru
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/pt_BR
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/ja
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/it
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/images
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/help
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/es
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/fr
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm %%DOCSDIR%%/cs
+@dirrm %%DOCSDIR%%/ca
+@dirrm %%DOCSDIR%%/de
+@dirrm %%DOCSDIR%%/ru
+@dirrm %%DOCSDIR%%/pt_BR
+@dirrm %%DOCSDIR%%/ja
+@dirrm %%DOCSDIR%%/it
+@dirrm %%DOCSDIR%%/images
+@dirrm %%DOCSDIR%%/help
+@dirrm %%DOCSDIR%%/es
+@dirrm %%DOCSDIR%%/fr
+@dirrm %%DOCSDIR%%
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
 %%LIBUSB%%@dirrm %%DATADIR%%/usb
 @dirrm %%DATADIR%%/templates/cs
