@@ -1,5 +1,5 @@
---- Makefile.orig	2012-01-10 13:13:14.000000000 +0400
-+++ Makefile	2014-07-07 15:57:36.000000000 +0400
+--- ./Makefile.orig	2012-01-10 04:13:14.000000000 -0500
++++ ./Makefile	2014-08-16 20:31:58.000000000 -0400
 @@ -1,8 +1,8 @@
  
  # try different definitions of SGILIB if hash_map is not found
@@ -11,7 +11,7 @@
  
  # comment the following lines if readline is not found
  READLINE = -DREADLINE
-@@ -18,18 +18,18 @@
+@@ -18,19 +18,19 @@
  
  # Uncomment this line in order to compile a library and
  # run "make clean" in order to force a recompilation of the object files
@@ -30,10 +30,12 @@
 +CC ?= cc
  CL = $(CC)
 -CFLAGS = -O3 $(WARNING) $(SGILIB) $(CDT) $(READLINE) $(FPIC)
+-LDFLAGS =
 +CFLAGS += $(WARNING) $(SGILIB) $(CDT) $(READLINE) $(FPIC)
- LDFLAGS =
++#LDFLAGS =
  
  CXXFLAGS = $(CFLAGS)
+ LXXFLAGS = $(LDFLAGS)
 @@ -46,7 +46,7 @@
  endif
  
