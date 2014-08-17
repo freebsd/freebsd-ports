@@ -1,0 +1,12 @@
+When programming with callbacks in perl, you create anonymous functions with
+sub { ... }. These functions are especially useful because when they are called
+they will preserve their surrounding lexical environment.  Sometimes people
+call these anonymous functions that reference variables in their surrounding
+lexical scope "closures". Whatever you call them, they are essential for
+convenient and efficient asynchronous programming.
+
+For many applications we really like straightforward callback style. The goal
+of Callback::Frame is to simplify the management of dynamic environments while
+leaving callback style alone.
+
+WWW: http://search.cpan.org/dist/Callback-Frame/
