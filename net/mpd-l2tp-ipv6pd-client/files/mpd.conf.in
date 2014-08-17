@@ -8,8 +8,8 @@ l2tp:
 	set bundle no ipcp
 	set bundle enable ipv6cp
 	set iface idle 0
-	set iface up-script %%PREFIX%%/%%CONF_DIR%%/linkup.sh
-	set iface down-script %%PREFIX%%/%%CONF_DIR%%/linkdown.sh
+	set iface up-script %%CONFDIR%%/linkup.sh
+	set iface down-script %%CONFDIR%%/linkdown.sh
 	#set iface route ::/0
 
 	create link static Ll2tp l2tp

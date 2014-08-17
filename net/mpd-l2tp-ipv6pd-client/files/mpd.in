@@ -1,4 +1,4 @@
-mpd_confdir="%%PREFIX%%/%%CONF_DIR%%"
+mpd_confdir="%%CONFDIR%%"
 mpd_rundir="/var/run"
 
 mpd_enable="YES"

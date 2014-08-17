@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# Copyright (c) 2007  Hajimu UMEMOTO
+# Copyright (c) 2007-2014 Hajimu UMEMOTO <ume@mahoroba.org>
 # All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
@@ -28,16 +28,11 @@
 # REQUIRE: mountcritremote
 # KEYWORD: nojail nostart
 
-prefix=%%PREFIX%%
-DATE=%%DATE%%
-MD5=%%MD5%%
-SED=%%SED%%
-
 . /etc/rc.subr
 
 name="dhcp6c_pd"
 rcvar=
-command="${prefix}/sbin/dhcp6c"
+command="%%_PREFIX_%%/sbin/dhcp6c"
 start_precmd="dhcp6c_pd_prestart"
 start_postcmd="dhcp6c_pd_poststart"
 stop_precmd="dhcp6c_pd_precmd"
@@ -68,21 +63,21 @@ dhcp6c_pd_prestart()
 {
 	dhcp6c_pd_precmd
 
-	pid=`getpid`
+	pid=$(getpid)
 	if [ -n "${pid}" ]; then
 		dhcp6c_pd_stop
 		sleep 2
 	fi
 
 	# create dhcp6c.conf
-	${SED} -e "s/__INTERFACE__/${dhcp6c_pd_interface}/" \
-	       -e "s/__PD_INTERFACE__/${dhcp6c_pd_rtadvd_interface}/" \
+	sed -e "s/__INTERFACE__/${dhcp6c_pd_interface}/" \
+	    -e "s/__PD_INTERFACE__/${dhcp6c_pd_rtadvd_interface}/" \
 	    < ${dhcp6c_pd_conf_in} > ${dhcp6c_pd_conf}.${dhcp6c_pd_interface}
 
 	# create dhcp6cctlkey
-	#if [ ! -f ${prefix}/etc/dhcp6cctlkey ]; then
-	#	${MD5} -q -s `${DATE} "+%Y-%m-%d-%H-%M-%S"` \
-	#	    > ${prefix}/etc/dhcp6cctlkey
+	#if [ ! -f %%_PREFIX_%%/etc/dhcp6cctlkey ]; then
+	#	/sbin/md5 -q -s $(date "+%Y-%m-%d-%H-%M-%S") \
+	#	    > %%_PREFIX_%%/etc/dhcp6cctlkey
 	#fi
 }
 
@@ -107,7 +102,7 @@ dhcp6c_pd_stop()
 		fi
 	fi
 
-	pid=`getpid`
+	pid=$(getpid)
 	if [ -n "${pid}" ]; then
 		kill ${pid}
 		rm -f ${dhcp6c_pd_conf}.${dhcp6c_pd_interface}
@@ -115,13 +110,13 @@ dhcp6c_pd_stop()
 }
 
 load_rc_config ${name}
-dhcp6c_pd_conf_in=${dhcp6c_pd_conf_in:-"${prefix}/%%CONF_DIR%%/dhcp6c.conf.in"}
+dhcp6c_pd_conf_in=${dhcp6c_pd_conf_in:-"%%CONFDIR%%/dhcp6c.conf.in"}
 dhcp6c_pd_conf=${dhcp6c_pd_conf:-"/var/run/dhcp6c.conf"}
 dhcp6c_pd_interface=${2:-${dhcp6c_pd_interface}}
 dhcp6c_pd_localaddr=${3:-${dhcp6c_pd_localaddr}}
 dhcp6c_pd_rtadvd_enable=${dhcp6c_pd_rtadvd_enable:-"NO"}
 dhcp6c_pd_rtadvd_interface=${dhcp6c_pd_rtadvd_interface:-"%%PD_INTERFACE%%"}
-dhcp6c_pd_rtadvd_conf=${dhcp6c_pd_rtadvd_conf:-"${prefix}/%%CONF_DIR%%/rtadvd.conf"}
+dhcp6c_pd_rtadvd_conf=${dhcp6c_pd_rtadvd_conf:-"%%CONFDIR%%/rtadvd.conf"}
 required_files="${dhcp6c_pd_conf_in}"
 pidfile=/var/run/dhcp6c-${dhcp6c_pd_interface}.pid
 command_args="-p ${pidfile} -c ${dhcp6c_pd_conf}.${dhcp6c_pd_interface} ${dhcp6c_pd_interface}"

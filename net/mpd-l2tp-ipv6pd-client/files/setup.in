@@ -1,0 +1,121 @@
+#!/bin/sh
+#
+# Copyright (c) 2007-2014 Hajimu UMEMOTO <ume@mahoroba.org>
+# All rights reserved.
+#
+# Redistribution and use in source and binary forms, with or without
+# modification, are permitted provided that the following conditions
+# are met:
+# 1. Redistributions of source code must retain the above copyright
+#    notice, this list of conditions and the following disclaimer.
+# 2. Redistributions in binary form must reproduce the above copyright
+#    notice, this list of conditions and the following disclaimer in the
+#    documentation and/or other materials provided with the distribution.
+#
+# THIS SOFTWARE IS PROVIDED BY THE AUTHOR AND CONTRIBUTORS ``AS IS'' AND
+# ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+# IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+# ARE DISCLAIMED.  IN NO EVENT SHALL THE AUTHOR OR CONTRIBUTORS BE LIABLE
+# FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+# DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
+# OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+# HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+# LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
+# OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+# SUCH DAMAGE.
+
+PREFIX=%%PREFIX%%
+DATADIR=%%DATADIR%%
+
+MPD_NAME=mpd5
+CONFDIR="${PREFIX}/etc/${MPD_NAME}"
+
+mv_if_exists()
+{
+	file="$1"
+
+	if [ -f ${file} ]; then
+		mv ${file} ${file}.bak
+	fi
+}
+
+: ${DIALOG_OK=0}
+
+tempfile=$(mktemp -t ipv6pd)
+dialog --title "L2TP-IPv6PD Setup" --clear \
+       --mixedform "Please input L2TP-IPv6PD account information." 11 76 0 \
+       "User ID:"				1 1 "" 1 36 64 0 0 \
+       "Passwd:"				2 1 "" 2 36 64 0 0 \
+       "L2TP-IPv6PD Server (Fixed Prefix):"	3 1 "" 3 36 64 0 0 \
+       "Prefix Delegation Interface:"		4 1 "" 4 36 64 0 0 \
+       2> ${tempfile}
+retval=$?
+case ${retval} in
+${DIALOG_OK})
+	OIFS="${IFS}"
+	IFS=
+	exec < ${tempfile}
+	read ppp_id
+	read ppp_passwd
+	read fixed_server
+	read pd_interface
+	rm ${tempfile}
+	IFS="${OIFS}"
+
+	dialog --clear --title "L2TP-IPv6PD Setup" \
+	       --yesno "\
+User ID: ${ppp_id}
+Passwd: ${ppp_passwd}
+L2TP-IPv6PD Server: ${fixed_server}
+Prefix Delegation Interface: ${pd_interface}
+
+Is it okay to proceed?" 10 76
+	retval=$?
+	case ${retval} in
+	$DIALOG_OK)
+		break
+		;;
+	*)
+		exit
+		;;
+	esac
+	;;
+*)
+	rm ${tempfile}
+	exit
+	;;
+esac
+
+tempdir=$(mktemp -d -t ipv6pd)
+for infile in ${DATADIR}/*.in; do
+	outfile=${tempdir}/$(basename ${infile} .in)
+	sed -e "s|%%PPP_ID%%|${ppp_id}|g" \
+	    -e "s|%%PPP_PASSWD%%|${ppp_passwd}|g" \
+	    -e "s|%%FIXED_SERVER%%|${fixed_server}|g" \
+	    -e "s|%%PD_INTERFACE%%|${pd_interface}|g" \
+	    -e "s|%%CONFDIR%%|${CONFDIR}|g" \
+	    -e "s|%%_PREFIX_%%|${PREFIX}|g" \
+		< ${infile} > ${outfile}
+done
+
+CONF_FILES="dhcp6c.conf.in mpd.conf rtadvd.conf"
+SCRIPT_FILES="dhcp6c_pd.sh linkdown.sh linkup.sh"
+SECRET_FILES="mpd.secret"
+
+mkdir -p ${CONFDIR}
+for f in ${CONF_FILES}; do
+	mv_if_exists ${CONFDIR}/${f}
+	install -m 444 ${tempdir}/${f} ${CONFDIR}/${f}
+done
+for f in ${SCRIPT_FILES}; do
+	mv_if_exists ${CONFDIR}/${f}
+	install -m 555 ${tempdir}/${f} ${CONFDIR}/${f}
+done
+for f in ${SECRET_FILES}; do
+	mv_if_exists ${CONFDIR}/${f}
+	install -m 400 ${tempdir}/${f} ${CONFDIR}/${f}
+done
+mkdir -p /etc/rc.conf.d
+mv_if_exists /etc/rc.conf.d/${MPD_NAME}
+install -m 444 ${tempdir}/mpd /etc/rc.conf.d/${MPD_NAME}
+rm -rf ${tempdir}

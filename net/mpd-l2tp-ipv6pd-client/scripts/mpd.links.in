@@ -1,6 +1,0 @@
-L2TP0:
-	set phys type l2tp
-	set l2tp peer %%FIXED_SERVER%%
-	set l2tp hostname %%PPP_ID%%
-	set l2tp disable incoming
-	set l2tp enable originate
