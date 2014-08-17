@@ -3,7 +3,7 @@
 
 PORTNAME=	Coin
 PORTVERSION=	3.1.3
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	graphics
 MASTER_SITES=	https://bitbucket.org/Coin3D/coin/downloads/
 
@@ -28,5 +28,8 @@ MAKE_ENV=	LANG=C
 post-patch:
 	@${REINPLACE_CMD} -e 's|DATA install-data-local|DATA|g' ${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e 's|-pthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
+
+post-build:
+	@${REINPLACE_CMD} -e '/^ldflags=/s|-R|-Wl,-rpath,|' ${WRKSRC}/coin-default.cfg
 
 .include <bsd.port.mk>
