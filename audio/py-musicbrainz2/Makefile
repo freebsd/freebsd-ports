@@ -19,7 +19,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING.txt
 LIB_DEPENDS=	libdiscid.so:${PORTSDIR}/audio/libdiscid
 
 USES=		python:2
-PYTHON_FEATURES=	autoplist distutils
+USE_PYTHON=	autoplist distutils
 PYDISTUTILS_PKGNAME=	python-musicbrainz2
 
 .include <bsd.port.mk>
