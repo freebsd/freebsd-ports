@@ -6,7 +6,7 @@ PORTVERSION=	1.1.5
 CATEGORIES=	misc
 MASTER_SITES=	http://software.frodo.looijaard.name/getopt/files/
 
-MAINTAINER=	eadler@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Replacement for getopt(1) that supports GNU-style long options
 
 USES=		gettext gmake

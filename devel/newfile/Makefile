@@ -7,7 +7,7 @@ PORTREVISION=	4
 CATEGORIES=	devel
 MASTER_SITES=	SF
 
-MAINTAINER=	eadler@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tool for creating starter files in various languages
 
 LICENSE=	BSD3CLAUSE

@@ -8,7 +8,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	nik
 
-MAINTAINER=	eadler@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Converts the output of "vidcontrol -p" to PNG
 
 LIB_DEPENDS=	libgd.so:${PORTSDIR}/graphics/gd

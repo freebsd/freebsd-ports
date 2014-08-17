@@ -6,7 +6,7 @@ CATEGORIES=	games
 MASTER_SITES=	http://www.solarus-games.org/downloads/solarus/
 DISTNAME=	solarus-${PORTVERSION}-src
 
-MAINTAINER=	eadler@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Zelda-like 2D game engine
 
 LIB_DEPENDS=	libphysfs.so:${PORTSDIR}/devel/physfs \
