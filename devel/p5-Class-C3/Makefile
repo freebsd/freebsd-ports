@@ -1,8 +1,7 @@
-# Created by: Lars Balker Rasmussen <lbr@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	Class-C3
-PORTVERSION=	0.26
+PORTVERSION=	0.27
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
