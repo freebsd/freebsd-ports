@@ -10,6 +10,8 @@ MASTER_SITES=	https://gitorious.org/${GO_ACCOUNT}/${GO_PROJECT}/archive/${GO_TAG
 MAINTAINER=	delphij@FreeBSD.org
 COMMENT=	OpenLDAP Lightning Memory-Mapped Database
 
+BROKEN=		Checksum mismatch
+
 # XXX FreeBSD does not implement O_DSYNC and fdatasync at this time.
 CFLAGS+=	-DMDB_DSYNC=O_SYNC -Dfdatasync=fsync
 WRKSRC=		${WRKDIR}/mdb-mdb/libraries/liblmdb
