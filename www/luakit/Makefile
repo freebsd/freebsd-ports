@@ -3,7 +3,7 @@
 
 PORTNAME=	luakit
 PORTVERSION=	2012.09.13r1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www
 
 MAINTAINER=	ports@FreeBSD.org
@@ -16,7 +16,7 @@ LIB_DEPENDS=	libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib \
 		libsqlite3.so:${PORTSDIR}/databases/sqlite3 \
 		libwebkitgtk-1.0.so:${PORTSDIR}/www/webkit-gtk2 \
 		libunique-1.0.so:${PORTSDIR}/x11-toolkits/unique
-RUN_DEPENDS=	${LUA_PKGNAMEPREFIX}luafilesystem>=0:${PORTSDIR}/devel/luafilesystem
+RUN_DEPENDS=	${LUA_PKGNAMEPREFIX}luafilesystem>=0:${PORTSDIR}/devel/luafilesystem-51
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	mason-larobina
