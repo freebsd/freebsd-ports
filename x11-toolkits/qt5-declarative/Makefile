@@ -7,7 +7,7 @@ CATEGORIES=	x11-toolkits
 PKGNAMEPREFIX=	qt5-
 
 MAINTAINER=	kde@FreeBSD.org
-COMMENT=	Qt 4-compatible declarative UI framework
+COMMENT=	Qt 5-compatible declarative UI framework
 
 USE_QT5=	core designer gui network opengl script sql webkit \
 		widgets xmlpatterns buildtools_build
