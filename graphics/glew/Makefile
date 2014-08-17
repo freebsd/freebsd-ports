@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	glew
-PORTVERSION=	1.10.0
-PORTREVISION=	1
+PORTVERSION=	1.11.0
 CATEGORIES=	graphics
 MASTER_SITES=	SF
 
@@ -18,9 +17,14 @@ USE_XORG=	x11 xext xi xmu
 USE_GL=		yes
 USE_LDCONFIG=	yes
 
+MAKE_ENV+=	GLEW_DEST=${PREFIX}
+
 OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.options.mk>
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|CFLAGS =|CFLAGS +=|' ${WRKSRC}/Makefile
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/glewinfo ${STAGEDIR}${PREFIX}/bin
