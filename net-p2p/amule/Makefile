@@ -95,7 +95,6 @@ PLASMAMULE_CONFIGURE_ENV= \
 			ac_cv_path_KDE4_CONFIG=${KDE4_PREFIX}/bin/kde4-config \
 			KBUILDSYCOCA=${KDE4_PREFIX}/bin/kbuildsycoca4 \
 			UPDATE_MIME_DATABASE=/usr/bin/true
-PLASMAMULE_PLIST_SUB+=	RESETPREFIX=${PREFIX}
 
 UPNP_LIB_DEPENDS=	libupnp.so:${PORTSDIR}/devel/upnp
 UPNP_CONFIGURE_OFF=	--disable-upnp

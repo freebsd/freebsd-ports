@@ -22,6 +22,5 @@ USE_PYDISTUTILS=	yes
 USES=		twisted:run
 FETCH_ARGS=	-o ${DISTNAME}${EXTRACT_SUFX}
 USE_RC_SUBR=	carbon
-PLIST_SUB+=	RESETPREFIX=${PREFIX}
 
 .include <bsd.port.mk>

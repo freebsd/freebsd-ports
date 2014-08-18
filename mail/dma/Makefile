@@ -27,7 +27,6 @@ LDFLAGS+=	-L${OPENSSLLIB}
 
 USE_RC_SUBR=	dma_flushq
 SUB_FILES=	pkg-message
-PLIST_SUB+=	RESETPREFIX=${PREFIX}
 
 # Allow subports to extend.
 CONFFILES+=	dma.conf auth.conf

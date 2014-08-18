@@ -26,7 +26,6 @@ PORTEXAMPLES=	*
 USERS=		puppet
 GROUPS=		puppet
 SUB_FILES+=	pkg-message
-PLIST_SUB+=	RESETPREFIX=${PREFIX}
 
 PORTSCOUT=	limit:^2\.7\.
 
