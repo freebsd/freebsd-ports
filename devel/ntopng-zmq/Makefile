@@ -3,6 +3,7 @@
 
 PORTNAME=	zmq
 PORTVERSION=	3.2.3
+PORTREVISION=	1
 CATEGORIES=	devel net
 MASTER_SITES=	http://download.zeromq.org/
 PKGNAMEPREFIX=	ntopng-
@@ -18,7 +19,7 @@ GNU_CONFIGURE=	yes
 MAKE_JOBS_UNSAFE=	yes
 USE_GCC=	any
 USE_LDCONFIG=	yes
-USES=		pathfix
+USES=		libtool pathfix
 
 CONFLICTS=	zmq-[0-9]*
 
