@@ -82,7 +82,10 @@ ${INDEXDIR}/${INDEXFILE}.bz2: .PHONY
 MASTER_SITE_INDEX?=	http://www.FreeBSD.org/ports/
 SETENV?=	/usr/bin/env
 FETCHINDEX?=	${SETENV} ${FETCH_ENV} fetch -am -o
-INDEX_JOBS?=	2
+
+.if !defined(INDEX_JOBS)
+INDEX_JOBS!=	${SYSCTL} -n kern.smp.cpus
+.endif
 
 .if !defined(INDEX_VERBOSE)
 INDEX_ECHO_MSG=		true
