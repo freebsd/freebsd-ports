@@ -60,6 +60,7 @@
     SUBDIR += hc
     SUBDIR += ibus-chewing
     SUBDIR += ibus-pinyin
+    SUBDIR += ibus-table-chinese
     SUBDIR += irssi
     SUBDIR += jis2gb
     SUBDIR += joe
