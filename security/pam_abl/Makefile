@@ -60,10 +60,8 @@ pre-install:
 	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
 .endfor
 .endif
-.if !defined(NO_INSTALL_MANPAGES)
 	@${MKDIR} ${MAN8PREFIX}/man/man8
 	${INSTALL_MAN} ${WRKDIR}/pam_abl.8 ${MAN8PREFIX}/man/man8/
-.endif
 	@${MKDIR} ${PREFIX}/etc/periodic/daily
 	${INSTALL_SCRIPT} ${WRKDIR}/190.clean-pam-abl ${PREFIX}/etc/periodic/daily/
 

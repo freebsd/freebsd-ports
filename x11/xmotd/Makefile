@@ -10,9 +10,8 @@ MASTER_SITES=	http://www.ee.ryerson.ca/~elf/pub/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	message-of-the-day browser for X11 and dumb-terminals
 
-USES=		imake
+USES=		imake:noman
 USE_XORG=	ice sm x11 xaw xext xmu xt
-NO_INSTALL_MANPAGES=	yes
 XFREE86_HTML_MAN=	no
 
 PLIST_FILES=	bin/xmotd \

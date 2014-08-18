@@ -18,7 +18,6 @@ SHEBANG_FILES=	contrib/*.pl \
 		*.pl
 
 NO_BUILD=	yes
-NO_INSTALL_MANPAGES=yes
 
 do-install:
 	@cd ${WRKSRC};./install.pl --prefix=${PREFIX}/fsbackup --prefix-man=${MANPREFIX}/man/man1 --dest=${STAGEDIR}

@@ -40,9 +40,7 @@ GROUPS=		nobody
 
 OOPSVAR=	/var/run/oops
 OOPSLOG=	/var/log/oops
-.if !defined(NO_INSTALL_MANPAGES)
 MAN8=		oops.8 oopsctl.8
-.endif
 
 USE_RC_SUBR=	oops
 PKGMESSAGE=	${WRKDIR}/pkg-message
@@ -89,10 +87,8 @@ pre-configure:
 	@cd ${WRKSRC} && ${AUTOHEADER}
 
 post-install:
-.if !defined(NO_INSTALL_MANPAGES)
 	@${INSTALL_MAN} ${WRKSRC}/doc/oops.8 ${PREFIX}/man/man8
 	@${INSTALL_MAN} ${WRKSRC}/doc/oopsctl.8 ${PREFIX}/man/man8
-.endif
 	@${MKDIR} -m 750 ${OOPSVAR}
 	@${CHOWN} oops ${OOPSVAR}
 	@${MKDIR} -m 750 ${OOPSLOG}

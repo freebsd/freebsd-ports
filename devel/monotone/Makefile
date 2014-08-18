@@ -48,12 +48,10 @@ PLIST_FILES=	bin/mtn bin/mtn-cleanup bin/mtnopt \
 		"@dirrmtry share/zsh/site-functions" \
 		"@dirrm share/monotone/scripts" \
 		"@dirrm share/monotone"
-.if !defined(NO_INSTALL_MANPAGES)
 INFO=		monotone
 PLIST_FILES+=	man/man1/mtn.1.gz \
 		man/man1/mtn-cleanup.1.gz \
 		man/man1/mtnopt.1.gz
-.endif
 PORTDOCS=	*
 
 OPTIONS_DEFINE=	DOCS NLS
@@ -77,11 +75,6 @@ post-extract:
 post-patch:
 .if ! ${PORT_OPTIONS:MDOCS}
 	${REINPLACE_CMD} -Ee '/^install-(contrib|examples)-data:/{' -e 'n' -e 'd' -e '}' ${WRKSRC}/Makefile.in
-.endif
-.if defined(NO_INSTALL_MANPAGES)
-	${REINPLACE_CMD} -Ee '/^install-(info|man): /s/ install-.*$$//' ${WRKSRC}/Makefile.in
-	${REINPLACE_CMD} -Ee '/^install-info: /s/ install-info-am$$//' \
-	-e '/^install-data-am:/s/ install-info-am$$//' ${WRKSRC}/doc/Makefile.in
 .endif
 	${REINPLACE_CMD} \
 		-e "s/REBUILD_NLS=true/REBUILD_NLS=false/g" \

@@ -26,9 +26,7 @@ TOTEM_DESC=	use totem instead of mplayer
 VLC_DESC=	use vlc instead of mplayer
 XINE_DESC=	use xine instead of mplayer
 
-.if !defined(NO_INSTALL_MANPAGES)
 MAN1=	tunapie.1
-.endif
 
 PLIST_SUB+=	DESKTOPDIR="${DESKTOPDIR:S,^${PREFIX}/,,}"
 
@@ -48,9 +46,7 @@ post-patch:
 do-install:
 	@${MKDIR} ${DESKTOPDIR}
 	@cd ${WRKSRC} && ./install.sh ${ADULT_TVLIST}
-.if !defined(NO_INSTALL_MANPAGES)
 	@${CP} ${WRKSRC}/${PORTNAME}.1 ${MAN1PREFIX}/man/man1/
-.endif
 
 .include <bsd.port.options.mk>
 .include <bsd.port.pre.mk>

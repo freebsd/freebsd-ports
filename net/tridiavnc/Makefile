@@ -15,11 +15,10 @@ COMMENT=	Display X and Win32 desktops on remote X/Win32/Java displays
 LICENSE=	GPLv2
 
 WRKSRC=		${WRKDIR}/unix/vnc_unixsrc
-USES=		imake shebangfix perl5 tar:tgz
+USES=		imake:noman shebangfix perl5 tar:tgz
 SHEBANG_FILES=	vncserver
 USE_XORG=	ice sm x11 xaw xext xmu xt xpm
 ALL_TARGET=	World
-NO_INSTALL_MANPAGES=	yes
 XFREE86_HTML_MAN=	no
 MAKE_JOBS_UNSAFE=yes
 

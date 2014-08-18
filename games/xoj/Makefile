@@ -11,9 +11,8 @@ MASTER_SITE_SUBDIR=	X11/demos
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	O. J. Simpson Simulator root window demo
 
-USES=		imake tar:tgz
+USES=		imake:noman tar:tgz
 USE_XORG=	xaw
-NO_INSTALL_MANPAGES=	yes
 PLIST_FILES=	bin/xoj
 
 .include <bsd.port.mk>

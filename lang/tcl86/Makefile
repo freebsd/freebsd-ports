@@ -49,7 +49,7 @@ PLIST_SUB=	TCL_VER=${TCL_VER} \
 
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MTCLMAN} && !defined(NO_INSTALL_MANPAGES)
+.if ${PORT_OPTIONS:MTCLMAN}
 INSTALL_TARGET+=install-doc
 PLIST_SUB+=	MAN=""
 .else
