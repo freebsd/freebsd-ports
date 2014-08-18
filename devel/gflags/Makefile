@@ -3,6 +3,7 @@
 
 PORTNAME=	gflags
 PORTVERSION=	2.0
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	GOOGLE_CODE
 
@@ -15,9 +16,8 @@ OPTIONS_DEFINE=	DOCS
 
 GNU_CONFIGURE=	yes
 MAKE_ENV=	INSTALL_STRIP_FLAG=${STRIP}
-USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
-USES=		pathfix shebangfix
+USES=		libtool pathfix shebangfix
 
 PORTDOCS=	AUTHORS COPYING ChangeLog INSTALL NEWS README README_windows.txt \
 		designstyle.css gflags.html

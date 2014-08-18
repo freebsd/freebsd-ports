@@ -3,6 +3,7 @@
 
 PORTNAME=	rocksdb
 PORTVERSION=	3.2
+PORTREVISION=	1
 CATEGORIES=	databases
 
 MAINTAINER=	sunpoet@FreeBSD.org
