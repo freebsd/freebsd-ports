@@ -26,11 +26,7 @@ USES=	tar:bzip2
 # not compatible with 3.0
 USE_PYTHON=	2
 
-.if !defined(NO_INSTALL_MANPAGES)
 MAN1=	${PORTNAME}.1 ${PORTNAME}-passwd.1
-.else
-CONFIGURE_ARGS=	--with-doc=no
-.endif
 
 OPTIONS_DEFINE=	FEEDPARSER FFMPEG MPLAYER NEWT PYCRYPTO SQLITE3 VLC XCLIP XINE
 FEEDPARSER_DESC=	Feed parsing support

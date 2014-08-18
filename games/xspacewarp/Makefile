@@ -10,9 +10,8 @@ MASTER_SITES=	XCONTRIB/games
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Time Trek - like game for X Window System
 
-USES=		imake
+USES=		imake:noman
 USE_XORG=	x11 xaw xext xmu xt xpm sm ice
-NO_INSTALL_MANPAGES=	yes
 
 PLIST_FILES=	bin/xspacewarp \
 		lib/X11/app-defaults/XSpacewarp

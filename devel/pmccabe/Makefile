@@ -25,10 +25,8 @@ do-install:
 .for f in ${SCRIPTS}
 	${INSTALL_SCRIPT} ${WRKSRC}/${f} ${STAGEDIR}${PREFIX}/bin
 .endfor
-.if !defined(NO_INSTALL_MANPAGES)
-. for f in ${MANPAGE}
+.for f in ${MANPAGE}
 	${INSTALL_MAN} ${WRKSRC}/${f} ${STAGEDIR}${MANPREFIX}/man/man1
-. endfor
-.endif
+.endfor
 
 .include <bsd.port.mk>

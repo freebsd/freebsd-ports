@@ -16,7 +16,6 @@ DOWNLOAD_URL=	http://www.symantec.com/business/support/index?page=content&id=TEC
 USE_LINUX=	yes
 NO_BUILD=	yes
 ONLY_FOR_ARCHS=	i386
-NO_INSTALL_MANPAGES=	yes
 SUB_FILES=	pkg-message
 USE_RC_SUBR=	be-agent
 PLIST_FILES=	bin/agent.be \

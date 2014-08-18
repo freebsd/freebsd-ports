@@ -13,9 +13,8 @@ COMMENT=	Block action game
 
 WRKSRC=		${WRKDIR}/xdeblo_v1.0
 
-USES=		imake
+USES=		imake:noman
 USE_XORG=	xpm
-NO_INSTALL_MANPAGES=	yes
 CFLAGS+=	-Wno-return-type
 
 post-patch:

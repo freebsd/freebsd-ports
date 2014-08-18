@@ -18,9 +18,8 @@ COMMENT=	Japanese input method, library part
 LICENSE=	MIT
 LICENSE_FILE=	${FILESDIR}/COPYING
 
-USES=		imake
+USES=		imake:noman
 USE_LDCONFIG=	yes
-NO_INSTALL_MANPAGES=	yes
 SUB_FILES=	sj3_freebsd.tmpl
 SUB_LIST=	DESTDIR=${DESTDIR}
 

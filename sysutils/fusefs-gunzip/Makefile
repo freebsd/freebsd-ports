@@ -14,8 +14,6 @@ USES=		fuse
 
 PLIST_FILES=	bin/fuse.gunzip
 
-NO_INSTALL_MANPAGES=	yes
-
 do-build:
 	(cd ${WRKSRC} && \
 	${CC} ${CFLAGS} -I${LOCALBASE}/include -I${LOCALBASE}/include/fuse \

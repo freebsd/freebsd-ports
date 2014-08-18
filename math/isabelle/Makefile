@@ -132,8 +132,6 @@ BUILD_DEPENDS+=	polyml>=5.2.1:${PORTSDIR}/lang/polyml
 RUN_DEPENDS+=	polyml>=5.2.1:${PORTSDIR}/lang/polyml
 .endif
 
-NO_INSTALL_MANPAGES=yes
-
 post-extract:
 	@${CP} ${FILESDIR}/Makefile ${WRKSRC}
 

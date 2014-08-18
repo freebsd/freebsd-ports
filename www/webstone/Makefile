@@ -14,7 +14,6 @@ USES=		tar:tgz
 GNU_CONFIGURE=	yes
 WRKSRC=		${WRKDIR}/WebStone2.5/src
 ALL_TARGET=	install
-NO_INSTALL_MANPAGES=	yes
 
 do-install:
 	@${RM} ${WRKSRC}/../bin/runs/keepme

@@ -106,11 +106,6 @@ IGNORE=		needs an existing installation of Perl built with WITH_THREADS=yes
 .endif
 
 post-patch:
-.if defined(NO_INSTALL_MANPAGES)
-	@${REINPLACE_CMD} -e \
-		-e '/%%MAN/s/^/#/ \
-		${WRKSRC}/pandora_server_installer
-.endif
 	@${REINPLACE_CMD} \
 		-e 's|%%PREFIX%%|${PREFIX}|g' \
 		-e 's|%%DATADIR%%|${DATADIR}|g' \

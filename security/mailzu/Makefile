@@ -17,8 +17,6 @@ RUN_DEPENDS=	${LOCALBASE}/sbin/amavisd:${PORTSDIR}/security/amavisd-new \
 		${PEARDIR}/Net/Socket.php:${PORTSDIR}/net/pear-Net_Socket \
 		${PEARDIR}/Mail/mimeDecode.php:${PORTSDIR}/mail/pear-Mail_mimeDecode
 
-NO_INSTALL_MANPAGES=	yes
-
 PEARDIR?=	${LOCALBASE}/share/pear
 SUB_LIST+=	PKGNAME=${PKGNAME}
 SUB_FILES=	pkg-message
@@ -40,6 +38,8 @@ MYSQL_USE=	PHP=mysql
 PGSQL_USE=	PHP=pgsql
 IMAP_USE=	PHP=imap
 LDAP_USE=	PHP=ldap
+
+PORTDOCS=	*
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${WWWDIR}

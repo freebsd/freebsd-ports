@@ -37,8 +37,6 @@ USE_PYDISTUTILS=	yes
 PYDISTUTILS_INSTALLARGS+=	--install-data=${PREFIX}/share
 PYDISTUTILS_AUTOPLIST=	yes
 
-NO_INSTALL_MANPAGES=	yes
-
 post-patch:
 	@${REINPLACE_CMD} -e 's,/usr/local,${PREFIX},' \
 		${WRKSRC}/libnamebench/util.py
