@@ -1,0 +1,11 @@
+--- spice3f5/common/src/lib/fte/makedefs.orig	1994-01-31 00:52:12 UTC
++++ spice3f5/common/src/lib/fte/makedefs
+@@ -28,7 +28,7 @@ LIBRARY		= fte
+ LIB_TARGET	= $(OBJLIB_DIR)/$(LIBRARY).a
+ 
+ INCLUDE		= -I$(INCLUDE_DIR) -I$(TCGMSG_DIR)/include $(INCX)
+-CFLAGS		= $(CC_OPT) $(SYS_CFLAGS) $(INTERFACE_OPTS)
++REAL_CFLAGS		= $(CC_OPT) $(SYS_CFLAGS) $(INTERFACE_OPTS)
+ CONF_DEP_EXTRA	= $(CONF_XCC)
+ agraf.o: agraf.c
+ arg.o: arg.c

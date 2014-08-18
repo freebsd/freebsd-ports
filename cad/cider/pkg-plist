@@ -5,104 +5,109 @@ bin/nutmeg
 bin/proc2mod
 bin/sconvert
 bin/spice3
-share/cider/helpdir/cider.idx
-share/cider/helpdir/cider.txt
-share/cider/helpdir/spice.idx
-share/cider/helpdir/spice.txt
-share/cider/scripts/devaxis
-share/cider/scripts/devload
-share/cider/scripts/spinit
-%%PORTDOCS%%share/examples/cider/bicmos/bicmos.lib
-%%PORTDOCS%%share/examples/cider/bicmos/bicmpd.cir
-%%PORTDOCS%%share/examples/cider/bjt/astable.cir
-%%PORTDOCS%%share/examples/cider/bjt/colposc.cir
-%%PORTDOCS%%share/examples/cider/bjt/ecp.cir
-%%PORTDOCS%%share/examples/cider/bjt/invchain.cir
-%%PORTDOCS%%share/examples/cider/bjt/meclgate.cir
-%%PORTDOCS%%share/examples/cider/bjt/pebjt.lib
-%%PORTDOCS%%share/examples/cider/bjt/pz.cir
-%%PORTDOCS%%share/examples/cider/bjt/rtlinv.cir
-%%PORTDOCS%%share/examples/cider/bjt/vco.cir
-%%PORTDOCS%%share/examples/cider/diode/diode.cir
-%%PORTDOCS%%share/examples/cider/diode/diotran.cir
-%%PORTDOCS%%share/examples/cider/diode/pindiode.cir
-%%PORTDOCS%%share/examples/cider/jfet/jfet.cir
-%%PORTDOCS%%share/examples/cider/mos/bootinv.cir
-%%PORTDOCS%%share/examples/cider/mos/charge.cir
-%%PORTDOCS%%share/examples/cider/mos/cmosinv.cir
-%%PORTDOCS%%share/examples/cider/mos/nmosinv.cir
-%%PORTDOCS%%share/examples/cider/mos/pass.cir
-%%PORTDOCS%%share/examples/cider/mos/ringosc.cir
-%%PORTDOCS%%share/examples/cider/parallel/BICMOS.LIB
-%%PORTDOCS%%share/examples/cider/parallel/bicmpd.cir
-%%PORTDOCS%%share/examples/cider/parallel/bicmpu.cir
-%%PORTDOCS%%share/examples/cider/parallel/clkfeed.cir
-%%PORTDOCS%%share/examples/cider/parallel/cmosamp.cir
-%%PORTDOCS%%share/examples/cider/parallel/eclinv.cir
-%%PORTDOCS%%share/examples/cider/parallel/ecpal.cir
-%%PORTDOCS%%share/examples/cider/parallel/foobar
-%%PORTDOCS%%share/examples/cider/parallel/gmamp.cir
-%%PORTDOCS%%share/examples/cider/parallel/latch.cir
-%%PORTDOCS%%share/examples/cider/parallel/ppef.1d.cir
-%%PORTDOCS%%share/examples/cider/parallel/ppef.2d.cir
-%%PORTDOCS%%share/examples/cider/parallel/readme
-%%PORTDOCS%%share/examples/cider/parallel/ringosc.1u.cir
-%%PORTDOCS%%share/examples/cider/parallel/ringosc.2u.cir
-%%PORTDOCS%%share/examples/cider/readme
-%%PORTDOCS%%share/examples/cider/resistor/gaasres.cir
-%%PORTDOCS%%share/examples/cider/resistor/sires.cir
-%%PORTDOCS%%share/examples/cider/serial/astable.cir
-%%PORTDOCS%%share/examples/cider/serial/charge.cir
-%%PORTDOCS%%share/examples/cider/serial/colposc.cir
-%%PORTDOCS%%share/examples/cider/serial/dbridge.cir
-%%PORTDOCS%%share/examples/cider/serial/invchain.cir
-%%PORTDOCS%%share/examples/cider/serial/meclgate.cir
-%%PORTDOCS%%share/examples/cider/serial/nmosinv.cir
-%%PORTDOCS%%share/examples/cider/serial/pass.cir
-%%PORTDOCS%%share/examples/cider/serial/pullup.cir
-%%PORTDOCS%%share/examples/cider/serial/readme
-%%PORTDOCS%%share/examples/cider/serial/recovery.cir
-%%PORTDOCS%%share/examples/cider/serial/rtlinv.cir
-%%PORTDOCS%%share/examples/cider/serial/vco.cir
-%%PORTDOCS%%share/examples/spice3/bjtnoise.cir
-%%PORTDOCS%%share/examples/spice3/bsim1tst.cir
-%%PORTDOCS%%share/examples/spice3/bsim2tst.cir
-%%PORTDOCS%%share/examples/spice3/diffpair.cir
-%%PORTDOCS%%share/examples/spice3/diodisto.cir
-%%PORTDOCS%%share/examples/spice3/ltra_1.cir
-%%PORTDOCS%%share/examples/spice3/ltra_2.cir
-%%PORTDOCS%%share/examples/spice3/ltra_3.cir
-%%PORTDOCS%%share/examples/spice3/mixdisto.cir
-%%PORTDOCS%%share/examples/spice3/mos6inv.cir
-%%PORTDOCS%%share/examples/spice3/mosamp2.cir
-%%PORTDOCS%%share/examples/spice3/mosmem.cir
-%%PORTDOCS%%share/examples/spice3/pz2.cir
-%%PORTDOCS%%share/examples/spice3/pzt.cir
-%%PORTDOCS%%share/examples/spice3/rc.cir
-%%PORTDOCS%%share/examples/spice3/rca3040.cir
-%%PORTDOCS%%share/examples/spice3/resnoise.cir
-%%PORTDOCS%%share/examples/spice3/rtlinv.cir
-%%PORTDOCS%%share/examples/spice3/schmitt.cir
-%%PORTDOCS%%share/examples/spice3/simplepz.cir
-share/spice3/helpdir/spice.idx
-share/spice3/helpdir/spice.txt
-share/spice3/mfbcap
-share/spice3/news
-share/spice3/scripts/setplot
-share/spice3/scripts/spinit
-@dirrm share/cider/helpdir
-@dirrm share/cider/scripts
+man/man1/sconvert.1.gz
+man/man1/nutmeg.1.gz
+man/man1/spice.1.gz
+man/man1/spice3.1.gz
+man/man1/cider.1.gz
+man/man3/mfb.3.gz
+man/man5/mfbcap.5.gz
+share/cider/cider/helpdir/cider.txt
+share/cider/cider/helpdir/spice.txt
+share/cider/cider/scripts/devaxis
+share/cider/cider/scripts/devload
+share/cider/cider/scripts/spinit
+share/cider/spice3/helpdir/spice.txt
+share/cider/spice3/mfbcap
+share/cider/spice3/news
+share/cider/spice3/scripts/setplot
+share/cider/spice3/scripts/spinit
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/bicmos/bicmos.lib
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/bicmos/bicmpd.cir
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/bjt/astable.cir
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/bjt/colposc.cir
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/bjt/ecp.cir
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/bjt/invchain.cir
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/bjt/meclgate.cir
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/bjt/pebjt.lib
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/bjt/pz.cir
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/bjt/rtlinv.cir
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/bjt/vco.cir
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/diode/diode.cir
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/diode/diotran.cir
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/diode/pindiode.cir
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/jfet/jfet.cir
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mos/bootinv.cir
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mos/charge.cir
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mos/cmosinv.cir
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mos/nmosinv.cir
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mos/pass.cir
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mos/ringosc.cir
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/parallel/BICMOS.LIB
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/parallel/bicmpd.cir
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/parallel/bicmpu.cir
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/parallel/clkfeed.cir
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/parallel/cmosamp.cir
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/parallel/eclinv.cir
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/parallel/ecpal.cir
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/parallel/foobar
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/parallel/gmamp.cir
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/parallel/latch.cir
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/parallel/ppef.1d.cir
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/parallel/ppef.2d.cir
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/parallel/readme
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/parallel/ringosc.1u.cir
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/parallel/ringosc.2u.cir
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/readme
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/resistor/gaasres.cir
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/resistor/sires.cir
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/serial/astable.cir
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/serial/charge.cir
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/serial/colposc.cir
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/serial/dbridge.cir
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/serial/invchain.cir
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/serial/meclgate.cir
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/serial/nmosinv.cir
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/serial/pass.cir
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/serial/pullup.cir
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/serial/readme
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/serial/recovery.cir
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/serial/rtlinv.cir
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/serial/vco.cir
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/spice3/bjtnoise.cir
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/spice3/bsim1tst.cir
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/spice3/bsim2tst.cir
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/spice3/diffpair.cir
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/spice3/diodisto.cir
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/spice3/ltra_1.cir
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/spice3/ltra_2.cir
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/spice3/ltra_3.cir
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/spice3/mixdisto.cir
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/spice3/mos6inv.cir
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/spice3/mosamp2.cir
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/spice3/mosmem.cir
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/spice3/pz2.cir
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/spice3/pzt.cir
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/spice3/rc.cir
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/spice3/rca3040.cir
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/spice3/resnoise.cir
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/spice3/rtlinv.cir
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/spice3/schmitt.cir
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/spice3/simplepz.cir
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/spice3
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/bicmos
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/bjt
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/diode
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/jfet
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/mos
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/parallel
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/resistor
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/serial
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
+@dirrm share/cider/cider/helpdir
+@dirrm share/cider/cider/scripts
+@dirrm share/cider/cider
+@dirrm share/cider/spice3/helpdir
+@dirrm share/cider/spice3/scripts
+@dirrm share/cider/spice3
 @dirrm share/cider
-%%PORTDOCS%%@dirrm share/examples/cider/bicmos
-%%PORTDOCS%%@dirrm share/examples/cider/bjt
-%%PORTDOCS%%@dirrm share/examples/cider/diode
-%%PORTDOCS%%@dirrm share/examples/cider/jfet
-%%PORTDOCS%%@dirrm share/examples/cider/mos
-%%PORTDOCS%%@dirrm share/examples/cider/parallel
-%%PORTDOCS%%@dirrm share/examples/cider/resistor
-%%PORTDOCS%%@dirrm share/examples/cider/serial
-%%PORTDOCS%%@dirrm share/examples/cider
-%%PORTDOCS%%@dirrm share/examples/spice3
-@dirrm share/spice3/helpdir
-@dirrm share/spice3/scripts
-@dirrm share/spice3
