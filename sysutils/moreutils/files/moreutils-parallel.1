@@ -1,0 +1,84 @@
+'\" t
+.\"     Title: parallel
+.\"    Author: Joey Hess
+.\" Generator: DocBook XSL Stylesheets v1.76.1 <http://docbook.sf.net/>
+.\"      Date: 2009-07-02
+.\"    Manual: moreutils
+.\"    Source: moreutils
+.\"  Language: English
+.\"
+.TH "PARALLEL" "1" "2009\-07\-02" "moreutils" "moreutils"
+.\" -----------------------------------------------------------------
+.\" * Define some portability stuff
+.\" -----------------------------------------------------------------
+.\" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.\" http://bugs.debian.org/507673
+.\" http://lists.gnu.org/archive/html/groff/2009-02/msg00013.html
+.\" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.ie \n(.g .ds Aq \(aq
+.el       .ds Aq '
+.\" -----------------------------------------------------------------
+.\" * set default formatting
+.\" -----------------------------------------------------------------
+.\" disable hyphenation
+.nh
+.\" disable justification (adjust text to left margin only)
+.ad l
+.\" -----------------------------------------------------------------
+.\" * MAIN CONTENT STARTS HERE *
+.\" -----------------------------------------------------------------
+.SH "NAME"
+parallel \- run programs in parallel
+.SH "SYNOPSIS"
+.HP \w'\fBparallel\fR\fB\-\-\fR\ 'u
+\fBparallel\fR [options] [command]\fB\-\-\fR [argument\ \&.\&.\&.]
+.HP \w'\fBparallel\fR\fB\-\-\fR\ 'u
+\fBparallel\fR [options]\fB\-\-\fR [command\ \&.\&.\&.]
+.SH "DESCRIPTION"
+.PP
+\fBparallel\fR
+runs the specified command, passing it a single one of the specified arguments\&. This is repeated for each argument\&. Jobs may be run in parallel\&. The default is to run one job per CPU\&.
+.PP
+If no command is specified before the \-\-, the commands after it are instead run in parallel\&.
+.SH "OPTIONS"
+.PP
+\fB\-j maxjobs\fR
+.RS 4
+Use to limit the number of jobs that are run at the same time\&.
+.RE
+.PP
+\fB\-l maxload\fR
+.RS 4
+Wait as needed to avoid starting new jobs when the system\*(Aqs load average is not below the specified limit\&.
+.RE
+.PP
+\fB\-i\fR
+.RS 4
+Normally the command is passed the argument at the end of its command line\&. With this option, any instances of "{}" in the command are replaced with the argument\&.
+.RE
+.PP
+\fB\-n\fR
+.RS 4
+Number of arguments to pass to a command at a time\&. Default is 1\&. Incompatible with \-i
+.RE
+.SH "EXAMPLE"
+.PP
+.HP \w'\fBparallel\ sh\ \-c\ "echo\ hi;\ sleep\ 2;\ echo\ bye"\ \-\-\ 1\ 2\ 3\fR\ 'u \fBparallel sh \-c "echo hi; sleep 2; echo bye" \-\- 1 2 3\fR
+.PP
+This runs three subshells that each print a message, delay, and print another message\&. If your system has multiple CPUs, parallel will run some of the jobs in parallel, which should be clear from the order the messages are output\&.
+.PP
+.HP \w'\fBparallel\ \-j\ 3\ ufraw\ \-o\ processed\ \-\-\ *\&.NEF\fR\ 'u \fBparallel \-j 3 ufraw \-o processed \-\- *\&.NEF\fR
+.PP
+This runs three ufraw processes at the same time until all of the NEF files have been processed\&.
+.PP
+.HP \w'\fBparallel\ \-j\ 3\ \-\-\ ls\ df\ "echo\ hi"\fR\ 'u \fBparallel \-j 3 \-\- ls df "echo hi"\fR
+.PP
+This runs three independent commands in parallel\&.
+.SH "EXIT STATUS"
+.PP
+Its exit status is the combination of the exit statuses of each command ran, ORed together\&. (Thus, if any one command exits nonzero,
+\fBparallel\fR
+as a whole will exit nonzero\&.)
+.SH "AUTHOR"
+.PP
+Tollef Fog Heen
