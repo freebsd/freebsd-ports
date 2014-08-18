@@ -1,12 +1,10 @@
 include/telepathy-1.0/telepathy-farsight/channel.h
 include/telepathy-1.0/telepathy-farsight/stream.h
 lib/libtelepathy-farsight.a
-lib/libtelepathy-farsight.la
 lib/libtelepathy-farsight.so
 lib/libtelepathy-farsight.so.0
 lib/libtelepathy-farsight.so.0.1.6
 %%PYTHON_SITELIBDIR%%/tpfarsight.a
-%%PYTHON_SITELIBDIR%%/tpfarsight.la
 %%PYTHON_SITELIBDIR%%/tpfarsight.so
 libdata/pkgconfig/telepathy-farsight.pc
 share/gtk-doc/html/telepathy-farsight/TfChannel.html
