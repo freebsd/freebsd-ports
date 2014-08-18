@@ -1,9 +1,10 @@
 # $FreeBSD$
 
 PORTNAME=	sie-nmsg
-PORTVERSION=	0.16
+PORTVERSION=	0.17.0
 CATEGORIES=	net dns
-MASTER_SITES=	https://dl.farsightsecurity.com/dist/sie-nmsg/
+MASTER_SITES=	https://dl.farsightsecurity.com/dist/sie-nmsg/ \
+		http://dl.farsightsecurity.com/dist/sie-nmsg/
 
 MAINTAINER=	truckman@FreeBSD.org
 COMMENT=	SIE message module plugin for libnmsg
@@ -17,7 +18,6 @@ LIB_DEPENDS=	libprotobuf-c.so:${PORTSDIR}/devel/protobuf-c \
 GNU_CONFIGURE=	yes
 USES=	gmake libtool pathfix pkgconfig
 
-post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/nmsg/nmsg_msg8_sie.so
+INSTALL_TARGET=	install-strip
 
 .include <bsd.port.mk>
