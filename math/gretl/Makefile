@@ -3,7 +3,7 @@
 
 PORTNAME=	gretl
 PORTVERSION=	1.9.13
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	math finance
 MASTER_SITES=	SF
 
@@ -17,7 +17,7 @@ LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl \
 
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-USES=		fortran gmake pathfix pkgconfig tar:bzip2
+USES=		fortran gmake libtool pathfix pkgconfig tar:bzip2
 WANT_GNOME=	yes
 
 ALL_TARGET=		# empty
