@@ -1,5 +1,9 @@
 # Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 # $FreeBSD$
+#
+# If you have compelling evidence that some ports need at least this version of
+# p5-Module-Build-Tiny to build, be sure to update the BUILD_DEPENDS version in
+# Mk/Uses/perl5.mk.
 
 PORTNAME=	Module-Build-Tiny
 PORTVERSION=	0.037
