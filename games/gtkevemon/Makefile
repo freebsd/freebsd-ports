@@ -2,10 +2,9 @@
 
 PORTNAME=	gtkevemon
 DISTVERSION=	1.8-135
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	https://bitbucket.org/BattleClinic/${PORTNAME}/get/
-DISTNAME=	Version%20${DISTVERSION}
 
 MAINTAINER=	feld@FreeBSD.org
 COMMENT=	Skill monitoring standalone application for EVE Online
