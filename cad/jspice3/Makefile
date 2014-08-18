@@ -3,10 +3,9 @@
 
 PORTNAME=	jspice3
 PORTVERSION=	2.5.011109
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	cad
-MASTER_SITES=	http://www.wrcad.com/ftp/pub/	\
-		ftp://ftp.srware.com/pub/
+MASTER_SITES=	http://www.wrcad.com/ftp/pub/
 DISTNAME=	${PORTNAME}-2.5-011109
 
 MAINTAINER=	ports@FreeBSD.org
@@ -18,7 +17,6 @@ OPTIONS_DEFINE=	X11 EXAMPLES
 OPTIONS_DEFAULT=	X11
 WRKSRC=		${WRKDIR}/${PORTNAME}-2.5
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MX11}
@@ -26,27 +24,41 @@ USE_XORG=	x11 xaw xt
 .endif
 
 pre-configure:
-	@${REINPLACE_CMD} -e 's+/usr/local+${PREFIX}+g ;	\
-	 s+-O -g+${CFLAGS}+g;' \
+	@${REINPLACE_CMD} -e 's+/usr/local+${PREFIX}+g;s+-O -g+${CFLAGS}+g;' \
 		${WRKSRC}/conf/unixconf/mkheader.0
 .if ${PORT_OPTIONS:MX11}
-	@${REINPLACE_CMD} -e 's+#%%WITH_X%%++g' 		\
+	@${REINPLACE_CMD} -e 's+#%%WITH_X%%++g' \
 		${WRKSRC}/conf/unixconf/mkheader.0
 .else
 	@${ECHO} "#undef HAVE_X11" >> ${WRKSRC}/src/include/spice.h
 .endif
 
 do-build:
-	@(cd ${WRKSRC};${SETENV} ${MAKE_ENV} ${SH} build)
+	(cd ${WRKSRC};${SETENV} ${MAKE_ENV} ${SH} build)
 
 do-install:
-	@(cd ${WRKSRC}/src/bin;${SETENV} ${MAKE_ENV} ${MAKE} install)
-
-post-install:
+	${MKDIR} ${STAGEDIR}${PREFIX}/lib/jspice3/helpdir \
+		${STAGEDIR}${PREFIX}/lib/jspice3/sced \
+		${STAGEDIR}${PREFIX}/lib/jspice3/scripts
+	(cd ${WRKSRC}/src/bin && ${INSTALL_PROGRAM} jspice3 nutmeg help \
+		multidec proc2mod spiced xeditor ${STAGEDIR}${PREFIX}/bin)
+	${INSTALL_DATA} ${WRKSRC}/lib/mfbcap ${WRKSRC}/lib/news \
+		${STAGEDIR}${PREFIX}/lib/jspice3
+	${INSTALL_DATA} ${WRKSRC}/lib/helpdir/* \
+		${STAGEDIR}${PREFIX}/lib/jspice3/helpdir
+	${INSTALL_DATA} ${WRKSRC}//lib/sced/* \
+		${STAGEDIR}${PREFIX}/lib/jspice3/sced
+	${INSTALL_DATA} ${WRKSRC}/lib/scripts/* \
+		${STAGEDIR}${PREFIX}/lib/jspice3/scripts
 .if ${PORT_OPTIONS:MEXAMPLES}
-	${MV} ${PREFIX}/lib/jspice3/examples ${EXAMPLESDIR}
-.else
-	${RM} -R ${PREFIX}/lib/jspice3/examples
+	${MKDIR} ${STAGEDIR}${PREFIX}/share/examples/jspice3/cryocmos \
+		${STAGEDIR}${PREFIX}/share/examples/jspice3/josephson
+	${INSTALL_DATA} ${WRKSRC}/examples/*.* \
+		${STAGEDIR}${PREFIX}/share/examples/jspice3
+	${INSTALL_DATA} ${WRKSRC}/examples/cryocmos/* \
+		${STAGEDIR}${PREFIX}/share/examples/jspice3/cryocmos
+	${INSTALL_DATA} ${WRKSRC}/examples/josephson/* \
+		${STAGEDIR}${PREFIX}/share/examples/jspice3/josephson
 .endif
 
 .include <bsd.port.mk>
