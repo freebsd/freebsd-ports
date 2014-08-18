@@ -1,5 +1,5 @@
 bin/repmgr
 sbin/repmgrd
-%%PORTDATA%%%%DATADIR%%/repmgr.conf.sample
-%%PORTDATA%%%%DATADIR%%/repmgr.sql
-%%PORTDATA%%@dirrm %%DATADIR%%
+%%DATADIR%%/repmgr.conf.sample
+%%DATADIR%%/repmgr.sql
+@dirrm %%DATADIR%%
