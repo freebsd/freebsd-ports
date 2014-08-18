@@ -4,7 +4,7 @@
 
 PORTNAME=	telepathy-logger
 PORTVERSION=	0.4.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net-im
 MASTER_SITES=	http://telepathy.freedesktop.org/releases/${PORTNAME}/
 
@@ -16,8 +16,8 @@ LIB_DEPENDS=	libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib \
 
 LICENSE=	LGPL21
 
-USES=		pkgconfig gmake tar:bzip2
-USE_AUTOTOOLS=	libtool
+USES=		pkgconfig gmake libtool tar:bzip2
+GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 USE_GNOME=	gnomehack glib20 intltool gnomedocutils ltverhack libxml2 \
 		libxslt:build introspection:build
