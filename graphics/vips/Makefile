@@ -2,12 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	vips
-PORTVERSION=	7.40.4
-PORTREVISION=	1
+PORTVERSION=	7.40.5
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.vips.ecs.soton.ac.uk/supported/${PORTVERSION:R}/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	danilo@FreeBSD.org
 COMMENT=	Free image processing system
 
 LICENSE=	LGPL21
@@ -23,7 +22,8 @@ LIB_DEPENDS=	libcfitsio.so:${PORTSDIR}/astro/cfitsio \
 		libtiff.so:${PORTSDIR}/graphics/tiff \
 		libwebp.so:${PORTSDIR}/graphics/webp \
 		libfftw3.so:${PORTSDIR}/math/fftw3 \
-		libmatio.so:${PORTSDIR}/math/matio
+		libmatio.so:${PORTSDIR}/math/matio \
+		libgirepository-1.0.so:${PORTSDIR}/devel/gobject-introspection
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
 
 USES=		gettext gmake libtool pathfix pkgconfig shebangfix
@@ -46,7 +46,7 @@ OPTIONS_DEFAULT=	PYTHON
 OPTIONS_SUB=		yes
 
 DOCS_CONFIGURE_ENABLE=	docs
-PYTHON_USE=		python=yes
+PYTHON_USES=		python
 PYTHON_CONFIGURE_WITH=	python
 
 .include <bsd.port.mk>
