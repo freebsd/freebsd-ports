@@ -27,6 +27,13 @@ BUILD_DEPENDS+=	xsltproc:${PORTSDIR}/textproc/libxslt \
 		${DOCBOOK_XML}:${PORTSDIR}/textproc/docbook-xml \
 		${DOCBOOK_XSL_NS}:${PORTSDIR}/textproc/docbook-xsl-ns
 
+# The version of binutils in base does not understand the crc32
+# instructions used in this code on amd64.  Use gcc from ports
+# to get a more capable version of binutils.
+.if (${OSVERSION} < 900000 &&  ${ARCH} == amd64)
+USE_GCC=	yes
+.endif
+
 ALL_TARGET=	all
 .if ${PORT_OPTIONS:MDOCS}
 BUILD_DEPENDS+=	doxygen:${PORTSDIR}/devel/doxygen
