@@ -1,0 +1,20 @@
+--- build/linux/unbundle/libusb.gyp.orig	2014-08-12 21:02:52.000000000 +0200
++++ build/linux/unbundle/libusb.gyp	2014-08-17 16:21:03.000000000 +0200
+@@ -18,14 +18,14 @@
+       ],
+       'direct_dependent_settings': {
+         'cflags': [
+-          '<!@(pkg-config --cflags libusb-1.0)',
++          '',
+         ],
+         'link_settings': {
+           'ldflags': [
+-            '<!@(pkg-config --libs-only-L --libs-only-other libusb-1.0)',
++            '',
+           ],
+           'libraries': [
+-            '<!@(pkg-config --libs-only-l libusb-1.0)',
++            '-lusb',
+           ],
+         },
+       },
