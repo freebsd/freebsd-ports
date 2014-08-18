@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Path-FindDev
-PORTVERSION=	0.5.1
+PORTVERSION=	0.5.2
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:KENTNL
@@ -16,7 +16,7 @@ LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	p5-Class-Tiny>=0.010:${PORTSDIR}/devel/p5-Class-Tiny \
 		p5-Path-IsDev>=0.2.2:${PORTSDIR}/devel/p5-Path-IsDev \
-		p5-Path-Tiny>=0.038:${PORTSDIR}/devel/p5-Path-Tiny
+		p5-Path-Tiny>=0.054:${PORTSDIR}/devel/p5-Path-Tiny
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-CPAN-Meta>0:${PORTSDIR}/devel/p5-CPAN-Meta \
 		p5-CPAN-Meta-Requirements>2.120:${PORTSDIR}/devel/p5-CPAN-Meta-Requirements \
