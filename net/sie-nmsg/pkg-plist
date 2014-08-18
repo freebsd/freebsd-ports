@@ -4,6 +4,6 @@ include/nmsg/sie/dnsdedupe.pb-c.h
 include/nmsg/sie/newdomain.pb-c.h
 include/nmsg/sie/qr.pb-c.h
 include/nmsg/sie/reputation.pb-c.h
-lib/nmsg/nmsg_msg8_sie.a
-lib/nmsg/nmsg_msg8_sie.so
-@dirrmtry include/nmsg/sie
+lib/nmsg/nmsg_msg9_sie.a
+lib/nmsg/nmsg_msg9_sie.so
+@dirrm include/nmsg/sie
