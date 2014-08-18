@@ -31,15 +31,18 @@ lib/libphobos2.a
 %%EXAMPLESDIR%%/samples/d/winsamp.def
 include/d/druntime/import/core/atomic.d
 include/d/druntime/import/core/bitop.d
+include/d/druntime/import/core/checkedint.d
 include/d/druntime/import/core/cpuid.d
 include/d/druntime/import/core/demangle.d
 include/d/druntime/import/core/internal/convert.d
 include/d/druntime/import/core/internal/hash.d
+include/d/druntime/import/core/internal/traits.d
 include/d/druntime/import/core/exception.d
 include/d/druntime/import/core/math.d
 include/d/druntime/import/core/memory.d
 include/d/druntime/import/core/runtime.d
 include/d/druntime/import/core/simd.d
+include/d/druntime/import/core/thread.d
 include/d/druntime/import/core/stdc/complex.d
 include/d/druntime/import/core/stdc/config.d
 include/d/druntime/import/core/stdc/ctype.d
@@ -139,7 +142,6 @@ include/d/druntime/import/core/sys/windows/dll.d
 include/d/druntime/import/core/sys/windows/stacktrace.d
 include/d/druntime/import/core/sys/windows/threadaux.d
 include/d/druntime/import/core/sys/windows/windows.d
-include/d/druntime/import/core/thread.di
 include/d/druntime/import/core/time.d
 include/d/druntime/import/core/vararg.d
 include/d/druntime/import/etc/linux/memoryerror.d
@@ -180,7 +182,13 @@ include/d/phobos2/std/c/windows/winsock.d
 include/d/phobos2/std/compiler.d
 include/d/phobos2/std/complex.d
 include/d/phobos2/std/concurrency.d
-include/d/phobos2/std/container.d
+include/d/phobos2/std/container/array.d
+include/d/phobos2/std/container/binaryheap.d
+include/d/phobos2/std/container/dlist.d
+include/d/phobos2/std/container/package.d
+include/d/phobos2/std/container/rbtree.d
+include/d/phobos2/std/container/slist.d
+include/d/phobos2/std/container/util.d
 include/d/phobos2/std/conv.d
 include/d/phobos2/std/cstream.d
 include/d/phobos2/std/csv.d
@@ -193,6 +201,7 @@ include/d/phobos2/std/digest/ripemd.d
 include/d/phobos2/std/digest/sha.d
 include/d/phobos2/std/encoding.d
 include/d/phobos2/std/exception.d
+include/d/phobos2/std/experimental/note.md
 include/d/phobos2/std/file.d
 include/d/phobos2/std/format.d
 include/d/phobos2/std/functional.d
@@ -204,8 +213,7 @@ include/d/phobos2/std/internal/math/biguintx86.d
 include/d/phobos2/std/internal/math/errorfunction.d
 include/d/phobos2/std/internal/math/gammafunction.d
 include/d/phobos2/std/internal/processinit.d
-include/d/phobos2/std/internal/uni.d
-include/d/phobos2/std/internal/uni_tab.d
+include/d/phobos2/std/internal/scopebuffer.d
 include/d/phobos2/std/internal/unicode_comp.d
 include/d/phobos2/std/internal/unicode_decomp.d
 include/d/phobos2/std/internal/unicode_grapheme.d
@@ -215,7 +223,6 @@ include/d/phobos2/std/internal/windows/advapi32.d
 include/d/phobos2/std/json.d
 include/d/phobos2/std/math.d
 include/d/phobos2/std/mathspecial.d
-include/d/phobos2/std/metastrings.d
 include/d/phobos2/std/mmfile.d
 include/d/phobos2/std/net/curl.d
 include/d/phobos2/std/net/isemail.d
@@ -266,7 +273,9 @@ man/man5/dmd.conf.5.gz
 @dirrm include/d/phobos2/std/internal/math
 @dirrm include/d/phobos2/std/internal/digest
 @dirrm include/d/phobos2/std/internal
+@dirrm include/d/phobos2/std/experimental
 @dirrm include/d/phobos2/std/digest
+@dirrm include/d/phobos2/std/container
 @dirrm include/d/phobos2/std/c/windows
 @dirrm include/d/phobos2/std/c/osx
 @dirrm include/d/phobos2/std/c/linux
