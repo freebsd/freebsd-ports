@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	qemu
-PORTVERSION=	2.0.0
-PORTREVISION=	10
+PORTVERSION=	2.0.2
 CATEGORIES=	emulators
 MASTER_SITES=	http://wiki.qemu.org/download/:release \
 		LOCAL/nox:snapshot
@@ -15,9 +14,8 @@ MAINTAINER=	nox@FreeBSD.org
 COMMENT?=	QEMU CPU Emulator - development version
 
 HAS_CONFIGURE=	yes
-USES=		gmake pkgconfig bison perl5 tar:bzip2
+USES=		gmake pkgconfig bison perl5 python:2,build tar:bzip2
 USE_PERL5=	build
-USE_PYTHON_BUILD=	2
 USE_XORG=	pixman
 USE_GNOME+=	glib20
 PATCH_STRIP=	-p1
@@ -313,6 +311,7 @@ post-install:
 	@${INSTALL_SCRIPT} ${FILESDIR}/qemu-ifdown.sample ${STAGEDIR}${PREFIX}/etc
 	@(cd ${STAGEDIR}${PREFIX}/etc/qemu && \
 		${MV} -i target-x86_64.conf target-x86_64.conf.sample)
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/qemu-*
 .endif
 
 .include <bsd.port.mk>
