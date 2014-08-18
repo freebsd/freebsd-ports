@@ -3,7 +3,7 @@
 
 PORTNAME=	squid
 PORTVERSION=	3.3.${SQUID_STABLE_VER}
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	www ipv6
 MASTER_SITES=	http://www.squid-cache.org/Versions/v3/${PORTVERSION:R}/ \
 		http://www2.us.squid-cache.org/Versions/v3/${PORTVERSION:R}/ \
@@ -92,14 +92,6 @@ OPTIONS_DEFAULT=	AUTH_KERB AUTH_NIS FS_AUFS HTCP IDENT KQUEUE \
 			SNMP WCCP WCCPV2
 
 ECAP_USES=		pkgconfig:build
-
-etc_files=	squid/cachemgr.conf.default \
-		squid/errorpage.css.default \
-		squid/mib.txt \
-		squid/mime.conf.default \
-		squid/msntauth.conf.default \
-		squid/squid.conf.default \
-		squid/squid.conf.documented
 
 icon_silk_files=	application.png arrow_up.png bomb.png box.png \
 			bricks.png bullet_red.png cd.png chart_line.png \
@@ -454,8 +446,14 @@ WITH_DEBUG?=		yes
 CONFIGURE_ARGS+=	${SQUID_CONFIGURE_ARGS}
 
 PLIST_DIRS=	%%ETCDIR%%/icons/silk %%ETCDIR%%/icons libexec/squid
-PLIST_FILES=	${etc_files:S,^,etc/,} \
+PLIST_FILES=	"@sample %%ETCDIR%%/cachemgr.conf.sample" \
+		"@sample %%ETCDIR%%/errorpage.css.sample" \
 		%%ETCDIR%%/icons/SN.png \
+		"@sample %%ETCDIR%%/mime.conf.sample" \
+		%%ETCDIR%%/mib.txt \
+		"@sample %%ETCDIR%%/msntauth.conf.sample" \
+		%%ETCDIR%%/squid.conf.documented \
+		"@sample %%ETCDIR%%/squid.conf.sample" \
 		${icon_silk_files:S,^,%%ETCDIR%%/icons/silk/,} \
 		${libexec:S,^,libexec/squid/,} ${sbin:S,^,sbin/,} \
 		man/man8/cachemgr.cgi.8.gz \
@@ -470,12 +468,7 @@ PLIST_FILES=	${etc_files:S,^,etc/,} \
 		man/man8/negotiate_kerberos_auth.8.gz \
 		man/man8/ext_time_quota_acl.8.gz \
 		man/man8/squid.8.gz \
-		man/man1/squidclient.1.gz \
-		%%ETCDIR%%/cachemgr.conf \
-		%%ETCDIR%%/mime.conf \
-		%%ETCDIR%%/msntauth.conf \
-		%%ETCDIR%%/squid.conf \
-		%%ETCDIR%%/errorpage.css
+		man/man1/squidclient.1.gz
 
 PLIST_FILES+=	%%ETCDIR%%/errors/COPYRIGHT %%ETCDIR%%/errors/TRANSLATORS
 .for d in ${error_dirs}
@@ -509,5 +502,11 @@ post-install:
 	cd ${WRKSRC} && ${INSTALL_DATA} ${MYDOCS} ${STAGEDIR}${DOCSDIR}
 .endif
 	${MKDIR} ${STAGEDIR}/var/squid/logs
+	(cd ${STAGEDIR}${ETCDIR} && \
+		${MV} cachemgr.conf.default cachemgr.conf.sample ; \
+		${MV} errorpage.css.default errorpage.css.sample ; \
+		${MV} mime.conf.default mime.conf.sample ; \
+		${MV} msntauth.conf.default msntauth.conf.sample ; \
+		${MV} squid.conf.default squid.conf.sample )
 
 .include <bsd.port.mk>
