@@ -3,7 +3,7 @@
 
 PORTNAME=	ledger
 PORTVERSION=	2.6.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	finance
 MASTER_SITES=	http://cloud.github.com/downloads/jwiegley/${PORTNAME}/
 
