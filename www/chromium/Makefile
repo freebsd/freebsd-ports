@@ -3,6 +3,7 @@
 
 PORTNAME=	chromium
 PORTVERSION=	36.0.1985.143
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://commondatastorage.googleapis.com/chromium-browser-official/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
@@ -20,7 +21,6 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/gperf:${PORTSDIR}/devel/gperf \
 		yasm:${PORTSDIR}/devel/yasm \
 		flock:${PORTSDIR}/sysutils/flock \
 		${LOCALBASE}/include/linux/videodev2.h:${PORTSDIR}/multimedia/v4l_compat \
-		protoc:${PORTSDIR}/devel/protobuf \
 		${LOCALBASE}/share/usbids/usb.ids:${PORTSDIR}/misc/usbids
 
 LIB_DEPENDS=	libcairo.so:${PORTSDIR}/graphics/cairo \
@@ -63,8 +63,7 @@ CPE_PRODUCT=	chrome
 USE_PERL5=	build
 USE_XORG=	scrnsaverproto x11 xproto xscrnsaver xtst
 USE_GNOME=	glib20 gtk20 dconf libxslt
-USE_OPENSSL=	yes
-WITH_OPENSSL_PORT=	yes # simplify for pkg-config in configure phase
+USE_OPENSSL=	yes # must be from base to prevent a link failure against cups
 SHEBANG_FILES=	chrome/tools/build/linux/chrome-wrapper
 ALL_TARGET=	chrome
 INSTALLS_ICONS=	yes
@@ -109,7 +108,6 @@ GYP_DEFINES+=	\
 		use_system_minizip=1 \
 		use_system_nspr=1 \
 		use_system_openssl=1 \
-		use_system_protobuf=1 \
 		use_system_re2=1 \
 		use_system_snappy=1 \
 		use_system_speex=1 \
@@ -166,6 +164,9 @@ GYP_DEFINES+=	use_pulseaudio=0
 GYP_DEFINES+=	disable_sse2=1
 .endif
 
+.if !exists(/usr/libdata/pkgconfig/libusb-1.0.pc)
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-libusb-pc
+.endif
 .if ${OSVERSION} >= 1000052 && !exists(${LOCALBASE}/include/execinfo.h)
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-fixup-execinfo
 .endif
@@ -188,13 +189,15 @@ CONFIGURE_ENV+=	CC="${CC}" \
 		GYP_DEFINES="${GYP_DEFINES}"
 MAKE_ENV+=	BUILDTYPE=${BUILDTYPE} \
 		GPERF="${LOCALBASE}/bin/gperf"
-MAKE_ARGS+=	-C out/${BUILDTYPE}
 
 .include <bsd.port.pre.mk>
 
+#XXX redefine MAKE_ARGS after bsd.port.pre.mk to avoid OPENSSL flags
+# leaking in which confuses ninja
+MAKE_ARGS=	-C out/${BUILDTYPE}
+
 .if ${CHOSEN_COMPILER_TYPE} == gcc
 GYP_DEFINES+=	gcc_version=${CXX:S/g++//}
-CFLAGS+=	-Wno-unknown-warning
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-gcc
 .else
 GYP_DEFINES+=	clang=1
@@ -241,6 +244,7 @@ pre-configure:
 	#             should be called "keep_bundled_libraries.py"
 	cd ${WRKSRC} && ${PYTHON_CMD} \
 		./build/linux/unbundle/remove_bundled_libraries.py \
+		'third_party/protobuf' \
 		'base/third_party/dmg_fp' \
 		'base/third_party/dynamic_annotations' \
 		'base/third_party/icu' \
@@ -342,6 +346,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/out/${BUILDTYPE}/${p}.pak ${STAGEDIR}${DATADIR}
 .endfor
 	${INSTALL_PROGRAM} ${WRKSRC}/out/${BUILDTYPE}/chrome ${STAGEDIR}${DATADIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/out/${BUILDTYPE}/protoc ${STAGEDIR}${DATADIR}
 	${INSTALL_LIB} ${WRKSRC}/out/${BUILDTYPE}/libffmpegsumo.so ${STAGEDIR}${DATADIR}
 	cd ${WRKSRC}/out/${BUILDTYPE} && \
 		${COPYTREE_SHARE} "locales resources" ${STAGEDIR}${DATADIR}

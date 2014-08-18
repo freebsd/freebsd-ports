@@ -1,7 +1,7 @@
 #!/bin/sh
 
 SYSCTL=kern.ipc.shm_allow_removed
-if [ `sysctl -n $SYSCTL` = 0 ] ; then
+if [ "`/sbin/sysctl -n $SYSCTL`" = 0 ] ; then
 	cat << EOMSG
 For correct operation, shared memory support has to be enabled
 in Chromium by performing the following command as root :
