@@ -27,10 +27,8 @@ PLIST_FILES=	bin/${PORTNAME} bin/nvram_export
 .if !defined(NOPORTDOCS)
 PORTDOCS=	README README.hypervisor
 .endif
-.if !defined(NO_INSTALL_MANPAGES)
 MAN1=		${PORTNAME}.1 nvram_export.1
 MAN7=		hypervisor_mode.7
-.endif
 
 NO_STAGE=	yes
 .include <bsd.port.pre.mk>
@@ -68,10 +66,8 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README.hypervisor ${DOCSDIR}
 .endif
-.if !defined(NO_INSTALL_MANPAGES)
 	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${PREFIX}/man/man1
 	${INSTALL_MAN} ${WRKSRC}/nvram_export.1 ${PREFIX}/man/man1
 	${INSTALL_MAN} ${WRKSRC}/hypervisor_mode.7 ${PREFIX}/man/man7
-.endif
 
 .include <bsd.port.post.mk>

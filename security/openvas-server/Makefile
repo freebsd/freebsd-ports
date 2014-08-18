@@ -21,6 +21,4 @@ CONFIGURE_ARGS=	--localstatedir=/var
 CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib -lgcrypt
 
-PLIST_SUB=	RESETPREFIX=${PREFIX}
-
 .include <bsd.port.mk>

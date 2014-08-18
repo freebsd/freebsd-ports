@@ -45,11 +45,6 @@ post-patch:
 		-e '/TENTACLE_SERVER/s/^/#/' \
 		${WRKSRC}/pandora_agent_installer
 .endif
-.if defined(NO_INSTALL_MANPAGES)
-	@${REINPLACE_CMD} \
-		-e '/PANDORA_MAN/s/^/#/' \
-		${WRKSRC}/pandora_agent_installer
-.endif
 	@${REINPLACE_CMD} -E \
 		-e 's|%%PREFIX%%|${PREFIX}|g' \
 		-e 's|%%DATADIR%%|${DATADIR}|g' \

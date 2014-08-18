@@ -3,7 +3,7 @@
 
 PORTNAME=	liboop
 PORTVERSION=	1.0
-PORTREVISION=	9
+PORTREVISION=	11
 CATEGORIES=	devel
 MASTER_SITES=	GENTOO/distfiles \
 		http://download.ofb.net/liboop/
@@ -16,13 +16,13 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	libadns.so:${PORTSDIR}/dns/adns \
 		libwwwcore.so:${PORTSDIR}/www/libwww
 
+GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-libwww
 MAKE_ENV=	INSTALL_STRIP_FLAG=${STRIP}
 MAKE_JOBS_UNSAFE=	yes
-USE_AUTOTOOLS=	libtool
 USE_GNOME=	glib12 glib20
 USE_LDCONFIG=	yes
-USES=		pathfix tcl tar:bzip2
+USES=		libtool pathfix pkgconfig tcl tar:bzip2
 
 CPPFLAGS+=	-I${TCL_INCLUDEDIR} -I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

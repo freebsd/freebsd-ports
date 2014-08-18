@@ -291,5 +291,6 @@ hbase:*:980:
 uvncrep:*:981:
 bro:*:982:
 syncthing:*:983:
+tvheadend:*:984:
 nogroup:*:65533:
 nobody:*:65534:

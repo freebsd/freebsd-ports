@@ -17,7 +17,6 @@ ONLY_FOR_ARCHS=	amd64 i386 sparc64
 OPTIONS_DEFINE=	X11 STATIC
 OPTIONS_DEFAULT=	X11
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MSTATIC}
@@ -55,8 +54,7 @@ CONFLICTS=	cvsup-without-gui-[0-9]*
 .endif
 
 MAKE_ARGS+=	PREFIX=${PREFIX} M3FLAGS="${M3FLAGS}"
-MAN1=		cvpasswd.1 cvsup.1
-MAN8=		cvsupd.8
+INSTALL_TARGET=	install BINDIR=${STAGEDIR}${PREFIX}/bin MANDIR=${STAGEDIR}${MANPREFIX}/man
 
 pre-patch:
 .if ${ARCH} == "amd64"
@@ -66,7 +64,8 @@ pre-patch:
 .endif
 
 post-install:
-	@${MKDIR} ${PREFIX}/share/cvsup
-	@${INSTALL_DATA} ${WRKSRC}/License ${PREFIX}/share/cvsup/License
+	${MV} ${STAGEDIR}${PREFIX}/bin/cvsupd ${STAGEDIR}${PREFIX}/sbin/
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/cvsup
+	@${INSTALL_DATA} ${WRKSRC}/License ${STAGEDIR}${PREFIX}/share/cvsup/License
 
 .include <bsd.port.post.mk>

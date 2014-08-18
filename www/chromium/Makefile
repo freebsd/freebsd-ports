@@ -43,6 +43,7 @@ LIB_DEPENDS=	libcairo.so:${PORTSDIR}/graphics/cairo \
 		libjsoncpp.so:${PORTSDIR}/devel/jsoncpp \
 		libminizip.so:${PORTSDIR}/archivers/minizip \
 		libnspr4.so:${PORTSDIR}/devel/nspr \
+		libprotobuf.so:${PORTSDIR}/devel/protobuf \
 		libpng.so:${PORTSDIR}/graphics/png \
 		libre2.so:${PORTSDIR}/devel/re2 \
 		libsnappy.so:${PORTSDIR}/archivers/snappy \

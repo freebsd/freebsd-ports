@@ -2,18 +2,18 @@
 # $FreeBSD$
 
 PORTNAME=	wine
-PORTVERSION=	1.7.23
+PORTVERSION=	1.7.24
 PORTEPOCH=	1
 CATEGORIES=	emulators
 MASTER_SITES=	LOCAL/dbn/repos/wine/${DIST_SUBDIR}/${PORTVERSION}
 PKGNAMEPREFIX=	i386-
-PKGNAMESUFFIX=	-devel
+PKGNAMESUFFIX?=	-devel
 DISTNAME=	${PKGNAME}
 EXTRACT_SUFX=	.txz
 DIST_SUBDIR=	freebsd:${OSREL:C/\..*//}:x86:64
 
 MAINTAINER=	dbn@FreeBSD.org
-COMMENT=	32bit Microsoft Windows compatibility environment for 64bit FreeBSD
+COMMENT?=	32bit Microsoft Windows compatibility environment for 64bit FreeBSD
 
 LICENSE=        LGPL21 LGPL3
 LICENSE_COMB=   dual
@@ -23,7 +23,7 @@ OPTIONS_DEFINE=	GECKO MONO
 GECKO_DESC=     Bundle Gecko MSI package for Wine
 MONO_DESC=      Bundle Mono MSI package for Wine
 
-CONFLICTS_INSTALL=	i386-wine-[0-9]* wine-[0-9]* wine-devel-[0-9]*
+CONFLICTS_INSTALL?=	i386-wine-[0-9]* wine-[0-9]* wine-devel-[0-9]*
 
 EXTRACT_AFTER_ARGS=	-C / --exclude +COMPACT_MANIFEST --exclude +MANIFEST \
 				--exclude +MTREE_DIRS --exclude share/licenses/'*' \

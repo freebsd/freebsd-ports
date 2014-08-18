@@ -23,7 +23,6 @@ WRKSRC=			${WRKDIR}/mrourmon
 USES=			perl5
 USE_APACHE_RUN=		22+
 NO_BUILD=		yes
-NO_INSTALL_MANPAGES=	yes
 IS_INTERACTIVE=		yes
 
 SUB_FILES=	pkg-message

@@ -3751,6 +3751,8 @@
     SUBDIR += py-json-py
     SUBDIR += py-jsonlib
     SUBDIR += py-jsonlib2
+    SUBDIR += py-jsonpatch
+    SUBDIR += py-jsonpointer
     SUBDIR += py-jsonrpclib
     SUBDIR += py-jsonschema
     SUBDIR += py-kazoo

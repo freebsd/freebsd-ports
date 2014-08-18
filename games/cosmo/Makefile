@@ -22,9 +22,8 @@ NO_CDROM=	Possible copyright infringement
 
 WRKSRC=		${WRKDIR}/cosmo2
 DIST_SUBDIR=	cosmo
-USES=		imake:notall
+USES=		imake:notall,noman
 USE_XORG=	x11 xext
-NO_INSTALL_MANPAGES=	yes
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/X11/cosmo

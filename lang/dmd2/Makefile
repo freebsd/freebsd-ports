@@ -3,7 +3,7 @@
 
 PORTNAME=	dmd
 PKGNAMESUFFIX=	2
-PORTVERSION=	2.065.0
+PORTVERSION=	2.066.0
 CATEGORIES=	lang
 MASTER_SITES=	http://ftp.digitalmars.com/
 DISTNAME=	dmd.${PORTVERSION}
@@ -15,7 +15,7 @@ USES=		gmake zip
 MAKEFILE=	posix.mak
 EXAMPLESDIR=	${PREFIX}/share/examples/dmd2
 DOCSDIR=	${PREFIX}/share/doc/dmd2
-PORTDOCS=	*.txt druntime/ html/
+PORTDOCS=	*.txt html/
 WRKSRC=		${WRKDIR}/dmd2/src/${PORTNAME}
 LICENSE_COMB=	multi
 LICENSE=	ART10 DMD BSL
@@ -47,8 +47,6 @@ MAKE_ARGS+=	MODEL=32
 .if defined(WITH_DEBUG)
 BUILD=		debug
 MAKE_ARGS+=	DEBUG_FLAGS=-g\ -DDEBUG=1\ -DUNITTEST
-.else
-BUILD=		release
 .endif
 
 MODULEDIR=	${PREFIX}/include/d/phobos2
@@ -69,12 +67,6 @@ post-patch:
 	@${ECHO_CMD} >> ${WRKDIR}/dmd2/linux/bin32/dmd.conf
 	@${SED} -e "s|Environment32|Environment64|" ${WRKDIR}/dmd2/linux/bin32/dmd.conf >>${WRKDIR}/dmd2/linux/bin32/dmd.conf
 
-post-build:
-	cd ${WRKSRC}/../druntime && \
-		${SETENV} PATH=${WRKSRC}:${PATH} ${MAKE_CMD} ${MAKE_FLAGS} ${MAKEFILE} ${_MAKE_JOBS} ${MAKE_ARGS}
-	cd ${WRKSRC}/../phobos && \
-		${SETENV} PATH=${WRKSRC}:${PATH} ${MAKE_CMD} ${MAKE_FLAGS} ${MAKEFILE} ${_MAKE_JOBS} ${MAKE_ARGS} ${BUILD}
-
 do-install:
 	${INSTALL_MAN} ${WRKDIR}/dmd2/man/man1/dmd.1 ${STAGEDIR}${MANPREFIX}/man/man1/dmd.1
 	${INSTALL_MAN} ${WRKDIR}/dmd2/man/man5/dmd.conf.5 ${STAGEDIR}${MANPREFIX}/man/man5/dmd.conf.5
@@ -83,9 +75,9 @@ do-install:
 .endif
 	${INSTALL_PROGRAM} ${WRKSRC}/dmd ${STAGEDIR}${PREFIX}/bin/dmd
 .if ${ARCH} == "amd64"
-	${INSTALL_DATA} ${WRKSRC}/../phobos/generated/freebsd/${BUILD}/64/libphobos2.a ${STAGEDIR}${PREFIX}/lib
+	${INSTALL_DATA} ${WRKSRC}/../../freebsd/lib64/libphobos2.a ${STAGEDIR}${PREFIX}/lib
 .else
-	${INSTALL_DATA} ${WRKSRC}/../phobos/generated/freebsd/${BUILD}/32/libphobos2.a ${STAGEDIR}${PREFIX}/lib
+	${INSTALL_DATA} ${WRKSRC}/../../freebsd/lib32/libphobos2.a ${STAGEDIR}${PREFIX}/lib
 .endif
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKDIR}/dmd2/linux/bin32/dmd.conf ${STAGEDIR}${EXAMPLESDIR}/dmd.conf
@@ -101,9 +93,5 @@ do-install:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/*.txt ${STAGEDIR}${DOCSDIR}
 	cd ${WRKDIR}/dmd2 && ${COPYTREE_SHARE} html ${STAGEDIR}${DOCSDIR}
-	${MKDIR} ${STAGEDIR}${DOCSDIR}/druntime
-	${INSTALL_DATA} ${WRKSRC}/../druntime/LICENSE ${STAGEDIR}${DOCSDIR}/druntime
-	${INSTALL_DATA} ${WRKSRC}/../druntime/README.md ${STAGEDIR}${DOCSDIR}/druntime
-	cd ${WRKSRC}/../druntime && ${COPYTREE_SHARE} doc ${STAGEDIR}${DOCSDIR}/druntime
 
 .include <bsd.port.post.mk>

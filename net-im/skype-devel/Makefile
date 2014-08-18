@@ -9,13 +9,13 @@ MASTER_SITES=	http://download.skype.com/linux/
 PKGNAMESUFFIX=	-devel
 DISTNAME=	skype_static-${DISTVERSION}
 
-MAINTAINER= ports@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	P2P VoIP software, development version
 
 CONFLICTS=	skype-[0-9]*
 
 OPTIONS_DEFINE=	VIDEO NVIDIA_GL
-VIDEO_DESC=[broken] Video support
+VIDEO_DESC=	[broken] Video support
 NVIDIA_GL_DESC=	libGL provided by NVidia binary drivers
 
 OPTIONS_DEFAULT=	VIDEO
@@ -37,8 +37,6 @@ PLIST_SUB+=	SKYPEDIR=${SKYPEDIR}
 SUB_FILES=	skype.sh
 SUB_LIST+=	SKYPEDIR=${SKYPEDIR}
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MVIDEO}
@@ -71,21 +69,21 @@ IGNORE=	${IGNORE_MSG}
 .endif
 
 do-install:
-	@${INSTALL} -d ${PREFIX}/share/applications
-	@${INSTALL_DATA} ${WRKSRC}/skype.desktop ${PREFIX}/share/applications/
-	@${INSTALL_DATA} ${WRKSRC}/icons/SkypeBlue_48x48.png ${PREFIX}/share/pixmaps/skype.png
-	@cd ${WRKSRC}/ && ${MKDIR} ${PREFIX}/${SKYPEDIR} && ${COPYTREE_SHARE} "avatars icons sounds lang" ${PREFIX}/${SKYPEDIR}/
+	@${INSTALL} -d ${STAGEDIR}${PREFIX}/share/applications
+	@${INSTALL_DATA} ${WRKSRC}/skype.desktop ${STAGEDIR}${PREFIX}/share/applications/
+	@${INSTALL_DATA} ${WRKSRC}/icons/SkypeBlue_48x48.png ${STAGEDIR}${PREFIX}/share/pixmaps/skype.png
+	@cd ${WRKSRC}/ && ${MKDIR} ${STAGEDIR}${PREFIX}/${SKYPEDIR} && ${COPYTREE_SHARE} "avatars icons sounds lang" ${STAGEDIR}${PREFIX}/${SKYPEDIR}/
 
 # The binary main program
-	@${INSTALL_PROGRAM} ${WRKSRC}/skype ${PREFIX}/${SKYPEDIR}/
+	@${INSTALL_PROGRAM} ${WRKSRC}/skype ${STAGEDIR}${PREFIX}/${SKYPEDIR}/
 
 # The wrapper for main program
-	@${INSTALL_SCRIPT} ${WRKDIR}/skype.sh ${PREFIX}/bin/skype
-	@${CHMOD} a+rx ${PREFIX}/bin/skype
+	@${INSTALL_SCRIPT} ${WRKDIR}/skype.sh ${STAGEDIR}${PREFIX}/bin/skype
+	@${CHMOD} a+rx ${STAGEDIR}${PREFIX}/bin/skype
 
 .if ${PORT_OPTIONS:MDOCS}
-	@${INSTALL} -d ${DOCSDIR}
-	@cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
+	@${INSTALL} -d ${STAGEDIR}${DOCSDIR}
+	@cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
 .endif
 	@${CAT} ${PKGMESSAGE}
 

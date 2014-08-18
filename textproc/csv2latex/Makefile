@@ -13,25 +13,17 @@ COMMENT=	Converts a well formed csv file to a LaTeX document
 
 LICENSE=	GPLv2
 
+BUILD_DEPENDS=	docbook-to-man:${PORTSDIR}/textproc/docbook-to-man
+
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
-PLIST_FILES=	bin/csv2latex
+PLIST_FILES=	bin/csv2latex man/man1/${PORTNAME}.1.gz
 
 do-build:
 	${CC} ${CFLAGS} -o ${WRKSRC}/${PORTNAME} ${WRKSRC}/${PORTNAME}.c
+	docbook-to-man ${WRKSRC}/${PORTNAME}.sgml > ${WRKSRC}/${PORTNAME}.1
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
-
-.if ( defined(WITH_MAN) &&  !defined(NO_INSTALL_MANPAGES) )
-BUILD_DEPENDS +=	docbook-to-man:${PORTSDIR}/textproc/docbook-to-man
-PLIST_FILES+=	man/man1/${PORTNAME}.1.gz
-
-post-build:
-	docbook-to-man ${WRKSRC}/${PORTNAME}.sgml > ${WRKSRC}/${PORTNAME}.1
-
-post-install:
 	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
-
-.endif
 
 .include <bsd.port.mk>

@@ -67,8 +67,6 @@ CONFLICTS=	collectd-4.[0-9]*
 CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib
 
-PLIST_SUB+=	RESETPREFIX=${PREFIX}
-
 .include <bsd.port.options.mk>
 
 # NOTE: Plugins without dependencies are defined further down.

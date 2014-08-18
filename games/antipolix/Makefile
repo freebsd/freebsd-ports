@@ -13,9 +13,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple multiplayer game for X Window System
 
 NO_WRKSUBDIR=	yes
-USES=		imake
+USES=		imake:noman
 USE_XORG=	x11
-NO_INSTALL_MANPAGES=	yes
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 

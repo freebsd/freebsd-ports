@@ -12,7 +12,6 @@ COMMENT=	JAM subroutine library
 
 USES=		libtool
 GNU_CONFIGURE=	yes
-NO_INSTALL_MANPAGES=	yes
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
 

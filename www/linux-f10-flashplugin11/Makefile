@@ -32,7 +32,6 @@ OPTIONS_DEFINE=	GNOME
 GNOME_DESC=	include gnome support for .desktop file
 
 OPTIONS_SUB=	yes
-PLIST_SUB+=RESETPREFIX=${PREFIX}
 
 .include <bsd.port.options.mk>
 

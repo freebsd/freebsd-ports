@@ -16,11 +16,10 @@ COMMENT=	Kana-to-Kanji conversion system, library part
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
-USES=		imake:notall tar:bzip2
+USES=		imake:notall,noman tar:bzip2
 USE_LDCONFIG=	yes
 ALL_TARGET=	canna
 INSTALL_TARGET=	instsgs
-NO_INSTALL_MANPAGES=yes
 MAKE_JOBS_UNSAFE=	yes
 
 .include <bsd.port.mk>

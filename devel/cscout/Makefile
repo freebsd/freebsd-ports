@@ -52,9 +52,7 @@ do-install:
 .if ${PORT_OPTIONS:MDOCS}
 	cd ${WRKSRC}/doc && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}
 .endif
-.if !defined(NO_INSTALL_MANPAGES)
 	${INSTALL_MAN} ${WRKSRC}/man/cscout.1 ${STAGEDIR}${PREFIX}/man/man1
 	${INSTALL_MAN} ${WRKSRC}/man/cswc.1 ${STAGEDIR}${PREFIX}/man/man1
-.endif
 
 .include <bsd.port.mk>

@@ -34,17 +34,13 @@ PLIST_FILES=	\
 		bin/gf2pbm \
 		bin/mftrace \
 		%%PYTHON_SITELIBDIR%%/afm.py \
-		%%PYTHON_SITELIBDIR%%/tfm.py
-.if !defined(NO_INSTALL_MANPAGES)
-PLIST_FILES+=	man/man1/mftrace.1.gz
-.endif
+		%%PYTHON_SITELIBDIR%%/tfm.py \
+		man/man1/mftrace.1.gz
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/gf2pbm ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_SCRIPT} ${WRKSRC}/mftrace ${STAGEDIR}${PREFIX}/bin
-.if !defined(NO_INSTALL_MANPAGES)
 	${INSTALL_MAN} ${WRKSRC}/mftrace.1 ${STAGEDIR}${MANPREFIX}/man/man1
-.endif
 	@${MKDIR} ${STAGEDIR}${PYTHON_SITELIBDIR}
 	${INSTALL_SCRIPT} ${WRKSRC}/tfm.py ${STAGEDIR}${PYTHON_SITELIBDIR}
 	${INSTALL_SCRIPT} ${WRKSRC}/afm.py ${STAGEDIR}${PYTHON_SITELIBDIR}

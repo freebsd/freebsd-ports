@@ -64,7 +64,7 @@ PLIST_SUB+=	TUTORIAL="@comment "
 
 INSTALL_TARGET+=	install-shells
 
-.if !defined(AOLSERVER_XOTCL) && !defined(NO_INSTALL_MANPAGES)
+.if !defined(AOLSERVER_XOTCL)
 MAN1=			xotclsh.1
 .endif
 
@@ -106,8 +106,6 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/${FILE} ${DOCSDIR}
 .endfor
 .endif
-.if !defined(NO_INSTALL_MANPAGES)
 	${INSTALL_MAN} ${WRKSRC}/man/xotclsh.1 ${PREFIX}/man/man1/
-.endif
 .endif
 .include <bsd.port.mk>

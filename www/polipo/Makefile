@@ -27,7 +27,6 @@ SUB_FILES=	pkg-message pkg-install pkg-deinstall 400.polipo
 SUB_LIST+=	USER=${PUSER} GROUP=${PGRP} DESTDIR=${DESTDIR} PCONFIGDIR=${PCONFIGDIR} \
 		PCACHEDIR=${PCACHEDIR} PPIDDIR=${PPIDDIR} PPIDFILE=${PPIDFILE} \
 		PLOGFILE=${PLOGFILE}
-PLIST_SUB+=	RESETPREFIX=${PREFIX}
 
 # polipo installation options, propagated to install scripts
 PUSER?=		polipo
