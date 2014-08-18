@@ -3,7 +3,7 @@
 
 PORTNAME=	numpy
 PORTVERSION=	1.8.1
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	math python
 MASTER_SITES=	http://docs.scipy.org/doc/${PORTNAME}/:doc \
@@ -21,23 +21,26 @@ LICENSE=	BSD3CLAUSE
 
 RUN_DEPENDS=	nosetests:${PORTSDIR}/devel/py-nose
 
+USES=		fortran python
+USE_PYTHON=	concurrent distutils py3kplist
+
 OPTIONS_DEFINE=		ATLAS SUITESPARSE
 OPTIONS_DEFAULT=	SUITESPARSE
 ATLAS_DESC=		Use optimized blas library
 SUITESPARSE_DESC=	Use AMD and UMFPACK in SuiteSparse
 
-USES=				fortran
-USE_PYTHON=			yes
-USE_PYDISTUTILS=		yes
 PYDISTUTILS_CONFIGUREARGS+=	--fcompiler=gnu95
 PYDISTUTILS_BUILDARGS+=		--fcompiler=gnu95
-PYTHON_PY3K_PLIST_HACK=		yes
-INSTALLS_EGGINFO=		yes
 
 PORTDOCS=	*
 WRKSRC=		${WRKDIR}/${DISTNAME:S/r/rc/}
 
 .include <bsd.port.pre.mk>
+
+PLIST_SUB+=	PYTHON_VER=${PYTHON_VER}
+.if ${PYTHON_VERSION} == ${PYTHON_DEFAULT_VERSION}
+PLIST_FILES+=	man/man1/f2py.1.gz
+.endif
 
 .if ${PORT_OPTIONS:MATLAS}
 LIB_DEPENDS+=	libatlas.so:${PORTSDIR}/math/atlas
@@ -77,7 +80,10 @@ pre-configure:
 	@${REINPLACE_CMD} -e "s+%%GCCLIBDIR%%+$$(${GCCLIBDIR_CMDS})+" ${WRKSRC}/numpy/distutils/system_info.py
 
 post-install:
-	${INSTALL_MAN} ${WRKSRC}/numpy/f2py/f2py.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/numpy/f2py/f2py.1 ${STAGEDIR}${MANPREFIX}/man/man1/f2py-${PYTHON_VER}.1
+.if ${PYTHON_VERSION} == ${PYTHON_DEFAULT_VERSION}
+	${LN} -sf ${MANPREFIX}/man/man1/f2py-${PYTHON_VER}.1 ${STAGEDIR}${MANPREFIX}/man/man1/f2py.1
+.endif
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKDIR}/numpy-ref-${PORTVERSION}.pdf ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKDIR}/numpy-user-${PORTVERSION}.pdf ${STAGEDIR}${DOCSDIR}
