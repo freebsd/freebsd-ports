@@ -20,6 +20,7 @@
 %%HASHDIG_TOOLS%%bin/hashdig-resolve-sunsolve.pl
 %%HASHDIG_TOOLS%%bin/hashdig-stat.pl
 %%HASHDIG_TOOLS%%bin/hashdig-weed.pl
+%%MAP_TOOLS%%bin/ftimes-bimvl
 %%MAP_TOOLS%%bin/ftimes-cat
 %%MAP_TOOLS%%bin/ftimes-cmp2dbi.pl
 %%MAP_TOOLS%%bin/ftimes-cmp2diff
@@ -40,9 +41,9 @@ bin/ftimes
 etc/ftimes-dig.cfg.sample
 etc/ftimes-get.cfg.sample
 etc/ftimes-map.cfg.sample
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/FTimes/.packlist
-%%SITE_PERL%%/FTimes/EadRoutines.pm
-%%SITE_PERL%%/FTimes/Properties.pm
+%%FTIMES_PERL5_LIBS%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/FTimes/.packlist
+%%FTIMES_PERL5_LIBS%%%%SITE_PERL%%/FTimes/EadRoutines.pm
+%%FTIMES_PERL5_LIBS%%%%SITE_PERL%%/FTimes/Properties.pm
 man/man1/ftimes.1.gz
 %%DBM_TOOLS%%man/man1/ftimes-dbm-bash.1.gz
 %%DBM_TOOLS%%man/man1/ftimes-dbm-dump.1.gz
@@ -66,6 +67,7 @@ man/man1/ftimes.1.gz
 %%HASHDIG_TOOLS%%man/man1/hashdig-resolve-sunsolve.1.gz
 %%HASHDIG_TOOLS%%man/man1/hashdig-stat.1.gz
 %%HASHDIG_TOOLS%%man/man1/hashdig-weed.1.gz
+%%MAP_TOOLS%%man/man1/ftimes-bimvl.1.gz
 %%MAP_TOOLS%%man/man1/ftimes-cat.1.gz
 %%MAP_TOOLS%%man/man1/ftimes-cmp2dbi.1.gz
 %%MAP_TOOLS%%man/man1/ftimes-cmp2diff.1.gz
@@ -81,7 +83,7 @@ man/man1/ftimes.1.gz
 %%MAP_TOOLS%%man/man1/hashcp.1.gz
 %%MAP_TOOLS%%man/man1/tarmap.1.gz
 %%MAP_TOOLS%%man/man1/zipmap.1.gz
-man/man3/FTimes::EadRoutines.3.gz
-man/man3/FTimes::Properties.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/FTimes
-@dirrm %%SITE_PERL%%/FTimes
+%%FTIMES_PERL5_LIBS%%man/man3/FTimes::EadRoutines.3.gz
+%%FTIMES_PERL5_LIBS%%man/man3/FTimes::Properties.3.gz
+%%FTIMES_PERL5_LIBS%%@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/FTimes
+%%FTIMES_PERL5_LIBS%%@dirrm %%SITE_PERL%%/FTimes
