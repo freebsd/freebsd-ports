@@ -45,9 +45,7 @@ PICFLAG?=	-fPIC
 PICFLAG?=	-fpic
 .endif
 
-.ifndef(NOPORTDATA)
 PORTDATA=	*
-.endif
 
 PORTDOCS=	*
 
@@ -70,11 +68,9 @@ do-install:
 	@${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME}.pl ${STAGEDIR}${PREFIX}/bin
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	@(cd ${WRKSRC}/doc && ${COPYTREE_SHARE} \* ${STAGEDIR}${DOCSDIR})
-.ifndef(NOPORTDATA)
 	@${MKDIR} ${STAGEDIR}${DATADIR}
 	@(cd ${WRKSRC} && ${COPYTREE_SHARE} \
 	"modules/Internals modules/*.xml modules/Targets/unix" ${STAGEDIR}${DATADIR})
-.endif
 
 .if defined(MAINTAINER_MODE) || defined(PACKAGE_BUILDING)
 check regression-test test: build
