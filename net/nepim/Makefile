@@ -3,9 +3,9 @@
 
 PORTNAME=	nepim
 PORTVERSION=	0.53
+PORTREVISION=	1
 CATEGORIES=	net
-MASTER_SITES=	${MASTER_SITE_SAVANNAH}
-MASTER_SITE_SUBDIR=	nepim
+MASTER_SITES=	SAVANNAH/nepim
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tool for measuring available bandwidth between hosts
