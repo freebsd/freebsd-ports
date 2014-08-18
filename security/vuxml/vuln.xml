@@ -57,6 +57,47 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="d2a892b9-2605-11e4-9da0-00a0986f28c4">
+    <topic>PHP multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>php53</name>
+	<range><lt>5.3.29</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The PHP Team reports:</p>
+	<blockquote cite="http://php.net/ChangeLog-5.php#5.3.29">
+	  <p>insecure temporary file use in the configure script</p>
+	  <p>unserialize() SPL ArrayObject / SPLObjectStorage Type Confusion
+	    </p>
+	  <p>Heap buffer over-read in DateInterval</p>
+	  <p>fileinfo: cdf_read_short_sector insufficient boundary check</p>
+	  <p>fileinfo: CDF infinite loop in nelements DoS</p>
+	  <p>fileinfo: fileinfo: numerous file_printf calls resulting in
+	    performance degradation)</p>
+	  <p>Fix potential segfault in dns_check_record()</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2013-6712</cvename>
+      <cvename>CVE-2014-0207</cvename>
+      <cvename>CVE-2014-0237</cvename>
+      <cvename>CVE-2014-0238</cvename>
+      <cvename>CVE-2014-3515</cvename>
+      <cvename>CVE-2014-3981</cvename>
+      <cvename>CVE-2014-4049</cvename>
+      <url>http://php.net/ChangeLog-5.php#5.3.29</url>
+      <url>https://www.sektioneins.de/en/blog/14-07-04-phpinfo-infoleak.html</url>
+    </references>
+    <dates>
+      <discovery>2014-08-14</discovery>
+      <entry>2014-08-18</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="fbb01289-2645-11e4-bc44-6805ca0b3d42">
     <topic>phpMyAdmin -- XSS vulnerabilities</topic>
     <affects>
