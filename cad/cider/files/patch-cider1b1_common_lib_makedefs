@@ -1,0 +1,16 @@
+--- cider1b1/common/lib/makedefs.orig	1994-02-24 09:11:21 UTC
++++ cider1b1/common/lib/makedefs
+@@ -1,9 +1,12 @@
+ 
+ INSTALL_TARGETS	= $(CIDER_LIB_DIR)/helpdir/cider.txt			      \
+ 		  $(CIDER_LIB_DIR)/helpdir/cider.idx	\
++		  $(CIDER_LIB_DIR)/helpdir/spice.txt	\
++		  $(CIDER_LIB_DIR)/helpdir/spice.idx	\
+ 		  $(CIDER_LIB_DIR)/scripts/devaxis	\
+ 		  $(CIDER_LIB_DIR)/scripts/devload
+ 
+-ALL_INSTALL_DIRS = $(CIDER_LIB_DIR) $(CIDER_LIB_DIR)/helpdir
++ALL_INSTALL_DIRS = $(CIDER_LIB_DIR) $(CIDER_LIB_DIR)/helpdir \
++		   $(CIDER_LIB_DIR)/scripts
+ 
+ INSTALL_SPECIAL = directories

@@ -1,0 +1,16 @@
+--- cider1b1/common/lib/makeops.orig	1994-02-24 09:11:43 UTC
++++ cider1b1/common/lib/makeops
+@@ -11,6 +11,13 @@ $(CIDER_LIB_DIR)/helpdir/cider.idx: $(DI
+ $(CIDER_LIB_DIR)/helpdir/cider.idx: $(OBJBIN_SPICE_DIR)/makeidx
+ 	$(OBJBIN_SPICE_DIR)/makeidx $(CIDER_LIB_DIR)/helpdir/cider.txt
+ 
++$(CIDER_LIB_DIR)/helpdir/spice.txt: $(DISTLIB_DIR)/helpdir/spice.txt
++	-cp $? $@
++
++$(CIDER_LIB_DIR)/helpdir/spice.idx: $(DISTLIB_DIR)/helpdir/spice.txt
++$(CIDER_LIB_DIR)/helpdir/spice.idx: $(OBJBIN_SPICE_DIR)/makeidx
++	$(OBJBIN_SPICE_DIR)/makeidx $(CIDER_LIB_DIR)/helpdir/spice.txt
++
+ $(CIDER_LIB_DIR):
+ 	mkdir -p $(CIDER_LIB_DIR)
+ 

@@ -1,0 +1,20 @@
+--- cider1b1/common/util/build.orig	1994-01-29 19:32:01 UTC
++++ cider1b1/common/util/build
+@@ -89,7 +89,7 @@ DIR4=`basename ${TOP3}`
+ 
+ TMP_LEADER="${TMP_DIR}/buildl$$"
+ TMP_TRAILER="${TMP_DIR}/buildt$$"
+-trap "rm -f ${TMP_LEADER} ${TMP_TRAILER}; exit 1" 1 2 3 4 6 7 8 9 10 12 13 14 15
++trap "rm -f ${TMP_LEADER} ${TMP_TRAILER}; exit 1" 1 2 3 4 6 7 8 10 12 13 14 15
+ echo > "${TMP_TRAILER}"
+ BAD=false
+ DEBUG=
+@@ -166,7 +166,7 @@ if test -z "${DEBUG}"; then
+ 	echo Begin build for "${SYS_NAME}" on "${BUILD_DATE}":
+ 	$EXEC cat ${FILES0} "${TOP0}/${DIR}/${SUBDIR}/makedefs" \
+ 		"${TMP_TRAILER}" "${SKEL_DIR}/make_std.bd" \
+-	| /bin/make ${VERBOSE} -f - bootstrap DIR="${DIR}" SUBDIR="${SUBDIR}" \
++	| make ${VERBOSE} -f - bootstrap CC="${CC}" DIR="${DIR}" SUBDIR="${SUBDIR}" \
+ 		VPATH="${TOP0}/${DIR}/${SUBDIR}" CWD="${CWD}"
+ 	echo Done with build at `date`
+ else

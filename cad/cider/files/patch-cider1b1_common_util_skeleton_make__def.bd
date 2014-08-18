@@ -1,0 +1,20 @@
+--- cider1b1/common/util/skeleton/make_def.bd.orig	1994-03-12 13:05:44 UTC
++++ cider1b1/common/util/skeleton/make_def.bd
+@@ -48,7 +48,7 @@ ALL_PURPOSE	= default_all
+ PRE_PURPOSE	= pre_$(PURPOSE)
+ PURPOSE		= all
+ INCLUDE		= -I$(INCLUDE_DIR) -I$(INCLUDE_SPICE_DIR) -I$(TCGMSG_DIR)/include
+-CC		= cc
++REAL_CC		= $(CC)
+ 
+ CIDER_TUNE	= -DBUG_ADDR=\"$(BUG_ADDR)\" -DHELP_DIR=\"$(HELP_DIR)\"	      \
+ 		  -DSCRIPT_DIR=\"$(SCRIPT_DIR)\" -DNEWS_FILE=\"$(NEWS_FILE)\" \
+@@ -76,7 +76,7 @@ SPARSELIB	= sparse
+ 
+ LIBRARIES	= dev input oned twod spiceitf support
+ 
+-CFLAGS		= $(REAL_CC_OPT) $(SYS_CFLAGS)
++REAL_CFLAGS	= $(REAL_CC_OPT) $(SYS_CFLAGS)
+ 
+ LIBRARY_HACK	= $(OBJLIB_DIR)/$(LIBRARY).a
+ 

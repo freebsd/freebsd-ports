@@ -1,0 +1,26 @@
+--- cider1b1/common/conf/defaults.orig	1994-01-29 19:21:15 UTC
++++ cider1b1/common/conf/defaults
+@@ -99,17 +99,17 @@ OBJ_TOP		= $(SYS_DIR)/obj
+ #	identified as and SYSTEM is the name of the per-system definitions
+ #	file listed in the "build" command.
+ 
+-SIM_DIR		= $(TOP2)
+-SPICE_DIR	= $(SIM_DIR)/spice/$(SYSTEM)
+-CIDER_DIR	= $(SIM_DIR)/cider/$(SYSTEM)
+-SPICE_LIB_DIR	= $(SPICE_DIR)/lib
+-CIDER_LIB_DIR	= $(SPICE_DIR)/lib
++SIM_DIR		= ${PREFIX}
++SPICE_DIR	= $(SIM_DIR)
++CIDER_DIR	= $(SIM_DIR)
++SPICE_LIB_DIR	= $(SPICE_DIR)/share/spice3
++CIDER_LIB_DIR	= $(SPICE_DIR)/share/cider
+ SPICE_EXEC_DIR	= $(SPICE_DIR)/bin
+ CIDER_EXEC_DIR	= $(CIDER_DIR)/bin
+ 
+ S_CIDER_DIR	= $(CIDER_DIR)
+ S_SPICE_DIR	= $(SPICE_DIR)
+-S_CIDER_LIB_DIR	= $(S_SPICE_DIR)/lib
++S_CIDER_LIB_DIR	= $(S_SPICE_DIR)/share/cider
+ S_CIDER_EXEC_DIR= $(S_CIDER_DIR)/bin
+ 
+ #	INSTALL_DIRS lists the directories that need to be created before
