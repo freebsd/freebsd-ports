@@ -3,6 +3,7 @@
 
 PORTNAME=	giggle
 PORTVERSION=	0.7
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	GNOME
 
@@ -23,7 +24,7 @@ VTE_DESC=	Terminal Widget
 
 GNU_CONFIGURE=	yes
 USE_GNOME=	glib20 gtk30 libglade2 gtksourceview3 gdkpixbuf2
-USES=		gmake pkgconfig tar:xz
+USES=		desktop-file-utils gmake libtool pkgconfig tar:xz
 USE_LDCONFIG=	yes
 INSTALLS_ICONS=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
