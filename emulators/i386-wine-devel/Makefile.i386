@@ -4,7 +4,7 @@
 PKGNAMEPREFIX=	i386-
 
 MAINTAINER=	dbn@FreeBSD.org
-COMMENT=	32bit Microsoft Windows compatibility environment for 64bit FreeBSD
+COMMENT?=	32bit Microsoft Windows compatibility environment for 64bit FreeBSD
 
 # Use the wine port to do most of the heavy lifting
 SLAVEDIR?=	${.CURDIR}
@@ -14,7 +14,7 @@ PKGDEINSTALL=	${PKGINSTALL}
 
 RUN_DEPENDS=	dri>0:${PORTSDIR}/graphics/dri
 
-CONFLICTS_INSTALL=	i386-wine-[0-9]* wine-[0-9]* wine-devel-[0-9]*
+CONFLICTS_INSTALLi?=	i386-wine-[0-9]* wine-[0-9]* wine-devel-[0-9]*
 
 ACTUAL-PACKAGE-DEPENDS=	${DO_NADA}
 WINELIBDIR=	${PREFIX}/lib32
