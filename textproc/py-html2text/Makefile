@@ -2,17 +2,16 @@
 # $FreeBSD$
 
 PORTNAME=	html2text
-PORTVERSION=	2014.4.5
+PORTVERSION=	2014.7.3
 CATEGORIES=	textproc python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	wen@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Convert HTML into clean plain ASCII text
 
-USE_PYTHON=	yes
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
+USES=		python
+USE_PYTHON=	distutils autoplist
 
 CONFLICTS=	html2text-[0-9]*
 
