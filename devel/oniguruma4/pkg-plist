@@ -3,9 +3,9 @@ include/oniggnu.h
 include/onigposix.h
 include/oniguruma.h
 lib/libonig.a
-lib/libonig.la
 lib/libonig.so
 lib/libonig.so.1
+lib/libonig.so.1.0.0
 %%PORTDOCS%%%%DOCSDIR%%/API
 %%PORTDOCS%%%%DOCSDIR%%/API.ja
 %%PORTDOCS%%%%DOCSDIR%%/FAQ
