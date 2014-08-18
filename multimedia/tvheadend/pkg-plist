@@ -14,13 +14,24 @@ man/man1/tvheadend.1.gz
 %%DATADIR%%/docs/docresources/channeltab.png
 %%DATADIR%%/docs/docresources/configcapmt.png
 %%DATADIR%%/docs/docresources/configcwc.png
+%%DATADIR%%/docs/docresources/configdvbmux.png
+%%DATADIR%%/docs/docresources/configdvbmuxsched.png
+%%DATADIR%%/docs/docresources/configdvbnetwork.png
+%%DATADIR%%/docs/docresources/configdvbservices.png
 %%DATADIR%%/docs/docresources/configdvbtab.png
 %%DATADIR%%/docs/docresources/configdvrtab.png
+%%DATADIR%%/docs/docresources/configgeneraltab.png
 %%DATADIR%%/docs/docresources/configtabs.png
+%%DATADIR%%/docs/docresources/configtimeshifttab.png
+%%DATADIR%%/docs/docresources/configtvhlog.png
 %%DATADIR%%/docs/docresources/dvrlog.png
+%%DATADIR%%/docs/docresources/dvrlog2.png
+%%DATADIR%%/docs/docresources/dvrlog3.png
+%%DATADIR%%/docs/docresources/dvrlog4.png
 %%DATADIR%%/docs/docresources/dvrlogentry.png
 %%DATADIR%%/docs/docresources/epg.png
 %%DATADIR%%/docs/docresources/epg2.png
+%%DATADIR%%/docs/docresources/epg3.png
 %%DATADIR%%/docs/docresources/muxbylocation.png
 %%DATADIR%%/docs/docresources/tagstab.png
 %%DATADIR%%/docs/docresources/tvheadendlogo.png
@@ -34,10 +45,17 @@ man/man1/tvheadend.1.gz
 %%DATADIR%%/docs/html/config_dvb.html
 %%DATADIR%%/docs/html/config_dvr.html
 %%DATADIR%%/docs/html/config_epggrab.html
+%%DATADIR%%/docs/html/config_esfilter.html
 %%DATADIR%%/docs/html/config_iptv.html
 %%DATADIR%%/docs/html/config_misc.html
+%%DATADIR%%/docs/html/config_muxes.html
+%%DATADIR%%/docs/html/config_muxsched.html
+%%DATADIR%%/docs/html/config_networks.html
+%%DATADIR%%/docs/html/config_services.html
 %%DATADIR%%/docs/html/config_tags.html
 %%DATADIR%%/docs/html/config_timeshift.html
+%%DATADIR%%/docs/html/config_tvadapters.html
+%%DATADIR%%/docs/html/config_tvhlog.html
 %%DATADIR%%/docs/html/dvr.html
 %%DATADIR%%/docs/html/dvr_autorec.html
 %%DATADIR%%/docs/html/dvrlog.html
@@ -47,877 +65,6 @@ man/man1/tvheadend.1.gz
 %%DATADIR%%/docs/html/install.html
 %%DATADIR%%/docs/html/overview.html
 %%DATADIR%%/docs/html/sysreq.html
-%%DATADIR%%/dvb/COPYING
-%%DATADIR%%/dvb/COPYING.LGPL
-%%DATADIR%%/dvb/atsc/ca-AB-Calgary
-%%DATADIR%%/dvb/atsc/us-ATSC-center-frequencies-8VSB
-%%DATADIR%%/dvb/atsc/us-CA-SF-Bay-Area
-%%DATADIR%%/dvb/atsc/us-Cable-EIA-542-HRC-center-frequencies-QAM256
-%%DATADIR%%/dvb/atsc/us-Cable-EIA-542-IRC-center_frequencies-QAM256
-%%DATADIR%%/dvb/atsc/us-Cable-HRC-center-frequencies-QAM256
-%%DATADIR%%/dvb/atsc/us-Cable-IRC-center-frequencies-QAM256
-%%DATADIR%%/dvb/atsc/us-Cable-Standard-center-frequencies-QAM256
-%%DATADIR%%/dvb/atsc/us-ID-Boise
-%%DATADIR%%/dvb/atsc/us-MA-Boston
-%%DATADIR%%/dvb/atsc/us-MI-Lansing
-%%DATADIR%%/dvb/atsc/us-NTSC-center-frequencies-8VSB
-%%DATADIR%%/dvb/atsc/us-PA-Philadelphia
-%%DATADIR%%/dvb/channels-conf/atsc/us-Raleigh-Durham
-%%DATADIR%%/dvb/channels-conf/dvb-c/de-Berlin
-%%DATADIR%%/dvb/channels-conf/dvb-s/Astra-19.2E
-%%DATADIR%%/dvb/channels-conf/dvb-s/Astra-28.2E
-%%DATADIR%%/dvb/channels-conf/dvb-s/BrasilSat-B3-84.0W
-%%DATADIR%%/dvb/channels-conf/dvb-t/au-Adelaide
-%%DATADIR%%/dvb/channels-conf/dvb-t/au-Brisbane
-%%DATADIR%%/dvb/channels-conf/dvb-t/au-Hobart
-%%DATADIR%%/dvb/channels-conf/dvb-t/au-Melbourne
-%%DATADIR%%/dvb/channels-conf/dvb-t/au-Sydney-NorthShore
-%%DATADIR%%/dvb/channels-conf/dvb-t/cz-Praha
-%%DATADIR%%/dvb/channels-conf/dvb-t/de-Berlin
-%%DATADIR%%/dvb/channels-conf/dvb-t/de-Braunschweig
-%%DATADIR%%/dvb/channels-conf/dvb-t/de-Bremen
-%%DATADIR%%/dvb/channels-conf/dvb-t/de-Koeln-Bonn
-%%DATADIR%%/dvb/channels-conf/dvb-t/de-Leipzig
-%%DATADIR%%/dvb/channels-conf/dvb-t/de-Luebeck
-%%DATADIR%%/dvb/channels-conf/dvb-t/de-Rhein-Main
-%%DATADIR%%/dvb/channels-conf/dvb-t/de-Ruhrgebiet
-%%DATADIR%%/dvb/channels-conf/dvb-t/es-Alpicat
-%%DATADIR%%/dvb/channels-conf/dvb-t/es-Collserola
-%%DATADIR%%/dvb/channels-conf/dvb-t/es-Madrid
-%%DATADIR%%/dvb/channels-conf/dvb-t/es-Mussara
-%%DATADIR%%/dvb/channels-conf/dvb-t/uk-Crystal-Palace
-%%DATADIR%%/dvb/channels-conf/dvb-t/uk-Hannington
-%%DATADIR%%/dvb/channels-conf/dvb-t/uk-Oxford
-%%DATADIR%%/dvb/channels-conf/dvb-t/uk-Reigate
-%%DATADIR%%/dvb/channels-conf/dvb-t/uk-Sandy-Heath
-%%DATADIR%%/dvb/dvb-c/at-Innsbruck
-%%DATADIR%%/dvb/dvb-c/at-Kabel-Braunau
-%%DATADIR%%/dvb/dvb-c/at-Kabelsignal
-%%DATADIR%%/dvb/dvb-c/at-KarrerNet
-%%DATADIR%%/dvb/dvb-c/at-Liwest
-%%DATADIR%%/dvb/dvb-c/at-SalzburgAG
-%%DATADIR%%/dvb/dvb-c/at-Vienna
-%%DATADIR%%/dvb/dvb-c/be-IN.DI-Integan
-%%DATADIR%%/dvb/dvb-c/br-Net-Digital
-%%DATADIR%%/dvb/dvb-c/ch-Bern-upc-cablecom
-%%DATADIR%%/dvb/dvb-c/ch-GGA-Pratteln
-%%DATADIR%%/dvb/dvb-c/ch-Rega-Sense
-%%DATADIR%%/dvb/dvb-c/ch-Video2000
-%%DATADIR%%/dvb/dvb-c/ch-Zuerich-upc-cablecom
-%%DATADIR%%/dvb/dvb-c/ch-interGGA
-%%DATADIR%%/dvb/dvb-c/cz-Moravianet
-%%DATADIR%%/dvb/dvb-c/de-Berlin
-%%DATADIR%%/dvb/dvb-c/de-Brandenburg-Havel
-%%DATADIR%%/dvb/dvb-c/de-Kabel_BW
-%%DATADIR%%/dvb/dvb-c/de-Muenchen
-%%DATADIR%%/dvb/dvb-c/de-NetAachen
-%%DATADIR%%/dvb/dvb-c/de-Primacom
-%%DATADIR%%/dvb/dvb-c/de-Unitymedia
-%%DATADIR%%/dvb/dvb-c/de-iesy
-%%DATADIR%%/dvb/dvb-c/de-komro-Rosenheim
-%%DATADIR%%/dvb/dvb-c/de-neftv
-%%DATADIR%%/dvb/dvb-c/dk-Aarhus-Antenneforening
-%%DATADIR%%/dvb/dvb-c/dk-Copenhagen-AFDK
-%%DATADIR%%/dvb/dvb-c/dk-Odense
-%%DATADIR%%/dvb/dvb-c/es-Euskaltel
-%%DATADIR%%/dvb/dvb-c/fi-HTV
-%%DATADIR%%/dvb/dvb-c/fi-Joensuu-Tikka
-%%DATADIR%%/dvb/dvb-c/fi-TTV
-%%DATADIR%%/dvb/dvb-c/fi-Turku
-%%DATADIR%%/dvb/dvb-c/fi-dna
-%%DATADIR%%/dvb/dvb-c/fi-jkl
-%%DATADIR%%/dvb/dvb-c/fi-sonera
-%%DATADIR%%/dvb/dvb-c/fi-vaasa-oncable
-%%DATADIR%%/dvb/dvb-c/fr-noos-numericable
-%%DATADIR%%/dvb/dvb-c/hu-Digikabel
-%%DATADIR%%/dvb/dvb-c/lu-Ettelbruck-ACE
-%%DATADIR%%/dvb/dvb-c/nl-Delta
-%%DATADIR%%/dvb/dvb-c/nl-REKAM-CAIW_Gouda
-%%DATADIR%%/dvb/dvb-c/nl-Ziggo
-%%DATADIR%%/dvb/dvb-c/nl-upc
-%%DATADIR%%/dvb/dvb-c/no-Oslo-CanalDigital
-%%DATADIR%%/dvb/dvb-c/no-Oslo-Get
-%%DATADIR%%/dvb/dvb-c/se-Gothnet
-%%DATADIR%%/dvb/dvb-c/se-comhem
-%%DATADIR%%/dvb/dvb-s/ABS1-75.0E
-%%DATADIR%%/dvb/dvb-s/AMC1-103w
-%%DATADIR%%/dvb/dvb-s/AMC16-85.0W
-%%DATADIR%%/dvb/dvb-s/AMC4-101w
-%%DATADIR%%/dvb/dvb-s/AMC5-79w
-%%DATADIR%%/dvb/dvb-s/AMC6-72w
-%%DATADIR%%/dvb/dvb-s/AMC9-83.0W
-%%DATADIR%%/dvb/dvb-s/Agila2_C-146.0E
-%%DATADIR%%/dvb/dvb-s/Amazonas-61.0W
-%%DATADIR%%/dvb/dvb-s/Amos-4w
-%%DATADIR%%/dvb/dvb-s/Anik-F1-107.3W
-%%DATADIR%%/dvb/dvb-s/Apstar6_C-134.0E
-%%DATADIR%%/dvb/dvb-s/AsiaSat2_C-100.5E
-%%DATADIR%%/dvb/dvb-s/AsiaSat3S_C-105.5E
-%%DATADIR%%/dvb/dvb-s/Asiasat4_C-122.2E
-%%DATADIR%%/dvb/dvb-s/Astra-19.2E
-%%DATADIR%%/dvb/dvb-s/Astra-23.5E
-%%DATADIR%%/dvb/dvb-s/Astra-28.2E
-%%DATADIR%%/dvb/dvb-s/Atlantic-Bird-1-12.5W
-%%DATADIR%%/dvb/dvb-s/Atlantic-Bird-3-5.0W
-%%DATADIR%%/dvb/dvb-s/BrasilSat-B1-75.0W
-%%DATADIR%%/dvb/dvb-s/BrasilSat-B2-65.0W
-%%DATADIR%%/dvb/dvb-s/BrasilSat-B4-70.0W
-%%DATADIR%%/dvb/dvb-s/BrasilsatB4-84.0W
-%%DATADIR%%/dvb/dvb-s/ChinaSat5A-87.5E
-%%DATADIR%%/dvb/dvb-s/Estrela-do-Sul-63.0W
-%%DATADIR%%/dvb/dvb-s/Eurobird1-28.5E
-%%DATADIR%%/dvb/dvb-s/Eutelsat9-9.0E
-%%DATADIR%%/dvb/dvb-s/EutelsatW2-16E
-%%DATADIR%%/dvb/dvb-s/Express-3A-11.0W
-%%DATADIR%%/dvb/dvb-s/ExpressAM1-40.0E
-%%DATADIR%%/dvb/dvb-s/ExpressAM2-80.0E
-%%DATADIR%%/dvb/dvb-s/ExpressAM22-53.0E
-%%DATADIR%%/dvb/dvb-s/Galaxy10R-123w
-%%DATADIR%%/dvb/dvb-s/Galaxy17-91.0W
-%%DATADIR%%/dvb/dvb-s/Galaxy19-97.0W
-%%DATADIR%%/dvb/dvb-s/Galaxy25-93.0W
-%%DATADIR%%/dvb/dvb-s/Galaxy27-129w
-%%DATADIR%%/dvb/dvb-s/Galaxy28-89.0W
-%%DATADIR%%/dvb/dvb-s/Galaxy3C-95.0W
-%%DATADIR%%/dvb/dvb-s/Hispasat-30.0W
-%%DATADIR%%/dvb/dvb-s/Hotbird-13.0E
-%%DATADIR%%/dvb/dvb-s/IA7-129w
-%%DATADIR%%/dvb/dvb-s/Insat2E_C-83.0E
-%%DATADIR%%/dvb/dvb-s/Insat3A_C-93.5E
-%%DATADIR%%/dvb/dvb-s/Insat4A_C-83.0E
-%%DATADIR%%/dvb/dvb-s/Insat4B_C-93.5E
-%%DATADIR%%/dvb/dvb-s/Intel4-72.0E
-%%DATADIR%%/dvb/dvb-s/Intel904-60.0E
-%%DATADIR%%/dvb/dvb-s/Intelsat-1002-1.0W
-%%DATADIR%%/dvb/dvb-s/Intelsat-11-43.0W
-%%DATADIR%%/dvb/dvb-s/Intelsat-1R-45.0W
-%%DATADIR%%/dvb/dvb-s/Intelsat-3R-43.0W
-%%DATADIR%%/dvb/dvb-s/Intelsat-6B-43.0W
-%%DATADIR%%/dvb/dvb-s/Intelsat-705-50.0W
-%%DATADIR%%/dvb/dvb-s/Intelsat-707-53.0W
-%%DATADIR%%/dvb/dvb-s/Intelsat-805-55.5W
-%%DATADIR%%/dvb/dvb-s/Intelsat-9-58.0W
-%%DATADIR%%/dvb/dvb-s/Intelsat-903-34.5W
-%%DATADIR%%/dvb/dvb-s/Intelsat-905-24.5W
-%%DATADIR%%/dvb/dvb-s/Intelsat-907-27.5W
-%%DATADIR%%/dvb/dvb-s/Intelsat8_C-166.0E
-%%DATADIR%%/dvb/dvb-s/JCSat3A_C-128.0E
-%%DATADIR%%/dvb/dvb-s/Measat3_C-91.5E
-%%DATADIR%%/dvb/dvb-s/NSS-10-37.5W
-%%DATADIR%%/dvb/dvb-s/NSS-7-22.0W
-%%DATADIR%%/dvb/dvb-s/NSS-806-40.5W
-%%DATADIR%%/dvb/dvb-s/Nahuel-1-71.8W
-%%DATADIR%%/dvb/dvb-s/Nilesat101+102-7.0W
-%%DATADIR%%/dvb/dvb-s/OptusC1-156E
-%%DATADIR%%/dvb/dvb-s/OptusD1-160.0E
-%%DATADIR%%/dvb/dvb-s/PAS-43.0W
-%%DATADIR%%/dvb/dvb-s/PalapaC2_C-113.0E
-%%DATADIR%%/dvb/dvb-s/SBS6-74w
-%%DATADIR%%/dvb/dvb-s/SES2-87.0W
-%%DATADIR%%/dvb/dvb-s/ST1_C-80.0E
-%%DATADIR%%/dvb/dvb-s/Satmex-5-116.8W
-%%DATADIR%%/dvb/dvb-s/Satmex-6-113.0W
-%%DATADIR%%/dvb/dvb-s/Sirius-5.0E
-%%DATADIR%%/dvb/dvb-s/Telecom2-8.0W
-%%DATADIR%%/dvb/dvb-s/Telkom1_C-108.0E
-%%DATADIR%%/dvb/dvb-s/Telstar10_C-76.5E
-%%DATADIR%%/dvb/dvb-s/Telstar12-15.0W
-%%DATADIR%%/dvb/dvb-s/Telstar18_C-138.0E
-%%DATADIR%%/dvb/dvb-s/Thaicom1A_C-120.0E
-%%DATADIR%%/dvb/dvb-s/Thaicom2_C-78.5E
-%%DATADIR%%/dvb/dvb-s/Thaicom5_C-78.5E
-%%DATADIR%%/dvb/dvb-s/Thor-1.0W
-%%DATADIR%%/dvb/dvb-s/Turksat-42.0E
-%%DATADIR%%/dvb/dvb-s/Vinasat1_C-132.0E
-%%DATADIR%%/dvb/dvb-s/Yamal201-90.0E
-%%DATADIR%%/dvb/dvb-t/ad-Andorra
-%%DATADIR%%/dvb/dvb-t/ar-Argentina
-%%DATADIR%%/dvb/dvb-t/at-All
-%%DATADIR%%/dvb/dvb-t/au-Adelaide
-%%DATADIR%%/dvb/dvb-t/au-AdelaideFoothills
-%%DATADIR%%/dvb/dvb-t/au-Ballarat
-%%DATADIR%%/dvb/dvb-t/au-Bendigo
-%%DATADIR%%/dvb/dvb-t/au-Brisbane
-%%DATADIR%%/dvb/dvb-t/au-Cairns
-%%DATADIR%%/dvb/dvb-t/au-Canberra-Black-Mt
-%%DATADIR%%/dvb/dvb-t/au-Coonabarabran
-%%DATADIR%%/dvb/dvb-t/au-Darwin
-%%DATADIR%%/dvb/dvb-t/au-Devonport
-%%DATADIR%%/dvb/dvb-t/au-FraserCoast-Bundaberg
-%%DATADIR%%/dvb/dvb-t/au-GoldCoast
-%%DATADIR%%/dvb/dvb-t/au-Goulburn-Rocky_Hill
-%%DATADIR%%/dvb/dvb-t/au-Hervey_Bay-Ghost_Hill
-%%DATADIR%%/dvb/dvb-t/au-Hobart
-%%DATADIR%%/dvb/dvb-t/au-Mackay
-%%DATADIR%%/dvb/dvb-t/au-Melbourne
-%%DATADIR%%/dvb/dvb-t/au-Melbourne-Upwey
-%%DATADIR%%/dvb/dvb-t/au-MidNorthCoast
-%%DATADIR%%/dvb/dvb-t/au-Newcastle
-%%DATADIR%%/dvb/dvb-t/au-Perth
-%%DATADIR%%/dvb/dvb-t/au-Perth_Roleystone
-%%DATADIR%%/dvb/dvb-t/au-SpencerGulf
-%%DATADIR%%/dvb/dvb-t/au-SunshineCoast
-%%DATADIR%%/dvb/dvb-t/au-Sutherland
-%%DATADIR%%/dvb/dvb-t/au-Sydney_Kings_Cross
-%%DATADIR%%/dvb/dvb-t/au-Sydney_North_Shore
-%%DATADIR%%/dvb/dvb-t/au-Tamworth
-%%DATADIR%%/dvb/dvb-t/au-Townsville
-%%DATADIR%%/dvb/dvb-t/au-WaggaWagga
-%%DATADIR%%/dvb/dvb-t/au-Wollongong
-%%DATADIR%%/dvb/dvb-t/au-canberra
-%%DATADIR%%/dvb/dvb-t/au-unknown
-%%DATADIR%%/dvb/dvb-t/auto-Australia
-%%DATADIR%%/dvb/dvb-t/auto-Default
-%%DATADIR%%/dvb/dvb-t/auto-Taiwan
-%%DATADIR%%/dvb/dvb-t/auto-With167kHzOffsets
-%%DATADIR%%/dvb/dvb-t/ax-Smedsbole
-%%DATADIR%%/dvb/dvb-t/be-All
-%%DATADIR%%/dvb/dvb-t/br-Brazil
-%%DATADIR%%/dvb/dvb-t/ch-All
-%%DATADIR%%/dvb/dvb-t/ch-Citycable
-%%DATADIR%%/dvb/dvb-t/ch-Geneva
-%%DATADIR%%/dvb/dvb-t/cz-All
-%%DATADIR%%/dvb/dvb-t/de-Baden-Wuerttemberg
-%%DATADIR%%/dvb/dvb-t/de-Bayern
-%%DATADIR%%/dvb/dvb-t/de-Berlin
-%%DATADIR%%/dvb/dvb-t/de-Brandenburg
-%%DATADIR%%/dvb/dvb-t/de-Bremen
-%%DATADIR%%/dvb/dvb-t/de-Hamburg
-%%DATADIR%%/dvb/dvb-t/de-Hessen
-%%DATADIR%%/dvb/dvb-t/de-Mecklenburg-Vorpommern
-%%DATADIR%%/dvb/dvb-t/de-Niedersachsen
-%%DATADIR%%/dvb/dvb-t/de-Nordrhein-Westfalen
-%%DATADIR%%/dvb/dvb-t/de-Rheinland-Pfalz
-%%DATADIR%%/dvb/dvb-t/de-Saarland
-%%DATADIR%%/dvb/dvb-t/de-Sachsen
-%%DATADIR%%/dvb/dvb-t/de-Sachsen-Anhalt
-%%DATADIR%%/dvb/dvb-t/de-Schleswig-Holstein
-%%DATADIR%%/dvb/dvb-t/de-Thueringen
-%%DATADIR%%/dvb/dvb-t/dk-All
-%%DATADIR%%/dvb/dvb-t/es-Albacete
-%%DATADIR%%/dvb/dvb-t/es-Alfabia
-%%DATADIR%%/dvb/dvb-t/es-Alicante
-%%DATADIR%%/dvb/dvb-t/es-Alpicat
-%%DATADIR%%/dvb/dvb-t/es-Asturias
-%%DATADIR%%/dvb/dvb-t/es-BaixoMinho
-%%DATADIR%%/dvb/dvb-t/es-Bilbao
-%%DATADIR%%/dvb/dvb-t/es-Cadiz
-%%DATADIR%%/dvb/dvb-t/es-Carceres
-%%DATADIR%%/dvb/dvb-t/es-Collserola
-%%DATADIR%%/dvb/dvb-t/es-Donostia
-%%DATADIR%%/dvb/dvb-t/es-Granada
-%%DATADIR%%/dvb/dvb-t/es-Huesca
-%%DATADIR%%/dvb/dvb-t/es-Las_Palmas
-%%DATADIR%%/dvb/dvb-t/es-Lugo
-%%DATADIR%%/dvb/dvb-t/es-Madrid
-%%DATADIR%%/dvb/dvb-t/es-Malaga
-%%DATADIR%%/dvb/dvb-t/es-Muros-Noia
-%%DATADIR%%/dvb/dvb-t/es-Mussara
-%%DATADIR%%/dvb/dvb-t/es-Pamplona
-%%DATADIR%%/dvb/dvb-t/es-Rocacorba
-%%DATADIR%%/dvb/dvb-t/es-SC_Tenerife
-%%DATADIR%%/dvb/dvb-t/es-Santander
-%%DATADIR%%/dvb/dvb-t/es-Santiago_de_Compostela
-%%DATADIR%%/dvb/dvb-t/es-Sevilla
-%%DATADIR%%/dvb/dvb-t/es-Tenerife
-%%DATADIR%%/dvb/dvb-t/es-Valencia
-%%DATADIR%%/dvb/dvb-t/es-Valladolid
-%%DATADIR%%/dvb/dvb-t/es-Vilamarxant
-%%DATADIR%%/dvb/dvb-t/es-Vitoria-Gasteiz
-%%DATADIR%%/dvb/dvb-t/es-Zaragoza
-%%DATADIR%%/dvb/dvb-t/fi-Aanekoski
-%%DATADIR%%/dvb/dvb-t/fi-Aanekoski_Konginkangas
-%%DATADIR%%/dvb/dvb-t/fi-Ahtari
-%%DATADIR%%/dvb/dvb-t/fi-Alajarvi
-%%DATADIR%%/dvb/dvb-t/fi-Anjalankoski_Ruotila
-%%DATADIR%%/dvb/dvb-t/fi-Enontekio_Ahovaara
-%%DATADIR%%/dvb/dvb-t/fi-Enontekio_Hetta
-%%DATADIR%%/dvb/dvb-t/fi-Enontekio_Kuttanen
-%%DATADIR%%/dvb/dvb-t/fi-Espoo
-%%DATADIR%%/dvb/dvb-t/fi-Eurajoki
-%%DATADIR%%/dvb/dvb-t/fi-Fiskars
-%%DATADIR%%/dvb/dvb-t/fi-Haapavesi
-%%DATADIR%%/dvb/dvb-t/fi-Hameenkyro_Kyroskoski
-%%DATADIR%%/dvb/dvb-t/fi-Hameenlinna_Painokangas
-%%DATADIR%%/dvb/dvb-t/fi-Hanko
-%%DATADIR%%/dvb/dvb-t/fi-Hartola
-%%DATADIR%%/dvb/dvb-t/fi-Heinavesi
-%%DATADIR%%/dvb/dvb-t/fi-Heinola
-%%DATADIR%%/dvb/dvb-t/fi-Hyrynsalmi
-%%DATADIR%%/dvb/dvb-t/fi-Hyrynsalmi_Kyparavaara
-%%DATADIR%%/dvb/dvb-t/fi-Hyrynsalmi_Paljakka
-%%DATADIR%%/dvb/dvb-t/fi-Hyvinkaa
-%%DATADIR%%/dvb/dvb-t/fi-Ii_Raiskio
-%%DATADIR%%/dvb/dvb-t/fi-Iisalmi
-%%DATADIR%%/dvb/dvb-t/fi-Ikaalinen
-%%DATADIR%%/dvb/dvb-t/fi-Ikaalinen_Riitiala
-%%DATADIR%%/dvb/dvb-t/fi-Inari
-%%DATADIR%%/dvb/dvb-t/fi-Inari_Janispaa
-%%DATADIR%%/dvb/dvb-t/fi-Inari_Naatamo
-%%DATADIR%%/dvb/dvb-t/fi-Ivalo_Saarineitamovaara
-%%DATADIR%%/dvb/dvb-t/fi-Jalasjarvi
-%%DATADIR%%/dvb/dvb-t/fi-Jamsa_Halli
-%%DATADIR%%/dvb/dvb-t/fi-Jamsa_Kaipola
-%%DATADIR%%/dvb/dvb-t/fi-Jamsa_Matkosvuori
-%%DATADIR%%/dvb/dvb-t/fi-Jamsa_Ouninpohja
-%%DATADIR%%/dvb/dvb-t/fi-Jamsankoski
-%%DATADIR%%/dvb/dvb-t/fi-Joensuu_Vestinkallio
-%%DATADIR%%/dvb/dvb-t/fi-Joroinen_Puukkola
-%%DATADIR%%/dvb/dvb-t/fi-Joutsa_Lankia
-%%DATADIR%%/dvb/dvb-t/fi-Joutseno
-%%DATADIR%%/dvb/dvb-t/fi-Juupajoki_Kopsamo
-%%DATADIR%%/dvb/dvb-t/fi-Juva
-%%DATADIR%%/dvb/dvb-t/fi-Jyvaskyla
-%%DATADIR%%/dvb/dvb-t/fi-Jyvaskyla_Vaajakoski
-%%DATADIR%%/dvb/dvb-t/fi-Kaavi_Sivakkavaara
-%%DATADIR%%/dvb/dvb-t/fi-Kajaani_Pollyvaara
-%%DATADIR%%/dvb/dvb-t/fi-Kalajoki
-%%DATADIR%%/dvb/dvb-t/fi-Kangaslampi
-%%DATADIR%%/dvb/dvb-t/fi-Kangasniemi_Turkinmaki
-%%DATADIR%%/dvb/dvb-t/fi-Kankaanpaa
-%%DATADIR%%/dvb/dvb-t/fi-Karigasniemi
-%%DATADIR%%/dvb/dvb-t/fi-Karkkila
-%%DATADIR%%/dvb/dvb-t/fi-Karstula
-%%DATADIR%%/dvb/dvb-t/fi-Karvia
-%%DATADIR%%/dvb/dvb-t/fi-Kaunispaa
-%%DATADIR%%/dvb/dvb-t/fi-Kemijarvi_Suomutunturi
-%%DATADIR%%/dvb/dvb-t/fi-Kerimaki
-%%DATADIR%%/dvb/dvb-t/fi-Keuruu
-%%DATADIR%%/dvb/dvb-t/fi-Keuruu_Haapamaki
-%%DATADIR%%/dvb/dvb-t/fi-Kihnio
-%%DATADIR%%/dvb/dvb-t/fi-Kiihtelysvaara
-%%DATADIR%%/dvb/dvb-t/fi-Kilpisjarvi
-%%DATADIR%%/dvb/dvb-t/fi-Kittila_Levitunturi
-%%DATADIR%%/dvb/dvb-t/fi-Kolari_Vuolittaja
-%%DATADIR%%/dvb/dvb-t/fi-Koli
-%%DATADIR%%/dvb/dvb-t/fi-Korpilahti_Vaarunvuori
-%%DATADIR%%/dvb/dvb-t/fi-Korppoo
-%%DATADIR%%/dvb/dvb-t/fi-Kruunupyy
-%%DATADIR%%/dvb/dvb-t/fi-Kuhmo_Haukela
-%%DATADIR%%/dvb/dvb-t/fi-Kuhmo_Lentiira
-%%DATADIR%%/dvb/dvb-t/fi-Kuhmo_Niva
-%%DATADIR%%/dvb/dvb-t/fi-Kuhmoinen
-%%DATADIR%%/dvb/dvb-t/fi-Kuhmoinen_Harjunsalmi
-%%DATADIR%%/dvb/dvb-t/fi-Kuhmoinen_Puukkoinen
-%%DATADIR%%/dvb/dvb-t/fi-Kuopio
-%%DATADIR%%/dvb/dvb-t/fi-Kustavi_Viherlahti
-%%DATADIR%%/dvb/dvb-t/fi-Kuusamo_Hamppulampi
-%%DATADIR%%/dvb/dvb-t/fi-Kyyjarvi_Noposenaho
-%%DATADIR%%/dvb/dvb-t/fi-Lahti
-%%DATADIR%%/dvb/dvb-t/fi-Lapua
-%%DATADIR%%/dvb/dvb-t/fi-Laukaa
-%%DATADIR%%/dvb/dvb-t/fi-Laukaa_Vihtavuori
-%%DATADIR%%/dvb/dvb-t/fi-Lavia
-%%DATADIR%%/dvb/dvb-t/fi-Lohja
-%%DATADIR%%/dvb/dvb-t/fi-Loimaa
-%%DATADIR%%/dvb/dvb-t/fi-Luhanka
-%%DATADIR%%/dvb/dvb-t/fi-Luopioinen
-%%DATADIR%%/dvb/dvb-t/fi-Mantta
-%%DATADIR%%/dvb/dvb-t/fi-Mantyharju
-%%DATADIR%%/dvb/dvb-t/fi-Mikkeli
-%%DATADIR%%/dvb/dvb-t/fi-Muonio_Olostunturi
-%%DATADIR%%/dvb/dvb-t/fi-Nilsia
-%%DATADIR%%/dvb/dvb-t/fi-Nilsia_Keski-Siikajarvi
-%%DATADIR%%/dvb/dvb-t/fi-Nilsia_Pisa
-%%DATADIR%%/dvb/dvb-t/fi-Nokia
-%%DATADIR%%/dvb/dvb-t/fi-Nokia_Siuro
-%%DATADIR%%/dvb/dvb-t/fi-Nummi-Pusula_Hyonola
-%%DATADIR%%/dvb/dvb-t/fi-Nuorgam_Njallavaara
-%%DATADIR%%/dvb/dvb-t/fi-Nuorgam_raja
-%%DATADIR%%/dvb/dvb-t/fi-Nurmes_Konnanvaara
-%%DATADIR%%/dvb/dvb-t/fi-Nurmes_Kortevaara
-%%DATADIR%%/dvb/dvb-t/fi-Orivesi_Talviainen
-%%DATADIR%%/dvb/dvb-t/fi-Oulu
-%%DATADIR%%/dvb/dvb-t/fi-Padasjoki
-%%DATADIR%%/dvb/dvb-t/fi-Padasjoki_Arrakoski
-%%DATADIR%%/dvb/dvb-t/fi-Paltamo_Kivesvaara
-%%DATADIR%%/dvb/dvb-t/fi-Parainen_Houtskari
-%%DATADIR%%/dvb/dvb-t/fi-Parikkala
-%%DATADIR%%/dvb/dvb-t/fi-Parkano_Sopukallio
-%%DATADIR%%/dvb/dvb-t/fi-Pello
-%%DATADIR%%/dvb/dvb-t/fi-Pello_Ratasvaara
-%%DATADIR%%/dvb/dvb-t/fi-Perho
-%%DATADIR%%/dvb/dvb-t/fi-Pernaja
-%%DATADIR%%/dvb/dvb-t/fi-Pieksamaki_Halkokumpu
-%%DATADIR%%/dvb/dvb-t/fi-Pihtipudas
-%%DATADIR%%/dvb/dvb-t/fi-Porvoo_Suomenkyla
-%%DATADIR%%/dvb/dvb-t/fi-Posio
-%%DATADIR%%/dvb/dvb-t/fi-Pudasjarvi
-%%DATADIR%%/dvb/dvb-t/fi-Pudasjarvi_Iso-Syote
-%%DATADIR%%/dvb/dvb-t/fi-Pudasjarvi_Kangasvaara
-%%DATADIR%%/dvb/dvb-t/fi-Puolanka
-%%DATADIR%%/dvb/dvb-t/fi-Pyhatunturi
-%%DATADIR%%/dvb/dvb-t/fi-Pyhavuori
-%%DATADIR%%/dvb/dvb-t/fi-Pylkonmaki_Karankajarvi
-%%DATADIR%%/dvb/dvb-t/fi-Raahe_Mestauskallio
-%%DATADIR%%/dvb/dvb-t/fi-Raahe_Piehinki
-%%DATADIR%%/dvb/dvb-t/fi-Ranua_Haasionmaa
-%%DATADIR%%/dvb/dvb-t/fi-Ranua_Leppiaho
-%%DATADIR%%/dvb/dvb-t/fi-Rautavaara_Angervikko
-%%DATADIR%%/dvb/dvb-t/fi-Rautjarvi_Simpele
-%%DATADIR%%/dvb/dvb-t/fi-Ristijarvi
-%%DATADIR%%/dvb/dvb-t/fi-Rovaniemi
-%%DATADIR%%/dvb/dvb-t/fi-Rovaniemi_Kaihuanvaara
-%%DATADIR%%/dvb/dvb-t/fi-Rovaniemi_Karhuvaara
-%%DATADIR%%/dvb/dvb-t/fi-Rovaniemi_Marasenkallio
-%%DATADIR%%/dvb/dvb-t/fi-Rovaniemi_Rantalaki
-%%DATADIR%%/dvb/dvb-t/fi-Rovaniemi_Sonka
-%%DATADIR%%/dvb/dvb-t/fi-Rovaniemi_Sorviselka
-%%DATADIR%%/dvb/dvb-t/fi-Ruka
-%%DATADIR%%/dvb/dvb-t/fi-Ruovesi_Storminiemi
-%%DATADIR%%/dvb/dvb-t/fi-Saarijarvi
-%%DATADIR%%/dvb/dvb-t/fi-Saarijarvi_Kalmari
-%%DATADIR%%/dvb/dvb-t/fi-Saarijarvi_Mahlu
-%%DATADIR%%/dvb/dvb-t/fi-Salla_Hirvasvaara
-%%DATADIR%%/dvb/dvb-t/fi-Salla_Ihistysjanka
-%%DATADIR%%/dvb/dvb-t/fi-Salla_Naruska
-%%DATADIR%%/dvb/dvb-t/fi-Salla_Sallatunturi
-%%DATADIR%%/dvb/dvb-t/fi-Salla_Sarivaara
-%%DATADIR%%/dvb/dvb-t/fi-Salo_Isokyla
-%%DATADIR%%/dvb/dvb-t/fi-Savukoski_Martti
-%%DATADIR%%/dvb/dvb-t/fi-Savukoski_Tanhua
-%%DATADIR%%/dvb/dvb-t/fi-Siilinjarvi
-%%DATADIR%%/dvb/dvb-t/fi-Sipoo_Norrkulla
-%%DATADIR%%/dvb/dvb-t/fi-Sodankyla_Pittiovaara
-%%DATADIR%%/dvb/dvb-t/fi-Sodankyla_Vuotso
-%%DATADIR%%/dvb/dvb-t/fi-Sulkava_Vaatalanmaki
-%%DATADIR%%/dvb/dvb-t/fi-Suomussalmi_Ala-Vuokki
-%%DATADIR%%/dvb/dvb-t/fi-Suomussalmi_Ammansaari
-%%DATADIR%%/dvb/dvb-t/fi-Suomussalmi_Juntusranta
-%%DATADIR%%/dvb/dvb-t/fi-Suomussalmi_Myllylahti
-%%DATADIR%%/dvb/dvb-t/fi-Sysma_Liikola
-%%DATADIR%%/dvb/dvb-t/fi-Taivalkoski
-%%DATADIR%%/dvb/dvb-t/fi-Taivalkoski_Taivalvaara
-%%DATADIR%%/dvb/dvb-t/fi-Tammela
-%%DATADIR%%/dvb/dvb-t/fi-Tammisaari
-%%DATADIR%%/dvb/dvb-t/fi-Tampere
-%%DATADIR%%/dvb/dvb-t/fi-Tampere_Pyynikki
-%%DATADIR%%/dvb/dvb-t/fi-Tervola
-%%DATADIR%%/dvb/dvb-t/fi-Turku
-%%DATADIR%%/dvb/dvb-t/fi-Utsjoki
-%%DATADIR%%/dvb/dvb-t/fi-Utsjoki_Nuvvus
-%%DATADIR%%/dvb/dvb-t/fi-Utsjoki_Outakoski
-%%DATADIR%%/dvb/dvb-t/fi-Utsjoki_Polvarniemi
-%%DATADIR%%/dvb/dvb-t/fi-Utsjoki_Rovisuvanto
-%%DATADIR%%/dvb/dvb-t/fi-Utsjoki_Tenola
-%%DATADIR%%/dvb/dvb-t/fi-Uusikaupunki_Orivo
-%%DATADIR%%/dvb/dvb-t/fi-Vaala
-%%DATADIR%%/dvb/dvb-t/fi-Vaasa
-%%DATADIR%%/dvb/dvb-t/fi-Valtimo
-%%DATADIR%%/dvb/dvb-t/fi-Vammala_Jyranvuori
-%%DATADIR%%/dvb/dvb-t/fi-Vammala_Roismala
-%%DATADIR%%/dvb/dvb-t/fi-Vammala_Savi
-%%DATADIR%%/dvb/dvb-t/fi-Vantaa_Hakunila
-%%DATADIR%%/dvb/dvb-t/fi-Varpaisjarvi_Honkamaki
-%%DATADIR%%/dvb/dvb-t/fi-Virrat_Lappavuori
-%%DATADIR%%/dvb/dvb-t/fi-Vuokatti
-%%DATADIR%%/dvb/dvb-t/fi-Ylitornio_Ainiovaara
-%%DATADIR%%/dvb/dvb-t/fi-Ylitornio_Raanujarvi
-%%DATADIR%%/dvb/dvb-t/fi-Yllas
-%%DATADIR%%/dvb/dvb-t/fi-Yllasjarvi
-%%DATADIR%%/dvb/dvb-t/fr-All
-%%DATADIR%%/dvb/dvb-t/fr-Bordeaux
-%%DATADIR%%/dvb/dvb-t/fr-Cherbourg
-%%DATADIR%%/dvb/dvb-t/gr-Athens
-%%DATADIR%%/dvb/dvb-t/hk-HongKong
-%%DATADIR%%/dvb/dvb-t/hr-All
-%%DATADIR%%/dvb/dvb-t/hu-Bekescsaba
-%%DATADIR%%/dvb/dvb-t/hu-Budapest
-%%DATADIR%%/dvb/dvb-t/hu-Csavoly-Kiskoros
-%%DATADIR%%/dvb/dvb-t/hu-Debrecen-Komadi
-%%DATADIR%%/dvb/dvb-t/hu-Fehergyarmat
-%%DATADIR%%/dvb/dvb-t/hu-Gerecse-Dorog-Tatabanya
-%%DATADIR%%/dvb/dvb-t/hu-Gyor
-%%DATADIR%%/dvb/dvb-t/hu-Kabhegy-Kaposvar-Tamasi
-%%DATADIR%%/dvb/dvb-t/hu-Karancs-Nagy-Hideg-hegy-Balassagyarmat-Godollo-Salgotarjan-Vac
-%%DATADIR%%/dvb/dvb-t/hu-Karcag
-%%DATADIR%%/dvb/dvb-t/hu-Kecskemet
-%%DATADIR%%/dvb/dvb-t/hu-Kekes-Cegled-Eger-Miskolctapolca-Ozd
-%%DATADIR%%/dvb/dvb-t/hu-Miskolc-Aggtelek-Fony
-%%DATADIR%%/dvb/dvb-t/hu-Mor-Siofok-Veszprem-Zirc
-%%DATADIR%%/dvb/dvb-t/hu-Nagykanizsa-Barcs-Keszthely
-%%DATADIR%%/dvb/dvb-t/hu-Nyiregyhaza-Tokaj-Kazincbarcika-Saly-Satoraljaujhely
-%%DATADIR%%/dvb/dvb-t/hu-Pecs-Siklos
-%%DATADIR%%/dvb/dvb-t/hu-Sopron-Koszeg
-%%DATADIR%%/dvb/dvb-t/hu-Szeged
-%%DATADIR%%/dvb/dvb-t/hu-Szekesfehervar
-%%DATADIR%%/dvb/dvb-t/hu-Szentes-Battonya
-%%DATADIR%%/dvb/dvb-t/hu-Szolnok
-%%DATADIR%%/dvb/dvb-t/hu-Szombathely-Vasvar-Lenti-Zalaegerszeg
-%%DATADIR%%/dvb/dvb-t/hu-Uzd-Bonyhad-Dunaujvaros-Szekszard-Szigetvar
-%%DATADIR%%/dvb/dvb-t/ie-CairnHill
-%%DATADIR%%/dvb/dvb-t/ie-ClermontCarn
-%%DATADIR%%/dvb/dvb-t/ie-Dungarvan
-%%DATADIR%%/dvb/dvb-t/ie-HolywellHill
-%%DATADIR%%/dvb/dvb-t/ie-Kippure
-%%DATADIR%%/dvb/dvb-t/ie-Maghera
-%%DATADIR%%/dvb/dvb-t/ie-MountLeinster
-%%DATADIR%%/dvb/dvb-t/ie-Mullaghanish
-%%DATADIR%%/dvb/dvb-t/ie-SpurHill
-%%DATADIR%%/dvb/dvb-t/ie-ThreeRock
-%%DATADIR%%/dvb/dvb-t/ie-Truskmore
-%%DATADIR%%/dvb/dvb-t/ie-WoodcockHill
-%%DATADIR%%/dvb/dvb-t/il-All
-%%DATADIR%%/dvb/dvb-t/ir-Tehran
-%%DATADIR%%/dvb/dvb-t/is-Reykjavik
-%%DATADIR%%/dvb/dvb-t/it-All
-%%DATADIR%%/dvb/dvb-t/lt-All
-%%DATADIR%%/dvb/dvb-t/lu-All
-%%DATADIR%%/dvb/dvb-t/lv-Riga
-%%DATADIR%%/dvb/dvb-t/nl-All
-%%DATADIR%%/dvb/dvb-t/no-Trondelag_Stjordal
-%%DATADIR%%/dvb/dvb-t/nz-AucklandInfill
-%%DATADIR%%/dvb/dvb-t/nz-AucklandWaiatarua
-%%DATADIR%%/dvb/dvb-t/nz-Christchurch
-%%DATADIR%%/dvb/dvb-t/nz-Dunedin
-%%DATADIR%%/dvb/dvb-t/nz-Hamilton
-%%DATADIR%%/dvb/dvb-t/nz-HawkesBayMtErin
-%%DATADIR%%/dvb/dvb-t/nz-HawkesBayNapier
-%%DATADIR%%/dvb/dvb-t/nz-Manawatu
-%%DATADIR%%/dvb/dvb-t/nz-Tauranga
-%%DATADIR%%/dvb/dvb-t/nz-Waikato
-%%DATADIR%%/dvb/dvb-t/nz-WellingtonInfill
-%%DATADIR%%/dvb/dvb-t/nz-WellingtonKaukau
-%%DATADIR%%/dvb/dvb-t/nz-WellingtonNgarara
-%%DATADIR%%/dvb/dvb-t/pl-Czestochowa
-%%DATADIR%%/dvb/dvb-t/pl-Gdansk
-%%DATADIR%%/dvb/dvb-t/pl-Krakow
-%%DATADIR%%/dvb/dvb-t/pl-Rzeszow
-%%DATADIR%%/dvb/dvb-t/pl-Warszawa
-%%DATADIR%%/dvb/dvb-t/pl-Wroclaw
-%%DATADIR%%/dvb/dvb-t/pt-Lisbon
-%%DATADIR%%/dvb/dvb-t/ro-Bucharest
-%%DATADIR%%/dvb/dvb-t/se-Alvdalen_Brunnsberg
-%%DATADIR%%/dvb/dvb-t/se-Alvdalsasen
-%%DATADIR%%/dvb/dvb-t/se-Alvsbyn
-%%DATADIR%%/dvb/dvb-t/se-Amot
-%%DATADIR%%/dvb/dvb-t/se-Ange_Snoberg
-%%DATADIR%%/dvb/dvb-t/se-Angebo
-%%DATADIR%%/dvb/dvb-t/se-Angelholm_Vegeholm
-%%DATADIR%%/dvb/dvb-t/se-Arvidsjaur_Jultrask
-%%DATADIR%%/dvb/dvb-t/se-Aspeboda
-%%DATADIR%%/dvb/dvb-t/se-Atvidaberg
-%%DATADIR%%/dvb/dvb-t/se-Avesta_Krylbo
-%%DATADIR%%/dvb/dvb-t/se-Backefors
-%%DATADIR%%/dvb/dvb-t/se-Bankeryd
-%%DATADIR%%/dvb/dvb-t/se-Bergsjo_Balleberget
-%%DATADIR%%/dvb/dvb-t/se-Bergvik
-%%DATADIR%%/dvb/dvb-t/se-Bollebygd
-%%DATADIR%%/dvb/dvb-t/se-Bollnas
-%%DATADIR%%/dvb/dvb-t/se-Boras_Dalsjofors
-%%DATADIR%%/dvb/dvb-t/se-Boras_Sjobo
-%%DATADIR%%/dvb/dvb-t/se-Borlange_Idkerberget
-%%DATADIR%%/dvb/dvb-t/se-Borlange_Nygardarna
-%%DATADIR%%/dvb/dvb-t/se-Bottnaryd_Ryd
-%%DATADIR%%/dvb/dvb-t/se-Bromsebro
-%%DATADIR%%/dvb/dvb-t/se-Bruzaholm
-%%DATADIR%%/dvb/dvb-t/se-Byxelkrok
-%%DATADIR%%/dvb/dvb-t/se-Dadran
-%%DATADIR%%/dvb/dvb-t/se-Dalfors
-%%DATADIR%%/dvb/dvb-t/se-Dalstuga
-%%DATADIR%%/dvb/dvb-t/se-Degerfors
-%%DATADIR%%/dvb/dvb-t/se-Delary
-%%DATADIR%%/dvb/dvb-t/se-Djura
-%%DATADIR%%/dvb/dvb-t/se-Drevdagen
-%%DATADIR%%/dvb/dvb-t/se-Duvnas
-%%DATADIR%%/dvb/dvb-t/se-Duvnas_Basna
-%%DATADIR%%/dvb/dvb-t/se-Edsbyn
-%%DATADIR%%/dvb/dvb-t/se-Emmaboda_Balshult
-%%DATADIR%%/dvb/dvb-t/se-Enviken
-%%DATADIR%%/dvb/dvb-t/se-Fagersta
-%%DATADIR%%/dvb/dvb-t/se-Falerum_Centrum
-%%DATADIR%%/dvb/dvb-t/se-Falun_Lovberget
-%%DATADIR%%/dvb/dvb-t/se-Farila
-%%DATADIR%%/dvb/dvb-t/se-Faro_Ajkerstrask
-%%DATADIR%%/dvb/dvb-t/se-Farosund_Bunge
-%%DATADIR%%/dvb/dvb-t/se-Filipstad_Klockarhojden
-%%DATADIR%%/dvb/dvb-t/se-Finnveden
-%%DATADIR%%/dvb/dvb-t/se-Fredriksberg
-%%DATADIR%%/dvb/dvb-t/se-Fritsla
-%%DATADIR%%/dvb/dvb-t/se-Furudal
-%%DATADIR%%/dvb/dvb-t/se-Gallivare
-%%DATADIR%%/dvb/dvb-t/se-Garpenberg_Kuppgarden
-%%DATADIR%%/dvb/dvb-t/se-Gavle_Skogmur
-%%DATADIR%%/dvb/dvb-t/se-Gnarp
-%%DATADIR%%/dvb/dvb-t/se-Gnesta
-%%DATADIR%%/dvb/dvb-t/se-Gnosjo_Marieholm
-%%DATADIR%%/dvb/dvb-t/se-Goteborg_Brudaremossen
-%%DATADIR%%/dvb/dvb-t/se-Goteborg_Slattadamm
-%%DATADIR%%/dvb/dvb-t/se-Gullbrandstorp
-%%DATADIR%%/dvb/dvb-t/se-Gunnarsbo
-%%DATADIR%%/dvb/dvb-t/se-Gusum
-%%DATADIR%%/dvb/dvb-t/se-Hagfors_Varmullsasen
-%%DATADIR%%/dvb/dvb-t/se-Hallaryd
-%%DATADIR%%/dvb/dvb-t/se-Hallbo
-%%DATADIR%%/dvb/dvb-t/se-Halmstad_Hamnen
-%%DATADIR%%/dvb/dvb-t/se-Halmstad_Oskarstrom
-%%DATADIR%%/dvb/dvb-t/se-Harnosand_Harnon
-%%DATADIR%%/dvb/dvb-t/se-Hassela
-%%DATADIR%%/dvb/dvb-t/se-Havdhem
-%%DATADIR%%/dvb/dvb-t/se-Hedemora
-%%DATADIR%%/dvb/dvb-t/se-Helsingborg_Olympia
-%%DATADIR%%/dvb/dvb-t/se-Hennan
-%%DATADIR%%/dvb/dvb-t/se-Hestra_Aspas
-%%DATADIR%%/dvb/dvb-t/se-Hjo_Grevback
-%%DATADIR%%/dvb/dvb-t/se-Hofors
-%%DATADIR%%/dvb/dvb-t/se-Hogfors
-%%DATADIR%%/dvb/dvb-t/se-Hogsby_Virstad
-%%DATADIR%%/dvb/dvb-t/se-Holsbybrunn_Holsbyholm
-%%DATADIR%%/dvb/dvb-t/se-Horby_Sallerup
-%%DATADIR%%/dvb/dvb-t/se-Horken
-%%DATADIR%%/dvb/dvb-t/se-Hudiksvall_Forsa
-%%DATADIR%%/dvb/dvb-t/se-Hudiksvall_Galgberget
-%%DATADIR%%/dvb/dvb-t/se-Huskvarna
-%%DATADIR%%/dvb/dvb-t/se-Idre
-%%DATADIR%%/dvb/dvb-t/se-Ingatorp
-%%DATADIR%%/dvb/dvb-t/se-Ingvallsbenning
-%%DATADIR%%/dvb/dvb-t/se-Irevik
-%%DATADIR%%/dvb/dvb-t/se-Jamjo
-%%DATADIR%%/dvb/dvb-t/se-Jarnforsen
-%%DATADIR%%/dvb/dvb-t/se-Jarvso
-%%DATADIR%%/dvb/dvb-t/se-Jokkmokk_Tjalmejaure
-%%DATADIR%%/dvb/dvb-t/se-Jonkoping_Bondberget
-%%DATADIR%%/dvb/dvb-t/se-Kalix
-%%DATADIR%%/dvb/dvb-t/se-Karbole
-%%DATADIR%%/dvb/dvb-t/se-Karlsborg_Vaberget
-%%DATADIR%%/dvb/dvb-t/se-Karlshamn
-%%DATADIR%%/dvb/dvb-t/se-Karlskrona_Vamo
-%%DATADIR%%/dvb/dvb-t/se-Karlstad_Sormon
-%%DATADIR%%/dvb/dvb-t/se-Kaxholmen_Vistakulle
-%%DATADIR%%/dvb/dvb-t/se-Kinnastrom
-%%DATADIR%%/dvb/dvb-t/se-Kiruna_Kirunavaara
-%%DATADIR%%/dvb/dvb-t/se-Kisa
-%%DATADIR%%/dvb/dvb-t/se-Knared
-%%DATADIR%%/dvb/dvb-t/se-Kopmanholmen
-%%DATADIR%%/dvb/dvb-t/se-Kopparberg
-%%DATADIR%%/dvb/dvb-t/se-Kramfors_Lugnvik
-%%DATADIR%%/dvb/dvb-t/se-Kristinehamn_Utsiktsberget
-%%DATADIR%%/dvb/dvb-t/se-Kungsater
-%%DATADIR%%/dvb/dvb-t/se-Kungsberget_GI
-%%DATADIR%%/dvb/dvb-t/se-Langshyttan
-%%DATADIR%%/dvb/dvb-t/se-Langshyttan_Engelsfors
-%%DATADIR%%/dvb/dvb-t/se-Leksand_Karingberget
-%%DATADIR%%/dvb/dvb-t/se-Lerdala
-%%DATADIR%%/dvb/dvb-t/se-Lilltjara_Digerberget
-%%DATADIR%%/dvb/dvb-t/se-Limedsforsen
-%%DATADIR%%/dvb/dvb-t/se-Lindshammar_Ramkvilla
-%%DATADIR%%/dvb/dvb-t/se-Linkoping_Vattentornet
-%%DATADIR%%/dvb/dvb-t/se-Ljugarn
-%%DATADIR%%/dvb/dvb-t/se-Loffstrand
-%%DATADIR%%/dvb/dvb-t/se-Lonneberga
-%%DATADIR%%/dvb/dvb-t/se-Lorstrand
-%%DATADIR%%/dvb/dvb-t/se-Ludvika_Bjorkasen
-%%DATADIR%%/dvb/dvb-t/se-Lumsheden_Trekanten
-%%DATADIR%%/dvb/dvb-t/se-Lycksele_Knaften
-%%DATADIR%%/dvb/dvb-t/se-Mahult
-%%DATADIR%%/dvb/dvb-t/se-Malmo_Jagersro
-%%DATADIR%%/dvb/dvb-t/se-Malung
-%%DATADIR%%/dvb/dvb-t/se-Mariannelund
-%%DATADIR%%/dvb/dvb-t/se-Markaryd_Hualtet
-%%DATADIR%%/dvb/dvb-t/se-Matfors
-%%DATADIR%%/dvb/dvb-t/se-Molndal_Vasterberget
-%%DATADIR%%/dvb/dvb-t/se-Mora_Eldris
-%%DATADIR%%/dvb/dvb-t/se-Motala_Ervasteby
-%%DATADIR%%/dvb/dvb-t/se-Mullsjo_Torestorp
-%%DATADIR%%/dvb/dvb-t/se-Nassjo
-%%DATADIR%%/dvb/dvb-t/se-Navekvarn
-%%DATADIR%%/dvb/dvb-t/se-Norrahammar
-%%DATADIR%%/dvb/dvb-t/se-Norrkoping_Krokek
-%%DATADIR%%/dvb/dvb-t/se-Norrtalje_Sodra_Bergen
-%%DATADIR%%/dvb/dvb-t/se-Nykoping
-%%DATADIR%%/dvb/dvb-t/se-Orebro_Lockhyttan
-%%DATADIR%%/dvb/dvb-t/se-Ornskoldsvik_As
-%%DATADIR%%/dvb/dvb-t/se-Oskarshamn
-%%DATADIR%%/dvb/dvb-t/se-Ostersund_Brattasen
-%%DATADIR%%/dvb/dvb-t/se-Osthammar_Valo
-%%DATADIR%%/dvb/dvb-t/se-Overkalix
-%%DATADIR%%/dvb/dvb-t/se-Oxberg
-%%DATADIR%%/dvb/dvb-t/se-Pajala
-%%DATADIR%%/dvb/dvb-t/se-Paulistom
-%%DATADIR%%/dvb/dvb-t/se-Rattvik
-%%DATADIR%%/dvb/dvb-t/se-Rengsjo
-%%DATADIR%%/dvb/dvb-t/se-Rorbacksnas
-%%DATADIR%%/dvb/dvb-t/se-Sagmyra
-%%DATADIR%%/dvb/dvb-t/se-Salen
-%%DATADIR%%/dvb/dvb-t/se-Salfjallet
-%%DATADIR%%/dvb/dvb-t/se-Sarna_Mickeltemplet
-%%DATADIR%%/dvb/dvb-t/se-Satila
-%%DATADIR%%/dvb/dvb-t/se-Saxdalen
-%%DATADIR%%/dvb/dvb-t/se-Siljansnas_Uvberget
-%%DATADIR%%/dvb/dvb-t/se-Skarstad
-%%DATADIR%%/dvb/dvb-t/se-Skattungbyn
-%%DATADIR%%/dvb/dvb-t/se-Skelleftea
-%%DATADIR%%/dvb/dvb-t/se-Skene_Nycklarberget
-%%DATADIR%%/dvb/dvb-t/se-Skovde
-%%DATADIR%%/dvb/dvb-t/se-Smedjebacken_Uvberget
-%%DATADIR%%/dvb/dvb-t/se-Soderhamn
-%%DATADIR%%/dvb/dvb-t/se-Soderkoping
-%%DATADIR%%/dvb/dvb-t/se-Sodertalje_Ragnhildsborg
-%%DATADIR%%/dvb/dvb-t/se-Solleftea_Hallsta
-%%DATADIR%%/dvb/dvb-t/se-Solleftea_Multra
-%%DATADIR%%/dvb/dvb-t/se-Sorsjon
-%%DATADIR%%/dvb/dvb-t/se-Stockholm_Marieberg
-%%DATADIR%%/dvb/dvb-t/se-Stockholm_Nacka
-%%DATADIR%%/dvb/dvb-t/se-Stora_Skedvi
-%%DATADIR%%/dvb/dvb-t/se-Storfjaten
-%%DATADIR%%/dvb/dvb-t/se-Storuman
-%%DATADIR%%/dvb/dvb-t/se-Stromstad
-%%DATADIR%%/dvb/dvb-t/se-Styrsjobo
-%%DATADIR%%/dvb/dvb-t/se-Sundborn
-%%DATADIR%%/dvb/dvb-t/se-Sundsbruk
-%%DATADIR%%/dvb/dvb-t/se-Sundsvall_S_Stadsberget
-%%DATADIR%%/dvb/dvb-t/se-Sunne_Blabarskullen
-%%DATADIR%%/dvb/dvb-t/se-Svartnas
-%%DATADIR%%/dvb/dvb-t/se-Sveg_Brickan
-%%DATADIR%%/dvb/dvb-t/se-Taberg
-%%DATADIR%%/dvb/dvb-t/se-Tandadalen
-%%DATADIR%%/dvb/dvb-t/se-Tasjo
-%%DATADIR%%/dvb/dvb-t/se-Tollsjo
-%%DATADIR%%/dvb/dvb-t/se-Torsby_Bada
-%%DATADIR%%/dvb/dvb-t/se-Tranas_Bredkarr
-%%DATADIR%%/dvb/dvb-t/se-Tranemo
-%%DATADIR%%/dvb/dvb-t/se-Transtrand_Bolheden
-%%DATADIR%%/dvb/dvb-t/se-Traryd_Betas
-%%DATADIR%%/dvb/dvb-t/se-Trollhattan
-%%DATADIR%%/dvb/dvb-t/se-Trosa
-%%DATADIR%%/dvb/dvb-t/se-Tystberga
-%%DATADIR%%/dvb/dvb-t/se-Uddevalla_Herrestad
-%%DATADIR%%/dvb/dvb-t/se-Ullared
-%%DATADIR%%/dvb/dvb-t/se-Ulricehamn
-%%DATADIR%%/dvb/dvb-t/se-Ulvshyttan_Porjus
-%%DATADIR%%/dvb/dvb-t/se-Uppsala_Rickomberga
-%%DATADIR%%/dvb/dvb-t/se-Uppsala_Vedyxa
-%%DATADIR%%/dvb/dvb-t/se-Vaddo_Elmsta
-%%DATADIR%%/dvb/dvb-t/se-Valdemarsvik
-%%DATADIR%%/dvb/dvb-t/se-Vannas_Granlundsberget
-%%DATADIR%%/dvb/dvb-t/se-Vansbro_Hummelberget
-%%DATADIR%%/dvb/dvb-t/se-Varberg_Grimeton
-%%DATADIR%%/dvb/dvb-t/se-Vasteras_Lillharad
-%%DATADIR%%/dvb/dvb-t/se-Vastervik_Farhult
-%%DATADIR%%/dvb/dvb-t/se-Vaxbo
-%%DATADIR%%/dvb/dvb-t/se-Vessigebro
-%%DATADIR%%/dvb/dvb-t/se-Vetlanda_Nye
-%%DATADIR%%/dvb/dvb-t/se-Vikmanshyttan
-%%DATADIR%%/dvb/dvb-t/se-Virserum
-%%DATADIR%%/dvb/dvb-t/se-Visby_Follingbo
-%%DATADIR%%/dvb/dvb-t/se-Visby_Hamnen
-%%DATADIR%%/dvb/dvb-t/se-Visingso
-%%DATADIR%%/dvb/dvb-t/se-Vislanda_Nydala
-%%DATADIR%%/dvb/dvb-t/se-Voxna
-%%DATADIR%%/dvb/dvb-t/se-Ystad_Metallgatan
-%%DATADIR%%/dvb/dvb-t/se-Yttermalung
-%%DATADIR%%/dvb/dvb-t/si-Ljubljana
-%%DATADIR%%/dvb/dvb-t/sk-BanskaBystrica
-%%DATADIR%%/dvb/dvb-t/sk-BanskaStiavnica
-%%DATADIR%%/dvb/dvb-t/sk-Bardejov
-%%DATADIR%%/dvb/dvb-t/sk-Bratislava
-%%DATADIR%%/dvb/dvb-t/sk-Cadca
-%%DATADIR%%/dvb/dvb-t/sk-Detva
-%%DATADIR%%/dvb/dvb-t/sk-Hnusta
-%%DATADIR%%/dvb/dvb-t/sk-Kosice
-%%DATADIR%%/dvb/dvb-t/sk-KralovskyChlmec
-%%DATADIR%%/dvb/dvb-t/sk-Krompachy
-%%DATADIR%%/dvb/dvb-t/sk-Lucenec
-%%DATADIR%%/dvb/dvb-t/sk-Medzev
-%%DATADIR%%/dvb/dvb-t/sk-Namestovo
-%%DATADIR%%/dvb/dvb-t/sk-Nitra
-%%DATADIR%%/dvb/dvb-t/sk-Poprad
-%%DATADIR%%/dvb/dvb-t/sk-PovazskaBystrica
-%%DATADIR%%/dvb/dvb-t/sk-Presov
-%%DATADIR%%/dvb/dvb-t/sk-Prievidza
-%%DATADIR%%/dvb/dvb-t/sk-Revuca
-%%DATADIR%%/dvb/dvb-t/sk-Roznava
-%%DATADIR%%/dvb/dvb-t/sk-Ruzomberok
-%%DATADIR%%/dvb/dvb-t/sk-Snina
-%%DATADIR%%/dvb/dvb-t/sk-StaraLubovna
-%%DATADIR%%/dvb/dvb-t/sk-Sturovo
-%%DATADIR%%/dvb/dvb-t/sk-Trencin
-%%DATADIR%%/dvb/dvb-t/sk-Zilina
-%%DATADIR%%/dvb/dvb-t/tw-Kaohsiung
-%%DATADIR%%/dvb/dvb-t/tw-Taipei
-%%DATADIR%%/dvb/dvb-t/uk-Aberdare
-%%DATADIR%%/dvb/dvb-t/uk-Angus
-%%DATADIR%%/dvb/dvb-t/uk-BeaconHill
-%%DATADIR%%/dvb/dvb-t/uk-Belmont
-%%DATADIR%%/dvb/dvb-t/uk-Bilsdale
-%%DATADIR%%/dvb/dvb-t/uk-BlackHill
-%%DATADIR%%/dvb/dvb-t/uk-Blaenplwyf
-%%DATADIR%%/dvb/dvb-t/uk-BluebellHill
-%%DATADIR%%/dvb/dvb-t/uk-Bressay
-%%DATADIR%%/dvb/dvb-t/uk-BrierleyHill
-%%DATADIR%%/dvb/dvb-t/uk-BristolIlchesterCres
-%%DATADIR%%/dvb/dvb-t/uk-BristolKingsWeston
-%%DATADIR%%/dvb/dvb-t/uk-Bromsgrove
-%%DATADIR%%/dvb/dvb-t/uk-BrougherMountain
-%%DATADIR%%/dvb/dvb-t/uk-Caldbeck
-%%DATADIR%%/dvb/dvb-t/uk-CaradonHill
-%%DATADIR%%/dvb/dvb-t/uk-Carmel
-%%DATADIR%%/dvb/dvb-t/uk-Chatton
-%%DATADIR%%/dvb/dvb-t/uk-Chesterfield
-%%DATADIR%%/dvb/dvb-t/uk-Craigkelly
-%%DATADIR%%/dvb/dvb-t/uk-CrystalPalace
-%%DATADIR%%/dvb/dvb-t/uk-Darvel
-%%DATADIR%%/dvb/dvb-t/uk-Divis
-%%DATADIR%%/dvb/dvb-t/uk-Dover
-%%DATADIR%%/dvb/dvb-t/uk-Durris
-%%DATADIR%%/dvb/dvb-t/uk-Eitshal
-%%DATADIR%%/dvb/dvb-t/uk-EmleyMoor
-%%DATADIR%%/dvb/dvb-t/uk-Fenham
-%%DATADIR%%/dvb/dvb-t/uk-Fenton
-%%DATADIR%%/dvb/dvb-t/uk-Ferryside
-%%DATADIR%%/dvb/dvb-t/uk-Guildford
-%%DATADIR%%/dvb/dvb-t/uk-Hannington
-%%DATADIR%%/dvb/dvb-t/uk-Hastings
-%%DATADIR%%/dvb/dvb-t/uk-Heathfield
-%%DATADIR%%/dvb/dvb-t/uk-HemelHempstead
-%%DATADIR%%/dvb/dvb-t/uk-HuntshawCross
-%%DATADIR%%/dvb/dvb-t/uk-Idle
-%%DATADIR%%/dvb/dvb-t/uk-KeelylangHill
-%%DATADIR%%/dvb/dvb-t/uk-Keighley
-%%DATADIR%%/dvb/dvb-t/uk-KilveyHill
-%%DATADIR%%/dvb/dvb-t/uk-KnockMore
-%%DATADIR%%/dvb/dvb-t/uk-Lancaster
-%%DATADIR%%/dvb/dvb-t/uk-LarkStoke
-%%DATADIR%%/dvb/dvb-t/uk-Limavady
-%%DATADIR%%/dvb/dvb-t/uk-Llanddona
-%%DATADIR%%/dvb/dvb-t/uk-Malvern
-%%DATADIR%%/dvb/dvb-t/uk-Mendip
-%%DATADIR%%/dvb/dvb-t/uk-Midhurst
-%%DATADIR%%/dvb/dvb-t/uk-Moel-y-Parc
-%%DATADIR%%/dvb/dvb-t/uk-Nottingham
-%%DATADIR%%/dvb/dvb-t/uk-OliversMount
-%%DATADIR%%/dvb/dvb-t/uk-Oxford
-%%DATADIR%%/dvb/dvb-t/uk-PendleForest
-%%DATADIR%%/dvb/dvb-t/uk-Plympton
-%%DATADIR%%/dvb/dvb-t/uk-PontopPike
-%%DATADIR%%/dvb/dvb-t/uk-Pontypool
-%%DATADIR%%/dvb/dvb-t/uk-Presely
-%%DATADIR%%/dvb/dvb-t/uk-Redruth
-%%DATADIR%%/dvb/dvb-t/uk-Reigate
-%%DATADIR%%/dvb/dvb-t/uk-RidgeHill
-%%DATADIR%%/dvb/dvb-t/uk-Rosemarkie
-%%DATADIR%%/dvb/dvb-t/uk-Rosneath
-%%DATADIR%%/dvb/dvb-t/uk-Rowridge
-%%DATADIR%%/dvb/dvb-t/uk-RumsterForest
-%%DATADIR%%/dvb/dvb-t/uk-Saddleworth
-%%DATADIR%%/dvb/dvb-t/uk-Salisbury
-%%DATADIR%%/dvb/dvb-t/uk-SandyHeath
-%%DATADIR%%/dvb/dvb-t/uk-Selkirk
-%%DATADIR%%/dvb/dvb-t/uk-Sheffield
-%%DATADIR%%/dvb/dvb-t/uk-StocklandHill
-%%DATADIR%%/dvb/dvb-t/uk-Storeton
-%%DATADIR%%/dvb/dvb-t/uk-Sudbury
-%%DATADIR%%/dvb/dvb-t/uk-SuttonColdfield
-%%DATADIR%%/dvb/dvb-t/uk-Tacolneston
-%%DATADIR%%/dvb/dvb-t/uk-TheWrekin
-%%DATADIR%%/dvb/dvb-t/uk-Torosay
-%%DATADIR%%/dvb/dvb-t/uk-TunbridgeWells
-%%DATADIR%%/dvb/dvb-t/uk-Waltham
-%%DATADIR%%/dvb/dvb-t/uk-Wenvoe
-%%DATADIR%%/dvb/dvb-t/uk-WhitehawkHill
-%%DATADIR%%/dvb/dvb-t/uk-WinterHill
-%%DATADIR%%/dvb/dvb-t/vn-Hanoi
-%%DATADIR%%/dvb/dvb-t/vn-Thaibinh
 %%DATADIR%%/src/webui/static/app/acleditor.js
 %%DATADIR%%/src/webui/static/app/capmteditor.js
 %%DATADIR%%/src/webui/static/app/chconf.js
@@ -925,13 +72,16 @@ man/man1/tvheadend.1.gz
 %%DATADIR%%/src/webui/static/app/config.js
 %%DATADIR%%/src/webui/static/app/cteditor.js
 %%DATADIR%%/src/webui/static/app/cwceditor.js
-%%DATADIR%%/src/webui/static/app/dvb.js
 %%DATADIR%%/src/webui/static/app/dvr.js
 %%DATADIR%%/src/webui/static/app/epg.js
 %%DATADIR%%/src/webui/static/app/epggrab.js
+%%DATADIR%%/src/webui/static/app/esfilter.js
 %%DATADIR%%/src/webui/static/app/ext.css
 %%DATADIR%%/src/webui/static/app/extensions.js
+%%DATADIR%%/src/webui/static/app/idnode.js
 %%DATADIR%%/src/webui/static/app/iptv.js
+%%DATADIR%%/src/webui/static/app/mpegts.js
+%%DATADIR%%/src/webui/static/app/servicemapper.js
 %%DATADIR%%/src/webui/static/app/status.js
 %%DATADIR%%/src/webui/static/app/tableeditor.js
 %%DATADIR%%/src/webui/static/app/timeshift.js
@@ -939,13 +89,29 @@ man/man1/tvheadend.1.gz
 %%DATADIR%%/src/webui/static/app/tvheadend.js
 %%DATADIR%%/src/webui/static/app/tvhlog.js
 %%DATADIR%%/src/webui/static/app/v4l.js
+%%DATADIR%%/src/webui/static/checkcolumn/CheckColumn.js
 %%DATADIR%%/src/webui/static/extjs/adapter/ext/ext-base-debug.js
 %%DATADIR%%/src/webui/static/extjs/adapter/ext/ext-base.js
+%%DATADIR%%/src/webui/static/extjs/examples/ux/gridfilters/GridFilters.js
+%%DATADIR%%/src/webui/static/extjs/examples/ux/gridfilters/css/GridFilters.css
+%%DATADIR%%/src/webui/static/extjs/examples/ux/gridfilters/css/RangeMenu.css
+%%DATADIR%%/src/webui/static/extjs/examples/ux/gridfilters/filter/BooleanFilter.js
+%%DATADIR%%/src/webui/static/extjs/examples/ux/gridfilters/filter/DateFilter.js
+%%DATADIR%%/src/webui/static/extjs/examples/ux/gridfilters/filter/Filter.js
+%%DATADIR%%/src/webui/static/extjs/examples/ux/gridfilters/filter/ListFilter.js
+%%DATADIR%%/src/webui/static/extjs/examples/ux/gridfilters/filter/NumericFilter.js
+%%DATADIR%%/src/webui/static/extjs/examples/ux/gridfilters/filter/StringFilter.js
+%%DATADIR%%/src/webui/static/extjs/examples/ux/gridfilters/images/equals.png
+%%DATADIR%%/src/webui/static/extjs/examples/ux/gridfilters/images/find.png
+%%DATADIR%%/src/webui/static/extjs/examples/ux/gridfilters/images/greater_than.png
+%%DATADIR%%/src/webui/static/extjs/examples/ux/gridfilters/images/less_than.png
+%%DATADIR%%/src/webui/static/extjs/examples/ux/gridfilters/images/sort_filtered_asc.gif
+%%DATADIR%%/src/webui/static/extjs/examples/ux/gridfilters/images/sort_filtered_desc.gif
+%%DATADIR%%/src/webui/static/extjs/examples/ux/gridfilters/menu/ListMenu.js
+%%DATADIR%%/src/webui/static/extjs/examples/ux/gridfilters/menu/RangeMenu.js
 %%DATADIR%%/src/webui/static/extjs/ext-all-debug.js
 %%DATADIR%%/src/webui/static/extjs/ext-all.js
-%%DATADIR%%/src/webui/static/extjs/resources/css/README.txt
 %%DATADIR%%/src/webui/static/extjs/resources/css/debug.css
-%%DATADIR%%/src/webui/static/extjs/resources/css/ext-all-notheme-min.css
 %%DATADIR%%/src/webui/static/extjs/resources/css/ext-all-notheme.css
 %%DATADIR%%/src/webui/static/extjs/resources/css/ext-all.css
 %%DATADIR%%/src/webui/static/extjs/resources/css/reset-min.css
@@ -1832,29 +998,35 @@ man/man1/tvheadend.1.gz
 %%DATADIR%%/src/webui/static/extjs/resources/images/yourtheme/window/top-bottom.png
 %%DATADIR%%/src/webui/static/extjs/resources/images/yourtheme/window/top-bottom.psd
 %%DATADIR%%/src/webui/static/htslogo.png
-%%DATADIR%%/src/webui/static/icons/add.gif
+%%DATADIR%%/src/webui/static/icons/add.png
+%%DATADIR%%/src/webui/static/icons/arrow_down.png
 %%DATADIR%%/src/webui/static/icons/arrow_join.png
 %%DATADIR%%/src/webui/static/icons/arrow_out.png
+%%DATADIR%%/src/webui/static/icons/arrow_switch.png
+%%DATADIR%%/src/webui/static/icons/arrow_up.png
+%%DATADIR%%/src/webui/static/icons/bullet_add.png
 %%DATADIR%%/src/webui/static/icons/clock.png
 %%DATADIR%%/src/webui/static/icons/control_pause.png
 %%DATADIR%%/src/webui/static/icons/control_play.png
 %%DATADIR%%/src/webui/static/icons/control_stop.png
-%%DATADIR%%/src/webui/static/icons/delete.gif
+%%DATADIR%%/src/webui/static/icons/delete.png
 %%DATADIR%%/src/webui/static/icons/drive.png
+%%DATADIR%%/src/webui/static/icons/edit.png
 %%DATADIR%%/src/webui/static/icons/exclamation.png
 %%DATADIR%%/src/webui/static/icons/eye.png
+%%DATADIR%%/src/webui/static/icons/film_edit.png
 %%DATADIR%%/src/webui/static/icons/group.png
 %%DATADIR%%/src/webui/static/icons/information.png
 %%DATADIR%%/src/webui/static/icons/key.png
 %%DATADIR%%/src/webui/static/icons/layers.png
 %%DATADIR%%/src/webui/static/icons/newspaper.png
 %%DATADIR%%/src/webui/static/icons/pci.png
-%%DATADIR%%/src/webui/static/icons/plugin.gif
+%%DATADIR%%/src/webui/static/icons/plugin.png
 %%DATADIR%%/src/webui/static/icons/progress-bg-green.gif
 %%DATADIR%%/src/webui/static/icons/progress-bg-orange.gif
 %%DATADIR%%/src/webui/static/icons/progress-bg-red.gif
 %%DATADIR%%/src/webui/static/icons/rec.png
-%%DATADIR%%/src/webui/static/icons/save.gif
+%%DATADIR%%/src/webui/static/icons/save.png
 %%DATADIR%%/src/webui/static/icons/sound.png
 %%DATADIR%%/src/webui/static/icons/tag.png
 %%DATADIR%%/src/webui/static/icons/tag_blue.png
@@ -1876,8 +1048,6 @@ man/man1/tvheadend.1.gz
 %%DATADIR%%/src/webui/static/lovcombo/css/lovcombo.css
 %%DATADIR%%/src/webui/static/lovcombo/css/webpage.css
 %%DATADIR%%/src/webui/static/lovcombo/lovcombo-all.js
-%%DATADIR%%/src/webui/static/tv.css
-%%DATADIR%%/src/webui/static/tv.js
 %%DATADIR%%/src/webui/static/multiselect/ddview.js
 %%DATADIR%%/src/webui/static/multiselect/multiselect.js
 %%DATADIR%%/src/webui/static/multiselect/resources/bottom2.gif
@@ -1887,126 +1057,130 @@ man/man1/tvheadend.1.gz
 %%DATADIR%%/src/webui/static/multiselect/resources/right2.gif
 %%DATADIR%%/src/webui/static/multiselect/resources/top2.gif
 %%DATADIR%%/src/webui/static/multiselect/resources/up2.gif
-@dirrm %%DATADIR%%/src/webui/static/multiselect/resources
-@dirrm %%DATADIR%%/src/webui/static/multiselect
-@dirrm %%DATADIR%%/src/webui/static/lovcombo/css
-@dirrm %%DATADIR%%/src/webui/static/lovcombo
-@dirrm %%DATADIR%%/src/webui/static/livegrid/resources/images
-@dirrm %%DATADIR%%/src/webui/static/livegrid/resources/css
-@dirrm %%DATADIR%%/src/webui/static/livegrid/resources
-@dirrm %%DATADIR%%/src/webui/static/livegrid
-@dirrm %%DATADIR%%/src/webui/static/img
-@dirrm %%DATADIR%%/src/webui/static/icons
-@dirrm %%DATADIR%%/src/webui/static/extjs/resources/images/yourtheme/window
-@dirrm %%DATADIR%%/src/webui/static/extjs/resources/images/yourtheme/tree
-@dirrm %%DATADIR%%/src/webui/static/extjs/resources/images/yourtheme/toolbar
-@dirrm %%DATADIR%%/src/webui/static/extjs/resources/images/yourtheme/tabs
-@dirrm %%DATADIR%%/src/webui/static/extjs/resources/images/yourtheme/slider
-@dirrm %%DATADIR%%/src/webui/static/extjs/resources/images/yourtheme/sizer
-@dirrm %%DATADIR%%/src/webui/static/extjs/resources/images/yourtheme/shared
-@dirrm %%DATADIR%%/src/webui/static/extjs/resources/images/yourtheme/qtip
-@dirrm %%DATADIR%%/src/webui/static/extjs/resources/images/yourtheme/progress
-@dirrm %%DATADIR%%/src/webui/static/extjs/resources/images/yourtheme/panel
-@dirrm %%DATADIR%%/src/webui/static/extjs/resources/images/yourtheme/menu
-@dirrm %%DATADIR%%/src/webui/static/extjs/resources/images/yourtheme/layout
-@dirrm %%DATADIR%%/src/webui/static/extjs/resources/images/yourtheme/grid
-@dirrm %%DATADIR%%/src/webui/static/extjs/resources/images/yourtheme/form
-@dirrm %%DATADIR%%/src/webui/static/extjs/resources/images/yourtheme/editor
-@dirrm %%DATADIR%%/src/webui/static/extjs/resources/images/yourtheme/dd
-@dirrm %%DATADIR%%/src/webui/static/extjs/resources/images/yourtheme/button
-@dirrm %%DATADIR%%/src/webui/static/extjs/resources/images/yourtheme/box
-@dirrm %%DATADIR%%/src/webui/static/extjs/resources/images/yourtheme
-@dirrm %%DATADIR%%/src/webui/static/extjs/resources/images/vista/toolbar
-@dirrm %%DATADIR%%/src/webui/static/extjs/resources/images/vista/tabs
-@dirrm %%DATADIR%%/src/webui/static/extjs/resources/images/vista/sizer
-@dirrm %%DATADIR%%/src/webui/static/extjs/resources/images/vista/qtip
-@dirrm %%DATADIR%%/src/webui/static/extjs/resources/images/vista/layout
-@dirrm %%DATADIR%%/src/webui/static/extjs/resources/images/vista/grid
-@dirrm %%DATADIR%%/src/webui/static/extjs/resources/images/vista/basic-dialog
-@dirrm %%DATADIR%%/src/webui/static/extjs/resources/images/vista
-@dirrm %%DATADIR%%/src/webui/static/extjs/resources/images/gray/window
-@dirrm %%DATADIR%%/src/webui/static/extjs/resources/images/gray/tree
-@dirrm %%DATADIR%%/src/webui/static/extjs/resources/images/gray/toolbar
-@dirrm %%DATADIR%%/src/webui/static/extjs/resources/images/gray/tabs
-@dirrm %%DATADIR%%/src/webui/static/extjs/resources/images/gray/slider
-@dirrm %%DATADIR%%/src/webui/static/extjs/resources/images/gray/sizer
-@dirrm %%DATADIR%%/src/webui/static/extjs/resources/images/gray/shared
-@dirrm %%DATADIR%%/src/webui/static/extjs/resources/images/gray/qtip
-@dirrm %%DATADIR%%/src/webui/static/extjs/resources/images/gray/progress
-@dirrm %%DATADIR%%/src/webui/static/extjs/resources/images/gray/panel
-@dirrm %%DATADIR%%/src/webui/static/extjs/resources/images/gray/menu
-@dirrm %%DATADIR%%/src/webui/static/extjs/resources/images/gray/grid
-@dirrm %%DATADIR%%/src/webui/static/extjs/resources/images/gray/form
-@dirrm %%DATADIR%%/src/webui/static/extjs/resources/images/gray/button
-@dirrm %%DATADIR%%/src/webui/static/extjs/resources/images/gray
-@dirrm %%DATADIR%%/src/webui/static/extjs/resources/images/default/window
-@dirrm %%DATADIR%%/src/webui/static/extjs/resources/images/default/tree
-@dirrm %%DATADIR%%/src/webui/static/extjs/resources/images/default/toolbar
-@dirrm %%DATADIR%%/src/webui/static/extjs/resources/images/default/tabs
-@dirrm %%DATADIR%%/src/webui/static/extjs/resources/images/default/slider
-@dirrm %%DATADIR%%/src/webui/static/extjs/resources/images/default/sizer
-@dirrm %%DATADIR%%/src/webui/static/extjs/resources/images/default/shared
-@dirrm %%DATADIR%%/src/webui/static/extjs/resources/images/default/qtip
-@dirrm %%DATADIR%%/src/webui/static/extjs/resources/images/default/progress
-@dirrm %%DATADIR%%/src/webui/static/extjs/resources/images/default/panel
-@dirrm %%DATADIR%%/src/webui/static/extjs/resources/images/default/menu
-@dirrm %%DATADIR%%/src/webui/static/extjs/resources/images/default/layout
-@dirrm %%DATADIR%%/src/webui/static/extjs/resources/images/default/grid
-@dirrm %%DATADIR%%/src/webui/static/extjs/resources/images/default/form
-@dirrm %%DATADIR%%/src/webui/static/extjs/resources/images/default/editor
-@dirrm %%DATADIR%%/src/webui/static/extjs/resources/images/default/dd
-@dirrm %%DATADIR%%/src/webui/static/extjs/resources/images/default/button
-@dirrm %%DATADIR%%/src/webui/static/extjs/resources/images/default/box
-@dirrm %%DATADIR%%/src/webui/static/extjs/resources/images/default
-@dirrm %%DATADIR%%/src/webui/static/extjs/resources/images/access/window
-@dirrm %%DATADIR%%/src/webui/static/extjs/resources/images/access/tree
-@dirrm %%DATADIR%%/src/webui/static/extjs/resources/images/access/toolbar
-@dirrm %%DATADIR%%/src/webui/static/extjs/resources/images/access/tabs
-@dirrm %%DATADIR%%/src/webui/static/extjs/resources/images/access/slider
-@dirrm %%DATADIR%%/src/webui/static/extjs/resources/images/access/sizer
-@dirrm %%DATADIR%%/src/webui/static/extjs/resources/images/access/shared
-@dirrm %%DATADIR%%/src/webui/static/extjs/resources/images/access/qtip
-@dirrm %%DATADIR%%/src/webui/static/extjs/resources/images/access/progress
-@dirrm %%DATADIR%%/src/webui/static/extjs/resources/images/access/panel
-@dirrm %%DATADIR%%/src/webui/static/extjs/resources/images/access/menu
-@dirrm %%DATADIR%%/src/webui/static/extjs/resources/images/access/grid
-@dirrm %%DATADIR%%/src/webui/static/extjs/resources/images/access/form
-@dirrm %%DATADIR%%/src/webui/static/extjs/resources/images/access/editor
-@dirrm %%DATADIR%%/src/webui/static/extjs/resources/images/access/button
-@dirrm %%DATADIR%%/src/webui/static/extjs/resources/images/access/box
-@dirrm %%DATADIR%%/src/webui/static/extjs/resources/images/access
-@dirrm %%DATADIR%%/src/webui/static/extjs/resources/images
-@dirrm %%DATADIR%%/src/webui/static/extjs/resources/css/visual
-@dirrm %%DATADIR%%/src/webui/static/extjs/resources/css/theme-gray
-@dirrm %%DATADIR%%/src/webui/static/extjs/resources/css/theme-access
-@dirrm %%DATADIR%%/src/webui/static/extjs/resources/css/structure
-@dirrm %%DATADIR%%/src/webui/static/extjs/resources/css
-@dirrm %%DATADIR%%/src/webui/static/extjs/resources
-@dirrm %%DATADIR%%/src/webui/static/extjs/adapter/ext
-@dirrm %%DATADIR%%/src/webui/static/extjs/adapter
-@dirrm %%DATADIR%%/src/webui/static/extjs
-@dirrm %%DATADIR%%/src/webui/static/app
-@dirrm %%DATADIR%%/src/webui/static
-@dirrm %%DATADIR%%/src/webui
-@dirrm %%DATADIR%%/src
-@dirrm %%DATADIR%%/dvb/dvb-t
-@dirrm %%DATADIR%%/dvb/dvb-s
-@dirrm %%DATADIR%%/dvb/dvb-c
-@dirrm %%DATADIR%%/dvb/channels-conf/dvb-t
-@dirrm %%DATADIR%%/dvb/channels-conf/dvb-s
-@dirrm %%DATADIR%%/dvb/channels-conf/dvb-c
-@dirrm %%DATADIR%%/dvb/channels-conf/atsc
-@dirrm %%DATADIR%%/dvb/channels-conf
-@dirrm %%DATADIR%%/dvb/atsc
-@dirrm %%DATADIR%%/dvb
-@dirrm %%DATADIR%%/docs/html
-@dirrm %%DATADIR%%/docs/docresources
-@dirrm %%DATADIR%%/docs
-@dirrm %%DATADIR%%/data/conf/epggrab/opentv/prov
-@dirrm %%DATADIR%%/data/conf/epggrab/opentv/genre
+%%DATADIR%%/src/webui/static/smoothie.js
+%%DATADIR%%/src/webui/static/tv.css
+%%DATADIR%%/src/webui/static/tv.js
+%%DATADIR%%/src/webui/static/xcheckbox/xcheckbox.css
+%%DATADIR%%/src/webui/static/xcheckbox/xcheckbox.js
 @dirrm %%DATADIR%%/data/conf/epggrab/opentv/dict
+@dirrm %%DATADIR%%/data/conf/epggrab/opentv/genre
+@dirrm %%DATADIR%%/data/conf/epggrab/opentv/prov
 @dirrm %%DATADIR%%/data/conf/epggrab/opentv
 @dirrm %%DATADIR%%/data/conf/epggrab
 @dirrm %%DATADIR%%/data/conf
 @dirrm %%DATADIR%%/data
+@dirrm %%DATADIR%%/docs/docresources
+@dirrm %%DATADIR%%/docs/html
+@dirrm %%DATADIR%%/docs
+@dirrm %%DATADIR%%/src/webui/static/app
+@dirrm %%DATADIR%%/src/webui/static/checkcolumn
+@dirrm %%DATADIR%%/src/webui/static/extjs/adapter/ext
+@dirrm %%DATADIR%%/src/webui/static/extjs/adapter
+@dirrm %%DATADIR%%/src/webui/static/extjs/examples/ux/gridfilters/css
+@dirrm %%DATADIR%%/src/webui/static/extjs/examples/ux/gridfilters/filter
+@dirrm %%DATADIR%%/src/webui/static/extjs/examples/ux/gridfilters/images
+@dirrm %%DATADIR%%/src/webui/static/extjs/examples/ux/gridfilters/menu
+@dirrm %%DATADIR%%/src/webui/static/extjs/examples/ux/gridfilters
+@dirrm %%DATADIR%%/src/webui/static/extjs/examples/ux
+@dirrm %%DATADIR%%/src/webui/static/extjs/examples
+@dirrm %%DATADIR%%/src/webui/static/extjs/resources/css/structure
+@dirrm %%DATADIR%%/src/webui/static/extjs/resources/css/theme-access
+@dirrm %%DATADIR%%/src/webui/static/extjs/resources/css/theme-gray
+@dirrm %%DATADIR%%/src/webui/static/extjs/resources/css/visual
+@dirrm %%DATADIR%%/src/webui/static/extjs/resources/css
+@dirrm %%DATADIR%%/src/webui/static/extjs/resources/images/access/box
+@dirrm %%DATADIR%%/src/webui/static/extjs/resources/images/access/button
+@dirrm %%DATADIR%%/src/webui/static/extjs/resources/images/access/editor
+@dirrm %%DATADIR%%/src/webui/static/extjs/resources/images/access/form
+@dirrm %%DATADIR%%/src/webui/static/extjs/resources/images/access/grid
+@dirrm %%DATADIR%%/src/webui/static/extjs/resources/images/access/menu
+@dirrm %%DATADIR%%/src/webui/static/extjs/resources/images/access/panel
+@dirrm %%DATADIR%%/src/webui/static/extjs/resources/images/access/progress
+@dirrm %%DATADIR%%/src/webui/static/extjs/resources/images/access/qtip
+@dirrm %%DATADIR%%/src/webui/static/extjs/resources/images/access/shared
+@dirrm %%DATADIR%%/src/webui/static/extjs/resources/images/access/sizer
+@dirrm %%DATADIR%%/src/webui/static/extjs/resources/images/access/slider
+@dirrm %%DATADIR%%/src/webui/static/extjs/resources/images/access/tabs
+@dirrm %%DATADIR%%/src/webui/static/extjs/resources/images/access/toolbar
+@dirrm %%DATADIR%%/src/webui/static/extjs/resources/images/access/tree
+@dirrm %%DATADIR%%/src/webui/static/extjs/resources/images/access/window
+@dirrm %%DATADIR%%/src/webui/static/extjs/resources/images/access
+@dirrm %%DATADIR%%/src/webui/static/extjs/resources/images/default/box
+@dirrm %%DATADIR%%/src/webui/static/extjs/resources/images/default/button
+@dirrm %%DATADIR%%/src/webui/static/extjs/resources/images/default/dd
+@dirrm %%DATADIR%%/src/webui/static/extjs/resources/images/default/editor
+@dirrm %%DATADIR%%/src/webui/static/extjs/resources/images/default/form
+@dirrm %%DATADIR%%/src/webui/static/extjs/resources/images/default/grid
+@dirrm %%DATADIR%%/src/webui/static/extjs/resources/images/default/layout
+@dirrm %%DATADIR%%/src/webui/static/extjs/resources/images/default/menu
+@dirrm %%DATADIR%%/src/webui/static/extjs/resources/images/default/panel
+@dirrm %%DATADIR%%/src/webui/static/extjs/resources/images/default/progress
+@dirrm %%DATADIR%%/src/webui/static/extjs/resources/images/default/qtip
+@dirrm %%DATADIR%%/src/webui/static/extjs/resources/images/default/shared
+@dirrm %%DATADIR%%/src/webui/static/extjs/resources/images/default/sizer
+@dirrm %%DATADIR%%/src/webui/static/extjs/resources/images/default/slider
+@dirrm %%DATADIR%%/src/webui/static/extjs/resources/images/default/tabs
+@dirrm %%DATADIR%%/src/webui/static/extjs/resources/images/default/toolbar
+@dirrm %%DATADIR%%/src/webui/static/extjs/resources/images/default/tree
+@dirrm %%DATADIR%%/src/webui/static/extjs/resources/images/default/window
+@dirrm %%DATADIR%%/src/webui/static/extjs/resources/images/default
+@dirrm %%DATADIR%%/src/webui/static/extjs/resources/images/gray/button
+@dirrm %%DATADIR%%/src/webui/static/extjs/resources/images/gray/form
+@dirrm %%DATADIR%%/src/webui/static/extjs/resources/images/gray/grid
+@dirrm %%DATADIR%%/src/webui/static/extjs/resources/images/gray/menu
+@dirrm %%DATADIR%%/src/webui/static/extjs/resources/images/gray/panel
+@dirrm %%DATADIR%%/src/webui/static/extjs/resources/images/gray/progress
+@dirrm %%DATADIR%%/src/webui/static/extjs/resources/images/gray/qtip
+@dirrm %%DATADIR%%/src/webui/static/extjs/resources/images/gray/shared
+@dirrm %%DATADIR%%/src/webui/static/extjs/resources/images/gray/sizer
+@dirrm %%DATADIR%%/src/webui/static/extjs/resources/images/gray/slider
+@dirrm %%DATADIR%%/src/webui/static/extjs/resources/images/gray/tabs
+@dirrm %%DATADIR%%/src/webui/static/extjs/resources/images/gray/toolbar
+@dirrm %%DATADIR%%/src/webui/static/extjs/resources/images/gray/tree
+@dirrm %%DATADIR%%/src/webui/static/extjs/resources/images/gray/window
+@dirrm %%DATADIR%%/src/webui/static/extjs/resources/images/gray
+@dirrm %%DATADIR%%/src/webui/static/extjs/resources/images/vista/basic-dialog
+@dirrm %%DATADIR%%/src/webui/static/extjs/resources/images/vista/grid
+@dirrm %%DATADIR%%/src/webui/static/extjs/resources/images/vista/layout
+@dirrm %%DATADIR%%/src/webui/static/extjs/resources/images/vista/qtip
+@dirrm %%DATADIR%%/src/webui/static/extjs/resources/images/vista/sizer
+@dirrm %%DATADIR%%/src/webui/static/extjs/resources/images/vista/tabs
+@dirrm %%DATADIR%%/src/webui/static/extjs/resources/images/vista/toolbar
+@dirrm %%DATADIR%%/src/webui/static/extjs/resources/images/vista
+@dirrm %%DATADIR%%/src/webui/static/extjs/resources/images/yourtheme/box
+@dirrm %%DATADIR%%/src/webui/static/extjs/resources/images/yourtheme/button
+@dirrm %%DATADIR%%/src/webui/static/extjs/resources/images/yourtheme/dd
+@dirrm %%DATADIR%%/src/webui/static/extjs/resources/images/yourtheme/editor
+@dirrm %%DATADIR%%/src/webui/static/extjs/resources/images/yourtheme/form
+@dirrm %%DATADIR%%/src/webui/static/extjs/resources/images/yourtheme/grid
+@dirrm %%DATADIR%%/src/webui/static/extjs/resources/images/yourtheme/layout
+@dirrm %%DATADIR%%/src/webui/static/extjs/resources/images/yourtheme/menu
+@dirrm %%DATADIR%%/src/webui/static/extjs/resources/images/yourtheme/panel
+@dirrm %%DATADIR%%/src/webui/static/extjs/resources/images/yourtheme/progress
+@dirrm %%DATADIR%%/src/webui/static/extjs/resources/images/yourtheme/qtip
+@dirrm %%DATADIR%%/src/webui/static/extjs/resources/images/yourtheme/shared
+@dirrm %%DATADIR%%/src/webui/static/extjs/resources/images/yourtheme/sizer
+@dirrm %%DATADIR%%/src/webui/static/extjs/resources/images/yourtheme/slider
+@dirrm %%DATADIR%%/src/webui/static/extjs/resources/images/yourtheme/tabs
+@dirrm %%DATADIR%%/src/webui/static/extjs/resources/images/yourtheme/toolbar
+@dirrm %%DATADIR%%/src/webui/static/extjs/resources/images/yourtheme/tree
+@dirrm %%DATADIR%%/src/webui/static/extjs/resources/images/yourtheme/window
+@dirrm %%DATADIR%%/src/webui/static/extjs/resources/images/yourtheme
+@dirrm %%DATADIR%%/src/webui/static/extjs/resources/images
+@dirrm %%DATADIR%%/src/webui/static/extjs/resources
+@dirrm %%DATADIR%%/src/webui/static/extjs
+@dirrm %%DATADIR%%/src/webui/static/icons
+@dirrm %%DATADIR%%/src/webui/static/img
+@dirrm %%DATADIR%%/src/webui/static/livegrid/resources/css
+@dirrm %%DATADIR%%/src/webui/static/livegrid/resources/images
+@dirrm %%DATADIR%%/src/webui/static/livegrid/resources
+@dirrm %%DATADIR%%/src/webui/static/livegrid
+@dirrm %%DATADIR%%/src/webui/static/lovcombo/css
+@dirrm %%DATADIR%%/src/webui/static/lovcombo
+@dirrm %%DATADIR%%/src/webui/static/multiselect/resources
+@dirrm %%DATADIR%%/src/webui/static/multiselect
+@dirrm %%DATADIR%%/src/webui/static/xcheckbox
+@dirrm %%DATADIR%%/src/webui/static
+@dirrm %%DATADIR%%/src/webui
+@dirrm %%DATADIR%%/src
 @dirrm %%DATADIR%%
