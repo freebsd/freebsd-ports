@@ -9,12 +9,15 @@ MASTER_SITES=	DEBIAN
 MASTER_SITE_SUBDIR=	pool/main/m/moreutils
 DISTNAME=	moreutils_${PORTVERSION}
 
-MAINTAINER=	eadler@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Run programs in parallel
 
 LICENSE=	GPLv2
 
 CONFLICTS=	parallel-[0-9]*
+
+DEPRECATED=	Use moreutils-parallel in sysutils/moreutils instead
+EXPIRATION_DATE=2014-09-18
 
 WRKSRC=		${WRKDIR}/moreutils
 

@@ -1,0 +1,20 @@
+--- spice3f5/common/util/skeleton/make_def.bd.orig	1994-02-24 07:07:01 UTC
++++ spice3f5/common/util/skeleton/make_def.bd
+@@ -44,7 +44,7 @@ ALL_PURPOSE	= default_all
+ PRE_PURPOSE	= pre_$(PURPOSE)
+ PURPOSE		= all
+ INCLUDE		= -I$(INCLUDE_DIR) -I$(TCGMSG_DIR)/include
+-CC		= cc
++REAL_CC		= $(CC)
+ 
+ 
+ SPICE_TUNE	= -DBUG_ADDR=\"$(BUG_ADDR)\" -DHELP_DIR=\"$(HELP_DIR)\"	      \
+@@ -85,7 +85,7 @@ SPARSELIB	= sparse
+ # LIBRARIES = ckt cp dev fte hlp inp mfb mfbpc misc ni smp sparse
+ LIBRARIES = dev ckt cp fte hlp inp $(MFBLIB) misc ni $(SPARSELIB)
+ 
+-CFLAGS		= $(REAL_CC_OPT) $(SYS_CFLAGS)
++REAL_CFLAGS		= $(REAL_CC_OPT) $(SYS_CFLAGS)
+ 
+ LIBRARY_HACK	= $(OBJLIB_DIR)/$(LIBRARY).a
+ 

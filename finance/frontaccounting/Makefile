@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	frontaccounting
-DISTVERSION=	2.3.15
+DISTVERSION=	2.3.21
 CATEGORIES=	finance www
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	${PORTNAME}/FrontAccounting-2.3/${PORTVERSION}
@@ -21,19 +21,15 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 
 NO_BUILD=	yes
 
-SUB_FILES=	pkg-install pkg-deinstall pkg-message
-
-SHAREOWN=	${WWWOWN}
-SHAREGRP=	${WWWGRP}
+SUB_FILES=	pkg-deinstall pkg-message
 
 OPTIONS_DEFINE=	APACHE LIGHTTPD MYSQL
 OPTIONS_DEFAULT=	APACHE MYSQL
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MAPACHE}
-USE_APACHE_RUN=	22+
+USE_APACHE_RUN=	24+
 .endif
 
 .if ${PORT_OPTIONS:MLIGHTTPD}
@@ -51,8 +47,8 @@ PORTDOCSARGS=	'-not -path "./doc*"'
 .endif
 
 do-install:
-	@${MKDIR} ${WWWDIR}
-	@cd ${WRKSRC} && ${COPYTREE_SHARE} . ${WWWDIR} ${PORTDOCSARGS}
+	@${MKDIR} ${STAGEDIR}${WWWDIR}
+	@cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${WWWDIR} ${PORTDOCSARGS}
 
 post-install:
 	@${CAT} ${PKGMESSAGE}

@@ -28,7 +28,7 @@ PORTDOCS=	*
 ONLY_FOR_ARCHS=		i386 amd64 armv6
 ONLY_FOR_ARCHS_REASON=	has not been ported to this architecture
 
-OPTIONS_DEFINE=	CAIRO
+OPTIONS_DEFINE=	CAIRO DOCS
 
 CAIRO_CONFIGURE_OFF=	--disable-cairo --without-x
 CAIRO_CONFIGURE_ON=	--enable-cairo --with-x

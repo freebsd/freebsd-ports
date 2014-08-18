@@ -1,5 +1,5 @@
---- deps/leo_gateway/priv/leo_gateway.schema.orig	2014-06-15 19:56:36.000000000 +0300
-+++ deps/leo_gateway/priv/leo_gateway.schema	2014-06-15 19:56:54.000000000 +0300
+--- deps/leo_gateway/priv/leo_gateway.schema.orig	2014-08-06 05:56:49.000000000 +0300
++++ deps/leo_gateway/priv/leo_gateway.schema	2014-08-13 23:13:17.000000000 +0300
 @@ -37,7 +37,7 @@
   "sasl.sasl_error_logger",
   [
@@ -63,7 +63,7 @@
   ]}.
  
  %% @doc Cache Expire in seconds
-@@ -444,7 +444,7 @@
+@@ -484,7 +484,7 @@
   "leo_gateway.log_dir",
   [
    {datatype, string},
@@ -72,7 +72,7 @@
   ]}.
  
  %% @doc Output log file(s) - app
-@@ -453,7 +453,7 @@
+@@ -493,7 +493,7 @@
   "leo_gateway.log_appender",
   [
    {datatype, string},
@@ -81,7 +81,7 @@
   ]}.
  
  {translation, "leo_gateway.log_appender",
-@@ -468,7 +468,7 @@
+@@ -508,7 +508,7 @@
   "leo_redundant_manager.log_dir_member",
   [
    {datatype, string},
@@ -90,7 +90,7 @@
   ]}.
  
  %% @doc Output log file(s) - ring
-@@ -477,7 +477,7 @@
+@@ -517,7 +517,7 @@
   "leo_redundant_manager.log_dir_ring",
   [
    {datatype, string},
@@ -99,7 +99,7 @@
   ]}.
  
  
-@@ -489,7 +489,7 @@
+@@ -529,7 +529,7 @@
   "queue_dir",
   "leo_gateway.queue_dir",
   [
@@ -108,7 +108,7 @@
   ]}.
  
  %% @doc Directory of SNMP agent configuration
-@@ -497,7 +497,7 @@
+@@ -537,7 +537,7 @@
   "snmp_agent",
   "leo_gateway.snmp_agent",
   [
@@ -117,7 +117,7 @@
   ]}.
  
  
-@@ -648,7 +648,7 @@
+@@ -752,7 +752,7 @@
   "nodename",
   "vm_args.-name",
   [
@@ -126,7 +126,7 @@
   ]}.
  
  %% @doc Cookie for distributed node communication.  All nodes in the same cluster
-@@ -696,7 +696,7 @@
+@@ -800,7 +800,7 @@
   "erlang.crash_dump",
   "vm_args.-env ERL_CRASH_DUMP",
   [
@@ -135,7 +135,7 @@
   ]}.
  
  %% @doc Raise the ETS table limit
-@@ -735,5 +735,5 @@
+@@ -839,5 +839,5 @@
   "snmp_conf",
   "vm_args.-config",
   [

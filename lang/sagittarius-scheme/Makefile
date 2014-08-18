@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	sagittarius
-PORTVERSION=	0.5.5
+PORTVERSION=	0.5.7
 CATEGORIES=	lang
 MASTER_SITES=	http://distfiles.pirateparty.in/%SUBDIR%/ \
 		${MASTER_SITE_LOCAL}
@@ -49,6 +49,9 @@ PLIST_ARCH=	x86_64
 .endif
 
 PLIST_SUB+=	PLIST_ARCH=${PLIST_ARCH}
+
+post-install:
+	@${LN} -sf ${PREFIX}/bin/sagittarius ${STAGEDIR}${PREFIX}/bin/sash
 
 post-build:
 	@${GMAKE} -C ${WRKSRC} doc

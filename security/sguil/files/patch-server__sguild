@@ -1,0 +1,88 @@
+--- server/sguild.orig	2014-06-23 21:54:25.595758574 +0600
++++ server/sguild	2014-06-23 21:59:48.122743440 +0600
+@@ -1,6 +1,4 @@
+ #!/bin/sh
+-# Run tcl from users PATH \
+-exec tclsh "$0" "$@"
+ 
+ # $Id: sguild,v 1.194 2013/09/05 00:38:45 bamm Exp $ #
+ 
+@@ -221,7 +219,7 @@
+ ##################################
+ 
+ # Do all priv account actions here.
+-# Open log files/etc. Privs will be dropped after.
++# Open log files/usr/local/etc. Privs will be dropped after.
+ 
+ if { ![info exists LOG_PATH] } { set LOG_PATH /var/log/sguild }
+ 
+@@ -321,7 +319,7 @@
+ # Check for certs
+ if {![info exists CERTS_PATH]} {
+ 
+-    set CERTS_PATH /etc/sguild/certs
++    set CERTS_PATH /usr/local/etc/sguild/certs
+ 
+ }
+ 
+@@ -351,13 +349,13 @@
+ 
+ if { ![info exists CONF_FILE] } {
+   # No conf file specified check the defaults
+-  if { [file exists /etc/sguild/sguild.conf] } {
+-    set CONF_FILE /etc/sguild/sguild.conf
++  if { [file exists /usr/local/etc/sguild/sguild.conf] } {
++    set CONF_FILE /usr/local/etc/sguild/sguild.conf
+   } elseif { [file exists ./sguild.conf] } {
+     set CONF_FILE ./sguild.conf
+   } else {
+     puts "Couldn't determine where the sguil config file is"
+-    puts "Looked for ./sguild.conf and /etc/sguild/sguild.conf."
++    puts "Looked for ./sguild.conf and /usr/local/etc/sguild/sguild.conf."
+     DisplayUsage $argv0
+   }
+ }
+@@ -484,8 +482,8 @@
+ # Load accessfile
+ if { ![info exists ACCESS_FILE] } {
+   # Check the defaults
+-  if { [file exists /etc/sguild/sguild.access] } {
+-    set ACCESS_FILE "/etc/sguild/sguild.access"
++  if { [file exists /usr/local/etc/sguild/sguild.access] } {
++    set ACCESS_FILE "/usr/local/etc/sguild/sguild.access"
+   } elseif { [file exists ./sguild.access] } {
+     set ACCESS_FILE "./sguild.access"
+   } else {
+@@ -511,8 +509,8 @@
+ #}
+ # Load email config file
+ if { ![info exists EMAIL_FILE] } {
+-  if { [file exists /etc/sguild/sguild.email] } {
+-    set EMAIL_FILE "/etc/sguild/sguild.email"
++  if { [file exists /usr/local/etc/sguild/sguild.email] } {
++    set EMAIL_FILE "/usr/local/etc/sguild/sguild.email"
+   } else {
+     set EMAIL_FILE "./sguild.email"
+   }
+@@ -524,8 +522,8 @@
+ }
+ # Load global queries.
+ if { ![info exists GLOBAL_QRY_FILE] } {
+-  if { [file exists /etc/sguild/sguild.queries] } {
+-    set GLOBAL_QRY_FILE "/etc/sguild/sguild.queries"
++  if { [file exists /usr/local/etc/sguild/sguild.queries] } {
++    set GLOBAL_QRY_FILE "/usr/local/etc/sguild/sguild.queries"
+   } else {
+     set GLOBAL_QRY_FILE "./sguild.queries"
+   }
+@@ -537,8 +535,8 @@
+ }
+ # Load report queries.
+ if { ![info exists REPORT_QRY_FILE] } {
+-  if { [file exists /etc/sguild/sguild.reports] } {
+-    set REPORT_QRY_FILE "/etc/sguild/sguild.reports"
++  if { [file exists /usr/local/etc/sguild/sguild.reports] } {
++    set REPORT_QRY_FILE "/usr/local/etc/sguild/sguild.reports"
+   } else {
+     set REPORT_QRY_FILE "./sguild.reports"
+   }

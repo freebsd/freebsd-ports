@@ -28,6 +28,7 @@ CONFIGURE_ENABLE=nls
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|__gmp_randinit|__gmpz_init|g ; \
-		 s|db-4.[0-9]|${BDB_LIB_NAME}|g' ${WRKSRC}/configure
+		 s|db-4.[0-9]|${BDB_LIB_NAME}|g ; \
+		 s|-R$$found_dir|-Wl,-rpath,$$found_dir|g' ${WRKSRC}/configure
 
 .include <bsd.port.mk>

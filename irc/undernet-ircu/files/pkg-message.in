@@ -1,0 +1,7 @@
+	To run undernet ircu you must add 'undernet_enable="YES"' to
+	"/etc/rc.conf" .  It can then be started with
+	"%%PREFIX%%/etc/rc.d/undernet start"
+
+	You must also copy "%%PREFIX%%/etc/ircd.conf.example" to
+	"%%PREFIX%%/etc/ircd.conf\" and modify its settings according to
+	your needs.  See documentation at http://coder-com.undernet.org.

@@ -57,6 +57,50 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="fbb01289-2645-11e4-bc44-6805ca0b3d42">
+    <topic>phpMyAdmin -- XSS vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>phpMyAdmin</name>
+	<range><ge>4.2.0</ge><lt>4.2.7.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The phpMyAdmin development team reports:</p>
+	<blockquote cite="http://www.phpmyadmin.net/home_page/security/PMASA-2014-8.php">
+	  <p>Multiple XSS vulnerabilities in browse table, ENUM
+	    editor, monitor, query charts and table relations pages.</p>
+	  <p> With a crafted database, table or a primary/unique key
+	    column name it is possible to trigger an XSS when dropping
+	    a row from the table. With a crafted column name it is
+	    possible to trigger an XSS in the ENUM editor dialog. With
+	    a crafted variable name or a crafted value for unit field
+	    it is possible to trigger a self-XSS when adding a new
+	    chart in the monitor page. With a crafted value for x-axis
+	    label it is possible to trigger a self-XSS in the query
+	    chart page. With a crafted relation name it is possible to
+	    trigger an XSS in table relations page.</p>
+	</blockquote>
+	<blockquote cite="http://www.phpmyadmin.net/home_page/security/PMASA-2014-9.php">
+	  <p>XSS in view operations page.</p>
+	  <p>With a crafted view name it is possible to trigger an
+	    XSS when dropping the view in view operation page.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://www.phpmyadmin.net/home_page/security/PMASA-2014-8.php</url>
+      <url>http://www.phpmyadmin.net/home_page/security/PMASA-2014-9.php</url>
+      <cvename>CVE-2014-5273</cvename>
+      <cvename>CVE-2014-5274</cvename>
+    </references>
+    <dates>
+      <discovery>2014-08-17</discovery>
+      <entry>2014-08-17</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="df7754c0-2294-11e4-b505-000c6e25e3e9">
     <topic>chromium -- multiple vulnerabilities</topic>
     <affects>

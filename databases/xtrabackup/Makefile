@@ -25,9 +25,9 @@ RUN_DEPENDS=	p5-DBD-mysql>=0:${PORTSDIR}/databases/p5-DBD-mysql \
 		qpress:${PORTSDIR}/archivers/qpress
 
 # autotool is in use for 5.1 builds
-USE_AUTOTOOLS=	automake autoheader autoconf libtool aclocal
+USE_AUTOTOOLS=	automake autoheader autoconf aclocal libtoolize
 # MySQL 5.5 using CMAKE
-USES=		cmake iconv gettext gmake perl5
+USES=		cmake iconv gettext gmake libtool perl5
 
 MASTER_SITE_SUBDIR=	XtraBackup/XtraBackup-${PORTVERSION}/source/
 

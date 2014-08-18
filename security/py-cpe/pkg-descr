@@ -1,0 +1,15 @@
+Common Platform Enumeration (CPE) is a standardized method of describing
+and identifying classes of applications, operating systems, and hardware
+devices present among an enterprise's computing assets.
+
+For more information, please visit the official website of CPE, developed
+by MITRE and maintained by NIST.
+
+Features:
+
+  * Versions: 1.1, 2.2, 2.3
+  * Formats: WFN, URI, FS.
+  * Cross-version conversion.
+  * Language parsing and evaluation.
+
+WWW: https://github.com/nilp0inter/cpe

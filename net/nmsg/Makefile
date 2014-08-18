@@ -1,11 +1,11 @@
 # $FreeBSD$
 
 PORTNAME=	nmsg
-PORTVERSION=	0.8.0
-PORTREVISION=	1
+PORTVERSION=	0.9.0
 # DISTNAME=	${PORTNAME}-${PORTVERSION}
 CATEGORIES=	net
-MASTER_SITES=	https://dl.farsightsecurity.com/dist/nmsg/
+MASTER_SITES=	https://dl.farsightsecurity.com/dist/nmsg/ \
+		http://dl.farsightsecurity.com/dist/nmsg/
 
 MAINTAINER=	truckman@FreeBSD.org
 COMMENT=	Network message encapsulation system
@@ -27,6 +27,13 @@ BUILD_DEPENDS+=	xsltproc:${PORTSDIR}/textproc/libxslt \
 		${DOCBOOK_XML}:${PORTSDIR}/textproc/docbook-xml \
 		${DOCBOOK_XSL_NS}:${PORTSDIR}/textproc/docbook-xsl-ns
 
+# The version of binutils in base does not understand the crc32
+# instructions used in this code on amd64.  Use gcc from ports
+# to get a more capable version of binutils.
+.if (${OSVERSION} < 900000 &&  ${ARCH} == amd64)
+USE_GCC=	yes
+.endif
+
 ALL_TARGET=	all
 .if ${PORT_OPTIONS:MDOCS}
 BUILD_DEPENDS+=	doxygen:${PORTSDIR}/devel/doxygen
@@ -40,7 +47,7 @@ CONFIGURE_ARGS+=	--with-pkgconfigdir='$${exec_prefix}/libdata/pkgconfig'
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libnmsg.so.6.0.0
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/nmsg/nmsg_msg8_base.so
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/nmsg/nmsg_msg9_base.so
 .if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}/html
 	${INSTALL_DATA} ${WRKSRC}/doc/doxygen/html/* ${STAGEDIR}${DOCSDIR}/html

@@ -264,12 +264,11 @@ fix-packlist::
 	-@[ -d ${STAGEDIR}${PREFIX}/${SITE_PERL_REL}/${PERL_ARCH}/auto ] && ${FIND} ${STAGEDIR}${PREFIX}/${SITE_PERL_REL}/${PERL_ARCH}/auto -name .packlist -exec ${SED} -i '' 's|^${STAGEDIR}||' '{}' \;
 .endif
 
-# Starting with perl 5.20, the empty bootstrap files are not installed any
-# more.  As we don't need them anyway, remove it altogether.
-.if ${PERL_LEVEL} < 502000
+# Starting with perl 5.20, the empty bootstrap files are not installed any more
+# by ExtUtils::MakeMaker.  As we don't need them anyway, remove them.
+# Module::Build continues to install them, so remove the files unconditionally.
 fix-perl-bs:
 	-@${FIND} ${STAGEDIR} -name '*.bs' -size 0 -delete
-.endif
 
 .if !target(regression-test)
 TEST_ARGS+=	${MAKE_ARGS}

@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=		ftimes
-PORTVERSION=		3.10.0
-PORTREVISION=		1
+PORTVERSION=		3.11.0
 CATEGORIES=		security sysutils
 MASTER_SITES=		SF
 
@@ -15,13 +14,14 @@ LICENSE_COMB=		multi
 
 GNU_CONFIGURE=		yes
 USES=			perl5 shebangfix tar:tgz
-USE_PERL5=		run build fixpacklist
+USE_PERL5=		run build
 SHEBANG_FILES= \
 			${WRKSRC}/tools/dig/ftimes-crv2dbi.pl \
 			${WRKSRC}/tools/dig/ftimes-crv2raw.pl \
 			${WRKSRC}/tools/dig/ftimes-dig2ctx.pl \
 			${WRKSRC}/tools/dig/ftimes-dig2dbi.pl \
 			${WRKSRC}/tools/dig/hipdig.pl \
+			${WRKSRC}/tools/ftimes-bimvl/ftimes-bimvl \
 			${WRKSRC}/tools/ftimes-cmp2diff/ftimes-cmp2diff \
 			${WRKSRC}/tools/ftimes-dbm-bash/ftimes-dbm-bash \
 			${WRKSRC}/tools/ftimes-dbm-dump/ftimes-dbm-dump \
@@ -67,6 +67,8 @@ CONFIGURE_ARGS+=	--with-pcre=${LOCALBASE}
 
 STRIP_FILES=		${STAGEDIR}${PREFIX}/bin/ftimes
 
+INSTALL_PERL5_LIBS=
+
 .if ${PORT_OPTIONS:MDBM_TOOLS}
 PLIST_SUB+=		DBM_TOOLS=""
 CONFIGURE_ARGS+=	--with-dbm-tools
@@ -78,6 +80,7 @@ PLIST_SUB+=		DBM_TOOLS="@comment "
 PLIST_SUB+=		DIG_TOOLS=""
 CONFIGURE_ARGS+=	--with-dig-tools
 RUN_DEPENDS+=		p5-Digest-SHA1>=0:${PORTSDIR}/security/p5-Digest-SHA1
+INSTALL_PERL5_LIBS=	yes
 .else
 PLIST_SUB+=		DIG_TOOLS="@comment "
 .endif
@@ -100,6 +103,7 @@ PLIST_SUB+=		HASHDIG_TOOLS="@comment "
 PLIST_SUB+=		MAP_TOOLS=""
 CONFIGURE_ARGS+=	--with-map-tools
 STRIP_FILES+=		${STAGEDIR}${PREFIX}/bin/ftimes-cat ${STAGEDIR}${PREFIX}/bin/ftimes-xpa ${STAGEDIR}${PREFIX}/bin/hashcp ${STAGEDIR}${PREFIX}/bin/tarmap
+INSTALL_PERL5_LIBS=	yes
 .else
 PLIST_SUB+=		MAP_TOOLS="@comment "
 .endif
@@ -117,10 +121,18 @@ PLIST_SUB+=		XMAGIC=""
 CONFIGURE_ARGS+=	--enable-xmagic
 .else
 PLIST_SUB+=		XMAGIC="@comment "
+CONFIGURE_ARGS+=	--disable-xmagic
+.endif
+
+.if ${INSTALL_PERL5_LIBS}
+PLIST_SUB+=		FTIMES_PERL5_LIBS=""
+USE_PERL5+=		fixpacklist
+.else
+PLIST_SUB+=		FTIMES_PERL5_LIBS="@comment "
 .endif
 
 post-configure:
-	${PERL5} -pi -e 's/ doc_(perl|site|\$$\(INSTALLDIRS\))_install$$//' ${WRKSRC}/lib/perl/Makefile
+	if [ "${INSTALL_PERL5_LIBS}" = "yes" ] ; then ${PERL5} -pi -e 's/ doc_(perl|site|\$$\(INSTALLDIRS\))_install$$//' ${WRKSRC}/lib/perl/Makefile ; fi
 
 post-install:
 	${STRIP_CMD} ${STRIP_FILES}

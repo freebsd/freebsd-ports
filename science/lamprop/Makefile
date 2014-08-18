@@ -13,9 +13,7 @@ LICENSE=	BSD2CLAUSE
 
 RUN_DEPENDS=	${PYNUMPY}
 
-USES=		zip
-USE_PYTHON=	yes
-PYTHON_VERSION=	python2.7
+USES=		zip python:2.7
 
 do-install:
 	cd ${WRKSRC} && ${MAKE} PREFIX=${STAGEDIR}${PREFIX} install

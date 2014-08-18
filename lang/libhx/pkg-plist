@@ -15,6 +15,6 @@ include/libHX/wx_helper.hpp
 lib/libHX_rtcheck.so
 lib/libHX.so
 lib/libHX.so.28
-lib/libHX.so.28.1.0
+lib/libHX.so.28.3.0
 libdata/pkgconfig/libHX.pc
 @dirrm include/libHX

@@ -12,5 +12,8 @@ share/applications/mpv.desktop
 share/icons/hicolor/16x16/apps/mpv.png
 share/icons/hicolor/32x32/apps/mpv.png
 share/icons/hicolor/64x64/apps/mpv.png
+%%ZSH%%share/zsh/site-functions/_mpv
+%%ZSH%%@dirrmtry share/zsh/site-functions
+%%ZSH%%@dirrmtry share/zsh
 @dirrm include/mpv
 @dirrmtry etc/mpv

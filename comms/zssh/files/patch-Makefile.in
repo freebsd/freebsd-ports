@@ -1,6 +1,15 @@
---- Makefile.in.orig	2013-11-17 23:06:21.000000000 +0800
-+++ Makefile.in	2013-11-17 23:07:02.000000000 +0800
-@@ -75,9 +75,9 @@ ztelnet : $(NAME)
+--- Makefile.in.orig	2003-09-22 22:18:54.000000000 -0400
++++ Makefile.in	2014-08-16 14:26:51.000000000 -0400
+@@ -19,7 +19,7 @@
+ AR		=  @AR@
+ RANLIB		=  @RANLIB@
+ CC		=  @CC@
+-CFLAGS		=  @CFLAGS@ @DEFS@ @EXTRA_CFLAGS@
++CFLAGS		=  @CFLAGS@ @DEFS@ @EXTRA_CFLAGS@ @CPPFLAGS@
+ CPPFLAGS	=  @CPPFLAGS@
+ LIBS		=  @LIBS@  @EXTRA_LIBS@ 
+ LDFLAGS 	=  @LDFLAGS@
+@@ -75,9 +75,9 @@
  
  install :
  	strip $(NAME)

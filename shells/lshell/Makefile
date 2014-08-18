@@ -13,7 +13,6 @@ LICENSE=	GPLv3 # (or later)
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
-INSTALLS_EGGINFO=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e \

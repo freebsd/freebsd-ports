@@ -1266,7 +1266,6 @@
     SUBDIR += matreshka
     SUBDIR += maven-ant-tasks
     SUBDIR += maven-wrapper
-    SUBDIR += maven2
     SUBDIR += maven3
     SUBDIR += maven31
     SUBDIR += mcpp
@@ -1463,6 +1462,7 @@
     SUBDIR += p5-AnyEvent-RPC
     SUBDIR += p5-AnyEvent-Run
     SUBDIR += p5-AnyEvent-Subprocess
+    SUBDIR += p5-AnyEvent-Task
     SUBDIR += p5-AnyEvent-Worker
     SUBDIR += p5-AnyMQ
     SUBDIR += p5-App-Build
@@ -1558,6 +1558,7 @@
     SUBDIR += p5-Cache-Simple-TimedExpiry
     SUBDIR += p5-Cairo-GObject
     SUBDIR += p5-Calendar-Simple
+    SUBDIR += p5-Callback-Frame
     SUBDIR += p5-Capture-Tiny
     SUBDIR += p5-Carp
     SUBDIR += p5-Carp-Always
@@ -1702,6 +1703,7 @@
     SUBDIR += p5-Config-Simple
     SUBDIR += p5-Config-Std
     SUBDIR += p5-Config-Tiny
+    SUBDIR += p5-Config-Versioned
     SUBDIR += p5-Config-Wrest
     SUBDIR += p5-Config-YAML
     SUBDIR += p5-ConfigReader
@@ -2192,6 +2194,7 @@
     SUBDIR += p5-IO-Pager
     SUBDIR += p5-IO-Pipely
     SUBDIR += p5-IO-Prompt
+    SUBDIR += p5-IO-Prompter
     SUBDIR += p5-IO-Prompt-Tiny
     SUBDIR += p5-IO-Prompter
     SUBDIR += p5-IO-Pty-Easy
@@ -2293,6 +2296,7 @@
     SUBDIR += p5-Log-Any-Adapter-Syslog
     SUBDIR += p5-Log-Any-App
     SUBDIR += p5-Log-Contextual
+    SUBDIR += p5-Log-Defer
     SUBDIR += p5-Log-Dispatch
     SUBDIR += p5-Log-Dispatch-Array
     SUBDIR += p5-Log-Dispatch-Colorful
@@ -2994,6 +2998,7 @@
     SUBDIR += p5-Test-Without-Module
     SUBDIR += p5-Test-XML
     SUBDIR += p5-Test-XML-Valid
+    SUBDIR += p5-Test-YAML
     SUBDIR += p5-Test-YAML-Meta
     SUBDIR += p5-Test-YAML-Valid
     SUBDIR += p5-Test-use-ok
@@ -4373,6 +4378,7 @@
     SUBDIR += rubygem-launchy
     SUBDIR += rubygem-launchy22
     SUBDIR += rubygem-librarian
+    SUBDIR += rubygem-libyajl2
     SUBDIR += rubygem-listen
     SUBDIR += rubygem-little_plugger
     SUBDIR += rubygem-locale

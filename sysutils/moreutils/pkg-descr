@@ -10,6 +10,7 @@ Currently it consists of these tools:
 - isutf8: check if a file or standard input is utf-8
 - lckdo: execute a program with a lock held (deprecated)
 - mispipe: pipe two commands, returning the exit status of the first
+- parallel: run multiple jobs at once
 - pee: tee standard input to pipes
 - sponge: soak up standard input and write to a file
 - ts: timestamp standard input
@@ -17,6 +18,6 @@ Currently it consists of these tools:
 - vipe: insert a text editor into a pipe
 - zrun: automatically uncompress arguments to command
 
-The 'parallel' utility is split into sysutils/moreutils-parallel.
+Note that the parallel utility is installed as moreutils-parallel.
 
 WWW: http://joeyh.name/code/moreutils/

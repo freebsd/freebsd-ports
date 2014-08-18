@@ -6,7 +6,7 @@ PORTVERSION=	0.18.2
 PORTREVISION=	3
 CATEGORIES=	devel
 
-MAINTAINER= ports@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Append-only low-level I/O library
 
 LICENSE=	GPLv2
@@ -25,7 +25,6 @@ OPTIONS_DEFINE=	ASSERT PYTHON SNAPPY EXAMPLES TESTS
 OPTIONS_DEFAULT=PYTHON SNAPPY EXAMPLES TESTS
 TESTS_DESC=	Build tests
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MASSERT}
@@ -36,11 +35,9 @@ CMAKE_ARGS+=	-DWITH_ASSERTS=OFF
 
 .if ${PORT_OPTIONS:MPYTHON}
 LIB_DEPENDS+=	libboost_python.so:${PORTSDIR}/devel/boost-python-libs
-USE_PYTHON=	yes
+USES+=		python
 CMAKE_ARGS+=	-DWITH_PYTHON=ON
-INSTALLS_EGGINFO=	yes
-PYDISTUTILS_PKGVERSION=	0.0.1
-PLIST_SUB+=	PYTHON=""
+PLIST_SUB+=	PYTHON="" PYTHON_VER=${PYTHON_VER}
 .else
 CMAKE_ARGS+=	-DWITH_PYTHON=OFF
 PLIST_SUB+=	PYTHON="@comment "
@@ -70,6 +67,9 @@ CMAKE_ARGS+=	-DWITH_TESTS=OFF
 post-patch:
 .if ! ${PORT_OPTIONS:MPYTHON}
 	@${REINPLACE_CMD} -e 's, python),),' ${WRKSRC}/CMakeLists.txt
+.else
+	@${REINPLACE_CMD} -e 's,$$ENV{DESTDIR},${STAGEDIR},' \
+		${WRKSRC}/bindings/python/python/CMakeLists.txt
 .endif
 	@${REINPLACE_CMD} -e 's, -fstack-protector-all,,' \
 		${WRKSRC}/CMakeLists.txt

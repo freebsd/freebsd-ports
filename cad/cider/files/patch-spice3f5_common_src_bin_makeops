@@ -1,0 +1,169 @@
+--- spice3f5/common/src/bin/makeops.orig	1994-01-31 02:14:05 UTC
++++ spice3f5/common/src/bin/makeops
+@@ -39,20 +39,20 @@ $(SPICE_EXEC_DIR):
+ 	mkdir $(SPICE_EXEC_DIR)
+ 
+ spice3.o: main.c $(SRC_TOP)/include/patchlev.h $(SYS_CONF)/$(OBJECTIVE)-cc
+-	$(CC) -c $(CFLAGS) $(INCLUDE) -DSIMULATOR $(SRC_DIR)/main.c $(ASM_HACK)
++	$(REAL_CC) -c $(REAL_CFLAGS) $(INCLUDE) -DSIMULATOR $(SRC_DIR)/main.c $(ASM_HACK)
+ 	mv -f main.o $@
+ 
+ bspice.o: main.c $(SRC_TOP)/include/patchlev.h $(SYS_CONF)/$(OBJECTIVE)-cc
+-	$(CC) -c $(CFLAGS) $(INCLUDE) -DSIMULATOR -DBATCH $(SRC_DIR)/main.c $(ASM_HACK)
++	$(REAL_CC) -c $(REAL_CFLAGS) $(INCLUDE) -DSIMULATOR -DBATCH $(SRC_DIR)/main.c $(ASM_HACK)
+ 	mv -f main.o $@
+ 
+ cspice.o: main.c $(SRC_TOP)/include/patchlev.h $(SYS_CONF)/$(OBJECTIVE)-cc
+-	$(CC) -c $(CFLAGS) $(INCLUDE) -DSIMULATOR -DBATCH -DSPICE2 $(SRC_DIR)/main.c \
++	$(REAL_CC) -c $(REAL_CFLAGS) $(INCLUDE) -DSIMULATOR -DBATCH -DSPICE2 $(SRC_DIR)/main.c \
+ 		$(ASM_HACK)
+ 	mv -f main.o $@
+ 
+ nutmeg.o: main.c $(SRC_TOP)/include/patchlev.h $(SYS_CONF)/$(OBJECTIVE)-cc
+-	$(CC) -c $(CFLAGS) $(INCLUDE) $(SRC_DIR)/main.c $(ASM_HACK)
++	$(REAL_CC) -c $(REAL_CFLAGS) $(INCLUDE) $(SRC_DIR)/main.c $(ASM_HACK)
+ 	mv -f main.o $@
+ 
+ conf.c: config.c $(SYS_CONF)/$(OBJECTIVE)
+@@ -63,7 +63,7 @@ conf.c: config.c $(SYS_CONF)/$(OBJECTIVE
+ 	chmod -w "$@"
+ 
+ cconf.o: $(OBJ_DIR)/cconf.c
+-	$(CC) -c $(CFLAGS) $(INCLUDE) -DSIMULATOR $(OBJ_DIR)/cconf.c $(ASM_HACK)
++	$(REAL_CC) -c $(REAL_CFLAGS) $(INCLUDE) -DSIMULATOR $(OBJ_DIR)/cconf.c $(ASM_HACK)
+ 
+ bconf.c: config.c $(SYS_CONF)/$(OBJECTIVE)
+ 	@echo Creating "$@": ; rm -f "$@"
+@@ -73,7 +73,7 @@ bconf.c: config.c $(SYS_CONF)/$(OBJECTIV
+ 	chmod -w "$@"
+ 
+ bconf.o: $(OBJ_DIR)/bconf.c
+-	$(CC) -c $(CFLAGS) $(INCLUDE) -DSIMULATOR $(OBJ_DIR)/bconf.c $(ASM_HACK)
++	$(REAL_CC) -c $(REAL_CFLAGS) $(INCLUDE) -DSIMULATOR $(OBJ_DIR)/bconf.c $(ASM_HACK)
+ 
+ cconf.c: config.c $(SYS_CONF)/$(OBJECTIVE)
+ 	@echo Creating "$@": ; rm -f "$@"
+@@ -97,13 +97,13 @@ nconf.c: nconfig.c $(SYS_CONF)/$(OBJECTI
+ 	chmod -w "$@"
+ 
+ $(TUNEFILE).o: $(TUNEFILE).c
+-	${CC} ${CFLAGS} ${INCLUDE} -c $(TUNEFILE).c $(ASM_HACK)
++	${REAL_CC} ${REAL_CFLAGS} ${INCLUDE} -c $(TUNEFILE).c $(ASM_HACK)
+ 
+ nconf.o: nconf.c
+-	${CC} ${CFLAGS} ${INCLUDE} -c nconf.c $(ASM_HACK)
++	${REAL_CC} ${REAL_CFLAGS} ${INCLUDE} -c nconf.c $(ASM_HACK)
+ 
+ conf.o: conf.c
+-	${CC} ${CFLAGS} ${INCLUDE} -c conf.c $(ASM_HACK)
++	${REAL_CC} ${REAL_CFLAGS} ${INCLUDE} -c conf.c $(ASM_HACK)
+ 
+ $(TUNEFILE).c: $(SYS_CONF)/$(OBJECTIVE)
+ 	@echo "Creating $(TUNEFILE).c";					      \
+@@ -122,14 +122,14 @@ $(TUNEFILE).c: $(SYS_CONF)/$(OBJECTIVE)
+ 	chmod -w "$@"
+ 
+ help.o: help.c $(SYS_CONF)/$(OBJECTIVE) $(SYS_CONF)/$(OBJECTIVE)-cc
+-	$(CC) $(CFLAGS) $(INTERFACE_OPTS) $(INCX) \
++	$(REAL_CC) $(REAL_CFLAGS) $(INTERFACE_OPTS) $(INCX) \
+ 	-c $(INCLUDE) $(SRC_DIR)/help.c $(ASM_HACK)
+ 
+ spiced.o: spiced.c $(SYS_CONF)/$(OBJECTIVE) $(SYS_CONF)/$(OBJECTIVE)-cc
+-	$(CC) $(CFLAGS) -c $(INCLUDE) $(SRC_DIR)/spiced.c $(ASM_HACK)
++	$(REAL_CC) $(REAL_CFLAGS) -c $(INCLUDE) $(SRC_DIR)/spiced.c $(ASM_HACK)
+ 
+ multidec.o: multidec.c $(SYS_CONF)/$(OBJECTIVE)-cc
+-	$(CC) $(CFLAGS) -c $(INCLUDE) $(SRC_DIR)/multidec.c $(ASM_HACK)
++	$(REAL_CC) $(REAL_CFLAGS) -c $(INCLUDE) $(SRC_DIR)/multidec.c $(ASM_HACK)
+ 
+ LIB	= $(OBJLIB_DIR)
+ 
+@@ -138,45 +138,45 @@ LIBS	= $(LIB)/fte.a $(LIB)/dev.a $(LIB)/
+ 	$(LIB)/misc.a $(LIBTCGMSG)
+ spice3: spice3.o $(LIBS) conf.o $(TUNEFILE).o $(SYS_CONF)/$(OBJECTIVE)-ld
+ 	-@rm -f spice3
+-	$(CC) -o $@ spice3.o conf.o $(TUNEFILE).o $(LIBS) $(LIBX) $(LDFLAGS)
++	$(REAL_CC) -o $@ spice3.o conf.o $(TUNEFILE).o $(LIBS) $(LIBX) $(LDFLAGS)
+ 
+ spice3m: spice3.o $(LIBS) conf.o $(TUNEFILE).o $(SYS_CONF)/$(OBJECTIVE)-ld
+ 	-@rm -f spice3m
+-	$(CC) -o $@ spice3.o conf.o $(TUNEFILE).o $(LIBS) $(LIBX) $(LDFLAGS) \
++	$(REAL_CC) -o $@ spice3.o conf.o $(TUNEFILE).o $(LIBS) $(LIBX) $(LDFLAGS) \
+ 		/users/beorn/malloc.a
+ 
+ spice3mp: spice3.o $(LIBS) conf.o $(TUNEFILE).o $(SYS_CONF)/$(OBJECTIVE)-ld
+ 	-@rm -f spice3mp
+-	$(CC) -o $@ spice3.o conf.o $(TUNEFILE).o $(LIBS) $(LIBX) $(LDFLAGS) \
++	$(REAL_CC) -o $@ spice3.o conf.o $(TUNEFILE).o $(LIBS) $(LIBX) $(LDFLAGS) \
+ 		/users/beorn/mprof/libc_mp.a
+ 
+ spice3mp2: spice3.o $(LIBS) conf.o $(TUNEFILE).o $(SYS_CONF)/$(OBJECTIVE)-ld
+ 	-@rm -f spice3mp
+-	$(CC) -o $@ spice3.o conf.o $(TUNEFILE).o $(LIBS) $(LIBX) $(LDFLAGS) \
++	$(REAL_CC) -o $@ spice3.o conf.o $(TUNEFILE).o $(LIBS) $(LIBX) $(LDFLAGS) \
+ 		/users/beorn/libc_mp.a
+ 
+ LIBB	= $(LIB)/fte.a $(LIB)/cp.a $(LIB)/dev.a $(LIB)/ckt.a \
+ 	$(LIB)/inp.a $(LIB)/ni.a $(LIB)/$(SPARSELIB).a $(LIB)/misc.a
+ bspice: bspice.o $(LIBB) bconf.o $(TUNEFILE).o $(SYS_CONF)/$(OBJECTIVE)-ld
+ 	@-rm -f bspice
+-	$(CC) -o $@ bspice.o bconf.o $(TUNEFILE).o $(LIBB) $(LDFLAGS)
++	$(REAL_CC) -o $@ bspice.o bconf.o $(TUNEFILE).o $(LIBB) $(LDFLAGS)
+ 
+ bspicem: bspice.o $(LIBB) bconf.o $(TUNEFILE).o $(SYS_CONF)/$(OBJECTIVE)-ld
+ 	@-rm -f bspice
+-	$(CC) -o $@ bspice.o bconf.o $(TUNEFILE).o $(LIBB) $(LDFLAGS) \
++	$(REAL_CC) -o $@ bspice.o bconf.o $(TUNEFILE).o $(LIBB) $(LDFLAGS) \
+ 		/users/beorn/malloc.a
+ 
+ LIBC	= $(LIB)/fte.a $(LIB)/cp.a $(LIB)/dev.a $(LIB)/ckt.a \
+ 	$(LIB)/inp.a $(LIB)/ni.a $(LIB)/$(SPARSELIB).a $(LIB)/misc.a
+ cspice: cspice.o $(LIBC) cconf.o $(TUNEFILE).o $(SYS_CONF)/$(OBJECTIVE)-ld
+ 	@-rm -f cspice
+-	$(CC) -o $@ cspice.o cconf.o $(TUNEFILE).o $(LIBC) $(LDFLAGS)
++	$(REAL_CC) -o $@ cspice.o cconf.o $(TUNEFILE).o $(LIBC) $(LDFLAGS)
+ 
+ LIBN	= $(LIB)/fte.a $(LIB)/cp.a $(LIB)/hlp.a  $(LIB)/mfb.a $(LIB)/misc.a   \
+ 	$(LIBTCGMSG)
+ nutmeg:	nutmeg.o $(LIBN) nconf.o $(TUNEFILE).o $(SYS_CONF)/$(OBJECTIVE)-ld
+ 	@-rm -f nutmeg
+-	$(CC) -o $@ nutmeg.o nconf.o $(TUNEFILE).o $(LIBN) $(LIBX) $(LDFLAGS)
++	$(REAL_CC) -o $@ nutmeg.o nconf.o $(TUNEFILE).o $(LIBN) $(LIBX) $(LDFLAGS)
+ 
+ # old LIBSC= $(LIB)/fte.a $(LIB)/cp.a $(LIB)/fte.a $(LIB)/inp.a $(LIB)/misc.a
+ LIBSC	= $(LIB)/misc.a $(LIBTCGMSG)
+@@ -186,28 +186,28 @@ SCFILES	= $(LIB)/fte/rawfile.o $(LIB)/ft
+ 	  $(LIB)/cp/variable.o $(LIB)/cp/var2.o $(LIB)/fte/dimens.o
+ sconvert: sconvert.o $(SCFILES) $(LIBSC) $(SYS_CONF)/$(OBJECTIVE)-ld
+ 	@-rm -f sconvert
+-	$(CC) -o $@ sconvert.o $(SCFILES) $(LIBSC) $(LDFLAGS)
++	$(REAL_CC) -o $@ sconvert.o $(SCFILES) $(LIBSC) $(LDFLAGS)
+ 
+ LIBP2M	= $(LIB)/cp.a $(LIB)/inp.a $(LIB)/misc.a
+ proc2mod: proc2mod.o $(LIBP2M) $(SYS_CONF)/$(OBJECTIVE)-ld
+ 	@-rm -f proc2mod
+-	$(CC) -o $@ proc2mod.o $(LIBP2M) $(LDFLAGS)
++	$(REAL_CC) -o $@ proc2mod.o $(LIBP2M) $(LDFLAGS)
+ 
+ LIBH	= $(LIB)/hlp.a $(LIB)/cp.a $(LIB)/misc.a
+ help: help.o $(LIBH) $(TUNEFILE).o
+ 	@-rm -f help
+-	$(CC) -o $@ help.o $(LIBH) $(LIBX) $(LDFLAGS) $(TUNEFILE).o
++	$(REAL_CC) -o $@ help.o $(LIBH) $(LIBX) $(LDFLAGS) $(TUNEFILE).o
+ 
+ makeidx: makeidx.o $(LIB)/misc.a
+ 	@-rm -f makeidx
+-	$(CC) -o $@ makeidx.o $(LIB)/misc.a
++	$(REAL_CC) -o $@ makeidx.o $(LIB)/misc.a
+ 
+ LIBSD	= $(LIB)/misc.a
+ spiced: spiced.o $(LIBSD) $(TUNEFILE).o
+ 	@-rm -f spiced
+-	$(CC) -o $@ spiced.o $(LIBSD) $(TUNEFILE).o
++	$(REAL_CC) -o $@ spiced.o $(LIBSD) $(TUNEFILE).o
+ 
+ LIBMD	= $(LIB)/sparse.a $(LIB)/misc.a
+ multidec: multidec.o $(LIBMD) $(SYS_CONF)/$(OBJECTIVE)-ld
+ 	@-rm -f $@
+-	$(CC) -o $@ multidec.o $(LIBMD) $(LDFLAGS) $(GETOPTLIB)
++	$(REAL_CC) -o $@ multidec.o $(LIBMD) $(LDFLAGS) $(GETOPTLIB)

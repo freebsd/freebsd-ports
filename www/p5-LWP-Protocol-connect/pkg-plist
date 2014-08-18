@@ -1,0 +1,16 @@
+%%PERL5_MAN3%%/LWP::Protocol::connect.3.gz
+%%SITE_PERL%%/LWP/Protocol/connect.pm
+%%SITE_PERL%%/LWP/Protocol/connect/Socket/Base.pm
+%%SITE_PERL%%/LWP/Protocol/http/connect.pm
+%%SITE_PERL%%/LWP/Protocol/http/connect/Socket.pm
+%%SITE_PERL%%/LWP/Protocol/https/connect.pm
+%%SITE_PERL%%/LWP/Protocol/https/connect/Socket.pm
+%%SITE_PERL%%/URI/connect.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/LWP/Protocol/connect/.packlist
+@dirrmtry %%SITE_PERL%%/LWP/Protocol/connect/Socket
+@dirrmtry %%SITE_PERL%%/LWP/Protocol/connect
+@dirrmtry %%SITE_PERL%%/LWP/Protocol/http/connect
+@dirrmtry %%SITE_PERL%%/LWP/Protocol/http
+@dirrmtry %%SITE_PERL%%/LWP/Protocol/https/connect
+@dirrmtry %%SITE_PERL%%/LWP/Protocol/https
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/LWP/Protocol/connect

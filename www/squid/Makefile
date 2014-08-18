@@ -111,6 +111,9 @@ PATCHFILES=	SQUID-2012_1.patch
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	HTTP Caching Proxy
 
+DEPRECATED=	Reach EOL on 14 Aug 2012
+EXPIRATION_DATE=2014-09-15
+
 SQUID_STABLE_VER=	9
 
 CONFLICTS_INSTALL=	squid-2.[^7]* squid3?-* cacheboy-[0-9]* lusca-head-[0-9]*

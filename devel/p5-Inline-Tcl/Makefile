@@ -17,7 +17,7 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USES=		perl5 tcl
 USE_PERL5=	configure
 CONFIGURE_ARGS=	INC="-I${TCL_INCLUDEDIR}" \
-		LIBS="-L${TCL_LIBDIR} -R${TCL_LIBDIR} -ltcl${TCL_SHLIB_VER}"
+		LIBS="-L${TCL_LIBDIR} -Wl,-rpath,${TCL_LIBDIR} -ltcl${TCL_SHLIB_VER}"
 
 post-patch:
 	@${REINPLACE_CMD} -i.bak '2,99d' ${WRKSRC}/Makefile.PL

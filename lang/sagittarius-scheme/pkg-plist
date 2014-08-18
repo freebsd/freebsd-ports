@@ -1,5 +1,6 @@
 bin/%%PORTNAME%%-config
 bin/%%PORTNAME%%-package
+bin/%%PORTNAME%%
 bin/sash
 lib/lib%%PORTNAME%%.so
 lib/%%PORTNAME%%/%%PORTVERSION%%/include/%%PORTNAME%%.h
@@ -53,6 +54,7 @@ lib/%%PORTNAME%%/%%PORTVERSION%%/include/%%PORTNAME%%/values.h
 lib/%%PORTNAME%%/%%PORTVERSION%%/include/%%PORTNAME%%/vector.h
 lib/%%PORTNAME%%/%%PORTVERSION%%/include/%%PORTNAME%%/vm.h
 lib/%%PORTNAME%%/%%PORTVERSION%%/include/%%PORTNAME%%/weak.h
+lib/%%PORTNAME%%/%%PORTVERSION%%/include/%%PORTNAME%%/win-compat.h
 lib/%%PORTNAME%%/%%PORTVERSION%%/include/%%PORTNAME%%/writer.h
 lib/%%PORTNAME%%/%%PORTVERSION%%/%%PLIST_ARCH%%-pc-freebsd/lib%%PORTNAME%%.so
 lib/%%PORTNAME%%/%%PORTVERSION%%/%%PLIST_ARCH%%-pc-freebsd/%%PORTNAME%%--crypto.so
@@ -66,467 +68,497 @@ lib/%%PORTNAME%%/%%PORTVERSION%%/%%PLIST_ARCH%%-pc-freebsd/%%PORTNAME%%--time.so
 lib/%%PORTNAME%%/%%PORTVERSION%%/%%PLIST_ARCH%%-pc-freebsd/%%PORTNAME%%--zlib.so
 lib/%%PORTNAME%%/%%PORTVERSION%%/%%PLIST_ARCH%%-pc-freebsd/%%PORTNAME%%-config
 lib/%%PORTNAME%%/%%PORTVERSION%%/%%PLIST_ARCH%%-pc-freebsd/%%PORTNAME%%-package
-lib/%%PORTNAME%%/%%PORTVERSION%%/%%PLIST_ARCH%%-pc-freebsd/sash
+lib/%%PORTNAME%%/%%PORTVERSION%%/%%PLIST_ARCH%%-pc-freebsd/sagittarius
 libdata/pkgconfig/%%PORTNAME%%-%%PORTVERSION%%.pc
 libdata/pkgconfig/%%PORTNAME%%.pc
-share/%%PORTNAME%%/%%PORTVERSION%%/CMakeLists.txt.template
-share/%%PORTNAME%%/%%PORTVERSION%%/cmake/addstub.cmake
-share/%%PORTNAME%%/%%PORTVERSION%%/cmake_uninstall.cmake.in
-share/%%PORTNAME%%/%%PORTVERSION%%/doc/lib/style.css
-share/%%PORTNAME%%/%%PORTVERSION%%/doc/lib/tools.js
-share/%%PORTNAME%%/%%PORTVERSION%%/doc/lib/trees.png
-share/%%PORTNAME%%/%%PORTVERSION%%/doc/%%PORTNAME%%-ref.html
-share/%%PORTNAME%%/%%PORTVERSION%%/lib/clos/core.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/lib/clos/user.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/lib/compat/r7rs.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/lib/core/conditions.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/lib/core/enums.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/lib/core/exceptions.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/lib/core/inline.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/lib/core/io.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/lib/core/misc.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/lib/core/r5rs.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/lib/core/record.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/lib/core/record/procedural.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/lib/core/syntax.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/lib/crypto.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/lib/crypto/cipher.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/lib/crypto/key.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/lib/crypto/key/component.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/lib/crypto/key/des.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/lib/crypto/key/dsa.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/lib/crypto/key/pair.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/lib/crypto/key/rsa.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/lib/crypto/mac.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/lib/crypto/pkcs.scm
-%%ODBC%%share/%%PORTNAME%%/%%PORTVERSION%%/lib/dbd/odbc.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/lib/math.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/lib/math/hash.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/lib/math/helper.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/lib/math/prime.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/lib/math/random.scm
-%%ODBC%%share/%%PORTNAME%%/%%PORTVERSION%%/lib/odbc.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/lib/rfc/zlib.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/lib/rnrs.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/lib/rnrs/arithmetic/bitwise.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/lib/rnrs/arithmetic/fixnums.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/lib/rnrs/arithmetic/flonums.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/lib/rnrs/base.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/lib/rnrs/bytevectors.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/lib/rnrs/conditions.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/lib/rnrs/control.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/lib/rnrs/enums.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/lib/rnrs/eval.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/lib/rnrs/exceptions.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/lib/rnrs/files.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/lib/rnrs/hashtables.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/lib/rnrs/io/ports.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/lib/rnrs/io/simple.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/lib/rnrs/lists.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/lib/rnrs/mutable-pairs.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/lib/rnrs/mutable-strings.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/lib/rnrs/programs.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/lib/rnrs/r5rs.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/lib/rnrs/records/inspection.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/lib/rnrs/records/procedural.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/lib/rnrs/records/syntactic.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/lib/rnrs/sorting.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/lib/rnrs/syntax-case.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/lib/rnrs/unicode.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/lib/%%PORTNAME%%/crypto.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/lib/%%PORTNAME%%/dynamic-module.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/lib/%%PORTNAME%%/ffi.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/lib/%%PORTNAME%%/interactive.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/lib/%%PORTNAME%%/math.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/lib/%%PORTNAME%%/mop/allocation.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/lib/%%PORTNAME%%/mop/eql.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/lib/%%PORTNAME%%/mop/validator.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/lib/%%PORTNAME%%/object.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/lib/%%PORTNAME%%/parameters.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/lib/%%PORTNAME%%/process.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/lib/%%PORTNAME%%/regex.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/lib/%%PORTNAME%%/socket.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/lib/%%PORTNAME%%/threads.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/lib/%%PORTNAME%%/time.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/lib/srfi/%3a106.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/lib/srfi/%3a106/socket.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/lib/srfi/%3a18.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/lib/srfi/%3a18/multithreading.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/lib/srfi/%3a19.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/lib/srfi/%3a19/time.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/lib/srfi/106.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/lib/srfi/18.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/lib/srfi/19.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/lib/win32/common-control.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/lib/win32/common-dialog.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/lib/win32/defs.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/lib/win32/gdi.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/lib/win32/kernel.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/lib/win32/user.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/apropos.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/archive.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/archive/core/tar.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/archive/core/zip.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/archive/interface.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/archive/tar.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/archive/zip.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/asn.1.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/asn.1/ber/types.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/asn.1/compiler.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/asn.1/der/encode.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/asn.1/der/tags.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/asn.1/encode.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/asn.1/lexer.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/asn.1/parser.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/asn.1/parser.y
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/asn.1/reader.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/asn.1/types.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/binary/data.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/binary/pack-aux.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/binary/pack.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/curly-infix.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/dbi.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/dbm.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/dbm/dumb.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/dbm/private.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/encoding/decoder.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/encoding/euc-jp.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/encoding/sjis.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/encoding/table/euc-utf16.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/encoding/table/jis-utf16.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/encoding/table/sjis-utf16.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/encoding/util.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/getopt.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/json.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/lalr.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/match.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/math/mt-random.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/net/oauth.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/net/oauth/consumer.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/net/oauth/misc.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/net/oauth/parameters.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/net/oauth/provider.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/net/oauth/query-string.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/net/oauth/request-adapter.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/net/oauth/signature.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/net/oauth/token.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/packrat.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/pp.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/rfc/%3a5322.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/rfc/base64.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/rfc/cmac.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/rfc/ftp.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/rfc/ftp/client.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/rfc/ftp/messages.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/rfc/gzip.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/rfc/hmac.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/rfc/http.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/rfc/mime.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/rfc/pem.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/rfc/quoted-printable.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/rfc/ssh.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/rfc/ssh/auth.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/rfc/ssh/connection.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/rfc/ssh/constants.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/rfc/ssh/transport.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/rfc/ssh/types.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/rfc/tls.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/rfc/tls/constant.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/rfc/tls/port.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/rfc/tls/socket.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/rfc/tls/types.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/rfc/uri.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/rfc/uuid.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/rfc/x.509.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/rpc/json.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/rpc/message.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/rpc/transport/http.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/rsa/pkcs/%3a12.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/rsa/pkcs/%3a12/cipher.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/rsa/pkcs/%3a12/keystore.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/rsa/pkcs/%3a5.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/%%PORTNAME%%/aspect.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/%%PORTNAME%%/cgen.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/%%PORTNAME%%/cgen/cise.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/%%PORTNAME%%/cgen/literal.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/%%PORTNAME%%/cgen/precomp.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/%%PORTNAME%%/cgen/stub.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/%%PORTNAME%%/cgen/syntax.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/%%PORTNAME%%/cgen/type.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/%%PORTNAME%%/cgen/unit.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/%%PORTNAME%%/control.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/%%PORTNAME%%/debug.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/%%PORTNAME%%/document/html.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/%%PORTNAME%%/interactive/support.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/%%PORTNAME%%/io.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/%%PORTNAME%%/misc.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/%%PORTNAME%%/partcont.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/%%PORTNAME%%/reader.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/%%PORTNAME%%/record.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/%%PORTNAME%%/remote-repl.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/%%PORTNAME%%/test.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/%%PORTNAME%%/test/helper.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/%%PORTNAME%%/vm/profiler.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/scheme/base.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/scheme/boxes.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/scheme/case-lambda.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/scheme/char.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/scheme/complex.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/scheme/cxr.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/scheme/eval.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/scheme/file.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/scheme/inexact.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/scheme/inquiry.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/scheme/lazy.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/scheme/load.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/scheme/private.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/scheme/process-context.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/scheme/r5rs.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/scheme/read.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/scheme/repl.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/scheme/time.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/scheme/write.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/scribble.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/scribble/convert.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/scribble/parser.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/scribble/plugin.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/shorten.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/slib/alist.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/slib/qp.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/slib/queue.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/slib/trace.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/srfi/%3a0.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/srfi/%3a0/cond-expand.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/srfi/%3a1.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/srfi/%3a1/lists.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/srfi/%3a105.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/srfi/%3a110.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/srfi/%3a110/kernel.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/srfi/%3a110/t-expression.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/srfi/%3a111.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/srfi/%3a111/boxes.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/srfi/%3a112.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/srfi/%3a112/inquiry.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/srfi/%3a13.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/srfi/%3a13/strings.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/srfi/%3a14.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/srfi/%3a14/char-set.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/srfi/%3a14/char-sets.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/srfi/%3a17.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/srfi/%3a17/generalized-set!.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/srfi/%3a2.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/srfi/%3a2/and-let%2a.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/srfi/%3a23.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/srfi/%3a23/error.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/srfi/%3a25.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/srfi/%3a25/multi-dimensional-arrays.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/srfi/%3a25/srfi-25-reference.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/srfi/%3a26.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/srfi/%3a26/cut.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/srfi/%3a27.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/srfi/%3a27/random-bits.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/srfi/%3a29.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/srfi/%3a29/format.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/srfi/%3a29/localization.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/srfi/%3a31.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/srfi/%3a31/rec.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/srfi/%3a37.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/srfi/%3a37/args-fold.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/srfi/%3a38.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/srfi/%3a38/with-shared-structure.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/srfi/%3a39.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/srfi/%3a39/parameters.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/srfi/%3a4.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/srfi/%3a41.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/srfi/%3a41/streams.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/srfi/%3a41/streams/derived.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/srfi/%3a41/streams/primitive.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/srfi/%3a42.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/srfi/%3a42/eager-comprehensions.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/srfi/%3a43.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/srfi/%3a43/vectors.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/srfi/%3a45.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/srfi/%3a45/lazy.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/srfi/%3a49.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/srfi/%3a5.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/srfi/%3a5/let.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/srfi/%3a6.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/srfi/%3a6/basic-string-ports.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/srfi/%3a64.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/srfi/%3a64/testing.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/srfi/%3a78.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/srfi/%3a78/lightweight-testing.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/srfi/%3a8.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/srfi/%3a8/receive.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/srfi/%3a86.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/srfi/%3a86/mu-and-nu.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/srfi/%3a9.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/srfi/%3a9/records.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/srfi/%3a98.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/srfi/%3a98/os-environment-variables.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/srfi/0.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/srfi/1.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/srfi/105.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/srfi/110.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/srfi/111.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/srfi/112.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/srfi/13.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/srfi/14.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/srfi/17.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/srfi/2.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/srfi/23.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/srfi/25.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/srfi/26.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/srfi/27.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/srfi/29.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/srfi/31.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/srfi/37.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/srfi/38.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/srfi/39.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/srfi/4.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/srfi/41.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/srfi/42.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/srfi/43.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/srfi/45.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/srfi/49.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/srfi/5.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/srfi/6.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/srfi/64.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/srfi/78.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/srfi/8.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/srfi/86.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/srfi/9.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/srfi/98.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/sweet.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/text/csv.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/text/html-lite.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/text/markdown.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/text/markdown/convert.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/text/markdown/parser.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/text/parse.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/text/sxml/helper.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/text/sxml/html.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/text/sxml/htmlprag.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/text/sxml/private/to-html-ext.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/text/sxml/private/to-html.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/text/sxml/serializer.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/text/sxml/ssax.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/text/sxml/sxpath.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/text/sxml/sxpath/private.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/text/sxml/tools.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/text/sxml/tree-trans.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/text/sxml/txpath-parser.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/text/tree.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/time.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/tlv.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/trace.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/util/bytevector.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/util/file.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/util/hashtables.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/util/list.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/util/port.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/www/cgi.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/www/fastcgi.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/template.c
-share/%%PORTNAME%%/%%PORTVERSION%%/template.h
-share/%%PORTNAME%%/%%PORTVERSION%%/template.scm
-share/%%PORTNAME%%/%%PORTVERSION%%/template.stub
-@dirrmtry share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/www
-@dirrmtry share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/util
-@dirrmtry share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/text/sxml/sxpath
-@dirrmtry share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/text/sxml/private
-@dirrmtry share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/text/sxml
-@dirrmtry share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/text/markdown
-@dirrmtry share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/text
-@dirrmtry share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/srfi/%3a98
-@dirrmtry share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/srfi/%3a9
-@dirrmtry share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/srfi/%3a86
-@dirrmtry share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/srfi/%3a8
-@dirrmtry share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/srfi/%3a78
-@dirrmtry share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/srfi/%3a64
-@dirrmtry share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/srfi/%3a6
-@dirrmtry share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/srfi/%3a5
-@dirrmtry share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/srfi/%3a45
-@dirrmtry share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/srfi/%3a43
-@dirrmtry share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/srfi/%3a42
-@dirrmtry share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/srfi/%3a41/streams
-@dirrmtry share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/srfi/%3a41
-@dirrmtry share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/srfi/%3a39
-@dirrmtry share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/srfi/%3a38
-@dirrmtry share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/srfi/%3a37
-@dirrmtry share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/srfi/%3a31
-@dirrmtry share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/srfi/%3a29
-@dirrmtry share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/srfi/%3a27
-@dirrmtry share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/srfi/%3a26
-@dirrmtry share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/srfi/%3a25
-@dirrmtry share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/srfi/%3a23
-@dirrmtry share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/srfi/%3a2
-@dirrmtry share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/srfi/%3a17
-@dirrmtry share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/srfi/%3a14
-@dirrmtry share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/srfi/%3a13
-@dirrmtry share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/srfi/%3a112
-@dirrmtry share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/srfi/%3a111
-@dirrmtry share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/srfi/%3a110
-@dirrmtry share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/srfi/%3a1
-@dirrmtry share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/srfi/%3a0
-@dirrmtry share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/srfi
-@dirrmtry share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/slib
-@dirrmtry share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/scribble
-@dirrmtry share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/scheme
-@dirrmtry share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/%%PORTNAME%%/vm
-@dirrmtry share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/%%PORTNAME%%/test
-@dirrmtry share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/%%PORTNAME%%/interactive
-@dirrmtry share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/%%PORTNAME%%/document
-@dirrmtry share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/%%PORTNAME%%/cgen
-@dirrmtry share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/%%PORTNAME%%
-@dirrmtry share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/rsa/pkcs/%3a12
-@dirrmtry share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/rsa/pkcs
-@dirrmtry share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/rsa
-@dirrmtry share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/rpc/transport
-@dirrmtry share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/rpc
-@dirrmtry share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/rfc/tls
-@dirrmtry share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/rfc/ssh
-@dirrmtry share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/rfc/ftp
-@dirrmtry share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/rfc
-@dirrmtry share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/net/oauth
-@dirrmtry share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/net
-@dirrmtry share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/math
-@dirrmtry share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/encoding/table
-@dirrmtry share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/encoding
-@dirrmtry share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/dbm
-@dirrmtry share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/binary
-@dirrmtry share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/asn.1/der
-@dirrmtry share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/asn.1/ber
-@dirrmtry share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/asn.1
-@dirrmtry share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/archive/core
-@dirrmtry share/%%PORTNAME%%/%%PORTVERSION%%/sitelib/archive
-@dirrmtry share/%%PORTNAME%%/%%PORTVERSION%%/sitelib
-@dirrmtry share/%%PORTNAME%%/%%PORTVERSION%%/lib/win32
-@dirrmtry share/%%PORTNAME%%/%%PORTVERSION%%/lib/srfi/%3a19
-@dirrmtry share/%%PORTNAME%%/%%PORTVERSION%%/lib/srfi/%3a18
-@dirrmtry share/%%PORTNAME%%/%%PORTVERSION%%/lib/srfi/%3a106
-@dirrmtry share/%%PORTNAME%%/%%PORTVERSION%%/lib/srfi
-@dirrmtry share/%%PORTNAME%%/%%PORTVERSION%%/lib/%%PORTNAME%%/mop
-@dirrmtry share/%%PORTNAME%%/%%PORTVERSION%%/lib/%%PORTNAME%%
-@dirrmtry share/%%PORTNAME%%/%%PORTVERSION%%/lib/rnrs/records
-@dirrmtry share/%%PORTNAME%%/%%PORTVERSION%%/lib/rnrs/io
-@dirrmtry share/%%PORTNAME%%/%%PORTVERSION%%/lib/rnrs/arithmetic
-@dirrmtry share/%%PORTNAME%%/%%PORTVERSION%%/lib/rnrs
-@dirrmtry share/%%PORTNAME%%/%%PORTVERSION%%/lib/rfc
-@dirrmtry share/%%PORTNAME%%/%%PORTVERSION%%/lib/math
-%%ODBC%%@dirrmtry share/%%PORTNAME%%/%%PORTVERSION%%/lib/dbd
-@dirrmtry share/%%PORTNAME%%/%%PORTVERSION%%/lib/crypto/key
-@dirrmtry share/%%PORTNAME%%/%%PORTVERSION%%/lib/crypto
-@dirrmtry share/%%PORTNAME%%/%%PORTVERSION%%/lib/core/record
-@dirrmtry share/%%PORTNAME%%/%%PORTVERSION%%/lib/core
-@dirrmtry share/%%PORTNAME%%/%%PORTVERSION%%/lib/compat
-@dirrmtry share/%%PORTNAME%%/%%PORTVERSION%%/lib/clos
-@dirrmtry share/%%PORTNAME%%/%%PORTVERSION%%/lib
-@dirrmtry share/%%PORTNAME%%/%%PORTVERSION%%/doc/lib
-@dirrmtry share/%%PORTNAME%%/%%PORTVERSION%%/doc
-@dirrmtry share/%%PORTNAME%%/%%PORTVERSION%%/cmake
-@dirrmtry share/%%PORTNAME%%/%%PORTVERSION%%
-@dirrmtry share/%%PORTNAME%%
+%%DATADIR%%/%%PORTVERSION%%/CMakeLists.txt.template
+%%DATADIR%%/%%PORTVERSION%%/cmake/addstub.cmake
+%%DATADIR%%/%%PORTVERSION%%/cmake_uninstall.cmake.in
+%%DATADIR%%/%%PORTVERSION%%/doc/lib/style.css
+%%DATADIR%%/%%PORTVERSION%%/doc/lib/tools.js
+%%DATADIR%%/%%PORTVERSION%%/doc/lib/trees.png
+%%DATADIR%%/%%PORTVERSION%%/doc/%%PORTNAME%%-ref.html
+%%DATADIR%%/%%PORTVERSION%%/lib/clos/core.scm
+%%DATADIR%%/%%PORTVERSION%%/lib/clos/user.scm
+%%DATADIR%%/%%PORTVERSION%%/lib/compat/r7rs.scm
+%%DATADIR%%/%%PORTVERSION%%/lib/core/conditions.scm
+%%DATADIR%%/%%PORTVERSION%%/lib/core/enums.scm
+%%DATADIR%%/%%PORTVERSION%%/lib/core/exceptions.scm
+%%DATADIR%%/%%PORTVERSION%%/lib/core/inline.scm
+%%DATADIR%%/%%PORTVERSION%%/lib/core/io.scm
+%%DATADIR%%/%%PORTVERSION%%/lib/core/misc.scm
+%%DATADIR%%/%%PORTVERSION%%/lib/core/promise.scm
+%%DATADIR%%/%%PORTVERSION%%/lib/core/r5rs.scm
+%%DATADIR%%/%%PORTVERSION%%/lib/core/record.scm
+%%DATADIR%%/%%PORTVERSION%%/lib/core/record/procedural.scm
+%%DATADIR%%/%%PORTVERSION%%/lib/core/syntax.scm
+%%DATADIR%%/%%PORTVERSION%%/lib/crypto.scm
+%%DATADIR%%/%%PORTVERSION%%/lib/crypto/cipher.scm
+%%DATADIR%%/%%PORTVERSION%%/lib/crypto/key.scm
+%%DATADIR%%/%%PORTVERSION%%/lib/crypto/key/component.scm
+%%DATADIR%%/%%PORTVERSION%%/lib/crypto/key/des.scm
+%%DATADIR%%/%%PORTVERSION%%/lib/crypto/key/dsa.scm
+%%DATADIR%%/%%PORTVERSION%%/lib/crypto/key/pair.scm
+%%DATADIR%%/%%PORTVERSION%%/lib/crypto/key/rsa.scm
+%%DATADIR%%/%%PORTVERSION%%/lib/crypto/mac.scm
+%%DATADIR%%/%%PORTVERSION%%/lib/crypto/pkcs.scm
+%%ODBC%%%%DATADIR%%/%%PORTVERSION%%/lib/dbd/odbc.scm
+%%DATADIR%%/%%PORTVERSION%%/lib/math.scm
+%%DATADIR%%/%%PORTVERSION%%/lib/math/hash.scm
+%%DATADIR%%/%%PORTVERSION%%/lib/math/helper.scm
+%%DATADIR%%/%%PORTVERSION%%/lib/math/prime.scm
+%%DATADIR%%/%%PORTVERSION%%/lib/math/random.scm
+%%ODBC%%%%DATADIR%%/%%PORTVERSION%%/lib/odbc.scm
+%%DATADIR%%/%%PORTVERSION%%/lib/rfc/zlib.scm
+%%DATADIR%%/%%PORTVERSION%%/lib/rnrs.scm
+%%DATADIR%%/%%PORTVERSION%%/lib/rnrs/arithmetic/bitwise.scm
+%%DATADIR%%/%%PORTVERSION%%/lib/rnrs/arithmetic/fixnums.scm
+%%DATADIR%%/%%PORTVERSION%%/lib/rnrs/arithmetic/flonums.scm
+%%DATADIR%%/%%PORTVERSION%%/lib/rnrs/base.scm
+%%DATADIR%%/%%PORTVERSION%%/lib/rnrs/bytevectors.scm
+%%DATADIR%%/%%PORTVERSION%%/lib/rnrs/conditions.scm
+%%DATADIR%%/%%PORTVERSION%%/lib/rnrs/control.scm
+%%DATADIR%%/%%PORTVERSION%%/lib/rnrs/enums.scm
+%%DATADIR%%/%%PORTVERSION%%/lib/rnrs/eval.scm
+%%DATADIR%%/%%PORTVERSION%%/lib/rnrs/exceptions.scm
+%%DATADIR%%/%%PORTVERSION%%/lib/rnrs/files.scm
+%%DATADIR%%/%%PORTVERSION%%/lib/rnrs/hashtables.scm
+%%DATADIR%%/%%PORTVERSION%%/lib/rnrs/io/ports.scm
+%%DATADIR%%/%%PORTVERSION%%/lib/rnrs/io/simple.scm
+%%DATADIR%%/%%PORTVERSION%%/lib/rnrs/lists.scm
+%%DATADIR%%/%%PORTVERSION%%/lib/rnrs/mutable-pairs.scm
+%%DATADIR%%/%%PORTVERSION%%/lib/rnrs/mutable-strings.scm
+%%DATADIR%%/%%PORTVERSION%%/lib/rnrs/programs.scm
+%%DATADIR%%/%%PORTVERSION%%/lib/rnrs/r5rs.scm
+%%DATADIR%%/%%PORTVERSION%%/lib/rnrs/records/inspection.scm
+%%DATADIR%%/%%PORTVERSION%%/lib/rnrs/records/procedural.scm
+%%DATADIR%%/%%PORTVERSION%%/lib/rnrs/records/syntactic.scm
+%%DATADIR%%/%%PORTVERSION%%/lib/rnrs/sorting.scm
+%%DATADIR%%/%%PORTVERSION%%/lib/rnrs/syntax-case.scm
+%%DATADIR%%/%%PORTVERSION%%/lib/rnrs/unicode.scm
+%%DATADIR%%/%%PORTVERSION%%/lib/%%PORTNAME%%/crypto.scm
+%%DATADIR%%/%%PORTVERSION%%/lib/%%PORTNAME%%/dynamic-module.scm
+%%DATADIR%%/%%PORTVERSION%%/lib/%%PORTNAME%%/ffi.scm
+%%DATADIR%%/%%PORTVERSION%%/lib/%%PORTNAME%%/interactive.scm
+%%DATADIR%%/%%PORTVERSION%%/lib/%%PORTNAME%%/math.scm
+%%DATADIR%%/%%PORTVERSION%%/lib/%%PORTNAME%%/mop/allocation.scm
+%%DATADIR%%/%%PORTVERSION%%/lib/%%PORTNAME%%/mop/eql.scm
+%%DATADIR%%/%%PORTVERSION%%/lib/%%PORTNAME%%/mop/validator.scm
+%%DATADIR%%/%%PORTVERSION%%/lib/%%PORTNAME%%/object.scm
+%%DATADIR%%/%%PORTVERSION%%/lib/%%PORTNAME%%/parameters.scm
+%%DATADIR%%/%%PORTVERSION%%/lib/%%PORTNAME%%/process.scm
+%%DATADIR%%/%%PORTVERSION%%/lib/%%PORTNAME%%/regex.scm
+%%DATADIR%%/%%PORTVERSION%%/lib/%%PORTNAME%%/socket.scm
+%%DATADIR%%/%%PORTVERSION%%/lib/%%PORTNAME%%/threads.scm
+%%DATADIR%%/%%PORTVERSION%%/lib/%%PORTNAME%%/time.scm
+%%DATADIR%%/%%PORTVERSION%%/lib/srfi/%3a106.scm
+%%DATADIR%%/%%PORTVERSION%%/lib/srfi/%3a106/socket.scm
+%%DATADIR%%/%%PORTVERSION%%/lib/srfi/%3a18.scm
+%%DATADIR%%/%%PORTVERSION%%/lib/srfi/%3a18/multithreading.scm
+%%DATADIR%%/%%PORTVERSION%%/lib/srfi/%3a19.scm
+%%DATADIR%%/%%PORTVERSION%%/lib/srfi/%3a19/time.scm
+%%DATADIR%%/%%PORTVERSION%%/lib/srfi/106.scm
+%%DATADIR%%/%%PORTVERSION%%/lib/srfi/18.scm
+%%DATADIR%%/%%PORTVERSION%%/lib/srfi/19.scm
+%%DATADIR%%/%%PORTVERSION%%/lib/win32/common-control.scm
+%%DATADIR%%/%%PORTVERSION%%/lib/win32/common-dialog.scm
+%%DATADIR%%/%%PORTVERSION%%/lib/win32/defs.scm
+%%DATADIR%%/%%PORTVERSION%%/lib/win32/gdi.scm
+%%DATADIR%%/%%PORTVERSION%%/lib/win32/kernel.scm
+%%DATADIR%%/%%PORTVERSION%%/lib/win32/user.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/apropos.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/archive.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/archive/core/tar.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/archive/core/zip.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/archive/interface.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/archive/tar.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/archive/zip.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/asn.1.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/asn.1/ber/types.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/asn.1/compiler.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/asn.1/der/encode.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/asn.1/der/tags.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/asn.1/encode.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/asn.1/lexer.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/asn.1/parser.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/asn.1/parser.y
+%%DATADIR%%/%%PORTVERSION%%/sitelib/asn.1/reader.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/asn.1/types.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/binary/data.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/binary/io.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/binary/pack-aux.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/binary/parse.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/binary/pack.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/char-set.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/curly-infix.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/dbi.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/dbm.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/dbm/dumb.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/dbm/private.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/encoding/decoder.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/encoding/euc-jp.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/encoding/sjis.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/encoding/table/euc-utf16.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/encoding/table/jis-utf16.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/encoding/table/sjis-utf16.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/encoding/util.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/getopt.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/json.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/lalr.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/match.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/math/mt-random.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/net/mq/amqp/messaging.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/net/mq/amqp/transport.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/net/mq/amqp/types.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/net/oauth.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/net/oauth/consumer.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/net/oauth/misc.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/net/oauth/parameters.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/net/oauth/provider.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/net/oauth/query-string.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/net/oauth/request-adapter.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/net/oauth/signature.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/net/oauth/token.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/packrat.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/pp.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/rfc/%3a5322.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/rfc/base64.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/rfc/cmac.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/rfc/ftp.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/rfc/ftp/client.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/rfc/ftp/messages.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/rfc/gzip.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/rfc/hmac.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/rfc/http.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/rfc/mime.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/rfc/pem.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/rfc/quoted-printable.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/rfc/sftp.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/rfc/sftp/connection.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/rfc/sftp/constants.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/rfc/sftp/types.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/rfc/ssh.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/rfc/ssh/auth.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/rfc/ssh/connection.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/rfc/ssh/constants.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/rfc/ssh/transport.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/rfc/ssh/types.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/rfc/tls.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/rfc/tls/constant.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/rfc/tls/port.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/rfc/tls/socket.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/rfc/tls/types.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/rfc/uri.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/rfc/uuid.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/rfc/x.509.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/rpc/json.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/rpc/message.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/rpc/transport/http.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/rsa/pkcs/%3a12.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/rsa/pkcs/%3a12/cipher.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/rsa/pkcs/%3a12/keystore.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/rsa/pkcs/%3a5.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/%%PORTNAME%%/aspect.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/%%PORTNAME%%/cgen.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/%%PORTNAME%%/cgen/cise.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/%%PORTNAME%%/cgen/literal.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/%%PORTNAME%%/cgen/precomp.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/%%PORTNAME%%/cgen/stub.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/%%PORTNAME%%/cgen/syntax.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/%%PORTNAME%%/cgen/type.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/%%PORTNAME%%/cgen/unit.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/%%PORTNAME%%/char-set/boundary.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/%%PORTNAME%%/control.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/%%PORTNAME%%/debug.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/%%PORTNAME%%/document/html.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/%%PORTNAME%%/interactive/support.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/%%PORTNAME%%/io.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/%%PORTNAME%%/misc.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/%%PORTNAME%%/partcont.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/%%PORTNAME%%/reader.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/%%PORTNAME%%/record.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/%%PORTNAME%%/remote-repl.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/%%PORTNAME%%/test.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/%%PORTNAME%%/test/helper.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/%%PORTNAME%%/vm/profiler.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/scheme/base.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/scheme/boxes.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/scheme/case-lambda.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/scheme/char.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/scheme/complex.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/scheme/cxr.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/scheme/eval.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/scheme/file.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/scheme/inexact.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/scheme/inquiry.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/scheme/lazy.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/scheme/load.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/scheme/private.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/scheme/process-context.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/scheme/r5rs.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/scheme/read.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/scheme/repl.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/scheme/time.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/scheme/write.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/scribble.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/scribble/convert.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/scribble/parser.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/scribble/plugin.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/shorten.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/slib/alist.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/slib/qp.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/slib/queue.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/slib/trace.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/%3a0.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/%3a0/cond-expand.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/%3a1.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/%3a1/lists.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/%3a105.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/%3a110.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/%3a110/kernel.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/%3a110/t-expression.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/%3a111.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/%3a111/boxes.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/%3a112.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/%3a112/inquiry.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/%3a114.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/%3a114/comparators.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/%3a115.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/%3a115/regexp.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/114.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/115.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/%3a13.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/%3a13/strings.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/%3a14.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/%3a14/char-set.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/%3a14/char-sets.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/%3a17.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/%3a17/generalized-set!.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/%3a2.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/%3a2/and-let%2a.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/%3a23.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/%3a23/error.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/%3a25.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/%3a25/multi-dimensional-arrays.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/%3a25/srfi-25-reference.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/%3a26.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/%3a26/cut.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/%3a27.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/%3a27/random-bits.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/%3a29.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/%3a29/format.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/%3a29/localization.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/%3a31.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/%3a31/rec.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/%3a37.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/%3a37/args-fold.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/%3a38.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/%3a38/with-shared-structure.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/%3a39.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/%3a39/parameters.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/%3a4.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/%3a41.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/%3a41/streams.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/%3a41/streams/derived.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/%3a41/streams/primitive.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/%3a42.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/%3a42/eager-comprehensions.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/%3a43.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/%3a43/vectors.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/%3a45.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/%3a45/lazy.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/%3a49.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/%3a5.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/%3a5/let.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/%3a6.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/%3a6/basic-string-ports.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/%3a64.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/%3a64/testing.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/%3a78.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/%3a78/lightweight-testing.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/%3a8.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/%3a8/receive.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/%3a86.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/%3a86/mu-and-nu.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/%3a9.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/%3a9/records.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/%3a98.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/%3a98/os-environment-variables.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/0.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/1.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/105.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/110.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/111.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/112.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/13.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/14.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/17.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/2.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/23.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/25.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/26.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/27.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/29.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/31.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/37.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/38.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/39.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/4.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/41.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/42.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/43.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/45.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/49.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/5.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/6.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/64.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/78.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/8.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/86.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/9.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/98.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/sweet.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/text/csv.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/text/html-lite.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/text/markdown.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/text/markdown/convert.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/text/markdown/parser.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/text/parse.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/text/sre.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/text/sxml/helper.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/text/sxml/html.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/text/sxml/htmlprag.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/text/sxml/private/to-html-ext.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/text/sxml/private/to-html.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/text/sxml/serializer.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/text/sxml/ssax.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/text/sxml/sxpath.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/text/sxml/sxpath/private.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/text/sxml/tools.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/text/sxml/tree-trans.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/text/sxml/txpath-parser.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/text/tree.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/time.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/tlv.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/trace.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/util/bytevector.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/util/deque.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/util/file.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/util/hashtables.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/util/heap.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/util/list.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/util/port.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/util/queue.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/util/sparse.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/util/treemap.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/www/cgi.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/www/fastcgi.scm
+%%DATADIR%%/%%PORTVERSION%%/template.c
+%%DATADIR%%/%%PORTVERSION%%/template.h
+%%DATADIR%%/%%PORTVERSION%%/template.scm
+%%DATADIR%%/%%PORTVERSION%%/template.stub
+@dirrmtry %%DATADIR%%/%%PORTVERSION%%/sitelib/www
+@dirrmtry %%DATADIR%%/%%PORTVERSION%%/sitelib/util
+@dirrmtry %%DATADIR%%/%%PORTVERSION%%/sitelib/text/sxml/sxpath
+@dirrmtry %%DATADIR%%/%%PORTVERSION%%/sitelib/text/sxml/private
+@dirrmtry %%DATADIR%%/%%PORTVERSION%%/sitelib/text/sxml
+@dirrmtry %%DATADIR%%/%%PORTVERSION%%/sitelib/text/markdown
+@dirrmtry %%DATADIR%%/%%PORTVERSION%%/sitelib/text
+@dirrmtry %%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/%3a114
+@dirrmtry %%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/%3a115
+@dirrmtry %%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/%3a98
+@dirrmtry %%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/%3a9
+@dirrmtry %%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/%3a86
+@dirrmtry %%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/%3a8
+@dirrmtry %%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/%3a78
+@dirrmtry %%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/%3a64
+@dirrmtry %%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/%3a6
+@dirrmtry %%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/%3a5
+@dirrmtry %%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/%3a45
+@dirrmtry %%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/%3a43
+@dirrmtry %%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/%3a42
+@dirrmtry %%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/%3a41/streams
+@dirrmtry %%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/%3a41
+@dirrmtry %%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/%3a39
+@dirrmtry %%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/%3a38
+@dirrmtry %%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/%3a37
+@dirrmtry %%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/%3a31
+@dirrmtry %%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/%3a29
+@dirrmtry %%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/%3a27
+@dirrmtry %%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/%3a26
+@dirrmtry %%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/%3a25
+@dirrmtry %%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/%3a23
+@dirrmtry %%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/%3a2
+@dirrmtry %%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/%3a17
+@dirrmtry %%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/%3a14
+@dirrmtry %%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/%3a13
+@dirrmtry %%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/%3a112
+@dirrmtry %%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/%3a111
+@dirrmtry %%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/%3a110
+@dirrmtry %%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/%3a1
+@dirrmtry %%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/%3a0
+@dirrmtry %%DATADIR%%/%%PORTVERSION%%/sitelib/srfi
+@dirrmtry %%DATADIR%%/%%PORTVERSION%%/sitelib/slib
+@dirrmtry %%DATADIR%%/%%PORTVERSION%%/sitelib/scribble
+@dirrmtry %%DATADIR%%/%%PORTVERSION%%/sitelib/scheme
+@dirrmtry %%DATADIR%%/%%PORTVERSION%%/sitelib/%%PORTNAME%%/vm
+@dirrmtry %%DATADIR%%/%%PORTVERSION%%/sitelib/%%PORTNAME%%/test
+@dirrmtry %%DATADIR%%/%%PORTVERSION%%/sitelib/%%PORTNAME%%/interactive
+@dirrmtry %%DATADIR%%/%%PORTVERSION%%/sitelib/%%PORTNAME%%/document
+@dirrmtry %%DATADIR%%/%%PORTVERSION%%/sitelib/%%PORTNAME%%/cgen
+@dirrmtry %%DATADIR%%/%%PORTVERSION%%/sitelib/%%PORTNAME%%/char-set
+@dirrmtry %%DATADIR%%/%%PORTVERSION%%/sitelib/%%PORTNAME%%
+@dirrmtry %%DATADIR%%/%%PORTVERSION%%/sitelib/rsa/pkcs/%3a12
+@dirrmtry %%DATADIR%%/%%PORTVERSION%%/sitelib/rsa/pkcs
+@dirrmtry %%DATADIR%%/%%PORTVERSION%%/sitelib/rsa
+@dirrmtry %%DATADIR%%/%%PORTVERSION%%/sitelib/rpc/transport
+@dirrmtry %%DATADIR%%/%%PORTVERSION%%/sitelib/rpc
+@dirrmtry %%DATADIR%%/%%PORTVERSION%%/sitelib/rfc/tls
+@dirrmtry %%DATADIR%%/%%PORTVERSION%%/sitelib/rfc/ssh
+@dirrmtry %%DATADIR%%/%%PORTVERSION%%/sitelib/rfc/sftp
+@dirrmtry %%DATADIR%%/%%PORTVERSION%%/sitelib/rfc/ftp
+@dirrmtry %%DATADIR%%/%%PORTVERSION%%/sitelib/rfc
+@dirrmtry %%DATADIR%%/%%PORTVERSION%%/sitelib/net/mq/amqp
+@dirrmtry %%DATADIR%%/%%PORTVERSION%%/sitelib/net/mq
+@dirrmtry %%DATADIR%%/%%PORTVERSION%%/sitelib/net/oauth
+@dirrmtry %%DATADIR%%/%%PORTVERSION%%/sitelib/net
+@dirrmtry %%DATADIR%%/%%PORTVERSION%%/sitelib/math
+@dirrmtry %%DATADIR%%/%%PORTVERSION%%/sitelib/encoding/table
+@dirrmtry %%DATADIR%%/%%PORTVERSION%%/sitelib/encoding
+@dirrmtry %%DATADIR%%/%%PORTVERSION%%/sitelib/dbm
+@dirrmtry %%DATADIR%%/%%PORTVERSION%%/sitelib/binary
+@dirrmtry %%DATADIR%%/%%PORTVERSION%%/sitelib/asn.1/der
+@dirrmtry %%DATADIR%%/%%PORTVERSION%%/sitelib/asn.1/ber
+@dirrmtry %%DATADIR%%/%%PORTVERSION%%/sitelib/asn.1
+@dirrmtry %%DATADIR%%/%%PORTVERSION%%/sitelib/archive/core
+@dirrmtry %%DATADIR%%/%%PORTVERSION%%/sitelib/archive
+@dirrmtry %%DATADIR%%/%%PORTVERSION%%/sitelib
+@dirrmtry %%DATADIR%%/%%PORTVERSION%%/lib/win32
+@dirrmtry %%DATADIR%%/%%PORTVERSION%%/lib/srfi/%3a19
+@dirrmtry %%DATADIR%%/%%PORTVERSION%%/lib/srfi/%3a18
+@dirrmtry %%DATADIR%%/%%PORTVERSION%%/lib/srfi/%3a106
+@dirrmtry %%DATADIR%%/%%PORTVERSION%%/lib/srfi
+@dirrmtry %%DATADIR%%/%%PORTVERSION%%/lib/%%PORTNAME%%/mop
+@dirrmtry %%DATADIR%%/%%PORTVERSION%%/lib/%%PORTNAME%%
+@dirrmtry %%DATADIR%%/%%PORTVERSION%%/lib/rnrs/records
+@dirrmtry %%DATADIR%%/%%PORTVERSION%%/lib/rnrs/io
+@dirrmtry %%DATADIR%%/%%PORTVERSION%%/lib/rnrs/arithmetic
+@dirrmtry %%DATADIR%%/%%PORTVERSION%%/lib/rnrs
+@dirrmtry %%DATADIR%%/%%PORTVERSION%%/lib/rfc
+@dirrmtry %%DATADIR%%/%%PORTVERSION%%/lib/math
+%%ODBC%%@dirrmtry %%DATADIR%%/%%PORTVERSION%%/lib/dbd
+@dirrmtry %%DATADIR%%/%%PORTVERSION%%/lib/crypto/key
+@dirrmtry %%DATADIR%%/%%PORTVERSION%%/lib/crypto
+@dirrmtry %%DATADIR%%/%%PORTVERSION%%/lib/core/record
+@dirrmtry %%DATADIR%%/%%PORTVERSION%%/lib/core
+@dirrmtry %%DATADIR%%/%%PORTVERSION%%/lib/compat
+@dirrmtry %%DATADIR%%/%%PORTVERSION%%/lib/clos
+@dirrmtry %%DATADIR%%/%%PORTVERSION%%/lib
+@dirrmtry %%DATADIR%%/%%PORTVERSION%%/doc/lib
+@dirrmtry %%DATADIR%%/%%PORTVERSION%%/doc
+@dirrmtry %%DATADIR%%/%%PORTVERSION%%/cmake
+@dirrmtry %%DATADIR%%/%%PORTVERSION%%
+@dirrmtry %%DATADIR%%
 @dirrmtry lib/%%PORTNAME%%/%%PORTVERSION%%/%%PLIST_ARCH%%-pc-freebsd
 @dirrmtry lib/%%PORTNAME%%/%%PORTVERSION%%/include/%%PORTNAME%%
 @dirrmtry lib/%%PORTNAME%%/%%PORTVERSION%%/include

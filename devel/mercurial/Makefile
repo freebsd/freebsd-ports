@@ -3,6 +3,7 @@
 
 PORTNAME=	mercurial
 PORTVERSION=	3.1
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	http://mercurial.selenic.com/release/
 

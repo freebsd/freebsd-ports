@@ -34,11 +34,13 @@ CMAKE_ARGS=	-DBUNDLED_LIBS=OFF \
 CMAKE_VERBOSE=	yes
 LDFLAGS+=	-L${LIBDIR} -L${LOCALBASE}/lib -L${LOCALBASE}/lib/libnet11 ${ICONV_LIB} -lnet -lpcap
 MAKE_JOBS_UNSAFE=	yes
-USES=		bison cmake:outsource iconv pkgconfig
+USES=		bison cmake:outsource cpe iconv pkgconfig
 
 DOCS=		AUTHORS CHANGELOG README README.BINARIES README.BUGS \
 		README.GIT README.PLATFORMS THANKS TODO TODO.TESTING \
 		doc/capture doc/decoders doc/dissectors doc/threads
+
+CPE_VENDOR=	${PORTNAME}_project
 
 GH_ACCOUNT=	Ettercap
 GH_PROJECT=	${PORTNAME}

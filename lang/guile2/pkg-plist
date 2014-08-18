@@ -712,7 +712,6 @@ share/aclocal/guile.m4
 @dirrm %%DATADIR%%/%%GUILE_VER%%/ice-9
 @dirrm %%DATADIR%%/%%GUILE_VER%%
 @dirrm %%DATADIR%%
-@dirrmtry info
 @dirrm lib/guile/%%GUILE_VER%%/ccache/web/server
 @dirrm lib/guile/%%GUILE_VER%%/ccache/web
 @dirrm lib/guile/%%GUILE_VER%%/ccache/texinfo

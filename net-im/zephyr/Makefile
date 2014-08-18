@@ -13,7 +13,7 @@ COMMENT=	Enterprise-scale distributed messaging system
 LICENSE=	MIT
 
 GNU_CONFIGURE=	yes
-USES=		iconv libtool
+USES=		iconv libtool readline
 USE_RC_SUBR=	zhm
 USE_LDCONFIG=	yes
 MAKE_JOBS_UNSAFE=	yes

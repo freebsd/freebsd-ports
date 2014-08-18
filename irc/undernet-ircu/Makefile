@@ -3,11 +3,13 @@
 
 PORTNAME=	undernet-ircu
 PORTVERSION=	2.10.12.14
+PORTREVISION=	1
 CATEGORIES=	irc net
-MASTER_SITES=	SF/${PORTNAME}/ircu/ircu${PORTVERSION}
+MASTER_SITES=	SF/${PORTNAME}/ircu/ircu${PORTVERSION} \
+		ftp://ftpmirror.uk/freebsd-ports/undernet-ircu/
 DISTNAME=	ircu${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	freebsd-ports@dan.me.uk
 COMMENT=	Undernet IRCU irc daemon
 
 CONFLICTS=	ircd-hybrid-7.[0-9]*
@@ -15,86 +17,76 @@ CONFLICTS=	ircd-hybrid-7.[0-9]*
 USERS=		undernet
 GROUPS=		${USERS}
 
-GNU_CONFIGURE=		yes
-USE_RC_SUBR=		undernet
-CONFIGURE_ARGS=		--with-dpath=${PREFIX}/etc/ --with-symlink=no
+GNU_CONFIGURE=	yes
+USE_RC_SUBR=	undernet
+SUB_FILES=	pkg-message
+PORTDOCS=	*
+PLIST_FILES=	bin/undernet-convert-conf \
+		bin/undernet-umkpasswd \
+		etc/ircd.conf.sample \
+		sbin/ircd
 
-PLIST_FILES=	bin/ircd bin/umkpasswd bin/convert-conf etc/ircd.conf.example
+CONFIGURE_ARGS+=	--with-dpath=${PREFIX}/etc/ --with-symlink=no
 
-OPTIONS_DEFINE=	IPV6 POLL DEBUG ASSERTS PROFILE PEDANTIC WARNINGS INLINES DEVPOLL KQUEUE \
-		EPOLL LEAKDETECT
+OPTIONS_DEFINE=	DOCS EXAMPLES IPV6 POLL DEBUG ASSERTS PEDANTIC WARNINGS \
+		INLINES DEVPOLL KQUEUE EPOLL LEAKDETECT
+OPTIONS_DEFAULT=ASSERTS INLINES DEVPOLL KQUEUE EPOLL
 POLL_DESC=	Force poll to be used even if not a sys call
-ASSERTS_DESC=	Disable assertion checking
+ASSERTS_DESC=	Enable assertion checking
 PEDANTIC_DESC=	Enable pedantic warnings
 WARNINGS_DESC=	Enable warnings (add -Wall to CFLAGS)
-INLINES_DESC=	Disable inlining for a few critical functions
-DEVPOLL_DESC=	Disable the /dev/poll-based engine
-KQUEUE_DESC=	Disable the kqueue-based engine
-EPOLL_DESC=	Disable the epoll-based engine
+INLINES_DESC=	Enable inlining for a few critical functions
+DEVPOLL_DESC=	Enable the /dev/poll-based engine
+KQUEUE_DESC=	Enable the kqueue-based engine
+EPOLL_DESC=	Enable the epoll-based engine
 LEAKDETECT_DESC=	Turn on the leak detector (reqs patched boehm)
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
+IPV6_CONFIGURE_WITH=		ipv6
+POLL_CONFIGURE_ENABLE=		poll
+DEBUG_CONFIGURE_ENABLE=		debug
+EPOLL_CONFIGURE_ENABLE=		epoll
+KQUEUE_CONFIGURE_ENABLE=	kqueue
+ASSERTS_CONFIGURE_ENABLE=	asserts
+INLINES_CONFIGURE_ENABLE=	inlines
+DEVPOLL_CONFIGURE_ENABLE=	devpoll
+PEDANTIC_CONFIGURE_ENABLE=	pedantic
+WARNINGS_CONFIGURE_ENABLE=	warnings
+LEAKDETECT_CONFIGURE_WITH=	leak-detect
 
-.if ${PORT_OPTIONS:MIPV6}
-CONFIGURE_ARGS+=	--with-ipv6
-.else
-CONFIGURE_ARGS+=	--without-ipv6
-.endif
-
-.if ${PORT_OPTIONS:MPOLL}
-CONFIGURE_ARGS+=	--enable-poll
-.endif
-
-.if ${PORT_OPTIONS:MDEBUG}
-CONFIGURE_ARGS+=	--enable-debug
-.endif
-
-.if ${PORT_OPTIONS:MASSERTS}
-CONFIGURE_ARGS+=	--disable-asserts
-.endif
-
-.if ${PORT_OPTIONS:MPROFILE}
+.if !defined(NO_PROFILE)
 CONFIGURE_ARGS+=	--enable-profile
 .endif
 
-.if ${PORT_OPTIONS:MPEDANTIC}
-CONFIGURE_ARGS+=	--enable-pedantic
-.endif
+.include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MWARNINGS}
-CONFIGURE_ARGS+=	--enable-warnings
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/ircd/ircd ${STAGEDIR}${PREFIX}/sbin
+	${INSTALL_PROGRAM} ${WRKSRC}/ircd/convert-conf \
+		${STAGEDIR}${PREFIX}/bin/undernet-convert-conf
+	${INSTALL_PROGRAM} ${WRKSRC}/ircd/umkpasswd \
+		${STAGEDIR}${PREFIX}/bin/undernet-umkpasswd
+.if ${PORT_OPTIONS:MEXAMPLES}
+	${INSTALL_DATA} ${WRKSRC}/doc/example.conf \
+		${STAGEDIR}${PREFIX}/etc/ircd.conf.sample
 .endif
-
-.if ${PORT_OPTIONS:MINLINES}
-CONFIGURE_ARGS+=	--disable-inlines
+.if ${PORT_OPTIONS:MDOCS}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}/api ${STAGEDIR}${DOCSDIR}/history
+	(cd ${WRKSRC} && ${INSTALL_DATA} ChangeLog ChangeLog.11 INSTALL \
+		INSTALL_FR README RELEASE.NOTES ${STAGEDIR}${DOCSDIR})
+	(cd ${WRKSRC}/doc && ${INSTALL_DATA} Authors debug_memleak_gc.patch \
+		example.conf fda.txt features.txt freebsd.txt iso-time.html \
+		linux-poll.patch p10.html readme.asll readme.chroot \
+		readme.crules readme.cvs readme.features readme.gline \
+		readme.iauth readme.indent readme.jupe readme.log readme.who \
+		readme.www readme.xquery rfc1413.txt rfc1459.unet \
+		snomask.html strings.txt ${STAGEDIR}${DOCSDIR})
+	(cd ${WRKSRC}/doc/api && ${INSTALL_DATA} api.txt events.txt \
+		features.txt gline.txt ircd_snprintf.txt joinbuf.txt \
+		jupe.txt log.txt modebuf.txt motd.txt msgq.txt \
+		privileges.txt send.txt ${STAGEDIR}${DOCSDIR}/api)
+	(cd ${WRKSRC}/doc/history && ${INSTALL_DATA} 2.4.notes README-2.6 \
+		2.7-New ChangeLog.07 ChangeLog.10 Manual README.patches \
+		history.pre24 overview.u2.9 ${STAGEDIR}${DOCSDIR}/history)
 .endif
-
-.if ${PORT_OPTIONS:MDEVPOLL}
-CONFIGURE_ARGS+=	--disable-devpoll
-.endif
-
-.if ${PORT_OPTIONS:MKQUEUE}
-CONFIGURE_ARGS+=	--disable-kqueue
-.endif
-
-.if ${PORT_OPTIONS:MEPOLL}
-CONFIGURE_ARGS+=	--disable-epoll
-.endif
-
-.if ${PORT_OPTIONS:MLEAKDETECT}
-CONFIGURE_ARGS+=	--with-leak-detect
-.endif
-
-post-install:
-	@${ECHO_MSG}    ""
-	@${ECHO_MSG}    "	To run undernet ircu you must add 'undernet_enable=\"YES\" to"
-	@${ECHO_MSG}    "	\"/etc/rc.conf\" .  It can then be started with"
-	@${ECHO_MSG}	"	\"${PREFIX}/etc/rc.d/undernet start\""
-	@${ECHO_MSG}    ""
-	@${ECHO_MSG}    "	You must also copy \"${PREFIX}/etc/ircd.conf.example\" to"
-	@${ECHO_MSG}    "	\"${PREFIX}/etc/ircd.conf\" and modify its settings according to"
-	@${ECHO_MSG}    "	your needs.  See documentation at http://coder-com.undernet.org."
-	@${ECHO_MSG}    ""
 
 .include <bsd.port.mk>

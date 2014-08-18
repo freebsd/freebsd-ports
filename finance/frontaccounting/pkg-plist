@@ -1,9 +1,12 @@
+@owner www
+@group www
 %%WWWDIR%%/.htaccess
 %%WWWDIR%%/CHANGELOG.txt
 %%WWWDIR%%/FA.pem
 %%WWWDIR%%/access/index.php
 %%WWWDIR%%/access/login.php
 %%WWWDIR%%/access/logout.php
+%%WWWDIR%%/access/password_reset.php
 %%WWWDIR%%/access/timeout.php
 %%WWWDIR%%/admin/attachments.php
 %%WWWDIR%%/admin/backups.php
@@ -216,6 +219,8 @@
 %%WWWDIR%%/install/lang/pl_PL/LC_MESSAGES/pl_PL.po
 %%WWWDIR%%/install/lang/pt_BR/LC_MESSAGES/pt_BR.mo
 %%WWWDIR%%/install/lang/pt_BR/LC_MESSAGES/pt_BR.po
+%%WWWDIR%%/install/lang/pt_PT/LC_MESSAGES/pt_PT.mo
+%%WWWDIR%%/install/lang/pt_PT/LC_MESSAGES/pt_PT.po
 %%WWWDIR%%/install/lang/sv_SE/LC_MESSAGES/sv_SE.mo
 %%WWWDIR%%/install/lang/sv_SE/LC_MESSAGES/sv_SE.po
 %%WWWDIR%%/install/lang/zh_CN/LC_MESSAGES/zh_CN.mo
@@ -412,6 +417,8 @@
 %%WWWDIR%%/reporting/rep305.php
 %%WWWDIR%%/reporting/rep306.php
 %%WWWDIR%%/reporting/rep307.php
+%%WWWDIR%%/reporting/rep308.php
+%%WWWDIR%%/reporting/rep309.php
 %%WWWDIR%%/reporting/rep401.php
 %%WWWDIR%%/reporting/rep409.php
 %%WWWDIR%%/reporting/rep501.php
@@ -506,6 +513,7 @@
 %%WWWDIR%%/themes/aqua/images/add.png
 %%WWWDIR%%/themes/aqua/images/ajax-loader.gif
 %%WWWDIR%%/themes/aqua/images/ajax-loader2.gif
+%%WWWDIR%%/themes/aqua/images/alloc.png
 %%WWWDIR%%/themes/aqua/images/button_ok.png
 %%WWWDIR%%/themes/aqua/images/cancel.png
 %%WWWDIR%%/themes/aqua/images/credit.gif
@@ -546,6 +554,7 @@
 %%WWWDIR%%/themes/cool/images/add.png
 %%WWWDIR%%/themes/cool/images/ajax-loader.gif
 %%WWWDIR%%/themes/cool/images/ajax-loader2.gif
+%%WWWDIR%%/themes/cool/images/alloc.png
 %%WWWDIR%%/themes/cool/images/button_ok.png
 %%WWWDIR%%/themes/cool/images/cancel.png
 %%WWWDIR%%/themes/cool/images/credit.gif
@@ -586,6 +595,7 @@
 %%WWWDIR%%/themes/default/images/add.png
 %%WWWDIR%%/themes/default/images/ajax-loader.gif
 %%WWWDIR%%/themes/default/images/ajax-loader2.gif
+%%WWWDIR%%/themes/default/images/alloc.png
 %%WWWDIR%%/themes/default/images/button_ok.png
 %%WWWDIR%%/themes/default/images/cal.gif
 %%WWWDIR%%/themes/default/images/cancel.png
@@ -630,118 +640,122 @@
 %%WWWDIR%%/tmp/index.php
 %%WWWDIR%%/update.html
 %%WWWDIR%%/version.php
-@dirrm %%WWWDIR%%/tmp
-@dirrm %%WWWDIR%%/themes/default/images
-@dirrm %%WWWDIR%%/themes/default
-@dirrm %%WWWDIR%%/themes/cool/images
-@dirrm %%WWWDIR%%/themes/cool
-@dirrm %%WWWDIR%%/themes/aqua/images
-@dirrm %%WWWDIR%%/themes/aqua
-@dirrm %%WWWDIR%%/themes
-@dirrm %%WWWDIR%%/taxes/db
-@dirrm %%WWWDIR%%/taxes
-@dirrm %%WWWDIR%%/sql
-@dirrm %%WWWDIR%%/sales/view
-@dirrm %%WWWDIR%%/sales/manage
-@dirrm %%WWWDIR%%/sales/inquiry
-@dirrm %%WWWDIR%%/sales/includes/ui
-@dirrm %%WWWDIR%%/sales/includes/db
-@dirrm %%WWWDIR%%/sales/includes
-@dirrm %%WWWDIR%%/sales/allocations
-@dirrm %%WWWDIR%%/sales
-@dirrm %%WWWDIR%%/reporting/includes/fpdi/decoders
-@dirrm %%WWWDIR%%/reporting/includes/fpdi
-@dirrm %%WWWDIR%%/reporting/includes
-@dirrm %%WWWDIR%%/reporting/forms
-@dirrm %%WWWDIR%%/reporting/fonts
-@dirrm %%WWWDIR%%/reporting
-@dirrm %%WWWDIR%%/purchasing/view
-@dirrm %%WWWDIR%%/purchasing/manage
-@dirrm %%WWWDIR%%/purchasing/inquiry
-@dirrm %%WWWDIR%%/purchasing/includes/ui
-@dirrm %%WWWDIR%%/purchasing/includes/db
-@dirrm %%WWWDIR%%/purchasing/includes
-@dirrm %%WWWDIR%%/purchasing/allocations
-@dirrm %%WWWDIR%%/purchasing
-@dirrm %%WWWDIR%%/modules/_cache
-@dirrm %%WWWDIR%%/modules
-@dirrm %%WWWDIR%%/manufacturing/view
-@dirrm %%WWWDIR%%/manufacturing/manage
-@dirrm %%WWWDIR%%/manufacturing/inquiry
-@dirrm %%WWWDIR%%/manufacturing/includes/db
-@dirrm %%WWWDIR%%/manufacturing/includes
-@dirrm %%WWWDIR%%/manufacturing
-@dirrm %%WWWDIR%%/lang/new_language_template/LC_MESSAGES
-@dirrm %%WWWDIR%%/lang/new_language_template
-@dirrm %%WWWDIR%%/lang/en_US/LC_MESSAGES
-@dirrm %%WWWDIR%%/lang/en_US
-@dirrm %%WWWDIR%%/lang
-@dirrm %%WWWDIR%%/js
-@dirrm %%WWWDIR%%/inventory/view
-@dirrm %%WWWDIR%%/inventory/manage
-@dirrm %%WWWDIR%%/inventory/inquiry
-@dirrm %%WWWDIR%%/inventory/includes/db
-@dirrm %%WWWDIR%%/inventory/includes
-@dirrm %%WWWDIR%%/inventory
-@dirrm %%WWWDIR%%/install/lang/zh_CN/LC_MESSAGES
-@dirrm %%WWWDIR%%/install/lang/zh_CN
-@dirrm %%WWWDIR%%/install/lang/sv_SE/LC_MESSAGES
-@dirrm %%WWWDIR%%/install/lang/sv_SE
-@dirrm %%WWWDIR%%/install/lang/pt_BR/LC_MESSAGES
-@dirrm %%WWWDIR%%/install/lang/pt_BR
-@dirrm %%WWWDIR%%/install/lang/pl_PL/LC_MESSAGES
-@dirrm %%WWWDIR%%/install/lang/pl_PL
-@dirrm %%WWWDIR%%/install/lang/nl_BE/LC_MESSAGES
-@dirrm %%WWWDIR%%/install/lang/nl_BE
-@dirrm %%WWWDIR%%/install/lang/new_language_template/LC_MESSAGES
-@dirrm %%WWWDIR%%/install/lang/new_language_template
-@dirrm %%WWWDIR%%/install/lang/ka_GE/LC_MESSAGES
-@dirrm %%WWWDIR%%/install/lang/ka_GE
-@dirrm %%WWWDIR%%/install/lang/it_IT/LC_MESSAGES
-@dirrm %%WWWDIR%%/install/lang/it_IT
-@dirrm %%WWWDIR%%/install/lang/id_ID/LC_MESSAGES
-@dirrm %%WWWDIR%%/install/lang/id_ID
-@dirrm %%WWWDIR%%/install/lang/fr_FR/LC_MESSAGES
-@dirrm %%WWWDIR%%/install/lang/fr_FR
-@dirrm %%WWWDIR%%/install/lang/es_MX/LC_MESSAGES
-@dirrm %%WWWDIR%%/install/lang/es_MX
-@dirrm %%WWWDIR%%/install/lang/el_GR/LC_MESSAGES
-@dirrm %%WWWDIR%%/install/lang/el_GR
-@dirrm %%WWWDIR%%/install/lang/de_DE/LC_MESSAGES
-@dirrm %%WWWDIR%%/install/lang/de_DE
-@dirrm %%WWWDIR%%/install/lang/da_DK/LC_MESSAGES
-@dirrm %%WWWDIR%%/install/lang/da_DK
-@dirrm %%WWWDIR%%/install/lang/ar_EG/LC_MESSAGES
-@dirrm %%WWWDIR%%/install/lang/ar_EG
-@dirrm %%WWWDIR%%/install/lang
-@dirrm %%WWWDIR%%/install
-@dirrm %%WWWDIR%%/includes/ui
-@dirrm %%WWWDIR%%/includes/prefs
-@dirrm %%WWWDIR%%/includes/page
-@dirrm %%WWWDIR%%/includes/lang
-@dirrm %%WWWDIR%%/includes/db
-@dirrm %%WWWDIR%%/includes
-@dirrm %%WWWDIR%%/gl/view
-@dirrm %%WWWDIR%%/gl/manage
-@dirrm %%WWWDIR%%/gl/inquiry
-@dirrm %%WWWDIR%%/gl/includes/ui
-@dirrm %%WWWDIR%%/gl/includes/db
-@dirrm %%WWWDIR%%/gl/includes
-@dirrm %%WWWDIR%%/gl
-@dirrm %%WWWDIR%%/doc
-@dirrm %%WWWDIR%%/dimensions/view
-@dirrm %%WWWDIR%%/dimensions/inquiry
-@dirrm %%WWWDIR%%/dimensions/includes
-@dirrm %%WWWDIR%%/dimensions
-@dirrm %%WWWDIR%%/company/0/reporting
-@dirrm %%WWWDIR%%/company/0/pdf_files
-@dirrm %%WWWDIR%%/company/0/js_cache
-@dirrm %%WWWDIR%%/company/0/images
-@dirrm %%WWWDIR%%/company/0/backup
-@dirrm %%WWWDIR%%/company/0
-@dirrm %%WWWDIR%%/company
-@dirrm %%WWWDIR%%/applications
-@dirrm %%WWWDIR%%/admin/db
-@dirrm %%WWWDIR%%/admin
-@dirrm %%WWWDIR%%/access
-@dirrm %%WWWDIR%%
+@dirrmtry %%WWWDIR%%/access
+@dirrmtry %%WWWDIR%%/admin/db
+@dirrmtry %%WWWDIR%%/admin
+@dirrmtry %%WWWDIR%%/applications
+@dirrmtry %%WWWDIR%%/company/0/backup
+@dirrmtry %%WWWDIR%%/company/0/images
+@dirrmtry %%WWWDIR%%/company/0/js_cache
+@dirrmtry %%WWWDIR%%/company/0/pdf_files
+@dirrmtry %%WWWDIR%%/company/0/reporting
+@dirrmtry %%WWWDIR%%/company/0
+@dirrmtry %%WWWDIR%%/company
+@dirrmtry %%WWWDIR%%/dimensions/includes
+@dirrmtry %%WWWDIR%%/dimensions/inquiry
+@dirrmtry %%WWWDIR%%/dimensions/view
+@dirrmtry %%WWWDIR%%/dimensions
+@dirrmtry %%WWWDIR%%/doc
+@dirrmtry %%WWWDIR%%/gl/includes/db
+@dirrmtry %%WWWDIR%%/gl/includes/ui
+@dirrmtry %%WWWDIR%%/gl/includes
+@dirrmtry %%WWWDIR%%/gl/inquiry
+@dirrmtry %%WWWDIR%%/gl/manage
+@dirrmtry %%WWWDIR%%/gl/view
+@dirrmtry %%WWWDIR%%/gl
+@dirrmtry %%WWWDIR%%/includes/db
+@dirrmtry %%WWWDIR%%/includes/lang
+@dirrmtry %%WWWDIR%%/includes/page
+@dirrmtry %%WWWDIR%%/includes/prefs
+@dirrmtry %%WWWDIR%%/includes/ui
+@dirrmtry %%WWWDIR%%/includes
+@dirrmtry %%WWWDIR%%/install/lang/ar_EG/LC_MESSAGES
+@dirrmtry %%WWWDIR%%/install/lang/ar_EG
+@dirrmtry %%WWWDIR%%/install/lang/da_DK/LC_MESSAGES
+@dirrmtry %%WWWDIR%%/install/lang/da_DK
+@dirrmtry %%WWWDIR%%/install/lang/de_DE/LC_MESSAGES
+@dirrmtry %%WWWDIR%%/install/lang/de_DE
+@dirrmtry %%WWWDIR%%/install/lang/el_GR/LC_MESSAGES
+@dirrmtry %%WWWDIR%%/install/lang/el_GR
+@dirrmtry %%WWWDIR%%/install/lang/es_MX/LC_MESSAGES
+@dirrmtry %%WWWDIR%%/install/lang/es_MX
+@dirrmtry %%WWWDIR%%/install/lang/fr_FR/LC_MESSAGES
+@dirrmtry %%WWWDIR%%/install/lang/fr_FR
+@dirrmtry %%WWWDIR%%/install/lang/id_ID/LC_MESSAGES
+@dirrmtry %%WWWDIR%%/install/lang/id_ID
+@dirrmtry %%WWWDIR%%/install/lang/it_IT/LC_MESSAGES
+@dirrmtry %%WWWDIR%%/install/lang/it_IT
+@dirrmtry %%WWWDIR%%/install/lang/ka_GE/LC_MESSAGES
+@dirrmtry %%WWWDIR%%/install/lang/ka_GE
+@dirrmtry %%WWWDIR%%/install/lang/new_language_template/LC_MESSAGES
+@dirrmtry %%WWWDIR%%/install/lang/new_language_template
+@dirrmtry %%WWWDIR%%/install/lang/nl_BE/LC_MESSAGES
+@dirrmtry %%WWWDIR%%/install/lang/nl_BE
+@dirrmtry %%WWWDIR%%/install/lang/pl_PL/LC_MESSAGES
+@dirrmtry %%WWWDIR%%/install/lang/pl_PL
+@dirrmtry %%WWWDIR%%/install/lang/pt_BR/LC_MESSAGES
+@dirrmtry %%WWWDIR%%/install/lang/pt_BR
+@dirrmtry %%WWWDIR%%/install/lang/pt_PT/LC_MESSAGES
+@dirrmtry %%WWWDIR%%/install/lang/pt_PT
+@dirrmtry %%WWWDIR%%/install/lang/sv_SE/LC_MESSAGES
+@dirrmtry %%WWWDIR%%/install/lang/sv_SE
+@dirrmtry %%WWWDIR%%/install/lang/zh_CN/LC_MESSAGES
+@dirrmtry %%WWWDIR%%/install/lang/zh_CN
+@dirrmtry %%WWWDIR%%/install/lang
+@dirrmtry %%WWWDIR%%/install
+@dirrmtry %%WWWDIR%%/inventory/includes/db
+@dirrmtry %%WWWDIR%%/inventory/includes
+@dirrmtry %%WWWDIR%%/inventory/inquiry
+@dirrmtry %%WWWDIR%%/inventory/manage
+@dirrmtry %%WWWDIR%%/inventory/view
+@dirrmtry %%WWWDIR%%/inventory
+@dirrmtry %%WWWDIR%%/js
+@dirrmtry %%WWWDIR%%/lang/en_US/LC_MESSAGES
+@dirrmtry %%WWWDIR%%/lang/en_US
+@dirrmtry %%WWWDIR%%/lang/new_language_template/LC_MESSAGES
+@dirrmtry %%WWWDIR%%/lang/new_language_template
+@dirrmtry %%WWWDIR%%/lang
+@dirrmtry %%WWWDIR%%/manufacturing/includes/db
+@dirrmtry %%WWWDIR%%/manufacturing/includes
+@dirrmtry %%WWWDIR%%/manufacturing/inquiry
+@dirrmtry %%WWWDIR%%/manufacturing/manage
+@dirrmtry %%WWWDIR%%/manufacturing/view
+@dirrmtry %%WWWDIR%%/manufacturing
+@dirrmtry %%WWWDIR%%/modules/_cache
+@dirrmtry %%WWWDIR%%/modules
+@dirrmtry %%WWWDIR%%/purchasing/allocations
+@dirrmtry %%WWWDIR%%/purchasing/includes/db
+@dirrmtry %%WWWDIR%%/purchasing/includes/ui
+@dirrmtry %%WWWDIR%%/purchasing/includes
+@dirrmtry %%WWWDIR%%/purchasing/inquiry
+@dirrmtry %%WWWDIR%%/purchasing/manage
+@dirrmtry %%WWWDIR%%/purchasing/view
+@dirrmtry %%WWWDIR%%/purchasing
+@dirrmtry %%WWWDIR%%/reporting/fonts
+@dirrmtry %%WWWDIR%%/reporting/forms
+@dirrmtry %%WWWDIR%%/reporting/includes/fpdi/decoders
+@dirrmtry %%WWWDIR%%/reporting/includes/fpdi
+@dirrmtry %%WWWDIR%%/reporting/includes
+@dirrmtry %%WWWDIR%%/reporting
+@dirrmtry %%WWWDIR%%/sales/allocations
+@dirrmtry %%WWWDIR%%/sales/includes/db
+@dirrmtry %%WWWDIR%%/sales/includes/ui
+@dirrmtry %%WWWDIR%%/sales/includes
+@dirrmtry %%WWWDIR%%/sales/inquiry
+@dirrmtry %%WWWDIR%%/sales/manage
+@dirrmtry %%WWWDIR%%/sales/view
+@dirrmtry %%WWWDIR%%/sales
+@dirrmtry %%WWWDIR%%/sql
+@dirrmtry %%WWWDIR%%/taxes/db
+@dirrmtry %%WWWDIR%%/taxes
+@dirrmtry %%WWWDIR%%/themes/aqua/images
+@dirrmtry %%WWWDIR%%/themes/aqua
+@dirrmtry %%WWWDIR%%/themes/cool/images
+@dirrmtry %%WWWDIR%%/themes/cool
+@dirrmtry %%WWWDIR%%/themes/default/images
+@dirrmtry %%WWWDIR%%/themes/default
+@dirrmtry %%WWWDIR%%/themes
+@dirrmtry %%WWWDIR%%/tmp
+@dirrmtry %%WWWDIR%%
+@owner root
+@group wheel

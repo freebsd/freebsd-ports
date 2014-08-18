@@ -3,14 +3,14 @@
 
 PORTNAME=	xf-spf
 PORTVERSION=	0.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail
 MASTER_SITES=	http://www6.freebsdbrasil.com.br/~eksffa/l/dev/qmail-smtpextfork/
 
-MAINTAINER= ports@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	SPF checker for Qmail's SMTPEXTFORK patch
 
-LIB_DEPENDS+=	libspf2.so:${PORTSDIR}/mail/libspf2
+LIB_DEPENDS=	libspf2.so:${PORTSDIR}/mail/libspf2
 
 USES=		qmail tar:bzip2
 USE_GCC=	any

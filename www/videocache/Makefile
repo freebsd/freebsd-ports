@@ -11,6 +11,9 @@ MASTER_SITES=	http://secure.thrallingpenguin.com/hosting_files/ \
 MAINTAINER=	mopsfelder@gmail.com
 COMMENT=	Squid URL rewriter for bandwidth optimization
 
+DEPRECATED=	Depends on www/squid which is two years past EOL
+EXPIRATION_DATE=2014-09-15
+
 RUN_DEPENDS=	${LOCALBASE}/sbin/squid:${PORTSDIR}/www/squid \
 		${PYTHON_SITELIBDIR}/urlgrabber/grabber.py:${PORTSDIR}/www/py-urlgrabber \
 		${PYTHON_SITELIBDIR}/iniparse/ini.py:${PORTSDIR}/devel/py-iniparse

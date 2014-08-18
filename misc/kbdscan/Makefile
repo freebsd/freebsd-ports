@@ -5,7 +5,7 @@ PORTVERSION=	20110507
 CATEGORIES=	misc
 MASTER_SITES=	http://hack.org/mc/hacks/${PORTNAME}/
 
-MAINTAINER=	eadler@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Kbdscan shows the scancodes of keys pressed
 
 LICENSE=	ISCL

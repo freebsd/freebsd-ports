@@ -1,0 +1,68 @@
+--- CONFIG/src/atlconf_misc.c.orig	2011-05-14 10:33:24.000000000 -0700
++++ CONFIG/src/atlconf_misc.c	2014-08-16 09:10:48.000000000 -0700
+@@ -308,7 +308,10 @@
+    if (targ) sprintf(ln, "ssh %s \"%s\" > %s 2>&1 \n", targ, cmnd, tnam);
+    else sprintf(ln, "%s > %s 2>&1\n", cmnd, tnam);
+    if (!system(ln)) return(tnam);
+-   else return(NULL);
++   else {
++      remove(tnam);
++      return(NULL);
++   }
+ }
+ 
+ int CmndOneLine(char *targ, char *cmnd, char *ln)
+@@ -330,6 +333,7 @@
+       assert(fp);
+       if (!fgets(ln, 2048, fp)) ln[0] = '\0';
+       fclose(fp);
++      remove(tnam);
+       return(0);
+    }
+    else ln[0] = '\0';
+--- tune/sysinfo/emit_buildinfo.c.orig	2011-05-14 10:34:09.000000000 -0700
++++ tune/sysinfo/emit_buildinfo.c	2014-08-16 09:12:52.000000000 -0700
+@@ -53,7 +53,10 @@
+    sprintf(ln, "%s > %s\n", cmnd, tnam);
+    fprintf(stderr, "system: %s", ln);
+    if (!system(ln)) return(tnam);
+-   else return(NULL);
++   else {
++      remove(tnam);
++      return(NULL);
++   }
+ }
+ 
+ void FixString(char *ln)
+@@ -87,6 +90,7 @@
+       assert(fp);
+       if (!fgets(ln, 512, fp)) ln[0] = '\0';
+       fclose(fp);
++      remove(tnam);
+       return(0);
+    }
+    else ln[0] = '\0';
+--- bin/atlas_install.c.orig	2011-05-14 10:33:23.000000000 -0700
++++ bin/atlas_install.c	2014-08-16 09:55:47.000000000 -0700
+@@ -830,6 +830,7 @@
+    fprintf(stdout, "ATLAS install complete.  Examine \n");
+    fprintf(stdout, "ATLAS/bin/<arch>/INSTALL_LOG/SUMMARY.LOG for details.\n");
+    fclose(fpsum);
++   remove(tnam);
+    PrintBanner("INSTALL_LOG/SUMMARY.LOG", 0, 0, 0, 0);
+ }
+ 
+--- CONFIG/src/config.c.orig	2011-05-14 10:33:24.000000000 -0700
++++ CONFIG/src/config.c	2014-08-16 12:21:06.000000000 -0700
+@@ -453,8 +453,10 @@
+  */
+ {
+    char ln[4096], compsflags[1024], archflags[1024];
++   char *tmpnam;
+    int i;
+-   assert(CmndResults(NULL, "make xspew"));
++   assert(tmpnam = CmndResults(NULL, "make xspew"));
++   remove(tmpnam);
+ /*
+  * Translate compiler/flag array to xspew flags
+  */

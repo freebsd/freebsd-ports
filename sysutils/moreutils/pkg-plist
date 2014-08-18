@@ -6,6 +6,7 @@ bin/ifne
 bin/isutf8
 bin/lckdo
 bin/mispipe
+bin/moreutils-parallel
 bin/pee
 bin/sponge
 bin/ts
@@ -20,6 +21,7 @@ bin/zrun
 %%MANPAGES%%man/man1/isutf8.1.gz
 %%MANPAGES%%man/man1/lckdo.1.gz
 %%MANPAGES%%man/man1/mispipe.1.gz
+%%MANPAGES%%man/man1/moreutils-parallel.1.gz
 %%MANPAGES%%man/man1/pee.1.gz
 %%MANPAGES%%man/man1/sponge.1.gz
 %%MANPAGES%%man/man1/ts.1.gz

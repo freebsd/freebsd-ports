@@ -1,8 +1,7 @@
-# Created by: Foxfair Hu <foxfair@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	Test-Manifest
-PORTVERSION=	1.23
+PORTVERSION=	2.01
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-

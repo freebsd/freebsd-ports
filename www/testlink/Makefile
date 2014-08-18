@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	testlink
-PORTVERSION=	1.9.10
+PORTVERSION=	1.9.11
 CATEGORIES=	www devel
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	${PORTNAME}/TestLink%201.9/TestLink%20${PORTVERSION}
@@ -11,6 +11,7 @@ MAINTAINER=	tota@FreeBSD.org
 COMMENT=	Web based test management and test execution system
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USE_PHP=	gd iconv mbstring session xml
 WANT_PHP_WEB=	yes

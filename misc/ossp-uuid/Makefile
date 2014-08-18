@@ -3,7 +3,7 @@
 
 PORTNAME=	uuid
 PORTVERSION=	1.6.2
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	misc devel
 MASTER_SITES=	${MASTER_SITE_OSSP}
 MASTER_SITE_SUBDIR=	lib/${PORTNAME}
@@ -13,8 +13,9 @@ MAINTAINER=	vd@FreeBSD.org
 COMMENT=	ISO-C API and CLI for generating Universally Unique Identifiers
 
 GNU_CONFIGURE=	yes
+USES+=		libtool pathfix
 USE_LDCONFIG=	yes
-CONFIGURE_ARGS=	--disable-shared --enable-static --with-cxx \
+CONFIGURE_ARGS=	--with-cxx \
 		--includedir=${PREFIX}/include/ossp
 
 .if defined(SLAVEPORT) && ${SLAVEPORT}=="perl"
@@ -23,15 +24,10 @@ PKGNAMEPREFIX=	p5-OSSP-
 CONFLICTS=	e2fsprogs-libuuid-[0-9]*
 .endif
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == "amd64" || ${ARCH} == "ia64"
-CFLAGS+=	-fPIC -DPIC
-.endif
-
 regression-test: test
 
 test: build
-	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} check
+	@(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_FLAGS} \
+		${MAKEFILE} ${MAKE_ARGS} check)
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

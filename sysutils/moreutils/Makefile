@@ -3,7 +3,7 @@
 
 PORTNAME=	moreutils
 PORTVERSION=	0.51
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	sysutils
 MASTER_SITES=	DEBIAN_POOL
 DISTNAME=	${PORTNAME}_${PORTVERSION}
@@ -29,6 +29,7 @@ CANNED_MANPAGES=errno.1 \
 		isutf8.1 \
 		lckdo.1 \
 		mispipe.1 \
+		moreutils-parallel.1 \
 		pee.1 \
 		sponge.1
 PERL_MANPAGES=	chronic.1 \
@@ -41,8 +42,11 @@ PERL_MANPAGES=	chronic.1 \
 SHEBANG_FILES=	${PERL_MANPAGES:R}
 
 post-patch:
+	@${REINPLACE_CMD} -e 's|parallel|moreutils-&|g' ${WRKSRC}/Makefile
 	@${REINPLACE_CMD} -e 's|__APPLE__|__${OPSYS}__|' ${WRKSRC}/ifdata.c
 	@cd ${FILESDIR}/ && ${CP} ${CANNED_MANPAGES} ${WRKSRC}/
+	@${MV} ${WRKSRC}/parallel.c ${WRKSRC}/moreutils-parallel.c
+	@${MV} ${WRKSRC}/parallel.docbook ${WRKSRC}/moreutils-parallel.docbook
 
 post-build:
 .for man in ${PERL_MANPAGES:R}

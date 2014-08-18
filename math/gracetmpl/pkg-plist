@@ -5,6 +5,7 @@ include/gracetmpl.h
 lib/libgracetmpl.a
 %%PYTHON_SITELIBDIR%%/graceTMPL/graceTMPL.so
 %%PYTHON_SITELIBDIR%%/graceTMPL.pth
+%%PYTHON_SITELIBDIR%%/graceTMPL/graceTMPL-0.3.2-py%%PYTHON_VER%%.egg-info
 %%PORTDOCS%%%%DOCSDIR%%/annotated.html
 %%PORTDOCS%%%%DOCSDIR%%/annotations.html
 %%PORTDOCS%%%%DOCSDIR%%/changes.html

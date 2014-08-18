@@ -3,6 +3,7 @@
 
 PORTNAME=	sfml
 PORTVERSION=	1.6
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	SF
 DISTNAME=	SFML-${PORTVERSION}-sdk-linux-32
@@ -39,13 +40,7 @@ post-extract:
 post-install:
 	${FIND} ${STAGEDIR}${PREFIX}/include/SFML -name "*.hpp" -exec ${REINPLACE_CMD} -i '' -e '/#include/ s|SFML|&1|' {} \;
 	${MV} ${STAGEDIR}${PREFIX}/include/SFML ${STAGEDIR}${PREFIX}/include/SFML${PKGNAMESUFFIX}
-.for lib in audio graphics network system window
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libsfml-${lib}.so
-	${MV} ${STAGEDIR}${PREFIX}/lib/libsfml-${lib}.so.${PORTVERSION} ${STAGEDIR}${PREFIX}/lib/libsfml${PKGNAMESUFFIX}-${lib}.so.${PORTVERSION}
-	${MV} ${STAGEDIR}${PREFIX}/lib/libsfml-${lib}.so ${STAGEDIR}${PREFIX}/lib/libsfml${PKGNAMESUFFIX}-${lib}.so
-	${LN} -s libsfml${PKGNAMESUFFIX}-${lib}.so.${PORTVERSION} ${STAGEDIR}${PREFIX}/lib/libsfml${PKGNAMESUFFIX}-${lib}.so.${PORTVERSION:C/^([0-9]).*/\1/}
-	${LN} -fs libsfml${PKGNAMESUFFIX}-${lib}.so.${PORTVERSION} ${STAGEDIR}${PREFIX}/lib/libsfml${PKGNAMESUFFIX}-${lib}.so
-.endfor
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/*.so
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC}/doc && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}/
 

@@ -20,6 +20,12 @@ SUB_FILES=	pmfrc.default
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
+.include <bsd.port.pre.mk>
+
+.if !exists(/usr/lib/libreadline.so)
+BROKEN=	Does not build with modern readline from ports
+.endif
+
 post-build:
 	@${LN} -sf .pmfrc ${WRKSRC}/examples/dot.pmfrc
 
@@ -34,4 +40,4 @@ do-install:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/examples/* ${STAGEDIR}${EXAMPLESDIR}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

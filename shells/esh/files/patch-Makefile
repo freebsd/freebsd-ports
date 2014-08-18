@@ -1,0 +1,11 @@
+--- Makefile.orig	2014-08-16 12:44:43.000000000 -0400
++++ Makefile	2014-08-16 12:44:58.000000000 -0400
+@@ -27,7 +27,7 @@
+ VERS=0.8.5
+ 
+ all: $(OBJS)
+-	$(CC) $(OBJS) $(LIB) -o esh
++	$(CC) $(OBJS) $(LIB) -o esh ${LDFLAGS}
+ 
+ backup:
+ 	cp -f Makefile *.[ch] /home/backup/esh

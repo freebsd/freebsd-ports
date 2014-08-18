@@ -2,12 +2,12 @@
 
 PORTNAME=	automatic_addressbook
 PORTVERSION=	0.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail
 MASTER_SITES=	http://code.crapouillou.net/attachments/download/19/
 PKGNAMEPREFIX=	roundcube-
 
-MAINTAINER= ports@FreeBSD.org
+MAINTAINER=	anes@anes.su
 COMMENT=	Roundcube webmail automatic addressbook plugin
 
 LICENSE=	GPLv3
@@ -19,25 +19,15 @@ USES=	tar:bzip2
 NO_BUILD=	yes
 
 WRKSRC?=	${WRKDIR}/${PORTNAME}
-RCDIR=	${PREFIX}/www/roundcube
-WWWDIR=	${RCDIR}/plugins/automatic_addressbook
+RCDIR=		${PREFIX}/www/roundcube
+WWWDIR=		${RCDIR}/plugins/automatic_addressbook
 
 SUB_FILES=	pkg-message
 SUB_LIST=	RCDIR=${RCDIR} PLUGINDIR=${WWWDIR}
 
-# This target is only meant to be used by the port maintainer.
-x-generate-plist: build
-	cd ${WRKSRC}; \
-	${FIND} . ! -type d ! -name '*.orig' | ${SORT} | \
-		${SED} -e "s,^\.,%%WWWDIR%%," >${WRKDIR}/pkg-plist.tmp ; \
-	${FIND} . -type d | ${SORT} -r | ${SED} \
-		-e "s,^\.$$,@dirrmtry %%WWWDIR%%," \
-		-e "s,^\.,@dirrm %%WWWDIR%%," >>${WRKDIR}/pkg-plist.tmp
-
-NO_STAGE=	yes
 do-install:
-	@${MKDIR} ${WWWDIR}
-	@cd ${WRKSRC} && ${PAX} -r -w . ${WWWDIR}
-	@${CAT} ${PKGMESSAGE}
+	@${MKDIR} ${STAGEDIR}${WWWDIR}
+	cd ${WRKSRC} && ${PAX} -r -w . ${STAGEDIR}${WWWDIR}
+	${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>

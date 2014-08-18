@@ -7,14 +7,13 @@ CATEGORIES+=	net-p2p
 MASTER_SITES=	SF
 
 MAINTAINER?=	ports@FreeBSD.org
-COMMENT?=	A OCAML client for multiple peer-to-peer networks
+COMMENT?=	OCAML client for multiple peer-to-peer networks
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/Copying.txt
 
 BUILD_DEPENDS=	ocamlc:${PORTSDIR}/lang/ocaml
 
-NO_LATEST_LINK=	yes
 CONFLICTS=	mldonkey{-{core,gui},}-devel-[0-9]*
 
 USES=		iconv tar:bzip2 gmake
@@ -151,9 +150,6 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/distrib/${_file} ${STAGEDIR}${DOCSDIR}
 .endfor
 .endif
-
-post-install:
-	@${CAT} ${PKGMESSAGE}
 
 install-user: extract
 .if !defined(LANG)

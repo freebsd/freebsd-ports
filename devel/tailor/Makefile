@@ -14,7 +14,6 @@ RUN_DEPENDS=	${LOCALBASE}/bin/rsync:${PORTSDIR}/net/rsync
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
-INSTALLS_EGGINFO=	yes
 OPTIONS_DEFINE=	DOCS
 
 post-install:

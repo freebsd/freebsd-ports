@@ -1,0 +1,136 @@
+%%CLIENT%%bin/%%CLIENT_SGUILDIR%%/images/checked.gif
+%%CLIENT%%bin/%%CLIENT_SGUILDIR%%/images/sguil_logo_h.gif
+%%CLIENT%%bin/%%CLIENT_SGUILDIR%%/images/unchecked.gif
+%%CLIENT%%bin/%%CLIENT_SGUILDIR%%/lib/SguilUtil.tcl
+%%CLIENT%%bin/%%CLIENT_SGUILDIR%%/lib/dkffont.tcl
+%%CLIENT%%bin/%%CLIENT_SGUILDIR%%/lib/email17.tcl
+%%CLIENT%%bin/%%CLIENT_SGUILDIR%%/lib/extdata.tcl
+%%CLIENT%%bin/%%CLIENT_SGUILDIR%%/lib/guilib.tcl
+%%CLIENT%%bin/%%CLIENT_SGUILDIR%%/lib/qrybuild.tcl
+%%CLIENT%%bin/%%CLIENT_SGUILDIR%%/lib/qrylib.tcl
+%%CLIENT%%bin/%%CLIENT_SGUILDIR%%/lib/report.tcl
+%%CLIENT%%bin/%%CLIENT_SGUILDIR%%/lib/sancp.tcl
+%%CLIENT%%bin/%%CLIENT_SGUILDIR%%/lib/sellib.tcl
+%%CLIENT%%bin/%%CLIENT_SGUILDIR%%/lib/sound.tcl
+%%CLIENT%%bin/%%CLIENT_SGUILDIR%%/lib/stdquery.tcl
+%%CLIENT%%bin/%%CLIENT_SGUILDIR%%/lib/tablelist5.11/COPYRIGHT.txt
+%%CLIENT%%bin/%%CLIENT_SGUILDIR%%/lib/tablelist5.11/pkgIndex.tcl
+%%CLIENT%%bin/%%CLIENT_SGUILDIR%%/lib/tablelist5.11/scripts/mwutil.tcl
+%%CLIENT%%bin/%%CLIENT_SGUILDIR%%/lib/tablelist5.11/scripts/repair.tcl
+%%CLIENT%%bin/%%CLIENT_SGUILDIR%%/lib/tablelist5.11/scripts/tablelistBind.tcl
+%%CLIENT%%bin/%%CLIENT_SGUILDIR%%/lib/tablelist5.11/scripts/tablelistConfig.tcl
+%%CLIENT%%bin/%%CLIENT_SGUILDIR%%/lib/tablelist5.11/scripts/tablelistEdit.tcl
+%%CLIENT%%bin/%%CLIENT_SGUILDIR%%/lib/tablelist5.11/scripts/tablelistImages.tcl
+%%CLIENT%%bin/%%CLIENT_SGUILDIR%%/lib/tablelist5.11/scripts/tablelistMove.tcl
+%%CLIENT%%bin/%%CLIENT_SGUILDIR%%/lib/tablelist5.11/scripts/tablelistSort.tcl
+%%CLIENT%%bin/%%CLIENT_SGUILDIR%%/lib/tablelist5.11/scripts/tablelistThemes.tcl
+%%CLIENT%%bin/%%CLIENT_SGUILDIR%%/lib/tablelist5.11/scripts/tablelistUtil.tcl
+%%CLIENT%%bin/%%CLIENT_SGUILDIR%%/lib/tablelist5.11/scripts/tablelistWidget.tcl
+%%CLIENT%%bin/%%CLIENT_SGUILDIR%%/lib/tablelist5.11/scripts/tclIndex
+%%CLIENT%%bin/%%CLIENT_SGUILDIR%%/lib/tablelist5.11/tablelist.tcl
+%%CLIENT%%bin/%%CLIENT_SGUILDIR%%/lib/tablelist5.11/tablelist_tile.tcl
+%%CLIENT%%bin/%%CLIENT_SGUILDIR%%/lib/tablelist5.11/tablelistPublic.tcl
+%%CLIENT%%bin/%%CLIENT_SGUILDIR%%/lib/whois.tcl
+@mode 751
+%%CLIENT%%bin/%%CLIENT_SGUILDIR%%/sguil.tk
+@mode
+%%CLIENT%%etc/sguil.conf-sample
+%%CLIENT%%@dirrm bin/%%CLIENT_SGUILDIR%%/lib/tablelist5.11/scripts
+%%CLIENT%%@dirrm bin/%%CLIENT_SGUILDIR%%/lib/tablelist5.11
+%%CLIENT%%@dirrm bin/%%CLIENT_SGUILDIR%%/lib
+%%CLIENT%%@dirrm bin/%%CLIENT_SGUILDIR%%/images
+%%CLIENT%%@dirrm bin/%%CLIENT_SGUILDIR%%
+@mode 751
+%%SENSOR%%bin/%%SENSOR_SGUILDIR%%/log_packets-daemonlogger.sh
+%%SENSOR%%bin/%%SENSOR_SGUILDIR%%/log_packets.sh
+%%SENSOR%%bin/%%SENSOR_SGUILDIR%%/pcap_agent.tcl
+%%SENSOR%%bin/%%SENSOR_SGUILDIR%%/snort_agent.tcl
+@mode
+%%SENSOR%%etc/%%SENSOR_SGUILDIR%%/pcap_agent.conf-sample
+%%SENSOR%%etc/%%SENSOR_SGUILDIR%%/snort_agent.conf-sample
+%%SENSOR%%share/%%SENSOR_SGUILDIR%%/contrib/ossec_agent/README
+%%SENSOR%%share/%%SENSOR_SGUILDIR%%/contrib/ossec_agent/ossec_agent.conf
+%%SENSOR%%share/%%SENSOR_SGUILDIR%%/contrib/ossec_agent/ossec_agent.tcl
+%%SENSOR%%share/%%SENSOR_SGUILDIR%%/contrib/portscan_loader/Makefile
+%%SENSOR%%share/%%SENSOR_SGUILDIR%%/contrib/portscan_loader/portscan_loader.c
+%%SENSOR%%share/%%SENSOR_SGUILDIR%%/init/sensoragent
+@mode 751
+%%SENSOR%%%%PADS_SENSOR%%bin/%%SENSOR_SGUILDIR%%/pads_agent.tcl
+@mode
+%%SENSOR%%%%PADS_SENSOR%%etc/%%SENSOR_SGUILDIR%%/pads_agent.conf-sample
+@mode 751
+%%SENSOR%%%%SANCP_SENSOR%%bin/%%SENSOR_SGUILDIR%%/log_packets-sancp.sh
+%%SENSOR%%%%SANCP_SENSOR%%bin/%%SENSOR_SGUILDIR%%/pcap_agent-sancp.tcl
+%%SENSOR%%%%SANCP_SENSOR%%bin/%%SENSOR_SGUILDIR%%/sancp_agent.tcl
+@mode
+%%SENSOR%%%%SANCP_SENSOR%%etc/%%SENSOR_SGUILDIR%%/sancp_agent.conf-sample
+%%SENSOR%%%%SANCP_SENSOR%%etc/%%SENSOR_SGUILDIR%%/sancp-indexed.conf-sample
+%%SENSOR%%%%SANCP_SENSOR%%etc/%%SENSOR_SGUILDIR%%/pcap_agent-sancp.conf-sample
+%%SENSOR%%%%SANCP_SENSOR%%etc/%%SENSOR_SGUILDIR%%/sancp.conf-sample
+%%SENSOR%%@dirrm share/%%SENSOR_SGUILDIR%%/init
+%%SENSOR%%@dirrm share/%%SENSOR_SGUILDIR%%/contrib/portscan_loader
+%%SENSOR%%@dirrm share/%%SENSOR_SGUILDIR%%/contrib/ossec_agent
+%%SENSOR%%@dirrm share/%%SENSOR_SGUILDIR%%/contrib
+%%SENSOR%%@dirrm share/%%SENSOR_SGUILDIR%%
+%%SENSOR%%@dirrmtry etc/%%SENSOR_SGUILDIR%%
+%%SENSOR%%@dirrm bin/%%SENSOR_SGUILDIR%%
+%%SERVER%%bin/sguild
+%%SERVER%%etc/%%SERVER_SGUILDIR%%/autocat.conf-sample
+%%SERVER%%etc/%%SERVER_SGUILDIR%%/sguild.access-sample
+%%SERVER%%etc/%%SERVER_SGUILDIR%%/sguild.conf-sample
+%%SERVER%%etc/%%SERVER_SGUILDIR%%/sguild.email-sample
+%%SERVER%%etc/%%SERVER_SGUILDIR%%/sguild.queries-sample
+%%SERVER%%etc/%%SERVER_SGUILDIR%%/sguild.reports-sample
+%%SERVER%%@owner sguil
+%%SERVER%%@group sguil
+%%SERVER%%etc/%%SERVER_SGUILDIR%%/sguild.users-sample
+%%SERVER%%lib/%%SERVER_SGUILDIR%%/SguildAccess.tcl
+%%SERVER%%lib/%%SERVER_SGUILDIR%%/SguildAutoCat.tcl
+%%SERVER%%lib/%%SERVER_SGUILDIR%%/SguildClientCmdRcvd.tcl
+%%SERVER%%lib/%%SERVER_SGUILDIR%%/SguildConnect.tcl
+%%SERVER%%lib/%%SERVER_SGUILDIR%%/SguildCreateDB.tcl
+%%SERVER%%lib/%%SERVER_SGUILDIR%%/SguildEmailEvent.tcl
+%%SERVER%%lib/%%SERVER_SGUILDIR%%/SguildEvent.tcl
+%%SERVER%%lib/%%SERVER_SGUILDIR%%/SguildGenericDB.tcl
+%%SERVER%%lib/%%SERVER_SGUILDIR%%/SguildGenericEvent.tcl
+%%SERVER%%lib/%%SERVER_SGUILDIR%%/SguildHealthChecks.tcl
+%%SERVER%%lib/%%SERVER_SGUILDIR%%/SguildLoaderd.tcl
+%%SERVER%%lib/%%SERVER_SGUILDIR%%/SguildLoaderd.tcl.orig
+%%SERVER%%lib/%%SERVER_SGUILDIR%%/SguildMysqlMerge.tcl
+%%SERVER%%lib/%%SERVER_SGUILDIR%%/SguildMysqlMerge.tcl.orig
+%%SERVER%%lib/%%SERVER_SGUILDIR%%/SguildPadsLib.tcl
+%%SERVER%%lib/%%SERVER_SGUILDIR%%/SguildQueryd.tcl
+%%SERVER%%lib/%%SERVER_SGUILDIR%%/SguildReportBuilder.tcl
+%%SERVER%%lib/%%SERVER_SGUILDIR%%/SguildSendComms.tcl
+%%SERVER%%lib/%%SERVER_SGUILDIR%%/SguildSensorAgentComms.tcl
+%%SERVER%%lib/%%SERVER_SGUILDIR%%/SguildSensorCmdRcvd.tcl
+%%SERVER%%lib/%%SERVER_SGUILDIR%%/SguildTranscript.tcl
+%%SERVER%%lib/%%SERVER_SGUILDIR%%/SguildUtils.tcl
+%%SERVER%%@owner root
+%%SERVER%%@group wheel
+%%SERVER%%share/%%SERVER_SGUILDIR%%/autocat2mysql.tcl
+%%SERVER%%share/%%SERVER_SGUILDIR%%/contrib/incident_report.tcl
+%%SERVER%%share/%%SERVER_SGUILDIR%%/contrib/init/sguil
+%%SERVER%%share/%%SERVER_SGUILDIR%%/contrib/init/sguild
+%%SERVER%%share/%%SERVER_SGUILDIR%%/create_ruledb.sql
+%%SERVER%%share/%%SERVER_SGUILDIR%%/create_sguildb.sql
+%%SERVER%%share/%%SERVER_SGUILDIR%%/migrate_event.tcl
+%%SERVER%%share/%%SERVER_SGUILDIR%%/migrate_sancp.tcl
+%%SERVER%%share/%%SERVER_SGUILDIR%%/sancp_cleanup.tcl
+%%SERVER%%share/%%SERVER_SGUILDIR%%/sancp_cleanup.tcl.orig
+%%SERVER%%share/%%SERVER_SGUILDIR%%/update_0.7.tcl
+%%SERVER%%share/%%SERVER_SGUILDIR%%/update_0.8.tcl
+%%SERVER%%share/%%SERVER_SGUILDIR%%/update_sguildb_v10-v11.sql
+%%SERVER%%share/%%SERVER_SGUILDIR%%/update_sguildb_v11-v12.sql
+%%SERVER%%share/%%SERVER_SGUILDIR%%/update_sguildb_v12-v13.sql
+%%SERVER%%share/%%SERVER_SGUILDIR%%/update_sguildb_v13-v14.sql
+%%SERVER%%share/%%SERVER_SGUILDIR%%/update_sguildb_v5-v6.sql
+%%SERVER%%share/%%SERVER_SGUILDIR%%/update_sguildb_v6-v7.sql
+%%SERVER%%share/%%SERVER_SGUILDIR%%/update_sguildb_v7-v8.sql
+%%SERVER%%share/%%SERVER_SGUILDIR%%/update_sguildb_v8-v9.sql
+%%SERVER%%share/%%SERVER_SGUILDIR%%/update_sguildb_v9-v10.sql
+%%SERVER%%@dirrm share/%%SERVER_SGUILDIR%%/contrib/init
+%%SERVER%%@dirrm share/%%SERVER_SGUILDIR%%/contrib
+%%SERVER%%@dirrm share/%%SERVER_SGUILDIR%%
+%%SERVER%%@dirrm lib/%%SERVER_SGUILDIR%%
+%%SERVER%%@dirrm etc/%%SERVER_SGUILDIR%%

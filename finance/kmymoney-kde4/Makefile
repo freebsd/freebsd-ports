@@ -1,15 +1,15 @@
 # $FreeBSD$
 
 PORTNAME=	kmymoney
-PORTVERSION=	4.6.4
-PORTREVISION=	5
+PORTVERSION=	4.6.6
 CATEGORIES=	finance kde
-MASTER_SITES=	SF/${PORTNAME}2/KMyMoney-KDE4/${PORTVERSION}
+MASTER_SITES=	KDE/stable/${PORTNAME}/${PORTVERSION}/src
 
 MAINTAINER=	jhale@FreeBSD.org
 COMMENT=	KDE4 personal finance manager
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libboost_graph.so:${PORTSDIR}/devel/boost-libs \
 		libalkimia.so:${PORTSDIR}/finance/libalkimia

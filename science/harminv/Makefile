@@ -10,7 +10,7 @@ MASTER_SITES=	http://ab-initio.mit.edu/harminv/
 MAINTAINER=	devel@stasyan.com
 COMMENT=	Solver of harmonic inversion
 
-USES=		fortran gmake
+USES=		fortran gmake libtool
 GNU_CONFIGURE=	yes
 USE_GCC=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include

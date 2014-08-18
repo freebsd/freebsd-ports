@@ -1,8 +1,7 @@
-# Created by: Lars Balker Rasmussen <lbr@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	Devel-GlobalDestruction
-PORTVERSION=	0.12
+PORTVERSION=	0.13
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-

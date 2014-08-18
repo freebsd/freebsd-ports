@@ -1,0 +1,15 @@
+--- Makefile.in.orig	2014-08-16 16:46:25.000000000 -0400
++++ Makefile.in	2014-08-16 16:46:47.000000000 -0400
+@@ -10,10 +10,10 @@
+ 
+ OBJS=ftp.o ftp_data.o ftp_directory.o ftp_login.o ftp_transfer.o ftp_list.o \
+ 	text.o rc.o quftp.o log.o
+-LIBS += -lreadline -lncurses
++LIBS += -lreadline -lncurses @LDFLAGS@
+ HEADERS=*.h
+ DEFS = @DEFS@
+-CFLAGS += -g -O6 -Wall
++CFLAGS += -g -O6 -Wall @CPPFLAGS@
+ 
+ .SUFFIXES:
+ .SUFFIXES: .c .o

@@ -3,18 +3,17 @@
 
 PORTNAME=	ggobi
 PORTVERSION=	2.1.9
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	math graphics
 MASTER_SITES=	http://www.ggobi.org/downloads/
 
 MAINTAINER=	rhurlin@gwdg.de
 COMMENT=	Data visualization system
 
-USES=		pkgconfig tar:bzip2
-USE_GNOME=	gtk20 libxml2 gnomehack
+USES=		libtool pathfix pkgconfig tar:bzip2
+USE_GNOME=	gtk20 libxml2
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
-USE_AUTOTOOLS=	libltdl
 
 CONFIGURE_ARGS+=	--with-all-plugins
 
@@ -23,6 +22,7 @@ ALL_TARGET=	all ggobirc
 post-patch:
 	@${REINPLACE_CMD} -e 's|ND_coord_i|ND_coord|' \
 		${WRKSRC}/plugins/GraphLayout/graphviz.c
+	@${REINPLACE_CMD} '/ltdl/d' ${WRKSRC}/src/plugin.h
 	@${REINPLACE_CMD} -e 's|#line 0|#line 1|' \
 		${WRKSRC}/src/ggobi-data.c \
 		${WRKSRC}/src/ggobi-renderer-cairo.c \

@@ -208,10 +208,6 @@
 # PYDISTUTILS_NOEGGINFO
 #			- Deprecated, use USE_PYTHON=noegginfo instead
 #
-# PYTHON_MASTER_SITES
-#			- Deprecated, use MASTER_SITE_PYTHON instead,
-#			  see bsd.sites.mk
-#
 # PYTHON_DEFAULT_VERSION
 # PYTHON2_DEFAULT_VERSION
 # PYTHON3_DEFAULT_VERSION

@@ -3,7 +3,7 @@
 
 PORTNAME=	gmp-ecm
 PORTVERSION=	6.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math
 MASTER_SITES=	https://gforge.inria.fr/frs/download.php/26838/
 DISTNAME=	ecm-${PORTVERSION}
@@ -21,8 +21,9 @@ CONFLICTS=	ecm-[0-9]*
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	ac_cv_prog_XSLTPROC=no \
 		--with-gmp=${LOCALBASE}
+USES=		libtool
 
-PLIST_FILES=	bin/ecm include/ecm.h lib/libecm.a lib/libecm.la \
+PLIST_FILES=	bin/ecm include/ecm.h lib/libecm.a \
 		man/man1/ecm.1.gz
 
 post-patch:

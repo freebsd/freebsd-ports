@@ -11,6 +11,8 @@ DISTNAME=	gtest-${PORTVERSION}
 MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	Framework for writing C++ tests on a variety of platforms
 
+LICENSE=	BSD3CLAUSE
+
 USES=		shebangfix libtool
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
@@ -23,6 +25,5 @@ SHEBANG_FILES=	scripts/fuse_gtest_files.py scripts/gen_gtest_pred_impl.py \
 
 regression-test:
 	cd ${WRKSRC}; ${MAKE} check
-
 
 .include <bsd.port.mk>

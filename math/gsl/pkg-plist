@@ -221,13 +221,13 @@ include/gsl/gsl_version.h
 include/gsl/gsl_wavelet.h
 include/gsl/gsl_wavelet2d.h
 lib/libgsl.a
-lib/libgsl.la
 lib/libgsl.so
-lib/libgsl.so.17
+lib/libgsl.so.0
+lib/libgsl.so.0.17.0
 lib/libgslcblas.a
-lib/libgslcblas.la
 lib/libgslcblas.so
 lib/libgslcblas.so.0
+lib/libgslcblas.so.0.0.0
 libdata/pkgconfig/gsl.pc
 share/aclocal/gsl.m4
 man/man1/gsl-config.1.gz

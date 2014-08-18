@@ -3,7 +3,7 @@
 
 PORTNAME=	glog
 PORTVERSION=	0.3.3
-PORTREVISION=	1
+PORTREVISION=	3
 CATEGORIES=	devel
 MASTER_SITES=	GOOGLE_CODE
 
@@ -13,7 +13,7 @@ COMMENT=	Library of C++ classes for flexible logging
 LIB_DEPENDS=	libgflags.so:${PORTSDIR}/devel/gflags
 
 GNU_CONFIGURE=	yes
-USES=		execinfo pathfix libtool:keepla
+USES=		execinfo pathfix libtool
 USE_LDCONFIG=	yes
 PROJECTHOST=	google-glog
 

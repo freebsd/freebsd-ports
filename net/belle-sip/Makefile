@@ -2,8 +2,8 @@
 
 PORTNAME=	belle-sip
 PORTVERSION=	1.3.0
-PORTREVISION=	1
-CATEGORIES=	net
+PORTREVISION=	2
+CATEGORIES=	net java
 MASTER_SITES=	SAVANNAH/linphone/${PORTNAME}/:source1 \
 		http://www.antlr3.org/download/:source2
 DISTFILES=	belle-sip-1.3.0.tar.gz:source1 \
@@ -34,10 +34,6 @@ OPTIONS_DEFAULT=POLARSSL
 
 POLARSSL_CONFIGURE_ENABLE=	tls
 POLARSSL_LIB_DEPENDS=		libpolarssl.so:${PORTSDIR}/security/polarssl
-
-.if defined(WITH_DEBUG) && !defined(WITHOUT_DEBUG)
-CONFIGURE_ARGS+=--enable-debug
-.endif
 
 post-extract:
 	@${CP} ${DISTDIR}/antlr-3.4-complete.jar ${WRKDIR}/antlr-complete.jar

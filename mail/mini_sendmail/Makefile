@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mini_sendmail
-PORTVERSION=	1.3.7
+PORTVERSION=	1.3.8
 CATEGORIES+=	mail
 MASTER_SITES=	http://www.acme.com/software/mini_sendmail/
 

@@ -1,0 +1,22 @@
+I believe a lot of log processing is done too early.
+
+This module lets you defer log processing in two ways:
+
+* Defer recording of log messages until some "transaction" has completed
+
+  Typically this transaction is something like an HTTP request or a cron job.
+  Generally log messages are easier to read if they are recorded atomically and
+  are not intermingled with log messages created by other transactions.
+
+* Defer rendering of log messages
+
+  Sometimes you don't know how logs should be rendered until long after the
+  message has been written. If you aren't sure what information you'll want to
+  display, or you expect to display the same logs in multiple formats, it makes
+  sense to store your logs in a highly structured format so they can be
+  reliably parsed and processed later.
+
+This module doesn't actually write out logs! To use this module for normal
+logging purposes you also need a logging library.
+
+WWW: http://search.cpan.org/dist/Log-Defer/

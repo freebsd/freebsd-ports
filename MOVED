@@ -6763,3 +6763,9 @@ korean/unzip|archivers/unzip|2014-08-15|Merged with archivers/unzip as a new non
 russian/unzip|archivers/unzip|2014-08-15|Merged with archivers/unzip as a new non-default option
 mail/sendmail-sasl|mail/sendmail|2014-08-15|Removed: Use mail/sendmail instead
 print/cups-samba||2014-08-15|Removed: defunct for long, disappeared upstream
+security/sguil-client|security/sguil|2014-08-16|Merged into new port security/sguil
+security/sguil-sensor|security/sguil|2014-08-16|Merged into new port security/sguil
+security/sguil-server|security/sguil|2014-08-16|Merged into new port security/sguil
+databases/jasperserver||2014-08-18|Has expired: Unstaged, depends on expiring devel/maven2
+devel/maven2|devel/maven3|2014-08-18|Has expired: No longer supported by the Apache Foundation. Use 3.x instead
+x11-clocks/alarm-clock||2014-08-18|Removed: disappeared upstream
