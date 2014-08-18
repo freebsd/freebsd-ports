@@ -266,7 +266,7 @@ fix-packlist::
 
 # Starting with perl 5.20, the empty bootstrap files are not installed any more
 # by ExtUtils::MakeMaker.  As we don't need them anyway, remove them.
-# Module::Build continues to install them, so inconditionnaly remove the files.
+# Module::Build continues to install them, so remove the files unconditionally.
 fix-perl-bs:
 	-@${FIND} ${STAGEDIR} -name '*.bs' -size 0 -delete
 
