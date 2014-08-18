@@ -73,10 +73,8 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/sauer_${f} ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/sauer_${f} ${STAGEDIR}${PREFIX}/libexec
 .endfor
-.if !defined(NOPORTDATA)
 	${MKDIR} ${STAGEDIR}${DATADIR}
 	cd ${WRKSRC} && ${COPYTREE_SHARE} "${PORTDATA}" ${STAGEDIR}${DATADIR}
-.endif
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC}/docs && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}
 
