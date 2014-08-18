@@ -21,6 +21,7 @@ post-install:
 	@${RM} -r ${STAGEDIR}${PREFIX}/etc
 	@${RM} -r ${STAGEDIR}${PREFIX}/man
 	@${RM} -r ${STAGEDIR}${DATADIR}
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/qemu-*
 	@(cd ${STAGEDIR}${PREFIX}/bin && \
 		for i in qemu-*; do ${MV} -i $$i $$i-static; done)
 
