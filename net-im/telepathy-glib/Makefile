@@ -17,9 +17,8 @@ RUN_DEPENDS=	vapigen:${PORTSDIR}/lang/vala-vapigen
 PORTSCOUT=	limitw:1,even
 
 USE_LDCONFIG=	yes
-USES=		gmake libtool:keepla pathfix pkgconfig
+USES=		gmake libtool:keepla pathfix pkgconfig python:build
 USE_GNOME=	glib20 gnomehier introspection:build libxslt:build
-USE_PYTHON_BUILD=	yes
 MAKE_JOBS_UNSAFE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-vala-bindings
