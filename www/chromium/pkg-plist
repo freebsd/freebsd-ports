@@ -61,7 +61,6 @@ share/applications/chromium-browser.desktop
 %%DATADIR%%/locales/zh-CN.pak
 %%DATADIR%%/locales/zh-TW.pak
 %%DATADIR%%/mksnapshot
-%%DATADIR%%/protoc
 %%DATADIR%%/resources.pak
 %%DATADIR%%/resources/extension/demo/library.js
 %%DATADIR%%/resources/inspector/Images/addIcon.png
