@@ -3,7 +3,7 @@
 
 PORTNAME=	transcode
 PORTVERSION=	1.1.7
-PORTREVISION=	15
+PORTREVISION=	16
 CATEGORIES=	multimedia
 MASTER_SITES=	http://cdn.bitbucket.org/france/transcode-tcforge/downloads/
 
@@ -17,7 +17,7 @@ LIB_DEPENDS=	libavcodec.so:${PORTSDIR}/multimedia/ffmpeg
 FAKEDIR=	${WRKDIR}/fake
 PLIST=		${WRKDIR}/plist
 USE_LDCONFIG=	yes
-USES=		gmake pkgconfig tar:bzip2 libtool:keepla
+USES=		gmake pkgconfig tar:bzip2 libtool
 WANT_SDL=	yes
 WANT_GNOME=	yes
 USE_AUTOTOOLS=	libtoolize
@@ -158,7 +158,7 @@ pre-install:
 	@(cd ${WRKSRC} && ${MAKE_CMD} install prefix=${FAKEDIR} mandir=${FAKEDIR}/man)
 .for dir in bin share/doc lib
 	@(cd ${FAKEDIR}/${dir} && ${FIND} -s * -type f -o -type l | \
-		${SED} -e 's|^|${dir}/|' >> ${PLIST})
+		${SED} -e 's|^|${dir}/|' | grep -v \\.la$$ >> ${PLIST})
 	@(cd ${FAKEDIR}/${dir} && ${FIND} -d * -type d | \
 		${SED} -e 's|^|@dirrm ${dir}/|' >> ${PLIST})
 .endfor
