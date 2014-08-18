@@ -4,8 +4,13 @@ bin/sconvert
 bin/help
 bin/proc2mod
 bin/multidec
+man/man1/sconvert.1.gz
+man/man1/nutmeg.1.gz
+man/man1/spice.1.gz
+man/man1/spice3.1.gz
+man/man3/mfb.3.gz
+man/man5/mfbcap.5.gz
 %%DATADIR%%/helpdir/spice.txt
-%%DATADIR%%/helpdir/spice.idx
 %%DATADIR%%/scripts/setplot
 %%DATADIR%%/scripts/spinit
 %%DATADIR%%/mfbcap
