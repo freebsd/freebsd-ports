@@ -22,7 +22,6 @@ DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}-${DISTVERSION}
 
 SUB_FILES=	pkg-deinstall
 SUB_LIST=	CACHEDIR="/var/cache/free-sa"
-PLIST_SUB+=	RESETPREFIX=${PREFIX}
 
 USE_CSTD=	gnu89
 

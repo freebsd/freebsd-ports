@@ -31,7 +31,6 @@ CONFIGURE_ARGS=	--enable-swtok --enable-tpmtok \
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 USE_RC_SUBR=	pkcsslotd
-PLIST_SUB=	RESETPREFIX=${PREFIX}
 SUB_FILES=	pkg-message
 SUB_LIST=	USERS=${USERS} GROUPS=${GROUPS}
 USERS=		_pkcs11

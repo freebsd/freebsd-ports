@@ -15,7 +15,6 @@ LICENSE_COMB=	dual
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--localstatedir=/var
-PLIST_SUB=	RESETPREFIX=${PREFIX}
 USES=		libtool pathfix perl5 tar:bzip2
 USE_LDCONFIG=	yes
 USE_RC_SUBR=	munged
