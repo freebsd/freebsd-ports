@@ -4,7 +4,6 @@ include/glog/raw_logging.h
 include/glog/stl_logging.h
 include/glog/vlog_is_on.h
 lib/libglog.a
-lib/libglog.la
 lib/libglog.so
 lib/libglog.so.0
 lib/libglog.so.0.0.0
