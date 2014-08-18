@@ -187,8 +187,8 @@
 @dirrm %%PYTHON_SITELIBDIR%%/nzmath/plugin
 @dirrm %%PYTHON_SITELIBDIR%%/nzmath/poly
 @dirrm %%PYTHON_SITELIBDIR%%/nzmath
-%%PORTDATA%%%%DATADIR%%/discriminant.csv
-%%PORTDATA%%@dirrm %%DATADIR%%
+%%DATADIR%%/discriminant.csv
+@dirrm %%DATADIR%%
 %%PORTDOCS%%%%DOCSDIR%%/algfield.pdf
 %%PORTDOCS%%%%DOCSDIR%%/algorithm.pdf
 %%PORTDOCS%%%%DOCSDIR%%/arith1.pdf

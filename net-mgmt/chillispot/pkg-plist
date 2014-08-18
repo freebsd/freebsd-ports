@@ -1,11 +1,11 @@
 @stopdaemon chillispot
 sbin/chilli
 man/man8/chilli.8.gz
-%%PORTDATA%%%%DATADIR%%/chilli.conf.sample
-%%PORTDATA%%%%DATADIR%%/dictionary.chillispot
-%%PORTDATA%%%%DATADIR%%/freeradius.users
-%%PORTDATA%%%%DATADIR%%/hotspotlogin.cgi
-%%PORTDATA%%%%DATADIR%%/pf.conf.sample
-%%PORTDATA%%%%DATADIR%%/ipfw-config.sample
-%%PORTDATA%%%%DATADIR%%/installguide.txt
-%%PORTDATA%%@dirrm %%DATADIR%%
+%%DATADIR%%/chilli.conf.sample
+%%DATADIR%%/dictionary.chillispot
+%%DATADIR%%/freeradius.users
+%%DATADIR%%/hotspotlogin.cgi
+%%DATADIR%%/pf.conf.sample
+%%DATADIR%%/ipfw-config.sample
+%%DATADIR%%/installguide.txt
+@dirrm %%DATADIR%%
