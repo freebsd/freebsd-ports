@@ -16,6 +16,9 @@ LICENSE=	GPLv2
 
 CONFLICTS=	parallel-[0-9]*
 
+DEPRECATED=	Use moreutils-parallel in sysutils/moreutils instead
+EXPIRATION_DATE=2014-09-18
+
 WRKSRC=		${WRKDIR}/moreutils
 
 MAKE_ARGS=	BINS=parallel  MANS=parallel.1
