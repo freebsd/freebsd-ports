@@ -7,7 +7,7 @@ CATEGORIES=	devel
 PKGNAMEPREFIX=	qt5-
 
 MAINTAINER=	kde@FreeBSD.org
-COMMENT=	Qt 5-compatible scripting module
+COMMENT=	Qt 4-compatible scripting module
 
 USE_QT5=	core buildtools_build
 QT_DIST=	${PORTNAME}
