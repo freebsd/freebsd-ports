@@ -1,6 +1,6 @@
 # Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/multimedia/libquvi/Makefile 19571 2014-04-25 18:12:46Z kwm $
+#   $MCom: ports/trunk/multimedia/libquvi/Makefile 19814 2014-08-15 20:17:00Z gusi $
 
 PORTNAME=	libquvi
 PORTVERSION=	0.9.4
@@ -28,6 +28,7 @@ USE_GNOME=	glib20
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
+INSTALL_TARGET=	install-strip
 
 QUVI_VER=	0.9
 PLIST_SUB+=	VERSION=${QUVI_VER}
@@ -36,8 +37,5 @@ PROJECTHOST=	quvi
 
 post-patch:
 	@${REINPLACE_CMD} 's/lua-5.1/lua-${LUA_VER}/g' ${WRKSRC}/configure
-
-post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libquvi-*.so
 
 .include <bsd.port.mk>

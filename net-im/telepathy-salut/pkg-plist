@@ -1,9 +1,7 @@
 lib/telepathy/salut-0/lib/libsalut-plugins-%%VERSION%%.so
-lib/telepathy/salut-0/lib/libsalut-plugins.la
 lib/telepathy/salut-0/lib/libsalut-plugins.so
 lib/telepathy/salut-0/lib/libwocky-telepathy-salut-%%VERSION%%.so
 lib/telepathy/salut-0/lib/libwocky.a
-lib/telepathy/salut-0/lib/libwocky.la
 lib/telepathy/salut-0/lib/libwocky.so
 libexec/telepathy-salut
 man/man8/telepathy-salut.8.gz

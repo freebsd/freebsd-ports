@@ -4,11 +4,9 @@ include/librsvg-2.0/librsvg/librsvg-features.h
 include/librsvg-2.0/librsvg/rsvg-cairo.h
 include/librsvg-2.0/librsvg/rsvg.h
 lib/gdk-pixbuf-2.0/%%GTK2_VERSION%%/loaders/libpixbufloader-svg.a
-lib/gdk-pixbuf-2.0/%%GTK2_VERSION%%/loaders/libpixbufloader-svg.la
 lib/gdk-pixbuf-2.0/%%GTK2_VERSION%%/loaders/libpixbufloader-svg.so
 lib/girepository-1.0/Rsvg-2.0.typelib
 lib/librsvg-2.a
-lib/librsvg-2.la
 lib/librsvg-2.so
 lib/librsvg-2.so.2
 lib/librsvg-2.so.2.40.2

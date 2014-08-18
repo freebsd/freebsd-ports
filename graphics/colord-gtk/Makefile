@@ -1,6 +1,6 @@
 # Created by: Koop Mast <kwm@FreeBSD.org>
 # $FreeBSD$
-#    $MCom: ports/trunk/graphics/colord-gtk/Makefile 18965 2013-12-20 11:02:42Z kwm $
+#    $MCom: ports/trunk/graphics/colord-gtk/Makefile 19815 2014-08-15 20:26:47Z gusi $
 
 PORTNAME=	colord-gtk
 PORTVERSION=	0.1.25
@@ -15,15 +15,15 @@ LIB_DEPENDS=	libcolord.so:${PORTSDIR}/graphics/colord \
 		libdbus-1.so:${PORTSDIR}/devel/dbus \
 		liblcms2.so:${PORTSDIR}/graphics/lcms2
 
-USE_XZ=		yes
 USE_GNOME=	gnomehier gtk30 intlhack introspection:build
-USES=		gettext gmake pathfix pkgconfig
+USES=		gettext gmake pathfix pkgconfig tar:xz
 USE_SQLITE=	3
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--enable-gtk-doc-html=no
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
+INSTALL_TARGET=	install-strip
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-Wclobbered||g' \
@@ -32,8 +32,5 @@ post-patch:
 		-e 's|-Wtype-limits||g' \
 		-e 's|-Wmissing-parameter-type||g' \
 		${WRKSRC}/configure
-
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libcolord-gtk.so.1
 
 .include <bsd.port.mk>

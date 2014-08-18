@@ -164,7 +164,6 @@ include/telepathy-1.0/telepathy-glib/verify.h
 include/telepathy-1.0/telepathy-glib/version.h
 lib/girepository-1.0/TelepathyGLib-0.12.typelib
 lib/libtelepathy-glib.a
-lib/libtelepathy-glib.la
 lib/libtelepathy-glib.so
 lib/libtelepathy-glib.so.0
 lib/libtelepathy-glib.so.0.84.1

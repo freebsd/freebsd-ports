@@ -1,6 +1,6 @@
 # Created by: Edgardo Garcia Hoeffler <edybsd@yahoo.com.ar>
 # $FreeBSD$
-#   $MCom: ports/trunk/x11-fm/gnome-commander2/Makefile 19578 2014-04-25 21:50:30Z kwm $
+#   $MCom: ports/trunk/x11-fm/gnome-commander2/Makefile 19814 2014-08-15 20:17:00Z gusi $
 
 PORTNAME=	gnome-commander
 PORTVERSION=	1.4.1
@@ -30,6 +30,7 @@ GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 INSTALLS_OMF=	yes
+INSTALL_TARGET=	install-strip
 
 OPTIONS_DEFINE=		NLS
 OPTIONS_SUB=		yes
@@ -39,9 +40,5 @@ NLS_USES=		gettext
 post-patch:
 	@${REINPLACE_CMD} -e 's|unique-1|unique-3|g' \
 		${WRKSRC}/configure
-
-post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/gnome-commander/plugins/libfileroller.so
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/gnome-commander/libgcmd.so.0.0.0
 
 .include <bsd.port.mk>

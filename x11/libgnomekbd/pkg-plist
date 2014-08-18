@@ -9,12 +9,10 @@ include/libgnomekbd/gkbd-status.h
 include/libgnomekbd/gkbd-util.h
 lib/girepository-1.0/Gkbd-3.0.typelib
 lib/libgnomekbd.a
-lib/libgnomekbd.la
 lib/libgnomekbd.so
 lib/libgnomekbd.so.8
 lib/libgnomekbd.so.8.0.0
 lib/libgnomekbdui.a
-lib/libgnomekbdui.la
 lib/libgnomekbdui.so
 lib/libgnomekbdui.so.8
 lib/libgnomekbdui.so.8.0.0

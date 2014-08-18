@@ -1,9 +1,10 @@
 # Created by: Maxim Sobolev <sobomax@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports-experimental/trunk/x11/yelp/Makefile 19337 2014-03-25 19:31:08Z kwm $
+#   $MCom: ports/trunk/x11/yelp/Makefile 19813 2014-08-15 19:44:33Z gusi $
 
 PORTNAME=	yelp
 PORTVERSION=	3.12.0
+PORTREVISION=	1
 CATEGORIES=	x11 gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -14,12 +15,12 @@ COMMENT=	Help browser for the GNOME 3 desktop
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/yelp-xsl.pc:${PORTSDIR}/textproc/yelp-xsl \
+BUILD_DEPENDS=	yelp-xsl>=0:${PORTSDIR}/textproc/yelp-xsl \
 		itstool:${PORTSDIR}/textproc/itstool
 LIB_DEPENDS=	libwebkitgtk-3.0.so:${PORTSDIR}/www/webkit-gtk3
-RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/yelp-xsl.pc:${PORTSDIR}/textproc/yelp-xsl
+RUN_DEPENDS=	yelp-xsl>=0:${PORTSDIR}/textproc/yelp-xsl
 
-USES=		desktop-file-utils gettext gmake libtool:keepla pathfix \
+USES=		desktop-file-utils gettext gmake libtool pathfix \
 		pkgconfig tar:xz
 USE_XORG=	x11 ice
 USE_GNOME=	gnomeprefix gtk30 intlhack libxml2 libxslt
@@ -29,6 +30,7 @@ USE_LDCONFIG=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib -fstack-protector
 GLIB_SCHEMAS=	org.gnome.yelp.gschema.xml
+INSTALL_TARGET=	install-strip
 
 .include <bsd.port.pre.mk>
 
@@ -38,8 +40,5 @@ CONFIGURE_ENV+=	YELP_LZMA_CFLAGS="-I/usr/include" \
 .else
 LIB_DEPENDS+=	liblzma.so:${PORTSDIR}/archivers/xz
 .endif
-
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libyelp.so.*
 
 .include <bsd.port.post.mk>

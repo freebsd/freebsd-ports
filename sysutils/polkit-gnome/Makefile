@@ -1,6 +1,6 @@
 # Created by: Koop Mast<kwm@FreeBSD.org>
 # $FreeBSD$
-#    $MCom: ports/trunk/sysutils/polkit-gnome/Makefile 18866 2013-11-08 11:27:41Z gusi $
+#    $MCom: ports/trunk/sysutils/polkit-gnome/Makefile 19804 2014-08-13 14:55:11Z kwm $
 
 PORTNAME=	polkit-gnome
 PORTVERSION=	0.105
@@ -12,8 +12,7 @@ COMMENT=	GNOME frontend to the PolicyKit framework
 
 LIB_DEPENDS=	libpolkit-gobject-1.so:${PORTSDIR}/sysutils/polkit
 
-USES=		gettext gmake pathfix pkgconfig
-USE_XZ=		yes
+USES=		gettext gmake pathfix pkgconfig tar:xz
 USE_GNOME=	gnomeprefix gtk20 gtk30 intlhack
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes

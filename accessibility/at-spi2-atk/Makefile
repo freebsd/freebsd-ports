@@ -1,9 +1,10 @@
 # Created by: Maxim Sobolev <sobomax@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/accessibility/at-spi2-atk/Makefile 19578 2014-04-25 21:50:30Z kwm $
+#   $MCom: ports/trunk/accessibility/at-spi2-atk/Makefile 19813 2014-08-15 19:44:33Z gusi $
 
 PORTNAME=	at-spi2-atk
 PORTVERSION=	2.12.1
+PORTREVISION=	1
 CATEGORIES=	accessibility x11-toolkits
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -19,16 +20,13 @@ RUN_DEPENDS=	at-spi2-core>=2.8.0:${PORTSDIR}/accessibility/at-spi2-core
 
 PORTSCOUT=	limitw:1,even
 
-USES=		gmake libtool:keepla pathfix pkgconfig tar:xz
+USES=		gmake libtool pathfix pkgconfig tar:xz
 USE_GNOME=	atk glib20 gnomehier intlhack
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--enable-p2p
-
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libatk-bridge-2.0.so*
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/gtk-2.0/modules/libatk-bridge.so
+INSTALL_TARGET=	install-strip
 
 .include <bsd.port.mk>

@@ -1,9 +1,10 @@
 # Created by: Koop Mast <kwm@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/devel/libpeas/Makefile 19788 2014-08-02 10:19:13Z gusi $
+#   $MCom: ports/trunk/devel/libpeas/Makefile 19813 2014-08-15 19:44:33Z gusi $
 
 PORTNAME=	libpeas
 PORTVERSION=	1.10.1
+PORTREVISION=	1
 CATEGORIES=	devel gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -13,9 +14,9 @@ COMMENT=	Next evolution of the Gedit plugins engine
 
 BUILD_DEPENDS=	valac:${PORTSDIR}/lang/vala
 
-USES=		gettext gmake libtool:keepla pathfix pkgconfig tar:xz
+USES=		gettext gmake libtool pathfix pkgconfig \
+		python:3 tar:xz
 USE_GNOME=	gtk30 introspection:build
-USE_PYTHON=	3
 USE_LDCONFIG=	yes
 INSTALLS_ICONS=	yes
 GNU_CONFIGURE=	yes

@@ -37,27 +37,20 @@ lib/girepository-1.0/Pango-1.0.typelib
 lib/girepository-1.0/PangoCairo-1.0.typelib
 lib/girepository-1.0/PangoFT2-1.0.typelib
 %%X11%%lib/girepository-1.0/PangoXft-1.0.typelib
-lib/libpango-1.0.la
 lib/libpango-1.0.so
 lib/libpango-1.0.so.0
 lib/libpango-1.0.so.%%LIBVERSION%%
-lib/libpangocairo-1.0.la
 lib/libpangocairo-1.0.so
 lib/libpangocairo-1.0.so.0
 lib/libpangocairo-1.0.so.%%LIBVERSION%%
-lib/libpangoft2-1.0.la
 lib/libpangoft2-1.0.so
 lib/libpangoft2-1.0.so.0
 lib/libpangoft2-1.0.so.%%LIBVERSION%%
-%%X11%%lib/libpangoxft-1.0.la
 %%X11%%lib/libpangoxft-1.0.so
 %%X11%%lib/libpangoxft-1.0.so.0
 %%X11%%lib/libpangoxft-1.0.so.%%LIBVERSION%%
-lib/pango/%%VERSION%%/modules/pango-arabic-lang.la
 lib/pango/%%VERSION%%/modules/pango-arabic-lang.so
-lib/pango/%%VERSION%%/modules/pango-basic-fc.la
 lib/pango/%%VERSION%%/modules/pango-basic-fc.so
-lib/pango/%%VERSION%%/modules/pango-indic-lang.la
 lib/pango/%%VERSION%%/modules/pango-indic-lang.so
 libdata/pkgconfig/pango.pc
 libdata/pkgconfig/pangocairo.pc
@@ -137,8 +130,6 @@ share/gtk-doc/html/pango/tools.html
 share/gtk-doc/html/pango/up-insensitive.png
 share/gtk-doc/html/pango/up.png
 @dirrm share/gtk-doc/html/pango
-@dirrmtry share/gtk-doc/html
-@dirrmtry share/gtk-doc
 @unexec /bin/rm %D/lib/pango/%%VERSION%%/modules.cache
 @dirrm lib/pango/%%VERSION%%/modules
 @dirrm lib/pango/%%VERSION%%

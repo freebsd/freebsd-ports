@@ -1,6 +1,6 @@
 # Created by: Alberto Villa <avilla@FreeBSD.org>
 # $FreeBSD$
-#    $MCom: ports/trunk/net-im/telepathy-qt4/Makefile 18965 2013-12-20 11:02:42Z kwm $
+#    $MCom: ports/trunk/net-im/telepathy-qt4/Makefile 19804 2014-08-13 14:55:11Z kwm $
 
 PORTNAME=	telepathy-qt4
 PORTVERSION=	0.9.3
@@ -20,10 +20,9 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/_dbus_bindings.so:${PORTSDIR}/devel/py-dbus
 
 USE_GNOME=	libxslt:build
 USE_GSTREAMER=	yes
-USE_PYTHON_BUILD=	2.5+
 USE_QT4=	dbus gui network qtestlib_build xml \
 		moc_build qmake_build rcc_build uic_build
-USES=		cmake pkgconfig
+USES=		cmake pkgconfig python:build
 CMAKE_ARGS=	-DENABLE_FARSIGHT:BOOL=False \
 		-DENABLE_FARSTREAM:BOOL=True \
 		-DENABLE_TESTS:BOOL=False

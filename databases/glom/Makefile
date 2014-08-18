@@ -1,6 +1,6 @@
 # Created by: Adam Weinberger <adamw@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/databases/glom/Makefile 18965 2013-12-20 11:02:42Z kwm $
+#   $MCom: ports/trunk/databases/glom/Makefile 19804 2014-08-13 14:55:11Z kwm $
 
 PORTNAME=	glom
 PORTVERSION=	1.24.0
@@ -23,11 +23,9 @@ RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-co
 		${LOCALBASE}/libdata/pkgconfig/libgda-mysql-5.0.pc:${PORTSDIR}/databases/libgda5-mysql \
 		${LOCALBASE}/libdata/pkgconfig/libgda-postgres-5.0.pc:${PORTSDIR}/databases/libgda5-postgresql
 
-USE_XZ=		yes
-USE_PYTHON=	yes
 GNU_CONFIGURE=	yes
 USES=		desktop-file-utils gettext gmake pathfix pkgconfig \
-		shared-mime-info
+		python shared-mime-info tar:xz
 USE_GNOME=	gnomedocutils gnomeprefix intltool pygobject3 libxml2 \
 		gtksourceviewmm3 libgdamm5
 USE_LDCONFIG=	yes
@@ -35,6 +33,7 @@ USE_PGSQL=	yes
 INSTALLS_OMF=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
+INSTALL_TARGET=	install-strip
 CONFIGURE_ARGS=	--with-postgres-utils=${LOCALBASE}/bin \
 		--disable-documentation
 INSTALLS_ICONS=	yes
@@ -59,9 +58,5 @@ post-patch:
 		${WRKSRC}/glom/mode_design/layout/layout_item_dialogs/comboentry_borderwidth.cc \
 		${WRKSRC}/glom/mode_design/layout/layout_item_dialogs/dialog_group_by.cc \
 		${WRKSRC}/glom/main.cc
-
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/lib*.so.*
-	@${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/*.so
 
 .include <bsd.port.mk>

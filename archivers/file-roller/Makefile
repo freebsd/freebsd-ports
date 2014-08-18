@@ -1,6 +1,6 @@
 # Created by: Anders Nordby <anders@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/archivers/file-roller/Makefile 19645 2014-05-13 06:55:22Z gusi $
+#   $MCom: ports/trunk/archivers/file-roller/Makefile 19814 2014-08-15 20:17:00Z gusi $
 
 PORTNAME=	file-roller
 PORTVERSION=	3.12.2
@@ -26,6 +26,7 @@ GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--disable-packagekit
+INSTALL_TARGET=	install-strip
 
 PORTDOCS=	AUTHORS NEWS README TODO ChangeLog
 GLIB_SCHEMAS=	org.gnome.FileRoller.gschema.xml
@@ -51,9 +52,5 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}/${DOCSDIR}
 .endfor
 .endif
-
-.if ${PORT_OPTIONS:MNAUTILUS}
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/nautilus/extensions-3.0/libnautilus-fileroller.so
-.endif	
 
 .include <bsd.port.mk>

@@ -9,11 +9,9 @@ include/cheese/cheese-gtk.h
 include/cheese/cheese-resource.h
 include/cheese/cheese-widget.h
 include/cheese/cheese.h
-lib/libcheese-gtk.la
 lib/libcheese-gtk.so
 lib/libcheese-gtk.so.23
 lib/libcheese-gtk.so.23.1.9
-lib/libcheese.la
 lib/libcheese.so
 lib/libcheese.so.7
 lib/libcheese.so.7.0.25

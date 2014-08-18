@@ -1,6 +1,6 @@
 # Created by: Gustau Perez <gustau.perez@gmail.com>
 # $FreeBSD$
-#   $MCom: ports/trunk/devel/gitg/Makefile 19578 2014-04-25 21:50:30Z kwm $
+#   $MCom: ports/trunk/devel/gitg/Makefile 19804 2014-08-13 14:55:11Z kwm $
 
 PORTNAME=	gitg
 PORTVERSION=	0.3.2
@@ -19,9 +19,9 @@ LIB_DEPENDS=	libgit2-glib-1.0.so:${PORTSDIR}/devel/libgit2-glib \
 		libgtkspell3-3.so:${PORTSDIR}/textproc/gtkspell3 \
 		libgee-0.8.so:${PORTSDIR}/devel/libgee
 
-USES=		gettext gmake libtool:keepla pathfix pkgconfig tar:xz
+USES=		gettext gmake libtool:keepla pathfix pkgconfig \
+		python:3 tar:xz
 USE_GNOME=	gnomeprefix gtk30 gtksourceview3 intlhack libxslt
-USE_PYTHON=	3
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes

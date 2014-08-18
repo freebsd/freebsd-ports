@@ -1,6 +1,6 @@
 # Created by: Koop Mast <kwm@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/www/libepc/Makefile 18972 2014-01-16 21:18:10Z kwm $
+#   $MCom: ports/trunk/www/libepc/Makefile 19804 2014-08-13 14:55:11Z kwm $
 
 PORTNAME=	libepc
 PORTVERSION=	0.4.4
@@ -15,8 +15,7 @@ LIB_DEPENDS=	libuuid.so:${PORTSDIR}/misc/e2fsprogs-libuuid \
 		libgnutls.so:${PORTSDIR}/security/gnutls \
 		libavahi-ui-gtk3.so:${PORTSDIR}/net/avahi-gtk3
 
-USE_XZ=		yes
-USES=		gettext gmake pathfix pkgconfig
+USES=		gettext gmake pathfix pkgconfig tar:xz
 USE_GNOME=	gnomeprefix gtk30
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes

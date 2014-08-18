@@ -7,7 +7,6 @@ include/geocode-glib-1.0/geocode-glib/geocode-location.h
 include/geocode-glib-1.0/geocode-glib/geocode-place.h
 include/geocode-glib-1.0/geocode-glib/geocode-reverse.h
 lib/girepository-1.0/GeocodeGlib-1.0.typelib
-lib/libgeocode-glib.la
 lib/libgeocode-glib.so
 lib/libgeocode-glib.so.0
 lib/libgeocode-glib.so.0.0.0

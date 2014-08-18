@@ -1,6 +1,6 @@
 # Created by: Ade Lovett <ade@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/mail/evolution/Makefile 19797 2014-08-11 14:09:34Z gusi $
+#   $MCom: ports/trunk/mail/evolution/Makefile 19816 2014-08-16 15:37:56Z kwm $
 
 PORTNAME=	evolution
 PORTVERSION=	3.12.5
@@ -36,6 +36,7 @@ CONFIGURE_ARGS=	--enable-nss=yes \
 CONFIGURE_ARGS+=--disable-image-inline
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
+INSTALL_TARGET=	install-strip
 
 GLIB_SCHEMAS=	org.gnome.evolution.gschema.xml \
 		org.gnome.evolution.addressbook.gschema.xml \
@@ -112,9 +113,5 @@ post-patch:
 		${WRKSRC}/modules/spamassassin/evolution-spamassassin.c \
 		${WRKSRC}/modules/bogofilter/evolution-bogofilter.c
 #	@${SH} ${FILESDIR}/fix-plugins.sh ${WRKSRC}
-
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/evolution/*/*/*.so
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/evolution/*/lib*.so
 
 .include <bsd.port.mk>

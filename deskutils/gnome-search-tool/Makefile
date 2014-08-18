@@ -1,6 +1,6 @@
 # Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/deskutils/gnome-search-tool/Makefile 18965 2013-12-20 11:02:42Z kwm $
+#   $MCom: ports/trunk/deskutils/gnome-search-tool/Makefile 19804 2014-08-13 14:55:11Z kwm $
 
 PORTNAME=	gnome-search-tool
 PORTVERSION=	3.6.0
@@ -15,8 +15,7 @@ BUILD_DEPENDS=	itstool:${PORTSDIR}/textproc/itstool
 
 CONFLICTS=	gnome-utils-2.[0-9]*
 
-USE_XZ=		yes
-USES=		gettext gmake pathfix pkgconfig
+USES=		gettext gmake pathfix pkgconfig tar:xz
 USE_LDCONFIG=	yes
 INSTALLS_ICONS=	yes
 USE_GNOME=	gnomeprefix gtk30 intlhack

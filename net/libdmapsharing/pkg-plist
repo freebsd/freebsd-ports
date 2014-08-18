@@ -22,7 +22,6 @@ include/libdmapsharing-3.0/libdmapsharing/dmap.h
 include/libdmapsharing-3.0/libdmapsharing/dpap-connection.h
 include/libdmapsharing-3.0/libdmapsharing/dpap-record.h
 include/libdmapsharing-3.0/libdmapsharing/dpap-share.h
-lib/libdmapsharing-3.0.la
 lib/libdmapsharing-3.0.so
 lib/libdmapsharing-3.0.so.2
 lib/libdmapsharing-3.0.so.2.9.24

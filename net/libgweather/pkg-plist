@@ -9,7 +9,6 @@ include/libgweather-3.0/libgweather/timezone-menu.h
 include/libgweather-3.0/libgweather/gweather-version.h
 include/libgweather-3.0/libgweather/gweather-weather.h
 include/libgweather-3.0/libgweather/gweather.h
-lib/libgweather-3.la
 lib/libgweather-3.so
 lib/libgweather-3.so.6
 lib/libgweather-3.so.6.1.3

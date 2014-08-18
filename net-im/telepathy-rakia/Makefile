@@ -1,6 +1,6 @@
 # Created by: Gustau Perez i Querol <gustau.perez@gmail.com>
 # $FreeBSD$
-#    $MCom: ports/trunk/net-im/telepathy-rakia/Makefile 19571 2014-04-25 18:12:46Z kwm $
+#    $MCom: ports/trunk/net-im/telepathy-rakia/Makefile 19804 2014-08-13 14:55:11Z kwm $
 
 PORTNAME=	telepathy-rakia
 PORTVERSION=	0.8.0
@@ -14,11 +14,11 @@ LIB_DEPENDS=	libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib \
 		libsofia-sip-ua-glib.so:${PORTSDIR}/net/sofia-sip \
 		libtelepathy-glib.so:${PORTSDIR}/net-im/telepathy-glib
 
-USES=		gmake pathfix pkgconfig
+USES=		gmake pathfix pkgconfig python:build
 USE_GNOME=	glib20 libxslt:build
 GNU_CONFIGURE=	yes
 USE_OPENSSL=	yes
-USE_PYTHON_BUILD=yes
+INSTALL_TARGET=	install-strip
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

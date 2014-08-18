@@ -2,7 +2,6 @@ include/gnome-keyring-1/gnome-keyring-memory.h
 include/gnome-keyring-1/gnome-keyring-result.h
 include/gnome-keyring-1/gnome-keyring.h
 lib/girepository-1.0/GnomeKeyring-1.0.typelib
-lib/libgnome-keyring.la
 lib/libgnome-keyring.so
 lib/libgnome-keyring.so.0
 lib/libgnome-keyring.so.0.2.0

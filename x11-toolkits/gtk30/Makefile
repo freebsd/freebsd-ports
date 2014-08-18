@@ -1,11 +1,11 @@
 # Created by: Vanilla I. Shu <vanilla@MinJe.com.TW>
 # $FreeBSD$
-#   $MCom: ports/trunk/x11-toolkits/gtk30/Makefile 19627 2014-05-12 17:25:48Z gusi $
+#   $MCom: ports/trunk/x11-toolkits/gtk30/Makefile 19813 2014-08-15 19:44:33Z gusi $
 # Please keep gtk30 and x11-themes/gnome-themes-standard minor version in sync
 
 PORTNAME=	gtk
 PORTVERSION=	3.12.2
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	GNOME
 MASTER_SITE_SUBDIR=	sources/gtk+/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
@@ -25,22 +25,23 @@ PORTSCOUT=	ignore:1
 .else
 PORTSCOUT=	limit:1,even
 
-BUILD_DEPENDS+=	${LOCALBASE}/libdata/pkgconfig/atk-bridge-2.0.pc:${PORTSDIR}/accessibility/at-spi2-atk
-RUN_DEPENDS+=	${LOCALBASE}/share/icons/hicolor/index.theme:${PORTSDIR}/misc/hicolor-icon-theme \
-		${LOCALBASE}/libdata/pkgconfig/atk-bridge-2.0.pc:${PORTSDIR}/accessibility/at-spi2-atk
+BUILD_DEPENDS+=	at-spi2-atk>=0:${PORTSDIR}/accessibility/at-spi2-atk
+RUN_DEPENDS+=	hicolor-icon-theme>=0:${PORTSDIR}/misc/hicolor-icon-theme \
+		at-spi2-atk>=0:${PORTSDIR}/accessibility/at-spi2-atk
 
 USE_PERL5=	build
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 USE_GNOME=	atk gdkpixbuf2 gtk-update-icon-cache \
 		introspection:build pango
-USES+=		gettext gmake libtool:keepla pathfix perl5 pkgconfig
+USES+=		gettext gmake libtool pathfix perl5 pkgconfig
 USE_XORG=	xext xrender x11 xinerama xi xrandr xcursor xfixes xdamage \
 		xcomposite
 CONFIGURE_ARGS=	--enable-gtk2-dependency --disable-packagekit \
 		--enable-introspection
 CPPFLAGS+=	-I${LOCALBASE}/include -fno-omit-frame-pointer
 LDFLAGS+=	-L${LOCALBASE}/lib
+INSTALL_TARGET=	install-strip
 
 LIBVERSION=	0.1200.2
 PLIST_SUB+=	LIBVERSION=${LIBVERSION}
@@ -89,12 +90,6 @@ post-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/gtk-3.0/${GTK3_VERSION}/loaders
 	${INSTALL_MAN} ${WRKSRC}/docs/reference/gtk/gtk-query-immodules-3.0.1 \
 		${STAGEDIR}${PREFIX}/man/man1
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libgdk-3.so.0.*
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libgtk-3.so.0.*
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libgailutil-3.so.*
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/gtk-3.0/3.0.0/immodules/im*.so
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/gtk-3.0/3.0.0/printbackends/libprintbackend-*.so
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/gtk-3.0/3.0.0/immodules/im-*.so
 
 .include <bsd.port.mk>
 

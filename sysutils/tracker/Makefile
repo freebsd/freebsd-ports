@@ -1,9 +1,10 @@
 # Created by: Michael Johnson <ahze@FreeBSD.org>
 # $FreeBSD$
-#    $MCom: ports/trunk/sysutils/tracker/Makefile 19772 2014-07-10 17:47:06Z gusi $
+#    $MCom: ports/trunk/sysutils/tracker/Makefile 19813 2014-08-15 19:44:33Z gusi $
 
 PORTNAME=	tracker
-PORTVERSION=	1.0.2
+PORTVERSION=	1.1.2
+PORTREVISION=	1
 CATEGORIES=	sysutils gnome
 MASTER_SITES=	GNOME
 
@@ -25,7 +26,7 @@ RUN_DEPENDS=	xdg-desktop-icon:${PORTSDIR}/devel/xdg-utils \
 
 PLIST_SUB=	TRACKER_VER="1.0"
 
-USES=		gettext gmake libtool:keepla pathfix pkgconfig tar:xz
+USES=		gettext gmake libtool pathfix pkgconfig tar:xz
 USE_GNOME=	gnomeprefix gtk30 intltool introspection:build
 USE_LDCONFIG=	yes
 USE_SQLITE=	3
@@ -45,6 +46,7 @@ CONFIGURE_ARGS=	--enable-video-extractor=gstreamer \
 		--enable-generic-media-extractor=gstreamer
 # disable evolution miner until tracker fixes the dep
 CONFIGURE_ARGS+=	--disable-miner-evolution
+INSTALL_TARGET=	install-strip
 GLIB_SCHEMAS=	org.freedesktop.Tracker.DB.gschema.xml \
 		org.freedesktop.Tracker.Extract.gschema.xml \
 		org.freedesktop.Tracker.FTS.gschema.xml \
@@ -135,11 +137,5 @@ CONFIGURE_ARGS+=	--disable-libgif \
 			--disable-libpng15
 PLIST_SUB+=	GRAPHIC_MINERS="@comment "
 .endif
-
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libtracker-*.so
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libtracker-*.so.0
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/tracker-1.0/*.so
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/tracker-1.0/*/*.so*
 
 .include <bsd.port.post.mk>

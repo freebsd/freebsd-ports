@@ -1,6 +1,6 @@
 # Created by: Koop Mast <kwm@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports-experimental/trunk/security/libsecret/Makefile 19553 2014-04-20 07:23:27Z gusi $
+#   $MCom: ports/trunk/security/libsecret/Makefile 19814 2014-08-15 20:17:00Z gusi $
 
 PORTNAME=	libsecret
 PORTVERSION=	0.18
@@ -19,8 +19,6 @@ USE_GNOME=	gnomehier glib20 libxslt:build intltool \
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--enable-introspection
-
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libsecret-1.so.0
+INSTALL_TARGET=	install-strip
 
 .include <bsd.port.mk>

@@ -9,7 +9,6 @@ include/libgdl-3.0/gdl/gdl-dock.h
 include/libgdl-3.0/gdl/gdl.h
 include/libgdl-3.0/gdl/libgdltypebuiltins.h
 lib/girepository-1.0/Gdl-3.typelib
-lib/libgdl-3.la
 lib/libgdl-3.so
 lib/libgdl-3.so.5
 lib/libgdl-3.so.5.0.8

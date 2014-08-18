@@ -1,6 +1,6 @@
 # Created by: Maxim Sobolev <sobomax@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/devel/gtranslator/Makefile 18610 2013-06-30 16:33:05Z marcus $
+#   $MCom: ports/trunk/devel/gtranslator/Makefile 19814 2014-08-15 20:17:00Z gusi $
 
 PORTNAME=	gtranslator
 PORTVERSION=	2.91.6
@@ -21,11 +21,10 @@ LIB_DEPENDS=	libpeas-1.0.so:${PORTSDIR}/devel/libpeas \
 RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-codes \
 		${LOCALBASE}/libdata/pkgconfig/gsettings-desktop-schemas.pc:${PORTSDIR}/devel/gsettings-desktop-schemas
 
-USE_XZ=		yes
 USE_GNOME=	intlhack gnomeprefix gtk30 libgda5 gtksourceview3 libxml2 \
 		introspection:build
-USES=		desktop-file-utils gettext gmake pathfix pkgconfig
-USE_PYTHON=	yes
+USES=		desktop-file-utils gettext gmake pathfix pkgconfig \
+		python tar:xz
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 INSTALLS_ICONS=	yes
@@ -34,6 +33,8 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--disable-debug \
 		--with-gda=5.0 \
 		--enable-compile-warnings=no
+INSTALL_TARGET=	install-strip
+
 GLIB_SCHEMAS=	org.gnome.gtranslator.gschema.xml \
 		org.gnome.gtranslator.plugins.codeview.gschema.xml \
 		org.gnome.gtranslator.plugins.open-tran.gschema.xml \
@@ -56,9 +57,5 @@ PLIST_SUB+=	DICT=""
 CONFIGURE_ARGS+=--without-dictionary
 PLIST_SUB+=	DICT="@comment "
 .endif
-
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/gtranslator/libgtranslator-private.so
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/gtranslator/plugins/lib*.so
 
 .include <bsd.port.mk>

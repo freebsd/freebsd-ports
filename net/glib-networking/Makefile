@@ -28,11 +28,9 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-ca-certificates=${LOCALBASE}/share/certs/ca-root-nss.crt
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
+INSTALL_TARGET=	install-strip
 
 post-patch:
 	@${REINPLACE_CMD} -e' s|-Wmissing-include-dirs||g' ${WRKSRC}/configure
-
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/gio/modules/lib*.so
 
 .include <bsd.port.mk>

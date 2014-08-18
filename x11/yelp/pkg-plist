@@ -17,7 +17,6 @@ include/libyelp/yelp-types.h
 include/libyelp/yelp-uri.h
 include/libyelp/yelp-view.h
 lib/libyelp.a
-lib/libyelp.la
 lib/libyelp.so
 lib/libyelp.so.0
 lib/libyelp.so.0.0.0

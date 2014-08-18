@@ -1,10 +1,10 @@
 # Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
-#   $MCom$
+#   $MCom: ports/trunk/x11-toolkits/libwnck/Makefile 19813 2014-08-15 19:44:33Z gusi $
 
 PORTNAME=	libwnck
 PORTVERSION=	2.30.7
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES=	x11-toolkits gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -18,7 +18,7 @@ USES=		tar:xz
 
 USE_XORG=	xres x11
 USE_GNOME=	gtk20 referencehack intlhack introspection
-USES+=		bison gettext gmake libtool:keepla pathfix pkgconfig
+USES+=		bison gettext gmake libtool pathfix pkgconfig
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-html-dir=${PREFIX}/share/doc

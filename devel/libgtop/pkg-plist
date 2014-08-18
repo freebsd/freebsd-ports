@@ -49,7 +49,6 @@ include/libgtop-2.0/glibtop_suid.h
 include/libgtop-2.0/libgtopconfig.h
 lib/girepository-1.0/GTop-2.0.typelib
 lib/libgtop-2.0.a
-lib/libgtop-2.0.la
 lib/libgtop-2.0.so
 lib/libgtop-2.0.so.10
 lib/libgtop-2.0.so.10.0.0

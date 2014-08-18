@@ -1,9 +1,10 @@
 # Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/devel/libsoup/Makefile 19578 2014-04-25 21:50:30Z kwm $
+#   $MCom: ports/trunk/devel/libsoup/Makefile 19813 2014-08-15 19:44:33Z gusi $
 
 PORTNAME=	libsoup
 PORTVERSION=	2.46.0
+PORTREVISION=	1
 CATEGORIES=	devel gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -19,16 +20,17 @@ USES=		tar:xz
 
 .if !defined(REFERENCE_PORT)
 
-USES+=		gettext gmake libtool:keepla pathfix pkgconfig tar:xz
+USES+=		gettext gmake libtool pathfix pkgconfig \
+		python:3:build tar:xz
 USE_GNOME=	glib20 gnomehier intltool introspection:build \
 		libxml2 referencehack
 USE_SQLITE=	3
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
-USE_PYTHON_BUILD=	3
 CONFIGURE_ARGS=	--disable-more-warnings
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
+INSTALL_TARGET=	install-strip
 
 LIBVERSION=	1.7.0
 PLIST_SUB=	VERSION="2.4" LIBVERSION=${LIBVERSION}
@@ -68,7 +70,6 @@ post-install:
 .else
 	${INSTALL_DATA} ${WRKSRC}/libsoup/soup-connection.h \
 		${STAGEDIR}${PREFIX}/include/libsoup-2.4/libsoup/soup-connection.h
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libsoup*.so*
 .endif
 
 .include <bsd.port.mk>

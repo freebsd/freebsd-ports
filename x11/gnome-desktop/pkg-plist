@@ -10,7 +10,6 @@ include/gnome-desktop-3.0/libgnome-desktop/gnome-rr.h
 include/gnome-desktop-3.0/libgnome-desktop/gnome-wall-clock.h
 include/gnome-desktop-3.0/libgnome-desktop/gnome-xkb-info.h
 lib/girepository-1.0/GnomeDesktop-3.0.typelib
-lib/libgnome-desktop-3.la
 lib/libgnome-desktop-3.so
 lib/libgnome-desktop-3.so.10
 lib/libgnome-desktop-3.so.10.0.0

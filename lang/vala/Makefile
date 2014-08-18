@@ -1,6 +1,6 @@
 # Created by: Michael Johnson <ahze@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/lang/vala/Makefile 19571 2014-04-25 18:12:46Z kwm $
+#   $MCom: ports/trunk/lang/vala/Makefile 19814 2014-08-15 20:17:00Z gusi $
 
 PORTNAME=	vala
 PORTVERSION=	0.24.0
@@ -18,6 +18,7 @@ GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 USE_LDCONFIG=	yes
+INSTALL_TARGET=	install-strip
 
 VALA_VER=	${PORTVERSION:R}
 
@@ -68,7 +69,6 @@ post-install:
 post-install:
 	${LN} -fs ${PREFIX}/libdata/pkgconfig/libvala-${VALA_VER}.pc \
 		${STAGEDIR}${PREFIX}/libdata/pkgconfig/vala-1.0.pc
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/lib*.so.*
 .endif
 
 .include <bsd.port.mk>

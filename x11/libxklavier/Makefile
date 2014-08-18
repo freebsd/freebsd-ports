@@ -1,9 +1,10 @@
 # Created by: Maxim Sobolev <sobomax@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/x11/libxklavier/Makefile 18610 2013-06-30 16:33:05Z marcus $
+#   $MCom: ports/trunk/x11/libxklavier/Makefile 19813 2014-08-15 19:44:33Z gusi $
 
 PORTNAME=	libxklavier
 PORTVERSION=	5.2.1
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	x11 gnome
 MASTER_SITES=	GNOME
@@ -11,12 +12,12 @@ MASTER_SITES=	GNOME
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Utility library to make XKB stuff easier
 
-BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-codes
+BUILD_DEPENDS=	iso-codes>=0:${PORTSDIR}/misc/iso-codes
 RUN_DEPENDS=	xkbcomp:${PORTSDIR}/x11/xkbcomp \
-    		${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-codes
+    		iso-codes>=0:${PORTSDIR}/misc/iso-codes
 
 USE_XORG=	x11 xkbfile
-USES=		gmake libtool:keepla pathfix pkgconfig tar:xz
+USES=		gmake libtool pathfix pkgconfig tar:xz
 USE_GNOME=	libxml2 glib20 introspection:build
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
@@ -28,10 +29,8 @@ CONFIGURE_ARGS=	--with-xkb-base=${LOCALBASE}/share/X11/xkb \
 		--with-html-dir=${GNOME_HTML_DIR}
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
+INSTALL_TARGET=	install-strip
 
 PLIST_SUB=	VERSION=${PORTVERSION}
-
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libxklavier.so.*
 
 .include <bsd.port.mk>

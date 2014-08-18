@@ -31,17 +31,14 @@ lib/girepository-1.0/Grl-0.2.typelib
 lib/girepository-1.0/GrlNet-0.2.typelib
 lib/girepository-1.0/GrlPls-0.2.typelib
 lib/libgrilo-0.2.a
-lib/libgrilo-0.2.la
 lib/libgrilo-0.2.so
 lib/libgrilo-0.2.so.1
 lib/libgrilo-0.2.so.1.6.0
 lib/libgrlnet-0.2.a
-lib/libgrlnet-0.2.la
 lib/libgrlnet-0.2.so
 lib/libgrlnet-0.2.so.0
 lib/libgrlnet-0.2.so.0.1.7
 lib/libgrlpls-0.2.a
-lib/libgrlpls-0.2.la
 lib/libgrlpls-0.2.so
 lib/libgrlpls-0.2.so.0
 lib/libgrlpls-0.2.so.0.0.2

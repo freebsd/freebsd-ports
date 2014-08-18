@@ -18,9 +18,8 @@ BUILD_DEPENDS=	gsettings-desktop-schemas>=3.2.0:${PORTSDIR}/devel/gsettings-desk
 RUN_DEPENDS=	gsettings-desktop-schemas>=3.2.0:${PORTSDIR}/devel/gsettings-desktop-schemas \
 		at-spi2-core>=2.1.5:${PORTSDIR}/accessibility/at-spi2-core
 
-USES=		gettext gmake pkgconfig shebangfix tar:xz
+USES=		gettext gmake pkgconfig python:3 shebangfix tar:xz
 USE_GNOME=	gtk30 intlhack py3gobject3
-USE_PYTHON=	3
 INSTALLS_ICONS=	yes
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include

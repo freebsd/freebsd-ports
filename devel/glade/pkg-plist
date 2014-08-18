@@ -36,9 +36,7 @@ include/libgladeui-2.0/gladeui/glade-widget.h
 include/libgladeui-2.0/gladeui/glade-xml-utils.h
 include/libgladeui-2.0/gladeui/glade.h
 lib/girepository-1.0/Gladeui-2.0.typelib
-lib/glade/modules/libgladegtk.la
 lib/glade/modules/libgladegtk.so
-lib/libgladeui-2.la
 lib/libgladeui-2.so
 lib/libgladeui-2.so.6
 lib/libgladeui-2.so.6.1.3

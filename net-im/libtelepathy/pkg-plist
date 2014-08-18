@@ -45,7 +45,6 @@ include/telepathy-1.0/libtelepathy/tp-media-stream-handler-gen.h
 include/telepathy-1.0/libtelepathy/tp-props-iface-gen.h
 include/telepathy-1.0/libtelepathy/tp-props-iface.h
 lib/libtelepathy.a
-lib/libtelepathy.la
 lib/libtelepathy.so
 lib/libtelepathy.so.2
 lib/libtelepathy.so.2.7.1

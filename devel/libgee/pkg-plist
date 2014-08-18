@@ -1,6 +1,5 @@
 include/gee-0.8/gee.h
 lib/girepository-1.0/Gee-0.8.typelib
-lib/libgee-0.8.la
 lib/libgee-0.8.so
 lib/libgee-0.8.so.2
 lib/libgee-0.8.so.2.4.0

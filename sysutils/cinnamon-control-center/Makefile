@@ -1,6 +1,6 @@
 # Created by: Gustau Perez i Querol <gustau.perez@gmail.com>
 # $FreeBSD$
-#   $MCom: ports/trunk/sysutils/cinnamon-control-center/Makefile 19786 2014-07-31 10:24:00Z gusi $
+#   $MCom: ports/trunk/sysutils/cinnamon-control-center/Makefile 19804 2014-08-13 14:55:11Z kwm $
 
 PORTNAME=	cinnamon-control-center
 PORTVERSION=	2.2.10
@@ -36,11 +36,10 @@ RUN_DEPENDS=	py*-dbus>=0:${PORTSDIR}/devel/py-dbus \
 		ca_root_nss>=0:${PORTSDIR}/security/ca_root_nss \
 		py*-lxml>=0:${PORTSDIR}/devel/py-lxml
 
-USES=		gettext gmake libtool pathfix pkgconfig
+USES=		gettext gmake libtool pathfix python pkgconfig
 USE_GNOME=	evolutiondataserver3 gconf2 gnomeprefix \
 		gtk30 intlhack libgnomekbd
 USE_XORG=	x11 xfixes sm
-USE_PYTHON=	yes
 INSTALLS_ICONS=	yes
 USE_AUTOTOOLS=	libtoolize autoconf automake
 USE_LDCONFIG=	yes

@@ -1,6 +1,6 @@
 # Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/graphics/eog-plugins/Makefile 19762 2014-07-02 18:26:14Z gusi $
+#   $MCom: ports/trunk/graphics/eog-plugins/Makefile 19804 2014-08-13 14:55:11Z kwm $
 
 PORTNAME=	eog-plugins
 PORTVERSION=	3.12.1
@@ -44,7 +44,7 @@ PLIST_SUB+=	CHAMPLAIN="@comment "
 PLIST_SUB+=	PYVER=${PYTHON_VER:S|.||}
 .if ${PORT_OPTIONS:MPYTHON}
 CONFIGURE_ARGS+=--enable-python
-USE_PYTHON=	3
+USES+=		python:3
 PLIST_SUB+=	PYTHON=""
 GLIB_SCHEMAS+=	org.gnome.eog.plugins.export-to-folder.gschema.xml \
 		org.gnome.eog.plugins.fullscreenbg.gschema.xml \

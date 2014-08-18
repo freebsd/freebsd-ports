@@ -1,6 +1,6 @@
 # Created by: Gustau Perez i Querol <gustau.perez@gmail.com>
 # $FreeBSD$
-#   $MCom: ports/trunk/deskutils/gnote/Makefile 19744 2014-06-17 08:06:24Z gusi $
+#   $MCom: ports/trunk/deskutils/gnote/Makefile 19814 2014-08-15 20:17:00Z gusi $
 
 PORTNAME=	gnote
 PORTVERSION=	3.12.0
@@ -25,12 +25,16 @@ USE_GNOME=	gnomeprefix gtk30 gtkmm30 intltool \
 		libxml2 libxslt
 USES=		desktop-file-utils gettext gmake libtool \
 		pathfix pkgconfig tar:xz
-GLIB_SCHEMAS=	org.gnome.gnote.gschema.xml
 INSTALLS_ICONS=	yes
 GNU_CONFIGURE=	yes
+USE_LDCONFIG=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--with-dbus-service-dir=${PREFIX}/share/dbus-1/services
+INSTALL_TARGET=	install-strip
+
+GLIB_SCHEMAS=	org.gnome.gnote.gschema.xml
+
 DOCS=		AUTHORS ChangeLog NEWS README TODO
 
 .include <bsd.port.options.mk>
@@ -44,7 +48,5 @@ post-install:
 	@${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${DOCSDIR}
 .endfor
 .endif
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libgnote-3.12.so.0.0.0
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/gnote/addins/${PORTVERSION}/*.so
 
 .include <bsd.port.mk>

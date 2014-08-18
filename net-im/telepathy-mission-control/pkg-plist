@@ -12,7 +12,6 @@ include/mission-control-5.5/mission-control-plugins/mission-control-plugins.h
 include/mission-control-5.5/mission-control-plugins/request-policy.h
 include/mission-control-5.5/mission-control-plugins/request.h
 lib/libmission-control-plugins.a
-lib/libmission-control-plugins.la
 lib/libmission-control-plugins.so
 lib/libmission-control-plugins.so.0
 lib/libmission-control-plugins.so.0.5.1

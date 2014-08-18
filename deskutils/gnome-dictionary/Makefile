@@ -1,6 +1,6 @@
 # Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/deskutils/gnome-dictionary/Makefile 19571 2014-04-25 18:12:46Z kwm $
+#   $MCom: ports/trunk/deskutils/gnome-dictionary/Makefile 19814 2014-08-15 20:17:00Z gusi $
 
 PORTNAME=	gnome-dictionary
 PORTVERSION=	3.10.0
@@ -23,10 +23,8 @@ USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
+INSTALL_TARGET=	install-strip
 
 GLIB_SCHEMAS=	org.gnome.dictionary.gschema.xml
-
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libgdict-1.0.so.6
 
 .include <bsd.port.mk>

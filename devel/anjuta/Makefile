@@ -1,6 +1,6 @@
 # Created by: Dmitry Sivachenko <demon@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/devel/anjuta/Makefile 18914 2013-11-23 11:40:23Z gusi $
+#   $MCom: ports/trunk/devel/anjuta/Makefile 19814 2014-08-15 20:17:00Z gusi $
 
 PORTNAME=	anjuta
 PORTVERSION=	3.6.2
@@ -24,10 +24,9 @@ RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/gnome-icon-theme.pc:${PORTSDIR}/misc
 		libtool>=2.4:${PORTSDIR}/devel/libtool \
 		gdb>=7.3:${PORTSDIR}/devel/gdb \
 		yelp>=3.0.0:${PORTSDIR}/x11/yelp
-USE_XZ=		yes
 USE_CSTD=	gnu89
 USES=		bison desktop-file-utils gettext gmake pathfix perl5 \
-		pkgconfig shared-mime-info shebangfix
+		pkgconfig python shared-mime-info shebangfix tar:xz
 SHEBANG_FILES=	plugins/project-wizard/templates/js_minimal/src/main.js \
 		plugins/tools/scripts/find-fixmes.pl \
 		plugins/tools/scripts/translation-status.pl \
@@ -36,7 +35,6 @@ SHEBANG_LANG+=	gjs
 gjs_OLD_CMD=	/usr/bin/gjs
 gjs_CMD=	${LOCALBASE}/bin/gjs
 INSTALLS_ICONS=	yes
-USE_PYTHON=	yes
 USE_LDCONFIG=	yes
 USE_GNOME=	gnomeprefix vte3 gtksourceview3 libgda5 libwnck3
 GNU_CONFIGURE=	yes
@@ -46,6 +44,8 @@ CONFIGURE_ARGS=	--with-symbol-db-shm=/tmp \
 		--disable-packagekit \
 		--enable-introspection=yes
 DOCSDIR=	share/doc/libanjuta
+INSTALL_TARGET=	install-strip
+
 GLIB_SCHEMAS=	org.gnome.anjuta.cvs.gschema.xml \
 		org.gnome.anjuta.document-manager.gschema.xml \
 		org.gnome.anjuta.file-manager.gschema.xml \
@@ -131,10 +131,5 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|-fprofile-arcs||g' \
 		${WRKSRC}/libanjuta/tests/Makefile.in \
 		${WRKSRC}/libanjuta/tests/Makefile.am
-
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/anjuta/lib*.so
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/glade/modules/libgladeanjuta.so
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libanjuta-3.so.0
 
 .include <bsd.port.mk>

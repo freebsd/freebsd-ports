@@ -1,10 +1,10 @@
 # Created by: Michael Johnson <ahze@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/www/webkit-gtk2/Makefile 18610 2013-06-30 16:33:05Z marcus $
+#   $MCom: ports/trunk/www/webkit-gtk2/Makefile 19813 2014-08-15 19:44:33Z gusi $
 
 PORTNAME=	webkit
 PORTVERSION=	1.8.3
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	www
 MASTER_SITES=	http://webkitgtk.org/releases/
 PKGNAMESUFFIX=	-gtk2
@@ -12,9 +12,12 @@ PKGNAMESUFFIX=	-gtk2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	An opensource browser engine
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/flex:${PORTSDIR}/textproc/flex \
-		${LOCALBASE}/bin/gperf:${PORTSDIR}/devel/gperf \
-		gtkdoc-rebase:${PORTSDIR}/textproc/gtk-doc
+# Use the port>=0 form or the system versions of flex and gperf 
+# will be detected instead, breaking the build.
+
+BUILD_DEPENDS=	flex>=0:${PORTSDIR}/textproc/flex \
+		gperf>=0:${PORTSDIR}/devel/gperf \
+		gtkdoc-check:${PORTSDIR}/textproc/gtk-doc
 LIB_DEPENDS=	libenchant.so:${PORTSDIR}/textproc/enchant \
 		libicutu.so:${PORTSDIR}/devel/icu \
 		libcurl.so:${PORTSDIR}/ftp/curl \
@@ -22,7 +25,7 @@ LIB_DEPENDS=	libenchant.so:${PORTSDIR}/textproc/enchant \
 
 USE_GSTREAMER=	yes
 USE_XORG=	xt
-USES=		bison gettext gmake libtool:keepla perl5 pkgconfig tar:xz
+USES=		bison gettext gmake libtool perl5 pkgconfig tar:xz
 USE_GNOME=	gtk20 libxslt introspection:build
 USE_SQLITE=	yes
 USE_LDCONFIG=	yes

@@ -1,9 +1,10 @@
 # Created by: Koop Mast <kwm@FreeBSD.org>
 # $FreeBSD$
-#    $MCom: ports/trunk/net/gnome-online-accounts/Makefile 19777 2014-07-16 11:30:38Z gusi $
+#    $MCom: ports/trunk/net/gnome-online-accounts/Makefile 19813 2014-08-15 19:44:33Z gusi $
 
 PORTNAME=	gnome-online-accounts
 PORTVERSION=	3.12.4
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	GNOME
 
@@ -20,7 +21,7 @@ LIB_DEPENDS=	libwebkitgtk-3.0.so:${PORTSDIR}/www/webkit-gtk3 \
 		libsecret-1.so:${PORTSDIR}/security/libsecret \
 		librest-0.7.so:${PORTSDIR}/devel/librest
 
-USES=		gettext gmake libtool:keepla pathfix pkgconfig tar:xz
+USES=		gettext gmake libtool pathfix pkgconfig tar:xz
 USE_GNOME=	gtk30 intlhack introspection:build libxslt:build
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes

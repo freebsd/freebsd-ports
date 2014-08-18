@@ -30,7 +30,6 @@ include/gjs-1.0/gjs/native.h
 include/gjs-1.0/gjs/runtime.h
 include/gjs-1.0/gjs/type-module.h
 lib/gjs/girepository-1.0/GjsPrivate-1.0.typelib
-lib/libgjs.la
 lib/libgjs.so
 lib/libgjs.so.0
 lib/libgjs.so.0.0.0

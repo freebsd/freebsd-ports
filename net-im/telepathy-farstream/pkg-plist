@@ -3,7 +3,6 @@ include/telepathy-1.0/telepathy-farstream/content.h
 include/telepathy-1.0/telepathy-farstream/telepathy-farstream.h
 lib/girepository-1.0/TelepathyFarstream-0.6.typelib
 lib/libtelepathy-farstream.a
-lib/libtelepathy-farstream.la
 lib/libtelepathy-farstream.so
 lib/libtelepathy-farstream.so.3
 lib/libtelepathy-farstream.so.3.0.1

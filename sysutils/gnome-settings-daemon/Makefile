@@ -1,9 +1,10 @@
 # Created by: Koop Mast <kwm@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports-experimental/trunk/sysutils/gnome-settings-daemon/Makefile 19545 2014-04-16 12:23:11Z gusi $
+#   $MCom: ports/trunk/sysutils/gnome-settings-daemon/Makefile 19813 2014-08-15 19:44:33Z gusi $
 
 PORTNAME=	gnome-settings-daemon
 PORTVERSION=	3.12.2
+PORTREVISION=	1
 CATEGORIES=	sysutils gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -14,7 +15,7 @@ COMMENT=	GNOME 3 settings daemon
 BUILD_DEPENDS=	gnome-session>=0:${PORTSDIR}/x11/gnome-session \
 		geoclue>=0:${PORTSDIR}/net/geoclue \
 		docbook-xsl>=0:${PORTSDIR}/textproc/docbook-xsl \
-		${LOCALBASE}/libdata/pkgconfig/gsettings-desktop-schemas.pc:${PORTSDIR}/devel/gsettings-desktop-schemas
+		gsettings-desktop-schemas>=0:${PORTSDIR}/devel/gsettings-desktop-schemas
 LIB_DEPENDS=	libcanberra-gtk3.so:${PORTSDIR}/audio/libcanberra-gtk3 \
 		libpolkit-gobject-1.so:${PORTSDIR}/sysutils/polkit \
 		libibus-1.0.so:${PORTSDIR}/textproc/ibus \
@@ -28,11 +29,11 @@ LIB_DEPENDS=	libcanberra-gtk3.so:${PORTSDIR}/audio/libcanberra-gtk3 \
 		libgweather-3.so:${PORTSDIR}/net/libgweather
 RUN_DEPENDS=	gnome-session>=0:${PORTSDIR}/x11/gnome-session \
 		geoclue>=0:${PORTSDIR}/net/geoclue \
-		${LOCALBASE}/libdata/pkgconfig/gsettings-desktop-schemas.pc:${PORTSDIR}/devel/gsettings-desktop-schemas
+		gsettings-desktop-schemas>=0:${PORTSDIR}/devel/gsettings-desktop-schemas
 
 USE_XORG=	xxf86misc
 USE_GNOME=	gnomehier gnomedesktop3 gnomeprefix intlhack
-USES=		gettext gmake libtool:keepla pathfix pkgconfig tar:xz
+USES=		gettext gmake libtool pathfix pkgconfig tar:xz
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
 CONFIGURE_ARGS=	--disable-gudev \

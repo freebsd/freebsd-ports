@@ -1,9 +1,10 @@
 # Created by: Michael Johnson <ahze@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/www/webkit-gtk3/Makefile 19771 2014-07-10 12:17:43Z kwm $
+#   $MCom: ports/trunk/www/webkit-gtk3/Makefile 19813 2014-08-15 19:44:33Z gusi $
 
 PORTNAME=	webkit
 PORTVERSION=	2.4.4
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://webkitgtk.org/releases/
 PKGNAMESUFFIX=	-gtk3
@@ -12,7 +13,10 @@ DISTNAME=	${PORTNAME}gtk-${PORTVERSION}
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Opensource browser engine using the GTK+ 3 toolkit
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/gperf:${PORTSDIR}/devel/gperf \
+# Use the port>=0 form or the system gperf version will get 
+# detected instead, breaking the build.
+
+BUILD_DEPENDS=	gperf>=0:${PORTSDIR}/devel/gperf \
 		gtkdoc-rebase:${PORTSDIR}/textproc/gtk-doc \
 		geoclue>=0:${PORTSDIR}/net/geoclue
 LIB_DEPENDS=	libenchant.so:${PORTSDIR}/textproc/enchant \
@@ -26,7 +30,7 @@ RUN_DEPENDS=	geoclue>=0:${PORTSDIR}/net/geoclue
 
 USE_GSTREAMER1=	yes
 USE_XORG=	xt xdamage xcomposite
-USES=		bison gettext gmake libtool:keepla perl5 pkgconfig \
+USES=		bison gettext gmake libtool perl5 pkgconfig \
 		shebangfix tar:xz
 USE_RUBY=	yes
 RUBY_NO_RUN_DEPENDS=yes
@@ -115,7 +119,7 @@ BUILD_DEPENDS+=	p5-Switch>0:${PORTSDIR}/lang/p5-Switch
 .endif
 
 .if ${OSVERSION} < 1000033
-BUILD_DEPENDS+=	${LOCALBASE}/bin/flex:${PORTSDIR}/textproc/flex
+BUILD_DEPENDS+=	flex>=0:${PORTSDIR}/textproc/flex
 CONFIGURE_ENV+=	FLEX_PATH="${LOCALBASE}/bin/flex"
 .endif
 

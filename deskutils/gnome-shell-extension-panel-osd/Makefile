@@ -1,6 +1,6 @@
 # Created by: Gustau Perez i Querol <gustau.perez@gmail.com>
 # $FreeBSD$
-#   $MCom: ports/trunk/deskutils/gnome-shell-extension-panel-osd/Makefile 19680 2014-05-23 14:40:39Z gusi $
+#   $MCom: ports/trunk/deskutils/gnome-shell-extension-panel-osd/Makefile 19807 2014-08-14 07:04:43Z gusi $
 
 PORTNAME=	gnome-shell-extension-panel-osd
 PORTVERSION=	0.0.0.20140520
@@ -17,7 +17,7 @@ RUN_DEPENDS=	gnome-shell>=0:${PORTSDIR}/x11/gnome-shell \
 
 WRKSRC=		${WRKDIR}/jenslody-gnome-shell-extension-panel-osd-fc4b382
 
-USES=		gettext gmake libtool:keepla pkgconfig tar:xz
+USES=		gettext gmake libtool pkgconfig tar:xz
 USE_GNOME=	glib20 intltool
 USE_GITHUB=	yes
 USE_AUTOTOOLS=	libtoolize autoconf automake

@@ -17,10 +17,9 @@ include/stun/usages/timer.h
 include/stun/usages/turn.h
 include/stun/win32_common.h
 lib/libnice.a
-lib/libnice.la
 lib/libnice.so
 lib/libnice.so.10
-lib/libnice.so.10.3.0
+lib/libnice.so.10.4.1
 libdata/pkgconfig/nice.pc
 share/gtk-doc/html/libnice/NiceAgent.html
 share/gtk-doc/html/libnice/annotation-glossary.html
@@ -42,6 +41,7 @@ share/gtk-doc/html/libnice/ix07.html
 share/gtk-doc/html/libnice/ix08.html
 share/gtk-doc/html/libnice/ix09.html
 share/gtk-doc/html/libnice/ix10.html
+share/gtk-doc/html/libnice/ix11.html
 share/gtk-doc/html/libnice/left.png
 share/gtk-doc/html/libnice/libnice-Bind.html
 share/gtk-doc/html/libnice/libnice-Debug-messages.html

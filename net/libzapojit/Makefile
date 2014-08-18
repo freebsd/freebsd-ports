@@ -1,6 +1,6 @@
 # Created by: Gustau Perez i Querol <gustau.perez@gmail.com>
 # $FreeBSD$
-#   $MCom: ports-experimental/trunk/net/libzapojit/Makefile 19164 2014-03-17 10:14:04Z gusi $
+#   $MCom: ports/trunk/net/libzapojit/Makefile 19814 2014-08-15 20:17:00Z gusi $
 
 PORTNAME=	libzapojit
 PORTVERSION=	0.0.3
@@ -22,7 +22,6 @@ GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
+INSTALL_TARGET=	install-strip
 
-post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libzapojit-*.so.0
 .include <bsd.port.mk>

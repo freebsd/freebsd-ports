@@ -12,12 +12,10 @@ include/goa-1.0/goabackend/goabackendtypes.h
 include/goa-1.0/goabackend/goaprovider.h
 lib/girepository-1.0/Goa-1.0.typelib
 lib/libgoa-1.0.a
-lib/libgoa-1.0.la
 lib/libgoa-1.0.so
 lib/libgoa-1.0.so.0
 lib/libgoa-1.0.so.0.0.0
 lib/libgoa-backend-1.0.a
-lib/libgoa-backend-1.0.la
 lib/libgoa-backend-1.0.so
 lib/libgoa-backend-1.0.so.1.0.0
 include/goa-1.0/goa/goaversion.h

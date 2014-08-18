@@ -12,7 +12,6 @@ include/json-glib-1.0/json-glib/json-reader.h
 include/json-glib-1.0/json-glib/json-types.h
 include/json-glib-1.0/json-glib/json-version-macros.h
 include/json-glib-1.0/json-glib/json-version.h
-lib/libjson-glib-1.0.la
 lib/libjson-glib-1.0.so
 lib/libjson-glib-1.0.so.0
 lib/libjson-glib-1.0.so.0.0.2

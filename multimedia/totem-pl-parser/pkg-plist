@@ -5,12 +5,10 @@ include/totem-pl-parser/1/plparser/totem-pl-parser.h
 include/totem-pl-parser/1/plparser/totem-pl-playlist.h
 lib/girepository-1.0/TotemPlParser-1.0.typelib
 lib/libtotem-plparser-mini.a
-lib/libtotem-plparser-mini.la
 lib/libtotem-plparser-mini.so
 lib/libtotem-plparser-mini.so.18
 lib/libtotem-plparser-mini.so.18.1.0
 lib/libtotem-plparser.a
-lib/libtotem-plparser.la
 lib/libtotem-plparser.so
 lib/libtotem-plparser.so.18
 lib/libtotem-plparser.so.18.1.0

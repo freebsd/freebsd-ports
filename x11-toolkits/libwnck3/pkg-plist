@@ -11,7 +11,6 @@ include/libwnck-3.0/libwnck/window-action-menu.h
 include/libwnck-3.0/libwnck/window.h
 include/libwnck-3.0/libwnck/wnck-enum-types.h
 include/libwnck-3.0/libwnck/workspace.h
-lib/libwnck-3.la
 lib/libwnck-3.so
 lib/libwnck-3.so.0
 lib/libwnck-3.so.0.2.2

@@ -1,9 +1,9 @@
 # Created by: Koop Mast <kwm@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/net-im/folks/Makefile 19753 2014-06-25 05:44:07Z gusi $
+#   $MCom: ports/trunk/net-im/folks/Makefile 19800 2014-08-13 09:39:31Z gusi $
 
 PORTNAME=	folks
-PORTVERSION=	0.9.7.1
+PORTVERSION=	0.9.8
 CATEGORIES=	net-im
 MASTER_SITES=	GNOME
 
@@ -19,7 +19,7 @@ LIB_DEPENDS=	libgee-0.8.so:${PORTSDIR}/devel/libgee \
 CONFLICTS=	folks-0.4.[0-9]*
 
 USE_LDCONFIG=	yes
-USES=		gettext libtool:keepla gmake pathfix pkgconfig tar:xz
+USES=		gettext libtool gmake pathfix pkgconfig tar:xz
 USE_GNOME=	evolutiondataserver3 gnomehier intlhack \
 		introspection:build
 GNU_CONFIGURE=	yes
@@ -30,32 +30,17 @@ INSTALL_TARGET=	install-strip
 
 GLIB_SCHEMAS=	org.freedesktop.folks.gschema.xml
 
-PLIST_SUB=	LIBVER=25 VERSION=42 LIBVERLONG=25.17.0
+PLIST_SUB=	LIBVER=25 VERSION=42 LIBVERLONG=25.17.1
 
+OPTIONS_SUB=	yes
 OPTIONS_DEFINE=	SOCIALWEB TRACKER
 OPTIONS_DEFAULT=SOCIALWEB TRACKER
 SOCIALWEB_DESC=	Social web backend
 TRACKER_DESC=	Tracker backend
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MSOCIALWEB}
-LIB_DEPENDS+=	libsocialweb.so:${PORTSDIR}/www/libsocialweb
-CONFIGURE_ARGS+=--enable-libsocialweb-backend
-PLIST_SUB+=	SOCIAL=""
-.else
-CONFIGURE_ARGS+=--disable-libsocialweb-backend
-PLIST_SUB+=	SOCIAL="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MTRACKER}
-LIB_DEPENDS+=   libtracker-control-1.0.so:${PORTSDIR}/sysutils/tracker
-CONFIGURE_ARGS+=--enable-tracker-backend
-PLIST_SUB+=     TRACKER=""
-.else
-CONFIGURE_ARGS+=--disable-tracker-backend
-PLIST_SUB+=     TRACKER="@comment "
-.endif
+SOCIALWEB_CONFIGURE_ENABLE=	libsocialweb-backend
+SOCIALWEB_LIB_DEPENDS=	libsocialweb.so:${PORTSDIR}/www/libsocialweb
+TRACKER_CONFIGURE_ENABLE=	tracker-backend
+TRACKER_LIB_DEPENDS=	libtracker-control-1.0.so:${PORTSDIR}/sysutils/tracker
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|TRACKER_SPARQL_MAJOR=0.16|TRACKER_SPARQL_MAJOR=1.0|g' \

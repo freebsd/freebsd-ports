@@ -1,9 +1,10 @@
 # Created by: Michael Johnson <ahze@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/security/libgnome-keyring/Makefile 19578 2014-04-25 21:50:30Z kwm $
+#   $MCom: ports/trunk/security/libgnome-keyring/Makefile 19813 2014-08-15 19:44:33Z gusi $
 
 PORTNAME=	libgnome-keyring
 PORTVERSION=	3.12.0
+PORTREVISION=	1
 CATEGORIES=	security gnome
 MASTER_SITES=	GNOME
 
@@ -15,14 +16,12 @@ LIB_DEPENDS=	libdbus-1.so:${PORTSDIR}/devel/dbus \
 
 USE_GNOME=	glib20 gnomehier gnomeprefix intlhack \
 		introspection:build
-USES=		gettext gmake libtool:keepla pathfix pkgconfig tar:xz
+USES=		gettext gmake libtool pathfix pkgconfig tar:xz
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--disable-vala
-
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/lib*.so*
+INSTALL_TARGET=	install-strip
 
 .include <bsd.port.mk>

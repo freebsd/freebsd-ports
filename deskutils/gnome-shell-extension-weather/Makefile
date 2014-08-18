@@ -1,6 +1,6 @@
 # Created by: Gustau Perez i Querol <gustau.perez@gmail.com>
 # $FreeBSD$
-#   $MCom: ports/trunk/deskutils/gnome-shell-extension-weather/Makefile 19680 2014-05-23 14:40:39Z gusi $
+#   $MCom: ports/trunk/deskutils/gnome-shell-extension-weather/Makefile 19807 2014-08-14 07:04:43Z gusi $
 
 PORTNAME=	gnome-shell-extension-weather
 PORTVERSION=	0.0.0.20140520
@@ -15,7 +15,7 @@ RUN_DEPENDS=	gnome-shell>=0:${PORTSDIR}/x11/gnome-shell
 
 WRKSRC=		${WRKDIR}/Neroth-gnome-shell-extension-weather-489aaa0
 
-USES=		gettext gmake libtool:keepla pkgconfig tar:xz
+USES=		gettext gmake libtool pkgconfig tar:xz
 USE_GNOME=	intltool
 USE_GITHUB=	yes
 USE_AUTOTOOLS=	libtoolize autoconf automake

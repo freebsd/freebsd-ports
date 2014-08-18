@@ -1,9 +1,10 @@
 # Created by: Koop Mast <kwm@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/devel/glade/Makefile 19660 2014-05-13 20:38:03Z gusi $
+#   $MCom: ports/trunk/devel/glade/Makefile 19813 2014-08-15 19:44:33Z gusi $
 
 PORTNAME=	glade
 PORTVERSION=	3.18.3
+PORTREVISION=	1
 CATEGORIES=	devel gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -15,7 +16,7 @@ BUILD_DEPENDS=	itstool:${PORTSDIR}/textproc/itstool
 
 CONFLICTS=	glade3-3.*
 
-USES=		desktop-file-utils gettext gmake libtool:keepla \
+USES=		desktop-file-utils gettext gmake libtool \
 		pathfix pkgconfig tar:xz
 USE_GNOME=	gtk30 gnomeprefix gnomedocutils introspection:build
 INSTALLS_ICONS=	yes
@@ -23,6 +24,7 @@ USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include -Wno-error=format-nonliteral
 LDFLAGS+=	-L${LOCALBASE}/lib
+INSTALL_TARGET=	install-strip
 
 DOCSDIR=	${PREFIX}/share/doc/gladeui-2
 

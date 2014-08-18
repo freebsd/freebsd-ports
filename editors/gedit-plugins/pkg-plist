@@ -101,11 +101,8 @@
 %%PYTHON%%lib/gedit/plugins/joinlines.py
 %%PYTHON%%lib/gedit/plugins/joinlines.pyc
 %%PYTHON%%lib/gedit/plugins/joinlines.pyo
-%%PYTHON%%lib/gedit/plugins/libbookmarks.la
 %%PYTHON%%lib/gedit/plugins/libbookmarks.so
-%%PYTHON%%lib/gedit/plugins/libdrawspaces.la
 %%PYTHON%%lib/gedit/plugins/libdrawspaces.so
-%%PYTHON%%lib/gedit/plugins/libwordcompletion.la
 %%PYTHON%%lib/gedit/plugins/libwordcompletion.so
 %%PYTHON%%lib/gedit/plugins/multiedit.plugin
 %%PYTHON%%lib/gedit/plugins/multiedit/__init__.py

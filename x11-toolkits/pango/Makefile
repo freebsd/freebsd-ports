@@ -1,9 +1,9 @@
 # Created by: Maxim Sobolev <sobomax@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/x11-toolkits/pango/Makefile 19750 2014-06-24 20:14:50Z kwm $
+#   $MCom: ports/trunk/x11-toolkits/pango/Makefile 19817 2014-08-17 13:21:16Z gusi $
 
 PORTNAME=	pango
-PORTVERSION=	1.36.5
+PORTVERSION=	1.36.6
 PORTREVISION?=	0
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	GNOME
@@ -24,15 +24,16 @@ LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2 \
 RUN_DEPENDS=	${FONTSCALE}:${PORTSDIR}/x11-fonts/xorg-fonts-truetype \
 		${FONTENCOD}:${PORTSDIR}/x11-fonts/encodings
 
-USES+=		gettext gmake libtool:keepla pathfix pkgconfig
+USES+=		gettext gmake libtool pathfix pkgconfig
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 USE_GNOME=	cairo glib20 introspection:build referencehack
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
+INSTALL_TARGET=	install-strip
 
 VERSION=	1.8.0
-LIBVERSION=     0.3600.5
+LIBVERSION=     0.3600.6
 PLIST_SUB+=     VERSION=${VERSION} LIBVERSION=${LIBVERSION}
 
 FONTSCALE=	${LOCALBASE}/lib/X11/fonts/TTF/luximb.ttf
@@ -60,8 +61,6 @@ pre-configure:
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/pango/
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libpango*-1.0.so.0
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/pango/*/modules/pango-*.so
 
 .include <bsd.port.mk>
 

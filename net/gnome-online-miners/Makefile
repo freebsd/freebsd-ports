@@ -1,6 +1,6 @@
 # Created by: Gustau Perez <gustau.perez@gmail.com>
 # $FreeBSD$
-#   $MCom: ports/trunk/net/gnome-online-miners/Makefile 19571 2014-04-25 18:12:46Z kwm $
+#   $MCom: ports/trunk/net/gnome-online-miners/Makefile 19814 2014-08-15 20:17:00Z gusi $
 
 PORTNAME=	gnome-online-miners
 PORTVERSION=	3.12.0
@@ -16,15 +16,13 @@ LIB_DEPENDS=	libgdata.so:${PORTSDIR}/devel/libgdata \
 		libzapojit-0.0.so:${PORTSDIR}/net/libzapojit \
 		libgrilo-0.2.so:${PORTSDIR}/net/grilo
 
-USE_GNOME=	intlhack introspection:build
 USES=		gettext gmake pathfix pkgconfig tar:xz
+USE_GNOME=	intlhack introspection:build
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 INSTALLS_ICONS=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-
-post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/gnome-online-miners/libgom-1.0.so 
+INSTALL_TARGET=	install-strip
 
 .include <bsd.port.mk>

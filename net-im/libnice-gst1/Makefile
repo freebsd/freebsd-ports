@@ -1,8 +1,8 @@
 # Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
-#    $MCom: ports/trunk/net-im/libnice-gst1/Makefile 18965 2013-12-20 11:02:42Z kwm $
+#    $MCom: ports/trunk/net-im/libnice-gst1/Makefile 19801 2014-08-13 09:46:10Z gusi $
 
-PORTREVISION=	0
+PORTREVISION=	1
 PKGNAMESUFFIX=	-gst1
 
 MAINTAINER=	gnome@FreeBSD.org

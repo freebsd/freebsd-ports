@@ -14,11 +14,9 @@ include/nautilus/libnautilus-extension/nautilus-menu.h
 include/nautilus/libnautilus-extension/nautilus-property-page-provider.h
 include/nautilus/libnautilus-extension/nautilus-property-page.h
 lib/girepository-1.0/Nautilus-3.0.typelib
-lib/libnautilus-extension.la
 lib/libnautilus-extension.so
 lib/libnautilus-extension.so.1
 lib/libnautilus-extension.so.1.4.0
-lib/nautilus/extensions-3.0/libnautilus-sendto.la
 lib/nautilus/extensions-3.0/libnautilus-sendto.so
 libexec/nautilus-convert-metadata
 libdata/pkgconfig/libnautilus-extension.pc

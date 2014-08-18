@@ -1,6 +1,6 @@
 # Created by: Anders F Bjorklund <afb@users.sourceforge.net>
 # $FreeBSD$
-#   $MCom: ports/trunk/ports-mgmt/packagekit/Makefile 19789 2014-08-05 07:43:54Z gusi $
+#   $MCom: ports/trunk/ports-mgmt/packagekit/Makefile 19804 2014-08-13 14:55:11Z kwm $
 
 PORTNAME=	packagekit
 PORTVERSION=	0.8.9
@@ -15,16 +15,15 @@ BUILD_DEPENDS=	docbook2man:${PORTSDIR}/textproc/docbook-utils
 LIB_DEPENDS=	libpolkit-gobject-1.so:${PORTSDIR}/sysutils/polkit
 RUN_DEPENDS=	lsof:${PORTSDIR}/sysutils/lsof
 
-USE_XZ=		yes
 USES=		execinfo gettext gmake iconv pathfix pkgconfig \
-		shared-mime-info
+		python:2 shared-mime-info tar:xz
 USE_GNOME=	glib20 intltool introspection
 USE_LDCONFIG=	yes
 USE_SQLITE=	3
-USE_PYTHON=	-2.7
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib -lexecinfo
+INSTALL_TARGET=	install-strip
 CONFIGURE_ARGS+=--with-security-framework=polkit \
 		--localstatedir=/var \
 		--disable-gtk-doc \
@@ -71,8 +70,5 @@ post-patch:
 
 post-install:
 	@${MKDIR} ${STAGEDIR}/var/cache/PackageKit/downloads
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/lib*.so*
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/packagekit-backend/libpk*.so
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/packagekit-plugins/libpk*.so
 
 .include <bsd.port.mk>

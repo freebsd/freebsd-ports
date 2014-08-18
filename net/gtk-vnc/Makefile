@@ -1,5 +1,6 @@
 # Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
+#   $MCom: ports/trunk/net/gtk-vnc/Makefile 19814 2014-08-15 20:17:00Z gusi $
 
 PORTNAME=	gtk-vnc
 PORTVERSION=	0.4.4
@@ -18,9 +19,8 @@ LIB_DEPENDS=	libgnutls.so:${PORTSDIR}/security/gnutls \
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING.LIB
 
-USE_XZ=		yes
 USE_GNOME=	gnomehier gtk30 introspection:build
-USES=		gettext gmake pathfix pkgconfig
+USES=		gettext gmake pathfix pkgconfig tar:xz
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
@@ -28,8 +28,6 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--with-gtk=3.0 --enable-introspection \
 		--disable-plugin --without-python
 MAKE_JOBS_UNSAFE=	yes
-
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/lib*.so.0
+INSTALL_TARGET=	install-strip
 
 .include <bsd.port.mk>

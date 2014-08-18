@@ -1,6 +1,6 @@
 # Created by: Michael Johnson <ahze@FreeBSD.org>
 # $FreeBSD$
-#    $MCom: ports-experimental/trunk/sysutils/brasero/Makefile 19426 2014-04-01 08:55:12Z gusi $
+#    $MCom: ports/trunk/sysutils/brasero/Makefile 19814 2014-08-15 20:17:00Z gusi $
 
 PORTNAME=	brasero
 PORTVERSION=	3.11.3
@@ -31,6 +31,7 @@ CONFIGURE_ARGS=	--disable-inotify --enable-search=no --enable-playlist=no \
 CPPFLAGS+=	-I${LOCALBASE}/include -DHAVE_CAM_LIB_H=1 -Wno-error=format-nonliteral
 LDFLAGS+=	-L${LOCALBASE}/lib
 MAKE_ENV=	XDG_CACHE_HOME=${WRKDIR}
+INSTALL_TARGET=	install-strip
 
 GLIB_SCHEMAS=	org.gnome.brasero.gschema.xml
 
@@ -65,12 +66,5 @@ PLIST_SUB+=	LIBBURNIA="@comment "
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
 	    	${WRKSRC}/libbrasero-burn/burn-process.c
-
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libbrasero*.so.*
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/brasero3/plugins/lib*.so
-.if ${PORT_OPTIONS:MNAUTILUS}
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/nautilus/extensions-3.0/libnautilus-brasero-extension.so
-.endif
 
 .include <bsd.port.mk>

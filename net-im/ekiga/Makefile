@@ -1,6 +1,6 @@
 # Created by: Charlie & <root@ws.ipfw.ru>
 # $FreeBSD$
-#     $MCom: ports/trunk/net-im/ekiga/Makefile 18965 2013-12-20 11:02:42Z kwm $
+#     $MCom: ports/trunk/net-im/ekiga/Makefile 19804 2014-08-13 14:55:11Z kwm $
 
 PORTNAME=	ekiga
 PORTVERSION=	4.0.1
@@ -18,9 +18,8 @@ LIB_DEPENDS=	libboost_signals.so:${PORTSDIR}/devel/boost-libs \
 		libv4l2.so:${PORTSDIR}/multimedia/libv4l
 RUN_DEPENDS=	gnome-icon-theme>=3.0.0:${PORTSDIR}/misc/gnome-icon-theme
 
-USE_XZ=		yes
 GNU_CONFIGURE=	yes
-USES=		gettext gmake pathfix perl5 pkgconfig
+USES=		gettext gmake pathfix perl5 pkgconfig tar:xz
 USE_XORG=	xv
 USE_GNOME=	gtk20 intltool libxml2
 INSTALLS_ICONS=	yes

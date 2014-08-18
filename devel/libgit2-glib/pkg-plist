@@ -4,14 +4,19 @@ include/libgit2-glib-1.0/libgit2-glib/ggit-blob-output-stream.h
 include/libgit2-glib-1.0/libgit2-glib/ggit-blob.h
 include/libgit2-glib-1.0/libgit2-glib/ggit-branch-enumerator.h
 include/libgit2-glib-1.0/libgit2-glib/ggit-branch.h
+include/libgit2-glib-1.0/libgit2-glib/ggit-checkout-options.h
 include/libgit2-glib-1.0/libgit2-glib/ggit-clone-options.h
 include/libgit2-glib-1.0/libgit2-glib/ggit-commit.h
 include/libgit2-glib-1.0/libgit2-glib/ggit-config-entry.h
 include/libgit2-glib-1.0/libgit2-glib/ggit-config.h
 include/libgit2-glib-1.0/libgit2-glib/ggit-cred-plaintext.h
+include/libgit2-glib-1.0/libgit2-glib/ggit-cred-ssh-interactive.h
+include/libgit2-glib-1.0/libgit2-glib/ggit-cred-ssh-key-from-agent.h
 include/libgit2-glib-1.0/libgit2-glib/ggit-cred.h
 include/libgit2-glib-1.0/libgit2-glib/ggit-diff-delta.h
 include/libgit2-glib-1.0/libgit2-glib/ggit-diff-file.h
+include/libgit2-glib-1.0/libgit2-glib/ggit-diff-find-options.h
+include/libgit2-glib-1.0/libgit2-glib/ggit-diff-format-email-options.h
 include/libgit2-glib-1.0/libgit2-glib/ggit-diff-hunk.h
 include/libgit2-glib-1.0/libgit2-glib/ggit-diff-line.h
 include/libgit2-glib-1.0/libgit2-glib/ggit-diff-options.h
@@ -23,8 +28,8 @@ include/libgit2-glib-1.0/libgit2-glib/ggit-index-entry-resolve-undo.h
 include/libgit2-glib-1.0/libgit2-glib/ggit-index-entry.h
 include/libgit2-glib-1.0/libgit2-glib/ggit-index.h
 include/libgit2-glib-1.0/libgit2-glib/ggit-main.h
-include/libgit2-glib-1.0/libgit2-glib/ggit-merge-tree-options.h
 include/libgit2-glib-1.0/libgit2-glib/ggit-message.h
+include/libgit2-glib-1.0/libgit2-glib/ggit-merge-options.h
 include/libgit2-glib-1.0/libgit2-glib/ggit-native.h
 include/libgit2-glib-1.0/libgit2-glib/ggit-object-factory-base.h
 include/libgit2-glib-1.0/libgit2-glib/ggit-object-factory.h
@@ -40,6 +45,7 @@ include/libgit2-glib-1.0/libgit2-glib/ggit-reflog.h
 include/libgit2-glib-1.0/libgit2-glib/ggit-remote-callbacks.h
 include/libgit2-glib-1.0/libgit2-glib/ggit-remote.h
 include/libgit2-glib-1.0/libgit2-glib/ggit-repository.h
+include/libgit2-glib-1.0/libgit2-glib/ggit-revert-options.h
 include/libgit2-glib-1.0/libgit2-glib/ggit-revision-walker.h
 include/libgit2-glib-1.0/libgit2-glib/ggit-signature.h
 include/libgit2-glib-1.0/libgit2-glib/ggit-status-options.h
@@ -51,9 +57,7 @@ include/libgit2-glib-1.0/libgit2-glib/ggit-tree-entry.h
 include/libgit2-glib-1.0/libgit2-glib/ggit-tree.h
 include/libgit2-glib-1.0/libgit2-glib/ggit-types.h
 include/libgit2-glib-1.0/libgit2-glib/ggit.h
-lib/libgit2-glib-1.0.la
 lib/libgit2-glib-1.0.so
-lib/libgit2-glib-1.0.so.0
 lib/libgit2-glib-1.0.so.0.0.0
 lib/girepository-1.0/Ggit-1.0.typelib
 libdata/pkgconfig/libgit2-glib-1.0.pc

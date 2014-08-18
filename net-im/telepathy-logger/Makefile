@@ -1,9 +1,10 @@
 # Created by: Koop Mast <kwm@FreeBSD.org>
 # $FreeBSD$
-#    $MCom: ports/trunk/net-im/telepathy-logger/Makefile 19578 2014-04-25 21:50:30Z kwm $
+#    $MCom: ports/trunk/net-im/telepathy-logger/Makefile 19804 2014-08-13 14:55:11Z kwm $
 
 PORTNAME=	telepathy-logger
 PORTVERSION=	0.8.0
+PORTREVISION=	1
 CATEGORIES=	net-im
 MASTER_SITES=	http://telepathy.freedesktop.org/releases/${PORTNAME}/
 
@@ -16,19 +17,16 @@ LIB_DEPENDS=	dbus-glib-1:${PORTSDIR}/devel/dbus-glib \
 
 LICENSE=	LGPL21
 
-USES=		gmake libtool:keepla pathfix pkgconfig tar:bzip2
+USES=		gmake libtool pathfix pkgconfig python:build tar:bzip2
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 USE_GNOME=	glib20 gnomedocutils intltool libxml2 \
 		libxslt:build
 USE_SQLITE=	yes
-USE_PYTHON_BUILD=	yes
 GLIB_SCHEMAS=	org.freedesktop.Telepathy.Logger.gschema.xml
+INSTALL_TARGET=	install-strip
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/bin/python|/usr/bin/env python|g' \
 		${WRKSRC}/tools/*.py
-post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libtelepathy-logger.so.3.3.0
-
 .include <bsd.port.mk>

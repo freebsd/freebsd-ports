@@ -1,6 +1,6 @@
 # Created by: Michael Johnson <ahze@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/net-im/empathy/Makefile 19762 2014-07-02 18:26:14Z gusi $
+#   $MCom: ports/trunk/net-im/empathy/Makefile 19804 2014-08-13 14:55:11Z kwm $
 
 PORTNAME=	empathy
 PORTVERSION=	3.12.4
@@ -38,9 +38,8 @@ RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-co
 		geoclue>=0:${PORTSDIR}/net/geoclue \
     		${LOCALBASE}/libexec/mission-control-5:${PORTSDIR}/net-im/telepathy-mission-control
 
-USES=		gettext gmake libtool pathfix pkgconfig tar:xz
+USES=		gettext gmake libtool pathfix pkgconfig python tar:xz
 USE_GNOME=	evolutiondataserver3 gnomeprefix
-USE_PYTHON=	yes
 USE_GSTREAMER1=	yes
 USE_LDCONFIG=	yes
 INSTALLS_ICONS=	yes

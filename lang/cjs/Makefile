@@ -1,6 +1,6 @@
 # Created by: Gustau Perez i Querol <gustau.perez@gmail.com>
 # $FreeBSD$
-#    $MCom: ports/trunk/lang/cjs/Makefile 19787 2014-07-31 14:13:40Z gusi $
+#    $MCom: ports/trunk/lang/cjs/Makefile 19804 2014-08-13 14:55:11Z kwm $
 
 PORTNAME=	cjs
 PORTVERSION=	2.2.1
@@ -18,10 +18,10 @@ LIB_DEPENDS=	libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib \
 
 CONFLICTS_BUILD=spidermonkey17-1.7.*
 
-USES=		gettext libtool gmake pathfix pkgconfig shebangfix
+USES=		gettext libtool gmake pathfix pkgconfig python:build \
+		shebangfix
 USE_GNOME=	cairo glib20 gnomeprefix introspection:build \
 		intlhack
-USE_PYTHON_BUILD=yes
 USE_LDCONFIG=	yes
 PATHFIX_MAKEFILEIN=	Makefile.am
 GNU_CONFIGURE=	yes

@@ -1,10 +1,10 @@
 # Created by: Gustau Perez i Querol <gustau.perez@gmail.com>
 # $FreeBSD$
-#   $MCom: ports/trunk/net/grilo-plugins/Makefile 19605 2014-05-02 20:38:43Z gusi $
+#   $MCom: ports/trunk/net/grilo-plugins/Makefile 19813 2014-08-15 19:44:33Z gusi $
 
 PORTNAME=	grilo-plugins
 PORTVERSION=	0.2.12
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	net
 MASTER_SITES=	GNOME
 
@@ -16,7 +16,7 @@ LIB_DEPENDS=	libgrilo-0.2.so:${PORTSDIR}/net/grilo \
 		libavahi-gobject.so:${PORTSDIR}/net/avahi-app \
 		libgdata.so:${PORTSDIR}/devel/libgdata
 
-USES=		gmake libtool:keepla pathfix pkgconfig tar:xz
+USES=		gmake libtool pathfix pkgconfig tar:xz
 USE_LDCONFIG=	yes
 USE_GNOME=	glib20 gnomehier intlhack libxml2
 GNU_CONFIGURE=	yes
@@ -26,6 +26,7 @@ CONFIGURE_ARGS=	--enable-youtube \
 		--enable-tmdb
 CPPFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/grilo-0.2/
 LDFLAGS+=	-L${LOCALBASE}/lib
+INSTALL_TARGET=	install-strip
 
 OPTIONS_SUB=			yes
 OPTIONS_DEFINE=                 TRACKER UPNP DMAP

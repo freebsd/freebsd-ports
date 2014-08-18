@@ -1,12 +1,13 @@
 # Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/audio/pulseaudio/Makefile 19790 2014-08-05 09:23:18Z gusi $
+#   $MCom: ports/trunk/audio/pulseaudio/Makefile 19813 2014-08-15 19:44:33Z gusi $
 #
 # !!!NOTE!!! Any PORTVERSION update to this port must be accompanied by
 # PORTREVISION bumps of depending ports.
 
 PORTNAME=	pulseaudio
 PORTVERSION=	5.0
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://freedesktop.org/software/pulseaudio/releases/
 
@@ -26,7 +27,7 @@ LIB_DEPENDS=	libsamplerate.so:${PORTSDIR}/audio/libsamplerate \
 USE_GNOME=	glib20 gnomehier intltool
 USE_XORG=	x11 sm xtst ice
 USE_LDCONFIG=	yes
-USES=		execinfo gettext gmake libtool:keepla pathfix \
+USES=		execinfo gettext gmake libtool pathfix \
 		pkgconfig tar:xz
 GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	libltdl

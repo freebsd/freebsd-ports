@@ -7,13 +7,9 @@ lib/gnome-shell/Shell-0.1.typelib
 lib/gnome-shell/ShellJS-0.1.typelib
 %%WEBPLUGIN_DIR%%gnome-shell/ShellMenu-0.1.typelib
 lib/gnome-shell/St-1.0.typelib
-lib/gnome-shell/libgnome-shell-js.la
 lib/gnome-shell/libgnome-shell-js.so
-%%WEBPLUGIN_DIR%%gnome-shell/libgnome-shell-menu.la
 %%WEBPLUGIN_DIR%%gnome-shell/libgnome-shell-menu.so
-lib/gnome-shell/libgnome-shell.la
 lib/gnome-shell/libgnome-shell.so
-lib/libgnome-shell-browser-plugin.la
 lib/libgnome-shell-browser-plugin.so
 libexec/gnome-shell-calendar-server
 libexec/gnome-shell-hotplug-sniffer

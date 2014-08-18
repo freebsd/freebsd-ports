@@ -1,6 +1,6 @@
 # Created by: Gustau Perez i Querol <gustau.perez@gmail.com>
 # $FreeBSD$
-#   $MCom: ports/trunk/x11/cinnamon-menus/Makefile 19786 2014-07-31 10:24:00Z gusi $
+#   $MCom: ports/trunk/x11/cinnamon-menus/Makefile 19804 2014-08-13 14:55:11Z kwm $
 
 PORTNAME=	cinnamon-menus
 PORTVERSION=	2.2.0
@@ -17,10 +17,9 @@ BUILD_DEPENDS=	gnome-autogen.sh:${PORTSDIR}/devel/gnome-common \
 RUN_DEPENDS=	xkeyboard-config>=0:${PORTSDIR}/x11/xkeyboard-config \
 		libxkbfile>=0:${PORTSDIR}/x11/libxkbfile
 
-USES=		gettext gmake libtool pathfix pkgconfig tar:xz
+USES=		gettext gmake libtool pathfix pkgconfig python tar:xz
 USE_GNOME=	gnomehier gnomemenus3 gnomeprefix gtk30 intlhack \
 		introspection:build
-USE_PYTHON=	yes
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	libtoolize autoconf automake

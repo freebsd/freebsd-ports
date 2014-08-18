@@ -1,6 +1,6 @@
 # Created by: Gustau Perez i Querol <gustau.perez@gmail.com>
 # $FreeBSD$
-#    $MCom: ports/trunk/x11-fm/nemo/Makefile 19786 2014-07-31 10:24:00Z gusi $
+#    $MCom: ports/trunk/x11-fm/nemo/Makefile 19804 2014-08-13 14:55:11Z kwm $
 
 PORTNAME=	nemo
 PORTVERSION=	2.2.3
@@ -24,11 +24,10 @@ RUN_DEPENDS=	gnome-icon-theme>=0:${PORTSDIR}/misc/gnome-icon-theme \
 		gsettings-desktop-schemas>=0:${PORTSDIR}/devel/gsettings-desktop-schemas
 
 USES=		desktop-file-utils gettext gmake libtool pathfix \
-		pkgconfig shared-mime-info
+		pkgconfig python:2 shared-mime-info
 USE_GNOME=	gnomedesktop3 gnomeprefix intlhack introspection:build \
 		libxml2 pygobject3
 INSTALLS_ICONS=	yes
-USE_PYTHON=	2
 USE_AUTOTOOLS=	libtoolize autoconf automake
 USE_LDCONFIG=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include

@@ -89,7 +89,6 @@ include/libgdata/gdata/services/youtube/gdata-youtube-state.h
 include/libgdata/gdata/services/youtube/gdata-youtube-video.h
 lib/girepository-1.0/GData-0.0.typelib
 lib/libgdata.a
-lib/libgdata.la
 lib/libgdata.so
 lib/libgdata.so.13
 lib/libgdata.so.13.5.4

@@ -1,6 +1,6 @@
 # Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/www/gnome-user-share/Makefile 19571 2014-04-25 18:12:46Z kwm $
+#   $MCom: ports/trunk/www/gnome-user-share/Makefile 19814 2014-08-15 20:17:00Z gusi $
 
 PORTNAME=	gnome-user-share
 PORTVERSION=	3.10.1
@@ -30,12 +30,10 @@ CONFIGURE_ARGS=	--with-modules-path=${LOCALBASE}/${APACHEMODDIR} \
 		--disable-bluetooth
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
+INSTALL_TARGET=	install-strip
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/etc/httpd/modules|${LOCALBASE}/${APACHEMODDIR}|g' \
 		${WRKSRC}/data/dav_user_*.conf
-
-post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/nautilus/extensions-3.0/libnautilus-share-extension.so
 
 .include <bsd.port.mk>

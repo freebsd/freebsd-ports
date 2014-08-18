@@ -1,6 +1,6 @@
 # Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/editors/ghex/Makefile 19521 2014-04-14 22:48:27Z gusi $
+#   $MCom: ports/trunk/editors/ghex/Makefile 19814 2014-08-15 20:17:00Z gusi $
 
 PORTNAME=	ghex
 PORTVERSION=	3.10.1
@@ -21,10 +21,8 @@ USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--enable-compile-warnings=no
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
+INSTALL_TARGET=	install-strip
 
 GLIB_SCHEMAS=	org.gnome.GHex.gschema.xml
-
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libgtkhex-3.so.0
 
 .include <bsd.port.mk>

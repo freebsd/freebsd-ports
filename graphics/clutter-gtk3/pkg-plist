@@ -6,7 +6,6 @@ include/clutter-gtk-1.0/clutter-gtk/gtk-clutter-texture.h
 include/clutter-gtk-1.0/clutter-gtk/gtk-clutter-version.h
 include/clutter-gtk-1.0/clutter-gtk/gtk-clutter-window.h
 lib/girepository-1.0/GtkClutter-1.0.typelib
-lib/libclutter-gtk-1.0.la
 lib/libclutter-gtk-1.0.so
 lib/libclutter-gtk-1.0.so.0
 lib/libclutter-gtk-1.0.so.0.0.0

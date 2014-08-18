@@ -1,5 +1,4 @@
 bin/gnome-music
-lib/gnome-music/libgd.la
 lib/gnome-music/libgd.so
 lib/gnome-music/girepository-1.0/Gd-1.0.typelib
 %%PYTHON_SITELIBDIR%%/gnomemusic/__init__.py

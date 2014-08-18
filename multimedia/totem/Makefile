@@ -1,9 +1,9 @@
 # Created by: Hendrik Scholz <hendrik@scholz.net>
 # $FreeBSD$
-#   $MCom: ports/trunk/multimedia/totem/Makefile 19598 2014-04-30 11:09:51Z gusi $
+#   $MCom: ports/trunk/multimedia/totem/Makefile 19818 2014-08-18 13:35:59Z gusi $
 
 PORTNAME=	totem
-PORTVERSION=	3.12.1
+PORTVERSION=	3.12.2
 CATEGORIES=	multimedia gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -28,13 +28,12 @@ RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-co
 		gnome-icon-theme-symbolic>=2.91.0:${PORTSDIR}/x11-themes/gnome-icon-theme-symbolic \
 		grilo-plugins>=0:${PORTSDIR}/net/grilo-plugins
 
-USES=		desktop-file-utils gettext gmake pathfix pkgconfig \
-		shebangfix tar:xz
+USES=		desktop-file-utils gettext gmake libtool pathfix pkgconfig \
+		python:3 shebangfix tar:xz
 USE_GNOME=	gnomehier gnomeprefix gtk30 intlhack introspection:build \
 		libxml2 nautilus3 py3gobject3
 USE_XORG=	x11 xproto xtst ice sm
 USE_GSTREAMER1=	core good bad soup ugly
-USE_PYTHON=	3
 INSTALLS_ICONS=	yes
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
@@ -47,6 +46,7 @@ CONFIGURE_ARGS=	--with-plugins="${TOTEM_PLUGINS}"
 SHEBANG_FILES=	data/totem-bugreport.py
 CONFIGURE_ENV+=	APPDATA_VALIDATE="${LOCALBASE}/bin/appdata-validate --nonet"
 MAKE_ENV=	XDG_CACHE_HOME=${WRKDIR}
+INSTALL_TARGET=	install-strip
 
 GLIB_SCHEMAS=	org.gnome.totem.enums.xml \
 		org.gnome.totem.gschema.xml \
@@ -112,11 +112,5 @@ pre-everything::
 
 post-patch:
 	@${CP} -f ${FILESDIR}/pkg-message.in ${PKGMESSAGE}
-
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/totem/plugins/*/lib*.so
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libtotem.so.0
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/nautilus/extensions-3.0/libtotem-properties-page.so
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/browser_plugins/totem/libtotem-*-plugin.so
 
 .include <bsd.port.mk>

@@ -1,9 +1,9 @@
 # Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/net-im/farstream/Makefile 19578 2014-04-25 21:50:30Z kwm $
+#   $MCom: ports/trunk/net-im/farstream/Makefile 19804 2014-08-13 14:55:11Z kwm $
 
 PORTNAME=	farstream
-PORTVERSION=	0.2.3
+PORTVERSION=	0.2.4
 CATEGORIES=	net-im devel
 MASTER_SITES=	http://freedesktop.org/software/farstream/releases/farstream/
 
@@ -14,8 +14,7 @@ LIB_DEPENDS=	libnice.so:${PORTSDIR}/net-im/libnice
 RUN_DEPENDS=	libnice-gst1>=0:${PORTSDIR}/net-im/libnice-gst1
 
 USE_LDCONFIG=	yes
-USE_PYTHON=	yes
-USES=		gettext libtool:keepla gmake pathfix pkgconfig
+USES=		gettext libtool gmake pathfix pkgconfig python
 USE_GNOME=	glib20 introspection:build
 USE_GSTREAMER1=	good bad
 GNU_CONFIGURE=	yes

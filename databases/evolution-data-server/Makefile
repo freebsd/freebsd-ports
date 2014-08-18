@@ -1,9 +1,10 @@
 # Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/databases/evolution-data-server/Makefile 19797 2014-08-11 14:09:34Z gusi $
+#   $MCom: ports/trunk/databases/evolution-data-server/Makefile 19813 2014-08-15 19:44:33Z gusi $
 
 PORTNAME=	evolution-data-server
 PORTVERSION=	3.12.5
+PORTREVISION=	1
 CATEGORIES=	databases gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -25,7 +26,7 @@ LIB_DEPENDS=	libsoup-gnome-2.4.so:${PORTSDIR}/devel/libsoup-gnome \
 		libtasn1.so:${PORTSDIR}/security/libtasn1 \
 		libgnome-keyring.so:${PORTSDIR}/security/libgnome-keyring
 
-USES=		bison gettext gmake libtool:keepla pathfix pkgconfig tar:xz
+USES=		bison gettext gmake libtool pathfix pkgconfig tar:xz
 USE_GNOME=	gnomeprefix gtk30 intlhack introspection:build \
 		libxml2
 USE_OPENLDAP=	yes
@@ -96,5 +97,10 @@ post-patch:
 		${WRKSRC}/camel/Makefile.in
 	@${REINPLACE_CMD} '/^test_imapx_LDADD =/s/=/= -lgobject-2.0 -lgthread-2.0/' \
 		${WRKSRC}/camel/providers/imapx/Makefile.in
+#	@${REINPLACE_CMD} -e '/^test_contact_store_LDADD =/s|$$| ../addressbook/libebook/libebook-1.2.la|' \
+		-e '/^test_name_selector_LDADD =/s|$$| ../camel/libcamel-1.2.la -lgthread-2.0|' \
+		${WRKSRC}/libedataserverui/Makefile.in
+#	@${REINPLACE_CMD} '/^soap_test_LDADD =/s/=/= -lgthread-2.0/' \
+		${WRKSRC}/servers/groupwise/Makefile.in
 
 .include <bsd.port.mk>

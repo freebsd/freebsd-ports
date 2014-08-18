@@ -1,7 +1,7 @@
 # $FreeBSD$
 #    $MCom: ports/trunk/net-im/libnice-gst010/Makefile 18965 2013-12-20 11:02:42Z kwm $
 
-PORTREVISION=	0
+PORTREVISION=	1
 PKGNAMESUFFIX=	-gst010
 
 MAINTAINER=	gnome@FreeBSD.org

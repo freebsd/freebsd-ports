@@ -15,8 +15,7 @@ LIB_DEPENDS=	libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib \
     		libpolkit-gobject-1.so:${PORTSDIR}/sysutils/polkit
 
 WRKSRC=		${WRKDIR}/ConsoleKit-${PORTVERSION}
-USE_BZIP2=	yes
-USES=		gettext gmake pathfix pkgconfig
+USES=		gettext gmake pathfix pkgconfig tar:bzip2
 USE_XORG=	x11
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes

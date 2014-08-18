@@ -12,7 +12,6 @@ include/libupower-glib/up-wakeups.h
 include/libupower-glib/upower.h
 lib/girepository-1.0/UPowerGlib-1.0.typelib
 lib/libupower-glib.a
-lib/libupower-glib.la
 lib/libupower-glib.so
 lib/libupower-glib.so.2
 lib/libupower-glib.so.2.0.0

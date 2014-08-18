@@ -2,9 +2,9 @@ include/libmediaart-1.0/libmediaart/cache.h
 include/libmediaart-1.0/libmediaart/extract.h
 include/libmediaart-1.0/libmediaart/extractgeneric.h
 include/libmediaart-1.0/libmediaart/mediaart.h
-lib/libmediaart-1.0.la
 lib/libmediaart-1.0.so
-lib/libmediaart-1.0.so.396
+lib/libmediaart-1.0.so.0
+lib/libmediaart-1.0.so.0.500.0
 lib/girepository-1.0/MediaArt-1.0.typelib
 libdata/pkgconfig/libmediaart-1.0.pc
 share/gir-1.0/MediaArt-1.0.gir
@@ -15,8 +15,9 @@ share/gtk-doc/html/libmediaart/index.html
 share/gtk-doc/html/libmediaart/index.sgml
 share/gtk-doc/html/libmediaart/left-insensitive.png
 share/gtk-doc/html/libmediaart/left.png
-share/gtk-doc/html/libmediaart/libmediaart-Caching-and-Management.html
-share/gtk-doc/html/libmediaart/libmediaart-Extraction.html
+share/gtk-doc/html/libmediaart/libmediaart-Cache.html
+share/gtk-doc/html/libmediaart/libmediaart-MediaArtProcess.html
+share/gtk-doc/html/libmediaart/libmediaart-Plugins.html
 share/gtk-doc/html/libmediaart/libmediaart-reference.html
 share/gtk-doc/html/libmediaart/libmediaart.devhelp2
 share/gtk-doc/html/libmediaart/overview-compiling.html
@@ -29,6 +30,7 @@ share/gtk-doc/html/libmediaart/up.png
 share/vala/vapi/libmediaart-1.0.vapi
 @dirrm share/gtk-doc/html/libmediaart
 @dirrmtry share/gtk-doc/html
+@dirrmtry share/gtk-doc
 @dirrm include/libmediaart-1.0/libmediaart
 @dirrm include/libmediaart-1.0
 

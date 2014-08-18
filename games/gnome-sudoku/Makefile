@@ -1,6 +1,6 @@
 # Created by: FreeBSD GNOME Team <gnome@freebsd.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/games/gnome-sudoku/Makefile 19760 2014-06-30 06:50:36Z gusi $
+#   $MCom: ports/trunk/games/gnome-sudoku/Makefile 19804 2014-08-13 14:55:11Z kwm $
 
 PORTNAME=	gnome-sudoku
 PORTVERSION=	3.12.3
@@ -13,9 +13,8 @@ COMMENT=	Sudoku game for gnome
 
 BUILD_DEPENDS=	itstool:${PORTSDIR}/textproc/itstool
 
-USES=		gettext gmake pathfix pkgconfig shebangfix tar:xz
+USES=		gettext gmake pathfix pkgconfig python:3 shebangfix tar:xz
 USE_GNOME=	gtk30 intlhack libxml2:build py3gobject3
-USE_PYTHON=	3
 INSTALLS_ICONS=	yes
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include

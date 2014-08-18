@@ -396,15 +396,12 @@ lib/glibmm-%%VERSION%%/proc/pm/Output.pm
 lib/glibmm-%%VERSION%%/proc/pm/Property.pm
 lib/glibmm-%%VERSION%%/proc/pm/Util.pm
 lib/glibmm-%%VERSION%%/proc/pm/WrapParser.pm
-lib/libgiomm-%%VERSION%%.la
 lib/libgiomm-%%VERSION%%.so
 lib/libgiomm-%%VERSION%%.so.1
 lib/libgiomm-%%VERSION%%.so.1.3.0
-lib/libglibmm-%%VERSION%%.la
 lib/libglibmm-%%VERSION%%.so
 lib/libglibmm-%%VERSION%%.so.1
 lib/libglibmm-%%VERSION%%.so.1.3.0
-lib/libglibmm_generate_extra_defs-%%VERSION%%.la
 lib/libglibmm_generate_extra_defs-%%VERSION%%.so
 lib/libglibmm_generate_extra_defs-%%VERSION%%.so.1
 lib/libglibmm_generate_extra_defs-%%VERSION%%.so.1.3.0

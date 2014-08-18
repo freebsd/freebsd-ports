@@ -7,7 +7,6 @@ include/telepathy-logger-0.2/telepathy-logger/telepathy-logger.h
 include/telepathy-logger-0.2/telepathy-logger/text-event.h
 lib/girepository-1.0/TelepathyLogger-0.2.typelib
 lib/libtelepathy-logger.a
-lib/libtelepathy-logger.la
 lib/libtelepathy-logger.so
 lib/libtelepathy-logger.so.3
 lib/libtelepathy-logger.so.3.3.0

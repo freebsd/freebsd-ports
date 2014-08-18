@@ -1,6 +1,6 @@
 # Created by: Koop Mast <kwm@FreeBSD.org>
 # $FreeBSD$
-#    $MCom: ports/trunk/graphics/colord/Makefile 19571 2014-04-25 18:12:46Z kwm $
+#    $MCom: ports/trunk/graphics/colord/Makefile 19814 2014-08-15 20:17:00Z gusi $
 
 PORTNAME=	colord
 PORTVERSION=	1.0.6
@@ -36,6 +36,7 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ENV=	USB_CFLAGS="-I/usr/include" \
 		USB_LIBS="-L/usr/lib -lusb"
+INSTALL_TARGET=	install-strip
 
 GLIB_SCHEMAS=	org.freedesktop.ColorHelper.gschema.xml
 
@@ -71,7 +72,5 @@ post-patch:
 
 post-install:
 	${MKDIR} ${STAGEDIR}/var/db/colord/icc
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/lib*.so*
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/colord-sensors/lib*.so
 
 .include <bsd.port.mk>

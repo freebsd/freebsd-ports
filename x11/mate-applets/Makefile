@@ -1,6 +1,6 @@
 # Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/x11/mate-applets/Makefile 19571 2014-04-25 18:12:46Z kwm $
+#   $MCom: ports/trunk/x11/mate-applets/Makefile 19804 2014-08-13 14:55:11Z kwm $
 
 PORTNAME=	mate-applets
 PORTVERSION=	1.6.1
@@ -23,14 +23,13 @@ LIB_DEPENDS=	libgtop-2.0.so:${PORTSDIR}/devel/libgtop \
 
 PORTSCOUT=	limitw:1,even
 
-USES=		gettext gmake pathfix pkgconfig tar:xz
+USES=		gettext gmake pathfix pkgconfig python tar:xz
 USE_MATE=	autogen common:build desktop docutils icontheme intlhack \
 		libmateweather libmatewnck mucharmap panel \
 		polkit settingsdaemon
 USE_XORG=	x11
 USE_GNOME=	gdkpixbuf2 glib20 gnomehier gtk20 introspection:build \
 		libxml2 libxslt pygobject pygtk2
-USE_PYTHON=	yes
 USE_LDCONFIG=	yes
 INSTALLS_OMF=	yes
 USE_AUTOTOOLS=	aclocal:env autoconf:env automake:env libtool libtoolize:env
