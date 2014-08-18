@@ -3,7 +3,7 @@
 
 PORTNAME=	libwww
 PORTVERSION=	5.4.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	www devel
 MASTER_SITES=	http://www.w3.org/Library/Distribution/
 DISTNAME=	w3c-${PORTNAME}-${PORTVERSION}
@@ -11,10 +11,9 @@ DISTNAME=	w3c-${PORTNAME}-${PORTVERSION}
 MAINTAINER=	marius@nuenneri.ch
 COMMENT=	The W3C Reference Library
 
-USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-shared --enable-static --with-zlib --with-ssl=${OPENSSLBASE}
-USES=		perl5 gmake tar:tgz
+USES=		perl5 gmake libtool tar:tgz
 USE_PERL5=	build
 USE_LDCONFIG=	yes
 USE_OPENSSL=	yes
