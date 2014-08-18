@@ -1,3 +1,4 @@
 etc/rc.d/rtpproxy
 bin/makeann
 bin/rtpproxy
+man/man8/rtpproxy.8.gz
