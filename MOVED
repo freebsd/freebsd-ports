@@ -6423,3 +6423,5 @@ print/cups-samba||2014-08-15|Removed: defunct for long, disappeared upstream
 security/sguil-client|security/sguil|2014-08-16|Merged into new port security/sguil
 security/sguil-sensor|security/sguil|2014-08-16|Merged into new port security/sguil
 security/sguil-server|security/sguil|2014-08-16|Merged into new port security/sguil
+databases/jasperserver||2014-08-18|Has expired: Unstaged, depends on expiring devel/maven2
+devel/maven2|devel/maven3|2014-08-18|Has expired: No longer supported by the Apache Foundation. Use 3.x instead

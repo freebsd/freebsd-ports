@@ -119,7 +119,6 @@
     SUBDIR += isql-viewer
     SUBDIR += jakarta-commons-dbutils
     SUBDIR += jasperreports
-    SUBDIR += jasperserver
     SUBDIR += java-mybatis
     SUBDIR += jdb
     SUBDIR += jdbc-oracle10g
