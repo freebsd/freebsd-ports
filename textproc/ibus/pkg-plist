@@ -311,12 +311,9 @@ share/bash-completion/completions/ibus.bash
 %%COMPDIR%%@dirrmtry %%DATADIR%%/component
 @dirrmtry %%DATADIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-%%GINTRO%%@dirrmtry share/gir-1.0
 %%PYTHON_LIB%%@dirrm %%PYTHON_SITELIBDIR%%/ibus/interface
 %%PYTHON_LIB%%@dirrm %%PYTHON_SITELIBDIR%%/ibus
 @dirrm include/ibus-1.0
-@dirrmtry etc/xdg/autostart
-@dirrmtry etc/xdg
 %%DCONF%%@dirrmtry etc/dconf/db/ibus.d
 %%GTK3%%@exec %%LOCALBASE%%/bin/gtk-query-immodules-3.0 --update-cache
 %%GTK2%%@exec %%LOCALBASE%%/bin/gtk-query-immodules-2.0 --update-cache
