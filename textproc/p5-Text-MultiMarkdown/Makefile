@@ -2,13 +2,15 @@
 # $FreeBSD$
 
 PORTNAME=	Text-MultiMarkdown
-PORTVERSION=	1.000034
+PORTVERSION=	1.000035
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Convert MultiMarkdown syntax to (X)HTML
+
+LICENSE=	BSD3CLAUSE
 
 BUILD_DEPENDS=	p5-Text-Markdown>=1.0.26:${PORTSDIR}/textproc/p5-Text-Markdown
 RUN_DEPENDS:=	${BUILD_DEPENDS}
