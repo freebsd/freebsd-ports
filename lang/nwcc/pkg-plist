@@ -1,11 +1,19 @@
 bin/nwcc
 bin/nwcc1
+bin/nwcpp
+lib/dynlibnwcc.o
 lib/libnwcc.o
 nwcc/bin/nwcc
 nwcc/bin/nwcc1
+nwcc/bin/nwcpp
 nwcc/bin/snake
+nwcc/include/limits.h
+nwcc/include/stdarg.h
+nwcc/include/stddef.h
 nwcc/lib/dynlibnwcc.o
+nwcc/lib/fcatalog.idx
 nwcc/lib/libnwcc.o
-@dirrm nwcc/lib
-@dirrm nwcc/bin
-@dirrm nwcc
+@dirrmtry nwcc/bin
+@dirrmtry nwcc/include
+@dirrmtry nwcc/lib
+@dirrmtry nwcc
