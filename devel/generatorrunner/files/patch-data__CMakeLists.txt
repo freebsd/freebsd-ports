@@ -1,5 +1,5 @@
---- ./data/CMakeLists.txt.orig	2011-11-18 21:38:22.000000000 +0100
-+++ ./data/CMakeLists.txt	2011-12-18 18:34:31.000000000 +0100
+--- data/CMakeLists.txt.orig	2011-12-30 18:21:10 UTC
++++ data/CMakeLists.txt
 @@ -7,7 +7,7 @@
                 "${CMAKE_CURRENT_BINARY_DIR}/GeneratorRunnerConfigVersion.cmake" @ONLY)
  
@@ -9,13 +9,9 @@
  install(FILES "${CMAKE_CURRENT_BINARY_DIR}/GeneratorRunnerConfig.cmake"
          DESTINATION "${LIB_INSTALL_DIR}/cmake/GeneratorRunner-${generator_VERSION}")
  install(FILES "${CMAKE_CURRENT_BINARY_DIR}/GeneratorRunnerConfigVersion.cmake"
-@@ -20,6 +20,7 @@
-                                                               "${CMAKE_CURRENT_BINARY_DIR}/generatorrunner${generator_SUFFIX}.1")
- configure_file("${CMAKE_CURRENT_SOURCE_DIR}/generatorrunner.pc.in"
+@@ -22,4 +22,4 @@
                 "${CMAKE_CURRENT_BINARY_DIR}/generatorrunner${generator_SUFFIX}.pc" @ONLY)
--
-+if(NOT NO_INSTALL_MANPAGES)
+ 
  file(GLOB manpages "${CMAKE_CURRENT_BINARY_DIR}/*${generator_SUFFIX}.1")
 -install(FILES ${manpages} DESTINATION share/man/man1)
 +install(FILES ${manpages} DESTINATION man/man1)
-+endif()
