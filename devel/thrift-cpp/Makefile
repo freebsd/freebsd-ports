@@ -34,10 +34,11 @@ INSTALL_WRKSRC=		${WRKSRC}/lib/cpp
 
 OPTIONS_DEFINE=		QT4
 QT4_CONFIGURE_WITH=	qt4
+QT4_USE=		QT4=network,moc_build,qmake_build,rcc_build,uic_build
 
 OPTIONS_SUB=		yes
 
-CONFIGURE_ARGS+=        \
+CONFIGURE_ARGS+=	\
 		--without-c_glib \
 		--with-cpp \
 		--without-csharp \
@@ -54,10 +55,6 @@ CONFIGURE_ARGS+=        \
 
 .if ${COMPILER_TYPE} == clang
 USE_CXXSTD=	c++11
-.endif
-
-.if ${PORT_OPTIONS:MQT4}
-USE_QT4=		network moc_build qmake_build rcc_build uic_build
 .endif
 
 post-patch:
