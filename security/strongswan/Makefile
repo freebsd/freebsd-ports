@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	strongswan
-PORTVERSION=	5.1.3
-PORTREVISION=	2
+PORTVERSION=	5.2.0
 CATEGORIES=	security
 MASTER_SITES=	http://download.strongswan.org/ \
 		http://download2.strongswan.org/
@@ -18,6 +17,7 @@ USE_OPENSSL=	yes
 USE_RC_SUBR=	strongswan
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
+INSTALL_TARGET=	install-strip
 
 CONFIGURE_ARGS=	--enable-kernel-pfkey \
 		--enable-kernel-pfroute  \
@@ -107,21 +107,5 @@ PLIST_SUB+=	XAUTHGEN=""
 .else
 PLIST_SUB+=	XAUTHGEN="@comment "
 .endif
-
-post-install:
-	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
-	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/strongswan.d
-	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/strongswan.d/charon
-	${INSTALL_DATA} ${STAGEDIR}${PREFIX}/etc/strongswan.conf ${STAGEDIR}${EXAMPLESDIR}
-	${INSTALL_DATA} ${STAGEDIR}${PREFIX}/etc/ipsec.conf ${STAGEDIR}${EXAMPLESDIR}
-	${INSTALL_DATA} ${STAGEDIR}${PREFIX}/etc/strongswan.d/*.* ${STAGEDIR}${EXAMPLESDIR}/strongswan.d
-	${INSTALL_DATA} ${STAGEDIR}${PREFIX}/etc/strongswan.d/charon/*.* ${STAGEDIR}${EXAMPLESDIR}/strongswan.d/charon
-.for i in strongswan hydra tls charon
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/ipsec/lib${i}.so.0.0.0
-.endfor
-.for i in aes des blowfish rc2 md4 md5 sha1 sha2 random nonce hmac cmac xcbc x509 revocation constraints pubkey pkcs1 pkcs7 pkcs8 pkcs12 pgp dnskey sshkey pem openssl fips-prf attr kernel-pfkey kernel-pfroute resolve socket-default stroke updown eap-identity eap-md5 eap-mschapv2 eap-tls eap-ttls eap-peap whitelist addrblock
-	${STRIP_CMD} \
-		${STAGEDIR}${PREFIX}/lib/ipsec/plugins/libstrongswan-${i}.so
-.endfor
 
 .include <bsd.port.mk>

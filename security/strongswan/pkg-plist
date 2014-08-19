@@ -149,53 +149,6 @@ libexec/ipsec/stroke
 libexec/ipsec/whitelist
 sbin/ipsec
 sbin/charon-cmd
-share/examples/strongswan/ipsec.conf
-share/examples/strongswan/strongswan.conf
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/strongswan.d/charon-logging.conf
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/strongswan.d/charon.conf
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/strongswan.d/charon/addrblock.conf
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/strongswan.d/charon/aes.conf
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/strongswan.d/charon/attr.conf
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/strongswan.d/charon/blowfish.conf
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/strongswan.d/charon/cmac.conf
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/strongswan.d/charon/constraints.conf
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/strongswan.d/charon/des.conf
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/strongswan.d/charon/dnskey.conf
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/strongswan.d/charon/eap-identity.conf
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/strongswan.d/charon/eap-md5.conf
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/strongswan.d/charon/eap-mschapv2.conf
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/strongswan.d/charon/eap-peap.conf
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/strongswan.d/charon/eap-tls.conf
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/strongswan.d/charon/eap-ttls.conf
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/strongswan.d/charon/fips-prf.conf
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/strongswan.d/charon/hmac.conf
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/strongswan.d/charon/kernel-pfkey.conf
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/strongswan.d/charon/kernel-pfroute.conf
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/strongswan.d/charon/md4.conf
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/strongswan.d/charon/md5.conf
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/strongswan.d/charon/nonce.conf
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/strongswan.d/charon/openssl.conf
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/strongswan.d/charon/pem.conf
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/strongswan.d/charon/pgp.conf
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/strongswan.d/charon/pkcs1.conf
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/strongswan.d/charon/pkcs12.conf
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/strongswan.d/charon/pkcs7.conf
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/strongswan.d/charon/pkcs8.conf
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/strongswan.d/charon/pubkey.conf
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/strongswan.d/charon/random.conf
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/strongswan.d/charon/rc2.conf
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/strongswan.d/charon/resolve.conf
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/strongswan.d/charon/revocation.conf
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/strongswan.d/charon/sha1.conf
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/strongswan.d/charon/sha2.conf
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/strongswan.d/charon/socket-default.conf
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/strongswan.d/charon/sshkey.conf
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/strongswan.d/charon/stroke.conf
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/strongswan.d/charon/updown.conf
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/strongswan.d/charon/whitelist.conf
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/strongswan.d/charon/x509.conf
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/strongswan.d/charon/xcbc.conf
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/strongswan.d/starter.conf
 %%DATADIR%%/templates/config/plugins/addrblock.conf
 %%DATADIR%%/templates/config/plugins/aes.conf
 %%DATADIR%%/templates/config/plugins/attr.conf
@@ -253,10 +206,12 @@ man/man8/_updown_espmark.8.gz
 %%EAPRADIUS%%lib/ipsec/libradius.la
 %%EAPRADIUS%%lib/ipsec/libradius.so
 %%EAPRADIUS%%lib/ipsec/libradius.so.0
+%%EAPRADIUS%%lib/ipsec/libradius.so.0.0.0
 %%SIMAKA%%lib/ipsec/libsimaka.a
 %%SIMAKA%%lib/ipsec/libsimaka.la
 %%SIMAKA%%lib/ipsec/libsimaka.so
 %%SIMAKA%%lib/ipsec/libsimaka.so.0
+%%SIMAKA%%lib/ipsec/libsimaka.so.0.0.0
 %%EAPAKA3GPP2%%lib/ipsec/plugins/libstrongswan-eap-aka.a
 %%EAPAKA3GPP2%%lib/ipsec/plugins/libstrongswan-eap-aka.la
 %%EAPAKA3GPP2%%lib/ipsec/plugins/libstrongswan-eap-aka.so
@@ -266,95 +221,96 @@ man/man8/_updown_espmark.8.gz
 %%EAPAKA3GPP2%%lib/ipsec/plugins/libstrongswan-gmp.a
 %%EAPAKA3GPP2%%lib/ipsec/plugins/libstrongswan-gmp.la
 %%EAPAKA3GPP2%%lib/ipsec/plugins/libstrongswan-gmp.so
-%%EAPAKA3GPP2%%%%PORTEXAMPLES%%%%EXAMPLESDIR%%/strongswan.d/charon/eap-aka-3gpp2.conf
-%%EAPAKA3GPP2%%%%PORTEXAMPLES%%%%EXAMPLESDIR%%/strongswan.d/charon/eap-aka.conf
-%%EAPAKA3GPP2%%%%PORTEXAMPLES%%%%EXAMPLESDIR%%/strongswan.d/charon/gmp.conf
 %%EAPAKA3GPP2%%%%DATADIR%%/templates/config/plugins/eap-aka-3gpp2.conf
+%%EAPAKA3GPP2%%@sample %%ETCDIR%%.d/charon/eap-aka-3gpp2.conf.sample
 %%EAPAKA3GPP2%%%%DATADIR%%/templates/config/plugins/eap-aka.conf
+%%EAPAKA3GPP2%%@sample %%ETCDIR%%.d/charon/eap-aka.conf.sample
 %%DYNAKA%%%%DATADIR%%/templates/config/plugins/gmp.conf
+%%DYNAKA%%@sample %%ETCDIR%%.d/charon/gmp.conf.sample
 %%EAPDYNAMIC%%lib/ipsec/plugins/libstrongswan-eap-dynamic.a
 %%EAPDYNAMIC%%lib/ipsec/plugins/libstrongswan-eap-dynamic.la
 %%EAPDYNAMIC%%lib/ipsec/plugins/libstrongswan-eap-dynamic.so
-%%EAPDYNAMIC%%%%PORTEXAMPLES%%%%EXAMPLESDIR%%/strongswan.d/charon/eap-dynamic.conf
 %%EAPDYNAMIC%%%%DATADIR%%/templates/config/plugins/eap-dynamic.conf
+%%EAPDYNAMIC%%@sample %%ETCDIR%%.d/charon/eap-dynamic.conf.sample
 %%EAPRADIUS%%lib/ipsec/plugins/libstrongswan-eap-radius.a
 %%EAPRADIUS%%lib/ipsec/plugins/libstrongswan-eap-radius.la
 %%EAPRADIUS%%lib/ipsec/plugins/libstrongswan-eap-radius.so
-%%EAPRADIUS%%%%PORTEXAMPLES%%%%EXAMPLESDIR%%/strongswan.d/charon/eap-radius.conf
 %%EAPRADIUS%%%%DATADIR%%/templates/config/plugins/eap-radius.conf
+%%EAPRADIUS%%@sample %%ETCDIR%%.d/charon/eap-radius.conf.sample
 %%EAPSIMFILE%%lib/ipsec/plugins/libstrongswan-eap-sim.a
 %%EAPSIMFILE%%lib/ipsec/plugins/libstrongswan-eap-sim.la
 %%EAPSIMFILE%%lib/ipsec/plugins/libstrongswan-eap-sim.so
 %%EAPSIMFILE%%lib/ipsec/plugins/libstrongswan-eap-sim-file.a
 %%EAPSIMFILE%%lib/ipsec/plugins/libstrongswan-eap-sim-file.la
 %%EAPSIMFILE%%lib/ipsec/plugins/libstrongswan-eap-sim-file.so
-%%EAPSIMFILE%%%%PORTEXAMPLES%%%%EXAMPLESDIR%%/strongswan.d/charon/eap-sim-file.conf
-%%EAPSIMFILE%%%%PORTEXAMPLES%%%%EXAMPLESDIR%%/strongswan.d/charon/eap-sim.conf
 %%EAPSIMFILE%%%%DATADIR%%/templates/config/plugins/eap-sim-file.conf
+%%EAPSIMFILE%%@sample %%ETCDIR%%.d/charon/eap-sim-file.conf.sample
 %%EAPSIMFILE%%%%DATADIR%%/templates/config/plugins/eap-sim.conf
+%%EAPSIMFILE%%@sample %%ETCDIR%%.d/charon/eap-sim.conf.sample
 %%CURL%%lib/ipsec/plugins/libstrongswan-curl.a
 %%CURL%%lib/ipsec/plugins/libstrongswan-curl.la
 %%CURL%%lib/ipsec/plugins/libstrongswan-curl.so
-%%CURL%%%%PORTEXAMPLES%%%%EXAMPLESDIR%%/strongswan.d/charon/curl.conf
 %%CURL%%%%DATADIR%%/templates/config/plugins/curl.conf
+%%CURL%%@sample %%ETCDIR%%.d/charon/curl.conf.sample
 %%IKEv1%%lib/ipsec/plugins/libstrongswan-xauth-generic.a
 %%IKEv1%%lib/ipsec/plugins/libstrongswan-xauth-generic.la
 %%IKEv1%%lib/ipsec/plugins/libstrongswan-xauth-generic.so
 %%IPSECKEY%%lib/ipsec/plugins/libstrongswan-ipseckey.a
 %%IPSECKEY%%lib/ipsec/plugins/libstrongswan-ipseckey.la
 %%IPSECKEY%%lib/ipsec/plugins/libstrongswan-ipseckey.so
-%%IPSECKEY%%%%PORTEXAMPLES%%%%EXAMPLESDIR%%/strongswan.d/charon/ipseckey.conf
 %%IPSECKEY%%%%DATADIR%%/templates/config/plugins/ipseckey.conf
+%%IPSECKEY%%@sample %%ETCDIR%%.d/charon/ipseckey.conf.sample
 %%KERNELLIBIPSEC%%lib/ipsec/libipsec.a
 %%KERNELLIBIPSEC%%lib/ipsec/libipsec.la
 %%KERNELLIBIPSEC%%lib/ipsec/libipsec.so
 %%KERNELLIBIPSEC%%lib/ipsec/libipsec.so.0
+%%KERNELLIBIPSEC%%lib/ipsec/libipsec.so.0.0.0
 %%KERNELLIBIPSEC%%lib/ipsec/plugins/libstrongswan-kernel-libipsec.a
 %%KERNELLIBIPSEC%%lib/ipsec/plugins/libstrongswan-kernel-libipsec.la
 %%KERNELLIBIPSEC%%lib/ipsec/plugins/libstrongswan-kernel-libipsec.so
-%%KERNELLIBIPSEC%%%%PORTEXAMPLES%%%%EXAMPLESDIR%%/strongswan.d/charon/kernel-libipsec.conf
 %%KERNELLIBIPSEC%%%%DATADIR%%/templates/config/plugins/kernel-libipsec.conf
+%%KERNELLIBIPSEC%%@sample %%ETCDIR%%.d/charon/kernel-libipsec.conf.sample
 %%LOADTESTER%%lib/ipsec/plugins/libstrongswan-load-tester.a
 %%LOADTESTER%%lib/ipsec/plugins/libstrongswan-load-tester.la
 %%LOADTESTER%%lib/ipsec/plugins/libstrongswan-load-tester.so
 %%LOADTESTER%%libexec/ipsec/load-tester
-%%LOADTESTER%%%%PORTEXAMPLES%%%%EXAMPLESDIR%%/strongswan.d/charon/load-tester.conf
 %%LOADTESTER%%%%DATADIR%%/templates/config/plugins/load-tester.conf
+%%LOADTESTER%%@sample %%ETCDIR%%.d/charon/load-tester.conf.sample
 %%LDAP%%lib/ipsec/plugins/libstrongswan-ldap.a
 %%LDAP%%lib/ipsec/plugins/libstrongswan-ldap.la
 %%LDAP%%lib/ipsec/plugins/libstrongswan-ldap.so
-%%LDAP%%%%PORTEXAMPLES%%%%EXAMPLESDIR%%/strongswan.d/charon/ldap.conf
 %%LDAP%%%%DATADIR%%/templates/config/plugins/ldap.conf
+%%LDAP%%@sample %%ETCDIR%%.d/charon/ldap.conf.sample
 %%MYSQL%%lib/ipsec/plugins/libstrongswan-mysql.a
 %%MYSQL%%lib/ipsec/plugins/libstrongswan-mysql.la
 %%MYSQL%%lib/ipsec/plugins/libstrongswan-mysql.so
-%%MYSQL%%%%PORTEXAMPLES%%%%EXAMPLESDIR%%/strongswan.d/charon/mysql.conf
 %%MYSQL%%%%DATADIR%%/templates/config/plugins/mysql.conf
+%%MYSQL%%@sample %%ETCDIR%%.d/charon/mysql.conf.sample
 %%SQL%%lib/ipsec/plugins/libstrongswan-attr-sql.a
 %%SQL%%lib/ipsec/plugins/libstrongswan-attr-sql.la
 %%SQL%%lib/ipsec/plugins/libstrongswan-attr-sql.so
-%%SQL%%%%PORTEXAMPLES%%%%EXAMPLESDIR%%/strongswan.d/charon/attr-sql.conf
 %%SQL%%%%DATADIR%%/templates/config/plugins/attr-sql.conf
+%%SQL%%@sample %%ETCDIR%%.d/charon/attr-sql.conf.sample
 %%SQL%%lib/ipsec/plugins/libstrongswan-sql.a
 %%SQL%%lib/ipsec/plugins/libstrongswan-sql.la
 %%SQL%%lib/ipsec/plugins/libstrongswan-sql.so
-%%SQL%%%%PORTEXAMPLES%%%%EXAMPLESDIR%%/strongswan.d/charon/sql.conf
 %%SQL%%%%DATADIR%%/templates/config/plugins/sql.conf
+%%SQL%%@sample %%ETCDIR%%.d/charon/sql.conf.sample
 %%SQL%%libexec/ipsec/pool
-%%SQL%%%%PORTEXAMPLES%%%%EXAMPLESDIR%%/strongswan.d/pool.conf
 %%SQL%%%%DATADIR%%/templates/config/strongswan.d/pool.conf
+%%SQL%%@sample %%ETCDIR%%.d/pool.conf.sample
 %%SQL%%%%DATADIR%%/templates/database/sql/mysql.sql
 %%SQL%%%%DATADIR%%/templates/database/sql/sqlite.sql
 %%SQLITE%%lib/ipsec/plugins/libstrongswan-sqlite.a
 %%SQLITE%%lib/ipsec/plugins/libstrongswan-sqlite.la
 %%SQLITE%%lib/ipsec/plugins/libstrongswan-sqlite.so
-%%SQLITE%%%%PORTEXAMPLES%%%%EXAMPLESDIR%%/strongswan.d/charon/sqlite.conf
 %%SQLITE%%%%DATADIR%%/templates/config/plugins/sqlite.conf
+%%SQLITE%%@sample %%ETCDIR%%.d/charon/sqlite.conf.sample
 %%TESTVECTOR%%lib/ipsec/plugins/libstrongswan-test-vectors.a
 %%TESTVECTOR%%lib/ipsec/plugins/libstrongswan-test-vectors.la
 %%TESTVECTOR%%lib/ipsec/plugins/libstrongswan-test-vectors.so
-%%TESTVECTOR%%%%PORTEXAMPLES%%%%EXAMPLESDIR%%/strongswan.d/charon/test-vectors.conf
 %%TESTVECTOR%%%%DATADIR%%/templates/config/plugins/test-vectors.conf
+%%TESTVECTOR%%@sample %%ETCDIR%%.d/charon/test-vectors.conf.sample
 %%TOOLS%%bin/pki
 %%TOOLS%%libexec/ipsec/scepclient
 %%TOOLS%%man/man1/pki---acert.1.gz
@@ -370,76 +326,75 @@ man/man8/_updown_espmark.8.gz
 %%TOOLS%%man/man1/pki---verify.1.gz
 %%TOOLS%%man/man1/pki.1.gz
 %%TOOLS%%man/man8/scepclient.8.gz
-%%TOOLS%%%%PORTEXAMPLES%%%%EXAMPLESDIR%%/strongswan.d/tools.conf
-%%TOOLS%%%%DATADIR%%/templates/config/strongswan.d/tools.conf
+%%TOOLS%%%%DATADIR%%/templates/config/strongswan.d/pki.conf
+%%TOOLS%%@sample %%ETCDIR%%.d/pki.conf.sample
+%%TOOLS%%%%DATADIR%%/templates/config/strongswan.d/scepclient.conf
+%%TOOLS%%@sample %%ETCDIR%%.d/scepclient.conf.sample
 %%UNBOUND%%lib/ipsec/plugins/libstrongswan-unbound.a
 %%UNBOUND%%lib/ipsec/plugins/libstrongswan-unbound.la
 %%UNBOUND%%lib/ipsec/plugins/libstrongswan-unbound.so
-%%UNBOUND%%%%PORTEXAMPLES%%%%EXAMPLESDIR%%/strongswan.d/charon/unbound.conf
 %%UNBOUND%%%%DATADIR%%/templates/config/plugins/unbound.conf
+%%UNBOUND%%@sample %%ETCDIR%%.d/charon/unbound.conf.sample
 %%XAUTH%%lib/ipsec/plugins/libstrongswan-xauth-eap.a
 %%XAUTH%%lib/ipsec/plugins/libstrongswan-xauth-eap.la
 %%XAUTH%%lib/ipsec/plugins/libstrongswan-xauth-eap.so
-%%XAUTH%%%%PORTEXAMPLES%%%%EXAMPLESDIR%%/strongswan.d/charon/xauth-eap.conf
 %%XAUTH%%%%DATADIR%%/templates/config/plugins/xauth-eap.conf
-%%XAUTHGEN%%%%PORTEXAMPLES%%%%EXAMPLESDIR%%/strongswan.d/charon/xauth-generic.conf
+%%XAUTH%%@sample %%ETCDIR%%.d/charon/xauth-eap.conf.sample
 %%XAUTHGEN%%%%DATADIR%%/templates/config/plugins/xauth-generic.conf
-etc/ipsec.conf
-%%ETCDIR%%.conf
-%%ETCDIR%%.d/charon-logging.conf
-%%ETCDIR%%.d/charon.conf
-%%ETCDIR%%.d/charon/addrblock.conf
-%%ETCDIR%%.d/charon/aes.conf
-%%ETCDIR%%.d/charon/attr.conf
-%%ETCDIR%%.d/charon/blowfish.conf
-%%ETCDIR%%.d/charon/cmac.conf
-%%ETCDIR%%.d/charon/constraints.conf
-%%ETCDIR%%.d/charon/des.conf
-%%ETCDIR%%.d/charon/dnskey.conf
-%%ETCDIR%%.d/charon/eap-identity.conf
-%%ETCDIR%%.d/charon/eap-md5.conf
-%%ETCDIR%%.d/charon/eap-mschapv2.conf
-%%ETCDIR%%.d/charon/eap-peap.conf
-%%ETCDIR%%.d/charon/eap-tls.conf
-%%ETCDIR%%.d/charon/eap-ttls.conf
-%%ETCDIR%%.d/charon/fips-prf.conf
-%%ETCDIR%%.d/charon/hmac.conf
-%%ETCDIR%%.d/charon/kernel-pfkey.conf
-%%ETCDIR%%.d/charon/kernel-pfroute.conf
-%%ETCDIR%%.d/charon/md4.conf
-%%ETCDIR%%.d/charon/md5.conf
-%%ETCDIR%%.d/charon/nonce.conf
-%%ETCDIR%%.d/charon/openssl.conf
-%%ETCDIR%%.d/charon/pem.conf
-%%ETCDIR%%.d/charon/pgp.conf
-%%ETCDIR%%.d/charon/pkcs1.conf
-%%ETCDIR%%.d/charon/pkcs12.conf
-%%ETCDIR%%.d/charon/pkcs7.conf
-%%ETCDIR%%.d/charon/pkcs8.conf
-%%ETCDIR%%.d/charon/pubkey.conf
-%%ETCDIR%%.d/charon/random.conf
-%%ETCDIR%%.d/charon/rc2.conf
-%%ETCDIR%%.d/charon/resolve.conf
-%%ETCDIR%%.d/charon/revocation.conf
-%%ETCDIR%%.d/charon/sha1.conf
-%%ETCDIR%%.d/charon/sha2.conf
-%%ETCDIR%%.d/charon/socket-default.conf
-%%ETCDIR%%.d/charon/sshkey.conf
-%%ETCDIR%%.d/charon/stroke.conf
-%%ETCDIR%%.d/charon/updown.conf
-%%ETCDIR%%.d/charon/whitelist.conf
-%%ETCDIR%%.d/charon/x509.conf
-%%ETCDIR%%.d/charon/xcbc.conf
-%%ETCDIR%%.d/starter.conf
+%%XAUTHGEN%%@sample %%ETCDIR%%.d/charon/xauth-generic.conf.sample
+@sample etc/ipsec.conf.sample
+@sample %%ETCDIR%%.conf.sample
+@sample %%ETCDIR%%.d/charon-logging.conf.sample
+@sample %%ETCDIR%%.d/charon.conf.sample
+@sample %%ETCDIR%%.d/charon/addrblock.conf.sample
+@sample %%ETCDIR%%.d/charon/aes.conf.sample
+@sample %%ETCDIR%%.d/charon/attr.conf.sample
+@sample %%ETCDIR%%.d/charon/blowfish.conf.sample
+@sample %%ETCDIR%%.d/charon/cmac.conf.sample
+@sample %%ETCDIR%%.d/charon/constraints.conf.sample
+@sample %%ETCDIR%%.d/charon/des.conf.sample
+@sample %%ETCDIR%%.d/charon/dnskey.conf.sample
+@sample %%ETCDIR%%.d/charon/eap-identity.conf.sample
+@sample %%ETCDIR%%.d/charon/eap-md5.conf.sample
+@sample %%ETCDIR%%.d/charon/eap-mschapv2.conf.sample
+@sample %%ETCDIR%%.d/charon/eap-peap.conf.sample
+@sample %%ETCDIR%%.d/charon/eap-tls.conf.sample
+@sample %%ETCDIR%%.d/charon/eap-ttls.conf.sample
+@sample %%ETCDIR%%.d/charon/fips-prf.conf.sample
+@sample %%ETCDIR%%.d/charon/hmac.conf.sample
+@sample %%ETCDIR%%.d/charon/kernel-pfkey.conf.sample
+@sample %%ETCDIR%%.d/charon/kernel-pfroute.conf.sample
+@sample %%ETCDIR%%.d/charon/md4.conf.sample
+@sample %%ETCDIR%%.d/charon/md5.conf.sample
+@sample %%ETCDIR%%.d/charon/nonce.conf.sample
+@sample %%ETCDIR%%.d/charon/openssl.conf.sample
+@sample %%ETCDIR%%.d/charon/pem.conf.sample
+@sample %%ETCDIR%%.d/charon/pgp.conf.sample
+@sample %%ETCDIR%%.d/charon/pkcs1.conf.sample
+@sample %%ETCDIR%%.d/charon/pkcs12.conf.sample
+@sample %%ETCDIR%%.d/charon/pkcs7.conf.sample
+@sample %%ETCDIR%%.d/charon/pkcs8.conf.sample
+@sample %%ETCDIR%%.d/charon/pubkey.conf.sample
+@sample %%ETCDIR%%.d/charon/random.conf.sample
+@sample %%ETCDIR%%.d/charon/rc2.conf.sample
+@sample %%ETCDIR%%.d/charon/resolve.conf.sample
+@sample %%ETCDIR%%.d/charon/revocation.conf.sample
+@sample %%ETCDIR%%.d/charon/sha1.conf.sample
+@sample %%ETCDIR%%.d/charon/sha2.conf.sample
+@sample %%ETCDIR%%.d/charon/socket-default.conf.sample
+@sample %%ETCDIR%%.d/charon/sshkey.conf.sample
+@sample %%ETCDIR%%.d/charon/stroke.conf.sample
+@sample %%ETCDIR%%.d/charon/updown.conf.sample
+@sample %%ETCDIR%%.d/charon/whitelist.conf.sample
+@sample %%ETCDIR%%.d/charon/x509.conf.sample
+@sample %%ETCDIR%%.d/charon/xcbc.conf.sample
+@sample %%ETCDIR%%.d/starter.conf.sample
 lib/ipsec/libcharon.so.0.0.0
 lib/ipsec/libhydra.so.0.0.0
 lib/ipsec/libstrongswan.so.0.0.0
 lib/ipsec/libtls.so.0.0.0
 @dirrmtry %%ETCDIR%%.d/charon
 @dirrmtry %%ETCDIR%%.d
-@dirrmtry share/examples/strongswan/strongswan.d/charon
-@dirrmtry share/examples/strongswan/strongswan.d
-@dirrmtry share/examples/strongswan
 @dirrmtry %%DATADIR%%/templates/config/strongswan.d
 @dirrmtry %%DATADIR%%/templates/config/plugins
 @dirrmtry %%DATADIR%%/templates/config
