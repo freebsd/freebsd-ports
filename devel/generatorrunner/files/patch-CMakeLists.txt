@@ -1,8 +1,8 @@
---- ./CMakeLists.txt.orig	2011-11-18 21:38:22.000000000 +0100
-+++ ./CMakeLists.txt	2011-12-18 18:34:11.000000000 +0100
+--- CMakeLists.txt.orig	2011-12-30 18:21:10 UTC
++++ CMakeLists.txt
 @@ -41,7 +41,7 @@
  set(generator_MINOR_VERSION "6")
- set(generator_MICRO_VERSION "15")
+ set(generator_MICRO_VERSION "16")
  set(generator_VERSION "${generator_MAJOR_VERSION}.${generator_MINOR_VERSION}.${generator_MICRO_VERSION}")
 -set(generator_SOVERSION "${generator_MAJOR_VERSION}.${generator_MINOR_VERSION}")
 +set(generator_SOVERSION "${generator_MAJOR_VERSION}")
