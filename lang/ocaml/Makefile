@@ -4,7 +4,7 @@
 # for committer: bump PORTREVISION for math/facile whenever ocaml gets updated
 PORTNAME=	ocaml
 PORTVERSION=	4.01.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	lang
 MASTER_SITES=	http://caml.inria.fr/pub/distrib/${DISTNAME:R}/ \
 		${MASTER_SITE_GENTOO}
