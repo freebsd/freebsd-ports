@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	youtube_dl
-PORTVERSION=	2014.07.21
+PORTVERSION=	2014.08.10
 CATEGORIES=	www
 MASTER_SITES=	https://yt-dl.org/downloads/${PORTVERSION}/
 DISTNAME=	youtube-dl-${PORTVERSION}
@@ -16,7 +16,7 @@ LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 BUILD_DEPENDS=	zip:${PORTSDIR}/archivers/zip
 
-USE_PYTHON_RUN=	2
+USES=		python:2,run
 ALL_TARGET=	youtube-dl
 
 OPTIONS_DEFINE=	BASH RTMPDUMP FFMPEG
