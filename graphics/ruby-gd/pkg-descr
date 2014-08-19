@@ -3,5 +3,4 @@ Ruby/GD is an extension library to use Thomas Boutell's gd library
 
 Author: Matsumoto Yukihiro <matz@ruby-lang.org> (original author)
 	Ryuichi Tamura <tam@kais.kyoto-u.ac.jp> (current maintainer)
-WWW: http://rubyforge.org/projects/ruby-gd/
 WWW: https://github.com/Spakman/ruby-gd

@@ -2,4 +2,4 @@ FlexMock is a flexible mocking library for use in unit testing and behavior
 specification. Mocks are defined with a fluent API that makes mock
 specifications easy to read and easy to remember.
 
-WWW: http://flexmock.rubyforge.org/
+WWW: https://github.com/jimweirich/flexmock

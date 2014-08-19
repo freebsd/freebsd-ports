@@ -15,5 +15,8 @@ RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/ming/mingc.so:${PORTSDIR}/graphics/ruby-ming
 USE_RUBY=	yes
 USE_RUBY_FEATURES=	iconv
 
+DEPRECATED=	Depends on deprecated graphics/ruby-ming
+EXPIRATION_DATE=        2014-09-20
+
 NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -4,4 +4,4 @@ directory. The canonical documentation for PDF::Writer is "manual.pdf",
 which can be generated using bin/techbook (just "techbook" for RubyGem users)
 and the manual file "manual.pwd".
 
-WWW: http://rubyforge.org/projects/ruby-pdf/
+WWW: http://rubygems.org/gems/pdfwriter/

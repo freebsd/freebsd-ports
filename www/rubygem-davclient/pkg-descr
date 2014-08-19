@@ -1,4 +1,4 @@
 DavClient is a scriptable WebDAV command line client for Ruby
 for managing content on webservers that support the WebDAV extensions.
 
-WWW: http://davclient.rubyforge.org/
+WWW: http://rubygems.org/gems/davclient/

@@ -31,4 +31,7 @@ do-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/ri-emacs.rb ${STAGEDIR}${DATADIR}
 
+DEPRECATED=	RubyForge shutdown May 15 2014
+EXPIRATION_DATE=  2014-09-20
+
 .include <bsd.port.mk>

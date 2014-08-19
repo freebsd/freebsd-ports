@@ -29,6 +29,9 @@ NOHARM_ARGS=	--no-harm
 USE_XORG=	xcursor xproto x11 xextproto xext xrandr
 USE_GL=		yes
 
+DEPRECATED=	RubyForge shutdown May 15 2014
+EXPIRATION_DATE=	2014-09-20
+
 install-noharm:
 	cd ${WRKSRC}; \
 	${SETENV} ${MAKE_ENV} ${RUBY} ${RUBY_FLAGS} ${RUBY_SETUP} install ${NOHARM_ARGS} ${RUBY_INSTALL_ARGS}

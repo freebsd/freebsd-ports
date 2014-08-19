@@ -4,4 +4,4 @@ in Ruby 1.8.x. Ruby 1.9.x bundles minitest not Test::Unit.
 Test::Unit bundled in Ruby 1.8.x had not been improved but
 unbundled Test::Unit (Test::Unit 2.x) will be improved actively. 
 
-WWW: http://test-unit.rubyforge.org/
+WWW: http://rubygems.org/gems/test-unit/

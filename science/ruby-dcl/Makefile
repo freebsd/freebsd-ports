@@ -40,6 +40,9 @@ PORTEXAMPLES=	*
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
+DEPRECATED=	Depends on deprecated math/ruby-narray
+EXPIRATION_DATE=	2014-09-20
+
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "ia64"

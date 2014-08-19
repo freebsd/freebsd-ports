@@ -44,6 +44,9 @@ CONFIGURE_ARGS+=	--disable-htmldoc
 
 DOCS=		ChangeLog README.html
 
+DEPRECATED=	RubyForge shutdown May 15 2014
+EXPIRATION_DATE=	2014-09-20
+
 .include <bsd.port.pre.mk>
 
 post-install:

@@ -28,6 +28,9 @@ NO_BUILD=	yes
 
 DOCS=		ChangeLog LICENSE.txt doc/*
 
+DEPRECATED=	Depends on deprecated math/ruby-narray
+EXPIRATION_DATE=	2014-09-20
+
 do-install:
 	@cd ${WRKSRC}/ && ${RUBY} ./install.rb -d ${STAGEDIR}${RUBY_SITELIBDIR}
 	@${MKDIR} ${STAGEDIR}${RUBY_MODDOCDIR}/

@@ -18,4 +18,7 @@ USE_RUBYGEMS=		yes
 USE_RAKE=	yes
 RUBYGEM_AUTOPLIST=	yes
 
+DEPRECATED=	Depends on deprecated rubyforge
+EXPIRATION_DATE=  2014-09-20
+
 .include <bsd.port.mk>
