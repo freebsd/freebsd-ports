@@ -6427,3 +6427,15 @@ databases/jasperserver||2014-08-18|Has expired: Unstaged, depends on expiring de
 devel/maven2|devel/maven3|2014-08-18|Has expired: No longer supported by the Apache Foundation. Use 3.x instead
 x11-clocks/alarm-clock||2014-08-18|Removed: disappeared upstream
 mail/rss2email|mail/rss2email2|2014-08-19|Renamed to avoid ambiguity with mail/rss2email3
+news/husky-base||2014-08-19|Obsolete due to husky-*-devel => husky-* migration
+news/husky-bsopack||2014-08-19|Obsolete due to husky-*-devel => husky-* migration
+news/husky-fidoconf||2014-08-19|Temporary, husky-fidoconf-devel will move here
+news/husky-hpt||2014-08-19|Temporary, husky-hpt-devel will move here
+news/husky-hptkill||2014-08-19|Obsolete due to husky-*-devel => husky-* migration
+news/husky-hptsqfix||2014-08-19|Obsolete due to husky-*-devel => husky-* migration
+news/husky-hpucode||2014-08-19|Obsolete due to husky-*-devel => husky-* migration
+news/husky-htick||2014-08-19|Temporary, husky-htick-devel will move here
+news/husky-msged||2014-08-19|Obsolete due to husky-*-devel => husky-* migration
+news/husky-nltools||2014-08-19|Obsolete due to husky-*-devel => husky-* migration
+news/husky-smapi||2014-08-19|Temporary, husky-smapi-devel will move here
+news/husky-sqpack|2014-08-19|Obsolete due to husky-*-devel => husky-* migration
