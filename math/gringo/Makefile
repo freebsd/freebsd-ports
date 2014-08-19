@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gringo
-PORTVERSION=	4.2.1
+PORTVERSION=	4.4.0
 DISTVERSIONSUFFIX=	-source
 PORTREVISION=	1
 CATEGORIES=	math devel
@@ -16,7 +16,7 @@ LICENSE=	GPLv3
 
 BUILD_DEPENDS=	re2c:${PORTSDIR}/devel/re2c
 
-USES=	scons bison
+USES=	scons bison compiler:c++11-lang
 
 MAKE_ARGS+=	${MAKE_ENV}
 CXXFLAGS+=	-std=c++11
