@@ -4,19 +4,17 @@ PORTNAME=	husky-htick
 CATEGORIES=	news mail
 
 MAINTAINER=     osharoiko@gmail.com
-COMMENT=	Husky FTN file ticker (development version)
+COMMENT=	Husky FTN file ticker
 
-LIB_DEPENDS=	libfidoconfig.so:${PORTSDIR}/news/husky-fidoconf-devel \
-		libareafix.so:${PORTSDIR}/news/husky-areafix-devel
-
-CONFLICTS=	husky-htick-[0-9]*
+LIB_DEPENDS=	libfidoconfig.so:${PORTSDIR}/news/husky-fidoconf \
+		libareafix.so:${PORTSDIR}/news/husky-areafix
 
 ALL_TARGET=	all doc
 INSTALL_TARGET=	install install-doc
 INFO=		htick
 USE_LDCONFIG=   yes
 
-MASTERDIR=      ${.CURDIR}/../husky-devel
+MASTERDIR=      ${.CURDIR}/../husky
 COMPONENT_SUBDIR=       htick
 
 post-patch:
