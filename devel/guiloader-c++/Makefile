@@ -3,7 +3,7 @@
 
 PORTNAME=	guiloader-c++
 PORTVERSION=	2.19.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel gnome
 MASTER_SITES=	GOOGLE_CODE
 
@@ -15,7 +15,7 @@ LIB_DEPENDS=	libguiloader.so:${PORTSDIR}/devel/guiloader \
 		libgtkmm-2.4.so:${PORTSDIR}/x11-toolkits/gtkmm24
 
 PROJECTHOST=	nothing-personal
-USES=		gettext pathfix pkgconfig tar:bzip2
+USES=		gettext libtool pathfix pkgconfig tar:bzip2
 USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-hidden-visibility
