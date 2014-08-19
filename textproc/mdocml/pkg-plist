@@ -1,14 +1,27 @@
+bin/apropos
 bin/demandoc
 bin/mandoc
+@comment bin/preconv 
+bin/whatis
+man/man1/apropos.1.gz
 man/man1/demandoc.1.gz
 man/man1/mandoc.1.gz
+@comment man/man1/preconv.1.gz
+man/man1/whatis.1.gz
 man/man3/mandoc.3.gz
+man/man3/mandoc_escape.3.gz
+man/man3/mandoc_malloc.3.gz
+man/man3/mansearch.3.gz
+man/man3/mchars_alloc.3.gz
 man/man3/tbl.3.gz
+man/man5/mandoc.db.5.gz
 man/man7/eqn.7.gz
 man/man7/man.7.gz
 man/man7/mandoc_char.7.gz
 man/man7/mdoc.7.gz
-man/man7/roff.7.gz
+@comment man/man7/roff.7.gz
 man/man7/tbl.7.gz
+man/man8/makewhatis.8.gz
+sbin/makewhatis
 %%EXAMPLESDIR%%/example.style.css
 @dirrmtry %%EXAMPLESDIR%%
