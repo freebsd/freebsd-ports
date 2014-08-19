@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	polipo
-PORTVERSION=	1.0.4.1
+PORTVERSION=	1.1.1
 CATEGORIES=	www
-MASTER_SITES=	http://freehaven.net/~chrisd/polipo/ \
-		http://www.sax.de/~frank/polipo4bsd/files/
+MASTER_SITES=	http://www.pps.univ-paris-diderot.fr/~jch/software/files/polipo/
 
 MAINTAINER=	frank@pinky.sax.de
 COMMENT=	Small and fast caching web proxy
