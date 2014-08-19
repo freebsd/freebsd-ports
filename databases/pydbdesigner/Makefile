@@ -12,6 +12,8 @@ COMMENT=	Graphical designer for relational databases
 
 LICENSE=	GPLv2
 
+BROKEN=		Needs an unsupported version of wxWidgets
+
 EXTRACT_AFTER_ARGS=	--exclude CVS
 
 USE_PYTHON=	yes
