@@ -1,7 +1,5 @@
 bin/getopt
-%%PORTDOCS%%%%DOCSDIR%%/Changelog
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
+man/man1/getopt.1.gz
 share/locale/ca/LC_MESSAGES/getopt.mo
 share/locale/cs/LC_MESSAGES/getopt.mo
 share/locale/da/LC_MESSAGES/getopt.mo
@@ -27,4 +25,3 @@ share/locale/uk/LC_MESSAGES/getopt.mo
 share/locale/vi/LC_MESSAGES/getopt.mo
 share/locale/zh_CN/LC_MESSAGES/getopt.mo
 share/locale/zh_TW/LC_MESSAGES/getopt.mo
-man/man1/getopt.1.gz
