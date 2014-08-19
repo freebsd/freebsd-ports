@@ -1,0 +1,9 @@
+Libevhtp was created as a replacement API for Libevent's current HTTP API.
+The reality of libevent's http interface is that it was created as a JIT
+server, meaning the developer never thought of it being used for creating a
+full-fledged HTTP service. The maintainer is under the impression that the
+libevent http API was designed almost as an example of what you can do with
+libevent. It's not Apache in a box, but more and more developers are
+attempting to use it as such.
+
+WWW: https://github.com/ellzey/libevhtp
