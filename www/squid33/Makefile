@@ -18,9 +18,10 @@ PATCH_SITES=	http://www.squid-cache.org/%SUBDIR%/ \
 		http://www2.us.squid-cache.org/%SUBDIR%/ \
 		http://www1.at.squid-cache.org/%SUBDIR%/ \
 		http://www.eu.squid-cache.org/%SUBDIR%/ \
-		http://www1.jp.squid-cache.org/%SUBDIR%/
+		http://www1.jp.squid-cache.org/%SUBDIR%/ \
+		http://master.squid-cache.org/~amosjeffries/patches/:nosid
 PATCH_SITE_SUBDIR=	Versions/v3/${PORTVERSION:R}/changesets
-PATCHFILES=	#empty
+PATCHFILES=	FreeBSD_silence_nosuid_mk1.patch:nosid
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	HTTP Caching Proxy
@@ -32,7 +33,8 @@ SQUID_STABLE_VER=	11
 
 CONFLICTS_INSTALL=	squid-2.[0-9].* squid32-* cacheboy-[0-9]* lusca-head-[0-9]*
 USES=		perl5 tar:bzip2 shebangfix
-SHEBANG_FILES=	scripts/*.pl contrib/*.pl src/*.pl tools/*.pl
+SHEBANG_FILES=	scripts/*.pl contrib/*.pl src/*.pl tools/*.pl\
+		helpers/external_acl/kerberos_ldap_group/cert_tool
 GNU_CONFIGURE=	yes
 USE_RC_SUBR=	squid
 
@@ -92,6 +94,25 @@ OPTIONS_DEFAULT=	AUTH_KERB AUTH_NIS FS_AUFS HTCP IDENT KQUEUE \
 			SNMP WCCP WCCPV2
 
 ECAP_USES=		pkgconfig:build
+
+etc_files=	squid/cachemgr.conf.sample\
+		squid/errorpage.css.sample\
+		squid/mime.conf.sample\
+		squid/msntauth.conf.sample\
+		squid/squid.conf.sample
+change_files=	ChangeLog\
+		contrib/nextstep/makepkg\
+		contrib/nextstep/post_install\
+		errors/Makefile.am\
+		errors/Makefile.in\
+		helpers/basic_auth/MSNT/Makefile.am\
+		helpers/basic_auth/MSNT/Makefile.in\
+		src/Makefile.am\
+		src/Makefile.in\
+		src/cf_gen.cc\
+		src/squid.8.in\
+		tools/Makefile.am\
+		tools/Makefile.in
 
 icon_silk_files=	application.png arrow_up.png bomb.png box.png \
 			bricks.png bullet_red.png cd.png chart_line.png \
@@ -160,7 +181,8 @@ libexec=	cachemgr.cgi \
 		diskd \
 		helper-mux.pl
 
-.if !defined(SQUID_CONFIGURE_ARGS) || ${SQUID_CONFIGURE_ARGS:M*--disable-unlinkd*} == ""
+.if !defined(SQUID_CONFIGURE_ARGS)\
+ || ${SQUID_CONFIGURE_ARGS:M*--disable-unlinkd*} == ""
 libexec+=	unlinkd
 .endif
 
@@ -187,7 +209,7 @@ CONFIGURE_ARGS=	--with-default-user=squid \
 
 .include <bsd.port.options.mk>
 
-.if ${CC:T:Mclang} == "clang" || ${CXX:T:Mclang++} == "clang++" \
+.if ${CC:T:Mclang*} || ${CXX:T:Mclang++*} \
  || ${OPSYS} == FreeBSD && ${OSVERSION} >= 1000024
 CXXFLAGS+=	-Wno-unused-private-field
 .endif
@@ -214,15 +236,12 @@ libexec+=	basic_db_auth \
 		ext_unix_group_acl \
 		ntlm_fake_auth \
 		ntlm_smb_lm_auth
-PLIST_FILES+=	basic_getpwnam_auth.8.gz basic_ncsa_auth.8.gz \
-		basic_pam_auth.8.gz basic_radius_auth.8.gz basic_db_auth.8.gz \
-		digest_file_auth.8.gz ext_file_userip_acl.8.gz \
-		ext_time_quota_acl.8.gz ext_unix_group_acl.8.gz
 .if ${PORT_OPTIONS:MAUTH_LDAP}
 USE_OPENLDAP=	yes
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-PLIST_FILES+=	basic_ldap_auth.8.gz ext_ldap_group_acl.8.gz
+PLIST_FILES+=	man/man8/basic_ldap_auth.8.gz\
+		man/man8/ext_ldap_group_acl.8.gz
 basic_auth+=	LDAP
 external_acl+=	LDAP_group
 libexec+=	basic_ldap_auth ext_ldap_group_acl
@@ -232,7 +251,7 @@ LIB_DEPENDS+=	libsasl2.so:${PORTSDIR}/security/cyrus-sasl2
 CFLAGS+=	-I${LOCALBASE}/include
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-PLIST_FILES+=	basic_sasl_auth.8.gz
+PLIST_FILES+=	man/man8/basic_sasl_auth.8.gz
 basic_auth+=	SASL
 libexec+=	basic_sasl_auth
 .endif
@@ -243,14 +262,14 @@ basic_auth+=	SMB
 external_acl+=	wbinfo_group
 libexec+=	basic_smb_auth basic_smb_auth.sh \
 		ext_wbinfo_group_acl
-PLIST_FILES+=	ext_wbinfo_group_acl.8.gz
+PLIST_FILES+=	man/man8/ext_wbinfo_group_acl.8.gz
 .endif
 .if ${PORT_OPTIONS:MAUTH_SQL}
 USE_MYSQL=	yes
 RUN_DEPENDS+=	p5-DBD-mysql>=0:${PORTSDIR}/databases/p5-DBD-mysql
 external_acl+=	SQL_session
 libexec+=	ext_sql_session_acl
-PLIST_FILES+=	ext_sql_session_acl.8.gz
+PLIST_FILES+=	man/man8/ext_sql_session_acl.8.gz
 .endif
 # POLA: allow the old global make.conf(5) (pre src.conf(5)) defines, too:
 .if ${PORT_OPTIONS:MAUTH_NIS} && !defined(NO_NIS) && !defined(WITHOUT_NIS)
@@ -262,7 +281,7 @@ libexec+=	basic_nis_auth
 negotiate_auth=	kerberos wrapper
 libexec+=	negotiate_kerberos_auth negotiate_kerberos_auth_test \
 		negotiate_wrapper_auth
-PLIST_FILES+=	negotiate_kerberos_auth.8.gz
+PLIST_FILES+=	man/man8/negotiate_kerberos_auth.8.gz
 # the kerberos_ldap_group external helper depends on LDAP and SASL:
 .if ${PORT_OPTIONS:MAUTH_LDAP} && ${PORT_OPTIONS:MAUTH_SASL}
 external_acl+=	kerberos_ldap_group
@@ -340,7 +359,11 @@ libexec+=	ssl_crtd
 .endif
 .if ${PORT_OPTIONS:MICMP}
 CONFIGURE_ARGS+=	--enable-icmp
-libexec+=	pinger
+PLIST_FILES+=	"@mode	4510"\
+		"@group	squid"\
+		libexec/squid/pinger\
+		"@group"\
+		"@mode"
 .endif
 .if ${PORT_OPTIONS:MDNS_HELPER}
 CONFIGURE_ARGS+=	--disable-internal-dns
@@ -446,14 +469,10 @@ WITH_DEBUG?=		yes
 CONFIGURE_ARGS+=	${SQUID_CONFIGURE_ARGS}
 
 PLIST_DIRS=	%%ETCDIR%%/icons/silk %%ETCDIR%%/icons libexec/squid
-PLIST_FILES=	"@sample %%ETCDIR%%/cachemgr.conf.sample" \
-		"@sample %%ETCDIR%%/errorpage.css.sample" \
+PLIST_FILES+=	${etc_files:S,^,"@sample etc/",} \
 		%%ETCDIR%%/icons/SN.png \
-		"@sample %%ETCDIR%%/mime.conf.sample" \
-		%%ETCDIR%%/mib.txt \
-		"@sample %%ETCDIR%%/msntauth.conf.sample" \
-		%%ETCDIR%%/squid.conf.documented \
-		"@sample %%ETCDIR%%/squid.conf.sample" \
+		%%ETCDIR%%/mib.txt\
+		%%ETCDIR%%/squid.conf.documented\
 		${icon_silk_files:S,^,%%ETCDIR%%/icons/silk/,} \
 		${libexec:S,^,libexec/squid/,} ${sbin:S,^,sbin/,} \
 		man/man8/cachemgr.cgi.8.gz \
@@ -465,7 +484,6 @@ PLIST_FILES=	"@sample %%ETCDIR%%/cachemgr.conf.sample" \
 		man/man8/digest_file_auth.8.gz \
 		man/man8/ext_file_userip_acl.8.gz \
 		man/man8/ext_unix_group_acl.8.gz \
-		man/man8/negotiate_kerberos_auth.8.gz \
 		man/man8/ext_time_quota_acl.8.gz \
 		man/man8/squid.8.gz \
 		man/man1/squidclient.1.gz
@@ -482,10 +500,18 @@ PLIST_DIRSTRY+=	%%ETCDIR%% /var/log/squid /var/run/squid \
 		/var/squid/logs /var/squid
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/src/cf.data.pre
-# Prevent installation of .orig files by deleting them.
-	@${FIND} ${WRKSRC} -name '*.bak' -delete
-	@${FIND} ${WRKSRC} -name '*.orig' -delete
+	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' \
+		${WRKSRC}/src/cf.data.pre
+	@cd ${WRKSRC} && ${REINPLACE_CMD}\
+		-e 's|\.conf\.default|.conf.sample|'\
+		-e 's|)\.default|).sample|'\
+		${change_files}
+	@cd ${WRKSRC} && ${MV} helpers/basic_auth/MSNT/msntauth.conf.default\
+		helpers/basic_auth/MSNT/msntauth.conf.sample
+	@cd ${WRKSRC} && ${MV} src/mime.conf.default src/mime.conf.sample
+	@${REINPLACE_CMD} -e 's,echo |,echo =head1 |,'\
+		${WRKSRC}/helpers/basic_auth/DB/config.test\
+		${WRKSRC}/helpers/external_acl/SQL_session/config.test
 
 post-install:
 .if ${PORT_OPTIONS:MEXAMPLES}
@@ -493,20 +519,10 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/helpers/basic_auth/DB/passwd.sql \
 		${STAGEDIR}${EXAMPLESDIR}
 .endif
-.if ${PORT_OPTIONS:MICMP}
-	${CHMOD} 4510 ${STAGEDIR}${PREFIX}/libexec/squid/pinger; \
-	${CHGRP} squid ${STAGEDIR}${PREFIX}/libexec/squid/pinger
-.endif
 .if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${MYDOCS} ${STAGEDIR}${DOCSDIR}
 .endif
 	${MKDIR} ${STAGEDIR}/var/squid/logs
-	(cd ${STAGEDIR}${ETCDIR} && \
-		${MV} cachemgr.conf.default cachemgr.conf.sample ; \
-		${MV} errorpage.css.default errorpage.css.sample ; \
-		${MV} mime.conf.default mime.conf.sample ; \
-		${MV} msntauth.conf.default msntauth.conf.sample ; \
-		${MV} squid.conf.default squid.conf.sample )
 
 .include <bsd.port.mk>
