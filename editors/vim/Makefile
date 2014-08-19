@@ -107,7 +107,7 @@ NLS_MAKE_ARGS_OFF=	CONF_OPT_NLS=--disable-nls
 NLS_USES=		gettext
 PERL_MAKE_ARGS=		CONF_OPT_PERL=--enable-perlinterp
 PERL_USES=		perl5
-PYTHON_USE=		PYTHON=yes
+PYTHON_USES=		python
 RUBY_MAKE_ARGS=		CONF_OPT_RUBY=--enable-rubyinterp
 RUBY_USE=		RUBY=yes
 TCL_MAKE_ARGS=		CONF_OPT_TCL="--enable-tclinterp --with-tclsh=tclsh${TCL_VER}"
