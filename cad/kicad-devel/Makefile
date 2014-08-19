@@ -18,7 +18,7 @@ BUILD_DEPENDS=	bzr:${PORTSDIR}/devel/bzr \
 
 LIB_DEPENDS=	libboost_thread.so:${PORTSDIR}/devel/boost-libs
 
-CONFLICTS=	kicad-2013*
+CONFLICTS=	kicad-2014*
 
 DOCVERSION=	1.1
 LIBVERSION=	1.0
