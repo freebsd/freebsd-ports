@@ -305,3 +305,4 @@ UrbanTerror*.zip	games/urbanterror-data	The mod files may not be sold or distrib
 gmsh-*			cad/gmsh		Contact appropriate authors for commercial purposes if including Tetgen or Metis
 gmsh-occ-*		cad/gmsh-occ		Contact appropriate authors for commercial purposes if including Tetgen or Metis
 btsync_*		net-p2p/btsync		Redistribution forbidden by license
+sas2ircu-*		sysutils/sas2ircu	May not be redistributed. Must accept license to download.
