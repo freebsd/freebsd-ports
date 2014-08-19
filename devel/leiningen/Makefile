@@ -1,10 +1,10 @@
 # $FreeBSD$
 
 PORTNAME=	leiningen
-PORTVERSION=	2.4.2
+PORTVERSION=	2.4.3
 CATEGORIES=	devel lisp java
 MASTER_SITES=	GITHUB:source1 \
-		https://github.com/technomancy/leiningen/releases/download/2.4.2/:source2
+		https://github.com/technomancy/leiningen/releases/download/${PORTVERSION}/:source2
 DISTFILES=	leiningen-${PORTVERSION}.tar.gz:source1 \
 		leiningen-${PORTVERSION}-standalone.jar:source2
 EXTRACT_ONLY=	leiningen-${PORTVERSION}.tar.gz
@@ -17,7 +17,7 @@ LICENSE=	EPL
 USE_GITHUB=	yes
 GH_ACCOUNT=	technomancy
 GH_TAGNAME=	${PORTVERSION}
-GH_COMMIT=	43a9b66
+GH_COMMIT=	0ae3b55
 
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
