@@ -20,6 +20,9 @@ DOCS=		CHANGELOG README.txt History.txt
 
 OPTIONS_DEFINE=	DOCS
 
+DEPRECATED=	RubyForge shutdown May 15 2014
+EXPIRATION_DATE=	2014-09-20
+
 do-install:
 	${MKDIR} ${STAGEDIR}${SADIR}/liquid/tags ${STAGEDIR}${SADIR}/liquid/extras
 	${INSTALL_DATA} ${WRKSRC}/lib/liquid.rb ${STAGEDIR}${SADIR}/

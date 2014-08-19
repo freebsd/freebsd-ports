@@ -11,4 +11,4 @@ dispatching requests to your application inside the java application server,
 and assembles all jar files in WARBLER_HOME/lib/*.jar into your application.
 No external dependencies are downloaded.
 
-WWW: http://caldersphere.rubyforge.org/warbler
+WWW: http://rubygems.org/gems/warbler/

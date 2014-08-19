@@ -15,4 +15,7 @@ USES=		tar:tgz
 USE_RUBY=	yes
 USE_RUBY_SETUP=	yes
 
+DEPRECATED=	RubyForge shutdown May 15 2014
+EXPIRATION_DATE=	2014-09-20
+
 .include <bsd.port.mk>

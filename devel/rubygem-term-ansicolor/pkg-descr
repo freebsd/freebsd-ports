@@ -8,4 +8,4 @@ It's possible to use constants:
 
     print red(bold("red bold")), "\n"
 
-WWW: http://term-ansicolor.rubyforge.org/
+WWW: http://rubygems.org/gems/term-ansicolor/

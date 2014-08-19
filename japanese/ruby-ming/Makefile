@@ -25,6 +25,9 @@ CONFIGURE_ARGS=	-- --with-ming-include=${PREFIX}/include/ming --with-ming-lib=${
 DOCS_EN=	ChangeLog README.en Usage_en.txt fonts.en
 DOCS_JA=	README.ja Usage_ja.txt fonts.ja progress.rd
 
+DEPRECATED=	RubyForge shutdown May 15 2014
+EXPIRATION_DATE=	2014-09-20
+
 OPTIONS_DEFINE=	DOCS EXAMPLES
 OPTIONSFILE=	${PORT_DBDIR}/ja-ruby-${PORTNAME}/options
 

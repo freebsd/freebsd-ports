@@ -33,6 +33,9 @@ NO_STAGE=	yes
 
 OPTIONS_DEFINE=	DOCS
 
+DEPRECATED=	RubyForge shutdown May 15 2014
+EXPIRATION_DATE=	2014-09-20
+
 post-install:
 	${MKDIR} ${RUBY_MODDOCDIR}
 .for f in ${DOCS_EN}

@@ -2,4 +2,4 @@ ImageScience is a Ruby library that generates
 thumbnails.  Supports square and proportional
 thumbnails, as well as arbitrary resizes.
 
-WWW: http://seattlerb.rubyforge.org/ImageScience.html
+WWW: http://rubygems.org/gems/image_science/

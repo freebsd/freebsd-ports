@@ -31,6 +31,9 @@ DOCS=		LICENSE.txt doc/*
 
 OPTIONS_DEFINE=	DOCS
 
+DEPRECATED=	Depends on deprecated math/ruby-narray
+EXPIRATION_DATE=	2014-09-20
+
 post-install:
 	${MKDIR} ${STAGEDIR}${RUBY_MODDOCDIR}
 .for f in ${DOCS}

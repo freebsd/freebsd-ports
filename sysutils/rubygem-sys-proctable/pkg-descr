@@ -4,4 +4,4 @@ Most major platforms are supported and, while different platforms
 may return different information, the external interface is identical
 across platforms.
 
-WWW: http://www.rubyforge.org/projects/sysutils
+WWW: http://rubygems.org/gems/sys-proctable/

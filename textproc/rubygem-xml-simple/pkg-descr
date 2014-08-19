@@ -2,4 +2,4 @@ Class XmlSimple offers an easy API to read and write XML. It is a Ruby
 translation of Grant McLean's Perl module XML::Simple. Simply put, 
 it automatically converts XML documents into a Ruby Hash.
 
-WWW: http://xml-simple.rubyforge.org
+WWW: http://rubygems.org/gems/xml-simple/

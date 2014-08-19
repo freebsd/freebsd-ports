@@ -2,4 +2,4 @@ Diff::LCS is a port of Algorithm::Diff that uses the McIlroy-Hunt longest
 common subsequence (LCS) algorithm to compute intelligent differences between
 two sequenced enumerable containers.
 
-WWW: http://rubyforge.org/projects/ruwiki/
+WWW: http://rubygems.org/gems/diff-lcs/

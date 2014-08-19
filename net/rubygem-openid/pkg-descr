@@ -18,4 +18,4 @@ This library is a port of the Python OpenID library, and features:
     for authentication
   o ActiveRecord adapter for using an SQL store in rails
 
-WWW: http://openid.rubyforge.org/
+WWW: http://rubygems.org/gems/openid/
