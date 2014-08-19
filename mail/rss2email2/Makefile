@@ -22,7 +22,7 @@ NO_BUILD=	yes
 CONFLICTS_INSTALL=	py*-rss2email-3.*
 
 PLIST_FILES=	bin/r2e \
-		%%DATADIR%%/${PORTNAME}.py
+		%%DATADIR%%/rss2email.py
 PLIST_DIRS=	%%DATADIR%%
 PORTEXAMPLES=	config.py.example
 
@@ -36,7 +36,7 @@ post-patch:
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR} ${STAGEDIR}${EXAMPLESDIR}
-	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME}.py ${STAGEDIR}${DATADIR}
+	${INSTALL_SCRIPT} ${WRKSRC}/rss2email.py ${STAGEDIR}${DATADIR}
 	${INSTALL_SCRIPT} ${WRKSRC}/r2e ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_DATA} ${WRKSRC}/config.py.example ${STAGEDIR}${EXAMPLESDIR}
 
