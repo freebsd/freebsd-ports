@@ -9,7 +9,7 @@ MASTER_SITES=	http://fallabs.com/${PORTNAME}/
 MAINTAINER=	lwhsu@FreeBSD.org
 COMMENT=	Full-text search system based on Tokyo Cabinet
 
-LICENSE=	LGPL
+LICENSE=	LGPL21
 
 LIB_DEPENDS=	libtokyocabinet.so:${PORTSDIR}/databases/tokyocabinet
 
