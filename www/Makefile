@@ -380,6 +380,7 @@
     SUBDIR += libapreq2
     SUBDIR += libecap
     SUBDIR += libepc
+    SUBDIR += libevhtp
     SUBDIR += libgtkhtml
     SUBDIR += libhpack
     SUBDIR += libhtp-suricata

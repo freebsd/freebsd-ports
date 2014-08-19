@@ -29,10 +29,8 @@ PLIST_FILES=	bin/cppcheck bin/cppcheck-htmlreport
 
 .include <bsd.port.options.mk>
 
-.ifndef(NOPORTDATA)
 MAKE_ENV+=	CFGDIR="${DATADIR}/cfg"
 PORTDATA=	*
-.endif
 
 .if ${PORT_OPTIONS:MMANPAGES}
 ALL_TARGET+=	man
@@ -80,10 +78,8 @@ post-patch:
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/cppcheck ${STAGEDIR}${PREFIX}/bin
 	@${INSTALL_SCRIPT} ${WRKSRC}/htmlreport/cppcheck-htmlreport ${STAGEDIR}${PREFIX}/bin
-.ifndef(NOPORTDATA)
 	@${MKDIR} ${STAGEDIR}${DATADIR}/cfg
 	@cd ${WRKSRC}/cfg; ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR}/cfg/
-.endif
 
 check regression-test test: build
 	@cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} test

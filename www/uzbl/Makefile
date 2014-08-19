@@ -36,9 +36,7 @@ PORTDOCS=	AUTHORS README COMMUNITY CONTRIBUTING FAQ INSTALL TODO config-syntax \
 		multiple-instances-management performance url-editing config.h vim
 .endif
 
-.if !defined(NOPORTDATA)
 PORTDATA=	examples
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e "s|/usr/local|${PREFIX}|" \
@@ -74,7 +72,6 @@ do-install:
 .endfor
 	(cd ${WRKSRC}/extras && ${COPYTREE_SHARE} vim ${STAGEDIR}${DOCSDIR})
 .endif
-.if !defined(NOPORTDATA)
 	${MKDIR} ${STAGEDIR}${DATADIR}/examples/data/dforms ${STAGEDIR}${DATADIR}/examples/config
 .for f in data/bookmarks \
 	data/dforms/bbs.archlinux.org \
@@ -86,6 +83,5 @@ do-install:
 		${COPYTREE_BIN} plugins ${STAGEDIR}${DATADIR}/examples/data/)
 	(cd ${WRKSRC}/examples/data && \
 		${COPYTREE_BIN} scripts ${STAGEDIR}${DATADIR}/examples/data/)
-.endif
 
 .include <bsd.port.mk>

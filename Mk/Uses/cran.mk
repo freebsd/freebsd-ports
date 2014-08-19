@@ -65,11 +65,7 @@ regression-test: build
 
 .if !target(do-install)
 R_POSTCMD_INSTALL_OPTIONS+=	-l ${STAGEDIR}${PREFIX}/${R_LIB_DIR}
-.if defined(NOPORTDATA)
-R_POSTCMD_INSTALL_OPTIONS+=	--no-data --no-demo
-.else
 R_POSTCMD_INSTALL_OPTIONS+=	--install-tests
-.endif
 
 .if defined(NOPORTDOCS)
 R_POSTCMD_INSTALL_OPTIONS+=	--no-docs --no-html

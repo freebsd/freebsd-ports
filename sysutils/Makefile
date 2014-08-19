@@ -854,6 +854,7 @@
     SUBDIR += safecat
     SUBDIR += samefile
     SUBDIR += samesame
+    SUBDIR += sas2ircu
     SUBDIR += savelogs
     SUBDIR += sb16config
     SUBDIR += sbniconfig
