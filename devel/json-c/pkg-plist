@@ -1,11 +1,7 @@
-lib/libjson.a
-lib/libjson.la
-lib/libjson.so
-lib/libjson.so.1
 lib/libjson-c.a
-lib/libjson-c.la
 lib/libjson-c.so
 lib/libjson-c.so.2
+lib/libjson-c.so.2.0.1
 include/json-c/arraylist.h
 include/json-c/bits.h
 include/json-c/debug.h
@@ -20,8 +16,6 @@ include/json-c/json_tokener.h
 include/json-c/json_util.h
 include/json-c/linkhash.h
 include/json-c/printbuf.h
-include/json
-libdata/pkgconfig/json.pc
+include/json-c/random_seed.h
 libdata/pkgconfig/json-c.pc
-@dirrmtry include/json
 @dirrm include/json-c
