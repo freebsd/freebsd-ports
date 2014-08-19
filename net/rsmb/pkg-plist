@@ -1,6 +1,0 @@
-libexec/rsmb/broker
-libexec/rsmb/Messages.%%PORTVERSION%%
-etc/broker.cfg.dist
-@dirrm libexec/rsmb
-%%PORTDOCS%%%%DOCSDIR%%/gettingstarted.htm
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
