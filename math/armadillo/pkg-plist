@@ -104,6 +104,7 @@ include/armadillo_bits/fn_all.hpp
 include/armadillo_bits/fn_any.hpp
 include/armadillo_bits/fn_as_scalar.hpp
 include/armadillo_bits/fn_chol.hpp
+include/armadillo_bits/fn_clamp.hpp
 include/armadillo_bits/fn_cond.hpp
 include/armadillo_bits/fn_conv.hpp
 include/armadillo_bits/fn_conv_to.hpp
@@ -215,6 +216,10 @@ include/armadillo_bits/glue_times_bones.hpp
 include/armadillo_bits/glue_times_meat.hpp
 include/armadillo_bits/glue_toeplitz_bones.hpp
 include/armadillo_bits/glue_toeplitz_meat.hpp
+include/armadillo_bits/gmm_diag_bones.hpp
+include/armadillo_bits/gmm_diag_meat.hpp
+include/armadillo_bits/gmm_misc_bones.hpp
+include/armadillo_bits/gmm_misc_meat.hpp
 include/armadillo_bits/hdf5_bones.hpp
 include/armadillo_bits/hdf5_misc.hpp
 include/armadillo_bits/include_atlas.hpp
@@ -244,6 +249,8 @@ include/armadillo_bits/op_any_bones.hpp
 include/armadillo_bits/op_any_meat.hpp
 include/armadillo_bits/op_chol_bones.hpp
 include/armadillo_bits/op_chol_meat.hpp
+include/armadillo_bits/op_clamp_bones.hpp
+include/armadillo_bits/op_clamp_meat.hpp
 include/armadillo_bits/op_cor_bones.hpp
 include/armadillo_bits/op_cor_meat.hpp
 include/armadillo_bits/op_cov_bones.hpp
@@ -394,11 +401,11 @@ include/armadillo_bits/xvec_htrans_bones.hpp
 include/armadillo_bits/xvec_htrans_meat.hpp
 lib/libarmadillo.so
 lib/libarmadillo.so.4
-lib/libarmadillo.so.4.320.2
+lib/libarmadillo.so.4.400.0
 share/Armadillo/CMake/ArmadilloConfig.cmake
 share/Armadillo/CMake/ArmadilloConfigVersion.cmake
 share/Armadillo/CMake/ArmadilloLibraryDepends-%%CMAKE_BUILD_TYPE%%.cmake
 share/Armadillo/CMake/ArmadilloLibraryDepends.cmake
-@dirrm share/Armadillo/CMake
-@dirrm share/Armadillo
-@dirrm include/armadillo_bits
+@dirrmtry include/armadillo_bits
+@dirrmtry share/Armadillo/CMake
+@dirrmtry share/Armadillo
