@@ -395,8 +395,6 @@ you update your ports collection, before attempting any port upgrades.
         portmaster -w -r icu
   If you use portupgrade:
         portupgrade -fr devel/icu
-  If you use pkgng with binary packages:
-        pkg install -fR devel/icu
 
 20140610:
   AFFECTS: users of www/firefox, www/seamonkey, mail/thunderbird, www/libxul
@@ -841,8 +839,6 @@ you update your ports collection, before attempting any port upgrades.
   # portmaster -r apr
     or
   # portupgrade -r devel/apr1
-    or
-  # pkg install -fR devel/apr1
 
 20140318:
   AFFECTS: users of net/openldap24-server
