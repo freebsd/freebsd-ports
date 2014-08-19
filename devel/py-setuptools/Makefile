@@ -12,7 +12,7 @@ COMMENT=	Python packages installer
 
 LICENSE=	PSFL
 
-TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>0:${PORTSDIR}/devel/py-pytest
+#TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>0:${PORTSDIR}/devel/py-pytest
 
 CONFLICTS_INSTALL=	${PYTHON_PKGNAMEPREFIX}distribute-[0-9]*
 
@@ -43,7 +43,7 @@ post-patch:
 post-install:
 	${INSTALL_DATA} ${FILESDIR}/easy-install.pth.dist ${STAGEDIR}${PYTHON_SITELIBDIR}/
 
-regression-test: build
-	@cd ${WRKSRC} && ${PYTHON_CMD} ${PYSETUP} test
+#regression-test: build
+#	@cd ${WRKSRC} && ${PYTHON_CMD} ${PYSETUP} test
 
 .include <bsd.port.post.mk>
