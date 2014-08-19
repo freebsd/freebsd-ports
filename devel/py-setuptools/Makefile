@@ -12,6 +12,7 @@ COMMENT=	Python packages installer
 
 LICENSE=	PSFL
 
+# This creates a dependency loop
 #TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>0:${PORTSDIR}/devel/py-pytest
 
 CONFLICTS_INSTALL=	${PYTHON_PKGNAMEPREFIX}distribute-[0-9]*
