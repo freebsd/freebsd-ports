@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	livestreamer
-PORTVERSION=	1.9.0
+PORTVERSION=	1.10.0
 CATEGORIES=	multimedia python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,6 +15,8 @@ LICENSE_COMB=	multi
 
 RUN_DEPENDS=	rtmpdump:${PORTSDIR}/multimedia/rtmpdump \
 		${PYTHON_PKGNAMEPREFIX}requests1>=0:${PORTSDIR}/www/py-requests1 \
+		${PYTHON_PKGNAMEPREFIX}futures>=0:${PORTSDIR}/devel/py-futures \
+		${PYTHON_PKGNAMEPREFIX}six>0:${PORTSDIR}/devel/py-six \
 		${PYTHON_PKGNAMEPREFIX}librtmp>=0:${PORTSDIR}/multimedia/py-librtmp
 
 USES=		python
