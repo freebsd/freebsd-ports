@@ -6426,3 +6426,4 @@ security/sguil-server|security/sguil|2014-08-16|Merged into new port security/sg
 databases/jasperserver||2014-08-18|Has expired: Unstaged, depends on expiring devel/maven2
 devel/maven2|devel/maven3|2014-08-18|Has expired: No longer supported by the Apache Foundation. Use 3.x instead
 x11-clocks/alarm-clock||2014-08-18|Removed: disappeared upstream
+mail/rss2email|mail/rss2email2|2014-08-19|Renamed to avoid ambiguity with mail/rss2email3
