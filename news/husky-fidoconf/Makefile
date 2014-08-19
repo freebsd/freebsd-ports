@@ -4,18 +4,16 @@ PORTNAME=	husky-fidoconf
 CATEGORIES=	news mail
 
 MAINTAINER=	osharoiko@gmail.com
-COMMENT=	Husky FTN configuration library (development version)
+COMMENT=	Husky FTN configuration library
 
-LIB_DEPENDS=	libsmapi.so:${PORTSDIR}/news/husky-smapi-devel
-
-CONFLICTS=	husky-fidoconf-[0-9]*
+LIB_DEPENDS=	libsmapi.so:${PORTSDIR}/news/husky-smapi
 
 USES+=		perl5 shebangfix makeinfo
 SHEBANG_FILES=	util/fconf2areasbbs.pl util/fconf2na.pl util/sq2fc.pl
 USE_LDCONFIG=   yes
 INSTALL_TARGET=	install install-man
 
-MASTERDIR=      ${.CURDIR}/../husky-devel
+MASTERDIR=      ${.CURDIR}/../husky
 COMPONENT_SUBDIR=       fidoconf
 
 post-patch:

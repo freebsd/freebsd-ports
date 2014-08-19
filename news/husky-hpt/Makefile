@@ -4,18 +4,16 @@ PORTNAME=	husky-hpt
 CATEGORIES=	news mail
 
 MAINTAINER=	osharoiko@gmail.com
-COMMENT=	Husky FTN tosser (development version)
+COMMENT=	Husky FTN tosser
 
-LIB_DEPENDS=	libfidoconfig.so:${PORTSDIR}/news/husky-fidoconf-devel \
-		libareafix.so:${PORTSDIR}/news/husky-areafix-devel
-
-CONFLICTS=	husky-hpt-[0-9]*
+LIB_DEPENDS=	libfidoconfig.so:${PORTSDIR}/news/husky-fidoconf \
+		libareafix.so:${PORTSDIR}/news/husky-areafix
 
 ALL_TARGET=	all doc
 INSTALL_TARGET=	install install-doc
 INFO=		hpt
 
-MASTERDIR=	${.CURDIR}/../husky-devel
+MASTERDIR=	${.CURDIR}/../husky
 COMPONENT_SUBDIR=       hpt
 
 post-patch:
