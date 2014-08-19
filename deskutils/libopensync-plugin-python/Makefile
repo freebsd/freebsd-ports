@@ -3,6 +3,7 @@
 
 PORTNAME=	libopensync-plugin-python
 PORTVERSION=	0.22
+PORTREVISION=	1
 CATEGORIES=	deskutils
 MASTER_SITES=	http://www.opensync.org/download/releases/${PORTVERSION}/
 
@@ -13,7 +14,7 @@ LIB_DEPENDS=	libopensync.so:${PORTSDIR}/devel/libopensync022
 
 CONFLICTS=	libopensync-plugin-python-devel-[0-9]*
 
-USES=		pkgconfig tar:bzip2
+USES=		libtool pkgconfig tar:bzip2
 GNU_CONFIGURE=	yes
 USE_PYTHON=	yes
 
