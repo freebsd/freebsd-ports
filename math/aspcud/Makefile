@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	aspcud
-PORTVERSION=	1.8.0
-PORTREVISION=	1
+PORTVERSION=	1.9.0
 DISTVERSIONSUFFIX=	-source
 CATEGORIES=	math ports-mgmt sysutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -21,17 +20,8 @@ RUN_DEPENDS=	gringo:${PORTSDIR}/math/gringo \
 				bash:${PORTSDIR}/shells/bash
 
 USE_PYTHON_RUN=	yes
-USES=	compiler:c++11-lang cmake:outsource shebangfix
-SHEBANG_FILES=	${WRKSRC}/scripts/aspcud.sh
+USES=	compiler:c++11-lang cmake:outsource
 
-post-patch:
-	${REINPLACE_CMD} -e 's|@@PREFIX@@|${PREFIX}|' ${WRKSRC}/scripts/${PORTNAME}.sh
-
-do-install:
-	${INSTALL_PROGRAM} ${INSTALL_WRKSRC}/bin/cudf2lp ${STAGEDIR}${PREFIX}/bin/cudf2lp
-	${INSTALL_SCRIPT} ${WRKSRC}/scripts/${PORTNAME}.sh ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
-	${MKDIR} ${STAGEDIR}${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/scripts/encodings/misc2012.lp ${STAGEDIR}${DATADIR}/misc2012.lp
-	${INSTALL_DATA} ${WRKSRC}/scripts/encodings/specification.lp ${STAGEDIR}${DATADIR}/specification.lp
+CMAKE_ARGS+=	-DCMAKE_INSTALL_MANDIR=${MANPREFIX}/man
 
 .include <bsd.port.mk>
