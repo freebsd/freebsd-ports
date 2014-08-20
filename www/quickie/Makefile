@@ -5,34 +5,34 @@ PORTNAME=	quickie
 PORTVERSION=	1.1
 PORTREVISION=	1
 CATEGORIES=	www
-MASTER_SITES=	http://${PORTNAME}.sourceforge.net/
+MASTER_SITES=	SF \
+		http://quickie.sourceforge.net/:pdf
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
-EXTRACT_ONLY:=	${DISTFILES}
+EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Small footprint, fast Wiki engine written in C++
 
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--prefix=${PREFIX} --sysconfdir=${PREFIX}/etc \
-		--localstatedir=${DATADIR}
+LICENSE=	GPLv2 # (or later)
+
 USES=		perl5
 USE_PERL5=	build patch
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc \
+		--localstatedir=${DATADIR}
+MAKE_ENV=	RPM_BUILD_ROOT="${STAGEDIR}"
 
 SUB_FILES=	pkg-message
 
-MAN1=		quickie-config.1 quickie_prime.1 quickie.1 quickie_svt.1 \
-		quickie_license.1 quickie_post_install.1
 PORTDOCS=	${DISTNAME}.pdf
 
-OPTIONS_DEFINE=	CGI DOCS
-CGI_DESC=	Install CGI binary
+OPTIONS_DEFINE=		CGI DOCS
+OPTIONS_SUB=		yes
 
-NO_STAGE=	yes
+CGI_DESC=		Install CGI binary
+DOCS_DISTFILES=		${DISTNAME}.pdf:pdf
+
 .include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MDOCS}
-DISTFILES+=	${DISTNAME}.pdf
-.endif
 
 post-patch:
 	@${CP} ${FILESDIR}/freebsd.h ${WRKSRC}/lib
@@ -45,26 +45,18 @@ post-patch:
 		\s+mv\s+\S+/$$1 -o/sgx' ${WRKSRC}/Makefile.in
 
 pre-install:
-	@${MKDIR} ${DATADIR}/admin ${DATADIR}/manual
+.for i in admin manual
+	@${MKDIR} ${STAGEDIR}${DATADIR}/${i}
+.endfor
 
 post-install:
-	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${DATADIR}
 .if ${PORT_OPTIONS:MCGI}
-	@if [ -d ${PREFIX}/www/cgi-bin ]; then \
-	    if [ ! -f ${PREFIX}/www/cgi-bin/${PORTNAME} ]; then \
-	        ${ECHO_MSG} "===> Copying CGI binary..." ; \
-	        ${CP} -p ${PREFIX}/bin/${PORTNAME} ${PREFIX}/www/cgi-bin/${PORTNAME} ; \
-	        ${CHOWN} ${WWWOWN}:${WWWGRP} ${PREFIX}/www/cgi-bin/${PORTNAME} ; \
-	    fi ; \
-	fi
+	@${MKDIR} ${STAGEDIR}${PREFIX}/www/cgi-bin
+	${LN} -sf ${PREFIX}/bin/${PORTNAME} ${STAGEDIR}${PREFIX}/www/cgi-bin
 .endif
-	@${ECHO_MSG}
-	@${CAT} ${PKGMESSAGE}
-	@${ECHO_MSG}
-
 .if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${DISTDIR}/${DISTNAME}.pdf ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	(cd ${DISTDIR} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR})
 .endif
 
 .include <bsd.port.mk>
