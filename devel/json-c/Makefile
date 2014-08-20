@@ -6,7 +6,7 @@ PORTVERSION=	0.12
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/archive/
 
-MAINTAINER=	gno@yahoo-inc.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	JSON (JavaScript Object Notation) implementation in C
 
 LICENSE=	MIT
