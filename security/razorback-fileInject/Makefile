@@ -3,24 +3,26 @@
 
 PORTNAME=	fileInject
 PORTVERSION=	0.5.0
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	SF/razorbacktm/Nuggets
 PKGNAMEPREFIX=	razorback-
 DIST_SUBDIR=	razorback
 
-MAINTAINER= ports@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Framework for an intelligence driven security - File Injector
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	librazorback_api.so:${PORTSDIR}/security/razorback-api
+LIB_DEPENDS=	librazorback_api.so:${PORTSDIR}/security/razorback-api \
+		libjson-c.so:${PORTSDIR}/devel/json-c
 
 OPTIONS_DEFINE=	DEBUG ASSERT
 
 GNU_CONFIGURE=	yes
 USES=		pkgconfig
-USE_AUTOTOOLS=	libtool
+USE_AUTOTOOLS=	libtool autoconf
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
