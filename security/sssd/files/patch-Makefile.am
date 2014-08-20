@@ -11,7 +11,15 @@ diff --git Makefile.am Makefile.am
 index 04df7cb..e2558f7 100644
 --- Makefile.am
 +++ Makefile.am
-@@ -369,6 +369,7 @@ dist_noinst_HEADERS = \
+@@ -318,6 +318,7 @@ SSSD_LIBS = \
+     $(DHASH_LIBS) \
+     $(SSS_CRYPT_LIBS) \
+     $(OPENLDAP_LIBS) \
++    $(LTLIBINTL) \
+     $(TDB_LIBS)
+ 
+ PYTHON_BINDINGS_LIBS = \
+@@ -369,6 +370,7 @@ dist_noinst_HEADERS = \
      src/util/sss_selinux.h \
      src/util/sss_utf8.h \
      src/util/sss_ssh.h \
@@ -19,14 +27,6 @@ index 04df7cb..e2558f7 100644
      src/util/refcount.h \
      src/util/find_uid.h \
      src/util/user_info_msg.h \
-@@ -571,6 +572,7 @@ sssd_LDADD = \
-     $(INOTIFY_LIBS) \
-     $(LIBNL_LIBS) \
-     $(KEYUTILS_LIBS) \
-+    $(LTLIBINTL) \
-     libsss_util.la
- 
- sssd_nss_SOURCES = \
 @@ -1170,7 +1172,7 @@ noinst_PROGRAMS += autofs_test_client
  endif
  
@@ -58,6 +58,14 @@ index 04df7cb..e2558f7 100644
      $(CLIENT_LIBS) \
      -module \
      -version-info 2:0:0 \
+@@ -1532,6 +1535,7 @@ ldap_child_LDADD = \
+     $(POPT_LIBS) \
+     $(OPENLDAP_LIBS) \
+     $(DHASH_LIBS) \
++    $(LTLIBINTL) \
+     $(KRB5_LIBS)
+ 
+ proxy_child_SOURCES = \
 -- 
 1.8.0
 
