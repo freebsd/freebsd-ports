@@ -13,7 +13,7 @@ BUILD_DEPENDS=	libgcrypt-config:${PORTSDIR}/security/libgcrypt
 
 LIB_DEPENDS=	libee.so:${PORTSDIR}/devel/libee \
 		libestr.so:${PORTSDIR}/devel/libestr \
-		libjson.so:${PORTSDIR}/devel/json-c \
+		libjson-c.so:${PORTSDIR}/devel/json-c \
 		liblogging-stdlog.so:${PORTSDIR}/devel/liblogging \
 		libuuid.so:${PORTSDIR}/misc/e2fsprogs-libuuid
 
