@@ -37,7 +37,7 @@ DIST_OSVER=	8
 .if ${ARCH} == amd64
 DIST_EXT=	_x64
 RUN_DEPENDS+=	${LOCALBASE}/lib/compat/libstdc++.so.6:${PORTSDIR}/misc/compat9x
-.elif
+.else
 RUN_DEPENDS+=	${LOCALBASE}/lib32/compat/libstdc++.so.6:${PORTSDIR}/misc/compat9x
 .endif
 
