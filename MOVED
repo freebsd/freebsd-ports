@@ -6435,3 +6435,31 @@ news/husky-hpucode||2014-08-19|Obsolete due to husky-*-devel => husky-* migratio
 news/husky-msged||2014-08-19|Obsolete due to husky-*-devel => husky-* migration
 news/husky-nltools||2014-08-19|Obsolete due to husky-*-devel => husky-* migration
 news/husky-sqpack||2014-08-19|Obsolete due to husky-*-devel => husky-* migration
+deskutils/horde3-hermes||2014-08-20|Has expired: EOL in April 2012
+deskutils/horde3-klutz||2014-08-20|Has expired: EOL in April 2012
+deskutils/horde3-kronolith||2014-08-20|Has expired: EOL in April 2012
+deskutils/horde3-mnemo||2014-08-20|Has expired: EOL in April 2012
+devel/horde3-chora||2014-08-20|Has expired: EOL in April 2012
+ftp/horde3-gollem||2014-08-20|Has expired: EOL in April 2012
+games/linux-steam||2014-08-20|Has expired: Unmaintained interactive port
+games/linux-ut2004-demo||2014-08-20|Has expired: Unmaintained restricted ancient demo
+mail/horde3-dimp||2014-08-20|Has expired: EOL in April 2012
+mail/horde3-forwards||2014-08-20|Has expired: EOL in April 2012
+mail/horde3-ingo||2014-08-20|Has expired: EOL in April 2012
+mail/horde3-mimp||2014-08-20|Has expired: EOL in April 2012
+mail/horde3-vacation||2014-08-20|Has expired: EOL in April 2012
+net-mgmt/horde3-nic||2014-08-20|Has expired: EOL in April 2012
+net-mgmt/nocol||2014-08-20|Has expired: Unmaintained interactive port
+net-mgmt/ourmon||2014-08-20|Has expired: Unmaintained interactive port
+net/wowzamediaserverpro||2014-08-20|Has expired: Unmaintained interactive port
+news/p5-NNML||2014-08-20|Has expired: Unmaintained interactive port
+print/dvips||2014-08-20|Has expired: Unmaintained interactive port
+print/xdvi||2014-08-20|Has expired: Unmaintained interactive port
+security/horde3-jeta||2014-08-20|Has expired: EOL in April 2012
+security/hunch||2014-08-20|Has expired: Likely unused interactive port
+www/horde3-ansel||2014-08-20|Has expired: EOL in April 2012
+www/horde3-meta||2014-08-20|Has expired: EOL in April 2012
+www/horde3-passwd||2014-08-20|Has expired: EOL in April 2012
+www/horde3-trean||2014-08-20|Has expired: EOL in April 2012
+www/wwwcount||2014-08-20|Has expired: Ancient interactive port
+x11-clocks/xalarm||2014-08-20|Has expired: Unmaintained interactive port

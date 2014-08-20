@@ -272,11 +272,7 @@
     SUBDIR += horde-passwd
     SUBDIR += horde-trean
     SUBDIR += horde-wicked
-    SUBDIR += horde3-ansel
     SUBDIR += horde3-base
-    SUBDIR += horde3-meta
-    SUBDIR += horde3-passwd
-    SUBDIR += horde3-trean
     SUBDIR += hotcrp
     SUBDIR += hs-DAV
     SUBDIR += hs-HTTP
@@ -2152,7 +2148,6 @@
     SUBDIR += wsdlpull
     SUBDIR += wsmake
     SUBDIR += www6to4
-    SUBDIR += wwwcount
     SUBDIR += wwwoffle
     SUBDIR += wwwstat
     SUBDIR += xapian-omega
