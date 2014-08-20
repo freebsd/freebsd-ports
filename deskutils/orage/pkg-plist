@@ -676,7 +676,6 @@ share/locale/zh_TW/LC_MESSAGES/orage.mo
 %%WITH_ICAL%%%%DATADIR%%/zoneinfo/zones.tab
 share/xfce4/panel-plugins/xfce4-orageclock-plugin.desktop
 @dirrmtry share/xfce4/panel-plugins
-@dirrmtry share/xfce4
 %%WITH_ICAL%%@dirrm %%DATADIR%%/zoneinfo/US
 %%WITH_ICAL%%@dirrm %%DATADIR%%/zoneinfo/SystemV
 %%WITH_ICAL%%@dirrm %%DATADIR%%/zoneinfo/Pacific
