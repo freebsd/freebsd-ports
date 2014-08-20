@@ -10,6 +10,8 @@ EXTRACT_SUFX=   .tgz
 MAINTAINER=	dirkx@webweaving.org
 COMMENT=	Watchdog daemon for the AMD Elan sc520 system-on-chip
 
+USES=		uidfix
+
 PLIST_FILES=	bin/watchdogd man/man8/watchdogd.8.gz
 
 .include <bsd.port.mk>
