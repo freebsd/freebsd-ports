@@ -2,6 +2,7 @@
 
 PORTNAME=	turnserver
 PORTVERSION=	3.2.2.5
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://turnserver.open-sys.org/downloads/v${PORTVERSION}/ \
 		http://turnserver.open-sys.org/downloads/extradocs/ \
@@ -76,15 +77,13 @@ selfloadbalance/secure_relay.sh
 CONFIGURE_ENV+=	PTHREAD_LIBS=-pthread TURN_DISABLE_RPATH=1
 
 .if ${PORT_OPTIONS:MPGSQL}
-USE_PGSQL=	yes
-LIB_DEPENDS+=	libpq.so:${PORTSDIR}/databases/postgresql90-client
+USES+=		pgsql
 .else
 CONFIGURE_ENV+=	TURN_NO_PQ=1
 .endif
 
 .if ${PORT_OPTIONS:MMYSQL}
 USE_MYSQL=	yes
-LIB_DEPENDS+=	libmysqlclient.so:${PORTSDIR}/databases/mysql55-client
 .else
 CONFIGURE_ENV+=	TURN_NO_MYSQL=1
 .endif
