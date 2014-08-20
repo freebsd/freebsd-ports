@@ -50,6 +50,7 @@ lib/liblwgeom.so
 %%DATADIR%%/tiger_2011/tables/lookup_tables_2011.sql
 %%DATADIR%%/tiger_2011/tiger_loader_2011.sql
 %%DATADIR%%/tiger_2011/tiger_loader_2012.sql
+%%DATADIR%%/tiger_2011/tiger_loader_2013.sql
 %%DATADIR%%/tiger_2011/topology/README
 %%DATADIR%%/tiger_2011/topology/tiger_topology_loader.sql
 %%DATADIR%%/tiger_2011/upgrade_geocode.sql
