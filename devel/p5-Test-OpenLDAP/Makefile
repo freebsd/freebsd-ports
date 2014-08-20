@@ -2,7 +2,7 @@
 
 PORTNAME=	Test-OpenLDAP
 PORTVERSION=	0.05
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -17,7 +17,7 @@ RUN_DEPENDS=	\
 	p5-Data-UUID>0:${PORTSDIR}/devel/p5-Data-UUID \
 	p5-perl-ldap>0:${PORTSDIR}/net/p5-perl-ldap \
 	${LOCALBASE}/libexec/slapd:${PORTSDIR}/net/openldap${OPENLDAP_VER}-server \
-	p5-URI>0:${PORTSDIR}/net/p5-Net
+	p5-Net>0:${PORTSDIR}/net/p5-Net
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 USES=		perl5
