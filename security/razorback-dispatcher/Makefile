@@ -3,7 +3,7 @@
 
 PORTNAME=	dispatcher
 PORTVERSION=	0.5.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES=	SF/razorbacktm/Dispatcher
 PKGNAMEPREFIX=	razorback-
@@ -16,11 +16,13 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	librazorback_api.so:${PORTSDIR}/security/razorback-api \
+		libjson-c.so:${PORTSDIR}/devel/json-c \
 		libmemcached.so:${PORTSDIR}/databases/libmemcached \
 		libcli.so:${PORTSDIR}/devel/libcli
 
 USES=		libtool pathfix pkgconfig
 GNU_CONFIGURE=	yes
+USE_AUTOTOOLS=	autoconf
 USE_MYSQL=	yes
 USE_RC_SUBR=	dispatcher dispatcher_safed
 SUB_FILES=	pkg-message
