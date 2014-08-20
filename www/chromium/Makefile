@@ -58,9 +58,10 @@ RUN_DEPENDS=	${LOCALBASE}/lib/alsa-lib/libasound_module_pcm_oss.so:${PORTSDIR}/a
 
 ONLY_FOR_ARCHS=	i386 amd64
 USES=		bison compiler:c++11-lib cpe desktop-file-utils pkgconfig \
-		perl5 shebangfix ninja tar:xz python:2,build execinfo
+		perl5 shebangfix ninja tar:xz
 CPE_VENDOR=	The Chromium Project
 USE_PERL5=	build
+USE_PYTHON_BUILD=	2
 USE_XORG=	scrnsaverproto x11 xproto xscrnsaver xtst
 USE_GNOME=	glib20 gtk20 dconf libxslt
 USE_OPENSSL=	yes # must be from base to prevent a link failure against cups
@@ -170,6 +171,9 @@ EXTRA_PATCHES+=	${FILESDIR}/extra-patch-libusb-pc
 .endif
 .if ${OSVERSION} >= 1000052 && !exists(${LOCALBASE}/include/execinfo.h)
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-fixup-execinfo
+.endif
+.if ${OSVERSION} < 1000052
+LIB_DEPENDS+=	libexecinfo.so:${PORTSDIR}/devel/libexecinfo
 .endif
 
 .if ${PORT_OPTIONS:MTEST}
