@@ -299,6 +299,7 @@
     SUBDIR += scdp
     SUBDIR += scli
     SUBDIR += sdig
+    SUBDIR += send
     SUBDIR += sendip
     SUBDIR += sing
     SUBDIR += sipcalc
