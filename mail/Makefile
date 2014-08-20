@@ -177,8 +177,6 @@
     SUBDIR += horde-ingo
     SUBDIR += horde-turba
     SUBDIR += horde-webmail
-    SUBDIR += horde3-imp
-    SUBDIR += horde3-turba
     SUBDIR += hs-email-validate
     SUBDIR += hs-mime
     SUBDIR += hs-mime-mail

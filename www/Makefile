@@ -272,7 +272,6 @@
     SUBDIR += horde-passwd
     SUBDIR += horde-trean
     SUBDIR += horde-wicked
-    SUBDIR += horde3-base
     SUBDIR += hotcrp
     SUBDIR += hs-DAV
     SUBDIR += hs-HTTP
