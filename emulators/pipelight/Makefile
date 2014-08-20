@@ -3,7 +3,7 @@
 
 PORTNAME=	pipelight
 DISTVERSION=	0.2.7.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	emulators
 MASTER_SITES=	https://bitbucket.org/mmueller2012/pipelight/get/ \
 		http://repos.fds-team.de/pluginloader/v${DISTVERSION}/:plg
@@ -23,7 +23,7 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/gpg2:${PORTSDIR}/security/gnupg \
 LIB_DEPENDS=	libxml2.so:${PORTSDIR}/textproc/libxml2
 RUN_DEPENDS=	${LOCALBASE}/bin/bash:${PORTSDIR}/shells/bash \
 		${LOCALBASE}/bin/wget:${PORTSDIR}/ftp/wget \
-		${LOCALBASE}/bin/zenity:${PORTSDIR}/x11/zenity \
+		${LOCALBASE}/bin/zenity:${PORTSDIR}/x11/zenity3 \
 		${LOCALBASE}/bin/cabextract:${PORTSDIR}/archivers/cabextract \
 		${LOCALBASE}/bin/flock:${PORTSDIR}/sysutils/flock \
 		${LOCALBASE}/bin/gpg2:${PORTSDIR}/security/gnupg
