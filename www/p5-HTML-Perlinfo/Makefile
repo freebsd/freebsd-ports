@@ -1,8 +1,7 @@
-# Created by: Kurt Jaeger <fbsd-ports@opsec.eu>
 # $FreeBSD$
 
 PORTNAME=	HTML-Perlinfo
-PORTVERSION=	1.62
+PORTVERSION=	1.64
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
