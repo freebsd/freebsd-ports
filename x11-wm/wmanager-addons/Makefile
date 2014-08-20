@@ -9,7 +9,7 @@ MASTER_SITES=	http://devel.ringlet.net/x11/wmanager-addons/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Helper scripts and documentation for the X11 window manager selector
 
-USES=		perl5
+USES=		perl5 uidfix
 USE_PERL5=	run
 
 OPTIONS_DEFINE=	DOCS
