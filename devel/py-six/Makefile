@@ -2,18 +2,17 @@
 # $FreeBSD$
 
 PORTNAME=	six
-PORTVERSION=	1.5.2
+PORTVERSION=	1.7.3
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	zope@FreeBSD.org
+MAINTAINER=	python@FreeBSD.org
 COMMENT=	Python 2 and 3 compatibility utilities
 
 LICENSE=	MIT
 
-USE_PYTHON=		yes
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
+USES=		python
+USE_PYTHON=	autoplist concurrent distutils
 
 .include <bsd.port.mk>
