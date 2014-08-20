@@ -22,7 +22,7 @@ BUILD_DEPENDS=	razorback-masterNugget>=0.5.0:${PORTSDIR}/security/razorback-mast
 RUN_DEPENDS=	razorback-masterNugget>=0.5.0:${PORTSDIR}/security/razorback-masterNugget \
 		wine:${PORTSDIR}/emulators/wine
 
-USES=		pkgconfig
+USES=		pkgconfig libtool
 
 ONLY_FOR_ARCHS=	i386
 ONLY_FOR_ARCHS_REASON=	only supported under i386 due to wine requirements
@@ -30,26 +30,13 @@ ONLY_FOR_ARCHS_REASON=	only supported under i386 due to wine requirements
 OPTIONS_DEFINE=	DEBUG ASSERT
 ASSERT_DESC=	Enable Asserts
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
-
 RB_LIBDIR?=	${PREFIX}/lib/razorback
 GNU_CONFIGURE=	yes
-USE_AUTOTOOLS=	libtool autoconf
+USE_AUTOTOOLS=	autoconf
 USE_LDCONFIG=	${RB_LIBDIR}
+INSTALL_TARGET=	install-strip
 
-.if ${PORT_OPTIONS:MDEBUG}
-CONFIGURE_ARGS+=--enable-debug
-.endif
-
-.if ${PORT_OPTIONS:MASSERT}
-CONFIGURE_ARGS+=--enable-assert
-.endif
-
-post-install:
-	${LN} -sf ${RB_LIBDIR}/officeCat.so.2 ${RB_LIBDIR}/officeCat.so.2.0.0
-	@if [ ! -f ${PREFIX}/etc/razorback/officecat.conf ]; then \
-		${CP} -p ${PREFIX}/etc/razorback/officecat.conf.sample ${PREFIX}/etc/razorback/officecat.conf ; \
-	fi
+DEBUG_CONFIGURE_ENABLE=	debug
+ASSERT_CONFIGURE_ENABLE=assert
 
 .include <bsd.port.mk>
