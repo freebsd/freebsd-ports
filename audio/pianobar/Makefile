@@ -15,7 +15,7 @@ LIB_DEPENDS=	libao.so:${PORTSDIR}/audio/libao \
 		libfaad.so:${PORTSDIR}/audio/faad \
 		libmad.so:${PORTSDIR}/audio/libmad \
 		libgnutls.so:${PORTSDIR}/security/gnutls \
-		libjson.so:${PORTSDIR}/devel/json-c \
+		libjson-c.so:${PORTSDIR}/devel/json-c \
 		libgcrypt.so:${PORTSDIR}/security/libgcrypt \
 		libavcodec.so:${PORTSDIR}/multimedia/ffmpeg
 
