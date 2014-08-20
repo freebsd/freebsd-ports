@@ -12,7 +12,7 @@ COMMENT=	Geographic objects support for PostgreSQL databases
 LICENSE=	GPLv2
 
 LIB_DEPENDS=	libgeos.so:${PORTSDIR}/graphics/geos \
-		libjson.so:${PORTSDIR}/devel/json-c \
+		libjson-c.so:${PORTSDIR}/devel/json-c \
 		libproj.so:${PORTSDIR}/graphics/proj
 
 CONFLICTS_INSTALL=	postgis-1.* postgis-2.1.*
@@ -60,9 +60,9 @@ BROKEN=		Raster suppport is broken on FreeBSD < 9.x
 
 post-install:
 	${MKDIR} ${STAGEDIR}/${DATADIR}/tiger_2010/
-	cd ${WRKSRC}/extras/tiger_geocoder/tiger_2010/ && ${COPYTREE_SHARE} . ${STAGEDIR}/${DATADIR}/tiger_2010/
+	(cd ${WRKSRC}/extras/tiger_geocoder/tiger_2010/ && ${COPYTREE_SHARE} . ${STAGEDIR}/${DATADIR}/tiger_2010/)
 	${MKDIR} ${STAGEDIR}/${DATADIR}/utils/
-	cd ${WRKSRC}/utils/ && ${COPYTREE_SHARE} . ${STAGEDIR}/${DATADIR}/utils/
+	(cd ${WRKSRC}/utils/ && ${COPYTREE_SHARE} . ${STAGEDIR}/${DATADIR}/utils/)
 	${STRIP_CMD} ${STAGEDIR}/${PREFIX}/bin/* ${STAGEDIR}/${PREFIX}/lib/*.so ${STAGEDIR}/${PREFIX}/lib/postgresql/*.so
 
 .include <bsd.port.post.mk>
