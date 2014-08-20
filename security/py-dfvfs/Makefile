@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	dfvfs
-PORTVERSION=	20140727
+PORTVERSION=	20140818
 CATEGORIES=	security devel python
 MASTER_SITES=	https://googledrive.com/host/0B3fBvzttpiiSZTI3MWV6di1fRDg/ \
 		LOCAL/antoine
@@ -12,6 +12,7 @@ MAINTAINER=	antoine@FreeBSD.org
 COMMENT=	Digital Forensics Virtual File System
 
 LICENSE=	APACHE20
+LICENSE_FILE=	${WRKSRC}/LICENSE.TXT
 
 RUN_DEPENDS=	libbde>=a:${PORTSDIR}/devel/libbde \
 		libewf>=0:${PORTSDIR}/devel/libewf \
@@ -25,9 +26,8 @@ RUN_DEPENDS=	libbde>=a:${PORTSDIR}/devel/libbde \
 		${PYTHON_PKGNAMEPREFIX}protobuf>=0:${PORTSDIR}/devel/py-protobuf \
 		${PYTHON_PKGNAMEPREFIX}pytsk>=0:${PORTSDIR}/sysutils/py-pytsk
 
-USE_PYTHON=	2
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
+USES=		python:2
+USE_PYTHON=	distutils autoplist
 
 PORTDOCS=	ACKNOWLEDGEMENTS AUTHORS
 
