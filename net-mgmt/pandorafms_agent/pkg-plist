@@ -1,26 +1,37 @@
-@unexec if cmp -s %D/%%ETCDIR%%/pandora_agent.conf.sample %D/%%ETCDIR%%/pandora_agent.conf;then rm -f %D/%%ETCDIR%%/pandora_agent.conf; fi
-%%ETCDIR%%/pandora_agent.conf.sample
-@exec [ -e %D/%F ] || cp -p %D/%F %B/pandora_agent.conf
+@mode 555
 bin/pandora_agent
-@exec mkdir -p %D/%%ETCDIR%%/collections
-%%ETCDIR%%/plugins/files_indir
-%%ETCDIR%%/plugins/grep_log
-%%ETCDIR%%/plugins/inventory
-%%ETCDIR%%/plugins/nagios_plugin_wrapper
-%%ETCDIR%%/plugins/pandora_df
-%%ETCDIR%%/plugins/pandora_update
 bin/pandora_agent_exec
-bin/tentacle_client
+bin/pandora_revent
 %%TENTACLE_SERVER%%bin/tentacle_server
-@exec mkdir -p %D/%%DATADIR%%/collections
+bin/tentacle_client
+etc/rc.d/pandora_agent
+@mode 400
+@owner pandora
+@sample %%ETCDIR%%/pandora_agent.conf.sample
+@owner
+@mode
+man/man1/tentacle_client.1.gz
+man/man1/pandora_agent.1.gz
+@mode 555
 %%DATADIR%%/plugins/files_indir
 %%DATADIR%%/plugins/grep_log
+%%DATADIR%%/plugins/grep_log_module
 %%DATADIR%%/plugins/inventory
 %%DATADIR%%/plugins/nagios_plugin_wrapper
 %%DATADIR%%/plugins/pandora_df
+%%DATADIR%%/plugins/pandora_df_free
+%%DATADIR%%/plugins/pandora_mem
+%%DATADIR%%/plugins/pandora_netusage
 %%DATADIR%%/plugins/pandora_update
+%%DATADIR%%/plugins/top.sh
+%%DATADIR%%/plugins/who.sh
+@owner pandora
+@mode 700
 @dirrmtry %%DATADIR%%/collections
 @dirrmtry %%DATADIR%%/plugins
+@owner
+@mode
 @dirrmtry %%DATADIR%%
-@dirrmtry %%ETCDIR%%/collections
-@dirrmtry %%ETCDIR%%/plugins
+%%ETCDIR%%/plugins
+%%ETCDIR%%/collections
+@dirrmtry %%ETCDIR%%
