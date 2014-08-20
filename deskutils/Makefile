@@ -91,7 +91,6 @@
     SUBDIR += horde-kronolith
     SUBDIR += horde-mnemo
     SUBDIR += horde-nag
-    SUBDIR += horde3-nag
     SUBDIR += hot-babe
     SUBDIR += howm
     SUBDIR += ical
