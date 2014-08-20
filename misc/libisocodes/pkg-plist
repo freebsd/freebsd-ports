@@ -19,7 +19,3 @@ share/locale/si/LC_MESSAGES/libisocodes.mo
 share/locale/sv/LC_MESSAGES/libisocodes.mo
 share/locale/vi/LC_MESSAGES/libisocodes.mo
 share/vala/vapi/libisocodes.vapi
-@dirrmtry share/locale/en@quot/LC_MESSAGES
-@dirrmtry share/locale/en@quot
-@dirrmtry share/locale/en@boldquot/LC_MESSAGES
-@dirrmtry share/locale/en@boldquot

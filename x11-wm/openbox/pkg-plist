@@ -159,10 +159,6 @@ share/xsessions/openbox.desktop
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/openbox.mo
 %%NLS%%@dirrmtry share/locale/ia/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/ia
-%%NLS%%@dirrmtry share/locale/en@quot/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/en@quot
-%%NLS%%@dirrmtry share/locale/en@boldquot/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/en@boldquot
 %%NLS%%@dirrmtry share/locale/bn_IN/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/bn_IN
 %%NLS%%@dirrmtry share/locale/sr@latin/LC_MESSAGES

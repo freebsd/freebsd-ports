@@ -15,7 +15,3 @@ man/man1/dvdbackup.1.gz
 %%NLS%%share/locale/ru/LC_MESSAGES/dvdbackup.mo
 %%NLS%%share/locale/sk/LC_MESSAGES/dvdbackup.mo
 %%NLS%%share/locale/tr/LC_MESSAGES/dvdbackup.mo
-%%NLS%%@dirrmtry share/locale/en@quot/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/en@quot
-%%NLS%%@dirrmtry share/locale/en@boldquot/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/en@boldquot

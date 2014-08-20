@@ -34,10 +34,6 @@ share/pixmaps/gtick_32x32.xpm
 %%NLS%%share/locale/uk/LC_MESSAGES/gtick.mo
 %%NLS%%share/locale/vi/LC_MESSAGES/gtick.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/gtick.mo
-%%NLS%%@dirrmtry share/locale/en@quot/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/en@quot
-%%NLS%%@dirrmtry share/locale/en@boldquot/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/en@boldquot
 @dirrmtry share/appdata
 @dirrmtry share/icons/hicolor/64x64/apps
 @dirrmtry share/icons/hicolor/64x64

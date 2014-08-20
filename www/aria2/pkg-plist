@@ -58,10 +58,6 @@ man/ru/man1/aria2c.1.gz
 %%NLS%%@dirrmtry share/locale/kk
 %%NLS%%@dirrmtry share/locale/fil/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/fil
-%%NLS%%@dirrmtry share/locale/en@quot/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/en@quot
-%%NLS%%@dirrmtry share/locale/en@boldquot/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/en@boldquot
 @dirrmtry man/ru/man1
 @dirrmtry man/ru
 @dirrmtry man/pt/man1

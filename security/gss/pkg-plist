@@ -63,8 +63,4 @@ share/locale/ga/LC_MESSAGES/gss.mo
 share/locale/id/LC_MESSAGES/gss.mo
 share/locale/sk/LC_MESSAGES/gss.mo
 share/locale/zh_CN/LC_MESSAGES/gss.mo
-@dirrmtry share/locale/en@quot/LC_MESSAGES
-@dirrmtry share/locale/en@quot
-@dirrmtry share/locale/en@boldquot/LC_MESSAGES
-@dirrmtry share/locale/en@boldquot
 @dirrm include/gss

@@ -66,7 +66,3 @@ share/pixmaps/starplot32x32.xpm
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/html/images
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrmtry share/locale/en@boldquot/LC_MESSAGES
-@dirrmtry share/locale/en@boldquot
-@dirrmtry share/locale/en@quot/LC_MESSAGES
-@dirrmtry share/locale/en@quot
