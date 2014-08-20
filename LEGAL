@@ -53,7 +53,7 @@ boodler-*		audio/boodler		Not for commercial use
 Browser*.tar.gz		net/ldapbrowser		No reply from author regarding redistribution licensing
 candycruncher_demo*	games/linux-candycruncher-demo	Redistribution is limited, see license
 citrix_ica-*		net/citrix_ica		License prohibits redistribution
-cli_freebsd*		sysutils/arcconf	May not be redistributed in binary form
+arcconf-v*		sysutils/arcconf	May not be redistributed in binary form
 clustalw-*		biology/clustalw	No commercial use
 coldwar_demo*		games/linux-coldwar-demo	Redistribution is limited, see license
 contool-*		sysutils/contool	Do not incorporate the source code into a product which is subsequently sold
