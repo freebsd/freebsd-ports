@@ -1147,6 +1147,7 @@
     SUBDIR += libslang2
     SUBDIR += libslave
     SUBDIR += libsmdev
+    SUBDIR += libsmpp34
     SUBDIR += libsmraw
     SUBDIR += libsoup
     SUBDIR += libsoup-gnome
