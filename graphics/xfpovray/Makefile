@@ -13,6 +13,8 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Graphical interface to POV-Ray
 
+BROKEN=		Fails to link
+
 LIB_DEPENDS=	libforms.so:${PORTSDIR}/x11-toolkits/xforms
 RUN_DEPENDS=	povray:${PORTSDIR}/graphics/povray-meta
 
