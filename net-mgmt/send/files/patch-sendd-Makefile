@@ -1,0 +1,13 @@
+--- sendd/Makefile.orig	2014-08-20 04:19:01.000000000 +0900
++++ sendd/Makefile	2014-08-20 04:19:39.000000000 +0900
+@@ -6,8 +6,8 @@
+ 	sendd.o sigmeth.o sig_rfc3971.o
+ INC= sendd_local.h snd_proto.h snd_config.h
+ 
+-CFLAGS= -Wall -O3
+-CPPFLAGS=  -I../include -I../../src/sys 
++CFLAGS?= -Wall -O3
++CPPFLAGS+=  -I../include -I../../src/sys 
+ YFLAGS= -d -p params_
+ LFLAGS= -Pparams_
+ 
