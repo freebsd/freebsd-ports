@@ -3,7 +3,7 @@
 
 PORTNAME=	squid
 PORTVERSION=	3.3.${SQUID_STABLE_VER}
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	www ipv6
 MASTER_SITES=	http://www.squid-cache.org/Versions/v3/${PORTVERSION:R}/ \
 		http://www2.us.squid-cache.org/Versions/v3/${PORTVERSION:R}/ \
@@ -46,6 +46,7 @@ PORTDOCS=	${MYDOCS:T}
 PORTEXAMPLES=	*
 SUB_FILES+=	pkg-install pkg-message
 
+OPTIONS_SUB=	yes
 OPTIONS_DEFINE=	ARP_ACL AUTH_KERB AUTH_LDAP AUTH_NIS AUTH_SASL AUTH_SMB \
 		AUTH_SQL \
 		CACHE_DIGESTS DEBUG DELAY_POOLS DNS_HELPER ECAP ESI \
@@ -95,11 +96,6 @@ OPTIONS_DEFAULT=	AUTH_KERB AUTH_NIS FS_AUFS HTCP IDENT KQUEUE \
 
 ECAP_USES=		pkgconfig:build
 
-etc_files=	squid/cachemgr.conf.sample\
-		squid/errorpage.css.sample\
-		squid/mime.conf.sample\
-		squid/msntauth.conf.sample\
-		squid/squid.conf.sample
 change_files=	ChangeLog\
 		contrib/nextstep/makepkg\
 		contrib/nextstep/post_install\
@@ -114,79 +110,37 @@ change_files=	ChangeLog\
 		tools/Makefile.am\
 		tools/Makefile.in
 
-icon_silk_files=	application.png arrow_up.png bomb.png box.png \
-			bricks.png bullet_red.png cd.png chart_line.png \
-			compress.png computer_link.png css.png cup.png \
-			database.png database_table.png drive_disk.png \
-			film.png film_key.png folder.png folder_table.png \
-			image.png information.png layers.png layout.png \
-			link.png music.png package.png package_go.png \
-			page_code.png page_excel.png page_green.png \
-			page_white.png page_white_acrobat.png page_white_c.png \
-			page_white_cplusplus.png page_white_flash.png \
-			page_white_magnify.png page_white_picture.png \
-			page_white_powerpoint.png page_white_stack.png \
-			page_white_text.png page_world.png \
-			page_white_word.png page_white_zip.png photo.png \
-			picture.png plugin.png plugin_add.png script.png \
-			script_gear.png script_palette.png
-
-error_files=	ERR_ACCESS_DENIED ERR_ACL_TIME_QUOTA_EXCEEDED \
-		ERR_AGENT_CONFIGURE ERR_AGENT_WPAD \
-		ERR_CACHE_ACCESS_DENIED \
-		ERR_CACHE_MGR_ACCESS_DENIED ERR_CONFLICT_HOST \
-		ERR_CANNOT_FORWARD ERR_CONNECT_FAIL \
-		ERR_DIR_LISTING ERR_DNS_FAIL \
-		ERR_ESI ERR_FORWARDING_DENIED \
-		ERR_FTP_DISABLED ERR_FTP_FAILURE ERR_FTP_FORBIDDEN \
-		ERR_FTP_NOT_FOUND ERR_FTP_PUT_CREATED \
-		ERR_FTP_PUT_ERROR ERR_FTP_PUT_MODIFIED ERR_FTP_UNAVAILABLE \
-		ERR_GATEWAY_FAILURE \
-		ERR_ICAP_FAILURE ERR_INVALID_REQ ERR_INVALID_RESP \
-		ERR_INVALID_URL ERR_LIFETIME_EXP ERR_NO_RELAY \
-		ERR_ONLY_IF_CACHED_MISS ERR_PRECONDITION_FAILED \
-		ERR_READ_ERROR ERR_READ_TIMEOUT \
-		ERR_SECURE_CONNECT_FAIL ERR_SHUTTING_DOWN ERR_SOCKET_FAILURE \
-		ERR_TOO_BIG ERR_UNSUP_REQ ERR_UNSUP_HTTPVERSION \
-		ERR_URN_RESOLVE ERR_WRITE_ERROR ERR_ZERO_SIZE_OBJECT \
-		error-details.txt
-
-error_dirs=	af ar az bg ca cs da de el en es et fa fi fr he hu hy id it \
-		ja ko lt lv ms nl oc pl pt pt-br ro ru sk sl sr-cyrl sr-latn \
-		sv \
-		th tr uk uz \
-		vi zh-cn zh-tw \
-		templates
-
-error_dir_links=	ar-ae ar-bh ar-dz ar-eg ar-iq ar-jo ar-kw ar-lb \
-			ar-ly ar-ma ar-om ar-qa ar-sa ar-sy ar-tn ar-ye \
-			az-az bg-bg cs-cz da-dk \
-			de-at de-ch de-de de-li de-lu \
-			el-gr \
-			en-au en-bz en-ca en-gb en-ie en-in en-jm en-nz \
-			en-ph en-sg en-tt en-uk en-us en-za en-zw \
-			es-ar es-bo es-cl es-co es-cr es-do es-ec es-es \
-			es-gt es-hn es-mx es-ni es-pa es-pe es-pr es-py \
-			es-sv es-uy es-ve \
-			et-ee \
-			fa-fa fa-ir fi-fi \
-			fr-be fr-ca fr-ch fr-fr fr-lu fr-mc \
-			he-il hu-hu hy-am hy-armn id-id it-ch it-it \
-			ja-jp ko-kp ko-kr lt-lt lv-lv ms-my nl-nl \
-			pl-pl pt-pt ro-md ro-ro ru-ru \
-			sk-sk sl-si sr sr-latn-cs sr-sp sv-fi sv-se \
-			th-th tr-tr uk-ua vi-vn zh-hk zh-mo zh-sg
-
-libexec=	cachemgr.cgi \
-		diskd \
-		helper-mux.pl
-
 .if !defined(SQUID_CONFIGURE_ARGS)\
  || ${SQUID_CONFIGURE_ARGS:M*--disable-unlinkd*} == ""
-libexec+=	unlinkd
+PLIST_SUB+=	UNLINKD=""
+.else
+PLIST_SUB+=	UNLINKD="@comment "
 .endif
 
-sbin=		purge squidclient squid
+IPV6_CONFIGURE_ENABLE=		ipv6
+DELAY_POOLS_CONFIGURE_ENABLE=	delay-pools
+SNMP_CONFIGURE_ENABLE=		snmp
+SSL_CONFIGURE_ENABLE=		ssl
+SSL_CRTD_CONFIGURE_ENABLE=	ssl-crtd
+ICMP_CONFIGURE_ENABLE=		icmp
+HTCP_CONFIGURE_ENABLE=		htcp
+VIA_DB_CONFIGURE_ENABLE=	forw-via-db
+CACHE_DIGESTS_CONFIGURE_ENABLE=	cache-digests
+WCCP_CONFIGURE_ENABLE=		wccp
+WCCPV2_CONFIGURE_ENABLE=	wccpv2
+STRICT_HTTP_CONFIGURE_ENABLE=	http-violations
+IDENT_CONFIGURE_ENABLE=		ident-lookups
+ARP_ACL_CONFIGURE_ENABLE=	eui
+TP_IPFW_CONFIGURE_ENABLE=	ipfw-transparent
+TP_PF_CONFIGURE_ENABLE=		pf-transparent
+TP_IPF_CONFIGURE_ENABLE=	ipf-transparent
+FOLLOW_XFF_CONFIGURE_ENABLE=	follow-x-forwarded-for
+ECAP_CONFIGURE_ENABLE=		ecap
+ICAP_CONFIGURE_ENABLE=		icap-client
+ESI_CONFIGURE_ENABLE=		esi
+KQUEUE_CONFIGURE_ENABLE=	kqueue
+LARGEFILE_CONFIGURE_ENABLE=	large-files
+STACKTRACES_CONFIGURE_ENABLE=	stacktraces
 
 CONFIGURE_ARGS=	--with-default-user=squid \
 		--bindir=${PREFIX}/sbin  \
@@ -221,72 +175,41 @@ basic_auth=	DB MSNT MSNT-multi-domain NCSA PAM POP3 RADIUS \
 digest_auth=	file
 external_acl=	file_userip time_quota unix_group
 ntlm_auth=	fake smb_lm
-libexec+=	basic_db_auth \
-		basic_fake_auth \
-		basic_getpwnam_auth \
-		basic_ncsa_auth \
-		basic_msnt_auth \
-		basic_msnt_multi_domain_auth \
-		basic_pam_auth \
-		basic_pop3_auth \
-		basic_radius_auth \
-		digest_file_auth \
-		ext_file_userip_acl \
-		ext_time_quota_acl \
-		ext_unix_group_acl \
-		ntlm_fake_auth \
-		ntlm_smb_lm_auth
 .if ${PORT_OPTIONS:MAUTH_LDAP}
 USE_OPENLDAP=	yes
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-PLIST_FILES+=	man/man8/basic_ldap_auth.8.gz\
-		man/man8/ext_ldap_group_acl.8.gz
 basic_auth+=	LDAP
 external_acl+=	LDAP_group
-libexec+=	basic_ldap_auth ext_ldap_group_acl
 .endif
 .if ${PORT_OPTIONS:MAUTH_SASL}
 LIB_DEPENDS+=	libsasl2.so:${PORTSDIR}/security/cyrus-sasl2
 CFLAGS+=	-I${LOCALBASE}/include
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-PLIST_FILES+=	man/man8/basic_sasl_auth.8.gz
 basic_auth+=	SASL
-libexec+=	basic_sasl_auth
 .endif
 .if ${PORT_OPTIONS:MAUTH_SMB}
 BUILD_DEPENDS+=	smbclient:${PORTSDIR}/net/samba36
 RUN_DEPENDS+=	smbclient:${PORTSDIR}/net/samba36
 basic_auth+=	SMB
 external_acl+=	wbinfo_group
-libexec+=	basic_smb_auth basic_smb_auth.sh \
-		ext_wbinfo_group_acl
-PLIST_FILES+=	man/man8/ext_wbinfo_group_acl.8.gz
 .endif
 .if ${PORT_OPTIONS:MAUTH_SQL}
 USE_MYSQL=	yes
 RUN_DEPENDS+=	p5-DBD-mysql>=0:${PORTSDIR}/databases/p5-DBD-mysql
 external_acl+=	SQL_session
-libexec+=	ext_sql_session_acl
-PLIST_FILES+=	man/man8/ext_sql_session_acl.8.gz
 .endif
 # POLA: allow the old global make.conf(5) (pre src.conf(5)) defines, too:
 .if ${PORT_OPTIONS:MAUTH_NIS} && !defined(NO_NIS) && !defined(WITHOUT_NIS)
 basic_auth+=	NIS
-libexec+=	basic_nis_auth
 .endif
 # POLA: allow the old global make.conf(5) (pre src.conf(5)) defines, too:
 .if ${PORT_OPTIONS:MAUTH_KERB} && !defined(NO_KERBEROS) && !defined(WITHOUT_KERBEROS)
 negotiate_auth=	kerberos wrapper
-libexec+=	negotiate_kerberos_auth negotiate_kerberos_auth_test \
-		negotiate_wrapper_auth
-PLIST_FILES+=	man/man8/negotiate_kerberos_auth.8.gz
 # the kerberos_ldap_group external helper depends on LDAP and SASL:
 .if ${PORT_OPTIONS:MAUTH_LDAP} && ${PORT_OPTIONS:MAUTH_SASL}
 external_acl+=	kerberos_ldap_group
-libexec+=	ext_kerberos_ldap_group_acl \
-		cert_tool
 .endif
 .else
 negotiate_auth=	none
@@ -314,33 +237,21 @@ CONFIGURE_ARGS+=	--without-pthreads
 .if ${PORT_OPTIONS:MFS_COSS}
 storage_schemes+=	coss
 .endif
-CONFIGURE_ARGS+=	--enable-storeio="${storage_schemes}"
-CONFIGURE_ARGS+=	--enable-disk-io="${diskio_modules}"
+CONFIGURE_ARGS+=	--enable-storeio="${storage_schemes}"\
+			--enable-disk-io="${diskio_modules}"
 
 # Log daemon helpers:
 
 logdaemon_helpers=	file
 CONFIGURE_ARGS+=	--enable-log-daemon-helpers="${logdaemon_helpers}"
-libexec+=	log_file_daemon
 
 # Rewrite helpers:
 
 rewrite_helpers=	fake
 CONFIGURE_ARGS+=	--enable-url-rewrite-helpers="${rewrite_helpers}"
-libexec+=	url_fake_rewrite url_fake_rewrite.sh
 
 # Other options set via 'make config':
 
-.if empty(PORT_OPTIONS:MIPV6) || defined(WITHOUT_IPV6)
-CONFIGURE_ARGS+=	--disable-ipv6
-EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-src-cf.data.pre.noipv6
-.endif
-.if ${PORT_OPTIONS:MDELAY_POOLS}
-CONFIGURE_ARGS+=	--enable-delay-pools
-.endif
-.if empty(PORT_OPTIONS:MSNMP)
-CONFIGURE_ARGS+=	--disable-snmp
-.endif
 .if ${PORT_OPTIONS:MSSL}
 # we need to .include bsd.openssl.mk manually here.because USE_OPENSSL only
 # works when it is defined before bsd.port{.pre}.mk is .included.
@@ -348,116 +259,26 @@ CONFIGURE_ARGS+=	--disable-snmp
 # conditionally include OpenSSL support.
 # XXX: is this still true with OptionsNG as of 2012-10?
 .include "${.CURDIR}/../../Mk/bsd.openssl.mk"
-CONFIGURE_ARGS+=	--enable-ssl \
-			--with-openssl="${OPENSSLBASE}"
+CONFIGURE_ARGS+=	--with-openssl="${OPENSSLBASE}"
 CFLAGS+=	-I${OPENSSLINC}
 LDFLAGS+=	-L${OPENSSLLIB}
 .endif
-.if ${PORT_OPTIONS:MSSL_CRTD}
-CONFIGURE_ARGS+=	--enable-ssl-crtd
-libexec+=	ssl_crtd
-.endif
-.if ${PORT_OPTIONS:MICMP}
-CONFIGURE_ARGS+=	--enable-icmp
-PLIST_FILES+=	"@mode	4510"\
-		"@group	squid"\
-		libexec/squid/pinger\
-		"@group"\
-		"@mode"
-.endif
 .if ${PORT_OPTIONS:MDNS_HELPER}
 CONFIGURE_ARGS+=	--disable-internal-dns
-libexec+=	dnsserver
-.endif
-.if empty(PORT_OPTIONS:MHTCP)
-CONFIGURE_ARGS+=	--disable-htcp
-.else
-CONFIGURE_ARGS+=	--enable-htcp
-.endif
-.if ${PORT_OPTIONS:MVIA_DB}
-CONFIGURE_ARGS+=	--enable-forw-via-db
-.else
-CONFIGURE_ARGS+=	--disable-forw-via-db
-.endif
-.if ${PORT_OPTIONS:MCACHE_DIGESTS}
-CONFIGURE_ARGS+=	--enable-cache-digests
-.else
-CONFIGURE_ARGS+=	--disable-cache-digests
-.endif
-.if ${PORT_OPTIONS:MWCCP}
-CONFIGURE_ARGS+=	--enable-wccp
-.else
-CONFIGURE_ARGS+=	--disable-wccp
-.endif
-.if ${PORT_OPTIONS:MWCCPV2}
-CONFIGURE_ARGS+=	--enable-wccpv2
-.else
-CONFIGURE_ARGS+=	--disable-wccpv2
-.endif
-.if ${PORT_OPTIONS:MSTRICT_HTTP}
-CONFIGURE_ARGS+=	--disable-http-violations
-.endif
-.if empty(PORT_OPTIONS:MIDENT)
-CONFIGURE_ARGS+=	--disable-ident-lookups
-.endif
-.if ${PORT_OPTIONS:MARP_ACL}
-CONFIGURE_ARGS+=	--enable-eui
-.else
-CONFIGURE_ARGS+=	--disable-eui
-.endif
-.if ${PORT_OPTIONS:MTP_IPFW}
-CONFIGURE_ARGS+=	--enable-ipfw-transparent
-.else
-CONFIGURE_ARGS+=	--disable-ipfw-transparent
-.endif
-.if ${PORT_OPTIONS:MTP_PF}
-CONFIGURE_ARGS+=	--enable-pf-transparent
-.else
-CONFIGURE_ARGS+=	--disable-pf-transparent
-.endif
-.if ${PORT_OPTIONS:MTP_IPF}
-CONFIGURE_ARGS+=	--enable-ipf-transparent
-.else
-CONFIGURE_ARGS+=	--disable-ipf-transparent
-.endif
-.if ${PORT_OPTIONS:MFOLLOW_XFF}
-CONFIGURE_ARGS+=	--enable-follow-x-forwarded-for
-.else
-CONFIGURE_ARGS+=	--disable-follow-x-forwarded-for
 .endif
 .if ${PORT_OPTIONS:MECAP}
-CONFIGURE_ARGS+=	--enable-ecap
 LIB_DEPENDS+=	libecap.so:${PORTSDIR}/www/libecap
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-.else
-CONFIGURE_ARGS+=	--disable-ecap
-.endif
-.if ${PORT_OPTIONS:MICAP}
-CONFIGURE_ARGS+=	--enable-icap-client
-.else
-CONFIGURE_ARGS+=	--disable-icap-client
 .endif
 .if ${PORT_OPTIONS:MESI}
-CONFIGURE_ARGS+=	--enable-esi
 LIB_DEPENDS+=	libexpat.so:${PORTSDIR}/textproc/expat2 \
 		libxml2.so:${PORTSDIR}/textproc/libxml2
 CFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/libxml2
 LDFLAGS+=	-L${LOCALBASE}/lib
-.else
-CONFIGURE_ARGS+=	--disable-esi
-.endif
-.if ${PORT_OPTIONS:MKQUEUE}
-CONFIGURE_ARGS+=	--enable-kqueue
-.else
-CONFIGURE_ARGS+=	--disable-kqueue
-.endif
-.if ${PORT_OPTIONS:MLARGEFILE}
-CONFIGURE_ARGS+=	--with-large-files
 .endif
 .if ${PORT_OPTIONS:MSTACKTRACES}
-CONFIGURE_ARGS+=	--enable-stacktraces
-CFLAGS+=		-g
+CFLAGS+=	-g
 STRIP=
 .endif
 .if ${PORT_OPTIONS:MDEBUG} || defined(WITH_DEBUG)
@@ -467,37 +288,6 @@ WITH_DEBUG?=		yes
 
 # Finally, add additional user specified configuration options:
 CONFIGURE_ARGS+=	${SQUID_CONFIGURE_ARGS}
-
-PLIST_DIRS=	%%ETCDIR%%/icons/silk %%ETCDIR%%/icons libexec/squid
-PLIST_FILES+=	${etc_files:S,^,"@sample etc/",} \
-		%%ETCDIR%%/icons/SN.png \
-		%%ETCDIR%%/mib.txt\
-		%%ETCDIR%%/squid.conf.documented\
-		${icon_silk_files:S,^,%%ETCDIR%%/icons/silk/,} \
-		${libexec:S,^,libexec/squid/,} ${sbin:S,^,sbin/,} \
-		man/man8/cachemgr.cgi.8.gz \
-		man/man8/basic_db_auth.8.gz \
-		man/man8/basic_getpwnam_auth.8.gz \
-		man/man8/basic_ncsa_auth.8.gz \
-		man/man8/basic_pam_auth.8.gz \
-		man/man8/basic_radius_auth.8.gz \
-		man/man8/digest_file_auth.8.gz \
-		man/man8/ext_file_userip_acl.8.gz \
-		man/man8/ext_unix_group_acl.8.gz \
-		man/man8/ext_time_quota_acl.8.gz \
-		man/man8/squid.8.gz \
-		man/man1/squidclient.1.gz
-
-PLIST_FILES+=	%%ETCDIR%%/errors/COPYRIGHT %%ETCDIR%%/errors/TRANSLATORS
-.for d in ${error_dirs}
-PLIST_DIRS+=	%%ETCDIR%%/errors/${d}
-PLIST_FILES+=	${error_files:S,^,%%ETCDIR%%/errors/${d}/,}
-.endfor
-PLIST_FILES+=	${error_dir_links:S,^,%%ETCDIR%%/errors/,}
-PLIST_DIRS+=	%%ETCDIR%%/errors
-PLIST_DIRSTRY+=	%%ETCDIR%% /var/log/squid /var/run/squid \
-		/var/squid/cache/squid /var/squid/cache \
-		/var/squid/logs /var/squid
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' \
@@ -512,6 +302,15 @@ post-patch:
 	@${REINPLACE_CMD} -e 's,echo |,echo =head1 |,'\
 		${WRKSRC}/helpers/basic_auth/DB/config.test\
 		${WRKSRC}/helpers/external_acl/SQL_session/config.test
+.if !${PORT_OPTIONS:MIPV6}
+	@${REINPLACE_CMD} -e's/ ::1//' -e's/ fc00::\/7//'\
+		-e's/ fe80::\/10//' -e's/ 2001:DB8::2//'\
+		-e's/ 2001:DB8::a:0\/64//'\
+		-e'/tcp_outgoing_address 2001:db8::c001 good_service_net/d'\
+		-e'/tcp_outgoing_address 2001:db8::beef normal_service_net/d'\
+		-e'/tcp_outgoing_address 2001:db8::1/d'\
+		${WRKSRC}/src/cf.data.pre
+.endif
 
 post-install:
 .if ${PORT_OPTIONS:MEXAMPLES}
