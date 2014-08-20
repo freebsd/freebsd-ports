@@ -545,12 +545,10 @@
     SUBDIR += linux-sof
     SUBDIR += linux-ssamtfe
     SUBDIR += linux-ssamtse
-    SUBDIR += linux-steam
     SUBDIR += linux-unrealgold
     SUBDIR += linux-uplink-demo
     SUBDIR += linux-ut
     SUBDIR += linux-ut2003-demo
-    SUBDIR += linux-ut2004-demo
     SUBDIR += linux-virtual-jay-peak
     SUBDIR += linux-worldofgoo-demo
     SUBDIR += linwarrior

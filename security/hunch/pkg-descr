@@ -1,7 +1,0 @@
-Scan Apache log files for CodeRed, Nimda, FormMail, proxy scanners and
-other malicious probes. For each one found, track down the contact email
-from WHOIS data and send a notice. Built-in rate controls prevent flooding
-an admin even when his machines are scanning at high rates. Runs as a
-non-privileged cron job to not interfere with the HTTP daemon's operation.
-
-WWW: http://www.cs.cmu.edu/~dpelleg/hunch.html

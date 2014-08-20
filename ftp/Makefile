@@ -34,7 +34,6 @@
     SUBDIR += gstreamer1-plugins-curl
     SUBDIR += gwget
     SUBDIR += horde-gollem
-    SUBDIR += horde3-gollem
     SUBDIR += hs-curl
     SUBDIR += hsftp
     SUBDIR += jftp

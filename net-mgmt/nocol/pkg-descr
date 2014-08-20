@@ -1,8 +1,0 @@
-NOCOL/NetConsole (Network Operation Center On-Line) is a network monitoring 
-package that runs on Unix platforms and is capable of monitoring network and
-system variables such as ICMP or RPC reachability, RMON variables,
-nameservers, ethernet load, port reachability, host performance, SNMP traps,
-modem line usage, appletalk & novell routes/services, BGP peers, syslog
-files, etc. The software is extensible and new monitors can be added easily.
-
-WWW: http://www.netplex-tech.com/software/nocol/

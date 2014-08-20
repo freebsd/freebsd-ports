@@ -1,5 +1,0 @@
-Jeta is the Horde wrapper around various Java SSH applets.  It allows users
-to login via a terminal window to the server on which the Horde application is
-running.
-
-WWW: http://www.horde.org/jeta/
