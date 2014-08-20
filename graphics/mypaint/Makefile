@@ -14,16 +14,15 @@ COMMENT=	Fast painting/scribbling program
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/numpy:${PORTSDIR}/math/py-numpy \
 		${PYTHON_SITELIBDIR}/cairo:${PORTSDIR}/graphics/py-cairo \
 		${PYTHON_PKGNAMEPREFIX}protobuf>0:${PORTSDIR}/devel/py-protobuf
-LIB_DEPENDS=	libjson.so:${PORTSDIR}/devel/json-c \
+LIB_DEPENDS=	libjson-c.so:${PORTSDIR}/devel/json-c \
 		liblcms2.so:${PORTSDIR}/graphics/lcms2
 BUILD_DEPENDS:=	${RUN_DEPENDS} \
 		swig:${PORTSDIR}/devel/swig13 \
 		protoc:${PORTSDIR}/devel/protobuf
 
 USE_GNOME=	glib20 pygtk2
-USE_PYTHON=	yes
 MAKE_ARGS=	prefix="${PREFIX}"
-USES=		gettext pkgconfig scons tar:bzip2
+USES=		gettext pkgconfig scons tar:bzip2 python
 INSTALLS_ICONS=	yes
 
 SUB_FILES=	pkg-install
