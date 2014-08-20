@@ -5,7 +5,7 @@
  
  # pkgconfig files
 -pkgconfigdir = $(libdir)/pkgconfig
-+pkgconfigdir = libdata/pkgconfig
++pkgconfigdir = $(libdir)data/pkgconfig
  pkgconfig_DATA = openpa.pc
  all: all-recursive
  
