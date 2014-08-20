@@ -12,11 +12,7 @@ MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	Library to provide abstract access to various archives
 
 USES=		cmake
-USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
-
-patch-autotools-libtool:
-	@${DO_NADA}
 
 post-patch:
 	@${REINPLACE_CMD} -e \
