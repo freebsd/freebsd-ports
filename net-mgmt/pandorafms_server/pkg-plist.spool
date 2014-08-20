@@ -1,14 +1,22 @@
-%%USE_LOGDIR%%@exec if [ ! -d %%LOGDIR%% ];then mkdir %%LOGDIR%%; chown pandora:www %%LOGDIR%%;fi
-%%USE_LOGDIR%%@unexec rmdir %%LOGDIR%% 2>/dev/null || true
-@exec if [ ! -d %%SPOOLDIR%% ];then mkdir -pm 770 %%SPOOLDIR%%; chown pandora:www %%SPOOLDIR%%;fi
-%%USE_SPOOL_OUT%%@exec if [ ! -d %%SPOOLDIR%%/data_out ];then mkdir -pm 755 %%SPOOLDIR%%/data_out; chown pandora:daemon %%SPOOLDIR%%/data_out;fi
-%%USE_SPOOL_OUT%%@unexec rmdir %%SPOOLDIR%%/data_out 2>/dev/null || true
-%%USE_SPOOL_IN%%@exec if [ ! -d %%SPOOLDIR%%/data_in  ];then mkdir -pm 770 %%SPOOLDIR%%/data_in;  chown pandora:www %%SPOOLDIR%%/data_in;fi
-%%USE_SPOOL_IN%%@exec if [ ! -d %%SPOOLDIR%%/data_in/collections ];then mkdir %%SPOOLDIR%%/data_in/collections; chown pandora:www %%SPOOLDIR%%/data_in/collections;fi
-%%USE_SPOOL_IN%%@exec if [ ! -d %%SPOOLDIR%%/data_in/conf ];then mkdir %%SPOOLDIR%%/data_in/conf; chown pandora:www %%SPOOLDIR%%/data_in/conf;fi
-%%USE_SPOOL_IN%%@exec if [ ! -d %%SPOOLDIR%%/data_in/md5 ];then mkdir %%SPOOLDIR%%/data_in/md5; chown pandora:www %%SPOOLDIR%%/data_in/md5;fi
-%%USE_SPOOL_IN%%@unexec rmdir %%SPOOLDIR%%/data_in/collections 2>/dev/null || true
-%%USE_SPOOL_IN%%@unexec rmdir %%SPOOLDIR%%/data_in/conf 2>/dev/null || true
-%%USE_SPOOL_IN%%@unexec rmdir %%SPOOLDIR%%/data_in/md5 2>/dev/null || true
-%%USE_SPOOL_IN%%@unexec rmdir %%SPOOLDIR%%/data_in 2>/dev/null || true
-@unexec rmdir %%SPOOLDIR%% 2>/dev/null || true
+@comment /var/log/pandora
+@mode 770
+@owner pandora
+@group wheel
+%%USE_LOGDIR%%@unexec rmdir %%LOGDIR%% 2>/dev/null || :
+@comment /var/spool/pandora/data_out
+@mode 700
+%%USE_SPOOL_OUT%%@unexec rmdir %%SPOOLDIR%%/data_out 2>/dev/null || :
+@comment /var/spool/pandora/data_in and subdirectories
+@mode 770
+@group www
+%%USE_SPOOL_IN%%@unexec rmdir %%SPOOLDIR%%/data_in/collections 2>/dev/null || :
+%%USE_SPOOL_IN%%@unexec rmdir %%SPOOLDIR%%/data_in/conf 2>/dev/null || :
+%%USE_SPOOL_IN%%@unexec rmdir %%SPOOLDIR%%/data_in/md5 2>/dev/null || :
+%%USE_SPOOL_IN%%@unexec rmdir %%SPOOLDIR%%/data_in/netflow 2>/dev/null || :
+%%USE_SPOOL_IN%%@unexec rmdir %%SPOOLDIR%%/data_in 2>/dev/null || :
+@comment /var/spool/pandora
+@unexec rmdir %%SPOOLDIR%% 2>/dev/null || :
+@comment unset mode/owner/group
+@mode
+@owner
+@group

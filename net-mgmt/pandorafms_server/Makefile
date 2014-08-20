@@ -2,25 +2,15 @@
 # $FreeBSD$
 
 PORTNAME=	pandora_server
-PORTVERSION=	${PANDORA_VERSION}
-PORTREVISION=	2
 CATEGORIES=	net-mgmt
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	koichiro@rworks.jp
 COMMENT=	Pandora FMS server
 
 LICENSE=	${PANDORA_LICENSE}
 LICENSE_FILE=	${PANDORA_LICENSE_FILE}
 
-BUILD_DEPENDS=	p5-DBI>=0:${PORTSDIR}/databases/p5-DBI \
-		p5-HTML-Parser>=0:${PORTSDIR}/www/p5-HTML-Parser \
-		p5-IO-Socket-INET6>=0:${PORTSDIR}/net/p5-IO-Socket-INET6 \
-		p5-NetAddr-IP>=0:${PORTSDIR}/net-mgmt/p5-NetAddr-IP \
-		net-snmp>=0:${PORTSDIR}/net-mgmt/net-snmp \
-		p5-Socket6>=0:${PORTSDIR}/net/p5-Socket6 \
-		p5-XML-Simple>=0:${PORTSDIR}/textproc/p5-XML-Simple \
-		p5-XML-Twig>=0:${PORTSDIR}/textproc/p5-XML-Twig
-RUN_DEPENDS=	p5-DBI>=0:${PORTSDIR}/databases/p5-DBI \
+PANDORA_DEPS=	p5-DBI>=0:${PORTSDIR}/databases/p5-DBI \
 		p5-HTML-Parser>=0:${PORTSDIR}/www/p5-HTML-Parser \
 		p5-IO-Socket-INET6>=0:${PORTSDIR}/net/p5-IO-Socket-INET6 \
 		p5-NetAddr-IP>=0:${PORTSDIR}/net-mgmt/p5-NetAddr-IP \
@@ -28,14 +18,20 @@ RUN_DEPENDS=	p5-DBI>=0:${PORTSDIR}/databases/p5-DBI \
 		p5-Socket6>=0:${PORTSDIR}/net/p5-Socket6 \
 		p5-XML-Simple>=0:${PORTSDIR}/textproc/p5-XML-Simple \
 		p5-XML-Twig>=0:${PORTSDIR}/textproc/p5-XML-Twig \
-		p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
+		p5-JSON>=0:${PORTSDIR}/converters/p5-JSON
+
+BUILD_DEPENDS=	${PANDORA_DEPS}
+
+RUN_DEPENDS=	p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
 		p5-DBD-mysql>=4:${PORTSDIR}/databases/p5-DBD-mysql \
 		${LOCALBASE}/bin/wmic:${PORTSDIR}/net-mgmt/wmi-client \
 		${LOCALBASE}/bin/nmap:${PORTSDIR}/security/nmap \
-		p5-Storable>=0:${PORTSDIR}/devel/p5-Storable
+		p5-Storable>=0:${PORTSDIR}/devel/p5-Storable \
+		${PANDORA_DEPS}
 
-OPTIONS_DEFINE=	TENTACLE XPROBE PGSQL ORACLE EXTRAS
-OPTIONS_DEFAULT=	TENTACLE XPROBE EXTRAS
+OPTIONS_DEFINE=	DOCS TENTACLE XPROBE PGSQL ORACLE EXTRAS
+OPTIONS_DEFAULT=	DOCS TENTACLE XPROBE EXTRAS
+DOCS_DESC=	Install AUTHORS, ChangeLog and README
 TENTACLE_DESC=	Install tentacle_server
 XPROBE_DESC=	Install xprobe
 PGSQL_DESC=	Use PostgreSQL backend (experimental)
@@ -43,35 +39,23 @@ ORACLE_DESC=	Use Oracle backend (experimental)
 EXTRAS_DESC=	Extra dependencies for util scripts
 
 USES=		perl5
-USE_PERL5=	configure
-SUB_LIST+=	PERL="${PERL}"
+USE_PERL5+=	fixpacklist
+SUB_LIST+=	PERL="${PERL}" DATADIR="${DATADIR}"
+SUB_FILES=	pkg-message
 
-MAN1=		pandora_server.1
-MAN3=		PandoraFMS::Core.3 \
-		PandoraFMS::GIS.3 \
-		PandoraFMS::GeoIP.3 \
-		PandoraFMS::NmapParser.3 \
-		PandoraFMS::Sendmail.3 \
-		PandoraFMS::Tools.3 \
-		PandoraFMS::Traceroute::PurePerl.3 \
-		PandoraFMS::Traceroute.3
-
-SUB_FILES=	pkg-message 199.clean-pandoradb
-USE_RC_SUBR=	${PORTNAME}
-
-NO_STAGE=	yes
 .include "${.CURDIR}/bsd.pandora.mk"
 
 PORTDOCS+=	README
+PANDORA_INSTALLER_ARGS+=	--destdir ${STAGEDIR}
 
 .include <bsd.port.pre.mk>
 
 .if ! ${PORT_OPTIONS:MTENTACLE}
 PLIST_SUB+=	TENTACLE="@comment "
+PANDORA_INSTALLER_ARGS+=--no-tentacle
 .else
 PLIST_SUB+=	TENTACLE=""
-USE_RC_SUBR+=	tentacle_server
-MAN1+=		tentacle_server.1
+#USE_RC_SUBR+=	tentacle_server
 .endif
 .if ${PORT_OPTIONS:MXPROBE}
 RUN_DEPENDS+=	${LOCALBASE}/bin/xprobe2:${PORTSDIR}/net/xprobe
@@ -96,15 +80,6 @@ RUN_DEPENDS+=	${LOCALBASE}/bin/wget:${PORTSDIR}/ftp/wget
 RUN_DEPENDS+=	${LOCALBASE}/sbin/ipmi-sensors:${PORTSDIR}/sysutils/freeipmi
 .endif
 
-.if exists(${PERL})
-PERL_THREADS!=	${PERL} -V::usethreads
-.	if ${PERL_THREADS}!="'define';"
-IGNORE=		needs a threaded Perl, build with WITH_THREADS=yes flag and try again
-.	endif
-.else
-IGNORE=		needs an existing installation of Perl built with WITH_THREADS=yes
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} \
 		-e 's|%%PREFIX%%|${PREFIX}|g' \
@@ -119,25 +94,16 @@ post-patch:
 		`${GREP} -rl /usr/bin/perl ${WRKSRC} | ${GREP} -v pandora_server_installer`
 
 post-install:
-.if ${PORT_OPTIONS:MTENTACLE}
-	@cd ${WRKSRC} && ${SH} pandora_server_installer --install
-.else
-	@cd ${WRKSRC} && ${SH} pandora_server_installer --install --no-tentacle
-.endif
-	@${RM} -f ${PREFIX}/lib/perl5/${PERL_VER}/${PERL_ARCH}/perllocal.pod
-.if !defined(NOPORTDOC)
-	@${MKDIR} ${DOCSDIR}
-.for x in ${PORTDOCS}
-	@${INSTALL_DATA} ${WRKSRC}/${x} ${DOCSDIR}
+	@${RM} -f ${STAGEDIR}${PREFIX}/lib/perl5/${PERL_VER}/${PERL_ARCH}/perllocal.pod
+	@${FIND} ${STAGEDIR}${DATADIR} -type l -name PandoraFMS -delete
+.for x in pandora_server tentacle_server
+	@cd ${STAGEDIR}${PREFIX}/etc/rc.d && test -f ${x} \
+		&& ${REINPLACE_CMD} -i "" -e 's|/usr/local|${PREFIX}|g' ${x}
 .endfor
-.endif
-	@if [ ! -e ${ETCDIR}/pandora_server.conf ]; then \
-		${CP} -p ${ETCDIR}/pandora_server.conf.sample \
-			${ETCDIR}/pandora_server.conf; \
-	fi
-	@${FIND} ${DATADIR} -type l -name PandoraFMS -delete
-	@${MKDIR} ${PREFIX}/etc/periodic/daily
-	@${INSTALL_SCRIPT} ${WRKDIR}/199.clean-pandoradb ${PREFIX}/etc/periodic/daily/
-	@${CAT} ${PKGMESSAGE}
+	@${MV} ${STAGEDIR}${ETCDIR}/pandora_server.conf ${STAGEDIR}${ETCDIR}/pandora_server.conf.sample
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+.for x in ${PORTDOCS}
+	@${INSTALL_DATA} ${WRKSRC}/${x} ${STAGEDIR}${DOCSDIR}
+.endfor
 
 .include <bsd.port.post.mk>
