@@ -1,6 +1,6 @@
---- src/mpe2/sbin/mpeinstall.in.orig	2009-01-31 00:56:35.000000000 +0100
-+++ src/mpe2/sbin/mpeinstall.in	2009-06-24 18:32:04.000000000 +0200
-@@ -522,7 +522,7 @@
+--- src/mpe2/sbin/mpeinstall.in.orig	2009-10-16 01:50:22.000000000 +0200
++++ src/mpe2/sbin/mpeinstall.in	2014-08-20 22:43:03.000000000 +0200
+@@ -529,7 +529,7 @@
      # so $docdir (with NULL PACKAGE) is appended to dirlist for removal.
      savedPACKAGE=$PACKAGE
      PACKAGE=""
@@ -9,7 +9,7 @@
      PACKAGE=$savedPACKAGE
  fi
  
-@@ -570,15 +570,15 @@
+@@ -577,15 +577,15 @@
  # ie INSTALL $top_srcdir/doc  $docdir
  #    INSTALL $top_srcdir/man  $mandir
  #    INSTALL $top_srcdir/html $htmldir
@@ -34,3 +34,22 @@
  
  # Remove old uninstall file
  if [ "$appendUninstall" = 0 -a -f $UNINSTALLFILE ] ; then
+@@ -632,7 +632,6 @@
+ 
+ if [ "$appendUninstall" = 0 ] ; then
+     echo "$RM -f $sbindir/mpeuninstall" >> $UNINSTALLFILE
+-    echo "$RM -f $UNINSTALLFILE" >> $UNINSTALLFILE
+ fi
+ 
+ # Add the directory removes to the UNINSTALL file
+@@ -643,8 +642,8 @@
+ if [ "$appendUninstall" = 0 ] ; then
+     cp $UNINSTALLFILE $sbinbuild_dir/mpeuninstall
+ #
+-    echo "Installed $pkgname in $DESTDIR$prefix"
+-    echo "$UNINSTALLFILE may be used to remove the installation"
++    echo "Installed $pkgname in $prefix"
++    echo "${sbindir}/${UNINSTALL_base} may be used to remove the installation"
+ fi
+ 
+ if [ $errs -gt 0 ] ; then

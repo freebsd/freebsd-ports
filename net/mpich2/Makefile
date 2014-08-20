@@ -3,13 +3,13 @@
 
 PORTNAME=	mpich2
 DISTVERSION=	1.3.2p1
-PORTREVISION=	3
+PORTREVISION=	4
 PORTEPOCH=	5
 CATEGORIES=	net java parallel
 MASTER_SITES=	http://www.mcs.anl.gov/research/projects/mpich2/downloads/tarballs/${DISTVERSION}/
 DIST_SUBDIR=	mpich
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Portable implementation of MPI-1 and MPI-2
 
 LICENSE=	MPICH
@@ -22,11 +22,10 @@ LIB_DEPENDS=	libexecinfo.so:${PORTSDIR}/devel/libexecinfo
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
 
 GNU_CONFIGURE=	yes
-USES=		fortran perl5 pkgconfig
+USES=		libtool:keepla fortran perl5 pkgconfig python
 USE_GCC=	yes
 USE_LDCONFIG=	yes
 USE_PERL5=	build
-USE_PYTHON=	yes
 
 OPTIONS_DEFINE_i386=	JAVA
 OPTIONS_DEFINE_amd64=	JAVA
@@ -62,7 +61,21 @@ VERSOM=		${VERSO:R}
 PLIST_SUB=	VER=${VERSO} VERM=${VERSOM}
 SUB_FILES=	pkg-message
 
-NO_STAGE=	yes
+THREAD2FIX=	configure test/mpi/threads/comm/Makefile.in	\
+		test/mpi/threads/pt2pt/Makefile.in		\
+		src/mpe2/src/logging/configure			\
+		src/mpi/romio/configure src/openpa/configure	\
+		src/pm/hydra/configure
+LOCALBASE2FIX=	src/mpe2/src/slog2sdk/trace_rlog/configure	\
+		src/mpe2/src/slog2sdk/trace_sample/configure	\
+		src/mpe2/src/graphics/configure
+DOC2PATCH=	Makefile.in src/mpe2/sbin/mpeinstall.in		\
+		src/openpa/Makefile.in src/mpi/romio/util/romioinstall.in
+CONFPFX2FIX1=	src/pm/mpd/mpd.py
+CONFPFX2FIX2=	doc/installguide/install.tex.vin		\
+		src/pm/mpd/mpdroot.c
+BIN2STRIP=	check_callstack clog2_join clog2_print clog2_repair
+
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDEBUG}
@@ -84,6 +97,7 @@ BUILD_DEPENDS+=	javavm:${PORTSDIR}/java/javavmwrapper
 RUN_DEPENDS+=	javavm:${PORTSDIR}/java/javavmwrapper
 PLIST_SUB+=	JAVA=""
 PLX11=		""
+BIN2STRIP+=	rlog_check_timeorder rlog_print
 .endif
 
 #define WITH_RECV_TIMEOUT to be an appropriate value (>20 for slow machines),
@@ -100,6 +114,7 @@ PLIST_SUB+=	PM_MPD="@comment " PM_SMPD=""
 .else
 CONFIGURE_ARGS+=	--with-pmi=simple --with-pm=mpd
 PLIST_SUB+=	PM_MPD="" PM_SMPD="@comment "
+BIN2STRIP+=	mpdroot
 .endif
 
 .if ! ${PORT_OPTIONS:MX11}
@@ -112,24 +127,6 @@ PLIST_SUB+=	X11=${PLX11}
 .endif
 
 .include <bsd.port.pre.mk>
-
-.if ${PORT_OPTIONS:MDOCS}
-.include "${FILESDIR}/manpages"
-.endif
-
-THREAD2FIX=	configure test/mpi/threads/comm/Makefile.in	\
-		test/mpi/threads/pt2pt/Makefile.in		\
-		src/mpe2/src/logging/configure			\
-		src/mpi/romio/configure src/openpa/configure	\
-		src/pm/hydra/configure
-LOCALBASE2FIX=	src/mpe2/src/slog2sdk/trace_rlog/configure	\
-		src/mpe2/src/slog2sdk/trace_sample/configure	\
-		src/mpe2/src/graphics/configure
-DOC2PATCH=	Makefile.in src/mpe2/sbin/mpeinstall.in		\
-		src/openpa/Makefile.in src/mpi/romio/util/romioinstall.in
-CONFPFX2FIX1=	src/pm/mpd/mpd.py
-CONFPFX2FIX2=	doc/installguide/install.tex.vin		\
-		src/pm/mpd/mpdroot.c
 
 pre-configure:
 	${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' ${THREAD2FIX:S|^|${WRKSRC}/|}
@@ -163,15 +160,20 @@ pre-install:
 	@${PYTHON_CMD} -O ${PYTHON_LIBDIR}/compileall.py  ${WRKSRC}/bin
 
 post-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/bin/*.pyc ${PREFIX}/bin
-	${INSTALL_SCRIPT} ${WRKSRC}/bin/*.pyo ${PREFIX}/bin
+	(cd ${STAGEDIR}${PREFIX}/bin && ${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py	\
+		-d ${PREFIX} -f bin)
+	(cd ${STAGEDIR}${PREFIX}/bin && ${PYTHON_CMD} -O ${PYTHON_LIBDIR}/compileall.py	\
+		-d ${PREFIX} -f bin)
+	${INSTALL_SCRIPT} ${WRKSRC}/bin/*.pyc ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/bin/*.pyo ${STAGEDIR}${PREFIX}/bin
 	@${ECHO_CMD} "MPD_SECRETWORD=change_on_install" > ${WRKDIR}/mpd.conf.dist
-	${INSTALL_DATA} ${WRKDIR}/mpd.conf.dist ${PREFIX}/etc/
-	if [ ! -e ${PREFIX}/etc/mpd.conf ]; then \
-		${INSTALL_DATA} ${WRKDIR}/mpd.conf.dist ${PREFIX}/etc/mpd.conf ; \
-	fi
-	${CHMOD} 600 ${PREFIX}/etc/mpd.conf ${PREFIX}/etc/mpd.conf.dist
-	@${CAT} ${PKGMESSAGE}
+	${INSTALL_DATA} ${WRKDIR}/mpd.conf.dist ${STAGEDIR}${PREFIX}/etc/
+	${REINPLACE_CMD} -e '/${STAGEDIR:C|/|\/|g}/s|${STAGEDIR}||'	\
+		${STAGEDIR}${PREFIX}/sbin/mpeuninstall
+	${RM} ${STAGEDIR}${PREFIX}/sbin/mpeuninstall.bak
+.for pg in ${BIN2STRIP}
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${pg}
+.endfor
 
 .if defined(MAINTAINER_MODE)
 regression-test:	install
