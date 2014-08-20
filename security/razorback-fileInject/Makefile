@@ -21,25 +21,12 @@ LIB_DEPENDS=	librazorback_api.so:${PORTSDIR}/security/razorback-api \
 OPTIONS_DEFINE=	DEBUG ASSERT
 
 GNU_CONFIGURE=	yes
-USES=		pkgconfig
-USE_AUTOTOOLS=	libtool autoconf
+USES=		pkgconfig libtool
+USE_AUTOTOOLS=	autoconf
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
-
-.if !empty(PORT_OPTIONS:MDEBUG)
-CONFIGURE_ARGS+=--enable-debug
-.endif
-
-.if !empty(PORT_OPTIONS:MASSERT)
-CONFIGURE_ARGS+=--enable-assert
-.endif
-
-post-install:
-	@if [ ! -f ${PREFIX}/etc/razorback/fileInject.conf ]; then \
-		${CP} -p ${PREFIX}/etc/razorback/fileInject.conf.sample ${PREFIX}/etc/razorback/fileInject.conf ; \
-	fi
+DEBUG_CONFIGURE_ENABLE=	debug
+ASSERT_CONFIGURE_ENABLE=assert
 
 .include <bsd.port.mk>
