@@ -3,59 +3,64 @@
 
 PORTNAME=	spice
 PORTVERSION=	3f5.2
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	cad
-MASTER_SITES=	http://embedded.eecs.berkeley.edu/pubs/downloads/spice/:sources
+MASTER_SITES=	http://embedded.eecs.berkeley.edu/pubs/downloads/spice/:srcs \
+		LOCAL/hrs/${PORTNAME}:docs
 PKGNAMESUFFIX=	${NOX11SUFX}
-DISTFILES=	spice3f5${EXTRACT_SUFX}:sources	cp.ps toc.ps doc.ps
+DISTFILES=	spice3f5${EXTRACT_SUFX}:srcs cp.ps:docs toc.ps:docs doc.ps:docs
 DIST_SUBDIR=	spice
 EXTRACT_ONLY=	spice3f5${EXTRACT_SUFX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	General-purpose circuit simulation program
 
-LICENSE=	SPICE
-LICENSE_NAME=	BSD Copyright
+LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT
-LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 WRKSRC=		${WRKDIR}/${PORTNAME}3f5
 MAKEFILE=	${FILESDIR}/Makefile
 MAKE_JOBS_UNSAFE=	yes
 
-OPTIONS_DEFINE=	DOCS X11
-OPTIONS_DEFAULT=DOCS X11
+PORTDOCS=	spice3f3.ps.gz
+PORTEXAMPLES=	bjtnoise.cir bsim1tst.cir bsim2tst.cir diffpair.cir \
+		diodisto.cir ltra_1.cir ltra_2.cir ltra_3.cir \
+		mixdisto.cir mos6inv.cir mosamp2.cir mosmem.cir process.mod \
+		process.pro pz2.cir pzt.cir rc.cir rca3040.cir resnoise.cir \
+		rtlinv.cir schmitt.cir simplepz.cir
+
+OPTIONS_DEFINE=	DOCS EXAMPLES X11
+OPTIONS_DEFAULT=DOCS EXAMPLES X11
 
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MX11}
 USE_XORG=	x11 xaw xext xmu xt
 NOX11SUFX=
+CONFIGFILE=	${FILESDIR}/FreeBSD
 .else
 NOX11SUFX=	-nox11
-MAKE_ARGS+=	-DWITHOUT_X11
+CONFIGFILE=	${FILESDIR}/FreeBSD.without_x11
 .endif
 
-post-patch:
-	@${REINPLACE_CMD} -e 's|/usr/ucb|${LOCALBASE}/bin|' \
-		${WRKSRC}/util/build
-
 do-configure:
-	@${CP} ${FILESDIR}/FreeBSD ${WRKSRC}/conf/FreeBSD
-	@${CP} ${FILESDIR}/FreeBSD.without_x11 \
-		${WRKSRC}/conf/FreeBSD.without_x11
-	@${REINPLACE_CMD} -e 's+@CC@+${CC}+ ; s+@CFLAGS@+${CFLAGS}+ ; \
-	    s+@X11BASE@+${LOCALBASE}+;' \
-	    ${WRKSRC}/conf/FreeBSD ${WRKSRC}/conf/FreeBSD.without_x11
+	(${CAT} ${CONFIGFILE};			\
+	 ${ECHO_CMD} "CC=	${CC}";		\
+	 ${ECHO_CMD} "MAKE=	${MAKE}";	\
+	 ${ECHO_CMD} "CC_OPT+=	${CFLAGS}";	\
+	 ${ECHO_CMD} "LOCALBASE=${LOCALBASE}";	\
+	) > ${WRKSRC}/conf/FreeBSD
 
 post-install:
 .if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${CAT} ${DISTDIR}/${DIST_SUBDIR}/*.ps > \
-		${STAGEDIR}${DOCSDIR}/spice3f3.ps
-	${GZIP_CMD} ${STAGEDIR}${DOCSDIR}/*.ps
+	${CAT} ${DISTDIR}/${DIST_SUBDIR}/*.ps | ${GZIP_CMD} > \
+	    ${STAGEDIR}${DOCSDIR}/${PORTDOCS}
 .endif
+.if ${PORT_OPTIONS:MEXAMPLES}
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/examples/*.cir ${STAGEDIR}${EXAMPLESDIR}
+	cd ${WRKSRC}/examples && \
+	    ${INSTALL_DATA} ${PORTEXAMPLES} ${STAGEDIR}${EXAMPLESDIR}
+.endif
 
 .include <bsd.port.mk>
