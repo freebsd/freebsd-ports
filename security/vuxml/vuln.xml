@@ -57,6 +57,86 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="3c5579f7-294a-11e4-99f6-00e0814cab4e">
+    <topic>django -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>py27-django</name>
+	<range><ge>1.6</ge><lt>1.6.6</lt></range>
+      </package>
+      <package>
+	<name>py27-django15</name>
+	<range><ge>1.5</ge><lt>1.5.9</lt></range>
+      </package>
+      <package>
+	<name>py27-django14</name>
+	<range><ge>1.4</ge><lt>1.4.14</lt></range>
+      </package>
+      <package>
+	<name>py32-django</name>
+	<range><ge>1.6</ge><lt>1.6.6</lt></range>
+      </package>
+      <package>
+	<name>py32-django15</name>
+	<range><ge>1.5</ge><lt>1.5.9</lt></range>
+      </package>
+      <package>
+	<name>py33-django</name>
+	<range><ge>1.6</ge><lt>1.6.6</lt></range>
+      </package>
+      <package>
+	<name>py33-django15</name>
+	<range><ge>1.5</ge><lt>1.5.9</lt></range>
+      </package>
+      <package>
+	<name>py34-django</name>
+	<range><ge>1.6</ge><lt>1.6.6</lt></range>
+      </package>
+      <package>
+	<name>py34-django15</name>
+	<range><ge>1.5</ge><lt>1.5.9</lt></range>
+      </package>
+	<name>py27-django-devel</name>
+	<range><lt>20140821,1</lt></range>
+      </package>
+      <package>
+	<name>py32-django-devel</name>
+	<range><lt>20140821,1</lt></range>
+      </package>
+      <package>
+	<name>py33-django-devel</name>
+	<range><lt>20140821,1</lt></range>
+      </package>
+      <package>
+	<name>py34-django-devel</name>
+	<range><lt>20140821,1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Django project reports:</p>
+	<blockquote cite="https://www.djangoproject.com/weblog/2014/aug/20/security/">
+	  <p>These releases address an issue with reverse() generating external
+	    URLs; a denial of service involving file uploads; a potential
+	    session hijacking issue in the remote-user middleware; and a data
+	    leak in the administrative interface. We encourage all users of
+	    Django to upgrade as soon as possible.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://www.djangoproject.com/weblog/2014/aug/20/security/</url>
+      <cvename>CVE-2014-0480</cvename>
+      <cvename>CVE-2014-0481</cvename>
+      <cvename>CVE-2014-0482</cvename>
+      <cvename>CVE-2014-0483</cvename>
+    </references>
+    <dates>
+      <discovery>2014-08-20</discovery>
+      <entry>2014-08-21</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="d2a892b9-2605-11e4-9da0-00a0986f28c4">
     <topic>PHP multiple vulnerabilities</topic>
     <affects>
