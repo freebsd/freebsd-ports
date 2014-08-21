@@ -6418,7 +6418,7 @@ _STAGE_SUSEQ=	create-users-groups do-install \
 				kmod-post-install shared-mime-post-install \
 				webplugin-post-install post-install post-install-script \
 				desktop-file-post-install \
-				move-uniquefiles post-stage compress-man patch-lafiles \
+				move-uniquefiles patch-lafiles post-stage compress-man \
 				install-rc-script install-ldconfig-file install-license \
 				install-desktop-entries add-plist-info add-plist-docs \
 				add-plist-examples add-plist-data add-plist-post \
@@ -6431,7 +6431,7 @@ _STAGE_SEQ+=	create-users-groups do-install \
 				kmod-post-install shared-mime-post-install \
 				webplugin-post-install post-install post-install-script \
 				desktop-file-post-install \
-				move-uniquefiles post-stage compress-man patch-lafiles \
+				move-uniquefiles patch-lafiles post-stage compress-man \
 				install-rc-script install-ldconfig-file install-license \
 				install-desktop-entries add-plist-info add-plist-docs \
 				add-plist-examples add-plist-data add-plist-post \
