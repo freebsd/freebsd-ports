@@ -9,8 +9,11 @@ MASTER_SITES=	SF/${PORTNAME:tl}/${PORTNAME}/${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C, non validating XML parser with SAX-like API
 
+USES=		uidfix
 USE_LDCONFIG=	YES
 SHLIB_MAJOR=	2
+MAKEFILE=	${FILESDIR}/Makefile
+MAKE_ENV=	SHLIB_MAJOR=${SHLIB_MAJOR}
 PLIST_SUB=	SHLIB_MAJOR="${SHLIB_MAJOR}"
 
 .if defined(NOPROFILE) || defined(NO_PROFILE)
@@ -18,10 +21,5 @@ PLIST_SUB+=	PROFILE="@comment "
 .else
 PLIST_SUB+=	PROFILE=""
 .endif
-
-post-patch:
-	${MV} ${WRKSRC}/Makefile ${WRKSRC}/Makefile.prev
-	@${SED} -e "s=%%SHLIB_MAJOR%%=${SHLIB_MAJOR}=g" \
-		${FILESDIR}/Makefile > ${WRKSRC}/Makefile
 
 .include <bsd.port.mk>
