@@ -1,6 +1,6 @@
---- swift/common/utils.py.orig	2013-05-18 14:10:21.000000000 +0300
-+++ swift/common/utils.py	2013-05-18 14:09:06.000000000 +0300
-@@ -274,12 +274,12 @@ def drop_buffer_cache(fd, offset, length
+--- swift/common/utils.py.orig	2014-07-07 19:08:31.000000000 +0300
++++ swift/common/utils.py	2014-08-20 21:56:29.000000000 +0300
+@@ -552,12 +552,12 @@
      """
      global _posix_fadvise
      if _posix_fadvise is None:
@@ -10,8 +10,8 @@
      ret = _posix_fadvise(fd, ctypes.c_uint64(offset),
                           ctypes.c_uint64(length), 4)
      if ret != 0:
--        logging.warn("posix_fadvise64(%s, %s, %s, 4) -> %s"
-+        logging.warn("posix_fadvise(%s, %s, %s, 4) -> %s"
-                      % (fd, offset, length, ret))
- 
+-        logging.warn("posix_fadvise64(%(fd)s, %(offset)s, %(length)s, 4) "
++        logging.warn("posix_fadvise(%(fd)s, %(offset)s, %(length)s, 4) "
+                      "-> %(ret)s", {'fd': fd, 'offset': offset,
+                                     'length': length, 'ret': ret})
  
