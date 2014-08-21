@@ -58,9 +58,13 @@ llvm-devel/bin/llvm-size
 llvm-devel/bin/llvm-stress
 llvm-devel/bin/llvm-symbolizer
 llvm-devel/bin/llvm-tblgen
+llvm-devel/bin/llvm-vtabledump
 llvm-devel/bin/macho-dump
 llvm-devel/bin/not
+llvm-devel/bin/obj2yaml
 llvm-devel/bin/opt
+llvm-devel/bin/verify-uselistorder
+llvm-devel/bin/yaml2obj
 llvm-devel/include/llvm-c/Analysis.h
 llvm-devel/include/llvm-c/BitReader.h
 llvm-devel/include/llvm-c/BitWriter.h
@@ -158,6 +162,7 @@ llvm-devel/include/llvm/Analysis/DOTGraphTraitsPass.h
 llvm-devel/include/llvm/Analysis/DependenceAnalysis.h
 llvm-devel/include/llvm/Analysis/DomPrinter.h
 llvm-devel/include/llvm/Analysis/DominanceFrontier.h
+llvm-devel/include/llvm/Analysis/DominanceFrontierImpl.h
 llvm-devel/include/llvm/Analysis/FindUsedTypes.h
 llvm-devel/include/llvm/Analysis/IVUsers.h
 llvm-devel/include/llvm/Analysis/InlineCost.h
@@ -183,6 +188,7 @@ llvm-devel/include/llvm/Analysis/Passes.h
 llvm-devel/include/llvm/Analysis/PostDominators.h
 llvm-devel/include/llvm/Analysis/PtrUseVisitor.h
 llvm-devel/include/llvm/Analysis/RegionInfo.h
+llvm-devel/include/llvm/Analysis/RegionInfoImpl.h
 llvm-devel/include/llvm/Analysis/RegionIterator.h
 llvm-devel/include/llvm/Analysis/RegionPass.h
 llvm-devel/include/llvm/Analysis/RegionPrinter.h
@@ -238,7 +244,9 @@ llvm-devel/include/llvm/CodeGen/MachineBlockFrequencyInfo.h
 llvm-devel/include/llvm/CodeGen/MachineBranchProbabilityInfo.h
 llvm-devel/include/llvm/CodeGen/MachineCodeEmitter.h
 llvm-devel/include/llvm/CodeGen/MachineCodeInfo.h
+llvm-devel/include/llvm/CodeGen/MachineCombinerPattern.h
 llvm-devel/include/llvm/CodeGen/MachineConstantPool.h
+llvm-devel/include/llvm/CodeGen/MachineDominanceFrontier.h
 llvm-devel/include/llvm/CodeGen/MachineDominators.h
 llvm-devel/include/llvm/CodeGen/MachineFrameInfo.h
 llvm-devel/include/llvm/CodeGen/MachineFunction.h
@@ -255,6 +263,7 @@ llvm-devel/include/llvm/CodeGen/MachineModuleInfoImpls.h
 llvm-devel/include/llvm/CodeGen/MachineOperand.h
 llvm-devel/include/llvm/CodeGen/MachinePassRegistry.h
 llvm-devel/include/llvm/CodeGen/MachinePostDominators.h
+llvm-devel/include/llvm/CodeGen/MachineRegionInfo.h
 llvm-devel/include/llvm/CodeGen/MachineRegisterInfo.h
 llvm-devel/include/llvm/CodeGen/MachineRelocation.h
 llvm-devel/include/llvm/CodeGen/MachineSSAUpdater.h
@@ -315,6 +324,7 @@ llvm-devel/include/llvm/ExecutionEngine/ObjectCache.h
 llvm-devel/include/llvm/ExecutionEngine/ObjectImage.h
 llvm-devel/include/llvm/ExecutionEngine/RTDyldMemoryManager.h
 llvm-devel/include/llvm/ExecutionEngine/RuntimeDyld.h
+llvm-devel/include/llvm/ExecutionEngine/RuntimeDyldChecker.h
 llvm-devel/include/llvm/ExecutionEngine/SectionMemoryManager.h
 llvm-devel/include/llvm/IR/Argument.h
 llvm-devel/include/llvm/IR/AssemblyAnnotationWriter.h
@@ -324,6 +334,7 @@ llvm-devel/include/llvm/IR/BasicBlock.h
 llvm-devel/include/llvm/IR/CFG.h
 llvm-devel/include/llvm/IR/CallSite.h
 llvm-devel/include/llvm/IR/CallingConv.h
+llvm-devel/include/llvm/IR/Comdat.h
 llvm-devel/include/llvm/IR/Constant.h
 llvm-devel/include/llvm/IR/ConstantFolder.h
 llvm-devel/include/llvm/IR/ConstantRange.h
@@ -385,6 +396,7 @@ llvm-devel/include/llvm/IR/Type.h
 llvm-devel/include/llvm/IR/TypeBuilder.h
 llvm-devel/include/llvm/IR/TypeFinder.h
 llvm-devel/include/llvm/IR/Use.h
+llvm-devel/include/llvm/IR/UseListOrder.h
 llvm-devel/include/llvm/IR/User.h
 llvm-devel/include/llvm/IR/Value.h
 llvm-devel/include/llvm/IR/ValueHandle.h
@@ -400,6 +412,11 @@ llvm-devel/include/llvm/LinkAllIR.h
 llvm-devel/include/llvm/LinkAllPasses.h
 llvm-devel/include/llvm/Linker/Linker.h
 llvm-devel/include/llvm/MC/ConstantPools.h
+llvm-devel/include/llvm/MC/MCAnalysis/MCAtom.h
+llvm-devel/include/llvm/MC/MCAnalysis/MCFunction.h
+llvm-devel/include/llvm/MC/MCAnalysis/MCModule.h
+llvm-devel/include/llvm/MC/MCAnalysis/MCModuleYAML.h
+llvm-devel/include/llvm/MC/MCAnalysis/MCObjectSymbolizer.h
 llvm-devel/include/llvm/MC/MCAsmBackend.h
 llvm-devel/include/llvm/MC/MCAsmInfo.h
 llvm-devel/include/llvm/MC/MCAsmInfoCOFF.h
@@ -407,7 +424,6 @@ llvm-devel/include/llvm/MC/MCAsmInfoDarwin.h
 llvm-devel/include/llvm/MC/MCAsmInfoELF.h
 llvm-devel/include/llvm/MC/MCAsmLayout.h
 llvm-devel/include/llvm/MC/MCAssembler.h
-llvm-devel/include/llvm/MC/MCAtom.h
 llvm-devel/include/llvm/MC/MCCodeEmitter.h
 llvm-devel/include/llvm/MC/MCCodeGenInfo.h
 llvm-devel/include/llvm/MC/MCContext.h
@@ -423,7 +439,6 @@ llvm-devel/include/llvm/MC/MCExternalSymbolizer.h
 llvm-devel/include/llvm/MC/MCFixedLenDisassembler.h
 llvm-devel/include/llvm/MC/MCFixup.h
 llvm-devel/include/llvm/MC/MCFixupKindInfo.h
-llvm-devel/include/llvm/MC/MCFunction.h
 llvm-devel/include/llvm/MC/MCInst.h
 llvm-devel/include/llvm/MC/MCInstBuilder.h
 llvm-devel/include/llvm/MC/MCInstPrinter.h
@@ -435,12 +450,9 @@ llvm-devel/include/llvm/MC/MCLabel.h
 llvm-devel/include/llvm/MC/MCLinkerOptimizationHint.h
 llvm-devel/include/llvm/MC/MCMachOSymbolFlags.h
 llvm-devel/include/llvm/MC/MCMachObjectWriter.h
-llvm-devel/include/llvm/MC/MCModule.h
-llvm-devel/include/llvm/MC/MCModuleYAML.h
 llvm-devel/include/llvm/MC/MCObjectDisassembler.h
 llvm-devel/include/llvm/MC/MCObjectFileInfo.h
 llvm-devel/include/llvm/MC/MCObjectStreamer.h
-llvm-devel/include/llvm/MC/MCObjectSymbolizer.h
 llvm-devel/include/llvm/MC/MCObjectWriter.h
 llvm-devel/include/llvm/MC/MCParser/AsmCond.h
 llvm-devel/include/llvm/MC/MCParser/AsmLexer.h
@@ -466,9 +478,12 @@ llvm-devel/include/llvm/MC/MCValue.h
 llvm-devel/include/llvm/MC/MCWin64EH.h
 llvm-devel/include/llvm/MC/MCWinCOFFObjectWriter.h
 llvm-devel/include/llvm/MC/MCWinCOFFStreamer.h
+llvm-devel/include/llvm/MC/MCWinEH.h
 llvm-devel/include/llvm/MC/MachineLocation.h
 llvm-devel/include/llvm/MC/SectionKind.h
+llvm-devel/include/llvm/MC/StringTableBuilder.h
 llvm-devel/include/llvm/MC/SubtargetFeature.h
+llvm-devel/include/llvm/MC/YAML.h
 llvm-devel/include/llvm/Object/Archive.h
 llvm-devel/include/llvm/Object/Binary.h
 llvm-devel/include/llvm/Object/COFF.h
@@ -483,9 +498,7 @@ llvm-devel/include/llvm/Object/MachO.h
 llvm-devel/include/llvm/Object/MachOUniversal.h
 llvm-devel/include/llvm/Object/ObjectFile.h
 llvm-devel/include/llvm/Object/RelocVisitor.h
-llvm-devel/include/llvm/Object/StringTableBuilder.h
 llvm-devel/include/llvm/Object/SymbolicFile.h
-llvm-devel/include/llvm/Object/YAML.h
 llvm-devel/include/llvm/Option/Arg.h
 llvm-devel/include/llvm/Option/ArgList.h
 llvm-devel/include/llvm/Option/OptParser.td
@@ -498,6 +511,9 @@ llvm-devel/include/llvm/PassInfo.h
 llvm-devel/include/llvm/PassManager.h
 llvm-devel/include/llvm/PassRegistry.h
 llvm-devel/include/llvm/PassSupport.h
+llvm-devel/include/llvm/ProfileData/CoverageMapping.h
+llvm-devel/include/llvm/ProfileData/CoverageMappingReader.h
+llvm-devel/include/llvm/ProfileData/CoverageMappingWriter.h
 llvm-devel/include/llvm/ProfileData/InstrProf.h
 llvm-devel/include/llvm/ProfileData/InstrProfReader.h
 llvm-devel/include/llvm/ProfileData/InstrProfWriter.h
@@ -526,7 +542,6 @@ llvm-devel/include/llvm/Support/DataExtractor.h
 llvm-devel/include/llvm/Support/DataStream.h
 llvm-devel/include/llvm/Support/DataTypes.h
 llvm-devel/include/llvm/Support/Debug.h
-llvm-devel/include/llvm/Support/Disassembler.h
 llvm-devel/include/llvm/Support/Dwarf.h
 llvm-devel/include/llvm/Support/DynamicLibrary.h
 llvm-devel/include/llvm/Support/ELF.h
@@ -546,7 +561,6 @@ llvm-devel/include/llvm/Support/GenericDomTree.h
 llvm-devel/include/llvm/Support/GenericDomTreeConstruction.h
 llvm-devel/include/llvm/Support/GraphWriter.h
 llvm-devel/include/llvm/Support/Host.h
-llvm-devel/include/llvm/Support/IncludeFile.h
 llvm-devel/include/llvm/Support/LEB128.h
 llvm-devel/include/llvm/Support/LICENSE.TXT
 llvm-devel/include/llvm/Support/LineIterator.h
@@ -570,6 +584,7 @@ llvm-devel/include/llvm/Support/PrettyStackTrace.h
 llvm-devel/include/llvm/Support/Process.h
 llvm-devel/include/llvm/Support/Program.h
 llvm-devel/include/llvm/Support/RWMutex.h
+llvm-devel/include/llvm/Support/RandomNumberGenerator.h
 llvm-devel/include/llvm/Support/Recycler.h
 llvm-devel/include/llvm/Support/RecyclingAllocator.h
 llvm-devel/include/llvm/Support/Regex.h
@@ -581,6 +596,7 @@ llvm-devel/include/llvm/Support/ScaledNumber.h
 llvm-devel/include/llvm/Support/Signals.h
 llvm-devel/include/llvm/Support/Solaris.h
 llvm-devel/include/llvm/Support/SourceMgr.h
+llvm-devel/include/llvm/Support/SpecialCaseList.h
 llvm-devel/include/llvm/Support/StreamableMemoryObject.h
 llvm-devel/include/llvm/Support/StringPool.h
 llvm-devel/include/llvm/Support/StringRefMemoryObject.h
@@ -656,7 +672,6 @@ llvm-devel/include/llvm/Transforms/Utils/SSAUpdater.h
 llvm-devel/include/llvm/Transforms/Utils/SSAUpdaterImpl.h
 llvm-devel/include/llvm/Transforms/Utils/SimplifyIndVar.h
 llvm-devel/include/llvm/Transforms/Utils/SimplifyLibCalls.h
-llvm-devel/include/llvm/Transforms/Utils/SpecialCaseList.h
 llvm-devel/include/llvm/Transforms/Utils/UnifyFunctionExitNodes.h
 llvm-devel/include/llvm/Transforms/Utils/UnrollLoop.h
 llvm-devel/include/llvm/Transforms/Utils/ValueMapper.h
@@ -664,9 +679,9 @@ llvm-devel/include/llvm/Transforms/Utils/VectorUtils.h
 llvm-devel/include/llvm/Transforms/Vectorize.h
 llvm-devel/lib/BugpointPasses.so
 llvm-devel/lib/LLVMHello.so
-llvm-devel/lib/libLLVM-3.5.0svn.so
-llvm-devel/lib/libLLVM-3.5svn.so
-llvm-devel/lib/libLLVM-3.5svn.so.0
+llvm-devel/lib/libLLVM-3.6.0svn.so
+llvm-devel/lib/libLLVM-3.6svn.so
+llvm-devel/lib/libLLVM-3.6svn.so.0
 llvm-devel/lib/libLLVMAArch64AsmParser.a
 llvm-devel/lib/libLLVMAArch64AsmPrinter.a
 llvm-devel/lib/libLLVMAArch64CodeGen.a
@@ -704,6 +719,7 @@ llvm-devel/lib/libLLVMLTO.a
 llvm-devel/lib/libLLVMLineEditor.a
 llvm-devel/lib/libLLVMLinker.a
 llvm-devel/lib/libLLVMMC.a
+llvm-devel/lib/libLLVMMCAnalysis.a
 llvm-devel/lib/libLLVMMCDisassembler.a
 llvm-devel/lib/libLLVMMCJIT.a
 llvm-devel/lib/libLLVMMCParser.a
@@ -831,6 +847,8 @@ llvm-devel/share/llvm/cmake/TableGen.cmake
 %%PORTDOCS%%%%DOCSDIR%%/html/CommandLine.txt
 %%PORTDOCS%%%%DOCSDIR%%/html/CompilerWriterInfo.html
 %%PORTDOCS%%%%DOCSDIR%%/html/CompilerWriterInfo.txt
+%%PORTDOCS%%%%DOCSDIR%%/html/CoverageMappingFormat.html
+%%PORTDOCS%%%%DOCSDIR%%/html/CoverageMappingFormat.txt
 %%PORTDOCS%%%%DOCSDIR%%/html/DebuggingJITedCode.html
 %%PORTDOCS%%%%DOCSDIR%%/html/DebuggingJITedCode.txt
 %%PORTDOCS%%%%DOCSDIR%%/html/Deficiencies.html
@@ -1064,6 +1082,7 @@ llvm-devel/share/llvm/cmake/TableGen.cmake
 @dirrm llvm-devel/include/llvm/Option
 @dirrm llvm-devel/include/llvm/Object
 @dirrm llvm-devel/include/llvm/MC/MCParser
+@dirrm llvm-devel/include/llvm/MC/MCAnalysis
 @dirrm llvm-devel/include/llvm/MC
 @dirrm llvm-devel/include/llvm/Linker
 @dirrm llvm-devel/include/llvm/LineEditor
