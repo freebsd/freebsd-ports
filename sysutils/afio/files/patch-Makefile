@@ -1,5 +1,5 @@
---- Makefile.orig	2003-12-21 18:23:51.000000000 +0800
-+++ Makefile	2013-11-08 09:56:31.000000000 +0800
+--- Makefile.orig	2003-12-21 10:23:51 UTC
++++ Makefile
 @@ -28,7 +28,7 @@ SHELL=/bin/sh
  c	= -DHAVEMEMCMP
  ##  Define DEFFMTCMD to being how to format the media you use the most
@@ -54,8 +54,8 @@
  install: afio
 -	cp afio /usr/local/bin
 -	cp afio.1 /usr/share/man/man1
-+	install -cs -o root -g wheel afio ${DESTDIR}${PREFIX}/bin
-+	install -c -o root -g wheel afio.1 ${DESTDIR}${PREFIX}/man/man1
++	${BSD_INSTALL_PROGRAM} afio ${DESTDIR}${PREFIX}/bin
++	${BSD_INSTALL_MAN} afio.1 ${DESTDIR}${PREFIX}/man/man1
 +
  
  # generate default list of -E extensions from manpage
