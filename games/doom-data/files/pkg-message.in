@@ -1,9 +1,8 @@
 ====================================================================
 
 To use the full version of the games you need to own a legitimate
-copy of Doom, Doom II, Hexen, Heretic and/or Strife.
+copy of Doom, Doom II, Hexen, Heretic, and/or Strife.
 
-If you have them then copy the ".wad" files to
-%%DATADIR%%
+If you have them, copy the *.wad files to %%DATADIR%%.
 
 ====================================================================
