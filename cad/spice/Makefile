@@ -20,7 +20,8 @@ LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
 WRKSRC=		${WRKDIR}/${PORTNAME}3f5
 MAKEFILE=	${FILESDIR}/Makefile
-MAKE_JOBS_UNSAFE=	yes
+MAKE_ENV=	WITH_INSTALL_AS_USER=yes
+ALL_TARGET=	build _manpages
 
 PORTDOCS=	spice3f3.ps.gz
 PORTEXAMPLES=	bjtnoise.cir bsim1tst.cir bsim2tst.cir diffpair.cir \
