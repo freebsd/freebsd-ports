@@ -1,0 +1,8 @@
+Utility to administer the rc.conf system configuration file.
+
+rcadm features:
+* listing current settings
+* enabling/disabling services
+* setting and getting arbitrary variables
+
+WWW: https://github.com/skoef/rcadm
