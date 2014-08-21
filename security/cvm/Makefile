@@ -3,58 +3,57 @@
 
 PORTNAME=	cvm
 PORTVERSION=	0.96
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://untroubled.org/${PORTNAME}/ \
 		http://untroubled.org/${PORTNAME}/archive/
 
-MAINTAINER= ports@FreeBSD.org
+MAINTAINER=	uffe@uffe.org
 COMMENT=	Credential Validation Modules
+
+LICENSE=	GPLv2
 
 LIB_DEPENDS=	libbg.so:${PORTSDIR}/devel/bglibs
 
 CONFLICTS=	bglibs-1.00*
 
-USE_AUTOTOOLS=	libtool
-LIBTOOLFILES=	#none
+USES=		libtool:build
 USE_LDCONFIG=	yes
 BGLIBS_INC=	${LOCALBASE}/include/bglibs
 BGLIBS_LIB=	${LOCALBASE}/lib/bglibs
+ALL_TARGET=	all
 
 DOCS=		NEWS README TODO *.html
 
-OPTIONS_DEFINE=	VCHKPW
+OPTIONS_DEFINE=	DOCS VCHKPW
+OPTIONS_SUB=	yes
 VCHKPW_DESC=	Compile cvm-vchkpw
 
-NO_STAGE=	yes
+VCHKPW_BUILD_DEPENDS+=	${LOCALBASE}/vpopmail/lib/libvpopmail.a:${PORTSDIR}/mail/vpopmail
+
 .include <bsd.port.options.mk>
 
-ALL_TARGET=all
-
 .if ${PORT_OPTIONS:MVCHKPW}
-BUILD_DEPENDS+=	${LOCALBASE}/vpopmail/lib/libvpopmail.a:${PORTSDIR}/mail/vpopmail
 ALL_TARGET+=	cvm-vchkpw
-PLIST_SUB=	VCHKPW=""
-.else
-PLIST_SUB=	VCHKPW="@comment "
 .endif
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|libtool|${LIBTOOL}|g' ${WRKSRC}/Makefile
 
 do-configure:
 	${ECHO_CMD} "${PREFIX}"		> ${WRKSRC}/conf-home
-	${ECHO_CMD} "${PREFIX}/bin"	> ${WRKSRC}/conf-bin
-	${ECHO_CMD} "${PREFIX}/include"	> ${WRKSRC}/conf-include
-	${ECHO_CMD} "${PREFIX}/lib"	> ${WRKSRC}/conf-lib
+	${ECHO_CMD} "${STAGEDIR}${PREFIX}/bin"	> ${WRKSRC}/conf-bin
+	${ECHO_CMD} "${STAGEDIR}${PREFIX}/include"	> ${WRKSRC}/conf-include
+	${ECHO_CMD} "${STAGEDIR}${PREFIX}/lib"	> ${WRKSRC}/conf-lib
 	${ECHO_CMD} "${CC} ${CFLAGS}"	> ${WRKSRC}/conf-cc
 	${ECHO_CMD} "${CC} ${STRIP} ${LDFLAGS}"       > ${WRKSRC}/conf-ld
 	${ECHO_CMD} "${BGLIBS_INC}"	> ${WRKSRC}/conf-bgincs
 	${ECHO_CMD} "${BGLIBS_LIB}"	> ${WRKSRC}/conf-bglibs
 
-.if ${PORT_OPTIONS:MDOCS}
 post-install:
-	@${MKDIR} ${DOCSDIR}
-	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}
+.for l in command local module qmail sasl sql udp v1client v2client
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/lib${PORTNAME}-${l}.so*
+.endfor
+.if ${PORT_OPTIONS:MDOCS}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${STAGEDIR}${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>

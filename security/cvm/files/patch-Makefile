@@ -1,5 +1,5 @@
---- ./Makefile.orig	2009-03-17 14:53:54.000000000 +0300
-+++ ./Makefile	2009-03-17 14:55:41.000000000 +0300
+--- Makefile.orig	2010-01-21 23:51:26.000000000 +0100
++++ Makefile	2014-08-21 05:42:52.000000000 +0200
 @@ -155,10 +155,10 @@
  	./compile cvm-v1testclient.c
  
@@ -13,3 +13,18 @@
  
  cvm-vmailmgr: cvm-vmailmgr.o ltload vmautoconvert.o vmlookup.o getpwnam.o libcvm-module.la libcvm-qmail.la socket.lib crypt.lib
  	./ltload cvm-vmailmgr vmautoconvert.o vmlookup.o getpwnam.o libcvm-module.la libcvm-qmail.la -lbg `cat socket.lib` `cat crypt.lib`
+@@ -249,12 +249,12 @@
+ 	) >ltload
+ 	chmod 755 ltload
+ 
+-makeshlib: conf-ld conf-lib LIBVERSION Makefile
++makeshlib: conf-home conf-ld conf-lib LIBVERSION Makefile
+ 	( if libtool --tag=CC --help >/dev/null 2>&1; then tag='--tag=CC'; fi; \
+ 	  echo '#!/bin/sh'; \
+ 	  echo 'lib="$$1"; shift';\
+ 	  echo 'rm -f "$$lib"';\
+-	  echo libtool --mode=link --silent $$tag `head -n 1 conf-ld` '-o "$$lib" -rpath' `head -n 1 conf-lib` -version-info `head -n 1 LIBVERSION` '$${1+"$$@"}';\
++	  echo libtool --mode=link --silent $$tag `head -n 1 conf-ld` '-o "$$lib" -rpath' `head -n 1 conf-home`/lib -version-info `head -n 1 LIBVERSION` '$${1+"$$@"}';\
+ 	) >makeshlib
+ 	chmod 755 makeshlib
+ 
