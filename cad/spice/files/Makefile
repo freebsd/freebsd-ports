@@ -1,31 +1,34 @@
 #
 # $FreeBSD$
 #
-all:
+build:
 	${SH} util/build FreeBSD default
+	strip ${PROGRAMS:S,^,FreeBSD/obj/bin/,}
 
-install:
-	mkdir -p ${DESTDIR}${PREFIX}/share/spice/helpdir \
-		${DESTDIR}${PREFIX}/share/spice/scripts
-	cd FreeBSD/obj/bin && \
-		${BSD_INSTALL_PROGRAM} \
-		    spice3 nutmeg sconvert help proc2mod multidec \
-		    ${DESTDIR}${PREFIX}/bin
-	${BSD_INSTALL_DATA} lib/helpdir/spice.txt \
-		${DESTDIR}${PREFIX}/share/spice/helpdir
-	${BSD_INSTALL_SCRIPT} lib/scripts/setplot lib/scripts/spinit \
-		${DESTDIR}${PREFIX}/share/spice/scripts
-	${BSD_INSTALL_DATA} lib/mfbcap lib/news \
-		${DESTDIR}${PREFIX}/share/spice
-	${BSD_INSTALL_MAN} man/man5/mfbcap.5 \
-		${DESTDIR}${PREFIX}/man/man5/mfbcap.5
-	${BSD_INSTALL_MAN} man/man1/sconvert.1 \
-		${DESTDIR}${PREFIX}/man/man1/sconvert.1
-	${BSD_INSTALL_MAN} man/man1/nutmeg.1 \
-		${DESTDIR}${PREFIX}/man/man1/nutmeg.1
-	${BSD_INSTALL_MAN} man/man1/spice.1 \
-		${DESTDIR}${PREFIX}/man/man1/spice.1
-	${BSD_INSTALL_MAN} man/man1/spice.1 \
-		${DESTDIR}${PREFIX}/man/man1/spice3.1
-	${BSD_INSTALL_MAN} man/man3/mfb.3 \
-		${DESTDIR}${PREFIX}/man/man3/mfb.3
+PREFIX?=	/usr/local
+
+BINDIR=		${PREFIX}/bin
+SHAREFILESDIR=	${PREFIX}/share/spice
+HELPFILESDIR=	${SHAREFILESDIR}/helpdir
+SCRIPTFILESDIR=	${SHAREFILESDIR}/scripts
+
+FILESGROUPS=	PROGRAMS HELPFILES SCRIPTFILES SHAREFILES
+
+PROGRAMSMODE=	${BINMODE}
+PROGRAMSOWN=	${BINOWN}
+PROGRAMSGRP=	${BINGRP}
+
+PROGRAMS=	spice3 nutmeg sconvert help proc2mod multidec
+HELPFILES=	spice.txt
+SCRIPTFILES=	setplot spinit
+SHAREFILES=	mfbcap news
+
+MAN=	spice.1 nutmeg.1 sconvert.1 mfb.3 mfbcap.5
+MLINKS=	spice.1 spice3.1
+MANDIR=	${PREFIX}/man/man
+
+beforeinstall:
+	mkdir -p ${DESTDIR}${HELPFILESDIR} ${DESTDIR}${SCRIPTFILESDIR}
+
+.PATH: FreeBSD/obj/bin lib/helpdir lib/scripts lib man/man1 man/man3 man/man5
+.include <bsd.prog.mk>
