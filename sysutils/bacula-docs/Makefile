@@ -2,13 +2,13 @@
 # $FreeBSD$
 
 PORTNAME=	bacula
-PORTVERSION=	5.2.12
+PORTVERSION=	7.0.3
 CATEGORIES=	sysutils
 MASTER_SITES=	SF
 PKGNAMESUFFIX=	-docs
 DISTFILES=	${PORTNAME}-docs-${PORTVERSION}.tar.bz2
 
-MAINTAINER=	dan@langille.org
+MAINTAINER=	dvl@FreeBSD.org
 COMMENT=	Bacula document set
 
 NO_BUILD=	yes
@@ -17,15 +17,18 @@ UNIQUENAME=	${PORTNAME}${PKGNAMESUFFIX}
 
 PORTDOCS=	*.pdf
 
-.ifdef NOPORTDOCS
-IGNORE=		consists of only documentation, please undef NOPORTDOCS and try again
+OPTIONS_DEFINE=	DOCS
+
+.include <bsd.port.options.mk>
+
+.if empty(PORT_OPTIONS:MDOCS)
+IGNORE=		consists of only documentation, please enable DOCS and try again
 .endif
 
-NO_STAGE=	yes
 do-install:
-	${MKDIR} ${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
 
 	${FIND} ${WRKDIR}/${PORTNAME}-docs-${PORTVERSION}/manuals/en \
-		-name "*.pdf" -exec ${INSTALL_DATA} {} ${DOCSDIR}/ \;
+		-name "*.pdf" -exec ${INSTALL_DATA} {} ${STAGEDIR}${DOCSDIR}/ \;
 
 .include <bsd.port.mk>
