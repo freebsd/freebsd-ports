@@ -16,4 +16,10 @@ GNU_CONFIGURE=	yes
 
 USE_AUTOTOOLS=	automake14 autoconf
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OPSYS} == "FreeBSD" && ${OSVERSION} >= 1000000
+BROKEN=		does not build on FreeBSD 10 or better
+.endif
+
+.include <bsd.port.post.mk>
