@@ -27,13 +27,14 @@ EXTRA_CONF_ARGS=--disable-cli \
 post-patch: general-patch
 	@${REINPLACE_CMD} -e 's|/share/man|/man|g ; /PKGCONFIG/s| openssl||g' \
 		${WRKSRC}/qt/qtr.pro
+	@${ECHO_CMD} 'LIBS += -lcrypto' >> ${WRKSRC}/qt/qtr.pro
 
 post-build:
-	@(cd ${WRKSRC}/qt ; ${QMAKE} ${QMAKE_ARGS} qtr.pro ; ${MAKE_CMD})
+	@(cd ${WRKSRC}/qt && ${QMAKE} ${QMAKE_ARGS} qtr.pro && ${MAKE_CMD})
 
 do-install:
-	@(cd ${WRKSRC}/qt ; \
-		${SETENV} INSTALL_ROOT=${STAGEDIR}${PREFIX} ${MAKE} install)
+	@(cd ${WRKSRC}/qt && \
+		${SETENV} INSTALL_ROOT=${STAGEDIR}${PREFIX} ${MAKE_CMD} install)
 
 post-install: general-install
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
