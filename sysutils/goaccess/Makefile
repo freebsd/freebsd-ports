@@ -2,11 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	goaccess
-PORTVERSION=	0.7.1
-PORTREVISION=	1
+PORTVERSION=	0.8.3
 CATEGORIES=	sysutils
-MASTER_SITES=	SF
-MASTER_SITE_SUBDIR=	${PORTNAME}/${PORTVERSION}
+MASTER_SITES=	http://tar.goaccess.io/
 
 MAINTAINER=	sbz@FreeBSD.org
 COMMENT=	Real-time Apache web log analyzer
