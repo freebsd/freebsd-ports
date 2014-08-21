@@ -143,7 +143,7 @@ IGNORE=		lowercase WITH_STATIC_MODULES="${WITH_STATIC_MODULES}"\
 
 # Setting "@comment " as default.
 .for module in ${AVAILABLE_MODULES:O}
-${module}_PLIST_SUB=	"@comment "
+${module}PLIST_SUB=	"@comment "
 _DISABLE_MODULES+=	--disable-${module:tl}
 .endfor
 
@@ -244,11 +244,11 @@ SHARED_MODULES=		${APACHE_MODULES}
 .endif
 
 .for module in ${SHARED_MODULES}
-${module}_PLIST_SUB=	""
+${module}PLIST_SUB=	""
 .endfor
 
 .for module in ${AVAILABLE_MODULES:O:u}
-PLIST_SUB+=	MOD_${module}=${${module}_PLIST_SUB}
+PLIST_SUB+=	MOD_${module}=${${module}PLIST_SUB}
 .endfor
 
 # pkg-plist workaround STATIC support
