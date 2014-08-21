@@ -14,6 +14,8 @@ PKGDIR=		${.CURDIR}
 USE_GNOME=	gtk20
 CONFIGURE_ARGS=--with-gtk
 
+BROKEN=		does not link against GTK2
+
 pre-install:
 	@${REINPLACE_CMD} -e 's|base [$$][(]GTKSRCDIR[)] data|$$(GTKSRCDIR)|g' \
 		${WRKSRC}/Makefile
