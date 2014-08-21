@@ -1,7 +1,5 @@
 bin/squidGuard
-@unexec if cmp -s %D/etc/squid/squidGuard.conf.sample %D/etc/squid/squidGuard.conf; then rm -f %D/etc/squid/squidGuard.conf; fi
-etc/squid/squidGuard.conf.sample
-@exec if [ ! -f %D/etc/squid/squidGuard.conf ]; then cp -p %D/%F %B/squidGuard.conf; fi
+@sample etc/squid/squidGuard.conf.sample
 %%PORTDOCS%%%%DOCSDIR%%/LDAPFlow.txt
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/authentication.html
@@ -33,6 +31,9 @@ etc/squid/squidGuard.conf.sample
 %%PORTDOCS%%%%DOCSDIR%%/troubleshoot.txt
 %%PORTDOCS%%%%DOCSDIR%%/squidGuard.gif
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
+@owner %%SQUID_UID%%
+@group %%SQUID_GID%%
+@mode 550
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/blacklists/ads/domains
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/blacklists/ads/urls
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/blacklists/ads
@@ -70,10 +71,13 @@ etc/squid/squidGuard.conf.sample
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/blacklists
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/README.blacklists
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
-%%PORTEXAMPLES%%@exec chown -R %%SQUID_UID%%:%%SQUID_GID%% %D/%%EXAMPLESDIR%%/blacklists
-%%PORTEXAMPLES%%@exec chmod -R 550 %D/%%EXAMPLESDIR%%/blacklists
-@exec mkdir -p %%DATADIR%% || true
-@exec mkdir -p %%LOGDIR%% || true
-%%PORTEXAMPLES%%@exec chown -R %%SQUID_UID%%:%%SQUID_GID%% %%LOGDIR%%
-@unexec rmdir %%DATADIR%% 2>/dev/null || true
-@unexec rmdir %%LOGDIR%% 2>/dev/null || true
+@mode
+@owner
+@group
+@cwd /
+@exec mkdir -p %%LOGDIR%%
+@exec chown -R %%SQUID_UID%%:%%SQUID_GID%% %%LOGDIR%%
+@dirrmtry %%LOGDIR%%
+@exec mkdir -p %%DATADIR%%
+@exec chown -R %%SQUID_UID%%:%%SQUID_GID%% %%DATADIR%%
+@dirrmtry %%DATADIR%%
