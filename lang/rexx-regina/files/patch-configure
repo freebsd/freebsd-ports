@@ -1,11 +1,36 @@
---- configure.orig	2012-10-16 06:34:08.000000000 +0200
-+++ configure	2013-02-04 21:07:09.000000000 +0100
-@@ -8654,7 +8654,13 @@
+--- configure.orig	2014-06-29 02:01:39 UTC
++++ configure
+@@ -3486,6 +3486,13 @@ case "$target" in
+          osis64bit=yes
+       fi
+       ;;
++   *-dragonfly*)
++      mach="`uname -m`"
++      if test "$mach" = "x86_64"; then
++         bitflag="64"
++         osis64bit=yes
++      fi
++      ;;
+    *-freebsd*)
+       mach="`uname -m`"
+       if test "$mach" = "amd64"; then
+@@ -6235,6 +6242,10 @@ rm -f core conftest.err conftest.$ac_obj
+                ;;
+             *linux*)
+                ;;
++            *dragonfly*)
++               THREADING_COMPILE="-pthread -D_REENTRANT -DPOSIX -DREGINA_REENTRANT"
++               THREADING_LINK="-lpthread"
++               ;;
+             *freebsd*)
+                THREADING_COMPILE="-pthread -D_REENTRANT -DPOSIX -DREGINA_REENTRANT"
+                THREADING_LINK="-pthread"
+@@ -8658,7 +8669,13 @@ case "$target" in
                  SHLPRE="lib"
                  SHL_LD="ld -assert pure-text -o ${SHLPRE}${SHLFILE}${SHLPST} "'$('SHOFILES')'
                  ;;
 -        *-freebsd* | *openbsd*)
-+        *freebsd*)
++        *freebsd* | *dragonfly* )
 +                LD_RXLIB_A1="$ac_cv_prog_CC -shared ${LDFLAGS} -o \$(@)"
 +                LD_RXLIB_A2="$ac_cv_prog_CC -shared ${LDFLAGS} -o \$(@)"
 +                LD_RXLIB_UTILA="$ac_cv_prog_CC -shared ${LDFLAGS} -o \$(@)"
@@ -15,3 +40,12 @@
                  if test "$ac_cv_prog_CC" = "gcc" -o "$ac_cv_prog_CC" = "g++" -o "$ac_cv_prog_CC" = "clang"; then
                     LD_RXLIB_A1="$ac_cv_prog_CC -shared ${LDFLAGS} -o \$(@)"
                     LD_RXLIB_A2="$ac_cv_prog_CC -shared ${LDFLAGS} -o \$(@)"
+@@ -9407,7 +9424,7 @@ $as_echo_n "checking OS distribution nam
+ $as_echo "$MYDISTRO" >&6; }
+ else
+    case "$target" in
+-      *freebsd* | *openbsd*)
++      *freebsd* | *openbsd* | *dragonfly* )
+          MYDISTRO="`echo $target | cut -f3 -d-`"
+       ;;
+       *darwin*)
