@@ -89,12 +89,55 @@ include/apertium-%%APVER%%/apertium/tsx_reader.h
 include/apertium-%%APVER%%/apertium/ttag.h
 include/apertium-%%APVER%%/apertium/unlocked_cstdio.h
 include/apertium-%%APVER%%/apertium/utf_converter.h
-lib/libapertium3-%%APVER%%.so
 lib/libapertium3-%%APVER%%.so.0
+lib/libapertium3-%%APVER%%.so.0.0.0
 lib/libapertium3.a
-lib/libapertium3.la
 lib/libapertium3.so
 libdata/pkgconfig/apertium-%%APVER%%.pc
+man/man1/apertium.1.gz
+man/man1/apertium-deshtml.1.gz
+man/man1/apertium-desmediawiki.1.gz
+man/man1/apertium-desodt.1.gz
+man/man1/apertium-despptx.1.gz
+man/man1/apertium-desrtf.1.gz
+man/man1/apertium-destxt.1.gz
+man/man1/apertium-deswxml.1.gz
+man/man1/apertium-desxlsx.1.gz
+man/man1/apertium-filter-ambiguity.1.gz
+man/man1/apertium-gen-deformat.1.gz
+man/man1/apertium-gen-lextorbil.1.gz
+man/man1/apertium-gen-lextormono.1.gz
+man/man1/apertium-gen-modes.1.gz
+man/man1/apertium-gen-reformat.1.gz
+man/man1/apertium-gen-stopwords-lextor.1.gz
+man/man1/apertium-gen-wlist-lextor-translation.1.gz
+man/man1/apertium-gen-wlist-lextor.1.gz
+man/man1/apertium-interchunk.1.gz
+man/man1/apertium-lextor.1.gz
+man/man1/apertium-multiple-translations.1.gz
+man/man1/apertium-postchunk.1.gz
+man/man1/apertium-preprocess-corpus-lextor.1.gz
+man/man1/apertium-preprocess-transfer.1.gz
+man/man1/apertium-pretransfer.1.gz
+man/man1/apertium-rehtml.1.gz
+man/man1/apertium-remediawiki.1.gz
+man/man1/apertium-reodt.1.gz
+man/man1/apertium-repptx.1.gz
+man/man1/apertium-rertf.1.gz
+man/man1/apertium-retxt.1.gz
+man/man1/apertium-rewxml.1.gz
+man/man1/apertium-rexlsx.1.gz
+man/man1/apertium-tagger-apply-new-rules.1.gz
+man/man1/apertium-tagger.1.gz
+man/man1/apertium-transfer.1.gz
+man/man1/apertium-unformat.1.gz
+man/man1/apertium-validate-acx.1.gz
+man/man1/apertium-validate-dictionary.1.gz
+man/man1/apertium-validate-interchunk.1.gz
+man/man1/apertium-validate-modes.1.gz
+man/man1/apertium-validate-postchunk.1.gz
+man/man1/apertium-validate-tagger.1.gz
+man/man1/apertium-validate-transfer.1.gz
 %%DATADIR%%/acx.rng
 %%DATADIR%%/apertium-createmodes.awk
 %%DATADIR%%/deformat.xsl
@@ -111,7 +154,7 @@ libdata/pkgconfig/apertium-%%APVER%%.pc
 %%DATADIR%%/reformat.xsl
 %%DATADIR%%/tagger.dtd
 %%DATADIR%%/transfer.dtd
-@dirrm include/apertium-%%APVER%%/apertium
-@dirrm include/apertium-%%APVER%%
 @dirrm %%DATADIR%%/modes
 @dirrm %%DATADIR%%
+@dirrm include/apertium-%%APVER%%/apertium
+@dirrm include/apertium-%%APVER%%
