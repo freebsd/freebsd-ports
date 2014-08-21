@@ -89,7 +89,8 @@ for f in $("${svn}" diff --summarize -c ${rev} svn://${svnserver}/ports/head); d
 done
 filelist=$(printf '%s\n' "${filelist}" | sort -u)
 echo "MFH: r${rev}" > commit.txt
-"${svn}" log -r${rev} svn://${svnserver}/ports/head | sed '1,2d;$d;/^MFH:/d' >> commit.txt
+"${svn}" log -r${rev} svn://${svnserver}/ports/head | sed '1,2d;$d;/^MFH:/d' \
+    | sed '$d' >> commit.txt
 "${svn}" up --parents $(printf '%s\n' $filelist \
     | sed "s}^}${branch}/}")
 "${svn}" up --quiet "${branch}"
