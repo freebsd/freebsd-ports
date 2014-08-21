@@ -265,7 +265,7 @@ do-package: ${TMPPLIST}
 			fi; \
 		fi; \
 	else \
-		cd ${.CURDIR} && eval ${MAKE} delete-package; \
+		cd ${.CURDIR} && eval ${MAKE} delete-package >/dev/null; \
 		exit 1; \
 	fi
 .endif

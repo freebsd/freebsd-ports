@@ -3783,7 +3783,7 @@ do-package: ${TMPPLIST}
 			cd ${.CURDIR} && eval ${MAKE} package-links; \
 		fi; \
 	else \
-		cd ${.CURDIR} && eval ${MAKE} delete-package; \
+		cd ${.CURDIR} && eval ${MAKE} delete-package >/dev/null; \
 		exit 1; \
 	fi
 .else
@@ -3818,7 +3818,7 @@ do-package: ${TMPPLIST}
 		fi; \
 	else \
 		[ -n "$${made_prefix}" ] && ${RMDIR} ${PREFIX}; \
-		cd ${.CURDIR} && eval ${MAKE} delete-package; \
+		cd ${.CURDIR} && eval ${MAKE} delete-package >/dev/null; \
 		exit 1; \
 	fi
 .endif
@@ -3860,6 +3860,7 @@ delete-package-links:
 
 .if !target(delete-package)
 delete-package: delete-package-links
+	@${ECHO_MSG} "===>  Deleting package for ${PKGNAME}"
 .	if defined(NO_STAGE)
 	@${RM} -f ${PKGFILE}
 .	else
