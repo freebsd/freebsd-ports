@@ -3,6 +3,7 @@
 
 PORTNAME=	greyfix
 PORTVERSION=	0.4.0
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://www.kim-minh.com/pub/greyfix/ \
 		http://stereochro.me/distfiles/
