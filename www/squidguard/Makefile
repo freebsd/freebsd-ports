@@ -2,7 +2,7 @@
 
 PORTNAME=	squidGuard
 PORTVERSION=	1.4
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	www
 MASTER_SITES=	http://www.squidguard.org/Downloads/:a \
 		http://www.squidguard.org/Downloads/Contrib/:b
@@ -17,7 +17,9 @@ COMMENT=	Fast redirector for squid
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USE_BDB=	40+
+RUN_DEPENDS=	${LOCALBASE}/sbin/squid:${PORTSDIR}/www/squid33
+
+USE_BDB=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-db-inc=${BDB_INCLUDE_DIR} \
 		--with-db-lib=${BDB_LIB_DIR} \
@@ -42,19 +44,12 @@ SUB_FILES=	pkg-deinstall pkg-message
 SUB_LIST=	PORTNAME=${PORTNAME}
 
 OPTIONS_DEFINE=		DNS_BL DOCS EXAMPLES LDAP QUOTE_STRING
-OPTIONS_SINGLE=		SV
-OPTIONS_SINGLE_SV=	SQUID32 SQUID33
-OPTIONS_DEFAULT=	SQUID33
 
 EXAMPLES_DESC=	Install sample blacklists
 DNS_BL_DESC=	Enable DNS based blacklists
 QUOTE_STRING_DESC=	Add quoted string patch
-SQUID32_DESC=	Depend on Squid 3.2.x
-SQUID33_DESC=	Depend on Squid 3.3.x
 
 OPTIONS_SUB=		yes
-SQUID32_RUN_DEPENDS=	${LOCALBASE}/sbin/squid:${PORTSDIR}/www/squid32
-SQUID33_RUN_DEPENDS=	${LOCALBASE}/sbin/squid:${PORTSDIR}/www/squid33
 LDAP_CONFIGURE_ON=	--with-ldap
 LDAP_CONFIGURE_OFF=	--without-ldap
 LDAP_LDFLAGS=		-L${LOCALBASE}/lib
@@ -100,8 +95,6 @@ pre-install:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/blacklists
 	@(cd ${_DATADIR} && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR}/blacklists)
 	@${INSTALL_DATA} ${WRKDIR}/README.blacklists ${STAGEDIR}${EXAMPLESDIR}
-	@${CHOWN} -R ${SQUID_UID}:${SQUID_GID} ${STAGEDIR}${EXAMPLESDIR}/blacklists
-	@${CHMOD} -R 550 ${STAGEDIR}${EXAMPLESDIR}/blacklists
 	@${ECHO_MSG} "       -> Sample blacklists installed in ${EXAMPLESDIR}/blacklists"
 .endif
 	@${ECHO_MSG} "===>   Installing sample configuration file"
@@ -118,7 +111,5 @@ post-install:
 	@${INSTALL_DATA} ${WRKSRC}$i ${STAGEDIR}${DOCSDIR}
 . endfor
 	@${ECHO_MSG} "       -> Documentation installed in: ${DOCSDIR}"
-	@${MKDIR} ${STAGEDIR}${LOGDIR}
-	@${CHOWN} -R ${SQUID_UID}:${SQUID_GID} ${STAGEDIR}${LOGDIR}
 
 .include <bsd.port.mk>
