@@ -1134,6 +1134,7 @@
     SUBDIR += print-n-times
     SUBDIR += prosper
     SUBDIR += publican
+    SUBDIR += pugixml
     SUBDIR += pure-csv
     SUBDIR += pure-xml
     SUBDIR += py-4suite-xml
