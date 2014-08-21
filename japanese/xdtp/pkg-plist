@@ -1,18 +1,48 @@
-bin/xdtp
 bin/banbun2html
 bin/banbun2text
 bin/banbun2xhtml
 bin/glsd-doc2html
 bin/glsd-doc2text
+bin/xdtp
+%%INCLUDE%%include/xdtp/CSVAnalyzer.h
+%%INCLUDE%%include/xdtp/Exception.h
+%%INCLUDE%%include/xdtp/RefPtr.h
+%%INCLUDE%%include/xdtp/URI.h
+%%INCLUDE%%include/xdtp/URLTool.h
+%%INCLUDE%%include/xdtp/Utilities.h
+%%INCLUDE%%include/xdtp/XDTPObjectWrapper.h
+%%INCLUDE%%include/xdtp/XDTPTransform.h
+%%INCLUDE%%include/xdtp/XMLTool.h
+%%INCLUDE%%include/xdtp/modules/GLSDBanBunModule.h
+%%INCLUDE%%include/xdtp/modules/GLSDBanBunModuleChecker.h
+%%INCLUDE%%include/xdtp/modules/GLSDDocumentModule.h
+%%INCLUDE%%include/xdtp/modules/GLSDDocumentModuleChecker.h
+%%INCLUDE%%include/xdtp/modules/GLSDModule.h
+%%INCLUDE%%include/xdtp/modules/GLSDModuleChecker.h
+%%INCLUDE%%include/xdtp/modules/XDTPChecker.h
+%%INCLUDE%%include/xdtp/modules/XDTPModule.h
+%%INCLUDE%%include/xdtp/modules/XDTPModuleAdapter.h
+%%INCLUDE%%include/xdtp/modules/XDTPModuleLoader.h
+%%INCLUDE%%include/xdtp/modules/imports/GLSDImportModule.h
+%%INCLUDE%%include/xdtp/modules/imports/GLSDImportModuleAdapter.h
+%%INCLUDE%%include/xdtp/modules/imports/ImportImage.h
+%%INCLUDE%%include/xdtp/modules/imports/ImportTextCSV.h
+%%INCLUDE%%include/xdtp/modules/imports/ImportTextCommandPrompt.h
+%%INCLUDE%%include/xdtp/modules/imports/ImportTextGLSD.h
+%%INCLUDE%%include/xdtp/modules/imports/ImportTextPlain.h
+%%INCLUDE%%include/xdtp/modules/imports/ImportTextSourcecode.h
+%%INCLUDE%%include/xdtp/modules/imports/ImportTextXML.h
+%%INCLUDE%%include/xdtp/xdtptypes.h
+%%INCLUDE%%include/xdtp/xmlloader.h
+%%INCLUDE%%include/xdtp/xmlsaver.h
+lib/libxdtp.a
 lib/libxdtp.so
 lib/libxdtp.so.5
-lib/libxdtp.a
 libdata/pkgconfig/libxdtp.pc
-%%DOCSDIR%%/banbun-0001.html
-%%DOCSDIR%%/banbun-0002.html
-%%DOCSDIR%%/banbun-0003.html
-%%DOCSDIR%%/banbun-0004.html
-@dirrm %%DOCSDIR%%
+%%PORTDOCS%%%%DOCSDIR%%/banbun-0001.html
+%%PORTDOCS%%%%DOCSDIR%%/banbun-0002.html
+%%PORTDOCS%%%%DOCSDIR%%/banbun-0003.html
+%%PORTDOCS%%%%DOCSDIR%%/banbun-0004.html
 %%DATADIR%%/emacs/hanbun.el
 %%DATADIR%%/toHTML/BanBun.xsl
 %%DATADIR%%/toHTML/BanBunModule.xsl
@@ -29,42 +59,12 @@ libdata/pkgconfig/libxdtp.pc
 %%DATADIR%%/toXHTML/DocumentModule.xsl
 %%DATADIR%%/toXHTML/GLSD.xsl
 %%DATADIR%%/toXHTML/GLSDocumentModule.xsl
-@dirrm %%DATADIR%%/emacs
-@dirrm %%DATADIR%%/toHTML
-@dirrm %%DATADIR%%/toTEXT
 @dirrm %%DATADIR%%/toXHTML
-@dirrmtry %%DATADIR%%
-%%XDTP_INC%%include/xdtp/CSVAnalyzer.h
-%%XDTP_INC%%include/xdtp/Exception.h
-%%XDTP_INC%%include/xdtp/RefPtr.h
-%%XDTP_INC%%include/xdtp/URI.h
-%%XDTP_INC%%include/xdtp/URLTool.h
-%%XDTP_INC%%include/xdtp/Utilities.h
-%%XDTP_INC%%include/xdtp/XDTPObjectWrapper.h
-%%XDTP_INC%%include/xdtp/XDTPTransform.h
-%%XDTP_INC%%include/xdtp/XMLTool.h
-%%XDTP_INC%%include/xdtp/xdtptypes.h
-%%XDTP_INC%%include/xdtp/xmlloader.h
-%%XDTP_INC%%include/xdtp/xmlsaver.h
-%%XDTP_INC%%include/xdtp/modules/GLSDBanBunModule.h
-%%XDTP_INC%%include/xdtp/modules/GLSDBanBunModuleChecker.h
-%%XDTP_INC%%include/xdtp/modules/GLSDDocumentModule.h
-%%XDTP_INC%%include/xdtp/modules/GLSDDocumentModuleChecker.h
-%%XDTP_INC%%include/xdtp/modules/GLSDModule.h
-%%XDTP_INC%%include/xdtp/modules/GLSDModuleChecker.h
-%%XDTP_INC%%include/xdtp/modules/XDTPChecker.h
-%%XDTP_INC%%include/xdtp/modules/XDTPModule.h
-%%XDTP_INC%%include/xdtp/modules/XDTPModuleAdapter.h
-%%XDTP_INC%%include/xdtp/modules/XDTPModuleLoader.h
-%%XDTP_INC%%include/xdtp/modules/imports/GLSDImportModule.h
-%%XDTP_INC%%include/xdtp/modules/imports/GLSDImportModuleAdapter.h
-%%XDTP_INC%%include/xdtp/modules/imports/ImportImage.h
-%%XDTP_INC%%include/xdtp/modules/imports/ImportTextCSV.h
-%%XDTP_INC%%include/xdtp/modules/imports/ImportTextCommandPrompt.h
-%%XDTP_INC%%include/xdtp/modules/imports/ImportTextGLSD.h
-%%XDTP_INC%%include/xdtp/modules/imports/ImportTextPlain.h
-%%XDTP_INC%%include/xdtp/modules/imports/ImportTextSourcecode.h
-%%XDTP_INC%%include/xdtp/modules/imports/ImportTextXML.h
-%%XDTP_INC%%@dirrm include/xdtp/modules/imports
-%%XDTP_INC%%@dirrm include/xdtp/modules
-%%XDTP_INC%%@dirrm include/xdtp
+@dirrm %%DATADIR%%/toTEXT
+@dirrm %%DATADIR%%/toHTML
+@dirrm %%DATADIR%%/emacs
+@dirrm %%DATADIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%INCLUDE%%@dirrm include/xdtp/modules/imports
+%%INCLUDE%%@dirrm include/xdtp/modules
+%%INCLUDE%%@dirrm include/xdtp
