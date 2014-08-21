@@ -3,7 +3,7 @@
 
 PORTNAME=	dcl
 PORTVERSION=	1.7.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	science graphics ruby
 MASTER_SITES=	http://ruby.gfd-dennou.org/products/ruby-dcl/release/ \
 		http://dennou-h.gfd-dennou.org/library/ruby/products/ruby-dcl/release/ \
@@ -24,10 +24,10 @@ RUN_DEPENDS=	${LOCALBASE}/lib/libcdcl.so:${PORTSDIR}/science/cdcl \
 		rubygem-gdk_pixbuf2>=2.1.0:${PORTSDIR}/graphics/rubygem-gdk_pixbuf2 \
 		rubygem-gtk2>=2.1.0:${PORTSDIR}/x11-toolkits/rubygem-gtk2
 
+USE_GCC=	yes
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
-RUBY_NARRAY_VERSION=    `make -C ${PORTSDIR}/math/rubygem-narray -V PORTVERSION`
-RUBY_NARRAY_PKGNAME=	narray-${RUBY_NARRAY_VERSION}
+RUBY_NARRAY_PKGNAME=	narray-${NARRAY_VERSION}
 CONFIGURE_ARGS+=	--with-narray-include=${LOCALBASE}/lib/ruby/gems/${RUBY_VER}/gems/${RUBY_NARRAY_PKGNAME}/
 MAKE_ARGS=	INSTALL_PROG="${INSTALL_PROGRAM}" \
 		INSTALL_DATA="${INSTALL_DATA}"
@@ -48,6 +48,11 @@ EXPIRATION_DATE=	2014-09-20
 .if ${ARCH} == "ia64"
 BROKEN=	Does not build on ${ARCH} (Needs to link against shared libraries)
 .endif
+
+post-configure:
+	@${REINPLACE_CMD} -e 's|CC = cc|CC = `${LOCALBASE}/bin/cdclconfig --cc`|g' ${WRKSRC}/Makefile
+
+.include "${.CURDIR}/../../math/rubygem-narray/Makefile.version"
 
 post-install:
 	${MKDIR} ${STAGEDIR}${RUBY_MODEXAMPLESDIR}
