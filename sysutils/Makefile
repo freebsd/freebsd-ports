@@ -73,6 +73,7 @@
     SUBDIR += be_agent
     SUBDIR += beadm
     SUBDIR += beadm-devel
+    SUBDIR += bhyve-rc
     SUBDIR += biosfont
     SUBDIR += bkpupsd
     SUBDIR += bksh
