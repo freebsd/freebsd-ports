@@ -139,7 +139,4 @@ do-install:
 .endfor
 .endif
 
-post-install:
-	@${CAT} ${WRKDIR}/pkg-message
-
 .include <bsd.port.post.mk>
