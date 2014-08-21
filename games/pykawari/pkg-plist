@@ -1,46 +1,46 @@
 libexec/ninix/_kawari8.so
-share/kawari/document/banners/kawalinks.png
-share/kawari/document/banners/kawari.png
-share/kawari/document/banners/kawaribts.png
-share/kawari/document/banners/kawariplus.png
-share/kawari/document/banners/kawarisf.png
-share/kawari/document/banners/kawari_bbs.png
-share/kawari/document/banners/kawari_logo.png
-share/kawari/document/banners/kpcg_banner.png
-share/kawari/document/banners/fake-kawaribts.png
-share/kawari/document/banners/fake-kawalinks.png
-share/kawari/document/images/logo.png
-share/kawari/document/images/logo2.png
-share/kawari/document/images/ver_731.png
-share/kawari/document/images/ver_790.png
-share/kawari/document/images/ver_800.png
-share/kawari/document/images/ver_810.png
-share/kawari/document/images/ver_820.png
-share/kawari/document/index.html
-share/kawari/document/kawari.css
-share/kawari/document/kis_reference.html
-share/kawari/document/kiu_specbnf.txt
-share/kawari/document/kosui.html
-share/kawari/document/license.html
-share/kawari/document/programming.html
-share/kawari/document/programming_1.html
-share/kawari/document/programming_2.html
-share/kawari/document/programming_3.html
-share/kawari/document/programming_4.html
-share/kawari/document/programming_5.html
-share/kawari/document/start.html
-share/kawari/document/story.html
-share/kawari/document/tips.html
-share/kawari/document/users.html
-share/kawari/document/convert.html
-share/kawari/document/errormes.html
-share/kawari/document/source.html
-share/kawari/document/changelog.txt
-share/kawari/license.txt
-share/kawari/readme.1st
-share/kawari/build/BUILD.TXT
-@dirrm share/kawari/document/banners
-@dirrm share/kawari/document/images
-@dirrm share/kawari/document
-@dirrm share/kawari/build
-@dirrm share/kawari
+%%DATADIR%%/build/BUILD.TXT
+%%DATADIR%%/document/banners/kawalinks.png
+%%DATADIR%%/document/banners/kawari.png
+%%DATADIR%%/document/banners/kawaribts.png
+%%DATADIR%%/document/banners/kawariplus.png
+%%DATADIR%%/document/banners/kawarisf.png
+%%DATADIR%%/document/banners/kawari_bbs.png
+%%DATADIR%%/document/banners/kawari_logo.png
+%%DATADIR%%/document/banners/kpcg_banner.png
+%%DATADIR%%/document/banners/fake-kawaribts.png
+%%DATADIR%%/document/banners/fake-kawalinks.png
+%%DATADIR%%/document/images/logo.png
+%%DATADIR%%/document/images/logo2.png
+%%DATADIR%%/document/images/ver_731.png
+%%DATADIR%%/document/images/ver_790.png
+%%DATADIR%%/document/images/ver_800.png
+%%DATADIR%%/document/images/ver_810.png
+%%DATADIR%%/document/images/ver_820.png
+%%DATADIR%%/document/index.html
+%%DATADIR%%/document/kawari.css
+%%DATADIR%%/document/kis_reference.html
+%%DATADIR%%/document/kiu_specbnf.txt
+%%DATADIR%%/document/kosui.html
+%%DATADIR%%/document/license.html
+%%DATADIR%%/document/programming.html
+%%DATADIR%%/document/programming_1.html
+%%DATADIR%%/document/programming_2.html
+%%DATADIR%%/document/programming_3.html
+%%DATADIR%%/document/programming_4.html
+%%DATADIR%%/document/programming_5.html
+%%DATADIR%%/document/start.html
+%%DATADIR%%/document/story.html
+%%DATADIR%%/document/tips.html
+%%DATADIR%%/document/users.html
+%%DATADIR%%/document/convert.html
+%%DATADIR%%/document/errormes.html
+%%DATADIR%%/document/source.html
+%%DATADIR%%/document/changelog.txt
+%%DATADIR%%/license.txt
+%%DATADIR%%/readme.1st
+@dirrm %%DATADIR%%/document/images
+@dirrm %%DATADIR%%/document/banners
+@dirrm %%DATADIR%%/document
+@dirrm %%DATADIR%%/build
+@dirrm %%DATADIR%%
