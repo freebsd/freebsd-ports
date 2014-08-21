@@ -37,7 +37,7 @@ OPTIONS_DEFINE+=	PROFILE
 OPTIONS_DEFINE+=	LLVM
 .endif
 
-.if (!exists(${GHC_CMD}) || (exists(${HADDOCK_CMD}) && exists(${LOCALBASE}/lib/ghc-${GHC_VERSION}/html))) && !defined(NOPORTDOCS)
+.if ((!exists(${GHC_CMD}) || exists(${LOCALBASE}/lib/ghc-${GHC_VERSION}/html)) || exists(${HADDOCK_CMD})) && !defined(NOPORTDOCS)
 OPTIONS_DEFINE+=	DOCS
 OPTIONS_DEFAULT+=	DOCS
 HADDOCK_AVAILABLE=	yes
