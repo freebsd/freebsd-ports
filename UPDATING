@@ -5,6 +5,34 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20140821:
+  AFFECTS: users of databases/db4, databases/db4[1-7]*
+  AUTHOR: mandree@FreeBSD.org
+
+  HEADS UP: for some applications that store their data in Berkeley DB
+  databases, you may have to export the data before the upgrade and
+  reload it afterwards.  Detailed instructions are at
+  <https://wiki.freebsd.org/Ports/BerkeleyDBCleanup>.
+
+  The older databases/db4* ports providing versions 4.0 to 4.7
+  inclusively have been removed, and 4.8 has been deprecated.
+  The default Berkeley DB version is now 5.3.
+  (6.x has a different license, but will be eligible as default on
+  systems that build ports from source and have db6 installed.)
+    All enabled and working ports have been changed such that they use
+  Berkeley DB 4.8 or newer, and an -exp run has been made.
+
+  After you have performed the first steps from the Wiki documentation,
+  and have arrived at a step that reads "build all applications", then
+  type as privileged user and without the hash sign:
+
+  # Tools/scripts/BDB-upgrade-helper.sh
+
+  The helper script requires that ports-mgmt/portmaster or
+  .../portupgrade is installed, will try to upgrade your applications
+  with either of these tools (portmaster preferred), and if that succeeds,
+  it will attempt to delete the packages if confirmed interactively.
+
 20140815:
   AFFECTS: users of graphics/ilmbase and graphics/OpenEXR
   AUTHOR: mandree@FreeBSD.org
@@ -17,7 +45,7 @@ you update your ports collection, before attempting any port upgrades.
     or
   # portupgrade -fr graphics/ilmbase graphics/OpenEXR
 
-  The PORTREVISIONS of all 500+ ports that require ilmbase/OpenEXR
+  The PORTREVISIONS of all ports that require ilmbase and/or OpenEXR
   have been bumped.
 
 20140810:

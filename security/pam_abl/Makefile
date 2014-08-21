@@ -3,6 +3,7 @@
 
 PORTNAME=	pam_abl
 PORTVERSION=	0.2.3
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	SF/pam-abl/pam-abl/${PORTVERSION}
 

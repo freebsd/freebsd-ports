@@ -15,6 +15,9 @@ MAINTAINER=	mandree@FreeBSD.org
 # my permission.
 COMMENT=	The Berkeley DB package, revision 4.8
 
+DEPRECATED=		Please move to db5 or db6.
+EXPIRATION_DATE=	2014-11-30
+
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKDIR}/${DISTNAME}/LICENSE
 

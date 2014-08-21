@@ -6467,3 +6467,12 @@ deskutils/horde3-nag||2014-08-20|Has expired: EOL in April 2012
 devel/horde3-whups||2014-08-20|Has expired: EOL in April 2012
 mail/horde3-imp||2014-08-20|Has expired: EOL in April 2012
 www/horde3-base||2014-08-20|Has expired: EOL in April 2012
+databases/db4|databases/db48|2014-08-15|Superseded by databases/db48
+databases/db41|databases/db48|2014-08-15|Superseded by databases/db48
+databases/db41-nocrypto|databases/db48|2014-08-15|Superseded by databases/db48
+databases/db42|databases/db48|2014-08-15|Superseded by databases/db48
+databases/db42-nocrypto|databases/db48|2014-08-15|Superseded by databases/db48
+databases/db43|databases/db48|2014-08-15|Superseded by databases/db48
+databases/db44|databases/db48|2014-08-15|Superseded by databases/db48
+databases/db46|databases/db48|2014-08-15|Superseded by databases/db48
+databases/db47|databases/db48|2014-08-15|Superseded by databases/db48

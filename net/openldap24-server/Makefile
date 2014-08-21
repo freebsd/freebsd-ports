@@ -3,7 +3,7 @@
 
 PORTNAME=		openldap
 DISTVERSION=		2.4.39
-PORTREVISION=		${OPENLDAP_PORTREVISION}
+1P1O1R1T1R1E1V1I1S1I1O1N1=1	1	1$1{1O1P1E1N1L1D1A1P1_1P1O1R1T1R1E1V1I1S1I1O1N1}1
 CATEGORIES=		net databases
 MASTER_SITES=		ftp://ftp.OpenLDAP.org/pub/OpenLDAP/%SUBDIR%/ \
 			ftp://gd.tuwien.ac.at/infosys/network/OpenLDAP/%SUBDIR%/ \
@@ -351,26 +351,12 @@ PLIST_SUB+=		BACK_BDB="@comment " \
 			BACK_HDB="@comment "
 .else
 
-WITH_BDB_VER?=		46
-USE_BDB=		44+
+USE_BDB=		48+
 
-# XXX Can BDB 5.x use XY instead of X as version?
-.if ${WITH_BDB_VER} >= 43 || ${WITH_BDB_VER} == 5 || ${WITH_BDB_VER} == 6
 CONFIGURE_ARGS+=	--enable-bdb=${BACKEND_ENABLE} \
 			--enable-hdb=${BACKEND_ENABLE}
 PLIST_SUB+=		BACK_BDB=${BACKEND_PLIST} \
 			BACK_HDB=${BACKEND_PLIST}
-.elif ${WITH_BDB_VER} >= 4
-CONFIGURE_ARGS+=	--disable-bdb \
-			--enable-hdb=${BACKEND_ENABLE}
-PLIST_SUB+=		BACK_BDB="@comment " \
-			BACK_HDB=${BACKEND_PLIST}
-.elif ${WITH_BDB_VER} == 3
-CONFIGURE_ARGS+=	--disable-bdb \
-			--disable-hdb
-PLIST_SUB+=		BACK_BDB="@comment " \
-			BACK_HDB="@comment "
-.endif
 
 CPPFLAGS+=		-I${BDB_INCLUDE_DIR}
 LDFLAGS+=		-L${BDB_LIB_DIR}

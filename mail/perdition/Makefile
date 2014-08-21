@@ -3,7 +3,7 @@
 
 PORTNAME=	perdition
 PORTVERSION=	1.18
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	mail net security
 MASTER_SITES=	http://horms.net/projects/perdition/download/${PORTVERSION}/
 

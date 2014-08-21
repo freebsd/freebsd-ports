@@ -3,6 +3,7 @@
 
 PORTNAME=		pks
 PORTVERSION=		0.9.6.20040312
+1P1O1R1T1R1E1V1I1S1I1O1N1=1	1	121
 CATEGORIES=		security www
 MASTER_SITES=		http://pks.sourceforge.net/:sf ${MASTER_SITE_LOCAL}:local
 MASTER_SITE_SUBDIR=	.:sf mandree:local
@@ -11,17 +12,16 @@ DISTFILES=		pks-current.tgz:sf,local
 MAINTAINER=	tphilipp@potion-studios.com
 COMMENT=	PGP Public Key Server
 
-LICENSE=        BSD4CLAUSE
+LICENSE=	BSD4CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 USE_GCC=	any
-USE_BDB=	yes
-WANT_BDB_VER=	41 # pks dumps core with 42 and doesn't build with 43+
+USE_BDB=	48+
 
-OPTIONS_DEFINE= DOCS
-PORTDOCS=       pks_help.* README EMAIL
+OPTIONS_DEFINE=	DOCS
+PORTDOCS=	pks_help.* README EMAIL
 GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	autoconf
 CONFIGURE_ARGS=	--datadir=${PREFIX}/share/pks --localstatedir=/var/pks \
@@ -31,9 +31,10 @@ MAKE_ENV+=	SUBDIRS=
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ENV=	DBLIB="-L${BDB_LIB_DIR} -l${BDB_LIB_NAME}" DBINC=-I${BDB_INCLUDE_DIR} DBHDR=db.h
 
-
 SUB_FILES=	pkg-message
 PKGMESSAGE=	${WRKDIR}/pkg-message
+
+PLIST_SUB+=	RESETPREFIX=${PREFIX}
 
 USE_RC_SUBR=	pksd
 
