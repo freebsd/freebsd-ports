@@ -772,6 +772,7 @@
     SUBDIR += radeontool
     SUBDIR += radmind
     SUBDIR += raincoat
+    SUBDIR += rcadm
     SUBDIR += rclean
     SUBDIR += rdate
     SUBDIR += rdiff-backup
