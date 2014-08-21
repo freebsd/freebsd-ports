@@ -94,6 +94,8 @@ include/clapack.h
 %%SHARED%%include/atlas/shared/smm.h
 %%SHARED%%include/atlas/shared/zXover.h
 %%SHARED%%include/atlas/shared/zmm.h
+%%STATIC%%@dirrm include/atlas/static
+%%SHARED%%@dirrm include/atlas/shared
 @dirrm include/atlas
 %%STATIC%%lib/libalapack.a
 %%SHARED%%lib/libalapack_pic.a
@@ -119,5 +121,3 @@ include/clapack.h
 %%SHARED%%lib/libptf77blas_pic.a
 %%SHARED%%lib/libptf77blas.so.2
 %%SHARED%%lib/libptf77blas.so
-%%STATIC%%@dirrm include/atlas/static
-%%SHARED%%@dirrm include/atlas/shared
