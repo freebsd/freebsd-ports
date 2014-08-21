@@ -1,22 +1,16 @@
 #
 # $FreeBSD$
 #
-
-.ifdef WITHOUT_X11
-CONFIG=	FreeBSD.without_x11
-.else
-CONFIG=	FreeBSD
-.endif
-
 all:
-	util/build ${CONFIG} default
+	${SH} util/build FreeBSD default
 
 install:
 	mkdir -p ${DESTDIR}${PREFIX}/share/spice/helpdir \
 		${DESTDIR}${PREFIX}/share/spice/scripts
-	(cd ${CONFIG}/obj/bin && ${BSD_INSTALL_PROGRAM} \
-		spice3 nutmeg sconvert help proc2mod multidec \
-		${DESTDIR}${PREFIX}/bin)
+	cd FreeBSD/obj/bin && \
+		${BSD_INSTALL_PROGRAM} \
+		    spice3 nutmeg sconvert help proc2mod multidec \
+		    ${DESTDIR}${PREFIX}/bin
 	${BSD_INSTALL_DATA} lib/helpdir/spice.txt \
 		${DESTDIR}${PREFIX}/share/spice/helpdir
 	${BSD_INSTALL_SCRIPT} lib/scripts/setplot lib/scripts/spinit \

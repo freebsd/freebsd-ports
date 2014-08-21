@@ -18,26 +18,3 @@ man/man5/mfbcap.5.gz
 @dirrm %%DATADIR%%/helpdir
 @dirrm %%DATADIR%%/scripts
 @dirrm %%DATADIR%%
-%%PORTDOCS%%%%DOCSDIR%%/spice3f3.ps.gz
-%%EXAMPLESDIR%%/bjtnoise.cir
-%%EXAMPLESDIR%%/bsim1tst.cir
-%%EXAMPLESDIR%%/bsim2tst.cir
-%%EXAMPLESDIR%%/diffpair.cir
-%%EXAMPLESDIR%%/diodisto.cir
-%%EXAMPLESDIR%%/ltra_1.cir
-%%EXAMPLESDIR%%/ltra_2.cir
-%%EXAMPLESDIR%%/ltra_3.cir
-%%EXAMPLESDIR%%/mixdisto.cir
-%%EXAMPLESDIR%%/mos6inv.cir
-%%EXAMPLESDIR%%/mosamp2.cir
-%%EXAMPLESDIR%%/mosmem.cir
-%%EXAMPLESDIR%%/pz2.cir
-%%EXAMPLESDIR%%/pzt.cir
-%%EXAMPLESDIR%%/rc.cir
-%%EXAMPLESDIR%%/rca3040.cir
-%%EXAMPLESDIR%%/resnoise.cir
-%%EXAMPLESDIR%%/rtlinv.cir
-%%EXAMPLESDIR%%/schmitt.cir
-%%EXAMPLESDIR%%/simplepz.cir
-@dirrm %%EXAMPLESDIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
