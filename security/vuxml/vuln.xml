@@ -96,6 +96,7 @@ Notes:
 	<name>py34-django15</name>
 	<range><ge>1.5</ge><lt>1.5.9</lt></range>
       </package>
+      <package>
 	<name>py27-django-devel</name>
 	<range><lt>20140821,1</lt></range>
       </package>
