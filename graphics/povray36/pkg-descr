@@ -1,5 +1,3 @@
-POV-Ray(TM) 3.5 Persistence of Vision Ray Tracer
-
 The  Persistence  of  Vision(tm)   Ray-Tracer   creates   three-dimensional,
 photo-realistic images using a rendering  technique  called  ray-tracing.  It
 reads in a text  file  containing  information  describing  the  objects  and
@@ -7,8 +5,5 @@ lighting in a scene and generates an image of that scene from the view  point
 of a camera also described in the  text  file.  Ray-tracing  is  not  a  fast
 process by any means, but it produces very high quality images with realistic
 reflections, shading, perspective and other effects.
-
-Legal and License information can be consulted in the following file
-/usr/local/share/doc/povray-3.6/povlegal.doc
 
 WWW: http://www.povray.org/
