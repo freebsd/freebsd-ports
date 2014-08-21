@@ -3,7 +3,7 @@
 
 PORTNAME=	pykawari
 PORTVERSION=	8.2.8
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	games
 MASTER_SITES=	SF/kawari/kawari/${PORTVERSION}
 DISTNAME=	kawari-${PORTVERSION:S/.//g}
@@ -11,38 +11,36 @@ DISTNAME=	kawari-${PORTVERSION:S/.//g}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Real kawari8 module for ninix-aya
 
+LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKSRC}/license.txt
+
 RUN_DEPENDS=	ninix:${PORTSDIR}/games/ninix-aya
 
-EXTRACT_BEFORE_ARGS=	# empty
-EXTRACT_AFTER_ARGS=	# empty
+BUILD_WRKSRC=	${WRKSRC}/build/src
 
-PLIST_SUB=	LOCALBASE=${LOCALBASE}
+USES=		gmake python zip
+MAKEFILE=	gcc.mak
+MAKE_ARGS=	CXX="${CXX}" CFLAGS="${CXXFLAGS}" \
+		PYTHONBASE="${PYTHONBASE}" PYTHON_VERSION="${PYTHON_VERSION}"
 
-USES=		gmake zip
-USE_PYTHON=	yes
+CFLAGS+=	-I. -DNDEBUG -I${PYTHON_INCLUDEDIR} -fPIC
 
-WRKSRC=		${WRKDIR}/kawari-${PORTVERSION:S/.//g}
-CFLAGS+=	${PTHREAD_CFLAGS} -fPIC
-
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == "amd64" || ${ARCH} == "ia64"
-CFLAGS+=	-fPIC
-.endif
+DATADIR=	${PREFIX}/share/kawari
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|shell python|shell ${PYTHON_CMD}|' \
-		${WRKSRC}/build/src/gcc.mak
-
-do-build:
-	(cd ${WRKSRC}/build/src; CFLAGS="${CFLAGS}" ${MAKE_CMD} -f gcc.mak PYTHONBASE=${PYTHONBASE} PYTHON_VERSION=${PYTHON_VERSION} PTHREAD_LIBS=${PTHREAD_LIBS} CXX=${CXX})
+		${BUILD_WRKSRC}/gcc.mak
 
 do-install:
-	${MKDIR} ${PREFIX}/share/kawari
-	(cd ${WRKSRC}; ${TAR} -cf - document license.txt readme.1st build/BUILD.TXT) | ${TAR} -xvpf - -C ${PREFIX}/share/kawari
-	${LN} -f ${WRKSRC}/build/mach/freebsd/libshiori.so ${WRKSRC}/build/mach/freebsd/_kawari8.so
-	${MKDIR} ${PREFIX}/libexec/ninix
-	${INSTALL_PROGRAM} ${WRKSRC}/build/mach/freebsd/_kawari8.so ${PREFIX}/libexec/ninix
+	@${MKDIR} ${STAGEDIR}${PREFIX}/libexec/ninix \
+		${STAGEDIR}${DATADIR}/build
+	(cd ${WRKSRC}/build/mach/freebsd && ${INSTALL_LIB} libshiori.so \
+		${STAGEDIR}${PREFIX}/libexec/ninix/_kawari8.so)
+	(cd ${WRKSRC} && ${COPYTREE_SHARE} document \
+		${STAGEDIR}${DATADIR})
+	(cd ${WRKSRC} && ${INSTALL_DATA} license.txt readme.1st \
+		${STAGEDIR}${DATADIR})
+	(cd ${WRKSRC}/build && ${INSTALL_DATA} BUILD.TXT \
+		${STAGEDIR}${DATADIR}/build)
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
