@@ -5,7 +5,7 @@ PORTVERSION=	0.7.6
 CATEGORIES=	security net
 MASTER_SITES=	http://opsec.eu/src/${PORTNAME}/
 
-MAINTAINER=	jmohacsi@bsd.hu
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple graphical interface to manage a small Certification Authority
 
 LICENSE=	GPLv2
