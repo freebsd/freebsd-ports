@@ -1,0 +1,15 @@
+--- ./xbmc/cores/dvdplayer/DVDCodecs/Video/CMakeLists.txt.orig	2014-06-02 09:54:40.766706418 +0800
++++ ./xbmc/cores/dvdplayer/DVDCodecs/Video/CMakeLists.txt	2014-06-02 09:59:13.577706588 +0800
+@@ -8,9 +8,9 @@
+ 	list(REMOVE_ITEM video_SRCS ./DXVA.cpp)
+ endif()
+ 
+-if (NOT TARGET_LINUX)
++if (NOT TARGET_LINUX AND NOT TARGET_FREEBSD)
+ 	list(REMOVE_ITEM video_SRCS ./VDPAU.cpp)
+ 	list(REMOVE_ITEM video_SRCS ./VAAPI.cpp)
+ endif()
+ 
+-add_sources(${video_SRCS})
+\ No newline at end of file
++add_sources(${video_SRCS})

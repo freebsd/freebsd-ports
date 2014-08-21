@@ -1,0 +1,15 @@
+--- xbmc/linux/CMakeLists.txt.orig	2014-08-12 19:59:38.122858031 +0800
++++ xbmc/linux/CMakeLists.txt	2014-08-12 20:01:44.139854604 +0800
+@@ -1,10 +1,10 @@
+ find_all_sources(. linux_SRCS)
+-if(NOT TARGET_COMMON_LINUX)
++if(NOT TARGET_COMMON_LINUX AND NOT TARGET_FREEBSD)
+ 	list(REMOVE_ITEM linux_SRCS ./DBusMessage.cpp)
+ 	list(REMOVE_ITEM linux_SRCS ./DBusReserve.cpp)
+ 	list(REMOVE_ITEM linux_SRCS ./DBusUtil.cpp)
+ 	list(REMOVE_ITEM linux_SRCS ./HALManager.cpp)
+-endif(NOT TARGET_COMMON_LINUX)
++endif(NOT TARGET_COMMON_LINUX AND NOT TARGET_FREEBSD)
+ 
+ if(NOT TARGET_RPI)
+   list(REMOVE_ITEM linux_SRCS ./OMXClock.cpp ./OMXCore.cpp ./RBP.cpp)

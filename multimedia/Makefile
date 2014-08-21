@@ -274,6 +274,7 @@
     SUBDIR += photofilmstrip
     SUBDIR += pitivi
     SUBDIR += playd
+    SUBDIR += plexhometheater
     SUBDIR += plexmediaserver
     SUBDIR += plexmediaserver-plexpass
     SUBDIR += podcastdl
