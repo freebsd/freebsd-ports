@@ -9,6 +9,8 @@ MASTER_SITES=	http://anarcat.ath.cx/software/distfiles/
 MAINTAINER=	anarcat@anarcat.ath.cx
 COMMENT=	Backup-only shell
 
+USES=		uidfix
+
 PLIST_FILES=	bin/bksh
 
 post-patch:
