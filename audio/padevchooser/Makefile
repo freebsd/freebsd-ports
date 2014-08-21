@@ -3,7 +3,7 @@
 
 PORTNAME=	padevchooser
 PORTVERSION=	0.9.3
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	audio
 MASTER_SITES=	http://0pointer.de/lennart/projects/${PORTNAME}/
 
@@ -12,8 +12,7 @@ COMMENT=	GTK icon tray for PulseAudio
 
 LIB_DEPENDS=	libglademm-2.4.so:${PORTSDIR}/devel/libglademm24 \
 		libpulse.so:${PORTSDIR}/audio/pulseaudio \
-		libnotify.so:${PORTSDIR}/devel/libnotify \
-		libavahi-core.so:${PORTSDIR}/net/avahi
+		libnotify.so:${PORTSDIR}/devel/libnotify
 RUN_DEPENDES=	dbus-daemon:${PORTSDIR}/devel/dbus
 
 GNU_CONFIGURE=	yes
