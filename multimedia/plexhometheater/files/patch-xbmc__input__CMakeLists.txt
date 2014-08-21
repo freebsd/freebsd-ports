@@ -1,0 +1,14 @@
+--- xbmc/input/CMakeLists.txt.orig	2014-05-23 21:04:41.000000000 +0800
++++ xbmc/input/CMakeLists.txt	2014-06-03 21:05:10.893292928 +0800
+@@ -1,8 +1,8 @@
+-if(TARGET_COMMON_LINUX)
++if(TARGET_COMMON_LINUX OR TARGET_FREEBSD)
+   add_subdirectory(linux)
+-elseif(TARGET_WIN32)
++elseif(TARGET_WIN32 OR TARGET_FREEBSD)
+   add_subdirectory(windows)
+-endif(TARGET_COMMON_LINUX)
++endif(TARGET_COMMON_LINUX OR TARGET_FREEBSD)
+ 
+ find_all_sources(. input_SRCS)
+ if(TARGET_WIN32)

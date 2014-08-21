@@ -1,0 +1,18 @@
+--- xbmc/cores/DllLoader/CMakeLists.txt.orig	2014-07-31 22:37:29.000000000 +0800
++++ xbmc/cores/DllLoader/CMakeLists.txt	2014-08-05 19:51:50.258522209 +0800
+@@ -4,10 +4,15 @@
+ list(REMOVE_ITEM dllloader_SRCS ./DllLoader-linux.cpp)
+ if(UNIX)
+   list(REMOVE_ITEM dllloader_SRCS ./Win32DllLoader.cpp)
++  list(REMOVE_ITEM dllloader_SRCS ./Win32DllLoader.h)
+ else()
+   list(REMOVE_ITEM dllloader_SRCS ./DllLoader-linux.cpp)
+   list(REMOVE_ITEM dllloader_SRCS ./ldt_keeper.c)
+   list(REMOVE_ITEM dllloader_SRCS ./mmap_anon.c)
+   list(REMOVE_ITEM dllloader_SRCS ./SoLoader.cpp)
+ endif()
++if(TARGET_FREEBSD)
++  list(REMOVE_ITEM dllloader_SRCS ./ldt_keeper.c)
++  list(REMOVE_ITEM dllloader_SRCS ./ldt_keeper.h)
++endif()
+ add_sources(${dllloader_SRCS})

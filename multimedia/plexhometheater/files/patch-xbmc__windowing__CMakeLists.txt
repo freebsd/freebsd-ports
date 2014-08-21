@@ -1,0 +1,11 @@
+--- ./xbmc/windowing/CMakeLists.txt.orig	2014-06-02 11:45:27.908705610 +0800
++++ ./xbmc/windowing/CMakeLists.txt	2014-06-02 11:46:11.557706164 +0800
+@@ -11,6 +11,8 @@
+     else()
+ 	  find_all_sources(X11 windowing_os_SRCS)
+     endif()
++elseif(TARGET_FREEBSD)
++    find_all_sources(X11 windowing_os_SRCS)
+ elseif(TARGET_WIN32)
+ 	find_all_sources(windows windowing_os_SRCS)
+   list(REMOVE_ITEM windowing_os_SRCS windows/WinSystemWin32GL.cpp)
