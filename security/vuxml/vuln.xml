@@ -57,6 +57,31 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="84203724-296b-11e4-bebd-000c2980a9f3">
+    <topic>file -- buffer overruns and missing buffer size tests</topic>
+    <affects>
+      <package>
+	<name>file</name>
+	<range><lt>5.19</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Christos Zoulas reports:</p>
+	<blockquote cite="http://mx.gw.com/pipermail/file/2014/001553.html">
+	  <p>A specially crafted file can cause a segmentation fault.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://mx.gw.com/pipermail/file/2014/001553.html</url>
+    </references>
+    <dates>
+      <discovery>2014-06-09</discovery>
+      <entry>2014-08-21</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="3c5579f7-294a-11e4-99f6-00e0814cab4e">
     <topic>django -- multiple vulnerabilities</topic>
     <affects>
