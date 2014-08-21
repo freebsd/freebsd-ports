@@ -8,16 +8,15 @@ CATEGORIES=	security
 MASTER_SITES=	SF
 DISTNAME=	DenyHosts-${PORTVERSION}
 
-MAINTAINER=	jmohacsi@bsd.hu
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Script to thwart ssh attacks
 
 LICENSE=	GPLv2
 
-USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_AUTOPLIST=	yes
 
-USES=		shebangfix
+USES=		python:2 shebangfix
 env_OLD_CMD=	/bin/env
 env_CMD=	${SETENV}
 SHEBANG_LANG=	python env
