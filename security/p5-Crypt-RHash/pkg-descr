@@ -1,0 +1,8 @@
+Crypt::Rhash module is an object-oriented interface to the LibRHash library,
+allowing simultaneous calculation of several hash functions for a file or a
+text message.
+
+Resulting hash digest can be obtained in hexadecimal, BASE32, BASE64, raw
+binary format or as a magnet link.
+
+WWW: http://search.cpan.org/dist/Crypt-RHash/
