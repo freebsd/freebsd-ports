@@ -3,7 +3,7 @@
 
 PORTNAME=		pks
 PORTVERSION=		0.9.6.20040312
-1P1O1R1T1R1E1V1I1S1I1O1N1=1	1	121
+PORTREVISION=		1
 CATEGORIES=		security www
 MASTER_SITES=		http://pks.sourceforge.net/:sf ${MASTER_SITE_LOCAL}:local
 MASTER_SITE_SUBDIR=	.:sf mandree:local
