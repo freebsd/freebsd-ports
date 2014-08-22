@@ -3,14 +3,14 @@
 
 PORTNAME=	libdssialsacompat
 PORTVERSION=	1.0.8a
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	http://smbolton.com/linux/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Alsa compatibility library to build DSSI
 
-USES=		pathfix libtool:keepla
+USES=		pathfix libtool
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
