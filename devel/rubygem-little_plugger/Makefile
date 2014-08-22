@@ -3,6 +3,7 @@
 
 PORTNAME=	little_plugger
 PORTVERSION=	1.1.3
+PORTREVISION=	1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 DISTNAME=	little-plugger-${PORTVERSION}
@@ -14,7 +15,5 @@ USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 GEM_NAME=	${DISTNAME}
 RUBYGEM_AUTOPLIST=	yes
-
-RUN_DEPENDS=	rubygem-rspec>=0:${PORTSDIR}/devel/rubygem-rspec
 
 .include <bsd.port.mk>
