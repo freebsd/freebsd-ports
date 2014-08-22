@@ -3,7 +3,7 @@
 
 PORTNAME=	mediastreamer
 PORTVERSION=	2.10.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	SAVANNAH/linphone/mediastreamer
 
@@ -18,29 +18,32 @@ LIB_DEPENDS=	libortp.so:${PORTSDIR}/net/ortp
 CONFLICTS_INSTALL=	linphone-base-[0-9]*
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--disable-alsa --disable-glx --disable-pulseaudio \
+CONFIGURE_ARGS=	--disable-alsa --disable-pulseaudio \
 		--disable-silent-rules --disable-strict \
 		--with-gsm=${LOCALBASE} xxd_found=yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib
 INSTALL_TARGET=	install-strip
 USES=		gmake libtool pathfix pkgconfig
-USE_GNOME=	gnomehier
+USE_GNOME=	gnomehier intltool
 USE_LDCONFIG=	yes
 
 OPTIONS_DEFINE=		IPV6 NLS UPNP VIDEO
 OPTIONS_GROUP=		AUDIOOPT VIDEOOPT
 OPTIONS_GROUP_AUDIOOPT=	GSM OPUS SPANDSP SPEEX
-OPTIONS_GROUP_VIDEOOPT=	FFMPEG THEORA V4L VPX XVIDEO
+OPTIONS_GROUP_VIDEOOPT=	FFMPEG GLX THEORA V4L VPX XVIDEO
 OPTIONS_DEFAULT=	UPNP VIDEO \
 			GSM OPUS SPANDSP SPEEX \
-			FFMPEG THEORA V4L VPX XVIDEO
+			FFMPEG GLX THEORA V4L VPX XVIDEO
 OPTIONS_SUB=		yes
 
 AUDIOOPT_DESC=		Audio options
 
 FFMPEG_CONFIGURE_ENABLE=ffmpeg
 FFMPEG_LIB_DEPENDS=	libavcodec.so:${PORTSDIR}/multimedia/ffmpeg
+
+GLX_CONFIGURE_ENABLE=	glx
+GLX_USE=		GL=glew
 
 GSM_CONFIGURE_ENABLE=	gsm
 GSM_LIB_DEPENDS=	libgsm.so:${PORTSDIR}/audio/gsm
@@ -49,7 +52,6 @@ IPV6_CONFIGURE_ENABLE=	ipv6
 
 NLS_CONFIGURE_ENABLE=	nls
 NLS_USES=		gettext
-NLS_USE=		GNOME=intltool
 
 OPUS_CONFIGURE_ENABLE=	opus
 OPUS_LIB_DEPENDS=	libopus.so:${PORTSDIR}/audio/opus
@@ -87,5 +89,15 @@ CONFIGURE_ARGS+=--enable-debug
 post-patch:
 	@${REINPLACE_CMD} 's,gsm/gsm\.h,gsm.h,' \
 		${WRKSRC}/configure ${WRKSRC}/src/audiofilters/gsm.c
+
+pre-build:
+# Transform file to C array (similar to xxd -i from editors/vim)
+.for i in yuv2rgb.fs yuv2rgb.vs
+	(cd ${WRKSRC}/src && { \
+		${ECHO_CMD} 'unsigned char ${i:S/./_/}[] = {' && \
+		/usr/bin/hexdump -v -e '" " 12/1 " 0x%02x," "\n" \
+		"  0x00 };\nunsigned int ${i:S/./_/}_len = %_Ad;"' ${i} | \
+		${SED} 's/ 0x  ,//g' ; } > ${i}.h)
+.endfor
 
 .include <bsd.port.mk>
