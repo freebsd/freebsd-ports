@@ -4438,7 +4438,6 @@
     SUBDIR += rubygem-r18n-core
     SUBDIR += rubygem-racc
     SUBDIR += rubygem-rack-raw-upload
-    SUBDIR += rubygem-railsless-deploy
     SUBDIR += rubygem-rainbow
     SUBDIR += rubygem-rake
     SUBDIR += rubygem-rake-compiler
