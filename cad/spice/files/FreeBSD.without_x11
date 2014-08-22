@@ -1,8 +1,0 @@
-# FreeBSD config exception file (non-x11 version)
-
-INTERFACE_OPTS	= -DWANT_MFB
-LDFLAGS		+= -lm -ltermcap
-SYS_CFLAGS	= -Dbsd
-X_DIR		=
-INCX		=
-LIBX		=

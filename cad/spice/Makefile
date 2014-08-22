@@ -3,12 +3,14 @@
 
 PORTNAME=	spice
 PORTVERSION=	3f5.2
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	cad
 MASTER_SITES=	http://embedded.eecs.berkeley.edu/pubs/downloads/spice/:srcs \
+		http://www-device.eecs.berkeley.edu/~bsim/Files/BSIM3/ftpv330/src/:bsim3 \
 		LOCAL/hrs/${PORTNAME}:docs
-PKGNAMESUFFIX=	${NOX11SUFX}
-DISTFILES=	spice3f5${EXTRACT_SUFX}:srcs cp.ps:docs toc.ps:docs doc.ps:docs
+DISTFILES=	spice3f5${EXTRACT_SUFX}:srcs \
+		BSIM3v330.tar.Z:bsim3 \
+		cp.ps:docs toc.ps:docs doc.ps:docs
 DIST_SUBDIR=	spice
 EXTRACT_ONLY=	spice3f5${EXTRACT_SUFX}
 
@@ -20,8 +22,8 @@ LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
 WRKSRC=		${WRKDIR}/${PORTNAME}3f5
 MAKEFILE=	${FILESDIR}/Makefile
-MAKE_ENV=	WITH_INSTALL_AS_USER=yes
-ALL_TARGET=	build _manpages
+CONFIGURE_ENV=	CONFIGFILE="${WRKSRC}/conf/FreeBSD" \
+		LOCALBASE="${LOCALBASE}"
 
 PORTDOCS=	spice3f3.ps.gz
 PORTEXAMPLES=	bjtnoise.cir bsim1tst.cir bsim2tst.cir diffpair.cir \
@@ -30,27 +32,29 @@ PORTEXAMPLES=	bjtnoise.cir bsim1tst.cir bsim2tst.cir diffpair.cir \
 		process.pro pz2.cir pzt.cir rc.cir rca3040.cir resnoise.cir \
 		rtlinv.cir schmitt.cir simplepz.cir
 
-OPTIONS_DEFINE=	DOCS EXAMPLES X11
+OPTIONS_DEFINE=	DOCS EXAMPLES X11 DEV_BSIM3
 OPTIONS_DEFAULT=DOCS EXAMPLES X11
+
+X11_USE=		XORG=x11,xaw,xext,xmu,xt
+X11_CONFIGURE_ENV=	WITH_X11=yes
+DEV_BSIM3_DESC=		BSIM3v3 MOS Transistor Model Support
+DEV_BSIM3_CONFIGURE_ENV=DEV_BSIM3=yes
 
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MX11}
-USE_XORG=	x11 xaw xext xmu xt
-NOX11SUFX=
-CONFIGFILE=	${FILESDIR}/FreeBSD
-.else
-NOX11SUFX=	-nox11
-CONFIGFILE=	${FILESDIR}/FreeBSD.without_x11
+.if ${PORT_OPTIONS:MDEV_BSIM3}
+post-extract:
+	@${MKDIR} ${WRKSRC}/src/lib/dev/bsim3
+	${TAR} -xf ${DISTDIR}/${DIST_SUBDIR}/BSIM3v330.tar.Z \
+	    -C ${WRKSRC}/src/lib/dev/bsim3
 .endif
 
 do-configure:
-	(${CAT} ${CONFIGFILE};			\
-	 ${ECHO_CMD} "CC=	${CC}";		\
-	 ${ECHO_CMD} "MAKE=	${MAKE}";	\
-	 ${ECHO_CMD} "CC_OPT+=	${CFLAGS}";	\
-	 ${ECHO_CMD} "LOCALBASE=${LOCALBASE}";	\
-	) > ${WRKSRC}/conf/FreeBSD
+	@${SETENV} ${CONFIGURE_ENV} ${MAKE} -f ${MAKEFILE} configure
+	@(${ECHO_CMD} "CC=	${CC}";		\
+	  ${ECHO_CMD} "MAKE=	${MAKE}";	\
+	  ${ECHO_CMD} "CC_OPT=	${CFLAGS}";	\
+	) >> ${WRKSRC}/conf/FreeBSD
 
 post-install:
 .if ${PORT_OPTIONS:MDOCS}
