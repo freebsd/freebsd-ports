@@ -540,7 +540,6 @@
     SUBDIR += percona56-client
     SUBDIR += percona56-server
     SUBDIR += pg_activity
-    SUBDIR += pg_filedump
     SUBDIR += pg_reorg
     SUBDIR += pg_rman
     SUBDIR += pg_statsinfo

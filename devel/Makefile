@@ -4637,7 +4637,6 @@
     SUBDIR += svn_load_dirs
     SUBDIR += svndelta
     SUBDIR += svnkit
-    SUBDIR += svnmerge
     SUBDIR += svntrac
     SUBDIR += swank-clojure
     SUBDIR += swig13

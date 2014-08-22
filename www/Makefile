@@ -10,7 +10,6 @@
     SUBDIR += R-cran-scrapeR
     SUBDIR += R-cran-shiny
     SUBDIR += WebMagick
-    SUBDIR += abyssws
     SUBDIR += ach
     SUBDIR += adzap
     SUBDIR += amphetadesk
@@ -125,7 +124,6 @@
     SUBDIR += dhttpd
     SUBDIR += diamanda
     SUBDIR += dillo2
-    SUBDIR += docebo
     SUBDIR += dojo
     SUBDIR += dojo-shrinksafe
     SUBDIR += dokeos
@@ -1729,7 +1727,6 @@
     SUBDIR += redmine-basecamp
     SUBDIR += redmine-http-auth
     SUBDIR += redmine-sidebar_hide
-    SUBDIR += rejik
     SUBDIR += rekonq
     SUBDIR += reportmagic
     SUBDIR += repos-style

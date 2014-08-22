@@ -116,7 +116,6 @@
     SUBDIR += kover
     SUBDIR += kpdftool
     SUBDIR += latex
-    SUBDIR += latex-aa
     SUBDIR += latex-acm
     SUBDIR += latex-auto-greek
     SUBDIR += latex-ltablex
