@@ -6476,3 +6476,4 @@ databases/db43|databases/db48|2014-08-15|Superseded by databases/db48
 databases/db44|databases/db48|2014-08-15|Superseded by databases/db48
 databases/db46|databases/db48|2014-08-15|Superseded by databases/db48
 databases/db47|databases/db48|2014-08-15|Superseded by databases/db48
+print/tex-omegaware-old||2014-08-22|Deprecated in favor of print/tex-aleph
