@@ -13,7 +13,7 @@ COMMENT=	Simple, extensible literate-programming tool
 LICENSE=	noweb
 LICENSE_NAME=	noweb
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT
-LICENSE_PERMS=	auto-accept		# no restrictions
+LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 BUILD_DEPENDS=	icont:${PORTSDIR}/lang/icon
 RUN_DEPENDS=	iconx:${PORTSDIR}/lang/icon
