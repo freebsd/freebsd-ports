@@ -1,5 +1,7 @@
 SHA256 (spice/spice3f5.tar.gz) = cac11fe2a761241e6b6c9eaa31b938c7ffa76aeaecac09809609d3a4125cd269
 SIZE (spice/spice3f5.tar.gz) = 1226185
+SHA256 (spice/BSIM3v330.tar.Z) = 3d8d1739c5fb7f1e56af70e5dc05a6f9014d0954a4f3c1bcf778a494ae0087b2
+SIZE (spice/BSIM3v330.tar.Z) = 113719
 SHA256 (spice/cp.ps) = 3bab6c3487def4ce2e817bf7ef3c1a7d199ea8e790da3a786f936872b35d0920
 SIZE (spice/cp.ps) = 10297
 SHA256 (spice/toc.ps) = 22228246f98f38e39a22911251fa52782ca6a2a7fb273fd78cf3da833d1f52e8

@@ -1,5 +1,0 @@
-# FreeBSD config exception file
-
-INTERFACE_OPTS	= -DWANT_MFB -DWANT_X11
-LDFLAGS		+= -L${LOCALBASE}/lib -lm -ltermcap
-SYS_CFLAGS	= -Dbsd
