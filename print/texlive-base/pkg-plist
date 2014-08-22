@@ -1,9 +1,12 @@
 bin/a2ping
+bin/a5toa4
+bin/adhocfilelist
 bin/afm2afm
 bin/afm2pl
 bin/allcm
 bin/allec
 bin/allneeded
+bin/arara
 bin/arlatex
 bin/authorindex
 bin/autoinst
@@ -32,17 +35,19 @@ bin/checkcites
 bin/chktex
 bin/chkweb
 bin/context
+bin/contextjit
 bin/convbkmk
 bin/ctanify
 bin/ctanupload
-bin/ctxtools
 bin/de-macro
+bin/depythontex
 bin/detex
 bin/devnag
 bin/deweb
 bin/disdvi
 bin/dosepsbin
 bin/dt2dv
+bin/dtxgen
 bin/dv2dt
 bin/dvi2fax
 bin/dvi2tty
@@ -89,19 +94,34 @@ bin/httexi
 bin/htxelatex
 bin/htxetex
 bin/installfont-tl
+bin/jamo-normalize
+bin/kanji-config-updmap
+bin/kanji-config-updmap-sys
+bin/kanji-fontmap-creator
+bin/komkindex
 bin/kpsepath
 bin/kpsetool
 bin/kpsewhere
 bin/kpsexpand
 bin/lacheck
+bin/latex-git-log
 bin/latex2man
 bin/latexdiff
 bin/latexdiff-vc
 bin/latexfileversion
+bin/latexindent
 bin/latexmk
+bin/latexpand
 bin/latexrevise
+bin/lily-glyph-commands
+bin/lily-image-commands
+bin/lily-rebuild-pdfs
 bin/listbib
 bin/listings-ext.sh
+bin/ltxfileinfo
+bin/ltximg
+bin/lua2dox_filter
+bin/luaotfload-tool
 bin/luatools
 bin/m-tx
 bin/mag
@@ -117,12 +137,15 @@ bin/mkgrkindex
 bin/mkindex
 bin/mkjobtexmf
 bin/mkluatexfontdb
+bin/mkpic
 bin/mkt1font
 bin/mktexfmt
 bin/mmafm
 bin/mmpfb
 bin/mptopdf
 bin/mtxrun
+bin/mtxrunjit
+bin/multibibliography
 bin/musixflx
 bin/musixtex
 bin/ot2kpx
@@ -147,12 +170,14 @@ bin/pdfopen
 bin/pdfpun
 bin/pedigree
 bin/perltex
+bin/pfarrei
 bin/pfb2pfa
 bin/pk2bm
 bin/pkfix
 bin/pkfix-helper
 bin/pmx2pdf
 bin/pmxab
+bin/pmxchords
 bin/prepmx
 bin/ps2eps
 bin/ps2frag
@@ -160,11 +185,13 @@ bin/ps2pk
 bin/ps4pdf
 bin/pslatex
 bin/pst2pdf
-bin/pstopdf
+bin/ptex2pdf
 bin/purifyeps
+bin/pythontex
 bin/repstopdf
 bin/rpdfcrop
 bin/rubibtex
+bin/rubikrotation
 bin/rumakeindex
 bin/rungs
 bin/scor2prt
@@ -192,6 +219,7 @@ bin/texdirflatten
 bin/texdoc
 bin/texdoctk
 bin/texexec
+bin/texfot
 bin/texlinks
 bin/texliveonfly
 bin/texloganalyser
@@ -199,6 +227,7 @@ bin/texmfstart
 bin/thumbpdf
 bin/tlmgr
 bin/tpic2pdftex
+bin/ttf2kotexfont
 bin/ttf2pk
 bin/ttf2tfm
 bin/ttfdump
@@ -206,14 +235,12 @@ bin/ttftotype42
 bin/typeoutfileinfo
 bin/ulqda
 bin/updmap
-bin/updmap-setup-kanji
 bin/updmap-sys
 bin/urlbst
 bin/vlna
 bin/vpe
 bin/vpl2ovp
 bin/vpl2vpl
-bin/xdvipdfmx
 man/man1/afm2pl.1.gz
 man/man1/allcm.1.gz
 man/man1/allec.1.gz
@@ -226,8 +253,6 @@ man/man1/cefsconv.1.gz
 man/man1/cfftot1.1.gz
 man/man1/chktex.1.gz
 man/man1/chkweb.1.gz
-man/man1/context.1.gz
-man/man1/ctxtools.1.gz
 man/man1/detex.1.gz
 man/man1/deweb.1.gz
 man/man1/disdvi.1.gz
@@ -263,7 +288,6 @@ man/man1/kpsetool.1.gz
 man/man1/kpsewhere.1.gz
 man/man1/kpsexpand.1.gz
 man/man1/lacheck.1.gz
-man/man1/m-tx.1.gz
 man/man1/mag.1.gz
 man/man1/makeindex.1.gz
 man/man1/mendex.1.gz
@@ -271,21 +295,18 @@ man/man1/mkindex.1.gz
 man/man1/mktexfmt.1.gz
 man/man1/mmafm.1.gz
 man/man1/mmpfb.1.gz
-man/man1/mptopdf.1.gz
 man/man1/otfinfo.1.gz
 man/man1/otftotfm.1.gz
 man/man1/pdfclose.1.gz
 man/man1/pdfopen.1.gz
 man/man1/pfb2pfa.1.gz
 man/man1/pk2bm.1.gz
-man/man1/pmx2pdf.1.gz
 man/man1/pmxab.1.gz
 man/man1/prepmx.1.gz
 man/man1/ps2eps.1.gz
 man/man1/ps2frag.1.gz
 man/man1/ps2pk.1.gz
 man/man1/pslatex.1.gz
-man/man1/pstopdf.1.gz
 man/man1/rubibtex.1.gz
 man/man1/rumakeindex.1.gz
 man/man1/scor2prt.1.gz
@@ -298,10 +319,7 @@ man/man1/t1testpage.1.gz
 man/man1/texconfig-sys.1.gz
 man/man1/texconfig.1.gz
 man/man1/texdoctk.1.gz
-man/man1/texexec.1.gz
 man/man1/texlinks.1.gz
-man/man1/texmfstart.1.gz
-man/man1/thumbpdf.1.gz
 man/man1/tpic2pdftex.1.gz
 man/man1/ttf2pk.1.gz
 man/man1/ttf2tfm.1.gz
@@ -312,9 +330,20 @@ man/man1/updmap.1.gz
 man/man1/vlna.1.gz
 man/man5/fmtutil.cnf.5.gz
 man/man5/updmap.cfg.5.gz
+%%TEXMFDISTDIR%%/bibtex/csf/base/88591lat.csf
+%%TEXMFDISTDIR%%/bibtex/csf/base/88591sca.csf
+%%TEXMFDISTDIR%%/bibtex/csf/base/ascii.csf
+%%TEXMFDISTDIR%%/bibtex/csf/base/cp437lat.csf
+%%TEXMFDISTDIR%%/bibtex/csf/base/cp850lat.csf
+%%TEXMFDISTDIR%%/bibtex/csf/base/cp850sca.csf
+%%TEXMFDISTDIR%%/bibtex/csf/base/cp866rus.csf
+%%TEXMFDISTDIR%%/bibtex/csf/base/csfile.txt
+%%TEXMFDISTDIR%%/scripts/a2ping/a2ping.pl
 %%TEXMFDISTDIR%%/scripts/accfonts/mkt1font
 %%TEXMFDISTDIR%%/scripts/accfonts/vpl2ovp
 %%TEXMFDISTDIR%%/scripts/accfonts/vpl2vpl
+%%TEXMFDISTDIR%%/scripts/adhocfilelist/adhocfilelist.sh
+%%TEXMFDISTDIR%%/scripts/arara/arara.sh
 %%TEXMFDISTDIR%%/scripts/authorindex/authorindex
 %%TEXMFDISTDIR%%/scripts/bibexport/bibexport.sh
 %%TEXMFDISTDIR%%/scripts/bundledoc/arlatex
@@ -322,13 +351,22 @@ man/man5/updmap.cfg.5.gz
 %%TEXMFDISTDIR%%/scripts/cachepic/cachepic.tlu
 %%TEXMFDISTDIR%%/scripts/checkcites/checkcites.lua
 %%TEXMFDISTDIR%%/scripts/context/perl/mptopdf.pl
+%%TEXMFDISTDIR%%/scripts/context/stubs/unix/context
+%%TEXMFDISTDIR%%/scripts/context/stubs/unix/contextjit
+%%TEXMFDISTDIR%%/scripts/context/stubs/unix/luatools
+%%TEXMFDISTDIR%%/scripts/context/stubs/unix/mtxrun
+%%TEXMFDISTDIR%%/scripts/context/stubs/unix/mtxrunjit
+%%TEXMFDISTDIR%%/scripts/context/stubs/unix/texexec
+%%TEXMFDISTDIR%%/scripts/context/stubs/unix/texmfstart
+%%TEXMFDISTDIR%%/scripts/convbkmk/convbkmk.rb
 %%TEXMFDISTDIR%%/scripts/ctanify/ctanify
 %%TEXMFDISTDIR%%/scripts/ctanupload/ctanupload.pl
 %%TEXMFDISTDIR%%/scripts/de-macro/de-macro
 %%TEXMFDISTDIR%%/scripts/dosepsbin/dosepsbin.pl
+%%TEXMFDISTDIR%%/scripts/dtxgen/dtxgen
 %%TEXMFDISTDIR%%/scripts/dviasm/dviasm.py
 %%TEXMFDISTDIR%%/scripts/ebong/ebong.py
-%%TEXMFDISTDIR%%/scripts/epspdf/epspdf.rb
+%%TEXMFDISTDIR%%/scripts/epspdf/epspdf.tlu
 %%TEXMFDISTDIR%%/scripts/epspdf/epspdftk.tcl
 %%TEXMFDISTDIR%%/scripts/epstopdf/epstopdf.pl
 %%TEXMFDISTDIR%%/scripts/exceltex/exceltex
@@ -340,22 +378,38 @@ man/man5/updmap.cfg.5.gz
 %%TEXMFDISTDIR%%/scripts/fragmaster/fragmaster.pl
 %%TEXMFDISTDIR%%/scripts/glossaries/makeglossaries
 %%TEXMFDISTDIR%%/scripts/installfont/installfont-tl
-%%TEXMFDISTDIR%%/scripts/jfontmaps/updmap-setup-kanji.pl
+%%TEXMFDISTDIR%%/scripts/jfontmaps/kanji-config-updmap-sys.sh
+%%TEXMFDISTDIR%%/scripts/jfontmaps/kanji-config-updmap.pl
+%%TEXMFDISTDIR%%/scripts/jfontmaps/kanji-fontmap-creator.pl
+%%TEXMFDISTDIR%%/scripts/kotex-utils/jamo-normalize.pl
+%%TEXMFDISTDIR%%/scripts/kotex-utils/komkindex.pl
+%%TEXMFDISTDIR%%/scripts/kotex-utils/ttf2kotexfont.pl
+%%TEXMFDISTDIR%%/scripts/latex-git-log/latex-git-log
 %%TEXMFDISTDIR%%/scripts/latex2man/latex2man
 %%TEXMFDISTDIR%%/scripts/latexdiff/latexdiff-vc.pl
 %%TEXMFDISTDIR%%/scripts/latexdiff/latexdiff.pl
 %%TEXMFDISTDIR%%/scripts/latexdiff/latexrevise.pl
 %%TEXMFDISTDIR%%/scripts/latexfileversion/latexfileversion
+%%TEXMFDISTDIR%%/scripts/latexindent/latexindent.pl
 %%TEXMFDISTDIR%%/scripts/latexmk/latexmk.pl
+%%TEXMFDISTDIR%%/scripts/latexpand/latexpand
+%%TEXMFDISTDIR%%/scripts/lilyglyphs/lily-glyph-commands.py
+%%TEXMFDISTDIR%%/scripts/lilyglyphs/lily-image-commands.py
+%%TEXMFDISTDIR%%/scripts/lilyglyphs/lily-rebuild-pdfs.py
 %%TEXMFDISTDIR%%/scripts/listbib/listbib
 %%TEXMFDISTDIR%%/scripts/listings-ext/listings-ext.sh
-%%TEXMFDISTDIR%%/scripts/luaotfload/mkluatexfontdb.lua
+%%TEXMFDISTDIR%%/scripts/ltxfileinfo/ltxfileinfo
+%%TEXMFDISTDIR%%/scripts/ltximg/ltximg.pl
+%%TEXMFDISTDIR%%/scripts/lua2dox/lua2dox_filter
+%%TEXMFDISTDIR%%/scripts/luaotfload/luaotfload-tool.lua
 %%TEXMFDISTDIR%%/scripts/m-tx/m-tx.lua
 %%TEXMFDISTDIR%%/scripts/match_parens/match_parens
 %%TEXMFDISTDIR%%/scripts/mathspic/mathspic.pl
 %%TEXMFDISTDIR%%/scripts/mf2pt1/mf2pt1.pl
 %%TEXMFDISTDIR%%/scripts/mkgrkindex/mkgrkindex
 %%TEXMFDISTDIR%%/scripts/mkjobtexmf/mkjobtexmf.pl
+%%TEXMFDISTDIR%%/scripts/mkpic/mkpic
+%%TEXMFDISTDIR%%/scripts/multibibliography/multibibliography.pl
 %%TEXMFDISTDIR%%/scripts/musixtex/musixflx.lua
 %%TEXMFDISTDIR%%/scripts/musixtex/musixtex.lua
 %%TEXMFDISTDIR%%/scripts/oberdiek/pdfatfi.pl
@@ -375,13 +429,22 @@ man/man5/updmap.cfg.5.gz
 %%TEXMFDISTDIR%%/scripts/pdfjam/pdfpun
 %%TEXMFDISTDIR%%/scripts/pedigree-perl/pedigree.pl
 %%TEXMFDISTDIR%%/scripts/perltex/perltex.pl
+%%TEXMFDISTDIR%%/scripts/pfarrei/a5toa4.tlu
+%%TEXMFDISTDIR%%/scripts/pfarrei/pfarrei.tlu
 %%TEXMFDISTDIR%%/scripts/pkfix-helper/pkfix-helper
 %%TEXMFDISTDIR%%/scripts/pkfix/pkfix.pl
 %%TEXMFDISTDIR%%/scripts/pmx/pmx2pdf.lua
+%%TEXMFDISTDIR%%/scripts/pmxchords/pmxchords.lua
+%%TEXMFDISTDIR%%/scripts/ps2eps/ps2eps.pl
 %%TEXMFDISTDIR%%/scripts/pst-pdf/ps4pdf
-%%TEXMFDISTDIR%%/scripts/pst2pdf/pst2pdf
+%%TEXMFDISTDIR%%/scripts/pst2pdf/pst2pdf.pl
+%%TEXMFDISTDIR%%/scripts/ptex2pdf/ptex2pdf.lua
 %%TEXMFDISTDIR%%/scripts/purifyeps/purifyeps
-%%TEXMFDISTDIR%%/scripts/splitindex/perl/splitindex.pl
+%%TEXMFDISTDIR%%/scripts/pythontex/depythontex.py
+%%TEXMFDISTDIR%%/scripts/pythontex/pythontex.py
+%%TEXMFDISTDIR%%/scripts/rubik/rubikrotation.pl
+%%TEXMFDISTDIR%%/scripts/simpdftex/simpdftex
+%%TEXMFDISTDIR%%/scripts/splitindex/splitindex.pl
 %%TEXMFDISTDIR%%/scripts/sty2dtx/sty2dtx.pl
 %%TEXMFDISTDIR%%/scripts/svn-multi/svn-multi.pl
 %%TEXMFDISTDIR%%/scripts/tex4ht/ht.sh
@@ -397,102 +460,141 @@ man/man5/updmap.cfg.5.gz
 %%TEXMFDISTDIR%%/scripts/texdef/texdef.pl
 %%TEXMFDISTDIR%%/scripts/texdiff/texdiff
 %%TEXMFDISTDIR%%/scripts/texdirflatten/texdirflatten
+%%TEXMFDISTDIR%%/scripts/texdoc/texdoc.tlu
+%%TEXMFDISTDIR%%/scripts/texdoctk/texdoctk.pl
+%%TEXMFDISTDIR%%/scripts/texfot/texfot.pl
+%%TEXMFDISTDIR%%/scripts/texlive/allcm.sh
+%%TEXMFDISTDIR%%/scripts/texlive/allneeded.sh
+%%TEXMFDISTDIR%%/scripts/texlive/dvi2fax.sh
+%%TEXMFDISTDIR%%/scripts/texlive/dvired.sh
+%%TEXMFDISTDIR%%/scripts/texlive/e2pall.pl
+%%TEXMFDISTDIR%%/scripts/texlive/fmtutil-sys.sh
+%%TEXMFDISTDIR%%/scripts/texlive/fmtutil.sh
+%%TEXMFDISTDIR%%/scripts/texlive/fontinst.sh
+%%TEXMFDISTDIR%%/scripts/texlive/kpsetool.sh
+%%TEXMFDISTDIR%%/scripts/texlive/kpsewhere.sh
+%%TEXMFDISTDIR%%/scripts/texlive/ps2frag.sh
+%%TEXMFDISTDIR%%/scripts/texlive/pslatex.sh
+%%TEXMFDISTDIR%%/scripts/texlive/rubibtex.sh
+%%TEXMFDISTDIR%%/scripts/texlive/rumakeindex.sh
+%%TEXMFDISTDIR%%/scripts/texlive/rungs.tlu
+%%TEXMFDISTDIR%%/scripts/texlive/texconfig-dialog.sh
+%%TEXMFDISTDIR%%/scripts/texlive/texconfig-sys.sh
+%%TEXMFDISTDIR%%/scripts/texlive/texconfig.sh
+%%TEXMFDISTDIR%%/scripts/texlive/texlinks.sh
+%%TEXMFDISTDIR%%/scripts/texlive/tlmgr.pl
+%%TEXMFDISTDIR%%/scripts/texlive/updmap-sys.sh
+%%TEXMFDISTDIR%%/scripts/texlive/updmap.pl
 %%TEXMFDISTDIR%%/scripts/texliveonfly/texliveonfly.py
 %%TEXMFDISTDIR%%/scripts/texloganalyser/texloganalyser
 %%TEXMFDISTDIR%%/scripts/thumbpdf/thumbpdf.pl
 %%TEXMFDISTDIR%%/scripts/typeoutfileinfo/typeoutfileinfo.sh
 %%TEXMFDISTDIR%%/scripts/ulqda/ulqda.pl
-%%TEXMFDISTDIR%%/scripts/uptex/convbkmk.rb
 %%TEXMFDISTDIR%%/scripts/urlbst/urlbst
 %%TEXMFDISTDIR%%/scripts/vpe/vpe.pl
-%%TEXMFDIR%%/scripts/a2ping/a2ping.pl
-%%TEXMFDIR%%/scripts/ps2eps/ps2eps.pl
-%%TEXMFDIR%%/scripts/simpdftex/simpdftex
-%%TEXMFDIR%%/scripts/tetex/e2pall.pl
-%%TEXMFDIR%%/scripts/tetex/texdoctk.pl
-%%TEXMFDIR%%/scripts/tetex/updmap-sys.sh
-%%TEXMFDIR%%/scripts/tetex/updmap.pl
-%%TEXMFDIR%%/scripts/texdoc/texdoc.tlu
-%%TEXMFDIR%%/scripts/texlive/rungs.tlu
-%%TEXMFDIR%%/scripts/texlive/tlmgr.pl
-%%TEXMFDIR%%/web2c/fmtutil.cnf
-%%TEXMFCONFIGDIR%%/web2c/.keep_me
+%%TEXMFDISTDIR%%/web2c/fmtutil.cnf
 %%FMTUTIL_CNF%%
+%%TEXMFCONFIGDIR%%/.keep_me
+%%TEXMFCONFIGDIR%%/web2c/.keep_me
+%%TEXMFVARDIR%%/.keep_me
+%%TEXMFLOCALDIR%%/.keep_me
+%%TEXMFDIR%%/.keep_me
+%%TEXMFDISTDIR%%/.keep_me
 @dirrmtry %%TEXMFCONFIGDIR%%/web2c
-@dirrmtry %%TEXMFCONFIGDIR%%
-@dirrmtry %%TEXMFDISTDIR%%/scripts/accfonts
-@dirrmtry %%TEXMFDISTDIR%%/scripts/authorindex
-@dirrmtry %%TEXMFDISTDIR%%/scripts/bibexport
-@dirrmtry %%TEXMFDISTDIR%%/scripts/bundledoc
-@dirrmtry %%TEXMFDISTDIR%%/scripts/ctanify
-@dirrmtry %%TEXMFDISTDIR%%/scripts/ctanupload
-@dirrmtry %%TEXMFDISTDIR%%/scripts/de-macro
-@dirrmtry %%TEXMFDISTDIR%%/scripts/dosepsbin
-@dirrmtry %%TEXMFDISTDIR%%/scripts/dviasm
-@dirrmtry %%TEXMFDISTDIR%%/scripts/ebong
-@dirrmtry %%TEXMFDISTDIR%%/scripts/epstopdf
-@dirrmtry %%TEXMFDISTDIR%%/scripts/exceltex
-@dirrmtry %%TEXMFDISTDIR%%/scripts/fig4latex
-@dirrmtry %%TEXMFDISTDIR%%/scripts/findhyph
-@dirrmtry %%TEXMFDISTDIR%%/scripts/fontools
-@dirrmtry %%TEXMFDISTDIR%%/scripts/fragmaster
-@dirrmtry %%TEXMFDISTDIR%%/scripts/installfont
-@dirrmtry %%TEXMFDISTDIR%%/scripts/jfontmaps
-@dirrmtry %%TEXMFDISTDIR%%/scripts/latex2man
-@dirrmtry %%TEXMFDISTDIR%%/scripts/latexdiff
-@dirrmtry %%TEXMFDISTDIR%%/scripts/latexfileversion
-@dirrmtry %%TEXMFDISTDIR%%/scripts/latexmk
-@dirrmtry %%TEXMFDISTDIR%%/scripts/listbib
-@dirrmtry %%TEXMFDISTDIR%%/scripts/listings-ext
-@dirrmtry %%TEXMFDISTDIR%%/scripts/luaotfload
-@dirrmtry %%TEXMFDISTDIR%%/scripts/match_parens
-@dirrmtry %%TEXMFDISTDIR%%/scripts/mathspic
-@dirrmtry %%TEXMFDISTDIR%%/scripts/mf2pt1
-@dirrmtry %%TEXMFDISTDIR%%/scripts/mkgrkindex
-@dirrmtry %%TEXMFDISTDIR%%/scripts/mkjobtexmf
-@dirrmtry %%TEXMFDISTDIR%%/scripts/pdfcrop
-@dirrmtry %%TEXMFDISTDIR%%/scripts/pdfjam
-@dirrmtry %%TEXMFDISTDIR%%/scripts/perltex
-@dirrmtry %%TEXMFDISTDIR%%/scripts/pkfix
-@dirrmtry %%TEXMFDISTDIR%%/scripts/pkfix-helper
-@dirrmtry %%TEXMFDISTDIR%%/scripts/pst2pdf
-@dirrmtry %%TEXMFDISTDIR%%/scripts/purifyeps
-@dirrmtry %%TEXMFDISTDIR%%/scripts/splitindex/perl
-@dirrmtry %%TEXMFDISTDIR%%/scripts/splitindex
-@dirrmtry %%TEXMFDISTDIR%%/scripts/sty2dtx
-@dirrmtry %%TEXMFDISTDIR%%/scripts/svn-multi
-@dirrmtry %%TEXMFDISTDIR%%/scripts/tex4ht
-@dirrmtry %%TEXMFDISTDIR%%/scripts/texcount
-@dirrmtry %%TEXMFDISTDIR%%/scripts/texdef
-@dirrmtry %%TEXMFDISTDIR%%/scripts/texdiff
-@dirrmtry %%TEXMFDISTDIR%%/scripts/texdirflatten
-@dirrmtry %%TEXMFDISTDIR%%/scripts/texliveonfly
-@dirrmtry %%TEXMFDISTDIR%%/scripts/texloganalyser
-@dirrmtry %%TEXMFDISTDIR%%/scripts/thumbpdf
-@dirrmtry %%TEXMFDISTDIR%%/scripts/typeoutfileinfo
-@dirrmtry %%TEXMFDISTDIR%%/scripts/ulqda
-@dirrmtry %%TEXMFDISTDIR%%/scripts/uptex
-@dirrmtry %%TEXMFDISTDIR%%/scripts/urlbst
 @dirrmtry %%TEXMFDISTDIR%%/scripts/vpe
-@dirrmtry %%TEXMFDISTDIR%%/scripts/m-tx
-@dirrmtry %%TEXMFDISTDIR%%/scripts/pmx
+@dirrmtry %%TEXMFDISTDIR%%/scripts/urlbst
+@dirrmtry %%TEXMFDISTDIR%%/scripts/ulqda
+@dirrmtry %%TEXMFDISTDIR%%/scripts/typeoutfileinfo
+@dirrmtry %%TEXMFDISTDIR%%/scripts/thumbpdf
+@dirrmtry %%TEXMFDISTDIR%%/scripts/texloganalyser
+@dirrmtry %%TEXMFDISTDIR%%/scripts/texliveonfly
+@dirrmtry %%TEXMFDISTDIR%%/scripts/texlive
+@dirrmtry %%TEXMFDISTDIR%%/scripts/texfot
+@dirrmtry %%TEXMFDISTDIR%%/scripts/texdoctk
+@dirrmtry %%TEXMFDISTDIR%%/scripts/texdoc
+@dirrmtry %%TEXMFDISTDIR%%/scripts/texdirflatten
+@dirrmtry %%TEXMFDISTDIR%%/scripts/texdiff
+@dirrmtry %%TEXMFDISTDIR%%/scripts/texdef
+@dirrmtry %%TEXMFDISTDIR%%/scripts/texcount
+@dirrmtry %%TEXMFDISTDIR%%/scripts/tex4ht
+@dirrmtry %%TEXMFDISTDIR%%/scripts/svn-multi
+@dirrmtry %%TEXMFDISTDIR%%/scripts/sty2dtx
+@dirrmtry %%TEXMFDISTDIR%%/scripts/splitindex
+@dirrmtry %%TEXMFDISTDIR%%/scripts/simpdftex
+@dirrmtry %%TEXMFDISTDIR%%/scripts/rubik
+@dirrmtry %%TEXMFDISTDIR%%/scripts/pythontex
+@dirrmtry %%TEXMFDISTDIR%%/scripts/purifyeps
+@dirrmtry %%TEXMFDISTDIR%%/scripts/ptex2pdf
+@dirrmtry %%TEXMFDISTDIR%%/scripts/pst2pdf
 @dirrmtry %%TEXMFDISTDIR%%/scripts/pst-pdf
-@dirrmtry %%TEXMFDISTDIR%%/scripts/cachepic
-@dirrmtry %%TEXMFDISTDIR%%/scripts/checkcites
+@dirrmtry %%TEXMFDISTDIR%%/scripts/ps2eps
+@dirrmtry %%TEXMFDISTDIR%%/scripts/pmxchords
+@dirrmtry %%TEXMFDISTDIR%%/scripts/pmx
+@dirrmtry %%TEXMFDISTDIR%%/scripts/pkfix-helper
+@dirrmtry %%TEXMFDISTDIR%%/scripts/pkfix
+@dirrmtry %%TEXMFDISTDIR%%/scripts/pfarrei
+@dirrmtry %%TEXMFDISTDIR%%/scripts/perltex
+@dirrmtry %%TEXMFDISTDIR%%/scripts/pedigree-perl
+@dirrmtry %%TEXMFDISTDIR%%/scripts/pdfjam
+@dirrmtry %%TEXMFDISTDIR%%/scripts/pdfcrop
+@dirrmtry %%TEXMFDISTDIR%%/scripts/pax
+@dirrmtry %%TEXMFDISTDIR%%/scripts/oberdiek
+@dirrmtry %%TEXMFDISTDIR%%/scripts/musixtex
+@dirrmtry %%TEXMFDISTDIR%%/scripts/multibibliography
+@dirrmtry %%TEXMFDISTDIR%%/scripts/mkpic
+@dirrmtry %%TEXMFDISTDIR%%/scripts/mkjobtexmf
+@dirrmtry %%TEXMFDISTDIR%%/scripts/mkgrkindex
+@dirrmtry %%TEXMFDISTDIR%%/scripts/mf2pt1
+@dirrmtry %%TEXMFDISTDIR%%/scripts/mathspic
+@dirrmtry %%TEXMFDISTDIR%%/scripts/match_parens
+@dirrmtry %%TEXMFDISTDIR%%/scripts/m-tx
+@dirrmtry %%TEXMFDISTDIR%%/scripts/luaotfload
+@dirrmtry %%TEXMFDISTDIR%%/scripts/lua2dox
+@dirrmtry %%TEXMFDISTDIR%%/scripts/ltximg
+@dirrmtry %%TEXMFDISTDIR%%/scripts/ltxfileinfo
+@dirrmtry %%TEXMFDISTDIR%%/scripts/listings-ext
+@dirrmtry %%TEXMFDISTDIR%%/scripts/listbib
+@dirrmtry %%TEXMFDISTDIR%%/scripts/lilyglyphs
+@dirrmtry %%TEXMFDISTDIR%%/scripts/latexpand
+@dirrmtry %%TEXMFDISTDIR%%/scripts/latexmk
+@dirrmtry %%TEXMFDISTDIR%%/scripts/latexindent
+@dirrmtry %%TEXMFDISTDIR%%/scripts/latexfileversion
+@dirrmtry %%TEXMFDISTDIR%%/scripts/latexdiff
+@dirrmtry %%TEXMFDISTDIR%%/scripts/latex2man
+@dirrmtry %%TEXMFDISTDIR%%/scripts/latex-git-log
+@dirrmtry %%TEXMFDISTDIR%%/scripts/kotex-utils
+@dirrmtry %%TEXMFDISTDIR%%/scripts/jfontmaps
+@dirrmtry %%TEXMFDISTDIR%%/scripts/installfont
+@dirrmtry %%TEXMFDISTDIR%%/scripts/glossaries
+@dirrmtry %%TEXMFDISTDIR%%/scripts/fragmaster
+@dirrmtry %%TEXMFDISTDIR%%/scripts/fontools
+@dirrmtry %%TEXMFDISTDIR%%/scripts/findhyph
+@dirrmtry %%TEXMFDISTDIR%%/scripts/fig4latex
+@dirrmtry %%TEXMFDISTDIR%%/scripts/exceltex
+@dirrmtry %%TEXMFDISTDIR%%/scripts/epstopdf
+@dirrmtry %%TEXMFDISTDIR%%/scripts/epspdf
+@dirrmtry %%TEXMFDISTDIR%%/scripts/ebong
+@dirrmtry %%TEXMFDISTDIR%%/scripts/dviasm
+@dirrmtry %%TEXMFDISTDIR%%/scripts/dtxgen
+@dirrmtry %%TEXMFDISTDIR%%/scripts/dosepsbin
+@dirrmtry %%TEXMFDISTDIR%%/scripts/de-macro
+@dirrmtry %%TEXMFDISTDIR%%/scripts/ctanupload
+@dirrmtry %%TEXMFDISTDIR%%/scripts/ctanify
+@dirrmtry %%TEXMFDISTDIR%%/scripts/convbkmk
+@dirrmtry %%TEXMFDISTDIR%%/scripts/context/stubs/unix
+@dirrmtry %%TEXMFDISTDIR%%/scripts/context/stubs
 @dirrmtry %%TEXMFDISTDIR%%/scripts/context/perl
 @dirrmtry %%TEXMFDISTDIR%%/scripts/context
-@dirrmtry %%TEXMFDISTDIR%%/scripts/epspdf
-@dirrmtry %%TEXMFDISTDIR%%/scripts/glossaries
-@dirrmtry %%TEXMFDISTDIR%%/scripts/musixtex
-@dirrmtry %%TEXMFDISTDIR%%/scripts/oberdiek
-@dirrmtry %%TEXMFDISTDIR%%/scripts/pax
-@dirrmtry %%TEXMFDISTDIR%%/scripts/pedigree-perl
+@dirrmtry %%TEXMFDISTDIR%%/scripts/checkcites
+@dirrmtry %%TEXMFDISTDIR%%/scripts/cachepic
+@dirrmtry %%TEXMFDISTDIR%%/scripts/bundledoc
+@dirrmtry %%TEXMFDISTDIR%%/scripts/bibexport
+@dirrmtry %%TEXMFDISTDIR%%/scripts/authorindex
+@dirrmtry %%TEXMFDISTDIR%%/scripts/arara
+@dirrmtry %%TEXMFDISTDIR%%/scripts/adhocfilelist
+@dirrmtry %%TEXMFDISTDIR%%/scripts/accfonts
+@dirrmtry %%TEXMFDISTDIR%%/scripts/a2ping
 @dirrmtry %%TEXMFDISTDIR%%/scripts
-@dirrmtry %%TEXMFDISTDIR%%
-@dirrmtry %%TEXMFDIR%%/scripts/a2ping
-@dirrmtry %%TEXMFDIR%%/scripts/ps2eps
-@dirrmtry %%TEXMFDIR%%/scripts/simpdftex
-@dirrmtry %%TEXMFDIR%%/scripts/tetex
-@dirrmtry %%TEXMFDIR%%/scripts/texdoc
-@dirrmtry %%TEXMFDIR%%/scripts/texlive
-@dirrmtry %%TEXMFDIR%%/scripts
+@dirrmtry %%TEXMFDISTDIR%%/bibtex/csf/base
+@dirrmtry %%TEXMFDISTDIR%%/bibtex/csf
+@dirrmtry %%TEXMFDISTDIR%%/bibtex

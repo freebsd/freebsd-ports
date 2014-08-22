@@ -12,6 +12,22 @@ bin/ofm2opl
 bin/opl2ofm
 bin/ovf2ovp
 bin/ovp2ovf
+bin/wofm2opl
+bin/wopl2ofm
+bin/wovf2ovp
+man/man1/aleph.1.gz
+man/man1/lamed.1.gz
+man/man1/mkocp.1.gz
+man/man1/mkofm.1.gz
+man/man1/odvicopy.1.gz
+man/man1/odvitype.1.gz
+man/man1/ofm2opl.1.gz
+man/man1/opl2ofm.1.gz
+man/man1/otangle.1.gz
+man/man1/otp2ocp.1.gz
+man/man1/outocp.1.gz
+man/man1/ovf2ovp.1.gz
+man/man1/ovp2ovf.1.gz
 %%TEXMFDISTDIR%%/tex/plain/config/aleph.ini
 %%TEXMFDISTDIR%%/doc/aleph/base/readme.txt
 %%TEXMFDISTDIR%%/doc/aleph/base/News
@@ -23,19 +39,16 @@ bin/ovp2ovf
 %%TEXMFDISTDIR%%/source/lambda/antomega/antenc.ins
 %%TEXMFDISTDIR%%/source/lambda/oinuit/oinuit.dtx
 %%TEXMFDISTDIR%%/source/lambda/oinuit/oinuit.ins
-%%TEXMFDISTDIR%%/source/lambda/oinuit/oinuit.sty
 %%TEXMFDISTDIR%%/tex/lambda/base/usenglish.bgd
 %%TEXMFDISTDIR%%/tex/lambda/base/UT1omlgc.fd
 %%TEXMFDISTDIR%%/tex/lambda/base/lchcmr.fd
 %%TEXMFDISTDIR%%/tex/lambda/base/greek.bgd
 %%TEXMFDISTDIR%%/tex/lambda/base/ot1uctt.fd
-%%TEXMFDISTDIR%%/tex/lambda/base/litenc.def
 %%TEXMFDISTDIR%%/tex/lambda/base/usenglish.lay
 %%TEXMFDISTDIR%%/tex/lambda/base/omarab.cfg
 %%TEXMFDISTDIR%%/tex/lambda/base/omega.sty
 %%TEXMFDISTDIR%%/tex/lambda/base/inuit.hpn
 %%TEXMFDISTDIR%%/tex/lambda/base/lambda.tex
-%%TEXMFDISTDIR%%/tex/lambda/base/litcmr.fd
 %%TEXMFDISTDIR%%/tex/lambda/base/greek.lay
 %%TEXMFDISTDIR%%/tex/lambda/base/ut1enc.def
 %%TEXMFDISTDIR%%/tex/lambda/base/ot1omlgc.fd
@@ -84,6 +97,8 @@ bin/ovp2ovf
 %%TEXMFDISTDIR%%/tex/lambda/antomega/omega-polish.ldf
 %%TEXMFDISTDIR%%/tex/lambda/antomega/omega-english.ldf
 %%TEXMFDISTDIR%%/tex/lambda/oinuit/oinuit.sty
+%%TEXMFDISTDIR%%/tex/lambda/oinuit/litcmr.fd
+%%TEXMFDISTDIR%%/tex/lambda/oinuit/litenc.def
 @dirrm %%TEXMFDISTDIR%%/tex/lambda/oinuit
 @dirrm %%TEXMFDISTDIR%%/tex/lambda/ocherokee
 @dirrm %%TEXMFDISTDIR%%/tex/lambda/config

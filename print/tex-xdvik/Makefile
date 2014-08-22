@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xdvik
-PORTVERSION=	22.86
-PORTREVISION=	2
+PORTVERSION=	22.87
 CATEGORIES=	print
 MASTER_SITES=	SF/xdvi/${PORTNAME}/${PORTVERSION}
 PKGNAMEPREFIX=	tex-
@@ -16,8 +15,8 @@ LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2 \
 		libpaper.so:${PORTSDIR}/print/libpaper
 
 USES=		iconv gmake motif
-USE_TEX=	texlive web2c kpathsea texmf texhash
-TEXHASHDIRS=	${TEXMFDIR}
+USE_TEX=	web2c kpathsea texmf texhash
+TEXHASHDIRS=	${TEXMFDISTDIR}
 USE_XORG=	ice sm x11 xmu xpm xt
 WRKSRC=		${WRKDIR}/${DISTNAME}/texk/xdvik
 GNU_CONFIGURE=	yes
@@ -39,7 +38,7 @@ CONFIGURE_ENV=	INSTALL_SCRIPT="${INSTALL_SCRIPT}" \
 		INSTALL_DATA="${INSTALL_DATA}" \
 		INSTALL_PROGRAM="${INSTALL_PROGRAM}"
 CFLAGS+=	-I${LOCALBASE}/include -DHAVE_LIBPAPER -g -O0
-PLIST_SUB=	TEXMFDIR=${TEXMFDIR} TEXMFCONFIGDIR=${TEXMFDIR}-config
+PLIST_SUB=	TEXMFDISTDIR=${TEXMFDISTDIR}
 CONFLICTS_INSTALL=	xdvi-[0-9]* xdvi-*-[0-9]* *-xdvi-[0-9]* \
 			xdvik-[0-9]* ja-xdvik-*-[0-9]*
 
@@ -49,9 +48,13 @@ PORTDOCS=	BUGS CHANGES INSTALL README README.CVS README.coding \
 
 OPTIONS_DEFINE=	DOCS
 
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MDOCS}
 post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKDIR}/${DISTNAME} && \
 		${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
+.endif
 
 .include <bsd.port.mk>

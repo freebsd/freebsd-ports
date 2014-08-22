@@ -41,6 +41,7 @@ include/kpathsea/pathsearch.h
 include/kpathsea/proginit.h
 include/kpathsea/progname.h
 include/kpathsea/readable.h
+include/kpathsea/simpletypes.h
 include/kpathsea/str-list.h
 include/kpathsea/str-llist.h
 include/kpathsea/systypes.h
@@ -65,7 +66,7 @@ man/man1/texhash.1.gz
 lib/libkpathsea.a
 lib/libkpathsea.so
 lib/libkpathsea.so.6
-lib/libkpathsea.so.6.1.0
-%%TEXMFDIR%%/web2c/texmf.cnf
-@dirrmtry %%TEXMFDIR%%/web2c
-@dirrmtry %%TEXMFDIR%%
+lib/libkpathsea.so.6.2.0
+%%TEXMFDISTDIR%%/web2c/texmf.cnf
+@dirrmtry %%TEXMFDISTDIR%%/web2c
+@dirrmtry %%TEXMFDISTDIR%%

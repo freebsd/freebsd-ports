@@ -1,14 +1,14 @@
---- Makefile.in.orig	2013-02-27 04:00:57.000000000 +0900
-+++ Makefile.in	2013-02-27 04:34:06.000000000 +0900
-@@ -56,6 +56,7 @@
- 	euptex$(EXEEXT) pdftex$(EXEEXT) ttf2afm$(EXEEXT) \
- 	pdftosrc$(EXEEXT) luatex$(EXEEXT) txt2zlib$(EXEEXT) \
- 	xetex$(EXEEXT) $(am__EXEEXT_6) aleph$(EXEEXT)
+--- Makefile.in.orig	2014-03-17 20:00:59.000000000 +0900
++++ Makefile.in	2014-08-22 06:28:46.000000000 +0900
+@@ -85,6 +85,7 @@
+ 	pdftosrc$(EXEEXT) luatex$(EXEEXT) luajittex$(EXEEXT) \
+ 	txt2zlib$(EXEEXT) xetex$(EXEEXT) $(am__EXEEXT_6) \
+ 	aleph$(EXEEXT)
 +inst_bin_PROGRAMS = xetex$(EXEEXT)
  bin_PROGRAMS = tangle$(EXEEXT) ctangle$(EXEEXT) $(am__EXEEXT_7) \
  	ctie$(EXEEXT) cweave$(EXEEXT) tie$(EXEEXT) $(am__EXEEXT_8) \
  	$(am__EXEEXT_9) $(am__EXEEXT_10) $(am__EXEEXT_11) \
-@@ -1705,7 +1706,7 @@
+@@ -1973,7 +1974,7 @@
  AM_CXXFLAGS = ## $(WARNING_CXXFLAGS)
  AM_OBJCXXFLAGS = ## $(WARNING_OBJCXXFLAGS)
  version = $(WEB2CVERSION)
@@ -17,7 +17,7 @@
  proglib = lib/lib.a
  dist_man_MANS = synctexdir/man1/synctex.1 synctexdir/man5/synctex.5
  nodist_man_MANS = 
-@@ -3908,7 +3909,7 @@
+@@ -4439,7 +4440,7 @@
  	$(AM_V_at)$(RANLIB) libxetex.a
  install-binPROGRAMS: $(bin_PROGRAMS)
  	@$(NORMAL_INSTALL)
@@ -26,7 +26,7 @@
  	if test -n "$$list"; then \
  	  echo " $(MKDIR_P) '$(DESTDIR)$(bindir)'"; \
  	  $(MKDIR_P) "$(DESTDIR)$(bindir)" || exit 1; \
-@@ -3938,7 +3939,7 @@
+@@ -4469,7 +4470,7 @@
  
  uninstall-binPROGRAMS:
  	@$(NORMAL_UNINSTALL)
@@ -35,7 +35,7 @@
  	files=`for p in $$list; do echo "$$p"; done | \
  	  sed -e 'h;s,^.*/,,;s/$(EXEEXT)$$//;$(transform)' \
  	      -e 's/$$/$(EXEEXT)/' \
-@@ -10379,7 +10380,7 @@
+@@ -13649,7 +13650,7 @@
  uninstall: uninstall-recursive
  
  install-am: all-am
@@ -44,7 +44,7 @@
  
  installcheck: installcheck-recursive
  install-strip:
-@@ -10498,7 +10499,6 @@
+@@ -13766,7 +13767,6 @@
  
  install-exec-am: install-binPROGRAMS
  	@$(NORMAL_INSTALL)
