@@ -3,7 +3,7 @@
 
 PORTNAME=	dolphin-emu
 PORTVERSION=	4.0.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	emulators
 MASTER_SITES=	http://contribs.martymac.org/FreeBSD-ports/distfiles/ \
 		LOCAL/martymac
@@ -17,16 +17,15 @@ LIB_DEPENDS=	libexecinfo.so:${PORTSDIR}/devel/libexecinfo \
 		libfreetype.so:${PORTSDIR}/print/freetype2 \
 		liblzo2.so:${PORTSDIR}/archivers/lzo2 \
 		libSoundTouch.so:${PORTSDIR}/audio/soundtouch \
-		libsfml-network.so:${PORTSDIR}/devel/sfml \
 		libpolarssl.so:${PORTSDIR}/security/polarssl
 
 USE_SDL=	sdl
 USE_XORG=	ice xext x11 xrandr xi
 USE_WX=		3.0+
 WX_UNICODE=	yes
-USE_GL=	gl glew glu
+USE_GL=		gl glew glu
 
-USES=		dos2unix cmake iconv openal pkgconfig tar:tgz
+USES=		dos2unix cmake iconv openal pkgconfig tar:tgz compiler:c++11-lib
 DOS2UNIX_REGEX=	.*\.(h|c|cpp)
 
 # Disable ALSA (emulated) and ao (buggy)
