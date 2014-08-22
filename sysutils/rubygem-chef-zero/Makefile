@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	chef-zero
-PORTVERSION=	2.0.2
+PORTVERSION=	2.2
 CATEGORIES=	sysutils
 MASTER_SITES=	RG
 
