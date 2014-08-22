@@ -12,7 +12,7 @@ COMMENT=	Monospace bitmap font well suited for programming and terminal use
 LICENSE=	WTFPL
 LICENSE_NAME=	Do What The Fuck You Want To Public License, Version 2
 LICENSE_FILE=	${WRKSRC}/COPYING-LICENSE
-LICENSE_PERMS=	auto-accept dist-mirror dist-sell pkg-mirror pkg-sell
+LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 FONTDIR=	lib/X11/fonts/${PORTNAME}
 NO_BUILD=	yes

@@ -13,7 +13,7 @@ COMMENT=	Apartment threading wrapper for Perl objects
 LICENSE=	AFL21
 LICENSE_NAME=	Academic Free License version 2.1
 LICENSE_FILE=	${WRKSRC}/License.txt
-LICENSE_PERMS=	auto-accept dist-mirror dist-sell pkg-mirror pkg-sell
+LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 BUILD_DEPENDS=	p5-Class-ISA>=0.32:${PORTSDIR}/devel/p5-Class-ISA \
 		p5-Class-Inspector>=1.08:${PORTSDIR}/devel/p5-Class-Inspector \

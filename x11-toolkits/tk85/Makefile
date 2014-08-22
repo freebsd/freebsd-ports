@@ -16,7 +16,7 @@ COMMENT=	Graphical toolkit for Tcl
 LICENSE=	TclTk
 LICENSE_NAME=	Tcl/Tk License
 LICENSE_FILE=	${WRKSRC}/../license.terms
-LICENSE_PERMS=	auto-accept dist-mirror dist-sell pkg-mirror pkg-sell
+LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 USES+=		tcl:${SHORT_TK_VER}
 USE_XORG=	x11 xft xscrnsaver
