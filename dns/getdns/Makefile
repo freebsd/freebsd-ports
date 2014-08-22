@@ -3,6 +3,7 @@
 
 PORTNAME=	getdns
 PORTVERSION=	0.1.3
+PORTREVISION=	1
 CATEGORIES=	dns ipv6
 MASTER_SITES=	http://getdnsapi.net/dist/ \
     		http://mirrors.rit.edu/zi/
@@ -11,6 +12,7 @@ MAINTAINER=	zi@FreeBSD.org
 COMMENT=	Modern asynchronous DNS API
 
 LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libexpat.so:${PORTSDIR}/textproc/expat2 \
     		libidn.so:${PORTSDIR}/dns/libidn \
