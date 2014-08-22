@@ -11,8 +11,6 @@ DISTNAME=	db-${PORTVERSION:R}
 DIST_SUBDIR=	bdb
 
 MAINTAINER=	mandree@FreeBSD.org
-# I allow all freebsd committer to do changes to this package without
-# my permission.
 COMMENT=	The Berkeley DB package, revision 4.8
 
 DEPRECATED=		Please move to db5 or db6.
