@@ -15,8 +15,8 @@ COMMENT=	Translator library for raster geospatial data formats
 LICENSE=	MIT
 
 OPTIONS_DEFINE=	ARMADILLO CFITSIO CURL ECW EXPAT FREEXL GEOS GEOTIFF GIF GTA \
-		HDF5 ICONV JASPER JPEG KML LIBXML2 MYSQL NETCDF ODBC PCRE \
-		PGSQL PNG PROJ SQLITE TIFF WEBP XERCES
+		HDF5 ICONV JASPER JPEG JSON_C KML LIBXML2 MYSQL NETCDF ODBC \
+		PCRE PGSQL PNG PROJ SQLITE TIFF WEBP XERCES
 OPTIONS_RADIO=	PDF
 OPTIONS_RADIO_PDF=	PODOFO POPPLER
 OPTIONS_DEFAULT=GEOTIFF GIF JASPER JPEG PNG TIFF
@@ -82,6 +82,9 @@ JASPER_LIB_DEPENDS=	libjasper.so:${PORTSDIR}/graphics/jasper
 JPEG_CONFIGURE_OFF=	--with-jpeg=internal
 JPEG_CONFIGURE_ON=	--with-jpeg=${LOCALBASE}
 JPEG_LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg
+JSON_C_CONFIGURE_OFF=	--with-libjson-c=internal
+JSON_C_CONFIGURE_ON=	--with-libjson-c=${LOCALBASE}
+JSON_C_LIB_DEPENDS=	libjson-c.so:${PORTSDIR}/devel/json-c
 KML_CONFIGURE_OFF=	--with-libkml=no
 KML_CONFIGURE_ON=	--with-libkml=${LOCALBASE}
 KML_LIB_DEPENDS=	libkmlbase.so:${PORTSDIR}/science/libkml
@@ -129,8 +132,17 @@ XERCES_CONFIGURE_ON=	--with-xerces=${LOCALBASE}
 XERCES_LIB_DEPENDS=	libxerces-c.so:${PORTSDIR}/textproc/xerces-c3
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|-lpthread|-pthread|g' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|$$(INST_LIB)/pkgconfig|${PREFIX}/libdata/pkgconfig|' ${WRKSRC}/GNUmakefile
+	@${REINPLACE_CMD} -e 's|-lpthread|-pthread|g' ${WRKSRC}/configure
+# patch for json-c 0.12
+	@${REINPLACE_CMD} -e 's|json_tokener_errors\[jstok->err\]|json_tokener_error_desc(jstok->err)|' \
+		${WRKSRC}/frmts/mbtiles/mbtilesdataset.cpp \
+		${WRKSRC}/ogr/ogrsf_frmts/cartodb/ogrcartodbdatasource.cpp \
+		${WRKSRC}/ogr/ogrsf_frmts/couchdb/ogrcouchdbdatasource.cpp \
+		${WRKSRC}/ogr/ogrsf_frmts/geojson/ogresrijsonreader.cpp \
+		${WRKSRC}/ogr/ogrsf_frmts/geojson/ogrgeojsonreader.cpp \
+		${WRKSRC}/ogr/ogrsf_frmts/geojson/ogrtopojsonreader.cpp \
+		${WRKSRC}/ogr/ogrsf_frmts/gme/ogrgmejson.cpp
 
 post-install:
 	${INSTALL_LIB} ${WRKSRC}/libgdal.a ${STAGEDIR}${PREFIX}/lib/
