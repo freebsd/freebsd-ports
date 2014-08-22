@@ -16,7 +16,7 @@ LIB_DEPENDS=	liblcms2.so:${PORTSDIR}/graphics/lcms2 \
 		libtiff.so:${PORTSDIR}/graphics/tiff
 
 USE_LDCONFIG=	yes
-USES=		cmake pkgconfig
+USES=		cmake cpe pkgconfig
 
 PLIST_SUB=	VER=${PORTVERSION:R}
 
