@@ -17,9 +17,6 @@ USE_LDCONFIG=	yes
 
 MAKE_ARGS=	platform=linux-gcc
 
-post-patch:
-	@${REINPLACE_CMD} -e 's|g++|${CXX}|' ${WRKSRC}/SConstruct
-
 do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/include/jsoncpp
 	(cd ${WRKSRC}/include/ && ${COPYTREE_SHARE} json/ ${STAGEDIR}${PREFIX}/include/jsoncpp/)
