@@ -28,7 +28,7 @@ Signed-off-by: Juergen Lock <nox@jelal.kn-bremen.de>
 +                } else {
 +                    abi_ulong maxmem = -0x100c000;
 +                    if (((unsigned long)maxmem) < lvalue)
-+                            lvalue = maxmem;
++                        lvalue = maxmem;
 +                    (*(abi_ulong *)holdp) = lvalue;
 +                }
 +            }
