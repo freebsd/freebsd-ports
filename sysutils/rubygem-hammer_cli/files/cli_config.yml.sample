@@ -1,15 +1,27 @@
+# User interface related settings
 :ui:
+  # Enable interactive queries?
   :interactive: true
+  # Number of records listed per page
   :per_page: 20
+  # Location of shell history file
   :history_file: '~/.hammer/history'
 
 
-# enable/disable color output of logger in Clamp commands
+# Enable/disable color output of logger in Clamp commands
 :watch_plain: false
 
+# Directory where the logs are stored. The default is /var/log/hammer/ and the log file is named hammer.log
 :log_dir: '~/.hammer/log'
+
+# Logging level. One of debug, info, warning, error, fatal
 :log_level: 'error'
-:log_api_calls: false
+
 #:log_owner: 'foreman'
 #:log_group: 'foreman'
-#:log_size: 5 #MB
+
+# Maximum log size in bytes. Log rotates when the value gets exceeded
+#:log_size: 5 #in MB
+
+# Mark translated strings with X characters (for developers)
+#:mark_translated: false

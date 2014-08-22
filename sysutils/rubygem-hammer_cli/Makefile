@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	hammer_cli
-PORTVERSION=	0.1.1
+PORTVERSION=	0.1.2
 CATEGORIES=	sysutils ruby
 MASTER_SITES=	RG
 
@@ -11,9 +11,9 @@ COMMENT=	Provides CLI interfaces for Ruby apps
 
 LICENSE=	GPLv3
 
-RUN_DEPENDS=	rubygem-apipie-bindings>=0.0.6:${PORTSDIR}/devel/rubygem-apipie-bindings \
+RUN_DEPENDS=	rubygem-apipie-bindings>=0.0.8:${PORTSDIR}/devel/rubygem-apipie-bindings \
 		rubygem-awesome_print>=1.1.0:${PORTSDIR}/devel/rubygem-awesome_print \
-		rubygem-clamp>=0.6.3:${PORTSDIR}/devel/rubygem-clamp \
+		rubygem-clamp>=0.6.3_1:${PORTSDIR}/devel/rubygem-clamp \
 		rubygem-fastercsv>=1.5.5:${PORTSDIR}/devel/rubygem-fastercsv \
 		rubygem-fast_gettext>=0.8.1:${PORTSDIR}/devel/rubygem-fast_gettext \
 		rubygem-highline>=1.6.20:${PORTSDIR}/devel/rubygem-highline \
