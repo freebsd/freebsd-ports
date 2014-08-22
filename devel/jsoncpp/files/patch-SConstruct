@@ -1,5 +1,5 @@
---- ./SConstruct.orig	2014-01-21 02:29:19.000000000 -0200
-+++ ./SConstruct	2014-01-21 02:29:28.000000000 -0200
+--- ./SConstruct.orig	2014-08-22 14:25:14.780951671 -0500
++++ ./SConstruct	2014-08-22 14:25:37.478948513 -0500
 @@ -26,7 +26,7 @@
      if platform == 'linux-gcc':
          CXX = 'g++' # not quite right, but env is not yet available.
@@ -9,3 +9,11 @@
          platform = 'linux-gcc-%s' %version
          print "Using platform '%s'" %platform
          LD_LIBRARY_PATH = os.environ.get('LD_LIBRARY_PATH', '')
+@@ -121,6 +121,7 @@
+     env.Tool( 'default' )
+     env.Append( LIBS = ['pthread'], CCFLAGS = "-Wall" )
+     env['SHARED_LIB_ENABLED'] = True
++    env['CXX'] = os.environ['CXX']
+ else:
+     print "UNSUPPORTED PLATFORM."
+     env.Exit(1)
