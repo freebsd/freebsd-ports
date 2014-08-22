@@ -428,6 +428,50 @@
 %%TEXMFDISTDIR%%/doc/luatex/spelling/spelling-doc.pdf
 %%TEXMFDISTDIR%%/doc/luatex/spelling/spelling-doc.tex
 %%TEXMFDISTDIR%%/fonts/map/luatex/context/demo-font.lum
+%%TEXMFDISTDIR%%/scripts/context/lua/mtx-babel.lua
+%%TEXMFDISTDIR%%/scripts/context/lua/mtx-base.lua
+%%TEXMFDISTDIR%%/scripts/context/lua/mtx-bibtex.lua
+%%TEXMFDISTDIR%%/scripts/context/lua/mtx-cache.lua
+%%TEXMFDISTDIR%%/scripts/context/lua/mtx-chars.lua
+%%TEXMFDISTDIR%%/scripts/context/lua/mtx-check.lua
+%%TEXMFDISTDIR%%/scripts/context/lua/mtx-colors.lua
+%%TEXMFDISTDIR%%/scripts/context/lua/mtx-context.lua
+%%TEXMFDISTDIR%%/scripts/context/lua/mtx-context.xml
+%%TEXMFDISTDIR%%/scripts/context/lua/mtx-convert.lua
+%%TEXMFDISTDIR%%/scripts/context/lua/mtx-epub.lua
+%%TEXMFDISTDIR%%/scripts/context/lua/mtx-fcd.lua
+%%TEXMFDISTDIR%%/scripts/context/lua/mtx-flac.lua
+%%TEXMFDISTDIR%%/scripts/context/lua/mtx-fonts.lua
+%%TEXMFDISTDIR%%/scripts/context/lua/mtx-grep.lua
+%%TEXMFDISTDIR%%/scripts/context/lua/mtx-interface.lua
+%%TEXMFDISTDIR%%/scripts/context/lua/mtx-metapost.lua
+%%TEXMFDISTDIR%%/scripts/context/lua/mtx-metatex.lua
+%%TEXMFDISTDIR%%/scripts/context/lua/mtx-mk-help.lua
+%%TEXMFDISTDIR%%/scripts/context/lua/mtx-modules.lua
+%%TEXMFDISTDIR%%/scripts/context/lua/mtx-mtxworks.lua
+%%TEXMFDISTDIR%%/scripts/context/lua/mtx-package.lua
+%%TEXMFDISTDIR%%/scripts/context/lua/mtx-patterns.lua
+%%TEXMFDISTDIR%%/scripts/context/lua/mtx-pdf.lua
+%%TEXMFDISTDIR%%/scripts/context/lua/mtx-plain.lua
+%%TEXMFDISTDIR%%/scripts/context/lua/mtx-profile.lua
+%%TEXMFDISTDIR%%/scripts/context/lua/mtx-rsync.lua
+%%TEXMFDISTDIR%%/scripts/context/lua/mtx-scite.lua
+%%TEXMFDISTDIR%%/scripts/context/lua/mtx-server-ctx-fonttest.lua
+%%TEXMFDISTDIR%%/scripts/context/lua/mtx-server-ctx-help.lua
+%%TEXMFDISTDIR%%/scripts/context/lua/mtx-server-ctx-startup.lua
+%%TEXMFDISTDIR%%/scripts/context/lua/mtx-server.lua
+%%TEXMFDISTDIR%%/scripts/context/lua/mtx-texworks.lua
+%%TEXMFDISTDIR%%/scripts/context/lua/mtx-timing.lua
+%%TEXMFDISTDIR%%/scripts/context/lua/mtx-tools.lua
+%%TEXMFDISTDIR%%/scripts/context/lua/mtx-unzip.lua
+%%TEXMFDISTDIR%%/scripts/context/lua/mtx-update.lua
+%%TEXMFDISTDIR%%/scripts/context/lua/mtx-watch.lua
+%%TEXMFDISTDIR%%/scripts/context/lua/mtx-youless.lua
+%%TEXMFDISTDIR%%/scripts/context/lua/mtxlibs.lua
+%%TEXMFDISTDIR%%/scripts/context/lua/mtxrun.lua
+%%TEXMFDISTDIR%%/scripts/context/lua/third/enigma/mtx-t-enigma.lua/mtx-t-enigma.lua
+%%TEXMFDISTDIR%%/scripts/context/lua/third/rst/mtx-t-rst.lua
+%%TEXMFDISTDIR%%/scripts/context/lua/third/simpleslides/mtx-simpleslides.lua
 %%TEXMFDISTDIR%%/source/lualatex/luabibentry/Makefile
 %%TEXMFDISTDIR%%/source/lualatex/luabibentry/luabibentry.dtx
 %%TEXMFDISTDIR%%/source/lualatex/luacode/Makefile
@@ -964,6 +1008,13 @@
 @dirrm %%TEXMFDISTDIR%%/source/lualatex/luacode
 @dirrm %%TEXMFDISTDIR%%/source/lualatex/luabibentry
 @dirrm %%TEXMFDISTDIR%%/source/lualatex
+@dirrm %%TEXMFDISTDIR%%/scripts/context/lua/third/simpleslides
+@dirrm %%TEXMFDISTDIR%%/scripts/context/lua/third/rst
+@dirrm %%TEXMFDISTDIR%%/scripts/context/lua/third/enigma/mtx-t-enigma.lua
+@dirrm %%TEXMFDISTDIR%%/scripts/context/lua/third/enigma
+@dirrm %%TEXMFDISTDIR%%/scripts/context/lua/third
+@dirrm %%TEXMFDISTDIR%%/scripts/context/lua
+@dirrmtry %%TEXMFDISTDIR%%/scripts/context
 @dirrm %%TEXMFDISTDIR%%/fonts/map/luatex/context
 @dirrm %%TEXMFDISTDIR%%/fonts/map/luatex
 @dirrm %%TEXMFDISTDIR%%/doc/luatex/spelling

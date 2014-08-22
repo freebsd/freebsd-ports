@@ -2,6 +2,7 @@
 
 PORTNAME=	texlive
 PORTVERSION=	20140525
+PORTREVISION=	1
 CATEGORIES=	print
 MASTER_SITES=	ftp://ftp.tug.org/historic/systems/texlive/2014/
 PKGNAMESUFFIX=	-texmf
@@ -57,6 +58,7 @@ EXCLUDE_FILES=	\*/doc/man \
 	texmf-dist/source/xmltex \
 	texmf-dist/tex/generic/config/luatex-unicode-letters.tex \
 	texmf-dist/tex/generic/config/luatexiniconfig.tex \
+	texmf-dist/tex/generic/context/luatex \
 	texmf-dist/tex/generic/dvips \
 	texmf-dist/tex/generic/hyph-utf8/patterns/ptex \
 	texmf-dist/tex/generic/xetexconfig \
@@ -107,6 +109,7 @@ EXCLUDE_FILES=	\*/doc/man \
 	texmf-dist/scripts/context/stubs/unix/mtxrunjit \
 	texmf-dist/scripts/context/stubs/unix/texexec \
 	texmf-dist/scripts/context/stubs/unix/texmfstart \
+	texmf-dist/scripts/context/lua \
 	texmf-dist/scripts/convbkmk/convbkmk.rb \
 	texmf-dist/scripts/ctanify/ctanify \
 	texmf-dist/scripts/ctanupload/ctanupload.pl \
