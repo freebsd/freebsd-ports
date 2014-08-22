@@ -2,11 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	fast_gettext
-PORTVERSION=	0.8.1
+PORTVERSION=	0.9.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	ruby@FreeBSD.org
+MAINTAINER=	kvedulv@kvedulv.de
 COMMENT=	Fast, memory-efficient and threadsafe GetText for Ruby
 
 LICENSE=	MIT
