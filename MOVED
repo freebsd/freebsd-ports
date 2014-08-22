@@ -6477,3 +6477,11 @@ databases/db44|databases/db48|2014-08-15|Superseded by databases/db48
 databases/db46|databases/db48|2014-08-15|Superseded by databases/db48
 databases/db47|databases/db48|2014-08-15|Superseded by databases/db48
 print/tex-omegaware-old||2014-08-22|Deprecated in favor of print/tex-aleph
+databases/pg_filedump||2014-08-22|Has expired: Broken for more than 6 months
+devel/svnmerge||2014-08-22|Has expired: Broken for more than 6 months
+net-mgmt/circe||2014-08-22|Has expired: Broken for more than 6 months
+print/latex-aa||2014-08-22|Has expired: Broken for more than 6 months
+textproc/rast||2014-08-22|Has expired: Broken for more than 6 months
+www/abyssws||2014-08-22|Has expired: Broken for more than 6 months
+www/docebo||2014-08-22|Has expired: Not maintained upstream
+www/rejik||2014-08-22|Has expired: Broken for more than 6 months and depends on www/squid which reached EOL 2 years ago

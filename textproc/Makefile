@@ -1244,7 +1244,6 @@
     SUBDIR += raptor2
     SUBDIR += rarian
     SUBDIR += rasqal
-    SUBDIR += rast
     SUBDIR += re_graph
     SUBDIR += redet
     SUBDIR += redland
