@@ -1,0 +1,9 @@
+XT gyoretsu - extended ncurses version of "Renshu-cho gyoretsu"
+
+Goal of the game is to clear entire field by matching pairs of
+neighbouring (adjacent or on the same line/column without any other
+numbers in between) numbers, which must be either equal, or their
+sum must be equal to strike out sum.
+
+WWW: https://github.com/Penguinum/xtgyoretsu-forked/
+WWW: http://saahriktu.org/games.html
