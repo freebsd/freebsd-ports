@@ -2,6 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	pandora_server
+PORTREVISION=	1
+
 CATEGORIES=	net-mgmt
 
 MAINTAINER=	koichiro@rworks.jp
