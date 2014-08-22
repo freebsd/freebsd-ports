@@ -1784,6 +1784,7 @@
     SUBDIR += rubygem-eventmachine_httpserver
     SUBDIR += rubygem-faraday
     SUBDIR += rubygem-faraday_middleware
+    SUBDIR += rubygem-fcgi
     SUBDIR += rubygem-feed-normalizer
     SUBDIR += rubygem-feedzirra
     SUBDIR += rubygem-flowdock
