@@ -4370,7 +4370,7 @@ Index: FreeBSD/pandora_server
  #
  # **********************************************************************
  
-@@ -10,27 +11,66 @@
+@@ -10,27 +11,65 @@
  # REQUIRE: LOGIN mysql
  # KEYWORD: shutdown
  
@@ -4392,25 +4392,19 @@ Index: FreeBSD/pandora_server
  
 -# read configuration and set defaults
 -pandora_server_enable=${pandora_server_enable:-"NO"}
--load_rc_config $name
 +: ${pandora_server_enable:=NO}
 +: ${pandora_server_configfile:=/usr/local/etc/pandora/pandora_server.conf}
- 
--PATH=/bin:/usr/bin:/sbin:/usr/sbin:/usr/local/bin
--
--pidfile=/var/run/$name.pid
- command=/usr/local/bin/${name}
--command_args="-D -P ${pidfile} /usr/local/etc/pandora/pandora_server.conf"
--required_files="/usr/local/etc/pandora/pandora_server.conf"
++
++command=/usr/local/bin/${name}
 +command_args="-D"
 +command_interpreter=/usr/local/bin/perl
 +_pidprefix=/var/run/$name
 +pidfile=${_pidprefix}.pid
 +required_files="$pandora_server_configfile"
++
+ load_rc_config $name
  
--procname="/usr/local/bin/perl"
-+load_rc_config $name
- 
+-PATH=/bin:/usr/bin:/sbin:/usr/sbin:/usr/local/bin
 +if [ "$2" ]; then
 +	profile="$2"
 +	if [ "$pandora_server_profiles" ]; then
@@ -4424,31 +4418,36 @@ Index: FreeBSD/pandora_server
 +		eval pandora_server_enable="\${pandora_server_${profile}_enable:-$pandora_server_enable}"
 +		eval pandora_server_flags="\${pandora_server_${profile}_flags:-$pandora_server_flags}"
 +		eval pidfile="\${pandora_server_${profile}_pidfile:-$pidfile}"
-+		pandora_server_flags="$pandora_server_flags -P $pidfile $pandora_server_configfile"
 +	else
 +		echo "$0: extra argument ignored"
 +	fi
-+else
-+	if [ "${pandora_server_profiles}" ] && [ "$1" ]; then
-+		for profile in ${pandora_server_profiles}; do
-+			eval _enable="\${pandora_server_${profile}_enable}"
-+			case "${_enable:-${pandora_server_enable}}" in
-+			[Yy][Ee][Ss]);;
-+			*) continue;;
-+			esac
-+			echo "===> pandora_server profile: ${profile}"
-+			/usr/local/etc/rc.d/pandora_server $1 ${profile}
-+			retcode="$?"
-+			if [ "0${retcode}" -ne 0 ]; then
-+				failed="${profile} (${retcode}) ${failed:-}"
-+			else
-+				success="${profile} ${success:-}"
-+			fi
-+		done
-+		exit 0
-+	fi
++elif [ "${pandora_server_profiles}" ] && [ "$1" ]; then
++	for profile in ${pandora_server_profiles}; do
++		eval _enable="\${pandora_server_${profile}_enable}"
++		case "${_enable:-${pandora_server_enable}}" in
++		[Yy][Ee][Ss]);;
++		*) continue;;
++		esac
++		echo "===> pandora_server profile: ${profile}"
++		/usr/local/etc/rc.d/pandora_server $1 ${profile}
++		retcode="$?"
++		if [ "0${retcode}" -ne 0 ]; then
++			failed="${profile} (${retcode}) ${failed:-}"
++		else
++			success="${profile} ${success:-}"
++		fi
++	done
++	exit 0
 +fi
-+
+ 
+-pidfile=/var/run/$name.pid
+-command=/usr/local/bin/${name}
+-command_args="-D -P ${pidfile} /usr/local/etc/pandora/pandora_server.conf"
+-required_files="/usr/local/etc/pandora/pandora_server.conf"
++pandora_server_flags="$pandora_server_flags -P $pidfile $pandora_server_configfile"
+ 
+-procname="/usr/local/bin/perl"
+-
  run_rc_command "$1"
 Index: FreeBSD/pandora_server.conf
 ===================================================================
