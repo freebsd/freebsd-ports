@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	syslog-ng
-PORTVERSION=	3.6.0a2
-PORTREVISION=	2
+PORTVERSION=	3.6.0a3
 PKGNAMESUFFIX=	-devel
 CATEGORIES=	sysutils
 DISTVERSION=	$(PORTVERSION:S/a/alpha/:S/b/beta/:S/r/rc/)
