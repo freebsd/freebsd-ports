@@ -6486,3 +6486,4 @@ www/abyssws||2014-08-22|Has expired: Broken for more than 6 months
 www/docebo||2014-08-22|Has expired: Not maintained upstream
 www/rejik||2014-08-22|Has expired: Broken for more than 6 months and depends on www/squid which reached EOL 2 years ago
 devel/rubygem-railsless-deploy||2014-08-22|Removed: Obsolete, Capistrano 3 does not ship with any Railsisms and is better than Capistrano 2 and railsless-deploy
+lang/gcc410|lang/gcc5|2014-08-22|Renamed to GCC 5 upstream
