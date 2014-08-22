@@ -2,6 +2,7 @@
 
 PORTNAME=	luatex
 PORTVERSION=	0.79.1
+PORTREVISION=	1
 CATEGORIES=	print
 MASTER_SITES=	ftp://tug.org/historic/systems/texlive/2014/
 PKGNAMEPREFIX=	tex-
@@ -42,6 +43,7 @@ DISTNAME_TEXMF=	texlive-${DISTVERSION_TEXMF}-texmf
 EXTRACT_FILES_TEXMF= \
 	texmf-dist/doc/lualatex \
 	texmf-dist/doc/luatex \
+	texmf-dist/scripts/context/lua \
 	texmf-dist/source/luatex \
 	texmf-dist/source/lualatex \
 	texmf-dist/fonts/map/luatex \
