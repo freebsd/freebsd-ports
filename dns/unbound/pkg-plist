@@ -1,8 +1,8 @@
 etc/unbound/unbound.conf.sample
 include/unbound.h
-lib/libunbound.so.4
+lib/libunbound.so.2.2.1
+lib/libunbound.so.2
 lib/libunbound.so
-lib/libunbound.la
 lib/libunbound.a
 man/man1/unbound-host.1.gz
 man/man3/libunbound.3.gz
@@ -49,7 +49,6 @@ sbin/unbound-control
 sbin/unbound-control-setup
 sbin/unbound-host
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/_unbound.a
-%%PYTHON%%%%PYTHON_SITELIBDIR%%/_unbound.la
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/_unbound.so
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/_unbound.so.4
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/unbound.py
