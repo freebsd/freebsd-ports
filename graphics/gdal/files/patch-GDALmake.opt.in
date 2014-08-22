@@ -1,0 +1,10 @@
+--- GDALmake.opt.in.orig	2014-04-17 04:04:49.000000000 +0800
++++ GDALmake.opt.in	2014-08-22 15:05:34.068301293 +0800
+@@ -192,6 +192,7 @@
+ # JPEG-2000 Support via OpenJPEG library.
+ #
+ HAVE_OPENJPEG   = @HAVE_OPENJPEG@
++OPENJPEG_VERSION = @OPENJPEG_VERSION@
+ 
+ #
+ # MrSID support via LizardTech's DSDK

@@ -1,0 +1,15 @@
+--- frmts/openjpeg/makefile.vc.orig	2014-04-17 04:04:48.000000000 +0800
++++ frmts/openjpeg/makefile.vc	2014-08-22 15:05:34.090310184 +0800
+@@ -5,7 +5,11 @@
+ 
+ !INCLUDE $(GDAL_ROOT)\nmake.opt
+ 
+-EXTRAFLAGS = $(OPENJPEG_CFLAGS)
++EXTRAFLAGS = $(OPENJPEG_CFLAGS) $(OPENJPEG_VERSION_CFLAGS)
++
++!IFDEF OPENJPEG_VERSION
++OPENJPEG_VERSION_CFLAGS = -DOPENJPEG_VERSION=$(OPENJPEG_VERSION)
++!ENDIF
+ 
+ default:	$(OBJ)
+ 	xcopy /D  /Y *.obj ..\o
