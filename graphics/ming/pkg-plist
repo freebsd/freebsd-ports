@@ -101,9 +101,9 @@ include/ming/util/swfoutput.h
 include/ming/util/swftypes.h
 include/ming/util/vasprintf.h
 lib/libming.a
-lib/libming.la
 lib/libming.so
-lib/libming.so.5
+lib/libming.so.1
+lib/libming.so.1.4.4
 libdata/pkgconfig/libming.pc
 %%PORTDOCS%%%%DOCSDIR%%/HISTORY
 %%PORTDOCS%%%%DOCSDIR%%/NEWS

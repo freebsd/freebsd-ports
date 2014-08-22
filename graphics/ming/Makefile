@@ -3,7 +3,7 @@
 
 PORTNAME=	ming
 PORTVERSION=	0.4.5
-PORTREVISION?=	1
+PORTREVISION?=	2
 CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}/Releases/
 
@@ -25,14 +25,14 @@ LIB_DEPENDS+=	libming.so:${PORTSDIR}/graphics/ming
 OPTIONS_DEFINE=	DOCS
 .endif
 
-CFLAGS+=	-I${LOCALBASE}/include
 CONFIGURE_ARGS+=--includedir=${PREFIX}/include/ming
 CPPFLAGS+=	-I. -I.. -I${LOCALBASE}/include
 LDFLAGS+=	-L. -L.. -L${LOCALBASE}/lib
 GNU_CONFIGURE=	yes
+INSTALL_TARGET=	install-strip
 MAKE_JOBS_UNSAFE=	yes
 USE_LDCONFIG=	yes
-USES+=		bison gmake pathfix shebangfix
+USES+=		bison gmake libtool pathfix shebangfix
 
 DOCS=		HISTORY NEWS README TODO
 DOCS_UTIL=	README TIPS TODO swftoperl.html
@@ -67,7 +67,6 @@ post-install:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}/ ${STAGEDIR}${DOCSDIR}/util/
 	cd ${WRKSRC}/ && ${INSTALL_DATA} ${DOCS} ${STAGEDIR}${DOCSDIR}/
 	cd ${WRKSRC}/util/ && ${INSTALL_DATA} ${DOCS_UTIL} ${STAGEDIR}${DOCSDIR}/util/
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libming.so.5
 .endif
 .if defined(SLAVEPORT) && ${SLAVEPORT} == "p5"
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/
