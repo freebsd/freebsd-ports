@@ -1,6 +1,4 @@
 bin/hammer
-@unexec if cmp -s %D/etc/hammer/cli_config.yml.sample %D/etc/hammer/cli_config.yml; then rm -f %D/etc/hammer/cli_config.yml; fi
-etc/hammer/cli_config.yml.sample
-@exec if [ ! -f %D/etc/hammer/cli_config.yml ] ; then cp -p %D/etc/hammer/cli_config.yml.sample %D/etc/hammer/cli_config.yml; fi
+@sample etc/hammer/cli_config.yml.sample
 @dirrmtry etc/hammer/cli.modules.d
 @dirrmtry etc/hammer
