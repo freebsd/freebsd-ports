@@ -1,5 +1,5 @@
 --- dvi-init.c.orig	2013-04-05 09:14:54.000000000 +0900
-+++ dvi-init.c	2013-05-06 05:13:12.000000000 +0900
++++ dvi-init.c	2014-08-22 23:26:27.000000000 +0900
 @@ -53,6 +53,9 @@
  #include "statusline.h"
  #include "events.h"
@@ -26,7 +26,7 @@
      if (*arg == '+') {
  	++arg;
  	ignore_papersize_specials = True;
-@@ -884,6 +892,55 @@
+@@ -884,6 +892,57 @@
  	    break;
      }
      arg = temp;
@@ -38,12 +38,14 @@
 +	name = systempapername();
 +	if (name == NULL)
 +		name = defaultpapername();
++	if (strcmp(name, "libpaper") == 0)
++		name = "a4";
 +
 +	strncpy(temp, name, sizeof(temp));
 +	temp[sizeof(temp) - 1] = '\0';
 +    }
-+    if (strcmp(temp, "letter") != 0 ||
-+	strcmp(temp, "ledgar") != 0) {
++    if (strcmp(temp, "letter") != 0 &&
++	strcmp(temp, "ledger") != 0) {
 +	if (temp[strlen(temp) - 1] == 'r') {
 +		temp[strlen(temp) - 1] = '\0';
 +		landscape = 1;
@@ -82,7 +84,7 @@
      /* perform substitutions */
      for (p = paper_types; p < paper_types + paper_types_size; p += 2) {
  	if (strcmp(temp, *p) == 0) {
-@@ -898,6 +955,7 @@
+@@ -898,6 +957,7 @@
      m_paper_unshrunk_h = atopix(arg1 + 1, False);
  
      globals.grid_paper_unit = atopixunit(arg);
