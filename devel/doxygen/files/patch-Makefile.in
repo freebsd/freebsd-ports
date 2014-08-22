@@ -1,7 +1,27 @@
 --- Makefile.in-orig	2014-06-14 08:30:10.000000000 +0200
 +++ Makefile.in	2014-06-14 08:31:21.000000000 +0200
-@@ -16,11 +16,10 @@
- 	cd addon/doxyapp ; $(MAKE) clean
+@@ -2,25 +2,24 @@
+ DESTDIR = 
+ 
+ doxywizard:
+-	cd addon/doxywizard ; $(MAKE) 
++	$(MAKE) -C addon/doxywizard
+ 
+ doxysearch:
+-	cd addon/doxysearch ; $(MAKE) 
++	$(MAKE) -C addon/doxysearch
+ 
+ doxmlparser:
+-	cd addon/doxmlparser/src ; $(MAKE)
+-	cd addon/doxmlparser/test ; $(MAKE)
+-	cd addon/doxmlparser/examples/metrics ; $(MAKE)
++	$(MAKE) -C addon/doxmlparser/src
++	$(MAKE) -C addon/doxmlparser/test
++	$(MAKE) -C addon/doxmlparser/examples/metrics
+ 
+ doxyapp:
+-	cd addon/doxyapp ; $(MAKE) clean
++	$(MAKE) -C addon/doxyapp
  
  clean: FORCE
 -	- cd examples ; $(MAKE) clean
@@ -16,7 +36,7 @@
  	-cd addon/doxywizard ; $(MAKE) clean
  	-cd addon/doxysearch ; $(MAKE) clean
  	-cd addon/doxyapp ; $(MAKE) clean
-@@ -32,7 +31,6 @@
+@@ -32,7 +31,6 @@ clean: FORCE
  
  distclean: clean
  	-cd src ; $(MAKE) distclean
@@ -24,7 +44,7 @@
  	-cd addon/doxywizard ; $(MAKE) distclean
  	-cd addon/doxysearch ; $(MAKE) distclean
  	-cd addon/doxyapp ; $(MAKE) distclean
-@@ -51,9 +49,8 @@
+@@ -51,9 +49,8 @@ distclean: clean
  	-rm -rf xml
  	-rm -f src/Makefile.doxygen src/Makefile.libdoxygen 
  	-rm -f src/Makefile.libdoxycfg src/libdoxycfg.t src/libdoxygen.t
@@ -35,12 +55,18 @@
  	-rm -rf generated_src
  	-rm -f addon/doxywizard/doxywizard.pro
  	-rm -f VERSION
-@@ -93,9 +90,9 @@
- 	cd doc ; $(MAKE)
+@@ -89,13 +86,13 @@ install_docs: 
+ 	cp -r html $(DESTDIR)$(DOCDIR)
+ 
+ docs: FORCE
+-	cd examples ; $(MAKE)
+-	cd doc ; $(MAKE)
++	$(MAKE) -C examples
++	$(MAKE) -C doc
  
  pdf: docs
 -	cd latex ; $(MAKE)
-+	cd latex ; patch < ../refman-patch ; patch < ../latex-patch ; $(MAKE)
++	$(MAKE) -C latex
  
 -DISTFILES =  Doxyfile libmd5 addon tmake doc examples bin lib objects testing \
 +DISTFILES =  Doxyfile addon tmake doc examples bin lib objects testing \
