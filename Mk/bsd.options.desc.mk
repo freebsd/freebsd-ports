@@ -164,6 +164,7 @@ JAVA_DESC?=		Java platform support
 JBIG_DESC?=		JBIG image format support
 JHEAD_DESC?=		jhead EXIF manipulator support
 JPEG_DESC?=		JPEG image format support
+JSON_C_DESC?=		JSON file/format parser support via json-c
 JSON_DESC?=		JSON file/format/parser support
 KDE4_DESC?=		KDE 4 desktop environment support
 KERBEROS_DESC?=		Kerberos support
