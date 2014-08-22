@@ -26,6 +26,7 @@ include/syslog-ng/compat/getutent.h
 include/syslog-ng/compat/glib.h
 include/syslog-ng/compat/lfs.h
 include/syslog-ng/compat/pio.h
+include/syslog-ng/compat/time.h
 include/syslog-ng/compat/socket.h
 include/syslog-ng/compat/string.h
 include/syslog-ng/control/control-server.h
@@ -184,6 +185,7 @@ lib/syslog-ng/libconfgen.so
 lib/syslog-ng/libcryptofuncs.so
 lib/syslog-ng/libcsvparser.so
 lib/syslog-ng/libdbparser.so
+lib/syslog-ng/libgraphite.so
 lib/syslog-ng/liblinux-kmsg-format.so
 lib/syslog-ng/libpseudofile.so
 lib/syslog-ng/libsyslog-ng-crypto.so
@@ -199,6 +201,8 @@ man/man5/syslog-ng.conf.5.gz
 man/man8/syslog-ng.8.gz
 sbin/syslog-ng
 sbin/syslog-ng-ctl
+share/syslog-ng/include/scl/graphite/plugin.conf
+share/syslog-ng/include/scl/graphite/README
 share/syslog-ng/include/scl/nodejs/plugin.conf
 share/syslog-ng/include/scl/pacct/plugin.conf
 share/syslog-ng/include/scl/syslogconf/README
@@ -220,6 +224,7 @@ share/syslog-ng/xsd/patterndb-4.xsd
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm share/syslog-ng/xsd
 @dirrm share/syslog-ng/tools
+@dirrm share/syslog-ng/include/scl/graphite
 @dirrm share/syslog-ng/include/scl/nodejs
 @dirrm share/syslog-ng/include/scl/system
 @dirrm share/syslog-ng/include/scl/syslogconf
