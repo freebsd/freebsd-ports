@@ -1,6 +1,6 @@
---- Makefile.in.orig	2012-05-16 16:44:41.000000000 +0900
-+++ Makefile.in	2013-05-22 15:09:13.000000000 +0900
-@@ -127,7 +127,7 @@
+--- Makefile.in.orig	2014-05-21 08:10:30.000000000 +0900
++++ Makefile.in	2014-08-20 22:10:45.000000000 +0900
+@@ -175,7 +175,7 @@
           $(am__cd) "$$dir" && rm -f $$files; }; \
    }
  am__installdirs = "$(DESTDIR)$(libdir)" "$(DESTDIR)$(bindir)" \
@@ -9,7 +9,7 @@
  	"$(DESTDIR)$(kpseincludedir)" "$(DESTDIR)$(kpseincludedir)"
  LTLIBRARIES = $(lib_LTLIBRARIES)
  libkpathsea_la_DEPENDENCIES = $(LTLIBOBJS)
-@@ -1749,7 +1749,7 @@
+@@ -2044,7 +2044,7 @@
  
  installdirs: installdirs-recursive
  installdirs-am:
@@ -18,12 +18,29 @@
  	  test -z "$$dir" || $(MKDIR_P) "$$dir"; \
  	done
  install: $(BUILT_SOURCES)
-@@ -1809,7 +1809,7 @@
+@@ -2108,8 +2108,7 @@
  
  info-am:
  
--install-data-am: install-dist_web2cDATA install-dist_web2cSCRIPTS \
-+install-data-am: installdirs-am \
- 	install-kpseincludeHEADERS install-nodist_kpseincludeHEADERS
- 	@$(NORMAL_INSTALL)
- 	$(MAKE) $(AM_MAKEFLAGS) install-data-hook
+-install-data-am: install-data-local install-dist_web2cDATA \
+-	install-dist_web2cSCRIPTS install-kpseincludeHEADERS \
++install-data-am: install-data-local install-kpseincludeHEADERS \
+ 	install-nodist_kpseincludeHEADERS
+ 
+ install-dvi: install-dvi-recursive
+@@ -2256,13 +2255,13 @@
+ uninstall-local:
+ @WIN32_FALSE@	@for f in $(dist_noinst_SCRIPTS); do \
+ @WIN32_FALSE@	  if grep "original $$f --" "$(DESTDIR)$(bindir)/$$f" >/dev/null 2>&1; then \
+-@WIN32_FALSE@	    echo " rm -f '$(DESTDIR)$(bindir)/$$f'"; \
++@WIN32_FALSE@	    echo " rm ­f '$(DESTDIR)$(bindir)/$$f'"; \
+ @WIN32_FALSE@	    rm -f "$(DESTDIR)$(bindir)/$$f"; \
+ @WIN32_FALSE@	  else :; fi; \
+ @WIN32_FALSE@	done
+ 	@for f in $(dist_noinst_DATA); do \
+ 	  if grep "original $$f --" "$(DESTDIR)$(web2cdir)/$$f" >/dev/null 2>&1; then \
+-	    echo " rm -f '$(DESTDIR)$(web2cdir)/$$f'"; \
++	    echo " rm ­f '$(DESTDIR)$(web2cdir)/$$f'"; \
+ 	    rm -f "$(DESTDIR)$(web2cdir)/$$f"; \
+ 	  else :; fi; \
+ 	done

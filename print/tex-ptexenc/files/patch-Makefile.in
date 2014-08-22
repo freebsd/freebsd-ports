@@ -1,0 +1,12 @@
+--- Makefile.in.orig	2014-08-21 00:32:34.000000000 +0900
++++ Makefile.in	2014-08-21 00:33:04.000000000 +0900
+@@ -381,7 +381,8 @@
+ libptexenc_la_LIBADD = $(KPATHSEA_LIBS)
+ nobase_include_HEADERS = \
+ 	ptexenc/ptexenc.h \
+-	ptexenc/unicode.h
++	ptexenc/unicode.h \
++	ptexenc/unicode-jp.h
+ 
+ EXTRA_DIST = COPYRIGHT ChangeLog.jp
+ 

@@ -1,10 +1,9 @@
 # $FreeBSD$
 
 PORTNAME=	ptex
-PORTVERSION=	3.3
-PORTREVISION=	5
+PORTVERSION=	3.5
 CATEGORIES=	japanese print
-MASTER_SITES=	ftp://tug.org/historic/systems/texlive/2012/
+MASTER_SITES=	ftp://tug.org/historic/systems/texlive/2014/
 PKGNAMEPREFIX=	ja-tex-
 DISTNAME=	texlive-${DISTVERSION_TEXLIVE}-source
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
@@ -12,22 +11,21 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 DIST_SUBDIR=	TeX
 EXTRACT_ONLY=	texlive-${DISTVERSION_TEXLIVE}-source${EXTRACT_SUFX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	ASCII Japanese pTeX
 
 USES=		tar:xz gmake
-USE_TEX=	texlive kpathsea web2c ptexenc texmf formats fmtutil
+USE_TEX=	kpathsea web2c ptexenc texmf formats fmtutil
 EXTRACT_AFTER_ARGS=	${EXTRACT_FILES:S,^,${DISTNAME}/,}
 EXTRACT_FILES=	\
 	build-aux \
-	libs/obsdcompat \
 	libs/xpdf \
 	texk/web2c
 EXTRACT_AFTER_ARGS_TEXMF= \
 	| ${TAR} -xf - -C ${STAGEDIR}${PREFIX}/share \
 		--strip-components 1 --no-same-permission --no-same-owner \
 		${EXTRACT_FILES_TEXMF:S,^,${DISTNAME_TEXMF}/,}
-DISTVERSION_TEXLIVE=	20120701
+DISTVERSION_TEXLIVE=	20140525
 DISTNAME_TEXMF=	texlive-${DISTVERSION_TEXLIVE}-texmf
 EXTRACT_FILES_TEXMF= \
 	texmf-dist/doc/ptex \
@@ -60,22 +58,19 @@ EXTRACT_FILES_TEXMF= \
 	texmf-dist/tex/uplatex \
 	texmf-dist/tex/generic/hyph-utf8/patterns/ptex \
 	texmf-dist/fonts/map/dvipdfmx/ptex \
-	texmf-dist/fonts/map/dvipdfmx/uptex \
-	texmf-dist/fonts/map/dvipdfmx/japanese-otf-uptex \
 	texmf-dist/fonts/map/dvipdfmx/japanese-otf \
 	texmf-dist/fonts/map/dvipdfmx/jfontmaps \
-	texmf/fonts/map/dvipdfmx/updmap/kanjix.map \
+	texmf-dist/fonts/map/dvipdfmx/updmap/kanjix.map \
 	texmf-dist/fonts/cmap/uptex
 WRKSRC=		${WRKDIR}/${DISTNAME}/texk/web2c
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	OBSDCOMPAT_INCLUDES=-I${WRKSRC}/../../libs/obsdcompat
-EXCLUDE_ENGINES= aleph etex luatex pdftex mf mf-nowin xetex
+EXCLUDE_ENGINES= aleph etex luatex luajittex pdftex mf mf-nowin mp xetex tex
 CONFIGURE_ARGS=	${EXCLUDE_ENGINES:S/^/--disable-/} \
 		--enable-ptex \
 		--enable-eptex \
 		--enable-uptex \
 		--enable-euptex \
-		--disable-mp \
 		--enable-web2c \
 		--enable-web-progs \
 		--with-system-kpathsea \
@@ -90,7 +85,7 @@ MAKE_JOBS_UNSAFE=	yes
 TEX_FORMATS=	ptex uptex
 
 pre-configure:
-	for D in libs/obsdcompat libs/xpdf; do \
+	for D in libs/xpdf; do \
 		cd ${WRKDIR}/${DISTNAME}/$$D && \
 		${SETENV} ${CONFIGURE_ENV} ${SH} ${CONFIGURE_SCRIPT} ${CONFIGURE_ARGS}; \
 	done

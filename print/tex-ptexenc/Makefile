@@ -1,19 +1,18 @@
 # $FreeBSD$
 
 PORTNAME=	ptexenc
-PORTVERSION=	1.3.0
-PORTREVISION=	2
+PORTVERSION=	1.3.2
 CATEGORIES=	print
-MASTER_SITES=	ftp://tug.org/historic/systems/texlive/2012/
+MASTER_SITES=	ftp://tug.org/historic/systems/texlive/2014/
 PKGNAMEPREFIX=	tex-
-DISTNAME=	texlive-20120701-source
+DISTNAME=	texlive-20140525-source
 DIST_SUBDIR=	TeX
 
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Library for Japanese pTeX and its tools
 
 USES=		tar:xz libtool
-USE_TEX=	texlive kpathsea
+USE_TEX=	kpathsea
 USE_LDCONFIG=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME}/texk/ptexenc
 EXTRACT_AFTER_ARGS=	${EXTRACT_FILES}

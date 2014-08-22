@@ -2,11 +2,11 @@
 
 PORTNAME=	jadetex
 PORTVERSION=	3.13
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	print
-MASTER_SITES=	ftp://tug.org/historic/systems/texlive/2012/
+MASTER_SITES=	ftp://tug.org/historic/systems/texlive/2014/
 PKGNAMEPREFIX=	tex-
-DISTNAME=	texlive-20120701-texmf
+DISTNAME=	texlive-20140525-texmf
 DIST_SUBDIR=	TeX
 EXTRACT_ONLY=
 
@@ -14,8 +14,8 @@ MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	TeX backend for Jade, DSSSL processor for SGML/XML documents
 
 USES=		tar:xz
-USE_TEX=	texlive texmf pdftex xmltex fmtutil
-TEXHASHDIRS=	${TEXMFDISTDIR}
+USE_TEX=	texmf pdftex xmltex fmtutil
+TEXHASHDIRS=	${TEXMFDISTDIR} ${TEXMFVARDIR}
 EXTRACT_AFTER_ARGS=| ${TAR} -xf - -C ${STAGEDIR}${PREFIX}/share \
 		--strip-components 1 --no-same-permission --no-same-owner \
 		${EXTRACT_FILES:S,^,${DISTNAME}/,}

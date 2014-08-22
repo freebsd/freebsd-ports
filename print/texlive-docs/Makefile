@@ -1,9 +1,9 @@
 # $FreeBSD$
 
 PORTNAME=	texlive
-PORTVERSION=	20120701
+PORTVERSION=	20140525
 CATEGORIES=	print
-MASTER_SITES=	ftp://ftp.tug.org/historic/systems/texlive/2012/
+MASTER_SITES=	ftp://ftp.tug.org/historic/systems/texlive/2014/
 PKGNAMESUFFIX=	-docs
 DISTNAME=	${PORTNAME}-${PORTVERSION}-texmf
 DIST_SUBDIR=	TeX
@@ -12,7 +12,7 @@ MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	TeX Live Typesetting System, documentation
 
 USES=		tar:xz
-USE_TEX=	texlive texmf
+USE_TEX=	texmf
 NO_BUILD=	yes
 NO_WRKSRC=	yes
 
@@ -31,9 +31,8 @@ EXCLUDE_FILES=	\*/doc/man \
 	texmf-dist/doc/fonts/japanese-otf \
 	texmf-dist/doc/fonts/japanese-otf-uptex \
 	texmf-dist/doc/fonts/jfontmaps \
-	texmf/doc/dvips \
-	texmf/doc/dvipdfm \
-	texmf/doc/dvipdfmx
+	texmf-dist/doc/dvips \
+	texmf-dist/doc/dvipdfmx
 
 EXTRACT_AFTER_ARGS=| ${TAR} xf - ${EXCLUDE_FILES:S,^,--exclude ${DISTNAME}/,}
 
@@ -44,6 +43,6 @@ do-install:
 	${CAT} ${DISTDIR}/${DIST_SUBDIR}/${DISTNAME}${EXTRACT_SUFX} \
 		${EXTRACT_AFTER_ARGS} -C ${STAGEDIR}${PREFIX}/share \
 		--strip-components 1 --no-same-permission --no-same-owner \
-		${DISTNAME}/texmf/doc ${DISTNAME}/texmf-dist/doc
+		${DISTNAME}/texmf-dist/doc
 
 .include <bsd.port.mk>

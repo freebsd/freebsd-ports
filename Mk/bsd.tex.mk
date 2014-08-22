@@ -10,7 +10,7 @@ TEX_MAINTAINER=	hrs@FreeBSD.org
 # USE_TEX=	yes
 # imports variables only, and
 # USE_TEX=	full
-# means TeXLive dependency.
+# means full TeXLive dependency.
 #
 # The other valid keywords
 #
@@ -29,7 +29,7 @@ TEX_MAINTAINER=	hrs@FreeBSD.org
 #  gbklatex:	gbklatex
 #
 #  formats:	TeX, LaTeX, PDFTeX, AMSTeX, ConTeXT, CSLaTeX, EplainTeX,
-#		METAFONT, MLTeX, PDFTeX, TeXsis[*]
+#		CSplainTeX, METAFONT, MLTeX, PDFTeX, TeXsis
 #  tex:		TeX
 #  latex:	LaTeX
 #  pdftex:	PDFTeX
@@ -41,12 +41,12 @@ TEX_MAINTAINER=	hrs@FreeBSD.org
 #  xmltex:	XMLTeX
 #
 #  texhash:	directory search hash regeneration
-#  updmap:	font map regeneration[*]
-#  fmtutil:	format regeneration[*]
+#  updmap:	font map regeneration
+#  fmtutil:	format regeneration
 #
 # Examples:
 # USE_TEX=	latex:build
-# USE_TEX=	formats texlive
+# USE_TEX=	formats
 # USE_TEX=	latex:build dvipsk:build
 
 # default TeX distribution.  "texlive"
@@ -68,58 +68,24 @@ TEXHASHDIRS?=	${TEXMFDIR} ${TEXMFDISTDIR} ${TEXMFLOCALDIR} ${TEXMFVARDIR} ${TEXM
 PLIST_SUB+=	$V="${$V}"
 .endfor
 
-CONFLICTS_TEXLIVE= \
-	texlive-[0-9]* tex-web2c-[0-9]* \
-	tex-kpathsea-[0-9]* tex-xdvik-[0-9]* \
-	tex-dvipsk-[0-9]* tex-dvipdfmx-[0-9]*
-CONFLICTS_TETEX= \
-	teTeX-[0-9]* *-teTeX-[0-9]* \
-	teTeX-*-[0-9]* *-teTeX-*-[0-9]* \
-	latex2e-[0-9]*
-
-# override the user configuration
 .if !empty(USE_TEX:tu:MTEXLIVE)
-TEX_DEFAULT=	texlive
+IGNORE=		"texlive" must not be defined in USE_TEX 
 .endif
-
-.if !empty(TEX_DEFAULT:tu:MTETEX)
-CONFLICTS_INSTALL+=	${CONFLICTS_TEXLIVE}
-.elif !empty(TEX_DEFAULT:tu:MTEXLIVE)
-CONFLICTS_INSTALL+=	${CONFLICTS_TETEX}
-.else
-.error malformed TEX_DEFAULT: ${TEX_DEFAULT}
-.endif
-
-_TEX_LABEL:=	${TEX_DEFAULT:tu:S/TEXLIVE/TEX/}
 
 _USE_TEX_TEXMF=		${LOCALBASE}/${TEXMFDISTDIR}/README:${PORTSDIR}/print/texlive-texmf
-
 _USE_TEX_BASE=		tlmgr:${PORTSDIR}/print/texlive-base
-
 _USE_TEX_GBKLATEX=	gbklatex:${PORTSDIR}/print/texlive-base
-
-_USE_TEX_DOCS=		${LOCALBASE}/${TEXMFDIR}/doc/texlive/texlive-en/README:${PORTSDIR}/print/texlive-docs
-
+_USE_TEX_DOCS=		${LOCALBASE}/${TEXMFDISTDIR}/doc/texlive/texlive-en/README:${PORTSDIR}/print/texlive-docs
 _USE_TEX_INFRA=		texlive-infra>=0:${PORTSDIR}/print/texlive-infra
-
 _USE_TEX_DVIPSK=	dvips:${PORTSDIR}/print/tex-dvipsk
-
 _USE_TEX_XDVIK=		xdvi:${PORTSDIR}/print/tex-xdvik
-
 _USE_TEX_DVIPDFMX=	dvipdfmx:${PORTSDIR}/print/tex-dvipdfmx
-
 _USE_TEX_TEX=		${_USE_TEX_FORMATS}
-
 _USE_TEX_LATEX=		${_USE_TEX_FORMATS}
-
 _USE_TEX_PDFTEX=	${_USE_TEX_FORMATS}
-
 _USE_TEX_JADETEX=	jadetex:${PORTSDIR}/print/tex-jadetex
-
 _USE_TEX_XMLTEX=	xmltex:${PORTSDIR}/print/tex-xmltex
-
 _USE_TEX_PTEX=		ptex:${PORTSDIR}/japanese/tex-ptex
-
 _USE_TEX_WEB2C=		weave:${PORTSDIR}/devel/tex-web2c
 _USE_TEX_KPATHSEA=	libkpathsea.so:${PORTSDIR}/devel/tex-kpathsea
 _USE_TEX_PTEXENC=	libptexenc.so:${PORTSDIR}/print/tex-ptexenc
@@ -128,13 +94,13 @@ _USE_TEX_ALEPH=		aleph:${PORTSDIR}/print/tex-aleph
 _USE_TEX_LUATEX=	luatex:${PORTSDIR}/print/tex-luatex
 _USE_TEX_XETEX=		xetex:${PORTSDIR}/print/tex-xetex
 
-_USE_TEX_FULL=	texmf base web2c infra \
+_USE_TEX_FULLLIST=	texmf base web2c infra \
 		formats aleph xetex jadetex luatex xmltex ptex \
 		dvipsk dvipdfmx xdvik \
 		kpathsea:lib ptexenc:lib
 
 .if !empty(USE_TEX:tu:MFULL)
-USE_TEX:=	${_USE_${_TEX_LABEL}_FULL}
+USE_TEX:=	${USE_TEX:tu:NFULL} ${_USE_TEX_FULLLIST:tu}
 .endif
 
 .for _UU in ${USE_TEX:tu}
@@ -148,7 +114,7 @@ _C:=	BUILD RUN
 _C:=	${_U:C/.*://}
 . endif
 . for _CC in ${_C:tu}
-TEX_${_CC}_DEPENDS+=${_USE_${_TEX_LABEL}_${_UU:C/:.*$//}}
+TEX_${_CC}_DEPENDS+=${_USE_TEX_${_UU:C/:.*$//}}
 . endfor
 .endfor
 
@@ -196,50 +162,39 @@ post-install-script: do-texhash
 .if !empty(USE_TEX:Mfmtutil)
 .PHONY:	do-fmtutil
 . for F in ${TEX_FORMATS}
-do-fmtutil: do-fmtutil-$F post-install-$F
+do-fmtutil: post-install-$F do-fmtutil-$F
 do-fmtutil-$F:
-.if !defined(NO_STAGE)
-	@${ECHO_CMD} "@fmtutil ${TEX_FORMAT_${F:tu}_FILES:S@^@${LOCALBASE}/@}" >> ${TMPPLIST}
-.endif
-.if defined(NO_STAGE)
-	@${TEST} -n '${TEX_FORMAT_${F:tu}}'
-	@${TEST} -r ${LOCALBASE}/${FMTUTIL_CNF}
-	@exec < ${LOCALBASE}/${FMTUTIL_CNF} && \
-		${RM} ${LOCALBASE}/${FMTUTIL_CNF} && \
-		(${GREP} -v "\#$F\$$"; \
-			${PRINTF} "%s\t\#$F\n" ${TEX_FORMAT_${F:tu}}) \
-			> ${LOCALBASE}/${FMTUTIL_CNF}
-	@${PRINTF} "%s\t\#$F\n" ${TEX_FORMAT_${F:tu}} | \
+	${TEST} -n '${TEX_FORMAT_${F:tu}}'
+	${PRINTF} "%s\t#$F\n" ${TEX_FORMAT_${F:tu}} \
+	    > ${WRKDIR}/fmtutil.cnf
+	${MKDIR} ${STAGEDIR}${PREFIX}/${TEXMFVARDIR}/web2c \
+	    ${STAGEDIR}${PREFIX}/${TEXMFDISTDIR}/web2c
+	${LN} -f -s ${LOCALBASE}/${TEXMFDISTDIR}/web2c/texmf.cnf \
+	    ${STAGEDIR}${PREFIX}/${TEXMFDISTDIR}/web2c/texmf.cnf
+	${LOCALBASE}/bin/mktexlsr ${TEXHASHDIRS:S,^,${STAGEDIR}${PREFIX}/,}
+	${CAT} ${WRKDIR}/fmtutil.cnf | \
 		while read format dum; do \
-		${SETENV} PATH=${PATH}:${LOCALBASE}/bin \
-			TEXMFMAIN=${LOCALBASE}/${TEXMFDIR} \
-			${LOCALBASE}/bin/fmtutil-sys --byfmt $$format; \
+		${SETENV} PATH=${PATH}:${STAGEDIR}${PREFIX}/bin:${LOCALBASE}/bin \
+		    TEXMFDIST=${STAGEDIR}${PREFIX}/${TEXMFDISTDIR}:${LOCALBASE}/${TEXMFDISTDIR} \
+		    ${LOCALBASE}/bin/fmtutil-sys \
+			--byfmt $$format \
+			--fmtdir ${STAGEDIR}${PREFIX}/${TEXMFVARDIR}/web2c \
+			--cnffile ${WRKDIR}/fmtutil.cnf; \
 		done
-	@${LOCALBASE}/bin/mktexlsr ${TEXMFVARDIR:S,^,${PREFIX}/,}
-.endif
-	@${ECHO_CMD} "@exec exec < ${LOCALBASE}/${FMTUTIL_CNF} && " \
-		"${RM} ${LOCALBASE}/${FMTUTIL_CNF} && " \
-		"(${GREP} -v \"\#$F\$$\"; ${PRINTF} \"%%s\t\#$F\n\" " \
-		"${TEX_FORMAT_${F:tu}:S,",\\",g}) " \
-		"> ${LOCALBASE}/${FMTUTIL_CNF}" >> ${TMPPLIST}
-	@${ECHO_CMD} "@unexec exec < ${LOCALBASE}/${FMTUTIL_CNF} && " \
-		"${RM} ${LOCALBASE}/${FMTUTIL_CNF} && " \
-		"${GREP} -v \"\#$F\$$\" " \
-		"> ${LOCALBASE}/${FMTUTIL_CNF}" >> ${TMPPLIST}
-.if defined(NO_STAGE)
+	# XXX
+	#cd ${STAGEDIR}${PREFIX}/${TEXMFVARDIR}/web2c && \
+	#	${FIND} . -name "*.log" | ${XARGS} \
+	#	    ${REINPLACE_CMD:S/.bak/ ""/} "s,${STAGEDIR},,g"
+	${RM} ${TEXHASHDIRS:S,^,${STAGEDIR}${PREFIX}/,:S,$,/ls-R,} \
+	    ${STAGEDIR}${PREFIX}/${TEXMFDISTDIR}/web2c/texmf.cnf
+	${RMDIR} ${STAGEDIR}${PREFIX}/${TEXMFDISTDIR}/web2c || ${TRUE}
 _PLIST_FILES+=	${TEX_FORMAT_${F:tu}_FILES}
 _PLIST_DIRSTRY+=${TEX_FORMAT_${F:tu}_DIRS}
-.endif
 _PLIST_FILES+=	${TEX_FORMAT_${F:tu}_BIN}
 . endfor
 post-install-script: do-fmtutil
-
 PLIST_FILES=	${_PLIST_FILES:O:u}
-PLIST_DIRSTRY=	${_PLIST_DIRSTRY:O:u} 
-.if defined(NO_STAGE)
-PLIST_DIRSTRY=	${TEXMFVARDIR}/web2c \
-		${TEXMFVARDIR}
-.endif
+PLIST_DIRSTRY=	${_PLIST_DIRSTRY:O:u} ${TEXMFVARDIR}/web2c
 .endif
 
 .if !empty(USE_TEX:Mupdmap)
@@ -288,7 +243,7 @@ post-install-amstex:
 	${LN} -fs pdftex ${STAGEDIR}${PREFIX}/bin/amstex
 
 TEX_FORMAT_CONTEXT?= \
-	"cont-en pdftex cont-usr.tex -8bit *cont-en.ini"
+	"cont-en pdftex cont-usr.tex -8bit *cont-en.mkii"
 # XXX
 #	"metafun mpost - metafun.mp"
 TEX_FORMAT_CONTEXT_FILES=	\
@@ -302,8 +257,8 @@ post-install-context:
 #	${LN} -sf mpost ${PREFIX}/bin/metafun
 
 TEX_FORMAT_CSLATEX?= \
-	"cslatex pdftex - -etex -translate-file=cp227.tcx cslatex.ini" \
-	"pdfcslatex pdftex - -etex -translate-file=cp227.tcx cslatex.ini"
+	"cslatex pdftex - -etex cslatex.ini" \
+	"pdfcslatex pdftex - -etex cslatex.ini"
 TEX_FORMAT_CSLATEX_FILES= \
 	${TEXMFVARDIR}/web2c/pdftex/cslatex.log \
 	${TEXMFVARDIR}/web2c/pdftex/cslatex.fmt \
@@ -317,6 +272,21 @@ TEX_FORMAT_CSLATEX_DIRS= \
 post-install-cslatex:
 	${LN} -sf pdftex ${STAGEDIR}${PREFIX}/bin/cslatex
 	${LN} -sf pdftex ${STAGEDIR}${PREFIX}/bin/pdfcslatex
+
+TEX_FORMAT_CSPLAIN?= \
+	"csplain pdftex - -etex -enc csplain-utf8.ini" \
+	"pdfcsplain pdftex - -etex -enc csplain-utf8.ini"
+TEX_FORMAT_CSPLAIN_FILES= \
+	${TEXMFVARDIR}/web2c/pdftex/csplain.log \
+	${TEXMFVARDIR}/web2c/pdftex/csplain.fmt \
+	${TEXMFVARDIR}/web2c/pdftex/pdfcsplain.log \
+	${TEXMFVARDIR}/web2c/pdftex/pdfcsplain.fmt
+TEX_FORMAT_CSPLAIN_BIN= \
+	bin/csplain
+TEX_FORMAT_CSPLAIN_DIRS= \
+	${TEXMFVARDIR}/web2c/pdftex
+post-install-csplain:
+	${LN} -sf pdftex ${STAGEDIR}${PREFIX}/bin/csplain
 
 TEX_FORMAT_EPLAIN?= \
 	"eplain pdftex language.dat -translate-file=cp227.tcx *eplain.ini"
@@ -368,7 +338,10 @@ TEX_FORMAT_LUATEX?= \
 	"luatex luatex language.def,language.dat.lua luatex.ini" \
 	"dviluatex luatex language.def,language.dat.lua dviluatex.ini" \
 	"dvilualatex luatex language.dat,language.dat.lua dvilualatex.ini" \
-	"lualatex luatex language.dat,language.dat.lua lualatex.ini"
+	"lualatex luatex language.dat,language.dat.lua lualatex.ini" \
+	"luajittex luajittex language.def,language.dat.lua luatex.ini" \
+	"pdfcsplain luatex - -etex csplain.ini" \
+	"lualollipop luatex - lualollipop.in"
 TEX_FORMAT_LUATEX_FILES= \
 	${TEXMFVARDIR}/web2c/luatex/dviluatex.log \
 	${TEXMFVARDIR}/web2c/luatex/dviluatex.fmt \
@@ -377,17 +350,46 @@ TEX_FORMAT_LUATEX_FILES= \
 	${TEXMFVARDIR}/web2c/luatex/luatex.log \
 	${TEXMFVARDIR}/web2c/luatex/luatex.fmt \
 	${TEXMFVARDIR}/web2c/luatex/lualatex.log \
-	${TEXMFVARDIR}/web2c/luatex/lualatex.fmt
+	${TEXMFVARDIR}/web2c/luatex/lualatex.fmt \
+	${TEXMFVARDIR}/web2c/luatex/pdfcsplain.log \
+	${TEXMFVARDIR}/web2c/luatex/pdfcsplain.fmt \
+	${TEXMFVARDIR}/web2c/luajittex/luajittex.log \
+	${TEXMFVARDIR}/web2c/luajittex/luajittex.fmt
 TEX_FORMAT_LUATEX_BIN= \
 	bin/dviluatex \
 	bin/dvilualatex \
-	bin/lualatex
+	bin/luajittex \
+	bin/lualatex \
+	bin/lualollipop \
+	bin/luatex \
+	bin/texlua \
+	bin/texluac \
+	bin/texluajit \
+	bin/texluajitc
 TEX_FORMAT_LUATEX_DIRS=	\
-	${TEXMFVARDIR}/web2c/luatex
+	${TEXMFVARDIR}/web2c/luatex \
+	${TEXMFVARDIR}/web2c/luajittex
 post-install-luatex:
 	${LN} -sf luatex ${STAGEDIR}${PREFIX}/bin/dviluatex
 	${LN} -sf luatex ${STAGEDIR}${PREFIX}/bin/dvilualatex
 	${LN} -sf luatex ${STAGEDIR}${PREFIX}/bin/lualatex
+	${LN} -sf luatex ${STAGEDIR}${PREFIX}/bin/lualollipop
+	${LN} -sf luatex ${STAGEDIR}${PREFIX}/bin/texlua
+	${LN} -sf luatex ${STAGEDIR}${PREFIX}/bin/texluac
+	${LN} -sf luajittex ${STAGEDIR}${PREFIX}/bin/texluajit
+	${LN} -sf luajittex ${STAGEDIR}${PREFIX}/bin/texluajitc
+
+TEX_FORMAT_LOLLIPOP?= \
+	"lollipop pdftex - -translate-file=cp227.tcx *lollipop.ini"
+TEX_FORMAT_LOLLIPOP_FILES= \
+	${TEXMFVARDIR}/web2c/pdftex/lollipop.log \
+	${TEXMFVARDIR}/web2c/pdftex/lollipop.fmt
+TEX_FORMAT_LOLLIPOP_BIN= \
+	bin/lollipop
+TEX_FORMAT_LOLLIPOP_DIRS= \
+	${TEXMFVARDIR}/web2c/pdftex
+post-install-lollipop-bin:
+	${LN} -sf pdftex ${STAGEDIR}${PREFIX}/bin/lollipop
 
 TEX_FORMAT_METAFONT?= \
 	"mf mf-nowin - -translate-file=cp227.tcx mf.ini"
@@ -478,6 +480,8 @@ TEX_FORMAT_PTEX_FILES= \
 	${TEXMFVARDIR}/web2c/eptex/platex.log \
 	${TEXMFVARDIR}/web2c/eptex/platex.fmt
 TEX_FORMAT_PTEX_BIN= \
+	bin/eptex \
+	bin/ptex \
 	bin/platex
 TEX_FORMAT_PTEX_DIRS= \
 	${TEXMFVARDIR}/web2c/ptex \
@@ -519,6 +523,8 @@ TEX_FORMAT_UPTEX_FILES=	\
 	${TEXMFVARDIR}/web2c/euptex/uplatex.log \
 	${TEXMFVARDIR}/web2c/euptex/uplatex.fmt
 TEX_FORMAT_UPTEX_BIN= \
+	bin/euptex \
+	bin/uptex \
 	bin/uplatex
 TEX_FORMAT_UPTEX_DIRS=	\
 	${TEXMFVARDIR}/web2c/euptex \
@@ -529,20 +535,29 @@ post-install-uptex:
 TEX_FORMAT_XETEX?= \
 	"xetex xetex language.def -etex xetex.ini" \
 	"xelatex xetex language.dat -etex xelatex.ini" \
-	"cont-en xetex cont-usr.tex -8bit *cont-en.ini"
+	"pdfcsplain xetex - -etex csplain.ini" \
+	"cont-en xetex cont-usr.tex -8bit *cont-en.mkii" \
+	"xelollipop xetex - -etex xelollipop.ini"
 TEX_FORMAT_XETEX_FILES=	\
+	${TEXMFVARDIR}/web2c/xetex/cont-en.log \
+	${TEXMFVARDIR}/web2c/xetex/cont-en.fmt \
+	${TEXMFVARDIR}/web2c/xetex/pdfcsplain.log \
+	${TEXMFVARDIR}/web2c/xetex/pdfcsplain.fmt \
 	${TEXMFVARDIR}/web2c/xetex/xetex.log \
 	${TEXMFVARDIR}/web2c/xetex/xetex.fmt \
 	${TEXMFVARDIR}/web2c/xetex/xelatex.log \
 	${TEXMFVARDIR}/web2c/xetex/xelatex.fmt \
-	${TEXMFVARDIR}/web2c/xetex/cont-en.log \
-	${TEXMFVARDIR}/web2c/xetex/cont-en.fmt
+	${TEXMFVARDIR}/web2c/xetex/xelollipop.log \
+	${TEXMFVARDIR}/web2c/xetex/xelollipop.fmt
 TEX_FORMAT_XETEX_BIN=	\
-	bin/xelatex
+	bin/xetex \
+	bin/xelatex \
+	bin/xelollipop
 TEX_FORMAT_XETEX_DIRS=	\
 	${TEXMFVARDIR}/web2c/xetex
 post-install-xetex:
 	${LN} -sf xetex ${STAGEDIR}${PREFIX}/bin/xelatex
+	${LN} -sf xetex ${STAGEDIR}${PREFIX}/bin/xelollipop
 
 TEX_FORMAT_XMLTEX?= \
 	"xmltex pdftex language.dat *xmltex.ini" \
