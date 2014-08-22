@@ -6,6 +6,9 @@ bin/mapnames
 bin/pstogif
 bin/pstoxbm
 bin/tohtml
+man/man1/bfort.1.gz
+man/man1/doctext.1.gz
+man/man1/tohtml.1.gz
 %%DATADIR%%/basedefs.txt
 %%DATADIR%%/blueball.gif
 %%DATADIR%%/doctext/html.def
