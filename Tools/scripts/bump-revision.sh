@@ -43,6 +43,7 @@ printc () {
 #
 
 tempfile=$(mktemp)
+rm -f $tempfile
 trap "rm -f $tempfile" 0 1 2 3 15
 
 while [ $# -gt 0 ]
@@ -50,15 +51,27 @@ do
     if [ -f "$1/Makefile" ]; then
         echo -n > $tempfile
         revision=`grep "^PORTREVISION?\?=" "$1/Makefile"`
-        if [ $? == 0 ]; then
-            printc "$1: $revision found, bumping it by 1." "green"
-            awk -F "\t" '/^PORTREVISION\??=/{ gsub ($2,$2+1) };{ print }' "$1/Makefile" > $tempfile
-            cat $tempfile > "$1/Makefile"
-        else
-            printc "$1: PORTREVISION not found, adding PORTREVISION=1" "red"
-            awk '/^PORTVERSION\??=\t/{print;print "PORTREVISION=\t1";next}1' "$1/Makefile" > $tempfile
-            cat $tempfile > "$1/Makefile"
-        fi
+	case $? in
+	0)
+	    # fixme: gsub fails massively if there are any special
+	    # characters inside PORTREVISION.  For now, we will only
+	    # catch this bug by checking the replace count, and if not
+	    # 1, bail out and complain.
+	    # The proper fix is to do a stricter check that PORTREVISION
+	    # is an integer.
+	    awk -F "\t" '/^PORTREVISION\??=/{ rplc = gsub ($2,$2+1); if (rplc != 1) { exit 1 } };{ print }' "$1/Makefile" > $tempfile \
+            && { cat $tempfile > "$1/Makefile" ; printc "$1: $revision found, bumping it by 1." "green" ; } \
+	    || printc "$1: FAILED TO BUMP PORTREVISION" red
+	    ;;
+	1)
+            awk '/^PORTVERSION\??=\t/{print;print "PORTREVISION=\t1";next}' "$1/Makefile" > $tempfile \
+            && { cat $tempfile > "$1/Makefile" ;printc "$1: PORTREVISION not found, adding PORTREVISION=1" "green" ; } \
+	    || printc "$1: FAILED TO BUMP PORTREVISION" red
+	    ;;
+	*)
+	    printc "$1: grepping $1/Makefile failed!" red
+	    ;;
+	esac
     else
         printc "$1: might not be a port directory as $1/Makefile is missing!" "red"
     fi
