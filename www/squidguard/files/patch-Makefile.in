@@ -1,5 +1,5 @@
 --- Makefile.in.orig	2008-05-17 20:36:44.000000000 +0200
-+++ Makefile.in	2014-08-21 00:04:09.188333006 +0200
++++ Makefile.in	2014-08-22 19:47:56.566781181 +0200
 @@ -47,48 +47,31 @@
  
  install-conf:
@@ -9,26 +9,27 @@
 -		echo Created directory $(prefix)/squidGuard ; \
 -		chown -R $(SQUIDUSER) $(prefix)/squidGuard || exit 1  ; \
 -		echo Assigned $(prefix)/squidGuard to user $(SQUIDUSER) ; \
--	fi ; 
--	@if [ ! -d $(dbhomedir) ]; then \
--		$(MKINSTALLDIRS) $(dbhomedir) ; \
--		echo Created directory $(dbhomedir) ; \
--		chown -R $(SQUIDUSER) $(dbhomedir) || exit 1 ; \
--		echo Assigned $(dbhomedir) to user $(SQUIDUSER) ; \
 +	@if [ ! -d $(DESTDIR)$(dbhomedir) ]; then \
 +		$(MKINSTALLDIRS) $(DESTDIR)$(dbhomedir) ; \
 +		echo Created directory $(DESTDIR)$(dbhomedir) ; \
 +		echo Assigned $(DESTDIR)$(dbhomedir) to user $(SQUIDUSER) ; \
  	fi ; 
- 	@if [ ! -d $(logdir) ]; then \
--		$(MKINSTALLDIRS) $(logdir) ; \
--		echo Created directory $(logdir) ; \
--		chown -R $(SQUIDUSER) $(logdir) || exit 1 ; \
--		echo Assigned $(logdir) to user $(SQUIDUSER) ; \
+-	@if [ ! -d $(dbhomedir) ]; then \
+-		$(MKINSTALLDIRS) $(dbhomedir) ; \
+-		echo Created directory $(dbhomedir) ; \
+-		chown -R $(SQUIDUSER) $(dbhomedir) || exit 1 ; \
+-		echo Assigned $(dbhomedir) to user $(SQUIDUSER) ; \
++	@if [ ! -d $(DESTDIR)$(logdir) ]; then \
 +		$(MKINSTALLDIRS) $(DESTDIR)$(logdir) ; \
 +		echo Created directory $(DESTDIR)$(logdir) ; \
 +		echo Assigned $(DESTDIR)$(logdir) to user $(SQUIDUSER) ; \
  	fi ; 
+-	@if [ ! -d $(logdir) ]; then \
+-		$(MKINSTALLDIRS) $(logdir) ; \
+-		echo Created directory $(logdir) ; \
+-		chown -R $(SQUIDUSER) $(logdir) || exit 1 ; \
+-		echo Assigned $(logdir) to user $(SQUIDUSER) ; \
+-	fi ; 
 -	@if [ ! -d `dirname $(configfile)` ]; then \
 +	@if [ ! -d `dirname $(DESTDIR)$(configfile)` ]; then \
  		umask 022 ; \
