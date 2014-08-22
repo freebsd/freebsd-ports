@@ -258,7 +258,6 @@
     SUBDIR += tex-formats
     SUBDIR += tex-jadetex
     SUBDIR += tex-luatex
-    SUBDIR += tex-omegaware-old
     SUBDIR += tex-ptexenc
     SUBDIR += tex-texmflocal
     SUBDIR += tex-xdvik
