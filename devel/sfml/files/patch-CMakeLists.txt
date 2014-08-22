@@ -1,0 +1,11 @@
+--- CMakeLists.txt.orig	2013-07-21 11:30:08.000000000 +0400
++++ CMakeLists.txt	2014-08-15 18:24:11.785377335 +0400
+@@ -113,7 +113,7 @@
+                     "tools/pkg-config/sfml-${sfml_module}.pc"
+                     @ONLY)
+ 	    INSTALL(FILES "${CMAKE_CURRENT_BINARY_DIR}/tools/pkg-config/sfml-${sfml_module}.pc"
+-                    DESTINATION "${CMAKE_INSTALL_PREFIX}/lib${LIB_SUFFIX}/pkgconfig")
++                    DESTINATION "${CMAKE_INSTALL_PREFIX}/libdata/pkgconfig")
+             endforeach()
+         endif()
+     else()
