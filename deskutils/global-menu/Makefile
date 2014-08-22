@@ -1,32 +1,32 @@
 # Created by: Gustavo Perez
 # $FreeBSD$
 
-PORTNAME=		gnome-globalmenu
-PORTVERSION=		0.7.10
-PORTREVISION=	3
-CATEGORIES=		deskutils
-MASTER_SITES=		http://gnome2-globalmenu.googlecode.com/files/
+PORTNAME=	gnome-globalmenu
+PORTVERSION=	0.7.10
+PORTREVISION=	4
+CATEGORIES=	deskutils
+MASTER_SITES=	http://gnome2-globalmenu.googlecode.com/files/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=		Global menu for gnome
+COMMENT=	Global menu for gnome
 
-LIB_DEPENDS=		libnotify.so:${PORTSDIR}/devel/libnotify
+LIB_DEPENDS=	libnotify.so:${PORTSDIR}/devel/libnotify
 
-USE_GNOME=		gnomepanel gnomedesktop
+USE_GNOME=	gnomepanel gnomedesktop
 
-USE_BZIP2=		yes
-USE_LDCONFIG=		yes
-GNU_CONFIGURE=		yes
-USES=			gmake pkgconfig
-USE_AUTOTOOLS=		libtool automake:env autoheader:env
-INSTALLS_ICONS=		yes
+USE_LDCONFIG=	yes
+GNU_CONFIGURE=	yes
+USES=		gmake libtool pkgconfig tar:bzip2
+USE_AUTOTOOLS=	automake:env autoheader:env
+INSTALLS_ICONS=	yes
+INSTALL_TARGET=	install-strip
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
+GCONF_SCHEMAS=	gnome-globalmenu.schemas
+
 OPTIONS_DEFINE=		XFCE4_PANEL NLS
 XFCE4_PANEL_DESC=	Xfce panel applet
-
-NO_STAGE=	yes
 
 BROKEN_sparc64=	Leaves files behind on deinstall on sparc64
 
@@ -49,13 +49,9 @@ CONFIGURE_ARGS+=	--disable-nls
 PLIST_SUB+=		NLS="@comment "
 .endif
 
-MAN1=			gnome-globalmenu.1
-
-GCONF_SCHEMAS=		gnome-globalmenu.schemas
-
 post-install:
-		@${INSTALL_DATA} ${WRKSRC}/applet/GlobalMenu_PanelApplet.server \
-			${LOCALBASE}/libdata/bonobo/servers
-		@${CAT} ${PKGMESSAGE}
+	${MKDIR} ${STAGEDIR}${PREFIX}/libdata/bonobo/servers
+	${INSTALL_DATA} ${WRKSRC}/applet/GlobalMenu_PanelApplet.server \
+		${STAGEDIR}${PREFIX}/libdata/bonobo/servers
 
 .include <bsd.port.mk>
