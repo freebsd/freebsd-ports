@@ -3,6 +3,7 @@
 
 PORTNAME=	csound
 PORTVERSION=	5.19.01
+PORTREVISION=	1
 CATEGORIES=	audio lang
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}5/${PORTNAME}${PORTVERSION:R} \
 		SF/${PORTNAME}/${PORTNAME}5/${PORTNAME}${PORTVERSION:R}/manual:manual
@@ -22,10 +23,11 @@ LIB_DEPENDS=	libsndfile.so:${PORTSDIR}/audio/libsndfile
 
 PORTSCOUT=	limit:^5\.
 
-OPTIONS_DEFINE=	ALSA DSSI FLTK FLUIDSYNTH JACK OSC PORTAUDIO PULSEAUDIO DOCS
+OPTIONS_DEFINE=	ALSA PNG DSSI FLTK FLUIDSYNTH JACK OSC PORTAUDIO PULSEAUDIO DOCS
 OPTIONS_DEFAULT=FLTK
 OPTIONS_SUB=	yes
 ALSA_DESC=	Build ALSA I/O module
+PNG_DESC=	Build image opcodes
 DSSI_DESC=	Build DSSI/LADSPA host opcodes
 FLUIDSYNTH_DESC=Building FluidSynth opcodes
 JACK_DESC=	Build Jack I/O module and opcodes
@@ -38,8 +40,7 @@ CONFLICTS_INSTALL=	outguess-* csound6
 
 WRKSRC=		${WRKDIR}/${PORTNAME:S/c/C/}${PORTVERSION}
 
-USES=		bison gettext scons compiler:openmp
-USE_PYTHON=	yes
+USES=		bison gettext scons compiler:openmp python
 MAKE_ARGS=	instdir="${STAGEDIR}" prefix="${PREFIX}" \
 		CC="${CC}" CXX="${CXX}" \
 		buildCsoundAC=0 buildCsoundVST=0 buildInterfaces=1 \
@@ -65,8 +66,16 @@ MAKE_ARGS+=	useALSA=0
 ALSA_H=		##alsa/asoundlib.h##
 .endif
 
+.if ${PORT_OPTIONS:MPNG}
+LIB_DEPENDS+=	libpng.so:${PORTSDIR}/graphics/png
+MAKE_ARGS+=	buildImageOpcodes=1
+.else
+MAKE_ARGS+=	buildImageOpcodes=0
+.endif
+
 .if ${PORT_OPTIONS:MDSSI}
 BUILD_DEPENDS+=	dssi>=0:${PORTSDIR}/audio/dssi
+LIB_DEPENDS+=	libasound.so:${PORTSDIR}/audio/alsa-lib
 RUN_DEPENDS+=	dssi>=0:${PORTSDIR}/audio/dssi
 MAKE_ARGS+=	buildDSSI=1
 .else
@@ -141,6 +150,8 @@ CXXLIB=		c++
 CXXLIB=		# empty
 .endif
 
+.include <bsd.port.options.mk>
+
 post-patch:
 	@${SED} -e "s|%%LOCALBASE%%|${LOCALBASE}|g; \
 		s|%%PYTHON_INCLUDEDIR%%|${PYTHON_INCLUDEDIR}|; \
@@ -179,7 +190,11 @@ post-patch:
 
 post-install:
 	${LN} -sf libcsound64.so.5 ${STAGEDIR}${PREFIX}/lib/libcsound64.so
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	(cd ${WRKDIR}/html && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR})
+.endif
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/* ${STAGEDIR}${PREFIX}/lib/*.so* \
+		${STAGEDIR}${PREFIX}/lib/csound/plugins64/*.so
 
 .include <bsd.port.post.mk>
