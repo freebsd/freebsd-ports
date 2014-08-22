@@ -4472,6 +4472,7 @@
     SUBDIR += rubygem-ruby_parser
     SUBDIR += rubygem-rubyforge
     SUBDIR += rubygem-rubygame
+    SUBDIR += rubygem-rubygems-tasks
     SUBDIR += rubygem-rubyinlineaccel
     SUBDIR += rubygem-rubytree
     SUBDIR += rubygem-rufus-scheduler
