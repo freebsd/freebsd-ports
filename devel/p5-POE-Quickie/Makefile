@@ -16,7 +16,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	p5-POE>=1.350:${PORTSDIR}/devel/p5-POE
 RUN_DEPENDS:=	${BUILD_DEPENDS}
-
 TEST_DEPENDS=	p5-Capture-Tiny>=0.07:${PORTSDIR}/devel/p5-Capture-Tiny \
 		p5-Test-Deep>=0:${PORTSDIR}/devel/p5-Test-Deep
 
