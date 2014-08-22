@@ -16,9 +16,11 @@ INTERFACE_OPTS+=-DWANT_X11
 VARLIST+=	INCX LIBX
 .endif
 X_DIR=		${LOCALBASE}
-.if defined(DEV_BSIM3) && !empty(DEV_BSIM3)
-DEVLIST+=	bsim3
-.endif
+.for D in BSIM3 BSIM4
+. if defined(DEV_$D) && !empty(DEV_$D)
+DEVLIST+=	${D:tl}
+. endif
+.endfor
 
 configure:
 	rm -f ${CONFIGFILE}
@@ -26,7 +28,7 @@ configure:
 	echo "$V=${${V}}" >> ${CONFIGFILE}
 .endfor
 .for V in ${DEVLIST}
-	echo "$V+=${${V}}" >> ${CONFIGFILE}
+	echo "DEVICES+=${V}" >> ${CONFIGFILE}
 .endfor
 
 PREFIX?=	/usr/local
