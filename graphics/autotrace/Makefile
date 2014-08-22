@@ -3,7 +3,7 @@
 
 PORTNAME=	autotrace
 PORTVERSION=	0.31.1
-PORTREVISION=	25
+PORTREVISION=	26
 CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}/AutoTrace/${PORTVERSION}
 
@@ -18,8 +18,8 @@ LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png
 USES=		pathfix pkgconfig libtool
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-CPPFLAGS+=	$$(libpng-config --I_opts) ${PTHREAD_CFLAGS}
-LDFLAGS+=	$$(libpng-config --L_opts) ${PTHREAD_LIBS}
+CPPFLAGS+=	$$(libpng-config --I_opts)
+LDFLAGS+=	$$(libpng-config --L_opts)
 INSTALL_TARGET=	install-strip
 
 OPTIONS_DEFINE=	IMAGEMAGICK MING PSTOEDIT
