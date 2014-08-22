@@ -13,7 +13,7 @@ COMMENT=	GUI tool combining CLI JDK tools and profiling capabilities
 LICENSE=	VISUALVM
 LICENSE_NAME=	VISUALVM with ClassPath Exception
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
-LICENSE_PERMS=	${_LICENSE_PERMS_DEFAULT}
+LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 USES=		zip:infozip
 NO_BUILD=	yes

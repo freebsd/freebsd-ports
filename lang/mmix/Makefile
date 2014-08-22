@@ -13,7 +13,7 @@ COMMENT=	RISC computer designed by Donald E. Knuth
 LICENSE=	mmix
 LICENSE_NAME=	mmix license
 LICENSE_FILE=	${FILESDIR}/LICENSE.txt
-LICENSE_PERMS=	${_LICENSE_PERMS_DEFAULT}
+LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 BUILD_DEPENDS=	ctangle:${PORTSDIR}/devel/cweb
 

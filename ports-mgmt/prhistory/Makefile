@@ -13,7 +13,7 @@ COMMENT=	PR review for ports
 LICENSE=	PRHISTORY
 LICENSE_NAME=	PRHISTORY BSD LICENSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
-LICENSE_PERMS=	${_LICENSE_PERMS_DEFAULT}
+LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl \
 		libsqlite3.so:${PORTSDIR}/databases/sqlite3

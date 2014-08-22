@@ -14,7 +14,7 @@ COMMENT=	The original free open-source forum written in Perl
 LICENSE=	YABB_PUBLIC_LICENCE
 LICENSE_NAME=	YABB PUBLIC LICENCE
 LICENSE_TEXT=	Description of the license can be obtained from the following URL: http://www.yabbforum.com/licenses.php
-LICENSE_PERMS=	${_LICENSE_PERMS_DEFAULT}
+LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 RUN_DEPENDS=	p5-Digest-HMAC>=0:${PORTSDIR}/security/p5-Digest-HMAC
 
