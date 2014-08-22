@@ -44,6 +44,11 @@ post-patch: .SILENT
 # Provide better support for relative paths (for `-iwad' switch)
 	${REINPLACE_CMD} -e "s|s\[0\] ==[^)]*|strchr(s, '/')|" \
 		${WRKSRC}/d_main.c
+# Unbreak on big-endian architectures
+	${REINPLACE_CMD} -e '150s|^|#include "m_swap.h"|' \
+		${WRKSRC}/p_spec.c
+	${REINPLACE_CMD} -e '60s|^|#include "m_swap.h"|' \
+		${WRKSRC}/p_switch.c
 .if ! ${PORT_OPTIONS:MIPX}
 	${REINPLACE_CMD} -e '/USE_IPX/s|define|undef|' ${WRKSRC}/doomdef.h
 	${REINPLACE_CMD} -e 's| -lipx||' ${WRKSRC}/Makefile
