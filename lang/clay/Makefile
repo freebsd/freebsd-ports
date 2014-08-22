@@ -3,7 +3,7 @@
 
 PORTNAME=	clay
 PORTVERSION=	0.1.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang
 MASTER_SITES=	https://github.com/jckarter/${PORTNAME}/tarball/v${PORTVERSION}/
 DISTNAME=	jckarter-${PORTNAME}-v${PORTVERSION}-0-g${GITVERSION}
@@ -12,6 +12,9 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Language designed for generic programming
 
 LICENSE=	BSD2CLAUSE
+
+DEPRECATED=	No development since July 2013, depends on obsolete clang-3.2
+EXPIRATION_DATE=	2014-12-01
 
 BUILD_DEPENDS=	llvm-config32:${PORTSDIR}/devel/llvm32 \
 		clang32:${PORTSDIR}/lang/clang32
