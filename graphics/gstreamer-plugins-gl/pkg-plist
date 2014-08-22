@@ -7,13 +7,10 @@ include/gstreamer-0.10/gst/gl/gstglmixerpad.h
 include/gstreamer-0.10/gst/gl/gstglshader.h
 include/gstreamer-0.10/gst/gl/gstglshadervariables.h
 include/gstreamer-0.10/gst/gl/gstglwindow.h
-lib/gstreamer-0.10/libgstopengl.a
-lib/gstreamer-0.10/libgstopengl.la
 lib/gstreamer-0.10/libgstopengl.so
-lib/libgstgl-0.10.a
-lib/libgstgl-0.10.la
 lib/libgstgl-0.10.so
 lib/libgstgl-0.10.so.1
+lib/libgstgl-0.10.so.1.0.0
 libdata/pkgconfig/gstreamer-gl-0.10.pc
 share/gtk-doc/html/gst-plugins-gl-libs-0.10/api-index.html
 share/gtk-doc/html/gst-plugins-gl-libs-0.10/ch01.html
