@@ -11,9 +11,10 @@ PKGNAMESUFFIX=	2
 MAINTAINER=	fbsd@grid.einherjar.de
 COMMENT=	Internationalized Domain Name toolkit 2
 
-LICENSE_PERMS=	# permissive
-LICENSE_NAME=	OSCL
-LICENSE_FILE=	LICENSE.txt
+LICENSE=	OSCL
+LICENSE_NAME=	Open Source Code License
+LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
+LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 CONFLICTS_INSTALL=	idnkit-1.*
 
