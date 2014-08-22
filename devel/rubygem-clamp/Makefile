@@ -3,10 +3,11 @@
 
 PORTNAME=	clamp
 PORTVERSION=	0.6.3
+PORTREVISION=	1
 CATEGORIES=	devel ruby
 MASTER_SITES=	RG
 
-MAINTAINER=	ruby@FreeBSD.org
+MAINTAINER=	kvedulv@kvedulv.de
 COMMENT=	Command-line utility framework for Ruby
 
 LICENSE=	MIT
