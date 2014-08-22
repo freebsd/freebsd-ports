@@ -1142,6 +1142,7 @@
     SUBDIR += xspringies
     SUBDIR += xteddy
     SUBDIR += xtet42
+    SUBDIR += xtgyoretsu
     SUBDIR += xtic
     SUBDIR += xtriangles
     SUBDIR += xtris
