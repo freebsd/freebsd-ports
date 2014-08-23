@@ -1,5 +1,11 @@
-bin/eiskaltdcpp-cli
-@unexec if cmp -s %D/etc/eiskaltdcpp/config.pl.dist %D/etc/eiskaltdcpp/config.pl; then rm -f %D/etc/eiskaltdcpp/config.pl; fi
-etc/eiskaltdcpp/config.pl.dist
-@exec if [ ! -f %D/etc/eiskaltdcpp/config.pl ] ; then cp -p %D/%F %B/config.pl; fi
+bin/eiskaltdcpp-cli-jsonrpc
+bin/eiskaltdcpp-cli-xmlrpc
+man/man1/eiskaltdcpp-cli-jsonrpc.1.gz
+man/man1/eiskaltdcpp-cli-xmlrpc.1.gz
+@unexec if cmp -s %D/etc/eiskaltdcpp/cli-jsonrpc-config.pl.dist %D/etc/eiskaltdcpp/cli-jsonrpc-config.pl; then rm -f %D/etc/eiskaltdcpp/cli-jsonrpc-config.pl; fi
+@unexec if cmp -s %D/etc/eiskaltdcpp/cli-xmlrpc-config.pl.dist %D/etc/eiskaltdcpp/cli-xmlrpc-config.pl; then rm -f %D/etc/eiskaltdcpp/cli-xmlrpc-config.pl; fi
+etc/eiskaltdcpp/cli-jsonrpc-config.pl.dist
+@exec if [ ! -f %D/etc/eiskaltdcpp/cli-jsonrpc-config.pl ] ; then cp -p %D/%F %B/cli-jsonrpc-config.pl; fi
+etc/eiskaltdcpp/cli-xmlrpc-config.pl.dist
+@exec if [ ! -f %D/etc/eiskaltdcpp/cli-xmlrpc-config.pl ] ; then cp -p %D/%F %B/cli-xmlrpc-config.pl; fi
 @dirrmtry etc/eiskaltdcpp

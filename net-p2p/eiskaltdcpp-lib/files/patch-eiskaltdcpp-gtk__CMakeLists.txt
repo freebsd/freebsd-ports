@@ -1,0 +1,62 @@
+--- ./eiskaltdcpp-gtk/CMakeLists.txt.orig	2011-10-02 18:12:43.000000000 +0300
++++ ./eiskaltdcpp-gtk/CMakeLists.txt	2011-10-10 11:10:30.000000000 +0300
+@@ -12,7 +12,7 @@
+ 
+ if (USE_LIBGNOME2)
+     message (STATUS "Building with LibGnome2 support")
+-    find_package (LibGnome2 REQUIRED)
++    find_library(LIBGNOME2_LIBRARIES gnome-2)
+     set_property(SOURCE ${PROJECT_SOURCE_DIR}/src/sound.cc ${PROJECT_SOURCE_DIR}/src/settingsdialog.cc PROPERTY COMPILE_DEFINITIONS USE_MINIUPNP APPEND)
+     message (STATUS "Building without LibCanberra support")
+ elseif (USE_LIBCANBERRA)
+@@ -26,7 +26,7 @@
+ 
+ if (USE_LIBNOTIFY)
+     message (STATUS "Building with libnotify support")
+-    set (LIBNOTIFY "-lnotify")
++    find_library(LIBNOTIFY notify)
+ else (USE_LIBNOTIFY)
+     message (STATUS "Building without libnotify support")
+ endif (USE_LIBNOTIFY)
+@@ -39,7 +39,7 @@
+ set (GTK_SRCS @gtk_srcs@ PARENT_SCOPE)
+ set (GTK_HDRS @gtk_hdrs@ PARENT_SCOPE)
+ set (GTK_UI   @gtk_ui@   PARENT_SCOPE)
+-set (GTHREAD "-lgthread-2.0")
++find_library (GTHREAD "gthread-2.0")
+ 
+ if (USE_GTK)
+     set(GTK_INCLUDE_DIRS ${GTK2_INCLUDE_DIRS})
+@@ -74,6 +74,10 @@
+   list (APPEND LIBS ${LUA_LIBRARIES})
+ endif (LUA_SCRIPT)
+ 
++if (USE_MINIUPNP OR FREE_SPACE_BAR_C)
++	list(APPEND LIBS extra)
++endif (USE_MINIUPNP OR FREE_SPACE_BAR_C)
++
+ add_executable (${PROJECT_NAME} MACOSX_BUNDLE WIN32
+                 ${gtk_srcs}
+                 )
+@@ -124,10 +128,19 @@
+   add_definitions(-DCLIENT_RES_DIR="${CLIENT_DATA_DIR}/gtk/resources")
+ endif (APPLE)
+ 
++if (BUILD_LIB)
++	set(DCPP_LIB dcpp)
++else (BUILD_LIB)
++	find_library(DCPP_LIB eiskaltdcpp)
++	if (DCPP_LIB)
++		message(STATUS "EiskaltDC++ shared library found at ${DCPP_LIB}")
++	endif (DCPP_LIB)
++endif (BUILD_LIB)
++
+ if (APPLE)
+-  target_link_libraries (${PROJECT_NAME} ${LIBS} dcpp iconv intl)
++  target_link_libraries (${PROJECT_NAME} ${LIBS} ${DCPP_LIB} iconv intl)
+ else (APPLE)
+-  target_link_libraries (${PROJECT_NAME} ${LIBS} dcpp)
++  target_link_libraries (${PROJECT_NAME} ${LIBS} ${DCPP_LIB})
+ endif (APPLE)
+ 
+ if (UNIX)

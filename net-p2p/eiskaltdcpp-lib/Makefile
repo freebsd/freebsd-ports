@@ -1,69 +1,69 @@
 # Created by: Stas Timokhin <stast@bsdportal.ru>
 # $FreeBSD$
 
-PORTNAME=	eiskaltdcpp-lib
-PORTVERSION=	2.2.4
-PORTREVISION=	7
+PORTNAME=	eiskaltdcpp
+PORTVERSION=	2.2.9
 CATEGORIES=	net-p2p
 MASTER_SITES=	GOOGLE_CODE
-DISTNAME=	eiskaltdcpp-${DISTVERSION}
+PROJECTHOST=	eiskaltdc
+PKGNAMESUFFIX?=	-lib
 
 MAINTAINER=	fjoe@FreeBSD.org
 COMMENT=	Direct Connect client shared library
 
 LICENSE=	GPLv3
 
+.if !defined (MASTERDIR)
 LIB_DEPENDS=	libboost_system.so:${PORTSDIR}/devel/boost-libs
-BUILD_DEPENDS+=	chrpath:${PORTSDIR}/devel/chrpath
 
-PROJECTHOST=	eiskaltdc
-
-USES=		cmake gettext tar:xz compiler:gcc-c++11-lib
+USES=		cmake gettext compiler:c++11-lib
 USE_OPENSSL=	yes
 USE_LDCONFIG=	yes
 
-OPTIONS_DEFINE=	LUA PCRE IDN DHT
+OPTIONS_DEFINE=	LUA PCRE IDN DHT MINIUPNP
 OPTIONS_DEFAULT=	IDN DHT
 DHT_DESC=	DHT support
+MINIUPNP_DESC=	UPnP support
 
-.include <bsd.port.options.mk>
-
-CMAKE_ARGS+=	-DINSTALL_HEADERS:BOOL=ON
+CMAKE_ARGS+=	-DBUILD_LIB:BOOL=ON
+CMAKE_ARGS+=	-DWITH_DEV_FILES:BOOL=ON
 CMAKE_ARGS+=	-DUSE_QT:BOOL=OFF
 CMAKE_ARGS+=	-DUSE_GTK:BOOL=OFF
+CMAKE_ARGS+=	-DUSE_GTK3:BOOL=OFF
 CMAKE_ARGS+=	-DUSE_ASPELL:BOOL=OFF
-CMAKE_ARGS+=	-DUSE_MINIUPNP:BOOL=OFF
-CMAKE_ARGS+=	-DCMAKE_SKIP_RPATH:BOOL=ON
 
-.if ${PORT_OPTIONS:MLUA}
-USES+=		lua
-CMAKE_ARGS+=	-DLUA_SCRIPT:BOOL=ON
-#IGNORE=	crashes on connect attempt if built with Lua support
-.else
-CMAKE_ARGS+=	-DLUA_SCRIPT:BOOL=OFF
+LUA_USES=	lua:51
+LUA_CMAKE_ON=	-DLUA_SCRIPT:BOOL=ON
+LUA_CMAKE_OFF=	-DLUA_SCRIPT:BOOL=OFF
+
+PCRE_LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre
+PCRE_CMAKE_ON=	-DPERL_REGEX:BOOL=ON
+PCRE_CMAKE_OFF=	-DPERL_REGEX:BOOL=OFF
+
+IDN_LIB_DEPENDS=	libidn.so:${PORTSDIR}/dns/libidn
+IDN_CMAKE_ON=	-DUSE_IDNA:BOOL=ON
+IDN_CMAKE_OFF=	-DUSE_IDNA:BOOL=OFF
+
+DHT_CMAKE_ON=	-DWITH_DHT:BOOL=ON
+DHT_CMAKE_OFF=	-DWITH_DHT:BOOL=OFF
+
+MINIUPNP_LIB_DEPENDS=	libminiupnpc.so:${PORTSDIR}/net/miniupnpc
+MINIUPNP_CMAKE_ON=	-DUSE_MINIUPNP:BOOL=ON -DLOCAL_MINIUPNP:BOOL=OFF
+MINIUPNP_CMAKE_OFF=	-DUSE_MINIUPNP:BOOL=OFF
 .endif
 
-.if ${PORT_OPTIONS:MPCRE}
-LIB_DEPENDS+=	libpcre.so:${PORTSDIR}/devel/pcre
-CMAKE_ARGS+=	-DPERL_REGEX:BOOL=ON
-.else
-CMAKE_ARGS+=	-DPERL_REGEX:BOOL=OFF
-.endif
+USES+=		tar:xz
+PLIST=		${.CURDIR}/pkg-plist
 
-.if ${PORT_OPTIONS:MIDN}
-LIB_DEPENDS+=	libidn.so:${PORTSDIR}/dns/libidn
-CMAKE_ARGS+=	-DUSE_IDNA:BOOL=ON
-.else
-CMAKE_ARGS+=	-DUSE_IDNA:BOOL=OFF
+.if defined (MASTERDIR) && !defined (NO_BUILD)
+CMAKE_ARGS+=	-DBUILD_LIB:BOOL=OFF
+CMAKE_ARGS+=	-DEISKALTDCPP_INCLUDE_DIR:STRING="${LOCALBASE}/include/eiskaltdcpp"
+CMAKE_ARGS+=	-DCMAKE_LIBRARY_PATH:PATH="${LOCALBASE}/lib:${PREFIX}/lib"
+# these slave ports options have to be in sync with master library
+CMAKE_ARGS+=	-DUSE_IDNA:BOOL=`${PKG_QUERY} '%Ok %Ov' ${PORTNAME}-lib | ${GREP} '^IDN ' | ${CUT} -f 2 -d ' '`
+CMAKE_ARGS+=	-DWITH_DHT:BOOL=`${PKG_QUERY} '%Ok %Ov' ${PORTNAME}-lib | ${GREP} '^DHT ' | ${CUT} -f 2 -d ' '`
+CMAKE_ARGS+=	-DLUA_SCRIPT:BOOL=`${PKG_QUERY} '%Ok %Ov' ${PORTNAME}-lib | ${GREP} '^LUA ' | ${CUT} -f 2 -d ' '`
+CMAKE_ARGS+=	-DUSE_MINIUPNP:BOOL=`${PKG_QUERY} '%Ok %Ov' ${PORTNAME}-lib | ${GREP} '^MINIUPNP ' | ${CUT} -f 2 -d ' '`
 .endif
-
-.if ${PORT_OPTIONS:MDHT}
-CMAKE_ARGS+=	-DWITH_DHT:BOOL=ON
-.else
-CMAKE_ARGS+=	-DWITH_DHT:BOOL=OFF
-.endif
-
-post-build:
-	${LOCALBASE}/bin/chrpath -r "${_GCC_RUNTIME}" "${WRKSRC}/dcpp/libeiskaltdcpp.so.2.2"
 
 .include <bsd.port.mk>
