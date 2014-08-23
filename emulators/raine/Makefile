@@ -8,7 +8,7 @@ MASTER_SITES=	GENTOO/distfiles
 DISTNAME=	${PORTNAME}s-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Arcade Emulator for M68000| M68020| and Z80 based hardware
+COMMENT=	Arcade Emulator for M68000, M68020 and Z80 based hardware
 
 LICENSE=	ART10
 
