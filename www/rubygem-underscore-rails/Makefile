@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	underscore-rails
-PORTVERSION=	1.5.2
+PORTVERSION=	1.6.0
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
@@ -11,6 +11,5 @@ COMMENT=	underscore.js asset pipeline provider/wrapper
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
-
 
 .include <bsd.port.mk>
