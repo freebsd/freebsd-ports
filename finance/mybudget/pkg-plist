@@ -1,38 +1,39 @@
 bin/myBudget
+share/applications/myBudget.desktop
+%%PORTDOCS%%%%DOCSDIR%%/DirectDebitPane.png
+%%PORTDOCS%%%%DOCSDIR%%/ExportAbiWord.png
+%%PORTDOCS%%%%DOCSDIR%%/MyBudget.html
+%%PORTDOCS%%%%DOCSDIR%%/MyBudget.html_files/1.png
+%%PORTDOCS%%%%DOCSDIR%%/MyBudget.html_files/addButton_0.png
+%%PORTDOCS%%%%DOCSDIR%%/MyBudget.html_files/deleteButton_0.png
+%%PORTDOCS%%%%DOCSDIR%%/MyBudget.html_files/deleteButton_1.png
+%%PORTDOCS%%%%DOCSDIR%%/MyBudget.html_files/gnumericButton_0.png
+%%PORTDOCS%%%%DOCSDIR%%/MyBudget.html_files/gnumericButton_1.png
+%%PORTDOCS%%%%DOCSDIR%%/MyBudget.html_files/gnumericButton_2.png
+%%PORTDOCS%%%%DOCSDIR%%/MyBudget.html_files/myBudget-1_0.png
+%%PORTDOCS%%%%DOCSDIR%%/MyBudget.html_files/myBudget-2_0.png
+%%PORTDOCS%%%%DOCSDIR%%/MyBudget.html_files/mybudget-3_0.png
+%%PORTDOCS%%%%DOCSDIR%%/MyBudget.html_files/quitButton_0.png
+%%PORTDOCS%%%%DOCSDIR%%/MyBudget.html_files/replaceButton_0.png
+%%PORTDOCS%%%%DOCSDIR%%/MyBudget.html_files/replaceButton_1.png
+%%PORTDOCS%%%%DOCSDIR%%/MyBudget.html_files/sortCategoriesButton_0.png
+%%PORTDOCS%%%%DOCSDIR%%/MyBudget.html_files/sortDatesButton_0.png
+%%PORTDOCS%%%%DOCSDIR%%/MyBudget.html_files/sortItem_0.png
+%%PORTDOCS%%%%DOCSDIR%%/MyBudget.zabw
+%%PORTDOCS%%%%DOCSDIR%%/addButton.png
+%%PORTDOCS%%%%DOCSDIR%%/applyButton.png
+%%PORTDOCS%%%%DOCSDIR%%/deleteButton.png
+%%PORTDOCS%%%%DOCSDIR%%/gnumericButton.png
+%%PORTDOCS%%%%DOCSDIR%%/myBudget-1.png
+%%PORTDOCS%%%%DOCSDIR%%/myBudget-2.png
+%%PORTDOCS%%%%DOCSDIR%%/mybudget-3.png
+%%PORTDOCS%%%%DOCSDIR%%/quitButton.png
+%%PORTDOCS%%%%DOCSDIR%%/replaceButton.png
+%%PORTDOCS%%%%DOCSDIR%%/sortCategoriesButton.png
+%%PORTDOCS%%%%DOCSDIR%%/sortDatesButton.png
+%%PORTDOCS%%%%DOCSDIR%%/sortItem.png
+share/icons/hicolor/scalable/apps/myBudget-icon.svg
 %%DATADIR%%/abiword_head.txt
-%%DATADIR%%/applications/myBudget.desktop
-%%DATADIR%%/docs/DirectDebitPane.png
-%%DATADIR%%/docs/ExportAbiWord.png
-%%DATADIR%%/docs/MyBudget.html
-%%DATADIR%%/docs/MyBudget.html_files/1.png
-%%DATADIR%%/docs/MyBudget.html_files/addButton_0.png
-%%DATADIR%%/docs/MyBudget.html_files/deleteButton_0.png
-%%DATADIR%%/docs/MyBudget.html_files/deleteButton_1.png
-%%DATADIR%%/docs/MyBudget.html_files/gnumericButton_0.png
-%%DATADIR%%/docs/MyBudget.html_files/gnumericButton_1.png
-%%DATADIR%%/docs/MyBudget.html_files/gnumericButton_2.png
-%%DATADIR%%/docs/MyBudget.html_files/myBudget-1_0.png
-%%DATADIR%%/docs/MyBudget.html_files/myBudget-2_0.png
-%%DATADIR%%/docs/MyBudget.html_files/mybudget-3_0.png
-%%DATADIR%%/docs/MyBudget.html_files/quitButton_0.png
-%%DATADIR%%/docs/MyBudget.html_files/replaceButton_0.png
-%%DATADIR%%/docs/MyBudget.html_files/replaceButton_1.png
-%%DATADIR%%/docs/MyBudget.html_files/sortCategoriesButton_0.png
-%%DATADIR%%/docs/MyBudget.html_files/sortDatesButton_0.png
-%%DATADIR%%/docs/MyBudget.html_files/sortItem_0.png
-%%DATADIR%%/docs/MyBudget.zabw
-%%DATADIR%%/docs/addButton.png
-%%DATADIR%%/docs/applyButton.png
-%%DATADIR%%/docs/deleteButton.png
-%%DATADIR%%/docs/gnumericButton.png
-%%DATADIR%%/docs/myBudget-1.png
-%%DATADIR%%/docs/myBudget-2.png
-%%DATADIR%%/docs/mybudget-3.png
-%%DATADIR%%/docs/quitButton.png
-%%DATADIR%%/docs/replaceButton.png
-%%DATADIR%%/docs/sortCategoriesButton.png
-%%DATADIR%%/docs/sortDatesButton.png
-%%DATADIR%%/docs/sortItem.png
 %%DATADIR%%/example.myb
 %%DATADIR%%/generic-budget.txt
 %%DATADIR%%/glade/icon.svg
@@ -40,13 +41,10 @@ bin/myBudget
 %%DATADIR%%/glade/mybudget.gladep
 %%DATADIR%%/gnumeric_foot.txt
 %%DATADIR%%/gnumeric_head.txt
-%%DATADIR%%/pixmaps/myBudget-icon.svg
 %%DATADIR%%/po/myBudget.po
 %%DATADIR%%/splashscreen.png
 @dirrm %%DATADIR%%/po
-@dirrm %%DATADIR%%/pixmaps
 @dirrm %%DATADIR%%/glade
-@dirrm %%DATADIR%%/docs/MyBudget.html_files
-@dirrm %%DATADIR%%/docs
-@dirrm %%DATADIR%%/applications
 @dirrm %%DATADIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/MyBudget.html_files
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
