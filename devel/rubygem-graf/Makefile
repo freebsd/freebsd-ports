@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	graf
-PORTVERSION=	0.0.3
+PORTVERSION=	0.0.5
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
