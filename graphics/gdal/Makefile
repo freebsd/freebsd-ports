@@ -20,7 +20,13 @@ OPTIONS_DEFINE=	ARMADILLO CFITSIO CURL ECW EXPAT FREEXL GEOS GEOTIFF GIF GTA \
 OPTIONS_RADIO=	PDF
 OPTIONS_RADIO_PDF=	PODOFO POPPLER
 OPTIONS_DEFAULT=GEOTIFF GIF JASPER JPEG PNG TIFF
+GEOTIFF_DESC=	Use graphics/libgeotiff instead of bundled one
+GIF_DESC=	Use graphics/giflib instead of bundled one
+JPEG_DESC=	Use graphics/jpeg instead of bundled one
+JSON_C_DESC=	Use devel/json-c instead of bundled one
 PCRE_DESC=	Regular expression support for SQLite
+PNG_DESC=	Use graphics/png instead of bundled one
+TIFF_DESC=	Use graphics/tiff instead of bundled one
 
 CFLAGS+=	-fPIC
 CONFIGURE_ARGS=	--datadir=${DATADIR} \
