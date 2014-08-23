@@ -1,32 +1,29 @@
 # Created by: Oliver Eikemeier <eikemeier@fillmore-labs.com>
 # $FreeBSD$
 
-PORTNAME=		gnats
-PORTVERSION=		4.1.0
-PORTREVISION=		2
-CATEGORIES=		databases devel
-MASTER_SITES=		${MASTER_SITE_GNU}
+PORTNAME=	gnats
+PORTVERSION=	4.1.0
+PORTREVISION=	3
+CATEGORIES=	databases devel
+MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	gnats
+PKGNAMESUFFIX=	4
 
-MAINTAINER= ports@FreeBSD.org
-COMMENT=		GNATS, the GNU Problem Report Management System
+MAINTAINER=	portmaster@bsdforge.com
+COMMENT=	GNATS, the GNU Problem Report Management System
 
-GNU_CONFIGURE=		yes
-USES=			gmake makeinfo
+GNU_CONFIGURE=	yes
+USES=		gmake makeinfo
+USE_GCC=	any
+USERS=		gnats
 
-LATEST_LINK=		${PKGNAMEPREFIX}gnats4${PKGNAMESUFFIX}
-CONFLICTS=		gnats-3.*
-
-PKGMESSAGE=		${WRKDIR}/pkg-message
-PKGINSTALL=		${WRKDIR}/pkg-install
+PKGMESSAGE=	${WRKDIR}/pkg-message
+PKGINSTALL=	${WRKDIR}/pkg-install
 
 .ifdef WANT_FREEFALL_CFG
 EXTRA_PATCHES+=		${PATCHDIR}/extrapatch-*
-
 GNATSDBDIR=		${DATADIR}
-
 CONFIGURE_ARGS+=	--with-gnats-default-db=${GNATSDBDIR}/gnats-db
-
 WITH_SUBMITTER_ID=	current-users
 WITH_ORGANIZATION=	FreeBSD
 WITH_GNATSD_SERVICE=	support
@@ -48,38 +45,30 @@ CONFIGURE_ARGS+=	--with-organization=${WITH_ORGANIZATION:Q}
 CONFIGURE_ARGS+=	--with-gnats-service=${WITH_GNATSD_SERVICE}
 .endif
 
-PLIST_SUB=		GNATSDBDIR=${GNATSDBDIR}
+PLIST_SUB=	GNATSDBDIR=${GNATSDBDIR}
+INFO=		gnats-faq gnats
+PORTDOCS=	NEWS UPGRADING
 
-MAN1=			edit-pr.1 query-pr.1 send-pr.1
-MAN5=			databases.5 dbconfig.5
-MAN7=			gnats.7
-MAN8=			delete-pr.8 getclose.8 file-pr.8 gen-index.8 gnatsd.8 \
-			install-sid.8 mkcat.8 mkdb.8 pr-edit.8 queue-pr.8 rmcat.8
-INFO=			gnats-faq gnats
-DOCFILES=		NEWS UPGRADING
+OPTIONS_DEFINE=	DOCS EMACS SERVER
+OPTIONS_DEFAULT=SERVER
+OPTIONS_SUB=	yes
+EMACS_USE=	EMACS=yes
+EMACS_DESC=	Add support for default version of EMACS
+SERVER_DESC=	Install the gnats server too
 
-.ifdef WITH_EMACS_PORT
-USE_EMACS=	yes
-EMACS_PORT_NAME=	${WITH_EMACS_PORT}
-CONFIGURE_ARGS+=	--with-lispdir=${LOCALBASE}/${EMACS_SITE_LISPDIR}
-.else
-PLIST_SUB+=		EMACS_SITE_LISPDIR="@comment "
+.include <bsd.port.options.mk>
+
+.if ! ${PORT_OPTIONS:MSERVER}
+ALL_TARGET=	all-tools
+INSTALL_TARGET=	install-tools
 .endif
 
-.ifdef CLIENT_ONLY
-ALL_TARGET=		all-tools
-INSTALL_TARGET=		install-tools
-PLIST_SUB+=		SERVER="@comment "
-PKGNAMESUFFIX=		-client
-CONFLICTS+=		${PKGNAMEPREFIX}${PORTNAME}-4.*
+.if ${PORT_OPTIONS:MEMACS}
+CONFIGURE_ARGS+=--with-lispdir=${LOCALBASE}/${EMACS_SITE_LISPDIR}
 .else
-PLIST_SUB+=		SERVER=""
-CONFLICTS+=		${PKGNAMEPREFIX}${PORTNAME}-client-4.*
+PLIST_SUB+=	EMACS_SITE_LISPDIR="@comment "
 .endif
 
-OPTIONS_DEFINE=	DOCS
-
-NO_STAGE=	yes
 pre-everything::
 .if !defined(PACKAGE_BUILDING) && !defined(WANT_FREEFALL_CFG)
 	@${ECHO} "============================================================="
@@ -89,7 +78,6 @@ pre-everything::
 	@${ECHO} "WITH_SUBMITTER_ID=unknown        default submitter-id"
 	@${ECHO} "WITH_ORGANIZATION='unknown'      default organization"
 	@${ECHO} "WITH_GNATSD_SERVICE=support      default gnatsd port name"
-	@${ECHO} "WITH_EMACS_PORT=emacs            with Emacs support"
 	@${ECHO}
 	@${ECHO} "============================================================="
 	@${ECHO}
@@ -100,26 +88,22 @@ pre-configure:
 
 post-build:
 	@for doc in pkg-message pkg-install; do \
-		${SED} -e 's,%%PREFIX%%,${PREFIX},g' \
+		${SED} -e 's,%%PREFIX%%,${STAGEDIR}${PREFIX},g' \
 			-e 's,%%GNATSDBDIR%%,${GNATSDBDIR},g' \
-			${PKGDIR}/$${doc} >${WRKDIR}/$${doc} ; \
+			${PKGDIR}/$${doc} >${WRKDIR}/$${doc}; \
 	done
 
 pre-install:
-	@${MKDIR} ${PREFIX}/libexec/gnats
-	@${SETENV} "PKG_PREFIX=${PREFIX}" ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
+	@${MKDIR} ${STAGEDIR}${PREFIX}/libexec/gnats
 
 post-install:
-.ifndef CLIENT_ONLY
-	@for conf in databases gnatsd.host_access; do \
-		[ -f ${PREFIX}/etc/gnats/$${conf} ] \
-		|| ${CP} ${PREFIX}/etc/gnats/$${conf}.default ${PREFIX}/etc/gnats/$${conf}; \
-	done
+.if ${PORT_OPTIONS:MSERVER}
+	${MV} ${STAGEDIR}${ETCDIR}/databases.default \
+		${STAGEDIR}${ETCDIR}/databases.sample
+	${MV} ${STAGEDIR}${ETCDIR}/gnatsd.host_access.default \
+		${STAGEDIR}${ETCDIR}/gnatsd.host_access.sample
 .endif
-	@${MKDIR} ${DOCSDIR}
-	@for doc in ${DOCFILES}; do \
-		${INSTALL_DATA} ${WRKSRC}/$${doc} ${DOCSDIR}; \
-	done
-	@${CAT} ${PKGMESSAGE}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	(cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR})
 
 .include <bsd.port.mk>
