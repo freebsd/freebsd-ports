@@ -3,7 +3,7 @@
 
 PORTNAME=	balazar
 PORTVERSION=	0.3.4
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	games python
 MASTER_SITES=	http://download.gna.org/balazar/
 DISTNAME=	Balazar-${PORTVERSION}
@@ -11,31 +11,42 @@ DISTNAME=	Balazar-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	3D adventure and roleplaying game
 
+LICENSE=	GPLv2 # (or later)
+
 LIB_DEPENDS=	libcal3d.so:${PORTSDIR}/graphics/cal3d \
 		libfreetype.so:${PORTSDIR}/print/freetype2
 RUN_DEPENDS=	soya_editor:${PORTSDIR}/graphics/py-soya3d \
-		${PYTHON_SITELIBDIR}/_openal.so:${PORTSDIR}/audio/py-openal \
-		${PYTHON_SITELIBDIR}/ogg/vorbis.so:${PORTSDIR}/audio/py-vorbis \
-		${PYTHON_SITELIBDIR}/tofu/client.py:${PORTSDIR}/net/py-tofu \
-		${PYTHON_SITELIBDIR}/cerealizer/__init__.py:${PORTSDIR}/security/py-cerealizer
+		${PYTHON_PKGNAMEPREFIX}openal>0:${PORTSDIR}/audio/py-openal \
+		${PYTHON_PKGNAMEPREFIX}vorbis>0:${PORTSDIR}/audio/py-vorbis \
+		${PYTHON_PKGNAMEPREFIX}tofu>0:${PORTSDIR}/net/py-tofu \
+		${PYTHON_PKGNAMEPREFIX}cerealizer>0:${PORTSDIR}/security/py-cerealizer
 
-USE_PYTHON=	yes
-USE_PYDISTUTILS=	yes
+NO_ARCH=	yes
+
+USES=		gettext python tar:bzip2 twisted
 USE_GL=		glew
-USE_SDL=	sdl mixer
-USES=		gettext twisted tar:bzip2
+USE_SDL=	mixer sdl
+USE_PYTHON=	autoplist distutils
 
 PYDISTUTILS_PKGNAME=	Balazar
 PYDISTUTILS_EGGINFODIR=	${PREFIX}/share
 
-NO_STAGE=	yes
+PORTDOCS=	README
+
+DESKTOP_ENTRIES="Balazar" "" "" "balazar" "" ""
+
+OPTIONS_DEFINE=	DOCS
+
 post-patch:
-	@${REINPLACE_CMD} -e "s,%%PREFIX%%,${PREFIX},g" ${WRKSRC}/setup.cfg
+	@${REINPLACE_CMD} -e \
+		'/^install-purelib/s|=.*|= ${PREFIX}/share| ; \
+		 /^install-scripts/s|=.*|= ${PREFIX}/bin| ; \
+		 /^install-data/s|=.*|= ${PREFIX}/share|' ${WRKSRC}/setup.cfg
+	@${REINPLACE_CMD} -e \
+		'/LC_MESSAGES/s|".",||' ${WRKSRC}/setup.py
 
 post-install:
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKDIR}/${DISTNAME}/README ${DOCSDIR}
-.endif
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	(cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR})
 
 .include <bsd.port.mk>
