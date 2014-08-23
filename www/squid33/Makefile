@@ -207,6 +207,9 @@ basic_auth+=	NIS
 # POLA: allow the old global make.conf(5) (pre src.conf(5)) defines, too:
 .if ${PORT_OPTIONS:MAUTH_KERB} && !defined(NO_KERBEROS) && !defined(WITHOUT_KERBEROS)
 negotiate_auth=	kerberos wrapper
+.  if ${OPSYS} == DragonFly
+LIB_DEPENDS+=	libkrb5.so:${PORTSDIR}/security/krb5
+.  endif
 # the kerberos_ldap_group external helper depends on LDAP and SASL:
 .if ${PORT_OPTIONS:MAUTH_LDAP} && ${PORT_OPTIONS:MAUTH_SASL}
 external_acl+=	kerberos_ldap_group
@@ -311,6 +314,12 @@ post-patch:
 		-e'/tcp_outgoing_address 2001:db8::1/d'\
 		${WRKSRC}/src/cf.data.pre
 .endif
+#	The kerberos auth helper check is harded for /usr/gssapi/gssapi.h, but
+#	kerberos authorization happily uses gssapi located at $LOCALBASE.  Make
+#	the config test always pass because it's guaranteed to pass on FreeBSD
+#	and DragonFly installs it with the krb5 package.
+	@${REINPLACE_CMD} -e 's|exit 1|exit 0|' \
+		${WRKSRC}/helpers/negotiate_auth/kerberos/config.test
 
 post-install:
 .if ${PORT_OPTIONS:MEXAMPLES}
