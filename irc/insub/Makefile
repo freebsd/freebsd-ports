@@ -12,9 +12,8 @@ COMMENT=	Some scripts for expressing how you feel on IRC and the web
 RUN_DEPENDS=	cowsay:${PORTSDIR}/games/cowsay \
 		figlet:${PORTSDIR}/misc/figlet
 
-USES=		perl5
+USES=		perl5 python:2.5+
 USE_PERL5=	run
-USE_PYTHON=	2.5+
 
 OPTIONS_DEFINE=	COWS
 OPTIONS_DEFAULT=COWS
@@ -26,7 +25,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTNAME}
 DATADIR=	${PREFIX}/share/cows
 
 post-patch:
-	${REINPLACE_CMD} -e 's,/usr/local,${PREFIX},g' \
+	@${REINPLACE_CMD} -e 's,/usr/local,${PREFIX},g' \
 		${WRKSRC}/${PORTNAME}.py ${WRKSRC}/irssi/${PORTNAME}.pl
 
 do-install:
