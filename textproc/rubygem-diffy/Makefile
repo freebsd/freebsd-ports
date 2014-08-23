@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	diffy
-PORTVERSION=	2.1.4
+PORTVERSION=	3.0.6
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
