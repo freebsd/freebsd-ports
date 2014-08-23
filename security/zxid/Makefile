@@ -40,6 +40,7 @@ post-patch:
 	@${REINPLACE_CMD} -e \
 		'/^LIBS/s|-lpthread|-pthread| ; \
 		 /^SHARED/s|--export-all-symbols|| ; \
+		 /..error /d ; \
 		 /which gcc/d' ${WRKSRC}/Makefile
 	@${REINPLACE_CMD} -e \
 		's|<malloc.h>|<stdlib.h>|' ${WRKSRC}/zxidconf.c
