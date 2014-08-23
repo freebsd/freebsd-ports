@@ -2,6 +2,7 @@
 
 PORTNAME=	texlive
 PORTVERSION=	20140525
+PORTREVISION=	1
 CATEGORIES=	print
 MASTER_SITES=	ftp://tug.org/historic/systems/texlive/2014/
 PKGNAMESUFFIX=	-base
@@ -24,6 +25,9 @@ LIB_DEPENDS=	libicuio.so:${PORTSDIR}/devel/icu \
 		libpoppler.so:${PORTSDIR}/graphics/poppler
 # XXX
 #		libpotrace.so:${PORTSDIR}/graphics/potrace
+
+CONFLICTS_INSTALL=	texlive-texmf-201[23]*
+
 USE_TEX=	web2c kpathsea ptexenc texhash-bootstrap
 USES=		gmake pkgconfig perl5 shebangfix tar:xz
 USE_AUTOTOOLS=	autoconf
