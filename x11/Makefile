@@ -294,6 +294,7 @@
     SUBDIR += vdesk
     SUBDIR += videoproto
     SUBDIR += viewres
+    SUBDIR += virtualgl
     SUBDIR += wbar
     SUBDIR += wbarconf
     SUBDIR += wdm
