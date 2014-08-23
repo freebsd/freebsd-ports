@@ -3,57 +3,68 @@
 
 PORTNAME=	ninix-aya
 PORTVERSION=	4.4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_JP}
-MASTER_SITE_SUBDIR=	ninix-aya/58500
-EXTRACT_SUFX=	.tgz
+MASTER_SITES=	SFJP/${PORTNAME}/58500
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Ninix-aya is a compatible with desktop mascot program "Ukagaka"
+COMMENT=	Desktop mascot program compatible with "Ukagaka"
 
 LICENSE=	GPLv2
-LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png
 RUN_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip \
-		${PYTHON_SITELIBDIR}/chardet/__init__.py:${PORTSDIR}/textproc/py-chardet \
-		${PYNUMPY} \
-		${PYTHON_SITELIBDIR}/pygst.py:${PORTSDIR}/multimedia/py-gstreamer
+		${PYTHON_PKGNAMEPREFIX}chardet>0:${PORTSDIR}/textproc/py-chardet \
+		${PYNUMPY}
 
-USE_PYTHON=	yes
+NO_ARCH=	yes
+
+USES=		gmake python tar:tgz
 USE_GNOME=	pygtk2
-USES=		gmake
+USE_GSTREAMER=	python
+
+DOCSDIR=	${PREFIX}/share/doc/ninix
 
 OPTIONS_DEFINE=	DOCS NLS
+OPTIONS_SUB=	yes
 
-NO_STAGE=	yes
+NLS_USES=	gettext
+
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MDOCS}
-DOCSDIR=	${PREFIX}/share/doc/ninix
-.endif
-
+do-build:
+	@(cd ${WRKSRC}/bin && ${SED} -e \
+		's|@python|${PYTHON_CMD}| ; \
+		 s|@libdir|${PREFIX}/libexec/ninix|' ninix.in > ninix)
 .if ${PORT_OPTIONS:MNLS}
-USES+=	gettext
-PLIST_SUB+=	NLS=""
-.else
-PLIST_SUB+=	NLS="@comment "
+.for i in ja zh_TW
+	(cd ${WRKSRC}/locale && ${LOCALBASE}/bin/msgfmt -o ${i}.mo ${i}.po)
+.endfor
 .endif
 
-post-patch:
-	@${REINPLACE_CMD} -E -e 's,\$$\(DESTDIR\)(.*),\1,' \
-		-e 's,/opt/ninix-aya,$$(PREFIX),' \
-		-e 's,lib/ninix,libexec/ninix,'	\
-		-e 's,/doc,/share/doc/ninix,' \
-		${WRKSRC}/Makefile
-.if ! ${PORT_OPTIONS:MDOCS}
-	@${REINPLACE_CMD} -e '/docdir)$$/d' \
-		${WRKSRC}/Makefile
+do-install:
+	(cd ${WRKSRC}/bin && ${INSTALL_SCRIPT} ninix \
+		${STAGEDIR}${PREFIX}/bin)
+	@${MKDIR} ${STAGEDIR}${PREFIX}/libexec/ninix
+	(cd ${WRKSRC}/lib && ${COPYTREE_SHARE} . \
+		${STAGEDIR}${PREFIX}/libexec/ninix)
+	@(cd ${STAGEDIR}${PREFIX} && ${PYTHON_CMD} -m compileall \
+		-d ${PREFIX}/libexec/ninix -f libexec/ninix)
+.if ${PORT_OPTIONS:MNLS}
+.for i in ja zh_TW
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/locale/${i}/LC_MESSAGES
+	(cd ${WRKSRC}/locale && ${INSTALL_DATA} ${i}.mo \
+		${STAGEDIR}${PREFIX}/share/locale/${i}/LC_MESSAGES/ninix.mo)
+.endfor
 .endif
-.if ! ${PORT_OPTIONS:MNLS}
-	@${REINPLACE_CMD} -e '/localedir/d' \
-		${WRKSRC}/Makefile
-.endif
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+.for i in ChangeLog README README.ninix TODO.ninix KNOWN_ISSUES
+	(cd ${WRKSRC} && ${INSTALL_DATA} ${i} \
+		${STAGEDIR}${DOCSDIR})
+.endfor
+.for i in extension.txt kawari.txt saori.txt
+	(cd ${WRKSRC}/doc && ${INSTALL_DATA} ${i} \
+		${STAGEDIR}${DOCSDIR})
+.endfor
 
 .include <bsd.port.mk>
