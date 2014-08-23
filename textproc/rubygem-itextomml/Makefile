@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	itextomml
-PORTVERSION=	1.4.10
+PORTVERSION=	1.5.2
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
