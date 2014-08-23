@@ -11,7 +11,7 @@ PKGNAMEPREFIX=	boehm-
 PKGNAMESUFFIX=	-${GC_VARIANT}
 .endif
 
-MAINTAINER=	cjpugmed@gmail.com
+MAINTAINER=	cpm@fbsd.es
 COMMENT=	Garbage collection and memory leak detection for C and C++
 
 LICENSE=	BDWGC
