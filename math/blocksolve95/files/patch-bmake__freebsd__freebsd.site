@@ -20,9 +20,9 @@
 -MPI_LIB        = /usr/local/mpi/lib/freebsd/ch_p4/libmpi.a
 -MPI_INCLUDE    = -I/usr/local/mpi/include 
 -MPIRUN         = /usr/local/mpi/bin/mpirun
-+MPI_LIB        = $(LOCALBASE)/mpich2/lib/libmpich.a
-+MPI_INCLUDE    = -I$(LOCALBASE)/mpich2/include
-+MPIRUN         = $(LOCALBASE)/mpich2/bin/mpirun
++MPI_LIB        = -lmpich -lmpe -lmpl
++MPI_INCLUDE    = -I$(LOCALBASE)/include
++MPIRUN         = $(LOCALBASE)/bin/mpirun
  #
  # Location of BlockSolve95
  #

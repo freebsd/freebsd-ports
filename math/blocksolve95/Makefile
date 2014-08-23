@@ -3,7 +3,7 @@
 
 PORTNAME=	blocksolve95
 PORTVERSION=	3.0
-PORTREVISION=	12
+PORTREVISION=	13
 CATEGORIES=	math parallel
 MASTER_SITES=	ftp://ftp.mcs.anl.gov/pub/BlockSolve95/ \
 		http://ftp.mcs.anl.gov/pub/BlockSolve95/
@@ -13,9 +13,13 @@ DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Software for the efficient solution of large, sparse linear systems
 
-BUILD_DEPENDS=	${MPIDIR}/lib/libmpich.a:${PORTSDIR}/net/mpich2
-LIB_DEPENDS=	libf2c.so:${PORTSDIR}/lang/f2c
-RUN_DEPENDS=	${MPIDIR}/bin/mpirun:${PORTSDIR}/net/mpich2
+LICENSE=	AS-IS
+LICENSE_NAME=	AS-IS
+LICENSE_FILE=	${WRKSRC}/COPYRIGHT
+LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
+
+LIB_DEPENDS=	libf2c.so:${PORTSDIR}/lang/f2c	\
+		libmpich.so.2:${PORTSDIR}/net/mpich2
 
 USES=		fortran gmake tar:Z
 MAKEFILE=	makefile
@@ -31,7 +35,6 @@ FFLAGS+=	-O2
 INCLUDES=	BMmsg.h BSdepend.h BSlog.h BSmy_blas.h BSprivate.h BSsparse.h
 PORTDOCS=	manual.ps
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if exists(${LOCALBASE}/lib/libatlas.so) && !defined(WITH_BLAS)
@@ -50,15 +53,17 @@ LAPACK_LIB=	-L${LOCALBASE}/lib -llapack
 
 do-install:
 	${INSTALL_DATA}	${WRKSRC}/lib/lib${BOPT}/${PETSC_ARCH}/libBS95.a	\
-		${PREFIX}/lib
-	${INSTALL_DATA}	${INCLUDES:S|^|${WRKSRC}/include/|} ${PREFIX}/include
-	${INSTALL_MAN} ${MAN3:S|^|${WRKSRC}/doc/man/man3/|} ${MANPREFIX}/man/man3
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA}	${PORTDOCS:S|^|${WRKSRC}/doc/manual/|} ${DOCSDIR}
-	${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_DATA}	${WRKSRC}/examples/* ${EXAMPLESDIR}
-	@${RM} ${EXAMPLESDIR}/makefile.orig
+		${STAGEDIR}${PREFIX}/lib
+	${INSTALL_DATA}	${INCLUDES:S|^|${WRKSRC}/include/|} ${STAGEDIR}${PREFIX}/include
+	${INSTALL_MAN} ${WRKSRC}/doc/man/man3/* ${STAGEDIR}${MANPREFIX}/man/man3
+.if ${PORT_OPTIONS:MDOCS}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA}	${PORTDOCS:S|^|${WRKSRC}/doc/manual/|} ${STAGEDIR}${DOCSDIR}
+.endif
+.if ${PORT_OPTIONS:MEXAMPLES}
+	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA}	${WRKSRC}/examples/* ${STAGEDIR}${EXAMPLESDIR}
+	@${RM} ${STAGEDIR}${EXAMPLESDIR}/makefile.orig
 .endif
 
 .if defined(MAINTAINER_MODE)
@@ -69,10 +74,9 @@ regression-test:	build
 	@${ECHO_MSG} "${HOME}/.mpd.conf has been generated - please change the secret word!"
 . endif
 	${LOCALBASE}/bin/mpd &
-	@(cd ${BUILD_WRKSRC}/examples;	\
-	${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} bsrunexamples clean)
+	(cd ${BUILD_WRKSRC}/examples &&	\
+	${SETENV} ${MAKE_ENV:C|HOME=|wHOME=|} ${MAKE_CMD} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} bsrunexamples clean)
 	${LOCALBASE}/bin/mpdallexit
 .endif
 
-.include "${FILESDIR}/BSman3.inc"
 .include <bsd.port.post.mk>
