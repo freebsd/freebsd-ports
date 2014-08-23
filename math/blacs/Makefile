@@ -3,15 +3,12 @@
 
 PORTNAME=	blacs
 PORTVERSION=	1.7
-PORTREVISION=	17
+PORTREVISION=	18
 CATEGORIES=	math
-MASTER_SITES=	ftp://ftp.netlib.org/blacs/
+MASTER_SITES=	${MASTER_SITE_NETLIB}
+MASTER_SITE_SUBDIR=blacs
 DISTNAME=	BLACS
 DISTFILES=	mpiblacs.tgz blacstester.tgz mpiblacs-patch03.tgz
-.if !defined(NOPORTDOCS)
-DISTFILES+=	blacs_install.ps f77blacsqref.ps lawn94.ps \
-		cblacsqref.ps  mpi_prop.ps mpiblacs_issues.ps
-.endif
 DIST_SUBDIR=	blacs
 EXTRACT_ONLY=	mpiblacs.tgz blacstester.tgz mpiblacs-patch03.tgz
 
@@ -23,8 +20,12 @@ SUB_FILES=	pkg-message
 USES=		fortran gmake
 USE_LDCONFIG=	yes
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
+
+.if ! ${PORT_OPTIONS:MDOCS}
+DISTFILES+=	blacs_install.ps f77blacsqref.ps lawn94.ps \
+		cblacsqref.ps  mpi_prop.ps mpiblacs_issues.ps
+.endif
 
 .if exists(${LOCALBASE}/mpi/openmpi/bin/mpirun)
 WITH_OPENMPI=	yes
@@ -50,7 +51,7 @@ FPIC=	-fpic
 
 WRKSRC_SHARED=${WRKSRC}_shared
 CFLAGS_SHARED=${CFLAGS} ${FPIC}
-FFLAGS_SHARED=${CFLAGS} ${FPIC}
+FFLAGS_SHARED=${FFLAGS} ${FPIC}
 SVERSION=1
 
 .if defined(WITH_OPTIMIZED_FLAGS)
@@ -95,37 +96,34 @@ post-build:
 	done
 
 do-install:
-	${INSTALL_DATA} ${WRKSRC}/LIB/blacsCinit_MPI-FreeBSD-${DEBUG_LEVEL}.a ${PREFIX}/lib/libblacsc.a
-	${INSTALL_DATA} ${WRKSRC}/LIB/blacsF77init_MPI-FreeBSD-${DEBUG_LEVEL}.a ${PREFIX}/lib/libblacsf77.a
-	${INSTALL_DATA} ${WRKSRC}/LIB/blacs_MPI-FreeBSD-${DEBUG_LEVEL}.a ${PREFIX}/lib/libblacs.a
+	${INSTALL_DATA} ${WRKSRC}/LIB/blacsCinit_MPI-FreeBSD-${DEBUG_LEVEL}.a ${STAGEDIR}${PREFIX}/lib/libblacsc.a
+	${INSTALL_DATA} ${WRKSRC}/LIB/blacsF77init_MPI-FreeBSD-${DEBUG_LEVEL}.a ${STAGEDIR}${PREFIX}/lib/libblacsf77.a
+	${INSTALL_DATA} ${WRKSRC}/LIB/blacs_MPI-FreeBSD-${DEBUG_LEVEL}.a ${STAGEDIR}${PREFIX}/lib/libblacs.a
 
-	${INSTALL_DATA} ${WRKDIR}/tmp_shared/libblacsc.so.${SVERSION}   ${PREFIX}/lib/libblacsc.so.${SVERSION}
-	${INSTALL_DATA} ${WRKDIR}/tmp_shared/libblacsf77.so.${SVERSION} ${PREFIX}/lib/libblacsf77.so.${SVERSION}
-	${INSTALL_DATA} ${WRKDIR}/tmp_shared/libblacs.so.${SVERSION}    ${PREFIX}/lib/libblacs.so.${SVERSION}
+	${INSTALL_DATA} ${WRKDIR}/tmp_shared/libblacsc.so.${SVERSION}   ${STAGEDIR}${PREFIX}/lib/libblacsc.so.${SVERSION}
+	${INSTALL_DATA} ${WRKDIR}/tmp_shared/libblacsf77.so.${SVERSION} ${STAGEDIR}${PREFIX}/lib/libblacsf77.so.${SVERSION}
+	${INSTALL_DATA} ${WRKDIR}/tmp_shared/libblacs.so.${SVERSION}    ${STAGEDIR}${PREFIX}/lib/libblacs.so.${SVERSION}
 
-	${INSTALL_DATA} ${WRKDIR}/tmp_shared/libblacsc.so   ${PREFIX}/lib/libblacsc.so
-	${INSTALL_DATA} ${WRKDIR}/tmp_shared/libblacsf77.so ${PREFIX}/lib/libblacsf77.so
-	${INSTALL_DATA} ${WRKDIR}/tmp_shared/libblacs.so    ${PREFIX}/lib/libblacs.so
+	${INSTALL_DATA} ${WRKDIR}/tmp_shared/libblacsc.so   ${STAGEDIR}${PREFIX}/lib/libblacsc.so
+	${INSTALL_DATA} ${WRKDIR}/tmp_shared/libblacsf77.so ${STAGEDIR}${PREFIX}/lib/libblacsf77.so
+	${INSTALL_DATA} ${WRKDIR}/tmp_shared/libblacs.so    ${STAGEDIR}${PREFIX}/lib/libblacs.so
 
-	${MKDIR} ${PREFIX}/share/BLACS/TESTING
+	${MKDIR} ${STAGEDIR}${PREFIX}/share/BLACS/TESTING
 	( cd ${WRKSRC_SHARED}/TESTING/EXE ; \
-	  ${INSTALL_PROGRAM} xCbtest_MPI-FreeBSD-${DEBUG_LEVEL} ${PREFIX}/share/BLACS/TESTING/xCbtest_MPI-FreeBSD; \
-	  ${INSTALL_PROGRAM} xFbtest_MPI-FreeBSD-${DEBUG_LEVEL} ${PREFIX}/share/BLACS/TESTING/xFbtest_MPI-FreeBSD; \
-	  ${INSTALL_DATA}  bsbr.dat   ${PREFIX}/share/BLACS/TESTING; \
-	  ${INSTALL_DATA}  bt.dat     ${PREFIX}/share/BLACS/TESTING; \
-	  ${INSTALL_DATA}  comb.dat   ${PREFIX}/share/BLACS/TESTING; \
-	  ${INSTALL_DATA}  sdrv.dat   ${PREFIX}/share/BLACS/TESTING)
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	${CAT} ${DISTDIR}/${DIST_SUBDIR}/blacs_install.ps   | ${GZIP_CMD} > ${DOCSDIR}/blacs_install.ps.gz
-	${CAT} ${DISTDIR}/${DIST_SUBDIR}/cblacsqref.ps      | ${GZIP_CMD} > ${DOCSDIR}/cblacsqref.ps.gz
-	${CAT} ${DISTDIR}/${DIST_SUBDIR}/f77blacsqref.ps    | ${GZIP_CMD} > ${DOCSDIR}/f77blacsqref.ps.gz
-	${CAT} ${DISTDIR}/${DIST_SUBDIR}/lawn94.ps          | ${GZIP_CMD} > ${DOCSDIR}/lawn94.ps.gz
-	${CAT} ${DISTDIR}/${DIST_SUBDIR}/mpi_prop.ps        | ${GZIP_CMD} > ${DOCSDIR}/mpi_prop.ps.gz
-	${CAT} ${DISTDIR}/${DIST_SUBDIR}/mpiblacs_issues.ps | ${GZIP_CMD} > ${DOCSDIR}/mpiblacs_issues.ps.gz
+	  ${INSTALL_PROGRAM} xCbtest_MPI-FreeBSD-${DEBUG_LEVEL} ${STAGEDIR}${PREFIX}/share/BLACS/TESTING/xCbtest_MPI-FreeBSD; \
+	  ${INSTALL_PROGRAM} xFbtest_MPI-FreeBSD-${DEBUG_LEVEL} ${STAGEDIR}${PREFIX}/share/BLACS/TESTING/xFbtest_MPI-FreeBSD; \
+	  ${INSTALL_DATA}  bsbr.dat   ${STAGEDIR}${PREFIX}/share/BLACS/TESTING; \
+	  ${INSTALL_DATA}  bt.dat     ${STAGEDIR}${PREFIX}/share/BLACS/TESTING; \
+	  ${INSTALL_DATA}  comb.dat   ${STAGEDIR}${PREFIX}/share/BLACS/TESTING; \
+	  ${INSTALL_DATA}  sdrv.dat   ${STAGEDIR}${PREFIX}/share/BLACS/TESTING)
+.if ${PORT_OPTIONS:MDOCS}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${CAT} ${DISTDIR}/${DIST_SUBDIR}/blacs_install.ps   | ${GZIP_CMD} > ${STAGEDIR}${DOCSDIR}/blacs_install.ps.gz
+	${CAT} ${DISTDIR}/${DIST_SUBDIR}/cblacsqref.ps      | ${GZIP_CMD} > ${STAGEDIR}${DOCSDIR}/cblacsqref.ps.gz
+	${CAT} ${DISTDIR}/${DIST_SUBDIR}/f77blacsqref.ps    | ${GZIP_CMD} > ${STAGEDIR}${DOCSDIR}/f77blacsqref.ps.gz
+	${CAT} ${DISTDIR}/${DIST_SUBDIR}/lawn94.ps          | ${GZIP_CMD} > ${STAGEDIR}${DOCSDIR}/lawn94.ps.gz
+	${CAT} ${DISTDIR}/${DIST_SUBDIR}/mpi_prop.ps        | ${GZIP_CMD} > ${STAGEDIR}${DOCSDIR}/mpi_prop.ps.gz
+	${CAT} ${DISTDIR}/${DIST_SUBDIR}/mpiblacs_issues.ps | ${GZIP_CMD} > ${STAGEDIR}${DOCSDIR}/mpiblacs_issues.ps.gz
 .endif
-
-post-install:
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>

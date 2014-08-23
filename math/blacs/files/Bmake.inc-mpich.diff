@@ -1,5 +1,5 @@
---- Bmake.inc.orig	Mon May  5 10:53:00 2003
-+++ Bmake.inc	Mon May  5 10:58:38 2003
+--- Bmake.inc.orig	2000-02-25 01:22:28.000000000 +0100
++++ Bmake.inc	2014-08-22 23:50:32.000000000 +0200
 @@ -13,7 +13,7 @@
  #  -----------------------------
  #  The top level BLACS directory
@@ -39,31 +39,6 @@
  
  #  -------------------------------------
  #  All libraries required by the tester.
-@@ -195,16 +195,15 @@
- #  optimization.  This is the F77NO_OPTFLAG.  The usage of the remaining
- #  macros should be obvious from the names.
- #=============================================================================
--   F77            = g77
--   F77NO_OPTFLAGS = 
--   F77FLAGS       = $(F77NO_OPTFLAGS) -O
--   F77LOADER      = $(F77)
-+   F77            = @F77@
-+   F77NO_OPTFLAGS = @F77EXTRAFLAGS@
-+   F77FLAGS       = @FFLAGS@
-+   F77LOADER      = @F77@
-    F77LOADFLAGS   = 
--   CC             = gcc
--   CCFLAGS        = -O4
-+   CC             = @CC@
-+   CCFLAGS        = @CFLAGS@
-    CCLOADER       = $(CC)
-    CCLOADFLAGS    = 
--
- #  --------------------------------------------------------------------------
- #  The archiver and the flag(s) to use when building an archive (library).
- #  Also the ranlib routine.  If your system has no ranlib, set RANLIB = echo.
---- Bmake.inc~	Wed Jan 10 16:11:00 2007
-+++ Bmake.inc	Wed Jan 10 16:18:08 2007
 @@ -93,7 +93,7 @@
  #  setting for your platform, compile and run BLACS/INSTALL/xintface.
  #  Choices are: Add_, NoChange, UpCase, or f77IsF2C.
@@ -73,3 +48,27 @@
  
  #  ------------------------------------------------------------------------
  #  Allows the user to vary the topologies that the BLACS default topologies
+@@ -195,16 +195,15 @@
+ #  optimization.  This is the F77NO_OPTFLAG.  The usage of the remaining
+ #  macros should be obvious from the names.
+ #=============================================================================
+-   F77            = g77
+-   F77NO_OPTFLAGS = 
+-   F77FLAGS       = $(F77NO_OPTFLAGS) -O
+-   F77LOADER      = $(F77)
+-   F77LOADFLAGS   = 
+-   CC             = gcc
+-   CCFLAGS        = -O4
++   F77            = @F77@
++   F77NO_OPTFLAGS = @F77EXTRAFLAGS@
++   F77FLAGS       = @FFLAGS@
++   F77LOADER      = @F77@
++   F77LOADFLAGS   = @FFLAGS@
++   CC             = @CC@
++   CCFLAGS        = @CFLAGS@
+    CCLOADER       = $(CC)
+    CCLOADFLAGS    = 
+-
+ #  --------------------------------------------------------------------------
+ #  The archiver and the flag(s) to use when building an archive (library).
+ #  Also the ranlib routine.  If your system has no ranlib, set RANLIB = echo.
