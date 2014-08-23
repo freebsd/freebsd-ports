@@ -1,36 +1,11 @@
---- scripts/phredPhrap.orig	2007-09-26 04:02:20.000000000 +0900
-+++ scripts/phredPhrap	2007-12-11 17:32:27.000000000 +0900
-@@ -101,7 +101,7 @@
- 
- 
- # change this to reflect wherever you put the phredpar.dat file
--$szPhredParameterFile = $szConsedHome . "/lib/phredpar.dat";
-+$szPhredParameterFile = $szConsedHome . "/etc/PhredPar/phredpar.dat";
- #$szPhredParameterFile = "/usr/local/common/lib/PhredPar/phredpar.dat";
- #$szPhredParameterFile = "/usr/local/etc/PhredPar/phredpar.dat";
- 
-@@ -207,7 +207,7 @@
- $chromatDirPath = "../chromat_dir";
- $phdDirPath = "../phd_dir";
+--- scripts/phredPhrap.orig	2014-02-12 05:28:45.000000000 +0900
++++ scripts/phredPhrap	2014-06-22 03:07:33.000000000 +0900
+@@ -217,7 +217,7 @@
+ #$solexaDirPath = "../solexa_dir";
+ #$sffDirPath = "../sff_dir";
  
 -$niceExe = "/bin/nice";
 +$niceExe = "/usr/bin/nice";
  $mvExe = "/bin/mv";
  $lsExe = "/bin/ls";
  $pwdExe = "/bin/pwd";
-@@ -568,11 +568,11 @@
- 
- # only uncomment the following 4 lines when you have customized 
- # determineReadTypes.perl
--#print "\n\n--------------------------------------------------------\n";
--#print "Now running determineReadTypes.perl...\n";
--#print "--------------------------------------------------------\n\n\n";
-+print "\n\n--------------------------------------------------------\n";
-+print "Now running determineReadTypes.perl...\n";
-+print "--------------------------------------------------------\n\n\n";
- 
--#!system( "$determineReadTypes" ) || die "some problem running determineReadTypes.perl $!\n";
-+!system( "$determineReadTypes" ) || die "some problem running determineReadTypes.perl $!\n";
- 
- 
- print "\n\n--------------------------------------------------------\n";
