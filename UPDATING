@@ -6,6 +6,19 @@ You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
 20140823
+  AFFECTS: users of graphics/libjpeg-turbo
+  AUTHOR: adamw@FreeBSD.org
+
+  libjpeg-turbo installs its own unique library (libturbojpeg.so) and
+  a drop-in replacement for libjpeg.so. The drop-in replacement has been
+  split off into graphics/jpeg-turbo; libjpeg-turbo now installs only
+  libturbojpeg.so.
+  
+  If you were using the libjpeg.so from graphics/libjpeg-turbo, you
+  should install graphics/jpeg-turbo AFTER upgrading the libjpeg-turbo
+  port.
+
+20140823
   AFFECTS: users of TeXLive
   AUTHOR: hrs@FreeBSD.org
 
