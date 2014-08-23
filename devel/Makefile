@@ -4416,6 +4416,7 @@
     SUBDIR += rubygem-multi_test
     SUBDIR += rubygem-murmurhash3
     SUBDIR += rubygem-mutter
+    SUBDIR += rubygem-naught
     SUBDIR += rubygem-needle
     SUBDIR += rubygem-nice-ffi
     SUBDIR += rubygem-nio4r
