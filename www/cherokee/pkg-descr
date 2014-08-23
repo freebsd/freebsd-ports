@@ -1,7 +1,8 @@
-Cherokee is a very fast, flexible and easy to configure Web Server. It supports
-the widespread technologies nowadays: FastCGI, SCGI, PHP, CGI, TLS and SSL
-encrypted connections, Virtual hosts, Authentication, on the fly encoding, Load
-balancing, Apache compatible log files, and much more. A user friendly interface
-called cherokee-admin is provided for a no-hassle configuration of the server.
+Cherokee is a very fast, flexible and easy to configure Web Server. It
+supports the widespread technologies nowadays: FastCGI, SCGI, PHP, CGI,
+TLS and SSL encrypted connections, Virtual hosts, Authentication, on the
+fly encoding, Load balancing, Apache compatible log files, and much
+more. A user friendly interface called cherokee-admin is provided for a
+no-hassle configuration of the server.
 
 WWW: http://www.cherokee-project.com/
