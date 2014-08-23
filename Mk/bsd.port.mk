@@ -3015,6 +3015,8 @@ IGNORE=		is not an interactive port
 IGNORE=		may not be placed on a CDROM: ${NO_CDROM}
 .elif (defined(RESTRICTED) && defined(NO_RESTRICTED))
 IGNORE=		is restricted: ${RESTRICTED}
+.elif (defined(NO_PACKAGE) && defined(PACKAGE_BUILDING))
+IGNORE=		may not be packaged: ${NO_PACKAGE}
 .elif defined(BROKEN)
 .if !defined(TRYBROKEN)
 IGNORE=		is marked as broken: ${BROKEN}
