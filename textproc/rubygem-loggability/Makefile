@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	loggability
-PORTVERSION=	0.6.1
+PORTVERSION=	0.11.0
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
