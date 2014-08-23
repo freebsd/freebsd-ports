@@ -1,0 +1,11 @@
+--- Makefile
++++ Makefile
+@@ -1,7 +1,7 @@
+ # All the actual Makefiles are deeper in the directory tree.  
+ # I am just calling them, here.
+ 
+-PREFIX=/usr
++PREFIX?=/usr
+ DESTDIR=
+ 
+ all :

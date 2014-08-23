@@ -22,6 +22,7 @@
     SUBDIR += aqbanking
     SUBDIR += aqmoney
     SUBDIR += beanie
+    SUBDIR += bitcoin-armory
     SUBDIR += cbb
     SUBDIR += electrum
     SUBDIR += expense
