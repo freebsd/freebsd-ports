@@ -72,29 +72,68 @@ PLIST_SUB+=	$V="${$V}"
 IGNORE=		"texlive" must not be defined in USE_TEX 
 .endif
 
-_USE_TEX_TEXMF=		${LOCALBASE}/${TEXMFDISTDIR}/README:${PORTSDIR}/print/texlive-texmf
-_USE_TEX_BASE=		tlmgr:${PORTSDIR}/print/texlive-base
-_USE_TEX_GBKLATEX=	gbklatex:${PORTSDIR}/print/texlive-base
-_USE_TEX_DOCS=		${LOCALBASE}/${TEXMFDISTDIR}/doc/texlive/texlive-en/README:${PORTSDIR}/print/texlive-docs
-_USE_TEX_INFRA=		texlive-infra>=0:${PORTSDIR}/print/texlive-infra
-_USE_TEX_DVIPSK=	dvips:${PORTSDIR}/print/tex-dvipsk
-_USE_TEX_XDVIK=		xdvi:${PORTSDIR}/print/tex-xdvik
-_USE_TEX_DVIPDFMX=	dvipdfmx:${PORTSDIR}/print/tex-dvipdfmx
-_USE_TEX_TEX=		${_USE_TEX_FORMATS}
-_USE_TEX_LATEX=		${_USE_TEX_FORMATS}
-_USE_TEX_PDFTEX=	${_USE_TEX_FORMATS}
-_USE_TEX_JADETEX=	jadetex:${PORTSDIR}/print/tex-jadetex
-_USE_TEX_XMLTEX=	xmltex:${PORTSDIR}/print/tex-xmltex
-_USE_TEX_PTEX=		ptex:${PORTSDIR}/japanese/tex-ptex
-_USE_TEX_WEB2C=		weave:${PORTSDIR}/devel/tex-web2c
-_USE_TEX_KPATHSEA=	libkpathsea.so:${PORTSDIR}/devel/tex-kpathsea
-_USE_TEX_PTEXENC=	libptexenc.so:${PORTSDIR}/print/tex-ptexenc
-_USE_TEX_FORMATS=	${LOCALBASE}/${TEXMFVARDIR}/web2c/tex/tex.fmt:${PORTSDIR}/print/tex-formats
-_USE_TEX_ALEPH=		aleph:${PORTSDIR}/print/tex-aleph
-_USE_TEX_LUATEX=	luatex:${PORTSDIR}/print/tex-luatex
-_USE_TEX_XETEX=		xetex:${PORTSDIR}/print/tex-xetex
+_USE_TEX_TEXMF_DEP=	${LOCALBASE}/${TEXMFDISTDIR}/README
+_USE_TEX_TEXMF_PORT=	print/${_USE_TEX_TEXMF_PKGNAME}
+_USE_TEX_TEXMF_PKGNAME=	texlive-texmf
+_USE_TEX_BASE_DEP=	tlmgr
+_USE_TEX_BASE_PORT=	print/${_USE_TEX_BASE_PKGNAME}
+_USE_TEX_BASE_PKGNAME=	texlive-base
+_USE_TEX_GBKLATEX_DEP=	gbklatex
+_USE_TEX_GBKLATEX_PORT=	${_USE_TEX_BASE_PORT}
+_USE_TEX_GBKLATEX_PKGNAME=${_USE_TEX_BASE_PKGNAME}
+_USE_TEX_DOCS_DEP=	${LOCALBASE}/${TEXMFDISTDIR}/doc/texlive/texlive-en/README
+_USE_TEX_DOCS_PORT=	print/${_USE_TEX_DOCS_PKGNAME}
+_USE_TEX_DOCS_PKGNAME=	texlive-docs
+_USE_TEX_INFRA_DEP=	${LOCALBASE}/${TEXMFDISTDIR}/web2c/fmtutil-hdr.cnf
+_USE_TEX_INFRA_PORT=	print/${_USE_TEX_INFRA_PKGNAME}
+_USE_TEX_INFRA_PKGNAME=	texlive-infra
+_USE_TEX_DVIPSK_DEP=	dvips
+_USE_TEX_DVIPSK_PORT=	print/${_USE_TEX_DVIPSK_PKGNAME}
+_USE_TEX_DVIPSK_PKGNAME=tex-dvipsk
+_USE_TEX_XDVIK_DEP=	xdvi
+_USE_TEX_XDVIK_PORT=	print/${_USE_TEX_XDVIK_PKGNAME}
+_USE_TEX_XDVIK_PKGNAME=	tex-xdvik
+_USE_TEX_DVIPDFMX_DEP=	dvipdfmx
+_USE_TEX_DVIPDFMX_PORT=	print/${_USE_TEX_DVIPDFMX_PKGNAME}
+_USE_TEX_DVIPDFMX_PKGNAME=tex-dvipdfmx
+.for _L in TEX LATEX PDFTEX
+_USE_TEX_${_L}_DEP=	${_USE_TEX_FORMATS_DEP}
+_USE_TEX_${_L}_PORT=	${_USE_TEX_FORMATS_PORT}
+_USE_TEX_${_L}_PKGNAME=	${_USE_TEX_FORMATS_PKGNAME}
+.endfor
+_USE_TEX_JADETEX_DEP=	jadetex
+_USE_TEX_JADETEX_PORT=	print/${_USE_TEX_JADETEX_PKGNAME}
+_USE_TEX_JADETEX_PKGNAME=tex-jadetex
+_USE_TEX_XMLTEX_DEP=	xmltex
+_USE_TEX_XMLTEX_PORT=	print/${_USE_TEX_XMLTEX_PKGNAME}
+_USE_TEX_XMLTEX_PKGNAME=tex-xmltex
+_USE_TEX_PTEX_DEP=	ptex
+_USE_TEX_PTEX_PORT=	japanese/${_USE_TEX_PTEX_PKGNAME}
+_USE_TEX_PTEX_PKGNAME=	tex-ptex
+_USE_TEX_WEB2C_DEP=	weave
+_USE_TEX_WEB2C_PORT=	devel/${_USE_TEX_WEB2C_PKGNAME}
+_USE_TEX_WEB2C_PKGNAME=	tex-web2c
+_USE_TEX_KPATHSEA_DEP=	libkpathsea.so
+_USE_TEX_KPATHSEA_PORT=	devel/${_USE_TEX_KPATHSEA_PKGNAME}
+_USE_TEX_KPATHSEA_PKGNAME=tex-kpathsea
+_USE_TEX_PTEXENC_DEP=	libptexenc.so
+_USE_TEX_PTEXENC_PORT=	print/${_USE_TEX_PTEXEC_PKGNAME}
+_USE_TEX_PTEXENC_PKGNAME=tex-ptexenc
+_USE_TEX_FORMATS_DEP=	${LOCALBASE}/${TEXMFVARDIR}/web2c/tex/tex.fmt
+_USE_TEX_FORMATS_PORT=	print/${_USE_TEX_FORMATS_PKGNAME}
+_USE_TEX_FORMATS_PKGNAME=tex-formats
+_USE_TEX_ALEPH_DEP=	aleph
+_USE_TEX_ALEPH_PORT=	print/${_USE_TEX_ALEPH_PKGNAME}
+_USE_TEX_ALEPH_PKGNAME=	tex-aleph
+_USE_TEX_LUATEX_DEP=	luatex
+_USE_TEX_LUATEX_PORT=	print/${_USE_TEX_LUATEX_PKGNAME}
+_USE_TEX_LUATEX_PKGNAME=tex-luatex
+_USE_TEX_XETEX_DEP=	xetex
+_USE_TEX_XETEX_PORT=	print/${_USE_TEX_XETEX_PKGNAME}
+_USE_TEX_XETEX_PKGNAME=	tex-xetex
 
-_USE_TEX_FULLLIST=	texmf base web2c infra \
+_USE_TEX_FULLLIST=	texmf>=20140525_2 base>=20140525_1 \
+		web2c infra \
 		formats aleph xetex jadetex luatex xmltex ptex \
 		dvipsk dvipdfmx xdvik \
 		kpathsea:lib ptexenc:lib
@@ -105,8 +144,12 @@ USE_TEX:=	${USE_TEX:tu:NFULL} ${_USE_TEX_FULLLIST:tu}
 
 .for _UU in ${USE_TEX:tu}
 _U:=	${_UU}	# ugly but necessary in for loop
+_VOP:=
 . if !empty(_U:tu:MKPATHSEA) || !empty(_U:tu:MPTEXENC)
 _U:=	${_U}:lib
+. endif
+. if !empty(_U:M*[<>=]*)
+_VOP:=	${_U:C/^[^<>=]*//:C/\:.*$//}
 . endif
 . if empty(_U:M*\:*)
 _C:=	BUILD RUN
@@ -114,7 +157,18 @@ _C:=	BUILD RUN
 _C:=	${_U:C/.*://}
 . endif
 . for _CC in ${_C:tu}
-TEX_${_CC}_DEPENDS+=${_USE_TEX_${_UU:C/:.*$//}}
+_V:=${_UU:C/[<>=][^\:]*//:C/\:.*$//}
+.  if defined(_USE_TEX_${_V}_PORT)
+.   if !empty(_VOP)
+.    for _T in ${_USE_TEX_${_V}_PKGNAME}${_VOP}:${PORTSDIR}/${_USE_TEX_${_V}_PORT}
+TEX_${_CC}_DEPENDS+=	${_T}
+.    endfor
+.   else
+.    for _T in ${_USE_TEX_${_V}_DEP}:${PORTSDIR}/${_USE_TEX_${_V}_PORT}
+TEX_${_CC}_DEPENDS+=	${_T}
+.    endfor
+.   endif
+.  endif
 . endfor
 .endfor
 

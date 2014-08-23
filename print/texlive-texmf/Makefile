@@ -2,7 +2,7 @@
 
 PORTNAME=	texlive
 PORTVERSION=	20140525
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	print
 MASTER_SITES=	ftp://ftp.tug.org/historic/systems/texlive/2014/
 PKGNAMESUFFIX=	-texmf
@@ -11,6 +11,8 @@ DIST_SUBDIR=	TeX
 
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	TeX Live Typesetting System, texmf Tree
+
+CONFLICTS_INSTALL=	texlive-base-201[23]*
 
 USES=		tar:xz
 USE_TEX=	base texhash
