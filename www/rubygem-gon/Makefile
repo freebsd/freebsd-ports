@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	gon
-PORTVERSION=	5.0.1
+PORTVERSION=	5.1.2
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
@@ -11,7 +11,9 @@ COMMENT=	Framework to pass data to JS easily
 LICENSE=	MIT
 
 RUN_DEPENDS=	rubygem-actionpack>=2.3.0:${PORTSDIR}/www/rubygem-actionpack \
-                rubygem-json>=0:${PORTSDIR}/devel/rubygem-json
+                rubygem-json>=0:${PORTSDIR}/devel/rubygem-json \
+		rubygem-multi_json>=0:${PORTSDIR}/devel/rubygem-multi_json \
+		rubygem-request_store>=1.0.5:${PORTSDIR}/devel/rubygem-request_store
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
