@@ -113,5 +113,6 @@
     SUBDIR += vuze
     SUBDIR += xnap
     SUBDIR += zetacoin
+    SUBDIR += zetacoin-nox11
 
 .include <bsd.port.subdir.mk>
