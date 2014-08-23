@@ -2,12 +2,6 @@ lib/gauche-0.9/site/%%TARGET%%/libgauche-gl.so
 lib/gauche-0.9/site/%%TARGET%%/libgauche-glut.so
 lib/gauche-0.9/site/%%TARGET%%/libgauche-math3d.so
 lib/gauche-0.9/site/include/gauche/math3d.h
-share/gauche-0.9/site/lib/gl.scm
-share/gauche-0.9/site/lib/gl/glut.scm
-share/gauche-0.9/site/lib/gl/math3d.scm
-share/gauche-0.9/site/lib/gl/simple-image.scm
-share/gauche-0.9/site/lib/gl/simple/image.scm
-share/gauche-0.9/site/lib/gl/simple/viewer.scm
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/cg/README
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/cg/cg-gl-vertex-example.cg
@@ -66,6 +60,7 @@ share/gauche-0.9/site/lib/gl/simple/viewer.scm
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/images/noturn.rgb
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/mandelbrot.scm
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/simple/minimum-viewer.scm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/simple/minimum-viewer-2d.scm
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/slbook/README
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/slbook/ogl2brick/3Dlabs-License.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/slbook/ogl2brick/README.txt
@@ -79,6 +74,16 @@ share/gauche-0.9/site/lib/gl/simple/viewer.scm
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/slbook/ogl2particle/particle.frag
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/slbook/ogl2particle/particle.vert
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/slbook/ogl2particle/run.sh
+share/gauche-0.9/site/lib/gl.scm
+share/gauche-0.9/site/lib/gl/glut.scm
+share/gauche-0.9/site/lib/gl/math3d.scm
+share/gauche-0.9/site/lib/gl/simple-image.scm
+share/gauche-0.9/site/lib/gl/simple/image.scm
+share/gauche-0.9/site/lib/gl/simple/viewer.scm
+@dirrm share/gauche-0.9/site/lib/gl/simple
+@dirrm share/gauche-0.9/site/lib/gl
+@dirrmtry share/gauche-0.9/site/lib
+@dirrmtry share/gauche-0.9/site
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/slbook/ogl2particle
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/slbook/ogl2brick
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/slbook
@@ -90,7 +95,3 @@ share/gauche-0.9/site/lib/gl/simple/viewer.scm
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrmtry lib/gauche-0.9/site/include/gauche
 @dirrmtry lib/gauche-0.9/site/include
-@dirrmtry share/gauche-0.9/site/lib/gl/simple
-@dirrmtry share/gauche-0.9/site/lib/gl
-@dirrmtry share/gauche-0.9/site/lib
-@dirrmtry share/gauche-0.9/site
