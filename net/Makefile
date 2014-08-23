@@ -962,6 +962,7 @@
     SUBDIR += quagga
     SUBDIR += quagga-re
     SUBDIR += queso
+    SUBDIR += quiterss
     SUBDIR += quoted
     SUBDIR += rabbitmq
     SUBDIR += rabbitmq-c

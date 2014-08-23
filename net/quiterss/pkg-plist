@@ -1,0 +1,52 @@
+%%QT_BINDIR%%/quiterss
+share/applications/quiterss.desktop
+share/icons/hicolor/128x128/apps/quiterss.png
+share/icons/hicolor/16x16/apps/quiterss.png
+share/icons/hicolor/256x256/apps/quiterss.png
+share/icons/hicolor/32x32/apps/quiterss.png
+share/icons/hicolor/48x48/apps/quiterss.png
+share/icons/hicolor/64x64/apps/quiterss.png
+share/pixmaps/quiterss.png
+share/quiterss/lang/quiterss_ar.qm
+share/quiterss/lang/quiterss_cs.qm
+share/quiterss/lang/quiterss_de.qm
+share/quiterss/lang/quiterss_el_GR.qm
+share/quiterss/lang/quiterss_es.qm
+share/quiterss/lang/quiterss_fa.qm
+share/quiterss/lang/quiterss_fi.qm
+share/quiterss/lang/quiterss_fr.qm
+share/quiterss/lang/quiterss_gl.qm
+share/quiterss/lang/quiterss_hu.qm
+share/quiterss/lang/quiterss_it.qm
+share/quiterss/lang/quiterss_ja.qm
+share/quiterss/lang/quiterss_ko.qm
+share/quiterss/lang/quiterss_lt.qm
+share/quiterss/lang/quiterss_nl.qm
+share/quiterss/lang/quiterss_pl.qm
+share/quiterss/lang/quiterss_pt_BR.qm
+share/quiterss/lang/quiterss_pt_PT.qm
+share/quiterss/lang/quiterss_ro_RO.qm
+share/quiterss/lang/quiterss_ru.qm
+share/quiterss/lang/quiterss_sk.qm
+share/quiterss/lang/quiterss_sr.qm
+share/quiterss/lang/quiterss_sv.qm
+share/quiterss/lang/quiterss_tg_TJ.qm
+share/quiterss/lang/quiterss_tr.qm
+share/quiterss/lang/quiterss_uk.qm
+share/quiterss/lang/quiterss_vi.qm
+share/quiterss/lang/quiterss_zh_CN.qm
+share/quiterss/lang/quiterss_zh_TW.qm
+share/quiterss/sound/notification.wav
+share/quiterss/style/Rstyle_v1.2.css
+share/quiterss/style/gray.qss
+share/quiterss/style/green.qss
+share/quiterss/style/news.css
+share/quiterss/style/orange.qss
+share/quiterss/style/pink.qss
+share/quiterss/style/purple.qss
+share/quiterss/style/system.qss
+share/quiterss/style/system2.qss
+@dirrmtry share/quiterss/lang
+@dirrmtry share/quiterss/sound
+@dirrmtry share/quiterss/style
+@dirrmtry share/quiterss
