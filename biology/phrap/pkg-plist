@@ -1,0 +1,9 @@
+@mode 111
+bin/calf_merge
+bin/pcluster
+bin/cross_match
+bin/loco
+bin/phrap
+bin/phrapview
+bin/swat
+@mode
