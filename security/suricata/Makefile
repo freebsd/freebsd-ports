@@ -2,49 +2,59 @@
 # $FreeBSD$
 
 PORTNAME=	suricata
-PORTVERSION=	1.4.6
-PORTREVISION=	3
+PORTVERSION=	2.0.3
 CATEGORIES=	security
 MASTER_SITES=	http://www.openinfosecfoundation.org/download/ \
 		http://mirrors.rit.edu/zi/
 
 MAINTAINER=	koobs@FreeBSD.org
-COMMENT=	Open Source next generation IDS/IPS engine by OISF
+COMMENT=	High Performance Network IDS, IPS and Security Monitoring engine
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre		\
-		libhtp.so:${PORTSDIR}/www/libhtp-suricata	\
-		libnet.so:${PORTSDIR}/net/libnet                \
+LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre \
+		libhtp.so:${PORTSDIR}/devel/libhtp \
+		libnet.so:${PORTSDIR}/net/libnet \
 		libyaml.so:${PORTSDIR}/textproc/libyaml
 
 OPTIONS_DEFINE=	IPFW PRELUDE PORTS_PCAP TESTS
-OPTIONS_DEFAULT=IPFW
+OPTIONS_DEFAULT=IPFW PRELUDE
+OPTIONS_SUB=	yes
 
 IPFW_DESC=	Enable IPFW and IP Divert support for inline IDP
 PRELUDE_DESC=	Enable Prelude support for NIDS alerts
 PORTS_PCAP_DESC=Use libpcap from ports
 TESTS_DESC=	Enable unit tests in suricata binary
 
-USE_AUTOTOOLS=	autoconf libtool
+USES=		gmake pkgconfig libtool
+USE_AUTOTOOLS=	aclocal autoconf automake
 USE_LDCONFIG=	yes
 USE_RC_SUBR=	${PORTNAME}
-USES=		gmake pkgconfig
+
 GNU_CONFIGURE=	yes
 
-.include <bsd.port.options.mk>
+IPFW_CONFIGURE_ON=		--enable-ipfw
+PORTS_PCAP_CONFIGURE_ON=	--with-libpcap-includes=${LOCALBASE}/include \
+				--with-libpcap-libraries=${LOCALBASE}/lib
+PORTS_PCAP_CONFIGURE_OFF=	--with-libpcap-includes=/usr/include \
+				--with-libpcap-libraries=/usr/lib
+PORTS_PCAP_LIB_DEPENDS=		libpcap.so:${PORTSDIR}/net/libpcap
+PRELUDE_LIB_DEPENDS=		libprelude.so:${PORTSDIR}/security/libprelude
+PRELUDE_CONFIGURE_ENABLE=	prelude
+PRELUDE_CONFIGURE_ON=		--with-libprelude-prefix=${LOCALBASE}
+TESTS_CONFIGURE_ENABLE=		unittests
 
 SUB_FILES=	pkg-message
 
-CONFIGURE_ARGS+=--enable-non-bundled-htp --enable-gccprotect		\
-		--with-libpcre-includes=${LOCALBASE}/include		\
-		--with-libpcre-libraries=${LOCALBASE}/lib		\
-		--with-libyaml-includes=${LOCALBASE}/include		\
-		--with-libyaml-libraries=${LOCALBASE}/lib		\
-		--with-libnet-includes=${LOCALBASE}/include/libnet11	\
-		--with-libnet-libraries=${LOCALBASE}/lib/libnet11	\
-		--with-libhtp-includes=${LOCALBASE}/include/		\
-		--with-libhtp-libraries=${LOCALBASE}/lib		\
+CONFIGURE_ARGS+=--enable-non-bundled-htp --enable-gccprotect \
+		--with-libpcre-includes=${LOCALBASE}/include \
+		--with-libpcre-libraries=${LOCALBASE}/lib \
+		--with-libyaml-includes=${LOCALBASE}/include \
+		--with-libyaml-libraries=${LOCALBASE}/lib \
+		--with-libnet-includes=${LOCALBASE}/include/libnet11 \
+		--with-libnet-libraries=${LOCALBASE}/lib/libnet11 \
+		--with-libhtp-includes=${LOCALBASE}/include/ \
+		--with-libhtp-libraries=${LOCALBASE}/lib \
 		--localstatedir=/var/
 CONFIGURE_ENV+=	ac_cv_path_HAVE_PYTHON_CONFIG=no
 
@@ -60,31 +70,8 @@ LOGS_DIR?=	/var/log/${PORTNAME}
 BROKEN=		Does not compile on ia64, powerpc, or sparc64
 .endif
 
-.if ${PORT_OPTIONS:MPRELUDE}
-LIB_DEPENDS+=		libprelude.so:${PORTSDIR}/security/libprelude
-CONFIGURE_ARGS+=	--enable-prelude \
-			--with-libprelude-prefix=${LOCALBASE}
-PLIST_SUB+=		PRELUDE=""
-.endif
-
-.if ${PORT_OPTIONS:MIPFW}
-CONFIGURE_ARGS+=	--enable-ipfw
-.endif
-
-.if ${PORT_OPTIONS:MPORTS_PCAP}
-LIB_DEPENDS+=		libpcap.so:${PORTSDIR}/net/libpcap
-CONFIGURE_ARGS+=	--with-libpcap-includes=${LOCALBASE}/include \
-			--with-libpcap-libraries=${LOCALBASE}/lib
-.else
-CONFIGURE_ARGS+=	--with-libpcap-includes=/usr/include \
-			--with-libpcap-libraries=/usr/lib
-.endif
-
-.if ${PORT_OPTIONS:MTESTS}
-CONFIGURE_ARGS+=	--enable-unittests
-.else
-CONFIGURE_ARGS+=	--disable-unittests
-.endif
+pre-patch:
+	${CP} ${FILESDIR}/ax_check_compile_flag.m4 ${WRKSRC}/m4
 
 pre-install:
 	@${REINPLACE_CMD} -e 's|/etc/suricata|${CONFIG_DIR}|g' ${WRKSRC}/suricata.yaml

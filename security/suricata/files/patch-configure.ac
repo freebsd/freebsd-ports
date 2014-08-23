@@ -1,0 +1,15 @@
+--- ./configure.ac.orig	2014-08-15 21:08:21.104727122 +1000
++++ ./configure.ac	2014-08-15 21:17:58.786571386 +1000
+@@ -816,8 +816,10 @@
+             AS_HELP_STRING([--enable-prelude], [Enable Prelude support for alerts]),,[enable_prelude=no])
+     # Prelude doesn't work with -Werror
+     STORECFLAGS="${CFLAGS}"
+-    CFLAGS="${CFLAGS} -Wno-error=unused-result"
+-
++    AX_CHECK_COMPILE_FLAG([-Wno-error=unused-result], 
++        [CFLAGS="${CFLAGS} -Wno-error=unused-result"],
++        [])
++       
+     AS_IF([test "x$enable_prelude" = "xyes"], [
+         AM_PATH_LIBPRELUDE(0.9.9, , AC_MSG_ERROR(Cannot find libprelude: Is libprelude-config in the path?), no)
+         if test "x${LIBPRELUDE_CFLAGS}" != "x"; then
