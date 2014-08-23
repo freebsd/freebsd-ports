@@ -1,25 +1,23 @@
---- activemessaging-0.12.1.gemspec.orig	2013-06-05 02:42:59.471325464 +0000
-+++ activemessaging-0.12.1.gemspec	2013-06-05 02:43:20.310324197 +0000
-@@ -19,22 +19,6 @@
- date: 2012-09-28 00:00:00.000000000 Z
+--- ./activemessaging-0.13.0.gemspec.orig	2014-08-23 19:10:52.008995535 +0000
++++ ./activemessaging-0.13.0.gemspec	2014-08-23 19:10:47.000000000 +0000
+@@ -18,20 +18,6 @@
+ date: 2014-06-18 00:00:00.000000000 Z
  dependencies:
  - !ruby/object:Gem::Dependency
 -  name: activemessaging
 -  requirement: !ruby/object:Gem::Requirement
--    none: false
 -    requirements:
--    - - ! '>='
+-    - - '>='
 -      - !ruby/object:Gem::Version
 -        version: '0'
 -  type: :runtime
 -  prerelease: false
 -  version_requirements: !ruby/object:Gem::Requirement
--    none: false
 -    requirements:
--    - - ! '>='
+-    - - '>='
 -      - !ruby/object:Gem::Version
 -        version: '0'
 -- !ruby/object:Gem::Dependency
-   name: activesupport
+   name: jeweler
    requirement: !ruby/object:Gem::Requirement
-     none: false
+     requirements:
