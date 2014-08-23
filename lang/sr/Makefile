@@ -11,7 +11,7 @@ DISTNAME=	sr${PORTVERSION:S/.//g}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Parallel language from the University of Arizona
 
-USES=		gmake	# required to support parallel (-jX) builds tar:Z
+USES=		gmake tar:Z	# required to support parallel (-jX) builds
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	prefix
 CONFIGURE_ENV=	PREFIX="${PREFIX}"
