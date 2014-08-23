@@ -1,5 +1,5 @@
---- ./eiskaltdcpp-cli/cli.pl.orig	2011-10-02 18:12:43.000000000 +0300
-+++ ./eiskaltdcpp-cli/cli.pl	2011-10-06 09:30:39.000000000 +0300
+--- eiskaltdcpp-cli/cli-xmlrpc.pl.orig	2013-08-29 21:25:02.000000000 +0400
++++ eiskaltdcpp-cli/cli-xmlrpc.pl	2014-08-10 16:45:28.978906623 +0400
 @@ -36,8 +36,7 @@
      unshift @INC, 
  	 "$XDG_CONFIG_HOME/eiskaltdc++",

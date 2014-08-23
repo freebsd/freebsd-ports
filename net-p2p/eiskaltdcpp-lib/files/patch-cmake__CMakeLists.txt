@@ -13,7 +13,7 @@
  file(WRITE "${dcpp_files_from}" "${dcpp_contents}")
 +endif (BUILD_LIB)
  
- if (USE_GTK)
+ if (USE_GTK OR USE_GTK3)
  get_absolute_sources(abs_gtk_cpp_sources "${GTK_SRCS};${GTK_HDRS}")
 @@ -163,6 +165,7 @@
  			# if the po file doesn't exist. The case where a po file used to
@@ -29,11 +29,11 @@
  			)
 +			endif (BUILD_LIB)
  
- 			if (USE_GTK)
+ 			if (USE_GTK OR USE_GTK3)
  			if(NOT EXISTS ${eiskaltdcpp-gtk_SOURCE_DIR}/po/${LANG}.po)
 @@ -231,15 +235,19 @@
  			SET(pot-update-SRC ${pot-update-SRC} ${eiskaltdcpp-gtk_SOURCE_DIR}/po/${LANG}.po.dummy )
- 			endif (USE_GTK)
+ 			endif (USE_GTK OR USE_GTK3)
  
 +			if (BUILD_LIB)
  			SET(pot-update-SRC ${pot-update-SRC} ${dcpp_SOURCE_DIR}/po/${LANG}.po.dummy)
@@ -48,7 +48,7 @@
  
  		)
 +		endif (BUILD_LIB)
- 		if (USE_GTK)
+ 		if (USE_GTK OR USE_GTK3)
  		SET(pot-update-SRC
  			${pot-update-SRC}
 @@ -329,6 +337,7 @@
@@ -64,18 +64,17 @@
  				COMMENT "mo-update [dcpp-${LANG}]: Creating mo file."
  			)
 +			endif (BUILD_LIB)
- 			if (USE_GTK)
+ 			if (USE_GTK OR USE_GTK3)
  			add_custom_command(
  				OUTPUT ${eiskaltdcpp-gtk_BINARY_DIR}/locale/${LANG}/LC_MESSAGES
-@@ -377,6 +387,7 @@
+@@ -374,12 +384,14 @@
  			)
- 			endif (USE_GTK)
+ 			endif (USE_GTK OR USE_GTK3)
  
 +			if (BUILD_LIB)
- 			install(FILES
+ 			set(mo-update-SRC ${mo-update-SRC}
  			    ${dcpp_BINARY_DIR}/locale/${LANG}/LC_MESSAGES/libeiskaltdcpp.mo
- 					DESTINATION ${LOCALE_DIR}/${LANG}/LC_MESSAGES)
-@@ -387,6 +398,7 @@
+ 			)
  			set(mo-update-LANG-SRC ${mo-update-LANG-SRC}
  			    ${dcpp_BINARY_DIR}/locale/${LANG}/LC_MESSAGES/libeiskaltdcpp.mo
  			)

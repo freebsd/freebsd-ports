@@ -1,79 +1,44 @@
 # Created by: Stas Timokhin <stast@bsdportal.ru>
 # $FreeBSD$
 
-PORTNAME=	eiskaltdcpp-data
-PORTVERSION=	2.2.4
-PORTREVISION=	1
+PORTNAME=	eiskaltdcpp
 CATEGORIES=	net-p2p
-MASTER_SITES=	GOOGLE_CODE
-DISTNAME=	eiskaltdcpp-${DISTVERSION}
+PKGNAMESUFFIX=	-data
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Shared data for EiskaltDC++ GUIs
 
 LICENSE=	GPLv3
 
-PROJECTHOST=	eiskaltdc
+MASTERDIR=	${.CURDIR}/../eiskaltdcpp-lib
 
-USES=		tar:xz
+USES=		cmake
+NO_ARCH=	yes
 NO_BUILD=	yes
 INSTALLS_ICONS=	yes
 
-OPTIONS_DEFINE=	EMOTICONS EXAMPLES LUASCRIPTS SOUND
+CMAKE_SOURCE_PATH=	${WRKSRC}/data
+
+OPTIONS_DEFINE=	EMOTICONS EXAMPLES LUASCRIPTS SOUNDS
 OPTIONS_DEFAULT=	EMOTICONS SOUNDS
+OPTIONS_SUB=	yes
 EMOTICONS_DESC=		Install emoticons
 EXAMPLES_DESC=		Install script examples
 LUASCRIPTS_DESC=	Install lua script examples
 SOUNDS_DESC=		Install sound files
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
+CMAKE_ARGS=		-Wno-dev \
+			-DUSE_GTK:BOOL=ON \
+			-DCLIENT_DATA_DIR=${DATADIR} \
+			-DSHARE_DIR=${LOCALBASE}/share
 
-DATA_DIR=	${PREFIX}/share/eiskaltdcpp
+EMOTICONS_CMAKE_ON=	-DWITH_EMOTICONS:BOOL=ON
+EMOTICONS_CMAKE_OFF=	-DWITH_EMOTICONS:BOOL=OFF
+EXAMPLES_CMAKE_ON=	-DWITH_EXAMPLES:BOOL=ON
+EXAMPLES_CMAKE_OFF=	-DWITH_EXAMPLES:BOOL=OFF
+LUASCRIPTS_CMAKE_ON=	-DWITH_LUASCRIPTS:BOOL=ON -DLUA_SCRIPT:BOOL=ON
+LUASCRIPTS_CMAKE_OFF=	-DWITH_LUASCRIPTS:BOOL=OFF
+SOUNDS_CMAKE_ON=	-DWITH_SOUNDS:BOOL=ON
+SOUNDS_CMAKE_OFF=	-DWITH_SOUNDS:BOOL=OFF
 
-.if ${PORT_OPTIONS:MEMOTICONS}
-PLIST_SUB+=	EMOTICONS=""
-.else
-PLIST_SUB+=	EMOTICONS="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MEXAMPLES}
-PLIST_SUB+=	EXAMPLES=""
-.else
-PLIST_SUB+=	EXAMPLES="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MLUASCRIPTS}
-PLIST_SUB+=	LUASCRIPTS=""
-.else
-PLIST_SUB+=	LUASCRIPTS="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MSOUNDS}
-PLIST_SUB+=	SOUNDS=""
-.else
-PLIST_SUB+=	SOUNDS="@comment "
-.endif
-
-do-install:
-	@${MKDIR} ${DATA_DIR}
-	@${TOUCH} ${DATA_DIR}/keep_me
-.for SIZE in 16x16 22x22 24x24 32x32 48x48 64x64 128x128
-	@${MKDIR} "${LOCALBASE}/share/icons/hicolor/${SIZE}/apps"
-	@${CP} -v "${WRKSRC}/icons/icon_${SIZE}.png" "${LOCALBASE}/share/icons/hicolor/${SIZE}/apps/eiskaltdcpp.png"
-.endfor
-.if ${PORT_OPTIONS:MEMOTICONS}
-	@${CP} -rv ${WRKSRC}/emoticons ${DATA_DIR}
-.endif
-.if ${PORT_OPTIONS:MEXAMPLES}
-	@${MKDIR} ${DATA_DIR}/examples
-	@${INSTALL_SCRIPT} ${WRKSRC}/examples/* ${DATA_DIR}/examples
-.endif
-.if ${PORT_OPTIONS:MLUASCRIPTS}
-	@${CP} -rv ${WRKSRC}/luascripts ${DATA_DIR}
-.endif
-.if ${PORT_OPTIONS:MSOUNDS}
-	@${CP} -rv ${WRKSRC}/sounds ${DATA_DIR}
-.endif
-
-.include <bsd.port.mk>
+.include "${MASTERDIR}/Makefile"
