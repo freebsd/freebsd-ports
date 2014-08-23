@@ -94,6 +94,6 @@ share/pixmaps/gtk-gnutella.svg
 @dirrm %%DATADIR%%/fr
 @dirrm %%DATADIR%%/en
 @dirrm %%DATADIR%%/el
-@dirrm %%DATADIR%%/%%ARCH%%-freebsd
+@dirrm %%DATADIR%%/%%ARCH%%-%%OPSYS%%
 @dirrm %%DATADIR%%
 @dirrmtry share/appdata
