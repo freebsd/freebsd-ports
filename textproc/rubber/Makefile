@@ -12,22 +12,21 @@ COMMENT=	Wrapper for LaTeX and friends
 
 LICENSE=	GPLv2
 
-USE_PYTHON=	2
+NO_ARCH=	yes
+
+USES=		gmake makeinfo python:2
 USE_TEX=	latex
-USES=		gmake makeinfo
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX} --infodir=${PREFIX}/${INFO_PATH} \
-		--datadir=${PYTHON_SITELIBDIR} --python=${PYTHON_CMD}
+		--datadir=${PYTHONPREFIX_SITELIBDIR} --python=${PYTHON_CMD}
 
-MANLANG=	"" fr
-MAN1=		rubber.1 rubber-info.1 rubber-pipe.1
+PLIST_SUB=	PYDISTUTILS_EGGINFO="${PYDISTUTILS_EGGINFO}"
+
 INFO=		rubber
 
-NO_STAGE=	yes
-post-install:
-	@${FIND} ${PYTHON_SITELIBDIR}/rubber ! -type d | ${SED} \
-		's,${PREFIX}/,,' >> ${TMPPLIST}
-	@${FIND} ${PYTHON_SITELIBDIR}/rubber -type d | ${SORT} -r | ${SED} \
-		's,${PREFIX}/,@dirrm ,' >> ${TMPPLIST}
+post-patch:
+	@${REINPLACE_CMD} -e \
+		's|\($${prefix}\)$$|\1 --root="$${DESTDIR}"|' \
+		${WRKSRC}/Makefile.in
 
 .include <bsd.port.mk>
