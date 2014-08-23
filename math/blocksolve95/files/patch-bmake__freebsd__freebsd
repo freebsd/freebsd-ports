@@ -1,6 +1,6 @@
---- bmake/freebsd/freebsd.orig	Tue Jan  9 16:40:08 1996
-+++ bmake/freebsd/freebsd	Sun Oct  3 18:12:06 2004
-@@ -1,13 +1,13 @@
+--- bmake/freebsd/freebsd.orig	1996-01-09 16:40:08.000000000 +0100
++++ bmake/freebsd/freebsd	2014-08-23 14:53:31.000000000 +0200
+@@ -1,16 +1,16 @@
  
 -CC       = gcc  -DPARCH_freebsd
 -FC       = f77
@@ -18,7 +18,11 @@
 +FLINKER  = $(FC) $(BASEOPTF)
  CONF     = -DHAVE_PWD_H -DHAVE_MALLOC_H -DHAVE_STRING_H \
             -DHAVE_SWAPPED_BYTES -DHAVE_X11
- SYS_LIB  = 
+-SYS_LIB  = 
++SYS_LIB  = $(LDFLAGS)
+ 
+ include $(BS_DIR)/bmake/common
+ 
 @@ -33,13 +33,13 @@
  	$(RM) $*.o
  .F.o:
