@@ -3462,6 +3462,7 @@
     SUBDIR += phptags
     SUBDIR += physfs
     SUBDIR += physfs-devel
+    SUBDIR += picosat
     SUBDIR += picp
     SUBDIR += picprog
     SUBDIR += piklab
