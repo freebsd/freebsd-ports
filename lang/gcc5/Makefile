@@ -1,15 +1,15 @@
 # Created by: Gerald Pfeifer <gerald@FreeBSD.org>
 # $FreeBSD$
 
-PORTNAME=	gcc410
-PORTVERSION=	4.10.0.s20140810
+PORTNAME=	gcc5
+PORTVERSION=	5.0.s20140817
 CATEGORIES=	lang java
 MASTER_SITES=	${MASTER_SITE_GCC}
 MASTER_SITE_SUBDIR=	snapshots/${DISTVERSION}
 DISTNAME=	gcc-${DISTVERSION}
 
 MAINTAINER=	gerald@FreeBSD.org
-COMMENT=	GNU Compiler Collection 4.10
+COMMENT=	GNU Compiler Collection 5
 
 LICENSE=	GPLv3 GPLv3RLE
 LICENSE_COMB=	multi
@@ -26,11 +26,11 @@ BUILD_DEPENDS+=	runtest:${PORTSDIR}/misc/dejagnu
 
 # DISTVERSION relates to downloads, GCC_VERSION and SUFFIX to names
 # of executables and directories once installed.  A PORTVERSION of
-# 4.Y.2.s20130808 results in values of 4.Y-20130808, 4.Y.2, and 4Y
+# Y.2.s20140817 results in values of Y-20140817, Y.2.0, and Y
 # for these three.
-DISTVERSION=	${PORTVERSION:C/([0-9]+\.[0-9]+).*\.s([0-9]+)/\1-\2/}
-GCC_VERSION=	${PORTVERSION:C/(.+)\.s[0-9]{8}/\1/}
-SUFFIX=		${PORTVERSION:C/([0-9]+).([0-9]+).*/\1\2/}
+DISTVERSION=	${PORTVERSION:C/([0-9]+).*\.s([0-9]+)/\1-\2/}
+GCC_VERSION=	${PORTVERSION:C/(.+)\.s[0-9]{8}/\1.0/}
+SUFFIX=		${PORTVERSION:C/([0-9]+).*/\1/}
 ONLY_FOR_ARCHS=	amd64 i386 powerpc powerpc64 sparc64
 USES=		gmake iconv makeinfo perl5 tar:bzip2
 USE_BINUTILS=	yes
