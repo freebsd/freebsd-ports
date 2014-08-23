@@ -91,6 +91,7 @@
     SUBDIR += bsdmoted
     SUBDIR += bsdploy
     SUBDIR += bsdstats
+    SUBDIR += btsixad
     SUBDIR += bubblemon-dockapp
     SUBDIR += bulk_extractor
     SUBDIR += busybox
