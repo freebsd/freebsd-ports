@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	warbler
-PORTVERSION=	1.4.0
+PORTVERSION=	1.4.4
 CATEGORIES=	devel rubygems java
 MASTER_SITES=	RG
 
