@@ -1,0 +1,51 @@
+%%AMD64%%VirtualGL/bin/.vglrun.vars64
+%%I386%%VirtualGL/bin/.vglrun.vars32
+VirtualGL/bin/glreadtest
+VirtualGL/bin/glxinfo
+%%AMD64%%VirtualGL/bin/glxspheres64
+%%I386%%VirtualGL/bin/glxspheres
+VirtualGL/bin/nettest
+VirtualGL/bin/tcbench
+VirtualGL/bin/vglclient
+VirtualGL/bin/vglconfig
+VirtualGL/bin/vglconnect
+VirtualGL/bin/vglgenkey
+VirtualGL/bin/vgllogin
+VirtualGL/bin/vglrun
+VirtualGL/bin/vglserver_config
+%%DOCSDIR%%/411.gif
+%%DOCSDIR%%/422.gif
+%%DOCSDIR%%/444.gif
+%%DOCSDIR%%/ChangeLog.txt
+%%DOCSDIR%%/LGPL.txt
+%%DOCSDIR%%/LICENSE-FLTK.txt
+%%DOCSDIR%%/LICENSE-PuTTY.txt
+%%DOCSDIR%%/LICENSE-xauth.txt
+%%DOCSDIR%%/LICENSE.txt
+%%DOCSDIR%%/chromium-displaywall.png
+%%DOCSDIR%%/chromium-sortfirst.png
+%%DOCSDIR%%/chromium-sortlast.png
+%%DOCSDIR%%/configdialog.gif
+%%DOCSDIR%%/exceed1.png
+%%DOCSDIR%%/exceed2.png
+%%DOCSDIR%%/exceed3.png
+%%DOCSDIR%%/exceed6.png
+%%DOCSDIR%%/index.html
+%%DOCSDIR%%/somerights20.png
+%%DOCSDIR%%/sshtunnel.png
+%%DOCSDIR%%/vgltransport.png
+%%DOCSDIR%%/vgltransportservernetwork.png
+%%DOCSDIR%%/virtualgl.css
+%%DOCSDIR%%/x11transport.png
+VirtualGL/fakelib/libGL.so
+VirtualGL/include/rr.h
+VirtualGL/include/rrtransport.h
+VirtualGL/lib/libdlfaker.so
+VirtualGL/lib/libgefaker.so
+VirtualGL/lib/librrfaker.so
+@dirrmtry VirtualGL/bin
+@dirrmtry VirtualGL/doc
+@dirrmtry VirtualGL/fakelib
+@dirrmtry VirtualGL/include
+@dirrmtry VirtualGL/lib
+@dirrmtry VirtualGL

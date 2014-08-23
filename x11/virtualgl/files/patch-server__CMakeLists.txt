@@ -1,0 +1,34 @@
+--- ./server/CMakeLists.txt.orig	2013-09-27 06:10:02.000000000 +0100
++++ ./server/CMakeLists.txt	2014-08-10 17:43:04.000000000 +0100
+@@ -36,9 +36,9 @@
+ 	set_source_files_properties(faker-sym.cpp PROPERTIES
+ 		OBJECT_DEPENDS ${CMAKE_CURRENT_BINARY_DIR}/faker-mapfile)
+ 	set_target_properties(rrfaker PROPERTIES
+-		LINK_FLAGS "-z defs ${MAPFLAG}${CMAKE_CURRENT_BINARY_DIR}/faker-mapfile")
++		LINK_FLAGS "-Wl,-z,defs ${MAPFLAG}${CMAKE_CURRENT_BINARY_DIR}/faker-mapfile")
+ else()
+-	set_target_properties(rrfaker PROPERTIES LINK_FLAGS "-z defs")
++	set_target_properties(rrfaker PROPERTIES LINK_FLAGS "-Wl,-z,defs")
+ endif()
+ target_link_libraries(rrfaker rrframe ${FBXFAKERLIB} rrsocket m
+ 	${OPENGL_gl_LIBRARY} ${LIBDL})
+@@ -59,7 +59,7 @@
+ install(TARGETS dlfaker DESTINATION ${VGL_LIBDIR})
+ 
+ add_library(gefaker SHARED gefaker.c)
+-set_target_properties(gefaker PROPERTIES LINK_FLAGS "-z defs")
++set_target_properties(gefaker PROPERTIES LINK_FLAGS "-Wl,-z,defs")
+ target_link_libraries(gefaker ${LIBDL})
+ install(TARGETS gefaker DESTINATION ${VGL_LIBDIR})
+ 
+@@ -119,8 +119,8 @@
+ add_library(GLdlfakerut SHARED libGLdlfakerut.c)
+ 
+ add_executable(fakerut fakerut.cpp)
+-target_link_libraries(fakerut "-z now ${OPENGL_gl_LIBRARY}"
+-	${OPENGL_glu_LIBRARY} "-z now ${X11_X11_LIB}" ${LIBDL} pthread)
++target_link_libraries(fakerut "-Wl,-z,now ${OPENGL_gl_LIBRARY}"
++	${OPENGL_glu_LIBRARY} "-Wl,-z,now ${X11_X11_LIB}" ${LIBDL} pthread)
+ 
+ add_library(vgltrans_test SHARED testplugin.cpp vgltransconn.cpp)
+ if(VGL_USESSL AND CMAKE_SYSTEM_NAME STREQUAL "Linux")
