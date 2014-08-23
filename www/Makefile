@@ -232,6 +232,7 @@
     SUBDIR += gecko-mediaplayer
     SUBDIR += gecko-sharp20
     SUBDIR += geeklog
+    SUBDIR += geeknote
     SUBDIR += geneweb
     SUBDIR += geolizer
     SUBDIR += geronimo
