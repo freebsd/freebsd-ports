@@ -1,7 +1,17 @@
 bin/roxterm
 bin/roxterm-config
+man/es/man1/roxterm.1.gz
+man/es/man1/roxterm-config.1.gz
+man/fr/man1/roxterm.1.gz
+man/fr/man1/roxterm-config.1.gz
 man/man1/roxterm.1.gz
 man/man1/roxterm-config.1.gz
+man/pt_BR/man1/roxterm.1.gz
+man/pt_BR/man1/roxterm-config.1.gz
+man/ru/man1/roxterm.1.gz
+man/ru/man1/roxterm-config.1.gz
+man/uk/man1/roxterm.1.gz
+man/uk/man1/roxterm-config.1.gz
 share/appdata/roxterm.appdata.xml
 share/applications/roxterm.desktop
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
@@ -11,6 +21,14 @@ share/applications/roxterm.desktop
 %%PORTDOCS%%%%DOCSDIR%%/en/index.html
 %%PORTDOCS%%%%DOCSDIR%%/en/installation.html
 %%PORTDOCS%%%%DOCSDIR%%/en/news.html
+%%PORTDOCS%%%%DOCSDIR%%/es/guide.html
+%%PORTDOCS%%%%DOCSDIR%%/es/index.html
+%%PORTDOCS%%%%DOCSDIR%%/es/installation.html
+%%PORTDOCS%%%%DOCSDIR%%/es/news.html
+%%PORTDOCS%%%%DOCSDIR%%/fr/guide.html
+%%PORTDOCS%%%%DOCSDIR%%/fr/index.html
+%%PORTDOCS%%%%DOCSDIR%%/fr/installation.html
+%%PORTDOCS%%%%DOCSDIR%%/fr/news.html
 %%PORTDOCS%%%%DOCSDIR%%/lib/favicon.ico
 %%PORTDOCS%%%%DOCSDIR%%/lib/header.png
 %%PORTDOCS%%%%DOCSDIR%%/lib/logo_text.png
@@ -19,6 +37,18 @@ share/applications/roxterm.desktop
 %%PORTDOCS%%%%DOCSDIR%%/lib/roxterm_ie.css
 %%PORTDOCS%%%%DOCSDIR%%/lib/roxterm_logo.png
 %%PORTDOCS%%%%DOCSDIR%%/lib/sprites.png
+%%PORTDOCS%%%%DOCSDIR%%/pt_BR/guide.html
+%%PORTDOCS%%%%DOCSDIR%%/pt_BR/index.html
+%%PORTDOCS%%%%DOCSDIR%%/pt_BR/installation.html
+%%PORTDOCS%%%%DOCSDIR%%/pt_BR/news.html
+%%PORTDOCS%%%%DOCSDIR%%/ru/guide.html
+%%PORTDOCS%%%%DOCSDIR%%/ru/index.html
+%%PORTDOCS%%%%DOCSDIR%%/ru/installation.html
+%%PORTDOCS%%%%DOCSDIR%%/ru/news.html
+%%PORTDOCS%%%%DOCSDIR%%/uk/guide.html
+%%PORTDOCS%%%%DOCSDIR%%/uk/index.html
+%%PORTDOCS%%%%DOCSDIR%%/uk/installation.html
+%%PORTDOCS%%%%DOCSDIR%%/uk/news.html
 share/icons/hicolor/scalable/apps/roxterm.svg
 share/locale/es/LC_MESSAGES/roxterm.mo
 share/locale/fr/LC_MESSAGES/roxterm.mo
@@ -33,7 +63,22 @@ share/locale/uk/LC_MESSAGES/roxterm.mo
 @dirrm %%DATADIR%%/Config/Colours
 @dirrm %%DATADIR%%/Config
 @dirrm %%DATADIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/uk
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/ru
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/pt_BR
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/lib
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/fr
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/es
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/en
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrmtry share/appdata
+@dirrmtry man/uk/man1
+@dirrmtry man/uk
+@dirrmtry man/ru/man1
+@dirrmtry man/ru
+@dirrmtry man/pt_BR/man1
+@dirrmtry man/pt_BR
+@dirrmtry man/fr/man1
+@dirrmtry man/fr
+@dirrmtry man/es/man1
+@dirrmtry man/es
