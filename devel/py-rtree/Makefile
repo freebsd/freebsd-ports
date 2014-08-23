@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	rtree
-PORTVERSION=	0.7.0
-PORTREVISION=	2
+PORTVERSION=	0.8.0
 CATEGORIES=	devel science python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,12 +11,13 @@ DISTNAME=	Rtree-${PORTVERSION}
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	R-Tree Spatial Index For Python GIS
 
+LICENSE=	LGPL21
+
 BUILD_DEPENDS+=	${LOCALBASE}/include/spatialindex/SpatialIndex.h:${PORTSDIR}/devel/spatialindex
 RUN_DEPENDS+=	${BUILD_DEPENDS}
 
-USE_PYTHON=		yes
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
+USESN=		python
+USE_PYTHON=	distutils autoplist
 
 post-extract:
 	${REINPLACE_CMD} -e 's#/usr/local#${LOCALBASE}#g' \
