@@ -1,0 +1,5 @@
+A fork of PrBoom  with uncapped framerate, variable gamespeed, re-record,
+walkcam, chasecam, full mouselook, fov and other features without loss of
+compatibility with original DOOM.
+
+WWW: http://prboom-plus.sourceforge.net/
