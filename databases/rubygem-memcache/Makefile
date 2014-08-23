@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	memcache
-PORTVERSION=	1.4.1
+PORTVERSION=	1.5.1
 CATEGORIES=	databases rubygems
 MASTER_SITES=	RG
 
