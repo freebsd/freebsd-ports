@@ -1,0 +1,11 @@
+--- announcefetch.py
++++ announcefetch.py
+@@ -213,6 +213,8 @@ class AnnounceDataFetcher(object):
+             argsMap['os'] = 'win'
+          elif OS_LINUX:
+             argsMap['os'] = 'lin'
++         elif OS_FREEBSD:
++            argsMap['os'] = 'bsd'
+          elif OS_MACOSX:
+             argsMap['os'] = 'mac'
+          else:
