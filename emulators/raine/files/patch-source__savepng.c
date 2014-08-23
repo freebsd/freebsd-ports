@@ -1,6 +1,6 @@
---- source/png/savepng.c.orig	2005-08-17 12:20:36.000000000 +0200
-+++ source/png/savepng.c	2012-05-06 17:19:09.000000000 +0200
-@@ -188,7 +188,7 @@
+--- source/savepng.c.orig
++++ source/savepng.c
+@@ -203,7 +203,7 @@
  	goto Error;
  
      /* Set error handling. */

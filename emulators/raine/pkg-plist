@@ -1,33 +1,22 @@
 bin/raine
-%%DATADIR%%/cheats.cfg
-%%DATADIR%%/hiscore.dat
-%%DATADIR%%/languages/brasil.cfg
-%%DATADIR%%/languages/czech.cfg
-%%DATADIR%%/languages/catala.cfg
-%%DATADIR%%/languages/dansk.cfg
-%%DATADIR%%/languages/dutch.cfg
-%%DATADIR%%/languages/english.cfg
-%%DATADIR%%/languages/espanol.cfg
-%%DATADIR%%/languages/euskera.cfg
-%%DATADIR%%/languages/finnish.cfg
-%%DATADIR%%/languages/french.cfg
-%%DATADIR%%/languages/french2.cfg
-%%DATADIR%%/languages/german.cfg
-%%DATADIR%%/languages/german2.cfg
-%%DATADIR%%/languages/italian.cfg
-%%DATADIR%%/languages/japanese.cfg
-%%DATADIR%%/languages/polish.cfg
-%%DATADIR%%/languages/portugal.cfg
-%%DATADIR%%/languages/spanish.cfg
-%%DATADIR%%/languages/svenska.cfg
-%%DATADIR%%/languages/template.cfg
-%%DATADIR%%/languages/turkish.cfg
-%%DATADIR%%/languages/galego.cfg
-%%DATADIR%%/raine.dat
 share/applications/raine.desktop
 share/pixmaps/raine.png
-@dirrmtry %%DATADIR%%/roms
-@dirrmtry %%DATADIR%%/emudx
-@dirrmtry %%DATADIR%%/artwork
-@dirrm %%DATADIR%%/languages
-@dirrmtry %%DATADIR%%
+%%DATADIR%%/artwork/.keep_me
+%%DATADIR%%/bitmaps/cursor.png
+%%DATADIR%%/bitmaps/raine_logo.png
+%%DATADIR%%/cheats.cfg
+%%DATADIR%%/emudx/.keep_me
+%%DATADIR%%/fonts/Vera.ttf
+%%DATADIR%%/fonts/VeraMono.ttf
+%%DATADIR%%/fonts/font6x8.bin
+%%DATADIR%%/hiscore.dat
+%%DATADIR%%/roms/.keep_me
+%%DATADIR%%/scripts/raine/.keep_me
+@dirrm %%DATADIR%%/scripts/raine
+@dirrm %%DATADIR%%/scripts
+@dirrm %%DATADIR%%/roms
+@dirrm %%DATADIR%%/fonts
+@dirrm %%DATADIR%%/emudx
+@dirrm %%DATADIR%%/bitmaps
+@dirrm %%DATADIR%%/artwork
+@dirrm %%DATADIR%%
