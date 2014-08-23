@@ -1141,6 +1141,7 @@
     SUBDIR += py-Chameleon
     SUBDIR += py-MarkupSafe
     SUBDIR += py-Tempita
+    SUBDIR += py-acora
     SUBDIR += py-asciinema
     SUBDIR += py-asv
     SUBDIR += py-bugzillatools
