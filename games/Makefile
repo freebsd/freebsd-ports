@@ -746,6 +746,7 @@
     SUBDIR += powwow
     SUBDIR += ppracer
     SUBDIR += prboom
+    SUBDIR += prboom-plus
     SUBDIR += primateplunge
     SUBDIR += ptkei
     SUBDIR += ptools
