@@ -1805,6 +1805,7 @@
     SUBDIR += rubygem-html2haml
     SUBDIR += rubygem-http
     SUBDIR += rubygem-http-cookie
+    SUBDIR += rubygem-http_parser.rb
     SUBDIR += rubygem-httpi
     SUBDIR += rubygem-httparty
     SUBDIR += rubygem-httpclient
