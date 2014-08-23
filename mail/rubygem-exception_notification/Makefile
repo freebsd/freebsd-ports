@@ -2,14 +2,15 @@
 # $FreeBSD$
 
 PORTNAME=	exception_notification
-PORTVERSION=	3.0.1
+PORTVERSION=	4.0.1
 CATEGORIES=	mail rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Exception notification for Rails apps
 
-RUN_DEPENDS=	rubygem-actionmailer>=3.0.4:${PORTSDIR}/mail/rubygem-actionmailer
+RUN_DEPENDS=	rubygem-actionmailer>=3.0.4:${PORTSDIR}/mail/rubygem-actionmailer \
+		rubygem-activesupport>=3.0.4:${PORTSDIR}/devel/rubygem-activesupport
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
