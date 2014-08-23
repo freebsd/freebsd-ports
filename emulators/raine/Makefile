@@ -2,41 +2,56 @@
 # $FreeBSD$
 
 PORTNAME=	raine
-PORTVERSION=	0.43.3
-PORTREVISION=	9
+PORTVERSION=	0.51.9
 CATEGORIES=	emulators games
-MASTER_SITES=	http://www.rainemu.com/html/archive/
+MASTER_SITES=	GENTOO/distfiles
 DISTNAME=	${PORTNAME}s-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Arcade Emulator for M68000, M68020, and Z80 based hardware
+COMMENT=	Arcade Emulator for M68000| M68020| and Z80 based hardware
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/nasm:${PORTSDIR}/devel/nasm
-LIB_DEPENDS=	liballeg.so:${PORTSDIR}/devel/allegro \
-		libpng15.so:${PORTSDIR}/graphics/png \
-		libvga.so:${PORTSDIR}/graphics/svgalib
+LICENSE=	ART10
+
+BUILD_DEPENDS=	nasm>0:${PORTSDIR}/devel/nasm
+LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-USES=		gmake tar:bzip2
-USE_SDL=	sdl
-USE_GNOME=	gnomehier
+USES=		gmake perl5 shebangfix tar:bzip2
+SHEBANG_FILES=	makedep
+USE_PERL5=	build
+USE_SDL=	image ttf sdl
+USE_GCC=	any
 MAKEFILE=	makefile
+MAKE_ARGS=	NEO="" VERBOSE=1 HAS_CONSOLE=""
 
 ONLY_FOR_ARCHS=	i386
 
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
-
 post-patch:
-	@${REINPLACE_CMD} -e "s, [$$]_mcpu,,g" ${WRKSRC}/detect-cpu
-	@${REINPLACE_CMD} -e "s,sdl-config,${SDL_CONFIG},g" -e "s,/usr/share/,/share/,g" \
-		${WRKSRC}/makefile
-	@${REINPLACE_CMD} -e "s,/usr/share/games/raine,${DATADIR},g" \
-		${WRKSRC}/source/raine.c
-	@${REINPLACE_CMD} -e "s,^#ifdef GFX_SVGA,#ifdef GFX_SVGALIB,g" \
-		${WRKSRC}/source/gui/rgui.c \
-		${WRKSRC}/source/alleg/display.c \
-		${WRKSRC}/source/config.c
+	@${REINPLACE_CMD} -e \
+		's| [$$]_mcpu||g' ${WRKSRC}/detect-cpu
+	@${REINPLACE_CMD} -e \
+		's|CC=|CC?=| ; \
+		 s|CXX=|CXX?=| ; \
+		 /LD/s|gcc|$$(CXX)| ; \
+		 s|$$(DESTDIR)/usr|$$(DESTDIR)$$(PREFIX)| ; \
+		 s|$$(prefix)/games|$$(prefix)/bin| ; \
+		 s|$$(prefix)/share/games|$$(prefix)/share| ; \
+		 s|-I.*/muParser|-I$${LOCALBASE}/include| ; \
+		 s|^CFLAGS =|CFLAGS ?=| ; \
+		 s|sdl-config|$${SDL_CONFIG}|g ; \
+		 /LFLAGS/s|-g || ; \
+		 /LFLAGS/s|-lstdc++|$$(LDFLAGS)|' ${WRKSRC}/makefile
+	@${REINPLACE_CMD} -e \
+		'/^Icon/s|=.*|=${PREFIX}/share/pixmaps/raine.png|' \
+		${WRKSRC}/raine.desktop
+	@${REINPLACE_CMD} -e \
+		's|/usr/share/games/raine|${DATADIR}|' ${WRKSRC}/source/raine.c
 
-.include <bsd.port.post.mk>
+post-install:
+.for i in artwork emudx roms scripts/raine
+	@${ECHO_CMD} -n > ${STAGEDIR}${DATADIR}/${i}/.keep_me
+.endfor
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/raine
+
+.include <bsd.port.mk>
