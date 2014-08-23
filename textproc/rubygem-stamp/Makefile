@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	stamp
-PORTVERSION=	0.5.0
+PORTVERSION=	0.6.0
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
