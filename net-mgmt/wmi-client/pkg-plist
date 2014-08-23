@@ -1,31 +1,31 @@
 bin/winexe
 bin/wmic
-%%PYTHON_SITELIBDIR%%/libasync_wmi_lib.so.0
-%%PYTHON_SITELIBDIR%%/libasync_wmi_lib.so.0.0.2
-%%PYTHON_SITELIBDIR%%/pysamba/talloc.py
-%%PYTHON_SITELIBDIR%%/pysamba/test/watcher.py
-%%PYTHON_SITELIBDIR%%/pysamba/test/connect.py
-%%PYTHON_SITELIBDIR%%/pysamba/test/wmic.py
-%%PYTHON_SITELIBDIR%%/pysamba/__init__.py
-%%PYTHON_SITELIBDIR%%/pysamba/version.pyc
-%%PYTHON_SITELIBDIR%%/pysamba/library.py
-%%PYTHON_SITELIBDIR%%/pysamba/composite_context.py
-%%PYTHON_SITELIBDIR%%/pysamba/version.py
-%%PYTHON_SITELIBDIR%%/pysamba/ndr.py
-%%PYTHON_SITELIBDIR%%/pysamba/rpc/Rpc.py
-%%PYTHON_SITELIBDIR%%/pysamba/rpc/__init__.py
-%%PYTHON_SITELIBDIR%%/pysamba/rpc/credentials.py
-%%PYTHON_SITELIBDIR%%/pysamba/rpc/dcerpc.py
-%%PYTHON_SITELIBDIR%%/pysamba/rpc/rpc_request.py
-%%PYTHON_SITELIBDIR%%/pysamba/rpc/oxidresolver.py
-%%PYTHON_SITELIBDIR%%/pysamba/wbem/__init__.py
-%%PYTHON_SITELIBDIR%%/pysamba/wbem/Query.py
-%%PYTHON_SITELIBDIR%%/pysamba/wbem/wbem.py
-%%PYTHON_SITELIBDIR%%/pysamba/twisted/callback.py
-%%PYTHON_SITELIBDIR%%/pysamba/twisted/__init__.py
-%%PYTHON_SITELIBDIR%%/pysamba/twisted/reactor.py
-@dirrmtry %%PYTHON_SITELIBDIR%%/pysamba/wbem
-@dirrmtry %%PYTHON_SITELIBDIR%%/pysamba/twisted
-@dirrmtry %%PYTHON_SITELIBDIR%%/pysamba/test
-@dirrmtry %%PYTHON_SITELIBDIR%%/pysamba/rpc
-@dirrmtry %%PYTHON_SITELIBDIR%%/pysamba
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/libasync_wmi_lib.so.0
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/libasync_wmi_lib.so.0.0.2
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/pysamba/talloc.py
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/pysamba/test/watcher.py
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/pysamba/test/connect.py
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/pysamba/test/wmic.py
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/pysamba/__init__.py
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/pysamba/version.pyc
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/pysamba/library.py
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/pysamba/composite_context.py
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/pysamba/version.py
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/pysamba/ndr.py
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/pysamba/rpc/Rpc.py
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/pysamba/rpc/__init__.py
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/pysamba/rpc/credentials.py
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/pysamba/rpc/dcerpc.py
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/pysamba/rpc/rpc_request.py
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/pysamba/rpc/oxidresolver.py
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/pysamba/wbem/__init__.py
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/pysamba/wbem/Query.py
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/pysamba/wbem/wbem.py
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/pysamba/twisted/callback.py
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/pysamba/twisted/__init__.py
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/pysamba/twisted/reactor.py
+%%PYTHON%%@dirrmtry %%PYTHON_SITELIBDIR%%/pysamba/wbem
+%%PYTHON%%@dirrmtry %%PYTHON_SITELIBDIR%%/pysamba/twisted
+%%PYTHON%%@dirrmtry %%PYTHON_SITELIBDIR%%/pysamba/test
+%%PYTHON%%@dirrmtry %%PYTHON_SITELIBDIR%%/pysamba/rpc
+%%PYTHON%%@dirrmtry %%PYTHON_SITELIBDIR%%/pysamba
