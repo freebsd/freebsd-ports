@@ -1,0 +1,11 @@
+bin/pdmenu 
+@sample etc/pdmenurc.sample
+man/man1/pdmenu.1.gz
+man/man5/pdmenurc.5.gz
+share/locale/da/LC_MESSAGES/pdmenu.mo
+share/locale/es/LC_MESSAGES/pdmenu.mo
+share/locale/fr/LC_MESSAGES/pdmenu.mo
+share/locale/ru/LC_MESSAGES/pdmenu.mo
+%%DATADIR%%/editdir.pl
+%%DATADIR%%/showdir.pl
+@dirrm %%DATADIR%%
