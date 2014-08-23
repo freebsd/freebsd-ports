@@ -76,9 +76,18 @@
  
  #define ISTGT_MD5DIGEST_LEN MD5_DIGEST_LENGTH
  
---- configure.orig	2012-08-24 12:19:24.000000000 +0200
-+++ configure	2013-06-26 01:23:49.000000000 +0200
-@@ -3472,13 +3472,13 @@
+--- configure.orig	2012-08-24 10:19:24 UTC
++++ configure
+@@ -3403,7 +3403,7 @@ $as_echo "#define _GNU_SOURCE 1" >>confd
+ 	rcdir='/etc/rc.d'
+ 
+ 	;;
+-*freebsd*)
++*dragonfly*|*freebsd*)
+ 	tmp="/usr/ports/emulators/virtualbox-ose/work/*/include"
+ 	if test -d "`echo $tmp`"; then
+ 	    vboxinc=$tmp
+@@ -3472,13 +3472,13 @@ _ACEOF
  
  fi
  
@@ -96,7 +105,7 @@
  cat confdefs.h - <<_ACEOF >conftest.$ac_ext
  /* end confdefs.h.  */
  
-@@ -3488,32 +3488,32 @@
+@@ -3488,32 +3488,32 @@ cat confdefs.h - <<_ACEOF >conftest.$ac_
  #ifdef __cplusplus
  extern "C"
  #endif
@@ -137,3 +146,4 @@
 +  LIBS="-lmd $LIBS"
  
  fi
+ 
