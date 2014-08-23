@@ -1537,6 +1537,7 @@
     SUBDIR += py-dojango
     SUBDIR += py-dotcloud.cli
     SUBDIR += py-dtflickr
+    SUBDIR += py-evernote
     SUBDIR += py-falcon
     SUBDIR += py-fcgi
     SUBDIR += py-fedex
