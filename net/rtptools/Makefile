@@ -6,7 +6,7 @@ PORTVERSION=	1.20
 CATEGORIES=	net mbone
 MASTER_SITES=	http://www.cs.columbia.edu/IRT/software/rtptools/download/
 
-MAINTAINER=	cjpugmed@gmail.com
+MAINTAINER=	cpm@fbsd.es
 COMMENT=	Set of tools to record, playback, and monitor RTPv2 data streams
 
 GNU_CONFIGURE=	yes

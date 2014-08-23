@@ -8,7 +8,7 @@ CATEGORIES=	hebrew x11-fonts
 DISTNAME=	H.fonts
 EXTRACT_SUFX=	.tar.Z
 
-MAINTAINER=	cjpugmed@gmail.com
+MAINTAINER=	cpm@fbsd.es
 COMMENT=	Collection of Hebrew fonts from El-Mar software Ltd
 
 NO_WRKSUBDIR=	yes
