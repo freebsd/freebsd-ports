@@ -399,6 +399,7 @@
     SUBDIR += jp2a
     SUBDIR += jpatch
     SUBDIR += jpeg
+    SUBDIR += jpeg-turbo
     SUBDIR += jpeg2ps
     SUBDIR += jpeginfo
     SUBDIR += jpegoptim
