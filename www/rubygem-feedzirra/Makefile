@@ -15,6 +15,9 @@ RUN_DEPENDS=	rubygem-curb>=0.8.1:${PORTSDIR}/ftp/rubygem-curb \
 		rubygem-loofah>=1.2.1:${PORTSDIR}/textproc/rubygem-loofah \
 		rubygem-sax-machine>=0.2.1:${PORTSDIR}/textproc/rubygem-sax-machine
 
+DEPRECATED=	Project renamed upstream, see www/rubygem-feedjira
+EXPIRATION_DATE=	2014-08-23
+
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
