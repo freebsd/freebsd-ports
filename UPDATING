@@ -5,6 +5,25 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20140823
+  AFFECTS: users of TeXLive
+  AUTHOR: hrs@FreeBSD.org
+
+  TeXLive in Ports Collection has been updated to TL2014.
+
+  When upgrading print/texlive-base on a system which has
+  TL2012 packages, the following error may occur:
+
+  pkg-static: texlive-base-20140525 conflicts with texlive-texmf-20120701_4
+
+  Please remove texlive-texmf-20120701_4 first in that case.
+
+  If you still get a similar "conflict of install files" error,
+  please remove all of tex-* and texlive-* packages and then
+  see if ${PREFIX}/share/texmf-dist directory are empty.  If not,
+  installing TeXlive can fail.  Removing files in the directory
+  manually will fix the installation problem.
+
 20140821:
   AFFECTS: users of databases/db4, databases/db4[1-7]*
   AUTHOR: mandree@FreeBSD.org
