@@ -21,6 +21,7 @@ GNU_CONFIGURE=	yes
 MAKE_ARGS+=	pkgconfigdir=${PREFIX}/libdata/pkgconfig
 CONFIGURE_ARGS=	CPPFLAGS="-I${LOCALBASE}/include" \
 		--with-libev \
+		--with-package-platform=freebsd \
 		LDFLAGS="-L${LOCALBASE}/lib -lintl"
 USES=		gmake pkgconfig libtool
 USE_GNOME=	glib20 intltool
