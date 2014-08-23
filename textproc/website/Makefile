@@ -2,75 +2,48 @@
 # $FreeBSD$
 
 PORTNAME=	website
-PORTVERSION=	2.5.0
-PORTREVISION=	1
+PORTVERSION=	2.6.0
 CATEGORIES=	textproc www
-MASTER_SITES=	SF/docbook/OldFiles
+MASTER_SITES=	SF/docbook/${PORTNAME}/${PORTVERSION}
+DISTNAME=	docbook-${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Doctype and stylesheets for making websites
 
-RUN_DEPENDS=	${LOCALBASE}/share/xsl/docbook/catalog:${PORTSDIR}/textproc/docbook-xsl
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/COPYING
+
+RUN_DEPENDS=	docbook-xsl>0:${PORTSDIR}/textproc/docbook-xsl
+
+NO_ARCH=	yes
+NO_BUILD=	yes
+
+USES=		tar:bzip2
+
+SUB_FILES=	pkg-deinstall pkg-install
+SUB_LIST=	XMLCATMGR="${XMLCATMGR}" \
+		CATALOG_PORTS_XML="${CATALOG_PORTS}" \
+		INSTDIR="${INSTDIR}"
+
+OPTIONS_DEFINE=	EXAMPLES
 
 XMLDIR=		${LOCALBASE}/share/xml
 INSTDIR=	share/xsl/website
 PINSTDIR=	${PREFIX}/${INSTDIR}
-COPYDIRS=	extensions schema tests xsl
+COPYDIRS=	extensions schema xsl
 
-PKGINSTALL=	${WRKSRC}/pkg-install
-PKGDEINSTALL=	${WRKSRC}/pkg-deinstall
-
-NO_BUILD=	yes
 XMLCATMGR=	${LOCALBASE}/bin/xmlcatmgr
 CATALOG_PORTS=	${XMLDIR}/catalog.ports
-CATALOG_XSL=	${WRKSRC}/catalog
-
-DXVERSIONS=	current 2.2 2.3 2.4.0 2.4.1 2.5.0
-
-NO_STAGE=	yes
-post-extract:
-	${FIND} ${WRKSRC} -name '.#*' -delete
 
 do-install:
-.ifndef NOPORTDOCS
-	${MKDIR} ${EXAMPLESDIR}
-	(cd ${WRKSRC}/example && ${TAR} -cf - . |\
-		${TAR} -xf - -C${EXAMPLESDIR})
-.endif
-	${XMLCATMGR} -c "${CATALOG_XSL}" create
-.for dxversion in ${DXVERSIONS}
-	${XMLCATMGR} -c "${CATALOG_XSL}" add rewriteSystem \
-		http://docbook.sourceforge.net/release/website/${dxversion}/xsl \
-		"file://${PREFIX}/${INSTDIR}/xsl"
-	${XMLCATMGR} -c "${CATALOG_XSL}" add rewriteURI \
-		http://docbook.sourceforge.net/release/website/${dxversion}/xsl \
-		"file://${PREFIX}/${INSTDIR}/xsl"
-	${XMLCATMGR} -c "${CATALOG_XSL}" add rewriteSystem \
-		http://docbook.sourceforge.net/release/website/${dxversion}/schema/dtd \
-		"file://${PREFIX}/${INSTDIR}/schema/dtd"
-	${XMLCATMGR} -c "${CATALOG_XSL}" add rewriteURI \
-		http://docbook.sourceforge.net/release/website/${dxversion}/schema/dtd \
-		"file://${PREFIX}/${INSTDIR}/schema/dtd"
-	${XMLCATMGR} -c "${CATALOG_XSL}" add rewriteSystem \
-		http://docbook.sourceforge.net/release/website/${dxversion} \
-		"file://${PREFIX}/${INSTDIR}/schema/dtd"
-	${XMLCATMGR} -c "${CATALOG_XSL}" add rewriteURI \
-		http://docbook.sourceforge.net/release/website/${dxversion} \
-		"file://${PREFIX}/${INSTDIR}/schema/dtd"
+	@${MKDIR} ${STAGEDIR}${PINSTDIR}
+.for i in VERSION catalog
+	(cd ${WRKSRC} && ${INSTALL_DATA} ${i} ${STAGEDIR}${PINSTDIR})
 .endfor
-	${MKDIR} ${PINSTDIR}
-	(cd ${WRKSRC} && ${TAR} -cf - VERSION catalog ${COPYDIRS} |\
-		${TAR} -xf - -C${PINSTDIR})
-
-post-install:
-	@${SED} -e 's,@INSTDIR@,${INSTDIR},g ; \
-			s,@XMLCATMGR@,${XMLCATMGR},g ; \
-			s,@CATALOG_PORTS_XML@,${CATALOG_PORTS},g' \
-			< ${FILESDIR}/pkg-install.in > ${PKGINSTALL}
-	@${SED} -e 's,@XMLCATMGR@,${XMLCATMGR},g ; \
-			s,@CATALOG_PORTS_XML@,${CATALOG_PORTS},g' \
-			< ${FILESDIR}/pkg-deinstall.in > ${PKGDEINSTALL}
-	@${SETENV} PKG_PREFIX=${PREFIX} \
-			${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
+.for i in ${COPYDIRS}
+	@(cd ${WRKSRC} && ${COPYTREE_SHARE} ${i} ${STAGEDIR}${PINSTDIR})
+.endfor
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	@(cd ${WRKSRC}/example && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR})
 
 .include <bsd.port.mk>
