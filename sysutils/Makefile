@@ -129,6 +129,7 @@
     SUBDIR += cloop-utils
     SUBDIR += clsync
     SUBDIR += cmdwatch
+    SUBDIR += cmockery2
     SUBDIR += cmogstored
     SUBDIR += cmospwd
     SUBDIR += cog
