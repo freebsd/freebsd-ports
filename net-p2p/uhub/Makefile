@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	uhub
-PORTVERSION=	0.4.1
+PORTVERSION=	0.5.0
 DISTVERSIONSUFFIX=	-src
 CATEGORIES=	net-p2p
 MASTER_SITES=	http://www.extatic.org/downloads/uhub/
