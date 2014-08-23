@@ -18,12 +18,12 @@ libexec/squid/basic_radius_auth
 %%AUTH_SMB%%libexec/squid/basic_smb_auth
 %%AUTH_SMB%%libexec/squid/basic_smb_auth.sh
 libexec/squid/cachemgr.cgi
-%%AUTH_LDAP%%libexec/squid/cert_tool
+%%AUTH_LDAP%%%%AUTH_SASL%%libexec/squid/cert_tool
 libexec/squid/digest_file_auth
 libexec/squid/diskd
 %%DNS_HELPER%%libexec/squid/dnsserver
 libexec/squid/ext_file_userip_acl
-%%AUTH_LDAP%%libexec/squid/ext_kerberos_ldap_group_acl
+%%AUTH_LDAP%%%%AUTH_SASL%%libexec/squid/ext_kerberos_ldap_group_acl
 %%AUTH_LDAP%%libexec/squid/ext_ldap_group_acl
 %%AUTH_SQL%%libexec/squid/ext_sql_session_acl
 libexec/squid/ext_time_quota_acl
