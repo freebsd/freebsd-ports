@@ -617,7 +617,6 @@
     SUBDIR += pad
     SUBDIR += pam-mysql
     SUBDIR += pam-pgsql
-    SUBDIR += pam_abl
     SUBDIR += pam_bsdbioapi
     SUBDIR += pam_fprint
     SUBDIR += pam_google_authenticator
