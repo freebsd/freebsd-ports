@@ -16,7 +16,7 @@ LICENSE=	LGPL21
 BUILD_DEPENDS+=	${LOCALBASE}/include/spatialindex/SpatialIndex.h:${PORTSDIR}/devel/spatialindex
 RUN_DEPENDS+=	${BUILD_DEPENDS}
 
-USESN=		python
+USES=		python
 USE_PYTHON=	distutils autoplist
 
 post-extract:
