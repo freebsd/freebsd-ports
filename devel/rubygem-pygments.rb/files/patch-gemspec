@@ -9,3 +9,14 @@
    s.add_dependency 'posix-spawn', '~> 0.3.6'
    s.add_development_dependency 'rake-compiler', '~> 0.7.6'
  
+--- pygments.rb-0.6.0.gemspec.orig     2014-05-20 06:57:41.000000000 +0200
++++ pygments.rb-0.6.0.gemspec  2014-05-20 06:54:40.000000000 +0200
+@@ -19,7 +19,7 @@
+     requirements:
+     - - ~>
+       - !ruby/object:Gem::Version
+-        version: 1.1.0
++        version: 1.2.0
+   type: :runtime
+   prerelease: false
+   version_requirements: !ruby/object:Gem::Requirement
