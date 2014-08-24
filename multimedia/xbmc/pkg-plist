@@ -88,6 +88,7 @@ share/icons/hicolor/48x48/apps/xbmc.png
 %%DATADIR%%/addons/metadata.album.universal/resources/language/Finnish/strings.xml
 %%DATADIR%%/addons/metadata.album.universal/resources/language/French/strings.xml
 %%DATADIR%%/addons/metadata.album.universal/resources/language/Galician/strings.xml
+%%DATADIR%%/addons/metadata.album.universal/resources/language/Georgian/strings.xml
 %%DATADIR%%/addons/metadata.album.universal/resources/language/German/strings.xml
 %%DATADIR%%/addons/metadata.album.universal/resources/language/Greek/strings.xml
 %%DATADIR%%/addons/metadata.album.universal/resources/language/Hebrew/strings.xml
@@ -96,8 +97,10 @@ share/icons/hicolor/48x48/apps/xbmc.png
 %%DATADIR%%/addons/metadata.album.universal/resources/language/Italian/strings.xml
 %%DATADIR%%/addons/metadata.album.universal/resources/language/Japanese/strings.xml
 %%DATADIR%%/addons/metadata.album.universal/resources/language/Korean/strings.xml
+%%DATADIR%%/addons/metadata.album.universal/resources/language/Latvian/strings.xml
 %%DATADIR%%/addons/metadata.album.universal/resources/language/Lithuanian/strings.xml
 %%DATADIR%%/addons/metadata.album.universal/resources/language/Macedonian/strings.xml
+%%DATADIR%%/addons/metadata.album.universal/resources/language/Malay/strings.xml
 %%DATADIR%%/addons/metadata.album.universal/resources/language/Norwegian/strings.xml
 %%DATADIR%%/addons/metadata.album.universal/resources/language/Polish/strings.xml
 %%DATADIR%%/addons/metadata.album.universal/resources/language/Portuguese (Brazil)/strings.xml
@@ -114,6 +117,7 @@ share/icons/hicolor/48x48/apps/xbmc.png
 %%DATADIR%%/addons/metadata.album.universal/resources/language/Thai/strings.xml
 %%DATADIR%%/addons/metadata.album.universal/resources/language/Turkish/strings.xml
 %%DATADIR%%/addons/metadata.album.universal/resources/language/Ukrainian/strings.xml
+%%DATADIR%%/addons/metadata.album.universal/resources/language/Vietnamese (Viet Nam)/strings.xml
 %%DATADIR%%/addons/metadata.album.universal/resources/language/Vietnamese/strings.xml
 %%DATADIR%%/addons/metadata.album.universal/resources/language/Welsh/strings.xml
 %%DATADIR%%/addons/metadata.album.universal/resources/settings.xml
@@ -148,8 +152,10 @@ share/icons/hicolor/48x48/apps/xbmc.png
 %%DATADIR%%/addons/metadata.artists.universal/resources/language/Italian/strings.xml
 %%DATADIR%%/addons/metadata.artists.universal/resources/language/Japanese/strings.xml
 %%DATADIR%%/addons/metadata.artists.universal/resources/language/Korean/strings.xml
+%%DATADIR%%/addons/metadata.artists.universal/resources/language/Latvian/strings.xml
 %%DATADIR%%/addons/metadata.artists.universal/resources/language/Lithuanian/strings.xml
 %%DATADIR%%/addons/metadata.artists.universal/resources/language/Macedonian/strings.xml
+%%DATADIR%%/addons/metadata.artists.universal/resources/language/Malay/strings.xml
 %%DATADIR%%/addons/metadata.artists.universal/resources/language/Norwegian/strings.xml
 %%DATADIR%%/addons/metadata.artists.universal/resources/language/Polish/strings.xml
 %%DATADIR%%/addons/metadata.artists.universal/resources/language/Portuguese (Brazil)/strings.xml
@@ -166,6 +172,7 @@ share/icons/hicolor/48x48/apps/xbmc.png
 %%DATADIR%%/addons/metadata.artists.universal/resources/language/Thai/strings.xml
 %%DATADIR%%/addons/metadata.artists.universal/resources/language/Turkish/strings.xml
 %%DATADIR%%/addons/metadata.artists.universal/resources/language/Ukrainian/strings.xml
+%%DATADIR%%/addons/metadata.artists.universal/resources/language/Vietnamese (Viet Nam)/strings.xml
 %%DATADIR%%/addons/metadata.artists.universal/resources/language/Vietnamese/strings.xml
 %%DATADIR%%/addons/metadata.artists.universal/resources/language/Welsh/strings.xml
 %%DATADIR%%/addons/metadata.artists.universal/resources/settings.xml
@@ -228,6 +235,7 @@ share/icons/hicolor/48x48/apps/xbmc.png
 %%DATADIR%%/addons/metadata.musicvideos.theaudiodb.com/resources/language/Korean/strings.xml
 %%DATADIR%%/addons/metadata.musicvideos.theaudiodb.com/resources/language/Lithuanian/strings.xml
 %%DATADIR%%/addons/metadata.musicvideos.theaudiodb.com/resources/language/Macedonian/strings.xml
+%%DATADIR%%/addons/metadata.musicvideos.theaudiodb.com/resources/language/Malay/strings.xml
 %%DATADIR%%/addons/metadata.musicvideos.theaudiodb.com/resources/language/Norwegian/strings.xml
 %%DATADIR%%/addons/metadata.musicvideos.theaudiodb.com/resources/language/Polish/strings.xml
 %%DATADIR%%/addons/metadata.musicvideos.theaudiodb.com/resources/language/Portuguese (Brazil)/strings.xml
@@ -244,6 +252,7 @@ share/icons/hicolor/48x48/apps/xbmc.png
 %%DATADIR%%/addons/metadata.musicvideos.theaudiodb.com/resources/language/Thai/strings.xml
 %%DATADIR%%/addons/metadata.musicvideos.theaudiodb.com/resources/language/Turkish/strings.xml
 %%DATADIR%%/addons/metadata.musicvideos.theaudiodb.com/resources/language/Ukrainian/strings.xml
+%%DATADIR%%/addons/metadata.musicvideos.theaudiodb.com/resources/language/Vietnamese (Viet Nam)/strings.xml
 %%DATADIR%%/addons/metadata.musicvideos.theaudiodb.com/resources/language/Vietnamese/strings.xml
 %%DATADIR%%/addons/metadata.musicvideos.theaudiodb.com/resources/language/Welsh/strings.xml
 %%DATADIR%%/addons/metadata.musicvideos.theaudiodb.com/resources/settings.xml
@@ -254,6 +263,7 @@ share/icons/hicolor/48x48/apps/xbmc.png
 %%DATADIR%%/addons/metadata.themoviedb.org/resources/language/Afrikaans/strings.xml
 %%DATADIR%%/addons/metadata.themoviedb.org/resources/language/Albanian/strings.xml
 %%DATADIR%%/addons/metadata.themoviedb.org/resources/language/Amharic/strings.xml
+%%DATADIR%%/addons/metadata.themoviedb.org/resources/language/Azerbaijani/strings.xml
 %%DATADIR%%/addons/metadata.themoviedb.org/resources/language/Basque/strings.xml
 %%DATADIR%%/addons/metadata.themoviedb.org/resources/language/Belarusian/strings.xml
 %%DATADIR%%/addons/metadata.themoviedb.org/resources/language/Bulgarian/strings.xml
@@ -265,14 +275,18 @@ share/icons/hicolor/48x48/apps/xbmc.png
 %%DATADIR%%/addons/metadata.themoviedb.org/resources/language/Czech/strings.xml
 %%DATADIR%%/addons/metadata.themoviedb.org/resources/language/Danish/strings.xml
 %%DATADIR%%/addons/metadata.themoviedb.org/resources/language/Dutch/strings.xml
+%%DATADIR%%/addons/metadata.themoviedb.org/resources/language/English (New Zealand)/strings.xml
+%%DATADIR%%/addons/metadata.themoviedb.org/resources/language/English (US)/strings.xml
 %%DATADIR%%/addons/metadata.themoviedb.org/resources/language/English/strings.xml
 %%DATADIR%%/addons/metadata.themoviedb.org/resources/language/Estonian/strings.xml
 %%DATADIR%%/addons/metadata.themoviedb.org/resources/language/Finnish/strings.xml
+%%DATADIR%%/addons/metadata.themoviedb.org/resources/language/French (Canada)/strings.xml
 %%DATADIR%%/addons/metadata.themoviedb.org/resources/language/French/strings.xml
 %%DATADIR%%/addons/metadata.themoviedb.org/resources/language/Galician/strings.xml
 %%DATADIR%%/addons/metadata.themoviedb.org/resources/language/German/strings.xml
 %%DATADIR%%/addons/metadata.themoviedb.org/resources/language/Greek/strings.xml
 %%DATADIR%%/addons/metadata.themoviedb.org/resources/language/Hebrew/strings.xml
+%%DATADIR%%/addons/metadata.themoviedb.org/resources/language/Hindi (Devanagiri)/strings.xml
 %%DATADIR%%/addons/metadata.themoviedb.org/resources/language/Hungarian/strings.xml
 %%DATADIR%%/addons/metadata.themoviedb.org/resources/language/Italian/strings.xml
 %%DATADIR%%/addons/metadata.themoviedb.org/resources/language/Japanese/strings.xml
@@ -298,6 +312,7 @@ share/icons/hicolor/48x48/apps/xbmc.png
 %%DATADIR%%/addons/metadata.themoviedb.org/resources/language/Turkish/strings.xml
 %%DATADIR%%/addons/metadata.themoviedb.org/resources/language/Ukrainian/strings.xml
 %%DATADIR%%/addons/metadata.themoviedb.org/resources/language/Uzbek/strings.xml
+%%DATADIR%%/addons/metadata.themoviedb.org/resources/language/Vietnamese (Viet Nam)/strings.xml
 %%DATADIR%%/addons/metadata.themoviedb.org/resources/language/Vietnamese/strings.xml
 %%DATADIR%%/addons/metadata.themoviedb.org/resources/language/Welsh/strings.xml
 %%DATADIR%%/addons/metadata.themoviedb.org/resources/settings.xml
@@ -309,6 +324,7 @@ share/icons/hicolor/48x48/apps/xbmc.png
 %%DATADIR%%/addons/metadata.tvdb.com/resources/language/Albanian/strings.xml
 %%DATADIR%%/addons/metadata.tvdb.com/resources/language/Amharic/strings.xml
 %%DATADIR%%/addons/metadata.tvdb.com/resources/language/Arabic/strings.xml
+%%DATADIR%%/addons/metadata.tvdb.com/resources/language/Azerbaijani/strings.xml
 %%DATADIR%%/addons/metadata.tvdb.com/resources/language/Basque/strings.xml
 %%DATADIR%%/addons/metadata.tvdb.com/resources/language/Belarusian/strings.xml
 %%DATADIR%%/addons/metadata.tvdb.com/resources/language/Bosnian/strings.xml
@@ -328,6 +344,7 @@ share/icons/hicolor/48x48/apps/xbmc.png
 %%DATADIR%%/addons/metadata.tvdb.com/resources/language/Finnish/strings.xml
 %%DATADIR%%/addons/metadata.tvdb.com/resources/language/French/strings.xml
 %%DATADIR%%/addons/metadata.tvdb.com/resources/language/Galician/strings.xml
+%%DATADIR%%/addons/metadata.tvdb.com/resources/language/Georgian/strings.xml
 %%DATADIR%%/addons/metadata.tvdb.com/resources/language/German/strings.xml
 %%DATADIR%%/addons/metadata.tvdb.com/resources/language/Greek/strings.xml
 %%DATADIR%%/addons/metadata.tvdb.com/resources/language/Hebrew/strings.xml
@@ -365,6 +382,7 @@ share/icons/hicolor/48x48/apps/xbmc.png
 %%DATADIR%%/addons/metadata.tvdb.com/resources/language/Turkish/strings.xml
 %%DATADIR%%/addons/metadata.tvdb.com/resources/language/Ukrainian/strings.xml
 %%DATADIR%%/addons/metadata.tvdb.com/resources/language/Uzbek/strings.xml
+%%DATADIR%%/addons/metadata.tvdb.com/resources/language/Vietnamese (Viet Nam)/strings.xml
 %%DATADIR%%/addons/metadata.tvdb.com/resources/language/Vietnamese/strings.xml
 %%DATADIR%%/addons/metadata.tvdb.com/resources/language/Welsh/strings.xml
 %%DATADIR%%/addons/metadata.tvdb.com/resources/settings.xml
@@ -451,6 +469,7 @@ share/icons/hicolor/48x48/apps/xbmc.png
 %%DATADIR%%/addons/service.xbmc.versioncheck/lib/jsoninterface.py
 %%DATADIR%%/addons/service.xbmc.versioncheck/lib/shellhandlerapt.py
 %%DATADIR%%/addons/service.xbmc.versioncheck/lib/versions.py
+%%DATADIR%%/addons/service.xbmc.versioncheck/lib/viewer.py
 %%DATADIR%%/addons/service.xbmc.versioncheck/resources/language/Afrikaans/strings.po
 %%DATADIR%%/addons/service.xbmc.versioncheck/resources/language/Albanian/strings.po
 %%DATADIR%%/addons/service.xbmc.versioncheck/resources/language/Amharic/strings.po
@@ -459,6 +478,7 @@ share/icons/hicolor/48x48/apps/xbmc.png
 %%DATADIR%%/addons/service.xbmc.versioncheck/resources/language/Belarusian/strings.po
 %%DATADIR%%/addons/service.xbmc.versioncheck/resources/language/Bosnian/strings.po
 %%DATADIR%%/addons/service.xbmc.versioncheck/resources/language/Bulgarian/strings.po
+%%DATADIR%%/addons/service.xbmc.versioncheck/resources/language/Burmese/strings.po
 %%DATADIR%%/addons/service.xbmc.versioncheck/resources/language/Catalan/strings.po
 %%DATADIR%%/addons/service.xbmc.versioncheck/resources/language/Chinese (Simple)/strings.po
 %%DATADIR%%/addons/service.xbmc.versioncheck/resources/language/Chinese (Traditional)/strings.po
@@ -466,12 +486,18 @@ share/icons/hicolor/48x48/apps/xbmc.png
 %%DATADIR%%/addons/service.xbmc.versioncheck/resources/language/Czech/strings.po
 %%DATADIR%%/addons/service.xbmc.versioncheck/resources/language/Danish/strings.po
 %%DATADIR%%/addons/service.xbmc.versioncheck/resources/language/Dutch/strings.po
+%%DATADIR%%/addons/service.xbmc.versioncheck/resources/language/English (Australia)/strings.po
+%%DATADIR%%/addons/service.xbmc.versioncheck/resources/language/English (New Zealand)/strings.po
+%%DATADIR%%/addons/service.xbmc.versioncheck/resources/language/English (US)/strings.po
 %%DATADIR%%/addons/service.xbmc.versioncheck/resources/language/English/strings.po
 %%DATADIR%%/addons/service.xbmc.versioncheck/resources/language/Esperanto/strings.po
 %%DATADIR%%/addons/service.xbmc.versioncheck/resources/language/Estonian/strings.po
+%%DATADIR%%/addons/service.xbmc.versioncheck/resources/language/Faroese/strings.po
 %%DATADIR%%/addons/service.xbmc.versioncheck/resources/language/Finnish/strings.po
+%%DATADIR%%/addons/service.xbmc.versioncheck/resources/language/French (Canada)/strings.po
 %%DATADIR%%/addons/service.xbmc.versioncheck/resources/language/French/strings.po
 %%DATADIR%%/addons/service.xbmc.versioncheck/resources/language/Galician/strings.po
+%%DATADIR%%/addons/service.xbmc.versioncheck/resources/language/Georgian/strings.po
 %%DATADIR%%/addons/service.xbmc.versioncheck/resources/language/German/strings.po
 %%DATADIR%%/addons/service.xbmc.versioncheck/resources/language/Greek/strings.po
 %%DATADIR%%/addons/service.xbmc.versioncheck/resources/language/Hebrew/strings.po
@@ -508,7 +534,10 @@ share/icons/hicolor/48x48/apps/xbmc.png
 %%DATADIR%%/addons/service.xbmc.versioncheck/resources/language/Thai/strings.po
 %%DATADIR%%/addons/service.xbmc.versioncheck/resources/language/Turkish/strings.po
 %%DATADIR%%/addons/service.xbmc.versioncheck/resources/language/Ukrainian/strings.po
+%%DATADIR%%/addons/service.xbmc.versioncheck/resources/language/Uzbek/strings.po
+%%DATADIR%%/addons/service.xbmc.versioncheck/resources/language/Vietnamese (Viet Nam)/strings.po
 %%DATADIR%%/addons/service.xbmc.versioncheck/resources/language/Vietnamese/strings.po
+%%DATADIR%%/addons/service.xbmc.versioncheck/resources/language/Welsh/strings.po
 %%DATADIR%%/addons/service.xbmc.versioncheck/resources/polkit/10-allow-update.pkla
 %%DATADIR%%/addons/service.xbmc.versioncheck/resources/polkit/README
 %%DATADIR%%/addons/service.xbmc.versioncheck/resources/settings.xml
@@ -681,6 +710,7 @@ share/icons/hicolor/48x48/apps/xbmc.png
 %%DATADIR%%/addons/skin.confluence/language/Malayalam/strings.po
 %%DATADIR%%/addons/skin.confluence/language/Maltese/strings.po
 %%DATADIR%%/addons/skin.confluence/language/Maori/strings.po
+%%DATADIR%%/addons/skin.confluence/language/Mongolian (Mongolia)/strings.po
 %%DATADIR%%/addons/skin.confluence/language/Norwegian/strings.po
 %%DATADIR%%/addons/skin.confluence/language/Ossetic/strings.po
 %%DATADIR%%/addons/skin.confluence/language/Persian (Iran)/strings.po
@@ -693,6 +723,7 @@ share/icons/hicolor/48x48/apps/xbmc.png
 %%DATADIR%%/addons/skin.confluence/language/Russian/strings.po
 %%DATADIR%%/addons/skin.confluence/language/Serbian (Cyrillic)/strings.po
 %%DATADIR%%/addons/skin.confluence/language/Serbian/strings.po
+%%DATADIR%%/addons/skin.confluence/language/Sinhala/strings.po
 %%DATADIR%%/addons/skin.confluence/language/Slovak/strings.po
 %%DATADIR%%/addons/skin.confluence/language/Slovenian/strings.po
 %%DATADIR%%/addons/skin.confluence/language/Spanish (Argentina)/strings.po
@@ -1211,6 +1242,7 @@ share/icons/hicolor/48x48/apps/xbmc.png
 %%DATADIR%%/addons/visualization.fishbmc/resources/language/Russian/strings.po
 %%DATADIR%%/addons/visualization.fishbmc/resources/language/Serbian (Cyrillic)/strings.po
 %%DATADIR%%/addons/visualization.fishbmc/resources/language/Serbian/strings.po
+%%DATADIR%%/addons/visualization.fishbmc/resources/language/Sinhala/strings.po
 %%DATADIR%%/addons/visualization.fishbmc/resources/language/Slovak/strings.po
 %%DATADIR%%/addons/visualization.fishbmc/resources/language/Slovenian/strings.po
 %%DATADIR%%/addons/visualization.fishbmc/resources/language/Spanish (Argentina)/strings.po
@@ -1274,6 +1306,7 @@ share/icons/hicolor/48x48/apps/xbmc.png
 %%DATADIR%%/addons/visualization.glspectrum/resources/language/Malay/strings.po
 %%DATADIR%%/addons/visualization.glspectrum/resources/language/Maltese/strings.po
 %%DATADIR%%/addons/visualization.glspectrum/resources/language/Maori/strings.po
+%%DATADIR%%/addons/visualization.glspectrum/resources/language/Mongolian (Mongolia)/strings.po
 %%DATADIR%%/addons/visualization.glspectrum/resources/language/Norwegian/strings.po
 %%DATADIR%%/addons/visualization.glspectrum/resources/language/Persian (Iran)/strings.po
 %%DATADIR%%/addons/visualization.glspectrum/resources/language/Persian/strings.po
@@ -1284,6 +1317,7 @@ share/icons/hicolor/48x48/apps/xbmc.png
 %%DATADIR%%/addons/visualization.glspectrum/resources/language/Russian/strings.po
 %%DATADIR%%/addons/visualization.glspectrum/resources/language/Serbian (Cyrillic)/strings.po
 %%DATADIR%%/addons/visualization.glspectrum/resources/language/Serbian/strings.po
+%%DATADIR%%/addons/visualization.glspectrum/resources/language/Sinhala/strings.po
 %%DATADIR%%/addons/visualization.glspectrum/resources/language/Slovak/strings.po
 %%DATADIR%%/addons/visualization.glspectrum/resources/language/Slovenian/strings.po
 %%DATADIR%%/addons/visualization.glspectrum/resources/language/Spanish (Argentina)/strings.po
@@ -1353,6 +1387,7 @@ share/icons/hicolor/48x48/apps/xbmc.png
 %%DATADIR%%/addons/visualization.projectm/resources/language/Russian/strings.po
 %%DATADIR%%/addons/visualization.projectm/resources/language/Serbian (Cyrillic)/strings.po
 %%DATADIR%%/addons/visualization.projectm/resources/language/Serbian/strings.po
+%%DATADIR%%/addons/visualization.projectm/resources/language/Sinhala/strings.po
 %%DATADIR%%/addons/visualization.projectm/resources/language/Slovak/strings.po
 %%DATADIR%%/addons/visualization.projectm/resources/language/Slovenian/strings.po
 %%DATADIR%%/addons/visualization.projectm/resources/language/Spanish (Argentina)/strings.po
@@ -1528,6 +1563,7 @@ share/icons/hicolor/48x48/apps/xbmc.png
 %%DATADIR%%/addons/xbmc.core/addon.xml
 %%DATADIR%%/addons/xbmc.debug/addon.xml
 %%DATADIR%%/addons/xbmc.debug/resources/language/Afrikaans/strings.po
+%%DATADIR%%/addons/xbmc.debug/resources/language/Armenian/strings.po
 %%DATADIR%%/addons/xbmc.debug/resources/language/Bulgarian/strings.po
 %%DATADIR%%/addons/xbmc.debug/resources/language/Burmese/strings.po
 %%DATADIR%%/addons/xbmc.debug/resources/language/Catalan/strings.po
@@ -1674,6 +1710,7 @@ share/icons/hicolor/48x48/apps/xbmc.png
 %%DATADIR%%/language/Maltese/strings.po
 %%DATADIR%%/language/Maori/langinfo.xml
 %%DATADIR%%/language/Maori/strings.po
+%%DATADIR%%/language/Mongolian (Mongolia)/strings.po
 %%DATADIR%%/language/Norwegian/langinfo.xml
 %%DATADIR%%/language/Norwegian/strings.po
 %%DATADIR%%/language/Ossetic/langinfo.xml
@@ -1696,6 +1733,7 @@ share/icons/hicolor/48x48/apps/xbmc.png
 %%DATADIR%%/language/Serbian (Cyrillic)/strings.po
 %%DATADIR%%/language/Serbian/langinfo.xml
 %%DATADIR%%/language/Serbian/strings.po
+%%DATADIR%%/language/Sinhala/strings.po
 %%DATADIR%%/language/Slovak/langinfo.xml
 %%DATADIR%%/language/Slovak/strings.po
 %%DATADIR%%/language/Slovenian/langinfo.xml
@@ -1936,6 +1974,7 @@ share/xsessions/XBMC.desktop
 @dirrmtry %%DATADIR%%/language/Spanish
 @dirrmtry %%DATADIR%%/language/Slovenian
 @dirrmtry %%DATADIR%%/language/Slovak
+@dirrmtry %%DATADIR%%/language/Sinhala
 @dirrmtry %%DATADIR%%/language/Serbian (Cyrillic)
 @dirrmtry %%DATADIR%%/language/Serbian
 @dirrmtry %%DATADIR%%/language/Russian
@@ -1947,6 +1986,7 @@ share/xsessions/XBMC.desktop
 @dirrmtry %%DATADIR%%/language/Persian
 @dirrmtry %%DATADIR%%/language/Ossetic
 @dirrmtry %%DATADIR%%/language/Norwegian
+@dirrmtry %%DATADIR%%/language/Mongolian (Mongolia)
 @dirrmtry %%DATADIR%%/language/Maori
 @dirrmtry %%DATADIR%%/language/Maltese
 @dirrmtry %%DATADIR%%/language/Malayalam
@@ -2043,6 +2083,7 @@ share/xsessions/XBMC.desktop
 @dirrmtry %%DATADIR%%/addons/xbmc.debug/resources/language/Catalan
 @dirrmtry %%DATADIR%%/addons/xbmc.debug/resources/language/Burmese
 @dirrmtry %%DATADIR%%/addons/xbmc.debug/resources/language/Bulgarian
+@dirrmtry %%DATADIR%%/addons/xbmc.debug/resources/language/Armenian
 @dirrmtry %%DATADIR%%/addons/xbmc.debug/resources/language/Afrikaans
 @dirrmtry %%DATADIR%%/addons/xbmc.debug/resources/language
 @dirrmtry %%DATADIR%%/addons/xbmc.debug/resources
@@ -2129,6 +2170,7 @@ share/xsessions/XBMC.desktop
 @dirrmtry %%DATADIR%%/addons/visualization.projectm/resources/language/Spanish
 @dirrmtry %%DATADIR%%/addons/visualization.projectm/resources/language/Slovenian
 @dirrmtry %%DATADIR%%/addons/visualization.projectm/resources/language/Slovak
+@dirrmtry %%DATADIR%%/addons/visualization.projectm/resources/language/Sinhala
 @dirrmtry %%DATADIR%%/addons/visualization.projectm/resources/language/Serbian (Cyrillic)
 @dirrmtry %%DATADIR%%/addons/visualization.projectm/resources/language/Serbian
 @dirrmtry %%DATADIR%%/addons/visualization.projectm/resources/language/Russian
@@ -2198,6 +2240,7 @@ share/xsessions/XBMC.desktop
 @dirrmtry %%DATADIR%%/addons/visualization.glspectrum/resources/language/Spanish
 @dirrmtry %%DATADIR%%/addons/visualization.glspectrum/resources/language/Slovenian
 @dirrmtry %%DATADIR%%/addons/visualization.glspectrum/resources/language/Slovak
+@dirrmtry %%DATADIR%%/addons/visualization.glspectrum/resources/language/Sinhala
 @dirrmtry %%DATADIR%%/addons/visualization.glspectrum/resources/language/Serbian (Cyrillic)
 @dirrmtry %%DATADIR%%/addons/visualization.glspectrum/resources/language/Serbian
 @dirrmtry %%DATADIR%%/addons/visualization.glspectrum/resources/language/Russian
@@ -2208,6 +2251,7 @@ share/xsessions/XBMC.desktop
 @dirrmtry %%DATADIR%%/addons/visualization.glspectrum/resources/language/Persian (Iran)
 @dirrmtry %%DATADIR%%/addons/visualization.glspectrum/resources/language/Persian
 @dirrmtry %%DATADIR%%/addons/visualization.glspectrum/resources/language/Norwegian
+@dirrmtry %%DATADIR%%/addons/visualization.glspectrum/resources/language/Mongolian (Mongolia)
 @dirrmtry %%DATADIR%%/addons/visualization.glspectrum/resources/language/Maori
 @dirrmtry %%DATADIR%%/addons/visualization.glspectrum/resources/language/Maltese
 @dirrmtry %%DATADIR%%/addons/visualization.glspectrum/resources/language/Malay
@@ -2271,6 +2315,7 @@ share/xsessions/XBMC.desktop
 @dirrmtry %%DATADIR%%/addons/visualization.fishbmc/resources/language/Spanish
 @dirrmtry %%DATADIR%%/addons/visualization.fishbmc/resources/language/Slovenian
 @dirrmtry %%DATADIR%%/addons/visualization.fishbmc/resources/language/Slovak
+@dirrmtry %%DATADIR%%/addons/visualization.fishbmc/resources/language/Sinhala
 @dirrmtry %%DATADIR%%/addons/visualization.fishbmc/resources/language/Serbian (Cyrillic)
 @dirrmtry %%DATADIR%%/addons/visualization.fishbmc/resources/language/Serbian
 @dirrmtry %%DATADIR%%/addons/visualization.fishbmc/resources/language/Russian
@@ -2358,6 +2403,7 @@ share/xsessions/XBMC.desktop
 @dirrmtry %%DATADIR%%/addons/skin.confluence/language/Spanish
 @dirrmtry %%DATADIR%%/addons/skin.confluence/language/Slovenian
 @dirrmtry %%DATADIR%%/addons/skin.confluence/language/Slovak
+@dirrmtry %%DATADIR%%/addons/skin.confluence/language/Sinhala
 @dirrmtry %%DATADIR%%/addons/skin.confluence/language/Serbian (Cyrillic)
 @dirrmtry %%DATADIR%%/addons/skin.confluence/language/Serbian
 @dirrmtry %%DATADIR%%/addons/skin.confluence/language/Russian
@@ -2370,6 +2416,7 @@ share/xsessions/XBMC.desktop
 @dirrmtry %%DATADIR%%/addons/skin.confluence/language/Persian
 @dirrmtry %%DATADIR%%/addons/skin.confluence/language/Ossetic
 @dirrmtry %%DATADIR%%/addons/skin.confluence/language/Norwegian
+@dirrmtry %%DATADIR%%/addons/skin.confluence/language/Mongolian (Mongolia)
 @dirrmtry %%DATADIR%%/addons/skin.confluence/language/Maori
 @dirrmtry %%DATADIR%%/addons/skin.confluence/language/Maltese
 @dirrmtry %%DATADIR%%/addons/skin.confluence/language/Malayalam
@@ -2426,7 +2473,10 @@ share/xsessions/XBMC.desktop
 @dirrmtry %%DATADIR%%/addons/skin.confluence/720p
 @dirrmtry %%DATADIR%%/addons/skin.confluence
 @dirrmtry %%DATADIR%%/addons/service.xbmc.versioncheck/resources/polkit
+@dirrmtry %%DATADIR%%/addons/service.xbmc.versioncheck/resources/language/Welsh
+@dirrmtry %%DATADIR%%/addons/service.xbmc.versioncheck/resources/language/Vietnamese (Viet Nam)
 @dirrmtry %%DATADIR%%/addons/service.xbmc.versioncheck/resources/language/Vietnamese
+@dirrmtry %%DATADIR%%/addons/service.xbmc.versioncheck/resources/language/Uzbek
 @dirrmtry %%DATADIR%%/addons/service.xbmc.versioncheck/resources/language/Ukrainian
 @dirrmtry %%DATADIR%%/addons/service.xbmc.versioncheck/resources/language/Turkish
 @dirrmtry %%DATADIR%%/addons/service.xbmc.versioncheck/resources/language/Thai
@@ -2463,11 +2513,17 @@ share/xsessions/XBMC.desktop
 @dirrmtry %%DATADIR%%/addons/service.xbmc.versioncheck/resources/language/Hebrew
 @dirrmtry %%DATADIR%%/addons/service.xbmc.versioncheck/resources/language/Greek
 @dirrmtry %%DATADIR%%/addons/service.xbmc.versioncheck/resources/language/German
+@dirrmtry %%DATADIR%%/addons/service.xbmc.versioncheck/resources/language/Georgian
 @dirrmtry %%DATADIR%%/addons/service.xbmc.versioncheck/resources/language/Galician
+@dirrmtry %%DATADIR%%/addons/service.xbmc.versioncheck/resources/language/French (Canada)
 @dirrmtry %%DATADIR%%/addons/service.xbmc.versioncheck/resources/language/French
 @dirrmtry %%DATADIR%%/addons/service.xbmc.versioncheck/resources/language/Finnish
+@dirrmtry %%DATADIR%%/addons/service.xbmc.versioncheck/resources/language/Faroese
 @dirrmtry %%DATADIR%%/addons/service.xbmc.versioncheck/resources/language/Estonian
 @dirrmtry %%DATADIR%%/addons/service.xbmc.versioncheck/resources/language/Esperanto
+@dirrmtry %%DATADIR%%/addons/service.xbmc.versioncheck/resources/language/English (US)
+@dirrmtry %%DATADIR%%/addons/service.xbmc.versioncheck/resources/language/English (New Zealand)
+@dirrmtry %%DATADIR%%/addons/service.xbmc.versioncheck/resources/language/English (Australia)
 @dirrmtry %%DATADIR%%/addons/service.xbmc.versioncheck/resources/language/English
 @dirrmtry %%DATADIR%%/addons/service.xbmc.versioncheck/resources/language/Dutch
 @dirrmtry %%DATADIR%%/addons/service.xbmc.versioncheck/resources/language/Danish
@@ -2476,6 +2532,7 @@ share/xsessions/XBMC.desktop
 @dirrmtry %%DATADIR%%/addons/service.xbmc.versioncheck/resources/language/Chinese (Traditional)
 @dirrmtry %%DATADIR%%/addons/service.xbmc.versioncheck/resources/language/Chinese (Simple)
 @dirrmtry %%DATADIR%%/addons/service.xbmc.versioncheck/resources/language/Catalan
+@dirrmtry %%DATADIR%%/addons/service.xbmc.versioncheck/resources/language/Burmese
 @dirrmtry %%DATADIR%%/addons/service.xbmc.versioncheck/resources/language/Bulgarian
 @dirrmtry %%DATADIR%%/addons/service.xbmc.versioncheck/resources/language/Bosnian
 @dirrmtry %%DATADIR%%/addons/service.xbmc.versioncheck/resources/language/Belarusian
@@ -2555,6 +2612,7 @@ share/xsessions/XBMC.desktop
 @dirrmtry %%DATADIR%%/addons/screensaver.rsxs.euphoria
 @dirrmtry %%DATADIR%%/addons/repository.xbmc.org
 @dirrmtry %%DATADIR%%/addons/metadata.tvdb.com/resources/language/Welsh
+@dirrmtry %%DATADIR%%/addons/metadata.tvdb.com/resources/language/Vietnamese (Viet Nam)
 @dirrmtry %%DATADIR%%/addons/metadata.tvdb.com/resources/language/Vietnamese
 @dirrmtry %%DATADIR%%/addons/metadata.tvdb.com/resources/language/Uzbek
 @dirrmtry %%DATADIR%%/addons/metadata.tvdb.com/resources/language/Ukrainian
@@ -2593,6 +2651,7 @@ share/xsessions/XBMC.desktop
 @dirrmtry %%DATADIR%%/addons/metadata.tvdb.com/resources/language/Hebrew
 @dirrmtry %%DATADIR%%/addons/metadata.tvdb.com/resources/language/Greek
 @dirrmtry %%DATADIR%%/addons/metadata.tvdb.com/resources/language/German
+@dirrmtry %%DATADIR%%/addons/metadata.tvdb.com/resources/language/Georgian
 @dirrmtry %%DATADIR%%/addons/metadata.tvdb.com/resources/language/Galician
 @dirrmtry %%DATADIR%%/addons/metadata.tvdb.com/resources/language/French
 @dirrmtry %%DATADIR%%/addons/metadata.tvdb.com/resources/language/Finnish
@@ -2612,6 +2671,7 @@ share/xsessions/XBMC.desktop
 @dirrmtry %%DATADIR%%/addons/metadata.tvdb.com/resources/language/Bosnian
 @dirrmtry %%DATADIR%%/addons/metadata.tvdb.com/resources/language/Belarusian
 @dirrmtry %%DATADIR%%/addons/metadata.tvdb.com/resources/language/Basque
+@dirrmtry %%DATADIR%%/addons/metadata.tvdb.com/resources/language/Azerbaijani
 @dirrmtry %%DATADIR%%/addons/metadata.tvdb.com/resources/language/Arabic
 @dirrmtry %%DATADIR%%/addons/metadata.tvdb.com/resources/language/Amharic
 @dirrmtry %%DATADIR%%/addons/metadata.tvdb.com/resources/language/Albanian
@@ -2620,6 +2680,7 @@ share/xsessions/XBMC.desktop
 @dirrmtry %%DATADIR%%/addons/metadata.tvdb.com/resources
 @dirrmtry %%DATADIR%%/addons/metadata.tvdb.com
 @dirrmtry %%DATADIR%%/addons/metadata.themoviedb.org/resources/language/Welsh
+@dirrmtry %%DATADIR%%/addons/metadata.themoviedb.org/resources/language/Vietnamese (Viet Nam)
 @dirrmtry %%DATADIR%%/addons/metadata.themoviedb.org/resources/language/Vietnamese
 @dirrmtry %%DATADIR%%/addons/metadata.themoviedb.org/resources/language/Uzbek
 @dirrmtry %%DATADIR%%/addons/metadata.themoviedb.org/resources/language/Ukrainian
@@ -2646,13 +2707,17 @@ share/xsessions/XBMC.desktop
 @dirrmtry %%DATADIR%%/addons/metadata.themoviedb.org/resources/language/Japanese
 @dirrmtry %%DATADIR%%/addons/metadata.themoviedb.org/resources/language/Italian
 @dirrmtry %%DATADIR%%/addons/metadata.themoviedb.org/resources/language/Hungarian
+@dirrmtry %%DATADIR%%/addons/metadata.themoviedb.org/resources/language/Hindi (Devanagiri)
 @dirrmtry %%DATADIR%%/addons/metadata.themoviedb.org/resources/language/Hebrew
 @dirrmtry %%DATADIR%%/addons/metadata.themoviedb.org/resources/language/Greek
 @dirrmtry %%DATADIR%%/addons/metadata.themoviedb.org/resources/language/German
 @dirrmtry %%DATADIR%%/addons/metadata.themoviedb.org/resources/language/Galician
+@dirrmtry %%DATADIR%%/addons/metadata.themoviedb.org/resources/language/French (Canada)
 @dirrmtry %%DATADIR%%/addons/metadata.themoviedb.org/resources/language/French
 @dirrmtry %%DATADIR%%/addons/metadata.themoviedb.org/resources/language/Finnish
 @dirrmtry %%DATADIR%%/addons/metadata.themoviedb.org/resources/language/Estonian
+@dirrmtry %%DATADIR%%/addons/metadata.themoviedb.org/resources/language/English (US)
+@dirrmtry %%DATADIR%%/addons/metadata.themoviedb.org/resources/language/English (New Zealand)
 @dirrmtry %%DATADIR%%/addons/metadata.themoviedb.org/resources/language/English
 @dirrmtry %%DATADIR%%/addons/metadata.themoviedb.org/resources/language/Dutch
 @dirrmtry %%DATADIR%%/addons/metadata.themoviedb.org/resources/language/Danish
@@ -2665,6 +2730,7 @@ share/xsessions/XBMC.desktop
 @dirrmtry %%DATADIR%%/addons/metadata.themoviedb.org/resources/language/Bulgarian
 @dirrmtry %%DATADIR%%/addons/metadata.themoviedb.org/resources/language/Belarusian
 @dirrmtry %%DATADIR%%/addons/metadata.themoviedb.org/resources/language/Basque
+@dirrmtry %%DATADIR%%/addons/metadata.themoviedb.org/resources/language/Azerbaijani
 @dirrmtry %%DATADIR%%/addons/metadata.themoviedb.org/resources/language/Amharic
 @dirrmtry %%DATADIR%%/addons/metadata.themoviedb.org/resources/language/Albanian
 @dirrmtry %%DATADIR%%/addons/metadata.themoviedb.org/resources/language/Afrikaans
@@ -2672,6 +2738,7 @@ share/xsessions/XBMC.desktop
 @dirrmtry %%DATADIR%%/addons/metadata.themoviedb.org/resources
 @dirrmtry %%DATADIR%%/addons/metadata.themoviedb.org
 @dirrmtry %%DATADIR%%/addons/metadata.musicvideos.theaudiodb.com/resources/language/Welsh
+@dirrmtry %%DATADIR%%/addons/metadata.musicvideos.theaudiodb.com/resources/language/Vietnamese (Viet Nam)
 @dirrmtry %%DATADIR%%/addons/metadata.musicvideos.theaudiodb.com/resources/language/Vietnamese
 @dirrmtry %%DATADIR%%/addons/metadata.musicvideos.theaudiodb.com/resources/language/Ukrainian
 @dirrmtry %%DATADIR%%/addons/metadata.musicvideos.theaudiodb.com/resources/language/Turkish
@@ -2689,6 +2756,7 @@ share/xsessions/XBMC.desktop
 @dirrmtry %%DATADIR%%/addons/metadata.musicvideos.theaudiodb.com/resources/language/Portuguese
 @dirrmtry %%DATADIR%%/addons/metadata.musicvideos.theaudiodb.com/resources/language/Polish
 @dirrmtry %%DATADIR%%/addons/metadata.musicvideos.theaudiodb.com/resources/language/Norwegian
+@dirrmtry %%DATADIR%%/addons/metadata.musicvideos.theaudiodb.com/resources/language/Malay
 @dirrmtry %%DATADIR%%/addons/metadata.musicvideos.theaudiodb.com/resources/language/Macedonian
 @dirrmtry %%DATADIR%%/addons/metadata.musicvideos.theaudiodb.com/resources/language/Lithuanian
 @dirrmtry %%DATADIR%%/addons/metadata.musicvideos.theaudiodb.com/resources/language/Korean
@@ -2729,6 +2797,7 @@ share/xsessions/XBMC.desktop
 @dirrmtry %%DATADIR%%/addons/metadata.common.amazon.de
 @dirrmtry %%DATADIR%%/addons/metadata.common.allmusic.com
 @dirrmtry %%DATADIR%%/addons/metadata.artists.universal/resources/language/Welsh
+@dirrmtry %%DATADIR%%/addons/metadata.artists.universal/resources/language/Vietnamese (Viet Nam)
 @dirrmtry %%DATADIR%%/addons/metadata.artists.universal/resources/language/Vietnamese
 @dirrmtry %%DATADIR%%/addons/metadata.artists.universal/resources/language/Ukrainian
 @dirrmtry %%DATADIR%%/addons/metadata.artists.universal/resources/language/Turkish
@@ -2746,8 +2815,10 @@ share/xsessions/XBMC.desktop
 @dirrmtry %%DATADIR%%/addons/metadata.artists.universal/resources/language/Portuguese
 @dirrmtry %%DATADIR%%/addons/metadata.artists.universal/resources/language/Polish
 @dirrmtry %%DATADIR%%/addons/metadata.artists.universal/resources/language/Norwegian
+@dirrmtry %%DATADIR%%/addons/metadata.artists.universal/resources/language/Malay
 @dirrmtry %%DATADIR%%/addons/metadata.artists.universal/resources/language/Macedonian
 @dirrmtry %%DATADIR%%/addons/metadata.artists.universal/resources/language/Lithuanian
+@dirrmtry %%DATADIR%%/addons/metadata.artists.universal/resources/language/Latvian
 @dirrmtry %%DATADIR%%/addons/metadata.artists.universal/resources/language/Korean
 @dirrmtry %%DATADIR%%/addons/metadata.artists.universal/resources/language/Japanese
 @dirrmtry %%DATADIR%%/addons/metadata.artists.universal/resources/language/Italian
@@ -2779,6 +2850,7 @@ share/xsessions/XBMC.desktop
 @dirrmtry %%DATADIR%%/addons/metadata.artists.universal/resources
 @dirrmtry %%DATADIR%%/addons/metadata.artists.universal
 @dirrmtry %%DATADIR%%/addons/metadata.album.universal/resources/language/Welsh
+@dirrmtry %%DATADIR%%/addons/metadata.album.universal/resources/language/Vietnamese (Viet Nam)
 @dirrmtry %%DATADIR%%/addons/metadata.album.universal/resources/language/Vietnamese
 @dirrmtry %%DATADIR%%/addons/metadata.album.universal/resources/language/Ukrainian
 @dirrmtry %%DATADIR%%/addons/metadata.album.universal/resources/language/Turkish
@@ -2796,8 +2868,10 @@ share/xsessions/XBMC.desktop
 @dirrmtry %%DATADIR%%/addons/metadata.album.universal/resources/language/Portuguese
 @dirrmtry %%DATADIR%%/addons/metadata.album.universal/resources/language/Polish
 @dirrmtry %%DATADIR%%/addons/metadata.album.universal/resources/language/Norwegian
+@dirrmtry %%DATADIR%%/addons/metadata.album.universal/resources/language/Malay
 @dirrmtry %%DATADIR%%/addons/metadata.album.universal/resources/language/Macedonian
 @dirrmtry %%DATADIR%%/addons/metadata.album.universal/resources/language/Lithuanian
+@dirrmtry %%DATADIR%%/addons/metadata.album.universal/resources/language/Latvian
 @dirrmtry %%DATADIR%%/addons/metadata.album.universal/resources/language/Korean
 @dirrmtry %%DATADIR%%/addons/metadata.album.universal/resources/language/Japanese
 @dirrmtry %%DATADIR%%/addons/metadata.album.universal/resources/language/Italian
@@ -2806,6 +2880,7 @@ share/xsessions/XBMC.desktop
 @dirrmtry %%DATADIR%%/addons/metadata.album.universal/resources/language/Hebrew
 @dirrmtry %%DATADIR%%/addons/metadata.album.universal/resources/language/Greek
 @dirrmtry %%DATADIR%%/addons/metadata.album.universal/resources/language/German
+@dirrmtry %%DATADIR%%/addons/metadata.album.universal/resources/language/Georgian
 @dirrmtry %%DATADIR%%/addons/metadata.album.universal/resources/language/Galician
 @dirrmtry %%DATADIR%%/addons/metadata.album.universal/resources/language/French
 @dirrmtry %%DATADIR%%/addons/metadata.album.universal/resources/language/Finnish
