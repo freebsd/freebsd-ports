@@ -1,10 +1,11 @@
---- configure.ac.orig	2011-09-06 09:43:42.000000000 +0100
-+++ configure.ac	2011-11-17 15:12:38.567082237 +0000
-@@ -14,6 +14,7 @@
- 
- dnl Header-file checks
- AC_HEADER_STDC
+--- configure.ac.orig  2014-02-12 13:50:04.000000000 +0000
++++ configure.ac       2014-02-12 13:51:38.000000000 +0000
+@@ -39,6 +39,7 @@
+ # Environment setup
+ AC_CANONICAL_HOST
+ AC_C_INLINE
 +AC_CHECK_HEADERS([spawn.h])
  
- if test "x$GCC" = "xyes"; then
-   dnl Only use -Wall if we have gcc
+ # Set compiler flags
+ AX_TRY_CFLAGS([-Wall], [AX_CFLAGS([-Wall])])
+

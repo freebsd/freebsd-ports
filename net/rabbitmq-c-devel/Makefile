@@ -2,41 +2,32 @@
 # $FreeBSD$
 
 PORTNAME=	rabbitmq-c
-PORTVERSION=	0.0.1
-PORTREVISION=	2
+PORTVERSION=	0.5.1
 CATEGORIES=	net
-MASTER_SITES=	http://hg.rabbitmq.com/rabbitmq-c/archive/:c \
-		http://hg.rabbitmq.com/rabbitmq-codegen/archive/:codegen
 PKGNAMESUFFIX=	-devel
-DISTNAME=	${PORTNAME}-cbeb2f3c3e6d
-DISTFILES=	cbeb2f3c3e6d.tar.bz2:c \
-		df43f2bfcf0e.tar.bz2:codegen
-DIST_SUBDIR=	rabbitmq
 
 MAINTAINER=	rabbitmq@geoffgarside.co.uk
 COMMENT=	RabbitMQ C AMQP client library
 
-LICENSE=		GPLv2 MPL
-LICENSE_COMB=		dual
+LICENSE=	GPLv2 MPL
+LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	python:${PORTSDIR}/lang/python \
 		${PYTHON_PKGNAMEPREFIX}simplejson>=2.0:${PORTSDIR}/devel/py-simplejson
 
 CONFLICTS=	rabbitmq-c-[0-9]*
 
-USES=		gmake tar:bzip2
-USE_PYTHON=	yes
+USES=		cmake tar:bzip2 libtool python
+USE_GITHUB=	yes
 USE_LDCONFIG=	yes
-GNU_CONFIGURE=	yes
-USE_AUTOTOOLS=	aclocal autoconf automake autoheader libtool
-AUTOMAKE_ARGS=	-i --add-missing
-ACLOCAL_ARGS=	-I . -I ${LOCALBASE}/share/aclocal
+GH_ACCOUNT=	alanxz
+GH_COMMIT=	e554ca7
+GH_TAGNAME=	v${PORTVERSION}
 
 OPTIONS_DEFINE=	64BIT POPT
 64BIT_DESC=	Produce 64-bit library
 POPT_DESC=	Popt support in tools
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:M64BIT}
@@ -49,12 +40,9 @@ CONFIGURE_ARGS+=	--enable-64-bit
 LIB_DEPENDS+=	libpopt.so:${PORTSDIR}/devel/popt
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-
-PLIST_SUB+=		POPT=''
-CONFIGURE_ARGS+=	--with-popt
+PLIST_SUB+=	POPT=""
 .else
-PLIST_SUB+=		POPT='@comment '
-CONFIGURE_ARGS+=	--without-popt
+PLIST_SUB+=	POPT="@comment "
 .endif
 
 post-patch:
@@ -63,7 +51,8 @@ post-patch:
 pre-configure:
 	@(cd ${CONFIGURE_WRKSRC} && ${SETENV} ${AUTOTOOLS_ENV} ${LIBTOOLIZE})
 
-post-install:
-	${STRIP_CMD} ${PREFIX}/lib/librabbitmq.so.0
+post-stage:
+	${MV} ${STAGEDIR}${PREFIX}/lib/pkgconfig/librabbitmq.pc ${STAGEDIR}${PREFIX}/libdata/pkgconfig/librabbitmq.pc
+	${RMDIR} ${STAGEDIR}${PREFIX}/lib/pkgconfig
 
 .include <bsd.port.mk>
