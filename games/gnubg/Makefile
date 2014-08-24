@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gnubg
-PORTVERSION=	1.02.000
-PORTREVISION=	4
+PORTVERSION=	1.03.001
 CATEGORIES=	games
 MASTER_SITES=	http://www.c-s.li/ports/ \
 		http://files.gnubg.org/media/sources/
@@ -29,8 +28,7 @@ CONFIGURE_ENV=	ac_cv_path_ARTSC_CONFIG=no ac_cv_path_LIBART_CONFIG=no
 
 INSTALLS_ICONS=	yes
 USE_GNOME=	libxml2
-USES=		gmake libtool pathfix shebangfix
-USE_PYTHON=	yes
+USES=		gmake libtool pathfix shebangfix python
 USE_AUTOTOOLS=	automake libtoolize
 GNU_CONFIGURE=	yes
 
