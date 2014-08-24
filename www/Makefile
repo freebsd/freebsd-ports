@@ -247,6 +247,7 @@
     SUBDIR += google-sitemapgen
     SUBDIR += googlebook_dl
     SUBDIR += goose
+    SUBDIR += grafana
     SUBDIR += grails
     SUBDIR += gregarius
     SUBDIR += groupoffice
@@ -1788,6 +1789,7 @@
     SUBDIR += rubygem-faraday_middleware
     SUBDIR += rubygem-fcgi
     SUBDIR += rubygem-feed-normalizer
+    SUBDIR += rubygem-feedjira
     SUBDIR += rubygem-flowdock
     SUBDIR += rubygem-geminabox
     SUBDIR += rubygem-gitlab-gollum-lib
