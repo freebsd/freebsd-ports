@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	Test-YAML
-PORTVERSION=	1.04
+PORTVERSION=	1.05
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -16,7 +16,7 @@ RUN_DEPENDS=	p5-Test-Base>=0:${PORTSDIR}/devel/p5-Test-Base \
 		p5-Text-Diff>=0:${PORTSDIR}/textproc/p5-Text-Diff \
 		p5-Algorithm-Diff>=0:${PORTSDIR}/devel/p5-Algorithm-Diff \
 		p5-Spiffy>=0:${PORTSDIR}/devel/p5-Spiffy \
-		bash>0:${PORTSDIR}/shells/bash
+		${LOCALBASE}/bin/bash:${PORTSDIR}/shells/bash
 
 USES=		perl5 shebangfix
 USE_PERL5=	configure
