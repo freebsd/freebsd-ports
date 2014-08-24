@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ttfunk
-PORTVERSION=	1.1.1
+PORTVERSION=	1.2.0
 CATEGORIES=	print rubygems
 MASTER_SITES=	RG
 
