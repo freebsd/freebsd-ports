@@ -2,71 +2,50 @@
 # $FreeBSD$
 
 PORTNAME=	google-translate-cli
-PORTVERSION=	0.0.1
+PORTVERSION=	0.8.19
 #PORTREVISION=	0
 CATEGORIES=	textproc
 
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	Google Translate to serve as a command line tool
 
-BROKEN=		Checksum and size mismatch, strange LICENSE_PERMS for Beerware
-
 LICENSE=	BW
 LICENSE_NAME=	Beerware
 LICENSE_TEXT=	http://www.sax.de/~joerg/beerware-license.txt
-LICENSE_PERMS=	no-dist-mirror no-dist-sell no-pkg-mirror no-pkg-sell auto-accept
+LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-RUN_DEPENDS=	gawk:${PORTSDIR}/lang/gawk
+BUILD_DEPENDS=	gawk:${PORTSDIR}/lang/gawk
+RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash \
+		gawk:${PORTSDIR}/lang/gawk
+TEST_DEPENDS=	gawk:${PORTSDIR}/lang/gawk
 
-# same binary file bin/translate
-CONFLICTS_INSTALL=	translate-*
+ALL_TARGET=	build
+
+FRIBIDI_RUN_DEPENDS=	fribidi:${PORTSDIR}/converters/fribidi
 
 GH_ACCOUNT=	soimort
-GH_COMMIT=	2f59fc6
+GH_COMMIT=	ae2696e
+GH_PROJECT=	translate-shell
 GH_TAGNAME=	${GH_COMMIT}
-gawk_CMD=	${SETENV} -S gawk
-gawk_OLD_CMD=	/usr/bin/gawk
 
-MARKDOWN_CMD=	${LOCALBASE}/bin/markdown
+OPTIONS_DEFINE=	DOCS FRIBIDI READLINE TEXT2SPEECH
 
-OPTIONS_DEFINE=	DOCS
+PLIST_FILES=	bin/trans man/man1/trans.1.gz
 
-SHEBANG_FILES=	${WRKSRC}/translate.awk
-SHEBANG_LANG=	gawk
+READLINE_RUN_DEPENDS=	rlwrap:${PORTSDIR}/devel/rlwrap
+
+TEXT2SPEECH_DESC=	Enable Text-to-Speech functionality via espeak
+TEXT2SPEECH_RUN_DEPENDS=	espeak:${PORTSDIR}/audio/espeak
 
 USE_GITHUB=	yes
-USES=	shebangfix
 
 .include <bsd.port.options.mk>
 
-post-patch:
-	@${REINPLACE_CMD} -e 's,^gawk,${LOCALBASE}/bin/&,1' \
-		-e 's,translate.awk,${DATADIR}/&,1' ${WRKSRC}/translate
-
-.if !${PORT_OPTIONS:MDOCS}
-NO_BUILD=	yes
-.else
-BUILD_DEPENDS+=	markdown:${PORTSDIR}/textproc/discount
-
-do-build:
-	@(cd ${WRKSRC} && \
-	${MARKDOWN_CMD} README.md > README.tmp && \
-	echo "<!DOCTYPE html><html><head><meta charset="UTF-8"><title>${COMMENT}</title></head><body>" | \
-	${CAT} - ${WRKSRC}/README.tmp $(${ECHO_CMD} "</body></html>") > README.html)
-
-post-install:
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README.html ${STAGEDIR}${DOCSDIR}
-.endif
-
 do-install:
-	@${MKDIR} ${STAGEDIR}${DATADIR}
-	${INSTALL_SCRIPT} ${WRKSRC}/translate ${STAGEDIR}${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/translate.awk ${STAGEDIR}${DATADIR}
-	${LN} -sf ${DATADIR}/translate ${STAGEDIR}${PREFIX}/bin/translate
-	${LN} -sf ${DATADIR}/translate ${STAGEDIR}${PREFIX}/bin/trs
+	${INSTALL_SCRIPT} ${WRKSRC}/build/trans ${STAGEDIR}${PREFIX}/bin/trans
+	${INSTALL_MAN} ${WRKSRC}/man/trans.1 ${STAGEDIR}${MANPREFIX}/man/man1/trans.1
 
 regression-test test: build
-	@(cd ${WRKSRC} ; ${MAKE} test)
+	@(cd ${WRKSRC} && ${MAKE} test)
 
 .include <bsd.port.mk>
