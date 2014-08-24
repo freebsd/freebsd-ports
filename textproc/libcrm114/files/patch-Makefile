@@ -47,7 +47,7 @@
 +	$(BSD_INSTALL_DATA) crm114_lib.h $(DESTDIR)$(PREFIX)/include
 +	$(BSD_INSTALL_DATA) crm114_structs.h $(DESTDIR)$(PREFIX)/include
 +	$(BSD_INSTALL_DATA) crm114_sysincludes.h $(DESTDIR)$(PREFIX)/include
-+	$(BSD_INSTALL_DATA) -d $(DESTDIR)$(PREFIX)/share/doc/libcrm114
++	install -d -m 755 $(DESTDIR)$(PREFIX)/share/doc/libcrm114
 +	$(BSD_INSTALL_DATA) HOWTO.txt $(DESTDIR)$(PREFIX)/share/doc/libcrm114
 +	$(BSD_INSTALL_DATA) simple_demo.c $(DESTDIR)$(PREFIX)/share/doc/libcrm114
 +
