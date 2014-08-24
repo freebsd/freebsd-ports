@@ -12,7 +12,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}/:savannah \
 		vd/${PORTNAME}${PKGNAMESUFFIX}/:local
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:savannah,local
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	udvzsolt@gmail.com
 COMMENT=	Local/remote mirroring+incremental backup
 
 LICENSE=	GPLv2
@@ -21,8 +21,9 @@ LIB_DEPENDS=	librsync.so:${PORTSDIR}/net/librsync
 
 CONFLICTS=	rdiff-backup-devel-[0-9]* rdiff-backup-1.0*
 
-USE_PYTHON=	yes
-USE_PYDISTUTILS=yes
+USES=		python
+USE_PYTHON=	distutils
+USE_LDCONFIG=	yes
 
 MAN1S=		rdiff-backup.1 rdiff-backup-statistics.1
 DOCS=		CHANGELOG README COPYING FAQ.html
@@ -33,5 +34,8 @@ post-install:
 	${INSTALL_MAN} ${MAN1S:S,^,${WRKSRC}/,} ${STAGEDIR}${PREFIX}/man/man1
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${DOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
+.for lib in C.so _librsync.so
+	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/${PORTNAME:S,-,_,}/${lib}
+.endfor
 
 .include <bsd.port.mk>
