@@ -1,13 +1,13 @@
---- configure.in.orig	2010-07-29 14:03:26.000000000 +0400
-+++ configure.in	2010-07-29 14:02:39.000000000 +0400
-@@ -32,17 +32,6 @@
+--- configure.orig
++++ configure
+@@ -19897,17 +19897,6 @@
  # Build some standard absolute include paths for the build
  
  MAIN_INCLUDE_DIR="$PWD/Source/include"
 -LCMS_INCLUDE_DIR="$PWD/Source/C/NCSEcw/lcms/include"
 -
--# Run configure in the LCMS directory (using LCMS's own configure script) 
--# to initialise any platform dependent settings that it uses 
+-# Run configure in the LCMS directory (using LCMS's own configure script)
+-# to initialise any platform dependent settings that it uses
 -# (e.g. typedefs for int types)
 -
 -THISDIR=$PWD
@@ -18,7 +18,7 @@
  
  # Build LIBECWJ2_DEFS with all defines, and NCSGnuSystemDefs.h with defines
  # needed by apps building against libecwj2.
-@@ -76,6 +65,12 @@
+@@ -19941,6 +19930,12 @@
  		PLATFORM_STATIC_LDFLAGS="$PLATFORM_STATIC_LDFLAGS -L/System/Library/Frameworks/Carbon.framework/Carbon"
  		PLATFORM_SHARED_LDFLAGS="$PLATFORM_SHARED_LDFLAGS $PLATFORM_STATIC_LDFLAGS -dynamiclib -single_module"
  		;;
@@ -31,12 +31,12 @@
          *)
  		PLATFORM_DEFS=""
  		PLATFORM_STATIC_LDFLAGS=""
-@@ -89,7 +84,7 @@
+@@ -19954,7 +19949,7 @@
  LIBECWJ2_CFLAGS="$PLATFORM_CFLAGS"
  LIBECWJ2_STATIC_LDFLAGS="$PLATFORM_STATIC_LDFLAGS"
  LIBECWJ2_SHARED_LDFLAGS="$PLATFORM_SHARED_LDFLAGS"
 -LIBECWJ2_INCLUDES="-I$MAIN_INCLUDE_DIR -I$LCMS_INCLUDE_DIR"
-+LIBECWJ2_INCLUDES="-I$MAIN_INCLUDE_DIR -I%%LOCALBASE%%/include"
++LIBECWJ2_INCLUDES="-I$MAIN_INCLUDE_DIR"
  
  rm -f Source/NCSBuildGnu/NCSGnuSystemDefs.h
  echo "#ifndef LIBECWJ2" > Source/NCSBuildGnu/NCSGnuSystemDefs.h
