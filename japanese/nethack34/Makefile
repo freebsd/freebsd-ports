@@ -18,6 +18,8 @@ COMMENT=	Japanized NetHack
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
+BROKEN=		Fails to build
+
 USES=		bison gmake tar:tgz
 MAKE_ENV=	GRAPHICS="${GRAPHICS}"
 PLIST_SUB=	HACKNAME="${HACKNAME}" \
