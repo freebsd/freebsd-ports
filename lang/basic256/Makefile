@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	basic256
-PORTVERSION=	1.1.2.6
-PORTREVISION=	1
+PORTVERSION=	1.1.3.0
 CATEGORIES=	lang
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	kidbasic/${PORTNAME}
@@ -11,6 +10,8 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}.orig
 
 MAINTAINER=	fernando.apesteguia@gmail.com
 COMMENT=	Easy to use BASIC language and IDE for education
+
+LICENSE=	GPLv2
 
 BUILD_DEPENDS=	espeak:${PORTSDIR}/audio/espeak \
 		sqlite3:${PORTSDIR}/databases/sqlite3 \
