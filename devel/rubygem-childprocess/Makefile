@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	childprocess
-PORTVERSION=	0.5.1
+PORTVERSION=	0.5.3
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
