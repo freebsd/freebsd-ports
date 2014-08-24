@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	xbmc
-DISTVERSION=	13.1
-PORTREVISION=	4
+DISTVERSION=	13.2
 CATEGORIES=	multimedia
 MASTER_SITES=	http://mirrors.xbmc.org/releases/source/
 
@@ -48,17 +47,15 @@ LIB_DEPENDS=	libass.so:${PORTSDIR}/multimedia/libass \
 		libyajl.so:${PORTSDIR}/devel/yajl
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:${PORTSDIR}/databases/py-sqlite3 \
 		glxinfo:${PORTSDIR}/graphics/mesa-demos \
-		nmblookup:${PORTSDIR}/net/samba-nmblookup \
 		${PYTHON_PKGNAMEPREFIX}imaging>0:${PORTSDIR}/graphics/py-imaging \
 		xdpyinfo:${PORTSDIR}/x11/xdpyinfo
 
-USES=		gmake iconv:wchar_t libtool:build pkgconfig
+USES=		gmake iconv:wchar_t libtool:build pkgconfig python:2
 USE_AUTOTOOLS=	autoconf:env automake:env libltdl
 GNU_CONFIGURE=	yes
 USE_XORG=	xt xmu xtst
 USE_GL=		glu
 USE_SDL=	image sdl
-USE_PYTHON=	2
 USE_JAVA=	yes
 JAVA_BUILD=	jre
 NOPRECIOUSMAKEVARS=	yes
@@ -123,6 +120,7 @@ RTMP_LIB_DEPENDS=	librtmp.so:${PORTSDIR}/multimedia/librtmp
 RTMP_CONFIGURE_ENABLE=	rtmp
 
 SMB_LIB_DEPENDS=	libsmbclient.so:${PORTSDIR}/net/samba-libsmbclient
+SMB_RUN_DEPENDS=	nmblookup:${PORTSDIR}/net/samba-nmblookup
 SMB_CONFIGURE_ENABLE=	samba
 
 VAAPI_LIB_DEPENDS=	libva.so:${PORTSDIR}/multimedia/libva
