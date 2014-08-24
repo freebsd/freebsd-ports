@@ -42,6 +42,7 @@ post-patch:
 	    -e 's|-DSOAPCPP_IMPORT_PATH=|-DSOAPCPP2_IMPORT_PATH=|' \
 	    -e 's|-DWSDL_IMPORT_PATH=|-DWSDL2H_IMPORT_PATH=|' \
 	    ${WRKSRC}/${CONFIGURE_SCRIPT}
+	${REINPLACE_CMD} -e '/echo.*RANLIB/,+1d' ${WRKSRC}/gsoap/Makefile.in
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/gsoap
