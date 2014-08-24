@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	arrayfields
-PORTVERSION=	4.9.0
+PORTVERSION=	4.9.2
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
