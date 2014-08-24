@@ -22,7 +22,6 @@ CONFIGURE_ARGS=	--mandir=${PREFIX}/man
 USES=		gmake
 AUTOMAKE_ARGS=	--add-missing --foreign --include-deps
 MAKE_ARGS=	prefix=${PREFIX}
-MAN1=		dico.1
 REINPLACE_SUB=	PREFIX=${PREFIX}
 
 # Post-patch
@@ -30,7 +29,6 @@ REINPLACE_SUB=	PREFIX=${PREFIX}
 
 OPTIONS_DEFINE=	DOCS
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} ${REINPLACE_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
 		${WRKSRC}/sources/dico.c
@@ -40,15 +38,5 @@ post-patch:
 
 pre-configure:
 	@cd ${WRKSRC} && ${ACLOCAL}
-
-# Post-install
-#
-
-.include <bsd.port.options.mk>
-
-post-install:
-.if empty(PORT_OPTIONS:MDOCS)
-	@${RM} -rf ${DOCSDIR}
-.endif
 
 .include <bsd.port.mk>
