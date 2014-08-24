@@ -17,4 +17,7 @@ GNU_CONFIGURE=	yes
 USE_GNOME=	pango
 USES=		pkgconfig
 
+post-patch:
+	@${REINPLACE_CMD} -e '/echo.*RANLIB/,+1d' ${WRKSRC}/src/Makefile.in
+
 .include <bsd.port.mk>
