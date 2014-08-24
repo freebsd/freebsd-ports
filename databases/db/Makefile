@@ -13,6 +13,7 @@ COMMENT=	Manipulate db(3)'s btree(3) and hash(3) databases - NetBSD port
 PLIST_FILES=	bin/db \
 		man/man1/db.1.gz
 
+USES=		uidfix
 MAKE_ENV=	BINDIR=${PREFIX}/bin SHAREDIR=${PREFIX}
 
 DIST_CVS=	http://cvsweb.netbsd.org/bsdweb.cgi/~checkout~/src/usr.bin/db/db
