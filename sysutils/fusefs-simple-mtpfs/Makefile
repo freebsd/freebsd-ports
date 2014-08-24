@@ -35,8 +35,17 @@ OPTIONS_DEFINE=	DOCS
 CONFIGURE_ENV+=	LIBUSB1_CFLAGS=" " LIBUSB1_LIBS="-lusb"
 .endif
 
+.if exists(/etc/autofs)
+PLIST_FILES+=	/etc/autofs/special_simple-mtpfs
+SUB_FILES+=	special_simple-mtpfs
+.endif
+
 post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:C|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
+.if exists(/etc/autofs)
+	@${MKDIR} ${STAGEDIR}/etc/autofs
+	${INSTALL_SCRIPT} ${WRKDIR}/special_simple-mtpfs ${STAGEDIR}/etc/autofs
+.endif
 
 .include <bsd.port.mk>
