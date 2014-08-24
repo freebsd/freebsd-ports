@@ -4437,6 +4437,7 @@
     SUBDIR += rubygem-popen4
     SUBDIR += rubygem-posix-spawn
     SUBDIR += rubygem-powerbar
+    SUBDIR += rubygem-power_assert
     SUBDIR += rubygem-prototype-rails
     SUBDIR += rubygem-pry
     SUBDIR += rubygem-pry-remote-em
