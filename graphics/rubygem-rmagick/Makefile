@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=		rmagick
-PORTVERSION=		2.13.2
-PORTREVISION=		1
+PORTVERSION=		2.13.3
 CATEGORIES=		graphics rubygems
 MASTER_SITES=		RG
 
