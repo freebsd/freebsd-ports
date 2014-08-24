@@ -4297,6 +4297,7 @@
     SUBDIR += rubygem-directory_watcher
     SUBDIR += rubygem-ditz
     SUBDIR += rubygem-docile
+    SUBDIR += rubygem-dotenv-deployment
     SUBDIR += rubygem-drydock
     SUBDIR += rubygem-echoe
     SUBDIR += rubygem-edavis10-object_daddy
