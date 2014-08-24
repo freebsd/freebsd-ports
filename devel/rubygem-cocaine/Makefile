@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	cocaine
-PORTVERSION=	0.5.1
+PORTVERSION=	0.5.4
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
