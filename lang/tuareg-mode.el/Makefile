@@ -2,47 +2,42 @@
 # $FreeBSD$
 
 PORTNAME=	tuareg-mode
-PORTVERSION=	2.0.6
+PORTVERSION=	2.0.8
 PORTEPOCH=	1
 CATEGORIES=	lang elisp
-MASTER_SITES=	http://forge.ocamlcore.org/frs/download.php/882/
+MASTER_SITES=	GH
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	michipili@gmail.com
 COMMENT=	Emacs major mode for editing Caml code
 
+LICENSE=	GPLv2
+
 USE_EMACS=	yes
+USE_GITHUB=	yes
 
-WRKSRC=		${WRKDIR}/tuareg-${PORTVERSION}
+GH_ACCOUNT=	ocaml
+GH_PROJECT=	tuareg
+GH_COMMIT=	62f6854
 
-DOC_FILES=	README
-DOC_DIR=	share/doc/tuareg-mode
+OPTIONS_DEFINE=	DOCS
 ELISP_FILES=	ocamldebug.el tuareg.el
+.for f in ${ELISP_FILES}
+PLIST_FILES+=	%%EMACS_SITE_LISPDIR%%/$f %%EMACS_SITE_LISPDIR%%/$fc
+.endfor
 
-PLIST_FILES=	${ELISP_FILES:S/^/${EMACS_SITE_LISPDIR}\//} \
-		${ELISP_FILES:S/^/${EMACS_SITE_LISPDIR}\//S/$/c/} \
-		${DOC_FILES:S/^/${DOC_DIR}\//}
-PLIST_DIRS=	${DOC_DIR}
+PORTDOCS=	README.md
 
-# Note: append-tuareg.el and custom-tuareg.el are example files,
-# they are thus considered part of the documentation.
-
-#
-# Operations
-#
-
-NO_STAGE=	yes
 do-build:
-	cd ${WRKSRC} &&\
-	${EMACS_CMD} -batch -q -f batch-byte-compile ${ELISP_FILES}
+	(cd ${WRKSRC} && \
+		${EMACS_CMD} -batch -q -f batch-byte-compile ${ELISP_FILES})
 
 do-install:
+	@${MKDIR} ${STAGEDIR}${EMACS_SITE_LISPDIR}
 .for tuareg_mode_f in ${ELISP_FILES}
 	${INSTALL_DATA} ${WRKSRC}/${tuareg_mode_f} ${WRKSRC}/${tuareg_mode_f}c \
-		${PREFIX}/${EMACS_SITE_LISPDIR}
+		${STAGEDIR}${PREFIX}/${EMACS_SITE_LISPDIR}
 .endfor
-	${MKDIR} ${PREFIX}/${DOC_DIR}
-.for tuareg_mode_f in ${DOC_FILES}
-	${INSTALL_DATA} ${WRKSRC}/${tuareg_mode_f} ${PREFIX}/${DOC_DIR}
-.endfor
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:C|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
