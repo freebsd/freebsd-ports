@@ -1,0 +1,35 @@
+--- SLmake.inc.example.orig	2011-11-01 18:24:54.000000000 +0100
++++ SLmake.inc.example	2014-08-24 11:35:47.000000000 +0200
+@@ -20,17 +20,17 @@
+ #     -DUpCase   (fortran subprogram names are upper case without any suffix)
+ #     -DAdd_     (fortran subprogram names are lower case with "_" appended)
+ 
+-CDEFS         = -DAdd_
++CDEFS         = -DAdd_ -DNO_IEEE $(USEMPI)
+ 
+ #
+ #  The fortran and C compilers, loaders, and their flags
+ #
+ 
+-FC            = mpif90
+-CC            = mpicc 
+-NOOPT         = -O0
+-FCFLAGS       = -O3
+-CCFLAGS       = -O3
++FC            = @MPIF77@
++CC            = @MPICC@
++NOOPT         = @NOOPT@
++FCFLAGS       = @FFLAGS@
++CCFLAGS       = @CFLAGS@
+ FCLOADER      = $(FC)
+ CCLOADER      = $(CC)
+ FCLOADFLAGS   = $(FCFLAGS)
+@@ -55,6 +55,6 @@
+ #  BLAS, LAPACK (and possibly other) libraries needed for linking test programs
+ #
+ 
+-BLASLIB       = -lblas
+-LAPACKLIB     = -llapack
++BLASLIB       = -L@LOCALBASE@/lib @BLAS@
++LAPACKLIB     = -L@LOCALBASE@/lib @LAPACK@
+ LIBS          = $(LAPACKLIB) $(BLASLIB)
