@@ -14,8 +14,6 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	libsmpeg.so:${PORTSDIR}/multimedia/smpeg \
 		libpng.so:${PORTSDIR}/graphics/png
 
-CONFLICTS=	prboom-[2]*
-
 USES=		gmake
 USE_SDL=	mixer net sdl
 NEED_ROOT=	yes
