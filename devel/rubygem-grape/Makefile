@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	grape
-PORTVERSION=	0.6.1
+PORTVERSION=	0.8.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -12,7 +12,7 @@ LICENSE=	MIT
 
 RUN_DEPENDS=	rubygem-activesupport>=0:${PORTSDIR}/devel/rubygem-activesupport \
 		rubygem-builder>=0:${PORTSDIR}/devel/rubygem-builder \
-		rubygem-hashie>=1.2.0:${PORTSDIR}/devel/rubygem-hashie \
+		rubygem-hashie>=2.1.0:${PORTSDIR}/devel/rubygem-hashie \
 		rubygem-multi_json>=1.3.2:${PORTSDIR}/devel/rubygem-multi_json \
 		rubygem-multi_xml>=0.5.2:${PORTSDIR}/textproc/rubygem-multi_xml \
 		rubygem-rack>=1.3.0:${PORTSDIR}/www/rubygem-rack \
