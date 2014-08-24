@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	perdition
-PORTVERSION=	1.18
-PORTREVISION=	6
+PORTVERSION=	2.1
 CATEGORIES=	mail net security
 MASTER_SITES=	http://horms.net/projects/perdition/download/${PORTVERSION}/
 
@@ -15,7 +14,7 @@ LIB_DEPENDS=	libpopt.so:${PORTSDIR}/devel/popt \
 		libvanessa_socket.so:${PORTSDIR}/devel/libvanessa_socket \
 		libvanessa_adt.so:${PORTSDIR}/devel/libvanessa_adt
 
-USES=		gettext libtool shebangfix
+USES=		gettext libtool pkgconfig shebangfix
 SHEBANG_FILES=	${WRKSRC}/perdition/db/ldap/perditiondb_ldap_makedb \
 		${WRKSRC}/perdition/db/mysql/perditiondb_mysql_makedb \
 		${WRKSRC}/perdition/db/odbc/perditiondb_odbc_makedb \

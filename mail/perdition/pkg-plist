@@ -56,6 +56,7 @@ man/man8/perdition.8.gz
 man/man8/perdition.imap4.8.gz
 man/man8/perdition.imap4s.8.gz
 man/man8/perdition.imaps.8.gz
+man/man8/perdition.managesieve.8.gz
 %%LDAP%%man/man8/perditiondb_ldap_makedb.8.gz
 %%MYSQL%%man/man8/perditiondb_mysql_makedb.8.gz
 %%ODBC%%man/man8/perditiondb_odbc_makedb.8.gz
@@ -68,6 +69,7 @@ sbin/perdition.pop3s
 sbin/perdition.imap4
 sbin/perdition.imap4s
 sbin/perdition.imaps
+sbin/perdition.managesieve
 %%PORTDOCS%%%%DOCSDIR%%/perdition-pam.sample
 @dirrmtry etc/perdition
 %%LDAP%%@dirrmtry etc/openldap/schema

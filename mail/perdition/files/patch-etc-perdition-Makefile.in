@@ -1,15 +1,15 @@
---- etc/perdition/Makefile.in.orig	2012-03-20 05:07:55.000000000 -0700
-+++ etc/perdition/Makefile.in	2012-12-12 16:48:33.000000000 -0800
-@@ -303,14 +303,17 @@
+--- etc/perdition/Makefile.in.orig	2014-08-17 16:56:17.272880606 -0500
++++ etc/perdition/Makefile.in	2014-08-17 17:01:19.661130306 -0500
+@@ -370,14 +370,17 @@
  	  echo "$$d$$p"; \
  	done | $(am__base_list) | \
  	while read files; do \
 -	  echo " $(INSTALL_DATA) $$files '$(DESTDIR)$(perditionconfdir)'"; \
 -	  $(INSTALL_DATA) $$files "$(DESTDIR)$(perditionconfdir)" || exit $$?; \
-+	  for p in $$files; do \
-+	    $(am__strip_dir) \
-+	    echo " $(INSTALL_DATA) $$p '$(DESTDIR)$(perditionconfdir)/$$f-dist'"; \
-+	    $(INSTALL_DATA) $$p "$(DESTDIR)$(perditionconfdir)/$$f-dist" || exit $$?; \
++          for p in $$files; do \
++            $(am__strip_dir) \
++            echo " $(INSTALL_DATA) $$p '$(DESTDIR)$(perditionconfdir)/$$f-dist'"; \
++            $(INSTALL_DATA) $$p "$(DESTDIR)$(perditionconfdir)/$$f-dist" || exit $$?; \
 +          done; \
  	done
  
@@ -18,6 +18,6 @@
  	@list='$(perditionconf_DATA)'; test -n "$(perditionconfdir)" || list=; \
 -	files=`for p in $$list; do echo $$p; done | sed -e 's|^.*/||'`; \
 +	files=`for p in $$list; do echo $$p-dist; done | sed -e 's|^.*/||'`; \
- 	test -n "$$files" || exit 0; \
- 	echo " ( cd '$(DESTDIR)$(perditionconfdir)' && rm -f" $$files ")"; \
- 	cd "$(DESTDIR)$(perditionconfdir)" && rm -f $$files
+ 	dir='$(DESTDIR)$(perditionconfdir)'; $(am__uninstall_files_from_dir)
+ tags TAGS:
+ 
