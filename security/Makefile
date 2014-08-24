@@ -129,6 +129,7 @@
     SUBDIR += fpc-openssl
     SUBDIR += fpm2
     SUBDIR += fprint_demo
+    SUBDIR += fprintd
     SUBDIR += fragroute
     SUBDIR += fragrouter
     SUBDIR += fsh
