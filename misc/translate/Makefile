@@ -11,9 +11,6 @@ COMMENT=	Translates string using Babelfish
 
 RUN_DEPENDS=	p5-libwww>=0:${PORTSDIR}/www/p5-libwww
 
-# same binary file bin/translate
-CONFLICTS_INSTALL=	google-translate-cli-*
-
 USES=		perl5 shebangfix
 NO_BUILD=	yes
 
