@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	filezilla
-PORTVERSION=	3.8.0
-PORTREVISION=	3
+PORTVERSION=	3.9.0.3
 CATEGORIES=	ftp
 MASTER_SITES=	SF/${PORTNAME}/FileZilla_Client/${PORTVERSION}
 DISTNAME=	FileZilla_${PORTVERSION}_src
@@ -20,11 +19,11 @@ LIB_DEPENDS=	libgcrypt.so:${PORTSDIR}/security/libgcrypt \
 		libidn.so:${PORTSDIR}/dns/libidn \
 		libtinyxml.so:${PORTSDIR}/textproc/tinyxml
 
-
 INSTALLS_ICONS=	yes
 USES=		gmake pkgconfig tar:bzip2
 USE_SQLITE=	3
-USE_WX=		2.8
+#USE_WX=		2.8
+USE_WX=		3.0
 WX_CONF_ARGS=	relative
 WX_UNICODE=	yes
 GNU_CONFIGURE=	yes
@@ -46,8 +45,14 @@ NLS_CONFIGURE_OFF=	--disable-locales
 CONFIGURE_ARGS+=	--disable-manualupdatecheck
 .endif
 
+.include <bsd.port.pre.mk>
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1000000
+USE_GCC=	4.7+
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -Ee 's|(dummy) wxrc|\1 ${WXRC_CMD:T}|' \
 		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
