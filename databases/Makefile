@@ -890,6 +890,7 @@
     SUBDIR += sqldeveloper
     SUBDIR += sqlite-ext-miscfuncs
     SUBDIR += sqlite-ext-mobigroup
+    SUBDIR += sqlite-ext-pcre
     SUBDIR += sqlite2
     SUBDIR += sqlite3
     SUBDIR += sqliteman
