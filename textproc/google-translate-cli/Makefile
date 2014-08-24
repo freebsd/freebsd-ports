@@ -9,6 +9,8 @@ CATEGORIES=	textproc
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	Google Translate to serve as a command line tool
 
+BROKEN=		Checksum and size mismatch, strange LICENSE_PERMS for Beerware
+
 LICENSE=	BW
 LICENSE_NAME=	Beerware
 LICENSE_TEXT=	http://www.sax.de/~joerg/beerware-license.txt
