@@ -1,5 +1,5 @@
-SHA256 (scalapack/scalapack-1.8.0.tgz) = e378dbedf67102cb7cc1a7991bb02bbe163aa91710dbeae2868ec781d3fc7a05
-SIZE (scalapack/scalapack-1.8.0.tgz) = 5006143
+SHA256 (scalapack/scalapack-2.0.2.tgz) = 0c74aeae690fe5ee4db7926f49c5d0bb69ce09eea75beb915e00bba07530395c
+SIZE (scalapack/scalapack-2.0.2.tgz) = 4779534
 SHA256 (scalapack/manpages.tgz) = a745c9f367d65e3c7611c126597a4681094b002552e47b621964d30a966aac7b
 SIZE (scalapack/manpages.tgz) = 379541
 SHA256 (scalapack/scalapack_install.ps) = bbf0b2c60289bf34580f57f8fa25aa71ba902fc72f2a665bf351ebb63ed320a0
