@@ -2,14 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	maruku
-PORTVERSION=	0.6.1
+PORTVERSION=	0.7.2
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Markdown and PHP Markdown extra interpreter for Ruby
-
-RUN_DEPENDS=	rubygem-syntax>=1.0.0:${PORTSDIR}/textproc/rubygem-syntax
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
