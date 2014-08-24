@@ -3,7 +3,7 @@
 
 PORTNAME=	adobe-cmaps
 PORTVERSION=	20051217
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	print
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	hrs/adobe
@@ -14,6 +14,8 @@ DIST_SUBDIR=	adobe
 
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Adobe CMap collection
+
+RUN_DEPENDS=	fc-cache:${PORTSDIR}/x11-fonts/fontconfig
 
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
