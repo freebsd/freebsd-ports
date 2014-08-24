@@ -27,7 +27,8 @@ USE_PYTHON_BUILD=	yes
 .endif
 
 USES=			iconv gmake
-USE_BDB=		5
+USE_BDB=		yes
+WANT_BDB_VER=		5
 INVALID_BDB_VER=	40 41 42 43 44 46 47 48 6
 USE_LDCONFIG=		yes
 BUILD_WRKSRC?=		${WRKSRC}/cpp
