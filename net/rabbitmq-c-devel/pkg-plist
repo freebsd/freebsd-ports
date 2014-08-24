@@ -5,7 +5,9 @@
 %%POPT%%bin/amqp-publish
 include/amqp.h
 include/amqp_framing.h
-lib/librabbitmq.a
-lib/librabbitmq.la
+include/amqp_ssl_socket.h
+include/amqp_tcp_socket.h
 lib/librabbitmq.so
-lib/librabbitmq.so.0
+lib/librabbitmq.so.1
+lib/librabbitmq.so.1.2.1
+libdata/pkgconfig/librabbitmq.pc
