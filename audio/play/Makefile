@@ -12,6 +12,7 @@ COMMENT=	Simple audio file player
 
 CONFLICTS=	sox-[0-9]*
 
+USES=		uidfix
 MAKE_ARGS=	CFLAGS="${CFLAGS}" MANDIR="${PREFIX}/man/ja/man" BINDIR="${PREFIX}/bin"
 
 PLIST_FILES=	bin/play man/ja/man1/play.1.gz
