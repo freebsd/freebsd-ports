@@ -1,5 +1,5 @@
---- ./Makefile.in.orig	2013-12-03 10:11:53.000000000 -0500
-+++ ./Makefile.in	2013-12-28 22:38:41.000000000 -0500
+--- Makefile.in.orig	2013-12-03 15:11:53 UTC
++++ Makefile.in
 @@ -564,49 +564,19 @@
  		    $(DESTDIR)$(includedir)/$$i; done
  	[ -d $(DESTDIR)$(bindir) ] || \
@@ -56,3 +56,11 @@
  	for i in $(MANFILE); do \
  		$(INSTALL_DATA) `echo $$i | sed 's/.manfile.in/.manfile/'` \
  		    $(DESTDIR)$(mandir)/man@MAN_FILE_FORMATS@/`echo $$i | sed 's/.manfile.in/.@MAN_FILE_FORMATS@/'`; done
+@@ -656,7 +626,6 @@
+ 	[ -d $(DESTDIR)$(libdir) ] || \
+ 	    (mkdir -p $(DESTDIR)$(libdir); chmod 755 $(DESTDIR)$(libdir))
+ 	$(INSTALL_DATA) libpcap.a $(DESTDIR)$(libdir)/libpcap.a
+-	$(RANLIB) $(DESTDIR)$(libdir)/libpcap.a
+ install-archive-shareda:
+ 	#
+ 	# AIX, however, doesn't, so we don't install the archive
