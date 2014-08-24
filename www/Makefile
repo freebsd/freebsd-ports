@@ -1788,7 +1788,6 @@
     SUBDIR += rubygem-faraday_middleware
     SUBDIR += rubygem-fcgi
     SUBDIR += rubygem-feed-normalizer
-    SUBDIR += rubygem-feedzirra
     SUBDIR += rubygem-flowdock
     SUBDIR += rubygem-geminabox
     SUBDIR += rubygem-gitlab-gollum-lib
