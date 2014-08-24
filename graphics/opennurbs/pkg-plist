@@ -118,6 +118,28 @@ libexec/openNURBS/example_read
 libexec/openNURBS/example_roundtrip
 libexec/openNURBS/example_userdata
 libexec/openNURBS/example_write
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Makefile
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/bsd.openNURBS.mk
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/examples_linking_pragmas.h
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/opennurbs.h
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example_brep/Makefile
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example_brep/example_brep.cc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example_read/Makefile
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example_read/example_read.cc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example_roundtrip/Makefile
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example_roundtrip/example_roundtrip.cc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example_userdata/Makefile
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example_userdata/example_userdata.cc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example_userdata/example_ud.cc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example_userdata/example_ud.h
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example_write/Makefile
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example_write/example_write.cc
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/example_write
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/example_userdata
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/example_roundtrip
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/example_read
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/example_brep
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
 @dirrm libexec/openNURBS
 @dirrm include/openNURBS/zlib
 @dirrm include/openNURBS
