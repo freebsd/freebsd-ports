@@ -215,5 +215,5 @@
 @dirrm %%CMAPDIR%%/ag15
 @dirrm %%CMAPDIR%%/ac15/CMap
 @dirrm %%CMAPDIR%%/ac15
-@dirrmtry %%CMAPDIR%%
+@fc %%CMAPDIR%%
 @dirrmtry share/fonts
