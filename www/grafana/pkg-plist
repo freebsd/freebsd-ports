@@ -1,0 +1,116 @@
+%%WWWDIR%%/LICENSE.md
+%%WWWDIR%%/NOTICE.md
+%%WWWDIR%%/README.md
+%%WWWDIR%%/app/app.c7840ed8.js
+%%WWWDIR%%/app/app.js
+%%WWWDIR%%/app/components/require.config.js
+%%WWWDIR%%/app/dashboards/default.json
+%%WWWDIR%%/app/dashboards/empty.json
+%%WWWDIR%%/app/dashboards/scripted.js
+%%WWWDIR%%/app/dashboards/scripted_async.js
+%%WWWDIR%%/app/panels/annotations/editor.html
+%%WWWDIR%%/app/panels/annotations/module.html
+%%WWWDIR%%/app/panels/filtering/module.html
+%%WWWDIR%%/app/panels/graph/axisEditor.html
+%%WWWDIR%%/app/panels/graph/legend.html
+%%WWWDIR%%/app/panels/graph/module.html
+%%WWWDIR%%/app/panels/graph/styleEditor.html
+%%WWWDIR%%/app/panels/text/editor.html
+%%WWWDIR%%/app/panels/text/module.html
+%%WWWDIR%%/app/panels/timepicker/custom.html
+%%WWWDIR%%/app/panels/timepicker/editor.html
+%%WWWDIR%%/app/panels/timepicker/module.html
+%%WWWDIR%%/app/panels/timepicker/refreshctrl.html
+%%WWWDIR%%/app/partials/dashLoader.html
+%%WWWDIR%%/app/partials/dashLoaderShare.html
+%%WWWDIR%%/app/partials/dashboard.html
+%%WWWDIR%%/app/partials/dasheditor.html
+%%WWWDIR%%/app/partials/elasticsearch/annotation_editor.html
+%%WWWDIR%%/app/partials/graphite/annotation_editor.html
+%%WWWDIR%%/app/partials/graphite/editor.html
+%%WWWDIR%%/app/partials/import.html
+%%WWWDIR%%/app/partials/influxdb/annotation_editor.html
+%%WWWDIR%%/app/partials/influxdb/editor.html
+%%WWWDIR%%/app/partials/inspector.html
+%%WWWDIR%%/app/partials/load.html
+%%WWWDIR%%/app/partials/loadmetrics.html
+%%WWWDIR%%/app/partials/metrics.html
+%%WWWDIR%%/app/partials/modal.html
+%%WWWDIR%%/app/partials/opentsdb/editor.html
+%%WWWDIR%%/app/partials/paneladd.html
+%%WWWDIR%%/app/partials/paneleditor.html
+%%WWWDIR%%/app/partials/panelgeneral.html
+%%WWWDIR%%/app/partials/playlist.html
+%%WWWDIR%%/app/partials/roweditor.html
+%%WWWDIR%%/app/partials/search.html
+%%WWWDIR%%/app/partials/unsaved-changes.html
+%%WWWDIR%%/build.txt
+%%WWWDIR%%/config.sample.js
+%%WWWDIR%%/css/animate.min.css
+%%WWWDIR%%/css/bootstrap-responsive.min.css
+%%WWWDIR%%/css/bootstrap.dark.min.css
+%%WWWDIR%%/css/bootstrap.light.min.css
+%%WWWDIR%%/css/default.min.css
+%%WWWDIR%%/css/default.min.e3f50854.css
+%%WWWDIR%%/css/font-awesome.min.css
+%%WWWDIR%%/css/normalize.min.css
+%%WWWDIR%%/css/spectrum.css
+%%WWWDIR%%/css/timepicker.css
+%%WWWDIR%%/font/FontAwesome.otf
+%%WWWDIR%%/font/fontawesome-webfont.eot
+%%WWWDIR%%/font/fontawesome-webfont.svg
+%%WWWDIR%%/font/fontawesome-webfont.ttf
+%%WWWDIR%%/font/fontawesome-webfont.woff
+%%WWWDIR%%/img/cubes.png
+%%WWWDIR%%/img/glyphicons-halflings-white.png
+%%WWWDIR%%/img/glyphicons-halflings.png
+%%WWWDIR%%/img/kibana.png
+%%WWWDIR%%/img/light.png
+%%WWWDIR%%/img/load.gif
+%%WWWDIR%%/img/load_big.gif
+%%WWWDIR%%/img/small.png
+%%WWWDIR%%/index.html
+%%WWWDIR%%/test/karma.conf.js
+%%WWWDIR%%/test/mocks/dashboard-mock.js
+%%WWWDIR%%/test/specs/dashboardModel-specs.js
+%%WWWDIR%%/test/specs/filterSrv-specs.js
+%%WWWDIR%%/test/specs/gfunc-specs.js
+%%WWWDIR%%/test/specs/graph-panel-controller-specs.js
+%%WWWDIR%%/test/specs/graphiteTargetCtrl-specs.js
+%%WWWDIR%%/test/specs/influxSeries-specs.js
+%%WWWDIR%%/test/specs/kbn-format-specs.js
+%%WWWDIR%%/test/specs/lexer-specs.js
+%%WWWDIR%%/test/specs/parser-specs.js
+%%WWWDIR%%/test/test-main.js
+%%WWWDIR%%/test/tests.html
+%%WWWDIR%%/vendor/angular/angular-mocks.js
+%%WWWDIR%%/vendor/jquery/jquery.flot.fillbetween.js
+%%WWWDIR%%/vendor/license.json
+%%WWWDIR%%/vendor/require/css-build.js
+%%WWWDIR%%/vendor/require/require.js
+%%WWWDIR%%/vendor/require/tmpl.js
+@dirrmtry %%WWWDIR%%/app/components
+@dirrmtry %%WWWDIR%%/app/dashboards
+@dirrmtry %%WWWDIR%%/app/panels/annotations
+@dirrmtry %%WWWDIR%%/app/panels/filtering
+@dirrmtry %%WWWDIR%%/app/panels/graph
+@dirrmtry %%WWWDIR%%/app/panels/text
+@dirrmtry %%WWWDIR%%/app/panels/timepicker
+@dirrmtry %%WWWDIR%%/app/panels
+@dirrmtry %%WWWDIR%%/app/partials/elasticsearch
+@dirrmtry %%WWWDIR%%/app/partials/graphite
+@dirrmtry %%WWWDIR%%/app/partials/influxdb
+@dirrmtry %%WWWDIR%%/app/partials/opentsdb
+@dirrmtry %%WWWDIR%%/app/partials
+@dirrmtry %%WWWDIR%%/app
+@dirrmtry %%WWWDIR%%/css
+@dirrmtry %%WWWDIR%%/font
+@dirrmtry %%WWWDIR%%/img
+@dirrmtry %%WWWDIR%%/test/mocks
+@dirrmtry %%WWWDIR%%/test/specs
+@dirrmtry %%WWWDIR%%/test
+@dirrmtry %%WWWDIR%%/vendor/angular
+@dirrmtry %%WWWDIR%%/vendor/jquery
+@dirrmtry %%WWWDIR%%/vendor/require
+@dirrmtry %%WWWDIR%%/vendor
+@dirrmtry %%WWWDIR%%
