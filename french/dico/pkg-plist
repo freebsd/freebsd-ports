@@ -1,4 +1,5 @@
 bin/dico
+man/man1/dico.1.gz
 %%DATADIR%%/a.dic
 %%DATADIR%%/b.dic
 %%DATADIR%%/c.dic
