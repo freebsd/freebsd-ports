@@ -1806,6 +1806,7 @@
 %%WWWDIR%%/test/unit/lib/redmine/codeset_util_test.rb
 %%WWWDIR%%/test/unit/lib/redmine/configuration_test.rb
 %%WWWDIR%%/test/unit/lib/redmine/export/pdf_test.rb
+%%WWWDIR%%/test/unit/lib/redmine/field_format/bool_format_test.rb
 %%WWWDIR%%/test/unit/lib/redmine/field_format/field_format_test.rb
 %%WWWDIR%%/test/unit/lib/redmine/field_format/link_format_test.rb
 %%WWWDIR%%/test/unit/lib/redmine/field_format/list_format_test.rb
