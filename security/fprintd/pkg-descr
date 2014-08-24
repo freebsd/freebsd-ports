@@ -1,0 +1,13 @@
+Fprintd is a D-Bus daemon that offers libfprint functionality over
+the D-Bus interprocess communication bus. By adding this daemon
+layer above libfprint, we solve various problems related to multiple
+applications simulatenously competing for fingerprint readers.
+
+While it is not very nice to think of a daemon being necessary in
+this scenario, fprintd will be launched by D-Bus through the
+activation mechanism. This means it is launched only when needed,
+and additionally it will shut itself down after a period of inactivity.
+
+(Text copied from link below.)
+
+WWW: http://www.freedesktop.org/wiki/Software/fprint/fprintd/
