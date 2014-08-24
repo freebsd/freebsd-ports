@@ -11,6 +11,8 @@ MASTER_SITE_SUBDIR=	marcel
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	Linux-compatibility ktrace.out processor
 
+BROKEN=		Fails to build with new linux_base-gentoo-stage3
+
 BUILD_DEPENDS=	${LINUXBASE}/usr/bin/gcc:${PORTSDIR}/emulators/linux_base-gentoo-stage3
 
 USES=		uidfix
