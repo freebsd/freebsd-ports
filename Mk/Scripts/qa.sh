@@ -126,7 +126,7 @@ paths() {
 		rc=1
 	# Use heredoc to avoid losing rc from find|while subshell
 	done <<-EOF
-	$(find ${STAGEDIR} -type f -exec grep -l "${STAGEDIR}" {} +)
+	$(find ${TMPPLIST} ${STAGEDIR} -type f -exec grep -l "${STAGEDIR}" {} +)
 	EOF
 
 	return ${rc}
