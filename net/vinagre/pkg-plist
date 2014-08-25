@@ -25,11 +25,8 @@ include/vinagre-1.0/vinagre/vinagre-tab.h
 include/vinagre-1.0/vinagre/vinagre-ui.h
 include/vinagre-1.0/vinagre/vinagre-utils.h
 include/vinagre-1.0/vinagre/vinagre-window.h
-lib/vinagre-1/plugin-loaders/libcloader.la
 lib/vinagre-1/plugin-loaders/libcloader.so
-lib/vinagre-1/plugins/libssh.la
 lib/vinagre-1/plugins/libssh.so
-lib/vinagre-1/plugins/libvnc.la
 lib/vinagre-1/plugins/libvnc.so
 lib/vinagre-1/plugins/ssh.vinagre-plugin
 lib/vinagre-1/plugins/vnc.vinagre-plugin
