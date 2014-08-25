@@ -530,6 +530,7 @@
     SUBDIR += php55-bcmath
     SUBDIR += php55-gmp
     SUBDIR += physcalc
+    SUBDIR += picosat
     SUBDIR += plman
     SUBDIR += ploticus
     SUBDIR += ploticus-nox11
@@ -571,6 +572,7 @@
     SUBDIR += py-plastex
     SUBDIR += py-probstat
     SUBDIR += py-pybloom
+    SUBDIR += py-pycosat
     SUBDIR += py-pymc
     SUBDIR += py-roman
     SUBDIR += py-scientific

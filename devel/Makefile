@@ -3463,7 +3463,6 @@
     SUBDIR += phptags
     SUBDIR += physfs
     SUBDIR += physfs-devel
-    SUBDIR += picosat
     SUBDIR += picp
     SUBDIR += picprog
     SUBDIR += piklab
@@ -3831,7 +3830,6 @@
     SUBDIR += py-pycalendar
     SUBDIR += py-pycallgraph
     SUBDIR += py-pycerberus
-    SUBDIR += py-pycosat
     SUBDIR += py-pycparser
     SUBDIR += py-pydasm
     SUBDIR += py-pyechonest
