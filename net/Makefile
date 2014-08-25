@@ -207,6 +207,7 @@
     SUBDIR += hping-devel
     SUBDIR += hs-connection
     SUBDIR += hs-gsasl
+    SUBDIR += hs-hoauth2
     SUBDIR += hs-hostname
     SUBDIR += hs-iproute
     SUBDIR += hs-maccatcher
