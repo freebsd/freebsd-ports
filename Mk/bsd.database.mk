@@ -240,6 +240,9 @@ _WANT_PGSQL_VER+=${version}
 .      endfor
 .    endif
 _WANT_PGSQL_VER?=	${WANT_PGSQL_VER}
+DEV_WARNING+=		"Do not use USE_PGSQL.  This port should use USES+= pgsql:${WANT_PGSQL_VER:C,^[0-9],&.,}"
+.  else
+DEV_WARNING+=		"Do not use USE_PGSQL.  This port should use USES+= pgsql"
 .  endif
 
 .  if !empty(_WANT_PGSQL_VER)
@@ -287,10 +290,16 @@ _USE_PGSQL_DEP_server=	postgres
 .    if ${USE_PGSQL:M${depend}}
 BUILD_DEPENDS+=	${_USE_PGSQL_DEP_${depend}}:${PORTSDIR}/databases/postgresql${PGSQL_VER}-${depend}
 RUN_DEPENDS+=	${_USE_PGSQL_DEP_${depend}}:${PORTSDIR}/databases/postgresql${PGSQL_VER}-${depend}
+_PGSQL_DEV_WARN+=	${depend}
 .    elif ${USE_PGSQL:M${depend}\:*}
 BUILD_DEPENDS+=	${NONEXISTENT}:${PORTSDIR}/databases/postgresql${PGSQL_VER}-${depend}:${USE_PGSQL:M${depend}\:*:C,^[^:]*\:,,}
+_PGSQL_DEV_WARN+=	${depend}:${USE_PGSQL:M${depend}\:*:C,^[^:]*\:,,}
 .    endif
 .  endfor
+
+.  ifdef _PGSQL_DEV_WARN
+DEV_WARNING+=	"and WANT_PGSQL= ${_PGSQL_DEV_WARN}"
+.  endif
 
 .else
 IGNORE?=		cannot install: unknown PostgreSQL version: ${PGSQL_VER}
