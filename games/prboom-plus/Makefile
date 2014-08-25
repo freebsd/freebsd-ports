@@ -7,7 +7,7 @@ CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	thiagohero501@gmail.com
-COMMENT=	A fork of the doom game engine prboom
+COMMENT=	Fork of the prboom Doom game engine
 
 LICENSE=	GPLv2
 
