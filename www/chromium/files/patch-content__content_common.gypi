@@ -1,6 +1,6 @@
---- ./content/content_common.gypi.orig	2014-08-12 21:01:27.000000000 +0200
-+++ ./content/content_common.gypi	2014-08-13 09:56:57.000000000 +0200
-@@ -559,6 +559,21 @@
+--- ./content/content_common.gypi.orig	2014-08-20 21:02:50.000000000 +0200
++++ ./content/content_common.gypi	2014-08-22 15:06:25.000000000 +0200
+@@ -598,6 +598,21 @@
          'content.gyp:common_aidl',
        ],
      }],

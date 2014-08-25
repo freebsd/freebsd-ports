@@ -1,5 +1,5 @@
---- ./third_party/WebKit/Source/platform/blink_platform.gyp.orig	2014-08-12 21:07:17.000000000 +0200
-+++ ./third_party/WebKit/Source/platform/blink_platform.gyp	2014-08-13 09:56:58.000000000 +0200
+--- ./third_party/WebKit/Source/platform/blink_platform.gyp.orig	2014-08-20 21:07:58.000000000 +0200
++++ ./third_party/WebKit/Source/platform/blink_platform.gyp	2014-08-22 15:06:26.000000000 +0200
 @@ -38,6 +38,9 @@
    'targets': [{
      'target_name': 'blink_common',
@@ -10,7 +10,7 @@
      'variables': { 'enable_wexit_time_destructors': 1 },
      'dependencies': [
        '../config.gyp:config',
-@@ -246,7 +249,7 @@
+@@ -249,7 +252,7 @@
      # compiler optimizations, see crbug.com/237063
      'msvs_disabled_warnings': [ 4267, 4334, 4724 ],
      'conditions': [
@@ -19,7 +19,7 @@
          'sources/': [
            # Cherry-pick files excluded by the broader regular expressions above.
            ['include', 'fonts/harfbuzz/FontHarfBuzz\\.cpp$'],
-@@ -266,7 +269,7 @@
+@@ -269,7 +272,7 @@
            ['exclude', 'Harfbuzz[^/]+\\.(cpp|h)$'],
          ],
        }],
@@ -28,7 +28,7 @@
          'sources/': [
            ['include', 'fonts/linux/FontPlatformDataLinuxHarfBuzz\\.cpp$'],
          ]
-@@ -363,7 +366,7 @@
+@@ -366,7 +369,7 @@
            ['exclude', 'fonts/harfbuzz/HarfBuzzFaceCoreText\\.cpp$'],
          ],
        }],
@@ -37,7 +37,7 @@
          'sources/': [
            ['exclude', 'VDMX[^/]+\\.(cpp|h)$'],
          ],
-@@ -409,7 +412,7 @@
+@@ -412,7 +415,7 @@
            ['exclude', 'Android\\.cpp$'],
          ],
        }],

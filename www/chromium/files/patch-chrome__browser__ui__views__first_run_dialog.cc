@@ -1,5 +1,5 @@
---- ./chrome/browser/ui/views/first_run_dialog.cc.orig	2014-08-12 21:01:38.000000000 +0200
-+++ ./chrome/browser/ui/views/first_run_dialog.cc	2014-08-13 09:56:56.000000000 +0200
+--- ./chrome/browser/ui/views/first_run_dialog.cc.orig	2014-08-20 21:02:04.000000000 +0200
++++ ./chrome/browser/ui/views/first_run_dialog.cc	2014-08-22 15:06:25.000000000 +0200
 @@ -124,12 +124,16 @@
  bool FirstRunDialog::Accept() {
    GetWidget()->Hide();

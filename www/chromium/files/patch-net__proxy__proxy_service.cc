@@ -1,6 +1,6 @@
---- ./net/proxy/proxy_service.cc.orig	2014-08-12 21:02:40.000000000 +0200
-+++ ./net/proxy/proxy_service.cc	2014-08-13 09:56:58.000000000 +0200
-@@ -39,7 +39,7 @@
+--- ./net/proxy/proxy_service.cc.orig	2014-08-20 21:02:28.000000000 +0200
++++ ./net/proxy/proxy_service.cc	2014-08-22 15:06:26.000000000 +0200
+@@ -41,7 +41,7 @@
  #elif defined(OS_MACOSX)
  #include "net/proxy/proxy_config_service_mac.h"
  #include "net/proxy/proxy_resolver_mac.h"
@@ -9,7 +9,7 @@
  #include "net/proxy/proxy_config_service_linux.h"
  #elif defined(OS_ANDROID)
  #include "net/proxy/proxy_config_service_android.h"
-@@ -1382,7 +1382,7 @@
+@@ -1379,7 +1379,7 @@
               << "profile_io_data.cc::CreateProxyConfigService and this should "
               << "be used only for examples.";
    return new UnsetProxyConfigService;
