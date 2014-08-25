@@ -1,0 +1,4 @@
+Setup signal handler which dumps backtrace of running threads and number of
+allocated objects per class.
+
+WWW: https://github.com/frsyuki/sigdump
