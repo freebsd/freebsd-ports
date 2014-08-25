@@ -116,6 +116,7 @@ PLIST_SUB+=	AVCODEC="@comment "
 
 .if ${PORT_OPTIONS:MCDDA}
 LIB_DEPENDS+=	libcdio.so:${PORTSDIR}/sysutils/libcdio \
+		libcdio_cdda.so:${PORTSDIR}/sysutils/libcdio-paranoia \
 		libdiscid.so:${PORTSDIR}/audio/libdiscid
 PLIST_SUB+=	CDDA=""
 .else
