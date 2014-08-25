@@ -1,0 +1,12 @@
+--- svtools/Library_svt.mk.orig	2014-02-25 00:28:36.000000000 -0800
++++ svtools/Library_svt.mk	2014-08-04 21:40:00.000000000 -0700
+@@ -76,6 +76,9 @@
+ $(eval $(call gb_Library_set_ldflags,svt,\
+ 	$$(filter-out -L/usr/lib/jvm%,$$(LDFLAGS)) \
+ ))
++$(eval $(call gb_Library_set_ldflags,svt,\
++	$$(shell echo $$(LDFLAGS) | sed 's/ -L[^ ]*\/jre\/lib\/[^ ]*//g') \
++))
+ ifeq ($(GUIBASE),os2)
+ # YD FIXME above is not working... needs ldflags hack...
+ $(eval $(call gb_Library_set_ldflags,svt,\
