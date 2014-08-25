@@ -183,6 +183,7 @@ share/icons/hicolor/48x48/apps/xbmc.png
 %%DATADIR%%/addons/metadata.common.amazon.de/amazonde.xml
 %%DATADIR%%/addons/metadata.common.fanart.tv/addon.xml
 %%DATADIR%%/addons/metadata.common.fanart.tv/fanarttv.xml
+%%DATADIR%%/addons/metadata.common.fanart.tv/icon.png
 %%DATADIR%%/addons/metadata.common.hdtrailers.net/addon.xml
 %%DATADIR%%/addons/metadata.common.hdtrailers.net/hdtrailers.xml
 %%DATADIR%%/addons/metadata.common.hdtrailers.net/icon.png
@@ -470,6 +471,7 @@ share/icons/hicolor/48x48/apps/xbmc.png
 %%DATADIR%%/addons/service.xbmc.versioncheck/lib/shellhandlerapt.py
 %%DATADIR%%/addons/service.xbmc.versioncheck/lib/versions.py
 %%DATADIR%%/addons/service.xbmc.versioncheck/lib/viewer.py
+%%DATADIR%%/addons/service.xbmc.versioncheck/resources/gotham-alpha_notice.txt
 %%DATADIR%%/addons/service.xbmc.versioncheck/resources/language/Afrikaans/strings.po
 %%DATADIR%%/addons/service.xbmc.versioncheck/resources/language/Albanian/strings.po
 %%DATADIR%%/addons/service.xbmc.versioncheck/resources/language/Amharic/strings.po
