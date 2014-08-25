@@ -24,6 +24,10 @@ PLIST_REINPLACE_WINELIB=	s!lib/!lib32/!g
 WINE_SLAVE_BUILD=	yes
 USE_LDCONFIG32=	${WINELIBDIR} ${WINELIBDIR}/wine
 
+.if !defined(WINE_CROSS_BUILD)
+IGNORE=		This port is not for consumption on FreeBSD/i386.  To cross-build for FreeBSD/amd64: make -DWINE_CROSS_BUILD
+.endif
+
 # Hook into post-install and do some adapting to make i386 binaries work nicely
 # under FreeBSD/amd64
 post-install-script:
@@ -33,11 +37,24 @@ post-install-script:
 		[ "$${i}" = "wine" ] || ${LN} -f ${STAGEDIR}${PREFIX}/bin/wine ${STAGEDIR}${PREFIX}/bin/$${i} ; \
 		echo bin32/$${i} >> ${TMPPLIST} ; \
 	done
+	# Install libGL
+	${INSTALL_DATA} ${LOCALBASE}/lib/libGL.so.1 ${STAGEDIR}${PREFIX}/lib32/.libGL/	
+	echo lib32/.libGL/libGL.so.1 >> ${TMPPLIST}
 	# Install dri libraries (internal libGL requirements)
 	${MKDIR} ${STAGEDIR}${PREFIX}/lib32/.libGL/dri
 	for i in ${LOCALBASE}/lib/dri/*.so; do \
 		${INSTALL_DATA} $${i} ${STAGEDIR}${PREFIX}/lib32/.libGL/dri/ ; \
 		echo lib32/.libGL/dri/$${i##*/} >> ${TMPPLIST} ; \
+	done
+	# Find all soft dependencies (via strings(1))
+	grep -v '[@%]' ${TMPPLIST} | sed "s!^!${STAGEDIR}${PREFIX}/!g" | \
+	xargs -n1 file -F' ' | grep ELF | cut -f1 -d' ' | xargs strings | \
+	grep '^lib.*\.so' | sort -u > ${WRKDIR}/winesoftlibs
+	for i in `cat ${WRKDIR}/winesoftlibs` ; do \
+		if [ -e ${LOCALBASE}/lib/$${i} ] && [ -z "`grep $${i} ${TMPPLIST}`" ]; then \
+			${INSTALL_DATA} ${LOCALBASE}/lib/$${i} ${STAGEDIR}${PREFIX}/lib32/ ; \
+			echo lib32/$${i} >> ${TMPPLIST} ; \
+		fi ; \
 	done
 	# Find all libraries that are linked too (via ldd(1))
 	grep -v '[@%]' ${TMPPLIST} | sed "s!^!${STAGEDIR}${PREFIX}/!g" | \
@@ -46,22 +63,9 @@ post-install-script:
 	| sort -u | grep -v '^\(/usr\)\?/lib' | grep -v "^${STAGEDIR}${PREFIX}/lib32/libwine.so" \
 	| grep -v "^${STAGEDIR}${PREFIX}/lib32/wine" > ${WRKDIR}/winelibs
 	for i in `cat ${WRKDIR}/winelibs` ; do \
-		if [ `basename $${i}` != libGL.so.1 ]; then \
+		if [ -z "`grep $${i##*/} ${TMPPLIST}`" ]; then \
 			${INSTALL_DATA} $${i} ${STAGEDIR}${PREFIX}/lib32/ ; \
 			echo lib32/$${i##*/} >> ${TMPPLIST} ; \
-		else \
-			${INSTALL_DATA} $${i} ${STAGEDIR}${PREFIX}/lib32/.libGL/ ; \
-			echo lib32/.libGL/libGL.so.1 >> ${TMPPLIST} ; \
-		fi ; \
-	done
-	# Find all soft dependancies (via strings(1))
-	grep -v '[@%]' ${TMPPLIST} | sed "s!^!${STAGEDIR}${PREFIX}/!g" | \
-	xargs -n1 file -F' ' | grep ELF | cut -f1 -d' ' | xargs strings | \
-	grep '^lib.*\.so' | sort -u > ${WRKDIR}/winesoftlibs
-	for i in `cat ${WRKDIR}/winesoftlibs` ; do \
-		if [ -e ${LOCALBASE}/lib/$${i} ] && [ -z "`grep $${i} ${TMPPLIST}`" ] ; then \
-			${INSTALL_DATA} ${LOCALBASE}/lib/$${i} ${STAGEDIR}${PREFIX}/lib32/ ; \
-			echo lib32/$${i} >> ${TMPPLIST} ; \
 		fi ; \
 	done
 	echo '@dirrm lib32/.libGL/dri' >> ${TMPPLIST}
