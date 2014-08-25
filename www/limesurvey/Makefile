@@ -25,7 +25,7 @@ ZIP_DESC=		Install PHP zip extension
 
 # http://docs.limesurvey.org/Installation&structure=English+Instructions+for+LimeSurvey#Make_sure_you_can_use_LimeSurvey_on_your_website
 .if ${PORT_OPTIONS:MPGSQL}
-USE_PGSQL=	yes
+USES+=		pgsql
 USE_PHP=	pgsql
 .else
 # server is not necessary on this host.

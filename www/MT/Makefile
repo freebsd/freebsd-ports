@@ -101,7 +101,8 @@ DB_DIR?=	${BASEDIR}/var/db/mysql/WEBLOG_DATABASEDIR
 RUN_DEPENDS+=	p5-DBD-mysql>=2.9005:${PORTSDIR}/databases/p5-DBD-mysql
 .endif
 .if ${PORT_OPTIONS:MPGSQL}
-USE_PGSQL=	server
+USES+=	pgsql
+WANT_PGSQL=	server
 RUN_DEPENDS+=	p5-DBD-Pg>=1.32:${PORTSDIR}/databases/p5-DBD-Pg
 .endif
 .if empty(PORT_OPTIONS:MPGSQL) && empty(PORT_OPTIONS:MMYSQL)

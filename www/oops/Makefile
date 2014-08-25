@@ -56,6 +56,9 @@ DB4_DESC=	Berkeley DB v4 storage
 MYSQL_DESC=	MySQL auth support
 PGSQL_DESC=	PostgreSQL auth support
 
+PGSQL_USES=		pgsql
+PGSQL_CONFIGURE_ARGS=	--with-PGSQL=${PREFIX}/pgsql
+
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGIGABASE}
@@ -71,11 +74,6 @@ CONFIGURE_ARGS+=	--without-GB
 .if ${PORT_OPTIONS:MMYSQL}
 USE_MYSQL=		YES
 CONFIGURE_ARGS+=	--with-MYSQL=${PREFIX}
-.endif
-
-.if ${PORT_OPTIONS:MPGSQL}
-USE_PGSQL=		YES
-CONFIGURE_ARGS+=	--with-PGSQL=${PREFIX}/pgsql
 .endif
 
 .if ${PORT_OPTIONS:MPCRE}

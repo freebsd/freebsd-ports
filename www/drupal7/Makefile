@@ -31,6 +31,9 @@ DOCS=		CHANGELOG.txt INSTALL.mysql.txt INSTALL.sqlite.txt \
 SUB_FILES+=	pkg-message
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
+PGSQL_USES=	pgsql
+PGSQL_USE=	PHP=pdo_pgsql
+
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MSQLITE3}
@@ -39,10 +42,6 @@ USE_PHP+=	pdo_sqlite
 .if ${PORT_OPTIONS:MMYSQL}
 USE_MYSQL=	yes
 USE_PHP+=	pdo_mysql
-.endif
-.if ${PORT_OPTIONS:MPGSQL}
-USE_PGSQL=	yes
-USE_PHP+=	pdo_pgsql
 .endif
 
 do-install:

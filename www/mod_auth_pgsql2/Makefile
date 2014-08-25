@@ -11,7 +11,7 @@ PKGNAMESUFFIX=	2
 MAINTAINER=	apache@FreeBSD.org
 COMMENT=	Allows users to use PostgreSQL databases for user authentication
 
-USE_PGSQL=	yes
+USES=		pgsql
 USE_APACHE=	22
 
 AP_INC?=	${LOCALBASE}/include

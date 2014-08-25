@@ -32,7 +32,7 @@ USE_MYSQL=	yes
 
 .if ${PORT_OPTIONS:MPGSQL}
 USE_PHP+=	pgsql
-USE_PGSQL=	yes
+USES+=		pgsql
 .endif
 
 post-extract:
