@@ -3,50 +3,56 @@
 
 PORTNAME=	bsdadminscripts
 PORTVERSION=	6.1.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	sysutils ports-mgmt
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	cpm@fbsd.es
 COMMENT=	Collection of administration scripts
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/src
-NO_BUILD=	yes
-MANCOMPRESSED=	yes
+LICENSE=	BSD2CLAUSE
 
-NO_STAGE=	yes
+NO_BUILD=	yes
+PORTDOCS=	ABOUT CHANGES INSTALL NOTES THANKS
 
 OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MDOCS}
-MAN1=		bsdadminscripts.1 \
-		buildflags.mk.1 buildflags.conf.1 buildflags.awk.1 \
-		distviper.1 \
-		pkg_libchk.1 \
-		pkg_upgrade.1 \
-		pkg_validate.1 \
-		portconfig.1 \
-		rcstart.1 \
-		uma.1
-
-RC_SCRIPTS=	stop restart status onestart onestop onerestart onestatus
-PORT_SCRIPTS=	build clean fetch package \
-		config-recursive fetch-recursive
-MLINKS+=	${RC_SCRIPTS:S,^,rc,:S,$,.1,:S,^,rcstart.1 ,} \
-		${PORT_SCRIPTS:S,^,port,:S,$,.1,:S,^,portconfig.1 ,}
-.else
+.if ! ${PORT_OPTIONS:MDOCS}
 EVALDOCS=	-nodoc
 .endif
 
-plist: patch
-	@cd ${WRKSRC}; ./plist.sh -nodoc > ${PLIST}
-	@${ECHO} "@dirrm ${DATADIR_REL}" >> ${PLIST}
-
 do-install:
-	@cd ${WRKSRC}; ./install.sh \
-		-prefix=${PREFIX} -ports=${PORTSDIR} -distdir=${DISTDIR}  \
-		-datadir=${DATADIR} ${EVALDOCS}
+	cd ${WRKSRC}/src && ${SH} install.sh \
+		-prefix=${STAGEDIR}${PREFIX} \
+		-ports=${STAGEDIR}${PORTSDIR} \
+		-distdir=${STAGEDIR}${DISTDIR} \
+		-datadir=${STAGEDIR}${DATADIR} \
+		${EVALDOCS}
+.for n in pkg_libchk pkg_upgrade uma
+	${INSTALL_DATA} ${WRKSRC}/src/${n} ${STAGEDIR}${PREFIX}/sbin
+.endfor
+	${INSTALL_DATA} ${WRKSRC}/src/buildflags.mk ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/src/buildflags.conf.sample \
+		${STAGEDIR}${PREFIX}/etc
+	${INSTALL_DATA} ${WRKSRC}/src/uma.conf.sample ${STAGEDIR}${PREFIX}/etc
+.for f in bsdadminscripts buildflags.awk buildflags.conf buildflags.mk \
+	distviper pkg_libchk pkg_upgrade pkg_validate portconfig rcstart uma
+	${INSTALL_MAN} ${WRKSRC}/src/${f}.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
+.endfor
+
+post-install:
+	${MKDIR} ${STAGEDIR}${ETCDIR}
+	${MV} ${STAGEDIR}${PREFIX}/etc/*.sample ${STAGEDIR}${ETCDIR}
+	${RM} -rf ${STAGEDIR}${PREFIX}/etc/*.sample
+.if ${PORT_OPTIONS:MDOCS}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
+.endif
+
+plist:
+	cd ${WRKSRC}/src && ${SH} plist.sh > ${PLIST}
+		${ECHO} "@dirrm ${DATADIR_REL}" >> ${PLIST}
 
 .include <bsd.port.mk>
