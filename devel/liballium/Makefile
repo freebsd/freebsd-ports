@@ -25,6 +25,8 @@ PLIST_SUB+=	PKGNAME=${PKGNAME}
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
+OPTIONS_DEFINE=	DOCS
+
 post-patch:
 	@${REINPLACE_CMD} -E -e "s@^(pkgconfigdir =) .*@\1 ${LOCALBASE}/libdata/pkgconfig@" \
 		${WRKSRC}/Makefile.am
