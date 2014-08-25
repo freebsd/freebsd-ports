@@ -140,7 +140,7 @@ you update your ports collection, before attempting any port upgrades.
   First manually remove the ajaxplorer port and install www/pydio
   afterwards.
 
-  Further steps will be avbailable in the pkg-message, which can
+  Further steps will be available in the pkg-message, which can
   be shown with these commands:
 
   # pkg info -D pydio
