@@ -32,7 +32,8 @@ EXTRACT_AFTER_ARGS=	-C / --exclude +COMPACT_MANIFEST --exclude +MANIFEST \
 NO_BUILD=	yes
 ONLY_FOR_ARCHS=	i386 amd64
 ONLY_FOR_ARCHS_REASON=	wine only runs on x86 architecture
-PKGINSTALL=	${.CURDIR}/files/pkg-install
+SLAVEDIR?=	${.CURDIR}
+PKGINSTALL=	${SLAVEDIR}/files/pkg-install
 PKGDEINSTALL=	${PKGINSTALL}
 PKGMESSAGE=	${WRKDIR}/pkg-message
 SUB_FILES=	pkg-message
@@ -71,18 +72,18 @@ ${PLIST}: fetch
 	${TAR} -tf ${_DISTDIR}/${EXTRACT_ONLY} ${EXTRACT_AFTER_ARGS} | ${GREP} '/$$' | ${SED} -e 's|/usr/local/\(.*\)/$$|@dirrm \1|g' -e 's|/$$||g' -e 's|@dirrm man|@dirrmtry man|g' | sort -r >> ${PLIST}
 
 port-update:
-	${RM} -f ${.CURDIR}/distinfo ${.CURDIR}/distinfo~ ${.CURDIR}/pkg-plist.*
+	${RM} -f ${SLAVEDIR}/distinfo ${SLAVEDIR}/distinfo~ ${SLAVEDIR}/pkg-plist.*
 .for osrel in 8 9 10 11
 .for suffix in -devel -compholio
 	${MAKE} fetch OSREL=${osrel} PKGNAMESUFFIX=${suffix}
 	${MAKE} makesum OSREL=${osrel} PKGNAMESUFFIX=${suffix}
-	${CAT} ${.CURDIR}/distinfo >> ${.CURDIR}/distinfo~
-	${RM} ${.CURDIR}/distinfo
+	${CAT} ${SLAVEDIR}/distinfo >> ${SLAVEDIR}/distinfo~
+	${RM} ${SLAVEDIR}/distinfo
 	[ "${suffix}" != "-devel" ] || ${MAKE} pkg-plist.${osrel} PLIST=pkg-plist.${osrel} OSREL=${osrel}
 .endfor
 .endfor
-	${MV} ${.CURDIR}/distinfo~ ${.CURDIR}/distinfo
-	python ${FILESDIR}/mergeplist.py ${.CURDIR}/pkg-plist.* > ${PLIST}
-	${RM} ${.CURDIR}/pkg-plist.*
+	${MV} ${SLAVEDIR}/distinfo~ ${SLAVEDIR}/distinfo
+	python ${FILESDIR}/mergeplist.py ${SLAVEDIR}/pkg-plist.* > ${PLIST}
+	${RM} ${SLAVEDIR}/pkg-plist.*
 
 .include <bsd.port.post.mk>
