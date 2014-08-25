@@ -2,6 +2,7 @@
 
 PORTNAME=	libass
 PORTVERSION=	0.11.2
+PORTREVISION=	1
 CATEGORIES=	multimedia devel
 
 MAINTAINER=	multimedia@FreeBSD.org
@@ -16,7 +17,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	${PORTNAME}
 GH_COMMIT=	03a9c6c
 
-USES=		libtool:keepla pathfix pkgconfig tar:xz
+USES=		libtool pathfix pkgconfig tar:xz
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	aclocal autoconf autoheader automake libtoolize
 AUTOMAKE_ARGS=	--add-missing
