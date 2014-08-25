@@ -8,7 +8,7 @@ MASTER_SITES=	http://3proxy.ru/${PORTVERSION}/ \
 		http://security.nnov.ru/soft/3proxy/${PORTVERSION}/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	osa@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Proxy servers set (support HTTP(S), FTP, SOCKS, POP3, TCP & UDP)
 
 CONFLICTS=	libproxy-[0-9]*

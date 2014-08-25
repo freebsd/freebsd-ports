@@ -10,7 +10,7 @@ MASTER_SITES=	http://caml.inria.fr/pub/distrib/caml-light-0.75/ \
 
 DISTNAME=	cl75unix
 
-MAINTAINER=	michael.grunewald@laposte.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Strongly typed functional language belonging to the ML family
 
 USE_XORG=	x11

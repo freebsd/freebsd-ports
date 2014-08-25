@@ -7,7 +7,7 @@ PORTREVISION=	9
 CATEGORIES=	net-im
 MASTER_SITES=	http://www4.infi.net/~cpinkham/gyach/code/
 
-MAINTAINER?=	aaron@snaphat.com
+MAINTAINER?=	ports@FreeBSD.org
 COMMENT=	Gyach is a GTK+ based Yahoo! Chat client
 
 GNU_CONFIGURE=	yes
