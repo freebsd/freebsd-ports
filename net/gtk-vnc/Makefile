@@ -3,7 +3,7 @@
 
 PORTNAME=	gtk-vnc
 PORTVERSION=	0.3.10
-PORTREVISION=	12
+PORTREVISION=	13
 CATEGORIES=	net gnome
 MASTER_SITES=	GNOME
 
@@ -18,7 +18,7 @@ LIB_DEPENDS=	libgnutls.so:${PORTSDIR}/security/gnutls \
 CONFLICTS=	gtk-vnc-0.4.[0-9]*
 
 USE_GNOME=	pygtk2
-USES=		gettext gmake libtool:keepla pathfix pkgconfig
+USES=		gettext gmake libtool pathfix pkgconfig
 USE_LDCONFIG=	yes
 USE_PYTHON=	yes
 GNU_CONFIGURE=	yes
