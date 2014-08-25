@@ -532,8 +532,6 @@ share/locale/zh_TW/LC_MESSAGES/libgda-%%VERSION%%.mo
 @dirrm share/libgda-%%VERSION%%/
 @dirrm share/gnome/help/gda-sql/C
 @dirrm share/gnome/help/gda-sql
-@dirrmtry share/gnome/help
-@dirrmtry share/gnome
 @dirrm share/doc/libgda-%%VERSION%%
 @dirrm lib/libgda-%%VERSION%%/providers
 @dirrm lib/libgda-%%VERSION%%
