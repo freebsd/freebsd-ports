@@ -94,6 +94,6 @@ PKG_BIN=	${WRKSRC}/src/pkg-static
 post-install:
 	@${MV} ${STAGEDIR}${PREFIX}/lib/libpkg_static.a \
 		${STAGEDIR}${PREFIX}/lib/libpkg.a
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libpkg.so.2
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libpkg.so.3
 
 .include <bsd.port.post.mk>
