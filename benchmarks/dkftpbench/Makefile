@@ -10,6 +10,8 @@ MASTER_SITES=	http://www.kegel.com/dkftpbench/
 MAINTAINER=	novel@FreeBSD.org
 COMMENT=	FTP benchmark program
 
+LICENSE=	GPLv2
+
 GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	automake14 autoconf
 
