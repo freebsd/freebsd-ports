@@ -23,6 +23,7 @@ USE_LDCONFIG=	yes
 USES=		libtool tar:xz
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-maintainer-mode
+INSTALL_TARGET=	install-strip
 
 # Use a submake as 'deinstall install' needs to reevaluate PKG_CMD
 # so that pkg-static is used from the wrkdir
@@ -33,10 +34,6 @@ EXTRA_PATCHES=	${FILESDIR}/extra-patch-docs_pkg.8
 .endif
 
 .include <bsd.port.pre.mk>
-
-.if defined(WITH_DEBUG) && !defined(WITHOUT_DEBUG)
-MAKE_ARGS+=	DEBUG_FLAGS="${DEBUG_FLAGS}"
-.endif
 
 .if defined(WITH_PKGNG)
 .if ${WITH_PKGNG} != devel
@@ -94,6 +91,5 @@ PKG_BIN=	${WRKSRC}/src/pkg-static
 post-install:
 	@${MV} ${STAGEDIR}${PREFIX}/lib/libpkg_static.a \
 		${STAGEDIR}${PREFIX}/lib/libpkg.a
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libpkg.so.3
 
 .include <bsd.port.post.mk>
