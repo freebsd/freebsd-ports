@@ -27,7 +27,6 @@
 %%DOCSDIR%%/%%DOCLANG%%/articles/linux-emulation/article.txt
 %%DOCSDIR%%/%%DOCLANG%%/articles/linux-users/article.txt
 %%DOCSDIR%%/%%DOCLANG%%/articles/mailing-list-faq/article.txt
-%%DOCSDIR%%/%%DOCLANG%%/articles/mh/article.txt
 %%DOCSDIR%%/%%DOCLANG%%/articles/nanobsd/article.txt
 %%DOCSDIR%%/%%DOCLANG%%/articles/new-users/article.txt
 %%DOCSDIR%%/%%DOCLANG%%/articles/p4-primer/article.txt

@@ -30,7 +30,6 @@
 @dirrmtry %%DOCSDIR%%/%%DOCLANG%%/articles/linux-emulation
 @dirrmtry %%DOCSDIR%%/%%DOCLANG%%/articles/linux-users
 @dirrmtry %%DOCSDIR%%/%%DOCLANG%%/articles/mailing-list-faq
-@dirrmtry %%DOCSDIR%%/%%DOCLANG%%/articles/mh
 @dirrmtry %%DOCSDIR%%/%%DOCLANG%%/articles/nanobsd/imagelib/callouts
 @dirrmtry %%DOCSDIR%%/%%DOCLANG%%/articles/nanobsd/imagelib
 @dirrmtry %%DOCSDIR%%/%%DOCLANG%%/articles/nanobsd

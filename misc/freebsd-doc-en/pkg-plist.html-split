@@ -226,11 +226,6 @@
 %%DOCSDIR%%/%%DOCLANG%%/articles/mailing-list-faq/etiquette.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/mailing-list-faq/index.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/mailing-list-faq/recurring.html
-%%DOCSDIR%%/%%DOCLANG%%/articles/mh/ar01s02.html
-%%DOCSDIR%%/%%DOCLANG%%/articles/mh/ar01s03.html
-%%DOCSDIR%%/%%DOCLANG%%/articles/mh/ar01s04.html
-%%DOCSDIR%%/%%DOCLANG%%/articles/mh/index.html
-%%DOCSDIR%%/%%DOCLANG%%/articles/mh/trademarks.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/nanobsd/howto.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/nanobsd/index.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/nanobsd/ix01.html
@@ -622,7 +617,6 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/fdp-primer/editor-config-nano.html
 %%DOCSDIR%%/%%DOCLANG%%/books/fdp-primer/editor-config.html
 %%DOCSDIR%%/%%DOCLANG%%/books/fdp-primer/examples-docbook-article.html
-%%DOCSDIR%%/%%DOCLANG%%/books/fdp-primer/examples-formatted.html
 %%DOCSDIR%%/%%DOCLANG%%/books/fdp-primer/examples.html
 %%DOCSDIR%%/%%DOCLANG%%/books/fdp-primer/index.html
 %%DOCSDIR%%/%%DOCLANG%%/books/fdp-primer/ix01.html
@@ -794,6 +788,7 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/ix01.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/jails-application.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/jails-build.html
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/jails-ezjail.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/jails-terms.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/jails-tuning.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/jails.html
@@ -957,11 +952,12 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/pmake/theway.html
 %%DOCSDIR%%/%%DOCLANG%%/books/pmake/variables.html
 %%DOCSDIR%%/%%DOCLANG%%/books/pmake/writeanddebug.html
-%%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/appendices.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/build-cluster.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/building.html
+%%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/bundled-libs.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/conflicts.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/dads-after-port-mk.html
+%%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/dads-arch-neutral.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/dads-avoiding-linuxisms.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/dads-cc.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/dads-cflags.html
@@ -977,7 +973,6 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/dads-sh-exec.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/dads-sysctl.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/distfile-survey.html
-%%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/freebsd-versions.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/handbook.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/index.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/install.html
@@ -1045,6 +1040,7 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/testing.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/trademarks.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/users-and-groups.html
+%%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/uses.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/using-autotools.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/using-databases.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/using-emacs.html
@@ -1066,4 +1062,5 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/using-wx.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/using-x11.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/using-xfce.html
+%%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/versions.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/why-port.html
