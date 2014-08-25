@@ -10,7 +10,7 @@ MASTER_SITES=	http://tomato.sakura.ne.jp/~amura/archives/ng/
 PATCH_SITES=	${MASTER_SITES}
 PATCHFILES=	ng-1.4.4-replace_bug.patch
 
-MAINTAINER?=	ginga-freebsd@ginganet.org
+MAINTAINER?=	ports@FreeBSD.org
 COMMENT?=	Light Emacs-clone with Japanese support
 
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}" LIBS="${LIBS}"

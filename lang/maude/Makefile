@@ -7,7 +7,7 @@ CATEGORIES=	lang
 MASTER_SITES=	http://maude.cs.uiuc.edu/versions/${PORTVERSION}/
 DISTNAME=	Maude-${PORTVERSION}
 
-MAINTAINER=	joemann@beefree.free.de
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	High-performance reflective language
 
 LIB_DEPENDS=	libbdd.so:${PORTSDIR}/science/buddy \

@@ -15,7 +15,7 @@ PATCH_SITES=	${MASTER_SITE_DEBIAN:S,%SUBDIR%,pool/main/e/egg,} \
 PATCHFILES=	egg_4.0.6+0.20041122cvs-19.diff.gz
 PATCH_DIST_STRIP=	-p1
 
-MAINTAINER=	hrs@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The Multilingual Input Method - Egg V4
 
 LICENSE=	GPLv2

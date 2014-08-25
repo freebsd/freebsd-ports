@@ -7,7 +7,7 @@ PORTREVISION=	6
 CATEGORIES=	devel graphics multimedia
 MASTER_SITES=	SF
 
-MAINTAINER=	dhn@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Vector based 2D animation package
 
 # update to 0.64.1 does pick up ImageMagick correctly but there are a 

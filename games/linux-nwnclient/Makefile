@@ -15,7 +15,7 @@ PKGNAMEPREFIX=	linux-
 DISTFILES=	${CLIENT_FILES} \
 		${CLIENT_NWMOVIES}
 
-MAINTAINER=	scf@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Neverwinter Nights Linux (x86) Client
 
 RUN_DEPENDS=	${LOCALBASE}/share/nwndata/docs/readme.txt:${PORTSDIR}/games/nwndata

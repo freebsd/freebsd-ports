@@ -6,7 +6,7 @@ PORTVERSION=	1.5.3
 CATEGORIES=	devel java editors
 MASTER_SITES=	SF/${PORTNAME}/01_EclEmma_Releases/${PORTVERSION}
 
-MAINTAINER=	kamikaze@bsdforen.de
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Java code coverage tool for Eclipse
 
 RUN_DEPENDS=	eclipse:${PORTSDIR}/java/eclipse
