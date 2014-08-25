@@ -56,8 +56,6 @@ SHEBANG_FILES=	examples/record.rb \
 		examples/basic.rb \
 		examples/lock.rb
 
-NEED_ROOT=	yes
-
 .include <bsd.port.pre.mk>
 
 post-patch:
