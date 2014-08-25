@@ -222,7 +222,6 @@ EXPM=		yes
 .endif
 
 .if ${PORT_OPTIONS:MREST}
-IGNORE=		requires devel/json-c to be updated to 0.11 to build with RESTful support
 LIB_DEPENDS+=	libjson.so:${PORTSDIR}/devel/json-c \
     		libcurl.so:${PORTSDIR}/ftp/curl
 CONFIGURE_ARGS+=--with-rlm_rest \
