@@ -1,6 +1,6 @@
---- ./chrome/browser/ui/webui/options/browser_options_handler.h.orig	2014-08-20 21:02:02.000000000 +0200
-+++ ./chrome/browser/ui/webui/options/browser_options_handler.h	2014-08-22 15:06:25.000000000 +0200
-@@ -197,7 +197,8 @@
+--- ./chrome/browser/ui/webui/options/browser_options_handler.h.orig	2014-04-30 22:42:10.000000000 +0200
++++ ./chrome/browser/ui/webui/options/browser_options_handler.h	2014-05-04 14:38:46.000000000 +0200
+@@ -183,7 +183,8 @@
  
    void ObserveThemeChanged();
    void ThemesReset(const base::ListValue* args);

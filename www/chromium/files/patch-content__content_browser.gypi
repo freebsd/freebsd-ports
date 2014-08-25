@@ -1,15 +1,15 @@
---- ./content/content_browser.gypi.orig	2014-08-20 21:02:50.000000000 +0200
-+++ ./content/content_browser.gypi	2014-08-22 15:06:25.000000000 +0200
-@@ -615,6 +615,8 @@
-       'browser/geolocation/wifi_data_provider_common_win.cc',
-       'browser/geolocation/wifi_data_provider_common_win.h',
-       'browser/geolocation/wifi_data_provider_corewlan_mac.mm',
-+      'browser/geolocation/wifi_data_provider_freebsd.cc',
-+      'browser/geolocation/wifi_data_provider_freebsd.h',
-       'browser/geolocation/wifi_data_provider_linux.cc',
-       'browser/geolocation/wifi_data_provider_linux.h',
-       'browser/geolocation/wifi_data_provider_mac.cc',
-@@ -1709,8 +1711,18 @@
+--- ./content/content_browser.gypi.orig	2014-04-30 22:41:54.000000000 +0200
++++ ./content/content_browser.gypi	2014-05-04 14:38:47.000000000 +0200
+@@ -618,6 +618,8 @@
+     'browser/geolocation/wifi_data_provider_common_win.cc',
+     'browser/geolocation/wifi_data_provider_common_win.h',
+     'browser/geolocation/wifi_data_provider_corewlan_mac.mm',
++    'browser/geolocation/wifi_data_provider_freebsd.cc',
++    'browser/geolocation/wifi_data_provider_freebsd.h',
+     'browser/geolocation/wifi_data_provider_linux.cc',
+     'browser/geolocation/wifi_data_provider_linux.h',
+     'browser/geolocation/wifi_data_provider_mac.cc',
+@@ -1654,8 +1656,18 @@
        ],
      }],
      ['os_bsd==1', {
@@ -29,13 +29,13 @@
 +        'browser/udev_linux.cc',
        ],
      }],
-     ['use_aura==1', {
-@@ -1758,7 +1770,7 @@
+     ['use_aura!=1 and OS!="android"', {
+@@ -1737,7 +1749,7 @@
          'browser/geolocation/empty_wifi_data_provider.cc',
        ],
      }],
 -    ['OS == "linux" and use_dbus==1', {
-+    ['(OS == "linux" or os_bsd==1) and use_dbus==1', {
++    ['(OS == "linux" or OS=="freebsd") and use_dbus==1', {
        'sources!': [
          'browser/geolocation/empty_wifi_data_provider.cc',
        ],
