@@ -24,3 +24,5 @@ while read line; do
     *) echo $line;;
   esac
 done < $from > $to
+
+rm -f $from
