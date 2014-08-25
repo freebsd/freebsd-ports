@@ -10,7 +10,7 @@ MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 MAINTAINER=	k@stereochro.me
 COMMENT=	Distributed storage system designed for persistence
 
-DEPRECATED=	Depends on deprecated Berkeley DB version, needs porting to DB_SITE.
+DEPRECATED=	Depends on deprecated Berkeley DB version, needs porting to DB_SITE
 EXPIRATION_DATE=2014-11-30
 
 LICENSE=	BSD3CLAUSE
