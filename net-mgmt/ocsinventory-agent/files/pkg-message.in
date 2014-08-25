@@ -1,10 +1,10 @@
 *****************************************************************
 
-This port disabled the post installtion script during the build
+This port disabled the post installation script during the build
 process to allow the package to be built without interaction.
 
 If you wish to run this script it is located here:
-    %%SITE_PERL%%/Ocsinventory/postinst.pl
+    %%SITE_PERL%%/Ocsinventory/Unix/postinst.pl
 
 Note: It may not be required to run this script depending on 
 your environment.
