@@ -51,7 +51,7 @@ post-build:
 		${WRKSRC}/leapsecs.dat
 
 do-install:
-	${INSTALL} ${COPY} -o ${SHAREOWN} -g ${BINGRP} -m 644 \
+	${INSTALL_DATA} -m 644 \
 		${WRKSRC}/leapsecs.dat ${STAGEDIR}${PREFIX}/etc
 .for i in ${MAN_FILES}
 	${INSTALL_MAN} ${WRKSRC}/${i} ${STAGEDIR}${PREFIX}/man/man3
@@ -60,12 +60,12 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${i} ${STAGEDIR}${PREFIX}/bin
 .endfor
 	${INSTALL_DATA} ${WRKSRC}/${LIBFILE}.a ${STAGEDIR}${PREFIX}/lib
-	${INSTALL_PROGRAM} ${WRKSRC}/${LIBFILE}.so.${LIBVERSION} ${STAGEDIR}${PREFIX}/lib
-	${LN} -sf ${PREFIX}/lib/${LIBFILE}.so.${LIBVERSION} \
+	${INSTALL_LIB} ${WRKSRC}/${LIBFILE}.so.${LIBVERSION} ${STAGEDIR}${PREFIX}/lib
+	${LN} -sf ${LIBFILE}.so.${LIBVERSION} \
 		${STAGEDIR}${PREFIX}/lib/${LIBFILE}.so
 	@${MKDIR} ${STAGEDIR}${PREFIX}/include/${PORTNAME}
 .for file in ${HEADER_FILES}
-	@${INSTALL_DATA} ${WRKSRC}/${file} ${STAGEDIR}${PREFIX}/include/${PORTNAME}
+	${INSTALL_DATA} ${WRKSRC}/${file} ${STAGEDIR}${PREFIX}/include/${PORTNAME}
 .endfor
 
 .include <bsd.port.mk>
