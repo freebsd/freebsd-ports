@@ -3,7 +3,7 @@
 
 PORTNAME=	bsdadminscripts
 PORTVERSION=	6.1.1
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	sysutils ports-mgmt
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}
 
@@ -31,7 +31,7 @@ do-install:
 		-datadir=${STAGEDIR}${DATADIR} \
 		${EVALDOCS}
 .for n in pkg_libchk pkg_upgrade uma
-	${INSTALL_DATA} ${WRKSRC}/src/${n} ${STAGEDIR}${PREFIX}/sbin
+	${INSTALL_SCRIPT} ${WRKSRC}/src/${n} ${STAGEDIR}${PREFIX}/sbin
 .endfor
 	${INSTALL_DATA} ${WRKSRC}/src/buildflags.mk ${STAGEDIR}${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/src/buildflags.conf.sample \
