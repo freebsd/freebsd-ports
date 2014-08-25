@@ -55,12 +55,14 @@
  	-rm -rf generated_src
  	-rm -f addon/doxywizard/doxywizard.pro
  	-rm -f VERSION
-@@ -89,13 +86,13 @@ install_docs: 
+@@ -88,14 +85,14 @@ install_docs: 
+ 	cp -r examples $(DESTDIR)$(DOCDIR)
  	cp -r html $(DESTDIR)$(DOCDIR)
  
- docs: FORCE
+-docs: FORCE
 -	cd examples ; $(MAKE)
 -	cd doc ; $(MAKE)
++docs: all FORCE
 +	$(MAKE) -C examples
 +	$(MAKE) -C doc
  
