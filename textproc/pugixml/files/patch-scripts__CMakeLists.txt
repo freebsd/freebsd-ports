@@ -1,0 +1,20 @@
+--- ./scripts/CMakeLists.txt.orig	2014-08-23 08:28:21.562183999 -0400
++++ ./scripts/CMakeLists.txt	2014-08-23 08:41:29.301439998 -0400
+@@ -10,13 +10,11 @@
+ set(HEADERS ../src/pugixml.hpp ../src/pugiconfig.hpp)
+ set(SOURCES ${HEADERS} ../src/pugixml.cpp)
+ 
+-if(BUILD_SHARED_LIBS)
+-    add_library(pugixml SHARED ${SOURCES})
+-else()
+-    add_library(pugixml STATIC ${SOURCES})
+-endif()
++add_library(pugixml SHARED ${SOURCES})
++add_library(pugixml_static STATIC ${SOURCES})
+ 
+ set_target_properties(pugixml PROPERTIES VERSION 1.4 SOVERSION 1)
++set_target_properties(pugixml_static PROPERTIES OUTPUT_NAME pugixml)
+ 
+-install(TARGETS pugixml LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR} ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR})
++install(TARGETS pugixml pugixml_static LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR} ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR})
+ install(FILES ${HEADERS} DESTINATION include)
