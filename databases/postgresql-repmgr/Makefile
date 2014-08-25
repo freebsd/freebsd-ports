@@ -15,9 +15,8 @@ LICENSE=	GPLv3
 
 RUN_DEPENDS=	rsync:${PORTSDIR}/net/rsync
 
-USES=		gmake
-USE_PGSQL=	server
-WANT_PGSQL_VER=	90+
+USES+=		gmake pgsql:9.0+
+WANT_PGSQL=	server
 MAKE_ENV=	USE_PGXS=1
 
 OPTIONS_DEFINE=	DOCS
