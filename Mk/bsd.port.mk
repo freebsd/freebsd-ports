@@ -1634,12 +1634,6 @@ PLIST_SUB+=	        PORTEXAMPLES="@comment "
 PLIST_SUB+=	        PORTEXAMPLES=""
 .endif
 
-.if defined(NOPORTDATA)
-PLIST_SUB+=	        PORTDATA="@comment "
-.else
-PLIST_SUB+=	        PORTDATA=""
-.endif
-
 CONFIGURE_SHELL?=	${SH}
 MAKE_SHELL?=	${SH}
 
@@ -5590,7 +5584,7 @@ add-plist-examples:
 .endif
 
 .if !target(add-plist-data)
-.if defined(PORTDATA) && !defined(NOPORTDATA)
+.if defined(PORTDATA)
 add-plist-data:
 	@if ${EGREP} -qe '^@cw?d' ${TMPPLIST} && \
 		[ "`${SED} -En -e '/^@cw?d[ 	]*/s,,,p' ${TMPPLIST} | ${TAIL} -n 1`" != "${PREFIX}" ]; then \
