@@ -4,7 +4,6 @@ include/tremor/ivorbisfile.h
 include/tremor/ogg.h
 include/tremor/os_types.h
 lib/libvorbisidec.a
-lib/libvorbisidec.la
 lib/libvorbisidec.so
 lib/libvorbisidec.so.1
 lib/libvorbisidec.so.1.0.2
