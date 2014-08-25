@@ -3,7 +3,7 @@
 
 PORTNAME=	picosat
 DISTVERSION=	957
-CATEGORIES=	devel math
+CATEGORIES=	math
 MASTER_SITES=	http://fmv.jku.at/picosat/
 
 MAINTAINER=	koobs@FreeBSD.org

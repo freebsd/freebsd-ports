@@ -6419,6 +6419,15 @@ korean/unzip|archivers/unzip|2014-08-15|Merged with archivers/unzip as a new non
 russian/unzip|archivers/unzip|2014-08-15|Merged with archivers/unzip as a new non-default option
 mail/sendmail-sasl|mail/sendmail|2014-08-15|Removed: Use mail/sendmail instead
 print/cups-samba||2014-08-15|Removed: defunct for long, disappeared upstream
+databases/db4|databases/db48|2014-08-15|Superseded by databases/db48
+databases/db41|databases/db48|2014-08-15|Superseded by databases/db48
+databases/db41-nocrypto|databases/db48|2014-08-15|Superseded by databases/db48
+databases/db42|databases/db48|2014-08-15|Superseded by databases/db48
+databases/db42-nocrypto|databases/db48|2014-08-15|Superseded by databases/db48
+databases/db43|databases/db48|2014-08-15|Superseded by databases/db48
+databases/db44|databases/db48|2014-08-15|Superseded by databases/db48
+databases/db46|databases/db48|2014-08-15|Superseded by databases/db48
+databases/db47|databases/db48|2014-08-15|Superseded by databases/db48
 security/sguil-client|security/sguil|2014-08-16|Merged into new port security/sguil
 security/sguil-sensor|security/sguil|2014-08-16|Merged into new port security/sguil
 security/sguil-server|security/sguil|2014-08-16|Merged into new port security/sguil
@@ -6467,15 +6476,6 @@ deskutils/horde3-nag||2014-08-20|Has expired: EOL in April 2012
 devel/horde3-whups||2014-08-20|Has expired: EOL in April 2012
 mail/horde3-imp||2014-08-20|Has expired: EOL in April 2012
 www/horde3-base||2014-08-20|Has expired: EOL in April 2012
-databases/db4|databases/db48|2014-08-15|Superseded by databases/db48
-databases/db41|databases/db48|2014-08-15|Superseded by databases/db48
-databases/db41-nocrypto|databases/db48|2014-08-15|Superseded by databases/db48
-databases/db42|databases/db48|2014-08-15|Superseded by databases/db48
-databases/db42-nocrypto|databases/db48|2014-08-15|Superseded by databases/db48
-databases/db43|databases/db48|2014-08-15|Superseded by databases/db48
-databases/db44|databases/db48|2014-08-15|Superseded by databases/db48
-databases/db46|databases/db48|2014-08-15|Superseded by databases/db48
-databases/db47|databases/db48|2014-08-15|Superseded by databases/db48
 print/tex-omegaware-old||2014-08-22|Deprecated in favor of print/tex-aleph
 databases/pg_filedump||2014-08-22|Has expired: Broken for more than 6 months
 devel/svnmerge||2014-08-22|Has expired: Broken for more than 6 months
@@ -6489,3 +6489,5 @@ devel/rubygem-railsless-deploy||2014-08-22|Removed: Obsolete, Capistrano 3 does 
 lang/gcc410|lang/gcc5|2014-08-22|Renamed to GCC 5 upstream
 security/pam_abl||2014-08-24|Has expired: Newer version requires large number of hacks, not worth the effort
 www/rubygem-feedzirra|www/rubygem-feedjira|2014-08-24|Has expired: Project renamed upstream, see www/rubygem-feedjira
+devel/picosat|math/picosat|2014-08-25|More appropriate primary category
+devel/py-pycosat|math/py-pycosat|2014-08-25|More appropriate primary category
