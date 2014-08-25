@@ -16,9 +16,7 @@ LICENSE=	MIT
 
 WRKSRC=		${WRKDIR}/TwistedFlow-${PORTVERSION}
 
-USE_PYTHON=	yes
-USE_PYDISTUTILS=yes
-PYDISTUTILS_AUTOPLIST=	yes
-USES=		tar:bzip2 twisted
+USES=		python tar:bzip2 twisted
+USE_PYTHON=	distutils autoplist
 
 .include <bsd.port.mk>

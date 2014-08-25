@@ -1170,5 +1170,4 @@ man/man3/waitCDKLabel.3.gz
 %%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/cli/samples
 %%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/cli
 %%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%
 @dirrmtry include/cdk

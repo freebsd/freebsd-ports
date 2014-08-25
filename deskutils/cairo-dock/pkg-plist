@@ -67,10 +67,10 @@ include/cairo-dock/icon-factory/cairo-dock-separator-factory.h
 include/cairo-dock/implementations/cairo-dock-gauge.h
 include/cairo-dock/implementations/cairo-dock-graph.h
 include/cairo-dock/implementations/cairo-dock-progressbar.h
+lib/cairo-dock/libcd-Help.so
 lib/libgldi.so
 lib/libgldi.so.3
 lib/libgldi.so.3.2.1
-lib/cairo-dock/libcd-Help.so
 libdata/pkgconfig/cairo-dock.pc
 libdata/pkgconfig/gldi.pc
 man/man1/cairo-dock.1.gz
@@ -149,6 +149,8 @@ share/applications/cairo-dock.desktop
 %%DATADIR%%/images/preview-default.png
 %%DATADIR%%/launcher.desktop
 %%DATADIR%%/main-dock.conf
+%%DATADIR%%/plug-ins/Help/Help.conf
+%%DATADIR%%/plug-ins/Help/icon.svg
 %%DATADIR%%/readme-default-view
 %%DATADIR%%/scripts/cairo-dock-package-theme.sh
 %%DATADIR%%/scripts/help_scripts.sh
@@ -278,78 +280,69 @@ share/locale/uk/LC_MESSAGES/cairo-dock.mo
 share/locale/vi/LC_MESSAGES/cairo-dock.mo
 share/locale/zh_CN/LC_MESSAGES/cairo-dock.mo
 share/locale/zh_TW/LC_MESSAGES/cairo-dock.mo
-share/cairo-dock/plug-ins/Help/Help.conf
-share/cairo-dock/plug-ins/Help/icon.svg
 share/pixmaps/cairo-dock.svg
-@dirrm share/locale/sr@latin/LC_MESSAGES
-@dirrm share/locale/sr@latin
-@dirrm share/locale/oc/LC_MESSAGES
-@dirrm share/locale/oc
-@dirrm share/locale/fo/LC_MESSAGES
-@dirrm share/locale/fo
-@dirrm %%DATADIR%%/themes/Default-Single/plug-ins/switcher
-@dirrm %%DATADIR%%/themes/Default-Single/plug-ins/stack
-@dirrm %%DATADIR%%/themes/Default-Single/plug-ins/showDesktop
-@dirrm %%DATADIR%%/themes/Default-Single/plug-ins/shortcuts
-@dirrm %%DATADIR%%/themes/Default-Single/plug-ins/rendering
-@dirrm %%DATADIR%%/themes/Default-Single/plug-ins/quick-browser
-@dirrm %%DATADIR%%/themes/Default-Single/plug-ins/musicPlayer
-@dirrm %%DATADIR%%/themes/Default-Single/plug-ins/logout
-@dirrm %%DATADIR%%/themes/Default-Single/plug-ins/illusion
-@dirrm %%DATADIR%%/themes/Default-Single/plug-ins/icon-effect
-@dirrm %%DATADIR%%/themes/Default-Single/plug-ins/dnd2share
-@dirrm %%DATADIR%%/themes/Default-Single/plug-ins/dialog-rendering
-@dirrm %%DATADIR%%/themes/Default-Single/plug-ins/Recent-Events
-@dirrm %%DATADIR%%/themes/Default-Single/plug-ins/GMenu
-@dirrm %%DATADIR%%/themes/Default-Single/plug-ins/Dbus
-@dirrm %%DATADIR%%/themes/Default-Single/plug-ins/Clipper
-@dirrm %%DATADIR%%/themes/Default-Single/plug-ins/Animated-icons
-@dirrm %%DATADIR%%/themes/Default-Single/plug-ins
-@dirrm %%DATADIR%%/themes/Default-Single/launchers
-@dirrm %%DATADIR%%/themes/Default-Single/images
-@dirrm %%DATADIR%%/themes/Default-Single
-@dirrm %%DATADIR%%/themes/Default-Panel/plug-ins/switcher
-@dirrm %%DATADIR%%/themes/Default-Panel/plug-ins/showDesktop
-@dirrm %%DATADIR%%/themes/Default-Panel/plug-ins/shortcuts
-@dirrm %%DATADIR%%/themes/Default-Panel/plug-ins/rendering
-@dirrm %%DATADIR%%/themes/Default-Panel/plug-ins/quick-browser
-@dirrm %%DATADIR%%/themes/Default-Panel/plug-ins/powermanager
-@dirrm %%DATADIR%%/themes/Default-Panel/plug-ins/netspeed
-@dirrm %%DATADIR%%/themes/Default-Panel/plug-ins/musicPlayer
-@dirrm %%DATADIR%%/themes/Default-Panel/plug-ins/logout
-@dirrm %%DATADIR%%/themes/Default-Panel/plug-ins/illusion
-@dirrm %%DATADIR%%/themes/Default-Panel/plug-ins/icon-effect
-@dirrm %%DATADIR%%/themes/Default-Panel/plug-ins/drop_indicator
-@dirrm %%DATADIR%%/themes/Default-Panel/plug-ins/dnd2share
-@dirrm %%DATADIR%%/themes/Default-Panel/plug-ins/dialog-rendering
-@dirrm %%DATADIR%%/themes/Default-Panel/plug-ins/clock
-@dirrm %%DATADIR%%/themes/Default-Panel/plug-ins/Status-Notifier
-@dirrm %%DATADIR%%/themes/Default-Panel/plug-ins/Recent-Events
-@dirrm %%DATADIR%%/themes/Default-Panel/plug-ins/Messaging-Menu
+@dirrm include/cairo-dock/gldit
+@dirrm include/cairo-dock/icon-factory
+@dirrm include/cairo-dock/implementations
+@dirrm include/cairo-dock
+@dirrm lib/cairo-dock
+@dirrm %%DATADIR%%/explosion
+@dirrm %%DATADIR%%/gauges/Turbo-night-fuel
+@dirrm %%DATADIR%%/gauges
+@dirrm %%DATADIR%%/icons
+@dirrm %%DATADIR%%/images
+@dirrm %%DATADIR%%/plug-ins/Help
+@dirrm %%DATADIR%%/plug-ins
+@dirrm %%DATADIR%%/scripts
+@dirrm %%DATADIR%%/themes/Default-Panel/images
+@dirrm %%DATADIR%%/themes/Default-Panel/launchers
+@dirrm %%DATADIR%%/themes/Default-Panel/plug-ins/AlsaMixer
+@dirrm %%DATADIR%%/themes/Default-Panel/plug-ins/Animated-icons
+@dirrm %%DATADIR%%/themes/Default-Panel/plug-ins/Calendar
+@dirrm %%DATADIR%%/themes/Default-Panel/plug-ins/Clipper
 @dirrm %%DATADIR%%/themes/Default-Panel/plug-ins/GMenu
 @dirrm %%DATADIR%%/themes/Default-Panel/plug-ins/Help
 @dirrm %%DATADIR%%/themes/Default-Panel/plug-ins/Indicator-Generic
-@dirrm %%DATADIR%%/themes/Default-Panel/plug-ins/Clipper
-@dirrm %%DATADIR%%/themes/Default-Panel/plug-ins/Calendar
-@dirrm %%DATADIR%%/themes/Default-Panel/plug-ins/Animated-icons
-@dirrm %%DATADIR%%/themes/Default-Panel/plug-ins/AlsaMixer
+@dirrm %%DATADIR%%/themes/Default-Panel/plug-ins/Messaging-Menu
+@dirrm %%DATADIR%%/themes/Default-Panel/plug-ins/Recent-Events
+@dirrm %%DATADIR%%/themes/Default-Panel/plug-ins/Status-Notifier
+@dirrm %%DATADIR%%/themes/Default-Panel/plug-ins/clock
+@dirrm %%DATADIR%%/themes/Default-Panel/plug-ins/dialog-rendering
+@dirrm %%DATADIR%%/themes/Default-Panel/plug-ins/dnd2share
+@dirrm %%DATADIR%%/themes/Default-Panel/plug-ins/drop_indicator
+@dirrm %%DATADIR%%/themes/Default-Panel/plug-ins/icon-effect
+@dirrm %%DATADIR%%/themes/Default-Panel/plug-ins/illusion
+@dirrm %%DATADIR%%/themes/Default-Panel/plug-ins/logout
+@dirrm %%DATADIR%%/themes/Default-Panel/plug-ins/musicPlayer
+@dirrm %%DATADIR%%/themes/Default-Panel/plug-ins/netspeed
+@dirrm %%DATADIR%%/themes/Default-Panel/plug-ins/powermanager
+@dirrm %%DATADIR%%/themes/Default-Panel/plug-ins/quick-browser
+@dirrm %%DATADIR%%/themes/Default-Panel/plug-ins/rendering
+@dirrm %%DATADIR%%/themes/Default-Panel/plug-ins/shortcuts
+@dirrm %%DATADIR%%/themes/Default-Panel/plug-ins/showDesktop
+@dirrm %%DATADIR%%/themes/Default-Panel/plug-ins/switcher
 @dirrm %%DATADIR%%/themes/Default-Panel/plug-ins
-@dirrm %%DATADIR%%/themes/Default-Panel/launchers
-@dirrm %%DATADIR%%/themes/Default-Panel/images
 @dirrm %%DATADIR%%/themes/Default-Panel
+@dirrm %%DATADIR%%/themes/Default-Single/images
+@dirrm %%DATADIR%%/themes/Default-Single/launchers
+@dirrm %%DATADIR%%/themes/Default-Single/plug-ins/Animated-icons
+@dirrm %%DATADIR%%/themes/Default-Single/plug-ins/Clipper
+@dirrm %%DATADIR%%/themes/Default-Single/plug-ins/Dbus
+@dirrm %%DATADIR%%/themes/Default-Single/plug-ins/GMenu
+@dirrm %%DATADIR%%/themes/Default-Single/plug-ins/Recent-Events
+@dirrm %%DATADIR%%/themes/Default-Single/plug-ins/dialog-rendering
+@dirrm %%DATADIR%%/themes/Default-Single/plug-ins/dnd2share
+@dirrm %%DATADIR%%/themes/Default-Single/plug-ins/icon-effect
+@dirrm %%DATADIR%%/themes/Default-Single/plug-ins/illusion
+@dirrm %%DATADIR%%/themes/Default-Single/plug-ins/logout
+@dirrm %%DATADIR%%/themes/Default-Single/plug-ins/musicPlayer
+@dirrm %%DATADIR%%/themes/Default-Single/plug-ins/quick-browser
+@dirrm %%DATADIR%%/themes/Default-Single/plug-ins/rendering
+@dirrm %%DATADIR%%/themes/Default-Single/plug-ins/shortcuts
+@dirrm %%DATADIR%%/themes/Default-Single/plug-ins/showDesktop
+@dirrm %%DATADIR%%/themes/Default-Single/plug-ins/stack
+@dirrm %%DATADIR%%/themes/Default-Single/plug-ins/switcher
+@dirrm %%DATADIR%%/themes/Default-Single/plug-ins
+@dirrm %%DATADIR%%/themes/Default-Single
 @dirrm %%DATADIR%%/themes
-@dirrm %%DATADIR%%/scripts
-@dirrm %%DATADIR%%/images
-@dirrm %%DATADIR%%/icons
-@dirrm %%DATADIR%%/gauges/Turbo-night-fuel
-@dirrm %%DATADIR%%/gauges
-@dirrm %%DATADIR%%/explosion
 @dirrm %%DATADIR%%
-@dirrm share/cairo-dock/plug-ins/Help
-@dirrm share/cairo-dock/plug-ins
-@dirrm share/cairo-dock
-@dirrm include/cairo-dock/implementations
-@dirrm include/cairo-dock/icon-factory
-@dirrm include/cairo-dock/gldit
-@dirrm include/cairo-dock
-@dirrm lib/cairo-dock
