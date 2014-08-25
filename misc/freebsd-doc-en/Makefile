@@ -13,6 +13,7 @@ COMMENT?=	Documentation from the FreeBSD Documentation Project
 
 BUILD_DEPENDS=	docproj>=2.0_1:${PORTSDIR}/textproc/docproj
 
+USES=		uidfix
 WRKSRC=		${WRKDIR}/doc
 PLIST_SUB=	DOCSDIR=${DOCBASE} \
 		DOCLANG=${DOCLANG} \
@@ -30,7 +31,6 @@ TMPDESTDIR=	${STAGEDIR}${DESTDIR}/${PREFIX}/${DOCBASE}
 DESTDIRNAME=	TMPDESTDIR
 
 PLIST=		${WRKDIR}/pkg-plist
-NEED_ROOT=	yes
 
 DOCLANG?=		en_US.ISO8859-1
 DOCLANG_PREFIX?=	${DOCLANG:C/_.*$//}
