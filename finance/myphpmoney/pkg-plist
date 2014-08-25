@@ -1,3 +1,5 @@
+@owner %%WWWOWN%%
+@group %%WWWGRP%%
 %%INSTALLDIR%%/CHANGELOG
 %%INSTALLDIR%%/CHANGES/CHANGELOG-2002-FR
 %%INSTALLDIR%%/CHANGES/CHANGELOG-2003-FR
@@ -448,6 +450,8 @@
 %%INSTALLDIR%%/sql/example.sql
 %%INSTALLDIR%%/sql/migrate1.2.2.4-1.2.3.1.sql
 %%INSTALLDIR%%/sql/myportfolio.sql
+@group
+@owner
 @dirrm %%INSTALLDIR%%/sql
 @dirrm %%INSTALLDIR%%/public_html/templates
 @dirrm %%INSTALLDIR%%/public_html/tables
