@@ -1689,6 +1689,7 @@
     SUBDIR += p5-Config-JSON
     SUBDIR += p5-Config-MVP
     SUBDIR += p5-Config-MVP-Reader-INI
+    SUBDIR += p5-Config-Merge
     SUBDIR += p5-Config-Model
     SUBDIR += p5-Config-Model-Tester
     SUBDIR += p5-Config-MySQL
