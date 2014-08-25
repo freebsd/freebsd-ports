@@ -18,11 +18,11 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyro>=0:${PORTSDIR}/devel/py-pyro
 
 USE_GNOME=	pygtk2
-USE_PYTHON=	yes
-USE_PYDISTUTILS=	yes
-USES=	tar:bzip2
+USE_PYTHON=	distutils
+USES=		python tar:bzip2
 DOCSDIR=	${PREFIX}/share/doc/sndcs
 DATADIR=	${PREFIX}/share/sndcs
+SUB_FILES=	pkg-message
 
 PYDISTUTILS_PKGNAME=	sndcs
 
@@ -34,7 +34,6 @@ OPTIONS_DEFINE=	DOCS
 EXTRA_PATCHES=	${FILESDIR}/extra-patch-setup.py
 .endif
 
-NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|' ${WRKSRC}/setup.py
 
@@ -42,10 +41,5 @@ do-configure:
 	cd ${WRKSRC} && ${CP} "${FILESDIR}/sndcs2.conf" "sndcs/config/sndcs2.conf"
 
 post-install:
-	@${ECHO} "	- - - - - - - - - - - - - - - - - - - - - - - - -"
-	@${ECHO} "	SaberNet DCS Client is now installed.            "
-	@${ECHO} "	Change the settings in ${PREFIX}/etc/sndcs/sndcs2.conf    "
-	@${ECHO} "	to suit your needs.                              "
-	@${ECHO} "	- - - - - - - - - - - - - - - - - - - - - - - - -"
 
 .include <bsd.port.mk>
