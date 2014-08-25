@@ -4,8 +4,9 @@
 all:
 	${SH} util/build FreeBSD default
 
+CONFIGFILE?=	conf/FreeBSD
+
 # Configuration parameters
-DEVLIST=
 VARLIST=	SYS_CFLAGS LDFLAGS INTERFACE_OPTS X_DIR
 SYS_CFLAGS=	-Dbsd
 LDFLAGS=	-lm -ltermcap
@@ -16,19 +17,12 @@ INTERFACE_OPTS+=-DWANT_X11
 VARLIST+=	INCX LIBX
 .endif
 X_DIR=		${LOCALBASE}
-.for D in BSIM3 BSIM4
-. if defined(DEV_$D) && !empty(DEV_$D)
-DEVLIST+=	${D:tl}
-. endif
-.endfor
 
-configure:
-	rm -f ${CONFIGFILE}
+configure: ${CONFIGFILE}
+
+${CONFIGFILE}::
 .for V in ${VARLIST}
 	echo "$V=${${V}}" >> ${CONFIGFILE}
-.endfor
-.for V in ${DEVLIST}
-	echo "DEVICES+=${V}" >> ${CONFIGFILE}
 .endfor
 
 PREFIX?=	/usr/local
