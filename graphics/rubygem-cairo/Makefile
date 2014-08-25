@@ -1,14 +1,14 @@
 # $FreeBSD$
 
 PORTNAME=	cairo
-PORTVERSION=	1.12.8
+PORTVERSION=	1.12.9
 CATEGORIES=	graphics rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Ruby binding for GLib2
 
-RUN_DEPENDS=	rubygem-pkg-config>=0:${PORTSDIR}/devel/rubygem-pkg-config
+RUN_DEPENDS=	rubygem-pkg-config>=1.1.5:${PORTSDIR}/devel/rubygem-pkg-config
 
 USE_GNOME=	cairo
 USE_RUBY=	yes
