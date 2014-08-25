@@ -10,16 +10,9 @@ MASTER_SITES=	http://www.kegel.com/dkftpbench/
 MAINTAINER=	novel@FreeBSD.org
 COMMENT=	FTP benchmark program
 
-PLIST_FILES=	bin/dkftpbench
-
 GNU_CONFIGURE=	yes
-
 USE_AUTOTOOLS=	automake14 autoconf
 
-.include <bsd.port.pre.mk>
+PLIST_FILES=	bin/dkftpbench
 
-.if ${OPSYS} == "FreeBSD" && ${OSVERSION} >= 1000000
-BROKEN=		does not build on FreeBSD 10 or better
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
