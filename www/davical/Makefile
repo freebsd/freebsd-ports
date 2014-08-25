@@ -23,9 +23,8 @@ GH_ACCOUNT=	DAViCal
 GH_TAGNAME=	r${DISTVERSION}
 GH_COMMIT=	cc8e6a0
 NO_BUILD=	yes
-USE_PGSQL=	yes
 USE_PHP=	gettext iconv pcre pdo pdo_pgsql pgsql xml calendar
-USES=		shebangfix
+USES=		shebangfix pgsql
 SHEBANG_FILES=	scripts/sync-remote-caldav.php
 
 SUB_FILES=	pkg-message httpd-davical.conf

@@ -655,7 +655,7 @@ CFLAGS+=	-DNDEBUG
 
 .if ${PORT_OPTIONS:MPOSTGRES}
 IGNORE=	POSTGRES: update require
-USE_PGSQL=	yes
+USES+=	pgsql
 NGINX_POSTGRES_VERSION=	0.9
 MASTER_SITES+=	http://labs.frickle.com/files/:postgres
 DISTFILES+=	ngx_postgres-${NGINX_POSTGRES_VERSION}.tar.gz:postgres
