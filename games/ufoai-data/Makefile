@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	data
-PORTVERSION=	2.4
+PORTVERSION=	2.5
 CATEGORIES=	games
 MASTER_SITES=	SF/ufoai/UFO_AI%202.x/${PORTVERSION}
 PKGNAMEPREFIX=	ufoai-
@@ -10,7 +10,7 @@ DISTNAME=	${PKGNAMEPREFIX}${PORTVERSION}-${PORTNAME}
 EXTRACT_SUFX=	.tar
 DIST_SUBDIR=	${PKGNAMEPREFIX:S/-//}
 
-MAINTAINER=	acm@FreeBSD.org
+MAINTAINER=	m.tsatsenko@gmail.com
 COMMENT=	UFO alien invasion data files
 
 # See http://ufoai.org/wiki/License
