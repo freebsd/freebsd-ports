@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	. old related/postfix
 PKGNAMESUFFIX=	210
 DIST_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	sahil@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Secure alternative to widely-used Sendmail
 
 LICENSE=	IPL10

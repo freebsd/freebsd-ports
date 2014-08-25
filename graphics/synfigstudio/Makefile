@@ -7,7 +7,7 @@ PORTREVISION=	2
 CATEGORIES=	graphics multimedia
 MASTER_SITES=	SF/synfig/${PORTNAME}/${PORTVERSION}
 
-MAINTAINER=	dhn@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Vector-based 2D animation software package
 
 BROKEN=		Fails to compile

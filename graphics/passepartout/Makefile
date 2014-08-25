@@ -9,7 +9,7 @@ CATEGORIES=	graphics gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
 
-MAINTAINER=	gnome@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	DTP application for X
 
 BUILD_DEPENDS=	xsltproc:${PORTSDIR}/textproc/libxslt \

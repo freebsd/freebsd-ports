@@ -7,7 +7,7 @@ CATEGORIES=	japanese editors
 MASTER_SITES=	http://tomato.sakura.ne.jp/~amura/archives/ng/
 DISTNAME=	${PORTNAME}-1.5beta1
 
-MAINTAINER?=	ginga-freebsd@ginganet.org
+MAINTAINER?=	ports@FreeBSD.org
 COMMENT=	Light Emacs-clone with Japanese support
 
 ALL_TARGET=	ng
