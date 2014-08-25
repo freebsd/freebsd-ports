@@ -2,8 +2,8 @@ bin/sams2daemon
 bin/sams2redir
 bin/sams_send_email
 bin/samsparser
-%%AP24%%@sample %%APACHEETCDIR%%/doc4sams2.conf.sample
-%%AP24%%@sample %%APACHEETCDIR%%/sams2.conf.sample
+%%APACHE%%@sample %%APACHEETCDIR%%/doc4sams2.conf.sample
+%%APACHE%%@sample %%APACHEETCDIR%%/sams2.conf.sample
 etc/rc.d/sams2
 @sample etc/sams2.conf.sample
 lib/sams2/libfsusage.a
@@ -219,7 +219,7 @@ lib/sams2/libloadavg.so.1
 %%WWWDIR%%/icon/classic/switchuser_32.jpg
 %%WWWDIR%%/icon/classic/switchuser_48.jpg
 %%WWWDIR%%/icon/classic/sysplug_16.png
-%%WWWDIR%%/icon/classic/sysplug_%%APACHE_VERSION%%.png
+%%WWWDIR%%/icon/classic/sysplug_24.png
 %%WWWDIR%%/icon/classic/sysplug_32.png
 %%WWWDIR%%/icon/classic/sysplug_64.png
 %%WWWDIR%%/icon/classic/tr_input.gif

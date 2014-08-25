@@ -2,6 +2,7 @@
 
 PORTNAME=	sams2
 DISTVERSION=	2.0.0
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://sams.perm.ru/download/ http://razumit.ru/
 
@@ -16,7 +17,6 @@ RUN_DEPENDS=	${LOCALBASE}/libexec/mysqld:${PORTSDIR}/databases/mysql${MYSQL_VER}
 USES=		gmake libtool tar:bzip2
 USE_AUTOTOOLS=	aclocal libtoolize
 USE_LDCONFIG=	yes
-USE_APACHE=	22+
 USE_PHP=	gd mysql zlib
 USE_MYSQL=	yes
 
@@ -28,19 +28,23 @@ MAKE_ARGS+=	docdir=${DOCSDIR}
 SUB_FILES=	sams2.conf.sample
 PORTDOCS=	*
 
+OPTIONS_DEFINE=	DOCS APACHE
+OPTIONS_SUB=	APACHE
+APACHE_USE=	APACHE=22+
+
+# We can't use <options> here, ${APACHE*} won't be populated
 .include <bsd.port.pre.mk>
 
-.if ${PHP_VER} == "54" && (${APACHE_VERSION} >= 24)
+.if ${PORT_OPTIONS:MAPACHE}
+.  if ${PHP_VER} == "54" && (${APACHE_VERSION} >= 24)
 RUN_DEPENDS+=	mod_php5>=0:${PORTSDIR}/www/mod_php5
-.endif
-.if ${PHP_VER} == "55" && (${APACHE_VERSION} >= 24)
+.  endif
+.  if ${PHP_VER} == "55" && (${APACHE_VERSION} >= 24)
 RUN_DEPENDS+=	mod_php55>=0:${PORTSDIR}/www/mod_php55
-.endif
-
-.if ${APACHE_VERSION} >= 24
-PLIST_SUB+=	AP24=""
-.else
-PLIST_SUB+=	AP24="@ comment"
+.  endif
+.  if ${APACHE_VERSION} >= 24
+AP24=		""
+.  endif
 .endif
 
 do-configure:
@@ -51,11 +55,12 @@ do-configure:
 post-install:
 	${INSTALL_SCRIPT} ${FILESDIR}/sams2 ${STAGEDIR}${PREFIX}/etc/rc.d/
 	${INSTALL_DATA} ${WRKDIR}/sams2.conf.sample ${STAGEDIR}${PREFIX}/etc
-.if ${APACHE_VERSION} >= 24
-	${RM} ${STAGEDIR}${PREFIX}/${APACHEETCDIR}/*.conf-e
-	(cd ${STAGEDIR}${PREFIX}/${APACHEETCDIR} && \
-		${MV} doc4sams2.conf doc4sams2.conf.sample && \
-		${MV} sams2.conf sams2.conf.sample)
+.if ${PORT_OPTIONS:MAPACHE}
+	${MKDIR} ${STAGEDIR}${PREFIX}/${APACHEETCDIR}
+	${SED} -e 's|__WEBPREFIX|${WWWDIR}|g' ${WRKSRC}/etc/httpd_conf \
+		> ${STAGEDIR}${PREFIX}/${APACHEETCDIR}/sams2.conf.sample
+	${SED} -e 's|__DOCPREFIX|${DOCSDIR}|g' ${WRKSRC}/etc/doc_sams2_conf \
+		> ${STAGEDIR}${PREFIX}/${APACHEETCDIR}/doc4sams2.conf.sample
 .endif
 
 .include <bsd.port.post.mk>
