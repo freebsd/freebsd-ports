@@ -395,7 +395,6 @@ GNUstep/System/Library/Libraries/libGormPrefs.so
 GNUstep/System/Library/Libraries/libGormPrefs.so.1
 GNUstep/System/Library/Libraries/libGormPrefs.so.1.2.20
 GNUstep/System/Tools/Gorm
-libdata/ldconfig/gorm
 @dirrmtry GNUstep/System/Tools
 @dirrmtry GNUstep/System/Library/Libraries
 @dirrmtry GNUstep/System/Library/Headers/InterfaceBuilder

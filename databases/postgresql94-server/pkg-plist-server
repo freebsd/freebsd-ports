@@ -8,7 +8,6 @@ bin/pg_recvlogical
 bin/postgres
 bin/postmaster
 etc/periodic/daily/502.pgsql
-etc/rc.d/postgresql
 include/postgresql/server/plpgsql.h
 lib/postgresql/ascii_and_mic.so
 lib/postgresql/cyrillic_and_mic.so
