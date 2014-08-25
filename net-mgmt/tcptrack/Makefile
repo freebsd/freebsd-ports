@@ -9,6 +9,8 @@ MASTER_SITES=		http://pkgs.fedoraproject.org/repo/pkgs/tcptrack/tcptrack-1.4.2.t
 MAINTAINER=	squat@squat.no
 COMMENT=	Packet sniffer which displays TCP information like top(1)
 
+BROKEN=		binary segfaults
+
 GNU_CONFIGURE=	yes
 USE_GCC=	yes
 
