@@ -1,13 +1,15 @@
---- ./device/serial/serial.gyp.orig	2014-04-30 22:43:21.000000000 +0200
-+++ ./device/serial/serial.gyp	2014-05-04 14:38:48.000000000 +0200
-@@ -23,8 +23,8 @@
-       'sources': [
-         'serial_device_enumerator.cc',
-         'serial_device_enumerator.h',
--        'serial_device_enumerator_linux.cc',
--        'serial_device_enumerator_linux.h',
-+        #'serial_device_enumerator_linux.cc',
-+        #'serial_device_enumerator_linux.h',
-         'serial_device_enumerator_mac.cc',
-         'serial_device_enumerator_mac.h',
-         'serial_device_enumerator_win.cc',
+--- ./device/serial/serial.gyp.orig	2014-08-20 21:03:08.000000000 +0200
++++ ./device/serial/serial.gyp	2014-08-22 15:06:26.000000000 +0200
+@@ -20,6 +20,12 @@
+             '../../build/linux/system.gyp:udev',
+           ],
+         }],
++        ['os_bsd==1', {
++          'sources!': [
++            'serial_device_enumerator_linux.cc',
++            'serial_device_enumerator_linux.h',
++          ],
++        }],
+       ],
+       'variables': {
+         'mojom_base_output_dir': 'device/serial',

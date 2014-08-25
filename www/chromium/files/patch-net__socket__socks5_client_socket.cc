@@ -1,5 +1,5 @@
---- ./net/socket/socks5_client_socket.cc.orig	2014-04-30 22:43:08.000000000 +0200
-+++ ./net/socket/socks5_client_socket.cc	2014-05-04 14:38:48.000000000 +0200
+--- ./net/socket/socks5_client_socket.cc.orig	2014-08-20 21:02:27.000000000 +0200
++++ ./net/socket/socks5_client_socket.cc	2014-08-22 15:06:26.000000000 +0200
 @@ -4,6 +4,10 @@
  
  #include "net/socket/socks5_client_socket.h"

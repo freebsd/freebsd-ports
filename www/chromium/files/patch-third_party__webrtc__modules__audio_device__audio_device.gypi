@@ -1,7 +1,7 @@
---- ./third_party/webrtc/modules/audio_device/audio_device.gypi.orig	2014-04-30 22:44:08.000000000 +0200
-+++ ./third_party/webrtc/modules/audio_device/audio_device.gypi	2014-05-04 14:38:49.000000000 +0200
-@@ -47,7 +47,7 @@
-         'dummy/audio_device_utility_dummy.h',
+--- ./third_party/webrtc/modules/audio_device/audio_device.gypi.orig	2014-08-20 21:04:06.000000000 +0200
++++ ./third_party/webrtc/modules/audio_device/audio_device.gypi	2014-08-22 15:06:27.000000000 +0200
+@@ -49,7 +49,7 @@
+         'dummy/file_audio_device.h',
        ],
        'conditions': [
 -        ['OS=="linux"', {
@@ -9,7 +9,7 @@
            'include_dirs': [
              'linux',
            ],
-@@ -141,7 +141,7 @@
+@@ -150,7 +150,7 @@
                  ],
                },
              }],

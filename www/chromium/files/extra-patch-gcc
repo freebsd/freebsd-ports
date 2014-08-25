@@ -86,3 +86,13 @@
  #include "third_party/libjpeg_turbo/jpeglib.h"
  #else
  #include "third_party/libjpeg/jpeglib.h"
+--- ui/gfx/codec/jpeg_codec.cc.orig	2014-08-12 21:02:29.000000000 +0200
++++ ui/gfx/codec/jpeg_codec.cc	2014-08-17 19:32:18.000000000 +0200
+@@ -13,6 +13,7 @@
+ 
+ extern "C" {
+ #if defined(USE_SYSTEM_LIBJPEG)
++#include <stdio.h>
+ #include <jpeglib.h>
+ #elif defined(USE_LIBJPEG_TURBO)
+ #include "third_party/libjpeg_turbo/jpeglib.h"
