@@ -14,15 +14,12 @@ EXTRACT_DEPENDS=	${UNZIP_CMD}:${PORTSDIR}/archivers/unzip
 
 USES=		iconv
 CONVERT_CMD=	${ICONV_CMD} -c -f EUC-JP -t UTF-8
-
 DIST_SUBDIR=	${PORTNAME}
-
 DICTFILES=	edict.gz edicth compdic.gz jddict.v02.gz \
 		j_places.gz ediclsd3.zip kanjidic.gz kanjd212.gz \
 		lawgledt.zip lingdic.zip geodic.gz pandpdic.zip \
 		aviation.zip findic.zip mktdic.zip compverb.gz \
 		4jwords.gz concrete.zip enamdict.gz
-
 NODOCFILES=	edict_doc.txt edict_doc.html edicth.doc \
 		enamdict_doc.txt enamdict_doc.html jddict.doc \
 		j_places.inf kanjidic.doc kanjd212.doc ediclsd3.rme \
@@ -30,16 +27,11 @@ NODOCFILES=	edict_doc.txt edict_doc.html edicth.doc \
 		findic.doc mktdic.doc compverb.doc 4jwords.doc \
 		concrete.doc ${DICTFILES:S/zip/jdx/}
 
-PLIST_FILES=	${DICTFILES:S|^|%%DATADIR%%/|:S|.gz||:S|.zip||}
-PLIST_DIRS=	%%DATADIR%%
-
 # Where to install the data files
 DATADIR=	${PREFIX}/share/dict/edict-utf-8
+PLIST_SUB= 	OWNER="${SHAREOWN}" GROUP="${SHAREGRP}" MODE="${SHAREMODE}"
 
 NO_WRKSUBDIR=	yes
-
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
 
 do-extract:
 	@${RM} -rf ${WRKDIR}
@@ -71,14 +63,10 @@ do-build:
 	done
 
 do-install:
-	@if [ ! -d ${DATADIR} ] ; \
-	then \
-		${MKDIR} ${DATADIR} ; \
-	fi
+	@${MKDIR} ${STAGEDIR}${DATADIR}
 	@for file in `cat ${WRKSRC}/filelist`; do \
 		${ECHO} "Installing $$file"; \
-		${INSTALL} -o ${SHAREOWN} -g ${SHAREGRP} -m ${SHAREMODE} \
-		${WRKSRC}/$$file ${DATADIR}/$$file; \
+		${INSTALL} ${WRKSRC}/$$file ${STAGEDIR}${DATADIR}/$$file; \
 	done
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
