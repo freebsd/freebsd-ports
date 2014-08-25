@@ -2,24 +2,17 @@
 # $FreeBSD$
 
 PORTNAME=	texmath
-PORTVERSION=	0.6.7
+PORTVERSION=	0.8
 CATEGORIES=	textproc haskell
 
 MAINTAINER=	haskell@FreeBSD.org
-COMMENT=	Conversion of LaTeX math formulas to MathML or OMML
+COMMENT=	Conversion between formats used to represent mathematics
 
 LICENSE=	GPLv2
 
 USE_CABAL=	mtl pandoc-types>=1.12.3.3 parsec>=3 syb xml
 
-FLAGS_DEFINE=		CGI
-
-CGI_DESC=		Compile CGI executable
-CGI_FLAG_ENABLE=	cgi
-CGI_FLAG_CABAL=		cgi json utf8-string
-CGI_FLAG_EXECUTABLE=	texmath-cgi
-
-FLAGS_DISABLE=	test
+FLAGS_DISABLE=	executable
 
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>
