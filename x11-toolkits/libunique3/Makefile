@@ -3,7 +3,7 @@
 
 PORTNAME=	libunique
 PORTVERSION=	3.0.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	GNOME
 
@@ -13,7 +13,7 @@ COMMENT=	Library for single instance applications
 LIB_DEPENDS=	libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib
 
 USE_XORG=	ice x11
-USES=		gettext gmake libtool:keepla pathfix pkgconfig tar:xz
+USES=		gettext gmake libtool pathfix pkgconfig tar:xz
 USE_LDCONFIG=	yes
 USE_GNOME=	gtk30 gnomeprefix
 GNU_CONFIGURE=	yes

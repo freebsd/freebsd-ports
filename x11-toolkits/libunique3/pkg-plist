@@ -5,7 +5,6 @@ include/unique-3.0/unique/uniqueenumtypes.h
 include/unique-3.0/unique/uniquemessage.h
 include/unique-3.0/unique/uniqueversion.h
 lib/girepository-1.0/Unique-3.0.typelib
-lib/libunique-3.0.la
 lib/libunique-3.0.so
 lib/libunique-3.0.so.0
 lib/libunique-3.0.so.0.0.2
