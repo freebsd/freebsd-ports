@@ -2,25 +2,14 @@
 # $FreeBSD$
 
 PORTNAME=		tcptrack
-PORTVERSION=		1.3.0
+PORTVERSION=		1.4.2
 CATEGORIES=		net-mgmt
-MASTER_SITES=		http://www.rhythm.cx/~steve/devel/tcptrack/%SUBDIR%/
-MASTER_SITE_SUBDIR=	release/${PORTVERSION}/source
+MASTER_SITES=		http://pkgs.fedoraproject.org/repo/pkgs/tcptrack/tcptrack-1.4.2.tar.gz/dacf71a6b5310caf1203a2171b598610/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	squat@squat.no
 COMMENT=	Packet sniffer which displays TCP information like top(1)
 
 GNU_CONFIGURE=	yes
-
-NO_STAGE=	yes
-PLIST_FILES=	bin/tcptrack
-MAN1=		tcptrack.1
-PORTDOCS=	AUTHORS ChangeLog INSTALL NEWS README TODO
-
-.if !defined(NOPORTDOCS)
-post-install:
-	@${MKDIR} ${DOCSDIR}
-	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
-.endif
+USE_GCC=	yes
 
 .include <bsd.port.mk>
