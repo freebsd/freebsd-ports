@@ -2,6 +2,7 @@
 
 PORTNAME=	emerald
 PORTVERSION=	0.8.8
+PORTREVISION=	1
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://releases.compiz.org/${PORTVERSION}/
 
@@ -14,7 +15,7 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 INSTALLS_ICONS=	yes
 GNU_CONFIGURE=	yes
 USE_GL=		gl
-USES=		desktop-file-utils gettext gmake libtool:keepla pathfix \
+USES=		desktop-file-utils gettext gmake libtool pathfix \
 		pkgconfig shared-mime-info tar:bzip2
 USE_GNOME=	gtk20 libwnck pango
 USE_XORG=	xrender
