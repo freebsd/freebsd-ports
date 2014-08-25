@@ -1,5 +1,4 @@
 lib/gtk-2.0/%%GTK2_VERSION%%/engines/libblueprint.a
-lib/gtk-2.0/%%GTK2_VERSION%%/engines/libblueprint.la
 lib/gtk-2.0/%%GTK2_VERSION%%/engines/libblueprint.so
 share/icons/blueprint/36x36/apps/gnome-spinner-rest.png
 share/icons/blueprint/36x36/apps/gnome-spinner.png
