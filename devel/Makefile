@@ -4262,6 +4262,7 @@
     SUBDIR += rubygem-chronic
     SUBDIR += rubygem-clamp
     SUBDIR += rubygem-classifier
+    SUBDIR += rubygem-classifier-reborn
     SUBDIR += rubygem-climate_control
     SUBDIR += rubygem-clio
     SUBDIR += rubygem-cloudfiles
