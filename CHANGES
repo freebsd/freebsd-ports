@@ -10,6 +10,11 @@ in the release notes and/or placed into UPDATING.
 
 All ports committers are allowed to commit to this file.
 
+20140825:
+AUTHOR: antoine@FreeBSD.org
+
+  Support for NOPORTDATA has been removed.
+
 20140809:
 AUTHOR: mva@FreeBSD.org
 
