@@ -522,6 +522,7 @@ USE_RUBY=		yes
 
 RUBY_EXTCONF?=		extconf.rb
 CONFIGURE_ARGS+=	--with-opt-dir="${LOCALBASE}"
+CONFIGURE_ENV+=		RB_USER_INSTALL=yes
 
 do-configure:	ruby-extconf-configure
 

@@ -18,7 +18,6 @@ LIB_DEPENDS=	libpafe.so:${PORTSDIR}/devel/libpafe
 
 USE_RUBY=		yes
 USE_RUBY_EXTCONF=	yes
-NEED_ROOT=		yes
 
 PLIST_FILES=	%%RUBY_SITEARCHLIBDIR%%/pasori.so
 
