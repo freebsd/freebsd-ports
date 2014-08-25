@@ -51,8 +51,10 @@ OPTIONS_DEFINE=	ARP_ACL AUTH_KERB AUTH_LDAP AUTH_NIS AUTH_SASL AUTH_SMB \
 		AUTH_SQL \
 		CACHE_DIGESTS DEBUG DELAY_POOLS DNS_HELPER ECAP ESI \
 		FOLLOW_XFF FS_AUFS FS_COSS HTCP ICAP ICMP IDENT IPV6 KQUEUE \
-		LARGEFILE SNMP SSL SSL_CRTD STACKTRACES STRICT_HTTP \
+		LARGEFILE SNMP SSL SSL_CRTD STACKTRACES LAX_HTTP \
 		TP_IPF TP_IPFW TP_PF VIA_DB WCCP WCCPV2 DOCS EXAMPLES
+
+OPTIONS_DEFAULT=AUTH_KERB AUTH_NIS FS_AUFS HTCP IDENT KQUEUE SNMP WCCP WCCPV2
 
 # TODO:
 # add an option for external_acl/session (requires some kind of external
@@ -83,16 +85,13 @@ SNMP_DESC=	Enable SNMP support
 SSL_CRTD_DESC=	Use ssl_crtd to handle SSL cert requests
 SSL_DESC=	Enable SSL gatewaying support
 STACKTRACES_DESC=	Enable automatic backtraces on fatal errors
-STRICT_HTTP_DESC=	Make Squid strictly HTTP compliant
+LAX_HTTP_DESC=	Do not enforce strict HTTP compliance
 TP_IPFW_DESC=	Enable transparent proxying with IPFW
 TP_IPF_DESC=	Enable transparent proxying with IPFilter
 TP_PF_DESC=	Enable transparent proxying with PF
 VIA_DB_DESC=	Enable Forward/Via database
 WCCPV2_DESC=	Enable Web Cache Coordination Protocol v2
 WCCP_DESC=	Enable Web Cache Coordination Protocol
-
-OPTIONS_DEFAULT=	AUTH_KERB AUTH_NIS FS_AUFS HTCP IDENT KQUEUE \
-			SNMP WCCP WCCPV2
 
 ECAP_USES=		pkgconfig:build
 
@@ -128,7 +127,7 @@ VIA_DB_CONFIGURE_ENABLE=	forw-via-db
 CACHE_DIGESTS_CONFIGURE_ENABLE=	cache-digests
 WCCP_CONFIGURE_ENABLE=		wccp
 WCCPV2_CONFIGURE_ENABLE=	wccpv2
-STRICT_HTTP_CONFIGURE_ENABLE=	http-violations
+LAX_HTTP_CONFIGURE_ENABLE=	http-violations
 IDENT_CONFIGURE_ENABLE=		ident-lookups
 ARP_ACL_CONFIGURE_ENABLE=	eui
 TP_IPFW_CONFIGURE_ENABLE=	ipfw-transparent
