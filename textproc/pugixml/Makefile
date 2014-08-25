@@ -13,6 +13,4 @@ LICENSE=	MIT
 USES=		cmake
 CMAKE_SOURCE_PATH=	${WRKSRC}/scripts
 
-PLIST_FILES=	include/pugiconfig.hpp include/pugixml.hpp lib/libpugixml.a
-
 .include <bsd.port.mk>
