@@ -3,6 +3,7 @@
 
 PORTNAME=	pycosat
 PORTVERSION=	0.6.0
+PORTREVISION=	1
 CATEGORIES=	math python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,7 +14,7 @@ COMMENT=	Bindings to PicoSAT (a SAT solver)
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libpicosat.so:${PORTSDIR}/devel/picosat
+LIB_DEPENDS=	libpicosat.so:${PORTSDIR}/math/picosat
 
 USES=		python
 USE_PYTHON=	autoplist distutils
