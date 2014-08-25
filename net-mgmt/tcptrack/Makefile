@@ -7,7 +7,7 @@ CATEGORIES=		net-mgmt
 MASTER_SITES=		http://www.rhythm.cx/~steve/devel/tcptrack/%SUBDIR%/
 MASTER_SITE_SUBDIR=	release/${PORTVERSION}/source
 
-MAINTAINER=	squat@squat.no
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Packet sniffer which displays TCP information like top(1)
 
 GNU_CONFIGURE=	yes

@@ -6,7 +6,7 @@ PORTVERSION=	5.2.6
 CATEGORIES=	net
 MASTER_SITES=	SF http://etherboot.berlios.de/dist/
 
-MAINTAINER=	ambrisko@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Network boot of FreeBSD a.out/ELF kernels (improved netboot)
 
 BROKEN=		Installation is intentionally broken
