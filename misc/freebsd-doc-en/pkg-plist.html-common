@@ -38,7 +38,6 @@
 %%DOCSDIR%%/%%DOCLANG%%/articles/linux-emulation/docbook.css
 %%DOCSDIR%%/%%DOCLANG%%/articles/linux-users/docbook.css
 %%DOCSDIR%%/%%DOCLANG%%/articles/mailing-list-faq/docbook.css
-%%DOCSDIR%%/%%DOCLANG%%/articles/mh/docbook.css
 %%DOCSDIR%%/%%DOCLANG%%/articles/nanobsd/docbook.css
 %%DOCSDIR%%/%%DOCLANG%%/articles/nanobsd/imagelib/callouts/1.png
 %%DOCSDIR%%/%%DOCLANG%%/articles/nanobsd/imagelib/callouts/2.png
