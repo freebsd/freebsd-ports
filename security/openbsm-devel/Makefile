@@ -3,7 +3,7 @@
 
 PORTNAME=	openbsm
 DISTVERSION=	1.2-alpha3
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	security
 MASTER_SITES=	http://www.trustedbsd.org/downloads/ \
     		http://mirrors.rit.edu/zi/
@@ -12,7 +12,7 @@ PKGNAMESUFFIX=	-devel
 MAINTAINER=	zi@FreeBSD.org
 COMMENT=	Open Source Basic Security Module (BSM) Audit Implementation
 
-LICENSE=	BSD
+LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 CONFLICTS=	openbsm-1.[0-9]*
@@ -23,7 +23,7 @@ USE_LDCONFIG=	yes
 
 USE_RC_SUBR=	auditdistd
 SUB_FILES=	pkg-message
-PLIST_SUB=	USERS=${USERS} GROUPS=${GROUPS}
+PLIST_SUB=	USERS=${USERS} GROUPS=${GROUPS} NEEDVARDIRS=${NEEDVARDIRS}
 
 USERS=		auditdistd
 GROUPS=		audit
@@ -31,6 +31,12 @@ GROUPS=		audit
 VARAUDIT=	/var/audit
 
 .include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 902000 && ${OSVERSION} >= 800000
+NEEDVARDIRS=	""
+.else
+NEEDVARDIRS=	"@comment "
+.endif
 
 .if ${OSVERSION} <= 800000
 IGNORE=		requires FreeBSD 8.x or above
@@ -41,7 +47,12 @@ IGNORE=		is not needed under FreeBSD 10.x or higher
 .endif
 
 post-install:
-	@${MKDIR} -m 0770 ${STAGEDIR}${VARAUDIT}/dist
-	@${MKDIR} -m 0700 ${STAGEDIR}${VARAUDIT}/remote
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libauditd.so.0.0.0
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libbsm.so.0.0.0
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/auditfilter_noop.so.0.0.0
+.if ${OSVERSION} < 902000 && ${OSVERSION} >= 800000
+	@${MKDIR} -m 0770 \
+		${STAGEDIR}${VARAUDIT}/dist ${STAGEDIR}${VARAUDIT}/remote
+.endif
 
 .include <bsd.port.post.mk>
