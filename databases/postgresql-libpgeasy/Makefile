@@ -15,7 +15,7 @@ COMMENT=	Easy-to-use C interface to PostgreSQL
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
-USES=		gmake libtool pgsql
+USES+=		gmake libtool pgsql
 USE_LDCONFIG=	YES
 GNU_CONFIGURE=	YES
 DOCSDIR=	${PREFIX}/share/doc/postgresql/${PORTNAME}

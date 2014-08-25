@@ -12,11 +12,10 @@ COMMENT=	The contrib utilities from the PostgreSQL distribution
 LIB_DEPENDS=	libxslt.so:${PORTSDIR}/textproc/libxslt \
 		libxml2.so:${PORTSDIR}/textproc/libxml2
 
-USE_PGSQL=	yes
-DEFAULT_PGSQL_VER=84
-MASTERDIR=	${.CURDIR}/../postgresql${DEFAULT_PGSQL_VER}-server
+USES+=		pgsql:8.4
+MASTERDIR=	${.CURDIR}/../postgresql84-server
 
-USES=		bison
+USES+=		bison
 
 BUILD_DIRS=	src/port contrib
 INSTALL_DIRS=	contrib
