@@ -9,7 +9,7 @@ MASTER_SITES=	http://geonext.uni-bayreuth.de/data/download/\
 		http://home.arcor.de/teambushido/fbsd_ports/
 DISTNAME=	geonext.${PORTVERSION}
 
-MAINTAINER=	fehlner@gmx.de
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Interactive (dynamic) elementary Geometry Software
 
 WRKSRC=		${WRKDIR}/geonext_install
