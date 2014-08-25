@@ -21,6 +21,9 @@ RUN_DEPENDS=	rubygem-dep_selector>=0.0.3:${PORTSDIR}/devel/rubygem-dep_selector 
 		rubygem-thin>=0:${PORTSDIR}/www/rubygem-thin \
 		rubygem-uuidtools>=2.1.1:${PORTSDIR}/devel/rubygem-uuidtools
 
+DEPRECATED=	Depends on broken rubygem-dep_selector
+EXPIRES=	2014-09-25
+
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
