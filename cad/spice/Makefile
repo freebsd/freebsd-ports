@@ -8,10 +8,12 @@ CATEGORIES=	cad
 MASTER_SITES=	http://embedded.eecs.berkeley.edu/pubs/downloads/spice/:srcs \
 		http://www-device.eecs.berkeley.edu/~bsim/Files/BSIM3/ftpv330/src/:bsim3 \
 		http://www-device.eecs.berkeley.edu/~bsim/Files/BSIM4/BSIM480/:bsim4 \
+		http://home.hiroshima-u.ac.jp/usdl/HiSIM2/:hisim2 \
 		LOCAL/hrs/${PORTNAME}:docs
 DISTFILES=	spice3f5${EXTRACT_SUFX}:srcs \
 		BSIM3v330.tar.Z:bsim3 \
 		BSIM480_Code.zip:bsim4 \
+		HiSIM_2.8.0_Release_20140605.zip:hisim2 \
 		cp.ps:docs toc.ps:docs doc.ps:docs
 DIST_SUBDIR=	spice
 EXTRACT_ONLY=	spice3f5${EXTRACT_SUFX}
@@ -26,7 +28,7 @@ EXTRACT_DEPENDS=	${LOCALBASE}/bin/unzip:${PORTSDIR}/archivers/unzip
 
 WRKSRC=		${WRKDIR}/${PORTNAME}3f5
 MAKEFILE=	${FILESDIR}/Makefile
-CONFIGURE_ENV=	CONFIGFILE="${WRKSRC}/conf/FreeBSD" \
+CONFIGURE_ENV=	CONFIGFILE="${CONFIGFILE}" \
 		LOCALBASE="${LOCALBASE}"
 
 PORTDOCS=	spice3f3.ps.gz
@@ -36,17 +38,50 @@ PORTEXAMPLES=	bjtnoise.cir bsim1tst.cir bsim2tst.cir diffpair.cir \
 		process.pro pz2.cir pzt.cir rc.cir rca3040.cir resnoise.cir \
 		rtlinv.cir schmitt.cir simplepz.cir
 
-OPTIONS_DEFINE=	DOCS EXAMPLES X11 DEV_BSIM3 DEV_BSIM4
+OPTIONS_DEFINE=	DOCS EXAMPLES X11 DEV_BSIM3 DEV_BSIM4 DEV_HISIM2
 OPTIONS_DEFAULT=DOCS EXAMPLES X11
 
 X11_USE=		XORG=x11,xaw,xext,xmu,xt
 X11_CONFIGURE_ENV=	WITH_X11=yes
 DEV_BSIM3_DESC=		BSIM3v3 MOS Transistor Model Support
-DEV_BSIM3_CONFIGURE_ENV=DEV_BSIM3=yes
 DEV_BSIM4_DESC=		BSIM4v4 MOS Transistor Model Support
-DEV_BSIM4_CONFIGURE_ENV=DEV_BSIM4=yes
+DEV_HISIM2_DESC=	HiSIM2 IGFET Model Support
 
 .include <bsd.port.options.mk>
+
+# Configuration parameters.
+CC_OPT=		${CFLAGS}
+CONFIGFILE=	${WRKSRC}/conf/FreeBSD
+DEVICES=
+.for D in BSIM3 BSIM4 HISIM2
+. if !empty(PORT_OPTIONS:MDEV_$D)
+DEVICES+=	${D:tl}
+. endif
+.endfor
+
+.if !empty(PORT_OPTIONS:MDEV_BSIM3) || \
+    !empty(PORT_OPTIONS:MDEV_BSIM4) || \
+    !empty(PORT_OPTIONS:MDEV_HISIM2)
+LICENSE_COMB=	multi
+LICENSE_FILE_MIT=	${WRKSRC}/COPYRIGHT
+.if !empty(PORT_OPTIONS:MDEV_BSIM3) || \
+    !empty(PORT_OPTIONS:MDEV_BSIM4)
+LICENSE+=	BSIML
+LICENSE_NAME_BSIML=	BSIM license
+LICENSE_PERMS_BSIML=	dist-mirror pkg-mirror auto-accept
+.if !empty(PORT_OPTIONS:MDEV_BSIM3)
+LICENSE_FILE_BSIML=	${WRKSRC}/src/lib/dev/bsim3/B3TERMS_OF_USE
+.else
+LICENSE_FILE_BSIML=	${WRKSRC}/src/lib/dev/bsim4/B4TERMS_OF_USE.txt
+.endif
+.endif
+.if !empty(PORT_OPTIONS:MDEV_HISIM2)
+LICENSE+=	HISIML
+LICENSE_NAME_HISIML=	HiSIM license
+LICENSE_PERMS_HISIML=	dist-mirror pkg-mirror auto-accept
+LICENSE_FILE_HISIML=	${FILESDIR}/hisim2-license.txt
+.endif
+.endif
 
 post-extract:
 	@${DO_NADA}
@@ -60,13 +95,21 @@ post-extract:
 	${UNZIP_CMD} -qo ${DISTDIR}/${DIST_SUBDIR}/BSIM480_Code.zip \
 	    -d ${WRKSRC}/src/lib/dev/bsim4
 .endif
+.if ${PORT_OPTIONS:MDEV_HISIM2}
+	${UNZIP_CMD} -qo ${DISTDIR}/${DIST_SUBDIR}/HiSIM_2.8.0_Release_20140605.zip \
+	    -d ${WRKDIR}
+	${MV} ${WRKDIR}/HiSIM_2.8.0_Release_20140605/HiSIM_2.8.0_C-Code/hisim2 \
+	    ${WRKSRC}/src/lib/dev
+.endif
 
-do-configure:
+${CONFIGFILE}::
 	@${SETENV} ${CONFIGURE_ENV} ${MAKE} -f ${MAKEFILE} configure
-	@(${ECHO_CMD} "CC=	${CC}";		\
-	  ${ECHO_CMD} "MAKE=	${MAKE}";	\
-	  ${ECHO_CMD} "CC_OPT=	${CFLAGS}";	\
-	) >> ${WRKSRC}/conf/FreeBSD
+.for V in CC MAKE CC_OPT DEVICES
+	@${ECHO_CMD} "${V}=${$V}" >> ${WRKSRC}/conf/FreeBSD
+.endfor
+
+do-configure: ${CONFIGFILE}
+	@${DO_NADA}
 
 post-install:
 .if ${PORT_OPTIONS:MDOCS}
