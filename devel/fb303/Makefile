@@ -9,7 +9,7 @@ MASTER_SITES=	APACHE
 MASTER_SITE_SUBDIR=	thrift/${PORTVERSION}
 DISTNAME=	thrift-${PORTVERSION}
 
-MAINTAINER= ports@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Facebook Bassline
 
 LICENSE=	APACHE20
@@ -31,8 +31,6 @@ PLIST_SUB+=	PORTVERSION="${PORTVERSION}" PYTHON_VER="${PYTHON_VER}"
 
 CONFIGURE_ARGS+=	--without-php
 
-NO_STAGE=	yes
-
 .include <bsd.port.pre.mk>
 
 .if ${COMPILER_TYPE} == clang
@@ -44,9 +42,9 @@ post-build:
 	(cd ${WRKSRC} && ${LOCALBASE}/bin/thrift --gen perl ${WRKSRC}/if/fb303.thrift)
 
 post-install:
-	${MKDIR} ${PREFIX}/${SITE_PERL_REL}/Facebook/FB303
+	${MKDIR} ${STAGEDIR}${PREFIX}/${SITE_PERL_REL}/Facebook/FB303
 .for FILE in Constants.pm FacebookService.pm Types.pm
-	${INSTALL_DATA} ${WRKSRC}/gen-perl/Facebook/FB303/${FILE} ${PREFIX}/${SITE_PERL_REL}/Facebook/FB303
+	${INSTALL_DATA} ${WRKSRC}/gen-perl/Facebook/FB303/${FILE} ${STAGEDIR}${PREFIX}/${SITE_PERL_REL}/Facebook/FB303
 .endfor
 
 .include "../thrift/bsd.thrift.mk"
