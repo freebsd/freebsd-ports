@@ -15,14 +15,13 @@ LICENSE=	GPLv3
 
 USES=		libtool pkgconfig
 USE_GNOME=	gtk20 esound
-USE_AUTOTOOLS=	aclocal automake autoconf libtoolize
+USE_AUTOTOOLS=	aclocal automake autoconf autoheader libtoolize
 GNU_CONFIGURE=	yes
 
-AUTOMAKE_ARGS=	--add-missing --copy
-ACLOCAL_ARGS=	-I ${LOCALBASE}/share/aclocal
+AUTOMAKE_ARGS=	-a -c -f
 
 CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+LIBS+=		-L${LOCALBASE}/lib
 
 DATADIR=	${PREFIX}/share/llk_linux
 

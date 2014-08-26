@@ -16,8 +16,8 @@ USES=		gmake
 USE_SDL=	image mixer sdl
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--target="" --disable-werror
-LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
-CXXFLAGS+=	${PTHREAD_CFLAGS} -I${LOCALBASE}/include
+CPPFLAGS+=	-I${LOCALBASE}/include
+LIBS+=		-L${LOCALBASE}/lib -lm
 
 PORTDOCS=	AUTHORS ChangeLog README TODO
 

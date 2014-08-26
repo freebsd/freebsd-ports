@@ -42,8 +42,9 @@ MAKE_ENV+=	TARGETS="${BIN_TARGETS}" \
 .include <bsd.port.options.mk>
 
 post-patch:
-	@${REINPLACE_CMD} -e '/^CC/s|=|?=|; s| make| ${MAKE_CMD}|;' \
-	    ${WRKSRC}/Makefile ${WRKSRC}/po/Makefile
+	@${REINPLACE_CMD} \
+		'/^CC/s|=|?=|; s| make| ${MAKE_CMD}|; /^LIBS/s/$$/ -lm/;' \
+		${WRKSRC}/Makefile ${WRKSRC}/po/Makefile
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/libexec/gimp/2.2/plug-ins

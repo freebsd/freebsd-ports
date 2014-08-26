@@ -17,26 +17,22 @@ RUN_DEPENDS=	transfig:${PORTSDIR}/print/transfig
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-1.7alpha15/
 USE_GNOME=	gtk20
-#USE_AUTOTOOLS=	autoconf213
+USE_XORG=	x11
 GNU_CONFIGURE=	yes
 USES=		gettext gmake pkgconfig tar:tgz
 CONFIGURE_ARGS=	--enable-emf=yes
 PKGNAMESUFFIX=	-devel
 MAKE_ARGS+=	MAKE=${MAKE_CMD}
 MAKE_JOBS_UNSAFE=	yes
-#to include emf
-CFLAGS+=	-I${LOCALBASE}/include/libEMF
-CXXFLAGS+=	-I${LOCALBASE}/include/libEMF
+CPPFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/libEMF
+LIBS+=		-L${LOCALBASE}/lib
 
 post-patch:
-	@${REINPLACE_CMD} -e 's+%%LOCALBASE%%+${LOCALBASE}+g;' ${WRKSRC}/configure.in
-	@${REINPLACE_CMD} -e 's+%%LOCALBASE%%+${LOCALBASE}+g;' ${WRKSRC}/configure
+	@${REINPLACE_CMD} 's/-lstdc++//' ${WRKSRC}/configure
+	@${REINPLACE_CMD} '/^SYS_LIBRARIES =/s/$$/ -lX11/' ${WRKSRC}/Makefile.in
 
 post-install:
-	@(cd ${WRKSRC}; \
-		${MKDIR} ${STAGEDIR}${PREFIX}/share/examples/chemtool/; \
-		cd ${WRKSRC}/examples/; \
-		${INSTALL_DATA} * ${STAGEDIR}${PREFIX}/share/examples/chemtool; \
-	)
+	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/examples/* ${STAGEDIR}${EXAMPLESDIR}
 
 .include <bsd.port.mk>

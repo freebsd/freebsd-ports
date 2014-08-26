@@ -6,11 +6,11 @@
 -CFLAGS=			-march=i586 -O3 -Wall -Wno-format-y2k
 -LFLAGS=			-L/usr/local/lib -lz -lfltk -lptypes  -lexpat -L/usr/X11R6/lib -lm -lXpm -lX11 -ldl -lpthread -lXft
 -LFLAGS2=		-L/usr/local/lib -lfltk_ -lptypes -L/usr/X11R6/lib -lXpm -lX11 -ldl -lpthread
-+COMP=			$(CC)
++COMP=			$(CXX)
 +IFLAGS=			-I../util -Isrc -I$(LOCALBASE)/include -I$(LOCALBASE)/include/ptypes
 +CFLAGS:=			$(CFLAGS) -Wno-format-y2k
-+LFLAGS=			-L$(LOCALBASE)/lib -lz -lfltk -lptypes  -lexpat -lm -lXpm -lX11  $(PTHREAD_LIBS) -lXft -lcompat
-+LFLAGS2=		-L$(LOCALBASE)/lib -lfltk -lptypes -lXpm -lX11  $(PTHREAD_LIBS)
++LFLAGS=			-L$(LOCALBASE)/lib -lz -lfltk -lptypes -lexpat -lm -lXpm -lX11 -pthread -lXft -lcompat
++LFLAGS2=		-L$(LOCALBASE)/lib -lfltk -lptypes -lXpm -lX11 -pthread
  XTRADER=		xtrader
  XTRADER2=		xtrader.static
  

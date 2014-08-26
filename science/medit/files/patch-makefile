@@ -16,7 +16,7 @@
 +	$(MAKE) $(MFLAGS) -f Makefile.arch \
 +        "prog   = medit" \
 +        "INCDIR = -I. -I$(WRKSRC)/sources -I$(LOCALBASE)/include" \
-+	"XLIBS  = -L$(LOCALBASE)/lib -lXmu -lXext -lX11 -lpmc" \
++	"XLIBS  = -L$(LOCALBASE)/lib -lXmu -lXext -lX11 -lpmc -pthread" \
 +        "GL_LIB   = -lGL" \
 +	"GLU_LIB  = -lGLU" \
 +	"GLUT_LIB = -lglut" \

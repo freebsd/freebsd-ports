@@ -33,8 +33,8 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-mixer-applet \
 		--disable-networkmanager
 CONFIGURE_ENV=	OS_SYS="/usr/include"
-CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
-LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
+CPPFLAGS+=	-I${LOCALBASE}/include
+LIBS+=		-L${LOCALBASE}/lib
 
 GCONF_SCHEMAS=	charpick.schemas drivemount.schemas geyes.schemas \
 		mixer.schemas multiload.schemas stickynotes.schemas
@@ -78,7 +78,6 @@ IGNORE=		Python bindings for gnomedesktop are unsupported on ${ARCH}"
 .endif
 
 .if ${ARCH} != "i386" && ${ARCH} != "amd64"
-CFLAGS+=	-fPIC
 PLIST_SUB+=	BATTERY="@comment "
 .else
 GCONF_SCHEMAS+=	battstat.schemas
@@ -95,6 +94,12 @@ GCONF_SCHEMAS+= cpufreq-applet.schemas
 post-patch:
 	@${FIND} ${WRKSRC} -name Makefile.in | ${XARGS} ${REINPLACE_CMD} -e \
 	    	's|" == "|" = "|g'
+	@${REINPLACE_CMD} '/^geyes_applet2_LDADD =/s/=/= -lm/' \
+		${WRKSRC}/geyes/Makefile.in
+	@${REINPLACE_CMD} '/^stickynotes_applet_LDADD =/s/=/= $$(X_LIBS)/' \
+		${WRKSRC}/stickynotes/Makefile.in
+	@${REINPLACE_CMD} '/^trashapplet_LDADD =/s/=/= $$(X_LIBS)/' \
+		${WRKSRC}/trashapplet/src/Makefile.in
 .if !defined(USE_PYTHON)
 	@${REINPLACE_CMD} -e 's|HAVE_PYGTK="yes"|HAVE_PYGTK="no"|' \
 		${WRKSRC}/configure

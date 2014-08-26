@@ -54,7 +54,7 @@ diff -urN variants/slashem-0.0.6E4F8.orig/sys/unix/Makefile.src variants/slashem
  
  WINNOEGNUDCFLAGS = 
 -WINNOEGNUDLIB = `sdl-config --libs` -lSDL_image -lSDL_mixer -lGL -lGLU
-+WINNOEGNUDLIB = `${SDL_CONFIG} --libs` -lSDL_image -lSDL_mixer -lGL -lGLU -lgnuregex
++WINNOEGNUDLIB = `${SDL_CONFIG} --libs` -lSDL_image -lSDL_mixer -lGL -lGLU -lgnuregex -lm
 +
 +.c.o:
 +	${CC} ${CFLAGS} -c $< -o $@

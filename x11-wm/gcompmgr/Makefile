@@ -11,11 +11,13 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNOME interface to xcompmgr
 
 RUN_DEPENDS=	xcompmgr:${PORTSDIR}/x11-wm/xcompmgr
-LIB_DEPENDS=	libgtkmm-2.4.so:${PORTSDIR}/x11-toolkits/gtkmm24
 
 GNU_CONFIGURE=	yes
+LIBS+=		-L${LOCALBASE}/lib -lX11
 USES=		libtool pkgconfig
 USE_AUTOTOOLS=	automake:env
+USE_GNOME=	gtkmm24
+USE_XORG=	x11
 
 DESKTOP_ENTRIES="gcompmgr" \
 		"Configure window effects" \

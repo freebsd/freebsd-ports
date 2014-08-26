@@ -17,8 +17,8 @@ INSTALLS_ICONS=	yes
 USE_GNOME=	intlhack gnomeprefix libgnome gnomepanel gnomedocutils
 USES=		gettext gmake libtool pathfix pkgconfig tar:bzip2
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LIBS+=		-L${LOCALBASE}/lib -lm
 INSTALL_TARGET=	install-strip
 
 GCONF_SCHEMAS=	netstatus.schemas

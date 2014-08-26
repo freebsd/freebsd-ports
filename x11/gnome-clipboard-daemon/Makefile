@@ -14,14 +14,16 @@ LICENSE=	GPLv2
 
 USES=		pkgconfig tar:bzip2
 USE_GNOME=	gtk20
+USE_XORG=	x11
+MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS} ${CPPFLAGS}"
 
 PLIST_FILES=	bin/${PORTNAME}
 
 post-patch:
-	@${REINPLACE_CMD} -e \
-		's|^CC=|CC?=| ; \
-		 s|^CFLAGS=|CFLAGS?=| ; \
-		 s|-o clipboard-daemon |-o ${PORTNAME} |' ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} \
+		-e 's|-o clipboard-daemon |-o ${PORTNAME} |' \
+		-e 's/gtk+-2\.0/& x11/' \
+		${WRKSRC}/Makefile
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin

@@ -8,42 +8,15 @@
  enable_libvisual
  enable_libcdio
  enable_musicbrainz
-@@ -6324,7 +6325,7 @@
-   rm -rf conftest*
-   ;;
+@@ -13247,7 +13248,7 @@
+   GMERLIN_DEP_RPATH=""
+ fi
  
--x86_64-*kfreebsd*-gnu|x86_64-*linux*|ppc*-*linux*|powerpc*-*linux*| \
-+amd64-*freebsd*|x86_64-*kfreebsd*-gnu|x86_64-*linux*|ppc*-*linux*|powerpc*-*linux*| \
- s390*-*linux*|s390*-*tpf*|sparc*-*linux*)
-   # Find out which ABI we are using.
-   echo 'int i;' > conftest.$ac_ext
-@@ -6336,7 +6337,7 @@
-     case `/usr/bin/file conftest.o` in
-       *32-bit*)
- 	case $host in
--	  x86_64-*kfreebsd*-gnu)
-+	  amd64-*freebsd*|x86_64-*kfreebsd*-gnu)
- 	    LD="${LD-ld} -m elf_i386_fbsd"
- 	    ;;
- 	  x86_64-*linux*)
-@@ -6355,7 +6356,7 @@
- 	;;
-       *64-bit*)
- 	case $host in
--	  x86_64-*kfreebsd*-gnu)
-+	  amd64-*freebsd*|x86_64-*kfreebsd*-gnu)
- 	    LD="${LD-ld} -m elf_x86_64_fbsd"
- 	    ;;
- 	  x86_64-*linux*)
-@@ -11240,7 +11241,7 @@
- 	for ac_word in $CC $CFLAGS $CPPFLAGS $LDFLAGS; do
- 	 if test -n "$ac_prev"; then
- 	   case $ac_word in
--	     i?86 | x86_64 | ppc | ppc64)
-+	     amd64 | i?86 | x86_64 | ppc | ppc64)
- 	       if test -z "$ac_arch" || test "$ac_arch" = "$ac_word"; then
- 		 ac_arch=$ac_word
- 	       else
+-LDFLAGS="$GMERLIN_DEP_RPATH"
++LDFLAGS="$LDFLAGS $GMERLIN_DEP_RPATH"
+ 
+ 
+ 
 @@ -15396,9 +15397,9 @@
  V4LCONVERT_REQUIRED="0.5.7"
  have_v4lconvert=false

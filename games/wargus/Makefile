@@ -23,8 +23,16 @@ USE_GNOME=	gtk20
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 SUB_FILES=	${PORTNAME} pkg-message
 
-MAKE_ARGS+=	CFLAGS+="-I${LOCALBASE}/include -I${LOCALBASE}/include/libpng15" LDFLAGS+=-L${LOCALBASE}/lib
+CPPFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/libpng15
+LDFLAGS+=	-L${LOCALBASE}/lib
 
+post-patch:
+	@${REINPLACE_CMD} \
+		-e '/^CFLAGS/s|-O2|${CPPFLAGS} ${CFLAGS}|' \
+		-e '/^CXXFLAGS/s|$$| ${CXXFLAGS}|' \
+		-e '/^LDFLAGS/s|$$| ${LDFLAGS}|' \
+		-e '/^GTKFLAGS/s/gtk+-2.0/& x11/' \
+		${WRKSRC}/Makefile
 do-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
 	cd ${WRKSRC} && ${COPYTREE_SHARE} "campaigns contrib maps scripts" ${STAGEDIR}${DATADIR}

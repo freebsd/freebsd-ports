@@ -14,6 +14,7 @@ COMMENT=	Dodge the rocks until you die
 USES=		tar:bzip2 gmake
 USE_SDL=	mixer image sdl
 GNU_CONFIGURE=	yes
+LDFLAGS+=	-lm
 
 PLIST_FILES=	bin/${PORTNAME}
 PORTDOCS=	*

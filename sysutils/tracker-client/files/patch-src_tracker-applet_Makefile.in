@@ -9,14 +9,15 @@
  	$(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1) \
  	$(am__DEPENDENCIES_1)
  DEFAULT_INCLUDES = -I.@am__isrc@ -I$(top_builddir)
-@@ -345,8 +343,8 @@
+@@ -345,8 +343,9 @@
  	$(GCOV_CFLAGS)
  
  tracker_applet_LDADD = \
 -	$(top_builddir)/src/libtracker/libtrackerclient.la 		\
 -	$(top_builddir)/src/libtracker-common/libtracker-common.la 	\
-+	-ltrackerclient 		\
-+	-ltracker-common 	\
++	-ltrackerclient \
++	-ltracker-common \
++	-lX11 \
  	$(TRACKER_APPLET_LIBS)						\
  	$(LIBGLADE_LIBS)						\
  	$(GCOV_LIBS)

@@ -22,7 +22,7 @@ GNU_CONFIGURE=	yes
 MAKEFILE=	GNUmakefile
 
 CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+LIBS+=		-L${LOCALBASE}/lib
 
 PLIST_FILES=	bin/${PORTNAME} man/man1/${PORTNAME}.1.gz \
 		${DOCSDIR_REL}/manual.css ${DOCSDIR_REL}/manual.xml \
@@ -33,5 +33,8 @@ PLIST_DIRS=	${DOCSDIR_REL}
 .if !defined(WANT_OPENLDAP_SASL) || defined(WITHOUT_SASL)
 CONFIGURE_ARGS=	--without-sasl
 .endif
+
+post-patch:
+	@${REINPLACE_CMD} -e 's/-lssl/-lcrypto/' ${WRKSRC}/configure
 
 .include <bsd.port.mk>

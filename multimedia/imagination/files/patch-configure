@@ -1,5 +1,14 @@
 --- ./configure.orig	2011-03-06 20:06:44.000000000 +0000
 +++ ./configure	2014-03-14 15:08:46.000000000 +0000
+@@ -12499,7 +12499,7 @@
+ 
+ LIBTOOL="$LIBTOOL --silent"
+ 
+-pkg_modules="gtk+-2.0 >= 2.14.0 gthread-2.0"
++pkg_modules="gtk+-2.0 >= 2.14.0 gthread-2.0 gmodule-2.0"
+ 
+ 
+ 
 @@ -13029,7 +13029,7 @@
  
      fi

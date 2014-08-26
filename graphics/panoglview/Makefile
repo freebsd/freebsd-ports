@@ -11,13 +11,14 @@ MAINTAINER=	ii@any.com.ru
 COMMENT=	Panorama viewer using OpenGL
 
 USES=		gmake
+USE_GL=		glu
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--with-unicode
 CONFIGURE_ENV=	WX_CONFIG_NAME=${WX_CONFIG} \
 		PATH="$${PATH}:${LOCALBASE}/bin"
-LDFLAGS+=	${PTHREAD_LIBS} -L${LOCALBASE}/lib
-CFLAGS+=	${PTHREAD_CFLAGS} -I${LOCALBASE}/include
-CXXFLAGS+=	${PTHREAD_CFLAGS} -I${LOCALBASE}/include -ftemplate-depth-64
-CONFIGURE_ARGS=	--with-unicode
+CFLAGS+=	-I${LOCALBASE}/include
+CXXFLAGS+=	-I${LOCALBASE}/include -ftemplate-depth-64
+LIBS+=		-L${LOCALBASE}/lib -lGLU -lGL
 
 USE_WX=		2.8
 WX_UNICODE=	yes

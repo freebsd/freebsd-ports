@@ -10,22 +10,21 @@ MASTER_SITES=	http://ruby.chemie.uni-freiburg.de/~martin/chemtool/
 MAINTAINER=	maho@FreeBSD.org
 COMMENT=	Draw organic molecules easily and store them
 
+LIB_DEPENDS=	libEMF.so:${PORTSDIR}/graphics/libemf
 RUN_DEPENDS=	transfig:${PORTSDIR}/print/transfig
 
-USE_GNOME=	gtk20
 USES=		gmake pkgconfig
+USE_GNOME=	gtk20
+USE_XORG=	x11
 GNU_CONFIGURE=	yes
-CFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+CPPFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/libEMF
+LIBS+=		-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--enable-emf=yes --with-localedir=${PREFIX}
 
 OPTIONS_DEFINE=	EXAMPLES
 
-.include <bsd.port.pre.mk>
-
-#isolate libEMF stuff
-LIB_DEPENDS+=	libEMF.so:${PORTSDIR}/graphics/libemf
-CFLAGS+=	-I${LOCALBASE}/include/libEMF
+post-patch:
+	@${REINPLACE_CMD} 's/-lstdc++//' ${WRKSRC}/configure
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/chemtool ${STAGEDIR}${PREFIX}/bin
@@ -36,4 +35,4 @@ do-install:
 	cd ${WRKSRC}/examples && ${FIND} . | \
 		${CPIO} -pdm -L -R ${SHAREOWN}:${SHAREGRP} ${STAGEDIR}${EXAMPLESDIR}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

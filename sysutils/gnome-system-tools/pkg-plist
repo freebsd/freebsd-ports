@@ -4,8 +4,6 @@ bin/shares-admin
 bin/time-admin
 bin/users-admin
 etc/gnome-system-tools/user-profiles.conf
-lib/nautilus/extensions-2.0/libnautilus-gst-shares.a
-lib/nautilus/extensions-2.0/libnautilus-gst-shares.la
 lib/nautilus/extensions-2.0/libnautilus-gst-shares.so
 libdata/pkgconfig/gnome-system-tools.pc
 share/applications/network.desktop

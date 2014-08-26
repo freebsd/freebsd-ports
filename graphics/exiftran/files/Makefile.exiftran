@@ -10,7 +10,7 @@ SRCS+=	transupp.c
 .PATH: ${.CURDIR}/../../rd
 SRCS+=	read-jpeg.c
 
-LDADD=	-L${PREFIX}/lib -ljpeg -lexif
+LDADD=	-L${PREFIX}/lib -ljpeg -lexif -lm
 
 CFLAGS+= -I${PREFIX}/include -I${.CURDIR}/../../jpeg/80 \
 	-I${.CURDIR}/../.. -DHAVE_NEW_EXIF

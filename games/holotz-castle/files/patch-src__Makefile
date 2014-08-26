@@ -20,7 +20,7 @@
 -CFLAGS=-fno-strict-aliasing -I. -I../JLib `$(SDL_CONFIG) --cflags` -I/usr/local/include/ -I/usr/local/include/SDL -O3 -Wall -Werror -Wshadow $(CPU_OPTS) -ffast-math -c
 -LDFLAGS=-L. -ffast-math -lSDL_image -lSDL_ttf -lSDL_mixer `$(SDL_CONFIG) --libs`
 +CXXFLAGS+=-I. -I../JLib `$(SDL_CONFIG) --cflags` -Wall -Wshadow -c
-+LDFLAGS=-L. -lSDL_image -lSDL_ttf -lSDL_mixer `$(SDL_CONFIG) --libs`
++LDFLAGS=-L. -lSDL_image -lSDL_ttf -lSDL_mixer `$(SDL_CONFIG) --libs` -lz
  
  
  JLib: 

@@ -6,7 +6,7 @@ LIBDIR=	${PREFIX}/lib
 INCLUDEDIR=	${PREFIX}/include
 INCS=	udt.h
 
-LDADD=	-lmd -lpthread
+LDADD=	-lmd -pthread
 
 SRCS=	common.cpp window.cpp list.cpp buffer.cpp packet.cpp channel.cpp \
 	queue.cpp ccc.cpp cache.cpp core.cpp epoll.cpp api.cpp

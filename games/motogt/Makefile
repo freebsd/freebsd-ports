@@ -21,14 +21,14 @@ LICENSE_PERMS_CCbySA=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 LICENSE_FILE_CCbySA=	${WRKSRC}/doc/cc-by-sa.txt
 
 USES=		zip
+USE_GL=		gl
 BUILD_WRKSRC=	${WRKSRC}/src
 MAKEFILE=	Makefile.lnx
 MAKE_JOBS_UNSAFE=	yes
 CFLAGS+=	-I${LOCALBASE}/include/libpng15
-MAKE_ENV+=	PTHREAD_LIBS="${PTHREAD_LIBS}"
 SUB_FILES=	motogt
 CXXFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 PLIST_FILES=	bin/${PORTNAME} libexec/MotoGT.bin
 PORTDATA=	*

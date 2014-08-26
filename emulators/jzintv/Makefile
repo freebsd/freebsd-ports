@@ -20,7 +20,7 @@ USES=	gmake zip
 USE_XORG=	x11 xau xdmcp
 USE_SDL=	sdl
 CPPFLAGS+=	-I${LOCALBASE}/include `${SDL_CONFIG} --cflags`
-LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS} `${SDL_CONFIG} --libs`
+LDFLAGS+=	-L${LOCALBASE}/lib `${SDL_CONFIG} --libs` -lm
 
 OPTIONS_DEFINE=	TOOLS DOCS EXAMPLES
 OPTIONS_SUB=	yes

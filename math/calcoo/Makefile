@@ -12,6 +12,7 @@ COMMENT=	RPN and algebraic scientific calculator
 USES=		pkgconfig
 USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes
+LIBS+=		-lm
 
 PLIST_FILES=	bin/calcoo \
 		man/man1/calcoo.1.gz

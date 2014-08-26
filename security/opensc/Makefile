@@ -32,7 +32,7 @@ INSTALL_TARGET=	install-strip
 
 CONFIGURE_ENV=	\
 		OPENSSL_CFLAGS="-I${OPENSSLINC}" \
-		OPENSSL_LIBS="-L${OPENSSLLIB} -lssl" \
+		OPENSSL_LIBS="-L${OPENSSLLIB} -lcrypto" \
 		XSLTPROC="${LOCALBASE}/bin/xsltproc"
 
 CONFIGURE_ARGS=	--with-xsl-stylesheetsdir=${LOCALBASE}/share/xsl/docbook

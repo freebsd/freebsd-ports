@@ -19,11 +19,12 @@ RUN_DEPENDS=	gnomesu:${PORTSDIR}/security/libgnomesu
 USES=		gettext gmake libtool pathfix pkgconfig tar:bzip2
 USE_GNOME=	gnomeprefix intlhack libgnomeprintui libgnomeui
 USE_LDCONFIG=	yes
+USE_XORG=	x11
 INSTALLS_ICONS=	yes
 INSTALL_TARGET=	install-strip
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include -D_IPP_PRIVATE_STRUCTURES
-LDFLAGS+=	-L${LOCALBASE}/lib
+LIBS+=		-L${LOCALBASE}/lib
 
 post-patch:
 	@${SED} -e 's|%%PREFIX%%|${PREFIX}|' \
@@ -31,6 +32,8 @@ post-patch:
 		> ${WRKSRC}/gnome-cups-manager.desktop
 	@${FIND} ${WRKSRC} -name Makefile.in | ${XARGS} ${REINPLACE_CMD} -e \
 		's|-D.*_DISABLE_DEPRECATED||g'
+	@${REINPLACE_CMD} '/^gnome_cups_icon_LDADD =/s/$$/ -lX11/' \
+		${WRKSRC}/gnome-cups-manager/Makefile.in
 	@${REINPLACE_CMD} -e 's|/usr/share|${LOCALBASE}/share|g' \
 		${WRKSRC}/libgnomecups/gnome-cups-ui-driver.c
 	@${REINPLACE_CMD} -e 's|glib/gmacros.h>|glib.h>|g' \

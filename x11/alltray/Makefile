@@ -15,7 +15,7 @@ USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+LIBS+=		-L${LOCALBASE}/lib
 
 OPTIONS_DEFINE=	KDE
 KDE_DESC=	Support only KDE desktop
@@ -29,8 +29,12 @@ USE_GNOME+=	gconf2
 
 post-patch:
 	@${CHMOD} +x ${WRKSRC}/install-sh
-	@${REINPLACE_CMD} -e 's|-ldl||' ${WRKSRC}/lib/Makefile.in
-	@${REINPLACE_CMD} -e 's|-L/usr/X11R6/lib||' ${WRKSRC}/src/Makefile.in
+	@${REINPLACE_CMD} \
+		-e 's|-ldl||' -e '/^liballtray_la_LIBADD =/s/$$/ -lX11/' \
+		${WRKSRC}/lib/Makefile.in
+	@${REINPLACE_CMD} \
+		-e 's|-L/usr/X11R6/lib||' -e '/^alltray_LDADD =/s/$$/ -lX11/' \
+		${WRKSRC}/src/Makefile.in
 	@${REINPLACE_CMD} -e 's|/etc/gconf|${LOCALBASE}/etc/gconf|; \
 		/THEME_DIR1/ s|/usr/share/|${LOCALBASE}/share/themes/|' \
 		${WRKSRC}/src/gnome_theme.c

@@ -16,6 +16,9 @@ USE_OPENSSL=	yes
 
 PLIST_FILES=	bin/createtorrent
 
+post-patch:
+	@${REINPLACE_CMD} 's/-lssl/-lcrypto/' ${WRKSRC}/configure
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
 

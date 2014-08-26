@@ -19,7 +19,7 @@ USES=		gmake pathfix pkgconfig tar:bzip2 libtool
 GNU_CONFIGURE=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib -lXext
+LIBS+=		-L${LOCALBASE}/lib -lXext
 
 OPTIONS_DEFINE=	FREEALUT GLEW
 
@@ -29,11 +29,9 @@ FREEALUT_USES=	openal:alut
 
 GLEW_DESC=	Enable GLEW support
 GLEW_USE=	GL=glew
+GLEW_CONFIGURE_ENV_OFF=	ac_cv_header_GL_glew_h=no
 
-.include <bsd.port.options.mk>
-
-.if ! ${PORT_OPTIONS:MGLEW}
-CONFIGURE_ENV+=	ac_cv_header_GL_glew_h=no
-.endif
+post-patch:
+	@${REINPLACE_CMD} '/LINK.*pixelcity/s/LINK/CXXLINK/' ${WRKSRC}/src/Makefile.in
 
 .include <bsd.port.mk>

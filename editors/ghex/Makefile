@@ -23,4 +23,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 
 GCONF_SCHEMAS=	ghex2.schemas
 
+post-patch:
+	@${REINPLACE_CMD} '/^ghex2_LDADD =/s/$$/ -lm/' ${WRKSRC}/src/Makefile.in
+
 .include <bsd.port.mk>

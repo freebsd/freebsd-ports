@@ -13,13 +13,8 @@ share/GTorrentViewer/pixmaps/ok.png
 share/GTorrentViewer/pixmaps/string.png
 share/GTorrentViewer/pixmaps/unknown.png
 share/GTorrentViewer/pixmaps/warning.png
-%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
-%%PORTDOCS%%%%DOCSDIR%%/COPYING
-%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
-%%PORTDOCS%%%%DOCSDIR%%/README
 share/applications/gtorrentviewer.desktop
 share/pixmaps/gtorrentviewer.png
 share/pixmaps/gtorrentviewer.xpm
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm share/GTorrentViewer/pixmaps
 @dirrm share/GTorrentViewer

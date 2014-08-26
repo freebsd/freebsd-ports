@@ -1,12 +1,18 @@
 --- app/Makefile.am.orig
 +++ app/Makefile.am
-@@ -420,7 +420,8 @@
+@@ -420,11 +420,14 @@
  	$(GTK_LIBS) \
  	$(X_LIBS) \
  	$(OYRANOS_LIBS) \
 -	$(LCMS_LIB)
 +	$(LCMS_LIB) \
++	-lX11 \
 +	-lm
  
  cinepaint_remote_LDADD = \
  	$(GTK_LIBS) \
+ 	$(X_LIBS) \
++	-lX11 \
+ 	$(XMU_LIB)
+ 
+ ## DEPS = $(top_builddir)/lib/libcinepainti.a

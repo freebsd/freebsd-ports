@@ -12,8 +12,12 @@ COMMENT=	GTK2 implementation of Conway's Game of Life
 
 USES=		gmake pkgconfig
 USE_GNOME=	gtk20 gnomevfs2 intlhack
+USE_XORG=	x11
 GNU_CONFIGURE=	yes
 
 OPTIONS_DEFINE=	DOCS
+
+post-patch:
+	@${REINPLACE_CMD} '/^GNOME_MODULES=/s/"$$/ x11"/' ${WRKSRC}/configure
 
 .include <bsd.port.mk>

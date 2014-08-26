@@ -20,21 +20,20 @@ BUILD_DEPENDS=	${JAM}:${PORTSDIR}/devel/jam \
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 USES=		tar:bzip2
-USE_GL=		gl
+USE_GL=		glu
 USE_SDL=	yes
 
 JAM?=		${LOCALBASE}/bin/jam
 
 post-patch:
-	@${REINPLACE_CMD} -i '' -e 's|SDL/||g' ${WRKSRC}/src/*
-	@${REINPLACE_CMD} -e 's|%%SDL_CFLAGS%%|`${SDL_CONFIG} --cflags`|' \
-		${WRKSRC}/Jamrules
-	@${REINPLACE_CMD} -e 's|%%SDL_LDFLAGS%%|`${SDL_CONFIG} --libs`|' \
+	@${REINPLACE_CMD} '/^LINKLIBS on gillo3/s|;$$|-L${LOCALBASE}/lib -lm ;|' \
 		${WRKSRC}/src/Jamfile
 
 do-build:
-	cd ${WRKSRC} && ${SETENV} "C++=${CC}" "LOCALBASE=${LOCALBASE}" \
-		"CFLAGS=${CFLAGS} -DDATADIR=\\\"${PREFIX}/share\\\"" \
+	cd ${WRKSRC} && ${SETENV} C++="${CXX}" C++FLAGS="${CXXFLAGS}" \
+		CCFLAGS="${CFLAGS} -DDATADIR=\\\"${PREFIX}/share\\\"" \
+		HDRS="${LOCALBASE}/include" \
+		LINK="${CXX}" LINKFLAGS="${LDFLAGS}" \
 		${JAM} -dx -sPREFIX=${PREFIX}
 
 do-install:

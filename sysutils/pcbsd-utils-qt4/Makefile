@@ -26,10 +26,14 @@ WRKSRC=		${WRKDIR}/src-qt4
 
 QMAKE_ARGS=	CONFIG+="configure"
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if ${OSVERSION} < 1000000
 IGNORE=		requires FreeBSD 10 or later
 .endif
 
-.include <bsd.port.post.mk>
+post-patch:
+	@${REINPLACE_CMD} '/^LIBS/s/$$/ -lQtSolutions_SingleApplication-head/' \
+		${WRKSRC}/pc-netmanager/src/NetworkManager/NetworkManager.pro
+
+.include <bsd.port.mk>

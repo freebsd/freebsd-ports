@@ -6,7 +6,7 @@
  #
 -LDFLAGS = `sdl-config --libs` -lSDL_image -lSDL_mixer -lz
 -CCFLAGS = -O2 -Wall `sdl-config --cflags` -g
-+LDFLAGS = `${SDL_CONFIG} --libs` -lSDL_image -lSDL_mixer -lz
++LDFLAGS = `${SDL_CONFIG} --libs` -lSDL_image -lSDL_mixer -lz -lm
 +CCFLAGS = ${CFLAGS} -Wall `${SDL_CONFIG} --cflags`
  #
  OBJS = 	src/levelblit.o \
