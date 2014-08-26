@@ -129,6 +129,7 @@
     SUBDIR += kde4-workspace
     SUBDIR += kdelibs4
     SUBDIR += keybinder
+    SUBDIR += keybinder-gtk3
     SUBDIR += keyboardcast
     SUBDIR += keylaunch
     SUBDIR += keynav
