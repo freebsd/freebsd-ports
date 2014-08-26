@@ -1,0 +1,10 @@
+--- bin/nokogiri.orig	2014-08-26 20:46:38.000000000 +0000
++++ bin/nokogiri	2014-08-26 20:46:30.000000000 +0000
+@@ -4,6 +4,7 @@
+ require 'irb'
+ require 'uri'
+ require 'rubygems'
++gem 'nokogiri', '~> 1.4'
+ require 'nokogiri'
+ 
+ parse_class = Nokogiri
