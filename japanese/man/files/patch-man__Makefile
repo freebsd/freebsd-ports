@@ -1,0 +1,42 @@
+--- man/Makefile.orig	2014-08-26 12:12:08.000000000 +0900
++++ man/Makefile	2014-08-26 12:12:36.000000000 +0900
+@@ -10,14 +10,14 @@
+ SRCS=	man.c manpath.c glob.c locale.c
+ MAN1=	jman.1
+ EMAN1=	jman.1.eng.gz
+-BINOWN= man
+-BINMODE=4555
+-INSTALLFLAGS+= -fschg
++#BINOWN= man
++#BINMODE=4555
++#INSTALLFLAGS+= -fschg
+ 
+ CFLAGS+= -g -I${LIBDESTDIR}
+ DPADD=	${LIBMAN}
+ LDADD=	${LIBMAN}
+-.if exists(/usr/lib/libxpg4.a)
++.if ${OSVERSION} < 400020
+ LDADD+= -L/usr/lib -lxpg4
+ .endif
+ 
+@@ -48,11 +48,18 @@
+ 	${.CURDIR}/jman.man.eng | \
+ 	${compress} > ${EMAN1}
+ 
+-.if !defined(NOMAN)
++install: ${PROG} man_install afterinstall
++	${INSTALL} -s -m 555 ${PROG} ${DESTDIR}/${BINDIR}
++
++.if !defined(NO_MAN)
++man_install: ${MAN1}
++	${INSTALL} -m 444 ${MAN1} ${DESTDIR}${MANDIR}1
++
+ afterinstall: ${EMAN1}
+-	${INSTALL} -c -o bin -g bin -m 444 ${EMAN1} \
++	${INSTALL} -m 444 ${EMAN1} \
+ 	    ${DESTDIR}${EMANDIR}1/jman.1.gz
+ .else
++man_install:
+ afterinstall:
+ .endif
+ 
