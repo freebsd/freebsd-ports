@@ -1,10 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	pybugz
-PORTVERSION=	0.9.3
-PORTREVISION=	2
+PORTVERSION=	0.10.1
 CATEGORIES=	devel
-MASTER_SITES=	http://www.bayofrum.net/dist/${PORTNAME}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	crees@FreeBSD.org
@@ -12,9 +10,11 @@ COMMENT=	Command line tools for interacting with Bugzilla
 
 LICENSE=	GPLv2
 
-WRKSRC=		${WRKDIR}/${PORTNAME}
-USE_PYTHON=	2
-USE_PYDISTUTILS=yes
-PYDISTUTILS_AUTOPLIST=	yes
+USE_GITHUB=	yes
+GH_ACCOUNT=	williamh
+GH_COMMIT=	74a57cb
+
+USES=		python:2
+USE_PYTHON=	distutils autoplist
 
 .include <bsd.port.mk>
