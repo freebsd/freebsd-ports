@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=		mapserver
-PORTVERSION=		6.4.0
-PORTREVISION=	6
+PORTVERSION=		6.4.1
 CATEGORIES=		graphics www geography
 MASTER_SITES=		http://download.osgeo.org/mapserver/
 
@@ -16,7 +15,7 @@ LIB_DEPENDS=		libgd.so:${PORTSDIR}/graphics/gd \
 			libjpeg.so:${PORTSDIR}/graphics/jpeg \
 			libgif.so:${PORTSDIR}/graphics/giflib
 
-USES=			cmake
+USES=			cmake:outsource
 USE_GNOME=		libxml2
 LDFLAGS+=		-L${LOCALBASE} -pthread
 CMAKE_ARGS+=		-DCMAKE_PREFIX_PATH=${LOCALBASE} \
@@ -180,22 +179,24 @@ CMAKE_ARGS+=		-DWITH_CURL=1 -DGDAL=1 -DCLIENT_WFS=1
 
 do-install:
 .for f in ${PROG_FILES}
-	${INSTALL_SCRIPT} ${WRKSRC}/${f} ${STAGEDIR}${PREFIX}/bin
+	${STRIP_CMD} ${BUILD_WRKSRC}/${f}
+	${INSTALL_SCRIPT} ${BUILD_WRKSRC}/${f} ${STAGEDIR}${PREFIX}/bin
 .endfor
-	${INSTALL_PROGRAM} ${WRKSRC}/libmapserver.so.${PORTVERSION} ${STAGEDIR}${PREFIX}/lib
+	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/libmapserver.so.${PORTVERSION} ${STAGEDIR}${PREFIX}/lib
 
 .if ${PORT_OPTIONS:MPHP}
 	@${MKDIR} ${STAGEDIR}${PREFIX}/${PHP_EXTENSION_DIR}
-	${INSTALL_PROGRAM} ${WRKSRC}/mapscript/php/php_mapscript.so \
+	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/mapscript/php/php_mapscript.so \
 		${STAGEDIR}${PREFIX}/${PHP_EXTENSION_DIR}/
 .endif
 
 .if ${PORT_OPTIONS:MPYTHON}
-	(cd ${WRKSRC}/mapscript/python && ${CP} mapscript.py _mapscript.so ${STAGEDIR}${PYTHON_SITELIBDIR}/)
+	@${MKDIR} ${STAGEDIR}${PYTHON_SITELIBDIR}/
+	(cd ${BUILD_WRKSRC}/mapscript/python && ${CP} mapscript.py _mapscript.so ${STAGEDIR}${PYTHON_SITELIBDIR}/)
 .endif
 
 post-install:
-	@${LN} -s ${PREFIX}/lib/libmapserver.so.6.4.0 ${STAGEDIR}${PREFIX}/lib/libmapserver.so.1
+	@${LN} -s ${PREFIX}/lib/libmapserver.so.6.4.1 ${STAGEDIR}${PREFIX}/lib/libmapserver.so.1
 	@${LN} -s ${PREFIX}/lib/libmapserver.so.1 ${STAGEDIR}${PREFIX}/lib/libmapserver.so
 
 .if ${PORT_OPTIONS:MPHP}
