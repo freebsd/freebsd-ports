@@ -1,0 +1,24 @@
+--- manpath/Makefile.orig	2001-06-11 21:25:34.000000000 +0900
++++ manpath/Makefile	2014-08-26 12:10:04.000000000 +0900
+@@ -24,10 +24,19 @@
+ 	${.CURDIR}/jmanpath.man.eng | \
+ 	${compress} > ${EMAN1}
+ 
+-.if !defined(NOMAN)
++install: ${PROG} man_install afterinstall
++	${INSTALL} -s -m 555 ${PROG} ${DESTDIR}/${BINDIR}
++
++.if !defined(NO_MAN)
++man_install: ${MAN1}
++	${INSTALL} -m 444 ${MAN1} ${DESTDIR}${MANDIR}1
++
+ afterinstall: ${EMAN1}
+-	${INSTALL} -c -o ${BINOWN} -g ${BINGRP} -m 444 ${EMAN1} \
++	${INSTALL} -m 444 ${EMAN1} \
+ 	    ${DESTDIR}${EMANDIR}1/jmanpath.1.gz
++.else
++man_install:
++afterinstall:
+ .endif
+ 
+ .include "../Makefile.inc"
