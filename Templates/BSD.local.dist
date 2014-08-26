@@ -18,6 +18,8 @@
         ..
         rc.d
         ..
+        rc.conf.d
+        ..
     ..
     include
         X11
@@ -287,6 +289,8 @@
         java
             classes
             ..
+        ..
+        licenses
         ..
         locale
             af
