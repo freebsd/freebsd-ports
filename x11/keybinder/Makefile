@@ -6,7 +6,7 @@ PORTREVISION=	3
 CATEGORIES=	x11
 MASTER_SITES=	GENTOO/distfiles
 
-MAINTAINER=	olivierd@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library for registering keyboard shortcuts
 
 LICENSE=	GPLv2
