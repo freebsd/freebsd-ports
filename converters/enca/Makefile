@@ -3,6 +3,7 @@
 
 PORTNAME=	enca
 PORTVERSION=	1.13
+PORTREVISION=	1
 CATEGORIES=	converters textproc russian ukrainian
 MASTER_SITES=	http://dl.cihar.com/enca/
 
@@ -14,9 +15,9 @@ LIB_DEPENDS=	librecode.so:${PORTSDIR}/converters/recode
 RUN_DEPENDS=	umap:${PORTSDIR}/converters/p5-Unicode-Map8
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
-USE_AUTOTOOLS=	libtool
-USES=		gmake pkgconfig iconv tar:bzip2
+USES=		gmake libtool pkgconfig iconv tar:bzip2
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--with-html-dir=${DOCSDIR}

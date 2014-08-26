@@ -3,7 +3,7 @@
 
 PORTNAME=	mpv
 PORTVERSION=	0.5.0
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	multimedia audio
 MASTER_SITES=	GH:0 GHC:0 http://ftp.waf.io/pub/release/:1 \
