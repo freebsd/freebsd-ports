@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mpich2
-DISTVERSION=	1.3.2p1
-PORTREVISION=	4
+DISTVERSION=	1.4.1p1
 PORTEPOCH=	5
 CATEGORIES=	net java parallel
 MASTER_SITES=	http://www.mcs.anl.gov/research/projects/mpich2/downloads/tarballs/${DISTVERSION}/
@@ -56,7 +55,7 @@ NOCCACHE=	yes
 CONFLICTS=	lam-7.* mpd-[0-9]* mpiexec-0.*
 MAKE_JOBS_UNSAFE=	yes
 
-VERSO=		2.2
+VERSO=		3.3
 VERSOM=		${VERSO:R}
 PLIST_SUB=	VER=${VERSO} VERM=${VERSOM}
 SUB_FILES=	pkg-message
@@ -69,6 +68,9 @@ THREAD2FIX=	configure test/mpi/threads/comm/Makefile.in	\
 LOCALBASE2FIX=	src/mpe2/src/slog2sdk/trace_rlog/configure	\
 		src/mpe2/src/slog2sdk/trace_sample/configure	\
 		src/mpe2/src/graphics/configure
+STAGE2FIX=	bin/mpicc bin/mpicxx bin/mpif77 bin/mpif90	\
+		etc/mpicc.conf etc/mpicxx.conf etc/mpif77.conf	\
+		etc/mpif90.conf sbin/mpeuninstall
 DOC2PATCH=	Makefile.in src/mpe2/sbin/mpeinstall.in		\
 		src/openpa/Makefile.in src/mpi/romio/util/romioinstall.in
 CONFPFX2FIX1=	src/pm/mpd/mpd.py
@@ -155,22 +157,18 @@ pre-configure:
 		${WRKSRC}/${cnf}
 .endfor
 
-pre-install:
-	@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${WRKSRC}/bin
-	@${PYTHON_CMD} -O ${PYTHON_LIBDIR}/compileall.py  ${WRKSRC}/bin
-
 post-install:
-	(cd ${STAGEDIR}${PREFIX}/bin && ${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py	\
+	(cd ${STAGEDIR}${PREFIX} && ${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py	\
 		-d ${PREFIX} -f bin)
-	(cd ${STAGEDIR}${PREFIX}/bin && ${PYTHON_CMD} -O ${PYTHON_LIBDIR}/compileall.py	\
+	(cd ${STAGEDIR}${PREFIX} && ${PYTHON_CMD} -O ${PYTHON_LIBDIR}/compileall.py	\
 		-d ${PREFIX} -f bin)
-	${INSTALL_SCRIPT} ${WRKSRC}/bin/*.pyc ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_SCRIPT} ${WRKSRC}/bin/*.pyo ${STAGEDIR}${PREFIX}/bin
 	@${ECHO_CMD} "MPD_SECRETWORD=change_on_install" > ${WRKDIR}/mpd.conf.dist
 	${INSTALL_DATA} ${WRKDIR}/mpd.conf.dist ${STAGEDIR}${PREFIX}/etc/
+.for pg in ${STAGE2FIX}
 	${REINPLACE_CMD} -e '/${STAGEDIR:C|/|\/|g}/s|${STAGEDIR}||'	\
-		${STAGEDIR}${PREFIX}/sbin/mpeuninstall
-	${RM} ${STAGEDIR}${PREFIX}/sbin/mpeuninstall.bak
+		${STAGEDIR}${PREFIX}/${pg}
+	${RM} ${STAGEDIR}${PREFIX}/${pg}.bak
+.endfor
 .for pg in ${BIN2STRIP}
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${pg}
 .endfor

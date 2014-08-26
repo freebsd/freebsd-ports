@@ -89,7 +89,6 @@ bin/mpif90
 %%PM_MPD%%bin/mpirun.py
 %%PM_MPD%%bin/mpirun.pyc
 %%PM_MPD%%bin/mpirun.pyo
-bin/parkill
 %%JAVA%%bin/rlogTOslog2
 %%JAVA%%bin/rlog_check_timeorder
 %%JAVA%%bin/rlog_print
@@ -140,6 +139,7 @@ include/mpicxx.h
 include/mpif.h
 include/mpio.h
 include/mpiof.h
+include/mpix.h
 include/opa_config.h
 include/opa_primitives.h
 include/opa_queue.h
@@ -194,7 +194,7 @@ lib/libmpl.a
 lib/libmpl.la
 lib/libmpl.so
 lib/libmpl.so.1
-lib/libmpl.so.1.0.0
+lib/libmpl.so.1.1.0
 lib/libopa.a
 lib/libopa.la
 lib/libopa.so
@@ -223,6 +223,7 @@ libdata/pkgconfig/openpa.pc
 %%PORTDOCS%%man/man1/mpiexec.1.gz
 %%PORTDOCS%%man/man1/mpif77.1.gz
 %%PORTDOCS%%man/man1/mpif90.1.gz
+%%PORTDOCS%%man/man3/MPIX_Group_comm_create.3.gz
 %%PORTDOCS%%man/man3/MPI_Abort.3.gz
 %%PORTDOCS%%man/man3/MPI_Accumulate.3.gz
 %%PORTDOCS%%man/man3/MPI_Add_error_class.3.gz
@@ -733,6 +734,7 @@ sbin/mpeuninstall
 %%PORTDOCS%%%%DOCSDIR%%/www1/mpiexec.html
 %%PORTDOCS%%%%DOCSDIR%%/www1/mpif77.html
 %%PORTDOCS%%%%DOCSDIR%%/www1/mpif90.html
+%%PORTDOCS%%%%DOCSDIR%%/www3/MPIX_Group_comm_create.html
 %%PORTDOCS%%%%DOCSDIR%%/www3/MPI_Abort.html
 %%PORTDOCS%%%%DOCSDIR%%/www3/MPI_Accumulate.html
 %%PORTDOCS%%%%DOCSDIR%%/www3/MPI_Add_error_class.html
