@@ -1,0 +1,8 @@
+include/keybinder-%%VERSION%%/keybinder.h
+lib/girepository-1.0/Keybinder-%%VERSION%%.typelib
+lib/libkeybinder-%%VERSION%%.so
+lib/libkeybinder-%%VERSION%%.so.0
+lib/libkeybinder-%%VERSION%%.so.0.0.0
+libdata/pkgconfig/keybinder-%%VERSION%%.pc
+share/gir-1.0/Keybinder-%%VERSION%%.gir
+@dirrm include/keybinder-%%VERSION%%
