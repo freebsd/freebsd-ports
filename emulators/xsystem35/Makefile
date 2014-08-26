@@ -3,7 +3,7 @@
 
 PORTNAME=	xsystem35
 PORTVERSION=	1.7.2
-PORTREVISION=	15
+PORTREVISION=	16
 CATEGORIES=	emulators
 MASTER_SITES=	http://8ne.sakura.ne.jp:20008/chika/unitbase/xsys35/down/
 
@@ -13,20 +13,24 @@ COMMENT=	AliceSoft System 3.5/3.6/3.8/3.9 on X Window System
 LICENSE=	GPLv2 # (or later)
 
 LIB_DEPENDS=	libvorbis.so:${PORTSDIR}/audio/libvorbis \
+		libfreetype.so:${PORTSDIR}/print/freetype2 \
 		libjpeg.so:${PORTSDIR}/graphics/jpeg
 
 OPTIONS_DEFINE=	ESOUND DOCS EXAMPLES
 
-USES=		gettext gmake
+USES=		gettext gmake libtool
+USE_AUTOTOOLS=	autoconf:env
 USE_GNOME=	gtk12
-USE_AUTOTOOLS=	autoconf libtool
+USE_XORG=	xxf86vm
+GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--without-included-gettext \
 		--with-cachesize=20 \
+		--disable-static \
 		--enable-midi=seq,extp,raw \
 		--enable-cdrom=bsd,mp3
-
 CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+LIBS+=		-L${LOCALBASE}/lib
+MAKE_JOBS_UNSAFE=	yes
 
 SUB_FILES=	pkg-message
 
@@ -41,31 +45,17 @@ CONFIGURE_ARGS+=	--enable-audio=oss,esd --with-default-output=esd
 CONFIGURE_ARGS+=	--enable-audio=oss --with-default-output=oss
 .endif
 
-#.if ${PORT_OPTIONS:MSDL}
-#USE_SDL=	sdl
-#CONFIGURE_ARGS+=	--enable-sdl
-#CPPFLAGS+=	$$(${SDL_CONFIG} --cflags)
-#LDFLAGS+=	$$(${SDL_CONFIG} --libs)
-#.else
-CONFIGURE_ARGS+=	--disable-sdl
-#.endif
-
-.if ${MACHINE_CPU:Mmmx} && !defined(PACKAGE_BUILDING)
+.if defined(MACHINE_CPU) && ${MACHINE_CPU:Mmmx}
 CONFIGURE_ARGS+=	--enable-mmx
 BUILD_DEPENDS+=		nasm:${PORTSDIR}/devel/nasm
 .else
 CONFIGURE_ARGS+=	--disable-mmx
 .endif
 
-post-extract:
-	@${CP} ${WRKSRC}/INSTALL ${WRKSRC}/doc/INSTALL
-
 post-patch:
-	${FIND} ${WRKSRC}/src -type f |\
-		${XARGS} ${GREP} -l '<SDL/SDL' /dev/null |\
-		${XARGS} ${REINPLACE_CMD} -e 's,<SDL/,<,'
-	@${REINPLACE_CMD} -e \
-		's|__COUNTER__|__COUNTER_H__|' ${WRKSRC}/src/counter.h
+	@${CP} ${WRKSRC}/INSTALL ${WRKSRC}/doc/INSTALL
+	@${REINPLACE_CMD} '/-lxpg4/d' ${WRKSRC}/configure
+	@${REINPLACE_CMD} 's|__COUNTER__|__COUNTER_H__|' ${WRKSRC}/src/counter.h
 
 pre-configure:
 	(cd ${WRKSRC}/libltdl; ${AUTOCONF})
