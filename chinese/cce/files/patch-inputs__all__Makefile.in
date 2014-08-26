@@ -1,19 +1,41 @@
---- inputs/all/Makefile.in.orig	Sat Feb 14 12:17:23 2004
-+++ inputs/all/Makefile.in	Sun May  1 02:27:37 2005
-@@ -335,8 +335,6 @@
+--- inputs/all/Makefile.in.orig	2004-02-14 13:17:23.000000000 +0900
++++ inputs/all/Makefile.in	2014-08-25 17:17:48.000000000 +0900
+@@ -145,7 +145,7 @@
+ target_cpu = @target_cpu@
+ target_os = @target_os@
+ target_vendor = @target_vendor@
+-CCE_SHARE_DIR = $(DESTDIR)$(datadir)
++CCE_SHARE_DIR = $(datadir)
+ CIN2TAB = ../utils/cin2tab$(EXEEXT)
+ INPUT_TABS := intcode.tab zhiyin.tab zhiyin.tab.usr ciyin.tab ciyingb.tab
+ all_table_bindir = $(CCE_SHARE_DIR)/cce/all
+@@ -333,10 +333,8 @@
+ 
+ # some input method tables need the encoding conversion (table may not be there yet)
  .check_convtab:
- 	@if [ ! -f $(CCE_SHARE_DIR)/cce/cceconv.tab ] ; then \
+-	@if [ ! -f $(CCE_SHARE_DIR)/cce/cceconv.tab ] ; then \
++	@if [ ! -f $(DESTDIR)$(CCE_SHARE_DIR)/cce/cceconv.tab ] ; then \
         $(NORMAL_INSTALL) ; \
 -       $(mkinstalldirs) $(CCE_SHARE_DIR)/cce ; \
 -	   $(INSTALL_DATA) $(srcdir)/../utils/cceconv.tab $(CCE_SHARE_DIR)/cce/cceconv.tab ; \
      fi
  
  zhiyin.tab: zhiyin.cin $(CIN2TAB) .check_convtab
-@@ -361,6 +359,7 @@
+@@ -360,11 +358,12 @@
+ 	-rm -f *.tab *.tab.usr
  
  allinstall: $(CIN2TAB) 
- 	$(mkinstalldirs) $(CCE_SHARE_DIR)/cce
-+	$(INSTALL_DATA) $(srcdir)/../utils/cceconv.tab $(CCE_SHARE_DIR)/cce/cceconv.tab ; \
- 	$(mkinstalldirs) $(CCE_SHARE_DIR)/cce/all
- 	$(INSTALL_DATA) $(srcdir)/*.tab $(CCE_SHARE_DIR)/cce/all
- 	$(INSTALL_DATA) $(srcdir)/*.tab.usr $(CCE_SHARE_DIR)/cce/all
+-	$(mkinstalldirs) $(CCE_SHARE_DIR)/cce
+-	$(mkinstalldirs) $(CCE_SHARE_DIR)/cce/all
+-	$(INSTALL_DATA) $(srcdir)/*.tab $(CCE_SHARE_DIR)/cce/all
+-	$(INSTALL_DATA) $(srcdir)/*.tab.usr $(CCE_SHARE_DIR)/cce/all
+-	$(INSTALL_DATA) $(srcdir)/shuangpin.map $(CCE_SHARE_DIR)/cce/all
++	$(mkinstalldirs) $(DESTDIR)$(CCE_SHARE_DIR)/cce
++	$(INSTALL_DATA) $(srcdir)/../utils/cceconv.tab $(DESTDIR)$(CCE_SHARE_DIR)/cce/cceconv.tab ; \
++	$(mkinstalldirs) $(DESTDIR)$(CCE_SHARE_DIR)/cce/all
++	$(INSTALL_DATA) $(srcdir)/*.tab $(DESTDIR)$(CCE_SHARE_DIR)/cce/all
++	$(INSTALL_DATA) $(srcdir)/*.tab.usr $(DESTDIR)$(CCE_SHARE_DIR)/cce/all
++	$(INSTALL_DATA) $(srcdir)/shuangpin.map $(DESTDIR)$(CCE_SHARE_DIR)/cce/all
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.
+ .NOEXPORT:

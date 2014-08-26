@@ -1,0 +1,24 @@
+--- inputs/gbk/Makefile.in.orig	2004-02-14 13:17:23.000000000 +0900
++++ inputs/gbk/Makefile.in	2014-08-25 17:20:25.000000000 +0900
+@@ -146,7 +146,7 @@
+ target_os = @target_os@
+ target_vendor = @target_vendor@
+ CIN2TAB = ../utils/cin2tab$(EXEEXT)
+-CCE_SHARE_DIR = $(DESTDIR)$(datadir)
++CCE_SHARE_DIR = $(datadir)
+ 
+ # You may add your favorite input method here
+ #
+@@ -337,9 +337,9 @@
+ 	-rm -f core core.* *.tab *.lx
+ 
+ allinstall: $(CIN2TAB) 
+-	$(mkinstalldirs) $(CCE_SHARE_DIR)/cce
+-	$(mkinstalldirs) $(CCE_SHARE_DIR)/cce/gbk
+-	$(INSTALL_DATA) $(srcdir)/*.tab $(CCE_SHARE_DIR)/cce/gbk
++	$(mkinstalldirs) $(DESTDIR)$(CCE_SHARE_DIR)/cce
++	$(mkinstalldirs) $(DESTDIR)$(CCE_SHARE_DIR)/cce/gbk
++	$(INSTALL_DATA) $(srcdir)/*.tab $(DESTDIR)$(CCE_SHARE_DIR)/cce/gbk
+ 
+ gbk-winbxm.tab gbk-winzm.tab: 
+ 	@echo	

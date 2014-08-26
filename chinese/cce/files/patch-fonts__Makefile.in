@@ -1,0 +1,22 @@
+--- fonts/Makefile.in.orig	2004-02-14 13:17:23.000000000 +0900
++++ fonts/Makefile.in	2014-08-26 10:10:55.000000000 +0900
+@@ -171,8 +171,8 @@
+ target_cpu = @target_cpu@
+ target_os = @target_os@
+ target_vendor = @target_vendor@
+-CCE_BDF2BIN := ./bdf2bin$(EXEEXT)
+-CCE_SHARE_DIR = $(DESTDIR)$(datadir)
++CCE_BDF2BIN := bdf2bin$(EXEEXT)
++CCE_SHARE_DIR = $(datadir)
+ INCLUDES = -I$(top_srcdir)/include
+ bdf2bin_bindir = $(CCE_SHARE_DIR)/cce
+ bdf2bin_SOURCES = bdf2bin.c font.c
+@@ -563,7 +563,7 @@
+ 
+ #%.bin: %.bdf $(CCE_BDF2BIN)
+ .bdf.bin: $(CCE_BDF2BIN)
+-	$(CCE_BDF2BIN) $< $@
++	./$(CCE_BDF2BIN) $< $@
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.
+ .NOEXPORT:
