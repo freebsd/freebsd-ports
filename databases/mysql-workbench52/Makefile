@@ -34,7 +34,7 @@ OPTIONS_DEFINE=	PYTHON_UTILS UNIXODBC
 PYTHON_UTILS_DESC=	Python scripts useful for administering MySQL
 
 USES=		desktop-file-utils gettext gmake libtool lua:51 pathfix pkgconfig \
-		shebangfix shared-mime-info
+		shebangfix shared-mime-info python:2 compiler:gcc-c++11-lib
 SHEBANG_FILES=	ext/ctemplate/ctemplate-src/src/htmlparser/*.py \
 		ext/mysql-utilities/*.py \
 		ext/mysql-utilities/scripts/*.py \
@@ -49,12 +49,12 @@ SHEBANG_FILES=	ext/ctemplate/ctemplate-src/src/htmlparser/*.py \
 USE_GCC=	any
 USE_GL=		gl
 USE_GNOME=	gnomehier gtk20 libxml2
-USE_PYTHON=	2
 USE_MYSQL=	client
 USE_SQLITE=	3
 USE_AUTOTOOLS=	libtoolize aclocal automake autoheader autoconf
 LIBTOOLIZE_ARGS=--copy --force
 AUTOMAKE_ARGS=	--add-missing --copy --force-missing --foreign
+GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	LUA_CFLAGS="$$(pkg-config --cflags lua-${LUA_VER})" \
 		LUA_LIBS="$$(pkg-config --libs lua-${LUA_VER})" \
 		TINYXML_CFLAGS="-I${LOCALBASE}/include" \
@@ -115,8 +115,7 @@ post-install:
 		-d ${PREFIX} -f ${i})
 .endfor
 .if ${PORT_OPTIONS:MPYTHON_UTILS}
-	(cd ${WRKSRC}/ext && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_FLAGS} \
-		${MAKEFILE} ${MAKE_ARGS} install-utils install-connector)
+	${DO_MAKE_BUILD} -C ${WRKSRC}/ext install-utils install-connector
 	@(cd ${STAGEDIR}/${PREFIX} && ${PYTHON_CMD} -m compileall \
 		-d ${PREFIX} -f share/mysql-workbench/python)
 .endif
