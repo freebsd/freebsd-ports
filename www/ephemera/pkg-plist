@@ -4,6 +4,7 @@ bin/create.munger
 bin/delete.munger
 bin/extract.munger
 bin/replace.munger
+bin/upgrade.munger
 bin/edit.munger
 etc/ephemera.config
 etc/ephemera.config.dist
