@@ -3,7 +3,7 @@
 
 PORTNAME=	blocksolve95
 PORTVERSION=	3.0
-PORTREVISION=	13
+PORTREVISION=	14
 CATEGORIES=	math parallel
 MASTER_SITES=	ftp://ftp.mcs.anl.gov/pub/BlockSolve95/ \
 		http://ftp.mcs.anl.gov/pub/BlockSolve95/
@@ -19,7 +19,7 @@ LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 LIB_DEPENDS=	libf2c.so:${PORTSDIR}/lang/f2c	\
-		libmpich.so.2:${PORTSDIR}/net/mpich2
+		libmpich.so:${PORTSDIR}/net/mpich2
 
 USES=		fortran gmake tar:Z
 MAKEFILE=	makefile
