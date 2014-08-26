@@ -13,7 +13,7 @@ COMMENT=	Libgooglepinyin support for Fcitx
 LIB_DEPENDS=	libfcitx-config.so:${PORTSDIR}/chinese/fcitx \
 		libgooglepinyin.so:${PORTSDIR}/chinese/libgooglepinyin
 
-USES=		tar:xz cmake gettext pkgconfig
+USES=		tar:xz cmake gettext pkgconfig iconv
 USE_GNOME=	intltool
 
 PROJECTHOST=	fcitx
