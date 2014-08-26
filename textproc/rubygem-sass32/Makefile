@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	sass
-PORTVERSION=	3.2.18
+PORTVERSION=	3.2.19
 CATEGORIES=	textproc ruby
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	32
@@ -15,5 +15,7 @@ LICENSE=	MIT
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
+
+PORTSCOUT=	ignore
 
 .include <bsd.port.mk>
