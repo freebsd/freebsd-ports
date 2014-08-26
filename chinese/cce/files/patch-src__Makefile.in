@@ -1,0 +1,27 @@
+--- src/Makefile.in.orig	2004-02-14 13:17:24.000000000 +0900
++++ src/Makefile.in	2014-08-26 10:22:22.000000000 +0900
+@@ -564,20 +564,20 @@
+ 
+ 
+ install-exec-local:
+-	chmod 4755 $(DESTDIR)$(bindir)/$(CCE)
++#	chmod 4755 $(DESTDIR)$(bindir)/$(CCE)
+ # make it suid-root
+ 	@list='$(CCE_SYMLINKS)'; for p in $$list; do \
+           if [ ! -f $(DESTDIR)$(bindir)/$$p ] ; then \
+-		      $(LN_S) -f $(DESTDIR)$(bindir)/$(CCE) $(DESTDIR)$(bindir)/$$p ; \
++		      $(LN_S) -f $(CCE) $(DESTDIR)$(bindir)/$$p ; \
+           fi ; \
+     done
+ 
+ install-data-local:
+ 	$(mkinstalldirs) $(CCE_SHARE_DIR)/cce
+-	$(INSTALL_DATA) $(srcdir)/cce.cfg $(CCE_SHARE_DIR)/cce/cce.cfg
++	$(INSTALL_DATA) $(srcdir)/cce.cfg $(DESTDIR)$(sysconfdir)/cce.cfg
+ 
+ uninstall-local:
+-	-rm -f $(CCE_SHARE_DIR)/cce/cce.cfg
++	-rm -f $(DESTDIR)$(sysconfdir)/cce.cfg
+ 	@list='$(CCE_SYMLINKS)'; for p in $$list; do \
+     	rm -f $(DESTDIR)$(bindir)/$$p; \
+     done

@@ -1,0 +1,26 @@
+--- inputs/jis/Makefile.in.orig	2004-02-14 13:17:24.000000000 +0900
++++ inputs/jis/Makefile.in	2014-08-25 17:22:23.000000000 +0900
+@@ -147,7 +147,7 @@
+ target_vendor = @target_vendor@
+ CIN2TAB = ../utils/cin2tab$(EXEEXT)
+ JISLX = jis.lx
+-CCE_SHARE_DIR = $(DESTDIR)$(datadir)
++CCE_SHARE_DIR = $(datadir)
+ 
+ # You may add your favorite input method here
+ #
+@@ -346,10 +346,10 @@
+ 	-rm -f core core.* *.lx *.tab
+ 
+ allinstall: $(CIN2TAB) $(JISLX)
+-	$(mkinstalldirs) $(CCE_SHARE_DIR)/cce
+-	$(mkinstalldirs) $(CCE_SHARE_DIR)/cce/jis
+-	$(INSTALL_DATA) $(srcdir)/*.tab $(CCE_SHARE_DIR)/cce/jis
+-	$(INSTALL_DATA) $(srcdir)/*.lx $(CCE_SHARE_DIR)/cce/jis
++	$(mkinstalldirs) $(DESTDIR)$(CCE_SHARE_DIR)/cce
++	$(mkinstalldirs) $(DESTDIR)$(CCE_SHARE_DIR)/cce/jis
++	$(INSTALL_DATA) $(srcdir)/*.tab $(DESTDIR)$(CCE_SHARE_DIR)/cce/jis
++	$(INSTALL_DATA) $(srcdir)/*.lx $(DESTDIR)$(CCE_SHARE_DIR)/cce/jis
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.
+ .NOEXPORT:

@@ -1,0 +1,21 @@
+--- doc/Makefile.in.orig	2004-02-14 13:17:23.000000000 +0900
++++ doc/Makefile.in	2014-08-25 17:07:26.000000000 +0900
+@@ -348,13 +348,13 @@
+ 
+ 
+ install-data-local:
+-	$(mkinstalldirs) $(mandir)/man1/
+-	$(INSTALL_DATA) $(srcdir)/cce.1 $(mandir)/man1/cce.1
+-	$(INSTALL_DATA) $(srcdir)/cceconv.1 $(mandir)/man1/cceconv.1
++	$(mkinstalldirs) $(DESTDIR)$(mandir)/man1/
++	$(INSTALL_DATA) $(srcdir)/cce.1 $(DESTDIR)$(mandir)/man1/cce.1
++	$(INSTALL_DATA) $(srcdir)/cceconv.1 $(DESTDIR)$(mandir)/man1/cceconv.1
+ 
+ uninstall-local:
+-	-rm -f $(mandir)/man1/cce.1
+-	-rm -f $(mandir)/man1/cceconv.1
++	-rm -f $(DESTDIR)$(mandir)/man1/cce.1
++	-rm -f $(DESTDIR)$(mandir)/man1/cceconv.1
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.
+ .NOEXPORT:
