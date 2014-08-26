@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	rack-protection
-PORTVERSION=	1.5.0
+PORTVERSION=	1.5.3
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
