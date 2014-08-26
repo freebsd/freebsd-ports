@@ -57,6 +57,64 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="fd5f305d-2d3d-11e4-aa3d-00262d5ed8ee">
+    <topic>chromium -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>chromium</name>
+	<range><lt>37.0.2062.94</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Google Chrome Releases reports:</p>
+	<blockquote cite="http://googlechromereleases.blogspot.nl/">
+	  <p>50 security fixes in this release, including:</p>
+	  <ul>
+	    <li>[386988] Critical CVE-2014-3176, CVE-2014-3177: A special reward
+	      to lokihardt@asrt for a combination of bugs in V8, IPC, sync, and
+	      extensions that can lead to remote code execution outside of the
+	      sandbox.</li>
+	    <li>[369860] High CVE-2014-3168: Use-after-free in SVG. Credit to
+	      cloudfuzzer.</li>
+	    <li>[387389] High CVE-2014-3169: Use-after-free in DOM. Credit to
+	      Andrzej Dyjak.</li>
+	    <li>[390624] High CVE-2014-3170: Extension permission dialog spoofing.
+	      Credit to Rob Wu.</li>
+	    <li>[390928] High CVE-2014-3171: Use-after-free in bindings. Credit to
+	      cloudfuzzer.</li>
+	    <li>[367567] Medium CVE-2014-3172: Issue related to extension debugging.
+	      Credit to Eli Grey.</li>
+	    <li>[376951] Medium CVE-2014-3173: Uninitialized memory read in WebGL.
+	      Credit to jmuizelaar.</li>
+	    <li>[389219] Medium CVE-2014-3174: Uninitialized memory read in Web
+	      Audio. Credit to Atte Kettunen from OUSPG.</li>
+	    <li>[406143] CVE-2014-3175: Various fixes from internal audits, fuzzing
+	      and other initiatives (Chrome 37).</li>
+
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2014-3168</cvename>
+      <cvename>CVE-2014-3169</cvename>
+      <cvename>CVE-2014-3170</cvename>
+      <cvename>CVE-2014-3171</cvename>
+      <cvename>CVE-2014-3172</cvename>
+      <cvename>CVE-2014-3173</cvename>
+      <cvename>CVE-2014-3174</cvename>
+      <cvename>CVE-2014-3175</cvename>
+      <cvename>CVE-2014-3176</cvename>
+      <cvename>CVE-2014-3177</cvename>
+      <url>http://googlechromereleases.blogspot.nl/</url>
+    </references>
+    <dates>
+      <discovery>2014-08-26</discovery>
+      <entry>2014-08-26</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="84203724-296b-11e4-bebd-000c2980a9f3">
     <topic>file -- buffer overruns and missing buffer size tests</topic>
     <affects>
