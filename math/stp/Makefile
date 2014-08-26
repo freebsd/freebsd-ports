@@ -23,7 +23,7 @@ CMAKE_ARGS=	-DFL_LIBRARY=/usr/lib/libfl.a
 
 .if (${OSVERSION} < 1000000)
 BUILD_DEPENDS+=flex>=2.5.38:${PORTSDIR}/textproc/flex
-CMAKE_ARGS=	-DFL_LIBRARY=${LOCALBASE}/lib/libfl.a \
+CMAKE_ARGS+=	-DFL_LIBRARY=${LOCALBASE}/lib/libfl.a \
 		-DFLEX_INCLUDE_DIR=${LOCALBASE}/include/flex \
 		-DFLEX_EXECUTABLE=${LOCALBASE}/bin/flex
 .endif
