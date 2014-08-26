@@ -10,6 +10,8 @@
     etc
         devd
         ..
+        libmap.d
+        ..
         man.d
         ..
         newsyslog.conf.d
