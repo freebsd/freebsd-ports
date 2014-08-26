@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	hike
-PORTVERSION=	1.2.3
+PORTVERSION=	2.1.3
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
