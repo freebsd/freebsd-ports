@@ -398,7 +398,7 @@
     SUBDIR += rubygem-dotenv
     SUBDIR += rubygem-iesd
     SUBDIR += rubygem-mime-types
-    SUBDIR += rubygem-mime-types117
+    SUBDIR += rubygem-mime-types1
     SUBDIR += rubygem-rabbit
     SUBDIR += rubygem-vpim
     SUBDIR += rump
