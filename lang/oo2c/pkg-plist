@@ -646,7 +646,6 @@ lib/oo2c/sym/liboo2c.Doc
 lib/oo2c/sym/liboo2c.Sym
 lib/oo2c/sym/libxml.Doc
 lib/oo2c/sym/libxml.Sym
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm lib/oo2c/sym/XML/UnicodeCodec
 @dirrm lib/oo2c/sym/XML/Builder
 @dirrm lib/oo2c/sym/XML/Basic
