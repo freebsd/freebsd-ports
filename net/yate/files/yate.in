@@ -27,10 +27,11 @@ stop_postcmd="yate_poststop"
 yate_prestart()
 {
     mkdir -p $(dirname $pidfile)
-    chown yate:yate $(dirname $pidfile)
-    mkdir -p $(dirname $cdrfile)
+    if [ x$cdrfile != "x" ]; then
+    	mkdir -p $(dirname $cdrfile)
+    	chown yate:yate $(dirname $cdrfile)
+    fi
     mkdir -p $(dirname $logfile)
-    chown yate:yate $(dirname $cdrfile)
     chown yate:yate $(dirname $logfile)
 }
 

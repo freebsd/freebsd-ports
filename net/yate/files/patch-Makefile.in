@@ -1,42 +1,17 @@
---- ./Makefile.in.orig	2012-05-09 16:33:15.000000000 +0400
-+++ ./Makefile.in	2013-02-14 19:58:02.000000000 +0400
-@@ -20,7 +20,7 @@
- MKDEPS := ./config.status
- PROGS:= yate
- YLIB := libyate.so.@PACKAGE_VERSION@
--SLIBS:= $(YLIB) libyate.so \
-+SLIBS:= $(YLIB) libyate.so libyate.so.4 \
- 	libyatescript.so.@PACKAGE_VERSION@ libyatescript.so \
- 	libyatesig.so.@PACKAGE_VERSION@ libyatesig.so \
- 	libyatemgcp.so.@PACKAGE_VERSION@ libyatemgcp.so \
-@@ -48,7 +48,7 @@
- libdir = @libdir@
- incdir = @includedir@/yate
- mandir = @mandir@
--docdir = @datadir@/doc/yate-@PACKAGE_VERSION@
-+docdir = @datadir@/doc/yate
- vardir = @localstatedir@/lib/yate
- moddir = @libdir@/yate
- shrdir = $(datadir)/yate
-@@ -126,7 +126,7 @@
- 	-rm -f configure yate-config.in
- 
- .PHONY: engine libs modules clients test apidocs-build apidocs-kdoc apidocs-doxygen apidocs-everything check-topdir check-ldconfig windows
--engine: library libyate.so $(PROGS)
-+engine: libyate.so $(PROGS)
- 
- apidocs-kdoc: check-topdir
- 	@if [ "x$(DOCGEN_K)" != x/bin/false ]; then \
-@@ -217,7 +217,7 @@
+--- Makefile.in.orig	2014-08-26 10:40:38.000000000 +0300
++++ Makefile.in	2014-08-26 10:41:58.000000000 +0300
+@@ -227,8 +227,8 @@ install-noconf: all
+ 	for i in $(MAN8) ; do \
  	    install -m 0644 @srcdir@/docs/man/$$i "$(DESTDIR)$(mandir)/man8/" ; \
  	done
- 	@mkdir -p "$(DESTDIR)$(libdir)/pkgconfig/" && \
+-	@mkdir -p "$(DESTDIR)$(libdir)/pkgconfig/" && \
 -	install -m 0644 yate.pc "$(DESTDIR)$(libdir)/pkgconfig/"
++	@mkdir -p "$(DESTDIR)$(libdir)data/pkgconfig/" && \
 +	install -m 0644 yate.pc "$(DESTDIR)$(libdir)data/pkgconfig/"
  	@mkdir -p "$(DESTDIR)$(incdir)/" && \
  	for i in $(INCS) ; do \
  	    install -m 0644 @srcdir@/$$i "$(DESTDIR)$(incdir)/" ; \
-@@ -245,7 +245,7 @@
+@@ -261,7 +261,7 @@ uninstall uninstall-root:
  	@-for i in $(PROGS) yate-config ; do \
  	    rm "$(DESTDIR)$(bindir)/$$i" ; \
  	done
@@ -45,15 +20,3 @@
  	    rmdir $(DESTDIR)$(libdir)/pkgconfig
  	@-for i in $(INCS) $(GENS) ; do \
  	    rm "$(DESTDIR)$(incdir)/$$i" ; \
-@@ -320,9 +320,9 @@
- 
- libyate.so: $(YLIB)
- 	ln -sf $^ $@
-+	ln -sf $^ $@\.4
- 
--.PHONY: library
--library $(YLIB): yatepaths.h
-+$(YLIB): yatepaths.h
- 	$(MAKE) -C ./engine all
- 
- .PHONY: help
