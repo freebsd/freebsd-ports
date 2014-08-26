@@ -2,59 +2,68 @@
 # $FreeBSD$
 
 PORTNAME=	synfig
-DISTVERSION=	0.63.05
-PORTREVISION=	6
+PORTVERSION=	0.63.05
+PORTREVISION=	7
 CATEGORIES=	devel graphics multimedia
-MASTER_SITES=	SF
+MASTER_SITES=	SF/${PORTNAME}/releases/${PORTVERSION}/source
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Vector based 2D animation package
 
-# update to 0.64.1 does pick up ImageMagick correctly but there are a 
-# multitude of c++ build failures which are beyond my skill to fix ..
-BROKEN=		Doesn't pickup ImageMagick anymore.
+LICENSE=	GPLv3
 
-BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/ETL.pc:${PORTSDIR}/devel/etl
+BUILD_DEPENDS=	etl>=0.04.17:${PORTSDIR}/devel/etl
 LIB_DEPENDS=	libMagickWand-6.Q*.so:${PORTSDIR}/graphics/ImageMagick \
+		libIlmImf.so:${PORTSDIR}/graphics/OpenEXR \
 		libjpeg.so:${PORTSDIR}/graphics/jpeg \
 		libmng.so:${PORTSDIR}/graphics/libmng \
 		libpng15.so:${PORTSDIR}/graphics/png \
 		libtiff.so:${PORTSDIR}/graphics/tiff \
 		libavcodec.so:${PORTSDIR}/multimedia/ffmpeg \
-		libdv.so:${PORTSDIR}/multimedia/libdv \
-		libIlmImf.so:${PORTSDIR}/graphics/OpenEXR
+		libdv.so:${PORTSDIR}/multimedia/libdv
 
-USE_GNOME=	gnomehack glib20 glibmm libxml++26
-USES=		gettext
+USES=		gettext libtool pathfix pkgconfig
+USE_GNOME=	cairo glibmm libxml++26
 GNU_CONFIGURE=	yes
+INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
+
+CPPFLAGS+=	$$(Magick++-config --cppflags)
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-ALL_TARGET=	-j`${SYSCTL} -n hw.ncpu`
 
-NO_STAGE=	yes
 post-patch:
-	@${REINPLACE_CMD} -e '/optimization_flags/s|CXXFLAGS=|#CXXFLAGS=| ; \
-		 /optimization_flags/s|CFLAGS=|#CFLAGS=|' -e \
-		's|el_GR|el|g' -e \
-		's|no_NO|no|g' -e \
-		's|pl_PL|pl|g' -e \
-		's|sk_SK|sk|g' ${WRKSRC}/configure
-	@${REINPLACE_CMD} -e '/url_fclose/s|&formatc|formatc|g' \
+	@${REINPLACE_CMD} -e \
+		'/optimization_flags/s|CXXFLAGS=|#CXXFLAGS=| ; \
+		 /optimization_flags/s|CFLAGS=|#CFLAGS=| ; \
+		 /MAGICKPP_LIBS/s|-lMagick++|`Magick++-config --libs`| ; \
+		 s|no_NO|no| ; \
+		 s|pl_PL|pl| ; \
+		 s|sk_SK|sk| ; \
+		 s|el_GR|el| ; \
+		 s|<tr1/|<| ; \
+		 s|::tr1||' \
+		${WRKSRC}/configure
+	@${REINPLACE_CMD} -e \
+		'/url_fclose/s|&formatc|formatc|g' \
 		${WRKSRC}/src/modules/mod_libavcodec/trgt_av.cpp
+.for i in exception.h layer.h target.h time.h
+	@${REINPLACE_CMD} -e \
+		's|"string_decl.h"|"string.h"|' \
+		${WRKSRC}/src/synfig/${i}
+.endfor
 
+post-build:
 # FIX LC_MESSAGES
-	${MV} ${WRKSRC}/po/no_NO.gmo ${WRKSRC}/po/no.gmo
-	${MV} ${WRKSRC}/po/pl_PL.gmo ${WRKSRC}/po/pl.gmo
-	${MV} ${WRKSRC}/po/sk_SK.gmo ${WRKSRC}/po/sk.gmo
-	${MV} ${WRKSRC}/po/el_GR.gmo ${WRKSRC}/po/el.gmo
+	@${LN} -sf no_NO.gmo ${WRKSRC}/po/no.gmo
+	@${LN} -sf pl_PL.gmo ${WRKSRC}/po/pl.gmo
+	@${LN} -sf sk_SK.gmo ${WRKSRC}/po/sk.gmo
+	@${LN} -sf el_GR.gmo ${WRKSRC}/po/el.gmo
 
 post-install:
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for doc in AUTHORS ChangeLog INSTALL NEWS README TODO
-	${INSTALL_DATA} ${WRKSRC}/${doc} ${DOCSDIR}
+	(cd ${WRKSRC} &&  ${INSTALL_DATA} ${doc} ${STAGEDIR}${DOCSDIR})
 .endfor
-.endif
 
 .include <bsd.port.mk>
