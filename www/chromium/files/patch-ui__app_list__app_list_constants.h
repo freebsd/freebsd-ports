@@ -1,6 +1,6 @@
---- ./ui/app_list/app_list_constants.h.orig	2014-08-12 21:02:31.000000000 +0200
-+++ ./ui/app_list/app_list_constants.h	2014-08-13 09:57:00.000000000 +0200
-@@ -57,8 +57,8 @@
+--- ./ui/app_list/app_list_constants.h.orig	2014-08-20 21:02:20.000000000 +0200
++++ ./ui/app_list/app_list_constants.h	2014-08-22 15:06:27.000000000 +0200
+@@ -62,8 +62,8 @@
  
  APP_LIST_EXPORT extern const ui::ResourceBundle::FontStyle kItemTextFontStyle;
  

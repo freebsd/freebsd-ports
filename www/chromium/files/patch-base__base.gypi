@@ -1,6 +1,6 @@
---- ./base/base.gypi.orig	2014-08-12 21:01:28.000000000 +0200
-+++ ./base/base.gypi	2014-08-13 09:56:56.000000000 +0200
-@@ -912,11 +912,14 @@
+--- ./base/base.gypi.orig	2014-08-20 21:02:42.000000000 +0200
++++ ./base/base.gypi	2014-08-22 18:33:25.000000000 +0200
+@@ -942,11 +942,16 @@
                'process/memory_stubs.cc',
              ],
              'sources/': [
@@ -13,6 +13,8 @@
                ['exclude', '^sys_info_linux\\.cc$'],
 +              ['exclude', '^process/process_iterator_linux\\.cc$'],
 +              ['exclude', '^process/process_metrics_linux\\.cc$'],
++              ['exclude', '^files/file_path_watcher_fsevents\\.cc$'],
++              ['exclude', '^files/file_path_watcher_fsevents\\.h$'],
              ],
            }],
            # Remove all unnecessary files for build_nexe.py to avoid exceeding

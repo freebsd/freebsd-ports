@@ -1,5 +1,5 @@
---- third_party/libjpeg_turbo/libjpeg.gyp.orig	2014-07-15 21:03:36.000000000 +0200
-+++ third_party/libjpeg_turbo/libjpeg.gyp	2014-08-12 22:43:14.000000000 +0200
+--- ./third_party/libjpeg_turbo/libjpeg.gyp.orig	2014-08-20 21:03:45.000000000 +0200
++++ ./third_party/libjpeg_turbo/libjpeg.gyp	2014-08-21 23:18:11.000000000 +0200
 @@ -245,7 +245,7 @@
              ],
            },

@@ -1,5 +1,5 @@
---- ./base/process/process_metrics.h.orig	2014-08-12 21:01:27.000000000 +0200
-+++ ./base/process/process_metrics.h	2014-08-13 09:56:56.000000000 +0200
+--- ./base/process/process_metrics.h.orig	2014-08-20 21:02:41.000000000 +0200
++++ ./base/process/process_metrics.h	2014-08-22 15:06:24.000000000 +0200
 @@ -17,6 +17,13 @@
  #include "base/time/time.h"
  #include "base/values.h"
@@ -14,7 +14,7 @@
  #if defined(OS_MACOSX)
  #include <mach/mach.h>
  #endif
-@@ -242,13 +249,17 @@
+@@ -246,13 +253,17 @@
  // CPU-related ticks.  Returns -1 on parse error.
  // Exposed for testing.
  BASE_EXPORT int ParseProcStatCPU(const std::string& input);

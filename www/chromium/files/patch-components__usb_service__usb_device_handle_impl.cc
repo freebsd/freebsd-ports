@@ -1,6 +1,6 @@
---- ./components/usb_service/usb_device_handle.cc.orig	2014-08-12 21:02:37.000000000 +0200
-+++ ./components/usb_service/usb_device_handle.cc	2014-08-17 16:54:01.000000000 +0200
-@@ -16,7 +16,24 @@
+--- ./components/usb_service/usb_device_handle_impl.cc.orig	2014-08-20 21:02:55.000000000 +0200
++++ ./components/usb_service/usb_device_handle_impl.cc	2014-08-22 15:06:25.000000000 +0200
+@@ -17,8 +17,25 @@
  #include "components/usb_service/usb_interface.h"
  #include "components/usb_service/usb_service.h"
  #include "content/public/browser/browser_thread.h"
@@ -10,7 +10,7 @@
 +#else
  #include "third_party/libusb/src/libusb/libusb.h"
 +#endif
-+
+ 
 +/* Define for FreeBSD < 9.3, thanks to db@freebsd.org */
 +#if defined(OS_FREEBSD) && __FreeBSD_version < 903000
 +int libusb_get_string_descriptor(libusb_device_handle *dev,
@@ -22,6 +22,7 @@
 +    lang_id, data, (uint16_t)length, 1000);
 +}
 +#endif
- 
++ 
  using content::BrowserThread;
  
+ namespace usb_service {
