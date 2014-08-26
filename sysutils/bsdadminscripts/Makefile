@@ -3,7 +3,7 @@
 
 PORTNAME=	bsdadminscripts
 PORTVERSION=	6.1.1
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	sysutils ports-mgmt
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}
 
@@ -13,9 +13,16 @@ COMMENT=	Collection of administration scripts
 LICENSE=	BSD2CLAUSE
 
 NO_BUILD=	yes
+
+TMP?=	/tmp
+VAR?=	/var
+
 PORTDOCS=	ABOUT CHANGES INSTALL NOTES THANKS
 
 OPTIONS_DEFINE=	DOCS
+
+SUB_FILES=	pkg_libchk pkg_upgrade uma
+SUB_LIST=	TMP=${TMP} PREFIX=${PREFIX} VAR=${VAR} PORTS=${PORTSDIR}
 
 .include <bsd.port.options.mk>
 
@@ -31,12 +38,14 @@ do-install:
 		-datadir=${STAGEDIR}${DATADIR} \
 		${EVALDOCS}
 .for n in pkg_libchk pkg_upgrade uma
+	${MV} ${WRKDIR}/${n} ${WRKSRC}/src
 	${INSTALL_SCRIPT} ${WRKSRC}/src/${n} ${STAGEDIR}${PREFIX}/sbin
 .endfor
 	${INSTALL_DATA} ${WRKSRC}/src/buildflags.mk ${STAGEDIR}${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/src/buildflags.conf.sample \
 		${STAGEDIR}${PREFIX}/etc
 	${INSTALL_DATA} ${WRKSRC}/src/uma.conf.sample ${STAGEDIR}${PREFIX}/etc
+
 .for f in bsdadminscripts buildflags.awk buildflags.conf buildflags.mk \
 	distviper pkg_libchk pkg_upgrade pkg_validate portconfig rcstart uma
 	${INSTALL_MAN} ${WRKSRC}/src/${f}.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
@@ -46,6 +55,7 @@ post-install:
 	${MKDIR} ${STAGEDIR}${ETCDIR}
 	${MV} ${STAGEDIR}${PREFIX}/etc/*.sample ${STAGEDIR}${ETCDIR}
 	${RM} -rf ${STAGEDIR}${PREFIX}/etc/*.sample
+
 .if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
