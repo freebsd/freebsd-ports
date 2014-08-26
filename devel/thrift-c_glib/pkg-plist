@@ -18,9 +18,9 @@ include/thrift/c_glib/transport/thrift_socket.h
 include/thrift/c_glib/transport/thrift_transport.h
 include/thrift/c_glib/transport/thrift_transport_factory.h
 lib/libthrift_c_glib.a
-lib/libthrift_c_glib.la
 lib/libthrift_c_glib.so
 lib/libthrift_c_glib.so.0
+lib/libthrift_c_glib.so.0.0.0
 libdata/pkgconfig/thrift_c_glib.pc
 @dirrm include/thrift/c_glib/transport
 @dirrm include/thrift/c_glib/server
