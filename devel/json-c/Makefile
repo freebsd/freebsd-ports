@@ -3,26 +3,26 @@
 
 PORTNAME=	json-c
 PORTVERSION=	0.12
+PORTREVISION=	1
 CATEGORIES=	devel
-MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/archive/
+#MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/archive/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	JSON (JavaScript Object Notation) implementation in C
 
 LICENSE=	MIT
 
-USE_LDCONFIG=	yes
+CONFLICTS_INSTALL=	cocaine-core-[0-9]*
+
 GNU_CONFIGURE=	yes
-USES=		gmake pathfix pkgconfig libtool
-USE_GITHUB=	yes
-
-GH_ACCOUNT=	${PORTNAME}
-GH_PROJECT=	${PORTNAME}
-GH_TAGNAME=	20140410
-
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTNAME}-${PORTVERSION}
 INSTALL_TARGET=	install-strip
+USE_LDCONFIG=	yes
+USES=		gmake libtool pathfix pkgconfig
 
-CONFLICTS=	cocaine-core-[0-9]*
+USE_GITHUB=	yes
+GH_ACCOUNT=	${PORTNAME}
+GH_COMMIT=	2a03577
+GH_PROJECT=	${PORTNAME}
+GH_TAGNAME=	${PORTNAME}-${PORTVERSION}-20140410
 
 .include <bsd.port.mk>
