@@ -1,0 +1,11 @@
+--- modules/Makefile.in.orig	2014-08-19 11:56:08.000000000 +0300
++++ modules/Makefile.in	2014-08-19 11:56:22.000000000 +0300
+@@ -350,7 +350,7 @@ server/mgcpgw.yate: LOCALFLAGS = -I@top_
+ server/mgcpgw.yate: LOCALLIBS = -lyatemgcp -L../libs/ysdp -lyatesdp
+ 
+ server/lksctp.yate: EXTERNFLAGS = @SCTP_FLAGS@
+-server/lksctp.yate: EXTERNLIBS = -lsctp
++server/lksctp.yate: EXTERNLIBS =
+ 
+ ilbccodec.yate: ../libs/ilbc/libilbc.a
+ ilbccodec.yate: LOCALFLAGS = @ILBC_INC@
