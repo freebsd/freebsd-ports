@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	libdbi-drivers
-DISTVERSION=	0.9.0
-PORTREVISION=	2
+PORTVERSION=	0.9.0
+PORTREVISION=	3
 CATEGORIES=	databases devel
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${DISTVERSION}
 
@@ -12,28 +12,31 @@ COMMENT=	Drivers for libdbi
 
 LIB_DEPENDS=	libdbi.so:${PORTSDIR}/databases/libdbi
 
-USES=		gmake libtool:keepla
+USES=		gmake libtool
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-static \
-		--with-dbi-incdir=${LOCALBASE}/include/dbi
+		--with-dbi-incdir=${LOCALBASE}/include
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}-${DISTVERSION}
+INSTALL_TARGET=	install-strip
+
+PORTDOCS=	*
+PLIST_DIRSTRY=	lib/dbd
 
 OPTIONS_DEFINE=	DOCS
 OPTIONS_MULTI=	DRIVER
 OPTIONS_MULTI_DRIVER=	MYSQL PGSQL SQLITE3
-
 OPTIONS_DEFAULT=	MYSQL PGSQL SQLITE3
-
 OPTIONS_SUB=	yes
+
 MYSQL_USE=	MYSQL=yes
 MYSQL_CONFIGURE_WITH=	mysql
+MYSQL_PLIST_FILES=	lib/dbd/libdbdmysql.so
 PGSQL_USE=	PGSQL=yes
 PGSQL_CONFIGURE_WITH=	pgsql
+PGSQL_PLIST_FILES=	lib/dbd/libdbdpgsql.so
 SQLITE3_LIB_DEPENDS=	libsqlite3.so:${PORTSDIR}/databases/sqlite3
 SQLITE3_CONFIGURE_WITH=	sqlite3
-
-PLIST_SUB+=	INGRES="@comment "
-PLIST_SUB+=	ORACLE="@comment "
+SQLITE3_PLIST_FILES=	lib/dbd/libdbdsqlite3.so
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-O20|${CFLAGS}|g' \
