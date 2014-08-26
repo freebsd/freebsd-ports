@@ -3,7 +3,7 @@
 
 PORTNAME=	backuppc
 PORTVERSION=	3.3.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	sysutils
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	${PORTNAME}/${PORTNAME}/${PORTVERSION}
@@ -23,15 +23,14 @@ USE_RC_SUBR=	backuppc
 
 USES=		perl5
 NO_BUILD=	yes
-NO_PACKAGE=	Overwrites configuration files; set FORCE_PACKAGE if you want\
-		to build this package
 
 USERS=		backuppc
 GROUPS=		backuppc
 
 CGIDIR?=	${PREFIX}/www/cgi-bin
 
-SUB_FILES=	pkg-deinstall pkg-message
+SUB_FILES=	pkg-deinstall pkg-message update.sh
+SUB_LIST=	CGIDIR=${CGIDIR}
 
 PLIST_SUB+=	CGIDIR=${CGIDIR:S,^${PREFIX}/,,} \
 		DISTVERSION=${DISTVERSION}
@@ -39,13 +38,18 @@ PLIST_SUB+=	CGIDIR=${CGIDIR:S,^${PREFIX}/,,} \
 PORTDOCS=	ChangeLog LICENSE README
 
 OPTIONS_DEFINE=		ARCHIVE_ZIP COMPRESS_ZLIB DOCS FILE_RSYNCP NMBLOOKUP \
-			RRDTOOL SMBCLIENT XML_RSS
-OPTIONS_DEFAULT=	ARCHIVE_ZIP COMPRESS_ZLIB
+			SMBCLIENT XML_RSS
+
+OPTIONS_RADIO=		GRAPHS
+OPTIONS_RADIO_GRAPHS=	RRD_GRAPHS RRDTOOL
+
+OPTIONS_DEFAULT=	ARCHIVE_ZIP COMPRESS_ZLIB RRD_GRAPHS
 
 ARCHIVE_ZIP_DESC=	Perl module for Zip archive files
 COMPRESS_ZLIB_DESC=	Perl5 interface to zlib compression library
 FILE_RSYNCP_DESC=	Perl Rsync client
 NMBLOOKUP_DESC=		NetBIOS Name lookup tool
+RRD_GRAPHS_DESC=	Apply graphs patch (but not install RRDTool)
 RRDTOOL_DESC=		Use RRDTool to generate pool statistic graphs
 SMBCLIENT_DESC=		Samba client
 XML_RSS_DESC=		Perl extension to manage RSS files
@@ -66,6 +70,8 @@ RUN_DEPENDS+=	nmblookup:${PORTSDIR}/net/samba-nmblookup
 .endif
 .if ${PORT_OPTIONS:MRRDTOOL}
 RUN_DEPENDS+=	rrdtool:${PORTSDIR}/databases/rrdtool
+.endif
+.if ${PORT_OPTIONS:MRRD_GRAPHS} || ${PORT_OPTIONS:MRRDTOOL}
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-bin-BackupPC \
 		${FILESDIR}/extra-patch-lib-BackupPC-CGI-GeneralInfo.pm
 .endif
@@ -76,12 +82,18 @@ RUN_DEPENDS+=	smbclient:${PORTSDIR}/net/samba-smbclient
 RUN_DEPENDS+=	p5-XML-RSS>=0:${PORTSDIR}/textproc/p5-XML-RSS
 .endif
 
+pre-patch:
+	@${CP} ${WRKSRC}/configure.pl ${WRKSRC}/update.pl
+
 post-patch:
 	@${REINPLACE_CMD} \
 		-e 's|/etc/BackupPC\(/config.pl\)|${ETCDIR}\1|' \
 		-e 's|^\(foreach my $$dir ( qw(bin \)doc$$|\1${DOCSDIR_REL}|' \
 		-e 's|\($$DestDir$$Conf{InstallDir}/\)doc|\1${DOCSDIR_REL}|' \
-		${WRKSRC}/configure.pl
+		${WRKSRC}/configure.pl ${WRKSRC}/update.pl
+	@${REINPLACE_CMD} -E \
+		-e 's|^(use lib ")\.(/lib";)$$|\1${PREFIX}\2|' \
+		${WRKSRC}/update.pl
 	@${REINPLACE_CMD} \
 		-e 's,"/doc/BackupPC.html","/${DOCSDIR_REL}/BackupPC.html",' \
 		${WRKSRC}/lib/BackupPC/CGI/View.pm
@@ -95,15 +107,6 @@ post-patch:
 		${WRKSRC}/doc/BackupPC.html ${WRKSRC}/doc/BackupPC.pod
 
 do-install:
-	if [ -f ${ETCDIR}/config.pl ]; then \
-		${MKDIR} ${STAGEDIR}${ETCDIR}; \
-		${CP} -p ${ETCDIR}/config.pl ${STAGEDIR}${ETCDIR}/config.pl; \
-	fi
-	if [ -f ${ETCDIR}/hosts ]; then \
-		${MKDIR} ${STAGEDIR}${ETCDIR}; \
-		${CP} -p ${ETCDIR}/hosts ${STAGEDIR}${ETCDIR}/hosts; \
-	fi
-
 	cd ${WRKSRC} && ${PERL} configure.pl	\
 		--batch				\
 		--backuppc-user ${USERS}	\
@@ -124,14 +127,10 @@ do-install:
 		${WRKSRC}/doc/BackupPC.pod ${WRKSRC}/${PORTNAME}.1
 	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${STAGEDIR}${MANPREFIX}/man/man1
 	cd ${WRKSRC} && ${INSTALL_MAN} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
-
-	if [ ! -f ${STAGEDIR}${ETCDIR}/config.pl.pre-${DISTVERSION} ]; then \
-		> ${STAGEDIR}${ETCDIR}/config.pl.pre-${DISTVERSION}; \
-	fi
-	${INSTALL} -d ${STAGEDIR}${PREFIX}/libexec/${PORTNAME}
-	cd ${STAGEDIR}${ETCDIR} && \
-		${CHGRP} wheel config.pl config.pl.pre-${DISTVERSION} && \
-		${MV} config.pl hosts config.pl.pre-${DISTVERSION} \
-			${STAGEDIR}${PREFIX}/libexec/${PORTNAME}/
+	${CP} ${WRKSRC}/conf/config.pl ${STAGEDIR}${ETCDIR}/config.pl.sample
+	${CP} ${WRKSRC}/conf/hosts ${STAGEDIR}${ETCDIR}/hosts.sample
+	${CP} ${WRKDIR}/update.sh ${STAGEDIR}${ETCDIR}/update.sh
+	${MKDIR} ${STAGEDIR}${PREFIX}/libexec/backuppc
+	${CP} ${WRKSRC}/update.pl ${STAGEDIR}${PREFIX}/libexec/backuppc/update.pl
 
 .include <bsd.port.mk>
