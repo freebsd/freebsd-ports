@@ -14,7 +14,11 @@ PKGDIR=		${.CURDIR}
 USE_GNOME=	gtk20
 CONFIGURE_ARGS=--with-gtk
 
-BROKEN=		does not link against GTK2
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} > 1000000
+BROKEN=		does not link against GTK2 on FreeBSD 10+
+.endif
 
 pre-install:
 	@${REINPLACE_CMD} -e 's|base [$$][(]GTKSRCDIR[)] data|$$(GTKSRCDIR)|g' \
