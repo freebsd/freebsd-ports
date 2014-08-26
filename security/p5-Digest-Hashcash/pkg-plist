@@ -2,7 +2,6 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Digest/Hashcash/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Digest/Hashcash/Hashcash.so
 %%PERL5_MAN3%%/Digest::Hashcash.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Digest/Hashcash/
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Digest/
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Digest/Hashcash/
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Digest/
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Digest
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Digest/Hashcash
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Digest

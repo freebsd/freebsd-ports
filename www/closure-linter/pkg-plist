@@ -160,7 +160,6 @@ bin/gjslint
 %%PYTHON_SITELIBDIR%%/closure_linter/tokenutil_test.pyc
 %%PYTHON_SITELIBDIR%%/closure_linter/tokenutil_test.pyo
 @dirrmtry %%PYTHON_SITELIBDIR%%/closure_linter/common
-@dirrmtry %%PYTHON_SITELIBDIR%%/closure_linter-2.3.13-py2.7.egg-info
 @dirrmtry %%PYTHON_SITELIBDIR%%/closure_linter
 @dirrmtry %%PYTHON_SITELIBDIR%%
 @dirrmtry %%PYTHON_LIBDIR%%
