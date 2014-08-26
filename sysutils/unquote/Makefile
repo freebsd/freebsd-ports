@@ -10,6 +10,8 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S/.b/pre/}
 MAINTAINER=	eadler@FreeBSD.org
 COMMENT=	Execute a command with safely quoted arguments
 
+USES=		uidfix
+
 PLIST_FILES=	bin/unquote man/man1/unquote.1.gz
 
 .if		!defined(NO_RELEASE)
