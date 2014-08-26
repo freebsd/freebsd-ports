@@ -4,10 +4,11 @@ lib/node_modules/thrift/examples/Makefile
 lib/node_modules/thrift/examples/README.md
 lib/node_modules/thrift/examples/client.js
 lib/node_modules/thrift/examples/client_multitransport.js
+lib/node_modules/thrift/examples/parse.js
 lib/node_modules/thrift/examples/server.js
 lib/node_modules/thrift/examples/server_multitransport.js
 lib/node_modules/thrift/examples/user.thrift
-lib/node_modules/thrift/lib/thrift/binary_parser.js
+lib/node_modules/thrift/lib/thrift/binary.js
 lib/node_modules/thrift/lib/thrift/connection.js
 lib/node_modules/thrift/lib/thrift/index.js
 lib/node_modules/thrift/lib/thrift/protocol.js
@@ -15,6 +16,8 @@ lib/node_modules/thrift/lib/thrift/server.js
 lib/node_modules/thrift/lib/thrift/thrift.js
 lib/node_modules/thrift/lib/thrift/transport.js
 lib/node_modules/thrift/package.json
+lib/node_modules/thrift/test/binary.test.js
+@dirrm lib/node_modules/thrift/test
 @dirrm lib/node_modules/thrift/lib/thrift
 @dirrm lib/node_modules/thrift/lib
 @dirrm lib/node_modules/thrift/examples
