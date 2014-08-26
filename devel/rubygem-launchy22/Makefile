@@ -18,4 +18,6 @@ RUBYGEM_AUTOPLIST=	yes
 
 # Don't install the binary bin/launchy since it's not required at this time
 
+PORTSCOUT=	ignore
+
 .include <bsd.port.mk>
