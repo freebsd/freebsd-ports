@@ -1,5 +1,5 @@
---- ./testing/gtest/include/gtest/internal/gtest-port.h.orig	2014-08-12 21:03:10.000000000 +0200
-+++ ./testing/gtest/include/gtest/internal/gtest-port.h	2014-08-13 09:56:58.000000000 +0200
+--- ./testing/gtest/include/gtest/internal/gtest-port.h.orig	2014-08-20 21:03:23.000000000 +0200
++++ ./testing/gtest/include/gtest/internal/gtest-port.h	2014-08-22 15:06:26.000000000 +0200
 @@ -265,6 +265,8 @@
  # define GTEST_OS_NACL 1
  #elif defined __OpenBSD__

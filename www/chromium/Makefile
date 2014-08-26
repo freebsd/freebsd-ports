@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	chromium
-PORTVERSION=	36.0.1985.143
-PORTREVISION=	1
+PORTVERSION=	37.0.2062.94
 CATEGORIES=	www
 MASTER_SITES=	http://commondatastorage.googleapis.com/chromium-browser-official/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
@@ -244,8 +243,10 @@ post-patch:
 pre-configure:
 	# phajdan-jr: list of things *not* to remove, so maybe the script
 	#             should be called "keep_bundled_libraries.py"
+	# keep third_party/protobuf to ease debugging
 	cd ${WRKSRC} && ${PYTHON_CMD} \
 		./build/linux/unbundle/remove_bundled_libraries.py \
+		'third_party/protobuf' \
 		'base/third_party/dmg_fp' \
 		'base/third_party/dynamic_annotations' \
 		'base/third_party/icu' \
@@ -269,6 +270,7 @@ pre-configure:
 		'third_party/cros_system_api' \
 		'third_party/dom_distiller_js' \
 		'third_party/ffmpeg' \
+		'third_party/fips181' \
 		'third_party/flot' \
 		'third_party/hunspell' \
 		'third_party/iccjpeg' \
@@ -295,8 +297,9 @@ pre-configure:
 		'third_party/npapi' \
 		'third_party/opus' \
 		'third_party/ots' \
-		'third_party/polymer' \
+		'third_party/pdfium' \
 		'third_party/ply' \
+		'third_party/polymer' \
 		'third_party/pywebsocket' \
 		'third_party/qcms' \
 		'third_party/readability' \
@@ -344,16 +347,20 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/chrome/tools/build/linux/chrome-wrapper \
 		${STAGEDIR}${DATADIR}
 .for p in chrome_100_percent content_resources keyboard_resources resources
-	${INSTALL_DATA} ${WRKSRC}/out/${BUILDTYPE}/${p}.pak ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/out/${BUILDTYPE}/${p}.pak \
+		${STAGEDIR}${DATADIR}
 .endfor
-	${INSTALL_PROGRAM} ${WRKSRC}/out/${BUILDTYPE}/chrome ${STAGEDIR}${DATADIR}
-	${INSTALL_LIB} ${WRKSRC}/out/${BUILDTYPE}/libffmpegsumo.so ${STAGEDIR}${DATADIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/out/${BUILDTYPE}/chrome \
+		${STAGEDIR}${DATADIR}
+	${INSTALL_LIB} ${WRKSRC}/out/${BUILDTYPE}/libffmpegsumo.so \
+		${STAGEDIR}${DATADIR}
 	cd ${WRKSRC}/out/${BUILDTYPE} && \
 		${COPYTREE_SHARE} "locales resources" ${STAGEDIR}${DATADIR}
 	@${MKDIR} ${STAGEDIR}${DESKTOPDIR}
-	${INSTALL_DATA} ${WRKDIR}/chromium-browser.desktop ${STAGEDIR}${DESKTOPDIR}
+	${INSTALL_DATA} ${WRKDIR}/chromium-browser.desktop \
+		${STAGEDIR}${DESKTOPDIR}
 	${INSTALL_SCRIPT} ${WRKDIR}/chrome ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/out/${BUILDTYPE}/mksnapshot.${ARCH:S/i386/ia32/:S/amd64/x64/} \
+	${INSTALL_PROGRAM} ${WRKSRC}/out/${BUILDTYPE}/mksnapshot \
 		${STAGEDIR}${DATADIR}/mksnapshot
 
 .include <bsd.port.post.mk>

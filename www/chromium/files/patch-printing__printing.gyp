@@ -1,6 +1,6 @@
---- ./printing/printing.gyp.orig	2014-08-12 21:02:51.000000000 +0200
-+++ ./printing/printing.gyp	2014-08-13 09:56:58.000000000 +0200
-@@ -193,7 +193,7 @@
+--- ./printing/printing.gyp.orig	2014-08-20 21:03:08.000000000 +0200
++++ ./printing/printing.gyp	2014-08-22 15:06:26.000000000 +0200
+@@ -187,7 +187,7 @@
              'backend/print_backend_chromeos.cc',
            ],
          }],

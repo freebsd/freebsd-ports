@@ -1,9 +1,9 @@
---- ./components/usb_service/usb_context.cc.orig	2014-08-12 21:02:37.000000000 +0200
-+++ ./components/usb_service/usb_context.cc	2014-08-13 09:56:57.000000000 +0200
-@@ -7,8 +7,13 @@
- #include "base/logging.h"
+--- ./components/usb_service/usb_context.cc.orig	2014-08-20 21:02:55.000000000 +0200
++++ ./components/usb_service/usb_context.cc	2014-08-22 15:06:25.000000000 +0200
+@@ -8,8 +8,13 @@
  #include "base/synchronization/waitable_event.h"
  #include "base/threading/platform_thread.h"
+ #include "components/usb_service/usb_error.h"
 +#if defined(OS_FREEBSD)
 +#include "libusb.h"
 +#define LIBUSB_CALL
@@ -14,7 +14,7 @@
  
  namespace usb_service {
  
-@@ -45,7 +50,9 @@
+@@ -46,7 +51,9 @@
    running_ = false;
    // Spreading running_ to the UsbEventHandler thread.
    base::subtle::MemoryBarrier();
