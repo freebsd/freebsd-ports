@@ -202,6 +202,7 @@ CONFIGURE_ARGS+=--disable-debug
 LIB_DEPENDS+=	libdbi.so:${PORTSDIR}/databases/libdbi
 CONFIGURE_ARGS+=--with-libdbi=${LOCALBASE} --enable-dbi
 PLIST_SUB+=	DBI=""
+CFLAGS+=	-Wno-deprecated-declarations
 .else
 CONFIGURE_ARGS+=--without-libdbi --disable-dbi
 PLIST_SUB+=	DBI="@comment "
