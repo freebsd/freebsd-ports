@@ -59,8 +59,5 @@ post-patch:
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/mtools.conf ${STAGEDIR}${PREFIX}/etc/mtools.conf.sample
-	@if [ ! -f ${STAGEDIR}${PREFIX}/etc/mtools.conf ]; then \
-		cd ${STAGEDIR}${PREFIX}/etc && ${CP} -p mtools.conf.sample mtools.conf; \
-	fi
 
 .include <bsd.port.mk>
