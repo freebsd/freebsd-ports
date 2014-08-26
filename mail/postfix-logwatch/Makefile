@@ -2,12 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	postfix-logwatch
-PORTVERSION=	1.40.00
-PORTREVISION=	1
+PORTVERSION=	1.40.01
 CATEGORIES=	mail
 MASTER_SITES=	SF/logreporters/${PORTNAME}/release/${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	danilo@FreeBSD.org
 COMMENT=	Postfix MTA log parser
 
 LICENSE=	MIT
