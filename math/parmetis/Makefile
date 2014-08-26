@@ -3,7 +3,7 @@
 
 PORTNAME=	ParMetis
 PORTVERSION=	4.0
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	math parallel
 MASTER_SITES=	http://glaros.dtc.umn.edu/gkhome/fetch/sw/parmetis/%SUBDIR%/
 MASTER_SITE_SUBDIR=	. OLD
@@ -17,10 +17,13 @@ LICENSE_NAME=	University of Minnesota METIS License
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 LICENSE_PERMS=	auto-accept
 
+LIB_DEPENDS=	libc++.so:${PORTSDIR}/devel/libc++
+
 OPTIONS_DEFINE=	OPENMPI DOCS
 OPENMPI_DESC=	Use openmpi instead of mpich2
 
 USES=		cmake gmake
+LDFLAGS+=	-lc++
 
 PLIST_FILES=	include/parmetis/metis.h \
 		include/parmetis/parmetis.h \
