@@ -19,4 +19,6 @@ USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
 PLIST_FILES=	bin/puma bin/pumactl
 
+PORTSCOUT=	ignore
+
 .include <bsd.port.mk>
