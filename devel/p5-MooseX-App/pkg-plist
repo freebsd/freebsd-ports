@@ -21,12 +21,13 @@
 %%SITE_PERL%%/MooseX/App/Plugin/ConfigHome.pm
 %%SITE_PERL%%/MooseX/App/Plugin/ConfigHome/Meta/Class.pm
 %%SITE_PERL%%/MooseX/App/Plugin/Env.pm
-%%SITE_PERL%%/MooseX/App/Plugin/Env/Meta/Attribute.pm
-%%SITE_PERL%%/MooseX/App/Plugin/Env/Meta/Class.pm
 %%SITE_PERL%%/MooseX/App/Plugin/Fuzzy.pm
 %%SITE_PERL%%/MooseX/App/Plugin/Man.pm
 %%SITE_PERL%%/MooseX/App/Plugin/Man/Command.pm
 %%SITE_PERL%%/MooseX/App/Plugin/Man/Meta/Class.pm
+%%SITE_PERL%%/MooseX/App/Plugin/Term.pm
+%%SITE_PERL%%/MooseX/App/Plugin/Term/Meta/Attribute.pm
+%%SITE_PERL%%/MooseX/App/Plugin/Term/Meta/Class.pm
 %%SITE_PERL%%/MooseX/App/Plugin/Typo.pm
 %%SITE_PERL%%/MooseX/App/Plugin/Typo/Meta/Class.pm
 %%SITE_PERL%%/MooseX/App/Plugin/Version.pm
@@ -53,8 +54,8 @@
 %%PERL5_MAN3%%/MooseX::App::Plugin::Color.3.gz
 %%PERL5_MAN3%%/MooseX::App::Plugin::Config.3.gz
 %%PERL5_MAN3%%/MooseX::App::Plugin::ConfigHome.3.gz
-%%PERL5_MAN3%%/MooseX::App::Plugin::Env.3.gz
 %%PERL5_MAN3%%/MooseX::App::Plugin::Man.3.gz
+%%PERL5_MAN3%%/MooseX::App::Plugin::Term.3.gz
 %%PERL5_MAN3%%/MooseX::App::Plugin::Typo.3.gz
 %%PERL5_MAN3%%/MooseX::App::Plugin::Version.3.gz
 %%PERL5_MAN3%%/MooseX::App::Role.3.gz
@@ -68,10 +69,10 @@
 @dirrm %%SITE_PERL%%/MooseX/App/Plugin/Version
 @dirrm %%SITE_PERL%%/MooseX/App/Plugin/Typo/Meta
 @dirrm %%SITE_PERL%%/MooseX/App/Plugin/Typo
+@dirrm %%SITE_PERL%%/MooseX/App/Plugin/Term/Meta
+@dirrm %%SITE_PERL%%/MooseX/App/Plugin/Term
 @dirrm %%SITE_PERL%%/MooseX/App/Plugin/Man/Meta
 @dirrm %%SITE_PERL%%/MooseX/App/Plugin/Man
-@dirrm %%SITE_PERL%%/MooseX/App/Plugin/Env/Meta
-@dirrm %%SITE_PERL%%/MooseX/App/Plugin/Env
 @dirrm %%SITE_PERL%%/MooseX/App/Plugin/ConfigHome/Meta
 @dirrm %%SITE_PERL%%/MooseX/App/Plugin/ConfigHome
 @dirrm %%SITE_PERL%%/MooseX/App/Plugin/Config/Meta
