@@ -98,7 +98,6 @@
     SUBDIR += bombherman
     SUBDIR += bombz
     SUBDIR += bomns
-    SUBDIR += bomns3
     SUBDIR += boswars
     SUBDIR += bouncy
     SUBDIR += bovo

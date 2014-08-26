@@ -6491,3 +6491,4 @@ security/pam_abl||2014-08-24|Has expired: Newer version requires large number of
 www/rubygem-feedzirra|www/rubygem-feedjira|2014-08-24|Has expired: Project renamed upstream, see www/rubygem-feedjira
 devel/picosat|math/picosat|2014-08-25|More appropriate primary category
 devel/py-pycosat|math/py-pycosat|2014-08-25|More appropriate primary category
+games/bomns3|games/3omns|2014-08-26|Has expired: Development ceased, use 3omns
