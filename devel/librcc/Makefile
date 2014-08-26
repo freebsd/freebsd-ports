@@ -3,7 +3,7 @@
 
 PORTNAME=	librcc
 PORTVERSION=	0.2.12
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	devel
 MASTER_SITES=	http://dside.dyndns.org/files/rusxmms/ \
 		LOCAL/fluffy
@@ -17,7 +17,7 @@ LIB_DEPENDS=	librcd.so:${PORTSDIR}/devel/librcd \
 
 GNU_CONFIGURE=	yes
 USE_GNOME=	libxml2
-USES=		gmake iconv libtool:oldver pathfix pkgconfig tar:bzip2
+USES=		gmake iconv libtool pathfix pkgconfig tar:bzip2
 USE_LDCONFIG=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include
