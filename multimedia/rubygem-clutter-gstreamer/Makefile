@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	clutter-gstreamer
-PORTVERSION=	2.1.0
+PORTVERSION=	2.2.0
 CATEGORIES=	multimedia rubygems
 MASTER_SITES=	RG
 
