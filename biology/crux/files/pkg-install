@@ -1,0 +1,8 @@
+#!/bin/sh
+
+case $2 in
+POST-INSTALL)
+	${PKG_PREFIX}/bin/crux -b -q /dev/null
+	exit 0
+	;;
+esac
