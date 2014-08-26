@@ -14,13 +14,13 @@ LICENSE=	GPLv2
 
 RUN_DEPENDS=	xdg-open:${PORTSDIR}/devel/xdg-utils
 
-USE_XORG=	xscrnsaver
+USE_XORG=	x11 xscrnsaver
 USE_GNOME=	gtk20
 USES=		gettext perl5 gmake pkgconfig
 GNU_CONFIGURE=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include -Wno-return-type
-LDFLAGS+=	-L${LOCALBASE}/lib
+LIBS+=		-L${LOCALBASE}/lib -lX11
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|1.1.7|${PORTVERSION}|g' ${WRKSRC}/configure

@@ -14,7 +14,9 @@ LICENSE=	GPLv2
 SUB_FILES=	pkg-message
 USE_GNOME=	gconf2
 USES=		pkgconfig gmake tar:bzip2
+USE_XORG=	x11
 GNU_CONFIGURE=	yes
+LIBS+=		-L${LOCALBASE}/lib -lX11
 
 OPTIONS_DEFINE=	DOCS
 

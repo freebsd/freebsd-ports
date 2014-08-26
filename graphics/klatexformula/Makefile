@@ -19,8 +19,13 @@ CMAKE_ARGS=	-DQT_QMAKE_EXECUTABLE_FINDQT=${QMAKE} \
 		-DKLF_BUILD_KTEXTEDITORPLUGIN=off \
 		-DKLF_INSTALL_POST_UPDATEMIMEDATABASE=off \
 		-DKLF_INSTALL_SHARE_MAN1_DIR=man/man1
-CXXFLAGS=	-I${LOCALBASE}/include
+CXXFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 PLIST_SUB=	VERSION=${PORTVERSION}
+
+post-patch:
+	@${REINPLACE_CMD} '/link_libraries(klatexformula /s/)/ -lX11)/' \
+		${WRKSRC}/src/CMakeLists.txt
 
 .include <bsd.port.mk>

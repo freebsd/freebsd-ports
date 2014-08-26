@@ -8,7 +8,7 @@
 -TEMP_DIR=../tmp-lnx
 +CXX?=		g++
 +CXXFLAGS?=	-O2 -ffast-math
-+LIBS=		-lpng -lsfml-window -lsfml-graphics -lsfml-system -lsfml-audio
++LIBS=		-lpng -lsfml-window -lsfml-graphics -lsfml-system -lsfml-audio -lGL
 +LDFLAGS?=	-s
 +TEMP_DIR=	../tmp-lnx
  

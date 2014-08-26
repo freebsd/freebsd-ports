@@ -12,24 +12,21 @@ COMMENT=	Utility to print multiple images per sheet
 LICENSE=	GPLv2
 
 LIB_DEPENDS=	libcups.so:${PORTSDIR}/print/cups-client \
-		libexpat.so:${PORTSDIR}/textproc/expat2 \
-		libgdk_pixbuf-2.0.so:${PORTSDIR}/graphics/gdk-pixbuf2 \
 		libgutenprint.so:${PORTSDIR}/print/gutenprint \
+		libjpeg.so:${PORTSDIR}/graphics/jpeg \
 		liblcms.so:${PORTSDIR}/graphics/lcms \
 		libnetpbm.so:${PORTSDIR}/graphics/netpbm \
-		libpcre.so:${PORTSDIR}/devel/pcre \
-		libpng15.so:${PORTSDIR}/graphics/png \
-		libpthread-stubs.so:${PORTSDIR}/devel/libpthread-stubs \
+		libpng.so:${PORTSDIR}/graphics/png \
 		libtiff.so:${PORTSDIR}/graphics/tiff
 
 GNU_CONFIGURE=	yes
-USES=		desktop-file-utils gettext pkgconfig
-USE_GNOME=	pango
-USE_XORG=	pixman x11 xau xcb xcomposite xcursor xdamage xdmcp xext \
-		xfixes xi xinerama xrandr xrender
+USES=		desktop-file-utils gettext libtool pkgconfig
+USE_GNOME=	gdkpixbuf2 gtk20
+USE_XORG=	x11
 INSTALLS_ICONS=	yes
 
-LDFLAGS+=	-L${LOCALBASE}/lib
+CPPFLAGS+=	-I${LOCALBASE}/include
+LIBS+=		-L${LOCALBASE}/lib -lX11
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|glib/gstrfuncs.h|glib.h|g' \

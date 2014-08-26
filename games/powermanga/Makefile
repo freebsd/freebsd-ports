@@ -21,12 +21,13 @@ USE_XORG=	xext xxf86dga
 USE_SDL=	sdl mixer
 GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	aclocal automake autoconf autoheader
+AUTOMAKE_ARGS=	-a -c -f --foreign
 
 PORTDOCS=	*
 PORTDATA=	*
 
 CFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+LIBS+=		-L${LOCALBASE}/lib -lm
 
 .include <bsd.port.options.mk>
 
@@ -42,9 +43,6 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|games/powermanga|powermanga|' \
 		${WRKSRC}/src/tools.c
 	@${REINPLACE_CMD} -e 's|Lang=fr|Lang=en|' ${WRKSRC}/texts/config.ini
-
-run-autotools:
-	cd ${WRKSRC} && ${SH} ./bootstrap
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/powermanga.desktop ${STAGEDIR}${PREFIX}/share/applications/

@@ -27,9 +27,9 @@ post-patch:
 	@${RM} ${WRKSRC}/data/*\~
 
 do-build:
-	cd ${WRKSRC} && ${CC} ${CFLAGS} main.cpp -o ${PORTNAME} \
-		`${SDL_CONFIG} --cflags --libs` -lSDL_ttf -lSDL_mixer \
-		-lSDL_image -lGL -lGLU
+	(cd ${WRKSRC} && ${CXX} ${CPPFLAGS} ${CXXFLAGS} ${LDFLAGS} main.cpp \
+		-o ${PORTNAME} `${SDL_CONFIG} --cflags --libs` -lSDL_ttf \
+		-lSDL_mixer -lSDL_image -lGL -lGLU)
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin

@@ -26,8 +26,8 @@ GH_COMMIT=	cdac9a9
 GH_TAGNAME=	${GH_COMMIT}
 PORTEXAMPLES=	*
 
-CFLAGS+=	-I${LOCALBASE}/include \
-		-L${LOCALBASE}/lib
+CFLAGS+=	-I${LOCALBASE}/include
+LIBS+=		-L${LOCALBASE}/lib -lm
 
 PLIST_FILES=	bin/blastbeat \
 		%%ETCDIR%%/blastbeat.ini.sample

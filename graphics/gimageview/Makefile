@@ -59,6 +59,7 @@ LIBXINE_LIB_DEPENDS=	libxine.so:${PORTSDIR}/multimedia/libxine
 post-patch:
 	@${REINPLACE_CMD} '/^desktopdir =/s|=.*|= ${DESKTOPDIR}|' \
 		${WRKSRC}/etc/Makefile.in
+	@${REINPLACE_CMD} '/^gimv_LDADD =/s/=/= -lm/' ${WRKSRC}/src/Makefile.in
 	@${FIND} ${WRKSRC} -name Makefile.in | ${XARGS} ${REINPLACE_CMD} \
 		-e 's|= $$(DESTDIR)|= |' -e '/^CPPFLAGS =/s/\\/@CPPFLAGS@ \\/'
 

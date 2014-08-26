@@ -16,7 +16,7 @@
  endif
  
 +ifdef FREEBSD
-+    BASE_LIBS += -L%%LOCALBASE%%/lib
++    BASE_LIBS += -L%%LOCALBASE%%/lib -lX11 -lm
 +
 +    ifneq ($(ENABLE_NLS),0)
 +        INTL_LIBS := -lintl %%ICONV_LIB%%

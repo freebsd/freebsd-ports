@@ -26,7 +26,7 @@ CONFIGURE_ARGS+=	--disable-gnome
 GCONF_SCHEMAS=	im-ja.schemas
 
 CPPFLAGS+=	-I${LOCALBASE}/include -DNO_MALLOC_H
-LDFLAGS+=	-L${LOCALBASE}/lib
+LIBS+=		-L${LOCALBASE}/lib
 
 .include <bsd.port.options.mk>
 
@@ -57,5 +57,13 @@ post-patch:
 	${FIND} ${WRKSRC} -name Makefile.in | ${XARGS} ${TOUCH}
 	@${REINPLACE_CMD} -e 's|$$(datadir)/gconf|$$(sysconfdir)/gconf|g' \
 		${WRKSRC}/data/Makefile.in
+	@${REINPLACE_CMD} '/^im_ja_la_LIBADD =/s/$$/ -lm/' \
+		${WRKSRC}/src/gtk/Makefile.in
+	@${REINPLACE_CMD} '/^im_ja_helper_LDADD =/s/$$/ -lX11/' \
+		${WRKSRC}/src/helper/Makefile.in
+	@${REINPLACE_CMD} '/^im_ja_le_la_LIBADD =/s/$$/ -lm/' \
+		${WRKSRC}/src/iiimf/Makefile.in
+	@${REINPLACE_CMD} '/^im_ja_xim_server_LDADD =/s/$$/ -lm/' \
+		${WRKSRC}/src/xim/Makefile.in
 
 .include <bsd.port.mk>

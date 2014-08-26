@@ -42,5 +42,3 @@ share/pixmaps/belooted/icon-spade.xpm
 share/pixmaps/belooted/icon-none.xpm
 @dirrm share/pixmaps/belooted
 share/pixmaps/belooted.png
-@exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
-@unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true

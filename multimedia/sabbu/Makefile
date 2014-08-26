@@ -44,7 +44,7 @@ post-patch:
 		-e 's,ffmpeg/avformat,libavformat/avformat,g' \
 		-e 's,lavcodec,lavcodec0,g' \
 		-e 's,lavformat,lavformat0,g' \
-		-e 's,lavswscale,lavswscale0,g' \
+		-e '/FFMPEG_LIBS=/s/"$$/ -lavutil0"/' \
 		${WRKSRC}/configure
 
 .include <bsd.port.mk>

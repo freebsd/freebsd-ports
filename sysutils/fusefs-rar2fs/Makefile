@@ -14,8 +14,7 @@ COMMENT=	Mount rar archives as filesystem
 
 LICENSE=	GPLv3
 
-LIB_DEPENDS=	libexecinfo.so:${PORTSDIR}/devel/libexecinfo \
-		libunrar.so:${PORTSDIR}/archivers/libunrar4
+LIB_DEPENDS=	libunrar.so:${PORTSDIR}/archivers/libunrar4
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-fuse-lib=${LOCALBASE}/lib \
@@ -24,10 +23,11 @@ CONFIGURE_ARGS=	--with-fuse-lib=${LOCALBASE}/lib \
 	--with-unrar-lib=${LOCALBASE}/lib
 
 PLIST_FILES=	bin/${PORTNAME} man/man1/rar2fs.1.gz
-USES=		fuse gmake
+USES=		execinfo fuse gmake
 
 post-patch:
-	@${REINPLACE_CMD} 's/-lstdc++/-lexecinfo/' ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e 's/-lstdc++/-lexecinfo/' -e '/_LINK =/s/CC/CXX/' \
+		${WRKSRC}/Makefile.in
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin

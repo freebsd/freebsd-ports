@@ -5,7 +5,7 @@
  
  cfdg: $(OBJS)
 -	$(LINK.o) $^ -L/usr/local/lib -lstdc++ -lpng -lz -fexceptions -o $@
-+	$(LINK.o) $^ $(shell libpng-config --ldflags) -lstdc++ -fexceptions -o $@
++	$(CXX) $^ $(shell libpng-config --ldflags) -lm -fexceptions -o $@
  	strip $@
  
  

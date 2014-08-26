@@ -16,10 +16,12 @@ LIB_DEPENDS=	libgnome-mag.so:${PORTSDIR}/accessibility/gnome-mag
 
 USES=		gettext gmake libtool pathfix pkgconfig tar:bzip2
 USE_LDCONFIG=	yes
+USE_XORG=	x11
 INSTALLS_OMF=	yes
 INSTALLS_ICONS=	yes
 USE_GNOME=	gnomeprefix intlhack libgnomeui atspi gnomespeech
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	X_LIBS=-lX11
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 MAKE_ENV=	SED="${SED}"

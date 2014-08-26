@@ -19,6 +19,7 @@ USES=		pkgconfig tar:bzip2
 GNU_CONFIGURE=	yes
 USE_GNOME=	libgnomeui
 CONFIGURE_ENV=	set_more_warnings="no"
+LIBS+=		-L${LOCALBASE}/lib -lX11
 
 PLIST_FILES=	bin/gnome-gpg \
 		man/man1/gnome-gpg.1.gz

@@ -17,10 +17,9 @@ RUN_DEPENDS=	${LOCALBASE}/lib/X11/fonts/local/gulim12.pcf.gz:${PORTSDIR}/korean/
 USES=		perl5 pkgconfig
 USE_PERL5=	build
 USE_GNOME=	glib20 gtk20
+USE_XORG=	x11
 GNU_CONFIGURE=	yes
-
-pre-patch:
-	${REINPLACE_CMD} -e 's|-lc_r||; s|DATADIRNAME=lib|DATADIRNAME=share|g' \
-	    ${WRKSRC}/configure
+CPPFLAGS+=	-I${LOCALBASE}/include
+LIBS+=		-L${LOCALBASE}/lib -lX11
 
 .include <bsd.port.mk>

@@ -13,19 +13,6 @@ COMMENT=	Background browser and setter for X windows
 LICENSE=	GPLv2 # (or later)
 
 BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash
-LIB_DEPENDS=	libatkmm-1.6.so:${PORTSDIR}/accessibility/atkmm \
-		libglibmm-2.4.so:${PORTSDIR}/devel/glibmm \
-		libpthread-stubs.so:${PORTSDIR}/devel/libpthread-stubs \
-		libsigc-2.0.so:${PORTSDIR}/devel/libsigc++20 \
-		libpcre.so:${PORTSDIR}/devel/pcre \
-		libcairo.so:${PORTSDIR}/graphics/cairo \
-		libcairomm-1.0.so:${PORTSDIR}/graphics/cairomm \
-		libpng15.so:${PORTSDIR}/graphics/png \
-		libfreetype.so:${PORTSDIR}/print/freetype2 \
-		libexpat.so:${PORTSDIR}/textproc/expat2 \
-		libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig \
-		libgtkmm-2.4.so:${PORTSDIR}/x11-toolkits/gtkmm24 \
-		libpangomm-1.4.so:${PORTSDIR}/x11-toolkits/pangomm
 RUN_DEPENDS=	gnome-icon-theme>0:${PORTSDIR}/misc/gnome-icon-theme \
 		hicolor-icon-theme>0:${PORTSDIR}/misc/hicolor-icon-theme
 
@@ -33,15 +20,14 @@ OPTIONS_DEFINE=	XINERAMA
 OPTIONS_DEFAULT=XINERAMA
 
 USES=		gettext iconv pkgconfig
-USE_GNOME=	gtk20
-USE_XORG=	pixman x11 xau xcb xcomposite xcursor xdamage xdmcp xext xfixes \
-		xrandr xrender
+USE_GNOME=	gtkmm24
+USE_XORG=	x11
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-inotify
 INSTALLS_ICONS=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+LIBS+=		-L${LOCALBASE}/lib -lX11
 
 DESKTOP_ENTRIES="Nitrogen" "${COMMENT}" "${PORTNAME}" "${PORTNAME}" \
 		"Graphics;Viewer;" true
@@ -58,5 +44,6 @@ CONFIGURE_ARGS+=--disable-xinerama
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|' \
 		${WRKSRC}/data/icon-theme-installer
+	@${REINPLACE_CMD} '/^LIBS =/s/$$/ @LIBS@/' ${WRKSRC}/src/Makefile.in
 
 .include <bsd.port.mk>

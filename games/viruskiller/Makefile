@@ -31,6 +31,7 @@ post-patch:
 		 /^DOCDIR/s|=.*|= $$(DESTDIR)$$(PREFIX)/${DOCSDIR_REL}/| ; \
 		 /^ICONDIR/s|=.*|= $$(DESTDIR)$$(PREFIX)/share/icons/hicolor/| ; \
 		 /^DESKTOPDIR/s|=.*|= $$(DESTDIR)$$(PREFIX)/share/applications/| ; \
+		 /^LIBS =/s|$$| -lz| ; \
 		 s|install .* 755|$${BSD_INSTALL_PROGRAM}| ; \
 		 s|install .* 644|$${BSD_INSTALL_DATA}| ; \
 		 /ICONS/s|cp|$${BSD_INSTALL_DATA}|' ${WRKSRC}/makefile

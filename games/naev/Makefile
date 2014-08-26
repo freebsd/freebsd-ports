@@ -26,7 +26,7 @@ USE_SDL=	sdl image
 
 CONFIGURE_ARGS=	--with-ndata-path=${DATADIR}/ndata-${PORTVERSION}
 CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+LIBS+=		-L${LOCALBASE}/lib -lm
 
 PLIST_FILES=	bin/${PORTNAME} man/man6/naev.6.gz
 SUB_FILES=	pkg-message

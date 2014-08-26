@@ -16,7 +16,7 @@ USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
 
 CONFIGURE_ENV=	OPENSSL_CFLAGS="-I${OPENSSLINC}" \
-		OPENSSL_LIBS="-L${OPENSSLLIB} -lssl"
+		OPENSSL_LIBS="-L${OPENSSLLIB} -lcrypto"
 
 PLIST_FILES=	bin/pkcs11-dump \
 		man/man1/pkcs11-dump.1.gz

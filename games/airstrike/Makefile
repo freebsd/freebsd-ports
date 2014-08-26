@@ -39,6 +39,7 @@ DESKTOP_ENTRIES="Airstrike" "" "${PORTNAME}" \
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|CFLAGS += -DLINUX|#CFLAGS += -DLINUX|' \
+		-e '/$$(CC)/s/$$/ -lm/' \
 		${WRKSRC}/src/Makefile
 	@${FIND} ${WRKSRC} -name '*.c' -or -name '*.h' | ${XARGS} \
 		${REINPLACE_CMD} -e 's|<malloc.h>|<stdlib.h>|g'

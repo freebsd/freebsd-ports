@@ -3,7 +3,7 @@
 
 PORTNAME=	retroshare
 PORTVERSION=	0.5.5c
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net-p2p
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=${PORTNAME}/${BINARY}/${PORTVERSION}
@@ -14,29 +14,17 @@ COMMENT=	Private and secure decentralised communication platform
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	protoc:${PORTSDIR}/devel/protobuf \
-		pkg-config:${PORTSDIR}/devel/pkgconf
-LIB_DEPENDS=	libdbus-1.so:${PORTSDIR}/devel/dbus \
-		libpthread-stubs.so:${PORTSDIR}/devel/libpthread-stubs \
-		libpcre.so:${PORTSDIR}/devel/pcre \
+BUILD_DEPENDS=	protoc:${PORTSDIR}/devel/protobuf
+LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl \
 		libupnp.so:${PORTSDIR}/devel/upnp \
-		libpng15.so:${PORTSDIR}/graphics/png \
-		libfreetype.so:${PORTSDIR}/print/freetype2 \
-		libassuan.so:${PORTSDIR}/security/libassuan \
-		libgcrypt.so:${PORTSDIR}/security/libgcrypt \
 		libgnome-keyring.so:${PORTSDIR}/security/libgnome-keyring \
-		libgpg-error.so:${PORTSDIR}/security/libgpg-error \
-		libgpgme.so:${PORTSDIR}/security/gpgme \
-		libexpat.so:${PORTSDIR}/textproc/expat2 \
-		libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig \
 		libspeex.so:${PORTSDIR}/audio/speex \
 		libxslt.so:${PORTSDIR}/textproc/libxslt \
 		libssh_threads.so:${PORTSDIR}/security/libssh
-RUN_DEPENDS=	pinentry-qt4:${PORTSDIR}/security/pinentry-qt4
 
-USES=		compiler:features dos2unix qmake
-USE_GNOME=	glib20
-USE_XORG=	ice sm x11 xau xcb xdmcp xext xrender
+USES=		compiler:features dos2unix pkgconfig qmake
+USE_GNOME=	glib20 libxml2 libxslt
+USE_XORG=	x11 xscrnsaver
 USE_QT4=	corelib gui network xml script designer_build uic_build \
 		qmake_build moc_build rcc_build multimedia
 HAS_CONFIGURE=	yes

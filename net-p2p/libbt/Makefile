@@ -23,6 +23,7 @@ PORTDOCS=	protocol-ext.txt protocol.txt
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|depend||' ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e 's|-lssl|-lcrypto|' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|\(CFLAGS:=\)|\1\@CFLAGS\@ \@CPPFLAGS\@ |' ${WRKSRC}/src/Makefile.in
 
 do-install:

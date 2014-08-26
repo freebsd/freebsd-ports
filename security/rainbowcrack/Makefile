@@ -18,7 +18,9 @@ BROKEN=		does not compile on ia64, powerpc, or sparc64
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|g++|$$(CXX) $$(CXXFLAGS)|; s|\-O3||' \
+	@${REINPLACE_CMD} \
+		-e 's|g++|$$(CXX) $$(CXXFLAGS)|' -e 's|-O3||' \
+		-e 's/-lssl/-lcrypto/' \
 		${WRKSRC}/${MAKEFILE}
 
 do-install:

@@ -16,7 +16,9 @@ LIB_DEPENDS=	libglademm-2.4.so:${PORTSDIR}/devel/libglademm24 \
 RUN_DEPENDES=	dbus-daemon:${PORTSDIR}/devel/dbus
 
 GNU_CONFIGURE=	yes
+LIBS+=		-L${LOCALBASE}/lib -lX11
 USES=		gmake pkgconfig
+USE_XORG=	x11
 
 CONFIGURE_ARGS=	--disable-lynx
 

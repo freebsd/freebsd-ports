@@ -56,6 +56,7 @@ do-extract:
 		${CHMOD} +x configure
 
 post-patch:
+	@${ECHO_CMD} 'CCLD = $$(CXX)' >> ${WRKSRC}/Makefile.am
 	@${REINPLACE_CMD} -e '/FLAGS/ s|-O3||; /FLAGS/ s|-g||' \
 		${WRKSRC}/configure.ac
 	@cd ${WRKSRC} && \

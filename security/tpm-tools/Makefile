@@ -22,8 +22,11 @@ RUN_DEPENDS=	${LOCALBASE}/sbin/tcsd:${PORTSDIR}/security/trousers \
 
 USES=		gettext gmake iconv libtool
 USE_LDCONFIG=	YES
-USE_AUTOTOOLS=	autoconf
 GNU_CONFIGURE=	YES
-LDFLAGS+=	-L${LOCALBASE}/lib -lintl ${ICONV_LIB}
+LIBS+=		-L${LOCALBASE}/lib -lintl
+
+post-patch:
+	@${REINPLACE_CMD} '/^libtpm_unseal_la_LIBADD =/s/$$/ -lcrypto/' \
+		${WRKSRC}/lib/Makefile.in
 
 .include <bsd.port.mk>

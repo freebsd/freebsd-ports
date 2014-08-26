@@ -19,6 +19,7 @@ GNU_CONFIGURE=	yes
 USES=		desktop-file-utils pathfix pkgconfig
 USE_GNOME=	gnomeprefix gconf2 libwnck
 USE_WX=		2.8
+USE_XORG=	x11
 WX_UNICODE=	yes
 WX_CONF_ARGS=	absolute
 
@@ -30,6 +31,8 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|/usr|${PREFIX}|g' \
 		${WRKSRC}/Makefile.in \
 		${WRKSRC}/src/main.h
+	@${REINPLACE_CMD} '/^simdock_LDADD =/s/$$/ -lX11/' \
+		${WRKSRC}/Makefile.in ${WRKSRC}/src/Makefile.in
 	@${REINPLACE_CMD} -e 's|/usr/bin|${PREFIX}/bin|g' \
 		-e 's|/usr/share/firefox|${PREFIX}/lib/firefox|g' \
 		${WRKSRC}/src/main.cc

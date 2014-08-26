@@ -27,8 +27,6 @@ USE_XORG=	x11
 PORTDOCS=	CHANGES COPYING README
 PORTDATA=	*
 
-LDFLAGS+=	-lX11 # calls X functions directly, but doesn't link libX11
-
 OPTIONS_DEFINE=	DOCS NLS
 
 .include <bsd.port.options.mk>

@@ -62,7 +62,7 @@ post-patch:
 		${WRKSRC}/src/daemon/Makefile.in \
 		${WRKSRC}/src/themes/bubble/Makefile.in \
 		${WRKSRC}/src/themes/standard/Makefile.in
-	@${REINPLACE_CMD} '/GTK_LIBS =/s/$$/ -lgmodule-2.0/' \
+	@${REINPLACE_CMD} '/GTK_LIBS =/s/$$/ -lgmodule-2.0 -lX11/' \
 		${WRKSRC}/src/daemon/Makefile.in
 .if empty(PORT_OPTIONS:MNLS)
 	@${REINPLACE_CMD} -e 's|\(USE_NLS=\)yes|\1no|' ${WRKSRC}/configure

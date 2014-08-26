@@ -13,13 +13,13 @@ COMMENT=	GTK2 Puzzle Bobble clone with monkeys
 
 LICENSE=	GPLv2
 
-USES=		pathfix gmake pkgconfig
+USES=		gmake libtool pathfix pkgconfig
 USE_GNOME=	gnomedocutils gnomeprefix intlhack \
 		librsvg2 libgnomeui
 USE_GSTREAMER=	yes
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+LIBS+=		-L${LOCALBASE}/lib -lm
 INSTALLS_OMF=	yes
 
 GCONF_SCHEMAS=	monkey-bubble.schemas

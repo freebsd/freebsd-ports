@@ -32,7 +32,7 @@ OPTIONS_SINGLE_PRINTMETHOD=	LPR CUPS
 LETTER_DESC=	Use letter paper format instead of A4
 LPR_DESC=	LPR printing system support
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MCUPS}
 CONFIGURE_ARGS+=--enable-cups
@@ -58,7 +58,8 @@ CONFIGURE_ARGS+=--disable-letter
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's/@LDFLAGS@/& -Wl,-E/' ${WRKSRC}/xfprint/Makefile.in \
-		 ${WRKSRC}/xfprint-manager/Makefile.in
+	@${REINPLACE_CMD} '/_LDADD =/s/=/= -lX11/' \
+		${WRKSRC}/xfprint/Makefile.in \
+		${WRKSRC}/xfprint-manager/Makefile.in
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
