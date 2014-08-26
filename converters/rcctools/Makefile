@@ -3,7 +3,7 @@
 
 PORTNAME=	rcctools
 PORTVERSION=	0.1.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	converters
 MASTER_SITES=	SF/rusxmms/${PORTNAME}/${PORTVERSION}
 
@@ -12,7 +12,7 @@ COMMENT=	Charset conversion utility with language and encoding autodetection
 
 LIB_DEPENDS=	librcc.so:${PORTSDIR}/devel/librcc
 
-USES=	tar:bzip2
+USES=		tar:bzip2
 GNU_CONFIGURE=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include
