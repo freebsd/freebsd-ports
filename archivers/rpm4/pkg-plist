@@ -300,3 +300,5 @@ libdata/pkgconfig/rpm.pc
 %%NLS%%@dirrmtry share/locale/te/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/te
 %%PYTHON%%@dirrm %%PYTHON_SITELIBDIR%%/rpm
+%%PYTHON%%@dirrm %%PYTHON_SITELIBDIR%%
+%%PYTHON%%@dirrm %%PYTHON_LIBDIR%%

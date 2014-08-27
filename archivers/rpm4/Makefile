@@ -23,6 +23,7 @@ PYTHON_CONFIGURE_ENABLE=python
 PYTHON_USE=	PYTHON=2.7
 NLS_CONFIGURE_ENABLE=nls
 NLS_USES=	gettext
+NLS_LIBS=	-lintl
 PORTDOCS=	*
 
 USES=		gmake libtool lua:51 pathfix shebangfix tar:bzip2
