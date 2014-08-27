@@ -32,7 +32,6 @@ PLIST_SUB+=	PYTHON=${PYTHON} MUNIN=${MUNIN}
 OPTIONS_DEFINE=	THREADS PYTHON GOST ECDSA MUNIN DOCS LIBEVENT
 OPTIONS_DEFAULT=THREADS ECDSA
 
-
 LIBEVENT_DESC=	Build against libevent (devel/libevent2)
 GOST_DESC=	Enable GOST support (requires OpenSSL >= 1.0)
 ECDSA_DESC=	Enable ECDSA (elliptic curve) support (OpenSSL >= 1.0)
