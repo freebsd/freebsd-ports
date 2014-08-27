@@ -1,5 +1,5 @@
 # Created by: Florent Thoumie <flz@FreeBSD.org>
-# $FreeBSD$
+# $FreeBSD: head/www/chromium/Makefile 366226 2014-08-26 17:09:02Z rene $
 
 PORTNAME=	chromium
 PORTVERSION=	37.0.2062.94
@@ -42,7 +42,6 @@ LIB_DEPENDS=	libcairo.so:${PORTSDIR}/graphics/cairo \
 		libjsoncpp.so:${PORTSDIR}/devel/jsoncpp \
 		libminizip.so:${PORTSDIR}/archivers/minizip \
 		libnspr4.so:${PORTSDIR}/devel/nspr \
-		libprotobuf.so:${PORTSDIR}/devel/protobuf \
 		libpng.so:${PORTSDIR}/graphics/png \
 		libre2.so:${PORTSDIR}/devel/re2 \
 		libsnappy.so:${PORTSDIR}/archivers/snappy \
@@ -108,7 +107,6 @@ GYP_DEFINES+=	\
 		use_system_minizip=1 \
 		use_system_nspr=1 \
 		use_system_openssl=1 \
-		use_system_protobuf=1 \
 		use_system_re2=1 \
 		use_system_snappy=1 \
 		use_system_speex=1 \
@@ -351,6 +349,8 @@ do-install:
 		${STAGEDIR}${DATADIR}
 .endfor
 	${INSTALL_PROGRAM} ${WRKSRC}/out/${BUILDTYPE}/chrome \
+		${STAGEDIR}${DATADIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/out/${BUILDTYPE}/protoc \
 		${STAGEDIR}${DATADIR}
 	${INSTALL_LIB} ${WRKSRC}/out/${BUILDTYPE}/libffmpegsumo.so \
 		${STAGEDIR}${DATADIR}
