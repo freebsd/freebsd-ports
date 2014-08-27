@@ -645,6 +645,10 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #				  Should not be set when no documentation files are
 #				  installed.
 #				  Useful for dynamically generated documentation.
+#				  NOTE: this may fail to generate @dirrm entries for
+#				  complex patterns. In such a case, please abstain from
+#				  using DOCSDIR and add files and @dirrm-directories to
+#				  pkg-plist instead (see make makeplist).
 #
 # Set the following to specify all documentation your port installs into
 # ${EXAMPLESDIR}
@@ -5555,7 +5559,7 @@ add-plist-docs:
 .endfor
 	@${FIND} -P ${PORTDOCS:S/^/${STAGEDIR}${DOCSDIR}\//} ! -type d 2>/dev/null | \
 		${SED} -ne 's,^${STAGEDIR}${PREFIX}/,,p' >> ${TMPPLIST}
-	@${FIND} -P -d ${PORTDOCS:S/^/${STAGEDIR}${DOCSDIR}\//} -type d 2>/dev/null | \
+	@${FIND} -P -d ${PORTDOCS:S/^/${STAGEDIR}${DOCSDIR}\//:C,/[^/]*[*?\[][^/]*$,,} -type d 2>/dev/null | \
 		${SED} -ne 's,^${STAGEDIR}${PREFIX}/,@dirrm ,p' >> ${TMPPLIST}
 	@${ECHO_CMD} "@dirrm ${DOCSDIR_REL}" >> ${TMPPLIST}
 .endif
@@ -5577,7 +5581,7 @@ add-plist-examples:
 .endfor
 	@${FIND} -P ${PORTEXAMPLES:S/^/${STAGEDIR}${EXAMPLESDIR}\//} ! -type d 2>/dev/null | \
 		${SED} -ne 's,^${STAGEDIR}${PREFIX}/,,p' >> ${TMPPLIST}
-	@${FIND} -P -d ${PORTEXAMPLES:S/^/${STAGEDIR}${EXAMPLESDIR}\//} -type d 2>/dev/null | \
+	@${FIND} -P -d ${PORTEXAMPLES:C,/[^/]*[*?\[][^/]*$,,:S/^/${STAGEDIR}${EXAMPLESDIR}\//} -type d 2>/dev/null | \
 		${SED} -ne 's,^${STAGEDIR}${PREFIX}/,@dirrm ,p' >> ${TMPPLIST}
 	@${ECHO_CMD} "@dirrm ${EXAMPLESDIR_REL}" >> ${TMPPLIST}
 .endif
@@ -5599,7 +5603,7 @@ add-plist-data:
 .endfor
 	@${FIND} -P ${PORTDATA:S/^/${STAGEDIR}${DATADIR}\//} ! -type d 2>/dev/null | \
 		${SED} -ne 's,^${STAGEDIR}${PREFIX}/,,p' >> ${TMPPLIST}
-	@${FIND} -P -d ${PORTDATA:S/^/${STAGEDIR}${DATADIR}\//} -type d 2>/dev/null | \
+	@${FIND} -P -d ${PORTDATA:C,/[^/]*[*?\[][^/]*$,,:S/^/${STAGEDIR}${DATADIR}\//} -type d 2>/dev/null | \
 		${SED} -ne 's,^${STAGEDIR}${PREFIX}/,@dirrm ,p' >> ${TMPPLIST}
 	@${ECHO_CMD} "@dirrm ${DATADIR_REL}" >> ${TMPPLIST}
 .endif

@@ -3,7 +3,7 @@
 
 PORTNAME=	netmond
 PORTVERSION=	2.2b6
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://freebsd.unixfreunde.de/sources/:daemon \
 		ftp://ftp.risp.ru/pub/RinetSoftware/:daemon \
