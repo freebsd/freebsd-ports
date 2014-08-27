@@ -91,15 +91,13 @@ PLIST_SUB+=	CPUFREQ=""
 GCONF_SCHEMAS+= cpufreq-applet.schemas
 .endif
 
+.if !(${OPSYS} == FreeBSD && ${OSVERSION} < 900033)
+LDFLAGS+=	-Wl,--add-needed
+.endif
+
 post-patch:
 	@${FIND} ${WRKSRC} -name Makefile.in | ${XARGS} ${REINPLACE_CMD} -e \
 	    	's|" == "|" = "|g'
-	@${REINPLACE_CMD} '/^geyes_applet2_LDADD =/s/=/= -lm/' \
-		${WRKSRC}/geyes/Makefile.in
-	@${REINPLACE_CMD} '/^stickynotes_applet_LDADD =/s/=/= $$(X_LIBS)/' \
-		${WRKSRC}/stickynotes/Makefile.in
-	@${REINPLACE_CMD} '/^trashapplet_LDADD =/s/=/= $$(X_LIBS)/' \
-		${WRKSRC}/trashapplet/src/Makefile.in
 .if !defined(USE_PYTHON)
 	@${REINPLACE_CMD} -e 's|HAVE_PYGTK="yes"|HAVE_PYGTK="no"|' \
 		${WRKSRC}/configure
