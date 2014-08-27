@@ -3,6 +3,7 @@
 
 PORTNAME=	libva-intel-driver
 PORTVERSION=	1.3.1
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	http://www.freedesktop.org/software/vaapi/releases/${PORTNAME}/
 
@@ -15,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libva.so:${PORTSDIR}/multimedia/libva
 BUILD_DEPENDS=	${LOCALBASE}/include/linux/videodev2.h:${PORTSDIR}/multimedia/v4l_compat
 
-USES=		gmake libtool:keepla pkgconfig tar:bzip2
+USES=		gmake libtool pkgconfig tar:bzip2
 USE_GL=		gl
 USE_AUTOTOOLS=	aclocal autoheader automake autoconf libtoolize
 ACLOCAL_ARGS=	-I.
@@ -25,8 +26,7 @@ USE_LDCONFIG=	yes
 CPPFLAGS+=	-isystem${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-PLIST_FILES=	lib/va/i965_drv_video.so \
-		lib/va/i965_drv_video.la
+PLIST_FILES=	lib/va/i965_drv_video.so
 
 .include <bsd.port.pre.mk>
 
