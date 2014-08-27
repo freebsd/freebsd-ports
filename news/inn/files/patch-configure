@@ -1,6 +1,6 @@
---- configure.orig	2012-06-16 05:25:36.000000000 +1100
-+++ configure	2013-11-18 02:00:26.831865533 +1100
-@@ -14595,7 +14595,7 @@
+--- configure.orig	2014-05-17 10:24:49.000000000 +0200
++++ configure	2014-08-21 15:24:09.000000000 +0200
+@@ -14631,7 +14631,7 @@ $as_echo "yes" >&6; }
  $as_echo_n "checking for Berkeley DB location... " >&6; }
      if test x"$DB_DIR" = xyes ; then
          for dir in $prefix /usr/local /usr ; do
@@ -9,13 +9,14 @@
                  DB_DIR=$dir
                  break
              fi
-@@ -14604,9 +14604,9 @@
-     if test x"$DB_DIR" = xyes ; then
+@@ -14641,10 +14641,10 @@ $as_echo_n "checking for Berkeley DB loc
          as_fn_error $? "cannot find Berkeley DB" "$LINENO" 5
      else
--        DB_CPPFLAGS="-I$DB_DIR/include"
-+        DB_CPPFLAGS="-I$DB_DIR/include/${DB_VER}"
-         DB_LDFLAGS="-L$DB_DIR/lib"
+         if test x"$DB_DIR" != x/usr ; then
+-            DB_CPPFLAGS="-I$DB_DIR/include"
++            DB_CPPFLAGS="-I$DB_DIR/include/${DB_VER}"
+             DB_LDFLAGS="-L$DB_DIR/lib"
+         fi
 -        DB_LIBS="-ldb"
 +        DB_LIBS="-l${DB_LIB}"
          { $as_echo "$as_me:${as_lineno-$LINENO}: result: $DB_DIR" >&5

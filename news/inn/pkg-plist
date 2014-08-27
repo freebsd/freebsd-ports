@@ -4,8 +4,12 @@ bin/actmerge
 bin/actsync
 bin/actsyncd
 bin/archive
+@group news
+@mode 4755
 bin/auth/passwd/ckpasswd
-%%KRB5%%bin/auth/passwd/auth_krb5
+@group
+@mode
+%%KERBEROS%%bin/auth/passwd/auth_krb5
 bin/auth/passwd/radius
 bin/auth/resolv/domain
 bin/auth/resolv/ident
@@ -164,31 +168,124 @@ lib/perl/INN/Config.pm
 lib/perl/INN/Utils/Shlock.pm
 @comment --------------------------------------------------------------
 @cwd
-@exec mkdir -p %%DBDIR%%
-@exec mkdir -p %%EXAMPLESDIR%%/db
-@unexec f=active;       if cmp -s %%DBDIR%%/$f %D/%%EXAMPLESDIR%%/db/$f; then rm -f %%DBDIR%%/$f; fi
-@unexec f=active.times; if cmp -s %%DBDIR%%/$f %D/%%EXAMPLESDIR%%/db/$f; then rm -f %%DBDIR%%/$f; fi
-@unexec f=history;      if cmp -s %%DBDIR%%/$f %D/%%EXAMPLESDIR%%/db/$f; then rm -f %%DBDIR%%/$f; fi
-@unexec f=history.dir;  if cmp -s %%DBDIR%%/$f %D/%%EXAMPLESDIR%%/db/$f; then rm -f %%DBDIR%%/$f; fi
-@unexec f=newsgroups;   if cmp -s %%DBDIR%%/$f %D/%%EXAMPLESDIR%%/db/$f; then rm -f %%DBDIR%%/$f; fi
-%%EXAMPLESDIR%%/db/active
-%%EXAMPLESDIR%%/db/active.times
-%%EXAMPLESDIR%%/db/history
-%%EXAMPLESDIR%%/db/history.dir
-%%EXAMPLESDIR%%/db/newsgroups
-@unexec rm -f %D/%%EXAMPLESDIR%%/db/active.old      2> /dev/null || true
-@unexec rm -f %D/%%EXAMPLESDIR%%/db/history.n.dir   2> /dev/null || true
-@unexec rm -f %D/%%EXAMPLESDIR%%/db/history.n.hash  2> /dev/null || true
-@unexec rm -f %D/%%EXAMPLESDIR%%/db/history.n.index 2> /dev/null || true
+man/man1/convdate.1.gz
+man/man1/fastrm.1.gz
+man/man1/getlist.1.gz
+man/man1/grephistory.1.gz
+man/man1/inews.1.gz
+man/man1/innconfval.1.gz
+man/man1/innmail.1.gz
+man/man1/nntpget.1.gz
+man/man1/pgpverify.1.gz
+man/man1/pullnews.1.gz
+man/man1/rnews.1.gz
+man/man1/shlock.1.gz
+man/man1/shrinkfile.1.gz
+man/man1/simpleftp.1.gz
+man/man1/sm.1.gz
+man/man3/INN::Config.3pm.gz
+man/man3/INN::Utils::Shlock.3pm.gz
+man/man3/clientlib.3.gz
+man/man3/dbz.3.gz
+man/man3/inndcomm.3.gz
+man/man3/libauth.3.gz
+man/man3/libinn.3.gz
+man/man3/libinnhist.3.gz
+man/man3/libstorage.3.gz
+man/man3/list.3.gz
+man/man3/qio.3.gz
+man/man3/tst.3.gz
+man/man3/uwildmat.3.gz
+man/man5/active.5.gz
+man/man5/active.times.5.gz
+man/man5/buffindexed.conf.5.gz
+man/man5/control.ctl.5.gz
+man/man5/cycbuff.conf.5.gz
+man/man5/distrib.pats.5.gz
+man/man5/distributions.5.gz
+man/man5/expire.ctl.5.gz
+man/man5/history.5.gz
+man/man5/incoming.conf.5.gz
+man/man5/inn-radius.conf.5.gz
+man/man5/inn.conf.5.gz
+man/man5/innfeed.conf.5.gz
+man/man5/innwatch.ctl.5.gz
+man/man5/localgroups.5.gz
+man/man5/moderators.5.gz
+man/man5/motd.innd.5.gz
+man/man5/motd.news.5.gz
+man/man5/motd.nnrpd.5.gz
+man/man5/newsfeeds.5.gz
+man/man5/newsgroups.5.gz
+man/man5/newslog.5.gz
+man/man5/nnrpd.track.5.gz
+man/man5/nntpsend.ctl.5.gz
+man/man5/nocem.ctl.5.gz
+man/man5/ovdb.5.gz
+man/man5/passwd.nntp.5.gz
+man/man5/readers.conf.5.gz
+man/man5/storage.conf.5.gz
+man/man5/subscriptions.5.gz
+man/man8/actsync.8.gz
+man/man8/actsyncd.8.gz
+man/man8/archive.8.gz
+man/man8/batcher.8.gz
+man/man8/buffchan.8.gz
+man/man8/ckpasswd.8.gz
+man/man8/cnfsheadconf.8.gz
+man/man8/cnfsstat.8.gz
+man/man8/controlchan.8.gz
+man/man8/ctlinnd.8.gz
+man/man8/cvtbatch.8.gz
+man/man8/docheckgroups.8.gz
+man/man8/domain.8.gz
+man/man8/expire.8.gz
+man/man8/expireover.8.gz
+man/man8/expirerm.8.gz
+man/man8/filechan.8.gz
+man/man8/ident.8.gz
+man/man8/imapfeed.8.gz
+man/man8/innbind.8.gz
+man/man8/inncheck.8.gz
+man/man8/innd.8.gz
+man/man8/inndf.8.gz
+man/man8/innfeed.8.gz
+man/man8/innreport.8.gz
+man/man8/innstat.8.gz
+man/man8/innupgrade.8.gz
+man/man8/innwatch.8.gz
+man/man8/innxbatch.8.gz
+man/man8/innxmit.8.gz
+man/man8/inpaths.8.gz
+man/man8/mailpost.8.gz
+man/man8/makedbz.8.gz
+man/man8/makehistory.8.gz
+man/man8/mod-active.8.gz
+man/man8/news.daily.8.gz
+man/man8/news2mail.8.gz
+man/man8/ninpaths.8.gz
+man/man8/nnrpd.8.gz
+man/man8/nntpsend.8.gz
+man/man8/ovdb_init.8.gz
+man/man8/ovdb_monitor.8.gz
+man/man8/ovdb_server.8.gz
+man/man8/ovdb_stat.8.gz
+man/man8/overchan.8.gz
+man/man8/perl-nocem.8.gz
+man/man8/procbatch.8.gz
+man/man8/prunehistory.8.gz
+man/man8/radius.8.gz
+man/man8/rc.news.8.gz
+man/man8/scanlogs.8.gz
+man/man8/scanspool.8.gz
+man/man8/send-nntp.8.gz
+man/man8/send-uucp.8.gz
+man/man8/sendinpaths.8.gz
+man/man8/tally.control.8.gz
+man/man8/tdx-util.8.gz
+man/man8/tinyleaf.8.gz
+man/man8/writelog.8.gz
 @comment --------------------------------------------------------------
-%%WITHOUT_TAGGED_HASH%%@unexec f=history.hash;  if cmp -s %%DBDIR%%/$f %D/%%EXAMPLESDIR%%/db/$f; then rm -f %%DBDIR%%/$f; fi
-%%WITHOUT_TAGGED_HASH%%@unexec f=history.index; if cmp -s %%DBDIR%%/$f %D/%%EXAMPLESDIR%%/db/$f; then rm -f %%DBDIR%%/$f; fi
-%%WITHOUT_TAGGED_HASH%%@unexec rm -f %D/%%EXAMPLESDIR%%/db/history.hash  2> /dev/null || true
-%%WITHOUT_TAGGED_HASH%%@unexec rm -f %D/%%EXAMPLESDIR%%/db/history.index 2> /dev/null || true
-%%WITH_TAGGED_HASH%%@unexec f=history.pag; if cmp -s %%DBDIR%%/$f %D/%%EXAMPLESDIR%%/db/$f; then rm -f %%DBDIR%%/$f; fi
-%%WITH_TAGGED_HASH%%@unexec rm -f %D/%%EXAMPLESDIR%%/db/history.pag 2> /dev/null || true
-@comment --------------------------------------------------------------
-@unexec for f in %%ETCFILES%%; do if cmp -s %%ETCDIR%%/${f} %D/%%EXAMPLESDIR%%/${f}; then rm -f %%ETCDIR%%/${f}; fi; done
 %%EXAMPLESDIR%%/actsync.cfg
 %%EXAMPLESDIR%%/actsync.ign
 %%EXAMPLESDIR%%/buffindexed.conf
@@ -199,6 +296,7 @@ lib/perl/INN/Utils/Shlock.pm
 %%EXAMPLESDIR%%/distributions
 %%EXAMPLESDIR%%/expire.ctl
 %%EXAMPLESDIR%%/incoming.conf
+%%EXAMPLESDIR%%/inn-radius.conf
 %%EXAMPLESDIR%%/inn.conf
 %%EXAMPLESDIR%%/innfeed.conf
 %%EXAMPLESDIR%%/innreport.conf
@@ -208,8 +306,8 @@ lib/perl/INN/Utils/Shlock.pm
 %%EXAMPLESDIR%%/innwatch.ctl
 %%EXAMPLESDIR%%/localgroups
 %%EXAMPLESDIR%%/moderators
-%%EXAMPLESDIR%%/motd.innd
-%%EXAMPLESDIR%%/motd.nnrpd
+%%EXAMPLESDIR%%/motd.innd.sample
+%%EXAMPLESDIR%%/motd.nnrpd.sample
 %%EXAMPLESDIR%%/news2mail.cf
 %%EXAMPLESDIR%%/newsfeeds
 %%EXAMPLESDIR%%/nnrpd.track
@@ -217,42 +315,85 @@ lib/perl/INN/Utils/Shlock.pm
 %%EXAMPLESDIR%%/nocem.ctl
 %%EXAMPLESDIR%%/ovdb.conf
 %%EXAMPLESDIR%%/passwd.nntp
-%%EXAMPLESDIR%%/radius.conf
 %%EXAMPLESDIR%%/readers.conf
 %%EXAMPLESDIR%%/send-uucp.cf
 %%EXAMPLESDIR%%/storage.conf
 %%EXAMPLESDIR%%/subscriptions
-@exec mkdir -p %%ETCDIR%%
-@exec for f in %%ETCFILES%%; do [ -f %%ETCDIR%%/${f} ] || cp -fp %D/%%EXAMPLESDIR%%/${f} %%ETCDIR%%/${f}; done
 @comment --------------------------------------------------------------
+@cwd /
+@sample %%DBDIR%%/active.sample
+@sample %%DBDIR%%/active.times.sample
+@sample %%DBDIR%%/newsgroups.sample
+@comment --------------------------------------------------------------
+%%WITHOUT_TAGGED_HASH%%@unexec f=history.hash;  if cmp -s %%DBDIR%%/$f %%EXAMPLESDIR%%/db/$f; then rm -f %%DBDIR%%/$f; fi
+%%WITHOUT_TAGGED_HASH%%@unexec f=history.index; if cmp -s %%DBDIR%%/$f %%EXAMPLESDIR%%/db/$f; then rm -f %%DBDIR%%/$f; fi
+%%WITHOUT_TAGGED_HASH%%@unexec rm -f %%EXAMPLESDIR%%/db/history.hash  2> /dev/null || true
+%%WITHOUT_TAGGED_HASH%%@unexec rm -f %%EXAMPLESDIR%%/db/history.index 2> /dev/null || true
+%%WITH_TAGGED_HASH%%@unexec f=history.pag; if cmp -s %%DBDIR%%/$f %%EXAMPLESDIR%%/db/$f; then rm -f %%DBDIR%%/$f; fi
+%%WITH_TAGGED_HASH%%@unexec rm -f %%EXAMPLESDIR%%/db/history.pag 2> /dev/null || true
+%%CONFDIR%%/actsync.cfg.sample
+%%CONFDIR%%/actsync.ign.sample
+%%CONFDIR%%/buffindexed.conf.sample
+%%CONFDIR%%/control.ctl.local.sample
+%%CONFDIR%%/control.ctl.sample
+%%CONFDIR%%/cycbuff.conf.sample
+%%CONFDIR%%/distrib.pats.sample
+%%CONFDIR%%/distributions.sample
+%%CONFDIR%%/expire.ctl.sample
+%%CONFDIR%%/incoming.conf.sample
+%%CONFDIR%%/inn.conf.sample
+%%CONFDIR%%/innfeed.conf.sample
+%%CONFDIR%%/innreport.conf.sample
+%%CONFDIR%%/innshellvars.local.sample
+%%CONFDIR%%/innshellvars.pl.local.sample
+%%CONFDIR%%/innshellvars.tcl.local.sample
+%%CONFDIR%%/innwatch.ctl.sample
+%%CONFDIR%%/localgroups.sample
+%%CONFDIR%%/moderators.sample
+%%CONFDIR%%/news2mail.cf.sample
+%%CONFDIR%%/newsfeeds.sample
+%%CONFDIR%%/nnrpd.track.sample
+%%CONFDIR%%/nntpsend.ctl.sample
+%%CONFDIR%%/nocem.ctl.sample
+%%CONFDIR%%/ovdb.conf.sample
+%%CONFDIR%%/passwd.nntp.sample
+%%CONFDIR%%/readers.conf.sample
+%%CONFDIR%%/send-uucp.cf.sample
+%%CONFDIR%%/storage.conf.sample
+%%CONFDIR%%/subscriptions.sample
+@comment --------------------------------------------------------------
+@cwd
 @dirrm %%EXAMPLESDIR%%/db
 @dirrm %%EXAMPLESDIR%%
-@unexec rmdir  %%TMPDIR%%                 2>/dev/null || true
-@unexec rmdir  %%SHAREDIR%%               2>/dev/null || true
-@unexec rmdir  %%NEWSSPOOL%%/overview     2>/dev/null || true
-@unexec rmdir  %%NEWSSPOOL%%/outgoing     2>/dev/null || true
-@unexec rmdir  %%NEWSSPOOL%%/innfeed      2>/dev/null || true
-@unexec rmdir  %%NEWSSPOOL%%/incoming/bad 2>/dev/null || true
-@unexec rmdir  %%NEWSSPOOL%%/incoming     2>/dev/null || true
-@unexec rmdir  %%NEWSSPOOL%%/articles     2>/dev/null || true
-@unexec rmdir  %%NEWSSPOOL%%/archive      2>/dev/null || true
-@unexec rmdir  %%NEWSSPOOL%%              2>/dev/null || true
-@unexec rmdir  %%RUNDIR%%                 2>/dev/null || true
-@unexec rmdir  %%NEWSBASE%%/http
-@unexec rmdir  %%NEWSBASE%%/lib/perl/INN/Utils
-@unexec rmdir  %%NEWSBASE%%/lib/perl/INN
-@unexec rmdir  %%NEWSBASE%%/lib/perl
-@unexec rmdir  %%NEWSBASE%%/lib
-@unexec rmdir  %%NEWSBASE%%/include/inn
-@unexec rmdir  %%NEWSBASE%%/include
-@unexec rmdir  %%ETCDIR%%                 2>/dev/null || true
-@unexec rmdir  %%NEWSBASE%%/doc
-@unexec rmdir  %%DBDIR%%                  2>/dev/null || true
-@unexec rmdir  %%NEWSBASE%%/bin/rnews.libexec
-@unexec rmdir  %%NEWSBASE%%/bin/filter
-@unexec rmdir  %%NEWSBASE%%/bin/control
-@unexec rmdir  %%NEWSBASE%%/bin/auth/resolv
-@unexec rmdir  %%NEWSBASE%%/bin/auth/passwd
-@unexec rmdir  %%NEWSBASE%%/bin/auth
-@unexec rmdir  %%NEWSBASE%%/bin
+@cwd /
+@dirrm %%TMPDIR%%                
+@dirrm %%SHAREDIR%%              
+@dirrm %%NEWSSPOOL%%/overview    
+@dirrm %%NEWSSPOOL%%/outgoing    
+@dirrm %%NEWSSPOOL%%/innfeed     
+@dirrm %%NEWSSPOOL%%/incoming/bad
+@dirrm %%NEWSSPOOL%%/incoming    
+@dirrm %%NEWSSPOOL%%/articles    
+@dirrm %%NEWSSPOOL%%/archive     
+@dirrm %%NEWSSPOOL%%             
+@dirrm %%RUNDIR%%                
+@dirrm %%NEWSBASE%%/http
+@dirrm %%NEWSBASE%%/lib/perl/INN/Utils
+@dirrm %%NEWSBASE%%/lib/perl/INN
+@dirrm %%NEWSBASE%%/lib/perl
+@dirrm %%NEWSBASE%%/lib
+@dirrm %%NEWSBASE%%/include/inn
+@dirrm %%NEWSBASE%%/include
+@dirrm %%NEWSBASE%%/doc
+@dirrm %%NEWSBASE%%/bin/rnews.libexec
+@dirrm %%NEWSBASE%%/bin/filter
+@dirrm %%NEWSBASE%%/bin/control
+@dirrm %%NEWSBASE%%/bin/auth/resolv
+@dirrm %%NEWSBASE%%/bin/auth/passwd
+@dirrm %%NEWSBASE%%/bin/auth
+@dirrm %%NEWSBASE%%/bin
+@dirrm %%CONFDIR%%                
+@dirrm %%DBDIR%%                 
+@dirrm %%LOGDIR%%/OLD
+@dirrm %%LOGDIR%%
 @unexec rmdir %%NEWSBASE%% 2>/dev/null ||( echo "===>  If you don't plan to use inn later, you can safely remove %%NEWSBASE%%. Deinstall process kept these files intact:" | fmt && for i in $(find %D/news -type f); do echo "    - $i"; done)
