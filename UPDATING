@@ -5,6 +5,23 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20140826
+  AFFECTS: users of ports-mgmt/pkg, ports-mgmt/pkg-devel
+  AUTHOR: bdrewery@FreeBSD.org
+
+  Pkg has been updated to 1.3.7. This fixes registration and tracking of
+  shared libraries. All earlier versions of Pkg incorrectly marked some
+  shared libraries and used the wrong name for some.
+
+  Please note announcement for special instructions at:
+    http://lists.freebsd.org/pipermail/freebsd-ports-announce/2014-August/000086.html
+
+  - Users need to run 'pkg check -Ba' after upgrading to pkg-1.3.7 and before
+    updating any other packages. This avoids needing to reinstall anything
+    not needed due to changed shlibs.
+  - People building packages for serving to other systems need to rebuild
+    all packages with 1.3.7.
+
 20140823
   AFFECTS: users of graphics/libjpeg-turbo
   AUTHOR: adamw@FreeBSD.org
