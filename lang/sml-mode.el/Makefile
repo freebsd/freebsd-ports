@@ -12,6 +12,8 @@ MASTER_SITE_SUBDIR=	jkoshy
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	EMACS mode for editing Standard ML programs
 
+USES=		makeinfo
+
 ALL_TARGET=	default
 
 USE_EMACS=	yes
