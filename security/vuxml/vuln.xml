@@ -57,6 +57,255 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="fd5f305d-2d3d-11e4-aa3d-00262d5ed8ee">
+    <topic>chromium -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>chromium</name>
+	<range><lt>37.0.2062.94</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Google Chrome Releases reports:</p>
+	<blockquote cite="http://googlechromereleases.blogspot.nl/">
+	  <p>50 security fixes in this release, including:</p>
+	  <ul>
+	    <li>[386988] Critical CVE-2014-3176, CVE-2014-3177: A special reward
+	      to lokihardt@asrt for a combination of bugs in V8, IPC, sync, and
+	      extensions that can lead to remote code execution outside of the
+	      sandbox.</li>
+	    <li>[369860] High CVE-2014-3168: Use-after-free in SVG. Credit to
+	      cloudfuzzer.</li>
+	    <li>[387389] High CVE-2014-3169: Use-after-free in DOM. Credit to
+	      Andrzej Dyjak.</li>
+	    <li>[390624] High CVE-2014-3170: Extension permission dialog spoofing.
+	      Credit to Rob Wu.</li>
+	    <li>[390928] High CVE-2014-3171: Use-after-free in bindings. Credit to
+	      cloudfuzzer.</li>
+	    <li>[367567] Medium CVE-2014-3172: Issue related to extension debugging.
+	      Credit to Eli Grey.</li>
+	    <li>[376951] Medium CVE-2014-3173: Uninitialized memory read in WebGL.
+	      Credit to jmuizelaar.</li>
+	    <li>[389219] Medium CVE-2014-3174: Uninitialized memory read in Web
+	      Audio. Credit to Atte Kettunen from OUSPG.</li>
+	    <li>[406143] CVE-2014-3175: Various fixes from internal audits, fuzzing
+	      and other initiatives (Chrome 37).</li>
+
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2014-3168</cvename>
+      <cvename>CVE-2014-3169</cvename>
+      <cvename>CVE-2014-3170</cvename>
+      <cvename>CVE-2014-3171</cvename>
+      <cvename>CVE-2014-3172</cvename>
+      <cvename>CVE-2014-3173</cvename>
+      <cvename>CVE-2014-3174</cvename>
+      <cvename>CVE-2014-3175</cvename>
+      <cvename>CVE-2014-3176</cvename>
+      <cvename>CVE-2014-3177</cvename>
+      <url>http://googlechromereleases.blogspot.nl/</url>
+    </references>
+    <dates>
+      <discovery>2014-08-26</discovery>
+      <entry>2014-08-26</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="84203724-296b-11e4-bebd-000c2980a9f3">
+    <topic>file -- buffer overruns and missing buffer size tests</topic>
+    <affects>
+      <package>
+	<name>file</name>
+	<range><lt>5.19</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Christos Zoulas reports:</p>
+	<blockquote cite="http://mx.gw.com/pipermail/file/2014/001553.html">
+	  <p>A specially crafted file can cause a segmentation fault.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://mx.gw.com/pipermail/file/2014/001553.html</url>
+    </references>
+    <dates>
+      <discovery>2014-06-09</discovery>
+      <entry>2014-08-21</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="3c5579f7-294a-11e4-99f6-00e0814cab4e">
+    <topic>django -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>py27-django</name>
+	<range><ge>1.6</ge><lt>1.6.6</lt></range>
+      </package>
+      <package>
+	<name>py27-django15</name>
+	<range><ge>1.5</ge><lt>1.5.9</lt></range>
+      </package>
+      <package>
+	<name>py27-django14</name>
+	<range><ge>1.4</ge><lt>1.4.14</lt></range>
+      </package>
+      <package>
+	<name>py32-django</name>
+	<range><ge>1.6</ge><lt>1.6.6</lt></range>
+      </package>
+      <package>
+	<name>py32-django15</name>
+	<range><ge>1.5</ge><lt>1.5.9</lt></range>
+      </package>
+      <package>
+	<name>py33-django</name>
+	<range><ge>1.6</ge><lt>1.6.6</lt></range>
+      </package>
+      <package>
+	<name>py33-django15</name>
+	<range><ge>1.5</ge><lt>1.5.9</lt></range>
+      </package>
+      <package>
+	<name>py34-django</name>
+	<range><ge>1.6</ge><lt>1.6.6</lt></range>
+      </package>
+      <package>
+	<name>py34-django15</name>
+	<range><ge>1.5</ge><lt>1.5.9</lt></range>
+      </package>
+      <package>
+	<name>py27-django-devel</name>
+	<range><lt>20140821,1</lt></range>
+      </package>
+      <package>
+	<name>py32-django-devel</name>
+	<range><lt>20140821,1</lt></range>
+      </package>
+      <package>
+	<name>py33-django-devel</name>
+	<range><lt>20140821,1</lt></range>
+      </package>
+      <package>
+	<name>py34-django-devel</name>
+	<range><lt>20140821,1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Django project reports:</p>
+	<blockquote cite="https://www.djangoproject.com/weblog/2014/aug/20/security/">
+	  <p>These releases address an issue with reverse() generating external
+	    URLs; a denial of service involving file uploads; a potential
+	    session hijacking issue in the remote-user middleware; and a data
+	    leak in the administrative interface. We encourage all users of
+	    Django to upgrade as soon as possible.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://www.djangoproject.com/weblog/2014/aug/20/security/</url>
+      <cvename>CVE-2014-0480</cvename>
+      <cvename>CVE-2014-0481</cvename>
+      <cvename>CVE-2014-0482</cvename>
+      <cvename>CVE-2014-0483</cvename>
+    </references>
+    <dates>
+      <discovery>2014-08-20</discovery>
+      <entry>2014-08-21</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="d2a892b9-2605-11e4-9da0-00a0986f28c4">
+    <topic>PHP multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>php53</name>
+	<range><lt>5.3.29</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The PHP Team reports:</p>
+	<blockquote cite="http://php.net/ChangeLog-5.php#5.3.29">
+	  <p>insecure temporary file use in the configure script</p>
+	  <p>unserialize() SPL ArrayObject / SPLObjectStorage Type Confusion
+	    </p>
+	  <p>Heap buffer over-read in DateInterval</p>
+	  <p>fileinfo: cdf_read_short_sector insufficient boundary check</p>
+	  <p>fileinfo: CDF infinite loop in nelements DoS</p>
+	  <p>fileinfo: fileinfo: numerous file_printf calls resulting in
+	    performance degradation)</p>
+	  <p>Fix potential segfault in dns_check_record()</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2013-6712</cvename>
+      <cvename>CVE-2014-0207</cvename>
+      <cvename>CVE-2014-0237</cvename>
+      <cvename>CVE-2014-0238</cvename>
+      <cvename>CVE-2014-3515</cvename>
+      <cvename>CVE-2014-3981</cvename>
+      <cvename>CVE-2014-4049</cvename>
+      <url>http://php.net/ChangeLog-5.php#5.3.29</url>
+      <url>https://www.sektioneins.de/en/blog/14-07-04-phpinfo-infoleak.html</url>
+    </references>
+    <dates>
+      <discovery>2014-08-14</discovery>
+      <entry>2014-08-18</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="fbb01289-2645-11e4-bc44-6805ca0b3d42">
+    <topic>phpMyAdmin -- XSS vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>phpMyAdmin</name>
+	<range><ge>4.2.0</ge><lt>4.2.7.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The phpMyAdmin development team reports:</p>
+	<blockquote cite="http://www.phpmyadmin.net/home_page/security/PMASA-2014-8.php">
+	  <p>Multiple XSS vulnerabilities in browse table, ENUM
+	    editor, monitor, query charts and table relations pages.</p>
+	  <p> With a crafted database, table or a primary/unique key
+	    column name it is possible to trigger an XSS when dropping
+	    a row from the table. With a crafted column name it is
+	    possible to trigger an XSS in the ENUM editor dialog. With
+	    a crafted variable name or a crafted value for unit field
+	    it is possible to trigger a self-XSS when adding a new
+	    chart in the monitor page. With a crafted value for x-axis
+	    label it is possible to trigger a self-XSS in the query
+	    chart page. With a crafted relation name it is possible to
+	    trigger an XSS in table relations page.</p>
+	</blockquote>
+	<blockquote cite="http://www.phpmyadmin.net/home_page/security/PMASA-2014-9.php">
+	  <p>XSS in view operations page.</p>
+	  <p>With a crafted view name it is possible to trigger an
+	    XSS when dropping the view in view operation page.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://www.phpmyadmin.net/home_page/security/PMASA-2014-8.php</url>
+      <url>http://www.phpmyadmin.net/home_page/security/PMASA-2014-9.php</url>
+      <cvename>CVE-2014-5273</cvename>
+      <cvename>CVE-2014-5274</cvename>
+    </references>
+    <dates>
+      <discovery>2014-08-17</discovery>
+      <entry>2014-08-17</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="df7754c0-2294-11e4-b505-000c6e25e3e9">
     <topic>chromium -- multiple vulnerabilities</topic>
     <affects>
