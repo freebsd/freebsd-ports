@@ -2,6 +2,7 @@
 
 PORTNAME=	libsodium
 PORTVERSION=	0.7.0
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://download.dnscrypt.org/libsodium/releases/
 

@@ -51,7 +51,7 @@ include/sodium/randombytes_sysrandom.h
 include/sodium/runtime.h
 include/sodium/utils.h
 include/sodium/version.h
-@dirrmtry include/sodium
+@dirrm include/sodium
 lib/libsodium.a
 lib/libsodium.so
 lib/libsodium.so.13
@@ -60,3 +60,4 @@ libdata/pkgconfig/libsodium.pc
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/README.markdown
 %%PORTDOCS%%%%DOCSDIR%%/THANKS
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
