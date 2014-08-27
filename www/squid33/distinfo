@@ -1,4 +1,4 @@
-SHA256 (squid3.3/squid-3.3.11.tar.bz2) = 6b314cd706693522f01d5ab1930f3aa7a9b03a913bc0e699def16cca8d15ea54
-SIZE (squid3.3/squid-3.3.11.tar.bz2) = 2989941
+SHA256 (squid3.3/squid-3.3.13.tar.bz2) = 584f85de055c28705492ab07a2d5bb818286f5666899f86e9c5fce046404b050
+SIZE (squid3.3/squid-3.3.13.tar.bz2) = 2991135
 SHA256 (squid3.3/FreeBSD_silence_nosuid_mk1.patch) = 6fd9e55812e18463e92c83d1376e65ca54b2857606f59f4aa1b7d2716af2b72c
 SIZE (squid3.3/FreeBSD_silence_nosuid_mk1.patch) = 1295

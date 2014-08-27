@@ -1,71 +1,5 @@
 @sample %%ETCDIR%%/cachemgr.conf.sample
 @sample %%ETCDIR%%/errorpage.css.sample
-@sample %%ETCDIR%%/mime.conf.sample
-@sample %%ETCDIR%%/msntauth.conf.sample
-@sample %%ETCDIR%%/squid.conf.sample
-%%AUTH_LDAP%%libexec/squid/basic_ldap_auth
-libexec/squid/basic_db_auth
-libexec/squid/basic_fake_auth
-libexec/squid/basic_getpwnam_auth
-libexec/squid/basic_msnt_auth
-libexec/squid/basic_msnt_multi_domain_auth
-libexec/squid/basic_ncsa_auth
-%%AUTH_NIS%%libexec/squid/basic_nis_auth
-libexec/squid/basic_pam_auth
-libexec/squid/basic_pop3_auth
-libexec/squid/basic_radius_auth
-%%AUTH_SASL%%libexec/squid/basic_sasl_auth
-%%AUTH_SMB%%libexec/squid/basic_smb_auth
-%%AUTH_SMB%%libexec/squid/basic_smb_auth.sh
-libexec/squid/cachemgr.cgi
-%%AUTH_LDAP%%%%AUTH_SASL%%libexec/squid/cert_tool
-libexec/squid/digest_file_auth
-libexec/squid/diskd
-%%DNS_HELPER%%libexec/squid/dnsserver
-libexec/squid/ext_file_userip_acl
-%%AUTH_LDAP%%%%AUTH_SASL%%libexec/squid/ext_kerberos_ldap_group_acl
-%%AUTH_LDAP%%libexec/squid/ext_ldap_group_acl
-%%AUTH_SQL%%libexec/squid/ext_sql_session_acl
-libexec/squid/ext_time_quota_acl
-libexec/squid/ext_unix_group_acl
-%%AUTH_SMB%%libexec/squid/ext_wbinfo_group_acl
-libexec/squid/helper-mux.pl
-libexec/squid/log_file_daemon
-%%AUTH_KERB%%libexec/squid/negotiate_kerberos_auth
-%%AUTH_KERB%%libexec/squid/negotiate_kerberos_auth_test
-%%AUTH_KERB%%libexec/squid/negotiate_wrapper_auth
-libexec/squid/ntlm_fake_auth
-libexec/squid/ntlm_smb_lm_auth
-%%ICMP%%@mode	4510
-%%ICMP%%@group	squid
-%%ICMP%%libexec/squid/pinger
-%%ICMP%%@group
-%%ICMP%%@mode
-%%SSL_CRTD%%libexec/squid/ssl_crtd
-%%UNLINKD%%libexec/squid/unlinkd
-libexec/squid/url_fake_rewrite
-libexec/squid/url_fake_rewrite.sh
-man/man1/squidclient.1.gz
-man/man8/basic_db_auth.8.gz
-man/man8/basic_getpwnam_auth.8.gz
-%%AUTH_LDAP%%man/man8/basic_ldap_auth.8.gz
-man/man8/basic_ncsa_auth.8.gz
-man/man8/basic_pam_auth.8.gz
-man/man8/basic_radius_auth.8.gz
-%%AUTH_SASL%%man/man8/basic_sasl_auth.8.gz
-man/man8/cachemgr.cgi.8.gz
-man/man8/digest_file_auth.8.gz
-man/man8/ext_file_userip_acl.8.gz
-%%AUTH_LDAP%%man/man8/ext_ldap_group_acl.8.gz
-%%AUTH_SQL%%man/man8/ext_sql_session_acl.8.gz
-man/man8/ext_time_quota_acl.8.gz
-man/man8/ext_unix_group_acl.8.gz
-%%AUTH_SMB%%man/man8/ext_wbinfo_group_acl.8.gz
-%%AUTH_KERB%%man/man8/negotiate_kerberos_auth.8.gz
-man/man8/squid.8.gz
-sbin/purge
-sbin/squid
-sbin/squidclient
 %%ETCDIR%%/errors/COPYRIGHT
 %%ETCDIR%%/errors/TRANSLATORS
 %%ETCDIR%%/errors/af/ERR_ACCESS_DENIED
@@ -2113,8 +2047,73 @@ sbin/squidclient
 %%ETCDIR%%/icons/silk/script_gear.png
 %%ETCDIR%%/icons/silk/script_palette.png
 %%ETCDIR%%/mib.txt
+@sample %%ETCDIR%%/mime.conf.sample
+@sample %%ETCDIR%%/msntauth.conf.sample
 %%ETCDIR%%/squid.conf.documented
-@dirrm %%ETCDIR%%/errors
+@sample %%ETCDIR%%/squid.conf.sample
+libexec/squid/basic_db_auth
+libexec/squid/basic_fake_auth
+libexec/squid/basic_getpwnam_auth
+%%AUTH_LDAP%%libexec/squid/basic_ldap_auth
+libexec/squid/basic_msnt_auth
+libexec/squid/basic_msnt_multi_domain_auth
+libexec/squid/basic_ncsa_auth
+%%AUTH_NIS%%libexec/squid/basic_nis_auth
+libexec/squid/basic_pam_auth
+libexec/squid/basic_pop3_auth
+libexec/squid/basic_radius_auth
+%%AUTH_SASL%%libexec/squid/basic_sasl_auth
+%%AUTH_SMB%%libexec/squid/basic_smb_auth
+%%AUTH_SMB%%libexec/squid/basic_smb_auth.sh
+libexec/squid/cachemgr.cgi
+%%AUTH_LDAP%%%%AUTH_SASL%%libexec/squid/cert_tool
+libexec/squid/digest_file_auth
+libexec/squid/diskd
+%%DNS_HELPER%%libexec/squid/dnsserver
+libexec/squid/ext_file_userip_acl
+%%AUTH_LDAP%%%%AUTH_SASL%%libexec/squid/ext_kerberos_ldap_group_acl
+%%AUTH_LDAP%%libexec/squid/ext_ldap_group_acl
+%%AUTH_SQL%%libexec/squid/ext_sql_session_acl
+libexec/squid/ext_time_quota_acl
+libexec/squid/ext_unix_group_acl
+%%AUTH_SMB%%libexec/squid/ext_wbinfo_group_acl
+libexec/squid/helper-mux.pl
+libexec/squid/log_file_daemon
+%%AUTH_KERB%%libexec/squid/negotiate_kerberos_auth
+%%AUTH_KERB%%libexec/squid/negotiate_kerberos_auth_test
+%%AUTH_KERB%%libexec/squid/negotiate_wrapper_auth
+libexec/squid/ntlm_fake_auth
+libexec/squid/ntlm_smb_lm_auth
+%%ICMP%%@mode 4510
+%%ICMP%%@group squid
+%%ICMP%%libexec/squid/pinger
+%%ICMP%%@group
+%%ICMP%%@mode
+%%SSL_CRTD%%libexec/squid/ssl_crtd
+%%UNLINKD%%libexec/squid/unlinkd
+libexec/squid/url_fake_rewrite
+libexec/squid/url_fake_rewrite.sh
+man/man1/squidclient.1.gz
+man/man8/basic_db_auth.8.gz
+man/man8/basic_getpwnam_auth.8.gz
+%%AUTH_LDAP%%man/man8/basic_ldap_auth.8.gz
+man/man8/basic_ncsa_auth.8.gz
+man/man8/basic_pam_auth.8.gz
+man/man8/basic_radius_auth.8.gz
+%%AUTH_SASL%%man/man8/basic_sasl_auth.8.gz
+man/man8/cachemgr.cgi.8.gz
+man/man8/digest_file_auth.8.gz
+man/man8/ext_file_userip_acl.8.gz
+%%AUTH_LDAP%%man/man8/ext_ldap_group_acl.8.gz
+%%AUTH_SQL%%man/man8/ext_sql_session_acl.8.gz
+man/man8/ext_time_quota_acl.8.gz
+man/man8/ext_unix_group_acl.8.gz
+%%AUTH_SMB%%man/man8/ext_wbinfo_group_acl.8.gz
+%%AUTH_KERB%%man/man8/negotiate_kerberos_auth.8.gz
+man/man8/squid.8.gz
+sbin/purge
+sbin/squid
+sbin/squidclient
 @dirrm %%ETCDIR%%/errors/af
 @dirrm %%ETCDIR%%/errors/ar
 @dirrm %%ETCDIR%%/errors/az
@@ -2160,10 +2159,11 @@ sbin/squidclient
 @dirrm %%ETCDIR%%/errors/vi
 @dirrm %%ETCDIR%%/errors/zh-cn
 @dirrm %%ETCDIR%%/errors/zh-tw
-@dirrm %%ETCDIR%%/icons
+@dirrm %%ETCDIR%%/errors
 @dirrm %%ETCDIR%%/icons/silk
-@dirrm libexec/squid
+@dirrm %%ETCDIR%%/icons
 @dirrmtry %%ETCDIR%%
+@dirrm libexec/squid
 @cwd /var
 @dirrmtry log/squid
 @dirrmtry run/squid

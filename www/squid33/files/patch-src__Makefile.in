@@ -1,0 +1,25 @@
+--- ./src/Makefile.in.orig	2014-08-25 23:16:03.000000000 +0200
++++ ./src/Makefile.in	2014-08-25 23:20:55.000000000 +0200
+@@ -7354,20 +7354,8 @@
+ 	$(SUBSTITUTE) < $(srcdir)/squid.8.in > $@
+ 
+ install-data-local: install-sysconfDATA install-dataDATA
+-	@if test -f $(DESTDIR)$(DEFAULT_MIME_TABLE) ; then \
+-	  echo "$@ will not overwrite existing $(DESTDIR)$(DEFAULT_MIME_TABLE)" ; \
+-	else \
+-	  echo "$(INSTALL_DATA) $(srcdir)/mime.conf.default $(DESTDIR)$(DEFAULT_MIME_TABLE)" ;\
+-	  $(INSTALL_DATA) $(srcdir)/mime.conf.default $(DESTDIR)$(DEFAULT_MIME_TABLE); \
+-	fi
+-	@if test -f $(DESTDIR)$(DEFAULT_CONFIG_FILE) ; then \
+-	  echo "$@ will not overwrite existing $(DESTDIR)$(DEFAULT_CONFIG_FILE)" ; \
+-	else \
+-	  echo "$(INSTALL_DATA) squid.conf.default $(DESTDIR)$(DEFAULT_CONFIG_FILE)"; \
+-	  $(INSTALL_DATA) squid.conf.default $(DESTDIR)$(DEFAULT_CONFIG_FILE); \
+-	fi
+-	echo "$(INSTALL_DATA) squid.conf.default $(DESTDIR)$(DEFAULT_CONFIG_FILE).default"; \
+-	$(INSTALL_DATA) squid.conf.default $(DESTDIR)$(DEFAULT_CONFIG_FILE).default; \
++	echo "$(INSTALL_DATA) squid.conf.default $(DESTDIR)$(DEFAULT_CONFIG_FILE).sample"; \
++	$(INSTALL_DATA) squid.conf.default $(DESTDIR)$(DEFAULT_CONFIG_FILE).sample; \
+ 	echo "$(INSTALL_DATA) squid.conf.documented $(DESTDIR)$(DEFAULT_CONFIG_FILE).documented"; \
+ 	$(INSTALL_DATA) squid.conf.documented $(DESTDIR)$(DEFAULT_CONFIG_FILE).documented; \
+ 	$(mkinstalldirs) $(DESTDIR)$(DEFAULT_LOG_PREFIX); \
