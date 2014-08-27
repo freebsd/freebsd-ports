@@ -1,0 +1,28 @@
+--- Makefile.in.orig	2014-08-27 11:21:39.552449460 +0800
++++ Makefile.in	2014-08-27 11:22:32.666448424 +0800
+@@ -9,18 +9,18 @@ all:
+ 	done
+ 
+ install: all
+-	@if [ ! -d @@PREFIX@@/libexec ]; then \
+-		install -d -m 755 @@PREFIX@@/libexec; \
++	@if [ ! -d $(DESTDIR)@@PREFIX@@/libexec ]; then \
++		install -d -m 755 $(DESTDIR)@@PREFIX@@/libexec; \
+ 	fi
+ 
+-	install -m 555 $$PWD/out/ppf_* @@PREFIX@@/libexec
++	install -m 555 $$PWD/out/ppf_* $(DESTDIR)@@PREFIX@@/libexec
+ 
+-	@if [ ! -d @@PREFIX@@/bin ]; then \
+-		install -d -m 755 @@PREFIX@@/bin; \
++	@if [ ! -d $(DESTDIR)@@PREFIX@@/bin ]; then \
++		install -d -m 755 $(DESTDIR)@@PREFIX@@/bin; \
+ 	fi
+ 
+-	ln -sf @@PREFIX@@/libexec/ppf_mime @@PREFIX@@/bin/ppf_mime
+-	ln -sf @@PREFIX@@/libexec/ppf_mime_decrypt @@PREFIX@@/bin/ppf_mime_decrypt
++	ln -sf @@PREFIX@@/libexec/ppf_mime $(DESTDIR)@@PREFIX@@/bin/ppf_mime
++	ln -sf @@PREFIX@@/libexec/ppf_mime_decrypt $(DESTDIR)@@PREFIX@@/bin/ppf_mime_decrypt
+ 
+ clean:
+ 	@if [ -d "$$PWD/out" ]; then \
