@@ -669,6 +669,7 @@
     SUBDIR += sidplay2
     SUBDIR += sidplayer
     SUBDIR += simplemod
+    SUBDIR += siren
     SUBDIR += slv2
     SUBDIR += smasher
     SUBDIR += snack
