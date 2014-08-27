@@ -3,7 +3,7 @@
 
 PORTNAME=	fusefs
 PORTVERSION=	2.9.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	sysutils
 MASTER_SITES=	SF/fuse/fuse-2.X/${PORTVERSION}
 PKGNAMESUFFIX=	-libs
@@ -16,10 +16,12 @@ OPTIONS_DEFINE=	DOCS
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	MOUNT_FUSE_PATH=${PREFIX}/sbin
-USE_LDCONFIG=	yes
-USES=		iconv
 CONFIGURE_ARGS=	--prefix=${PREFIX} \
 		--with-pkgconfigdir=${PREFIX}/libdata/pkgconfig
+INSTALL_TARGET=	install-strip
+USES=		iconv libtool
+USE_LDCONFIG=	yes
+
 PORTDOCS=	*
 
 post-install:
