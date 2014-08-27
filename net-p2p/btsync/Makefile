@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	btsync
-PORTVERSION=	1.3.106
+PORTVERSION=	1.3.109
 CATEGORIES=	net-p2p
 MASTER_SITES=	http://syncapp.bittorrent.com/${PORTVERSION}/
 DISTNAME=	${PORTNAME}_freebsd_${CONFIG_ARCH}-${PORTVERSION}
