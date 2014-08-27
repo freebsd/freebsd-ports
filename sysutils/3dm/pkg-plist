@@ -1,5 +1,5 @@
 @stopdaemon 3dm2
-@mode u+r
+@mode 0400
 @sample etc/3dm2/3dm2.conf.sample
 @mode
 etc/3dm2/msg/tdm_msg_en
