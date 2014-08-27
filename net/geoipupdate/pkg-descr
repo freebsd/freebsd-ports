@@ -1,0 +1,10 @@
+This program is used to fetch the GeoIP2 and GeoIP databases. It requires
+an active GeoIP subscription.
+
+Please see https://www.maxmind.com/en/geolocation_landing for details about
+obtaining a subscription.
+
+If you wish to install the free versions of the GeoIP databases, please
+use the geoipudate.sh script provided in net/GeoIP.
+
+WWW: https://github.com/maxmind/geoipupdate
