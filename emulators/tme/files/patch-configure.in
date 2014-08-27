@@ -1,0 +1,25 @@
+--- configure.in.orig
++++ configure.in
+@@ -599,7 +599,7 @@
+ esac
+ changequote([, ])dnl
+ AC_MSG_RESULT([${misc_hosts}])
+-if test "x${misc_hosts}" = no; then
++if test "x${misc_hosts}" = xno; then
+     misc_hosts=
+ fi
+ 
+@@ -683,11 +683,8 @@
+ #define _TMECONFIG_H
+ 
+ TMEEOF
+-  (for word in HAVE_ TIME_ PROTO_ ALIGNOF_ SIZEOF_ WORDS_BIGENDIAN; do \
+-    grep $word config.h | sed 's/#define[ 	]\{1,\}/&_TME_/' ; \
+-  done) | sort | uniq >> ${outfile}-tmp
+-  grep FLOAT_FORMAT config.h | \
+-    sed 's/#define[ 	]\{1,\}\([A-Za-z0-9_]\{1,\}\)[ 	]\{1,\}\([A-Za-z0-9_]\{1,\}\)/#define TME_\1 TME_FLOAT_FORMAT_\2/' >> ${outfile}-tmp
++  sed -e '/FLOAT_FORMAT/ s/#[[:space:]]*define[[:space:]]\{1,\}\([A-Za-z0-9_]\{1,\}\)[[:space:]]\{1,\}\([A-Za-z0-9_]\{1,\}\)/#define TME_\1 TME_FLOAT_FORMAT_\2/' \
++      -e '/FLOAT_FORMAT/!s/#[[:space:]]*define[[:space:]]\{1,\}/&_TME_/' config.h >> ${outfile}-tmp
+   echo '#define TME_BUSMAX_LOG2 TME_BUS'${bus_size_max}'_LOG2' >> ${outfile}-tmp
+   echo '#define TME_HAVE_RECODE (' \
+     `if test "x${recode_hosts}" = x; then echo 0; else echo 1; fi` ')' >> ${outfile}-tmp
