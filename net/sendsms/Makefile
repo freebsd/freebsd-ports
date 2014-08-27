@@ -22,13 +22,10 @@ CONFLICTS=	gnokii-[0-9]* smstools-[0-9]*
 
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
-USES=		perl5
-
-NO_STAGE=	yes
-post-patch:
-	@${REINPLACE_CMD} -e "s,/usr/bin/perl,${PERL},g" ${WRKSRC}/${PORTNAME}
+USES=		perl5 shebangfix
+SHEBANG_FILES=	${PORTNAME}
 
 do-install:
-	cd ${WRKSRC} && ${INSTALL_SCRIPT} ${PORTNAME} ${PREFIX}/bin/${PORTNAME}
+	cd ${WRKSRC} && ${INSTALL_SCRIPT} ${PORTNAME} ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>
