@@ -50,7 +50,8 @@ sbin/unbound-control-setup
 sbin/unbound-host
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/_unbound.a
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/_unbound.so
-%%PYTHON%%%%PYTHON_SITELIBDIR%%/_unbound.so.4
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/_unbound.so.2
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/_unbound.so.2.2.1
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/unbound.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/unboundmodule.py
 %%MUNIN%%etc/munin/plugins/unbound_munin_by_class
