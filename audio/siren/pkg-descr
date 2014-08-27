@@ -1,0 +1,5 @@
+Siren is a text-based audio player for UNIX-like operating systems. It
+supports Ogg Vorbis, MP3, FLAC, WavPack, WAVE, AIFF and a few other file
+formats.
+
+WWW: http://www.kariliq.nl/siren/
