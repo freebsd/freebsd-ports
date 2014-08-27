@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	signing-party
-PORTVERSION=	1.1.8
-PORTREVISION=	1
+PORTVERSION=	1.1.9
 CATEGORIES=	security
 MASTER_SITES=	ftp://ftp.stack.nl/pub/users/johans/signing-party/ \
 		${MASTER_SITE_DEBIAN}
