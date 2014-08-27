@@ -3,7 +3,7 @@
 
 PORTNAME=	xsystem35
 PORTVERSION=	1.7.2
-PORTREVISION=	16
+PORTREVISION=	17
 CATEGORIES=	emulators
 MASTER_SITES=	http://8ne.sakura.ne.jp:20008/chika/unitbase/xsys35/down/
 
@@ -18,7 +18,8 @@ LIB_DEPENDS=	libvorbis.so:${PORTSDIR}/audio/libvorbis \
 
 OPTIONS_DEFINE=	ESOUND DOCS EXAMPLES
 
-USES=		gettext gmake libtool
+USES=		gettext gmake libtool shebangfix
+SHEBANG_FILES=	contrib/instgame
 USE_AUTOTOOLS=	autoconf:env
 USE_GNOME=	gtk12
 USE_XORG=	xxf86vm
@@ -31,6 +32,7 @@ CONFIGURE_ARGS=	--without-included-gettext \
 CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib
 MAKE_JOBS_UNSAFE=	yes
+INSTALL_TARGET=	install-strip
 
 SUB_FILES=	pkg-message
 
