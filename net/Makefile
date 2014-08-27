@@ -151,6 +151,7 @@
     SUBDIR += fspd
     SUBDIR += fsplib
     SUBDIR += g2ipmsg
+    SUBDIR += geoipupdate
     SUBDIR += get_iplayer
     SUBDIR += gini
     SUBDIR += gkrellmwireless2
