@@ -3,6 +3,7 @@
 
 PORTNAME=	toxcore
 PORTVERSION=	0.140814
+PORTREVISION=	1
 CATEGORIES=	net-im net-p2p
 
 MAINTAINER=	thierry@FreeBSD.org
