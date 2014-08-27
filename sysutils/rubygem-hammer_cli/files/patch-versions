@@ -1,0 +1,11 @@
+--- hammer_cli-0.1.3.gemspec.orig	2014-08-25 23:09:28.000000000 +0200
++++ hammer_cli-0.1.3.gemspec	2014-08-25 23:09:42.000000000 +0200
+@@ -155,7 +155,7 @@
+   name: mime-types
+   requirement: !ruby/object:Gem::Requirement
+     requirements:
+-    - - ~>
++    - - '>='
+       - !ruby/object:Gem::Version
+         version: '1.0'
+   type: :runtime
