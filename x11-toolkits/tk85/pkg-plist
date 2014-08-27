@@ -34,6 +34,7 @@ include/tk%%TK_VER%%/unix/tkUnixPort.h
 lib/libtk%%SHORT_TK_VER%%.a
 lib/libtk%%SHORT_TK_VER%%.so
 lib/libtk%%SHORT_TK_VER%%.so.1
+lib/libtk%%SHORT_TK_VER%%.so.1.0
 lib/libtkstub%%SHORT_TK_VER%%.a
 lib/tk%%TK_VER%%/bgerror.tcl
 lib/tk%%TK_VER%%/button.tcl
@@ -41,6 +42,7 @@ lib/tk%%TK_VER%%/choosedir.tcl
 lib/tk%%TK_VER%%/clrpick.tcl
 lib/tk%%TK_VER%%/comdlg.tcl
 lib/tk%%TK_VER%%/console.tcl
+libdata/pkgconfig/tk85.pc
 %%DEMOS%%lib/tk%%TK_VER%%/demos/README
 %%DEMOS%%lib/tk%%TK_VER%%/demos/anilabel.tcl
 %%DEMOS%%lib/tk%%TK_VER%%/demos/aniwave.tcl

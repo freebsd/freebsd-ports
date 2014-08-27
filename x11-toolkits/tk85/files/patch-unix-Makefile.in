@@ -1,5 +1,5 @@
---- Makefile.in.orig	2013-08-30 18:28:24.000000000 +0200
-+++ Makefile.in	2013-09-02 16:01:49.000000000 +0200
+--- Makefile.in.orig	2014-08-22 16:06:02.000000000 +0200
++++ Makefile.in	2014-08-27 09:46:38.000000000 +0200
 @@ -63,6 +63,8 @@
  
  # Directory in which to install the include file tk.h:
@@ -14,12 +14,12 @@
  # for this version of Tk ("srcdir" will be replaced or has already
  # been replaced by the configure script):
 -TCL_GENERIC_DIR		= @TCL_SRC_DIR@/generic
-+TCL_GENERIC_DIR		= %%LOCALBASE%%/include/tcl@TCL_VERSION@/generic 
++TCL_GENERIC_DIR		= /usr/local/include/tcl@TCL_VERSION@/generic 
  
  # The directory containing the platform specific Tcl sources and headers
  # appropriate for this version of Tk:
 -TCL_PLATFORM_DIR	= @TCL_SRC_DIR@/unix
-+TCL_PLATFORM_DIR	= %%LOCALBASE%%/include/tcl@TCL_VERSION@/unix
++TCL_PLATFORM_DIR	= /usr/local/include/tcl@TCL_VERSION@/unix
  
  # The directory containing the Tcl library archive file appropriate
  # for this version of Tk:
@@ -28,10 +28,21 @@
  
  # Flag, 1: we're building a shared lib, 0 we're not
 -TK_SHARED_BUILD		= @TK_SHARED_BUILD@
-+TK_SHARED_BUILD		= #####@TK_SHARED_BUILD@
++TK_SHARED_BUILD		= #######@TK_SHARED_BUILD@
  
  # Subdirectory of $(libdir) containing the pkgIndex.tcl file for loadable Tk
  TK_PKG_DIR		= @TK_PKG_DIR@
+@@ -220,8 +222,8 @@
+ INSTALL_STRIP_LIBRARY   = -S -x
+ 
+ INSTALL			= $(SHELL) $(UNIX_DIR)/install-sh -c
+-INSTALL_PROGRAM		= ${INSTALL}
+-INSTALL_LIBRARY		= ${INSTALL}
++INSTALL_PROGRAM		= ${INSTALL} -s
++INSTALL_LIBRARY		= ${INSTALL} -s
+ INSTALL_DATA		= ${INSTALL} -m 644
+ INSTALL_DATA_DIR	= ${INSTALL} -d -m 755
+ 
 @@ -273,7 +275,7 @@
  STLIB_LD		= @STLIB_LD@
  SHLIB_LD		= @SHLIB_LD@
@@ -51,7 +62,7 @@
  	@LD_LIBRARY_PATH_VAR@="`pwd`:${TCL_BIN_DIR}:$${@LD_LIBRARY_PATH_VAR@}"; \
  	export @LD_LIBRARY_PATH_VAR@; \
 @@ -567,6 +571,12 @@
- ${LIB_FILE}: ${OBJS} ${STUB_LIB_FILE} @LIB_RSRC_FILE@
+ ${LIB_FILE}: ${STUB_LIB_FILE} @LIB_RSRC_FILE@ ${OBJS}
  	rm -f $@
  	@MAKE_LIB@
 +	ln -sf @TK_LIB_FILE@ libtk${SHORT_TK_VER}.so
@@ -62,7 +73,7 @@
 +	$(RANLIB) libtk${SHORT_TK_VER}.a
  
  ${STUB_LIB_FILE}: ${STUB_LIB_OBJS}
- 	rm -f $@
+ 	@if test "x${LIB_FILE}" = "xlibtk${MAJOR_VERSION}.${MINOR_VERSION}.dll"; then \
 @@ -671,8 +681,7 @@
  INSTALL_DEV_TARGETS = install-headers
  INSTALL_DEMO_TARGETS = install-demos
@@ -77,8 +88,8 @@
  # some ranlibs write to current directory, and this might not always be
  # possible (e.g. if installing as root).
  
--install-binaries: $(TK_LIB_FILE) $(TK_STUB_LIB_FILE) ${WISH_EXE}
-+install-binaries: $(TK_LIB_FILE) $(TK_STUB_LIB_FILE) ${WISH_EXE} libtk${SHORT_TK_VER}.a
+-install-binaries: $(TK_STUB_LIB_FILE) $(TK_LIB_FILE) ${WISH_EXE}
++install-binaries: $(TK_STUB_LIB_FILE) $(TK_LIB_FILE) ${WISH_EXE} libtk${SHORT_TK_VER}.a
  	@for i in "$(LIB_INSTALL_DIR)" "$(BIN_INSTALL_DIR)" \
  	    "$(PKG_INSTALL_DIR)" "$(CONFIG_INSTALL_DIR)" ; \
  	    do \
@@ -93,7 +104,7 @@
  	@if test -f "tk${MAJOR_VERSION}${MINOR_VERSION}.dll"; then \
  	    $(INSTALL_LIBRARY) "tk${MAJOR_VERSION}${MINOR_VERSION}.dll" "$(DLL_INSTALL_DIR)";\
  	    chmod 555 "$(DLL_INSTALL_DIR)/tk${MAJOR_VERSION}${MINOR_VERSION}.dll";\
-@@ -724,8 +737,9 @@
+@@ -724,16 +737,17 @@
  	fi
  	@echo "Installing ${WISH_EXE} as $(BIN_INSTALL_DIR)/wish$(VERSION)${EXE_SUFFIX}"
  	@$(INSTALL_PROGRAM) ${WISH_EXE} "$(BIN_INSTALL_DIR)/wish$(VERSION)${EXE_SUFFIX}"
@@ -105,7 +116,18 @@
  	@if test "$(STUB_LIB_FILE)" != "" ; then \
  	    echo "Installing $(STUB_LIB_FILE) to $(LIB_INSTALL_DIR)/"; \
  	    @INSTALL_STUB_LIB@ ; \
-@@ -828,7 +842,7 @@
+ 	fi
+ 	@EXTRA_INSTALL_BINARIES@
+-	@echo "Installing pkg-config file to $(LIB_INSTALL_DIR)/pkgconfig/"
+-	@$(INSTALL_DATA_DIR) $(LIB_INSTALL_DIR)/pkgconfig
+-	@$(INSTALL_DATA) tk.pc $(LIB_INSTALL_DIR)/pkgconfig/tk.pc
++	@echo "Installing pkg-config file to $(DESTDIR)$(prefix)/libdata/pkgconfig/"
++	@$(INSTALL_DATA_DIR) $(DESTDIR)$(prefix)/libdata/pkgconfig
++	@$(INSTALL_DATA) tk.pc $(DESTDIR)$(prefix)/libdata//pkgconfig/tk85.pc
+ 
+ install-libraries: libraries
+ 	@for i in "$(SCRIPT_INSTALL_DIR)" "$(SCRIPT_INSTALL_DIR)/images" \
+@@ -831,7 +845,7 @@
  install-headers:
  	@if test "$(@TK_WINDOWINGSYSTEM@_XLIB_HDRS)" != ""; then \
  	    XLIB_INCLUDE_INSTALL_DIR="$(INCLUDE_INSTALL_DIR)"/X11; fi; \
@@ -114,7 +136,7 @@
  	    do \
  	    if [ -n "$$i" -a ! -d "$$i" ] ; then \
  		echo "Making directory $$i"; \
-@@ -837,9 +851,12 @@
+@@ -840,9 +854,12 @@
  		fi; \
  	    done;
  	@echo "Installing header files to $(INCLUDE_INSTALL_DIR)/";
