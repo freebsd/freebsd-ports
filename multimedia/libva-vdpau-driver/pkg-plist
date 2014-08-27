@@ -1,5 +1,4 @@
 lib/va/nvidia_drv_video.so
 lib/va/s3g_drv_video.so
-lib/va/vdpau_drv_video.la
 lib/va/vdpau_drv_video.so
 @dirrmtry lib/va
