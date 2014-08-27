@@ -1,4 +1,4 @@
-lib/thread%%VERSION%%/libthread.so.1
+lib/thread%%VERSION%%/libthread2.7.1.so
 lib/thread%%VERSION%%/ttrace.tcl
 lib/thread%%VERSION%%/pkgIndex.tcl
 man/mann/thread.n.gz
