@@ -6,7 +6,7 @@ PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://download.dnscrypt.org/libsodium/releases/
 
-MAINTAINER=	csosstudy@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library to build higher-level cryptographic tools
 
 LICENSE=	ISCL
