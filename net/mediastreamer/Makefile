@@ -3,7 +3,7 @@
 
 PORTNAME=	mediastreamer
 PORTVERSION=	2.10.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net
 MASTER_SITES=	SAVANNAH/linphone/mediastreamer
 
@@ -57,7 +57,7 @@ OPUS_CONFIGURE_ENABLE=	opus
 OPUS_LIB_DEPENDS=	libopus.so:${PORTSDIR}/audio/opus
 
 SPANDSP_CONFIGURE_ENABLE=	spandsp
-SPANDSP_LIB_DEPENDS=	libspandsp.so:${PORTSDIR}/comms/spandsp-devel
+SPANDSP_LIB_DEPENDS=	libspandsp.so.2.0.0:${PORTSDIR}/comms/spandsp-devel
 
 SPEEX_CONFIGURE_ENABLE=	speex
 SPEEX_LIB_DEPENDS=	libspeex.so:${PORTSDIR}/audio/speex

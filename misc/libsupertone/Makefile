@@ -3,7 +3,7 @@
 
 PORTNAME=	libsupertone
 PORTVERSION=	0.0.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	misc
 MASTER_SITES=	http://www.soft-switch.org/downloads/unicall/
 
@@ -13,7 +13,7 @@ COMMENT=	Library for supervisory tone generation and detection
 LICENSE=	LGPL21
 
 LIB_DEPENDS=	libaudiofile.so:${PORTSDIR}/audio/libaudiofile \
-		libspandsp.so:${PORTSDIR}/comms/spandsp-devel \
+		libspandsp.so.2.0.0:${PORTSDIR}/comms/spandsp-devel \
 		libtiff.so:${PORTSDIR}/graphics/tiff \
 		libxml2.so:${PORTSDIR}/textproc/libxml2
 
