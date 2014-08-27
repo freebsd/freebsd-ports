@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	thread
-PORTVERSION=	2.7.0
+PORTVERSION=	2.7.1
 CATEGORIES=	devel
-MASTER_SITES=	SF/tcl/Tcl/8.6.0
+MASTER_SITES=	SF/tcl/Tcl/8.6.2
 PKGNAMEPREFIX=	tcl
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
@@ -42,6 +42,9 @@ CONFIGURE_ARGS+=--with-gdbm
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g' \
 		${WRKSRC}/configure
+	@${REINPLACE_CMD} -e \
+	    '/^INSTALL_PROGRAM/s|$$| -s|; /^INSTALL_LIBRARY/s|$$| -s|' \
+	    ${WRKSRC}/Makefile.in
 
 post-install:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}/html
