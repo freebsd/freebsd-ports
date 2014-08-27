@@ -3,6 +3,7 @@
 
 PORTNAME=	Unreal
 PORTVERSION=	3.2.10.4
+PORTREVISION=	1
 CATEGORIES=	irc ipv6
 MASTER_SITES=	http://www.unrealircd.com/downloads/
 DISTNAME=	${PORTNAME}${PORTVERSION}
@@ -49,7 +50,7 @@ CONFIGURE_ARGS=	--with-listen=5 \
 		--enable-dynamic-linking
 
 OPTIONS_DEFINE=	HUB NOSPOOF ZIPLINKS SSL IPV6 PREFIXAQ REMOTE DOCS
-OPTIONS_DEFAULT=	HUB
+OPTIONS_DEFAULT=	HUB SSL
 HUB_DESC=	Configure as a hub (otherwise configure as a leaf)
 NOSPOOF_DESC=	Enable anti-spoof protection
 ZIPLINKS_DESC=	Enable ziplinks support
