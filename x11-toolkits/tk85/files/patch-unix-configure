@@ -1,0 +1,59 @@
+--- configure.orig	2014-08-22 16:06:02.000000000 +0200
++++ configure	2014-08-27 09:28:32.000000000 +0200
+@@ -3538,6 +3538,7 @@
+ # Threads support - this auto-enables if Tcl was compiled threaded
+ #------------------------------------------------------------------------
+ 
++TCL_SRC_DIR=${prefix}/include/tcl${TCLVERSION}
+ 
+     # Check whether --enable-threads or --disable-threads was given.
+ if test "${enable_threads+set}" = set; then
+@@ -5829,7 +5830,7 @@
+ 	    SHLIB_SUFFIX=".so"
+ 	    DL_OBJS="tclLoadDl.o"
+ 	    DL_LIBS=""
+-	    LDFLAGS="$LDFLAGS -export-dynamic"
++	    LDFLAGS=""
+ 	    if test $doRpath = yes; then
+ 
+ 		CC_SEARCH_FLAGS='-Wl,-rpath,${LIB_RUNTIME_DIR}'
+@@ -5852,33 +5853,19 @@
+ 	    SHLIB_LD="${CC} -shared"
+ 	    TCL_SHLIB_LD_EXTRAS="-Wl,-soname,\$@"
+ 	    TK_SHLIB_LD_EXTRAS="-Wl,-soname,\$@"
+-	    SHLIB_SUFFIX=".so"
++	    SHLIB_SUFFIX=".so.${SHLIB_VERSION}"
+ 	    DL_OBJS="tclLoadDl.o"
+ 	    DL_LIBS=""
+ 	    LDFLAGS=""
++	    TCL_TRIM_DOTS=`echo ${VERSION} | tr -d .`
++	    UNSHARED_LIB_SUFFIX='${TCL_TRIM_DOTS}.a'
++	    SHARED_LIB_SUFFIX='${TCL_TRIM_DOTS}.so.${SHLIB_VERSION}'
++	    TCL_LIB_VERSIONS_OK=nodots
+ 	    if test $doRpath = yes; then
+ 
+ 		CC_SEARCH_FLAGS='-Wl,-rpath,${LIB_RUNTIME_DIR}'
+ 		LD_SEARCH_FLAGS='-Wl,-rpath,${LIB_RUNTIME_DIR}'
+-fi
+-
+-	    if test "${TCL_THREADS}" = "1"; then
+-
+-		# The -pthread needs to go in the LDFLAGS, not LIBS
+-		LIBS=`echo $LIBS | sed s/-pthread//`
+-		CFLAGS="$CFLAGS $PTHREAD_CFLAGS"
+-		LDFLAGS="$LDFLAGS $PTHREAD_LIBS"
+-fi
+-
+-	    case $system in
+-	    FreeBSD-3.*)
+-		# Version numbers are dot-stripped by system policy.
+-		TCL_TRIM_DOTS=`echo ${VERSION} | tr -d .`
+-		UNSHARED_LIB_SUFFIX='${TCL_TRIM_DOTS}.a'
+-		SHARED_LIB_SUFFIX='${TCL_TRIM_DOTS}.so'
+-		TCL_LIB_VERSIONS_OK=nodots
+-		;;
+-	    esac
++	    fi
+ 	    ;;
+ 	Darwin-*)
+ 	    CFLAGS_OPTIMIZE="-Os"

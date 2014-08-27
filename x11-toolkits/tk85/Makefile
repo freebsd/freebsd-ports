@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	tk
-PORTVERSION=	8.5.15
+PORTVERSION=	8.5.16
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	${MASTER_SITE_TCLTK} \
 		SF/tcl/Tcl/${PORTVERSION}
@@ -96,8 +96,8 @@ post-configure:
 
 post-install:
 	${INSTALL_DATA} ${WRKDIR}/pkgIndex.tcl ${STAGEDIR}${PREFIX}/lib/tk${TK_VER}/
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/wish${TK_VER}
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libtk${SHORT_TK_VER}.so.1
+	${LN} -fs libtk${SHORT_TK_VER}.so.1.0 \
+	    ${STAGEDIR}${PREFIX}/lib/libtk${SHORT_TK_VER}.so.1
 
 regression-test:	build
 	cd ${WRKSRC}; ${MAKE} test
