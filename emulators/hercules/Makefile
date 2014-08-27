@@ -24,6 +24,10 @@ OPTIONS_DEFINE=		DOCS
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's|SOL_TCP|IPPROTO_TCP|g' ${WRKSRC}/hscutl.c
+	@${REINPLACE_CMD} \
+		-e '/herclin_LDADD =/s/$$/ libhercu.la libhercd.la/' \
+		-e '/hercules_LDADD =/s/$$/ libhercu.la libhercd.la/' \
+		${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e \
 		'/^pkgdatadir/s|=.*|= $$(docdir)|' ${WRKSRC}/html/Makefile.in
 
