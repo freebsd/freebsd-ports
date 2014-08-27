@@ -1,0 +1,17 @@
+--- ./tools/Makefile.in.orig	2014-08-25 23:27:15.000000000 +0200
++++ ./tools/Makefile.in	2014-08-25 23:27:53.000000000 +0200
+@@ -1237,13 +1237,7 @@
+ 	$(SUBSTITUTE) < $(srcdir)/cachemgr.cgi.8.in > $@
+ 
+ install-data-local:
+-	$(INSTALL_DATA) $(srcdir)/cachemgr.conf $(DESTDIR)$(DEFAULT_CACHEMGR_CONFIG).default
+-	@if test -f $(DESTDIR)$(DEFAULT_CACHEMGR_CONFIG) ; then \
+-	        echo "$@ will not overwrite existing $(DESTDIR)$(DEFAULT_CACHEMGR_CONFIG)" ; \
+-	else \
+-	        echo "$(INSTALL_DATA) $(srcdir)/cachemgr.conf $(DESTDIR)$(DEFAULT_CACHEMGR_CONFIG)"; \
+-	        $(INSTALL_DATA) $(srcdir)/cachemgr.conf $(DESTDIR)$(DEFAULT_CACHEMGR_CONFIG); \
+-	fi
++	$(INSTALL_DATA) $(srcdir)/cachemgr.conf $(DESTDIR)$(DEFAULT_CACHEMGR_CONFIG).sample
+ 
+ uninstall-local:
+ 	@$(SHELL) $(top_srcdir)/scripts/remove-cfg.sh "$(RM)" $(DESTDIR)$(DEFAULT_CACHEMGR_CONFIG)

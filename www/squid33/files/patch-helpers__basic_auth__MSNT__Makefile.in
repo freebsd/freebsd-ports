@@ -1,0 +1,15 @@
+--- ./helpers/basic_auth/MSNT/Makefile.in.orig	2014-08-25 23:23:58.000000000 +0200
++++ ./helpers/basic_auth/MSNT/Makefile.in	2014-08-25 23:25:23.000000000 +0200
+@@ -827,12 +827,6 @@
+ $(OBJS): $(top_srcdir)/include/version.h $(top_builddir)/include/autoconf.h
+ 
+ install-data-local: msntauth.conf.default
+-	@if test -f $(DESTDIR)$(MSNTAUTH_CONF) ; then \
+-		echo "$@ will not overwrite existing $(DESTDIR)$(MSNTAUTH_CONF)" ; \
+-	else \
+-		echo "$(INSTALL_DATA) $(srcdir)/msntauth.conf.default $(DESTDIR)$(MSNTAUTH_CONF)" ; \
+-		$(INSTALL_DATA) $(srcdir)/msntauth.conf.default $(DESTDIR)$(MSNTAUTH_CONF) ; \
+-	fi
+ 
+ uninstall-local:
+ 	@$(SHELL) $(top_srcdir)/scripts/remove-cfg.sh "$(RM)" $(DESTDIR)$(MSNTAUTH_CONF)
