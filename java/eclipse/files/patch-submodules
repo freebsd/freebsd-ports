@@ -2457,3 +2457,63 @@ index b3ed6f8..7544d34 100644
      </plugins>
    </build>
  
+--- a/eclipse.platform/platform/org.eclipse.platform/plugin.xml.orig	2014-06-05 16:12:04.000000000 -0500
++++ b/eclipse.platform/platform/org.eclipse.platform/plugin.xml	2014-08-01 17:23:26.000000000 -0500
+@@ -141,6 +141,12 @@
+             basestylesheeturi="css/e4_default_gtk.css"
+             id="org.eclipse.e4.ui.css.theme.e4_default"
+             label="%theme.gtk"
++            os="freebsd">
++      </theme>
++      <theme
++            basestylesheeturi="css/e4_default_gtk.css"
++            id="org.eclipse.e4.ui.css.theme.e4_default"
++            label="%theme.gtk"
+             os="linux">
+       </theme>
+       <theme
+--- a/eclipse.platform.ua/org.eclipse.ui.intro.universal/plugin.xml.orig	2014-06-05 17:05:18.000000000 -0500
++++ b/eclipse.platform.ua/org.eclipse.ui.intro.universal/plugin.xml	2014-08-01 19:39:25.000000000 -0500
+@@ -46,7 +46,7 @@
+             <implementation
+                   style="themes/shared/html/shared.css,$theme$/html/shared.css,$theme$/html/font-$fontStyle$.css,$theme$/html/$direction$.css"
+                   kind="html"
+-                  os="win32,linux,macosx,solaris">
++                  os="win32,freebsd,linux,macosx,solaris">
+             </implementation>
+             <implementation
+                   kind="swt">
+--- a/eclipse.platform.ui/bundles/org.eclipse.ui.browser/plugin.xml.orig	2014-06-05 17:09:12.000000000 -0500
++++ b/eclipse.platform.ui/bundles/org.eclipse.ui.browser/plugin.xml	2014-08-01 19:58:51.000000000 -0500
+@@ -83,6 +83,17 @@
+ 
+    <!-- Web Browsers -->
+    <extension point="org.eclipse.ui.browser.browsers">
++      <!-- FreeBSD -->
++      <browser
++         id="org.eclipse.ui.browser.firefox"
++         name="%browserFirefox"
++         os="freebsd"
++         executable="firefox"
++         factoryclass="org.eclipse.ui.internal.browser.browsers.MozillaFactory">
++         <location>
++            usr/local/bin/firefox
++         </location>
++      </browser>
+       <!-- Linux -->
+       <browser
+          id="org.eclipse.ui.browser.firefox"
+--- a/eclipse.platform.text/org.eclipse.ui.workbench.texteditor/plugin.xml.orig	2014-06-05 17:04:42.000000000 -0500
++++ b/eclipse.platform.text/org.eclipse.ui.workbench.texteditor/plugin.xml	2014-08-01 20:03:04.000000000 -0500
+@@ -1184,6 +1184,11 @@
+             %blockSelectionModeFont.description
+          </description>
+          <fontValue
++               os="freebsd"
++               value="Monospace-regular-10"
++               ws="gtk">
++         </fontValue>
++         <fontValue
+                os="linux"
+                value="Monospace-regular-10"
+                ws="gtk">
