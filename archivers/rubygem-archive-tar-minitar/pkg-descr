@@ -1,12 +1,10 @@
 Archive::Tar::Minitar is a pure-Ruby library and command-line utility that
 provides the ability to deal with POSIX tar(1) archive files. The
-implementation is based heavily on Mauricio Fernández's implementation
+implementation is based heavily on Mauricio Fernandez's implementation
 in rpa-base, but has been reorganised to promote reuse in other projects.
 
 The library can only handle files and directories at this point.
 The command line utility, minitar, can only create archives, extract from
 archives, and list archive contents.
-
-LICENSE: Ruby License or GPL2 or later
 
 WWW: http://rubygems.org/gems/archive-tar-minitar/
