@@ -6493,3 +6493,4 @@ devel/picosat|math/picosat|2014-08-25|More appropriate primary category
 devel/py-pycosat|math/py-pycosat|2014-08-25|More appropriate primary category
 games/bomns3|games/3omns|2014-08-26|Has expired: Development ceased, use 3omns
 misc/rubygem-mime-types117|misc/rubygem-mime-types1|2014-08-26|Renamed to properly reflect version
+devel/rubygem-json146|devel/rubygem-json|2014-08-28|Has expired: Old version no longer required by dependencies
