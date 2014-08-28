@@ -11,21 +11,24 @@ DISTNAME=	Slune-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	3D game. includes racing, car-crashing, and lots of action
 
-RUN_DEPENDS=	soya_editor:${PORTSDIR}/graphics/py-soya3d \
-		${PYTHON_SITELIBDIR}/_openal.so:${PORTSDIR}/audio/py-openal \
-		${PYTHON_SITELIBDIR}/ogg/vorbis.so:${PORTSDIR}/audio/py-vorbis \
-		${PYTHON_SITELIBDIR}/py2play/level.py:${PORTSDIR}/net-p2p/py-py2play
-LIB_DEPENDS=	libcal3d.so:${PORTSDIR}/graphics/cal3d
+LICENSE=	GPLv2
 
+LIB_DEPENDS=	libcal3d.so:${PORTSDIR}/graphics/cal3d
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}openal>0:${PORTSDIR}/audio/py-openal \
+		${PYTHON_PKGNAMEPREFIX}vorbis>0:${PORTSDIR}/audio/py-vorbis \
+		${PYTHON_PKGNAMEPREFIX}soya3d>0:${PORTSDIR}/graphics/py-soya3d \
+		${PYTHON_PKGNAMEPREFIX}py2play>0:${PORTSDIR}/net-p2p/py-py2play
+
+USES=		dos2unix gettext python tar:bzip2
 DOS2UNIX_GLOB=	*.po *.mo
-USES=		dos2unix gettext tar:bzip2
-USE_PYTHON=	yes
-USE_PYDISTUTILS=	yes
 USE_GL=		glew
 USE_SDL=	sdl mixer
+USE_PYTHON=	autoplist distutils
 
 PYDISTUTILS_PKGNAME=	Slune
 PYDISTUTILS_EGGINFODIR=	${PREFIX}/share
+
+PORTDOCS=	README
 
 DESKTOP_ENTRIES=	"Slune" \
 			"3D racing game" \
@@ -34,7 +37,8 @@ DESKTOP_ENTRIES=	"Slune" \
 			"Game;ArcadeGame;" \
 			false
 
-NO_STAGE=	yes
+OPTIONS_DEFINE=	DOCS
+
 post-extract:
 .for FILE in slune.po.orig slune.po.rej
 	@${RM} ${WRKSRC}/locale/es/LC_MESSAGES/${FILE}
@@ -45,12 +49,15 @@ post-extract:
 .endfor
 
 post-patch:
-	@${REINPLACE_CMD} -i "" -e 's|%%LOCALBASE%%|${LOCALBASE}|g' ${WRKSRC}/setup.cfg
+	@${REINPLACE_CMD} -e \
+		'/install-purelib/s|=.*|= ${PREFIX}/share| ; \
+		 /install-scripts/s|=.*|= ${PREFIX}/lib| ; \
+		 /install-data/s|=.*|= ${PREFIX}/share|' ${WRKSRC}/setup.cfg
+	@${REINPLACE_CMD} -e \
+		'/LC_MESSAGES/s|".",||' ${WRKSRC}/setup.py
 
 post-install:
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKDIR}/${DISTNAME}/README ${DOCSDIR}
-.endif
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	(cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR})
 
 .include <bsd.port.mk>
