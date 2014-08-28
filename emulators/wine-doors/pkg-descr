@@ -1,7 +1,7 @@
-Wine-doors is an application designed to make installing windows software on
-Linux, Solaris or other Unix systems easier. Wine-doors is essentially a
-package management tool for windows software on Linux systems. Most Linux
-desktop users are familiar with package management style application delivery,
-so it made sense to apply this model to windows software.
+Wine-doors is an application designed to make installing windows
+software on Unix systems easier. Wine-doors is essentially a package
+management tool for windows software on Unix systems. Most Unix
+desktop users are familiar with package management style application
+delivery, so it made sense to apply this model to windows software.
 
-WWW: http://www.wine-doors.org/
+WWW: http://sourceforge.net/projects/winedoors/
