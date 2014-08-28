@@ -3,6 +3,7 @@
 
 PORTNAME=	c-ares
 PORTVERSION=	1.10.0
+PORTREVISION=	1
 CATEGORIES=	dns
 MASTER_SITES=	http://c-ares.haxx.se/download/ \
 		http://obsd.isc.org/pub/OpenBSD/distfiles/ \
@@ -13,7 +14,14 @@ COMMENT=	Asynchronous DNS resolver library
 
 LICENSE=	MIT
 
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--disable-werror
+INSTALL_TARGET=	install-strip
 SSP_UNSAFE=	Refuses -l in LDFLAGS
+USES=		libtool pathfix
+USE_LDCONFIG=	yes
+
+PROGRAMS=	acountry adig ahost
 
 OPTIONS_DEFINE=		CONFIG_INFO DEBUG HIDE_SYMBOLS OPTIMIZED_CFLAGS
 OPTIONS_DEFAULT=	CONFIG_INFO HIDE_SYMBOLS
@@ -26,7 +34,7 @@ CONFLICTS=		ares-1.*
 
 MAKE_JOBS_UNSAFE=	yes
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MCONFIG_INFO}
 EXTRA_PATCHES+=	${FILESDIR}/ares-config-info.patch
@@ -51,18 +59,7 @@ CONFIGURE_ARGS+=--enable-optimize
 CONFIGURE_ARGS+=--disable-optimize
 .endif
 
-USE_LDCONFIG=	yes
-SHLIB_VER=	3
-
-MAKE_ENV=	SHLIB_VER="${SHLIB_VER}"
-PLIST_SUB=	SHLIB_VER="${SHLIB_VER}"
-
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=--enable-shared --disable-werror
-
-PROGRAMS=	acountry adig ahost
-
 post-install:
 	${INSTALL_PROGRAM} ${PROGRAMS:S@^@${WRKSRC}/.libs/@} ${STAGEDIR}${PREFIX}/bin/
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
