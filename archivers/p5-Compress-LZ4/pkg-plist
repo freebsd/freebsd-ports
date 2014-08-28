@@ -1,0 +1,7 @@
+%%PERL5_MAN3%%/Compress::LZ4.3.gz
+%%SITE_PERL%%/%%PERL_ARCH%%/Compress/LZ4.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Compress/LZ4/.packlist
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Compress/LZ4/LZ4.so
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Compress
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Compress/LZ4
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Compress
