@@ -91,20 +91,20 @@ _SMSRCDIR?=	${SQUIRREL_PLUGIN_NAME}
 
 .if !target(do-install)
 do-install:
-	cd ${WRKSRC}/${_SMSRCDIR} && ${FIND} -d . | \
+	(cd ${WRKSRC}/${_SMSRCDIR} && ${FIND} -d . | \
 		${CPIO} -dump ${STAGEDIR}${SQUIRRELDIR}/plugins/${SQUIRREL_PLUGIN_NAME} >/dev/null 2>&1 && \
 	${FIND} ${STAGEDIR}${SQUIRRELDIR}/plugins/${SQUIRREL_PLUGIN_NAME} \
 		-type d -exec chmod 755 {} \; && \
 	${FIND} ${STAGEDIR}${SQUIRRELDIR}/plugins/${SQUIRREL_PLUGIN_NAME} \
-		-type f -exec chmod 644 {} \;
+		-type f -exec chmod 644 {} \;)
 .endif
 
 .if !target(post-install)
 post-install:
 .ifndef WITHOUT_ACTIVATE
-.if exists( ${STAGEDIR}${SQUIRRELDIR}/config/config.php )
+.if exists(${SQUIRRELDIR}/config/config.php)
 	@${ECHO_CMD} "Activating plug-in in SquirrelMail"
-	${STAGEDIR}${SQUIRRELDIR}/config/conf.pl --install-plugin ${SQUIRREL_PLUGIN_NAME}
+	${SQUIRRELDIR}/config/conf.pl --install-plugin ${SQUIRREL_PLUGIN_NAME}
 .endif
 .else
 	@${ECHO_CMD} "To activate the plug-in in SquirrelMail use"
