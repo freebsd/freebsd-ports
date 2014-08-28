@@ -27,7 +27,7 @@ CONFIGURE_ARGS=	--program-suffix=${PORTVERSION:S/.//g} \
 		--disable-werror \
 		--enable-target=all \
 		--enable-tui ${ICONV_CONFIGURE_ARG}
-CFLAGS:=	${CFLAGS:C/ +$//}	# blanks at EOL creep in sometimes
+CFLAGS:=	${CFLAGS:S/  //gW}	# blanks at EOL creep in sometimes
 CFLAGS+=	-DRL_NO_COMPAT
 EXCLUDE=	dejagnu expect readline sim texinfo intl
 EXTRACT_AFTER_ARGS=	${EXCLUDE:S/^/--exclude /}
