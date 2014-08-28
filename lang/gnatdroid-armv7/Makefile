@@ -130,7 +130,7 @@ do-install:
 	${MV} ${STAGEDIR}${PREFIX}/bin/ada \
 		${STAGEDIR}${PREFIX}/bin/${DROID_TARGET}-ada
 
-post-install:
+post-stage:
 .for loop in A B
 	cd ${STAGEDIR}${PREFIX}; ${FIND} * -type d -empty | \
 		${SORT} -dr | ${XARGS} ${RMDIR}
