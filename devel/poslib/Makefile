@@ -3,7 +3,7 @@
 
 PORTNAME=	poslib
 PORTVERSION=	1.0.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel dns
 MASTER_SITES=	SF/posadis/${PORTNAME}/${PORTVERSION}
 
@@ -14,7 +14,9 @@ LICENSE=	GPLv2 # (or later)
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
-USE_AUTOTOOLS=	libtool
+GNU_CONFIGURE=	yes
+INSTALL_TARGET=	install-strip
+USES=		libtool
 USE_LDCONFIG=	yes
 
 PLIST_SUB=	VERSION="${PORTVERSION}"
@@ -33,7 +35,5 @@ post-install:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	(cd ${WRKSRC}/examples && ${INSTALL_DATA} *.cpp \
 		${STAGEDIR}${EXAMPLESDIR})
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libposlib.so.0 \
-		${STAGEDIR}${PREFIX}/lib/libposserver.so.0
 
 .include <bsd.port.mk>
