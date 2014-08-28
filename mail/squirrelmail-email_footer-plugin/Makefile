@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	email_footer
-PORTVERSION=0.6
+PORTVERSION=	0.6
 PORTREVISION=	1
 CATEGORIES=	mail www
 DISTNAME=	${PORTNAME}-${PORTVERSION}-1.4.2
@@ -15,6 +15,5 @@ USE_GENERIC_PKGMESSAGE=	yes
 
 LICENSE=	GPLv2
 
-.include <bsd.port.pre.mk>
 .include "${.CURDIR}/../squirrelmail/bsd.squirrelmail.mk"
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

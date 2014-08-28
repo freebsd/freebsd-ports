@@ -3,8 +3,8 @@
 
 PORTNAME=	web_search
 PORTVERSION=	0.1.6
-PORTREVISION=	3
-CATEGORIES=		mail www
+PORTREVISION=	4
+CATEGORIES=	mail www
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Plugin for Websearch
@@ -19,6 +19,5 @@ SQUIRREL_PLUGIN_CONFIG=	${SQUIRREL_PLUGIN_NAME}.conf.php
 post-patch:
 	@${MV} ${WRKSRC}/${_SMSRCDIR}/${SQUIRREL_PLUGIN_CONFIG}.dist ${WRKSRC}/${_SMSRCDIR}/${SQUIRREL_PLUGIN_CONFIG}.sample
 
-.include <bsd.port.pre.mk>
 .include "${.CURDIR}/../squirrelmail/bsd.squirrelmail.mk"
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

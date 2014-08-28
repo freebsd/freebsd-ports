@@ -3,8 +3,8 @@
 
 PORTNAME=	pupdate
 PORTVERSION=	0.7
-PORTREVISION=	3
-CATEGORIES=		mail www
+PORTREVISION=	4
+CATEGORIES=	mail www
 DISTNAME=	${PORTNAME}.${PORTVERSION}-1.4.2
 
 MAINTAINER=	ports@FreeBSD.org
@@ -14,6 +14,5 @@ LICENSE=	GPLv2
 
 USE_GENERIC_PKGMESSAGE=	yes
 
-.include <bsd.port.pre.mk>
 .include "${.CURDIR}/../squirrelmail/bsd.squirrelmail.mk"
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
