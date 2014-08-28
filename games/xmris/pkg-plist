@@ -1,12 +1,18 @@
+@group games
+@mode 2555
 bin/xmris
 bin/xmsit
 bin/xmred
-@exec mkdir -p %D/lib/X11/xmris
-@exec chmod  775 %D/lib/X11/xmris
-@unexec rm -rf %D/lib/X11/xmris
+@mode
+@group
+man/man6/xmred.6.gz
+man/man6/xmris.6.gz
+man/man6/xmsit.6.gz
 lib/X11/app-defaults/Xmris
 lib/X11/app-defaults/xmris/alphabet.gdn
 lib/X11/app-defaults/xmris/digits.gdn
 lib/X11/app-defaults/xmris/puzzle.gdn
 lib/X11/app-defaults/xmris/xmred.gdn
+@exec install -d -g games -m 775 %D/lib/X11/xmris
+@dirrmtry lib/X11/xmris
 @dirrm lib/X11/app-defaults/xmris
