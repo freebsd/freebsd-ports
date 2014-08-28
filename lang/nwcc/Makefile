@@ -16,7 +16,7 @@ HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--installprefix=${PREFIX}
 ALL_TARGET=
 
-post-build:
-	cd ${WRKSRC} ; ${MAKE} test
+post-patch:
+	@${REINPLACE_CMD} -e 's|./nwcc|-./nwcc|' ${WRKSRC}/Makefile.skel
 
 .include <bsd.port.mk>
