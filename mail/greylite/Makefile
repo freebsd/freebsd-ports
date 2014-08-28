@@ -3,7 +3,7 @@
 
 PORTNAME=	greylite
 PORTVERSION=	2.3
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	mail
 MASTER_SITES=	http://mij.oltrelinux.com/net/greylite/releases/
 
