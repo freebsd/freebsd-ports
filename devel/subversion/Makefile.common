@@ -50,10 +50,10 @@ SASL_CONFIGURE_ON=		--with-sasl=${LOCALBASE}
 SASL_LIB_DEPENDS=		libsasl2.so:${PORTSDIR}/security/cyrus-sasl2
 
 SERF_CONFIGURE_OFF=		--without-serf
-SERF_CONFIGURE_ON=		--with-serf=${LOCALBASE}
+SERF_CONFIGURE_ON=		--with-serf
 SERF_LIB_DEPENDS=		libserf-1.so:${PORTSDIR}/www/serf
 
-STATIC_CONFIGURE_ON=		--enable-all-static
+STATIC_CONFIGURE_ON=		--enable-all-static PKG_CONFIG="${LOCALBASE}/bin/pkg-config --static"
 
 # ===============================================================
 .include <bsd.port.options.mk>
