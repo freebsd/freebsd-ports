@@ -3,6 +3,7 @@
 
 PORTNAME=	serf
 PORTVERSION=	1.3.7
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://serf.googlecode.com/svn/src_releases/
 
@@ -16,9 +17,6 @@ LIB_DEPENDS+=	libapr-1.so:${PORTSDIR}/devel/apr1
 USES=		scons tar:bzip2
 USE_OPENSSL=	yes
 USE_LDCONFIG=	yes
-
-# support for subversion-static,
-SUB_FILES=	libserf-1.la
 
 OPTIONS_DEFINE=	DOCS GSSAPI
 
@@ -43,12 +41,14 @@ do-install:
 	@(cd ${WRKSRC} && ${SENTENV} ${MAKE_CMD} ${SCONS_ARGS} ${INSTALL_TARGET})
 
 post-patch:
-	@${REINPLACE_CMD} -e '/^Requires.private/d' ${WRKSRC}/build/serf.pc.in
+	@${REINPLACE_CMD} -E \
+		-e '/^Requires.private/s/(libssl|libcrypto)//g' \
+		-e '/^Libs.private/s|$$| -L${OPENSSLLIB} -lssl -lcrypto|' \
+		${WRKSRC}/build/serf.pc.in
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/design-guide.txt ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${SUB_FILES:S|^|${WRKDIR}/|} ${STAGEDIR}${PREFIX}/lib
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libserf-1.so
 
 regression-test check: build
