@@ -63,6 +63,10 @@ CONFIGURE_ARGS+=--with-plugins=max-no-ndb
 CONFIGURE_ARGS+=--with-collation=${WITH_COLLATION}
 .endif
 
+.if defined(CLIENT_ONLY)
+USES+=		readline
+.endif
+
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "arm"
@@ -156,7 +160,6 @@ post-patch:
 .else
 # MySQL-Client part
 .if defined(CLIENT_ONLY)
-USES+=			readline
 CONFLICTS_INSTALL=	mysql5.[02-9]-client-* mysql[0-46-9][0-9]-client-*
 
 MAN1=		mysql_config.1 mysql_upgrade.1 mysql.1 mysqladmin.1 \
