@@ -13,6 +13,8 @@ COMMENT=	Cocaine Application Engine
 LICENSE=	GPLv3
 
 BROKEN=		Does not build
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2014-09-28
 
 LIB_DEPENDS=	libboost_iostreams.so:${PORTSDIR}/devel/boost-libs \
 		libev.so:${PORTSDIR}/devel/libev \

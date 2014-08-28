@@ -13,6 +13,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Java API To Access Microsoft Format Files
 
 BROKEN=		Tries to fetch files during build stage
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2014-09-28
 
 LICENSE=	APACHE20
 

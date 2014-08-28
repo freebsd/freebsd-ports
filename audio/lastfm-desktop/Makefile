@@ -13,6 +13,8 @@ MAINTAINER=	vg@FreeBSD.org
 COMMENT=	Official Last.fm desktop application suite
 
 BROKEN=		Does not build
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2014-09-28
 
 LICENSE=	GPLv3
 
