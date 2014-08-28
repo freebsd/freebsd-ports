@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	xine
-PORTVERSION=	0.99.8
-PORTREVISION=	2
+PORTVERSION=	0.99.9
 CATEGORIES=	multimedia
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-ui/${PORTVERSION}
 DISTNAME=	${PORTNAME}-ui-${PORTVERSION}
@@ -16,7 +15,7 @@ LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
 		libpng15.so:${PORTSDIR}/graphics/png \
 		libxine.so:${PORTSDIR}/multimedia/libxine
 
-USES=		desktop-file-utils gmake iconv pkgconfig readline \
+USES=		desktop-file-utils execinfo gmake iconv pkgconfig readline \
 		shared-mime-info tar:xz
 USE_XORG=	x11 xext xinerama xscrnsaver xtst xv xxf86vm
 GNU_CONFIGURE=	yes
@@ -30,7 +29,6 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
 DOCSDIR=	${PREFIX}/share/doc/xine-ui
-XINE_PLUGINSDIR=	lib/xine/plugins/2.3
 
 OPTIONS_DEFINE=		AALIB CACA CURL DOCS LIRC NLS XFT
 OPTIONS_DEFAULT=	CURL XFT
@@ -56,14 +54,13 @@ WIN32_CODECS_RUN_DEPENDS=\
 XFT_USE=		XORG=xft
 XFT_CONFIGURE_ENABLE=	xft
 
-.include <bsd.port.options.mk>
-
-.if ${OSVERSION} < 1000052
-LIB_DEPENDS+=	libexecinfo.so:${PORTSDIR}/devel/libexecinfo
-.endif
+XINE_PLUGINSDIR=	lib/xine/plugins/2.3
 
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's|<string.h>|<strings.h>|' ${WRKSRC}/src/aaui/main.c
+	@${REINPLACE_CMD} -e \
+		's|<\(readline.h\)>|<readline/\1>| ; \
+		 s|<\(history.h\)>|<readline/\1>|' ${WRKSRC}/src/xitk/network.c
 
 .include <bsd.port.mk>
