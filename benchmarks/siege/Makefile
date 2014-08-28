@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	siege
-PORTVERSION=	3.0.6
+PORTVERSION=	3.0.7
 CATEGORIES=	benchmarks www
 MASTER_SITES=	http://www.joedog.org/pub/siege/ \
 		http://fossies.org/linux/www/
