@@ -41,6 +41,8 @@
  all:: $(CFONT)
  
  install::
+-	touch  $(HSCORE_FILE)
+-	chmod a+w $(HSCORE_FILE)
 +	MakeDir($(DESTDIR)$(HSCORE_DIR))
- 	touch  $(HSCORE_FILE)
- 	chmod a+w $(HSCORE_FILE)
++	touch  $(DESTDIR)$(HSCORE_FILE)
++	chmod a+w $(DESTDIR)$(HSCORE_FILE)
