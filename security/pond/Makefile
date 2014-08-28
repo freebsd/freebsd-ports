@@ -21,7 +21,7 @@ RUN_DEPENDS=	tor:${PORTSDIR}/security/tor
 LIB_DEPENDS=	libgtkspell.so:${PORTSDIR}/textproc/gtkspell \
 		libtspi.so:${PORTSDIR}/security/trousers
 
-BROKEN=		Experimental. Know what you do!
+IGNORE=		Experimental. Know what you do!
 PLIST_FILES=	bin/server bin/client
 USE_GNOME=	gtk30
 GO_PKGNAME=	github.com/agl/pond
