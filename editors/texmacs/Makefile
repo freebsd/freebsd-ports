@@ -3,7 +3,7 @@
 
 PORTNAME=	texmacs
 PORTVERSION=	1.0.7.21
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	editors print
 MASTER_SITES=	ftp://ftp.texmacs.org/TeXmacs/tmftp/source/ \
 		http://www.predatorlabs.net/dl/
@@ -16,8 +16,7 @@ LICENSE=	GPLv3
 
 LIB_DEPENDS=	libguile.so:${PORTSDIR}/lang/guile
 
-USES=		gmake shared-mime-info desktop-file-utils
-USE_PYTHON=	yes
+USES=		gmake shared-mime-info desktop-file-utils python shebangfix
 USE_TEX=	tex
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
@@ -27,54 +26,34 @@ MAKE_ARGS=	CP="${CP} -R -f"
 ALL_TARGET=	${PORTNAME:tu}
 INSTALL_ICONS=	yes
 
+SHEBANG_FILES=	plugins/asymptote/bin/tm_asy2 \
+		plugins/feynmf/bin/bbox_add.pl \
+		plugins/asymptote/bin/perl-tm_asy
+
 DATADIR=	${PREFIX}/share/TeXmacs
 
 OPTIONS_DEFINE=	FREETYPE GHOSTSCRIPT ICONV IMLIB2 PDF QT4
-OPTIONS_DEFAULT=	FREETYPE GHOSTSCRIPT ICONV IMLIB2 QT4
+OPTIONS_DEFAULT=FREETYPE GHOSTSCRIPT ICONV IMLIB2 QT4
 PDF_DESC=	Experimental PDF renderer
 
-.include <bsd.port.options.mk>
+FREETYPE_LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2
+FREETYPE_CONFIGURE_WITH=freetype=linked
 
-.if ${PORT_OPTIONS:MFREETYPE}
-LIB_DEPENDS+=	libfreetype.so:${PORTSDIR}/print/freetype2
-CONFIGURE_ARGS+=	--with-freetype=linked
-.else
-CONFIGURE_ARGS+=	--without-freetype
-.endif
+GHOSTSCRIPT_USE=	GHOSTSCRIPT=yes
+GHOSTSCRIPT_CONFIGURE_WITH=	gs=yes
 
-.if ${PORT_OPTIONS:MGHOSTSCRIPT}
-USE_GHOSTSCRIPT=	yes
-CONFIGURE_ARGS+=	--with-gs=yes
-.else
-CONFIGURE_ARGS+=	--without-gs
-.endif
+ICONV_USES=		iconv
+ICONV_CONFIGURE_WITH=	iconv
 
-.if ${PORT_OPTIONS:MICONV}
-USES+=			iconv
-CONFIGURE_ARGS+=	--with-iconv
-.else
-CONFIGURE_ARGS+=	--without-iconv
-.endif
+IMLIB2_USE=		EFL=imlib2
+IMLIB2_CONFIGURE_ON=	--with-imlib2
+IMLIB2_CONFIGURE_OFF=	--without-imlib
 
-.if ${PORT_OPTIONS:MIMLIB2}
-USE_EFL=	imlib2
-CONFIGURE_ARGS+=	--with-imlib2
-.else
-CONFIGURE_ARGS+=	--without-imlib
-.endif
+PDF_CONFIGURE_ON=	--enable-pdf-renderer
 
-.if ${PORT_OPTIONS:MPDF}
-CONFIGURE_ARGS+=	--enable-pdf-renderer
-.endif
-
-.if ${PORT_OPTIONS:MQT4}
-USE_QT4=	gui moc_build qmake_build rcc uic_build
-CONFIGURE_ARGS+=	--with-qt --enable-qtpipes
-.else
-CONFIGURE_ARGS+=	--disable-qt
-.endif
-
-.include <bsd.port.pre.mk>
+QT4_USE=		QT4=gui,moc_build,qmake_build,rcc,uic_build
+QT4_CONFIGURE_ON=	--with-qt --enable-qtpipes
+QT4_CONFIGURE_OFF=	--disable-qt
 
 post-patch:
 	@${GREP} -lR "#!/bin/bash" ${WRKSRC} | ${XARGS} ${REINPLACE_CMD} -e \
@@ -87,4 +66,4 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|qdrawutil.h|qt4/Qt/qdrawutil.h|' \
 		${WRKSRC}/src/Plugins/Qt/QTMStyle.cpp
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
