@@ -17,6 +17,6 @@ CONFIGURE_ARGS=	--installprefix=${PREFIX}
 ALL_TARGET=
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|./nwcc|-./nwcc|' ${WRKSRC}/Makefile.skel
+	@${REINPLACE_CMD} -e 's|\./nwcc|-&|' ${WRKSRC}/Makefile.skel
 
 .include <bsd.port.mk>
