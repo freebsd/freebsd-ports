@@ -1,0 +1,8 @@
+Scanmem is a simple interactive debugging utility for Linux, used to locate
+the address of a variable in an executing process. This can be used for the
+analysis or modification of a hostile process on a compromised machine,
+reverse engineering, or as a "pokefinder" to cheat at video games.
+
+It requires linprocfs(5) to be mounted under /compat/linux/proc to operate.
+
+WWW: http://code.google.com/p/scanmem/
