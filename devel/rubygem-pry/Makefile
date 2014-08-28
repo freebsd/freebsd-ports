@@ -9,6 +9,8 @@ MASTER_SITES=	RG
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	IRB alternative and runtime developer console
 
+LICENSE=	MIT
+
 BUILD_DEPENDS=	rubygem-rdoc>=3.12:${PORTSDIR}/devel/rubygem-rdoc
 RUN_DEPENDS=	rubygem-coderay>=1.1.0:${PORTSDIR}/textproc/rubygem-coderay \
 		rubygem-method_source>=0.8.1:${PORTSDIR}/devel/rubygem-method_source \
@@ -18,6 +20,7 @@ USE_RUBY=	yes
 USE_RAKE=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
+
 PLIST_FILES=	bin/pry
 
 .include <bsd.port.mk>
