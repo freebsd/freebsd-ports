@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	asir
-PORTVERSION=	20140513
+PORTVERSION=	20140819
 CATEGORIES=	math
 MASTER_SITES=	ftp://ftp.jssac.org/pub/distfiles/asir/ \
 		ftp://ftp.asir.org/pub/asir/src/ \
@@ -10,7 +10,7 @@ MASTER_SITES=	ftp://ftp.jssac.org/pub/distfiles/asir/ \
 DISTFILES=	${ASIR_SRC} ${ASIR_DOC} ${GC_SRC}
 EXTRACT_ONLY=	${ASIR_SRC}
 
-MAINTAINER=	5u623l20@gmail.com
+MAINTAINER=	saito@asir.org
 COMMENT=	The system Risa/Asir is a general computer algebra system
 
 LICENSE=	RALUL
@@ -21,30 +21,29 @@ LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 LIB_DEPENDS=	libpari.so:${PORTSDIR}/math/pari
 
 MAKE_JOBS_UNSAFE=	yes
+USES=		tar:bz2
 USE_XORG=	x11 xaw xext xt
 GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	aclocal automake autoconf
 AUTOMAKE_ARGS=	--add-missing
-CONFIGURE_ARGS=	--enable-shared --enable-plot --enable-interval --with-pari --with-asir-gc
+CONFIGURE_ARGS=	--enable-shared --enable-plot --enable-fep --enable-interval --with-pari --with-asir-gc --with-gc7
 ASIR_SRC_VERSION=	${PORTVERSION}
-ASIR_DOC_VERSION=	20131129
-GC_VERSION=	7.2
+ASIR_DOC_VERSION=	20140705
+GC_VERSION=	7.2e
 ASIR_SRC=	asir-${ASIR_SRC_VERSION}${EXTRACT_SUFX}
 ASIR_DOC=	asirdoc-${ASIR_DOC_VERSION}${EXTRACT_SUFX}
-GC_SRC=		gc-${GC_VERSION}${EXTRACT_SUFX}
+GC_SRC=		gc-${GC_VERSION}.tar.gz
 WRKSRC=		${WRKDIR}/asir2000
 
-LIB_DATA=	alpi bfct bgk const cyclic defs.h dfff dmul dmul102 \
-		fctrdata fctrtest fff glib gr ifplot katsura launch mat nf \
-		num primdec primdec_lex primdec_mod ratint robot solve sp \
-		sturm sym weight xm
+LIB_DATA= alpi bfct bgk const cyclic defs.h dfff dmul dmul102 fctrdata \
+	fctrtest fff glib gr ifplot katsura launch mat nf num primdec \
+	primdec_lex primdec_mod ratint robot solve sp sturm sym weight xm
 
 OPTIONS_DEFINE=	DOCS
 
 PORTDOCS=	*
 PORTDATA=	*
 
-#NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "ia64" || ${ARCH} == "powerpc" || ${ARCH} == "sparc64"
