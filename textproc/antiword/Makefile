@@ -3,7 +3,7 @@
 
 PORTNAME=	antiword
 PORTVERSION=	0.37
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.winfield.demon.nl/linux/
 
@@ -27,8 +27,9 @@ PORTDOCS=	COPYING ChangeLog Emacs Exmh FAQ History Mozilla Mutt Netscape \
 CFLAGS+=	-DNDEBUG
 
 post-patch:
-	@${REINPLACE_CMD} -E 's,/usr/share,${PREFIX}/share,g; s,fonts2,fonts,' ${WRKSRC}/Unix-only/fontinfo.pl
-	@${REINPLACE_CMD} -E 's|LD|CC|g; /^(CC|CFLAGS)/d; s,/usr/share,${PREFIX}/share,g' ${WRKSRC}/${MAKEFILE}
+	@${REINPLACE_CMD} -E 's,/usr/share,${LOCALBASE}/share,g; s,fonts2,fonts,' ${WRKSRC}/Unix-only/fontinfo.pl
+	@${REINPLACE_CMD} -E 's|LD|CC|g; /^(CC|CFLAGS)/d; s,/usr/share,${PREFIX}/share,g; s|/usr/local/bin|${PREFIX}/bin|g' ${WRKSRC}/${MAKEFILE}
+	@${REINPLACE_CMD} -E 's,/usr/share,${PREFIX}/share,g' ${WRKSRC}/antiword.h
 
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/Docs/antiword.1 ${STAGEDIR}${MANPREFIX}/man/man1
