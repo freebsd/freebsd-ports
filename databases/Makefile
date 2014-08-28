@@ -439,6 +439,7 @@
     SUBDIR += p5-PostgreSQL-PLPerl-Call
     SUBDIR += p5-PostgreSQL-PLPerl-Trace
     SUBDIR += p5-Prophet
+    SUBDIR += p5-Protocol-CassandraCQL
     SUBDIR += p5-RRD-Simple
     SUBDIR += p5-Redis
     SUBDIR += p5-Redis-hiredis

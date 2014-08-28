@@ -1,0 +1,8 @@
+This module provides the basic constants and other support functions
+required to communicate with a Cassandra database using CQL3. It is
+not in itself a CQL client; it simply provides the necessary support
+functions to allow one to be written.
+
+For a complete client, see instead Net::Async::CassandraCQL.
+
+WWW: http://search.cpan.org/dist/Protocol-CassandraCQL/
