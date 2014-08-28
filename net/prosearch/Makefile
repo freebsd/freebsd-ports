@@ -1,9 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	prosearch
-PORTVERSION=	0.19.2
-PORTREVISION=	1
-#PORTREVISION=	1
+PORTVERSION=	0.19.4
 CATEGORIES=	net www
 MASTER_SITES=	http://pro.setun.net/search/download/ SF/pro-search/pro-search/${PORTVERSION}
 
@@ -16,7 +14,7 @@ SUB_FILES=	pkg-message
 SUB_LIST=	SEARCHDIR=${SEARCHDIR}
 NO_BUILD=	yes
 SEARCHDIR?=	www/search
-PLIST_SUB+=	SEARCHDIR=${SEARCHDIR}
+PLIST_SUB+=	SEARCHDIR=${SEARCHDIR} WWWOWN="${WWWOWN}" WWWGRP="${WWWGRP}"
 
 SAMBA_PORT?=	net/samba36
 
@@ -38,7 +36,6 @@ SPHINX_DESC=		sphinx fulltext search engine
 
 #		NGINX "With web server deps (NGINX)" off
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 RUN_DEPENDS+=\
@@ -135,13 +132,7 @@ p5-DBD-SQLite>=0:${PORTSDIR}/databases/p5-DBD-SQLite
 WRKSRC=	${WRKDIR}/search
 
 do-install:
-	@cd ${WRKSRC} && ${COPYTREE_SHARE} . ${PREFIX}/${SEARCHDIR}/
-	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${PREFIX}/${SEARCHDIR}
-	@${CHMOD} +x ${PREFIX}/${SEARCHDIR}/crawler.pl ${PREFIX}/${SEARCHDIR}/010.search.purge ${PREFIX}/${SEARCHDIR}/*.sh.* ${PREFIX}/${SEARCHDIR}/web/*.*cgi
-	@${ECHO_CMD} @exec ${CHOWN} -R ${WWWOWN}:${WWWGRP} \
-		${SEARCHDIR:S|^${PREFIX}/|%D/|} >> ${TMPPLIST}
-
-post-install:
-	@${CAT} ${PKGMESSAGE}
+	@cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/${SEARCHDIR}
+	@${CHMOD} +x ${STAGEDIR}${PREFIX}/${SEARCHDIR}/crawler.pl ${STAGEDIR}${PREFIX}/${SEARCHDIR}/010.search.purge ${STAGEDIR}${PREFIX}/${SEARCHDIR}/*.sh.* ${STAGEDIR}${PREFIX}/${SEARCHDIR}/web/*.*cgi
 
 .include <bsd.port.mk>
