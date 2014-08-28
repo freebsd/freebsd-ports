@@ -1,0 +1,81 @@
+--- Imakefile.orig
++++ Imakefile
+@@ -205,23 +205,23 @@
+ all::		$(MYPROG)
+ 
+ install::	$(MYPROGS)
+-	mkdirhier $(XPATLIBDIR)
+-	chmod 755 $(XPATLIBDIR)
++	mkdirhier $(DESTDIR)$(XPATLIBDIR)
++	chmod 755 $(DESTDIR)$(XPATLIBDIR)
+ 	for f in $(LANGUAGES); do \
+-	  mkdirhier $(APPDEFSDIR)/$$f/app-defaults; \
+-	  cp ../lib/$$f/XPat $(APPDEFSDIR)/$$f/app-defaults; \
+-	  chmod 755 $(APPDEFSDIR)/$$f/app-defaults; \
+-	  chmod 644 $(APPDEFSDIR)/$$f/app-defaults/XPat; \
++	  mkdirhier $(DESTDIR)$(APPDEFSDIR)/$$f/app-defaults; \
++	  cp ../lib/$$f/XPat $(DESTDIR)$(APPDEFSDIR)/$$f/app-defaults; \
++	  chmod 755 $(DESTDIR)$(APPDEFSDIR)/$$f/app-defaults; \
++	  chmod 644 $(DESTDIR)$(APPDEFSDIR)/$$f/app-defaults/XPat; \
+ 	done 
+-	(cd ../lib; tar cf - * | (cd $(XPATLIBDIR); tar xf -))
+-	chown -R root $(XPATLIBDIR)
+-	chmod -R a+r $(XPATLIBDIR)
++	(cd ../lib; tar cf - * | (cd $(DESTDIR)$(XPATLIBDIR); tar xf -))
++	chown -R root $(DESTDIR)$(XPATLIBDIR)
++	chmod -R a+r $(DESTDIR)$(XPATLIBDIR)
+ 	for f in $(LANGUAGES); do \
+-	    chmod 755 $(XPATLIBDIR)/$$f; \
++	    chmod 755 $(DESTDIR)$(XPATLIBDIR)/$$f; \
+ 	done
+-	mkdirhier $(XPATMANDIR)
+-	cp xpat2.man $(XPATMANDIR)/xpat2.6x
+-	chmod 644 $(XPATMANDIR)/xpat2.6x
++	mkdirhier $(DESTDIR)$(XPATMANDIR)
++	cp xpat2.man $(DESTDIR)$(XPATMANDIR)/xpat2.6
++	chmod 644 $(DESTDIR)$(XPATMANDIR)/xpat2.6
+ 
+ ComplexProgramTarget($(MYPROG))
+ InstallAppDefaults(XPat)
+@@ -233,26 +233,26 @@
+ 	mv $(BINDIR)/xpat2 /usr/games/bin
+ 
+ install.local:	$(MYPROGS)
+-	mkdirhier $(LXPATBINDIR) $(LXPATMANDIR) $(XPATLIBDIR) \
+-		$(LAPPDEFSDIR)/app-defaults
+-	chmod 755 $(XPATLIBDIR) $(LXPATMANDIR) $(LAPPDEFSDIR)/app-defaults
++	mkdirhier $(DESTDIR)$(LXPATBINDIR) $(DESTDIR)$(LXPATMANDIR) $(DESTDIR)$(XPATLIBDIR) \
++		$(DESTDIR)$(LAPPDEFSDIR)/app-defaults
++	chmod 755 $(DESTDIR)$(XPATLIBDIR) $(DESTDIR)$(LXPATMANDIR) $(DESTDIR)$(LAPPDEFSDIR)/app-defaults
+ 	for f in $(LANGUAGES); do \
+ 	  mkdirhier $(LAPPDEFSDIR)/$$f/app-defaults; \
+-	  cp ../lib/$$f/XPat $(LAPPDEFSDIR)/$$f/app-defaults; \
+-	  chmod 755 $(LAPPDEFSDIR)/$$f/app-defaults; \
+-	  chmod 644 $(LAPPDEFSDIR)/$$f/app-defaults/XPat; \
++	  cp ../lib/$$f/XPat $(DESTDIR)$(LAPPDEFSDIR)/$$f/app-defaults; \
++	  chmod 755 $(DESTDIR)$(LAPPDEFSDIR)/$$f/app-defaults; \
++	  chmod 644 $(DESTDIR)$(LAPPDEFSDIR)/$$f/app-defaults/XPat; \
+ 	done 
+-	cp XPat.ad $(LAPPDEFSDIR)/app-defaults/XPat
+-	chmod 755 $(LAPPDEFSDIR)/app-defaults/XPat
+-	(cd ../lib; tar cf - * | (cd $(XPATLIBDIR); tar xf -))
+-	chmod -R a+r $(XPATLIBDIR)
++	cp XPat.ad $(DESTDIR)$(LAPPDEFSDIR)/app-defaults/XPat
++	chmod 755 $(DESTDIR)$(LAPPDEFSDIR)/app-defaults/XPat
++	(cd ../lib; tar cf - * | (cd $(DESTDIR)$(XPATLIBDIR); tar xf -))
++	chmod -R a+r $(DESTDIR)$(XPATLIBDIR)
+ 	for f in $(LANGUAGES); do \
+-	    chmod 755 $(XPATLIBDIR)/$$f; \
++	    chmod 755 $(DESTDIR)$(XPATLIBDIR)/$$f; \
+ 	done
+-	cp xpat2 $(LXPATBINDIR)
+-	chmod 755 $(LXPATBINDIR)/xpat2
+-	cp xpat2.man $(LXPATMANDIR)/xpat2.6x
+-	chmod 644 $(LXPATMANDIR)/xpat2.6x
++	cp xpat2 $(DESTDIR)$(LXPATBINDIR)
++	chmod 755 $(DESTDIR)$(LXPATBINDIR)/xpat2
++	cp xpat2.man $(DESTDIR)$(LXPATMANDIR)/xpat2.6
++	chmod 644 $(DESTDIR)$(LXPATMANDIR)/xpat2.6
+ 
+ 
+ XCOMM Dependecies for the Qt interface:
