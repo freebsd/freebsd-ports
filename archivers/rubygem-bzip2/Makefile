@@ -11,9 +11,11 @@ DISTNAME=	${PORTNAME}-ruby-${PORTVERSION}
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Ruby C bindings to libbzip2
 
+LICENSE=	BSD2CLAUSE RUBY
+LICENSE_COMB=	dual
+
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
-GEM_NAME=	${PORTNAME}-ruby-${PORTVERSION}
 RUBYGEM_AUTOPLIST=	yes
 
 .include <bsd.port.mk>
