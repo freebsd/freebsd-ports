@@ -9,6 +9,8 @@ MASTER_SITES=	RG
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Provider to use the SoftLayer Cloud in applications
 
+LICENSE=	MIT
+
 RUN_DEPENDS=	rubygem-fog-core>=0:${PORTSDIR}/devel/rubygem-fog-core \
 		rubygem-fog-json>=0:${PORTSDIR}/devel/rubygem-fog-json
 
