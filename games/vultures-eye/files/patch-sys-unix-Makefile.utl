@@ -4,8 +4,8 @@
  # flags for debugging:
  # CFLAGS = -g -I../include
  
--CFLAGS = -O -I../include -I../win/vultures -DVULTURESEYE
-+CFLAGS += -O -I../include -I../win/vultures -DVULTURESEYE
+-CFLAGS = -O -I../include -I../win/vulture -DVULTURE_NETHACK
++CFLAGS += -I../include -I../win/vulture -DVULTURE_NETHACK
  LFLAGS =
  
  LIBS =
