@@ -16,3 +16,12 @@
  			/* of Linux */
  /* #define HPUX */	/* Hewlett-Packard's Unix, version 6.5 or higher */
  			/* use SYSV for < v6.5 */
+@@ -284,7 +284,7 @@
+ #endif
+ 
+ #if defined(BSD) || defined(ULTRIX)
+-# if !defined(DGUX) && !defined(SUNOS4)
++# if !defined(DGUX) && !defined(SUNOS4) && !defined(__FreeBSD__)
+ #define memcpy(d, s, n)		bcopy(s, d, n)
+ #define memcmp(s1, s2, n)	bcmp(s2, s1, n)
+ # endif
