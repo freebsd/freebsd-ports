@@ -12,6 +12,8 @@ MAINTAINER=	afb@rpm5.org
 COMMENT=	The RPM Package Manager
 
 BROKEN=		Does not package
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2014-09-28
 
 LIB_DEPENDS=	libsqlite3.so:${PORTSDIR}/databases/sqlite3 \
 		libpopt.so:${PORTSDIR}/devel/popt \

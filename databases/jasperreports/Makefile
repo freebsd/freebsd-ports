@@ -10,6 +10,9 @@ DISTFILES=	${PORTNAME}-${PORTVERSION}.jar ${PORTNAME}-applet-${PORTVERSION}.jar
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	JasperReports is a powerful open source Java reporting tool
 
+DEPRECATED=	Depends on expiring textproc/apache-poi
+EXPIRATION_DATE=	2014-09-28
+
 RUN_DEPENDS=	${JAVALIBDIR}/itext.jar:${PORTSDIR}/devel/itext			\
 		${JAVALIBDIR}/xalan.jar:${PORTSDIR}/textproc/xalan-j		\
 		${JAVALIBDIR}/crimson.jar:${PORTSDIR}/textproc/crimson		\

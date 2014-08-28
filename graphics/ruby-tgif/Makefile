@@ -14,6 +14,8 @@ MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Ruby extension library to draw Tgif graphics
 
 BROKEN=		Does not compile
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2014-09-28
 
 BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/${TGIF_PORT}:build \
 		imake:${PORTSDIR}/devel/imake
