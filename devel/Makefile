@@ -3884,6 +3884,7 @@
     SUBDIR += py-repoze.xmliter
     SUBDIR += py-resolver
     SUBDIR += py-resourcepackage
+    SUBDIR += py-riak_pb
     SUBDIR += py-rlcompleter2
     SUBDIR += py-robotframework
     SUBDIR += py-robotframework-pabot

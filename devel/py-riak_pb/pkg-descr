@@ -1,0 +1,4 @@
+Message definitions for the Protocol Buffers-based interface to Riak and
+various Erlang-specific utility modules for the message types.
+
+WWW: https://github.com/basho/riak_pb
