@@ -10,40 +10,39 @@ bin/scheme-r5rs
 bin/scheme-srfi-0
 bin/six
 bin/six-script
-%%GSI_INC%%/gambit-not406006.h
-%%GSI_INC%%/gambit.h
-%%GSI_LIB%%/_asm#.scm
-%%GSI_LIB%%/_assert#.scm
-%%GSI_LIB%%/_codegen#.scm
-%%GSI_LIB%%/_eval#.scm
-%%GSI_LIB%%/_gambc.c
-%%GSI_LIB%%/_gambcgsc.c
-%%GSI_LIB%%/_gambcgsi.c
-%%GSI_LIB%%/_gambit#.scm
-%%GSI_LIB%%/_io#.scm
-%%GSI_LIB%%/_kernel#.scm
-%%GSI_LIB%%/_nonstd#.scm
-%%GSI_LIB%%/_num#.scm
-%%GSI_LIB%%/_repl#.scm
-%%GSI_LIB%%/_std#.scm
-%%GSI_LIB%%/_system#.scm
-%%GSI_LIB%%/_thread#.scm
-%%GSI_LIB%%/_x86#.scm
-%%GSI_LIB%%/digest#.scm
-%%GSI_LIB%%/digest.scm
-%%GSI_LIB%%/gambit#.scm
-%%GSI_LIB%%/libgambc.a
-%%GSI_LIB%%/libgambcgsc.a
-%%GSI_LIB%%/libgambcgsi.a
-%%GSI_LIB%%/r4rs#.scm
-%%GSI_LIB%%/r5rs#.scm
-%%GSI_LIB%%/syntax-case.scm
-%%GSI_DOC%%/gambit-c.html
-%%GSI_DOC%%/gambit-c.pdf
-%%GSI_DOC%%/gambit-c.txt
+include/gambit-c/gambit.h
+include/gambit-c/gambit-not407003.h
+lib/gambit-c/_asm#.scm
+lib/gambit-c/_assert#.scm
+lib/gambit-c/_codegen#.scm
+lib/gambit-c/_eval#.scm
+lib/gambit-c/_gambc.c
+lib/gambit-c/_gambcgsc.c
+lib/gambit-c/_gambcgsi.c
+lib/gambit-c/_gambit#.scm
+lib/gambit-c/_io#.scm
+lib/gambit-c/_kernel#.scm
+lib/gambit-c/_nonstd#.scm
+lib/gambit-c/_num#.scm
+lib/gambit-c/_repl#.scm
+lib/gambit-c/_std#.scm
+lib/gambit-c/_system#.scm
+lib/gambit-c/_thread#.scm
+lib/gambit-c/_x86#.scm
+lib/gambit-c/digest#.scm
+lib/gambit-c/digest.scm
+lib/gambit-c/gambit#.scm
+lib/gambit-c/libgambc.a
+lib/gambit-c/libgambcgsc.a
+lib/gambit-c/libgambcgsi.a
+lib/gambit-c/r4rs#.scm
+lib/gambit-c/r5rs#.scm
+lib/gambit-c/syntax-case.scm
+man/man1/gsi.1.gz
+%%PORTDOCS%%%%DOCSDIR%%/gambit-c.html
+%%PORTDOCS%%%%DOCSDIR%%/gambit-c.pdf
+%%PORTDOCS%%%%DOCSDIR%%/gambit-c.txt
 share/emacs/site-lisp/gambit.el
-@dirrmtry share/emacs/site-lisp
-@dirrmtry share/emacs
-@dirrm %%GSI_LIB%%
-@dirrm %%GSI_INC%%
-@dirrm %%GSI_DOC%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrmtry lib/gambit-c
+@dirrmtry include/gambit-c
