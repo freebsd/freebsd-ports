@@ -164,6 +164,7 @@
     SUBDIR += turpial
     SUBDIR += twirssi
     SUBDIR += twitmail
+    SUBDIR += uTox
     SUBDIR += vacuum-im
     SUBDIR += venom
     SUBDIR += vqcc-gtk
