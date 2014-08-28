@@ -98,6 +98,7 @@
     SUBDIR += p5-Archive-Tar
     SUBDIR += p5-Archive-Zip
     SUBDIR += p5-Compress-Bzip2
+    SUBDIR += p5-Compress-LZ4
     SUBDIR += p5-Compress-LZF
     SUBDIR += p5-Compress-LZO
     SUBDIR += p5-Compress-LZW
