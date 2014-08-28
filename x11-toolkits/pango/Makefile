@@ -4,7 +4,7 @@
 
 PORTNAME=	pango
 PORTVERSION=	1.34.1
-PORTREVISION?=	6
+PORTREVISION?=	7
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -30,7 +30,6 @@ USE_GNOME=	cairo glib20 gnomehier introspection:build referencehack
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 INSTALL_TARGET=	install-strip
-CONFIGURE_ARGS=	--enable-explicit-deps=yes
 
 PLIST_SUB=	VERSION="1.8.0"
 
