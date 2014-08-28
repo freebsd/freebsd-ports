@@ -1,0 +1,9 @@
+This module allows use of the CQL3 interface of a Cassandra
+database. It fully supports asynchronous operation via IO::Async,
+allowing both direct queries and prepared statements to be managed
+concurrently, if required. Alternatively, as the interface is entirely
+based on Future objects, it can be operated synchronously in a
+blocking fashion by simply awaiting each individual operation by
+calling the get method.
+
+WWW: http://search.cpan.org/dist/Net-Async-CassandraCQL/
