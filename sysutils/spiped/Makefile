@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	spiped
-PORTVERSION=	1.3.1
-PORTREVISION=	1
+PORTVERSION=	1.4.0
 CATEGORIES=	sysutils security
 MASTER_SITES=	http://www.tarsnap.com/spiped/
 EXTRACT_SUFX=	.tgz
@@ -12,6 +11,10 @@ COMMENT=	Daemon for creating secure symmetric pipes
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT
+
+# The spiped build only needs C99, but this will help to get us a compiler
+# which has support for AESNI on x86 systems
+USES=		compiler:c11
 
 # Install into ${STAGEDIR}${PREFIX}
 MAKE_ARGS+=	BINDIR=${STAGEDIR}${PREFIX}/bin
