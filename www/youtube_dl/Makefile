@@ -2,6 +2,7 @@
 
 PORTNAME=	youtube_dl
 PORTVERSION=	2014.08.10
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	https://yt-dl.org/downloads/${PORTVERSION}/
 DISTNAME=	youtube-dl-${PORTVERSION}
@@ -16,8 +17,9 @@ LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 BUILD_DEPENDS=	zip:${PORTSDIR}/archivers/zip
 
-USES=		python:2,run
 ALL_TARGET=	youtube-dl
+MAKE_ARGS=	PYTHON=${PYTHON_CMD}
+USES=		python:run
 
 OPTIONS_DEFINE=	BASH RTMPDUMP FFMPEG
 OPTIONS_DEFAULT=RTMPDUMP
