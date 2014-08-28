@@ -20,12 +20,3 @@
             @SVN_NEON_INCLUDES@ @SVN_SASL_INCLUDES@ @SVN_SERF_INCLUDES@ \
             @SVN_SQLITE_INCLUDES@ @SVN_ZLIB_INCLUDES@
  
-@@ -188,7 +189,7 @@
- LINK_CXX = $(LIBTOOL) $(LTCXXFLAGS) --mode=link $(CXX) $(LT_LDFLAGS) $(CXXFLAGS) $(LDFLAGS) -rpath $(libdir)
- 
- # special link rule for mod_dav_svn
--LINK_APACHE_MOD = $(LIBTOOL) $(LTFLAGS) --mode=link $(CC) $(LT_LDFLAGS) $(CFLAGS) $(LDFLAGS) -rpath $(APACHE_LIBEXECDIR) -avoid-version -module $(APACHE_LDFLAGS)
-+LINK_APACHE_MOD = $(LIBTOOL) $(LTFLAGS) --mode=link $(CC) $(LT_LDFLAGS) $(CFLAGS) $(LDFLAGS) -rpath $(APACHE_LIBEXECDIR) -avoid-version -module $(APACHE_LDFLAGS) -inst-prefix-dir ${DESTDIR}
- 
- # Compilation of SWIG-generated C source code
- COMPILE_PY_WRAPPER = $(LIBTOOL) $(LTFLAGS) --mode=compile $(SWIG_PY_COMPILE) $(CPPFLAGS) $(SWIG_PY_INCLUDES) -prefer-pic -c -o $@

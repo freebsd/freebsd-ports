@@ -3,7 +3,7 @@
 
 PORTNAME=	subversion
 PORTVERSION=	#please edit Makefile.inc for PORTVERSION, so ../svnmerge can stay in sync.
-PORTREVISION?=	7
+PORTREVISION?=	8
 CATEGORIES+=	devel
 PKGNAMESUFFIX=	16
 MASTER_SITES=	http://subversion.tigris.org/downloads/
@@ -11,9 +11,9 @@ DIST_SUBDIR=	subversion
 
 EXTRACT_ONLY=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX}
 
-USE_AUTOTOOLS=	libtool
+GNU_CONFIGURE=	yes
 USE_KDE4=	# Used below if KWallet support is enabled
-USES+=		pkgconfig tar:bzip2 cpe
+USES+=		cpe libtool pkgconfig tar:bzip2
 
 LICENSE=	APACHE20
 
@@ -106,7 +106,6 @@ post-patch:
 .endif
 	@${REINPLACE_CMD} "s#^swig_pydir =.*#swig_pydir = ${PYTHON_SITELIBDIR}/libsvn#" ${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} "s#^swig_pydir_extra =.*#swig_pydir_extra = ${PYTHON_SITELIBDIR}/svn#" ${WRKSRC}/Makefile.in
-	@${REINPLACE_CMD} "s#^LIBTOOL =.*#LIBTOOL = ${LIBTOOL}#" ${WRKSRC}/Makefile.in
 .if defined(SVN_BUILD_BINDINGS)
 	@${CP} ${FILESDIR}/build-outputs.mk ${WRKSRC}
 .endif
