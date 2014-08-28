@@ -3,8 +3,8 @@
 
 PORTNAME=	user_special_mailboxes
 PORTVERSION=	0.1
-PORTREVISION=	2
-CATEGORIES=		mail www
+PORTREVISION=	3
+CATEGORIES=	mail www
 DISTNAME=	${PORTNAME:S/-/_/}.${PORTVERSION}-1.4
 
 MAINTAINER=	itetcu@FreeBSD.org
@@ -14,6 +14,5 @@ USE_SM_COMPAT=	yes
 
 SQUIRREL_PLUGIN_NAME=	${PORTNAME:S/-/_/}
 
-.include <bsd.port.pre.mk>
 .include "${.CURDIR}/../squirrelmail/bsd.squirrelmail.mk"
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

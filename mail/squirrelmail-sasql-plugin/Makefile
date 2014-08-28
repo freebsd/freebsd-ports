@@ -1,10 +1,10 @@
 # Created by: Gerrit Beine <gerrit.beine@gmx.de>
 # $FreeBSD$
 
-PORTNAME=		sasql
+PORTNAME=	sasql
 PORTVERSION=	3.2.0
-PORTREVISION=	2
-CATEGORIES=		mail www
+PORTREVISION=	3
+CATEGORIES=	mail www
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Edit SpamAssassin settings stored in an SQL DB
@@ -20,6 +20,5 @@ post-patch:
 		${WRKSRC}/${SQUIRREL_PLUGIN_NAME}/sasql_hooks.php
 	-@${RM} ${WRKSRC}/${SQUIRREL_PLUGIN_NAME}/*.bak ${WRKSRC}/${SQUIRREL_PLUGIN_NAME}/.cvsignore
 
-.include <bsd.port.pre.mk>
 .include "${.CURDIR}/../squirrelmail/bsd.squirrelmail.mk"
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

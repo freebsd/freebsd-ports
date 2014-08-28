@@ -56,7 +56,8 @@ SUB_LIST+=	SQUIRREL_PLUGIN_NAME=${SQUIRREL_PLUGIN_NAME}
 # As with mail/squirreldir, if you were using WITHOUT_WWWDIR=yes,
 # set SQUIRRELDIR=${PREFIX}/squirrelmail
 SQUIRRELDIR?=	${PREFIX}/www/squirrelmail
-PLIST_SUB+=	SQUIRRELDIR=${SQUIRRELDIR:S,${PREFIX}/,,}
+SQUIRRELDIR_REL=${SQUIRRELDIR:S,${PREFIX}/,,}
+PLIST_SUB+=	SQUIRRELDIR=${SQUIRRELDIR_REL}
 SUB_LIST+=	SQUIRRELDIR=${SQUIRRELDIR}
 
 SQUIRREL_PLUGIN_CONFIG?=	config.php
@@ -102,18 +103,16 @@ do-install:
 .if !target(post-install)
 post-install:
 .ifndef WITHOUT_ACTIVATE
-.if exists(${SQUIRRELDIR}/config/config.php)
-	@${ECHO_CMD} "Activating plug-in in SquirrelMail"
-	${SQUIRRELDIR}/config/conf.pl --install-plugin ${SQUIRREL_PLUGIN_NAME}
-.endif
+	@${ECHO_CMD} \
+		'@exec if [ -f %D/${SQUIRRELDIR_REL}/config/conf.pl ]; then %D/${SQUIRRELDIR_REL}/config/conf.pl --install-plugin ${SQUIRREL_PLUGIN_NAME}; fi' \
+		>> ${TMPPLIST}
+	@${ECHO_CMD} \
+		'@unexec if [ -f %D/${SQUIRRELDIR_REL}/config/conf.pl ]; then %D/${SQUIRRELDIR_REL}/config/conf.pl --remove-plugin ${SQUIRREL_PLUGIN_NAME}; fi' \
+		>> ${TMPPLIST}
 .else
-	@${ECHO_CMD} "To activate the plug-in in SquirrelMail use"
-	@${ECHO_CMD} "${SQUIRRELDIR}/config/conf.pl --install-plugin ${SQUIRREL_PLUGIN_NAME}"
+	@${ECHO_CMD} \
+		'@exec echo "To activate the plug-in in SquirrelMail use" && echo ""%D/${SQUIRRELDIR_REL}/config/conf.pl --install-plugin ${SQUIRREL_PLUGIN_NAME}"' \
+		>> ${TMPPLIST}
 .endif
-	@${ECHO_CMD} ""
 
-.if exists(${FILESDIR}/pkg-message.in) || exists(${FILESDIR}/plugin-pkg-message.in)
-	@${CAT} ${PKGMESSAGE}
-	@${ECHO_CMD} ""
-.endif
 .endif

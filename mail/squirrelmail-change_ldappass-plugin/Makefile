@@ -1,10 +1,10 @@
 # Created by: Alexander Wittig <alexander@wittig.name>
 # $FreeBSD$
 
-PORTNAME=		change_ldappass
+PORTNAME=	change_ldappass
 PORTVERSION=	2.2
-PORTREVISION=	5
-CATEGORIES=		mail www
+PORTREVISION=	6
+CATEGORIES=	mail www
 DISTNAME=	${PORTNAME}-${PORTVERSION}-1.4.0
 
 MAINTAINER=	ports@FreeBSD.org
@@ -17,6 +17,5 @@ USES=		gettext
 
 USE_GENERIC_PKGMESSAGE=	yes
 
-.include <bsd.port.pre.mk>
 .include "${.CURDIR}/../squirrelmail/bsd.squirrelmail.mk"
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
