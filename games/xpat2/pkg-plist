@@ -1,4 +1,9 @@
+@group games
+@mode 2555
 bin/xpat2
+@mode
+@group
+man/man6/xpat2.6.gz
 lib/X11/app-defaults/XPat
 lib/X11/de_DE/app-defaults/XPat
 lib/X11/fr_FR/app-defaults/XPat
@@ -7,173 +12,177 @@ lib/X11/german/app-defaults/XPat
 lib/X11/it_IT/app-defaults/XPat
 lib/X11/italian/app-defaults/XPat
 lib/X11/russian/app-defaults/XPat
-lib/xpat/PySol-large/COPYRIGHT
-lib/xpat/PySol-large/Cards.conf
-lib/xpat/PySol-large/Empty.Clubs.xpm
-lib/xpat/PySol-large/Empty.Diamonds.xpm
-lib/xpat/PySol-large/Empty.Hearts.xpm
-lib/xpat/PySol-large/Empty.Spades.xpm
-lib/xpat/PySol-large/Makefile
-lib/xpat/PySol-large/README
-lib/xpat/PySol-medium/COPYRIGHT
-lib/xpat/PySol-medium/Cards.conf
-lib/xpat/PySol-medium/Empty.Clubs.xpm
-lib/xpat/PySol-medium/Empty.Diamonds.xpm
-lib/xpat/PySol-medium/Empty.Hearts.xpm
-lib/xpat/PySol-medium/Empty.Spades.xpm
-lib/xpat/PySol-medium/Makefile
-lib/xpat/PySol-medium/README
-lib/xpat/PySol-small/COPYRIGHT
-lib/xpat/PySol-small/Cards.conf
-lib/xpat/PySol-small/Empty.Clubs.xpm
-lib/xpat/PySol-small/Empty.Diamonds.xpm
-lib/xpat/PySol-small/Empty.Hearts.xpm
-lib/xpat/PySol-small/Empty.Spades.xpm
-lib/xpat/PySol-small/Makefile
-lib/xpat/PySol-small/README
-lib/xpat/XPat.ad.XQt
-lib/xpat/XPat.ad.Xaw
-lib/xpat/XPat.ad.Xlib
-lib/xpat/XPat.ad.Xm1
-lib/xpat/XPat.ad.Xm2
-lib/xpat/XPat.ad.Xview
-lib/xpat/audio/cannotsave.au
-lib/xpat/audio/cannotsave.wav
-lib/xpat/audio/giveup.au
-lib/xpat/audio/giveup.wav
-lib/xpat/audio/goodbye.au
-lib/xpat/audio/goodbye.wav
-lib/xpat/audio/success.au
-lib/xpat/audio/success.wav
-lib/xpat/default/Background.xpm
-lib/xpat/default/Cardback0.xpm
-lib/xpat/default/Cardback1.xpm
-lib/xpat/default/Cardback2.xpm
-lib/xpat/default/Cardback3.xpm
-lib/xpat/default/Cardback4.xpm
-lib/xpat/default/Cardback5.xpm
-lib/xpat/default/Cardback6.lowcol.xpm
-lib/xpat/default/Cardback6.xpm
-lib/xpat/default/Cards.conf
-lib/xpat/default/Pictures.xpm
-lib/xpat/default/Ranks.xpm
-lib/xpat/default/Suits.xpm
-lib/xpat/docvt
-lib/xpat/dummy.xpm
-lib/xpat/fallback/Background.xpm
-lib/xpat/fallback/Cardback1.xpm
-lib/xpat/fallback/Cards.conf
-lib/xpat/fallback/Pictures.xpm
-lib/xpat/fallback/Ranks.xpm
-lib/xpat/fallback/Suits.xpm
-lib/xpat/french.cards
-lib/xpat/french/README.french
-lib/xpat/french/XPat
-lib/xpat/french/aidBakersDozen
-lib/xpat/french/aidCalculation
-lib/xpat/french/aidMidnightOil
-lib/xpat/french/aidMonteCarlo
-lib/xpat/french/aide.Canfield
-lib/xpat/french/aide.Cotillion
-lib/xpat/french/aide.Delight
-lib/xpat/french/aide.FreeCell
-lib/xpat/french/aide.Gypsy
-lib/xpat/french/aide.Klondike
-lib/xpat/french/aide.Michaels
-lib/xpat/french/aide.Seahaven
-lib/xpat/french/aide.Spider
-lib/xpat/french/aide.touches
-lib/xpat/french/aidmodCanfield
-lib/xpat/french/keys
-lib/xpat/french/messages
-lib/xpat/german/Notes
-lib/xpat/german/XPat
-lib/xpat/german/hilf.BakersDozen
-lib/xpat/german/hilf.BlueMoon
-lib/xpat/german/hilf.Calculation
-lib/xpat/german/hilf.Canfield
-lib/xpat/german/hilf.Cotillion
-lib/xpat/german/hilf.Delight
-lib/xpat/german/hilf.FreeCell
-lib/xpat/german/hilf.Gypsy
-lib/xpat/german/hilf.Klondike
-lib/xpat/german/hilf.Michaels
-lib/xpat/german/hilf.MidnightOil
-lib/xpat/german/hilf.ModCanfield
-lib/xpat/german/hilf.MonteCarlo
-lib/xpat/german/hilf.Oonsoo
-lib/xpat/german/hilf.Seahaven
-lib/xpat/german/hilf.Spider
-lib/xpat/german/hilf.bedien
-lib/xpat/german/hilf.tasten
-lib/xpat/german/keys
-lib/xpat/german/messages
-lib/xpat/help.BlueMoon
-lib/xpat/help.Canfield
-lib/xpat/help.Cotillion
-lib/xpat/help.Delight
-lib/xpat/help.FreeCell
-lib/xpat/help.Gypsy
-lib/xpat/help.Klondike
-lib/xpat/help.Michaels
-lib/xpat/help.Oonsoo
-lib/xpat/help.Seahaven
-lib/xpat/help.Spider
-lib/xpat/help.keys
-lib/xpat/hlpBakersDozen
-lib/xpat/hlpCalculation
-lib/xpat/hlpMidnightOil
-lib/xpat/hlpMonteCarlo
-lib/xpat/hlpmodCanfield
-lib/xpat/italian/XPat
-lib/xpat/italian/help.Canfield
-lib/xpat/italian/help.Cotillion
-lib/xpat/italian/help.Delight
-lib/xpat/italian/help.FreeCell
-lib/xpat/italian/help.Gypsy
-lib/xpat/italian/help.Klondike
-lib/xpat/italian/help.Michaels
-lib/xpat/italian/help.Seahaven
-lib/xpat/italian/help.Spider
-lib/xpat/italian/help.keys
-lib/xpat/italian/hlpBakersDozen
-lib/xpat/italian/hlpCalculation
-lib/xpat/italian/hlpMidnightOil
-lib/xpat/italian/hlpMonteCarlo
-lib/xpat/italian/keys
-lib/xpat/italian/messages
-lib/xpat/keys
-lib/xpat/russian/XPat
-lib/xpat/russian/keys
-lib/xpat/russian/messages
-lib/xpat/russian/sq01.bdf
-lib/xpat/small.cards
-lib/xpat/de_DE
-lib/xpat/fr_FR
-lib/xpat/it_IT
-@dirrm lib/X11/de_DE/app-defaults
-@dirrm lib/X11/de_DE
-@dirrm lib/X11/fr_FR/app-defaults
-@dirrm lib/X11/fr_FR
-@dirrm lib/X11/french/app-defaults
-@dirrm lib/X11/french
-@dirrm lib/X11/german/app-defaults
-@dirrm lib/X11/german
-@dirrm lib/X11/it_IT/app-defaults
-@dirrm lib/X11/it_IT
-@dirrm lib/X11/italian/app-defaults
-@dirrm lib/X11/italian
+%%DATADIR%%/PySol-large/COPYRIGHT
+%%DATADIR%%/PySol-large/Cards.conf
+%%DATADIR%%/PySol-large/Empty.Clubs.xpm
+%%DATADIR%%/PySol-large/Empty.Diamonds.xpm
+%%DATADIR%%/PySol-large/Empty.Hearts.xpm
+%%DATADIR%%/PySol-large/Empty.Spades.xpm
+%%DATADIR%%/PySol-large/Makefile
+%%DATADIR%%/PySol-large/README
+%%DATADIR%%/PySol-medium/COPYRIGHT
+%%DATADIR%%/PySol-medium/Cards.conf
+%%DATADIR%%/PySol-medium/Empty.Clubs.xpm
+%%DATADIR%%/PySol-medium/Empty.Diamonds.xpm
+%%DATADIR%%/PySol-medium/Empty.Hearts.xpm
+%%DATADIR%%/PySol-medium/Empty.Spades.xpm
+%%DATADIR%%/PySol-medium/Makefile
+%%DATADIR%%/PySol-medium/README
+%%DATADIR%%/PySol-small/COPYRIGHT
+%%DATADIR%%/PySol-small/Cards.conf
+%%DATADIR%%/PySol-small/Empty.Clubs.xpm
+%%DATADIR%%/PySol-small/Empty.Diamonds.xpm
+%%DATADIR%%/PySol-small/Empty.Hearts.xpm
+%%DATADIR%%/PySol-small/Empty.Spades.xpm
+%%DATADIR%%/PySol-small/Makefile
+%%DATADIR%%/PySol-small/README
+%%DATADIR%%/XPat.ad.XQt
+%%DATADIR%%/XPat.ad.Xaw
+%%DATADIR%%/XPat.ad.Xlib
+%%DATADIR%%/XPat.ad.Xm1
+%%DATADIR%%/XPat.ad.Xm2
+%%DATADIR%%/XPat.ad.Xview
+%%DATADIR%%/audio/cannotsave.au
+%%DATADIR%%/audio/cannotsave.wav
+%%DATADIR%%/audio/giveup.au
+%%DATADIR%%/audio/giveup.wav
+%%DATADIR%%/audio/goodbye.au
+%%DATADIR%%/audio/goodbye.wav
+%%DATADIR%%/audio/success.au
+%%DATADIR%%/audio/success.wav
+%%DATADIR%%/default/Background.xpm
+%%DATADIR%%/default/Cardback0.xpm
+%%DATADIR%%/default/Cardback1.xpm
+%%DATADIR%%/default/Cardback2.xpm
+%%DATADIR%%/default/Cardback3.xpm
+%%DATADIR%%/default/Cardback4.xpm
+%%DATADIR%%/default/Cardback5.xpm
+%%DATADIR%%/default/Cardback6.lowcol.xpm
+%%DATADIR%%/default/Cardback6.xpm
+%%DATADIR%%/default/Cards.conf
+%%DATADIR%%/default/Pictures.xpm
+%%DATADIR%%/default/Ranks.xpm
+%%DATADIR%%/default/Suits.xpm
+%%DATADIR%%/docvt
+%%DATADIR%%/dummy.xpm
+%%DATADIR%%/fallback/Background.xpm
+%%DATADIR%%/fallback/Cardback1.xpm
+%%DATADIR%%/fallback/Cards.conf
+%%DATADIR%%/fallback/Pictures.xpm
+%%DATADIR%%/fallback/Ranks.xpm
+%%DATADIR%%/fallback/Suits.xpm
+%%DATADIR%%/french.cards
+%%DATADIR%%/french/README.french
+%%DATADIR%%/french/XPat
+%%DATADIR%%/french/aidBakersDozen
+%%DATADIR%%/french/aidCalculation
+%%DATADIR%%/french/aidMidnightOil
+%%DATADIR%%/french/aidMonteCarlo
+%%DATADIR%%/french/aide.Canfield
+%%DATADIR%%/french/aide.Cotillion
+%%DATADIR%%/french/aide.Delight
+%%DATADIR%%/french/aide.FreeCell
+%%DATADIR%%/french/aide.Gypsy
+%%DATADIR%%/french/aide.Klondike
+%%DATADIR%%/french/aide.Michaels
+%%DATADIR%%/french/aide.Seahaven
+%%DATADIR%%/french/aide.Spider
+%%DATADIR%%/french/aide.touches
+%%DATADIR%%/french/aidmodCanfield
+%%DATADIR%%/french/keys
+%%DATADIR%%/french/messages
+%%DATADIR%%/german/Notes
+%%DATADIR%%/german/XPat
+%%DATADIR%%/german/hilf.BakersDozen
+%%DATADIR%%/german/hilf.BlueMoon
+%%DATADIR%%/german/hilf.Calculation
+%%DATADIR%%/german/hilf.Canfield
+%%DATADIR%%/german/hilf.Cotillion
+%%DATADIR%%/german/hilf.Delight
+%%DATADIR%%/german/hilf.FreeCell
+%%DATADIR%%/german/hilf.Gypsy
+%%DATADIR%%/german/hilf.Klondike
+%%DATADIR%%/german/hilf.Michaels
+%%DATADIR%%/german/hilf.MidnightOil
+%%DATADIR%%/german/hilf.ModCanfield
+%%DATADIR%%/german/hilf.MonteCarlo
+%%DATADIR%%/german/hilf.Oonsoo
+%%DATADIR%%/german/hilf.Seahaven
+%%DATADIR%%/german/hilf.Spider
+%%DATADIR%%/german/hilf.bedien
+%%DATADIR%%/german/hilf.tasten
+%%DATADIR%%/german/keys
+%%DATADIR%%/german/messages
+%%DATADIR%%/help.BlueMoon
+%%DATADIR%%/help.Canfield
+%%DATADIR%%/help.Cotillion
+%%DATADIR%%/help.Delight
+%%DATADIR%%/help.FreeCell
+%%DATADIR%%/help.Gypsy
+%%DATADIR%%/help.Klondike
+%%DATADIR%%/help.Michaels
+%%DATADIR%%/help.Oonsoo
+%%DATADIR%%/help.Seahaven
+%%DATADIR%%/help.Spider
+%%DATADIR%%/help.keys
+%%DATADIR%%/hlpBakersDozen
+%%DATADIR%%/hlpCalculation
+%%DATADIR%%/hlpMidnightOil
+%%DATADIR%%/hlpMonteCarlo
+%%DATADIR%%/hlpmodCanfield
+%%DATADIR%%/italian/XPat
+%%DATADIR%%/italian/help.Canfield
+%%DATADIR%%/italian/help.Cotillion
+%%DATADIR%%/italian/help.Delight
+%%DATADIR%%/italian/help.FreeCell
+%%DATADIR%%/italian/help.Gypsy
+%%DATADIR%%/italian/help.Klondike
+%%DATADIR%%/italian/help.Michaels
+%%DATADIR%%/italian/help.Seahaven
+%%DATADIR%%/italian/help.Spider
+%%DATADIR%%/italian/help.keys
+%%DATADIR%%/italian/hlpBakersDozen
+%%DATADIR%%/italian/hlpCalculation
+%%DATADIR%%/italian/hlpMidnightOil
+%%DATADIR%%/italian/hlpMonteCarlo
+%%DATADIR%%/italian/keys
+%%DATADIR%%/italian/messages
+%%DATADIR%%/keys
+%%DATADIR%%/russian/XPat
+%%DATADIR%%/russian/keys
+%%DATADIR%%/russian/messages
+%%DATADIR%%/russian/sq01.bdf
+%%DATADIR%%/small.cards
+%%DATADIR%%/de_DE
+%%DATADIR%%/fr_FR
+%%DATADIR%%/it_IT
+
+@dirrm %%DATADIR%%/russian
+@dirrm %%DATADIR%%/italian
+@dirrm %%DATADIR%%/german
+@dirrm %%DATADIR%%/french
+@dirrm %%DATADIR%%/fallback
+@dirrm %%DATADIR%%/default
+@dirrm %%DATADIR%%/audio
+@dirrm %%DATADIR%%/PySol-small
+@dirrm %%DATADIR%%/PySol-medium
+@dirrm %%DATADIR%%/PySol-large
+@dirrm %%DATADIR%%
 @dirrm lib/X11/russian/app-defaults
 @dirrm lib/X11/russian
-@dirrm lib/xpat/PySol-large
-@dirrm lib/xpat/PySol-medium
-@dirrm lib/xpat/PySol-small
-@dirrm lib/xpat/audio
-@dirrm lib/xpat/default
-@dirrm lib/xpat/fallback
-@dirrm lib/xpat/french
-@dirrm lib/xpat/german
-@dirrm lib/xpat/italian
-@dirrm lib/xpat/russian
-@dirrm lib/xpat
+@dirrm lib/X11/italian/app-defaults
+@dirrm lib/X11/italian
+@dirrm lib/X11/it_IT/app-defaults
+@dirrm lib/X11/it_IT
+@dirrm lib/X11/german/app-defaults
+@dirrm lib/X11/german
+@dirrm lib/X11/french/app-defaults
+@dirrm lib/X11/french
+@dirrm lib/X11/fr_FR/app-defaults
+@dirrm lib/X11/fr_FR
+@dirrm lib/X11/de_DE/app-defaults
+@dirrm lib/X11/de_DE
 @unexec if [ ! -s /var/games/xpat.log ]; then rm -f /var/games/xpat.log; fi
+@exec if [ -d /var/games ]; then touch /var/games/xpat.log; fi
+@exec if [ -e /var/games/xpat.log ]; then chgrp games /var/games/xpat.log; fi
+@exec if [ -e /var/games/xpat.log ]; then chmod 664 /var/games/xpat.log; fi
