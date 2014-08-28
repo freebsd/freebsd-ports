@@ -3,6 +3,7 @@
 
 PORTNAME=	gcc47-aux
 PORTVERSION=	${SNAPSHOT}
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	http://downloads.dragonlace.net/src/:boot \
 		${MASTER_SITE_GCC}
@@ -292,7 +293,7 @@ test-c:
 do-install:
 	cd ${BUILDDIR} && ${SETENV} ${ADA_MAKE_ENV} ${MAKE_CMD} install-strip DESTDIR=${STAGEDIR}
 
-post-install:
+post-stage:
 	${MV} ${STAGEDIR}${PKG_PREFIX}/share/man ${STAGEDIR}/${PKG_PREFIX}
 	cd ${STAGEDIR}${PKG_PREFIX}; ${FIND} * -type d -empty | \
 	   ${SORT} -dr | ${XARGS} ${RMDIR}
