@@ -41,7 +41,7 @@ RUN_DEPENDS+=	${SQUIRRELDIR}/plugins/compatibility:${PORTSDIR}/mail/squirrelmail
 
 .ifndef WITHOUT_ACTIVATE
 USES+=		perl5
-USE_PERL5+=	install
+USE_PERL5+=	run
 .endif
 
 NO_BUILD=	yes
