@@ -2,7 +2,7 @@
 
 PORTNAME=	powerdns
 PORTVERSION=	3.3.1
-PORTREVISION=	4
+PORTREVISION=	5
 PORTEPOCH=	1
 CATEGORIES=	dns ipv6
 PKGNAMESUFFIX=	-devel
@@ -32,7 +32,8 @@ GNU_CONFIGURE=	YES
 INSTALL_TARGET=	install-strip
 CXXFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-CONFIGURE_ARGS=	--with-modules="" \
+CONFIGURE_ARGS=	--disable-static \
+		--with-modules="" \
 		--with-dynmodules="pipe ${MODULES}" \
 		--sysconfdir="${PREFIX}/etc/pdns" \
 		--with-boost="${LOCALBASE}"
