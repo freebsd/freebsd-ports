@@ -3,7 +3,7 @@
 
 PORTNAME=	libvirt
 PORTVERSION=	1.2.6
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel
 MASTER_SITES=	http://libvirt.org/sources/ \
 		ftp://libvirt.org/libvirt/
@@ -54,31 +54,22 @@ CONFIGURE_ARGS=	--without-sasl \
 		--without-uml \
 		--with-ssh2
 
-# workaround to override pkg-config calls
 # random_data fix can be removed when 8.x is eol
-CONFIGURE_ENV=	SSH2_LIBS="-L${LOCALBASE}/lib -lssh2 -lssl" \
-		SSH2_CFLAGS="-I${LOCALBASE}/include" \
-		ac_cv_type_struct_random_data=""
+CONFIGURE_ENV=	ac_cv_type_struct_random_data=""
 
 # limit production release x.x.x
 PORTSCOUT=	limit:\d+\.\d+\.\d+$$
 
 LDFLAGS+=	-L${LOCALBASE}/lib -fstack-protector
 
-USES=		charsetfix pathfix gmake pkgconfig perl5
+USES=		charsetfix gmake libtool pathfix pkgconfig perl5
 USE_PERL5=	build
 USE_LDCONFIG=	yes
-SHLIB_VER=	1002
+INSTALL_TARGET=	install-strip
+SHLIB_VER=	0.1002.6
 PLIST_SUB=	PORTVERSION="-${PORTVERSION}" \
 		SHLIB_VER=${SHLIB_VER}
 PORTDOCS=	*
-STRIP_FILES=	libvirt.so.${SHLIB_VER} \
-		libvirt-qemu.so.${SHLIB_VER} \
-		libvirt-lxc.so.${SHLIB_VER} \
-		libvirt/lock-driver/lockd.so \
-		libvirt/connection-driver/libvirt_driver_vbox.so \
-		libvirt/connection-driver/libvirt_driver_secret.so \
-		libvirt/connection-driver/libvirt_driver_storage.so
 
 .include <bsd.port.options.mk>
 
@@ -117,10 +108,6 @@ post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for doc in AUTHORS ChangeLog INSTALL NEWS README TODO
 	${INSTALL_DATA} ${WRKSRC}/${doc} ${STAGEDIR}${DOCSDIR}
-.endfor
-
-.for lib in ${STRIP_FILES}
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/${lib}
 .endfor
 
 regression-test: build
