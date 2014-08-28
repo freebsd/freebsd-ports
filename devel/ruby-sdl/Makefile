@@ -3,7 +3,7 @@
 
 PORTNAME=	sdl
 PORTVERSION=	2.1.3.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel graphics audio ruby
 MASTER_SITES=	https://ohai.github.io/rubysdl/archives/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
@@ -16,7 +16,7 @@ COMMENT=	Ruby extension library to use SDL library
 LICENSE=	LGPL21
 
 LIB_DEPENDS=	libSGE.so:${PORTSDIR}/devel/sdl_sge \
-		libSDLSKK.so.2.0:${PORTSDIR}/devel/sdlskk \
+		libSDLSKK.so:${PORTSDIR}/devel/sdlskk \
 		libsmpeg.so:${PORTSDIR}/multimedia/smpeg
 RUN_DEPENDS=	rubygem-opengl>=0:${PORTSDIR}/graphics/rubygem-opengl
 
