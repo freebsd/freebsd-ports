@@ -3,21 +3,22 @@
 
 PORTNAME=	mcpp
 PORTVERSION=	2.7.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/V.${PORTVERSION}
 
 MAINTAINER=	kmatsui@t3.rim.or.jp
 COMMENT=	Alternative C/C++ preprocessor
 
+USES=		libtool
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-mcpplib
 
 PLIST_FILES=	bin/mcpp    \
 		lib/libmcpp.so	\
-		lib/libmcpp.so.3	\
+		lib/libmcpp.so.0	\
+		lib/libmcpp.so.0.3.0	\
 		lib/libmcpp.a	\
-		lib/libmcpp.la	\
 		include/mcpp_lib.h \
 		include/mcpp_out.h \
 		man/man1/mcpp.1.gz \
