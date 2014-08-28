@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	postfix-logwatch
-PORTVERSION=	1.40.01
+PORTVERSION=	1.40.02
 CATEGORIES=	mail
 MASTER_SITES=	SF/logreporters/${PORTNAME}/release/${PORTVERSION}
 
