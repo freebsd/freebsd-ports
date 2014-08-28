@@ -12,12 +12,23 @@ COMMENT=	Set of Unix utilities written in x86 assembly language
 
 LICENSE=	GPLv2
 
-ONLY_FOR_ARCHS=	i386
-
 BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm
 
 USES=		gmake
-MAKE_ARGS=	OS=${OPSYS:tu} KERNEL=${OSREL:S/.//g}
+USE_GCC=	any
+MAKE_ARGS=	OS="${OPSYS:tu}" KERNEL="${OSREL:S/.//g}" CC="${CC}" LD="${LD}"
+
+ONLY_FOR_ARCHS=	i386
+
+# Stripping binaries will break installation
+STRIP=	#
+
+PORTDOCS=	*
+PLIST_FILES=	${BINS:S/^/bin\/asmutils\//:S/bonus\///} \
+		${LINKS:S/^/bin\/asmutils\//} ${LIBS:S/^/lib\/asmutils\//}
+PLIST_DIRS=	lib/asmutils bin/asmutils
+
+OPTIONS_DEFINE=	DOCS
 
 # This will play merry hell with portlint(1)
 BINS=		bonus/asmutils basename cal cat chmod chown chroot cmp cp \
@@ -34,51 +45,44 @@ BINS=		bonus/asmutils basename cal cat chmod chown chroot cmp cp \
 LINKS=		arch cpuspeed domainname false halt inflate kldstat kldunload \
 		mkfifo more poweroff regs rmdir size sln todos umount usleep
 
-LIBRARIES=	libc.so.0 libcrypto.so.0 libm.so.0
+LIBS=		libc.so.0 libcrypto.so.0 libm.so.0
 
-PLIST_FILES=	${BINS:S/^/bin\/asmutils\//:S/bonus\///} \
-		${LINKS:S/^/bin\/asmutils\//} ${LIBRARIES:S/^/lib\/asmutils\//}
-PLIST_DIRS=	bin/asmutils lib/asmutils
-PORTDOCS=	*
-
-NO_STAGE=	yes
 post-patch:
-	@${REINPLACE_CMD} -e 's,^static ,,' ${WRKSRC}/lib/libm.c
-
-# Stripping binaries will break installation
-STRIP=	#
+	@${REINPLACE_CMD} -e \
+		's|^static ||' ${WRKSRC}/lib/libm.c
 
 do-install:
-	@${MKDIR} ${PREFIX}/bin/asmutils ${PREFIX}/lib/asmutils
+	@${MKDIR} ${STAGEDIR}${PREFIX}/bin/asmutils
 .for bin in ${BINS}
-	${INSTALL_PROGRAM} ${WRKSRC}/src/${bin} ${PREFIX}/bin/asmutils
+	(cd ${WRKSRC}/src && ${INSTALL_SCRIPT} ${bin} \
+		${STAGEDIR}${PREFIX}/bin/asmutils)
 .endfor
-.for lib in ${LIBRARIES}
-	${INSTALL_PROGRAM} ${WRKSRC}/lib/${lib} ${PREFIX}/lib/asmutils
+	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/asmutils
+.for lib in ${LIBS}
+	(cd ${WRKSRC}/lib && ${INSTALL_DATA} ${lib} \
+		${STAGEDIR}${PREFIX}/lib/asmutils)
 .endfor
-	(cd ${PREFIX}/bin/asmutils && \
-		${LN} -sf uname arch && \
-		${LN} -sf cpuinfo cpuspeed && \
-		${LN} -sf hostname domainname && \
-		${LN} -sf true false && \
-		${LN} -sf reboot halt && \
-		${LN} -sf deflate inflate && \
-		${LN} -sf kldload kldstat && \
-		${LN} -sf kldload kldunload && \
-		${LN} -sf mknod mkfifo && \
-		${LN} -sf less more && \
-		${LN} -sf reboot poweroff && \
-		${LN} -sf execve regs && \
-		${LN} -sf mkdir rmdir && \
-		${LN} -sf nm size && \
-		${LN} -sf ln sln && \
-		${LN} -sf fromdos todos && \
-		${LN} -sf mount umount && \
-		${LN} -sf sleep usleep)
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/doc/[^i]* ${DOCSDIR}
-	@cd ${DOCSDIR} && ${LN} -sf Asmutils-HOWTO.html index.html
-.endif
+	(cd ${STAGEDIR}${PREFIX}/bin/asmutils \
+		&& ${LN} -sf uname arch \
+		&& ${LN} -sf cpuinfo cpuspeed \
+		&& ${LN} -sf hostname domainname \
+		&& ${LN} -sf true false \
+		&& ${LN} -sf reboot halt \
+		&& ${LN} -sf deflate inflate \
+		&& ${LN} -sf kldload kldstat \
+		&& ${LN} -sf kldload kldunload \
+		&& ${LN} -sf mknod mkfifo \
+		&& ${LN} -sf less more \
+		&& ${LN} -sf reboot poweroff \
+		&& ${LN} -sf execve regs \
+		&& ${LN} -sf mkdir rmdir \
+		&& ${LN} -sf nm size \
+		&& ${LN} -sf ln sln \
+		&& ${LN} -sf fromdos todos \
+		&& ${LN} -sf mount umount \
+		&& ${LN} -sf sleep usleep)
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	(cd ${WRKSRC}/doc && ${INSTALL_DATA} [^i]* ${STAGEDIR}${DOCSDIR})
+	(cd ${STAGEDIR}${DOCSDIR} && ${LN} -sf Asmutils-HOWTO.html index.html)
 
 .include <bsd.port.mk>
