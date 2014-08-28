@@ -861,6 +861,7 @@
     SUBDIR += scalpel
     SUBDIR += scan_ffs
     SUBDIR += scanbuttond
+    SUBDIR += scanmem
     SUBDIR += schedutils
     SUBDIR += scprotect
     SUBDIR += screen
