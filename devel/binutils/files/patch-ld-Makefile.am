@@ -1,0 +1,22 @@
+--- ld/Makefile.am.orig	1970-01-01 00:20:49.000000000 +0000
++++ ld/Makefile.am	1970-01-01 00:30:34.000000000 +0000
+@@ -165,6 +165,7 @@
+ 	earmelf_nbsd.c \
+ 	earmelf_vxworks.c \
+ 	earmelfb.c \
++	earmelfb_fbsd.c \
+ 	earmelfb_linux.c \
+ 	earmelfb_linux_eabi.c \
+ 	earmelfb_nacl.c \
+@@ -765,6 +766,11 @@
+   $(ELF_DEPS) $(srcdir)/emultempl/armelf.em \
+   $(srcdir)/scripttempl/elf.sc ${GEN_DEPENDS}
+ 	${GENSCRIPTS} armelfb "$(tdir_armelfb)"
++earmelfb_fbsd.c: $(srcdir)/emulparams/armelfb_fbsd.sh \
++  $(srcdir)/emulparams/armelf_fbsd.sh \
++  $(ELF_DEPS) $(srcdir)/emultempl/armelf.em \
++  $(srcdir)/scripttempl/elf.sc ${GEN_DEPENDS}
++	${GENSCRIPTS} armelfb_fbsd "$(tdir_armelfb_fbsd)"
+ earmelfb_linux.c: $(srcdir)/emulparams/armelfb_linux.sh \
+   $(srcdir)/emulparams/armelf_linux.sh \
+   $(ELF_DEPS) $(srcdir)/emultempl/armelf.em \
