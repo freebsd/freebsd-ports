@@ -16,6 +16,7 @@ LICENSE_COMB=	dual
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
+GEM_NAME=	${PORTNAME}-ruby-${PORTVERSION}
 RUBYGEM_AUTOPLIST=	yes
 
 .include <bsd.port.mk>
