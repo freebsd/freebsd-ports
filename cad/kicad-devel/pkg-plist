@@ -179,7 +179,6 @@ share/icons/hicolor/scalable/mimetypes/application-x-pcbnew-project.svg
 %%DATADIR%%/demos/interf_u/pagelayout_logo.kicad_wks
 %%DATADIR%%/demos/interf_u/tux.bmp
 %%DATADIR%%/demos/kit-dev-coldfire-xilinx_5213/in_out_conn.sch
-%%DATADIR%%/demos/kit-dev-coldfire-xilinx_5213/kit-dev-coldfire-xilinx_5213-cache.dcm
 %%DATADIR%%/demos/kit-dev-coldfire-xilinx_5213/kit-dev-coldfire-xilinx_5213-cache.lib
 %%DATADIR%%/demos/kit-dev-coldfire-xilinx_5213/kit-dev-coldfire-xilinx_5213.cmp
 %%DATADIR%%/demos/kit-dev-coldfire-xilinx_5213/kit-dev-coldfire-xilinx_5213.kicad_pcb
@@ -370,6 +369,8 @@ share/icons/hicolor/scalable/mimetypes/application-x-pcbnew-project.svg
 %%DATADIR%%/library/intel.lib
 %%DATADIR%%/library/interface.dcm
 %%DATADIR%%/library/interface.lib
+%%DATADIR%%/library/ir.dcm
+%%DATADIR%%/library/ir.lib
 %%DATADIR%%/library/linear.dcm
 %%DATADIR%%/library/linear.lib
 %%DATADIR%%/library/logo.lib
@@ -513,6 +514,7 @@ share/icons/hicolor/scalable/mimetypes/application-x-pcbnew-project.svg
 %%DATADIR%%/modules/Printtrafo_CHK_Part2_RevA_04Aug2010.kicad_pcb
 %%DATADIR%%/modules/Printtrafo_CHK_Part3_RevA_04Aug2010.kicad_pcb
 %%DATADIR%%/modules/Relays_ThroughHole.kicad_pcb
+%%DATADIR%%/modules/Resistor_ThroughHole.kicad_pcb
 %%DATADIR%%/modules/Resistors_SMD.kicad_pcb
 %%DATADIR%%/modules/Resistors_ThroughHole.kicad_pcb
 %%DATADIR%%/modules/Resistors_Universal.kicad_pcb
@@ -2043,6 +2045,14 @@ share/icons/hicolor/scalable/mimetypes/application-x-pcbnew-project.svg
 %%DATADIR%%/modules/packages3d/discret/leds/led3_vertical_branco.wrl
 %%DATADIR%%/modules/packages3d/discret/leds/led3_vertical_verde.wings
 %%DATADIR%%/modules/packages3d/discret/leds/led3_vertical_verde.wrl
+%%DATADIR%%/modules/packages3d/discret/leds/led5-3_vertical-H10mm.wings
+%%DATADIR%%/modules/packages3d/discret/leds/led5-3_vertical-H10mm.wrl
+%%DATADIR%%/modules/packages3d/discret/leds/led5-3_vertical-H15mm.wings
+%%DATADIR%%/modules/packages3d/discret/leds/led5-3_vertical-H15mm.wrl
+%%DATADIR%%/modules/packages3d/discret/leds/led5-3_vertical-H5mm.wings
+%%DATADIR%%/modules/packages3d/discret/leds/led5-3_vertical-H5mm.wrl
+%%DATADIR%%/modules/packages3d/discret/leds/led5-3_vertical.wings
+%%DATADIR%%/modules/packages3d/discret/leds/led5-3_vertical.wrl
 %%DATADIR%%/modules/packages3d/discret/leds/led5_vertical_amarelo.wings
 %%DATADIR%%/modules/packages3d/discret/leds/led5_vertical_amarelo.wrl
 %%DATADIR%%/modules/packages3d/discret/leds/led5_vertical_branco.wings
