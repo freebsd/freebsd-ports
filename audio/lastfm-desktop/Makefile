@@ -12,17 +12,13 @@ DISTNAME=	Last.fm-${PORTVERSION}
 MAINTAINER=	vg@FreeBSD.org
 COMMENT=	Official Last.fm desktop application suite
 
-BROKEN=		Does not build
-DEPRECATED=	Broken for more than 6 months
-EXPIRATION_DATE=	2014-09-28
-
 LICENSE=	GPLv3
 
 LIB_DEPENDS=	liblastfm.so:${PORTSDIR}/audio/liblastfm \
 		libavcodec.so:${PORTSDIR}/multimedia/ffmpeg \
 		libgpod.so:${PORTSDIR}/audio/libgpod
 
-USES=		pkgconfig qmake tar:bzip2
+USES=		pkgconfig qmake tar:bzip2 gmake
 USE_QT4=	gui linguist_build moc_build network phonon \
 		rcc_build uic_build webkit xml
 LASTFM=		${PORTNAME}${PKGNAMESUFFIX}
