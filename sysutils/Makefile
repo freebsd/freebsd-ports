@@ -689,6 +689,7 @@
     SUBDIR += pessulus
     SUBDIR += pflogx
     SUBDIR += pfstat
+    SUBDIR += pftables
     SUBDIR += pftop
     SUBDIR += phantom
     SUBDIR += philesight
