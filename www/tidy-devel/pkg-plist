@@ -5,8 +5,7 @@ include/tidy/platform.h
 include/tidy/tidy.h
 include/tidy/tidyenum.h
 %%SHLIB%%lib/libtidy-0.99.so.0
-%%SHLIB%%lib/libtidy-0.99.so
-%%SHLIB%%lib/libtidy.la
+%%SHLIB%%lib/libtidy-0.99.so.0.0.0
 %%SHLIB%%lib/libtidy.so
 lib/libtidy.a
 %%NSHLIB%%man/man1/tidy.1.gz

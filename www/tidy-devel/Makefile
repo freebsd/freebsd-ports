@@ -3,7 +3,7 @@
 
 PORTNAME?=	tidy
 DISTVERSION=	090315-cvs
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 #MASTER_SITES=	http://tidy.sourceforge.net/src/%SUBDIR%/	\
@@ -29,9 +29,11 @@ PLIST_SUB=	SHLIB="@comment " NSHLIB=""
 MAKE_ARGS+=	PREFIX=${STAGEDIR}${PREFIX}
 CONFLICTS=	tidy-20000804* tidy-lib-[0-9]*
 .else
-USE_AUTOTOOLS=	automake autoconf libtool
+USES+=		libtool
+USE_AUTOTOOLS=	aclocal automake autoconf libtoolize
 AUTOMAKE_ARGS+=	-a -c --foreign
 USE_LDCONFIG=	yes
+INSTALL_TARGET=	install-strip
 PLIST_SUB=	SHLIB="" NSHLIB="@comment "
 CONFLICTS=	tidy-devel-[0-9]*
 .endif
@@ -84,28 +86,10 @@ post-patch:
 . endfor
 .endif
 
-patch-autotools-libtool::
-.if defined(WITH_SHLIB)
-	(cd ${WRKSRC}				\
-	&& ${LIBTOOLIZE} --force --copy		\
-	&& ${ACLOCAL}				\
-	&& ${REINPLACE_CMD} -e '/^_LT_AC_SHELL_INIT/d' aclocal.m4)
-	(cd ${PATCH_WRKSRC};			\
-	for ltf in ${LIBTOOLFILES}; do		\
-		${CP} $$ltf $$ltf.tmp;	\
-		${SED} -e "s^\$$ac_aux_dir/ltconfig^${LTCONFIG}^g" \
-			-e "/^ltmain=/!s^\$$ac_aux_dir/ltmain.sh^${LIBTOOLFLAGS} ${LTMAIN}^g" \
-			$$ltf.tmp > $$ltf;	\
-	 done);
-.endif
-
 post-install:
 .for pgm in ${BIN2STRIP}
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${pgm}
 .endfor
-.if defined(WITH_SHLIB)
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libtidy-0.99.so.0
-.endif
 .if ${PORT_OPTIONS:MDOCS}
 	@${ECHO_MSG} "===>   Installing documentation for ${PKGNAME}"
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
