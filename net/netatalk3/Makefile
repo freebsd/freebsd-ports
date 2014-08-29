@@ -3,7 +3,7 @@
 
 PORTNAME=	netatalk
 PORTVERSION=	3.1.3
-PORTREVISION=	2
+PORTREVISION=	3
 PORTEPOCH=	1
 CATEGORIES=	net
 MASTER_SITES=	SF
@@ -114,7 +114,7 @@ CONFIGURE_ARGS+=	--disable-sendfile
 
 .if ${PORT_OPTIONS:MDBUS} || exists(${LOCALBASE}/libdata/pkgconfig/dbus-glib-1.pc)
 LIB_DEPENDS+=		libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib
-RUN_DEPENDS+=		${LOCALBASE}/libdata/pkgconfig/dbus-python.pc:${PORTSDIR}/devel/py-dbus
+RUN_DEPENDS+=		${LOCALBASE}/libdata/pkgconfig/dbus-python.pc:${PORTSDIR}/devel/pydbus-common
 PLIST_SUB+=		DBUS=""
 .else
 PLIST_SUB+=		DBUS="@comment "
