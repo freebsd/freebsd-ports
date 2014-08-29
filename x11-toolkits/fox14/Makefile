@@ -3,7 +3,7 @@
 
 PORTNAME=	fox
 PORTVERSION=	1.4.35
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://www.fox-toolkit.org/ftp/ \
 		ftp://ftp.fox-toolkit.org/pub/ \
@@ -21,7 +21,7 @@ MAJORVER=	${PORTVERSION:R}
 SHVER=		${PORTVERSION:S/${MAJORVER}.//}
 PLIST_SUB+=	MAJORVER=${MAJORVER} SHVER=${SHVER}
 
-USES=		libtool:keepla
+USES=		libtool
 USE_GL=		yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-opengl=yes \
