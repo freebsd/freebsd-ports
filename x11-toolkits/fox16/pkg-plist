@@ -292,12 +292,10 @@ include/fox-%%MAJORVER%%/fxkeys.h
 include/fox-%%MAJORVER%%/fxver.h
 include/fox-%%MAJORVER%%/xincs.h
 lib/libCHART-%%MAJORVER%%.a
-lib/libCHART-%%MAJORVER%%.la
 lib/libCHART-%%MAJORVER%%.so
 lib/libCHART-%%MAJORVER%%.so.0
 lib/libCHART-%%MAJORVER%%.so.0.0.49
 lib/libFOX-%%MAJORVER%%.a
-lib/libFOX-%%MAJORVER%%.la
 lib/libFOX-%%MAJORVER%%.so
 lib/libFOX-%%MAJORVER%%.so.0
 lib/libFOX-%%MAJORVER%%.so.0.0.49
