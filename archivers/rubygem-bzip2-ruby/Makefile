@@ -1,12 +1,11 @@
 # Created by: Steve Wills <swills@FreeBSD.org>
 # $FreeBSD$
 
-PORTNAME=	bzip2
+PORTNAME=	bzip2-ruby
 PORTVERSION=	0.2.7
 PORTREVISION=	2
 CATEGORIES=	archivers rubygems
 MASTER_SITES=	RG
-DISTNAME=	${PORTNAME}-ruby-${PORTVERSION}
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Ruby C bindings to libbzip2
@@ -16,7 +15,6 @@ LICENSE_COMB=	dual
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
-GEM_NAME=	${PORTNAME}-ruby-${PORTVERSION}
 RUBYGEM_AUTOPLIST=	yes
 
 .include <bsd.port.mk>

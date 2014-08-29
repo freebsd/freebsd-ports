@@ -3,7 +3,7 @@
 
 PORTNAME=	puppet
 PORTVERSION=	3.6.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://downloads.puppetlabs.com/puppet/
 
@@ -52,7 +52,7 @@ BROKEN=	PACKAGE_ROOT option patch is incompatable with PACKAGE_ORIGIN patch.
 
 .if ${PORT_OPTIONS:MPACKAGE_ORIGIN}
 EXTRA_PATCHES+=	${FILESDIR}/optpatch-package_origin
-RUN_DEPENDS+=	rubygem-bzip2>=0:${PORTSDIR}/archivers/rubygem-bzip2
+RUN_DEPENDS+=	rubygem-bzip2-ruby>=0:${PORTSDIR}/archivers/rubygem-bzip2-ruby
 .endif
 
 post-patch:
