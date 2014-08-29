@@ -16,7 +16,7 @@ LICENSE=	MIT
 LIB_DEPENDS=	libboost_python.so:${PORTSDIR}/devel/boost-python-libs \
 		libtag.so:${PORTSDIR}/audio/taglib
 
-USES=		shebangfix compiler:c++11-lang
+USES=		compiler:c++11-lang python shebangfix
 HAS_CONFIGURE=	yes
 CONFIGURE_SCRIPT=	configure.py
 CONFIGURE_ARGS=	--taglib-inc-dir="${LOCALBASE}/include/taglib" \
@@ -27,8 +27,6 @@ CONFIGURE_ARGS=	--taglib-inc-dir="${LOCALBASE}/include/taglib" \
 python_OLD_CMD=	/usr/bin/env python
 python_CMD=	${PYTHON_CMD}
 SHEBANG_FILES=	configure.py
-
-USES=		python
 USE_PYTHON=	distutils autoplist
 
 .include <bsd.port.mk>
