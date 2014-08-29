@@ -3,7 +3,7 @@
 
 PORTNAME=	openbox
 PORTVERSION=	3.5.2
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://openbox.org/dist/openbox/
 
@@ -13,7 +13,7 @@ COMMENT=	Small, fast, standards compliant, extensible window manager
 LICENSE=	GPLv2
 
 GNU_CONFIGURE=	yes
-USES=		gmake libtool:keepla pathfix pkgconfig
+USES=		gmake libtool pathfix pkgconfig
 USE_GNOME=	glib20 libxml2
 USE_XORG=	xext xft
 USE_LDCONFIG=	yes
