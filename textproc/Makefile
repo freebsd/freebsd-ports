@@ -1180,6 +1180,7 @@
     SUBDIR += py-pyctpp2
     SUBDIR += py-pyelasticsearch
     SUBDIR += py-pygments
+    SUBDIR += py-pygtail
     SUBDIR += py-pyscss
     SUBDIR += py-pysrt
     SUBDIR += py-pystache
