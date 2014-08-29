@@ -18,4 +18,10 @@ USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS?=--without-gtk
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if defined(PKGNAMESUFFIX) && ${OPSYS} == FreeBSD && ${OSVERSION} > 1000000
+BROKEN=		does not link against GTK2 on FreeBSD 10+
+.endif
+
+.include <bsd.port.post.mk>
