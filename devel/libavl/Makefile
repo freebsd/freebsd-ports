@@ -15,4 +15,7 @@ GNU_CONFIGURE=	yes
 
 INFO=		avl
 
+post-patch:
+	${REINPLACE_CMD} -e '/echo.*RANLIB/,+1d' ${WRKSRC}/Makefile.in
+
 .include <bsd.port.mk>
