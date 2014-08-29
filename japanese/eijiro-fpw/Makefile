@@ -3,7 +3,7 @@
 
 PORTNAME=	eijiro-fpw
 PORTVERSION=	1.0b
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	japanese
 MASTER_SITES=	http://openlab.ring.gr.jp/edict/fpw/dist/eijiro/
 DISTNAME=	${PORTNAME}${PORTVERSION}-src
@@ -11,39 +11,45 @@ DISTNAME=	${PORTNAME}${PORTVERSION}-src
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	EIJIRO English - Japanese Dictionary (EPWING V1 format)
 
-EXTRACT_DEPENDS=${LOCALBASE}/share/freepwing/fpwutils.mk:${PORTSDIR}/japanese/freepwing
+EXTRACT_DEPENDS=${LOCALBASE}/share/freepwing/fpwutils.mk:${PORTSDIR}/japanese/freepwing \
+		lha:${PORTSDIR}/archivers/lha
 BUILD_DEPENDS=	${LOCALBASE}/libexec/freepwing/catdump:${PORTSDIR}/japanese/freepwing \
 		ja-p5-Jcode>=0:${PORTSDIR}/japanese/p5-Jcode
 
-MANUAL_PACKAGE_BUILD=Needs data from CDROM
+MANUAL_PACKAGE_BUILD=	Needs data from CDROM
+MAKE_JOBS_UNSAFE=	yes
+
 RESTRICTED=	The original dictionary is not free
-USES=		perl5 gmake
-MAKE_JOBS_UNSAFE=yes
+USES=		dos2unix gmake perl5
+DOS2UNIX_FILES=	Makefile
 WRKSRC=		${WRKDIR}/eijiro-fpw${PORTVERSION}
+PORTDOCS=	readme.sjis
 DICT_PATH?=	/cdrom
 SRCFILE?=	eijiro52.txt
 
+PLIST_FILES=	share/dict/eijiro-fpw/eijiro/data/honmon \
+		share/dict/eijiro-fpw/catalogs
+PLIST_DIRS=	share/dict/eijiro-fpw/eijiro/data \
+		share/dict/eijiro-fpw/eijiro \
+		share/dict/eijiro-fpw
+
 # For eijiro included in a book sold by ALC Inc.
 # (http://www.alc.co.jp/alcshop/eng/eijiro/)
+# Avoid copying uncompressed srcfile, it is > 50Mb
 
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
-
-DICT_ARCHIVE!=	${ECHO_CMD} ${DICT_PATH}/eijiro-original/*.exe || ${TRUE}
-.if exists(${DICT_ARCHIVE})
-EXTRACT_DEPENDS+=	lha:${PORTSDIR}/archivers/lha
-
-CDROM_PATH:=	${DICT_PATH}
-DICT_PATH:=	${WRKDIR}
+.if exists(${WRKDIR}/${SRCFILE})
+MAKE_ARGS+=	SRCFILE=${WRKDIR}/${SRCFILE}
 .else
-CDROM_PATH=	${NONEXISTENT}
-.endif
+MAKE_ARGS+=	SRCFILE=${DICT_PATH}/${SRCFILE}
+.fi
 
-MAKE_ARGS:=	SRCFILE=${DICT_PATH}/${SRCFILE}
+OPTIONS_DEFINE=	DOCS
+
+.include <bsd.port.options.mk>
 
 post-extract:
-	@if [ -f ${CDROM_PATH}/eijiro-original/*.exe ]; then \
-	  lha xiw=${WRKDIR} ${CDROM_PATH}/eijiro-original/*.exe '*/${SRCFILE}'; \
+	@if [ -f ${DICT_PATH}/eijiro-original/*.exe ]; then \
+	  lha xiw=${WRKDIR} ${DICT_PATH}/eijiro-original/*.exe '*/${SRCFILE}'; \
 	elif [ ! -f ${DICT_PATH}/${SRCFILE} ]; then \
 	  ${ECHO} "###################################################"; \
 	  ${ECHO} "I cannot find a file ${DICT_PATH}/${SRCFILE}"; \
@@ -62,14 +68,12 @@ post-build:
 	${SETENV} CATDUMPFLAGS="-e sjis" fpwmake catalogs
 
 do-install:
-	${MKDIR} ${PREFIX}/share/dict/eijiro-fpw/eijiro/data
-	${INSTALL_DATA} ${WRKSRC}/honmon ${PREFIX}/share/dict/eijiro-fpw/eijiro/data
-	${INSTALL_DATA} ${WRKSRC}/catalogs ${PREFIX}/share/dict/eijiro-fpw
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-.for i in readme.sjis
-	${INSTALL_DATA} ${WRKSRC}/$i ${DOCSDIR}
-.endfor
-.endif
+	${MKDIR} ${STAGEDIR}${PREFIX}/share/dict/eijiro-fpw/eijiro/data \
+		${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/honmon \
+		${STAGEDIR}${PREFIX}/share/dict/eijiro-fpw/eijiro/data
+	${INSTALL_DATA} ${WRKSRC}/catalogs \
+		${STAGEDIR}${PREFIX}/share/dict/eijiro-fpw
+	${INSTALL_DATA} ${WRKSRC}/readme.sjis ${STAGEDIR}${DOCSDIR}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
