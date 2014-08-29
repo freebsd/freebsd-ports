@@ -2,16 +2,17 @@
 # $FreeBSD$
 
 PORTNAME=	bsdgames
-PORTVERSION=	3.8.1
-PORTREVISION=	1
+PORTVERSION=	3.8.2
 PORTEPOCH=	1
 CATEGORIES=	games
-# Fetched from http://gitweb.dragonflybsd.org/dragonfly.git/tree/v${PORTVERSION}:/games
+# Fetched from git://git.dragonflybsd.org/dragonfly.git, v${PORTVERSION}, /games
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	adamw
 
 MAINTAINER=	adamw@FreeBSD.org
 COMMENT=	Traditional BSD games taken from DragonFly BSD
+
+LICENSE=	BSD3CLAUSE
 
 CONFLICTS=	hangman-[0-9]*
 
