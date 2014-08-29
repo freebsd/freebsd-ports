@@ -12,19 +12,15 @@ COMMENT=	Tool for creating starter files in various languages
 
 LICENSE=	BSD3CLAUSE
 
-USE_RUBY=	yes
 GNU_CONFIGURE=	yes
 NO_ARCH=	yes
+USE_RUBY=	yes
 
 PORTDOCS=	newfile.html
 
-post-configure:
-	${REINPLACE_CMD} '282s,$$(pkgdatadir)/newfile.rb,$$(DESTDIR)$$(pkgdatadir)/newfile.rb,' ${WRKSRC}/src/Makefile
-	${REINPLACE_CMD} '287s,$$(bindir)/newfile,$$(DESTDIR)$$(bindir)/newfile,' ${WRKSRC}/src/Makefile
-
 post-install:
-	${INSTALL_MAN} ${WRKSRC}/doc/newfile.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_MAN} ${WRKSRC}/doc/newfile.1 ${STAGEDIR}${MAN1PREFIX}/man/man1/
+	${MKDIR} ${STAGEDIR}${DOCSDIR}/
 	cd ${WRKSRC}/doc/ && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}/
 
 .include <bsd.port.mk>
