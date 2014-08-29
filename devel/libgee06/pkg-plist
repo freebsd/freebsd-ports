@@ -1,7 +1,7 @@
 include/gee-1.0/gee.h
-lib/libgee.la
 lib/libgee.so
 lib/libgee.so.2
+lib/libgee.so.2.0.0
 lib/girepository-1.0/Gee-1.0.typelib
 libdata/pkgconfig/gee-1.0.pc
 share/gir-1.0/Gee-1.0.gir
