@@ -1,0 +1,12 @@
+--- gas/configure.tgt.orig	1970-01-01 00:15:16.000000000 +0000
++++ gas/configure.tgt	1970-01-01 00:16:31.000000000 +0000
+@@ -136,6 +136,9 @@
+   arm-*-symbianelf*)			fmt=elf em=symbian ;;
+   arm-*-kaos*)				fmt=elf ;;
+   arm-*-conix*)				fmt=elf ;;
++  arm-*-freebsd9* | armeb-*-freebsd9*)	fmt=elf  em=freebsd ;;
++  arm-*-freebsd* | armeb-*-freebsd*)	fmt=elf  em=armfbsdeabi ;;
++  arm*-*-freebsd*)			fmt=elf  em=armfbsdvfp ;;
+   arm-*-linux*aout*)			fmt=aout em=linux ;;
+   arm-*-linux-*eabi*)			fmt=elf  em=armlinuxeabi ;;
+   arm-*-linux-*)			fmt=elf  em=linux ;;

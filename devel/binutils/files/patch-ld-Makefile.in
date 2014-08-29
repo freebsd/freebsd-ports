@@ -1,0 +1,30 @@
+--- ld/Makefile.in.orig	2013-11-26 11:37:33.000000000 +0000
++++ ld/Makefile.in	2014-05-15 23:42:02.000000000 +0000
+@@ -473,6 +473,7 @@
+ 	earmelf_nbsd.c \
+ 	earmelf_vxworks.c \
+ 	earmelfb.c \
++	earmelfb_fbsd.c \
+ 	earmelfb_linux.c \
+ 	earmelfb_linux_eabi.c \
+ 	earmelfb_nacl.c \
+@@ -1109,6 +1110,7 @@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/earmelf_nbsd.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/earmelf_vxworks.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/earmelfb.Po@am__quote@
++@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/earmelfb_fbsd.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/earmelfb_linux.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/earmelfb_linux_eabi.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/earmelfb_nacl.Po@am__quote@
+@@ -2249,6 +2251,11 @@
+   $(ELF_DEPS) $(srcdir)/emultempl/armelf.em \
+   $(srcdir)/scripttempl/elf.sc ${GEN_DEPENDS}
+ 	${GENSCRIPTS} armelfb "$(tdir_armelfb)"
++earmelfb_fbsd.c: $(srcdir)/emulparams/armelfb_fbsd.sh \
++  $(srcdir)/emulparams/armelf_fbsd.sh \
++  $(ELF_DEPS) $(srcdir)/emultempl/armelf.em \
++  $(srcdir)/scripttempl/elf.sc ${GEN_DEPENDS}
++	${GENSCRIPTS} armelfb_fbsd "$(tdir_armelfb_fbsd)"
+ earmelfb_linux.c: $(srcdir)/emulparams/armelfb_linux.sh \
+   $(srcdir)/emulparams/armelf_linux.sh \
+   $(ELF_DEPS) $(srcdir)/emultempl/armelf.em \
