@@ -3,6 +3,7 @@
 
 PORTNAME=	freehdl
 PORTVERSION=	0.0.7
+PORTREVISION=	1
 CATEGORIES=	cad
 MASTER_SITES=	http://freehdl.seul.org/~enaroska/
 
@@ -10,11 +11,10 @@ MAINTAINER=	kamikaze@bsdforen.de
 COMMENT=	Free VHDL simulator
 
 USE_LDCONFIG=	yes
-USES=		gmake perl5 pkgconfig
+USES=		gmake pathfix libtool makeinfo perl5 pkgconfig
 USE_GCC=	any
-USE_GNOME=	gnomehack
-USE_AUTOTOOLS=	libtool
-HAS_CONFIGURE=	yes
+GNU_CONFIGURE=	yes
+INSTALL_TARGET=	install-strip
 
 INFO=		fire
 
