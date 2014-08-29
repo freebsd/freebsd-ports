@@ -1,0 +1,174 @@
+bin/cassandra-cli
+%%CQL%%bin/cqlsh
+bin/json2sstable
+bin/nodetool
+bin/repaircluster
+bin/sstable2json
+bin/sstablekeys
+bin/sstableloader
+bin/sstablescrub
+%%DATADIR%%/bin/cassandra
+%%DATADIR%%/bin/cassandra-cli
+%%DATADIR%%/bin/cassandra.in.sh
+%%CQL%%%%DATADIR%%/bin/cqlsh
+%%DATADIR%%/bin/debug-cql
+%%DATADIR%%/bin/json2sstable
+%%DATADIR%%/bin/nodetool
+%%DATADIR%%/bin/repaircluster
+%%DATADIR%%/bin/sstable2json
+%%DATADIR%%/bin/sstablekeys
+%%DATADIR%%/bin/sstableloader
+%%DATADIR%%/bin/sstablescrub
+%%DATADIR%%/bin/sstablesplit
+%%DATADIR%%/bin/sstableupgrade
+%%DATADIR%%/conf/README.txt
+%%DATADIR%%/conf/cassandra-env.sh
+@sample %%DATADIR%%/conf/cassandra-rackdc.properties.sample
+@sample %%DATADIR%%/conf/cassandra-topology.properties.sample
+%%DATADIR%%/conf/cassandra-topology.yaml
+@sample %%DATADIR%%/conf/cassandra.yaml.sample
+@sample %%DATADIR%%/conf/commitlog_archiving.properties.sample
+@sample %%DATADIR%%/conf/cqlshrc.sample
+@sample %%DATADIR%%/conf/log4j-server.properties.sample
+@sample %%DATADIR%%/conf/log4j-tools.properties.sample
+%%DATADIR%%/conf/metrics-reporter-config-sample.yaml
+%%DATADIR%%/conf/triggers/README.txt
+%%DATADIR%%/interface/cassandra.thrift
+%%DATADIR%%/lib/antlr-3.2.jar
+%%DATADIR%%/lib/apache-cassandra-2.0.10.jar
+%%DATADIR%%/lib/apache-cassandra-clientutil-2.0.10.jar
+%%DATADIR%%/lib/apache-cassandra-thrift-2.0.10.jar
+%%DATADIR%%/lib/commons-cli-1.1.jar
+%%DATADIR%%/lib/commons-codec-1.2.jar
+%%DATADIR%%/lib/commons-lang3-3.1.jar
+%%DATADIR%%/lib/compress-lzf-0.8.4.jar
+%%DATADIR%%/lib/concurrentlinkedhashmap-lru-1.3.jar
+%%CQL%%%%DATADIR%%/lib/cql-internal-only-1.4.1.zip
+%%DATADIR%%/lib/disruptor-3.0.1.jar
+%%DATADIR%%/lib/guava-15.0.jar
+%%DATADIR%%/lib/high-scale-lib-1.1.2.jar
+%%DATADIR%%/lib/jackson-core-asl-1.9.2.jar
+%%DATADIR%%/lib/jackson-mapper-asl-1.9.2.jar
+%%DATADIR%%/lib/jamm-0.2.5.jar
+%%DATADIR%%/lib/jbcrypt-0.3m.jar
+%%DATADIR%%/lib/jline-1.0.jar
+%%JNA%%%%DATADIR%%/lib/jna-platform.jar
+%%JNA%%%%DATADIR%%/lib/jna.jar
+%%DATADIR%%/lib/json-simple-1.1.jar
+%%DATADIR%%/lib/libthrift-0.9.1.jar
+%%DATADIR%%/lib/licenses/antlr-3.2.txt
+%%DATADIR%%/lib/licenses/commons-cli-1.1.txt
+%%DATADIR%%/lib/licenses/commons-codec-1.2.txt
+%%DATADIR%%/lib/licenses/commons-lang3-3.1.txt
+%%DATADIR%%/lib/licenses/compress-lzf-0.8.4.txt
+%%DATADIR%%/lib/licenses/concurrentlinkedhashmap-lru-1.3.txt
+%%DATADIR%%/lib/licenses/cql-1.4.0.txt
+%%DATADIR%%/lib/licenses/disruptor-3.0.1.txt
+%%DATADIR%%/lib/licenses/guava-15.0.txt
+%%DATADIR%%/lib/licenses/high-scale-lib-1.1.2.txt
+%%DATADIR%%/lib/licenses/jackson-core-asl-1.9.2.txt
+%%DATADIR%%/lib/licenses/jackson-mapper-asl-1.9.2.txt
+%%DATADIR%%/lib/licenses/jamm-0.2.5.txt
+%%DATADIR%%/lib/licenses/jbcrypt-0.3m.txt
+%%DATADIR%%/lib/licenses/jline-1.0.txt
+%%DATADIR%%/lib/licenses/json-simple-1.1.txt
+%%DATADIR%%/lib/licenses/libthrift-0.9.1.txt
+%%DATADIR%%/lib/licenses/log4j-1.2.16.txt
+%%DATADIR%%/lib/licenses/lz4-1.2.0.txt
+%%DATADIR%%/lib/licenses/metrics-core-2.2.0.txt
+%%DATADIR%%/lib/licenses/netty-3.5.9.txt
+%%DATADIR%%/lib/licenses/netty-3.6.6.txt
+%%DATADIR%%/lib/licenses/reporter-config-2.1.0.txt
+%%DATADIR%%/lib/licenses/servlet-api-2.5-20081211.txt
+%%DATADIR%%/lib/licenses/slf4j-api-1.7.2.txt
+%%DATADIR%%/lib/licenses/slf4j-log4j12-1.7.2.txt
+%%DATADIR%%/lib/licenses/snakeyaml-1.11.txt
+%%DATADIR%%/lib/licenses/snappy-java-1.0.5.txt
+%%DATADIR%%/lib/licenses/snaptree-0.1.txt
+%%DATADIR%%/lib/licenses/super-csv-2.1.0.txt
+%%DATADIR%%/lib/licenses/thrift-python-0.9.1.txt
+%%DATADIR%%/lib/licenses/thrift-server-0.3.3.txt
+%%DATADIR%%/lib/log4j-1.2.16.jar
+%%DATADIR%%/lib/lz4-1.2.0.jar
+%%DATADIR%%/lib/metrics-core-2.2.0.jar
+%%MX4J%%%%DATADIR%%/lib/mx4j-tools.jar
+%%DATADIR%%/lib/netty-3.6.6.Final.jar
+%%DATADIR%%/lib/reporter-config-2.1.0.jar
+%%DATADIR%%/lib/servlet-api-2.5-20081211.jar
+%%DATADIR%%/lib/slf4j-api-1.7.2.jar
+%%DATADIR%%/lib/slf4j-log4j12-1.7.2.jar
+%%DATADIR%%/lib/snakeyaml-1.11.jar
+%%DATADIR%%/lib/snappy-java.jar
+%%DATADIR%%/lib/snaptree-0.1.jar
+%%DATADIR%%/lib/super-csv-2.1.0.jar
+%%CQL%%%%DATADIR%%/lib/thrift-python-internal-only-0.9.1.zip
+%%DATADIR%%/lib/thrift-server-internal-only-0.3.3.jar
+%%CQL%%%%DATADIR%%/pylib/cqlshlib/__init__.py
+%%CQL%%%%DATADIR%%/pylib/cqlshlib/__init__.pyc
+%%CQL%%%%DATADIR%%/pylib/cqlshlib/cql3handling.py
+%%CQL%%%%DATADIR%%/pylib/cqlshlib/cql3handling.pyc
+%%CQL%%%%DATADIR%%/pylib/cqlshlib/cqlhandling.py
+%%CQL%%%%DATADIR%%/pylib/cqlshlib/cqlhandling.pyc
+%%CQL%%%%DATADIR%%/pylib/cqlshlib/displaying.py
+%%CQL%%%%DATADIR%%/pylib/cqlshlib/displaying.pyc
+%%CQL%%%%DATADIR%%/pylib/cqlshlib/formatting.py
+%%CQL%%%%DATADIR%%/pylib/cqlshlib/formatting.pyc
+%%CQL%%%%DATADIR%%/pylib/cqlshlib/helptopics.py
+%%CQL%%%%DATADIR%%/pylib/cqlshlib/helptopics.pyc
+%%CQL%%%%DATADIR%%/pylib/cqlshlib/pylexotron.py
+%%CQL%%%%DATADIR%%/pylib/cqlshlib/pylexotron.pyc
+%%CQL%%%%DATADIR%%/pylib/cqlshlib/saferscanner.py
+%%CQL%%%%DATADIR%%/pylib/cqlshlib/saferscanner.pyc
+%%CQL%%%%DATADIR%%/pylib/cqlshlib/ssl.py
+%%CQL%%%%DATADIR%%/pylib/cqlshlib/ssl.pyc
+%%CQL%%%%DATADIR%%/pylib/cqlshlib/test/__init__.py
+%%CQL%%%%DATADIR%%/pylib/cqlshlib/test/__init__.pyc
+%%CQL%%%%DATADIR%%/pylib/cqlshlib/test/ansi_colors.py
+%%CQL%%%%DATADIR%%/pylib/cqlshlib/test/ansi_colors.pyc
+%%CQL%%%%DATADIR%%/pylib/cqlshlib/test/basecase.py
+%%CQL%%%%DATADIR%%/pylib/cqlshlib/test/basecase.pyc
+%%CQL%%%%DATADIR%%/pylib/cqlshlib/test/cassconnect.py
+%%CQL%%%%DATADIR%%/pylib/cqlshlib/test/cassconnect.pyc
+%%CQL%%%%DATADIR%%/pylib/cqlshlib/test/run_cqlsh.py
+%%CQL%%%%DATADIR%%/pylib/cqlshlib/test/run_cqlsh.pyc
+%%CQL%%%%DATADIR%%/pylib/cqlshlib/test/test_cql_parsing.py
+%%CQL%%%%DATADIR%%/pylib/cqlshlib/test/test_cql_parsing.pyc
+%%CQL%%%%DATADIR%%/pylib/cqlshlib/test/test_cqlsh_commands.py
+%%CQL%%%%DATADIR%%/pylib/cqlshlib/test/test_cqlsh_commands.pyc
+%%CQL%%%%DATADIR%%/pylib/cqlshlib/test/test_cqlsh_completion.py
+%%CQL%%%%DATADIR%%/pylib/cqlshlib/test/test_cqlsh_completion.pyc
+%%CQL%%%%DATADIR%%/pylib/cqlshlib/test/test_cqlsh_invocation.py
+%%CQL%%%%DATADIR%%/pylib/cqlshlib/test/test_cqlsh_invocation.pyc
+%%CQL%%%%DATADIR%%/pylib/cqlshlib/test/test_cqlsh_output.py
+%%CQL%%%%DATADIR%%/pylib/cqlshlib/test/test_cqlsh_output.pyc
+%%CQL%%%%DATADIR%%/pylib/cqlshlib/test/test_keyspace_init.cql
+%%CQL%%%%DATADIR%%/pylib/cqlshlib/tfactory.py
+%%CQL%%%%DATADIR%%/pylib/cqlshlib/tfactory.pyc
+%%CQL%%%%DATADIR%%/pylib/cqlshlib/tracing.py
+%%CQL%%%%DATADIR%%/pylib/cqlshlib/tracing.pyc
+%%CQL%%%%DATADIR%%/pylib/cqlshlib/util.py
+%%CQL%%%%DATADIR%%/pylib/cqlshlib/util.pyc
+%%CQL%%%%DATADIR%%/pylib/cqlshlib/wcwidth.py
+%%CQL%%%%DATADIR%%/pylib/cqlshlib/wcwidth.pyc
+%%CQL%%%%DATADIR%%/pylib/setup.py
+%%CQL%%%%DATADIR%%/pylib/setup.pyc
+%%DATADIR%%/tools/bin/cassandra-stress
+%%DATADIR%%/tools/bin/cassandra-stressd
+%%DATADIR%%/tools/bin/cassandra.in.sh
+%%DATADIR%%/tools/bin/sstablelevelreset
+%%DATADIR%%/tools/bin/sstablemetadata
+%%DATADIR%%/tools/bin/token-generator
+%%DATADIR%%/tools/lib/stress.jar
+@dirrmtry %%DATADIR%%/bin
+@dirrmtry %%DATADIR%%/conf/triggers
+@dirrmtry %%DATADIR%%/conf
+@dirrmtry %%DATADIR%%/interface
+@dirrmtry %%DATADIR%%/lib/licenses
+@dirrmtry %%DATADIR%%/lib
+%%CQL%%@dirrmtry %%DATADIR%%/pylib/cqlshlib/test
+%%CQL%%@dirrmtry %%DATADIR%%/pylib/cqlshlib
+%%CQL%%@dirrmtry %%DATADIR%%/pylib
+@dirrmtry %%DATADIR%%/tools/bin
+@dirrmtry %%DATADIR%%/tools/lib
+@dirrmtry %%DATADIR%%/tools
+@dirrmtry %%DATADIR%%
