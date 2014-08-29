@@ -3,7 +3,7 @@
 
 PORTNAME=	ofc
 PORTVERSION=	0.8.1
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	lang
 MASTER_SITES=	GOOGLE_CODE
 
@@ -17,27 +17,16 @@ LIB_DEPENDS=	libexpat.so:${PORTSDIR}/textproc/expat2 \
 
 PROJECTHOST=	${PORTNAME}
 USE_SDL=	sdl
-USES=		libtool pathfix
+USES=		libtool objc pathfix
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/libpng15 ${PTHREAD_CFLAGS}
 LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
+INSTALL_TARGET=	install-strip
 
 OPTIONS_DEFINE=	GDBM GMP
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MGDBM}
-LIB_DEPENDS+=	libgdbm.so:${PORTSDIR}/databases/gdbm
-.endif
-
-.if ${PORT_OPTIONS:MGMP}
-LIB_DEPENDS+=	libgmp.so:${PORTSDIR}/math/gmp
-.endif
-
-.if ${OSVERSION} >= 900000
-# 'obj/obj-api.h' deprecated on gcc4.7, so ofc require gcc4.6 or early version.
-USE_GCC=	4.6
-.endif
+GDBM_LIB_DEPENDS=	libgdbm.so:${PORTSDIR}/databases/gdbm
+GMP_LIB_DEPENDS=	libgmp.so:${PORTSDIR}/math/gmp
 
 .include <bsd.port.mk>
