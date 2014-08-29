@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	tk
-PORTVERSION=	8.6.1
+PORTVERSION=	8.6.2
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	SF/tcl/Tcl/${PORTVERSION} \
 		${MASTER_SITE_TCLTK}
@@ -27,7 +27,7 @@ XSS_DESC=	XScrnSaver support
 WRKSRC=		${WRKDIR}/${PORTNAME}${PORTVERSION}/unix
 
 ALL_TARGET=	all
-INSTALL_TARGET=	install
+INSTALL_TARGET=	install-strip
 
 USE_LDCONFIG=	yes
 USES+=		tcl:${SHORT_TK_VER}
@@ -57,7 +57,7 @@ PLIST_SUB=	TK_VER=${TK_VER} \
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDEMOS}
-INSTALL_TARGET+=	install install-demos
+INSTALL_TARGET+=	install-demos
 PLIST_SUB+=	DEMOS=""
 .else
 PLIST_SUB+=	DEMOS="@comment "
@@ -83,10 +83,6 @@ post-patch:
 	     s|@TK_BUILD_STUB_LIB_PATH@|@TK_STUB_LIB_PATH@|; \
 	     s|@TK_SRC_DIR@|${PREFIX}/include/tk${TK_VER}|' \
 	     ${WRKSRC}/tkConfig.sh.in
-
-post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/wish${TK_VER}
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libtk${SHORT_TK_VER}.so.1
 
 regression-test:	build
 	cd ${WRKSRC}; ${MAKE} test

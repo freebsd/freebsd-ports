@@ -1,0 +1,19 @@
+--- configure.orig	2014-08-27 18:23:13.000000000 +0200
++++ configure	2014-08-29 13:46:28.000000000 +0200
+@@ -5606,15 +5606,11 @@
+ 		LDFLAGS="$LDFLAGS $PTHREAD_LIBS"
+ fi
+ 
+-	    case $system in
+-	    FreeBSD-3.*)
+ 		# Version numbers are dot-stripped by system policy.
+ 		TCL_TRIM_DOTS=`echo ${VERSION} | tr -d .`
+ 		UNSHARED_LIB_SUFFIX='${TCL_TRIM_DOTS}.a'
+-		SHARED_LIB_SUFFIX='${TCL_TRIM_DOTS}.so'
++		SHARED_LIB_SUFFIX='${TCL_TRIM_DOTS}.so.1'
+ 		TCL_LIB_VERSIONS_OK=nodots
+-		;;
+-	    esac
+ 	    ;;
+ 	Darwin-*)
+ 	    CFLAGS_OPTIMIZE="-Os"
