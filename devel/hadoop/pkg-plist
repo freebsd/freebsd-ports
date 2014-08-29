@@ -149,19 +149,17 @@ bin/hadoop
 %%DATADIR%%/lib/jsp-2.1/jsp-2.1.jar
 %%DATADIR%%/lib/jsp-2.1/jsp-api-2.1.jar
 %%DATADIR%%/lib/native/Linux-amd64-64/libhadoop.a
-%%DATADIR%%/lib/native/Linux-amd64-64/libhadoop.la
 %%DATADIR%%/lib/native/Linux-amd64-64/libhadoop.so
 %%DATADIR%%/lib/native/Linux-amd64-64/libhadoop.so.1
 %%DATADIR%%/lib/native/Linux-amd64-64/libhadoop.so.1.0.0
 %%DATADIR%%/lib/native/Linux-i386-32/libhadoop.a
-%%DATADIR%%/lib/native/Linux-i386-32/libhadoop.la
 %%DATADIR%%/lib/native/Linux-i386-32/libhadoop.so
 %%DATADIR%%/lib/native/Linux-i386-32/libhadoop.so.1
 %%DATADIR%%/lib/native/Linux-i386-32/libhadoop.so.1.0.0
 %%DATADIR%%/lib/native/%%HADOOP_ARCH%%/libhadoop.a
-%%DATADIR%%/lib/native/%%HADOOP_ARCH%%/libhadoop.la
 %%DATADIR%%/lib/native/%%HADOOP_ARCH%%/libhadoop.so
 %%DATADIR%%/lib/native/%%HADOOP_ARCH%%/libhadoop.so.1
+%%DATADIR%%/lib/native/%%HADOOP_ARCH%%/libhadoop.so.1.0.0
 %%DATADIR%%/lib/asm-3.2.jar
 %%DATADIR%%/lib/aspectjrt-1.6.11.jar
 %%DATADIR%%/lib/aspectjtools-1.6.11.jar
@@ -296,9 +294,9 @@ include/hadoop/TemplateFactory.hh
 lib/libhadooputils.a
 lib/libhadooppipes.a
 lib/libhdfs.a
-lib/libhdfs.so.0
 lib/libhdfs.so
-lib/libhdfs.la
+lib/libhdfs.so.0
+lib/libhdfs.so.0.0.0
 @exec mkdir -p %D/%%DATADIR%%/webapps/secondary/WEB-INF
 @exec mkdir -p %D/%%DATADIR%%/contrib/hdfsproxy/logs
 @exec install -d -o root -g %%HADOOP_GROUP%% -m 0775 %%HADOOP_LOGDIR%%

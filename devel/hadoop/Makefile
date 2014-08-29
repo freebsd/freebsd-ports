@@ -3,7 +3,7 @@
 
 PORTNAME=	hadoop
 PORTVERSION=	1.2.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel java
 MASTER_SITES=	${MASTER_SITE_APACHE} \
 		http://dist.codehaus.org/jetty/jetty-6.1.14/:jetty
@@ -22,6 +22,7 @@ RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
 
 CONFLICTS_INSTALL=	apache-hadoop2-2*
 
+USES=		libtool
 USE_JAVA=	yes
 JAVA_VERSION=	1.7+
 USE_ANT=	yes
