@@ -76,7 +76,9 @@ lib/BackupPC/Zip/FileMember.pm
 lib/Net/FTP/AutoReconnect.pm
 lib/Net/FTP/RetrHandle.pm
 man/man1/backuppc.1.gz
-%%PORTDOCS%%%%DOCSDIR%%/BackupPC.html
+@comment Main html doc should be unconditionally installed.
+@comment CGI uses the BackupPC.html as a documentation page.
+%%DOCSDIR%%/BackupPC.html
 %%PORTDOCS%%%%DOCSDIR%%/BackupPC.pod
 %%WWWDIR%%/0000000.gif
 %%WWWDIR%%/0000011.gif
@@ -156,10 +158,12 @@ man/man1/backuppc.1.gz
 @owner backuppc
 @group backuppc
 @dirrmtry %%ETCDIR%%
+@comment .sample files actually are templates for the configuration script
+@comment and should not be installed as working configuration files.
 @mode 0640
-@sample %%ETCDIR%%/config.pl.sample
+%%ETCDIR%%/config.pl.sample
 @mode 0644
-@sample %%ETCDIR%%/hosts.sample
+%%ETCDIR%%/hosts.sample
 @owner
 @group
 @mode 0544
