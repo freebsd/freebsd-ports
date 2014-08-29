@@ -2,30 +2,28 @@
 # $FreeBSD$
 
 PORTNAME=	translate-toolkit
-PORTVERSION=	1.9.0
-PORTREVISION=	2
+PORTVERSION=	1.12.0
 CATEGORIES=	textproc
-MASTER_SITES=	SF/translate/Translate%20Toolkit/${PORTVERSION} \
-		http://freebsd.unixfreunde.de/sources/
+MASTER_SITES=	CHEESESHOP
 
 MAINTAINER=	jpaetzel@FreeBSD.org
 COMMENT=	Converts between many translation formats
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>=0:${PORTSDIR}/databases/py-sqlite3 \
-		py*-vobject>=0:${PORTSDIR}/deskutils/py-vobject \
+		${PYTHON_PKGNAMEPREFIX}six>0:${PORTSDIR}/devel/py-six \
+		${PYTHON_PKGNAMEPREFIX}vobject>=0:${PORTSDIR}/deskutils/py-vobject \
 		msghack:${PORTSDIR}/devel/gettext-msghack \
-		py*-iniparse>=0:${PORTSDIR}/devel/py-iniparse \
-		py*-levenshtein>=0:${PORTSDIR}/devel/py-levenshtein \
-		py*-lxml>=0:${PORTSDIR}/devel/py-lxml \
+		${PYTHON_PKGNAMEPREFIX}iniparse>=0:${PORTSDIR}/devel/py-iniparse \
+		${PYTHON_PKGNAMEPREFIX}levenshtein>=0:${PORTSDIR}/devel/py-levenshtein \
+		${PYTHON_PKGNAMEPREFIX}lxml>=0:${PORTSDIR}/devel/py-lxml \
 		iso-codes>=1.3:${PORTSDIR}/misc/iso-codes \
 		bash:${PORTSDIR}/shells/bash \
-		py*-utidy>=0:${PORTSDIR}/www/py-utidy
+		${PYTHON_PKGNAMEPREFIX}utidy>=0:${PORTSDIR}/www/py-utidy
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 # Can use psyco (on i386)
 
-USES=		gettext tar:bzip2
-USE_PYTHON=	yes
-USE_PYDISTUTILS=	yes
+USES=		gettext python tar:bzip2
+USE_PYTHON=	autoplist distutils
 
 # list of manual pages to generate
 GEN_MAN=	csv2po.1 csv2tbx.1 html2po.1 ical2po.1 ini2po.1 \
