@@ -125,6 +125,7 @@
     SUBDIR += io
     SUBDIR += ironpython
     SUBDIR += itcl
+    SUBDIR += itcl4
     SUBDIR += jakarta-commons-jelly
     SUBDIR += jimtcl
     SUBDIR += jruby

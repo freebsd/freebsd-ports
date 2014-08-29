@@ -1,0 +1,33 @@
+include/itcl4.0/itcl.h
+include/itcl4.0/itcl2TclOO.h
+include/itcl4.0/itclDecls.h
+include/itcl4.0/itclInt.h
+include/itcl4.0/itclIntDecls.h
+include/itcl4.0/itclMigrate2TclCore.h
+include/itcl4.0/itclTclIntStubsFcn.h
+lib/itcl%%PKGVER%%/itcl.tcl
+lib/itcl%%PKGVER%%/itclConfig.sh
+lib/itcl%%PKGVER%%/itclHullCmds.tcl
+lib/itcl%%PKGVER%%/itclWidget.tcl
+lib/itcl%%PKGVER%%/libitcl%%PKGVER%%.so
+lib/itcl%%PKGVER%%/libitclstub%%PKGVER%%.a
+lib/itcl%%PKGVER%%/pkgIndex.tcl
+man/mann/body.i4.gz
+man/mann/class.i4.gz
+man/mann/code.i4.gz
+man/mann/configbody.i4.gz
+man/mann/delete.i4.gz
+man/mann/ensemble.i4.gz
+man/mann/find.i4.gz
+man/mann/is.i4.gz
+man/mann/itcl.i4.gz
+man/mann/itclcomponent.i4.gz
+man/mann/itcldelegate.i4.gz
+man/mann/itclextendedclass.i4.gz
+man/mann/itcloption.i4.gz
+man/mann/itclvars.i4.gz
+man/mann/itclwidget.i4.gz
+man/mann/local.i4.gz
+man/mann/scope.i4.gz
+@dirrmtry lib/itcl%%PKGVER%%
+@dirrmtry include/itcl4.0
