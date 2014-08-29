@@ -24,6 +24,7 @@ MAKE_ENV=	INSTALL_STRIP_FLAG=${STRIP}
 INSTALLS_ICONS=	yes
 
 LDFLAGS+=	-pthread
+LIBS+=		-L${LOCALBASE}/lib -lX11
 
 SUB_FILES=	pkg-message
 
