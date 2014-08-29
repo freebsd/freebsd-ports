@@ -42,7 +42,7 @@ CONFIGURE_ARGS+=	--disable-croco
 .endif
 
 .if ${PORT_OPTIONS:MTIDY}
-LIB_DEPENDS+=	libtidy-0.99.so:${PORTSDIR}/www/tidy-lib
+LIB_DEPENDS+=	libtidy.so:${PORTSDIR}/www/tidy-lib
 .else
 CONFIGURE_ARGS+=	--disable-tidy
 .endif

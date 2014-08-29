@@ -391,7 +391,7 @@ CONFIGURE_ARGS+=--enable-sysvshm
 .if ${PHP_MODNAME} == "tidy"
 CONFIGURE_ARGS+=--with-tidy=${LOCALBASE}
 
-LIB_DEPENDS+=	libtidy-0.99.so.0:${PORTSDIR}/www/tidy-lib
+LIB_DEPENDS+=	libtidy.so:${PORTSDIR}/www/tidy-lib
 .endif
 
 .if ${PHP_MODNAME} == "tokenizer"
