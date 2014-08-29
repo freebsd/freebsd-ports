@@ -1701,6 +1701,7 @@
     SUBDIR += py-utidy
     SUBDIR += py-w3lib
     SUBDIR += py-waitress
+    SUBDIR += py-webassets
     SUBDIR += py-webhelpers
     SUBDIR += py-webkitgtk
     SUBDIR += py-webob
