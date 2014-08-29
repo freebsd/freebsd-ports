@@ -4,7 +4,7 @@
 PORTNAME=	libevent
 PKGNAMESUFFIX=	-hiphop
 PORTVERSION=	1.4.14b
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	devel
 MASTER_SITES=	http://monkey.org/~provos/
 DISTNAME=	${PORTNAME}-${DISTVERSION}-stable
@@ -22,13 +22,13 @@ GNU_CONFIGURE_PREFIX=	${PREFIX}/${HIPHOP_DIR}/ext
 INSTALL_TARGET=	install-libLTLIBRARIES \
 		install-includeHEADERS \
 		install-nodist_includeHEADERS
+USES=		libtool
 PLIST_SUB+=	HIPHOP_DIR="${HIPHOP_DIR}"
 
 pre-configure:
 	@${MKDIR} ${WRKSRC}/m4
 
 post-patch:
-	@${REINPLACE_CMD} -e 's,CFLAGS =,CFLAGS +=,' ${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e '/LIBS/s/-lrt//g' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|<stdint.h>|<inttypes.h>|' \
 		${WRKSRC}/epoll.c ${WRKSRC}/epoll_sub.c ${WRKSRC}/evdns.c
