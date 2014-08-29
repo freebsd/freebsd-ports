@@ -11,10 +11,7 @@ COMMENT=	pySVG - creating svg with python
 
 LICENSE=	BSD2CLAUSE
 
-USE_PYTHON=	2
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
-
-USES=		zip
+USES=	zip python:2
+USE_PYTHON=	distutils autoplist
 
 .include <bsd.port.mk>
