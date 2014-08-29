@@ -1,7 +1,0 @@
-share/dict/eijiro-fpw/eijiro/data/honmon
-share/dict/eijiro-fpw/catalogs
-@dirrm share/dict/eijiro-fpw/eijiro/data
-@dirrm share/dict/eijiro-fpw/eijiro
-@dirrm share/dict/eijiro-fpw
-%%PORTDOCS%%%%DOCSDIR%%/readme.sjis
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
