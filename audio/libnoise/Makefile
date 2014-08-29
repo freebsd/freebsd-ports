@@ -3,6 +3,7 @@
 
 PORTNAME=	libnoise
 DISTVERSION=	1.0.0
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}%20sources/${PORTVERSION}
 DISTNAME=	${PORTNAME}src-${DISTVERSION}
@@ -11,8 +12,7 @@ EXTRACT_SUFX=	.zip
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Generates three-dimensional coherent noise
 
-USES=		gmake zip
-USE_AUTOTOOLS=	libtool:env
+USES=		gmake libtool:build zip
 USE_LDCONFIG=	yes
 CXXFLAGS+=	-O3 -fomit-frame-pointer
 WRKSRC=		${WRKDIR}/noise

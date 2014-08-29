@@ -43,7 +43,6 @@ include/noise/noise.h
 include/noise/noisegen.h
 include/noise/vectortable.h
 lib/libnoise.a
-lib/libnoise.la
 lib/libnoise.so.0
 lib/libnoise.so.0.3
 @dirrm include/noise/model
