@@ -61,6 +61,7 @@
     SUBDIR += ghmm
     SUBDIR += gnudatalanguage
     SUBDIR += gramps
+    SUBDIR += grib_api
     SUBDIR += gromacs
     SUBDIR += gsmc
     SUBDIR += gtamsanalyzer
