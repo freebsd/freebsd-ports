@@ -13,7 +13,7 @@ LICENSE=	BSD3CLAUSE
 
 GNU_CONFIGURE=	yes
 DATADIR=	${PREFIX}/share/irc
-USES=		tar:bzip2
+USES=		tar:bzip2 iconv
 
 OPTIONS_DEFINE=	IRCBUG EMACS_KEYS OPENSSL
 OPTIONS_DEFAULT=OPENSSL
@@ -33,9 +33,13 @@ CONFIGURE_ARGS+=	--with-openssl=${OPENSSLBASE}
 CONFIGURE_ARGS+=	--without-openssl
 .endif
 
+CPPFLAGS+=	-I${ICONV_PREFIX}/include
+LDFLAGS+=	-L${ICONV_PREFIX}/lib
+
 post-patch:
 	@${REINPLACE_CMD} -e '/^mandir =/s/@mandir@/$$(DESTDIR)&/' \
-		-e '/^LDFLAGS =/s/$$/ -s/' \
+		-e '/^LDFLAGS =/s/$$/ -s ${ICONV_LIB}/' \
+		-e '/^INCLUDES =/s|$$| -I${ICONV_PREFIX}/include -DHAVE_ICONV_OPEN|' \
 		${WRKSRC}/Makefile.in
 
 post-install:
