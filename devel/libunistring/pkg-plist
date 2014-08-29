@@ -38,9 +38,9 @@ include/uniwbrk.h
 include/unilbrk.h
 include/uninorm.h
 include/unicase.h
-lib/libunistring.so.1
-lib/libunistring.so
-lib/libunistring.la
 lib/libunistring.a
+lib/libunistring.so
+lib/libunistring.so.0
+lib/libunistring.so.0.1.2
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm include/unistring
