@@ -16,6 +16,7 @@ LICENSE=	BSD
 
 LIB_DEPENDS=	libupower-glib.so:${PORTSDIR}/sysutils/upower
 
+SSP_UNSAFE=	yes
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 USES=		gmake libtool pkgconfig tar:bzip2
