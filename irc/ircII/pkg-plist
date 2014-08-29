@@ -313,7 +313,6 @@ man/man1/ircII.1.gz
 %%DATADIR%%/help/redirect
 %%DATADIR%%/help/rehash
 %%DATADIR%%/help/restart
-%%DATADIR%%/help/rules
 %%DATADIR%%/help/save
 %%DATADIR%%/help/say
 %%DATADIR%%/help/send
@@ -412,6 +411,10 @@ man/man1/ircII.1.gz
 %%DATADIR%%/help/set/show_stars
 %%DATADIR%%/help/set/show_status_all
 %%DATADIR%%/help/set/show_who_hopcount
+%%DATADIR%%/help/set/ssl_ca_chain_file
+%%DATADIR%%/help/set/ssl_ca_file
+%%DATADIR%%/help/set/ssl_ca_path
+%%DATADIR%%/help/set/ssl_ca_private_key_file
 %%DATADIR%%/help/set/star_prefix
 %%DATADIR%%/help/set/status_away
 %%DATADIR%%/help/set/status_channel
