@@ -29,9 +29,10 @@ bin/vec2rot
 include/mbc.h
 include/mbcxx.h
 lib/libmbc.a
-lib/libmbc.la
 lib/libmbc.so
 lib/libmbc.so.0
+lib/libmbc.so.0.0.0
+man/man1/mbdyn.1.gz
 share/Aster/cms.py
 share/awk/abs2rel.awk
 share/awk/mbdyn2easyanim.awk
