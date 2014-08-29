@@ -30,12 +30,10 @@ etc/xdg/openbox/environment
 etc/xdg/openbox/menu.xml
 etc/xdg/openbox/rc.xml
 lib/libobrender.a
-lib/libobrender.la
 lib/libobrender.so
 lib/libobrender.so.29
 lib/libobrender.so.29.0.1
 lib/libobt.a
-lib/libobt.la
 lib/libobt.so
 lib/libobt.so.2
 lib/libobt.so.2.0.1
