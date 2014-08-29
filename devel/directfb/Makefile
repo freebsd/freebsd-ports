@@ -3,7 +3,7 @@
 
 PORTNAME=	directfb
 PORTVERSION=	1.4.13
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	devel
 MASTER_SITES=	http://www.directfb.org/downloads/Core/${DISTNAME:R}/
 DISTNAME=	DirectFB-${PORTVERSION}
@@ -23,15 +23,15 @@ OPTIONS_DEFAULT=	FREETYPE X11 SDL
 OPTIONS_SUB=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/libpng15
-USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes
-USES=		gmake ncurses pathfix perl5 pkgconfig
+INSTALL_TARGET=	install-strip
+USES=		gmake libtool ncurses pathfix perl5 pkgconfig
 USE_LDCONFIG=	yes
 USE_PERL5=	build
 PORTDOCS=	*
 
-DIRECTFB_SHLIB=	5 # LT_CURRENT
-DIRECTFB_BIN=	5 # LT_BINARY
+DIRECTFB_SHLIB=	5.0.8	# LT_BINARY.LT_AGE.LT_REVISION
+DIRECTFB_BIN=	5	# LT_BINARY
 PLIST_SUB+=	DIRECTFB_VERSION="${PORTVERSION}" \
 		DIRECTFB_RELEASE="${PORTVERSION:R}" \
 		DIRECTFB_SHLIB="${DIRECTFB_SHLIB}" \
@@ -76,7 +76,7 @@ PLIST_SUB+=	ARCH_POWERPC="@comment "
 
 post-patch:
 	@${REINPLACE_CMD} -e \
-		's|-lc_r|-pthread|g ; s|%%LTMAIN%%|${LTMAIN}|g ; \
+		'/need_libc_r=yes/d ; \
 		s|/usr/local|${LOCALBASE}|g ; s|/usr/X11R6|${LOCALBASE}|g' \
 		${WRKSRC}/configure
 	@${GREP} -lr alloca\.h ${WRKSRC} | ${XARGS} \
