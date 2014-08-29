@@ -17,16 +17,14 @@ LICENSE=	PSFL
 
 PORTSCOUT=	ignore:1
 
-USE_PYTHON=	yes
-USE_PYDISTUTILS=yes
-USES=		tar:xz tk
+USE_PYTHON=	distutils autoplist
+USES=		python tar:xz tk
 
 DIST_SUBDIR=	python
 DISTINFO_FILE=	${PORTSDIR}/lang/python${PYTHON_SUFFIX}/distinfo
 WRKSRC=		${WRKDIR}/Python-${PORTVERSION}/Modules
 
 PYDISTUTILS_INSTALLARGS+=	--install-lib ${PYTHON_LIBDIR}/lib-dynload
-PYDISTUTILS_AUTOPLIST=	yes
 
 .include <bsd.port.pre.mk>
 
