@@ -3,7 +3,7 @@
 
 PORTNAME=	sdlskk
 PORTVERSION=	0.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel graphics ruby
 MASTER_SITES=	http://www.kmc.gr.jp/~ohai/sdlskk/
 DIST_SUBDIR=	ruby
@@ -21,9 +21,9 @@ USE_LDCONFIG=   yes
 
 PLIST_FILES=	include/SDL/sdlskk.h \
 		lib/libSDLSKK.a \
+		lib/libSDLSKK.so \
 		lib/libSDLSKK.so.2 \
 		lib/libSDLSKK.so.2.0.0
-PLIST_DIRSTRY=	include/SDL
 
 PORTDOCS=	AUTHORS NEWS README README.ja
 
