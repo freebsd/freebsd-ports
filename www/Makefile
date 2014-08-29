@@ -1529,6 +1529,7 @@
     SUBDIR += py-django-subdomains
     SUBDIR += py-django-tables2
     SUBDIR += py-django-tagging
+    SUBDIR += py-django-taggit
     SUBDIR += py-django-tastypie
     SUBDIR += py-django-threaded-multihost
     SUBDIR += py-django-tinymce
