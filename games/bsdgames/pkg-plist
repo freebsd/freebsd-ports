@@ -147,4 +147,3 @@ share/games/wump.info
 @dirrmtry var/games/hackdir
 @dirrmtry var/games/battlestar
 @dirrmtry var/games/atc
-@dirrmtry var/games
