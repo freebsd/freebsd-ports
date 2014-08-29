@@ -2,6 +2,7 @@
 
 PORTNAME=	csmith
 PORTVERSION=	2.1.0
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://embed.cs.utah.edu/csmith/
 
@@ -11,12 +12,12 @@ COMMENT=	Generates random C programs that conform to the C99 standard
 LICENSE=	BSD2CLAUSE
 
 GNU_CONFIGURE=	yes
-USE_AUTOTOOLS=	autoconf
-USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--docdir=${DOCSDIR}
 CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
-USES=		gmake
+LIBS+=		-L${LOCALBASE}/lib
+INSTALL_TARGET=	install-strip
+USES=		gmake libtool
+USE_LDCONFIG=	yes
 
 ONLY_FOR_ARCHS=	i386 amd64
 
