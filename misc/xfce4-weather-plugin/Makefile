@@ -16,6 +16,7 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	libsoup-2.4.so:${PORTSDIR}/devel/libsoup
 
+SSP_UNSAFE=	yes
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
 INSTALL_TARGET=	install-strip
