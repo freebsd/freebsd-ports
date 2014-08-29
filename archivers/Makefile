@@ -171,7 +171,7 @@
     SUBDIR += ruby-zip
     SUBDIR += rubygem-archive-tar-minitar
     SUBDIR += rubygem-archive-zip
-    SUBDIR += rubygem-bzip2
+    SUBDIR += rubygem-bzip2-ruby
     SUBDIR += rubygem-libarchive
     SUBDIR += rubygem-minitar
     SUBDIR += rubygem-rubyzip

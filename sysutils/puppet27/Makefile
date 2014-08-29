@@ -3,6 +3,7 @@
 
 PORTNAME=	puppet
 PORTVERSION=	2.7.26
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://downloads.puppetlabs.com/puppet/
 PKGNAMESUFFIX=	27
@@ -44,7 +45,7 @@ OPTIONS_DEFINE=	DOCS EXAMPLES
 
 .if ${PORT_OPTIONS:MPACKAGE_ORIGIN}
 EXTRA_PATCHES+=	${FILESDIR}/optpatch-package_origin
-RUN_DEPENDS+=	rubygem-bzip2>=0:${PORTSDIR}/archivers/rubygem-bzip2
+RUN_DEPENDS+=	rubygem-bzip2-ruby>=0:${PORTSDIR}/archivers/rubygem-bzip2-ruby
 .endif
 
 .if ${PORT_OPTIONS:MPACKAGE_ROOT}
