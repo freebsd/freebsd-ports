@@ -2,23 +2,41 @@
 # $FreeBSD$
 
 PORTNAME=	rpcalc
-PORTVERSION=	0.6.0
-PORTREVISION=	4
+PORTVERSION=	0.7.0
 CATEGORIES=	math
-MASTER_SITES=	BERLIOS
+MASTER_SITES=	SF/${PORTNAME}/${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	jhale@FreeBSD.org
 COMMENT=	Simple RPN calculator
 
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}//PyQt4/QtGui.so:${PORTSDIR}/x11-toolkits/py-qt4-gui
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/doc/LICENSE
 
-WRKSRC=		${WRKDIR}/rpCalc
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}qt4-gui>=0:${PORTSDIR}/x11-toolkits/py-qt4-gui
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}qt4-gui>=0:${PORTSDIR}/x11-toolkits/py-qt4-gui
+
+USES=		python:3.2+
 
 NO_BUILD=	yes
-USE_PYTHON=	yes
+INSTALLS_ICONS=	yes
 
-NO_STAGE=	yes
+DESKTOP_ENTRIES="rpCalc" \
+		"" \
+		"${PREFIX}/share/icons/${PORTNAME}/calc_lg.png" \
+		"${PORTNAME}" \
+		"Qt;Utility;Calculator;" \
+		"false"
+
+PLIST_SUB=	PYTHON_SUFFIX="${PYTHON_SUFFIX}"
+WRKSRC=		${WRKDIR}/rpCalc
+
 do-install:
-	cd ${WRKSRC} && ${PYTHON_CMD} install.py
+	(cd ${WRKSRC} && ${PYTHON_CMD} install.py -p ${PREFIX} -b ${STAGEDIR})
+	(cd ${STAGEDIR}${PREFIX} && \
+		${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py \
+		-d ${DATADIR} -f ${DATADIR_REL})
+	(cd ${STAGEDIR}${PREFIX} && \
+		${PYTHON_CMD} -O ${PYTHON_LIBDIR}/compileall.py \
+		-d ${DATADIR} -f ${DATADIR_REL})
 
 .include <bsd.port.mk>
