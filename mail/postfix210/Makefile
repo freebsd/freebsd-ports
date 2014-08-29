@@ -3,7 +3,7 @@
 
 PORTNAME=	postfix
 PORTVERSION=	2.10.3
-PORTREVISION=	4
+PORTREVISION=	5
 PORTEPOCH=	1
 CATEGORIES=	mail ipv6
 MASTER_SITES=	ftp://ftp.porcupine.org/mirrors/postfix-release/official/ \
@@ -31,10 +31,11 @@ CONFLICTS=	courier-0.* postfix-1.* postfix2[789]-* \
 
 USERS=		postfix
 GROUPS=		mail maildrop postfix
-USES=		perl5
+USES=		perl5 shebangfix
 USE_SUBMAKE=	yes
 USE_PERL5=	build
 SCRIPTS_ENV+=	POSTFIX_DEFAULT_MTA="${POSTFIX_DEFAULT_MTA}"
+SHEBANG_FILES=	auxiliary/qshape/qshape.pl
 
 OPTIONS_DEFINE=	PCRE SASL2 TLS BDB MYSQL PGSQL SQLITE OPENLDAP LDAP_SASL \
 		CDB NIS VDA TEST SPF INST_BASE
@@ -66,28 +67,7 @@ RG2_DESC=	Kerberos network authentication protocol type
 
 OPTIONS_DEFAULT=	PCRE
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
-
-MAN1=	postalias.1 postcat.1 postconf.1 postdrop.1 postfix.1 postkick.1 \
-	postlock.1 postlog.1 postmap.1 postmulti.1 postqueue.1 postsuper.1 \
-	sendmail.1 qshape.1
-
-MAN5=	access.5 aliases.5 bounce.5 canonical.5 cidr_table.5 generic.5 \
-	header_checks.5 ldap_table.5 master.5 memcache_table.5 mysql_table.5 \
-	nisplus_table.5 pcre_table.5 pgsql_table.5 postconf.5 postfix-wrapper.5 \
-	regexp_table.5 relocated.5 sqlite_table.5 tcp_table.5 transport.5 virtual.5
-
-MAN8=	anvil.8 bounce.8 cleanup.8 discard.8 dnsblog.8 error.8 flush.8 local.8 master.8 \
-	oqmgr.8 pickup.8 pipe.8 postscreen.8 proxymap.8 qmgr.8 qmqpd.8 scache.8 showq.8 \
-	smtp.8 smtpd.8 spawn.8 tlsmgr.8 tlsproxy.8 trivial-rewrite.8 verify.8 virtual.8
-
-MLINKS=	sendmail.1 mailq.1 \
-	sendmail.1 newaliases.1 \
-	header_checks.5 body_checks.5 \
-	bounce.8 defer.8 \
-	bounce.8 trace.8 \
-	smtp.8 lmtp.8
 
 HTML1=	body_checks.5.html bounce.5.html postfix-power.png \
 	scache.8.html tlsmgr.8.html
@@ -245,7 +225,6 @@ PLIST_SUB+=		VDA="@comment "
 .if ${PORT_OPTIONS:MTEST}
 BINTEST=	qmqp-sink qmqp-source smtp-sink smtp-source
 MANTEST=	qmqp-sink.1 qmqp-source.1 smtp-sink.1 smtp-source.1
-MAN1+=		${MANTEST}
 PLIST_SUB+=	TEST=""
 .else
 PLIST_SUB+=	TEST="@comment "
@@ -256,10 +235,10 @@ PKGNAMESUFFIX=	210base
 PREFIX=		/usr
 ETCDIR=		/etc/postfix
 USE_RCORDER=	postfix
-PLIST_SUB+=	BASE=""
+PLIST_SUB+=	BASE="" BMAN="share/"
 .else
 USE_RC_SUBR=	postfix
-PLIST_SUB+=	BASE="@comment "
+PLIST_SUB+=	BASE="@comment " BMAN=""
 .endif
 
 PLIST_SUB+=	PFETC=${ETCDIR}
@@ -338,8 +317,13 @@ do-configure:
 	CCARGS="${POSTFIX_CCARGS}" AUXLIBS="${POSTFIX_AUXLIBS}" && \
 	${ECHO} "all: default" >> Makefile)
 
+pre-install:
+.if ${PORT_OPTIONS:MINST_BASE}
+	${MKDIR} ${STAGEDIR}/etc/rc.d
+.endif
+
 do-install:
-	@cd ${WRKSRC} && ${SH} postfix-install -non-interactive install_root=/ tempdir=/tmp \
+	@cd ${WRKSRC} && ${SH} postfix-install -non-interactive install_root=${STAGEDIR} tempdir=/tmp \
 		config_directory=${ETCDIR} \
 		command_directory=${PREFIX}/sbin \
 		daemon_directory=${DAEMONDIR} \
@@ -349,20 +333,15 @@ do-install:
 		newaliases_path=${PREFIX}/bin/newaliases \
 		readme_directory=${READMEDIR} \
 		sendmail_path=${PREFIX}/sbin/sendmail
-	${INSTALL_SCRIPT} ${WRKSRC}/auxiliary/rmail/rmail ${PREFIX}/bin/rmail
-	${INSTALL_SCRIPT} ${WRKSRC}/auxiliary/qshape/qshape.pl ${PREFIX}/bin/qshape
-	${INSTALL_MAN} ${WRKSRC}/man/man1/qshape.1 ${MAN1PREFIX}/man/man1
+	${RM} ${STAGEDIR}${ETCDIR}/main.cf ${STAGEDIR}${ETCDIR}/master.cf
+	${INSTALL_SCRIPT} ${WRKSRC}/auxiliary/rmail/rmail ${STAGEDIR}${PREFIX}/bin/rmail
+	${INSTALL_SCRIPT} ${WRKSRC}/auxiliary/qshape/qshape.pl ${STAGEDIR}${PREFIX}/bin/qshape
+	${INSTALL_MAN} ${WRKSRC}/man/man1/qshape.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
 .for f in ${BINTEST}
-	${INSTALL_PROGRAM} ${WRKSRC}/bin/${f} ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/bin/${f} ${STAGEDIR}${PREFIX}/bin
 .endfor
 .for f in ${MANTEST}
-	${INSTALL_MAN} ${WRKSRC}/man/man1/${f} ${MAN1PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/man/man1/${f} ${STAGEDIR}${MAN1PREFIX}/man/man1
 .endfor
-
-post-install:
-	@${SETENV} ${SCRIPTS_ENV} PKG_PREFIX="${PREFIX}" ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
-	# Fix compressed man pages
-	@${REINPLACE_CMD} -i '' -E -e "s|(man[158]/.*.[158]):|\1.gz:|g" ${DAEMONDIR}/postfix-files
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
