@@ -458,3 +458,4 @@ man/man7/roff.7.gz
 @dirrm %%DATADIR%%/site-tmac
 @dirrm %%DATADIR%%
 @dirrmtry share/doc/groff
+@dirrmtry share/examples/groff

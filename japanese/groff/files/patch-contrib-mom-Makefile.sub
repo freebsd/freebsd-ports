@@ -1,5 +1,5 @@
 --- contrib/mom/Makefile.sub.orig	2002-07-29 14:22:05.000000000 +0900
-+++ contrib/mom/Makefile.sub	2014-02-07 14:11:58.000000000 +0900
++++ contrib/mom/Makefile.sub	2014-08-30 02:23:07.000000000 +0900
 @@ -90,26 +90,27 @@
  	test -d examples || $(mkinstalldirs) examples
  	test -f penguin.ps || cp $(srcdir)/examples/penguin.ps .
@@ -31,13 +31,13 @@
 -	  rm -f $(exampledir)/$$f; \
 -	  $(INSTALL_DATA) $(srcdir)/$$f $(docdir)/$$f; \
 +	  rm -f $(DESTDIR)$(exampledir)/$$f; \
-+	  $(INSTALL_DATA) $(srcdir)/$$f $(DESTDIR)$(docdir)/$$f; \
++	  $(INSTALL_DATA) $(srcdir)/$$f $(DESTDIR)$(exampledir)/$$(f#examples/); \
  	done
  	for f in $(PROCESSEDEXAMPLEFILES); do \
 -	  rm -f $(exampledir)/$$f; \
 -	  $(INSTALL_DATA) $$f $(docdir)/$$f; \
 +	  rm -f $(DESTDIR)$(exampledir)/$$f; \
-+	  $(INSTALL_DATA) $$f $(DESTDIR)$(docdir)/$$f; \
++	  $(INSTALL_DATA) $$f $(DESTDIR)$(exampledir)/$$(f#examples/); \
  	done
  
  uninstall_sub:
