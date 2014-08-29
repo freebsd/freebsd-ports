@@ -26,6 +26,7 @@ USES=		gmake libtool pkgconfig tar:bzip2
 USE_GNOME=	librsvg2
 USE_LDCONFIG=	yes
 USE_XFCE=	configenv libutil libgui
+CFLAGS+=	-fPIC
 
 CONFIGURE_ARGS+=	--libdir=${PREFIX}/lib/xfce4 \
 			--libexecdir=${PREFIX}/libexec/xfce4 \
