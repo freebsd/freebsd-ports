@@ -41,7 +41,7 @@ PLIST_DIRS=	share/dict/eijiro-fpw/eijiro/data \
 MAKE_ARGS+=	SRCFILE=${WRKDIR}/${SRCFILE}
 .else
 MAKE_ARGS+=	SRCFILE=${DICT_PATH}/${SRCFILE}
-.fi
+.endif
 
 OPTIONS_DEFINE=	DOCS
 
