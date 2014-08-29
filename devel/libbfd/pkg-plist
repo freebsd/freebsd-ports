@@ -3,4 +3,3 @@ include/bfd.h
 include/bfdlink.h
 include/symcat.h
 lib/libbfd.a
-lib/libbfd.la

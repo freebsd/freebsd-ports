@@ -3,6 +3,7 @@
 
 PORTNAME=	libbfd
 PORTVERSION=	2.19.1
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEWARE}
 MASTER_SITE_SUBDIR=	binutils/releases
@@ -17,7 +18,7 @@ CONFLICTS=	mingw-binutils-[0-9]* binutils-[0-9]*
 
 WRKSRC=		${WRKDIR}/binutils-${PORTVERSION}/bfd
 
-USES=		gmake tar:bzip2
+USES=		gmake libtool tar:bzip2
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-install-libbfd \
 		--enable-commonbfdlib \
@@ -25,12 +26,7 @@ CONFIGURE_ARGS=	--enable-install-libbfd \
 		--without-pic \
 		--enable-targets=all \
 		--disable-werror
+CONFIGURE_TARGET=${ARCH:S/amd64/x86_64/}-portbld-${OPSYS:tl}${OSREL}
 INFO=		bfd
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == "amd64"
-ARCH=		x86_64
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
