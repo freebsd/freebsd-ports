@@ -52,7 +52,7 @@ CONFIGURE_ARGS+=	--without-svgalib
 .endif
 
 .if ${PORT_OPTIONS:MDIRECTFB}
-LIB_DEPENDS+=	libdirectfb-1.4.so:${PORTSDIR}/devel/directfb
+LIB_DEPENDS+=	libdirectfb.so:${PORTSDIR}/devel/directfb
 CONFIGURE_ARGS+=	--with-directfb
 .else
 CONFIGURE_ARGS+=	--without-directfb
