@@ -1,11 +1,11 @@
---- ffmpeg/Makefile.orig	2012-06-29 19:20:03.000000000 +0200
-+++ ffmpeg/Makefile	2012-07-21 18:47:01.068697043 +0200
-@@ -82,7 +82,7 @@
+--- ffmpeg/Makefile.orig	2014-07-22 19:20:06.000000000 +0200
++++ ffmpeg/Makefile	2014-08-11 20:49:48.038911362 +0200
+@@ -91,7 +91,7 @@
  $(foreach V,$(SUBDIR_VARS),$(eval $(call RESET,$(V))))
  SUBDIR := $(1)/
  include $(SRC_PATH)/$(1)/Makefile
 --include $(SRC_PATH)/$(1)/$(ARCH)/Makefile
 +-include $(SRC_PATH)/$(1)/$(MPLAYER_ARCH)/Makefile
+ -include $(SRC_PATH)/$(1)/$(INTRINSICS)/Makefile
  include $(SRC_PATH)/library.mak
  endef
- 

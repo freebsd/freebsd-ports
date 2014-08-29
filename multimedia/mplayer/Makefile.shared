@@ -4,7 +4,7 @@
 #
 # $FreeBSD$
 
-MPLAYER_SNAPSHOT_DATE=	2014-04-18
+MPLAYER_SNAPSHOT_DATE=	2014-08-24
 MPLAYER_PORT_VERSION=	1.1.r${MPLAYER_SNAPSHOT_DATE:S/-//g}
 CATEGORIES?=	multimedia audio
 MASTER_SITES=	${MASTER_SITE_LOCAL}
@@ -46,7 +46,6 @@ CONFIGURE_ARGS=	--cc="${CC}" \
 		--disable-live \
 		--disable-joystick \
 		--disable-mad \
-		--disable-mp3lib \
 		--disable-libmpeg2 \
 		--disable-nemesi \
 		--disable-speex \
