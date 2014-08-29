@@ -12,9 +12,8 @@ COMMENT=	Pythonic argument parser, that will make you smile
 
 LICENSE=	MIT
 
-USE_PYTHON=	yes
-USE_PYDISTUTILS=yes
-PYDISTUTILS_AUTOPLIST=yes
+USES=		python
+USE_PYTHON=	distutils autoplist
 
 PORTDOCS=	README.rst
 DOCSDIR=	${PREFIX}/share/doc/py-${PORTNAME}
