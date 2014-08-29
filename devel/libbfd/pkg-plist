@@ -2,4 +2,6 @@ include/ansidecl.h
 include/bfd.h
 include/bfdlink.h
 include/symcat.h
+lib/libbfd-2.19.1.so
 lib/libbfd.a
+lib/libbfd.so
