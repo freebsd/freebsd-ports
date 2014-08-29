@@ -26,6 +26,7 @@
     SUBDIR += buzhug
     SUBDIR += c3p0
     SUBDIR += cassandra
+    SUBDIR += cassandra2
     SUBDIR += cdb
     SUBDIR += cego
     SUBDIR += couchdb
