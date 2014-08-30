@@ -1,0 +1,12 @@
+--- lib/hdb/Makefile.in.orig	2014-08-31 01:38:01.000000000 +0900
++++ lib/hdb/Makefile.in	2014-08-31 01:44:03.000000000 +0900
+@@ -451,7 +451,8 @@
+ BUILT_SOURCES = \
+ 	$(gen_files_hdb:.x=.c)	\
+ 	hdb_err.c \
+-	hdb_err.h
++	hdb_err.h \
++	hdb_asn1.h
+ 
+ gen_files_hdb = \
+ 	asn1_Salt.x \
