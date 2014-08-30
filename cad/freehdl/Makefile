@@ -11,7 +11,7 @@ MAINTAINER=	kamikaze@bsdforen.de
 COMMENT=	Free VHDL simulator
 
 USE_LDCONFIG=	yes
-USES=		gmake pathfix libtool makeinfo perl5 pkgconfig
+USES=		gmake pathfix libtool:build makeinfo perl5 pkgconfig
 USE_GCC=	any
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
