@@ -1,5 +1,5 @@
---- ./Makefile.orig	2014-04-28 16:57:38.000000000 +0200
-+++ ./Makefile	2014-05-06 21:21:37.798136726 +0200
+--- ./Makefile.orig	2014-08-28 05:28:56.000000000 +0200
++++ ./Makefile	2014-08-29 18:32:12.040229158 +0200
 @@ -69,7 +69,7 @@
  #    ask for a package with convenience libraries instead -- we'll try to provide
  #    them somewhere in the near future.
@@ -27,7 +27,7 @@
  RM = rm -f
  COPY = cp
  COPY_R = cp -r
-@@ -529,9 +527,9 @@
+@@ -535,9 +533,9 @@
    ifneq (,$(shell $(GXX) --version|grep 'g++.*4\.2\.'))
      # OS X uses a buggy ancient version of gcc without fixes from even
      # subsequent point releases of 4.2.
@@ -39,17 +39,8 @@
    endif
  endif
  
-@@ -585,7 +583,7 @@
-       BUILD_LUA = yes
-     endif
-   else
--    ifneq ($(shell $(PKGCONFIG) lua5.1 --exists || echo no),)
-+    ifneq ($(shell $(PKGCONFIG) lua-5.1 --exists || echo no),)
-       ifneq ($(shell $(PKGCONFIG) lua --exists || echo no),)
-         BUILD_LUA = yes
-       else
-@@ -596,13 +594,13 @@
-         endif
+@@ -606,13 +604,13 @@
+         LUA_PACKAGE = lua-5.1
        endif
      else
 -      LUA_PACKAGE = lua5.1
@@ -64,7 +55,7 @@
    endif
    INCLUDES_L += $(shell $(PKGCONFIG) $(LUA_PACKAGE) --cflags-only-I | sed -e 's/-I/-isystem /')
    CFLAGS_L  += $(shell $(PKGCONFIG) $(LUA_PACKAGE) --cflags-only-other)
-@@ -611,7 +609,7 @@
+@@ -625,7 +623,7 @@
  
  ifndef BUILD_SQLITE
    ifeq ($(shell grep -q sqlite3_prepare $(SQLITE_INCLUDE_DIR)/sqlite3.h 2>/dev/null && echo yes),yes)
@@ -73,7 +64,7 @@
      LIBS += $(SQLITE_LIB)
      ifneq ($(shell grep -q sqlite3_prepare_v2 $(SQLITE_INCLUDE_DIR)/sqlite3.h 2>/dev/null && echo yes),yes)
        DEFINES_L += -DANCIENT_SQLITE
-@@ -756,7 +754,7 @@
+@@ -777,7 +775,7 @@
  DEFINES += -DWIZARD
  endif
  ifdef NO_OPTIMIZE
@@ -82,7 +73,7 @@
  endif
  
  ifdef PCH
-@@ -880,7 +878,7 @@
+@@ -901,7 +899,7 @@
      INSTALL_FONTS += $(PROPORTIONAL_FONT)
    endif
  else
@@ -91,7 +82,7 @@
    ifeq (,$(SYS_PROPORTIONAL_FONT))
      SYS_PROPORTIONAL_FONT = $(shell dir=/usr/local/share/fonts ; [ -d $$dir ] && find $$dir -iname $(OUR_PROPORTIONAL_FONT)|head -n 1)
    endif
-@@ -903,7 +901,7 @@
+@@ -924,7 +922,7 @@
      INSTALL_FONTS += $(MONOSPACED_FONT)
    endif
  else
@@ -100,7 +91,7 @@
    ifeq (,$(SYS_MONOSPACED_FONT))
      SYS_MONOSPACED_FONT = $(shell dir=/usr/local/share/fonts; [ -d $$dir ] && find $$dir -iname $(OUR_MONOSPACED_FONT)|head -n 1)
    endif
-@@ -1099,7 +1097,7 @@
+@@ -1127,7 +1125,7 @@
  
  LANGUAGES = $(filter-out en, $(notdir $(wildcard dat/descript/??)))
  SRC_PKG_BASE  := stone_soup
