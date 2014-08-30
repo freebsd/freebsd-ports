@@ -38,10 +38,10 @@ post-install-script:
 		echo bin32/$${i} >> ${TMPPLIST} ; \
 	done
 	# Install libGL
+	${MKDIR} ${STAGEDIR}${PREFIX}/lib32/.libGL/dri
 	${INSTALL_DATA} ${LOCALBASE}/lib/libGL.so.1 ${STAGEDIR}${PREFIX}/lib32/.libGL/	
 	echo lib32/.libGL/libGL.so.1 >> ${TMPPLIST}
 	# Install dri libraries (internal libGL requirements)
-	${MKDIR} ${STAGEDIR}${PREFIX}/lib32/.libGL/dri
 	for i in ${LOCALBASE}/lib/dri/*.so; do \
 		${INSTALL_DATA} $${i} ${STAGEDIR}${PREFIX}/lib32/.libGL/dri/ ; \
 		echo lib32/.libGL/dri/$${i##*/} >> ${TMPPLIST} ; \
