@@ -1,3 +1,1 @@
-@unexec if cmp -s %D/etc/denyhosts.conf %D/etc/denyhosts.conf-dist; then rm -f %D/etc/denyhosts.conf; fi
-etc/denyhosts.conf-dist
-@exec [ -f %B/denyhosts.conf ] || cp -f %B/%f %B/denyhosts.conf
+@sample etc/denyhosts.conf.sample
