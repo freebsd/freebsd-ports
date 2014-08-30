@@ -23,7 +23,8 @@ OPTIONS_DEFAULT=	CA_BUNDLE PAM
 
 CA_BUNDLE_DESC=	Install CA bundle for OpenSSL
 
-USE_AUTOTOOLS=	autoconf:env automake:env libtool:env
+USES=		libtool
+USE_AUTOTOOLS=	autoconf:env automake:env
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-libevent-dir=${LOCALBASE} --sysconfdir=${PREFIX}/etc/mail/ \
 		--with-mailwrapper
