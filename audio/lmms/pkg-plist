@@ -182,30 +182,30 @@ include/lmms/transformable_auto_model.h
 include/lmms/update_event.h
 include/lmms/visualization_widget.h
 include/lmms/volume.h
-lib64/lmms/RemoteZynAddSubFx
-lib64/lmms/libZynAddSubFxCore.so
-lib64/lmms/libaudiofileprocessor.so
-lib64/lmms/libbassbooster.so
-lib64/lmms/libbitinvader.so
-lib64/lmms/libflpimport.so
-lib64/lmms/libhydrogenimport.so
-lib64/lmms/libkicker.so
-lib64/lmms/libladspabrowser.so
-lib64/lmms/libladspaeffect.so
-lib64/lmms/liblb302.so
-lib64/lmms/libmidiimport.so
-lib64/lmms/liborganic.so
-lib64/lmms/libpapu.so
-lib64/lmms/libpatman.so
-lib64/lmms/libpeakcontrollereffect.so
-lib64/lmms/libsf2player.so
-lib64/lmms/libsid.so
-lib64/lmms/libspectrumanalyzer.so
-lib64/lmms/libstereoenhancer.so
-lib64/lmms/libstereomatrix.so
-lib64/lmms/libtripleoscillator.so
-lib64/lmms/libvibedstrings.so
-lib64/lmms/libzynaddsubfx.so
+lib/lmms/RemoteZynAddSubFx
+lib/lmms/libZynAddSubFxCore.so
+lib/lmms/libaudiofileprocessor.so
+lib/lmms/libbassbooster.so
+lib/lmms/libbitinvader.so
+lib/lmms/libflpimport.so
+lib/lmms/libhydrogenimport.so
+lib/lmms/libkicker.so
+lib/lmms/libladspabrowser.so
+lib/lmms/libladspaeffect.so
+lib/lmms/liblb302.so
+lib/lmms/libmidiimport.so
+lib/lmms/liborganic.so
+lib/lmms/libpapu.so
+lib/lmms/libpatman.so
+lib/lmms/libpeakcontrollereffect.so
+lib/lmms/libsf2player.so
+lib/lmms/libsid.so
+lib/lmms/libspectrumanalyzer.so
+lib/lmms/libstereoenhancer.so
+lib/lmms/libstereomatrix.so
+lib/lmms/libtripleoscillator.so
+lib/lmms/libvibedstrings.so
+lib/lmms/libzynaddsubfx.so
 man/man1/lmms.1.gz
 share/applications/lmms.desktop
 %%DATADIR%%/backgrounds/lmms_tile.png
@@ -1980,7 +1980,6 @@ share/applications/lmms.desktop
 share/menu/lmms
 share/mime/packages/lmms.xml
 share/pixmaps/lmms.png
-@dirrmtry share/mime/packages
 @dirrmtry share/menu
 @dirrm %%DATADIR%%/themes/default
 @dirrm %%DATADIR%%/themes
@@ -2061,5 +2060,4 @@ share/pixmaps/lmms.png
 @dirrm %%DATADIR%%/backgrounds
 @dirrm %%DATADIR%%
 @dirrm include/lmms
-@dirrm lib64/lmms
-@dirrmtry lib64
+@dirrm lib/lmms
