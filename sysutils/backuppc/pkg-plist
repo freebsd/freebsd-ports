@@ -76,9 +76,7 @@ lib/BackupPC/Zip/FileMember.pm
 lib/Net/FTP/AutoReconnect.pm
 lib/Net/FTP/RetrHandle.pm
 man/man1/backuppc.1.gz
-@comment Main html doc should be unconditionally installed.
-@comment CGI uses the BackupPC.html as a documentation page.
-%%DOCSDIR%%/BackupPC.html
+%%PORTDOCS%%%%DOCSDIR%%/BackupPC.html
 %%PORTDOCS%%%%DOCSDIR%%/BackupPC.pod
 %%WWWDIR%%/0000000.gif
 %%WWWDIR%%/0000011.gif
@@ -116,6 +114,7 @@ man/man1/backuppc.1.gz
 %%WWWDIR%%/1111101.gif
 %%WWWDIR%%/1111110.gif
 %%WWWDIR%%/1111111.gif
+%%WWWDIR%%/BackupPC.html
 %%WWWDIR%%/BackupPC_stnd.css
 %%WWWDIR%%/BackupPC_stnd_orig.css
 %%WWWDIR%%/favicon.ico
