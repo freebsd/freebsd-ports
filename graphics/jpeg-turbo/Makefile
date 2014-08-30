@@ -29,8 +29,14 @@ PORTEXAMPLES=	*
 # chase graphics/jpeg
 SOVERSION=	11
 
-OPTIONS_DEFINE=	PIC
+OPTIONS_DEFINE=	DOCS EXAMPLES PIC 
 PIC_DESC=	Static library with PIC (required for VirtualGL)
+
+DOCS_MAKE_ARGS=		docdir="${DOCSDIR}"
+DOCS_MAKE_ARGS_OFF=	dist_doc_DATA=""
+
+EXAMPLES_MAKE_ARGS=	exampledir="${EXAMPLESDIR}"
+EXAMPLES_MAKE_ARGS_OFF=	dist_example_DATA=""
 
 PIC_CONFIGURE_ON=	--with-pic
 
@@ -39,13 +45,7 @@ PLIST_SUB+=	JPEG="@comment " LIBTURBOJPEG=""
 .else
 PLIST_SUB+=	JPEG="" LIBTURBOJPEG="@comment "
 CONFLICTS_INSTALL=	jpeg-[0-9]*
-OPTIONS_DEFINE+=DOCS EXAMPLES
 CONFIGURE_ARGS+=--without-libturbojpeg
 .endif
-
-post-patch:
-	${REINPLACE_CMD} -e '/^docdir/s,=.*,= ${DOCSDIR},' \
-		-e '/^exampledir/s,=.*,= ${EXAMPLESDIR},' \
-		${WRKSRC}/Makefile.in
 
 .include <bsd.port.mk>
