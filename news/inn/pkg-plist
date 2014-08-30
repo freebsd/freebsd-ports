@@ -1,14 +1,16 @@
+@owner news
+@group news
 @exec mkdir -p %%NEWSBASE%%
 %%CWDNEWSBASE%%
 bin/actmerge
 bin/actsync
 bin/actsyncd
 bin/archive
-@group news
-@mode 4755
+@owner root
+@mode 4550
 bin/auth/passwd/ckpasswd
-@group
 @mode
+@owner news
 %%KERBEROS%%bin/auth/passwd/auth_krb5
 bin/auth/passwd/radius
 bin/auth/resolv/domain
@@ -54,7 +56,11 @@ bin/imapfeed
 bin/inews
 bin/inncheck
 bin/innconfval
+@owner root
+@mode 4550
 bin/innbind
+@mode
+@owner news
 bin/innd
 bin/inndf
 bin/innfeed
@@ -321,8 +327,6 @@ man/man8/writelog.8.gz
 %%EXAMPLESDIR%%/subscriptions
 @comment --------------------------------------------------------------
 @cwd /
-@owner news
-@group news
 @sample %%DBDIR%%/active.sample
 @sample %%DBDIR%%/active.times.sample
 @sample %%DBDIR%%/newsgroups.sample
@@ -364,14 +368,10 @@ man/man8/writelog.8.gz
 @sample %%CONFDIR%%/storage.conf.sample
 @sample %%CONFDIR%%/subscriptions.sample
 @comment --------------------------------------------------------------
-@owner
-@group
 @cwd
 @dirrm %%EXAMPLESDIR%%/db
 @dirrm %%EXAMPLESDIR%%
 @cwd /
-@owner news
-@group news
 @dirrm %%TMPDIR%%                
 @dirrm %%SHAREDIR%%              
 @dirrm %%NEWSSPOOL%%/overview    
@@ -398,10 +398,8 @@ man/man8/writelog.8.gz
 @dirrm %%NEWSBASE%%/bin/auth/passwd
 @dirrm %%NEWSBASE%%/bin/auth
 @dirrm %%NEWSBASE%%/bin
-@dirrm %%CONFDIR%%                
 @dirrm %%DBDIR%%                 
 @dirrm %%LOGDIR%%/OLD
 @dirrm %%LOGDIR%%
-@owner news
-@group news
+@dirrm %%CONFDIR%%                
 @unexec rmdir %%NEWSBASE%% 2>/dev/null ||( echo "===>  If you don't plan to use inn later, you can safely remove %%NEWSBASE%%. Deinstall process kept these files intact:" | fmt && for i in $(find %D/news -type f); do echo "    - $i"; done)
