@@ -15,7 +15,7 @@ PATCH_SITES=	${MASTER_SITE_DEBIAN:S,%SUBDIR%,pool/main/e/egg,} \
 PATCHFILES=	egg_4.0.6+0.20041122cvs-19.diff.gz
 PATCH_DIST_STRIP=	-p1
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	The Multilingual Input Method - Egg V4
 
 LICENSE=	GPLv2
@@ -30,7 +30,6 @@ PORTDOCS=	AUTHORS ChangeLog ChangeLog.1997-1998 \
 		README.Debian changelog.Debian
 OPTIONS_DEFINE=	DOCS
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${EMACS_PORT_NAME} == emacs21 || \
@@ -48,17 +47,17 @@ pre-configure:
 
 post-build:
 	cd ${WRKSRC}/helper && \
-		${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} \
-		${_MAKE_JOBS} ${MAKE_ARGS} egg-helper
+	    ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} \
+	    ${_MAKE_JOBS} ${MAKE_ARGS} egg-helper
 	${INSTALL_DATA} ${WRKSRC}/debian/changelog ${WRKSRC}/changelog.Debian
 	${INSTALL_DATA} ${WRKSRC}/debian/README.Debian ${WRKSRC}
 
 post-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/helper/egg-helper ${PREFIX}/bin/egg-helper
+	${INSTALL_PROGRAM} ${WRKSRC}/helper/egg-helper \
+	    ${STAGEDIR}${PREFIX}/bin/egg-helper
 .if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
 .endif
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
