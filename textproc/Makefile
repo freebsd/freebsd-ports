@@ -1241,6 +1241,7 @@
     SUBDIR += qu-aspell
     SUBDIR += queequeg
     SUBDIR += rand
+    SUBDIR += randlm
     SUBDIR += rapidxml
     SUBDIR += raptor
     SUBDIR += raptor2
