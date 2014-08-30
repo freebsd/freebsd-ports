@@ -3,47 +3,41 @@
 
 PORTNAME=	denyhosts
 PORTVERSION=	2.6
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	security
 MASTER_SITES=	SF
 DISTNAME=	DenyHosts-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Script to thwart ssh attacks
 
 LICENSE=	GPLv2
 
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
+OPTIONS_DEFINE=	DOCS
 
+REINPLACE_ARGS=	-i ''
+USE_PYTHON=	autoplist distutils
+USE_RC_SUBR=	denyhosts
 USES=		python:2 shebangfix
-env_OLD_CMD=	/bin/env
-env_CMD=	${SETENV}
-SHEBANG_LANG=	python env
+
+PORTDOCS=	CHANGELOG.txt LICENSE.txt README.txt
+SUB_FILES=	pkg-message
+SUB_LIST=	PYTHON=${PYTHON_CMD}
+
+SHEBANG_LANG=	env
 SHEBANG_FILES=	plugins/test_deny.py \
 		scripts/restricted_from_invalid.py \
 		scripts/restricted_from_passwd.py
-
-USE_RC_SUBR=	denyhosts
-SUB_LIST+=	PYTHON=${PYTHON_CMD}
-SUB_FILES=	pkg-message
-
-PORTDOCS=	CHANGELOG.txt LICENSE.txt README.txt
+env_OLD_CMD=	/bin/env
+env_CMD=	${SETENV}
 
 post-patch:
-	@${REINPLACE_CMD} -e 's,%%PREFIX%%,${PREFIX},' \
-		${WRKSRC}/daemon-control-dist \
-		${WRKSRC}/denyhosts.cfg-dist \
-		${WRKSRC}/setup.py
-
-pre-install:
-	@${FIND} ${WRKSRC} -type f \( -name \*.bak -o -name \*.orig \) -delete
+	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|' ${WRKSRC}/daemon-control-dist ${WRKSRC}/denyhosts.cfg-dist ${WRKSRC}/setup.py
+	@${FIND} ${WRKSRC} -type f -name '*.bak' -o -name '*.orig' -delete
 
 post-install:
-	${INSTALL_DATA} ${WRKSRC}/denyhosts.cfg-dist \
-		${STAGEDIR}${PREFIX}/etc/denyhosts.conf-dist
-
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/denyhosts.cfg-dist ${STAGEDIR}${PREFIX}/etc/denyhosts.conf.sample
+	${MKDIR} ${STAGEDIR}${DOCSDIR}/
+	cd ${WRKSRC}/ && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}/
 
 .include <bsd.port.mk>
