@@ -116,12 +116,10 @@ libexec/deskbar-applet/modules-2.20-compatible/yahoo.pyo
 %%PYTHON_SITELIBDIR%%/deskbar/core/_userdirs/__init__.py
 %%PYTHON_SITELIBDIR%%/deskbar/core/_userdirs/__init__.pyc
 %%PYTHON_SITELIBDIR%%/deskbar/core/_userdirs/__init__.pyo
-%%PYTHON_SITELIBDIR%%/deskbar/core/_userdirs/__userdirs.la
 %%PYTHON_SITELIBDIR%%/deskbar/core/_userdirs/__userdirs.so
 %%PYTHON_SITELIBDIR%%/deskbar/core/keybinder/__init__.py
 %%PYTHON_SITELIBDIR%%/deskbar/core/keybinder/__init__.pyc
 %%PYTHON_SITELIBDIR%%/deskbar/core/keybinder/__init__.pyo
-%%PYTHON_SITELIBDIR%%/deskbar/core/keybinder/_keybinder.la
 %%PYTHON_SITELIBDIR%%/deskbar/core/keybinder/_keybinder.so
 %%PYTHON_SITELIBDIR%%/deskbar/core/updater/Capuchin.py
 %%PYTHON_SITELIBDIR%%/deskbar/core/updater/Capuchin.pyc
@@ -174,7 +172,6 @@ libexec/deskbar-applet/modules-2.20-compatible/yahoo.pyo
 %%EVO%%%%PYTHON_SITELIBDIR%%/deskbar/handlers/evolution/__init__.py
 %%EVO%%%%PYTHON_SITELIBDIR%%/deskbar/handlers/evolution/__init__.pyc
 %%EVO%%%%PYTHON_SITELIBDIR%%/deskbar/handlers/evolution/__init__.pyo
-%%EVO%%%%PYTHON_SITELIBDIR%%/deskbar/handlers/evolution/_evolution.la
 %%EVO%%%%PYTHON_SITELIBDIR%%/deskbar/handlers/evolution/_evolution.so
 %%PYTHON_SITELIBDIR%%/deskbar/interfaces/Action.py
 %%PYTHON_SITELIBDIR%%/deskbar/interfaces/Action.pyc
@@ -200,7 +197,6 @@ libexec/deskbar-applet/modules-2.20-compatible/yahoo.pyo
 %%PYTHON_SITELIBDIR%%/deskbar/osutils/__init__.py
 %%PYTHON_SITELIBDIR%%/deskbar/osutils/__init__.pyc
 %%PYTHON_SITELIBDIR%%/deskbar/osutils/__init__.pyo
-%%PYTHON_SITELIBDIR%%/deskbar/osutils/_osutils.la
 %%PYTHON_SITELIBDIR%%/deskbar/osutils/_osutils.so
 %%PYTHON_SITELIBDIR%%/deskbar/ui/About.py
 %%PYTHON_SITELIBDIR%%/deskbar/ui/About.pyc
@@ -271,7 +267,6 @@ libexec/deskbar-applet/modules-2.20-compatible/yahoo.pyo
 %%PYTHON_SITELIBDIR%%/deskbar/ui/iconentry/__init__.py
 %%PYTHON_SITELIBDIR%%/deskbar/ui/iconentry/__init__.pyc
 %%PYTHON_SITELIBDIR%%/deskbar/ui/iconentry/__init__.pyo
-%%PYTHON_SITELIBDIR%%/deskbar/ui/iconentry/_iconentry.la
 %%PYTHON_SITELIBDIR%%/deskbar/ui/iconentry/_iconentry.so
 %%PYTHON_SITELIBDIR%%/deskbar/ui/preferences/AccelEntry.py
 %%PYTHON_SITELIBDIR%%/deskbar/ui/preferences/AccelEntry.pyc
