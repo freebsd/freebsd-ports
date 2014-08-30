@@ -1,46 +1,40 @@
 # Created by: Stephen Montgomery-Smith <stephen@math.missouri.edu>
 # $FreeBSD$
 
-PORTNAME=		vmd
-DISTVERSION=		1.9.1
-PORTREVISION=		1
-CATEGORIES=		science graphics python tcl tk
-MASTER_SITES=		http://jedi.ks.uiuc.edu/~johns/raytracer/files/0.99b2/:tachyon \
-			http://www.photonlimited.com/~johns/tachyon/files/0.99b2/:tachyon \
-			http://www.ks.uiuc.edu/Research/vmd/extsrcs/:stride
-DISTFILES=		${VMD_DIST} \
-			${TACHYON_DIST}:tachyon \
-			${STRIDE_DIST}:stride
+PORTNAME=	vmd
+DISTVERSION=	1.9.1
+PORTREVISION=	2
+CATEGORIES=	science graphics python tcl tk
+MASTER_SITES=	http://jedi.ks.uiuc.edu/~johns/raytracer/files/0.99b2/:tachyon \
+		http://www.photonlimited.com/~johns/tachyon/files/0.99b2/:tachyon \
+		http://www.ks.uiuc.edu/Research/vmd/extsrcs/:stride
+DISTFILES=	${VMD_DIST} \
+		${TACHYON_DIST}:tachyon \
+		${STRIDE_DIST}:stride
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Molecular visualization program
 
-BUILD_DEPENDS=		makedepend:${PORTSDIR}/devel/makedepend \
-			${PYNUMERIC}
-LIB_DEPENDS=		libtcl85.so:${PORTSDIR}/lang/tcl85 \
-			libtk85.so:${PORTSDIR}/x11-toolkits/tk85 \
-			libfltk.so:${PORTSDIR}/x11-toolkits/fltk \
-			libnetcdf.so:${PORTSDIR}/science/netcdf
-RUN_DEPENDS=		${PYNUMERIC}
+BUILD_DEPENDS=	makedepend:${PORTSDIR}/devel/makedepend \
+		${PYNUMERIC}
+LIB_DEPENDS=	libtcl85.so:${PORTSDIR}/lang/tcl85 \
+		libtk85.so:${PORTSDIR}/x11-toolkits/tk85 \
+		libfltk.so:${PORTSDIR}/x11-toolkits/fltk \
+		libnetcdf.so:${PORTSDIR}/science/netcdf
+RUN_DEPENDS=	${PYNUMERIC}
 
-USES=			gmake perl5
-USE_PERL5=		build
-USE_GL=			glu
-USE_PYTHON=		yes
+USES=		gmake perl5 python
+USE_PERL5=	build
+USE_GL=		glu
 
-ONLY_FOR_ARCHS=		i386 amd64
+ONLY_FOR_ARCHS=	i386 amd64
 
-RESTRICTED=		License has restrictions
+RESTRICTED=	License has restrictions
 
-VMD_DIST=		${PORTNAME}-${DISTVERSION}.src.tar.gz
-TACHYON_DIST=		tachyon-0.99b2.tar.gz
-# I get stride.tar.gz from ftp://ftp.ebi.ac.uk/pub/software/unix/stride/src/
-# but the www.ks.uiuc.edu site (that gives Stride_src.tar.Z) is closer
-# to vmd upstream (and google actually knows about it).
-#STRIDE_DIST=		stride.tar.gz
-STRIDE_DIST=		Stride_src.tar.Z
+VMD_DIST=	${PORTNAME}-${DISTVERSION}.src.tar.gz
+TACHYON_DIST=	tachyon-0.99b2.tar.gz
+STRIDE_DIST=	Stride_src.tar.Z
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "amd64"
@@ -55,15 +49,19 @@ PLIST_SUB+=		VMD_ARCH=${VMD_ARCH}
 
 # Check for VMD sources
 .if !exists(${DISTDIR}/${VMD_DIST})
-IGNORE=	Because of licensing restrictions, you must fetch the source distribution manually.  Please access http://www.ks.uiuc.edu/Development/Download/download.cgi?PackageName=VMD with a web browser.  You will be required to log in and register, but you can create an account on this page.  After registration and accepting the University of Illinois agreement, download the source file, ${VMD_DIST}.  Please place this file in ${DISTDIR}, and re-run make
+IGNORE=	license restrictions require manual fetching of the distribution\
+	source.  Please visit http://www.ks.uiuc.edu/Development/Download/download.cgi?PackageName=VMD\
+	with a browser.  You will be required to register, log in,  and accept\
+	the University of Illinois agreement before you can download the\
+	${VMD_DIST} source file.  Place this file in ${DISTDIR} and try again.
 .endif
 
 do-extract:
 	${MKDIR} ${WRKDIR}
-	${TAR} xfz ${DISTDIR}/${VMD_DIST} -C ${WRKDIR}
-	${TAR} xfz ${WRKSRC}/lib/surf/surf.tar.Z -C ${WRKSRC}/lib/surf
-	${TAR} xfz ${DISTDIR}/${TACHYON_DIST} -C ${WRKSRC}/lib
-	${TAR} xfz ${DISTDIR}/${STRIDE_DIST} -C ${WRKSRC}/lib/stride
+	${TAR} -xzf ${DISTDIR}/${VMD_DIST} -C ${WRKDIR}
+	${TAR} -xzf ${WRKSRC}/lib/surf/surf.tar.Z -C ${WRKSRC}/lib/surf
+	${TAR} -xzf ${DISTDIR}/${TACHYON_DIST} -C ${WRKSRC}/lib
+	${TAR} -xzf ${DISTDIR}/${STRIDE_DIST} -C ${WRKSRC}/lib/stride
 
 post-patch:
 	${REINPLACE_CMD} "s/-lpthread/${PTHREAD_LIBS}/" ${WRKSRC}/configure
@@ -78,15 +76,42 @@ post-patch:
 		-e "s|/usr/local|${LOCALBASE}|g" ${WRKSRC}/configure
 
 do-build:
-	${SETENV} ${MAKE_ENV} ${MAKE_CMD} bsd -C ${WRKSRC}/lib/tachyon/unix && ${MV} ${WRKSRC}/lib/tachyon/compile/bsd/tachyon ${WRKSRC}/lib/tachyon/tachyon_${VMD_ARCH}
-	${SETENV} ${MAKE_ENV} TCLLIB=-L${PREFIX}/lib/tcl8.5 TCLINC=-I${PREFIX}/include/tcl8.5 PLUGINDIR=${WRKSRC}/plugins ${MAKE_CMD} ${VMD_ARCH} distrib -C ${WRKDIR}/plugins
-	${SETENV} ${MAKE_ENV} TCL_INCLUDE_DIR=${PREFIX}/include/tcl8.5 TK_INCLUDE_DIR=${PREFIX}/include/tk8.5 ${MAKE_CMD} ${VMD_TARGET} -C ${WRKSRC}
+	${SETENV} ${MAKE_ENV} ${MAKE_CMD} bsd -C ${WRKSRC}/lib/tachyon/unix \
+		&& ${MV} ${WRKSRC}/lib/tachyon/compile/bsd/tachyon \
+			${WRKSRC}/lib/tachyon/tachyon_${VMD_ARCH}
+	${SETENV} ${MAKE_ENV} TCLLIB=-L${PREFIX}/lib/tcl8.5 \
+		TCLINC=-I${PREFIX}/include/tcl8.5 PLUGINDIR=${WRKSRC}/plugins \
+		${MAKE_CMD} ${VMD_ARCH} distrib -C ${WRKDIR}/plugins
+	${SETENV} ${MAKE_ENV} TCL_INCLUDE_DIR=${PREFIX}/include/tcl8.5 \
+		TK_INCLUDE_DIR=${PREFIX}/include/tk8.5 ${MAKE_CMD} \
+		${VMD_TARGET} -C ${WRKSRC}
 	${SETENV} ${MAKE_ENV} ${MAKE_CMD} all -C ${WRKSRC}/src
-	${SETENV} ${MAKE_ENV} ${MAKE_CMD} depend -C ${WRKSRC}/lib/surf && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} surf -C ${WRKSRC}/lib/surf && ${MV} ${WRKSRC}/lib/surf/surf ${WRKSRC}/lib/surf/surf_${VMD_ARCH}
-	${SETENV} ${MAKE_ENV} ${MAKE_CMD} -C ${WRKSRC}/lib/stride && ${MV} ${WRKSRC}/lib/stride/stride ${WRKSRC}/lib/stride/stride_${VMD_ARCH}
+	${SETENV} ${MAKE_ENV} ${MAKE_CMD} depend -C ${WRKSRC}/lib/surf \
+		&& ${SETENV} ${MAKE_ENV} ${MAKE_CMD} surf -C \
+			${WRKSRC}/lib/surf \
+		&& ${MV} ${WRKSRC}/lib/surf/surf \
+			${WRKSRC}/lib/surf/surf_${VMD_ARCH}
+	${SETENV} ${MAKE_ENV} ${MAKE_CMD} -C ${WRKSRC}/lib/stride \
+		&& ${MV} ${WRKSRC}/lib/stride/stride \
+			${WRKSRC}/lib/stride/stride_${VMD_ARCH}
 
 do-install:
-	${SETENV} ${MAKE_ENV} ${MAKE_CMD} -C ${WRKSRC}/src install
-	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/lib/vmd
+	${SETENV} ${MAKE_ENV} DESTDIR=${STAGEDIR} \
+	    ${MAKE_CMD} -C ${WRKSRC}/src install
+	${STRIP_CMD} ${STAGEDIR}${LOCALBASE}/lib/vmd/*${VMD_ARCH} \
+	    ${STAGEDIR}${LOCALBASE}/lib/vmd/plugins/${VMD_ARCH}/molfile/*.so
+.for f in tcl/autopsf1.3/psfcheck.so tcl/hesstrans1.0/hesstrans.so \
+	  tcl/mutator1.4/libalchemify.so tcl/pmepot1.0/libpmepot.so \
+	  tcl/psfgen1.6/libpsfgen.so tcl/rnaview1.1/rnaview \
+	  tcl/signalproc1.1/specden.so tcl/signalproc1.1/fftcmds.so \
+	  tcl/signalproc1.1/sgsmooth.so tcl/volutil1.3/volutil \
+	  tcl/clustalw1.1/clustalw tcl/libbiokit1.1/tcl_libbiokit.so \
+	  tcl/libbiokit1.1/q tcl/libbiokit1.1/seqqr \
+	  tcl/libbiokit1.1/structqr tcl/libbiokit1.1/qpair \
+	  tcl/libbiokit1.1/rmsd tcl/libbiokit1.1/percid \
+	  tcl/phylotree1.2/upgmaclu tcl/stamp1.2/stamp \
+	  bin/catdcd4.0/catdcd bin/cionize1.0/cionize
+	${STRIP_CMD} ${STAGEDIR}${LOCALBASE}/lib/vmd/plugins/${VMD_ARCH}/${f}
+.endfor
 
 .include <bsd.port.post.mk>
