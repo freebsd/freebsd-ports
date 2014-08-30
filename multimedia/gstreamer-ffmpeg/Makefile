@@ -4,7 +4,7 @@
 
 PORTNAME=	gstreamer
 PORTVERSION=	0.10.13
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia
 MASTER_SITES=	http://gstreamer.freedesktop.org/src/gst-ffmpeg/:ffmpeg \
 		http://libav.org/releases/:libav
@@ -22,7 +22,7 @@ LIB_DEPENDS=	liborc-0.4.so:${PORTSDIR}/devel/orc
 
 LIBAV_VERSION=	0.7.7
 WRKSRC=		${WRKDIR}/gst-ffmpeg-${PORTVERSION}
-USES=		compiler:features gmake pkgconfig
+USES=		compiler:features gmake libtool pkgconfig
 USE_LDCONFIG=	yes
 USE_GSTREAMER=	yes
 GNU_CONFIGURE=	yes
