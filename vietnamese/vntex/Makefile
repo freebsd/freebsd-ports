@@ -11,6 +11,8 @@ DISTNAME=	vntex
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	teTeX Vietnamese language + font support
 
+BROKEN=		Fails to install
+
 USES=		zip
 USE_TEX=	tex
 NO_BUILD=	yes
