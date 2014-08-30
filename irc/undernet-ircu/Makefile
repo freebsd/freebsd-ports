@@ -59,6 +59,11 @@ CONFIGURE_ARGS+=	--enable-profile
 
 .include <bsd.port.options.mk>
 
+# always disable profile support on 8.x
+.if ${OPSYS} == FreeBSD && ${OSVERSION} < 900000
+CONFIGURE_ARGS:=	${CONFIGURE_ARGS:N--enable-profile}
+.endif
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/ircd/ircd ${STAGEDIR}${PREFIX}/sbin
 	${INSTALL_PROGRAM} ${WRKSRC}/ircd/convert-conf \
