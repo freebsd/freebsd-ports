@@ -11,7 +11,4 @@ PKGMESSAGE=	${.CURDIR}/pkg-message
 
 BUILD_MOZC_LIST=	fcitx_mozc
 
-IGNORE=	not compatible with mozc 1.11.1502.102
-
-NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

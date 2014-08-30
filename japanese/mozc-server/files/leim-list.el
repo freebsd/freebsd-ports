@@ -26,4 +26,4 @@ This indicator is not shown when you don't use LEIM."
 (register-input-method
   "japanese-mozc" "Japanese" #'mozc-leim-activate
   mozc-leim-title
-  "Japanese input method with Mozc/Google Japanese Input.")
+  "Japanese input method with Mozc.")
