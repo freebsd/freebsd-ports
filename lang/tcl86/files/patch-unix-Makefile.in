@@ -1,5 +1,5 @@
---- Makefile.in.orig	2014-08-26 17:23:08.000000000 +0200
-+++ Makefile.in	2014-08-29 15:37:31.000000000 +0200
+--- Makefile.in.orig	2014-08-26 15:23:08 UTC
++++ Makefile.in
 @@ -54,6 +54,8 @@
  
  # Directory in which to install the include file tcl.h:
@@ -34,19 +34,20 @@
  
  libraries:
  
-@@ -625,6 +627,11 @@
+@@ -624,6 +626,12 @@
+ ${LIB_FILE}: ${STUB_LIB_FILE} ${OBJS}
  	rm -f $@
  	@MAKE_LIB@
- 
++	@ln -sf ${LIB_FILE} ./libtcl${SHORT_TCL_VER}.so
++
 +libtcl${SHORT_TCL_VER}.a: ${OBJS}
 +	rm -f libtcl${SHORT_TCL_VER}.a
 +	ar cr libtcl${SHORT_TCL_VER}.a ${OBJS}
 +	${RANLIB} libtcl${SHORT_TCL_VER}.a
-+
+ 
  ${STUB_LIB_FILE}: ${STUB_LIB_OBJS}
  	@if test "x${LIB_FILE}" = "xlibtcl${MAJOR_VERSION}.${MINOR_VERSION}.dll"; then \
- 	    (cd ${TOP_DIR}/win; ${MAKE} tcldde14.dll tclreg13.dll); \
-@@ -767,13 +774,13 @@
+@@ -767,13 +775,13 @@
  # Installation rules
  #--------------------------------------------------------------------------
  
@@ -63,7 +64,7 @@
  
  install: $(INSTALL_TARGETS)
  
-@@ -799,6 +806,11 @@
+@@ -799,6 +807,11 @@
  	@echo "Installing $(LIB_FILE) to $(DLL_INSTALL_DIR)/"
  	@@INSTALL_LIB@
  	@chmod 555 "$(DLL_INSTALL_DIR)/$(LIB_FILE)"
@@ -75,7 +76,7 @@
  	@echo "Installing ${TCL_EXE} as $(BIN_INSTALL_DIR)/tclsh$(VERSION)${EXE_SUFFIX}"
  	@$(INSTALL_PROGRAM) ${TCL_EXE} "$(BIN_INSTALL_DIR)/tclsh$(VERSION)${EXE_SUFFIX}"
  	@echo "Installing tclConfig.sh to $(CONFIG_INSTALL_DIR)/"
-@@ -811,12 +823,12 @@
+@@ -811,12 +824,12 @@
  	    @INSTALL_STUB_LIB@ ; \
  	fi
  	@EXTRA_INSTALL_BINARIES@
@@ -92,7 +93,7 @@
  	    do \
  	    if [ ! -d "$$i" ] ; then \
  		echo "Making directory $$i"; \
-@@ -824,7 +836,16 @@
+@@ -824,7 +837,16 @@
  		else true; \
  		fi; \
  	    done;
@@ -110,7 +111,7 @@
  	    do \
  	    if [ ! -d "$(SCRIPT_INSTALL_DIR)"/$$i ] ; then \
  		echo "Making directory $(SCRIPT_INSTALL_DIR)/$$i"; \
-@@ -844,31 +865,21 @@
+@@ -844,31 +866,21 @@
  	    $(INSTALL_DATA) $$i "$(SCRIPT_INSTALL_DIR)"/http1.0; \
  	    done;
  	@echo "Installing package http 2.8.8 as a Tcl Module";
@@ -147,7 +148,7 @@
  
  install-tzdata:
  	@for i in tzdata; \
-@@ -943,7 +954,7 @@
+@@ -943,7 +955,7 @@
  	done
  
  install-headers:
@@ -156,7 +157,7 @@
  	    do \
  	    if [ ! -d "$$i" ] ; then \
  		echo "Making directory $$i"; \
-@@ -952,14 +963,19 @@
+@@ -952,14 +964,19 @@
  		fi; \
  	    done;
  	@echo "Installing header files to $(INCLUDE_INSTALL_DIR)/";
@@ -169,10 +170,10 @@
 -	    $(INSTALL_DATA) $$i "$(INCLUDE_INSTALL_DIR)"; \
 +	@for i in $(GENERIC_DIR)/*.h; do \
 +	    $(INSTALL_DATA) $$i "$(GENERIC_INCLUDE_INSTALL_DIR)"/; \
-+	    done;
+ 	    done;
 +	@for i in $(UNIX_DIR)/*.h; do \
 +	    $(INSTALL_DATA) $$i "$(UNIX_INCLUDE_INSTALL_DIR)"/; \
- 	    done;
++	    done;
 +	@ln -sf generic/tcl.h "$(INCLUDE_INSTALL_DIR)"/tcl.h
 +	@ln -sf generic/tclDecls.h "$(INCLUDE_INSTALL_DIR)"/tclDecls.h
 +	@ln -sf generic/tclPlatDecls.h "$(INCLUDE_INSTALL_DIR)"/tclPlatDecls.h
