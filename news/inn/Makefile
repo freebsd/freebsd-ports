@@ -3,7 +3,7 @@
 
 PORTNAME?=	inn
 PORTVERSION?=	2.5.4
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES=	news ipv6
 # Master distribution broken
 MASTER_SITES?=	${MASTER_SITE_ISC}

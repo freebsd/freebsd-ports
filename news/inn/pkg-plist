@@ -321,6 +321,8 @@ man/man8/writelog.8.gz
 %%EXAMPLESDIR%%/subscriptions
 @comment --------------------------------------------------------------
 @cwd /
+@owner news
+@group news
 @sample %%DBDIR%%/active.sample
 @sample %%DBDIR%%/active.times.sample
 @sample %%DBDIR%%/newsgroups.sample
@@ -331,41 +333,45 @@ man/man8/writelog.8.gz
 %%WITHOUT_TAGGED_HASH%%@unexec rm -f %%EXAMPLESDIR%%/db/history.index 2> /dev/null || true
 %%WITH_TAGGED_HASH%%@unexec f=history.pag; if cmp -s %%DBDIR%%/$f %%EXAMPLESDIR%%/db/$f; then rm -f %%DBDIR%%/$f; fi
 %%WITH_TAGGED_HASH%%@unexec rm -f %%EXAMPLESDIR%%/db/history.pag 2> /dev/null || true
-%%CONFDIR%%/actsync.cfg.sample
-%%CONFDIR%%/actsync.ign.sample
-%%CONFDIR%%/buffindexed.conf.sample
-%%CONFDIR%%/control.ctl.local.sample
-%%CONFDIR%%/control.ctl.sample
-%%CONFDIR%%/cycbuff.conf.sample
-%%CONFDIR%%/distrib.pats.sample
-%%CONFDIR%%/distributions.sample
-%%CONFDIR%%/expire.ctl.sample
-%%CONFDIR%%/incoming.conf.sample
-%%CONFDIR%%/inn.conf.sample
-%%CONFDIR%%/innfeed.conf.sample
-%%CONFDIR%%/innreport.conf.sample
-%%CONFDIR%%/innshellvars.local.sample
-%%CONFDIR%%/innshellvars.pl.local.sample
-%%CONFDIR%%/innshellvars.tcl.local.sample
-%%CONFDIR%%/innwatch.ctl.sample
-%%CONFDIR%%/localgroups.sample
-%%CONFDIR%%/moderators.sample
-%%CONFDIR%%/news2mail.cf.sample
-%%CONFDIR%%/newsfeeds.sample
-%%CONFDIR%%/nnrpd.track.sample
-%%CONFDIR%%/nntpsend.ctl.sample
-%%CONFDIR%%/nocem.ctl.sample
-%%CONFDIR%%/ovdb.conf.sample
-%%CONFDIR%%/passwd.nntp.sample
-%%CONFDIR%%/readers.conf.sample
-%%CONFDIR%%/send-uucp.cf.sample
-%%CONFDIR%%/storage.conf.sample
-%%CONFDIR%%/subscriptions.sample
+@sample %%CONFDIR%%/actsync.cfg.sample
+@sample %%CONFDIR%%/actsync.ign.sample
+@sample %%CONFDIR%%/buffindexed.conf.sample
+@sample %%CONFDIR%%/control.ctl.local.sample
+@sample %%CONFDIR%%/control.ctl.sample
+@sample %%CONFDIR%%/cycbuff.conf.sample
+@sample %%CONFDIR%%/distrib.pats.sample
+@sample %%CONFDIR%%/distributions.sample
+@sample %%CONFDIR%%/expire.ctl.sample
+@sample %%CONFDIR%%/incoming.conf.sample
+@sample %%CONFDIR%%/inn.conf.sample
+@sample %%CONFDIR%%/innfeed.conf.sample
+@sample %%CONFDIR%%/innreport.conf.sample
+@sample %%CONFDIR%%/innshellvars.local.sample
+@sample %%CONFDIR%%/innshellvars.pl.local.sample
+@sample %%CONFDIR%%/innshellvars.tcl.local.sample
+@sample %%CONFDIR%%/innwatch.ctl.sample
+@sample %%CONFDIR%%/localgroups.sample
+@sample %%CONFDIR%%/moderators.sample
+@sample %%CONFDIR%%/news2mail.cf.sample
+@sample %%CONFDIR%%/newsfeeds.sample
+@sample %%CONFDIR%%/nnrpd.track.sample
+@sample %%CONFDIR%%/nntpsend.ctl.sample
+@sample %%CONFDIR%%/nocem.ctl.sample
+@sample %%CONFDIR%%/ovdb.conf.sample
+@sample %%CONFDIR%%/passwd.nntp.sample
+@sample %%CONFDIR%%/readers.conf.sample
+@sample %%CONFDIR%%/send-uucp.cf.sample
+@sample %%CONFDIR%%/storage.conf.sample
+@sample %%CONFDIR%%/subscriptions.sample
 @comment --------------------------------------------------------------
+@owner
+@group
 @cwd
 @dirrm %%EXAMPLESDIR%%/db
 @dirrm %%EXAMPLESDIR%%
 @cwd /
+@owner news
+@group news
 @dirrm %%TMPDIR%%                
 @dirrm %%SHAREDIR%%              
 @dirrm %%NEWSSPOOL%%/overview    
@@ -396,4 +402,6 @@ man/man8/writelog.8.gz
 @dirrm %%DBDIR%%                 
 @dirrm %%LOGDIR%%/OLD
 @dirrm %%LOGDIR%%
+@owner news
+@group news
 @unexec rmdir %%NEWSBASE%% 2>/dev/null ||( echo "===>  If you don't plan to use inn later, you can safely remove %%NEWSBASE%%. Deinstall process kept these files intact:" | fmt && for i in $(find %D/news -type f); do echo "    - $i"; done)
