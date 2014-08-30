@@ -3,7 +3,7 @@
 
 PORTNAME=	backuppc
 PORTVERSION=	3.3.0
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	sysutils
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	${PORTNAME}/${PORTNAME}/${PORTVERSION}
@@ -95,9 +95,6 @@ post-patch:
 		-e 's|^(use lib ")\.(/lib";)$$|\1${PREFIX}\2|' \
 		${WRKSRC}/update.pl
 	@${REINPLACE_CMD} \
-		-e 's,"/doc/BackupPC.html","/${DOCSDIR_REL}/BackupPC.html",' \
-		${WRKSRC}/lib/BackupPC/CGI/View.pm
-	@${REINPLACE_CMD} \
 		-e 's|STDERR "Please su |STDERR "Please su [-m] |' \
 		${WRKSRC}/lib/BackupPC/Lib.pm
 	@${REINPLACE_CMD} \
@@ -127,6 +124,7 @@ do-install:
 		${WRKSRC}/doc/BackupPC.pod ${WRKSRC}/${PORTNAME}.1
 	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${STAGEDIR}${MANPREFIX}/man/man1
 	cd ${WRKSRC} && ${INSTALL_MAN} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
+	${CP} ${WRKSRC}/doc/BackupPC.html ${STAGEDIR}${WWWDIR}
 	${RM} ${STAGEDIR}${ETCDIR}/config.pl
 	${RM} ${STAGEDIR}${ETCDIR}/hosts
 	${CP} ${WRKSRC}/conf/config.pl ${STAGEDIR}${ETCDIR}/config.pl.sample
