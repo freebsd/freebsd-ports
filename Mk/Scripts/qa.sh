@@ -121,6 +121,8 @@ paths() {
 			*/lib/ruby/gems/*/Makefile) continue ;;
 			*/lib/ruby/gems/*/Makefile.html) continue ;;
 			*/lib/ruby/gems/*/mkmf.log) continue ;;
+			*/share/texmf-var/web2c/*/*.fmt) continue ;;
+			*/share/texmf-var/web2c/*/*.log) continue ;;
 		esac
 		err "'${f#${STAGEDIR}${PREFIX}/}' is referring to ${STAGEDIR}"
 		rc=1
