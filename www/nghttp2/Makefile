@@ -28,6 +28,7 @@ CONFIGURE_ENV=	OPENSSL_CFLAGS="-I${OPENSSLINC}" \
 		ZLIB_CFLAGS="-I${INCLUDEDIR}" \
 		ZLIB_LIBS="-L${LIBDIR} -lz"
 GNU_CONFIGURE=	yes
+INSTALL_TARGET=	install-strip
 USE_CXXSTD=	c++11
 USE_GNOME=	libxml2
 USE_LDCONFIG=	yes
@@ -51,8 +52,5 @@ CONFIGURE_ARGS+=--with-jemalloc
 
 post-patch:
 	@${REINPLACE_CMD} -e '/JEMALLOC_LIBS/ s|-ljemalloc||' ${WRKSRC}/configure
-
-post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libnghttp2.so.4.0.1
 
 .include <bsd.port.post.mk>
