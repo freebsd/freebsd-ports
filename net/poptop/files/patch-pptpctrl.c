@@ -38,7 +38,7 @@
  
  #elif SLIRP
  
-@@ -786,7 +796,7 @@
+@@ -786,14 +796,14 @@
  
          if (pptp_logwtmp) {
                   pppd_argv[an++] = "plugin";
@@ -47,3 +47,11 @@
                   pppd_argv[an++] = "pptpd-original-ip";
                   pppd_argv[an++] = inet_ntoa(inetaddrs[1]);
          }
+-#endif
+
+         pppd_argv[an++] = "remotenumber";
+         pppd_argv[an++] = inet_ntoa(inetaddrs[1]);
++#endif
+
+         /* argv arrays must always be NULL terminated */
+         pppd_argv[an++] = NULL;
