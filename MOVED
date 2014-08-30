@@ -6496,3 +6496,4 @@ misc/rubygem-mime-types117|misc/rubygem-mime-types1|2014-08-26|Renamed to proper
 devel/rubygem-json146|devel/rubygem-json|2014-08-28|Has expired: Old version no longer required by dependencies
 archivers/rubygem-bzip2|archivers/rubygem-bzip2-ruby|2014-08-29|Rename to match our rubygems naming
 ports-mgmt/pkg_add_it||2014-08-30|Has expired: Does not support pkgng
+print/dviselect|print/texlive-base|2014-08-30|Use print/texlive-base instead

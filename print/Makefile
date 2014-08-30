@@ -45,7 +45,6 @@
     SUBDIR += dot2tex
     SUBDIR += dvi2tty
     SUBDIR += dvips2ascii
-    SUBDIR += dviselect
     SUBDIR += dvisvg
     SUBDIR += easylatex
     SUBDIR += enscript-a4
