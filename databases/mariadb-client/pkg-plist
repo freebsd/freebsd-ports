@@ -106,13 +106,13 @@ include/mysql/private/waiting_threads.h
 include/mysql/private/welcome_copyright_notice.h
 include/mysql/private/my_regex.h
 lib/mysql/libmysqlclient.a
-lib/mysql/libmysqlclient.la
 lib/mysql/libmysqlclient.so
 lib/mysql/libmysqlclient.so.16
+lib/mysql/libmysqlclient.so.16.0.0
 lib/mysql/libmysqlclient_r.a
-lib/mysql/libmysqlclient_r.la
 lib/mysql/libmysqlclient_r.so
 lib/mysql/libmysqlclient_r.so.16
+lib/mysql/libmysqlclient_r.so.16.0.0
 man/man1/mysql.1.gz
 man/man1/mysql_config.1.gz
 man/man1/mysql_upgrade.1.gz
