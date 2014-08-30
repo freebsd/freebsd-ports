@@ -1,12 +1,12 @@
 include/fam.h
 lib/libfam.a
-lib/libfam.la
 lib/libfam.so
 lib/libfam.so.0
+lib/libfam.so.0.0.0
 lib/libgamin-1.a
-lib/libgamin-1.la
 lib/libgamin-1.so
-lib/libgamin-1.so.1
+lib/libgamin-1.so.0
+lib/libgamin-1.so.0.1.10
 lib/libgamin_shared.a
 libdata/pkgconfig/gamin.pc
 libexec/gam_server
