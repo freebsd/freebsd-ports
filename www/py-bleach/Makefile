@@ -2,30 +2,31 @@
 # $FreeBSD$
 
 PORTNAME=	bleach
-PORTVERSION=	1.2.2
-PORTREVISION=	2
+PORTVERSION=	1.4
 CATEGORIES=	www python
+MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	koobs@FreeBSD.org
 COMMENT=	Easy whitelist-based HTML-sanitizing tool for Python
 
 LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}six>0:${PORTSDIR}/devel/py-six
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}html5lib>=0.95:${PORTSDIR}/www/py-html5lib
-TEST_DEPENDS:=	${RUN_DEPENDS} \
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}html5lib>=0.95:${PORTSDIR}/www/py-html5lib \
 		nosetests:${PORTSDIR}/devel/py-nose
 
-USE_GITHUB=		yes
-USE_PYTHON=		yes
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
+OPTIONS_DEFINE=	TESTS
 
-GH_ACCOUNT=	jsocol
-GH_TAGNAME=	v${PORTVERSION}
-GH_COMMIT=	baf1eac
+TESTS_DESC=		Install tools for test suite
+TESTS_BUILD_DEPENDS=	${TEST_DEPENDS}
+
+USES=		python
+USE_PYTHON=	distutils autoplist
 
 regression-test: build
-	@cd ${WRKSRC} && ${PYTHON_CMD} ${PYSETUP} test
+	@cd ${WRKSRC} && ${PYTHON_CMD} ${PYDISTUTILS_SETUP} test
 
 .include <bsd.port.mk>
