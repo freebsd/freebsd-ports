@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	python-registry
-PORTVERSION=	1.0.3
+PORTVERSION=	1.0.4
 CATEGORIES=	security devel python
 MASTER_SITES=	GH \
 		LOCAL/antoine
@@ -15,16 +15,14 @@ LICENSE=	APACHE20
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	williballenthin
-GH_TAGNAME=	v${PORTVERSION}
-GH_COMMIT=	24afb86
+GH_TAGNAME=	86ed1da
+GH_COMMIT=	86ed1da
 
-USES=		shebangfix
+USES=		python shebangfix
+USE_PYTHON=	distutils autoplist
 SHEBANG_FILES=	samples/*.py
 python_OLD_CMD=	.*
 python_CMD=	${PYTHON_CMD}
-USE_PYTHON=	yes
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
