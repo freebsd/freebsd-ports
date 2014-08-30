@@ -14,14 +14,14 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	libxapian.so:${PORTSDIR}/databases/xapian-core
 
-OPTIONS_DEFINE=	DOCS LUA PERL PHP PYTHON RUBY
+OPTIONS_DEFINE=	DOCS LUA PHP PYTHON RUBY
 OPTIONS_DEFAULT=PHP PYTHON RUBY
 OPTIONS_SUB=	yes
 
 PORTSCOUT=	limitw:1,even
 
 CONFIGURE_ARGS=	--datarootdir=${DATADIR} --docdir=${DOCSDIR} \
-		--without-csharp --without-java --without-tcl
+		--without-csharp --without-java --without-perl --without-tcl
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 USES=		libtool tar:xz
@@ -31,9 +31,6 @@ PORTDOCS=	*
 LUA_CONFIGURE_ENV=	LUA="${LUA_CMD}" LUA_INC="${LUA_INCDIR}" LUA_LIB="${LUA_MODLIBDIR}" LUA_SO=.so
 LUA_CONFIGURE_WITH=	lua
 LUA_USES=		lua
-PERL_CONFIGURE_ENV=	PERL_LIB=${SITE_PERL}
-PERL_CONFIGURE_WITH=	perl
-PERL_USES=		perl5
 PHP_CONFIGURE_ENV=	PHP_CONFIG=${LOCALBASE}/bin/php-config
 PHP_CONFIGURE_WITH=	php
 PHP_USE=		PHP=yes PHP_BUILD=yes
