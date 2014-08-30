@@ -3,7 +3,7 @@
 
 PORTNAME=	heimdal
 PORTVERSION=	1.5.2
-PORTREVISION=	14
+PORTREVISION=	15
 CATEGORIES=	security ipv6
 MASTER_SITES=	http://www.h5l.org/dist/src/ \
 		http://ftp.pdc.kth.se/pub/heimdal/src/ \
@@ -83,6 +83,12 @@ X11_USE=		XORG=x11,xt
 X11_CONFIGURE_WITH=	x
 
 .include <bsd.port.options.mk>
+
+.if ${OSVERSION} < 1000000
+PLIST_SUB+=	LIBCOM_ERR=""
+.else
+PLIST_SUB+=	LIBCOM_ERR="@comment "
+.endif
 
 .if ${PORT_OPTIONS:MLDAP}
 WANT_OPENLDAP_SASL?=	yes
