@@ -6517,3 +6517,4 @@ print/it-acroread8||2014-08-30|Deprecated: many security issues are reported and
 print/nl-acroread8||2014-08-30|Deprecated: many security issues are reported and Adobe no longer actively supports Adobe Reader for Unix
 print/no-acroread8||2014-08-30|Deprecated: many security issues are reported and Adobe no longer actively supports Adobe Reader for Unix
 print/sv-acroread8||2014-08-30|Deprecated: many security issues are reported and Adobe no longer actively supports Adobe Reader for Unix
+net-p2p/p5-Net-DirectConnect-TigerHash||2014-08-31|Broken for many months and security/p5-Crypt-RHash is a suitable replacement
