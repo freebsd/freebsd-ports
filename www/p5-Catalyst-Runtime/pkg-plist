@@ -27,6 +27,7 @@ bin/catalyst.pl
 %%SITE_PERL%%/Catalyst/Exception/Go.pm
 %%SITE_PERL%%/Catalyst/Exception/Interface.pm
 %%SITE_PERL%%/Catalyst/Log.pm
+%%SITE_PERL%%/Catalyst/Middleware/Stash.pm
 %%SITE_PERL%%/Catalyst/Model.pm
 %%SITE_PERL%%/Catalyst/PSGI.pod
 %%SITE_PERL%%/Catalyst/Plugin/Unicode/Encoding.pm
@@ -75,6 +76,7 @@ bin/catalyst.pl
 %%PERL5_MAN3%%/Catalyst::Exception::Go.3.gz
 %%PERL5_MAN3%%/Catalyst::Exception::Interface.3.gz
 %%PERL5_MAN3%%/Catalyst::Log.3.gz
+%%PERL5_MAN3%%/Catalyst::Middleware::Stash.3.gz
 %%PERL5_MAN3%%/Catalyst::Model.3.gz
 %%PERL5_MAN3%%/Catalyst::PSGI.3.gz
 %%PERL5_MAN3%%/Catalyst::Plugin::Unicode::Encoding.3.gz
@@ -101,6 +103,7 @@ man/man1/catalyst.pl.1.gz
 @dirrmtry %%SITE_PERL%%/Catalyst/Request
 @dirrmtry %%SITE_PERL%%/Catalyst/Plugin/Unicode
 @dirrmtry %%SITE_PERL%%/Catalyst/Plugin
+@dirrmtry %%SITE_PERL%%/Catalyst/Middleware
 @dirrmtry %%SITE_PERL%%/Catalyst/Exception
 @dirrmtry %%SITE_PERL%%/Catalyst/Engine
 @dirrmtry %%SITE_PERL%%/Catalyst/DispatchType
