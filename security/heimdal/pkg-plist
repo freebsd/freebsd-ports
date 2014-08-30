@@ -12,6 +12,7 @@ bin/klist
 bin/kpasswd
 bin/krb5-config
 bin/kswitch
+%%X11%%bin/kx
 bin/login
 bin/otp
 bin/otpprint
@@ -19,11 +20,14 @@ bin/pagsh
 bin/pfrom
 bin/rcp
 bin/rsh
+%%X11%%bin/rxtelnet
+%%X11%%bin/rxterm
 bin/string2key
 bin/su
 bin/telnet
+%%X11%%bin/tenletxr
 bin/verify_krb5_conf
-etc/rc.d/kdc.sh.sample
+%%X11%%bin/xnlock
 include/asn1-common.h
 include/asn1_err.h
 include/base64.h
@@ -37,16 +41,16 @@ include/getarg.h
 include/gssapi.h
 include/gssapi/gkrb5_err.h
 include/gssapi/gssapi.h
-include/gssapi/gssapi_ntlm.h
 include/gssapi/gssapi_krb5.h
+include/gssapi/gssapi_ntlm.h
 include/gssapi/gssapi_oid.h
 include/gssapi/gssapi_spnego.h
 include/hdb-protos.h
 include/hdb.h
 include/hdb_asn1.h
 include/hdb_err.h
-include/heim_asn1.h
 include/heim-ipc.h
+include/heim_asn1.h
 include/heim_err.h
 include/heimbase.h
 include/heimntlm-protos.h
@@ -97,6 +101,7 @@ include/sl.h
 include/wind.h
 include/wind_err.h
 include/xdbm.h
+%%CRACKLIB%%lib/kpasswdd-cracklib.so
 lib/libasn1.a
 lib/libasn1.so
 lib/libasn1.so.8
@@ -105,22 +110,26 @@ lib/libgssapi.a
 lib/libgssapi.so
 lib/libgssapi.so.3
 lib/libgssapi.so.3.0.0
-lib/libheimbase.a
-lib/libheimbase.so
-lib/libheimbase.so.1
-lib/libheimbase.so.1.0.0
-%%NO_SQLITE%%lib/libheimsqlite.a
-%%NO_SQLITE%%lib/libheimsqlite.so
-%%NO_SQLITE%%lib/libheimsqlite.so.0
-%%NO_SQLITE%%lib/libheimsqlite.so.0.0.0
 lib/libhdb.a
 lib/libhdb.so
 lib/libhdb.so.9
 lib/libhdb.so.9.2.0
+lib/libheimbase.a
+lib/libheimbase.so
+lib/libheimbase.so.1
+lib/libheimbase.so.1.0.0
+lib/libheimedit.a
+lib/libheimedit.so
+lib/libheimedit.so.0
+lib/libheimedit.so.0.0.36
 lib/libheimntlm.a
 lib/libheimntlm.so
 lib/libheimntlm.so.0
 lib/libheimntlm.so.0.1.0
+%%NO_SQLITE%%lib/libheimsqlite.a
+%%NO_SQLITE%%lib/libheimsqlite.so
+%%NO_SQLITE%%lib/libheimsqlite.so.0
+%%NO_SQLITE%%lib/libheimsqlite.so.0.0.0
 lib/libhx509.a
 lib/libhx509.so
 lib/libhx509.so.5
@@ -176,12 +185,13 @@ libexec/hpropd
 libexec/ipropd-master
 libexec/ipropd-slave
 libexec/kadmind
-%%KCM%%libexec/kcm
+libexec/kcm
 libexec/kdc
 libexec/kdigest
 libexec/kfd
 libexec/kimpersonate
 libexec/kpasswdd
+%%X11%%libexec/kxd
 libexec/popper
 libexec/push
 libexec/rshd
@@ -1192,7 +1202,7 @@ man/man8/ipropd-master.8.gz
 man/man8/ipropd-slave.8.gz
 man/man8/kadmin.8.gz
 man/man8/kadmind.8.gz
-%%KCM%%man/man8/kcm.8.gz
+man/man8/kcm.8.gz
 man/man8/kdc.8.gz
 man/man8/kdigest.8.gz
 man/man8/kerberos.8.gz
@@ -1212,8 +1222,8 @@ sbin/iprop-log
 sbin/kadmin
 sbin/kstash
 sbin/ktutil
+@dirrm libexec/heimdal
+@dirrm include/roken
 @dirrm include/krb5
 @dirrm include/kadm5
 @dirrm include/gssapi
-@dirrm include/roken
-@dirrm libexec/heimdal

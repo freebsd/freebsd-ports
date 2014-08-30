@@ -1,7 +1,0 @@
-bin/compile_et
-include/com_err.h
-include/com_right.h
-lib/libcom_err.a
-lib/libcom_err.so
-lib/libcom_err.so.1
-lib/libcom_err.so.1.1.3
