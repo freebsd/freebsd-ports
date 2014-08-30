@@ -21,6 +21,7 @@ USES=		gettext iconv gmake pkgconfig tar:bzip2 desktop-file-utils \
 USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
+INSTALL_TARGET=	install-strip
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib
@@ -130,7 +131,5 @@ post-install:
 .endfor
 	@${INSTALL_DATA} ${WRKSRC}/sylpheed.png ${STAGEDIR}${PREFIX}/share/pixmaps/
 	@${INSTALL_DATA} ${WRKSRC}/sylpheed.desktop ${STAGEDIR}${PREFIX}/share/applications/
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libsylpheed-plugin-0.so.1.2.0
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libsylph-0.so.1.2.0
 
 .include <bsd.port.mk>
