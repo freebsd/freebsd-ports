@@ -3,7 +3,7 @@
 
 PORTNAME=	mutt
 PORTVERSION=	1.5.23
-PORTREVISION=	4
+PORTREVISION?=	5
 CATEGORIES+=	mail ipv6
 MASTER_SITES=	ftp://ftp.mutt.org/mutt/ \
 		ftp://ftp.mutt.org/mutt/devel/ \

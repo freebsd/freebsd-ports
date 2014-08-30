@@ -1,12 +1,12 @@
 # Created by: David O'Brien (obrien@NUXI.com)
 # $FreeBSD$
 
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	chinese
 
 MASTERDIR=	${.CURDIR}/../../mail/mutt
-REVISEDATE=	20100927
-PORTREVISION=	${REVISEDATE}
+#REVISEDATE=	20100927
+#PORTREVISION=	${REVISEDATE}
 
 # XXX: Currently PORTREVISION assignment is not perfect. It needs to
 # inherit its master port's PORTREVISION and be appended.

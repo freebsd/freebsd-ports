@@ -3,7 +3,7 @@
 
 PORTNAME=	libidn
 PORTVERSION=	1.28
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	dns
 MASTER_SITES=	GNU
 
@@ -12,12 +12,13 @@ COMMENT=	Internationalized Domain Names command line tool
 
 OPTIONS_DEFINE=	DOCS NLS
 
-USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib
+INSTALL_TARGET=	install-strip
+USES=		iconv libtool makeinfo pathfix perl5 pkgconfig
+USE_LDCONFIG=	yes
 USE_PERL5=	build
-USES=		iconv makeinfo pathfix perl5 pkgconfig
 
 INFO=		libidn
 
@@ -32,17 +33,10 @@ PLIST_SUB+=	NLS="@comment "
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|@image{components}||g' \
-		${WRKSRC}/doc/libidn.texi
-	@${REINPLACE_CMD} -e 's|$$(AUTOMAKE)|${TRUE}|; /imagesdir = / s|infodir|docdir|' \
+	@${REINPLACE_CMD} -e '/^Makefile.gdoc:/s/configure /configure.ac /' \
 		${WRKSRC}/doc/Makefile.in
-.if ! ${PORT_OPTIONS:MDOCS}
-	@${REINPLACE_CMD} -e '/^install-data-am: / s| install-imagesDATA||' \
-		${WRKSRC}/doc/Makefile.in
-.endif
-.if ${PORT_OPTIONS:MNLS}
-	@${REINPLACE_CMD} -e 's/-lidn/& -lintl/' ${WRKSRC}/libidn.pc.in
-.endif
+	@${REINPLACE_CMD} -e '/^Libs.private:/s/$$/ @LTLIBINTL@/' \
+		${WRKSRC}/libidn.pc.in
 
 post-install:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
