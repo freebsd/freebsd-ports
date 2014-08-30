@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	igbinary
-PORTVERSION=	1.2.0
+PORTVERSION=	1.2.1
 CATEGORIES=	converters
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
