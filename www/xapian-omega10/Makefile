@@ -12,6 +12,8 @@ COMMENT=	CGI search application built on Xapian
 
 LICENSE=	GPLv2
 
+BROKEN=		Fails to configure
+
 LIB_DEPENDS=	libxapian.so:${PORTSDIR}/databases/xapian-core10
 
 USES=		perl5
