@@ -1,5 +1,16 @@
 --- configure.orig
 +++ configure
+@@ -1961,8 +1961,8 @@
+ sndio_indev_deps="sndio_h"
+ sndio_outdev_deps="sndio_h"
+ v4l_indev_deps="linux_videodev_h"
+-v4l2_indev_deps_any="linux_videodev2_h sys_videoio_h"
+-v4l2_outdev_deps_any="linux_videodev2_h sys_videoio_h"
++v4l2_indev_deps_any="linux_videodev2_h"
++v4l2_outdev_deps_any="linux_videodev2_h"
+ vfwcap_indev_deps="capCreateCaptureWindow vfwcap_defines"
+ vfwcap_indev_extralibs="-lavicap32"
+ xv_outdev_deps="X11_extensions_Xvlib_h XvGetPortAttribute"
 @@ -2147,7 +2147,7 @@ yasmexe_default="yasm"
  nogas=":"
  
@@ -9,21 +20,6 @@
  cpu="generic"
  
  # OS
-@@ -3991,10 +3991,10 @@ perl --version > /dev/null 2>&1 && enabl
- pod2man --help > /dev/null 2>&1 && enable pod2man || disable pod2man
- rsync --help 2> /dev/null | grep -q 'contimeout' && enable rsync_contimeout || disable rsync_contimeout
- 
--check_header linux/fb.h
--check_header linux/videodev.h
--check_header linux/videodev2.h
--check_code cc linux/videodev2.h "struct v4l2_frmsizeenum vfse; vfse.discrete.width = 0;" && enable_safe struct_v4l2_frmivalenum_discrete
-+#check_header linux/fb.h
-+#check_header linux/videodev.h
-+#check_header linux/videodev2.h
-+#check_code cc linux/videodev2.h "struct v4l2_frmsizeenum vfse; vfse.discrete.width = 0;" && enable_safe struct_v4l2_frmivalenum_discrete
- 
- check_header sys/videoio.h
- 
 @@ -4373,7 +4373,7 @@ ifndef MAIN_MAKEFILE
  SRC_PATH:=\$(SRC_PATH:.%=..%)
  endif
