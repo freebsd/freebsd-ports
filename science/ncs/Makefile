@@ -95,11 +95,7 @@ LIB_DEPENDS+=	libblas.so:${PORTSDIR}/math/blas
 BLAS_LIB=	-lblas
 .endif
 
-.if exists(${LOCALBASE}/bin/acroread)
-RUN_DEPENDS+=	acroread:${PORTSDIR}/print/acroreadwrapper
-.else
 RUN_DEPENDS+=	xpdf:${PORTSDIR}/graphics/xpdf
-.endif
 
 pre-everything::
 	@${ECHO_MSG}

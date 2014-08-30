@@ -3,7 +3,7 @@
 
 PORTNAME=	plugger-plugins-hubbe
 PORTVERSION=	5.0
-PORTREVISION=	20
+PORTREVISION=	21
 CATEGORIES=	www multimedia audio graphics print editors
 MASTER_SITES=	# empty
 DISTFILES=	# empty
@@ -13,7 +13,6 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Meta package installing all author-recommended Plugger plugins
 
 RUN_DEPENDS=	sidplay:${PORTSDIR}/audio/sidplay \
-		acroread8:${PORTSDIR}/print/acroread8 \
 		mpg123:${PORTSDIR}/audio/mpg123 \
 		mikmod:${PORTSDIR}/audio/mikmod \
 		ogg123:${PORTSDIR}/audio/vorbis-tools \
@@ -29,10 +28,6 @@ RUN_DEPENDS=	sidplay:${PORTSDIR}/audio/sidplay \
 		gnumeric:${PORTSDIR}/math/gnumeric \
 		abiword:${PORTSDIR}/editors/abiword \
 		display:${PORTSDIR}/graphics/ImageMagick
-
-.if exists(${LOCALBASE}/bin/oowrite)
-RUN_DEPENDS+=	openoffice-1.1-swriter:${PORTSDIR}/editors/openoffice-1.1
-.endif
 
 #
 NO_STAGE=	yes
