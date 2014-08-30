@@ -9,13 +9,13 @@ MASTER_SITES=	GOOGLE_CODE \
 MAINTAINER=	brooks@FreeBSD.org
 COMMENT=	Parallel versions of the openssh tools
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 RUN_DEPENDS=	rsync:${PORTSDIR}/net/rsync
 
-USE_PYTHON=	yes
-USE_PYDISTUTILS=	yes
+USES=		python
+USE_PYTHON=	autoplist distutils
 
 PROJECTHOST=	parallel-ssh
 
