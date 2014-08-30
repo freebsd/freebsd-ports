@@ -3,7 +3,7 @@
 
 PORTNAME=	freetalk
 PORTVERSION=	3.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net-im
 MASTER_SITES=	SAVANNAH/freetalk \
 		http://itdev.spb.ru/mirror/
