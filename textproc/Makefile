@@ -324,6 +324,7 @@
     SUBDIR += jrefentry
     SUBDIR += jshon
     SUBDIR += kdiff3
+    SUBDIR += kenlm
     SUBDIR += kibana
     SUBDIR += kmfl-european-latin
     SUBDIR += kmfl-khmer
