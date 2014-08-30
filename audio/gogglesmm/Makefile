@@ -19,7 +19,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	${PORTNAME}
 GH_COMMIT=	ea16b55
 
-USES=		compiler:nestedfct desktop-file-utils gmake pkgconfig
+USES=		compiler:c++11-lang desktop-file-utils gmake pkgconfig
 USE_SQLITE=	yes
 HAS_CONFIGURE=	yes
 CONFIGURE_ENV=	LINK="${CXX}" \
