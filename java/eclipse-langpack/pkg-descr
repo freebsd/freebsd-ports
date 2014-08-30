@@ -4,24 +4,19 @@ download which are distributed as a set of features which you can
 install by extracting over your Eclipse directory and restarting
 Eclipse. Specifically,
 
-NLpack1- Contains the NL fragments and the NL features that contain
-those fragments for: German, Spanish, French, Italian, Japanese,
-Korean, Portuguese (Brazil), Traditional Chinese and Simplified
-Chinese.
+NLpackX contains the NL fragments and the NL features that contain
+those fragments for the below languages with each X:
 
-NLpack2- Contains the NL fragments and the NL features that contain
-those fragments for: Czech, Hungarian, Polish and Russian.
-
-NLpack2a- Contains the NL fragments and the NL features that contain
-those fragments for: Danish, Dutch, Finnish, Greek, Norwegian,
-Portuguese, Swedish and Turkish.
-
-NLpackBidi- Contains the NL fragments and the NL features that contain
-those fragments for: Arabic and Hebrew.
+X=1: German, Spanish, French, Italian, Japanese, Korean,
+     Portuguese (Brazil), Traditional Chinese and Simplified Chinese.
+X=2: Czech, Hungarian, Polish and Russian.
+X=2a: Danish, Dutch, Finnish, Greek, Norwegian, Portuguese,
+      Swedish and Turkish.
+X=Bidi: Arabic and Hebrew.
 
 These translations are based on the Eclipse 3.2 build but should work
 with all subsequent 3.2.x maintenance releases. If new strings are
 added to Eclipse after 3.2, they will not show up as translated in the
 3.2.x stream when you install this language pack.
 
-http://download.eclipse.org/eclipse/downloads/drops/L-3.2.1_Language_Packs-200609210945/index.php
+WWW: http://www.eclipse.org/downloads/

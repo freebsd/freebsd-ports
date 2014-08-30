@@ -23,15 +23,13 @@ USES=		zip
 NO_WRKSUBDIR=	yes
 PLIST=		${WRKDIR}/pkg-plist
 
-NO_STAGE=	yes
 do-build:
 	@${RM} -f ${PLIST}
 	@${TOUCH} ${PLIST}
-	@(cd ${WRKSRC}; ${FIND} eclipse -type f) | ${SORT} | ${SED} -e 's,^eclipse,lib/eclipse,' > ${PLIST}
+	(cd ${WRKSRC}; ${FIND} eclipse -type f) | ${SORT} | ${SED} -e 's,^eclipse,lib/eclipse,' > ${PLIST}
 	@${CAT} ${.CURDIR}/pkg-plist >> ${PLIST}
 
 do-install:
-	@${SETENV} ${SH} ${FILESDIR}/install.sh ${WRKSRC} \
-			${PREFIX} ${SHAREOWN} ${SHAREGRP} 0755 0644
+	${SETENV} ${SH} ${FILESDIR}/install.sh ${WRKSRC} ${STAGEDIR}${PREFIX}
 
 .include <bsd.port.mk>
