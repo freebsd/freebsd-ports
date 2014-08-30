@@ -1,0 +1,7 @@
+bin/build_binary
+bin/cat_compressed
+bin/dump_counts
+bin/filter
+bin/fragment
+bin/lmplz
+bin/query
