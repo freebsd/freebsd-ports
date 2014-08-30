@@ -4,6 +4,7 @@
 
 PORTNAME=	orbit
 PORTVERSION=	2.24.0
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	GNOME
 MASTER_SITE_SUBDIR=	sources/pyorbit/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
@@ -16,10 +17,10 @@ COMMENT=	Python bindings for ORBit2
 
 CONFLICTS=	py*-omniorb-[0-9]*
 
-USES=		pkgconfig gmake tar:bzip2
-USE_GNOME=	gnomehack orbit2
+USES=		gmake libtool pathfix pkgconfig tar:bzip2
+USE_GNOME=	orbit2
 USE_PYTHON=	yes
 GNU_CONFIGURE=	yes
-ORBIT_CONFIG=	${LOCALBASE}/bin/orbit2-config
+INSTALL_TARGET=	install-strip
 
 .include <bsd.port.mk>
