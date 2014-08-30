@@ -15,6 +15,7 @@ COMMENT=	Commercial FTP daemon with a 30-day evaluation license
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 ONLY_FOR_ARCHS=	i386 amd64
+BROKEN_i386=	Unfetchable
 NO_BUILD=	YES
 RESTRICTED=	30 day evaluation license
 
