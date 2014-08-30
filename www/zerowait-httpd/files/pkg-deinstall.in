@@ -1,0 +1,26 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+PATH=/bin:/usr/bin:/usr/sbin
+zerowait_logdir="%%LOCALBASE%%/0W-httpd/logs"
+
+case $2 in
+POST-DEINSTALL)
+	if  [ -d ${zerowait_logdir} ] ; then
+		echo "===> Post-deinstallation information for $1:"
+		echo ""
+		echo "     In order to ease updates, the log directories and"
+		echo "     configuration files modified by you were preserved."
+		echo ""
+		echo "     Please remove them manually if you do not want to use"
+		echo "     Zerowait any longer."
+		echo ""
+	fi
+	;;
+*)
+	exit 64
+	;;
+esac
+exit 0

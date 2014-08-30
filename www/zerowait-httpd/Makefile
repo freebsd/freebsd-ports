@@ -3,7 +3,7 @@
 
 PORTNAME=	zerowait
 PORTVERSION=	0.8d
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www
 MASTER_SITES=	http://mirror.mcx2.org/
 PKGNAMESUFFIX=	-httpd
@@ -20,6 +20,6 @@ ALL_TARGET=	#none
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX} --owner=${WWWOWN} --group=${WWWGRP}
 PLIST_SUB=	WWWOWN=${WWWOWN} WWWGRP=${WWWGRP}
+SUB_FILES=	pkg-deinstall
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
