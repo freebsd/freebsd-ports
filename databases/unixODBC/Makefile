@@ -3,6 +3,7 @@
 
 PORTNAME=	unixODBC
 PORTVERSION=	2.3.2
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	http://www.unixodbc.org/
 
@@ -14,11 +15,13 @@ LICENSE_COMB=	multi
 
 OPTIONS_DEFINE=	DOCS
 
-USES=		iconv
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	ac_cv_header_msql_h=no
 CONFIGURE_ARGS=	--enable-static --enable-shared \
 		${ICONV_CONFIGURE_ARG}
+INSTALL_TARGET=	install-strip
+# :keepla because port uses lt_dlopen
+USES=		iconv libtool:keepla
 USE_LDCONFIG=	yes
 
 PORTDOCS=	*

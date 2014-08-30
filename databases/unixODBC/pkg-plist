@@ -18,14 +18,17 @@ lib/libodbc.a
 lib/libodbc.la
 lib/libodbc.so
 lib/libodbc.so.2
+lib/libodbc.so.2.0.0
 lib/libodbccr.a
 lib/libodbccr.la
 lib/libodbccr.so
 lib/libodbccr.so.2
+lib/libodbccr.so.2.0.0
 lib/libodbcinst.a
 lib/libodbcinst.la
 lib/libodbcinst.so
 lib/libodbcinst.so.2
+lib/libodbcinst.so.2.0.0
 man/man1/isql.1.gz
 man/man1/odbcinst.1.gz
 man/man5/odbc.ini.5.gz
