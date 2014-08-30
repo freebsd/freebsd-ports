@@ -19,8 +19,7 @@ OPTIONS_DEFINE=	LUA
 
 CONFIGURE_ARGS=	--enable-fcgi
 GNU_CONFIGURE=	yes
-USES=		gmake lua
-CFLAGS=		-Wno-incompatible-pointer-types-discards-qualifiers
+USES=		gmake lua compiler
 
 SUB_FILES=	pkg-message
 
@@ -28,7 +27,13 @@ LUA_CONFIGURE_ENABLE+=	lua
 LUA_LDFLAGS+=	-L${LUA_LIBDIR}
 LUA_CFLAGS+=	-I${LUA_INCDIR}
 
+.include <bsd.port.pre.mk>
+
+.if ${COMPILER_TYPE} == "clang"
+CFLAGS+=		-Wno-incompatible-pointer-types-discards-qualifiers
+.endif
+
 post-patch:
 	${REINPLACE_CMD} -e "s/llua/llua-${LUA_VER}/g" ${WRKSRC}/configure
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
