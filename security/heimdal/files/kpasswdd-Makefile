@@ -1,0 +1,17 @@
+# $FreeBSD$
+
+all: kpasswdd-cracklib.so
+
+kpasswdd-cracklib.so: kpasswdd-cracklib.c
+	${CC} ${CFLAGS} -fPIC -shared \
+	    -DLOCALBASE=\"${LOCALBASE}\" \
+	    -I${LOCALBASE}/include -I./include \
+	    -o ${.TARGET} ${.ALLSRC} \
+	    -lcrack -L${LOCALBASE}/lib
+
+install-strip: install
+
+install: ${DESTDIR}${PREFIX}/lib/kpasswdd-cracklib.so
+
+${DESTDIR}${PREFIX}/lib/kpasswdd-cracklib.so: kpasswdd-cracklib.so
+	${BSD_INSTALL_LIB} ${.ALLSRC} ${.TARGET}

@@ -1,0 +1,71 @@
+--- configure.orig	2014-08-30 19:16:38.000000000 +0900
++++ configure	2014-08-30 19:18:12.000000000 +0900
+@@ -9567,29 +9567,6 @@
+       hardcode_shlibpath_var=no
+       ;;
+ 
+-    freebsd1*)
+-      ld_shlibs=no
+-      ;;
+-
+-    # FreeBSD 2.2.[012] allows us to include c++rt0.o to get C++ constructor
+-    # support.  Future versions do this automatically, but an explicit c++rt0.o
+-    # does not break anything, and helps significantly (at the cost of a little
+-    # extra space).
+-    freebsd2.2*)
+-      archive_cmds='$LD -Bshareable -o $lib $libobjs $deplibs $linker_flags /usr/lib/c++rt0.o'
+-      hardcode_libdir_flag_spec='-R$libdir'
+-      hardcode_direct=yes
+-      hardcode_shlibpath_var=no
+-      ;;
+-
+-    # Unfortunately, older versions of FreeBSD 2 do not have this feature.
+-    freebsd2*)
+-      archive_cmds='$LD -Bshareable -o $lib $libobjs $deplibs $linker_flags'
+-      hardcode_direct=yes
+-      hardcode_minus_L=yes
+-      hardcode_shlibpath_var=no
+-      ;;
+-
+     # FreeBSD 3 and greater uses gcc -shared to do shared libraries.
+     freebsd* | dragonfly*)
+       archive_cmds='$CC -shared $pic_flag -o $lib $libobjs $deplibs $compiler_flags'
+@@ -10561,10 +10538,6 @@
+   shlibpath_var=LD_LIBRARY_PATH
+   ;;
+ 
+-freebsd1*)
+-  dynamic_linker=no
+-  ;;
+-
+ freebsd* | dragonfly*)
+   # DragonFly does not have aout.  When/if they implement a new
+   # versioning mechanism, adjust this.
+@@ -10590,18 +10563,6 @@
+   esac
+   shlibpath_var=LD_LIBRARY_PATH
+   case $host_os in
+-  freebsd2*)
+-    shlibpath_overrides_runpath=yes
+-    ;;
+-  freebsd3.[01]* | freebsdelf3.[01]*)
+-    shlibpath_overrides_runpath=yes
+-    hardcode_into_libs=yes
+-    ;;
+-  freebsd3.[2-9]* | freebsdelf3.[2-9]* | \
+-  freebsd4.[0-5] | freebsdelf4.[0-5] | freebsd4.1.1 | freebsdelf4.1.1)
+-    shlibpath_overrides_runpath=no
+-    hardcode_into_libs=yes
+-    ;;
+   *) # from 4.6 on, and DragonFly
+     shlibpath_overrides_runpath=yes
+     hardcode_into_libs=yes
+@@ -14227,7 +14188,7 @@
+ 	native_pthread_support="netbsd 3 uses explict pthread"
+ 		PTHREAD_LIBADD="-lpthread"
+ 	;;
+-*-*-freebsd[56789]*)
++*-*-freebsd*)
+ 	native_pthread_support=yes
+ 	PTHREAD_LIBADD="-pthread"
+ 	;;
