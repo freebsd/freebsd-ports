@@ -1,6 +1,6 @@
 --- Makefile.in.orig    Sun Jan 14 13:34:14 2007
 +++ Makefile.in Sun Jan 14 13:34:40 2007
-@@ -188,7 +188,7 @@
+@@ -191,7 +191,7 @@
  build_vendor = @build_vendor@
  datadir = @datadir@
  datarootdir = @datarootdir@
@@ -9,13 +9,34 @@
  dvidir = @dvidir@
  exec_prefix = @exec_prefix@
  host = @host@
-@@ -219,7 +219,7 @@
- SUBDIRS = nepenthes-core modules
+@@ -222,7 +222,7 @@
+ SUBDIRS = nepenthes-core modules 
  #tools
  EXTRA_DIST = configure.ac CHANGES doc/README.VFS doc/logo-shaded.svg doc/nepenthes.8 conf/nepenthes.conf.dist
 -doc_DATA = doc/README.VFS doc/logo-shaded.svg
 +doc_DATA = README doc/README.VFS doc/logo-shaded.svg
-
+ 
  #sysconf_DATA = conf/nepenthes.conf.dist
  AM_CXXFLAGS = ''
-
+@@ -714,21 +714,6 @@
+ 	$(mkinstalldirs) $(DESTDIR)$(mandir)
+ 	$(mkinstalldirs) $(DESTDIR)$(mandir)/man8
+ 	$(INSTALL_DATA) $(srcdir)/doc/nepenthes.8 $(DESTDIR)$(mandir)/man8/nepenthes.8;
+-	$(mkinstalldirs) $(DESTDIR)$(localstatedir)/cache
+-	$(mkinstalldirs) $(DESTDIR)$(localstatedir)/cache/nepenthes
+-	$(mkinstalldirs) $(DESTDIR)$(localstatedir)/cache/nepenthes/pcap
+-	$(mkinstalldirs) $(DESTDIR)$(localstatedir)/cache/nepenthes/signatures
+-
+-	$(INSTALL_DATA) modules/shellcode-signatures/shellcode-signatures.sc $(DESTDIR)$(localstatedir)/cache/nepenthes/signatures
+-
+-	$(mkinstalldirs) $(DESTDIR)$(localstatedir)/spool
+-	$(mkinstalldirs) $(DESTDIR)$(localstatedir)/spool/nepenthes
+-	$(mkinstalldirs) $(DESTDIR)$(localstatedir)/spool/nepenthes/gotek
+-	$(mkinstalldirs) $(DESTDIR)$(localstatedir)/spool/nepenthes/submitpostgres
+-	$(mkinstalldirs) $(DESTDIR)$(localstatedir)/log
+-	$(mkinstalldirs) $(DESTDIR)$(localstatedir)/log/pcap
+-	$(mkinstalldirs) $(DESTDIR)$(localstatedir)/binaries
+-	$(mkinstalldirs) $(DESTDIR)$(localstatedir)/hexdumps
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.
+ .NOEXPORT:

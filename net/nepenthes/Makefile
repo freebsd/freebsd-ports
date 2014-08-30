@@ -10,37 +10,44 @@ MASTER_SITES=	SF/${PORTNAME}/Nepenthes%20development/${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Determine the malware activity on a network
 
-LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl \
-		libmagic.so:${PORTSDIR}/sysutils/file \
-		libpcre.so:${PORTSDIR}/devel/pcre \
-		libadns.so:${PORTSDIR}/dns/adns
+LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre \
+		libadns.so:${PORTSDIR}/dns/adns \
+		libcurl.so:${PORTSDIR}/ftp/curl \
+		libmagic.so:${PORTSDIR}/sysutils/file
 
-.if defined(WITH_PRELUDE)
-LIB_DEPENDS+=		libprelude.so:${PORTSDIR}/security/libprelude
-CONFIGURE_ARGS+=	--enable-prelude
-.endif
-
-.if defined(WITH_DEBUG_LOGGING)
-CONFIGURE_ARGS+=	--enable-debug-logging
-.endif
-
-USES=		perl5
+USES=		dos2unix libtool perl5
+DOS2UNIX_FILE=	modules/shellcode-generic/sch_generic_connect_trans.cpp
+USE_GCC=	any
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--localstatedir=/var
+INSTALL_TARGET=	install-strip
 
-DOCS=	README README.VFS logo-shaded.svg
-MAN8=	nepenthes.8
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
-NO_STAGE=	yes
+OPTIONS_DEFINE=		DEBUG_LOGGING PRELUDE 
+
+DEBUG_LOGGING_CONFIGURE_ENABLE=	debug-logging
+PRELUDE_LIB_DEPENDS=	libprelude.so:${PORTSDIR}/security/libprelude
+PRELUDE_CONFIGURE_ENABLE=	prelude
+
 post-patch:
 	@${FIND} ${WRKSRC} -name Makefile.in -print0 | ${XARGS} -0 \
-	${REINPLACE_CMD} -e 's,-Werror,,'
-	@${REINPLACE_CMD} -e '/<curl\/types.h>/d' \
-		${WRKSRC}/modules/download-curl/download-curl.hpp \
-		${WRKSRC}/modules/submit-http/HTTPSession.hpp \
-		${WRKSRC}/modules/submit-http/HTTPSession.cpp \
-		${WRKSRC}/modules/submit-http/submit-http.hpp \
-		${WRKSRC}/modules/submit-mwserv/TransferSession.hpp \
-		${WRKSRC}/modules/submit-mwserv/submit-mwserv.hpp \
-		${WRKSRC}/modules/submit-norman/submit-norman.hpp
+		${REINPLACE_CMD} -e \
+		's|-Werror|| ; \
+		 s|-D.*_GNU_SOURCE||'
+	@${FIND} ${WRKSRC}/modules -name "*.[ch]pp" -print0 | ${XARGS} -0 \
+		${REINPLACE_CMD} -e \
+		'/<curl\/types.h>/d'
+	@${REINPLACE_CMD} -e \
+		's|-I/usr/local/include|| ; \
+		 s|-I/usr/src/contrib/file/|| ; \
+		 s|-L/usr/local/lib|| ; \
+		 s|-R/usr/local/lib||' ${WRKSRC}/configure
+
+post-install:
+	@${MKDIR} ${STAGEDIR}${DATADIR}/signatures
+	(cd ${WRKSRC}/modules/shellcode-signatures && ${INSTALL_DATA} \
+		shellcode-signatures.sc ${STAGEDIR}${DATADIR}/signatures)
 
 .include <bsd.port.mk>
