@@ -4,7 +4,7 @@
 
 PORTNAME=	planner
 PORTVERSION=	0.14.6
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -12,19 +12,21 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Project management application for GNOME 2
 
-USES=		pathfix gettext gmake pkgconfig tar:xz
+USES=		desktop-file-utils gettext gmake libtool pathfix pkgconfig \
+		shared-mime-info tar:xz
 USE_GNOME=	gnomeprefix intlhack libgnomeui libgnomeprintui \
-		libgsf desktopfileutils
+		libgsf
 WANT_GNOME=	yes
 INSTALLS_OMF=	yes
 INSTALLS_ICONS=	yes
+INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--enable-static \
-		--disable-python \
-		--disable-python-plugin
+CONFIGURE_ARGS=	--disable-python \
+		--disable-python-plugin \
+		--disable-update-mimedb
 CPPFLAGS+=	-I${LOCALBASE}/include -DGLIB_COMPILATION
-LDFLAGS+=	-L${LOCALBASE}/lib
+LIBS+=		-L${LOCALBASE}/lib
 
 GCONF_SCHEMAS=	planner.schemas
 
