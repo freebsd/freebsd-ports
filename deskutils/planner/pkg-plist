@@ -16,27 +16,14 @@ include/planner-1.0/libplanner/mrp-task.h
 include/planner-1.0/libplanner/mrp-time.h
 include/planner-1.0/libplanner/mrp-types.h
 include/planner-1.0/libplanner/planner.h
-lib/libplanner-1.a
-lib/libplanner-1.la
 lib/libplanner-1.so
 lib/libplanner-1.so.0
-lib/planner/file-modules/libmrp-xml.a
-lib/planner/file-modules/libmrp-xml.la
+lib/libplanner-1.so.0.0.0
 lib/planner/file-modules/libmrp-xml.so
-lib/planner/file-modules/libmrp-xsl.a
-lib/planner/file-modules/libmrp-xsl.la
 lib/planner/file-modules/libmrp-xsl.so
-lib/planner/plugins/libhtml-plugin.a
-lib/planner/plugins/libhtml-plugin.la
 lib/planner/plugins/libhtml-plugin.so
-lib/planner/plugins/libmsp-plugin.a
-lib/planner/plugins/libmsp-plugin.la
 lib/planner/plugins/libmsp-plugin.so
-lib/planner/plugins/libxmlplanner-plugin.a
-lib/planner/plugins/libxmlplanner-plugin.la
 lib/planner/plugins/libxmlplanner-plugin.so
-lib/planner/storage-modules/libstorage-mrproject-1.a
-lib/planner/storage-modules/libstorage-mrproject-1.la
 lib/planner/storage-modules/libstorage-mrproject-1.so
 libdata/pkgconfig/libplanner-1.pc
 man/man1/planner.1.gz
@@ -210,7 +197,6 @@ share/locale/vi/LC_MESSAGES/planner.mo
 share/locale/zh_CN/LC_MESSAGES/planner.mo
 share/locale/zh_HK/LC_MESSAGES/planner.mo
 share/locale/zh_TW/LC_MESSAGES/planner.mo
-share/mime/application/x-planner.xml
 share/mime/packages/planner.xml
 share/omf/planner/planner-C.omf
 share/omf/planner/planner-eu.omf
@@ -294,10 +280,6 @@ share/planner/ui/xml-planner-plugin.ui
 @dirrm lib/planner
 @dirrm include/planner-1.0/libplanner
 @dirrm include/planner-1.0
-@exec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
-@unexec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
-@exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
-@unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
 @dirrmtry share/locale/zh_HK/LC_MESSAGES
 @dirrmtry share/locale/zh_HK
 @dirrmtry share/locale/rw/LC_MESSAGES
