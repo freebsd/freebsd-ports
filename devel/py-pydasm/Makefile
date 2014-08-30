@@ -14,10 +14,9 @@ COMMENT=	Python interface to libdasm
 
 LICENSE=	BSD2CLAUSE
 
+USES=		python
+USE_PYTHON=	distutils autoplist
 WRKSRC_SUBDIR=	${PORTNAME}
-USE_PYTHON=	yes
-USE_PYDISTUTILS=yes
-PYDISTUTILS_AUTOPLIST=yes
 
 PORTDOCS=	README.txt
 PORTEXAMPLES=	das.py
