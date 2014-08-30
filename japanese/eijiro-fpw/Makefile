@@ -37,11 +37,12 @@ PLIST_DIRS=	share/dict/eijiro-fpw/eijiro/data \
 # (http://www.alc.co.jp/alcshop/eng/eijiro/)
 # Avoid copying uncompressed srcfile, it is > 50Mb
 
-.if exists(${WRKDIR}/${SRCFILE})
-MAKE_ARGS+=	SRCFILE=${WRKDIR}/${SRCFILE}
-.else
-MAKE_ARGS+=	SRCFILE=${DICT_PATH}/${SRCFILE}
+.if exists(${DICT_PATH}/${SRCFILE})		# uncompressed
+SOURCE_FILE=	${DICT_PATH}/${SRCFILE}
+.else						# assume decompression works
+SOURCE_FILE=	${WRKDIR}/${SRCFILE}
 .endif
+MAKE_ARGS+=	SRCFILE=${SOURCE_FILE:Q}
 
 OPTIONS_DEFINE=	DOCS
 
@@ -50,7 +51,8 @@ OPTIONS_DEFINE=	DOCS
 post-extract:
 	@if [ -f ${DICT_PATH}/eijiro-original/*.exe ]; then \
 	  lha xiw=${WRKDIR} ${DICT_PATH}/eijiro-original/*.exe '*/${SRCFILE}'; \
-	elif [ ! -f ${DICT_PATH}/${SRCFILE} ]; then \
+	fi
+	@if [ ! -f ${SOURCE_FILE:Q} ]; then \
 	  ${ECHO} "###################################################"; \
 	  ${ECHO} "I cannot find a file ${DICT_PATH}/${SRCFILE}"; \
 	  ${ECHO} "Specify the Eijiro Dictionary file with the full path"; \
