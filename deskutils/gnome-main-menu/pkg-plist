@@ -20,9 +20,9 @@ include/slab/slab-section.h
 include/slab/system-tile.h
 include/slab/tile.h
 lib/libslab.a
-lib/libslab.la
 lib/libslab.so
-lib/libslab.so.1
+lib/libslab.so.0
+lib/libslab.so.0.1.2
 libdata/bonobo/servers/GNOME_MainMenu.server
 libdata/pkgconfig/libslab.pc
 libexec/main-menu

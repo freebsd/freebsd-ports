@@ -3,7 +3,7 @@
 
 PORTNAME=	gnome-main-menu
 PORTVERSION=	0.9.12
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -13,12 +13,12 @@ COMMENT=	Provides easy access to sets of GNOME applications
 
 LIB_DEPENDS=	libgtop-2.0.so:${PORTSDIR}/devel/libgtop
 
-USE_GNOME=	gnomehack gnomeprefix gnomepanel intlhack eel2 gnomedesktop \
-		libgnomeui
-USES=		gettext gmake pkgconfig tar:bzip2
+USES=		gettext gmake libtool pathfix pkgconfig tar:bzip2
+USE_GNOME=	gnomeprefix gnomepanel intlhack eel2 gnomedesktop libgnomeui
 GNU_CONFIGURE=	yes
-CPPFLAGS+=	-I${LOCALBASE}/include `pkg-config --cflags libgnomeui-2.0`
-LIBS+=		-L${LOCALBASE}/lib `pkg-config --libs libgnomeui-2.0`
+CPPFLAGS+=	-I${LOCALBASE}/include
+LIBS+=		-L${LOCALBASE}/lib
+INSTALL_TARGET=	install-strip
 
 GCONF_SCHEMAS=	application-browser.schemas slab.schemas
 
