@@ -2,25 +2,27 @@
 # $FreeBSD$
 
 PORTNAME=	magic
-PORTVERSION=	7.5.233
+PORTVERSION=	7.5.240
 CATEGORIES=	cad
 MASTER_SITES=	http://opencircuitdesign.com/magic/archive/ \
 		http://fossies.org/linux/misc/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Interactive editor for VLSI layouts
 
-LICENSE=	BSD
+LICENSE=	MIT
+LICENSE_FILE=	${FILESDIR}/license.txt
 
 LIB_DEPENDS=	libBLT25.so:${PORTSDIR}/x11-toolkits/blt
 
-CONFIGURE_WRKSRC=	${WRKSRC}/scripts
-
-USES+=		gmake tk:build tar:tgz
+USES=		gmake tk:build tar:tgz
 USE_XORG=	ice xext xi xmu
 USE_GL=		gl
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-tcl=${TCL_LIBDIR} --with-tk=${TK_LIBDIR}
+CONFIGURE_ARGS=	--with-tcl=${TCL_LIBDIR} \
+		--with-tk=${TK_LIBDIR} \
+		--with-opengl
+CONFIGURE_WRKSRC=	${WRKSRC}/scripts
 ALL_TARGET=	tcllibrary
 
 CPPFLAGS+=	-I${LOCALBASE}/include
@@ -30,8 +32,6 @@ DESKTOP_ENTRIES="Magic" "" "" "${PORTNAME}" "" ""
 
 PORTSCOUT=	limit:^7\.
 
-.include <bsd.port.pre.mk>
-
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's|^#!.*|#!${AWK} -f|' ${WRKSRC}/ext2spice/spice2sim
@@ -40,7 +40,8 @@ post-patch:
 		 s|TK_LIB_NAME=.*|TK_LIB_NAME="tk${TK_VER:S/.//}"|g ; \
 		 s|wish$${TK_VERSION}|${WISH:T}|g ; \
 		 s|tclsh$${TK_VERSION}|${TCLSH:T}|g ; \
-		 s|-l/usr/X11R6/include|-I${LOCALBASE}/include|g' ${CONFIGURE_WRKSRC}/configure
+		 s|-l/usr/X11R6/include|-I${LOCALBASE}/include|g' \
+	    ${CONFIGURE_WRKSRC}/configure
 	@${REINPLACE_CMD} -e \
 		'/CFLAGS/s| -pg | |' ${WRKSRC}/tcltk/Makefile
 	@${REINPLACE_CMD} -e \
@@ -52,4 +53,4 @@ pre-build:
 	@(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_FLAGS} \
 		${MAKEFILE} ${MAKE_ARGS} database/database.h)
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
