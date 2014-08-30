@@ -12,8 +12,6 @@
     SUBDIR += Wnn7-lib
     SUBDIR += a2ps
     SUBDIR += ack
-    SUBDIR += acroread8
-    SUBDIR += acroread9
     SUBDIR += ajaxzip2-core
     SUBDIR += ajaxzip2-data
     SUBDIR += alias-fonts

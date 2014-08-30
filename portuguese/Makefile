@@ -3,7 +3,6 @@
 
     COMMENT = Portuguese language support
 
-    SUBDIR += acroread8
     SUBDIR += aspell-pt_BR
     SUBDIR += aspell-pt_PT
     SUBDIR += calligra-l10n

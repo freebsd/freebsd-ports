@@ -7,9 +7,6 @@
     SUBDIR += a2ps
     SUBDIR += abc2mtex
     SUBDIR += abcm2ps
-    SUBDIR += acroread8
-    SUBDIR += acroread9
-    SUBDIR += acroreadwrapper
     SUBDIR += adobe-cmaps
     SUBDIR += afm
     SUBDIR += alignmargins
@@ -41,7 +38,6 @@
     SUBDIR += cups-smb-backend
     SUBDIR += deforaos-pdfviewer
     SUBDIR += detex
-    SUBDIR += dk-acroread8
     SUBDIR += dot2tex
     SUBDIR += dvi2tty
     SUBDIR += dvips2ascii
@@ -52,9 +48,7 @@
     SUBDIR += enscript-letterdj
     SUBDIR += enscriptfonts
     SUBDIR += epsonepl
-    SUBDIR += es-acroread8
     SUBDIR += examplep
-    SUBDIR += fi-acroread8
     SUBDIR += flpsed
     SUBDIR += font-amsfonts
     SUBDIR += font2svg
@@ -108,7 +102,6 @@
     SUBDIR += html2ps
     SUBDIR += hyperlatex
     SUBDIR += indexinfo
-    SUBDIR += it-acroread8
     SUBDIR += jabref
     SUBDIR += kde4-print-manager
     SUBDIR += kde_poster
@@ -153,8 +146,6 @@
     SUBDIR += musixtex
     SUBDIR += muttprint
     SUBDIR += nenscript
-    SUBDIR += nl-acroread8
-    SUBDIR += no-acroread8
     SUBDIR += openprinting
     SUBDIR += p5-Font-FreeType
     SUBDIR += p5-Net-CUPS
@@ -246,7 +237,6 @@
     SUBDIR += scribus-devel
     SUBDIR += sgf2tex
     SUBDIR += splix
-    SUBDIR += sv-acroread8
     SUBDIR += system-config-printer
     SUBDIR += t1utils
     SUBDIR += tex

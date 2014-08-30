@@ -1,2 +1,0 @@
-This is a wrapper script for Adobe Reader to pick up one of the localized
-versions installed according to ${LANG} or ${ADOBE_LANG} environment variable.

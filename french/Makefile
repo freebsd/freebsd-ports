@@ -3,8 +3,6 @@
 
     COMMENT = French support
 
-    SUBDIR += acroread8
-    SUBDIR += acroread9
     SUBDIR += alphabet_sounds_fr
     SUBDIR += aspell
     SUBDIR += aster
