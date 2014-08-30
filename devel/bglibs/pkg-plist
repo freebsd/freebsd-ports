@@ -99,13 +99,11 @@ lib/bglibs/libbg-net.a
 lib/bglibs/libbg-path.a
 lib/bglibs/libbg-str.a
 lib/bglibs/libbg-sysdeps.a
-lib/bglibs/libbg-sysdeps.la
 lib/bglibs/libbg-sysdeps.so
+lib/bglibs/libbg-sysdeps.so.2
 lib/bglibs/libbg-unix.a
 lib/bglibs/libbg.a
-lib/bglibs/libbg.la
 lib/bglibs/libbg.so
-lib/bglibs/libbg-sysdeps.so.2
 lib/bglibs/libbg.so.2
 lib/bglibs/libinstaller.a
 lib/bglibs/libinstcheck.a
