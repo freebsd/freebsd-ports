@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mozc-additions
-PORTVERSION=	1.11.1502.102
+PORTVERSION=	1.15
 CATEGORIES=	japanese
 MASTER_SITES=	# empty
 PKGNAMEPREFIX?=	ja-
@@ -25,6 +25,7 @@ PLIST_FILES=	bin/ibus-daemon_restart \
 		bin/mozc_tool_word_register
 
 do-install:
-	${INSTALL_SCRIPT} ${PLIST_FILES:S,bin/,${FILESDIR}/,} ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_SCRIPT} ${PLIST_FILES:S,bin/,${FILESDIR}/,} \
+	    ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>
