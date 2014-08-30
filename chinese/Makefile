@@ -7,8 +7,6 @@
     SUBDIR += CNS11643-font
     SUBDIR += FreeWnn-lib
     SUBDIR += FreeWnn-server
-    SUBDIR += acroread8-zh_CN
-    SUBDIR += acroread8-zh_TW
     SUBDIR += arphicttf
     SUBDIR += aterm
     SUBDIR += auto-cn-l10n

@@ -6497,3 +6497,23 @@ devel/rubygem-json146|devel/rubygem-json|2014-08-28|Has expired: Old version no 
 archivers/rubygem-bzip2|archivers/rubygem-bzip2-ruby|2014-08-29|Rename to match our rubygems naming
 ports-mgmt/pkg_add_it||2014-08-30|Has expired: Does not support pkgng
 print/dviselect|print/texlive-base|2014-08-30|Use print/texlive-base instead
+chinese/acroread8-zh_CN||2014-08-30|Deprecated: many security issues are reported and Adobe no longer actively supports Adobe Reader for Unix
+chinese/acroread8-zh_TW||2014-08-30|Deprecated: many security issues are reported and Adobe no longer actively supports Adobe Reader for Unix
+french/acroread8||2014-08-30|Deprecated: many security issues are reported and Adobe no longer actively supports Adobe Reader for Unix
+french/acroread9||2014-08-30|Deprecated: many security issues are reported and Adobe no longer actively supports Adobe Reader for Unix
+german/acroread8||2014-08-30|Deprecated: many security issues are reported and Adobe no longer actively supports Adobe Reader for Unix
+german/acroread9||2014-08-30|Deprecated: many security issues are reported and Adobe no longer actively supports Adobe Reader for Unix
+japanese/acroread8||2014-08-30|Deprecated: many security issues are reported and Adobe no longer actively supports Adobe Reader for Unix
+japanese/acroread9||2014-08-30|Deprecated: many security issues are reported and Adobe no longer actively supports Adobe Reader for Unix
+korean/acroread8||2014-08-30|Deprecated: many security issues are reported and Adobe no longer actively supports Adobe Reader for Unix
+portuguese/acroread8||2014-08-30|Deprecated: many security issues are reported and Adobe no longer actively supports Adobe Reader for Unix
+print/acroread8||2014-08-30|Deprecated: many security issues are reported and Adobe no longer actively supports Adobe Reader for Unix
+print/acroread9||2014-08-30|Deprecated: many security issues are reported and Adobe no longer actively supports Adobe Reader for Unix
+print/acroreadwrapper||2014-08-30|Deprecated: many security issues are reported and Adobe no longer actively supports Adobe Reader for Unix
+print/dk-acroread8||2014-08-30|Deprecated: many security issues are reported and Adobe no longer actively supports Adobe Reader for Unix
+print/es-acroread8||2014-08-30|Deprecated: many security issues are reported and Adobe no longer actively supports Adobe Reader for Unix
+print/fi-acroread8||2014-08-30|Deprecated: many security issues are reported and Adobe no longer actively supports Adobe Reader for Unix
+print/it-acroread8||2014-08-30|Deprecated: many security issues are reported and Adobe no longer actively supports Adobe Reader for Unix
+print/nl-acroread8||2014-08-30|Deprecated: many security issues are reported and Adobe no longer actively supports Adobe Reader for Unix
+print/no-acroread8||2014-08-30|Deprecated: many security issues are reported and Adobe no longer actively supports Adobe Reader for Unix
+print/sv-acroread8||2014-08-30|Deprecated: many security issues are reported and Adobe no longer actively supports Adobe Reader for Unix
