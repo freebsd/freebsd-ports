@@ -21,13 +21,7 @@ GH_PROJECT=	${PORTNAME}
 GH_TAGNAME=	${GH_COMMIT}
 GH_COMMIT=	299184f
 
-USES=		desktop-file-utils gmake pkgconfig
-
-.include <bsd.port.options.mk>
-
-.if ${OPSYS} == FreeBSD && ${OSVERSION} <= 804000
-USES+=		compiler:c++11-lang
-.endif
+USES=		compiler:c11 desktop-file-utils gmake pkgconfig
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/utox
