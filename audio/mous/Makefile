@@ -5,7 +5,7 @@ PORTNAME=	mous
 PORTVERSION=	1.1a
 PORTREVISION=	1
 CATEGORIES=	audio
-MASTER_SITES=	http://cloud.github.com/downloads/0x02/mous/
+MASTER_SITES=	http://cloud.github.com/downloads/bsdelf/mous/
 
 MAINTAINER=	shen.elf@gmail.com
 COMMENT=	Simple yet powerful audio player
