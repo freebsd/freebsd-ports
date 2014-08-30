@@ -76,10 +76,6 @@ CONFIGURE_ARGS+=--enable-threads
 CONFIGURE_ARGS+=--disable-threads
 .endif
 
-.if ${ARCH} == "arm"
-BROKEN=		Does not build on arm
-.endif
-
 post-patch:
 	${REINPLACE_CMD} -e \
 	    's|@TCL_BUILD_LIB_SPEC@|@TCL_LIB_SPEC@|; \
