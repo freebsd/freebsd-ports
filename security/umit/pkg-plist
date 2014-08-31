@@ -1,6 +1,5 @@
 bin/umit
 bin/umit_scheduler.py
-bin/uninstall_umit
 %%PYTHON_SITELIBDIR%%/higwidgets/__init__.py
 %%PYTHON_SITELIBDIR%%/higwidgets/__init__.pyc
 %%PYTHON_SITELIBDIR%%/higwidgets/__init__.pyo
@@ -595,6 +594,7 @@ bin/uninstall_umit
 %%PYTHON_SITELIBDIR%%/umit/plugin/__init__.py
 %%PYTHON_SITELIBDIR%%/umit/plugin/__init__.pyc
 %%PYTHON_SITELIBDIR%%/umit/plugin/__init__.pyo
+share/icons/hicolor/48x48/apps/umit.png
 share/icons/umit/trash_128.ico
 share/icons/umit/trash_16.ico
 share/icons/umit/trash_24.ico
@@ -690,33 +690,34 @@ share/pixmaps/umit/win.svg
 share/pixmaps/umit/win_32.png
 share/pixmaps/umit/win_75.png
 share/pixmaps/umit/wizard_logo.png
-share/umit/config/options.xml
-share/umit/config/profile_editor.xml
-share/umit/config/scan_profile.usp
-share/umit/config/scheduler-profiles.conf
-share/umit/config/scheduler-schemas.conf
-share/umit/config/scheduler.log
-share/umit/config/smtp-schemas.conf
-share/umit/config/timeline-settings.conf
-share/umit/config/tl_colors_evt_std.conf
-share/umit/config/umit.conf
-share/umit/config/umit_version
-share/umit/config/umitng.db
-share/umit/config/wizard.xml
-share/umit/misc/os_classification.dmp
-share/umit/misc/os_db.dmp
-share/umit/misc/services.dmp
-share/umit/sql/sqlite-delete-triggers.sql
-share/umit/sql/sqlite-drop-tables.sql
-share/umit/sql/sqlite-drop-triggers.sql
-share/umit/sql/sqlite-insert-triggers.sql
-share/umit/sql/sqlite-schema.sql
-share/umit/sql/sqlite-update-triggers.sql
-@dirrm share/umit/sql
-@dirrm share/umit/plugins
-@dirrm share/umit/misc
-@dirrm share/umit/config
-@dirrm share/umit
+%%DATADIR%%/config/options.xml
+%%DATADIR%%/config/profile_editor.xml
+%%DATADIR%%/config/scan_profile.usp
+%%DATADIR%%/config/scheduler-profiles.conf
+%%DATADIR%%/config/scheduler-schemas.conf
+%%DATADIR%%/config/scheduler.log
+%%DATADIR%%/config/smtp-schemas.conf
+%%DATADIR%%/config/timeline-settings.conf
+%%DATADIR%%/config/tl_colors_evt_std.conf
+%%DATADIR%%/config/umit.conf
+%%DATADIR%%/config/umit_version
+%%DATADIR%%/config/umitng.db
+%%DATADIR%%/config/wizard.xml
+%%DATADIR%%/misc/os_classification.dmp
+%%DATADIR%%/misc/os_db.dmp
+%%DATADIR%%/misc/services.dmp
+@exec mkdir -p %D/%%DATADIR%%/plugins
+%%DATADIR%%/sql/sqlite-delete-triggers.sql
+%%DATADIR%%/sql/sqlite-drop-tables.sql
+%%DATADIR%%/sql/sqlite-drop-triggers.sql
+%%DATADIR%%/sql/sqlite-insert-triggers.sql
+%%DATADIR%%/sql/sqlite-schema.sql
+%%DATADIR%%/sql/sqlite-update-triggers.sql
+@dirrm %%DATADIR%%/sql
+@dirrm %%DATADIR%%/plugins
+@dirrm %%DATADIR%%/misc
+@dirrm %%DATADIR%%/config
+@dirrm %%DATADIR%%
 @dirrm share/pixmaps/umit/uie
 @dirrm share/pixmaps/umit/radialnet/icons
 @dirrm share/pixmaps/umit/radialnet/application
@@ -730,11 +731,6 @@ share/umit/sql/sqlite-update-triggers.sql
 @dirrmtry share/locale/id_ID/LC_MESSAGES
 @dirrmtry share/locale/id_ID
 @dirrmtry share/icons/umit
-@dirrm share/doc/umit/html/_static
-@dirrm share/doc/umit/html/_sources
-@dirrm share/doc/umit/html/_images
-@dirrm share/doc/umit/html
-@dirrm share/doc/umit
 @dirrm %%PYTHON_SITELIBDIR%%/umit/plugin
 @dirrm %%PYTHON_SITELIBDIR%%/umit/merger
 @dirrm %%PYTHON_SITELIBDIR%%/umit/inventory
