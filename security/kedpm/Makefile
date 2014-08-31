@@ -7,21 +7,20 @@ PORTREVISION=	8
 CATEGORIES=	security
 MASTER_SITES=	SF
 
-MAINTAINER= ports@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple application for managing personal data
 
-RUN_DEPENDS=	${PYTHONPREFIX_SITELIBDIR}/Crypto/__init__.py:${PORTSDIR}/security/py-pycrypto
+LICENSE=	GPLv2 # (or later)
 
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pycrypto>0:${PORTSDIR}/security/py-pycrypto
+
+NO_ARCH=	yes
+
+USES=		python
 USE_GNOME=	pygtk2
-USE_PYTHON=	yes
-USE_PYDISTUTILS=	YES
+USE_PYTHON=	autoplist distutils
 
-DESKTOP_ENTRIES="Ked Password Manager" \
-		"Secure Password Management" \
-		"${PREFIX}/share/${PORTNAME}/glade/logo.png" \
-		"kedpm" \
-		"" \
-		true
+DESKTOP_ENTRIES="Ked Password Manager" "Secure Password Management" \
+		"${DATADIR}/glade/logo.png" "kedpm" "" true
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
