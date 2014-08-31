@@ -21,7 +21,7 @@ LIB_DEPENDS=	libprotobuf.so:${PORTSDIR}/devel/protobuf \
 		libzinnia.so:${PORTSDIR}/japanese/zinnia
 RUN_DEPENDS=	xdg-open:${PORTSDIR}/devel/xdg-utils
 
-USES=		pkgconfig iconv gmake tar:bzip2
+USES=		compiler:c++0x pkgconfig iconv gmake tar:bzip2
 USE_PYTHON_BUILD=yes
 
 BUILD_MOZC_LIST?=	mozc_server
@@ -71,7 +71,9 @@ BUILD_MOZC_CMD=	cd ${BUILD_WRKSRC} && \
 		    PYTHONPATH=${WRKSRC}/third_party/gyp/pylib/gyp \
 		    GYP_DEFINES="${GYP_DEFINES}" \
 		    CC_host="${CC}" \
+		    CC_target="${CC}" \
 		    CXX_host="${CXX}" \
+		    CXX_target="${CXX}" \
 		    LD_host="${CXX}" \
 		    AR_host="${AR}" \
 		    ${PYTHON_CMD} build_mozc.py
