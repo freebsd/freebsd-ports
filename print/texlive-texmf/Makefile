@@ -2,7 +2,7 @@
 
 PORTNAME=	texlive
 PORTVERSION=	20140525
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	print
 MASTER_SITES=	ftp://ftp.tug.org/historic/systems/texlive/2014/
 PKGNAMESUFFIX=	-texmf
@@ -47,17 +47,7 @@ EXCLUDE_FILES=	\*/doc/man \
 	texmf-dist/fonts/vf/public/japanese-otf-uptex \
 	texmf-dist/fonts/vf/uptex \
 	texmf-dist/scripts/xetex \
-	texmf-dist/source/fonts/japanese-otf \
-	texmf-dist/source/fonts/japanese-otf-uptex \
-	texmf-dist/source/fonts/uptex \
-	texmf-dist/source/jadetex \
-	texmf-dist/source/lambda \
-	texmf-dist/source/lualatex \
-	texmf-dist/source/luatex \
-	texmf-dist/source/platex \
-	texmf-dist/source/uplatex \
-	texmf-dist/source/xelatex \
-	texmf-dist/source/xmltex \
+	texmf-dist/source \
 	texmf-dist/tex/generic/config/luatex-unicode-letters.tex \
 	texmf-dist/tex/generic/config/luatexiniconfig.tex \
 	texmf-dist/tex/generic/context/luatex \
@@ -258,5 +248,7 @@ do-install:
 		--strip-components 1 --no-same-permission --no-same-owner
 	${MKDIR} ${STAGEDIR}${PREFIX}/${TEXMFDISTDIR}/doc
 	${TOUCH} ${STAGEDIR}${PREFIX}/${TEXMFDISTDIR}/doc/.keep_me
+	${MKDIR} ${STAGEDIR}${PREFIX}/${TEXMFDISTDIR}/source
+	${TOUCH} ${STAGEDIR}${PREFIX}/${TEXMFDISTDIR}/source/.keep_me
 
 .include <bsd.port.mk>
