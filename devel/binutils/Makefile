@@ -36,7 +36,6 @@ CONFIGURE_ARGS+=	--disable-shared \
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS+=	--with-system-zlib \
-			--with-sysroot=/ \
 			--with-gmp=${LOCALBASE} \
 			--with-mpfr=${LOCALBASE}
 INFO=		as \
@@ -48,7 +47,8 @@ INFO=		as \
 		ld
 .endif
 
-CONFIGURE_ARGS+=	--disable-werror
+CONFIGURE_ARGS+=	--disable-werror \
+			--with-sysroot=/
 
 OPTIONS_SUB=	yes
 NLS_USES=	gettext

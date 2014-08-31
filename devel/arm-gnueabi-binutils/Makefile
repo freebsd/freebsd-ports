@@ -1,6 +1,6 @@
 # $FreeBSD$
 
-PORTREVISION=	0
+PORTREVISION=	1
 COMMENT=	GNU binutils for arm cross-development
 PKGNAMEPREFIX=	arm-gnueabi-
 PLIST=	${.CURDIR}/pkg-plist
