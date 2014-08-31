@@ -3,6 +3,7 @@
 
 PORTNAME=	aegisub
 PORTVERSION=	3.2.0
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	http://ftp.aegisub.org/pub/archives/releases/source/:aegisub \
 		ftp://ftp.aegisub.org/pub/archives/releases/source/:aegisub \

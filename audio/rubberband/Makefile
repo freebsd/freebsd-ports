@@ -3,6 +3,7 @@
 
 PORTNAME=	rubberband
 PORTVERSION=	1.8.1
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://breakfastquay.com/files/releases/23/
 

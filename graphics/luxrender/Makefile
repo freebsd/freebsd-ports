@@ -3,7 +3,7 @@
 
 PORTNAME=	luxrender
 PORTVERSION=	1.3.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	http://src.luxrender.net/lux/get/ \
 		http://src.luxrender.net/luxrays/get/:lr

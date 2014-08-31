@@ -4,7 +4,7 @@
 
 PORTNAME=	fftw3
 PORTVERSION=	3.3.3
-PORTREVISION?=	1
+PORTREVISION?=	2
 CATEGORIES=	math
 MASTER_SITES=	http://www.fftw.org/ \
 		ftp://ftp.fftw.org/pub/fftw/
@@ -21,13 +21,12 @@ FFTW3_FLAVOR?=	default
 FFTW3_SUFX=
 
 GNU_CONFIGURE=	yes
-USES=		pathfix perl5 pkgconfig
+INSTALL_TARGET=	install-strip
+USES=		libtool pathfix perl5 pkgconfig
 USE_PERL5=	build
 USE_LDCONFIG=	yes
 
 CONFIGURE_ARGS=		--enable-shared --enable-threads --disable-fortran
-CONFIGURE_ENV=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
-		PTHREAD_LIBS="${PTHREAD_LIBS}"
 
 .if ${FFTW3_FLAVOR} == "default"
 INFO=	fftw3
@@ -114,10 +113,6 @@ post-patch:
 		${WRKSRC}/api/import-system-wisdom.c \
 		${WRKSRC}/doc/fftw3* \
 		${WRKSRC}/tools/*
-	@${REINPLACE_CMD} \
-	-e '/libfftw3@PREC_SUFFIX@_threads\.la:/{N; \
-	s/$$(LIBS)/$$(PTHREAD_LIBS) &/;}' \
-		${WRKSRC}/threads/Makefile.in
 .if ${FFTW3_FLAVOR} != "default"
 	@${REINPLACE_CMD} -E \
 	-e '/(DIST_COMMON|bin_SCRIPTS|BUILT_SOURCES|EXTRA_DIST) =/,\
@@ -147,9 +142,8 @@ regression-test test: smallcheck
 
 .for t in bigcheck check exhaustive-check paranoid-check smallcheck
 ${t}: build
-	@cd ${WRKSRC}/tests; ${SETENV} ${MAKE_ENV} ${MAKE} \
-	${MAKE_ARGS} ${t}
-
+	@(cd ${WRKSRC}/tests && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} \
+		${MAKE_ARGS} ${t})
 .endfor
 
 .include <bsd.port.post.mk>

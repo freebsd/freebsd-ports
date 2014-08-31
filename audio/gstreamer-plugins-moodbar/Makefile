@@ -3,7 +3,7 @@
 
 PORTNAME=	gstreamer-plugins-moodbar
 PORTVERSION=	0.1.2
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	audio
 MASTER_SITES=	http://pwsp.net/~qbob/ \
 		http://redundancy.redundancy.org/mirror/
