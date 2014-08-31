@@ -23,5 +23,5 @@ include/libmtp.h
 lib/libmtp.a
 lib/libmtp.so
 lib/libmtp.so.9
-lib/libmtp.so.9.1.0
+lib/libmtp.so.9.2.0
 libdata/pkgconfig/libmtp.pc
