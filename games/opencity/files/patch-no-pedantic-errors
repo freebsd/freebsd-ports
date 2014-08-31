@@ -1,0 +1,26 @@
+From: Markus Koschany <apo@gambaru.de>
+Date: Mon, 2 Jun 2014 23:50:54 +0200
+Subject: no pedantic errors
+
+--- configure.ac
++++ configure.ac
+@@ -199,7 +199,7 @@ dnl ===========================================================================
+ dnl Set the compiler and the linker options
+ dnl ===========================================================================
+ dnl Set C / C++ compiler options
+-CPPFLAGS="-Wall -Wmissing-braces -Wparentheses -pedantic-errors $CPPFLAGS"
++CPPFLAGS="-Wall -Wmissing-braces -Wparentheses $CPPFLAGS"
+ 
+ dnl Set more C / C++ compiler options
+ CPPFLAGS="-I$with_gl_prefix/include $enable_gprof $enable_debug $CPPFLAGS"
+--- configure.orig	2011-07-03 17:14:48.000000000 +0000
++++ configure	2014-08-30 23:00:42.000000000 +0000
+@@ -6150,7 +6150,7 @@
+ fi
+ 
+ 
+-CPPFLAGS="-Wall -Wmissing-braces -Wparentheses -pedantic-errors $CPPFLAGS"
++CPPFLAGS="-Wall -Wmissing-braces -Wparentheses $CPPFLAGS"
+ 
+ CPPFLAGS="-I$with_gl_prefix/include $enable_gprof $enable_debug $CPPFLAGS"
+ 
