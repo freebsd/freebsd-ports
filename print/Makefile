@@ -247,7 +247,6 @@
     SUBDIR += tex-jadetex
     SUBDIR += tex-luatex
     SUBDIR += tex-ptexenc
-    SUBDIR += tex-texmflocal
     SUBDIR += tex-xdvik
     SUBDIR += tex-xetex
     SUBDIR += tex-xmltex
