@@ -8,23 +8,24 @@ CATEGORIES=	www
 MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Powerful HTTP crawler with an easy interface
+COMMENT=	HTTP crawler with an easy interface
+
+LICENSE=	GPLv2
 
 BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash \
 		makedepend:${PORTSDIR}/devel/makedepend
 
-OPTIONS_DEFINE=	DOCS
-
-USES=		shebangfix gmake
+USES=		gmake shebangfix
 SHEBANG_FILES=	configure
 GNU_CONFIGURE=	yes
 MAKE_JOBS_UNSAFE=	yes
 
+SUB_FILES=	pkg-message
+
 PORTDOCS=	*
 PLIST_FILES=	bin/larbin etc/larbin.conf.sample
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
+OPTIONS_DEFINE=	DOCS
 
 pre-everything::
 	@${ECHO_MSG} "====================================================================="
@@ -33,6 +34,9 @@ pre-everything::
 	@${ECHO_MSG} "  http://larbin.sourceforge.net/custom-eng.html."
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "====================================================================="
+
+post-extract:
+	@(cd ${WRKSRC}/src/utils && ${MV} string.h mystring.h)
 
 post-patch:
 	@${REINPLACE_CMD} -e \
@@ -46,24 +50,22 @@ post-patch:
 		 s|-I-||' ${WRKSRC}/src/larbin.make
 	@${REINPLACE_CMD} -e \
 		'/delete \[\] tab/s|^|//|' ${WRKSRC}/src/utils/histogram.cc
+	@${FIND} ${WRKSRC}/src -name "*.cc" -or -name "*.h" | ${XARGS} \
+		${REINPLACE_CMD} -e \
+		's|utils/string.h|utils/mystring.h| ; \
+		 s|<iostream.h>|<iostream>| ; \
+		 s|<string.h>|<cstring>| ; \
+		 s|\([[:blank:]]\)cerr|\1std::cerr|g ; \
+		 s|\([[:blank:]]\)cout|\1std::cout|g ; \
+		 s|\([[:blank:]]\)endl|\1std::endl|g'
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/larbin ${PREFIX}/bin
-	${INSTALL_DATA} ${WRKSRC}/larbin.conf ${PREFIX}/etc/larbin.conf.sample
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/doc/* ${DOCSDIR}
-.endif
-
-post-install:
-	@${ECHO_MSG} "====================================================================="
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} "You must invoke larbin with the name of the configuration file, e.g:"
-	@${ECHO_MSG} "larbin -c config-file"
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} "Documentation: ${DOCSDIR}"
-	@${ECHO_MSG} "Sample Configuration file: ${PREFIX}/etc/larbin.conf.sample"
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} "====================================================================="
+	(cd ${WRKSRC} && ${INSTALL_PROGRAM} larbin \
+		${STAGEDIR}${PREFIX}/bin)
+	(cd ${WRKSRC} && ${INSTALL_DATA} larbin.conf \
+		${STAGEDIR}${PREFIX}/etc/larbin.conf.sample)
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	(cd ${WRKSRC}/doc && ${INSTALL_DATA} * \
+		${STAGEDIR}${DOCSDIR})
 
 .include <bsd.port.mk>
