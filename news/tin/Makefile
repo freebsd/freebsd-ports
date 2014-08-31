@@ -69,6 +69,8 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 ALL_TARGET=	build
 
+.include <bsd.port.options.mk>
+
 post-patch:
 	${REINPLACE_CMD} -Ee 's:5/(mmdf|mbox):5/tin_\1:g' \
 		${WRKSRC}/src/Makefile.in
@@ -87,8 +89,10 @@ post-patch:
 	${MV}   ${WRKSRC}/tools/url_handler.pl \
 		${WRKSRC}/tools/tinurl_handler.pl
 
+.if ${PORT_OPTIONS:MNLS}
 post-build:
 	${MAKE_CMD} -C ${WRKSRC}/po
+.endif
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/doc/tin.defaults \
