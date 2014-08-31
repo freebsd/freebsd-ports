@@ -3,7 +3,7 @@
 
 PORTNAME=	irstlm
 PORTVERSION=	5.80.03
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=${PORTNAME}/${PORTNAME}/${PORTNAME}-5.80
@@ -14,6 +14,7 @@ COMMENT=	The IRST Language Modeling Toolkit
 RUN_DEPENDS=	${LOCALBASE}/bin/bash:${PORTSDIR}/shells/bash
 
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--enable-shared
 USE_PERL5=	run
 USE_GCC=	yes
 USE_AUTOTOOLS=	libtoolize aclocal autoconf automake
