@@ -1,0 +1,9 @@
+=====================================================================
+
+You must invoke larbin with the name of the configuration file, e.g:
+larbin -c config-file
+
+Documentation: %%DOCSDIR%%
+Configuration file: %%PREFIX%%/etc/larbin.conf.sample
+
+=====================================================================
