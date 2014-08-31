@@ -3,7 +3,7 @@
 
 PORTNAME=	snd
 PORTVERSION=	13.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio
 MASTER_SITES=	ftp://ccrma-ftp.stanford.edu/pub/Lisp/ \
 		http://mirror.mcx2.org/

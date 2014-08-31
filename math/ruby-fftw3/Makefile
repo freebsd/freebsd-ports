@@ -3,7 +3,7 @@
 
 PORTNAME=	fftw3
 PORTVERSION=	0.4
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	math ruby
 MASTER_SITES=	http://ruby.gfd-dennou.org/products/ruby-fftw3/release/ \
 		http://dennou-h.gfd-dennou.org/library/ruby/products/ruby-fftw3/release/ \
