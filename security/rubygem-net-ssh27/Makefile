@@ -24,6 +24,6 @@ RUBYGEM_AUTOPLIST=	yes
 
 PROMPT_PASSPHRASES_RUN_DEPENDS=	rubygem-ruby-termios>=0:${PORTSDIR}/comms/rubygem-ruby-termios
 
-PORTSCOUT=	ignore
+PORTSCOUT=	limit:^2\.7
 
 .include <bsd.port.mk>
