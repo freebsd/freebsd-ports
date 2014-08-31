@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pcsc-ada
-PORTVERSION=	0.7.1
+PORTVERSION=	0.7.2
 CATEGORIES=	devel
 MASTER_SITES=	http://www.codelabs.ch/download/
 DISTNAME=	libpcscada-${PORTVERSION}
@@ -53,6 +53,7 @@ PORTEXAMPLES=	src bin
 post-patch:
 	${REINPLACE_CMD} -e 's|"-lpcsclite"|${GPRLINK}|' \
 		${WRKSRC}/pcscada_lib.gpr
+	${REINPLACE_CMD} -e 's|gnaty.*|gnatyd",|' ${WRKSRC}/pcscada_common.gpr
 	(cd ${WRKSRC} && ${REINPLACE_CMD} -e 's|"-lpcsclite");|"-L${LOCALBASE}/lib"); pragma Linker_Options ("-lpcsclite");|' \
 		examples/cardd/cardd.adb \
 		examples/sample/sample.adb \
@@ -66,7 +67,8 @@ do-install:
 		${STAGEDIR}${PREFIX}/lib/pcscada \
 		${STAGEDIR}${PREFIX}/include/pcscada
 	${INSTALL_DATA} ${WRKSRC}/src/* ${STAGEDIR}${PREFIX}/include/pcscada
-	${INSTALL_DATA} ${WRKSRC}/lib/* ${STAGEDIR}${PREFIX}/lib/pcscada
+	${INSTALL_DATA} ${WRKSRC}/lib/static/* \
+		${STAGEDIR}${PREFIX}/lib/pcscada
 	${INSTALL_DATA} ${FILESDIR}/pcscada.gpr ${STAGEDIR}${PREFIX}/lib/gnat
 .if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
