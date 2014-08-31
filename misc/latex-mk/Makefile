@@ -10,10 +10,13 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Collection of makefile and scripts for LaTeX documents
 
-LICENSE=	BSD
+LICENSE=	BSD4CLAUSE
+
+BUILD_DEPENDS=	texi2dvi:${PORTSDIR}/print/texinfo
+RUN_DEPENDS=	texi2dvi:${PORTSDIR}/print/texinfo
 
 USE_TEX=	latex
-USES=		gmake makeinfo
+USES=		gmake
 GNU_CONFIGURE=	yes
 
 INFO=		latex-mk
