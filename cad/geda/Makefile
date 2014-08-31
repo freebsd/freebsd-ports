@@ -3,7 +3,7 @@
 
 PORTNAME=	geda
 PORTVERSION=	1.8.2
-PORTREVISION=	2
+PORTREVISION=	3
 PORTEPOCH=	1
 CATEGORIES=	cad
 MASTER_SITES=	http://ftp.geda-project.org/geda-gaf/stable/%SUBDIR%/
