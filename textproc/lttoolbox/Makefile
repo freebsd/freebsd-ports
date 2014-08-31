@@ -12,12 +12,13 @@ COMMENT=	Tool for lexical, morphological analysis and generation of words
 
 LIB_DEPENDS=	libxml2.so:${PORTSDIR}/textproc/libxml2
 
-APVER=	3.2
+APVER=	3.3
 APREV=	0
 
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 USES=		libtool pathfix pkgconfig
+INSTALL_TARGET=	install-strip
 
 PLIST_SUB+=	APVER="${APVER}"
 
