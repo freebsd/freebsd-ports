@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	converseen
-PORTVERSION=	0.8.2
+PORTVERSION=	0.8.3
 CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}/Converseen/Converseen%200.8/
 
@@ -10,6 +10,7 @@ MAINTAINER=	fernando.apesteguia@gmail.com
 COMMENT=	Easy to use graphics conversion utility
 
 LICENSE=	GPLv3
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libMagick++-6.Q*.so:${PORTSDIR}/graphics/ImageMagick
 
@@ -18,8 +19,6 @@ USE_QT4=	corelib gui linguist_build moc_build qmake_build \
 		rcc_build uic_build
 
 post-patch:
-	@${REINPLACE_CMD} -e '/^ appdata.path =/s|/usr/share|$$$${SHARE_DIR}|' \
-		${WRKSRC}/converseen.pro
 	@${REINPLACE_CMD} -e '/^install(FILES converseen.appdata.xml/s|/usr|$${CMAKE_INSTALL_PREFIX}|' \
 		${WRKSRC}/CMakeLists.txt
 
