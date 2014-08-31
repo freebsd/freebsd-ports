@@ -1,5 +1,6 @@
 bin/apertium
 bin/apertium-deshtml
+bin/apertium-deslatex
 bin/apertium-desmediawiki
 bin/apertium-desodt
 bin/apertium-despptx
@@ -10,21 +11,19 @@ bin/apertium-desxlsx
 bin/apertium-desxpresstag
 bin/apertium-filter-ambiguity
 bin/apertium-gen-deformat
-bin/apertium-gen-lextorbil
-bin/apertium-gen-lextormono
 bin/apertium-gen-modes
 bin/apertium-gen-reformat
-bin/apertium-gen-stopwords-lextor
-bin/apertium-gen-wlist-lextor
-bin/apertium-gen-wlist-lextor-translation
 bin/apertium-interchunk
-bin/apertium-lextor
 bin/apertium-multiple-translations
+bin/apertium-prelatex
 bin/apertium-postchunk
-bin/apertium-preprocess-corpus-lextor
+bin/apertium-postlatex
+bin/apertium-postlatex-raw
 bin/apertium-preprocess-transfer
 bin/apertium-pretransfer
 bin/apertium-rehtml
+bin/apertium-rehtml-noent
+bin/apertium-relatex
 bin/apertium-remediawiki
 bin/apertium-reodt
 bin/apertium-repptx
@@ -35,9 +34,11 @@ bin/apertium-rexlsx
 bin/apertium-rexpresstag
 bin/apertium-tagger
 bin/apertium-tagger-apply-new-rules
+bin/apertium-tagger-readwords
 bin/apertium-tmxbuild
 bin/apertium-transfer
 bin/apertium-unformat
+bin/apertium-utils-fixlatex
 bin/apertium-validate-acx
 bin/apertium-validate-dictionary
 bin/apertium-validate-interchunk
@@ -52,15 +53,19 @@ include/apertium-%%APVER%%/apertium/endian_double_util.h
 include/apertium-%%APVER%%/apertium/hmm.h
 include/apertium-%%APVER%%/apertium/interchunk.h
 include/apertium-%%APVER%%/apertium/interchunk_word.h
+include/apertium-%%APVER%%/apertium/latex_accentsmap.h
 include/apertium-%%APVER%%/apertium/lextor.h
 include/apertium-%%APVER%%/apertium/lextor_data.h
 include/apertium-%%APVER%%/apertium/lextor_eval.h
 include/apertium-%%APVER%%/apertium/lextor_word.h
+include/apertium-%%APVER%%/apertium/lswpost.h
 include/apertium-%%APVER%%/apertium/morpho_stream.h
 include/apertium-%%APVER%%/apertium/postchunk.h
 include/apertium-%%APVER%%/apertium/string_utils.h
 include/apertium-%%APVER%%/apertium/tagger.h
 include/apertium-%%APVER%%/apertium/tagger_data.h
+include/apertium-%%APVER%%/apertium/tagger_data_hmm.h
+include/apertium-%%APVER%%/apertium/tagger_data_lsw.h
 include/apertium-%%APVER%%/apertium/tagger_utils.h
 include/apertium-%%APVER%%/apertium/tagger_word.h
 include/apertium-%%APVER%%/apertium/tmx_align_parameters.h
@@ -93,9 +98,9 @@ lib/libapertium3-%%APVER%%.so.0
 lib/libapertium3-%%APVER%%.so.0.0.0
 lib/libapertium3.a
 lib/libapertium3.so
-libdata/pkgconfig/apertium-%%APVER%%.pc
-man/man1/apertium.1.gz
+libdata/pkgconfig/apertium.pc
 man/man1/apertium-deshtml.1.gz
+man/man1/apertium-deslatex.1.gz
 man/man1/apertium-desmediawiki.1.gz
 man/man1/apertium-desodt.1.gz
 man/man1/apertium-despptx.1.gz
@@ -116,10 +121,14 @@ man/man1/apertium-interchunk.1.gz
 man/man1/apertium-lextor.1.gz
 man/man1/apertium-multiple-translations.1.gz
 man/man1/apertium-postchunk.1.gz
+man/man1/apertium-postlatex-raw.1.gz
+man/man1/apertium-postlatex.1.gz
+man/man1/apertium-prelatex.1.gz
 man/man1/apertium-preprocess-corpus-lextor.1.gz
 man/man1/apertium-preprocess-transfer.1.gz
 man/man1/apertium-pretransfer.1.gz
 man/man1/apertium-rehtml.1.gz
+man/man1/apertium-relatex.1.gz
 man/man1/apertium-remediawiki.1.gz
 man/man1/apertium-reodt.1.gz
 man/man1/apertium-repptx.1.gz
@@ -131,6 +140,7 @@ man/man1/apertium-tagger-apply-new-rules.1.gz
 man/man1/apertium-tagger.1.gz
 man/man1/apertium-transfer.1.gz
 man/man1/apertium-unformat.1.gz
+man/man1/apertium-utils-fixlatex.1.gz
 man/man1/apertium-validate-acx.1.gz
 man/man1/apertium-validate-dictionary.1.gz
 man/man1/apertium-validate-interchunk.1.gz
@@ -138,10 +148,10 @@ man/man1/apertium-validate-modes.1.gz
 man/man1/apertium-validate-postchunk.1.gz
 man/man1/apertium-validate-tagger.1.gz
 man/man1/apertium-validate-transfer.1.gz
-%%DATADIR%%/acx.rng
+man/man1/apertium.1.gz
+share/aclocal/apertium.m4
 %%DATADIR%%/apertium-createmodes.awk
 %%DATADIR%%/deformat.xsl
-%%DATADIR%%/dix.dtd
 %%DATADIR%%/format.dtd
 %%DATADIR%%/interchunk.dtd
 %%DATADIR%%/lexchoice.xsl
@@ -154,7 +164,7 @@ man/man1/apertium-validate-transfer.1.gz
 %%DATADIR%%/reformat.xsl
 %%DATADIR%%/tagger.dtd
 %%DATADIR%%/transfer.dtd
-@dirrm %%DATADIR%%/modes
-@dirrm %%DATADIR%%
 @dirrm include/apertium-%%APVER%%/apertium
 @dirrm include/apertium-%%APVER%%
+@dirrm %%DATADIR%%/modes
+@dirrm %%DATADIR%%

@@ -1,9 +1,12 @@
 bin/lt-comp
 bin/lt-expand
+bin/lt-print
 bin/lt-proc
 bin/lt-tmxcomp
 bin/lt-tmxproc
+bin/lt-trim
 include/lttoolbox-%%APVER%%/lttoolbox/alphabet.h
+include/lttoolbox-%%APVER%%/lttoolbox/att_compiler.h
 include/lttoolbox-%%APVER%%/lttoolbox/buffer.h
 include/lttoolbox-%%APVER%%/lttoolbox/compiler.h
 include/lttoolbox-%%APVER%%/lttoolbox/compression.h
@@ -19,7 +22,6 @@ include/lttoolbox-%%APVER%%/lttoolbox/match_state.h
 include/lttoolbox-%%APVER%%/lttoolbox/my_stdio.h
 include/lttoolbox-%%APVER%%/lttoolbox/node.h
 include/lttoolbox-%%APVER%%/lttoolbox/pattern_list.h
-include/lttoolbox-%%APVER%%/lttoolbox/pool.h
 include/lttoolbox-%%APVER%%/lttoolbox/regexp_compiler.h
 include/lttoolbox-%%APVER%%/lttoolbox/sorted_vector.h
 include/lttoolbox-%%APVER%%/lttoolbox/state.h
@@ -27,17 +29,21 @@ include/lttoolbox-%%APVER%%/lttoolbox/tmx_compiler.h
 include/lttoolbox-%%APVER%%/lttoolbox/trans_exe.h
 include/lttoolbox-%%APVER%%/lttoolbox/transducer.h
 include/lttoolbox-%%APVER%%/lttoolbox/xml_parse_util.h
+libdata/pkgconfig/lttoolbox.pc
 lib/liblttoolbox3-%%APVER%%.so.0
 lib/liblttoolbox3-%%APVER%%.so.0.0.0
 lib/liblttoolbox3.a
 lib/liblttoolbox3.so
-libdata/pkgconfig/lttoolbox-%%APVER%%.pc
 %%DATADIR%%/dix.dtd
+%%DATADIR%%/acx.rng
+%%DATADIR%%/dix.rng
 man/man1/lt-comp.1.gz
 man/man1/lt-expand.1.gz
+man/man1/lt-print.1.gz
 man/man1/lt-proc.1.gz
 man/man1/lt-tmxcomp.1.gz
 man/man1/lt-tmxproc.1.gz
+man/man1/lt-trim.1.gz
 @dirrm %%DATADIR%%
 @dirrm include/lttoolbox-%%APVER%%/lttoolbox
 @dirrm include/lttoolbox-%%APVER%%
