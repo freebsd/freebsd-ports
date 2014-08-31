@@ -2,18 +2,17 @@
 # $FreeBSD$
 
 PORTNAME=	tetgen
-PORTVERSION=	1.4.3.20110119
+PORTVERSION=	1.5.0.20131104
 CATEGORIES=	math
-MASTER_SITES=	http://wias-berlin.de/software/tetgen/files/
+MASTER_SITES=	http://wias-berlin.de/software/tetgen/1.5/src/
 DISTNAME=	${PORTNAME}${PORTVERSION:R}
 DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Quality Tetrahedral Mesh Generator and Delaunay Triangulator
 
-LICENSE_FILE=	${WRKDIR}/LICENSE
-
-NO_CDROM=	Tetgen is for academic or personal use only
+LICENSE=	AGPLv3
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 OPTIONS_DEFINE=	EXAMPLES
 
