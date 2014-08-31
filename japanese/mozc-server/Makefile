@@ -14,15 +14,13 @@ COMMENT?=	Mozc Japanese Input Method, Server
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/third_party/gyp/LICENSE
 
-BUILD_DEPENDS=	python:${PORTSDIR}/lang/python \
-		ninja:${PORTSDIR}/devel/ninja
+BUILD_DEPENDS=	ninja:${PORTSDIR}/devel/ninja
 EXTRACT_DEPENDS=${PYTHON_CMD}:${PYTHON_PORTSDIR}
 LIB_DEPENDS=	libprotobuf.so:${PORTSDIR}/devel/protobuf \
 		libzinnia.so:${PORTSDIR}/japanese/zinnia
 RUN_DEPENDS=	xdg-open:${PORTSDIR}/devel/xdg-utils
 
-USES=		compiler:c++0x pkgconfig iconv gmake tar:bzip2
-USE_PYTHON_BUILD=yes
+USES=		compiler:c++0x pkgconfig iconv gmake tar:bzip2 python:build
 
 BUILD_MOZC_LIST?=	mozc_server
 
