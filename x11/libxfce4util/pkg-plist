@@ -16,30 +16,30 @@ lib/libxfce4util.so.6
 lib/libxfce4util.so.6.0.0
 libdata/pkgconfig/libxfce4util-1.0.pc
 sbin/xfce4-kiosk-query
-%%PORTDOCS%%%%DOCSDIR%%/home.png
-%%PORTDOCS%%%%DOCSDIR%%/index.html
-%%PORTDOCS%%%%DOCSDIR%%/index.sgml
-%%PORTDOCS%%%%DOCSDIR%%/left.png
-%%PORTDOCS%%%%DOCSDIR%%/libxfce4util-File-Utilities.html
-%%PORTDOCS%%%%DOCSDIR%%/libxfce4util-Internationalisation.html
-%%PORTDOCS%%%%DOCSDIR%%/libxfce4util-Miscellaneous-Utilities.html
-%%PORTDOCS%%%%DOCSDIR%%/libxfce4util-POSIX-Signal-Handling.html
-%%PORTDOCS%%%%DOCSDIR%%/libxfce4util-Resource-Config-File-Support.html
-%%PORTDOCS%%%%DOCSDIR%%/libxfce4util-Resource-lookup-functions.html
-%%PORTDOCS%%%%DOCSDIR%%/libxfce4util-Software-Licenses.html
-%%PORTDOCS%%%%DOCSDIR%%/libxfce4util-Unicode-Support-Functions.html
-%%PORTDOCS%%%%DOCSDIR%%/libxfce4util-Version-Information.html
-%%PORTDOCS%%%%DOCSDIR%%/libxfce4util-Xfce-Generics.html
-%%PORTDOCS%%%%DOCSDIR%%/libxfce4util-Xfce-Kiosk-functions.html
-%%PORTDOCS%%%%DOCSDIR%%/libxfce4util-core.html
-%%PORTDOCS%%%%DOCSDIR%%/libxfce4util-datatypes.html
-%%PORTDOCS%%%%DOCSDIR%%/libxfce4util-fundamentals.html
-%%PORTDOCS%%%%DOCSDIR%%/libxfce4util-utilities.html
-%%PORTDOCS%%%%DOCSDIR%%/libxfce4util.devhelp2
-%%PORTDOCS%%%%DOCSDIR%%/reference.html
-%%PORTDOCS%%%%DOCSDIR%%/right.png
-%%PORTDOCS%%%%DOCSDIR%%/style.css
-%%PORTDOCS%%%%DOCSDIR%%/up.png
+%%PORTDOCS%%share/gtk-doc/html/libxfce4util/home.png
+%%PORTDOCS%%share/gtk-doc/html/libxfce4util/index.html
+%%PORTDOCS%%share/gtk-doc/html/libxfce4util/index.sgml
+%%PORTDOCS%%share/gtk-doc/html/libxfce4util/left.png
+%%PORTDOCS%%share/gtk-doc/html/libxfce4util/libxfce4util-File-Utilities.html
+%%PORTDOCS%%share/gtk-doc/html/libxfce4util/libxfce4util-Internationalisation.html
+%%PORTDOCS%%share/gtk-doc/html/libxfce4util/libxfce4util-Miscellaneous-Utilities.html
+%%PORTDOCS%%share/gtk-doc/html/libxfce4util/libxfce4util-POSIX-Signal-Handling.html
+%%PORTDOCS%%share/gtk-doc/html/libxfce4util/libxfce4util-Resource-Config-File-Support.html
+%%PORTDOCS%%share/gtk-doc/html/libxfce4util/libxfce4util-Resource-lookup-functions.html
+%%PORTDOCS%%share/gtk-doc/html/libxfce4util/libxfce4util-Software-Licenses.html
+%%PORTDOCS%%share/gtk-doc/html/libxfce4util/libxfce4util-Unicode-Support-Functions.html
+%%PORTDOCS%%share/gtk-doc/html/libxfce4util/libxfce4util-Version-Information.html
+%%PORTDOCS%%share/gtk-doc/html/libxfce4util/libxfce4util-Xfce-Generics.html
+%%PORTDOCS%%share/gtk-doc/html/libxfce4util/libxfce4util-Xfce-Kiosk-functions.html
+%%PORTDOCS%%share/gtk-doc/html/libxfce4util/libxfce4util-core.html
+%%PORTDOCS%%share/gtk-doc/html/libxfce4util/libxfce4util-datatypes.html
+%%PORTDOCS%%share/gtk-doc/html/libxfce4util/libxfce4util-fundamentals.html
+%%PORTDOCS%%share/gtk-doc/html/libxfce4util/libxfce4util-utilities.html
+%%PORTDOCS%%share/gtk-doc/html/libxfce4util/libxfce4util.devhelp2
+%%PORTDOCS%%share/gtk-doc/html/libxfce4util/reference.html
+%%PORTDOCS%%share/gtk-doc/html/libxfce4util/right.png
+%%PORTDOCS%%share/gtk-doc/html/libxfce4util/style.css
+%%PORTDOCS%%share/gtk-doc/html/libxfce4util/up.png
 %%NLS%%share/locale/am/LC_MESSAGES/libxfce4util.mo
 %%NLS%%share/locale/ar/LC_MESSAGES/libxfce4util.mo
 %%NLS%%share/locale/ast/LC_MESSAGES/libxfce4util.mo
@@ -108,6 +108,8 @@ sbin/xfce4-kiosk-query
 %%NLS%%@dirrmtry share/locale/dz
 %%NLS%%@dirrmtry share/locale/ast/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/ast
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%PORTDOCS%%@dirrm share/gtk-doc/html/libxfce4util
+%%PORTDOCS%%@dirrmtry share/gtk-doc/html
+%%PORTDOCS%%@dirrmtry share/gtk-doc
 @dirrm include/xfce4/libxfce4util
 @dirrmtry include/xfce4
