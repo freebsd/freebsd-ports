@@ -4,7 +4,8 @@
 PORTNAME=	igbinary
 PORTVERSION=	1.2.1
 CATEGORIES=	converters
-MASTER_SITES=	http://pecl.php.net/get/
+MASTER_SITES=	http://pecl.php.net/get/ \
+		LOCAL/sunpoet
 PKGNAMEPREFIX=	pecl-
 DIST_SUBDIR=	PECL
 
