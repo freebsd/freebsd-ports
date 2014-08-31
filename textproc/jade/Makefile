@@ -3,7 +3,7 @@
 
 PORTNAME=	jade
 PORTVERSION=	1.2.1
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	textproc
 MASTER_SITES=	ftp://ftp.jclark.com/pub/jade/ \
 		http://dist.bsdlab.org/
@@ -20,9 +20,8 @@ RUN_DEPENDS=	${XMLCATMGR}:${PORTSDIR}/textproc/xmlcatmgr
 
 CONFLICTS=	sp-1.*
 
-USE_AUTOTOOLS=	libtool
-USES=		gmake desthack
 GNU_CONFIGURE=	yes
+USES=		desthack gmake libtool
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--enable-default-catalog=${PREFIX}/share/sgml/catalog
 PLIST_SUB=	XMLCATMGR=${XMLCATMGR}
