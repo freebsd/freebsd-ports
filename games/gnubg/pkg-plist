@@ -3,7 +3,11 @@ bin/gnubg
 bin/makebearoff
 bin/makehyper
 bin/makeweights
+man/man6/bearoffdump.6.gz
 man/man6/gnubg.6.gz
+man/man6/makebearoff.6.gz
+man/man6/makehyper.6.gz
+man/man6/makeweights.6.gz
 %%PORTDOCS%%%%DOCSDIR%%/allabout.html
 %%PORTDOCS%%%%DOCSDIR%%/gnubg.html
 %%PORTDOCS%%%%DOCSDIR%%/images/1540d81e.png
@@ -209,39 +213,27 @@ share/icons/hicolor/22x22/apps/gnubg.png
 share/icons/hicolor/24x24/apps/gnubg.png
 share/icons/hicolor/32x32/apps/gnubg.png
 share/icons/hicolor/48x48/apps/gnubg.png
-%%NLS%%share/locale/cs/LC_MESSAGES/gnubg.mo
-%%NLS%%share/locale/da/LC_MESSAGES/gnubg.mo
-%%NLS%%share/locale/de/LC_MESSAGES/gnubg.mo
-%%NLS%%share/locale/en_US/LC_MESSAGES/gnubg.mo
-%%NLS%%share/locale/es/LC_MESSAGES/gnubg.mo
-%%NLS%%share/locale/fr/LC_MESSAGES/gnubg.mo
-%%NLS%%share/locale/is/LC_MESSAGES/gnubg.mo
-%%NLS%%share/locale/it/LC_MESSAGES/gnubg.mo
-%%NLS%%share/locale/ja/LC_MESSAGES/gnubg.mo
-%%NLS%%share/locale/ro/LC_MESSAGES/gnubg.mo
-%%NLS%%share/locale/ru/LC_MESSAGES/gnubg.mo
-%%NLS%%share/locale/tr/LC_MESSAGES/gnubg.mo
-@dirrmtry share/locale/en_US/LC_MESSAGES
-@dirrmtry share/locale/en_US
-@dirrmtry share/icons/hicolor/48x48/apps
-@dirrmtry share/icons/hicolor/48x48
-@dirrmtry share/icons/hicolor/32x32/apps
-@dirrmtry share/icons/hicolor/32x32
-@dirrmtry share/icons/hicolor/24x24/apps
-@dirrmtry share/icons/hicolor/24x24
-@dirrmtry share/icons/hicolor/22x22/apps
-@dirrmtry share/icons/hicolor/22x22
-@dirrmtry share/icons/hicolor/16x16/apps
-@dirrmtry share/icons/hicolor/16x16
-@dirrmtry share/icons/hicolor
-@dirrmtry share/icons
-@dirrmtry %%DATADIR%%/textures
-@dirrmtry %%DATADIR%%/sounds
-@dirrmtry %%DATADIR%%/scripts
-@dirrmtry %%DATADIR%%/pixmaps
-@dirrmtry %%DATADIR%%/met
-@dirrmtry %%DATADIR%%/fonts
-@dirrmtry %%DATADIR%%/flags
-@dirrmtry %%DATADIR%%
+share/locale/cs/LC_MESSAGES/gnubg.mo
+share/locale/da/LC_MESSAGES/gnubg.mo
+share/locale/de/LC_MESSAGES/gnubg.mo
+share/locale/en_US/LC_MESSAGES/gnubg.mo
+share/locale/es/LC_MESSAGES/gnubg.mo
+share/locale/fr/LC_MESSAGES/gnubg.mo
+share/locale/is/LC_MESSAGES/gnubg.mo
+share/locale/it/LC_MESSAGES/gnubg.mo
+share/locale/ja/LC_MESSAGES/gnubg.mo
+share/locale/ro/LC_MESSAGES/gnubg.mo
+share/locale/ru/LC_MESSAGES/gnubg.mo
+share/locale/tr/LC_MESSAGES/gnubg.mo
 %%PORTDOCS%%@dirrmtry %%DOCSDIR%%/images
 %%PORTDOCS%%@dirrmtry %%DOCSDIR%%
+@dirrmtry %%DATADIR%%/flags
+@dirrmtry %%DATADIR%%/fonts
+@dirrmtry %%DATADIR%%/met
+@dirrmtry %%DATADIR%%/pixmaps
+@dirrmtry %%DATADIR%%/scripts
+@dirrmtry %%DATADIR%%/sounds
+@dirrmtry %%DATADIR%%/textures
+@dirrmtry %%DATADIR%%
+@dirrmtry share/locale/en_US/LC_MESSAGES
+@dirrmtry share/locale/en_US
