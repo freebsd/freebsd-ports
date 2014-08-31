@@ -8,7 +8,7 @@ MASTER_SITES=	RG
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Generalized Rack framework for multiple-provider authentication
 
-RUN_DEPENDS=	rubygem-rack>=0:${PORTSDIR}/www/rubygem-rack \
+RUN_DEPENDS=	rubygem-rack>=1.0:${PORTSDIR}/www/rubygem-rack \
 		rubygem-hashie>=1.2:${PORTSDIR}/devel/rubygem-hashie
 
 USE_RUBY=	yes
