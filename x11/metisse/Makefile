@@ -3,7 +3,7 @@
 
 PORTNAME=	metisse
 PORTVERSION=	0.4.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11
 MASTER_SITES=	http://insitu.lri.fr/metisse/download/metisse/
 

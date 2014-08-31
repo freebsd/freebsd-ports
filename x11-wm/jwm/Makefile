@@ -3,6 +3,7 @@
 
 PORTNAME=	jwm
 PORTVERSION=	2.2.2
+PORTREVISION=	1
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://joewing.net/programs/jwm/releases/
 
