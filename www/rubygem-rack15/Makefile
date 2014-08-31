@@ -22,6 +22,8 @@ USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
 
+PORTSCOUT=	limit:^1\.5
+
 # avoid duplicate file from www/rubygem-rack port
 post-install:
 	@${RM} ${STAGEDIR}${PREFIX}/bin/rackup
