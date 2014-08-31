@@ -1,0 +1,10 @@
+#!/bin/sh
+
+# available languages:
+#  al, ar, bg, cz, da, de, en, es, fi, fr, gr,
+#  hu, it, ja, lv, mk, nb, nn, no, pl, pt_BR,
+#  ro, ru, sk, sl, uk, vn, zh_CN, zh_TW
+
+LANG=%%LANG%%
+%%JAVA%% -cp %%DATADIR%%/geonext.jar geonext/Geonext language=${LANG} &
+
