@@ -41,11 +41,6 @@ PLIST_SUB+=	HAS_JISX0213=""
 PLIST_SUB+=	HAS_JISX0213="@comment "
 .endif
 
-post-patch:
-	@${REINPLACE_CMD} -e '/^lispdir/s|@lispdir@|${STAGEDIR}&|' \
-		-e 's|mkdir|${MKDIR}|' \
-		${WRKSRC}/Makefile.in
-
 pre-configure:
 	@${REINPLACE_CMD} -e 's|emacs/site-lisp|${EMACS_NAME}/${EMACS_VER}/site-lisp|g' \
 	    ${WRKSRC}/configure
@@ -60,8 +55,9 @@ post-build:
 post-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/helper/egg-helper \
 	    ${STAGEDIR}${PREFIX}/bin/egg-helper
-
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	(cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR})
+.endif
 
 .include <bsd.port.post.mk>
