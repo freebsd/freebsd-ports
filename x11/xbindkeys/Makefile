@@ -3,6 +3,7 @@
 
 PORTNAME=	xbindkeys
 PORTVERSION=	1.8.6
+PORTREVISION=	1
 CATEGORIES=	x11
 MASTER_SITES=	http://www.nongnu.org/xbindkeys/
 
