@@ -12,7 +12,7 @@ MASTER_SITES=	SF/${PORTNAME}/1.x%20%28Old%20Stable%29/v${PORTVERSION} \
 PKGNAMEPREFIX=	postfix-
 PKGNAMESUFFIX=	-sf
 
-MAINTAINER= ports@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Anti-spam plugin for Postfix (written in C)
 
 USE_MYSQL=	yes
@@ -34,19 +34,16 @@ PLIST_FILES=	sbin/${REALNAME}-cleanup \
 		sbin/${REALNAME} \
 		etc/${REALNAME}.conf.sample
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's,policyd.pid,postfix-policyd-sf.pid,' \
 		${WRKSRC}/policyd.conf
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/cleanup ${PREFIX}/sbin/${REALNAME}-cleanup
-	${INSTALL_PROGRAM} ${WRKSRC}/stats ${PREFIX}/sbin/${REALNAME}-stats
-	${INSTALL_PROGRAM} ${WRKSRC}/policyd ${PREFIX}/sbin/${REALNAME}
-	${INSTALL_DATA} ${WRKSRC}/policyd.conf ${PREFIX}/etc/${REALNAME}.conf.sample
-.if !defined(NOPORTDOCS)
-	@${INSTALL} -d ${DOCSDIR}/
-	cd ${WRKSRC}&&${INSTALL_DATA} ${DOCS} ${DOCSDIR}/
-.endif
+	${INSTALL_PROGRAM} ${WRKSRC}/cleanup ${STAGEDIR}${PREFIX}/sbin/${REALNAME}-cleanup
+	${INSTALL_PROGRAM} ${WRKSRC}/stats ${STAGEDIR}${PREFIX}/sbin/${REALNAME}-stats
+	${INSTALL_PROGRAM} ${WRKSRC}/policyd ${STAGEDIR}${PREFIX}/sbin/${REALNAME}
+	${INSTALL_DATA} ${WRKSRC}/policyd.conf ${STAGEDIR}${PREFIX}/etc/${REALNAME}.conf.sample
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${DOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
