@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	fog-softlayer
-PORTVERSION=	0.3.15
+PORTVERSION=	0.3.16
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
