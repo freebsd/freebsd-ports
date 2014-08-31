@@ -1,0 +1,24 @@
+bin/postfwd
+etc/postfwd
+man/man8/postfwd.8.gz
+man/man8/postfwd2.8.gz
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE
+%%PORTDOCS%%%%DOCSDIR%%/arch.html
+%%PORTDOCS%%%%DOCSDIR%%/hapolicy.html
+%%PORTDOCS%%%%DOCSDIR%%/hapolicy.txt
+%%PORTDOCS%%%%DOCSDIR%%/postfwd-ARCH.png
+%%PORTDOCS%%%%DOCSDIR%%/postfwd.CHANGELOG
+%%PORTDOCS%%%%DOCSDIR%%/postfwd.html
+%%PORTDOCS%%%%DOCSDIR%%/postfwd.txt
+%%PORTDOCS%%%%DOCSDIR%%/postfwd2-chroot.html
+%%PORTDOCS%%%%DOCSDIR%%/postfwd2-chroot.txt
+%%PORTDOCS%%%%DOCSDIR%%/postfwd2.CHANGELOG
+%%PORTDOCS%%%%DOCSDIR%%/postfwd2.html
+%%PORTDOCS%%%%DOCSDIR%%/postfwd2.txt
+%%PORTDOCS%%%%DOCSDIR%%/quick.html
+%%PORTDOCS%%%%DOCSDIR%%/versions.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/postfwd.plugins.sample
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/request.sample
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%
+
