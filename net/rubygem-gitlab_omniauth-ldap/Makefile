@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	gitlab_omniauth-ldap
-PORTVERSION=	1.0.3
+PORTVERSION=	1.0.4
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
@@ -16,6 +16,5 @@ RUN_DEPENDS=	rubygem-net-ldap>=0.3.1:${PORTSDIR}/net/rubygem-net-ldap \
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
-
 
 .include <bsd.port.mk>

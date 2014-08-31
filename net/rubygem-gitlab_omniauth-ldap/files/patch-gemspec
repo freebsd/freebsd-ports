@@ -1,5 +1,5 @@
---- gitlab_omniauth-ldap-1.0.3.gemspec.orig	2013-10-25 02:24:55.456068284 +0000
-+++ gitlab_omniauth-ldap-1.0.3.gemspec	2013-10-25 02:25:06.863067558 +0000
+--- gitlab_omniauth-ldap-1.0.4.gemspec.orig	2013-10-25 02:24:55.456068284 +0000
++++ gitlab_omniauth-ldap-1.0.4.gemspec	2013-10-25 02:25:06.863067558 +0000
 @@ -58,7 +58,7 @@
      requirements:
      - - ~>
