@@ -1,9 +1,10 @@
 Password Manager helps to manage large numbers of passwords and related
-information and simplifies the tasks of searching and entering password data.
+information and simplifies the tasks of searching and entering password
+data.
 
-KedPM is written as an extensible framework, which allows users to plug in 
-custom password database back-ends and custom user interface front-ends.
-Currently, only the Figaro PM back-end supported. To control KedPM user can
-choose between CLI and GTK2 based GUI front-ends.
+KedPM is written as an extensible framework, which allows users to plug
+in custom password database back-ends and custom user interface
+front-ends. Currently, only the Figaro PM back-end supported. To control
+KedPM user can choose between CLI and GTK2 based GUI front-ends.
 
 WWW: http://kedpm.sourceforge.net
