@@ -2,6 +2,7 @@
 
 PORTNAME=	smlnj
 PORTVERSION=	110.76
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	http://smlnj.cs.uchicago.edu/dist/working/${PORTVERSION}/ \
 		ftp://mirror.free.de/http/smlnj.cs.uchicago.edu/dist/working/${PORTVERSION}/
