@@ -139,7 +139,6 @@
     SUBDIR += cheech
     SUBDIR += chessx
     SUBDIR += childsplay
-    SUBDIR += childsplay_plugins
     SUBDIR += chocolate-doom
     SUBDIR += chroma
     SUBDIR += chromium-bsu
