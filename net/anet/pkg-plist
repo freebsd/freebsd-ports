@@ -34,6 +34,7 @@ include/anet/anet-sockets.adb
 include/anet/anet-sockets.ads
 include/anet/anet-streams.adb
 include/anet/anet-streams.ads
+include/anet/anet-thin.ads
 include/anet/anet-types.adb
 include/anet/anet-types.ads
 include/anet/anet-udp.adb
@@ -64,6 +65,7 @@ lib/anet/anet-sockets-thin.ali
 lib/anet/anet-sockets-unix.ali
 lib/anet/anet-sockets.ali
 lib/anet/anet-streams.ali
+lib/anet/anet-thin.ali
 lib/anet/anet-types.ali
 lib/anet/anet-udp.ali
 lib/anet/anet-util.ali
