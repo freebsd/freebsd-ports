@@ -22,9 +22,9 @@ include/fribidi/fribidi-unicode-version.h
 include/fribidi/fribidi-unicode.h
 include/fribidi/fribidi.h
 lib/libfribidi.a
-lib/libfribidi.la
 lib/libfribidi.so
-lib/libfribidi.so.3
+lib/libfribidi.so.0
+lib/libfribidi.so.0.3.1
 libdata/pkgconfig/fribidi.pc
 man/man3/fribidi_charset_to_unicode.3.gz
 man/man3/fribidi_debug_status.3.gz
