@@ -1,0 +1,14 @@
+--- ./doc/Makefile.in.orig	2005-04-25 23:02:47.000000000 +0200
++++ ./doc/Makefile.in	2014-08-31 16:52:48.000000000 +0200
+@@ -210,9 +210,9 @@
+ EXTRA_DIST = $(POD) $(HTML) $(TXT) rrdtool-dump.dtd   rrdtool-xport.dtd  
+ 
+ # some install rules
+-idocdir = $(prefix)/doc
++idocdir = $(prefix)/share/doc/rrdtool/
+ idoc_DATA = $(POD) $(TXT)
+-ihtmldir = $(prefix)/html
++ihtmldir = $(prefix)/share/doc/rrdtool/html
+ ihtml_DATA = $(HTML)
+ imandir = $(mandir)/man1
+ iman_DATA = $(MAN)
