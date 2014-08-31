@@ -135,9 +135,12 @@ man/man6/lev_comp%%HACKEXT%%.6.gz
 man/man6/%%HACKNAME%%.6.gz
 man/man6/recover%%HACKEXT%%.6.gz
 %%PORTDOCS%%%%DOCSDIR%%/Guidebook.txt
-@exec mkdir %D/%%DATADIR%%/save
-@exec chown games:games %D/%%DATADIR%%/save
-@exec chmod 0775 %D/%%DATADIR%%/save
-@unexec rmdir %D/%%DATADIR%%/save
+@mode 0775
+@owner games
+@group games
+@dirrmtry %%DATADIR%%/save
+@group
+@owner
+@mode
 @dirrmtry %%DATADIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
