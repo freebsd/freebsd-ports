@@ -256,6 +256,7 @@
     SUBDIR += texlive-full
     SUBDIR += texlive-infra
     SUBDIR += texlive-texmf
+    SUBDIR += texlive-texmf-source
     SUBDIR += texvc
     SUBDIR += tgif2tex
     SUBDIR += transfig
