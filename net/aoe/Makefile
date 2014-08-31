@@ -14,7 +14,6 @@ NO_PACKAGE=	Should be in sync with the kernel to work correctly
 SSP_UNSAFE=	kernel module does not support ssp
 
 WRKSRC=		${WRKDIR}/dev/aoe
-MAN4=		aoe.4
 USE_RC_SUBR=	aoe
 
 pre-everything::
