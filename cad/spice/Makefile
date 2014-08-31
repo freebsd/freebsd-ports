@@ -30,6 +30,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}3f5
 MAKEFILE=	${FILESDIR}/Makefile
 CONFIGURE_ENV=	CONFIGFILE="${CONFIGFILE}" \
 		LOCALBASE="${LOCALBASE}"
+MAKE_JOBS_UNSAFE=yes
 
 PORTDOCS=	spice3f3.ps.gz
 PORTEXAMPLES=	bjtnoise.cir bsim1tst.cir bsim2tst.cir diffpair.cir \
@@ -44,8 +45,13 @@ OPTIONS_DEFAULT=DOCS EXAMPLES X11
 X11_USE=		XORG=x11,xaw,xext,xmu,xt
 X11_CONFIGURE_ENV=	WITH_X11=yes
 DEV_BSIM3_DESC=		BSIM3v3 MOS Transistor Model Support
+DEV_BSIM3_LICENSE=	BSIML
+DEV_BSIM3_LICENSE_FILE=	${WRKSRC}/src/lib/dev/bsim3/B3TERMS_OF_USE
 DEV_BSIM4_DESC=		BSIM4v4 MOS Transistor Model Support
+DEV_BSIM4_LICENSE=	BSIML
+DEV_BSIM4_LICENSE_FILE=	${WRKSRC}/src/lib/dev/bsim4/B4TERMS_OF_USE.txt
 DEV_HISIM2_DESC=	HiSIM2 IGFET Model Support
+DEV_HISIM2_LICENSE=	HISIML
 
 .include <bsd.port.options.mk>
 
@@ -53,35 +59,27 @@ DEV_HISIM2_DESC=	HiSIM2 IGFET Model Support
 CC_OPT=		${CFLAGS}
 CONFIGFILE=	${WRKSRC}/conf/FreeBSD
 DEVICES=
-.for D in BSIM3 BSIM4 HISIM2
-. if !empty(PORT_OPTIONS:MDEV_$D)
-DEVICES+=	${D:tl}
-. endif
-.endfor
 
-.if !empty(PORT_OPTIONS:MDEV_BSIM3) || \
-    !empty(PORT_OPTIONS:MDEV_BSIM4) || \
-    !empty(PORT_OPTIONS:MDEV_HISIM2)
-LICENSE_COMB=	multi
 LICENSE_FILE_MIT=	${WRKSRC}/COPYRIGHT
-.if !empty(PORT_OPTIONS:MDEV_BSIM3) || \
-    !empty(PORT_OPTIONS:MDEV_BSIM4)
-LICENSE+=	BSIML
 LICENSE_NAME_BSIML=	BSIM license
 LICENSE_PERMS_BSIML=	dist-mirror pkg-mirror auto-accept
-.if !empty(PORT_OPTIONS:MDEV_BSIM3)
-LICENSE_FILE_BSIML=	${WRKSRC}/src/lib/dev/bsim3/B3TERMS_OF_USE
-.else
-LICENSE_FILE_BSIML=	${WRKSRC}/src/lib/dev/bsim4/B4TERMS_OF_USE.txt
-.endif
-.endif
-.if !empty(PORT_OPTIONS:MDEV_HISIM2)
-LICENSE+=	HISIML
 LICENSE_NAME_HISIML=	HiSIM license
 LICENSE_PERMS_HISIML=	dist-mirror pkg-mirror auto-accept
 LICENSE_FILE_HISIML=	${FILESDIR}/hisim2-license.txt
-.endif
-.endif
+
+.for D in ${OPTIONS_DEFINE:MDEV_*:S/DEV_//}
+. if !empty(PORT_OPTIONS:MDEV_$D)
+LICENSE_COMB=	multi
+DEVICES+=	${D:tl}
+.  if  !empty(DEV_${D}_LICENSE)
+LICENSE+=	${DEV_${D}_LICENSE}
+.   if  !empty(DEV_${D}_LICENSE_FILE)
+LICENSE_FILE_${DEV_${D}_LICENSE}=	${DEV_${D}_LICENSE_FILE}
+.   endif
+.  endif
+. endif
+.endfor
+LICENSE:=	${LICENSE:O:u}
 
 post-extract:
 	@${DO_NADA}
