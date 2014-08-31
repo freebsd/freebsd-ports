@@ -7,7 +7,7 @@ CATEGORIES=	lang
 MASTER_SITES=	ftp://invisible-island.net/${PORTNAME}/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	bapt@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Interpreter for the AWK Programming Language
 
 LICENSE=	GPLv2
