@@ -1,0 +1,3 @@
+Rugged is a Ruby bindings to the libgit2 linkable C Git library.
+
+WWW: https://github.com/libgit2/rugged

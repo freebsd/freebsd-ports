@@ -4254,7 +4254,6 @@
     SUBDIR += rubygem-bugspots
     SUBDIR += rubygem-builder
     SUBDIR += rubygem-builder31
-    SUBDIR += rubygem-builder32
     SUBDIR += rubygem-byebug
     SUBDIR += rubygem-caesars
     SUBDIR += rubygem-cairo-gobject
@@ -4488,6 +4487,7 @@
     SUBDIR += rubygem-rubyinlineaccel
     SUBDIR += rubygem-rubytree
     SUBDIR += rubygem-rufus-scheduler
+    SUBDIR += rubygem-rugged
     SUBDIR += rubygem-runt
     SUBDIR += rubygem-ruport
     SUBDIR += rubygem-safe_yaml
