@@ -1,4 +1,3 @@
-lib/xfce4/panel/plugins/libmpc.la
 lib/xfce4/panel/plugins/libmpc.so
 share/locale/ar/LC_MESSAGES/xfce4-mpc-plugin.mo
 share/locale/ast/LC_MESSAGES/xfce4-mpc-plugin.mo
