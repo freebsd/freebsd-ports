@@ -1,0 +1,45 @@
+--- Makefile.in.orig	2004-11-22 03:53:05.000000000 +0900
++++ Makefile.in	2014-06-10 13:51:03.000000000 +0900
+@@ -113,32 +115,32 @@
+ 
+ install-site: all
+ 	echo "Egg system will be installed in ${lispdir}/egg...."; \
+-	if [ -d ${lispdir}/egg ]; then \
++	if [ -d -p ${DESTDIR}${lispdir}/egg ]; then \
+ 	  echo "Clean up the previsous installation...."; \
+-	  rm -rf ${lispdir}/egg/*;  \
++	  rm -rf ${DESTDIR}${lispdir}/egg/*;  \
+ 	else \
+ 	  echo "Make the directory ${lispdir}/egg..."; \
+-	  mkdir ${lispdir}/egg; \
++	  mkdir -p ${DESTDIR}${lispdir}/egg; \
+ 	fi; \
+ #
+ 	for FILE in ${TOPSRCS} ${TOPELCS} ${INITELS}; \
+ 	  do  \
+-	    ${INSTALL_DATA}  $${FILE} ${lispdir}/egg/; \
++	    ${INSTALL_DATA}  $${FILE} ${DESTDIR}${lispdir}/egg/; \
+ 	  done; \
+ #
+-	mkdir ${lispdir}/egg/egg ; \
++	mkdir -p ${DESTDIR}${lispdir}/egg/egg ; \
+ 	for FILE in ${EGGSRCS} ${EGGELCS} ; \
+ 	  do  \
+-	    ${INSTALL_DATA}  $${FILE} ${lispdir}/egg/egg; \
++	    ${INSTALL_DATA}  $${FILE} ${DESTDIR}${lispdir}/egg/egg; \
+ 	  done; \
+-	touch ${lispdir}/egg/egg/.nosearch; \
++	touch ${DESTDIR}${lispdir}/egg/egg/.nosearch; \
+ #
+-	mkdir ${lispdir}/egg/its ; \
++	mkdir -p ${DESTDIR}${lispdir}/egg/its ; \
+ 	for FILE in ${ITSSRCS} ${ITSELCS} ; \
+ 	  do  \
+-	    ${INSTALL_DATA}  $${FILE} ${lispdir}/egg/its ; \
++	    ${INSTALL_DATA}  $${FILE} ${DESTDIR}${lispdir}/egg/its ; \
+ 	  done; \
+-	touch ${lispdir}/egg/its/.nosearch; \
++	touch ${DESTDIR}${lispdir}/egg/its/.nosearch; \
+ 
+ 
+ uninstall-site:
