@@ -20,17 +20,14 @@ include/sidplay/utils/SidUsage.h
 include/sidplay/utils/libini.h
 @exec mkdir -p %D/include/resid
 lib/libsidplay2.a
-lib/libsidplay2.la
 lib/libsidplay2.so
 lib/libsidplay2.so.1
+lib/libsidplay2.so.1.0.1
 lib/libsidutils.a
-lib/libsidutils.la
 lib/libsidutils.so
 lib/libsidutils.so.0
+lib/libsidutils.so.0.0.4
 lib/sidplay/builders/libresid-builder.a
-lib/sidplay/builders/libresid-builder.la
-lib/sidplay/builders/libresid-builder.so
-lib/sidplay/builders/libresid-builder.so.0
 libdata/pkgconfig/libsidplay2.pc
 libdata/pkgconfig/libsidutils.pc
 @dirrm lib/sidplay/builders
