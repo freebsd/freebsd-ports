@@ -1,20 +1,20 @@
---- gitlab-gollum-lib-1.0.1.gemspec.orig	2013-10-25 03:30:05.274800136 +0000
-+++ gitlab-gollum-lib-1.0.1.gemspec	2013-10-25 03:30:30.496797075 +0000
-@@ -65,7 +65,7 @@
-     requirements:
-     - - ~>
-       - !ruby/object:Gem::Version
--        version: 0.4.2
-+        version: 0.5.2
-   type: :runtime
-   prerelease: false
-   version_requirements: !ruby/object:Gem::Requirement
-@@ -93,7 +93,7 @@
+--- gitlab-gollum-lib-1.1.0.gemspec.orig	2014-08-31 05:45:21.688401723 +0000
++++ gitlab-gollum-lib-1.1.0.gemspec	2014-08-31 05:45:42.784398809 +0000
+@@ -79,7 +79,7 @@
      requirements:
      - - ~>
        - !ruby/object:Gem::Version
 -        version: 1.5.9
 +        version: 1.6.0
    type: :runtime
+   prerelease: false
+   version_requirements: !ruby/object:Gem::Requirement
+@@ -205,7 +205,7 @@
+     requirements:
+     - - ~>
+       - !ruby/object:Gem::Version
+-        version: 0.4.2
++        version: 0.5.2
+   type: :development
    prerelease: false
    version_requirements: !ruby/object:Gem::Requirement
