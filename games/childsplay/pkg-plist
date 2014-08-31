@@ -366,6 +366,7 @@ bin/childsplay
 %%PYTHON_SITELIBDIR%%/childsplay/lib/CPData/FishtankData/sounds/blub0.wav
 %%PYTHON_SITELIBDIR%%/childsplay/lib/CPData/FishtankData/sounds/glockenschmoutz.ogg
 %%PYTHON_SITELIBDIR%%/childsplay/lib/CPData/FishtankData/sounds/poolsplash.wav
+%%PYTHON_SITELIBDIR%%/childsplay/lib/CPData/FlashcardsData/flashcards.rc
 %%PYTHON_SITELIBDIR%%/childsplay/lib/CPData/FourrowData/1.png
 %%PYTHON_SITELIBDIR%%/childsplay/lib/CPData/FourrowData/10.png
 %%PYTHON_SITELIBDIR%%/childsplay/lib/CPData/FourrowData/2.png
@@ -907,7 +908,6 @@ bin/childsplay
 %%PYTHON_SITELIBDIR%%/childsplay/lib/SPData/gui/themes/seniorplay/81px_right_green.png
 %%PYTHON_SITELIBDIR%%/childsplay/lib/SPData/gui/themes/seniorplay/SPWidgets.rc
 %%PYTHON_SITELIBDIR%%/childsplay/lib/SPData/themes/childsplay/SP_menu.xml
-%%PYTHON_SITELIBDIR%%/childsplay/lib/SPData/themes/childsplay/SP_menu.xml.back
 %%PYTHON_SITELIBDIR%%/childsplay/lib/SPData/themes/childsplay/background.png
 %%PYTHON_SITELIBDIR%%/childsplay/lib/SPData/themes/childsplay/bottom_menubar.png
 %%PYTHON_SITELIBDIR%%/childsplay/lib/SPData/themes/childsplay/core_info_button.png
@@ -947,6 +947,8 @@ bin/childsplay
 %%PYTHON_SITELIBDIR%%/childsplay/lib/SPData/themes/childsplay/menuicons/findsound_ro.icon.png
 %%PYTHON_SITELIBDIR%%/childsplay/lib/SPData/themes/childsplay/menuicons/fishtank.icon.png
 %%PYTHON_SITELIBDIR%%/childsplay/lib/SPData/themes/childsplay/menuicons/fishtank_ro.icon.png
+%%PYTHON_SITELIBDIR%%/childsplay/lib/SPData/themes/childsplay/menuicons/flashcards.icon.png
+%%PYTHON_SITELIBDIR%%/childsplay/lib/SPData/themes/childsplay/menuicons/flashcards_ro.icon.png
 %%PYTHON_SITELIBDIR%%/childsplay/lib/SPData/themes/childsplay/menuicons/fourrow.icon.png
 %%PYTHON_SITELIBDIR%%/childsplay/lib/SPData/themes/childsplay/menuicons/fourrow_ro.icon.png
 %%PYTHON_SITELIBDIR%%/childsplay/lib/SPData/themes/childsplay/menuicons/ichanger.icon.png
@@ -1196,6 +1198,8 @@ bin/childsplay
 %%PYTHON_SITELIBDIR%%/childsplay/lib/findsound.pyc
 %%PYTHON_SITELIBDIR%%/childsplay/lib/fishtank.py
 %%PYTHON_SITELIBDIR%%/childsplay/lib/fishtank.pyc
+%%PYTHON_SITELIBDIR%%/childsplay/lib/flashcards.py
+%%PYTHON_SITELIBDIR%%/childsplay/lib/flashcards.pyc
 %%PYTHON_SITELIBDIR%%/childsplay/lib/fourrow.py
 %%PYTHON_SITELIBDIR%%/childsplay/lib/fourrow.pyc
 %%PYTHON_SITELIBDIR%%/childsplay/lib/ichanger.py
@@ -1353,6 +1357,7 @@ share/locale/vi/LC_MESSAGES/childsplay.mo
 @dirrm %%PYTHON_SITELIBDIR%%/childsplay/lib/CPData/IchangerData/images
 @dirrm %%PYTHON_SITELIBDIR%%/childsplay/lib/CPData/IchangerData
 @dirrm %%PYTHON_SITELIBDIR%%/childsplay/lib/CPData/FourrowData
+@dirrm %%PYTHON_SITELIBDIR%%/childsplay/lib/CPData/FlashcardsData
 @dirrm %%PYTHON_SITELIBDIR%%/childsplay/lib/CPData/FishtankData/sounds
 @dirrm %%PYTHON_SITELIBDIR%%/childsplay/lib/CPData/FishtankData/backgrounds/seniorplay
 @dirrm %%PYTHON_SITELIBDIR%%/childsplay/lib/CPData/FishtankData/backgrounds/childsplay
