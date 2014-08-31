@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	foreman
-PORTVERSION=	0.74.0
+PORTVERSION=	0.75.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
