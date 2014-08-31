@@ -5,4 +5,4 @@ allows you to choose an action (e.g. reject, dunno) for a combination of
 several smtp parameters (like sender and recipient address, size or the 
 client's TLS fingerprint).
 
-WWW:	http://www.postfwd.org/
+WWW: http://www.postfwd.org/
