@@ -14,9 +14,9 @@ include/garcon-1/garcon/garcon-menu-separator.h
 include/garcon-1/garcon/garcon-menu-tree-provider.h
 include/garcon-1/garcon/garcon-menu.h
 include/garcon-1/garcon/garcon.h
-lib/libgarcon-1.la
 lib/libgarcon-1.so
 lib/libgarcon-1.so.0
+lib/libgarcon-1.so.0.0.0
 libdata/pkgconfig/garcon-1.pc
 share/desktop-directories/xfce-accessories.directory
 share/desktop-directories/xfce-development.directory
@@ -32,34 +32,34 @@ share/desktop-directories/xfce-personal.directory
 share/desktop-directories/xfce-screensavers.directory
 share/desktop-directories/xfce-settings.directory
 share/desktop-directories/xfce-system.directory
-%%APIDOCS%%share/gtk-doc/html/garcon/garcon-GarconMenu.html
-%%APIDOCS%%share/gtk-doc/html/garcon/garcon-GarconMenuDirectory.html
-%%APIDOCS%%share/gtk-doc/html/garcon/garcon-GarconMenuElement.html
-%%APIDOCS%%share/gtk-doc/html/garcon/garcon-GarconMenuItem.html
-%%APIDOCS%%share/gtk-doc/html/garcon/garcon-GarconMenuItemCache.html
-%%APIDOCS%%share/gtk-doc/html/garcon/garcon-GarconMenuMerger.html
-%%APIDOCS%%share/gtk-doc/html/garcon/garcon-GarconMenuParser.html
-%%APIDOCS%%share/gtk-doc/html/garcon/garcon-GarconMenuSeparator.html
-%%APIDOCS%%share/gtk-doc/html/garcon/garcon-GarconMenuTreeProvider.html
-%%APIDOCS%%share/gtk-doc/html/garcon/api-index-full.html
-%%APIDOCS%%share/gtk-doc/html/garcon/garcon-Desktop-Environment-Configuration.html
-%%APIDOCS%%share/gtk-doc/html/garcon/garcon-Version-Information.html
-%%APIDOCS%%share/gtk-doc/html/garcon/garcon-garcon-menu-item-pool.html
-%%APIDOCS%%share/gtk-doc/html/garcon/garcon-garcon-menu-node.html
-%%APIDOCS%%share/gtk-doc/html/garcon/garcon-garcon.html
-%%APIDOCS%%share/gtk-doc/html/garcon/garcon-menus.html
-%%APIDOCS%%share/gtk-doc/html/garcon/garcon-miscellaneous.html
-%%APIDOCS%%share/gtk-doc/html/garcon/garcon-parsing.html
-%%APIDOCS%%share/gtk-doc/html/garcon/garcon.devhelp2
-%%APIDOCS%%share/gtk-doc/html/garcon/home.png
-%%APIDOCS%%share/gtk-doc/html/garcon/index.html
-%%APIDOCS%%share/gtk-doc/html/garcon/index.sgml
-%%APIDOCS%%share/gtk-doc/html/garcon/left.png
-%%APIDOCS%%share/gtk-doc/html/garcon/object-tree.html
-%%APIDOCS%%share/gtk-doc/html/garcon/pt01.html
-%%APIDOCS%%share/gtk-doc/html/garcon/right.png
-%%APIDOCS%%share/gtk-doc/html/garcon/style.css
-%%APIDOCS%%share/gtk-doc/html/garcon/up.png
+%%PORTDOCS%%%%DOCSDIR%%/garcon-GarconMenu.html
+%%PORTDOCS%%%%DOCSDIR%%/garcon-GarconMenuDirectory.html
+%%PORTDOCS%%%%DOCSDIR%%/garcon-GarconMenuElement.html
+%%PORTDOCS%%%%DOCSDIR%%/garcon-GarconMenuItem.html
+%%PORTDOCS%%%%DOCSDIR%%/garcon-GarconMenuItemCache.html
+%%PORTDOCS%%%%DOCSDIR%%/garcon-GarconMenuMerger.html
+%%PORTDOCS%%%%DOCSDIR%%/garcon-GarconMenuParser.html
+%%PORTDOCS%%%%DOCSDIR%%/garcon-GarconMenuSeparator.html
+%%PORTDOCS%%%%DOCSDIR%%/garcon-GarconMenuTreeProvider.html
+%%PORTDOCS%%%%DOCSDIR%%/api-index-full.html
+%%PORTDOCS%%%%DOCSDIR%%/garcon-Desktop-Environment-Configuration.html
+%%PORTDOCS%%%%DOCSDIR%%/garcon-Version-Information.html
+%%PORTDOCS%%%%DOCSDIR%%/garcon-garcon-menu-item-pool.html
+%%PORTDOCS%%%%DOCSDIR%%/garcon-garcon-menu-node.html
+%%PORTDOCS%%%%DOCSDIR%%/garcon-garcon.html
+%%PORTDOCS%%%%DOCSDIR%%/garcon-menus.html
+%%PORTDOCS%%%%DOCSDIR%%/garcon-miscellaneous.html
+%%PORTDOCS%%%%DOCSDIR%%/garcon-parsing.html
+%%PORTDOCS%%%%DOCSDIR%%/garcon.devhelp2
+%%PORTDOCS%%%%DOCSDIR%%/home.png
+%%PORTDOCS%%%%DOCSDIR%%/index.html
+%%PORTDOCS%%%%DOCSDIR%%/index.sgml
+%%PORTDOCS%%%%DOCSDIR%%/left.png
+%%PORTDOCS%%%%DOCSDIR%%/object-tree.html
+%%PORTDOCS%%%%DOCSDIR%%/pt01.html
+%%PORTDOCS%%%%DOCSDIR%%/right.png
+%%PORTDOCS%%%%DOCSDIR%%/style.css
+%%PORTDOCS%%%%DOCSDIR%%/up.png
 %%NLS%%share/locale/ar/LC_MESSAGES/garcon.mo
 %%NLS%%share/locale/bg/LC_MESSAGES/garcon.mo
 %%NLS%%share/locale/bn/LC_MESSAGES/garcon.mo
@@ -119,9 +119,7 @@ share/desktop-directories/xfce-system.directory
 %%NLS%%@dirrmtry share/locale/nb_NO
 %%NLS%%@dirrmtry share/locale/kk/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/kk
-%%APIDOCS%%@dirrm share/gtk-doc/html/garcon
-%%APIDOCS%%@dirrmtry share/gtk-doc/html
-%%APIDOCS%%@dirrmtry share/gtk-doc
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm share/desktop-directories
 @dirrm include/garcon-1/garcon
 @dirrm include/garcon-1
