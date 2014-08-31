@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	active_scaffold
-PORTVERSION=	3.4.1
+PORTVERSION=	3.4.3
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
