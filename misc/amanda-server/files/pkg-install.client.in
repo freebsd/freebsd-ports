@@ -1,0 +1,16 @@
+#!/bin/sh
+# $FreeBSD$
+
+case "$2" in
+POST-INSTALL)
+mkdir -p %%AMANDA_GNUTAR_LISTDIR%%
+chown %%USERS%%:%%AMANDA_GROUP%% %%AMANDA_GNUTAR_LISTDIR%%
+touch %%AMANDA_DATES%%
+chown %%USERS%%:%%AMANDA_GROUP%% %%AMANDA_DATES%%
+;;
+POST-DEINSTALL)
+test -s %%AMANDA_DATES%% || rm -f %%AMANDA_DATES%%
+rmdir -p %%AMANDA_GNUTAR_LISTDIR%% || :
+;;
+esac
+
