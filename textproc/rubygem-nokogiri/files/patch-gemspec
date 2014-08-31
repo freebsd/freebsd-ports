@@ -1,7 +1,7 @@
---- ./nokogiri-1.6.2.1.gemspec.orig	2014-05-24 16:09:58.079292326 +0000
-+++ ./nokogiri-1.6.2.1.gemspec	2014-05-24 16:10:12.005291367 +0000
+--- ./nokogiri-1.6.3.1.gemspec.orig	2014-08-23 23:55:51.304817727 +0000
++++ ./nokogiri-1.6.3.1.gemspec	2014-08-23 23:56:09.655816514 +0000
 @@ -15,20 +15,6 @@
- date: 2014-05-14 00:00:00.000000000 Z
+ date: 2014-07-22 00:00:00.000000000 Z
  dependencies:
  - !ruby/object:Gem::Dependency
 -  name: mini_portile
