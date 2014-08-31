@@ -1,5 +1,5 @@
 --- aoenet.c.orig	2006-05-25 23:10:11.000000000 +0700
-+++ aoenet.c	2014-06-05 17:19:44.000000000 +0700
++++ aoenet.c	2014-09-01 01:49:14.000000000 +0700
 @@ -77,8 +77,11 @@
  #define NECODES (sizeof(aoe_errlist) /  sizeof(char *) - 1)
  #if (__FreeBSD_version < 600000)
@@ -13,15 +13,21 @@
  #endif
  #define IFLISTSZ 1024
  
-@@ -190,10 +193,18 @@
+@@ -190,10 +193,24 @@
  /* 
   * a dummy "free" function for mbuf ext buffer 
   */
 +#if __FreeBSD_version >= 1000050
++#if __FreeBSD_version >= 1100028
++static void
++#else
 +static int
++#endif
 +nilfn(struct mbuf *m, void *a, void *b)
 +{
++#if __FreeBSD_version < 1100028
 +	return EXT_FREE_OK;
++#endif
 +}
 +#else
  static void
@@ -32,7 +38,7 @@
  
  /* Create a mbuf chain and point to our data section(s). */
  static struct mbuf *
-@@ -201,7 +212,7 @@
+@@ -201,7 +218,7 @@
  {
          struct mbuf *m;
  
@@ -41,7 +47,7 @@
  		return (NULL);
  	m->m_len = AOEHDRSZ;
  	m->m_pkthdr.len = f->f_mlen;
-@@ -215,7 +226,7 @@
+@@ -215,7 +232,7 @@
                  u_int len;
  
                  len = f->f_mlen - AOEHDRSZ;
@@ -50,7 +56,7 @@
  			m_freem(m);
  			return (NULL);
  		}
-@@ -223,6 +234,9 @@
+@@ -223,6 +240,9 @@
  
  		m1->m_ext.ref_cnt = NULL;
  		MEXTADD(m1, f->f_data, len, nilfn, 
@@ -60,7 +66,7 @@
  			NULL, 0, EXT_NET_DRV);
  		m1->m_len = len;
  		m1->m_next = NULL;
-@@ -276,7 +290,7 @@
+@@ -276,7 +296,7 @@
  		if (!is_aoe_netif(ifp))
  			continue;
  		memcpy(h->ah_src, IFPADDR(ifp), sizeof(h->ah_src));
@@ -69,7 +75,7 @@
  		if (m == NULL) {
  			IPRINTK("m_copypacket failure\n");
  			continue;
-@@ -384,9 +398,9 @@
+@@ -384,9 +404,9 @@
          if (m->m_pkthdr.len >
              ETHER_MAX_FRAME(ifp, etype, m->m_flags & M_HASFCS)) {
                  if_printf(ifp, "discard oversize frame "
