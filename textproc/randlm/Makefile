@@ -21,6 +21,7 @@ USE_AUTOTOOLS=	libtoolize aclocal autoconf automake
 AUTOMAKE_ARGS=	--add-missing
 USE_LDCONFIG=	yes
 USES=		libtool
+MAKE_JOBS_UNSAFE=yes
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
