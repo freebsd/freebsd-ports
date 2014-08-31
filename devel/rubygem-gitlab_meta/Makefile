@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	gitlab_meta
-PORTVERSION=	6.0
+PORTVERSION=	7.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -11,6 +11,5 @@ COMMENT=	GitLab meta gem
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
-
 
 .include <bsd.port.mk>
