@@ -18,6 +18,8 @@ MAKE_ENV+=	FLEX=${FLEX} \
 		YACC=${YACC} \
 		STAGEDIR=${STAGEDIR}
 
+MAKE_JOBS_UNSAFE=	yes
+
 post-patch:
 	# -O4 kills llvm
 	${REINPLACE_CMD} -e 's|/usr/bin/gcc|${CC}|; s|O4|O3|g' \

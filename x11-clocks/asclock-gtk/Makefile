@@ -19,6 +19,8 @@ USE_XORG=	x11 xt
 USE_GNOME=	gtk12
 HAS_CONFIGURE=	yes
 
+MAKE_JOBS_UNSAFE=	yes
+
 post-patch:
 	${FIND} ${WRKSRC} -name '*.orig' | ${XARGS} ${RM}
 
