@@ -4,6 +4,7 @@ lib/node_modules/npm/.npmignore
 lib/node_modules/npm/.npmrc
 lib/node_modules/npm/.travis.yml
 lib/node_modules/npm/AUTHORS
+lib/node_modules/npm/CHANGELOG.md
 lib/node_modules/npm/CONTRIBUTING.md
 lib/node_modules/npm/LICENSE
 lib/node_modules/npm/Makefile
@@ -215,6 +216,7 @@ lib/node_modules/npm/html/doc/misc/npm-config.html
 lib/node_modules/npm/html/doc/misc/npm-developers.html
 lib/node_modules/npm/html/doc/misc/npm-disputes.html
 lib/node_modules/npm/html/doc/misc/npm-faq.html
+lib/node_modules/npm/html/doc/misc/npm-index.html
 lib/node_modules/npm/html/doc/misc/npm-registry.html
 lib/node_modules/npm/html/doc/misc/npm-scripts.html
 lib/node_modules/npm/html/doc/misc/removing-npm.html
@@ -287,6 +289,7 @@ lib/node_modules/npm/lib/utils/depr-check.js
 lib/node_modules/npm/lib/utils/error-handler.js
 lib/node_modules/npm/lib/utils/fetch.js
 lib/node_modules/npm/lib/utils/gently-rm.js
+lib/node_modules/npm/lib/utils/git.js
 lib/node_modules/npm/lib/utils/is-git-url.js
 lib/node_modules/npm/lib/utils/lifecycle.js
 lib/node_modules/npm/lib/utils/link.js
@@ -401,6 +404,7 @@ lib/node_modules/npm/man/man7/npm-registry.7.gz
 lib/node_modules/npm/man/man7/npm-scripts.7.gz
 lib/node_modules/npm/man/man7/removing-npm.7.gz
 lib/node_modules/npm/man/man7/semver.7.gz
+lib/node_modules/npm/node_modules/.bin/mkdirp
 lib/node_modules/npm/node_modules/.bin/node-gyp
 lib/node_modules/npm/node_modules/.bin/nopt
 lib/node_modules/npm/node_modules/.bin/opener
@@ -515,7 +519,7 @@ lib/node_modules/npm/node_modules/editor/example/edit.js
 lib/node_modules/npm/node_modules/editor/index.js
 lib/node_modules/npm/node_modules/editor/package.json
 lib/node_modules/npm/node_modules/fstream-npm/.npmignore
-lib/node_modules/npm/node_modules/fstream-npm/LICENCE
+lib/node_modules/npm/node_modules/fstream-npm/LICENSE
 lib/node_modules/npm/node_modules/fstream-npm/README.md
 lib/node_modules/npm/node_modules/fstream-npm/example/bundle.js
 lib/node_modules/npm/node_modules/fstream-npm/example/dir-tar.js
@@ -537,6 +541,7 @@ lib/node_modules/npm/node_modules/fstream-npm/node_modules/fstream-ignore/test/b
 lib/node_modules/npm/node_modules/fstream-npm/node_modules/fstream-ignore/test/common.js
 lib/node_modules/npm/node_modules/fstream-npm/node_modules/fstream-ignore/test/ignore-most.js
 lib/node_modules/npm/node_modules/fstream-npm/node_modules/fstream-ignore/test/nested-ignores.js
+lib/node_modules/npm/node_modules/fstream-npm/node_modules/fstream-ignore/test/read-file-order.js
 lib/node_modules/npm/node_modules/fstream-npm/node_modules/fstream-ignore/test/unignore-child.js
 lib/node_modules/npm/node_modules/fstream-npm/node_modules/fstream-ignore/test/zz-cleanup.js
 lib/node_modules/npm/node_modules/fstream-npm/package.json
@@ -565,7 +570,7 @@ lib/node_modules/npm/node_modules/fstream/lib/socket-reader.js
 lib/node_modules/npm/node_modules/fstream/lib/writer.js
 lib/node_modules/npm/node_modules/fstream/package.json
 lib/node_modules/npm/node_modules/github-url-from-git/.npmignore
-lib/node_modules/npm/node_modules/github-url-from-git/History.md
+lib/node_modules/npm/node_modules/github-url-from-git/LICENSE
 lib/node_modules/npm/node_modules/github-url-from-git/Makefile
 lib/node_modules/npm/node_modules/github-url-from-git/Readme.md
 lib/node_modules/npm/node_modules/github-url-from-git/index.js
@@ -666,6 +671,8 @@ lib/node_modules/npm/node_modules/lockfile/package.json
 lib/node_modules/npm/node_modules/lockfile/test/basic.js
 lib/node_modules/npm/node_modules/lockfile/test/fixtures/bad-child.js
 lib/node_modules/npm/node_modules/lockfile/test/fixtures/child.js
+lib/node_modules/npm/node_modules/lockfile/test/retry-time.js
+lib/node_modules/npm/node_modules/lockfile/test/stale-contention.js
 lib/node_modules/npm/node_modules/lru-cache/.npmignore
 lib/node_modules/npm/node_modules/lru-cache/CONTRIBUTORS
 lib/node_modules/npm/node_modules/lru-cache/LICENSE
@@ -676,6 +683,7 @@ lib/node_modules/npm/node_modules/lru-cache/test/basic.js
 lib/node_modules/npm/node_modules/lru-cache/test/foreach.js
 lib/node_modules/npm/node_modules/lru-cache/test/memory-leak.js
 lib/node_modules/npm/node_modules/minimatch/.npmignore
+lib/node_modules/npm/node_modules/minimatch/.travis.yml
 lib/node_modules/npm/node_modules/minimatch/LICENSE
 lib/node_modules/npm/node_modules/minimatch/README.md
 lib/node_modules/npm/node_modules/minimatch/minimatch.js
@@ -695,12 +703,30 @@ lib/node_modules/npm/node_modules/mkdirp/.npmignore
 lib/node_modules/npm/node_modules/mkdirp/.travis.yml
 lib/node_modules/npm/node_modules/mkdirp/LICENSE
 lib/node_modules/npm/node_modules/mkdirp/README.markdown
+lib/node_modules/npm/node_modules/mkdirp/bin/cmd.js
+lib/node_modules/npm/node_modules/mkdirp/bin/usage.txt
 lib/node_modules/npm/node_modules/mkdirp/examples/pow.js
 lib/node_modules/npm/node_modules/mkdirp/index.js
+lib/node_modules/npm/node_modules/mkdirp/node_modules/minimist/.travis.yml
+lib/node_modules/npm/node_modules/mkdirp/node_modules/minimist/LICENSE
+lib/node_modules/npm/node_modules/mkdirp/node_modules/minimist/example/parse.js
+lib/node_modules/npm/node_modules/mkdirp/node_modules/minimist/index.js
+lib/node_modules/npm/node_modules/mkdirp/node_modules/minimist/package.json
+lib/node_modules/npm/node_modules/mkdirp/node_modules/minimist/readme.markdown
+lib/node_modules/npm/node_modules/mkdirp/node_modules/minimist/test/dash.js
+lib/node_modules/npm/node_modules/mkdirp/node_modules/minimist/test/default_bool.js
+lib/node_modules/npm/node_modules/mkdirp/node_modules/minimist/test/dotted.js
+lib/node_modules/npm/node_modules/mkdirp/node_modules/minimist/test/long.js
+lib/node_modules/npm/node_modules/mkdirp/node_modules/minimist/test/parse.js
+lib/node_modules/npm/node_modules/mkdirp/node_modules/minimist/test/parse_modified.js
+lib/node_modules/npm/node_modules/mkdirp/node_modules/minimist/test/short.js
+lib/node_modules/npm/node_modules/mkdirp/node_modules/minimist/test/whitespace.js
 lib/node_modules/npm/node_modules/mkdirp/package.json
 lib/node_modules/npm/node_modules/mkdirp/test/chmod.js
 lib/node_modules/npm/node_modules/mkdirp/test/clobber.js
 lib/node_modules/npm/node_modules/mkdirp/test/mkdirp.js
+lib/node_modules/npm/node_modules/mkdirp/test/opts_fs.js
+lib/node_modules/npm/node_modules/mkdirp/test/opts_fs_sync.js
 lib/node_modules/npm/node_modules/mkdirp/test/perm.js
 lib/node_modules/npm/node_modules/mkdirp/test/perm_sync.js
 lib/node_modules/npm/node_modules/mkdirp/test/race.js
@@ -835,11 +861,22 @@ lib/node_modules/npm/node_modules/npm-registry-client/package.json
 lib/node_modules/npm/node_modules/npm-registry-client/test/00-setup.js
 lib/node_modules/npm/node_modules/npm-registry-client/test/adduser-new.js
 lib/node_modules/npm/node_modules/npm-registry-client/test/adduser-update.js
-lib/node_modules/npm/node_modules/npm-registry-client/test/basic.js
+lib/node_modules/npm/node_modules/npm-registry-client/test/bugs.js
+lib/node_modules/npm/node_modules/npm-registry-client/test/deprecate.js
+lib/node_modules/npm/node_modules/npm-registry-client/test/get-all.js
+lib/node_modules/npm/node_modules/npm-registry-client/test/get-basic.js
+lib/node_modules/npm/node_modules/npm-registry-client/test/lib/common.js
+lib/node_modules/npm/node_modules/npm-registry-client/test/lib/server.js
 lib/node_modules/npm/node_modules/npm-registry-client/test/publish-again.js
 lib/node_modules/npm/node_modules/npm-registry-client/test/publish.js
+lib/node_modules/npm/node_modules/npm-registry-client/test/redirects.js
 lib/node_modules/npm/node_modules/npm-registry-client/test/request-gzip-content.js
 lib/node_modules/npm/node_modules/npm-registry-client/test/retries.js
+lib/node_modules/npm/node_modules/npm-registry-client/test/star.js
+lib/node_modules/npm/node_modules/npm-registry-client/test/stars.js
+lib/node_modules/npm/node_modules/npm-registry-client/test/tag.js
+lib/node_modules/npm/node_modules/npm-registry-client/test/unpublish.js
+lib/node_modules/npm/node_modules/npm-registry-client/test/upload.js
 lib/node_modules/npm/node_modules/npm-registry-client/test/zz-cleanup.js
 lib/node_modules/npm/node_modules/npm-user-validate/.npmignore
 lib/node_modules/npm/node_modules/npm-user-validate/.travis.yml
@@ -855,6 +892,7 @@ lib/node_modules/npm/node_modules/npmconf/LICENSE
 lib/node_modules/npm/node_modules/npmconf/README.md
 lib/node_modules/npm/node_modules/npmconf/config-defs.js
 lib/node_modules/npm/node_modules/npmconf/lib/find-prefix.js
+lib/node_modules/npm/node_modules/npmconf/lib/load-cafile.js
 lib/node_modules/npm/node_modules/npmconf/lib/load-prefix.js
 lib/node_modules/npm/node_modules/npmconf/lib/load-uid.js
 lib/node_modules/npm/node_modules/npmconf/lib/set-user.js
@@ -882,13 +920,16 @@ lib/node_modules/npm/node_modules/npmconf/package.json
 lib/node_modules/npm/node_modules/npmconf/test/00-setup.js
 lib/node_modules/npm/node_modules/npmconf/test/basic.js
 lib/node_modules/npm/node_modules/npmconf/test/builtin.js
+lib/node_modules/npm/node_modules/npmconf/test/certfile.js
 lib/node_modules/npm/node_modules/npmconf/test/fixtures/.npmrc
 lib/node_modules/npm/node_modules/npmconf/test/fixtures/builtin
 lib/node_modules/npm/node_modules/npmconf/test/fixtures/globalconfig
+lib/node_modules/npm/node_modules/npmconf/test/fixtures/multi-ca
 lib/node_modules/npm/node_modules/npmconf/test/fixtures/package.json
 lib/node_modules/npm/node_modules/npmconf/test/fixtures/userconfig
 lib/node_modules/npm/node_modules/npmconf/test/project.js
 lib/node_modules/npm/node_modules/npmconf/test/save.js
+lib/node_modules/npm/node_modules/npmlog/.npmrc
 lib/node_modules/npm/node_modules/npmlog/LICENSE
 lib/node_modules/npm/node_modules/npmlog/README.md
 lib/node_modules/npm/node_modules/npmlog/example.js
@@ -967,6 +1008,7 @@ lib/node_modules/npm/node_modules/read-package-json/node_modules/normalize-packa
 lib/node_modules/npm/node_modules/read-package-json/node_modules/normalize-package-data/test/fixtures/underscore.json
 lib/node_modules/npm/node_modules/read-package-json/node_modules/normalize-package-data/test/github-urls.js
 lib/node_modules/npm/node_modules/read-package-json/node_modules/normalize-package-data/test/normalize.js
+lib/node_modules/npm/node_modules/read-package-json/node_modules/normalize-package-data/test/scoped.js
 lib/node_modules/npm/node_modules/read-package-json/node_modules/normalize-package-data/test/strict.js
 lib/node_modules/npm/node_modules/read-package-json/node_modules/normalize-package-data/test/typo.js
 lib/node_modules/npm/node_modules/read-package-json/package.json
@@ -1309,12 +1351,26 @@ lib/node_modules/npm/node_modules/sha/node_modules/readable-stream/.npmignore
 lib/node_modules/npm/node_modules/sha/node_modules/readable-stream/LICENSE
 lib/node_modules/npm/node_modules/sha/node_modules/readable-stream/README.md
 lib/node_modules/npm/node_modules/sha/node_modules/readable-stream/duplex.js
-lib/node_modules/npm/node_modules/sha/node_modules/readable-stream/float.patch
 lib/node_modules/npm/node_modules/sha/node_modules/readable-stream/lib/_stream_duplex.js
 lib/node_modules/npm/node_modules/sha/node_modules/readable-stream/lib/_stream_passthrough.js
 lib/node_modules/npm/node_modules/sha/node_modules/readable-stream/lib/_stream_readable.js
 lib/node_modules/npm/node_modules/sha/node_modules/readable-stream/lib/_stream_transform.js
 lib/node_modules/npm/node_modules/sha/node_modules/readable-stream/lib/_stream_writable.js
+lib/node_modules/npm/node_modules/sha/node_modules/readable-stream/node_modules/core-util-is/README.md
+lib/node_modules/npm/node_modules/sha/node_modules/readable-stream/node_modules/core-util-is/float.patch
+lib/node_modules/npm/node_modules/sha/node_modules/readable-stream/node_modules/core-util-is/lib/util.js
+lib/node_modules/npm/node_modules/sha/node_modules/readable-stream/node_modules/core-util-is/package.json
+lib/node_modules/npm/node_modules/sha/node_modules/readable-stream/node_modules/core-util-is/util.js
+lib/node_modules/npm/node_modules/sha/node_modules/readable-stream/node_modules/isarray/README.md
+lib/node_modules/npm/node_modules/sha/node_modules/readable-stream/node_modules/isarray/build/build.js
+lib/node_modules/npm/node_modules/sha/node_modules/readable-stream/node_modules/isarray/component.json
+lib/node_modules/npm/node_modules/sha/node_modules/readable-stream/node_modules/isarray/index.js
+lib/node_modules/npm/node_modules/sha/node_modules/readable-stream/node_modules/isarray/package.json
+lib/node_modules/npm/node_modules/sha/node_modules/readable-stream/node_modules/string_decoder/.npmignore
+lib/node_modules/npm/node_modules/sha/node_modules/readable-stream/node_modules/string_decoder/LICENSE
+lib/node_modules/npm/node_modules/sha/node_modules/readable-stream/node_modules/string_decoder/README.md
+lib/node_modules/npm/node_modules/sha/node_modules/readable-stream/node_modules/string_decoder/index.js
+lib/node_modules/npm/node_modules/sha/node_modules/readable-stream/node_modules/string_decoder/package.json
 lib/node_modules/npm/node_modules/sha/node_modules/readable-stream/package.json
 lib/node_modules/npm/node_modules/sha/node_modules/readable-stream/passthrough.js
 lib/node_modules/npm/node_modules/sha/node_modules/readable-stream/readable.js
@@ -1339,6 +1395,7 @@ lib/node_modules/npm/node_modules/tar/.travis.yml
 lib/node_modules/npm/node_modules/tar/LICENCE
 lib/node_modules/npm/node_modules/tar/README.md
 lib/node_modules/npm/node_modules/tar/examples/extracter.js
+lib/node_modules/npm/node_modules/tar/examples/packer.js
 lib/node_modules/npm/node_modules/tar/examples/reader.js
 lib/node_modules/npm/node_modules/tar/lib/buffer-entry.js
 lib/node_modules/npm/node_modules/tar/lib/entry-writer.js
@@ -1353,6 +1410,7 @@ lib/node_modules/npm/node_modules/tar/lib/parse.js
 lib/node_modules/npm/node_modules/tar/package.json
 lib/node_modules/npm/node_modules/tar/tar.js
 lib/node_modules/npm/node_modules/tar/test/00-setup-fixtures.js
+lib/node_modules/npm/node_modules/tar/test/extract-move.js
 lib/node_modules/npm/node_modules/tar/test/extract.js
 lib/node_modules/npm/node_modules/tar/test/fixtures.tgz
 lib/node_modules/npm/node_modules/tar/test/header.js
@@ -1391,6 +1449,7 @@ lib/node_modules/npm/scripts/clean-old.sh
 lib/node_modules/npm/scripts/doc-build.sh
 lib/node_modules/npm/scripts/index-build.js
 lib/node_modules/npm/scripts/install.sh
+lib/node_modules/npm/scripts/publish-tag.js
 lib/node_modules/npm/scripts/release.sh
 lib/node_modules/npm/scripts/relocate.sh
 lib/node_modules/npm/test/common-tap.js
@@ -1486,6 +1545,7 @@ lib/node_modules/npm/test/tap/false_name.js
 lib/node_modules/npm/test/tap/false_name/index.js
 lib/node_modules/npm/test/tap/false_name/package.json
 lib/node_modules/npm/test/tap/git-cache-locking.js
+lib/node_modules/npm/test/tap/global-prefix-set-in-userconfig.js
 lib/node_modules/npm/test/tap/ignore-install-link.js
 lib/node_modules/npm/test/tap/ignore-scripts.js
 lib/node_modules/npm/test/tap/ignore-scripts/binding.gyp
@@ -1553,6 +1613,7 @@ lib/node_modules/npm/test/tap/prune.js
 lib/node_modules/npm/test/tap/prune/package.json
 lib/node_modules/npm/test/tap/publish-config.js
 lib/node_modules/npm/test/tap/referer.js
+lib/node_modules/npm/test/tap/registry.js
 lib/node_modules/npm/test/tap/repo.js
 lib/node_modules/npm/test/tap/scripts-whitespace-windows.js
 lib/node_modules/npm/test/tap/scripts-whitespace-windows/README.md
@@ -1575,6 +1636,11 @@ lib/node_modules/npm/test/tap/startstop/package.json
 lib/node_modules/npm/test/tap/test-run-ls.js
 lib/node_modules/npm/test/tap/uninstall-package.js
 lib/node_modules/npm/test/tap/uninstall-package/package.json
+lib/node_modules/npm/test/tap/unpack-foreign-tarball.js
+lib/node_modules/npm/test/tap/unpack-foreign-tarball/gitignore-and-npmignore.tar
+lib/node_modules/npm/test/tap/unpack-foreign-tarball/gitignore-and-npmignore.tgz
+lib/node_modules/npm/test/tap/unpack-foreign-tarball/gitignore.tgz
+lib/node_modules/npm/test/tap/unpack-foreign-tarball/npmignore.tgz
 lib/node_modules/npm/test/tap/update-save.js
 lib/node_modules/npm/test/tap/update-save/README.md
 lib/node_modules/npm/test/tap/update-save/index.js
@@ -1586,6 +1652,7 @@ lib/node_modules/npm/test/update-test.sh
 lib/node_modules/npm/wercker.yml
 @dirrm lib/node_modules/npm/test/tap/url-dependencies
 @dirrm lib/node_modules/npm/test/tap/update-save
+@dirrm lib/node_modules/npm/test/tap/unpack-foreign-tarball
 @dirrm lib/node_modules/npm/test/tap/uninstall-package
 @dirrm lib/node_modules/npm/test/tap/startstop
 @dirrm lib/node_modules/npm/test/tap/shrinkwrap-shared-dev-dependency
@@ -1672,6 +1739,12 @@ lib/node_modules/npm/wercker.yml
 @dirrm lib/node_modules/npm/node_modules/sorted-object
 @dirrm lib/node_modules/npm/node_modules/slide/lib
 @dirrm lib/node_modules/npm/node_modules/slide
+@dirrm lib/node_modules/npm/node_modules/sha/node_modules/readable-stream/node_modules/string_decoder
+@dirrm lib/node_modules/npm/node_modules/sha/node_modules/readable-stream/node_modules/isarray/build
+@dirrm lib/node_modules/npm/node_modules/sha/node_modules/readable-stream/node_modules/isarray
+@dirrm lib/node_modules/npm/node_modules/sha/node_modules/readable-stream/node_modules/core-util-is/lib
+@dirrm lib/node_modules/npm/node_modules/sha/node_modules/readable-stream/node_modules/core-util-is
+@dirrm lib/node_modules/npm/node_modules/sha/node_modules/readable-stream/node_modules
 @dirrm lib/node_modules/npm/node_modules/sha/node_modules/readable-stream/lib
 @dirrm lib/node_modules/npm/node_modules/sha/node_modules/readable-stream
 @dirrm lib/node_modules/npm/node_modules/sha/node_modules
@@ -1810,6 +1883,7 @@ lib/node_modules/npm/wercker.yml
 @dirrm lib/node_modules/npm/node_modules/npmconf
 @dirrm lib/node_modules/npm/node_modules/npm-user-validate/test
 @dirrm lib/node_modules/npm/node_modules/npm-user-validate
+@dirrm lib/node_modules/npm/node_modules/npm-registry-client/test/lib
 @dirrm lib/node_modules/npm/node_modules/npm-registry-client/test
 @dirrm lib/node_modules/npm/node_modules/npm-registry-client/lib
 @dirrm lib/node_modules/npm/node_modules/npm-registry-client
@@ -1838,7 +1912,12 @@ lib/node_modules/npm/wercker.yml
 @dirrm lib/node_modules/npm/node_modules/node-gyp/bin
 @dirrm lib/node_modules/npm/node_modules/node-gyp
 @dirrm lib/node_modules/npm/node_modules/mkdirp/test
+@dirrm lib/node_modules/npm/node_modules/mkdirp/node_modules/minimist/test
+@dirrm lib/node_modules/npm/node_modules/mkdirp/node_modules/minimist/example
+@dirrm lib/node_modules/npm/node_modules/mkdirp/node_modules/minimist
+@dirrm lib/node_modules/npm/node_modules/mkdirp/node_modules
 @dirrm lib/node_modules/npm/node_modules/mkdirp/examples
+@dirrm lib/node_modules/npm/node_modules/mkdirp/bin
 @dirrm lib/node_modules/npm/node_modules/mkdirp
 @dirrm lib/node_modules/npm/node_modules/minimatch/test
 @dirrm lib/node_modules/npm/node_modules/minimatch/node_modules/sigmund/test
