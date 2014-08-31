@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	bugzilla
-PORTVERSION=	4.4.4
-PORTREVISION=	1
+PORTVERSION=	4.4.5
 CATEGORIES=	german
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=bugzilla-de/${PORTVERSION:R}/${PORTVERSION}
@@ -17,7 +16,7 @@ NO_WRKSUBDIR=	yes
 
 # adjust BZ_REVNUM if bugzilla revision was incremented and there are no
 # changes in bugzilla/templates/en. If not used simply comment the line.
-BZ_REVNUM=	5
+#BZ_REVNUM=	5
 
 .include "${.CURDIR}/../../devel/bugzilla44/Makefile.common"
 
