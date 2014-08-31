@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	mohawk
-PORTVERSION=	2.0.14
+PORTVERSION=	2.0.15
 CATEGORIES=	www ipv6
 MASTER_SITES=	http://fossil.bsdsx.fr/mohawk/tarball/ \
 		http://fossil.etoilebsd.net/mohawk/tarball/
@@ -28,6 +28,8 @@ CFLAGS+=	-I${LOCALBASE}/include/event2/compat -I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib/event2
 
 OPTIONS_DEFINE=	EXAMPLES
+
+USES=	uidfix
 
 .include <bsd.port.options.mk>
 
