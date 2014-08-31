@@ -4630,6 +4630,7 @@
     SUBDIR += stlfilt
     SUBDIR += stlink
     SUBDIR += stlport
+    SUBDIR += storm
     SUBDIR += stormlib-ghost++
     SUBDIR += str
     SUBDIR += strace
