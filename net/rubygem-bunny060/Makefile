@@ -17,6 +17,6 @@ RUBYGEM_AUTOPLIST=	yes
 
 PKGNAMESUFFIX=	060
 
-PORTSCOUT=	ignore
+PORTSCOUT=	limit:^0\.6\.0
 
 .include <bsd.port.mk>
