@@ -3,9 +3,10 @@
 PORTNAME=	texlive
 PORTVERSION=	34227
 CATEGORIES=	print perl5
-MASTER_SITES=	ftp://tug.org/tex-archive/systems/texlive/tlnet/archive/
+#MASTER_SITES=	ftp://tug.org/tex-archive/systems/texlive/tlnet/archive/
+MASTER_SITES=	LOCAL/hrs
 PKGNAMESUFFIX=	-infra
-DISTNAME=	${PORTNAME}.infra
+DISTNAME=	${PORTNAME}.infra.${PORTVERSION}
 DIST_SUBDIR=	TeX
 
 MAINTAINER=	hrs@FreeBSD.org
