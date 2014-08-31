@@ -16,7 +16,7 @@ COMMENT=	Dungeon explorin', slashin', hackin' game
 
 WRKSRC=		${WRKDIR}/${TRUEPORTNAME}-3.2.2
 
-USES=		gmake tar:tgz
+USES=		tar:tgz
 USE_XORG=	xaw xpm
 PLIST_SUB=	HACKNAME="${HACKNAME}" \
 		HACKEXT="${HACKEXT}"
@@ -57,20 +57,20 @@ post-patch:
 .endfor
 
 do-configure:
-	@cd ${WRKSRC}/sys/unix && ${SH} setup.sh
+	@(cd ${WRKSRC}/sys/unix && ${SH} setup.sh)
 
 pre-install:
 	@${CAT} ${FILESDIR}/pkg-deinstall.in | ${SED} \
 		-e 's|%%HACKDIR%%|${HACKDIR}|g' > ${PKGDEINSTALL}
 
 post-install:
+	@${MKDIR} ${STAGEDIR}${DATADIR}/save
 .if !exists(${PREFIX}/bin/${HACKLINK}) && ${HACKNAME} != ${HACKLINK}
-	@${LN} -s -f ${PREFIX}/bin/${HACKNAME} ${STAGEDIR}${PREFIX}/bin/${HACKLINK}
+	@${LN} -s -f ${HACKNAME} ${STAGEDIR}${PREFIX}/bin/${HACKLINK}
 .endif
-	@cd ${WRKSRC}/doc && ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_ARGS} manpages
-.if ${PORT_OPTIONS:MDOCS}
+	${DO_MAKE_BUILD} -C ${WRKSRC}/doc ${MAKE_ARGS} manpages
+
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/doc/Guidebook.txt ${STAGEDIR}${DOCSDIR}
-.endif
+	${INSTALL_DATA} ${WRKSRC}/doc/Guidebook.txt ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.post.mk>
