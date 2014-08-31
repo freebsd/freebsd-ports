@@ -3,7 +3,7 @@
 
 PORTNAME=	scim-honoka-plugin-romkan
 PORTVERSION=	0.9.0
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	japanese
 MASTER_SITES=	http://nop.net-p.org/files/honoka/
 DISTNAME=	honoka-plugin-romkan-${PORTVERSION}
