@@ -21,7 +21,7 @@ CONFIGURE_ARGS=	--use-system-libraries
 
 PLIST_FILES=	bin/nokogiri14
 
-PORTSCOUT=	ignore
+PORTSCOUT=	limit:^1\.4
 
 post-patch:
 	@${MV} ${WRKSRC}/bin/nokogiri ${WRKSRC}/bin/nokogiri14
