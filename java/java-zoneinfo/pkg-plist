@@ -3,9 +3,7 @@ share/java/zi/Africa/Accra
 share/java/zi/Africa/Addis_Ababa
 share/java/zi/Africa/Algiers
 share/java/zi/Africa/Asmara
-share/java/zi/Africa/Bamako
 share/java/zi/Africa/Bangui
-share/java/zi/Africa/Banjul
 share/java/zi/Africa/Bissau
 share/java/zi/Africa/Blantyre
 share/java/zi/Africa/Brazzaville
@@ -13,13 +11,10 @@ share/java/zi/Africa/Bujumbura
 share/java/zi/Africa/Cairo
 share/java/zi/Africa/Casablanca
 share/java/zi/Africa/Ceuta
-share/java/zi/Africa/Conakry
-share/java/zi/Africa/Dakar
 share/java/zi/Africa/Dar_es_Salaam
 share/java/zi/Africa/Djibouti
 share/java/zi/Africa/Douala
 share/java/zi/Africa/El_Aaiun
-share/java/zi/Africa/Freetown
 share/java/zi/Africa/Gaborone
 share/java/zi/Africa/Harare
 share/java/zi/Africa/Johannesburg
@@ -29,7 +24,6 @@ share/java/zi/Africa/Kigali
 share/java/zi/Africa/Kinshasa
 share/java/zi/Africa/Lagos
 share/java/zi/Africa/Libreville
-share/java/zi/Africa/Lome
 share/java/zi/Africa/Luanda
 share/java/zi/Africa/Lubumbashi
 share/java/zi/Africa/Lusaka
@@ -42,10 +36,7 @@ share/java/zi/Africa/Monrovia
 share/java/zi/Africa/Nairobi
 share/java/zi/Africa/Ndjamena
 share/java/zi/Africa/Niamey
-share/java/zi/Africa/Nouakchott
-share/java/zi/Africa/Ouagadougou
 share/java/zi/Africa/Porto-Novo
-share/java/zi/Africa/Sao_Tome
 share/java/zi/Africa/Tripoli
 share/java/zi/Africa/Tunis
 share/java/zi/Africa/Windhoek
@@ -205,8 +196,8 @@ share/java/zi/Asia/Bangkok
 share/java/zi/Asia/Beirut
 share/java/zi/Asia/Bishkek
 share/java/zi/Asia/Brunei
+share/java/zi/Asia/Chita
 share/java/zi/Asia/Choibalsan
-share/java/zi/Asia/Chongqing
 share/java/zi/Asia/Colombo
 share/java/zi/Asia/Damascus
 share/java/zi/Asia/Dhaka
@@ -214,7 +205,6 @@ share/java/zi/Asia/Dili
 share/java/zi/Asia/Dubai
 share/java/zi/Asia/Dushanbe
 share/java/zi/Asia/Gaza
-share/java/zi/Asia/Harbin
 share/java/zi/Asia/Hebron
 share/java/zi/Asia/Ho_Chi_Minh
 share/java/zi/Asia/Hong_Kong
@@ -226,7 +216,6 @@ share/java/zi/Asia/Jerusalem
 share/java/zi/Asia/Kabul
 share/java/zi/Asia/Kamchatka
 share/java/zi/Asia/Karachi
-share/java/zi/Asia/Kashgar
 share/java/zi/Asia/Kathmandu
 share/java/zi/Asia/Khandyga
 share/java/zi/Asia/Kolkata
@@ -256,6 +245,7 @@ share/java/zi/Asia/Samarkand
 share/java/zi/Asia/Seoul
 share/java/zi/Asia/Shanghai
 share/java/zi/Asia/Singapore
+share/java/zi/Asia/Srednekolymsk
 share/java/zi/Asia/Taipei
 share/java/zi/Asia/Tashkent
 share/java/zi/Asia/Tbilisi
@@ -278,7 +268,6 @@ share/java/zi/Atlantic/Faroe
 share/java/zi/Atlantic/Madeira
 share/java/zi/Atlantic/Reykjavik
 share/java/zi/Atlantic/South_Georgia
-share/java/zi/Atlantic/St_Helena
 share/java/zi/Atlantic/Stanley
 share/java/zi/Australia/Adelaide
 share/java/zi/Australia/Brisbane
