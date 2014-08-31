@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	jruby-jars
-PORTVERSION=	1.7.13
+PORTVERSION=	1.7.14
 CATEGORIES=	devel rubygems java
 MASTER_SITES=	RG
 
