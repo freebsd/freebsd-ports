@@ -3,12 +3,13 @@
 
 PORTNAME=	mvision2
 PORTVERSION=	2
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://roundcubethemes.net/downloads/ \
 		ftp://renatasystems.org/pub/FreeBSD/ports/distfiles/
 PKGNAMEPREFIX=	roundcube-
 
-MAINTAINER= ports@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Theme for RoundCube Web Mail
 
 RUN_DEPENDS=	roundcube>=0.2:${PORTSDIR}/mail/roundcube
@@ -28,12 +29,10 @@ x-generate-plist: build
 		-e "s,^\.$$,@dirrmtry %%WWWDIR%%," \
 		-e "s,^\.,@dirrm %%WWWDIR%%," >>${.CURDIR}/pkg-plist.tmp
 
-NO_STAGE=	yes
 do-install:
-	${MKDIR} ${WWWDIR}
+	@${MKDIR} ${STAGEDIR}${WWWDIR}
 	cd ${WRKDIR}/mvision2_en && ${PAX} -r -w . \
-		${WWWDIR}
-	${FIND} ${WWWDIR} -type f -exec ${CHMOD} 0644 {} \;
-	@${CAT} ${PKGMESSAGE}
+		${STAGEDIR}${WWWDIR}
+	${FIND} ${STAGEDIR}${WWWDIR} -type f -exec ${CHMOD} 0644 {} \;
 
 .include <bsd.port.mk>
