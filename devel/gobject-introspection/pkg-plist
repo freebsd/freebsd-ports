@@ -42,7 +42,6 @@ lib/gobject-introspection/giscanner/__init__.py
 lib/gobject-introspection/giscanner/__init__.pyc
 lib/gobject-introspection/giscanner/__init__.pyo
 lib/gobject-introspection/giscanner/_giscanner.a
-lib/gobject-introspection/giscanner/_giscanner.la
 lib/gobject-introspection/giscanner/_giscanner.so
 lib/gobject-introspection/giscanner/annotationmain.py
 lib/gobject-introspection/giscanner/annotationmain.pyc
@@ -153,9 +152,9 @@ lib/gobject-introspection/giscanner/xmlwriter.py
 lib/gobject-introspection/giscanner/xmlwriter.pyc
 lib/gobject-introspection/giscanner/xmlwriter.pyo
 lib/libgirepository-1.0.a
-lib/libgirepository-1.0.la
 lib/libgirepository-1.0.so
 lib/libgirepository-1.0.so.1
+lib/libgirepository-1.0.so.1.0.0
 libdata/pkgconfig/gobject-introspection-1.0.pc
 libdata/pkgconfig/gobject-introspection-no-export-1.0.pc
 share/aclocal/introspection.m4
