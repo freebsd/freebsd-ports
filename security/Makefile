@@ -510,6 +510,7 @@
     SUBDIR += p5-Crypt-SmbHash
     SUBDIR += p5-Crypt-Solitaire
     SUBDIR += p5-Crypt-TEA
+    SUBDIR += p5-Crypt-Tea_JS
     SUBDIR += p5-Crypt-T_e_a
     SUBDIR += p5-Crypt-TripleDES
     SUBDIR += p5-Crypt-Twofish
