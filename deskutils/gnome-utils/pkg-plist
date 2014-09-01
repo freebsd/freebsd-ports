@@ -18,9 +18,9 @@ include/gdict-1.0/gdict/gdict-utils.h
 include/gdict-1.0/gdict/gdict-version.h
 include/gdict-1.0/gdict/gdict.h
 lib/libgdict-1.0.a
-lib/libgdict-1.0.la
 lib/libgdict-1.0.so
 lib/libgdict-1.0.so.6
+lib/libgdict-1.0.so.6.0.7
 libdata/bonobo/servers/GNOME_DictionaryApplet.server
 libdata/pkgconfig/gdict-1.0.pc
 libexec/gnome-dictionary-applet
