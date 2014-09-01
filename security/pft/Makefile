@@ -3,29 +3,35 @@
 
 PORTNAME=	pft
 PORTVERSION=	1.3
+PORTREVISION=	1
 CATEGORIES=	security
-MASTER_SITES=	http://www.phenoelit-us.org/hp/
+MASTER_SITES=	http://www.phenoelit.org/hp/
 DISTNAME=	libPJL-${PORTVERSION}-src
 
-MAINTAINER= ports@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Printer Job Language library and tool
 
 NO_WRKSUBDIR=	yes
-ALL_TARGET=	libPJL.a
+
 USES=		gmake tar:tgz
+ALL_TARGET=	libPJL.a
 
 PLIST_FILES=	bin/pft lib/libPJL.a
 
-NO_STAGE=	yes
 post-patch:
-	@${REINPLACE_CMD} -e 's|g++|${CXX} ${CXXFLAGS}|' \
-		${WRKSRC}/pft/Makefile
+.for i in Makefile pft/Makefile
+	@${REINPLACE_CMD} -e \
+		'/^CPP/s|=g++|=$${CXX} $${CXXFLAGS}| ; \
+		 /^CPPFLAGS=/s| -g | |' ${WRKSRC}/${i}
+.endfor
 
 post-build:
 	@(cd ${WRKSRC}/pft; ${SETENV} ${MAKE_ENV} ${MAKE_CMD} pft)
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/pft/pft ${PREFIX}/bin
-	${INSTALL_DATA} ${WRKSRC}/libPJL.a ${PREFIX}/lib
+	(cd ${WRKSRC}/pft && ${INSTALL_PROGRAM} pft \
+		${STAGEDIR}${PREFIX}/bin)
+	(cd ${WRKSRC} && ${INSTALL_PROGRAM} libPJL.a \
+		${STAGEDIR}${PREFIX}/lib)
 
 .include <bsd.port.mk>
