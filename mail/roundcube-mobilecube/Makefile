@@ -8,7 +8,7 @@ MASTER_SITES=	SF/${PORTNAME}/${THEME_VERSION}%20Beta/Build%20%23${THEME_BUILD}/
 PKGNAMEPREFIX=	roundcube-
 DISTNAME=	MobileCubeBeta%23${THEME_BUILD}
 
-MAINTAINER= ports@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Theme for RoundCube Web Mail
 
 RUN_DEPENDS=	roundcube>=0.3:${PORTSDIR}/mail/roundcube
@@ -30,12 +30,11 @@ x-generate-plist: build
 	${FIND} . -type d | ${SORT} -r | ${SED} \
 		-e "s,^\.$$,@dirrmtry %%WWWDIR%%," \
 		-e "s,^\.,@dirrm %%WWWDIR%%," >>${.CURDIR}/pkg-plist.tmp
-NO_STAGE=	yes
 post-patch:
 	${FIND} ${WRKSRC} -type f -name '*.orig' -or -name '.DS_Store' -delete
 
 do-install:
-	${MKDIR} ${WWWDIR}
-	cd ${WRKSRC}/MobileCube && ${PAX} -r -w . ${WWWDIR}
+	@${MKDIR} ${STAGEDIR}${WWWDIR}
+	cd ${WRKSRC}/MobileCube && ${PAX} -r -w . ${STAGEDIR}${WWWDIR}
 
 .include <bsd.port.mk>
