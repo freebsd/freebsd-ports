@@ -19,11 +19,10 @@ etc/xdg/menus/gnomecc.menu
 include/gnome-window-settings-2.0/gnome-window-manager.h
 include/gnome-window-settings-2.0/gnome-wm-manager.h
 lib/libgnome-window-settings.a
-lib/libgnome-window-settings.la
 lib/libgnome-window-settings.so
 lib/libgnome-window-settings.so.1
+lib/libgnome-window-settings.so.1.0.0
 lib/window-manager-settings/libmetacity.a
-lib/window-manager-settings/libmetacity.la
 lib/window-manager-settings/libmetacity.so
 libdata/pkgconfig/gnome-default-applications.pc
 libdata/pkgconfig/gnome-keybindings.pc
@@ -259,7 +258,6 @@ share/locale/zh_CN/LC_MESSAGES/gnome-control-center-2.0.mo
 share/locale/zh_HK/LC_MESSAGES/gnome-control-center-2.0.mo
 share/locale/zh_TW/LC_MESSAGES/gnome-control-center-2.0.mo
 share/locale/zu/LC_MESSAGES/gnome-control-center-2.0.mo
-share/mime/application/x-gnome-theme-package.xml
 share/mime/packages/gnome-theme-package.xml
 share/omf/control-center/control-center-C.omf
 share/omf/control-center/control-center-ca.omf
@@ -317,12 +315,6 @@ share/polkit-1/actions/org.gnome.randr.policy
 @dirrmtry share/desktop-directories
 @dirrm lib/window-manager-settings
 @dirrm include/gnome-window-settings-2.0
-@exec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
-@unexec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
-@comment not sure about this ..
-@unexec rm -f %D/share/applications/mimeinfo.cache > /dev/null || /usr/bin/true
-@exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
-@unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
 @dirrmtry share/locale/zu/LC_MESSAGES
 @dirrmtry share/locale/zu
 @dirrmtry share/locale/zh_HK/LC_MESSAGES
