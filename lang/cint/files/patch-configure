@@ -1,0 +1,40 @@
+--- configure.orig	2009-11-16 21:46:17.000000000 +0600
++++ configure	2014-09-01 12:56:34.000000000 +0700
+@@ -33,13 +33,14 @@
+ # These are the variables that can be set by the different architectures.
+ # They are prepended by "G__CFG_" when writing out to Makefile.conf and $COREVERSION/inc/configcint.h.
+ 
+-EXPORTS=(CINTVERSION ARCH COREVERSION CC CFLAGS CMACROS COMP CPP COUT COUTEXE INCP CXX CXXFLAGS CXXMACROS \
+-    LD LDFLAGS LDOUT LIBP LIBL SOFLAGS SOOUT OBJEXT EXEEXT \
++EXPORTS=(CINTVERSION ARCH COREVERSION CMACROS COMP CPP COUT COUTEXE INCP CXXMACROS \
++    LD LDOUT LIBP LIBL SOFLAGS SOOUT OBJEXT EXEEXT \
+     SOEXT LIBEXT IMPLIBEXT DEBUG DEFAULTLIBS \
+     MANGLEPATHS MANGLEPATHSU STREAMDIR PLATFORMO EXPLLINK \
+     READLINELIB CURSESLIB LINK_READLINELIB LINK_CURSESLIB READLINELIB4SHLIB CURSESLIB4SHLIB RM MV WITHPREFIX \
+     INPUTMODE INPUTMODELOCK AR EXTRACTSYMBOLS MAKEIMPLIB)
+ unset ${EXPORTS[*]}
++EXPORTS+=(CC CFLAGS CXX CXXFLAGS LDFLAGS)
+ 
+ # Lines demonstrating the use of the available variables. 
+ # Only one of DBGFLAGS or OPTFLAGS is actually used, depending 
+@@ -92,10 +93,8 @@
+ 
+ function config_GCC_defaults {
+     config_unix_defaults
+-    CC=gcc
+-    CPP="gcc -E -C"
+-    CXX="g++ "
+-    LD="g++ "
++    CPP="${CC} -E -C"
++    LD="${CXX} "
+ 
+     GCCVER=`echo __GNUC__ __GNUC_MINOR__ __GNUC_PATCHLEVEL__|$CC -E -|tail ${TAILOPT}1`
+     if [ ${GCCVER%% *} -gt 3 ]; then 
+@@ -113,6 +112,7 @@
+ 
+ function config_freebsd {
+     config_GCC_defaults
++    STREAMDIR=gcc4strm
+     CFLAGS="${CFLAGS} -fPIC"
+     CXXFLAGS="${CXXFLAGS} -fPIC"
+     DEFAULTLIBS="`echo $DEFAULTLIBS | sed 's/-ldl//'`"
