@@ -5,7 +5,6 @@
 
     SUBDIR += amule
     SUBDIR += amule-devel
-    SUBDIR += azureus2
     SUBDIR += bitcoin
     SUBDIR += bitcoin-daemon
     SUBDIR += bitflu
@@ -48,7 +47,6 @@
     SUBDIR += libtorrent
     SUBDIR += libtorrent-rasterbar
     SUBDIR += libtorrent-rasterbar-python
-    SUBDIR += linux-jigdo
     SUBDIR += linuxdcpp
     SUBDIR += litecoin
     SUBDIR += litecoin-daemon
@@ -59,14 +57,10 @@
     SUBDIR += mldonkey
     SUBDIR += mldonkey-core
     SUBDIR += mldonkey-gui
-    SUBDIR += mldonkey-perlreactor
-    SUBDIR += mldonkey-urlslave
-    SUBDIR += museekplus
     SUBDIR += namecoin
     SUBDIR += napshare
     SUBDIR += ncdc
     SUBDIR += opendchub
-    SUBDIR += opennap
     SUBDIR += p5-Net-BitTorrent
     SUBDIR += p5-Net-BitTorrent-File
     SUBDIR += p5-Net-BitTorrent-PeerPacket
@@ -83,9 +77,7 @@
     SUBDIR += rtgui
     SUBDIR += rtorrent
     SUBDIR += shx
-    SUBDIR += solidcoin
     SUBDIR += squall
-    SUBDIR += teknap
     SUBDIR += torrentsniff
     SUBDIR += transmission
     SUBDIR += transmission-cli
@@ -108,7 +100,6 @@
     SUBDIR += verlihub-plugins-luascript
     SUBDIR += verlihub-plugins-messanger
     SUBDIR += verlihub-plugins-stats
-    SUBDIR += vhcp
     SUBDIR += vuze
     SUBDIR += xnap
     SUBDIR += zetacoin

@@ -6,13 +6,11 @@
     SUBDIR += 3proxy
     SUBDIR += 44bsd-rdist
     SUBDIR += 6tunnel
-    SUBDIR += DarwinStreamingServer
     SUBDIR += GeoIP
     SUBDIR += R-cran-twitteR
     SUBDIR += Sockets
     SUBDIR += abills
     SUBDIR += activemq
-    SUBDIR += acx100
     SUBDIR += adasockets
     SUBDIR += afpfs-ng
     SUBDIR += aget
@@ -40,8 +38,6 @@
     SUBDIR += avahi-qt4
     SUBDIR += avahi-sharp
     SUBDIR += babeld
-    SUBDIR += balance
-    SUBDIR += bcusdk-eibd
     SUBDIR += beacon
     SUBDIR += beanstalkd
     SUBDIR += belle-sip
@@ -51,8 +47,6 @@
     SUBDIR += bird-devel
     SUBDIR += bird6
     SUBDIR += bittwist
-    SUBDIR += blam
-    SUBDIR += bld
     SUBDIR += bmon
     SUBDIR += boclient
     SUBDIR += boinc-client
@@ -68,11 +62,8 @@
     SUBDIR += chrony
     SUBDIR += citrix_ica
     SUBDIR += clamz
-    SUBDIR += click
     SUBDIR += clusterit
     SUBDIR += cnd
-    SUBDIR += cnet
-    SUBDIR += cnupm
     SUBDIR += coda6_client
     SUBDIR += coda6_server
     SUBDIR += corkscrew
@@ -81,7 +72,6 @@
     SUBDIR += cryptcat
     SUBDIR += csocks
     SUBDIR += csync2
-    SUBDIR += ct
     SUBDIR += ctrace
     SUBDIR += cvsup
     SUBDIR += cvsup-without-gui
@@ -122,7 +112,6 @@
     SUBDIR += ecore-con
     SUBDIR += empty
     SUBDIR += enet
-    SUBDIR += entitymib
     SUBDIR += erlang_xmlrpc
     SUBDIR += etherboot
     SUBDIR += etrace
@@ -137,7 +126,6 @@
     SUBDIR += fping
     SUBDIR += freebsd-tftp
     SUBDIR += freebsd-uucp
-    SUBDIR += freedbd
     SUBDIR += freenet6
     SUBDIR += freeradius-client
     SUBDIR += freeradius2
@@ -146,9 +134,7 @@
     SUBDIR += freeswitch-core-devel
     SUBDIR += freeswitch-devel
     SUBDIR += freevrrpd
-    SUBDIR += frickin
     SUBDIR += fspclient
-    SUBDIR += fspd
     SUBDIR += fsplib
     SUBDIR += g2ipmsg
     SUBDIR += geoipupdate
@@ -194,10 +180,7 @@
     SUBDIR += hanstunnel
     SUBDIR += haproxy
     SUBDIR += haproxy-devel
-    SUBDIR += hawknl
-    SUBDIR += hawknl-devel
     SUBDIR += hexinject
-    SUBDIR += heybuddy
     SUBDIR += hidentd
     SUBDIR += hinfo
     SUBDIR += hlmaster
@@ -240,13 +223,11 @@
     SUBDIR += imapproxy
     SUBDIR += iodine
     SUBDIR += ip6_int
-    SUBDIR += ipa_ipfw
     SUBDIR += ipgrab
     SUBDIR += iplog
     SUBDIR += ipsorc
     SUBDIR += ipsumdump
     SUBDIR += ipsvd
-    SUBDIR += irrd
     SUBDIR += isc-dhcp41-client
     SUBDIR += isc-dhcp41-relay
     SUBDIR += isc-dhcp41-server
@@ -256,7 +237,6 @@
     SUBDIR += isc-dhcp43-client
     SUBDIR += isc-dhcp43-relay
     SUBDIR += isc-dhcp43-server
-    SUBDIR += iscsi-target
     SUBDIR += istgt
     SUBDIR += jags
     SUBDIR += jakarta-commons-net
@@ -278,7 +258,6 @@
     SUBDIR += kissd
     SUBDIR += knc
     SUBDIR += knemo-kde4
-    SUBDIR += kojoney
     SUBDIR += krdc
     SUBDIR += krfb
     SUBDIR += kwooty
@@ -340,7 +319,6 @@
     SUBDIR += libsocket++
     SUBDIR += libsocketcpp
     SUBDIR += libsrtp
-    SUBDIR += libtcp4u
     SUBDIR += libtnl
     SUBDIR += libtrace
     SUBDIR += libunp
@@ -366,7 +344,6 @@
     SUBDIR += mDNSResponder
     SUBDIR += mad_fcl
     SUBDIR += mcast-tools
-    SUBDIR += mediaproxy
     SUBDIR += mediastreamer
     SUBDIR += mediatomb
     SUBDIR += mgen
@@ -378,8 +355,6 @@
     SUBDIR += miniupnpc
     SUBDIR += miniupnpd
     SUBDIR += miredo
-    SUBDIR += mknbi
-    SUBDIR += mmucl
     SUBDIR += mono-zeroconf
     SUBDIR += mopd
     SUBDIR += morebalance
@@ -400,7 +375,6 @@
     SUBDIR += nbd-server
     SUBDIR += nc
     SUBDIR += ncp
-    SUBDIR += ncplib
     SUBDIR += ndisc6
     SUBDIR += ndpi
     SUBDIR += nemesis
@@ -422,8 +396,6 @@
     SUBDIR += netwib
     SUBDIR += neubot
     SUBDIR += nfsshell
-    SUBDIR += ng_daphne
-    SUBDIR += ng_mikrotik_eoip
     SUBDIR += ngrep
     SUBDIR += nifmon
     SUBDIR += nload
@@ -455,7 +427,6 @@
     SUBDIR += onioncat
     SUBDIR += opal
     SUBDIR += openafs
-    SUBDIR += openam
     SUBDIR += openbgpd
     SUBDIR += opendpi
     SUBDIR += openggsn
@@ -463,7 +434,6 @@
     SUBDIR += openldap24-client
     SUBDIR += openldap24-sasl-client
     SUBDIR += openldap24-server
-    SUBDIR += openmcu
     SUBDIR += openmpi
     SUBDIR += openmpi-devel
     SUBDIR += openmq
@@ -473,7 +443,6 @@
     SUBDIR += openospfd
     SUBDIR += openpgm
     SUBDIR += openradius
-    SUBDIR += openser
     SUBDIR += openslp
     SUBDIR += opentracker
     SUBDIR += openvswitch
@@ -847,7 +816,6 @@
     SUBDIR += pecl-yaz
     SUBDIR += pecl-yp
     SUBDIR += pen
-    SUBDIR += pfflowd
     SUBDIR += pfinger
     SUBDIR += phamm
     SUBDIR += php5-ldap
@@ -963,7 +931,6 @@
     SUBDIR += qt5-network
     SUBDIR += qtweetlib
     SUBDIR += quagga
-    SUBDIR += quagga-re
     SUBDIR += queso
     SUBDIR += quiterss
     SUBDIR += quoted
@@ -997,13 +964,10 @@
     SUBDIR += remotedesk
     SUBDIR += repeater
     SUBDIR += reposado
-    SUBDIR += rexx-sock
     SUBDIR += rfbproxy
     SUBDIR += rinetd
     SUBDIR += ripe-whois
-    SUBDIR += ris
     SUBDIR += rp-pppoe
-    SUBDIR += rshell
     SUBDIR += rsplib
     SUBDIR += rsync
     SUBDIR += rsync-bpc
@@ -1081,7 +1045,6 @@
     SUBDIR += samba36
     SUBDIR += samba4
     SUBDIR += samba41
-    SUBDIR += samba4wins
     SUBDIR += samplicator
     SUBDIR += sbd
     SUBDIR += scamper
@@ -1096,7 +1059,6 @@
     SUBDIR += sendemail
     SUBDIR += sendsms
     SUBDIR += sendsnpp
-    SUBDIR += ser
     SUBDIR += serveez
     SUBDIR += service-discovery-applet
     SUBDIR += serviio
@@ -1106,9 +1068,6 @@
     SUBDIR += shelldap
     SUBDIR += shmux
     SUBDIR += sie-nmsg
-    SUBDIR += silc-client
-    SUBDIR += silc-irssi-plugin
-    SUBDIR += silc-server
     SUBDIR += simpleproxy
     SUBDIR += sip_scenario
     SUBDIR += sippy_b2bua
@@ -1116,8 +1075,6 @@
     SUBDIR += sipsak
     SUBDIR += sixxs-aiccu
     SUBDIR += skstream
-    SUBDIR += skyfish
-    SUBDIR += skystar2
     SUBDIR += sl2tps
     SUBDIR += slirp
     SUBDIR += slurm
@@ -1159,7 +1116,6 @@
     SUBDIR += syncthing-cli
     SUBDIR += syncthing-discosrv
     SUBDIR += tableutil
-    SUBDIR += tac_plus-libradius
     SUBDIR += tac_plus4
     SUBDIR += tapidbus
     SUBDIR += tayga
@@ -1183,7 +1139,6 @@
     SUBDIR += tcpstat
     SUBDIR += tcptrace
     SUBDIR += tcptraceroute
-    SUBDIR += tcptraceroute-devel
     SUBDIR += tcpview
     SUBDIR += tcpwatch
     SUBDIR += tcpxd
@@ -1236,11 +1191,8 @@
     SUBDIR += urlendec
     SUBDIR += usbredir
     SUBDIR += userfw
-    SUBDIR += ushare
     SUBDIR += utftpd
-    SUBDIR += v6eval
     SUBDIR += vblade
-    SUBDIR += vchat
     SUBDIR += vde
     SUBDIR += vde2
     SUBDIR += vinagre
@@ -1250,16 +1202,12 @@
     SUBDIR += vncreflector
     SUBDIR += vnstat
     SUBDIR += vortex
-    SUBDIR += vserver
     SUBDIR += vtun
     SUBDIR += wackamole
     SUBDIR += wackford-squeers
     SUBDIR += wakeonlan
     SUBDIR += whois
     SUBDIR += widentd
-    SUBDIR += wire
-    SUBDIR += wired
-    SUBDIR += wired-tracker
     SUBDIR += wireshark
     SUBDIR += wireshark-lite
     SUBDIR += wizd
@@ -1281,17 +1229,14 @@
     SUBDIR += x11vnc
     SUBDIR += x2goclient
     SUBDIR += x2goclient-cli
-    SUBDIR += xbone
     SUBDIR += xboxproxy
     SUBDIR += xferstats
-    SUBDIR += xipdump
     SUBDIR += xipmsg
     SUBDIR += xisp
     SUBDIR += xmlrpc-c
     SUBDIR += xmlrpc-c-devel
     SUBDIR += xmlrpc-epi
     SUBDIR += xorp
-    SUBDIR += xorp-devel
     SUBDIR += xprobe
     SUBDIR += xpvm
     SUBDIR += xrdesktop

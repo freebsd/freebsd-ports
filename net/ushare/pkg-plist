@@ -1,5 +1,0 @@
-bin/ushare
-etc/rc.d/ushare
-@unexec cmp -s %D/etc/ushare.conf.sample %D/etc/ushare.conf && rm %D/etc/ushare.conf || true
-etc/ushare.conf.sample
-@exec cp -np %D/%F %B/ushare.conf

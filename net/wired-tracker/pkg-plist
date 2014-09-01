@@ -1,8 +1,0 @@
-@unexec if cmp -s %D/wired/etc/trackerd.conf.sample %D/wired/etc/trackerd.conf; then rm -f %D/wired/etc/trackerd.conf; fi
-wired/etc/trackerd.conf.sample
-@exec if [ ! -f %D/wired/etc/trackerd.conf ] ; then cp -p %D/%F %B/trackerd.conf; fi
-@unexec if cmp -s %D/wired/categories.sample %D/wired/categories; then rm -f %D/wired/categories; fi
-wired/categories.sample
-@exec if [ ! -f %D/wired/categories ] ; then cp -p %D/%F %B/categories; fi
-sbin/trackerd
-bin/trackerdctl

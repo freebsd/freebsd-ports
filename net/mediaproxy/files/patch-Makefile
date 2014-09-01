@@ -1,8 +1,0 @@
---- Makefile     Wed Dec 31 19:00:00 1969
-+++ Makefile Tue Aug  8 15:01:10 2006
-@@ -0,0 +1,4 @@
-+all:
-+
-+install:
-+
-

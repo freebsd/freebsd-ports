@@ -1,4 +1,0 @@
-etc/tac_plus/radius.cfg.sample
-etc/tac_plus/tac_plus.cfg.sample
-sbin/tac_plus
-@dirrmtry etc/tac_plus

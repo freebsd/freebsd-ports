@@ -1,6 +1,0 @@
-bin/openam
-%%DOCSDIR%%/%%PORTNAME%%/ReadMe.txt
-%%DOCSDIR%%/%%PORTNAME%%/sample_message.wav
-%%DOCSDIR%%/%%PORTNAME%%/sample_message_g7231.wav
-@dirrm %%DOCSDIR%%/%%PORTNAME%%
-@dirrmtry %%DOCSDIR%%
