@@ -59,7 +59,6 @@
     SUBDIR += eterm
     SUBDIR += fcitx-anthy
     SUBDIR += fcitx-mozc
-    SUBDIR += flex-sdk
     SUBDIR += flower-fpw
     SUBDIR += foldoc-fpw
     SUBDIR += font-ipa
@@ -89,7 +88,6 @@
     SUBDIR += gedy
     SUBDIR += gimp-help
     SUBDIR += gjiten
-    SUBDIR += gqmpeg
     SUBDIR += groff
     SUBDIR += gskk
     SUBDIR += gsuica
@@ -101,7 +99,6 @@
     SUBDIR += icanna
     SUBDIR += im-ja
     SUBDIR += ipadic
-    SUBDIR += ja6
     SUBDIR += jacode.pl
     SUBDIR += japana
     SUBDIR += japaneseAFM
@@ -137,7 +134,6 @@
     SUBDIR += kon2-16dot
     SUBDIR += kpcal
     SUBDIR += kterm
-    SUBDIR += lambdamoo
     SUBDIR += leafrogue
     SUBDIR += less
     SUBDIR += libreoffice
@@ -150,14 +146,11 @@
     SUBDIR += lynx
     SUBDIR += lynx-current
     SUBDIR += mailman
-    SUBDIR += makejvf
     SUBDIR += man
     SUBDIR += man-doc
     SUBDIR += marumoji-fonts
     SUBDIR += mecab
     SUBDIR += mecab-ipadic
-    SUBDIR += mell
-    SUBDIR += mendexk-euc
     SUBDIR += mg
     SUBDIR += mh
     SUBDIR += migemo
@@ -184,7 +177,6 @@
     SUBDIR += netype
     SUBDIR += newosaka
     SUBDIR += ng
-    SUBDIR += ng-canna
     SUBDIR += ng-devel
     SUBDIR += ngraph-fonts
     SUBDIR += nhocr
@@ -220,11 +212,8 @@
     SUBDIR += php_doc
     SUBDIR += plain2
     SUBDIR += plan
-    SUBDIR += platex-japanese
-    SUBDIR += postgresql82-man
     SUBDIR += prime
     SUBDIR += prime-dict
-    SUBDIR += prime-el
     SUBDIR += prn
     SUBDIR += py-mecab
     SUBDIR += py-tegaki
@@ -233,7 +222,6 @@
     SUBDIR += qkc
     SUBDIR += qt4-codecs-jp
     SUBDIR += quit
-    SUBDIR += rbnamazu
     SUBDIR += roget-fpw
     SUBDIR += rogue_s
     SUBDIR += rskkserv

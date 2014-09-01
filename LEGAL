@@ -136,7 +136,6 @@ ICON-Stylish.*		x11-themes/gnome-icons-stylish Themes may contain artwork not do
 ICON-Ximian-South-*	x11-themes/gnome-icons-ximian-south Themes may contain artwork not done by the author.  Keep FreeBSD safe if theme author violated copyrights.
 jaf-*.zip		java/jaf		See the license
 jai-*-lib-linux-i586.*	java/jai		Redistribution is not permitted
-jai_imageio-*-lib-linux-* java/jai-imageio	Redistribution is not permitted
 java3d-sdk-*-linux-i386* java/java3d		License does not allow distribution
 javax_comm-*-solsparc.*	comms/java-commapi	No commercial use
 jdk-6*-apidocs.zip	java/jdk16-doc		This documentation is under license and export control
@@ -207,7 +206,6 @@ perforce/*/p4ftpd	devel/p4ftpd		Restricted distribution
 perforce/*/p4p		devel/p4p		Restricted distribution
 perforce/*/p4web	devel/p4web		Restricted distribution
 platon*			biology/platon		$5000 USD for commercial users, free for academic
-poseidonCE-*		java/poseidon		Redistribution is not permitted
 ppsmall-*		archivers/ppunpack	No commercial redistribution
 qtools-*		mail/qtools		No license -- see http://cr.yp.to/softwarelaw.html
 quake4-linux-*		games/linux-quake4	Redistribution is limited; see the license

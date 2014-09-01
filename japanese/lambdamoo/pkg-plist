@@ -1,6 +1,0 @@
-sbin/moo
-%%PORTDOCS%%%%DOCSDIR%%/Minimal.db
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/README.FreeBSD
-%%PORTDOCS%%%%DOCSDIR%%/README.Minimal
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
