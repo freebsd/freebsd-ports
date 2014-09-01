@@ -1,7 +1,7 @@
---- ./src/openpa/Makefile.in.orig	2010-02-22 23:22:28.000000000 +0100
-+++ ./src/openpa/Makefile.in	2010-03-10 21:36:17.000000000 +0100
-@@ -229,7 +229,7 @@
- EXTRA_DIST = COPYRIGHT CHANGELOG openpa.pc.in
+--- ./src/openpa/Makefile.in.orig	2012-10-08 21:02:13.000000000 +0200
++++ ./src/openpa/Makefile.in	2014-08-31 18:17:46.000000000 +0200
+@@ -316,7 +316,7 @@
+ EXTRA_DIST = COPYRIGHT CHANGELOG openpa.pc.in VERSION
  
  # pkgconfig files
 -pkgconfigdir = $(libdir)/pkgconfig
@@ -9,30 +9,3 @@
  pkgconfig_DATA = openpa.pc
  all: all-recursive
  
-@@ -272,16 +272,16 @@
- 	cd $(top_builddir) && $(SHELL) ./config.status $@
- install-dist_docDATA: $(dist_doc_DATA)
- 	@$(NORMAL_INSTALL)
--	test -z "$(docdir)" || $(MKDIR_P) "$(DESTDIR)$(docdir)"
--	@list='$(dist_doc_DATA)'; test -n "$(docdir)" || list=; \
--	for p in $$list; do \
--	  if test -f "$$p"; then d=; else d="$(srcdir)/"; fi; \
--	  echo "$$d$$p"; \
--	done | $(am__base_list) | \
--	while read files; do \
--	  echo " $(INSTALL_DATA) $$files '$(DESTDIR)$(docdir)'"; \
--	  $(INSTALL_DATA) $$files "$(DESTDIR)$(docdir)" || exit $$?; \
--	done
-+%%PORTDOCS%%	test -z "$(docdir)" || $(MKDIR_P) "$(DESTDIR)$(docdir)"
-+%%PORTDOCS%%	@list='$(dist_doc_DATA)'; test -n "$(docdir)" || list=; \
-+%%PORTDOCS%%	for p in $$list; do \
-+%%PORTDOCS%%	  if test -f "$$p"; then d=; else d="$(srcdir)/"; fi; \
-+%%PORTDOCS%%	  echo "$$d$$p"; \
-+%%PORTDOCS%%	done | $(am__base_list) | \
-+%%PORTDOCS%%	while read files; do \
-+%%PORTDOCS%%	  echo " $(INSTALL_DATA) $$files '$(DESTDIR)$(docdir)'"; \
-+%%PORTDOCS%%	  $(INSTALL_DATA) $$files "$(DESTDIR)$(docdir)" || exit $$?; \
-+%%PORTDOCS%%	done
- 
- uninstall-dist_docDATA:
- 	@$(NORMAL_UNINSTALL)
