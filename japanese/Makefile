@@ -177,6 +177,7 @@
     SUBDIR += netype
     SUBDIR += newosaka
     SUBDIR += ng
+    SUBDIR += ng-canna
     SUBDIR += ng-devel
     SUBDIR += ngraph-fonts
     SUBDIR += nhocr
