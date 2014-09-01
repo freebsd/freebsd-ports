@@ -1,9 +1,0 @@
-Uppaal is an integrated tool environment for modeling, validation
-and verification of real-time systems modeled as networks of timed
-automata, extended with data types (bounded integers, arrays, etc.).
-
-The tool is developed in collaboration between the Department of
-Information Technology at Uppsala University, Sweden and the
-Department of Computer Science at Aalborg University in Denmark.
-
-WWW: http://www.uppaal.com/
