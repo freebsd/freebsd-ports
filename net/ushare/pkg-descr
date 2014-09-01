@@ -1,6 +1,0 @@
-GeeXboX uShare is a UPnP (TM) A/V Media Server. It implements the server
-component that provides UPnP media devices with information on available
-multimedia files. uShare uses the built-in http server of libupnp to stream
-the files to clients.
-
-WWW: http://ushare.geexbox.org/

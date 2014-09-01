@@ -1,4 +1,0 @@
-TekNap is a console Napster client using curses/ncurses/termcap and
-pthreads if available. It has powerful scripting features based on
-BitchX/Epic scripting, support for both Napster and opennap servers,
-and a full-screen browse/search mode.

@@ -1,3 +1,0 @@
-To run iscsi-target server from startup, add iscsi_target_enable="YES"
-to /etc/rc.conf. Extra options can be found in startup script.
-
