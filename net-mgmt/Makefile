@@ -9,18 +9,15 @@
     SUBDIR += aircrack-ng
     SUBDIR += angst
     SUBDIR += ap-utils
-    SUBDIR += argus-monitor
     SUBDIR += argus3
     SUBDIR += argus3-clients
     SUBDIR += arpalert
     SUBDIR += arpscan
     SUBDIR += arpwatch
     SUBDIR += arts++
-    SUBDIR += aspathtree
     SUBDIR += bandwidthd
     SUBDIR += bgpq
     SUBDIR += bgpq3
-    SUBDIR += bigsister
     SUBDIR += bpft
     SUBDIR += braa
     SUBDIR += bsnmp-jails
@@ -40,7 +37,6 @@
     SUBDIR += chillispot
     SUBDIR += choparp
     SUBDIR += cidr
-    SUBDIR += cisco_conf
     SUBDIR += ciscoconf
     SUBDIR += clog
     SUBDIR += cnagios
@@ -68,7 +64,6 @@
     SUBDIR += flowd
     SUBDIR += flowviewer
     SUBDIR += fprobe
-    SUBDIR += fruity
     SUBDIR += glpi-plugins-fusioninventory-server
     SUBDIR += glpi-plugins-tracker-agent
     SUBDIR += glpi-plugins-tracker-server
@@ -84,10 +79,8 @@
     SUBDIR += icli
     SUBDIR += icmpmonitor
     SUBDIR += icmpquery
-    SUBDIR += ifgraph
     SUBDIR += iftop
     SUBDIR += iog
-    SUBDIR += ipacco
     SUBDIR += ipacctd
     SUBDIR += ipaudit
     SUBDIR += ipcad
@@ -104,7 +97,6 @@
     SUBDIR += lanmap
     SUBDIR += lg
     SUBDIR += libsmi
-    SUBDIR += macroscope
     SUBDIR += mbrowse
     SUBDIR += mk-livestatus
     SUBDIR += monitoring-plugins
@@ -121,7 +113,6 @@
     SUBDIR += nagios-check_email_delivery
     SUBDIR += nagios-check_hdd_health
     SUBDIR += nagios-check_hp_bladechassis
-    SUBDIR += nagios-check_kumofs
     SUBDIR += nagios-check_memcached_paranoid
     SUBDIR += nagios-check_mysql_slave
     SUBDIR += nagios-check_netsnmp
@@ -135,8 +126,6 @@
     SUBDIR += nagios-geom
     SUBDIR += nagios-openldap-plugins
     SUBDIR += nagios-plugins
-    SUBDIR += nagios-portaudit
-    SUBDIR += nagios-silfreed-plugins
     SUBDIR += nagios-snmp-plugins
     SUBDIR += nagios-snmp-plugins-extras
     SUBDIR += nagios-spamd-plugin
@@ -144,7 +133,6 @@
     SUBDIR += nagiosagent
     SUBDIR += nagiosgraph
     SUBDIR += nagiosql
-    SUBDIR += nagiostat
     SUBDIR += nagircbot
     SUBDIR += nagstamon
     SUBDIR += nagtail
@@ -152,12 +140,10 @@
     SUBDIR += nat
     SUBDIR += nbtscan
     SUBDIR += ndoutils
-    SUBDIR += ndpmon
     SUBDIR += nedi
     SUBDIR += nefu
     SUBDIR += net-snmp
     SUBDIR += netams
-    SUBDIR += netams-front
     SUBDIR += netdisco
     SUBDIR += netdisco-mibs
     SUBDIR += netdot
@@ -193,7 +179,6 @@
     SUBDIR += ocsinventory-ng
     SUBDIR += omping
     SUBDIR += openlldp
-    SUBDIR += openvmps
     SUBDIR += p0f
     SUBDIR += p0f2
     SUBDIR += p5-AnyEvent-SNMP
@@ -279,9 +264,7 @@
     SUBDIR += py-yapsnmp
     SUBDIR += qkismet
     SUBDIR += rackmonkey
-    SUBDIR += ramond
     SUBDIR += rancid
-    SUBDIR += rancid-devel
     SUBDIR += rate
     SUBDIR += rcpd
     SUBDIR += remarp
@@ -293,7 +276,6 @@
     SUBDIR += rubygem-blimpy
     SUBDIR += rubygem-snmp
     SUBDIR += rubygem-visage-app
-    SUBDIR += satellite
     SUBDIR += sblim-wbemcli
     SUBDIR += scdp
     SUBDIR += scli
@@ -328,12 +310,10 @@
     SUBDIR += weathermap
     SUBDIR += weplab
     SUBDIR += whatmask
-    SUBDIR += wide-dhcp
     SUBDIR += wifimgr
     SUBDIR += wmi-client
     SUBDIR += xymon-client
     SUBDIR += xymon-server
-    SUBDIR += yabm
     SUBDIR += yaf
     SUBDIR += zabbix2-agent
     SUBDIR += zabbix2-frontend
@@ -344,13 +324,6 @@
     SUBDIR += zabbix22-proxy
     SUBDIR += zabbix22-server
     SUBDIR += zenoss
-    SUBDIR += zenpack-checkping
-    SUBDIR += zenpack-dellmon
-    SUBDIR += zenpack-deviceadvdetail
-    SUBDIR += zenpack-devicesearch
     SUBDIR += zenpack-graphportlet
-    SUBDIR += zenpack-interfacegraphs
-    SUBDIR += zenpack-libvirt
-    SUBDIR += zenpack-macreport
 
 .include <bsd.port.subdir.mk>

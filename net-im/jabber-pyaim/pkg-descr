@@ -1,6 +1,0 @@
-PyAIMt is an AIM transport for Jabber written entirely in Python, and using
-the Twisted framework. It uses the OSCAR protocol to communicate with AOL's
-servers and should work with any Jabber implementation available.
-
-Author:	Daniel Henninger <jadestorm@nc.rr.com>
-WWW:	http://code.google.com/p/pyaimt/

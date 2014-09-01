@@ -1,9 +1,0 @@
-ifGraph is a set of Perl scripts created to help network administrators
-to visualize network flow on a daily, weekly, monthly, and yearly basis.
-The graphics are created with RRDTool, and it shows bytes (in/out) and
-errors for each interface. It also shows the current/average/max use and
-the respective link/interface usage in percentages. The program also
-outputs HTML files to make the visualization of the PNG/GIF/GD images
-more friendly and easy.
-
-WWW: http://ifgraph.sourceforge.net/
