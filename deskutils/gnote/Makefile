@@ -3,7 +3,7 @@
 
 PORTNAME=	gnote
 PORTVERSION=	0.7.6
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	GNOME
 
@@ -19,18 +19,18 @@ LIB_DEPENDS=	libgtkmm-2.4.so:${PORTSDIR}/x11-toolkits/gtkmm24 \
 		libboost_filesystem.so:${PORTSDIR}/devel/boost-libs \
 		libuuid.so:${PORTSDIR}/misc/e2fsprogs-libuuid
 
-USE_GNOME=	gnomehack gnomeprefix gconf2 gtk20 intltool libxml2 libxslt \
-		ltverhack gnomepanel
-USES=		gettext gmake pkgconfig tar:xz
+USE_GNOME=	gnomeprefix gconf2 gtk20 intltool libxml2 libxslt \
+		gnomepanel
+USES=		gettext gmake libtool pathfix pkgconfig tar:xz
 INSTALLS_OMF=	yes
 GCONF_SCHEMAS=	gnote.schemas
-USE_AUTOTOOLS=	libtool
 INSTALLS_ICONS=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	PANELAPPLET_SERVER_DIR="${PREFIX}/libdata/bonobo/servers"
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--disable-dbus
+INSTALL_TARGET=	install-strip
 DOCS=		AUTHORS ChangeLog NEWS README TODO
 
 OPTIONS_DEFINE=	DOCS APPLET
