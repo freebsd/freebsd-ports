@@ -1,31 +1,38 @@
---- tool/INSTALLBIN.orig	Tue Aug 21 15:08:47 2007
-+++ tool/INSTALLBIN	Tue Aug 21 15:14:16 2007
-@@ -96,17 +96,17 @@
+--- tool/INSTALLBIN.orig	2008-03-19 16:20:10.000000000 +0600
++++ tool/INSTALLBIN	2014-09-01 13:55:37.000000000 +0700
+@@ -89,13 +89,14 @@
+ for i in cint makecint;
+ do
+   echo -n "$i ";
+-  cp $i $BINDIR/$i
++  cp bin/$i $BINDIR/$i
+ done
+ echo -e "\n  ... successfully installed in $BINDIR\n"
+ 
  #####################################################################
  # Copy lib files
  #####################################################################
--mkdir -p $LIBDIR/src
++pushd cint
  for i in include/*; do
    if test -d $i; then mkdir -p $LIBDIR/$i; fi
  done
- mkdir -p $LIBDIR/lib/prec_stl
- mkdir -p $LIBDIR/lib/longlong
- mkdir -p $LIBDIR/stl
-+mkdir -p $LIBDIR/inc
- mkdir -p $LIBDIR/main
- 
+@@ -108,8 +109,9 @@
  # Copy lib files
--FILELIST="MAKEINFO include/* include/*/* stl/* lib/prec_stl/* lib/longlong/longlong.h G__ci.h main/*"
-+FILELIST="include/* include/*/* stl/* lib/prec_stl/* lib/longlong/longlong.h inc/* main/*"
+ FILELIST="include/* include/*/* stl/* lib/prec_stl/* lib/longlong/longlong.h inc/* main/*"
  # Add either shared or static library to $FILELIST
- if test -f libcint.so; then
-   FILELIST="$FILELIST libcint.so"
-@@ -115,7 +115,7 @@
+-if test -f libcint.so; then
+-  FILELIST="$FILELIST libcint.so"
++if test -f ../lib/libCint.so; then
++  cp ../lib/libCint.so .
++  FILELIST="$FILELIST libCint.so"
+ else
+   FILELIST="$FILELIST src/G__ci.a";
  fi
- for i in $FILELIST; do
-   case $i in
--  include/make*|include/Make*|*/setup*)
-+  include/make*|include/Make*|*/setup*|*/CVS|*/CVS/*)
-     ;;
-   *)
-     if ! test -d $i; then echo -n "$i "; cp $i $LIBDIR/$i; fi
+@@ -123,6 +125,7 @@
+   esac
+ done
+ echo -e "\n  ... successfully installed in $LIBDIR\n"
++popd
+ 
+ #####################################################################
+ # Optionally copy man files

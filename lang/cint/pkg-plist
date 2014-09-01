@@ -5,7 +5,9 @@ lib/cint/inc/BaseCls.h
 lib/cint/inc/CallFunc.h
 lib/cint/inc/Class.h
 lib/cint/inc/DataMbr.h
+lib/cint/inc/FastAllocString.h
 lib/cint/inc/G__ci.h
+lib/cint/inc/G__ci_fproto.h
 lib/cint/inc/Method.h
 lib/cint/inc/MethodAr.h
 lib/cint/inc/Property.h
@@ -13,6 +15,7 @@ lib/cint/inc/Shadow.h
 lib/cint/inc/Token.h
 lib/cint/inc/Type.h
 lib/cint/inc/Typedf.h
+lib/cint/inc/cintdictversion.h
 lib/cint/inc/configcint.h
 lib/cint/include/Common.h
 lib/cint/include/GL/gl.h
@@ -71,7 +74,6 @@ lib/cint/include/cwchar
 lib/cint/include/cwctype
 lib/cint/include/darray.cxx
 lib/cint/include/darray.h
-lib/cint/include/done
 lib/cint/include/errno.h
 lib/cint/include/ertti.h
 lib/cint/include/exception
@@ -87,7 +89,6 @@ lib/cint/include/iomanip
 lib/cint/include/iomanip.h
 lib/cint/include/iosenum.cxx
 lib/cint/include/iosenum.h
-lib/cint/include/iosenum.win32
 lib/cint/include/iosfwd
 lib/cint/include/iosfwd.h
 lib/cint/include/iostream
@@ -97,6 +98,7 @@ lib/cint/include/limits
 lib/cint/include/limits.h
 lib/cint/include/locale
 lib/cint/include/locale.h
+lib/cint/include/long.dll
 lib/cint/include/lsm.c
 lib/cint/include/lsm.h
 lib/cint/include/math.h
@@ -106,11 +108,11 @@ lib/cint/include/matrixstream.h
 lib/cint/include/matrixstream.hi
 lib/cint/include/mkincld
 lib/cint/include/mkincld.c
-lib/cint/include/mkincld.o
 lib/cint/include/new
 lib/cint/include/new.h
 lib/cint/include/ostream
 lib/cint/include/platform.h
+lib/cint/include/posix.dll
 lib/cint/include/pthread.h
 lib/cint/include/readfile.h
 lib/cint/include/regex.h
@@ -123,8 +125,10 @@ lib/cint/include/sstream
 lib/cint/include/statistics.c
 lib/cint/include/statistics.h
 lib/cint/include/stdarg.h
+lib/cint/include/stdcxxfunc.dll
 lib/cint/include/stddef.h
 lib/cint/include/stdexcept
+lib/cint/include/stdfunc.dll
 lib/cint/include/stdio.h
 lib/cint/include/stdiostream.h
 lib/cint/include/stdlib.h
@@ -136,11 +140,14 @@ lib/cint/include/strstream
 lib/cint/include/strstream.h
 lib/cint/include/sys/cdefs.h
 lib/cint/include/sys/file.h
+lib/cint/include/sys/ipc.dll
 lib/cint/include/sys/ipc.h
 lib/cint/include/sys/msg.h
 lib/cint/include/sys/sem.h
 lib/cint/include/sys/shm.h
 lib/cint/include/sys/stat.h
+lib/cint/include/sys/types.h
+lib/cint/include/systypes.h
 lib/cint/include/termios.h
 lib/cint/include/time.h
 lib/cint/include/timespec.h
@@ -176,12 +183,14 @@ lib/cint/lib/prec_stl/string
 lib/cint/lib/prec_stl/utility
 lib/cint/lib/prec_stl/valarray
 lib/cint/lib/prec_stl/vector
-lib/cint/libcint.so
-lib/cint/main/G__cppmain.o
+lib/cint/libCint.so
 lib/cint/main/G__main.c
 lib/cint/main/G__setup.c
+lib/cint/main/G__setup.d
 lib/cint/main/G__setup.o
 lib/cint/main/cppmain.cxx
+lib/cint/main/cppmain.d
+lib/cint/main/cppmain.o
 lib/cint/stl/G__postprocess.h
 lib/cint/stl/README.txt
 lib/cint/stl/_algorithm
@@ -221,9 +230,13 @@ lib/cint/stl/bitset
 lib/cint/stl/bool
 lib/cint/stl/bstring.h
 lib/cint/stl/bvector.h
+lib/cint/stl/climits.dll
+lib/cint/stl/complex.dll
 lib/cint/stl/defalloc.h
 lib/cint/stl/deque
+lib/cint/stl/deque.dll
 lib/cint/stl/deque.h
+lib/cint/stl/exception.dll
 lib/cint/stl/faralloc.h
 lib/cint/stl/fdeque.h
 lib/cint/stl/flist.h
@@ -248,6 +261,7 @@ lib/cint/stl/lbvector.h
 lib/cint/stl/ldeque.h
 lib/cint/stl/limits
 lib/cint/stl/list
+lib/cint/stl/list.dll
 lib/cint/stl/list.h
 lib/cint/stl/llist.h
 lib/cint/stl/lmap.h
@@ -256,11 +270,16 @@ lib/cint/stl/lmultset.h
 lib/cint/stl/lngalloc.h
 lib/cint/stl/lset.h
 lib/cint/stl/map
+lib/cint/stl/map.dll
 lib/cint/stl/map.h
+lib/cint/stl/map2.dll
 lib/cint/stl/memory
 lib/cint/stl/multimap
+lib/cint/stl/multimap.dll
 lib/cint/stl/multimap.h
+lib/cint/stl/multimap2.dll
 lib/cint/stl/multiset
+lib/cint/stl/multiset.dll
 lib/cint/stl/multiset.h
 lib/cint/stl/neralloc.h
 lib/cint/stl/nmap.h
@@ -272,11 +291,17 @@ lib/cint/stl/pair
 lib/cint/stl/pair.h
 lib/cint/stl/projectn.h
 lib/cint/stl/queue
+lib/cint/stl/queue.dll
+lib/cint/stl/random.cpp
 lib/cint/stl/set
+lib/cint/stl/set.dll
 lib/cint/stl/set.h
 lib/cint/stl/stack
+lib/cint/stl/stack.dll
 lib/cint/stl/stack.h
+lib/cint/stl/stdexcept.dll
 lib/cint/stl/string
+lib/cint/stl/string.dll
 lib/cint/stl/tempbuf.cpp
 lib/cint/stl/tempbuf.h
 lib/cint/stl/teststl
@@ -285,8 +310,13 @@ lib/cint/stl/tree.h
 lib/cint/stl/utility
 lib/cint/stl/utility.h
 lib/cint/stl/valarray
+lib/cint/stl/valarray.dll
 lib/cint/stl/vector
+lib/cint/stl/vector.dll
 lib/cint/stl/vector.h
+lib/cint/stl/vectorbool.dll
+man/man1/cint.1.gz
+man/man1/makecint.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/bytecode.txt
 %%PORTDOCS%%%%DOCSDIR%%/cint.txt
 %%PORTDOCS%%%%DOCSDIR%%/cintapi.txt
@@ -297,16 +327,15 @@ lib/cint/stl/vector.h
 %%PORTDOCS%%%%DOCSDIR%%/makecint.txt
 %%PORTDOCS%%%%DOCSDIR%%/message.txt
 %%PORTDOCS%%%%DOCSDIR%%/ref.txt
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm lib/cint/stl
-@dirrm lib/cint/main
-@dirrm lib/cint/lib/prec_stl
-@dirrm lib/cint/lib/longlong
-@dirrm lib/cint/lib
-@dirrm lib/cint/include/sys
-@dirrm lib/cint/include/X11
-@dirrm lib/cint/include/GL
-@dirrm lib/cint/include/CVS
-@dirrm lib/cint/include
-@dirrm lib/cint/inc
-@dirrm lib/cint
+@dirrmtry lib/cint/inc
+@dirrmtry lib/cint/include/GL
+@dirrmtry lib/cint/include/X11
+@dirrmtry lib/cint/include/sys
+@dirrmtry lib/cint/include
+@dirrmtry lib/cint/lib/longlong
+@dirrmtry lib/cint/lib/prec_stl
+@dirrmtry lib/cint/lib
+@dirrmtry lib/cint/main
+@dirrmtry lib/cint/stl
+@dirrmtry lib/cint
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%
