@@ -11,6 +11,8 @@ DISTNAME=	python-otr-${PORTVERSION}
 MAINTAINER=	cs@FreeBSD.org
 COMMENT=	Python bindings for libotr
 
+DEPRECATED=	Abandoned upstream
+EXPIRATION_DATE=2014-09-30
 BUILD_DEPENDS=	swig1.3:${PORTSDIR}/devel/swig13
 # This should be updated to the newer version of libotr
 LIB_DEPENDS=	libotr.so.2:${PORTSDIR}/security/libotr3
