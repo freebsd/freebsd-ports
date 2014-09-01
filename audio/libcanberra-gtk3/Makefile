@@ -2,7 +2,6 @@
 # $FreeBSD$
 #   $MCom: ports/audio/libcanberra-gtk3/Makefile,v 1.8 2011/03/16 10:24:48 kwm Exp $
 
-PORTREVISION=	1
 CATEGORIES=	audio devel
 PKGNAMESUFFIX=	-gtk3
 
@@ -19,17 +18,11 @@ ALL_TARGET=	libcanberra-gtk3.la libcanberra-gtk3-module.la
 pre-build:
 	@cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} libcanberra-gtk3.pc
 
-post-build:
-# fix the .la file so it doesn't point to the build dir anymore.
-	@${REINPLACE_CMD} -e '/^relink_command/ d' \
-		-e 's|${WRKSRC}/src/libcanberra.la|${LOCALBASE}/lib/libcanberra.la|g' \
-		${WRKSRC}/src/.libs/libcanberra-gtk3.la
-
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/libcanberra-gtk3.pc \
 		${STAGEDIR}${PREFIX}/libdata/pkgconfig/
-.for i in .a .la .so .so.0
-	${INSTALL_DATA} ${WRKSRC}/src/.libs/libcanberra-gtk3${i} \
+.for i in .so .so.0 .so.0.1.8
+	${INSTALL_LIB} ${WRKSRC}/src/.libs/libcanberra-gtk3${i} \
 		${STAGEDIR}${PREFIX}/lib/
 .endfor
 	cd ${WRKSRC}/src && ${SETENV} DESTDIR=${STAGEDIR} \

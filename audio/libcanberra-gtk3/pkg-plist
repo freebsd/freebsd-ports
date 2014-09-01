@@ -1,9 +1,6 @@
 lib/gtk-3.0/modules/libcanberra-gtk-module.so
-lib/gtk-3.0/modules/libcanberra-gtk3-module.a
-lib/gtk-3.0/modules/libcanberra-gtk3-module.la
 lib/gtk-3.0/modules/libcanberra-gtk3-module.so
-lib/libcanberra-gtk3.a
-lib/libcanberra-gtk3.la
 lib/libcanberra-gtk3.so
 lib/libcanberra-gtk3.so.0
+lib/libcanberra-gtk3.so.0.1.8
 libdata/pkgconfig/libcanberra-gtk3.pc

@@ -4,7 +4,7 @@
 
 PORTNAME=	libcanberra
 PORTVERSION=	0.28
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	audio devel
 MASTER_SITES=	http://0pointer.de/lennart/projects/libcanberra/
 
@@ -16,13 +16,15 @@ LICENSE_FILE=	${WRKSRC}/LGPL
 
 LIB_DEPENDS=	libvorbisfile.so:${PORTSDIR}/audio/libvorbis
 
-USES=		gmake pkgconfig
-USE_GNOME=	gnomeprefix gnomehack gtk20 ltverhack gconf2
+USES=		gmake libtool pathfix pkgconfig
+USE_GNOME=	gnomeprefix gtk20 gconf2
 USE_LDCONFIG=	yes
-USE_AUTOTOOLS=	libtool libltdl
+GNU_CONFIGURE=	yes
+USE_AUTOTOOLS=	libltdl
 CONFIGURE_ARGS=	--disable-lynx --disable-tdb --disable-alsa
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
+INSTALL_TARGET=	install-strip
 
 .if !defined(SLAVEPORT)
 GCONF_SCHEMAS=	libcanberra.schemas
