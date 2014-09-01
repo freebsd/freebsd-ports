@@ -1,16 +1,16 @@
 lib/php/libphutil/LICENSE
 lib/php/libphutil/NOTICE
 lib/php/libphutil/README
+lib/php/libphutil/externals/includes/README
 lib/php/libphutil/externals/jsonlint/LICENSE
 lib/php/libphutil/externals/jsonlint/src/Seld/JsonLint/JsonParser.php
 lib/php/libphutil/externals/jsonlint/src/Seld/JsonLint/Lexer.php
 lib/php/libphutil/externals/jsonlint/src/Seld/JsonLint/ParsingException.php
 lib/php/libphutil/externals/jsonlint/src/Seld/JsonLint/Undefined.php
+lib/php/libphutil/resources/php_compat_info.json
 lib/php/libphutil/resources/ssl/README
 lib/php/libphutil/resources/ssl/default.pem
-lib/php/libphutil/resources/textmate/local_definition.tmCommand
-lib/php/libphutil/resources/textmate/php_property.tmSnippet
-lib/php/libphutil/resources/textmate/trailing_whitespace.tmMacro
+lib/php/libphutil/resources/test/diverse_symbols.php.example
 lib/php/libphutil/scripts/__init_script__.php
 lib/php/libphutil/scripts/build_xhpast.sh
 lib/php/libphutil/scripts/daemon/exec/exec_daemon.php
@@ -19,16 +19,19 @@ lib/php/libphutil/scripts/daemon/torture/resist-death.php
 lib/php/libphutil/scripts/example/calculator.php
 lib/php/libphutil/scripts/example/subworkflow.php
 lib/php/libphutil/scripts/format_log.php
+lib/php/libphutil/scripts/phutil_rebuild_map.php
+lib/php/libphutil/scripts/phutil_symbols.php
 lib/php/libphutil/scripts/sandpit/harden_directory.php
 lib/php/libphutil/scripts/test/deferred_log.php
 lib/php/libphutil/scripts/test/http.php
 lib/php/libphutil/scripts/test/interactive_editor.php
 lib/php/libphutil/scripts/test/lipsum.php
 lib/php/libphutil/scripts/test/mime.php
+lib/php/libphutil/scripts/test/paypal.php
 lib/php/libphutil/scripts/test/progress_bar.php
 lib/php/libphutil/scripts/test/prompt.php
-lib/php/libphutil/scripts/test/test_paypal.php
-lib/php/libphutil/scripts/test/test_service_profiler.php
+lib/php/libphutil/scripts/test/service_profiler.php
+lib/php/libphutil/scripts/update_compat_info.php
 lib/php/libphutil/scripts/utils/directory_fixture.php
 lib/php/libphutil/scripts/utils/lock.php
 lib/php/libphutil/scripts/utils/utf8.php
@@ -41,52 +44,53 @@ lib/php/libphutil/src/aphront/storage/connection/AphrontIsolatedDatabaseConnecti
 lib/php/libphutil/src/aphront/storage/connection/mysql/AphrontMySQLDatabaseConnection.php
 lib/php/libphutil/src/aphront/storage/connection/mysql/AphrontMySQLDatabaseConnectionBase.php
 lib/php/libphutil/src/aphront/storage/connection/mysql/AphrontMySQLiDatabaseConnection.php
-lib/php/libphutil/src/aphront/storage/exception/AphrontQueryAccessDeniedException.php
-lib/php/libphutil/src/aphront/storage/exception/AphrontQueryCharacterSetException.php
-lib/php/libphutil/src/aphront/storage/exception/AphrontQueryConnectionException.php
-lib/php/libphutil/src/aphront/storage/exception/AphrontQueryConnectionLostException.php
-lib/php/libphutil/src/aphront/storage/exception/AphrontQueryCountException.php
-lib/php/libphutil/src/aphront/storage/exception/AphrontQueryDeadlockException.php
-lib/php/libphutil/src/aphront/storage/exception/AphrontQueryDuplicateKeyException.php
+lib/php/libphutil/src/aphront/storage/exception/AphrontAccessDeniedQueryException.php
+lib/php/libphutil/src/aphront/storage/exception/AphrontCharacterSetQueryException.php
+lib/php/libphutil/src/aphront/storage/exception/AphrontConnectionLostQueryException.php
+lib/php/libphutil/src/aphront/storage/exception/AphrontConnectionQueryException.php
+lib/php/libphutil/src/aphront/storage/exception/AphrontCountQueryException.php
+lib/php/libphutil/src/aphront/storage/exception/AphrontDeadlockQueryException.php
+lib/php/libphutil/src/aphront/storage/exception/AphrontDuplicateKeyQueryException.php
+lib/php/libphutil/src/aphront/storage/exception/AphrontNotSupportedQueryException.php
+lib/php/libphutil/src/aphront/storage/exception/AphrontObjectMissingQueryException.php
+lib/php/libphutil/src/aphront/storage/exception/AphrontParameterQueryException.php
 lib/php/libphutil/src/aphront/storage/exception/AphrontQueryException.php
-lib/php/libphutil/src/aphront/storage/exception/AphrontQueryNotSupportedException.php
-lib/php/libphutil/src/aphront/storage/exception/AphrontQueryObjectMissingException.php
-lib/php/libphutil/src/aphront/storage/exception/AphrontQueryParameterException.php
-lib/php/libphutil/src/aphront/storage/exception/AphrontQueryRecoverableException.php
-lib/php/libphutil/src/aphront/storage/exception/AphrontQuerySchemaException.php
+lib/php/libphutil/src/aphront/storage/exception/AphrontRecoverableQueryException.php
+lib/php/libphutil/src/aphront/storage/exception/AphrontSchemaQueryException.php
 lib/php/libphutil/src/aphront/writeguard/AphrontScopedUnguardedWriteCapability.php
 lib/php/libphutil/src/aphront/writeguard/AphrontWriteGuard.php
 lib/php/libphutil/src/aphront/writeguard/event/AphrontWriteGuardExitEventListener.php
+lib/php/libphutil/src/auth/PhutilAmazonAuthAdapter.php
+lib/php/libphutil/src/auth/PhutilAsanaAuthAdapter.php
 lib/php/libphutil/src/auth/PhutilAuthAdapter.php
-lib/php/libphutil/src/auth/PhutilAuthAdapterEmpty.php
-lib/php/libphutil/src/auth/PhutilAuthAdapterLDAP.php
-lib/php/libphutil/src/auth/PhutilAuthAdapterOAuth.php
-lib/php/libphutil/src/auth/PhutilAuthAdapterOAuth1.php
-lib/php/libphutil/src/auth/PhutilAuthAdapterOAuthAmazon.php
-lib/php/libphutil/src/auth/PhutilAuthAdapterOAuthAsana.php
-lib/php/libphutil/src/auth/PhutilAuthAdapterOAuthDisqus.php
-lib/php/libphutil/src/auth/PhutilAuthAdapterOAuthFacebook.php
-lib/php/libphutil/src/auth/PhutilAuthAdapterOAuthGitHub.php
-lib/php/libphutil/src/auth/PhutilAuthAdapterOAuthGoogle.php
-lib/php/libphutil/src/auth/PhutilAuthAdapterOAuthJIRA.php
-lib/php/libphutil/src/auth/PhutilAuthAdapterOAuthTwitch.php
-lib/php/libphutil/src/auth/PhutilAuthAdapterOAuthTwitter.php
-lib/php/libphutil/src/auth/PhutilAuthAdapterOAuthWordPress.php
-lib/php/libphutil/src/auth/PhutilAuthAdapterPersona.php
+lib/php/libphutil/src/auth/PhutilBitbucketAuthAdapter.php
+lib/php/libphutil/src/auth/PhutilDisqusAuthAdapter.php
+lib/php/libphutil/src/auth/PhutilEmptyAuthAdapter.php
+lib/php/libphutil/src/auth/PhutilFacebookAuthAdapter.php
+lib/php/libphutil/src/auth/PhutilGitHubAuthAdapter.php
+lib/php/libphutil/src/auth/PhutilGoogleAuthAdapter.php
+lib/php/libphutil/src/auth/PhutilJIRAAuthAdapter.php
+lib/php/libphutil/src/auth/PhutilLDAPAuthAdapter.php
+lib/php/libphutil/src/auth/PhutilOAuth1AuthAdapter.php
+lib/php/libphutil/src/auth/PhutilOAuthAuthAdapter.php
+lib/php/libphutil/src/auth/PhutilPersonaAuthAdapter.php
+lib/php/libphutil/src/auth/PhutilTwitchAuthAdapter.php
+lib/php/libphutil/src/auth/PhutilTwitterAuthAdapter.php
+lib/php/libphutil/src/auth/PhutilWordPressAuthAdapter.php
 lib/php/libphutil/src/auth/exception/PhutilAuthConfigurationException.php
 lib/php/libphutil/src/auth/exception/PhutilAuthCredentialException.php
 lib/php/libphutil/src/auth/exception/PhutilAuthException.php
 lib/php/libphutil/src/auth/exception/PhutilAuthUserAbortedException.php
+lib/php/libphutil/src/cache/PhutilAPCKeyValueCache.php
+lib/php/libphutil/src/cache/PhutilDirectoryKeyValueCache.php
+lib/php/libphutil/src/cache/PhutilInRequestKeyValueCache.php
 lib/php/libphutil/src/cache/PhutilKeyValueCache.php
-lib/php/libphutil/src/cache/PhutilKeyValueCacheAPC.php
-lib/php/libphutil/src/cache/PhutilKeyValueCacheDirectory.php
-lib/php/libphutil/src/cache/PhutilKeyValueCacheInRequest.php
-lib/php/libphutil/src/cache/PhutilKeyValueCacheMemcache.php
 lib/php/libphutil/src/cache/PhutilKeyValueCacheNamespace.php
-lib/php/libphutil/src/cache/PhutilKeyValueCacheOnDisk.php
 lib/php/libphutil/src/cache/PhutilKeyValueCacheProfiler.php
 lib/php/libphutil/src/cache/PhutilKeyValueCacheProxy.php
 lib/php/libphutil/src/cache/PhutilKeyValueCacheStack.php
+lib/php/libphutil/src/cache/PhutilMemcacheKeyValueCache.php
+lib/php/libphutil/src/cache/PhutilOnDiskKeyValueCache.php
 lib/php/libphutil/src/cache/__tests__/PhutilKeyValueCacheTestCase.php
 lib/php/libphutil/src/channel/PhutilChannel.php
 lib/php/libphutil/src/channel/PhutilChannelChannel.php
@@ -140,13 +144,10 @@ lib/php/libphutil/src/docs/article/developing_xhpast.diviner
 lib/php/libphutil/src/docs/article/overview.diviner
 lib/php/libphutil/src/docs/article/using_futures.diviner
 lib/php/libphutil/src/docs/book/libphutil.book
-lib/php/libphutil/src/docs/draft/dom_datastore.txt
-lib/php/libphutil/src/docs/draft/javascript_scope_resolution.txt
-lib/php/libphutil/src/docs/draft/using_exceptions.txt
-lib/php/libphutil/src/docs/draft/using_queryfx.txt
 lib/php/libphutil/src/error/PhutilAggregateException.php
 lib/php/libphutil/src/error/PhutilErrorHandler.php
 lib/php/libphutil/src/error/PhutilErrorTrap.php
+lib/php/libphutil/src/error/PhutilMethodNotImplementedException.php
 lib/php/libphutil/src/error/PhutilOpaqueEnvelope.php
 lib/php/libphutil/src/error/PhutilOpaqueEnvelopeKey.php
 lib/php/libphutil/src/error/PhutilProxyException.php
@@ -198,6 +199,7 @@ lib/php/libphutil/src/future/asana/PhutilAsanaFuture.php
 lib/php/libphutil/src/future/aws/PhutilAWSEC2Future.php
 lib/php/libphutil/src/future/aws/PhutilAWSException.php
 lib/php/libphutil/src/future/aws/PhutilAWSFuture.php
+lib/php/libphutil/src/future/aws/PhutilAWSS3Future.php
 lib/php/libphutil/src/future/exec/CommandException.php
 lib/php/libphutil/src/future/exec/ExecFuture.php
 lib/php/libphutil/src/future/exec/PhutilExecPassthru.php
@@ -208,11 +210,12 @@ lib/php/libphutil/src/future/functions.php
 lib/php/libphutil/src/future/http/BaseHTTPFuture.php
 lib/php/libphutil/src/future/http/HTTPFuture.php
 lib/php/libphutil/src/future/http/HTTPSFuture.php
+lib/php/libphutil/src/future/http/status/HTTPFutureCURLResponseStatus.php
+lib/php/libphutil/src/future/http/status/HTTPFutureCertificateResponseStatus.php
+lib/php/libphutil/src/future/http/status/HTTPFutureHTTPResponseStatus.php
+lib/php/libphutil/src/future/http/status/HTTPFutureParseResponseStatus.php
 lib/php/libphutil/src/future/http/status/HTTPFutureResponseStatus.php
-lib/php/libphutil/src/future/http/status/HTTPFutureResponseStatusCURL.php
-lib/php/libphutil/src/future/http/status/HTTPFutureResponseStatusHTTP.php
-lib/php/libphutil/src/future/http/status/HTTPFutureResponseStatusParse.php
-lib/php/libphutil/src/future/http/status/HTTPFutureResponseStatusTransport.php
+lib/php/libphutil/src/future/http/status/HTTPFutureTransportResponseStatus.php
 lib/php/libphutil/src/future/oauth/PhutilOAuth1Future.php
 lib/php/libphutil/src/future/oauth/__tests__/PhutilOAuth1FutureTestCase.php
 lib/php/libphutil/src/future/paypal/PhutilPayPalAPIFuture.php
@@ -230,8 +233,8 @@ lib/php/libphutil/src/infrastructure/testing/PhutilTestCase.php
 lib/php/libphutil/src/internationalization/PhutilNumber.php
 lib/php/libphutil/src/internationalization/PhutilPerson.php
 lib/php/libphutil/src/internationalization/PhutilTranslator.php
-lib/php/libphutil/src/internationalization/__tests__/PhutilPHTTestCase.php
 lib/php/libphutil/src/internationalization/__tests__/PhutilPersonTest.php
+lib/php/libphutil/src/internationalization/__tests__/PhutilPhtTestCase.php
 lib/php/libphutil/src/internationalization/__tests__/PhutilTranslatorTestCase.php
 lib/php/libphutil/src/internationalization/pht.php
 lib/php/libphutil/src/lexer/PhutilLexer.php
@@ -276,6 +279,7 @@ lib/php/libphutil/src/markup/engine/__tests__/remarkup/del.txt
 lib/php/libphutil/src/markup/engine/__tests__/remarkup/diff.txt
 lib/php/libphutil/src/markup/engine/__tests__/remarkup/disallowed-link.txt
 lib/php/libphutil/src/markup/engine/__tests__/remarkup/entities.txt
+lib/php/libphutil/src/markup/engine/__tests__/remarkup/header-skip.txt
 lib/php/libphutil/src/markup/engine/__tests__/remarkup/headers.txt
 lib/php/libphutil/src/markup/engine/__tests__/remarkup/horizonal-rule.txt
 lib/php/libphutil/src/markup/engine/__tests__/remarkup/important.txt
@@ -295,12 +299,16 @@ lib/php/libphutil/src/markup/engine/__tests__/remarkup/link.txt
 lib/php/libphutil/src/markup/engine/__tests__/remarkup/list-alternate-style.txt
 lib/php/libphutil/src/markup/engine/__tests__/remarkup/list-blow-stack.txt
 lib/php/libphutil/src/markup/engine/__tests__/remarkup/list-checkboxes.txt
+lib/php/libphutil/src/markup/engine/__tests__/remarkup/list-crazystairs.txt
 lib/php/libphutil/src/markup/engine/__tests__/remarkup/list-first-style-wins.txt
 lib/php/libphutil/src/markup/engine/__tests__/remarkup/list-hash.txt
+lib/php/libphutil/src/markup/engine/__tests__/remarkup/list-header-last.txt
+lib/php/libphutil/src/markup/engine/__tests__/remarkup/list-header.txt
 lib/php/libphutil/src/markup/engine/__tests__/remarkup/list-mixed-styles.txt
 lib/php/libphutil/src/markup/engine/__tests__/remarkup/list-multi.txt
 lib/php/libphutil/src/markup/engine/__tests__/remarkup/list-multiline.txt
 lib/php/libphutil/src/markup/engine/__tests__/remarkup/list-nest.txt
+lib/php/libphutil/src/markup/engine/__tests__/remarkup/list-paragraphs.txt
 lib/php/libphutil/src/markup/engine/__tests__/remarkup/list-staircase.txt
 lib/php/libphutil/src/markup/engine/__tests__/remarkup/list-star.txt
 lib/php/libphutil/src/markup/engine/__tests__/remarkup/list-then-a-list.txt
@@ -332,31 +340,31 @@ lib/php/libphutil/src/markup/engine/__tests__/remarkup/underline.txt
 lib/php/libphutil/src/markup/engine/__tests__/remarkup/warning.txt
 lib/php/libphutil/src/markup/engine/remarkup/PhutilRemarkupBlockStorage.php
 lib/php/libphutil/src/markup/engine/remarkup/blockrule/PhutilRemarkupBlockInterpreter.php
-lib/php/libphutil/src/markup/engine/remarkup/blockrule/PhutilRemarkupEngineBlockRule.php
-lib/php/libphutil/src/markup/engine/remarkup/blockrule/PhutilRemarkupEngineRemarkupCodeBlockRule.php
-lib/php/libphutil/src/markup/engine/remarkup/blockrule/PhutilRemarkupEngineRemarkupDefaultBlockRule.php
-lib/php/libphutil/src/markup/engine/remarkup/blockrule/PhutilRemarkupEngineRemarkupHeaderBlockRule.php
-lib/php/libphutil/src/markup/engine/remarkup/blockrule/PhutilRemarkupEngineRemarkupHorizontalRuleBlockRule.php
-lib/php/libphutil/src/markup/engine/remarkup/blockrule/PhutilRemarkupEngineRemarkupInlineBlockRule.php
-lib/php/libphutil/src/markup/engine/remarkup/blockrule/PhutilRemarkupEngineRemarkupInterpreterRule.php
-lib/php/libphutil/src/markup/engine/remarkup/blockrule/PhutilRemarkupEngineRemarkupListBlockRule.php
-lib/php/libphutil/src/markup/engine/remarkup/blockrule/PhutilRemarkupEngineRemarkupLiteralBlockRule.php
-lib/php/libphutil/src/markup/engine/remarkup/blockrule/PhutilRemarkupEngineRemarkupNoteBlockRule.php
-lib/php/libphutil/src/markup/engine/remarkup/blockrule/PhutilRemarkupEngineRemarkupQuotesBlockRule.php
-lib/php/libphutil/src/markup/engine/remarkup/blockrule/PhutilRemarkupEngineRemarkupReplyBlockRule.php
-lib/php/libphutil/src/markup/engine/remarkup/blockrule/PhutilRemarkupEngineRemarkupSimpleTableBlockRule.php
-lib/php/libphutil/src/markup/engine/remarkup/blockrule/PhutilRemarkupEngineRemarkupTableBlockRule.php
-lib/php/libphutil/src/markup/engine/remarkup/blockrule/PhutilRemarkupEngineRemarkupTestInterpreterRule.php
+lib/php/libphutil/src/markup/engine/remarkup/blockrule/PhutilRemarkupBlockRule.php
+lib/php/libphutil/src/markup/engine/remarkup/blockrule/PhutilRemarkupCodeBlockRule.php
+lib/php/libphutil/src/markup/engine/remarkup/blockrule/PhutilRemarkupDefaultBlockRule.php
+lib/php/libphutil/src/markup/engine/remarkup/blockrule/PhutilRemarkupHeaderBlockRule.php
+lib/php/libphutil/src/markup/engine/remarkup/blockrule/PhutilRemarkupHorizontalRuleBlockRule.php
+lib/php/libphutil/src/markup/engine/remarkup/blockrule/PhutilRemarkupInlineBlockRule.php
+lib/php/libphutil/src/markup/engine/remarkup/blockrule/PhutilRemarkupInterpreterBlockRule.php
+lib/php/libphutil/src/markup/engine/remarkup/blockrule/PhutilRemarkupListBlockRule.php
+lib/php/libphutil/src/markup/engine/remarkup/blockrule/PhutilRemarkupLiteralBlockRule.php
+lib/php/libphutil/src/markup/engine/remarkup/blockrule/PhutilRemarkupNoteBlockRule.php
+lib/php/libphutil/src/markup/engine/remarkup/blockrule/PhutilRemarkupQuotesBlockRule.php
+lib/php/libphutil/src/markup/engine/remarkup/blockrule/PhutilRemarkupReplyBlockRule.php
+lib/php/libphutil/src/markup/engine/remarkup/blockrule/PhutilRemarkupSimpleTableBlockRule.php
+lib/php/libphutil/src/markup/engine/remarkup/blockrule/PhutilRemarkupTableBlockRule.php
+lib/php/libphutil/src/markup/engine/remarkup/blockrule/PhutilRemarkupTestInterpreterRule.php
+lib/php/libphutil/src/markup/engine/remarkup/markuprule/PhutilRemarkupBoldRule.php
+lib/php/libphutil/src/markup/engine/remarkup/markuprule/PhutilRemarkupDelRule.php
+lib/php/libphutil/src/markup/engine/remarkup/markuprule/PhutilRemarkupDocumentLinkRule.php
+lib/php/libphutil/src/markup/engine/remarkup/markuprule/PhutilRemarkupEscapeRemarkupRule.php
+lib/php/libphutil/src/markup/engine/remarkup/markuprule/PhutilRemarkupHyperlinkRule.php
+lib/php/libphutil/src/markup/engine/remarkup/markuprule/PhutilRemarkupItalicRule.php
+lib/php/libphutil/src/markup/engine/remarkup/markuprule/PhutilRemarkupLinebreaksRule.php
+lib/php/libphutil/src/markup/engine/remarkup/markuprule/PhutilRemarkupMonospaceRule.php
 lib/php/libphutil/src/markup/engine/remarkup/markuprule/PhutilRemarkupRule.php
-lib/php/libphutil/src/markup/engine/remarkup/markuprule/PhutilRemarkupRuleBold.php
-lib/php/libphutil/src/markup/engine/remarkup/markuprule/PhutilRemarkupRuleDel.php
-lib/php/libphutil/src/markup/engine/remarkup/markuprule/PhutilRemarkupRuleDocumentLink.php
-lib/php/libphutil/src/markup/engine/remarkup/markuprule/PhutilRemarkupRuleEscapeRemarkup.php
-lib/php/libphutil/src/markup/engine/remarkup/markuprule/PhutilRemarkupRuleHyperlink.php
-lib/php/libphutil/src/markup/engine/remarkup/markuprule/PhutilRemarkupRuleItalic.php
-lib/php/libphutil/src/markup/engine/remarkup/markuprule/PhutilRemarkupRuleLinebreaks.php
-lib/php/libphutil/src/markup/engine/remarkup/markuprule/PhutilRemarkupRuleMonospace.php
-lib/php/libphutil/src/markup/engine/remarkup/markuprule/PhutilRemarkupRuleUnderline.php
+lib/php/libphutil/src/markup/engine/remarkup/markuprule/PhutilRemarkupUnderlineRule.php
 lib/php/libphutil/src/markup/render.php
 lib/php/libphutil/src/markup/syntax/engine/PhutilDefaultSyntaxHighlighterEngine.php
 lib/php/libphutil/src/markup/syntax/engine/PhutilSyntaxHighlighterEngine.php
@@ -385,7 +393,13 @@ lib/php/libphutil/src/markup/syntax/highlighter/__tests__/xhpast/trailing-commen
 lib/php/libphutil/src/markup/syntax/highlighter/__tests__/xhpast/trailing-comment.source
 lib/php/libphutil/src/markup/syntax/highlighter/pygments/PhutilDefaultSyntaxHighlighterEnginePygmentsFuture.php
 lib/php/libphutil/src/markup/syntax/highlighter/xhpast/PhutilXHPASTSyntaxHighlighterFuture.php
+lib/php/libphutil/src/moduleutils/PhutilBootloader.php
+lib/php/libphutil/src/moduleutils/PhutilBootloaderException.php
+lib/php/libphutil/src/moduleutils/PhutilLibraryConflictException.php
+lib/php/libphutil/src/moduleutils/PhutilLibraryMapBuilder.php
 lib/php/libphutil/src/moduleutils/__tests__/PhutilExtensionsTestCase.php
+lib/php/libphutil/src/moduleutils/__tests__/PhutilModuleUtilsTestCase.php
+lib/php/libphutil/src/moduleutils/core.php
 lib/php/libphutil/src/moduleutils/moduleutils.php
 lib/php/libphutil/src/object/Phobject.php
 lib/php/libphutil/src/object/__tests__/PhutilPhobjectTestCase.php
@@ -452,12 +466,12 @@ lib/php/libphutil/src/parser/exception/PhutilJSONParserException.php
 lib/php/libphutil/src/parser/exception/PhutilTypeCheckException.php
 lib/php/libphutil/src/parser/exception/PhutilTypeExtraParametersException.php
 lib/php/libphutil/src/parser/exception/PhutilTypeMissingParametersException.php
+lib/php/libphutil/src/parser/generator/exception/PhutilInvalidRuleParserGeneratorException.php
+lib/php/libphutil/src/parser/generator/exception/PhutilIrreducibleRuleParserGeneratorException.php
 lib/php/libphutil/src/parser/generator/exception/PhutilParserGeneratorException.php
-lib/php/libphutil/src/parser/generator/exception/PhutilParserGeneratorInvalidRuleException.php
-lib/php/libphutil/src/parser/generator/exception/PhutilParserGeneratorIrreducibleRuleException.php
-lib/php/libphutil/src/parser/generator/exception/PhutilParserGeneratorUnknownSymbolException.php
-lib/php/libphutil/src/parser/generator/exception/PhutilParserGeneratorUnreachableRuleException.php
-lib/php/libphutil/src/parser/generator/exception/PhutilParserGeneratorUnreachableTerminalException.php
+lib/php/libphutil/src/parser/generator/exception/PhutilUnknownSymbolParserGeneratorException.php
+lib/php/libphutil/src/parser/generator/exception/PhutilUnreachableRuleParserGeneratorException.php
+lib/php/libphutil/src/parser/generator/exception/PhutilUnreachableTerminalParserGeneratorException.php
 lib/php/libphutil/src/parser/xhpast/__tests__/PHPASTParserTestCase.php
 lib/php/libphutil/src/parser/xhpast/__tests__/data/base-fail-parse.php.expect
 lib/php/libphutil/src/parser/xhpast/__tests__/data/base-fail-parse.php.test
@@ -527,11 +541,12 @@ lib/php/libphutil/src/utils/AbstractDirectedGraph.php
 lib/php/libphutil/src/utils/PhutilArray.php
 lib/php/libphutil/src/utils/PhutilArrayWithDefaultValue.php
 lib/php/libphutil/src/utils/PhutilBufferedIterator.php
-lib/php/libphutil/src/utils/PhutilBufferedIteratorExample.php
 lib/php/libphutil/src/utils/PhutilCallbackFilterIterator.php
 lib/php/libphutil/src/utils/PhutilChunkedIterator.php
 lib/php/libphutil/src/utils/PhutilDirectedScalarGraph.php
 lib/php/libphutil/src/utils/PhutilEditDistanceMatrix.php
+lib/php/libphutil/src/utils/PhutilExampleBufferedIterator.php
+lib/php/libphutil/src/utils/PhutilExecutionEnvironment.php
 lib/php/libphutil/src/utils/PhutilLunarPhase.php
 lib/php/libphutil/src/utils/PhutilRope.php
 lib/php/libphutil/src/utils/PhutilUTF8StringTruncator.php
@@ -548,12 +563,14 @@ lib/php/libphutil/src/utils/__tests__/PhutilUtilsTestCase.php
 lib/php/libphutil/src/utils/__tests__/TestAbstractDirectedGraph.php
 lib/php/libphutil/src/utils/utf8.php
 lib/php/libphutil/src/utils/utils.php
+lib/php/libphutil/src/utils/viewutils.php
 lib/php/libphutil/src/xsprintf/PhutilCommandString.php
 lib/php/libphutil/src/xsprintf/PhutilQsprintfInterface.php
-lib/php/libphutil/src/xsprintf/__tests__/PhutilcsprintfTestCase.php
-lib/php/libphutil/src/xsprintf/__tests__/PhutilurisprintfTestCase.php
-lib/php/libphutil/src/xsprintf/__tests__/PhutilxsprintfTestCase.php
+lib/php/libphutil/src/xsprintf/__tests__/PhutilCsprintfTestCase.php
+lib/php/libphutil/src/xsprintf/__tests__/PhutilHgsprintfTestCase.php
+lib/php/libphutil/src/xsprintf/__tests__/PhutilUrisprintfTestCase.php
 lib/php/libphutil/src/xsprintf/csprintf.php
+lib/php/libphutil/src/xsprintf/exception/XsprintfUnknownConversionException.php
 lib/php/libphutil/src/xsprintf/hgsprintf.php
 lib/php/libphutil/src/xsprintf/jsprintf.php
 lib/php/libphutil/src/xsprintf/ldapsprintf.php
@@ -582,143 +599,144 @@ lib/php/libphutil/support/xhpast/scanner.l
 lib/php/libphutil/support/xhpast/scanner.lex.cpp
 lib/php/libphutil/support/xhpast/scanner.lex.hpp
 lib/php/libphutil/support/xhpast/xhpast.cpp
-@dirrm lib/php/libphutil/support/xhpast
-@dirrm lib/php/libphutil/support/phutiltestlib/test
-@dirrm lib/php/libphutil/support/phutiltestlib/extensions
-@dirrm lib/php/libphutil/support/phutiltestlib
-@dirrm lib/php/libphutil/support/parser
-@dirrm lib/php/libphutil/support
-@dirrm lib/php/libphutil/src/xsprintf/__tests__
-@dirrm lib/php/libphutil/src/xsprintf
-@dirrm lib/php/libphutil/src/utils/__tests__
-@dirrm lib/php/libphutil/src/utils
-@dirrm lib/php/libphutil/src/symbols/exception
-@dirrm lib/php/libphutil/src/symbols
-@dirrm lib/php/libphutil/src/sprites
-@dirrm lib/php/libphutil/src/serviceprofiler
-@dirrm lib/php/libphutil/src/readableserializer/__tests__
-@dirrm lib/php/libphutil/src/readableserializer
-@dirrm lib/php/libphutil/src/phage/util
-@dirrm lib/php/libphutil/src/phage/bootloader
-@dirrm lib/php/libphutil/src/phage/agent
-@dirrm lib/php/libphutil/src/phage/__tests__
-@dirrm lib/php/libphutil/src/phage
-@dirrm lib/php/libphutil/src/parser/xhpast/bin
-@dirrm lib/php/libphutil/src/parser/xhpast/api/__tests__
-@dirrm lib/php/libphutil/src/parser/xhpast/api
-@dirrm lib/php/libphutil/src/parser/xhpast/__tests__/data
-@dirrm lib/php/libphutil/src/parser/xhpast/__tests__
-@dirrm lib/php/libphutil/src/parser/xhpast
-@dirrm lib/php/libphutil/src/parser/generator/exception
-@dirrm lib/php/libphutil/src/parser/generator
-@dirrm lib/php/libphutil/src/parser/exception
-@dirrm lib/php/libphutil/src/parser/argument/workflow
-@dirrm lib/php/libphutil/src/parser/argument/exception
-@dirrm lib/php/libphutil/src/parser/argument/__tests__
-@dirrm lib/php/libphutil/src/parser/argument
-@dirrm lib/php/libphutil/src/parser/aast/api
-@dirrm lib/php/libphutil/src/parser/aast
-@dirrm lib/php/libphutil/src/parser/__tests__/languageguesser
-@dirrm lib/php/libphutil/src/parser/__tests__/docblock
-@dirrm lib/php/libphutil/src/parser/__tests__
-@dirrm lib/php/libphutil/src/parser
-@dirrm lib/php/libphutil/src/object/__tests__
-@dirrm lib/php/libphutil/src/object
-@dirrm lib/php/libphutil/src/moduleutils/__tests__
-@dirrm lib/php/libphutil/src/moduleutils
-@dirrm lib/php/libphutil/src/markup/syntax/highlighter/xhpast
-@dirrm lib/php/libphutil/src/markup/syntax/highlighter/pygments
-@dirrm lib/php/libphutil/src/markup/syntax/highlighter/__tests__/xhpast
-@dirrm lib/php/libphutil/src/markup/syntax/highlighter/__tests__/phpfragment
-@dirrm lib/php/libphutil/src/markup/syntax/highlighter/__tests__
-@dirrm lib/php/libphutil/src/markup/syntax/highlighter
-@dirrm lib/php/libphutil/src/markup/syntax/engine/__tests__
-@dirrm lib/php/libphutil/src/markup/syntax/engine
-@dirrm lib/php/libphutil/src/markup/syntax
-@dirrm lib/php/libphutil/src/markup/engine/remarkup/markuprule
-@dirrm lib/php/libphutil/src/markup/engine/remarkup/blockrule
-@dirrm lib/php/libphutil/src/markup/engine/remarkup
-@dirrm lib/php/libphutil/src/markup/engine/__tests__/remarkup
-@dirrm lib/php/libphutil/src/markup/engine/__tests__
-@dirrm lib/php/libphutil/src/markup/engine
-@dirrm lib/php/libphutil/src/markup/__tests__
-@dirrm lib/php/libphutil/src/markup
-@dirrm lib/php/libphutil/src/lexer/__tests__/shell
-@dirrm lib/php/libphutil/src/lexer/__tests__/php
-@dirrm lib/php/libphutil/src/lexer/__tests__
-@dirrm lib/php/libphutil/src/lexer
-@dirrm lib/php/libphutil/src/internationalization/__tests__
-@dirrm lib/php/libphutil/src/internationalization
-@dirrm lib/php/libphutil/src/infrastructure/testing
-@dirrm lib/php/libphutil/src/infrastructure
-@dirrm lib/php/libphutil/src/grammar/code
-@dirrm lib/php/libphutil/src/grammar
-@dirrm lib/php/libphutil/src/future/wordpress
-@dirrm lib/php/libphutil/src/future/twitch
-@dirrm lib/php/libphutil/src/future/query
-@dirrm lib/php/libphutil/src/future/paypal
-@dirrm lib/php/libphutil/src/future/oauth/__tests__
-@dirrm lib/php/libphutil/src/future/oauth
-@dirrm lib/php/libphutil/src/future/http/status
-@dirrm lib/php/libphutil/src/future/http
-@dirrm lib/php/libphutil/src/future/exec/__tests__
-@dirrm lib/php/libphutil/src/future/exec
-@dirrm lib/php/libphutil/src/future/aws
-@dirrm lib/php/libphutil/src/future/asana
-@dirrm lib/php/libphutil/src/future/__tests__
-@dirrm lib/php/libphutil/src/future
-@dirrm lib/php/libphutil/src/filesystem/linesofalarge/__tests__
-@dirrm lib/php/libphutil/src/filesystem/linesofalarge
-@dirrm lib/php/libphutil/src/filesystem/__tests__/data/include_dir.txt/subdir.txt
-@dirrm lib/php/libphutil/src/filesystem/__tests__/data/include_dir.txt
-@dirrm lib/php/libphutil/src/filesystem/__tests__/data/exclude
-@dirrm lib/php/libphutil/src/filesystem/__tests__/data
-@dirrm lib/php/libphutil/src/filesystem/__tests__
-@dirrm lib/php/libphutil/src/filesystem
-@dirrm lib/php/libphutil/src/extensions
-@dirrm lib/php/libphutil/src/events/constant
-@dirrm lib/php/libphutil/src/events
-@dirrm lib/php/libphutil/src/error/__tests__
-@dirrm lib/php/libphutil/src/error
-@dirrm lib/php/libphutil/src/docs/draft
-@dirrm lib/php/libphutil/src/docs/book
-@dirrm lib/php/libphutil/src/docs/article
-@dirrm lib/php/libphutil/src/docs
-@dirrm lib/php/libphutil/src/daemon/torture
-@dirrm lib/php/libphutil/src/daemon
-@dirrm lib/php/libphutil/src/console/__tests__/wrap
-@dirrm lib/php/libphutil/src/console/__tests__
-@dirrm lib/php/libphutil/src/console
-@dirrm lib/php/libphutil/src/conduit
-@dirrm lib/php/libphutil/src/channel/__tests__
-@dirrm lib/php/libphutil/src/channel
-@dirrm lib/php/libphutil/src/cache/__tests__
-@dirrm lib/php/libphutil/src/cache
-@dirrm lib/php/libphutil/src/auth/exception
-@dirrm lib/php/libphutil/src/auth
-@dirrm lib/php/libphutil/src/aphront/writeguard/event
-@dirrm lib/php/libphutil/src/aphront/writeguard
-@dirrm lib/php/libphutil/src/aphront/storage/exception
-@dirrm lib/php/libphutil/src/aphront/storage/connection/mysql
-@dirrm lib/php/libphutil/src/aphront/storage/connection
-@dirrm lib/php/libphutil/src/aphront/storage
-@dirrm lib/php/libphutil/src/aphront
-@dirrm lib/php/libphutil/src/__tests__
-@dirrm lib/php/libphutil/src
-@dirrm lib/php/libphutil/scripts/utils
-@dirrm lib/php/libphutil/scripts/test
-@dirrm lib/php/libphutil/scripts/sandpit
-@dirrm lib/php/libphutil/scripts/example
-@dirrm lib/php/libphutil/scripts/daemon/torture
-@dirrm lib/php/libphutil/scripts/daemon/exec
-@dirrm lib/php/libphutil/scripts/daemon
-@dirrm lib/php/libphutil/scripts
-@dirrm lib/php/libphutil/resources/textmate
-@dirrm lib/php/libphutil/resources/ssl
-@dirrm lib/php/libphutil/resources
-@dirrm lib/php/libphutil/externals/jsonlint/src/Seld/JsonLint
-@dirrm lib/php/libphutil/externals/jsonlint/src/Seld
-@dirrm lib/php/libphutil/externals/jsonlint/src
-@dirrm lib/php/libphutil/externals/jsonlint
-@dirrm lib/php/libphutil/externals
-@dirrm lib/php/libphutil
+@dirrmtry lib/php/libphutil/externals/includes
+@dirrmtry lib/php/libphutil/externals/jsonlint/src/Seld/JsonLint
+@dirrmtry lib/php/libphutil/externals/jsonlint/src/Seld
+@dirrmtry lib/php/libphutil/externals/jsonlint/src
+@dirrmtry lib/php/libphutil/externals/jsonlint
+@dirrmtry lib/php/libphutil/externals
+@dirrmtry lib/php/libphutil/resources/ssl
+@dirrmtry lib/php/libphutil/resources/test
+@dirrmtry lib/php/libphutil/resources
+@dirrmtry lib/php/libphutil/scripts/daemon/exec
+@dirrmtry lib/php/libphutil/scripts/daemon/torture
+@dirrmtry lib/php/libphutil/scripts/daemon
+@dirrmtry lib/php/libphutil/scripts/example
+@dirrmtry lib/php/libphutil/scripts/sandpit
+@dirrmtry lib/php/libphutil/scripts/test
+@dirrmtry lib/php/libphutil/scripts/utils
+@dirrmtry lib/php/libphutil/scripts
+@dirrmtry lib/php/libphutil/src/__tests__
+@dirrmtry lib/php/libphutil/src/aphront/storage/connection/mysql
+@dirrmtry lib/php/libphutil/src/aphront/storage/connection
+@dirrmtry lib/php/libphutil/src/aphront/storage/exception
+@dirrmtry lib/php/libphutil/src/aphront/storage
+@dirrmtry lib/php/libphutil/src/aphront/writeguard/event
+@dirrmtry lib/php/libphutil/src/aphront/writeguard
+@dirrmtry lib/php/libphutil/src/aphront
+@dirrmtry lib/php/libphutil/src/auth/exception
+@dirrmtry lib/php/libphutil/src/auth
+@dirrmtry lib/php/libphutil/src/cache/__tests__
+@dirrmtry lib/php/libphutil/src/cache
+@dirrmtry lib/php/libphutil/src/channel/__tests__
+@dirrmtry lib/php/libphutil/src/channel
+@dirrmtry lib/php/libphutil/src/conduit
+@dirrmtry lib/php/libphutil/src/console/__tests__/wrap
+@dirrmtry lib/php/libphutil/src/console/__tests__
+@dirrmtry lib/php/libphutil/src/console
+@dirrmtry lib/php/libphutil/src/daemon/torture
+@dirrmtry lib/php/libphutil/src/daemon
+@dirrmtry lib/php/libphutil/src/docs/article
+@dirrmtry lib/php/libphutil/src/docs/book
+@dirrmtry lib/php/libphutil/src/docs
+@dirrmtry lib/php/libphutil/src/error/__tests__
+@dirrmtry lib/php/libphutil/src/error
+@dirrmtry lib/php/libphutil/src/events/constant
+@dirrmtry lib/php/libphutil/src/events
+@dirrmtry lib/php/libphutil/src/extensions
+@dirrmtry lib/php/libphutil/src/filesystem/__tests__/data/exclude
+@dirrmtry lib/php/libphutil/src/filesystem/__tests__/data/include_dir.txt/subdir.txt
+@dirrmtry lib/php/libphutil/src/filesystem/__tests__/data/include_dir.txt
+@dirrmtry lib/php/libphutil/src/filesystem/__tests__/data
+@dirrmtry lib/php/libphutil/src/filesystem/__tests__
+@dirrmtry lib/php/libphutil/src/filesystem/linesofalarge/__tests__
+@dirrmtry lib/php/libphutil/src/filesystem/linesofalarge
+@dirrmtry lib/php/libphutil/src/filesystem
+@dirrmtry lib/php/libphutil/src/future/__tests__
+@dirrmtry lib/php/libphutil/src/future/asana
+@dirrmtry lib/php/libphutil/src/future/aws
+@dirrmtry lib/php/libphutil/src/future/exec/__tests__
+@dirrmtry lib/php/libphutil/src/future/exec
+@dirrmtry lib/php/libphutil/src/future/http/status
+@dirrmtry lib/php/libphutil/src/future/http
+@dirrmtry lib/php/libphutil/src/future/oauth/__tests__
+@dirrmtry lib/php/libphutil/src/future/oauth
+@dirrmtry lib/php/libphutil/src/future/paypal
+@dirrmtry lib/php/libphutil/src/future/query
+@dirrmtry lib/php/libphutil/src/future/twitch
+@dirrmtry lib/php/libphutil/src/future/wordpress
+@dirrmtry lib/php/libphutil/src/future
+@dirrmtry lib/php/libphutil/src/grammar/code
+@dirrmtry lib/php/libphutil/src/grammar
+@dirrmtry lib/php/libphutil/src/infrastructure/testing
+@dirrmtry lib/php/libphutil/src/infrastructure
+@dirrmtry lib/php/libphutil/src/internationalization/__tests__
+@dirrmtry lib/php/libphutil/src/internationalization
+@dirrmtry lib/php/libphutil/src/lexer/__tests__/php
+@dirrmtry lib/php/libphutil/src/lexer/__tests__/shell
+@dirrmtry lib/php/libphutil/src/lexer/__tests__
+@dirrmtry lib/php/libphutil/src/lexer
+@dirrmtry lib/php/libphutil/src/markup/__tests__
+@dirrmtry lib/php/libphutil/src/markup/engine/__tests__/remarkup
+@dirrmtry lib/php/libphutil/src/markup/engine/__tests__
+@dirrmtry lib/php/libphutil/src/markup/engine/remarkup/blockrule
+@dirrmtry lib/php/libphutil/src/markup/engine/remarkup/markuprule
+@dirrmtry lib/php/libphutil/src/markup/engine/remarkup
+@dirrmtry lib/php/libphutil/src/markup/engine
+@dirrmtry lib/php/libphutil/src/markup/syntax/engine/__tests__
+@dirrmtry lib/php/libphutil/src/markup/syntax/engine
+@dirrmtry lib/php/libphutil/src/markup/syntax/highlighter/__tests__/phpfragment
+@dirrmtry lib/php/libphutil/src/markup/syntax/highlighter/__tests__/xhpast
+@dirrmtry lib/php/libphutil/src/markup/syntax/highlighter/__tests__
+@dirrmtry lib/php/libphutil/src/markup/syntax/highlighter/pygments
+@dirrmtry lib/php/libphutil/src/markup/syntax/highlighter/xhpast
+@dirrmtry lib/php/libphutil/src/markup/syntax/highlighter
+@dirrmtry lib/php/libphutil/src/markup/syntax
+@dirrmtry lib/php/libphutil/src/markup
+@dirrmtry lib/php/libphutil/src/moduleutils/__tests__
+@dirrmtry lib/php/libphutil/src/moduleutils
+@dirrmtry lib/php/libphutil/src/object/__tests__
+@dirrmtry lib/php/libphutil/src/object
+@dirrmtry lib/php/libphutil/src/parser/__tests__/docblock
+@dirrmtry lib/php/libphutil/src/parser/__tests__/languageguesser
+@dirrmtry lib/php/libphutil/src/parser/__tests__
+@dirrmtry lib/php/libphutil/src/parser/aast/api
+@dirrmtry lib/php/libphutil/src/parser/aast
+@dirrmtry lib/php/libphutil/src/parser/argument/__tests__
+@dirrmtry lib/php/libphutil/src/parser/argument/exception
+@dirrmtry lib/php/libphutil/src/parser/argument/workflow
+@dirrmtry lib/php/libphutil/src/parser/argument
+@dirrmtry lib/php/libphutil/src/parser/exception
+@dirrmtry lib/php/libphutil/src/parser/generator/exception
+@dirrmtry lib/php/libphutil/src/parser/generator
+@dirrmtry lib/php/libphutil/src/parser/xhpast/__tests__/data
+@dirrmtry lib/php/libphutil/src/parser/xhpast/__tests__
+@dirrmtry lib/php/libphutil/src/parser/xhpast/api/__tests__
+@dirrmtry lib/php/libphutil/src/parser/xhpast/api
+@dirrmtry lib/php/libphutil/src/parser/xhpast/bin
+@dirrmtry lib/php/libphutil/src/parser/xhpast
+@dirrmtry lib/php/libphutil/src/parser
+@dirrmtry lib/php/libphutil/src/phage/__tests__
+@dirrmtry lib/php/libphutil/src/phage/agent
+@dirrmtry lib/php/libphutil/src/phage/bootloader
+@dirrmtry lib/php/libphutil/src/phage/util
+@dirrmtry lib/php/libphutil/src/phage
+@dirrmtry lib/php/libphutil/src/readableserializer/__tests__
+@dirrmtry lib/php/libphutil/src/readableserializer
+@dirrmtry lib/php/libphutil/src/serviceprofiler
+@dirrmtry lib/php/libphutil/src/sprites
+@dirrmtry lib/php/libphutil/src/symbols/exception
+@dirrmtry lib/php/libphutil/src/symbols
+@dirrmtry lib/php/libphutil/src/utils/__tests__
+@dirrmtry lib/php/libphutil/src/utils
+@dirrmtry lib/php/libphutil/src/xsprintf/__tests__
+@dirrmtry lib/php/libphutil/src/xsprintf/exception
+@dirrmtry lib/php/libphutil/src/xsprintf
+@dirrmtry lib/php/libphutil/src
+@dirrmtry lib/php/libphutil/support/parser
+@dirrmtry lib/php/libphutil/support/phutiltestlib/extensions
+@dirrmtry lib/php/libphutil/support/phutiltestlib/test
+@dirrmtry lib/php/libphutil/support/phutiltestlib
+@dirrmtry lib/php/libphutil/support/xhpast
+@dirrmtry lib/php/libphutil/support
+@dirrmtry lib/php/libphutil

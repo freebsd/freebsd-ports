@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	arcanist
-PORTVERSION=	20140617
-PORTREVISION=	2
+PORTVERSION=	20140828
 CATEGORIES=	devel
 PKGNAMEPREFIX=	php5-
 
@@ -13,7 +12,6 @@ LICENSE=	APACHE20
 
 CONFLICTS=	arc-*
 
-EXTRA_PATCHES=	${FILESDIR}/D9921.diff:-p1
 PHP_DESTDIR=	lib/php/arcanist
 RUN_DEPENDS=	php5-libphutil>0:${PORTSDIR}/devel/libphutil
 USE_PHP=	curl json simplexml
@@ -21,7 +19,7 @@ USE_GITHUB=	yes
 NO_BUILD=	yes
 GH_ACCOUNT=	phacility
 GH_TAGNAME=	${GH_COMMIT}
-GH_COMMIT=	7a99e4b
+GH_COMMIT=	2c3268f
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/${PHP_DESTDIR}
