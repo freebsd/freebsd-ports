@@ -31,10 +31,9 @@ include/at-spi-2.0/atspi/atspi-text.h
 include/at-spi-2.0/atspi/atspi-types.h
 include/at-spi-2.0/atspi/atspi-value.h
 lib/girepository-1.0/Atspi-2.0.typelib
-lib/libatspi.a
-lib/libatspi.la
 lib/libatspi.so
 lib/libatspi.so.0
+lib/libatspi.so.0.0.1
 libdata/pkgconfig/atspi-2.pc
 libexec/at-spi-bus-launcher
 libexec/at-spi2-registryd
