@@ -36,15 +36,12 @@
     SUBDIR += courier-authlib-usergdbm
     SUBDIR += cppdb
     SUBDIR += credis
-    SUBDIR += cyrus-imspd
     SUBDIR += dalmp
     SUBDIR += datamodeler
     SUBDIR += db
     SUBDIR += db48
-    SUBDIR += db4o-mono
     SUBDIR += db5
     SUBDIR += db6
-    SUBDIR += dbXML
     SUBDIR += dbconnect
     SUBDIR += dbf
     SUBDIR += dbf2mysql
@@ -56,14 +53,12 @@
     SUBDIR += epgsql
     SUBDIR += erlang-mysql
     SUBDIR += evolution-data-server
-    SUBDIR += exist
     SUBDIR += fastdb
     SUBDIR += firebird21-client
     SUBDIR += firebird21-server
     SUBDIR += firebird25-client
     SUBDIR += firebird25-server
     SUBDIR += flamerobin
-    SUBDIR += flare
     SUBDIR += fortytwo-bdb
     SUBDIR += fpc-dblib
     SUBDIR += fpc-fpindexer
@@ -97,7 +92,6 @@
     SUBDIR += hashtypes
     SUBDIR += hbase
     SUBDIR += hiredis
-    SUBDIR += hk_classes
     SUBDIR += hs-esqueleto
     SUBDIR += hs-mysql
     SUBDIR += hs-persistent
@@ -166,7 +160,6 @@
     SUBDIR += linux-oracle-instantclient-sqlplus
     SUBDIR += liquibase
     SUBDIR += lmdb
-    SUBDIR += lsdb
     SUBDIR += luadbi
     SUBDIR += luasql-mysql
     SUBDIR += luasql-postgres
@@ -187,7 +180,6 @@
     SUBDIR += mongodb
     SUBDIR += mrtg-mysql-load
     SUBDIR += msql
-    SUBDIR += msql3
     SUBDIR += mtop
     SUBDIR += my2cego
     SUBDIR += mydbf2mysql
@@ -216,7 +208,6 @@
     SUBDIR += mysql56-client
     SUBDIR += mysql56-server
     SUBDIR += mysqlbackup
-    SUBDIR += mysqlcppapi
     SUBDIR += mysqldumper
     SUBDIR += mysqlidxchk
     SUBDIR += mysqlreport
@@ -233,7 +224,6 @@
     SUBDIR += ntdb
     SUBDIR += ocaml-dbm
     SUBDIR += ocaml-mysql
-    SUBDIR += ocaml-pgocaml
     SUBDIR += ocaml-sqlite3
     SUBDIR += openark-kit
     SUBDIR += openbase-jdbc
@@ -498,7 +488,6 @@
     SUBDIR += pear-DB_Table
     SUBDIR += pear-DB_ldap
     SUBDIR += pear-DB_ldap2
-    SUBDIR += pear-Doctrine12
     SUBDIR += pear-DoctrineCommon
     SUBDIR += pear-DoctrineDBAL
     SUBDIR += pear-DoctrineORM
@@ -816,10 +805,8 @@
     SUBDIR += ruby-dbi
     SUBDIR += ruby-frontbase
     SUBDIR += ruby-gdbm
-    SUBDIR += ruby-msql
     SUBDIR += ruby-mysql
     SUBDIR += ruby-o_dbm
-    SUBDIR += ruby-oci8
     SUBDIR += ruby-odbc
     SUBDIR += ruby-qdbm
     SUBDIR += ruby-rdbc1

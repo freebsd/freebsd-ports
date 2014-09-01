@@ -1,4 +1,0 @@
-Before running dbxml for the first time you should run:
-
-%%DBXML_HOME%%/install/create-db
-

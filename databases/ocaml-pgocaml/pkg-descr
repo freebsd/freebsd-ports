@@ -1,4 +1,0 @@
-PG'OCaml is a type-safe, simple interface to PostgreSQL from OCaml. It lets you
-embed SQL statements directly into OCaml code.
-
-WWW:	http://merjis.com/developers/pgocaml
