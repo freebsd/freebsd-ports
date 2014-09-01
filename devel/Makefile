@@ -2821,6 +2821,7 @@
     SUBDIR += p5-Term-Menus
     SUBDIR += p5-Term-ProgressBar
     SUBDIR += p5-Term-ProgressBar-Quiet
+    SUBDIR += p5-Term-ProgressBar-Simple
     SUBDIR += p5-Term-Prompt
     SUBDIR += p5-Term-Query
     SUBDIR += p5-Term-RawInput
