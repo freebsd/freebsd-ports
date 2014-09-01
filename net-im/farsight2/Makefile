@@ -4,6 +4,7 @@
 
 PORTNAME=	farsight2
 PORTVERSION=	0.0.31
+PORTREVISION=	1
 CATEGORIES=	net-im devel
 MASTER_SITES=	http://www.freedesktop.org/software/farstream/releases/farsight2/ \
 		http://miwibox.org/distfiles/
@@ -15,13 +16,14 @@ LIB_DEPENDS=	libnice.so:${PORTSDIR}/net-im/libnice
 
 CONFLICTS=	farstream-[0-9]*
 
-USES=		pkgconfig gettext gmake
+USES=		gettext gmake libtool pathfix pkgconfig python
 USE_LDCONFIG=	yes
-USE_PYTHON=	yes
-USE_GNOME=	gnomehack glib20 ltverhack
+USE_GNOME=	glib20
 USE_GSTREAMER=	core good bad python
-USE_AUTOTOOLS=	libtool
+GNU_CONFIGURE=	yes
+
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
+INSTALL_TARGET=	install-strip
 
 .include <bsd.port.mk>
