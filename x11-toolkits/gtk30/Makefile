@@ -4,7 +4,7 @@
 
 PORTNAME=	gtk
 PORTVERSION=	3.8.8
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	GNOME
 MASTER_SITE_SUBDIR=	sources/gtk+/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
@@ -31,16 +31,19 @@ RUN_DEPENDS+=	${LOCALBASE}/share/icons/hicolor/index.theme:${PORTSDIR}/misc/hico
 USE_PERL5=	build
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
-USE_GNOME=	atk pango gdkpixbuf2 ltverhack gtk-update-icon-cache \
-		introspection:build
-USES+=		gettext gmake pathfix perl5 pkgconfig
+USE_GNOME=	atk gdkpixbuf2 gtk-update-icon-cache \
+		introspection:build pango
+USES+=		gettext gmake libtool pathfix perl5 pkgconfig
 USE_XORG=	xext xrender x11 xinerama xi xrandr xcursor xfixes xdamage \
 		xcomposite
 CONFIGURE_ARGS=	--enable-gtk2-dependency --disable-packagekit
 CPPFLAGS+=	-I${LOCALBASE}/include -fno-omit-frame-pointer
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ENV=	INTROSPECTION_GIRDIR=`pkg-config --variable=girdir gobject-introspection-1.0`
-ltverhack_PATCH_FILES=build-aux/ltmain.sh
+INSTALL_TARGET=	install-strip
+
+LIBVERSION=	0.800.8
+PLIST_SUB+=	LIBVERSION=${LIBVERSION}
 
 GLIB_SCHEMAS=	org.gtk.Demo.gschema.xml \
 		org.gtk.Settings.ColorChooser.gschema.xml \
@@ -96,11 +99,6 @@ post-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/gtk-3.0/${GTK3_VERSION}/loaders
 	${INSTALL_MAN} ${WRKSRC}/docs/reference/gtk/gtk-query-immodules-3.0.1 \
 		${STAGEDIR}${PREFIX}/man/man1
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libgdk-3.so.0
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libgtk-3.so.0
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libgailutil-3.so.0
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/gtk-3.0/3.0.0/immodules/im*.so
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/gtk-3.0/3.0.0/printbackends/libprintbackend-*.so
 
 .include <bsd.port.mk>
 
