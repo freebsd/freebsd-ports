@@ -9,14 +9,12 @@
     SUBDIR += babel
     SUBDIR += biococoa
     SUBDIR += biojava
-    SUBDIR += blast
     SUBDIR += blat
     SUBDIR += boinc-simap
     SUBDIR += chemeq
     SUBDIR += clustalw
     SUBDIR += consed
     SUBDIR += crux
-    SUBDIR += embassy
     SUBDIR += emboss
     SUBDIR += fasta
     SUBDIR += fasta3
@@ -74,7 +72,6 @@
     SUBDIR += py-biopython
     SUBDIR += pycogent
     SUBDIR += pyfasta
-    SUBDIR += pymol
     SUBDIR += python-nexus
     SUBDIR += recombine
     SUBDIR += ruby-bio
