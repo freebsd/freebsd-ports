@@ -2676,17 +2676,16 @@
 %%WWWDIR%%/apps/activity/l10n/hy.php
 %%WWWDIR%%/apps/activity/l10n/ia.php
 %%WWWDIR%%/apps/activity/l10n/id.php
+%%WWWDIR%%/apps/activity/l10n/io.php
 %%WWWDIR%%/apps/activity/l10n/is.php
 %%WWWDIR%%/apps/activity/l10n/it.php
 %%WWWDIR%%/apps/activity/l10n/ja.php
-%%WWWDIR%%/apps/activity/l10n/ja_JP.php
 %%WWWDIR%%/apps/activity/l10n/jv.php
 %%WWWDIR%%/apps/activity/l10n/ka_GE.php
 %%WWWDIR%%/apps/activity/l10n/km.php
 %%WWWDIR%%/apps/activity/l10n/kn.php
 %%WWWDIR%%/apps/activity/l10n/ko.php
 %%WWWDIR%%/apps/activity/l10n/ku_IQ.php
-%%WWWDIR%%/apps/activity/l10n/l10n.pl
 %%WWWDIR%%/apps/activity/l10n/lb.php
 %%WWWDIR%%/apps/activity/l10n/lt_LT.php
 %%WWWDIR%%/apps/activity/l10n/lv.php
@@ -6029,6 +6028,7 @@
 %%WWWDIR%%/apps/files_sharing/tests/base.php
 %%WWWDIR%%/apps/files_sharing/tests/cache.php
 %%WWWDIR%%/apps/files_sharing/tests/externalstorage.php
+%%WWWDIR%%/apps/files_sharing/tests/helper.php
 %%WWWDIR%%/apps/files_sharing/tests/js/appSpec.js
 %%WWWDIR%%/apps/files_sharing/tests/js/shareSpec.js
 %%WWWDIR%%/apps/files_sharing/tests/js/sharedfilelistSpec.js
@@ -7639,6 +7639,7 @@
 %%WWWDIR%%/core/doc/admin/_images/100000000000062A0000005F61A18950.png
 %%WWWDIR%%/core/doc/admin/_images/1000000000000631000000E19D116AA0.png
 %%WWWDIR%%/core/doc/admin/_images/100000000000063F00000090AAE1FA4A.png
+%%WWWDIR%%/core/doc/admin/_images/create_public_share.png
 %%WWWDIR%%/core/doc/admin/_images/install-wizard-advanced.png
 %%WWWDIR%%/core/doc/admin/_images/install-wizard.png
 %%WWWDIR%%/core/doc/admin/_images/ldap-advanced-1-connection.png
@@ -7849,10 +7850,10 @@
 %%WWWDIR%%/core/doc/user/_images/oc_main_web.png
 %%WWWDIR%%/core/doc/user/_images/oc_main_web_labelled.png
 %%WWWDIR%%/core/doc/user/_images/oc_personal_settings_dropdown.png
+%%WWWDIR%%/core/doc/user/_images/oc_personal_settings_dropdown1.png
 %%WWWDIR%%/core/doc/user/_images/oc_personal_settings_window.png
 %%WWWDIR%%/core/doc/user/_images/oc_share_expiration_calendar.png
 %%WWWDIR%%/core/doc/user/_images/oc_share_with_options.png
-%%WWWDIR%%/core/doc/user/_images/oc_user_preferences.png
 %%WWWDIR%%/core/doc/user/_images/osx_webdav1.png
 %%WWWDIR%%/core/doc/user/_images/osx_webdav2.png
 %%WWWDIR%%/core/doc/user/_images/password_change.png
@@ -8369,6 +8370,7 @@
 %%WWWDIR%%/core/templates/message.html
 %%WWWDIR%%/core/templates/singleuser.user.php
 %%WWWDIR%%/core/templates/tags.html
+%%WWWDIR%%/core/templates/untrustedDomain.php
 %%WWWDIR%%/core/templates/update.admin.php
 %%WWWDIR%%/core/templates/update.user.php
 %%WWWDIR%%/cron.php
@@ -10003,6 +10005,7 @@
 %%WWWDIR%%/lib/private/migration/provider.php
 %%WWWDIR%%/lib/private/mimetypes.list.php
 %%WWWDIR%%/lib/private/navigationmanager.php
+%%WWWDIR%%/lib/private/needsupdateexception.php
 %%WWWDIR%%/lib/private/notsquareexception.php
 %%WWWDIR%%/lib/private/ocs.php
 %%WWWDIR%%/lib/private/ocs/cloud.php
@@ -10038,6 +10041,7 @@
 %%WWWDIR%%/lib/private/search/result/folder.php
 %%WWWDIR%%/lib/private/search/result/image.php
 %%WWWDIR%%/lib/private/server.php
+%%WWWDIR%%/lib/private/serviceunavailableexception.php
 %%WWWDIR%%/lib/private/session/internal.php
 %%WWWDIR%%/lib/private/session/memory.php
 %%WWWDIR%%/lib/private/session/session.php
@@ -10140,6 +10144,8 @@
 %%WWWDIR%%/lib/public/icontainer.php
 %%WWWDIR%%/lib/public/idb.php
 %%WWWDIR%%/lib/public/idbconnection.php
+%%WWWDIR%%/lib/public/igroup.php
+%%WWWDIR%%/lib/public/igroupmanager.php
 %%WWWDIR%%/lib/public/ihelper.php
 %%WWWDIR%%/lib/public/il10n.php
 %%WWWDIR%%/lib/public/ilogger.php
