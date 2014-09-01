@@ -30,7 +30,6 @@ ASpath-tree-*.tar.gz	net-mgmt/aspathtree	not redistributable, license agreement 
 aacplusenc-*		audio/aacplusenc	unclear legal status, probably need licenses from 3GPP, Via Licensing and Coding Technologies
 acroread/AdbeRdr8.*	print/acroread8		Must fill out redistribution form at http://www.adobe.com/products/acrobat/distribute.html
 acroread/AdbeRdr9.*	print/acroread9		Must fill out redistribution form at http://www.adobe.com/products/acrobat/distribute.html
-actx-*			games/actx		Contains commercial character data
 adobesvg-*		graphics/linux-adobesvg	Redistribution prohibited
 adom-*			games/adom		Copy of CD must be sent to author
 aestats-*		games/aestats		Commercial use is prohibited
@@ -81,7 +80,6 @@ dsnake-*		games/dsnake		License prohibits any reselling
 dtiquery-*		science/dtiquery	License agreement is required
 eagle-lin-*.run		cad/linux-eagle5	Usage permitted for non-commercial purposes only
 eawpats*		audio/eawpats		Some of the patches are not for commercial use
-eClient-linux-i686.run	games/atitd		Redistribution not allowed
 ecw_jpeg_2000_*.zip	graphics/libecwj2	Registration required to download sources, but sources no longer available on ERDAS website
 edith*			editors/edith		Redistribution not allowed
 eijiro*			japanese/eijiro-fpw	The original dictionary is not free
@@ -220,7 +218,6 @@ rapid-*			math/rapid		For any commercial purpose, you must request a license fro
 raproxy*.tar.gz		audio/raproxy		License allows only use in a firewall, or with RA products
 rarbsd-*		archivers/rar		only unmodified original package can be distributed
 RealPlayer-*.rpm	multimedia/linux-realplayer Redistribution not allowed
-rftg-*			games/rftg		Redistribution not authorized
 ricty-*			japanese/font-ricty	Redistribution not allowed
 ringtonetools-*		misc/ringtonetools	Not free for commercial organizations
 savage/SFE*		games/linux-savage	Freeware, but license terms are unclear
@@ -233,7 +230,6 @@ shorten-*		audio/shorten		May not be sold.  May not be distributed if modified
 sid-milter-*		mail/sid-milter		May incorporate intellectual property, possible patent issues
 simian-*		devel/simian		Have to agree to license before download
 skype*			net-im/skype		Redistribution prohibited
-sof-*-cdrom-x86.run	games/linux-sof		Redistribution is limited
 squeezeboxserver-*	audio/squeezeboxserver	Contains non-redistributable firmware, documentation, and images
 stardict-longman-*	textproc/stardict-longman	Possible copyright infringement
 stat.tar.Z		math/unixstat		License does not allow redistribution of binaries
@@ -256,7 +252,6 @@ tripwire-*.tar.gz	security/tripwire12	Cannot be redistributed for more than the 
 TrueCrypt*		security/truecrypt	May not be redistributed.  Must accept license to download.
 tuc-*			converters/tuc		Author does not allow CD-ROM distribution
 tw_cli-*		sysutils/tw_cli		Redistribution forbidden by license
-uDrawGraph-*		graphics/uDrawGraph	Binary under GNU LGPL without accompanying source
 ue*dev.zip		editors/uemacs		Resale allowed for media cost only
 unifi-2*/UniFi.unix.zip	net-mgmt/unifi2		Redistribution of bundled firmware images is not permitted
 unifi-3*/UniFi.unix.zip	net-mgmt/unifi3		Redistribution of bundled firmware images is not permitted

@@ -17,7 +17,6 @@
     SUBDIR += abe
     SUBDIR += abuse_sdl
     SUBDIR += acm
-    SUBDIR += actx
     SUBDIR += adgali
     SUBDIR += adom
     SUBDIR += adonthell
@@ -52,14 +51,12 @@
     SUBDIR += asteroid
     SUBDIR += asteroids3d
     SUBDIR += atanks
-    SUBDIR += atitd
     SUBDIR += atomix
     SUBDIR += atr3d
     SUBDIR += atris
     SUBDIR += atris-sounds
     SUBDIR += avanor
     SUBDIR += avoision
-    SUBDIR += avp-demo
     SUBDIR += awale
     SUBDIR += awele
     SUBDIR += balazar
@@ -540,7 +537,6 @@
     SUBDIR += linux-rtcw
     SUBDIR += linux-savage
     SUBDIR += linux-skulltag
-    SUBDIR += linux-sof
     SUBDIR += linux-ssamtfe
     SUBDIR += linux-ssamtse
     SUBDIR += linux-unrealgold
@@ -806,7 +802,6 @@
     SUBDIR += quake3
     SUBDIR += quake3-data
     SUBDIR += quake3-excessive
-    SUBDIR += quake3-freezetag
     SUBDIR += quake3-osp
     SUBDIR += quake3-ra3
     SUBDIR += quake3-ut
@@ -826,7 +821,6 @@
     SUBDIR += residualvm
     SUBDIR += rezerwar
     SUBDIR += rfksay
-    SUBDIR += rftg
     SUBDIR += ri-li
     SUBDIR += rnd_jue
     SUBDIR += robocalypto
