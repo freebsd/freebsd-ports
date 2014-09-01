@@ -1,6 +1,0 @@
-%%EMACS_VERSION_SITE_LISPDIR%%/lsdb/lsdb.el
-%%EMACS_VERSION_SITE_LISPDIR%%/lsdb/lsdb.elc
-%%EMACS_VERSION_SITE_LISPDIR%%/lsdb/bbdb-to-lsdb.el
-@dirrm %%EMACS_VERSION_SITE_LISPDIR%%/lsdb
-%%PORTDOCS%%share/doc/lsdb/README
-%%PORTDOCS%%@dirrm share/doc/lsdb

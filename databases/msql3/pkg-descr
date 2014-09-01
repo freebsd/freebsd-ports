@@ -1,7 +1,0 @@
-This is version 3 of the Mini SQL (mSQL) relational database system.
-The software provides a fast and efficient database system that supports
-a supset of the ANSI SQL query language.  Application programs can use
-the mSQL client API library and access mSQL servers both on their local
-machine and over TCP/IP networks.
-
-WWW: http://www.hughes.com.au/

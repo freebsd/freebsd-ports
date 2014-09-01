@@ -1,8 +1,0 @@
-The dbXML Core is a native XML database. As such it is a database
-server intended to manage large numbers of small XML documents.
-The documents are stored in collections and the server provides
-the ability to query these collections using XPath. The server is
-lightweight, modular and suitable for embedding in custom applications
-or running as a standalone database.
-
-WWW:	http://dbxml-core.sourceforge.net/
