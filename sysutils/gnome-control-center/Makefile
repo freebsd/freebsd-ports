@@ -4,7 +4,7 @@
 
 PORTNAME=	gnome-control-center
 PORTVERSION=	2.32.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	sysutils gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -20,7 +20,8 @@ BUILD_DEPENDS=	${LOCALBASE}/libexec/gnome-settings-daemon:${PORTSDIR}/sysutils/g
 RUN_DEPENDS=	gnome-eject:${PORTSDIR}/sysutils/gnome-mount \
 		${LOCALBASE}/libexec/gnome-settings-daemon:${PORTSDIR}/sysutils/gnome-settings-daemon
 
-USES=		desktop-file-utils gettext gmake pathfix pkgconfig tar:bzip2
+USES=		desktop-file-utils gettext gmake libtool pathfix pkgconfig \
+		shared-mime-info tar:bzip2
 GNOME_DESKTOP_VERSION=2
 USE_GSTREAMER=	good
 WANT_GNOME=	yes
@@ -31,6 +32,7 @@ GNU_CONFIGURE=	yes
 INSTALLS_OMF=	yes
 INSTALLS_ICONS=	yes
 USE_LDCONFIG=	yes
+CONFIGURE_ARGS=	--disable-update-mimedb
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
