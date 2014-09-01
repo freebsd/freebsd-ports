@@ -26,9 +26,7 @@
     SUBDIR += celvis
     SUBDIR += chiconv
     SUBDIR += cless
-    SUBDIR += cmexfonts
     SUBDIR += cnprint
-    SUBDIR += cwtex
     SUBDIR += cwtexttf
     SUBDIR += dictd-database
     SUBDIR += docproj
@@ -54,7 +52,6 @@
     SUBDIR += gcin
     SUBDIR += gimp-help-zh_CN
     SUBDIR += gugod-clean
-    SUBDIR += hanzim
     SUBDIR += hc
     SUBDIR += ibus-chewing
     SUBDIR += ibus-pinyin
@@ -74,10 +71,7 @@
     SUBDIR += librime
     SUBDIR += libtabe
     SUBDIR += lunar
-    SUBDIR += miniChinput
-    SUBDIR += moefonts-cid
     SUBDIR += moettf
-    SUBDIR += msttf
     SUBDIR += muni
     SUBDIR += mutt
     SUBDIR += oicq
@@ -107,7 +101,6 @@
     SUBDIR += php-cconv
     SUBDIR += phpbb-tw
     SUBDIR += phpbb3-tw
-    SUBDIR += pine4
     SUBDIR += py-cconv
     SUBDIR += pyzy
     SUBDIR += qe
@@ -131,8 +124,6 @@
     SUBDIR += wordpress-zh_CN
     SUBDIR += wordpress-zh_TW
     SUBDIR += xpdf
-    SUBDIR += xsim
     SUBDIR += ydict
-    SUBDIR += zhcon
 
 .include <bsd.port.subdir.mk>

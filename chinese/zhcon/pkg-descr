@@ -1,7 +1,0 @@
-Zhcon is fast CJK (Chinese/Japanese/Korean) virtual console, it can display
-Chinese, Japanese, or Korean double byte characters.  Supported language
-encodings include: GB2312, GBK, Big5, JIS, and KSC; UTF-8 is also supported.
-
-It can use input methods (table based) from M$ Pwin98 and UCDOS for M$-DOG.
-
-WWW: http://sourceforge.net/projects/zhcon/

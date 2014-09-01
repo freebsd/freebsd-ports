@@ -46,7 +46,6 @@
     SUBDIR += flrig
     SUBDIR += flwrap
     SUBDIR += gammu
-    SUBDIR += gammu-devel
     SUBDIR += ge-x2212
     SUBDIR += geoid
     SUBDIR += gkermit
