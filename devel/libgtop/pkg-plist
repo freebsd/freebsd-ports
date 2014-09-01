@@ -48,9 +48,9 @@ include/libgtop-2.0/glibtop_server.h
 include/libgtop-2.0/glibtop_suid.h
 include/libgtop-2.0/libgtopconfig.h
 lib/libgtop-2.0.a
-lib/libgtop-2.0.la
 lib/libgtop-2.0.so
 lib/libgtop-2.0.so.7
+lib/libgtop-2.0.so.7.2.0
 libdata/pkgconfig/libgtop-2.0.pc
 %%DOCSDIR%%/home.png
 %%DOCSDIR%%/index.html

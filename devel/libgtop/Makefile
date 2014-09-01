@@ -4,7 +4,7 @@
 
 PORTNAME=	libgtop
 PORTVERSION=	2.28.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -14,12 +14,13 @@ COMMENT=	GNOME 2 top library
 
 USE_PERL5=	build
 USE_XORG=	xau
-USES=		gettext gmake pathfix pkgconfig perl5 tar:xz
-USE_GNOME=	gnomeprefix glib20 ltverhack intlhack
+USES=		gettext gmake libtool pathfix perl5 pkgconfig tar:xz
+USE_GNOME=	gnomeprefix glib20 intlhack
 USE_LDCONFIG=	yes
-USE_AUTOTOOLS=	libtool
+GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include -DHAVE_NET_IF_VAR_H -D_WANT_IFADDR
 LDFLAGS+=	-L${LOCALBASE}/lib
+INSTALL_TARGET=	install-strip
 CONFIGURE_ARGS=	--disable-introspection
 
 INFO=		libgtop2
@@ -28,8 +29,5 @@ PKGMESSAGE=	${FILESDIR}/pkg-message
 
 post-configure:
 	@${FIND} ${WRKSRC} -type f | ${XARGS} ${TOUCH} -f
-
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libgtop-2.0.so.7
 
 .include <bsd.port.mk>
