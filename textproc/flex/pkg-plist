@@ -2,9 +2,7 @@ bin/flex
 bin/flex++
 include/flex/FlexLexer.h
 lib/libfl.a
-lib/libfl.la
 lib/libfl_pic.a
-lib/libfl_pic.la
 man/man1/flex.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
