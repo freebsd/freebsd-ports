@@ -4,6 +4,7 @@
 
 PORTNAME=	json-glib
 PORTVERSION=	0.14.2
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	GNOME
 
@@ -13,11 +14,12 @@ COMMENT=	JSON (RFC 4627) interface for Glib
 BUILD_DEPENDS=	${LOCALBASE}/share/gir-1.0/GLib-2.0.gir:${PORTSDIR}/devel/gobject-introspection
 RUN_DEPENDS=	${LOCALBASE}/share/gir-1.0/GLib-2.0.gir:${PORTSDIR}/devel/gobject-introspection
 
-USES=		pkgconfig tar:xz gmake
-USE_GNOME=	glib20 gnomehack gnomeprefix ltverhack introspection:build
-USE_AUTOTOOLS=	libtool
+USES=		gmake libtool pathfix pkgconfig tar:xz
+USE_GNOME=	glib20 gnomeprefix introspection:build
+GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
+INSTALL_TARGET=	install-strip
 
 .include <bsd.port.mk>
