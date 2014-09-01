@@ -3,49 +3,60 @@
 
 PORTNAME=	sgifonts
 PORTVERSION=	1.0.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11-fonts
-MASTER_SITES=	ftp://patches-europe.sgi.com/pub/linux/ProPack1.4/SRPMS/ \
-		ftp://ftp.rediris.es/sites/patches-europe.sgi.com/pub/linux/ProPack1.4/SRPMS/
+MASTER_SITES=	ftp://patches.sgi.com/pub/linux/ProPack1.4/SRPMS/
 DISTNAME=	sgi-fonts-1.0-1.src
 EXTRACT_SUFX=	.rpm
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fonts from the SGI ProPack 1.4 (originally for Linux)
 
-BUILD_DEPENDS=		bdftopcf:${PORTSDIR}/x11-fonts/bdftopcf \
-			mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir
+LICENSE=	MIT
 
-PLIST=		${WRKDIR}/pkg-plist
+BUILD_DEPENDS=	bdftopcf:${PORTSDIR}/x11-fonts/bdftopcf \
+		mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir
+
+NO_ARCH=	yes
+NO_WRKSUBDIR=	yes
+
+SUB_FILES=	pkg-message
+
+PLIST_FILES=	lib/X11/fonts/local/sgi/fonts.alias \
+		lib/X11/fonts/local/sgi/fonts.dir \
+		${FONTS:S!^!lib/X11/fonts/local/sgi/!:S!$!.pcf.gz!}
 PLIST_DIRS=	lib/X11/fonts/local/sgi
-PKGMESSAGE=	${WRKDIR}/pkg-message
-USES=		imake
-EXTRACT_CMD=	${TAR}
-EXTRACT_BEFORE_ARGS=	-O -xf
-EXTRACT_AFTER_ARGS=	sgi-fonts.tar.gz | ${TAR} -xf -
-WRKSRC=		${WRKDIR}/sgi-fonts
 
-NO_STAGE=	yes
-pre-install:
-	@${RM} -f ${PLIST}
-	@cd ${WRKSRC}; for ii in `${LS} *gz fonts.alias fonts.dir|${SORT}`; do \
-		${ECHO_CMD} lib/X11/fonts/local/sgi/$${ii} >> ${PLIST}; \
-	done
-	@${ECHO_CMD} "******************************************" >${PKGMESSAGE}
-	@${ECHO_CMD} "Add a line" >> ${PKGMESSAGE}
-	@${ECHO_CMD} "FontPath \"${PREFIX}/lib/X11/fonts/local/sgi\"" \
-		>> ${PKGMESSAGE}
-	@${ECHO_CMD} \
-	"to your XF86Config." >> ${PKGMESSAGE}
-	@${ECHO_CMD} "Then, restart the X server or do \"xset fp rehash\"."\
-		>> ${PKGMESSAGE}
-	@${ECHO_CMD} "*****************************************" >>${PKGMESSAGE}
+FONTS=		Scr7 Scr8 Scr9 Scr10 Scr11 Scr12 \
+		Scr13 Scr14 Scr15 Scr16 Scr18 \
+		ScrB7 ScrB8 ScrB9 ScrB10 ScrB11 ScrB12 \
+		ScrB13 ScrB14 ScrB15 ScrB16 ScrB18 \
+		haeberli12 haeberli24 haeberli36 \
+		intl15 iris10 iris12 iris13 \
+		rock12 rock18 rock24 rock36 \
+		space10 type13
+
+post-extract:
+	@(cd ${WRKSRC} && ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} \
+		sgi-fonts.tar.gz ${EXTRACT_AFTER_ARGS})
+
+post-patch:
+	@${FIND} ${WRKSRC}/sgi-fonts/sgi -name "*.bdf" | ${XARGS} \
+		${REINPLACE_CMD} -e \
+		'/^FOUNDRY/s|""|"SGI"|'
+
+do-build:
+.for i in ${FONTS}
+	(cd ${WRKSRC}/sgi-fonts/sgi \
+		&& bdftopcf ${i}.bdf | ${GZIP_CMD} > ${i}.pcf.gz)
+.endfor
 
 do-install:
-	${MKDIR} ${PREFIX}/lib/X11/fonts/local/sgi
-	cd ${WRKSRC}; \
-		${INSTALL_DATA} *gz fonts.alias fonts.dir \
-		${PREFIX}/lib/X11/fonts/local/sgi
-	@${CAT} ${PKGMESSAGE}
+	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/X11/fonts/local/sgi
+	(cd ${WRKSRC}/sgi-fonts/sgi && ${INSTALL_DATA} fonts.alias \
+		${STAGEDIR}${PREFIX}/lib/X11/fonts/local/sgi)
+	(cd ${WRKSRC}/sgi-fonts/sgi && ${INSTALL_DATA} *.pcf.gz \
+		${STAGEDIR}${PREFIX}/lib/X11/fonts/local/sgi)
+	(cd ${STAGEDIR}${PREFIX}/lib/X11/fonts/local/sgi && mkfontdir)
 
 .include <bsd.port.mk>

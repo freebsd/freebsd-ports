@@ -1,0 +1,6 @@
+******************************************
+Add a line
+FontPath "%%PREFIX%%/lib/X11/fonts/local/sgi"
+to your xorg.conf.
+Then, restart the X server or do "xset fp rehash".
+*****************************************
