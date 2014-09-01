@@ -4,7 +4,7 @@
 
 PORTNAME=	gnome-utils
 PORTVERSION=	2.32.0
-PORTREVISION=	2
+PORTREVISION=	3
 PORTEPOCH=	1
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	GNOME
@@ -20,15 +20,16 @@ CONFLICTS=	baobob-3.[0-9]* gnome-dictionary-3.[0-9]* \
 		gnome-font-viewer-3.[0-9]* gnome-screenshot-3.[0-9]* \
 		gnome-search-tool-3.[0-9]* gnome-system-log-3.[0-9]*
 
-USES=		gettext gmake pkgconfig tar:bzip2
+USES=		gettext gmake libtool pathfix pkgconfig tar:bzip2
 INSTALLS_OMF=	yes
 USE_LDCONFIG=	yes
 INSTALLS_ICONS=	yes
-USE_GNOME=	gnomeprefix gnomehack intlhack gnomepanel ltverhack
-USE_AUTOTOOLS=	libtool
+USE_GNOME=	gnomeprefix intlhack gnomepanel
+GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-maintainer-flags=no
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
+INSTALL_TARGET=	install-strip
 
 GCONF_SCHEMAS=	gnome-dictionary.schemas gnome-screenshot.schemas \
 		gnome-search-tool.schemas baobab.schemas \
