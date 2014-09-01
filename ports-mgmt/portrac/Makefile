@@ -22,9 +22,7 @@ PLIST_DIRS=	share/portrac
 USES=		qmake tar:bzip2
 USE_QT4=	gui moc_build
 
-.if defined(WITH_PKGNG)
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-PortChecker.cc
-.endif
 
 do-install:
 		${INSTALL_PROGRAM} ${WRKDIR}/${DISTNAME}/portrac ${STAGEDIR}${PREFIX}/bin && \

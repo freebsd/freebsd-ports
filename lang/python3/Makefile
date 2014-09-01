@@ -48,12 +48,7 @@ PORTUPGRADE_CMD=	${LOCALBASE}/sbin/portupgrade
 PORTUPGRADE_CMD=	${LOCALBASE}/sbin/portmaster
 .endif
 
-.if defined(WITH_PKGNG)
 PKG_LIST=	${PKG_BIN} query -a '%n-%v'
 PKG_LIST_FILES=	${PKG_INFO} -l
-.else
-PKG_LIST=	${PKG_INFO} -Ea
-PKG_LIST_FILES=	${PKG_INFO} -L
-.endif
 
 .include <bsd.port.post.mk>

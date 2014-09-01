@@ -38,10 +38,10 @@ EXTRA_PATCHES=	${FILESDIR}/extra-patch-docs_pkg.8
 MAKE_ARGS+=	DEBUG_FLAGS="${DEBUG_FLAGS}"
 .endif
 
-.if defined(WITH_PKGNG)
-.if ${WITH_PKGNG} == devel
+.if defined(WITH_PKG)
+.if ${WITH_PKG} == devel
 NO_LATEST_LINK=	yes
-IGNORE=	WITH_PKGNG is defined to 'devel', this version is the stable one
+IGNORE=	WITH_PKG is defined to 'devel', this version is the stable one
 .endif
 .if exists(${LOCALBASE}/sbin/pkg_info) || exists(/usr/sbin/pkg_info)
 NB_OLDPKGS!=	pkg_info 2>/dev/null | wc -l
@@ -55,19 +55,12 @@ NB_NEWPKGS=	0
 .if ${NB_OLDPKGS} > 0 && ${NB_NEWPKGS} == 0
 
 pre-everything::
-	@${ECHO_CMD} "You are about to convert your system to pkgng while you have ports/packages"; \
+	@${ECHO_CMD} "You are about to convert your system to pkg while you have ports/packages"; \
 	 ${ECHO_CMD} "installed with the old pkg_install tools."; \
 	 ${ECHO_CMD} ""; \
-	 ${ECHO_CMD} "You can choose to: "; \
-	 ${ECHO_CMD} "- keep pkg_install as the package management system by adding this line to /etc/make.conf:"; \
-	 ${ECHO_CMD} ""; \
-	 ${ECHO_CMD} "    WITHOUT_PKGNG=yes" ; \
-	 ${ECHO_CMD} ""; \
-	 ${ECHO_CMD} "- switch to pkgng:"; \
-	 ${ECHO_CMD} "    1) Add WITHOUT_PKGNG to /etc/make.conf"; \
-	 ${ECHO_CMD} "    2) Install ports-mgmt/pkg"; \
-	 ${ECHO_CMD} "    3) Convert your package database by running pkg2ng"; \
-	 ${ECHO_CMD} "    4) Remove WITHOUT_PKGNG from /etc/make.conf"; \
+	 ${ECHO_CMD} "To switch to pkg:"; \
+	 ${ECHO_CMD} "    1) Install ports-mgmt/pkg"; \
+	 ${ECHO_CMD} "    2) Convert your package database by running pkg2ng"; \
 	 ${ECHO_CMD} ""; \
 	exit 1
 
@@ -76,11 +69,9 @@ pre-everything::
 .endif
 
 #define PKG_DEPENDS to nothing to avoid infinite loop looking for pkg :)
-.if defined(WITH_PKGNG)
 PKG_DEPENDS=
 .undef INSTALLS_DEPENDS
 PKG_BIN=	${WRKSRC}/src/pkg-static
-.endif
 
 post-install:
 	@${MV} ${STAGEDIR}${PREFIX}/lib/libpkg_static.a \

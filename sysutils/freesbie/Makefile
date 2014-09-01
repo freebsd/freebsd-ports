@@ -24,11 +24,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}2
 ONLY_FOR_ARCHS=	amd64 i386 powerpc
 ONLY_FOR_ARCHS_REASON=	FreeSBIE build system only supports amd64, i386 and powerpc
 
-.include <bsd.port.pre.mk>
-
-.if defined(WITH_PKGNG)
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-pkgng
-.endif
 
 pre-configure:
 	@${SED} -e "s:%%ARCH%%:${ARCH}:g" ${FILESDIR}/conf-arch-FREESBIE.in > ${WRKSRC}/conf/${ARCH}/FREESBIE
@@ -41,4 +37,4 @@ do-install:
 	@ cd ${WRKSRC} && ${FIND} . -type f -print | tar -cf - -T - | \
 	tar -xf - -C ${STAGEDIR}${DATADIR}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

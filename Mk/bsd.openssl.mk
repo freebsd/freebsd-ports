@@ -90,30 +90,16 @@ OPENSSLBASE=		${LOCALBASE}
 # find installed port and use it for dependency
 PKG_DBDIR?=		${DESTDIR}/var/db/pkg
 .if !defined(OPENSSL_INSTALLED)
-.if defined(WITH_PKGNG)
 .if defined(DESTDIR)
 PKGARGS=	-c ${DESTDIR}
 .else
 PKGARGS=
 .endif
 OPENSSL_INSTALLED!=	${PKG_BIN} ${PKGARGS} which -qo ${LOCALBASE}/lib/libcrypto.so || :
-.else
-OPENSSL_INSTALLED!=	find "${PKG_DBDIR}/" -type f -name "+CONTENTS" -print0 | \
-			xargs -0 grep -l "^lib/libcrypto.so.[0-9]*$$" | \
-			while read contents; do \
-				sslprefix=`grep "^@cwd " "$${contents}" | ${HEAD} -n 1`; \
-				if test "$${sslprefix}" = "@cwd ${LOCALBASE}" ; then \
-					echo "$${contents}"; break; fi; done
-.endif
 .endif
 .if defined(OPENSSL_INSTALLED) && ${OPENSSL_INSTALLED} != ""
-.if defined(WITH_PKGNG)
 OPENSSL_PORT=		${OPENSSL_INSTALLED}
 OPENSSL_SHLIBFILE!=	${PKG_INFO} -ql ${OPENSSL_INSTALLED} | grep "^`pkg query "%p" ${OPENSSL_INSTALLED}`/lib/libcrypto.so.[0-9]*$$"
-.else
-OPENSSL_PORT!=		grep "^@comment ORIGIN:" "${OPENSSL_INSTALLED}" | ${CUT} -d : -f 2
-OPENSSL_SHLIBFILE!=	grep "^lib/libcrypto.so.[0-9]*$$" "${OPENSSL_INSTALLED}"
-.endif
 OPENSSL_SHLIBVER?=	${OPENSSL_SHLIBFILE:E}
 .else
 # PKG_DBDIR was not found

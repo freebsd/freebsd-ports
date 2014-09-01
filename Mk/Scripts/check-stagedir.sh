@@ -192,37 +192,12 @@ pkg_get_recursive_deps() {
 ### GATHER DIRS OWNED BY RUN-DEPENDS. WHY ARE WE SCREAMING?
 lookup_dependency_dirs() {
 	: >${WRKDIR}/.run-depends-dirs
-	if [ -n "${WITH_PKGNG}" ]; then
-		if [ -n "${PACKAGE_DEPENDS}" ]; then
-			echo "${PACKAGE_DEPENDS}" | while read pkg; do \
-			    PKG_CHECKED= pkg_get_recursive_deps "${pkg}"; \
-			    done | sort -u | xargs ${PKG_QUERY} "%D" | \
-			    sed -e 's,/$,,' | sort -u \
-			    >>${WRKDIR}/.run-depends-dirs
-		fi
-	else
-		# Evaluate ACTUAL-PACKAGE-DEPENDS
-		packagelist=
-		package_depends=$(eval ${PACKAGE_DEPENDS})
-		if [ -n "${package_depends}" ]; then
-			# This ugly mess can go away with pkg_install EOL
-			awk_script=$(cat <<'EOF'
-				/Deinstall directory remove:/ {print $4}
-				/UNEXEC 'rmdir "[^"]*" 2>\/dev\/null \|\| true'/ {
-					gsub(/"%D\//, "\"", $0)
-					match($0, /"[^"]*"/)
-					dir=substr($0, RSTART+1, RLENGTH-2)
-					print dir
-				}
-EOF
-)
-			echo "${package_depends}" | tr ' ' '\n' | \
-			    cut -d : -f 1 | sort -u | \
-			    xargs -n 1 ${PKG_QUERY} -f | \
-			    awk "${awk_script}" | \
-			    sed -e "/^[^/]/s,^,${LOCALBASE}/," | sort -u \
-			    >>${WRKDIR}/.run-depends-dirs
-		fi
+	if [ -n "${PACKAGE_DEPENDS}" ]; then
+		echo "${PACKAGE_DEPENDS}" | while read pkg; do \
+		    PKG_CHECKED= pkg_get_recursive_deps "${pkg}"; \
+		    done | sort -u | xargs ${PKG_QUERY} "%D" | \
+		    sed -e 's,/$,,' | sort -u \
+		    >>${WRKDIR}/.run-depends-dirs
 	fi
 }
 
@@ -438,7 +413,7 @@ esac
 # validate environment
 envfault=
 for i in STAGEDIR PREFIX LOCALBASE WRKDIR WRKSRC MTREE_FILE GNOME_MTREE_FILE \
-    TMPPLIST PLIST_SUB_SED SCRIPTSDIR PACKAGE_DEPENDS WITH_PKGNG PKG_QUERY \
+    TMPPLIST PLIST_SUB_SED SCRIPTSDIR PACKAGE_DEPENDS PKG_QUERY \
     PORT_OPTIONS NO_PREFIX_RMDIR
 do
     if ! ( eval ": \${${i}?}" ) 2>/dev/null ; then

@@ -26,9 +26,6 @@ CMAKE_SOURCE_PATH=	${WRKSRC}/aux/broccoli
 .if defined(BRO_PREFIX)
 PREFIX=		${BRO_PREFIX}
 PLIST_SUB+=	CLEANUP_PREFIX=""
-.if ! defined(WITH_PKGNG) && ! exists(${BRO_PREFIX})
-NEED_ROOT=	yes
-.endif
 NO_MTREE=	yes
 .else
 PLIST_SUB+=	CLEANUP_PREFIX="@comment "
@@ -53,10 +50,6 @@ RUBY_CMAKE_ON=	-D RB_INSTALL_DIR:PATH=${RUBY_SITELIBDIR} \
 RUBY_CMAKE_OFF=		-D DISABLE_RUBY_BINDINGS:BOOL=true
 
 post-install::
-.if defined(BRO_PREFIX) && ! defined(WITH_PKGNG) && ! exists(${BRO_PREFIX})
-	# pkg_install needs PREFIX in order to make a package from STAGEDIR/PREFIX.
-	@${MKDIR} ${PREFIX}
-.endif
 .if defined(BRO_PREFIX) && empty(${PORT_OPTIONS:MPYTHON})
 	# Move lib/pythonX.X tree into BRO_PREFIX
 	${MV} ${STAGEDIR}${PYTHON_LIBDIR} ${STAGEDIR}${PREFIX}/lib
