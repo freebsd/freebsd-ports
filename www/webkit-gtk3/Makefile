@@ -4,7 +4,7 @@
 
 PORTNAME=	webkit
 PORTVERSION=	1.8.3
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	www
 MASTER_SITES=	http://webkitgtk.org/releases/
 PKGNAMESUFFIX=	-gtk3
@@ -22,9 +22,9 @@ LIB_DEPENDS=	libenchant.so:${PORTSDIR}/textproc/enchant \
 
 USE_GSTREAMER=	yes
 USE_XORG=	xt
-USES=		bison gmake pkgconfig gettext perl5 tar:xz
-USE_AUTOTOOLS=	libtool
-USE_GNOME=	gtk30 introspection:build libxslt ltverhack
+USES=		bison gettext gmake libtool perl5 pkgconfig \
+		tar:xz
+USE_GNOME=	gtk30 introspection:build libxslt
 USE_SQLITE=	yes
 USE_LDCONFIG=	yes
 USE_PYTHON_BUILD=	yes
@@ -36,6 +36,7 @@ CONFIGURE_ENV=	ac_cv_path_FLEX="${LOCALBASE}/bin/flex" \
 		PYTHON="${PYTHON_CMD}"
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
+INSTALL_TARGET=	install-strip
 CONFIGURE_ARGS=	--with-gtk=3.0 \
 		--enable-svg-fonts \
 		--disable-geolocation \
@@ -85,9 +86,6 @@ post-patch:
 		${WRKSRC}/Source/WebCore/plugins/PluginDatabase.cpp
 	@${FIND} ${WRKSRC} -name GNUmakefile.* | ${XARGS} ${REINPLACE_CMD} -e \
 		's|[(]libdir[)]/pkgconfig|(prefix)/libdata/pkgconfig|g'
-# disable static library.
-	@${REINPLACE_CMD} -e 's|^build_old_libs=yes|build_old_libs=no|' \
-		${WRKDIR}/gnome-libtool
 	@${REINPLACE_CMD} -e 's|/usr/bin/gcc|${CC}|' \
 		${WRKSRC}/Source/WebCore/dom/make_names.pl \
 		${WRKSRC}/Source/WebCore/css/make-css-file-arrays.pl \
