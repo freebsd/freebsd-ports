@@ -3,11 +3,10 @@ etc/xdg/menus/settings.menu
 include/gnome-menus/gmenu-tree.h
 lib/girepository-1.0/GMenu-2.0.typelib
 lib/libgnome-menu.a
-lib/libgnome-menu.la
 lib/libgnome-menu.so
 lib/libgnome-menu.so.2
+lib/libgnome-menu.so.2.4.10
 %%PYTHON_SITELIBDIR%%/gmenu.a
-%%PYTHON_SITELIBDIR%%/gmenu.la
 %%PYTHON_SITELIBDIR%%/gmenu.so
 libdata/pkgconfig/libgnome-menu.pc
 share/desktop-directories/AudioVideo.directory
