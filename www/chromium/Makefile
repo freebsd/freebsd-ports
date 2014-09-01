@@ -13,7 +13,7 @@ COMMENT=	Mostly BSD-licensed web browser based on WebKit and Gtk+
 LICENSE=	BSD3CLAUSE LGPL21 MPL
 LICENSE_COMB=	multi
 
-CFLAGS+=	-fno-stack-protector
+CFLAGS+=	-fno-stack-protector -isystem${LOCALBASE}/include
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/gperf:${PORTSDIR}/devel/gperf \
 		bash:${PORTSDIR}/shells/bash \
@@ -205,11 +205,6 @@ GYP_DEFINES+=	clang=1
 CFLAGS+=	-Wno-unknown-warning-option
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-clang
 CONFIGURE_ENV+=	AR=/usr/bin/ar
-.endif
-
-# fix for non-poudriere builds, but it confuses pkg-builder on i386
-.if ${ARCH} == amd64
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-manual-amd64
 .endif
 
 # according to portlint the below is passed via bsd.port.mk,
