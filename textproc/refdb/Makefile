@@ -8,7 +8,7 @@ CATEGORIES=	textproc
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-src/${PORTNAME}-src-${PORTVERSION}-1
 DISTNAME=	${PORTNAME}-${PORTVERSION}-1
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ohartman@zedat.fu-berlin.de
 COMMENT=	Bibliographic reference database
 
 LIB_DEPENDS=	libexpat.so:${PORTSDIR}/textproc/expat2 \
