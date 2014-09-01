@@ -16,14 +16,20 @@
 
 actions: [file]
 post-install: <<EOD
-  sample_file="%D/%@"
+  case "%@" in
+  /*) sample_file="%@" ;;
+  *) sample_file="%D/%@" ;;
+  esac
   target_file="${sample_file%.sample}"
   if ! [ -f "${target_file}" ]; then
     /bin/cp -p "${sample_file}" "${target_file}"
   fi
 EOD
 pre-deinstall: <<EOD
-  sample_file="%D/%@"
+  case "%@" in
+  /*) sample_file="%@" ;;
+  *) sample_file="%D/%@" ;;
+  esac
   target_file="${sample_file%.sample}"
   if cmp -s "${target_file}" "${sample_file}"; then
     rm -f "${target_file}"
