@@ -34,12 +34,12 @@ post-patch:
 do-install:
 .if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	cd ${WRKSRC} && ${TCLSH} build.tcl doc
-	cd ${WRKSRC}/embedded/www && ${COPYTREE_SHARE} \* ${STAGEDIR}${DOCSDIR}
+	(cd ${WRKSRC} && ${TCLSH} build.tcl doc)
+	(cd ${WRKSRC}/embedded/www && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR})
 .endif
-	cd ${WRKSRC} && ${TCLSH} build.tcl install ${STAGEDIR}${PREFIX}/lib
+	(cd ${WRKSRC} && ${TCLSH} build.tcl install ${STAGEDIR}${PREFIX}/lib)
 
 regression-test:
-	cd ${WRKSRC} && ${TCLSH} test/all.tcl
+	(cd ${WRKSRC} && ${TCLSH} test/all.tcl)
 
 .include <bsd.port.mk>
