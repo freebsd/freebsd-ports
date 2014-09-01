@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mpich2
-DISTVERSION=	1.4.1p1
+DISTVERSION=	1.5
 PORTEPOCH=	5
 CATEGORIES=	net java parallel
 MASTER_SITES=	http://www.mcs.anl.gov/research/projects/mpich2/downloads/tarballs/${DISTVERSION}/
@@ -55,8 +55,8 @@ NOCCACHE=	yes
 CONFLICTS=	lam-7.* mpd-[0-9]* mpiexec-0.*
 MAKE_JOBS_UNSAFE=	yes
 
-VERSO=		3.3
-VERSOM=		${VERSO:R}
+VERSO=		8.0.1
+VERSOM=		${VERSO:R:R}
 PLIST_SUB=	VER=${VERSO} VERM=${VERSOM}
 SUB_FILES=	pkg-message
 

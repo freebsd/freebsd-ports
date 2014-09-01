@@ -3,7 +3,7 @@
 
 PORTNAME=	fvm
 PORTVERSION=	0.15.3
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	science parallel
 MASTER_SITES=	http://research.edf.com/fichiers/fckeditor/Commun/Innovation/logiciels/code_saturne/Releases/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.//g}
@@ -41,6 +41,8 @@ CONFIGURE_ARGS+=	--with-mpi=${LOCALBASE}/mpi/openmpi
 BUILD_DEPENDS+=	${LOCALBASE}/bin/mpicc:${PORTSDIR}/net/mpich2
 RUN_DEPENDS+=	${LOCALBASE}/bin/mpirun:${PORTSDIR}/net/mpich2
 CONFIGURE_ARGS+=	--with-mpi=${LOCALBASE}
+# Do not directly depend on Fortran, but FFLAGS needed to link with mpich2
+USES+=		fortran
 .endif
 
 .if defined(WITH_DEBUG)

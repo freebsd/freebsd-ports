@@ -1,6 +1,6 @@
---- src/mpe2/sbin/mpeinstall.in.orig	2009-10-16 01:50:22.000000000 +0200
-+++ src/mpe2/sbin/mpeinstall.in	2014-08-20 22:43:03.000000000 +0200
-@@ -529,7 +529,7 @@
+--- src/mpe2/sbin/mpeinstall.in.orig	2012-04-30 22:12:21.000000000 +0200
++++ src/mpe2/sbin/mpeinstall.in	2014-08-31 12:34:38.000000000 +0200
+@@ -531,7 +531,7 @@
      # so $docdir (with NULL PACKAGE) is appended to dirlist for removal.
      savedPACKAGE=$PACKAGE
      PACKAGE=""
@@ -9,7 +9,7 @@
      PACKAGE=$savedPACKAGE
  fi
  
-@@ -577,15 +577,15 @@
+@@ -579,15 +579,15 @@
  # ie INSTALL $top_srcdir/doc  $docdir
  #    INSTALL $top_srcdir/man  $mandir
  #    INSTALL $top_srcdir/html $htmldir
@@ -34,15 +34,7 @@
  
  # Remove old uninstall file
  if [ "$appendUninstall" = 0 -a -f $UNINSTALLFILE ] ; then
-@@ -632,7 +632,6 @@
- 
- if [ "$appendUninstall" = 0 ] ; then
-     echo "$RM -f $sbindir/mpeuninstall" >> $UNINSTALLFILE
--    echo "$RM -f $UNINSTALLFILE" >> $UNINSTALLFILE
- fi
- 
- # Add the directory removes to the UNINSTALL file
-@@ -643,8 +642,8 @@
+@@ -649,8 +649,8 @@
  if [ "$appendUninstall" = 0 ] ; then
      cp $UNINSTALLFILE $sbinbuild_dir/mpeuninstall
  #

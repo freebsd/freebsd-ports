@@ -1,24 +1,11 @@
---- Makefile.in.orig	2011-09-01 20:55:44.000000000 +0200
-+++ Makefile.in	2014-08-25 19:43:34.000000000 +0200
-@@ -202,16 +202,16 @@
- 	if [ -s $(srcdir)/doc/installguide/install.pdf ] ; then $(INSTALL_DATA)  $(srcdir)/doc/installguide/install.pdf ${DESTDIR}${docdir}/install.pdf ; fi
- 	if [ -s $(srcdir)/doc/smpd/smpd_pmi.pdf ] ; then $(INSTALL_DATA)  $(srcdir)/doc/smpd/smpd_pmi.pdf ${DESTDIR}${docdir}/smpd_pmi.pdf ; fi
- 	if [ -s $(srcdir)/doc/logging/logging.pdf ] ; then $(INSTALL_DATA)  $(srcdir)/doc/logging/logging.pdf ${DESTDIR}${docdir}/logging.pdf ; fi
--	(cd src/env && $(MAKE) INSTALL_STRIP_FLAG=$(INSTALL_STRIP_FLAG) PACKAGE=$(PACKAGE) prefix=${DESTDIR}${prefix} exec_prefix=${DESTDIR}${exec_prefix} bindir=${DESTDIR}${bindir} libdir=${DESTDIR}${libdir} includedir=${DESTDIR}${includedir} install)
--	(cd src/packaging/pkgconfig && $(MAKE) INSTALL_STRIP_FLAG=$(INSTALL_STRIP_FLAG) PACKAGE=$(PACKAGE) prefix=${DESTDIR}${prefix} exec_prefix=${DESTDIR}${exec_prefix} bindir=${DESTDIR}${bindir} libdir=${DESTDIR}${libdir} includedir=${DESTDIR}${includedir} install)
--	(cd src/packaging/envmods && $(MAKE) INSTALL_STRIP_FLAG=$(INSTALL_STRIP_FLAG) PACKAGE=$(PACKAGE) prefix=${DESTDIR}${prefix} exec_prefix=${DESTDIR}${exec_prefix} bindir=${DESTDIR}${bindir} libdir=${DESTDIR}${libdir} includedir=${DESTDIR}${includedir} install)
-+	(cd src/env && $(MAKE) INSTALL_STRIP_FLAG=$(INSTALL_STRIP_FLAG) PACKAGE=$(PACKAGE) install)
-+	(cd src/packaging/pkgconfig && $(MAKE) INSTALL_STRIP_FLAG=$(INSTALL_STRIP_FLAG) PACKAGE=$(PACKAGE) install)
-+	(cd src/packaging/envmods && $(MAKE) INSTALL_STRIP_FLAG=$(INSTALL_STRIP_FLAG) PACKAGE=$(PACKAGE) install)
- 	for dir in @bindings_dirs@ - ; do \
- 		if [ "$$dir" = "-" ] ; then break ; fi ;\
--		(cd $$dir && $(MAKE) INSTALL_STRIP_FLAG=$(INSTALL_STRIP_FLAG) PACKAGE=$(PACKAGE) prefix=${DESTDIR}${prefix} exec_prefix=${DESTDIR}${exec_prefix} bindir=${DESTDIR}${bindir} libdir=${DESTDIR}${libdir} includedir=${DESTDIR}${includedir} install) ;\
-+		(cd $$dir && $(MAKE) INSTALL_STRIP_FLAG=$(INSTALL_STRIP_FLAG) PACKAGE=$(PACKAGE) install) ;\
- 	done
- 	for dir in @other_install_dirs@ - ; do \
- 		if [ "$$dir" = "-" ] ; then break ; fi ;\
--		(cd $$dir && $(MAKE) INSTALL_STRIP_FLAG=$(INSTALL_STRIP_FLAG) PACKAGE=$(PACKAGE) prefix=${DESTDIR}${prefix} exec_prefix=${DESTDIR}${exec_prefix} bindir=${DESTDIR}${bindir} libdir=${DESTDIR}${libdir} includedir=${DESTDIR}${includedir} install) ;\
-+		(cd $$dir && $(MAKE) INSTALL_STRIP_FLAG=$(INSTALL_STRIP_FLAG) PACKAGE=$(PACKAGE) install) ;\
- 	done
+--- Makefile.in.orig	2012-10-08 21:02:46.000000000 +0200
++++ Makefile.in	2014-08-31 22:55:10.000000000 +0200
+@@ -6153,7 +6153,7 @@
+ CLEAN_LOCAL_TARGETS = test-clean $(am__append_125)
  
- install-strip:
+ # used by nodist_pkgconfig_DATA
+-pkgconfigdir = $(libdir)/pkgconfig
++pkgconfigdir = $(libdir)data/pkgconfig
+ 
+ # contains all of the "errnames.txt" files that are used by maint/extracterrmsgs
+ # to build src/mpi/errhan/defmsg.h

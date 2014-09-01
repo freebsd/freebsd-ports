@@ -3,7 +3,7 @@
 
 PORTNAME=	imb
 PORTVERSION=	3.0
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	benchmarks parallel
 MASTER_SITES=	${MASTER_SITE_LOCAL} \
 		http://cache-www.intel.com/cd/00/00/32/71/
