@@ -1,0 +1,8 @@
+Ng is very lightweight Emacs-clone text editor.  Ng is based on Mg
+version 2a and support Japanese encoding (EUC-JP, SHIFT-JIS, JIS).
+
+This port supports Canna Japanese kana-kanji conversion.  If you want
+to use Canna, set environment variable CANNAHOST to the hostname of
+your Canna server. 
+
+WWW: http://tt.sakura.ne.jp/~amura/ng/

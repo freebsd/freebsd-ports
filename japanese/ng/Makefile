@@ -5,7 +5,7 @@ PORTNAME=	ng
 PORTVERSION=	1.4.4
 PORTREVISION=	2
 CATEGORIES=	japanese editors
-MASTER_SITES=	http://tomato.sakura.ne.jp/~amura/archives/ng/
+MASTER_SITES=	http://tt.sakura.ne.jp/~amura/archives/ng/
 
 PATCH_SITES=	${MASTER_SITES}
 PATCHFILES=	ng-1.4.4-replace_bug.patch
@@ -13,39 +13,37 @@ PATCHFILES=	ng-1.4.4-replace_bug.patch
 MAINTAINER?=	ports@FreeBSD.org
 COMMENT?=	Light Emacs-clone with Japanese support
 
-MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}" LIBS="${LIBS}"
-LIBS=		-ltermcap
-
+MAKEFILE=	sys/sysv/Makefile
+MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}" LIBS="${LDFLAGS}"
 ALL_TARGET=	ng
+
+CFLAGS+=	-Wno-error=return-type
+LDFLAGS+=	-ltermcap
 
 DOCSDIR=	${PREFIX}/share/doc/ja/${PORTNAME}
 
-MYPORTDOCS=	CHANGES.1_3 CHANGES.doc Ng.FAQ Ng.doc Ng.ref Ng.tut \
-		README.Ng README.SKG
-PORTDOCS=	${MYPORTDOCS:C/$/.euc-jp/}
+CONFLICTS=	ng-devel-[0-9]*
 
+PORTDOCS=	${MYPORTDOCS:C/$/.euc-jp/}
 PLIST_FILES=	bin/ng
 
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
+OPTIONS_DEFINE=		CANNA DOCS
 
-.if defined(WITH_CANNA)
-LIB_DEPENDS+=	libcanna.so:${PORTSDIR}/japanese/canna-lib
+CANNA_DESC=		Canna support
+CANNA_LIB_DEPENDS=	libcanna.so:${PORTSDIR}/japanese/canna-lib
+CANNA_CFLAGS=		-I${LOCALBASE}/include -DCANNA
+CANNA_LDFLAGS=		-L${LOCALBASE}/lib -lcanna
 
-CFLAGS+=	-I${LOCALBASE}/include -DCANNA
-LIBS+=		-L${LOCALBASE}/lib -lcanna
-.endif
-
-post-patch:
-	@(cd ${WRKSRC}; ${LN} -sf sys/sysv/Makefile . )
+MYPORTDOCS=	CHANGES.1_3 CHANGES.doc Ng.FAQ Ng.doc Ng.ref Ng.tut \
+		README.Ng README.SKG
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/ng ${PREFIX}/bin
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-.for file in ${MYPORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/docs/${file} ${DOCSDIR}/${file}.euc-jp
+	(cd ${WRKSRC} && ${INSTALL_PROGRAM} ng \
+		${STAGEDIR}${PREFIX}/bin)
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+.for i in ${MYPORTDOCS}
+	(cd ${WRKSRC}/docs && ${INSTALL_DATA} ${i} \
+		${STAGEDIR}${DOCSDIR}/${i:S/$/.euc-jp/})
 .endfor
-.endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
