@@ -19,7 +19,7 @@ PORTDOCS=	*
 .include <bsd.port.pre.mk>
 
 .if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX})
-IGNORE=		may not be redistributed because of licensing reasons. Please visit http://www.unix-systems.org/version3/online.html to accept their license and download ${DISTFILES} into ${DISTDIR}
+IGNORE=		may not be redistributed because of licensing reasons. Please visit http://www.unix.org/version3/online.html to accept their license and download ${DISTFILES} into ${DISTDIR}
 .endif
 
 do-install:
