@@ -17,11 +17,10 @@ man/man1/ssi-cgi.1.gz
 man/man1/wigwam.1.gz
 @sample %%WWWDIR%%/index.html.sample
 @dirrmtry %%WWWDIR%%
-@dirrmtry var/lib/hiawatha
-@dirrmtry var/lib
-@dirrmtry var
 @dirrmtry lib/hiawatha
 @dirrmtry %%ETCDIR%%
-@unexec rmdir "/var/log/hiawatha" >/dev/null 2>&1 || :
-@exec if [ ! -d /var/log/hiawatha ] ; then mkdir /var/log/hiawatha ; fi
-@unexec t=`/bin/ls /var/log/hiawatha`; if [ -z "$t" ]; then %%ECHO_MSG%% "===>    Log directory is empty, removing it."; rmdir /var/log/hiawatha; fi;
+@cwd /var
+@dirrmtry log/hiawatha
+@dirrmtry lib/hiawatha
+@dirrmtry lib
+@cwd
