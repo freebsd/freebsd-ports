@@ -3,7 +3,7 @@
 
 PORTNAME=	aeskulap
 PORTVERSION=	0.2.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.bms-austria.com/%7Epipelka/${PORTNAME}/
 
