@@ -6520,3 +6520,10 @@ print/sv-acroread8||2014-08-30|Deprecated: many security issues are reported and
 net-p2p/p5-Net-DirectConnect-TigerHash||2014-08-31|Broken for many months and security/p5-Crypt-RHash is a suitable replacement
 games/childsplay_plugins||2014-08-31|Plugins package is no longer created for new versions of childsplay
 print/tex-texmflocal||2014-08-31|Removed: no longer required for TeXLive
+audio/emu10kx||2014-09-01|Not staged
+audio/festvox-us1-mbrola||2014-09-01|Not staged
+audio/festvox-us2-mbrola||2014-09-01|Not staged
+audio/festvox-us3-mbrola||2014-09-01|Not staged
+audio/ipod-sharp||2014-09-01|Not staged
+audio/linux-musicipserver||2014-09-01|Not staged
+audio/liquidsoap||2014-09-01|Not staged
