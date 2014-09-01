@@ -9,9 +9,9 @@ include/vte-%%VERSION%%/vte/vtepty.h
 include/vte-%%VERSION%%/vte/vtetypebuiltins.h
 include/vte-%%VERSION%%/vte/vteversion.h
 lib/girepository-1.0/Vte-%%VERSION%%.typelib
-lib/libvte2_90.la
 lib/libvte2_90.so
 lib/libvte2_90.so.9
+lib/libvte2_90.so.9.3400.7
 libdata/pkgconfig/vte-%%VERSION%%.pc
 share/doc/vte-2.90/VteReaper.html
 share/doc/vte-2.90/VteTerminal.html
