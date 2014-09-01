@@ -1,7 +1,0 @@
-etc/popd.conf.default
-include/poputil.h
-lib/libpoputil.a
-lib/libpoputil.so
-lib/libpoputil.so.1
-%%NOPROFILE%%lib/libpoputil_p.a
-libexec/popd

@@ -1,6 +1,0 @@
-sbin/synonym
-@unexec if cmp -s %D/etc/synonym.conf %D/etc/synonym.conf-dist; then rm -f %D/etc/synonym.conf; fi
-etc/synonym.conf-dist
-@exec [ ! -f %B/synonym.conf ] && cp -p %B/%f %B/synonym.conf
-@exec mkdir -p %%RUNDIR%%
-@unexec rmdir %%RUNDIR%% 2> /dev/null || true

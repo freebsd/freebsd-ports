@@ -1,4 +1,0 @@
-#!/bin/sh
-# $FreeBSD$
-cd %%DATADIR%%
-./kash3

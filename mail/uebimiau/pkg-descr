@@ -1,5 +1,0 @@
-UebiMiau is a simple yet efficient WebMail system written in PHP. It
-features folders, View and Send attachments, Preferences, Quota Limit,
-Search, and more. It does not require a database or IMAP server.
-
-WWW: http://www.uebimiau.org/

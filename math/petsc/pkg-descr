@@ -1,9 +1,0 @@
-PETSc, the Portable, Extensible Toolkit for Scientific computation, provides
-sets of tools for the parallel (as well as serial), numerical solution of PDEs
-that require solving large-scale, sparse nonlinear systems of equations. PETSc
-includes nonlinear and linear equation solvers that employ a variety of Newton
-techniques and Krylov subspace methods. PETSc provides several parallel sparse
-matrix formats, including compressed row, block compressed row, and block
-diagonal storage.
-
-WWW: http://www.mcs.anl.gov/petsc/

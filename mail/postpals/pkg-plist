@@ -1,5 +1,0 @@
-@exec mkdir -p /var/db/postpals
-sbin/postpals
-sbin/postpals-taillog
-@cwd /
-@dirrmtry /var/db/postpals
