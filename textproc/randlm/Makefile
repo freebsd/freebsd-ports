@@ -21,7 +21,7 @@ AUTOMAKE_ARGS=	--add-missing
 USE_LDCONFIG=	yes
 USES=		libtool compiler:c++11-lang
 MAKE_JOBS_UNSAFE=yes
-CXXFLAGS+=	-std=c++11 -I${LOCALBASE}/include
+CXXFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
 post-patch:
