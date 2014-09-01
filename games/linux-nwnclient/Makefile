@@ -14,13 +14,15 @@ MASTER_SITES=	http://na.llnet.bioware.cdn.ea.com/u/f/eagames/bioware/neverwinter
 PKGNAMEPREFIX=	linux-
 DISTFILES=	${CLIENT_FILES} \
 		${CLIENT_NWMOVIES}
+DIST_SUBDIR=	${PKGNAMEPREFIX}${PORTNAME}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	scf@FreeBSD.org
 COMMENT=	Neverwinter Nights Linux (x86) Client
 
 RUN_DEPENDS=	${LOCALBASE}/share/nwndata/docs/readme.txt:${PORTSDIR}/games/nwndata
 
 NO_BUILD=	yes
+RESTRICTED=	Distribution not allowed
 USE_LINUX=	yes
 USE_LINUX_APPS=	sdl12 xorglibs
 NWNDATADIR=	${LOCALBASE}/share/nwndata
@@ -64,11 +66,11 @@ do-extract:
 	${MKDIR} ${WRKSRC}
 .for _distfile in ${CLIENT_FILES:C/:.*$//g} ${BINKPLAYERFILE}
 	(cd ${WRKSRC} && ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} \
-		${DISTDIR}/${_distfile} ${EXTRACT_AFTER_ARGS})
+		${_DISTDIR}/${_distfile} ${EXTRACT_AFTER_ARGS})
 .endfor
 .if defined(BINKPLAYERFILE)
 	(cd ${WRKSRC} && ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} \
-		${DISTDIR}/${NWMOVIESFILE} ${EXTRACT_AFTER_ARGS} \
+		${_DISTDIR}/${NWMOVIESFILE} ${EXTRACT_AFTER_ARGS} \
 		nwmovies/binklib.so nwmovies/libdis/libdisasm.so \
 		nwmovies/nwmovies.so)
 	(cd ${WRKSRC} && ${MV} BinkPlayer nwmovies)
