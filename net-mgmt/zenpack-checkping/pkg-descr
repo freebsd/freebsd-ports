@@ -1,6 +1,0 @@
-Zenoss comes with the nagios command check_ping. This zenpack implements that
-nagios ping check. The template provides the Round-Trip-Average time along with
-the packet loss rate. These two graphs are put in the "Performance" tab for each
-device utilizing this template.
-
-WWW: http://community.zenoss.org/docs/DOC-3416

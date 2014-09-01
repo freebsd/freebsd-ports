@@ -1,8 +1,0 @@
-This is a small Nagios plugin. This plugin relies on portaudit
-and/or portupgrade packages to be installed on your FreeBSD system.
-With these packages installed, the plugin will scan your system for
-either vulnerable packages, or obsolete packages - and display
-appropriate warnings to Nagios.
-
-Portaudit can also be successfully run remotely from nrpe, and does
-not require superuser privileges to operate.

@@ -1,4 +1,0 @@
-This ZenPack leverages the libvirt API for monitoring virtualization servers
-(e.g. XEN, KVM, etc...).
-
-WWW: http://community.zenoss.org/docs/DOC-4687

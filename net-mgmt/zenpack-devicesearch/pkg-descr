@@ -1,7 +1,0 @@
-This ZenPack provides the ability to quickly search for Devices by their name 
-or by their IP address.  Search is triggered by typing 3 or more characters 
-into the text box, which then returns the first 10 matches.  The use of the 
-asterisk wild-card is supported, so you may search for fuzzy matches 
-dynamically.
-
-WWW: http://community.zenoss.org/docs/DOC-7453

@@ -27,15 +27,12 @@
     SUBDIR += gajim
     SUBDIR += gale
     SUBDIR += gloox
-    SUBDIR += gyach
     SUBDIR += hotot
     SUBDIR += icb
     SUBDIR += icmpchat
     SUBDIR += icqlib
     SUBDIR += imspector
-    SUBDIR += iserverd
     SUBDIR += jabber
-    SUBDIR += jabber-pyaim
     SUBDIR += jabber-pyicq
     SUBDIR += jabber.el
     SUBDIR += jabberd
@@ -44,7 +41,6 @@
     SUBDIR += jitsi
     SUBDIR += kde-telepathy
     SUBDIR += kmess-kde4
-    SUBDIR += komclean
     SUBDIR += kopete-kde4
     SUBDIR += ktp-accounts-kcm
     SUBDIR += ktp-approver
@@ -56,7 +52,6 @@
     SUBDIR += ktp-kded-integration-module
     SUBDIR += ktp-send-file
     SUBDIR += ktp-text-ui
-    SUBDIR += libjingle
     SUBDIR += libjreen
     SUBDIR += libnice
     SUBDIR += libpurple
@@ -68,7 +63,6 @@
     SUBDIR += licq-msn
     SUBDIR += licq-osd
     SUBDIR += licq-qt-gui
-    SUBDIR += linpopup
     SUBDIR += loudmouth
     SUBDIR += mbpurple
     SUBDIR += mcabber
