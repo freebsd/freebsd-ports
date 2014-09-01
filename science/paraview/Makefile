@@ -3,7 +3,7 @@
 
 PORTNAME=	paraview
 PORTVERSION=	4.1.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	science graphics
 MASTER_SITES=	http://www.paraview.org/files/v${VERMAJORMINOR}/
 DISTNAME=	ParaView-v${PORTVERSION}-source
@@ -28,8 +28,7 @@ LIB_DEPENDS=	libhdf5.so:${PORTSDIR}/science/hdf5 \
 		libpcre.so:${PORTSDIR}/devel/pcre \
 		libffi.so:${PORTSDIR}/devel/libffi \
 		libdrm.so:${PORTSDIR}/graphics/libdrm \
-		libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig \
-		libexecinfo.so:${PORTSDIR}/devel/libexecinfo
+		libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash	\
 		${PYTHON_SITELIBDIR}/matplotlib/pyplot.py:${PORTSDIR}/math/py-matplotlib
 
@@ -43,7 +42,7 @@ USE_XORG=	x11 xt xext ice xdmcp xau xcb xfixes xdamage xxf86vm xrender sm
 USE_LDCONFIG=	yes
 USE_PYTHON=	yes
 USE_GSTREAMER=	yes
-USES=		cmake:outsource shebangfix gmake
+USES=		cmake:outsource gmake execinfo shebangfix
 
 CMAKE_ARGS+=	-DBUILD_SHARED_LIBS="ON" \
 		-DVTK_USE_SYSTEM_PNG="ON" \
