@@ -13,12 +13,12 @@
 %%PYTHON_SITELIBDIR%%/astroid/brain/py2gi.py
 %%PYTHON_SITELIBDIR%%/astroid/brain/py2gi.pyc
 %%PYTHON_SITELIBDIR%%/astroid/brain/py2gi.pyo
-%%PYTHON_SITELIBDIR%%/astroid/brain/py2qt4.py
-%%PYTHON_SITELIBDIR%%/astroid/brain/py2qt4.pyc
-%%PYTHON_SITELIBDIR%%/astroid/brain/py2qt4.pyo
 %%PYTHON_SITELIBDIR%%/astroid/brain/py2mechanize.py
 %%PYTHON_SITELIBDIR%%/astroid/brain/py2mechanize.pyc
 %%PYTHON_SITELIBDIR%%/astroid/brain/py2mechanize.pyo
+%%PYTHON_SITELIBDIR%%/astroid/brain/py2qt4.py
+%%PYTHON_SITELIBDIR%%/astroid/brain/py2qt4.pyc
+%%PYTHON_SITELIBDIR%%/astroid/brain/py2qt4.pyo
 %%PYTHON_SITELIBDIR%%/astroid/brain/py2stdlib.py
 %%PYTHON_SITELIBDIR%%/astroid/brain/py2stdlib.pyc
 %%PYTHON_SITELIBDIR%%/astroid/brain/py2stdlib.pyo
@@ -40,6 +40,9 @@
 %%PYTHON_SITELIBDIR%%/astroid/mixins.py
 %%PYTHON_SITELIBDIR%%/astroid/mixins.pyc
 %%PYTHON_SITELIBDIR%%/astroid/mixins.pyo
+%%PYTHON_SITELIBDIR%%/astroid/modutils.py
+%%PYTHON_SITELIBDIR%%/astroid/modutils.pyc
+%%PYTHON_SITELIBDIR%%/astroid/modutils.pyo
 %%PYTHON_SITELIBDIR%%/astroid/node_classes.py
 %%PYTHON_SITELIBDIR%%/astroid/node_classes.pyc
 %%PYTHON_SITELIBDIR%%/astroid/node_classes.pyo
@@ -84,12 +87,39 @@
 %%PYTHON_SITELIBDIR%%/astroid/test/data/email.py
 %%PYTHON_SITELIBDIR%%/astroid/test/data/email.pyc
 %%PYTHON_SITELIBDIR%%/astroid/test/data/email.pyo
+%%PYTHON_SITELIBDIR%%/astroid/test/data/find_test/__init__.py
+%%PYTHON_SITELIBDIR%%/astroid/test/data/find_test/__init__.pyc
+%%PYTHON_SITELIBDIR%%/astroid/test/data/find_test/__init__.pyo
+%%PYTHON_SITELIBDIR%%/astroid/test/data/find_test/module.py
+%%PYTHON_SITELIBDIR%%/astroid/test/data/find_test/module.pyc
+%%PYTHON_SITELIBDIR%%/astroid/test/data/find_test/module.pyo
+%%PYTHON_SITELIBDIR%%/astroid/test/data/find_test/module2.py
+%%PYTHON_SITELIBDIR%%/astroid/test/data/find_test/module2.pyc
+%%PYTHON_SITELIBDIR%%/astroid/test/data/find_test/module2.pyo
+%%PYTHON_SITELIBDIR%%/astroid/test/data/find_test/noendingnewline.py
+%%PYTHON_SITELIBDIR%%/astroid/test/data/find_test/noendingnewline.pyc
+%%PYTHON_SITELIBDIR%%/astroid/test/data/find_test/noendingnewline.pyo
+%%PYTHON_SITELIBDIR%%/astroid/test/data/find_test/nonregr.py
+%%PYTHON_SITELIBDIR%%/astroid/test/data/find_test/nonregr.pyc
+%%PYTHON_SITELIBDIR%%/astroid/test/data/find_test/nonregr.pyo
 %%PYTHON_SITELIBDIR%%/astroid/test/data/format.py
 %%PYTHON_SITELIBDIR%%/astroid/test/data/format.pyc
 %%PYTHON_SITELIBDIR%%/astroid/test/data/format.pyo
+%%PYTHON_SITELIBDIR%%/astroid/test/data/lmfp/__init__.py
+%%PYTHON_SITELIBDIR%%/astroid/test/data/lmfp/__init__.pyc
+%%PYTHON_SITELIBDIR%%/astroid/test/data/lmfp/__init__.pyo
+%%PYTHON_SITELIBDIR%%/astroid/test/data/lmfp/foo.py
+%%PYTHON_SITELIBDIR%%/astroid/test/data/lmfp/foo.pyc
+%%PYTHON_SITELIBDIR%%/astroid/test/data/lmfp/foo.pyo
 %%PYTHON_SITELIBDIR%%/astroid/test/data/module.py
 %%PYTHON_SITELIBDIR%%/astroid/test/data/module.pyc
 %%PYTHON_SITELIBDIR%%/astroid/test/data/module.pyo
+%%PYTHON_SITELIBDIR%%/astroid/test/data/module1abs/__init__.py
+%%PYTHON_SITELIBDIR%%/astroid/test/data/module1abs/__init__.pyc
+%%PYTHON_SITELIBDIR%%/astroid/test/data/module1abs/__init__.pyo
+%%PYTHON_SITELIBDIR%%/astroid/test/data/module1abs/core.py
+%%PYTHON_SITELIBDIR%%/astroid/test/data/module1abs/core.pyc
+%%PYTHON_SITELIBDIR%%/astroid/test/data/module1abs/core.pyo
 %%PYTHON_SITELIBDIR%%/astroid/test/data/module2.py
 %%PYTHON_SITELIBDIR%%/astroid/test/data/module2.pyc
 %%PYTHON_SITELIBDIR%%/astroid/test/data/module2.pyo
@@ -114,12 +144,12 @@
 %%PYTHON_SITELIBDIR%%/astroid/test/regrtest_data/absimp/__init__.py
 %%PYTHON_SITELIBDIR%%/astroid/test/regrtest_data/absimp/__init__.pyc
 %%PYTHON_SITELIBDIR%%/astroid/test/regrtest_data/absimp/__init__.pyo
-%%PYTHON_SITELIBDIR%%/astroid/test/regrtest_data/absimp/string.py
-%%PYTHON_SITELIBDIR%%/astroid/test/regrtest_data/absimp/string.pyc
-%%PYTHON_SITELIBDIR%%/astroid/test/regrtest_data/absimp/string.pyo
 %%PYTHON_SITELIBDIR%%/astroid/test/regrtest_data/absimp/sidepackage/__init__.py
 %%PYTHON_SITELIBDIR%%/astroid/test/regrtest_data/absimp/sidepackage/__init__.pyc
 %%PYTHON_SITELIBDIR%%/astroid/test/regrtest_data/absimp/sidepackage/__init__.pyo
+%%PYTHON_SITELIBDIR%%/astroid/test/regrtest_data/absimp/string.py
+%%PYTHON_SITELIBDIR%%/astroid/test/regrtest_data/absimp/string.pyc
+%%PYTHON_SITELIBDIR%%/astroid/test/regrtest_data/absimp/string.pyo
 %%PYTHON_SITELIBDIR%%/astroid/test/regrtest_data/descriptor_crash.py
 %%PYTHON_SITELIBDIR%%/astroid/test/regrtest_data/descriptor_crash.pyc
 %%PYTHON_SITELIBDIR%%/astroid/test/regrtest_data/descriptor_crash.pyo
@@ -141,6 +171,9 @@
 %%PYTHON_SITELIBDIR%%/astroid/test/regrtest_data/package/subpackage/module.py
 %%PYTHON_SITELIBDIR%%/astroid/test/regrtest_data/package/subpackage/module.pyc
 %%PYTHON_SITELIBDIR%%/astroid/test/regrtest_data/package/subpackage/module.pyo
+%%PYTHON_SITELIBDIR%%/astroid/test/regrtest_data/recursion.py
+%%PYTHON_SITELIBDIR%%/astroid/test/regrtest_data/recursion.pyc
+%%PYTHON_SITELIBDIR%%/astroid/test/regrtest_data/recursion.pyo
 %%PYTHON_SITELIBDIR%%/astroid/test/unittest_brain.py
 %%PYTHON_SITELIBDIR%%/astroid/test/unittest_brain.pyc
 %%PYTHON_SITELIBDIR%%/astroid/test/unittest_brain.pyo
@@ -159,6 +192,9 @@
 %%PYTHON_SITELIBDIR%%/astroid/test/unittest_manager.py
 %%PYTHON_SITELIBDIR%%/astroid/test/unittest_manager.pyc
 %%PYTHON_SITELIBDIR%%/astroid/test/unittest_manager.pyo
+%%PYTHON_SITELIBDIR%%/astroid/test/unittest_modutils.py
+%%PYTHON_SITELIBDIR%%/astroid/test/unittest_modutils.pyc
+%%PYTHON_SITELIBDIR%%/astroid/test/unittest_modutils.pyo
 %%PYTHON_SITELIBDIR%%/astroid/test/unittest_nodes.py
 %%PYTHON_SITELIBDIR%%/astroid/test/unittest_nodes.pyc
 %%PYTHON_SITELIBDIR%%/astroid/test/unittest_nodes.pyo
@@ -183,15 +219,18 @@
 %%PYTHON_SITELIBDIR%%/astroid/utils.py
 %%PYTHON_SITELIBDIR%%/astroid/utils.pyc
 %%PYTHON_SITELIBDIR%%/astroid/utils.pyo
-@dirrm %%PYTHON_SITELIBDIR%%/astroid/test/regrtest_data/package/subpackage
-@dirrm %%PYTHON_SITELIBDIR%%/astroid/test/regrtest_data/package
+@dirrm %%PYTHON_SITELIBDIR%%/astroid/brain
+@dirrm %%PYTHON_SITELIBDIR%%/astroid/test/data/SSL1
+@dirrm %%PYTHON_SITELIBDIR%%/astroid/test/data/appl
+@dirrm %%PYTHON_SITELIBDIR%%/astroid/test/data/find_test
+@dirrm %%PYTHON_SITELIBDIR%%/astroid/test/data/lmfp
+@dirrm %%PYTHON_SITELIBDIR%%/astroid/test/data/module1abs
+@dirrm %%PYTHON_SITELIBDIR%%/astroid/test/data
+@dirrm %%PYTHON_SITELIBDIR%%/astroid/test/data2
 @dirrm %%PYTHON_SITELIBDIR%%/astroid/test/regrtest_data/absimp/sidepackage
 @dirrm %%PYTHON_SITELIBDIR%%/astroid/test/regrtest_data/absimp
+@dirrm %%PYTHON_SITELIBDIR%%/astroid/test/regrtest_data/package/subpackage
+@dirrm %%PYTHON_SITELIBDIR%%/astroid/test/regrtest_data/package
 @dirrm %%PYTHON_SITELIBDIR%%/astroid/test/regrtest_data
-@dirrm %%PYTHON_SITELIBDIR%%/astroid/test/data2
-@dirrm %%PYTHON_SITELIBDIR%%/astroid/test/data/appl
-@dirrm %%PYTHON_SITELIBDIR%%/astroid/test/data/SSL1
-@dirrm %%PYTHON_SITELIBDIR%%/astroid/test/data
 @dirrm %%PYTHON_SITELIBDIR%%/astroid/test
-@dirrm %%PYTHON_SITELIBDIR%%/astroid/brain
 @dirrm %%PYTHON_SITELIBDIR%%/astroid
