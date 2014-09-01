@@ -35,7 +35,6 @@ USE_LINUX_APPS+=dri
 OPTIONS_DEFINE=	NWMOVIES
 NWMOVIES_DESC=	Support for movies using BinkPlayer
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 .include <bsd.port.pre.mk>
 
@@ -86,17 +85,17 @@ do-configure:
 		<${FILESDIR}/nwn.sh >${WRKDIR}/nwn
 
 do-install:
-	${MKDIR} ${DATADIR}
+	${MKDIR} ${STAGEDIR}${DATADIR}
 	(cd ${WRKSRC} && ${FIND} . -print | \
-		${CPIO} -pdmuv -R${SHAREOWN}:${SHAREGRP} ${DATADIR})
-	${FIND} ${DATADIR} -type d -print0 | ${XARGS} -0 ${CHMOD} 0755
-	${FIND} ${DATADIR} -type f -print0 | ${XARGS} -0 ${CHMOD} 0644
-	(cd ${DATADIR} && ${CHMOD} 0755 dmclient nwmain nwserver)
+		${CPIO} -pdmuv -R${SHAREOWN}:${SHAREGRP} ${STAGEDIR}${DATADIR})
+	${FIND} ${STAGEDIR}${DATADIR} -type d -print0 | ${XARGS} -0 ${CHMOD} 0755
+	${FIND} ${STAGEDIR}${DATADIR} -type f -print0 | ${XARGS} -0 ${CHMOD} 0644
+	(cd ${STAGEDIR}${DATADIR} && ${CHMOD} 0755 dmclient nwmain nwserver)
 .if defined(BINKPLAYERFILE)
-	(cd ${DATADIR} && ${CHMOD} 0755 nwmovies/BinkPlayer)
-	(cd ${DATADIR}/nwmovies && ${LN} -s /compat/linux/usr/lib/libX11.so.6 libX11.so)
-	${INSTALL_SCRIPT} ${FILESDIR}/nwmovies.pl ${DATADIR}
+	(cd ${STAGEDIR}${DATADIR} && ${CHMOD} 0755 nwmovies/BinkPlayer)
+	(cd ${STAGEDIR}${DATADIR}/nwmovies && ${LN} -s /compat/linux/usr/lib/libX11.so.6 libX11.so)
+	${INSTALL_SCRIPT} ${FILESDIR}/nwmovies.pl ${STAGEDIR}${DATADIR}
 .endif
-	${INSTALL_SCRIPT} ${WRKDIR}/nwn ${PREFIX}/bin/
+	${INSTALL_SCRIPT} ${WRKDIR}/nwn ${STAGEDIR}${PREFIX}/bin/
 
 .include <bsd.port.post.mk>
