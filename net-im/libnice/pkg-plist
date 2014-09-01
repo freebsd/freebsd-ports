@@ -17,12 +17,11 @@ include/stun/usages/timer.h
 include/stun/usages/turn.h
 include/stun/win32_common.h
 lib/gstreamer-0.10/libgstnice010.a
-lib/gstreamer-0.10/libgstnice010.la
 lib/gstreamer-0.10/libgstnice010.so
 lib/libnice.a
-lib/libnice.la
 lib/libnice.so
 lib/libnice.so.10
+lib/libnice.so.10.1.0
 libdata/pkgconfig/nice.pc
 share/gtk-doc/html/libnice/NiceAgent.html
 share/gtk-doc/html/libnice/ch01.html
