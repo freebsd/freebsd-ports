@@ -2,7 +2,7 @@
 
 PORTNAME=	plexhometheater
 PORTVERSION=	1.2.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	multimedia
 
 MAINTAINER=	woodsb02@gmail.com

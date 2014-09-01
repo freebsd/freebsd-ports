@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libmicrohttpd
-PORTVERSION=	0.9.33
-PORTREVISION=	2
+PORTVERSION=	0.9.37
 CATEGORIES=	www
 MASTER_SITES=	GNU
 
@@ -11,35 +10,44 @@ MAINTAINER=	gaod@hychen.org
 COMMENT=	C library for embedding HTTP server functionality
 
 LICENSE=	LGPL21
+LICENSE_FILE=	${WRKSRC}/COPYING
+
+GNU_CONFIGURE=	yes
+INSTALL_TARGET=	install-strip
+USES=		libtool pathfix
+USE_LDCONFIG=	yes
+USE_OPENSSL=	yes
 
 OPTIONS_DEFINE=	GNUTLS
 
-GNU_CONFIGURE=	yes
-MAKE_ARGS+=	pkgconfigdir=${PREFIX}/libdata/pkgconfig
-USE_LDCONFIG=	yes
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MGNUTLS}
-LIB_DEPENDS+=	libgcrypt.so:${PORTSDIR}/security/libgcrypt \
+GNUTLS_LIB_DEPENDS=	libgcrypt.so:${PORTSDIR}/security/libgcrypt \
 			libgnutls.so:${PORTSDIR}/security/gnutls
-CONFIGURE_ARGS+=	--with-libgcrypt-prefix=${LOCALBASE} --with-gnutls=${LOCALBASE} --enable-https=yes
-.endif
+GNUTLS_CONFIGURE_WITH=	libgcrypt-prefix=${LOCALBASE} gnutls=${LOCALBASE}
+GNUTLS_CONFIGURE_ENABLE=https
 
 INFO=		libmicrohttpd libmicrohttpd-tutorial
 
 PLIST_FILES=	include/microhttpd.h \
 		lib/libmicrohttpd.a \
-		lib/libmicrohttpd.la \
 		lib/libmicrohttpd.so \
-		lib/libmicrohttpd.so.32 \
+		lib/libmicrohttpd.so.10 \
+		lib/libmicrohttpd.so.10.27.0 \
 		libdata/pkgconfig/libmicrohttpd.pc \
+		libdata/pkgconfig/libmicrospdy.pc \
 		man/man3/libmicrohttpd.3.gz
 
+.include <bsd.port.pre.mk>
+
+.if !(defined(WITH_OPENSSL_BASE) && ${OPSYS} == FreeBSD && ${OSVERSION} < 1000015)
+PLIST_FILES+=	include/microspdy.h \
+		lib/libmicrospdy.a \
+		lib/libmicrospdy.so \
+		lib/libmicrospdy.so.0 \
+		lib/libmicrospdy.so.0.0.0
+.endif
+
 post-patch:
-	@${REINPLACE_CMD} -e 's|-ldl|-lc|' ${WRKSRC}/src/examples/Makefile.in
+	@${REINPLACE_CMD} -e 's|bin_PROGRAMS =|noinst_PROGRAMS +=|' \
+		${WRKSRC}/src/examples/Makefile.in
 
-post-build:
-	@${STRIP_CMD} ${WRKSRC}/src/microhttpd/.libs/libmicrohttpd.so.32
-
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
