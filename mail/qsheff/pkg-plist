@@ -6,10 +6,10 @@ bin/qsheff
 %%ETCDIR%%/qsheff.conf-default
 @unexec if cmp -s %D/%%ETCDIR%%/qsheff.rules %D/%%ETCDIR%%/qsheff.rules-default; then rm -f %D/%%ETCDIR%%/qsheff.rules; fi
 %%ETCDIR%%/qsheff.rules-default
-@exec [ -f %B/qsheff.rules ] || cp %B/%f %B/qsheff.attach
+@exec [ -f %B/qsheff.rules ] || cp %B/%f %B/qsheff.rules
 @unexec if cmp -s %D/%%ETCDIR%%/qsheff.ignore %D/%%ETCDIR%%/qsheff.ignore-default; then rm -f %D/%%ETCDIR%%/qsheff.ignore; fi
 %%ETCDIR%%/qsheff.ignore-default
-@exec [ -f %B/qsheff.ignore ] || cp %B/%f %B/qsheff.attach
+@exec [ -f %B/qsheff.ignore ] || cp %B/%f %B/qsheff.ignore
 %%ETCDIR%%/install-wrapper.sh
 %%ETCDIR%%/uninstall-wrapper.sh
 %%PORTDOCS%%%%DOCSDIR%%/README
@@ -22,17 +22,17 @@ bin/qsheff
 %%PORTDOCS%%%%DOCSDIR%%/doc/spamass-qsheff.en.html
 %%PORTDOCS%%%%DOCSDIR%%/doc/handbook.en.txt
 %%PORTDOCS%%%%DOCSDIR%%/doc/handbook.tr.txt
-%%PORTDOCS%%%%EXAMPLESDIR%%/sample-OK.msg
-%%PORTDOCS%%%%EXAMPLESDIR%%/sample-VIRUS.msg
-%%PORTDOCS%%%%EXAMPLESDIR%%/sample-SPAM.msg
-%%PORTDOCS%%%%EXAMPLESDIR%%/contrib/README
-%%PORTDOCS%%%%EXAMPLESDIR%%/contrib/qq-patch.diff
-%%PORTDOCS%%%%EXAMPLESDIR%%/contrib/qq-custom-error-patch.diff
-%%PORTDOCS%%%%EXAMPLESDIR%%/contrib/qsheff-patch.diff
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sample-OK.msg
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sample-VIRUS.msg
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sample-SPAM.msg
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/contrib/README
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/contrib/qq-patch.diff
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/contrib/qq-custom-error-patch.diff
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/contrib/qsheff-patch.diff
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/contrib
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/doc
 %%PORTDOCS%%@dirrmtry %%DOCSDIR%%
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/contrib
-%%PORTDOCS%%@dirrmtry %%EXAMPLESDIR%%
 @dirrmtry %%ETCDIR%%
 @unexec echo ""
 @unexec echo "Type '%%PREFIX%%/etc/uninstall-wrapper.sh' to uninstall qSheff completely."
