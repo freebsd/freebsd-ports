@@ -31,9 +31,9 @@ include/rarian/rarian-man.h
 include/rarian/rarian-reg-utils.h
 include/rarian/rarian.h
 lib/librarian.a
-lib/librarian.la
 lib/librarian.so
 lib/librarian.so.0
+lib/librarian.so.0.0.0
 libdata/pkgconfig/rarian.pc
 %%DOCSDIR%%/rarian.document
 share/librarian/Templates/C/scrollkeeper_cl.xml
