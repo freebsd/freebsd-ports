@@ -73,8 +73,16 @@ parse_plist() {
 			set -- $line
 			shift
 			# Ignore the actual file if it is in stagedir
+			case "$@" in
+			/*)
+			echo "@comment ${@%.sample}"
+			echo "${comment}$@"
+			;;
+			*)
 			echo "@comment ${cwd}/${@%.sample}"
 			echo "${comment}${cwd}/$@"
+			;;
+			esac
 		;;
 		# Handle [dirrmty] Keywords
 		@fc\ *|@fcfontsdir\ *|@fontsdir\ *)
@@ -234,13 +242,11 @@ setup_plist_seds() {
 	    ${sed_portdocsexamples} /^share\/licenses/d;"
 	sed_dirs_gen="s!${PREFIX}/!!g; ${sed_plist_sub} s,^,@dirrmtry ,; \
 	    ${sed_portdocsexamples} \
-	    s!@dirrmtry \(/.*\)!@unexec rmdir \"\1\" >/dev/null 2>\&1 || :!; \
 	    /^@dirrmtry share\/licenses/d;"
 
 	# These prevent ignoring DOCS/EXAMPLES dirs with sed_portdocsexamples
 	sed_files="s!${PREFIX}/!!g; ${sed_plist_sub} /^share\/licenses/d;"
 	sed_dirs="s!${PREFIX}/!!g; ${sed_plist_sub} s,^,@dirrmtry ,; \
-	    s!@dirrmtry \(/.*\)!@unexec rmdir \"\1\" >/dev/null 2>\&1 || :!; \
 	    /^@dirrmtry share\/licenses/d;"
 
 }
@@ -334,7 +340,7 @@ check_invalid_directories_mtree() {
 			if [ "${PREFIX}" != "${LOCALBASE}" ]; then
 				case "${line}" in
 					"@dirrmtry info") continue ;;
-					"@unexec rmdir \"${PREFIX}\" >/dev/null 2>&1 || :") continue ;;
+					"@dirrmtry ${PREFIX}") continue ;;
 				esac
 			fi
 			ret=1
