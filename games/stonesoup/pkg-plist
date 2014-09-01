@@ -552,7 +552,7 @@ bin/stonesoup
 %%DATADIR%%/docs/keybind.txt
 %%DATADIR%%/docs/license/cc0.txt
 %%DATADIR%%/docs/license/lgpl.txt
-%%DATADIR%%/docs/license/%%LUA_LIBDIR%%png-LICENSE.txt
+%%DATADIR%%/docs/license/libpng-LICENSE.txt
 %%DATADIR%%/docs/license/lualicense.txt
 %%DATADIR%%/docs/license/pcre_license.txt
 %%DATADIR%%/docs/license/worley.txt
