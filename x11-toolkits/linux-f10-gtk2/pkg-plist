@@ -51,9 +51,7 @@ usr/lib/gtk-2.0/2.10.0/printbackends/libprintbackend-cups.so
 usr/lib/gtk-2.0/2.10.0/printbackends/libprintbackend-file.so
 usr/lib/gtk-2.0/2.10.0/printbackends/libprintbackend-lpr.so
 usr/lib/gtk-2.0/immodules/.relocation-tag
-usr/lib/gtk-2.0/modules/libferret.la
 usr/lib/gtk-2.0/modules/libferret.so
-usr/lib/gtk-2.0/modules/libgail.la
 usr/lib/gtk-2.0/modules/libgail.so
 usr/lib/kde4/kcm_gtk4.so
 usr/lib/libgailutil.so.18

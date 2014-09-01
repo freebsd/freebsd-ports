@@ -3,7 +3,7 @@
 
 PORTNAME=	alsa-lib
 PORTVERSION=	1.0.21
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	audio linux
 MASTER_SITES=	CRITICAL/rpm/${LINUX_RPM_ARCH}/fedora/${LINUX_DIST_VER}
 PKGNAMEPREFIX=	linux-f10-
@@ -20,5 +20,10 @@ LINUX_DIST_VER=	10
 RPMVERSION=	2.fc10
 BRANDELF_FILES=	usr/bin/aserver
 USE_LDCONFIG=	yes
+
+post-install:
+	${RM} ${STAGEDIR}${PREFIX}/usr/lib/alsa-lib/smixer/smixer-ac97.la
+	${RM} ${STAGEDIR}${PREFIX}/usr/lib/alsa-lib/smixer/smixer-hda.la
+	${RM} ${STAGEDIR}${PREFIX}/usr/lib/alsa-lib/smixer/smixer-sbase.la
 
 .include <bsd.port.mk>
