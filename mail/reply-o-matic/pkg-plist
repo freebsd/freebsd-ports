@@ -1,4 +1,0 @@
-sbin/rom
-@exec mkdir -p %D/etc/rom/.rates
-@dirrmtry etc/rom/.rates
-@dirrmtry etc/rom

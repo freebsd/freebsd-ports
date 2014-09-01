@@ -1,7 +1,0 @@
-Postpals is a simple policy daemon for Postfix. It keeps a database of 
-outgoing mail, specifically recipients and relays associated to them. 
-The main goal is to whitelist mail coming back from those senders and 
-relays early in the postfix restriction chain, so it doesn't get hit 
-with any client UCE checks you are using (RBL, helo, PTR, greylisting etc). 
-
-WWW: http://mailfud.org/postpals/

@@ -1,5 +1,0 @@
-#!/bin/sh
-
-if [ "$2" = "DEINSTALL" ]; then
-  echo "If you're not updating this port, you can delete directory %%SPOOLDIR%%"
-fi

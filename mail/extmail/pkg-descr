@@ -1,7 +1,0 @@
-ExtMail -- A high performance webmail system.
-
-It was written in pure perl, only support Maildir++(or Maildir), we try to
-optimize the design and archtecture, make it scalable well and run faster
-than common php/perl webmail system.
-
-WWW: http://www.extmail.org

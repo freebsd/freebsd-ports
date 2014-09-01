@@ -63,11 +63,9 @@
     SUBDIR += aspcud
     SUBDIR += asymptote
     SUBDIR += atlas
-    SUBDIR += atlas-devel
     SUBDIR += bamg
     SUBDIR += bargraph
     SUBDIR += biggles
-    SUBDIR += bihar
     SUBDIR += blacs
     SUBDIR += blas
     SUBDIR += blitz++
@@ -187,23 +185,17 @@
     SUBDIR += ipopt
     SUBDIR += isabelle
     SUBDIR += ised
-    SUBDIR += itl
     SUBDIR += jacal
     SUBDIR += jags
     SUBDIR += jakarta-commons-math
     SUBDIR += jakarta-commons-math3
     SUBDIR += jama
-    SUBDIR += javanns
-    SUBDIR += javaview
     SUBDIR += jeuclid
     SUBDIR += jlatexmath
-    SUBDIR += jsmath
     SUBDIR += jsmath-fonts
-    SUBDIR += jsmath-fonts-sprite
     SUBDIR += jtransforms
     SUBDIR += jts
     SUBDIR += kalgebra
-    SUBDIR += kash3
     SUBDIR += kbruch
     SUBDIR += kcalc
     SUBDIR += kig
@@ -242,7 +234,6 @@
     SUBDIR += mathomatic
     SUBDIR += matio
     SUBDIR += matlab-installer
-    SUBDIR += matrix
     SUBDIR += maxima
     SUBDIR += mbasecalc
     SUBDIR += metis
@@ -256,7 +247,6 @@
     SUBDIR += mpexpr
     SUBDIR += mpfr
     SUBDIR += mpir
-    SUBDIR += mprime
     SUBDIR += msieve
     SUBDIR += mtl
     SUBDIR += mtrxmath
@@ -523,7 +513,6 @@
     SUBDIR += pecl-bitset
     SUBDIR += pecl-stats
     SUBDIR += pecl-trader
-    SUBDIR += petsc
     SUBDIR += php5-bcmath
     SUBDIR += php5-gmp
     SUBDIR += php53-bcmath
@@ -622,9 +611,7 @@
     SUBDIR += scilab-toolbox-sivp
     SUBDIR += scilab-toolbox-swt
     SUBDIR += sdpa
-    SUBDIR += sdpa-gmp
     SUBDIR += sdpara
-    SUBDIR += sedumi
     SUBDIR += sfft
     SUBDIR += sfst
     SUBDIR += simd-viterbi
@@ -656,7 +643,6 @@
     SUBDIR += ufc
     SUBDIR += ump
     SUBDIR += units
-    SUBDIR += unixstat
     SUBDIR += unuran
     SUBDIR += vtk5
     SUBDIR += vtk5-data

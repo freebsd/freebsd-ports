@@ -1,5 +1,0 @@
-bin/sdpa_gmp
-share/sdpa-gmp/param.sdpa
-@dirrm share/sdpa-gmp
-%%PORTDOCS%%%%DOCSDIR%%/%%MANUALFILE%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

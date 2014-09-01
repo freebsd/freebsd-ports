@@ -1,6 +1,0 @@
-#!/bin/sh
-
-if [ "$2" = "DEINSTALL" ]; then
-	echo "Do not forget delete filter description from /etc/mail/freebsd.mc"
-	echo "and rebuild sendmail.cf file!"
-fi

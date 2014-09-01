@@ -149,7 +149,6 @@ jpgraph-2.*		graphics/jpgraph2	The free version cannot be used in a commercial c
 jre-7*-i586.tar.gz	java/linux-sun-jre17	License does not allow distribution with fee
 jre-8*-i586.tar.gz	java/linux-oracle-jre18	License does not allow distribution with fee
 jta-*.zip		java/jta		See the license
-KASH3-*			math/kash3		Not for commercial distribution or use
 komodo-*		editors/komodo-edit	Distribution not permitted
 kye-data_nuke_levels.20121101.tar.gz games/kye	kye-data_nuke_levels is charityware
 kzip-*			archivers/kzip		License does not allow redistribution
@@ -231,7 +230,6 @@ simian-*		devel/simian		Have to agree to license before download
 skype*			net-im/skype		Redistribution prohibited
 squeezeboxserver-*	audio/squeezeboxserver	Contains non-redistributable firmware, documentation, and images
 stardict-longman-*	textproc/stardict-longman	Possible copyright infringement
-stat.tar.Z		math/unixstat		License does not allow redistribution of binaries
 STonX-*			emulators/stonx		Contains ROM (C) by Atari
 stuffit*		archivers/stuffit	Only unmodified original package can be distributed
 su2-1.3.tar.gz		sysutils/su2		Do not sell for profit
