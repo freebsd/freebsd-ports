@@ -4,7 +4,6 @@
     COMMENT = Programming languages
 
     SUBDIR += Gofer
-    SUBDIR += Sather
     SUBDIR += abcl
     SUBDIR += adacontrol
     SUBDIR += afnix
@@ -99,7 +98,6 @@
     SUBDIR += gnatdroid-sysroot
     SUBDIR += gnu-cobol
     SUBDIR += gnustep-base
-    SUBDIR += gnustep-guile
     SUBDIR += go
     SUBDIR += gprolog
     SUBDIR += groovy
@@ -107,8 +105,6 @@
     SUBDIR += guile
     SUBDIR += guile2
     SUBDIR += harbour
-    SUBDIR += haskell-mode.el
-    SUBDIR += hiphop-php
     SUBDIR += hla
     SUBDIR += hope
     SUBDIR += hs-brainfuck
@@ -147,12 +143,10 @@
     SUBDIR += lua51
     SUBDIR += lua52
     SUBDIR += luajit
-    SUBDIR += lush
     SUBDIR += malbolge
     SUBDIR += maude
     SUBDIR += mawk
     SUBDIR += mdk
-    SUBDIR += metaocaml
     SUBDIR += micropython
     SUBDIR += mit-scheme
     SUBDIR += mixal
@@ -163,7 +157,6 @@
     SUBDIR += mono-basic
     SUBDIR += moscow_ml
     SUBDIR += mosh
-    SUBDIR += mpd
     SUBDIR += mtasc
     SUBDIR += munger
     SUBDIR += nawk
@@ -182,15 +175,11 @@
     SUBDIR += nx
     SUBDIR += ocaml
     SUBDIR += ocaml-autoconf
-    SUBDIR += ocaml-camlidl
-    SUBDIR += ocaml-mode.el
     SUBDIR += ocaml-nox11
-    SUBDIR += ocs
     SUBDIR += ofc
     SUBDIR += ohugs
     SUBDIR += onyx
     SUBDIR += oo2c
-    SUBDIR += oorexx
     SUBDIR += opendylan
     SUBDIR += otcl
     SUBDIR += p2c
@@ -272,7 +261,6 @@
     SUBDIR += qt5-qml
     SUBDIR += racket
     SUBDIR += racket-minimal
-    SUBDIR += rakudo
     SUBDIR += ratfor
     SUBDIR += rexx-imc
     SUBDIR += rexx-regina
@@ -306,7 +294,6 @@
     SUBDIR += slib-guile
     SUBDIR += slisp
     SUBDIR += smalltalk
-    SUBDIR += sml-mode.el
     SUBDIR += smlnj
     SUBDIR += snobol4
     SUBDIR += spidermonkey17
@@ -316,12 +303,10 @@
     SUBDIR += spl
     SUBDIR += squeak
     SUBDIR += squirrel
-    SUBDIR += sr
     SUBDIR += stalin
     SUBDIR += starlogo
     SUBDIR += stldoc
     SUBDIR += swi-pl
-    SUBDIR += t3x
     SUBDIR += tcc
     SUBDIR += tcl-manual
     SUBDIR += tcl-wrapper
@@ -343,9 +328,6 @@
     SUBDIR += visualworks
     SUBDIR += whitespace
     SUBDIR += x10
-    SUBDIR += xds
-    SUBDIR += xds-c
-    SUBDIR += xotcl
     SUBDIR += yabasic
     SUBDIR += yap
     SUBDIR += yap-devel
