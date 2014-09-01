@@ -1,7 +1,0 @@
-The SystemC Verification (SCV) library is an extension library to SystemC
-which adds advanced verification capabilities to SystemC, including
-constrained randomization, complex constraint solvers, data-structure
-creation, Transaction Level Modeling (TLM), concurrency, and dynamic
-resource allocation management.
-
-WWW:	http://www.systemc.org/

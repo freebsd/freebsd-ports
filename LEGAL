@@ -225,7 +225,6 @@ rftg-*			games/rftg		Redistribution not authorized
 ricty-*			japanese/font-ricty	Redistribution not allowed
 ringtonetools-*		misc/ringtonetools	Not free for commercial organizations
 savage/SFE*		games/linux-savage	Freeware, but license terms are unclear
-scv-1.0p2-sysc*		cad/scv			License agreement required
 seatools_cli.tar	sysutils/seatools	Redistribution is not permitted
 serialmail-*		mail/serialmail		No license -- see http://cr.yp.to/softwarelaw.html
 serious.sam*		games/linux-ssamtfe	Redistribution limited
@@ -245,7 +244,6 @@ su2-1.3.tar.gz		sysutils/su2		Do not sell for profit
 susv2.tar.bz2		misc/susv2		Redistribution of the documents is not permitted
 susv3.tar.bz2		misc/susv3		Redistribution of the documents is not permitted
 svm_light.tar.gz	science/svmlight	The software must not be further distributed without prior permission of the author
-systemc-2*.tgz		cad/systemc		License agreement required
 systemsim-cell-*	emulators/linux-systemsimcell	Redistribution of pre-compiled binaries is not permitted
 taetgen-*		math/tetgen		Academic or personal use only
 tarsnap-*		sysutils/tarsnap	license restricts redistribution of source and binaries

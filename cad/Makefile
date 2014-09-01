@@ -78,11 +78,9 @@
     SUBDIR += repsnapper
     SUBDIR += sceptre
     SUBDIR += scotch
-    SUBDIR += scv
     SUBDIR += slffea
     SUBDIR += spice
     SUBDIR += sweethome3d
-    SUBDIR += systemc
     SUBDIR += tochnog
     SUBDIR += transcalc
     SUBDIR += varkon
