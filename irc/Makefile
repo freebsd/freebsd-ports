@@ -9,7 +9,6 @@
     SUBDIR += bitchx
     SUBDIR += bitlbee
     SUBDIR += bnc
-    SUBDIR += bobot++
     SUBDIR += bopm
     SUBDIR += cgiirc
     SUBDIR += charybdis

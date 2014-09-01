@@ -55,7 +55,6 @@
     SUBDIR += jad
     SUBDIR += jaf
     SUBDIR += jai
-    SUBDIR += jai-imageio
     SUBDIR += jakarta-bcel
     SUBDIR += jakarta-commons-beanutils
     SUBDIR += jakarta-commons-cli
@@ -83,11 +82,9 @@
     SUBDIR += javamail
     SUBDIR += javavmwrapper
     SUBDIR += jaxen
-    SUBDIR += jboss5
     SUBDIR += jboss7
     SUBDIR += jboss71
     SUBDIR += jboss72
-    SUBDIR += jc
     SUBDIR += jcalendar
     SUBDIR += jcckit
     SUBDIR += jcommon
@@ -130,7 +127,6 @@
     SUBDIR += openjdk8
     SUBDIR += openjdk8-jre
     SUBDIR += phpeclipse
-    SUBDIR += poseidon
     SUBDIR += proguard
     SUBDIR += rubygem-rjb
     SUBDIR += sablevm

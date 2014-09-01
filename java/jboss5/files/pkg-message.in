@@ -1,5 +1,0 @@
-%%PKGNAME%% has been installed in %%DATADIR%%.
-
-The deployment directory for applications is %%DEPLOY_DIR%%.
-
-To run the %%PORTNAME%% server from startup, add %%APP_SHORTNAME%%_enable="YES" in your /etc/rc.conf. Extra options can be found in the startup script.
