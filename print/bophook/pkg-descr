@@ -1,6 +1,0 @@
-This is a beginning-of-page hook for LaTeX.
-
-Using the \AtBeginPage hook, you can add material in the background
-of each page.
-
-WWW: http://www.ctan.org/tex-archive/macros/latex/contrib/bophook

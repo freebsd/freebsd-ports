@@ -1,4 +1,0 @@
-sbin/pkgfe
-@unexec if cmp -s %D/etc/pkgfe.conf.sample %D/etc/pkgfe.conf; then rm -f %D/etc/pkgfe.conf; fi
-etc/pkgfe.conf.sample
-@exec if [ ! -f %B/pkgfe.conf ]; then cp -p %D/%F %B/pkgfe.conf; fi
