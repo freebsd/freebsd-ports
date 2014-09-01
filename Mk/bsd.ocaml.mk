@@ -82,9 +82,7 @@ OCAML_LDCONF?=		${OCAML_LIBDIR}/ld.conf
 # work well with staging.
 .if defined(USE_OCAML_LDCONFIG)
 . if !target(ocaml-ldconfig)
-.  if !defined(NO_STAGE)
 OCAMLFIND_LDCONF?=	/dev/null
-.  endif
 . endif
 .endif
 
@@ -147,9 +145,6 @@ OCAML_LDLIBS?=	${OCAML_SITELIBDIR}/${PORTNAME}
 . if !target(ocaml-ldconfig)
 ocaml-ldconfig:
 .  for LIB in ${OCAML_LDLIBS}
-.   if defined(NO_STAGE)
-	@${ECHO_CMD} "${PREFIX}/${LIB}" >> "${PREFIX}/${OCAML_LDCONF}"
-.   endif
 	@${ECHO_CMD} "@exec ${ECHO_CMD} "%D/${LIB}" >> %D/${OCAML_LDCONF}" \
 		>> ${TMPPLIST}
 	@${ECHO_CMD} "@unexec ${SED} -i \"\" -e '/${LIB:S#/#\/#g}/d' %D/${OCAML_LDCONF}"  >> ${TMPPLIST}

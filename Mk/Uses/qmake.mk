@@ -97,7 +97,7 @@ QMAKE_SOURCE_PATH?=	${WRKSRC}
 QMAKE_SOURCE_PATH?=	# empty
 .endif
 
-.if !defined(NO_STAGE) && ! ${_qmake_ARGS:M_env}
+.if ! ${_qmake_ARGS:M_env}
 DESTDIRNAME=	INSTALL_ROOT
 .endif
 

@@ -19,10 +19,6 @@ BUILD_DEPENDS+=	update-mime-database:${PORTSDIR}/misc/shared-mime-info
 RUN_DEPENDS+=	update-mime-database:${PORTSDIR}/misc/shared-mime-info
 
 shared-mime-post-install:
-.if defined(NO_STAGE)
-# run for port post-install
-	@-update-mime-database ${PREFIX}/share/mime
-.endif
 # plist entries for packages.
 	@${ECHO_CMD} "@exec ${LOCALBASE}/bin/update-mime-database %D/share/mime" \
 		>> ${TMPPLIST}; \

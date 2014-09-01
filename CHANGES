@@ -10,6 +10,11 @@ in the release notes and/or placed into UPDATING.
 
 All ports committers are allowed to commit to this file.
 
+20140901:
+AUTHOR: bapt@FreeBSD.org
+
+  Support for NO_STAGE has been removed
+
 20140825:
 AUTHOR: antoine@FreeBSD.org
 

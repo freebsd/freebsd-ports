@@ -203,17 +203,6 @@ do-install:
 	@${GREP} "#define \(COMPILE\|HAVE\|USE\)_" ${WRKSRC}/config.h \
 		> ${STAGEDIR}${PREFIX}/include/php/ext/${PHP_MODNAME}/config.h
 	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/php
-.if defined(NO_STAGE)
-	@${ECHO_CMD} \#include \"ext/${PHP_MODNAME}/config.h\" \
-		>> ${PREFIX}/include/php/ext/php_config.h
-.if defined(USE_ZENDEXT)
-	@${ECHO_CMD} zend_extension=${PREFIX}/lib/php/${PHP_EXT_DIR}/${PHP_MODNAME}.so \
-		>> ${PREFIX}/etc/php/extensions.ini
-.else
-	@${ECHO_CMD} extension=${PHP_MODNAME}.so \
-		>> ${PREFIX}/etc/php/extensions.ini
-.endif
-.endif
 
 add-plist-info: add-plist-phpext
 add-plist-phpext:

@@ -189,9 +189,6 @@ ${_C}_DEPENDS+=	${TEX_${_C}_DEPENDS:O:u}
 .PHONY:	do-texhash
 do-texhash:
 . if !empty(USE_TEX:Mtexhash-bootstrap)
-.if defined(NO_STAGE)
-	@${LOCALBASE}/bin/mktexlsr ${TEXHASHDIRS:S,^,${PREFIX}/,}
-.endif
 	@${ECHO_CMD} "@exec ${LOCALBASE}/bin/mktexlsr " \
 		"${TEXHASHDIRS:S,^,%D/,}" >> ${TMPPLIST}
 	@for D in ${TEXHASHDIRS}; do \
@@ -199,11 +196,6 @@ do-texhash:
 		${ECHO_CMD} "@unexec ${RMDIR} %D/$$D 2> /dev/null || ${TRUE}"; \
 	done >> ${TMPPLIST}
 . else
-.if defined(NO_STAGE)
-	@for D in ${TEXHASHDIRS:S,^,${PREFIX}/,}; do \
-		if [ -r $$D/ls-R ]; then ${LOCALBASE}/bin/mktexlsr $$D; fi; \
-	done
-.endif
 	@${ECHO_CMD} "@exec for D in ${TEXHASHDIRS:S,^,${PREFIX}/,}; do " \
 		"if [ -r \$$D/ls-R ]; then " \
 			"${LOCALBASE}/bin/mktexlsr \$$D; " \
@@ -258,11 +250,6 @@ PLIST_DIRSTRY=	${_PLIST_DIRSTRY:O:u} ${TEXMFVARDIR}/web2c
 .if !empty(USE_TEX:Mupdmap)
 .PHONY:	do-updmap
 do-updmap:
-.if defined(NO_STAGE)
-	${SETENV} PATH=${PATH}:${LOCALBASE}/bin \
-		TEXMFMAIN=${LOCALBASE}/${TEXMFDIR} \
-		${LOCALBASE}/bin/updmap-sys
-.endif
 	@${ECHO_CMD} "@exec ${SETENV} PATH=${PATH}:${LOCALBASE}/bin " \
 		"TEXMFMAIN=${LOCALBASE}/${TEXMFDIR} " \
 		"${LOCALBASE}/bin/updmap-sys"  >> ${TMPPLIST}

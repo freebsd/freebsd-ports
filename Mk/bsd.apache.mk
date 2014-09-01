@@ -485,9 +485,6 @@ do-build: ap-gen-plist
 
 .if !target(do-install)
 do-install:
-. if defined(NO_STAGE)
-	@${APXS} -i ${AP_MOD_EN} -n ${SHORTMODNAME} ${WRKSRC}/${MODULENAME}.${AP_BUILDEXT}
-. else
 	@${MKDIR} ${STAGEDIR}${PREFIX}/${APACHEMODDIR}
 	@${APXS} -S LIBEXECDIR=${STAGEDIR}${PREFIX}/${APACHEMODDIR} -i -n ${SHORTMODNAME} ${WRKSRC}/${MODULENAME}.${AP_BUILDEXT}
 .	if !defined(DEBUG)	
@@ -496,7 +493,6 @@ do-install:
 .	else
 		@${ECHO_MSG} "===> DEBUG is set, will not strip ${APACHEMODDIR}/${MODULENAME}.so"
 .	endif
-. endif
 .endif
 
 .endif          # defined(AP_FAST_BUILD)
