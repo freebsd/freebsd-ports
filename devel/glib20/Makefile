@@ -4,7 +4,7 @@
 
 PORTNAME=	glib
 PORTVERSION=	2.36.3
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	devel
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -22,17 +22,16 @@ PORTSCOUT=	limitw:1,even
 LIB_DEPENDS+=	libpcre.so:${PORTSDIR}/devel/pcre \
 		libffi.so:${PORTSDIR}/devel/libffi
 
-USE_AUTOTOOLS=	libtool
+GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 # iconv:wchar_t - our iconv in base doesn't support utf-8 -> wchar_t (boooo)
 # (wchar_t is used by glibmm, rawtherapee triggered this)
-USES+=		gettext gmake iconv:wchar_t pathfix pkgconfig shebangfix perl5
-USE_GNOME=	ltverhack
-USE_PYTHON=	yes
-PYTHON_PY3K_PLIST_HACK=	yes
-CONFIGURE_ARGS=	--enable-static \
-		--disable-gtk-doc --with-html-dir=${PREFIX}/share/doc \
+USES+=		gettext gmake iconv:wchar_t libtool pathfix perl5 \
+		pkgconfig python shebangfix
+PYTHON_FEATURES=	py3kplist
+CONFIGURE_ARGS=	--disable-gtk-doc --with-html-dir=${PREFIX}/share/doc \
 		--disable-man --without-xml-catalog \
+		--enable-static \
 		--with-pcre=system \
 		--disable-fam
 CONFIGURE_ENV=	ac_cv_header_sys_inotify_h=
@@ -41,6 +40,9 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 INSTALL_TARGET=	install-strip
 
 SHEBANG_FILES=	*/*.pl glib/gen-iswide-table.py
+
+LIBVERSION=	0.3600.3
+PLIST_SUB+=	LIBVERSION=${LIBVERSION}
 
 OPTIONS_DEFINE=	COLLATION_FIX DEBUG
 COLLATION_FIX_DESC=	fix string collation
