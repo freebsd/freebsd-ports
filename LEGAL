@@ -48,7 +48,6 @@ baudline_*		audio/baudline		No redistribution allowed
 BCWipe-*		security/bcwipe		Non-commercial distribution and use only
 bdc*			security/bdc		License does not allow redistribution
 bicom*			archivers/bicom		Contact author personally regarding commercial use
-blast*.freebsd-*	biology/blast		Must be downloaded from vendor site
 boodler-*		audio/boodler		Not for commercial use
 Browser*.tar.gz		net/ldapbrowser		No reply from author regarding redistribution licensing
 candycruncher_demo*	games/linux-candycruncher-demo	Redistribution is limited, see license
