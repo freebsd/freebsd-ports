@@ -25,9 +25,8 @@ x-generate-plist: build
 		-e "s,^\.$$,@dirrmtry %%WWWDIR%%," \
 		-e "s,^\.,@dirrm %%WWWDIR%%," >>${.CURDIR}/pkg-plist.tmp
 
-NO_STAGE=	yes
 do-install:
-	${MKDIR} ${WWWDIR}
-	cd ${WRKSRC} && ${PAX} -r -w . ${WWWDIR}
+	@${MKDIR} ${STAGEDIR}${WWWDIR}
+	cd ${WRKSRC} && ${PAX} -r -w . ${STAGEDIR}${WWWDIR}
 
 .include <bsd.port.mk>
