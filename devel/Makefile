@@ -3400,6 +3400,7 @@
     SUBDIR += pep8
     SUBDIR += performance
     SUBDIR += perlconsole
+    SUBDIR += phabricator
     SUBDIR += php-Psr_Log
     SUBDIR += php-composer
     SUBDIR += php-libawl
