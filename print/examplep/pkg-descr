@@ -1,7 +1,0 @@
-The examplep LaTeX package provides sophisticated features
-for typesetting verbatim source code listings, including the display
-of the source code and its compiled LaTeX or METAPOST output
- side-by-side, with automatic width detection and enabled page breaks
-(in the source), without the need for specifying the source twice.
-
-WWW: http://www.ctan.org/tex-archive/macros/latex2e/contrib/examplep

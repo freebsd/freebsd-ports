@@ -1,5 +1,0 @@
-prhistory shows PR from the FreeBSD GNATS database corresponding
-to a port. Show a summary view of all PR related to a port and 
-request an individual PR by number.
-
-WWW: https://github.com/waitman/prhistory

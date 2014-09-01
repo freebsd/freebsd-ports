@@ -1,6 +1,0 @@
-pdfcolorsplit - a Python program that drives pdftk to split a PDF file into
-color and b/w parts. Useful for printing large documents with a few color pages
-when color printing is expensive. This program was inspired by Jeremy Sander's
-dvicoloursplit.py.
-
-WWW: http://homepages.inf.ed.ac.uk/imurray2/code/#pdfcolorsplit

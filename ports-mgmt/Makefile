@@ -5,7 +5,6 @@
 
     SUBDIR += bpkg
     SUBDIR += bpm
-    SUBDIR += bxpkg
     SUBDIR += chucky
     SUBDIR += dialog4ports
     SUBDIR += dialog4ports-static
@@ -45,7 +44,6 @@
     SUBDIR += pkg_search
     SUBDIR += pkg_trackinst
     SUBDIR += pkg_tree
-    SUBDIR += pkgfe
     SUBDIR += pkgs_which
     SUBDIR += port-authoring-tools
     SUBDIR += port-maintenance-tools
@@ -74,7 +72,6 @@
     SUBDIR += portupgrade-devel
     SUBDIR += poudriere
     SUBDIR += poudriere-devel
-    SUBDIR += prhistory
     SUBDIR += psearch
     SUBDIR += symports
     SUBDIR += tinderbox
