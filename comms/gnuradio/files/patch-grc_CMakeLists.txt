@@ -1,23 +1,23 @@
---- grc/CMakeLists.txt.orig	2013-08-28 13:27:03.000000000 -0500
-+++ grc/CMakeLists.txt	2014-03-02 20:20:40.000000000 -0500
+--- grc/CMakeLists.txt.orig	2014-08-02 15:03:57.000000000 -0400
++++ grc/CMakeLists.txt	2014-08-02 15:03:59.000000000 -0400
 @@ -73,11 +73,21 @@
      ${CMAKE_CURRENT_BINARY_DIR}/grc.conf
  @ONLY)
  
-+# FreeBSD needs an original copy
 +if(CMAKE_SYSTEM_NAME STREQUAL "FreeBSD")
++ install(
++     FILES ${CMAKE_CURRENT_BINARY_DIR}/grc.conf
++     DESTINATION ${GR_PREFSDIR}
++    RENAME "grc.conf.sample"
++     COMPONENT "grc"
++ )
++
++elseif()
  install(
      FILES ${CMAKE_CURRENT_BINARY_DIR}/grc.conf
      DESTINATION ${GR_PREFSDIR}
-+    RENAME "grc.conf.sample"
      COMPONENT "grc"
  )
-+elseif()
-+install(
-+    FILES ${CMAKE_CURRENT_BINARY_DIR}/grc.conf
-+    DESTINATION ${GR_PREFSDIR}
-+    COMPONENT "grc"
-+)
 +endif()
  
  GR_PYTHON_INSTALL(

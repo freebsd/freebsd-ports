@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	gnuradio
-PORTVERSION=	3.7.2.1
-PORTREVISION=	3
+PORTVERSION=	3.7.4
 CATEGORIES=	comms astro hamradio
 MASTER_SITES=	http://gnuradio.org/releases/gnuradio/ \
 		${MASTER_SITE_LOCAL}
@@ -11,30 +10,32 @@ MASTER_SITE_SUBDIR=	db
 MAINTAINER=	hamradio@FreeBSD.org
 COMMENT=	Amateur Radio Software defined radio
 
+LICENSE=	GPLv3
+
 BUILD_DEPENDS=	sdl-config:${PORTSDIR}/devel/sdl12 \
 		swig2.0:${PORTSDIR}/devel/swig20 \
 		cheetah:${PORTSDIR}/devel/py-cheetah \
-		py*-lxml>=0:${PORTSDIR}/devel/py-lxml \
-		${PYNUMPY} \
+		${PYTHON_SITELIBDIR}/lxml:${PORTSDIR}/devel/py-lxml \
 		${PYTHON_SITELIBDIR}/pygtk.py:${PORTSDIR}/x11-toolkits/py-gtk2 \
 		${PYTHON_SITELIBDIR}/PyQt4/Qt.py:${PORTSDIR}/devel/py-qt4 \
 		xdg-open:${PORTSDIR}/devel/xdg-utils \
 		guile:${PORTSDIR}/lang/guile \
 		icebox:${PORTSDIR}/devel/ice \
 		aconnect:${PORTSDIR}/audio/alsa-utils \
-		git:${PORTSDIR}/devel/git
+		git:${PORTSDIR}/devel/git \
+		${PYNUMPY} \
+		${PYTHON_SITELIBDIR}/ephem/__init__.py:${PORTSDIR}/astro/pyephem\
+		${PYTHON_SITELIBDIR}/PyQt4/Qt.py:${PORTSDIR}/devel/py-qt4
 LIB_DEPENDS=	libcppunit.so:${PORTSDIR}/devel/cppunit \
 		libfftw3.so:${PORTSDIR}/math/fftw3 \
 		libfftw3f.so:${PORTSDIR}/math/fftw3-float \
 		libqwt.so:${PORTSDIR}/x11-toolkits/qwt5 \
 		libboost_python.so:${PORTSDIR}/devel/boost-python-libs \
-		libportaudio.so.2:${PORTSDIR}/audio/portaudio2 \
+		libportaudio.so:${PORTSDIR}/audio/portaudio2 \
 		libjack.so:${PORTSDIR}/audio/jack \
 		libasound.so:${PORTSDIR}/audio/alsa-lib \
 		libgsl.so:${PORTSDIR}/math/gsl
-RUN_DEPENDS=	${PYNUMPY} \
-		${PYTHON_SITELIBDIR}/ephem/__init__.py:${PORTSDIR}/astro/pyephem\
-		${PYTHON_SITELIBDIR}/PyQt4/Qt.py:${PORTSDIR}/devel/py-qt4
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		iconv cmake:outsource perl5 shebangfix
 SHEBANG_FILES=	grc/freedesktop/grc_setup_freedesktop.in
@@ -45,7 +46,7 @@ CMAKE_ARGS+=	-DICONV_PREFIX:STRING="${ICONV_PREFIX}" \
 # for detailed debugging uncomment the next line
 #CMAKE_ARGS+=	--debug-output --trace
 DOCSDIR=	share/doc/${PORTNAME}-${PORTVERSION}
-USE_PYTHON=	yes
+USE_PYTHON=	2.6-2.8
 USE_WX=		3.0+
 USE_QT4=	gui xml qmake moc rcc uic
 WX_COMPS=	wx wx:build wx:run python:build python:run
@@ -54,11 +55,10 @@ PLIST_SUB+=	MAJOR_VERSION="3"
 
 OPTIONS_DEFINE=		USRP TESTING
 # Unfortunately building docs on i386 fails
-OPTIONS_EXCLUDE_${i386}=	DOCS
+##OPTIONS_EXCLUDE_${i386}=	DOCS
 # Yay. building docs is broken on 10 and HEAD too so turn them all off
 OPTIONS_EXCLUDE=	DOCS
-# turn this off until usrp port is fixed on -10 and HEAD
-#OPTIONS_DEFAULT=	USRP
+OPTIONS_DEFAULT=	USRP
 USRP_DESC=	Include USRP support (UHD) from Ettus
 TESTING_DESC=	Include testing support
 
@@ -80,8 +80,7 @@ BUILD_DEPENDS+=	doxygen:${PORTSDIR}/devel/doxygen \
 		${LOCALBASE}/bin/sphinx-apidoc:${PORTSDIR}/textproc/py-sphinx \
 		dot:${PORTSDIR}/graphics/graphviz \
 		xmlto:${PORTSDIR}/textproc/xmlto \
-		${LOCALBASE}/lib/X11/fonts/freefont-ttf/fonts.scale:${PORTSDIR}/x11-fonts/freefont-ttf \
-		latex:${PORTSDIR}/print/teTeX
+		${LOCALBASE}/lib/X11/fonts/freefont-ttf/fonts.scale:${PORTSDIR}/x11-fonts/freefont-ttf
 CMAKE_ARGS+=	-DENABLE_DOXYGEN:STRING="ON"
 CMAKE_ARGS+=	-DENABLE_DOCS:STRING="ON"
 CMAKE_ARGS+=	-DENABLE_BAD_BOOST="ON"

@@ -1,8 +1,8 @@
---- docs/doxygen/Doxyfile.in.orig	2013-08-28 13:27:03.000000000 -0500
-+++ docs/doxygen/Doxyfile.in	2014-03-02 20:19:55.000000000 -0500
-@@ -1406,7 +1406,7 @@
- # different font using DOT_FONTNAME you can set the path where dot
- # can find it using this tag.
+--- docs/doxygen/Doxyfile.in.orig	2014-03-31 11:52:54.000000000 -0400
++++ docs/doxygen/Doxyfile.in	2014-07-29 18:42:29.000000000 -0400
+@@ -1839,7 +1839,7 @@
+ # If you specify a different font using DOT_FONTNAME you can use DOT_FONTPATH to
+ # set the path where dot can find it.
  
 -DOT_FONTPATH           =
 +DOT_FONTPATH           =	%%PREFIX%%/lib/X11/fonts/freefont-ttf

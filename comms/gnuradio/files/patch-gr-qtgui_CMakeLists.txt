@@ -1,0 +1,30 @@
+--- gr-qtgui/CMakeLists.txt.orig	2014-08-02 15:09:03.000000000 -0400
++++ gr-qtgui/CMakeLists.txt	2014-08-02 15:11:16.000000000 -0400
+@@ -128,17 +128,26 @@
+ 
+ install(
+     FILES ${CMAKE_CURRENT_BINARY_DIR}/gnuradio-qtgui.pc
+-    DESTINATION ${GR_LIBRARY_DIR}/pkgconfig
++    DESTINATION ${GR_PKGCONFIG_DIR}/pkgconfig
+     COMPONENT "qtgui_devel"
+ )
+ 
+ ########################################################################
+ # Install the conf file
+ ########################################################################
++if(CMAKE_SYSTEM_NAME STREQUAL "FreeBSD")
++install(
++     FILES ${CMAKE_CURRENT_SOURCE_DIR}/gr-qtgui.conf
++     DESTINATION ${GR_PREFSDIR}
++    RENAME "gr-qtgui.conf.sample"
++     COMPONENT "qtgui"
++)
++elseif()
+ install(
+     FILES ${CMAKE_CURRENT_SOURCE_DIR}/gr-qtgui.conf
+     DESTINATION ${GR_PREFSDIR}
+     COMPONENT "qtgui"
+ )
++endif()
+ 
+ endif(ENABLE_GR_QTGUI)
