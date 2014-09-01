@@ -3,3 +3,4 @@ bin/fcmanager
 lib/libfc.a
 lib/libfc.so
 lib/libfc.so.0
+lib/libfc.so.0.0.0
