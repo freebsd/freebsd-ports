@@ -66,19 +66,17 @@ DEV_ERROR+=	"USE_TCL and USE_TK are no longer supported, please use USES=tcl or 
 
 # print warning if no reason given for NO_STAGE
 .if defined(NO_STAGE)
-DEV_WARNING+=	"NO_STAGE is deprecated, convert port to stage directory:"
-DEV_WARNING+=	"https://wiki.freebsd.org/ports/StageDir"
+DEV_ERROR+=	"NO_STAGE is unsupported, convert port to stage directory:"
+DEV_ERROR+=	"https://wiki.freebsd.org/ports/StageDir"
 .endif
 
-.if !defined(NO_STAGE)
 .for a in 1 2 3 4 5 6 7 8 9 L N
 .if defined(MAN${a})
 DEV_WARNING+=	"MAN${a} macros are deprecated when using stage directory"
 .endif
 .endfor
-.endif
 
-.if !defined(NO_STAGE) && defined(MLINKS)
+.if defined(MLINKS)
 DEV_WARNING+=	"MLINKS macros are deprecated when using stage directory"
 .endif
 

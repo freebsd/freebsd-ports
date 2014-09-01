@@ -497,9 +497,6 @@ _PYTHONPKGLIST=	${WRKDIR}/.PLIST.pymodtmp
 # - it links against libpython*.so
 # - it uses USE_PYTHON=distutils
 #
-.if defined(NO_STAGE) && defined(_PYTHON_FEATURE_CONCURRENT)
-BROKEN=		USE_PYTHON=concurrent uses USES=uniquefiles, which is not stage-safe
-.endif
 
 .if defined(_PYTHON_FEATURE_CONCURRENT)
 _USES_POST+=		uniquefiles:dirs
@@ -541,9 +538,7 @@ PYDISTUTILS_INSTALLARGS?=	-c -O1 --prefix=${PREFIX}
 . if !defined(PYDISTUTILS_INSTALLNOSINGLE)
 PYDISTUTILS_INSTALLARGS+=	--single-version-externally-managed
 . endif
-. if !defined(NO_STAGE)
 PYDISTUTILS_INSTALLARGS+=	--root=${STAGEDIR}
-. endif
 .endif
 PYDISTUTILS_INSTALLARGS:=	--record ${_PYTHONPKGLIST} \
 		${PYDISTUTILS_INSTALLARGS}

@@ -99,11 +99,7 @@ create-manifest:
 
 
 .if !target(fake-pkg)
-.if defined(NO_STAGE)
-STAGE_ARGS=		-l
-.else
 STAGE_ARGS=		-i ${STAGEDIR}
-.endif
 
 .if !defined(NO_PKG_REGISTER)
 fake-pkg: create-manifest
@@ -214,10 +210,8 @@ check-install-conflicts:
 .endif
 
 .if !target(do-package)
-.if !defined(NO_STAGE)
 PKG_CREATE_ARGS=	-r ${STAGEDIR} -m ${METADIR} -p ${TMPPLIST}
 do-package: create-manifest
-.endif
 do-package: ${TMPPLIST}
 	@if [ -d ${PACKAGES} ]; then \
 		if [ ! -d ${PKGREPOSITORY} ]; then \

@@ -64,10 +64,6 @@
 .if !defined(_INCLUDE_USES_UNIQUEFILES_MK)
 _INCLUDE_USES_UNIQUEFILES_MK=	yes
 
-.if defined(NO_STAGE)
-BROKEN=		uniquefiles USES can only be used for stage-safe ports
-.endif
-
 .if !defined(uniquefiles_ARGS)
 uniquefiles_ARGS=	#empty
 .endif
