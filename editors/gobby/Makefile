@@ -2,7 +2,7 @@
 
 PORTNAME=	gobby
 PORTVERSION=	0.4.13
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	editors
 MASTER_SITES=	http://releases.0x539.de/gobby/ \
 		LOCAL/${MAINTAINER:C/([^@]*)@.*/\1/}

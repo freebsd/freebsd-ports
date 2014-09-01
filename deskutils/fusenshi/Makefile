@@ -3,7 +3,7 @@
 
 PORTNAME=	fusenshi
 PORTVERSION=	0.9.0
-PORTREVISION=	12
+PORTREVISION=	13
 CATEGORIES=	deskutils
 MASTER_SITES=	http://www.ongs.co.jp/projects/fusenshi/
 

@@ -3,6 +3,7 @@
 
 PORTNAME=	freedoko
 PORTVERSION=	0.7.12
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	SF/free-doko/FreeDoko%20source
 DISTNAME=	FreeDoko_${PORTVERSION}.src
