@@ -16,7 +16,6 @@ RUN_DEPENDS=	${LOCALBASE}/bin/bash:${PORTSDIR}/shells/bash
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-shared
 USE_PERL5=	run
-USE_GCC=	yes
 USE_AUTOTOOLS=	libtoolize aclocal autoconf automake
 AUTOMAKE_ARGS=	--add-missing
 USES=		shebangfix libtool tar:tgz
