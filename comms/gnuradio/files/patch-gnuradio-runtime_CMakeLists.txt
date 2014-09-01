@@ -1,6 +1,6 @@
---- gnuradio-runtime/CMakeLists.txt.orig	2013-08-29 00:50:51.000000000 -0400
-+++ gnuradio-runtime/CMakeLists.txt	2014-03-24 14:16:02.728878716 -0400
-@@ -133,18 +133,37 @@
+--- gnuradio-runtime/CMakeLists.txt.orig	2014-07-02 21:09:41.000000000 -0400
++++ gnuradio-runtime/CMakeLists.txt	2014-07-29 18:42:32.000000000 -0400
+@@ -141,18 +141,37 @@
      ${CMAKE_CURRENT_BINARY_DIR}/gnuradio-runtime.conf
  @ONLY)
  
@@ -38,7 +38,7 @@
  endif(ENABLE_GR_LOG AND HAVE_LOG4CPP)
  
  ########################################################################
-@@ -171,7 +190,7 @@
+@@ -179,7 +198,7 @@
  
  install(
      FILES ${CMAKE_CURRENT_BINARY_DIR}/gnuradio-runtime.pc

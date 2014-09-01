@@ -1,6 +1,6 @@
---- volk/CMakeLists.txt.orig	2013-08-28 13:27:03.000000000 -0500
-+++ volk/CMakeLists.txt	2014-03-02 20:20:43.000000000 -0500
-@@ -97,7 +97,7 @@
+--- volk/CMakeLists.txt.orig	2014-07-07 17:29:01.000000000 -0400
++++ volk/CMakeLists.txt	2014-07-29 18:44:30.000000000 -0400
+@@ -102,7 +102,7 @@
  
  install(
      FILES ${CMAKE_CURRENT_BINARY_DIR}/volk.pc

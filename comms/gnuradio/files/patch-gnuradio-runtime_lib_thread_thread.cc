@@ -1,6 +1,6 @@
---- gnuradio-runtime/lib/thread/thread.cc.orig	2013-08-28 13:27:03.000000000 -0500
-+++ gnuradio-runtime/lib/thread/thread.cc	2014-03-02 20:19:59.000000000 -0500
-@@ -217,6 +217,7 @@
+--- gnuradio-runtime/lib/thread/thread.cc.orig	2014-07-08 16:55:12.000000000 -0400
++++ gnuradio-runtime/lib/thread/thread.cc	2014-07-29 18:42:37.000000000 -0400
+@@ -276,6 +276,7 @@
      void
      thread_bind_to_processor(gr_thread_t thread, const std::vector<int> &mask)
      {
@@ -8,7 +8,7 @@
        cpu_set_t set;
        size_t len = sizeof(cpu_set_t);
        std::vector<int> _mask = mask;
-@@ -232,6 +233,7 @@
+@@ -291,6 +292,7 @@
          s << "thread_bind_to_processor failed with error: " << ret << std::endl;
          throw std::runtime_error(s.str());
        }
@@ -16,7 +16,7 @@
      }
  
      void
-@@ -243,6 +245,7 @@
+@@ -302,6 +304,7 @@
      void
      thread_unbind(gr_thread_t thread)
      {
@@ -24,11 +24,11 @@
        cpu_set_t set;
        size_t len = sizeof(cpu_set_t);
  
-@@ -258,6 +261,7 @@
+@@ -317,6 +320,7 @@
          s << "thread_unbind failed with error: " << ret << std::endl;
          throw std::runtime_error(s.str());
        }
 +#endif
      }
  
-     int 
+     int
