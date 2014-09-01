@@ -4,7 +4,7 @@
 
 PORTNAME=	file-roller
 PORTVERSION=	2.32.1
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	archivers gnome
 MASTER_SITES=	GNOME
@@ -16,22 +16,24 @@ COMMENT=	Archive manager for zip files, tar, etc
 RUN_DEPENDS=	${LOCALBASE}/bin/gtar:${PORTSDIR}/archivers/gtar \
     		${LOCALBASE}/bin/unzip:${PORTSDIR}/archivers/unzip
 
-USE_LDCONFIG=	yes
-USES=		desktop-file-utils gettext gmake pathfix pkgconfig tar:bzip2
+USES=		desktop-file-utils gettext gmake libtool \
+		pathfix pkgconfig tar:bzip2
+USE_GNOME=	gnomeprefix intlhack gnomedocutils gtk20 gconf2
+USE_XORG=	sm
 INSTALLS_OMF=	yes
 INSTALLS_ICONS=	yes
-USE_GNOME=	gnomeprefix intlhack gnomedocutils gtk20 gconf2
+USE_LDCONFIG=	yes
 GNOME_DESKTOP_VERSION=2
-USE_XORG=	sm
 GNU_CONFIGURE=	yes
-OPTIONS_SUB=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--disable-packagekit
+INSTALL_TARGET=	install-strip
 
 PORTDOCS=	AUTHORS NEWS README TODO ChangeLog
 GCONF_SCHEMAS=	file-roller.schemas
 
+OPTIONS_SUB=	yes
 OPTIONS_DEFINE=	DOCS NAUTILUS
 NAUTILUS_DESC=	Enable Nautilus extension
 
