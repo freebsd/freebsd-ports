@@ -1,9 +1,0 @@
-This is a port of the snd_emu10kx sound driver. This driver works for
-SBLive!, Audigy, and Audigy2 based cards.
-
-This is an alternate driver that you may use instead of the snd_emu10k1
-driver in the FreeBSD kernel.
-
-This driver was written by Yuriy Tsibizov.
-
-WWW: http://chibis.persons.gfk.ru/audigy/

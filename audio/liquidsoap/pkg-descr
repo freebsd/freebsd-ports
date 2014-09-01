@@ -1,9 +1,0 @@
-Liquidsoap is the audio stream generator of the Savonet project, notably used
-for generating the stream of netradios. It has tons of features, it's free and
-it's open-source! Liquidsoap lets you to describe your streams in a powerful and
-flexible way. Allowing arbitrarily deep-nested composition of streams, it gives
-you more power than you need for creating an original netradio. But liquidsoap
-is still very light and easy to use, in the Unix tradition of simple strong
-components working together.
-
-WWW:	http://savonet.sourceforge.net/
