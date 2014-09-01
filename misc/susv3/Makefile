@@ -12,11 +12,10 @@ COMMENT=	Single UNIX Specification Version 3
 
 RESTRICTED=	Redistribution of the documents is not permitted
 
-USES=	tar:bzip2
+USES=		tar:bzip2
 NO_BUILD=	yes
 PORTDOCS=	*
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX})
@@ -24,18 +23,7 @@ IGNORE=		may not be redistributed because of licensing reasons. Please visit htt
 .endif
 
 do-install:
-	@${MKDIR} ${DOCSDIR}
-	@${FIND} ${WRKSRC} | ${SED} -e 's#^${WRKSRC}##' | while read file; do \
-		if ${TEST} -d "${WRKSRC}$$file"; then \
-			${MKDIR} "${DOCSDIR}$$file"; \
-		else \
-			if ${TEST} -L "${WRKSRC}$$file"; then \
-				${LN} -s "`${LS} -l \"${WRKSRC}$$file\" | ${SED} -e 's/^.*> //'`" \
-					"${DOCSDIR}$$file"; \
-			else \
-				${INSTALL_DATA} "${WRKSRC}$$file" "${DOCSDIR}$$file"; \
-			fi; \
-		fi; \
-	done
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC} && ${COPYTREE_SHARE} \* ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.post.mk>
