@@ -4,7 +4,7 @@
 
 PORTNAME=	colord
 PORTVERSION=	1.0.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.freedesktop.org/software/colord/releases/
 
@@ -18,8 +18,8 @@ LIB_DEPENDS=	libpolkit-gobject-1.so:${PORTSDIR}/sysutils/polkit \
 USERS=		colord
 GROUPS=		colord
 
+USES=		gettext gmake libtool pathfix pkgconfig tar:xz
 USE_GNOME=	gnomehier glib20 intlhack introspection:build
-USES=		gettext gmake pathfix pkgconfig tar:xz
 USE_SQLITE=	3
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
@@ -43,9 +43,6 @@ GLIB_SCHEMAS=	org.freedesktop.ColorHelper.gschema.xml
 OPTIONS_DEFINE=	MANPAGES
 
 .include <bsd.port.options.mk>
-
-# workaround for buggy handling of "@cwd" in pkg_*
-PLIST_SUB+=	REALPREFIX=${PREFIX}
 
 .if ${PORT_OPTIONS:MMANPAGES}
 BUILD_DEPENDS+=	docbook2html:${PORTSDIR}/textproc/docbook-utils \
