@@ -152,6 +152,7 @@ bin/rexify
 %%SITE_PERL%%/Rex/Helper/System.pm
 %%SITE_PERL%%/Rex/Helper/UserAgent.pm
 %%SITE_PERL%%/Rex/Hook.pm
+%%SITE_PERL%%/Rex/Require.pm
 %%SITE_PERL%%/Rex/Interface/Cache.pm
 %%SITE_PERL%%/Rex/Interface/Cache/Base.pm
 %%SITE_PERL%%/Rex/Interface/Cache/YAML.pm
@@ -226,6 +227,7 @@ bin/rexify
 %%SITE_PERL%%/Rex/Logger.pm
 %%SITE_PERL%%/Rex/Notify.pm
 %%SITE_PERL%%/Rex/Output.pm
+%%SITE_PERL%%/Rex/Output/Base.pm
 %%SITE_PERL%%/Rex/Output/JUnit.pm
 %%SITE_PERL%%/Rex/Pkg.pm
 %%SITE_PERL%%/Rex/Pkg/ALT.pm
