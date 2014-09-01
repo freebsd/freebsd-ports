@@ -4,7 +4,7 @@
 
 PORTNAME=	gnome-settings-daemon
 PORTVERSION=	2.32.1
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	sysutils gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -21,14 +21,14 @@ RUN_DEPENDS=	xrdb:${PORTSDIR}/x11/xrdb
 CONFLICTS=	gnome-settings-daemon-3.[0-9]*
 
 USE_XORG=	xxf86misc
-USES=		gmake pathfix gettext pkgconfig tar:bzip2
 USE_GNOME=	gnomeprefix intlhack gnomedesktop libgnomekbd
 USE_GSTREAMER=	good
-USE_LDCONFIG=	yes
+USES=		gettext gmake libtool pathfix pkgconfig tar:bzip2
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
+INSTALL_TARGET=	install-strip
 
 OPTIONS_DEFINE=	PULSEAUDIO
 OPTIONS_DEFAULT=PULSEAUDIO
