@@ -12,7 +12,7 @@ DISTFILES=	${PATCH436FILES} \
 		${PATCH451FILES}
 DIST_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	scf@FreeBSD.org
 COMMENT=	Unreal Tournament for Linux
 
 ONLY_FOR_ARCHS=	i386 amd64
@@ -65,7 +65,6 @@ PLIST_SUB+=	MAPS=""
 MAPS_EXCLUDE=	# Empty
 .endif
 
-NO_STAGE=	yes
 do-extract:
 	@${CAT} ${PKGMESSAGE}
 	@${MKDIR} ${WRKSRC}
@@ -106,12 +105,12 @@ do-install:
 .endif
 	@${ECHO_CMD} "Detected ${RELEASE_MSG} release"
 	@${ECHO_CMD} "Installing data from CD"
-	@${MKDIR} ${DATADIR}
+	@${MKDIR} ${STAGEDIR}${DATADIR}
 ####################################
 # Anthology release CD
 ####################################
 .if defined(ANTHOLOGY)
-	@cd ${DATADIR} && ${MKDIR} ${CDDIRS}
+	@cd ${STAGEDIR}${DATADIR} && ${MKDIR} ${CDDIRS}
 
 # We need to create a single directory with all the cab files so unshield can
 # find them.
@@ -132,12 +131,12 @@ do-install:
 			--exclude 'mplay*' --exclude 'Splash*' ${MAPS_EXCLUDE}\
 			--exclude 'edsplash.bmp' --exclude 'UnrealEd.ini'\
 			--exclude 'editorres*' -f - . |\
-		${TAR} x -C ${DATADIR}/`${ECHO_CMD}\
+		${TAR} x -C ${STAGEDIR}${DATADIR}/`${ECHO_CMD}\
 			3_UnrealTournament_${group} | ${SED} -e\
 			's/3_UnrealTournament_//; s/_All//; s/_English//;'` -f -
 .endfor
 
-	@cd ${DATADIR}/System &&\
+	@cd ${STAGEDIR}${DATADIR}/System &&\
 		${MV} -f epiccustommodels.u EpicCustomModels.u &&\
 		${MV} -f multimesh.u MultiMesh.u &&\
 		${MV} -f multimesh.int MultiMesh.int &&\
@@ -148,7 +147,7 @@ do-install:
 		${MV} -f tcowmeshskins.int TCowMeshSkins.int &&\
 		${MV} -f tnalimeshskins.int TNaliMeshSkins.int &&\
 		${MV} -f tskmskins.int TSkMSkins.int
-	@cd ${DATADIR}/Textures &&\
+	@cd ${STAGEDIR}${DATADIR}/Textures &&\
 		${MV} -f tcowmeshskins.utx TCowMeshSkins.utx &&\
 		${MV} -f tnalimeshskins.utx TNaliMeshSkins.utx &&\
 		${MV} -f tskmskins.utx TSkMSkins.utx
@@ -166,10 +165,10 @@ do-install:
 			--exclude 'edsplash.bmp' --exclude 'UnrealEd.ini'\
 			--exclude 'editorres*' --exclude 'mplay*'\
 			${MAPS_EXCLUDE} -f - ${dir} |\
-		${TAR} x -C ${DATADIR} -f -
+		${TAR} x -C ${STAGEDIR}${DATADIR} -f -
 .endfor
-	@${RM} ${DATADIR}/Logs/delete_me.txt
-	@${RMDIR} ${DATADIR}/Logs
+	@${RM} ${STAGEDIR}${DATADIR}/Logs/delete_me.txt
+	@${RMDIR} ${STAGEDIR}${DATADIR}/Logs
 .endif
 ####################################
 # End of CD release-specific install
@@ -178,7 +177,7 @@ do-install:
 # Install v436 Linux binaries.
 	@${ECHO_CMD} "Installing v436 patch files"
 .for tarfile in Credits OpenGL.ini data
-	@${TAR} zox -C ${DATADIR} --exclude '*.exe'\
+	@${TAR} zox -C ${STAGEDIR}${DATADIR} --exclude '*.exe'\
 		-f ${WRKSRC}/${tarfile}.tar.gz
 .endfor
 
@@ -187,40 +186,40 @@ do-install:
 # Apply v436 files.
 	@${ECHO_CMD} "Applying v436 patch"
 	@${WRKSRC}/setup.data/bin/FreeBSD/x86/loki_patch\
-		${WRKSRC}/setup.data/patch.dat ${DATADIR}
+		${WRKSRC}/setup.data/patch.dat ${STAGEDIR}${DATADIR}
 .endif
 
 # Adjust paths in configuration.
 	@${SED} -i "" -e 's|\\|/|g'\
 		-e "/^Paths=/{h;s|\(Paths=\)\.\./|\1${DATADIR}/|;x;p;x;}"\
-		${DATADIR}/System/UnrealTournament.ini
+		${STAGEDIR}${DATADIR}/System/UnrealTournament.ini
 .for script in ucc ut
-	@${INSTALL_SCRIPT} ${WRKSRC}/bin/${script} ${PREFIX}/bin/
+	@${INSTALL_SCRIPT} ${WRKSRC}/bin/${script} ${STAGEDIR}${PREFIX}/bin/
 .endfor
 
 # Install bonus packs
 	@${ECHO_CMD} "Installing bonus packs"
 .for ndx in 1 2 3 4
 .if defined(WITHOUT_MAPS)
-	@${TAR} jx -C ${DATADIR} --exclude '*.unr' -f ${WRKSRC}/bp${ndx}.tar.bz2
+	@${TAR} jx -C ${STAGEDIR}${DATADIR} --exclude '*.unr' -f ${WRKSRC}/bp${ndx}.tar.bz2
 .else
-	@${TAR} jx -C ${DATADIR} -f ${WRKSRC}/bp${ndx}.tar.bz2
+	@${TAR} jx -C ${STAGEDIR}${DATADIR} -f ${WRKSRC}/bp${ndx}.tar.bz2
 .endif
 .endfor
 
 # Install bonus packs.
 .for datafile in README README.Loki README.bonus.pack.collection
-	@${INSTALL_DATA} ${WRKSRC}/${datafile} ${DATADIR}
+	@${INSTALL_DATA} ${WRKSRC}/${datafile} ${STAGEDIR}${DATADIR}
 .endfor
 
 # Install 451 Patch
 .if defined(WITH_451PATCH)
 	@${ECHO_CMD} "Installing v${UTVERSION} patch files"
-	@${TAR} jx -C ${DATADIR} --exclude 'checkfiles.sh'\
+	@${TAR} jx -C ${STAGEDIR}${DATADIR} --exclude 'checkfiles.sh'\
 		--exclude 'patch.md5' --exclude 'd3ddrv.int'\
 		--exclude 'edsplash.bmp' --exclude 'UnrealEd.ini'\
 		--exclude 'editorres*' -f ${_DISTDIR}/${PATCH451FILES:C/:.*//}
-	@cd ${DATADIR}/System &&\
+	@cd ${STAGEDIR}${DATADIR}/System &&\
 		${MV} -f glidedrv.int GlideDrv.int &&\
 		${MV} -f softdrv.int SoftDrv.int &&\
 		${MV} -f opengldrv.int OpenGlDrv.int &&\
@@ -230,14 +229,14 @@ do-install:
 .endif
 
 # Replace older libSDL included with UT; it has issues with the Nvidia driver
-# when using Fedora 8 at the base.
+# when using Fedora 10 at the base.
 	@${LN} -sf ${LINUXBASE}/usr/lib/libSDL-1.2.so.0\
-		${DATADIR}/System/libSDL-1.1.so.0
+		${STAGEDIR}${DATADIR}/System/libSDL-1.1.so.0
 
 # Remove /usr/local from ut-bin lib search path
 	@${ECHO_CMD} "Removing /usr/local from ut-bin's library search path"
-	@UTBIN=${DATADIR}/System/ut-bin &&\
-		FILESIZE=`/usr/bin/stat -f "%z" $${UTBIN}` &&\
+	@UTBIN=${STAGEDIR}${DATADIR}/System/ut-bin &&\
+		FILESIZE=`${STAT} -f "%z" $${UTBIN}` &&\
 		${MV} $${UTBIN} $${UTBIN}.orig &&\
 		${SED} -Ee 's|:/usr/local|:/USR-LOCAL|' $${UTBIN}.orig |\
 		${HEAD} -c $${FILESIZE} > $${UTBIN} &&\
@@ -245,17 +244,17 @@ do-install:
 
 # Set file permissions
 	@${ECHO_CMD} "Setting permissions"
-	@${FIND} ${DATADIR} -print0 |\
+	@${FIND} ${STAGEDIR}${DATADIR} -print0 |\
 		${XARGS} -0 ${CHOWN} ${SHAREOWN}:${SHAREGRP}
-	@${FIND} ${DATADIR} -type d -print0 | ${XARGS} -0 ${CHMOD} ${BINMODE}
-	@${FIND} ${DATADIR} -type f -print0 | ${XARGS} -0 ${CHMOD} ${NOBINMODE}
-	@${FIND} ${DATADIR} \( -name "*.so" -o -name "lib*.so*" \) -print0 |\
+	@${FIND} ${STAGEDIR}${DATADIR} -type d -print0 | ${XARGS} -0 ${CHMOD} ${BINMODE}
+	@${FIND} ${STAGEDIR}${DATADIR} -type f -print0 | ${XARGS} -0 ${CHMOD} ${NOBINMODE}
+	@${FIND} ${STAGEDIR}${DATADIR} \( -name "*.so" -o -name "lib*.so*" \) -print0 |\
 		${XARGS} -0 ${CHMOD} ${BINMODE}
 .for exec in ucc-bin ut-bin
-	@${CHMOD} ${BINMODE} ${DATADIR}/System/${exec}
+	@${CHMOD} ${BINMODE} ${STAGEDIR}${DATADIR}/System/${exec}
 .endfor
 
-	@${TOUCH} ${DATADIR}/Help/ReleaseNotes.htm
+	@${TOUCH} ${STAGEDIR}${DATADIR}/Help/ReleaseNotes.htm
 	@${ECHO_CMD} "Install complete"
 
 .include <bsd.port.mk>
