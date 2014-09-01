@@ -1,5 +1,0 @@
-This is a trial version of ChartDirector.  If you do not want a yellow banner
-message appearing in the charts you will need to purchase a commercial license
-to use the ChartDirector software.
-
-Install the license into %%PREFIX%%/lib/php/%%PHP_EXT_DIR%%/chartdir.lic.

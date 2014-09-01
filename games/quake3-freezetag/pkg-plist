@@ -1,9 +1,0 @@
-%%DATADIR%%/description.txt
-%%DATADIR%%/freeze.cfg
-%%DATADIR%%/freeze0.pk3
-%%DATADIR%%/freeze1.pk3
-%%DATADIR%%/ft.config
-%%MISSIONPACK%%%%Q3DIR%%/missionpack/freeze_ta0.pk3
-%%PORTDOCS%%%%DOCSDIR%%/readme.txt
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm %%DATADIR%%

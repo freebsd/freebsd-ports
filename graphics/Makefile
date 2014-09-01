@@ -4,7 +4,6 @@
     COMMENT = Graphics tools and libraries
 
     SUBDIR += 4va
-    SUBDIR += Cgraph
     SUBDIR += Coin
     SUBDIR += EZWGL
     SUBDIR += GraphicsMagick
@@ -234,7 +233,6 @@
     SUBDIR += gdchart
     SUBDIR += gdk-pixbuf
     SUBDIR += gdk-pixbuf2
-    SUBDIR += gdtclft
     SUBDIR += geeqie
     SUBDIR += gegl
     SUBDIR += generic_image_decoder
@@ -280,7 +278,6 @@
     SUBDIR += glexcess
     SUBDIR += glfw
     SUBDIR += glfw2
-    SUBDIR += glide3
     SUBDIR += glitz
     SUBDIR += gliv
     SUBDIR += glosm
@@ -386,7 +383,6 @@
     SUBDIR += inventor
     SUBDIR += ipe
     SUBDIR += iulib
-    SUBDIR += ivtools
     SUBDIR += jalbum
     SUBDIR += jasper
     SUBDIR += jave6
@@ -563,7 +559,6 @@
     SUBDIR += linux-f10-tiff
     SUBDIR += linux-f10-ungif
     SUBDIR += linux-sdl_ttf
-    SUBDIR += linux_glide
     SUBDIR += lprof-devel
     SUBDIR += lua-gd
     SUBDIR += luminance
@@ -584,7 +579,6 @@
     SUBDIR += metapixel
     SUBDIR += mhgui
     SUBDIR += ming
-    SUBDIR += mingplot
     SUBDIR += mirage
     SUBDIR += mmrecover
     SUBDIR += mozjpeg
@@ -628,7 +622,6 @@
     SUBDIR += openshadinglanguage
     SUBDIR += optar
     SUBDIR += optipng
-    SUBDIR += orca
     SUBDIR += osg
     SUBDIR += osg-devel
     SUBDIR += osgearth
@@ -758,7 +751,6 @@
     SUBDIR += php-gdal
     SUBDIR += php-libpuzzle
     SUBDIR += php-magickwand
-    SUBDIR += php5-chartdirector
     SUBDIR += php5-exif
     SUBDIR += php5-ffmpeg
     SUBDIR += php5-gd
@@ -773,7 +765,6 @@
     SUBDIR += picviz
     SUBDIR += piddle
     SUBDIR += pinpoint
-    SUBDIR += pinta
     SUBDIR += pixelize
     SUBDIR += pixen
     SUBDIR += pixie
@@ -912,7 +903,6 @@
     SUBDIR += ruby-image_size
     SUBDIR += ruby-imlib2
     SUBDIR += ruby-ming
-    SUBDIR += ruby-rmagick
     SUBDIR += ruby-svg
     SUBDIR += ruby-tgif
     SUBDIR += rubygem-cairo
@@ -946,7 +936,6 @@
     SUBDIR += sam2p
     SUBDIR += sampleicc
     SUBDIR += sane-backends
-    SUBDIR += sane-epkowa
     SUBDIR += sane-frontends
     SUBDIR += scale2x
     SUBDIR += scantailor
@@ -1010,7 +999,6 @@
     SUBDIR += ttygif
     SUBDIR += tulip
     SUBDIR += tumble
-    SUBDIR += uDrawGraph
     SUBDIR += ufraw
     SUBDIR += uniconvertor
     SUBDIR += uniconvw
@@ -1020,7 +1008,6 @@
     SUBDIR += viewnior
     SUBDIR += vigra
     SUBDIR += vips
-    SUBDIR += visionworkbench
     SUBDIR += visprint
     SUBDIR += volpack
     SUBDIR += vp

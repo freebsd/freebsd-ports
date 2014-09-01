@@ -1,8 +1,0 @@
-
-To run this program, you must have your own configuration file, do as simply
-
- % cp /usr/X11R6/share/examples/actx/sample.actxrc ~/.actxrc
-
-if you want japanese menu, 
-edit your ~/.Xdefaults to "Actx*international: true" and configure fonts.
-/usr/X11R6/share/examples/actx/sample.Xdefaults is for its reference.
