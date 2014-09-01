@@ -31,10 +31,9 @@ include/atk-1.0/atk/atkvalue.h
 include/atk-1.0/atk/atkversion.h
 include/atk-1.0/atk/atkwindow.h
 lib/girepository-1.0/Atk-1.0.typelib
-lib/libatk-1.0.a
-lib/libatk-1.0.la
 lib/libatk-1.0.so
 lib/libatk-1.0.so.0
+lib/libatk-1.0.so.0.20809.1
 libdata/pkgconfig/atk.pc
 share/gir-1.0/Atk-1.0.gir
 share/locale/af/LC_MESSAGES/atk10.mo
