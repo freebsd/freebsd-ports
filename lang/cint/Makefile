@@ -2,35 +2,35 @@
 # $FreeBSD$
 
 PORTNAME=	cint
-PORTVERSION=	5.16.19
-DISTVERSIONSUFFIX=	-source
+PORTVERSION=	5.18.00
 PORTREVISION=	1
 CATEGORIES=	lang
-MASTER_SITES=	ftp://root.cern.ch/root/
+MASTER_SITES=	http://root.cern.ch/drupal/sites/default/files/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	fjoe@FreeBSD.org
 COMMENT=	C/C++ interpreter
 
 BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+EXTRACT_SUFX=	.tgz
 HAS_CONFIGURE=	yes
+CONFIGURE_ENV=	CC="${CC}" CXX="${CXX}" LDFLAGS="${LDFLAGS}"
+USE_GCC=	yes
 USES=		gmake
 USE_LDCONFIG=	${PREFIX}/lib/cint
 ALL_TARGET=
-MAN1=		cint.1 makecint.1
 
-INSTALL_ARGS=	--bindir=${PREFIX}/bin  \
-		--libdir=${PREFIX}/lib/cint \
-		--mandir=${PREFIX}/man
+INSTALL_ARGS=	--bindir=${STAGEDIR}${PREFIX}/bin\
+		--libdir=${STAGEDIR}${PREFIX}/lib/cint\
+		--mandir=${STAGEDIR}${PREFIX}/man\
+		--docdir=${STAGEDIR}${DOCSDIR}
 
-.if !defined(NOPORTDOCS)
-INSTALL_ARGS+=	--docdir=${DOCSDIR}
-.endif
+post-patch:
+	${REINPLACE_CMD} 's,#!/bin/bash,#!${LOCALBASE}/bin/bash,' ${WRKSRC}/cint/lib/dll_stl/setup
+	${REINPLACE_CMD} 's,make ,${GMAKE} ,' ${WRKSRC}/cint/lib/*/setup
 
-NO_STAGE=	yes
 do-configure:
-	cd ${WRKSRC} && ${LOCALBASE}/bin/bash configure __have_the_proper_shell@
+	cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} ${LOCALBASE}/bin/bash configure __have_the_proper_shell@
 
 do-install:
 	cd ${WRKSRC} && ${LOCALBASE}/bin/bash tool/INSTALLBIN ${INSTALL_ARGS}
