@@ -8,7 +8,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	adamw@FreeBSD.org
-COMMENT=	Tiny Encryption Algorithm in Perl and Javascript
+COMMENT=	Next gen Tiny Encryption Algorithm in Perl and Javascript
 
 CONFLICTS=	p5-Crypt-T_e_a-[0-9]*
 
