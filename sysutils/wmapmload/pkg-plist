@@ -1,0 +1,6 @@
+@owner operator
+@mode 2755
+bin/wmapmload
+@mode
+@owner
+man/man1/wmapmload.1.gz
