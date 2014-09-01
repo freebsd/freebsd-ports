@@ -10,10 +10,9 @@ include/json-glib-1.0/json-glib/json-reader.h
 include/json-glib-1.0/json-glib/json-types.h
 include/json-glib-1.0/json-glib/json-version.h
 lib/girepository-1.0/Json-1.0.typelib
-lib/libjson-glib-1.0.a
-lib/libjson-glib-1.0.la
 lib/libjson-glib-1.0.so
 lib/libjson-glib-1.0.so.0
+lib/libjson-glib-1.0.so.0.1400.2
 libdata/pkgconfig/json-glib-1.0.pc
 %%DOCSDIR%%/JsonBuilder.html
 %%DOCSDIR%%/JsonGenerator.html
