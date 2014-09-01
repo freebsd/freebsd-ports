@@ -3,6 +3,7 @@
 
 PORTNAME=	avr-libc
 PORTVERSION=	1.8.1
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	devel
 MASTER_SITES=	SAVANNAH
@@ -21,15 +22,15 @@ RUN_DEPENDS=	avr-as:${PORTSDIR}/devel/avr-binutils \
 		avr-ld:${PORTSDIR}/devel/avr-binutils \
 		avr-gcc:${PORTSDIR}/devel/avr-gcc
 
-OPTIONS_DEFINE=	DOCS
+OPTIONS_DEFINE=	DOXYGEN
 
 .include <bsd.port.options.mk>
 
-.if ! ${PORT_OPTIONS:MDOCS}
+.if ! ${PORT_OPTIONS:MDOXYGEN}
 .undef WITHOUT_AVRLIBCDOCS=	true
 .endif
 
-.if ${PORT_OPTIONS:MDOCS}
+.if ${PORT_OPTIONS:MDOXYGEN}
 USE_TEX=	latex:build
 BUILD_DEPENDS+=	doxygen:${PORTSDIR}/devel/doxygen \
 		fig2dev:${PORTSDIR}/print/transfig \
@@ -41,7 +42,7 @@ USES=		gettext:build tar:bzip2 gmake
 HAS_CONFIGURE=	yes
 
 CONFIGURE_ENV=	CC=avr-gcc PREFIX=${PREFIX}
-.if ${PORT_OPTIONS:MDOCS}
+.if ${PORT_OPTIONS:MDOXYGEN}
 CONFIGURE_ARGS=	--build=`./config.guess` --host=avr \
 	--enable-doc --disable-versioned-doc --prefix=${PREFIX} \
 	--mandir=${PREFIX}/share/doc/avr-libc/man
@@ -58,13 +59,13 @@ CFLAGS+=	-O
 CXXFLAGS+=	-O
 
 post-patch:
-.if ! ${PORT_OPTIONS:MDOCS}
+.if ! ${PORT_OPTIONS:MDOXYGEN}
 	${REINPLACE_CMD} -e '/SUBDIRS/s,examples,,' ${WRKSRC}/doc/Makefile.in
 .endif
 
 do-install:
 		${RM} -f ${TMPPLIST}
-.if ${PORT_OPTIONS:MDOCS}
+.if ${PORT_OPTIONS:MDOXYGEN}
 		(cd ${BUILD_WRKSRC}/doc/api/avr-libc-user-manual && \
 		 ${FIND} . -type f \
 		  \( -name '*.html' -or -name '*.css' -or \
