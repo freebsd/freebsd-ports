@@ -207,6 +207,11 @@ EXTRA_PATCHES+=	${FILESDIR}/extra-patch-clang
 CONFIGURE_ENV+=	AR=/usr/bin/ar
 .endif
 
+# fix for non-poudriere builds, but it confuses pkg-builder on i386
+.if ${ARCH} == amd64
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-manual-amd64
+.endif
+
 # according to portlint the below is passed via bsd.port.mk,
 # but 'make -V CONFIGURE_ENV' does not show it:
 CONFIGURE_ENV+=	CFLAGS="${CFLAGS}" \
@@ -243,10 +248,8 @@ post-patch:
 pre-configure:
 	# phajdan-jr: list of things *not* to remove, so maybe the script
 	#             should be called "keep_bundled_libraries.py"
-	# keep third_party/protobuf to ease debugging
 	cd ${WRKSRC} && ${PYTHON_CMD} \
 		./build/linux/unbundle/remove_bundled_libraries.py \
-		'third_party/protobuf' \
 		'base/third_party/dmg_fp' \
 		'base/third_party/dynamic_annotations' \
 		'base/third_party/icu' \
