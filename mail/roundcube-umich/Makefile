@@ -7,7 +7,7 @@ CATEGORIES=	mail
 MASTER_SITES=	ftp://renatasystems.org/pub/FreeBSD/ports/distfiles/
 PKGNAMEPREFIX=	roundcube-
 
-MAINTAINER= ports@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Theme for RoundCube Web Mail
 
 RUN_DEPENDS=	roundcube>=0.2:${PORTSDIR}/mail/roundcube
@@ -24,12 +24,12 @@ x-generate-plist: build
 	${FIND} . -type d | ${SORT} -r | ${SED} \
 		-e "s,^\.$$,@dirrmtry %%WWWDIR%%," \
 		-e "s,^\.,@dirrm %%WWWDIR%%," >>${.CURDIR}/pkg-plist.tmp
-NO_STAGE=	yes
+
 post-patch:
 	${FIND} ${WRKSRC} -type f -name '*.orig' -delete
 
 do-install:
-	${MKDIR} ${WWWDIR}
-	cd ${WRKSRC} && ${PAX} -r -w . ${WWWDIR}
+	@${MKDIR} ${STAGEDIR}${WWWDIR}
+	cd ${WRKSRC} && ${PAX} -r -w . ${STAGEDIR}${WWWDIR}
 
 .include <bsd.port.mk>
