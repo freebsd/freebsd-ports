@@ -26,9 +26,6 @@ NO_MTREE=	yes
 .if defined(BRO_PREFIX)
 PREFIX=${BRO_PREFIX}
 PLIST_SUB+=	CLEANUP_PREFIX=""
-.if ! defined(WITH_PKGNG) && ! exists(${BRO_PREFIX})
-NEED_ROOT=	yes
-.endif
 .else
 PLIST_SUB+=	CLEANUP_PREFIX="@comment "
 .endif

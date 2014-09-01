@@ -115,7 +115,6 @@ ECHO_MSG?=		${ECHO_CMD}
 
 .elif !defined(_PKGTOOLSDEFINED)
 _PKGTOOLSDEFINED=	yes
-.if defined(WITH_PKGNG)
 PKG_BIN?=		${LOCALBASE}/sbin/pkg-static
 PKG_CMD?=		${PKG_BIN} register
 PKG_DELETE?=		${PKG_BIN} delete -y
@@ -124,20 +123,5 @@ PKG_VERSION?=		${PKG_BIN} version
 PKG_CREATE?=		${PKG_BIN} create
 PKG_ADD?=		${PKG_BIN} add
 PKG_QUERY?=		${PKG_BIN} query
-.else
-.if exists(${LOCALBASE}/sbin/pkg_info)
-PKG_CMD?=		${LOCALBASE}/sbin/pkg_create
-PKG_ADD?=		${LOCALBASE}/sbin/pkg_add
-PKG_DELETE?=		${LOCALBASE}/sbin/pkg_delete
-PKG_INFO?=		${LOCALBASE}/sbin/pkg_info
-PKG_VERSION?=		${LOCALBASE}/sbin/pkg_version
-.else
-PKG_CMD?=		/usr/sbin/pkg_create
-PKG_ADD?=		/usr/sbin/pkg_add
-PKG_DELETE?=		/usr/sbin/pkg_delete
-PKG_INFO?=		/usr/sbin/pkg_info
-PKG_VERSION?=		/usr/sbin/pkg_version
-.endif
-.endif
 
 .endif

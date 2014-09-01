@@ -13,6 +13,15 @@ All ports committers are allowed to commit to this file.
 20140901:
 AUTHOR: bapt@FreeBSD.org
 
+  Support for pkg_install has been removed
+  Note that WITH_PKGNG is now WITH_PKG (still used to define 'devel')
+  WITH_PKGNG remains for compatibility
+  @stopdaemon support has gone, pkg(8) has a generic mechanism to
+  provide the same functionnality
+
+20140901:
+AUTHOR: bapt@FreeBSD.org
+
   Support for NO_STAGE has been removed
 
 20140825:
