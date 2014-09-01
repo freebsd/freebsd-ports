@@ -1,13 +1,12 @@
 bin/pygobject-codegen-2.0
 include/pygtk-2.0/pyglib.h
 include/pygtk-2.0/pygobject.h
-lib/libpyglib-2.0-%%PYTHON_VERSION%%.la
 lib/libpyglib-2.0-%%PYTHON_VERSION%%.so
 lib/libpyglib-2.0-%%PYTHON_VERSION%%.so.0
+lib/libpyglib-2.0-%%PYTHON_VERSION%%.so.0.0.0
 %%PYTHON_SITELIBDIR%%/glib/__init__.py
 %%PYTHON_SITELIBDIR%%/glib/__init__.pyc
 %%PYTHON_SITELIBDIR%%/glib/__init__.pyo
-%%PYTHON_SITELIBDIR%%/glib/_glib.la
 %%PYTHON_SITELIBDIR%%/glib/_glib.so
 %%PYTHON_SITELIBDIR%%/glib/option.py
 %%PYTHON_SITELIBDIR%%/glib/option.pyc
@@ -15,7 +14,6 @@ lib/libpyglib-2.0-%%PYTHON_VERSION%%.so.0
 %%PYTHON_SITELIBDIR%%/gobject/__init__.py
 %%PYTHON_SITELIBDIR%%/gobject/__init__.pyc
 %%PYTHON_SITELIBDIR%%/gobject/__init__.pyo
-%%PYTHON_SITELIBDIR%%/gobject/_gobject.la
 %%PYTHON_SITELIBDIR%%/gobject/_gobject.so
 %%PYTHON_SITELIBDIR%%/gobject/constants.py
 %%PYTHON_SITELIBDIR%%/gobject/constants.pyc
@@ -29,9 +27,7 @@ lib/libpyglib-2.0-%%PYTHON_VERSION%%.so.0
 %%PYTHON_SITELIBDIR%%/gtk-2.0/gio/__init__.py
 %%PYTHON_SITELIBDIR%%/gtk-2.0/gio/__init__.pyc
 %%PYTHON_SITELIBDIR%%/gtk-2.0/gio/__init__.pyo
-%%PYTHON_SITELIBDIR%%/gtk-2.0/gio/_gio.la
 %%PYTHON_SITELIBDIR%%/gtk-2.0/gio/_gio.so
-%%PYTHON_SITELIBDIR%%/gtk-2.0/gio/unix.la
 %%PYTHON_SITELIBDIR%%/gtk-2.0/gio/unix.so
 %%PYTHON_SITELIBDIR%%/pygtk.pth
 %%PYTHON_SITELIBDIR%%/pygtk.py
