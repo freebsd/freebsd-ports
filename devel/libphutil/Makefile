@@ -5,7 +5,7 @@ PORTVERSION=	20140828
 CATEGORIES=	devel
 PKGNAMEPREFIX=	php5-
 
-MAINTAINER=	bapt@FreeBSD.org
+MAINTAINER=	grembo@FreeBSD.org
 COMMENT=	Collection of PHP utility classes
 
 LICENSE=	APACHE20
