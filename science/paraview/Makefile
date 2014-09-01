@@ -28,7 +28,8 @@ LIB_DEPENDS=	libhdf5.so:${PORTSDIR}/science/hdf5 \
 		libpcre.so:${PORTSDIR}/devel/pcre \
 		libffi.so:${PORTSDIR}/devel/libffi \
 		libdrm.so:${PORTSDIR}/graphics/libdrm \
-		libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig
+		libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig \
+		libexecinfo.so:${PORTSDIR}/devel/libexecinfo
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash	\
 		${PYTHON_SITELIBDIR}/matplotlib/pyplot.py:${PORTSDIR}/math/py-matplotlib
 
