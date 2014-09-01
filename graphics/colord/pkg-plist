@@ -31,20 +31,18 @@ include/colord-1/colord/cd-sensor.h
 include/colord-1/colord/cd-transform.h
 include/colord-1/colord/cd-version.h
 lib/colord-sensors/libcolord_sensor_argyll.a
-lib/colord-sensors/libcolord_sensor_argyll.la
 lib/colord-sensors/libcolord_sensor_argyll.so
 lib/colord-sensors/libcolord_sensor_dummy.a
-lib/colord-sensors/libcolord_sensor_dummy.la
 lib/colord-sensors/libcolord_sensor_dummy.so
 lib/girepository-1.0/Colord-1.0.typelib
 lib/libcolord.a
-lib/libcolord.la
 lib/libcolord.so
 lib/libcolord.so.1
+lib/libcolord.so.1.0.20
 lib/libcolordprivate.a
-lib/libcolordprivate.la
 lib/libcolordprivate.so
 lib/libcolordprivate.so.1
+lib/libcolordprivate.so.1.0.20
 libdata/pkgconfig/colord.pc
 libexec/colord
 libexec/colord-session
@@ -200,4 +198,4 @@ share/polkit-1/actions/org.freedesktop.color.policy
 @cwd /
 @dirrmtry var/db/colord/icc
 @dirrmtry var/db/colord
-@cwd %%REALPREFIX%%
+@cwd
