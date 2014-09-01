@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	logilab-common
-PORTVERSION=	0.61.0
-PORTREVISION=	1
+PORTVERSION=	0.62.1
 CATEGORIES=	devel python
 MASTER_SITES=	LOGILAB/common
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,6 +14,6 @@ LICENSE=	LGPL20
 
 USES=		python
 MAKE_ENV=	NO_SETUPTOOLS=1
-USE_PYTHON=	distutils
+USE_PYTHON=	distutils concurrent
 
 .include <bsd.port.mk>
