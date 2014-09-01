@@ -1,9 +1,0 @@
-Mshell was written to shield users (and other non-Unix gurus, like
-mathematicians and secretaries in the department) from "raw" Unix.  It
-is as flexible as you can get (supports full shell capabilities like
-pipes, etc. inside the menu commands) but simple to write menus for.
-It is was developed for Nyx, a free, public access Unix system. 
-Indeed, you're welcome to try Nyx -- log into Nyx as:
-
-	- telnet to nyx.nyx.net (206.124.29.1), user 'new'.
-	- call 303-381-9840
