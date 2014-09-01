@@ -253,6 +253,11 @@ include/QF/ruamoko/gui/Size.h
 include/QF/ruamoko/gui/Slider.h
 include/QF/ruamoko/gui/Text.h
 include/QF/ruamoko/gui/View.h
+man/man1/pak.1.gz
+man/man1/qfcc.1.gz
+man/man1/qflight.1.gz
+man/man1/qfvis.1.gz
+man/man1/wad.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/3dfx.txt
 %%PORTDOCS%%%%DOCSDIR%%/CodingStyle
 %%PORTDOCS%%%%DOCSDIR%%/glqnotes.txt
