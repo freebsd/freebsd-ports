@@ -58,7 +58,6 @@
     SUBDIR += i386-wine-devel
     SUBDIR += ia64sim
     SUBDIR += ines
-    SUBDIR += its
     SUBDIR += javatari
     SUBDIR += joytran
     SUBDIR += jzintv
@@ -69,8 +68,6 @@
     SUBDIR += lib765
     SUBDIR += libdsk
     SUBDIR += libspectrum
-    SUBDIR += linux-geepee32
-    SUBDIR += linux-systemsimcell
     SUBDIR += linux_base-c6
     SUBDIR += linux_base-f10
     SUBDIR += linux_base-gentoo-stage3
@@ -109,7 +106,6 @@
     SUBDIR += pcsxr
     SUBDIR += pearpc
     SUBDIR += pipelight
-    SUBDIR += psim-freebsd
     SUBDIR += q4wine
     SUBDIR += qemu
     SUBDIR += qemu-devel
@@ -137,7 +133,6 @@
     SUBDIR += tuxnes
     SUBDIR += uae
     SUBDIR += ucon64
-    SUBDIR += vMac
     SUBDIR += vba
     SUBDIR += vboxtool
     SUBDIR += vgb-bin

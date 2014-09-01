@@ -191,7 +191,6 @@ ningpo_demo*		games/linux-ningpo-demo	Redistribution is limited, see license
 nntpcache-*		news/nntpcache		Free for individuals and non-military, non-profit organisations only
 nttcp-*			benchmarks/nttcp	No commercial use
 nwresources*.tar.gz	games/nwndata		Distribution not allowed
-ofb06trial.tgz		editors/softmaker-office  distribution with other products of any kind forbiden
 oneko-*.tar.gz		games/oneko-sakura	Including derivatives from CARDCAPTOR SAKURA
 OptimFROG*		audio/optimfrog		No commercial use
 oracle/*		databases/jdbc-oracle10g	This software is under license and export controls
@@ -244,7 +243,6 @@ su2-1.3.tar.gz		sysutils/su2		Do not sell for profit
 susv2.tar.bz2		misc/susv2		Redistribution of the documents is not permitted
 susv3.tar.bz2		misc/susv3		Redistribution of the documents is not permitted
 svm_light.tar.gz	science/svmlight	The software must not be further distributed without prior permission of the author
-systemsim-cell-*	emulators/linux-systemsimcell	Redistribution of pre-compiled binaries is not permitted
 taetgen-*		math/tetgen		Academic or personal use only
 tarsnap-*		sysutils/tarsnap	license restricts redistribution of source and binaries
 tcetest_*		games/linux-enemyterritory-tce	Redistribution limited
