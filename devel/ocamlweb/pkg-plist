@@ -1,5 +1,0 @@
-bin/ocamlweb
-%%TEXMFDIR%%/tex/latex/ocamlweb/ocamlweb.sty
-@dirrm %%TEXMFDIR%%/tex/latex/ocamlweb
-@exec %%MKTEXLSR%% %D/%%TEXMFDIR%%
-@unexec %%MKTEXLSR%% %D/%%TEXMFDIR%%

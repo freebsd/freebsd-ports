@@ -1,9 +1,0 @@
-
-WARNING - this code is still in an experimental stage.
-    The binary modules built using it may cause instabilities
-    in your system. Use them at your own risk.
-
-    We suggest to track frequently updates to this port,
-    and upgrade the children ports accordingly to make use
-    of enhancements and fixes in this package.
-
