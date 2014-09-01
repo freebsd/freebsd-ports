@@ -39,10 +39,9 @@ include/sigc++-%%API_VERSION%%/sigc++/slot.h
 include/sigc++-%%API_VERSION%%/sigc++/trackable.h
 include/sigc++-%%API_VERSION%%/sigc++/type_traits.h
 include/sigc++-%%API_VERSION%%/sigc++/visit_each.h
-lib/libsigc-%%VERSION%%.a
-lib/libsigc-%%VERSION%%.la
 lib/libsigc-%%VERSION%%.so
 lib/libsigc-%%VERSION%%.so.0
+lib/libsigc-%%VERSION%%.so.0.0.0
 lib/sigc++-%%API_VERSION%%/include/sigc++config.h
 libdata/pkgconfig/sigc++-%%API_VERSION%%.pc
 %%PORTDOCS%%share/devhelp/books/libsigc++-%%API_VERSION%%/libsigc++-%%API_VERSION%%.devhelp2
