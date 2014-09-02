@@ -41,6 +41,10 @@ TELEPATHY_CONFIGURE_ENABLE=	telepathy
 
 .include <bsd.port.options.mk>
 
+post-patch:
+	@${REINPLACE_CMD} '/^libvinagre_la_LIBADD =/s/$$/ -lgmodule-2.0/' \
+		${WRKSRC}/vinagre/Makefile.in
+
 post-install:
 .if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
