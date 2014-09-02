@@ -670,11 +670,5 @@ sbin/yarn-daemons.sh
 @dirrm %%DATADIR%%/yarn
 @dirrm %%DATADIR%%
 @dirrmtry %%ETCDIR%%
-@cwd /
-@group %%HADOOP_GROUP%%
-@mode 0775
-@dirrmtry %%HADOOP_LOGDIR%%
-@dirrmtry %%HADOOP_RUNDIR%%
-@cwd %%RESETPREFIX%%
-@group
-@mode
+@dirrmtry(,%%HADOOP_GROUP%%,0755) %%HADOOP_LOGDIR%%
+@dirrmtry(,%%HADOOP_GROUP%%,0755) %%HADOOP_RUNDIR%%
