@@ -25,14 +25,12 @@
     SUBDIR += apache22-worker-mpm
     SUBDIR += apache24
     SUBDIR += apercu
-    SUBDIR += aria
     SUBDIR += aria2
     SUBDIR += aria2fe
     SUBDIR += arora
     SUBDIR += asp2php
     SUBDIR += asql
     SUBDIR += asterisk-stat
-    SUBDIR += aswedit
     SUBDIR += atutor
     SUBDIR += august
     SUBDIR += autoindex2
@@ -49,28 +47,22 @@
     SUBDIR += bblog
     SUBDIR += bigbluebutton
     SUBDIR += bins
-    SUBDIR += bk2site
     SUBDIR += bkmrkconv
     SUBDIR += blastbeat
     SUBDIR += blogsum
     SUBDIR += bluefish
-    SUBDIR += bluefish-devel
     SUBDIR += boa
     SUBDIR += bookmarkbridge
     SUBDIR += bozohttpd
-    SUBDIR += bugmenot-firefox
     SUBDIR += c-icap
     SUBDIR += c-icap-modules
-    SUBDIR += cacheboy16
     SUBDIR += cadaver
     SUBDIR += cakephp11
-    SUBDIR += cakephp12
     SUBDIR += cakephp13
     SUBDIR += cakephp21
     SUBDIR += cakephp22
     SUBDIR += cakephp23
     SUBDIR += calamaris
-    SUBDIR += cas
     SUBDIR += castget
     SUBDIR += caudium14
     SUBDIR += cblog
@@ -126,7 +118,6 @@
     SUBDIR += dillo2
     SUBDIR += dojo
     SUBDIR += dojo-shrinksafe
-    SUBDIR += dokeos
     SUBDIR += dokuwiki
     SUBDIR += dotclear
     SUBDIR += dotproject
@@ -168,7 +159,6 @@
     SUBDIR += drush
     SUBDIR += dtse
     SUBDIR += dummyflash
-    SUBDIR += dwoo
     SUBDIR += e107
     SUBDIR += eaccelerator
     SUBDIR += edbrowse
@@ -177,7 +167,6 @@
     SUBDIR += elgg
     SUBDIR += elinks
     SUBDIR += eliom
-    SUBDIR += elog
     SUBDIR += emacs-w3m
     SUBDIR += encode-explorer
     SUBDIR += entrans
@@ -188,8 +177,6 @@
     SUBDIR += eventum
     SUBDIR += evolution-webcal
     SUBDIR += extjs
-    SUBDIR += eyeos
-    SUBDIR += eyeos-themes
     SUBDIR += fancybox
     SUBDIR += faup
     SUBDIR += fcgi
@@ -202,7 +189,6 @@
     SUBDIR += firefox-esr
     SUBDIR += firefox-esr-i18n
     SUBDIR += firefox-i18n
-    SUBDIR += firefox-remote
     SUBDIR += flat-frog
     SUBDIR += flickcurl
     SUBDIR += flood
@@ -212,11 +198,9 @@
     SUBDIR += fnord
     SUBDIR += formication
     SUBDIR += foswiki
-    SUBDIR += foswiki-ModPerlEngineContrib
     SUBDIR += fpc-fastcgi
     SUBDIR += fpc-httpd22
     SUBDIR += fpc-httpd24
-    SUBDIR += free-sa
     SUBDIR += free-sa-devel
     SUBDIR += freeway
     SUBDIR += fswiki
@@ -259,7 +243,6 @@
     SUBDIR += guile-www
     SUBDIR += gurlchecker
     SUBDIR += habari
-    SUBDIR += harvest
     SUBDIR += hastymail
     SUBDIR += hastymail2
     SUBDIR += hastymail2-devel
@@ -328,7 +311,6 @@
     SUBDIR += html2wml
     SUBDIR += htmlcompressor
     SUBDIR += htmlcxx
-    SUBDIR += htmlobject
     SUBDIR += htmlpp
     SUBDIR += httest
     SUBDIR += http-analyze
@@ -344,7 +326,6 @@
     SUBDIR += httrack
     SUBDIR += hudson
     SUBDIR += hydra
-    SUBDIR += hypermail
     SUBDIR += igal2
     SUBDIR += ikiwiki
     SUBDIR += ilias
@@ -407,7 +388,6 @@
     SUBDIR += llgal
     SUBDIR += logtools
     SUBDIR += luakit
-    SUBDIR += lusca-head
     SUBDIR += lynx
     SUBDIR += lynx-current
     SUBDIR += magento
@@ -439,10 +419,8 @@
     SUBDIR += mod_auth_cas
     SUBDIR += mod_auth_cookie_mysql2
     SUBDIR += mod_auth_external2
-    SUBDIR += mod_auth_form
     SUBDIR += mod_auth_imap2
     SUBDIR += mod_auth_kerb2
-    SUBDIR += mod_auth_mellon
     SUBDIR += mod_auth_mysql2
     SUBDIR += mod_auth_mysql_another
     SUBDIR += mod_auth_openid
@@ -476,9 +454,7 @@
     SUBDIR += mod_fcgid
     SUBDIR += mod_fileiri
     SUBDIR += mod_flickr
-    SUBDIR += mod_ftp
     SUBDIR += mod_geoip2
-    SUBDIR += mod_gnutls
     SUBDIR += mod_gzip2
     SUBDIR += mod_h264_streaming
     SUBDIR += mod_hosts_access
@@ -488,7 +464,6 @@
     SUBDIR += mod_limitipconn2
     SUBDIR += mod_line_edit
     SUBDIR += mod_log_config-st
-    SUBDIR += mod_log_dbd
     SUBDIR += mod_log_firstbyte
     SUBDIR += mod_log_mysql
     SUBDIR += mod_log_sql2
@@ -501,7 +476,6 @@
     SUBDIR += mod_musicindex
     SUBDIR += mod_myvhost
     SUBDIR += mod_ntlm2
-    SUBDIR += mod_pagespeed
     SUBDIR += mod_perl2
     SUBDIR += mod_php5
     SUBDIR += mod_php55
@@ -538,7 +512,6 @@
     SUBDIR += monast
     SUBDIR += mongoose
     SUBDIR += mongrel2
-    SUBDIR += moodle24
     SUBDIR += moodle25
     SUBDIR += moodle26
     SUBDIR += moodle27
@@ -1445,13 +1418,11 @@
     SUBDIR += pligg
     SUBDIR += plone
     SUBDIR += plugger
-    SUBDIR += plugger-plugins-hubbe
     SUBDIR += pmwiki
     SUBDIR += pnews
     SUBDIR += podcastamatic
     SUBDIR += polipo
     SUBDIR += pound
-    SUBDIR += prado
     SUBDIR += privoxy
     SUBDIR += protovis
     SUBDIR += pserv
@@ -1723,7 +1694,6 @@
     SUBDIR += qdecoder
     SUBDIR += qooxdoo
     SUBDIR += quickie
-    SUBDIR += quixote
     SUBDIR += qupzilla
     SUBDIR += radicale
     SUBDIR += red5
@@ -1750,11 +1720,9 @@
     SUBDIR += rt38
     SUBDIR += rt40
     SUBDIR += rt42
-    SUBDIR += ruboard
     SUBDIR += ruby-amazon
     SUBDIR += ruby-aws
     SUBDIR += ruby-borges
-    SUBDIR += ruby-div
     SUBDIR += ruby-fcgi
     SUBDIR += ruby-fcgiwrap
     SUBDIR += ruby-google
@@ -1932,7 +1900,6 @@
     SUBDIR += smarty3
     SUBDIR += smb_auth
     SUBDIR += snarf
-    SUBDIR += snownews
     SUBDIR += spawn-fcgi
     SUBDIR += spdylay
     SUBDIR += speedtest-mini
@@ -1947,7 +1914,6 @@
     SUBDIR += squidpurge
     SUBDIR += squidstats
     SUBDIR += squidview
-    SUBDIR += squirm
     SUBDIR += srg
     SUBDIR += subsonic
     SUBDIR += suphp
@@ -2156,7 +2122,6 @@
     SUBDIR += wwwoffle
     SUBDIR += wwwstat
     SUBDIR += xapian-omega
-    SUBDIR += xapian-omega10
     SUBDIR += xaraya
     SUBDIR += xcache
     SUBDIR += xfce4-smartbookmark-plugin

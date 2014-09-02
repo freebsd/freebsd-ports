@@ -1,5 +1,0 @@
-This is a port of mod_auth_mellon, which is an apache module built around lasso
-that provides a SAML 2 SP endpoint.
-
-WWW: http://docs.feide.no/fs-0050
-WWW: http://code.google.com/p/modmellon/

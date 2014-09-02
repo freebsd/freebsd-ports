@@ -1,6 +1,0 @@
-bin/firefox-remote
-bin/thunderbird-remote
-%%MENU_FIREFOX%%share/applications/mozilla_firefox.desktop
-%%MENU_THUNDERBIRD%%share/applications/mozilla_thunderbird.desktop
-%%MENU_FIREFOX%%share/pixmaps/mozilla_firefox.png
-%%MENU_THUNDERBIRD%%share/pixmaps/mozilla_thunderbird.png

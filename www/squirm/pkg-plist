@@ -1,8 +1,0 @@
-bin/squirm
-etc/squirm/squirm.conf.dist
-etc/squirm/squirm.patterns.dist
-@exec install -m 755 -o root -g wheel -d %D/squirm
-@exec install -m 750 -o %%SQUID_UID%% -g %%SQUID_GID%% -d %D/squirm/logs
-@dirrm etc/squirm
-@dirrm squirm/logs
-@dirrm squirm
