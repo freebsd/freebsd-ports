@@ -16,8 +16,9 @@ LICENSE=	BSD3CLAUSE
 
 CONFLICTS=	hangman-[0-9]*
 
-USES=		tar:xz
+USES=		uidfix tar:xz
 MAKE_ENV+=	NO_WERROR=1
+MAKE_ARGS=	BINGRP=${BINGRP}
 
 # contain /usr/share/games
 SHAREPATH_FILES=atc/atc.6 \
