@@ -2,23 +2,21 @@
 bin/spd-say
 bin/spdsend
 bin/speech-dispatcher
-@unexec for f in %%ETCFILES%%; do cmp -s %D/%%ETCDIR%%/$f %D/%%ETCDIR%%/$f.sample && rm -f %D/%%ETCDIR%%/$f; done
-%%ETCDIR%%/clients/emacs.conf.sample
-%%ETCDIR%%/clients/gnome-speech.conf.sample
-%%ETCDIR%%/modules/cicero.conf.sample
-%%ETCDIR%%/modules/dtk-generic.conf.sample
-%%ETCDIR%%/modules/epos-generic.conf.sample
-%%ETCDIR%%/modules/espeak-generic.conf.sample
-%%ETCDIR%%/modules/espeak-mbrola-generic.conf.sample
-%%ETCDIR%%/modules/espeak.conf.sample
-%%ETCDIR%%/modules/festival.conf.sample
-%%ETCDIR%%/modules/flite.conf.sample
-%%ETCDIR%%/modules/ibmtts.conf.sample
-%%ETCDIR%%/modules/ivona.conf.sample
-%%ETCDIR%%/modules/llia_phon-generic.conf.sample
-%%ETCDIR%%/modules/swift-generic.conf.sample
-%%ETCDIR%%/speechd.conf.sample
-@exec for f in %%ETCFILES%%; do [ -f %D/%%ETCDIR%%/$f ] || cp -p %D/%%ETCDIR%%/$f.sample %D/%%ETCDIR%%/$f; done
+@sample %%ETCDIR%%/clients/emacs.conf.sample
+@sample %%ETCDIR%%/clients/gnome-speech.conf.sample
+@sample %%ETCDIR%%/modules/cicero.conf.sample
+@sample %%ETCDIR%%/modules/dtk-generic.conf.sample
+@sample %%ETCDIR%%/modules/epos-generic.conf.sample
+@sample %%ETCDIR%%/modules/espeak-generic.conf.sample
+@sample %%ETCDIR%%/modules/espeak-mbrola-generic.conf.sample
+@sample %%ETCDIR%%/modules/espeak.conf.sample
+@sample %%ETCDIR%%/modules/festival.conf.sample
+@sample %%ETCDIR%%/modules/flite.conf.sample
+@sample %%ETCDIR%%/modules/ibmtts.conf.sample
+@sample %%ETCDIR%%/modules/ivona.conf.sample
+@sample %%ETCDIR%%/modules/llia_phon-generic.conf.sample
+@sample %%ETCDIR%%/modules/swift-generic.conf.sample
+@sample %%ETCDIR%%/speechd.conf.sample
 include/speech-dispatcher/libspeechd.h
 include/speech-dispatcher/spd_audio_plugin.h
 include/speech-dispatcher/speechd_types.h
