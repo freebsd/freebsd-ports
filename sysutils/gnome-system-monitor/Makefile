@@ -24,7 +24,7 @@ INSTALLS_OMF=	yes
 USE_GNOME=	gnomeprefix intlhack libwnck gnomevfs2 gnomedocutils librsvg2
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib -lutil
+LIBS+=		-L${LOCALBASE}/lib -lgmodule-2.0 -lutil
 
 GCONF_SCHEMAS=	gnome-system-monitor.schemas
 
