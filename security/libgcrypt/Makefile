@@ -2,7 +2,7 @@
 
 PORTNAME=	libgcrypt
 PORTVERSION=	1.6.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_GNUPG}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -41,10 +41,6 @@ CONFIGURE_ARGS+=	--disable-asm
 CONFIGURE_ARGS+=	--disable-aesni-support
 .endif
 
-.elif ${ARCH} == "amd64"
-.if (${OSVERSION} < 900000)
-USE_GCC=	yes
-.endif
 CONFIGURE_ARGS+=	--disable-drng-support
 
 .endif
@@ -52,6 +48,12 @@ CONFIGURE_ARGS+=	--disable-drng-support
 post-patch:
 	${RM} -f ${WRKSRC}/doc/gcrypt.info*
 	${REINPLACE_CMD} -e 's|ALIGN (3)|ALIGN (2)|g' ${WRKSRC}/mpi/i386/*.S
+
+# Fix build without ASM on 8.x/amd64
+.if ${OPSYS} == FreeBSD && ${ARCH} == "amd64" && ${OSVERSION} < 900000
+USE_GCC=	any
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-configure
+.endif
 
 .if ${PORT_OPTIONS:MDOCS}
 post-install:
