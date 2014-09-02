@@ -82,7 +82,6 @@ include/udm_utils.h
 include/udm_xmalloc.h
 include/udmsearch.h
 lib/libudmsearch.a
-lib/libudmsearch.la
 sbin/indexer
 sbin/splitter
 man/man1/indexer.1.gz
