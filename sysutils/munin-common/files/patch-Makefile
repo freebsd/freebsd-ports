@@ -1,4 +1,4 @@
---- Makefile.orig	2013-07-19 16:30:03 UTC
+--- Makefile.orig	2014-04-22 19:29:32 UTC
 +++ Makefile
 @@ -68,60 +68,48 @@
  
@@ -133,7 +133,7 @@
  	    fi                                                 \
  	done
  
-@@ -426,6 +410,7 @@
+@@ -466,6 +450,7 @@
              --install_path sbin=$(SBINDIR)		\
              --install_path bindoc=$(MANDIR)/man1	\
              --install_path libdoc=$(MANDIR)/man3	\
