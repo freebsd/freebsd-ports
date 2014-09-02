@@ -691,10 +691,7 @@ share/themes/Emacs/gtk-3.0/gtk-keys.css
 @dirrmtry share/locale/an
 @dirrm share/gtk-3.0
 @exec %D/bin/gtk-query-immodules-3.0 --update-cache > /dev/null 2>&1 || /usr/bin/true
-@unexec /bin/rm -f %D/lib/gtk-3.0/%%GTK3_VERSION%%/immodules.cache
-@exec /bin/mkdir -p %D/lib/gtk-3.0/modules
-@exec /bin/mkdir -p %D/lib/gtk-3.0/%%GTK3_VERSION%%/engines
-@exec /bin/mkdir -p %D/lib/gtk-3.0/%%GTK3_VERSION%%/loaders
+@rmtry lib/gtk-3.0/%%GTK3_VERSION%%/immodules.cache
 @dirrm lib/gtk-3.0/modules
 @dirrm lib/gtk-3.0/%%GTK3_VERSION%%/printbackends
 @dirrm lib/gtk-3.0/%%GTK3_VERSION%%/loaders
