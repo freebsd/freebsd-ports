@@ -1,5 +1,5 @@
---- ./node/munin-node.conf.in.orig	2011-02-17 00:25:32.000000000 +0100
-+++ ./node/munin-node.conf.in	2011-02-17 00:25:47.000000000 +0100
+--- node/munin-node.conf.in.orig	2013-07-19 16:30:03 UTC
++++ node/munin-node.conf.in
 @@ -10,7 +10,7 @@
  setsid 1
  
@@ -7,9 +7,9 @@
 -group root
 +group wheel
  
- # Regexps for files to ignore
- 
-@@ -22,6 +22,7 @@
+ # This is the timeout for the whole transaction.
+ # Units are in sec. Default is 15 min
+@@ -30,6 +30,7 @@
  ignore_file \.dpkg-(tmp|new|old|dist)$
  ignore_file \.rpm(save|new)$
  ignore_file \.pod$

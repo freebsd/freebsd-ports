@@ -6,8 +6,14 @@
 %%SITE_PERL%%/Munin/Common/TLSClient.pm
 %%SITE_PERL%%/Munin/Common/TLSServer.pm
 %%SITE_PERL%%/Munin/Common/Timeout.pm
-@dirrm %%SITE_PERL%%/Munin/Common
-@dirrm %%SITE_PERL%%/Munin
-@exec mkdir -p %%LOGDIR%% %%STATEDIR%% %%SPOOLDIR%%
-@exec chown %%USER%%:%%GROUP%% %%LOGDIR%% %%STATEDIR%% %%SPOOLDIR%%
-@unexec rmdir %%DBDIR%% %%LOGDIR%% %%STATEDIR%% %%SPOOLDIR%% 2>/dev/null || /usr/bin/true
+man/man3/Munin::Common::Config.3.gz
+man/man3/Munin::Common::Defaults.3.gz
+man/man3/Munin::Common::TLS.3.gz
+man/man3/Munin::Common::TLSClient.3.gz
+man/man3/Munin::Common::TLSServer.3.gz
+man/man3/Munin::Common::Timeout.3.gz
+@dirrmtry %%SITE_PERL%%/Munin/Common
+@dirrmtry %%SITE_PERL%%/Munin
+@dirrmtry(%%USER%%,%%GROUP%%,) %%LOGDIR%%
+@dirrmtry(%%USER%%,%%GROUP%%,) %%STATEDIR%%
+@dirrmtry(%%USER%%,%%GROUP%%,) %%SPOOLDIR%%

@@ -1,6 +1,6 @@
---- plugins/node.d.freebsd/if_.in.orig	2009-12-30 13:55:55.000000000 +0100
-+++ plugins/node.d.freebsd/if_.in	2010-02-24 18:59:15.670282185 +0100
-@@ -81,9 +81,12 @@
+--- plugins/node.d.freebsd/if_.in.orig	2013-07-19 16:30:03 UTC
++++ plugins/node.d.freebsd/if_.in
+@@ -83,9 +83,12 @@
  	if (NF == 10) { 
  		print "rbytes.value", $6;
  		print "obytes.value", $9;

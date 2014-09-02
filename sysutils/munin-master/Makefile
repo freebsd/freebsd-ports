@@ -3,6 +3,7 @@
 
 PORTNAME=	munin
 PORTVERSION=	${MUNIN_VERSION}
+PORTREVISION=	1
 CATEGORIES=	sysutils perl5
 MASTER_SITES=	${MUNIN_SITES}
 PKGNAMESUFFIX=	-master
@@ -45,7 +46,6 @@ USES=		gmake perl5
 
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
-NO_STAGE=	yes
 .include "${.CURDIR}/../munin-common/munin.mk"
 
 EXTRA_PATCHES=	${MUNIN_PATCHES}
@@ -53,51 +53,15 @@ DISTINFO_FILE=	${MUNIN_DISTINFO}
 ALL_TARGET=	infiles build-master build-man
 INSTALL_TARGET=	install-master-prime
 
-MAN3=		Munin::Master::Config.3 \
-		Munin::Master::Group.3 \
-		Munin::Master::GroupRepository.3 \
-		Munin::Master::HTMLOld.3 \
-		Munin::Master::Host.3 \
-		Munin::Master::LimitsOld.3 \
-		Munin::Master::Logger.3 \
-		Munin::Master::Node.3 \
-		Munin::Master::ProcessManager.3 \
-		Munin::Master::Update.3 \
-		Munin::Master::UpdateWorker.3 \
-		Munin::Master::Utils.3 \
-		Munin::Master::Worker.3
-MAN5=		munin.conf.5
-MAN8=		munin-cron.8 \
-		munin-graph.8 \
-		munin-html.8 \
-		munin-limits.8 \
-		munin-update.8
-
-PLIST_SUB=	DBDIR=${DBDIR}
 SUB_FILES=	pkg-message
-
-.include <bsd.port.pre.mk>
-
-pre-install:
-	@${SETENV} ${SCRIPTS_ENV} PKG_PREFIX=${PREFIX} \
-		${SH} ${PKGDIR}/pkg-install ${PKGNAME} PRE-INSTALL
+PLIST_SUB+=	WWWOWN=${WWWOWN} WWWGRP=${WWWGRP}
 
 post-install:
-	@${CHOWN} ${USERS}:${GROUPS} ${DBDIR} ${STATEDIR} ${WWWDIR}
-	@${CHOWN} ${WWWOWN} ${DBDIR}/cgi-tmp
-	@${INSTALL_DATA} ${WRKSRC}/build/master/munin.conf \
-		${PREFIX}/etc/munin/munin.conf.sample
-	@(cd ${WRKSRC}/master/blib/libdoc && for man in ${MAN3}; do \
-		${INSTALL_MAN} -C $$man ${PREFIX}/man/man3; \
-	done)
-	@(cd ${WRKSRC}/build/doc && for man in ${MAN5}; do \
-		${INSTALL_MAN} -C $$man ${PREFIX}/man/man5; \
-	done)
-	@(cd ${WRKSRC}/build/doc && for man in ${MAN8}; do \
-		${INSTALL_MAN} -C $$man ${PREFIX}/man/man8; \
-	done)
-	@${SETENV} ${SCRIPTS_ENV} PKG_PREFIX=${PREFIX} \
-		${SH} ${PKGDIR}/pkg-install ${PKGNAME} POST-INSTALL
-	@${CAT} ${PKGMESSAGE}
+	(cd ${WRKSRC}/build/doc; \
+		${INSTALL_MAN} munin.conf.5 ${STAGEDIR}${MAN5PREFIX}/man/man5; \
+		${INSTALL_MAN} munin-cron.8 munin-graph.8 munin-html.8 munin-limits.8 munin-update.8 ${STAGEDIR}${MAN8PREFIX}/man/man8; \
+	)
+	(cd ${STAGEDIR}${ETCDIR}; for i in `find . -type f`; do mv $$i $$i.sample; done)
+	${MV} ${STAGEDIR}${WWWDIR}/.htaccess ${STAGEDIR}${WWWDIR}/.htaccess.sample
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

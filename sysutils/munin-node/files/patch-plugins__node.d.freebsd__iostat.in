@@ -1,5 +1,5 @@
---- ./plugins/node.d.freebsd/iostat.in.orig	2012-07-11 14:14:27.841196443 +0200
-+++ ./plugins/node.d.freebsd/iostat.in	2012-07-11 14:14:32.619552027 +0200
+--- plugins/node.d.freebsd/iostat.in.orig	2013-07-19 16:30:03 UTC
++++ plugins/node.d.freebsd/iostat.in
 @@ -56,13 +56,11 @@
      for d in $drives; do
         echo "${d}_read.label ${d}"
