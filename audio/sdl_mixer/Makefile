@@ -62,5 +62,7 @@ post-patch:
 		${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e 's|%%CONFIG_FILE%%|${CONFIG_FILE}|g' \
 		${WRKSRC}/timidity/config.h
+	@${REINPLACE_CMD} -e 's|"modplug.h"|"libmodplug/modplug.h"|' \
+		${WRKSRC}/music_modplug.h
 
 .include <bsd.port.mk>
