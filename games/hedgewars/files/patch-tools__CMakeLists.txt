@@ -1,0 +1,23 @@
+From b2d1b0d292c71b5a4266c9359280fa32a35ac56d Mon Sep 17 00:00:00 2001
+From: sheepluva <sheepyluva@gmail.com>
+Date: Wed, 13 Aug 2014 15:16:33 +0200
+Subject: [PATCH] this should fix the cmake 3.0 issue. thanks to Spacey for
+ reporting
+
+---
+ tools/CMakeLists.txt | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/tools/CMakeLists.txt b/tools/CMakeLists.txt
+index b55f09c..3da80ab 100644
+--- tools/CMakeLists.txt
++++ tools/CMakeLists.txt
+@@ -57,7 +57,7 @@ if(APPLE)
+ 
+     #create the .dmg for deployment
+     #first make sure .app exists, then remove any old .dmg with same name, finally run the script
+-    add_custom_target(dmg COMMAND if [ ! -a Hedgewars.app ]; then make install\; fi;
++    add_custom_target(dmg COMMAND "if [ ! -a Hedgewars.app ]; then make install\; fi;"
+                           COMMAND rm -f ${CMAKE_BINARY_DIR}/Hedgewars-${HEDGEWARS_VERSION}.dmg
+                           COMMAND ${CMAKE_CURRENT_SOURCE_DIR}/create-dmg.sh
+                                   --volname "Hedgewars ${HEDGEWARS_VERSION}"

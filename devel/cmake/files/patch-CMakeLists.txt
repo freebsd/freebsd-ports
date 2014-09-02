@@ -1,11 +1,12 @@
---- CMakeLists.txt.orig	2013-10-14 16:29:44.055730052 +0300
-+++ CMakeLists.txt	2013-10-14 16:30:05.395729128 +0300
-@@ -629,17 +629,17 @@
+--- CMakeLists.txt.orig	2014-07-27 16:06:05.000000000 +0300
++++ CMakeLists.txt	2014-07-27 16:06:14.000000000 +0300
+@@ -574,18 +574,5 @@
+ # Install license file as it requires.
  install(FILES Copyright.txt DESTINATION ${CMAKE_DOC_DIR})
  
- # Install script directories.
+-# Install script directories.
 -install(
--  DIRECTORY Modules Templates
+-  DIRECTORY Help Modules Templates
 -  DESTINATION ${CMAKE_DATA_DIR}
 -  FILE_PERMISSIONS OWNER_READ OWNER_WRITE GROUP_READ WORLD_READ
 -  DIRECTORY_PERMISSIONS OWNER_READ OWNER_EXECUTE OWNER_WRITE
@@ -15,17 +16,6 @@
 -                              GROUP_READ GROUP_EXECUTE
 -                              WORLD_READ WORLD_EXECUTE
 -  )
-+# install(
-+#   DIRECTORY Modules Templates
-+#   DESTINATION ${CMAKE_DATA_DIR}
-+#   FILE_PERMISSIONS OWNER_READ OWNER_WRITE GROUP_READ WORLD_READ
-+#   DIRECTORY_PERMISSIONS OWNER_READ OWNER_EXECUTE OWNER_WRITE
-+#                         GROUP_READ GROUP_EXECUTE
-+#                         WORLD_READ WORLD_EXECUTE
-+#   PATTERN "*.sh*" PERMISSIONS OWNER_READ OWNER_EXECUTE OWNER_WRITE
-+#                               GROUP_READ GROUP_EXECUTE
-+#                               WORLD_READ WORLD_EXECUTE
-+#   )
- 
- # process docs related install
- add_subdirectory(Docs)
+-
+ # Install auxiliary files integrating with other tools.
+ add_subdirectory(Auxiliary)

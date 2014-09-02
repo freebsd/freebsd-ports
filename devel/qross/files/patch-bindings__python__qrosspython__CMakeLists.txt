@@ -1,0 +1,28 @@
+From 9053d214840639c3deabb7902a00a37356fdf32e Mon Sep 17 00:00:00 2001
+From: 0xd34df00d <0xd34df00d@gmail.com>
+Date: Fri, 4 Jul 2014 00:54:01 +0400
+Subject: [PATCH] CMake 3.x compatibility in Python bindings.
+
+---
+ src/bindings/python/qrosspython/CMakeLists.txt | 8 ++++++--
+ 1 file changed, 6 insertions(+), 2 deletions(-)
+
+diff --git a/src/bindings/python/qrosspython/CMakeLists.txt b/src/bindings/python/qrosspython/CMakeLists.txt
+index 5bd5b73..e0a0e68 100644
+--- bindings/python/qrosspython/CMakeLists.txt
++++ bindings/python/qrosspython/CMakeLists.txt
+@@ -5,8 +5,12 @@ find_package(Qt4 REQUIRED)
+ set(QT_USE_QTTEST TRUE)
+ include(${QT_USE_FILE})
+ 
+-set (PythonLibs_FIND_VERSION 2.7)
+-find_package(PythonLibs REQUIRED)
++if (${CMAKE_MAJOR_VERSION} EQUAL 2)
++	set (PythonLibs_FIND_VERSION 2.7)
++	find_package(PythonLibs REQUIRED)
++else ()
++	find_package(PythonLibs "2.7" REQUIRED)
++endif ()
+ 
+ include_directories(
+     ${PYTHON_INCLUDE_PATH}

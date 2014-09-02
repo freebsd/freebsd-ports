@@ -4,14 +4,21 @@ bin/cpack
 bin/ctest
 man/man1/ccmake.1.gz
 man/man1/cmake.1.gz
-man/man1/cmakecommands.1.gz
-man/man1/cmakecompat.1.gz
-man/man1/cmakemodules.1.gz
-man/man1/cmakepolicies.1.gz
-man/man1/cmakeprops.1.gz
-man/man1/cmakevars.1.gz
 man/man1/cpack.1.gz
 man/man1/ctest.1.gz
+man/man7/cmake-buildsystem.7.gz
+man/man7/cmake-commands.7.gz
+man/man7/cmake-developer.7.gz
+man/man7/cmake-generator-expressions.7.gz
+man/man7/cmake-generators.7.gz
+man/man7/cmake-language.7.gz
+man/man7/cmake-modules.7.gz
+man/man7/cmake-packages.7.gz
+man/man7/cmake-policies.7.gz
+man/man7/cmake-properties.7.gz
+man/man7/cmake-qt.7.gz
+man/man7/cmake-toolchains.7.gz
+man/man7/cmake-variables.7.gz
 share/aclocal/cmake.m4
 %%DATADIR%%/completions/cmake
 %%DATADIR%%/completions/cpack
@@ -22,42 +29,10 @@ share/aclocal/cmake.m4
 %%DATADIR%%/editors/vim/cmake-syntax.vim
 %%DATADIR%%/include/cmCPluginAPI.h
 %%PORTDOCS%%%%DOCSDIR%%/Copyright.txt
-%%PORTDOCS%%%%DOCSDIR%%/ccmake.docbook
-%%PORTDOCS%%%%DOCSDIR%%/ccmake.html
-%%PORTDOCS%%%%DOCSDIR%%/ccmake.txt
-%%PORTDOCS%%%%DOCSDIR%%/cmake-commands.html
-%%PORTDOCS%%%%DOCSDIR%%/cmake-commands.txt
-%%PORTDOCS%%%%DOCSDIR%%/cmake-compatcommands.html
-%%PORTDOCS%%%%DOCSDIR%%/cmake-compatcommands.txt
-%%PORTDOCS%%%%DOCSDIR%%/cmake-modules.html
-%%PORTDOCS%%%%DOCSDIR%%/cmake-modules.txt
-%%PORTDOCS%%%%DOCSDIR%%/cmake-policies.html
-%%PORTDOCS%%%%DOCSDIR%%/cmake-policies.txt
-%%PORTDOCS%%%%DOCSDIR%%/cmake-properties.html
-%%PORTDOCS%%%%DOCSDIR%%/cmake-properties.txt
-%%PORTDOCS%%%%DOCSDIR%%/cmake-variables.html
-%%PORTDOCS%%%%DOCSDIR%%/cmake-variables.txt
-%%PORTDOCS%%%%DOCSDIR%%/cmake.docbook
-%%PORTDOCS%%%%DOCSDIR%%/cmake.html
-%%PORTDOCS%%%%DOCSDIR%%/cmake.txt
 %%PORTDOCS%%%%DOCSDIR%%/cmcompress/Copyright.txt
-%%PORTDOCS%%%%DOCSDIR%%/cmcurl/COPYING
-%%PORTDOCS%%%%DOCSDIR%%/cmexpat/COPYING
-%%PORTDOCS%%%%DOCSDIR%%/cmlibarchive/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/cmsys/Copyright.txt
-%%PORTDOCS%%%%DOCSDIR%%/cmzlib/Copyright.txt
-%%PORTDOCS%%%%DOCSDIR%%/cpack.docbook
-%%PORTDOCS%%%%DOCSDIR%%/cpack.html
-%%PORTDOCS%%%%DOCSDIR%%/cpack.txt
-%%PORTDOCS%%%%DOCSDIR%%/ctest.docbook
-%%PORTDOCS%%%%DOCSDIR%%/ctest.html
-%%PORTDOCS%%%%DOCSDIR%%/ctest.txt
 share/emacs/site-lisp/cmake-mode.el
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/cmzlib
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/cmsys
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/cmlibarchive
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/cmexpat
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/cmcurl
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/cmcompress
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%DATADIR%%/include

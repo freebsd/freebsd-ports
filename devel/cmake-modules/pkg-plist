@@ -1,5 +1,5 @@
 %%DATADIR%%/Modules/AddFileDependencies.cmake
-%%DATADIR%%/Modules/AutomocInfo.cmake.in
+%%DATADIR%%/Modules/AutogenInfo.cmake.in
 %%DATADIR%%/Modules/BasicConfigVersion-AnyNewerVersion.cmake.in
 %%DATADIR%%/Modules/BasicConfigVersion-ExactVersion.cmake.in
 %%DATADIR%%/Modules/BasicConfigVersion-SameMajorVersion.cmake.in
@@ -27,6 +27,7 @@
 %%DATADIR%%/Modules/CMakeCXXCompilerId.cpp.in
 %%DATADIR%%/Modules/CMakeCXXInformation.cmake
 %%DATADIR%%/Modules/CMakeClDeps.cmake
+%%DATADIR%%/Modules/CMakeCheckCompilerFlagCommonPatterns.cmake
 %%DATADIR%%/Modules/CMakeCommonLanguageInclude.cmake
 %%DATADIR%%/Modules/CMakeCompilerABI.h
 %%DATADIR%%/Modules/CMakeConfigurableFile.in
@@ -50,9 +51,12 @@
 %%DATADIR%%/Modules/CMakeExtraGeneratorDetermineCompilerMacrosAndIncludeDirs.cmake
 %%DATADIR%%/Modules/CMakeFindBinUtils.cmake
 %%DATADIR%%/Modules/CMakeFindCodeBlocks.cmake
+%%DATADIR%%/Modules/CMakeFindDependencyMacro.cmake
 %%DATADIR%%/Modules/CMakeFindEclipseCDT4.cmake
 %%DATADIR%%/Modules/CMakeFindFrameworks.cmake
+%%DATADIR%%/Modules/CMakeFindJavaCommon.cmake
 %%DATADIR%%/Modules/CMakeFindKDevelop3.cmake
+%%DATADIR%%/Modules/CMakeFindKate.cmake
 %%DATADIR%%/Modules/CMakeFindPackageMode.cmake
 %%DATADIR%%/Modules/CMakeFindWMake.cmake
 %%DATADIR%%/Modules/CMakeFindXCode.cmake
@@ -95,16 +99,8 @@
 %%DATADIR%%/Modules/CMakeTestRCCompiler.cmake
 %%DATADIR%%/Modules/CMakeTestWatcomVersion.c
 %%DATADIR%%/Modules/CMakeUnixFindMake.cmake
-%%DATADIR%%/Modules/CMakeVS10FindMake.cmake
-%%DATADIR%%/Modules/CMakeVS11FindMake.cmake
-%%DATADIR%%/Modules/CMakeVS12FindMake.cmake
 %%DATADIR%%/Modules/CMakeVS6BackwardCompatibility.cmake
-%%DATADIR%%/Modules/CMakeVS6FindMake.cmake
-%%DATADIR%%/Modules/CMakeVS71FindMake.cmake
 %%DATADIR%%/Modules/CMakeVS7BackwardCompatibility.cmake
-%%DATADIR%%/Modules/CMakeVS7FindMake.cmake
-%%DATADIR%%/Modules/CMakeVS8FindMake.cmake
-%%DATADIR%%/Modules/CMakeVS9FindMake.cmake
 %%DATADIR%%/Modules/CMakeVerifyManifest.cmake
 %%DATADIR%%/Modules/CPack.DS_Store.in
 %%DATADIR%%/Modules/CPack.Description.plist.in
@@ -163,6 +159,9 @@
 %%DATADIR%%/Modules/CheckVariableExists.c
 %%DATADIR%%/Modules/CheckVariableExists.cmake
 %%DATADIR%%/Modules/Compiler/Absoft-Fortran.cmake
+%%DATADIR%%/Modules/Compiler/AppleClang-ASM.cmake
+%%DATADIR%%/Modules/Compiler/AppleClang-C.cmake
+%%DATADIR%%/Modules/Compiler/AppleClang-CXX.cmake
 %%DATADIR%%/Modules/Compiler/Clang-ASM.cmake
 %%DATADIR%%/Modules/Compiler/Clang-C.cmake
 %%DATADIR%%/Modules/Compiler/Clang-CXX.cmake
@@ -200,6 +199,9 @@
 %%DATADIR%%/Modules/Compiler/PathScale-CXX.cmake
 %%DATADIR%%/Modules/Compiler/PathScale-Fortran.cmake
 %%DATADIR%%/Modules/Compiler/PathScale.cmake
+%%DATADIR%%/Modules/Compiler/QCC-C.cmake
+%%DATADIR%%/Modules/Compiler/QCC-CXX.cmake
+%%DATADIR%%/Modules/Compiler/QCC.cmake
 %%DATADIR%%/Modules/Compiler/SCO-C.cmake
 %%DATADIR%%/Modules/Compiler/SCO-CXX.cmake
 %%DATADIR%%/Modules/Compiler/SCO.cmake
@@ -222,6 +224,7 @@
 %%DATADIR%%/Modules/CompilerId/VS-10.vcxproj.in
 %%DATADIR%%/Modules/CompilerId/VS-6.dsp.in
 %%DATADIR%%/Modules/CompilerId/VS-7.vcproj.in
+%%DATADIR%%/Modules/CompilerId/VS-Intel.vfproj.in
 %%DATADIR%%/Modules/CompilerId/Xcode-1.pbxproj.in
 %%DATADIR%%/Modules/CompilerId/Xcode-2.pbxproj.in
 %%DATADIR%%/Modules/CompilerId/Xcode-3.pbxproj.in
@@ -242,6 +245,7 @@
 %%DATADIR%%/Modules/FindBISON.cmake
 %%DATADIR%%/Modules/FindBLAS.cmake
 %%DATADIR%%/Modules/FindBZip2.cmake
+%%DATADIR%%/Modules/FindBacktrace.cmake
 %%DATADIR%%/Modules/FindBoost.cmake
 %%DATADIR%%/Modules/FindBullet.cmake
 %%DATADIR%%/Modules/FindCABLE.cmake
@@ -297,6 +301,7 @@
 %%DATADIR%%/Modules/FindLibLZMA.cmake
 %%DATADIR%%/Modules/FindLibXml2.cmake
 %%DATADIR%%/Modules/FindLibXslt.cmake
+%%DATADIR%%/Modules/FindLua.cmake
 %%DATADIR%%/Modules/FindLua50.cmake
 %%DATADIR%%/Modules/FindLua51.cmake
 %%DATADIR%%/Modules/FindMFC.cmake
@@ -451,6 +456,8 @@
 %%DATADIR%%/Modules/Platform/CYGWIN.cmake
 %%DATADIR%%/Modules/Platform/Catamount.cmake
 %%DATADIR%%/Modules/Platform/Darwin-Absoft-Fortran.cmake
+%%DATADIR%%/Modules/Platform/Darwin-AppleClang-C.cmake
+%%DATADIR%%/Modules/Platform/Darwin-AppleClang-CXX.cmake
 %%DATADIR%%/Modules/Platform/Darwin-CXX.cmake
 %%DATADIR%%/Modules/Platform/Darwin-Clang-C.cmake
 %%DATADIR%%/Modules/Platform/Darwin-Clang-CXX.cmake
@@ -459,14 +466,15 @@
 %%DATADIR%%/Modules/Platform/Darwin-GNU-CXX.cmake
 %%DATADIR%%/Modules/Platform/Darwin-GNU-Fortran.cmake
 %%DATADIR%%/Modules/Platform/Darwin-GNU.cmake
+%%DATADIR%%/Modules/Platform/Darwin-Intel-C.cmake
+%%DATADIR%%/Modules/Platform/Darwin-Intel-CXX.cmake
 %%DATADIR%%/Modules/Platform/Darwin-Intel-Fortran.cmake
+%%DATADIR%%/Modules/Platform/Darwin-Intel.cmake
 %%DATADIR%%/Modules/Platform/Darwin-NAG-Fortran.cmake
 %%DATADIR%%/Modules/Platform/Darwin-VisualAge-C.cmake
 %%DATADIR%%/Modules/Platform/Darwin-VisualAge-CXX.cmake
 %%DATADIR%%/Modules/Platform/Darwin-XL-C.cmake
 %%DATADIR%%/Modules/Platform/Darwin-XL-CXX.cmake
-%%DATADIR%%/Modules/Platform/Darwin-icc.cmake
-%%DATADIR%%/Modules/Platform/Darwin-icpc.cmake
 %%DATADIR%%/Modules/Platform/Darwin.cmake
 %%DATADIR%%/Modules/Platform/DragonFly.cmake
 %%DATADIR%%/Modules/Platform/FreeBSD.cmake
@@ -524,6 +532,7 @@
 %%DATADIR%%/Modules/Platform/Linux-como.cmake
 %%DATADIR%%/Modules/Platform/Linux.cmake
 %%DATADIR%%/Modules/Platform/MP-RAS.cmake
+%%DATADIR%%/Modules/Platform/MirBSD.cmake
 %%DATADIR%%/Modules/Platform/NetBSD.cmake
 %%DATADIR%%/Modules/Platform/OSF1.cmake
 %%DATADIR%%/Modules/Platform/OpenBSD.cmake
@@ -545,6 +554,9 @@
 %%DATADIR%%/Modules/Platform/Windows-Borland-C.cmake
 %%DATADIR%%/Modules/Platform/Windows-Borland-CXX.cmake
 %%DATADIR%%/Modules/Platform/Windows-CXX.cmake
+%%DATADIR%%/Modules/Platform/Windows-Clang-C.cmake
+%%DATADIR%%/Modules/Platform/Windows-Clang-CXX.cmake
+%%DATADIR%%/Modules/Platform/Windows-Clang.cmake
 %%DATADIR%%/Modules/Platform/Windows-Embarcadero-C.cmake
 %%DATADIR%%/Modules/Platform/Windows-Embarcadero-CXX.cmake
 %%DATADIR%%/Modules/Platform/Windows-Embarcadero.cmake
