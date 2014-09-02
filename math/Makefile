@@ -243,6 +243,7 @@
     SUBDIR += minisat
     SUBDIR += miracl
     SUBDIR += moo
+    SUBDIR += mosesdecoder
     SUBDIR += mpc
     SUBDIR += mpexpr
     SUBDIR += mpfr
