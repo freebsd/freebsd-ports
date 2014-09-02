@@ -61,6 +61,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/sbin|${PREFIX}/sbin|g' \
 		${WRKSRC}/capplets/display/org.gnome.randr.policy.in
 	@${REINPLACE_CMD} -e 's|"libslab"|"libnoslab"|g' \
+		-e '/^COMMON_MODULES=/s/"$$/ gmodule-2.0"/' \
 		${WRKSRC}/configure
 
 .include <bsd.port.post.mk>
