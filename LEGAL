@@ -49,6 +49,7 @@ bdc*			security/bdc		License does not allow redistribution
 bicom*			archivers/bicom		Contact author personally regarding commercial use
 boodler-*		audio/boodler		Not for commercial use
 Browser*.tar.gz		net/ldapbrowser		No reply from author regarding redistribution licensing
+bzip-*			archivers/bzip		Some algorithms used may infringe certain US patents.  Opinions differ.  Commercial use could render you liable to unfriendly legal action
 candycruncher_demo*	games/linux-candycruncher-demo	Redistribution is limited, see license
 citrix_ica-*		net/citrix_ica		License prohibits redistribution
 arcconf-v*		sysutils/arcconf	May not be redistributed in binary form
@@ -269,7 +270,6 @@ win32/*			multimedia/win32-codecs	Licensing status of the codecs is unknown
 xanim-*			multimedia/xanim	Must be redistributed without fee
 xchada01.lzh		games/xchadance		Contains commercial character data
 xephem-*		astro/xephem		Personal use only
-XFrisk-*		games/xfrisk		Copyright/trademark violation?
 XFrisk-*.tar.gz		games/xfrisk		Possible trademark infringement
 xGate/*			japanese/xgate		Requested by Orangesoft Inc.
 xgobi.sh.gz		math/xgobi		Restrictive copyright (do not sell for profit)
