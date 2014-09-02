@@ -63,6 +63,5 @@ share/sounds/alsa/Side_Right.wav
 @dirrmtry share/alsa/init
 @dirrmtry share/alsa
 @dirrmtry lib/udev
-@cwd /var
-@dirrmtry lib/alsa
-@dirrmtry lib
+@dirrmtry /var/lib/alsa
+@dirrmtry /var/lib
