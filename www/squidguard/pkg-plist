@@ -72,12 +72,7 @@ bin/squidGuard
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/README.blacklists
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
 @mode
-@owner
-@group
-@cwd /
-@exec mkdir -p %%LOGDIR%%
-@exec chown -R %%SQUID_UID%%:%%SQUID_GID%% %%LOGDIR%%
-@dirrmtry %%LOGDIR%%
-@exec mkdir -p %%DATADIR%%
-@exec chown -R %%SQUID_UID%%:%%SQUID_GID%% %%DATADIR%%
-@dirrmtry %%DATADIR%%
+@owner root
+@group wheel
+@dirrmtry(%%SQUID_UID%%,%%SQUID_GID%%,) %%LOGDIR%%
+@dirrmtry(%%SQUID_UID%%,%%SQUID_GID%%,) %%DATADIR%%
