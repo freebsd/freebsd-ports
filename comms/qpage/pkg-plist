@@ -1,5 +1,4 @@
 bin/qpage
 @sample etc/qpage.conf.sample
 man/man1/qpage.1.gz
-@exec if [ ! -d /var/spool/qpage ]; then mkdir /var/spool/qpage; chown uucp:dialer /var/spool/qpage; chmod 0775 /var/spool/qpage; fi
-@unexec if [ -d /var/spool/qpage ]; then rm -rf /var/spool/qpage; fi
+@dirrmtry(uucp,dialer,) /var/spool/qpage
