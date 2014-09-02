@@ -34,5 +34,4 @@ morph/morph_slide.so
 morph/morph_slide.la
 @dirrm actor
 @dirrm morph
-@cwd /
 @dirrm %%PLUGINS_BASE_DIR%%
