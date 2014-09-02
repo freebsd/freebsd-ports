@@ -106,14 +106,10 @@ usr/share/qt4/translations/qvfb_ru.qm
 usr/share/qt4/translations/qvfb_untranslated.qm
 usr/share/qt4/translations/qvfb_zh_CN.qm
 usr/share/qt4/translations/qvfb_zh_TW.qm
-@comment deal with empty directories installed by the port
-@exec /bin/mkdir -p %D/usr/lib/qt4/plugins/sqldrivers
 @dirrmtry usr/lib/qt4/plugins/sqldrivers
 @dirrmtry usr/lib/qt4/plugins
-@exec /bin/mkdir -p %D/usr/share/doc/qt4/qch
 @dirrmtry usr/share/doc/qt4/qch
 @dirrmtry usr/share/doc/qt4
-@comment non-empty directory listing in revers order
 @dirrm usr/share/qt4/translations
 @dirrm usr/share/qt4
 @dirrm usr/share/doc/qt-4.5.3
