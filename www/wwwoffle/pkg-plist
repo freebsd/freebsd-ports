@@ -927,5 +927,4 @@ upgrade-config.pl
 @dirrm html/de/local
 @dirrm html/de
 @dirrm html
-@cwd /
 @dirrm %%WWWOFFLE_SPOOL%%
