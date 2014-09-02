@@ -3980,7 +3980,7 @@ create-users-groups:
 			echo \"Creating user '$$login' with uid '$$uid'.\" \n \
 			${PW} useradd $$login -u $$uid -g $$gid $$class -c \"$$gecos\" -d $$homedir -s $$shell \n \
 			else \necho \"Using existing user '$$login'.\" \nfi" >> ${_UG_OUTPUT}; \
-		case $$homedir in /|/nonexistent|/var/empty) ;; *) ${ECHO_CMD} "@exec ${INSTALL} -d -g $$gid -o $$uid $$homedir" >> ${TMPPLIST};; esac; \
+		case $$homedir in /|/nonexistent|/var/empty) ;; *) ${ECHO_CMD} "${INSTALL} -d -g $$gid -o $$uid $$homedir" >> ${_UG_OUTPUT};; esac; \
 	done
 .endfor
 .if defined(GROUPS)
@@ -5461,7 +5461,7 @@ add-plist-info:
 .if (${PREFIX} != ${LOCALBASE} && ${PREFIX} != ${LINUXBASE} && \
     ${PREFIX} != "/usr" && !defined(NO_PREFIX_RMDIR))
 add-plist-post:
-	@${ECHO_CMD} "@unexec rmdir %D 2> /dev/null || true" >> ${TMPPLIST}
+	@${ECHO_CMD} "@dirrmtry %D" >> ${TMPPLIST}
 .endif
 .endif
 
