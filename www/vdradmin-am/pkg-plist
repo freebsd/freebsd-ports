@@ -1,9 +1,5 @@
 bin/vdradmind
-@exec /usr/bin/install -o %%VDR_USER%% -g %%VDR_GROUP%% -d %D/%%ETCDIR%%
-@unexec if cmp -s %D/etc/vdradmin-am/vdradmind.conf.sample %D/etc/vdradmin-am/vdradmind.conf; then rm -f %D/etc/vdradmin-am/vdradmind.conf; fi
-%%ETCDIR%%/vdradmind.conf.sample
-@exec if [ ! -f %D/etc/vdradmin-am/vdradmind.conf ] ; then cp -p %D/%F %B/vdradmind.conf; chown %%VDR_USER%%:%%VDR_GROUP%% %B/vdradmind.conf; fi
-@exec chown -R %%VDR_USER%%:%%VDR_GROUP%% %D/%%ETCDIR%%
+@sample(%%VDR_USER%%,%%VDR_GROUP%%,) %%ETCDIR%%/vdradmind.conf.sample
 man/man8/vdradmind.8.gz
 share/vdradmin-am/lib/MIME/Base64.pm
 share/vdradmin-am/lib/Template/Plugin/Date.pm
@@ -163,8 +159,7 @@ share/locale/fr/LC_MESSAGES/vdradmin.mo
 share/locale/it/LC_MESSAGES/vdradmin.mo
 share/locale/nl/LC_MESSAGES/vdradmin.mo
 share/locale/ru/LC_MESSAGES/vdradmin.mo
-@exec /usr/bin/install -o %%VDR_USER%% -g %%VDR_GROUP%% -d /var/cache/vdradmin-am /var/log/vdradmin-am /var/run/vdradmin-am
-@dirrmtry %%ETCDIR%%
+@dirrmtry(%%VDR_USER%%,%%VDR_GROUP%%,) %%ETCDIR%%
 @dirrm share/vdradmin-am/lib/MIME
 @dirrm share/vdradmin-am/lib/File
 @dirrm share/vdradmin-am/lib/URI
@@ -179,8 +174,6 @@ share/locale/ru/LC_MESSAGES/vdradmin.mo
 @dirrm share/vdradmin-am
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/contrib
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@cwd /
-@dirrmtry var/cache/vdradmin-am
-@dirrmtry var/log/vdradmin-am
-@dirrmtry var/run/vdradmin-am
-@cwd %%PREFIX%%
+@dirrmtry(%%VDR_USER%%,%%VDR_GROUP%%,) /var/cache/vdradmin-am
+@dirrmtry(%%VDR_USER%%,%%VDR_GROUP%%,) /var/log/vdradmin-am
+@dirrmtry(%%VDR_USER%%,%%VDR_GROUP%%,) /var/run/vdradmin-am
