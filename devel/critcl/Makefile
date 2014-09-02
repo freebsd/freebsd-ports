@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	critcl
-PORTVERSION=	3.1.10
+PORTVERSION=	3.1.12
 CATEGORIES=	devel
 
 MAINTAINER=	tcltk@FreeBSD.org
@@ -13,7 +13,7 @@ OPTIONS_DEFINE=	DOCS
 USES+=		tcl
 USE_GITHUB=	yes
 GH_ACCOUNT=	andreas-kupries
-GH_COMMIT=	ea3f253
+GH_COMMIT=	39e4a10
 
 PLIST_SUB+=	VER=${PORTVERSION}
 PORTDOCS=	*
@@ -28,7 +28,6 @@ BUILD_DEPENDS+=	dtplite:${PORTSDIR}/devel/tcllib
 
 post-patch:
 	${REINPLACE_CMD} -e 's|dtplite|${LOCALBASE}/bin/dtplite|g' ${WRKSRC}/build.tcl
-	${REINPLACE_CMD} -e 's|4603|4746|g' ${WRKSRC}/test/cproc.test
 	${REINPLACE_CMD} -e 's|%%CC%%|${CC}|g' ${WRKSRC}/lib/critcl/Config
 
 do-install:
@@ -39,7 +38,7 @@ do-install:
 .endif
 	(cd ${WRKSRC} && ${TCLSH} build.tcl install ${STAGEDIR}${PREFIX}/lib)
 
-regression-test:
+regression-test: build
 	(cd ${WRKSRC} && ${TCLSH} test/all.tcl)
 
 .include <bsd.port.mk>
