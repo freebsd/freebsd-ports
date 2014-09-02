@@ -124,10 +124,8 @@ bin/validate-storage-schemas.py
 @dirrm %%PYTHON_SITELIBDIR%%/carbon/aggregator
 @dirrm %%PYTHON_SITELIBDIR%%/carbon
 @dirrmtry %%ETCDIR%%
-@cwd /
-@dirrmtry var/db/carbon/whisper
-@dirrmtry var/db/carbon/rrd
-@dirrmtry var/db/carbon/log
-@dirrmtry var/db/carbon/lists
-@dirrmtry var/db/carbon
-@cwd %%RESETPREFIX%%
+@dirrmtry /var/db/carbon/whisper
+@dirrmtry /var/db/carbon/rrd
+@dirrmtry /var/db/carbon/log
+@dirrmtry /var/db/carbon/lists
+@dirrmtry /var/db/carbon
