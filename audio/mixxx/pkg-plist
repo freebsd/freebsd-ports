@@ -1,5 +1,4 @@
 bin/mixxx
-@exec mkdir -p %D/lib/mixxx/plugins/soundsource
 %%FAAD%%lib/mixxx/plugins/soundsource/libsoundsourcem4a.so
 %%WAVPACK%%lib/mixxx/plugins/soundsource/libsoundsourcewv.so
 lib/mixxx/plugins/vamp/libmixxxminimal.so
