@@ -9,6 +9,4 @@ man/man1/polipo.1.gz
 @dirrmtry etc/polipo
 @dirrmtry etc/periodic/daily
 @dirrmtry etc/periodic
-@cwd /
-@dirrmtry var/cache/polipo
-@cwd %%RESETPREFIX%%
+@dirrmtry /var/cache/polipo
