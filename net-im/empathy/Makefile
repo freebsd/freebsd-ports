@@ -96,4 +96,10 @@ CONFIGURE_ARGS+=--disable-map
 PLIST_SUB+=	MAP="@comment "
 .endif
 
+posy-patch:
+	@${REINPLACE_CMD} \
+		-e '/^empathy_av_LDADD =/s/$$/ -lm/' \
+		-e '/^empathy_call_LDADD =/s/$$/ -lm/' \
+		${WRKSRC}/src/Makefile.in
+
 .include <bsd.port.mk>
