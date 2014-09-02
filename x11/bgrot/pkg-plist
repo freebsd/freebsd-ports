@@ -3,7 +3,5 @@ bin/bgrandom.pl
 bin/bgrotman.pl
 bin/createlist.sh
 bin/masterlistgen.sh
-@unexec if cmp -s %D/etc/bgrot.conf.sample %D/etc/bgrot.conf; then rm -f %D/etc/bgrot.conf; fi
-etc/bgrot.conf.sample
-@exec if [ ! -f %D/etc/bgrot.conf ] ; then cp -p %D/%F %B/bgrot.conf; fi
+@sample etc/bgrot.conf.sample
 man/man1/bgrot.1.gz
