@@ -1,8 +1,0 @@
-The (BSD) BioAPI service module for PAM provides authentication management
-through BioAPI BSPs.
-
-Features includes support for multiple database backends for BIR storage,
-BSP message callback translation for easy integration with graphical login
-managers such as GDM.
-
-WWW: http://www.shapeshifter.se/code/pam_bsdbioapi

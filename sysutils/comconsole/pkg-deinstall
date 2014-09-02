@@ -1,6 +1,0 @@
-#!/bin/sh
-[ "x$1" = "x" ] && exit 1
-if [ "x$2" = "xDEINSTALL" ]; then
-	sed -i '' "s|^console.*|console	none				unknown	off  secure|" /etc/ttys
-	rm -f /boot.config
-fi

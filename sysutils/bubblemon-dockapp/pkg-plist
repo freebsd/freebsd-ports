@@ -1,5 +1,0 @@
-bin/bubblemon
-%%EXAMPLESDIR%%/wak.wav
-%%EXAMPLESDIR%%/wakwak.sh
-%%EXAMPLESDIR%%/Xdefaults.sample
-@dirrm %%EXAMPLESDIR%%

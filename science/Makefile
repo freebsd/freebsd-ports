@@ -4,7 +4,6 @@
     COMMENT = Scientific ports
 
     SUBDIR += 2d-rewriter
-    SUBDIR += 2dhf
     SUBDIR += InsightToolkit
     SUBDIR += R-cran-AMORE
     SUBDIR += R-cran-DCluster
@@ -15,7 +14,6 @@
     SUBDIR += R-cran-epicalc
     SUBDIR += R-cran-snow
     SUBDIR += R-cran-som
-    SUBDIR += abinit
     SUBDIR += afni
     SUBDIR += avogadro
     SUBDIR += bddsolve
@@ -38,14 +36,11 @@
     SUBDIR += dcl
     SUBDIR += devisor
     SUBDIR += dlpoly-classic
-    SUBDIR += dtiquery
     SUBDIR += ecs
     SUBDIR += elmer-eio
-    SUBDIR += elmer-hutiter
     SUBDIR += elmer-matc
     SUBDIR += elmer-meshgen2d
     SUBDIR += elmergrid
-    SUBDIR += elmerpost
     SUBDIR += epte
     SUBDIR += fastcap
     SUBDIR += fasthenry
@@ -53,8 +48,6 @@
     SUBDIR += fvcom
     SUBDIR += fvcom-mpi
     SUBDIR += fvm
-    SUBDIR += g3data
-    SUBDIR += gamess
     SUBDIR += gchemutils
     SUBDIR += getdp
     SUBDIR += ghemical
@@ -90,12 +83,10 @@
     SUBDIR += linsmith
     SUBDIR += massxpert
     SUBDIR += mbdyn
-    SUBDIR += mcstas
     SUBDIR += medit
     SUBDIR += meep
     SUBDIR += mei
     SUBDIR += metaf2xml
-    SUBDIR += minc
     SUBDIR += minc2
     SUBDIR += mol2ps
     SUBDIR += mpb
@@ -141,7 +132,6 @@
     SUBDIR += paje
     SUBDIR += paraview
     SUBDIR += pnetcdf
-    SUBDIR += psi3
     SUBDIR += psychopy
     SUBDIR += pulseview
     SUBDIR += py-DendroPy
@@ -188,9 +178,7 @@
     SUBDIR += veusz
     SUBDIR += vmd
     SUBDIR += voro++
-    SUBDIR += x11iraf
     SUBDIR += xfce4-equake-plugin
     SUBDIR += xmakemol
-    SUBDIR += xmds
 
 .include <bsd.port.subdir.mk>

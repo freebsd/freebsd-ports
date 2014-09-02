@@ -1,6 +1,0 @@
-@exec mkdir %D/news || true
-@unexec cmp %D/news/news.item %D/%%EXAMPLESDIR%%/news.item.sample && rm -f %D/news/news.item || true
-%%EXAMPLESDIR%%/news.item.sample
-@exec if [ ! -e %D/news/news.item ]; then cp %D/%%EXAMPLESDIR%%/news.item.sample %D/news/news.item; fi
-@dirrmtry news
-@dirrmtry %%EXAMPLESDIR%%

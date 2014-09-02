@@ -34,12 +34,10 @@
     SUBDIR += arcconf
     SUBDIR += archivemount
     SUBDIR += areca-cli
-    SUBDIR += asapm
     SUBDIR += ascpu
     SUBDIR += asfsm
     SUBDIR += asmem
     SUBDIR += asmon
-    SUBDIR += asr-utils
     SUBDIR += asusoled
     SUBDIR += ataidle
     SUBDIR += atitvout
@@ -70,7 +68,6 @@
     SUBDIR += bbapm
     SUBDIR += bbcp
     SUBDIR += bchunk
-    SUBDIR += be_agent
     SUBDIR += beadm
     SUBDIR += beadm-devel
     SUBDIR += bhyve-rc
@@ -79,7 +76,6 @@
     SUBDIR += bksh
     SUBDIR += bontmia
     SUBDIR += boxbackup
-    SUBDIR += boxbackup-devel
     SUBDIR += brasero
     SUBDIR += brebis
     SUBDIR += bsd-splash-changer
@@ -92,7 +88,6 @@
     SUBDIR += bsdploy
     SUBDIR += bsdstats
     SUBDIR += btsixad
-    SUBDIR += bubblemon-dockapp
     SUBDIR += bulk_extractor
     SUBDIR += busybox
     SUBDIR += busybox-unstable
@@ -124,7 +119,6 @@
     SUBDIR += ck4up
     SUBDIR += clean
     SUBDIR += clockspeed
-    SUBDIR += clockspeed-conf
     SUBDIR += clone
     SUBDIR += clonehdd
     SUBDIR += cloop-utils
@@ -135,8 +129,6 @@
     SUBDIR += cmospwd
     SUBDIR += cog
     SUBDIR += colorize
-    SUBDIR += comconsole
-    SUBDIR += comiccron
     SUBDIR += condor
     SUBDIR += confctl
     SUBDIR += confman
@@ -144,7 +136,6 @@
     SUBDIR += conky-awesome
     SUBDIR += consolehm
     SUBDIR += consolekit
-    SUBDIR += contool
     SUBDIR += contractor
     SUBDIR += copytape
     SUBDIR += coreutils
@@ -155,12 +146,9 @@
     SUBDIR += cpulimit
     SUBDIR += cramfs
     SUBDIR += crashme
-    SUBDIR += createrepo
-    SUBDIR += cromwell
     SUBDIR += cronolog
     SUBDIR += cronolog-devel
     SUBDIR += curly
-    SUBDIR += cvsweb-converters
     SUBDIR += cw
     SUBDIR += daa2iso
     SUBDIR += dae
@@ -222,7 +210,6 @@
     SUBDIR += enteruser
     SUBDIR += entr
     SUBDIR += env4801
-    SUBDIR += eroaster
     SUBDIR += etcmerge
     SUBDIR += etcupdate
     SUBDIR += eventlog
@@ -270,7 +257,6 @@
     SUBDIR += freedt
     SUBDIR += freeipmi
     SUBDIR += freesbie
-    SUBDIR += freqsdwn
     SUBDIR += froxlor
     SUBDIR += fsbackup
     SUBDIR += fsc
@@ -311,7 +297,6 @@
     SUBDIR += gaffitter
     SUBDIR += gai-leds
     SUBDIR += ganglia-monitor-core
-    SUBDIR += ganglia-webfrontend
     SUBDIR += gapcmon
     SUBDIR += garcon
     SUBDIR += gather
@@ -343,7 +328,6 @@
     SUBDIR += gnome-system-monitor
     SUBDIR += gnome-system-tools
     SUBDIR += gnome_subr
-    SUBDIR += gnomebaker
     SUBDIR += goaccess
     SUBDIR += gosa
     SUBDIR += gpart
@@ -410,16 +394,13 @@
     SUBDIR += isc-cron
     SUBDIR += isomaster
     SUBDIR += isomd5sum
-    SUBDIR += ispman
     SUBDIR += istatd
     SUBDIR += jail-primer
     SUBDIR += jail2
-    SUBDIR += jailadmin
     SUBDIR += jailctl
     SUBDIR += jaildaemon
     SUBDIR += jailme
     SUBDIR += jailrc
-    SUBDIR += jailuser
     SUBDIR += javaservicewrapper
     SUBDIR += jdiskreport
     SUBDIR += jfbterm
@@ -471,7 +452,6 @@
     SUBDIR += lineak-xosdplugin
     SUBDIR += lineakd
     SUBDIR += linrename
-    SUBDIR += linux-afaapps
     SUBDIR += linux-crashplan
     SUBDIR += linux-f10-procps
     SUBDIR += linux-nero
@@ -564,8 +544,6 @@
     SUBDIR += ncdu
     SUBDIR += nepomuk-core
     SUBDIR += nepomuk-widgets
-    SUBDIR += netident
-    SUBDIR += news
     SUBDIR += nfsping
     SUBDIR += nitrogen
     SUBDIR += no-login
@@ -573,10 +551,8 @@
     SUBDIR += nrg2iso
     SUBDIR += ntfsprogs
     SUBDIR += nut
-    SUBDIR += nut22
     SUBDIR += nvclock
     SUBDIR += nvramtool
-    SUBDIR += nvtv
     SUBDIR += oak
     SUBDIR += obliterate
     SUBDIR += ods2
@@ -684,7 +660,6 @@
     SUBDIR += pecl-mogilefs
     SUBDIR += pecl-proctitle
     SUBDIR += pefs-kmod
-    SUBDIR += penv
     SUBDIR += personality
     SUBDIR += pessulus
     SUBDIR += pflogx
@@ -703,7 +678,6 @@
     SUBDIR += pipemeter
     SUBDIR += plasma-applet-apcups
     SUBDIR += plconfig
-    SUBDIR += pmap
     SUBDIR += pmt
     SUBDIR += policykit
     SUBDIR += policykit-gnome
@@ -762,7 +736,6 @@
     SUBDIR += py-stdiff
     SUBDIR += py-supervisor
     SUBDIR += py-zdaemon
-    SUBDIR += py-zfs
     SUBDIR += pydf
     SUBDIR += qchroot
     SUBDIR += qjail
@@ -789,7 +762,6 @@
     SUBDIR += relaxconf
     SUBDIR += rename
     SUBDIR += reoback
-    SUBDIR += replicant
     SUBDIR += respond
     SUBDIR += retail
     SUBDIR += rfstool
@@ -858,7 +830,6 @@
     SUBDIR += sas2ircu
     SUBDIR += savelogs
     SUBDIR += sb16config
-    SUBDIR += sbniconfig
     SUBDIR += scalpel
     SUBDIR += scan_ffs
     SUBDIR += scanbuttond
@@ -982,7 +953,6 @@
     SUBDIR += unquote
     SUBDIR += unstow
     SUBDIR += upower
-    SUBDIR += upsd
     SUBDIR += upsdaemon
     SUBDIR += uptimed
     SUBDIR += usb_modeswitch
@@ -1025,7 +995,6 @@
     SUBDIR += whatpix
     SUBDIR += whowatch
     SUBDIR += wiimms
-    SUBDIR += wmapm
     SUBDIR += wmapmload
     SUBDIR += wmbluecpu
     SUBDIR += wmbsdbatt
@@ -1072,7 +1041,6 @@
     SUBDIR += xmbmon
     SUBDIR += xorriso
     SUBDIR += xosview
-    SUBDIR += xsi
     SUBDIR += xstow
     SUBDIR += xsysstats
     SUBDIR += xvidcap

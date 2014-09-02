@@ -25,7 +25,6 @@
 # ------------------------------------------------------------------------------
 *-for-1.4.tgz	net/dgd-lpmud			May not be used for monetary gain
 *_MegaCLI.zip		sysutils/megacli	Source recipient must acknowledge license. Reproduction or redistribution prohibited. See http://www.lsi.com/lookup/License.aspx
-ASpath-tree-*.tar.gz	net-mgmt/aspathtree	not redistributable, license agreement required
 26410-800.zip		audio/libaacplus	unclear legal status, probably need licenses from 3GPP, Via Licensing and Coding Technologies
 aacplusenc-*		audio/aacplusenc	unclear legal status, probably need licenses from 3GPP, Via Licensing and Coding Technologies
 acroread/AdbeRdr8.*	print/acroread8		Must fill out redistribution form at http://www.adobe.com/products/acrobat/distribute.html
@@ -55,7 +54,6 @@ citrix_ica-*		net/citrix_ica		License prohibits redistribution
 arcconf-v*		sysutils/arcconf	May not be redistributed in binary form
 clustalw-*		biology/clustalw	No commercial use
 coldwar_demo*		games/linux-coldwar-demo	Redistribution is limited, see license
-contool-*		sysutils/contool	Do not incorporate the source code into a product which is subsequently sold
 cos-*			java/cos		Special conditions apply for commercial use
 cosmo/*			games/cosmo		Possible copyright infringement
 CrystalSVGforGnomeIcons* x11-themes/gnome-icons-crystal Themes may contain artwork not done by the author.  Keep FreeBSD safe if theme author violated copyrights.
@@ -78,7 +76,6 @@ doom3-linux-*		games/linux-doom3-demo	Redistribution is limited, see license; Re
 doomsrc.zip		games/doom		Redistribution is limited, see license; Requested by id Software
 dr_freebsd_*.zip	sysutils/megarc		Must be downloaded directly from the manufacturer
 dsnake-*		games/dsnake		License prohibits any reselling
-dtiquery-*		science/dtiquery	License agreement is required
 eagle-lin-*.run		cad/linux-eagle5	Usage permitted for non-commercial purposes only
 eawpats*		audio/eawpats		Some of the patches are not for commercial use
 ecw_jpeg_2000_*.zip	graphics/libecwj2	Registration required to download sources, but sources no longer available on ERDAS website
@@ -107,7 +104,6 @@ freqship/*		sysutils/freqsdwn	License agreement is required to download
 fretsonfire/FretsOnFire-*-linux* games/fretsonfire-data	Only Unreal Voodoo site is allowed to distribute the music
 fvcom/sourcecode1.tar.gz	science/fvcom	Requires (free) registration
 fvcom/sourcecode1.tar.gz	science/fvcom-mpi	Requires (free) registration
-gamess.*/gamess*	science/gamess		No Redistribution
 giac-*			math/giacxcas		The french documentation is for non commercial only use
 giftool*		graphics/giftool	Do not redistribute for profit
 gishdemo-*		games/gish-demo		(c) Copyright 2004 Chronic Logic All rights reserved
@@ -156,7 +152,6 @@ kzip-*			archivers/kzip		License does not allow redistribution
 l0phtcrack/*		security/l0phtcrack	Parts are under GPL, so binaries should not be distributed.  Contains crypto code from OpenSSL
 ladder.tar		games/ladder		Possible copyright problems
 lame*			audio/lame		patent issues, see http://www.mp3licensing.com/
-lgrind/*		print/lgrind		Contains non-free code written by Van Jacobson
 lha-1.14i-ac*		archivers/lha-ac	No redistribution allowed
 libaacplus-*		audio/libaacplus	Unclear legal status
 libamrnb/26104-*.zip	audio/libamrnb		unclear legal status, probably need licenses from 3GPP and more
@@ -242,7 +237,6 @@ taetgen-*		math/tetgen		Academic or personal use only
 tarsnap-*		sysutils/tarsnap	license restricts redistribution of source and binaries
 tcetest_*		games/linux-enemyterritory-tce	Redistribution limited
 teamspeak*		audio/teamspeak3-server	No redistribution
-TFMESS_BSP_FreeBSD_*	security/bsp_upektfmess	License prohibits redistribution
 thundercache		www/thundercache	Commercial software with shareware license to 50 threads
 tinker*			biology/tinker		Distribution is prohibited
 triangle-*/*		math/triangle		No commercial use without prior arrangement with the author

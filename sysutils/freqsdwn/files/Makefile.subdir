@@ -1,5 +1,0 @@
-# $FreeBSD$
-
-SUBDIR=		daemon upsdown
-
-.include <bsd.subdir.mk>
