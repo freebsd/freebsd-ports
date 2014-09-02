@@ -1240,7 +1240,6 @@
     SUBDIR += luajava
     SUBDIR += lutok
     SUBDIR += lwp
-    SUBDIR += lxr
     SUBDIR += m17n-db
     SUBDIR += m17n-docs
     SUBDIR += m17n-lib
@@ -4550,7 +4549,6 @@
     SUBDIR += scalatest
     SUBDIR += scandoc
     SUBDIR += scons
-    SUBDIR += scsh-install-lib
     SUBDIR += sdl12
     SUBDIR += sdl20
     SUBDIR += sdl_console

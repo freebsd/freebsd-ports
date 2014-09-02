@@ -1,7 +1,0 @@
-bin/vdrift
-%%NLS%%%%DATADIR%%/po/nl.po
-%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-%%NLS%%@dirrm %%DATADIR%%/po
-%%NLS%%@dirrmtry %%DATADIR%%

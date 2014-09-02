@@ -57,7 +57,6 @@
     SUBDIR += p5-bioperl
     SUBDIR += p5-bioperl-run
     SUBDIR += paml
-    SUBDIR += phd2fasta
     SUBDIR += phrap
     SUBDIR += phred
     SUBDIR += phylip

@@ -1,8 +1,0 @@
-Phred and consed write sequence and quality value information in
-'phd' output files. A phd file contains information in a header,
-the called bases, the base quality values, and the base call trace
-locations.  Phd2fasta reads phd files and writes sequence and quality
-value FASTA files, which phrap and cross_match need as input.
-(Consed needs phd files in order to obtain the base call locations.)
-
-WWW: http://www.phrap.org/phredphrapconsed.html

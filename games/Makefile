@@ -772,7 +772,6 @@
     SUBDIR += qcc
     SUBDIR += qccx
     SUBDIR += qgo
-    SUBDIR += qix
     SUBDIR += qmars
     SUBDIR += qnetwalk
     SUBDIR += qonk
@@ -994,7 +993,6 @@
     SUBDIR += vamos
     SUBDIR += vavoom
     SUBDIR += vavoom-extras
-    SUBDIR += vdrift
     SUBDIR += vdrift-data
     SUBDIR += vectoroids
     SUBDIR += vegastrike

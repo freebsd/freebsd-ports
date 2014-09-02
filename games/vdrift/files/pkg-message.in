@@ -1,9 +1,0 @@
-###############################################################################
-
-The vdrift game was installed
-
-1) Set write permissions on ~/.vdrift/VDrift.config
-2) Run vdrift -datadir %%DATADIR%%
-3) Enjoy it ;)
-
-###############################################################################

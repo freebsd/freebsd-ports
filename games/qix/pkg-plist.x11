@@ -1,7 +1,0 @@
-bin/qix
-bin/qix.bin
-bin/qix.xbin
-share/qix/qix.score
-%%FONTSDIR%%/qix14.pcf.gz
-%%FONTSDIR%%/qix18.pcf.gz
-@dirrm share/qix

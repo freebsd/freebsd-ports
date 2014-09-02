@@ -1,4 +1,0 @@
-ALTER TABLE lxr_releases CHANGE rel releaseid char(255) binary not null;
-DROP INDEX lxr_useageindex on lxr_useage;
-RENAME TABLE lxr_useage TO lxr_usage;
-CREATE INDEX lxr_usageindex ON lxr_usage (symid);
