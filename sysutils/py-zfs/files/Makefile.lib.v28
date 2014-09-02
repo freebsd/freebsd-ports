@@ -1,0 +1,30 @@
+# $FreeBSD$
+
+SRCDIR?=	/usr/src
+
+.PATH:	${SRCDIR}/cddl/contrib/opensolaris/lib/pyzfs/common
+
+SRCS=	ioctl.c
+
+SHLIB_NAME=	ioctl.so
+LIB=	ioctl
+DPADD=	${LIBGEOM} ${LIBZFS} ${LIBNVPAIR} ${LIBUUTIL}
+LDADD=	-lgeom -lzfs -lnvpair -luutil ${PYTHON_LDFLAGS}
+
+CFLAGS+= -DNEED_SOLARIS_BOOLEAN
+CFLAGS+= -I${SRCDIR}/sys/cddl/compat/opensolaris
+CFLAGS+= -I${SRCDIR}/cddl/compat/opensolaris/include
+CFLAGS+= -I${SRCDIR}/cddl/compat/opensolaris/lib/libumem
+CFLAGS+= -I${SRCDIR}/cddl/contrib/opensolaris/lib/libzpool/common
+CFLAGS+= -I${SRCDIR}/sys/cddl/contrib/opensolaris/common/zfs
+CFLAGS+= -I${SRCDIR}/sys/cddl/contrib/opensolaris/uts/common/fs/zfs
+CFLAGS+= -I${SRCDIR}/sys/cddl/contrib/opensolaris/uts/common/sys
+CFLAGS+= -I${SRCDIR}/sys/cddl/contrib/opensolaris/uts/common
+CFLAGS+= -I${SRCDIR}/cddl/contrib/opensolaris/head
+CFLAGS+= -I${SRCDIR}/cddl/contrib/opensolaris/uts/common
+CFLAGS+= -I${SRCDIR}/cddl/contrib/opensolaris/lib/libnvpair
+CFLAGS+= -I${SRCDIR}/cddl/contrib/opensolaris/lib/libuutil/common
+CFLAGS+= -I${SRCDIR}/cddl/contrib/opensolaris/lib/libzfs/common
+CFLAGS+= -I${PYTHON_INCLUDEDIR}
+
+.include <bsd.lib.mk>
