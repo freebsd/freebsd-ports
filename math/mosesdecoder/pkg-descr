@@ -1,0 +1,7 @@
+Moses is a statistical machine translation system that allows you to
+automatically train translation models for any language pair.  All you
+need is a collection of translated texts (parallel corpus).  Once you have a
+trained model, an efficient search algorithm quickly finds the highest
+probability translation among the exponential number of choices.
+
+WWW: http://www.statmt.org/moses/

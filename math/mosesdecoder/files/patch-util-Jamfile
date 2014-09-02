@@ -1,0 +1,10 @@
+--- util/Jamfile.orig	2014-09-02 16:01:51.000000000 +0400
++++ util/Jamfile	2014-09-02 16:01:53.000000000 +0400
+@@ -26,7 +26,6 @@
+ unit-test bit_packing_test : bit_packing_test.cc kenutil /top//boost_unit_test_framework ;
+ run file_piece_test.o kenutil /top//boost_unit_test_framework : : file_piece.cc ;
+ unit-test read_compressed_test : read_compressed_test.o kenutil /top//boost_unit_test_framework ;
+-unit-test joint_sort_test : joint_sort_test.cc kenutil /top//boost_unit_test_framework ;
+ unit-test probing_hash_table_test : probing_hash_table_test.cc kenutil /top//boost_unit_test_framework ;
+ unit-test sorted_uniform_test : sorted_uniform_test.cc kenutil /top//boost_unit_test_framework ;
+ unit-test tokenize_piece_test : tokenize_piece_test.cc kenutil /top//boost_unit_test_framework ;
