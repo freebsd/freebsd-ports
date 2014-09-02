@@ -20,9 +20,6 @@
     SUBDIR += vnlpr
     SUBDIR += vnpstext
     SUBDIR += vnroff
-    SUBDIR += vntex
-    SUBDIR += vnxfonts
     SUBDIR += x-unikey
-    SUBDIR += xvnkb
 
 .include <bsd.port.subdir.mk>

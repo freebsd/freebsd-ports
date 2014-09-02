@@ -35,7 +35,6 @@
     SUBDIR += aspell-ispell
     SUBDIR += ast-aspell
     SUBDIR += atom
-    SUBDIR += ats-contrib-parcomb
     SUBDIR += augeas
     SUBDIR += az-aspell
     SUBDIR += bar
@@ -75,7 +74,6 @@
     SUBDIR += clucene-qt4
     SUBDIR += clucene-qt5
     SUBDIR += coccigrep
-    SUBDIR += coco
     SUBDIR += code2html
     SUBDIR += codespell
     SUBDIR += colordiff
@@ -345,7 +343,6 @@
     SUBDIR += lasem
     SUBDIR += latex-service
     SUBDIR += latex2html
-    SUBDIR += lemmatizer2
     SUBDIR += libabw
     SUBDIR += libabw00
     SUBDIR += libcrm114
@@ -467,7 +464,6 @@
     SUBDIR += opensp
     SUBDIR += opentoken
     SUBDIR += openvanilla-framework
-    SUBDIR += openvanilla-modules
     SUBDIR += or-aspell
     SUBDIR += ots
     SUBDIR += p5-AI-Categorizer
@@ -1128,13 +1124,11 @@
     SUBDIR += plover
     SUBDIR += po4a
     SUBDIR += pocketreader
-    SUBDIR += pootle
     SUBDIR += popup
     SUBDIR += popup-stacks
     SUBDIR += ppower4
     SUBDIR += print-n-times
     SUBDIR += prosper
-    SUBDIR += publican
     SUBDIR += pugixml
     SUBDIR += pure-csv
     SUBDIR += pure-xml
@@ -1277,8 +1271,6 @@
     SUBDIR += ruby-diff
     SUBDIR += ruby-escape
     SUBDIR += ruby-format
-    SUBDIR += ruby-html-fillinform
-    SUBDIR += ruby-html-template
     SUBDIR += ruby-htmlrepair
     SUBDIR += ruby-htmlsplit
     SUBDIR += ruby-htree
@@ -1399,7 +1391,6 @@
     SUBDIR += senna
     SUBDIR += sgmlformat
     SUBDIR += sgmls
-    SUBDIR += sgmltools-lite
     SUBDIR += sgrep
     SUBDIR += sgrep2
     SUBDIR += sigil
@@ -1414,7 +1405,6 @@
     SUBDIR += sl-hyphen
     SUBDIR += sl-mythes
     SUBDIR += slides
-    SUBDIR += sml-fxp
     SUBDIR += smu
     SUBDIR += so-hunspell
     SUBDIR += soothsayer
@@ -1450,8 +1440,6 @@
     SUBDIR += te-aspell
     SUBDIR += te-hunspell
     SUBDIR += teckit
-    SUBDIR += tei-guidelines-p3
-    SUBDIR += tei-p3
     SUBDIR += templates_parser
     SUBDIR += tet-aspell
     SUBDIR += tex2im
@@ -1514,7 +1502,6 @@
     SUBDIR += words
     SUBDIR += wv
     SUBDIR += wv2
-    SUBDIR += xalan-c
     SUBDIR += xalan-j
     SUBDIR += xerces-c2
     SUBDIR += xerces-c2-devel

@@ -1,6 +1,0 @@
-Library for automatic morphological analysis of English,
-Russian and German Languages. Version 2.
-Finds the lemmas (all forms) of a word.
-Written in C++.
-
-WWW: http://www.aot.ru/

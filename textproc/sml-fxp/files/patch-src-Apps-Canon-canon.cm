@@ -1,9 +1,0 @@
---- src/Apps/Canon/canon.cm.orig	Sat Jun 26 02:42:59 2004
-+++ src/Apps/Canon/canon.cm	Sat Sep  8 11:39:02 2007
-@@ -5,3 +5,6 @@
-     canonHooks.sml
-     canon.sml
-     ../../fxlib.cm
-+#if (SMLNJ_MINOR_VERSION > 40)
-+    $/basis.cm
-+#endif
