@@ -55,7 +55,9 @@ post-patch:
 		${WRKSRC}/contrib/Makefile.in
 
 post-install:
-	@${MKDIR} ${STAGEDIR}${DOCSDIR} ${STAGEDIR}${WWWDIR}/htdocs
+	@${MKDIR} ${STAGEDIR}${DOCSDIR} ${STAGEDIR}${WWWDIR}/htdocs \
+		${STAGEDIR}/var/log/xshttpd \
+		${STAGEDIR}/var/db/xshttpd/sessions
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
