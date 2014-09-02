@@ -1,9 +1,2 @@
-@group games
-@mode 3755
-bin/xrot
-@mode
-@cwd /
-@sample var/games/xrot.scores.sample
-@exec chmod 664 %B/%f
-@group
-@dirrmtry var/games
+@(root,games,3755) bin/xrot
+@sample(root,games,664) /var/games/xrot.scores.sample
