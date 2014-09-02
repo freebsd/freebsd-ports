@@ -133,6 +133,10 @@ post-patch:
 		${BUILD_WRKSRC}/contrib/a52dec/a52dec/libao/audio_out_oss.c
 	@${REINPLACE_CMD} -e 's|-ldl|-lc| ; s|\[dl\]|[c]|' \
 		${BUILD_WRKSRC}/contrib/libbluray/libbluray-0.2.3/configure.ac
+	@${REINPLACE_CMD} \
+		-e '/GHB_PACKAGES=/s/gthread-2.0/& gmodule-2.0/' \
+		-e 's/-lhb/& ${ICONV_LIB}/' \
+		${WRKSRC}/gtk/configure.ac
 	@${REINPLACE_CMD} -e 's|<malloc|<stdlib|' ${WRKSRC}/libhb/fifo.c
 	@${FIND} ${WRKSRC} -type f -name '*.[ch]' -print0 | ${XARGS} -0 \
 		${REINPLACE_CMD} -e '/#include/s|hb\.h|hb-of-handbrake.h|'
