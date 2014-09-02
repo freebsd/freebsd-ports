@@ -420,7 +420,6 @@ usr/share/doc/libxkbfile-1.0.4/ChangeLog
 usr/share/doc/mesa-libGLw-6.5.1/README
 usr/share/icons/default/index.theme
 @comment deal with empty directories installed by the port
-@exec /bin/mkdir -p %D/usr/share/X11/app-defaults
 @dirrmtry usr/share/X11/app-defaults
 @comment non-empty directory listing in revers order
 @dirrm usr/share/icons/default
