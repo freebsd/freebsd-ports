@@ -5,7 +5,7 @@ PORTVERSION=	0.2.8
 CATEGORIES=	devel www
 MASTER_SITES=	http://www.gitphp.org/attachments/download/47/
 
-MAINTAINER=	tabthorpe@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Web based git repository browser written in PHP
 
 LICENSE=	GPLv2

@@ -7,7 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.xmailserver.org/
 
-MAINTAINER=	tabthorpe@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Create file differences/patches to both binary and text files
 
 LICENSE=	LGPL3
