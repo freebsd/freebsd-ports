@@ -2164,10 +2164,9 @@ sbin/squidclient
 @dirrm %%ETCDIR%%/icons
 @dirrmtry %%ETCDIR%%
 @dirrm libexec/squid
-@cwd /var
-@dirrmtry log/squid
-@dirrmtry run/squid
-@dirrmtry squid
-@dirrmtry squid/cache
-@dirrmtry squid/cache/squid
-@dirrmtry squid/logs
+@dirrmtry /var/log/squid
+@dirrmtry /var/run/squid
+@dirrmtry /var/squid/cache/squid
+@dirrmtry /var/squid/cache
+@dirrmtry /var/squid/logs
+@dirrmtry /var/squid
