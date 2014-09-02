@@ -43,6 +43,12 @@ PGSQL$v_LIBVER?=	${PGSQL_LIBVER}
 
 .include "${PORTSDIR}/Mk/bsd.default-versions.mk"
 
+.for v in ${PGSQL_DEFAULT}
+.  if ! ${VALID_PGSQL_VER:M$v}
+IGNORE=		Invalid PGSQL default version ${PGSQL_DEFAULT}; valid versions are ${VALID_PGSQL_VER}
+.  endif
+.endfor
+
 .  for w in WITH DEFAULT
 .    ifdef $w_PGSQL_VER
 WARNING+=	"$w_PGSQL_VER is defined, consider using DEFAULT_VERSIONS=pgsql=${$w_PGSQL_VER:C,^.,&.,} instead"
