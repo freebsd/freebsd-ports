@@ -12,6 +12,7 @@ COMMENT=	GTK mixer for PulseAudio
 LIB_DEPENDS=	libpulse.so:${PORTSDIR}/audio/pulseaudio \
 		libcanberra-gtk3.so:${PORTSDIR}/audio/libcanberra-gtk3 \
 		libgtkmm-3.0.so:${PORTSDIR}/x11-toolkits/gtkmm30
+RUN_DEPENDS+=	${LOCALBASE}/share/icons/hicolor/index.theme:${PORTSDIR}/misc/hicolor-icon-theme
 
 GNU_CONFIGURE=	yes
 USES=		gmake pkgconfig
