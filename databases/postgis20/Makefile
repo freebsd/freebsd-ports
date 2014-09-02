@@ -24,8 +24,9 @@ LOADERGUI_DESC=	Enable shp2pgsql-gui
 RASTER_DESC=	Build raster support
 TOPOLOGY_DESC=	Build topology support
 
-CFLAGS+=	-I${LOCALBASE}/include
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	${ICONV_CONFIGURE_BASE}
+CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 USE_GNOME=	libxml2
 USE_LDCONFIG=	yes
