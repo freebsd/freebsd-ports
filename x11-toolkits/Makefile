@@ -174,7 +174,6 @@
     SUBDIR += pangomm
     SUBDIR += pangox-compat
     SUBDIR += pangoxsl
-    SUBDIR += paragui-devel
     SUBDIR += phat
     SUBDIR += plib
     SUBDIR += pure-gtk
