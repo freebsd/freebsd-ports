@@ -10,12 +10,8 @@ etc/gdm/Xsession
 etc/gdm/custom.conf.default
 @exec [ -f %B/custom.conf ] || cp %B/%f %B/custom.conf
 etc/gdm/gdm.schemas
-@owner gdm
-@group gdm
-etc/gdm/home/.local/share/applications/mime-dummy-handler.desktop
-etc/gdm/home/.local/share/applications/mimeapps.list
-@owner root
-@group wheel
+@(gdm,gdm,,) etc/gdm/home/.local/share/applications/mime-dummy-handler.desktop
+@(gdm,gdm,,) etc/gdm/home/.local/share/applications/mimeapps.list
 etc/pam.d/gdm
 libdata/bonobo/servers/GNOME_FastUserSwitchApplet.server
 libexec/gdm-crash-logger
@@ -203,7 +199,6 @@ share/pixmaps/gdm-xnest.png
 share/pixmaps/gdm.png
 share/pixmaps/nobody.png
 share/pixmaps/nohost.png
-@exec mkdir -p %D/share/xsessions
 @dirrmtry share/xsessions
 @dirrm share/pixmaps/faces
 @dirrm share/omf/gdm
@@ -224,8 +219,6 @@ share/pixmaps/nohost.png
 @dirrm %%DATADIR%%/autostart/LoginWindow
 @dirrm %%DATADIR%%/autostart
 @dirrm %%DATADIR%%
-@exec mkdir -p %D/etc/gdm/Sessions
-@exec mkdir -p %D/etc/dm/Sessions
 @dirrm etc/dm/Sessions
 @dirrm etc/dm
 @dirrm etc/gdm/Sessions
@@ -297,22 +290,8 @@ share/pixmaps/nohost.png
 @dirrmtry share/locale/ast
 @dirrmtry share/locale/as/LC_MESSAGES
 @dirrmtry share/locale/as
-@exec install -d -o gdm -g gdm -m 1770 /var/log/gdm
-@exec install -d -o root -g gdm -m 1770 /var/gdm
-@exec install -d -o root -g gdm -m 1777 /var/run/gdm
-@exec install -d -o root -g gdm -m 1777 /var/run/gdm/greeter
-@exec install -d -o root -g gdm -m 1755 /var/cache/gdm
-@group gdm
-@mode 1777
-@dirrmtry /var/run/gdm/greeter
-@dirrmtry /var/run/gdm
-@mode 1770
-@owner gdm
-@dirrmtry /var/log/gdm
-@owner root
-@mode 1775
-@dirrmtry /var/cache/gdm
-@mode 1770
-@dirrmtry /var/gdm
-@mode
-@group wheel
+@dirrmtry(root,gdm,1777) /var/run/gdm/greeter
+@dirrmtry(root,gdm,1777) /var/run/gdm
+@dirrmtry(gdm,gdm,1770) /var/log/gdm
+@dirrmtry(root,gdm,1775 /var/cache/gdm
+@dirrmtry(root,gdm,1770) /var/gdm
