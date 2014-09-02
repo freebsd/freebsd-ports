@@ -1,10 +1,9 @@
-@unexec if cmp -s %D/etc/ventrilo_srv.ini.sample %D/etc/ventrilo_srv.ini; then rm -f %D/etc/ventrilo_srv.ini; fi
-etc/ventrilo_srv.ini.sample
-@exec if [ ! -f %D/etc/ventrilo_srv.ini ] ; then cp -p %D/%F %B/ventrilo_srv.ini; fi
+@sample etc/ventrilo_srv.ini.sample
+@owner ventrilo
 ventrilo-server/LICENSE
 ventrilo-server/ventrilo_srv
 ventrilo-server/ventrilo_status
 ventrilo-server/ventrilo_srv.htm
 ventrilo-server/ventrilo_srv.ini
-@exec chown -R ventrilo %D/ventrilo-server
 @dirrm ventrilo-server
+@owner root
