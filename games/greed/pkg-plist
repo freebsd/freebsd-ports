@@ -1,6 +1,3 @@
 bin/greed
 man/man6/greed.6.gz
-@cwd /
-@group games
-@sample %%SCOREFILE%%.sample
-@exec chmod 664 %D/%%SCOREFILE%%
+@sample(,games,664) /%%SCOREFILE%%.sample
