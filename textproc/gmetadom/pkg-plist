@@ -35,7 +35,8 @@ include/gmetadom/gdome_cpp_smart/GdomeSmartDOMUTF16String.hh
 include/gmetadom/gdome_cpp_smart/GdomeSmartDOMUTF8String.hh
 lib/libgmetadom_gdome_cpp_smart.a
 lib/libgmetadom_gdome_cpp_smart.so
-lib/libgmetadom_gdome_cpp_smart.so.2
+lib/libgmetadom_gdome_cpp_smart.so.0
+lib/libgmetadom_gdome_cpp_smart.so.0.2.6
 %%OCAML%%lib/ocaml/gdome2/META
 %%OCAML%%lib/ocaml/gdome2/gdome.cmi
 %%OCAML%%lib/ocaml/gdome2/gdome.mli
