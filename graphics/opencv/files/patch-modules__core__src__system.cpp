@@ -4,8 +4,8 @@
  
  #include <stdarg.h>
  
--#if defined __linux__ || defined __APPLE__
-+#if defined __linux__ || defined __APPLE__ || defined __FreeBSD__
+-#if defined __linux__ || defined __APPLE__ || defined __EMSCRIPTEN__
++#if defined __linux__ || defined __APPLE__ || defined __EMSCRIPTEN__ || defined __FreeBSD__
  #include <unistd.h>
  #include <stdio.h>
  #include <sys/types.h>

@@ -1,6 +1,6 @@
 # $FreeBSD$
 
-PORTREVISION=	1
+PORTREVISION=	0
 CATEGORIES=	graphics java
 PKGNAMESUFFIX=	-${OCV_SLAVE}
 
@@ -10,5 +10,7 @@ OCV_SLAVE=	java
 OCV_JAVA=	yes
 MASTERDIR=	${.CURDIR:H}/opencv
 PLIST=		${.CURDIR}/pkg-plist
+
+PLIST_SUB+=	OCV_VER=${PORTVERSION:S|.||g}
 
 .include "${MASTERDIR}/Makefile"
