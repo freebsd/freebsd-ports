@@ -1,1 +1,0 @@
-ALTER TABLE lxr_releases RENAME COLUMN release TO releaseid;

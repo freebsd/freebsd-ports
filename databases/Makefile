@@ -116,7 +116,6 @@
     SUBDIR += jrrd
     SUBDIR += kbibtex
     SUBDIR += kinterbasdb
-    SUBDIR += kumofs
     SUBDIR += kyotocabinet
     SUBDIR += kyototycoon
     SUBDIR += ldb
