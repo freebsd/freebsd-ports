@@ -1,4 +1,3 @@
-@exec mkdir -p /var/lib/alsa
 bin/aconnect
 bin/alsaloop
 bin/alsamixer
