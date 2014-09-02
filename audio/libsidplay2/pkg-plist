@@ -18,7 +18,6 @@ include/sidplay/utils/SidFilter.h
 include/sidplay/utils/SidTuneMod.h
 include/sidplay/utils/SidUsage.h
 include/sidplay/utils/libini.h
-@exec mkdir -p %D/include/resid
 lib/libsidplay2.a
 lib/libsidplay2.so
 lib/libsidplay2.so.1
