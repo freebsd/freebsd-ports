@@ -35,7 +35,6 @@
     SUBDIR += belier
     SUBDIR += bfbtester
     SUBDIR += binwalk
-    SUBDIR += bioapi
     SUBDIR += blindelephant
     SUBDIR += botan110
     SUBDIR += bro
@@ -44,7 +43,6 @@
     SUBDIR += bruteforceblocker
     SUBDIR += bsdsfv
     SUBDIR += bsmtrace
-    SUBDIR += bsp_upektfmess
     SUBDIR += bugs
     SUBDIR += burpsuite
     SUBDIR += ca_root_nss
@@ -101,7 +99,6 @@
     SUBDIR += dirbuster
     SUBDIR += dirmngr
     SUBDIR += distcache
-    SUBDIR += distcache-devel
     SUBDIR += dmitry
     SUBDIR += doorman
     SUBDIR += doscan
@@ -327,7 +324,6 @@
     SUBDIR += mhash
     SUBDIR += mindterm-binary
     SUBDIR += monkeysphere
-    SUBDIR += mosref
     SUBDIR += munge
     SUBDIR += mussh
     SUBDIR += nacl
@@ -377,7 +373,6 @@
     SUBDIR += openvpn-admin
     SUBDIR += openvpn-auth-ldap
     SUBDIR += openvpn-auth-radius
-    SUBDIR += openvpn-beta
     SUBDIR += openvpn-devel
     SUBDIR += ophcrack
     SUBDIR += orthrus
@@ -619,7 +614,6 @@
     SUBDIR += pad
     SUBDIR += pam-mysql
     SUBDIR += pam-pgsql
-    SUBDIR += pam_bsdbioapi
     SUBDIR += pam_fprint
     SUBDIR += pam_google_authenticator
     SUBDIR += pam_helper
@@ -688,9 +682,6 @@
     SUBDIR += pgpdump
     SUBDIR += pgpgpg
     SUBDIR += pgpin
-    SUBDIR += php-Auth_OpenID
-    SUBDIR += php-Auth_OpenID2
-    SUBDIR += php-openid-ldap
     SUBDIR += php-suhosin
     SUBDIR += php5-filter
     SUBDIR += php5-hash
@@ -895,15 +886,11 @@
     SUBDIR += rubygem-twitter_oauth
     SUBDIR += safesh
     SUBDIR += samba-virusfilter
-    SUBDIR += samhain
-    SUBDIR += samhain-client
-    SUBDIR += samhain-server
     SUBDIR += sancp
     SUBDIR += sasp
     SUBDIR += scamp
     SUBDIR += scanhill
     SUBDIR += scanlogd
-    SUBDIR += scannedonly
     SUBDIR += scanssh
     SUBDIR += scrypt
     SUBDIR += seahorse
@@ -983,7 +970,6 @@
     SUBDIR += tclsasl
     SUBDIR += tinc
     SUBDIR += tinyca
-    SUBDIR += tinysu
     SUBDIR += tlswrap
     SUBDIR += tor
     SUBDIR += tor-devel

@@ -1,6 +1,0 @@
-XSI is a system monitoring daemon that replies to network queries with
-XML-encoded system information and statistics. This data can then be
-analyzed, graphed or otherwise presented by a front-end. It is BSD-licensed
-and free for anyone to use for any purpose.
-
-WWW: http://xmlsysinfo.sourceforge.net

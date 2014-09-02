@@ -1,5 +1,0 @@
-
-#############################################################################
-  Installed additional documentation in: %%PREFIX%%/share/doc/jailuser
-  Copy %%PREFIX%%/etc/jail.conf.sample to %%PREFIX%%/etc/jail.conf
-#############################################################################

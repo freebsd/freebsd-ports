@@ -1,6 +1,0 @@
-#!/bin/sh
-[ "x$1" = "x" ] && exit 1
-if [ "x$2" = "xPOST-INSTALL" ]; then
-	echo "-P" > /boot.config
-	sed -i '' "s|^console.*|console	\"/usr/libexec/getty std.9600\"	vt100	on  secure|" /etc/ttys
-fi

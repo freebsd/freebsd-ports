@@ -1,6 +1,0 @@
-Cromwell is a 100% open source BIOS for the Microsoft Xbox. Its original intent
-is to boot Linux on the Xbox, but later versions can boot FreeBSD as well.
-
-As there have been no recent releases, this version was checked out of the
-SourceForge xbox-linux CVS. An patch is provided to allow Cromwell to load
-kernels from UFS partitions.
