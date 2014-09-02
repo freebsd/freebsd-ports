@@ -32,5 +32,7 @@ GCONF_SCHEMAS=	mutter.schemas
 post-patch:
 	@${REINPLACE_CMD} -e 's|-Werror||g' \
 	    	${WRKSRC}/configure
+	@${REINPLACE_CMD} '/^mutter_LDADD =/s/$$/ -lgmodule-2.0/' \
+		${WRKSRC}/src/Makefile.in
 
 .include <bsd.port.mk>
