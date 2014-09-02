@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gphoto2
-PORTVERSION=	2.5.4
+PORTVERSION=	2.5.5
 CATEGORIES=	graphics
 MASTER_SITES=	SF/gphoto/gphoto/${PORTVERSION}
 
@@ -33,9 +33,9 @@ NLS_CONFIGURE_ENABLE=	nls
 NLS_CPPFLAGS=		-I${LOCALBASE}/include
 NLS_LIBS=		-L${LOCALBASE}/lib -lintl
 READLINE_USES=		readline
-READLINE_CONFIGURE_WITH=	readline
+READLINE_CONFIGURE_WITH=readline
 
 post-install:
-	(cd ${WRKSRC} && ${INSTALL_DATA} NEWS ${STAGEDIR}${DOCSDIR})
+	${INSTALL_DATA} ${WRKSRC}/NEWS ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
