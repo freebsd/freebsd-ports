@@ -1,10 +1,11 @@
 # Created by: Daniel Roethlisberger <daniel@roe.ch>
 # $FreeBSD$
 
-PORTNAME=		dma
-PORTVERSION=		v0.9
-PORTEPOCH=		1
-CATEGORIES=		mail ipv6
+PORTNAME=	dma
+PORTVERSION=	v0.9
+PORTREVISION=	1
+PORTEPOCH=	1
+CATEGORIES=	mail ipv6
 EXTRACT_SUFX=
 
 MAINTAINER=	bapt@FreeBSD.org
@@ -53,15 +54,14 @@ post-patch:
 .endif
 
 do-install:
-	${INSTALL} -o root -g mail -m 2555 ${WRKSRC}/dma/dma ${STAGEDIR}/${PREFIX}/libexec
-	${INSTALL} -o root -g mail -m 4550 \
+	${INSTALL_PROGRAM}  ${WRKSRC}/dma/dma ${STAGEDIR}/${PREFIX}/libexec
+	${INSTALL_PROGRAM} \
 		${WRKSRC}/dma-mbox-create/dma-mbox-create ${STAGEDIR}/${PREFIX}/libexec
 	${INSTALL_MAN} ${WRKSRC}/dma.8 ${STAGEDIR}/${PREFIX}/man/man8/
 	${MKDIR} ${STAGEDIR}/${PREFIX}/etc/dma
 .for i in ${CONFFILES}
 	${INSTALL_DATA} -m 0644 ${WRKSRC}/${i} ${STAGEDIR}/${PREFIX}/etc/dma/${i}.sample
 .endfor
-	${CHMOD} o-r ${STAGEDIR}/${PREFIX}/etc/dma/auth.conf.sample
-	${INSTALL} -d -o root -g mail -m 770 ${STAGEDIR}/var/spool/dma
+	${MKDIR} ${STAGEDIR}/var/spool/dma
 
 .include <bsd.port.post.mk>

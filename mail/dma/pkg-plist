@@ -1,9 +1,7 @@
-libexec/dma
-libexec/dma-mbox-create
-@sample etc/dma/dma.conf.sample
-@sample etc/dma/auth.conf.sample
+@(root,mail,2555) libexec/dma
+@(root,mail,4555) libexec/dma-mbox-create
+@sample(root,mail,0644) etc/dma/dma.conf.sample
+@sample(root,mail,0640) etc/dma/auth.conf.sample
 man/man8/dma.8.gz
 @dirrmtry etc/dma
-@cwd /
-@dirrmtry var/spool/dma
-@cwd %%RESETPREFIX%%
+@dirrmtry(root,mail,770) /var/spool/dma
