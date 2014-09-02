@@ -129,7 +129,6 @@ libdata/pkgconfig/nucleo.pc
 %%DATADIR%%/plugin-list
 @dirrm %%DATADIR%%/fonts
 @dirrm %%DATADIR%%
-@exec mkdir -p %D/lib/nucleo
 @dirrm lib/nucleo
 @dirrm include/nucleo/xml
 @dirrm include/nucleo/utils
