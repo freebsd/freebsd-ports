@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	flexget
-PORTVERSION=	1.2.149
+PORTVERSION=	1.2.172
 PORTEPOCH=	1
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
@@ -28,18 +28,18 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}feedparser>=5.1.3:${PORTSDIR}/textproc/py-fe
 		${PYTHON_PKGNAMEPREFIX}Jinja2>0:${PORTSDIR}/devel/py-Jinja2 \
 		${PYTHON_PKGNAMEPREFIX}Flask>0:${PORTSDIR}/www/py-flask \
 		${PYTHON_PKGNAMEPREFIX}cherrypy>0:${PORTSDIR}/www/py-cherrypy \
-		${PYTHON_PKGNAMEPREFIX}requests1>=1.0:${PORTSDIR}/www/py-requests1 \
+		${PYTHON_PKGNAMEPREFIX}requests>=1.0:${PORTSDIR}/www/py-requests \
 		${PYTHON_PKGNAMEPREFIX}dateutil>=2.1:${PORTSDIR}/devel/py-dateutil \
 		${PYTHON_PKGNAMEPREFIX}jsonschema>=2.0:${PORTSDIR}/devel/py-jsonschema \
 		${PYTHON_PKGNAMEPREFIX}tvrage>0:${PORTSDIR}/devel/py-tvrage \
-		${PYTHON_PKGNAMEPREFIX}tmdb3>0:${PORTSDIR}/www/py-tmdb3
+		${PYTHON_PKGNAMEPREFIX}tmdb3>0:${PORTSDIR}/www/py-tmdb3 \
+		${PYTHON_PKGNAMEPREFIX}path.py>0:${PORTSDIR}/devel/py-path.py
 TEST_DEPENDS:=	${RUN_DEPENDS} \
 		${PYTHON_PKGNAMEPREFIX}nose>0:${PORTSDIR}/devel/py-nose \
 		${PYTHON_PKGNAMEPREFIX}mock>0:${PORTSDIR}/devel/py-mock
 
-USE_PYTHON=		2
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
+USES=		python:2
+USE_PYTHON=	autoplist distutils
 
 regression-test: build
 	@cd ${WRKSRC} && ${PYTHON_CMD} ${PYSETUP} test
