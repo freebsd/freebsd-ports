@@ -109,5 +109,4 @@ share/gapi/vte-api.xml
 @dirrmtry lib/mono/gac/atk-sharp
 @dirrm lib/mono/gac/art-sharp/1.0.0.0__35e10195dab3c99f
 @dirrmtry lib/mono/gac/art-sharp
-@exec mkdir -p %%LOCALBASE%%/share/gapi
-@unexec rmdir %%LOCALBASE%%/share/gapi 2>/dev/null || true
+@dirrmtry %%LOCALBASE%%/share/gapi
