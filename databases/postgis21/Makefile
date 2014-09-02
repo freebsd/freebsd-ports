@@ -17,12 +17,12 @@ LIB_DEPENDS=	libproj.so:${PORTSDIR}/graphics/proj \
 RUN_DEPENDS=	postmaster:${PORTSDIR}/databases/postgresql${PGSQL_VER_NODOT}-server
 
 CONFLICTS=	postgis-1.* postgis-2.0.*
-LATEST_LINK=	postgis21
 
-USE_GNOME=	libxml2
-USES=		gmake iconv:wchar_t perl5 pgsql pkgconfig libtool:keepla
-USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	${ICONV_CONFIGURE_BASE}
+USES=		gmake iconv:wchar_t perl5 pgsql pkgconfig libtool:keepla
+USE_GNOME=	libxml2
+USE_LDCONFIG=	yes
 USE_PERL5=	build
 
 OPTIONS_DEFINE=		LOADERGUI RASTER TOPOLOGY SFCGAL
