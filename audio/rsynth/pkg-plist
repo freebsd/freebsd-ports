@@ -2,5 +2,4 @@ bin/dlookup
 bin/mkdictdb
 bin/say
 bin/nasay
-@exec mkdir -p %D/lib/dict
 @dirrm lib/dict
