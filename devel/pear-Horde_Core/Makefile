@@ -3,7 +3,6 @@
 
 PORTNAME=	Horde_Core
 PORTVERSION=	2.13.1
-PORTREVISION=	1
 CATEGORIES=	devel www pear
 PKGNAMEPREFIX=	pear-
 
