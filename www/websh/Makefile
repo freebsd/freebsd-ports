@@ -3,7 +3,7 @@
 
 PORTNAME=	websh
 PORTVERSION=	3.6.0b5
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	www tcl
 MASTER_SITES=	${MASTER_SITE_APACHE}
 MASTER_SITE_SUBDIR=tcl/${PORTNAME}/source
@@ -68,11 +68,13 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC:H:H}/doc/mod_websh/conf/websh.conf	\
 		${STAGEDIR}${PREFIX}/etc/websh.conf.dist
 	${MKDIR} ${STAGEDIR}${PREFIX}/${APACHEMODDIR}
-	${INSTALL_DATA} ${WRKSRC}/mod_websh${PORTVERSION}.so \
+	${INSTALL_LIB} ${WRKSRC}/mod_websh${PORTVERSION}.so \
 		${STAGEDIR}${PREFIX}/${APACHEMODDIR}/mod_websh.so
-	${INSTALL_DATA} ${WRKSRC}/libwebsh${TCL_DVER}.so.1 \
-	    	${STAGEDIR}${PREFIX}/lib
-	${LN} -sf ${PREFIX}/lib/libwebsh${TCL_DVER}.so.1 \
+	${INSTALL_LIB} ${WRKSRC}/libwebsh${TCL_DVER}.so.1.0 \
+		${STAGEDIR}${PREFIX}/lib
+	${LN} -sf libwebsh${TCL_DVER}.so.1.0 \
+		${STAGEDIR}${PREFIX}/lib/libwebsh${TCL_DVER}.so.1
+	${LN} -sf libwebsh${TCL_DVER}.so.1 \
 		${STAGEDIR}${PREFIX}/lib/libwebsh${TCL_DVER}.so
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC:H:H}/doc/mod_websh/htdocs/*.ws3	\
