@@ -19,8 +19,6 @@ man/man1/wigwam.1.gz
 @dirrmtry %%WWWDIR%%
 @dirrmtry lib/hiawatha
 @dirrmtry %%ETCDIR%%
-@cwd /var
-@dirrmtry log/hiawatha
-@dirrmtry lib/hiawatha
-@dirrmtry lib
-@cwd
+@dirrmtry /var/log/hiawatha
+@dirrmtry /var/lib/hiawatha
+@dirrmtry /var/lib
