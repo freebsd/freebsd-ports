@@ -294,5 +294,3 @@ lib/libespeak.so.1.1.47
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/images
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm include/espeak
-@exec mkdir -p %D/%%DATADIR%%/espeak-data/soundicons
-@exec mkdir -p %D/%%DATADIR%%/espeak-data/mbrola
