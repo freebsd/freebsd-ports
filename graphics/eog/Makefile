@@ -62,4 +62,8 @@ CONFIGURE_ARGS+=--enable-python
 CONFIGURE_ARGS+=--disable-python
 .endif
 
+post-patch:
+	@${REINPLACE_CMD} '/^EOG_MODULES=/s/"/"gmodule-2.0 /' \
+		${WRKSRC}/configure
+
 .include <bsd.port.post.mk>
