@@ -395,6 +395,7 @@
     SUBDIR += webcamd
     SUBDIR += win32-codecs
     SUBDIR += x264
+    SUBDIR += x265
     SUBDIR += xanim
     SUBDIR += xawtv
     SUBDIR += xbmc
