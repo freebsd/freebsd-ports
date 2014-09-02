@@ -1,0 +1,16 @@
+High Efficiency Video Coding (HEVC) is the latest generation video compression
+standard.
+
+  * This standard was developed by the ISO/IEC Moving Picture Experts Group
+    (MPEG) and ITU-T Video Coding Experts Group (VCEG), through their Joint
+    Collaborative Team on Video Coding (JCT-VC)
+
+  * HEVC is also known as ISO/IEC 23008-2 MPEG-H Part 2 and ITU-T H.265
+
+  * HEVC provides superior video quality and up to twice the data compression
+    as the previous standard (H.264/MPEG-4 AVC)
+
+  * HEVC can support 8K Ultra High Definition video, with a picture size up to
+    8192x4320 pixels
+
+WWW: http://www.x265.org
