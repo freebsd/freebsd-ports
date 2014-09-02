@@ -126,10 +126,6 @@ RUN_DEPENDS+=	ipsumdump:${PORTSDIR}/net/ipsumdump
 
 .if ${PORT_OPTIONS:MBROCTL}
 post-install:
-.if defined(BRO_PREFIX) && !defined(WITH_PKGNG) && !exists(${BRO_PREFIX})
-	# pkg_install needs PREFIX in order to make a package from STAGEDIR/PREFIX
-	@${MKDIR} ${PREFIX}
-.endif
 	@${MKDIR} ${STAGEDIR}${PREFIX}/logs
 .if ${PORT_OPTIONS:MBROCTL}
 	@${MKDIR} ${STAGEDIR}${PREFIX}/spool/tmp
