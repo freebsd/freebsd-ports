@@ -195,7 +195,5 @@ share/polkit-1/actions/org.freedesktop.color.policy
 @dirrm include/colord-1/colord-session
 @dirrm include/colord-1/colord
 @dirrm include/colord-1
-@cwd /
-@dirrmtry var/db/colord/icc
-@dirrmtry var/db/colord
-@cwd
+@dirrmtry /var/db/colord/icc
+@dirrmtry /var/db/colord
