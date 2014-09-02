@@ -21,7 +21,4 @@ post-configure:
 	@${REINPLACE_CMD} -E '/INSTALL/ s,\(MAN(1|5)PATH\),\(DESTDIR\)$$&,g' \
 		${WRKSRC}/docs/Makefile
 
-post-install:
-	@${ECHO_CMD} "@exec mkdir -p %D/var/log" >> ${TMPPLIST}
-
 .include <bsd.port.mk>
