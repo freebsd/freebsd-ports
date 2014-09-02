@@ -39,7 +39,9 @@ PYTHON_CONFIGURE_ENABLE=python
 PYTHON_USE=		GNOME=pygtksourceview
 
 post-patch:
-	${REINPLACE_CMD} '/EGG_SMCLIENT_LIBS =/s/$$/ -lICE/' \
+	@${REINPLACE_CMD} '/^libgedit_la_LIBADD =/s/=/= -lgmodule-2.0/' \
+		${WRKSRC}/gedit/Makefile.in
+	@${REINPLACE_CMD} '/EGG_SMCLIENT_LIBS =/s/$$/ -lICE/' \
 		${WRKSRC}/gedit/smclient/Makefile.in
 
 .include <bsd.port.mk>
