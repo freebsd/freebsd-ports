@@ -1,9 +1,9 @@
---- ./data/bflang/Makefile.in.orig	2010-09-16 08:20:07.000000000 -0400
-+++ ./data/bflang/Makefile.in	2011-01-31 14:05:03.000000000 -0500
-@@ -374,26 +374,6 @@
- 	test -n "$$files" || exit 0; \
- 	echo " ( cd '$(DESTDIR)$(bflangrngdir)' && rm -f" $$files ")"; \
- 	cd "$(DESTDIR)$(bflangrngdir)" && rm -f $$files
+--- data/bflang/Makefile.in.orig	2014-09-02 16:47:12 UTC
++++ data/bflang/Makefile.in
+@@ -405,24 +405,6 @@
+ 	@list='$(bflangrng_DATA)'; test -n "$(bflangrngdir)" || list=; \
+ 	files=`for p in $$list; do echo $$p; done | sed -e 's|^.*/||'`; \
+ 	dir='$(DESTDIR)$(bflangrngdir)'; $(am__uninstall_files_from_dir)
 -install-bflangsampleDATA: $(bflangsample_DATA)
 -	@$(NORMAL_INSTALL)
 -	test -z "$(bflangsampledir)" || $(MKDIR_P) "$(DESTDIR)$(bflangsampledir)"
@@ -21,9 +21,7 @@
 -	@$(NORMAL_UNINSTALL)
 -	@list='$(bflangsample_DATA)'; test -n "$(bflangsampledir)" || list=; \
 -	files=`for p in $$list; do echo $$p; done | sed -e 's|^.*/||'`; \
--	test -n "$$files" || exit 0; \
--	echo " ( cd '$(DESTDIR)$(bflangsampledir)' && rm -f" $$files ")"; \
--	cd "$(DESTDIR)$(bflangsampledir)" && rm -f $$files
+-	dir='$(DESTDIR)$(bflangsampledir)'; $(am__uninstall_files_from_dir)
  install-bflangxmlDATA: $(bflangxml_DATA)
  	@$(NORMAL_INSTALL)
  	test -z "$(bflangxmldir)" || $(MKDIR_P) "$(DESTDIR)$(bflangxmldir)"

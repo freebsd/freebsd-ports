@@ -7,6 +7,7 @@ lib/bluefish/infbrowser.so
 lib/bluefish/snippets.so
 lib/bluefish/zencoding.so
 man/man1/bluefish.1.gz
+share/appdata/bluefish.appdata.xml
 share/applications/bluefish.desktop
 %%DATADIR%%/bflang/JQuery.bfinc
 %%DATADIR%%/bflang/ada.bflang2
@@ -20,6 +21,7 @@ share/applications/bluefish.desktop
 %%DATADIR%%/bflang/bflang2.bflang2
 %%DATADIR%%/bflang/c.bflang2
 %%DATADIR%%/bflang/cfml.bflang2
+%%DATADIR%%/bflang/chuck.bflang2
 %%DATADIR%%/bflang/clojure.bflang2
 %%DATADIR%%/bflang/cpp.bflang2
 %%DATADIR%%/bflang/css-rules.bfinc
@@ -76,8 +78,19 @@ share/applications/bluefish.desktop
 %%DATADIR%%/bflib/bflib_python_2.3.xml.gz
 %%DATADIR%%/bflib/bflib_xhtml.xml.gz
 %%DATADIR%%/bluefish_splash.png
+%%DATADIR%%/cssmin.py
 %%DATADIR%%/default_accelmap
 %%DATADIR%%/encodings
+%%DATADIR%%/jsbeautifier/__init__.py
+%%DATADIR%%/jsbeautifier/__version__.py
+%%DATADIR%%/jsbeautifier/unpackers/__init__.py
+%%DATADIR%%/jsbeautifier/unpackers/evalbased.py
+%%DATADIR%%/jsbeautifier/unpackers/javascriptobfuscator.py
+%%DATADIR%%/jsbeautifier/unpackers/myobfuscate.py
+%%DATADIR%%/jsbeautifier/unpackers/packer.py
+%%DATADIR%%/jsbeautifier/unpackers/urlencode.py
+%%DATADIR%%/jsbeautify
+%%DATADIR%%/jsmin.py
 %%DATADIR%%/lipsum/__init__.py
 %%DATADIR%%/lipsum/data/dictionary.txt
 %%DATADIR%%/lipsum/data/lipsum.xml
@@ -142,6 +155,14 @@ share/icons/hicolor/96x96/apps/bluefish.png
 share/icons/hicolor/96x96/mimetypes/application-x-bluefish-project.png
 share/icons/hicolor/scalable/apps/bluefish-icon.svg
 share/icons/hicolor/scalable/mimetypes/bluefish-project.svg
+%%NLS%%share/locale/ar/LC_MESSAGES/bluefish.mo
+%%NLS%%share/locale/ar/LC_MESSAGES/bluefish_plugin_about.mo
+%%NLS%%share/locale/ar/LC_MESSAGES/bluefish_plugin_charmap.mo
+%%NLS%%share/locale/ar/LC_MESSAGES/bluefish_plugin_entities.mo
+%%NLS%%share/locale/ar/LC_MESSAGES/bluefish_plugin_htmlbar.mo
+%%NLS%%share/locale/ar/LC_MESSAGES/bluefish_plugin_infbrowser.mo
+%%NLS%%share/locale/ar/LC_MESSAGES/bluefish_plugin_snippets.mo
+%%NLS%%share/locale/ar/LC_MESSAGES/bluefish_plugin_zencoding.mo
 %%NLS%%share/locale/bg/LC_MESSAGES/bluefish.mo
 %%NLS%%share/locale/bg/LC_MESSAGES/bluefish_plugin_about.mo
 %%NLS%%share/locale/bg/LC_MESSAGES/bluefish_plugin_charmap.mo
@@ -190,6 +211,14 @@ share/icons/hicolor/scalable/mimetypes/bluefish-project.svg
 %%NLS%%share/locale/el/LC_MESSAGES/bluefish_plugin_infbrowser.mo
 %%NLS%%share/locale/el/LC_MESSAGES/bluefish_plugin_snippets.mo
 %%NLS%%share/locale/el/LC_MESSAGES/bluefish_plugin_zencoding.mo
+%%NLS%%share/locale/en/LC_MESSAGES/bluefish.mo
+%%NLS%%share/locale/en/LC_MESSAGES/bluefish_plugin_about.mo
+%%NLS%%share/locale/en/LC_MESSAGES/bluefish_plugin_charmap.mo
+%%NLS%%share/locale/en/LC_MESSAGES/bluefish_plugin_entities.mo
+%%NLS%%share/locale/en/LC_MESSAGES/bluefish_plugin_htmlbar.mo
+%%NLS%%share/locale/en/LC_MESSAGES/bluefish_plugin_infbrowser.mo
+%%NLS%%share/locale/en/LC_MESSAGES/bluefish_plugin_snippets.mo
+%%NLS%%share/locale/en/LC_MESSAGES/bluefish_plugin_zencoding.mo
 %%NLS%%share/locale/es/LC_MESSAGES/bluefish.mo
 %%NLS%%share/locale/es/LC_MESSAGES/bluefish_plugin_about.mo
 %%NLS%%share/locale/es/LC_MESSAGES/bluefish_plugin_charmap.mo
@@ -400,6 +429,8 @@ share/xml/bluefish/catalog.xml
 @dirrm lib/bluefish
 @dirrm %%DATADIR%%/bflang
 @dirrm %%DATADIR%%/bflib
+@dirrm %%DATADIR%%/jsbeautifier
+@dirrm %%DATADIR%%/jsbeautifier/unpackers
 @dirrm %%DATADIR%%/lipsum/data
 @dirrm %%DATADIR%%/lipsum
 @dirrm %%DATADIR%%/plugins/htmlbar/ui
@@ -415,6 +446,7 @@ share/xml/bluefish/catalog.xml
 @dirrm %%DATADIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/bflang
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrmtry share/appdata
 @dirrmtry share/mime/application
 @dirrm share/xml/bluefish/2.0
 @dirrm share/xml/bluefish
