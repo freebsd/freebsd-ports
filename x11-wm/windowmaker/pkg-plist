@@ -1,5 +1,3 @@
-@exec mkdir -p %D/GNUstep/Applications/WPrefs.app/xpm
-@exec mkdir -p %D/share/WindowMaker/Sounds
 GNUstep/Applications/WPrefs.app/WPrefs
 GNUstep/Applications/WPrefs.app/WPrefs.tiff
 GNUstep/Applications/WPrefs.app/WPrefs.xpm
