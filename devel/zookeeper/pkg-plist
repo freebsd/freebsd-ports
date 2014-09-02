@@ -24,7 +24,5 @@ bin/zkCli.sh
 @dirrm %%PORTNAME%%/bin
 @dirrmtry %%PORTNAME%%/conf
 @dirrmtry %%PORTNAME%%
-@cwd /
-@dirrmtry var/log/%%PORTNAME%%
-@dirrmtry var/run/%%PORTNAME%%
-@cwd %%RESETPREFIX%%
+@dirrmtry /var/log/%%PORTNAME%%
+@dirrmtry /var/run/%%PORTNAME%%
