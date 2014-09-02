@@ -24,10 +24,6 @@ www/cgi-bin/graph-summary.cgi
 @dirrm %%DATADIR%%/templates
 @dirrm %%DATADIR%%
 @dirrmtry www/cgi-bin
-@cwd /
-@comment set directory owner
-@exec chown -R %%WWWOWN%% "/var/db/squidstats/graphs"
-@exec chown -R %%SQUID_USER%% "/var/db/squidstats/rrd"
-@unexec rmdir "/var/db/squidstats/graphs" >/dev/null 2>&1 || :
-@unexec rmdir "/var/db/squidstats/rrd" >/dev/null 2>&1 || :
-@unexec rmdir "/var/db/squidstats" >/dev/null 2>&1 || :
+@dirrmtry(%%WWWOWN%%,,) /var/db/squidstats/graphs
+@dirrmtry(%%SQUID_USER%%,,) /var/db/squidstats/rrd
+@dirrmtry /var/db/squidstats
