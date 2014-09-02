@@ -1,7 +1,5 @@
-@owner %%WWWOWN%% 
-@group %%WWWGROUP%% 
-@owner %%WWWOWN%% 
-@group %%WWWGROUP%% 
+@owner %%WWWOWN%%
+@group %%WWWGRP%%
 %%WWWDIR%%/admin/access.php
 %%WWWDIR%%/admin/catalog.php
 %%WWWDIR%%/admin/duplicates.php
@@ -587,7 +585,7 @@
 %%WWWDIR%%/themes/penguin/theme.cfg.php
 %%WWWDIR%%/update.php
 %%WWWDIR%%/util.php
-man/man1/ampache.1.gz
+@(root,wheel,444) man/man1/ampache.1.gz
 @dirrm %%WWWDIR%%/themes/penguin/templates
 @dirrm %%WWWDIR%%/themes/penguin/images/ratings
 @dirrm %%WWWDIR%%/themes/penguin/images/icons
@@ -664,4 +662,5 @@ man/man1/ampache.1.gz
 @dirrm %%WWWDIR%%/bin
 @dirrm %%WWWDIR%%/admin
 @dirrmtry %%WWWDIR%%
-@exec chown -R %%WWWOWN%%:%%WWWGRP%% %D/%%WWWDIR%%
+@owner root
+@group wheel
