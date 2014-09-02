@@ -38,5 +38,6 @@ post-patch:
 	@${REINPLACE_CMD} -e 's,[-/]unstable,,' \
 		-e 's/ --define-variable=includetype=unstable//' \
 		${WRKSRC}/configure
+	@${REINPLACE_CMD} '/g_thread_init/d' ${WRKSRC}/src/yelp-main.c
 
 .include <bsd.port.mk>
