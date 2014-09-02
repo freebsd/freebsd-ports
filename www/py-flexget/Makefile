@@ -38,6 +38,8 @@ TEST_DEPENDS:=	${RUN_DEPENDS} \
 		${PYTHON_PKGNAMEPREFIX}nose>0:${PORTSDIR}/devel/py-nose \
 		${PYTHON_PKGNAMEPREFIX}mock>0:${PORTSDIR}/devel/py-mock
 
+BROKEN=	Does not work with devel/py-dateutil 2.2
+
 USES=		python:2
 USE_PYTHON=	autoplist distutils
 
