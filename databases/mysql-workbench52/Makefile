@@ -33,8 +33,9 @@ RUN_DEPENDS=	xdg-open:${PORTSDIR}/devel/xdg-utils \
 OPTIONS_DEFINE=	PYTHON_UTILS UNIXODBC
 PYTHON_UTILS_DESC=	Python scripts useful for administering MySQL
 
-USES=		desktop-file-utils gettext gmake libtool lua:51 pathfix pkgconfig \
-		shebangfix shared-mime-info python:2 compiler:gcc-c++11-lib
+USES=		compiler:gcc-c++11-lib desktop-file-utils gettext gmake iconv \
+		libtool lua:51 pathfix pkgconfig python:2 shared-mime-info \
+		shebangfix
 SHEBANG_FILES=	ext/ctemplate/ctemplate-src/src/htmlparser/*.py \
 		ext/mysql-utilities/*.py \
 		ext/mysql-utilities/scripts/*.py \
@@ -46,13 +47,11 @@ SHEBANG_FILES=	ext/ctemplate/ctemplate-src/src/htmlparser/*.py \
 		plugins/wb.admin/gen-opt/recat/*.py \
 		plugins/wb.query.analysis/*.py \
 		po/*.py
-USE_GCC=	any
 USE_GL=		gl
 USE_GNOME=	gnomehier gtk20 libxml2
 USE_MYSQL=	client
 USE_SQLITE=	3
 USE_AUTOTOOLS=	libtoolize aclocal automake autoheader autoconf
-LIBTOOLIZE_ARGS=--copy --force
 AUTOMAKE_ARGS=	--add-missing --copy --force-missing --foreign
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	LUA_CFLAGS="$$(pkg-config --cflags lua-${LUA_VER})" \
@@ -96,6 +95,9 @@ post-patch:
 	@${REINPLACE_CMD} -e \
 		's|-O0 -g3||' \
 		${WRKSRC}/ext/scintilla/gtk/Makefile.am
+	@${REINPLACE_CMD} -e \
+		'/^wbcopytables_LDADD=/s/$$/ ${ICONV_LIB}/' \
+		${WRKSRC}/plugins/migration/Makefile.am
 	@${REINPLACE_CMD} -e \
 		'/f.write/s|bash -i|sh -i| ; \
 		 /call/s|/bin/bash|/bin/sh| ; \
