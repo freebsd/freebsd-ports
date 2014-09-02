@@ -325,7 +325,6 @@ share/X11/xkb/types/pc
 %%NLS%%@dirrmtry share/locale/ky
 %%NLS%%@dirrmtry share/locale/crh/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/crh
-@exec mkdir -p /var/lib/xkb
 @dirrm share/X11/xkb/types
 @dirrm share/X11/xkb/symbols/xfree68_vndr
 @dirrm share/X11/xkb/symbols/sun_vndr
