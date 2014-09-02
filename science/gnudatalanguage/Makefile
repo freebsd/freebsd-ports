@@ -3,7 +3,7 @@
 
 PORTNAME=	gnudatalanguage
 DISTVERSION=	0.9.4
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	science lang
 MASTER_SITES=	SF/${PORTNAME}/gdl/${DISTVERSION}
 .if defined(BUILD_PYTHON_MODULE)
@@ -37,7 +37,7 @@ LIB_DEPENDS+=	libplplotd.so:${PORTSDIR}/math/plplot	\
 USE_WX=		2.8
 WX_UNICODE=	yes
 USE_XORG=	x11
-USES=		pkgconfig cmake dos2unix compiler:gcc-c++11-lib
+USES=		pkgconfig cmake:outsource dos2unix compiler:gcc-c++11-lib
 
 # Disable ncurses and readline from ports
 # Disable ImageMagick (does'nt work with plplot because dynamic drivers

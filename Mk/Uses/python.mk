@@ -656,16 +656,6 @@ PLIST_SUB+=	PYTHON_INCLUDEDIR=${PYTHONPREFIX_INCLUDEDIR:S;${PREFIX}/;;} \
 		PYTHON_SITELIBDIR=${PYTHONPREFIX_SITELIBDIR:S;${PREFIX}/;;} \
 		PYTHON_VERSION=${PYTHON_VERSION}
 
-# If multiple Python versions are installed and cmake is used, it might
-# happen that a cmake-enabled port using find_package(PythonLibs) and
-# find_package(PythonInterp) detects different Python versions.
-# This in turn might cause it to link against version X while using the
-# includes of version Y, leading to a broken port.
-# Enforce a certain Python version by using PYTHON_VER for cmake.
-CMAKE_ARGS+=	\
-		-DPythonLibs_FIND_VERSION:STRING="${PYTHON_VER}" \
-		-DPythonInterp_FIND_VERSION:STRING="${PYTHON_VER}"
-
 _USES_POST+=	python
 .endif # _INCLUDE_USES_PYTHON_MK
 

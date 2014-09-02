@@ -1,25 +1,31 @@
 # $FreeBSD$
 
 PORTNAME=	cmake
-PORTVERSION=	2.8.12.1
-PORTREVISION=	1
+PORTVERSION=	3.0.1
 CATEGORIES=	devel
-MASTER_SITES=	http://www.cmake.org/files/v2.8/
+MASTER_SITES=	http://www.cmake.org/files/v3.0/
 PKGNAMESUFFIX=	-gui
 
 MAINTAINER=	kde@FreeBSD.org
-COMMENT=	Qt4 GUI for cmake
+COMMENT=	Qt-based GUI for CMake
 
 LICENSE=	BSD3CLAUSE
 
-USE_QT4=	gui qmake_build moc_build uic_build rcc_build
+BUILD_DEPENDS=	sphinx-build:${PORTSDIR}/textproc/py-sphinx
+LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl \
+		libexpat.so:${PORTSDIR}/textproc/expat2
+
+USE_QT5=	core gui widgets buildtools_build qmake_build
 USES=		cmake:run shared-mime-info
 CMAKE_ARGS=	-DBUILD_QtDialog:bool=on \
+		-DBUILD_CursesDialog:BOOL=OFF \
+		-DSPHINX_MAN:BOOL=ON \
+		-DCMAKE_USE_SYSTEM_LIBRARIES:BOOL=ON \
 		-DCMAKE_DATA_DIR:STRING="/${DATADIR_REL}" \
 		-DCMAKE_DOC_DIR:STRING="/${DOCSDIR_REL}"
 
-BUILD_WRKSRC=	${WRKSRC}/Source/QtDialog
-INSTALL_WRKSRC=	${BUILD_WRKSRC}
+ALL_TARGET=	cmake-gui documentation
+INSTALL_WRKSRC=	${WRKSRC}/Source/QtDialog
 
 DISTINFO_FILE=	${.CURDIR}/../cmake/distinfo
 
@@ -31,9 +37,9 @@ post-patch:
 
 pre-install:
 	${LN} -sf ${CMAKE_BIN} ${WRKSRC}/bin
-	${WRKSRC}/bin/cmake-gui --help-man > ${WRKSRC}/cmake-gui.1
 
 post-install:
-	${INSTALL_MAN} ${WRKSRC}/cmake-gui.1 ${STAGEDIR}${PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/Utilities/Sphinx/man/cmake-gui.1 \
+		${STAGEDIR}${PREFIX}/man/man1
 
 .include <bsd.port.mk>
