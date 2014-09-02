@@ -1,0 +1,11 @@
+--- configure.orig	2014-08-10 19:51:24.000000000 +0200
++++ configure	2014-08-10 19:52:26.000000000 +0200
+@@ -16493,7 +16493,7 @@
+ $as_echo "$gcry_cv_gcc_amd64_platform_as_ok" >&6; }
+   if test "$gcry_cv_gcc_amd64_platform_as_ok" = "yes" ; then
+ 
+-$as_echo "#define HAVE_COMPATIBLE_GCC_AMD64_PLATFORM_AS 1" >>confdefs.h
++$as_echo "#undef HAVE_COMPATIBLE_GCC_AMD64_PLATFORM_AS" >>confdefs.h
+ 
+   fi
+ fi
