@@ -19,7 +19,7 @@ BUILD_DEPENDS=	protoc:${PORTSDIR}/devel/protobuf
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/python
 PROJECTHOST=	protobuf
 
-USES=		python tar:bzip2
+USES=		python:2 tar:bzip2
 USE_PYTHON=	autoplist distutils
 
 pre-build:
