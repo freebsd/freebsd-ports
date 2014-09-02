@@ -1,7 +1,0 @@
-mod_ftp is a FTP Protocol module to serve httpd content over the
-FTP protocol (whereever the HTTP protocol could also be used). It
-provides both RETR/REST retrieval and STOR/APPE upload, using the
-same user/permissions model as httpd (so it shares the same security
-considerations as mod_dav plus mod_dav_fs).
-
-WWW: http://httpd.apache.org/mod_ftp/
