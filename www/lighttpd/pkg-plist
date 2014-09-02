@@ -63,7 +63,4 @@ sbin/lighttpd-angel
 @dirrmtry etc/lighttpd/vhosts.d
 @dirrmtry etc/lighttpd/conf.d
 @dirrmtry etc/lighttpd
-@cwd /
-@exec %%MKDIR%% -m 0700 %%LOGROOT%%
-@exec %%CHOWN%% %%USER%%:%%GROUP%% %%LOGROOT%%
-@unexec rmdir %%LOGROOT%% >/dev/null 2>&1 || :
+@dirrmtry(%%USER%%,%%GROUP%%,700) %%LOGROOT%%
