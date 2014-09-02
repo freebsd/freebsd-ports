@@ -146,7 +146,6 @@ share/pixmaps/xmms2-black-on-white.svg
 share/pixmaps/xmms2-white-on-black.svg
 share/pixmaps/xmms2.svg
 %%DATADIR%%/mind.in.a.box-lament_snipplet.ogg
-@exec if [ ! -d %D/%%DATADIR%%/scripts/startup.d ] ; then mkdir -p %D/%%DATADIR%%/scripts/startup.d; fi
 %%ET%%%%DATADIR%%/scripts/startup.d/xmms2-et-launcher.sh
 %%MDNS_AVAHI%%%%DATADIR%%/scripts/startup.d/xmms2-mdns-launcher.sh
 %%MDNS_APPLE%%%%DATADIR%%/scripts/startup.d/xmms2-mdns-launcher.sh
