@@ -49,6 +49,10 @@ parse_plist() {
 			fi
 		fi
 
+		# Strip (owner,group,perm) from keywords
+		line="$(printf %s "$line" \
+		    | sed -Ee 's/^@\([^)]*\)[[:space:]]+//' \
+			-e 's/^(@[[:alpha:]]+)\([^)]*\)[[:space:]]+/\1 /')"
 		case $line in
 		@dirrm*|'@unexec rmdir'*|'@unexec /bin/rmdir'*)
 			line="$(printf %s "$line" \
