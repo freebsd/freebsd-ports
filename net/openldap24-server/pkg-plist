@@ -152,13 +152,5 @@ man/man8/slapindex.8.gz
 man/man8/slappasswd.8.gz
 man/man8/slapschema.8.gz
 man/man8/slaptest.8.gz
-@cwd /
-@owner %%LDAP_USER%%
-@group %%LDAP_USER%%
-@exec install -d -o %%LDAP_USER%% -g %%LDAP_GROUP%% %%LDAP_RUN_DIR%%
-@dirrmtry %%LDAP_RUN_DIR%%
-@exec install -d -o %%LDAP_USER%% -g %%LDAP_GROUP%% %%DATABASEDIR%%
-@dirrmtry %%DATABASEDIR%%
-@owner root
-@group wheel
-@cwd %%PREFIX%%
+@dirrmtry(%%LDAP_USER%%,%%LDAP_GROUP%%,) %%LDAP_RUN_DIR%%
+@dirrmtry(%%LDAP_USER%%,%%LDAP_GROUP%%,) %%DATABASEDIR%%
