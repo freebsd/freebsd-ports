@@ -240,7 +240,6 @@ etc/ircd-ratbox/genssl.sh
 @sample etc/ircd-ratbox/ircd.conf.sample
 @sample etc/ircd-ratbox/ircd.motd.sample
 @dirrmtry etc/ircd-ratbox
-@cwd /
 @dirrmtry %%LOGDIR%%
 @dirrmtry %%RUNDIR%%
 @dirrmtry %%DBDIR%%
