@@ -1,6 +1,0 @@
-Sapphire is a window manager based on aewm and blackbox.  Windows
-can be shaded or hidden.  Programs can be run from a menu.  A clock
-and calendar are built in.  Virtual screens are supported.
-
-You may wish to install the x11-wm/sapphire-themes port/package
-too.
