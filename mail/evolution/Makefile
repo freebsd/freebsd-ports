@@ -109,6 +109,12 @@ post-patch:
 		-e 's|-DG_DISABLE_DEPRECATED||g' \
 		-e 's|-Wmissing-include-dirs||g' \
 	    	${WRKSRC}/configure
+	@${REINPLACE_CMD} 's/g_thread_init.*/(void)0;/' \
+		${WRKSRC}/calendar/gui/alarm-notify/notify-main.c \
+		${WRKSRC}/capplet/settings/mail-guess-servers.c \
+		${WRKSRC}/capplet/anjal-settings-main.c \
+		${WRKSRC}/plugins/backup-restore/backup.c \
+		${WRKSRC}/shell/main.c
 	@${REINPLACE_CMD} -e 's|/usr|${LOCALBASE}|g' \
 		${WRKSRC}/plugins/bogo-junk-plugin/bf-junk-filter.c
 	@${REINPLACE_CMD} -e 's|/usr/sbin|${LOCALBASE}/bin|g' \
