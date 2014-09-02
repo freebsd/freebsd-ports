@@ -74,6 +74,8 @@ post-patch:
 		${WRKSRC}/help/fish/Makefile.in
 	@${REINPLACE_CMD} -e 's|python.* python2\.0|${PYTHON_VERSION}|g' \
 		${WRKSRC}/configure
+	@${REINPLACE_CMD} '/_LIBADD =/s/$$/ -lgmodule-2.0/' \
+		${WRKSRC}/gnome-panel/libpanel-applet-private/Makefile.in
 
 .include <bsd.port.mk>
 
