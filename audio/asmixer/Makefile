@@ -5,8 +5,7 @@ PORTNAME=	asmixer
 PORTVERSION=	0.5
 PORTREVISION=	3
 CATEGORIES=	audio afterstep
-MASTER_SITES=	AFTERSTEP/apps/asmix/ \
-		http://tigr.net/afterstep/download/asmixer/
+MASTER_SITES=	http://tigr.net/afterstep/download/asmixer/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Mixer control for AfterStep window manager
@@ -29,13 +28,9 @@ post-patch:
 		 /sys\/syslimits.h/d' ${WRKSRC}/${i}
 .endfor
 
-post-build:
-	@${LN} -sf asmixer.man ${WRKSRC}/asmixer.1
-
 do-install:
-	(cd ${WRKSRC} && ${INSTALL_PROGRAM} asmixer \
-		${STAGEDIR}${PREFIX}/bin)
-	(cd ${WRKSRC} && ${INSTALL_MAN} asmixer.1 \
-		${STAGEDIR}${MANPREFIX}/man/man1)
+	${INSTALL_PROGRAM} ${WRKSRC}/asmixer ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/asmixer.man \
+		${STAGEDIR}${MANPREFIX}/man/man1/asmixer.1
 
 .include <bsd.port.mk>
