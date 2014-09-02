@@ -1,2 +1,7 @@
 %%PYTHON_SITELIBDIR%%/cv.py
+%%PYTHON2%%%%PYTHON_SITELIBDIR%%/cv.pyc
+%%PYTHON2%%%%PYTHON_SITELIBDIR%%/cv.pyo
+%%PYTHON3%%%%PYTHON_SITELIBDIR%%/__pycache__/cv.cpython-%%PYTHON_SUFFIX%%.pyc
+%%PYTHON3%%%%PYTHON_SITELIBDIR%%/__pycache__/cv.cpython-%%PYTHON_SUFFIX%%.pyo
 %%PYTHON_SITELIBDIR%%/cv2.so
+%%PYTHON3%%@dirrmtry %%PYTHON_SITELIBDIR%%/__pycache__
