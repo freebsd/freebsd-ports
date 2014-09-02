@@ -1,7 +1,7 @@
---- plugins/node.d/hddtemp_smartctl.in.orig	2012-09-11 11:26:15.928249255 +0200
-+++ plugins/node.d/hddtemp_smartctl.in	2012-09-11 11:26:48.947249274 +0200
-@@ -151,7 +151,7 @@
-   # without probing them.
+--- plugins/node.d/hddtemp_smartctl.in.orig	2013-07-19 16:30:03 UTC
++++ plugins/node.d/hddtemp_smartctl.in
+@@ -162,7 +162,7 @@
+   
  } elsif ($^O eq 'freebsd') {
    opendir(DEV, '/dev');
 -  @drives = grep /^ad[0-9]+$/, readdir DEV;

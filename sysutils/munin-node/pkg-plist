@@ -1,11 +1,6 @@
-@stopdaemon munin-node
 bin/munindoc
-@unexec if cmp -s %D/%%ETCDIR%%/munin-node.conf.sample %D/%%ETCDIR%%/munin-node.conf ; then rm -f %D/%%ETCDIR%%/munin-node.conf ; fi
-%%ETCDIR%%/munin-node.conf.sample
-@exec if [ ! -f %D/%%ETCDIR%%/munin-node.conf ] ; then cp -p %D/%%ETCDIR%%/munin-node.conf.sample %D/%%ETCDIR%%/munin-node.conf ; fi
-@unexec if cmp -s %D/%%ETCDIR%%/plugin-conf.d/plugins.conf.sample %D/%%ETCDIR%%/plugin-conf.d/plugins.conf ; then rm -f %D/%%ETCDIR%%/plugin-conf.d/plugins.conf ; fi
-%%ETCDIR%%/plugin-conf.d/plugins.conf.sample
-@exec if [ ! -f %D/%%ETCDIR%%/plugin-conf.d/plugins.conf ] ; then cp -p %D/%%ETCDIR%%/plugin-conf.d/plugins.conf.sample %D/%%ETCDIR%%/plugin-conf.d/plugins.conf ; fi
+@sample %%ETCDIR%%/munin-node.conf.sample
+@sample %%ETCDIR%%/plugin-conf.d/plugins.conf.sample
 %%SITE_PERL%%/Munin/Node/Config.pm
 %%SITE_PERL%%/Munin/Node/Configure/Debug.pm
 %%SITE_PERL%%/Munin/Node/Configure/History.pm
@@ -25,10 +20,37 @@ bin/munindoc
 %%SITE_PERL%%/Munin/Plugin.pm
 %%SITE_PERL%%/Munin/Plugin/Pgsql.pm
 %%SITE_PERL%%/Munin/Plugin/SNMP.pm
+man/man1/munin-node-configure.1.gz
+man/man1/munin-node.1.gz
+man/man1/munin-run.1.gz
+man/man1/munin-sched.1.gz
+man/man1/munindoc.1.gz
+man/man3/Munin::Node::Config.3.gz
+man/man3/Munin::Node::Configure::Debug.3.gz
+man/man3/Munin::Node::Configure::History.3.gz
+man/man3/Munin::Node::Configure::HostEnumeration.3.gz
+man/man3/Munin::Node::Configure::Plugin.3.gz
+man/man3/Munin::Node::Configure::PluginList.3.gz
+man/man3/Munin::Node::Logger.3.gz
+man/man3/Munin::Node::OS.3.gz
+man/man3/Munin::Node::ProxySpooler.3.gz
+man/man3/Munin::Node::SNMPConfig.3.gz
+man/man3/Munin::Node::Server.3.gz
+man/man3/Munin::Node::Service.3.gz
+man/man3/Munin::Node::Session.3.gz
+man/man3/Munin::Node::SpoolReader.3.gz
+man/man3/Munin::Node::SpoolWriter.3.gz
+man/man3/Munin::Node::Utils.3.gz
+man/man3/Munin::Plugin.3.gz
+man/man3/Munin::Plugin::Pgsql.3.gz
+man/man3/Munin::Plugin::SNMP.3.gz
+man/man5/munin-node.conf.5.gz
+man/man8/munin.8.gz
 sbin/munin-node
 sbin/munin-node-configure
 sbin/munin-run
 sbin/munin-sched
+%%JAVA%%%%DATADIR%%/munin-jmx-plugins.jar
 %%DATADIR%%/plugins/amavis
 %%DATADIR%%/plugins/apache_accesses
 %%DATADIR%%/plugins/apache_processes
@@ -86,6 +108,8 @@ sbin/munin-sched
 %%DATADIR%%/plugins/ipmi_
 %%DATADIR%%/plugins/ipmi_sensor_
 %%DATADIR%%/plugins/ircu
+%%JAVA%%%%DATADIR%%/plugins/jmx_
+%%JAVA%%%%DATADIR%%/plugins/jmx_tomcat_dbpools
 %%DATADIR%%/plugins/load
 %%DATADIR%%/plugins/loggrep
 %%DATADIR%%/plugins/lpstat
@@ -168,35 +192,35 @@ sbin/munin-sched
 %%DATADIR%%/plugins/slapd_bdb_cache_
 %%DATADIR%%/plugins/slony_lag_
 %%DATADIR%%/plugins/smart_
-%%DATADIR%%/plugins/snmp__cpuload
-%%DATADIR%%/plugins/snmp__df
-%%DATADIR%%/plugins/snmp__df_ram
-%%DATADIR%%/plugins/snmp__fc_if_
-%%DATADIR%%/plugins/snmp__fc_if_err_
-%%DATADIR%%/plugins/snmp__if_
-%%DATADIR%%/plugins/snmp__if_err_
-%%DATADIR%%/plugins/snmp__if_multi
-%%DATADIR%%/plugins/snmp__load
-%%DATADIR%%/plugins/snmp__memory
-%%DATADIR%%/plugins/snmp__netapp_diskusage_
-%%DATADIR%%/plugins/snmp__netapp_inodeusage_
-%%DATADIR%%/plugins/snmp__netstat
-%%DATADIR%%/plugins/snmp__print_pages
-%%DATADIR%%/plugins/snmp__print_supplies
-%%DATADIR%%/plugins/snmp__processes
-%%DATADIR%%/plugins/snmp__rdp_users
-%%DATADIR%%/plugins/snmp__sensors_fsc_bx_fan
-%%DATADIR%%/plugins/snmp__sensors_fsc_bx_temp
-%%DATADIR%%/plugins/snmp__sensors_fsc_fan
-%%DATADIR%%/plugins/snmp__sensors_fsc_temp
-%%DATADIR%%/plugins/snmp__sensors_mbm_fan
-%%DATADIR%%/plugins/snmp__sensors_mbm_temp
-%%DATADIR%%/plugins/snmp__sensors_mbm_volt
-%%DATADIR%%/plugins/snmp__swap
-%%DATADIR%%/plugins/snmp__uptime
-%%DATADIR%%/plugins/snmp__users
-%%DATADIR%%/plugins/snmp__winload
-%%DATADIR%%/plugins/snmp__winmem
+%%SNMP%%%%DATADIR%%/plugins/snmp__cpuload
+%%SNMP%%%%DATADIR%%/plugins/snmp__df
+%%SNMP%%%%DATADIR%%/plugins/snmp__df_ram
+%%SNMP%%%%DATADIR%%/plugins/snmp__fc_if_
+%%SNMP%%%%DATADIR%%/plugins/snmp__fc_if_err_
+%%SNMP%%%%DATADIR%%/plugins/snmp__if_
+%%SNMP%%%%DATADIR%%/plugins/snmp__if_err_
+%%SNMP%%%%DATADIR%%/plugins/snmp__if_multi
+%%SNMP%%%%DATADIR%%/plugins/snmp__load
+%%SNMP%%%%DATADIR%%/plugins/snmp__memory
+%%SNMP%%%%DATADIR%%/plugins/snmp__netapp_diskusage_
+%%SNMP%%%%DATADIR%%/plugins/snmp__netapp_inodeusage_
+%%SNMP%%%%DATADIR%%/plugins/snmp__netstat
+%%SNMP%%%%DATADIR%%/plugins/snmp__print_pages
+%%SNMP%%%%DATADIR%%/plugins/snmp__print_supplies
+%%SNMP%%%%DATADIR%%/plugins/snmp__processes
+%%SNMP%%%%DATADIR%%/plugins/snmp__rdp_users
+%%SNMP%%%%DATADIR%%/plugins/snmp__sensors_fsc_bx_fan
+%%SNMP%%%%DATADIR%%/plugins/snmp__sensors_fsc_bx_temp
+%%SNMP%%%%DATADIR%%/plugins/snmp__sensors_fsc_fan
+%%SNMP%%%%DATADIR%%/plugins/snmp__sensors_fsc_temp
+%%SNMP%%%%DATADIR%%/plugins/snmp__sensors_mbm_fan
+%%SNMP%%%%DATADIR%%/plugins/snmp__sensors_mbm_temp
+%%SNMP%%%%DATADIR%%/plugins/snmp__sensors_mbm_volt
+%%SNMP%%%%DATADIR%%/plugins/snmp__swap
+%%SNMP%%%%DATADIR%%/plugins/snmp__uptime
+%%SNMP%%%%DATADIR%%/plugins/snmp__users
+%%SNMP%%%%DATADIR%%/plugins/snmp__winload
+%%SNMP%%%%DATADIR%%/plugins/snmp__winmem
 %%DATADIR%%/plugins/snort_alerts
 %%DATADIR%%/plugins/snort_bytes_pkt
 %%DATADIR%%/plugins/snort_drop_rate
@@ -224,16 +248,12 @@ sbin/munin-sched
 %%DATADIR%%/plugins/varnish_
 %%DATADIR%%/plugins/vmstat
 %%DATADIR%%/plugins/zimbra_
-@dirrm %%DATADIR%%/plugins
-@dirrmtry %%DATADIR%%
-@dirrm %%SITE_PERL%%/Munin/Plugin
-@dirrm %%SITE_PERL%%/Munin/Node/Configure
-@dirrm %%SITE_PERL%%/Munin/Node
-@dirrmtry %%SITE_PERL%%/Munin
-@exec mkdir -p %D/%%ETCDIR%%/plugins
-@dirrmtry %%ETCDIR%%/plugins
-@exec mkdir -p %D/%%ETCDIR%%/plugin-conf.d
 @dirrmtry %%ETCDIR%%/plugin-conf.d
+@dirrmtry %%ETCDIR%%/plugins
 @dirrmtry %%ETCDIR%%
-@cwd /var
-@dirrmtry munin/plugin-state
+@dirrmtry %%SITE_PERL%%/Munin/Node/Configure
+@dirrmtry %%SITE_PERL%%/Munin/Node
+@dirrmtry %%SITE_PERL%%/Munin/Plugin
+@dirrmtry %%DATADIR%%/plugins
+@dirrmtry %%DATADIR%%
+@dirrmtry(%%USER%%,%%GROUP%%,) %%DBDIR%%/plugin-state

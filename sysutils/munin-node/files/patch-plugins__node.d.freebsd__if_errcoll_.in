@@ -1,5 +1,5 @@
---- plugins/node.d.freebsd/if_errcoll_.in.orig	2009-12-30 13:55:55.000000000 +0100
-+++ plugins/node.d.freebsd/if_errcoll_.in	2010-02-24 19:00:26.026407278 +0100
+--- plugins/node.d.freebsd/if_errcoll_.in.orig	2013-07-19 16:30:03 UTC
++++ plugins/node.d.freebsd/if_errcoll_.in
 @@ -59,9 +59,13 @@
  		print "ierrors.value", $5;
  		print "oerrors.value", $8;
