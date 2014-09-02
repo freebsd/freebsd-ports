@@ -3,7 +3,7 @@
 
 PORTNAME=	ampache
 PORTVERSION=	3.5.4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio www
 MASTER_SITES=	http://ampache.org/downloads/
 
@@ -22,24 +22,22 @@ SUB_FILES=	pkg-message pkg-deinstall
 SUB_LIST=	PORTNAME=${PORTNAME} \
 		WWWDIR=${WWWDIR} \
 		WWWOWN=${WWWOWN} \
-		WWWGROUP=${WWWGROUP}
+		WWWGRP=${WWWGRP}
+PLIST_SUB=	WWWDIR=${WWWDIR} \
+		WWWOWN=${WWWOWN} \
+		WWWGRP=${WWWGRP}
 
 PORTDOCS=	CHANGELOG README MIGRATION INSTALL
 
 OPTIONS_DEFINE=	DOCS
 
-.include <bsd.port.options.mk>
-
 do-install:
 	@${MKDIR} ${STAGEDIR}${WWWDIR}
 	${INSTALL_MAN} ${WRKSRC}/docs/man/man1/ampache.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
-.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for doc in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/docs/${doc} ${STAGEDIR}${DOCSDIR}
 .endfor
-.endif
-	${RM} -rf ${WRKSRC}/docs/man
 	(cd ${WRKSRC} && ${COPYTREE_SHARE} \* ${STAGEDIR}${WWWDIR} "! -name *.orig")
 
 .include <bsd.port.mk>
