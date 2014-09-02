@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	zutils
-PORTVERSION=	1.2
+PORTVERSION=	1.3
 CATEGORIES=	archivers
 MASTER_SITES=	SAVANNAH/zutils
 EXTRACT_SUFX=	.tar.lz
@@ -17,6 +17,7 @@ EXTRACT_DEPENDS=	lzip:${PORTSDIR}/archivers/lzip
 INFO=		zutils
 
 GNU_CONFIGURE=	yes
+INSTALL_TARGET=	install-strip
 
 do-extract:
 	@${MKDIR} ${WRKDIR}
@@ -25,7 +26,7 @@ do-extract:
 
 post-patch:
 	# Remove compiler hardcoded flags and use environment
-	@${REINPLACE_CMD} '24,27d' ${WRKSRC}/configure
+	@${REINPLACE_CMD} '23,26d' ${WRKSRC}/configure
 
 post-install:
 	@-${RM} ${STAGEDIR}${PREFIX}/info/dir
