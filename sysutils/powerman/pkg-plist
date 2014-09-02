@@ -1,4 +1,3 @@
-@stopdaemon powerman
 bin/pm
 bin/powerman
 %%ETCDIR%%/apc-snmp.dev
@@ -77,6 +76,4 @@ man/man8/vpcd.8.gz
 @dirrm lib/stonith/plugins
 @dirrm lib/stonith
 @dirrmtry %%ETCDIR%%
-@cwd /
 @dirrmtry /var/run/powerman
-@cwd %%PREFIX%%
