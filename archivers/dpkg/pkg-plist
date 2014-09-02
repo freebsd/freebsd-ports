@@ -644,28 +644,18 @@ sbin/start-stop-daemon
 %%NLS%%@dirrmtry man/de/man5
 %%NLS%%@dirrmtry man/de/man1
 %%NLS%%@dirrmtry man/de
-@cwd /
-@exec mkdir -p %%DPKGDIR%%/alternatives
-@exec mkdir -p %%DPKGDIR%%/info
-@exec mkdir -p %%DPKGDIR%%/methods/disk
-@exec mkdir -p %%DPKGDIR%%/methods/floppy
-@exec mkdir -p %%DPKGDIR%%/methods/ftp
-@exec mkdir -p %%DPKGDIR%%/methods/mnt
-@exec mkdir -p %%DPKGDIR%%/methods/multicd
-@exec mkdir -p %%DPKGDIR%%/parts
-@exec mkdir -p %%DPKGDIR%%/updates
-@exec [ -e %%DPKGDIR%%/available ] || touch %%DPKGDIR%%/available
-@exec [ -e %%DPKGDIR%%/diversions ] || touch %%DPKGDIR%%/diversions
-@exec [ -e %%DPKGDIR%%/statoverride ] || touch %%DPKGDIR%%/statoverride
-@exec [ -e %%DPKGDIR%%/status ] || touch %%DPKGDIR%%/status
-@dirrmtry %%DPKGDIR%%/updates
-@dirrmtry %%DPKGDIR%%/parts
-@dirrmtry %%DPKGDIR%%/methods/multicd
-@dirrmtry %%DPKGDIR%%/methods/mnt
-@dirrmtry %%DPKGDIR%%/methods/ftp
-@dirrmtry %%DPKGDIR%%/methods/floppy
-@dirrmtry %%DPKGDIR%%/methods/disk
-@dirrmtry %%DPKGDIR%%/methods
-@dirrmtry %%DPKGDIR%%/info
-@dirrmtry %%DPKGDIR%%/alternatives
-@dirrmtry %%DPKGDIR%%
+@exec [ -e /%%DPKGDIR%%/available ] || touch /%%DPKGDIR%%/available
+@exec [ -e /%%DPKGDIR%%/diversions ] || touch /%%DPKGDIR%%/diversions
+@exec [ -e /%%DPKGDIR%%/statoverride ] || touch /%%DPKGDIR%%/statoverride
+@exec [ -e /%%DPKGDIR%%/status ] || touch /%%DPKGDIR%%/status
+@dirrmtry /%%DPKGDIR%%/updates
+@dirrmtry /%%DPKGDIR%%/parts
+@dirrmtry /%%DPKGDIR%%/methods/multicd
+@dirrmtry /%%DPKGDIR%%/methods/mnt
+@dirrmtry /%%DPKGDIR%%/methods/ftp
+@dirrmtry /%%DPKGDIR%%/methods/floppy
+@dirrmtry /%%DPKGDIR%%/methods/disk
+@dirrmtry /%%DPKGDIR%%/methods
+@dirrmtry /%%DPKGDIR%%/info
+@dirrmtry /%%DPKGDIR%%/alternatives
+@dirrmtry /%%DPKGDIR%%
