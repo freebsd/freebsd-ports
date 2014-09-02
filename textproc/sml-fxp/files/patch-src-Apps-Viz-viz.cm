@@ -1,9 +1,0 @@
---- src/Apps/Viz/viz.cm.orig	Sat Jun 26 02:43:01 2004
-+++ src/Apps/Viz/viz.cm	Sat Sep  8 11:40:40 2007
-@@ -3,3 +3,6 @@
-     viz.sml
-     vizHooks.sml
-     ../../fxlib.cm
-+#if (SMLNJ_MINOR_VERSION > 40)
-+    $/basis.cm
-+#endif

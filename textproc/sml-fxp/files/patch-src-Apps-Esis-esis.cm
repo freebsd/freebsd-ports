@@ -1,9 +1,0 @@
---- src/Apps/Esis/esis.cm.orig	Sat Jun 26 02:43:01 2004
-+++ src/Apps/Esis/esis.cm	Sat Sep  8 11:40:02 2007
-@@ -5,3 +5,6 @@
-     esisHooks.sml
-     esisData.sml
-     ../../fxlib.cm
-+#if (SMLNJ_MINOR_VERSION > 40)
-+    $/basis.cm
-+#endif

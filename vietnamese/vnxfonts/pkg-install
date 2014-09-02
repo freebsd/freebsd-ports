@@ -1,8 +1,0 @@
-#!/bin/sh
-
-if [ "$2" != "POST-INSTALL" ]; then
-	exit 0
-fi
-
-cd ${PKG_PREFIX}/lib/X11/fonts/vietnamese
-${PKG_PREFIX}/bin/mkfontdir >/dev/null 2>&1
