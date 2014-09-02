@@ -1,8 +1,4 @@
-@group games
-@mode 2755
-bin/lbreakout
-@mode
-@group
+@(root,games,2755) bin/lbreakout
 share/lbreakout/ball.bmp
 share/lbreakout/bkgnd0.bmp
 share/lbreakout/bkgnd1.bmp
@@ -48,10 +44,5 @@ share/lbreakout/weapon.bmp
 share/lbreakout/weapon.wav
 share/lbreakout/wontgiveup.wav
 @dirrm share/lbreakout
-@cwd /var/games
-@group games
-@mode 664
-lbreakout/lbreakout.hscr
-@mode
-@group
-@dirrm lbreakout
+@(root,games,664) /var/games/lbreakout/lbreakout.hscr
+@dirrm /var/games/lbreakout
