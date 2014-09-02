@@ -19,10 +19,6 @@ USES=		gettext
 PKGDEINSTALL=	${WRKDIR}/pkg-deinstall
 PKGMESSAGE=	${WRKDIR}/pkg-message
 SUB_FILES=	pkg-message pkg-deinstall
-SUB_LIST=	PORTNAME=${PORTNAME} \
-		WWWDIR=${WWWDIR} \
-		WWWOWN=${WWWOWN} \
-		WWWGRP=${WWWGRP}
 PLIST_SUB=	WWWDIR=${WWWDIR} \
 		WWWOWN=${WWWOWN} \
 		WWWGRP=${WWWGRP}
