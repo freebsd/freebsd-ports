@@ -4,7 +4,7 @@
 
 PORTNAME=	gtkhtml3
 PORTVERSION=	3.32.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	www gnome
 MASTER_SITES=	GNOME
 MASTER_SITE_SUBDIR=	sources/${PORTNAME:S/3$//}/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
@@ -21,7 +21,7 @@ LIB_DEPENDS=	libsoup-2.4.so:${PORTSDIR}/devel/libsoup \
 RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-codes \
 		${LOCALBASE}/libdata/pkgconfig/gnome-icon-theme.pc:${PORTSDIR}/misc/gnome-icon-theme
 
-USES=		gettext libtool:keepla pathfix pkgconfig gmake tar:bzip2
+USES=		gettext libtool pathfix pkgconfig gmake tar:bzip2
 USE_XORG=	xinerama xi xrandr xcursor xcomposite xdamage
 USE_GNOME=	gnomeprefix intlhack gconf2 gtk20
 USE_LDCONFIG=	yes
@@ -42,6 +42,7 @@ post-patch:
 		${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|gtkhtml-editor-test[$$]|gtkhtml3-editor-test$$|' \
 	    	${WRKSRC}/components/editor/Makefile.in
+	@${REINPLACE_CMD} '/g_thread_init/d' ${WRKSRC}/components/editor/main.c
 	@${REINPLACE_CMD} -e 's|G_CONST_RETURN||g' \
 		${WRKSRC}/a11y/*.[ch]
 
