@@ -12,7 +12,7 @@ PKGNAMEPREFIX=	${TGTARCH}-${TGTABI}-
 PATCH_SITES=	ftp://ftp.rtems.com/pub/rtems/SOURCES/4.11/
 PATCH_DIST_STRIP=	-p1
 
-MAINTAINER= ports@FreeBSD.org
+MAINTAINER= 	brooks@FreeBSD.org
 COMMENT=	GNU binutils port for cross-target development
 
 USES=		gmake makeinfo tar:bzip2
@@ -20,11 +20,6 @@ GNU_CONFIGURE=	yes
 ALL_TARGET=	all info
 MAKE_JOBS_UNSAFE=	yes
 
-OPTIONS_DEFINE=		RTEMS_PATCHES
-
-RTEMS_PATCHES_DESC=	Apply RTEMS patches
-
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 CONFIGURE_ARGS+=	--disable-nls \
@@ -34,25 +29,6 @@ CONFIGURE_ARGS+=	--disable-nls \
 			--disable-werror
 
 OURTARGET=	${TGTARCH}-${TGTABI}
-
-MAN1=		${OURTARGET}-addr2line.1 \
-		${OURTARGET}-ar.1 \
-		${OURTARGET}-as.1 \
-		${OURTARGET}-c++filt.1 \
-		${OURTARGET}-elfedit.1 \
-		${OURTARGET}-dlltool.1 \
-		${OURTARGET}-ld.1 \
-		${OURTARGET}-nlmconv.1 \
-		${OURTARGET}-nm.1 \
-		${OURTARGET}-objcopy.1 \
-		${OURTARGET}-objdump.1 \
-		${OURTARGET}-ranlib.1 \
-		${OURTARGET}-readelf.1 \
-		${OURTARGET}-size.1 \
-		${OURTARGET}-strings.1 \
-		${OURTARGET}-strip.1 \
-		${OURTARGET}-windmc.1 \
-		${OURTARGET}-windres.1
 
 INFO=		${OURTARGET}-as \
 		${OURTARGET}-bfd \
@@ -73,12 +49,30 @@ PLIST_FILES=	bin/${OURTARGET}-addr2line \
 		bin/${OURTARGET}-readelf \
 		bin/${OURTARGET}-size \
 		bin/${OURTARGET}-strings \
-		bin/${OURTARGET}-strip
+		bin/${OURTARGET}-strip \
+		man/man1/${OURTARGET}-addr2line.1.gz \
+		man/man1/${OURTARGET}-ar.1.gz \
+		man/man1/${OURTARGET}-as.1.gz \
+		man/man1/${OURTARGET}-c++filt.1.gz \
+		man/man1/${OURTARGET}-elfedit.1.gz \
+		man/man1/${OURTARGET}-dlltool.1.gz \
+		man/man1/${OURTARGET}-ld.1.gz \
+		man/man1/${OURTARGET}-nlmconv.1.gz \
+		man/man1/${OURTARGET}-nm.1.gz \
+		man/man1/${OURTARGET}-objcopy.1.gz \
+		man/man1/${OURTARGET}-objdump.1.gz \
+		man/man1/${OURTARGET}-ranlib.1.gz \
+		man/man1/${OURTARGET}-readelf.1.gz \
+		man/man1/${OURTARGET}-size.1.gz \
+		man/man1/${OURTARGET}-strings.1.gz \
+		man/man1/${OURTARGET}-strip.1.gz \
+		man/man1/${OURTARGET}-windmc.1.gz \
+		man/man1/${OURTARGET}-windres.1.gz
 
 .if defined(TGTARCH) && ${TGTARCH} != mips
-MAN1+=		${OURTARGET}-gprof.1
 INFO+=		${OURTARGET}-gprof
-PLIST_FILES+=	bin/${OURTARGET}-gprof
+PLIST_FILES+=	bin/${OURTARGET}-gprof \
+		man/man1/${OURTARGET}-gprof.1.gz
 .endif
 
 .if defined(TGTABI) && (${TGTABI} == pc-mingw32 || ${TGTABI} == mingw32)
@@ -146,9 +140,9 @@ post-install:
 # Add some plist items (we don't list them directly, since the set varies
 # across different targets)
 #
-	@${FIND} -ds ${PREFIX}/${OURTARGET} ! -type d | \
-		${SED} -e 's,^${PREFIX}/,,' >> ${TMPPLIST}
-	@${FIND} -ds ${PREFIX}/${OURTARGET} -type d | \
-		${SED} -e 's,^${PREFIX}/,@dirrm ,' >> ${TMPPLIST}
+	@${FIND} -ds ${STAGEDIR}${PREFIX}/${OURTARGET} ! -type d | \
+		${SED} -e 's,^${STAGEDIR}${PREFIX}/,,' >> ${TMPPLIST}
+	@${FIND} -ds ${STAGEDIR}${PREFIX}/${OURTARGET} -type d | \
+		${SED} -e 's,^${STAGEDIR}${PREFIX}/,@dirrm ,' >> ${TMPPLIST}
 
 .include <bsd.port.mk>
