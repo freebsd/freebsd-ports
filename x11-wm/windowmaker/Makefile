@@ -22,7 +22,8 @@ LIB_DEPENDS=	libgif.so:${PORTSDIR}/graphics/giflib \
 RUN_DEPENDS=	libwraster>=${PORTVERSION}:${PORTSDIR}/x11-wm/libwraster \
 		${LOCALBASE}/share/WindowMaker/Themes/LeetWM.themed/style:${PORTSDIR}/graphics/wmicons
 
-USES=		libtool pathfix perl5 pkgconfig
+USES=		libtool pathfix perl5 pkgconfig shebangfix
+SHEBANG_FILES=	util/wkdemenu.pl
 USE_LDCONFIG=	yes
 USE_XORG=	xft xinerama xmu xpm
 GNU_CONFIGURE=	yes
@@ -41,6 +42,7 @@ PORTDOCS=	AUTHORS BUGFORM BUGS ChangeLog FAQ FAQ.I18N INSTALL \
 		INSTALL-WMAKER NEWS README README.definable-cursor TODO
 LINGUAS=	be bg bs ca cs da de el es et fi fr gl hr hu hy it \
 		ja ko ms nl no pl pt ro ru sk sv tr zh_CN zh_TW
+INSTALL_TARGET=	install-strip
 
 OPTIONS_DEFINE=	DOCS NLS XRANDR
 OPTIONS_SUB=	yes
