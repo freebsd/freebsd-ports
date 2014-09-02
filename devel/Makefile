@@ -3786,6 +3786,7 @@
     SUBDIR += py-ordereddict
     SUBDIR += py-parsedatetime
     SUBDIR += py-parsing
+    SUBDIR += py-path.py
     SUBDIR += py-pathtools
     SUBDIR += py-paver
     SUBDIR += py-pbr
