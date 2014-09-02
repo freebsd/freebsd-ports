@@ -20,6 +20,7 @@ include/lastfm/ScrobblePoint.h
 include/lastfm/Tag.h
 include/lastfm/Tasteometer.h
 include/lastfm/Track.h
+include/lastfm/Url.h
 include/lastfm/UrlBuilder.h
 include/lastfm/User.h
 include/lastfm/XmlQuery.h
@@ -29,8 +30,8 @@ include/lastfm/misc.h
 include/lastfm/ws.h
 lib/liblastfm.so
 lib/liblastfm.so.1
-lib/liblastfm.so.1.0.6
+lib/liblastfm.so.1.0.8
 %%FINGERPRINT%%lib/liblastfm_fingerprint.so
 %%FINGERPRINT%%lib/liblastfm_fingerprint.so.1
-%%FINGERPRINT%%lib/liblastfm_fingerprint.so.1.0.6
+%%FINGERPRINT%%lib/liblastfm_fingerprint.so.1.0.8
 @dirrm include/lastfm

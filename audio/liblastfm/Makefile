@@ -2,26 +2,28 @@
 # $FreeBSD$
 
 PORTNAME=	liblastfm
-PORTVERSION=	1.0.6
-PORTREVISION=	1
+PORTVERSION=	1.0.8
 CATEGORIES=	audio
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	jhale@FreeBSD.org
 COMMENT=	Qt C++ library for the Last.fm webservices
 
 LICENSE=	GPLv3
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libfftw3.so:${PORTSDIR}/math/fftw3 \
 		libfftw3f.so:${PORTSDIR}/math/fftw3-float \
 		libsamplerate.so:${PORTSDIR}/audio/libsamplerate
 
 GH_ACCOUNT=	lastfm
-GH_COMMIT=	5826fe6
+GH_COMMIT=	a2416ca
 
 USES=		cmake pkgconfig
 USE_GITHUB=	yes
 USE_LDCONFIG=	yes
 USE_QT4=	dbus moc_build rcc_build network qmake_build qtestlib sql xml
+
+CMAKE_ARGS=	-DBUILD_WITH_QT4:BOOL=ON
 
 OPTIONS_DEFINE=		FINGERPRINT TESTS
 OPTIONS_DEFAULT=	FINGERPRINT
