@@ -38,8 +38,6 @@ HEADERFILES=	sp_func.h sp_func.h sp_events.h
 PERL_CONFIGURE_ARGS=	CC="${CC}" CCFLAGS="${CFLAGS}" PREFIX="${PREFIX}" \
 			INSTALLPRIVLIB="${PREFIX}/lib" INSTALLARCHLIB="${PREFIX}/lib"
 
-_MANPAGES+=	${PREFIX}/lib/perl5/${PERL_VER}/man/man3/Spread.3
-
 post-configure:
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' \
 		${WRKSRC}/docs/${PORTNAME}.1 ${WRKSRC}/docs/spmonitor.1
