@@ -10,8 +10,7 @@
 # MAILDROP_LOG_COLUMNS	lenght of 'File:' line in log - 8; default: 72
 
 PORTNAME=	maildrop
-PORTVERSION=	2.7.1
-PORTREVISION=	2
+PORTVERSION=	2.7.2
 CATEGORIES=	mail
 MASTER_SITES=	SF/courier/${PORTNAME}/${PORTVERSION}
 
@@ -20,7 +19,7 @@ COMMENT=	Mail delivery agent (MDA) with filtering abilities
 
 LICENSE=	GPLv3
 
-USES=		iconv shebangfix perl5 tar:bzip2
+USES=		iconv perl5 tar:bzip2
 USE_PERL5=	build
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-syslog=1 \
@@ -31,11 +30,10 @@ INSTALL_TARGET=	install-strip
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-SHEBANG_FILES=	libs/unicode/*.pl
+CONFLICTS=	courier-0.65* libunicode-[0-9]*
 
-CONFLICTS=	courier-0.65*
-
-LIB_DEPENDS+=	libpcre.so:${PORTSDIR}/devel/pcre
+LIB_DEPENDS+=	libpcre.so:${PORTSDIR}/devel/pcre \
+		libunicode.so:${PORTSDIR}/devel/courier-unicode
 
 MAILDROP_LOG_COLUMNS?=	72	# lenght of 'File:' line in log
 
@@ -75,18 +73,17 @@ MAILWRAPPER_CONFIGURE_OFF=	--enable-sendmail=/usr/sbin/sendmail
 
 .include <bsd.port.options.mk>
 
-.if defined(MAILDROP_SUID)
+.if defined(MAILDROP_SUID) && defined(MAILDROP_SGID)
+CONFIGURE_ARGS+=	--enable-maildrop-uid="${MAILDROP_SUID}" --enable-maildrop-gid="${MAILDROP_SGID}"
+PLIST_SUB+=		MMODE='6755' MUID='${MAILDROP_SUID}' MGID='${MAILDROP_SGID}'
+.elif defined(MAILDROP_SUID)
 CONFIGURE_ARGS+=	--enable-maildrop-uid="${MAILDROP_SUID}"
-PLIST_SUB+=		MSUID='' MUID='${MAILDROP_SUID}'
-.else
-PLIST_SUB+=		MSUID='@comment ' MUID='root'
-.endif
-
-.if defined(MAILDROP_SGID)
+PLIST_SUB+=		MMODE='4755' MUID='${MAILDROP_SUID}'
+.elif defined(MAILDROP_SGID)
 CONFIGURE_ARGS+=	--enable-maildrop-gid="${MAILDROP_SGID}"
-PLIST_SUB+=		MSGID='' MGID='${MAILDROP_SGID}'
+PLIST_SUB+=		MMODE='2755' MGID='${MAILDROP_SGID}'
 .else
-PLIST_SUB+=		MSGID='@comment ' MGID='mail'
+PLIST_SUB+=		MMODE='' MUID='root' MGID='mail'
 .endif
 
 .if ${PORT_OPTIONS:MFAM}
@@ -133,11 +130,5 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/libs/maildir/quotawarnmsg \
 		${STAGEDIR}${PREFIX}/etc/quotawarnmsg.sample
 	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS:S/maildir\//libs\/&/} ${STAGEDIR}${DOCSDIR}
-.if defined(MAILDROP_SUID)
-	${CHMOD} u+s ${STAGEDIR}${PREFIX}/bin/lockmail ${STAGEDIR}${PREFIX}/bin/maildrop
-.endif
-.if defined(MAILDROP_SGID)
-	${CHMOD} g+s ${STAGEDIR}${PREFIX}/bin/lockmail ${STAGEDIR}${PREFIX}/bin/maildrop
-.endif
 
 .include <bsd.port.mk>
