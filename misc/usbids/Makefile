@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	usbids
-PORTVERSION=	20140505
+PORTVERSION=	20140825
 CATEGORIES=	misc
-MASTER_SITES=	http://files.etoilebsd.net/usbids/
+MASTER_SITES=	LOCAL/sunpoet
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Database of all known IDs used in USB devices
@@ -34,12 +34,11 @@ MS_WRKSRC=	${WRKSRC}/tmp
 maketar: do-clean extract
 	@${MKDIR} ${MS_WRKSRC}/
 	@${FETCH_CMD} -o ${MS_WRKSRC}/${MS_DISTFILES} ${MS_MASTER_SITE}${MS_DISTFILES}
-	@${AWK} '/^# Version/ { gsub(/\./,"", $$3); print $$3 }' \
-		${MS_WRKSRC}/${MS_DISTFILES} > ${MS_VERSIONFILE}
+	@${AWK} '/^# Version/ { gsub(/\./, "", $$3); print $$3 }' ${MS_WRKSRC}/${MS_DISTFILES} > ${MS_VERSIONFILE}
 	@${MKDIR} ${MS_WRKSRC}/${PORTNAME}-${PORTVERSION}/ ${MS_WRKSRC}/${PORTNAME}-${MS_VERSION}/
 	@${MV} ${MS_WRKSRC}/${MS_DISTFILES} ${MS_WRKSRC}/${PORTNAME}-${MS_VERSION}/
 	@${CP} ${WRKSRC}/${MS_DISTFILES} ${MS_WRKSRC}/${PORTNAME}-${PORTVERSION}/${MS_DISTFILES}
-	@(cd ${MS_WRKSRC}/ && ${DIFF} -u ${PORTNAME}-${PORTVERSION}/${MS_DISTFILES} ${PORTNAME}-${MS_VERSION}/${MS_DISTFILES} > ${MS_DIFF}) || ${TRUE}
+	-@cd ${MS_WRKSRC}/ && ${DIFF} -u ${PORTNAME}-${PORTVERSION}/${MS_DISTFILES} ${PORTNAME}-${MS_VERSION}/${MS_DISTFILES} > ${MS_DIFF}
 	@if [ -s ${MS_DIFF} ]; then \
 		${CP} -i ${MS_DIFF} ${.CURDIR}/; \
 		cd ${MS_WRKSRC}/ && ${TAR} -Jcf ${PORTNAME}-${MS_VERSION}.tar.xz ${PORTNAME}-${MS_VERSION}/; \
