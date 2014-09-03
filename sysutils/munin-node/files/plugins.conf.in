@@ -21,30 +21,30 @@
 
 [amavis]
 env.amavislog /var/log/maillog
-env.logtail /usr/local/bin/logtail
+env.logtail %%LOCALBASE%%/bin/logtail
 
 [courier_*]
 env.logfile /var/log/maillog
-env.logtail /usr/local/bin/logtail
+env.logtail %%LOCALBASE%%/bin/logtail
 
 [dhcp3]
-env.configfile /usr/local/etc/dhcpd.conf
+env.configfile %%LOCALBASE%%/etc/dhcpd.conf
 env.leasefile /var/db/dhcpd.leases
 
 [exim*]
 group mail
-env.exim /usr/local/sbin/exim
+env.exim %%LOCALBASE%%/sbin/exim
 
 [hddtemp_smartctl]
 group operator
-env.smartctl /usr/local/sbin/smartctl
+env.smartctl %%LOCALBASE%%/sbin/smartctl
 
 [mbmon*]
-env.mbmon /usr/local/bin/mbmon
+env.mbmon %%LOCALBASE%%/bin/mbmon
 
 [mysql*]
-env.mysqladmin /usr/local/bin/mysqladmin
-env.mysqlshow /usr/local/bin/mysqlshow
+env.mysqladmin %%LOCALBASE%%/bin/mysqladmin
+env.mysqlshow %%LOCALBASE%%/bin/mysqlshow
 
 [postfix*]
 user root
@@ -53,3 +53,7 @@ env.logfile maillog
 [sendmail*]
 env.mspqueue /var/spool/clientmqueue
 env.mailstats /usr/sbin/mailstats
+
+[fail2ban*]
+user root
+env.client %%LOCALBASE%%/bin/fail2ban-client

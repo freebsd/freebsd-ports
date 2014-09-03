@@ -1,4 +1,4 @@
---- plugins/node.d/squeezebox_.in.orig	2013-07-19 16:30:03 UTC
+--- plugins/node.d/squeezebox_.in.orig	2014-04-22 19:29:32 UTC
 +++ plugins/node.d/squeezebox_.in
 @@ -157,7 +157,7 @@
  		printf "graph_order y"

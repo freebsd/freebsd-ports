@@ -3,6 +3,7 @@
 
 PORTNAME=	munin
 PORTVERSION=	${MUNIN_VERSION}
+PORTREVISION=	1
 CATEGORIES=	sysutils perl5
 MASTER_SITES=	${MUNIN_SITES}
 PKGNAMESUFFIX=	-node
@@ -20,6 +21,7 @@ RUN_DEPENDS=	p5-Cache-Cache>=0:${PORTSDIR}/devel/p5-Cache-Cache \
 		munin-common>=0:${PORTSDIR}/sysutils/munin-common \
 		p5-Net-Server>=0:${PORTSDIR}/net/p5-Net-Server \
 		p5-Net-CIDR>=0:${PORTSDIR}/net-mgmt/p5-Net-CIDR \
+		p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
 		bash:${PORTSDIR}/shells/bash
 
 USES=		gmake perl5 shebangfix
@@ -46,8 +48,9 @@ SNMP_RUN_DEPENDS+=	p5-Net-SNMP>=0:${PORTSDIR}/net-mgmt/p5-Net-SNMP
 JAVA_USE=	java=yes
 JAVA_INSTALL_TARGET=	install-plugins-java
 JAVA_BUILD=	yes
+JAVA_RUN=	yes
 
-SUB_FILES=	pkg-message
+SUB_FILES=	pkg-message plugins.conf
 USE_RC_SUBR=	munin-node munin-sched
 
 post-patch:
@@ -70,7 +73,7 @@ post-install:
 		${STAGEDIR}${PREFIX}/etc/rc.d/munin-node
 	${INSTALL_DATA} ${WRKSRC}/build/node/munin-node.conf \
 		${STAGEDIR}${ETCDIR}/munin-node.conf.sample
-	${INSTALL_DATA} ${FILESDIR}/plugins.conf \
+	${INSTALL_DATA} ${WRKDIR}/plugins.conf \
 		${STAGEDIR}${ETCDIR}/plugin-conf.d/plugins.conf.sample
 	(cd ${WRKSRC}/node/blib/bindoc; \
 		${INSTALL_MAN} munin-node-configure.1 munin-node.1 munin-run.1 munin-sched.1 munindoc.1 ${STAGEDIR}${MAN1PREFIX}/man/man1; \

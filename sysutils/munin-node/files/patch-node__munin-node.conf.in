@@ -1,4 +1,4 @@
---- node/munin-node.conf.in.orig	2013-07-19 16:30:03 UTC
+--- node/munin-node.conf.in.orig	2014-04-22 19:29:32 UTC
 +++ node/munin-node.conf.in
 @@ -10,7 +10,7 @@
  setsid 1
