@@ -2,7 +2,7 @@
 %%WWWDIR%%/app/config/acl.ini.php
 %%WWWDIR%%/app/config/bootstrap.php
 %%WWWDIR%%/app/config/core.php
-@unexec rm -f %D/%%WWWDIR%%/app/config/core.php.orig
+@rmtry %%WWWDIR%%/app/config/core.php.orig
 %%WWWDIR%%/app/config/database.php.default
 %%WWWDIR%%/app/config/inflections.php
 %%WWWDIR%%/app/config/routes.php
@@ -162,23 +162,6 @@
 %%WWWDIR%%/index.php
 %%WWWDIR%%/.htaccess
 %%CONFDIR%%/cakephp.conf
-@exec mkdir -p %D/%%WWWDIR%%/vendors
-@exec mkdir -p %D/%%WWWDIR%%/cake/scripts/templates/skel/controllers/components
-@exec mkdir -p %D/%%WWWDIR%%/cake/scripts/templates/skel/vendors
-@exec mkdir -p %D/%%WWWDIR%%/cake/scripts/templates/skel/plugins
-@exec mkdir -p %D/%%WWWDIR%%/cake/scripts/templates/skel/webroot/files
-@exec mkdir -p %D/%%WWWDIR%%/cake/scripts/templates/skel/models/behaviors
-@exec mkdir -p %D/%%WWWDIR%%/cake/scripts/templates/skel/tmp/tests
-@exec mkdir -p %D/%%WWWDIR%%/cake/scripts/templates/skel/tmp/cache/persistent
-@exec mkdir -p %D/%%WWWDIR%%/cake/scripts/templates/skel/tmp/cache/models
-@exec mkdir -p %D/%%WWWDIR%%/cake/scripts/templates/skel/tmp/cache/views
-@exec mkdir -p %D/%%WWWDIR%%/cake/scripts/templates/skel/tmp/logs
-@exec mkdir -p %D/%%WWWDIR%%/cake/scripts/templates/skel/tmp/sessions
-@exec mkdir -p %D/%%WWWDIR%%/cake/scripts/templates/skel/views/pages
-@exec mkdir -p %D/%%WWWDIR%%/cake/scripts/templates/skel/views/helpers
-@exec mkdir -p %D/%%WWWDIR%%/cake/scripts/templates/skel/views/elements
-@exec mkdir -p %D/%%WWWDIR%%/cake/scripts/templates/skel/views/errors
-@exec mkdir -p %D/%%WWWDIR%%/app/webroot/files
 @dirrm %%WWWDIR%%/vendors
 @dirrm %%WWWDIR%%/cake/scripts/templates/views
 @dirrm %%WWWDIR%%/cake/scripts/templates/skel/webroot/js
