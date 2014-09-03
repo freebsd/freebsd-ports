@@ -55,7 +55,7 @@ CFLAGS+=	-fPIC
 .endif
 
 .if exists(${LOCALBASE}/include/mapi.h)
-IGNORE=	build fails when ${LOCALBASE}/include/mapi.h exists in system, run pkg_info -W ${LOCALBASE}/include/mapi.h to find the offending port and uninstall it, then install ${PORTNAME} and reinstall the port that installed mapi.h
+IGNORE=	build fails when ${LOCALBASE}/include/mapi.h exists in system, run pkg which ${LOCALBASE}/include/mapi.h to find the offending port and uninstall it, then install ${PORTNAME} and reinstall the port that installed mapi.h
 .endif
 
 post-patch:
@@ -65,5 +65,7 @@ post-patch:
 		-e 's|-DG_DISABLE_DEPRECATED||g' \
 		-e 's|-Wmissing-include-dirs||g' \
 		${WRKSRC}/configure
+	@${REINPLACE_CMD} '/g_thread_init/d' \
+		${WRKSRC}/tools/ximian-connector-setup.c
 
 .include <bsd.port.post.mk>
