@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	bsddb3
-PORTVERSION=	6.0.1
-PORTREVISION=	1
+PORTVERSION=	6.1.0
 CATEGORIES=	databases python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,10 +12,9 @@ COMMENT=	Python extension module for BerkeleyDB 3 and 4
 
 LICENSE=	BSD3CLAUSE
 
-USE_BDB=	43+
-USE_PYTHON=		yes
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
+USE_BDB=	yes
+USES=		python
+USE_PYTHON=	distutils autoplist
 
 PYDISTUTILS_CONFIGUREARGS=--libs="-l${BDB_LIB_NAME}" --berkeley-db=${LOCALBASE}
 PYDISTUTILS_BUILDARGS=	--libs="-l${BDB_LIB_NAME}" --berkeley-db=${LOCALBASE}
@@ -33,5 +31,6 @@ post-patch:
 post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	(cd ${WRKSRC}/docs && ${COPYTREE_SHARE} \* ${STAGEDIR}${DOCSDIR})
+	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/bsddb3/_pybsddb.so
 
 .include <bsd.port.mk>
