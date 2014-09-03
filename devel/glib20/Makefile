@@ -28,7 +28,7 @@ USE_LDCONFIG=	yes
 # (wchar_t is used by glibmm, rawtherapee triggered this)
 USES+=		gettext gmake iconv:wchar_t libtool pathfix perl5 \
 		pkgconfig python shebangfix
-PYTHON_FEATURES=	py3kplist
+USE_PYTHON=	py3kplist
 CONFIGURE_ARGS=	--disable-gtk-doc --with-html-dir=${PREFIX}/share/doc \
 		--disable-man --without-xml-catalog \
 		--enable-static \
