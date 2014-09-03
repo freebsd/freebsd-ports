@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	filters
-PORTVERSION=	2.49
+PORTVERSION=	2.50
 CATEGORIES=	games perl5
 MASTER_SITES=	http://ftp.debian.org/debian/pool/main/f/filters/ \
 		CRITICAL
@@ -15,7 +15,6 @@ CONFLICTS=	talkfilters-[0-9]* jive-[0-9]* chef-[0-9]* kenny-[0-9]* \
 		lolcat-[0-9]*
 
 USES=		shebangfix gmake perl5
-USE_GCC=	any
 MAKE_JOBS_UNSAFE=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
