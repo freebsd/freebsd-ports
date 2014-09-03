@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gpa
-PORTVERSION=	0.9.4
+PORTVERSION=	0.9.5
 CATEGORIES=	security
 MASTER_SITES=	GNUPG/gpa
 
@@ -19,9 +19,9 @@ RUN_DEPENDS=	gpgv2:${PORTSDIR}/security/gnupg
 
 USES=		gmake pkgconfig tar:bzip2
 USE_GNOME=	gtk20
+
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV+=	GPGKEYS_LDAP="${LOCALBASE}/libexec/gpg2keys_ldap" \
-		GPG="${LOCALBASE}/bin/gpg2"
+CONFIGURE_ENV+=	GPGKEYS_LDAP="${LOCALBASE}/libexec/gpg2keys_ldap"
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
