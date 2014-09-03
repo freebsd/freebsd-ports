@@ -805,7 +805,6 @@ GNUstep/System/Tools/set_show_service
 GNUstep/System/Library/Headers/AppKit/NSTreeController.h
 GNUstep/System/Library/Images/NSAddTemplate.tiff
 GNUstep/System/Library/Images/common_Info.tiff
-@exec mkdir -p %D/GNUstep/System/Library/Themes
 @dirrm GNUstep/System/Library/Themes
 @dirrm GNUstep/System/Library/Services/GSspell.service/Resources
 @dirrm GNUstep/System/Library/Services/GSspell.service
