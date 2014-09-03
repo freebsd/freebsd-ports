@@ -1,0 +1,20 @@
+--- docs/Makefile.in.orig	Thu Apr 10 15:31:21 2003
++++ docs/Makefile.in	Thu Jan  8 00:25:29 2004
+@@ -41,7 +41,9 @@
+ 	$(INSTALL_PROG) -c -m 0644 hmrc.4 $(mandir)/man4
+ 
+ install.html:
++.if !defined(NOPORTDOCS)
+ 	@(if [ ! -d $(htmldir) ]; then mkdir -p $(htmldir); fi)
++	@(if [ ! -d $(imagedir) ]; then mkdir -p $(imagedir); fi)
+ 	$(INSTALL_PROG) -c -m 0644 hr.yellow.png $(htmldir)
+ 	$(INSTALL_PROG) -c -m 0644 hypermail.png $(htmldir)
+ 	$(INSTALL_PROG) -c -m 0644 stars.png $(htmldir)
+@@ -50,6 +52,7 @@
+ 	$(INSTALL_PROG) -c -m 0644 hypermail-faq.html $(htmldir)
+ 	$(INSTALL_PROG) -c -m 0644 customizing.html $(htmldir)
+ 	$(INSTALL_PROG) -c -m 0644 hmrc.html $(htmldir)
++.endif
+ 
+ clean:
+ clobber:
