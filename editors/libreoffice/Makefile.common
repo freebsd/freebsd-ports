@@ -57,7 +57,7 @@ post-extract:
 
 do-install:
 	@${RM} -f ${PLISTD} ${PLISTF}
-	cd ${WRKSRC}/opt/${PORTNAME}${PORTVERSION:R} ; ${FIND} * -type d -exec ${ECHO_CMD} "@unexec ${RMDIR} %D/lib/${PORTNAME}/{} || ${TRUE}" \; >> ${PLISTD}
+	cd ${WRKSRC}/opt/${PORTNAME}${PORTVERSION:R} ; ${FIND} * -type d -exec ${ECHO_CMD} "@dirrmtry lib/${PORTNAME}/{}" \; >> ${PLISTD}
 	cd ${WRKSRC}/opt/${PORTNAME}${PORTVERSION:R} ; ${FIND} * \( -type f -o -type l \) -exec ${ECHO_CMD} "lib/${PORTNAME}/{} " \; >> ${PLISTF}
 
 	${SORT} ${PLISTF} >> ${TMPPLIST}
