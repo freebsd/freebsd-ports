@@ -101,18 +101,19 @@ CONFIGURE_ARGS+=	--enable-exception-hook
 
 .if ${PORT_OPTIONS:MAUTH_BASIC} || ${PORT_OPTIONS:MAUTH_DIGEST}
 .  if !${APACHE_MODULES:MAUTHN*}
-IGNORE=	AUTH_BASIC and AUTH_DIGEST need at last one AUTHN provider	
-.  endif	
+IGNORE=	AUTH_BASIC and AUTH_DIGEST need at least one AUTHN provider
+.  endif
 .endif
 
 .if ${PORT_OPTIONS:MAUTH_BASIC}
 .  if !${APACHE_MODULES:MAUTHZ*}
-IGNORE=	AUTH_BASIC need at last one AUTHZ provider	
-.  endif	
+IGNORE=	AUTH_BASIC need at least one AUTHZ provider
+.  endif
 .endif
 
 .if defined(APR_HAS_THREADS)
-LDFLAGS+=	-pthread
+CFLAGS+=	${PTHREAD_CFLAGS}
+LDFLAGS+=	${PTHREAD_LIBS}
 .else
 .  if exists(${APR_CONFIG}) && ${PORT_OPTIONS:MMEM_CACHE}
 IGNORE=	MEM_CACHE requires APR threads. Please rebuild APR with THREAD support
