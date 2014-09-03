@@ -5,7 +5,6 @@ PORTNAME=	json-c
 PORTVERSION=	0.12
 PORTREVISION=	1
 CATEGORIES=	devel
-#MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/archive/
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	JSON (JavaScript Object Notation) implementation in C
