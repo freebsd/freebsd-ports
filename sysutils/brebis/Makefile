@@ -12,15 +12,14 @@ COMMENT=	Fully automated backup checker
 
 LICENSE=	GPLv3
 
-USE_PYTHON=	3.3+
-USE_PYDISTUTILS=	yes
+USES=	python:3.3+
+USE_PYTHON=	distutils noegginfo
 
 # XXX Handle UTF-8 '(c)' character within setup.py's header
 MAKE_ENV+=	LC_ALL=en_US.UTF-8
 
 PLIST_SUB+=	PYTHON_SUFFIX=${PYTHON_SUFFIX} \
 		PYDISTUTILS_EGGINFO=${PYDISTUTILS_EGGINFO}
-PYDISTUTILS_NOEGGINFO=	yes
 
 PORTDOCS=	README
 
