@@ -755,29 +755,29 @@ Notes:
     <affects>
       <package>
 	<name>apache22</name>
-	<range><gt>2.2.0</gt><lt>2.2.27_6</lt></range>
+	<range><gt>2.2.0</gt><lt>2.2.29</lt></range>
       </package>
       <package>
 	<name>apache22-event-mpm</name>
-	<range><gt>2.2.0</gt><lt>2.2.27_6</lt></range>
+	<range><gt>2.2.0</gt><lt>2.2.29</lt></range>
       </package>
       <package>
 	<name>apache22-itk-mpm</name>
-	<range><gt>2.2.0</gt><lt>2.2.27_6</lt></range>
+	<range><gt>2.2.0</gt><lt>2.2.29</lt></range>
       </package>
       <package>
 	<name>apache22-peruser-mpm</name>
-	<range><gt>2.2.0</gt><lt>2.2.27_6</lt></range>
+	<range><gt>2.2.0</gt><lt>2.2.29</lt></range>
       </package>
       <package>
 	<name>apache22-worker-mpm</name>
-	<range><gt>2.2.0</gt><lt>2.2.27_6</lt></range>
+	<range><gt>2.2.0</gt><lt>2.2.29</lt></range>
       </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
 	<p>Apache HTTP SERVER PROJECT reports:</p>
-	<blockquote cite="http://svn.apache.org/viewvc/httpd/httpd/branches/2.2.x/CHANGES?revision=1611816&amp;view=markup">
+	  <blockquote cite="http://www.apache.org/dist/httpd/CHANGES_2.2.29">
 	  <p> mod_deflate: The DEFLATE input filter (inflates request bodies) now
 	    limits the length and compression ratio of inflated request bodies to
 	    avoid denial of service via highly compressed bodies.  See directives
@@ -791,6 +791,10 @@ Notes:
 	    communication with scripts.</p>
 	  <p>Fix a race condition in scoreboard handling, which could lead to a heap
 	    buffer overflow.</p>
+	  <p>core: HTTP trailers could be used to replace HTTP headers late during
+	    request processing, potentially undoing or otherwise confusing modules
+	    that examined or modified request headers earlier.  Adds "MergeTrailers"
+	    directive to restore legacy behavior.</p>
 	</blockquote>
       </body>
     </description>
@@ -798,10 +802,12 @@ Notes:
       <cvename>CVE-2014-0118</cvename>
       <cvename>CVE-2014-0231</cvename>
       <cvename>CVE-2014-0226</cvename>
+      <cvename>CVE-2013-5704</cvename>
     </references>
     <dates>
       <discovery>2014-07-19</discovery>
       <entry>2014-07-24</entry>
+      <modified>2014-09-03</modified>
     </dates>
   </vuln>
 
