@@ -3,34 +3,52 @@
 
 PORTNAME=	imgv
 PORTVERSION=	3.1.6
-PORTREVISION=	2
+DISTVERSIONSUFFIX=	-src
+PORTREVISION=	3
 CATEGORIES=	graphics python
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}%20${PORTVERSION}
-EXTRACT_SUFX=	-src.tar.gz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Unique and feature rich Image Viewer
 
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/pygame/__init__.py:${PORTSDIR}/devel/py-game \
-		${PYTHON_SITELIBDIR}/PIL/__init__.py:${PORTSDIR}/graphics/py-imaging
+LICENSE=	GPLv2
 
-USE_PYTHON=	yes
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}game>0:${PORTSDIR}/devel/py-game \
+		${PYTHON_PKGNAMEPREFIX}imaging>0:${PORTSDIR}/graphics/py-imaging
+
+NO_ARCH=	yes
 NO_BUILD=	yes
 
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+
+USES=		python:run shebangfix
+SHEBANG_FILES=	imgv.py
+python_OLD_CMD=	/usr/bin/env python
+python_CMD=	${PYTHON_CMD}
 
 post-patch:
-	${REINPLACE_CMD} -e 's,%%DATADIR%%,${DATADIR},' ${WRKSRC}/gl.py
+	@${REINPLACE_CMD} -e \
+		's|%%DATADIR%%|${DATADIR}|' ${WRKSRC}/gl.py
+
+do-configure:
+	@${ECHO_CMD} -n > ${WRKSRC}/__init__.py
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/imgv.py ${PREFIX}/bin/imgv
-	${RM} -f ${WRKSRC}/imgv.py ${WRKSRC}/setup.py
-	${MKDIR} ${DATADIR}/data
-	${INSTALL_DATA} ${WRKSRC}/data/* ${DATADIR}/data
-	${MKDIR} ${PYTHON_SITELIBDIR}/imgv/
-	${TOUCH} ${PYTHON_SITELIBDIR}/imgv/__init__.py
-	${INSTALL_DATA} ${WRKSRC}/*.py ${PYTHON_SITELIBDIR}/imgv/
-	${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${PYTHON_SITELIBDIR}/imgv/
+	(cd ${WRKSRC} && ${INSTALL_SCRIPT} imgv.py \
+		${STAGEDIR}${PREFIX}/bin/imgv)
+	@${MKDIR} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/imgv
+	(cd ${WRKSRC} && ${FIND} . -maxdepth 1 -type f \
+		-name "*.py" -a ! -name "setup.py" -a ! -name "imgv.py" | \
+		${XARGS} -J % ${INSTALL_DATA} % \
+		${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/imgv)
+	@${MKDIR} ${STAGEDIR}${DATADIR}/data
+	(cd ${WRKSRC}/data && ${INSTALL_DATA} * \
+		${STAGEDIR}${DATADIR}/data)
+	@(cd ${STAGEDIR}${PREFIX} && ${PYTHON_CMD} -m compileall \
+		-d ${PYTHONPREFIX_SITELIBDIR} \
+		-f ${PYTHONPREFIX_SITELIBDIR:S;${PREFIX}/;;})
+	@(cd ${STAGEDIR}${PREFIX} && ${PYTHON_CMD} -O -m compileall \
+		-d ${PYTHONPREFIX_SITELIBDIR} \
+		-f ${PYTHONPREFIX_SITELIBDIR:S;${PREFIX}/;;})
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
