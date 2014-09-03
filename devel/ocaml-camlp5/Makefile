@@ -32,6 +32,7 @@ STRICT_DESC=		New syntax tree quotations kit
 
 OPTIONS_DEFINE=	DOCS
 
+DOCSDIR=	${OCAML_DOCSDIR}/${PORTNAME}
 PORTDOCS=	CHANGES DEVEL ICHANGES INSTALL MODE README UPGRADING
 
 MAKE_JOBS_UNSAFE= yes
@@ -44,15 +45,6 @@ CONFIGURE_ARGS+=	--transitional
 CONFIGURE_ARGS+=	--strict
 .endif
 ALL_TARGET=	world.opt
-
-MLINKS=		camlp5.1 camlp5o.1 \
-		camlp5.1 camlp5o.opt.1 \
-		camlp5.1 camlp5r.1 \
-		camlp5.1 camlp5r.opt.1 \
-		camlp5.1 camlp5sch.1 \
-		camlp5.1 mkcamlp5.1 \
-		camlp5.1 mkcamlp5.opt.1 \
-		camlp5.1 ocpp5.1
 
 post-install:
 .if ${PORT_OPTIONS:MDOCS}
