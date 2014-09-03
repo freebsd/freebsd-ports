@@ -587,44 +587,12 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #				  Installs all directories and files from ${WRKSRC}/doc
 #				  to ${DOCSDIR} except sed backup files.
 #
-# Set the following to specify all manpages that your port installs.
-# These manpages will be automatically listed in ${PLIST}.  Depending
-# on the setting of NO_MANCOMPRESS, the make rules will compress the
-# manpages for you.
-#
-# MAN<sect>		- A list of manpages, categorized by section.  For
-#				  example, if your port has "man/man1/foo.1" and
-#				  "man/mann/bar.n", set "MAN1=foo.1" and "MANN=bar.n".
-#				  The available sections chars are "123456789LN".
-# MAN<sect>_<lang>
-#				- If your port does not install all man pages for all
-#				  languages in MANLANG, language specific pages for
-#				  a language can be specified with this. For example,
-#				  if the port installs foo.1 in English, Japanese, and
-#				  German, bar.1 in English only, and baz.3 in German
-#				  only, set
-#					MANLANG=	"" de ja
-#					MAN1=		foo.1
-#					MAN1_EN=	bar.1
-#					MAN3_DE=	baz.3
-# MLINKS		- A list of <source, target> tuples for creating links
-#				  for manpages.  For example, "MLINKS= a.1 b.1 c.3 d.3"
-#				  will do an "ln -sf a.1 b.1" and "ln -sf c.3 d.3" in
-#				  appropriate directories.  (Use this even if the port
-#				  installs its own manpage links so they will show up
-#				  correctly in ${PLIST}.)
 # MANPREFIX		- The directory prefix for ${MAN<sect>} and ${MLINKS}.
 #				  Default: ${PREFIX}
 # MAN<sect>PREFIX
 #				- If manual pages of some sections install in different
 #				  locations than others, use these.
 #				  Default: ${MANPREFIX}
-# MANCOMPRESSED	- This variable can take values "yes", "no" or
-#				  "maybe".  "yes" means manpages are installed
-#				  compressed; "no" means they are not; "maybe" means
-#				  it changes depending on the value of NO_MANCOMPRESS.
-#				  Default: "yes" if USES=imake is set without the noman
-#				  argument, and "no" otherwise.
 #
 # Set the following to specify all .info files your port installs.
 #
@@ -1039,10 +1007,6 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #
 # For package:
 #
-# NO_LATEST_LINK
-#				- Do not install the "Latest" link for package.  Define this
-#				  if this port is a beta version of another stable port
-#				  which is also in the tree.
 # LATEST_LINK	- Install the "Latest" link for the package as ___.  Define
 #				  this if the "Latest" link name will be incorrectly determined.
 #
@@ -2829,101 +2793,6 @@ MAN${sect}PREFIX?=	${MANPREFIX}
 MANLPREFIX?=	${MANPREFIX}
 MANNPREFIX?=	${MANPREFIX}
 
-MANLANG?=	""	# english only by default
-
-.if !defined(NO_MANCOMPRESS)
-MANEXT=	.gz
-.endif
-
-.if (defined(MLINKS) || defined(_MLINKS_PREPEND)) && !defined(_MLINKS)
-
-.if defined(.PARSEDIR)
-_MLINKS=	 ${_MLINKS_PREPEND} \
-		 ${MANLANG:S,^,man/,:S,/"",,:@m@${MLINKS:@p@${MAN${p:E:C/(.).*/\1/g}PREFIX}/$m/man${p:E:C/(.).*/\1/g}/$p${MANEXT}@}@}
-.else
-__pmlinks!=	${ECHO_CMD} '${MLINKS:S/	/ /}' | ${AWK} \
- '{ if (NF % 2 != 0) { print "broken"; exit; } \
-	for (i=1; i<=NF; i++) { \
-		if ($$i ~ /^-$$/ && i != 1 && i % 2 != 0) \
-			{ $$i = $$(i-2); printf " " $$i " "; } \
-		else if ($$i ~ /^[^ ]+\.[1-9ln][^. ]*$$/ || $$i ~ /^\//) \
-			printf " " $$i " "; \
-		else \
-			{ print "broken"; exit; } \
-	} \
-  }' | ${SED} -e 's \([^/ ][^ ]*\.\(.\)[^. ]*\) $${MAN\2PREFIX}/$$$$$$$${__lang}/man\2/\1${MANEXT}g' -e 's/ //g' -e 's/MANlPREFIX/MANLPREFIX/g' -e 's/MANnPREFIX/MANNPREFIX/g'
-.if ${__pmlinks:Mbroken} == "broken"
-check-makevars::
-	@${ECHO_MSG} "${PKGNAME}: Makefile error: unable to parse MLINKS."
-	@${FALSE}
-.endif
-_MLINKS=	${_MLINKS_PREPEND}
-
-.for lang in ${MANLANG:S%^%man/%:S%^man/""$%man%}
-.for ___pmlinks in ${__pmlinks}
-.for __lang in ${lang}
-_MLINKS+=	${___pmlinks:S// /g}
-.endfor
-.endfor
-.endfor
-.endif
-.endif
-_COUNT=0
-.for ___tpmlinks in ${_MLINKS}
-.if ${_COUNT} == "1"
-_TMLINKS+=	${___tpmlinks}
-_COUNT=0
-.else
-_COUNT=1
-.endif
-.endfor
-
-.for manlang in ${MANLANG:S%^%man/%:S%^man/""$%man%}
-
-.for sect in 1 2 3 4 5 6 7 8 9 L N
-# MAN${sect} is for man pages installed for all languages in MANLANG for a given
-# section.
-.if defined(MAN${sect})
-_MANPAGES+=	${MAN${sect}:S%^%${MAN${sect}PREFIX}/${manlang}/man${sect:tl}/%}
-.endif
-
-# Language specific MAN${sect} variables are for man pages installed in that
-# language, but not necessarily all languages in MANLANG.
-.if defined(MAN${sect}_${manlang:S%^man/%%:tu})
-_MANPAGES+=	${MAN${sect}_${manlang:S%^man/%%:tu}:S%^%${MAN${sect}PREFIX}/${manlang}/man${sect:tl}/%}
-.endif
-
-.endfor
-
-.endfor
-
-# Special case for English, since it is defined with "" in MANLANG rather than
-# a language name and does not have man pages installed in a lang subdirectory
-# of MAN${sect}PREFIX.
-.for sect in 1 2 3 4 5 6 7 8 9 L N
-.if defined(MAN${sect}_EN)
-_MANPAGES+=	${MAN${sect}_EN:S%^%${MAN${sect}PREFIX}/man/man${sect:tl}/%}
-.endif
-.endfor
-
-.if !defined(_TMLINKS)
-_TMLINKS=
-.endif
-
-.if defined(_MANPAGES)
-
-.if defined(NO_MANCOMPRESS)
-__MANPAGES:=	${_MANPAGES:S%^${PREFIX}/%%}
-.else
-__MANPAGES:=	${_MANPAGES:S%^${PREFIX}/%%:S%$%.gz%}
-.endif
-
-.if ${MANCOMPRESSED} == "yes"
-_MANPAGES:=	${_MANPAGES:S%$%.gz%}
-.endif
-
-.endif
-
 .if ${PREFIX} == /usr
 INFO_PATH?=	share/info
 .else
@@ -3781,24 +3650,14 @@ do-package: ${TMPPLIST}
 # Some support rules for do-package
 
 .if !target(delete-package)
-delete-package: delete-package-links
+delete-package:
 	@${ECHO_MSG} "===>  Deleting package for ${PKGNAME}"
 # When staging, the package may only be in the workdir if not root
 	@${RM} -f ${PKGFILE} ${WRKDIR}/pkg/${PKGNAME}${PKG_SUFX} 2>/dev/null || :
 .endif
 
-.if !target(delete-package-links-list)
-delete-package-links-list:
-	@for cat in ${CATEGORIES}; do \
-		${ECHO_CMD} ${RM} -f ${PACKAGES}/$$cat/${PKGNAME}${PKG_SUFX}; \
-	done
-.if !defined(NO_LATEST_LINK)
-	@${ECHO_CMD} ${RM} -f ${PKGLATESTFILE}
-.endif
-.endif
-
 .if !target(delete-package-list)
-delete-package-list: delete-package-links-list
+delete-package-list:
 	@${ECHO_CMD} "[ -f ${PKGFILE} ] && (${ECHO_CMD} deleting ${PKGFILE}; ${RM} -f ${PKGFILE})"
 .endif
 
