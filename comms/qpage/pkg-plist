@@ -1,4 +1,4 @@
 bin/qpage
 @sample etc/qpage.conf.sample
 man/man1/qpage.1.gz
-@dirrmtry(uucp,dialer,) /var/spool/qpage
+@dirrmtry(uucp,dialer,0775) /var/spool/qpage
