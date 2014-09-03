@@ -1,0 +1,12 @@
+--- src/transport/Makefile.in.orig
++++ src/transport/Makefile.in
+@@ -1921,7 +1921,8 @@
+  gnunet-transport-certificate-creation.c
+ 
+ gnunet_transport_certificate_creation_LDADD = \
+-  $(top_builddir)/src/util/libgnunetutil.la
++  $(top_builddir)/src/util/libgnunetutil.la \
++  $(GN_LIBINTL)
+ 
+ gnunet_helper_transport_wlan_SOURCES = \
+  gnunet-helper-transport-wlan.c

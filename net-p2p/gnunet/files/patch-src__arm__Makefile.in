@@ -1,0 +1,12 @@
+--- src/arm/Makefile.in.orig
++++ src/arm/Makefile.in
+@@ -668,7 +668,8 @@
+   mockup-service.c
+ 
+ mockup_service_LDADD = \
+- $(top_builddir)/src/util/libgnunetutil.la  
++  $(top_builddir)/src/util/libgnunetutil.la \
++  $(GN_LIBINTL)
+ 
+ @HAVE_PYTHON_TRUE@check_SCRIPTS = \
+ @HAVE_PYTHON_TRUE@ test_gnunet_arm.py

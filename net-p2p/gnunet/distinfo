@@ -1,2 +1,4 @@
-SHA256 (gnunet-0.9.3.tar.gz) = 50586ba4f82c4890f191bd79b1bb6504a5e9b9f90371f0c011879f25f9cef15e
-SIZE (gnunet-0.9.3.tar.gz) = 6518731
+SHA256 (gnunet-0.10.1.tar.gz) = f65cbbf9678d5b009b0a9ab2f2a29f8c956a3a23594fb404b10bbfc947fd9d13
+SIZE (gnunet-0.10.1.tar.gz) = 5022047
+SHA256 (gnurl-7.37.0.tar.gz) = cd5d14769c28b84aabef7a4b3cfabf06a4ae31acd320647f3175ee61604c58d0
+SIZE (gnurl-7.37.0.tar.gz) = 3377006

@@ -1,0 +1,52 @@
+--- src/dht/Makefile.in.orig
++++ src/dht/Makefile.in
+@@ -754,7 +754,8 @@
+   $(top_builddir)/src/block/libgnunetblock.la \
+   $(top_builddir)/src/datacache/libgnunetdatacache.la \
+   $(top_builddir)/src/util/libgnunetutil.la \
+-  -lm
++  -lm \
++  $(LTLIBINTL)
+ 
+ gnunet_service_dht_xvine_SOURCES = \
+  gnunet-service-xdht.c gnunet-service-xdht.h \
+@@ -776,7 +777,8 @@
+   $(top_builddir)/src/block/libgnunetblock.la \
+   $(top_builddir)/src/datacache/libgnunetdatacache.la \
+   $(top_builddir)/src/util/libgnunetutil.la \
+-  -lm
++  -lm \
++  $(LTLIBINTL)
+ 
+ gnunet_dht_get_SOURCES = \
+  gnunet-dht-get.c
+@@ -784,7 +786,8 @@
+ gnunet_dht_get_LDADD = \
+   $(top_builddir)/src/dht/libgnunetdht.la \
+   $(top_builddir)/src/core/libgnunetcore.la \
+-  $(top_builddir)/src/util/libgnunetutil.la
++  $(top_builddir)/src/util/libgnunetutil.la \
++  $(LTLIBINTL)
+ 
+ gnunet_dht_get_DEPENDENCIES = \
+   libgnunetdht.la
+@@ -795,7 +798,8 @@
+ gnunet_dht_put_LDADD = \
+   $(top_builddir)/src/dht/libgnunetdht.la \
+   $(top_builddir)/src/core/libgnunetcore.la \
+-  $(top_builddir)/src/util/libgnunetutil.la
++  $(top_builddir)/src/util/libgnunetutil.la \
++  $(LTLIBINTL)
+ 
+ gnunet_dht_put_DEPENDENCIES = \
+   libgnunetdht.la
+@@ -806,7 +810,8 @@
+ gnunet_dht_monitor_LDADD = \
+   $(top_builddir)/src/dht/libgnunetdht.la \
+   $(top_builddir)/src/core/libgnunetcore.la \
+-  $(top_builddir)/src/util/libgnunetutil.la
++  $(top_builddir)/src/util/libgnunetutil.la \
++  $(LTLIBINTL)
+ 
+ gnunet_dht_monitor_DEPENDENCIES = \
+   libgnunetdht.la

@@ -1,0 +1,12 @@
+--- src/nat/Makefile.in.orig
++++ src/nat/Makefile.in
+@@ -657,7 +657,8 @@
+ 
+ gnunet_nat_server_LDADD = \
+   $(top_builddir)/src/nat/libgnunetnat.la \
+-  $(top_builddir)/src/util/libgnunetutil.la
++  $(top_builddir)/src/util/libgnunetutil.la \
++  $(GN_LIBINTL)
+ 
+ gnunet_nat_server_DEPENDENCIES = \
+   libgnunetnat.la
