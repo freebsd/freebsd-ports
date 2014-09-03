@@ -1,4 +1,4 @@
---- plugins/node.d.freebsd/if_.in.orig	2013-07-19 16:30:03 UTC
+--- plugins/node.d.freebsd/if_.in.orig	2014-04-22 19:29:32 UTC
 +++ plugins/node.d.freebsd/if_.in
 @@ -83,9 +83,12 @@
  	if (NF == 10) { 
