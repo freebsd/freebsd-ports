@@ -3,5 +3,5 @@ bin/nut
 man/man1/nut.1.gz
 %%FLTK%%share/pixmaps/nuticon.xpm
 %%DATADIR%%/WEIGHT.lib
-%%DATADIR%%/sr26.nut
+%%DATADIR%%/sr27.nut
 @dirrmtry %%DATADIR%%
