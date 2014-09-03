@@ -19,6 +19,7 @@ ONLY_FOR_ARCHS=	i386 amd64
 USES=		gmake perl5
 USE_OCAML=	yes
 USE_OCAML_FINDLIB=	yes
+OCAML_PKGDIRS=
 GNU_CONFIGURE=	yes
 MAKE_JOBS_UNSAFE=yes
 
@@ -86,5 +87,9 @@ do-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	@${RM} -rf ${WRKSRC}/doc/cilcode.tmp
 	(cd ${WRKSRC}/doc && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR})
+
+# Workaround bsd.ocaml.mk to fix packaging
+add-plist-post:
+	@${DO_NADA}
 
 .include <bsd.port.mk>
