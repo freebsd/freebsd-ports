@@ -30,6 +30,7 @@ lib/why3/plugins/tptp.cmo
 lib/why3/plugins/tptp.cmxs
 lib/why3/why3-call-pvs
 lib/why3/why3-cpulimit
+%%PORTDOCS%%%%DOCSDIR%%/manual.pdf
 %%DATADIR%%/drivers/alt_ergo.drv
 %%DATADIR%%/drivers/alt_ergo_0.92.drv
 %%DATADIR%%/drivers/alt_ergo_0.93.drv
@@ -188,6 +189,7 @@ lib/why3/why3-cpulimit
 @dirrm %%OCAML_SITELIBDIR%%/why3
 @dirrm lib/why3/plugins
 @dirrm lib/why3
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%DATADIR%%/drivers
 @dirrm %%DATADIR%%/emacs
 @dirrm %%DATADIR%%/images/boomy

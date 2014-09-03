@@ -22,10 +22,6 @@ USE_OCAML=	yes
 ALL_TARGET=	all ledit.opt
 MAKE_JOBS_UNSAFE=	yes
 
-PLIST_FILES=	bin/ledit \
-		man/man1/ledit.1.gz
-PORTDOCS=	CHANGES README
-
 OPTIONS_DEFINE=	DOCS
 
 do-configure:
@@ -37,6 +33,7 @@ do-configure:
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/ledit
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/CHANGES ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
