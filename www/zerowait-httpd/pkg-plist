@@ -1,4 +1,3 @@
-@stopdaemon 0W-httpd
 bin/convert-geoip
 bin/convert-ranges
 bin/update-countries.sh
@@ -6,18 +5,9 @@ etc/0W-httpd/countries
 etc/0W-httpd/countries.ips
 etc/0W-httpd/countries.rus
 @sample etc/0W-httpd/httpd.conf.sample
-@group %%WWWGRP%%
-@owner %%WWWOWN%%
-@mode 6755
-sbin/0W-httpd
-@mode
-@exec install -d -o %%WWWOWN%% -g %%WWWGRP%% %D/0W-httpd/pids
-@exec install -d -o %%WWWOWN%% -g %%WWWGRP%% %D/0W-httpd/data
-@exec install -d -o %%WWWOWN%% -g %%WWWGRP%% %D/0W-httpd/logs
-@dirrmtry 0W-httpd/pids
-@dirrmtry 0W-httpd/data
-@dirrmtry 0W-httpd/logs
-@owner
-@group
+@(%%WWWOWN%%,%%WWWGRP%%,6755) sbin/0W-httpd
+@dirrmtry(%%WWWOWN%%,%%WWWGRP%%,) 0W-httpd/pids
+@dirrmtry(%%WWWOWN%%,%%WWWGRP%%,) 0W-httpd/data
+@dirrmtry(%%WWWOWN%%,%%WWWGRP%%,) 0W-httpd/logs
 @dirrmtry etc/0W-httpd
 @dirrmtry 0W-httpd
