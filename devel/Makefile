@@ -258,6 +258,7 @@
     SUBDIR += cons
     SUBDIR += cons-test
     SUBDIR += cook
+    SUBDIR += courier-unicode
     SUBDIR += covtool
     SUBDIR += cowlib
     SUBDIR += cpan-upload
