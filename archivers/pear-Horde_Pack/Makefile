@@ -2,7 +2,7 @@
 
 PORTNAME=	Horde_Pack
 PORTVERSION=	1.0.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	archivers www pear
 PKGNAMEPREFIX=	pear-
 
@@ -11,8 +11,6 @@ COMMENT=	Horde Pack Utility
 
 USE_HORDE_RUN=	Horde_Compress_Fast \
 		Horde_Exception
-
-PATCH_WRKSRC=	${WRKDIR}
 
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/devel/pear-channel-horde/bsd.horde.mk"
