@@ -5,8 +5,7 @@ PORTNAME=	hydra
 PORTVERSION=	0.1.8
 PORTREVISION=	9
 CATEGORIES=	www
-MASTER_SITES=	http://mirror.inerd.com/FreeBSD/distfiles/${PORTNAME}/ \
-		ftp://ftp.hellug.gr/pub/software/hydra/
+MASTER_SITES=	http://hydra.hellug.gr/download/
 PKGNAMESUFFIX=	-web
 
 MAINTAINER=	ports@FreeBSD.org
@@ -14,38 +13,41 @@ COMMENT=	High performance multi-threaded web server
 
 LIB_DEPENDS=	libgnutls.so:${PORTSDIR}/security/gnutls
 
+USES=		perl5 pkgconfig shebangfix
+SHEBANG_FILES=	src/webindex.pl
 USE_RC_SUBR=	hydra
-
-CONFLICTS_INSTALL=	hydra-[0-9]*
+USE_PERL5=	run
 GNU_CONFIGURE=	yes
 
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+CFLAGS+=	-DENABLE_SSL -DHAVE_LIBGNUTLS
+CPPFLAGS+=	$$(pkg-config --cflags gnutls)
+LDFLAGS+=	$$(pkg-config --libs gnutls)
+
+PLIST_SUB=	LOGDIR="${LOGDIR}"
+
+SUB_FILES=	pkg-deinstall
+SUB_LIST=	LOGDIR="${LOGDIR}"
+
+CONFLICTS_INSTALL=	hydra-[0-9]*
 
 LOGDIR?=	/var/log/hydra
 
-SUB_FILES=	pkg-deinstall
-PLIST_SUB=	LOGDIR=${LOGDIR}
-SUB_LIST=	LOGDIR=${LOGDIR}
-
-NO_STAGE=	yes
 post-patch:
+	@${REINPLACE_CMD} -e \
+		'/LDFLAGS/s| -g"|"|' ${WRKSRC}/configure
 .for f in src/defines.h examples/hydra.conf
-	@${REINPLACE_CMD} -e "s,%%PREFIX%%,${PREFIX},g" \
-	                  -e "s,%%LOGDIR%%,${LOGDIR},g" \
-	                  -e "s,%%WWWOWN%%,${WWWOWN},g" \
-	                  -e "s,%%WWWGRP%%,${WWWGRP},g" \
-	                  ${WRKSRC}/${f}
+	@${REINPLACE_CMD} -e \
+		's|%%PREFIX%%|${PREFIX}|g ; \
+		 s|%%LOGDIR%%|${LOGDIR}|g ; \
+		 s|%%WWWOWN%%|${WWWOWN}|g ; \
+		 s|%%WWWGRP%%|${WWWGRP}|g' ${WRKSRC}/${f}
 .endfor
 
 post-install:
-	@${MKDIR} ${PREFIX}/etc/hydra
+	@${MKDIR} ${STAGEDIR}${ETCDIR}
 .for f in hydra.conf mime.types
-	${INSTALL_DATA} ${WRKSRC}/examples/${f} ${PREFIX}/etc/hydra/${f}-dist
-	[ -f ${PREFIX}/etc/hydra/${f} ] || \
-		${INSTALL_DATA} ${WRKSRC}/examples/${f} ${PREFIX}/etc/hydra/
+	(cd ${WRKSRC}/examples && ${INSTALL_DATA} ${f} \
+		${STAGEDIR}${ETCDIR}/${f}.sample)
 .endfor
-	[ -d ${LOGDIR} ] || \
-		( ${MKDIR} ${LOGDIR} && ${CHOWN} ${WWWOWN}:${WWWGRP} ${LOGDIR} )
 
 .include <bsd.port.mk>
