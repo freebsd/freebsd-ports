@@ -1,0 +1,14 @@
+bin/hypermail
+bin/msg2archive
+bin/rdmsg
+man/man1/hypermail.1.gz
+man/man4/hmrc.4.gz
+%%PORTDOCS%%%%DOCSDIR%%/archive_search.html
+%%PORTDOCS%%%%DOCSDIR%%/customizing.html
+%%PORTDOCS%%%%DOCSDIR%%/hmrc.html
+%%PORTDOCS%%%%DOCSDIR%%/hr.yellow.png
+%%PORTDOCS%%%%DOCSDIR%%/hypermail-faq.html
+%%PORTDOCS%%%%DOCSDIR%%/hypermail.html
+%%PORTDOCS%%%%DOCSDIR%%/hypermail.png
+%%PORTDOCS%%%%DOCSDIR%%/stars.png
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

@@ -326,6 +326,7 @@
     SUBDIR += httrack
     SUBDIR += hudson
     SUBDIR += hydra
+    SUBDIR += hypermail
     SUBDIR += igal2
     SUBDIR += ikiwiki
     SUBDIR += ilias
