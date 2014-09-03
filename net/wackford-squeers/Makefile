@@ -11,4 +11,7 @@ COMMENT=	Plain text network hypertext server and client
 
 RUN_DEPENDS=	${LOCALBASE}/bin/munger:${PORTSDIR}/lang/munger
 
+MAKE_ENV=	INSTALL_PROGRAM="${INSTALL_PROGRAM}" INSTALL_SCRIPT="${INSTALL_SCRIPT}" \
+		INSTALL_DATA="${INSTALL_DATA}" INSTALL_MAN="${INSTALL_MAN}"
+
 .include <bsd.port.mk>
