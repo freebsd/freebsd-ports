@@ -26,5 +26,6 @@ MAKE_JOBS_UNSAFE=	yes
 USE_OCAML=		yes
 USE_OCAML_FINDLIB=	yes
 USE_OCAML_LDCONFIG=	yes
+OCAML_PKGDIRS=		curl
 
 .include <bsd.port.mk>
