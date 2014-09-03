@@ -5,7 +5,7 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
-20140826
+20140826:
   AFFECTS: users of ports-mgmt/pkg, ports-mgmt/pkg-devel
   AUTHOR: bdrewery@FreeBSD.org
 
@@ -30,7 +30,7 @@ you update your ports collection, before attempting any port upgrades.
   - People building packages for serving to other systems need to rebuild
     all packages with 1.3.7.
 
-20140823
+20140823:
   AFFECTS: users of graphics/libjpeg-turbo
   AUTHOR: adamw@FreeBSD.org
 
@@ -43,7 +43,7 @@ you update your ports collection, before attempting any port upgrades.
   should install graphics/jpeg-turbo AFTER upgrading the libjpeg-turbo
   port.
 
-20140823
+20140823:
   AFFECTS: users of TeXLive
   AUTHOR: hrs@FreeBSD.org
 
@@ -254,7 +254,7 @@ you update your ports collection, before attempting any port upgrades.
   mediainfo has been split into 3 ports: libzen, libmediainfo and mediainfo.
   Please uninstall mediainfo before you update this port.
 
-20140722
+20140722:
   AFFECTS: users of games/bsdgames
   AUTHOR: adamw@FreeBSD.org
 
