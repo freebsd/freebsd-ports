@@ -11,10 +11,8 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S/.//}
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Archive files using LZSS and Huffman compression (.lzh files)
 
-MANLANG=	ja
-MAN1=		lha.1
 PLIST_FILES=	bin/lha
-PLIST_FILES+=	${__MANPAGES}
+PLIST_FILES+=	man/ja/man1/lha.1.gz
 
 do-install:
 	-${MKDIR} ${STAGEDIR}${PREFIX}/man/ja/man1
