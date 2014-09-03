@@ -10,8 +10,8 @@ etc/gdm/Xsession
 etc/gdm/custom.conf.default
 @exec [ -f %B/custom.conf ] || cp %B/%f %B/custom.conf
 etc/gdm/gdm.schemas
-@(gdm,gdm,,) etc/gdm/home/.local/share/applications/mime-dummy-handler.desktop
-@(gdm,gdm,,) etc/gdm/home/.local/share/applications/mimeapps.list
+@(gdm,gdm,) etc/gdm/home/.local/share/applications/mime-dummy-handler.desktop
+@(gdm,gdm,) etc/gdm/home/.local/share/applications/mimeapps.list
 etc/pam.d/gdm
 libdata/bonobo/servers/GNOME_FastUserSwitchApplet.server
 libexec/gdm-crash-logger
@@ -293,5 +293,5 @@ share/pixmaps/nohost.png
 @dirrmtry(root,gdm,1777) /var/run/gdm/greeter
 @dirrmtry(root,gdm,1777) /var/run/gdm
 @dirrmtry(gdm,gdm,1770) /var/log/gdm
-@dirrmtry(root,gdm,1775 /var/cache/gdm
+@dirrmtry(root,gdm,1775) /var/cache/gdm
 @dirrmtry(root,gdm,1770) /var/gdm
