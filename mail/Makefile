@@ -613,6 +613,7 @@
     SUBDIR += spfval
     SUBDIR += spmfilter
     SUBDIR += spmfilter-clamav
+    SUBDIR += sqlgrey
     SUBDIR += squirrelmail
     SUBDIR += squirrelmail-abook_import_export-plugin
     SUBDIR += squirrelmail-askuserinfo-plugin
