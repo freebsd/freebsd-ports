@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ircii
-PORTVERSION=	20140824
+PORTVERSION=	20140831
 CATEGORIES=	irc ipv6
 MASTER_SITES=	http://ircii.warped.com/
 
@@ -37,7 +37,7 @@ CPPFLAGS+=	-I${ICONV_PREFIX}/include
 LDFLAGS+=	-L${ICONV_PREFIX}/lib
 
 post-patch:
-	@${REINPLACE_CMD} -e '/^mandir =/s/@mandir@/$$(DESTDIR)&/' \
+	@${REINPLACE_CMD} -e '/^mandir =/s/@mandir@/$${DESTDIR}&/' \
 		-e '/^LDFLAGS =/s/$$/ -s ${ICONV_LIB}/' \
 		-e '/^INCLUDES =/s|$$| -I${ICONV_PREFIX}/include -DHAVE_ICONV_OPEN|' \
 		${WRKSRC}/Makefile.in
