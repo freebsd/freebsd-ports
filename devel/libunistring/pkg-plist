@@ -10,6 +10,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/libunistring_18.html
 %%PORTDOCS%%%%DOCSDIR%%/libunistring_19.html
 %%PORTDOCS%%%%DOCSDIR%%/libunistring_2.html
+%%PORTDOCS%%%%DOCSDIR%%/libunistring_20.html
 %%PORTDOCS%%%%DOCSDIR%%/libunistring_3.html
 %%PORTDOCS%%%%DOCSDIR%%/libunistring_4.html
 %%PORTDOCS%%%%DOCSDIR%%/libunistring_5.html
@@ -38,9 +39,10 @@ include/uniwbrk.h
 include/unilbrk.h
 include/uninorm.h
 include/unicase.h
+include/unigbrk.h
 lib/libunistring.a
 lib/libunistring.so
-lib/libunistring.so.0
-lib/libunistring.so.0.1.2
+lib/libunistring.so.2
+lib/libunistring.so.2.0.0
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm include/unistring
