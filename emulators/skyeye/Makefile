@@ -2,31 +2,21 @@
 # $FreeBSD$
 
 PORTNAME=	skyeye
-PORTVERSION=	1.2
-PORTREVISION=	6
-DISTVERSIONPREFIX=v
-DISTVERSIONSUFFIX=_Rel
+PORTVERSION=	1.2.5
+DISTVERSIONSUFFIX=	_REL
 CATEGORIES=	emulators
-MASTER_SITES=	http://download.gro.clinux.org/skyeye/
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Environment simulates typical ARM-base embedded computer systems
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/libiberty.a:${PORTSDIR}/devel/gnulibiberty \
-		${LOCALBASE}/lib/libbfd.a:${PORTSDIR}/devel/libbfd
-RUN_DEPENDS=	${LOCALBASE}/lib/libiberty.a:${PORTSDIR}/devel/gnulibiberty \
-		${LOCALBASE}/lib/libbfd.a:${PORTSDIR}/devel/libbfd
+LICENSE=	GPLv2
 
-USES=		gmake pkgconfig tar:bzip2
-USE_GNOME=	gtk20
-WRKSRC=		${WRKDIR}/${PORTNAME}-v1
+USE_BINUTILS=	yes
+USE_GCC=	any
+GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	ac_cv_func_working_mktime=yes
 
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
+PLIST_FILES=	bin/skyeye
 
-ONLY_FOR_ARCHS=	i386
-
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/binary/skyeye ${PREFIX}/bin
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
