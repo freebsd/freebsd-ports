@@ -577,7 +577,7 @@ add-plist-pymod:
 	@${ECHO_CMD} "${_RELLIBDIR}" >> ${WRKDIR}/.localmtree
 	@${SED} -e 's|^${STAGEDIR}${PREFIX}/||' \
 		-e 's|^${PREFIX}/||' \
-		-e 's|^\(man/.*man[0-9]\)/\(.*\.[0-9]\)$$|\1/\2${MANEXT}|' \
+		-e 's|^\(man/.*man[0-9]\)/\(.*\.[0-9]\)$$|\1/\2.gz|' \
 		${_PYTHONPKGLIST} | ${SORT} >> ${TMPPLIST}
 	@${SED} -e 's|^${STAGEDIR}${PREFIX}/\(.*\)/\(.*\)|\1|' \
 		-e 's|^${PREFIX}/\(.*\)/\(.*\)|\1|' ${_PYTHONPKGLIST} | \
