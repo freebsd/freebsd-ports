@@ -1,8 +1,8 @@
 *************************************************************************
-* To use bitflu with the plugins installed by this package, configure	*
-* your ~/.bitflu.config to search for plugins here (instead of the	*
-* default ./plugins):							*
-*									*
-*   %%PREFIX%%/lib/perl5		(New location as of 0.80)	*
-*									*
+ To use Bitflu with the plugins installed by this package, configure
+ your ~/.bitflu.config to search for plugins here (instead of the
+ default ./plugins):
+
+   %%DATADIR%%/plugins
+
 *************************************************************************
