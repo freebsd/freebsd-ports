@@ -43,11 +43,6 @@ OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.options.mk>
 
-# work around fc-cache crash on arm platform
-.if ${ARCH} == arm || ${ARCH} == armv6
-USE_GCC=	any
-.endif
-
 post-install:
 .if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
