@@ -192,8 +192,8 @@ do-texhash:
 	@${ECHO_CMD} "@exec ${LOCALBASE}/bin/mktexlsr " \
 		"${TEXHASHDIRS:S,^,%D/,}" >> ${TMPPLIST}
 	@for D in ${TEXHASHDIRS}; do \
-		${ECHO_CMD} "@unexec ${RM} -f %D/$$D/ls-R"; \
-		${ECHO_CMD} "@unexec ${RMDIR} %D/$$D 2> /dev/null || ${TRUE}"; \
+		${ECHO_CMD} "@rmtry $$D/ls-R"; \
+		${ECHO_CMD} "@dirmtry $$D"; \
 	done >> ${TMPPLIST}
 . else
 	@${ECHO_CMD} "@exec for D in ${TEXHASHDIRS:S,^,${PREFIX}/,}; do " \
