@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	spf
-PORTVERSION=	2.0.9
+PORTVERSION=	2.0.10
 CATEGORIES=	mail python
 MASTER_SITES=	SF/pymilter/py${PORTNAME}/py${PORTNAME}-${PORTVERSION}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,14 +13,10 @@ COMMENT=	Python implementation of the RFC 4408 SPF protocol
 
 LICENSE=	PSFL
 
-OPTIONS_DEFINE=	DOCS
-OPTIONSFILE=	${PORT_DBDIR}/py-${PORTNAME}/options
-
 USE_PYTHON=	autoplist distutils
 USES=		python shebangfix
 
 PLIST_FILES=	bin/spf.py
-PORTDOCS=	CHANGELOG README
 
 SHEBANG_FILES=	spf.py
 
@@ -35,7 +31,5 @@ RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}dns3>=0:${PORTSDIR}/dns/py-dns3
 post-install:
 	${CHMOD} ${BINMODE} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/spf.py
 	${LN} -s ${PYTHONPREFIX_SITELIBDIR}/spf.py ${STAGEDIR}${PREFIX}/bin/
-	${MKDIR} ${STAGEDIR}${DOCSDIR}/
-	cd ${WRKSRC}/ && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}/
 
 .include <bsd.port.post.mk>
