@@ -1,9 +1,10 @@
 # $FreeBSD$
 
 PORTNAME=	pkg
-DISTVERSION=	1.4.0.pre-alpha12
+DISTVERSION=	1.4.0.pre-alpha13
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	\
+		http://files.etoilebsd.net/pkg/ \
 		http://highsecure.ru/distfiles/ \
 		http://mirror.shatow.net/freebsd/${PORTNAME}/ \
 		http://pkg.semmy.ru/
