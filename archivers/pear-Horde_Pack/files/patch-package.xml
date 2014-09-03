@@ -1,0 +1,11 @@
+--- package.xml.bak	2014-09-03 12:17:12.089477176 +0200
++++ package.xml	2014-09-03 12:20:36.548435330 +0200
+@@ -35,7 +35,7 @@
+    <file baseinstalldir="/" md5sum="c5ee864bfd2d2b866d82bf6f942743ad" name="lib/Horde/Pack/Autodetermine.php" role="php" />
+    <file baseinstalldir="/" md5sum="c5d6ea0030d659ee75755f5a14bf9153" name="lib/Horde/Pack/Driver.php" role="php" />
+    <file baseinstalldir="/" md5sum="70194aa896444794e78e6b85d6f3d1ec" name="lib/Horde/Pack/Exception.php" role="php" />
+-   <file baseinstalldir="/" md5sum="6930e9f26cb49ac7eae3acce808d07cb" name="lib/Horde/Pack.php" role="php" />
++   <file baseinstalldir="/" md5sum="13838721e5bf193fa12735c737e52deb" name="lib/Horde/Pack.php" role="php" />
+    <file baseinstalldir="/" md5sum="cb37ee0c475c196a91fed183ca326ff7" name="test/Horde/Pack/Driver/IgbinaryTest.php" role="test" />
+    <file baseinstalldir="/" md5sum="1b1d681efa25b37cc51a2e322874d2e1" name="test/Horde/Pack/Driver/JsonTest.php" role="test" />
+    <file baseinstalldir="/" md5sum="b1176a21c9c2fb833dae0e1b07df8d97" name="test/Horde/Pack/Driver/MsgpackserializeTest.php" role="test" />
