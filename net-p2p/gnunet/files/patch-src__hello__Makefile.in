@@ -1,0 +1,12 @@
+--- src/hello/Makefile.in.orig
++++ src/hello/Makefile.in
+@@ -633,7 +633,8 @@
+ 
+ gnunet_hello_LDADD = \
+  $(top_builddir)/src/hello/libgnunethello.la \
+- $(top_builddir)/src/util/libgnunetutil.la  
++ $(top_builddir)/src/util/libgnunetutil.la \
++ $(LTLIBINTL)
+ 
+ gnunet_hello_DEPENDENCIES = \
+  libgnunethello.la \

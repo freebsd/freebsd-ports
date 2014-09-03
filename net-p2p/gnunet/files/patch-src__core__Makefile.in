@@ -1,0 +1,12 @@
+--- src/core/Makefile.in.orig
++++ src/core/Makefile.in
+@@ -730,7 +730,8 @@
+ 
+ gnunet_core_LDADD = \
+   $(top_builddir)/src/core/libgnunetcore.la \
+-  $(top_builddir)/src/util/libgnunetutil.la
++  $(top_builddir)/src/util/libgnunetutil.la \
++  $(GN_LIBINTL)
+ 
+ gnunet_core_DEPENDENCIES = \
+   libgnunetcore.la

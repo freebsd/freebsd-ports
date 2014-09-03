@@ -1,0 +1,32 @@
+--- src/regex/Makefile.in.orig
++++ src/regex/Makefile.in
+@@ -812,7 +812,8 @@
+   $(top_builddir)/src/dht/libgnunetdht.la \
+   $(top_builddir)/src/regex/libgnunetregexblock.la \
+   $(top_builddir)/src/regex/libgnunetregextest.a \
+-  $(top_builddir)/src/util/libgnunetutil.la 
++  $(top_builddir)/src/util/libgnunetutil.la \
++  $(LTLIBINTL)
+ 
+ perf_regex_DEPENDENCIES = \
+   libgnunetregex_internal.a \
+@@ -829,7 +830,8 @@
+   $(top_builddir)/src/regex/libgnunetregexblock.la \
+   $(top_builddir)/src/regex/libgnunetregextest.a \
+   $(top_builddir)/src/statistics/libgnunetstatistics.la \
+-  $(top_builddir)/src/util/libgnunetutil.la 
++  $(top_builddir)/src/util/libgnunetutil.la \
++  $(LTLIBINTL)
+ 
+ gnunet_regex_profiler_DEPENDENCIES = \
+   $(top_builddir)/src/arm/libgnunetarm.la \
+@@ -846,7 +848,8 @@
+   $(top_builddir)/src/regex/libgnunetregexblock.la \
+   $(top_builddir)/src/regex/libgnunetregextest.a \
+   $(top_builddir)/src/statistics/libgnunetstatistics.la \
+-  $(top_builddir)/src/util/libgnunetutil.la 
++  $(top_builddir)/src/util/libgnunetutil.la \
++  $(LTLIBINTL)
+ 
+ gnunet_daemon_regexprofiler_DEPENDENCIES = \
+   $(top_builddir)/src/dht/libgnunetdht.la \

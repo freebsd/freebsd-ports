@@ -1,0 +1,12 @@
+--- src/peerinfo-tool/Makefile.in.orig
++++ src/peerinfo-tool/Makefile.in
+@@ -594,7 +594,8 @@
+   $(top_builddir)/src/transport/libgnunettransport.la \
+   $(top_builddir)/src/hello/libgnunethello.la \
+   $(top_builddir)/src/statistics/libgnunetstatistics.la \
+-  $(top_builddir)/src/util/libgnunetutil.la
++  $(top_builddir)/src/util/libgnunetutil.la \
++  $(GN_LIBINTL)
+ 
+ @HAVE_PYTHON_TRUE@check_SCRIPTS = \
+ @HAVE_PYTHON_TRUE@ test_gnunet_peerinfo.py

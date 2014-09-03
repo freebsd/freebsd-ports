@@ -2,58 +2,48 @@
 # $FreeBSD$
 
 PORTNAME=	gnunet-gtk
-DISTVERSION=	0.9.3
+PORTVERSION=	0.10.1
 CATEGORIES=	net-p2p ipv6 security
-MASTER_SITES=	GNU
-MASTER_SITE_SUBDIR=	gnunet
+MASTER_SITES=	GNU/gnunet
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GTK interface to GNUnet
 
-BROKEN=		Does not fetch
-
 LICENSE=	GPLv3
 
 LIB_DEPENDS=	libgladeui-1.so:${PORTSDIR}/devel/glade3 \
-		libgnunetutil.so:${PORTSDIR}/net-p2p/gnunet
+		libqrencode.so:${PORTSDIR}/graphics/libqrencode \
+		libgnunetutil.so:${PORTSDIR}/net-p2p/gnunet \
+		libunique-1.0.so:${PORTSDIR}/x11-toolkits/unique
 
-INSTALLS_ICONS=	yes
-USE_AUTOTOOLS=	libltdl libtool
-USES=		pathfix iconv gmake pkgconfig
-USE_LDCONFIG=	yes
-
-CONFIGURE_ARGS=	--with-extractor=${LOCALBASE} \
+USES=		gmake iconv libtool pathfix pkgconfig
+USE_GNOME=	gtk20
+USE_AUTOTOOLS=	libltdl
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--disable-gtktest \
+		--with-gtk-version=2 \
+		--with-extractor=${LOCALBASE} \
 		--with-gnunet=${LOCALBASE} \
 		${ICONV_CONFIGURE_ARG}
+INSTALL_TARGET=	install-strip
+USE_LDCONFIG=	yes
+INSTALLS_ICONS=	yes
 
-MAN1=	gnunet-fs-gtk.1
-
-NO_STAGE=	yes
-
-OPTIONS_DEFINE=	DOCS NLS
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MNLS}
-USES+=		gettext
-CONFIGURE_ARGS+=	--with-libintl-prefix=${LOCALBASE}
-PLIST_SUB+=		NLS=""
-.else
-CONFIGURE_ARGS+=	--disable-nls
-PLIST_SUB+=		NLS="@comment "
-.endif
+OPTIONS_DEFINE=		DOCS
 
 post-patch:
-	@${FIND} ${WRKSRC} -type f -name 'Makefile.in' -print0 | \
-	${XARGS} -0 ${REINPLACE_CMD} -e \
-	'/^[[:blank:]]*mkinstalldirs[[:blank:]]*=/s/=.*/= $$(mkdir_p)/'
-
-.if ${PORT_OPTIONS:MDOCS}
-PORTDOCS=	AUTHORS COPYING ChangeLog NEWS README
+	@${REINPLACE_CMD} -e \
+		's|^\([[:space:]]\)install-docDATA$$|\1|' \
+		${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e \
+		's|"$${mkinstalldirs}"|"$${MKDIR_P}"|' \
+		${WRKSRC}/pixmaps/Makefile.in
 
 post-install:
-	@${MKDIR} ${DOCSDIR}
-	@cd ${WRKSRC}; ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
-.endif
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+.for i in AUTHORS ChangeLog NEWS README 
+	(cd ${WRKSRC} && ${INSTALL_DATA} ${i} \
+		${STAGEDIR}${DOCSDIR})
+.endfor
 
 .include <bsd.port.mk>

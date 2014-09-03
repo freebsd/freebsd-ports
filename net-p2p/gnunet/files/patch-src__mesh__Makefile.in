@@ -1,0 +1,32 @@
+--- src/mesh/Makefile.in.orig
++++ src/mesh/Makefile.in
+@@ -707,7 +707,8 @@
+ 
+ gnunet_mesh_LDADD = \
+   $(top_builddir)/src/mesh/libgnunetmesh.la \
+-  $(top_builddir)/src/util/libgnunetutil.la
++  $(top_builddir)/src/util/libgnunetutil.la \
++  $(LTLIBINTL)
+ 
+ gnunet_mesh_DEPENDENCIES = \
+   libgnunetmesh.la
+@@ -733,7 +734,8 @@
+   $(top_builddir)/src/statistics/libgnunetstatistics.la \
+   $(top_builddir)/src/peerinfo/libgnunetpeerinfo.la \
+   $(top_builddir)/src/hello/libgnunethello.la \
+-  $(top_builddir)/src/block/libgnunetblock.la
++  $(top_builddir)/src/block/libgnunetblock.la \
++  $(LTLIBINTL)
+ 
+ gnunet_service_mesh_DEPENDENCIES = \
+   $(top_builddir)/src/util/libgnunetutil.la \
+@@ -764,7 +766,8 @@
+   $(top_builddir)/src/mesh/libgnunetmeshtest.a \
+   $(top_builddir)/src/mesh/libgnunetmesh.la \
+   $(top_builddir)/src/testbed/libgnunettestbed.la \
+-  $(top_builddir)/src/statistics/libgnunetstatistics.la
++  $(top_builddir)/src/statistics/libgnunetstatistics.la \
++  $(LTLIBINTL)
+ 
+ dep_mesh_test_lib = \
+   libgnunetmesh.la \

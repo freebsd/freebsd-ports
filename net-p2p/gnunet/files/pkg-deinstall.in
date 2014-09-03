@@ -1,0 +1,17 @@
+#!/bin/sh
+
+GNUNET_DAEMON_DIR=%%GNUNET_DAEMON_DIR%%
+
+case $2 in
+POST-DEINSTALL)
+	rmdir $GNUNET_DAEMON_DIR 2>/dev/null || true
+	if [ -e $GNUNET_DAEMON_DIR ]; then
+		echo ""
+		echo "To completely remove the port, please remove the following"
+		echo "directories and the content manually:"
+		echo ""
+		echo "	$GNUNET_DAEMON_DIR"
+		echo ""
+	fi
+	;;
+esac
