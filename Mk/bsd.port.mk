@@ -5452,7 +5452,7 @@ add-plist-info:
 .if (${PREFIX} != ${LOCALBASE} && ${PREFIX} != ${LINUXBASE} && \
     ${PREFIX} != "/usr" && !defined(NO_PREFIX_RMDIR))
 add-plist-post:
-	@${ECHO_CMD} "@dirrmtry %D" >> ${TMPPLIST}
+	@${ECHO_CMD} "@dirrmtry ${PREFIX}" >> ${TMPPLIST}
 .endif
 .endif
 
