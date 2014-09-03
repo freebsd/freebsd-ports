@@ -11,10 +11,16 @@ bin/smtpp
 bin/socks
 bin/tcppm
 bin/udppm
-etc/3proxy.cfg.sample
+@sample etc/3proxy.cfg.sample
 lib/3proxy/PCREPlugin.so
 lib/3proxy/StringsPlugin.so
 lib/3proxy/TrafficPlugin.so
-%%PORTDOCS%%%%DOCSDIR%%/Readme
+man/man3/3proxy.cfg.3.gz
+man/man8/3proxy.8.gz
+man/man8/ftppr.8.gz
+man/man8/pop3p.8.gz
+man/man8/proxy.8.gz
+man/man8/socks.8.gz
+man/man8/tcppm.8.gz
+man/man8/udppm.8.gz
 @dirrm lib/3proxy
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
