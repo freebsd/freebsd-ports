@@ -113,7 +113,7 @@ post-install:
 .    elif ${NEED_MKFONTFOO} == yes
 		@${ECHO_CMD} "@fontsdir lib/X11/fonts/${_fontdir}" >> ${TMPPLIST}
 .    else
-		@${ECHO_CMD} "@unexec rmdir %D/lib/X11/fonts/${_fontdir} 2>/dev/null || true" >> ${TMPPLIST}
+		@${ECHO_CMD} "@dirrmtry %D/lib/X11/fonts/${_fontdir}" >> ${TMPPLIST}
 .    endif
 .  endfor
 .endif
