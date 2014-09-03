@@ -64,7 +64,6 @@ bin/xspasswd
 %%WWWDIR%%/icons/xs-unknown.gif
 %%WWWDIR%%/icons/xs-video.gif
 %%WWWDIR%%/icons/xs-zip.gif
-@exec mkdir -p %%WWWDIR%%/htdocs
 man/man1/clearxs.1.gz
 man/man1/gfxcount.1.gz
 man/man1/httpd.1.gz
