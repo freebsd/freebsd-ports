@@ -1,5 +1,19 @@
 bin/yed
+%%DATADIR%%/lib/common-image.jar
+%%DATADIR%%/lib/common-io.jar
+%%DATADIR%%/lib/common-lang.jar
+%%DATADIR%%/lib/imageio-core.jar
+%%DATADIR%%/lib/imageio-icns.jar
+%%DATADIR%%/lib/imageio-ico.jar
+%%DATADIR%%/lib/imageio-iff.jar
+%%DATADIR%%/lib/imageio-jpeg.jar
+%%DATADIR%%/lib/imageio-metadata.jar
+%%DATADIR%%/lib/imageio-pict.jar
+%%DATADIR%%/lib/imageio-psd.jar
+%%DATADIR%%/lib/imageio-thumbsdb.jar
+%%DATADIR%%/lib/imageio-tiff.jar
+%%DATADIR%%/lib/vectorgraphics.jar
+@dirrm %%DATADIR%%/lib
 %%DATADIR%%/license.html
-%%DATADIR%%/vectorgraphics.jar
 %%DATADIR%%/yed.jar
 @dirrm %%DATADIR%%
