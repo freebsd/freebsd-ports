@@ -1,0 +1,19 @@
+Courier library which implements several algorithms related to the
+Unicode Standard:
+
+ - Look up uppercase, lowercase, and titlecase equivalents of a
+   unicode character.
+
+ - Implementation of grapheme and work breaking rules.
+
+ - Implementation of line breaking rules.
+
+ - Several ancillary functions, like looking up the unicode character
+   that corresponds to some HTML 4.0 entity (such as "&amp;", for
+   example), and determining the normal width or a double-width status
+   of a unicode character. Also, an adaptation of the iconv(3) API
+   for this unicode library.
+
+This library also implements C++ bindings for these algorithms.
+
+WWW: http://www.courier-mta.org/unicode/
