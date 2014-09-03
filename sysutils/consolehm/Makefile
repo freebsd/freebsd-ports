@@ -13,6 +13,7 @@ COMMENT=	Console based hardware monitor for FreeBSD
 
 WRKSRC=		${WRKDIR}/consolehm/consolehm
 
+USES=		uidfix
 GNU_CONFIGURE=	yes
 PLIST_FILES=	bin/chm man/man8/chm.8.gz
 

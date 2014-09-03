@@ -1,5 +1,5 @@
---- Makefile.in.orig	Thu Jun 15 02:39:55 2000
-+++ Makefile.in	Tue Nov 14 15:28:00 2006
+--- Makefile.in.orig	2000-06-15 00:39:55 UTC
++++ Makefile.in
 @@ -31,7 +31,7 @@
  # Pathname of directory to install the man page
  MANDEST = @mandir@
@@ -18,14 +18,21 @@
  
  # Standard CFLAGS
  CFLAGS = $(CCOPT) $(DEFS) $(INCLS)
-@@ -110,8 +110,8 @@
+@@ -110,13 +110,13 @@
  	$(CC) $(CFLAGS) -o $@ zap.o intoa.o -lutil
  
  install: force
 -	$(INSTALL) -m 555 -o bin -g bin arpwatch $(DESTDIR)$(BINDEST)
 -	$(INSTALL) -m 555 -o bin -g bin arpsnmp $(DESTDIR)$(BINDEST)
-+	$(INSTALL) -s -m 555 -o $(BINOWN) -g $(BINGRP) arpwatch $(DESTDIR)$(BINDEST)
-+	$(INSTALL) -s -m 555 -o $(BINOWN) -g $(BINGRP) arpsnmp $(DESTDIR)$(BINDEST)
++	$(BSD_INSTALL_PROGRAM) arpwatch $(DESTDIR)$(BINDEST)
++	$(BSD_INSTALL_PROGRAM) arpsnmp $(DESTDIR)$(BINDEST)
  
  install-man: force
- 	$(INSTALL) -m 444 -o bin -g bin $(srcdir)/arpwatch.8 \
+-	$(INSTALL) -m 444 -o bin -g bin $(srcdir)/arpwatch.8 \
++	$(BSD_INSTALL_MAN) $(srcdir)/arpwatch.8 \
+ 	    $(DESTDIR)$(MANDEST)/man8
+-	$(INSTALL) -m 444 -o bin -g bin $(srcdir)/arpsnmp.8 \
++	$(BSD_INSTALL_MAN) $(srcdir)/arpsnmp.8 \
+ 	    $(DESTDIR)$(MANDEST)/man8
+ 
+ lint:	$(GENSRC) force

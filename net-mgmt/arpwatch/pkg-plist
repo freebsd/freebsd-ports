@@ -12,4 +12,4 @@ sbin/arpsnmp
 sbin/arpwatch
 @unexec test -f %D/arpwatch/arp.dat && test -s %D/arpwatch/arp.dat || rm -f %D/arpwatch/arp.dat
 @exec test -f %D/arpwatch/arp.dat || touch %D/arpwatch/arp.dat
-@dirrm arpwatch
+@dirrm(,operator,0755) arpwatch

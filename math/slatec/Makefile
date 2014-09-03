@@ -17,7 +17,7 @@ EXTRACT_ONLY=	slatec_src.tgz slatec_chk.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	SLATEC Common Mathematical Library
 
-USES=		fortran
+USES=		fortran uidfix
 USE_LDCONFIG=	yes
 WRKSRC=		${WRKDIR}/src
 SHLIB_MAJOR=	1

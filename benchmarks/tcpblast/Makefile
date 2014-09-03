@@ -12,6 +12,7 @@ COMMENT=	Measures the throughput of a TCP connection
 
 PLIST_FILES=	bin/tcpblast
 
+USES=		uidfix
 WRKSRC=		${WRKDIR}/src
 
 do-extract:
