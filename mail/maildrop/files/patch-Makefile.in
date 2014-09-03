@@ -1,16 +1,16 @@
---- Makefile.in.orig	2013-09-28 19:28:36.000000000 +0200
-+++ Makefile.in	2013-10-01 17:24:51.798480620 +0200
-@@ -372,7 +372,7 @@
+--- Makefile.in.orig	2014-09-01 14:50:09.000000000 +0200
++++ Makefile.in	2014-09-02 00:46:38.638094906 +0200
+@@ -376,7 +376,7 @@
  host_cpu = @host_cpu@
  host_os = @host_os@
  host_vendor = @host_vendor@
--htmldir = $(pkgdatadir)/html
+-htmldir = $(docdir)/html
 +htmldir = $(datadir)/doc/@PACKAGE@
  includedir = @includedir@
  infodir = @infodir@
  install_sh = @install_sh@
-@@ -406,16 +406,16 @@
- 	maildroptips.txt COPYING.GPL manpage.css pgpkeys.txt
+@@ -411,15 +411,15 @@
+ 	maildroptips.txt COPYING.GPL manpage.css $(HTMLWWW)
  
  scriptdir = $(pkgdatadir)/scripts
 -DELIVERQUOTAHTMLSOURCE = maildirquota.html deliverquota.html
@@ -19,18 +19,17 @@
 -DELIVERQUOTAMAN = maildirquota.7 deliverquota.8
 +DELIVERQUOTAMAN = maildirquota.7 maildrop-deliverquota.8
  MAILDROPHTML = lockmail.html maildiracl.html maildirkw.html \
--	maildirmake.html maildropex.html \
+-	maildirmake.html maildropex.html maildir.html \
 +	maildrop-maildirmake.html maildropex.html \
- 	maildir.html \
- 	maildropfilter.html maildropgdbm.html maildrop.html mailbot.html \
- 	makemime.html reformail.html reformime.html
- 
--MAILDROPMAN = lockmail.1 maildirmake.1 maildrop.1 mailbot.1 maildropex.7 \
-+MAILDROPMAN = lockmail.1 maildrop-maildirmake.1 maildrop.1 mailbot.1 maildropex.7 \
- 	maildir.5 \
- 	maildropfilter.7 maildropgdbm.7 makemime.1 reformail.1 reformime.1
- 
-@@ -1255,21 +1255,21 @@
+ 	maildropfilter.html maildropgdbm.html maildrop.html \
+ 	mailbot.html makemime.html reformail.html reformime.html \
+ 	$(am__append_1)
+-MAILDROPMAN = lockmail.1 maildirmake.1 maildrop.1 mailbot.1 \
++MAILDROPMAN = lockmail.1 maildrop-maildirmake.1 maildrop.1 mailbot.1 \
+ 	maildropex.7 maildir.5 maildropfilter.7 maildropgdbm.7 \
+ 	makemime.1 reformail.1 reformime.1 $(am__append_2)
+ EXTRA_LTLIBRARIES = librfc822.la librfc2045.la
+@@ -1257,21 +1257,21 @@
  
  install-deliverquota:
  	$(mkinstalldirs) $(DESTDIR)$(bindir)
@@ -58,7 +57,7 @@
  
  #  In maildrop 0.74, maildirmake was installed as bindir/maildrop.maildirmake
  #  and a soft link was created from maildirmake to maildrop.maildirmake
-@@ -1287,7 +1287,7 @@
+@@ -1289,7 +1289,7 @@
  		$(INSTALL_PROGRAM) libs/maildrop/$$f $(DESTDIR)$(bindir)/$$f ; \
  	done
  	$(INSTALL_PROGRAM) libs/liblock/lockmail $(DESTDIR)$(bindir)/lockmail
@@ -67,16 +66,16 @@
  	$(INSTALL_PROGRAM) libs/rfc2045/reformime $(DESTDIR)$(bindir)/reformime
  	$(INSTALL_PROGRAM) libs/rfc2045/makemime $(DESTDIR)$(bindir)/makemime
  	test "@USE_DB@@USE_GDBM@" = "00" && exit 0; \
-@@ -1298,7 +1298,7 @@
+@@ -1300,7 +1300,7 @@
  	. libs/maildrop/uidgid ; test -z "$$uid" && exit 0; test -w /etc || exit 0; cd $(DESTDIR)$(bindir) && chown $$uid maildrop lockmail && chmod 755 maildrop lockmail
  
  uninstall-maildrop:
 -	for f in maildrop mailbot maildirmake reformail lockmail makemime reformime; do \
-+	for f in maildrop mailbot maildrop-maildirmake reformail lockmail makemime reformime; do \
++	for f in maildrop mailbot maildir-maildirmake reformail lockmail makemime reformime; do \
  		rm -f $(DESTDIR)$(bindir)/$$f ; \
  	done
  	test "@USE_DB@@USE_GDBM@" = "00" && exit 0; \
-@@ -1352,11 +1352,11 @@
+@@ -1354,11 +1354,11 @@
  maildirkw.html: libs/maildir/maildirkw.html
  	cp -f $(srcdir)/libs/maildir/maildirkw.html maildirkw.html
  
