@@ -15,9 +15,7 @@ USE_OCAML=	yes
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
 
-.include <bsd.port.pre.mk>
-
-post-extract:
+post-patch:
 	@${REINPLACE_CMD} -e "s,^\(JAVAC=\).*,\1${JAVAC},g" \
 		-e "s,^\(JDKHOME=\).*,\1${JAVA_HOME},g" \
 		-e "s,include/linux,include/freebsd,g" \
@@ -26,13 +24,8 @@ post-extract:
 		-e "s,i386,${ARCH},g" \
 		${WRKSRC}/Makefile.config
 
-	${REINPLACE_CMD} \
-		-e "s,^\(OCAMLLIB=\).*,\1${PREFIX}/lib/ocaml,g" \
-		-e "/^install/,/^$$/s,\([ \t]*\)cp,\1${INSTALL_DATA},g" \
-		${WRKSRC}/lib/Makefile
-
 test:
 	@${ECHO_CMD} "Testing IDL library"
 	cd ${WRKSRC}/test && ${SETENV} ${MAKE_ENV} ${MAKE} all
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
