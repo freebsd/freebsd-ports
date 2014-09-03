@@ -5,62 +5,60 @@ PORTNAME=	links-hacked
 DISTVERSION=	101110
 PORTREVISION=	3
 CATEGORIES?=	www
-MASTER_SITES=	http://xray.sai.msu.ru/~karpov/links-hacked/downloads/ http://links-hacked.nm.ru/
+MASTER_SITES=	http://xray.sai.msu.ru/~karpov/links-hacked/downloads/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Hacked version of a Links WWW browser
 
-LIB_DEPENDS+=	libexecinfo.so:${PORTSDIR}/devel/libexecinfo \
-		libgdbm.so:${PORTSDIR}/databases/gdbm
+LICENSE=	GPLv2
 
-CONFLICTS=	links-[0-9]*
+USES=		execinfo
+USE_OPENSSL=	yes
+USE_CSTD=	gnu89
+USE_AUTOTOOLS=	aclocal autoheader automake autoconf
+AUTOMAKE_ARGS=	--add-missing --copy
+CONFIGURE_ARGS=	--with-ssl --without-pmshell --without-atheos --without-fb
 
-USE_AUTOTOOLS?=	autoconf autoheader aclocal automake
-AUTOMAKE_ARGS?=	-a -c
-
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=	--with-ssl --without-pmshell --without-atheos \
-			--without-fb --enable-form-saving --enable-javascript
+CFLAGS+=	-Wno-error=return-type
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib -lexecinfo
 
-USE_OPENSSL=	yes
+CONFLICTS=	links-[0-9]*
 
-OPTIONS_DEFINE=	SVGALIB DIRECTFB X11 FORMSAVE JS FREETYPE
-OPTIONS_DEFAULT=	X11 FORMSAVE JS FREETYPE
-DIRECTFB_DESC=	directfb driver support
-FORMSAVE_DESC=	Enable forms saving
-JS_DESC=	Enable Javascript (very basic)
+PLIST_FILES=	bin/links man/man1/links.1.gz
 
-NO_STAGE=	yes
+OPTIONS_DEFINE=		FORMSAVE FREETYPE JS
+OPTIONS_RADIO=		GRAPHICS
+OPTIONS_RADIO_GRAPHICS=	DIRECTFB SVGALIB X11
+OPTIONS_DEFAULT=	FORMSAVE FREETYPE JS X11
+
+DIRECTFB_DESC=		DirectFB driver support
+DIRECTFB_LIB_DEPENDS=	libdirectfb-1.4.so:${PORTSDIR}/devel/directfb
+DIRECTFB_CONFIGURE_WITH=	directfb
+FORMSAVE_DESC=		Form saving/loading support
+FORMSAVE_LIB_DEPENDS=	libgdbm.so:${PORTSDIR}/databases/gdbm
+FORMSAVE_CONFIGURE_ENABLE=	form-saving
+FREETYPE_LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2
+FREETYPE_CONFIGURE_WITH=	freetype
+JS_DESC=		Javascript interpreter support (very basic)
+JS_CONFIGURE_ENABLE=	javascript
+SVGALIB_LIB_DEPENDS=	libvga.so:${PORTSDIR}/graphics/svgalib
+SVGALIB_CONFIGURE_WITH=	svgalib
+X11_USE=		xorg=x11,xproto
+X11_CONFIGURE_WITH=	x
+
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MSVGALIB} || ${PORT_OPTIONS:MX11} || ${PORT_OPTIONS:MDIRECTFB}
-LIB_DEPENDS+=	libpng15.so:${PORTSDIR}/graphics/png \
-		libjpeg.so:${PORTSDIR}/graphics/jpeg \
+.if ${PORT_OPTIONS:MDIRECTFB} || ${PORT_OPTIONS:MSVGALIB} || ${PORT_OPTIONS:MX11}
+LIB_DEPENDS+=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
+		libpng15.so:${PORTSDIR}/graphics/png \
 		libtiff.so:${PORTSDIR}/graphics/tiff
 CONFIGURE_ARGS+=	--enable-graphics
 .else
 CONFIGURE_ARGS+=	--disable-graphics --without-libjpeg --without-libtiff
 .endif
 
-.if ${PORT_OPTIONS:MSVGALIB}
-LIB_DEPENDS+=	libvga.so:${PORTSDIR}/graphics/svgalib
-CONFIGURE_ARGS+=	--with-svgalib
-.else
-CONFIGURE_ARGS+=	--without-svgalib
-.endif
-
-.if ${PORT_OPTIONS:MDIRECTFB}
-LIB_DEPENDS+=	libdirectfb.so:${PORTSDIR}/devel/directfb
-CONFIGURE_ARGS+=	--with-directfb
-.else
-CONFIGURE_ARGS+=	--without-directfb
-.endif
-
 .if ${PORT_OPTIONS:MX11}
-USE_XORG=	x11 xproto
-CONFIGURE_ARGS+=	--with-x
 DESKTOP_ENTRIES="Links" \
 		"Lynx-like hacked WWW browser" \
 		"${PREFIX}/share/pixmaps/links.xpm" \
@@ -68,35 +66,12 @@ DESKTOP_ENTRIES="Links" \
 		"Network;WebBrowser;" \
 		false
 PLIST_FILES+=	share/pixmaps/links.xpm
-.else
-CONFIGURE_ARGS+=	--without-x
 .endif
 
-.if ${PORT_OPTIONS:MFREETYPE}
-LIB_DEPENDS+=		libfreetype.so:${PORTSDIR}/print/freetype2
-CONFIGURE_ARGS+=	--with-freetype
-.else
-CONFIGURE_ARGS+=	--without-freetype
-.endif
-
-.if ${PORT_OPTIONS:MFORMSAVE}
-CONFIGURE_ARGS+=	--enable-form-saving
-.else
-CONFIGURE_ARGS+=	--disable-form-saving
-.endif
-
-.if ${PORT_OPTIONS:MJS}
-CONFIGURE_ARGS+=	--enable-javascript
-.else
-CONFIGURE_ARGS+=	--disable-javascript
-.endif
-
-MAN1=		links.1
-PLIST_FILES+=	bin/links
-
-.if ${PORT_OPTIONS:MX11}
 post-install:
-	@${INSTALL_DATA} ${WRKSRC}/graphics/links.xpm ${PREFIX}/share/pixmaps/links.xpm
+.if ${PORT_OPTIONS:MX11}
+	(cd ${WRKSRC}/graphics && ${INSTALL_DATA} links.xpm \
+		${STAGEDIR}${PREFIX}/share/pixmaps)
 .endif
 
 .include <bsd.port.mk>
