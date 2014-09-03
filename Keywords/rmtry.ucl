@@ -1,0 +1,11 @@
+# $FreeBSD$
+#
+# MAINTAINER:	portmgr@FreeBSD.org
+actions: []
+post-deinstall: <<EOD
+	case "%@" in
+	/*) f="%@" ;;
+	 *) f="%D/%@" ;;
+	esac
+	/bin/rm -f $f 2>/dev/null || /usr/bin/true
+EOD
