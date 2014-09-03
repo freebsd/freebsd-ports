@@ -6,7 +6,7 @@ PORTVERSION=	20140505
 CATEGORIES=	misc
 MASTER_SITES=	http://files.etoilebsd.net/usbids/
 
-MAINTAINER=	bapt@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Database of all known IDs used in USB devices
 
 LICENSE=	BSD3CLAUSE GPLv2 GPLv3
