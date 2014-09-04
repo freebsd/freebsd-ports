@@ -261,5 +261,5 @@ man/man7/svgalib.mach32.7.gz
 man/man7/threedkit.7.gz
 man/man7/vgagl.7.gz
 man/man8/mode3.8.gz
-@dirrm include/linux
+@dirrmtry include/linux
 @dirrm etc/vga

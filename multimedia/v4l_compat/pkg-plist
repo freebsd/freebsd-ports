@@ -11,4 +11,4 @@ include/linux/dvb/osd.h
 include/linux/dvb/version.h
 include/linux/dvb/video.h
 @dirrm include/linux/dvb
-@dirrm include/linux
+@dirrmtry include/linux
