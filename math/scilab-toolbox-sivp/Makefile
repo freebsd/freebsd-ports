@@ -2,7 +2,7 @@
 
 PORTNAME=	sivp
 DISTVERSION=	1.0.0.r286
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	math graphics multimedia
 MASTER_SITES=	LOCAL/makc
 PKGNAMEPREFIX=	scilab-toolbox-
@@ -15,9 +15,14 @@ LIB_DEPENDS=	libopencv_legacy.so:${PORTSDIR}/graphics/opencv
 RUN_DEPENDS=	${SCILAB_CMD}:${PORTSDIR}/math/scilab
 
 USES=		dos2unix pkgconfig tar:xz
-DOS2UNIX_FILES=	etc/SIVP.start
+DOS2UNIX_FILES=	etc/SIVP.start \
+		sci_gateway/cpp/builder_gateway_cpp.sce \
+		sci_gateway/cpp/sivp_init.cpp
 
-SCILAB_CMD=	${LOCALBASE}/bin/scilab
+SCILAB_CMD=	${LOCALBASE}/bin/scilab-adv-cli
+SCILAB_ARGS=	-noatomsautoload -nb -nouserstartup
+MAKE_ENV=	LC_ALL="C" SCI_JAVA_ENABLE_HEADLESS=1 SCI_DISABLE_TK=1
+
 CONTRIBDIR?=	share/scilab/contrib
 TOOLBOXDIR_REL?=	${CONTRIBDIR}/${PORTNAME}
 TOOLBOXDIR=	${PREFIX}/${TOOLBOXDIR_REL}
@@ -25,26 +30,21 @@ PLIST_SUB=	TOOLBOXDIR=${TOOLBOXDIR_REL}
 TOOLBOX_SUBDIRS=	demos etc images macros
 
 OPTIONS_DEFINE=	HELP
-OPTIONS_DEFAULT=	${OPTIONS_DEFINE}
+OPTIONS_DEFAULT=	HELP
+OPTIONS_SUB=	yes
 HELP_DESC=	Build help files (requires scilab with gui support)
 
 .include <bsd.port.options.mk>
 
 .if !${PORT_OPTIONS:MHELP}
-SCILAB_ARGS=	-nogui
-PLIST_SUB+=	HELP="@comment "
+SCILAB_ARGS+=	-nwni
 EXTRA_PATCHES+=	${FILESDIR}/extrapatch-etc__SIVP.start
 .else
-USES+=		display:build
-MAKE_ENV=	LC_ALL="C"
-PLIST_SUB+=	HELP=""
 TOOLBOX_SUBDIRS+=	jar
 .endif
 
 pre-everything::
-	@${ECHO_CMD}
-	@${ECHO_CMD} "If you want video support, OpenCV should be compiled with ffmpeg!"
-	@${ECHO_CMD}
+	@${CAT} ${PKGMESSAGE}
 
 post-patch:
 .if !${PORT_OPTIONS:MHELP}
