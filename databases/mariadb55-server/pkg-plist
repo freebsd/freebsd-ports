@@ -62,6 +62,11 @@ lib/mysql/plugin/server_audit.so
 lib/mysql/plugin/sphinx.so
 lib/mysql/plugin/sql_errlog.so
 libexec/mysqld
+man/man1/aria_chk.1.gz
+man/man1/aria_dump_log.1.gz
+man/man1/aria_ftdump.1.gz
+man/man1/aria_pack.1.gz
+man/man1/aria_read_log.1.gz
 man/man1/innochecksum.1.gz
 man/man1/my_print_defaults.1.gz
 man/man1/myisam_ftdump.1.gz
