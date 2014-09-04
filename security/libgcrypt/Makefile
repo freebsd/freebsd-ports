@@ -2,7 +2,7 @@
 
 PORTNAME=	libgcrypt
 PORTVERSION=	1.6.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_GNUPG}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -19,6 +19,7 @@ RUN_DEPENDS=	libgpg-error>=1.8:${PORTSDIR}/security/libgpg-error
 USES=		libtool makeinfo tar:bzip2
 USE_CSTD=	gnu89
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--disable-drng-support
 CONFIGURE_ENV=	MAKEINFO="makeinfo --no-split"
 CONFIGURE_TARGET=${ARCH:S/amd64/x86_64/}-portbld-${OPSYS:tl}${OSREL}
 INSTALL_TARGET=	install-strip
@@ -40,8 +41,6 @@ CONFIGURE_ARGS+=	--disable-asm
 .if (${OSVERSION} < 900033)
 CONFIGURE_ARGS+=	--disable-aesni-support
 .endif
-
-CONFIGURE_ARGS+=	--disable-drng-support
 
 .endif
 
