@@ -660,6 +660,7 @@
     SUBDIR += p5-Geo-Point
     SUBDIR += p5-Geo-Proj4
     SUBDIR += p5-Geometry-Primitive
+    SUBDIR += p5-Gimp
     SUBDIR += p5-Google-Chart
     SUBDIR += p5-Graph-Easy
     SUBDIR += p5-Graph-ReadWrite
