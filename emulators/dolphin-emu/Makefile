@@ -2,11 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	dolphin-emu
-PORTVERSION=	4.0.0
-PORTREVISION=	5
+PORTVERSION=	4.0.2
 CATEGORIES=	emulators
-MASTER_SITES=	http://contribs.martymac.org/FreeBSD-ports/distfiles/ \
-		LOCAL/martymac
 
 MAINTAINER=	martymac@FreeBSD.org
 COMMENT=	Gamecube and Wii Emulator
@@ -18,6 +15,11 @@ LIB_DEPENDS=	libexecinfo.so:${PORTSDIR}/devel/libexecinfo \
 		liblzo2.so:${PORTSDIR}/archivers/lzo2 \
 		libSoundTouch.so:${PORTSDIR}/audio/soundtouch \
 		libpolarssl.so:${PORTSDIR}/security/polarssl
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	${PORTNAME}
+GH_PROJECT=	dolphin
+GH_COMMIT=	88fabf7
 
 USE_SDL=	sdl
 USE_XORG=	ice xext x11 xrandr xi
