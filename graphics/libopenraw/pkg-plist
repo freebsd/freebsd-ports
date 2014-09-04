@@ -12,15 +12,12 @@ include/libopenraw-1.0/libopenraw/thumbnails.h
 include/libopenraw-1.0/libopenraw/types.h
 %%GNOME%%include/libopenraw-1.0/libopenraw-gnome/gdkpixbuf.h
 %%GNOME%%lib/gdk-pixbuf-2.0/%%GTK2_VERSION%%/loaders/libopenraw_pixbuf.a
-%%GNOME%%lib/gdk-pixbuf-2.0/%%GTK2_VERSION%%/loaders/libopenraw_pixbuf.la
 %%GNOME%%lib/gdk-pixbuf-2.0/%%GTK2_VERSION%%/loaders/libopenraw_pixbuf.so
 lib/libopenraw.a
-lib/libopenraw.la
 lib/libopenraw.so
 lib/libopenraw.so.1
 lib/libopenraw.so.1.6.0
 %%GNOME%%lib/libopenrawgnome.a
-%%GNOME%%lib/libopenrawgnome.la
 %%GNOME%%lib/libopenrawgnome.so
 %%GNOME%%lib/libopenrawgnome.so.1
 %%GNOME%%lib/libopenrawgnome.so.1.6.0
