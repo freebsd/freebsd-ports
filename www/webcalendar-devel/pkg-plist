@@ -1,4 +1,6 @@
-%%NOAPACHE%%%%CONFDIR%%/webcalendar.conf
+@mode 644
+@owner %%WWWOWN%%
+@group %%WWWGRP%%
 %%WWWDIR%%/AUTHORS
 %%WWWDIR%%/GPL.html
 %%WWWDIR%%/NEWS
@@ -396,6 +398,7 @@
 %%WWWDIR%%/week_details.php
 %%WWWDIR%%/week_ssi.php
 %%WWWDIR%%/year.php
+@mode 755
 @dirrm %%WWWDIR%%/translations
 @dirrm %%WWWDIR%%/tools
 @dirrm %%WWWDIR%%/themes
@@ -423,3 +426,8 @@
 @dirrm %%WWWDIR%%/icons
 @dirrm %%WWWDIR%%/docs
 @dirrmtry %%WWWDIR%%
+@mode
+@owner
+@group
+%%EXAMPLESDIR%%/%%CONFFILE%%
+@dirrm %%EXAMPLESDIR%%

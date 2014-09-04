@@ -2,12 +2,19 @@
 *********************************************************************
 You have just installed the WebCalendar application.
 
-Note that you should restart your Apache web server to ensure that
-the WebCalendar configuration file is loaded.
+There is a sample Apache configuration file in
+	%%EXAMPLESDIR%%
 
-Next, to configure WebCalendar, please visit:
+To configure WebCalendar, please visit:
 
 	http://localhost/webcalendar/
 
 and you will be guided through the installation process.
+
+If you installed the CGI binary, you should reference it by the URL:
+
+	%%PHPCGI%%
+
+You can change this by setting WITH_PHP_CGI and recompiling the port.
+
 *********************************************************************

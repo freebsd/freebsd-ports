@@ -1,105 +1,72 @@
 # $FreeBSD$
 
 PORTNAME=	WebCalendar
-PORTVERSION=	1.2.5
+PORTVERSION=	1.2.7
 CATEGORIES=	www
-MASTER_SITES=	SF/${PORTNAME:tl}/${PORTNAME:tl}%201.2/${PORTVERSION}
-PKGNAMESUFFIX=	-devel
-DISTNAME=	${PORTNAME:S/-devel//g}-${PORTVERSION}
-PORTSCOUT=	limit:^1\.2\. skipb:1
+MASTER_SITES=	SF/${PORTNAME:tl}/${PORTNAME:tl}%201.2/${PORTVERSION}/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Web-based calendar application
 
+LICENSE=	GPLv2
+
+PORTSCOUT=	limit:^1\.2\. skipb:1
+USES=		uidfix
 USE_PHP=	pcre session
 WANT_PHP_WEB=	yes
 NO_BUILD=	yes
-CONFLICTS=	WebCalendar-[0-9]*
 
-LICENSE=	GPLv2
-
-WRKSRC=		${WRKDIR}/${DISTNAME}
 WWWDIR=		${PREFIX}/www/${PORTNAME:tl}
+DOCSDIR=	${PREFIX}/share/doc/${PORTNAME:tl}
+DEFAULT_VERSIONS=	PHP=5
+WITH_PHP_CGI?=	/cgi-bin/php
+SUB_LIST+=	PHPCGI=${WITH_PHP_CGI}
+PLIST_SUB+=	WWWOWN=${WWWOWN} WWWGRP=${WWWGRP}
 
-OPTIONS_DEFINE=	APACHE LDAP GRADIENTBG REMINDERS PALM DOCS
+PORTDOCS=	WebCalendar-SysAdmin.html \
+		newwin.gif
+
+OPTIONS_DEFINE=		APACHE LDAP GRADIENTBG REMINDERS PALM DOCS
 OPTIONS_DEFAULT=	MYSQL REMINDERS
-OPTIONS_MULTI=	DB
+OPTIONS_MULTI=		DB
 OPTIONS_MULTI_DB=	MYSQL PGSQL SQLITE MSSQL DBASE ODBC ORACLE
+OPTIONS_SUB=		yes
 GRADIENTBG_DESC=	Gradient background image support
 REMINDERS_DESC=		Email reminder support
 PALM_DESC=		Palm export support
 
+APACHE_USE=	APACHE_RUN=22+
+DBASE_USE=	PHP=dbase
+GRADIENTBG_USE=	PHP=gd
+LDAP_USE=	PHP=ldap
+MSSQL_USE=	PHP=mssql
+MYSQL_USE=	PHP=mysql
+ODBC_USE=	PHP=odbc
+ORACLE_USE=	PHP=oracle
+PALM_RUN_DEPENDS=	pilot-xfer:${PORTSDIR}/palm/pilot-link
+PGSQL_USE=	PHP=pgsql
+SQLITE_USE=	PHP=sqlite3
+
 .include <bsd.port.pre.mk>
 
-DOCSDIR=	${PREFIX}/share/doc/${PORTNAME:tl}
-PORTDOCS=	WebCalendar-SysAdmin.html \
-		newwin.gif
-
 .if ${PORT_OPTIONS:MAPACHE}
-USE_APACHE_RUN=	22+
-
-PLIST_SUB+=	NOAPACHE="" CONFDIR=${CONFDIR_REL}
+PLIST_SUB+=	CONFDIR=${CONFDIR_REL}
 CONFDIR=	${PREFIX}/${CONFDIR_REL}
 CONFDIR_REL=	${APACHEETCDIR}/Includes
 SUB_FILES=	pkg-message
-.else
-PLIST_SUB+=	NOAPACHE="@comment "
 .endif
-
-WITH_PHP_CGI?=	/cgi-bin/php
 
 .if ${PHP_SAPI:Mcgi} == "cgi" && ${PHP_SAPI:Mmod} == ""
 CGI_EXT=	-cgi
 .else
 CGI_EXT=
 .endif
-
-DEFAULT_PHP_VER=5
-
-SUB_LIST+=	PHPCGI=${WITH_PHP_CGI}
-
-.if ${PORT_OPTIONS:MMYSQL}
-USE_PHP+=	mysql
-.endif
-
-.if ${PORT_OPTIONS:MPGSQL}
-USE_PHP+=	pgsql
-.endif
-
-.if ${PORT_OPTIONS:MSQLITE}
-USE_PHP+=	sqlite3
-.endif
-
-.if ${PORT_OPTIONS:MMSSQL}
-USE_PHP+=	mssql
-.endif
-
-.if ${PORT_OPTIONS:MDBASE}
-USE_PHP+=	dbase
-.endif
-
-.if ${PORT_OPTIONS:MODBC}
-USE_PHP+=	odbc
-.endif
-
-.if ${PORT_OPTIONS:MORACLE}
-USE_PHP+=	oracle
-.endif
-
-.if ${PORT_OPTIONS:MLDAP}
-USE_PHP+=	ldap
-.endif
-
-.if ${PORT_OPTIONS:MGRADIENTBG}
-USE_PHP+=	gd
-.endif
+CONF=		webcalendar${CGI_EXT}.conf
+SUB_FILES+=	${CONF}
+PLIST_SUB+=	CONFFILE=${CONF}
 
 .if ${PORT_OPTIONS:MREMINDERS}
 WANT_PHP_CLI=	yes
-.endif
-
-.if ${PORT_OPTIONS:MPALM}
-RUN_DEPENDS+=	${LOCALBASE}/bin/pilot-xfer:${PORTSDIR}/palm/pilot-link
 .endif
 
 .if ${PORT_OPTIONS:MDOCS}
@@ -108,48 +75,15 @@ SUB_LIST+=	HASHMARK=
 SUB_LIST+=	HASHMARK=\#
 .endif
 
-CONF=		webcalendar${CGI_EXT}.conf
-SUB_FILES+=	${CONF}
-
 do-install:
 	@${MKDIR} ${STAGEDIR}${WWWDIR}
-	@cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${WWWDIR}
-	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${STAGEDIR}${WWWDIR}
-	@${ECHO_CMD} '@exec ${CHOWN} -R ${WWWOWN}:${WWWGRP} \
-		${WWWDIR:S|^${PREFIX}/|%D/|}' >> ${TMPPLIST}
-	@${FIND} ${STAGEDIR}${WWWDIR} -type f -print0 | ${XARGS} -0 ${CHMOD} 644
-	@${ECHO_CMD} '@exec ${FIND} ${WWWDIR} -type f -print0 | \
-		${XARGS} -0 ${CHMOD} 644' >> ${TMPPLIST}
-	@${FIND} ${STAGEDIR}${WWWDIR} -type d -print0 | ${XARGS} -0 ${CHMOD} 755
-	@${ECHO_CMD} '@exec ${FIND} ${WWWDIR} -type d -print0 | \
-		${XARGS} -0 ${CHMOD} 755' >> ${TMPPLIST}
+	(cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${WWWDIR})
 
 post-install:
-.if ${PORT_OPTIONS:MAPACHE}
-	@${MKDIR} ${STAGEDIR}${CONFDIR}
-	@if [ -d "${STAGEDIR}${CONFDIR}" ]; then \
-	  ${CP} ${WRKDIR}/${CONF} ${STAGEDIR}${CONFDIR}/webcalendar.conf; \
-	else \
-	  ${ECHO_MSG} "" ; \
-	  ${ECHO_MSG} "Please check your Apache 2.x installation -" ; \
-	  ${ECHO_MSG} "${CONFDIR} doesn't exist," ; \
-	  ${ECHO_MSG} "so I cannot install webcalendar.conf there!" ; \
-	  ${ECHO_MSG} "" ; \
-	  ${FALSE} ; \
-	fi
-.endif
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKDIR}/${CONF} ${STAGEDIR}${EXAMPLESDIR}
+
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	@cd ${WRKSRC}/docs && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
-.if ${CGI_EXT} == "-cgi"
-	@${ECHO_MSG}	""
-	@${ECHO_MSG}	"Your WebCalendar installation was configured to use the PHP CGI binary."
-	@${ECHO_MSG}	"The PHP CGI binary is expected to be referenced by the URL:"
-	@${ECHO_MSG}	""
-	@${ECHO_MSG}	"       ${WITH_PHP_CGI}"
-	@${ECHO_MSG}	""
-	@${ECHO_MSG}	"If this is incorrect, reinstall the port with the WITH_ PHP_CGI knob"
-	@${ECHO_MSG}	"set to the correct URL."
-	@${ECHO_MSG}	"*********************************************************************"
-.endif
+	(cd ${WRKSRC}/docs && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR})
 
 .include <bsd.port.post.mk>
