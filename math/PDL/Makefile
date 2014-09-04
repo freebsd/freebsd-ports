@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	PDL
-PORTVERSION=	2.4.11
-PORTREVISION=	4
+PORTVERSION=	2.007
 CATEGORIES=	math perl5
-MASTER_SITES=	CPAN/${PORTNAME} SF/pdl/PDL/${PORTVERSION}
+MASTER_SITES=	CPAN/${PORTNAME} SF/pdl/PDL_2013/PDL-${PORTVERSION}
 DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	perl@FreeBSD.org
@@ -14,6 +13,7 @@ COMMENT=	Perl Data Language
 BUILD_DEPENDS=	p5-Astro-FITS-Header>=0:${PORTSDIR}/astro/p5-Astro-FITS-Header \
 		p5-Convert-UU>=0:${PORTSDIR}/converters/p5-Convert-UU \
 		p5-File-Map>=0.47:${PORTSDIR}/devel/p5-File-Map \
+		p5-Module-Compile>=0.23:${PORTSDIR}/devel/p5-Module-Compile \
 		p5-Inline>=0.43:${PORTSDIR}/devel/p5-Inline
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
@@ -64,13 +64,10 @@ SINK_RUN_DEPENDS=	ppmtogif:${PORTSDIR}/graphics/netpbm \
 			saoimage:${PORTSDIR}/astro/saoimage
 
 post-patch:
-	@${GREP} -lR '#!/usr/local/bin/perl' ${WRKSRC}/ | ${XARGS} ${SED} -e 's|#!/usr/local/bin/perl|#!${PERL}|' -i ''
+	@${GREP} -lR '#!/.*bin/perl' ${WRKSRC}/ | ${XARGS} ${SED} -e 's|#!/.*bin/perl|#!${PERL}|' -i ''
 	@${GREP} -lR 'x86_64' ${WRKSRC}/ | ${XARGS} ${SED} -e 's|x86_64|amd64|g' -i ''
-	@${REINPLACE_CMD} -e 's|%%PTHREAD_CFLAGS%%|${PTHREAD_CFLAGS}|' ${WRKSRC}/perldl.conf
 	@${REINPLACE_CMD} -e "/POSIX_THREADS_LIBS/ s|undef|'${PTHREAD_LIBS}'|" \
-		-e '/WITH_IO_BROWSER/ s|0|1|' -e '/WITH_DEVEL_REPL/ s|1|0|' ${WRKSRC}/perldl.conf
-	@${REINPLACE_CMD} -e '/^#include <nan.h>/d' ${WRKSRC}/Basic/Math/mconf.h
-	@${REINPLACE_CMD} -e '/^require PDL::Core::Dev;/d' ${WRKSRC}/IO/Browser/Makefile.PL
+		${WRKSRC}/perldl.conf
 
 test: build
 	@cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} make test
