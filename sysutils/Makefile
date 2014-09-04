@@ -673,6 +673,8 @@
     SUBDIR += php53-posix
     SUBDIR += php55-fileinfo
     SUBDIR += php55-posix
+    SUBDIR += php56-fileinfo
+    SUBDIR += php56-posix
     SUBDIR += pidof
     SUBDIR += pipemeter
     SUBDIR += plasma-applet-apcups

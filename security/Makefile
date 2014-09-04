@@ -695,6 +695,10 @@
     SUBDIR += php55-hash
     SUBDIR += php55-mcrypt
     SUBDIR += php55-openssl
+    SUBDIR += php56-filter
+    SUBDIR += php56-hash
+    SUBDIR += php56-mcrypt
+    SUBDIR += php56-openssl
     SUBDIR += phpdeadlock
     SUBDIR += phpsecinfo
     SUBDIR += pidentd

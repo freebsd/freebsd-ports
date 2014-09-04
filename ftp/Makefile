@@ -68,6 +68,8 @@
     SUBDIR += php53-ftp
     SUBDIR += php55-curl
     SUBDIR += php55-ftp
+    SUBDIR += php56-curl
+    SUBDIR += php56-ftp
     SUBDIR += phpwebftp
     SUBDIR += plasma-applet-ftpmonitor
     SUBDIR += proftpd

@@ -246,6 +246,7 @@
     SUBDIR += php5-snmp
     SUBDIR += php53-snmp
     SUBDIR += php55-snmp
+    SUBDIR += php56-snmp
     SUBDIR += phpip
     SUBDIR += phpipam
     SUBDIR += phpweathermap
