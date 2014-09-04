@@ -1,21 +1,14 @@
---- CMakeLists.txt.orig	2014-07-27 16:06:05.000000000 +0300
-+++ CMakeLists.txt	2014-07-27 16:06:14.000000000 +0300
-@@ -574,18 +574,5 @@
- # Install license file as it requires.
- install(FILES Copyright.txt DESTINATION ${CMAKE_DOC_DIR})
+Modules/ and Templates/ are installed by devel/cmake-modules.
+
+Not upstreamable.
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -576,7 +576,7 @@
  
--# Install script directories.
--install(
+ # Install script directories.
+ install(
 -  DIRECTORY Help Modules Templates
--  DESTINATION ${CMAKE_DATA_DIR}
--  FILE_PERMISSIONS OWNER_READ OWNER_WRITE GROUP_READ WORLD_READ
--  DIRECTORY_PERMISSIONS OWNER_READ OWNER_EXECUTE OWNER_WRITE
--                        GROUP_READ GROUP_EXECUTE
--                        WORLD_READ WORLD_EXECUTE
--  PATTERN "*.sh*" PERMISSIONS OWNER_READ OWNER_EXECUTE OWNER_WRITE
--                              GROUP_READ GROUP_EXECUTE
--                              WORLD_READ WORLD_EXECUTE
--  )
--
- # Install auxiliary files integrating with other tools.
- add_subdirectory(Auxiliary)
++  DIRECTORY Help
+   DESTINATION ${CMAKE_DATA_DIR}
+   FILE_PERMISSIONS OWNER_READ OWNER_WRITE GROUP_READ WORLD_READ
+   DIRECTORY_PERMISSIONS OWNER_READ OWNER_EXECUTE OWNER_WRITE
