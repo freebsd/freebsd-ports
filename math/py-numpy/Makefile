@@ -24,7 +24,7 @@ RUN_DEPENDS=	nosetests:${PORTSDIR}/devel/py-nose
 USES=		fortran python
 USE_PYTHON=	concurrent distutils py3kplist
 
-OPTIONS_DEFINE=		ATLAS SUITESPARSE
+OPTIONS_DEFINE=		ATLAS SUITESPARSE DOCS
 OPTIONS_DEFAULT=	SUITESPARSE
 ATLAS_DESC=		Use optimized blas library
 SUITESPARSE_DESC=	Use AMD and UMFPACK in SuiteSparse
@@ -35,22 +35,16 @@ PYDISTUTILS_BUILDARGS+=		--fcompiler=gnu95
 PORTDOCS=	*
 WRKSRC=		${WRKDIR}/${DISTNAME:S/r/rc/}
 
+ATLAS_LIB_DEPENDS=	libatlas.so:${PORTSDIR}/math/atlas
+ATLAS_LIB_DEPENDS_OFF=	libblas.so:${PORTSDIR}/math/blas \
+			liblapack.so:${PORTSDIR}/math/lapack
+SUITESPARSE_LIB_DEPENDS=libumfpack.so:${PORTSDIR}/math/suitesparse
+
 .include <bsd.port.pre.mk>
 
 PLIST_SUB+=	PYTHON_VER=${PYTHON_VER}
 .if ${PYTHON_VERSION} == ${PYTHON_DEFAULT_VERSION}
 PLIST_FILES+=	man/man1/f2py.1.gz
-.endif
-
-.if ${PORT_OPTIONS:MATLAS}
-LIB_DEPENDS+=	libatlas.so:${PORTSDIR}/math/atlas
-.else
-LIB_DEPENDS+=	liblapack.so:${PORTSDIR}/math/lapack \
-		libblas.so:${PORTSDIR}/math/blas
-.endif
-
-.if ${PORT_OPTIONS:MSUITESPARSE}
-LIB_DEPENDS+=	libumfpack.so:${PORTSDIR}/math/suitesparse
 .endif
 
 post-extract:
