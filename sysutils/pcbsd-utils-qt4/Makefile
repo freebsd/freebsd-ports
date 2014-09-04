@@ -12,7 +12,7 @@ COMMENT=	PC-BSD Qt4 Utilities
 
 RUN_DEPENDS=	lpreserver:${PORTSDIR}/sysutils/pcbsd-utils \
 		${PYTHON_SITELIBDIR}/dbus/__init__.py:${PORTSDIR}/devel/py-dbus
-LIB_DEPENDS=	libQtSolutions_SingleApplication-head.so:${PORTSDIR}/devel/qt4-qtsolutions-singleapplication
+LIB_DEPENDS=	libQtSolutions_SingleApplication-head.so:${PORTSDIR}/devel/qt4-qtsolutions-singleapplication \
 		libcurl.so:${PORTSDIR}/ftp/curl
 
 MAKE_JOBS_UNSAFE=yes
