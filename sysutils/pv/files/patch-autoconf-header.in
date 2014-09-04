@@ -1,0 +1,15 @@
+--- autoconf/header.in.orig	2014-09-03 07:03:23.000000000 +0200
++++ autoconf/header.in	2014-09-03 07:04:24.000000000 +0200
+@@ -69,10 +69,12 @@
+ #  ifndef HAVE_STAT64
+ #   define stat64 stat
+ #   define fstat64 fstat
++#   define lstat64 lstat
+ #  endif
+ # else
+ #  define stat64 stat
+ #  define fstat64 fstat
++#  define lstat64 lstat
+ # endif
+ # define open64 open
+ # define lseek64 lseek
