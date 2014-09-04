@@ -19,12 +19,8 @@ COMMENT=	Local mail delivery agent
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
-INSTALL_TARGET=	install-suid install.man
+INSTALL_TARGET=	install.bin install.man
 
-PLIST_FILES=	bin/formail bin/lockfile bin/mailstat bin/procmail \
-		man/man1/formail.1.gz man/man1/lockfile.1.gz \
-		man/man1/procmail.1.gz man/man5/procmailex.5.gz \
-		man/man5/procmailrc.5.gz man/man5/procmailsc.5.gz
 PORTDOCS=	FAQ FEATURES HISTORY KNOWN_BUGS README
 PORTEXAMPLES=	1procmailrc 1rmail 2procmailrc 2rmail 3procmailrc 3rmail \
 		advanced dirname forward local_procmail_lmtp.m4 mailstat

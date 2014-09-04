@@ -58,8 +58,6 @@ post-patch:
 	@${REINPLACE_CMD} -e 's, install[_-]docs,,g; /MKINSDIR.*DEST_SLSH_DOC_DIR/d' \
 		${WRKSRC}/src/Makefile.in \
 		${WRKSRC}/slsh/Makefile.in
-	@${REINPLACE_CMD} -e '/RANLIB.*DEST_LIBDIR/d' \
-		${WRKSRC}/src/Makefile.in
 	@${REINPLACE_CMD} -e 's,INSTALL_MODULE,INSTALL_LIB,g' \
 		${WRKSRC}/modules/Makefile.in
 

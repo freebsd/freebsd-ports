@@ -27,8 +27,7 @@ CONFIGURE_ARGS+=	--enable-shared
 CONFIGURE_ENV+=		ac_cv_opt_olimit_ok=no OPT=""				# Null out OPT to respect user CFLAGS and remove optimizations
 
 INSTALL_TARGET=		altinstall						# Don't want cloberring of unprefixed files
-SHAREMODE=		644							# Match upstream INSTALL_DATA=644, so we can STRIP shared libraries
-MAKE_ARGS+=		INSTALL_SHARED="${INSTALL_LIB}"				# Override read-only for libraries, so we can STRIP them
+MAKE_ARGS+=		INSTALL_SHARED="${INSTALL_LIB}"				# Strip shared library
 MAKE_ARGS+=		LIBPC="${PREFIX}/libdata/pkgconfig"			# Until pathfix gets support for files other than Makefile.in
 
 PLIST_SUB=		ABI=${ABIFLAGS} \
@@ -113,7 +112,6 @@ post-patch:
 post-install:
 	for i in ${STAGEDIR}${PREFIX}/lib/python2.7/lib-dynload/*.so; do \
 		${STRIP_CMD} $$i; done						# Strip shared extensions
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libpython2.7.so.1			# Strip shared library
 
 regression-test: build
 	@cd ${WRKSRC} && ${MAKE} TESTOPTS=-j${MAKE_JOBS_NUMBER} buildbottest

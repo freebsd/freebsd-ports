@@ -1,5 +1,5 @@
---- Source/NCSBuildGnu/Makefile.in.orig	2006-08-29 08:57:09.000000000 +0100
-+++ Source/NCSBuildGnu/Makefile.in	2013-12-21 00:03:30.000000000 +0000
+--- Source/NCSBuildGnu/Makefile.in.orig	2006-08-29 07:57:09 UTC
++++ Source/NCSBuildGnu/Makefile.in
 @@ -246,22 +246,6 @@
  	../C/NCSEcw/shared_src/qmf_util.c \
  	../C/NCSEcw/shared_src/quantize.c \
@@ -96,16 +96,7 @@
  @AMDEP_TRUE@	./$(DEPDIR)/collapse_pyr.Plo \
  @AMDEP_TRUE@	./$(DEPDIR)/compress.Plo ./$(DEPDIR)/dynamiclib.Plo \
  @AMDEP_TRUE@	./$(DEPDIR)/ecw_open.Plo ./$(DEPDIR)/ecw_read.Plo \
-@@ -1036,8 +977,6 @@
- 	@list='$(lib_LIBRARIES)'; for p in $$list; do \
- 	  if test -f $$p; then \
- 	    p="`echo $$p | sed -e 's|^.*/||'`"; \
--	    echo " $(RANLIB) $(DESTDIR)$(libdir)/$$p"; \
--	    $(RANLIB) $(DESTDIR)$(libdir)/$$p; \
- 	  else :; fi; \
- 	done
- 
-@@ -1321,22 +1260,6 @@
+@@ -1321,22 +1262,6 @@
  @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/______lib_libecwj2_a-NCSWorldFile.Po@am__quote@
  @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/______lib_libecwj2_a-NCScnet.Po@am__quote@
  @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/______lib_libecwj2_a-build_pyr.Po@am__quote@
@@ -128,7 +119,7 @@
  @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/______lib_libecwj2_a-collapse_pyr.Po@am__quote@
  @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/______lib_libecwj2_a-compress.Po@am__quote@
  @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/______lib_libecwj2_a-dynamiclib.Po@am__quote@
-@@ -1364,22 +1287,6 @@
+@@ -1364,22 +1289,6 @@
  @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/______lib_libecwj2_a-unpack.Po@am__quote@
  @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/______lib_libecwj2_a-util.Po@am__quote@
  @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/build_pyr.Plo@am__quote@
@@ -151,7 +142,7 @@
  @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/collapse_pyr.Plo@am__quote@
  @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/compress.Plo@am__quote@
  @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/dynamiclib.Plo@am__quote@
-@@ -1935,534 +1842,6 @@
+@@ -1935,534 +1844,6 @@
  @AMDEP_TRUE@@am__fastdepCC_FALSE@	$(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
  @am__fastdepCC_FALSE@	$(LIBTOOL) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(______lib_libecwj2_a_CPPFLAGS) $(CPPFLAGS) $(______lib_libecwj2_a_CFLAGS) $(CFLAGS) -c -o ______lib_libecwj2_a-unpack.lo `test -f '../C/NCSEcw/shared_src/unpack.c' || echo '$(srcdir)/'`../C/NCSEcw/shared_src/unpack.c
  
@@ -686,7 +677,7 @@
  ______lib_libecwj2_a-dynamiclib.o: ../C/NCSUtil/dynamiclib.c
  @am__fastdepCC_TRUE@	if $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(______lib_libecwj2_a_CPPFLAGS) $(CPPFLAGS) $(______lib_libecwj2_a_CFLAGS) $(CFLAGS) -MT ______lib_libecwj2_a-dynamiclib.o -MD -MP -MF "$(DEPDIR)/______lib_libecwj2_a-dynamiclib.Tpo" \
  @am__fastdepCC_TRUE@	  -c -o ______lib_libecwj2_a-dynamiclib.o `test -f '../C/NCSUtil/dynamiclib.c' || echo '$(srcdir)/'`../C/NCSUtil/dynamiclib.c; \
-@@ -3288,534 +2667,6 @@
+@@ -3288,534 +2669,6 @@
  @AMDEP_TRUE@@am__fastdepCC_FALSE@	$(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
  @am__fastdepCC_FALSE@	$(LIBTOOL) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o unpack.lo `test -f '../C/NCSEcw/shared_src/unpack.c' || echo '$(srcdir)/'`../C/NCSEcw/shared_src/unpack.c
  

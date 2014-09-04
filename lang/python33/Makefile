@@ -27,8 +27,7 @@ CONFIGURE_ARGS+=	--enable-shared
 CONFIGURE_ENV+=		OPT=""							# Null out OPT to respect user CFLAGS and remove optimizations
 
 INSTALL_TARGET=		altinstall						# Don't want cloberring of unprefixed files
-SHAREMODE=		644							# Match upstream INSTALL_DATA=644, so we can STRIP shared libraries
-MAKE_ARGS+=		INSTALL_SHARED="${INSTALL_LIB}"				# Override read-only for libraries, so we can STRIP them
+MAKE_ARGS+=		INSTALL_SHARED="${INSTALL_LIB}"				# Strip shared library
 MAKE_ARGS+=		LIBPC="${PREFIX}/libdata/pkgconfig"			# Until pathfix gets support for files other than Makefile.in
 
 PLIST_SUB=		ABI=${ABIFLAGS} \
@@ -99,7 +98,6 @@ post-install:
 .endif
 	for i in ${STAGEDIR}${PREFIX}/lib/python3.3/lib-dynload/*.so; do \
 		${STRIP_CMD} $$i; done								# Strip shared extensions
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libpython3.3${ABIFLAGS}.so.1			# Strip shared library
 
 regression-test: build
 	@cd ${WRKSRC} && ${MAKE} TESTOPTS=-j${MAKE_JOBS_NUMBER} buildbottest

@@ -1,3 +1,4 @@
+@mode 640
 %%ETCDIR%%/cracking.d/kernel
 %%ETCDIR%%/cracking.d/rlogind
 %%ETCDIR%%/cracking.d/rsh
@@ -191,6 +192,7 @@
 %%DATADIR%%/detectrotate/10-savelog.dtr
 %%DATADIR%%/detectrotate/20-logrotate.dtr
 %%DATADIR%%/detectrotate/30-logrotate-dateext.dtr
+@mode
 man/man8/logcheck.8.gz
 man/man8/logtail.8.gz
 man/man8/logtail2.8.gz

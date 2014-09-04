@@ -27,19 +27,3 @@
  cxx_dprog_test_LDFLAGS =
  am_dprog_OBJECTS = lexer.$(OBJEXT) parser.$(OBJEXT) ast.$(OBJEXT) \
  	pretty_printer.$(OBJEXT) range_checking.$(OBJEXT) \
-@@ -315,6 +315,7 @@
- 	@list='$(lib_LIBRARIES)'; for p in $$list; do \
- 	  if test -f $$p; then \
- 	    f="`echo $$p | sed -e 's|^.*/||'`"; \
-+	    $(RANLIB) $$p; \
- 	    echo " $(libLIBRARIES_INSTALL) $$p $(DESTDIR)$(libdir)/$$f"; \
- 	    $(libLIBRARIES_INSTALL) $$p $(DESTDIR)$(libdir)/$$f; \
- 	  else :; fi; \
-@@ -324,7 +325,6 @@
- 	  if test -f $$p; then \
- 	    p="`echo $$p | sed -e 's|^.*/||'`"; \
- 	    echo " $(RANLIB) $(DESTDIR)$(libdir)/$$p"; \
--	    $(RANLIB) $(DESTDIR)$(libdir)/$$p; \
- 	  else :; fi; \
- 	done
- 

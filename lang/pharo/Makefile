@@ -21,8 +21,6 @@ SVNVERSION=	14438
 NO_BUILD=	yes
 USES=		zip
 
-SHAREMODE=	644
-
 DIST_SUBDIR=	squeak
 
 FILES_DIR=	${WRKDIR}/Pharo-${DISTVERSION}-${SVNVERSION}/
@@ -35,8 +33,6 @@ PLIST_FILES=	lib/squeak/Pharo-${DISTVERSION}.image \
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/squeak
-.for f in ${FILES_TO_INSTALL}
-	(cd ${FILES_DIR} && ${INSTALL_DATA} ${f} ${STAGEDIR}${PREFIX}/lib/squeak/)
-.endfor
+	${INSTALL_DATA} ${FILES_TO_INSTALL:S,^,${FILES_DIR}/,} ${STAGEDIR}${PREFIX}/lib/squeak
 
 .include <bsd.port.mk>

@@ -17,7 +17,6 @@ LICENSE=	MIT
 
 RELEASE=	5.9
 
-SHAREMODE=	0644
 GNU_CONFIGURE=	yes
 CONFIGURE_SCRIPT=../configure
 CONFIGURE_ARGS=	--datadir=${PREFIX}/share/misc --disable-overwrite \

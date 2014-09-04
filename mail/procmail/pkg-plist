@@ -1,0 +1,10 @@
+bin/formail
+@(,mail,2755) bin/lockfile
+bin/mailstat
+@(,mail,6755) bin/procmail
+man/man1/formail.1.gz
+man/man1/lockfile.1.gz
+man/man1/procmail.1.gz
+man/man5/procmailex.5.gz
+man/man5/procmailrc.5.gz
+man/man5/procmailsc.5.gz

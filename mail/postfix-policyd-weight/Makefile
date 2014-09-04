@@ -32,7 +32,7 @@ NO_BUILD=	yes
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/
-	${INSTALL_DATA} -m 644 ${WRKSRC}/${PORTNAME}.conf.sample ${STAGEDIR}${PREFIX}/etc/
+	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.conf.sample ${STAGEDIR}${PREFIX}/etc/
 	${INSTALL_MAN} ${WRKSRC}/man/man5/policyd-weight.conf.5 ${STAGEDIR}${MAN5PREFIX}/man/man5/
 	${INSTALL_MAN} ${WRKSRC}/man/man8/policyd-weight.8 ${STAGEDIR}${MAN8PREFIX}/man/man8/
 

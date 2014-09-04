@@ -25,7 +25,6 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|-lpthread||g ; \
 		 s|-ldl||g ; \
 		 s|-lc_r||g' ${WRKSRC}/configure
-	@${REINPLACE_CMD} -e '/echo.*RANLIB/,+1d' ${WRKSRC}/src/*/Makefile.in
 	@${ECHO} "JS component is not compiled with new usb stack"
 
 post-build:

@@ -4,10 +4,6 @@
 # Submitted by: koobs (r326729)
 # TODO: Upstream
 
-# Description: Run ranlib before installing the library read-only
-# Submitted by: antoine@ (r350207)
-# TODO: Upstream
-
 # Description: Create symlinks for non-ABI-suffixed python*-config and ABI-suffixed python-*.pc
 # Submitted by: antoine@ (r358029)
 # TODO: Upstream
@@ -96,16 +92,6 @@
  	-rm -f $(DESTDIR)$(BINDIR)/python3-config
  	(cd $(DESTDIR)$(BINDIR); $(LN) -s python$(VERSION)-config python3-config)
  	-rm -f $(DESTDIR)$(LIBPC)/python3.pc
-@@ -1205,8 +1199,8 @@
- 			if test "$(SHLIB_SUFFIX)" = .dll; then \
- 				$(INSTALL_DATA) $(LDLIBRARY) $(DESTDIR)$(LIBPL) ; \
- 			else \
-+				$(RANLIB) $(LIBRARY) ; \
- 				$(INSTALL_DATA) $(LIBRARY) $(DESTDIR)$(LIBPL)/$(LIBRARY) ; \
--				$(RANLIB) $(DESTDIR)$(LIBPL)/$(LIBRARY) ; \
- 			fi; \
- 		else \
- 			echo Skip install of $(LIBRARY) - use make frameworkinstall; \
 @@ -1223,6 +1217,12 @@
  	$(INSTALL_SCRIPT) $(srcdir)/Modules/makesetup $(DESTDIR)$(LIBPL)/makesetup
  	$(INSTALL_SCRIPT) $(srcdir)/install-sh $(DESTDIR)$(LIBPL)/install-sh

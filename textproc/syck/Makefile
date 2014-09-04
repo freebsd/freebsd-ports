@@ -20,7 +20,4 @@ MAKE_JOBS_UNSAFE=	yes
 
 CFLAGS+=	-fPIC
 
-post-patch:
-	@${REINPLACE_CMD} -e '/echo.*RANLIB/,+1d' ${WRKSRC}/lib/Makefile.in
-
 .include <bsd.port.mk>

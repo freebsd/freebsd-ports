@@ -18,14 +18,10 @@ FONTFILES=	gugod16.bdf gugod18.bdf gugod20.bdf gugod22.bdf
 
 WRKSRC=		${WRKDIR}
 NO_BUILD=	yes
-SHAREMODE=	644
 XFONTDIR=	${LOCALBASE}/lib/X11/fonts/local
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${XFONTDIR}
-.for i in ${FONTFILES}
-	@${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${XFONTDIR}
-.endfor
-	@cd ${STAGEDIR}${XFONTDIR} ; mkfontdir
+	${INSTALL_DATA} ${FONTFILES:S,^,${WRKSRC}/,} ${STAGEDIR}${XFONTDIR}
 
 .include <bsd.port.mk>
