@@ -3,7 +3,7 @@
 
 PORTNAME=	vim
 PORTVERSION=	7.4.${PATCHLEVEL}
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES?=	editors
 MASTER_SITES=	VIM:source \
 		${MASTER_SITE_VIM:S|unix|patches/${PORTVERSION:R}|}:patch \
@@ -142,11 +142,6 @@ MAKE_ARGS+=	CONF_OPT_PYTHON="--enable-pythoninterp --disable-python3interp"
 MAKE_ARGS+=	CONF_OPT_PYTHON="--enable-python3interp --disable-pythoninterp"
 .endif
 .endif
-
-pre-patch:
-# convert encoding for patch 399, otherwise it blocks 402 (src/undo.c), 403 (src/fileio.c) and 404 (src/undo.c)
-	@${MV} ${WRKSRC}/src/testdir/test71.ok ${WRKSRC}/src/testdir/test71.ok.orig
-	@${ICONV_CMD} -f iso-8859-1 -t utf-8 ${WRKSRC}/src/testdir/test71.ok.orig > ${WRKSRC}/src/testdir/test71.ok
 
 post-patch:
 	@${REINPLACE_CMD} -e '/^install_normal: / s|install-icons|# &|; /cd $$(DEST_BIN); ln -s/d' ${WRKSRC}/src/Makefile
