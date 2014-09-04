@@ -39,10 +39,4 @@ WRKSRC=		${WRKDIR}/lumina
 
 QMAKE_ARGS=	CONFIG+="configure"
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 1000000
-IGNORE=		requires FreeBSD 10 or later
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
