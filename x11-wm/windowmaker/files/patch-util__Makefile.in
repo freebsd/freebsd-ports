@@ -1,6 +1,6 @@
---- util/Makefile.in.orig
-+++ util/Makefile.in
-@@ -91,8 +91,7 @@
+--- util/Makefile.in.orig	2014-09-05 04:13:22.000000000 +0900
++++ util/Makefile.in	2014-09-05 04:14:30.000000000 +0900
+@@ -115,14 +115,13 @@
  wmagnify_SOURCES = wmagnify.c
  wmagnify_OBJECTS = wmagnify.$(OBJEXT)
  wmagnify_DEPENDENCIES = $(top_builddir)/WINGs/libWINGs.la \
@@ -10,7 +10,14 @@
  am_wmgenmenu_OBJECTS = wmgenmenu.$(OBJEXT)
  wmgenmenu_OBJECTS = $(am_wmgenmenu_OBJECTS)
  wmgenmenu_DEPENDENCIES = $(top_builddir)/WINGs/libWUtil.la
-@@ -104,8 +103,7 @@
+ am_wmiv_OBJECTS = wmiv.$(OBJEXT)
+ wmiv_OBJECTS = $(am_wmiv_OBJECTS)
+-wmiv_DEPENDENCIES = $(top_builddir)/wrlib/libwraster.la \
++wmiv_DEPENDENCIES = \
+ 	$(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1) \
+ 	$(am__DEPENDENCIES_1)
+ am_wmmenugen_OBJECTS = wmmenugen.$(OBJEXT) wmmenugen_misc.$(OBJEXT) \
+@@ -133,8 +132,7 @@
  wmsetbg_SOURCES = wmsetbg.c
  wmsetbg_OBJECTS = wmsetbg.$(OBJEXT)
  wmsetbg_DEPENDENCIES = $(top_builddir)/WINGs/libWINGs.la \
@@ -20,16 +27,16 @@
  wxcopy_SOURCES = wxcopy.c
  wxcopy_OBJECTS = wxcopy.$(OBJEXT)
  wxcopy_DEPENDENCIES =
-@@ -369,7 +367,7 @@
+@@ -417,7 +415,7 @@
  bin_SCRIPTS = wmaker.inst wm-oldmenu2new wkdemenu.pl
- EXTRA_DIST = wmaker.inst.in bughint wm-oldmenu2new directjpeg.c wkdemenu.pl
+ EXTRA_DIST = wmaker.inst.in bughint wm-oldmenu2new wkdemenu.pl
  AM_CPPFLAGS = -DLOCALEDIR=\"$(NLSDIR)\" \
 -	 $(DFLAGS) -I$(top_srcdir)/WINGs -I$(top_srcdir)/wrlib \
 +	 $(DFLAGS) -I$(top_srcdir)/WINGs \
  	@HEADER_SEARCH_PATH@ \
  	-DETCDIR=\"sysconfdir\" -DDATADIR=\"pkgdatadir\"
  
-@@ -392,13 +390,13 @@
+@@ -440,13 +438,13 @@
  wmagnify_LDADD = \
  	$(top_builddir)/WINGs/libWINGs.la \
  	$(top_builddir)/WINGs/libWUtil.la \
@@ -45,3 +52,12 @@
  	@XLFLAGS@ @LIBXINERAMA@ @XLIBS@ @INTLIBS@
  
  wmgenmenu_LDADD = \
+@@ -463,7 +461,7 @@
+ 	wmmenugen_parse_xdg.c
+ 
+ wmiv_LDADD = \
+-	$(top_builddir)/wrlib/libwraster.la \
++	-lwraster \
+ 	@XLFLAGS@ @XLIBS@ \
+ 	@GFXLIBS@ $(PTHREAD_CFLAGS) $(PTHREAD_LIBS) $(LIBEXIF)
+ 

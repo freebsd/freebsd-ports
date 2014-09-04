@@ -1,0 +1,11 @@
+--- configure.orig	2014-09-05 04:28:09.000000000 +0900
++++ configure	2014-09-05 04:29:09.000000000 +0900
+@@ -13046,7 +13046,7 @@
+   *-*-linux*|*-*-cygwin*|*-gnu*) :
+     WM_OSDEP="linux" ; CPPFLAGS="$CPPFLAGS -D_XOPEN_SOURCE=600" ;; #(
+   *-*-freebsd*|*-k*bsd-gnu*) :
+-    WM_OSDEP="bsd"   ; CPPFLAGS="$CPPFLAGS -D_XOPEN_SOURCE=600 -DFREEBSD" ;; #(
++    WM_OSDEP="bsd"   ; CPPFLAGS="$CPPFLAGS -D_XOPEN_SOURCE=700 -DFREEBSD" ;; #(
+   *-*-netbsd*) :
+     WM_OSDEP="bsd"   ; CPPFLAGS="$CPPFLAGS -DNETBSD" ;; #(
+   *-*-openbsd*) :

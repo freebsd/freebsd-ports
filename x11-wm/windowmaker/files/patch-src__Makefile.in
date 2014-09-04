@@ -1,16 +1,16 @@
---- src/Makefile.in.orig
-+++ src/Makefile.in
-@@ -72,8 +72,7 @@
- 	wmspec.$(OBJEXT) workspace.$(OBJEXT)
+--- src/Makefile.in.orig	2014-09-05 04:06:51.000000000 +0900
++++ src/Makefile.in	2014-09-05 04:07:46.000000000 +0900
+@@ -124,8 +124,7 @@
+ 	$(am__objects_3) $(am__objects_4)
  wmaker_OBJECTS = $(am_wmaker_OBJECTS)
  wmaker_DEPENDENCIES = $(top_builddir)/WINGs/libWINGs.la \
 -	$(top_builddir)/WINGs/libWUtil.la \
 -	$(top_builddir)/wrlib/libwraster.la
 +	$(top_builddir)/WINGs/libWUtil.la
- AM_V_lt = $(am__v_lt_$(V))
- am__v_lt_ = $(am__v_lt_$(AM_DEFAULT_VERBOSITY))
+ AM_V_lt = $(am__v_lt_@AM_V@)
+ am__v_lt_ = $(am__v_lt_@AM_DEFAULT_V@)
  am__v_lt_0 = --silent
-@@ -365,13 +364,12 @@
+@@ -353,13 +352,12 @@
  AM_CFLAGS = 
  AM_CPPFLAGS = \
  	$(DFLAGS) -DLOCALEDIR=\"$(NLSDIR)\" \

@@ -1,14 +1,14 @@
---- WINGs/Tests/Makefile.in.orig
-+++ WINGs/Tests/Makefile.in
-@@ -56,7 +56,6 @@
+--- WINGs/Tests/Makefile.in.orig	2014-09-05 03:59:36.000000000 +0900
++++ WINGs/Tests/Makefile.in	2014-09-05 04:00:47.000000000 +0900
+@@ -80,7 +80,6 @@
  testmywidget_OBJECTS = $(am_testmywidget_OBJECTS)
  testmywidget_LDADD = $(LDADD)
  testmywidget_DEPENDENCIES = $(top_builddir)/WINGs/libWINGs.la \
 -	$(top_builddir)/wrlib/libwraster.la \
  	$(top_builddir)/WINGs/libWUtil.la
- AM_V_lt = $(am__v_lt_$(V))
- am__v_lt_ = $(am__v_lt_$(AM_DEFAULT_VERBOSITY))
-@@ -65,13 +64,11 @@
+ AM_V_lt = $(am__v_lt_@AM_V@)
+ am__v_lt_ = $(am__v_lt_@AM_DEFAULT_V@)
+@@ -89,13 +88,11 @@
  wmfile_OBJECTS = wmfile.$(OBJEXT)
  wmfile_LDADD = $(LDADD)
  wmfile_DEPENDENCIES = $(top_builddir)/WINGs/libWINGs.la \
@@ -22,14 +22,14 @@
  	$(top_builddir)/WINGs/libWUtil.la
  wtest_SOURCES = wtest.c
  wtest_OBJECTS = wtest.$(OBJEXT)
-@@ -262,14 +259,14 @@
+@@ -299,14 +296,14 @@
  wprefs_bindir = @wprefs_bindir@
  wprefs_datadir = @wprefs_datadir@
  AUTOMAKE_OPTIONS = 
 -LDADD = $(top_builddir)/WINGs/libWINGs.la $(top_builddir)/wrlib/libwraster.la \
 +LDADD = $(top_builddir)/WINGs/libWINGs.la -lwraster \
  	$(top_builddir)/WINGs/libWUtil.la \
- 	@XFTLIBS@ @INTLIBS@
+ 	@XFTLIBS@ @INTLIBS@ @XLIBS@ 
  
  testmywidget_SOURCES = testmywidget.c mywidget.c mywidget.h 
  wtest_DEPENDENCIES = $(top_builddir)/WINGs/libWINGs.la

@@ -87,6 +87,7 @@ bin/wmagnify
 bin/wmaker
 bin/wmaker.inst
 bin/wmgenmenu
+bin/wmiv
 bin/wmmenugen
 bin/wmsetbg
 bin/wxcopy
@@ -102,17 +103,18 @@ include/WINGs/WUtil.h
 include/WMaker.h
 lib/libWINGs.a
 lib/libWINGs.so
-lib/libWINGs.so.2
-lib/libWINGs.so.2.0.1
+lib/libWINGs.so.3
+lib/libWINGs.so.3.0.0
 lib/libWMaker.a
 lib/libWMaker.so
 lib/libWMaker.so.1
 lib/libWMaker.so.1.0.1
 lib/libWUtil.a
 lib/libWUtil.so
-lib/libWUtil.so.3
-lib/libWUtil.so.3.0.0
+lib/libWUtil.so.5
+lib/libWUtil.so.5.0.0
 libdata/pkgconfig/WINGs.pc
+libdata/pkgconfig/WUtil.pc
 share/WINGs/Images.tiff
 share/WINGs/Images.xpm
 share/WINGs/defaultIcon.tiff
@@ -121,7 +123,8 @@ share/WindowMaker/Backgrounds/BlueImage.jpeg
 share/WindowMaker/IconSets/Default.iconset
 share/WindowMaker/Icons/BitchX.tiff
 share/WindowMaker/Icons/BitchX.xpm
-share/WindowMaker/Icons/Drawer.png
+share/WindowMaker/Icons/Drawer.tiff
+share/WindowMaker/Icons/Drawer.xpm
 share/WindowMaker/Icons/Ear.png
 share/WindowMaker/Icons/Ftp.png
 share/WindowMaker/Icons/GNUstep.tiff
@@ -278,6 +281,7 @@ share/WindowMaker/plmenu.hr
 share/WindowMaker/plmenu.it
 share/WindowMaker/plmenu.ja
 share/WindowMaker/plmenu.ko
+share/WindowMaker/plmenu.nl
 share/WindowMaker/plmenu.pl
 share/WindowMaker/plmenu.ro
 share/WindowMaker/plmenu.sk
@@ -315,6 +319,7 @@ share/WindowMaker/wmmacros
 %%NLS%%share/locale/gl/LC_MESSAGES/WindowMaker.mo
 %%NLS%%share/locale/hr/LC_MESSAGES/WPrefs.mo
 %%NLS%%share/locale/hr/LC_MESSAGES/WindowMaker.mo
+%%NLS%%share/locale/hu/LC_MESSAGES/WINGs.mo
 %%NLS%%share/locale/hu/LC_MESSAGES/WPrefs.mo
 %%NLS%%share/locale/hu/LC_MESSAGES/WindowMaker.mo
 %%NLS%%share/locale/hy/LC_MESSAGES/WindowMaker.mo
@@ -325,7 +330,10 @@ share/WindowMaker/wmmacros
 %%NLS%%share/locale/ko/LC_MESSAGES/WPrefs.mo
 %%NLS%%share/locale/ko/LC_MESSAGES/WindowMaker.mo
 %%NLS%%share/locale/ms/LC_MESSAGES/WindowMaker.mo
+%%NLS%%share/locale/nl/LC_MESSAGES/WINGs.mo
+%%NLS%%share/locale/nl/LC_MESSAGES/WPrefs.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/WindowMaker.mo
+%%NLS%%share/locale/nl/LC_MESSAGES/wmgenmenu.mo
 %%NLS%%share/locale/no/LC_MESSAGES/WindowMaker.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/WindowMaker.mo
 %%NLS%%share/locale/pt/LC_MESSAGES/WPrefs.mo
