@@ -13,8 +13,8 @@ COMMENT=	Library that makes it easy for programs to use privilege separation
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USE_AUTOTOOLS=	libtoolize aclocal autoconf automake
-AUTOMAKE_ARGS=	--add-missing
+USE_AUTOTOOLS=	libtoolize aclocal autoconf autoheader automake
+AUTOMAKE_ARGS=	-a -c -f
 USES=		libtool
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
@@ -31,5 +31,7 @@ post-patch:
 		 s|-lstdc++||' ${WRKSRC}/src/Makefile.am
 	@${REINPLACE_CMD} -e \
 		'/^CFLAGS/s|-O2 -g|@CFLAGS@|' ${WRKSRC}/tests/Makefile.am
+# microb calls sqrt which requires -lm on some architectures
+	@${ECHO_CMD} 'microb_LDADD = $$(LDADD) -lm' >> ${WRKSRC}/tests/Makefile.am
 
 .include <bsd.port.mk>
