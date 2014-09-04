@@ -8,23 +8,3 @@
  #
  # Scilab ( http://www.scilab.org/ ) - This file is part of Scilab
  # Copyright (C) INRIA - 2006-2008 - Sylvestre Ledru
---- bin/scilab-adv-cli.orig	2010-09-01 19:31:28.000000000 -0700
-+++ bin/scilab-adv-cli	2010-09-01 19:32:46.000000000 -0700
-@@ -1,4 +1,7 @@
- #!/bin/sh
-+
-+export JAVA_HOME=%%JAVA_HOME%%
-+
- #
- # Scilab ( http://www.scilab.org/ ) - This file is part of Scilab
- # Copyright (C) INRIA - 2006-2008 - Sylvestre Ledru
---- bin/scilab-cli.orig	2010-09-01 19:31:34.000000000 -0700
-+++ bin/scilab-cli	2010-09-01 19:32:57.000000000 -0700
-@@ -1,4 +1,7 @@
- #!/bin/sh
-+
-+export JAVA_HOME=%%JAVA_HOME%%
-+
- #
- # Scilab ( http://www.scilab.org/ ) - This file is part of Scilab
- # Copyright (C) INRIA - 2006-2008 - Sylvestre Ledru
