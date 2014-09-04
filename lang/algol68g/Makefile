@@ -11,8 +11,15 @@ COMMENT=	Algol 68 Genie compiler
 
 LIB_DEPENDS=	libgsl.so:${PORTSDIR}/math/gsl
 
-OPTIONS_DEFINE=	GNUPLOT PGSQL
-OPTIONS_DEFAULT=GNUPLOT PGSQL
+OPTIONS_DEFINE=	PLOTUTILS PGSQL
+OPTIONS_DEFAULT=PLOTUTILS PGSQL
+
+PLOTUTILS_DESC=		Plotting support via plotutils
+PLOTUTILS_LIB_DEPENDS=	libplot.so:${PORTSDIR}/graphics/plotutils
+PLOTUTILS_CONFIGURE_ENABLE=plotutils
+
+PGSQL_USES=		pgsql
+PGSQL_CONFIGURE_ENABLE=	postgresql
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--enable-compiler
@@ -20,20 +27,6 @@ CONFIGURE_ARGS+=--enable-compiler
 PLIST_DIRS=	include/algol68g
 PLIST_FILES=	bin/a68g man/man1/a68g.1.gz \
 		include/algol68g/a68g.h include/algol68g/a68g-config.h
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MGNUPLOT}
-LIB_DEPENDS+=	libplot.so:${PORTSDIR}/graphics/plotutils
-.else
-CONFIGURE_ARGS+=--disable-plotutils
-.endif
-
-.if ${PORT_OPTIONS:MPGSQL}
-USE_PGSQL=	yes
-.else
-CONFIGURE_ARGS+=--disable-postgresql
-.endif
 
 post-patch:
 #	Skip broken check, assume our $CC works
