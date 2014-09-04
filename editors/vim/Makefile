@@ -39,7 +39,7 @@ REINPLACE_ARGS=	-i ''
 USES=		cpe iconv pkgconfig shebangfix tar:bzip2
 WANT_GNOME=	yes
 
-PATCHLEVEL=	398
+PATCHLEVEL=	430
 PATCHFILES!=	/usr/bin/jot -s " " -w "%03d" ${PATCHLEVEL} 1 ${PATCHLEVEL}
 #POSTPONED_PATCHES=	064 087 147	# patch files postponed to be applied in post-patch:
 SKIPPED_PATCHES=	208 356		# patch files skipped
@@ -142,6 +142,11 @@ MAKE_ARGS+=	CONF_OPT_PYTHON="--enable-pythoninterp --disable-python3interp"
 MAKE_ARGS+=	CONF_OPT_PYTHON="--enable-python3interp --disable-pythoninterp"
 .endif
 .endif
+
+pre-patch:
+# convert encoding for patch 399, otherwise it blocks 402 (src/undo.c), 403 (src/fileio.c) and 404 (src/undo.c)
+	@${MV} ${WRKSRC}/src/testdir/test71.ok ${WRKSRC}/src/testdir/test71.ok.orig
+	@${ICONV_CMD} -f iso-8859-1 -t utf-8 ${WRKSRC}/src/testdir/test71.ok.orig > ${WRKSRC}/src/testdir/test71.ok
 
 post-patch:
 	@${REINPLACE_CMD} -e '/^install_normal: / s|install-icons|# &|; /cd $$(DEST_BIN); ln -s/d' ${WRKSRC}/src/Makefile
