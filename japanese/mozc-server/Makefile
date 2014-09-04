@@ -14,7 +14,8 @@ COMMENT?=	Mozc Japanese Input Method, Server
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/third_party/gyp/LICENSE
 
-BUILD_DEPENDS=	ninja:${PORTSDIR}/devel/ninja
+BUILD_DEPENDS=	ninja:${PORTSDIR}/devel/ninja \
+		python:${PORTSDIR}/lang/python
 EXTRACT_DEPENDS=${PYTHON_CMD}:${PYTHON_PORTSDIR}
 LIB_DEPENDS=	libprotobuf.so:${PORTSDIR}/devel/protobuf \
 		libzinnia.so:${PORTSDIR}/japanese/zinnia
