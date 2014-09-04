@@ -22,7 +22,6 @@ LPAC_DESC=	LPAC support
 WV_DESC=	WavPack support
 ALAC_DESC=	Apple Lossless Audio support
 LA_DESC=	Laudio support
-TTA_DESC=	TTA Lossless Audio support
 BONK_DESC=	Bonk lossy/lossless audio support
 KXS_DESC=	Kexis support
 
