@@ -1,0 +1,19 @@
+--- modules/core/includes/core_math.h.orig	2014-04-11 09:51:38.000000000 +0000
++++ modules/core/includes/core_math.h	2014-07-23 08:27:27.143519955 +0000
+@@ -53,11 +53,11 @@
+ #define DEG2RAD(x) ((x) * PI_OVER_180  )
+ #define RAD2DEG(x) ((x) * _180_OVER_PI )
+ 
+-#ifdef round
+-#undef round
+-#endif
+-
+-#define		round(a)	(int)(((a)<0.0)?(a)-.5:(a)+.5)
++// #ifdef round
++// #undef round
++// #endif
++// 
++// #define		round(a)	(int)(((a)<0.0)?(a)-.5:(a)+.5)
+ #define EPSILON 1.0e-13
+ 
+ 

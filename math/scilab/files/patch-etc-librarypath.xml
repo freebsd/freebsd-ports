@@ -1,24 +1,36 @@
---- etc/librarypath.xml.orig	2010-08-29 23:41:41.000000000 -0700
-+++ etc/librarypath.xml	2010-08-29 23:42:38.000000000 -0700
-@@ -29,19 +29,11 @@
- <path value="$SCILAB/modules/scinotes/.libs"/>
- <path value="$SCILAB/.libs"/>
- 
--<!-- Default path to the JNI classes under some Linux (JoGL under Debian for example) -->
--<path value="/usr/lib/jni/"/>
--
--<!-- Some distributions (like openSUSE) put gluegen-rt in /usr/lib instead pf /usr/lib/jni -->
--<path value="/usr/lib" />
--
- <!-- Make install with prefix -->
- <path value="$SCILAB/../../lib/scilab/"/>
- 
- <!-- Standard path -->
--<path value="/usr/lib/scilab/"/>
--
--<!-- Standard path for 64 bits -->
--<path value="/usr/lib64/scilab/"/>
-+<path value="%%JAVALIBDIR%%"/>
-+<path value="%%PREFIX%%/lib"/>
- 
+--- etc/librarypath.xml.orig	2014-04-11 09:51:34.000000000 +0000
++++ etc/librarypath.xml	2014-05-08 06:41:45.257546863 +0000
+@@ -35,30 +35,12 @@
+     <path value="$SCILAB/modules/javasci/.libs"/>
+     <path value="$SCILAB/modules/.libs"/>
+     <path value="$SCILAB/.libs"/>
+-    
+-    <!-- Default path to the JNI classes under some Linux (JoGL under Debian for example) -->
+-    <path value="/usr/lib/jni/"/>
+-    
+-    <!-- Standard path for %{_jnidir} rpm macro (jpackage) -->
+-    <path value="/usr/lib/java/"/>
+-    <path value="/usr/lib64/java/"/>
+-    
+-    <!-- RedHat put JNI on /usr/%{libdir}/%{name} instead of /usr/lib/jni -->
+-    <path value="/usr/lib/jogl2/"/>
+-    <path value="/usr/lib64/jogl2/"/>
+-    <path value="/usr/lib/gluegen2/"/>
+-    <path value="/usr/lib64/gluegen2/"/>
+-    
+-    <!-- Some distributions (like openSUSE) put gluegen-rt in /usr/lib instead pf /usr/lib/jni -->
+-    <path value="/usr/lib" />
+-    
++
+     <!-- Make install with prefix -->
+     <path value="$SCILAB/../../lib/scilab/"/>
+     
+     <!-- Standard path -->
+-    <path value="/usr/lib/scilab/"/>
+-    
+-    <!-- Standard path for 64 bits -->
+-    <path value="/usr/lib64/scilab/"/>
++    <path value="%%JAVALIBDIR%%"/>
++    <path value="%%LOCALBASE%%/lib"/>
+     
  </librarypaths>

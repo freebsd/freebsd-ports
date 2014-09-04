@@ -1,0 +1,46 @@
+--- Makefile.in.orig	2014-07-23 08:16:45.372563695 +0000
++++ Makefile.in	2014-07-23 09:22:04.067294214 +0000
+@@ -108,6 +108,7 @@
+ @IS_MACOSX_TRUE@am__append_2 = -framework Cocoa
+ @NEED_JAVA_TRUE@am__append_3 = \
+ @NEED_JAVA_TRUE@			$(top_builddir)/modules/console/libsciconsole.la \
++@NEED_JAVA_TRUE@			$(top_builddir)/modules/console/libsciconsole-minimal.la \
+ @NEED_JAVA_TRUE@			$(top_builddir)/modules/jvm/libscijvm.la \
+ @NEED_JAVA_TRUE@			$(top_builddir)/modules/commons/libscicommons.la
+ 
+@@ -827,12 +828,22 @@
+ scilab_bin_LDADD = $(top_builddir)/modules/libscilab.la \
+ 	$(top_builddir)/modules/libscilab-cli.la $(OPENMPI_LIBS) \
+ 	$(XML_LIBS) $(COMMON_LIBS) $(FLIBS) $(am__append_3) \
+-	$(am__append_4) $(am__append_11)
++	$(am__append_4) $(am__append_11) \
++	$(top_builddir)/modules/history_manager/libscihistory_manager.la \
++	$(top_builddir)/modules/ui_data/libsciui_data-disable.la \
++	$(top_builddir)/modules/hdf5/libscihdf5.la \
++	$(top_builddir)/modules/functions/libscifunctions.la \
++	$(top_builddir)/modules/history_browser/libscihistory_browser-disable.la
+ scilab_cli_bin_LDADD = $(top_builddir)/modules/libscilab-cli.la \
+ 	$(top_builddir)/modules/console/libsciconsole-minimal.la \
+ 	$(top_builddir)/modules/jvm/libscijvm-disable.la \
+ 	$(OPENMPI_LIBS) $(XML_LIBS) $(COMMON_LIBS) $(FLIBS) \
+-	$(am__append_12)
++	$(am__append_12) \
++	$(top_builddir)/modules/history_manager/libscihistory_manager.la \
++	$(top_builddir)/modules/ui_data/libsciui_data-disable.la \
++	$(top_builddir)/modules/hdf5/libscihdf5.la \
++	$(top_builddir)/modules/functions/libscifunctions.la \
++	$(top_builddir)/modules/history_browser/libscihistory_browser-disable.la
+ LANG_DOMAIN = scilab
+ TARGETS_ALL = macros $(am__append_13) $(am__append_14)
+ 
+@@ -2355,8 +2366,8 @@
+ @BUILD_HELP_TRUE@	done; \
+ @BUILD_HELP_TRUE@	fi
+ # Also install scirenderer.jar
+-@EXTERNAL_SCIRENDERER_FALSE@	$(mkinstalldirs) $(DESTDIR)$(pkgdatadir)/$(PATHTOSCIRENDERER)
+-@EXTERNAL_SCIRENDERER_FALSE@	$(INSTALL_DATA) $(top_builddir)/$(PATHTOSCIRENDERER)/$(SCIRENDERERJAR) $(DESTDIR)$(pkgdatadir)/$(PATHTOSCIRENDERER)/
++@BUILD_HELP_TRUE@@EXTERNAL_SCIRENDERER_FALSE@	$(mkinstalldirs) $(DESTDIR)$(pkgdatadir)/$(PATHTOSCIRENDERER)
++@BUILD_HELP_TRUE@@EXTERNAL_SCIRENDERER_FALSE@	$(INSTALL_DATA) $(top_builddir)/$(PATHTOSCIRENDERER)/$(SCIRENDERERJAR) $(DESTDIR)$(pkgdatadir)/$(PATHTOSCIRENDERER)/
+ 
+ .PHONY: macros localization doc
+ 
