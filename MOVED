@@ -6992,3 +6992,4 @@ games/qix||2014-09-01|Not staged
 games/vdrift||2014-09-01|Not staged
 net-mgmt/zenpack-graphportlet||2014-09-01|Not staged
 sysutils/boxbackup||2014-09-01|Not staged
+www/webcalendar-devel|www/webcalendar|2014-09-04|Removed, use www/webcalendar instead
