@@ -10,10 +10,9 @@ lib/vlock/modules/all.so
 %%CACASAVER%%lib/vlock/modules/caca.so
 @mode 4711
 sbin/vlock-main
-@mode 0750
+@mode
 @group %%VLOCK_GRP%%
 lib/vlock/modules/new.so
-@mode %%SHAREMODE%%
-@group %%SHAREGRP%%
+@group wheel
 @dirrm lib/vlock/modules
 @dirrm lib/vlock
