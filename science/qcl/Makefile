@@ -12,15 +12,9 @@ COMMENT=	Quantum computer simulator
 LICENSE=	GPLv2 # (or later)
 
 USES=		bison gmake readline tar:tgz
-USE_GCC=	any
 
-PLIST_FILES=	bin/qcl \
-		%%DATADIR%%/default.qcl %%DATADIR%%/deutsch.qcl \
-		%%DATADIR%%/dft.qcl %%DATADIR%%/examples.qcl \
-		%%DATADIR%%/grover.qcl %%DATADIR%%/linalg.qcl \
-		%%DATADIR%%/modarith.qcl %%DATADIR%%/primes.qcl \
-		%%DATADIR%%/shor.qcl %%DATADIR%%/test.qcl
-PLIST_DIRS=	%%DATADIR%%
+PLIST_FILES=	bin/qcl
+PORTDATA=	*
 
 OPTIONS_DEFINE=		PLOTUTILS
 
