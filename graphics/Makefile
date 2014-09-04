@@ -1050,6 +1050,7 @@
     SUBDIR += yed
     SUBDIR += zathura
     SUBDIR += zathura-djvu
+    SUBDIR += zathura-pdf-mupdf
     SUBDIR += zathura-pdf-poppler
     SUBDIR += zbar
     SUBDIR += zgv
