@@ -8,12 +8,10 @@ CATEGORIES=	sysutils
 MAINTAINER=	graudeejs@gmail.com
 COMMENT=	Simple sh script to make zfs rolling snaphosts with cron
 
-BROKEN=		fetching checksum mismatch
-
 NO_BUILD=	yes
 USE_GITHUB=	yes
-GH_PROJECT=	zfSnap
-GH_ACCOUNT=	graudeejs
+GH_PROJECT=	zfsnap
+GH_ACCOUNT=	zfsnap
 GH_TAGNAME=	v${PORTVERSION}
 GH_COMMIT=	2228749
 
