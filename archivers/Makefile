@@ -150,6 +150,10 @@
     SUBDIR += php55-phar
     SUBDIR += php55-zip
     SUBDIR += php55-zlib
+    SUBDIR += php56-bz2
+    SUBDIR += php56-phar
+    SUBDIR += php56-zip
+    SUBDIR += php56-zlib
     SUBDIR += pigz
     SUBDIR += pixz
     SUBDIR += plzip

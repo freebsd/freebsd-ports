@@ -480,6 +480,7 @@
     SUBDIR += mod_perl2
     SUBDIR += mod_php5
     SUBDIR += mod_php55
+    SUBDIR += mod_php56
     SUBDIR += mod_proctitle
     SUBDIR += mod_proxy_html
     SUBDIR += mod_proxy_uwsgi
@@ -1401,6 +1402,9 @@
     SUBDIR += php55-opcache
     SUBDIR += php55-session
     SUBDIR += php55-tidy
+    SUBDIR += php56-opcache
+    SUBDIR += php56-session
+    SUBDIR += php56-tidy   
     SUBDIR += phpbb
     SUBDIR += phpbb3
     SUBDIR += phpgroupware

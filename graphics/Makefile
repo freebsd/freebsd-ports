@@ -759,6 +759,8 @@
     SUBDIR += php53-gd
     SUBDIR += php55-exif
     SUBDIR += php55-gd
+    SUBDIR += php56-exif
+    SUBDIR += php56-gd
     SUBDIR += phplot
     SUBDIR += picpuz
     SUBDIR += picturebook

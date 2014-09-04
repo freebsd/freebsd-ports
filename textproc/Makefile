@@ -1121,6 +1121,15 @@
     SUBDIR += php55-xmlreader
     SUBDIR += php55-xmlwriter
     SUBDIR += php55-xsl
+    SUBDIR += php56-ctype
+    SUBDIR += php56-dom
+    SUBDIR += php56-pspell
+    SUBDIR += php56-simplexml
+    SUBDIR += php56-wddx
+    SUBDIR += php56-xml
+    SUBDIR += php56-xmlreader
+    SUBDIR += php56-xmlwriter
+    SUBDIR += php56-xsl
     SUBDIR += plover
     SUBDIR += po4a
     SUBDIR += pocketreader

@@ -831,6 +831,10 @@
     SUBDIR += php55-soap
     SUBDIR += php55-sockets
     SUBDIR += php55-xmlrpc
+    SUBDIR += php56-ldap  
+    SUBDIR += php56-soap  
+    SUBDIR += php56-sockets
+    SUBDIR += php56-xmlrpc
     SUBDIR += phpldapadmin
     SUBDIR += pimdd
     SUBDIR += pipsecd
