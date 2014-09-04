@@ -47,4 +47,7 @@ post-patch:
 		${WRKSRC}/libcharset/configure \
 		${WRKSRC}/preload/configure
 
+post-install:
+	${RM} ${STAGEDIR}${PREFIX}/lib/*.la
+
 .include <bsd.port.mk>
