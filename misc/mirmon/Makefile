@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mirmon
-PORTVERSION=	2.9
+PORTVERSION=	2.10
 CATEGORIES=	misc
 MASTER_SITES=	http://www.staff.science.uu.nl/~penni101/mirmon/
 
@@ -12,6 +12,9 @@ COMMENT=	Monitor the status of mirrors
 NO_BUILD=	yes
 USES=		perl5
 USE_PERL5=	run
+
+USES=		shebangfix
+SHEBANG_FILES=	${WRKSRC}/mirmon ${WRKSRC}/probe
 
 SUB_FILES=	pkg-message
 SUB_LIST=	PREFIX=${PREFIX}
