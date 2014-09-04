@@ -1,6 +1,5 @@
 bin/about
 bin/lpreserver
-bin/pc-metapkgmanager
 bin/pc-pkg
 bin/warden
 bin/pc-extractoverlay
@@ -17,15 +16,18 @@ bin/pc-sambaconf
 bin/pc-adctl
 bin/pc-ldapctl
 bin/de-info
+bin/de-logout
 bin/pc-thinclient
 bin/pc-xdgutil
 bin/pc-firstgui
 bin/pc-runxgui
 bin/pc-checkxdisplay
 bin/pc-installdialog
+bin/pc-systemflag
 bin/enable_user_pefs
-sbin/app
-sbin/pbi
+bin/restamp-grub
+bin/syscache
+bin/syscache-daemon
 sbin/pc-sysinstall
 share/lpreserver/backend/zfsmon.sh
 share/lpreserver/backend/zfsrmsnap.sh
@@ -48,7 +50,6 @@ share/warden/scripts/backend/createjail.sh
 share/warden/scripts/backend/createtemplate.sh
 share/warden/scripts/backend/zfslistsnap.sh
 share/warden/scripts/backend/zfsrevertsnap.sh
-share/warden/scripts/backend/zfsrmclone.sh
 share/warden/scripts/backend/details.sh
 share/warden/scripts/backend/zfsmksnap.sh
 share/warden/scripts/backend/startjail.sh
@@ -58,7 +59,6 @@ share/warden/scripts/backend/listpbis.sh
 share/warden/scripts/backend/cronsnap.sh
 share/warden/scripts/backend/setupusers.sh
 share/warden/scripts/backend/checkstatus.sh
-share/warden/scripts/backend/zfsclonesnap.sh
 share/warden/scripts/backend/functions.sh
 share/warden/scripts/backend/importjail.sh
 share/warden/scripts/backend/stopjail.sh
@@ -66,7 +66,7 @@ share/warden/scripts/backend/zfsrmsnap.sh
 share/warden/scripts/backend/listpkgs.sh
 share/warden/scripts/backend/exportjail.sh
 share/warden/scripts/backend/deletejail.sh
-share/warden/scripts/backend/zfslistclone.sh
+share/warden/scripts/backend/zfsclone.sh
 share/warden/scripts/backend/zfscronsnap.sh
 share/warden/linux-installs/debian-6-squeeze
 share/warden/linux-installs/gentoo-stage3-i486
@@ -155,312 +155,6 @@ share/pcbsd/pefs/system
 share/pcbsd/distfiles/desktop-overlay.txz
 share/pcbsd/distfiles/port-overlay.txz
 share/pcbsd/distfiles/server-overlay.txz
-share/pcbsd/metaset/trueos/PostgreSQL/ports-list
-share/pcbsd/metaset/trueos/PostgreSQL/pkg-parent
-share/pcbsd/metaset/trueos/PostgreSQL/pkg-icon.png
-share/pcbsd/metaset/trueos/PostgreSQL/pkg-desc
-share/pcbsd/metaset/trueos/Lighttp/ports-list
-share/pcbsd/metaset/trueos/Lighttp/pkg-parent
-share/pcbsd/metaset/trueos/Lighttp/pkg-desc
-share/pcbsd/metaset/trueos/Lighttp/pkg-icon.png
-share/pcbsd/metaset/trueos/File-Servers/pkg-icon.png
-share/pcbsd/metaset/trueos/File-Servers/pkg-desc
-share/pcbsd/metaset/trueos/Samba/pkg-icon.png
-share/pcbsd/metaset/trueos/Samba/pkg-parent
-share/pcbsd/metaset/trueos/Samba/ports-list
-share/pcbsd/metaset/trueos/Samba/pkg-desc
-share/pcbsd/metaset/trueos/ownCloud/pkg-desc
-share/pcbsd/metaset/trueos/ownCloud/pkg-icon.png
-share/pcbsd/metaset/trueos/ownCloud/ports-list
-share/pcbsd/metaset/trueos/ownCloud/pkg-parent
-share/pcbsd/metaset/trueos/NGINX/pkg-icon.png
-share/pcbsd/metaset/trueos/NGINX/ports-list
-share/pcbsd/metaset/trueos/NGINX/pkg-parent
-share/pcbsd/metaset/trueos/NGINX/pkg-desc
-share/pcbsd/metaset/trueos/VirtualBox/pkg-parent
-share/pcbsd/metaset/trueos/VirtualBox/ports-list
-share/pcbsd/metaset/trueos/VirtualBox/pkg-desc
-share/pcbsd/metaset/trueos/VirtualBox/pkg-icon.png
-share/pcbsd/metaset/trueos/VirtualBoxGuest/pkg-parent
-share/pcbsd/metaset/trueos/VirtualBoxGuest/ports-list
-share/pcbsd/metaset/trueos/VirtualBoxGuest/pkg-desc
-share/pcbsd/metaset/trueos/VirtualBoxGuest/pkg-icon.png
-share/pcbsd/metaset/trueos/VirtualBoxGuest/post-install.sh
-share/pcbsd/metaset/trueos/VirtualBoxGuest/post-remove.sh
-share/pcbsd/metaset/trueos/VMwareGuest/pkg-parent
-share/pcbsd/metaset/trueos/VMwareGuest/ports-list
-share/pcbsd/metaset/trueos/VMwareGuest/pkg-desc
-share/pcbsd/metaset/trueos/VMwareGuest/pkg-icon.png
-share/pcbsd/metaset/trueos/VMwareGuest/post-install.sh
-share/pcbsd/metaset/trueos/VMwareGuest/post-remove.sh
-share/pcbsd/metaset/trueos/MySQL/pkg-desc
-share/pcbsd/metaset/trueos/MySQL/pkg-icon.png
-share/pcbsd/metaset/trueos/MySQL/ports-list
-share/pcbsd/metaset/trueos/MySQL/pkg-parent
-share/pcbsd/metaset/trueos/Languages/pkg-icon.png
-share/pcbsd/metaset/trueos/Languages/pkg-desc
-share/pcbsd/metaset/trueos/Database-Servers/pkg-desc
-share/pcbsd/metaset/trueos/Database-Servers/pkg-icon.png
-share/pcbsd/metaset/trueos/Development/ports-list
-share/pcbsd/metaset/trueos/Development/pkg-desc
-share/pcbsd/metaset/trueos/Development/pkg-icon.png
-share/pcbsd/metaset/trueos/Apache/ports-list
-share/pcbsd/metaset/trueos/Apache/pkg-parent
-share/pcbsd/metaset/trueos/Apache/pkg-icon.png
-share/pcbsd/metaset/trueos/Apache/pkg-desc
-share/pcbsd/metaset/trueos/PHP/pkg-parent
-share/pcbsd/metaset/trueos/PHP/ports-list
-share/pcbsd/metaset/trueos/PHP/pkg-desc
-share/pcbsd/metaset/trueos/PHP/pkg-icon.png
-share/pcbsd/metaset/trueos/Squid/pkg-icon.png
-share/pcbsd/metaset/trueos/Squid/pkg-parent
-share/pcbsd/metaset/trueos/Squid/ports-list
-share/pcbsd/metaset/trueos/Squid/pkg-desc
-share/pcbsd/metaset/trueos/Virtualization/pkg-icon.png
-share/pcbsd/metaset/trueos/Virtualization/pkg-desc
-share/pcbsd/metaset/trueos/Wordpress/ports-list
-share/pcbsd/metaset/trueos/Wordpress/pkg-desc
-share/pcbsd/metaset/trueos/Wordpress/pkg-parent
-share/pcbsd/metaset/trueos/Wordpress/pkg-icon.png
-share/pcbsd/metaset/trueos/Web-Servers/pkg-icon.png
-share/pcbsd/metaset/trueos/Web-Servers/pkg-desc
-share/pcbsd/metaset/pcbsd/IceWM/pkg-desc
-share/pcbsd/metaset/pcbsd/IceWM/pkg-parent
-share/pcbsd/metaset/pcbsd/IceWM/ports-list
-share/pcbsd/metaset/pcbsd/IceWM/desktop
-share/pcbsd/metaset/pcbsd/IceWM/pkg-icon.png
-share/pcbsd/metaset/pcbsd/KDE-Multimedia/ports-list
-share/pcbsd/metaset/pcbsd/KDE-Multimedia/pkg-parent
-share/pcbsd/metaset/pcbsd/KDE-Multimedia/pkg-desc
-share/pcbsd/metaset/pcbsd/KDE-Multimedia/pkg-icon.png
-share/pcbsd/metaset/pcbsd/VMwareGuest/post-remove.sh
-share/pcbsd/metaset/pcbsd/VMwareGuest/pkg-parent
-share/pcbsd/metaset/pcbsd/VMwareGuest/pkg-desc
-share/pcbsd/metaset/pcbsd/VMwareGuest/ports-list
-share/pcbsd/metaset/pcbsd/VMwareGuest/post-install.sh
-share/pcbsd/metaset/pcbsd/VMwareGuest/pkg-icon.png
-share/pcbsd/metaset/pcbsd/FVWM/pkg-parent
-share/pcbsd/metaset/pcbsd/FVWM/ports-list
-share/pcbsd/metaset/pcbsd/FVWM/pkg-icon.png
-share/pcbsd/metaset/pcbsd/FVWM/pkg-desc
-share/pcbsd/metaset/pcbsd/FVWM/desktop
-share/pcbsd/metaset/pcbsd/NVIDIA-Legacy-173/ignore-arch
-share/pcbsd/metaset/pcbsd/NVIDIA-Legacy-173/pkg-parent
-share/pcbsd/metaset/pcbsd/NVIDIA-Legacy-173/post-remove.sh
-share/pcbsd/metaset/pcbsd/NVIDIA-Legacy-173/ports-list
-share/pcbsd/metaset/pcbsd/NVIDIA-Legacy-173/pkg-desc
-share/pcbsd/metaset/pcbsd/NVIDIA-Legacy-173/pkg-icon.png
-share/pcbsd/metaset/pcbsd/NVIDIA-Legacy-173/post-install.sh
-share/pcbsd/metaset/pcbsd/NVIDIA-Legacy-304/pkg-desc
-share/pcbsd/metaset/pcbsd/NVIDIA-Legacy-304/pkg-icon.png
-share/pcbsd/metaset/pcbsd/NVIDIA-Legacy-304/pkg-parent
-share/pcbsd/metaset/pcbsd/NVIDIA-Legacy-304/ports-list
-share/pcbsd/metaset/pcbsd/NVIDIA-Legacy-304/post-install.sh
-share/pcbsd/metaset/pcbsd/NVIDIA-Legacy-304/post-remove.sh
-share/pcbsd/metaset/pcbsd/I3/pkg-icon.png
-share/pcbsd/metaset/pcbsd/I3/pkg-desc
-share/pcbsd/metaset/pcbsd/I3/pkg-parent
-share/pcbsd/metaset/pcbsd/I3/ports-list
-share/pcbsd/metaset/pcbsd/I3/desktop
-share/pcbsd/metaset/pcbsd/LXDE/pkg-icon.png
-share/pcbsd/metaset/pcbsd/LXDE/ports-list
-share/pcbsd/metaset/pcbsd/LXDE/pkg-parent
-share/pcbsd/metaset/pcbsd/LXDE/desktop
-share/pcbsd/metaset/pcbsd/LXDE/pkg-desc
-share/pcbsd/metaset/pcbsd/Development-Science/ports-list
-share/pcbsd/metaset/pcbsd/Development-Science/pkg-parent
-share/pcbsd/metaset/pcbsd/Development-Science/pkg-icon.png
-share/pcbsd/metaset/pcbsd/Development-Science/pkg-desc
-share/pcbsd/metaset/pcbsd/Development-Science/dl-only
-share/pcbsd/metaset/pcbsd/Development-Qt/pkg-icon.png
-share/pcbsd/metaset/pcbsd/Development-Qt/pkg-parent
-share/pcbsd/metaset/pcbsd/Development-Qt/pkg-desc
-share/pcbsd/metaset/pcbsd/Development-Qt/ports-list
-share/pcbsd/metaset/pcbsd/KDE-Calligra/pkg-parent
-share/pcbsd/metaset/pcbsd/KDE-Calligra/ports-list
-share/pcbsd/metaset/pcbsd/KDE-Calligra/pkg-desc
-share/pcbsd/metaset/pcbsd/KDE-Calligra/pkg-icon.png
-share/pcbsd/metaset/pcbsd/KDE-Calligra/dl-only
-share/pcbsd/metaset/pcbsd/XFCE/desktop
-share/pcbsd/metaset/pcbsd/XFCE/pkg-desc
-share/pcbsd/metaset/pcbsd/XFCE/pkg-parent
-share/pcbsd/metaset/pcbsd/XFCE/ports-list
-share/pcbsd/metaset/pcbsd/XFCE/pkg-icon.png
-share/pcbsd/metaset/pcbsd/XBMC/pkg-icon.png
-share/pcbsd/metaset/pcbsd/XBMC/pkg-parent
-share/pcbsd/metaset/pcbsd/XBMC/ports-list
-share/pcbsd/metaset/pcbsd/XBMC/pkg-desc
-share/pcbsd/metaset/pcbsd/XBMC/dl-only
-share/pcbsd/metaset/pcbsd/Awesome/pkg-parent
-share/pcbsd/metaset/pcbsd/Awesome/ports-list
-share/pcbsd/metaset/pcbsd/Awesome/pkg-icon.png
-share/pcbsd/metaset/pcbsd/Awesome/pkg-desc
-share/pcbsd/metaset/pcbsd/Awesome/desktop
-share/pcbsd/metaset/pcbsd/Hardware-Drivers/pkg-icon.png
-share/pcbsd/metaset/pcbsd/Hardware-Drivers/pkg-desc
-share/pcbsd/metaset/pcbsd/Development-Debug/pkg-icon.png
-share/pcbsd/metaset/pcbsd/Development-Debug/pkg-parent
-share/pcbsd/metaset/pcbsd/Development-Debug/ports-list
-share/pcbsd/metaset/pcbsd/Development-Debug/pkg-desc
-share/pcbsd/metaset/pcbsd/KDE-Education/pkg-parent
-share/pcbsd/metaset/pcbsd/KDE-Education/ports-list
-share/pcbsd/metaset/pcbsd/KDE-Education/pkg-desc
-share/pcbsd/metaset/pcbsd/KDE-Education/pkg-icon.png
-share/pcbsd/metaset/pcbsd/KDE-Education/dl-only
-share/pcbsd/metaset/pcbsd/Openbox/pkg-icon.png
-share/pcbsd/metaset/pcbsd/Openbox/desktop
-share/pcbsd/metaset/pcbsd/Openbox/pkg-desc
-share/pcbsd/metaset/pcbsd/Openbox/pkg-parent
-share/pcbsd/metaset/pcbsd/Openbox/ports-list
-share/pcbsd/metaset/pcbsd/Spectrwm/pkg-icon.png
-share/pcbsd/metaset/pcbsd/Spectrwm/pkg-desc
-share/pcbsd/metaset/pcbsd/Spectrwm/desktop
-share/pcbsd/metaset/pcbsd/Spectrwm/pkg-parent
-share/pcbsd/metaset/pcbsd/Spectrwm/ports-list
-share/pcbsd/metaset/pcbsd/GNOME/ports-list
-share/pcbsd/metaset/pcbsd/GNOME/pkg-parent
-share/pcbsd/metaset/pcbsd/GNOME/desktop
-share/pcbsd/metaset/pcbsd/GNOME/pkg-icon.png
-share/pcbsd/metaset/pcbsd/GNOME/pkg-desc
-share/pcbsd/metaset/pcbsd/Mate/ports-list
-share/pcbsd/metaset/pcbsd/Mate/pkg-parent
-share/pcbsd/metaset/pcbsd/Mate/desktop
-share/pcbsd/metaset/pcbsd/Mate/pkg-icon.png
-share/pcbsd/metaset/pcbsd/Mate/pkg-desc
-share/pcbsd/metaset/pcbsd/KDE/pkg-parent
-share/pcbsd/metaset/pcbsd/KDE/ports-list
-share/pcbsd/metaset/pcbsd/KDE/desktop
-share/pcbsd/metaset/pcbsd/KDE/pkg-icon.png
-share/pcbsd/metaset/pcbsd/KDE/pkg-desc
-share/pcbsd/metaset/pcbsd/Cinnamon/ports-list
-share/pcbsd/metaset/pcbsd/Cinnamon/pkg-parent
-share/pcbsd/metaset/pcbsd/Cinnamon/desktop
-share/pcbsd/metaset/pcbsd/Cinnamon/pkg-icon.png
-share/pcbsd/metaset/pcbsd/Cinnamon/pkg-desc
-share/pcbsd/metaset/pcbsd/Rekonq/pkg-desc
-share/pcbsd/metaset/pcbsd/Rekonq/pkg-icon.png
-share/pcbsd/metaset/pcbsd/Rekonq/ports-list
-share/pcbsd/metaset/pcbsd/Rekonq/pkg-parent
-share/pcbsd/metaset/pcbsd/Rekonq/dl-only
-share/pcbsd/metaset/pcbsd/KDE-L10N/pkg-desc
-share/pcbsd/metaset/pcbsd/KDE-L10N/pkg-icon.png
-share/pcbsd/metaset/pcbsd/KDE-L10N/ports-list
-share/pcbsd/metaset/pcbsd/KDE-L10N/pkg-parent
-share/pcbsd/metaset/pcbsd/Development/pkg-icon.png
-share/pcbsd/metaset/pcbsd/Development/ports-list
-share/pcbsd/metaset/pcbsd/Development/pkg-desc
-share/pcbsd/metaset/pcbsd/KDE-Artwork/pkg-icon.png
-share/pcbsd/metaset/pcbsd/KDE-Artwork/pkg-desc
-share/pcbsd/metaset/pcbsd/KDE-Artwork/ports-list
-share/pcbsd/metaset/pcbsd/KDE-Artwork/pkg-parent
-share/pcbsd/metaset/pcbsd/VirtualBoxGuest/post-remove.sh
-share/pcbsd/metaset/pcbsd/VirtualBoxGuest/post-install.sh
-share/pcbsd/metaset/pcbsd/VirtualBoxGuest/pkg-desc
-share/pcbsd/metaset/pcbsd/VirtualBoxGuest/pkg-parent
-share/pcbsd/metaset/pcbsd/VirtualBoxGuest/ports-list
-share/pcbsd/metaset/pcbsd/VirtualBoxGuest/pkg-icon.png
-share/pcbsd/metaset/pcbsd/KDE-PIM/pkg-icon.png
-share/pcbsd/metaset/pcbsd/KDE-PIM/ports-list
-share/pcbsd/metaset/pcbsd/KDE-PIM/pkg-parent
-share/pcbsd/metaset/pcbsd/KDE-PIM/pkg-desc
-share/pcbsd/metaset/pcbsd/XFCE-Plugins/ports-list
-share/pcbsd/metaset/pcbsd/XFCE-Plugins/pkg-parent
-share/pcbsd/metaset/pcbsd/XFCE-Plugins/pkg-icon.png
-share/pcbsd/metaset/pcbsd/XFCE-Plugins/pkg-desc
-share/pcbsd/metaset/pcbsd/KDE-Accessibility/pkg-desc
-share/pcbsd/metaset/pcbsd/KDE-Accessibility/ports-list
-share/pcbsd/metaset/pcbsd/KDE-Accessibility/pkg-parent
-share/pcbsd/metaset/pcbsd/KDE-Accessibility/pkg-icon.png
-share/pcbsd/metaset/pcbsd/Handheld/pkg-desc
-share/pcbsd/metaset/pcbsd/Handheld/pkg-parent
-share/pcbsd/metaset/pcbsd/Handheld/ports-list
-share/pcbsd/metaset/pcbsd/Handheld/pkg-icon.png
-share/pcbsd/metaset/pcbsd/KDE-Games/pkg-icon.png
-share/pcbsd/metaset/pcbsd/KDE-Games/pkg-desc
-share/pcbsd/metaset/pcbsd/KDE-Games/ports-list
-share/pcbsd/metaset/pcbsd/KDE-Games/pkg-parent
-share/pcbsd/metaset/pcbsd/KDE-Games/dl-only
-share/pcbsd/metaset/pcbsd/NVIDIA-Legacy-71/post-remove.sh
-share/pcbsd/metaset/pcbsd/NVIDIA-Legacy-71/pkg-icon.png
-share/pcbsd/metaset/pcbsd/NVIDIA-Legacy-71/ports-list
-share/pcbsd/metaset/pcbsd/NVIDIA-Legacy-71/post-install.sh
-share/pcbsd/metaset/pcbsd/NVIDIA-Legacy-71/pkg-parent
-share/pcbsd/metaset/pcbsd/NVIDIA-Legacy-71/pkg-desc
-share/pcbsd/metaset/pcbsd/NVIDIA-Legacy-71/ignore-arch
-share/pcbsd/metaset/pcbsd/KDE-WebDevKit/pkg-icon.png
-share/pcbsd/metaset/pcbsd/KDE-WebDevKit/ports-list
-share/pcbsd/metaset/pcbsd/KDE-WebDevKit/pkg-parent
-share/pcbsd/metaset/pcbsd/KDE-WebDevKit/pkg-desc
-share/pcbsd/metaset/pcbsd/KDE-WebDevKit/dl-only
-share/pcbsd/metaset/pcbsd/Development-Embedded/pkg-parent
-share/pcbsd/metaset/pcbsd/Development-Embedded/ports-list
-share/pcbsd/metaset/pcbsd/Development-Embedded/pkg-desc
-share/pcbsd/metaset/pcbsd/Development-Embedded/pkg-icon.png
-share/pcbsd/metaset/pcbsd/Development-Embedded/dl-only
-share/pcbsd/metaset/pcbsd/Unsupported-Desktops/pkg-desc
-share/pcbsd/metaset/pcbsd/Unsupported-Desktops/pkg-icon.png
-share/pcbsd/metaset/pcbsd/Development-Web/pkg-parent
-share/pcbsd/metaset/pcbsd/Development-Web/ports-list
-share/pcbsd/metaset/pcbsd/Development-Web/pkg-icon.png
-share/pcbsd/metaset/pcbsd/Development-Web/pkg-desc
-share/pcbsd/metaset/pcbsd/WindowLab/desktop
-share/pcbsd/metaset/pcbsd/WindowLab/pkg-desc
-share/pcbsd/metaset/pcbsd/WindowLab/pkg-parent
-share/pcbsd/metaset/pcbsd/WindowLab/ports-list
-share/pcbsd/metaset/pcbsd/WindowLab/pkg-icon.png
-share/pcbsd/metaset/pcbsd/Window_Maker/desktop
-share/pcbsd/metaset/pcbsd/Window_Maker/pkg-desc
-share/pcbsd/metaset/pcbsd/Window_Maker/pkg-parent
-share/pcbsd/metaset/pcbsd/Window_Maker/ports-list
-share/pcbsd/metaset/pcbsd/Window_Maker/pkg-icon.png
-share/pcbsd/metaset/pcbsd/NVIDIA/pkg-parent
-share/pcbsd/metaset/pcbsd/NVIDIA/ports-list
-share/pcbsd/metaset/pcbsd/NVIDIA/pkg-icon.png
-share/pcbsd/metaset/pcbsd/NVIDIA/post-remove.sh
-share/pcbsd/metaset/pcbsd/NVIDIA/post-install.sh
-share/pcbsd/metaset/pcbsd/NVIDIA/pkg-desc
-share/pcbsd/metaset/pcbsd/HPLIP/pkg-icon.png
-share/pcbsd/metaset/pcbsd/HPLIP/pkg-desc
-share/pcbsd/metaset/pcbsd/HPLIP/pkg-parent
-share/pcbsd/metaset/pcbsd/HPLIP/ports-list
-share/pcbsd/metaset/pcbsd/KDE-SDK/ports-list
-share/pcbsd/metaset/pcbsd/KDE-SDK/pkg-parent
-share/pcbsd/metaset/pcbsd/KDE-SDK/pkg-desc
-share/pcbsd/metaset/pcbsd/KDE-SDK/pkg-icon.png
-share/pcbsd/metaset/pcbsd/KDE-SDK/dl-only
-share/pcbsd/metaset/pcbsd/KDE-Graphics/pkg-icon.png
-share/pcbsd/metaset/pcbsd/KDE-Graphics/pkg-parent
-share/pcbsd/metaset/pcbsd/KDE-Graphics/ports-list
-share/pcbsd/metaset/pcbsd/KDE-Graphics/pkg-desc
-share/pcbsd/metaset/pcbsd/NVIDIA-Legacy-96/post-remove.sh
-share/pcbsd/metaset/pcbsd/NVIDIA-Legacy-96/pkg-desc
-share/pcbsd/metaset/pcbsd/NVIDIA-Legacy-96/ignore-arch
-share/pcbsd/metaset/pcbsd/NVIDIA-Legacy-96/pkg-icon.png
-share/pcbsd/metaset/pcbsd/NVIDIA-Legacy-96/ports-list
-share/pcbsd/metaset/pcbsd/NVIDIA-Legacy-96/post-install.sh
-share/pcbsd/metaset/pcbsd/NVIDIA-Legacy-96/pkg-parent
-share/pcbsd/metaset/pcbsd/KDE-Toys/pkg-parent
-share/pcbsd/metaset/pcbsd/KDE-Toys/ports-list
-share/pcbsd/metaset/pcbsd/KDE-Toys/pkg-desc
-share/pcbsd/metaset/pcbsd/KDE-Toys/pkg-icon.png
-share/pcbsd/metaset/pcbsd/KDE-Toys/dl-only
-share/pcbsd/metaset/pcbsd/Ratpoison/desktop
-share/pcbsd/metaset/pcbsd/Ratpoison/pkg-parent
-share/pcbsd/metaset/pcbsd/Ratpoison/pkg-icon.png
-share/pcbsd/metaset/pcbsd/Ratpoison/ports-list
-share/pcbsd/metaset/pcbsd/Ratpoison/pkg-desc
-share/pcbsd/metaset/pcbsd/Development-VCS/ports-list
-share/pcbsd/metaset/pcbsd/Development-VCS/pkg-desc
-share/pcbsd/metaset/pcbsd/Development-VCS/pkg-parent
-share/pcbsd/metaset/pcbsd/Development-VCS/pkg-icon.png
-share/pcbsd/metaset/pcbsd/Desktops/pkg-icon.png
-share/pcbsd/metaset/pcbsd/Desktops/pkg-desc
-share/pcbsd/metaset/pcbsd/KDE-Network/pkg-icon.png
-share/pcbsd/metaset/pcbsd/KDE-Network/pkg-desc
-share/pcbsd/metaset/pcbsd/KDE-Network/pkg-parent
-share/pcbsd/metaset/pcbsd/KDE-Network/ports-list
-share/pcbsd/metaset/pcbsd/Misc/pkg-desc
-share/pcbsd/metaset/pcbsd/Misc/pkg-icon.png
 share/pcbsd/pc-xdgutil/applications.menu
 share/pcbsd/pc-xdgutil/xfce-applications.menu
 share/pcbsd/pc-xdgutil/desktop-dirs/pcbsd-toys.directory
@@ -531,6 +225,7 @@ share/pcbsd/pc-thinclient/resources/webui/config.php.dist
 share/pcbsd/pc-thinclient/resources/webui/logincheck.php
 share/pcbsd/pc-thinclient/resources/webui/index.php
 share/pcbsd/pc-thinclient/resources/webui/login.php
+share/pcbsd/de-profiles/lumina.profile
 share/pcbsd/de-profiles/lxde.profile
 share/pcbsd/de-profiles/kde.profile
 share/pcbsd/de-profiles/gnome.profile
@@ -561,101 +256,29 @@ etc/rc.d/pc-samba
 etc/rc.d/pc-ldap
 etc/rc.d/pc-nssldap
 etc/rc.d/pc-directory
-sbin/pbi-crashhandler
+etc/rc.d/syscache
+etc/sudoers.d/pcbsd
+sbin/app
+sbin/pbi
 sbin/pbi_add
-sbin/pbi_addrepo
-sbin/pbi_autobuild
-sbin/pbi_browser
-sbin/pbi_create
 sbin/pbi_delete
-sbin/pbi_deleterepo
 sbin/pbi_icon
-sbin/pbi_indextool
 sbin/pbi_info
-sbin/pbi_listrepo
-sbin/pbi_makepatch
-sbin/pbi_makeport
-sbin/pbi_makerepo
-sbin/pbi_metatool
-sbin/pbi_update
-sbin/pbi_update_hashdir
-sbin/pbi_patch
-sbin/pbid
+sbin/pbi_makeindex
+sbin/pbi_updateindex
 etc/pbi.conf
-etc/man.d/pbi.conf
-etc/rc.d/pbid
-share/pbi-manager/.pbime
-share/pbi-manager/.pbimount
-share/pbi-manager/.pbisyscmd
-share/pbi-manager/.pbisyslisten
-share/pbi-manager/.ldconfig
-share/pbi-manager/.pbifs
-share/pbi-manager/.pbiwrapper-i386
-share/pbi-manager/.pbiwrapper-amd64
-share/pbi-manager/module-examples/gimp/xdg-menu/gimp.desktop
-share/pbi-manager/module-examples/gimp/xdg-mime/gimp-xdg.png
-share/pbi-manager/module-examples/gimp/xdg-mime/gimp-xdg.xml
-share/pbi-manager/module-examples/gimp/LICENSE
-share/pbi-manager/module-examples/gimp/external-links
-share/pbi-manager/module-examples/gimp/pbi.conf
-share/pbi-manager/module-examples/gimp/scripts/pre-remove.sh
-share/pbi-manager/module-examples/gimp/scripts/post-install.sh
-share/pbi-manager/module-examples/gimp/scripts/pre-portmake.sh
-share/pbi-manager/module-examples/gimp/scripts/post-portmake.sh
-share/pbi-manager/module-examples/gimp/scripts/pre-install.sh
-share/pbi-manager/module-examples/gimp/resources/gui_sidebanner.png
-share/pbi-manager/module-examples/gimp/resources/gimp.png
-share/pbi-manager/module-examples/gimp/resources/gui_banner.png
-share/pbi-manager/module-examples/gimp/xdg-desktop/gimp.desktop
-share/pbi-manager/module-examples/convertoldmod.sh
-share/pbi-manager/module-examples/firefox/LICENSE
-share/pbi-manager/module-examples/firefox/resources/gui_banner.png
-share/pbi-manager/module-examples/firefox/resources/firefox.png
-share/pbi-manager/module-examples/firefox/resources/gui_sidebanner.png
-share/pbi-manager/module-examples/firefox/xdg-menu/firefox3.desktop
-share/pbi-manager/module-examples/firefox/scripts/pre-remove.sh
-share/pbi-manager/module-examples/firefox/scripts/post-install.sh
-share/pbi-manager/module-examples/firefox/scripts/pre-install.sh
-share/pbi-manager/module-examples/firefox/scripts/post-portmake.sh
-share/pbi-manager/module-examples/firefox/xdg-desktop/firefox.desktop
-share/pbi-manager/module-examples/firefox/external-links
-share/pbi-manager/module-examples/firefox/pbi.conf
 share/pbi-manager/icons/default.png
 share/pbi-manager/icons/patch.png
-share/pbi-manager/pcbsd.rpo
+share/pbi-manager/pkgng-repo
+share/pbi-manager/repokey.ssl
 man/man1/pbi_add.1.gz
-man/man1/pbi_browser.1.gz
-man/man1/pbi_create.1.gz
 man/man1/pbi_delete.1.gz
 man/man1/pbi_icon.1.gz
-man/man1/pbi_indextool.1.gz
 man/man1/pbi_info.1.gz
-man/man1/pbi_listrepo.1.gz
-man/man1/pbi_update.1.gz
-man/man1/pbi_metatool.1.gz
-man/man1/pbi_patch.1.gz
-man/man1/pbi_update_hashdir.1.gz
+man/man1/pc-systemflag.1.gz
 man/man5/pbi.conf.5.gz
-man/man8/pbi_addrepo.8.gz
-man/man8/pbi_autobuild.8.gz
-man/man8/pbi_deleterepo.8.gz
-man/man8/pbi_makepatch.8.gz
-man/man8/pbi_makeport.8.gz
-man/man8/pbi_makerepo.8.gz
-man/man8/pbid.8.gz
 man/man8/pc-sysinstall.8.gz
-@dirrm share/pbi-manager/module-examples/firefox/resources
-@dirrm share/pbi-manager/module-examples/firefox/scripts
-@dirrm share/pbi-manager/module-examples/firefox/xdg-desktop
-@dirrm share/pbi-manager/module-examples/firefox/xdg-menu
-@dirrm share/pbi-manager/module-examples/firefox
-@dirrm share/pbi-manager/module-examples/gimp/resources
-@dirrm share/pbi-manager/module-examples/gimp/scripts
-@dirrm share/pbi-manager/module-examples/gimp/xdg-desktop
-@dirrm share/pbi-manager/module-examples/gimp/xdg-menu
-@dirrm share/pbi-manager/module-examples/gimp/xdg-mime
-@dirrm share/pbi-manager/module-examples/gimp
-@dirrm share/pbi-manager/module-examples
+@dirrmtry etc/sudoers.d
 @dirrm share/pbi-manager/icons
 @dirrm share/pbi-manager
 @dirrmtry share/warden/bin
@@ -674,79 +297,6 @@ man/man8/pc-sysinstall.8.gz
 @dirrm share/pc-sysinstall/doc
 @dirrm share/pc-sysinstall/examples
 @dirrm share/pc-sysinstall
-@dirrm share/pcbsd/metaset/trueos/File-Servers
-@dirrm share/pcbsd/metaset/trueos/PostgreSQL
-@dirrm share/pcbsd/metaset/trueos/Lighttp
-@dirrm share/pcbsd/metaset/trueos/Samba
-@dirrm share/pcbsd/metaset/trueos/ownCloud
-@dirrm share/pcbsd/metaset/trueos/NGINX
-@dirrm share/pcbsd/metaset/trueos/VirtualBox
-@dirrm share/pcbsd/metaset/trueos/VirtualBoxGuest
-@dirrm share/pcbsd/metaset/trueos/VMwareGuest
-@dirrm share/pcbsd/metaset/trueos/MySQL
-@dirrm share/pcbsd/metaset/trueos/Languages
-@dirrm share/pcbsd/metaset/trueos/Database-Servers
-@dirrm share/pcbsd/metaset/trueos/Development
-@dirrm share/pcbsd/metaset/trueos/Apache
-@dirrm share/pcbsd/metaset/trueos/PHP
-@dirrm share/pcbsd/metaset/trueos/Squid
-@dirrm share/pcbsd/metaset/trueos/Virtualization
-@dirrm share/pcbsd/metaset/trueos/Wordpress
-@dirrm share/pcbsd/metaset/trueos/Web-Servers
-@dirrm share/pcbsd/metaset/trueos
-@dirrm share/pcbsd/metaset/pcbsd/KDE-Multimedia
-@dirrm share/pcbsd/metaset/pcbsd/VMwareGuest
-@dirrm share/pcbsd/metaset/pcbsd/FVWM
-@dirrm share/pcbsd/metaset/pcbsd/NVIDIA-Legacy-173
-@dirrm share/pcbsd/metaset/pcbsd/I3
-@dirrm share/pcbsd/metaset/pcbsd/LXDE
-@dirrm share/pcbsd/metaset/pcbsd/Development-Science
-@dirrm share/pcbsd/metaset/pcbsd/Development-Qt
-@dirrm share/pcbsd/metaset/pcbsd/KDE-Calligra
-@dirrm share/pcbsd/metaset/pcbsd/IceWM
-@dirrm share/pcbsd/metaset/pcbsd/XFCE
-@dirrm share/pcbsd/metaset/pcbsd/XBMC
-@dirrm share/pcbsd/metaset/pcbsd/Awesome
-@dirrm share/pcbsd/metaset/pcbsd/Hardware-Drivers
-@dirrm share/pcbsd/metaset/pcbsd/Development-Debug
-@dirrm share/pcbsd/metaset/pcbsd/KDE-Education
-@dirrm share/pcbsd/metaset/pcbsd/Openbox
-@dirrm share/pcbsd/metaset/pcbsd/Spectrwm
-@dirrm share/pcbsd/metaset/pcbsd/Cinnamon
-@dirrm share/pcbsd/metaset/pcbsd/Mate
-@dirrm share/pcbsd/metaset/pcbsd/GNOME
-@dirrm share/pcbsd/metaset/pcbsd/KDE
-@dirrm share/pcbsd/metaset/pcbsd/Rekonq
-@dirrm share/pcbsd/metaset/pcbsd/KDE-L10N
-@dirrm share/pcbsd/metaset/pcbsd/Development
-@dirrm share/pcbsd/metaset/pcbsd/KDE-Artwork
-@dirrm share/pcbsd/metaset/pcbsd/VirtualBoxGuest
-@dirrm share/pcbsd/metaset/pcbsd/KDE-PIM
-@dirrm share/pcbsd/metaset/pcbsd/XFCE-Plugins
-@dirrm share/pcbsd/metaset/pcbsd/KDE-Accessibility
-@dirrm share/pcbsd/metaset/pcbsd/Handheld
-@dirrm share/pcbsd/metaset/pcbsd/KDE-Games
-@dirrm share/pcbsd/metaset/pcbsd/NVIDIA-Legacy-71
-@dirrm share/pcbsd/metaset/pcbsd/KDE-WebDevKit
-@dirrm share/pcbsd/metaset/pcbsd/Development-Embedded
-@dirrm share/pcbsd/metaset/pcbsd/Unsupported-Desktops
-@dirrm share/pcbsd/metaset/pcbsd/Development-Web
-@dirrm share/pcbsd/metaset/pcbsd/WindowLab
-@dirrm share/pcbsd/metaset/pcbsd/Window_Maker
-@dirrm share/pcbsd/metaset/pcbsd/NVIDIA
-@dirrm share/pcbsd/metaset/pcbsd/HPLIP
-@dirrm share/pcbsd/metaset/pcbsd/KDE-SDK
-@dirrm share/pcbsd/metaset/pcbsd/KDE-Graphics
-@dirrm share/pcbsd/metaset/pcbsd/NVIDIA-Legacy-96
-@dirrm share/pcbsd/metaset/pcbsd/NVIDIA-Legacy-304
-@dirrm share/pcbsd/metaset/pcbsd/KDE-Toys
-@dirrm share/pcbsd/metaset/pcbsd/Ratpoison
-@dirrm share/pcbsd/metaset/pcbsd/Development-VCS
-@dirrm share/pcbsd/metaset/pcbsd/Desktops
-@dirrm share/pcbsd/metaset/pcbsd/KDE-Network
-@dirrm share/pcbsd/metaset/pcbsd/Misc
-@dirrm share/pcbsd/metaset/pcbsd
-@dirrm share/pcbsd/metaset
 @dirrm share/pcbsd/pc-xdgutil/desktop-dirs
 @dirrm share/pcbsd/pc-thinclient/resources/boot
 @dirrm share/pcbsd/pc-thinclient/resources/dhcpd
