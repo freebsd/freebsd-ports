@@ -1,5 +1,5 @@
---- generic/Makefile.in.orig	2010-12-11 10:09:42.000000000 +1030
-+++ generic/Makefile.in	2014-05-06 06:41:23.000000000 +0930
+--- generic/Makefile.in.orig	2010-12-10 23:39:42 UTC
++++ generic/Makefile.in
 @@ -161,6 +161,8 @@
  libvers_a =	libBLT$(version).a
  tcl_only_lib_a =  libBLTlite.a
@@ -14,16 +14,14 @@
  	$(INSTALL) -m 0755 $(bltsh) $(INSTALL_ROOT)$(bindir)
  
 -install-lib: $(lib_a) $(tcl_only_lib_a)
--	$(INSTALL_DATA) $(lib_a) $(INSTALL_ROOT)$(libdir)/$(libvers_a)
 +install-lib: $(lib_a) $(tcl_only_lib_a) $(stub_a)
-+	$(INSTALL_DATA) -m 0644 $(lib_a) $(INSTALL_ROOT)$(libdir)/$(libvers_a)
+ 	$(INSTALL_DATA) $(lib_a) $(INSTALL_ROOT)$(libdir)/$(libvers_a)
  	(cd $(INSTALL_ROOT)$(libdir); $(RM) $(lib_a) ; $(LN_S) $(libvers_a) $(lib_a))
  	$(RANLIB) $(INSTALL_ROOT)$(libdir)/$(libvers_a)
--	$(INSTALL_DATA) $(tcl_only_lib_a) $(INSTALL_ROOT)$(libdir)/$(tcl_only_libvers_a)
-+	$(INSTALL_DATA) -m 0644 $(tcl_only_lib_a) $(INSTALL_ROOT)$(libdir)/$(tcl_only_libvers_a)
+ 	$(INSTALL_DATA) $(tcl_only_lib_a) $(INSTALL_ROOT)$(libdir)/$(tcl_only_libvers_a)
  	(cd $(INSTALL_ROOT)$(libdir); $(RM) $(tcl_only_lib_a) ; $(LN_S) $(tcl_only_libvers_a) $(tcl_only_lib_a))
  	$(RANLIB) $(INSTALL_ROOT)$(libdir)/$(tcl_only_libvers_a)
-+	$(INSTALL_DATA) -m 0644 $(stub_a) $(INSTALL_ROOT)$(libdir)/$(stub_libvers_a)
++	$(INSTALL_DATA) $(stub_a) $(INSTALL_ROOT)$(libdir)/$(stub_libvers_a)
 +	(cd $(INSTALL_ROOT)$(libdir); $(RM) $(stub_a) ; $(LN_S) $(stub_libvers_a) $(stub_a))
  	(cd shared; $(MAKE) install) 
  

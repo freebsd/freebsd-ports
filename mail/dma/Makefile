@@ -60,7 +60,7 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/dma.8 ${STAGEDIR}/${PREFIX}/man/man8/
 	${MKDIR} ${STAGEDIR}/${PREFIX}/etc/dma
 .for i in ${CONFFILES}
-	${INSTALL_DATA} -m 0644 ${WRKSRC}/${i} ${STAGEDIR}/${PREFIX}/etc/dma/${i}.sample
+	${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}/${PREFIX}/etc/dma/${i}.sample
 .endfor
 	${MKDIR} ${STAGEDIR}/var/spool/dma
 

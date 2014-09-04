@@ -53,7 +53,6 @@ CPPFLAGS+=	-DRUN_AS_EUID=1
 
 post-patch:
 	@${REINPLACE_CMD} "s|/etc|${PREFIX}/etc|g" ${WRKSRC}/server/gam_conf.c
-	@${REINPLACE_CMD} -e '/echo.*RANLIB/,+1d' ${WRKSRC}/lib/Makefile.in
 
 .if !defined(GAMIN_SLAVE)
 regression-test: build

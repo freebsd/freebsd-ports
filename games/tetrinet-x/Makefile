@@ -27,10 +27,10 @@ do-install:
 	${MKDIR} ${STAGEDIR}${DATADIR}
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/tetrix.freebsd ${STAGEDIR}${DATADIR}
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/server-query ${STAGEDIR}${DATADIR}
-	${INSTALL_DATA} -m 644 ${WRKSRC}/bin/game.conf ${STAGEDIR}${DATADIR}
-	${INSTALL_DATA} -m 644 ${WRKSRC}/bin/game.log ${STAGEDIR}${DATADIR}
-	${INSTALL_DATA} -m 644 ${WRKSRC}/bin/game.secure ${STAGEDIR}${DATADIR}
-	${INSTALL_DATA} -m 644 ${WRKSRC}/bin/game.winlist ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/bin/game.conf ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/bin/game.log ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/bin/game.secure ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/bin/game.winlist ${STAGEDIR}${DATADIR}
 	${INSTALL_SCRIPT} -m 751 ${WRKDIR}/tetrinetx ${STAGEDIR}${PREFIX}/etc/rc.d
 
 .include <bsd.port.mk>

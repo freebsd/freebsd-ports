@@ -36,7 +36,6 @@ USES=		perl5 shebangfix tar:xz
 
 WRKSRC=		${WRKDIR}/${DISTNAME:S!_!-!}
 BINMODE=	755
-SHAREMODE=	640
 SUB_LIST+=	LOGCHECK_USER=${LOGCHECK_USER} \
 		LOGCHECK_GROUP=${LOGCHECK_GROUP} \
 		CRON=${PORT_OPTIONS:MCRON}
@@ -91,7 +90,7 @@ do-install:
 	@${INSTALL_DATA} ${WRKSRC}/src/detectrotate/*.dtr \
 		${STAGEDIR}${DATADIR}/detectrotate
 	@${INSTALL} -d ${STAGEDIR}${EXAMPLESDIR}
-	@${INSTALL_DATA} -m 0644 ${WRKSRC}/debian/logcheck.cron.d \
+	@${INSTALL_DATA} ${WRKSRC}/debian/logcheck.cron.d \
 		${STAGEDIR}${EXAMPLESDIR}/crontab.in
 	@${ECHO_CMD} '@exec ${CHGRP} -R ${LOGCHECK_GROUP} \
 		${ETCDIR:S|^${PREFIX}/|%D/|} \
@@ -101,6 +100,6 @@ do-install:
 	@${GZIP_CMD} ${STAGEDIR}${MAN8PREFIX}/man/man8/$i
 .endfor
 	@${INSTALL} -d ${STAGEDIR}${DOCSDIR}
-	@cd ${WRKSRC} && ${INSTALL_DATA} -m 0644 ${DOCS} ${STAGEDIR}${DOCSDIR}
+	@cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.post.mk>

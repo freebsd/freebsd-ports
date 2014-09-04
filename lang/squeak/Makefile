@@ -53,10 +53,6 @@ SUB_FILES=	pkg-message
 SUB_LIST=	SQUEAK_LIB_DIR=${SQUEAK_LIB_DIR}
 PLIST_SUB=	SQUEAK_LIB_DIR=${SQUEAK_LIB_DIR}
 
-# Plugin image must be writable, because of it copy to user's ~/.npsqueak/ and
-# be updated.
-SHAREMODE=	644
-
 IMAGES=		Squeak${IMAGE_VERSION}/Squeak${IMAGE_VERSION}.image \
 		Squeak${IMAGE_VERSION}/Squeak${IMAGE_VERSION}.changes
 

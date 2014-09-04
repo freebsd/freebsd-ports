@@ -279,11 +279,6 @@ post-patch:
 	@${REINPLACE_CMD} -e "s|^\(pkginclude_HEADERS =\).*|\1|" ${WRKSRC}/cmd-line-utils/libedit/Makefile.in
 	@${REINPLACE_CMD} -e "s|^\(install-data-am:\) install-pkgincludeHEADERS|\1|g" ${WRKSRC}/extra/Makefile.in ${WRKSRC}/include/Makefile.in
 	@${REINPLACE_CMD} -e "s|^\(install-exec-am:\) install-pkglibLTLIBRARIES|\1|g" ${WRKSRC}/libmysql/Makefile.in
-	@${REINPLACE_CMD} -e '/echo.*RANLIB/,+1d' ${WRKSRC}/libservices/Makefile.in \
-		${WRKSRC}/mysys/Makefile.in ${WRKSRC}/strings/Makefile.in \
-		${WRKSRC}/dbug/Makefile.in ${WRKSRC}/storage/myisam/Makefile.in \
-		${WRKSRC}/storage/heap/Makefile.in ${WRKSRC}/storage/maria/Makefile.in \
-		${WRKSRC}/storage/myisammrg/Makefile.in ${WRKSRC}/vio/Makefile.in
 
 .endif	# .if !defined(MARIADB_CLIENT_SLAVE)
 .endif	# .if !defined(MARIADB_SCRIPTS_SLAVE)

@@ -29,8 +29,4 @@ NLS_CONFIGURE_OFF=	--disable-nls
 DESKTOP_ENTRIES="${PORTNAME}" "${COMMENT}" "${PORTNAME}.xpm" \
 	"${PORTNAME}" "Utility;" ${FALSE}
 
-post-patch:
-	@${REINPLACE_CMD} -e 's/@INSTALL_DATA@/${INSTALL} -m 644/' \
-		${WRKSRC}/data/desktop/Makefile.in
-
 .include <bsd.port.mk>

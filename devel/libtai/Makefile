@@ -51,8 +51,7 @@ post-build:
 		${WRKSRC}/leapsecs.dat
 
 do-install:
-	${INSTALL_DATA} -m 644 \
-		${WRKSRC}/leapsecs.dat ${STAGEDIR}${PREFIX}/etc
+	${INSTALL_DATA} ${WRKSRC}/leapsecs.dat ${STAGEDIR}${PREFIX}/etc
 .for i in ${MAN_FILES}
 	${INSTALL_MAN} ${WRKSRC}/${i} ${STAGEDIR}${PREFIX}/man/man3
 .endfor

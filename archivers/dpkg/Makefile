@@ -45,7 +45,6 @@ post-patch:
 		${WRKSRC}/configure
 	@${REINPLACE_CMD} -E 's/(md5|sha1|sha256)sum/g&/g' \
 		${WRKSRC}/scripts/Dpkg/Checksums.pm
-	@${REINPLACE_CMD} -e '/echo.*RANLIB/,+1d' ${WRKSRC}/lib/*/Makefile.in
 	@${REINPLACE_CMD} -e 's/cp -p $$(DEST/mv $$(DEST/g; s/rm $$(/rm -f $$(/g' \
 		${WRKSRC}/scripts/mk/Makefile.in \
 		${WRKSRC}/scripts/Makefile.in

@@ -59,8 +59,6 @@ post-patch:
 	 -e 's|@localstatedir@/sym/|${PREFIX}/share/flow-tools/|' \
 	 -e 's|@localstatedir@/cfg/|${PREFIX}/etc/flow-tools/|' \
 	  ${WRKSRC}/docs/flow-*.1.in ${WRKSRC}/docs/flow-*.html.in
-	@${REINPLACE_CMD} -e '/echo.*RANLIB/,+1d' \
-		${WRKSRC}/lib/Makefile.in
 
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/docs/*.1 ${STAGEDIR}${PREFIX}/man/man1/

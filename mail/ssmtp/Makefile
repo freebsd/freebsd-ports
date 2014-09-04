@@ -15,8 +15,6 @@ USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
 USES=		gmake tar:bzip2
 GROUPS=		ssmtp
-BINMODE=	2555
-SHAREMODE=	640
 
 SUB_FILES+=	pkg-message
 PKGMESSAGE=	${WRKDIR}/pkg-message
@@ -64,7 +62,6 @@ replace:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/ssmtp ${STAGEDIR}${PREFIX}/sbin/ssmtp
 	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/ssmtp
-	@${CHMOD} 750 ${STAGEDIR}${PREFIX}/etc/ssmtp
 	${INSTALL_DATA} ${WRKSRC}/revaliases \
 		${STAGEDIR}${PREFIX}/etc/ssmtp/revaliases.sample
 	${INSTALL_DATA} ${WRKSRC}/ssmtp.conf \

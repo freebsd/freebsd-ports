@@ -9,19 +9,3 @@
  build_alias = @build_alias@
  builddir = @builddir@
  datadir = @datadir@
-@@ -366,15 +366,6 @@
- 	test -z "$$list2" || { \
- 	  echo " $(INSTALL_DATA) $$list2 '$(DESTDIR)$(pkglibdir)'"; \
- 	  $(INSTALL_DATA) $$list2 "$(DESTDIR)$(pkglibdir)" || exit $$?; }
--	@$(POST_INSTALL)
--	@list='$(pkglib_LIBRARIES)'; test -n "$(pkglibdir)" || list=; \
--	for p in $$list; do \
--	  if test -f $$p; then \
--	    $(am__strip_dir) \
--	    echo " ( cd '$(DESTDIR)$(pkglibdir)' && $(RANLIB) $$f )"; \
--	    ( cd "$(DESTDIR)$(pkglibdir)" && $(RANLIB) $$f ) || exit $$?; \
--	  else :; fi; \
--	done
- 
- uninstall-pkglibLIBRARIES:
- 	@$(NORMAL_UNINSTALL)

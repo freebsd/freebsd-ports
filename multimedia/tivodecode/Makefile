@@ -14,9 +14,6 @@ OPTIONS_DEFINE=	DOCS
 USES=		gmake
 GNU_CONFIGURE=	yes
 
-post-patch:
-	@${REINPLACE_CMD} -e '/echo.*RANLIB/,+1d' ${WRKSRC}/Makefile.in
-
 post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/COPYING \

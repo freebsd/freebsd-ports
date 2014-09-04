@@ -144,10 +144,6 @@ post-patch:
 		${MSG_FILE} > ${PKGMESSAGE}
 	@${REINPLACE_CMD} ${REINPLACE_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
 		${WRKSRC}/client/dhclient.conf
-	@${REINPLACE_CMD} -e '/echo.*RANLIB/,+1d' \
-		${WRKSRC}/Makefile.in \
-		${WRKSRC}/*/Makefile.in
-
 
 do-install:
 	${SETENV} DESTDIR=${STAGEDIR} ${MAKE} -C ${WRKSRC}/${SUBSYS} install
