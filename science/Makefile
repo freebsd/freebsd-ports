@@ -147,6 +147,7 @@
     SUBDIR += py-pyaixi
     SUBDIR += py-pydap
     SUBDIR += py-pydicom
+    SUBDIR += py-pysal
     SUBDIR += py-scikit-learn
     SUBDIR += py-scimath
     SUBDIR += py-scipy
