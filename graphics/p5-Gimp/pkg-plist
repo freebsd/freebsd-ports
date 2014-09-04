@@ -1,0 +1,98 @@
+bin/embedxpm
+bin/gimpdoc
+bin/scm2perl
+bin/xcftopnm
+%%PERL5_MAN3%%/Gimp.3.gz
+%%PERL5_MAN3%%/Gimp::Config.3.gz
+%%PERL5_MAN3%%/Gimp::Data.3.gz
+%%PERL5_MAN3%%/Gimp::Extension.3.gz
+%%PERL5_MAN3%%/Gimp::Fu.3.gz
+%%PERL5_MAN3%%/Gimp::Lib.3.gz
+%%PERL5_MAN3%%/Gimp::Net.3.gz
+%%PERL5_MAN3%%/Gimp::Pod.3.gz
+%%PERL5_MAN3%%/Gimp::UI.3.gz
+%%PERL5_MAN3%%/Gimp::Util.3.gz
+%%SITE_PERL%%/%%PERL_ARCH%%/Gimp.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Gimp/ColorDB.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Gimp/Config.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Gimp/Constant.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Gimp/Data.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Gimp/Extension.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Gimp/Fu.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Gimp/Install/Files.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Gimp/Lib.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Gimp/Lib/Install/typemap
+%%SITE_PERL%%/%%PERL_ARCH%%/Gimp/Lib/Install/typemap.pdl
+%%SITE_PERL%%/%%PERL_ARCH%%/Gimp/Net.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Gimp/Pod.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Gimp/UI.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Gimp/UI/Install/typemap
+%%SITE_PERL%%/%%PERL_ARCH%%/Gimp/Util.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Gimp/.packlist
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Gimp/Gimp.so
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Gimp/Lib/Lib.so
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Gimp/Net/Net.so
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Gimp/UI/UI.so
+libexec/gimp/2.2/plug-ins/Perl-Console
+libexec/gimp/2.2/plug-ins/Perl-Server
+libexec/gimp/2.2/plug-ins/animate_cells
+libexec/gimp/2.2/plug-ins/blended2
+libexec/gimp/2.2/plug-ins/blowinout
+libexec/gimp/2.2/plug-ins/bricks
+libexec/gimp/2.2/plug-ins/burst
+libexec/gimp/2.2/plug-ins/centerguide
+libexec/gimp/2.2/plug-ins/colorhtml
+libexec/gimp/2.2/plug-ins/dataurl
+libexec/gimp/2.2/plug-ins/ditherize
+libexec/gimp/2.2/plug-ins/dots
+libexec/gimp/2.2/plug-ins/dust
+libexec/gimp/2.2/plug-ins/example-fu
+libexec/gimp/2.2/plug-ins/exceptiontest
+libexec/gimp/2.2/plug-ins/fade-alpha
+libexec/gimp/2.2/plug-ins/frame_filter
+libexec/gimp/2.2/plug-ins/frame_reshuffle
+libexec/gimp/2.2/plug-ins/glowing_steel
+libexec/gimp/2.2/plug-ins/goldenmean
+libexec/gimp/2.2/plug-ins/gouge
+libexec/gimp/2.2/plug-ins/guidegrid
+libexec/gimp/2.2/plug-ins/guides_to_selection
+libexec/gimp/2.2/plug-ins/iland
+libexec/gimp/2.2/plug-ins/image_tile
+libexec/gimp/2.2/plug-ins/innerbevel
+libexec/gimp/2.2/plug-ins/layerfuncs
+libexec/gimp/2.2/plug-ins/map_to_gradient
+libexec/gimp/2.2/plug-ins/mirrorsplit
+libexec/gimp/2.2/plug-ins/perlotine
+libexec/gimp/2.2/plug-ins/pixelmap
+libexec/gimp/2.2/plug-ins/prep4gif
+libexec/gimp/2.2/plug-ins/randomart1
+libexec/gimp/2.2/plug-ins/randomblends
+libexec/gimp/2.2/plug-ins/redeye
+libexec/gimp/2.2/plug-ins/registry_viewer
+libexec/gimp/2.2/plug-ins/repdup
+libexec/gimp/2.2/plug-ins/scratches
+libexec/gimp/2.2/plug-ins/selective_sharpen
+libexec/gimp/2.2/plug-ins/sethspin
+libexec/gimp/2.2/plug-ins/stamps
+libexec/gimp/2.2/plug-ins/translogo
+libexec/gimp/2.2/plug-ins/warp-sharp
+libexec/gimp/2.2/plug-ins/webify
+libexec/gimp/2.2/plug-ins/windify
+libexec/gimp/2.2/plug-ins/xachlego
+libexec/gimp/2.2/plug-ins/xachshadow
+libexec/gimp/2.2/plug-ins/xachvision
+libexec/gimp/2.2/plug-ins/yinyang
+man/man1/embedxpm.1.gz
+man/man1/gimpdoc.1.gz
+man/man1/scm2perl.1.gz
+man/man1/xcftopnm.1.gz
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Gimp/Install
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Gimp/Lib/Install
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Gimp/Lib
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Gimp/UI/Install
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Gimp/UI
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Gimp
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Gimp/Lib
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Gimp/Net
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Gimp/UI
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Gimp
