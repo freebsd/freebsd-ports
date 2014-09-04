@@ -1,0 +1,42 @@
+commit ac627bb77001fa6d182a8a247646a810a94a06ee
+Author: Daniel Teske <daniel.teske@digia.com>
+Date:   Tue Oct 22 15:51:21 2013 +0200
+
+    CMake: Don't expect the version in --help output
+
+    Since we don't actually need it anymore, just remove the code.
+
+    Task-number: QTCREATORBUG-10452
+    Change-Id: I59f55f3a319240826569de308491cac697c4f045
+    Reviewed-by: Tobias Hunger <tobias.hunger@digia.com>
+
+--- src/plugins/cmakeprojectmanager/cmakevalidator.cpp
++++ src/plugins/cmakeprojectmanager/cmakevalidator.cpp
+@@ -86,16 +86,11 @@ void CMakeValidator::finished(int exitCode)
+     }
+     if (m_state == CMakeValidator::RunningBasic) {
+         QByteArray response = m_process->readAll();
+-        QRegExp versionRegexp(QLatin1String("^cmake version ([\\d\\.]*)"));
+-        versionRegexp.indexIn(QString::fromLocal8Bit(response));
+ 
+         m_hasCodeBlocksMsvcGenerator = response.contains("CodeBlocks - NMake Makefiles");
+         m_hasCodeBlocksNinjaGenerator = response.contains("CodeBlocks - Ninja");
+-        m_version = versionRegexp.cap(1);
+-        if (versionRegexp.capturedTexts().size() > 3)
+-            m_version += QLatin1Char('.') + versionRegexp.cap(3);
+ 
+-        if (m_version.isEmpty()) {
++        if (response.isEmpty()) {
+             m_state = CMakeValidator::Invalid;
+         } else {
+             m_state = CMakeValidator::RunningFunctionList;
+--- src/plugins/cmakeprojectmanager/cmakevalidator.h
++++ src/plugins/cmakeprojectmanager/cmakevalidator.h
+@@ -74,7 +74,6 @@ private:
+     QProcess *m_process;
+     bool m_hasCodeBlocksMsvcGenerator;
+     bool m_hasCodeBlocksNinjaGenerator;
+-    QString m_version;
+     QString m_executable;
+ 
+     QMap<QString, QStringList> m_functionArgs;
