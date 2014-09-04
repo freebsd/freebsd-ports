@@ -5,13 +5,13 @@ PORTNAME=	dvd-slideshow
 PORTVERSION=	0.8.4
 PORTREVISION=	1
 CATEGORIES=	multimedia
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}-2:main \
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}-2 \
 		SF/${PORTNAME}/${PORTNAME}-themes/${THEMEVERSION}-1:themes
-DISTFILES=	${PORTNAME}-${PORTVERSION}-2${EXTRACT_SUFX}:main
+DISTFILES=	${PORTNAME}-${PORTVERSION}-2${EXTRACT_SUFX}
 THEMEVERSION=	0.8.4
 
 MAINTAINER=	oz@nixil.net
-COMMENT=	Script that creates a slideshow-style DVD with some simple menus
+COMMENT=	Script to create slideshow-style DVD with some simple menus
 
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash \
 		identify:${PORTSDIR}/graphics/ImageMagick \
@@ -30,27 +30,14 @@ NO_BUILD=	yes
 DATADIR=	${PREFIX}/share/apps/${PORTNAME}
 
 OPTIONS_DEFINE=	LAME THEMES TOOLAME VORBIS
-THEMES_DESC=	Optional themes
-TOOLAME_DESC=	Faster Optional mp3 audio support
+THEMES_DESC=	Install optional themes
 
-MAN1=		dvd-slideshow.1 \
-		dvd-menu.1 \
-		dir2slideshow.1 \
-		gallery1-to-slideshow.1 \
-		jigl2slideshow.1
+LAME_RUN_DEPENDS=	lame:${PORTSDIR}/audio/lame
+VORBIS_RUN_DEPENDS=	oggdec:${PORTSDIR}/audio/vorbis-tools
+TOOLAME_RUN_DEPENDS=	toolame:${PORTSDIR}/audio/toolame
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MLAME}
-RUN_DEPENDS+=	lame:${PORTSDIR}/audio/lame
-.endif
-.if ${PORT_OPTIONS:MVORBISTOOLS}
-RUN_DEPENDS+=	oggdec:${PORTSDIR}/audio/vorbis-tools
-.endif
-.if ${PORT_OPTIONS:MTOOLAME}
-RUN_DEPENDS+=	toolame:${PORTSDIR}/audio/toolame
-.endif
 .if ${PORT_OPTIONS:MTHEMES}
 DISTFILES+=	${PORTNAME}-themes-${THEMEVERSION}-1${EXTRACT_SUFX}:themes
 WRKSRC2=	${WRKDIR}/${PORTNAME}-themes-${THEMEVERSION}-1
@@ -60,38 +47,32 @@ PLIST_SUB+=	NOTHEMES="@comment "
 .endif
 
 post-patch:
-.for FILE in dvd-slideshow dvd-menu dir2slideshow gallery1-to-slideshow jigl2slideshow
+.for f in dvd-slideshow dvd-menu dir2slideshow gallery1-to-slideshow jigl2slideshow
 	@${REINPLACE_CMD} -e 's|!/bin/bash|!${PREFIX}/bin/bash|g ; \
-			      s|/usr/share/fonts/|${LOCALBASE}/lib/X11/fonts/|g ; \
-			      s|seq |seq2 |g' \
-				 ${WRKSRC}/${FILE}
-.if ${PORT_OPTIONS:MTHEMES}
+		s|/usr/share/fonts/|${LOCALBASE}/lib/X11/fonts/|g ; \
+		s|seq |seq2 |g' ${WRKSRC}/${f}
+.  if ${PORT_OPTIONS:MTHEMES}
 	@${REINPLACE_CMD} -e 's|/opt/dvd-slideshow/themes|${DATADIR}/themes|g' \
-				${WRKSRC}/${FILE}
-.endif
+		${WRKSRC}/${f}
+.  endif
 .endfor
 
 do-install:
-	@${ECHO_MSG} "Installing scripts."
-.for FILE in dvd-slideshow dvd-menu dir2slideshow gallery1-to-slideshow jigl2slideshow
-	${INSTALL_SCRIPT} ${WRKSRC}/${FILE} ${PREFIX}/bin
+.for s in dvd-slideshow dvd-menu dir2slideshow gallery1-to-slideshow jigl2slideshow
+	${INSTALL_SCRIPT} ${WRKSRC}/${s} ${STAGEDIR}${PREFIX}/bin
 .endfor
-	@${ECHO_MSG} "Installing man files."
-.for FILE in ${MAN1}
-	${INSTALL_MAN} ${WRKSRC}/man/${FILE} ${PREFIX}/man/man1
+.for m in dvd-slideshow dvd-menu dir2slideshow gallery1-to-slideshow jigl2slideshow
+	${INSTALL_MAN} ${WRKSRC}/man/${m}.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
 .endfor
-.if ${PORT_OPTIONS:MDOCS}
-	@${ECHO_MSG} "Installing doc files."
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/dvd-slideshowrc ${DOCSDIR}
-.for FILE in changelog.html gallery1-to-slideshow.html dir2slideshow.html jigl2slideshow.html dvd-menu.html dvd-slideshow.html
-	${INSTALL_DATA} ${WRKSRC}/doc/${FILE} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/dvd-slideshowrc ${STAGEDIR}${DOCSDIR}
+.for d in changelog gallery1-to-slideshow dir2slideshow jigl2slideshow dvd-menu dvd-slideshow
+	${INSTALL_DATA} ${WRKSRC}/doc/${d}.html ${STAGEDIR}${DOCSDIR}
 .endfor
-.endif
 .if ${PORT_OPTIONS:MTHEMES}
-	@${ECHO_MSG} "Installing theme files."
-	${MKDIR} ${DATADIR}/themes
-	cd ${WRKSRC2} && ${FIND} * | ${CPIO} -dpmu -R ${BINOWN}:${BINGRP} --quiet ${DATADIR}/themes
+	@${MKDIR} ${STAGEDIR}${DATADIR}/themes
+	cd ${WRKSRC2} && ${FIND} . | ${CPIO} -dpmu -R ${BINOWN}:${BINGRP} \
+		--quiet ${STAGEDIR}${DATADIR}/themes
 .endif
 
 .include <bsd.port.mk>
