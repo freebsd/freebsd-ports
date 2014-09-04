@@ -17,7 +17,8 @@ USES=		imake tar:tgz
 USE_XORG=	ice sm xtrap xmu xt
 USE_GNOME=	esound
 
-MAKE_ARGS=	EXTRA_LDOPTIONS="-lX11 -laudiofile"
+# xbelld calls sqrt which requires -lm on some architectures
+MAKE_ARGS=	EXTRA_LDOPTIONS="-lX11 -laudiofile -lm"
 
 PLIST_FILES=	bin/xbelld \
 		lib/X11/app-defaults/XBellD \
