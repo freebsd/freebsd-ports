@@ -1,6 +1,6 @@
---- WINGs/Makefile.in.orig
-+++ WINGs/Makefile.in
-@@ -76,8 +76,7 @@
+--- WINGs/Makefile.in.orig	2014-09-05 04:10:28.000000000 +0900
++++ WINGs/Makefile.in	2014-09-05 04:12:50.000000000 +0900
+@@ -106,8 +106,7 @@
  am__installdirs = "$(DESTDIR)$(libdir)" "$(DESTDIR)$(bindir)" \
  	"$(DESTDIR)$(pkgconfigdir)"
  LTLIBRARIES = $(lib_LTLIBRARIES)
@@ -10,7 +10,7 @@
  am_libWINGs_la_OBJECTS = configuration.lo dragcommon.lo \
  	dragdestination.lo dragsource.lo selection.lo wappresource.lo \
  	wballoon.lo wbox.lo wbrowser.lo wbutton.lo wcolor.lo \
-@@ -335,8 +334,8 @@
+@@ -378,8 +377,8 @@
  libWUtil_la_LDFLAGS = -version-info @WUTIL_VERSION@
  bin_SCRIPTS = get-wings-flags get-wutil-flags
  lib_LTLIBRARIES = libWUtil.la libWINGs.la
@@ -21,12 +21,13 @@
  libWUtil_la_LIBADD = @LIBBSD@
  EXTRA_DIST = BUGS make-rgb Examples Extras Tests get-wings-flags.in get-wutil-flags.in
  
-@@ -408,7 +407,7 @@
+@@ -453,7 +452,8 @@
  
  AM_CFLAGS = 
  AM_CPPFLAGS = -DLOCALEDIR=\"$(NLSDIR)\" -DRESOURCE_PATH=\"$(datadir)/WINGs\" \
 -	 -I$(top_srcdir)/WINGs/WINGs -I$(top_srcdir)/wrlib -I$(top_srcdir)/src \
++	 -DPREFIX=\"$(prefix)\" \
 +	 -I$(top_srcdir)/WINGs/WINGs -I$(top_srcdir)/src \
  	@XFTFLAGS@ @HEADER_SEARCH_PATH@
  
- pkgconfigdir = $(libdir)/pkgconfig
+ pkgconfigdir = $(prefix)/libdata/pkgconfig
