@@ -16,8 +16,7 @@ COMMENT=	Cryptographically secure anonymous remailer
 
 LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre
 
-USES=		perl5
-USE_NCURSES=	yes
+USES=		perl5 ncurses
 
 BUILD_WRKSRC=	${WRKSRC}/Mix/Src
 
