@@ -3,7 +3,7 @@
 
 PORTNAME=	cmake
 PORTVERSION=	3.0.1
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.cmake.org/files/v3.0/
 
@@ -20,6 +20,7 @@ CONFIGURE_ARGS=	--prefix=${PREFIX} \
 		--docdir="/${DOCSDIR_REL}" \
 		--sphinx-man \
 		--system-libs \
+		--parallel=${MAKE_JOBS_NUMBER} \
 		--init="${PATCHDIR}/InitialCache.cmake"
 
 .if defined(STRIP) && ${STRIP} != ""
