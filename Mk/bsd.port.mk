@@ -2032,21 +2032,15 @@ CFLAGS+=       -fno-strict-aliasing
 .endif
 .endif
 
-.if defined(USE_CSTD)
-CFLAGS:=	${CFLAGS:N-std=*} -std=${USE_CSTD}
+.for lang in C CXX
+.if defined(USE_${lang}STD)
+${lang}FLAGS:=	${${lang}FLAGS:N-std=*} -std=${USE_${lang}STD}
 .endif
 
-.if defined(CFLAGS_${ARCH})
-CFLAGS+=	${CFLAGS_${ARCH}}
+.if defined(${lang}FLAGS_${ARCH})
+${lang}FLAGS+=	${${lang}FLAGS_${ARCH}}
 .endif
-
-.if defined(USE_CXXSTD)
-CXXFLAGS:=	${CXXFLAGS:N-std=*} -std=${USE_CXXSTD}
-.endif
-
-.if defined(CXXFLAGS_${ARCH})
-CXXFLAGS+=	${CXXFLAGS_${ARCH}}
-.endif
+.endfor
 
 # Multiple make jobs support
 .if defined(DISABLE_MAKE_JOBS) || defined(MAKE_JOBS_UNSAFE)
