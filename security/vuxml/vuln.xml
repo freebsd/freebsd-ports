@@ -57,6 +57,37 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="6318b303-3507-11e4-b76c-0011d823eebd">
+    <topic>trafficserver -- unspecified vulnerability</topic>
+    <affects>
+      <package>
+	<name>trafficserver</name>
+	<range><lt>5.0.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Bryan Call reports:</p>
+	<blockquote cite="http://mail-archives.apache.org/mod_mbox/trafficserver-users/201407.mbox/%3CBFCEC9C8-1BE9-4DCA-AF9C-B8FE798EEC07@yahoo-inc.com%3E">
+	  <p>Below is our announcement for the security issue reported to us
+	  from Yahoo! Japan.  All versions of Apache Traffic Server are
+	  vulnerable.  We urge users to upgrade to either 4.2.1.1 or 5.0.1
+	  immediately.</p>
+	  <p>This fixes CVE-2014-3525 and limits access to how the health
+	  checks are performed.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2014-3525</cvename>
+      <url>http://mail-archives.apache.org/mod_mbox/trafficserver-users/201407.mbox/%3CBFCEC9C8-1BE9-4DCA-AF9C-B8FE798EEC07@yahoo-inc.com%3E</url>
+    </references>
+    <dates>
+      <discovery>2014-07-23</discovery>
+      <entry>2014-09-05</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="fd5f305d-2d3d-11e4-aa3d-00262d5ed8ee">
     <topic>chromium -- multiple vulnerabilities</topic>
     <affects>
