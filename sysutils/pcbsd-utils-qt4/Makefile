@@ -17,7 +17,6 @@ LIB_DEPENDS=	libQtSolutions_SingleApplication-head.so:${PORTSDIR}/devel/qt4-qtso
 
 MAKE_JOBS_UNSAFE=yes
 ONLY_FOR_ARCHS=	amd64
-USE_CDRTOOLS=	yes
 USE_PYTHON=	yes
 USE_LDCONFIG=	yes
 USE_QT4=	corelib gui network svg linguist \
