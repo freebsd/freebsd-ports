@@ -12,6 +12,7 @@ COMMENT=	Cyrillic charset auto converter
 
 NO_WRKSUBDIR=	yes
 
+USES=		uidfix
 MAKEFILE=	${PKGDIR}/src/Makefile
 MAKE_ENV=	PKGDIR="${PKGDIR}"
 
