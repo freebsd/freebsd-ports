@@ -2,12 +2,14 @@
 # $FreeBSD$
 
 PORTNAME=	calife
-PORTVERSION=	3.0.3
+PORTVERSION=	3.0.4
 CATEGORIES=	security
 MASTER_SITES=	http://assets.keltia.net/calife/
 
 MAINTAINER=	roberto@FreeBSD.org
 COMMENT=	Lightweight alternative to sudo
+
+LICENSE=	GPLv2
 
 USES=		tar:xz
 
