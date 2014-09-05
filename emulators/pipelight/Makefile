@@ -36,10 +36,13 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--verbose --wine-path=${LOCALBASE}/bin/wine --win32-prebuilt \
 		--win64-prebuilt --moz-plugin-path=${LOCALBASE}/lib/browser_plugins \
-		--cxx=${CXX}
+		--cxx=${CXX} --bash-interp=${LOCALBASE}/bin/bash
 USE_XORG=	x11
-USES=		compiler:gcc-c++11-lib gmake 
+USES=		compiler:gcc-c++11-lib gmake shebangfix
 MAKE_JOBS_UNSAFE=yes
+bash_OLD_CMD=	/usr/bin/env bash
+SHEBANG_FILES=	configure \
+		share/install-dependency
 
 .include <bsd.port.pre.mk>
 

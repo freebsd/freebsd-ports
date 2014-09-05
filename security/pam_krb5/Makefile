@@ -3,7 +3,7 @@
 
 PORTNAME=		pam_krb5
 PORTVERSION=		4.6
-PORTREVISION=		1
+PORTREVISION=		2
 CATEGORIES=		security
 MASTER_SITES=		http://archives.eyrie.org/software/kerberos/ \
 			http://archives.eyrie.org/software/ARCHIVE/pam-krb5/
@@ -14,8 +14,9 @@ COMMENT=		Pluggable Authentication Module for Kerberos 5
 
 CONFLICTS=		pam_krb5-rh-2.*
 
-USES=		perl5 gmake
 GNU_CONFIGURE=		yes
+INSTALL_TARGET=		install-strip
+USES=			gmake libtool perl5
 
 OPTIONS_SINGLE=		LINK
 OPTIONS_SINGLE_LINK=	MIT HEIMDAL

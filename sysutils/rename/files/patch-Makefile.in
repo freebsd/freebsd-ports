@@ -25,8 +25,8 @@
 -	install -o root -g wheel -m 0755 -s rename $(BINDIR)
 -	install -o root -g wheel -m 0644 rename.1 $(MANDIR)
 -	
-+	install -o root -g wheel -m 0755 -s rename $(DESTDIR)$(BINDIR)
-+	install -o root -g wheel -m 0644 rename.1 $(DESTDIR)$(MANDIR)
++	$(BSD_INSTALL_PROGRAM) rename $(DESTDIR)$(BINDIR)
++	$(BSD_INSTALL_MAN) rename.1 $(DESTDIR)$(MANDIR)
 +
  rename.o: rename.c rename.h
  regex.o: regex.c regex.h

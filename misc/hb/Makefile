@@ -9,6 +9,6 @@ MASTER_SITES=	http://www.tundraware.com/Software/hb/
 MAINTAINER=	tundra@tundraware.com
 COMMENT=	Simple, but complete budget management in Python
 
-USE_PYTHON=	yes
+USES=		python
 
 .include <bsd.port.mk>

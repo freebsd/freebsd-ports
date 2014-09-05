@@ -1,21 +1,12 @@
---- crude/Makefile.in.orig	2002-06-13 20:15:20.000000000 +0800
-+++ crude/Makefile.in	2014-08-27 22:10:52.119765569 +0800
-@@ -19,7 +19,7 @@ mandir        = @mandir@/man8
- sbindir       = @sbindir@
- srcdir        = @srcdir@
- 
--INSTALL  = @INSTALL@ -o root -g root -m 0755
-+INSTALL  = @INSTALL@ -o root -g wheel -m 0755
- VPATH    = @srcdir@
- 
- CC       = @CC@
-@@ -50,7 +50,7 @@ distclean:
+--- crude/Makefile.in.orig	2002-06-13 12:15:20 UTC
++++ crude/Makefile.in
+@@ -50,7 +50,7 @@
  
  install: crude
  	@if [ ! -d $(bindir) ]; then mkdir -m 0755 $(bindir); fi;
 -	$(INSTALL) crude $(bindir)
-+	$(INSTALL) crude $(DESTDIR)$(bindir)
++	$(BSD_INSTALL_PROGRAM) crude $(DESTDIR)$(bindir)
  	@if [ ! -d $(mandir) ]; then mkdir -m 0755 $(mandir); fi;
 -	$(INSTALL) crude.8 $(mandir)
-+	$(INSTALL) crude.8 $(DESTDIR)$(mandir)
++	$(BSD_INSTALL_MAN) crude.8 $(DESTDIR)$(mandir)
  ##############################################################################

@@ -1,4 +1,3 @@
 lib/security/pam_krb5.so
-lib/security/pam_krb5.la
 man/man5/pam_krb5.5.gz
 @dirrmtry lib/security

@@ -35,10 +35,12 @@ share/applications/gnome-genius.desktop
 %%DATADIR%%/gel/equation_solving/find_root.gel
 %%DATADIR%%/gel/equation_solving/formulas.gel
 %%DATADIR%%/gel/equation_solving/loader.gel
+%%DATADIR%%/gel/equation_solving/newton.gel
 %%DATADIR%%/gel/functions/complex_numbers.gel
 %%DATADIR%%/gel/functions/delta.gel
 %%DATADIR%%/gel/functions/elementary.gel
 %%DATADIR%%/gel/functions/kernels.gel
+%%DATADIR%%/gel/functions/lambert.gel
 %%DATADIR%%/gel/functions/loader.gel
 %%DATADIR%%/gel/functions/numerical.gel
 %%DATADIR%%/gel/functions/orthogonal_polynomials.gel
@@ -90,6 +92,13 @@ share/gnome/help/genius/de/figures/parametric.png
 share/gnome/help/genius/de/figures/parametric_graph.png
 share/gnome/help/genius/de/figures/surface_graph.png
 share/gnome/help/genius/de/genius.xml
+share/gnome/help/genius/el/figures/genius_window.png
+share/gnome/help/genius/el/figures/line_plot.png
+share/gnome/help/genius/el/figures/line_plot_graph.png
+share/gnome/help/genius/el/figures/parametric.png
+share/gnome/help/genius/el/figures/parametric_graph.png
+share/gnome/help/genius/el/figures/surface_graph.png
+share/gnome/help/genius/el/genius.xml
 share/gnome/help/genius/es/figures/genius_window.png
 share/gnome/help/genius/es/figures/line_plot.png
 share/gnome/help/genius/es/figures/line_plot_graph.png
@@ -104,6 +113,13 @@ share/gnome/help/genius/fr/figures/parametric.png
 share/gnome/help/genius/fr/figures/parametric_graph.png
 share/gnome/help/genius/fr/figures/surface_graph.png
 share/gnome/help/genius/fr/genius.xml
+share/gnome/help/genius/pt_BR/figures/genius_window.png
+share/gnome/help/genius/pt_BR/figures/line_plot.png
+share/gnome/help/genius/pt_BR/figures/line_plot_graph.png
+share/gnome/help/genius/pt_BR/figures/parametric.png
+share/gnome/help/genius/pt_BR/figures/parametric_graph.png
+share/gnome/help/genius/pt_BR/figures/surface_graph.png
+share/gnome/help/genius/pt_BR/genius.xml
 share/gnome/help/genius/ru/figures/genius_window.png
 share/gnome/help/genius/ru/figures/line_plot.png
 share/gnome/help/genius/ru/figures/line_plot_graph.png
@@ -163,16 +179,22 @@ share/mime-info/genius.mime
 share/omf/genius/genius-C.omf
 share/omf/genius/genius-cs.omf
 share/omf/genius/genius-de.omf
+share/omf/genius/genius-el.omf
 share/omf/genius/genius-es.omf
 share/omf/genius/genius-fr.omf
+share/omf/genius/genius-pt_BR.omf
 share/omf/genius/genius-ru.omf
 @dirrm share/omf/genius
 @dirrm share/gnome/help/genius/ru/figures
 @dirrm share/gnome/help/genius/ru
+@dirrm share/gnome/help/genius/pt_BR/figures
+@dirrm share/gnome/help/genius/pt_BR
 @dirrm share/gnome/help/genius/fr/figures
 @dirrm share/gnome/help/genius/fr
 @dirrm share/gnome/help/genius/es/figures
 @dirrm share/gnome/help/genius/es
+@dirrm share/gnome/help/genius/el/figures
+@dirrm share/gnome/help/genius/el
 @dirrm share/gnome/help/genius/de/figures
 @dirrm share/gnome/help/genius/de
 @dirrm share/gnome/help/genius/cs/figures
