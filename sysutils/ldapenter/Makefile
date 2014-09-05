@@ -10,10 +10,11 @@ MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Add/Modify LDAP entries using template forms
 
-LICENSE=	BSD
+LICENSE=	BSD2CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 MAKEFILE=	BSDmakefile
-USES=	tar:bzip2
+USES=		tar:bzip2 uidfix
 USE_OPENLDAP=	24
 LDFLAGS+=	-L${LOCALBASE}/lib -llber
 
