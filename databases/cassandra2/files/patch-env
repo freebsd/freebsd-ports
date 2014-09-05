@@ -1,7 +1,12 @@
---- conf/cassandra-env.sh.orig	2011-11-04 11:47:16.000000000 +0100
-+++ conf/cassandra-env.sh	2011-11-09 16:50:50.124144710 +0100
-@@ -192,3 +192,4 @@
- JVM_OPTS="$JVM_OPTS -Dcom.sun.management.jmxremote.port=$JMX_PORT" 
- JVM_OPTS="$JVM_OPTS -Dcom.sun.management.jmxremote.ssl=false" 
- JVM_OPTS="$JVM_OPTS -Dcom.sun.management.jmxremote.authenticate=false" 
-+JVM_OPTS="$JVM_OPTS $JVM_OVERRIDE_OPTS" 
+--- conf/cassandra-env.sh.orig
++++ conf/cassandra-env.sh
+@@ -90,7 +90,7 @@
+ 
+ java_ver_output=`"${JAVA:-java}" -version 2>&1`
+ 
+-jvmver=`echo "$java_ver_output" | grep 'java version' | awk -F'"' 'NR==1 {print $2}'`
++jvmver=`echo "$java_ver_output" | egrep 'java version|openjdk version' | awk -F'"' 'NR==1 {print $2}'`
+ JVM_VERSION=${jvmver%_*}
+ JVM_PATCH_VERSION=${jvmver#*_}
+ 
+
