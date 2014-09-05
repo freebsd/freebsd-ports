@@ -31,14 +31,15 @@ _INCLUDE_USES_LIBTOOL_POST_MK=	yes
 
 patch-libtool:
 	@${FIND} ${WRKDIR} \( -name configure -or -name ltconfig \)	\
-		-type f | ${XARGS} ${REINPLACE_CMD}			\
+		-type f | while read i; do ${SED} -i.bak		\
 		-e '/dragonfly\*/!s/^ *freebsd\*[ )]/dragonfly* | &/'	\
 		-e '/gcc_dir=\\`/s/gcc /$$CC /'				\
 		-e '/gcc_ver=\\`/s/gcc /$$CC /'				\
 		-e '/link_all_deplibs[0-9A-Z_]*=/s/=unknown/=no/'	\
 		-e '/objformat=/s/echo aout/echo elf/'			\
 		-e "/freebsd-elf\\*)/,/;;/ {				\
-		    /deplibs_check_method=/s/=.*/=pass_all/; }"	
+		    /deplibs_check_method=/s/=.*/=pass_all/; }"		\
+		$${i} && ${TOUCH} -mr $${i}.bak $${i}; done
 
 	@${FIND} ${WRKDIR} -type f -name ltmain.sh |			\
 		${XARGS} ${REINPLACE_CMD}				\
@@ -48,7 +49,7 @@ patch-libtool:
 
 .if ! ${libtool_ARGS:Moldver}
 	@${FIND} ${WRKDIR} \( -name configure -or -name ltconfig \)	\
-		-type f | ${XARGS} ${REINPLACE_CMD}			\
+		-type f | while read i; do ${SED} -i.bak		\
 		-e "/freebsd-elf\\*)/,/;;/ {				\
 		    /library_names_spec=.*\\.so/			\
 		    s/=.*/='\$$libname\$$release.so\$$versuffix		\
@@ -58,7 +59,8 @@ patch-libtool:
 		    s/=.*/='\$$libname\$$release\$$shared_ext\$$versuffix \
 			\$$libname\$$release\$$shared_ext\$$major	\
 			\$$libname\$$shared_ext'			\
-		    soname_spec='\$$libname\$$release\$$shared_ext\$$major'/; }"
+		    soname_spec='\$$libname\$$release\$$shared_ext\$$major'/; \
+		    }" $${i} && ${TOUCH} -mr $${i}.bak $${i}; done
 
 	@${FIND} ${WRKDIR} -type f -name ltmain.sh |			\
 		${XARGS} ${REINPLACE_CMD}				\
