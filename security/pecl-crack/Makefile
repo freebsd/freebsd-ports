@@ -3,7 +3,7 @@
 
 PORTNAME=	crack
 PORTVERSION=	0.4.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	security www
 MASTER_SITES=	http://www.osuweb.net/~ahaning/
 PKGNAMEPREFIX=	pecl-
