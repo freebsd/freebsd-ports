@@ -1,14 +1,5 @@
 --- configure.in.orig	2012-08-13 04:35:26.000000000 -0300
 +++ configure.in	2013-01-09 13:11:12.000000000 -0200
-@@ -472,7 +472,7 @@
- dnl> Add /usr/local/ /opt/local
- CFLAGS="${CFLAGS} -I/usr/local/include -I/opt/local/include"
- CPPFLAGS="${CPPFLAGS} -I/usr/local/include -I/opt/local/include"
--LDFLAGS="${LDFLAGS} -L/usr/local/lib -L/opt/local/lib"
-+LDFLAGS="${LDFLAGS}-L/usr/local/lib -L/opt/local/lib"
- 
- PWD=`pwd`
- 
 @@ -560,7 +560,7 @@
     test -d ${TMP_ROOT} &&
     test -r ${TMP_ROOT}/libpcap.a; then

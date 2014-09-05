@@ -509,4 +509,4 @@ man/man8/ntop.8.gz
 @dirrm %%DATADIR%%
 @exec mkdir -p %%DBDIR%%/ntop
 @exec chown -R nobody:nobody %%DBDIR%%/ntop
-@unexec rmdir %%DBDIR%%/ntop 2>/dev/null || true
+@dirrmtry %%DBDIR%%/ntop
