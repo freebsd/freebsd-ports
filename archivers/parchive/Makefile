@@ -10,6 +10,7 @@ DISTNAME=	par-v${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Parity Archiver - makes multiple parity volumes from a set of files
 
+USES=		uidfix
 MAKEFILE=	${FILESDIR}/Makefile
 PLIST_FILES=	bin/parchive
 WRKSRC=		${WRKDIR}/par-cmdline
