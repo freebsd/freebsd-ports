@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	zenmap
-PORTVERSION=	6.46
+PORTVERSION=	6.47
 CATEGORIES=	security ipv6
 MASTER_SITES=	http://nmap.org/dist/ \
 		SF/nemysisfreebsdp/security/:icons
@@ -21,12 +21,10 @@ RUN_DEPENDS=	nmap:${PORTSDIR}/security/nmap \
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/${PORTNAME}
 
-USES=		dos2unix tar:bzip2
+USES=		dos2unix python tar:bzip2
 DOS2UNIX_GLOB=	*.xml
 USE_GNOME=	pygtk2
-USE_PYTHON=	yes
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
+USE_PYTHON=	autoplist distutils
 
 OPTIONS_DEFINE=	NLS
 OPTIONS_SUB=	yes
