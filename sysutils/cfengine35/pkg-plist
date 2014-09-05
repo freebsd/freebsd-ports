@@ -1,6 +1,6 @@
-libexec/cfengine/libpromises.la
 libexec/cfengine/libpromises.so
 libexec/cfengine/libpromises.so.3
+libexec/cfengine/libpromises.so.3.0.5
 sbin/cf-agent
 sbin/cf-execd
 sbin/cf-key
