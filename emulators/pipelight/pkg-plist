@@ -1,4 +1,5 @@
 bin/pipelight-plugin
+bin/pipelight-mkufs
 lib/pipelight/libpipelight.so
 man/man1/pipelight-plugin.1.gz
 %%DATADIR%%/configs/pipelight-adobereader

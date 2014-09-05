@@ -3,7 +3,7 @@
 
 PORTNAME=	pipelight
 DISTVERSION=	0.2.7.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	emulators
 MASTER_SITES=	https://bitbucket.org/mmueller2012/pipelight/get/ \
 		http://repos.fds-team.de/pluginloader/v${DISTVERSION}/:plg
@@ -44,6 +44,8 @@ bash_OLD_CMD=	/usr/bin/env bash
 SHEBANG_FILES=	configure \
 		share/install-dependency
 
+SUB_FILES=	pipelight-mkufs
+
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "i386"
@@ -57,5 +59,8 @@ RUN_DEPENDS+=	${LOCALBASE}/bin/wine:${PORTSDIR}/emulators/i386-wine-compholio
 pre-configure:
 		${LN} -s ${DISTDIR}/${DIST_SUBDIR}/pluginloader.tar.gz ${WRKSRC}/pluginloader-v${DISTVERSION}.tar.gz
 		${LN} -s ${DISTDIR}/${DIST_SUBDIR}/pluginloader.tar.gz.sig ${WRKSRC}/pluginloader-v${DISTVERSION}.tar.gz.sig
+
+post-install:
+	@${INSTALL_SCRIPT} ${WRKDIR}/pipelight-mkufs ${STAGEDIR}${PREFIX}/bin/
 
 .include <bsd.port.post.mk>
