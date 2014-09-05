@@ -1,7 +1,6 @@
 bin/chrome
 man/man1/chrome.1.gz
 share/applications/chromium-browser.desktop
-%%DATADIR%%/protoc
 %%DATADIR%%/chrome
 %%DATADIR%%/chrome-wrapper
 %%DATADIR%%/chrome_100_percent.pak

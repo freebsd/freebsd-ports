@@ -25,7 +25,4 @@ INSTALL_TARGET=	install-strip
 
 GLIB_SCHEMAS=	org.gnome.GHex.gschema.xml
 
-post-patch:
-	@${REINPLACE_CMD} '/^ghex2_LDADD =/s/$$/ -lm/' ${WRKSRC}/src/Makefile.in
-
 .include <bsd.port.mk>
