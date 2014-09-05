@@ -826,6 +826,7 @@
     SUBDIR += quantis
     SUBDIR += quantis-kmod
     SUBDIR += racoon2
+    SUBDIR += radamsa
     SUBDIR += radiusniff
     SUBDIR += rainbowcrack
     SUBDIR += ranpwd

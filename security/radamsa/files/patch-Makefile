@@ -1,0 +1,27 @@
+--- Makefile.orig	2014-03-14 15:53:14.654599833 +0200
++++ Makefile	2014-03-14 15:56:03.358626694 +0200
+@@ -1,11 +1,11 @@
+ DESTDIR=
+-PREFIX=/usr
++PREFIX=/usr/local
+ BINDIR=/bin
+ CFLAGS=-Wall -O3
+ OFLAGS=-O1
+ W32GCC=i586-mingw32msvc-gcc # sudo apt-get install mingw32 @ debian squeeze
+ 
+-everything: bin/radamsa .seal-of-quality
++all everything: bin/radamsa .seal-of-quality
+ 
+ bin/radamsa: radamsa.c
+ 	mkdir -p bin
+@@ -21,8 +21,8 @@
+ install: bin/radamsa
+ 	-mkdir -p $(DESTDIR)$(PREFIX)/bin
+ 	cp bin/radamsa $(DESTDIR)$(PREFIX)/bin
+-	-mkdir -p $(DESTDIR)$(PREFIX)/share/man/man1
+-	cat doc/radamsa.1 | gzip -9 > $(DESTDIR)$(PREFIX)/share/man/man1/radamsa.1.gz
++	-mkdir -p $(DESTDIR)$(PREFIX)/man/man1
++	cat doc/radamsa.1 | gzip -9 > $(DESTDIR)$(PREFIX)/man/man1/radamsa.1.gz
+ 
+ clean:
+ 	-rm radamsa.c bin/* .seal-of-quality
