@@ -10,7 +10,7 @@ DISTFILES=	nist_spblas_${DISTVERSION}.zip:1
 MAINTAINER=	bf@FreeBSD.org
 COMMENT=	NIST Sparse Basic Linear Algebra Subprograms (BLAS)
 
-USES=		dos2unix zip
+USES=		dos2unix uidfix zip
 USE_GCC=	yes
 USE_LDCONFIG=	yes
 
