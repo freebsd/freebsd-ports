@@ -10,6 +10,8 @@ MASTER_SITES=	http://www.dockapps.org/files/90/128/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Dockapp that outputs fortune messages
 
+BROKEN=		No public disfiles
+
 PLIST_FILES=	bin/wmfortune
 USES=		gmake
 USE_XORG=	xpm
