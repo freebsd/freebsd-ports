@@ -583,6 +583,7 @@
     SUBDIR += gnustep
     SUBDIR += gnustep-make
     SUBDIR += go-flags
+    SUBDIR += go-hashicorp-logutils
     SUBDIR += go-json-rest
     SUBDIR += go-pretty
     SUBDIR += go-runewidth
