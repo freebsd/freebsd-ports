@@ -7,8 +7,8 @@
 -	install -o root -g wheel -m 0555 cdeploy.sh /usr/local/sbin/cdeploy
 -	install -o root -g wheel -m 0444 cdeploy.1 /usr/local/man/man1/cdeploy.1
 -	gzip -f9 /usr/local/man/man1/cdeploy.1
-+	install -o root -g wheel -m 0555 cdeploy.sh $(DESTDIR)$(PREFIX)/sbin/cdeploy
-+	install -o root -g wheel -m 0444 cdeploy.1 $(DESTDIR)$(PREFIX)/man/man1/cdeploy.1
++	$(BSD_INSTALL_SCRIPT) cdeploy.sh $(DESTDIR)$(PREFIX)/sbin/cdeploy
++	$(BSD_INSTALL_MAN) cdeploy.1 $(DESTDIR)$(PREFIX)/man/man1/cdeploy.1
  
  deinstall:
  	rm -f /usr/local/sbin/cdeploy
