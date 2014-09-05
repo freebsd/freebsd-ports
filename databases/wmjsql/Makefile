@@ -5,8 +5,7 @@ PORTNAME=	wmjsql
 PORTVERSION=	0.5
 PORTREVISION=	2
 CATEGORIES=	databases windowmaker
-MASTER_SITES=	http://www.dockapps.org/files/42/73/ \
-		http://freebsd.nsu.ru/distfiles/
+MASTER_SITES=	http://freebsd.nsu.ru/distfiles/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	MySQL server status displaying dockapp

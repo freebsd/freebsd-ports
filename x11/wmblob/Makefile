@@ -10,6 +10,8 @@ MASTER_SITES=	http://www.dockapps.org/files/155/541/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Showing moving blobs
 
+BROKEN=		No public disfiles
+
 USE_XORG=	xpm
 USE_GNOME=	gtk20
 USES=		pkgconfig tar:bzip2
