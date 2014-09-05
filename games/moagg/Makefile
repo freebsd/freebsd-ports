@@ -27,6 +27,9 @@ NO_BUILD=	yes
 PORTDOCS=	AUTHORS README.txt
 OPTIONS_DEFINE=	DOCS
 
+# Do not use older versions
+PORTSCOUT=	skipv:1.95
+
 DESKTOP_ENTRIES="MOAGG, Mother of all gravity Games" "" ${PORTNAME} \
 		"${PORTNAME}" "Game;ArcadeGame;" ""
 
