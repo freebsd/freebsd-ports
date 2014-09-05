@@ -6,7 +6,7 @@ CATEGORIES=	devel
 MASTER_SITES=	BUGZILLA
 MASTER_SITE_SUBDIR=	webtools webtools/archived
 
-MAINTAINER=	bugzilla@FreeBSD.org
+MAINTAINER=	bz-ports@FreeBSD.org
 COMMENT=	Bug-tracking system developed by Mozilla Project
 
 LICENSE=	MPL
