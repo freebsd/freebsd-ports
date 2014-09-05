@@ -12,6 +12,7 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	obrien@FreeBSD.org
 COMMENT=	MOP Loader Daemon for netbooting DEC machines
 
+USES=		uidfix
 MAKE_ENV=	BINDIR=${PREFIX}/sbin MANDIR=${PREFIX}/man/man NO_MANCOMPRESS=true
 
 OPTIONS_DEFINE=	DOCS
