@@ -17,11 +17,10 @@ LIB_DEPENDS=	libQtSolutions_SingleApplication-head.so:${PORTSDIR}/devel/qt4-qtso
 
 MAKE_JOBS_UNSAFE=yes
 ONLY_FOR_ARCHS=	amd64
-USE_PYTHON=	yes
 USE_LDCONFIG=	yes
 USE_QT4=	corelib gui network svg linguist \
 		moc_build rcc_build uic_build
-USES=		qmake tar:bzip2
+USES=		qmake tar:bzip2 python
 
 WRKSRC=		${WRKDIR}/src-qt4
 
