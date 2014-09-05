@@ -14,4 +14,7 @@ COMMENT=	Popup style message communication tool for X11
 USES=		imake
 USE_XORG=	ice sm x11 xaw xext xmu xpm xt
 
+post-patch:
+	@${REINPLACE_CMD} 's,^INSTUIDFLAGS=.*,INSTUIDFLAGS=${STRIP} -m ${BINMODE},' ${WRKSRC}/Imakefile
+
 .include <bsd.port.mk>
