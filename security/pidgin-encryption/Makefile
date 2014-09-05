@@ -3,7 +3,7 @@
 
 PORTNAME=	pidgin
 PORTVERSION=	3.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	security
 MASTER_SITES=	SF/${PORTNAME}-encrypt/Releases/${PORTVERSION}
 PKGNAMESUFFIX=	-encryption
@@ -17,17 +17,17 @@ RUN_DEPENDS=	${LOCALBASE}/bin/pidgin:${PORTSDIR}/net-im/pidgin
 LIB_DEPENDS=	libpurple.so:${PORTSDIR}/net-im/libpurple \
 		libnss3.so:${PORTSDIR}/security/nss
 
-USE_GNOME=	gtk20
-USES=		gettext gmake pkgconfig
 GNU_CONFIGURE=	yes
-
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--disable-static \
 		--with-nspr-includes=${LOCALBASE}/include/nspr	\
 		--with-nspr-libs=${LOCALBASE}/lib	\
 		--with-nss-includes=${LOCALBASE}/include/nss/nss \
 		--with-nss-libs=${LOCALBASE}/lib/nss
+CPPFLAGS+=	-I${LOCALBASE}/include
+LIBS+=		-L${LOCALBASE}/lib
+INSTALL_TARGET=	install-strip
+USES=		gettext gmake libtool pkgconfig
+USE_GNOME=	gtk20
 
 OPTIONS_DEFINE=	NLS
 OPTIONS_SUB=	yes
