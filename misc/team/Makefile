@@ -11,6 +11,8 @@ MASTER_SITE_SUBDIR=	joerg
 MAINTAINER=	joerg@FreeBSD.org
 COMMENT=	Portable multi-buffered tape streaming utility
 
+USES=		uidfix
+
 PLIST_FILES=	bin/team \
 		man/man1/team.1.gz
 
