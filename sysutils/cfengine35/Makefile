@@ -3,7 +3,7 @@
 
 PORTNAME=	cfengine
 PORTVERSION=	3.5.3
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	sysutils
 MASTER_SITES=	https://s3.amazonaws.com/cfengine.package-repos/tarballs/
 
@@ -13,9 +13,10 @@ COMMENT=	Systems administration tool for networks
 
 LICENSE=	GPLv3
 
+LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre
+
 .if !defined(MASTERDIR)
 PKGNAMESUFFIX=	35
-LATEST_LINK=	cfengine35
 .endif
 
 FETCH_BEFORE_ARGS=	-o ${DISTDIR}/${DISTFILES}
@@ -24,11 +25,10 @@ CONFLICTS=	cfengine-[234]*
 
 USE_RC_SUBR=	cf-execd cf-serverd cf-monitord
 
-USES=		libtool
+USES=		gmake libtool
 USE_LDCONFIG=	yes
 USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
-USES=		gmake
 CFLAGS+=	-Wno-return-type
 # EXAMPLESDIR=	${PREFIX}/share/examples/cfengine3
 DOCSDIR=	${PREFIX}/share/doc/cfengine
@@ -40,8 +40,7 @@ CONFIGURE_ARGS=	--docdir=${DOCSDIR} \
 		--with-workdir=/var/cfengine \
 		--with-pcre=${LOCALBASE} \
 		--enable-fhs
-
-LIB_DEPENDS+=	libpcre.so:${PORTSDIR}/devel/pcre
+INSTALL_TARGET=	install-strip
 
 OPTIONS_DEFINE=	PGSQL MYSQL LIBVIRT
 OPTIONS_SINGLE=	DB
