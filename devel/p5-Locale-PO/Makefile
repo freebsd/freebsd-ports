@@ -1,8 +1,7 @@
-# Created by: tabthorpe
 # $FreeBSD$
 
 PORTNAME=	Locale-PO
-PORTVERSION=	0.23
+PORTVERSION=	0.24
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
