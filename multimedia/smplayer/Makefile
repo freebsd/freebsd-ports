@@ -30,6 +30,9 @@ PORTDOCS=	Changelog Not_so_obvious_things.txt Readme.txt \
 		Release_notes.txt Watching_TV.txt
 OPTIONS_DEFINE=	DOCS DEBUG
 
+# Do not use unstable versions
+PORTSCOUT= skipv:14.3.0.6306
+
 SUB_FILES=	pkg-message
 
 .include <bsd.port.options.mk>
