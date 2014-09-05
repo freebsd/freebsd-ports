@@ -10,8 +10,9 @@ DISTNAME=	xd-8087
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Yet another dump utility
 
-LICENSE=	BSD
+LICENSE=	BSD4CLAUSE
 
+USES=		uidfix
 MAKE_ARGS=	CC="${CC}" BINDIR="${PREFIX}/bin" \
 		MANDIR="${MAN1PREFIX}/man/man"
 
