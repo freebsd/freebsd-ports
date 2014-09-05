@@ -5,7 +5,7 @@ PORTNAME=	gmap
 PORTVERSION=	2006.04.21
 PORTREVISION=	1
 CATEGORIES=	biology
-MASTER_SITES=	http://www.gene.com/share/gmap/src/
+MASTER_SITES=	http://research-pub.gene.com/gmap/src/
 DISTNAME=	${PORTNAME}-${PORTVERSION:C|\.|-|g}
 
 MAINTAINER=	rpz@cse.wustl.edu
