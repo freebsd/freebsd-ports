@@ -5,8 +5,8 @@
 +prefix = ${PREFIX}
  
  CFLAGS ?= -g -O2
-+LDFLAGS += -L/usr/local/lib -lintl
-+CFLAGS += -I/usr/local/include
++LDFLAGS += -L${LOCALBASE}/lib -lintl
++CFLAGS += -I${LOCALBASE}/include
  
  PERL = perl
  INSTALL = install

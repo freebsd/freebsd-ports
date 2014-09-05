@@ -2,10 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	whois
-PORTVERSION=	5.1.4
+PORTVERSION=	5.1.5
 CATEGORIES=	net
-MASTER_SITES=	${MASTER_SITE_DEBIAN_POOL}
-DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	coco@executive-computing.de
 COMMENT=	Marco d'Itri whois client
@@ -13,15 +11,19 @@ COMMENT=	Marco d'Itri whois client
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		iconv gmake perl5 tar:xz
+USES=		iconv gmake perl5
 USE_PERL5=	build
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 MAKE_ARGS=	BASEDIR="${STAGEDIR}"
 
 OPTIONS_DEFINE=	NLS
 
 OPTIONS_SUB=	yes
 NLS_USES=	gettext
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	rfc1036
+GH_COMMIT=	d346ca6
+GH_TAGNAME=	${GH_COMMIT}
 
 .include <bsd.port.options.mk>
 
