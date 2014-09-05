@@ -1,0 +1,15 @@
+%%GO_LIBDIR%%/%%GO_PKGNAME%%.a
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/level.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/LICENSE
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/level_benchmark_test.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/level_test.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/README.md
+@dirrmtry %%GO_SRCDIR%%/%%GO_PKGNAME%%
+@dirrmtry %%GO_SRCDIR%%/github.com/hashicorp
+@dirrmtry %%GO_SRCDIR%%/github.com
+@dirrmtry %%GO_SRCDIR%%
+@dirrmtry %%GO_LIBDIR%%/github.com/hashicorp
+@dirrmtry %%GO_LIBDIR%%/github.com
+@dirrmtry %%GO_LIBDIR%%
+@dirrmtry share/go/pkg
+@dirrmtry share/go
