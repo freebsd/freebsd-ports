@@ -11,9 +11,8 @@
 #	---------------------------------------
 #
 #
-#	pkg_update cvsup
-#		Installs a copy of cvsup-without-gui package and start
-#		"make update" for the ports tree.
+#	pkg_update update-ports
+#		Starts "make update" for the ports tree.
 #
 #
 #	pkg_update make-packages
@@ -57,14 +56,14 @@
 #
 #	pkg_update full-update-jail
 #		do full update cycle
-#		1) "cvsup" to update the ports tree
+#		1) "update-ports" to update the ports tree
 #		2) "clean-distfiles" to keep only current distfiles
 #		3) "clean-packages" to keep only good packages
 #		4) remove all old error logs
 #		5) "make-packages" to rebuild missing packages
 #
 #	pkg_update full-update-jail retry
-#		Skip "cvsup" and procced as above.
+#		Skip "update-ports" and procced as above.
 #
 #
 #	clean-usr-lib.sh:
@@ -84,7 +83,7 @@
 #		Fetch distfiles for list of ports and their dependecies.
 #
 #	pkg_update show-extra-files
-#		list files in portsdir that are not updated by cvsup
+#		list files in portsdir that are not updated by update-ports
 #
 #
 #
