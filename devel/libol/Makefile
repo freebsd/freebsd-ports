@@ -7,7 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.balabit.com/downloads/files/libol/0.3/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	cy@FreeBSD.org
 COMMENT=	Library needed by syslog-ng
 
 USES=		libtool
