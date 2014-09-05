@@ -3,7 +3,7 @@
 
 PORTNAME=	thunar-vfs
 PORTVERSION=	1.2.0
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	x11-fm xfce
 MASTER_SITES=	${MASTER_SITE_XFCE}
 MASTER_SITE_SUBDIR=	src/archive/${PORTNAME}/${PORTVERSION:R}
@@ -25,7 +25,7 @@ USE_GNOME=	glib20 gtk20 gdkpixbuf2 intltool intlhack
 USE_XFCE=	configenv libutil libexo
 USE_XORG=	x11
 USES=		gmake pathfix perl5 pkgconfig libtool desktop-file-utils \
-	tar:bzip2
+		tar:bzip2
 
 CONFIGURE_ARGS=	--disable-debug
 

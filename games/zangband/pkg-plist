@@ -1,24 +1,20 @@
-@owner games
 @group games
-@mode 664
+@owner games
+@mode 2555
 %%ANGBANDBIN%%
-@exec chmod 2755 %D/%%ANGBANDBIN%%
-@unexec rm -f %D/%%ANGBANDLIB%%/data/*
+@mode
+%%ANGBANDLIB%%/apex/readme.txt
 @unexec cmp -s %D/%%ANGBANDLIB%%/apex/scores.raw %D/%%ANGBANDLIB%%/apex/z_scores.raw && rm %D/%%ANGBANDLIB%%/apex/scores.raw || true
 @unexec cmp -s %D/%%ANGBANDLIB%%/apex/scores.raw /dev/null && rm %D/%%ANGBANDLIB%%/apex/scores.raw || true
-%%ANGBANDLIB%%/apex/readme.txt
 %%ANGBANDLIB%%/apex/z_scores.raw
 @exec test -f %D/%%ANGBANDLIB%%/apex/scores.raw || touch %D/%%ANGBANDLIB%%/apex/scores.raw
-%%ANGBANDLIB%%/bone/delete.me
+@exec install -d -o games -g games %D/%%ANGBANDLIB%%/bone
+@exec install -d -o games -g games -m 775 %D/%%ANGBANDLIB%%/data
 %%ANGBANDLIB%%/edit/a_info.txt
 %%ANGBANDLIB%%/edit/e_info.txt
 %%ANGBANDLIB%%/edit/f_info.txt
 %%ANGBANDLIB%%/edit/k_info.txt
 %%ANGBANDLIB%%/edit/misc.txt
-%%ANGBANDLIB%%/edit/q_info.txt
-%%ANGBANDLIB%%/edit/q_oberon.txt
-%%ANGBANDLIB%%/edit/q_random.txt
-%%ANGBANDLIB%%/edit/q_serpen.txt
 %%ANGBANDLIB%%/edit/r_info.txt
 %%ANGBANDLIB%%/edit/t_info.txt
 %%ANGBANDLIB%%/edit/v_info.txt
@@ -68,6 +64,7 @@
 %%ANGBANDLIB%%/help/general.txt
 %%ANGBANDLIB%%/help/help.hlp
 %%ANGBANDLIB%%/help/helpinfo.txt
+%%ANGBANDLIB%%/help/interface.html
 %%ANGBANDLIB%%/help/magic.hlp
 %%ANGBANDLIB%%/help/magic.txt
 %%ANGBANDLIB%%/help/monster.hlp
@@ -84,7 +81,7 @@
 %%ANGBANDLIB%%/help/town.txt
 %%ANGBANDLIB%%/help/version.txt
 %%ANGBANDLIB%%/help/wizard.txt
-%%ANGBANDLIB%%/info/delete.me
+@exec install -d -o games -g games %D/%%ANGBANDLIB%%/info
 %%ANGBANDLIB%%/pref/colors.prf
 %%ANGBANDLIB%%/pref/font-ami.prf
 %%ANGBANDLIB%%/pref/font-dos.prf
@@ -108,6 +105,7 @@
 %%ANGBANDLIB%%/pref/graf-xpj.prf
 %%ANGBANDLIB%%/pref/graf-xxx.prf
 %%ANGBANDLIB%%/pref/graf.prf
+%%ANGBANDLIB%%/pref/message.prf
 %%ANGBANDLIB%%/pref/pref-acn.prf
 %%ANGBANDLIB%%/pref/pref-ami.prf
 %%ANGBANDLIB%%/pref/pref-emx.prf
@@ -115,6 +113,7 @@
 %%ANGBANDLIB%%/pref/pref-gtk.prf
 %%ANGBANDLIB%%/pref/pref-key.prf
 %%ANGBANDLIB%%/pref/pref-mac.prf
+%%ANGBANDLIB%%/pref/pref-tnb.prf
 %%ANGBANDLIB%%/pref/pref-win.prf
 %%ANGBANDLIB%%/pref/pref-x11.prf
 %%ANGBANDLIB%%/pref/pref.prf
@@ -124,22 +123,183 @@
 %%ANGBANDLIB%%/pref/xtra-gcu.prf
 %%ANGBANDLIB%%/pref/xtra-new.prf
 %%ANGBANDLIB%%/pref/xtra-xxx.prf
-%%ANGBANDLIB%%/save/delete.me
-%%ANGBANDLIB%%/user/delete.me
-@exec mkdir %D/%%ANGBANDLIB%%/data
-@exec chown -R games:games %D/%%ANGBANDLIB%%/apex %D/%%ANGBANDLIB%%/data
-@exec chmod 775 %D/%%ANGBANDLIB%%
-@exec chmod -R ug+rw,o-rw %D/%%ANGBANDLIB%%/*
-@exec chmod -R o+r %D/%%ANGBANDLIB%%/help
-@exec chmod 1777 %D/%%ANGBANDLIB%%/save %D/%%ANGBANDLIB%%/user
-@dirrm %%ANGBANDLIB%%/apex
-@dirrm %%ANGBANDLIB%%/bone
-@dirrm %%ANGBANDLIB%%/data
-@dirrm %%ANGBANDLIB%%/edit
-@dirrm %%ANGBANDLIB%%/file
-@dirrm %%ANGBANDLIB%%/help
-@dirrm %%ANGBANDLIB%%/info
+%%ANGBANDLIB%%/script/field.lua
+%%ANGBANDLIB%%/script/init.lua
+%%ANGBANDLIB%%/script/object.lua
+%%ANGBANDLIB%%/script/spell.lua
+%%ANGBANDLIB%%/script/test.lua
+%%ANGBANDLIB%%/script/tk/about.tcl
+%%ANGBANDLIB%%/script/tk/angband.tcl
+%%ANGBANDLIB%%/script/tk/autobar.tcl
+%%ANGBANDLIB%%/script/tk/bgerror.tcl
+%%ANGBANDLIB%%/script/tk/character-window.tcl
+%%ANGBANDLIB%%/script/tk/charflags-canvas.tcl
+%%ANGBANDLIB%%/script/tk/charinfo-canvas.tcl
+%%ANGBANDLIB%%/script/tk/choice-window.tcl
+%%ANGBANDLIB%%/script/tk/config.tcl
+%%ANGBANDLIB%%/script/tk/config/adam+feat-assign
+%%ANGBANDLIB%%/script/tk/config/adam-assign
+%%ANGBANDLIB%%/script/tk/config/adamNN+feat.cfg
+%%ANGBANDLIB%%/script/tk/config/adamNN-common
+%%ANGBANDLIB%%/script/tk/config/adamNN.cfg
+%%ANGBANDLIB%%/script/tk/config/birth
+%%ANGBANDLIB%%/script/tk/config/classic+feat-assign
+%%ANGBANDLIB%%/script/tk/config/classic-assign
+%%ANGBANDLIB%%/script/tk/config/classic-common
+%%ANGBANDLIB%%/script/tk/config/classicNN+feat.cfg
+%%ANGBANDLIB%%/script/tk/config/classicNN.cfg
+%%ANGBANDLIB%%/script/tk/config/config
+%%ANGBANDLIB%%/script/tk/config/dg32-assign
+%%ANGBANDLIB%%/script/tk/config/dg32.cfg
+%%ANGBANDLIB%%/script/tk/config/geometry
+%%ANGBANDLIB%%/script/tk/config/value
+%%ANGBANDLIB%%/script/tk/debug.tcl
+%%ANGBANDLIB%%/script/tk/errorInfo.tcl
+%%ANGBANDLIB%%/script/tk/font.tcl
+%%ANGBANDLIB%%/script/tk/image/ac.gif
+%%ANGBANDLIB%%/script/tk/image/angbandtk.ico
+%%ANGBANDLIB%%/script/tk/image/au.gif
+%%ANGBANDLIB%%/script/tk/image/button-activate.gif
+%%ANGBANDLIB%%/script/tk/image/button-book.gif
+%%ANGBANDLIB%%/script/tk/image/button-down.gif
+%%ANGBANDLIB%%/script/tk/image/button-food.gif
+%%ANGBANDLIB%%/script/tk/image/button-help.gif
+%%ANGBANDLIB%%/script/tk/image/button-options.gif
+%%ANGBANDLIB%%/script/tk/image/button-potion.gif
+%%ANGBANDLIB%%/script/tk/image/button-rod.gif
+%%ANGBANDLIB%%/script/tk/image/button-scroll.gif
+%%ANGBANDLIB%%/script/tk/image/button-staff.gif
+%%ANGBANDLIB%%/script/tk/image/button-up.gif
+%%ANGBANDLIB%%/script/tk/image/button-wand.gif
+%%ANGBANDLIB%%/script/tk/image/cha.gif
+%%ANGBANDLIB%%/script/tk/image/checked.gif
+%%ANGBANDLIB%%/script/tk/image/const.gif
+%%ANGBANDLIB%%/script/tk/image/dex.gif
+%%ANGBANDLIB%%/script/tk/image/exp.gif
+%%ANGBANDLIB%%/script/tk/image/int.gif
+%%ANGBANDLIB%%/script/tk/image/level.gif
+%%ANGBANDLIB%%/script/tk/image/look.gif
+%%ANGBANDLIB%%/script/tk/image/ms-back.gif
+%%ANGBANDLIB%%/script/tk/image/ms-book-closed.gif
+%%ANGBANDLIB%%/script/tk/image/ms-book-open.gif
+%%ANGBANDLIB%%/script/tk/image/ms-help-page.gif
+%%ANGBANDLIB%%/script/tk/image/ms-hide.gif
+%%ANGBANDLIB%%/script/tk/image/ms-next.gif
+%%ANGBANDLIB%%/script/tk/image/ms-refresh.gif
+%%ANGBANDLIB%%/script/tk/image/ms-show.gif
+%%ANGBANDLIB%%/script/tk/image/open.gif
+%%ANGBANDLIB%%/script/tk/image/pwrdLogo175.gif
+%%ANGBANDLIB%%/script/tk/image/save.gif
+%%ANGBANDLIB%%/script/tk/image/sound.gif
+%%ANGBANDLIB%%/script/tk/image/speed.gif
+%%ANGBANDLIB%%/script/tk/image/str.gif
+%%ANGBANDLIB%%/script/tk/image/town16.gif
+%%ANGBANDLIB%%/script/tk/image/town24.gif
+%%ANGBANDLIB%%/script/tk/image/town32.gif
+%%ANGBANDLIB%%/script/tk/image/unchecked.gif
+%%ANGBANDLIB%%/script/tk/image/wis.gif
+%%ANGBANDLIB%%/script/tk/info-window.tcl
+%%ANGBANDLIB%%/script/tk/init-other.tcl
+%%ANGBANDLIB%%/script/tk/init-startup.tcl
+%%ANGBANDLIB%%/script/tk/inventory.tcl
+%%ANGBANDLIB%%/script/tk/inventory2.tcl
+%%ANGBANDLIB%%/script/tk/keypress.tcl
+%%ANGBANDLIB%%/script/tk/knowledge.tcl
+%%ANGBANDLIB%%/script/tk/library/balloon.tcl
+%%ANGBANDLIB%%/script/tk/library/buttonlabel.tcl
+%%ANGBANDLIB%%/script/tk/library/canvist.tcl
+%%ANGBANDLIB%%/script/tk/library/color-picker.tcl
+%%ANGBANDLIB%%/script/tk/library/menu.tcl
+%%ANGBANDLIB%%/script/tk/library/module.tcl
+%%ANGBANDLIB%%/script/tk/library/moduleIndex.tcl
+%%ANGBANDLIB%%/script/tk/library/object.tcl
+%%ANGBANDLIB%%/script/tk/library/progress-window.tcl
+%%ANGBANDLIB%%/script/tk/library/progress1.tcl
+%%ANGBANDLIB%%/script/tk/library/progress2.tcl
+%%ANGBANDLIB%%/script/tk/library/status-text.tcl
+%%ANGBANDLIB%%/script/tk/library/statusbar.tcl
+%%ANGBANDLIB%%/script/tk/library/tabbed-frame.tcl
+%%ANGBANDLIB%%/script/tk/library/tabs.tcl
+%%ANGBANDLIB%%/script/tk/library/texist.tcl
+%%ANGBANDLIB%%/script/tk/library/text-list.tcl
+%%ANGBANDLIB%%/script/tk/library/title-frame.tcl
+%%ANGBANDLIB%%/script/tk/library/toolbar.tcl
+%%ANGBANDLIB%%/script/tk/library/toplevel.tcl
+%%ANGBANDLIB%%/script/tk/library/updowncontrol.tcl
+%%ANGBANDLIB%%/script/tk/library/updownentry.tcl
+%%ANGBANDLIB%%/script/tk/library/utils.tcl
+%%ANGBANDLIB%%/script/tk/library/win98ToolbarButton.tcl
+%%ANGBANDLIB%%/script/tk/library/window-manager.tcl
+%%ANGBANDLIB%%/script/tk/main-window.tcl
+%%ANGBANDLIB%%/script/tk/map.tcl
+%%ANGBANDLIB%%/script/tk/message-history.tcl
+%%ANGBANDLIB%%/script/tk/message-window.tcl
+%%ANGBANDLIB%%/script/tk/misc-popup.tcl
+%%ANGBANDLIB%%/script/tk/misc-window.tcl
+%%ANGBANDLIB%%/script/tk/misc.tcl
+%%ANGBANDLIB%%/script/tk/moduleIndex.tcl
+%%ANGBANDLIB%%/script/tk/pets.tcl
+%%ANGBANDLIB%%/script/tk/player.tcl
+%%ANGBANDLIB%%/script/tk/recall.tcl
+%%ANGBANDLIB%%/script/tk/store.tcl
+%%ANGBANDLIB%%/script/tk/store2.tcl
+%%ANGBANDLIB%%/script/tk/term.tcl
+%%ANGBANDLIB%%/script/tk/tips.tcl
+%%ANGBANDLIB%%/script/tk/tips.txt
+%%ANGBANDLIB%%/script/tk/value-manager.tcl
+%%ANGBANDLIB%%/script/tk/widget.tcl
+%%ANGBANDLIB%%/xtra/font/10X20.FON
+%%ANGBANDLIB%%/xtra/font/12X24.FON
+%%ANGBANDLIB%%/xtra/font/16x16.txt
+%%ANGBANDLIB%%/xtra/font/5X8.FON
+%%ANGBANDLIB%%/xtra/font/6X10.FON
+%%ANGBANDLIB%%/xtra/font/6X12.FON
+%%ANGBANDLIB%%/xtra/font/6X13.FON
+%%ANGBANDLIB%%/xtra/font/6X13B.FON
+%%ANGBANDLIB%%/xtra/font/6X9.FON
+%%ANGBANDLIB%%/xtra/font/7X13.FON
+%%ANGBANDLIB%%/xtra/font/7X13B.FON
+%%ANGBANDLIB%%/xtra/font/8X13.FON
+%%ANGBANDLIB%%/xtra/font/8X13B.FON
+%%ANGBANDLIB%%/xtra/font/9X15.FON
+%%ANGBANDLIB%%/xtra/font/9X15B.FON
+%%ANGBANDLIB%%/xtra/font/xm8x16b.fnt
+%%ANGBANDLIB%%/xtra/graf/16x16.bmp
+%%ANGBANDLIB%%/xtra/graf/8x13.bmp
+%%ANGBANDLIB%%/xtra/graf/8x8.bmp
+%%ANGBANDLIB%%/xtra/graf/mask.bmp
+@exec install -d -o games -g games %D/%%ANGBANDLIB%%/xtra/help
+@exec install -d -o games -g games %D/%%ANGBANDLIB%%/xtra/music
+%%ANGBANDLIB%%/xtra/sound/sound.cfg
+@dirrm %%ANGBANDLIB%%/xtra/sound
+@dirrm %%ANGBANDLIB%%/xtra/music
+@dirrm %%ANGBANDLIB%%/xtra/help
+@dirrm %%ANGBANDLIB%%/xtra/graf
+@dirrm %%ANGBANDLIB%%/xtra/font
+@dirrm %%ANGBANDLIB%%/xtra
+@mode 1777
+@dirrmtry %%ANGBANDLIB%%/user
+@mode
+@dirrm %%ANGBANDLIB%%/script/tk/library
+@dirrm %%ANGBANDLIB%%/script/tk/image
+@dirrm %%ANGBANDLIB%%/script/tk/config
+@dirrm %%ANGBANDLIB%%/script/tk
+@dirrm %%ANGBANDLIB%%/script
+@mode 1777
+@dirrmtry %%ANGBANDLIB%%/save
+@mode
 @dirrm %%ANGBANDLIB%%/pref
-@dirrm %%ANGBANDLIB%%/save
-@dirrm %%ANGBANDLIB%%/user
-@dirrm %%ANGBANDLIB%%
+@dirrm %%ANGBANDLIB%%/info
+@dirrm %%ANGBANDLIB%%/help
+@dirrm %%ANGBANDLIB%%/file
+@dirrm %%ANGBANDLIB%%/edit
+@mode 775
+@dirrmtry %%ANGBANDLIB%%/data
+@mode
+@dirrm %%ANGBANDLIB%%/bone
+@mode 775
+@dirrmtry %%ANGBANDLIB%%/apex
+@mode
+@dirrmtry %%ANGBANDLIB%%
+@owner
+@group

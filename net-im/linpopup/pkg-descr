@@ -1,9 +1,0 @@
-LinPopUp is a X11 port of Winpopup,
-running over Samba. It permits to communicate with a
-windows computer that run Winpopup, sending or receiving
-message. (It also provides an alternative way 
-to communicate between Linux computers that run Samba). 
-Note that LinPopUp is not only a port, as it includes 
-several enhanced features.
-
-WWW: http://www.littleigloo.org/

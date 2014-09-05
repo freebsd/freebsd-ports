@@ -17,14 +17,8 @@ GH_COMMIT=	4e039d7
 
 NO_BUILD=	yes
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 1000000 && ! defined(WITH_PKGNG)
-RUN_DEPENDS=	portaudit:${PORTSDIR}/ports-mgmt/portaudit
-.endif
-
 do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/libexec/nagios
 	${INSTALL_SCRIPT} ${WRKSRC}/check_ports ${STAGEDIR}${PREFIX}/libexec/nagios/
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

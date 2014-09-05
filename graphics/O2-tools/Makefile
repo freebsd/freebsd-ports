@@ -11,7 +11,4 @@ COMMENT=	Huge image processing tools and libraries
 
 GNU_CONFIGURE=	yes
 
-post-patch:
-	@${REINPLACE_CMD} -e '/echo.*RANLIB/,+1d' ${WRKSRC}/libsrc/*/Makefile.in
-
 .include <bsd.port.mk>

@@ -8,7 +8,7 @@ CATEGORIES=	mail tk
 MASTER_SITES=	http://tkrat.org/downloads/stable/ \
 		ftp://ftp.tkrat.org/pub/tkrat/
 
-MAINTAINER=	sjroz@verizon.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Mail user agent for X with a Tcl/Tk user interface
 
 LICENSE=	BSD3CLAUSE

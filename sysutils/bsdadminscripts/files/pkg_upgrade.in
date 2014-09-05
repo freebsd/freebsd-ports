@@ -1,0 +1,2239 @@
+#!/bin/sh -f
+#
+# Copyright (c) 2009
+# Dominic Fandrey <kamikaze@bsdforen.de>
+#
+# Redistribution and use in source and binary forms, with or without
+# modification, are permitted provided that the following conditions
+# are met:
+# 1. Redistributions of source code must retain the above copyright
+#    notice, this list of conditions and the following disclaimer.
+#
+# THIS SOFTWARE IS PROVIDED BY THE AUTHOR ``AS IS'' AND ANY EXPRESS OR
+# IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES
+# OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.
+# IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY DIRECT, INDIRECT,
+# INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT
+# NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+# DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+# THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+# (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
+# THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+#
+
+readonly version=1.1
+readonly name=pkg_upgrade
+
+# Error table.
+readonly ERR_LOCK=1
+readonly ERR_ARG=2
+readonly ERR_INDEX=3
+readonly ERR_FETCH=4
+readonly ERR_SORT=5
+readonly ERR_BACKUP_MISS=6
+readonly ERR_BACKUP_UNKNOWN=7
+readonly ERR_INSTALL=8
+readonly ERR_USER=9
+readonly ERR_TERM=10
+readonly ERR_PACKAGE_FORMAT=11
+readonly ERR_CONFLICT=12
+
+# Constant assignments.
+readonly logfile="%%VAR%%/log/$name.log"
+readonly pid=$$
+
+# Get some environment variables from uma. This includes PACKAGESITE,
+# TMPDIR and PKG_INDEX.
+eval "$(uma env $pid)"
+
+# The remote package repository, derived from PACKAGESITE.
+# If this matches the PACKAGES environment variable all downloading operations
+# will be omitted.
+readonly packagerepos="${PACKAGESITE%/*?}"
+
+# Environment variables.
+: ${PACKAGES="$(make -V PACKAGES -f /usr/share/mk/bsd.port.mk 2> /dev/null)"}
+PACKAGES="${PACKAGES:-%%PORTS%%/packages}"
+: ${PKG_DBDIR=%%VAR%%/db/pkg}
+: ${TMPDIR=%%TMP%%}
+: ${PKG_TMPDIR=$TMPDIR}
+
+# This is where backup packages will be stored.
+readonly packagebackup="$PACKAGES/$name-backup"
+# This is where the download manager will listen for messages.
+readonly queueMessages="$TMPDIR/pkg_upgrade.messages.queue"
+
+# Export environment variables to ensure that every tool uses the same ones.
+export ARCH PACKAGEROOT PACKAGESITE FTP_TIMEOUT PKG_INDEX
+export PACKAGEROOT_MIRRORS PACKAGESITE_MIRRORS
+export PACKAGES PKG_DBDIR TMPDIR PKG_TMPDIR
+
+# Direct index access.
+readonly IDX_PKG=0
+readonly IDX_ORIGIN=1
+readonly IDX_PREFIX=2
+readonly IDX_COMMENT=3
+readonly IDX_DESCRIPTION=4
+readonly IDX_MAINTAINER=5
+readonly IDX_CATEGORIES=6
+readonly IDX_DIRECTDEPENDS=7
+readonly IDX_DEPENDS=8
+readonly IDX_WWW=9
+readonly IDX_PERLVERSION=10
+readonly IDX_PERLMODULES=11
+
+# Input field seperator without spaces.
+IFS='
+'
+
+# Parameter flags.
+pAll=
+pNoBackup=
+pClean=
+pExitOnConflict=
+pForce=
+pFetchOnly=
+pInteractive=
+pJobs=
+pListDiscarded=
+pNoActions=
+pNoLogging=
+pParanoid=
+pRecursive=
+pReplaceConflicts=
+pMoreRecursive=
+pUpwardRecursive=
+pMoreUpwardRecursive=
+pVerbose=
+
+# The categories for packages.
+older=
+newer=
+unindexed=
+multiple=
+error=
+
+# A cache for the pkgDepends function.
+dependsChecked=
+
+# The names of packages that do not have a verified download.
+pending=
+
+#
+# The list of packages to upgrade.
+#
+
+# <origin>;<newPackage>
+upgrade=
+upgradeDepends=
+upgradeDepending=
+
+# The <newOrgin>;<newPackage> part can also be found in $upgrade.
+# <newOrigin>;<newPackage>|<oldOrigin>;<oldPackage>
+replace=
+
+# A list of dependency substitutions for new packages.
+# <originalOrigin>;<originalName>|<newDependencyOrigin>;<newDependencyName>
+substituteDepends=
+
+# The current status line.
+status=
+
+# The ports directory as used in the index file.
+idxports=
+
+#
+# Table Of Functions
+# In order of appearance.
+#
+# getIndex()		Fetch the latest INDEX
+# getLock()		Acquire a lock
+# printStatus()		Print status messages on the terminal
+# error()		Terminate with an error message
+# warn()		Print a warning on stderr
+# verbose()		Print a message, but only in verbose mode
+# log()			Log activity into a log file
+# getIdxEscape()	Escape origins and packages for regular expressions
+# getIdxRows()		Filter index rows with an escaped expression
+# getIdxRowsEscaped()	Filter index rows with an expression
+# getIdxColumn()	Get a certain column from index rows
+# pkgAll()		Make a list of outdated packages
+# pkgDepends()		Check dependencies
+# pkgDepending()	Check upwards dependencies
+# pkgDependencies()	Run all dependency checks
+# printProgress()	Print numerical progress output
+# pkgSort()		Sort packages by dependency
+# printTask()		Print the tasks to perform for a package
+# pkgList()		List all tasks in 'no actions' mode
+# pkgDownload()		Download all required packages
+# pkgUpgrade()		Upgrade all scheduled packages
+# substituteDepends()	Adjust dependencies of upgraded packages
+# upgradePackage()	Upgrade a given package
+# identifyPackage()	Identify a package by a user given string
+# printHelp()		Print program parameters and terminate
+# readParams()		Read the command line parameters
+# readContents()	Read the +CONTENTS of a package file
+# downloadManager()	Start a background download manager
+# downloadManagerFetch()
+#			Try to fetch a package from a mirror
+# downloadManagerMsgRetry()
+#			Tell the download manager to retry a download
+# downloadManagerMsgFinished()
+#			Tell the download manager a download has been completed
+# downloadManagerMsgRequest()
+#			Request a download from the download manager
+# downloadManagerMsgExit()
+#			Tell the download manager to terminate
+# validatePackage()	Validate a downloaded package
+# 
+
+
+#
+# Update the local copy of the index and start the download manager.
+#
+# @param idxports
+#	This is set to the ports directory used in the index file. This is
+#	required for many index operations. If already set the index is
+#	assumed to be up to date and nothing is done.
+# @param pVerbose
+#	Activate verbose output.
+#
+getIndex() {
+	# The index has already been updated.
+	if [ -n "$idxports" ]; then
+		return 0
+	fi
+
+	# Free the lock upon termination.
+	trap "uma unlock $pid" EXIT
+
+	# First acquire the lock.
+	getLock
+
+	verbose "Synchronize the local index copy with the package server."
+
+	# Try to update the index.
+	if ! uma $pVerbose fetch ftpindex $pid; then
+		exit $ERR_INDEX
+	fi
+
+	# Set the ports directory used in the index.
+	idxports="$(getIdxColumn $IDX_ORIGIN "$(head -n 1 "$PKG_INDEX")")"
+	idxports="${idxports%/*/*}"
+
+	# Start the download manager.
+	downloadManager
+}
+
+#
+# Acquires the uma (Update Manager) lock. And spawns a process that locks
+# onto PKG_DBDIR to block the ports from messing with us.
+#
+getLock() {
+	# Acquire the lock.
+	if ! uma lock $pid; then
+		if [ "$USER" != "root" ]; then
+			error $ERR_LOCK "The command $name has to be run as root."
+		else
+		 	error $ERR_LOCK "The uma (Update MAnager) lock could not be acquired, it appears the package/ports infrastructure is in use."
+		fi
+	fi
+
+	# Lock onto PKG_DBDIR to avoid ports getting into our way.
+	# The ports tree locks onto PKG_DBDIR during install and deinstall.
+	# Since it does not use uma we use this lock to make sure the ports
+	# tree does not get into our way later.
+	if ! lockf -kst 0 "$PKG_DBDIR" sh -c "lockf -k '$PKG_DBDIR' sh -c 'while kill -0  $pid 2> /dev/null; do sleep 2; done' &"; then
+		error $ERR_LOCK "Locking $PKG_DBDIR failed, the ports tree might be in use."
+	fi
+}
+
+#
+# Prints a status message to the terminal device /dev/tty.
+#
+# @param 1
+#	The message to print
+# @param status
+#	The last printed message, used for clearing the status line before
+#	printing a new status.
+# @param pClean
+#	If set, do not print status messages.
+#
+printStatus() {
+	test -n "$pClean" && return 0
+	printf "\r%${#status}s\r%s\r" '' "$1" > /dev/tty
+	status="$1"
+}
+
+#
+# Exits with the given error and message on stderr.
+#
+# @param 1
+#	The error number to exit with.
+# @param 2
+#	The message to exit with.
+#
+error() {
+	# Clear the status line.
+	printStatus
+	echo "$name: $2" 1>&2
+	exit "$1"
+}
+
+#
+# Writes a warning message to stderr.
+#
+# @param 1
+#	The message to write.
+#
+warn() {
+	# Clear the status line.
+	printStatus
+	echo "$name: $1" 1>&2
+}
+
+#
+# Outputs verbose messages on stdout.
+#
+# @param @
+#	All the parameters to be output.
+# @param pVerbose
+#	If this is not set, do not output anything.
+#
+verbose() {
+	test -z "$pVerbose" && return 0
+	echo "$@"
+}
+
+#
+# Logs the given message into a log file.
+#
+# The following format is used.
+#
+# <UTC timestamp> - <date> - (<error>|DONE): <message>
+#
+# UTC timestamp := The output of 'date -u '+%s'
+# date := The output of 'date'
+#
+# @param 1
+#	The error number for the log, if this is 0, the message will be
+#	preceded by "DONE:" instead of "ERROR($1):".
+# @param 2
+#	The message to log.
+# @param logfile
+#	The name of the file to log into.
+# @param pNoLogging
+#	If set, logging is not performed.
+#
+log() {
+	test -n "$pNoLogging" && return 0
+
+	if [ $1 -eq 0 ]; then
+		echo "$(date -u '+%s') - $(date) - DONE: $2" >> $logfile
+	else
+		echo "$(date -u '+%s') - $(date) - ERROR($1): $2" >> $logfile
+	fi
+}
+
+#
+# An escape function for package names fed to the getIdxColumn function.
+# This function reads from the standard input unless a file is named
+# in the parameters.
+# Note that the escaping is done for extended regular expressions, however
+# only characters that can appear in package names are escaped.
+#
+# @param @
+#	More parameters can be added to the sed command.
+#
+getIdxEscape() {
+	sed -E -e 's/([+.])/\\\1/g' "$@"
+}
+
+#
+# Outputs all rows of the index that match a given pattern in a column.
+# The pattern should not match '|'.
+#
+# @param 1
+#	The column that has to match the pattern.
+# @param 2
+#	The pattern that has to be matched, an extended regular expression.
+# @param 3
+#	Optional, the rows to match against instead of using the index file.
+#
+getIdxRows() {
+	if [ -z "$3" ]; then
+		grep -E "^([^|]*\|){$1}($2)(\|.*)?\$" "$PKG_INDEX"
+	else
+		echo "$3" | grep -E "^([^|]*\|){$1}($2)(\|.*)?\$"
+	fi
+}
+
+#
+# Outputs all rows of the index that match a given string.
+# The string should not contain '|'.
+#
+# @param 1
+#	The column that has to match the string.
+# @param 2
+#	The string that has to be matched.
+# @param 3
+#	Optional, the rows to match against instead of using the index file.
+#	
+getIdxRowsEscaped() {
+	getIdxRows $1 "$(echo "$2" | getIdxEscape)" "$3"
+}
+
+#
+# Outputs a column of each index row piped into it.
+#
+# @param 1
+#	The column to output.
+# @param 2
+#	The rows to output the columns from.
+#
+getIdxColumn() {
+	echo "$2" | sed -E "s,^([^|]*\|){$1}([^|]*)\|.*,\2,1"
+}
+
+#
+# Stores all the packages not in sync with the index file in categories.
+#
+# @param older
+#	The list of packages older than those in the index.
+# @param newer
+#	The list of packages newer than those in the index.
+# @param unindexed
+#	The list of packages not in the index.
+# @param multiple
+#	The list of packages that have multiple index entries.
+# @param error
+#	The list of packages with broken package database entries.
+# @param pForce
+#	If set, register all installed packages in the index as outdated.
+# @param pAll
+#	If set, add all outdated packages to the list of packages to upgrade.
+# @param pListDiscarded
+#	If set, list all the packages that are ignored.
+# @param upgrade
+#	The list to add packages to if pAll is set.
+#
+pkgAll() {
+	local package pkgname origin operator row discarded
+
+	# There's nothing to be done if all of the following conditions are
+	# met:
+	# - Nothing is yet listed for upgrading, so we do not need a list
+	#   of outdated packages for dependency checking.
+	# - The updating of all packages is not requested.
+	# - The listing of ignored (i.e. not indexed) packages is not
+	#   requested.
+	test -z "$upgrade" -a -z "$pAll" -a -z "$pListDiscarded" && return 0
+
+	verbose "Make a list of outdated packages."
+
+	printStatus "Reading version information of installed packages ..."
+
+	if [ -n "$pForce" ]; then
+		# In force mode it is assumed that all installed packages to
+		# be found in the index are outdated.
+		for package in $(pkg_version -Io "${PKG_INDEX}"); {
+			origin="${package%% *}"
+			row="$(getIdxRowsEscaped $IDX_ORIGIN "$idxports/$origin")"
+			pkgname="$(getIdxColumn $IDX_PKG "$row")"
+			printStatus "Checking <$pkgname>."
+			operator="${package##* }"
+			case "$operator" in
+				'?')
+					unindexed="$unindexed${unindexed:+$IFS}$origin"
+				;;
+				'!')
+					error="$error${error:+$IFS}$origin"
+				;;
+				*)
+					older="$older${older:+$IFS}$origin;$pkgname"
+				;;
+			esac
+		}
+	else
+		# Categorize installed packages and their relations to the
+		# index.
+		for package in $(pkg_version -IoL = ${PKG_INDEX}); {
+			origin="${package%% *}"
+			row="$(getIdxRowsEscaped $IDX_ORIGIN "$idxports/$origin")"
+			pkgname="$(getIdxColumn $IDX_PKG "$row")"
+			printStatus "Checking <${pkgname:-$(pkg_info -qO $origin)}>."
+			operator="${package##* }"
+			case "$operator" in
+				'<')
+					older="$older${older:+$IFS}$origin;$pkgname"
+				;;
+				'>')
+					newer="$newer${newer:+$IFS}$origin;$pkgname"
+				;;
+				'?')
+					unindexed="$unindexed${unindexed:+$IFS}$origin"
+				;;
+				'*')
+					multiple="$multiple${multiple:+$IFS}$origin"
+				;;
+				'!')
+					error="$error${error:+$IFS}$origin"
+				;;
+			esac
+		}
+	fi
+
+	printStatus "Assemble checked packages ..."
+
+	# Remove packages to upgrade from the list of outdated packages.
+	for package in $upgrade; {
+		older="$(echo "$older" | grep -vx "$package")"
+	}
+
+	# Append outdated packages to the list of packages to update if all
+	# packages are to be updated.
+	if [ -n "$pAll" ]; then
+		downloadManagerMsgRequest "$older"
+		upgrade="$upgrade${older:+${upgrade:+$IFS}}$older"
+		older=
+	fi
+
+	# Clear the status line.
+	printStatus
+
+	# Print the discarded packages.
+	if [ -n "$pListDiscarded" ]; then
+		verbose "List discarded packages."
+
+		discarded="$unindexed$IFS$multipleIFS$error"
+		discarded="$(echo "$discarded" | grep -vFx '' | sort -u)"
+
+		test -n "$discarded" && echo "$discarded"
+	fi
+}
+
+#
+# Adds all missing dependencies to the list of packages to upgrade.
+#
+# @param 1
+#	This is used to check the dependencies of newly added depending
+#	packages.
+# @param upgrade
+#	The primary list of packages to upgrade (read only).
+# @param upgradeDepends
+#	The list to add packages to upgrade to.
+# @param older
+#	The list of outdated packages. Packages for upgrading are removed from
+#	it.
+# @param dependsChecked
+#	A list of already checked dependencies, to avoid double checks.
+# @param pRecursive
+#	If set, also add outdated dependencies to the upgrade list.
+# @param pMoreRecursive
+#	If set, also update the dependencies of depending packages.
+# @param pForce
+#	If set together with pRecursive, add all dependencies to the upgrade
+#	list.
+#
+pkgDepends() {
+	local pkgname package row rows depends origin escapedPkg upgradeList
+
+	printStatus "Preparing dependency checks ..."
+
+	# In thorough mode the depencies of depending packages are updated, too.
+	upgradeList="${1:-$upgrade}"
+
+	# Luckily packages know their indirect dependencies, too. This way
+	# it is not necessary to check for dependencies recursively.
+	depends=
+	for package in $upgradeList; {
+		row="$(getIdxRowsEscaped $IDX_ORIGIN "$idxports/${package%;*}")"
+		row="$(getIdxColumn $IDX_DEPENDS "$row")"
+		depends="$depends${depends:+${row:+ }}$row"
+	}
+
+	# Reformat depends and throw out duplicates.
+	depends="$(
+		echo "$depends" | sed "s/ /\\$IFS/g" | sort -u
+	)"
+
+	# Do some prefiltering.
+	rows="$(getIdxRowsEscaped $IDX_PKG "$(echo "$depends" | rs -TC\|)")"
+
+	# Check for missing or outdated dependencies.
+	for pkgname in $depends; {
+		escapedPkg="$(echo "$pkgname" | getIdxEscape)"
+
+		# Skip packages already checked.
+		if echo "$dependsChecked" | grep -qFx "$pkgname"; then
+			continue
+		fi
+		dependsChecked="$dependsChecked${dependsChecked:+$IFS}$pkgname"
+
+		printStatus "Check dependency <$pkgname>."
+
+		# Skip this if this package is already scheduled for updating.
+		if echo "$upgrade${upgradeDepending:+$IFS$upgradeDepending}" | grep -qF ";$pkgname"; then
+			continue
+		fi
+
+		row="$(getIdxRows $IDX_PKG "$escapedPkg" "$rows")"
+
+		# If this package could not be identified this is an index
+		# incosistency, that can only be ignored.
+		if [ -z "$row" ]; then
+			warn "Ignore index inconsistency, the dependency <$pkgname> is not in the index." 1>&2
+			continue
+		fi
+
+		origin="$(getIdxColumn $IDX_ORIGIN "$row")"
+		origin="${origin#$idxports/}"
+		package="$origin;$(getIdxColumn $IDX_PKG "$row")"
+
+		#
+		# Deal with dependencies according to set parameters.
+		#
+		if [ -z "$(pkg_info -qO "$origin")" ]; then
+			# The depency is not installed.
+			upgradeDepends="$upgradeDepends${upgradeDepends:+$IFS}$package"
+			# Request a package download.
+			downloadManagerMsgRequest "$package"
+		elif [ -n "$pMoreRecursive" -o -n "$pRecursive" -a -z "$1" ]; then
+			# Check whether the dependency is outdated.
+			if echo "$older" | grep -qFx "$package"; then
+				upgradeDepends="$upgradeDepends${upgradeDepends:+$IFS}$package"
+				older="$(echo "$older" | grep -vFx "$package")"
+				# Request a package download.
+				downloadManagerMsgRequest "$package"
+			fi
+		fi
+	}
+}
+
+#
+# Checks whether packages depending on the packages to update require updating.
+#
+# @param 1
+#	This is used to check the depending packages of newly added
+#	dependencies.
+# @param older
+#	The list of outdated packages. If pForce is set, this includes all
+#	installed packages listed in the index.
+# @param upgrade
+#	The primary list of packages to upgrade (read only).
+# @param upgradeDepending
+#	The list of depending packages to upgrade.
+# @param pUpwardRecursive
+#	If not set nothing is done.
+# @param pMoreUpwardRecursive
+#	Also check the depending packages of depencencies.
+# @param pAll
+#	If this is set do nothing.
+#
+pkgDepending() {
+	# Without the upwardRecursive option this is completely
+	# unnecessary.
+	if [ -z "$pUpwardRecursive" ]; then
+		return 0
+	fi
+
+	# If all packages are already going to be upgraded, there is no
+	# need for this.
+	if [ -n "$pAll" ]; then
+		return 0
+	fi
+
+	# Only update depending packages of dependencies in thorough mode.
+	if [ -n "$1" -a -z "$pMoreUpwardRecursive" ]; then
+		return 0
+	fi
+
+	local package pkgname origin row depends escapedPkg upgradeList
+
+	printStatus "Preparing upwards dependency checks ..."
+
+	# In thorough mode the depencies of depending packages are updated, too.
+	upgradeList="${1:-$upgrade}"
+
+	# Do some prefiltering.
+	rows="$(getIdxRowsEscaped $IDX_ORIGIN "$(
+		echo "$older" | rs -TC\| | sed -E "s'([^;|]*);[^|]*'$idxports/\1'g"
+	)")"
+
+	# For each outdated package, check whether it depends on a package
+	# to upgrade. In force mode outdated packages are all packages, so
+	# the difference does not have to be made here.
+	for package in $older; {
+		# Skip this if this package is already scheduled for updating.
+		if echo "$upgrade${upgradeDepends:+$IFS$upgradeDepends}${upgradeDepending:+$IFS$upgradeDepending}" | grep -qFx "$package"; then
+			continue
+		fi
+
+		printStatus "Check for upwards dependency <${package#*;}>."
+
+		origin="${package%;*}"
+		row="$(getIdxRowsEscaped $IDX_ORIGIN "$idxports/$origin" "$rows")"
+
+		# Ignore unindexed packages.
+		if [ -z "$row" ]; then
+			continue
+		fi
+
+		depends="$(getIdxColumn $IDX_DEPENDS "$row")"
+
+		# It has no dependencies, so it cannot depend on anything
+		# in the upgrade list.
+		if [ -z "$depends" ]; then
+			continue
+		fi
+
+		# Reformat dependencies.
+		depends="$(echo "$depends" | sed -Ee "s/([^ ]+)/;\1/g" -e "s/ /\\$IFS/g")"
+
+		# Check every dependency for matching the upgrade packages.
+		if echo "$upgradeList" | grep -qF "$depends"; then
+			upgradeDepending="$upgradeDepending${upgradeDepending:+$IFS}$package"
+			older="$(echo "$older" | grep -vFx "$package")"
+			downloadManagerMsgRequest "$package"
+		fi
+	}
+}
+
+#
+# This function calls pkgDepending and pkgDepends until no new packages
+# show up for updating. All the clever stuff happens in those functions.
+#
+# @param upgrade
+#	The list of packages to upgrade.
+# @param upgradeDepends
+#	The list of dependencies to add to the list of packages to upgrade.
+# @param upgradeDepending
+#	The list of depending packages to add to the list of packages
+#	to upgrade.
+#
+pkgDependencies() {
+	test -z "$upgrade" && return 0
+
+	verbose "Perform dependency checks."
+
+	# Run the primary dependency checks.
+	pkgDepending
+	downloadManagerMsgRequest "$upgradeDepending"
+	pkgDepends
+	downloadManagerMsgRequest "$upgradeDepends"
+
+	# The idea is to keep on checking until nothing new shows up.
+	# Whether that is the case depends on the level of recursiveness.
+	while [ -n "$upgradeDepends$upgradeDepending" ]; do
+		if [ -n "$upgradeDepends" ]; then
+			# Deal with packages depending on the updated packages.
+			pkgDepending "$upgradeDepends"
+			upgrade="$upgradeDepends$IFS$upgrade"
+			upgradeDepends=
+		fi
+
+		if [ -n "$upgradeDepending" ]; then
+			# Deal with missing or outdated dependencies.
+			pkgDepends "$upgradeDepending"
+			upgrade="$upgrade$IFS$upgradeDepending"
+			upgradeDepending=
+		fi
+	done
+
+	# Clear the status line.
+	printStatus
+}
+
+#
+# Prints a progress message to the terminal device /dev/tty.
+#
+# @param 1
+#	Total amount of operations to do.
+# @param 2
+#	The amount of operations performed.
+# @param 3
+#	The name of the package that is currently operated on.
+# @param 4
+#	The text prepending the progress information.
+# @param status
+#	The last printed message, used for clearing the status line before
+#	printing a new status.
+# @param pClean
+#	If set, do not print progress messages.
+#
+printProgress() {
+	test -n "$pClean" && return 0
+	printf "\r%${#status}s\r$4 %${#1}s of %${#1}s (%3s%%) <$3>.\r" '' "$2" "$1" "$(($2 * 100 / $1))" > /dev/tty
+	status="$4 $1 of $1 (100%) <$3>."
+}
+
+#
+# Sorts the packages to upgrade by dependency.
+#
+# The trick is to have a list of already sorted packages. Each package added
+# to the list is inserted right behind its last dependency already present
+# there.
+# Packages without any dependencies in the sorted list are prepended. This
+# way it is ensured that they end up before all already sorted packages
+# that depend on them, without additional checking.
+#
+# @param upgrade
+#	The list of packages to sort.
+# @param pParanoid
+#	If set, make cyclic dependency checks.
+#
+pkgSort() {
+	local rows sorted package row depends dependency pkgname
+	local totalCount count
+
+	test -z "$upgrade" && return 0
+
+	verbose "Sort packages by dependency."
+
+	printStatus "Prepare sorting of packages ..."
+
+	# Limit rows to whatever is currently required.
+	rows="$(getIdxRowsEscaped $IDX_ORIGIN "$(
+		echo "$upgrade" | getIdxEscape -e 's/;.*//1' -e "s,^,$idxports/,1" | rs -TC\|
+	)")"
+
+	# The number of packages
+	totalCount=$(($(echo "$upgrade" | wc -l)))
+	count=0
+
+	# Sort each package into the list of sorted packages.
+	sorted=
+	for package in $upgrade; {
+		count=$(($count + 1))
+		pkgname="${package#*;}"
+		printProgress $totalCount $count "$pkgname" 'Sort'
+
+		# Get the list of dependencies that should be updated before
+		# the current package.
+		row="$(getIdxRowsEscaped $IDX_PKG "$pkgname" "$rows")"
+		depends="$(getIdxColumn $IDX_DEPENDS "$row" | sed -E "s/ /\\$IFS/g")"
+
+		# Get the last matching dependency in the list.
+		dependency="$(echo "$sorted" | grep -Fx "$depends" | tail -n 1)"
+
+		# If there is no match, just prepend to the list.
+		if [ -z "$dependency" ]; then
+			sorted="$pkgname${sorted:+$IFS$sorted}"
+			continue
+		fi
+
+		# Insert right behind the match.
+		dependency="$(echo "$dependency" | getIdxEscape)"
+		sorted="$(echo "$sorted" | sed -E "s/^$dependency$/$dependency\\$IFS$pkgname/1")"
+	}
+
+	# Perform optional cyclic dependency check.
+	if [ -n "$pParanoid" ]; then
+		printStatus "Validate sorting order ..."
+	
+		# Validate the sort order.
+		count=0
+		for pkgname in $sorted; {
+			count=$(($count + 1))
+			printProgress $totalCount $count "$pkgname" 'Validate'
+	
+			# Get the list of dependencies that should be updated before
+			# the current package.
+			row="$(getIdxRowsEscaped $IDX_PKG "$pkgname" "$rows")"
+			depends="$(getIdxColumn $IDX_DEPENDS "$row" | sed -E "s/ /\\$IFS/g")"
+	
+			# Append the package to the list of dependencies to match.
+			depends="${depends:+$depends$IFS}$pkgname"
+	
+			# Get the last match in the list.
+			dependency="$(echo "$sorted" | grep -Fx "$depends" | tail -n 1)"
+			# The last match has to be the package.
+			if [ "$dependency" != "$pkgname" ]; then
+				error $ERR_SORT "The package <$pkgname> was not sorted properly, a likely cause is a circular dependency."
+			fi
+		}
+	fi
+
+	printStatus "Assemble sorted packages ..."
+
+	# Replace package names with <origin>;<package> pairs.
+	for package in $upgrade; {
+		pkgname="$(echo "${package#*;}" | getIdxEscape)"
+		sorted="$(echo "$sorted" | sed -E "s'^$pkgname\$'$package'1")"
+	}
+	
+	upgrade="$sorted"
+	printStatus
+}
+
+#
+# Prints the update/replace/install task.
+#
+# @param 1
+#	The package to upgrade/install.
+# @param replace
+#	The list of packages to replace.
+#
+printTask() {
+	local package newPkgname newOrigin oldPkgname oldOrigin
+
+	# Get the name and origin of the new package.
+	newPkgname="${1#*;}"
+	newOrigin="${1%;*}"
+
+	# Look for a package the new one replaces.
+	package="$(echo "$replace" | grep -F "$1|")"
+
+	# Look for a package this one replaces.
+	# The current package actually replaces another one.
+	if [ -n "$package" ]; then
+		# Get the name and origin of the old package.
+		package="${package#*|}"
+		oldPkgname="${package#*;}"
+		oldOrigin="${package%;*}"
+
+		echo "Replace <$oldPkgname> ($oldOrigin) with <$newPkgname> ($newOrigin)"
+		return 0
+	fi
+
+	# Check whether there's an old version of this package around.
+	package="$(pkg_info -qO "$newOrigin")"
+
+	# An older package with this origin is installed.
+	if [ -n "$package" ]; then
+		echo "Update <$package> to <$newPkgname> ($newOrigin)"
+		return 0
+	fi
+
+	# Aparently this package will be newly installed.
+	echo "Install <$newPkgname> ($newOrigin)"
+}
+
+#
+# List the packages that are going to be upgraded, installed and replaced.
+# If the 'no actions' mode is active.
+#
+# @param upgrade
+#	The list of packages to upgrade.
+# @param pNoActions
+#	Print the list of tasks.
+#
+pkgList() {
+	# Only list packages in "no actions" mode.
+	test -z "$pNoActions" && return 0
+
+	test -z "$upgrade" && return 0
+
+	local package
+
+	verbose "The following packages will be updated:"
+
+	for package in $upgrade; {
+		printTask "$package"
+	}
+}
+
+#
+# Wait for downloaded packages and validate them.
+#
+# @param upgrade
+#	The list of packages to download.
+# @param pending
+#	The list of pending downloads.
+# @param packagerepos
+#	The location of the remote package repository (derived from
+#	PACKAGESITE). If this is identical with the local repository,
+#	the download manager was not started.
+# @param pNoActions
+#	Do not download anything.
+#
+pkgDownload() {
+	test -n "$pNoActions" && return 0
+
+	test -z "$upgrade" && return 0
+	
+	local package total count line
+
+	verbose "Validate downloaded packages."
+
+	printStatus "Waiting for downloads ..."
+
+	# Create a list of the package names to validate.
+	# Entries are removed from this list by validatePackage().
+	pending="$(echo "$upgrade" | sed 's/.*;//1')"
+
+	# The total number of packages to validate.
+	total="$(($(echo "$upgrade" | wc -l)))"
+
+	# Check whether the download manager is available.
+	if [ "$PACKAGES" = "$packagerepos" ]; then
+		#
+		# The local repository is identical with the remote repository
+		# so the assumption is all packages should already be there.
+		#
+
+		# Validate all packages.
+		for package in $pending; {
+			count=$(($count + 1))
+			printProgress $total $count "$package" "Validate"
+			validatePackage "$package"
+		}
+	else
+		#
+		# The download manager is available, so hang on to its message
+		# queue and proceed with validating as packages are finished.
+		#
+		count=0
+
+		while [ -n "$pending" ]; do
+			read line
+			case "$line" in
+				finished:*)
+					count=$(($count + 1))
+					package="${line##*;}"
+					printProgress $total $count "$package" "Validate"
+					validatePackage "$package"
+				;;
+			esac
+		done < "$queueMessages"
+
+		# Stop the download manager.
+		downloadManagerMsgExit
+	fi
+
+	# Clear the status line.
+	printStatus
+}
+
+#
+# Upgrade each package.
+#
+# @param upgrade
+#	The list of packages to upgrade.
+# @param conflictReplace
+#	This list is reset for conflict handling.
+# @param pNoActions
+#	Do not update anything.
+# @param pFetchOnly
+#	Do not update anything.
+#
+pkgUpgrade() {
+	test -n "$pNoActions" -o -n "$pFetchOnly" && return 0
+
+	test -z "$upgrade" && return 0
+
+	local package
+
+	verbose "Install $(($(echo "$upgrade" | wc -l))) package(s)."
+
+	for package in $upgrade; {
+		upgradePackage "$package"
+	}
+}
+
+#
+# To handle conflicts this function removes dependencies from a given package
+# and appends one or more new ones to take their place. Also the +REQUIRED_BY
+# files of the appended dependencies are updated.
+#
+# @param 1
+#	The name of the package to which to apply the substitutions.
+# @param substituteDepends
+#	The list of dependency substitutions that should take place.
+#
+substituteDepends() {
+	# End here if there's nothing to substitute.
+	test -z "$substituteDepends" && return 0
+
+	local line originalOrigin originalPkgname newOrigin newPkgname
+	local contents append remove requiredBy
+
+	printStatus "Adjust the dependencies of <$1> ..."
+
+	# Get the contents file.
+	contents="$(cat "$PKG_DBDIR/$1/+CONTENTS")"
+
+	# Because there can be several substitutions for a single package
+	# the new ones will be added to the end of the +CONTENTS file and all
+	# the matches will be removed later.
+	append=
+	remove=
+	for line in $substituteDepends; {
+		# Get original origin and package name from the line.
+		originalOrigin="${line%%;*}"
+		originalPkgname="${line%|*}"
+		originalPkgname="${originalPkgname#*;}"
+
+		# Continue with the next line if this one does not match.
+		if ! echo "$contents" | grep -qFx "@pkgdep $originalPkgname"; then
+			continue
+		fi
+
+		# Get new origin and package name from the line.
+		newOrigin="${line#*|}"
+		newPkgname="${newOrigin#*;}"
+		newOrigin="${newOrigin%;*}"
+
+		warn "Add dependency <$newPkgname> ($newOrigin)."
+
+		# Remember what to append and what to remove.
+		remove="${remove:+$remove$IFS}@pkgdep $originalPkgname$IFS@comment DEPORIGIN:$originalOrigin"
+		# Just for the very unlikely case that two dependencies get
+		# replaced for conflicting with the same package, check that
+		# a dependency is not added twice.
+		if ! echo "$append" | grep -qFx "@pkgdep $newPkgname"; then
+			append="$append$IFS@pkgdep $newPkgname$IFS@comment DEPORIGIN:$newOrigin"
+		fi
+		
+		# Make an entry for the package in the +REQUIRED_BY file of
+		# of the dependency to append.
+		requiredBy="$(cat "$PKG_DBDIR/$newPkgname/+REQUIRED_BY" 2> /dev/null)"
+		requiredBy="${requiredBy:+$requiredBy$IFS}$1"
+		echo "$requiredBy" | sort -u > "$PKG_DBDIR/$newPkgname/+REQUIRED_BY"
+	}
+
+	# Remove the original dependency entries.
+	contents="$(echo "$contents" | grep -vFx "$remove")"
+	# Write the new file. Note that $append always starts with a newline.
+	echo "$contents$append" > "$PKG_DBDIR/$1/+CONTENTS"
+}
+
+#
+# Install the given package. This is where the magic happens.
+#
+# @param replace
+#	The list of packages to replace (read only).
+# @param substituteDepends
+#	A list of dependency substitutions that should take place for each
+#	newly installed package to resolve conflicting packages.
+# @param packagebackup
+#	The location for backup packages. This is derived from PACKAGES.
+# @param pNoBackup
+#	If set, delete backups after successful completion.
+#
+upgradePackage() {
+	local task targetPackage targetPkgname targetOrigin package replace
+	local escapedPkg removePackages origin file conflict conflicting
+	local replacePkgdep requiredBy count
+	local signal
+
+	# Get a string with the current upgrade task.
+	task="$(printTask "$1")"
+	echo "===> $task"
+
+	targetPackage="$1"
+	targetPkgname="${1#*;}"
+	targetOrigin="${1%;*}"
+
+	printStatus "Prepare installation of <$targetPkgname> ..."
+
+	# Get the packages to replace with this one. Several packages can be
+	# replaced with a single one.
+	escapedPkg="$(echo "$targetPackage" | getIdxEscape)"
+	replace="$(echo "$replace" | grep -Ex "$escapedPkg\|.*" | sed -E "s'^$escapedPkg\|''1")"
+
+	# Append the current package to the list of packages to replace.
+	replace="${replace:+$replace$IFS}$targetPackage"
+
+	# Create the list of outdated packages that have to be backed up
+	# and for which pkgdb adjustments have to be made after successful
+	# installation of the new package.
+	# Also create the necessary sed expressions to update the
+	# package database.
+	removePackages=
+	replacePkgdep=
+	for package in $replace; {
+		origin="${package%;*}"
+		package="$(pkg_info -qO "$origin")"
+		test -z "$package" && continue
+		removePackages="$removePackages${removePackages:+$IFS}$package"
+		package="$(echo "$package" | getIdxEscape)"
+		replacePkgdep="$replacePkgdep -e 's|^@pkgdep $package\$|@pkgdep $targetPkgname|1'"
+		if [ "$origin" != "$targetOrigin" ]; then
+			replacePkgdep="$replacePkgdep -e 's|^@comment DEPORIGIN: $origin\$|@comment DEPORIGIN:$targetOrigin|1'"
+		fi
+
+	}
+
+	# Get a list of conflicting packages. The conflicts list is
+	# provided by readContents().
+	readContents "$PACKAGES/All/$targetPkgname.tbz"
+	conflicting=
+	for conflict in $conflicts; {
+		# Match the conflict pattern against installed packages.
+		for conflict in $(pkg_info -E "$conflict"); {
+			escapedPkg="$(echo "$conflict" | getIdxEscape)"
+			# Only add to the conflicting list if the conflicting
+			# package is not in the list of packages to replace.
+			if ! echo "$removePackages" | grep -qEx "$escapedPkg"; then
+				conflicting="${conflicting:+$conflicting$IFS}$conflict"
+			fi
+		}
+	}
+	# Remove duplicated entries.
+	conflicting="$(echo "$conflicting" | sort -u)"
+
+	# Check whether any conflicts were found.
+	if [ -n "$conflicting" ]; then
+		# What happens now depends on the user preferences.
+		if [ -n "$pExitOnConflict" ]; then
+			# The user has chosen to bail out when a conflict
+			# occurs.
+			log $ERR_CONFLICT "$task"
+			error $ERR_CONFLICT "The package <$targetPkgname> conflicts with the following packages:$IFS$conflicting"
+		elif [ -n "$pReplaceConflicts" ]; then
+			# The user has chosen that conflicting packages should
+			# be replaced as if they were explicitly listed for
+			# replacing.
+			conflicts=
+			for package in $conflicting; {
+				warn "The package <$package> conflicts with <$targetPkgname> and will be replaced."
+				removePackages="$removePackages${removePackages:+$IFS}$package"
+				origin="$(pkg_info -qo "$package")"
+				# The next line is just for prettier log output.
+				conflicts="${conflicts:+$conflicts, }<$package> ($origin)"
+				package="$(echo "$package" | getIdxEscape)"
+				replacePkgdep="$replacePkgdep -e 's|^@pkgdep $package\$|@pkgdep $targetPkgname|1'"
+				if [ "$origin" != "$targetOrigin" ]; then
+					replacePkgdep="$replacePkgdep -e 's|^@comment DEPORIGIN: $origin\$|@comment DEPORIGIN:$targetOrigin|1'"
+				fi
+			}
+			log 0 "Conflict <$targetPkgname> ($targetOrigin) remove package(s) $conflicts"
+		else
+			# The default action is to assume that the conflicting
+			# packages fulfill the required functionality.
+			conflicts=
+			for package in $conflicting; {
+				warn "The package <$targetPkgname> will not be installed in favour of <$package>, because they conflict."
+				origin="$(pkg_info -qo "$package")"
+				# Record the necessary substitutions.
+				# TODO: Later versions will have to store this
+				# for resume.
+				substituteDepends="${substituteDepends:+$substituteDepends$IFS}$targetPackage|$origin;$package"
+				# This is just for prettier log output.
+				conflicts="${conflicts:+$conflicts, }<$package> ($origin)"
+			}
+			# Log the conflict resolution.
+			log 0 "Conflict <$targetPkgname> ($targetOrigin) favour package(s) $conflicts"
+			# Skip to the next package.
+			return 0
+		fi
+	fi
+
+	# Backup packages.
+	mkdir -p "$packagebackup"
+	for package in $removePackages; {
+		printStatus "Backup <$package>."
+		pkg_create -b "$package" "$packagebackup/$package"
+		case $? in
+			0)
+				# Everything went well.
+			;;
+			1)
+				# If this happens someone's been messing with
+				# the packages just milliseconds ago.
+				log $ERR_BACKUP_MISS "$task"
+				error $ERR_BACKUP_MISS "The backup of <$package> failed. The package is missing."
+			;;
+			2)
+				# Fortunately pkg_create backs up as much as
+				# as is possible. That the backup (and hence
+				# the present package) is incomplete is all
+				# the more reason to upgrade.
+				# I do not understand why portmaster is
+				# interactive in this case.
+				warn "Ignoring incomplete backup of <$package>."
+			;;
+			*)
+				# Well, I've got no idea at all what else
+				# could go wrong. Too bad the return codes
+				# of pkg_create are not documented.
+				log $ERR_BACKUP_UNKNOWN "$task"
+				error $ERR_BACKUP_UNKNOWN "The backup of <$package> failed for unknown reasons."
+			;;
+		esac
+	}
+
+	# Block SIGINT (CTRL-C), because that would really wrack havoc upon
+	# the package database in the following section.
+	signal=
+	trap "signal=$ERR_USER" sigint
+	trap "signal=$ERR_TERM" sigterm
+
+	# Delete packages.
+	requiredBy=
+	count=-1
+	for package in $removePackages; {
+		printStatus "Delete <$package>."
+		# Remember +REQUIRED_BY contents for roll-back.
+		count=$(($count + 1))
+		local "requiredBy$count"
+		setvar "requiredBy$count" "$(cat "$PKG_DBDIR/$package/+REQUIRED_BY" 2> /dev/null)"
+		# Remember +REQUIRED_BY contents for the new package.
+		requiredBy="${requiredBy:+$requiredBy$IFS}$(cat "$PKG_DBDIR/$package/+REQUIRED_BY" 2> /dev/null)"
+		# Finally delete the package.
+		pkg_delete -f "$package"
+	}
+
+	# Update the package database.
+	printStatus "Update package database for <$targetPkgname>."
+	if [ -n "$replacePkgdep" ]; then
+		for file in $(find "$PKG_DBDIR" -name '+CONTENTS'); {
+			eval "sed -Ei '.$name' $replacePkgdep '$file'"
+		}
+	fi
+
+	# If an old version of this package was favoured in a conflict,
+	# the substituteDepends list has to be changed.
+	substituteDepends="$(echo "$substituteDepends" | sed "s'\|$targetOrigin;.*'|$targetPackage'1")"
+
+	# Try to install the new package.
+	printStatus "Install <$targetPkgname>."
+	if ! env PKG_PATH="$PACKAGES/All" pkg_add -f "$targetPkgname"; then
+		# Installation went wrong, roll back!
+		printStatus "Roll back changes for <$targetPkgname>."
+		for file in $(find "$PKG_DBDIR" -name "*.$name"); {
+			mv -f "$file" "${file%.$name}"
+		}
+		count=-1
+		for package in $removePackages; {
+			# Restore package.
+			env PKG_PATH="$packagebackup" pkg_add -f "$package"
+			# Recover +REQUIRED_BY file.
+			count=$(($count + 1))
+			eval "echo \"\$requiredBy$count\"" > "$PKG_DBDIR/$package/+REQUIRED_BY"
+			# Remove the backup if set.
+			test -n "$pNoBackup" && rm "$packagebackup/$package.tbz"
+		}
+		log $ERR_INSTALL "$task"
+		error $ERR_INSTALL "The installation of <$targetPkgname> failed."
+	fi
+
+	# Add the +REQUIRED_BY contents of all deleted packages to the
+	# +REQUIRED_BY file of the new one.
+	requiredBy="$(echo "$(cat "$PKG_DBDIR/$targetPkgname/+REQUIRED_BY" 2> /dev/null)$IFS$requiredBy" | grep -vFx '' | sort -u)"
+	echo "$requiredBy" > "$PKG_DBDIR/$targetPkgname/+REQUIRED_BY"
+
+	# Make dependency substitutions from conflict resolving.
+	substituteDepends "$targetPkgname"
+
+	# Log successful completion of the task.
+	log 0 "$task"
+
+	# Remove backups if set.
+	if [ -n "$pNoBackup" ]; then
+		for package in $removePackages; {
+			printStatus "Remove backup of <$package>."
+			rm "$packagebackup/$package.tbz"
+		}
+	fi
+
+	# Remove package database backups.
+	# TODO: Later versions will instead store them to allow a rollback.
+	printStatus "Remove database backups for <$targetPkgname>."
+	find "$PKG_DBDIR" -name "*.$name" -exec rm \{\} \;
+
+	# Clear the status line.
+	printStatus
+	echo "=> $task succeeded"
+
+	# Bail out if SIGINT or SIGTERM were encountered.
+	if [ -n "$signal" ]; then
+		error $signal "The process was interrupted."
+	fi
+
+	# Reactivate default signal handlers.
+	trap - sigint sigterm
+}
+
+#
+# Identify the package by a given string. Outputs the origin of all matched
+# packages, as well as the package name of the newest available package.
+# The output is in the following shape:
+#	<origin>;<package>
+#
+# The shell wildcards '*' and '?' are supported.
+# Origin and package names with wildcards are matched against installed
+# packages. Unambiguous package names and origins are matched against the
+# index.
+#
+# @param 1
+#	The package identifier to find matches for.
+#
+identifyPackage() {
+	local packages package mangledPackage rows matchingRows mangledRows
+	local origins origin guess escapedPkg
+
+	# Check for wildcards.
+	guess=
+	if echo "$1" | grep -qE '\*|\?|\[.*]'; then
+		guess=1
+	fi
+	package="$1"
+
+	# Distuinguish between origins and packages.
+	case "$package" in
+		*/*)
+			# An origin has been given.
+			if [ -n "$guess" ]; then
+				# Wildcards present, match against installed
+				# packages.
+
+				# Get all matching packages.
+				packages="$(pkg_info -qO "$package")"
+
+				# Convert for use in a regular expression.
+				package="$(echo "$package" | getIdxEscape -e 's/\*/[^|]*/g' -e 's/\?/[^|]/g')"
+				# Get rows matching the given package origin.
+				# This is a performance tweak, so the whole
+				# index will not have to be parsed in the
+				# following output loop.
+				rows="$(getIdxRows $IDX_ORIGIN "$idxports/$package")"
+
+				# Output all matching packages.
+				for package in $packages; {
+					# Get the origin.
+					origin="$(pkg_info -qo "$package")"
+
+					# Match this package origin against the
+					# previously filtered rows.
+					package="$(getIdxRowsEscaped $IDX_ORIGIN "$idxports/$origin" "$rows")"
+					# Get the package name of the newest
+					# package from the index.
+					package="$(getIdxColumn $IDX_PKG "$package")"
+					# Output origin/package pair.
+					echo "$origin;$package"
+				}
+
+				# If no matches have been found, terminate.
+				if [ -z "$packages" ]; then
+					error $ERR_ARG "Package origin <$package> not matched by any installed package!" 1>&2
+				fi
+			else
+				# There is an unambigious origin, match it
+				# against the index.
+				origin="$package"
+				# Get the index row.
+				rows="$(getIdxRowsEscaped $IDX_ORIGIN "$idxports/$origin")"
+				# Get the package name column.
+				package="$(getIdxColumn $IDX_PKG "$rows")"
+				# Output origin/package pair, if a package for
+				# the given origin was found.
+				if [ -n "$package" ]; then
+					# Output origin/package pair.
+					echo "$origin;$package"
+				else
+					error $ERR_ARG "Package origin <$origin> not in index!" 1>&2
+				fi
+			fi
+		;;
+		*)
+			# A package name has been given.
+			if [ -n "$guess" ]; then
+				# Wildcards present, match against installed
+				# packages.
+
+				# Get the origins of matching packages.
+				origins="$(pkg_info -qo "$package")"
+
+				# Prepare the package name for use in a
+				# regular expression.
+				package="$(echo "$package" | getIdxEscape -e 's/\*/[^|]*/g' -e 's/\?/[^|]/g')"
+				# Get rows matching the given package name.
+				# This is a performance tweak, so the whole
+				# index will not have to be parsed in the
+				# following output loop.
+				rows="$(getIdxRows $IDX_PKG "$package")"
+				# Output all matching packages.
+				for origin in $origins; {
+					# Get the index row for this origin.
+					package="$(getIdxRowsEscaped $IDX_ORIGIN "$idxports/$origin" "$rows")"
+					# Get the latest package name from the
+					# index.
+					package="$(getIdxColumn $IDX_PKG "$package")"
+					# Output origin/package pair.
+					echo "$origin;$package"
+				}
+
+				# If no matches have been found, terminate.
+				if [ -z "$origins" ]; then
+					error $ERR_ARG "Package identifier <$package> not matched!" 1>&2
+				fi
+			else
+				# A package name without wildcards has been
+				# given. This is expected to either be an exact
+				# package name or a LATEST_LINK name.
+
+				# TODO: This would be much better if
+				# LATEST_LINK was known. This is information
+				# simply missing in the index.
+				# To make up for this some guessing is done in
+				# case of no matches or more than one match.
+				# But this fails for apache13 and probably
+				# other packages as well.
+
+				# First try whether it is the current version
+				# of a package.
+				origin="$(pkg_info -qo "$package" 2> /dev/null)"
+				if [ -n "$origin" ]; then
+					# Get the matching index rows.
+					rows="$(getIdxRowsEscaped $IDX_ORIGIN "$idxports/$origin")"
+				fi
+
+				# If it's not a current version, match against
+				# the index.
+				if [ -z "$rows" ]; then
+					# Get the matching rows. This should be
+					# only one, but it won't be for ports
+					# that define a proprietary LATEST_LINK.
+					escapedPkg="$(echo "$package" | getIdxEscape)"
+					rows="$(getIdxRows $IDX_PKG "$escapedPkg(-[^-]+)?")"
+				fi
+
+				# No match, start some guessing.
+				# This fails for packages with a version tail,
+				# which is just what is wanted.
+				if [ -z "$rows" ]; then
+					# Assume this is a LATEST_LINK kind
+					# package name and remove the trailing
+					# numbers.
+					mangledPackage="$(echo "$package" | sed -E 's/[0-9]+$//1')"
+					# Get the matching rows, this is likely
+					# to be too many (i.e. more than one).
+					rows="$(getIdxRows $IDX_PKG "$mangledPackage-[^-]+")"
+				fi
+
+				# If there is more than one matching row,
+				# try to match against the origin.
+				if [ "$(($(echo "$rows" | wc -l)))" -gt "1" ]; then
+					# Match against the origin.
+					rows="$(getIdxRows $IDX_ORIGIN "[^|]*/$package" "$rows")"
+
+					# If there is still more than one
+					# match, match against the origins
+					# of existing packages.
+					if [ "$(($(echo "$rows" | wc -l)))" -gt "1" ]; then
+						for origin in $(getIdxColumn $IDX_ORIGIN "$rows"); {
+							test -n "$(pkg_info -qO "$origin")" \
+								&& matchingRows="$matchingRows${matchingRows:+$IFS}$(getIdxRowsEscaped $IDX_ORIGIN "$origin" "$rows")"
+						}
+						rows="$matchingRows"
+					fi
+					
+					# Either a single origin is matched or
+					# it's time to bail out and give up.
+					if [ "$(($(echo "$rows" | wc -l)))" -ne "1" ]; then
+						# The wrong amount of matches
+						# has occured. Bail out.
+						error $ERR_ARG "Package identifier <$package> not unambiguously matched!" 1>&2
+					fi
+				fi
+
+				# Output if a package has been matched.
+				if [ -n "$rows" ]; then
+					# Get the origin of the given package.
+					origin="$(getIdxColumn $IDX_ORIGIN "$rows")"
+					# Geth the package name.
+					package="$(getIdxColumn $IDX_PKG "$rows")"
+					# Output origin/package pair.
+					echo "${origin#$idxports/};$package"
+				else
+					error $ERR_ARG "Package identifier <$package> not in index!" 1>&2
+				fi
+			fi
+		;;
+	esac
+}
+
+#
+# Prints the parameter list and terminates the program.
+#
+printHelp() {
+	printf "$name v$version
+usage:
+	$name -h
+	$name -a [-b] [-bcCdfFlnpvX] [-o new existing] [update] [install]
+	$name [-bcCdfFlnpvX] [-r [-r]] [-R [-R]] [-o new existing]
+	%${#name}s [update] [install]\n" ''
+	exit 0
+}
+
+#
+# Parse the command line parameters.
+#
+# @param upgrade
+#	A list of packages to upgrade.
+# @param depth
+#	This is used by the function to store the recursion depth and
+#	should be unset when calling it.
+# @param origin
+#	This is used by the function across differtent recursion depths to
+#	remember whether a package origin is expected.
+# @param pAll
+#	Is set if all packages should be update.
+# @param pNoBackup
+#	Is set if backups could not be fetched.
+# @param pClean
+#	Is set to turn off status messages.
+# @param pReplaceConflicts
+#	Is set to replace conflicting packages with new ones instead of
+#	leaving them alone.
+# @param pExitOnConflict
+#	Is set to stop the program if a conflict is encountered.
+# @param pForce
+#	Is set to force the update of packages that are not really updated.
+# @param pFetchOnly
+#	Is set to only fetch packages instead of installing/upgrading them.
+# @param pInteractive
+#	TODO: Reserved for future versions (resume/roll-back).
+# @param pJobs
+#	TODO: Reserved for future versions (pkg_libchk tests).
+# @param pListDiscarded
+#	Is set to activate the listing of packages that are ignored because
+#	they are not set in the INDEX.
+# @param pNoActions
+#	Is set if no actions should be performed but a list of what would have
+#	been done should get printed.
+# @param pNoLogging
+#	Turn off logging.
+# @param pParanoid
+#	Is set to activate cyclic dependency checks.
+# @param pRecursive
+#	Is set to activate updating of dependencies.
+# @param pMoreRecursive
+#	Is set to activate updating of dependencies of depending packages.
+# @param pUpwardRecursive
+#	Is set to activate updating of depending packages.
+# @param pMoreUpwardRecursive
+#	Is set to activate updating of packages depending on dependencies.
+# @param pVerbose
+#	Is set to activate informative output.
+#
+readParams() {
+	local arg package escapedPkg depth
+	# Store the recursion depth. Note that counting down is dealt with
+	# by making depth local.
+	depth=$((${depth:--1} + 1))
+
+	# This is used to remember whether the next parameter should
+	# be a replacing package or a packge to be replaced.
+	origin=${origin:-0}
+
+	for arg {
+		#
+		# Handle package replacements.
+		#
+		if [ $origin -eq 1 ]; then
+			# Store the replacement.
+			package="$(identifyPackage "$arg")" || exit $?
+			if [ -z "$package" -o "$(($(echo "$package" | wc -l)))" -ne "1" ]; then
+				error $ERR_ARG "The package identifier <$arg> is not unambiguous."
+			fi
+			upgrade="$upgrade${upgrade:+$IFS}$package"
+			replace="$replace${replace:+$IFS}$package"
+			origin=2
+			# Request the download.
+			downloadManagerMsgRequest "$package"
+			continue
+		fi
+		if [ $origin -eq 2 ]; then
+			# Store what to replace.
+			# This is taken from the package database not the index.
+
+			case "$arg" in
+				*/*)
+					# Assume arg is an origin.
+					package="$(pkg_info -qO "$arg")"
+					package="$(pkg_info -qo "$package" 2> /dev/null);$package"
+				;;
+				*)
+					# Assume arg is a package identifier.
+					package="$(pkg_info -qo "$arg" 2> /dev/null);$(pkg_info -E "$arg" 2> /dev/null)"
+
+					# Maybe arg is a package identifier
+					# without a version tail.
+					if [ "$package" = ";" ]; then
+						package="$(pkg_info -qo "$arg-*" 2> /dev/null);$(pkg_info -E "$arg-*" 2> /dev/null)"
+					fi
+				;;
+			esac
+
+			# Arg is not installed.
+			if [ "$package" = ";" ]; then
+				error $ERR_ARG "The package <$arg> is not installed and thus cannot be replaced."
+			fi
+			# It appears arg is an identifier that is
+			# not unambiguous.
+			if [ "$(($(echo "$package" | wc -l)))" -ne "1" ]; then
+				error $ERR_ARG "The package identifier <$arg> is not unambiguous."
+			fi
+			# A package can only be replaced once.
+			escapedPkg="$(echo "$package" | getIdxEscape)"
+			if echo "$replace" | grep -qEx ".*\|$escapedPkg"; then
+				error $ERR_ARG "The package <$arg> is already listed for replacement."
+			fi
+			replace="$replace|$package"
+			origin=0
+			continue
+		fi
+
+		#
+		# Identify arguments.
+		#
+		case "$arg" in
+			"-a" | "--all")
+				pAll=1
+				if [ -n "$pRecursive" ]; then
+					error $ERR_ARG "Recursiveness has no effect, because all packages are already selected for processing."
+				fi
+				if [ -n "$pUpwardRecursive" ]; then
+					error $ERR_ARG "Upward recursiveness has no effect, because all packages are already selected for processing."
+				fi
+			;;
+			"-b" | "--no-backup")
+				pNoBackup=1
+			;;
+			"-c" | "--clean")
+				pClean=-c
+			;;
+			"-C" | "--replace-conflicts")
+				if [ -n "$pExitOnConflict" ]; then
+					error $ERR_ARG "The 'replace conflicts' and 'exit on conflict' modes are mutually exclusive."
+				fi
+				pReplaceConflicts=1
+			;;
+			"-d" | "--list-discarded")
+				pListDiscarded=1
+			;;
+			"-f" | "--force")
+				pForce=1
+			;;
+			"-F" | "--fetch-only")
+				if [ -n "$pNoActions" ]; then
+					error $ERR_ARG "The 'no actions' and 'fetch only' modes are mutually exclusive."
+				fi
+				pFetchOnly=1
+			;;
+			"-h" | "--help")
+				printHelp
+			;;
+			"-i" | "--interactive")
+				# TODO: not yet used
+				pInteractive=1
+			;;
+			-j* | --jobs*)
+				# TODO: not yet used
+				pJobs="$arg"
+				if ! pkg_libchk "$pJobs" DUMMY/DUMMY 1>&2; then
+					exit $ERR_ARG
+				fi
+			;;
+			"-l" | "--no-logging")
+				pNoLogging=1
+			;;
+			"-n" | "--no-actions")
+				if [ -n "$pFetchOnly" ]; then
+					error $ERR_ARG "The 'no actions' and 'fetch only' modes are mutually exclusive."
+				fi
+				pNoActions=1
+			;;
+			"-o" | "--origin")
+				# Make sure the local index copy is up to date.
+				getIndex
+				origin=1
+			;;
+			"-p" | "--paranoid")
+				pParanoid=1
+			;;
+			"-r" | "--recursive")
+				if [ -n "$pMoreRecursive" ]; then
+					error $ERR_ARG "There are only two levels of recursiveness."
+				elif [ -n "$pRecursive" ]; then
+					pMoreRecursive=1
+				else
+					pRecursive=1
+				fi
+				if [ -n "$pAll" ]; then
+					error $ERR_ARG "Recursiveness has no effect, because all packages are already selected for processing."
+				fi
+			;;
+			"-R" | "--upward-recursive")
+				if [ -n "$pMoreUpwardRecursive" ]; then
+					error $ERR_ARG "There are only two levels of upward recursiveness."
+				elif [ -n "$pUpwardRecursive" ]; then
+					pMoreUpwardRecursive=1
+				else
+					pUpwardRecursive=1
+				fi
+				if [ -n "$pAll" ]; then
+					error $ERR_ARG "Upward recursiveness has no effect, because all packages are already selected for processing."
+				fi
+			;;
+			"-v" | "--verbose")
+				pVerbose=-v
+			;;
+			"-X" | "--exit-on-conflict")
+				if [ -n "$pReplaceConflicts" ]; then
+					error $ERR_ARG "The 'exit on conflict' and 'replace conflicts' modes are mutually exclusive."
+				fi
+				pExitOnConflict=1
+			;;
+			-? | --*)
+				error $ERR_ARG "Unknown parameter \"$arg\"."
+			;;
+			-*)
+				# Split parmeters.
+				readParams "${arg%%${arg#-?}}" "-${arg#-?}"
+			;;
+			*)
+				# Make sure the local index copy is up to date.
+				getIndex
+				# Add package to the list of packages to
+				# upgrade/install.
+				package="$(identifyPackage "$arg")" || exit $?
+				upgrade="$upgrade${upgrade:+$IFS}$package"
+				# Request the download.
+				downloadManagerMsgRequest "$package"
+			;;
+		esac
+	}
+
+	#
+	# Only perform the following steps if this is the root call
+	# to this function (recursion depth = 0).
+	#
+	if [ $depth -eq 0 ]; then
+		#
+		# Deal with missing parameters.
+		#
+		if [ $origin -eq 1 ]; then
+			error $ERR_ARG "Incomplete parameters, missing origin."
+		fi
+		if [ $origin -eq 2 ]; then
+			error $ERR_ARG "Incomplete parameters, missing package to replace."
+		fi
+
+		#
+		# Deal with invalid levels of recursiveness.
+		#
+		if [ -n "$pMoreRecursive" -a -z "$pUpwardRecursive" ]; then
+			error $ERR_ARG "Thorough recursiveness can only be used in conjunction with upwards recursiveness."
+		fi
+
+		#
+		# Remove duplicates in the list of packages to upgrade.
+		#
+		upgrade="$(echo "$upgrade" | sort -u)"
+		# Reset global variables.
+		origin=
+	fi
+}
+
+#
+# Reads all the required +CONTENTS information from a package.
+# The information is stored in variables.
+#
+# @param 1
+#	The name of the package file.
+# @param pkgname
+#	The name of the package.
+# @param origin
+#	The origin of the package.
+# @param depends
+#	The dependencies of the package in the format "<origin>;<package>",
+#	in reverse order.
+# @param conflicts
+#	A list of regular expressions that can be used to identify conflicting
+#	packages.
+#
+readContents() {
+	local contents line format
+	contents="$(tar -xOf "$1" '+CONTENTS')"
+	format=
+
+	pkgname=
+	origin=
+	depends=
+	conflicts=
+	for line in $contents; {
+		case "$line" in
+			@name\ *)
+				pkgname="${line#@name }"
+			;;
+			@pkgdep\ *)
+				depends=";${line#@pkgdep }${depends:+$IFS}$depends"
+			;;
+			@comment\ *)
+				line="${line#@comment }"
+				case "$line" in
+					DEPORIGIN:*)
+						depends="${line#*:}$depends"
+					;;
+					PKG_FORMAT_REVISION:*)
+						format="${line#*:}"
+					;;
+					ORIGIN:*)
+						origin="${line#*:}"
+					;;
+				esac
+			;;
+			@conflicts\ *)
+				conflicts="${conflicts:+$conflicts$IFS}${line#@conflicts }"
+			;;
+		esac
+	}
+
+	if [ "$format" != "1.1" ]; then
+		error $ERR_PACKAGE_FORMAT "Unknown package format in <$1>, bailing out!"
+	fi
+
+	return 0
+}
+
+#
+# Starts a download manager that can be instructed through a queue.
+# A process that wants to know what's going on with the download manager
+# can simply read from the queue as well.
+#
+# The download manager keeps as many downloads running as there are
+# PACKAGESITE_MIRRORS. Should a download fail, it is retried as soon
+# as no untried downloads remain. Every download is only retried once.
+# A download is never attempted from the master server.
+#
+# @param queueMessages
+#	The queue to create and read from.
+# @param packagerepos
+#	The location of the remote package repository (derived from
+#	PACKAGESITE). If this is identical with the local repository,
+#	the download manager will not be started.
+# @param pNoActions
+#	If set, the download manager will not be started.
+#
+downloadManager() {
+	# No actions mode, this includes no downloads.
+	test -n "$pNoActions" && return 0
+
+	# Packages are locally available, no downloads.
+	test "$PACKAGES" = "$packagerepos" && return 0
+
+	verbose "Start the download manager."
+
+	# Initialize the queue.
+	rm "$queueMessages" 2> /dev/null
+	touch "$queueMessages"
+
+	#
+	# The following block is forked away.
+	# Note that all variable assignments happen in a separate process
+	# and hence have no effect on the outside.
+	#
+	(
+		# Remove the queue when exiting and get rid of pending jobs.
+		trap "
+			kill \$(jobs -ls) > /dev/null 2>&1
+			rm '$queueMessages' 2> /dev/null
+			exit
+		" EXIT sigint sigterm
+
+		# The jobs yet to be done.
+		jobs=
+		# The available mirrors.
+		mirrors="$PACKAGESITE_MIRRORS"
+		# The jobs that should be retried.
+		retry=
+		# The jobs that have been retried.
+		retried=
+		# The last line read from the socket.
+		line=
+
+		# Keep on running as long as the father process is around.
+		# Note that this while loop has the message queue as stdin.
+		while kill -0 "$pid" 2> /dev/null; do
+			# Check for a message in the queue.
+			# There is nothing to be done, if there was no message,
+			# none the less it times out to allow the terminal
+			# to catch signals.
+			read -t 2 line
+			# Process messages.
+			case "$line" in
+				finished:*)
+					# A download has been finished.
+					# Add the mirror that was used to
+					# the list of available mirrors.
+					mirror="${line#finished:}"
+					mirror="${mirror%;*}"
+					mirrors="${mirrors:+$mirrors$IFS}$mirror"
+				;;
+				retry:*)
+					# A download was not finished
+					# successfuly.
+					mirror="${line#retry:}"
+					job="${mirror##*;}"
+					mirror="${mirror%;*}"
+					if echo "$retried" | grep -qFx "$job"; then
+						# If this package has already
+						# had a retry, mark it as
+						# finished to hand it over
+						# to the package validation
+						# that can fetch from the
+						# master server.
+						downloadManagerMsgFinished "$mirror" "$job"
+					else
+						# The first retry request.
+						# Free the mirror and list
+						# the package for retry.
+						mirrors="${mirrors:+$mirrors$IFS}$mirror"
+						retry="${retry:+$retry$IFS}$job"
+					fi
+				;;
+				request:*)
+					# Append requested downloads to the
+					# list of available jobs.
+					jobs="${jobs:+$jobs$IFS}${line#request:}"
+				;;
+				exit)
+					# The download manager has been told
+					# to terminate.
+					break
+				;;
+			esac
+			# Delete the line, so it cannot be read again in the
+			# next iteration, if reading from the queue has
+			# timed out.
+			line=
+
+			# If any mirrors are available and there are jobs
+			# in the queue, now is the time to dispatch them.
+			while [ -n "$jobs" -a -n "$mirrors" ]; do
+				mirror="${mirrors%%$IFS*}"
+				mirrors="${mirrors#$mirror}"
+				mirrors="${mirrors#$IFS}"
+				job="${jobs%%$IFS*}"
+				jobs="${jobs#$job}"
+				jobs="${jobs#$IFS}"
+				downloadManagerFetch "$mirror" "$job" &
+			done
+
+			# If we have run out of jobs, give the retry stuff.
+			# a try.
+			while [ -n "$retry" -a -n "$mirrors" ]; do
+				mirror="${mirrors%%$IFS*}"
+				mirrors="${mirrors#$mirror}"
+				mirrors="${mirrors#$IFS}"
+				job="${retry%%$IFS*}"
+				retry="${retry#$job}"
+				retry="${retry#$IFS}"
+				# Remember that this job has been retried.
+				retried="${retried:+$retried$IFS}$job"
+				downloadManagerFetch "$mirror" "$job" &
+			done
+		done < "$queueMessages"
+	) &
+}
+
+#
+# This is forked off by the download manager to download a package from
+# a mirror.
+# If the package is already present a download is not attempted.
+#
+# @param 1
+#	The mirror to download from.
+# @param 2
+#	The name of the package to download.
+#
+downloadManagerFetch() {
+	# Get rid of pending jobs.
+	trap "
+		kill \$(jobs -ls) > /dev/null 2>&1
+		exit
+	" EXIT sigint sigterm
+
+	# Only do something if the package is not present.
+	if ! [ -e "$PACKAGES/All/$2.tbz" ]; then
+		# Create the download location.
+		mkdir -p "$PACKAGES/All" 2> /dev/null
+
+		# Attempt download from mirror.
+		# This is forked off, to allow the shell to catch signals.
+		fetch -qmo "$PACKAGES/All/$2.tbz" "${1%/*?}/All/$2.tbz" > /dev/null 2>&1 &
+		if ! wait $!; then
+			# Release the mirror and mark the package for a retry.
+			downloadManagerMsgRetry "$1" "$2"
+			return 0
+		fi
+	fi
+
+	# Release the mirror and mark package finished.
+	downloadManagerMsgFinished "$1" "$2"
+}
+
+#
+# Tells the download manager, that a download was unsuccessful.
+#
+# @param 1
+#	The mirror that was used.
+# @param 2
+#	The name of the package that was not downloaded.
+# @param queueMessages
+#	The message queue to the download manager.
+#
+downloadManagerMsgRetry() {
+	# Do not send anything without a queue.
+	test ! -e "$queueMessages" && return 0
+
+	lockf -k "$queueMessages" sh -c "echo 'retry:$1;$2' >> '$queueMessages'"
+}
+
+#
+# Tells the download manager, that a download has been finished.
+#
+# @param 1
+#	The mirror that was used.
+# @param 2
+#	The name of the downloaded package.
+# @param queueMessages
+#	The message queue to the download manager.
+#
+downloadManagerMsgFinished() {
+	# Do not send anything without a queue.
+	test ! -e "$queueMessages" && return 0
+
+	lockf -k "$queueMessages" sh -c "echo 'finished:$1;$2' >> '$queueMessages'"
+}
+
+#
+# Requests the download of packages from the download manager.
+#
+# @param 1
+#	A list of packages for download.
+# @param queueMessages
+#	The message queue to the download manager.
+#
+downloadManagerMsgRequest() {
+	# Do not send anything without a queue.
+	test ! -e "$queueMessages" && return 0
+
+	local request
+	for request in $1; {
+		lockf -k "$queueMessages" sh -c "echo 'request:${request#*;}' >> '$queueMessages'"
+	}
+}
+
+#
+# Instructs the download manager to terminate.
+#
+# @param queueMessages
+#	The message queue to the download manager.
+#
+downloadManagerMsgExit() {
+	# Do not send anything without a queue.
+	test ! -e "$queueMessages" && return 0
+
+	lockf -k "$queueMessages" sh -c "echo 'exit' >> '$queueMessages'"
+}
+
+#
+# Validates a single package. Validation means it checks whether a package
+# is a complete tar archive. Damaged or missing packages will be (re)downloaded
+# from the master server (the one named by PACKAGESITE).
+# If the package is a valid tar archive the +CONTENTS file will be checked,
+# as well.
+#
+# @param 1
+#	The name of the package to validate.
+# @param packagerepos
+#	The location of the remote package collection. This is derived from
+#	PACKAGESITE.
+# @param pending
+#	The list of pending packages.
+# @return
+#	Return 0 on success.
+#
+validatePackage() {
+	local package
+	package="$1.tbz"
+
+	# Check whether the package is intact and present.
+	if ! tar -tf "$PACKAGES/All/$package" > /dev/null 2>&1; then
+		# If the package repository and the local package collection
+		# are identical, there's no chance to get the package if it's
+		# not already there.
+		if [ "$PACKAGES" = "$packagerepos" ]; then
+			error $ERR_FETCH "The package <$package> is not present."
+		fi
+
+		# Clean up whatever crap is there.
+		rm "$PACKAGES/All/$package" 2> /dev/null
+
+		# Try to get the package from the master server.
+		fetch -mo "$PACKAGES/All/$package" "$packagerepos/All/$package"
+
+		# Check whether the package is present.
+		if ! [ -e "$PACKAGES/All/$package" ]; then
+			error $ERR_FETCH "The package <$package> could not be fetched."
+		fi
+
+		# Check whether the package is a valid tar archive.
+		if ! tar -tf "$PACKAGES/All/$package" > /dev/null 2>&1; then
+			error $ERR_FETCH "The package <$package> could not be read."
+		fi
+	fi
+
+	# Check whether we can read the package +CONTENTS format.
+	readContents "$PACKAGES/All/$package"
+
+	# Remove this package from the list of pending packages.
+	pending="$(echo "$pending" | grep -vFx "$1")"
+
+	# The package is present and intact.
+	return 0
+}
+
+#
+# Let's get it on! The declarative part is finally over.
+#
+
+# Ignore some signals that should not occur.
+trap 'warn "Discard signal SIGHUP."' sighup
+trap 'warn "Discard signal SIGUSR1."' sigusr1
+trap 'warn "Discard signal SIGUSR2."' sigusr2
+
+#
+# Parse command line parameters.
+#
+readParams "$@"
+
+# Make sure the index is available for the following operations.
+getIndex
+
+#
+# Populate the list of packages out of sync with the index.
+#
+pkgAll
+
+#
+# Perform dependency checking.
+#
+pkgDependencies
+
+#
+# Sort packages by their dependencies.
+#
+pkgSort
+
+#
+# Display tasks.
+#
+pkgList
+
+#
+# Download packages.
+#
+pkgDownload
+
+#
+# Upgrade packages.
+#
+pkgUpgrade
+
+exit 0

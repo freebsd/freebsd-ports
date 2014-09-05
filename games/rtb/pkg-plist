@@ -193,10 +193,6 @@ share/locale/ja/LC_MESSAGES/RealTimeBattle.mo
 share/locale/pl/LC_MESSAGES/RealTimeBattle.mo
 share/locale/pt/LC_MESSAGES/RealTimeBattle.mo
 share/locale/sv/LC_MESSAGES/RealTimeBattle.mo
-@dirrmtry share/locale/en@quot/LC_MESSAGES
-@dirrmtry share/locale/en@quot
-@dirrmtry share/locale/en@boldquot/LC_MESSAGES
-@dirrmtry share/locale/en@boldquot
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/Spanish
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/German
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/French

@@ -4,15 +4,14 @@
 PORTNAME?=	xmms2
 PORTVERSION=	0.8
 DISTVERSIONSUFFIX=DrO_o
-PORTREVISION?=	10
+PORTREVISION?=	12
 CATEGORIES?=	audio
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}%20${DISTVERSIONSUFFIX}
 
 MAINTAINER?=	madpilot@FreeBSD.org
 COMMENT?=	Rewrite of xmms as a client/server system (developer release)
 
-USE_PYTHON_BUILD=	yes
-USES+=		pkgconfig tar:bzip2
+USES+=		pkgconfig python:build tar:bzip2
 
 .if !defined(XMMS2_SLAVE)
 USE_GNOME=	glib20
@@ -116,6 +115,7 @@ PLIST_SUB+=	AVCODEC="@comment "
 
 .if ${PORT_OPTIONS:MCDDA}
 LIB_DEPENDS+=	libcdio.so:${PORTSDIR}/sysutils/libcdio \
+		libcdio_cdda.so:${PORTSDIR}/sysutils/libcdio-paranoia \
 		libdiscid.so:${PORTSDIR}/audio/libdiscid
 PLIST_SUB+=	CDDA=""
 .else

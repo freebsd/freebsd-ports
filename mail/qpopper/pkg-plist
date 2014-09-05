@@ -1,5 +1,5 @@
 @owner %%USERS%%
-@mode u+s
+@mode 04555
 %%QPOPAUTH%%bin/qapopauth
 %%QPOPAUTH%%bin/qpopauth
 @group %%GROUPS%%

@@ -14,4 +14,6 @@ USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
 
+PORTSCOUT=	limit:^0\.
+
 .include <bsd.port.mk>

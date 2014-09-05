@@ -17,7 +17,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LIB_DEPENDS=	libconfig.so:${PORTSDIR}/devel/libconfig \
 		libuuid.so:${PORTSDIR}/misc/e2fsprogs-libuuid \
 		libcurl.so:${PORTSDIR}/ftp/curl \
-		libjson.so:${PORTSDIR}/devel/json-c
+		libjson-c.so:${PORTSDIR}/devel/json-c
 
 OPTIONS_DEFINE=	DEBUG ASSERT CNC_DEBUG STOMP_DEBUG
 
@@ -27,31 +27,15 @@ STOMP_DEBUG_DESC=	Enable STOMP Debug
 GNU_CONFIGURE=	yes
 USES=		libtool pathfix pkgconfig
 USE_LDCONFIG=	yes
+USE_AUTOTOOLS=	autoconf
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
 BROKEN_sparc64=	Does not compile on sparc64
 
-.include <bsd.port.options.mk>
-
-.if !empty(PORT_OPTIONS:MDEBUG)
-CONFIGURE_ARGS+=--enable-debug
-.endif
-
-.if !empty(PORT_OPTIONS:MASSERT)
-CONFIGURE_ARGS+=--enable-assert
-.endif
-
-.if !empty(PORT_OPTIONS:MCNC_DEBUG)
-CONFIGURE_ARGS+=--enable-cnc-debug
-.endif
-
-.if !empty(PORT_OPTIONS:MSTOMP_DEBUG)
-CONFIGURE_ARGS+=--enable-stomp-debug
-.endif
-
-post-patch:
-	@${REINPLACE_CMD} -e "s/-Werror//g" \
-			  ${WRKSRC}/configure
+DEBUG_CONFIGURE_ENABLE=		debug
+ASSERT_CONFIGURE_ENABLE=	assert
+CNC_DEBUG_CONFIGURE_ENABLE=	cnc-debug
+STOMP_DEBUG_CONFIGURE_ENABLE=	stomp-debug
 
 .include <bsd.port.mk>

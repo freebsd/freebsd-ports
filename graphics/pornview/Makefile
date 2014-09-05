@@ -15,13 +15,13 @@ LIB_DEPENDS=	libexif.so:${PORTSDIR}/graphics/libexif \
 		libpng15.so:${PORTSDIR}/graphics/png \
 		libxcb-render-util.so:${PORTSDIR}/x11/xcb-util-renderutil
 
+USES=		libtool pkgconfig
 USE_XORG=	x11 xi xext xinerama
-USES=		pkgconfig
 USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-gtk2
 CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib -lm
+LIBS+=		-L${LOCALBASE}/lib -lXext -lX11 -lm
 
 OPTIONS_DEFINE=	LIBXINE MPLAYER NLS
 OPTIONS_DEFAULT=	LIBXINE

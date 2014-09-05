@@ -23,6 +23,7 @@ include/tcl%%TCL_VER%%/generic/tclParse.h
 include/tcl%%TCL_VER%%/generic/tclPlatDecls.h
 include/tcl%%TCL_VER%%/generic/tclPort.h
 include/tcl%%TCL_VER%%/generic/tclRegexp.h
+include/tcl%%TCL_VER%%/generic/tclStringTrim.h
 include/tcl%%TCL_VER%%/generic/tclTomMath.h
 include/tcl%%TCL_VER%%/generic/tclTomMathInt.h
 include/tcl%%TCL_VER%%/generic/tclTomMathDecls.h
@@ -36,15 +37,15 @@ include/tcl%%TCL_VER%%/tclOO.h
 include/tcl%%TCL_VER%%/tclOODecls.h
 include/tcl%%TCL_VER%%/tclTomMath.h
 include/tcl%%TCL_VER%%/tclTomMathDecls.h
-%%MODULES%%lib/tcl%%TCL_VER%%/http-2.8.7.tm
+%%MODULES%%lib/tcl%%TCL_VER%%/http-2.8.8.tm
 %%MODULES%%lib/tcl%%TCL_VER%%/http1.0/http.tcl
 %%MODULES%%lib/tcl%%TCL_VER%%/http1.0/pkgIndex.tcl
 %%MODULES%%lib/tcl%%TCL_VER%%/msgcat-1.5.2.tm
 %%MODULES%%lib/tcl%%TCL_VER%%/opt0.4/optparse.tcl
 %%MODULES%%lib/tcl%%TCL_VER%%/opt0.4/pkgIndex.tcl
-%%MODULES%%lib/tcl%%TCL_VER%%/platform-1.0.12.tm
+%%MODULES%%lib/tcl%%TCL_VER%%/platform-1.0.13.tm
 %%MODULES%%lib/tcl%%TCL_VER%%/platform/shell-1.1.4.tm
-%%MODULES%%lib/tcl%%TCL_VER%%/tcltest-2.3.6.tm
+%%MODULES%%lib/tcl%%TCL_VER%%/tcltest-2.3.8.tm
 lib/tcl%%TCL_VER%%/auto.tcl
 lib/tcl%%TCL_VER%%/clock.tcl
 lib/tcl%%TCL_VER%%/encoding/ascii.enc
@@ -708,6 +709,7 @@ lib/tcl%%TCL_VER%%/word.tcl
 %%MAN%%man/man3/Tcl_OpenFileChannel.tcl86.3.gz
 %%MAN%%man/man3/Tcl_OpenTcpClient.tcl86.3.gz
 %%MAN%%man/man3/Tcl_OpenTcpServer.tcl86.3.gz
+%%MAN%%man/man3/Tcl_OOInitStubs.tcl86.3.gz
 %%MAN%%man/man3/Tcl_OutputBuffered.tcl86.3.gz
 %%MAN%%man/man3/Tcl_Panic.tcl86.3.gz
 %%MAN%%man/man3/Tcl_PanicVA.tcl86.3.gz
@@ -1045,7 +1047,7 @@ lib/tcl%%TCL_VER%%/word.tcl
 %%MAN%%man/mann/tcl_startOfNextWord.tcl86.n.gz
 %%MAN%%man/mann/tcl_startOfPreviousWord.tcl86.n.gz
 %%MAN%%man/mann/tcl_traceCompile.tcl86.n.gz
-%%MAN%%man/mann/tcl_traceEval.tcl86.n.gz
+%%MAN%%man/mann/tcl_traceExec.tcl86.n.gz
 %%MAN%%man/mann/tcl_version.tcl86.n.gz
 %%MAN%%man/mann/tcl_wordBreakAfter.tcl86.n.gz
 %%MAN%%man/mann/tcl_wordBreakBefore.tcl86.n.gz

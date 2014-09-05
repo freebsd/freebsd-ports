@@ -1,0 +1,10 @@
+--- Subversion2/svn_console.cpp.orig	2014-09-02 12:19:50.000000000 +0200
++++ Subversion2/svn_console.cpp	2014-09-02 12:20:43.000000000 +0200
+@@ -39,6 +39,7 @@
+ #include "notebook_ex.h"
+ #include "event_notifier.h"
+ #include <wx/regex.h>
++#include <wx/settings.h>
+ 
+ //-------------------------------------------------------------
+ BEGIN_EVENT_TABLE(SvnConsole, wxEvtHandler)

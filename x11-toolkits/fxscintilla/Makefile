@@ -3,7 +3,7 @@
 
 PORTNAME=	fxscintilla
 PORTVERSION=	2.28.0
-PORTREVISION=	8
+PORTREVISION=	7
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	SAVANNAH
 
@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libFOX-1.6.so:${PORTSDIR}/x11-toolkits/fox16
 
-USES=		libtool:keepla pathfix pkgconfig
+USES=		libtool pathfix pkgconfig
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-shared
 USE_LDCONFIG=	yes

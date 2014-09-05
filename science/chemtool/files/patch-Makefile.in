@@ -5,7 +5,7 @@
  
  # Link time dependencies.
 -LDADD = @LIBINTL@ @GTK_LIBS@
-+LDADD = @LIBINTL@ @GTK_LIBS@ @EMFLIBS@
++LDADD = @LIBINTL@ @GTK_LIBS@ @EMFLIBS@ -lX11
  
  # Additional files to be distributed.
  EXTRA_DIST = autogen.sh autoclean.sh

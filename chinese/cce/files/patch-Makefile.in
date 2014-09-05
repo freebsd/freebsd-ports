@@ -1,0 +1,66 @@
+--- Makefile.in.orig	2004-02-14 13:17:22.000000000 +0900
++++ Makefile.in	2014-08-25 16:50:15.000000000 +0900
+@@ -183,35 +183,35 @@
+ 	@:
+ $(srcdir)/Makefile.in:  $(srcdir)/Makefile.am  $(am__configure_deps)
+ 	@for dep in $?; do \
+-	  case '$(am__configure_deps)' in \
+-	    *$$dep*) \
+-	      echo ' cd $(srcdir) && $(AUTOMAKE) --gnu '; \
+-	      cd $(srcdir) && $(AUTOMAKE) --gnu  \
+-		&& exit 0; \
+-	      exit 1;; \
+-	  esac; \
++#	  case '$(am__configure_deps)' in \
++#	    *$$dep*) \
++#	      echo ' cd $(srcdir) && $(AUTOMAKE) --gnu '; \
++#	      cd $(srcdir) && $(AUTOMAKE) --gnu  \
++#		&& exit 0; \
++#	      exit 1;; \
++#	  esac; \
+ 	done; \
+-	echo ' cd $(top_srcdir) && $(AUTOMAKE) --gnu  Makefile'; \
++#	echo ' cd $(top_srcdir) && $(AUTOMAKE) --gnu  Makefile'; \
+ 	cd $(top_srcdir) && \
+-	  $(AUTOMAKE) --gnu  Makefile
++#	  $(AUTOMAKE) --gnu  Makefile
+ .PRECIOUS: Makefile
+ Makefile: $(srcdir)/Makefile.in $(top_builddir)/config.status
+ 	@case '$?' in \
+ 	  *config.status*) \
+-	    echo ' $(SHELL) ./config.status'; \
+-	    $(SHELL) ./config.status;; \
++#	    echo ' $(SHELL) ./config.status'; \
++#	    $(SHELL) ./config.status;; \
+ 	  *) \
+-	    echo ' cd $(top_builddir) && $(SHELL) ./config.status $@ $(am__depfiles_maybe)'; \
+-	    cd $(top_builddir) && $(SHELL) ./config.status $@ $(am__depfiles_maybe);; \
++#	    echo ' cd $(top_builddir) && $(SHELL) ./config.status $@ $(am__depfiles_maybe)'; \
++#	    cd $(top_builddir) && $(SHELL) ./config.status $@ $(am__depfiles_maybe);; \
+ 	esac;
+ 
+ $(top_builddir)/config.status: $(top_srcdir)/configure $(CONFIG_STATUS_DEPENDENCIES)
+-	$(SHELL) ./config.status --recheck
++#	$(SHELL) ./config.status --recheck
+ 
+ $(top_srcdir)/configure:  $(am__configure_deps)
+-	cd $(srcdir) && $(AUTOCONF)
++#	cd $(srcdir) && $(AUTOCONF)
+ $(ACLOCAL_M4):  $(am__aclocal_m4_deps)
+-	cd $(srcdir) && $(ACLOCAL) $(ACLOCAL_AMFLAGS)
++#	cd $(srcdir) && $(ACLOCAL) $(ACLOCAL_AMFLAGS)
+ 
+ include/config.h: include/stamp-h1
+ 	@if test ! -f $@; then \
+@@ -221,9 +221,9 @@
+ 
+ include/stamp-h1: $(top_srcdir)/include/config.h.in $(top_builddir)/config.status
+ 	@rm -f include/stamp-h1
+-	cd $(top_builddir) && $(SHELL) ./config.status include/config.h
++#	cd $(top_builddir) && $(SHELL) ./config.status include/config.h
+ $(top_srcdir)/include/config.h.in:  $(am__configure_deps) 
+-	cd $(top_srcdir) && $(AUTOHEADER)
++#	cd $(top_srcdir) && $(AUTOHEADER)
+ 	rm -f include/stamp-h1
+ 	touch $@
+ 

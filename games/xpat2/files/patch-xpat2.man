@@ -5,7 +5,7 @@
  
  If the directory name \fIxpmdir\fP does not start with a dot or a slash,
 -it is interpreted as a subdirectory of \fB/usr/games/lib/xpat\fP.
-+it is interpreted as a subdirectory of \fB%%PREFIX%%/lib/xpat\fP.
++it is interpreted as a subdirectory of \fB%%PREFIX%%/share/xpat\fP.
  .TP 4
  .B \-xpmcls \fIxpmcls\fP
  (Resource: \fBTableau.xpmcls\fP)
@@ -29,17 +29,17 @@
 - \fB/usr/lib/games/xpat/hlp*\fP
 + \fB%%PREFIX%%/bin/xpat2\fP
 + \fB/var/games/xpat.log\fP
-+ \fB%%PREFIX%%/lib/xpat/small.cards\fP
-+ \fB%%PREFIX%%/lib/xpat/french.cards\fP
-+ \fB%%PREFIX%%/lib/xpat/audio/success.au\fP
-+ \fB%%PREFIX%%/lib/xpat/audio/giveup.au\fP
-+ \fB%%PREFIX%%/lib/xpat/audio/goodbye.au\fP
-+ \fB%%PREFIX%%/lib/xpat/audio/cannotsave.au\fP
-+ \fB%%PREFIX%%/lib/xpat/help.*\fP
-+ \fB%%PREFIX%%/lib/xpat/hlp*\fP
++ \fB%%PREFIX%%/share/xpat/small.cards\fP
++ \fB%%PREFIX%%/share/xpat/french.cards\fP
++ \fB%%PREFIX%%/share/xpat/audio/success.au\fP
++ \fB%%PREFIX%%/share/xpat/audio/giveup.au\fP
++ \fB%%PREFIX%%/share/xpat/audio/goodbye.au\fP
++ \fB%%PREFIX%%/share/xpat/audio/cannotsave.au\fP
++ \fB%%PREFIX%%/share/xpat/help.*\fP
++ \fB%%PREFIX%%/share/xpat/hlp*\fP
  
 -and a number of subdirs of \fB/usr/lib/games/xpat\fP, containing sets of colour
-+and a number of subdirs of \fB%%PREFIX%%/lib/xpat\fP, containing sets of colour
++and a number of subdirs of \fB%%PREFIX%%/share/xpat\fP, containing sets of colour
  cards.
  
  .SH DIAGNOSTICS

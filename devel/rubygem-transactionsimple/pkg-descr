@@ -3,4 +3,4 @@ to objects. The transaction methods added by this module will work with most
 objects, excluding those that cannot be Marshal-ed (bindings, procedure
 objects, IO instances, or singleton objects).
 
-WWW: http://rubyforge.org/projects/trans-simple/
+WWW: http://rubygems.org/gems/transactionsimple/

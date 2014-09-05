@@ -2,17 +2,14 @@
 # $FreeBSD$
 
 PORTNAME=	binkd
-PORTVERSION=	0.9.9
+PORTVERSION=	1.0.4
 CATEGORIES=	net
-MASTER_SITES=	ftp://happy.kiev.ua/pub/fidosoft/mailer/binkd/ \
-		ftp://ftp.rsu.ru/pub/FreeBSD/ports/distfiles/
-DISTNAME=	binkd${PORTVERSION:S/.//g}
+MASTER_SITES=	ftp://happy.kiev.ua/pub/fidosoft/mailer/binkd/
 
 MAINTAINER=	fjoe@FreeBSD.org
 COMMENT=	Fidonet TCP/IP mailer
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
-USES=		zip
 USE_RC_SUBR=	binkd
 GNU_CONFIGURE=	yes
 

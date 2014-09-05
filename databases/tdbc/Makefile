@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	tdbc
-DISTVERSION=	1.0.0
+DISTVERSION=	1.0.1
 CATEGORIES=	databases
-MASTER_SITES=	SF/tcl/Tcl/8.6.1
+MASTER_SITES=	SF/tcl/Tcl/8.6.2
 DISTFILES=	${PORTNAME}${PORTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	tcltk@FreeBSD.org
@@ -13,7 +13,7 @@ COMMENT=	Common database access interface for Tcl
 LICENSE=	TclTk
 LICENSE_NAME=	Tcl/Tk License
 LICENSE_FILE=	${WRKDIR}/${PORTNAME}${PORTVERSION}/license.terms
-LICENSE_PERMS=	auto-accept dist-mirror dist-sell pkg-mirror pkg-sell
+LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 OPTIONS_DEFINE=	MYSQL PGSQL SQLITE ODBC
 
@@ -60,7 +60,7 @@ PLIST_SUB+=	ODBC="@comment "
 # PostgreSQL
 #
 .if ${PORT_OPTIONS:MPGSQL}
-USE_PGSQL=	client
+USES+=		pgsql
 DISTFILES+=	${PORTNAME}postgres${PORTVERSION}${EXTRACT_SUFX}
 MODULES+=	tdbcpostgres
 PLIST_SUB+=	PGSQL=""
@@ -86,8 +86,10 @@ post-extract:
 	fi
 
 post-patch:
-	${FIND} ${WRKDIR} -name Makefile.in | ${XARGS} \
-	    ${REINPLACE_CMD} -e '/^DESTDIR/s|=|?=|'
+	${FIND} ${WRKDIR} -name Makefile.in | ${XARGS} ${REINPLACE_CMD} \
+	    -e '/^DESTDIR/s|=|?=|' \
+	    -e '/^INSTALL_PROGRAM/s|$$| -s|' \
+	    -e '/^INSTALL_LIBRARY/s|$$| -s|'
 
 do-configure:
 .for module in ${MODULES}

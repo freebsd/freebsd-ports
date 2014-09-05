@@ -3,24 +3,23 @@
 
 PORTNAME=	libstroke
 PORTVERSION=	0.5.1
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	devel
 MASTER_SITES=	http://etla.net/libstroke/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Stroke translation library
 
-USES=		gmake
+GNU_CONFIGURE=	yes
+INSTALL_TARGET=	install-strip
+USES=		gmake libtool
+USE_AUTOTOOLS=	libtoolize aclocal autoconf autoheader automake
+AUTOMAKE_ARGS=	-a -c -f
 USE_CSTD=	gnu89
 USE_XORG=	x11
-USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
 
-CONFIGURE_ARGS=	--disable-gtktest
-
 post-patch:
-	@${REINPLACE_CMD} -e \
-		's|$${CONFIG_SHELL-/bin/sh} $$ac_aux_dir|$$ac_aux_dir|' \
-			${WRKSRC}/configure
+	@${REINPLACE_CMD} '/^[[:space:]]*#/d' ${WRKSRC}/libstroke/Makefile.am
 
 .include <bsd.port.mk>

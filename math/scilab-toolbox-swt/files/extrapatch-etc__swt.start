@@ -1,6 +1,6 @@
---- ./etc/swt.start.orig	2010-08-30 12:52:10.000000000 +0400
-+++ ./etc/swt.start	2010-10-17 16:02:57.850107854 +0400
-@@ -34,15 +34,6 @@
+--- ./etc/swt.start.orig	2014-05-07 16:06:39.000000000 +0000
++++ ./etc/swt.start	2014-09-04 09:17:50.853642536 +0000
+@@ -33,13 +33,7 @@
  
  // Load and add help chapter
  // =============================================================================
@@ -9,10 +9,9 @@
 -        path_addchapter = pathconvert(root_tlbx+"/jar");
 -        if ( isdir(path_addchapter) <> [] ) then
 -                add_help_chapter("swt", path_addchapter, %F);
--                clear add_help_chapter;
 -        end
--        clear path_addchapter;
 -end
++
  
- 
- clear root_tlbx;
+ // Load demos
+ // =============================================================================

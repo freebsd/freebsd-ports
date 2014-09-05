@@ -32,7 +32,4 @@ CONFIGURE_ARGS+=--disable-nls --without-libiconv-prefix --without-libintl-prefix
 
 INSTALL_TARGET=	install install-man
 
-post-patch:
-	 @${REINPLACE_CMD} -e '/echo.*RANLIB/,+1d' ${WRKSRC}/Makefile.in
-
 .include <bsd.port.mk>

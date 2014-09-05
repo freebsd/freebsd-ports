@@ -1,0 +1,46 @@
+#!/bin/sh
+
+if [ "$2" != "POST-INSTALL" ]; then
+   exit 0
+fi
+
+if [ ! -d /var/binaries ]; then
+   install -d /var/binaries
+fi
+
+if [ ! -d /var/cache/nepenthes ]; then
+   install -d /var/cache/nepenthes
+fi
+
+if [ ! -d /var/cache/nepenthes/pcap ]; then
+   install -d /var/cache/nepenthes/pcap
+fi
+
+if [ ! -d /var/cache/nepenthes/signatures ]; then
+   install -d /var/cache/nepenthes/signatures
+fi
+
+if [ ! -d /var/hexdumps ]; then
+   install -d /var/hexdumps
+fi
+
+if [ ! -d /var/log/pcap ]; then
+   install -d /var/log/pcap
+fi
+
+if [ ! -d /var/binaries ]; then
+   install -d /var/spool/nepenthes
+fi
+
+if [ ! -d /var/binaries ]; then
+   install -d /var/spool/nepenthes/gotek
+fi
+
+if [ ! -d /var/binaries ]; then
+   install -d /var/spool/nepenthes/submitpostgres
+fi
+
+if [ ! -f /var/cache/nepenthes/signatures/shellcode-signatures.sc ]; then
+   install -c ${PKG_PREFIX}/share/nepenthes/signatures/shellcode-signatures.sc \
+           /var/cache/nepenthes/signatures
+fi

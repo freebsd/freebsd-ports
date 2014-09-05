@@ -1,25 +1,25 @@
-# Created by: Hiroki Sato <hrs@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	gdsreader
 PORTVERSION=	0.3.2
+PORTREVISION=	1
 CATEGORIES=	cad
-MASTER_SITES=	http://home.netcom.com/~serbanp/
+MASTER_SITES=	LOCAL/hrs
 DISTNAME=	GDSreader.${PORTVERSION}
 
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	GDS2 stream file to Postscript and HP/GL converter
 
+LICENSE=	GPLv2
+
 PORTDOCS=	README README.povray ChangeLog
-EXFILES=	layers.config test.gds layers.config.7HP.5ML \
+PORTEXAMPLES=	layers.config test.gds layers.config.7HP.5ML \
 		layers.config.5AM.4ML
 PLIST_FILES=	bin/gdsreader bin/maptolayer \
-		${EXFILES:S,^,${EXAMPLESDIR_REL}/,} \
 		man/man1/gdsreader.1.gz man/man1/maptolayer.1.gz
-PLIST_DIRS=	${EXAMPLESDIR_REL}
 
 INSTALL_TARGET=	install install-data install-docs
 
-OPTIONS_DEFINE=	DOCS
+OPTIONS_DEFINE=	DOCS EXAMPLES
 
 .include <bsd.port.mk>

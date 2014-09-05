@@ -11,10 +11,11 @@ PKGNAMESUFFIX=	-devel
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Cisco 1700/2600/3600/3700/7200 Simulator
 
-LIB_DEPENDS=	libelf.so:${PORTSDIR}/devel/libelf
+LICENSE=	GPLv2
+
+LIB_DEPENDS=	libelf.so.0:${PORTSDIR}/devel/libelf
 
 CONFLICTS=	dynamips-[0-9]* dynamips-community-[0-9]*
-LICENSE=	GPLv2
 
 USES=		gmake
 ALL_TARGET=	${PORTNAME} nvram_export
@@ -24,13 +25,10 @@ MAKE_ENV=	DYNAMIPS_ARCH=${DYNAMIPS_ARCH}\
 MAKE_JOBS_UNSAFE=	yes
 
 PLIST_FILES=	bin/${PORTNAME} bin/nvram_export
-.if !defined(NOPORTDOCS)
+PLIST_FILES+=	man/man1/${PORTNAME}.1.gz man/man1/nvram_export.1.gz
+PLIST_FILES+=	man/man7/hypervisor_mode.7.gz
 PORTDOCS=	README README.hypervisor
-.endif
-MAN1=		${PORTNAME}.1 nvram_export.1
-MAN7=		hypervisor_mode.7
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "sparc64"
@@ -59,15 +57,13 @@ MAKE_ENV+=	HAS_POSIX_MEMALIGN=1
 .endif
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/nvram_export ${PREFIX}/bin
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README.hypervisor ${DOCSDIR}
-.endif
-	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${PREFIX}/man/man1
-	${INSTALL_MAN} ${WRKSRC}/nvram_export.1 ${PREFIX}/man/man1
-	${INSTALL_MAN} ${WRKSRC}/hypervisor_mode.7 ${PREFIX}/man/man7
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/nvram_export ${STAGEDIR}${PREFIX}/bin
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README.hypervisor ${STAGEDIR}${DOCSDIR}
+	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${STAGEDIR}${PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/nvram_export.1 ${STAGEDIR}${PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/hypervisor_mode.7 ${STAGEDIR}${PREFIX}/man/man7
 
 .include <bsd.port.post.mk>

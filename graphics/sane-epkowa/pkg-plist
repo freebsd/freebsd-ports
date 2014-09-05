@@ -1,4 +1,0 @@
-etc/sane.d/epkowa.conf
-lib/sane/libsane-epkowa.so
-lib/sane/libsane-epkowa.so.1
-@unexec sed -i "" -e '/^epkowa$/d' %D/etc/sane.d/dll.conf

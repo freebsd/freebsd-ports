@@ -14,7 +14,7 @@ PLIST_FILES=	bin/postgresql-relay etc/postgresql-relay.conf-sample \
 		man/man8/postgresql-relay.8.gz
 
 USE_RC_SUBR=	postgresql-relay
-USES=		perl5
+USES+=		perl5
 USE_PERL5=	build
 
 do-install:

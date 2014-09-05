@@ -7,4 +7,4 @@ to copied to and from a remote server.
 * Can download files in-memory, or direct-to-disk
 * Support for SCP URI's, and OpenURI
 
-WWW: http://net-ssh.rubyforge.org/scp
+WWW: http://rubygems.org/gems/net-scp11/

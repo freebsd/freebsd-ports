@@ -17,6 +17,9 @@ USE_RUBY=	yes
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}
 
+DEPRECATED=	RubyForge shutdown May 15 2014
+EXPIRATION_DATE=	2014-09-20
+
 do-install:
 	@cd ${WRKSRC}; ${RUBY} install.rb
 

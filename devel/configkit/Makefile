@@ -16,7 +16,7 @@ COMMENT=	Somewhat prototypical facility for generating CLI interfaces
 BUILD_DEPENDS=	${LOCALBASE}/lib/libphk.a:${PORTSDIR}/devel/libphk
 
 WRKSRC=		${WRKDIR}/ConfigKit
-
+USES=		uidfix
 MAKE_ARGS=	BINDIR=${PREFIX}/bin LIBDIR=${PREFIX}/lib INCLUDEDIR=${PREFIX}/include
 
 .include <bsd.port.mk>

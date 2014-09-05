@@ -6,7 +6,7 @@ info/libtasn1.info
 lib/libtasn1.a
 lib/libtasn1.so
 lib/libtasn1.so.6
-lib/libtasn1.so.6.3.0
+lib/libtasn1.so.6.3.1
 libdata/pkgconfig/libtasn1.pc
 man/man1/asn1Coding.1.gz
 man/man1/asn1Decoding.1.gz

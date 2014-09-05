@@ -13,7 +13,7 @@ COMMENT=	GNUstep workspace manager
 LICENSE_COMB=	multi
 LICENSE=	GPLv2 LGPL21
 
-USES=	tar:bzip2
+USES=		tar:bzip2
 USE_GNUSTEP=	yes
 USE_GNUSTEP_BACK=	yes
 USE_GNUSTEP_BUILD=	yes
@@ -27,9 +27,8 @@ MODIFY=		GNUmakefile.preamble PrefsModule/GNUmakefile.preamble \
 		Modules/PrefsApp/GNUmakefile.preamble
 
 post-patch:
-.for i in ${MODIFY}
-	@${MV} ${WRKSRC}/${i} ${WRKSRC}/${i}.sed
-	${SED} -e "s= -Werror==" ${WRKSRC}/${i}.sed > ${WRKSRC}/${i}
-.endfor
+	${REINPLACE_CMD} 's, -Werror,,' ${MODIFY:S,^,${WRKSRC}/,}
+	${REINPLACE_CMD} -e 's|^GNUSTEP_INSTALLATION_DIR|#GNUSTEP_INSTALLATION_DIR|' \
+		${WRKSRC}/GNUmakefile.preamble
 
 .include <bsd.port.mk>

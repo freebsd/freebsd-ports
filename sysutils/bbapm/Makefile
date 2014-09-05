@@ -15,22 +15,19 @@ PATCH_DIST_STRIP=	-p1
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	APM monitor for the Blackbox slit
 
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 ONLY_FOR_ARCHS=	i386
 USE_GNOME=	gtk12
 GNU_CONFIGURE=	yes
 USE_XORG=	x11
 
-PLIST_FILES=	bin/bbapm share/bbtools/README.bbapm share/bbtools/bbapm.conf \
-		share/bbtools/bbapm.nobb share/bbtools/bbapm.style \
-		share/bbtools/bbtoolsrc.in
-
-NO_STAGE=	yes
 do-install:
-	${INSTALL} ${COPY} ${STRIP} -o ${BINOWN} -g operator \
-		-m 2555 ${WRKSRC}/bbapm ${PREFIX}/bin
-	@${MKDIR} ${PREFIX}/share/bbtools
+	${INSTALL} ${COPY} ${STRIP} ${WRKSRC}/bbapm ${STAGEDIR}${PREFIX}/bin
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/bbtools
 .for a in README.bbapm bbapm.conf bbapm.nobb bbapm.style bbtoolsrc.in
-	${INSTALL_DATA} ${WRKSRC}/data/${a} ${PREFIX}/share/bbtools
+	${INSTALL_DATA} ${WRKSRC}/data/${a} ${STAGEDIR}${PREFIX}/share/bbtools
 .endfor
 
 post-install:

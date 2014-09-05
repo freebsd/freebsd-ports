@@ -3,6 +3,7 @@
 
 PORTNAME=	mosquitto
 PORTVERSION=	1.3.2
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://mosquitto.org/files/source/
 

@@ -3,7 +3,7 @@
 
 PORTNAME=	atlas
 PORTVERSION=	3.8.4
-PORTREVISION=	5
+PORTREVISION=	6
 PORTEPOCH=	1
 CATEGORIES=	math
 MASTER_SITES=	SF/math-${PORTNAME}/Stable/${PORTVERSION}
@@ -22,11 +22,12 @@ USE_GCC=	yes
 CONFLICTS=	atlas-devel-[0-9]* cblas-[0-9]*
 MANUAL_PACKAGE_BUILD=	Optimizes for the local machine.
 
-OPTIONS_DEFINE=		ARCHDEF TSC WALL_TIMER
-OPTIONS_DEFAULT=	SHARED
+OPTIONS_DEFINE=		DOCS DATA ARCHDEF TSC WALL_TIMER
+OPTIONS_DEFAULT=	DATA SHARED
 OPTIONS_MULTI=		BUILDTYPE
 OPTIONS_MULTI_BUILDTYPE=SHARED STATIC
 ARCHDEF_DESC=		Use a specified architectural default
+DATA_DESC=		Install tuning data and logs from the build
 SHARED_DESC=		Build static PIC archives and shared libraries
 STATIC_DESC=		Build static (non-PIC) archives
 TSC_DESC=		If WALL_TIMER is enabled, use the TSC
@@ -57,11 +58,10 @@ POINTER?=	32
 LIB_DEPENDS+=	libblas.so:${PORTSDIR}/math/blas
 .endif
 
-.for i in DATA DOCS
-.  if !defined(NOPORT${i})
-PORT${i}=	*
-.  endif
-.endfor
+.if ${PORT_OPTIONS:MDATA}
+PORTDATA=	*
+.endif
+PORTDOCS=	*
 
 .if ${PORT_OPTIONS:MARCHDEF}
 .  if defined(ARCHDEF)
@@ -118,9 +118,9 @@ post-patch:
 	@${CAT} ${FILESDIR}/tuning-message
 
 do-configure:
-	@if [ "x${WITH_WALL_TIMER}" != "x" ] ; then \
+	@if [ ${PORT_OPTIONS:MWALL_TIMER} ] ; then \
 		TIMEFLAG= ; \
-		if [ \( ${ARCH} = "i386" -o ${ARCH} = "amd64" \) -a "x${WITH_TSC}" != "x" ] ; then \
+		if [ \( ${ARCH} = "i386" -o ${ARCH} = "amd64" \) -a ${PORT_OPTIONS:MTSC} ] ; then \
 			freq=`${SYSCTL} -ni machdep.tsc_freq` ; \
 			if [ "x$${freq}" != "x" ] ; then \
 				if [ $${freq} -gt 1000000 ] ; then \
@@ -153,8 +153,7 @@ do-build:
 	@${ECHO_CMD} "Building the LAPACK archives with ${opt} ATLAS flags:"
 	F77FLAGS="`${MAKE} -f ${WRKSRC}/saved_flags -V F77FLAGS` ${EXTRA_FFLAGS}" ; \
 	LW=`${MAKE} -C ${PORTSDIR}/math/lapack -V ${${opt:tu}_LAPACK_WRKSRC}` ; \
-	${MAKE} -C ${PORTSDIR}/math/lapack WITH_${opt:tu}=yes \
-		clean patch ; \
+	${MAKE} -C ${PORTSDIR}/math/lapack WITH=${opt:tu} clean patch ; \
 	cd $${LW} ; ${SETENV} ${MAKE_ENV:NFFLAGS=*} EXTRAFLAGS="${${opt:tu}_FLAGS}" \
 		FFLAGS="-pipe $${F77FLAGS}" ${MAKE} ${_MAKE_JOBS} ${MAKE_ARGS} \
 		ARCH="${AR}" lapacklib ; \
@@ -249,10 +248,14 @@ do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/include/atlas/${opt}
 	${INSTALL_DATA} ${WRKSRC}/${opt}/include/* \
 		${STAGEDIR}${PREFIX}/include/atlas/${opt}
+.    if ${PORT_OPTIONS:MDATA}
 	@${MKDIR} ${STAGEDIR}${DATADIR}/${opt}
-	(cd ${WRKSRC}/${opt}/bin ; ${TAR} -czf INSTALL_LOG.tgz INSTALL_LOG ; \
-	${INSTALL_DATA} INSTALL_LOG.tgz ${STAGEDIR}${DATADIR}/${opt})
-	${INSTALL_DATA} ${WRKSRC}/${opt}/ARCHS/*.tgz ${STAGEDIR}${DATADIR}/${opt}
+	(cd ${WRKSRC}/${opt}/bin; \
+		${COPYTREE_SHARE} INSTALL_LOG ${STAGEDIR}${DATADIR}/${opt})
+	(cd ${WRKSRC}/${opt}/ARCHS; \
+		${COPYTREE_SHARE} "*" ${STAGEDIR}${DATADIR}/${opt} \
+		"! -name Makefile -and ! -name *.tgz")
+.    endif
 .  endif
 .endfor
 .if ${PORT_OPTIONS:MDOCS}

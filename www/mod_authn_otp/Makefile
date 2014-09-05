@@ -15,7 +15,7 @@ COMMENT=	Apache module for one-time password authentication
 LICENSE=	APACHE20
 
 GNU_CONFIGURE=	yes
-USE_APACHE=	22
+USE_APACHE=	22+
 
 PORTEXAMPLES=	users.sample
 

@@ -5,7 +5,6 @@ man/man1/xfstt.1x.gz
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL
 %%PORTDOCS%%%%DOCSDIR%%/THANKS
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@exec mkdir -p %D/lib/X11/fonts/TrueType
-@unexec rm -f %D/lib/X11/fonts/TrueType/ttname.dir
-@unexec rm -f %D/lib/X11/fonts/TrueType/ttinfo.dir
+@rmtry lib/X11/fonts/TrueType/ttname.dir
+@rmtry lib/X11/fonts/TrueType/ttinfo.dir
 @dirrmtry lib/X11/fonts/TrueType

@@ -1,16 +1,15 @@
 bin/globalmenu-settings
 include/gnome-globalmenu/globalmenu-server.h
 lib/bonobo/servers/GlobalMenu_PanelApplet.server
-lib/libglobalmenu-server.la
 lib/libglobalmenu-server.so
 lib/libglobalmenu-server.so.3
+lib/libglobalmenu-server.so.3.0.0
 libdata/pkgconfig/globalmenu-server.pc
 libdata/bonobo/servers/GlobalMenu_PanelApplet.server
 lib/gtk-2.0/modules/libglobalmenu-plugin.so
-lib/gtk-2.0/modules/libglobalmenu-plugin.la
 lib/gtk-2.0/modules/libglobalmenu-gnome-panel.so
-lib/gtk-2.0/modules/libglobalmenu-gnome-panel.la
 libexec/GlobalMenu.PanelApplet
+man/man1/gnome-globalmenu.1.gz
 %%DOCSDIR%%/README
 %%DOCSDIR%%/COPYING
 %%DOCSDIR%%/ChangeLog
@@ -49,9 +48,5 @@ share/locale/uk/LC_MESSAGES/gnome-globalmenu.mo
 share/locale/zh_CN/LC_MESSAGES/gnome-globalmenu.mo
 share/pixmaps/globalmenu.png
 @dirrm include/gnome-globalmenu
-@dirrmtry etc/gconf/gconf.xml.defaults
-@dirrmtry etc/gconf/schemas
-@dirrmtry etc/gconf
 @dirrmtry lib/bonobo/servers
-@dirrmtry libdata/bonobo/servers
 @dirrm %%DOCSDIR%%

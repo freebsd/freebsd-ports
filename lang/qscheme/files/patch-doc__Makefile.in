@@ -1,0 +1,11 @@
+--- doc/Makefile.in.orig
++++ doc/Makefile.in
+@@ -71,7 +71,7 @@
+ #
+ #
+ #
+-docdir=$(DESTDIR)$(pkgdatadir)/$(VERSION)/doc
++docdir=$(DESTDIR)$(datadir)/doc/@PACKAGE@
+ 
+ HTMLDIR=$(srcdir)/html
+ 

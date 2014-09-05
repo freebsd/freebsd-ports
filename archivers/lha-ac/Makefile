@@ -17,9 +17,7 @@ RESTRICTED=	No redistribution allowed
 
 GNU_CONFIGURE=	yes
 PLIST_FILES=	bin/lha-ac
-MANLANG=	ja
-MAN1_JA=	lha-ac.1
-PLIST_FILES+=	${__MANPAGES}
+PLIST_FILES+=	man/ja/man1/lha-ac.1.gz
 
 OPTIONS_DEFINE=	NLS
 NLS_CONFIGURE_ON=	--enable-multibyte-filename=auto

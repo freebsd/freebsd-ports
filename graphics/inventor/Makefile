@@ -38,6 +38,12 @@ OPTIONS_DEFINE=	DEBUG
 
 DEBUG_MAKE_ENV=	LIBTYPE=debug
 
+.include <bsd.port.options.mk>
+
+.if !(${OPSYS} == FreeBSD && ${OSVERSION} < 900033)
+MAKE_ENV+=	VLDOPTS=-Wl,--add-needed
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%CC%%|${CC}|g ;\
 			      s|%%CXX%%|${CXX}|g ; \

@@ -1,0 +1,24 @@
+From f55278791ac68eafc72b376a8c68b7002d82647c Mon Sep 17 00:00:00 2001
+From: abma <spring@abma.de>
+Date: Wed, 4 Jun 2014 14:49:56 +0200
+Subject: [PATCH] fix #4415
+
+---
+ tools/unitsync/test/CMakeLists.txt | 4 ----
+ 1 file changed, 4 deletions(-)
+
+diff --git a/tools/unitsync/test/CMakeLists.txt b/tools/unitsync/test/CMakeLists.txt
+index 9203560..5961130 100644
+--- tools/unitsync/test/CMakeLists.txt
++++ tools/unitsync/test/CMakeLists.txt
+@@ -10,10 +10,6 @@ SET(CMAKE_RUNTIME_OUTPUT_DIRECTORY "${CMAKE_LIBRARY_OUTPUT_DIRECTORY}")
+ 
+ REMOVE_DEFINITIONS(-DUNITSYNC)
+ 
+-# To allow linking to MODULE_LIBRARY targets
+-CMAKE_POLICY(SET CMP0001 OLD)
+-SET(CMAKE_BACKWARDS_COMPATIBILITY "2.2")
+-
+ ADD_EXECUTABLE(lua2php EXCLUDE_FROM_ALL lua2php.cpp)
+ TARGET_LINK_LIBRARIES(lua2php unitsync ${CMAKE_DL_LIBS})
+ ADD_DEPENDENCIES(lua2php unitsync)

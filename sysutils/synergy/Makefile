@@ -1,11 +1,11 @@
 # $FreeBSD$
 
 PORTNAME=	synergy
-PORTVERSION=	1.5.0
+PORTVERSION=	1.5.1
 DISTVERSIONSUFFIX=	-Source
 CATEGORIES=	sysutils
 MASTER_SITES=	http://synergy-project.org/files/packages/
-DISTNAME=	${PORTNAME}-${PORTVERSION}-r2278${DISTVERSIONSUFFIX}
+DISTNAME=	${PORTNAME}-${PORTVERSION}-r2398${DISTVERSIONSUFFIX}
 
 MAINTAINER=	kevlo@FreeBSD.org
 COMMENT=	Mouse and keyboard sharing utility

@@ -3,7 +3,7 @@
 
 PORTNAME=	ldns
 PORTVERSION=	1.6.17
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	dns
 MASTER_SITES=	http://www.nlnetlabs.nl/downloads/ldns/ \
 		CRITICAL
@@ -12,9 +12,10 @@ MAINTAINER=	jaap@NLnetLabs.nl
 COMMENT=	Library for programs conforming to DNS RFCs and drafts
 
 LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		gmake
-USE_AUTOTOOLS=	libtool
+USES=		gmake libtool
+USE_AUTOTOOLS=	libtoolize
 USE_OPENSSL=	yes
 USE_LDCONFIG=	yes
 

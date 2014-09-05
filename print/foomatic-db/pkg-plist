@@ -2785,6 +2785,8 @@ share/foomatic/db/source/PPD/Samsung/PXL/Samsung_CLP-610_Series_PXL.ppd.gz
 share/foomatic/db/source/PPD/Samsung/PXL/Samsung_CLP-620_Series_PXL.ppd.gz
 share/foomatic/db/source/PPD/Samsung/PXL/Samsung_M262x_282x_Series_PXL.ppd.gz
 share/foomatic/db/source/PPD/Samsung/PXL/Samsung_M267x_287x_Series_PXL.ppd.gz
+share/foomatic/db/source/PPD/Samsung/PXL/Samsung_M283x_Series_PXL.ppd.gz
+share/foomatic/db/source/PPD/Samsung/PXL/Samsung_M288x_Series_PXL.ppd.gz
 share/foomatic/db/source/PPD/Samsung/PXL/Samsung_ML-2525W_Series_PXL.ppd.gz
 share/foomatic/db/source/PPD/Samsung/PXL/Samsung_ML-2580_Series_PXL.ppd.gz
 share/foomatic/db/source/PPD/Samsung/PXL/Samsung_ML-2950_Series_PXL.ppd.gz
@@ -6582,7 +6584,9 @@ share/foomatic/db/source/printer/Lexmark-MX811.xml
 share/foomatic/db/source/printer/Lexmark-MX812.xml
 share/foomatic/db/source/printer/Lexmark-MX910.xml
 share/foomatic/db/source/printer/Lexmark-MX910de.xml
+share/foomatic/db/source/printer/Lexmark-MX911.xml
 share/foomatic/db/source/printer/Lexmark-MX911dte.xml
+share/foomatic/db/source/printer/Lexmark-MX912.xml
 share/foomatic/db/source/printer/Lexmark-MX912dxe.xml
 share/foomatic/db/source/printer/Lexmark-Optra_C710.xml
 share/foomatic/db/source/printer/Lexmark-Optra_Color_1200.xml
@@ -7490,6 +7494,8 @@ share/foomatic/db/source/printer/Samsung-K401.xml
 share/foomatic/db/source/printer/Samsung-K4350.xml
 share/foomatic/db/source/printer/Samsung-M262x_282x.xml
 share/foomatic/db/source/printer/Samsung-M267x_287x.xml
+share/foomatic/db/source/printer/Samsung-M283x.xml
+share/foomatic/db/source/printer/Samsung-M288x.xml
 share/foomatic/db/source/printer/Samsung-M4370_5370.xml
 share/foomatic/db/source/printer/Samsung-M458x.xml
 share/foomatic/db/source/printer/Samsung-M5270.xml

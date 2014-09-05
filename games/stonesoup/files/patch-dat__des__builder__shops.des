@@ -1,19 +1,19 @@
---- ./dat/des/builder/shops.des.orig	2014-04-24 22:39:22.000000000 +0200
-+++ ./dat/des/builder/shops.des	2014-05-06 21:23:13.323133248 +0200
-@@ -390,15 +390,7 @@
+--- ./dat/des/builder/shops.des.orig	2014-08-28 05:28:57.000000000 +0200
++++ ./dat/des/builder/shops.des	2014-08-29 18:32:12.133218080 +0200
+@@ -387,15 +387,7 @@
  : local shopname = util.random_from({"type:Blasphemy suffix:Boutique",
  :   "type:Evil suffix:Emporium", "type:Profane suffix:Products",
  :   "type:Sacrilege suffix:Store", "type:Wicked suffix:Wares"})
 -: kfeat("s = general shop " .. shopname .. " ; \
 -:   potion of blood | any weapon ego:draining w:15 | any weapon ego:pain w:5 | \
--:   any weapon ego:vampiricism w:5 | demon blade w:5 | \
+-:   any weapon ego:vampirism w:5 | demon blade w:5 | \
 -:   demon whip w:5 | demon trident w:5 | wand of draining | scroll of torment | \
 -:   staff of death | \
 -:   lantern of shadows w:5 | book of necromancy | book of death | \
 -:   book of unlife | randbook disc:necromancy w:5 | necronomicon w:1 | \
 -:   grand grimoire w:1 | scythe unrand:scythe_of_curses w:1 | \
 -:   bastard sword unrand:sword_of_zonguldrok w:1 | mace unrand:sceptre_of_torment w:1")
-+: kfeat("s = general shop " .. shopname .. " ; potion of blood | any weapon ego:draining w:15 | any weapon ego:pain w:5 | any weapon ego:vampiricism w:5 | demon blade w:5 | demon whip w:5 | demon trident w:5 | wand of draining | scroll of torment | staff of death | lantern of shadows w:5 | book of necromancy | book of death | book of unlife | randbook disc:necromancy w:5 | necronomicon w:1 | grand grimoire w:1 | scythe unrand:scythe_of_curses w:1 | bastard sword unrand:sword_of_zonguldrok w:1 | mace unrand:sceptre_of_torment w:1")
++: kfeat("s = general shop " .. shopname .. " ; potion of blood | any weapon ego:draining w:15 | any weapon ego:pain w:5 | any weapon ego:vampirism w:5 | demon blade w:5 | demon whip w:5 | demon trident w:5 | wand of draining | scroll of torment | staff of death | lantern of shadows w:5 | book of necromancy | book of death | book of unlife | randbook disc:necromancy w:5 | necronomicon w:1 | grand grimoire w:1 | scythe unrand:scythe_of_curses w:1 | bastard sword unrand:sword_of_zonguldrok w:1 | mace unrand:sceptre_of_torment w:1")
  KFEAT: a = altar_kikubaaqudgha / altar_yredelemnul / altar_makhleb / \
             altar_beogh w:1 / altar_lugonu w:1
  MAP

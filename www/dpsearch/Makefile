@@ -3,7 +3,7 @@
 
 PORTNAME=	dpsearch
 PORTVERSION=	4.53
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	www
 MASTER_SITES=	http://dataparksearch.googlecode.com/files/ \
 		http://www.dataparksearch.org/

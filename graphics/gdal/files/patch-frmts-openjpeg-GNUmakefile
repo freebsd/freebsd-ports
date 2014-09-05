@@ -1,0 +1,13 @@
+--- frmts/openjpeg/GNUmakefile.orig	2014-04-17 04:04:48.000000000 +0800
++++ frmts/openjpeg/GNUmakefile	2014-08-22 15:05:34.071310422 +0800
+@@ -5,6 +5,10 @@
+ 
+ CPPFLAGS	:=	$(GDAL_INCLUDE) $(CPPFLAGS)
+ 
++ifneq ($(OPENJPEG_VERSION),)
++CPPFLAGS        :=      $(CPPFLAGS) -DOPENJPEG_VERSION=$(OPENJPEG_VERSION)
++endif
++
+ default:	$(OBJ:.o=.$(OBJ_EXT))
+ 
+ clean:

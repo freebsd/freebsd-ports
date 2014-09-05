@@ -3,6 +3,7 @@
 
 PORTNAME=	dnshistory
 PORTVERSION=	1.3
+PORTREVISION=	1
 CATEGORIES=	dns
 MASTER_SITES=	http://www.stedee.id.au/files/
 

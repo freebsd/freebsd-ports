@@ -143,8 +143,6 @@ share/mime/packages/xboard.xml
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/xboard.mo
 %%NLS%%share/locale/zh_HK/LC_MESSAGES/xboard.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/xboard.mo
-%%NLS%%@dirrmtry share/locale/zh_HK/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/zh_HK
 @dirrm %%DATADIR%%/pixmaps/textures
 @dirrm %%DATADIR%%/pixmaps
 @dirrm %%DATADIR%%/sounds
@@ -155,14 +153,4 @@ share/mime/packages/xboard.xml
 @dirrm %%DATADIR%%/themes
 @dirrm %%DATADIR%%
 @dirrmtry share/games
-@dirrmtry share/icons/hicolor/48x48/apps
-@dirrmtry share/icons/hicolor/48x48
-@dirrmtry share/icons/hicolor/scalable/apps
-@dirrmtry share/icons/hicolor/scalable
-@dirrmtry share/icons/hicolor
-@dirrmtry share/icons
-@dirrmtry share/mime/packages
-@dirrmtry share/mime
-@unexec if cmp -s %D/etc/xboard.conf.dist %D/etc/xboard.conf; then rm -f %D/etc/xboard.conf; fi
-etc/xboard.conf.dist
-@exec cp -pn %D/%F %B/xboard.conf
+@sample etc/xboard.conf.sample

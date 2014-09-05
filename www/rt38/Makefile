@@ -92,7 +92,7 @@ BUILD_DEPENDS+=	p5-DBD-mysql>=0:${PORTSDIR}/databases/p5-DBD-mysql
 RUN_DEPENDS+=	p5-DBD-mysql>=0:${PORTSDIR}/databases/p5-DBD-mysql
 .elif ${PORT_OPTIONS:MPGSQL}
 DB_TYPE=	Pg
-USE_PGSQL=	yes
+USES+=		pgsql
 BUILD_DEPENDS+=	p5-DBD-Pg>=0:${PORTSDIR}/databases/p5-DBD-Pg
 RUN_DEPENDS+=	p5-DBD-Pg>=0:${PORTSDIR}/databases/p5-DBD-Pg
 .elif ${PORT_OPTIONS:MQLITE}

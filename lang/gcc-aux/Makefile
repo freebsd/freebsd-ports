@@ -268,7 +268,7 @@ do-install:
 	${INSTALL_DATA} ${FILESDIR}/gnatdroid.exp \
 		${STAGEDIR}${PREFIX}/share/dejagnu/baseboards
 
-post-install:
+post-stage:
 	cd ${STAGEDIR}${PKG_PREFIX}; ${FIND} * -type d -empty | \
 	   ${SORT} -dr | ${XARGS} ${RMDIR}
 	cd ${STAGEDIR}${PREFIX}; ${FIND} ${PORTNAME} share \
@@ -279,9 +279,7 @@ post-install:
 	cd ${STAGEDIR}${PREFIX}; ${FIND} share -type d | ${SORT} -r | \
 	   ${SED} -e 's/\(.*\)/@unexec rmdir %D\/\1 2>\/dev\/null || true/g' \
 	   >> ${TMPPLIST}
-
 .if ${PORT_OPTIONS:MBOOTSTRAP}
-post-stage:
 	${MKDIR} ${NEWBSDIR}
 	${CP} -a ${STAGEDIR}${PKG_PREFIX}/bin ${NEWBSDIR}/
 	${CP} -a ${STAGEDIR}${PKG_PREFIX}/lib ${NEWBSDIR}/

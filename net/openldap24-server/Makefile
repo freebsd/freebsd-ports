@@ -59,7 +59,7 @@ BROKEN=			incompatible OpenLDAP version: ${WANT_OPENLDAP_VER}
 .endif
 
 PORTREVISION_CLIENT=	1
-PORTREVISION_SERVER=	2
+PORTREVISION_SERVER=	3
 OPENLDAP_SHLIB_MAJOR=	2
 OPENLDAP_MAJOR=		${DISTVERSION:R}
 
@@ -351,26 +351,12 @@ PLIST_SUB+=		BACK_BDB="@comment " \
 			BACK_HDB="@comment "
 .else
 
-WITH_BDB_VER?=		46
-USE_BDB=		44+
+USE_BDB=		48+
 
-# XXX Can BDB 5.x use XY instead of X as version?
-.if ${WITH_BDB_VER} >= 43 || ${WITH_BDB_VER} == 5 || ${WITH_BDB_VER} == 6
 CONFIGURE_ARGS+=	--enable-bdb=${BACKEND_ENABLE} \
 			--enable-hdb=${BACKEND_ENABLE}
 PLIST_SUB+=		BACK_BDB=${BACKEND_PLIST} \
 			BACK_HDB=${BACKEND_PLIST}
-.elif ${WITH_BDB_VER} >= 4
-CONFIGURE_ARGS+=	--disable-bdb \
-			--enable-hdb=${BACKEND_ENABLE}
-PLIST_SUB+=		BACK_BDB="@comment " \
-			BACK_HDB=${BACKEND_PLIST}
-.elif ${WITH_BDB_VER} == 3
-CONFIGURE_ARGS+=	--disable-bdb \
-			--disable-hdb
-PLIST_SUB+=		BACK_BDB="@comment " \
-			BACK_HDB="@comment "
-.endif
 
 CPPFLAGS+=		-I${BDB_INCLUDE_DIR}
 LDFLAGS+=		-L${BDB_LIB_DIR}

@@ -38,6 +38,9 @@ DOCSDIR=	${RUBY_MODDOCDIR}
 PORTEXAMPLES=	sample* test*
 PORTDOCS=	ChangeLog LICENSE.txt README TODO_ep_flux doc*
 
+DEPRECATED=	Depends on deprecated math/ruby-narray
+EXPIRATION_DATE=	2014-09-20
+
 do-install:
 	cd ${WRKSRC} && ${MAKE} ${MAKE_ARGS} install
 	cd ${WRKSRC} && ${RUBY} install.rb -d ${STAGEDIR}${RUBY_SITELIBDIR} -b ${STAGEDIR}${PREFIX}/bin

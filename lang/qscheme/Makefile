@@ -3,23 +3,24 @@
 
 PORTNAME=	qscheme
 PORTVERSION=	0.5.1
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	lang scheme
 MASTER_SITES=	http://www.sof.ch/dan/qscheme/files/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Small and fast Scheme interpreter
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/libavcall.a:${PORTSDIR}/devel/ffcall\
+LICENSE=	GPLv2
+
+BUILD_DEPENDS=	${LOCALBASE}/lib/libavcall.a:${PORTSDIR}/devel/ffcall \
 		${LOCALBASE}/lib/libpcre.a:${PORTSDIR}/devel/pcre \
 		${LOCALBASE}/lib/libgmp.a:${PORTSDIR}/math/gmp
 LIB_DEPENDS=	libgetline.so:${PORTSDIR}/devel/libgetline
 
 USES=		gmake perl5
 USE_PERL5=	build
+USE_GCC=	any
 GNU_CONFIGURE=	yes
-PLIST_SUB+=	PORTVERSION="${PORTVERSION}"
-
 CONFIGURE_ARGS=	--with-pcre-dir=${LOCALBASE}/lib \
 		--with-pcre-inc=${LOCALBASE}/include \
 		--with-avcall-dir=${LOCALBASE}/lib \
@@ -27,20 +28,26 @@ CONFIGURE_ARGS=	--with-pcre-dir=${LOCALBASE}/lib \
 		--with-gmp-dir=${LOCALBASE}/lib \
 		--with-gmp-inc=${LOCALBASE}/include
 
-NO_STAGE=	yes
+CFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib -lgetline
+
+PLIST_SUB=	VERSION="${PORTVERSION}"
+PORTDOCS=	*
+
+# because it uses static pcre lib, which is compiled without -fPIC.
+# pcre problem likely.
+BROKEN_amd64=		Does not build on ${ARCH}
+BROKEN_sparc64=		Does not build on ${ARCH}
+
+OPTIONS_DEFINE=	DOCS
+
 post-patch:
-	${REINPLACE_CMD} \
-		-e "s,^LIBS = @LIBS@,& ${PTHREAD_LIBS} -L${LOCALBASE}/lib -lgetline," \
-		-e "s,^CFLAGS = @CFLAGS@,& ${PTHREAD_CFLAGS}," \
-		${WRKSRC}/Makefile.in
-	${REINPLACE_CMD} \
-		-e "s,-lpthread,${PTHREAD_LIBS},g" ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e \
+		's|-lpthread|-pthread| ; \
+		 /SCM_DEFAULT_LIB_PATH/s|$$datadir|$$prefix/lib|' \
+		${WRKSRC}/configure
 
-.include <bsd.port.pre.mk>
+post-install:
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/qscheme/*/*.so
 
-.if ${ARCH} == "ia64" || ${ARCH} == "amd64" || ${ARCH} == "sparc64"
-# because it uses static pcre lib, which is compiled without -fPIC. pcre problem likely.
-BROKEN=		Does not build on amd64, ia64, or sparc64
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

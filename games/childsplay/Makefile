@@ -2,17 +2,14 @@
 # $FreeBSD$
 
 PORTNAME=	childsplay
-PORTVERSION=	2.5
-PORTREVISION=	1
+PORTVERSION=	2.6.3
 CATEGORIES=	games
-MASTER_SITES=	SF/${PORTNAME}/Childsplay/
+MASTER_SITES=	SAVANNAH
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Educative games for children
 
 LICENSE=	GPLv3
-
-BROKEN=		Unfetchable
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}game>0:${PORTSDIR}/devel/py-game
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlalchemy>0:${PORTSDIR}/databases/py-sqlalchemy \
@@ -20,15 +17,19 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlalchemy>0:${PORTSDIR}/databases/py-sqlalc
 
 NO_BUILD=	yes
 
-USES=		gettext shebangfix tar:tgz
+USES=		gettext shebangfix tar:tgz python:2
 USE_GNOME=	pygtk2
-USE_PYTHON=	2
 
 python_OLD_CMD=	/usr/bin/env python
-python_CMD=	/usr/bin/env python2
+python_CMD=	${SETENV} python2
 SHEBANG_FILES=	childsplay.py
+.for i in buttons funcs text dialogs gtk_widgets base
+SHEBANG_FILES+=	SPWidgets/$i.py
+.endfor
 
 DESKTOP_ENTRIES="Childsplay" "" "" "${PORTNAME}" "Game;Education;" ""
+
+CHILDSPLAYDIR=	${PYTHONPREFIX_SITELIBDIR}/childsplay
 
 post-patch:
 	@${REINPLACE_CMD} -e \
@@ -39,25 +40,19 @@ post-patch:
 do-configure:
 	@${ECHO_CMD} "#!${SH}" > ${WRKDIR}/childsplay.sh
 	@${ECHO_CMD} >> ${WRKDIR}/childsplay.sh
-	@${ECHO_CMD} 'cd "${PYTHONPREFIX_SITELIBDIR}/childsplay"' >> ${WRKDIR}/childsplay.sh
+	@${ECHO_CMD} 'cd "${CHILDSPLAYDIR}"' >> ${WRKDIR}/childsplay.sh
 	@${ECHO_CMD} 'exec ${PYTHON_CMD} childsplay.py $$@' >> ${WRKDIR}/childsplay.sh
 
 do-install:
-	(cd ${WRKDIR} && ${INSTALL_SCRIPT} childsplay.sh \
-		${STAGEDIR}/${PREFIX}/bin/childsplay)
-	@${MKDIR} ${STAGEDIR}/${PYTHONPREFIX_SITELIBDIR}/childsplay
-	(cd ${WRKSRC} && ${INSTALL_DATA} *.py \
-		${STAGEDIR}/${PYTHONPREFIX_SITELIBDIR}/childsplay)
-.for i in SPWidgets alphabetsounds lib
-	(cd ${WRKSRC} && ${COPYTREE_SHARE} ${i} \
-		${STAGEDIR}/${PYTHONPREFIX_SITELIBDIR}/childsplay)
-.endfor
+	${INSTALL_SCRIPT} ${WRKDIR}/childsplay.sh ${STAGEDIR}${PREFIX}/bin/childsplay
+	@${MKDIR} ${STAGEDIR}${CHILDSPLAYDIR}
+	${INSTALL_DATA} ${WRKSRC}/*.py ${STAGEDIR}${CHILDSPLAYDIR}
+	(cd ${WRKSRC} && ${COPYTREE_SHARE} "SPWidgets alphabetsounds lib" \
+		${STAGEDIR}${CHILDSPLAYDIR})
+	(cd ${WRKSRC} && ${COPYTREE_SHARE} locale ${STAGEDIR}${PREFIX}/share)
+	${INSTALL_DATA} ${WRKSRC}/sp_content.db ${STAGEDIR}${CHILDSPLAYDIR}
+
 	(cd ${STAGEDIR}${PREFIX} && ${PYTHON_CMD} -m compileall \
 		-d ${PREFIX} -f ${PYTHONPREFIX_SITELIBDIR:S;${PREFIX}/;;})
-	@${MKDIR} ${STAGEDIR}/${PREFIX}/share/locale
-	(cd ${WRKSRC}/locale && ${COPYTREE_SHARE} . \
-		${STAGEDIR}/${PREFIX}/share/locale)
-	${INSTALL_DATA} ${WRKSRC}/sp_content.db \
-		${STAGEDIR}/${PYTHONPREFIX_SITELIBDIR}/childsplay
 
 .include <bsd.port.mk>

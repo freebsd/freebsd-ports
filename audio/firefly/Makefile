@@ -13,6 +13,7 @@ MAINTAINER=	mark@foster.cc
 COMMENT=	Open-source media server for the Roku SoundBridge and iTunes
 
 LICENSE=	GPLv2
+BROKEN=		Does not fetch
 
 BUILD_DEPENDS=	${LOCALBASE}/include/vorbis/codec.h:${PORTSDIR}/audio/libvorbis \
 		${LOCALBASE}/include/FLAC/metadata.h:${PORTSDIR}/audio/flac

@@ -1,5 +1,5 @@
---- ./Makefile.orig	2000-07-29 08:41:38.000000000 +0200
-+++ ./Makefile	2014-02-14 11:11:34.806983153 +0100
+--- Makefile.orig	2000-07-29 06:41:38 UTC
++++ Makefile
 @@ -2,8 +2,8 @@
  
  CC ?= gcc
@@ -16,16 +16,7 @@
  
  install: all
 -	install -m 755 -o root -g root mp3_check ${LOCALBASE}/bin
-+	install -m 755 -o root -g wheel mp3_check ${DESTDIR}${PREFIX}/bin
++	${BSD_INSTALL_PROGRAM} mp3_check ${DESTDIR}${PREFIX}/bin
  
  # The FreeBSD Makefile options need a little work, but this will work for now.
  freebsd:	mp3_check.c mp3_check.h mp3_check_misc.c	
-@@ -29,7 +29,7 @@
- 		strip mp3_check
- 
- freebsd_install:	freebsd
--			install -m 755 -o root -g wheel mp3_check ${LOCALBASE}/bin
-+			install -m 755 -o root -g wheel mp3_check ${DESTDIR}${PREFIX}/bin
- 
- mp3_check.o:		mp3_check.c
- mp3_check_misc.o: 	mp3_check_misc.c

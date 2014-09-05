@@ -1,17 +1,15 @@
 # $FreeBSD$
 
 PORTNAME=	xetex
-PORTVERSION=	0.9999
-PORTREVISION=	4
+PORTVERSION=	0.99991
 CATEGORIES=	print
-MASTER_SITES=	http://people.allbsd.org/~hrs/FreeBSD/:web2c \
-		ftp://tug.org/historic/systems/texlive/2012/:texmf
+MASTER_SITES=	ftp://tug.org/historic/systems/texlive/2014/
 PKGNAMEPREFIX=	tex-
-DISTNAME=	web2c-29235
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:web2c \
-		${DISTNAME_TEXMF}${EXTRACT_SUFX}:texmf
+DISTNAME=	texlive-${DISTVERSION_TEXMF}-source
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
+		${DISTNAME_TEXMF}${EXTRACT_SUFX}
 DIST_SUBDIR=	TeX
-EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
+EXTRACT_ONLY=	texlive-${DISTVERSION_TEXMF}-source${EXTRACT_SUFX}
 
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	TeX System with Unicode and Modern Font Technologies
@@ -22,9 +20,10 @@ LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2 \
 		libopenjpeg.so:${PORTSDIR}/graphics/openjpeg15 \
 		libpng15.so:${PORTSDIR}/graphics/png \
 		libpoppler.so:${PORTSDIR}/graphics/poppler \
-		libTECkit.so:${PORTSDIR}/textproc/teckit
+		libTECkit.so:${PORTSDIR}/textproc/teckit \
+		libzzip.so:${PORTSDIR}/devel/zziplib
 
-USE_TEX=	texlive kpathsea web2c texmf formats fmtutil
+USE_TEX=	kpathsea web2c texmf formats fmtutil
 USES=		pkgconfig gmake tar:xz
 EXTRACT_AFTER_ARGS=	${EXTRACT_FILES:S,^,${DISTNAME}/,}
 EXTRACT_FILES= \
@@ -36,7 +35,8 @@ EXTRACT_AFTER_ARGS_TEXMF= \
 	| ${TAR} -xf - -C ${STAGEDIR}${PREFIX}/share \
 		--strip-components 1 --no-same-permission --no-same-owner \
 		${EXTRACT_FILES_TEXMF:S,^,${DISTNAME_TEXMF}/,}
-DISTNAME_TEXMF=	texlive-20120701-texmf
+DISTVERSION_TEXMF=20140525
+DISTNAME_TEXMF=	texlive-${DISTVERSION_TEXMF}-texmf
 EXTRACT_FILES_TEXMF= \
 	texmf-dist/doc/xelatex \
 	texmf-dist/doc/xetex \
@@ -50,7 +50,8 @@ EXTRACT_FILES_TEXMF= \
 	texmf-dist/tex/generic/xetexconfig/unicode-letters.tex
 WRKSRC=		${WRKDIR}/${DISTNAME}/texk/web2c
 GNU_CONFIGURE=	yes
-EXCLUDE_ENGINES= aleph etex pdftex luatex mf mf-nowin mp ptex eptex uptex euptex
+EXCLUDE_ENGINES=aleph etex pdftex luatex luajittex mf mf-nowin mp ptex eptex \
+		uptex euptex tex
 CONFIGURE_ARGS=	${EXCLUDE_ENGINES:S/^/--disable-/} \
 		--enable-xetex \
 		--enable-web2c \
@@ -74,6 +75,7 @@ CONFIGURE_ARGS=	${EXCLUDE_ENGINES:S/^/--disable-/} \
 		--with-system-teckit \
 		--with-teckit-includes=${LOCALBASE}/include/teckit \
 		--with-teckit-libdir=${LOCALBASE}/lib \
+		--with-system-zziplib \
 		--with-system-zlib
 CFLAGS+=	-I${LOCALBASE}/include
 MAKE_JOBS_UNSAFE=	yes
@@ -87,7 +89,7 @@ pre-configure:
 
 pre-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/share
-	${CAT} ${DISTDIR}/${DIST_SUBDIR}/texlive-20120701-texmf${EXTRACT_SUFX} \
+	${CAT} ${DISTDIR}/${DIST_SUBDIR}/texlive-${DISTVERSION_TEXMF}-texmf${EXTRACT_SUFX} \
 		${EXTRACT_AFTER_ARGS_TEXMF}
 
 .include <bsd.port.mk>

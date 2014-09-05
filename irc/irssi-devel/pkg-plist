@@ -114,7 +114,6 @@ include/irssi/src/irc/notifylist/notifylist.h
 include/irssi/src/lib-config/iconfig.h
 include/irssi/src/lib-config/module.h
 %%WITH_PROXY%%lib/irssi/modules/libirc_proxy.a
-%%WITH_PROXY%%lib/irssi/modules/libirc_proxy.la
 %%WITH_PROXY%%lib/irssi/modules/libirc_proxy.so
 %%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/Irssi.pm
 %%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/Irssi/Irc.pm

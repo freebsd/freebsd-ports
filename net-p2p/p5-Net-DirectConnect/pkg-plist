@@ -18,9 +18,11 @@ bin/dcshare
 %%SITE_PERL%%/Net/DirectConnect/pslib/pssql.pm
 %%SITE_PERL%%/Net/DirectConnect/sctp.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/DirectConnect/.packlist
+%%PERL5_MAN3%%/Net::DirectConnect.3.gz
+%%PERL5_MAN3%%/Net::DirectConnect::filelist.3.gz
+man/man1/dcget.1.gz
+man/man1/dcshare.1.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/DirectConnect
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto
 @dirrm %%SITE_PERL%%/Net/DirectConnect/pslib
 @dirrmtry %%SITE_PERL%%/Net/DirectConnect
 @dirrmtry %%SITE_PERL%%/Net

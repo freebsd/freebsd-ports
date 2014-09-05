@@ -1,5 +1,4 @@
 %%PYTHON_SITELIBDIR%%/_gamin.a
-%%PYTHON_SITELIBDIR%%/_gamin.la
 %%PYTHON_SITELIBDIR%%/_gamin.so
 %%PYTHON_SITELIBDIR%%/gamin.py
 %%PYTHON_SITELIBDIR%%/gamin.pyc

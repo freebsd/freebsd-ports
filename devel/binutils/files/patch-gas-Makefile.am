@@ -1,0 +1,11 @@
+--- gas/Makefile.am.orig	1970-01-01 00:12:34.000000000 +0000
++++ gas/Makefile.am	1970-01-01 00:13:11.000000000 +0000
+@@ -296,6 +296,8 @@
+ 	config/te-386bsd.h \
+ 	config/te-aix5.h \
+ 	config/te-armeabi.h \
++	config/te-armfbsddeabi.h \
++	config/te-armfbsdvfp.h \
+ 	config/te-armlinuxeabi.h \
+ 	config/te-dynix.h \
+ 	config/te-epoc-pe.h \

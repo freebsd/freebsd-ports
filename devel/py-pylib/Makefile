@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pylib
-PORTVERSION=	1.4.20
+PORTVERSION=	1.4.23
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,9 +12,9 @@ MAINTAINER=	rm@FreeBSD.org
 COMMENT=	Agile development and test support library
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USE_PYTHON=		yes
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
+USES=		python
+USE_PYTHON=	autoplist distutils
 
 .include <bsd.port.mk>

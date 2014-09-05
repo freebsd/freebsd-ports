@@ -10,7 +10,6 @@ MASTERDIR=	${.CURDIR}/../ng
 
 DESCR=		${.CURDIR}/pkg-descr
 
-WITH_CANNA=	yes
+OPTIONS_SLAVE=	CANNA
 
-NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

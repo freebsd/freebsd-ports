@@ -2,9 +2,9 @@ bin/enca
 bin/enconv
 include/enca.h
 lib/libenca.a
-lib/libenca.la
 lib/libenca.so
-lib/libenca.so.5
+lib/libenca.so.0
+lib/libenca.so.0.5.1
 libdata/pkgconfig/enca.pc
 libexec/enca/extconv/cstocs
 libexec/enca/extconv/map

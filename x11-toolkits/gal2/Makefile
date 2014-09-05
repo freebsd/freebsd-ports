@@ -25,7 +25,7 @@ USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-static --with-libiconv
 CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+LIBS+=		-L${LOCALBASE}/lib
 INSTALL_TARGET=	install-strip
 
 PLIST_SUB=	VERSION="2.6" PORTVERSION=${PORTVERSION} \
@@ -36,6 +36,8 @@ post-extract:
 
 post-patch:
 	@${REINPLACE_CMD} -e '/^SUBDIRS/ s|docs||' ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} '/^libutil_la_LIBADD =/s/$$/ -lm/' \
+		${WRKSRC}/gal/util/Makefile.in
 	@${REINPLACE_CMD} -e 's|glib/gmacros.h|glib.h|g' \
 		${WRKSRC}/gal/util/e-text-event-processor-types.h
 

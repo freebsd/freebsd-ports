@@ -1,0 +1,5 @@
+While the FreeBSD Handbook on pf explains the simple steps necessary
+to make pf tables survive a reboot, it does not (yet) point to an
+already existing script. This rc script provides a minimum solution.
+
+WWW: https://github.com/riggs-/pftables

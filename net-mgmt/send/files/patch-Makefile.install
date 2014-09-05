@@ -1,0 +1,15 @@
+--- Makefile.install.orig	2010-08-28 17:58:05.000000000 +0900
++++ Makefile.install	2014-08-20 04:27:44.000000000 +0900
+@@ -1,9 +1,9 @@
+-INSSBIN= $(PREFIXSBIN)/$(PROG)
++INSSBIN= $(DESTDIR)$(PREFIXSBIN)/$(PROG)
+ 
+ $(INSSBIN): $(PROG)
+-	install $< $@
++	$(BSD_INSTALL_PROGRAM) $< $@
+ 
+-install: all $(PREFIXSBIN) $(INSSBIN) $(EXTRAINSTALL)
++install: all $(DESTDIR)$(PREFIXSBIN) $(INSSBIN) $(DESTDIR)$(EXTRAINSTALL)
+ 
+ $(PREFIXSBIN):
+ 	mkdir -p $@

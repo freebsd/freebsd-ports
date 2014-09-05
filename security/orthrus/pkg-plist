@@ -1,11 +1,17 @@
 bin/ortcalc
+@mode 4555
 bin/ortpasswd
+@mode
 etc/orthruskeys
-lib/liborthrus-0.so
-lib/security/pam_orthrus.so
 include/orthrus-0/context.h
 include/orthrus-0/orthrus.h
 include/orthrus-0/orthrus_error.h
 include/orthrus-0/orthrus_version.h
-@dirrm include/orthrus-0
+lib/liborthrus-0.so
+lib/security/pam_orthrus.so
+%%PORTDOCS%%%%DOCSDIR%%/NOTICE
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/TODO
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm lib/security
+@dirrm include/orthrus-0

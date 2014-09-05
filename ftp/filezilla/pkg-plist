@@ -1,66 +1,11 @@
 bin/filezilla
-bin/fzsftp
 bin/fzputtygen
+bin/fzsftp
 man/man1/filezilla.1.gz
 man/man1/fzputtygen.1.gz
 man/man1/fzsftp.1.gz
 man/man5/fzdefaults.xml.5.gz
-%%NLS%%share/locale/an/LC_MESSAGES/filezilla.mo
-%%NLS%%share/locale/ar/LC_MESSAGES/filezilla.mo
-%%NLS%%share/locale/bg_BG/LC_MESSAGES/filezilla.mo
-%%NLS%%share/locale/ca/LC_MESSAGES/filezilla.mo
-%%NLS%%share/locale/ca_ES@valencia/LC_MESSAGES/filezilla.mo
-%%NLS%%share/locale/co/LC_MESSAGES/filezilla.mo
-%%NLS%%share/locale/cs_CZ/LC_MESSAGES/filezilla.mo
-%%NLS%%share/locale/da_DK/LC_MESSAGES/filezilla.mo
-%%NLS%%share/locale/de/LC_MESSAGES/filezilla.mo
-%%NLS%%share/locale/el/LC_MESSAGES/filezilla.mo
-%%NLS%%share/locale/es/LC_MESSAGES/filezilla.mo
-%%NLS%%share/locale/et_EE/LC_MESSAGES/filezilla.mo
-%%NLS%%share/locale/eu/LC_MESSAGES/filezilla.mo
-%%NLS%%share/locale/eu_ES/LC_MESSAGES/filezilla.mo
-%%NLS%%share/locale/fa_IR/LC_MESSAGES/filezilla.mo
-%%NLS%%share/locale/fi_FI/LC_MESSAGES/filezilla.mo
-%%NLS%%share/locale/fr/LC_MESSAGES/filezilla.mo
-%%NLS%%share/locale/gl_ES/LC_MESSAGES/filezilla.mo
-%%NLS%%share/locale/he_IL/LC_MESSAGES/filezilla.mo
-%%NLS%%share/locale/hr/LC_MESSAGES/filezilla.mo
-%%NLS%%share/locale/hu_HU/LC_MESSAGES/filezilla.mo
-%%NLS%%share/locale/hy/LC_MESSAGES/filezilla.mo
-%%NLS%%share/locale/id_ID/LC_MESSAGES/filezilla.mo
-%%NLS%%share/locale/is/LC_MESSAGES/filezilla.mo
-%%NLS%%share/locale/it/LC_MESSAGES/filezilla.mo
-%%NLS%%share/locale/ja_JP/LC_MESSAGES/filezilla.mo
-%%NLS%%share/locale/ka/LC_MESSAGES/filezilla.mo
-%%NLS%%share/locale/kab/LC_MESSAGES/filezilla.mo
-%%NLS%%share/locale/km_KH/LC_MESSAGES/filezilla.mo
-%%NLS%%share/locale/ko_KR/LC_MESSAGES/filezilla.mo
-%%NLS%%share/locale/ku/LC_MESSAGES/filezilla.mo
-%%NLS%%share/locale/ky/LC_MESSAGES/filezilla.mo
-%%NLS%%share/locale/lt_LT/LC_MESSAGES/filezilla.mo
-%%NLS%%share/locale/lv_LV/LC_MESSAGES/filezilla.mo
-%%NLS%%share/locale/mk_MK/LC_MESSAGES/filezilla.mo
-%%NLS%%share/locale/nb_NO/LC_MESSAGES/filezilla.mo
-%%NLS%%share/locale/ne/LC_MESSAGES/filezilla.mo
-%%NLS%%share/locale/nl/LC_MESSAGES/filezilla.mo
-%%NLS%%share/locale/nn_NO/LC_MESSAGES/filezilla.mo
-%%NLS%%share/locale/oc/LC_MESSAGES/filezilla.mo
-%%NLS%%share/locale/pl_PL/LC_MESSAGES/filezilla.mo
-%%NLS%%share/locale/pt_BR/LC_MESSAGES/filezilla.mo
-%%NLS%%share/locale/pt_PT/LC_MESSAGES/filezilla.mo
-%%NLS%%share/locale/ro_RO/LC_MESSAGES/filezilla.mo
-%%NLS%%share/locale/ru/LC_MESSAGES/filezilla.mo
-%%NLS%%share/locale/sk_SK/LC_MESSAGES/filezilla.mo
-%%NLS%%share/locale/sl_SI/LC_MESSAGES/filezilla.mo
-%%NLS%%share/locale/sr/LC_MESSAGES/filezilla.mo
-%%NLS%%share/locale/sv/LC_MESSAGES/filezilla.mo
-%%NLS%%share/locale/th_TH/LC_MESSAGES/filezilla.mo
-%%NLS%%share/locale/tr/LC_MESSAGES/filezilla.mo
-%%NLS%%share/locale/uk_UA/LC_MESSAGES/filezilla.mo
-%%NLS%%share/locale/vi_VN/LC_MESSAGES/filezilla.mo
-%%NLS%%share/locale/zh_CN/LC_MESSAGES/filezilla.mo
-%%NLS%%share/locale/zh_TW/LC_MESSAGES/filezilla.mo
-share/pixmaps/filezilla.png
+share/applications/filezilla.desktop
 %%DATADIR%%/docs/fzdefaults.xml.example
 %%DATADIR%%/resources/16x16/ascii.png
 %%DATADIR%%/resources/16x16/auto.png
@@ -102,36 +47,8 @@ share/pixmaps/filezilla.png
 %%DATADIR%%/resources/24x24/unknown.png
 %%DATADIR%%/resources/32x32/file.png
 %%DATADIR%%/resources/32x32/filezilla.png
-%%DATADIR%%/resources/cyril/16x16/ascii.png
-%%DATADIR%%/resources/cyril/16x16/auto.png
-%%DATADIR%%/resources/cyril/16x16/binary.png
-%%DATADIR%%/resources/cyril/16x16/bookmark.png
-%%DATADIR%%/resources/cyril/16x16/cancel.png
-%%DATADIR%%/resources/cyril/16x16/compare.png
-%%DATADIR%%/resources/cyril/16x16/disconnect.png
-%%DATADIR%%/resources/cyril/16x16/download.png
-%%DATADIR%%/resources/cyril/16x16/downloadadd.png
-%%DATADIR%%/resources/cyril/16x16/file.png
-%%DATADIR%%/resources/cyril/16x16/folder.png
-%%DATADIR%%/resources/cyril/16x16/folderback.png
-%%DATADIR%%/resources/cyril/16x16/folderclosed.png
-%%DATADIR%%/resources/cyril/16x16/folderup.png
-%%DATADIR%%/resources/cyril/16x16/help.png
-%%DATADIR%%/resources/cyril/16x16/localtreeview.png
-%%DATADIR%%/resources/cyril/16x16/logview.png
-%%DATADIR%%/resources/cyril/16x16/processqueue.png
-%%DATADIR%%/resources/cyril/16x16/queueview.png
-%%DATADIR%%/resources/cyril/16x16/reconnect.png
-%%DATADIR%%/resources/cyril/16x16/refresh.png
-%%DATADIR%%/resources/cyril/16x16/remotetreeview.png
-%%DATADIR%%/resources/cyril/16x16/server.png
-%%DATADIR%%/resources/cyril/16x16/showhidden.png
-%%DATADIR%%/resources/cyril/16x16/sitemanager.png
-%%DATADIR%%/resources/cyril/16x16/speedlimits.png
-%%DATADIR%%/resources/cyril/16x16/synchronize.png
-%%DATADIR%%/resources/cyril/16x16/upload.png
-%%DATADIR%%/resources/cyril/16x16/uploadadd.png
-%%DATADIR%%/resources/cyril/theme.xml
+%%DATADIR%%/resources/48x48/filezilla.png
+%%DATADIR%%/resources/48x48/speedlimits.png
 %%DATADIR%%/resources/blukis/16x16/ascii.png
 %%DATADIR%%/resources/blukis/16x16/auto.png
 %%DATADIR%%/resources/blukis/16x16/binary.png
@@ -224,6 +141,41 @@ share/pixmaps/filezilla.png
 %%DATADIR%%/resources/blukis/48x48/upload.png
 %%DATADIR%%/resources/blukis/48x48/uploadadd.png
 %%DATADIR%%/resources/blukis/theme.xml
+%%DATADIR%%/resources/cyril/16x16/ascii.png
+%%DATADIR%%/resources/cyril/16x16/auto.png
+%%DATADIR%%/resources/cyril/16x16/binary.png
+%%DATADIR%%/resources/cyril/16x16/bookmark.png
+%%DATADIR%%/resources/cyril/16x16/cancel.png
+%%DATADIR%%/resources/cyril/16x16/compare.png
+%%DATADIR%%/resources/cyril/16x16/disconnect.png
+%%DATADIR%%/resources/cyril/16x16/download.png
+%%DATADIR%%/resources/cyril/16x16/downloadadd.png
+%%DATADIR%%/resources/cyril/16x16/file.png
+%%DATADIR%%/resources/cyril/16x16/folder.png
+%%DATADIR%%/resources/cyril/16x16/folderback.png
+%%DATADIR%%/resources/cyril/16x16/folderclosed.png
+%%DATADIR%%/resources/cyril/16x16/folderup.png
+%%DATADIR%%/resources/cyril/16x16/help.png
+%%DATADIR%%/resources/cyril/16x16/localtreeview.png
+%%DATADIR%%/resources/cyril/16x16/logview.png
+%%DATADIR%%/resources/cyril/16x16/processqueue.png
+%%DATADIR%%/resources/cyril/16x16/queueview.png
+%%DATADIR%%/resources/cyril/16x16/reconnect.png
+%%DATADIR%%/resources/cyril/16x16/refresh.png
+%%DATADIR%%/resources/cyril/16x16/remotetreeview.png
+%%DATADIR%%/resources/cyril/16x16/server.png
+%%DATADIR%%/resources/cyril/16x16/showhidden.png
+%%DATADIR%%/resources/cyril/16x16/sitemanager.png
+%%DATADIR%%/resources/cyril/16x16/speedlimits.png
+%%DATADIR%%/resources/cyril/16x16/synchronize.png
+%%DATADIR%%/resources/cyril/16x16/upload.png
+%%DATADIR%%/resources/cyril/16x16/uploadadd.png
+%%DATADIR%%/resources/cyril/theme.xml
+%%DATADIR%%/resources/defaultfilters.xml
+%%DATADIR%%/resources/down.png
+%%DATADIR%%/resources/dropdown.png
+%%DATADIR%%/resources/finished.wav
+%%DATADIR%%/resources/leds.png
 %%DATADIR%%/resources/lone/16x16/ascii.png
 %%DATADIR%%/resources/lone/16x16/auto.png
 %%DATADIR%%/resources/lone/16x16/binary.png
@@ -447,6 +399,38 @@ share/pixmaps/filezilla.png
 %%DATADIR%%/resources/opencrystal/48x48/upload.png
 %%DATADIR%%/resources/opencrystal/48x48/uploadadd.png
 %%DATADIR%%/resources/opencrystal/theme.xml
+%%DATADIR%%/resources/sun/48x48/ascii.png
+%%DATADIR%%/resources/sun/48x48/auto.png
+%%DATADIR%%/resources/sun/48x48/binary.png
+%%DATADIR%%/resources/sun/48x48/bookmark.png
+%%DATADIR%%/resources/sun/48x48/cancel.png
+%%DATADIR%%/resources/sun/48x48/compare.png
+%%DATADIR%%/resources/sun/48x48/disconnect.png
+%%DATADIR%%/resources/sun/48x48/download.png
+%%DATADIR%%/resources/sun/48x48/downloadadd.png
+%%DATADIR%%/resources/sun/48x48/file.png
+%%DATADIR%%/resources/sun/48x48/filter.png
+%%DATADIR%%/resources/sun/48x48/find.png
+%%DATADIR%%/resources/sun/48x48/folder.png
+%%DATADIR%%/resources/sun/48x48/folderback.png
+%%DATADIR%%/resources/sun/48x48/folderclosed.png
+%%DATADIR%%/resources/sun/48x48/folderup.png
+%%DATADIR%%/resources/sun/48x48/help.png
+%%DATADIR%%/resources/sun/48x48/localtreeview.png
+%%DATADIR%%/resources/sun/48x48/lock.png
+%%DATADIR%%/resources/sun/48x48/logview.png
+%%DATADIR%%/resources/sun/48x48/processqueue.png
+%%DATADIR%%/resources/sun/48x48/queueview.png
+%%DATADIR%%/resources/sun/48x48/reconnect.png
+%%DATADIR%%/resources/sun/48x48/refresh.png
+%%DATADIR%%/resources/sun/48x48/remotetreeview.png
+%%DATADIR%%/resources/sun/48x48/showhidden.png
+%%DATADIR%%/resources/sun/48x48/sitemanager.png
+%%DATADIR%%/resources/sun/48x48/speedlimits.png
+%%DATADIR%%/resources/sun/48x48/synchronize.png
+%%DATADIR%%/resources/sun/48x48/upload.png
+%%DATADIR%%/resources/sun/48x48/uploadadd.png
+%%DATADIR%%/resources/sun/theme.xml
 %%DATADIR%%/resources/tango/16x16/ascii.png
 %%DATADIR%%/resources/tango/16x16/auto.png
 %%DATADIR%%/resources/tango/16x16/binary.png
@@ -532,125 +516,168 @@ share/pixmaps/filezilla.png
 %%DATADIR%%/resources/tango/48x48/upload.png
 %%DATADIR%%/resources/tango/48x48/uploadadd.png
 %%DATADIR%%/resources/tango/theme.xml
-%%DATADIR%%/resources/48x48/filezilla.png
-%%DATADIR%%/resources/48x48/speedlimits.png
-%%DATADIR%%/resources/defaultfilters.xml
-%%DATADIR%%/resources/dialogs.xrc
-%%DATADIR%%/resources/down.png
-%%DATADIR%%/resources/dropdown.png
-%%DATADIR%%/resources/finished.wav
-%%DATADIR%%/resources/leds.png
-%%DATADIR%%/resources/menus.xrc
-%%DATADIR%%/resources/netconfwizard.xrc
-%%DATADIR%%/resources/quickconnectbar.xrc
-%%DATADIR%%/resources/settings.xrc
 %%DATADIR%%/resources/theme.xml
-%%DATADIR%%/resources/toolbar.xrc
 %%DATADIR%%/resources/up.png
-%%DATADIR%%/resources/update.xrc
+%%DATADIR%%/resources/xrc/certificate.xrc
+%%DATADIR%%/resources/xrc/dialogs.xrc
+%%DATADIR%%/resources/xrc/inputdialog.xrc
+%%DATADIR%%/resources/xrc/menus.xrc
+%%DATADIR%%/resources/xrc/netconfwizard.xrc
+%%DATADIR%%/resources/xrc/quickconnectbar.xrc
+%%DATADIR%%/resources/xrc/settings.xrc
+%%DATADIR%%/resources/xrc/sitemanager.xrc
+%%DATADIR%%/resources/xrc/toolbar.xrc
+%%DATADIR%%/resources/xrc/update.xrc
 share/icons/hicolor/16x16/apps/filezilla.png
 share/icons/hicolor/32x32/apps/filezilla.png
 share/icons/hicolor/48x48/apps/filezilla.png
 share/icons/hicolor/scalable/apps/filezilla.svg
-share/applications/filezilla.desktop
-@dirrmtry share/icons/hicolor/scalable/apps
-@dirrmtry share/icons/hicolor/scalable
-@dirrmtry share/icons/hicolor/48x48/apps
-@dirrmtry share/icons/hicolor/48x48
-@dirrmtry share/icons/hicolor/32x32/apps
-@dirrmtry share/icons/hicolor/32x32
-@dirrmtry share/icons/hicolor/16x16/apps
-@dirrmtry share/icons/hicolor/16x16
-@dirrmtry share/icons/hicolor
-@dirrmtry share/icons
-@dirrm %%DATADIR%%/resources/tango/48x48
-@dirrm %%DATADIR%%/resources/tango/32x32
-@dirrm %%DATADIR%%/resources/tango/16x16
-@dirrm %%DATADIR%%/resources/tango
-@dirrm %%DATADIR%%/resources/opencrystal/48x48
-@dirrm %%DATADIR%%/resources/opencrystal/32x32
-@dirrm %%DATADIR%%/resources/opencrystal/24x24
-@dirrm %%DATADIR%%/resources/opencrystal/20x20
-@dirrm %%DATADIR%%/resources/opencrystal/16x16
-@dirrm %%DATADIR%%/resources/opencrystal
-@dirrm %%DATADIR%%/resources/minimal/32x32
-@dirrm %%DATADIR%%/resources/minimal/16x16
-@dirrm %%DATADIR%%/resources/minimal
-@dirrm %%DATADIR%%/resources/lone/48x48
-@dirrm %%DATADIR%%/resources/lone/32x32
-@dirrm %%DATADIR%%/resources/lone/16x16
-@dirrm %%DATADIR%%/resources/lone
-@dirrm %%DATADIR%%/resources/cyril/16x16
-@dirrm %%DATADIR%%/resources/cyril
-@dirrm %%DATADIR%%/resources/blukis/48x48
-@dirrm %%DATADIR%%/resources/blukis/32x32
-@dirrm %%DATADIR%%/resources/blukis/16x16
-@dirrm %%DATADIR%%/resources/blukis
-@dirrm %%DATADIR%%/resources/48x48
-@dirrm %%DATADIR%%/resources/32x32
-@dirrm %%DATADIR%%/resources/24x24
-@dirrm %%DATADIR%%/resources/20x20
-@dirrm %%DATADIR%%/resources/16x16
-@dirrm %%DATADIR%%/resources
-@dirrm %%DATADIR%%/docs
-@dirrm %%DATADIR%%
-@dirrmtry share/locale/vi_VN/LC_MESSAGES
-@dirrmtry share/locale/vi_VN
-@dirrmtry share/locale/uk_UA/LC_MESSAGES
-@dirrmtry share/locale/uk_UA
-@dirrmtry share/locale/th_TH/LC_MESSAGES
-@dirrmtry share/locale/th_TH
-@dirrmtry share/locale/sl_SI/LC_MESSAGES
-@dirrmtry share/locale/sl_SI
-@dirrmtry share/locale/sk_SK/LC_MESSAGES
-@dirrmtry share/locale/sk_SK
-@dirrmtry share/locale/ro_RO/LC_MESSAGES
-@dirrmtry share/locale/ro_RO
-@dirrmtry share/locale/pl_PL/LC_MESSAGES
-@dirrmtry share/locale/pl_PL
-@dirrmtry share/locale/nn_NO/LC_MESSAGES
-@dirrmtry share/locale/nn_NO
-@dirrmtry share/locale/nb_NO/LC_MESSAGES
-@dirrmtry share/locale/nb_NO
-@dirrmtry share/locale/mk_MK/LC_MESSAGES
-@dirrmtry share/locale/mk_MK
-@dirrmtry share/locale/lv_LV/LC_MESSAGES
-@dirrmtry share/locale/lv_LV
-@dirrmtry share/locale/lt_LT/LC_MESSAGES
-@dirrmtry share/locale/lt_LT
-@dirrmtry share/locale/ky/LC_MESSAGES
-@dirrmtry share/locale/ky
-@dirrmtry share/locale/ko_KR/LC_MESSAGES
-@dirrmtry share/locale/ko_KR
-@dirrmtry share/locale/km_KH/LC_MESSAGES
-@dirrmtry share/locale/km_KH
-@dirrmtry share/locale/kab/LC_MESSAGES
-@dirrmtry share/locale/kab
-@dirrmtry share/locale/ja_JP/LC_MESSAGES
-@dirrmtry share/locale/ja_JP
-@dirrmtry share/locale/id_ID/LC_MESSAGES
-@dirrmtry share/locale/id_ID
-@dirrmtry share/locale/hu_HU/LC_MESSAGES
-@dirrmtry share/locale/hu_HU
-@dirrmtry share/locale/he_IL/LC_MESSAGES
-@dirrmtry share/locale/he_IL
-@dirrmtry share/locale/gl_ES/LC_MESSAGES
-@dirrmtry share/locale/gl_ES
-@dirrmtry share/locale/fi_FI/LC_MESSAGES
-@dirrmtry share/locale/fi_FI
-@dirrmtry share/locale/eu_ES/LC_MESSAGES
-@dirrmtry share/locale/eu_ES
-@dirrmtry share/locale/et_EE/LC_MESSAGES
-@dirrmtry share/locale/et_EE
-@dirrmtry share/locale/da_DK/LC_MESSAGES
-@dirrmtry share/locale/da_DK
-@dirrmtry share/locale/cs_CZ/LC_MESSAGES
-@dirrmtry share/locale/cs_CZ
-@dirrmtry share/locale/co/LC_MESSAGES
-@dirrmtry share/locale/co
+share/locale/an/LC_MESSAGES/filezilla.mo
+share/locale/ar/LC_MESSAGES/filezilla.mo
+share/locale/bg_BG/LC_MESSAGES/filezilla.mo
+share/locale/ca/LC_MESSAGES/filezilla.mo
+share/locale/ca_ES@valencia/LC_MESSAGES/filezilla.mo
+share/locale/co/LC_MESSAGES/filezilla.mo
+share/locale/cs_CZ/LC_MESSAGES/filezilla.mo
+share/locale/da_DK/LC_MESSAGES/filezilla.mo
+share/locale/de/LC_MESSAGES/filezilla.mo
+share/locale/el/LC_MESSAGES/filezilla.mo
+share/locale/es/LC_MESSAGES/filezilla.mo
+share/locale/et_EE/LC_MESSAGES/filezilla.mo
+share/locale/eu/LC_MESSAGES/filezilla.mo
+share/locale/eu_ES/LC_MESSAGES/filezilla.mo
+share/locale/fa_IR/LC_MESSAGES/filezilla.mo
+share/locale/fi_FI/LC_MESSAGES/filezilla.mo
+share/locale/fr/LC_MESSAGES/filezilla.mo
+share/locale/gl_ES/LC_MESSAGES/filezilla.mo
+share/locale/he_IL/LC_MESSAGES/filezilla.mo
+share/locale/hr/LC_MESSAGES/filezilla.mo
+share/locale/hu_HU/LC_MESSAGES/filezilla.mo
+share/locale/hy/LC_MESSAGES/filezilla.mo
+share/locale/id_ID/LC_MESSAGES/filezilla.mo
+share/locale/is/LC_MESSAGES/filezilla.mo
+share/locale/it/LC_MESSAGES/filezilla.mo
+share/locale/ja_JP/LC_MESSAGES/filezilla.mo
+share/locale/ka/LC_MESSAGES/filezilla.mo
+share/locale/kab/LC_MESSAGES/filezilla.mo
+share/locale/km_KH/LC_MESSAGES/filezilla.mo
+share/locale/ko_KR/LC_MESSAGES/filezilla.mo
+share/locale/ku/LC_MESSAGES/filezilla.mo
+share/locale/ky/LC_MESSAGES/filezilla.mo
+share/locale/lo_LA/LC_MESSAGES/filezilla.mo
+share/locale/lt_LT/LC_MESSAGES/filezilla.mo
+share/locale/lv_LV/LC_MESSAGES/filezilla.mo
+share/locale/mk_MK/LC_MESSAGES/filezilla.mo
+share/locale/nb_NO/LC_MESSAGES/filezilla.mo
+share/locale/ne/LC_MESSAGES/filezilla.mo
+share/locale/nl/LC_MESSAGES/filezilla.mo
+share/locale/nn_NO/LC_MESSAGES/filezilla.mo
+share/locale/oc/LC_MESSAGES/filezilla.mo
+share/locale/pl_PL/LC_MESSAGES/filezilla.mo
+share/locale/pt_BR/LC_MESSAGES/filezilla.mo
+share/locale/pt_PT/LC_MESSAGES/filezilla.mo
+share/locale/ro_RO/LC_MESSAGES/filezilla.mo
+share/locale/ru/LC_MESSAGES/filezilla.mo
+share/locale/sk_SK/LC_MESSAGES/filezilla.mo
+share/locale/sl_SI/LC_MESSAGES/filezilla.mo
+share/locale/sr/LC_MESSAGES/filezilla.mo
+share/locale/sv/LC_MESSAGES/filezilla.mo
+share/locale/th_TH/LC_MESSAGES/filezilla.mo
+share/locale/tr/LC_MESSAGES/filezilla.mo
+share/locale/uk_UA/LC_MESSAGES/filezilla.mo
+share/locale/vi_VN/LC_MESSAGES/filezilla.mo
+share/locale/zh_CN/LC_MESSAGES/filezilla.mo
+share/locale/zh_TW/LC_MESSAGES/filezilla.mo
+share/pixmaps/filezilla.png
+@dirrmtry %%DATADIR%%/docs
+@dirrmtry %%DATADIR%%/resources/16x16
+@dirrmtry %%DATADIR%%/resources/20x20
+@dirrmtry %%DATADIR%%/resources/24x24
+@dirrmtry %%DATADIR%%/resources/32x32
+@dirrmtry %%DATADIR%%/resources/48x48
+@dirrmtry %%DATADIR%%/resources/blukis/16x16
+@dirrmtry %%DATADIR%%/resources/blukis/32x32
+@dirrmtry %%DATADIR%%/resources/blukis/48x48
+@dirrmtry %%DATADIR%%/resources/blukis
+@dirrmtry %%DATADIR%%/resources/cyril/16x16
+@dirrmtry %%DATADIR%%/resources/cyril
+@dirrmtry %%DATADIR%%/resources/lone/16x16
+@dirrmtry %%DATADIR%%/resources/lone/32x32
+@dirrmtry %%DATADIR%%/resources/lone/48x48
+@dirrmtry %%DATADIR%%/resources/lone
+@dirrmtry %%DATADIR%%/resources/minimal/16x16
+@dirrmtry %%DATADIR%%/resources/minimal/32x32
+@dirrmtry %%DATADIR%%/resources/minimal
+@dirrmtry %%DATADIR%%/resources/opencrystal/16x16
+@dirrmtry %%DATADIR%%/resources/opencrystal/20x20
+@dirrmtry %%DATADIR%%/resources/opencrystal/24x24
+@dirrmtry %%DATADIR%%/resources/opencrystal/32x32
+@dirrmtry %%DATADIR%%/resources/opencrystal/48x48
+@dirrmtry %%DATADIR%%/resources/opencrystal
+@dirrmtry %%DATADIR%%/resources/sun/48x48
+@dirrmtry %%DATADIR%%/resources/sun
+@dirrmtry %%DATADIR%%/resources/tango/16x16
+@dirrmtry %%DATADIR%%/resources/tango/32x32
+@dirrmtry %%DATADIR%%/resources/tango/48x48
+@dirrmtry %%DATADIR%%/resources/tango
+@dirrmtry %%DATADIR%%/resources/xrc
+@dirrmtry %%DATADIR%%/resources
+@dirrmtry %%DATADIR%%
 @dirrmtry share/locale/ca_ES@valencia/LC_MESSAGES
 @dirrmtry share/locale/ca_ES@valencia
-@dirrmtry share/locale/bg_BG/LC_MESSAGES
-@dirrmtry share/locale/bg_BG
-@dirrmtry share/locale/an/LC_MESSAGES
-@dirrmtry share/locale/an
+@dirrmtry share/locale/co/LC_MESSAGES
+@dirrmtry share/locale/co
+@dirrmtry share/locale/cs_CZ/LC_MESSAGES
+@dirrmtry share/locale/cs_CZ
+@dirrmtry share/locale/da_DK/LC_MESSAGES
+@dirrmtry share/locale/da_DK
+@dirrmtry share/locale/et_EE/LC_MESSAGES
+@dirrmtry share/locale/et_EE
+@dirrmtry share/locale/eu_ES/LC_MESSAGES
+@dirrmtry share/locale/eu_ES
+@dirrmtry share/locale/fi_FI/LC_MESSAGES
+@dirrmtry share/locale/fi_FI
+@dirrmtry share/locale/gl_ES/LC_MESSAGES
+@dirrmtry share/locale/gl_ES
+@dirrmtry share/locale/he_IL/LC_MESSAGES
+@dirrmtry share/locale/he_IL
+@dirrmtry share/locale/hu_HU/LC_MESSAGES
+@dirrmtry share/locale/hu_HU
+@dirrmtry share/locale/id_ID/LC_MESSAGES
+@dirrmtry share/locale/id_ID
+@dirrmtry share/locale/ja_JP/LC_MESSAGES
+@dirrmtry share/locale/ja_JP
+@dirrmtry share/locale/kab/LC_MESSAGES
+@dirrmtry share/locale/kab
+@dirrmtry share/locale/km_KH/LC_MESSAGES
+@dirrmtry share/locale/km_KH
+@dirrmtry share/locale/ko_KR/LC_MESSAGES
+@dirrmtry share/locale/ko_KR
+@dirrmtry share/locale/ky/LC_MESSAGES
+@dirrmtry share/locale/ky
+@dirrmtry share/locale/lo_LA/LC_MESSAGES
+@dirrmtry share/locale/lo_LA
+@dirrmtry share/locale/lt_LT/LC_MESSAGES
+@dirrmtry share/locale/lt_LT
+@dirrmtry share/locale/lv_LV/LC_MESSAGES
+@dirrmtry share/locale/lv_LV
+@dirrmtry share/locale/mk_MK/LC_MESSAGES
+@dirrmtry share/locale/mk_MK
+@dirrmtry share/locale/nb_NO/LC_MESSAGES
+@dirrmtry share/locale/nb_NO
+@dirrmtry share/locale/nn_NO/LC_MESSAGES
+@dirrmtry share/locale/nn_NO
+@dirrmtry share/locale/pl_PL/LC_MESSAGES
+@dirrmtry share/locale/pl_PL
+@dirrmtry share/locale/ro_RO/LC_MESSAGES
+@dirrmtry share/locale/ro_RO
+@dirrmtry share/locale/sk_SK/LC_MESSAGES
+@dirrmtry share/locale/sk_SK
+@dirrmtry share/locale/sl_SI/LC_MESSAGES
+@dirrmtry share/locale/sl_SI
+@dirrmtry share/locale/th_TH/LC_MESSAGES
+@dirrmtry share/locale/th_TH
+@dirrmtry share/locale/uk_UA/LC_MESSAGES
+@dirrmtry share/locale/uk_UA
+@dirrmtry share/locale/vi_VN/LC_MESSAGES
+@dirrmtry share/locale/vi_VN

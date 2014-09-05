@@ -1,5 +1,5 @@
---- ./configure.in.orig	2011-03-21 20:49:39.000000000 +0100
-+++ ./configure.in	2011-03-21 20:50:42.000000000 +0100
+--- ./configure.in.orig	2004-01-18 00:19:56.000000000 +0100
++++ ./configure.in	2014-08-15 18:32:37.000000000 +0200
 @@ -74,126 +74,6 @@
  # Checks for libraries.
  dnl Checks for Berkeley DB

@@ -142,9 +142,8 @@ include/spandsp/vector_float.h
 include/spandsp/vector_int.h
 include/spandsp/version.h
 lib/libspandsp.a
-lib/libspandsp.la
 lib/libspandsp.so
-lib/libspandsp.so.2
+lib/libspandsp.so.2.0.0
 libdata/pkgconfig/spandsp.pc
 @dirrm include/spandsp/private
 @dirrm include/spandsp

@@ -11,7 +11,8 @@ COMMENT=	ExecJS lets you run JavaScript code from Ruby
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	rubygem-multi_json>=1.0:${PORTSDIR}/devel/rubygem-multi_json
+RUN_DEPENDS=	rubygem-multi_json>=1.0:${PORTSDIR}/devel/rubygem-multi_json \
+		node:${PORTSDIR}/www/node
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes

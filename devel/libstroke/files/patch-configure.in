@@ -1,0 +1,21 @@
+--- configure.in.orig
++++ configure.in
+@@ -81,16 +81,8 @@
+ [  --with-mouse-footprints  Draw mouse footprints in X],
+ [AC_DEFINE(STROKE_MOUSE_FOOTPRINTS)])
+ 
+-dnl check for GTK
+-dnl we won't build libgstroke if it's not found
+-AC_MSG_CHECKING(gtk+ library)
+-AM_PATH_GTK(1.2.7, HAVE_LIBGTK=yes
+-  AC_DEFINE(HAVE_LIBGTK, 1, [Define if libgtk is available]),
+-  AC_MSG_WARN(
+-***** NOTE: The GNOME stroke support won't be built
+-)
+-  HAVE_LIBGTK=no,
+-)
++AC_SUBST(GTK_CFLAGS)
++AC_SUBST(GTK_LIBS)
+ AM_CONDITIONAL(HAVE_LIBGTK,        test "x$HAVE_LIBGTK" = "xyes")
+ 
+ 

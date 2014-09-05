@@ -15,7 +15,7 @@ LICENSE=	xsel-conrad
 LICENSE_GROUPS=	COPYFREE
 LICENSE_NAME=	xsel-conrad license
 LICENSE_FILE=	${WRKSRC}/COPYING
-LICENSE_PERMS=	auto-accept dist-mirror dist-sell pkg-mirror pkg-sell
+LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 CONFLICTS_INSTALL=	xsel-[0-9]*
 USE_XORG=	x11 xext xt xproto ice sm

@@ -16,7 +16,7 @@ USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	 --with-xv-path=${LOCALBASE}/lib
 CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+LIBS+=		-L${LOCALBASE}/lib -lm
 
 PLIST_FILES=	bin/sisctrl man/man1/sisctrl.1x.gz
 

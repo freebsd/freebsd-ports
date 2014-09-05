@@ -127,7 +127,7 @@ DEFAULT_DVD_DEVICE=/dev/cd0
 post-patch:
 .if ${DIST}=="bad"
 # custom rule to fix opencv detection in configure
-	@${REINPLACE_CMD} -e 's|opencv <= 2.4.6.1|opencv <= 2.4.7|g' \
+	@${REINPLACE_CMD} -e 's|opencv <= 2.4.8|opencv <= 2.4.9|g' \
 		${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|/dev/dvd|${DEFAULT_DVD_DEVICE}|g' \
 		${WRKSRC}/ext/resindvd/resindvdbin.c \

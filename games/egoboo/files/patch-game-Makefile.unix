@@ -23,7 +23,7 @@
 -LDFLAGS := ${SDLCONF_L} -lSDL_ttf -lSDL_mixer -lSDL_image -lGL -lGLU
 +INC     := -I. -I.. ${SDLCONF_I} -I${LOCALBASE}/include
 +CFLAGS  += ${INC}
-+LDFLAGS := ${SDLCONF_L} -L${LOCALBASE}/lib -lSDL_ttf -lSDL_mixer -lSDL_image -lGL -lGLU
++LDFLAGS := ${SDLCONF_L} -L${LOCALBASE}/lib -lSDL_ttf -lSDL_mixer -lSDL_image -lGL -lGLU -lm
  
  EGO_BIN := egoboo
  

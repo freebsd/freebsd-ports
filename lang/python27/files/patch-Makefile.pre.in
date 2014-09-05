@@ -1,14 +1,6 @@
 # Description: Link scripts in the same way Python3 does
 # Submitted by: mva
 
-# Description: Run pycompile only once
-# Submitted by: antoine (r350207)
-# TODO: ?
-
-# Description: Run ranlib before installing the library read-only
-# Submitted by: antoine@ (r350207)
-# TODO: Upstream
-
 --- Makefile.pre.in.orig	2014-06-30 04:05:39.000000000 +0200
 +++ Makefile.pre.in	2014-07-26 11:09:46.000000000 +0200
 @@ -868,6 +868,12 @@
@@ -24,28 +16,3 @@
  
  # Install the interpreter with $(VERSION) affixed
  # This goes into $(exec_prefix)
-@@ -1010,12 +1016,12 @@
- 			$(DESTDIR)$(LIBDEST)/distutils/tests ; \
- 	fi
- 	PYTHONPATH=$(DESTDIR)$(LIBDEST)  $(RUNSHARED) \
--		$(PYTHON_FOR_BUILD) -Wi -tt $(DESTDIR)$(LIBDEST)/compileall.py \
-+		$(PYTHON_FOR_BUILD) -B -Wi -tt $(DESTDIR)$(LIBDEST)/compileall.py \
- 		-d $(LIBDEST) -f \
- 		-x 'bad_coding|badsyntax|site-packages|lib2to3/tests/data' \
- 		$(DESTDIR)$(LIBDEST)
- 	PYTHONPATH=$(DESTDIR)$(LIBDEST) $(RUNSHARED) \
--		$(PYTHON_FOR_BUILD) -Wi -tt -O $(DESTDIR)$(LIBDEST)/compileall.py \
-+		$(PYTHON_FOR_BUILD) -B -Wi -tt -O $(DESTDIR)$(LIBDEST)/compileall.py \
- 		-d $(LIBDEST) -f \
- 		-x 'bad_coding|badsyntax|site-packages|lib2to3/tests/data' \
- 		$(DESTDIR)$(LIBDEST)
-@@ -1093,8 +1099,8 @@
- 			if test "$(SO)" = .dll; then \
- 				$(INSTALL_DATA) $(LDLIBRARY) $(DESTDIR)$(LIBPL) ; \
- 			else \
-+				$(RANLIB) $(LIBRARY) ; \
- 				$(INSTALL_DATA) $(LIBRARY) $(DESTDIR)$(LIBPL)/$(LIBRARY) ; \
--				$(RANLIB) $(DESTDIR)$(LIBPL)/$(LIBRARY) ; \
- 			fi; \
- 		else \
- 			echo Skip install of $(LIBRARY) - use make frameworkinstall; \

@@ -22,6 +22,8 @@ GNU_CONFIGURE=	yes
 GNU_CONFIGURE_PREFIX=	${LLVM_PREFIX}
 USE_LDCONFIG=	${LLVM_PREFIX}/lib
 
+ONLY_FOR_ARCHS=	i386 amd64
+
 python_OLD_CMD=	/usr/bin/env python
 python_CMD=	/usr/bin/env python2
 SHEBANG_FILES=	test/Scripts/coff-dump.py test/Scripts/elf-dump \

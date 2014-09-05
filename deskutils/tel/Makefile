@@ -3,21 +3,35 @@
 
 PORTNAME=	tel
 PORTVERSION=	0.1.7.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	deskutils
-MASTER_SITES=	CENKES BERLIOS
+MASTER_SITES=	SF/${PORTNAME}.berlios
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Little console-based phone book manager
 
-USES=		gettext tar:bzip2
-USE_PYTHON=	yes
-USE_PYDISTUTILS=yes
-NO_STAGE=	yes
+LICENSE=	MIT
+
+NO_ARCH=	yes
+
+USES=		gettext python shebangfix tar:bzip2
+SHEBANG_FILES=	src/tel.py
+python_OLD_CMD=	/usr/bin/env python
+python_CMD=	${PYTHON_CMD}
+USE_PYTHON=	distutils
 
 post-patch:
-	@${REINPLACE_CMD} \
-		-e 's,distutils\.command\.install ,setuptools\.command\.install ,' \
+	@${REINPLACE_CMD} -e \
+		's|distutils\.command\.install |setuptools\.command\.install |' \
 		${WRKSRC}/appdistutils.py
+	@${REINPLACE_CMD} -e \
+		's|$${install_messages}|${PREFIX}/share/locale| ; \
+		 s|$${install_app_modules}|${PREFIX}/lib/tel| ; \
+		 s|$${install_app_data}|${DATADIR}|' \
+		${WRKSRC}/src/tel.py
+
+post-install:
+	@${FIND} ${STAGEDIR}${PREFIX}/bin -type l -delete
+	@${LN} -sf ${PREFIX}/lib/tel/tel.py ${STAGEDIR}${PREFIX}/bin/tel
 
 .include <bsd.port.mk>

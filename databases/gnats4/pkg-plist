@@ -1,14 +1,14 @@
+@owner gnats
+@mode 4555
 bin/edit-pr
+@owner
+@mode
 bin/getclose
 bin/install-sid
 bin/query-pr
 bin/send-pr
-%%SERVER%%@unexec if cmp -s %D/etc/gnats/databases %D/etc/gnats/databases.default; then rm -f %D/etc/gnats/databases; fi
-%%SERVER%%etc/gnats/databases.default
-%%SERVER%%@exec [ -f %B/databases ] || cp %B/%f %B/databases
-%%SERVER%%@unexec if cmp -s %D/etc/gnats/gnatsd.host_access %D/etc/gnats/gnatsd.host_access.default; then rm -f %D/etc/gnats/gnatsd.host_access; fi
-%%SERVER%%etc/gnats/gnatsd.host_access.default
-%%SERVER%%@exec [ -f %B/gnatsd.host_access ] || cp %B/%f %B/gnatsd.host_access
+%%SERVER%%@sample etc/gnats/databases.sample
+%%SERVER%%@sample etc/gnats/gnatsd.host_access.sample
 etc/gnats/defaults/addresses
 etc/gnats/defaults/categories
 etc/gnats/defaults/classes
@@ -18,16 +18,18 @@ etc/gnats/defaults/responsible
 etc/gnats/defaults/states
 etc/gnats/defaults/submitters
 etc/gnats/send-pr.conf
-@dirrm etc/gnats/defaults
-@dirrmtry etc/gnats
 %%SERVER%%libexec/gnats/at-pr
 %%SERVER%%libexec/gnats/check-db
 %%SERVER%%libexec/gnats/delete-pr
 libexec/gnats/diff-prs
 libexec/gnats/file-pr
+@owner gnats
+@mode 4555
 %%SERVER%%libexec/gnats/gen-index
-%%SERVER%%libexec/gnats/gnats-pwconv
 %%SERVER%%libexec/gnats/gnatsd
+@owner
+@mode
+%%SERVER%%libexec/gnats/gnats-pwconv
 libexec/gnats/mail-agent
 %%SERVER%%libexec/gnats/mail-query
 %%SERVER%%libexec/gnats/mkcat
@@ -36,11 +38,27 @@ libexec/gnats/pr-age
 libexec/gnats/pr-edit
 %%SERVER%%libexec/gnats/queue-pr
 %%SERVER%%libexec/gnats/rmcat
-@dirrm libexec/gnats
-@exec mkdir -p %%GNATSDBDIR%%
-@exec chown gnats %%GNATSDBDIR%%
-@dirrmtry %%GNATSDBDIR%%
-%%PORTDOCS%%%%DOCSDIR%%/NEWS
-%%PORTDOCS%%%%DOCSDIR%%/UPGRADING
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
+man/man1/edit-pr.1.gz
+man/man1/query-pr.1.gz
+man/man1/send-pr.1.gz
+man/man5/databases.5.gz 
+man/man5/dbconfig.5.gz
+man/man7/gnats.7.gz
+man/man8/delete-pr.8.gz
+man/man8/getclose.8.gz
+man/man8/file-pr.8.gz
+man/man8/gen-index.8.gz
+man/man8/gnatsd.8.gz
+man/man8/install-sid.8.gz
+man/man8/mkcat.8.gz
+man/man8/mkdb.8.gz
+man/man8/pr-edit.8.gz
+man/man8/queue-pr.8.gz
+man/man8/rmcat.8.gz
 %%EMACS_SITE_LISPDIR%%/gnats.el
+@exec mkdir -p %%GNATSDBDIR%%/gnats && chown -R gnats %%GNATSDBDIR%%
+@dirrm etc/gnats/defaults
+@dirrmtry etc/gnats
+@dirrm libexec/gnats
+@dirrmtry %%GNATSDBDIR%%/gnats
+@dirrmtry %%GNATSDBDIR%%

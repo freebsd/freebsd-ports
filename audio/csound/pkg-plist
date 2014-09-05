@@ -58,7 +58,7 @@ lib/csound/plugins64/libdoppler.so
 lib/csound/plugins64/libfareygen.so
 %%FLUIDSYNTH%%lib/csound/plugins64/libfluidOpcodes.so
 lib/csound/plugins64/libfractalnoise.so
-lib/csound/plugins64/libimage.so
+%%PNG%%lib/csound/plugins64/libimage.so
 lib/csound/plugins64/libipmidi.so
 %%JACK%%lib/csound/plugins64/libjackTransport.so
 %%JACK%%lib/csound/plugins64/libjacko.so

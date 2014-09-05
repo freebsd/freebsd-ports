@@ -15,7 +15,7 @@ RUN_DEPENDS=	fc-cache:${PORTSDIR}/x11-fonts/fontconfig
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 
-FONTSDIR=	lib/X11/fonts/${PORTNAME}/
+FONTSDIR=	lib/X11/fonts/${PORTNAME}
 PLIST_SUB+=	FONTSDIR=${FONTSDIR}
 
 do-install:

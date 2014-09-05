@@ -1,0 +1,74 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+# PROVIDE: phd
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+
+#
+# Add the following line to /etc/rc.conf to enable phabricator daemons:
+# phd_enable (bool):	Set to "NO" by default
+#			Set it to "YES" to enable phd
+# phd_fib (str):	Set an altered default network view for phd
+
+. /etc/rc.subr
+
+name="phd"
+rcvar=phd_enable
+
+load_rc_config "$name"
+
+: ${phd_enable="NO"}
+
+command="%%PREFIX%%/lib/php/phabricator/bin/phd"
+
+extra_commands="launch list log"
+
+start_cmd="${command} start"
+stop_cmd="${command} stop"
+status_cmd="${command} status"
+restart_cmd="${command} restart"
+poll_cmd="phd_poll"
+launch_cmd="${command} launch"
+list_cmd="${command} list"
+log_cmd="${command} log"
+
+start_precmd="phd_precmd"
+stop_precmd="phd_precmd"
+status_precmd="phd_precmd"
+restart_precmd="phd_precmd"
+launch_precmd="phd_precmd"
+list_precmd="phd_precmd"
+log_precmd="phd_precmd"
+
+required_files="%%PREFIX%%/lib/php/phabricator/conf/local/local.json"
+
+PATH="${PATH}:%%PREFIX%%/bin"
+
+phd_precmd()
+{
+	if command -v check_namevarlist > /dev/null 2>&1; then
+		check_namevarlist fib && return 0
+	fi
+
+	${SYSCTL} net.fibs >/dev/null 2>&1 || return 0
+
+	phd_fib=${phd_fib:-"NONE"}
+	case "$phd_fib" in
+	[Nn][Oo][Nn][Ee])
+		;;
+	*)
+		command="setfib -F ${phd_fib} ${command}"
+		;;
+	esac
+}
+
+phd_poll()
+{
+	pids=`${status_cmd} 2>/dev/null | awk '{ print $3 }' | egrep "^[0-9]+$"`
+	wait_for_pids $pids
+}
+
+run_rc_command $*

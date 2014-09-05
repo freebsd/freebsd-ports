@@ -3,23 +3,48 @@
 
 PORTNAME=	myBudget
 PORTVERSION=	0.60
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	finance gnome
 MASTER_SITES=	http://www.abisource.com/~msevior/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Gtk+-2 finance manager
 
-NO_BUILD=	yes
-USE_PYTHON=	yes
-USE_GNOME=	pygnome2
+LICENSE=	LGPL21
 
-NO_STAGE=	yes
+NO_ARCH=	yes
+NO_BUILD=	yes
+USE_GNOME=	pygnome2
+INSTALL_ICONS=	yes
+
+USES=		python shebangfix
+SHEBANG_FILES=	myBudget.py
+python_CMD=	${PYTHON_CMD}
+
+OPTIONS_DEFINE=	DOCS
+
 post-patch:
-	@${REINPLACE_CMD} -e 's|gobject.so|_gobject.so|' \
-	    ${WRKSRC}/install.py
+	@${REINPLACE_CMD} -e \
+		"/^sPREFIX/s|=.*| = '${PREFIX}/share'|" ${WRKSRC}/myBudget.py
 
 do-install:
-	cd ${WRKSRC} && ${PYTHON_CMD} ./install.py ${PREFIX}
+	(cd ${WRKSRC} && ${INSTALL_SCRIPT} myBudget.py \
+		${STAGEDIR}${PREFIX}/bin/myBudget)
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	(cd ${WRKSRC} && ${INSTALL_DATA} *.myb *.png *.txt \
+		${STAGEDIR}${DATADIR})
+	@${MKDIR} ${STAGEDIR}${DATADIR}/glade
+	(cd ${WRKSRC}/glade && ${INSTALL_DATA} *.* \
+		${STAGEDIR}${DATADIR}/glade)
+	@${MKDIR} ${STAGEDIR}${DATADIR}/po
+	(cd ${WRKSRC}/po && ${INSTALL_DATA} *.po \
+		${STAGEDIR}${DATADIR}/po)
+	(cd ${WRKSRC} && ${INSTALL_DATA} *.desktop \
+		${STAGEDIR}${PREFIX}/share/applications)
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/icons/hicolor/scalable/apps
+	(cd ${WRKSRC} && ${INSTALL_DATA} *.svg \
+		${STAGEDIR}${PREFIX}/share/icons/hicolor/scalable/apps)
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	@(cd ${WRKSRC}/docs && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR})
 
 .include <bsd.port.mk>

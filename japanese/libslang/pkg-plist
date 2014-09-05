@@ -1,19 +1,16 @@
-lib/libslang.a
-lib/libslang.so
-lib/libslang.so.2
 include/slang/slang.h
 include/slang/slcurses.h
 include/slang/slkanji.h
+lib/libslang.a
+lib/libslang.so
+lib/libslang.so.2
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/changes.txt
+%%PORTDOCS%%%%DOCSDIR%%/cref.txt
+%%PORTDOCS%%%%DOCSDIR%%/cslang.txt
+%%PORTDOCS%%%%DOCSDIR%%/slang.txt
+%%PORTDOCS%%%%DOCSDIR%%/slangdoc.html
+%%PORTDOCS%%%%DOCSDIR%%/slangfun.txt
+%%PORTDOCS%%%%DOCSDIR%%/slang-j.doc
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm include/slang
-share/doc/slang/COPYING
-share/doc/slang/COPYING.ART
-share/doc/slang/COPYING.GPL
-share/doc/slang/COPYRIGHT
-share/doc/slang/changes.txt
-share/doc/slang/cref.txt
-share/doc/slang/cslang.txt
-share/doc/slang/slang.txt
-share/doc/slang/slangdoc.html
-share/doc/slang/slangfun.txt
-share/doc/slang/slang-j.doc
-@dirrm share/doc/slang

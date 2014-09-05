@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pcbsd-utils
-PORTVERSION=	1394538598
+PORTVERSION=	1409841477
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.pcbsd.org/~kris/software/ \
 		ftp://ftp.pcbsd.org/pub/software/
@@ -10,21 +10,16 @@ MASTER_SITES=	http://www.pcbsd.org/~kris/software/ \
 MAINTAINER=	kmoore@FreeBSD.org
 COMMENT=	PC-BSD Command-Line Utilities
 
-RUN_DEPENDS=	pkg-static:${PORTSDIR}/ports-mgmt/pkg \
-		svn:${PORTSDIR}/devel/subversion \
-		mksquashfs:${PORTSDIR}/sysutils/squashfs-tools \
-		debootstrap:${PORTSDIR}/sysutils/debootstrap \
-		sipcalc:${PORTSDIR}/net-mgmt/sipcalc \
+RUN_DEPENDS=	sipcalc:${PORTSDIR}/net-mgmt/sipcalc \
 		eject:${PORTSDIR}/sysutils/eject \
 		unzip:${PORTSDIR}/archivers/unzip \
-		${PYTHON_PKGNAMEPREFIX}requests1>=1.0.0:${PORTSDIR}/www/py-requests1 \
 		jailme:${PORTSDIR}/sysutils/jailme
 
 WRKSRC=		${WRKDIR}/src-sh
 CONFLICTS?=	pbi-manager-[0-9]*
-USES=		pkgconfig fuse tar:bzip2
+USE_QT4=	corelib network qmake moc_build rcc_build uic_build
+USES=		pkgconfig tar:bzip2
 NO_BUILD=	yes
-USE_PYTHON=	yes
 
 .include <bsd.port.pre.mk>
 

@@ -5,12 +5,12 @@
   # Your foreman server address
   :host: 'https://localhost/'
 
-  # Credentials. You'll be asked for the interactively if you leave them blank here
+  # Credentials. You'll be asked for them interactively if you leave them blank here
   :username: 'admin'
   #:password: 'example'
 
   # Check API documentation cache status on each request
   #:refresh_cache: false
 
-  # API request timeout, set -1 for infinity
+  # API request timeout. Set to -1 for no timeout
   #:request_timeout: 120 #seconds

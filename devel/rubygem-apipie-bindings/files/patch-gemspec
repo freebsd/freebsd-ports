@@ -1,0 +1,11 @@
+--- ./apipie-bindings-0.0.8.gemspec.orig	2014-08-24 19:44:19.530232640 +0000
++++ ./apipie-bindings-0.0.8.gemspec	2014-08-24 19:44:37.144232003 +0000
+@@ -72,7 +72,7 @@
+     requirements:
+     - - ~>
+       - !ruby/object:Gem::Version
+-        version: '1.0'
++        version: '2.0'
+   type: :runtime
+   prerelease: false
+   version_requirements: !ruby/object:Gem::Requirement

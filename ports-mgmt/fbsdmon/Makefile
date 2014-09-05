@@ -16,6 +16,9 @@ LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl \
 SUB_FILES=	600.fbsdmon pkg-message
 USE_RC_SUBR=	fbsdmon
 
+post-patch:
+	@${REINPLACE_CMD} '/^LIBS =/s/$$/ -lz/' ${WRKSRC}/Makefile
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/fbsdmon ${STAGEDIR}${PREFIX}/sbin
 	${MKDIR} ${STAGEDIR}/var/db/fbsdmon

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	inline
-PORTVERSION=	3.12.2
+PORTVERSION=	3.12.3
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 DISTNAME=	RubyInline-${PORTVERSION}
@@ -10,8 +10,7 @@ DISTNAME=	RubyInline-${PORTVERSION}
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Inline::C allows you to embed C/Ruby directly in ruby scripts
 
-RUN_DEPENDS=	sow:${PORTSDIR}/devel/rubygem-hoe \
-    		zentest:${PORTSDIR}/devel/rubygem-zentest
+RUN_DEPENDS=	zentest:${PORTSDIR}/devel/rubygem-zentest
 
 GEM_NAME=	${DISTNAME}
 

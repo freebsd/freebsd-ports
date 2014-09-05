@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Shapely
-PORTVERSION=	1.3.1
-PORTREVISION=	1
+PORTVERSION=	1.3.3
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -17,8 +16,7 @@ LIB_DEPENDS=	libgeos_c.so:${PORTSDIR}/graphics/geos
 
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-USE_PYTHON=	yes
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
+USES=		python
+USE_PYTHON=	distutils autoplist
 
 .include <bsd.port.mk>

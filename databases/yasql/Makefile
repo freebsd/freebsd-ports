@@ -1,81 +1,53 @@
 # Created by: Thierry Thomas <thierry@pompo.net>
 # $FreeBSD$
 
-PORTNAME=		yasql
-PORTVERSION=		1.83
-PORTREVISION=		1
-CATEGORIES=		databases
-MASTER_SITES=		SF
+PORTNAME=	yasql
+PORTVERSION=	1.83
+PORTREVISION=	1
+CATEGORIES=	databases
+MASTER_SITES=	SF
 
-MAINTAINER=		ports@FreeBSD.org
-COMMENT=		Yet Another SQL*Plus Replacement
-
-BUILD_DEPENDS=	p5-DBD-Oracle>=0:${PORTSDIR}/databases/p5-DBD-Oracle	\
-		p5-ReadLine-Gnu>=0:${PORTSDIR}/devel/p5-ReadLine-Gnu
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Yet Another SQL*Plus Replacement
 
 LICENSE=	GPLv2
 
-# Time::HiRes is used for high resolution benchmarking
-.if !defined(WITHOUT_HIRES)
-BUILD_DEPENDS+=	p5-Time-HiRes>=0:${PORTSDIR}/devel/p5-Time-HiRes
-.endif
+RUN_DEPENDS=	p5-DBD-Oracle>0:${PORTSDIR}/databases/p5-DBD-Oracle \
+		p5-ReadLine-Gnu>0:${PORTSDIR}/devel/p5-ReadLine-Gnu
 
-# Text::CSV_XS is required to output CSV or input from CSV files
-.if !defined(WITHOUT_CSV)
-BUILD_DEPENDS+=	p5-Text-CSV_XS>=0:${PORTSDIR}/textproc/p5-Text-CSV_XS
-.endif
+NO_ARCH=	yes
 
-# Term::ReadKey is used for better input and output control
-.if !defined(WITHOUT_READKEY)
-BUILD_DEPENDS+=	p5-Term-ReadKey>=0:${PORTSDIR}/devel/p5-Term-ReadKey
-.endif
-
-HAS_CONFIGURE=	yes
-CONFIGURE_ARGS=	--prefix=${PREFIX}
-USES+=		perl5
+USES=		perl5
+GNU_CONFIGURE=	yes
 ALL_TARGET=	default
 
 SUB_FILES=	pkg-message
-PKGMESSAGE=	${WRKDIR}/pkg-message
 
-PLIST_FILES=	bin/yasql etc/yasql.conf.sample
+OPTIONS_DEFINE=		CSV HIRES READKEY
 
-MAN1=		yasql.1
+CSV_DESC=		Support for in/out CSV files
+CSV_BUILD_DEPENDS=	p5-Text-CSV_XS>0:${PORTSDIR}/textproc/p5-Text-CSV_XS
+HIRES_DESC=		Support for high resolution benchmarking
+HIRES_BUILD_DEPENDS=	p5-Time-HiRes>0:${PORTSDIR}/devel/p5-Time-HiRes
+READKEY_DESC=		Better input and output control
+READKEY_BUILD_DEPENDS=	p5-Term-ReadKey>0:${PORTSDIR}/devel/p5-Term-ReadKey
 
-PORTDOCS=	README yasql.html
+post-patch:
+	@${REINPLACE_CMD} -e \
+		's| /bin/more| /usr/bin/more|' ${WRKSRC}/yasql.conf
 
-OPTIONS_DEFINE=	DOCS
+post-build:
+	@${LN} -sf yasql.conf ${WRKSRC}/yasql.conf.sample
 
-NO_STAGE=	yes
-pre-everything::
-	@${ECHO_MSG}
-	@${ECHO_MSG} "You may use the following build options:"
-	@${ECHO_MSG}
-	@${ECHO_MSG} "WITHOUT_CSV	disable support for in/out CSV files"
-	@${ECHO_MSG} "WITHOUT_HIRES	disable support for high resolution benchmarking"
-	@${ECHO_MSG} "WITHOUT_READKEY	disable a better input and output control"
-	@${ECHO_MSG}
-
-pre-configure:
-	${REINPLACE_CMD} 's,%%LOCALBASE%%,${LOCALBASE},g' ${WRKSRC}/yasql.in
-	${PERL} -pi -e 's|/bin/more|/usr/bin/more|' ${WRKSRC}/yasql.conf
-
-pre-install:
-	if [ -f ${PREFIX}/etc/yasql.conf ] ; then \
-		${MV} ${PREFIX}/etc/yasql.conf ${PREFIX}/etc/yasql.conf.precious ; \
-	fi
-
-post-install:
-	${MV} ${PREFIX}/etc/yasql.conf ${PREFIX}/etc/yasql.conf.sample
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
-	@if [ -f ${PREFIX}/etc/yasql.conf.precious ] ; then \
-		${MV} ${PREFIX}/etc/yasql.conf.precious ${PREFIX}/etc/yasql.conf ; \
-	else \
-		${ECHO_MSG} ; \
-		${CAT} ${PKGMESSAGE} ; \
-		${ECHO_MSG} ; \
-	fi
+do-install:
+	(cd ${WRKSRC} && ${INSTALL_SCRIPT} yasql \
+		${STAGEDIR}${PREFIX}/bin)
+	(cd ${WRKSRC} && ${INSTALL_MAN} yasql.1 \
+		${STAGEDIR}${MANPREFIX}/man/man1)
+	(cd ${WRKSRC} && ${INSTALL_MAN} yasql.conf.sample \
+		${STAGEDIR}${PREFIX}/etc)
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	(cd ${WRKSRC} && ${INSTALL_DATA} README yasql.html \
+		${STAGEDIR}${DOCSDIR})
 
 .include <bsd.port.mk>

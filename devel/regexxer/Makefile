@@ -3,6 +3,7 @@
 
 PORTNAME=	regexxer
 PORTVERSION=	0.10
+PORTREVISION=	1
 CATEGORIES=	devel textproc gnome
 MASTER_SITES=	GNOME
 

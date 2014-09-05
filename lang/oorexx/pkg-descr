@@ -1,7 +1,0 @@
-Open Object Rexx is a powerful object-oriented scripting language. The
-interpreter is almost fully compatible with the original Object Rexx by IBM.
-The port is derived from the generic Unix source code, with the idea to add
-BSD-specific enhancements over time and also to develop modules that would
-allow to run the most of OS/2 Object Rexx code on BSD platforms.
-
-WWW: http://www.oorexx.org/

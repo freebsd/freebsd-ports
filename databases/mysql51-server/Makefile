@@ -3,7 +3,7 @@
 
 PORTNAME?=	mysql
 PORTVERSION=	5.1.73
-PORTREVISION?=	1
+PORTREVISION?=	2
 CATEGORIES=	databases
 MASTER_SITES=	${MASTER_SITE_MYSQL}
 MASTER_SITE_SUBDIR=	MySQL-5.1
@@ -15,7 +15,7 @@ COMMENT?=	Multithreaded SQL database (server)
 SLAVEDIRS=	databases/mysql51-client databases/mysql51-scripts
 GNU_CONFIGURE=	yes
 
-USES+=		makeinfo
+USES+=		libtool makeinfo
 CONFIGURE_ARGS=	--localstatedir=/var/db/mysql \
 		--without-debug \
 		--without-readline \
@@ -23,6 +23,7 @@ CONFIGURE_ARGS=	--localstatedir=/var/db/mysql \
 		--with-libwrap \
 		--with-low-memory \
 		--with-comment='FreeBSD port: ${PKGNAME}' \
+		--with-named-thread-libs=-pthread \
 		--enable-thread-safe-client
 
 CONFIGURE_ENV=	mysql_cv_btype_last_arg_accept=socklen_t
@@ -63,6 +64,10 @@ CONFIGURE_ARGS+=--with-plugins=max-no-ndb
 CONFIGURE_ARGS+=--with-collation=${WITH_COLLATION}
 .endif
 
+.if defined(CLIENT_ONLY)
+USES+=		readline
+.endif
+
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "arm"
@@ -72,9 +77,6 @@ BROKEN=		Does not compile on arm
 .if ${ARCH} == "i386"
 CONFIGURE_ARGS+=--enable-assembler
 .endif
-
-CONFIGURE_ARGS+=--with-named-thread-libs=${PTHREAD_LIBS}
-CFLAGS+=	${PTHREAD_CFLAGS}
 
 .if defined(BUILD_OPTIMIZED)
 CFLAGS+=	-O3 -fno-omit-frame-pointer
@@ -156,7 +158,6 @@ post-patch:
 .else
 # MySQL-Client part
 .if defined(CLIENT_ONLY)
-USES+=			readline
 CONFLICTS_INSTALL=	mysql5.[02-9]-client-* mysql[0-46-9][0-9]-client-*
 
 MAN1=		mysql_config.1 mysql_upgrade.1 mysql.1 mysqladmin.1 \

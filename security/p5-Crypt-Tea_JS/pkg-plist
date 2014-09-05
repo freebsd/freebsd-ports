@@ -1,0 +1,9 @@
+bin/tea
+man/man1/tea.1.gz
+%%PERL5_MAN3%%/Crypt::Tea_JS.3.gz
+%%SITE_PERL%%/%%PERL_ARCH%%/Crypt/Tea_JS.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/Tea_JS/.packlist
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/Tea_JS/Tea_JS.so
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Crypt
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/Tea_JS
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt

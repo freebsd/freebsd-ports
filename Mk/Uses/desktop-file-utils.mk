@@ -19,10 +19,6 @@ BUILD_DEPENDS+=	update-desktop-database:${PORTSDIR}/devel/desktop-file-utils
 RUN_DEPENDS+=	update-desktop-database:${PORTSDIR}/devel/desktop-file-utils
 
 desktop-file-post-install:
-.if defined(NO_STAGE)
-# run for port post-install
-	@-update-desktop-database -q
-.endif
 # plist entries for packages.
 	@${ECHO_CMD} "@exec ${LOCALBASE}/bin/update-desktop-database -q > /dev/null || /usr/bin/true" \
 		>> ${TMPPLIST}; \

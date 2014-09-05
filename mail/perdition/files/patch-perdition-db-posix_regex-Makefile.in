@@ -1,15 +1,15 @@
---- perdition/db/posix_regex/Makefile.in.orig	2012-03-20 05:08:06.000000000 -0700
-+++ perdition/db/posix_regex/Makefile.in	2012-12-12 16:47:41.000000000 -0800
-@@ -414,14 +414,17 @@
+--- perdition/db/posix_regex/Makefile.in.orig	2014-08-17 17:07:29.014154305 -0500
++++ perdition/db/posix_regex/Makefile.in	2014-08-17 17:08:18.344506605 -0500
+@@ -503,14 +503,17 @@
  	  echo "$$d$$p"; \
  	done | $(am__base_list) | \
  	while read files; do \
 -	  echo " $(INSTALL_DATA) $$files '$(DESTDIR)$(confdir)'"; \
 -	  $(INSTALL_DATA) $$files "$(DESTDIR)$(confdir)" || exit $$?; \
-+	  for p in $$files; do \
-+	    $(am__strip_dir) \
-+	    echo " $(INSTALL_DATA) $$p '$(DESTDIR)$(confdir)/$$f-dist'"; \
-+	    $(INSTALL_DATA) $$p "$(DESTDIR)$(confdir)/$$f-dist" || exit $$?; \
++         for p in $$files; do \
++           $(am__strip_dir) \
++           echo " $(INSTALL_DATA) $$p '$(DESTDIR)$(confdir)/$$f-dist'"; \
++           $(INSTALL_DATA) $$p "$(DESTDIR)$(confdir)/$$f-dist" || exit $$?; \
 +          done ; \
  	done
  
@@ -18,6 +18,6 @@
  	@list='$(conf_DATA)'; test -n "$(confdir)" || list=; \
 -	files=`for p in $$list; do echo $$p; done | sed -e 's|^.*/||'`; \
 +	files=`for p in $$list; do echo $$p-dist; done | sed -e 's|^.*/||'`; \
- 	test -n "$$files" || exit 0; \
- 	echo " ( cd '$(DESTDIR)$(confdir)' && rm -f" $$files ")"; \
- 	cd "$(DESTDIR)$(confdir)" && rm -f $$files
+ 	dir='$(DESTDIR)$(confdir)'; $(am__uninstall_files_from_dir)
+ 
+ ID: $(am__tagged_files)

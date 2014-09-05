@@ -6,13 +6,13 @@
      if test -n "$PKG_CONFIG" && \
 -    { ($as_echo "$as_me:$LINENO: \$PKG_CONFIG --exists --print-errors \" \$COMMON_MODULES libpanelapplet-2.0 gnome-desktop-2.0 gconf-2.0 libgtop-2.0 libgnome-2.0 libgnomeui-2.0 dbus-glib-1 NetworkManager libnm_glib >= 0.7.0 hal-storage cairo \"") >&5
 -  ($PKG_CONFIG --exists --print-errors " $COMMON_MODULES libpanelapplet-2.0 gnome-desktop-2.0 gconf-2.0 libgtop-2.0 libgnome-2.0 libgnomeui-2.0 dbus-glib-1 NetworkManager libnm_glib >= 0.7.0 hal-storage cairo ") 2>&5
-+    { ($as_echo "$as_me:$LINENO: \$PKG_CONFIG --exists --print-errors \" \$COMMON_MODULES libpanelapplet-2.0 gnome-desktop-2.0 gconf-2.0 libgtop-2.0 libgnome-2.0 libgnomeui-2.0 dbus-glib-1 hal-storage cairo \"") >&5
-+  ($PKG_CONFIG --exists --print-errors " $COMMON_MODULES libpanelapplet-2.0 gnome-desktop-2.0 gconf-2.0 libgtop-2.0 libgnome-2.0 libgnomeui-2.0 dbus-glib-1 hal-storage cairo ") 2>&5
++    { ($as_echo "$as_me:$LINENO: \$PKG_CONFIG --exists --print-errors \" \$COMMON_MODULES libpanelapplet-2.0 gnome-desktop-2.0 gconf-2.0 libgtop-2.0 libgnome-2.0 libgnomeui-2.0 dbus-glib-1 hal-storage cairo x11 \"") >&5
++  ($PKG_CONFIG --exists --print-errors " $COMMON_MODULES libpanelapplet-2.0 gnome-desktop-2.0 gconf-2.0 libgtop-2.0 libgnome-2.0 libgnomeui-2.0 dbus-glib-1 hal-storage cairo x11 ") 2>&5
    ac_status=$?
    $as_echo "$as_me:$LINENO: \$? = $ac_status" >&5
    (exit $ac_status); }; then
 -  pkg_cv_MAIN_MENU_CFLAGS=`$PKG_CONFIG --cflags " $COMMON_MODULES libpanelapplet-2.0 gnome-desktop-2.0 gconf-2.0 libgtop-2.0 libgnome-2.0 libgnomeui-2.0 dbus-glib-1 NetworkManager libnm_glib >= 0.7.0 hal-storage cairo " 2>/dev/null`
-+  pkg_cv_MAIN_MENU_CFLAGS=`$PKG_CONFIG --cflags " $COMMON_MODULES libpanelapplet-2.0 gnome-desktop-2.0 gconf-2.0 libgtop-2.0 libgnome-2.0 libgnomeui-2.0 dbus-glib-1 hal-storage cairo " 2>/dev/null`
++  pkg_cv_MAIN_MENU_CFLAGS=`$PKG_CONFIG --cflags " $COMMON_MODULES libpanelapplet-2.0 gnome-desktop-2.0 gconf-2.0 libgtop-2.0 libgnome-2.0 libgnomeui-2.0 dbus-glib-1 hal-storage cairo x11 " 2>/dev/null`
  else
    pkg_failed=yes
  fi
@@ -22,13 +22,13 @@
      if test -n "$PKG_CONFIG" && \
 -    { ($as_echo "$as_me:$LINENO: \$PKG_CONFIG --exists --print-errors \" \$COMMON_MODULES libpanelapplet-2.0 gnome-desktop-2.0 gconf-2.0 libgtop-2.0 libgnome-2.0 libgnomeui-2.0 dbus-glib-1 NetworkManager libnm_glib >= 0.7.0 hal-storage cairo \"") >&5
 -  ($PKG_CONFIG --exists --print-errors " $COMMON_MODULES libpanelapplet-2.0 gnome-desktop-2.0 gconf-2.0 libgtop-2.0 libgnome-2.0 libgnomeui-2.0 dbus-glib-1 NetworkManager libnm_glib >= 0.7.0 hal-storage cairo ") 2>&5
-+    { ($as_echo "$as_me:$LINENO: \$PKG_CONFIG --exists --print-errors \" \$COMMON_MODULES libpanelapplet-2.0 gnome-desktop-2.0 gconf-2.0 libgtop-2.0 libgnome-2.0 libgnomeui-2.0 dbus-glib-1 hal-storage cairo \"") >&5
-+  ($PKG_CONFIG --exists --print-errors " $COMMON_MODULES libpanelapplet-2.0 gnome-desktop-2.0 gconf-2.0 libgtop-2.0 libgnome-2.0 libgnomeui-2.0 dbus-glib-1 hal-storage cairo ") 2>&5
++    { ($as_echo "$as_me:$LINENO: \$PKG_CONFIG --exists --print-errors \" \$COMMON_MODULES libpanelapplet-2.0 gnome-desktop-2.0 gconf-2.0 libgtop-2.0 libgnome-2.0 libgnomeui-2.0 dbus-glib-1 hal-storage cairo x11 \"") >&5
++  ($PKG_CONFIG --exists --print-errors " $COMMON_MODULES libpanelapplet-2.0 gnome-desktop-2.0 gconf-2.0 libgtop-2.0 libgnome-2.0 libgnomeui-2.0 dbus-glib-1 hal-storage cairo x11 ") 2>&5
    ac_status=$?
    $as_echo "$as_me:$LINENO: \$? = $ac_status" >&5
    (exit $ac_status); }; then
 -  pkg_cv_MAIN_MENU_LIBS=`$PKG_CONFIG --libs " $COMMON_MODULES libpanelapplet-2.0 gnome-desktop-2.0 gconf-2.0 libgtop-2.0 libgnome-2.0 libgnomeui-2.0 dbus-glib-1 NetworkManager libnm_glib >= 0.7.0 hal-storage cairo " 2>/dev/null`
-+  pkg_cv_MAIN_MENU_LIBS=`$PKG_CONFIG --libs " $COMMON_MODULES libpanelapplet-2.0 gnome-desktop-2.0 gconf-2.0 libgtop-2.0 libgnome-2.0 libgnomeui-2.0 dbus-glib-1 hal-storage cairo " 2>/dev/null`
++  pkg_cv_MAIN_MENU_LIBS=`$PKG_CONFIG --libs " $COMMON_MODULES libpanelapplet-2.0 gnome-desktop-2.0 gconf-2.0 libgtop-2.0 libgnome-2.0 libgnomeui-2.0 dbus-glib-1 hal-storage cairo x11 " 2>/dev/null`
  else
    pkg_failed=yes
  fi
@@ -37,16 +37,16 @@
  fi
          if test $_pkg_short_errors_supported = yes; then
 -	        MAIN_MENU_PKG_ERRORS=`$PKG_CONFIG --short-errors --print-errors " $COMMON_MODULES libpanelapplet-2.0 gnome-desktop-2.0 gconf-2.0 libgtop-2.0 libgnome-2.0 libgnomeui-2.0 dbus-glib-1 NetworkManager libnm_glib >= 0.7.0 hal-storage cairo " 2>&1`
-+	        MAIN_MENU_PKG_ERRORS=`$PKG_CONFIG --short-errors --print-errors " $COMMON_MODULES libpanelapplet-2.0 gnome-desktop-2.0 gconf-2.0 libgtop-2.0 libgnome-2.0 libgnomeui-2.0 dbus-glib-1 hal-storage cairo " 2>&1`
++	        MAIN_MENU_PKG_ERRORS=`$PKG_CONFIG --short-errors --print-errors " $COMMON_MODULES libpanelapplet-2.0 gnome-desktop-2.0 gconf-2.0 libgtop-2.0 libgnome-2.0 libgnomeui-2.0 dbus-glib-1 hal-storage cairo x11 " 2>&1`
          else
 -	        MAIN_MENU_PKG_ERRORS=`$PKG_CONFIG --print-errors " $COMMON_MODULES libpanelapplet-2.0 gnome-desktop-2.0 gconf-2.0 libgtop-2.0 libgnome-2.0 libgnomeui-2.0 dbus-glib-1 NetworkManager libnm_glib >= 0.7.0 hal-storage cairo " 2>&1`
-+	        MAIN_MENU_PKG_ERRORS=`$PKG_CONFIG --print-errors " $COMMON_MODULES libpanelapplet-2.0 gnome-desktop-2.0 gconf-2.0 libgtop-2.0 libgnome-2.0 libgnomeui-2.0 dbus-glib-1 hal-storage cairo " 2>&1`
++	        MAIN_MENU_PKG_ERRORS=`$PKG_CONFIG --print-errors " $COMMON_MODULES libpanelapplet-2.0 gnome-desktop-2.0 gconf-2.0 libgtop-2.0 libgnome-2.0 libgnomeui-2.0 dbus-glib-1 hal-storage cairo x11 " 2>&1`
          fi
  	# Put the nasty error message in config.log where it belongs
  	echo "$MAIN_MENU_PKG_ERRORS" >&5
  
 -	{ { $as_echo "$as_me:$LINENO: error: Package requirements ( $COMMON_MODULES libpanelapplet-2.0 gnome-desktop-2.0 gconf-2.0 libgtop-2.0 libgnome-2.0 libgnomeui-2.0 dbus-glib-1 NetworkManager libnm_glib >= 0.7.0 hal-storage cairo ) were not met:
-+	{ { $as_echo "$as_me:$LINENO: error: Package requirements ( $COMMON_MODULES libpanelapplet-2.0 gnome-desktop-2.0 gconf-2.0 libgtop-2.0 libgnome-2.0 libgnomeui-2.0 dbus-glib-1 hal-storage cairo ) were not met:
++	{ { $as_echo "$as_me:$LINENO: error: Package requirements ( $COMMON_MODULES libpanelapplet-2.0 gnome-desktop-2.0 gconf-2.0 libgtop-2.0 libgnome-2.0 libgnomeui-2.0 dbus-glib-1 hal-storage cairo x11 ) were not met:
  
  $MAIN_MENU_PKG_ERRORS
  
@@ -55,7 +55,7 @@
  See the pkg-config man page for more details.
  " >&5
 -$as_echo "$as_me: error: Package requirements ( $COMMON_MODULES libpanelapplet-2.0 gnome-desktop-2.0 gconf-2.0 libgtop-2.0 libgnome-2.0 libgnomeui-2.0 dbus-glib-1 NetworkManager libnm_glib >= 0.7.0 hal-storage cairo ) were not met:
-+$as_echo "$as_me: error: Package requirements ( $COMMON_MODULES libpanelapplet-2.0 gnome-desktop-2.0 gconf-2.0 libgtop-2.0 libgnome-2.0 libgnomeui-2.0 dbus-glib-1 hal-storage cairo ) were not met:
++$as_echo "$as_me: error: Package requirements ( $COMMON_MODULES libpanelapplet-2.0 gnome-desktop-2.0 gconf-2.0 libgtop-2.0 libgnome-2.0 libgnomeui-2.0 dbus-glib-1 hal-storage cairo x11 ) were not met:
  
  $MAIN_MENU_PKG_ERRORS
  

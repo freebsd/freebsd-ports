@@ -7,11 +7,12 @@ PKGNAMESUFFIX?=	${DISTVERSION:R:S/.//}${COMPONENT}
 MAINTAINER=	pgsql@FreeBSD.org
 COMMENT=	Module for using Python to write SQL functions
 
-USE_PGSQL=	server
+USES+=		pgsql:${WANT_PGSQL_VER}
+WANT_PGSQL=	server
 
-MASTERDIR=	${.CURDIR}/../postgresql${WANT_PGSQL_VER}-server
+MASTERDIR=	${.CURDIR}/../postgresql${WANT_PGSQL_VER:S/.//}-server
 
-WANT_PGSQL_VER?=	90
+WANT_PGSQL_VER?=	9.0
 
 USE_PYTHON?=	yes
 CONFIGURE_ARGS=	--with-python

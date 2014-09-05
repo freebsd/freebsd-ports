@@ -1,6 +1,4 @@
-@unexec if cmp -s %D/etc/yadifad.conf.sample %D/etc/yadifad.conf; then rm -f %D/etc/yadifad.conf; fi
-etc/yadifad.conf.example
-@exec if [ ! -f %D/etc/yadifad.conf ] ; then cp -p %D/%F %B/yadifad.conf; fi
+@sample etc/yadifad.conf.sample
 include/dnscore/alarm.h
 include/dnscore/avl.c.inc
 include/dnscore/avl.h.inc
@@ -131,11 +129,8 @@ include/dnszone/resourcerecord.h
 include/dnszone/zone_axfr_reader.h
 include/dnszone/zone_file_reader.h
 lib/libdnscore.a
-lib/libdnscore.la
 lib/libdnsdb.a
-lib/libdnsdb.la
 lib/libdnszone.a
-lib/libdnszone.la
 man/man1/yadifad.1.gz
 man/man5/yadifad.conf.5.gz
 sbin/yadifad

@@ -2,7 +2,6 @@ include/pyorbit-2/pyorbit.h
 %%PYTHON_SITELIBDIR%%/CORBA.py
 %%PYTHON_SITELIBDIR%%/CORBA.pyc
 %%PYTHON_SITELIBDIR%%/CORBA.pyo
-%%PYTHON_SITELIBDIR%%/ORBit.la
 %%PYTHON_SITELIBDIR%%/ORBit.so
 %%PYTHON_SITELIBDIR%%/PortableServer.py
 %%PYTHON_SITELIBDIR%%/PortableServer.pyc

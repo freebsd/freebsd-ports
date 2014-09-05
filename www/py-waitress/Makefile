@@ -12,9 +12,8 @@ COMMENT=	Python WSGI server
 
 LICENSE=	ZPL21
 
-USE_PYTHON=	yes
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
+USES=	python
+USE_PYTHON=	distutils autoplist
 
 pre-patch:
 	@${CP} ${FILESDIR}/MANIFEST.in ${WRKSRC}

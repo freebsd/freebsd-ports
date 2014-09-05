@@ -2,4 +2,4 @@ Curb (probably CUrl-RuBy or something) provides Ruby-language
 bindings for libcurl, a fully-featured client-side URL
 transfer library.
 
-WWW: http://curb.rubyforge.org/
+WWW: http://rubygems.org/gems/curb/

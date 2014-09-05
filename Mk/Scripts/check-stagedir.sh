@@ -49,6 +49,10 @@ parse_plist() {
 			fi
 		fi
 
+		# Strip (owner,group,perm) from keywords
+		line="$(printf %s "$line" \
+		    | sed -Ee 's/^@\([^)]*\)[[:space:]]+//' \
+			-e 's/^(@[[:alpha:]]+)\([^)]*\)[[:space:]]+/\1 /')"
 		case $line in
 		@dirrm*|'@unexec rmdir'*|'@unexec /bin/rmdir'*)
 			line="$(printf %s "$line" \
@@ -73,8 +77,16 @@ parse_plist() {
 			set -- $line
 			shift
 			# Ignore the actual file if it is in stagedir
+			case "$@" in
+			/*)
+			echo "@comment ${@%.sample}"
+			echo "${comment}$@"
+			;;
+			*)
 			echo "@comment ${cwd}/${@%.sample}"
 			echo "${comment}${cwd}/$@"
+			;;
+			esac
 		;;
 		# Handle [dirrmty] Keywords
 		@fc\ *|@fcfontsdir\ *|@fontsdir\ *)
@@ -192,37 +204,12 @@ pkg_get_recursive_deps() {
 ### GATHER DIRS OWNED BY RUN-DEPENDS. WHY ARE WE SCREAMING?
 lookup_dependency_dirs() {
 	: >${WRKDIR}/.run-depends-dirs
-	if [ -n "${WITH_PKGNG}" ]; then
-		if [ -n "${PACKAGE_DEPENDS}" ]; then
-			echo "${PACKAGE_DEPENDS}" | while read pkg; do \
-			    PKG_CHECKED= pkg_get_recursive_deps "${pkg}"; \
-			    done | sort -u | xargs ${PKG_QUERY} "%D" | \
-			    sed -e 's,/$,,' | sort -u \
-			    >>${WRKDIR}/.run-depends-dirs
-		fi
-	else
-		# Evaluate ACTUAL-PACKAGE-DEPENDS
-		packagelist=
-		package_depends=$(eval ${PACKAGE_DEPENDS})
-		if [ -n "${package_depends}" ]; then
-			# This ugly mess can go away with pkg_install EOL
-			awk_script=$(cat <<'EOF'
-				/Deinstall directory remove:/ {print $4}
-				/UNEXEC 'rmdir "[^"]*" 2>\/dev\/null \|\| true'/ {
-					gsub(/"%D\//, "\"", $0)
-					match($0, /"[^"]*"/)
-					dir=substr($0, RSTART+1, RLENGTH-2)
-					print dir
-				}
-EOF
-)
-			echo "${package_depends}" | tr ' ' '\n' | \
-			    cut -d : -f 1 | sort -u | \
-			    xargs -n 1 ${PKG_QUERY} -f | \
-			    awk "${awk_script}" | \
-			    sed -e "/^[^/]/s,^,${LOCALBASE}/," | sort -u \
-			    >>${WRKDIR}/.run-depends-dirs
-		fi
+	if [ -n "${PACKAGE_DEPENDS}" ]; then
+		echo "${PACKAGE_DEPENDS}" | while read pkg; do \
+		    PKG_CHECKED= pkg_get_recursive_deps "${pkg}"; \
+		    done | sort -u | xargs ${PKG_QUERY} "%D" | \
+		    sed -e 's,/$,,' | sort -u \
+		    >>${WRKDIR}/.run-depends-dirs
 	fi
 }
 
@@ -259,13 +246,11 @@ setup_plist_seds() {
 	    ${sed_portdocsexamples} /^share\/licenses/d;"
 	sed_dirs_gen="s!${PREFIX}/!!g; ${sed_plist_sub} s,^,@dirrmtry ,; \
 	    ${sed_portdocsexamples} \
-	    s!@dirrmtry \(/.*\)!@unexec rmdir \"\1\" >/dev/null 2>\&1 || :!; \
 	    /^@dirrmtry share\/licenses/d;"
 
 	# These prevent ignoring DOCS/EXAMPLES dirs with sed_portdocsexamples
 	sed_files="s!${PREFIX}/!!g; ${sed_plist_sub} /^share\/licenses/d;"
 	sed_dirs="s!${PREFIX}/!!g; ${sed_plist_sub} s,^,@dirrmtry ,; \
-	    s!@dirrmtry \(/.*\)!@unexec rmdir \"\1\" >/dev/null 2>\&1 || :!; \
 	    /^@dirrmtry share\/licenses/d;"
 
 }
@@ -359,7 +344,7 @@ check_invalid_directories_mtree() {
 			if [ "${PREFIX}" != "${LOCALBASE}" ]; then
 				case "${line}" in
 					"@dirrmtry info") continue ;;
-					"@unexec rmdir \"${PREFIX}\" >/dev/null 2>&1 || :") continue ;;
+					"@dirrmtry ${PREFIX}") continue ;;
 				esac
 			fi
 			ret=1
@@ -438,7 +423,7 @@ esac
 # validate environment
 envfault=
 for i in STAGEDIR PREFIX LOCALBASE WRKDIR WRKSRC MTREE_FILE GNOME_MTREE_FILE \
-    TMPPLIST PLIST_SUB_SED SCRIPTSDIR PACKAGE_DEPENDS WITH_PKGNG PKG_QUERY \
+    TMPPLIST PLIST_SUB_SED SCRIPTSDIR PACKAGE_DEPENDS PKG_QUERY \
     PORT_OPTIONS NO_PREFIX_RMDIR
 do
     if ! ( eval ": \${${i}?}" ) 2>/dev/null ; then

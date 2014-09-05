@@ -3,7 +3,7 @@
 
 PORTNAME=	rpm
 PORTVERSION=	5.2.1
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	archivers
 MASTER_SITES=	http://rpm5.org/files/rpm/rpm-${PORTVERSION:R}/
 PKGNAMESUFFIX=	5
@@ -12,6 +12,8 @@ MAINTAINER=	afb@rpm5.org
 COMMENT=	The RPM Package Manager
 
 BROKEN=		Does not package
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2014-09-28
 
 LIB_DEPENDS=	libsqlite3.so:${PORTSDIR}/databases/sqlite3 \
 		libpopt.so:${PORTSDIR}/devel/popt \

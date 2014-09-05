@@ -3,6 +3,7 @@
 
 PORTNAME=	twister-core
 PORTVERSION=	0.140815
+PORTREVISION=	1
 CATEGORIES=	net-p2p
 
 MAINTAINER=	thierry@FreeBSD.org

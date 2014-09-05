@@ -4,4 +4,4 @@ RFC2104. Namely, a MAC provides a way to check the integrity of information
 transmitted over or stored in an unreliable medium, based on a secret key.
 Originally written by Daiki Ueno. Converted to a RubyGem by Geoffrey Grosenbach
 
-WWW: http://ruby-hmac.rubyforge.org/
+WWW: http://rubygems.org/gems/ruby-hmac/

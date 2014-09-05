@@ -12,10 +12,12 @@ COMMENT=	Production quality, multilayer virtual switch
 LICENSE=	APACHE20
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	PERL=${PREFIX}/bin/perl
-CONFIGURE_ARGS+=SSL_LIBS=-lssl SSL_CFLAGS=-I/usr/include/openssl
-USE_AUTOTOOLS=	autoconf automake
+CONFIGURE_ARGS=	PERL=${PREFIX}/bin/perl \
+		SSL_CFLAGS="-I${OPENSSLINC}" \
+		SSL_LIBS="-L${OPENSSLLIB} -lssl -lcrypto"
 USES=		gmake pkgconfig
+USE_AUTOTOOLS=	autoconf automake
+USE_OPENSSL=	yes
 USE_PYTHON=	yes
 USE_RC_SUBR=	ovs-vswitchd ovsdb-server
 

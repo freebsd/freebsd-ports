@@ -2,7 +2,7 @@
 
 PORTNAME=	rsyslog
 PORTVERSION=	8.3.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.rsyslog.com/files/download/rsyslog/
 
@@ -13,7 +13,7 @@ BUILD_DEPENDS=	libgcrypt-config:${PORTSDIR}/security/libgcrypt
 
 LIB_DEPENDS=	libee.so:${PORTSDIR}/devel/libee \
 		libestr.so:${PORTSDIR}/devel/libestr \
-		libjson.so:${PORTSDIR}/devel/json-c \
+		libjson-c.so:${PORTSDIR}/devel/json-c \
 		liblogging-stdlog.so:${PORTSDIR}/devel/liblogging \
 		libuuid.so:${PORTSDIR}/misc/e2fsprogs-libuuid
 
@@ -35,6 +35,8 @@ RFC3195_DESC=	RFC3195 input support for rsyslog
 SNMP_DESC=	SNMP trap sender for rsyslog
 
 USES=		libtool pkgconfig
+
+BROKEN=		fails to build with new json-c
 
 .include <bsd.port.options.mk>
 

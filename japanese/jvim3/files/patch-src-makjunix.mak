@@ -1,5 +1,5 @@
---- src/makjunix.mak.orig	2014-03-14 23:13:33.000000000 +0900
-+++ src/makjunix.mak	2014-03-14 23:20:30.000000000 +0900
+--- src/makjunix.mak.orig	2014-08-30 01:12:22.000000000 +0900
++++ src/makjunix.mak	2014-08-30 01:19:58.000000000 +0900
 @@ -72,19 +72,20 @@
  
  
@@ -59,7 +59,7 @@
  GOBJ = grep.o alloc.o charset.o kanji.o regexp.o regsub.o u2s.o s2u.o
  
 -all: $(TARGET) grep
-+all: $(PROG) grep
++all: $(PROG) grep.bin
  
 -$(TARGET): $(OBJ) version.c
 -	$(CC) $(CFLAGS) version.c
@@ -68,8 +68,10 @@
 +	$(CC) -c $(CFLAGS) version.c
 +	$(CC) -o $(PROG) $(OBJ) version.o $(LIBS) $(FEPLIBS)
  
- grep: $(GOBJ)
- 	$(CC) -o grep/grep $(GOBJ) $(LIBS) $(FEPLIBS)
+-grep: $(GOBJ)
+-	$(CC) -o grep/grep $(GOBJ) $(LIBS) $(FEPLIBS)
++grep.bin: $(GOBJ)
++	$(CC) -o grep.bin $(GOBJ) $(LIBS) $(FEPLIBS)
  
  debug: $(OBJ) version.c
 -	$(CC) $(CFLAGS) version.c

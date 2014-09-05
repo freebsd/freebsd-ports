@@ -92,13 +92,12 @@ FEPLIBS+=	-lonew-wnn7 -ljd -lcrypt
 .endif
 
 post-build:
-	${CP} ${WRKSRC}/doc.j/tutor/tutor.j ${WRKSRC}/doc.j
+	${INSTALL_DATA} ${WRKSRC}/doc.j/tutor/tutor.j ${WRKSRC}/doc.j
+	${ECHO_CMD} "${JVIM3RC}" > ${WRKSRC}/jvim3rc.dist
 
 post-install:
 	${LN} -sf jvim3 ${STAGEDIR}${PREFIX}/bin/jvim
-	${INSTALL_PROGRAM} ${WRKSRC}/src/grep/grep \
-	    ${STAGEDIR}${PREFIX}/bin/jgrep
-	${ECHO_CMD} "${JVIM3RC}" > ${WRKSRC}/jvim3rc.dist
+	${INSTALL_PROGRAM} ${WRKSRC}/src/grep.bin ${STAGEDIR}${PREFIX}/bin/jgrep
 	${INSTALL_DATA} ${WRKSRC}/jvim3rc.dist ${STAGEDIR}${PREFIX}/etc/
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC}/doc.j && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}

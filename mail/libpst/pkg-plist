@@ -1,8 +1,8 @@
 bin/lspst
 bin/nick2ldif
+%%PST2DII%%bin/pst2dii
 bin/pst2ldif
 bin/readpst
-%%PST2DII%%bin/pst2dii
 include/libpst-4/libpst/common.h
 include/libpst-4/libpst/libpst.h
 include/libpst-4/libpst/libstrfunc.h

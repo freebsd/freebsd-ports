@@ -1,22 +1,22 @@
---- Gemfile.orig	2014-03-29 19:50:17.216630353 +0000
-+++ Gemfile	2014-03-29 19:59:55.539590486 +0000
+--- Gemfile.orig	2014-07-30 01:55:20.626312191 +0400
++++ Gemfile	2014-07-30 01:55:52.188247285 +0400
 @@ -1,11 +1,11 @@
  source 'https://rubygems.org'
  
--gem "rails", "3.2.17"
+-gem "rails", "3.2.19"
 -gem "rake", "~> 10.1.1"
 -gem "jquery-rails", "~> 2.0.2"
-+gem "rails", "~> 3.2.17"
++gem "rails", "~> 3.2"
 +gem "rake", "~> 10.3"
 +gem "jquery-rails", "~> 3.0"
  gem "coderay", "~> 1.1.0"
  gem "fastercsv", "~> 1.5.0", :platforms => [:mri_18, :mingw_18, :jruby]
 -gem "builder", "3.0.0"
-+gem "builder", "~> 3.0.0"
++gem "builder", "~> 3.0"
  gem "mime-types"
  gem "awesome_nested_set", "2.1.6"
  
-@@ -16,7 +16,7 @@
+@@ -19,7 +19,7 @@
  
  # Optional gem for OpenID authentication
  group :openid do
@@ -25,7 +25,7 @@
    gem "rack-openid"
  end
  
-@@ -32,7 +32,7 @@
+@@ -35,7 +35,7 @@
    # Optional Markdown support, not for JRuby
    group :markdown do
      # TODO: upgrade to redcarpet 3.x when ruby1.8 support is dropped
@@ -34,7 +34,7 @@
    end
  end
  
-@@ -79,20 +79,6 @@
+@@ -82,20 +82,6 @@
    warn("Please configure your config/database.yml first")
  end
  
@@ -45,7 +45,7 @@
 -
 -group :test do
 -  gem "shoulda", "~> 3.3.2"
--  gem "mocha", ">= 0.14", :require => 'mocha/api'
+-  gem "mocha", "~> 1.0.0", :require => 'mocha/api'
 -  if RUBY_VERSION >= '1.9.3'
 -    gem "capybara", "~> 2.1.0"
 -    gem "selenium-webdriver"

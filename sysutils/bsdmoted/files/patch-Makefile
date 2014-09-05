@@ -1,6 +1,13 @@
---- Makefile	2007-05-05 00:09:26.000000000 +0200
-+++ Makefile	2010-03-04 20:02:21.000000000 +0100
-@@ -15,6 +15,7 @@
+--- ./Makefile.orig	2007-05-04 18:09:26.000000000 -0400
++++ ./Makefile	2014-08-27 22:23:17.680151986 -0400
+@@ -9,12 +9,13 @@
+ 		session.c
+ 
+ CFLAGS+=	-I${.CURDIR}
+-WARNS?=		6
++WARNS?=		3
+ DEBUG_FLAGS=	-g
+ 
  DPADD=          ${LIBBLUETOOTH} ${LIBSDP}
  LDADD=		-lbluetooth -lusbhid
  

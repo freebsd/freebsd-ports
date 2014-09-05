@@ -18,6 +18,10 @@ sbin/pdns_server
 %%OPENLDAP%%lib/libldapbackend.so
 %%OPENDBX%%lib/libopendbxbackend.so
 %%GEO%%lib/libgeobackend.so
+%%TINYDNS%%lib/libtinydnsbackend.so
+%%REMOTE%%lib/libremotebackend.so
+%%MYDNS%%lib/libmydnsbackend.so
+%%LUA%%lib/libluabackend.so
 lib/libpipebackend.so
 %%TOOLS%%man/man1/dnstcpbench.1.gz
 %%TOOLS%%man/man8/dnsreplay.8.gz

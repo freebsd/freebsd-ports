@@ -3,6 +3,7 @@
 
 PORTNAME=	libwfut
 PORTVERSION=	0.2.3
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	SF/worldforge/libwfut%20%28updates%20library%29/${PORTVERSION}
 
@@ -14,7 +15,7 @@ LIB_DEPENDS=	libsigc-2.0.so:${PORTSDIR}/devel/libsigc++20 \
 
 CONFIGURE_ARGS+=--without-python
 GNU_CONFIGURE=	yes
-USES=		pathfix pkgconfig compiler:c++11-lib
+USES=		libtool pathfix pkgconfig compiler:c++11-lib
 USE_LDCONFIG=	yes
 
 post-patch:

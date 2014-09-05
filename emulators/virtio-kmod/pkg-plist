@@ -1,11 +1,10 @@
-@cwd /
-%%KMODDIR%%/if_vtnet.ko
-%%KMODDIR%%/if_vtnet.ko.symbols
-%%KMODDIR%%/virtio.ko
-%%KMODDIR%%/virtio.ko.symbols
-%%KMODDIR%%/virtio_balloon.ko
-%%KMODDIR%%/virtio_balloon.ko.symbols
-%%KMODDIR%%/virtio_blk.ko
-%%KMODDIR%%/virtio_blk.ko.symbols
-%%KMODDIR%%/virtio_pci.ko
-%%KMODDIR%%/virtio_pci.ko.symbols
+/%%KMODDIR%%/if_vtnet.ko
+/%%KMODDIR%%/if_vtnet.ko.symbols
+/%%KMODDIR%%/virtio.ko
+/%%KMODDIR%%/virtio.ko.symbols
+/%%KMODDIR%%/virtio_balloon.ko
+/%%KMODDIR%%/virtio_balloon.ko.symbols
+/%%KMODDIR%%/virtio_blk.ko
+/%%KMODDIR%%/virtio_blk.ko.symbols
+/%%KMODDIR%%/virtio_pci.ko
+/%%KMODDIR%%/virtio_pci.ko.symbols

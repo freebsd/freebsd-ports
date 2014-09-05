@@ -3,6 +3,7 @@
 
 PORTNAME=	rails
 PORTVERSION=	3.2.19
+PORTREVISION=	1
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
@@ -31,8 +32,7 @@ RUN_DEPENDS=	rubygem-actionmailer>=${PORTVERSION}:${PORTSDIR}/mail/rubygem-actio
 		rubygem-treetop>=1.4.15:${PORTSDIR}/devel/rubygem-treetop \
 		rubygem-turn>=0.8.3:${PORTSDIR}/devel/rubygem-turn \
 		rubygem-tzinfo>=0.3.39:${PORTSDIR}/devel/rubygem-tzinfo \
-		rubygem-uglifier>=2.5.0:${PORTSDIR}/www/rubygem-uglifier \
-		node:${PORTSDIR}/www/node
+		rubygem-uglifier>=2.5.0:${PORTSDIR}/www/rubygem-uglifier
 
 # XXX: rails3 gem no longer has a lib/ dir
 # XXX: which breaks devel/ruby-gems specification.

@@ -16,7 +16,7 @@ LICENSE_COMB=	multi
 LICENSE_NAME_NKF=	NKF License
 LICENSE_FILE_ZLIB=	${WRKSRC}/NKF.pm
 LICENSE_FILE_NKF=	${WRKSRC}/NKF.xs
-LICENSE_PERMS_NKF=	${_LICENSE_PERMS_DEFAULT}
+LICENSE_PERMS_NKF=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 USES=		perl5
 USE_PERL5=	configure

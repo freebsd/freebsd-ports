@@ -3,15 +3,16 @@
 
 PORTNAME=	jclassinfo
 PORTVERSION=	0.19.1
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Shows information about Java class, dependencies, and more
 
-USE_AUTOTOOLS=	libtool
-USES=		gmake pathfix pkgconfig
 GNU_CONFIGURE=	yes
+INSTALL_TARGET=	install-strip
+USES=		gmake libtool pathfix pkgconfig
 USE_LDCONFIG=	yes
 
 post-patch:

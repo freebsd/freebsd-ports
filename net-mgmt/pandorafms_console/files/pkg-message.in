@@ -1,0 +1,21 @@
+**********************************************************************
+
+Pandora FMS %%PANDORA_VERSION%% console has been installed into:
+
+    %%WWWDIR%%
+
+Now you can setup your Pandora FMS console and install database
+using a browser and point to:
+
+    http://<hostname>/pandora_console/install.php
+
+For detailed installation instructions, please read:
+
+    http://wiki.pandorafms.com/index.php?title=Pandora:Documentation_en:Installing
+
+Upgrading from prior version, please read:
+
+  http://wiki.pandorafms.com/index.php?title=Pandora:Documentation_en:Anexo_Upgrade
+
+**********************************************************************
+

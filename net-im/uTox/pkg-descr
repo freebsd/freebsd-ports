@@ -1,0 +1,12 @@
+uTox is lightweight Tox (https://github.com/irungentoo/ProjectTox-Core)
+client written in C.
+
+Simple and convenient program for confidential communication.
+
+Still early in development, though it already supports some of the most
+important features, like file transfers, A/V, group chats, and DNS Discovery.
+
+There are also binaries for other OS: Linux, Android, OS X and Windows, which
+makes it possible to communicate between users of different OS.
+
+WWW: http://utox.org/

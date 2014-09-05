@@ -3,7 +3,7 @@
 
 PORTNAME=	scim
 PORTVERSION=	1.4.9
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	textproc
 MASTER_SITES=	SF
 
@@ -12,14 +12,15 @@ COMMENT=	Smart Common Input Method platform
 
 LICENSE=	LGPL21
 
+GNU_CONFIGURE=	yes
+INSTALL_TARGET=	install-strip
+USES=		gettext gmake iconv libtool pathfix pkgconfig
 USE_GNOME=	gnomehier gtk20 intlhack
 USE_XORG=	x11 xpm
 USE_LDCONFIG=	yes
-USES=		gettext gmake iconv pathfix pkgconfig
-GNU_CONFIGURE=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include -D__STDC_ISO_10646__
-LDFLAGS+=	-L${LOCALBASE}/lib -lintl ${ICONV_LIB}
+LIBS+=		-L${LOCALBASE}/lib
 
 post-patch:
 	@${REINPLACE_CMD} 's/-lstdc++//'				\

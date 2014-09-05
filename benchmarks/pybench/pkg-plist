@@ -66,6 +66,5 @@ bin/pybench
 %%DATADIR%%/systimes.py
 %%DATADIR%%/systimes.pyc
 %%DATADIR%%/systimes.pyo
-@dirrmtry share/pybench
 @dirrm %%DATADIR%%/package
-@dirrm %%DATADIR%%
+@dirrmtry %%DATADIR%%

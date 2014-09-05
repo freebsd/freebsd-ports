@@ -1,0 +1,146 @@
+#!/bin/sh
+#
+# $FreeBSD: mgmelin
+#
+
+# PROVIDE: bhyve
+# REQUIRE: LOGIN
+# KEYWORD: nojail
+#
+
+#
+# Add the following lines to /etc/rc.conf to enable bhyve:
+# bhyve_enable (bool):  Set to "NO" by default.
+#                       Set it to "YES" to enable bhyve
+# bhyve_profiles (str): Set to "" by default.
+#                       Define your profiles here.
+# bhyve_tapdev (str):   Set to "tap0" by default.
+#                       Set to the tap(4) device to use.
+# bhyve_diskdev (str):  Must be set, no default.
+#                       Set to the disk device to use.
+# bhyve_ncpu (int):     Set to 1 by default.
+#                       Set to the number of CPUs for the VM.
+# bhyve_memsize (int):  Set to 512 by default.
+#                       Set to the number of MB of memory for the VM.
+
+. /etc/rc.subr
+
+name="bhyve"
+rcvar=bhyve_enable
+
+start_precmd="bhyve_prestart"
+status_cmd="bhyve_status"
+poll_cmd="bhyve_poll"
+stop_cmd="bhyve_stop"
+_session=$name
+command="/usr/local/bin/tmux"
+procname="-sh"
+
+[ -z "$bhyve_enable" ]  && bhyve_enable="NO"
+[ -z "$bhyve_tapdev" ]  && bhyve_tapdev="tap0"
+[ -z "$bhyve_diskdev" ] && bhyve_diskdev="none"
+[ -z "$bhyve_ncpu" ]    && bhyve_ncpu="1"
+[ -z "$bhyve_memsize" ] && bhyve_memsize="512"
+
+load_rc_config $name
+
+if [ -n "$2" ]; then
+	profile="$2"
+	_session="${_session}_${profile}"
+	if [ "x${bhyve_profiles}" != "x" ]; then
+		eval bhyve_enable="\${${_session}_enable:-${bhyve_enable}}"
+		eval bhyve_tapdev="\${${_session}_tapdev:-${bhyve_tapdev}}"
+		eval bhyve_diskdev="\${${_session}_diskdev:-${bhyve_diskdev}}"
+		eval bhyve_ncpu="\${${_session}_ncpu:-${bhyve_ncpu}}"
+		eval bhyve_memsize="\${${_session}_memsize:-${bhyve_memsize}}"
+	else
+		echo "$0: extra argument ignored"
+	fi
+else
+	if [ "x${bhyve_profiles}" != "x" -a "x$1" != "x" ]; then
+		for profile in ${bhyve_profiles}; do
+			eval _enable="\${bhyve_${profile}_enable}"
+			case "x${_enable:-${bhyve_enable}}" in
+			x|x[Nn][Oo]|x[Nn][Oo][Nn][Ee])
+				continue
+				;;
+			x[Yy][Ee][Ss])
+				;;
+			*)
+				if test -z "$_enable"; then
+					_var=bhyve_enable
+				else
+					_var=bhyve_"${profile}"_enable
+				fi
+				echo "Bad value" \
+				    "'${_enable:-${bhyve_enable}}'" \
+				    "for ${_var}. " \
+				    "Profile ${profile} skipped."
+				continue
+				;;
+			esac
+			echo "===> bhyve profile: ${profile}"
+			/usr/local/etc/rc.d/bhyve $1 ${profile}
+			retcode="$?"
+			if [ "0${retcode}" -ne 0 ]; then
+				failed="${profile} (${retcode}) ${failed:-}"
+			else
+				success="${profile} ${success:-}"
+			fi
+		done
+		exit 0
+	fi
+	profile=$name
+fi
+
+pidfile="/var/run/${_session}.pid"
+
+
+bhyve_prestart()
+{
+	case ${bhyve_diskdev} in
+	[Nn][Oo][Nn][Ee] | '')
+		echo "No ${_session}_diskdev set. Quitting." 1>&2
+		return 1;
+		;;
+	esac
+	if [ ! -c "${bhyve_diskdev}" -a ! -f "${bhyve_diskdev}" ]; then
+		echo "${bhyve_diskdev} doesn't exist or is not suitable as a diskdev" 1>&2
+		return 1;
+	fi
+}
+
+bhyve_status()
+{
+	if ${command} has-session -t ${_session} 2>/dev/null; then
+		echo "${_session} is running."
+	else
+		echo "${_session} is not running."
+		return 1
+	fi
+}
+
+bhyve_poll()
+{
+	echo -n "Waiting for session: ${_session}"
+	while ${command} has-session -t ${_session} 2>dev/null; do
+		sleep 1
+	done
+	echo
+}
+
+bhyve_stop()
+{
+	if ${command} has-session -t ${_session} 2>/dev/null; then
+		echo "Stopping ${_session}."
+		${command} kill-session -t ${_session}
+		while ${command} has-session -t ${_session} 2>dev/null; do
+			sleep 1
+		done
+	fi
+	rm -f ${pidfile}
+}
+
+command_args="new-session -ds ${_session} \"sh -c 'echo \\\$PPID >${pidfile}; while true; do /usr/sbin/bhyvectl --vm=${_session} --destroy; /usr/sbin/bhyveload -m ${bhyve_memsize} -d ${bhyve_diskdev} ${_session} && /usr/sbin/bhyve -c ${bhyve_ncpu} -m ${bhyve_memsize} -AI -H -P -g 0 -s 0:0,hostbridge -s 1:0,virtio-net,${bhyve_tapdev} -s 2:0,virtio-blk,${bhyve_diskdev} -S 31,uart,stdio ${_session} || break; done'\""
+
+run_rc_command "$1"

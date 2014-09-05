@@ -13,9 +13,8 @@ LICENSE=	MIT
 
 LIB_DEPENDS=	libMagickWand-6.Q*.so:${PORTSDIR}/graphics/ImageMagick
 
-USE_PYTHON=	yes
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
+USES=	python
+USE_PYTHON=	distutils autoplist
 
 .include <bsd.port.pre.mk>
 

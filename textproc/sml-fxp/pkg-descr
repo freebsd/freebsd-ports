@@ -1,6 +1,0 @@
-fxp is a validating XML parser written completely in the functional
-programming language SML. fxp can validate both XML 1.0 and XML 1.1
-documents. It has a programming interface allowing for production of XML
-applications based on fxp. It is installed with four example applications.
-
-WWW: http://www2.informatik.tu-muenchen.de/~berlea/Fxp

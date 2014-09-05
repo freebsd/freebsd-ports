@@ -3,7 +3,7 @@
 
 PORTNAME=	dvi2tty
 PORTVERSION=	5.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	japanese print
 MASTER_SITES=	LOCAL
 MASTER_SITE_SUBDIR=	hrs
@@ -20,18 +20,13 @@ COMMENT=	Character-based DVI file previewer
 
 RUN_DEPENDS=	jless:${PORTSDIR}/japanese/less
 
-CONFLICTS=	dvi2tty-[0-9]*
-
 PLIST_FILES=	bin/jdvi2tty \
-		bin/dvi2tty \
-		bin/disdvi \
-		man/man1/dvi2tty.1.gz \
+		bin/jdisdvi \
 		man/man1/jdvi2tty.1.gz
 
 do-install:
-	cd ${WRKSRC} && ${INSTALL_PROGRAM} jdvi2tty disdvi ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/dvi2tty.1 ${STAGEDIR}${PREFIX}/man/man1
-	${LN} -sf ${PREFIX}/bin/jdvi2tty ${STAGEDIR}${PREFIX}/bin/dvi2tty
-	${LN} -sf dvi2tty.1.gz ${STAGEDIR}${PREFIX}/man/man1/jdvi2tty.1.gz
+	${INSTALL_PROGRAM} ${WRKSRC}/jdvi2tty ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/disdvi ${STAGEDIR}${PREFIX}/bin/jdisdvi
+	${INSTALL_MAN} ${WRKSRC}/dvi2tty.1 ${STAGEDIR}${PREFIX}/man/man1/jdvi2tty.1
 
 .include <bsd.port.mk>

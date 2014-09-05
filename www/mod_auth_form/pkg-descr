@@ -1,7 +1,0 @@
-mod_auth_form is a form based authentication module for apache2. It is
-used to place access restrictions on a per-directory, per-user-request basis
-using session management. The module uses a MySQL database to retrieve users'
-group membership, maintain and validate users' sessions and optionally track
-user activity.
-
-WWW: http://comp.uark.edu/~ajarthu/mod_auth_form/

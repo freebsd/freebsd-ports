@@ -13,15 +13,20 @@ COMMENT=	Text processing tools to generate documentation from source files
 BUILD_DEPENDS=	ppmtogif:${PORTSDIR}/graphics/netpbm
 RUN_DEPENDS=	ppmtogif:${PORTSDIR}/graphics/netpbm
 
-USES=		perl5 gmake
+USES=		gmake perl5
 USE_GHOSTSCRIPT=yes
 USE_TEX=	latex dvipsk
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	INSTALL_SCRIPT="${INSTALL_SCRIPT}"
 CONFIGURE_ARGS=	--datadir=${DATADIR}
 ALL_TARGET=	all-redirect
 
-MAN1=		bfort.1 doctext.1 tohtml.1
+post-patch:
+	@${REINPLACE_CMD} -e \
+		's|\([[:blank:]]\)\($$(exec_prefix)\)|\1$$(DESTDIR)\2| ; \
+		 s|\([[:blank:]]\)\($$(bindir)\)|\1$$(DESTDIR)\2| ; \
+		 s|\([[:blank:]]\)\($$(datadir)\)|\1$$(DESTDIR)\2| ; \
+		 s|\([[:blank:]]\)\($$(man1dir)\)|\1$$(DESTDIR)\2|' \
+		${WRKSRC}/Makefile.in
 
 .if defined(MAINTAINER_MODE)
 regression-test: install
@@ -29,5 +34,4 @@ regression-test: install
 	${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} testing)
 .endif
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

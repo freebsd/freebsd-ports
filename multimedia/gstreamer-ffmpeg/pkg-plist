@@ -1,6 +1,3 @@
-lib/gstreamer-%%VERSION%%/libgstffmpeg.la
 lib/gstreamer-%%VERSION%%/libgstffmpeg.so
-lib/gstreamer-%%VERSION%%/libgstffmpegscale.la
 lib/gstreamer-%%VERSION%%/libgstffmpegscale.so
-lib/gstreamer-%%VERSION%%/libgstpostproc.la
 lib/gstreamer-%%VERSION%%/libgstpostproc.so

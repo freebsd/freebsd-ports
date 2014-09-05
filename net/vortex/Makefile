@@ -22,8 +22,8 @@ USE_GNOME=	glib20
 
 do-build:
 	cd ${WRKSRC} && ${CC} -c vortex.c -I${LOCALBASE}/include
-	cd ${WRKSRC} && ${CC} -v -o vortex vortex.o -L${LOCALBASE}/lib ${LOCALBASE}/lib/libnids.a `${LIBNET_CONFIG} --libs` -lglib-2.0 -lgthread-2.0 -lpcap
-	cd ${WRKSRC} && ${CC} -o xpipes xpipes.c ${PTHREAD_LIBS}
+	cd ${WRKSRC} && ${CC} -v -o vortex vortex.o -L${LOCALBASE}/lib ${LOCALBASE}/lib/libnids.a `${LIBNET_CONFIG} --libs` -lglib-2.0 -lgthread-2.0 -lpcap -pthread
+	cd ${WRKSRC} && ${CC} -o xpipes xpipes.c -pthread
 
 do-install:
 	${INSTALL_DATA}	${WRKSRC}/vortex.conf ${STAGEDIR}${PREFIX}/etc/vortex.conf.sample

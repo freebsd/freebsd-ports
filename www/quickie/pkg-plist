@@ -1,9 +1,16 @@
-@unexec bin="%D/bin/quickie"; cgi="%D/www/cgi-bin/quickie"; if cmp -s $bin $cgi; then rm -f $cgi; fi
 bin/quickie
 bin/quickie-config
 bin/quickie_post_install
 bin/quickie_prime
 bin/quickie_svt
+man/man1/quickie.1.gz
+man/man1/quickie-config.1.gz
+man/man1/quickie_license.1.gz
+man/man1/quickie_post_install.1.gz
+man/man1/quickie_prime.1.gz
+man/man1/quickie_svt.1.gz
+@owner www
+@group www
 %%DATADIR%%/admin/default.css
 %%DATADIR%%/admin/external.png
 %%DATADIR%%/admin/quickie.png
@@ -49,6 +56,8 @@ bin/quickie_svt
 %%DATADIR%%/sidebar.wiki
 %%DATADIR%%/square_brackets.referred_to_by
 %%DATADIR%%/square_brackets.unlink_on_create
+%%CGI%%www/cgi-bin/quickie
+%%CGI%%@dirrmtry www/cgi-bin
 @dirrm %%DATADIR%%/manual
 @dirrm %%DATADIR%%/admin
 @dirrm %%DATADIR%%

@@ -2,7 +2,6 @@ bin/workmanir
 @sample etc/irman.conf.sample
 include/irman.h
 lib/libirman.a
-lib/libirman.la
 lib/libirman.so
 lib/libirman.so.0
 lib/libirman.so.0.0.0

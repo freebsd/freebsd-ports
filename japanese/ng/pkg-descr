@@ -1,13 +1,11 @@
-Ng is a very light weight Emacs clone editor, written in C.
-It doesn't have Lisp(that means very limited customization
-is available). Since you can invoke it very quickly
-(compared with real GNU Emacs), it is useful in dealing with
-changing small file a bit.
+Ng is a very light weight Emacs clone editor, written in C. It doesn't
+have Lisp(that means very limited customization is available). Since you
+can invoke it very quickly (compared with real GNU Emacs), it is useful
+in dealing with changing small file a bit.
 
-Ng(Nihongo Micro Gnu Emacs) is a Mg(Micro Gnu Emacs)'s 
-japanese port. Ng supports EUC, JIS and SJIS code.
-Ng also have (rather simple) C-mode.
+Ng(Nihongo Micro Gnu Emacs) is a Mg(Micro Gnu Emacs)'s japanese port.
+Ng supports EUC, JIS and SJIS code. Ng also have (rather simple) C-mode.
 
 It is also very useful even if you don't need Japanese support.
 
-WWW: http://tomato.sakura.ne.jp/~amura/ng/
+WWW: http://tt.sakura.ne.jp/~amura/ng/

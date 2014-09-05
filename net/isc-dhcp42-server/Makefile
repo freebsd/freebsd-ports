@@ -140,9 +140,6 @@ post-patch:
 		${WRKSRC}/doc/examples/dhcpd-dhcpv6.conf
 	@${REINPLACE_CMD} ${REINPLACE_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
 		${WRKSRC}/client/dhclient.conf.example
-	@${REINPLACE_CMD} -e '/echo.*RANLIB/,+1d' \
-		${WRKSRC}/Makefile.in \
-		${WRKSRC}/*/Makefile.in
 
 do-install:
 	${SETENV} DESTDIR=${STAGEDIR} ${MAKE} -C ${WRKSRC}/${SUBSYS} install

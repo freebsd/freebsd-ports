@@ -1,9 +1,0 @@
-bin/amazonplot
-bin/googleplot
-%%DATADIR%%/mingplot.css
-%%DATADIR%%/EfontSerifB.fdb
-%%RUBY_SITELIBDIR%%/mingchart.rb
-%%RUBY_SITELIBDIR%%/mingplot.rb
-%%RUBY_SITELIBDIR%%/googleplot.rb
-%%RUBY_SITELIBDIR%%/amazonplot.rb
-@dirrm %%DATADIR%%

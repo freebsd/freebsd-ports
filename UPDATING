@@ -5,6 +5,91 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20140826:
+  AFFECTS: users of ports-mgmt/pkg, ports-mgmt/pkg-devel
+  AUTHOR: bdrewery@FreeBSD.org
+
+  Pkg has been updated to 1.3.7. This fixes registration and tracking of
+  shared libraries. All earlier versions of Pkg incorrectly marked some
+  shared libraries and used the wrong name for some.
+
+  Please note announcement for special instructions at:
+    http://lists.freebsd.org/pipermail/freebsd-ports-announce/2014-August/000086.html
+
+  - Users need to run 'pkg update -f' and 'pkg check -Ba' after upgrading to
+    pkg-1.3.7 and before updating any other packages. This avoids needing to
+    reinstall anything not needed due to changed shlibs.
+     For binary package users:
+      # pkg install ports-mgmt/pkg
+      # pkg update -f
+      # pkg check -Ba
+      # pkg upgrade
+     For port users:
+      # make -C /usr/ports/ports-mgmt/pkg build deinstall install clean
+      # pkg check -Ba
+  - People building packages for serving to other systems need to rebuild
+    all packages with 1.3.7.
+
+20140823:
+  AFFECTS: users of graphics/libjpeg-turbo
+  AUTHOR: adamw@FreeBSD.org
+
+  libjpeg-turbo installs its own unique library (libturbojpeg.so) and
+  a drop-in replacement for libjpeg.so. The drop-in replacement has been
+  split off into graphics/jpeg-turbo; libjpeg-turbo now installs only
+  libturbojpeg.so.
+  
+  If you were using the libjpeg.so from graphics/libjpeg-turbo, you
+  should install graphics/jpeg-turbo AFTER upgrading the libjpeg-turbo
+  port.
+
+20140823:
+  AFFECTS: users of TeXLive
+  AUTHOR: hrs@FreeBSD.org
+
+  TeXLive in Ports Collection has been updated to TL2014.
+
+  When upgrading print/texlive-base on a system which has
+  TL2012 packages, the following error may occur:
+
+  pkg-static: texlive-base-20140525 conflicts with texlive-texmf-20120701_4
+
+  Please remove texlive-texmf-20120701_4 first in that case.
+
+  If you still get a similar "conflict of install files" error,
+  please remove all of tex-* and texlive-* packages and then
+  see if ${PREFIX}/share/texmf-dist directory are empty.  If not,
+  installing TeXlive can fail.  Removing files in the directory
+  manually will fix the installation problem.
+
+20140821:
+  AFFECTS: users of databases/db4, databases/db4[1-7]*
+  AUTHOR: mandree@FreeBSD.org
+
+  HEADS UP: for some applications that store their data in Berkeley DB
+  databases, you may have to export the data before the upgrade and
+  reload it afterwards.  Detailed instructions are at
+  <https://wiki.freebsd.org/Ports/BerkeleyDBCleanup>.
+
+  The older databases/db4* ports providing versions 4.0 to 4.7
+  inclusively have been removed, and 4.8 has been deprecated.
+  The default Berkeley DB version is now 5.3.
+  (6.x has a different license, but will be eligible as default on
+  systems that build ports from source and have db6 installed.)
+    All enabled and working ports have been changed such that they use
+  Berkeley DB 4.8 or newer, and an -exp run has been made.
+
+  After you have performed the first steps from the Wiki documentation,
+  and have arrived at a step that reads "build all applications", then
+  type as privileged user and without the hash sign:
+
+  # Tools/scripts/BDB-upgrade-helper.sh
+
+  The helper script requires that ports-mgmt/portmaster or
+  .../portupgrade is installed, will try to upgrade your applications
+  with either of these tools (portmaster preferred), and if that succeeds,
+  it will attempt to delete the packages if confirmed interactively.
+
 20140815:
   AFFECTS: users of graphics/ilmbase and graphics/OpenEXR
   AUTHOR: mandree@FreeBSD.org
@@ -17,7 +102,7 @@ you update your ports collection, before attempting any port upgrades.
     or
   # portupgrade -fr graphics/ilmbase graphics/OpenEXR
 
-  The PORTREVISIONS of all 500+ ports that require ilmbase/OpenEXR
+  The PORTREVISIONS of all ports that require ilmbase and/or OpenEXR
   have been bumped.
 
 20140810:
@@ -80,7 +165,7 @@ you update your ports collection, before attempting any port upgrades.
   First manually remove the ajaxplorer port and install www/pydio
   afterwards.
 
-  Further steps will be avbailable in the pkg-message, which can
+  Further steps will be available in the pkg-message, which can
   be shown with these commands:
 
   # pkg info -D pydio
@@ -169,7 +254,7 @@ you update your ports collection, before attempting any port upgrades.
   mediainfo has been split into 3 ports: libzen, libmediainfo and mediainfo.
   Please uninstall mediainfo before you update this port.
 
-20140722
+20140722:
   AFFECTS: users of games/bsdgames
   AUTHOR: adamw@FreeBSD.org
 

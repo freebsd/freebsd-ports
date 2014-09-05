@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ncurses
-DISTVERSION=	${RELEASE}-20140629
-PORTREVISION=	1
+DISTVERSION=	${RELEASE}-20140823
 CATEGORIES=	devel
 MASTER_SITES=	ftp://invisible-island.net/${PORTNAME}/current/
 MASTER_SITE_SUBDIR=	${PORTNAME}/current
@@ -18,7 +17,6 @@ LICENSE=	MIT
 
 RELEASE=	5.9
 
-SHAREMODE=	0644
 GNU_CONFIGURE=	yes
 CONFIGURE_SCRIPT=../configure
 CONFIGURE_ARGS=	--datadir=${PREFIX}/share/misc --disable-overwrite \

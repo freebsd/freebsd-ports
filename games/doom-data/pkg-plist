@@ -2,4 +2,4 @@
 %%HERETIC%%%%DATADIR%%/heretic1.wad
 %%HEXEN%%%%DATADIR%%/hexen.wad
 %%STRIFE%%%%DATADIR%%/strife0.wad
-@unexec rmdir %D/%%DATADIR%% >/dev/null 2>&1 || echo "If you are permanently removing this port, you should remove any WAD files left in %D/%%DATADIR%%." | fmt
+@dirrmtry %%DATADIR%%

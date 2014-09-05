@@ -22,6 +22,7 @@ PORTDOCS=	Changelog README README_ru.txt credits.txt
 OPTIONS_DEFINE=	DOCS
 
 post-patch:
+	@${REINPLACE_CMD} '/^LDFLAGS =/s/$$/ -pthread/' ${WRKSRC}/src/Makefile.bsd
 	@${REINPLACE_CMD} -e \
 		's/int Filter_File( struct dirent/int Filter_File( const struct dirent/' \
 		${WRKSRC}/src/files.cpp

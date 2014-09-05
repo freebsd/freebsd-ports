@@ -5,11 +5,11 @@
  
  OpenJazz: $(objects)
 -	cc -Wall -o OpenJazz -lSDL -lstdc++ -lz $(objects)
-+	${CC} ${LDFLAGS} -Wall -o OpenJazz -lstdc++ -lz $(objects)
++	${CXX} ${LDFLAGS} -Wall -o OpenJazz $(objects) -lz -lm
  
  %.o: %.cpp
 -	cc -Wall -DUSE_SOCKETS -DSCALE -Isrc -O2 -c $< -o $@
-+	${CC} ${CPPFLAGS} ${CFLAGS} -Wall -DUSE_SOCKETS -DSCALE -Isrc -c $< -o $@
++	${CXX} ${CPPFLAGS} ${CFLAGS} -Wall -DUSE_SOCKETS -DSCALE -Isrc -c $< -o $@
  
  clean:
  	rm -f OpenJazz $(objects)

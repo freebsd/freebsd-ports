@@ -73,7 +73,7 @@ diff -urN variants/nethack-3.4.3.orig/sys/unix/Makefile.src variants/nethack-3.4
 +CFLAGS += $(STD_CFLAGS)
  
 -LFLAGS = -L/usr/X11R6/lib
-+LFLAGS = -L${LOCALBASE}/lib -lgnuregex
++LFLAGS = -L${LOCALBASE}/lib -lgnuregex -lm
  
  #   OR compile backwards compatible a.out format
  # CFLAGS = -O2 -b i486-linuxaout -fomit-frame-pointer -I../include

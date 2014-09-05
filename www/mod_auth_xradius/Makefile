@@ -18,10 +18,4 @@ GNU_CONFIGURE=	yes
 
 PLIST_FILES=	${APACHEMODDIR}/mod_auth_xradius.so
 
-.include <bsd.port.pre.mk>
-
-.if ${APACHE_VERSION} > 22
-EXTRA_PATCHES=	${PATCHDIR}/ap24-patch-src__xradius_cache.c
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

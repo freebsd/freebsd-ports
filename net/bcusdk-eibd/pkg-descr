@@ -1,6 +1,0 @@
-The European Installation Bus (EIB) is a field bus system for home and building
-automation. This package contains the EIBnet/IP tunneling and routing daemon
-which is part of the BCU SDK. It provides access to an EIB bus over TCP/IP and
-Unix domain sockets.
-
-WWW: http://www.auto.tuwien.ac.at/~mkoegler/index.php/eibd

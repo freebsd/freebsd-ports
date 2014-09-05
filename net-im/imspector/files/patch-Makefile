@@ -8,7 +8,7 @@
  
  ##########
  # Comment this out if you dont want SSL
-@@ -7,11 +7,11 @@
+@@ -7,27 +7,27 @@
  
  ##########
  # Location of openssl installation
@@ -22,7 +22,12 @@
  
  # For any distro
  #ADD_PLUGINS = mysqlloggingplugin.so sqliteloggingplugin.so postgresqlloggingplugin.so dbfilterplugin.so dbresponderplugin.so
-@@ -23,11 +23,11 @@
+ ##########
+ 
+ ifdef SSL
+-SSL_LIBS = -L$(SSL_DIR)/lib -lssl
++SSL_LIBS = -L$(SSL_DIR)/lib -lssl -lcrypto
+ SSL_FLAGS = -I$(SSL_DIR)/include -DHAVE_SSL
  SSL_OBJS = sslstate.o
  endif
  

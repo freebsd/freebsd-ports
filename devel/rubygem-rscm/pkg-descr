@@ -6,4 +6,4 @@ RSCM currently supports CVS and Subversion.  Support for ClearCase,
 Darcs, Monotone, Perforce and StarTeam is in progress and partly
 available.
 
-WWW: http://rscm.rubyforge.org
+WWW: http://rubygems.org/gems/rscm/

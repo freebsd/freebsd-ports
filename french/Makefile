@@ -3,8 +3,6 @@
 
     COMMENT = French support
 
-    SUBDIR += acroread8
-    SUBDIR += acroread9
     SUBDIR += alphabet_sounds_fr
     SUBDIR += aspell
     SUBDIR += aster
@@ -13,7 +11,6 @@
     SUBDIR += dico
     SUBDIR += eficas
     SUBDIR += eric4
-    SUBDIR += facturier
     SUBDIR += fortune-mod-zarathoustra
     SUBDIR += geonext
     SUBDIR += gimp-help

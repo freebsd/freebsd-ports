@@ -107,12 +107,15 @@ lib/cinepaint/%%VER%%/plug-ins/xwd
 lib/libcinepaint.a
 lib/libcinepaint.so
 lib/libcinepaint.so.1
+lib/libcinepaint.so.1.0.0
 lib/libcinepaintHalf.a
 lib/libcinepaintHalf.so
 lib/libcinepaintHalf.so.1
+lib/libcinepaintHalf.so.1.0.0
 lib/libcinepaint_fl_i18n.a
 lib/libcinepaint_fl_i18n.so
 lib/libcinepaint_fl_i18n.so.1
+lib/libcinepaint_fl_i18n.so.1.0.0
 libdata/pkgconfig/cinepaint-gtk.pc
 man/man1/cinepaint.1.gz
 man/man1/cinepainttool.1.gz

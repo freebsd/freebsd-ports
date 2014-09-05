@@ -33,12 +33,10 @@ OPTIONS_DEFINE=	PDOPGSQL PDOMYSQL
 PDOPGSQL_DESC=	Install POSTGRESQL PDO Connector
 PDOMYSQL_DESC=	Install MySQL PDO Connector
 
-.include <bsd.port.options.mk>
+PDOPGSQL_USES=	pgsql
+PDOPGSQL_USE=	PHP=pgsql,pdo_pgsql
 
-.if ${PORT_OPTIONS:MPDOPGSQL}
-USE_PGSQL=	yes
-USE_PHP+=	pgsql pdo_pgsql
-.endif
+.include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MPDOMYSQL}
 USE_MYSQL=	client

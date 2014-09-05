@@ -2,20 +2,21 @@
 # $FreeBSD$
 
 PORTNAME=	pymarc
-PORTVERSION=	2.9.2
+PORTVERSION=	3.0.1
 PORTEPOCH=	1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	python@FreeBSD.org
 COMMENT=	Read Write And Modify MARC Bibliographic Data
 
-LICENSE=	BSD
+LICENSE=	BSD2CLAUSE
 
-USE_PYTHON=		2
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}six>0:${PORTSDIR}/devel/py-six
+
+USES=		python
+USE_PYTHON=	autoplist distutils
 
 regression-test: build
 	@cd ${WRKSRC} && ${PYTHON_CMD} test.py

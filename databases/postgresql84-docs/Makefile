@@ -9,10 +9,9 @@ DISTV=		${DISTVERSION:R}
 MAINTAINER=	pgsql@FreeBSD.org
 COMMENT=	The PostgreSQL documentation set
 
-MASTERDIR=	${.CURDIR}/../../databases/postgresql${WANT_PGSQL_VER}-server
+MASTERDIR=	${.CURDIR}/../../databases/postgresql84-server
 
-USE_PGSQL=	yes
-WANT_PGSQL_VER?=84
+USES+=		pgsql:8.4
 
 NO_BUILD=	YES
 SLAVE_ONLY=	YES

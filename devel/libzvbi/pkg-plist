@@ -14,7 +14,3 @@ share/locale/fr/LC_MESSAGES/zvbi.mo
 share/locale/it/LC_MESSAGES/zvbi.mo
 share/locale/nl/LC_MESSAGES/zvbi.mo
 share/locale/pl/LC_MESSAGES/zvbi.mo
-@dirrmtry share/locale/en@quot/LC_MESSAGES
-@dirrmtry share/locale/en@quot
-@dirrmtry share/locale/en@boldquot/LC_MESSAGES
-@dirrmtry share/locale/en@boldquot

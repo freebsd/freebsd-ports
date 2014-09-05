@@ -10,10 +10,9 @@
 #
 # -- Rui Lopes <rui@ruilopes.com>
 
-XMLCATMGR=@XMLCATMGR@
-CATALOG_PORTS_XML=@CATALOG_PORTS_XML@
-PORTNAME=@PORTNAME@
-XSL_DIR=${PKG_PREFIX}/@INSTDIR@
+XMLCATMGR=%%XMLCATMGR%%
+CATALOG_PORTS_XML=%%CATALOG_PORTS_XML%%
+XSL_DIR=${PKG_PREFIX}/%%INSTDIR%%
 CATALOG_XSL=${XSL_DIR}/catalog
 
 if [ "$2" != "POST-INSTALL" ]; then
@@ -21,10 +20,10 @@ if [ "$2" != "POST-INSTALL" ]; then
 fi
 
 ${XMLCATMGR} -c "${CATALOG_PORTS_XML}" add delegateSystem \
-    http://docbook.sourceforge.net/release/${PORTNAME}/ \
+    http://docbook.sourceforge.net/release/slides/ \
     "file://${CATALOG_XSL}"
 ${XMLCATMGR} -c "${CATALOG_PORTS_XML}" add delegateURI \
-    http://docbook.sourceforge.net/release/${PORTNAME}/ \
+    http://docbook.sourceforge.net/release/slides/ \
     "file://${CATALOG_XSL}"
 
 # echo $(w3m -dump http://cvs.sf.net/cgi-bin/viewcvs.cgi/docbook/slides/VERSION

@@ -1,0 +1,22 @@
+--- src/testbed/Makefile.in.orig
++++ src/testbed/Makefile.in
+@@ -1004,7 +1004,8 @@
+   gnunet-service-testbed-logger.c
+ 
+ gnunet_service_testbed_logger_LDADD = \
+- $(top_builddir)/src/util/libgnunetutil.la
++ $(top_builddir)/src/util/libgnunetutil.la \
++ $(LTLIBINTL)
+ 
+ gnunet_service_testbed_logger_DEPENDENCIES = \
+  $(top_builddir)/src/util/libgnunetutil.la
+@@ -1014,7 +1015,8 @@
+ 
+ gnunet_testbed_profiler_LDADD = $(XLIB) \
+  $(top_builddir)/src/util/libgnunetutil.la \
+- $(top_builddir)/src/testbed/libgnunettestbed.la
++ $(top_builddir)/src/testbed/libgnunettestbed.la \
++ $(LTLIBINTL)
+ 
+ gnunet_testbed_profiler_DEPENDENCIES = \
+  $(top_builddir)/src/util/libgnunetutil.la \

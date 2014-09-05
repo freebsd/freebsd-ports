@@ -29,5 +29,6 @@ PLIST_FILES=	bin/blokish
 post-patch:
 	@${REINPLACE_CMD} -e 's|wx-config|${WX_CONFIG}|' \
 		${WRKSRC}/makefile.in ${WRKSRC}/configure
+	@${REINPLACE_CMD} '/^LIBS =/s/$$/ -lGL/' ${WRKSRC}/makefile.in
 
 .include <bsd.port.mk>

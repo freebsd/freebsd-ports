@@ -3,7 +3,7 @@
 
 PORTNAME=	pinba_engine
 PORTVERSION=	2011.08.18
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/tony2001/pinba_engine/tarball/${GITVERSION}/
 DISTNAME=	tony2001-pinba_engine-${GITVERSION}
@@ -28,16 +28,14 @@ IGNORE_WITH_MYSQL=	50
 
 MYSQL_WRKSRC=	$$(cd ${PORTSDIR}/${_MYSQL_SERVER} && ${MAKE} -V WRKSRC)
 
-USES=		gmake
 GNU_CONFIGURE=	yes
+INSTALL_TARGET=	install-strip
+USES=		gmake libtool
 USE_AUTOTOOLS=	aclocal autoheader automake autoconf libtoolize
 USE_LDCONFIG=	${PREFIX}/lib/mysql/plugin
 
-AUTOMAKE_ARGS+=	--add-missing --copy --force-missing
-LIBTOOLIZE_ARGS+=--force --copy
-ACLOCAL_ARGS+=	-I ${LOCALBASE}/share/aclocal
-
-CONFIGURE_ARGS+=	\
+AUTOMAKE_ARGS=	--add-missing --copy --force-missing
+CONFIGURE_ARGS=	--disable-static \
 		--with-mysql=${MYSQL_WRKSRC} \
 		--libdir=${PREFIX}/lib/mysql/plugin
 CFLAGS+=	-I${LOCALBASE}/include/mysql

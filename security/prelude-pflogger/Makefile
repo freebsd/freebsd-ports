@@ -3,7 +3,7 @@
 
 PORTNAME=	prelude-pflogger
 DISTVERSION=	0.9.0-rc2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	security
 MASTER_SITES=	http://www.prelude-ids.com/download/releases/${PORTNAME}/
 

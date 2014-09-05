@@ -497,9 +497,6 @@ _PYTHONPKGLIST=	${WRKDIR}/.PLIST.pymodtmp
 # - it links against libpython*.so
 # - it uses USE_PYTHON=distutils
 #
-.if defined(NO_STAGE) && defined(_PYTHON_FEATURE_CONCURRENT)
-BROKEN=		USE_PYTHON=concurrent uses USES=uniquefiles, which is not stage-safe
-.endif
 
 .if defined(_PYTHON_FEATURE_CONCURRENT)
 _USES_POST+=		uniquefiles:dirs
@@ -541,9 +538,7 @@ PYDISTUTILS_INSTALLARGS?=	-c -O1 --prefix=${PREFIX}
 . if !defined(PYDISTUTILS_INSTALLNOSINGLE)
 PYDISTUTILS_INSTALLARGS+=	--single-version-externally-managed
 . endif
-. if !defined(NO_STAGE)
 PYDISTUTILS_INSTALLARGS+=	--root=${STAGEDIR}
-. endif
 .endif
 PYDISTUTILS_INSTALLARGS:=	--record ${_PYTHONPKGLIST} \
 		${PYDISTUTILS_INSTALLARGS}
@@ -582,7 +577,7 @@ add-plist-pymod:
 	@${ECHO_CMD} "${_RELLIBDIR}" >> ${WRKDIR}/.localmtree
 	@${SED} -e 's|^${STAGEDIR}${PREFIX}/||' \
 		-e 's|^${PREFIX}/||' \
-		-e 's|^\(man/.*man[0-9]\)/\(.*\.[0-9]\)$$|\1/\2${MANEXT}|' \
+		-e 's|^\(man/.*man[0-9]\)/\(.*\.[0-9]\)$$|\1/\2.gz|' \
 		${_PYTHONPKGLIST} | ${SORT} >> ${TMPPLIST}
 	@${SED} -e 's|^${STAGEDIR}${PREFIX}/\(.*\)/\(.*\)|\1|' \
 		-e 's|^${PREFIX}/\(.*\)/\(.*\)|\1|' ${_PYTHONPKGLIST} | \
@@ -660,16 +655,6 @@ PLIST_SUB+=	PYTHON_INCLUDEDIR=${PYTHONPREFIX_INCLUDEDIR:S;${PREFIX}/;;} \
 		PYTHON_PLATFORM=${PYTHON_PLATFORM} \
 		PYTHON_SITELIBDIR=${PYTHONPREFIX_SITELIBDIR:S;${PREFIX}/;;} \
 		PYTHON_VERSION=${PYTHON_VERSION}
-
-# If multiple Python versions are installed and cmake is used, it might
-# happen that a cmake-enabled port using find_package(PythonLibs) and
-# find_package(PythonInterp) detects different Python versions.
-# This in turn might cause it to link against version X while using the
-# includes of version Y, leading to a broken port.
-# Enforce a certain Python version by using PYTHON_VER for cmake.
-CMAKE_ARGS+=	\
-		-DPythonLibs_FIND_VERSION:STRING="${PYTHON_VER}" \
-		-DPythonInterp_FIND_VERSION:STRING="${PYTHON_VER}"
 
 _USES_POST+=	python
 .endif # _INCLUDE_USES_PYTHON_MK

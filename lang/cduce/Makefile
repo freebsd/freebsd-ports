@@ -48,7 +48,7 @@ MAKE_JOBS_UNSAFE=yes
 
 post-patch:
 	${REINPLACE_CMD} 's/-linkpkg/& -thread/' \
-		${WRKSRC}/Makefile ${WRKSRC}/configure.ml
+		${WRKSRC}/Makefile.distrib ${WRKSRC}/configure.ml
 
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/doc/*.1 ${STAGEDIR}${MANPREFIX}/man/man1/

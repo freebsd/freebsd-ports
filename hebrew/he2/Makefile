@@ -7,7 +7,7 @@ PORTREVISION=	3
 CATEGORIES=	hebrew editors
 MASTER_SITES=	SF/${PORTNAME}/HebrewEditor/${PORTVERSION}
 
-MAINTAINER=	cjpugmed@gmail.com
+MAINTAINER=	cpm@fbsd.es
 COMMENT=	Editor for editing (primarily LaTeX) Hebrew files
 
 LICENSE=	GPLv2

@@ -3,6 +3,7 @@
 
 PORTNAME=	abcl
 PORTVERSION=	1.3.1
+PORTREVISION=	1
 CATEGORIES=	lang lisp java
 MASTER_SITES=	http://abcl.org/releases/${PORTVERSION}/
 DISTNAME=	${PORTNAME}-src-${PORTVERSION}
@@ -11,6 +12,7 @@ MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Implementation of ANSI Common Lisp in Java
 
 PLIST_FILES=	share/java/classes/abcl.jar \
+		share/java/classes/abcl-contrib.jar \
 		bin/abcl
 
 SUB_LIST+=	JAVAJARDIR="${JAVAJARDIR}"
@@ -22,6 +24,7 @@ USE_ANT=	yes
 
 do-install:
 	${INSTALL_DATA} -v ${WRKSRC}/dist/abcl.jar ${STAGEDIR}${JAVAJARDIR}
+	${INSTALL_DATA} -v ${WRKSRC}/dist/abcl-contrib.jar ${STAGEDIR}${JAVAJARDIR}
 	${INSTALL_SCRIPT} ${WRKDIR}/abcl ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>

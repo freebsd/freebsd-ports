@@ -1,0 +1,16 @@
+--- ld/configure.tgt.orig	1970-01-01 00:26:50.000000000 +0000
++++ ld/configure.tgt	1970-01-01 00:29:22.000000000 +0000
+@@ -81,9 +81,11 @@
+ arm-*-aout | armel-*-aout) targ_emul=armaoutl ;;
+ armeb-*-aout)		targ_emul=armaoutb ;;
+ arm-*-coff)		targ_emul=armcoff ;;
+-arm-*-freebsd* | arm-*-kfreebsd*-gnu)
++arm*b-*-freebsd*)	targ_emul=armelfb_fbsd
++			targ_extra_emuls="armelf_fbsd armelf" ;;
++arm*-*-freebsd* | arm-*-kfreebsd*-gnu)
+ 	       		targ_emul=armelf_fbsd
+-			targ_extra_emuls="armelf" ;;
++			targ_extra_emuls="armelfb_fbsd armelf" ;;
+ armeb-*-netbsdelf*)	targ_emul=armelfb_nbsd;
+ 			targ_extra_emuls="armelf_nbsd armelf armnbsd" ;;
+ arm-*-netbsdelf*)	targ_emul=armelf_nbsd;

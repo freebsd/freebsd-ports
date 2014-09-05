@@ -3,8 +3,8 @@ bin/X
 %%SUID%%@group wheel
 %%SUID%%@mode 4555
 bin/Xorg
-%%SUID%%@owner
-%%SUID%%@group
+%%SUID%%@owner root
+%%SUID%%@group wheel
 %%SUID%%@mode
 bin/cvt
 bin/gtf
@@ -241,7 +241,6 @@ man/man4/fbdevhw.4.gz
 man/man5/xorg.conf.5.gz
 %%NEW%%man/man5/xorg.conf.d.5.gz
 share/aclocal/xorg-server.m4
-%%NEW%%@exec /bin/mkdir -p %D/etc/X11/xorg.conf.d
 @comment %%NEW%%@dirrm share/doc/xorg-server
 @dirrm include/xorg
 @dirrm lib/xorg/modules/extensions/.xorg

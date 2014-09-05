@@ -1,7 +1,4 @@
 bin/pmd
-%%DATADIR%%/ant-1.8.1.jar
-%%DATADIR%%/ant-launcher-1.8.1.jar
-%%DATADIR%%/ant-testutil-1.7.1.jar
 %%DATADIR%%/asm-5.0.2.jar
 %%DATADIR%%/commons-io-2.2.jar
 %%DATADIR%%/commons-lang3-3.1.jar
@@ -10,7 +7,6 @@ bin/pmd
 %%DATADIR%%/jaxen-1.1.1.jar
 %%DATADIR%%/jcommander-1.27.jar
 %%DATADIR%%/jdom-1.0.jar
-%%DATADIR%%/junit-4.4.jar
 %%DATADIR%%/pmd-%%PORTVERSION%%.jar
 %%DATADIR%%/rhino-1.7R3.jar
 %%DATADIR%%/saxon-9.1.0.8-dom.jar

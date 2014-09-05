@@ -134,6 +134,7 @@ llvm-devel/include/clang/ASTMatchers/Dynamic/Registry.h
 llvm-devel/include/clang/ASTMatchers/Dynamic/VariantValue.h
 llvm-devel/include/clang/Analysis/Analyses/CFGReachabilityAnalysis.h
 llvm-devel/include/clang/Analysis/Analyses/Consumed.h
+llvm-devel/include/clang/Analysis/Analyses/DataflowWorklist.h
 llvm-devel/include/clang/Analysis/Analyses/Dominators.h
 llvm-devel/include/clang/Analysis/Analyses/FormatString.h
 llvm-devel/include/clang/Analysis/Analyses/LiveVariables.h
@@ -246,8 +247,6 @@ llvm-devel/include/clang/CodeGen/CodeGenAction.h
 llvm-devel/include/clang/CodeGen/ModuleBuilder.h
 llvm-devel/include/clang/Config/config.h
 llvm-devel/include/clang/Driver/Action.h
-llvm-devel/include/clang/Driver/CC1AsOptions.h
-llvm-devel/include/clang/Driver/CC1AsOptions.inc
 llvm-devel/include/clang/Driver/Compilation.h
 llvm-devel/include/clang/Driver/Driver.h
 llvm-devel/include/clang/Driver/DriverDiagnostic.h
@@ -271,7 +270,6 @@ llvm-devel/include/clang/Format/Format.h
 llvm-devel/include/clang/Frontend/ASTConsumers.h
 llvm-devel/include/clang/Frontend/ASTUnit.h
 llvm-devel/include/clang/Frontend/ChainedDiagnosticConsumer.h
-llvm-devel/include/clang/Frontend/ChainedIncludesSource.h
 llvm-devel/include/clang/Frontend/CodeGenOptions.def
 llvm-devel/include/clang/Frontend/CodeGenOptions.h
 llvm-devel/include/clang/Frontend/CommandLineSourceLoc.h
@@ -444,41 +442,43 @@ llvm-devel/include/clang/Tooling/Refactoring.h
 llvm-devel/include/clang/Tooling/RefactoringCallbacks.h
 llvm-devel/include/clang/Tooling/ReplacementsYaml.h
 llvm-devel/include/clang/Tooling/Tooling.h
-llvm-devel/lib/clang/3.5.0/include/__wmmintrin_aes.h
-llvm-devel/lib/clang/3.5.0/include/__wmmintrin_pclmul.h
-llvm-devel/lib/clang/3.5.0/include/altivec.h
-llvm-devel/lib/clang/3.5.0/include/ammintrin.h
-llvm-devel/lib/clang/3.5.0/include/arm_neon.h
-llvm-devel/lib/clang/3.5.0/include/avx2intrin.h
-llvm-devel/lib/clang/3.5.0/include/avxintrin.h
-llvm-devel/lib/clang/3.5.0/include/bmi2intrin.h
-llvm-devel/lib/clang/3.5.0/include/bmiintrin.h
-llvm-devel/lib/clang/3.5.0/include/cpuid.h
-llvm-devel/lib/clang/3.5.0/include/emmintrin.h
-llvm-devel/lib/clang/3.5.0/include/f16cintrin.h
-llvm-devel/lib/clang/3.5.0/include/fma4intrin.h
-llvm-devel/lib/clang/3.5.0/include/fmaintrin.h
-llvm-devel/lib/clang/3.5.0/include/ia32intrin.h
-llvm-devel/lib/clang/3.5.0/include/immintrin.h
-llvm-devel/lib/clang/3.5.0/include/lzcntintrin.h
-llvm-devel/lib/clang/3.5.0/include/mm3dnow.h
-llvm-devel/lib/clang/3.5.0/include/mm_malloc.h
-llvm-devel/lib/clang/3.5.0/include/mmintrin.h
-llvm-devel/lib/clang/3.5.0/include/module.modulemap
-llvm-devel/lib/clang/3.5.0/include/nmmintrin.h
-llvm-devel/lib/clang/3.5.0/include/pmmintrin.h
-llvm-devel/lib/clang/3.5.0/include/popcntintrin.h
-llvm-devel/lib/clang/3.5.0/include/prfchwintrin.h
-llvm-devel/lib/clang/3.5.0/include/rdseedintrin.h
-llvm-devel/lib/clang/3.5.0/include/rtmintrin.h
-llvm-devel/lib/clang/3.5.0/include/shaintrin.h
-llvm-devel/lib/clang/3.5.0/include/smmintrin.h
-llvm-devel/lib/clang/3.5.0/include/tbmintrin.h
-llvm-devel/lib/clang/3.5.0/include/tmmintrin.h
-llvm-devel/lib/clang/3.5.0/include/wmmintrin.h
-llvm-devel/lib/clang/3.5.0/include/x86intrin.h
-llvm-devel/lib/clang/3.5.0/include/xmmintrin.h
-llvm-devel/lib/clang/3.5.0/include/xopintrin.h
+llvm-devel/lib/clang/3.6.0/include/__wmmintrin_aes.h
+llvm-devel/lib/clang/3.6.0/include/__wmmintrin_pclmul.h
+llvm-devel/lib/clang/3.6.0/include/altivec.h
+llvm-devel/lib/clang/3.6.0/include/ammintrin.h
+llvm-devel/lib/clang/3.6.0/include/arm_neon.h
+llvm-devel/lib/clang/3.6.0/include/avx2intrin.h
+llvm-devel/lib/clang/3.6.0/include/avx512erintrin.h
+llvm-devel/lib/clang/3.6.0/include/avx512fintrin.h
+llvm-devel/lib/clang/3.6.0/include/avxintrin.h
+llvm-devel/lib/clang/3.6.0/include/bmi2intrin.h
+llvm-devel/lib/clang/3.6.0/include/bmiintrin.h
+llvm-devel/lib/clang/3.6.0/include/cpuid.h
+llvm-devel/lib/clang/3.6.0/include/emmintrin.h
+llvm-devel/lib/clang/3.6.0/include/f16cintrin.h
+llvm-devel/lib/clang/3.6.0/include/fma4intrin.h
+llvm-devel/lib/clang/3.6.0/include/fmaintrin.h
+llvm-devel/lib/clang/3.6.0/include/ia32intrin.h
+llvm-devel/lib/clang/3.6.0/include/immintrin.h
+llvm-devel/lib/clang/3.6.0/include/lzcntintrin.h
+llvm-devel/lib/clang/3.6.0/include/mm3dnow.h
+llvm-devel/lib/clang/3.6.0/include/mm_malloc.h
+llvm-devel/lib/clang/3.6.0/include/mmintrin.h
+llvm-devel/lib/clang/3.6.0/include/module.modulemap
+llvm-devel/lib/clang/3.6.0/include/nmmintrin.h
+llvm-devel/lib/clang/3.6.0/include/pmmintrin.h
+llvm-devel/lib/clang/3.6.0/include/popcntintrin.h
+llvm-devel/lib/clang/3.6.0/include/prfchwintrin.h
+llvm-devel/lib/clang/3.6.0/include/rdseedintrin.h
+llvm-devel/lib/clang/3.6.0/include/rtmintrin.h
+llvm-devel/lib/clang/3.6.0/include/shaintrin.h
+llvm-devel/lib/clang/3.6.0/include/smmintrin.h
+llvm-devel/lib/clang/3.6.0/include/tbmintrin.h
+llvm-devel/lib/clang/3.6.0/include/tmmintrin.h
+llvm-devel/lib/clang/3.6.0/include/wmmintrin.h
+llvm-devel/lib/clang/3.6.0/include/x86intrin.h
+llvm-devel/lib/clang/3.6.0/include/xmmintrin.h
+llvm-devel/lib/clang/3.6.0/include/xopintrin.h
 llvm-devel/lib/libclang.a
 llvm-devel/lib/libclang.so
 llvm-devel/lib/libclangARCMigrate.a
@@ -496,7 +496,7 @@ llvm-devel/lib/libclangFrontendTool.a
 llvm-devel/lib/libclangIndex.a
 llvm-devel/lib/libclangLex.a
 llvm-devel/lib/libclangParse.a
-llvm-devel/lib/libclangRewriteCore.a
+llvm-devel/lib/libclangRewrite.a
 llvm-devel/lib/libclangRewriteFrontend.a
 llvm-devel/lib/libclangSema.a
 llvm-devel/lib/libclangSerialization.a
@@ -508,8 +508,8 @@ man/man1/clang-devel.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/html/clang/clang.html
 %%PORTDOCS%%%%DOCSDIR%%/html/clang/manpage.css
 %%PORTDOCS%%%%DOCSDIR%%/ps/clang.ps
-@dirrm llvm-devel/lib/clang/3.5.0/include
-@dirrm llvm-devel/lib/clang/3.5.0
+@dirrm llvm-devel/lib/clang/3.6.0/include
+@dirrm llvm-devel/lib/clang/3.6.0
 @dirrm llvm-devel/lib/clang
 @dirrm llvm-devel/include/clang/Tooling
 @dirrm llvm-devel/include/clang/StaticAnalyzer/Frontend

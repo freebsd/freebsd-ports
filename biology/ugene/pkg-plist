@@ -51,36 +51,20 @@ lib/ugene/libugenedb.so
 lib/ugene/libugenedb.so.1
 lib/ugene/libugenedb.so.1.0
 lib/ugene/libugenedb.so.1.0.0
-lib/ugene/plugins/libbrowser_support.so
-lib/ugene/plugins/libbrowser_support.so.1
-lib/ugene/plugins/libbrowser_support.so.1.0
-lib/ugene/plugins/libbrowser_support.so.1.0.0
-lib/ugene/plugins/liblinkdata_support.so
-lib/ugene/plugins/liblinkdata_support.so.1
-lib/ugene/plugins/liblinkdata_support.so.1.0
-lib/ugene/plugins/liblinkdata_support.so.1.0.0
-lib/ugene/plugins/libvariants.so
-lib/ugene/plugins/libvariants.so.1
-lib/ugene/plugins/libvariants.so.1.0
-lib/ugene/plugins/libvariants.so.1.0.0
-lib/ugene/plugins/linkdata_support.license
-lib/ugene/plugins/linkdata_support.plugin
-lib/ugene/plugins/variants.license
-lib/ugene/plugins/variants.plugin
 lib/ugene/plugins/CoreTests.license
 lib/ugene/plugins/CoreTests.plugin
 lib/ugene/plugins/GUITestBase.license
 lib/ugene/plugins/GUITestBase.plugin
 lib/ugene/plugins/annotator.license
 lib/ugene/plugins/annotator.plugin
-lib/ugene/plugins/browser_support.license
-lib/ugene/plugins/browser_support.plugin
 lib/ugene/plugins/api_tests.license
 lib/ugene/plugins/api_tests.plugin
 lib/ugene/plugins/ball.license
 lib/ugene/plugins/ball.plugin
 lib/ugene/plugins/biostruct3d_view.license
 lib/ugene/plugins/biostruct3d_view.plugin
+lib/ugene/plugins/browser_support.license
+lib/ugene/plugins/browser_support.plugin
 lib/ugene/plugins/chroma_view.license
 lib/ugene/plugins/chroma_view.plugin
 lib/ugene/plugins/circular_view.license
@@ -109,6 +93,8 @@ lib/ugene/plugins/gor4.license
 lib/ugene/plugins/gor4.plugin
 lib/ugene/plugins/hmm2.license
 lib/ugene/plugins/hmm2.plugin
+%%SSE2%%lib/ugene/plugins/hmm3.license
+%%SSE2%%lib/ugene/plugins/hmm3.plugin
 lib/ugene/plugins/kalign.license
 lib/ugene/plugins/kalign.plugin
 lib/ugene/plugins/libCoreTests.so
@@ -135,6 +121,10 @@ lib/ugene/plugins/libbiostruct3d_view.so
 lib/ugene/plugins/libbiostruct3d_view.so.1
 lib/ugene/plugins/libbiostruct3d_view.so.1.0
 lib/ugene/plugins/libbiostruct3d_view.so.1.0.0
+lib/ugene/plugins/libbrowser_support.so
+lib/ugene/plugins/libbrowser_support.so.1
+lib/ugene/plugins/libbrowser_support.so.1.0
+lib/ugene/plugins/libbrowser_support.so.1.0.0
 lib/ugene/plugins/libchroma_view.so
 lib/ugene/plugins/libchroma_view.so.1
 lib/ugene/plugins/libchroma_view.so.1.0
@@ -191,10 +181,18 @@ lib/ugene/plugins/libhmm2.so
 lib/ugene/plugins/libhmm2.so.1
 lib/ugene/plugins/libhmm2.so.1.0
 lib/ugene/plugins/libhmm2.so.1.0.0
+%%SSE2%%lib/ugene/plugins/libhmm3.so
+%%SSE2%%lib/ugene/plugins/libhmm3.so.1
+%%SSE2%%lib/ugene/plugins/libhmm3.so.1.0
+%%SSE2%%lib/ugene/plugins/libhmm3.so.1.0.0
 lib/ugene/plugins/libkalign.so
 lib/ugene/plugins/libkalign.so.1
 lib/ugene/plugins/libkalign.so.1.0
 lib/ugene/plugins/libkalign.so.1.0.0
+lib/ugene/plugins/liblinkdata_support.so
+lib/ugene/plugins/liblinkdata_support.so.1
+lib/ugene/plugins/liblinkdata_support.so.1.0
+lib/ugene/plugins/liblinkdata_support.so.1.0.0
 lib/ugene/plugins/libopencl_support.so
 lib/ugene/plugins/libopencl_support.so.1
 lib/ugene/plugins/libopencl_support.so.1.0
@@ -259,6 +257,10 @@ lib/ugene/plugins/libtest_runner.so.1.0.0
 %%NOX64%%lib/ugene/plugins/libumuscle.so.1
 %%NOX64%%lib/ugene/plugins/libumuscle.so.1.0
 %%NOX64%%lib/ugene/plugins/libumuscle.so.1.0.0
+lib/ugene/plugins/libvariants.so
+lib/ugene/plugins/libvariants.so.1
+lib/ugene/plugins/libvariants.so.1.0
+lib/ugene/plugins/libvariants.so.1.0.0
 lib/ugene/plugins/libweight_matrix.so
 lib/ugene/plugins/libweight_matrix.so.1
 lib/ugene/plugins/libweight_matrix.so.1.0
@@ -267,6 +269,8 @@ lib/ugene/plugins/libworkflow_designer.so
 lib/ugene/plugins/libworkflow_designer.so.1
 lib/ugene/plugins/libworkflow_designer.so.1.0
 lib/ugene/plugins/libworkflow_designer.so.1.0.0
+lib/ugene/plugins/linkdata_support.license
+lib/ugene/plugins/linkdata_support.plugin
 lib/ugene/plugins/opencl_support.license
 lib/ugene/plugins/opencl_support.plugin
 lib/ugene/plugins/orf_marker.license
@@ -299,10 +303,13 @@ lib/ugene/plugins/test_runner.license
 lib/ugene/plugins/test_runner.plugin
 %%NOX64%%lib/ugene/plugins/umuscle.license
 %%NOX64%%lib/ugene/plugins/umuscle.plugin
+lib/ugene/plugins/variants.license
+lib/ugene/plugins/variants.plugin
 lib/ugene/plugins/weight_matrix.license
 lib/ugene/plugins/weight_matrix.plugin
 lib/ugene/plugins/workflow_designer.license
 lib/ugene/plugins/workflow_designer.plugin
+lib/ugene/plugins_checker
 lib/ugene/transl_cs.qm
 lib/ugene/transl_en.qm
 lib/ugene/transl_ru.qm
@@ -366,6 +373,7 @@ share/pixmaps/ugene.xpm
 %%DATADIR%%/cmdline/convert-seq.uwl
 %%DATADIR%%/cmdline/das_annotation.uwl
 %%DATADIR%%/cmdline/extract-sequence.uwl
+%%DATADIR%%/cmdline/extract_consensus.uwl
 %%DATADIR%%/cmdline/fetch-sequence.uwl
 %%DATADIR%%/cmdline/find-orfs.uwl
 %%DATADIR%%/cmdline/find-repeats.uwl
@@ -387,7 +395,16 @@ share/pixmaps/ugene.xpm
 %%DATADIR%%/cmdline/sitecon-build.uwl
 %%DATADIR%%/cmdline/sitecon-search.uwl
 %%DATADIR%%/cmdline/snp.uwl
+%%DATADIR%%/custom_annotations/plasmid_features.txt
 %%DATADIR%%/enzymes/2013_08_01.bairoch.gz
+%%DATADIR%%/genome_lengths/danRer7.genome
+%%DATADIR%%/genome_lengths/ecoli.genome
+%%DATADIR%%/genome_lengths/hg18.genome
+%%DATADIR%%/genome_lengths/hg19.genome
+%%DATADIR%%/genome_lengths/mm10.genome
+%%DATADIR%%/genome_lengths/mm8.genome
+%%DATADIR%%/genome_lengths/mm9.genome
+%%DATADIR%%/genome_lengths/test.genome
 %%DATADIR%%/license
 %%PORTDOCS%%%%DOCSDIR%%/QueryDesigner_UserManual.pdf
 %%PORTDOCS%%%%DOCSDIR%%/UniproUGENE_UserManual.pdf
@@ -1141,8 +1158,8 @@ share/pixmaps/ugene.xpm
 %%DATADIR%%/query_samples/RepeatsWithORF.uql
 %%DATADIR%%/query_samples/SimpleGene.uql
 %%DATADIR%%/samples/ABIF/A01.abi
-%%DATADIR%%/samples/ACE/K26.ace
 %%DATADIR%%/samples/ACE/BL060C3.ace
+%%DATADIR%%/samples/ACE/K26.ace
 %%DATADIR%%/samples/Assembly/chrM.fa
 %%DATADIR%%/samples/Assembly/chrM.sam
 %%DATADIR%%/samples/Assembly/chrM.sorted.bam
@@ -1372,6 +1389,8 @@ share/pixmaps/ugene.xpm
 %%DATADIR%%/workflow_samples/Conversions/msa2clustal.uwl
 %%DATADIR%%/workflow_samples/Conversions/query2alignment.uwl
 %%DATADIR%%/workflow_samples/Conversions/seq2gen.uwl
+%%DATADIR%%/workflow_samples/Custom elements/casava-fastq-filter.uwl
+%%DATADIR%%/workflow_samples/Custom elements/fastq-trimmer.uwl
 %%DATADIR%%/workflow_samples/Custom elements/script-dump-sequence-info.uwl
 %%DATADIR%%/workflow_samples/Custom elements/script-linkdata-fetch-seq.uwl
 %%DATADIR%%/workflow_samples/Custom elements/script-quality-filter.uwl
@@ -1395,12 +1414,15 @@ share/pixmaps/ugene.xpm
 %%DATADIR%%/workflow_samples/NGS/tuxedo/tuxedo_single_dataset.uwl
 %%DATADIR%%/workflow_samples/NGS/tuxedo/tuxedo_single_dataset_paired.uwl
 %%DATADIR%%/workflow_samples/NGS/tuxedo.uwl
+%%DATADIR%%/workflow_samples/Scenarios/extract_consensus.uwl
 %%DATADIR%%/workflow_samples/Scenarios/filter_matched.uwl
 %%DATADIR%%/workflow_samples/Scenarios/find_sequences.uwl
 %%DATADIR%%/workflow_samples/Scenarios/gene_by_gene_report.uwl
 %%DATADIR%%/workflow_samples/Scenarios/merge_sequence_annotation.uwl
 %%DATADIR%%/workflow_samples/Transcriptomics/SearchTFBS.uwl
+%%DATADIR%%/workflow_samples/users/CASAVA FASTQ filter.usa
 %%DATADIR%%/workflow_samples/users/Dump sequence info.usa
+%%DATADIR%%/workflow_samples/users/FASTQ Trimmer.usa
 %%DATADIR%%/workflow_samples/users/LinkData Fetch.usa
 %%DATADIR%%/workflow_samples/users/QualityFilter.usa
 @dirrm %%DATADIR%%/workflow_samples/users
@@ -1456,7 +1478,9 @@ share/pixmaps/ugene.xpm
 @dirrm %%DATADIR%%/position_weight_matrix/JASPAR
 @dirrm %%DATADIR%%/position_weight_matrix
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm %%DATADIR%%/genome_lengths
 @dirrm %%DATADIR%%/enzymes
+@dirrm %%DATADIR%%/custom_annotations
 @dirrm %%DATADIR%%/cmdline
 @dirrm %%DATADIR%%/biostruct3d_plugin
 @dirrm %%DATADIR%%/back_translation/Yeast

@@ -1,9 +1,0 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/Net/DirectConnect/TigerHash.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/DirectConnect/TigerHash/.packlist
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/DirectConnect/TigerHash/TigerHash.so
-%%PERL5_MAN3%%/Net::DirectConnect::TigerHash.3.gz
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/DirectConnect/TigerHash
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/DirectConnect
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Net/DirectConnect
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Net

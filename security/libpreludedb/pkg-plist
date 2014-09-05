@@ -1,32 +1,29 @@
-bin/preludedb-admin
 bin/libpreludedb-config
+bin/preludedb-admin
+include/libpreludedb/preludedb.h
+include/libpreludedb/preludedb-error.h
 include/libpreludedb/preludedb-path-selection.h
-include/libpreludedb/preludedb-plugin-sql.h
 include/libpreludedb/preludedb-plugin-format.h
+include/libpreludedb/preludedb-plugin-sql.h
 include/libpreludedb/preludedb-sql-settings.h
 include/libpreludedb/preludedb-sql.h
 include/libpreludedb/preludedb-version.h
-include/libpreludedb/preludedb-error.h
-include/libpreludedb/preludedb.h
-lib/libpreludedb.so.4
 lib/libpreludedb.so
-lib/libpreludedb.la
+lib/libpreludedb.so.0
+lib/libpreludedb.so.0.4.10
 lib/libpreludedb/plugins/formats/classic.so
-lib/libpreludedb/plugins/formats/classic.la
-%%WITH_MYSQL%%lib/libpreludedb/plugins/sql/mysql.so
-%%WITH_MYSQL%%lib/libpreludedb/plugins/sql/mysql.la
-%%WITH_PGSQL%%lib/libpreludedb/plugins/sql/pgsql.so
-%%WITH_PGSQL%%lib/libpreludedb/plugins/sql/pgsql.la
-%%WITH_SQLITE%%lib/libpreludedb/plugins/sql/sqlite3.so
-%%WITH_SQLITE%%lib/libpreludedb/plugins/sql/sqlite3.la
-%%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/PreludeDB.pm
-%%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/PreludeDB/.packlist
-%%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/PreludeDB/PreludeDB.so
-%%WITH_PERL%%@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/PreludeDB
-%%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/_preludedb.so
-%%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/preludedb-0.0.0-py%%PYTHON_VER%%.egg-info
-%%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/preludedb.py
-%%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/preludedb.pyc
+%%MYSQL%%lib/libpreludedb/plugins/sql/mysql.so
+%%PGSQL%%lib/libpreludedb/plugins/sql/pgsql.so
+%%SQLITE%%lib/libpreludedb/plugins/sql/sqlite3.so
+%%PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/PreludeDB.pm
+%%PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/PreludeDB/.packlist
+%%PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/PreludeDB/PreludeDB.so
+%%PERL%%@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/PreludeDB
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/_preludedb.so
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/preludedb-0.0.0-py%%PYTHON_VER%%.egg-info
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/preludedb.py
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/preludedb.pyc
+man/man1/preludedb-admin.1.gz
 share/aclocal/libpreludedb.m4
 %%DATADIR%%/classic/mysql-update-14-1.sql
 %%DATADIR%%/classic/mysql-update-14-2.sql
@@ -51,9 +48,6 @@ share/aclocal/libpreludedb.m4
 %%DATADIR%%/classic/sqlite-update-14-6.sql
 %%DATADIR%%/classic/sqlite-update-14-7.sql
 %%DATADIR%%/classic/sqlite.sql
-%%WITH_MYSQL%%@dirrmtry lib/libpreludedb/plugins/sql
-%%WITH_PGSQL%%@dirrmtry lib/libpreludedb/plugins/sql
-%%WITH_SQLITE%%@dirrmtry lib/libpreludedb/plugins/sql
 @dirrm %%DATADIR%%/classic
 @dirrm %%DATADIR%%
 @dirrmtry lib/libpreludedb/plugins/sql

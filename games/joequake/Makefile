@@ -31,7 +31,6 @@ HUD_DESC=	High quality HUD images (for OpenGL)
 HUD_SA_DESC=	Same for Scourge of Armagon (hipnotic)
 X86_ASM_DESC= Enable x86 assembly code
 
-NO_STAGE=	yes
 .include "${.CURDIR}/../quake-data/Makefile.include"
 
 .include <bsd.port.options.mk>
@@ -82,28 +81,23 @@ PLIST_SUB+=	X11="@comment "
 .endif
 
 do-install:
-	${MKDIR} ${Q1DIR}/${PORTNAME}
-	${INSTALL_DATA} ${WRKDIR}/${PORTNAME}/pak0.pak ${Q1DIR}/${PORTNAME}
+	${MKDIR} ${STAGEDIR}${Q1DIR}/${PORTNAME}
+	${INSTALL_DATA} ${WRKDIR}/${PORTNAME}/pak0.pak ${STAGEDIR}${Q1DIR}/${PORTNAME}
 .if ${PORT_OPTIONS:MOPENGL}
 	${INSTALL_PROGRAM} ${WRKSRC}/release_glx/joequake-gl.glx \
-		${PREFIX}/bin/joequake-glx
+		${STAGEDIR}${PREFIX}/bin/joequake-glx
 .endif
 .if ${PORT_OPTIONS:MHUD} || !empty(PORT_OPTIONS:MHUD_SA)
-	${MKDIR} ${Q1DIR}/${PORTNAME}/textures/wad
-	${INSTALL_DATA} ${WRKDIR}/wad/* ${Q1DIR}/${PORTNAME}/textures/wad
+	${MKDIR} ${STAGEDIR}${Q1DIR}/${PORTNAME}/textures/wad
+	${INSTALL_DATA} ${WRKDIR}/wad/* ${STAGEDIR}${Q1DIR}/${PORTNAME}/textures/wad
 .endif
 .if ${PORT_OPTIONS:MX11}
 	${INSTALL_PROGRAM} ${WRKSRC}/release_x11/joequake.x11 \
-		${PREFIX}/bin/joequake-x11
+		${STAGEDIR}${PREFIX}/bin/joequake-x11
 .endif
 .if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKDIR}/${PORTNAME}/doc/*.txt ${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKDIR}/${PORTNAME}/doc/*.txt ${STAGEDIR}${DOCSDIR}
 .endif
-
-post-install:
-	@${ECHO_CMD}
-	@${CAT} ${PKGMESSAGE}
-	@${ECHO_CMD}
 
 .include <bsd.port.mk>

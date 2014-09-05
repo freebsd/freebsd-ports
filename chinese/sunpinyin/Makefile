@@ -24,10 +24,13 @@ MAKE_ARGS+=	--prefix=${PREFIX} --libdatadir=${PREFIX}/share
 USE_LDCONFIG=	yes
 USES=		scons gmake iconv pkgconfig tar:xz
 LDFLAGS+=	-L${LOCALBASE}/lib ${ICONV_LIB}
+INSTALL_TARGET=	install --install-sandbox=${STAGEDIR}
 
-NO_STAGE=	yes
 post-patch:
 	@${CP} ${_DISTDIR}/lm_sc.t3g.arpa.tar.bz2 \
 		${_DISTDIR}/dict.utf8.tar.bz2 ${WRKSRC}/raw
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libsunpinyin.so.3.0
 
 .include <bsd.port.mk>

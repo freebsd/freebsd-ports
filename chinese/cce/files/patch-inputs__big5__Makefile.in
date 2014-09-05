@@ -1,0 +1,26 @@
+--- inputs/big5/Makefile.in.orig	2004-02-14 13:17:23.000000000 +0900
++++ inputs/big5/Makefile.in	2014-08-25 17:21:21.000000000 +0900
+@@ -146,7 +146,7 @@
+ target_os = @target_os@
+ target_vendor = @target_vendor@
+ CIN2TAB = ../utils/cin2tab$(EXEEXT)
+-CCE_SHARE_DIR = $(DESTDIR)$(datadir)
++CCE_SHARE_DIR = $(datadir)
+ 
+ # You may add your favorite input method here
+ # zhuyin.cin is better than table-based phone.cin?
+@@ -346,10 +346,10 @@
+ 	-rm -f core core.* *.lx *.tab
+ 
+ allinstall: $(CIN2TAB) $(BIG5LX)
+-	$(mkinstalldirs) $(CCE_SHARE_DIR)/cce
+-	$(mkinstalldirs) $(CCE_SHARE_DIR)/cce/big5
+-	$(INSTALL_DATA) $(srcdir)/*.tab $(CCE_SHARE_DIR)/cce/big5
+-	$(INSTALL_DATA) $(srcdir)/*.lx $(CCE_SHARE_DIR)/cce/big5
++	$(mkinstalldirs) $(DESTDIR)$(CCE_SHARE_DIR)/cce
++	$(mkinstalldirs) $(DESTDIR)$(CCE_SHARE_DIR)/cce/big5
++	$(INSTALL_DATA) $(srcdir)/*.tab $(DESTDIR)$(CCE_SHARE_DIR)/cce/big5
++	$(INSTALL_DATA) $(srcdir)/*.lx $(DESTDIR)$(CCE_SHARE_DIR)/cce/big5
+ 
+ # CIN from cxterm, put multiple chars in the same line
+ 4Corner.tab: 4Corner.cin $(CIN2TAB)

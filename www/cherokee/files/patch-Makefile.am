@@ -1,0 +1,57 @@
+--- Makefile.am.orig
++++ Makefile.am
+@@ -105,52 +105,16 @@
+ 		); \
+ 	fi
+ 
+-install-data-local-config:
++install-data-local: $(CONFS)
+ 	@$(mkinstalldirs) $(DESTDIR)$(pkgincludedir);
+ 	$(INSTALL_DATA) $(top_builddir)/config.h $(DESTDIR)$(pkgincludedir)/cherokee-config.h
+ 
+-uninstall-local-config:
++uninstall-local:
+ 	@if test -f $(DESTDIR)$(pkgincludedir)/cherokee-config.h; then \
+ 		echo "rm -f $(DESTDIR)$(pkgincludedir)/cherokee-config.h"; \
+ 		$(RM) -f $(DESTDIR)$(pkgincludedir)/cherokee-config.h; \
+ 	fi
+ 
+-install-data-local: $(CONFS) install-data-local-config
+-	@$(mkinstalldirs) $(DESTDIR)$(localstatedir)
+-	@$(mkinstalldirs) $(DESTDIR)$(localstatedir)/run
+-	@$(mkinstalldirs) $(DESTDIR)$(localstatedir)/log
+-	@$(mkinstalldirs) $(DESTDIR)$(localstatedir)/lib/cherokee/graphs/images
+-	@$(mkinstalldirs) $(DESTDIR)$(cherokeeconfdir)
+-	@$(mkinstalldirs) $(DESTDIR)$(cherokeeadmindir)
+-	@if test -f $(DESTDIR)$(cherokeeconfdir)/cherokee.conf ; then \
+-		echo "$@ will not overwrite existing $(DESTDIR)$(cherokeeconfdir)/cherokee.conf"; \
+-	else \
+-		$(INSTALL_DATA) $(top_builddir)/cherokee.conf.sample $(DESTDIR)$(cherokeeconfdir)/cherokee.conf; \
+-	fi
+-	$(INSTALL_DATA) $(top_builddir)/cherokee.conf.sample $(DESTDIR)$(cherokeeadmindir)/cherokee.conf.sample
+-	$(INSTALL_DATA) $(top_builddir)/performance.conf.sample $(DESTDIR)$(cherokeeadmindir)/performance.conf.sample
+-	@if test -f $(DESTDIR)$(cherokeeconfdir)/cherokee.conf.perf_sample ; then \
+-		echo "$@ will not overwrite existing $(DESTDIR)$(cherokeeconfdir)/cherokee.conf.perf_sample"; \
+-	else \
+-		$(INSTALL_DATA) $(top_builddir)/performance.conf.sample $(DESTDIR)$(cherokeeconfdir)/cherokee.conf.perf_sample; \
+-	fi
+-	@if test -d $(DESTDIR)$(sysconfdir)/pam.d && test ! -d $(DESTDIR)$(sysconfdir)/pam.d/cherokee ; then \
+-		$(INSTALL_DATA) $(top_srcdir)/pam.d_cherokee $(DESTDIR)$(sysconfdir)/pam.d/cherokee; \
+-	fi
+-	$(mkinstalldirs) $(DESTDIR)$(localstatedir)
+-
+-uninstall-local: uninstall-local-config
+-#	@if test -f $(DESTDIR)$(cherokeeconfdir)/cherokee.conf ; then \
+-#		echo "rm -f $(DESTDIR)$(cherokeeconfdir)/cherokee.conf"; \
+-#		$(RM) -f $(DESTDIR)$(cherokeeconfdir)/cherokee.conf; \
+-#	fi
+-	@if test -f $(DESTDIR)$(cherokeeconfdir)/cherokee.conf.perf_sample ; then \
+-		echo "rm -f $(DESTDIR)$(cherokeeconfdir)/cherokee.conf.perf_sample"; \
+-		$(RM) -f $(DESTDIR)$(cherokeeconfdir)/cherokee.conf.perf_sample; \
+-	fi
+-	$(RM) -f $(DESTDIR)$(cherokeeadmindir)/cherokee.conf.sample
+-	$(RM) -f $(DESTDIR)$(cherokeeadmindir)/performance.conf.sample
+-
+ test:
+ 	$(MAKE) -C doc test
+ 	$(MAKE) -C admin test

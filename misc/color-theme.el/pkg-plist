@@ -1,8 +1,0 @@
-%%EMACS_SITE_LISPDIR%%/color-theme/color-theme.el
-%%EMACS_SITE_LISPDIR%%/color-theme/color-theme.elc
-%%EMACS_SITE_LISPDIR%%/color-theme/themes/color-theme-example.el
-%%EMACS_SITE_LISPDIR%%/color-theme/themes/color-theme-example.elc
-%%EMACS_SITE_LISPDIR%%/color-theme/themes/color-theme-library.el
-%%EMACS_SITE_LISPDIR%%/color-theme/themes/color-theme-library.elc
-@dirrm %%EMACS_SITE_LISPDIR%%/color-theme/themes
-@dirrm %%EMACS_SITE_LISPDIR%%/color-theme

@@ -19,13 +19,11 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-festival \
 		--disable-gucharmap \
 		--disable-espeak \
+		--disable-tools \
 		--disable-updateinfo
 CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib
 USES=		gettext gmake libtool pathfix pkgconfig tar:bzip2
-CONFIGURE_WRKSRC=	${WRKSRC}/dict
-BUILD_WRKSRC=	${CONFIGURE_WRKSRC}
-INSTALL_WRKSRC=	${CONFIGURE_WRKSRC}
 
 PROJECTHOST=	stardict-3
 
@@ -39,25 +37,21 @@ GCONF_SCHEMAS=	stardict.schemas
 INSTALLS_OMF=	yes
 PLIST_SUB=	GNOME=""
 .else
-USE_AUTOTOOLS=	autoconf
 USE_GNOME+=	gtk20
-CONFIGURE_ARGS+=--disable-gnome-support --disable-schemas-install
+CONFIGURE_ARGS+=--disable-gnome-support --disable-schemas-install \
+		--disable-scrollkeeper
 PLIST_SUB=	GNOME="@comment "
-MAKE_ARGS+=	AUTOMAKE="${TRUE}" ACLOCAL="${TRUE}"
 .endif
 
 post-patch:
 .if !${PORT_OPTIONS:MGNOME}
 	@${REINPLACE_CMD} -e '/^SUBDIRS/s,help,,' ${WRKSRC}/dict/Makefile.in
-	@${REINPLACE_CMD} -e '/^GNOME_DOC_INIT/d' \
-		-e '/^help\/Makefile/d' ${WRKSRC}/dict/configure.ac
 .endif
 	@${REINPLACE_CMD} -e 's,/usr/share,${PREFIX}/share,g' \
 		${WRKSRC}/dict/src/conf.cpp
-
-pre-configure:
-	cd ${WRKSRC}/lib && \
-	${SETENV} ${CONFIGURE_ENV} ./${CONFIGURE_SCRIPT} ${CONFIGURE_ARGS} && \
-	${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_FLAGS} ${MAKEFILE} ${_MAKE_JOBS} ${MAKE_ARGS} ${ALL_TARGET}
+	@${REINPLACE_CMD} \
+		-e '/as_fn_error.*gnome-doc-utils/d' \
+		-e '/DEP_MODULES=/s/"$$/ gmodule-2.0"/' \
+		${WRKSRC}/dict/configure
 
 .include <bsd.port.mk>

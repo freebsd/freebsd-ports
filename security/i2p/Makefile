@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	i2p
-PORTVERSION=	0.9.14
+PORTVERSION=	0.9.14.1
 CATEGORIES=	security java net-p2p
 MASTER_SITES=	SF/${PORTNAME:tl}/${PORTVERSION} \
 		http://download.i2p2.no/releases/${PORTVERSION}/ \

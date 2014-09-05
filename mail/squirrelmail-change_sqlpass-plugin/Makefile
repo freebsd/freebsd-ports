@@ -3,8 +3,8 @@
 
 PORTNAME=	change-sqlpass
 PORTVERSION=	3.3
-PORTREVISION=	2
-CATEGORIES=		mail www
+PORTREVISION=	3
+CATEGORIES=	mail www
 DISTNAME=	${PORTNAME:S/-/_/}-${PORTVERSION}-1.2
 
 MAINTAINER=	itetcu@FreeBSD.org
@@ -16,6 +16,5 @@ RUN_DEPENDS=	${LOCALBASE}/share/pear/DB.php:${PORTSDIR}/databases/pear-DB
 
 SQUIRREL_PLUGIN_NAME=	${PORTNAME:S/-/_/}
 
-.include <bsd.port.pre.mk>
 .include "${.CURDIR}/../squirrelmail/bsd.squirrelmail.mk"
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -2,7 +2,7 @@
 
 PORTNAME=	libgalago
 PORTVERSION=	0.5.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	devel deskutils
 MASTER_SITES=	http://www.galago-project.org/files/releases/source/${PORTNAME}/
 
@@ -14,12 +14,13 @@ LIB_PC_DEPENDS=	dbus-glib-1.pc:${PORTSDIR}/devel/dbus-glib
 BUILD_DEPENDS+=	${LIB_PC_DEPENDS:C|^|${LOCALBASE}/libdata/pkgconfig/|g}
 RUN_DEPENDS+=	${LIB_PC_DEPENDS:C|^|${LOCALBASE}/libdata/pkgconfig/|g}
 
-USES=	pathfix gettext pkgconfig
+USES=		gettext libtool pathfix pkgconfig
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-tests
 CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+LIBS+=		-L${LOCALBASE}/lib
+INSTALL_TARGET=	install-strip
 
 post-configure:
 	@${ECHO_CMD} "#define HAVE_STRCHR 1" >> ${WRKSRC}/config.h

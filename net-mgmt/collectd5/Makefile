@@ -3,7 +3,7 @@
 
 PORTNAME=	collectd
 PORTVERSION=	5.4.1
-PORTREVISION=	10
+PORTREVISION=	12
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://collectd.org/files/
 PKGNAMESUFFIX=	5
@@ -202,6 +202,7 @@ CONFIGURE_ARGS+=--disable-debug
 LIB_DEPENDS+=	libdbi.so:${PORTSDIR}/databases/libdbi
 CONFIGURE_ARGS+=--with-libdbi=${LOCALBASE} --enable-dbi
 PLIST_SUB+=	DBI=""
+CFLAGS+=	-Wno-deprecated-declarations
 .else
 CONFIGURE_ARGS+=--without-libdbi --disable-dbi
 PLIST_SUB+=	DBI="@comment "
@@ -457,18 +458,15 @@ CONFIGURE_ARGS+=--without-libxmms --disable-xmms
 PLIST_SUB+=	XMMS="@comment "
 .endif
 
-AUTOTOOLSFILES=	aclocal.m4
-
 post-patch:
-	@${REINPLACE_CMD} -e 's|1.11.1|%%AUTOMAKE_APIVER%%|g' \
-			  -e 's|2.67|%%AUTOCONF_VERSION%%|g' \
-			  ${WRKSRC}/aclocal.m4
+	@${REINPLACE_CMD} 's/-Werror//' \
+		${WRKSRC}/configure.ac ${WRKSRC}/src/Makefile.am \
+		${WRKSRC}/src/libcollectdclient/Makefile.am
 	@${REINPLACE_CMD} \
 		-e 's;@prefix@/var/;/var/;' \
 		-e 's;/var/lib/;/var/db/;' \
 		-e 's;@localstatedir@/lib/;/var/db/;' \
 		${WRKSRC}/src/collectd.conf.in
-	@${REINPLACE_CMD} -e '/$$[(]mkinstalldirs)/d' ${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} \
 		-e 's;/etc/collection\.conf;${WWWDIR}/collection.conf;' \
 		${WRKSRC}/contrib/collection.cgi

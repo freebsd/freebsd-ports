@@ -16,6 +16,7 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	libthunar-vfs-1.so:${PORTSDIR}/x11-fm/thunar-vfs
 
+SSP_UNSAFE=	yes
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
 USES=		tar:bzip2 pkgconfig gmake gettext pathfix desktop-file-utils libtool

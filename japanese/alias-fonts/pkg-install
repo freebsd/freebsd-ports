@@ -141,3 +141,5 @@ cat <<EOF >> $to
 -alias-mincho-bold-r-normal--20-190-75-75-c-200-jisx0213.2000-1 -kappa-mincho-bold-r-normal--20-190-75-75-c-200-jisx0213.2000-1
 -alias-mincho-bold-i-normal--20-190-75-75-c-200-jisx0213.2000-1 -kappa-mincho-bold-i-normal--20-190-75-75-c-200-jisx0213.2000-1
 EOF
+
+rm -f $from

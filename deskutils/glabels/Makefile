@@ -34,5 +34,6 @@ CONFIGURE_ARGS+=	--without-libebook
 post-patch:
 	@${REINPLACE_CMD} -e 's|malloc\.h|stdlib\.h|g' \
 		${WRKSRC}/iec16022-0.2.1/*.c
+	@${REINPLACE_CMD} 's/_LDADD =/& -lm/' ${WRKSRC}/src/Makefile.in
 
 .include <bsd.port.post.mk>

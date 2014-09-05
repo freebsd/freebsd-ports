@@ -83,4 +83,10 @@ post-patch:
 		s|MISSION_CONTROL_PLUGINS_DIR=`pkg-config -|MISSION_CONTROL_PLUGINS_DIR=$${libdir}/`pkg-config -|g' \
 			${WRKSRC}/configure
 
+post-patch:
+	@${REINPLACE_CMD} \
+		-e '/^empathy_av_LDADD =/s/$$/ -lm/' \
+		-e '/^empathy_call_LDADD =/s/$$/ -lm/' \
+		${WRKSRC}/src/Makefile.in
+
 .include <bsd.port.mk>

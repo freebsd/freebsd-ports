@@ -42,7 +42,7 @@ CFLAGS+=	-O3 -ffast-math
 
 do-build:
 	cd ${BUILD_WRKSRC} && ${CC} ${CFLAGS} -o caph -I../include *.c \
-		`${SDL_CONFIG} --libs --cflags` -D_OPENGL -lGL -lpng ${ICONV_LIB}
+		`${SDL_CONFIG} --libs --cflags` -D_OPENGL -lGL -lpng -lm ${ICONV_LIB}
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|../share/caph|${DATADIR}|' ${BUILD_WRKSRC}/caph.c

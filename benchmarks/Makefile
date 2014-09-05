@@ -65,7 +65,6 @@
     SUBDIR += siege
     SUBDIR += sipp
     SUBDIR += slowloris
-    SUBDIR += spec-sfs
     SUBDIR += spp
     SUBDIR += stream
     SUBDIR += super-smack

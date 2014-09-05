@@ -32,5 +32,4 @@ sbin/lircd
 sbin/lircmd
 @dirrm include/lirc
 @sample etc/lircd.conf.sample
-@exec mkdir -p /var/run/lirc
-@unexec rmdir /var/run/lirc 2> /dev/null || true
+@dirrmtry /var/run/lirc

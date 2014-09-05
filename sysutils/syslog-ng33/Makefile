@@ -3,7 +3,7 @@
 
 PORTNAME=	syslog-ng
 PORTVERSION=	3.3.11
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.balabit.com/downloads/files/syslog-ng/sources/$(PORTVERSION)/source/
 PKGNAMESUFFIX=	33
@@ -91,7 +91,7 @@ CONFIGURE_ARGS+=	--disable-pcre
 
 .if ${PORT_OPTIONS:MSQL}
 LIB_DEPENDS+=		libdbi.so:${PORTSDIR}/databases/libdbi
-CONFIGURE_ENV+=		LIBDBI_LIBS="-ldbi"
+CONFIGURE_ENV+=		LIBDBI_LIBS="-L${LOCALBASE}/lib -ldbi"
 CONFIGURE_ARGS+=	--enable-sql
 PLIST_FILES+=		lib/syslog-ng/libafsql.so
 .else

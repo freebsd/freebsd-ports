@@ -3,7 +3,7 @@
 
 PORTNAME=	scriptNugget
 PORTVERSION=	0.5.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	security
 MASTER_SITES=	SF/razorbacktm/Nuggets
 PKGNAMEPREFIX=	razorback-
@@ -15,13 +15,15 @@ COMMENT=	Framework for an intelligence driven security - Scripting Interface
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	librazorback_api.so:${PORTSDIR}/security/razorback-api
+LIB_DEPENDS=	librazorback_api.so:${PORTSDIR}/security/razorback-api \
+		libjson-c.so:${PORTSDIR}/devel/json-c
 BUILD_DEPENDS=	razorback-masterNugget>=0.5.0:${PORTSDIR}/security/razorback-masterNugget
 RUN_DEPENDS=	razorback-masterNugget>=0.5.0:${PORTSDIR}/security/razorback-masterNugget \
 		rubygem-razorback-scriptNugget>=0.5.0:${PORTSDIR}/security/rubygem-razorback-scriptNugget
 
 RB_LIBDIR?=	${PREFIX}/lib/razorback
 USES=		libtool pkgconfig
+USE_AUTOTOOLS=	autoconf
 USE_GNOME=	libxml2
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-ruby

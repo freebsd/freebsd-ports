@@ -17,10 +17,11 @@ ONLY_FOR_ARCHS=	i386
 BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm
 
 USES=		gmake
-MAKE_ARGS=	OS=${OPSYS:tu} KERNEL=${OSREL:S/.//g}
+USE_GCC=	any
+MAKE_ARGS=	OS="${OPSYS:tu}" KERNEL="${OSREL:S/.//g}" CC="${CC}" LD="${LD}"
 
 # This will play merry hell with portlint(1)
-BINS=		bonus/asmutils basename cal cat chmod chown chroot cmp cp \
+BINARIES=	bonus/asmutils basename cal cat chmod chown chroot cmp cp \
 		cpuinfo cut date dc dd deflate dirname du echo env \
 		bonus/execve extname factor fromdos ftpd getty grep head \
 		hexdump host hostname httpd id idea init kill kldload less \
@@ -36,12 +37,13 @@ LINKS=		arch cpuspeed domainname false halt inflate kldstat kldunload \
 
 LIBRARIES=	libc.so.0 libcrypto.so.0 libm.so.0
 
-PLIST_FILES=	${BINS:S/^/bin\/asmutils\//:S/bonus\///} \
+PLIST_FILES=	${BINARIES:S/^/bin\/asmutils\//:S/bonus\///} \
 		${LINKS:S/^/bin\/asmutils\//} ${LIBRARIES:S/^/lib\/asmutils\//}
 PLIST_DIRS=	bin/asmutils lib/asmutils
 PORTDOCS=	*
 
-NO_STAGE=	yes
+OPTIONS_DEFINE=	DOCS
+
 post-patch:
 	@${REINPLACE_CMD} -e 's,^static ,,' ${WRKSRC}/lib/libm.c
 
@@ -49,14 +51,13 @@ post-patch:
 STRIP=	#
 
 do-install:
-	@${MKDIR} ${PREFIX}/bin/asmutils ${PREFIX}/lib/asmutils
-.for bin in ${BINS}
-	${INSTALL_PROGRAM} ${WRKSRC}/src/${bin} ${PREFIX}/bin/asmutils
-.endfor
-.for lib in ${LIBRARIES}
-	${INSTALL_PROGRAM} ${WRKSRC}/lib/${lib} ${PREFIX}/lib/asmutils
-.endfor
-	(cd ${PREFIX}/bin/asmutils && \
+	@${MKDIR} ${STAGEDIR}${PREFIX}/bin/asmutils \
+		${STAGEDIR}${PREFIX}/lib/asmutils
+	${INSTALL_PROGRAM} ${BINARIES:S,^,${WRKSRC}/src/,} \
+		${STAGEDIR}${PREFIX}/bin/asmutils
+	${INSTALL_PROGRAM} ${LIBRARIES:S,^,${WRKSRC}/lib/,} \
+		${STAGEDIR}${PREFIX}/lib/asmutils
+	(cd ${STAGEDIR}${PREFIX}/bin/asmutils && \
 		${LN} -sf uname arch && \
 		${LN} -sf cpuinfo cpuspeed && \
 		${LN} -sf hostname domainname && \
@@ -75,10 +76,8 @@ do-install:
 		${LN} -sf fromdos todos && \
 		${LN} -sf mount umount && \
 		${LN} -sf sleep usleep)
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/doc/[^i]* ${DOCSDIR}
-	@cd ${DOCSDIR} && ${LN} -sf Asmutils-HOWTO.html index.html
-.endif
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/[^i]* ${STAGEDIR}${DOCSDIR}
+	${LN} -sf Asmutils-HOWTO.html ${STAGEDIR}/${DOCSDIR}/index.html
 
 .include <bsd.port.mk>

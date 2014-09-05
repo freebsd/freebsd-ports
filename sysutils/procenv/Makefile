@@ -2,11 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	procenv
-PORTVERSION=	0.32
+PORTVERSION=	0.36
 CATEGORIES=	sysutils
 MASTER_SITES=	https://launchpad.net/procenv/trunk/${PORTVERSION}/+download/ \
-		DEBIAN \
-		http://people.canonical.com/~jhunt/debian/procenv/
+		http://people.canonical.com/~jhunt/debian/procenv/${PORTVERSION}/ \
+		DEBIAN
 
 MAINTAINER=	james.hunt@ubuntu.com
 COMMENT=	Utility to show process environment

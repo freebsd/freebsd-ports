@@ -1,0 +1,19 @@
+%%SITE_PERL%%/Protocol/CassandraCQL.pm
+%%SITE_PERL%%/Protocol/CassandraCQL/Client.pm
+%%SITE_PERL%%/Protocol/CassandraCQL/ColumnMeta.pm
+%%SITE_PERL%%/Protocol/CassandraCQL/Frame.pm
+%%SITE_PERL%%/Protocol/CassandraCQL/Frames.pm
+%%SITE_PERL%%/Protocol/CassandraCQL/Result.pm
+%%SITE_PERL%%/Protocol/CassandraCQL/Type.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Protocol/CassandraCQL/.packlist
+%%PERL5_MAN3%%/Protocol::CassandraCQL.3.gz
+%%PERL5_MAN3%%/Protocol::CassandraCQL::Client.3.gz
+%%PERL5_MAN3%%/Protocol::CassandraCQL::ColumnMeta.3.gz
+%%PERL5_MAN3%%/Protocol::CassandraCQL::Frame.3.gz
+%%PERL5_MAN3%%/Protocol::CassandraCQL::Frames.3.gz
+%%PERL5_MAN3%%/Protocol::CassandraCQL::Result.3.gz
+%%PERL5_MAN3%%/Protocol::CassandraCQL::Type.3.gz
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Protocol/CassandraCQL
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Protocol
+@dirrmtry %%SITE_PERL%%/Protocol/CassandraCQL
+@dirrmtry %%SITE_PERL%%/Protocol

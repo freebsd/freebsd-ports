@@ -14,7 +14,7 @@ PKGNAMEPREFIX=	linux-
 DISTFILES=	SFE-Standalone${EXTRACT_SUFX}
 DIST_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	acm@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The Savage game (Linux version)
 
 USE_LINUX=	yes

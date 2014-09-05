@@ -14,6 +14,7 @@ MASTER_SITES=	http://na.llnet.bioware.cdn.ea.com/u/f/eagames/bioware/neverwinter
 PKGNAMEPREFIX=	linux-
 DISTFILES=	${CLIENT_FILES} \
 		${CLIENT_NWMOVIES}
+DIST_SUBDIR=	${PKGNAMEPREFIX}${PORTNAME}
 
 MAINTAINER=	scf@FreeBSD.org
 COMMENT=	Neverwinter Nights Linux (x86) Client
@@ -21,6 +22,7 @@ COMMENT=	Neverwinter Nights Linux (x86) Client
 RUN_DEPENDS=	${LOCALBASE}/share/nwndata/docs/readme.txt:${PORTSDIR}/games/nwndata
 
 NO_BUILD=	yes
+RESTRICTED=	Distribution not allowed
 USE_LINUX=	yes
 USE_LINUX_APPS=	sdl12 xorglibs
 NWNDATADIR=	${LOCALBASE}/share/nwndata
@@ -35,7 +37,6 @@ USE_LINUX_APPS+=dri
 OPTIONS_DEFINE=	NWMOVIES
 NWMOVIES_DESC=	Support for movies using BinkPlayer
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 .include <bsd.port.pre.mk>
 
@@ -65,11 +66,11 @@ do-extract:
 	${MKDIR} ${WRKSRC}
 .for _distfile in ${CLIENT_FILES:C/:.*$//g} ${BINKPLAYERFILE}
 	(cd ${WRKSRC} && ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} \
-		${DISTDIR}/${_distfile} ${EXTRACT_AFTER_ARGS})
+		${_DISTDIR}/${_distfile} ${EXTRACT_AFTER_ARGS})
 .endfor
 .if defined(BINKPLAYERFILE)
 	(cd ${WRKSRC} && ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} \
-		${DISTDIR}/${NWMOVIESFILE} ${EXTRACT_AFTER_ARGS} \
+		${_DISTDIR}/${NWMOVIESFILE} ${EXTRACT_AFTER_ARGS} \
 		nwmovies/binklib.so nwmovies/libdis/libdisasm.so \
 		nwmovies/nwmovies.so)
 	(cd ${WRKSRC} && ${MV} BinkPlayer nwmovies)
@@ -86,17 +87,17 @@ do-configure:
 		<${FILESDIR}/nwn.sh >${WRKDIR}/nwn
 
 do-install:
-	${MKDIR} ${DATADIR}
+	${MKDIR} ${STAGEDIR}${DATADIR}
 	(cd ${WRKSRC} && ${FIND} . -print | \
-		${CPIO} -pdmuv -R${SHAREOWN}:${SHAREGRP} ${DATADIR})
-	${FIND} ${DATADIR} -type d -print0 | ${XARGS} -0 ${CHMOD} 0755
-	${FIND} ${DATADIR} -type f -print0 | ${XARGS} -0 ${CHMOD} 0644
-	(cd ${DATADIR} && ${CHMOD} 0755 dmclient nwmain nwserver)
+		${CPIO} -pdmuv -R${SHAREOWN}:${SHAREGRP} ${STAGEDIR}${DATADIR})
+	${FIND} ${STAGEDIR}${DATADIR} -type d -print0 | ${XARGS} -0 ${CHMOD} 0755
+	${FIND} ${STAGEDIR}${DATADIR} -type f -print0 | ${XARGS} -0 ${CHMOD} 0644
+	(cd ${STAGEDIR}${DATADIR} && ${CHMOD} 0755 dmclient nwmain nwserver)
 .if defined(BINKPLAYERFILE)
-	(cd ${DATADIR} && ${CHMOD} 0755 nwmovies/BinkPlayer)
-	(cd ${DATADIR}/nwmovies && ${LN} -s /compat/linux/usr/lib/libX11.so.6 libX11.so)
-	${INSTALL_SCRIPT} ${FILESDIR}/nwmovies.pl ${DATADIR}
+	(cd ${STAGEDIR}${DATADIR} && ${CHMOD} 0755 nwmovies/BinkPlayer)
+	(cd ${STAGEDIR}${DATADIR}/nwmovies && ${LN} -s /compat/linux/usr/lib/libX11.so.6 libX11.so)
+	${INSTALL_SCRIPT} ${FILESDIR}/nwmovies.pl ${STAGEDIR}${DATADIR}
 .endif
-	${INSTALL_SCRIPT} ${WRKDIR}/nwn ${PREFIX}/bin/
+	${INSTALL_SCRIPT} ${WRKDIR}/nwn ${STAGEDIR}${PREFIX}/bin/
 
 .include <bsd.port.post.mk>

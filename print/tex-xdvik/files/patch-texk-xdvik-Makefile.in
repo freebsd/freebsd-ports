@@ -15,11 +15,11 @@
  nodist_man1_MANS = xdvi.1
 -xdvidir = $(datarootdir)/texmf-dist/xdvi
 -dvipsconfdir = $(datarootdir)/texmf-dist/dvips/config
-+xdvidir = $(datarootdir)/texmf/xdvi
-+dvipsconfdir = $(datarootdir)/texmf/xdvi
++xdvidir = $(datarootdir)/texmf-dist/xdvi
++dvipsconfdir = $(datarootdir)/texmf-dist/xdvi
  dist_xdvi_DATA = texmf/XDvi
 -pixmapdir = $(datarootdir)/texmf-dist/xdvi/pixmap
-+pixmapdir = $(datarootdir)/texmf/xdvi/pixmaps
++pixmapdir = $(datarootdir)/texmf-dist/xdvi/pixmaps
  dist_pixmap_DATA = pixmaps/toolbar.xpm pixmaps/toolbar2.xpm
  dist_noinst_DATA = texmf/config.xdvi
  all: c-auto.h

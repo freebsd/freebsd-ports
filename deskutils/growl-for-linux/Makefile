@@ -2,7 +2,7 @@
 
 PORTNAME=	growl-for-linux
 PORTVERSION=	0.6.9
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	deskutils
 
 MAINTAINER=	nivit@FreeBSD.org
@@ -20,32 +20,29 @@ GH_COMMIT=	ac7c8cd
 GH_TAGNAME=	${GH_COMMIT}
 
 GNU_CONFIGURE=	yes
-
-OPTIONS_DEFINE=	LIBNOTIFY
-OPTIONS_DEFAULT=	LIBNOTIFY
-LIBNOTIFY_DESC=	Use notify-osd for libnotify display plugin
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MLIBNOTIFY}
-LIB_DEPENDS+=	libnotify.so:${PORTSDIR}/devel/libnotify
-RUN_DEPENDS+=	notify-osd>=0.9.29_3:${PORTSDIR}/deskutils/notify-osd
-.endif
+CONFIGURE_ARGS=	OPENSSL_CFLAGS="-I${OPENSSLINC}" OPENSSL_LIBS="-L${OPENSSLLIB} -lcrypto"
+USES=		compiler:nestedfct libtool pkgconfig
+USE_AUTOTOOLS=	libtoolize aclocal autoconf automake
+AUTOMAKE_ARGS=	-a -c -f
+USE_GITHUB=	yes
+USE_GNOME=	gtk20
+USE_OPENSSL=	yes
+USE_SQLITE=	3
 
 PLIST_SUB=	DESKTOPDIR=${DESKTOPDIR:S,^${PREFIX}/,,}
 
-USE_AUTOTOOLS=	autoconf:env automake:env libtoolize:env
-USE_GITHUB=	yes
-USE_GCC=	any
-USE_GNOME=	gtk20
-USE_LDCONFIG=	yes
-USE_OPENSSL=	yes
-USE_SQLITE=	3
-USES=		libtool pkgconfig
+OPTIONS_DEFINE=	LIBNOTIFY
+OPTIONS_DEFAULT=LIBNOTIFY
 
-WITH_OPENSSL_PORT=	yes
+LIBNOTIFY_DESC=		Use notify-osd for libnotify display plugin
+LIBNOTIFY_LIB_DEPENDS=	libnotify.so:${PORTSDIR}/devel/libnotify
+LIBNOTIFY_RUN_DEPENDS=	notify-osd>=0.9.29_3:${PORTSDIR}/deskutils/notify-osd
 
-pre-configure:
-	@(cd ${CONFIGURE_WRKSRC} ; ${SETENV} ${CONFIGURE_ENV} ${SH} autogen.sh)
+post-patch:
+	@${REINPLACE_CMD} '/^gol_LDADD =/s/$$/ -lgmodule-2.0/' \
+		${WRKSRC}/Makefile.am
+
+post-install:
+	${RM} ${STAGEDIR}${PREFIX}/lib/libgolplug.a
 
 .include <bsd.port.mk>

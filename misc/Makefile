@@ -8,12 +8,6 @@
     SUBDIR += amanda-client
     SUBDIR += amanda-perl-wrapper
     SUBDIR += amanda-server
-    SUBDIR += amanda25-client
-    SUBDIR += amanda25-server
-    SUBDIR += amanda26-client
-    SUBDIR += amanda26-server
-    SUBDIR += amanda32-client
-    SUBDIR += amanda32-server
     SUBDIR += amfm
     SUBDIR += apparix
     SUBDIR += asbutton
@@ -33,7 +27,6 @@
     SUBDIR += boxquote.el
     SUBDIR += brs
     SUBDIR += buffer
-    SUBDIR += callid
     SUBDIR += cave
     SUBDIR += cdcollect
     SUBDIR += chef
@@ -44,7 +37,6 @@
     SUBDIR += cloc
     SUBDIR += clpbar
     SUBDIR += cmatrix
-    SUBDIR += color-theme.el
     SUBDIR += colortail
     SUBDIR += compat10x
     SUBDIR += compat4x
@@ -72,7 +64,6 @@
     SUBDIR += digitemp
     SUBDIR += display
     SUBDIR += dnetc
-    SUBDIR += dotfile
     SUBDIR += dphys-config
     SUBDIR += dtach
     SUBDIR += dvorak7min
@@ -243,7 +234,6 @@
     SUBDIR += lc
     SUBDIR += lesspipe
     SUBDIR += libeatmydata
-    SUBDIR += libhome
     SUBDIR += libisocodes
     SUBDIR += libkdeedu
     SUBDIR += libmetalink
@@ -271,7 +261,6 @@
     SUBDIR += mime-support
     SUBDIR += mirmon
     SUBDIR += mmv
-    SUBDIR += mshell
     SUBDIR += mtail
     SUBDIR += mtx
     SUBDIR += nagios-base-logos
@@ -362,6 +351,7 @@
     SUBDIR += php5-calendar
     SUBDIR += php53-calendar
     SUBDIR += php55-calendar
+    SUBDIR += php56-calendar
     SUBDIR += phraze
     SUBDIR += pinfo
     SUBDIR += pipe
@@ -386,7 +376,6 @@
     SUBDIR += qt4-qtconfig
     SUBDIR += qt4-qtdemo
     SUBDIR += quotes
-    SUBDIR += quranref
     SUBDIR += ree
     SUBDIR += rfc
     SUBDIR += ringtonetools
@@ -398,7 +387,7 @@
     SUBDIR += rubygem-dotenv
     SUBDIR += rubygem-iesd
     SUBDIR += rubygem-mime-types
-    SUBDIR += rubygem-mime-types117
+    SUBDIR += rubygem-mime-types1
     SUBDIR += rubygem-rabbit
     SUBDIR += rubygem-vpim
     SUBDIR += rump
@@ -418,6 +407,7 @@
     SUBDIR += sssnips
     SUBDIR += susv2
     SUBDIR += susv3
+    SUBDIR += susv4
     SUBDIR += sword
     SUBDIR += table.el
     SUBDIR += talkfilters
@@ -429,7 +419,6 @@
     SUBDIR += termatrix
     SUBDIR += terraform
     SUBDIR += teseq
-    SUBDIR += tet
     SUBDIR += tkcron
     SUBDIR += tkinfo
     SUBDIR += tkregexp
@@ -468,7 +457,6 @@
     SUBDIR += xdelta3
     SUBDIR += xdg-menu
     SUBDIR += xfce4-appfinder
-    SUBDIR += xfce4-artwork
     SUBDIR += xfce4-weather-plugin
     SUBDIR += xfce4-wm-themes
     SUBDIR += xgas

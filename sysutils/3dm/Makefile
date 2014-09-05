@@ -3,6 +3,7 @@
 
 PORTNAME=	3dm
 PORTVERSION=	2.11.00.021
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.lsi.com/downloads/Public/SATA/SATA%20Common%20Files/3DM2_CLI-freebsd_10.2.2.1_9.5.5.1.zip?source=1/

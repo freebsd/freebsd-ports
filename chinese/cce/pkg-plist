@@ -1,10 +1,12 @@
+@mode 4555
 bin/cce
+@mode
 bin/cceb5
 bin/cceconv
 bin/ccegbk
 bin/ccejis
 bin/cceksc
-share/cce/cce.cfg
+etc/cce.cfg
 share/cce/8x16.bin
 share/cce/all/ciyin.tab
 share/cce/all/ciyingb.tab
@@ -37,6 +39,8 @@ share/cce/ksc/HANGUL.tab
 share/cce/ksc/HANJA.tab
 share/cce/ksc/hanglm16.bin
 share/cce/ksc/ksc.lx
+man/man1/cce.1.gz
+man/man1/cceconv.1.gz
 @dirrm share/cce/all
 @dirrm share/cce/big5
 @dirrm share/cce/gb

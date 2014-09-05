@@ -15,7 +15,7 @@ COMMENT=	Parallel process Camera RAW files using pthreads
 LICENSE=	MULTIRAW
 LICENSE_NAME=	MULTIRAW BSD LICENSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
-LICENSE_PERMS=	${_LICENSE_PERMS_DEFAULT}
+LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 RUN_DEPENDS=	${LOCALBASE}/bin/dcraw:${PORTSDIR}/graphics/dcraw \
 		${LOCALBASE}/bin/dcraw-m:${PORTSDIR}/graphics/dcraw-m

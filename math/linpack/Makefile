@@ -12,15 +12,18 @@ MAINTAINER=	bf@FreeBSD.org
 COMMENT=	Linear Algebra package
 
 LIB_DEPENDS=	libblas.so:${PORTSDIR}/math/blas
+
 MAKE_ENV=	WITHOUT_PROFILE=yes __MAKE_CONF=/dev/null SRCCONF=/dev/null
+MAKEFILE=	${FILESDIR}/Makefile.lib
 
-USES=		fortran
-
-.include <bsd.port.pre.mk>
+USES=		fortran uidfix
 
 USE_LDCONFIG=	yes
 DIST_SUBDIR=	${PORTNAME}
 NO_WRKSUBDIR=	yes
+EXTRACT_CMD=	${CP}
+EXTRACT_BEFORE_ARGS=
+EXTRACT_AFTER_ARGS=	${WRKSRC}
 
 SRCS=	cchdc.f cchdd.f cchex.f cchud.f cgbco.f cgbdi.f cgbfa.f cgbsl.f \
 	cgeco.f cgedi.f cgefa.f cgesl.f cgtsl.f chico.f chidi.f chifa.f \
@@ -46,16 +49,4 @@ SRCS=	cchdc.f cchdd.f cchex.f cchud.f cgbco.f cgbdi.f cgbfa.f cgbsl.f \
 	zsico.f zsidi.f zsifa.f zsisl.f zspco.f zspdi.f zspfa.f zspsl.f \
 	zsvdc.f ztrco.f ztrdi.f ztrsl.f
 
-do-extract:
-	@${MKDIR} ${WRKDIR}
-.for file in ${SRCS}
-	@${CP} ${_DISTDIR}/${file} ${WRKSRC}/${file}
-.endfor
-
-do-build:
-	cd ${WRKSRC} ; ${SETENV} ${MAKE_ENV} ${MAKE}
-
-pre-build:
-	${CP} ${FILESDIR}/Makefile.lib ${WRKSRC}/Makefile
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

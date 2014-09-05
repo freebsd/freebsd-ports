@@ -14,6 +14,8 @@ BUILD_DEPENDS=  gawk:${PORTSDIR}/lang/gawk
 
 USES=		gmake pkgconfig
 USE_GNOME=	imlib gdkpixbuf gtk20
+USE_XORG=	x11
+LDFLAGS+=	-L${LOCALBASE}/lib -lX11 -lm
 
 PLIST_FILES=	bin/xzgv man/man1/xzgv.1.gz
 

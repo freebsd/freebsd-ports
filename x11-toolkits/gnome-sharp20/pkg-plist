@@ -1,7 +1,6 @@
 bin/gconfsharp2-schemagen
 lib/gtk-sharp-2.0/gconfsharp-schemagen.exe
 lib/libgnomesharpglue-2.a
-lib/libgnomesharpglue-2.la
 lib/libgnomesharpglue-2.so
 lib/mono/gac/art-sharp/2.24.0.0__35e10195dab3c99f/art-sharp.dll
 lib/mono/gac/art-sharp/2.24.0.0__35e10195dab3c99f/art-sharp.dll.config

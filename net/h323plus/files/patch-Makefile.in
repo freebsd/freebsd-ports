@@ -1,0 +1,29 @@
+--- Makefile.in.orig	2013-12-12 18:16:27.000000000 +0200
++++ Makefile.in	2014-08-22 12:44:18.000000000 +0300
+@@ -46,7 +46,7 @@ endif
+ 
+ default :: optshared
+ 
+-all :: bothdepend both
++all :: optdepend opt
+ 
+ include $(OPENH323DIR)/openh323u.mak
+ 
+@@ -87,7 +87,7 @@ update:
+ 	$(MAKE) all
+ 
+ # standard build command
+-$(subst tagbuild,,$(STANDARD_TARGETS)) ::
++$(subst debug,,$(STANDARD_TARGETS)) ::
+ 	$(MAKE) -C src $@
+ 
+ notrace::
+@@ -99,7 +99,7 @@ docs: 
+ install:
+ 	mkdir -p $(DESTDIR)$(LIBDIR)
+ 	rm -f $(DESTDIR)$(LIBDIR)/libh323_*_r.so*
+-	$(INSTALL) -m 444 lib/$(OH323_FILE).@MAJOR_VERSION@.@MINOR_VERSION@.@BUILD_NUMBER@ $(DESTDIR)$(LIBDIR)
++	$(INSTALL) -m 755 lib/$(OH323_FILE).@MAJOR_VERSION@.@MINOR_VERSION@.@BUILD_NUMBER@ $(DESTDIR)$(LIBDIR)
+ 	(cd $(DESTDIR)$(LIBDIR) ; \
+ 		rm -f  $(OH323_FILE).@MAJOR_VERSION@.@MINOR_VERSION@ ; \
+ 		ln -sf $(OH323_FILE).@MAJOR_VERSION@.@MINOR_VERSION@.@BUILD_NUMBER@ $(OH323_FILE).@MAJOR_VERSION@.@MINOR_VERSION@ \

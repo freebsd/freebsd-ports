@@ -63,17 +63,15 @@ share/mt-daapd/admin-root/xiph-license.html
 share/mt-daapd/admin-root/xiph-license.txt
 share/mt-daapd/admin-root/zlib-license.html
 share/mt-daapd/admin-root/zlib-license.txt
-@exec chown %%DAAPD_USER%%:%%DAAPD_GROUP%% %%DAAPD_DBDIR%%
-@exec chown %%DAAPD_USER%%:%%DAAPD_GROUP%% %%DATADIR%%
 @dirrmtry share/mt-daapd/admin-root/lib-js/script.aculo.us
 @dirrmtry share/mt-daapd/admin-root/lib-js
 @dirrmtry share/mt-daapd/admin-root
 @dirrmtry share/mt-daapd
-@dirrm %%DATADIR%%
+@dirrm(%%DAAPD_USER%%,%%DAAPD_GROUP%%,) %%DATADIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrmtry lib/mt-daapd/plugins
 @dirrmtry lib/mt-daapd
 @rmtry var/db/firefly/songs3.db
-@dirrmtry var/db/firefly
+@dirrmtry(%%DAAPD_USER%%,%%DAAPD_GROUP%%,) var/db/firefly
 @dirrmtry var/db
 @dirrmtry var

@@ -3,7 +3,7 @@
 
 PORTNAME=	libghthash
 PORTVERSION=	0.6.2
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	devel
 MASTER_SITES=	http://www.ipd.bth.se/ska/sim_home/filer/
 
@@ -12,7 +12,7 @@ COMMENT=	Generic Hash Table
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
-USES=		libtool:keepla
+USES=		libtool
 GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	aclocal autoheader automake autoconf libtoolize
 AUTOMAKE_ARGS=	-a -c -f
@@ -20,8 +20,9 @@ LIBTOOLIZE_ARGS=-i -c -f
 USE_LDCONFIG=	yes
 
 PLIST_FILES=	include/ght_hash_table.h \
-		lib/libghthash.a  lib/libghthash.la \
-		lib/libghthash.so lib/libghthash.so.1 \
+		lib/libghthash.a \
+		lib/libghthash.so \
+		lib/libghthash.so.1 \
 		lib/libghthash.so.1.1.0 \
 		man/man3/ght_create.3.gz \
 		man/man3/ght_finalize.3.gz \

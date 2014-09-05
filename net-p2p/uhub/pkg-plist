@@ -11,6 +11,7 @@ bin/uhub
 lib/uhub/mod_auth_simple.so
 %%SQLITE%%lib/uhub/mod_auth_sqlite.so
 lib/uhub/mod_chat_history.so
+%%SQLITE%%lib/uhub/mod_chat_history_sqlite.so
 lib/uhub/mod_chat_only.so
 lib/uhub/mod_example.so
 lib/uhub/mod_logging.so

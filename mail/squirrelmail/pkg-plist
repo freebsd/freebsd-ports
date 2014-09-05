@@ -21,7 +21,9 @@ etc/periodic/daily/111.clean-squirrelmail
 %%SQUIRRELDIR%%/class/mime/SMimeMessage.class.php
 %%SQUIRRELDIR%%/class/mime/index.php
 %%SQUIRRELDIR%%/config/.htaccess
+@mode 755
 %%SQUIRRELDIR%%/config/conf.pl
+@mode
 %%SQUIRRELDIR%%/config/config_default.php
 @sample %%SQUIRRELDIR%%/config/config_local.php.sample
 %%SQUIRRELDIR%%/config/index.php

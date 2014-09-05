@@ -50,7 +50,6 @@ man/man1/linuxsampler.1.gz
 @dirrm include/linuxsampler/drivers
 @dirrm include/linuxsampler/common
 @dirrm include/linuxsampler
-@cwd /var
-lib/linuxsampler/instruments.db
-@dirrm lib/linuxsampler
-@dirrmtry lib
+/var/lib/linuxsampler/instruments.db
+@dirrm /var/lib/linuxsampler
+@dirrmtry /var/lib

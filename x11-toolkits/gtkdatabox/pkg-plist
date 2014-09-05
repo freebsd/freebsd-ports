@@ -15,15 +15,12 @@ include/gtkdatabox/gtkdatabox_typedefs.h
 include/gtkdatabox/gtkdatabox_xyc_graph.h
 include/gtkdatabox/gtkdatabox_xyyc_graph.h
 %%GLADEUI%%lib/glade3/modules/libgladedatabox.a
-%%GLADEUI%%lib/glade3/modules/libgladedatabox.la
 %%GLADEUI%%lib/glade3/modules/libgladedatabox.so
 %%GLADE%%lib/libglade/2.0/libdatabox.a
-%%GLADE%%lib/libglade/2.0/libdatabox.la
 %%GLADE%%lib/libglade/2.0/libdatabox.so
 lib/libgtkdatabox-0.9.2.so.0
 lib/libgtkdatabox-0.9.2.so.0.0.0
 lib/libgtkdatabox.a
-lib/libgtkdatabox.la
 lib/libgtkdatabox.so
 libdata/pkgconfig/gtkdatabox.pc
 %%GLADEUI%%share/glade3/catalogs/gtkdatabox.xml

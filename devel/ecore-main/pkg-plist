@@ -49,24 +49,4 @@ libdata/pkgconfig/ecore.pc
 %%NLS%%share/locale/sl/LC_MESSAGES/ecore.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/ecore.mo
 @dirrmtry include/ecore-1
-%%NLS%%@dirrmtry share/locale/cs/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/cs
-%%NLS%%@dirrmtry share/locale/de/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/de
-%%NLS%%@dirrmtry share/locale/el/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/el
-%%NLS%%@dirrmtry share/locale/eo/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/eo
-%%NLS%%@dirrmtry share/locale/fr/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/fr
-%%NLS%%@dirrmtry share/locale/it/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/it
-%%NLS%%@dirrmtry share/locale/nl/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/nl
-%%NLS%%@dirrmtry share/locale/pt/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/pt
-%%NLS%%@dirrmtry share/locale/sl/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/sl
-%%NLS%%@dirrmtry share/locale/zh_CN/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/zh_CN
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%

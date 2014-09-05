@@ -1,0 +1,14 @@
+Progress bars are handy - they tell you how much work has been done, how much
+is left to do and estimate how long it will take. But they can be fiddly! This
+module does the right thing in almost all cases in a really convenient way.
+
+It wraps Term::ProgressBar::Quiet so there is no output unless the code is
+running interactively - lets you put them in cron scripts.
+
+It deals with minor updates - only refreshes the screen when it will change
+what the user sees so it is efficient.
+
+It completes the progress bar when the progress object is destroyed (explicitly
+or by going out of scope) - no more '99%' done.
+
+WWW: http://search.cpan.org/dist/Term-ProgressBar-Simple/

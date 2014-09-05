@@ -3,7 +3,7 @@
 
 PORTNAME=	libiconv
 PORTVERSION=	1.14
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	converters devel
 MASTER_SITES=	GNU
 
@@ -16,7 +16,9 @@ CONFIGURE_ARGS=	--enable-static \
 		--docdir=${DOCSDIR}
 CONFIGURE_ENV=	am_cv_func_iconv="yes" \
 		am_cv_proto_iconv_arg1="const"
+INSTALL_TARGET=	install-strip
 MAKE_JOBS_UNSAFE=	yes
+USES=		libtool:oldver
 USE_CSTD=	gnu89
 USE_LDCONFIG=	yes
 
@@ -44,5 +46,8 @@ post-patch:
 	@${REINPLACE_CMD} -e 's:gawk:awk:g' ${WRKSRC}/configure \
 		${WRKSRC}/libcharset/configure \
 		${WRKSRC}/preload/configure
+
+post-install:
+	${RM} ${STAGEDIR}${PREFIX}/lib/*.la
 
 .include <bsd.port.mk>

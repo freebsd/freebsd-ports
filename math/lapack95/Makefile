@@ -18,7 +18,6 @@ WRKSRC=		${WRKDIR}/LAPACK95
 
 MAKE_JOBS_UNSAFE=yes
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "sparc64"
@@ -44,11 +43,11 @@ BLAS=		-lblas
 LAPACK=		-llapack
 .endif
 
-.if !defined(NOPORTEXAMPLES)
+.if ${PORT_OPTIONS:MEXAMPLES}
 PORTEXAMPLES=	make.inc EXAMPLES1 EXAMPLES2
 .endif
 
-post-patch:
+pre-configure:
 	${REINPLACE_CMD} -e 's|%%BLAS%%|${BLAS}|g ; \
 		 s|%%FC%%|${FC}|g ; \
 		 s|%%FFLAGS%%|${FFLAGS} $${PICFLAG}|g ; \
@@ -57,30 +56,30 @@ post-patch:
 		 s|%%LOCALBASE%%|${LOCALBASE}|g ; \
 		 s|%%PREFIX%%|${PREFIX}|g' \
 		${WRKSRC}/make.inc
-	@${REINPLACE_CMD} -e 's|ranlib|${RANLIB}|g ; \
+	${REINPLACE_CMD} -e 's|ranlib|${RANLIB}|g ; \
 		 s|ar cr|${AR} cr|g' \
 		${WRKSRC}/SRC/makefile \
 		${WRKSRC}/TESTING/makefile \
 		${WRKSRC}/EXAMPLES1/makefile*
-	@${CP} -r ${WRKSRC} ${WRKSRC}_SHARED
+	${CP} -r ${WRKSRC} ${WRKSRC}_SHARED
 
 do-build:
-	@cd ${WRKSRC}/SRC; ${SETENV} ${MAKE_ENV} PICFLAG= \
+	cd ${WRKSRC}/SRC; ${SETENV} ${MAKE_ENV} PICFLAG= \
 		${MAKE} ${_MAKE_JOBS} ${MAKE_ARGS} single_double_complex_dcomplex
-	@cd ${WRKSRC}_SHARED/SRC; ${SETENV} ${MAKE_ENV} PICFLAG=${PICFLAG} \
+	cd ${WRKSRC}_SHARED/SRC; ${SETENV} ${MAKE_ENV} PICFLAG=${PICFLAG} \
 		${MAKE} ${_MAKE_JOBS} ${MAKE_ARGS} single_double_complex_dcomplex
-	@cd ${WRKSRC}_SHARED ; ${LD} -Bshareable -o liblapack95.so.1 -x -soname \
+	cd ${WRKSRC}_SHARED ; ${LD} -Bshareable -o liblapack95.so.1 -x -soname \
 		liblapack95.so.1 --whole-archive lapack95.a
 
 do-install:
-	@${INSTALL_DATA} ${WRKSRC}/lapack95.a ${PREFIX}/lib/liblapack95.a
-	@${INSTALL_DATA} ${WRKSRC}_SHARED/liblapack95.so.1 ${PREFIX}/lib
-	@${LN} -sf liblapack95.so.1 ${PREFIX}/lib/liblapack95.so
-	@${MKDIR} ${PREFIX}/lib/lapack95_modules
-	@${INSTALL_DATA} ${WRKSRC}_SHARED/lapack95_modules/*.mod ${PREFIX}/lib/lapack95_modules
-.if !defined(NOPORTEXAMPLES)
-	@${MKDIR} ${EXAMPLESDIR}
-	@cd ${WRKSRC} && ${COPYTREE_SHARE} "${PORTEXAMPLES}" ${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/lapack95.a ${STAGEDIR}${PREFIX}/lib/liblapack95.a
+	${INSTALL_DATA} ${WRKSRC}_SHARED/liblapack95.so.1 ${STAGEDIR}${PREFIX}/lib
+	${LN} -sf liblapack95.so.1 ${STAGEDIR}${PREFIX}/lib/liblapack95.so
+	${MKDIR} ${STAGEDIR}${PREFIX}/lib/lapack95_modules
+	${INSTALL_DATA} ${WRKSRC}_SHARED/lapack95_modules/*.mod ${STAGEDIR}${PREFIX}/lib/lapack95_modules
+.if ${PORT_OPTIONS:MEXAMPLES}
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	cd ${WRKSRC} && ${COPYTREE_SHARE} "${PORTEXAMPLES}" ${STAGEDIR}${EXAMPLESDIR}
 .endif
 
 .include <bsd.port.post.mk>

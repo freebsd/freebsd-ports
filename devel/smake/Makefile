@@ -4,7 +4,8 @@
 PORTNAME=	smake
 PORTVERSION=	1.2.3
 CATEGORIES=	devel
-MASTER_SITES=	ftp://ftp.berlios.de/pub/smake/
+MASTER_SITES=	SF
+MASTER_SITE_SUBDIR=s-make
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Portable make program with automake features

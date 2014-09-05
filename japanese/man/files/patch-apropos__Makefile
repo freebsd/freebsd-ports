@@ -1,0 +1,51 @@
+--- apropos/Makefile.orig	1997-12-07 19:59:21.000000000 +0900
++++ apropos/Makefile	2014-08-26 12:06:55.000000000 +0900
+@@ -8,7 +8,7 @@
+ TARG=  ${.CURDIR}/japropos
+ .endif
+ 
+-MLINKS= japropos.1 jwhatis.1
++#MLINKS= japropos.1 jwhatis.1
+ 
+ MANDEPEND=	${MAN1}
+ 
+@@ -37,28 +37,24 @@
+ 		${.CURDIR}/japropos.man.eng | \
+ 	${compress} > ${.TARGET}
+ 
+-install: ${TARG} maninstall after_maninstall
+-	${INSTALL} -c -o bin -g bin -m 555 ${TARG} ${DESTDIR}${BINDIR}
+-	ln -f ${DESTDIR}${BINDIR}/japropos ${DESTDIR}${BINDIR}/jwhatis
++install: ${TARG} man_install after_maninstall
++	${INSTALL} -m 555 ${TARG} ${DESTDIR}${BINDIR}
++	ln -sf japropos ${DESTDIR}${BINDIR}/jwhatis
++
++.if !defined(NO_MAN)
++man_install: ${MAN1}
++	${INSTALL} -m 444 ${MAN1} ${DESTDIR}${MANDIR}1
++	ln -sf japropos.1.gz ${DESTDIR}${MANDIR}1/jwhatis.1.gz
+ 
+-.if !defined(NOMAN)
+ after_maninstall: ${EMAN1}
+-	${INSTALL} -c -o bin -g bin -m 444 ${EMAN1} \
++	${INSTALL} -m 444 ${EMAN1} \
+ 	    ${DESTDIR}${EMANDIR}1/japropos.1.gz
+-	ln -f ${DESTDIR}${EMANDIR}1/japropos.1.gz \
+-	    ${DESTDIR}${EMANDIR}1/jwhatis.1.gz
++	ln -sf japropos.1.gz ${DESTDIR}${EMANDIR}1/jwhatis.1.gz
+ .else
++man_install:
+ after_maninstall:
+ .endif
+ 
+ .include "../Makefile.inc"
+ 
+-.if make(maninstall) || make(install)
+-.if !defined(NOMAN)
+-.include <bsd.man.mk>
+-.elif !target(maninstall)
+-maninstall:
+-.endif
+-.endif
+-
+ .include <bsd.prog.mk>

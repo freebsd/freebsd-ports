@@ -19,7 +19,7 @@ PORTDOCS=	BUGS CHANGES README TODO
 OPTIONS_DEFINE=	DOCS
 
 do-install:
-	${INSTALL} -c -s -o root -g wheel ${WRKSRC}/wmping ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/wmping ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/wmping.1 ${STAGEDIR}${PREFIX}/man/man1
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for file in ${PORTDOCS}

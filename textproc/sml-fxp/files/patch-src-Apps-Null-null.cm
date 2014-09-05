@@ -1,9 +1,0 @@
---- src/Apps/Null/null.cm.orig	Sat Jun 26 02:42:58 2004
-+++ src/Apps/Null/null.cm	Sat Sep  8 11:40:22 2007
-@@ -4,3 +4,6 @@
-     null.sml
-     nullHard.sml
-     ../../fxlib.cm
-+#if (SMLNJ_MINOR_VERSION > 40)
-+    $/basis.cm
-+#endif

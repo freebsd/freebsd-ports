@@ -2,11 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	pandora_console
-PORTVERSION=	${PANDORA_VERSION}
-PORTREVISION=	1
 CATEGORIES=	net-mgmt
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	koichiro@rworks.jp
 COMMENT=	Pandora FMS console
 
 LICENSE=	${PANDORA_LICENSE}
@@ -14,19 +12,20 @@ LICENSE_FILE=	${PANDORA_LICENSE_FILE}
 
 RUN_DEPENDS=	${LOCALBASE}/bin/twopi:${PORTSDIR}/graphics/graphviz
 
-OPTIONS_DEFINE=	PGSQL
+OPTIONS_DEFINE=	DOCS PGSQL
+DOCS_DESC=	Install AUTHORS and ChangeLog
 PGSQL_DESC=	Use PostgreSQL backend (experimental)
 
-USE_APACHE_RUN=	22+
 USE_PHP=	curl gd gettext json ldap mbstring mysql snmp session \
 		xml zip zlib
 WANT_PHP_WEB=	yes
+USE_APACHE_RUN=	22+
 
-SUB_FILES+=	pandora_console.conf
-SUB_LIST+=	APACHEETCDIR=${PREFIX}/${APACHEETCDIR}
+SUB_FILES+=	pandora_console.conf pkg-message
 
-NO_STAGE=	yes
 .include "${.CURDIR}/../pandorafms_server/bsd.pandora.mk"
+
+PANDORA_INSTALLER_ARGS+=	--destdir ${STAGEDIR}
 
 .include <bsd.port.pre.mk>
 
@@ -36,7 +35,7 @@ USE_PHP+=	pgsql
 
 post-patch:
 	@${REINPLACE_CMD} \
-		-e "s|%%WWWDIR%%|${WWWDIR}|g" \
+		-e "\|PANDORA_HOME=|s|=[^;]*|=${WWWDIR}|g" \
 		${WRKSRC}/pandora_console_install
 	@${REINPLACE_CMD} \
 		-e "s|/usr/bin|${LOCALBASE}/bin|g" \
@@ -46,28 +45,22 @@ post-patch:
 		${WRKSRC}/extras/check_other_languages.sh \
 		${WRKSRC}/include/languages/extract_newlines.sh
 
-do-install:
-	@cd ${WRKSRC} && ${SH} pandora_console_install --force-install
-
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-.for x in ${PORTDOCS}
-	@${INSTALL_DATA} ${WRKSRC}/${x} ${DOCSDIR}
-.endfor
-.endif
-	@cd ${WWWDIR} \
-		&& ${RM} -rf pandora_console_install* \
-			pandora_console_upgrade *.spec \
+	@cd ${STAGEDIR}${WWWDIR} \
+		&& ${RM} -rf pandora_console_install* *.spec \
 			extras/check_other_languages.sh.bak \
 			include/languages/extract_newlines.sh.bak \
 			*.sql.bak COPYING ${PORTDOCS} DEBIAN/
-	@if [ -e ${WWWDIR}/include/config.php ]; then \
-		${MV} ${WWWDIR}/install.php ${WWWDIR}/install.done; \
-	fi;
-	@${MKDIR} ${PREFIX}/${APACHEETCDIR}/Includes
+	@cd ${STAGEDIR}${WWWDIR} && ${MV} install.php install.done
+.if ${PORT_OPTIONS:MDOCS}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+.for x in ${PORTDOCS}
+	@${INSTALL_DATA} ${WRKSRC}/${x} ${STAGEDIR}${DOCSDIR}
+.endfor
+.endif
+	@${MKDIR} -p ${STAGEDIR}${PREFIX}/${APACHEETCDIR}/Includes
 	@${INSTALL_DATA} ${WRKDIR}/pandora_console.conf \
-		${PREFIX}/${APACHEETCDIR}/Includes/pandora_console.conf
-	@${LN} -sf ${_LICENSE_DIR}/${LICENSE} ${WWWDIR}/COPYING
+		${STAGEDIR}${PREFIX}/${APACHEETCDIR}/Includes/pandora_console.conf.sample
+	@${LN} -sf ${_LICENSE_DIR}/${LICENSE} ${STAGEDIR}${WWWDIR}/COPYING
 
 .include <bsd.port.post.mk>

@@ -3,7 +3,7 @@
 
 PORTNAME=	bglibs
 PORTVERSION=	1.106
-PORTREVISION=	4
+PORTREVISION=	5
 PORTEPOCH=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://untroubled.org/${PORTNAME}/archive/ \
@@ -14,11 +14,8 @@ COMMENT=	One stop library package by Bruce Guenter
 
 LICENSE=	LGPL21
 
-NOT_FOR_ARCHS=	alpha
-
-USES=		perl5
+USES=		libtool:build perl5
 USE_PERL5=	run
-USE_AUTOTOOLS=	libtool:env
 BGLIBS_INC=	${PREFIX}/include/${PORTNAME}
 BGLIBS_LIB=	${PREFIX}/lib/${PORTNAME}
 USE_LDCONFIG=	${BGLIBS_LIB}
@@ -42,9 +39,6 @@ do-configure:
 post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${STAGEDIR}${DOCSDIR}
-	@${SED} -i '' 's|${STAGEDIR}||' \
-		${STAGEDIR}${PREFIX}/lib/bglibs/libbg-sysdeps.la \
-		${STAGEDIR}${PREFIX}/lib/bglibs/libbg.la
 
 selftest: build
 	cd ${WRKSRC} && ${SH} selftests.sh

@@ -1,0 +1,11 @@
+--- Makefile.orig	Sun Oct  8 14:40:55 2000
++++ Makefile	Mon Jun 13 11:55:22 2005
+@@ -47,7 +47,7 @@
+ DIR = eijiro
+ 
+ FPWPARSER = eijiro-fpw.pl
+-FPWPARSERFLAGS = -- --charset=${CHARSET} ${SRCFILE}
++FPWPARSERFLAGS = -c "${CHARSET}" "${SRCFILE}"
+ 
+ # fpwutils.mk must be located in one of the make include directories or
+ # you should user -I option.

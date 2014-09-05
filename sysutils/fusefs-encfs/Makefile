@@ -33,6 +33,8 @@ NLS_USES=	gettext
 NLS_CONFIGURE_ENABLE=	nls
 
 post-patch:
+	@${REINPLACE_CMD} '/OPENSSL_LIBS=/s/-lssl/& -lcrypto/' \
+		${WRKSRC}/configure
 	@${FIND} ${WRKSRC}/encfs -type f | ${XARGS} ${REINPLACE_CMD} -E \
 		's/(^|[[:space:]])(shared_ptr)/\1boost::\2/g'
 

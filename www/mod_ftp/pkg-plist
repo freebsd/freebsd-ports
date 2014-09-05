@@ -1,5 +1,0 @@
-@unexec if cmp -s %D/%%APACHEETCDIR%%/extra/ftpd.conf.dist %D/%%APACHEETCDIR%%/extra/ftpd.conf ; then rm -f %D/%%APACHEETCDIR%%/extra/ftpd.conf ; fi
-%%APACHEETCDIR%%/extra/ftpd.conf.dist
-@exec if [ ! -e %D/%%APACHEETCDIR%%/extra/ftpd.conf ] ; then cp -p %D/%%APACHEETCDIR%%/extra/ftpd.conf.dist %D/%%APACHEETCDIR%%/extra/ftpd.conf ; fi
-%%APACHEMODDIR%%/%%AP_MODULE%%
-%%APACHEINCLUDEDIR%%/mod_ftp.h

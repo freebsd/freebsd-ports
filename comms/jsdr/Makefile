@@ -3,6 +3,7 @@
 
 PORTNAME=	jsdr
 PORTVERSION=	4.1
+PORTREVISION=	1
 CATEGORIES=	comms audio hamradio
 MASTER_SITES=	http://www.sdr-j.tk/
 

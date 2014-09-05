@@ -3,7 +3,7 @@
 
 PORTNAME=	spandsp
 DISTVERSION=	0.0.6pre21
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	comms
 MASTER_SITES=	http://www.soft-switch.org/downloads/spandsp/
 PKGNAMESUFFIX=	-devel
@@ -15,12 +15,13 @@ LIB_DEPENDS=	libtiff.so:${PORTSDIR}/graphics/tiff
 
 WRKSRC=		${WRKDIR}/spandsp-${DISTVERSION:C/pre.*//}
 
-USES=		gmake pathfix tar:tgz
-USE_AUTOTOOLS=	libtool autoconf
+USES=		gmake libtool pathfix tar:tgz
+USE_AUTOTOOLS=	autoconf
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" -C
 USE_LDCONFIG=	yes
+INSTALL_TARGET=	install-strip
 
 CONFLICTS=	spandsp-[0-9]*
 
@@ -40,8 +41,6 @@ CONFIGURE_ARGS+=--disable-doc
 .endif
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libspandsp.so.2
-
 .if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	(cd ${WRKSRC}/doc && \

@@ -4,7 +4,7 @@
 PORTNAME=	fbreader
 PORTVERSION=	0.99.4
 DISTVERSIONPREFIX=	sources-
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	deskutils
 MASTER_SITES=	http://www.fbreader.org/files/desktop/ \
 		http://old.fbreader.org/

@@ -1,0 +1,21 @@
+--- ./conf/Makefile.in.orig	2014-07-08 16:06:08.000000000 +0200
++++ ./conf/Makefile.in	2014-08-19 09:48:46.000000000 +0200
+@@ -842,15 +842,15 @@
+ 	test -e "$(DESTDIR)${strongswanconfdir}" || $(INSTALL) -d "$(DESTDIR)$(strongswanconfdir)"
+ 	test -e "$(DESTDIR)${strongswanddir}" || $(INSTALL) -d "$(DESTDIR)$(strongswanddir)"
+ 	test -e "$(DESTDIR)${charonconfdir}" || $(INSTALL) -d "$(DESTDIR)$(charonconfdir)"
+-	test -e "$(DESTDIR)$(strongswanconfdir)/strongswan.conf" || $(INSTALL) -m 644 $(srcdir)/strongswan.conf $(DESTDIR)$(strongswanconfdir)/strongswan.conf || true
++	test -e "$(DESTDIR)$(strongswanconfdir)/strongswan.conf" || $(INSTALL) -m 644 $(srcdir)/strongswan.conf $(DESTDIR)$(strongswanconfdir)/strongswan.conf.sample || true
+ 	for f in $(options_install_src); do \
+ 		name=`basename $$f`; \
+-		test -f "$(DESTDIR)$(strongswanddir)/$$name" || $(INSTALL) -m 644 "$(srcdir)/$$f" "$(DESTDIR)$(strongswanddir)/$$name" || true; \
++		test -f "$(DESTDIR)$(strongswanddir)/$$name" || $(INSTALL) -m 644 "$(srcdir)/$$f" "$(DESTDIR)$(strongswanddir)/$$name.sample" || true; \
+ 	done
+ 	for f in $(plugins_install_src); do \
+ 		name=`basename $$f`; \
+ 		if test -f "$$f"; then dir=; else dir="$(srcdir)/"; fi; \
+-		test -f "$(DESTDIR)$(charonconfdir)/$$name" || $(INSTALL) -m 644 "$$dir$$f" "$(DESTDIR)$(charonconfdir)/$$name" || true; \
++		test -f "$(DESTDIR)$(charonconfdir)/$$name" || $(INSTALL) -m 644 "$$dir$$f" "$(DESTDIR)$(charonconfdir)/$$name.sample" || true; \
+ 	done
+ 
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.

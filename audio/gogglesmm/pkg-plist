@@ -1,30 +1,29 @@
 bin/gogglesmm
+%%ALSA%%lib/gogglesmm/libgap_alsa.so
+lib/gogglesmm/libgap_oss.so
+%%PULSEAUDIO%%lib/gogglesmm/libgap_pulse.so
+lib/gogglesmm/libgap_wav.so
 man/man1/gogglesmm.1.gz
 share/applications/gogglesmm.desktop
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%DATADIR%%/utils/import_banshee_stats.py
+%%DATADIR%%/utils/import_gogglesmm12.py
+%%DATADIR%%/utils/import_gogglesmm12_stats.py
 share/icons/hicolor/16x16/apps/gogglesmm.png
 share/icons/hicolor/22x22/apps/gogglesmm.png
 share/icons/hicolor/24x24/apps/gogglesmm.png
 share/icons/hicolor/32x32/apps/gogglesmm.png
 share/icons/hicolor/48x48/apps/gogglesmm.png
 share/icons/hicolor/scalable/apps/gogglesmm.svg
-%%NLS%%share/locale/cs/LC_MESSAGES/gogglesmm.mo
 %%NLS%%share/locale/de/LC_MESSAGES/gogglesmm.mo
 %%NLS%%share/locale/es/LC_MESSAGES/gogglesmm.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/gogglesmm.mo
 %%NLS%%share/locale/hu/LC_MESSAGES/gogglesmm.mo
 %%NLS%%share/locale/pt/LC_MESSAGES/gogglesmm.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/gogglesmm.mo
-@dirrmtry share/icons/hicolor/scalable/apps
-@dirrmtry share/icons/hicolor/scalable
-@dirrmtry share/icons/hicolor/48x48/apps
-@dirrmtry share/icons/hicolor/48x48
-@dirrmtry share/icons/hicolor/32x32/apps
-@dirrmtry share/icons/hicolor/32x32
-@dirrmtry share/icons/hicolor/24x24/apps
-@dirrmtry share/icons/hicolor/24x24
-@dirrmtry share/icons/hicolor/22x22/apps
-@dirrmtry share/icons/hicolor/22x22
-@dirrmtry share/icons/hicolor/16x16/apps
-@dirrmtry share/icons/hicolor/16x16
-@dirrmtry share/icons/hicolor
-@dirrmtry share/icons
+@dirrm %%DATADIR%%/utils
+@dirrm %%DATADIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm lib/gogglesmm

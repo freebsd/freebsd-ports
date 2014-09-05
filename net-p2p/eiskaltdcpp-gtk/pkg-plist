@@ -1,4 +1,5 @@
 bin/eiskaltdcpp-gtk
+man/man1/eiskaltdcpp-gtk.1.gz
 share/applications/eiskaltdcpp-gtk.desktop
 share/eiskaltdcpp/gtk/icons/hicolor/128x128/apps/eiskaltdcpp.png
 share/eiskaltdcpp/gtk/icons/hicolor/16x16/status/eiskaltdcpp-dc++-fw-op.png
@@ -103,18 +104,22 @@ share/eiskaltdcpp/gtk/ui/searchspy.ui
 share/eiskaltdcpp/gtk/ui/settingsdialog.ui
 share/eiskaltdcpp/gtk/ui/sharebrowser.ui
 share/eiskaltdcpp/gtk/ui/transfers.ui
+share/eiskaltdcpp/gtk/ui/uploadqueue.ui
 share/locale/be/LC_MESSAGES/eiskaltdcpp-gtk.mo
 share/locale/bg/LC_MESSAGES/eiskaltdcpp-gtk.mo
 share/locale/cs/LC_MESSAGES/eiskaltdcpp-gtk.mo
 share/locale/de/LC_MESSAGES/eiskaltdcpp-gtk.mo
+share/locale/el/LC_MESSAGES/eiskaltdcpp-gtk.mo
 share/locale/en/LC_MESSAGES/eiskaltdcpp-gtk.mo
 share/locale/es/LC_MESSAGES/eiskaltdcpp-gtk.mo
 share/locale/fr/LC_MESSAGES/eiskaltdcpp-gtk.mo
 share/locale/hu/LC_MESSAGES/eiskaltdcpp-gtk.mo
+share/locale/it/LC_MESSAGES/eiskaltdcpp-gtk.mo
 share/locale/pl/LC_MESSAGES/eiskaltdcpp-gtk.mo
+share/locale/pt_BR/LC_MESSAGES/eiskaltdcpp-gtk.mo
 share/locale/ru/LC_MESSAGES/eiskaltdcpp-gtk.mo
 share/locale/sk/LC_MESSAGES/eiskaltdcpp-gtk.mo
-share/locale/sr/LC_MESSAGES/eiskaltdcpp-gtk.mo
+share/locale/sr@latin/LC_MESSAGES/eiskaltdcpp-gtk.mo
 share/locale/uk/LC_MESSAGES/eiskaltdcpp-gtk.mo
 @dirrm share/eiskaltdcpp/gtk/icons/hicolor/16x16/status
 @dirrm share/eiskaltdcpp/gtk/icons/hicolor/16x16

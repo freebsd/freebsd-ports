@@ -3,7 +3,7 @@
 
 PORTNAME=	fix-mime-charset
 PORTVERSION=	0.5.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	converters textproc russian ukrainian
 MASTER_SITES=	SF/fix-mime-chr/${PORTNAME}/${PORTVERSION}
 

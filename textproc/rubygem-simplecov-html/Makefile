@@ -7,7 +7,9 @@ CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
-COMMENT=	https://rubygems.org/gems/simplecov-html
+COMMENT=	Default HTML formatter for SimpleCov
+
+LICENSE=	MIT
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes

@@ -1,16 +1,45 @@
-etc/swift/account-server.conf-sample
-etc/swift/container-server.conf-sample
-etc/swift/container-sync-realms.conf-sample
-etc/swift/dispersion.conf-sample
-etc/swift/drive-audit.conf-sample
-etc/swift/memcache.conf-sample
-etc/swift/mime.types-sample
-etc/swift/object-expirer.conf-sample
-etc/swift/object-server.conf-sample
-etc/swift/proxy-server.conf-sample
-etc/swift/rsyncd.conf-sample
-etc/swift/swift-rsyslog.conf-sample
-etc/swift/swift.conf-sample
+@unexec if cmp -s %D/%%ETCDIR%%/account-server.conf-sample %D/%%ETCDIR%%/account-server.conf; then rm -f %D/%%ETCDIR%%/account-server.conf; fi
+%%ETCDIR%%/account-server.conf-sample
+@exec if [ ! -f %D/%%ETCDIR%%/account-server.conf ] ; then cp -p %D/%F %B/account-server.conf; fi
+@unexec if cmp -s %D/%%ETCDIR%%/container-reconciler.conf-sample %D/%%ETCDIR%%/container-reconciler.conf; then rm -f %D/%%ETCDIR%%/container-reconciler.conf; fi
+%%ETCDIR%%/container-reconciler.conf-sample
+@exec if [ ! -f %D/%%ETCDIR%%/container-reconciler.conf ] ; then cp -p %D/%F %B/container-reconciler.conf; fi
+@unexec if cmp -s %D/%%ETCDIR%%/container-server.conf-sample %D/%%ETCDIR%%/container-server.conf; then rm -f %D/%%ETCDIR%%/container-server.conf; fi
+%%ETCDIR%%/container-server.conf-sample
+@exec if [ ! -f %D/%%ETCDIR%%/container-server.conf ] ; then cp -p %D/%F %B/container-server.conf; fi
+@unexec if cmp -s %D/%%ETCDIR%%/container-sync-realms.conf-sample %D/%%ETCDIR%%/container-sync-realms.conf; then rm -f %D/%%ETCDIR%%/container-sync-realms.conf; fi
+%%ETCDIR%%/container-sync-realms.conf-sample
+@exec if [ ! -f %D/%%ETCDIR%%/container-sync-realms.conf ] ; then cp -p %D/%F %B/container-sync-realms.conf; fi
+@unexec if cmp -s %D/%%ETCDIR%%/dispersion.conf-sample %D/%%ETCDIR%%/dispersion.conf; then rm -f %D/%%ETCDIR%%/dispersion.conf; fi
+%%ETCDIR%%/dispersion.conf-sample
+@exec if [ ! -f %D/%%ETCDIR%%/dispersion.conf ] ; then cp -p %D/%F %B/dispersion.conf; fi
+@unexec if cmp -s %D/%%ETCDIR%%/drive-audit.conf-sample %D/%%ETCDIR%%/drive-audit.conf; then rm -f %D/%%ETCDIR%%/drive-audit.conf; fi
+%%ETCDIR%%/drive-audit.conf-sample
+@exec if [ ! -f %D/%%ETCDIR%%/drive-audit.conf ] ; then cp -p %D/%F %B/drive-audit.conf; fi
+@unexec if cmp -s %D/%%ETCDIR%%/memcache.conf-sample %D/%%ETCDIR%%/memcache.conf; then rm -f %D/%%ETCDIR%%/memcache.conf; fi
+%%ETCDIR%%/memcache.conf-sample
+@exec if [ ! -f %D/%%ETCDIR%%/memcache.conf ] ; then cp -p %D/%F %B/memcache.conf; fi
+@unexec if cmp -s %D/%%ETCDIR%%/mime.types-sample %D/%%ETCDIR%%/mime.types; then rm -f %D/%%ETCDIR%%/mime.types; fi
+%%ETCDIR%%/mime.types-sample
+@exec if [ ! -f %D/%%ETCDIR%%/mime.types ] ; then cp -p %D/%F %B/mime.types; fi
+@unexec if cmp -s %D/%%ETCDIR%%/object-expirer.conf-sample %D/%%ETCDIR%%/object-expirer.conf; then rm -f %D/%%ETCDIR%%/object-expirer.conf; fi
+%%ETCDIR%%/object-expirer.conf-sample
+@exec if [ ! -f %D/%%ETCDIR%%/object-expirer.conf ] ; then cp -p %D/%F %B/object-expirer.conf; fi
+@unexec if cmp -s %D/%%ETCDIR%%/object-server.conf-sample %D/%%ETCDIR%%/object-server.conf; then rm -f %D/%%ETCDIR%%/object-server.conf; fi
+%%ETCDIR%%/object-server.conf-sample
+@exec if [ ! -f %D/%%ETCDIR%%/object-server.conf ] ; then cp -p %D/%F %B/object-server.conf; fi
+@unexec if cmp -s %D/%%ETCDIR%%/proxy-server.conf-sample %D/%%ETCDIR%%/proxy-server.conf; then rm -f %D/%%ETCDIR%%/proxy-server.conf; fi
+%%ETCDIR%%/proxy-server.conf-sample
+@exec if [ ! -f %D/%%ETCDIR%%/proxy-server.conf ] ; then cp -p %D/%F %B/proxy-server.conf; fi
+@unexec if cmp -s %D/%%ETCDIR%%/rsyncd.conf-sample %D/%%ETCDIR%%/rsyncd.conf; then rm -f %D/%%ETCDIR%%/rsyncd.conf; fi
+%%ETCDIR%%/rsyncd.conf-sample
+@exec if [ ! -f %D/%%ETCDIR%%/rsyncd.conf ] ; then cp -p %D/%F %B/rsyncd.conf; fi
+@unexec if cmp -s %D/%%ETCDIR%%/swift-rsyslog.conf-sample %D/%%ETCDIR%%/swift-rsyslog.conf; then rm -f %D/%%ETCDIR%%/swift-rsyslog.conf; fi
+%%ETCDIR%%/swift-rsyslog.conf-sample
+@exec if [ ! -f %D/%%ETCDIR%%/swift-rsyslog.conf ] ; then cp -p %D/%F %B/swift-rsyslog.conf; fi
+@unexec if cmp -s %D/%%ETCDIR%%/swift.conf-sample %D/%%ETCDIR%%/swift.conf; then rm -f %D/%%ETCDIR%%/swift.conf; fi
+%%ETCDIR%%/swift.conf-sample
+@exec if [ ! -f %D/%%ETCDIR%%/swift.conf ] ; then cp -p %D/%F %B/swift.conf; fi
 man/man1/swift-account-auditor.1.gz
 man/man1/swift-account-info.1.gz
 man/man1/swift-account-reaper.1.gz

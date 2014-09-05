@@ -4,4 +4,4 @@ LDAP client features and a subset of server features as well.
     * Standards-based (going for RFC 4511)
     * Portable: 100% Ruby
 
-WWW: http://net-ldap.rubyforge.org/
+WWW: http://rubygems.org/gems/net-ldap/

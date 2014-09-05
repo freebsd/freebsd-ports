@@ -1,0 +1,11 @@
+--- ./src/ctemplate/template_string.h.in.orig	2014-08-26 12:35:28.229739993 -0400
++++ ./src/ctemplate/template_string.h.in	2014-08-26 12:35:50.132984993 -0400
+@@ -337,7 +337,7 @@
+ 
+ // Don't use this.  This is used only in auto-generated .varnames.h files.
+ #define STS_INIT_WITH_HASH(name, str, hash)                                   \
+-  { { str, sizeof(""str"")-1, hash } };                                       \
++  { { str, sizeof("" str "")-1, hash } };                                       \
+   namespace ctemplate_sts_init {                                              \
+   static const @ac_google_namespace@::StaticTemplateStringInitializer name##_init(&name); \
+   }

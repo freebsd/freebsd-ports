@@ -1,12 +1,15 @@
 bin/crux
 bin/redpoint
 bin/MrRogers
+lib/Crux/lib/libCx.so
+lib/Crux/parsers/Fasta.log
+lib/Crux/parsers/Fasta.pickle
 %%PYTHON_SITELIBDIR%%/Crux/CTMatrix.so
 %%PYTHON_SITELIBDIR%%/Crux/Character.so
 %%PYTHON_SITELIBDIR%%/Crux/Config.py
-%%PYTHON_SITELIBDIR%%/Crux/Config.pyo
+@rmtry %%PYTHON_SITELIBDIR%%/Crux/Config.pyo
 %%PYTHON_SITELIBDIR%%/Crux/Copying.py
-%%PYTHON_SITELIBDIR%%/Crux/Copying.pyo
+@rmtry %%PYTHON_SITELIBDIR%%/Crux/Copying.pyo
 %%PYTHON_SITELIBDIR%%/Crux/DistMatrix/Nj.so
 %%PYTHON_SITELIBDIR%%/Crux/DistMatrix/__init__.py
 %%PYTHON_SITELIBDIR%%/Crux/DistMatrix/__init__.so
@@ -51,22 +54,19 @@ bin/MrRogers
 %%PYTHON_SITELIBDIR%%/Crux/__init__.py
 %%PYTHON_SITELIBDIR%%/Crux/__init__.so
 %%PYTHON_SITELIBDIR%%/Parsing.so
-share/Crux/lib/libCx.so
-share/Crux/parsers/Fasta.log
-share/Crux/parsers/Fasta.pickle
-@dirrm %%PYTHON_SITELIBDIR%%/Crux/DistMatrix
+@dirrm %%PYTHON_SITELIBDIR%%/Crux/include/Crux/Tree
+@dirrm %%PYTHON_SITELIBDIR%%/Crux/include/Crux/SFMT
+@dirrm %%PYTHON_SITELIBDIR%%/Crux/include/Crux/Mc3
+@dirrm %%PYTHON_SITELIBDIR%%/Crux/include/Crux/DistMatrix
 @dirrm %%PYTHON_SITELIBDIR%%/Crux/include/Crux/Crux/DistMatrix
 @dirrm %%PYTHON_SITELIBDIR%%/Crux/include/Crux/Crux/Tree
 @dirrm %%PYTHON_SITELIBDIR%%/Crux/include/Crux/Crux
-@dirrm %%PYTHON_SITELIBDIR%%/Crux/include/Crux/DistMatrix
-@dirrm %%PYTHON_SITELIBDIR%%/Crux/include/Crux/Mc3
-@dirrm %%PYTHON_SITELIBDIR%%/Crux/include/Crux/SFMT
-@dirrm %%PYTHON_SITELIBDIR%%/Crux/include/Crux/Tree
 @dirrm %%PYTHON_SITELIBDIR%%/Crux/include/Crux
 @dirrm %%PYTHON_SITELIBDIR%%/Crux/include
-@dirrm %%PYTHON_SITELIBDIR%%/Crux/Mc3
 @dirrm %%PYTHON_SITELIBDIR%%/Crux/Tree
+@dirrm %%PYTHON_SITELIBDIR%%/Crux/Mc3
+@dirrm %%PYTHON_SITELIBDIR%%/Crux/DistMatrix
 @dirrm %%PYTHON_SITELIBDIR%%/Crux
-@dirrm share/Crux/lib
-@dirrm share/Crux/parsers
-@dirrm share/Crux
+@dirrm lib/Crux/parsers
+@dirrm lib/Crux/lib
+@dirrm lib/Crux

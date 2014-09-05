@@ -1,13 +1,7 @@
 bin/termit
-@unexec if cmp -s %D/etc/xdg/termit/colormaps.lua.sample %D/etc/xdg/termit/colormaps.lua; then rm -f %D/etc/xdg/termit/colormaps.lua; fi
-etc/xdg/termit/colormaps.lua.sample
-@exec if [ ! -f %D/etc/xdg/termit/colormaps.lua ] ; then cp -p %D/%F %B/colormaps.lua; fi
-@unexec if cmp -s %D/etc/xdg/termit/rc.lua.sample %D/etc/xdg/termit/rc.lua; then rm -f %D/etc/xdg/termit/rc.lua; fi
-etc/xdg/termit/rc.lua.sample
-@exec if [ ! -f %D/etc/xdg/termit/rc.lua ] ; then cp -p %D/%F %B/rc.lua; fi
-@unexec if cmp -s %D/etc/xdg/termit/utils.lua.sample %D/etc/xdg/termit/utils.lua; then rm -f %D/etc/xdg/termit/utils.lua; fi
-etc/xdg/termit/utils.lua.sample
-@exec if [ ! -f %D/etc/xdg/termit/utils.lua ] ; then cp -p %D/%F %B/utils.lua; fi
+@sample etc/xdg/termit/colormaps.lua.sample
+@sample etc/xdg/termit/rc.lua.sample
+@sample etc/xdg/termit/utils.lua.sample
 man/man1/termit.1.gz
 share/applications/termit.desktop
 %%PORTDOCS%%%%DOCSDIR%%/README

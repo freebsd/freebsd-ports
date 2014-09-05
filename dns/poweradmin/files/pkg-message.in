@@ -1,9 +1,0 @@
-*******************************************************************************
-A sample config file is located in %%WWWDIR%%/inc/config.inc.php
-You now need to add an alias to apache's httpd.conf pointing to
-%%WWWDIR%% in order to access PowerAdmin from your web brower,
-or create a VirtualHost with DocumentRoot set to that directory.
-	Alias /poweradmin/	%%WWWDIR%%/
-		or
-	DocumentRoot		%%WWWDIR%%/
-*******************************************************************************

@@ -2,9 +2,7 @@ bin/pt_agent
 bin/pt_sflow
 bin/pt_netflow
 bin/pt_thmon
-@unexec if cmp -s %D/etc/packter.conf.sample %D/etc/packter.conf; then rm -f %D/etc/packter.conf; fi
-etc/packter.conf.sample
-@exec [ -f %D/etc/packter.conf ] || cp -p %D/etc/packter.conf.sample %D/etc/packter.conf
+@sample etc/packter.conf.sample
 %%PACKTERTC%%%%DATADIR%%/packter_tc/IPTB.pm
 %%PACKTERTC%%%%DATADIR%%/packter_tc/InterTrackMessage.xsd
 %%PACKTERTC%%%%DATADIR%%/packter_tc/btm.conf

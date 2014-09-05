@@ -1,7 +1,0 @@
-etc/pam_abl.conf.sample
-etc/periodic/daily/190.clean-pam-abl
-lib/pam_abl.so
-sbin/pam_abl
-@exec mkdir -p %%PAMABLDB%%
-@dirrmtry etc/periodic/daily
-@dirrmtry etc/periodic

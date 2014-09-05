@@ -29,12 +29,12 @@ RESTRICTED_FILES=	\
 		macopix-mascot-marimite-euc-ja-2.20.tar.gz \
 		macopix-mascot-HxB-euc-ja-0.30.tar.gz
 
-WANT_GNOME=	yes
-USES=		gettext gmake iconv pkgconfig
+USES=		gettext gmake iconv libtool pkgconfig
+USE_XORG=	x11
 GNU_CONFIGURE=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib ${ICONV_LIB}
+LIBS+=		-L${LOCALBASE}/lib -lX11 ${ICONV_LIB}
 
 OPTIONS_DEFINE=	DOCS GNUTLS GTK1
 

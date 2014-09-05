@@ -41,18 +41,14 @@ PLIST_SUB+=	PACKTERTC=""
 PLIST_SUB+=	PACKTERTC="@comment "
 .endif
 
+post-patch:
+	@${REINPLACE_CMD} 's/-lssl/-lcrypto/' ${WRKSRC}/configure
+
 post-install:
 .if ${PORT_OPTIONS:MPACKTERTC}
 	@${MKDIR} ${STAGEDIR}${DATADIR}
 	${CP} -pr ${WRKSRC}/packter_tc ${STAGEDIR}${DATADIR}/
 .endif
-
-.for f in packter.conf
-	@if [ ! -f ${PREFIX}/etc/${f} ]; then \
-		${CP} -p ${STAGEDIR}${PREFIX}/etc/${f}.sample ${STAGEDIR}/${PREFIX}/etc/${f} ; \
-	fi
-.endfor
-
 .if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for f in ${PORTDOCS}

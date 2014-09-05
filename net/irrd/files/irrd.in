@@ -15,7 +15,7 @@
 #
 irrd_enable="${irrd_enable:-NO}"		# Enable irrd
 #irrd_program="%%PREFIX%%/sbin/irrd"		# Location of irrd
-irrd_flags="${irrd_flags:--u}"			# Flags to imapd program
+irrd_flags="${irrd_flags:--u}"			# Flags to irrd program
 
 . /etc/rc.subr
 

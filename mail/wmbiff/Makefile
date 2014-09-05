@@ -42,6 +42,6 @@ CONFIGURE_ARGS+=	--disable-crypto
 post-install:
 	@${ECHO_MSG} "===>   Installing sample.wmbiffrc to ${DATADIR}"
 	@${ECHO_MSG} "===>   Modify it to suit your needs and copy to ~/.wmbiffrc"
-	${INSTALL_DATA} -m 644 ${WRKSRC}/wmbiff/sample.wmbiffrc ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/wmbiff/sample.wmbiffrc ${STAGEDIR}${DATADIR}
 
 .include <bsd.port.post.mk>

@@ -72,5 +72,6 @@ do-install:
 		${STAGEDIR}${MAN1PREFIX}/man/man1/qpage.1
 	${INSTALL_DATA} ${WRKSRC}/example.cf \
 		${STAGEDIR}${PREFIX}/etc/qpage.conf.sample
+	${MKDIR} ${STAGEDIR}/var/spool/qpage
 
 .include <bsd.port.mk>

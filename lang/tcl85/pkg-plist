@@ -26,6 +26,7 @@ include/tcl%%TCL_VER%%/unix/tclUnixThrd.h
 lib/libtcl%%SHORT_TCL_VER%%.a
 lib/libtcl%%SHORT_TCL_VER%%.so
 lib/libtcl%%SHORT_TCL_VER%%.so.1
+lib/libtcl%%SHORT_TCL_VER%%.so.1.0
 lib/libtclstub%%SHORT_TCL_VER%%.a
 lib/tcl%%TCL_VER%%/auto.tcl
 lib/tcl%%TCL_VER%%/clock.tcl
@@ -244,6 +245,7 @@ lib/tcl%%TCL_VER%%/tclConfig.sh
 lib/tcl%%TCL_VER%%/tclIndex
 lib/tcl%%TCL_VER%%/tm.tcl
 lib/tcl%%TCL_VER%%/word.tcl
+libdata/pkgconfig/tcl85.pc
 %%MAN%%man/man1/tclsh.tcl85.1.gz
 %%MAN%%man/man3/TCL_MEM_DEBUG.tcl85.3.gz
 %%MAN%%man/man3/Tcl_Access.tcl85.3.gz
@@ -1551,15 +1553,15 @@ lib/tcl%%TCL_VER%%/word.tcl
 %%TZDATA%%@dirrm lib/tcl%%TCL_VER%%/tzdata/America
 %%TZDATA%%@dirrm lib/tcl%%TCL_VER%%/tzdata/Africa
 %%TZDATA%%@dirrm lib/tcl%%TCL_VER%%/tzdata
-%%MODULES%%lib/tcl%%TCL_VER%%/http-2.7.12.tm
+%%MODULES%%lib/tcl%%TCL_VER%%/http-2.7.13.tm
 %%MODULES%%lib/tcl%%TCL_VER%%/http1.0/http.tcl
 %%MODULES%%lib/tcl%%TCL_VER%%/http1.0/pkgIndex.tcl
 %%MODULES%%lib/tcl%%TCL_VER%%/msgcat-1.5.2.tm
 %%MODULES%%lib/tcl%%TCL_VER%%/opt0.4/optparse.tcl
 %%MODULES%%lib/tcl%%TCL_VER%%/opt0.4/pkgIndex.tcl
-%%MODULES%%lib/tcl%%TCL_VER%%/platform-1.0.12.tm
+%%MODULES%%lib/tcl%%TCL_VER%%/platform-1.0.13.tm
 %%MODULES%%lib/tcl%%TCL_VER%%/platform/shell-1.1.4.tm
-%%MODULES%%lib/tcl%%TCL_VER%%/tcltest-2.3.5.tm
+%%MODULES%%lib/tcl%%TCL_VER%%/tcltest-2.3.8.tm
 %%MODULES%%@dirrm lib/tcl%%TCL_VER%%/platform
 %%MODULES%%@dirrm lib/tcl%%TCL_VER%%/opt0.4
 %%MODULES%%@dirrm lib/tcl%%TCL_VER%%/http1.0

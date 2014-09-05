@@ -1,0 +1,49 @@
+--- Makefile.orig	1999-11-09 08:23:46.000000000 +0100
++++ Makefile	2014-08-21 12:29:41.000000000 +0200
+@@ -32,6 +32,14 @@
+ compile auto_home.c
+ 	./compile auto_home.c
+ 
++auto_home_stage.c: \
++auto-str conf-stage
++	./auto-str auto_home `head -1 conf-stage` > auto_home_stage.c
++
++auto_home_stage.o: \
++compile auto_home_stage.c
++	./compile auto_home_stage.c
++
+ byte_chr.o: \
+ compile byte_chr.c byte.h
+ 	./compile byte_chr.c
+@@ -231,7 +239,7 @@
+ 	./choose clr tryshsgr hasshsgr.h1 hasshsgr.h2 > hasshsgr.h
+ 
+ hier.o: \
+-compile hier.c auto_home.h
++compile hier.c auto_home_stage.h
+ 	./compile hier.c
+ 
+ httpd: \
+@@ -257,9 +265,9 @@
+ 	./compile httpdate.c
+ 
+ install: \
+-load install.o hier.o auto_home.o strerr.a substdio.a open.a error.a \
++load install.o hier.o auto_home_stage.o strerr.a substdio.a open.a error.a \
+ str.a
+-	./load install hier.o auto_home.o strerr.a substdio.a \
++	./load install hier.o auto_home_stage.o strerr.a substdio.a \
+ 	open.a error.a str.a 
+ 
+ install.o: \
+@@ -268,8 +276,8 @@
+ 	./compile install.c
+ 
+ instcheck: \
+-load instcheck.o hier.o auto_home.o strerr.a substdio.a error.a str.a
+-	./load instcheck hier.o auto_home.o strerr.a substdio.a \
++load instcheck.o hier.o auto_home_stage.o strerr.a substdio.a error.a str.a
++	./load instcheck hier.o auto_home_stage.o strerr.a substdio.a \
+ 	error.a str.a 
+ 
+ instcheck.o: \

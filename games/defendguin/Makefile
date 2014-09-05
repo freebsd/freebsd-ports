@@ -30,7 +30,7 @@ DESKTOP_ENTRIES="Defendguin" "" "${PORTNAME}" \
 do-build:
 	cd ${WRKSRC} && ${CC} ${CFLAGS} -DDATA_PREFIX=\"${DATADIR}/\" \
 		`${SDL_CONFIG} --cflags` defendguin.c -o defendguin \
-		`${SDL_CONFIG} --libs` -lSDL_mixer
+		`${SDL_CONFIG} --libs` -lSDL_mixer -lm
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/

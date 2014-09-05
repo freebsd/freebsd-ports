@@ -124,6 +124,7 @@ git:*:211:
 hg:*:212:
 drizzle:*:213:
 opendnssec:*:215:
+nsd:*:216:
 bs:*:220:
 rtpproxy:*:222:
 postgrey:*:225:

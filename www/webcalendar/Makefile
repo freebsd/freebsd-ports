@@ -1,98 +1,89 @@
-# Created by: glarkin
 # $FreeBSD$
 
 PORTNAME=	WebCalendar
-PORTVERSION=	1.0.5
-PORTREVISION=	2
+PORTVERSION=	1.2.7
 CATEGORIES=	www
-MASTER_SITES=	SF/${PORTNAME:tl}/${PORTNAME:tl}%201.0/${PORTVERSION}
-PORTSCOUT=	limit:^1\.0\.
+MASTER_SITES=	SF/${PORTNAME:tl}/${PORTNAME:tl}%201.2/${PORTVERSION}/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Web-based calendar application
 
+LICENSE=	GPLv2
+
+PORTSCOUT=	limit:^1\.2\. skipb:1
+USES=		uidfix
 USE_PHP=	pcre session
 WANT_PHP_WEB=	yes
 NO_BUILD=	yes
-CONFLICTS=	WebCalendar-devel-[0-9]*
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
-
-WCURL?=		webcalendar
-WCDIR?=		www/${WCURL}
-PLIST=		${WRKDIR}/pkg-plist
-
-SUB_FILES=	pkg-message
-SUB_LIST=	WCURL=${WCURL} WCDIR=${WCDIR}
-
-OPTIONS_DEFINE=	LDAP DOCS
-OPTIONS_MULTI=	DB
-OPTIONS_MULTI_DB=	MYSQL PGSQL MSSQL DBASE ODBC ORACLE
-OPTIONS_DEFAULT=	MYSQL
-DB_DESC=	Database backend
-DBASE_DESC=	DBase database support
-
-.include <bsd.port.options.mk>
-
+WWWDIR=		${PREFIX}/www/${PORTNAME:tl}
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME:tl}
-PORTDOCS=	README \
-		WebCalendar-Database.html \
-		WebCalendar-DeveloperGuide.html \
-		WebCalendar-Styling.html \
-		WebCalendar-SysAdmin.html \
+DEFAULT_VERSIONS=	PHP=5
+WITH_PHP_CGI?=	/cgi-bin/php
+SUB_LIST+=	PHPCGI=${WITH_PHP_CGI}
+PLIST_SUB+=	WWWOWN=${WWWOWN} WWWGRP=${WWWGRP}
+
+PORTDOCS=	WebCalendar-SysAdmin.html \
 		newwin.gif
 
-.if ${PORT_OPTIONS:MMYSQL}
-USE_PHP+=	mysql
+OPTIONS_DEFINE=		APACHE LDAP GRADIENTBG REMINDERS PALM DOCS
+OPTIONS_DEFAULT=	MYSQL REMINDERS
+OPTIONS_MULTI=		DB
+OPTIONS_MULTI_DB=	MYSQL PGSQL SQLITE MSSQL DBASE ODBC ORACLE
+OPTIONS_SUB=		yes
+GRADIENTBG_DESC=	Gradient background image support
+REMINDERS_DESC=		Email reminder support
+PALM_DESC=		Palm export support
+
+APACHE_USE=	APACHE_RUN=22+
+DBASE_USE=	PHP=dbase
+GRADIENTBG_USE=	PHP=gd
+LDAP_USE=	PHP=ldap
+MSSQL_USE=	PHP=mssql
+MYSQL_USE=	PHP=mysql
+ODBC_USE=	PHP=odbc
+ORACLE_USE=	PHP=oracle
+PALM_RUN_DEPENDS=	pilot-xfer:${PORTSDIR}/palm/pilot-link
+PGSQL_USE=	PHP=pgsql
+SQLITE_USE=	PHP=sqlite3
+
+.include <bsd.port.pre.mk>
+
+.if ${PORT_OPTIONS:MAPACHE}
+PLIST_SUB+=	CONFDIR=${CONFDIR_REL}
+CONFDIR=	${PREFIX}/${CONFDIR_REL}
+CONFDIR_REL=	${APACHEETCDIR}/Includes
+SUB_FILES=	pkg-message
 .endif
 
-.if ${PORT_OPTIONS:MPGSQL}
-USE_PHP+=	pgsql
+.if ${PHP_SAPI:Mcgi} == "cgi" && ${PHP_SAPI:Mmod} == ""
+CGI_EXT=	-cgi
+.else
+CGI_EXT=
+.endif
+CONF=		webcalendar${CGI_EXT}.conf
+SUB_FILES+=	${CONF}
+PLIST_SUB+=	CONFFILE=${CONF}
+
+.if ${PORT_OPTIONS:MREMINDERS}
+WANT_PHP_CLI=	yes
 .endif
 
-.if ${PORT_OPTIONS:MMSSQL}
-USE_PHP+=	mssql
+.if ${PORT_OPTIONS:MDOCS}
+SUB_LIST+=	HASHMARK=
+.else
+SUB_LIST+=	HASHMARK=\#
 .endif
-
-.if ${PORT_OPTIONS:MDBASE}
-USE_PHP+=	dbase
-.endif
-
-.if ${PORT_OPTIONS:MODBC}
-USE_PHP+=	odbc
-.endif
-
-.if ${PORT_OPTIONS:MORACLE}
-USE_PHP+=	oracle
-.endif
-
-.if ${PORT_OPTIONS:MLDAP}
-USE_PHP+=	ldap
-.endif
-
-pre-install:
-	@cd ${WRKSRC} && ${FIND} -s * -type f | \
-		${SED} -e 's|^|${WCDIR}/|' > ${PLIST} \
-		&& ${FIND} -d * -type d | \
-		${SED} -e 's|^|@dirrm ${WCDIR}/|' >> ${PLIST} \
-		&& ${ECHO_CMD} @dirrm ${WCDIR} >> ${PLIST}
-	@${ECHO_CMD} @dirrmtry www/data-dist >> ${PLIST}
-	@${ECHO_CMD} @dirrmtry www/data >> ${PLIST}
 
 do-install:
-	@${MKDIR} ${STAGEDIR}${PREFIX}/${WCDIR}
-	@cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/${WCDIR}
-	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${STAGEDIR}${PREFIX}/${WCDIR}
-	@${FIND} ${STAGEDIR}${PREFIX}/${WCDIR} -type f -print0 | ${XARGS} -0 ${CHMOD} 644
-	@${ECHO_CMD} '@exec ${CHOWN} -R ${WWWOWN}:${WWWGRP} \
-		${WCDIR:S|^|%D/|}' >> ${TMPPLIST}
-	@${MKDIR} ${STAGEDIR}${PREFIX}/www/data \
-		${STAGEDIR}${PREFIX}/www/data-dist
-	@${ECHO_CMD} '@dirrmtry www/data' >> ${TMPPLIST}
-	@${ECHO_CMD} '@dirrmtry www/data-dist' >> ${TMPPLIST}
+	@${MKDIR} ${STAGEDIR}${WWWDIR}
+	(cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${WWWDIR})
 
 post-install:
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	@cd ${WRKSRC}/docs && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKDIR}/${CONF} ${STAGEDIR}${EXAMPLESDIR}
 
-.include <bsd.port.mk>
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	(cd ${WRKSRC}/docs && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR})
+
+.include <bsd.port.post.mk>

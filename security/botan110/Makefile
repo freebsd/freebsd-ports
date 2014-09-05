@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	botan
-PORTVERSION=	1.10.7
+PORTVERSION=	1.10.8
 CATEGORIES=	security
 MASTER_SITES=	http://files.randombit.net/botan/v1.10/
 PKGNAMESUFFIX=	110
@@ -29,7 +29,7 @@ CONFIGURE_ARGS=	--prefix=${PREFIX} --with-bzip2 --with-zlib
 MAKE_ARGS=	CXX="${CXX}" LIB_OPT="${CXXFLAGS}"
 USE_LDCONFIG=	yes
 PLIST_FILES=	bin/botan-config-1.10 lib/libbotan-1.10.a lib/libbotan-1.10.so lib/libbotan-1.10.so.0 \
-		lib/libbotan-1.10.so.0.7 libdata/pkgconfig/botan-1.10.pc
+		lib/libbotan-1.10.so.0.8 libdata/pkgconfig/botan-1.10.pc
 
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}-${PORTVERSION}
 PORTDOCS=	*

@@ -19,7 +19,7 @@ COMMENT=	AFS implementation from openafs.org
 LICENSE=	IPLv1
 LICENSE_NAME=	IBM Public License Version 1.0
 LICENSE_FILE=	${WRKSRC}/doc/LICENSE
-LICENSE_PERMS=	auto-accept
+LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 AFS_DISTVERSION=1.6.7
 DBVERSION=	2013-01-28

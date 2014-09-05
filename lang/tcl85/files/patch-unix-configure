@@ -1,41 +1,32 @@
---- configure.orig	2011-06-23 15:18:36.000000000 +0200
-+++ configure	2011-06-25 21:30:44.310215849 +0200
-@@ -6638,7 +6638,7 @@
-     # is disabled by the user. [Bug 1016796]
-     LDFLAGS_ARCH=""
-     UNSHARED_LIB_SUFFIX=""
--    TCL_TRIM_DOTS='`echo ${VERSION} | tr -d .`'
-+    TCL_TRIM_DOTS=`echo ${VERSION} | tr -d .`
-     ECHO_VERSION='`echo ${VERSION}`'
-     TCL_LIB_VERSIONS_OK=ok
-     CFLAGS_DEBUG=-g
-@@ -7648,7 +7648,7 @@
- 	    SHLIB_SUFFIX=".so"
- 	    DL_OBJS="tclLoadDl.o"
- 	    DL_LIBS=""
--	    LDFLAGS="$LDFLAGS -export-dynamic"
-+	    LDFLAGS=""
- 	    if test $doRpath = yes; then
+--- configure.orig	2014-07-23 15:03:24.000000000 +0200
++++ configure	2014-07-23 17:04:12.000000000 +0200
+@@ -7641,7 +7641,11 @@
  
- 		CC_SEARCH_FLAGS='-Wl,-rpath,${LIB_RUNTIME_DIR}'
-@@ -7659,16 +7659,16 @@
- 
- 		# The -pthread needs to go in the CFLAGS, not LIBS
- 		LIBS=`echo $LIBS | sed s/-pthread//`
--		CFLAGS="$CFLAGS -pthread"
--	    	LDFLAGS="$LDFLAGS -pthread"
-+		CFLAGS="$CFLAGS $PTHREAD_CFLAGS"
-+	    	LDFLAGS="$LDFLAGS $PTHREAD_LIBS"
- 
+ 	    ;;
+ 	FreeBSD-*)
+-	    # This configuration from FreeBSD Ports.
++	    # Version numbers are dot-stripped by system policy.
++	    TCL_TRIM_DOTS=`echo ${VERSION} | tr -d .`
++	    UNSHARED_LIB_SUFFIX='${TCL_TRIM_DOTS}.a'
++	    SHARED_LIB_SUFFIX='${TCL_TRIM_DOTS}.so.${SHLIB_VERSION}'
++	    TCL_LIB_VERSIONS_OK=nodots
+ 	    SHLIB_CFLAGS="-fPIC"
+ 	    SHLIB_LD="${CC} -shared"
+ 	    TCL_SHLIB_LD_EXTRAS="-Wl,-soname,\$@"
+@@ -7663,16 +7667,6 @@
+ 		CFLAGS="$CFLAGS $PTHREAD_CFLAGS"
+ 		LDFLAGS="$LDFLAGS $PTHREAD_LIBS"
  fi
- 
- 	    case $system in
+-
+-	    case $system in
 -	    FreeBSD-3.*)
-+	    FreeBSD-*)
- 	    	# FreeBSD-3 doesn't handle version numbers with dots.
- 	    	UNSHARED_LIB_SUFFIX='${TCL_TRIM_DOTS}.a'
--	    	SHARED_LIB_SUFFIX='${TCL_TRIM_DOTS}.so'
-+	    	SHARED_LIB_SUFFIX='${TCL_TRIM_DOTS}.so.1'
- 	    	TCL_LIB_VERSIONS_OK=nodots
- 		;;
- 	    esac
+-		# Version numbers are dot-stripped by system policy.
+-		TCL_TRIM_DOTS=`echo ${VERSION} | tr -d .`
+-		UNSHARED_LIB_SUFFIX='${TCL_TRIM_DOTS}.a'
+-		SHARED_LIB_SUFFIX='${TCL_TRIM_DOTS}.so'
+-		TCL_LIB_VERSIONS_OK=nodots
+-		;;
+-	    esac
+ 	    ;;
+ 	Darwin-*)
+ 	    CFLAGS_OPTIMIZE="-Os"

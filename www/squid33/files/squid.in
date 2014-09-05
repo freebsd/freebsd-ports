@@ -39,6 +39,9 @@
 # squid_flags:	Additional commandline arguments for Squid you might want to
 #		use. See squid(8) for further details.
 #
+# squid_krb5_ktname:
+#		Alternative Kerberos 5 Key Table.
+#		Default: none
 
 . /etc/rc.subr
 
@@ -82,6 +85,12 @@ squid_prestart()
 	# prepare the state directory:
 	[ -d ${state_dir} ] && rm -rf ${state_dir}
 	install -d -o ${squid_user} -m 0755 ${state_dir}
+
+	# setup KRB5_KTNAME:
+	squid_krb5_ktname=${squid_krb5_ktname:-"NONE"}
+	if [ "${squid_krb5_ktname}" != "NONE" ]; then
+		export KRB5_KTNAME=${squid_krb5_ktname}
+	fi
 
 	# setup FIB tables:
 	if command -v check_namevarlist > /dev/null 2>&1; then

@@ -1,7 +1,10 @@
 --- Makefile.orig
 +++ Makefile
-@@ -3,7 +3,7 @@
- INCLUDES = `pkg-config --cflags gtk+-2.0` -I. -Ifoodock
+@@ -1,9 +1,9 @@
+ CC ?= gcc
+ PREFIX = /usr/local
+-INCLUDES = `pkg-config --cflags gtk+-2.0` -I. -Ifoodock
++INCLUDES = `pkg-config --cflags gtk+-2.0 x11` -I. -Ifoodock
  
  # for normal use
 -CFLAGS += -Wall -ansi -pedantic $(INCLUDES)
@@ -9,8 +12,16 @@
  DEBUG = 
  
  # for debuggind purposes
-@@ -22,8 +22,8 @@
- lclint:
+@@ -12,7 +12,7 @@ DEBUG = 
+ #CFLAGS += -Wall -g -ansi $(INCLUDES) -DFNCALL_DEBUG
+ #DEBUG = debug.o
+ 
+-LIBS = `pkg-config --libs gtk+-2.0`
++LIBS = `pkg-config --libs gtk+-2.0 x11`
+ 
+ OBJECTS = wmcliphist.o clipboard.o gui.o rcconfig.o history.o hotkeys.o utils.o $(DEBUG)
+ TARGET = wmcliphist
+@@ -23,7 +23,7 @@ lclint:
  	lclint $(INCLUDES) +posixlib *.c >lclint.log
  
  wmcliphist: $(OBJECTS) foodock/foodock.o

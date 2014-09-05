@@ -25,12 +25,10 @@
 # ------------------------------------------------------------------------------
 *-for-1.4.tgz	net/dgd-lpmud			May not be used for monetary gain
 *_MegaCLI.zip		sysutils/megacli	Source recipient must acknowledge license. Reproduction or redistribution prohibited. See http://www.lsi.com/lookup/License.aspx
-ASpath-tree-*.tar.gz	net-mgmt/aspathtree	not redistributable, license agreement required
 26410-800.zip		audio/libaacplus	unclear legal status, probably need licenses from 3GPP, Via Licensing and Coding Technologies
 aacplusenc-*		audio/aacplusenc	unclear legal status, probably need licenses from 3GPP, Via Licensing and Coding Technologies
 acroread/AdbeRdr8.*	print/acroread8		Must fill out redistribution form at http://www.adobe.com/products/acrobat/distribute.html
 acroread/AdbeRdr9.*	print/acroread9		Must fill out redistribution form at http://www.adobe.com/products/acrobat/distribute.html
-actx-*			games/actx		Contains commercial character data
 adobesvg-*		graphics/linux-adobesvg	Redistribution prohibited
 adom-*			games/adom		Copy of CD must be sent to author
 aestats-*		games/aestats		Commercial use is prohibited
@@ -41,22 +39,20 @@ annelid-*		games/annelid		No redistribution allowed
 apache2/mod_h264_streaming-*	www/mod_h264_streaming	No commercial use
 armyops*-linux.run	games/linux-americasarmy Redistribution is limited
 astah-community-*.zip	devel/astah-community	License restrictions -- See http://astah.net/faq/community/enduser-license-agreement
-asWedit-*		www/aswedit		Commercial software
 atari800/*		emulators/atari800	xf25 contains copyright ROMs and cannot be distributed
 bamg*			math/bamg		Contact author personally regarding commercial use
 baudline_*		audio/baudline		No redistribution allowed
 BCWipe-*		security/bcwipe		Non-commercial distribution and use only
 bdc*			security/bdc		License does not allow redistribution
 bicom*			archivers/bicom		Contact author personally regarding commercial use
-blast*.freebsd-*	biology/blast		Must be downloaded from vendor site
 boodler-*		audio/boodler		Not for commercial use
 Browser*.tar.gz		net/ldapbrowser		No reply from author regarding redistribution licensing
+bzip-*			archivers/bzip		Some algorithms used may infringe certain US patents.  Opinions differ.  Commercial use could render you liable to unfriendly legal action
 candycruncher_demo*	games/linux-candycruncher-demo	Redistribution is limited, see license
 citrix_ica-*		net/citrix_ica		License prohibits redistribution
-cli_freebsd*		sysutils/arcconf	May not be redistributed in binary form
+arcconf-v*		sysutils/arcconf	May not be redistributed in binary form
 clustalw-*		biology/clustalw	No commercial use
 coldwar_demo*		games/linux-coldwar-demo	Redistribution is limited, see license
-contool-*		sysutils/contool	Do not incorporate the source code into a product which is subsequently sold
 cos-*			java/cos		Special conditions apply for commercial use
 cosmo/*			games/cosmo		Possible copyright infringement
 CrystalSVGforGnomeIcons* x11-themes/gnome-icons-crystal Themes may contain artwork not done by the author.  Keep FreeBSD safe if theme author violated copyrights.
@@ -79,10 +75,8 @@ doom3-linux-*		games/linux-doom3-demo	Redistribution is limited, see license; Re
 doomsrc.zip		games/doom		Redistribution is limited, see license; Requested by id Software
 dr_freebsd_*.zip	sysutils/megarc		Must be downloaded directly from the manufacturer
 dsnake-*		games/dsnake		License prohibits any reselling
-dtiquery-*		science/dtiquery	License agreement is required
 eagle-lin-*.run		cad/linux-eagle5	Usage permitted for non-commercial purposes only
 eawpats*		audio/eawpats		Some of the patches are not for commercial use
-eClient-linux-i686.run	games/atitd		Redistribution not allowed
 ecw_jpeg_2000_*.zip	graphics/libecwj2	Registration required to download sources, but sources no longer available on ERDAS website
 edith*			editors/edith		Redistribution not allowed
 eijiro*			japanese/eijiro-fpw	The original dictionary is not free
@@ -109,7 +103,6 @@ freqship/*		sysutils/freqsdwn	License agreement is required to download
 fretsonfire/FretsOnFire-*-linux* games/fretsonfire-data	Only Unreal Voodoo site is allowed to distribute the music
 fvcom/sourcecode1.tar.gz	science/fvcom	Requires (free) registration
 fvcom/sourcecode1.tar.gz	science/fvcom-mpi	Requires (free) registration
-gamess.*/gamess*	science/gamess		No Redistribution
 giac-*			math/giacxcas		The french documentation is for non commercial only use
 giftool*		graphics/giftool	Do not redistribute for profit
 gishdemo-*		games/gish-demo		(c) Copyright 2004 Chronic Logic All rights reserved
@@ -139,7 +132,6 @@ ICON-Stylish.*		x11-themes/gnome-icons-stylish Themes may contain artwork not do
 ICON-Ximian-South-*	x11-themes/gnome-icons-ximian-south Themes may contain artwork not done by the author.  Keep FreeBSD safe if theme author violated copyrights.
 jaf-*.zip		java/jaf		See the license
 jai-*-lib-linux-i586.*	java/jai		Redistribution is not permitted
-jai_imageio-*-lib-linux-* java/jai-imageio	Redistribution is not permitted
 java3d-sdk-*-linux-i386* java/java3d		License does not allow distribution
 javax_comm-*-solsparc.*	comms/java-commapi	No commercial use
 jdk-6*-apidocs.zip	java/jdk16-doc		This documentation is under license and export control
@@ -153,19 +145,18 @@ jpgraph-2.*		graphics/jpgraph2	The free version cannot be used in a commercial c
 jre-7*-i586.tar.gz	java/linux-sun-jre17	License does not allow distribution with fee
 jre-8*-i586.tar.gz	java/linux-oracle-jre18	License does not allow distribution with fee
 jta-*.zip		java/jta		See the license
-KASH3-*			math/kash3		Not for commercial distribution or use
 komodo-*		editors/komodo-edit	Distribution not permitted
 kye-data_nuke_levels.20121101.tar.gz games/kye	kye-data_nuke_levels is charityware
 kzip-*			archivers/kzip		License does not allow redistribution
 l0phtcrack/*		security/l0phtcrack	Parts are under GPL, so binaries should not be distributed.  Contains crypto code from OpenSSL
 ladder.tar		games/ladder		Possible copyright problems
 lame*			audio/lame		patent issues, see http://www.mp3licensing.com/
-lgrind/*		print/lgrind		Contains non-free code written by Van Jacobson
 lha-1.14i-ac*		archivers/lha-ac	No redistribution allowed
 libaacplus-*		audio/libaacplus	Unclear legal status
 libamrnb/26104-*.zip	audio/libamrnb		unclear legal status, probably need licenses from 3GPP and more
 libamrwb/26204-*.zip	audio/libamrwb		unclear legal status, probably need licenses from 3GPP and more
 libdvdcss-*.tar.bz2	multimedia/libdvdcss	CSS code may violate the DMCA
+linux-nwnclient/*	games/linux-nwnclient	Distribution not allowed
 linux-unrealgold*	games/linux-unrealgold	Redistribution limited
 linux-ut/*		games/linux-ut		Redistribution limited
 linuxq3ademo-*		games/linux-quake3	Restrictive license by Loki Software
@@ -192,7 +183,6 @@ ningpo_demo*		games/linux-ningpo-demo	Redistribution is limited, see license
 nntpcache-*		news/nntpcache		Free for individuals and non-military, non-profit organisations only
 nttcp-*			benchmarks/nttcp	No commercial use
 nwresources*.tar.gz	games/nwndata		Distribution not allowed
-ofb06trial.tgz		editors/softmaker-office  distribution with other products of any kind forbiden
 oneko-*.tar.gz		games/oneko-sakura	Including derivatives from CARDCAPTOR SAKURA
 OptimFROG*		audio/optimfrog		No commercial use
 oracle/*		databases/jdbc-oracle10g	This software is under license and export controls
@@ -211,7 +201,6 @@ perforce/*/p4ftpd	devel/p4ftpd		Restricted distribution
 perforce/*/p4p		devel/p4p		Restricted distribution
 perforce/*/p4web	devel/p4web		Restricted distribution
 platon*			biology/platon		$5000 USD for commercial users, free for academic
-poseidonCE-*		java/poseidon		Redistribution is not permitted
 ppsmall-*		archivers/ppunpack	No commercial redistribution
 qtools-*		mail/qtools		No license -- see http://cr.yp.to/softwarelaw.html
 quake4-linux-*		games/linux-quake4	Redistribution is limited; see the license
@@ -222,12 +211,9 @@ rapid-*			math/rapid		For any commercial purpose, you must request a license fro
 raproxy*.tar.gz		audio/raproxy		License allows only use in a firewall, or with RA products
 rarbsd-*		archivers/rar		only unmodified original package can be distributed
 RealPlayer-*.rpm	multimedia/linux-realplayer Redistribution not allowed
-rftg-*			games/rftg		Redistribution not authorized
 ricty-*			japanese/font-ricty	Redistribution not allowed
 ringtonetools-*		misc/ringtonetools	Not free for commercial organizations
-rsmb-*			net/rsmb		Must register for account on IBM web site, must agree to license before downloading, and no redistribution allowed
 savage/SFE*		games/linux-savage	Freeware, but license terms are unclear
-scv-1.0p2-sysc*		cad/scv			License agreement required
 seatools_cli.tar	sysutils/seatools	Redistribution is not permitted
 serialmail-*		mail/serialmail		No license -- see http://cr.yp.to/softwarelaw.html
 serious.sam*		games/linux-ssamtfe	Redistribution limited
@@ -237,23 +223,19 @@ shorten-*		audio/shorten		May not be sold.  May not be distributed if modified
 sid-milter-*		mail/sid-milter		May incorporate intellectual property, possible patent issues
 simian-*		devel/simian		Have to agree to license before download
 skype*			net-im/skype		Redistribution prohibited
-sof-*-cdrom-x86.run	games/linux-sof		Redistribution is limited
 squeezeboxserver-*	audio/squeezeboxserver	Contains non-redistributable firmware, documentation, and images
 stardict-longman-*	textproc/stardict-longman	Possible copyright infringement
-stat.tar.Z		math/unixstat		License does not allow redistribution of binaries
 STonX-*			emulators/stonx		Contains ROM (C) by Atari
 stuffit*		archivers/stuffit	Only unmodified original package can be distributed
 su2-1.3.tar.gz		sysutils/su2		Do not sell for profit
 susv2.tar.bz2		misc/susv2		Redistribution of the documents is not permitted
 susv3.tar.bz2		misc/susv3		Redistribution of the documents is not permitted
+susv4tc1.tar.bz2	misc/susv4		Redistribution of the documents is not permitted
 svm_light.tar.gz	science/svmlight	The software must not be further distributed without prior permission of the author
-systemc-2*.tgz		cad/systemc		License agreement required
-systemsim-cell-*	emulators/linux-systemsimcell	Redistribution of pre-compiled binaries is not permitted
 taetgen-*		math/tetgen		Academic or personal use only
 tarsnap-*		sysutils/tarsnap	license restricts redistribution of source and binaries
 tcetest_*		games/linux-enemyterritory-tce	Redistribution limited
 teamspeak*		audio/teamspeak3-server	No redistribution
-TFMESS_BSP_FreeBSD_*	security/bsp_upektfmess	License prohibits redistribution
 thundercache		www/thundercache	Commercial software with shareware license to 50 threads
 tinker*			biology/tinker		Distribution is prohibited
 triangle-*/*		math/triangle		No commercial use without prior arrangement with the author
@@ -262,13 +244,10 @@ tripwire-*.tar.gz	security/tripwire12	Cannot be redistributed for more than the 
 TrueCrypt*		security/truecrypt	May not be redistributed.  Must accept license to download.
 tuc-*			converters/tuc		Author does not allow CD-ROM distribution
 tw_cli-*		sysutils/tw_cli		Redistribution forbidden by license
-uDrawGraph-*		graphics/uDrawGraph	Binary under GNU LGPL without accompanying source
 ue*dev.zip		editors/uemacs		Resale allowed for media cost only
 unifi-2*/UniFi.unix.zip	net-mgmt/unifi2		Redistribution of bundled firmware images is not permitted
 unifi-3*/UniFi.unix.zip	net-mgmt/unifi3		Redistribution of bundled firmware images is not permitted
 uplink-demo*		games/linux-uplink-demo	Redistribution is limited, see license
-uppaal-*.zip		devel/uppaal		Downloading requires completion of a license agreement
-ut2004-lnx-*		games/linux-ut2004-demo	Redistribution limited
 uzap.tar.gz		editors/uzap		This software may not be used to make a profit in any way.
 vdr-markad-*		multimedia/vdr-plugin-markad	Installs station logos
 ventrilo_srv-*		audio/ventrilo-server	May not be redistributed.  For personal use only.  Must accept license to download.
@@ -281,13 +260,9 @@ waeijiro-fpw-*		japanese/waeijiro-fpw	The original dictionary is not free
 webcopy-*		www/webcopy		This program cannot be distributed if modified in any way.  Don't sell for profit without written permission
 webfonts/*		x11-fonts/webfonts	Restrictive copyright
 win32/*			multimedia/win32-codecs	Licensing status of the codecs is unknown
-WowzaMediaServerPro	net/wowzamediaserverpro	Redistribution not allowed
 xanim-*			multimedia/xanim	Must be redistributed without fee
 xchada01.lzh		games/xchadance		Contains commercial character data
-xds-c-*			lang/xds-c		Excelsior forbids any redistribution
-xds-[0-9]*		lang/xds		Excelsior forbids any redistribution
 xephem-*		astro/xephem		Personal use only
-XFrisk-*		games/xfrisk		Copyright/trademark violation?
 XFrisk-*.tar.gz		games/xfrisk		Possible trademark infringement
 xGate/*			japanese/xgate		Requested by Orangesoft Inc.
 xgobi.sh.gz		math/xgobi		Restrictive copyright (do not sell for profit)

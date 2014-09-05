@@ -1,10 +1,9 @@
 # $FreeBSD$
 
 PORTNAME=	aleph
-PORTVERSION=	0.0.r.4
-PORTREVISION=	2
+PORTVERSION=	1.15.2.1.r.4
 CATEGORIES=	print
-MASTER_SITES=	ftp://tug.org/historic/systems/texlive/2012/
+MASTER_SITES=	ftp://tug.org/historic/systems/texlive/2014/
 PKGNAMEPREFIX=	tex-
 DISTNAME=	texlive-${DISTVERSION_TEXLIVE}-source
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
@@ -16,18 +15,17 @@ MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	TeX Engine including Omega and e-TeX features
 
 USES=		gmake tar:xz
-USE_TEX=	texlive kpathsea web2c texmf formats fmtutil
-TEXHASHDIRS=	${TEXMFDISTDIR}
+USE_TEX=	kpathsea web2c texmf formats fmtutil
+TEXHASHDIRS=	${TEXMFDISTDIR} ${TEXMFVARDIR}
 EXTRACT_AFTER_ARGS=	${EXTRACT_FILES:S,^,${DISTNAME}/,}
 EXTRACT_FILES=	\
 	build-aux \
-	libs/obsdcompat \
 	libs/xpdf \
 	texk/web2c
 EXTRACT_AFTER_ARGS_TEXMF=| ${TAR} -xf - -C ${STAGEDIR}${PREFIX}/share \
 		--strip-components 1 --no-same-permission --no-same-owner \
 		${EXTRACT_FILES_TEXMF:S,^,${DISTNAME_TEXMF}/,}
-DISTVERSION_TEXLIVE=	20120701
+DISTVERSION_TEXLIVE=	20140525
 DISTNAME_TEXMF=	texlive-${DISTVERSION_TEXLIVE}-texmf
 EXTRACT_FILES_TEXMF= \
 	texmf-dist/tex/plain/config/aleph.ini \
@@ -36,8 +34,8 @@ EXTRACT_FILES_TEXMF= \
 	texmf-dist/tex/lambda
 WRKSRC=		${WRKDIR}/${DISTNAME}/texk/web2c
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	OBSDCOMPAT_INCLUDES=-I${WRKSRC}/../../libs/obsdcompat
-EXCLUDE_ENGINES= etex luatex pdftex mf mf-nowin ptex eptex uptex euptex xetex
+EXCLUDE_ENGINES=etex luatex luajittex pdftex mf mf-nowin ptex eptex uptex \
+		euptex xetex tex
 CONFIGURE_ARGS=	${EXCLUDE_ENGINES:S/^/--disable-/} \
 		--enable-aleph \
 		--enable-otangle \
@@ -68,15 +66,8 @@ CFLAGS+=	-I${LOCALBASE}/include
 MAKE_JOBS_UNSAFE=	yes
 TEX_FORMATS=	aleph
 
-MAN1=	ofm2opl.1 opl2ofm.1 ovf2ovp.1 ovp2ovf.1 aleph.1 otp2ocp.1 \
-	outocp.1 mkocp.1 mkofm.1
-MLINKS=	aleph.1 lamed.1 \
-	dvicopy.1 odvicopy.1 \
-	dvitype.1 odvitype.1 \
-	tangle.1 otangle.1
-
 pre-configure:
-	for D in libs/obsdcompat libs/xpdf; do \
+	for D in libs/xpdf; do \
 		cd ${WRKDIR}/${DISTNAME}/$$D && \
 		${SETENV} ${CONFIGURE_ENV} ${SH} ${CONFIGURE_SCRIPT} ${CONFIGURE_ARGS}; \
 	done
@@ -84,8 +75,5 @@ pre-configure:
 pre-su-install:
 	${CAT} ${DISTDIR}/${DIST_SUBDIR}/texlive-${DISTVERSION_TEXLIVE}-texmf${EXTRACT_SUFX} \
 		${EXTRACT_AFTER_ARGS_TEXMF}
-
-post-install:
-	${RM} -f ${STAGEDIR}${PREFIX}/man/man1/*
 
 .include <bsd.port.mk>

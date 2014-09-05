@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libstfl.so:${PORTSDIR}/devel/stfl \
 		libcurl.so:${PORTSDIR}/ftp/curl \
-		libjson.so:${PORTSDIR}/devel/json-c
+		libjson-c.so:${PORTSDIR}/devel/json-c
 
 OPTIONS_DEFINE= PODCAST
 OPTIONS_DEFAULT=PODCAST

@@ -15,8 +15,8 @@ LICENSE_FILE=	${WRKSRC}/licence.txt
 LIB_DEPENDS=	libpcsclite.so:${PORTSDIR}/devel/pcsc-lite
 RUN_DEPENDS=	${LOCALBASE}/lib/pcsc/drivers/ifd-ccid.bundle/Contents/FreeBSD/libccid.so:${PORTSDIR}/devel/libccid
 
+USES=		uidfix
 USE_LDCONFIG=	yes
-MAKE_JOBS_SAFE=	yes
 PORTDOCS=	README readme-en.txt readme-jp.txt
 
 PLIST_FILES=	bin/b25 \

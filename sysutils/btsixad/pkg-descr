@@ -1,0 +1,7 @@
+The btsixad daemon allows the PlayStation 3 Sixaxis gamepad to be used
+wirelessly over Bluetooth. When a gamepad is connected, the daemon cre-
+ates a virtual USB HID device named btsixa*.  This can be symlinked to
+uhid* and used like an ordinary USB joystick or gamepad by SDL and other
+programs.
+
+WWW: http://althenia.net/btsixad

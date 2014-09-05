@@ -1,40 +1,38 @@
 bin/munin-check
 bin/munin-cron
-@unexec if cmp -s %D/%%ETCDIR%%/munin.conf.sample %D/%%ETCDIR%%/munin.conf ; then rm -f %D/%%ETCDIR%%/munin.conf ; fi
-%%ETCDIR%%/munin.conf.sample
-@exec if [ ! -f %D/%%ETCDIR%%/munin.conf ] ; then cp -p %D/%%ETCDIR%%/munin.conf.sample %D/%%ETCDIR%%/munin.conf ; fi
-%%ETCDIR%%/static/definitions.html
-%%ETCDIR%%/static/dynazoom.html
-%%ETCDIR%%/static/favicon.ico
-%%ETCDIR%%/static/formatdate.js
-%%ETCDIR%%/static/logo-h.png
-%%ETCDIR%%/static/logo.png
-%%ETCDIR%%/static/querystring.js
-%%ETCDIR%%/static/style-1.2.css
-%%ETCDIR%%/static/style-new.css
-%%ETCDIR%%/static/style.css
-%%ETCDIR%%/static/zoom.js
-%%ETCDIR%%/templates/munin-comparison-day.tmpl
-%%ETCDIR%%/templates/munin-comparison-month.tmpl
-%%ETCDIR%%/templates/munin-comparison-week.tmpl
-%%ETCDIR%%/templates/munin-comparison-year.tmpl
-%%ETCDIR%%/templates/munin-categoryview.tmpl
-%%ETCDIR%%/templates/munin-dynazoom.tmpl
-%%ETCDIR%%/templates/munin-domainview.tmpl
-%%ETCDIR%%/templates/munin-nodeview.tmpl
-%%ETCDIR%%/templates/munin-overview.tmpl
-%%ETCDIR%%/templates/munin-problemview.tmpl
-%%ETCDIR%%/templates/munin-serviceview.tmpl
-%%ETCDIR%%/templates/partial/bottom_navigation.tmpl
-%%ETCDIR%%/templates/partial/footer.tmpl
-%%ETCDIR%%/templates/partial/generated_by.tmpl
-%%ETCDIR%%/templates/partial/head.tmpl
-%%ETCDIR%%/templates/partial/logo_navigation.tmpl
-%%ETCDIR%%/templates/partial/logo_navigation_comparison.tmpl
-%%ETCDIR%%/templates/partial/logo_navigation_problem.tmpl
-%%ETCDIR%%/templates/partial/logo_path.tmpl
-%%ETCDIR%%/templates/partial/navigation.tmpl
-%%ETCDIR%%/templates/partial/path.tmpl
+@sample %%ETCDIR%%/munin.conf.sample
+@sample %%ETCDIR%%/static/definitions.html.sample
+@sample %%ETCDIR%%/static/dynazoom.html.sample
+@sample %%ETCDIR%%/static/favicon.ico.sample
+@sample %%ETCDIR%%/static/formatdate.js.sample
+@sample %%ETCDIR%%/static/logo-h.png.sample
+@sample %%ETCDIR%%/static/logo.png.sample
+@sample %%ETCDIR%%/static/querystring.js.sample
+@sample %%ETCDIR%%/static/style-1.2.css.sample
+@sample %%ETCDIR%%/static/style-new.css.sample
+@sample %%ETCDIR%%/static/style.css.sample
+@sample %%ETCDIR%%/static/zoom.js.sample
+@sample %%ETCDIR%%/templates/munin-categoryview.tmpl.sample
+@sample %%ETCDIR%%/templates/munin-comparison-day.tmpl.sample
+@sample %%ETCDIR%%/templates/munin-comparison-month.tmpl.sample
+@sample %%ETCDIR%%/templates/munin-comparison-week.tmpl.sample
+@sample %%ETCDIR%%/templates/munin-comparison-year.tmpl.sample
+@sample %%ETCDIR%%/templates/munin-domainview.tmpl.sample
+@sample %%ETCDIR%%/templates/munin-dynazoom.tmpl.sample
+@sample %%ETCDIR%%/templates/munin-nodeview.tmpl.sample
+@sample %%ETCDIR%%/templates/munin-overview.tmpl.sample
+@sample %%ETCDIR%%/templates/munin-problemview.tmpl.sample
+@sample %%ETCDIR%%/templates/munin-serviceview.tmpl.sample
+@sample %%ETCDIR%%/templates/partial/bottom_navigation.tmpl.sample
+@sample %%ETCDIR%%/templates/partial/footer.tmpl.sample
+@sample %%ETCDIR%%/templates/partial/generated_by.tmpl.sample
+@sample %%ETCDIR%%/templates/partial/head.tmpl.sample
+@sample %%ETCDIR%%/templates/partial/logo_navigation.tmpl.sample
+@sample %%ETCDIR%%/templates/partial/logo_navigation_comparison.tmpl.sample
+@sample %%ETCDIR%%/templates/partial/logo_navigation_problem.tmpl.sample
+@sample %%ETCDIR%%/templates/partial/logo_path.tmpl.sample
+@sample %%ETCDIR%%/templates/partial/navigation.tmpl.sample
+@sample %%ETCDIR%%/templates/partial/path.tmpl.sample
 %%SITE_PERL%%/Munin/Master/Config.pm
 %%SITE_PERL%%/Munin/Master/GraphOld.pm
 %%SITE_PERL%%/Munin/Master/Group.pm
@@ -50,6 +48,25 @@ bin/munin-cron
 %%SITE_PERL%%/Munin/Master/UpdateWorker.pm
 %%SITE_PERL%%/Munin/Master/Utils.pm
 %%SITE_PERL%%/Munin/Master/Worker.pm
+man/man3/Munin::Master::Config.3.gz
+man/man3/Munin::Master::Group.3.gz
+man/man3/Munin::Master::GroupRepository.3.gz
+man/man3/Munin::Master::HTMLOld.3.gz
+man/man3/Munin::Master::Host.3.gz
+man/man3/Munin::Master::LimitsOld.3.gz
+man/man3/Munin::Master::Logger.3.gz
+man/man3/Munin::Master::Node.3.gz
+man/man3/Munin::Master::ProcessManager.3.gz
+man/man3/Munin::Master::Update.3.gz
+man/man3/Munin::Master::UpdateWorker.3.gz
+man/man3/Munin::Master::Utils.3.gz
+man/man3/Munin::Master::Worker.3.gz
+man/man5/munin.conf.5.gz
+man/man8/munin-cron.8.gz
+man/man8/munin-graph.8.gz
+man/man8/munin-html.8.gz
+man/man8/munin-limits.8.gz
+man/man8/munin-update.8.gz
 %%DATADIR%%/DejaVuSans.ttf
 %%DATADIR%%/DejaVuSansMono.ttf
 %%DATADIR%%/munin-datafile2storable
@@ -58,19 +75,16 @@ bin/munin-cron
 %%DATADIR%%/munin-limits
 %%DATADIR%%/munin-storable2datafile
 %%DATADIR%%/munin-update
-%%WWWDIR%%/.htaccess
 www/cgi-bin/munin-cgi-graph
 www/cgi-bin/munin-cgi-html
-@dirrmtry www/cgi-bin
-@dirrmtry %%WWWDIR%%
-@dirrmtry %%DATADIR%%
-@dirrm %%SITE_PERL%%/Munin/Master
-@dirrmtry %%SITE_PERL%%/Munin
+@sample %%WWWDIR%%/.htaccess.sample
+@dirrmtry %%ETCDIR%%/munin-conf.d
 @dirrmtry %%ETCDIR%%/static
 @dirrmtry %%ETCDIR%%/templates/partial
 @dirrmtry %%ETCDIR%%/templates
-@exec mkdir -p %D/%%ETCDIR%%/munin-conf.d
-@dirrmtry %%ETCDIR%%/munin-conf.d
 @dirrmtry %%ETCDIR%%
-@cwd /var
-@dirrmtry munin/cgi-tmp
+@dirrmtry %%SITE_PERL%%/Munin/Master
+@dirrmtry %%DATADIR%%
+@dirrmtry www/cgi-bin
+@dirrmtry(%%USER%%,%%GROUP%%,) %%WWWDIR%%
+@dirrmtry(%%WWWOWN%%,%%WWWGRP%%,) %%DBDIRNODE%%/cgi-tmp

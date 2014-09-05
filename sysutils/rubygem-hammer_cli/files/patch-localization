@@ -1,0 +1,13 @@
+--- lib/hammer_cli/i18n.rb
++++ lib/hammer_cli/i18n.rb
+@@ -108,6 +108,10 @@ def locale_dir
+         '/usr/share/locale'
+       end
+ 
++      def domain_name
++        "#{super}@system"
++      end
++
+     end
+ 
+ 

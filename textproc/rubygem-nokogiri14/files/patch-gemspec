@@ -1,0 +1,20 @@
+--- nokogiri-1.4.7.gemspec.orig	2014-08-26 20:40:15.000000000 +0000
++++ nokogiri-1.4.7.gemspec	2014-08-26 20:40:32.000000000 +0000
+@@ -77,7 +77,7 @@
+ - aaronp@rubyforge.org
+ - mike.dalessio@gmail.com
+ executables: 
+-- nokogiri
++- nokogiri14
+ extensions: 
+ - ext/nokogiri/extconf.rb
+ extra_rdoc_files: 
+@@ -128,7 +128,7 @@
+ - README.ja.rdoc
+ - README.rdoc
+ - Rakefile
+-- bin/nokogiri
++- bin/nokogiri14
+ - ext/nokogiri/depend
+ - ext/nokogiri/extconf.rb
+ - ext/nokogiri/html_document.c

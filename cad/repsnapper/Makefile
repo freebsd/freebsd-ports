@@ -3,7 +3,7 @@
 
 PORTNAME=	repsnapper
 PORTVERSION=	2.3.2a3
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	cad
 MASTER_SITES=	https://codeload.github.com/timschmidt/repsnapper/tar.gz/
 DISTNAME=	${PORTVERSION}
@@ -13,7 +13,7 @@ DIST_SUBDIR=	${PORTNAME}
 MAINTAINER=	martin.dieringer@gmx.de
 COMMENT=	Controller and GCode generator for RepRap 3D printers
 
-LICENSE=	GPLv2 BSD MIT
+LICENSE=	GPLv2 BSD3CLAUSE MIT
 LICENSE_COMB=	multi
 
 LIB_DEPENDS=	libgtkglextmm-x11-1.2.so:${PORTSDIR}/x11-toolkits/gtkglextmm \

@@ -10,10 +10,11 @@ MASTER_SITES=	http://www.kegel.com/dkftpbench/
 MAINTAINER=	novel@FreeBSD.org
 COMMENT=	FTP benchmark program
 
-PLIST_FILES=	bin/dkftpbench
+LICENSE=	GPLv2
 
 GNU_CONFIGURE=	yes
-
 USE_AUTOTOOLS=	automake14 autoconf
+
+PLIST_FILES=	bin/dkftpbench
 
 .include <bsd.port.mk>

@@ -42,7 +42,6 @@
     SUBDIR += calligra-l10n-tr
     SUBDIR += chexedit
     SUBDIR += codelite
-    SUBDIR += color-mate
     SUBDIR += conglomerate
     SUBDIR += cooledit
     SUBDIR += cream
@@ -70,7 +69,6 @@
     SUBDIR += ghex
     SUBDIR += gmanedit
     SUBDIR += gnotepad+
-    SUBDIR += gnuserv
     SUBDIR += gobby
     SUBDIR += gwrite
     SUBDIR += heme
@@ -82,7 +80,6 @@
     SUBDIR += impress
     SUBDIR += jed
     SUBDIR += jedit
-    SUBDIR += jext
     SUBDIR += joe
     SUBDIR += joe2
     SUBDIR += jove
@@ -92,7 +89,6 @@
     SUBDIR += kile-kde4
     SUBDIR += klat4
     SUBDIR += komodo-edit
-    SUBDIR += komodo-ide
     SUBDIR += lazarus
     SUBDIR += lazarus-lcl-gtk
     SUBDIR += lazarus-lcl-gtk2
@@ -224,7 +220,6 @@
     SUBDIR += paredit-mode.el
     SUBDIR += pico-alpine
     SUBDIR += poedit
-    SUBDIR += psgml
     SUBDIR += puff
     SUBDIR += py-room
     SUBDIR += rox-edit
@@ -232,9 +227,7 @@
     SUBDIR += scribes
     SUBDIR += se
     SUBDIR += semi
-    SUBDIR += setedit
     SUBDIR += slime
-    SUBDIR += softmaker-office
     SUBDIR += spe
     SUBDIR += speedbar
     SUBDIR += ssam
@@ -248,7 +241,6 @@
     SUBDIR += texmacs
     SUBDIR += texmaker
     SUBDIR += texmakerx
-    SUBDIR += textedit
     SUBDIR += textroom
     SUBDIR += texworks
     SUBDIR += thoteditor

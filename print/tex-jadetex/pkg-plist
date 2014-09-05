@@ -10,10 +10,8 @@
 %%TEXMFDISTDIR%%/doc/otherformats/jadetex/base/jadetex.cfg
 %%TEXMFDISTDIR%%/doc/otherformats/jadetex/base/index.xsl
 %%TEXMFDISTDIR%%/doc/otherformats/jadetex/base/Makefile
-%%TEXMFDISTDIR%%/doc/otherformats/jadetex/base/jadetex.1
 %%TEXMFDISTDIR%%/doc/otherformats/jadetex/base/index.html
 %%TEXMFDISTDIR%%/doc/otherformats/jadetex/base/ChangeLog-old
-%%TEXMFDISTDIR%%/doc/otherformats/jadetex/base/pdfjadetex.1
 %%TEXMFDISTDIR%%/doc/otherformats/jadetex/base/ChangeLog
 %%TEXMFDISTDIR%%/doc/otherformats/jadetex/base/releasenotes.dsl
 %%TEXMFDISTDIR%%/doc/otherformats/jadetex/base/releasenotes.xml

@@ -1,6 +1,5 @@
 include/dockapp.h
 lib/libdockapp.a
-lib/libdockapp.la
 lib/libdockapp.so
 lib/libdockapp.so.2
 lib/libdockapp.so.2.0.0

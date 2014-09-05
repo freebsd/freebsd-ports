@@ -108,9 +108,17 @@ while read modtype path extra; do
 		esac
 		;;
 	-)
+		# Skip removal of PREFIX and PREFIX/info from
+		# bsd.port.mk for now.
 		# Skip if it is PREFIX and non-LOCALBASE. See misc/kdehier4
 		# or mail/qmail for examples
 		[ "${path}" = "${PREFIX}" -a "${LOCALBASE}" != "${PREFIX}" ] &&
+		    ignore_path=1
+
+		# The removal of info may be a bug; it's part of BSD.local.dist.
+		# See ports/74691
+
+		[ "${sub_path}" = "info" -a "${LOCALBASE}" != "${PREFIX}" ] &&
 		    ignore_path=1
 
 		[ $ignore_path -eq 0 ] && echo "- ${sub_path}"

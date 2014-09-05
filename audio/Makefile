@@ -113,7 +113,6 @@
     SUBDIR += eawplus
     SUBDIR += ecasound
     SUBDIR += emms
-    SUBDIR += emu10kx
     SUBDIR += enscribe
     SUBDIR += epos-devel
     SUBDIR += esound
@@ -149,9 +148,6 @@
     SUBDIR += festvox-rab16
     SUBDIR += festvox-rab8
     SUBDIR += festvox-russian
-    SUBDIR += festvox-us1-mbrola
-    SUBDIR += festvox-us2-mbrola
-    SUBDIR += festvox-us3-mbrola
     SUBDIR += firefly
     SUBDIR += flac
     SUBDIR += flac123
@@ -308,7 +304,6 @@
     SUBDIR += id3v2
     SUBDIR += idjc
     SUBDIR += ifp-line
-    SUBDIR += ipod-sharp
     SUBDIR += jack
     SUBDIR += jack-keyboard
     SUBDIR += jack-rack
@@ -419,10 +414,8 @@
     SUBDIR += linux-genpuid
     SUBDIR += linux-laudio
     SUBDIR += linux-mbrola
-    SUBDIR += linux-musicipserver
     SUBDIR += linux-neroaaccodec
     SUBDIR += linuxsampler
-    SUBDIR += liquidsoap
     SUBDIR += listener
     SUBDIR += lmms
     SUBDIR += lpac
@@ -671,6 +664,7 @@
     SUBDIR += sidplay2
     SUBDIR += sidplayer
     SUBDIR += simplemod
+    SUBDIR += siren
     SUBDIR += slv2
     SUBDIR += smasher
     SUBDIR += snack

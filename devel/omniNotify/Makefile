@@ -13,6 +13,8 @@ COMMENT=	CORBA Notification Service (CosNotification) for omniORB
 
 LICENSE=	GPLv2
 
+BROKEN=		Fails to build with new omniORB
+
 LIB_DEPENDS=	libomniORB4.so:${PORTSDIR}/devel/omniORB
 RUN_DEPENDS=	omniidl:${PORTSDIR}/devel/omniORB
 # parts of omniORB4 source tree is required to build

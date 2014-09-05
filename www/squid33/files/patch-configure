@@ -1,5 +1,95 @@
---- configure.orig	2013-11-30 07:56:05.000000000 -0600
-+++ configure	2014-02-12 10:53:47.000000000 -0600
+--- configure.orig	2014-08-27 18:17:55.000000000 +0400
++++ configure	2014-08-27 21:14:17.000000000 +0400
+@@ -11856,7 +11856,7 @@
+       hardcode_shlibpath_var=no
+       ;;
+ 
+-    freebsd1*)
++    freebsd1.*)
+       ld_shlibs=no
+       ;;
+ 
+@@ -11872,7 +11872,7 @@
+       ;;
+ 
+     # Unfortunately, older versions of FreeBSD 2 do not have this feature.
+-    freebsd2*)
++    freebsd2.*)
+       archive_cmds='$LD -Bshareable -o $lib $libobjs $deplibs $linker_flags'
+       hardcode_direct=yes
+       hardcode_minus_L=yes
+@@ -12778,7 +12778,7 @@
+   shlibpath_var=LD_LIBRARY_PATH
+   ;;
+ 
+-freebsd1*)
++freebsd1.*)
+   dynamic_linker=no
+   ;;
+ 
+@@ -12789,7 +12789,7 @@
+     objformat=`/usr/bin/objformat`
+   else
+     case $host_os in
+-    freebsd[123]*) objformat=aout ;;
++    freebsd[123].*) objformat=aout ;;
+     *) objformat=elf ;;
+     esac
+   fi
+@@ -12807,7 +12807,7 @@
+   esac
+   shlibpath_var=LD_LIBRARY_PATH
+   case $host_os in
+-  freebsd2*)
++  freebsd2.*)
+     shlibpath_overrides_runpath=yes
+     ;;
+   freebsd3.[01]* | freebsdelf3.[01]*)
+@@ -14673,7 +14673,7 @@
+         esac
+         ;;
+ 
+-      freebsd[12]*)
++      freebsd[12].*)
+         # C++ shared libraries reported to be fairly broken before
+ 	# switch to ELF
+         ld_shlibs_CXX=no
+@@ -16441,7 +16441,7 @@
+   shlibpath_var=LD_LIBRARY_PATH
+   ;;
+ 
+-freebsd1*)
++freebsd1.*)
+   dynamic_linker=no
+   ;;
+ 
+@@ -16452,7 +16452,7 @@
+     objformat=`/usr/bin/objformat`
+   else
+     case $host_os in
+-    freebsd[123]*) objformat=aout ;;
++    freebsd[123].*) objformat=aout ;;
+     *) objformat=elf ;;
+     esac
+   fi
+@@ -16470,7 +16470,7 @@
+   esac
+   shlibpath_var=LD_LIBRARY_PATH
+   case $host_os in
+-  freebsd2*)
++  freebsd2.*)
+     shlibpath_overrides_runpath=yes
+     ;;
+   freebsd3.[01]* | freebsdelf3.[01]*)
+@@ -18550,7 +18550,7 @@
+    squid_cv_cc_arg_pipe=""
+    ;;
+   clang)
+-   squid_cv_cxx_option_werror="-Werror -Qunused-arguments"
++   squid_cv_cxx_option_werror="-Qunused-arguments"
+    squid_cv_cc_option_werror="$squid_cv_cxx_option_werror"
+    squid_cv_cc_option_wall="-Wall"
+    squid_cv_cc_option_optimize="-O2"
 @@ -22964,7 +22964,7 @@
  
  done

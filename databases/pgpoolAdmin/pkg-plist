@@ -1,11 +1,13 @@
+%%WWWDIR%%/.htaccess
 %%WWWDIR%%/ChangeLog
 %%WWWDIR%%/NEWS
 %%WWWDIR%%/README
 %%WWWDIR%%/README.euc_jp
+%%WWWDIR%%/bootstrap.php
 %%WWWDIR%%/changePassword.php
 %%WWWDIR%%/command.php
 %%WWWDIR%%/common.php
-%%WWWDIR%%/conf/pgmgt.conf.php.sample
+@sample %%WWWDIR%%/conf/pgmgt.conf.php.sample
 %%WWWDIR%%/config.php
 %%WWWDIR%%/definePgpoolConfParam.php
 %%WWWDIR%%/doc/en/changePassword.html
@@ -66,17 +68,24 @@
 %%WWWDIR%%/images/ascending.gif
 %%WWWDIR%%/images/back.gif
 %%WWWDIR%%/images/background.gif
+%%WWWDIR%%/images/check.png
 %%WWWDIR%%/images/descending.gif
+%%WWWDIR%%/images/error.png
+%%WWWDIR%%/images/flow_gray.png
 %%WWWDIR%%/images/logo.gif
 %%WWWDIR%%/images/marker.gif
+%%WWWDIR%%/images/no.png
 %%WWWDIR%%/images/question.gif
+%%WWWDIR%%/images/refresh.png
 %%WWWDIR%%/images/sea.jpg
 %%WWWDIR%%/images/spacer.gif
+%%WWWDIR%%/images/warning.png
 %%WWWDIR%%/index.php
 %%WWWDIR%%/innerLog.php
 %%WWWDIR%%/innerNodeServerStatus.php
 %%WWWDIR%%/innerSummary.php
 %%WWWDIR%%/innerSystemCatalog.php
+%%WWWDIR%%/innerWatchdog.php
 %%WWWDIR%%/install/checkDirectory.php
 %%WWWDIR%%/install/checkParameter.php
 %%WWWDIR%%/install/defaultParameter.php
@@ -87,45 +96,19 @@
 %%WWWDIR%%/install/lang/en.lang.php
 %%WWWDIR%%/install/lang/fr.lang.php
 %%WWWDIR%%/install/lang/ja.lang.php
+%%WWWDIR%%/install/lang/zh_cn.lang.php
 %%WWWDIR%%/install/phpinfo.php
 %%WWWDIR%%/install/setLang.php
 %%WWWDIR%%/lang/en.lang.php
 %%WWWDIR%%/lang/fr.lang.php
 %%WWWDIR%%/lang/ja.lang.php
-%%WWWDIR%%/libs/Config_File.class.php
+%%WWWDIR%%/lang/zh_cn.lang.php
 %%WWWDIR%%/libs/Smarty.class.php
-%%WWWDIR%%/libs/Smarty_Compiler.class.php
+%%WWWDIR%%/libs/SmartyBC.class.php
 %%WWWDIR%%/libs/debug.tpl
-%%WWWDIR%%/libs/internals/core.assemble_plugin_filepath.php
-%%WWWDIR%%/libs/internals/core.assign_smarty_interface.php
-%%WWWDIR%%/libs/internals/core.create_dir_structure.php
-%%WWWDIR%%/libs/internals/core.display_debug_console.php
-%%WWWDIR%%/libs/internals/core.get_include_path.php
-%%WWWDIR%%/libs/internals/core.get_microtime.php
-%%WWWDIR%%/libs/internals/core.get_php_resource.php
-%%WWWDIR%%/libs/internals/core.is_secure.php
-%%WWWDIR%%/libs/internals/core.is_trusted.php
-%%WWWDIR%%/libs/internals/core.load_plugins.php
-%%WWWDIR%%/libs/internals/core.load_resource_plugin.php
-%%WWWDIR%%/libs/internals/core.process_cached_inserts.php
-%%WWWDIR%%/libs/internals/core.process_compiled_include.php
-%%WWWDIR%%/libs/internals/core.read_cache_file.php
-%%WWWDIR%%/libs/internals/core.rm_auto.php
-%%WWWDIR%%/libs/internals/core.rmdir.php
-%%WWWDIR%%/libs/internals/core.run_insert_handler.php
-%%WWWDIR%%/libs/internals/core.smarty_include_php.php
-%%WWWDIR%%/libs/internals/core.write_cache_file.php
-%%WWWDIR%%/libs/internals/core.write_compiled_include.php
-%%WWWDIR%%/libs/internals/core.write_compiled_resource.php
-%%WWWDIR%%/libs/internals/core.write_file.php
 %%WWWDIR%%/libs/plugins/block.textformat.php
-%%WWWDIR%%/libs/plugins/compiler.assign.php
-%%WWWDIR%%/libs/plugins/function.assign_debug_info.php
-%%WWWDIR%%/libs/plugins/function.config_load.php
 %%WWWDIR%%/libs/plugins/function.counter.php
 %%WWWDIR%%/libs/plugins/function.cycle.php
-%%WWWDIR%%/libs/plugins/function.debug.php
-%%WWWDIR%%/libs/plugins/function.eval.php
 %%WWWDIR%%/libs/plugins/function.fetch.php
 %%WWWDIR%%/libs/plugins/function.html_checkboxes.php
 %%WWWDIR%%/libs/plugins/function.html_image.php
@@ -136,33 +119,110 @@
 %%WWWDIR%%/libs/plugins/function.html_table.php
 %%WWWDIR%%/libs/plugins/function.mailto.php
 %%WWWDIR%%/libs/plugins/function.math.php
-%%WWWDIR%%/libs/plugins/function.popup.php
-%%WWWDIR%%/libs/plugins/function.popup_init.php
 %%WWWDIR%%/libs/plugins/modifier.capitalize.php
-%%WWWDIR%%/libs/plugins/modifier.cat.php
-%%WWWDIR%%/libs/plugins/modifier.count_characters.php
-%%WWWDIR%%/libs/plugins/modifier.count_paragraphs.php
-%%WWWDIR%%/libs/plugins/modifier.count_sentences.php
-%%WWWDIR%%/libs/plugins/modifier.count_words.php
 %%WWWDIR%%/libs/plugins/modifier.date_format.php
 %%WWWDIR%%/libs/plugins/modifier.debug_print_var.php
-%%WWWDIR%%/libs/plugins/modifier.default.php
 %%WWWDIR%%/libs/plugins/modifier.escape.php
-%%WWWDIR%%/libs/plugins/modifier.indent.php
-%%WWWDIR%%/libs/plugins/modifier.lower.php
-%%WWWDIR%%/libs/plugins/modifier.nl2br.php
 %%WWWDIR%%/libs/plugins/modifier.regex_replace.php
 %%WWWDIR%%/libs/plugins/modifier.replace.php
 %%WWWDIR%%/libs/plugins/modifier.spacify.php
-%%WWWDIR%%/libs/plugins/modifier.string_format.php
-%%WWWDIR%%/libs/plugins/modifier.strip.php
-%%WWWDIR%%/libs/plugins/modifier.strip_tags.php
 %%WWWDIR%%/libs/plugins/modifier.truncate.php
-%%WWWDIR%%/libs/plugins/modifier.upper.php
-%%WWWDIR%%/libs/plugins/modifier.wordwrap.php
+%%WWWDIR%%/libs/plugins/modifiercompiler.cat.php
+%%WWWDIR%%/libs/plugins/modifiercompiler.count_characters.php
+%%WWWDIR%%/libs/plugins/modifiercompiler.count_paragraphs.php
+%%WWWDIR%%/libs/plugins/modifiercompiler.count_sentences.php
+%%WWWDIR%%/libs/plugins/modifiercompiler.count_words.php
+%%WWWDIR%%/libs/plugins/modifiercompiler.default.php
+%%WWWDIR%%/libs/plugins/modifiercompiler.escape.php
+%%WWWDIR%%/libs/plugins/modifiercompiler.from_charset.php
+%%WWWDIR%%/libs/plugins/modifiercompiler.indent.php
+%%WWWDIR%%/libs/plugins/modifiercompiler.lower.php
+%%WWWDIR%%/libs/plugins/modifiercompiler.noprint.php
+%%WWWDIR%%/libs/plugins/modifiercompiler.string_format.php
+%%WWWDIR%%/libs/plugins/modifiercompiler.strip.php
+%%WWWDIR%%/libs/plugins/modifiercompiler.strip_tags.php
+%%WWWDIR%%/libs/plugins/modifiercompiler.to_charset.php
+%%WWWDIR%%/libs/plugins/modifiercompiler.unescape.php
+%%WWWDIR%%/libs/plugins/modifiercompiler.upper.php
+%%WWWDIR%%/libs/plugins/modifiercompiler.wordwrap.php
 %%WWWDIR%%/libs/plugins/outputfilter.trimwhitespace.php
 %%WWWDIR%%/libs/plugins/shared.escape_special_chars.php
+%%WWWDIR%%/libs/plugins/shared.literal_compiler_param.php
 %%WWWDIR%%/libs/plugins/shared.make_timestamp.php
+%%WWWDIR%%/libs/plugins/shared.mb_str_replace.php
+%%WWWDIR%%/libs/plugins/shared.mb_unicode.php
+%%WWWDIR%%/libs/plugins/shared.mb_wordwrap.php
+%%WWWDIR%%/libs/plugins/variablefilter.htmlspecialchars.php
+%%WWWDIR%%/libs/sysplugins/smarty_cacheresource.php
+%%WWWDIR%%/libs/sysplugins/smarty_cacheresource_custom.php
+%%WWWDIR%%/libs/sysplugins/smarty_cacheresource_keyvaluestore.php
+%%WWWDIR%%/libs/sysplugins/smarty_config_source.php
+%%WWWDIR%%/libs/sysplugins/smarty_internal_cacheresource_file.php
+%%WWWDIR%%/libs/sysplugins/smarty_internal_compile_append.php
+%%WWWDIR%%/libs/sysplugins/smarty_internal_compile_assign.php
+%%WWWDIR%%/libs/sysplugins/smarty_internal_compile_block.php
+%%WWWDIR%%/libs/sysplugins/smarty_internal_compile_break.php
+%%WWWDIR%%/libs/sysplugins/smarty_internal_compile_call.php
+%%WWWDIR%%/libs/sysplugins/smarty_internal_compile_capture.php
+%%WWWDIR%%/libs/sysplugins/smarty_internal_compile_config_load.php
+%%WWWDIR%%/libs/sysplugins/smarty_internal_compile_continue.php
+%%WWWDIR%%/libs/sysplugins/smarty_internal_compile_debug.php
+%%WWWDIR%%/libs/sysplugins/smarty_internal_compile_eval.php
+%%WWWDIR%%/libs/sysplugins/smarty_internal_compile_extends.php
+%%WWWDIR%%/libs/sysplugins/smarty_internal_compile_for.php
+%%WWWDIR%%/libs/sysplugins/smarty_internal_compile_foreach.php
+%%WWWDIR%%/libs/sysplugins/smarty_internal_compile_function.php
+%%WWWDIR%%/libs/sysplugins/smarty_internal_compile_if.php
+%%WWWDIR%%/libs/sysplugins/smarty_internal_compile_include.php
+%%WWWDIR%%/libs/sysplugins/smarty_internal_compile_include_php.php
+%%WWWDIR%%/libs/sysplugins/smarty_internal_compile_insert.php
+%%WWWDIR%%/libs/sysplugins/smarty_internal_compile_ldelim.php
+%%WWWDIR%%/libs/sysplugins/smarty_internal_compile_nocache.php
+%%WWWDIR%%/libs/sysplugins/smarty_internal_compile_private_block_plugin.php
+%%WWWDIR%%/libs/sysplugins/smarty_internal_compile_private_function_plugin.php
+%%WWWDIR%%/libs/sysplugins/smarty_internal_compile_private_modifier.php
+%%WWWDIR%%/libs/sysplugins/smarty_internal_compile_private_object_block_function.php
+%%WWWDIR%%/libs/sysplugins/smarty_internal_compile_private_object_function.php
+%%WWWDIR%%/libs/sysplugins/smarty_internal_compile_private_print_expression.php
+%%WWWDIR%%/libs/sysplugins/smarty_internal_compile_private_registered_block.php
+%%WWWDIR%%/libs/sysplugins/smarty_internal_compile_private_registered_function.php
+%%WWWDIR%%/libs/sysplugins/smarty_internal_compile_private_special_variable.php
+%%WWWDIR%%/libs/sysplugins/smarty_internal_compile_rdelim.php
+%%WWWDIR%%/libs/sysplugins/smarty_internal_compile_section.php
+%%WWWDIR%%/libs/sysplugins/smarty_internal_compile_setfilter.php
+%%WWWDIR%%/libs/sysplugins/smarty_internal_compile_while.php
+%%WWWDIR%%/libs/sysplugins/smarty_internal_compilebase.php
+%%WWWDIR%%/libs/sysplugins/smarty_internal_config.php
+%%WWWDIR%%/libs/sysplugins/smarty_internal_config_file_compiler.php
+%%WWWDIR%%/libs/sysplugins/smarty_internal_configfilelexer.php
+%%WWWDIR%%/libs/sysplugins/smarty_internal_configfileparser.php
+%%WWWDIR%%/libs/sysplugins/smarty_internal_data.php
+%%WWWDIR%%/libs/sysplugins/smarty_internal_debug.php
+%%WWWDIR%%/libs/sysplugins/smarty_internal_filter_handler.php
+%%WWWDIR%%/libs/sysplugins/smarty_internal_function_call_handler.php
+%%WWWDIR%%/libs/sysplugins/smarty_internal_get_include_path.php
+%%WWWDIR%%/libs/sysplugins/smarty_internal_nocache_insert.php
+%%WWWDIR%%/libs/sysplugins/smarty_internal_parsetree.php
+%%WWWDIR%%/libs/sysplugins/smarty_internal_resource_eval.php
+%%WWWDIR%%/libs/sysplugins/smarty_internal_resource_extends.php
+%%WWWDIR%%/libs/sysplugins/smarty_internal_resource_file.php
+%%WWWDIR%%/libs/sysplugins/smarty_internal_resource_php.php
+%%WWWDIR%%/libs/sysplugins/smarty_internal_resource_registered.php
+%%WWWDIR%%/libs/sysplugins/smarty_internal_resource_stream.php
+%%WWWDIR%%/libs/sysplugins/smarty_internal_resource_string.php
+%%WWWDIR%%/libs/sysplugins/smarty_internal_smartytemplatecompiler.php
+%%WWWDIR%%/libs/sysplugins/smarty_internal_template.php
+%%WWWDIR%%/libs/sysplugins/smarty_internal_templatebase.php
+%%WWWDIR%%/libs/sysplugins/smarty_internal_templatecompilerbase.php
+%%WWWDIR%%/libs/sysplugins/smarty_internal_templatelexer.php
+%%WWWDIR%%/libs/sysplugins/smarty_internal_templateparser.php
+%%WWWDIR%%/libs/sysplugins/smarty_internal_utility.php
+%%WWWDIR%%/libs/sysplugins/smarty_internal_write_file.php
+%%WWWDIR%%/libs/sysplugins/smarty_resource.php
+%%WWWDIR%%/libs/sysplugins/smarty_resource_custom.php
+%%WWWDIR%%/libs/sysplugins/smarty_resource_recompiled.php
+%%WWWDIR%%/libs/sysplugins/smarty_resource_uncompiled.php
+%%WWWDIR%%/libs/sysplugins/smarty_security.php
 %%WWWDIR%%/login.php
 %%WWWDIR%%/logout.php
 %%WWWDIR%%/nodeServerStatus.php
@@ -176,6 +236,14 @@
 %%WWWDIR%%/systemDb.php
 %%WWWDIR%%/templates/changePassword.tpl
 %%WWWDIR%%/templates/config.tpl
+%%WWWDIR%%/templates/elements/pgconfig_new_backend.tpl
+%%WWWDIR%%/templates/elements/status_js.tpl
+%%WWWDIR%%/templates/elements/status_nodeinfo.tpl
+%%WWWDIR%%/templates/elements/status_options.tpl
+%%WWWDIR%%/templates/elements/status_pgsql_buttons.tpl
+%%WWWDIR%%/templates/elements/status_pgsql_options.tpl
+%%WWWDIR%%/templates/elements/status_start_option.tpl
+%%WWWDIR%%/templates/elements/status_stop_option.tpl
 %%WWWDIR%%/templates/error.tpl
 %%WWWDIR%%/templates/footer.tpl
 %%WWWDIR%%/templates/help/en/changePassword.tpl
@@ -201,6 +269,7 @@
 %%WWWDIR%%/templates/innerNodeServerStatus.tpl
 %%WWWDIR%%/templates/innerSummary.tpl
 %%WWWDIR%%/templates/innerSystemCatalog.tpl
+%%WWWDIR%%/templates/innerWatchdog.tpl
 %%WWWDIR%%/templates/login.tpl
 %%WWWDIR%%/templates/menu.tpl
 %%WWWDIR%%/templates/nodeServerStatus.tpl
@@ -212,26 +281,32 @@
 %%WWWDIR%%/templates/status.tpl
 %%WWWDIR%%/templates/systemDb.tpl
 %%WWWDIR%%/version.php
-@exec mkdir %D/%%WWWDIR%%/templates_c
-@exec chown %%WWWOWN%%:%%WWWGRP%% %D/%%WWWDIR%%/templates_c
-@unexec rm -rf %D/%%WWWDIR%%/templates_c 2>&1 >/dev/null || true
-@dirrm %%WWWDIR%%/templates/help/ja
-@dirrm %%WWWDIR%%/templates/help/en
-@dirrm %%WWWDIR%%/templates/help
-@dirrm %%WWWDIR%%/templates
-@dirrm %%WWWDIR%%/libs/plugins
-@dirrm %%WWWDIR%%/libs/internals
-@dirrm %%WWWDIR%%/libs
-@dirrm %%WWWDIR%%/lang
-@dirrm %%WWWDIR%%/install/lang
-@dirrm %%WWWDIR%%/install/images
-@dirrm %%WWWDIR%%/install
-@dirrm %%WWWDIR%%/images
-@dirrm %%WWWDIR%%/doc/ja/images
-@dirrm %%WWWDIR%%/doc/ja
-@dirrm %%WWWDIR%%/doc/images
+@dirrmtry %%WWWDIR%%/conf
 @dirrm %%WWWDIR%%/doc/en/images
 @dirrm %%WWWDIR%%/doc/en
+@dirrm %%WWWDIR%%/doc/images
+@dirrm %%WWWDIR%%/doc/ja/images
+@dirrm %%WWWDIR%%/doc/ja
 @dirrm %%WWWDIR%%/doc
-@dirrmtry %%WWWDIR%%/conf
+@dirrm %%WWWDIR%%/images
+@dirrm %%WWWDIR%%/install/images
+@dirrm %%WWWDIR%%/install/lang
+@dirrm %%WWWDIR%%/install
+@dirrm %%WWWDIR%%/lang
+@dirrm %%WWWDIR%%/libs/plugins
+@dirrm %%WWWDIR%%/libs/sysplugins
+@dirrm %%WWWDIR%%/libs
+@dirrm %%WWWDIR%%/templates/elements
+@dirrm %%WWWDIR%%/templates/help/en
+@dirrm %%WWWDIR%%/templates/help/ja
+@dirrm %%WWWDIR%%/templates/help
+@dirrm %%WWWDIR%%/templates
+@comment without dirrm(try) the directory is not packaged, but pkg cannot
+@comment deinstall correct if there are tmp leftovers
+@comment @dirrmtry %%WWWDIR%%/templates_c
+@unexec rm -rf %D/%%WWWDIR%%/templates_c 2>&1 >/dev/null || true
 @dirrmtry %%WWWDIR%%
+@exec install -o %%WWWOWN%% -g %%WWWGRP%% -d %D/%%WWWDIR%%/templates_c
+@exec chown -R %%WWWOWN%%:%%WWWGRP%% %D/%%WWWDIR%%/templates_c
+@exec chown -R %%WWWOWN%%:%%WWWGRP%% %D/%%WWWDIR%%/conf
+@exec chmod u+w %%WWWOWN%%:%%WWWGRP%% %D/%%WWWDIR%%/conf/*

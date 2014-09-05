@@ -15,7 +15,7 @@
 -LDFLAGS = `sdl-config --libs` -L/usr/X11R6/lib/ -lSDL_image -lSDL_mixer -lSDL_sound -lGL -lGLU
 +CC ?= c++
 +CFLAGS += -Wall `${SDL_CONFIG} --cflags` -I${LOCALBASE}/include
-+LDFLAGS += `${SDL_CONFIG} --libs` -L${LOCALBASE}/lib -lSDL_image -lSDL_mixer -lGL -lGLU
++LDFLAGS += `${SDL_CONFIG} --libs` -L${LOCALBASE}/lib -lSDL_image -lSDL_mixer -lGL -lGLU -lm
  RM = rm -f
  CP = cp -r
  LN = ln -s

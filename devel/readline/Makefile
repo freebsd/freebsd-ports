@@ -3,7 +3,6 @@
 
 PORTNAME=	readline
 PORTVERSION=	6.3${PATCHLEVEL}
-PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	GNU \
 		ftp://ftp.cwru.edu/pub/bash/
@@ -27,7 +26,7 @@ USE_LDCONFIG=	yes
 
 INFO=		readline rluserman history
 
-PATCHES=	1 2 3 4 5 6
+PATCHES=	1 2 3 4 5 6 7 8
 .for p in ${PATCHES:S/^/00/}
 PATCHFILES+=	${PORTNAME}${PORTVERSION:R:S/.//}-${p:C/.*(...)$/\1/}
 .endfor

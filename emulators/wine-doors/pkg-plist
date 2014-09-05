@@ -1,17 +1,40 @@
 bin/wine-doors
-etc/wine-doors/preferences.xml
-@dirrm etc/wine-doors
+%%ETCDIR%%/preferences.xml
 share/applications/wine-doors.desktop
 share/pixmaps/wine-doors.png
 share/pixmaps/wine-doors.svg
 %%DATADIR%%/dtd/applicationpack.dtd
-%%DATADIR%%/dtd/packlist.dtd
 %%DATADIR%%/dtd/config.dtd
-@dirrm %%DATADIR%%/dtd
+%%DATADIR%%/dtd/packlist.dtd
+%%DATADIR%%/pixmaps/ahk.png
+%%DATADIR%%/pixmaps/ahk.svg
+%%DATADIR%%/pixmaps/cdex.png
 %%DATADIR%%/pixmaps/cedega.svg
+%%DATADIR%%/pixmaps/cod.png
+%%DATADIR%%/pixmaps/cod.svg
 %%DATADIR%%/pixmaps/crossover.svg
+%%DATADIR%%/pixmaps/directx.png
+%%DATADIR%%/pixmaps/directx.svg
+%%DATADIR%%/pixmaps/dreamweaver.svg
+%%DATADIR%%/pixmaps/eudora.png
+%%DATADIR%%/pixmaps/firefox.png
+%%DATADIR%%/pixmaps/firefox.svg
+%%DATADIR%%/pixmaps/flash.svg
+%%DATADIR%%/pixmaps/font.png
+%%DATADIR%%/pixmaps/gecko.png
+%%DATADIR%%/pixmaps/gecko.svg
+%%DATADIR%%/pixmaps/ie.png
+%%DATADIR%%/pixmaps/ie.svg
 %%DATADIR%%/pixmaps/installed.png
 %%DATADIR%%/pixmaps/installed.svg
+%%DATADIR%%/pixmaps/microsoft-library.svg
+%%DATADIR%%/pixmaps/mozcontrol.png
+%%DATADIR%%/pixmaps/mozcontrol.svg
+%%DATADIR%%/pixmaps/ms-library.png
+%%DATADIR%%/pixmaps/opera.png
+%%DATADIR%%/pixmaps/prey.png
+%%DATADIR%%/pixmaps/prey.svg
+%%DATADIR%%/pixmaps/quicktime.svg
 %%DATADIR%%/pixmaps/rating.bronze.svg
 %%DATADIR%%/pixmaps/rating.garbage.svg
 %%DATADIR%%/pixmaps/rating.gold.png
@@ -19,6 +42,9 @@ share/pixmaps/wine-doors.svg
 %%DATADIR%%/pixmaps/rating.platinum.png
 %%DATADIR%%/pixmaps/rating.platinum.svg
 %%DATADIR%%/pixmaps/rating.silver.svg
+%%DATADIR%%/pixmaps/roguespear.png
+%%DATADIR%%/pixmaps/roguespear.svg
+%%DATADIR%%/pixmaps/tc.png
 %%DATADIR%%/pixmaps/throbber.0.png
 %%DATADIR%%/pixmaps/throbber.0.svg
 %%DATADIR%%/pixmaps/throbber.1.png
@@ -44,7 +70,10 @@ share/pixmaps/wine-doors.svg
 %%DATADIR%%/pixmaps/throbber.9.png
 %%DATADIR%%/pixmaps/throbber.9.svg
 %%DATADIR%%/pixmaps/upgrade.svg
+%%DATADIR%%/pixmaps/winamp.png
+%%DATADIR%%/pixmaps/winamp.svg
 %%DATADIR%%/pixmaps/windows-logo.svg
+%%DATADIR%%/pixmaps/wine-doors-0.0.9.svg
 %%DATADIR%%/pixmaps/wine-doors-0.1.svg
 %%DATADIR%%/pixmaps/wine-doors-header.svg
 %%DATADIR%%/pixmaps/wine-doors.128.png
@@ -54,7 +83,10 @@ share/pixmaps/wine-doors.svg
 %%DATADIR%%/pixmaps/wine-doors16.gif
 %%DATADIR%%/pixmaps/wine-doors16.png
 %%DATADIR%%/pixmaps/wine-doors16.xpm
-@dirrm %%DATADIR%%/pixmaps
+%%DATADIR%%/pixmaps/wmp.png
+%%DATADIR%%/pixmaps/wmp.svg
+%%DATADIR%%/pixmaps/wow.png
+%%DATADIR%%/pixmaps/wow.svg
 %%DATADIR%%/registry/audio-alsa.reg
 %%DATADIR%%/registry/audio-oss.reg
 %%DATADIR%%/registry/fakeie6.reg
@@ -62,36 +94,44 @@ share/pixmaps/wine-doors.svg
 %%DATADIR%%/registry/winver-win2k.reg
 %%DATADIR%%/registry/winver-win98.reg
 %%DATADIR%%/registry/winver-winxp.reg
-@dirrm %%DATADIR%%/registry
-%%DATADIR%%/src/antivirus.py
 %%DATADIR%%/src/application.py
+%%DATADIR%%/src/application.pyc
 %%DATADIR%%/src/autorun.py
+%%DATADIR%%/src/autorun.pyc
 %%DATADIR%%/src/build-repos.sh
-%%DATADIR%%/src/build-repos.sh.bak
 %%DATADIR%%/src/cedega.svg
 %%DATADIR%%/src/const.py
-%%DATADIR%%/src/create-packs.sh
-%%DATADIR%%/src/create-packs.sh.bak
+%%DATADIR%%/src/const.pyc
 %%DATADIR%%/src/crossover.svg
 %%DATADIR%%/src/ctile.py
+%%DATADIR%%/src/ctile.pyc
 %%DATADIR%%/src/log.py
+%%DATADIR%%/src/log.pyc
 %%DATADIR%%/src/packlist.py
+%%DATADIR%%/src/packlist.pyc
 %%DATADIR%%/src/preferences.py
-%%DATADIR%%/src/preferences.py.bak
 %%DATADIR%%/src/preferences.pyc
 %%DATADIR%%/src/queue.py
-%%DATADIR%%/src/setdefaultxkbmap.sh
-%%DATADIR%%/src/setdefaultxkbmap.sh.bak
+%%DATADIR%%/src/queue.pyc
 %%DATADIR%%/src/ui.py
+%%DATADIR%%/src/ui.pyc
 %%DATADIR%%/src/utils.py
+%%DATADIR%%/src/utils.pyc
 %%DATADIR%%/src/wine-doors.128.png
 %%DATADIR%%/src/wine-doors.png
 %%DATADIR%%/src/wine-doors16.png
 %%DATADIR%%/src/wine.py
+%%DATADIR%%/src/wine.pyc
 %%DATADIR%%/src/winedoors-header.png
 %%DATADIR%%/src/winedoors.glade
 %%DATADIR%%/src/winedoors.gladep
 %%DATADIR%%/src/winedoors.py
+%%DATADIR%%/src/winedoors.pyc
 %%DATADIR%%/src/wtparser.py
+%%DATADIR%%/src/wtparser.pyc
 @dirrm %%DATADIR%%/src
+@dirrm %%DATADIR%%/registry
+@dirrm %%DATADIR%%/pixmaps
+@dirrm %%DATADIR%%/dtd
 @dirrm %%DATADIR%%
+@dirrm %%ETCDIR%%

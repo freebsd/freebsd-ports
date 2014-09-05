@@ -5,10 +5,6 @@ bin/shmcat
 %%NLS%%share/locale/en@quot/LC_MESSAGES/shmcat.mo
 %%NLS%%@dirrmtry man/de
 %%NLS%%@dirrmtry man/de/man1
-%%NLS%%@dirrmtry share/locale/en@boldquot
-%%NLS%%@dirrmtry share/locale/en@boldquot/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/en@quot
-%%NLS%%@dirrmtry share/locale/en@quot/LC_MESSAGES
 man/de/man1/ftok.1.gz
 man/de/man1/shmcat.1.gz
 man/man1/ftok.1.gz

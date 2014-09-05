@@ -5,7 +5,6 @@ include/dssi/alsa/seq_event.h
 include/dssi/alsa/seq_midi_event.h
 include/dssi/alsa/sound/asequencer.h
 lib/libdssialsacompat.a
-lib/libdssialsacompat.la
 lib/libdssialsacompat.so
 lib/libdssialsacompat.so.0
 lib/libdssialsacompat.so.0.0.0

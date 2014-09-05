@@ -1,0 +1,22 @@
+To run the phabricator daemons from startup, add phd_enable="YES"
+in your /etc/rc.conf. You can control the daemons using
+
+service start
+service stop
+etc.
+
+Before starting the daemons, please finish configuring your Phabricator
+instance. This involves configuring a web server (Apache, NGINX, LightHTTP)
+and a database server (MySQL, MariaDB). You can find detailed instructions
+on how to finish your setup at:
+
+https://secure.phabricator.com/book/phabricator/article/configuration_guide/
+
+Please note that all files are located in %%PREFIX%%/lib/php/phabricator,
+so if the documentation refers to ./bin, this means
+
+  %%PREFIX%%/lib/php/phabricator/bin,
+
+if it refers to webroot, this means
+
+  %%PREFIX%%/lib/php/phabricator/webroot.

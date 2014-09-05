@@ -18,8 +18,8 @@ LIB_DEPENDS=	libavahi-client.so:${PORTSDIR}/net/avahi-app
 
 CONFLICTS_INSTALL=	mDNSResponder_nss-[0-9]*
 
-USE_AUTOTOOLS=	autoconf automake libtool
-USES=		gmake
+USE_AUTOTOOLS=	autoconf automake
+USES=		gmake libtool
 USE_LDCONFIG=	yes
 AUTOTOOLSFILES=	aclocal.m4
 

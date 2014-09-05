@@ -28,7 +28,6 @@ bin/hetupd
 bin/tapecopy
 bin/tapemap
 bin/tapesplt
-lib/hercules/dyncrypt.a
 lib/hercules/dyncrypt.la
 lib/hercules/dyncrypt.so
 lib/hercules/dyngui.la
@@ -59,7 +58,6 @@ lib/hercules/hdteq.la
 lib/hercules/hdteq.so
 lib/hercules/hdtqeth.la
 lib/hercules/hdtqeth.so
-lib/libdecNumber.a
 lib/libdecNumber.la
 lib/libdecNumber.so
 lib/libherc.la
@@ -72,7 +70,6 @@ lib/libherct.la
 lib/libherct.so
 lib/libhercu.la
 lib/libhercu.so
-lib/libsoftfloat.a
 lib/libsoftfloat.la
 lib/libsoftfloat.so
 man/man1/cckddiag.1.gz

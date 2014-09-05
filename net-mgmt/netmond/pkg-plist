@@ -3,10 +3,8 @@
 %%GD%%sbin/ifgraph
 sbin/netmond
 sbin/netmond_watchdog
-@mode u+s
+@mode 04555
 sbin/netmondctl
 @mode
 @group wheel
 etc/netmond.conf.sample
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/ru
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/en

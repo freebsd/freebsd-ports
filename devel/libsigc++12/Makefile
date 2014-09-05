@@ -3,7 +3,7 @@
 
 PORTNAME=	libsigc++
 PORTVERSION=	1.2.7
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/1.2
@@ -15,12 +15,9 @@ COMMENT=	Callback Framework for C++
 
 BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4
 
-USE_AUTOTOOLS=	libtool
-USE_LDCONFIG=	yes
-USES=		gmake pathfix pkgconfig
 GNU_CONFIGURE=	yes
-
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libsigc-1.2.so.5
+INSTALL_TARGET=	install-strip
+USES=		gmake libtool pathfix pkgconfig
+USE_LDCONFIG=	yes
 
 .include <bsd.port.mk>

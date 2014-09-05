@@ -1,0 +1,6 @@
+bin/dvisvg
+man/man1/dvisvg.1.gz
+%%TEXMFDIR%%/dvisvg/dvisvg.map
+%%TEXMFDIR%%/dvisvg/font2svg.enc
+%%TEXMFDIR%%/dvisvg/font2svg.ps
+@dirrmtry %%TEXMFDIR%%/dvisvg

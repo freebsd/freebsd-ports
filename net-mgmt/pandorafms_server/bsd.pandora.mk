@@ -1,6 +1,6 @@
 # $FreeBSD$
 
-PANDORA_VERSION=	4.0.1
+PANDORA_VERSION=	5.1
 PANDORA_LICENSE=	GPLv2
 PANDORA_LICENSE_FILE=	${WRKSRC}/COPYING
 
@@ -9,15 +9,20 @@ PANDORA_LOGDIR?=	/var/log/pandora
 PANDORA_ETCDIR?=	${PREFIX}/etc/pandora
 PANDORA_HOMEDIR?=	${PANDORA_ETCDIR}/home
 
-MASTER_SITES?=	SF/pandora/Pandora%20FMS%20${PANDORA_VERSION}/Tarball
+PANDORA_INSTALLER=	${PORTNAME}_installer
+PANDORA_INSTALLER_ARGS=	--install
+
+PORTVERSION=	${PANDORA_VERSION:C/((SP[0-9]*)?)$/.0\1/}
+
+MASTER_SITES?=	SF/pandora/Pandora%20FMS%20${PANDORA_VERSION}/Final/Tarball
 .if ${PORTNAME} == "pandora_agent"
-DISTNAME=	pandorafms_agent_unix-${PORTVERSION}
+DISTNAME=	pandorafms_agent_unix-${PANDORA_VERSION}
 .else
-DISTNAME=	${PORTNAME:S/pandora_/pandorafms_/}-${PORTVERSION}
+DISTNAME=	${PORTNAME:S/pandora_/pandorafms_/}-${PANDORA_VERSION}
 .endif
 DIST_SUBDIR=	pandora
 
-NO_BUILD?=	yes
+NO_BUILD=	yes
 
 USERS=		pandora
 GROUPS=		pandora
@@ -26,11 +31,11 @@ ETCDIR?=	${PANDORA_ETCDIR}
 SPOOLDIR?=	${PANDORA_SPOOLDIR}
 LOGDIR?=	${PANDORA_LOGDIR}
 HOMEDIR?=	${PANDORA_HOMEDIR}
-HOMEDIR_REL=	${HOMEDIR:S,^${PREFIX}/,,}
 
 PLIST_SUB+=	SPOOLDIR="${PANDORA_SPOOLDIR}" LOGDIR="${PANDORA_LOGDIR}" \
 		USE_SPOOL_IN=${USE_SPOOL_IN} USE_SPOOL_OUT=${USE_SPOOL_OUT} \
 		USE_LOGDIR=${USE_LOGDIR}
+SUB_LIST+=	PANDORA_VERSION="${PANDORA_VERSION}"
 PLIST=		${WRKDIR}/PLIST
 
 PORTDOCS?=	AUTHORS ChangeLog
@@ -43,6 +48,7 @@ USE_SPOOL_OUT=	"@comment "
 USE_LOGDIR=	"@comment "
 USE_SPOOL_IN=	""
 USE_SPOOL_OUT=	"@comment "
+PANDORA_INSTALLER=	pandora_console_install
 .elif ${PORTNAME} == "pandora_agent"
 USE_LOGDIR=	""
 USE_SPOOL_IN=	"@comment "
@@ -60,7 +66,6 @@ post-extract:
 pre-install:
 	@${CAT} ${PKGDIR}/../pandorafms_server/pkg-plist.spool > ${PLIST}
 	@${CAT} ${PKGDIR}/pkg-plist >> ${PLIST}
-	@${ECHO_MSG} '@exec [ -e "%D/${ETCDIR_REL}" ] || ${MKDIR} "%D/${ETCDIR_REL}"' >> ${PLIST}
-	@${ECHO_MSG} '@exec if [ -e "%D/${HOMEDIR_REL}" ];then ${TRUE}; else ${MKDIR} "%D/${HOMEDIR_REL}"; ${CHOWN} ${USER}:${GROUP} "%D/${HOMEDIR_REL}";fi' >> ${PLIST}
-	@${ECHO_MSG} '@unexec ${RMDIR} "%D/${HOMEDIR_REL}" 2>/dev/null || ${TRUE}' >> ${PLIST}
-	@${ECHO_MSG} '@unexec ${RMDIR} "%D/${ETCDIR_REL}" 2>/dev/null || ${TRUE}' >> ${PLIST}
+
+do-install:
+	@cd ${WRKSRC} && ${SH} ${PANDORA_INSTALLER} ${PANDORA_INSTALLER_ARGS}

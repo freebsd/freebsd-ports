@@ -3,8 +3,8 @@
 
 PORTNAME=	mark_read
 PORTVERSION=	1.4.2
-PORTREVISION=	3
-CATEGORIES=		mail www
+PORTREVISION=	4
+CATEGORIES=	mail www
 DISTNAME=	${PORTNAME:S/-/_/}-${PORTVERSION}-1.2
 
 MAINTAINER=	itetcu@FreeBSD.org
@@ -17,6 +17,5 @@ SQUIRREL_PLUGIN_NAME=	${PORTNAME:S/-/_/}
 post-patch:
 	@${RM} ${WRKSRC}/${SQUIRREL_PLUGIN_NAME}/mark_read.php.orig
 
-.include <bsd.port.pre.mk>
 .include "${.CURDIR}/../squirrelmail/bsd.squirrelmail.mk"
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

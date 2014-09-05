@@ -4,7 +4,7 @@
 PORTNAME=	groff
 PORTVERSION=	1.18.1
 DISTVERSIONSUFFIX=	.1
-PORTREVISION=	15
+PORTREVISION=	16
 CATEGORIES=	japanese print
 MASTER_SITES=	LOCAL/hrs
 DISTFILES=	${DISTNAME:S,-,_,}.orig${EXTRACT_SUFX} ${TMAC_DISTNAME}.tar.gz
@@ -18,10 +18,10 @@ COMMENT=	Japanese enhancement of GNU groff
 
 LICENSE=	GPLv2
 
-USE_GCC=	any
+USES=		iconv:wchar_t gmake makeinfo shebangfix
+SHEBANG_FILES=	src/utils/afmtodit/afmtodit.pl \
+		contrib/mm/mmroff.pl
 GNU_CONFIGURE=	yes
-USES=		iconv:wchar_t gmake makeinfo
-
 CONFIGURE_ARGS=	--enable-multibyte
 CONFIGURE_ENV=	INSTALL_MAN="${INSTALL_MAN}"
 CPPFLAGS+=	-I${LOCALBASE}/include
@@ -32,7 +32,9 @@ PLIST_SUB=	GROFF_VERSION=${PORTVERSION}
 SUB_FILES=	mdoc.local
 SUB_LIST=	OSREL=${OSREL}
 PORTDOCS=	*
+PORTEXAMPLES=	*
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}/${PORTVERSION}
+EXAMPLESDIR=	${PREFIX}/share/examples/${PORTNAME}/${PORTVERSION}
 INFO=		groff
 
 CONFLICTS=	groff-[0-9]* mdocml-[0-9]*
@@ -43,8 +45,6 @@ TMACFILES=	tmac.orig_me tmac.vgrind \
 MDOCFILES=	ja.eucJP doc-common doc-syms
 
 post-patch:
-	${REINPLACE_CMD} -e 's|\(install_data\)|\1 install_doc|g;' \
-	    ${WRKSRC}/Makefile.in
 	${REINPLACE_CMD} -E -e 's|^@setfilename +groff|&.info|g;' \
 	    ${WRKSRC}/doc/groff.texinfo
 
@@ -52,9 +52,9 @@ post-build:
 	${RM} -f ${WRKSRC}/doc/groff ${WRKSRC}/doc/groff-*
 	cd ${WRKSRC}/doc && makeinfo --no-split groff.texinfo
 	cd ${WRKSRC} && ${FIND} font -name DESC \
-	| ${XARGS} ${REINPLACE_CMD} -E -e 's|pro +(gxditview)|pro ${LOCALBASE}/bin/\1|g;'
-	cd ${WRKSRC} && ${FIND} font -name DESC \
-	| ${XARGS} ${REINPLACE_CMD} -E -e 's|pro +([^/].*)|pro ${PREFIX}/bin/\1|g;'
+	    | ${XARGS} ${REINPLACE_CMD} -E \
+	    -e 's|pro +(gxditview)|pro ${LOCALBASE}/bin/\1|g;' \
+	    -e 's|pro +([^/].*)|pro ${PREFIX}/bin/\1|g;'
 
 post-install:
 	cd ${WRKDIR}/${TMAC_DISTNAME} && ${INSTALL_DATA} \

@@ -14,7 +14,7 @@ OPTIONS_DEFINE=	DOCS
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/bbrun
 
-USE_XORG=	xpm
+USE_XORG=	x11 xext xpm
 USE_GNOME=	gtk20
 USES=		gmake pkgconfig
 USE_CSTD=	gnu89

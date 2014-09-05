@@ -24,6 +24,9 @@ CONFIGURE_ARGS=	-- --with-opt-dir="${LOCALBASE}"
 
 DOCS=		AUTHORS ChangeLog THANKS rdoc
 
+DEPRECATED=	RubyForge shutdown May 15 2014
+EXPIRATION_DATE=	2014-09-20
+
 OPTIONS_DEFINE=	DOCS
 
 post-extract:

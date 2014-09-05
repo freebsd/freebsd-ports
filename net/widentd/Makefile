@@ -11,16 +11,13 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	dirkx@webweaving.org
 COMMENT=	RFC1413 auth/identd daemon with fixed fake reply
 
+USES=		uidfix
+MAKE_ENV+=	BINDIR="${PREFIX}/sbin" MANDIR="${PREFIX}/man/man"
+
 PLIST_FILES=	sbin/widentd \
 		man/man8/widentd.8.gz
 USE_RC_SUBR=	widentd
 
-MAKE_ENV+=	BINDIR="${PREFIX}/sbin" MANDIR="${PREFIX}/man/man"
+BROKEN_powerpc=		Does not compile on powerpc
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == "powerpc"
-BROKEN=		Does not compile on powerpc
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

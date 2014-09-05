@@ -3,41 +3,49 @@
 
 PORTNAME=	crux
 PORTVERSION=	1.2.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	biology python
 MASTER_SITES=	http://www.canonware.com/download/Crux/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Software toolkit for phylogenetic inference
 
-USES=		fortran gmake tar:bzip2
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-python=${PYTHON_CMD} --disable-mpi
+LICENSE=	BSD2CLAUSE BSD3CLAUSE
+LICENSE_COMB=	multi
+
+USES=		fortran gmake python tar:bzip2
 USE_CSTD=	gnu99
-USE_PYTHON=	yes
-
-OPTIONS_DEFINE=	SYS_LINALG
-SYS_LINALG_DESC=	Enable system ATLAS/LAPACK
-
-NO_STAGE=	yes
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--datadir=${PREFIX}/lib \
+		--with-python=${PYTHON_CMD} \
+		--disable-mpi
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
+OPTIONS_DEFINE=		SYS_LINALG
+SYS_LINALG_DESC=	Enable system ATLAS/LAPACK
+SYS_LINALG_LIB_DEPENDS=	libatlas.so:${PORTSDIR}/math/atlas
+SYS_LINALG_CONFIGURE_ENABLE=	sys-linalg
+
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MSYS_LINALG}
-CONFIGURE_ARGS+=	--enable-sys-linalg
-LIB_DEPENDS+=	libatlas.so:${PORTSDIR}/math/atlas
-.else
-CONFIGURE_ARGS+=	--disable-sys-linalg
+.if ${OSVERSION} > 900000
+BROKEN_powerpc=	Does not build on powerpc-9: error in pthreads
 .endif
 
-.if ${ARCH} == "powerpc" && ${OSVERSION} > 900000
-BROKEN=		Does not build on powerpc-9: error in pthreads
-.endif
+post-patch:
+	@${REINPLACE_CMD} -e \
+		's|\([[:blank:]]\)\($$(BINDIR)\)|\1$$(DESTDIR)\2| ; \
+		 s|\([[:blank:]]\)\($$(DATADIR)\)|\1$$(DESTDIR)\2| ; \
+		 s|\(,\)\(@site_packages@\)|\1$$(DESTDIR)\2| ; \
+		 s|\([[:blank:]]\)\(@site_packages@\)|\1$$(DESTDIR)\2|' \
+		${WRKSRC}/Makefile.in
 
 post-install:
-	@${PREFIX}/bin/crux -b -q /dev/null
+	@(${FIND} ${STAGEDIR}${PREFIX}/lib/Crux/lib -maxdepth 1 -type f \
+		-name "*.so" | ${XARGS} ${STRIP_CMD})
+	@(${FIND} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR} -maxdepth 3 -type f \
+		-name "*.so" | ${XARGS} ${STRIP_CMD})
 
 .include <bsd.port.mk>

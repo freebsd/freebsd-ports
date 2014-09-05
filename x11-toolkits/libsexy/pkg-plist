@@ -6,7 +6,6 @@ include/libsexy/sexy-tree-view.h
 include/libsexy/sexy-url-label.h
 include/libsexy/sexy.h
 lib/libsexy.a
-lib/libsexy.la
 lib/libsexy.so
 lib/libsexy.so.2
 lib/libsexy.so.2.0.4

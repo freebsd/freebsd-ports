@@ -3,7 +3,7 @@
 
 PORTNAME=	drac
 PORTVERSION=	1.12
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.cc.umanitoba.ca/src/ \
 		http://atreides.freenix.no/~anders/ \

@@ -1,3 +1,0 @@
-bin/rabl_client
-@unexec if cmp -s %D/etc/rabl_client.conf %D/etc/rabl_client.conf.sample; then rm -f %D/etc/rabl_client.conf; fi
-etc/rabl_client.conf.sample

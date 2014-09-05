@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gxemul
-PORTVERSION=	0.6.0
-PORTREVISION=	2
+PORTVERSION=	0.6.0.1
 CATEGORIES=	emulators
 MASTER_SITES=	http://gxemul.sourceforge.net/src/ \
 		http://gavare.se/gxemul/src/
@@ -11,39 +10,41 @@ MASTER_SITES=	http://gxemul.sourceforge.net/src/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Instruction-level machine emulator
 
-OPTIONS_DEFINE=	X11 DOCS
-OPTIONS_DEFAULT=	X11
-
-HAS_CONFIGURE=	yes
-ALL_TARGET=	build
-MAKE_JOBS_UNSAFE=	yes
-
-PORTDOCS=	*
-PLIST_FILES=	bin/gxemul \
-		man/man1/gxemul.1.gz
+LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USE_GCC=	yes
+HAS_CONFIGURE=	yes
+CONFIGURE_ARGS=	--without-unittests
+ALL_TARGET=	build
+MAKE_JOBS_UNSAFE=	yes
 
 # svgalib installs vga.h, which conflicts with gxemul when building with
 # a virtual VGA adaptor.
 CONFLICTS=	svgalib-[0-9]*
 
-X11_USE=	xorg=x11
-X11_CONFIGURE_OFF=--disable-x
+PORTDOCS=	*
+PLIST_FILES=	bin/gxemul man/man1/gxemul.1.gz
+
+OPTIONS_DEFINE=		DOCS X11
+OPTIONS_DEFAULT=	X11
+
+X11_USE=		xorg=x11
+X11_CONFIGURE_OFF=	--disable-x
 
 post-patch:
 	@${REINPLACE_CMD} -Ee \
 		's|/usr/X11R6|${LOCALBASE}|g; \
-		 s|-O[0-9]?||g; \
-		 s|-f[a-zA-Z-]+||g' ${WRKSRC}/configure
+		 /CXXFLAGS=/s|-O[0-9]?||g; \
+		 /CXXFLAGS=/s|-f[a-zA-Z-]+||g' ${WRKSRC}/configure
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/gxemul ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_DATA} ${WRKSRC}/man/gxemul.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
-	${MKDIR} ${STAGEDIR}${DOCSDIR}/components \
-		${STAGEDIR}${DOCSDIR}/machines
-	${INSTALL_DATA} ${WRKSRC}/doc/components/* ${STAGEDIR}${DOCSDIR}/components
-	${INSTALL_DATA} ${WRKSRC}/doc/machines/* ${STAGEDIR}${DOCSDIR}/machines
-	${INSTALL_DATA} `find ${WRKSRC}/doc/ -type f -depth 1` ${STAGEDIR}${DOCSDIR}
+	(cd ${WRKSRC} && ${INSTALL_PROGRAM} gxemul \
+		${STAGEDIR}${PREFIX}/bin)
+	(cd ${WRKSRC}/man && ${INSTALL_MAN} gxemul.1 \
+		${STAGEDIR}${MAN1PREFIX}/man/man1)
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	@(cd ${WRKSRC}/doc && ${COPYTREE_SHARE} . \
+		${STAGEDIR}${DOCSDIR})
 
 .include <bsd.port.mk>

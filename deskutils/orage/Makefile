@@ -3,7 +3,7 @@
 
 PORTNAME=	orage
 PORTVERSION=	4.10.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	deskutils xfce
 MASTER_SITES=	${MASTER_SITE_XFCE}
 MASTER_SITE_SUBDIR=src/apps/${PORTNAME}/${PORTVERSION:R}
@@ -39,8 +39,6 @@ CONFIGURE_ARGS=	--enable-dbus
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-configure
 CONFIGURE_ARGS+=--with-bdb4=yes --with-bdb4_dir=${LOCALBASE}
 USE_BDB=	yes
-# Only Berkeley DB 4.x
-INVALIDE_BDB_VER=	5
 .else
 CONFIGURE_ARGS+=--with-bdb4=no
 .endif

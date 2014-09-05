@@ -17,6 +17,8 @@ GH_COMMIT=	fd6b3ef
 
 PLIST_FILES=	bin/pit
 
+MAKE_JOBS_UNSAFE=	yes
+
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's|CC =|CC ?=| ; \

@@ -2,8 +2,8 @@
 
 PORTNAME=	secure_login
 PORTVERSION=	1.4
-PORTREVISION=	2
-CATEGORIES=		mail www
+PORTREVISION=	3
+CATEGORIES=	mail www
 DISTNAME=	${PORTNAME}-${PORTVERSION}-1.2.8
 
 MAINTAINER=	ports@FreeBSD.org
@@ -13,6 +13,5 @@ LICENSE=	GPLv2
 
 USE_GENERIC_PKGMESSAGE=	yes
 
-.include <bsd.port.pre.mk>
 .include "${.CURDIR}/../squirrelmail/bsd.squirrelmail.mk"
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

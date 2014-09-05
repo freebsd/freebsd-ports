@@ -1,9 +1,0 @@
-etc/ftrack/ftrack.cfg-dist
-etc/ftrack/audit.tpl
-etc/ftrack/badfrom.tpl
-etc/ftrack/badto.tpl
-etc/ftrack/loop.tpl
-etc/ftrack/alt2koi.tbl
-etc/ftrack/koi2alt.tbl
-bin/ftrack
-@dirrm etc/ftrack

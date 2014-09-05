@@ -19,10 +19,9 @@ LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
 
 UNIQUENAME=	py-${PORTNAME}
 
+USES=		python
 DIST_SUBDIR=	python
-USE_PYTHON=	yes
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
+USE_PYTHON=	distutils autoplist
 
 PLIST_FILES=	%%PYTHON_INCLUDEDIR%%/ImPlatform.h %%PYTHON_INCLUDEDIR%%/Imaging.h
 PORTDOCS=	*

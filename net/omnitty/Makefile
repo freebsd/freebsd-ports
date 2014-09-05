@@ -14,6 +14,7 @@ LIB_DEPENDS=	librote.so:${PORTSDIR}/devel/rote
 
 USES=		gmake
 GNU_CONFIGURE=	yes
+LIBS+=		-lncurses
 
 ALL_TARGET=	${PORTNAME}
 

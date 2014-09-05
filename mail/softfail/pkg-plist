@@ -1,3 +1,0 @@
-@unexec rm -f %%QMAIL_PREFIX%%/bin/qmail-sf 2>&1 >/dev/null || true
-bin/rotate-softfail-db
-bin/rotate-softfail.sh

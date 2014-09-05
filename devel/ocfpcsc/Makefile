@@ -14,7 +14,7 @@ COMMENT=	Open Card Framework to PC/SC bridge
 LICENSE=	IBMOCF
 LICENSE_NAME=	IBM OpenCard Framework
 LICENSE_FILE=	${FILESDIR}/IBMOCF
-LICENSE_PERMS=	dist-sell pkg-sell
+LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 LIB_DEPENDS=	libpcsclite.so:${PORTSDIR}/devel/pcsc-lite
 

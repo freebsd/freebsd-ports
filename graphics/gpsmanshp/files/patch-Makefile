@@ -7,7 +7,7 @@
 +TCLLVERSION = 84
  
 -INSTALLDIR = /usr/lib/tcl$(TCLVERSION)
-+INSTALLDIR = ${PREFIX}/lib/tcl$(TCLVERSION)/gpsmanshp-$(VERSION)
++INSTALLDIR = ${DESTDIR}${PREFIX}/lib/tcl$(TCLVERSION)/gpsmanshp-$(VERSION)
  
 -CFLAGS = -Wall -fPIC -c -I/usr/include/tcl$(TCLVERSION)
 -LINKOPT = -lshp -ltcl$(TCLVERSION)
@@ -28,8 +28,9 @@
  	chmod 644 gpsmanshp.so pkgIndex.tcl
  
  install: pkgIndex.tcl
- 	-mkdir $(INSTALLDIR)
+-	-mkdir $(INSTALLDIR)
 -	cp gpsmanshp.so pkgIndex.tcl $(INSTALLDIR)
++	-mkdir -p $(INSTALLDIR)
 +	install -c -s -m 555 -o root -g wheel gpsmanshp.so $(INSTALLDIR)/
 +	install -c -m 555 -o root -g wheel pkgIndex.tcl $(INSTALLDIR)/
  

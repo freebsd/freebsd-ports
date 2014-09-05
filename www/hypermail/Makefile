@@ -7,20 +7,25 @@ PORTREVISION=	3
 CATEGORIES=	www mail
 MASTER_SITES=	SF
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	erwin@FreeBSD.org
 COMMENT=	Program to generate a cross-referenced HTML mail archive
+
+LICENSE=	GPLv2
 
 LIB_DEPENDS+=	libgdbm.so:${PORTSDIR}/databases/gdbm \
 		libpcre.so:${PORTSDIR}/devel/pcre
 
+USES=		desthack
+
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-htmldir=${PREFIX}/share/doc/hypermail \
+CONFIGURE_ARGS=	--with-htmldir=${STAGEDIR}${PREFIX}/share/doc/hypermail \
 		--with-gdbm=${LOCALBASE}
 
 CFLAGS+=	-L${LOCALBASE}/lib
 
-MAN1=		hypermail.1
-MAN4=		hmrc.4
+post-install:
+	${STRIP_CMD} ${STAGEDIR}/${PREFIX}/bin/hypermail \
+		${STAGEDIR}/${PREFIX}/bin/msg2archive \
+		${STAGEDIR}/${PREFIX}/bin/rdmsg
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

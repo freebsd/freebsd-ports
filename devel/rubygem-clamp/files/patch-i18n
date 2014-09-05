@@ -1,0 +1,191 @@
+diff --git a/clamp-0.6.3.gemspec b/clamp-0.6.3.gemspec
+index 8f51cc3..acab485 100644
+--- clamp-0.6.3.gemspec
++++ clamp-0.6.3.gemspec
+@@ -43,6 +43,7 @@
+ - lib/clamp/command.rb
+ - lib/clamp/errors.rb
+ - lib/clamp/help.rb
++- lib/clamp/messages.rb
+ - lib/clamp/option/declaration.rb
+ - lib/clamp/option/definition.rb
+ - lib/clamp/option/parsing.rb
+
+diff --git a/lib/clamp/attribute/instance.rb b/lib/clamp/attribute/instance.rb
+index 8f51cc3..acab485 100644
+--- lib/clamp/attribute/instance.rb
++++ lib/clamp/attribute/instance.rb
+@@ -72,7 +72,7 @@ def default_from_environment
+         begin
+           take(value)
+         rescue ArgumentError => e
+-          command.send(:signal_usage_error, "$#{attribute.environment_variable}: #{e.message}")
++          command.send(:signal_usage_error, Clamp.message(:env_argument_error, :env => attribute.environment_variable, :message => e.message))
+         end
+       end
+ 
+diff --git a/lib/clamp/command.rb b/lib/clamp/command.rb
+index c6c50f4..52187ab 100644
+--- lib/clamp/command.rb
++++ lib/clamp/command.rb
+@@ -1,3 +1,4 @@
++require 'clamp/messages'
+ require 'clamp/errors'
+ require 'clamp/help'
+ require 'clamp/option/declaration'
+@@ -91,7 +92,7 @@ def help
+ 
+     def handle_remaining_arguments
+       unless remaining_arguments.empty?
+-        signal_usage_error "too many arguments"
++        signal_usage_error Clamp.message(:too_many_arguments)
+       end
+     end
+ 
+diff --git a/lib/clamp/help.rb b/lib/clamp/help.rb
+index e09731a..1e57530 100644
+--- lib/clamp/help.rb
++++ lib/clamp/help.rb
+@@ -61,7 +61,7 @@ def string
+       end
+ 
+       def add_usage(invocation_path, usage_descriptions)
+-        puts "Usage:"
++        puts usage_heading
+         usage_descriptions.each do |usage|
+           puts "    #{invocation_path} #{usage}".rstrip
+         end
+@@ -87,6 +87,12 @@ def add_list(heading, items)
+         end
+       end
+ 
++      protected
++
++      def usage_heading
++        "Usage:"
++      end
++
+       private
+ 
+       def puts(*args)
+diff --git a/lib/clamp/messages.rb b/lib/clamp/messages.rb
+new file mode 100644
+index 0000000..61cce94
+--- /dev/null
++++ lib/clamp/messages.rb
+@@ -0,0 +1,39 @@
++module Clamp
++
++  def self.messages=(messages)
++    @user_defined_messages = messages
++  end
++
++  def self.message(key, options={})
++    @user_defined_messages ||= {}
++    msg = @user_defined_messages[key] || messages[key]
++    format_string(msg, options)
++  end
++
++  def self.messages
++    {
++      :too_many_arguments => "too many arguments",
++      :option_required => "option '%<option>s' is required",
++      :option_or_env_required => "option '%<option>s' (or env %<env>s) is required",
++      :option_argument_error => "option '%<switch>s': %<message>s",
++      :parameter_argument_error => "parameter '%<param>s': %<message>s",
++      :env_argument_error => "$%<env>s: %<message>s",
++      :unrecognised_option => "Unrecognised option '%<switch>s'",
++      :no_such_subcommand => "No such sub-command '%<name>s'",
++      :no_value_provided => "no value provided"
++    }
++  end
++
++  private
++
++  # string formatting for ruby 1.8
++  def self.format_string(string, params)
++    array_params = string.scan(/%[<{]([^>}]*)[>}]/).collect do |name|
++      name = name[0]
++      params[name.to_s] || params[name.to_sym]
++    end
++
++    string.gsub(/%[<]([^>]*)[>]/, '%').gsub(/%[{]([^}]*)[}]/, '%s') % array_params
++  end
++
++end
+diff --git a/lib/clamp/option/parsing.rb b/lib/clamp/option/parsing.rb
+index 9f057f1..bb7b41c 100644
+--- lib/clamp/option/parsing.rb
++++ lib/clamp/option/parsing.rb
+@@ -31,7 +31,7 @@ def parse_options
+           begin
+             option.of(self).take(value)
+           rescue ArgumentError => e
+-            signal_usage_error "option '#{switch}': #{e.message}"
++            signal_usage_error Clamp.message(:option_argument_error, :switch => switch, :message => e.message)
+           end
+ 
+         end
+@@ -45,11 +45,11 @@ def parse_options
+         self.class.recognised_options.each do |option|
+           # If this option is required and the value is nil, there's an error.
+           if option.required? and send(option.attribute_name).nil?
+-            message = "option '#{option.switches.first}'"
+             if option.environment_variable
+-              message += " (or env #{option.environment_variable})"
++              message = Clamp.message(:option_or_env_required, :option => option.switches.first, :env => option.environment_variable)
++            else
++              message = Clamp.message(:option_required, :option => option.switches.first)
+             end
+-            message += " is required"
+             signal_usage_error message
+           end
+         end
+@@ -59,7 +59,7 @@ def parse_options
+ 
+       def find_option(switch)
+         self.class.find_option(switch) ||
+-        signal_usage_error("Unrecognised option '#{switch}'")
++        signal_usage_error(Clamp.message(:unrecognised_option, :switch => switch))
+       end
+ 
+     end
+diff --git a/lib/clamp/parameter/definition.rb b/lib/clamp/parameter/definition.rb
+index 6412546..a276dea 100644
+--- lib/clamp/parameter/definition.rb
++++ lib/clamp/parameter/definition.rb
+@@ -22,7 +22,7 @@ def help_lhs
+       end
+ 
+       def consume(arguments)
+-        raise ArgumentError, "no value provided" if required? && arguments.empty?
++        raise ArgumentError, Clamp.message(:no_value_provided) if required? && arguments.empty?
+         arguments.shift(multivalued? ? arguments.length : 1)
+       end
+ 
+diff --git a/lib/clamp/parameter/parsing.rb b/lib/clamp/parameter/parsing.rb
+index 8a70719..95aa422 100644
+--- lib/clamp/parameter/parsing.rb
++++ lib/clamp/parameter/parsing.rb
+@@ -13,7 +13,7 @@ def parse_parameters
+               parameter.of(self).take(value)
+             end
+           rescue ArgumentError => e
+-            signal_usage_error "parameter '#{parameter.name}': #{e.message}"
++            signal_usage_error Clamp.message(:parameter_argument_error, :param => parameter.name, :message => e.message)
+           end
+         end
+ 
+diff --git a/lib/clamp/subcommand/execution.rb b/lib/clamp/subcommand/execution.rb
+index d15c56b..c341df6 100644
+--- lib/clamp/subcommand/execution.rb
++++ lib/clamp/subcommand/execution.rb
+@@ -25,7 +25,7 @@ def instatiate_subcommand(name)
+       end
+ 
+       def find_subcommand_class(name)
+-        subcommand_def = self.class.find_subcommand(name) || signal_usage_error("No such sub-command '#{name}'")
++        subcommand_def = self.class.find_subcommand(name) || signal_usage_error(Clamp.message(:no_such_subcommand, :name => name))
+         subcommand_def.subcommand_class
+       end
+ 

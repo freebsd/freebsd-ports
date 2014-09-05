@@ -1,22 +1,30 @@
 --- sys/unix/Makefile.src.orig	Tue Jun  6 23:23:32 2006
 +++ sys/unix/Makefile.src	Tue Sep 12 18:31:34 2006
-@@ -153,22 +153,17 @@
+@@ -36,7 +36,7 @@
+ # SHELL=E:/GEMINI2/MUPFEL.TTP
  
- # VULTURESCFLAGS will be passed to the sub-makefile for vultures
+ # Normally, the C compiler driver is used for linking:
+-LINK=$(CC)
++LINK=$(CXX)
+ 
+ # Pick the SYSSRC and SYSOBJ lines corresponding to your desired operating
+ # system.
+@@ -154,21 +154,21 @@
+ # VULTURECFLAGS will be passed to the sub-makefile for vulture
  OS = $(shell uname -s)
--ifeq ($(OS),FreeBSD)
+ ifeq ($(OS),FreeBSD)
 -	SDL_CONFIG = sdl11-config
 -	SDLMAIN = -lSDLmain-1.1
--else
--	SDL_CONFIG = sdl-config
--	SDLMAIN = -lSDLmain
--endif
--VULTURESCFLAGS = -Wall -g
--CFLAGS = -g -I../include -I ../win/vultures $(shell $(SDL_CONFIG) --cflags)
-+SDL_CONFIG = sdl-config
-+SDLMAIN = -lSDLmain
-+VULTURESCFLAGS = ${CFLAGS}
-+CFLAGS += -g -I../include -I ../win/vultures $(shell $(SDL_CONFIG) --cflags)
++	SDL_CONFIG = sdl-config
++	SDLMAIN = -lSDLmain
+ else
+ 	SDL_CONFIG = sdl-config
+ 	SDLMAIN = -lSDLmain
+ endif
+-VULTURECFLAGS = -Wall -g -I /opt/local/include
+-CFLAGS = -g -I../include -I ../win/vulture $(shell $(SDL_CONFIG) --cflags)
++VULTURECFLAGS = -Wall
++CFLAGS += -I../include -I ../win/vulture $(shell $(SDL_CONFIG) --cflags)
  LFLAGS = 
  
  # The Qt and Be window systems are written in C++, while the rest of
@@ -29,12 +37,3 @@
  #LINK=g++
  #	For cross-compiling, eg. with gcc on Linux (see also CC further up):
  #CXX=arm-linux-g++
-@@ -480,7 +475,7 @@
- 	@rm -f $(MAKEDEFS)
- 	
- ../win/vultures/build_n/vultures.o: objects.o monst.o ../include/date.h ../win/vultures/* ../win/vultures/util/*
--	@$(MAKE) -C ../win/vultures/ BUILD=nethack BASECFLAGS="$(VULTURESCFLAGS)"
-+	@$(MAKE) -C ../win/vultures/ BUILD=nethack BASECFLAGS="$(VULTURESCFLAGS)" SDL_CONFIG="${SDL_CONFIG}"
- 
- # Qt windowport meta-object-compiler output
- qt_kde0.moc: ../include/qt_kde0.h

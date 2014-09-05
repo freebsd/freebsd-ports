@@ -1,9 +1,31 @@
 bin/jmanpath
-@unexec chflags noschg %B/jman
+@owner man
+@mode 4555
 bin/jman
+@owner bin
+@group bin
+@mode
 bin/japropos
 bin/jwhatis
 bin/jmakewhatis
 bin/jcatman
 libexec/jmakewhatis.local
 libexec/jcatman.local
+@owner
+@group
+man/man1/jman.1.gz
+man/man1/jmanpath.1.gz
+man/man1/japropos.1.gz
+man/man1/jwhatis.1.gz
+man/man1/jmakewhatis.1.gz
+man/man1/jcatman.1.gz
+man/man8/jmakewhatis.local.8.gz
+man/man8/jcatman.local.8.gz
+man/ja/man1/jman.1.gz
+man/ja/man1/jmanpath.1.gz
+man/ja/man1/japropos.1.gz
+man/ja/man1/jwhatis.1.gz
+man/ja/man1/jmakewhatis.1.gz
+man/ja/man1/jcatman.1.gz
+man/ja/man8/jmakewhatis.local.8.gz
+man/ja/man8/jcatman.local.8.gz

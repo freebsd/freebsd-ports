@@ -3,6 +3,7 @@
 
 PORTNAME=	mangler
 PORTVERSION=	1.2.5
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://www.mangler.org/downloads/
 

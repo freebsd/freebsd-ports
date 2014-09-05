@@ -15,6 +15,8 @@ COMMENT=	H323 Video Conferencing library
 
 LIB_DEPENDS=	libpt_r.so:${PORTSDIR}/devel/pwlib
 
+CONFLICTS=	h323plus-1.*
+
 WRKSRC=		${WRKDIR}/${PORTNAME}_v${PORTVERSION:S/./_/g}
 
 USES=		bison gmake

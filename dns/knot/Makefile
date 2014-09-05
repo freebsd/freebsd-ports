@@ -2,7 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	knot
-PORTVERSION=	1.5.0
+PORTVERSION=	1.5.1
+PORTREVISION=	1
 CATEGORIES=	dns ipv6
 MASTER_SITES=	https://secure.nic.cz/files/knot-dns/ \
 		http://dns-lab.com/downloads/knot-dns/
@@ -22,6 +23,8 @@ USE_LDCONFIG=	yes
 
 USE_OPENSSL=		yes
 WITH_OPENSSL_PORT=	yes
+
+INSTALL_TARGET=	install-strip
 
 GNU_CONFIGURE=	yes
 

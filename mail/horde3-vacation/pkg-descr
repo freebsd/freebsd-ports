@@ -1,9 +1,0 @@
-Vacation is a Horde module for managing user e-mail "vacation notices" or
-"auto-responders." It works via a local vacation program and the .forward style
-forwarding mechanism supported by several popular mailers.
-
-Right now, Vacation provides fairly complete support for managing .forward style
-vacation notices on Sendmail or Courier mail based systems via an FTP transport.
-It also has some support for LDAP, Qmail, and SQL servers.
-
-WWW: http://www.horde.org/vacation/

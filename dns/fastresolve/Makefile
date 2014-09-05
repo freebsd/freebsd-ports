@@ -3,7 +3,7 @@
 
 PORTNAME=	fastresolve
 PORTVERSION=	2.10
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	dns
 MASTER_SITES=	http://www.djmnet.org/sw/dist/
 

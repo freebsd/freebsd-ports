@@ -1,9 +1,0 @@
---- nls/LANGS.orig	Fri Dec 29 20:56:45 2000
-+++ nls/LANGS	Sun Jan  7 09:00:13 2001
-@@ -1,5 +1,3 @@
- # LANGS file
- 
--C/C/C			/usr/local/nls/msg/C
--english/us/ascii	/usr/local/nls/msg/english
--french/canada/8859	/usr/local/nls/msg/french
-+C/C/C			/usr/local/share/nls/C

@@ -11,7 +11,7 @@ PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DISTNAME=	FXRuby-${PORTVERSION}
 DIST_SUBDIR=	ruby
 
-MAINTAINER=	lercordeiro@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Ruby extension module to use FOX 1.6, aka FXRuby
 
 LIB_DEPENDS=	libFOX-1.6.so:${PORTSDIR}/x11-toolkits/fox16 \
@@ -28,6 +28,9 @@ RUBY_SETUP=	install.rb
 NOHARM_ARGS=	--no-harm
 USE_XORG=	xcursor xproto x11 xextproto xext xrandr
 USE_GL=		yes
+
+DEPRECATED=	RubyForge shutdown May 15 2014
+EXPIRATION_DATE=	2014-09-20
 
 install-noharm:
 	cd ${WRKSRC}; \

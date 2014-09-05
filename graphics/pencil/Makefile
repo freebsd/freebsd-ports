@@ -3,7 +3,7 @@
 
 PORTNAME=	pencil
 PORTVERSION=	0.4.4b
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}-planner/Pencil/${PORTVERSION}eta
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src${EXTRACT_SUFFIX}
@@ -13,21 +13,13 @@ COMMENT=	Pencil - a traditional 2D animation software
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS+=	libming.so:${PORTSDIR}/graphics/ming \
-		libpng15.so:${PORTSDIR}/graphics/png \
-		libfreetype.so:${PORTSDIR}/print/freetype2 \
-		libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig \
-		libexpat.so:${PORTSDIR}/textproc/expat2 \
-		libpcre.so:${PORTSDIR}/devel/pcre \
-		libdrm.so:${PORTSDIR}/graphics/libdrm
+LIB_DEPENDS=	libming.so:${PORTSDIR}/graphics/ming \
+		libpng.so:${PORTSDIR}/graphics/png
 
-USES=		gettext iconv qmake zip
-USE_GNOME=	glib20
-USE_QT4=	gui moc_build rcc_build xml_build opengl_build
-USE_XORG=	xi xrender xrandr xfixes xcursor xinerama xext x11 xau xdmcp \
-		xxf86vm xdamage
-USE_GL=		gl glu
-QMAKE_ARGS+=	INCLUDEPATH+=${LOCALBASE}/include/ming
+USES=		qmake zip
+USE_QT4=	gui opengl xml moc_build rcc_build
+USE_GL=		gl
+QMAKE_ARGS=	INCLUDEPATH+=${LOCALBASE}/include/ming
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}-source
 
 PLIST_FILES=	bin/pencil

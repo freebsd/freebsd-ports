@@ -1,0 +1,11 @@
+--- lib/libdvd/libdvdcss/CMakeLists.txt.orig	2014-08-07 20:16:17.879526000 +0800
++++ lib/libdvd/libdvdcss/CMakeLists.txt	2014-08-07 20:17:08.252521581 +0800
+@@ -35,6 +35,8 @@
+     install(TARGETS dvdcss-${ARCH} DESTINATION ${RESOURCEPATH}/system/players/dvdplayer COMPONENT RUNTIME)
+   elseif(TARGET_COMMON_LINUX)
+     install(TARGETS dvdcss-${ARCH} DESTINATION ${BINPATH}/system/players/dvdplayer COMPONENT RUNTIME)
++  elseif(TARGET_FREEBSD)
++    install(TARGETS dvdcss-${ARCH} DESTINATION ${LIBPATH}/system/players/dvdplayer COMPONENT RUNTIME)
+   elseif(TARGET_WIN32)
+     install(TARGETS dvdcss RUNTIME DESTINATION ${RESOURCEPATH}/system/players/dvdplayer LIBRARY DESTINATION ${RESOURCEPATH}/system COMPONENT RUNTIME)
+   endif(TARGET_COMMON_DARWIN)

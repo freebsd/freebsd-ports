@@ -86,16 +86,14 @@ USE_APACHE_RUN=	22+
 
 PLIST_SUB+=	VER_CKEDITOR="4.3" OTRS_USER=${USERS} WWWOWN=${WWWOWN}
 
+PGSQL_RUN_DEPENDS+=	p5-DBD-Pg>=0:${PORTSDIR}/databases/p5-DBD-Pg
+PGSQL_USES=		pgsql
+
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MMYSQL}
 RUN_DEPENDS+=	p5-DBD-mysql>=0:${PORTSDIR}/databases/p5-DBD-mysql
 USE_MYSQL=	yes
-.endif
-
-.if ${PORT_OPTIONS:MPGSQL}
-RUN_DEPENDS+=	p5-DBD-Pg>=0:${PORTSDIR}/databases/p5-DBD-Pg
-USE_PGSQL=	yes
 .endif
 
 RUN_DEPENDS+=	${APACHE_PKGNAMEPREFIX}mod_perl2>=2.0.5:${PORTSDIR}/www/mod_perl2 \

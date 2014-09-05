@@ -13,18 +13,18 @@ COMMENT=	On-screen-display notification agent using libnotify
 
 LICENSE=	GPLv3
 
-CONFLICTS=	xfce4-notification-daemon-[0-9]*
-
 LIB_DEPENDS=	libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib \
 		libnotify.so:${PORTSDIR}/devel/libnotify
 RUN_DEPENDS=	dbus-daemon:${PORTSDIR}/devel/dbus
 
+CONFLICTS=	xfce4-notification-daemon-[0-9]*
+
 GNU_CONFIGURE=	yes
 USES=		gmake libtool pkgconfig
 USE_GNOME=	libwnck gconf2
-USE_XORG=	pixman
+USE_XORG=	pixman x11
 
-LDFLAGS+=	-L${LOCALBASE}/lib -lpixman-1
+LIBS+=		-L${LOCALBASE}/lib -lpixman-1 -lX11
 
 .include <bsd.port.options.mk>
 

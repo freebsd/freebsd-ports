@@ -23,6 +23,9 @@ EXAMPLES=	examples/*.rb
 
 OPTIONS_DEFINE=	DOCS
 
+DEPRECATED=	RubyForge shutdown May 15 2014
+EXPIRATION_DATE=	2014-09-20
+
 post-patch:
 	${REINPLACE_CMD} -E -e "s,RSTRING\(([^)]+)\)->ptr,RSTRING_PTR(\1),g" ${WRKSRC}/freedb_cdrom.c
 

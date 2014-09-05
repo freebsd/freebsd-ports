@@ -22,9 +22,7 @@ MAKE_ARGS=	CC="${CC}" \
 		CFLAGS="${CFLAGS}" \
 		INCDIR="`pkg-config --cflags gtk+-2.0` -I${LOCALBASE}/include" \
 		LIBDIR="" \
-		LIBS="-lical -lXpm"
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+		LIBS="-lical -lX11 -lXext -lXpm -lm"
 
 PLIST_FILES=	bin/wmCalendar man/man1/wmCalendar.1.gz
 

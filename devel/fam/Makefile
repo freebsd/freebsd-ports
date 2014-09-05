@@ -3,7 +3,7 @@
 
 PORTNAME=	fam
 PORTVERSION=	2.6.10
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	devel
 MASTER_SITES=	ftp://oss.sgi.com/projects/fam/download/
 DIST_SUBDIR=	${PORTNAME}
@@ -13,11 +13,11 @@ COMMENT=	File alteration monitor
 
 CFLAGS+=	-Wno-deprecated
 
-USES=		gmake
-USE_AUTOTOOLS=	aclocal automake autoconf libtool
-AUTOMAKE_ARGS=	-c -a
+USES=		gmake libtool
+USE_AUTOTOOLS=	libtoolize aclocal autoconf autoheader automake
+AUTOMAKE_ARGS=	-a -c -f
 USE_LDCONFIG=	yes
-ACLOCAL_ARGS=	-I "${ACLOCAL_DIR}" -I ${LOCALBASE}/share/aclocal
+INSTALL_TARGET=	install-strip
 SUB_FILES=	pkg-message
 
 #CONFLICTS_INSTALL=	gamin-[0-9]*
@@ -31,8 +31,5 @@ pre-configure:
 	${SED} -e s/util// -e /SUBDIRS/q \
 		<${WRKSRC}/Makefile.am.orig >${WRKSRC}/Makefile.am
 	${CP} ${FILESDIR}/mntent* ${WRKSRC}/fam
-
-post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libfam.so.0
 
 .include <bsd.port.mk>

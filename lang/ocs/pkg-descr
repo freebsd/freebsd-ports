@@ -1,9 +1,0 @@
-The OPAL compilation system (OCS) is a set of development tools for
-creating software using the algebraic programming language OPAL. The
-package includes a native compiler and an interpreter. 
-
-OPAL is mainly developed at the Technical University of Berlin since
-1986 and it is used for research and evaluation of language concepts,
-algorithms and programming techniques.
-
-WWW: http://user.cs.tu-berlin.de/~opal/

@@ -1,10 +1,20 @@
+@mode 440
+@sample %%ETCDIR%%/pandora_server.conf.sample
+@mode 555
 bin/pandora_exec
 bin/pandora_server
 %%TENTACLE%%bin/tentacle_server
-@unexec if cmp -s %D/%%ETCDIR%%/pandora_server.conf.sample %D/%%ETCDIR%%/pandora_server.conf;then rm -f %D/%%ETCDIR%%/pandora_server.conf;fi
-%%ETCDIR%%/pandora_server.conf.sample
-@exec [ -e %D/%F ] || cp -p %D/%F %B/pandora_server.conf
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/PandoraFMS/.packlist
+etc/rc.d/pandora_server
+etc/rc.d/tentacle_server
+@mode
+%%PERL5_MAN3%%/PandoraFMS::Core.3.gz
+%%PERL5_MAN3%%/PandoraFMS::GIS.3.gz
+%%PERL5_MAN3%%/PandoraFMS::GeoIP.3.gz
+%%PERL5_MAN3%%/PandoraFMS::NmapParser.3.gz
+%%PERL5_MAN3%%/PandoraFMS::Sendmail.3.gz
+%%PERL5_MAN3%%/PandoraFMS::Tools.3.gz
+%%PERL5_MAN3%%/PandoraFMS::Traceroute.3.gz
+%%PERL5_MAN3%%/PandoraFMS::Traceroute::PurePerl.3.gz
 %%SITE_PERL%%/PandoraFMS/Config.pm
 %%SITE_PERL%%/PandoraFMS/Core.pm
 %%SITE_PERL%%/PandoraFMS/DB.pm
@@ -24,6 +34,9 @@ bin/pandora_server
 %%SITE_PERL%%/PandoraFMS/Traceroute.pm
 %%SITE_PERL%%/PandoraFMS/Traceroute/PurePerl.pm
 %%SITE_PERL%%/PandoraFMS/WMIServer.pm
+%%SITE_PERL%%/mach/auto/PandoraFMS/.packlist
+man/man1/pandora_server.1.gz
+man/man1/tentacle_server.1.gz
 %%DATADIR%%/util/alert_multicast.pl
 %%DATADIR%%/util/change_remoteconfig.pl
 %%DATADIR%%/util/compaq_chassis_trap_manager.pl
@@ -42,26 +55,40 @@ bin/pandora_server
 %%DATADIR%%/util/pandora_DBI_test.pl
 %%DATADIR%%/util/pandora_backup.sh
 %%DATADIR%%/util/pandora_count.sh
+%%DATADIR%%/util/pandora_csvbridge.pl
+%%DATADIR%%/util/pandora_database_check.pl
 %%DATADIR%%/util/pandora_db.pl
 %%DATADIR%%/util/pandora_dbstress.README
 %%DATADIR%%/util/pandora_dbstress.pl
 %%DATADIR%%/util/pandora_diagnostic.sh
 %%DATADIR%%/util/pandora_logrotate
 %%DATADIR%%/util/pandora_manage.pl
+%%DATADIR%%/util/pandora_migrate_plugins.pl
+%%DATADIR%%/util/pandora_migrate_recon_scripts.pl
 %%DATADIR%%/util/pandora_recode_db.pl
 %%DATADIR%%/util/pandora_remote_agent.sh
+%%DATADIR%%/util/pandora_revent.pl
+%%DATADIR%%/util/pandora_revent_create.pl
 %%DATADIR%%/util/pandora_server
 %%DATADIR%%/util/pandora_snmp.README
+%%DATADIR%%/util/pandora_snmp.sh
 %%DATADIR%%/util/pandora_sync_db.pl
+%%DATADIR%%/util/pandora_watchdog.sh
 %%DATADIR%%/util/pandora_xml_stress.README
+%%DATADIR%%/util/pandora_xml_stress.agents
 %%DATADIR%%/util/pandora_xml_stress.conf
 %%DATADIR%%/util/pandora_xml_stress.pl
+%%DATADIR%%/util/pandora_xml_stress_module_source.txt
+%%DATADIR%%/util/plugin/EU_10yrspread.pl
+%%DATADIR%%/util/plugin/SMTP_check.pl
 %%DATADIR%%/util/plugin/babel_plugin/README
 %%DATADIR%%/util/plugin/babel_plugin/babel_plugin.sh
 %%DATADIR%%/util/plugin/babel_plugin/plugin_definition.ini
 %%DATADIR%%/util/plugin/bgp_plugin.pl
 %%DATADIR%%/util/plugin/create_integria_incident.sh
 %%DATADIR%%/util/plugin/dns_plugin.sh
+%%DATADIR%%/util/plugin/dummy_plugin.pl
+%%DATADIR%%/util/plugin/iface_bandwith.pl
 %%DATADIR%%/util/plugin/integria_plugin/README
 %%DATADIR%%/util/plugin/integria_plugin/integria_plugin.sh
 %%DATADIR%%/util/plugin/integria_plugin/plugin_definition.ini
@@ -74,15 +101,17 @@ bin/pandora_server
 %%DATADIR%%/util/plugin/pandora_loadgen.pl
 %%DATADIR%%/util/plugin/pandora_server_status.pl
 %%DATADIR%%/util/plugin/snmp_process.pl
+%%DATADIR%%/util/plugin/snmp_remote.pl
 %%DATADIR%%/util/plugin/ssh_pandoraplugin.sh
 %%DATADIR%%/util/plugin/udp_nmap_plugin.sh
 %%DATADIR%%/util/plugin/webcheck_plugin.sh
-%%DATADIR%%/util/recon_scripts/snmpdevices.pl
 %%DATADIR%%/util/recon_scripts/ipmi-recon.pl
+%%DATADIR%%/util/recon_scripts/snmp-recon.pl
+%%DATADIR%%/util/recon_scripts/wmi-recon.pl
 %%DATADIR%%/util/tentacle_serverd
+%%DATADIR%%/util/trap_rate.sh
 %%DATADIR%%/util/udp_client.pl
 %%DATADIR%%/util/windows.README
-etc/periodic/daily/199.clean-pandoradb
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/PandoraFMS
 @dirrm %%SITE_PERL%%/PandoraFMS/Traceroute
 @dirrmtry %%SITE_PERL%%/PandoraFMS
@@ -93,5 +122,4 @@ etc/periodic/daily/199.clean-pandoradb
 @dirrmtry %%DATADIR%%/util/recon_scripts
 @dirrmtry %%DATADIR%%/util
 @dirrmtry %%DATADIR%%
-@dirrmtry %%PREFIX%%/etc/periodic/daily
-@dirrmtry %%PREFIX%%/etc/periodic
+@dirrmtry %%ETCDIR%%

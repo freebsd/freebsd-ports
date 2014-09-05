@@ -218,7 +218,3 @@
 %%PORTDOCS%%share/doc/ocaml/gsl/api/type_Wavelet.html
 @dirrmtry share/doc/ocaml/gsl/api
 @dirrmtry share/doc/ocaml/gsl
-@dirrmtry share/doc/ocaml
-@dirrmtry %%OCAML_SITELIBDIR%%/gsl
-@dirrmtry %%OCAML_SITELIBDIR%%
-@dirrmtry lib/ocaml

@@ -1,38 +1,57 @@
 bin/rpcalc
+@comment %%DOCSDIR%%/INSTALL
+@comment %%DOCSDIR%%/LICENSE
+%%DOCSDIR%%/README.html
 share/icons/rpcalc/calc_lg.png
 share/icons/rpcalc/calc_sm.png
-@dirrm share/icons/rpcalc
-@dirrmtry share/icons
-share/doc/rpcalc/LICENSE
-share/doc/rpcalc/README.html
-share/doc/rpcalc/INSTALL
-@dirrm share/doc/rpcalc
-lib/rpcalc/extradisplay.py
-lib/rpcalc/calcbutton.py
-lib/rpcalc/optiondefaults.py
-lib/rpcalc/altbasedialog.py
-lib/rpcalc/icons.py
-lib/rpcalc/calcstack.py
-lib/rpcalc/calccore.py
-lib/rpcalc/option.py
-lib/rpcalc/helpview.py
-lib/rpcalc/setup.py
-lib/rpcalc/calcdlg.py
-lib/rpcalc/calclcd.py
-lib/rpcalc/rpcalc.py
-lib/rpcalc/optiondlg.py
-lib/rpcalc/altbasedialog.pyc
-lib/rpcalc/calcbutton.pyc
-lib/rpcalc/calccore.pyc
-lib/rpcalc/calcdlg.pyc
-lib/rpcalc/calclcd.pyc
-lib/rpcalc/calcstack.pyc
-lib/rpcalc/extradisplay.pyc
-lib/rpcalc/helpview.pyc
-lib/rpcalc/icons.pyc
-lib/rpcalc/option.pyc
-lib/rpcalc/optiondefaults.pyc
-lib/rpcalc/optiondlg.pyc
-lib/rpcalc/rpcalc.pyc
-lib/rpcalc/setup.pyc
-@dirrm lib/rpcalc
+share/icons/rpcalc/helpback.png
+share/icons/rpcalc/helpforward.png
+share/icons/rpcalc/helphome.png
+share/icons/rpcalc/helpnext.png
+share/icons/rpcalc/helpprevious.png
+%%DATADIR%%/__pycache__/altbasedialog.cpython-%%PYTHON_SUFFIX%%.pyc
+%%DATADIR%%/__pycache__/altbasedialog.cpython-%%PYTHON_SUFFIX%%.pyo
+%%DATADIR%%/__pycache__/calcbutton.cpython-%%PYTHON_SUFFIX%%.pyc
+%%DATADIR%%/__pycache__/calcbutton.cpython-%%PYTHON_SUFFIX%%.pyo
+%%DATADIR%%/__pycache__/calccore.cpython-%%PYTHON_SUFFIX%%.pyc
+%%DATADIR%%/__pycache__/calccore.cpython-%%PYTHON_SUFFIX%%.pyo
+%%DATADIR%%/__pycache__/calcdlg.cpython-%%PYTHON_SUFFIX%%.pyc
+%%DATADIR%%/__pycache__/calcdlg.cpython-%%PYTHON_SUFFIX%%.pyo
+%%DATADIR%%/__pycache__/calclcd.cpython-%%PYTHON_SUFFIX%%.pyc
+%%DATADIR%%/__pycache__/calclcd.cpython-%%PYTHON_SUFFIX%%.pyo
+%%DATADIR%%/__pycache__/calcstack.cpython-%%PYTHON_SUFFIX%%.pyc
+%%DATADIR%%/__pycache__/calcstack.cpython-%%PYTHON_SUFFIX%%.pyo
+%%DATADIR%%/__pycache__/extradisplay.cpython-%%PYTHON_SUFFIX%%.pyc
+%%DATADIR%%/__pycache__/extradisplay.cpython-%%PYTHON_SUFFIX%%.pyo
+%%DATADIR%%/__pycache__/helpview.cpython-%%PYTHON_SUFFIX%%.pyc
+%%DATADIR%%/__pycache__/helpview.cpython-%%PYTHON_SUFFIX%%.pyo
+%%DATADIR%%/__pycache__/icondict.cpython-%%PYTHON_SUFFIX%%.pyc
+%%DATADIR%%/__pycache__/icondict.cpython-%%PYTHON_SUFFIX%%.pyo
+%%DATADIR%%/__pycache__/option.cpython-%%PYTHON_SUFFIX%%.pyc
+%%DATADIR%%/__pycache__/option.cpython-%%PYTHON_SUFFIX%%.pyo
+%%DATADIR%%/__pycache__/optiondefaults.cpython-%%PYTHON_SUFFIX%%.pyc
+%%DATADIR%%/__pycache__/optiondefaults.cpython-%%PYTHON_SUFFIX%%.pyo
+%%DATADIR%%/__pycache__/optiondlg.cpython-%%PYTHON_SUFFIX%%.pyc
+%%DATADIR%%/__pycache__/optiondlg.cpython-%%PYTHON_SUFFIX%%.pyo
+%%DATADIR%%/__pycache__/rpcalc.cpython-%%PYTHON_SUFFIX%%.pyc
+%%DATADIR%%/__pycache__/rpcalc.cpython-%%PYTHON_SUFFIX%%.pyo
+%%DATADIR%%/__pycache__/setup.cpython-%%PYTHON_SUFFIX%%.pyc
+%%DATADIR%%/__pycache__/setup.cpython-%%PYTHON_SUFFIX%%.pyo
+%%DATADIR%%/altbasedialog.py
+%%DATADIR%%/calcbutton.py
+%%DATADIR%%/calccore.py
+%%DATADIR%%/calcdlg.py
+%%DATADIR%%/calclcd.py
+%%DATADIR%%/calcstack.py
+%%DATADIR%%/extradisplay.py
+%%DATADIR%%/helpview.py
+%%DATADIR%%/icondict.py
+%%DATADIR%%/option.py
+%%DATADIR%%/optiondefaults.py
+%%DATADIR%%/optiondlg.py
+%%DATADIR%%/rpcalc.py
+%%DATADIR%%/setup.py
+@dirrmtry %%DOCSDIR%%
+@dirrmtry share/icons/rpcalc
+@dirrmtry %%DATADIR%%/__pycache__
+@dirrmtry %%DATADIR%%

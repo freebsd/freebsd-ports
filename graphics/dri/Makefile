@@ -61,7 +61,7 @@ PLIST_SUB+=	GALLIUM="@comment "
 . if ${ARCH} == powerpc || ${ARCH} == powerpc64
 DRI_DRIVERS=	RADEON SWRAST
 . endif
-. if ${ARCH} == sparc64
+. if ${ARCH} == sparc64 || ${ARCH} == armv6
 DRI_DRIVERS=	SWRAST
 . endif
 .else # !defined(WITH_NEW_XORG)

@@ -1,7 +1,0 @@
-bin/coco
-bin/m2ps
-bin/any2ps
-share/coco/CODINGS
-share/coco/CHARSETS
-share/coco/m2ps.ps
-@dirrm share/coco

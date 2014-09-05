@@ -1,0 +1,5 @@
+%%ETCDIR%%/doinkd.cf.template
+man/man5/doinkd.cf.5.gz
+man/man8/doinkd.8.gz
+sbin/doinkd
+@dirrm %%ETCDIR%%

@@ -20,7 +20,7 @@ USE_GL=		gl
 USE_PYTHON=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include
-LIBS+=		-L${LOCALBASE}/lib -lcompat
+LIBS+=		-L${LOCALBASE}/lib -lcompat -lm
 
 PLIST_FILES=	bin/${PORTNAME}
 PORTDATA=	*

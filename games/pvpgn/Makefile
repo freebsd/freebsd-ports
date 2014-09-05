@@ -38,16 +38,11 @@ CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc/pvpgn \
 
 USE_RC_SUBR=	bnetd
 
-MAN1=		bnbot.1 bnchat.1 bnetd.1 bnftp.1 bni2tga.1 bnibuild.1 \
-		bniextract.1 bnilist.1 bnpass.1 bnstat.1 bntrackd.1 tgainfo.1
-MAN5=		bnetd.conf.5 bntext.5
-
 OPTIONS_DEFINE=	MYSQL PGSQL SQLITE3 D2
 D2_DESC=	Diablo II server (D2CS/D2DBS)
 
 OPTIONS_DEFAULT=	D2
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MMYSQL}
@@ -91,18 +86,16 @@ post-install:
 	bnserver-D2XP.ini bnserver-WAR3.ini bnserver.ini icons-WAR3.bni \
 	icons.bni icons_STAR.bni ver-ix86-1.mpq
 
-	${INSTALL_DATA} ${WRKSRC}/${SUPPORT_FILES}/${i} ${DATADIR}/files
+	${INSTALL_DATA} ${WRKSRC}/${SUPPORT_FILES}/${i} ${STAGEDIR}${DATADIR}/files
 .endfor
 
 ## Additional documentation
 
 .if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for i in INSTALL.unix PORTS README.fdwatch README.storage bnmotd.txt
-	${INSTALL_MAN} ${WRKSRC}/../docs/${i} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/../docs/${i} ${STAGEDIR}${DOCSDIR}
 .endfor
 .endif
-
-	@${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
 .include <bsd.port.mk>

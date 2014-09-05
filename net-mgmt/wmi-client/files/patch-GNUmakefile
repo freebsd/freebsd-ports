@@ -1,5 +1,5 @@
---- GNUmakefile.orig	2011-12-23 13:58:36.000000000 +0000
-+++ GNUmakefile	2012-04-13 04:10:44.000000000 +0000
+--- GNUmakefile.orig	2011-12-23 22:58:36.000000000 +0900
++++ GNUmakefile	2014-08-21 13:05:52.000000000 +0900
 @@ -36,7 +36,7 @@
  # Install dir for libasync_wmi_lib.so.* and pysamba wrapper code.
  # e.g., Samba/source/bin/shared/libasync_wmi_lib.so.0.0.1 --> $(PY_LIBDIR)
@@ -18,12 +18,28 @@
  endif
  
  ifneq ($(USE_BREAKPAD),)
-@@ -158,7 +158,7 @@
+@@ -124,7 +124,7 @@
+ endif
+ 	@touch $@
+ 
+-install-prereqs:
++install-prereqs: $(DESTDIR)$(PY_LIBDIR)
+ 	@echo
+ 	@echo "Checking prequisites for installing WMI"
+ 	$(call check,directory,$(ZENHOME),"ZENHOME")
+@@ -157,12 +157,12 @@
  $(SAMBA_SRCDIR)/Makefile: $(SAMBA_SRCDIR)/autogen.sh
  	cd $(SAMBA_SRCDIR) ;\
  	./autogen.sh ;\
 -	CPPFLAGS="$(WMI_CPPFLAGS)" ./configure --without-readline --enable-debug
-+	CPPFLAGS="$(WMI_CPPFLAGS)" ./configure --without-readline --enable-debug --disable-gnutls
++	CPPFLAGS="$(WMI_CPPFLAGS)" SMB_GNUTLS=NO ./configure --prefix=$(PREFIX) --without-readline
  
  ifeq ($(USE_BREAKPAD),)
- pywmi-build: build-prereqs $(LIBRPC_CONFIG_MK) $(SAMBA_SRCDIR)/Makefile
+-pywmi-build: build-prereqs $(LIBRPC_CONFIG_MK) $(SAMBA_SRCDIR)/Makefile
++pywmi-build: $(LIBRPC_CONFIG_MK) $(SAMBA_SRCDIR)/Makefile
+ else
+-pywmi-build: build-prereqs $(LIBRPC_CONFIG_MK) $(SAMBA_SRCDIR)/Makefile $(breakpad_LIB_SYMLINK)
++pywmi-build: $(LIBRPC_CONFIG_MK) $(SAMBA_SRCDIR)/Makefile $(breakpad_LIB_SYMLINK)
+ endif
+ 	cd $(SAMBA_SRCDIR);\
+ 	$(MAKE) $(WMI_BUILD_TARGETS) ;\

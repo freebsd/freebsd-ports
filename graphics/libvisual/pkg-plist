@@ -30,9 +30,8 @@ include/libvisual/lv_types.h
 include/libvisual/lv_ui.h
 include/libvisual/lv_video.h
 include/libvisual/lvconfig.h
-lib/libvisual.a
-lib/libvisual.la
 lib/libvisual.so
 lib/libvisual.so.0
+lib/libvisual.so.0.0.0
 libdata/pkgconfig/libvisual.pc
 @dirrm include/libvisual

@@ -3,7 +3,7 @@
 
 PORTNAME=	libffi
 PORTVERSION=	3.0.13
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	SOURCEWARE
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -15,7 +15,7 @@ LICENSE=	MIT
 
 TEST_DEPENDS=	runtest:${PORTSDIR}/misc/dejagnu
 
-USES=		pathfix
+USES=		libtool pathfix
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 
@@ -39,6 +39,6 @@ post-install:
 	    ${STAGEDIR}${PREFIX}/include/
 
 regression-test: build
-	@cd ${WRKSRC} && ${MAKE} check
+	@(cd ${WRKSRC} && ${MAKE_CMD} check)
 
 .include <bsd.port.mk>

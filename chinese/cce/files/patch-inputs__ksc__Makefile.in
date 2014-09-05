@@ -1,0 +1,26 @@
+--- inputs/ksc/Makefile.in.orig	2004-02-14 13:17:24.000000000 +0900
++++ inputs/ksc/Makefile.in	2014-08-25 17:23:10.000000000 +0900
+@@ -147,7 +147,7 @@
+ target_vendor = @target_vendor@
+ CIN2TAB = ../utils/cin2tab$(EXEEXT)
+ KSCLX = ksc.lx
+-CCE_SHARE_DIR = $(DESTDIR)$(datadir)
++CCE_SHARE_DIR = $(datadir)
+ 
+ # You may add your favorite input method here
+ #
+@@ -338,10 +338,10 @@
+ 	-rm -f core core.* *.lx *.tab
+ 
+ allinstall: $(CIN2TAB) $(KSCLX)
+-	$(mkinstalldirs) $(CCE_SHARE_DIR)/cce
+-	$(mkinstalldirs) $(CCE_SHARE_DIR)/cce/ksc
+-	$(INSTALL_DATA) $(srcdir)/*.tab $(CCE_SHARE_DIR)/cce/ksc
+-	$(INSTALL_DATA) $(srcdir)/*.lx $(CCE_SHARE_DIR)/cce/ksc
++	$(mkinstalldirs) $(DESTDIR)$(CCE_SHARE_DIR)/cce
++	$(mkinstalldirs) $(DESTDIR)$(CCE_SHARE_DIR)/cce/ksc
++	$(INSTALL_DATA) $(srcdir)/*.tab $(DESTDIR)$(CCE_SHARE_DIR)/cce/ksc
++	$(INSTALL_DATA) $(srcdir)/*.lx $(DESTDIR)$(CCE_SHARE_DIR)/cce/ksc
+ 
+ #%.tab: %.cin $(CIN2TAB)
+ .cin.tab: $(CIN2TAB)

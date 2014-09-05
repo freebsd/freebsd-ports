@@ -1,0 +1,436 @@
+#!/bin/sh -f
+#
+# Copyright (c) 2009
+# Dominic Fandrey <kamikaze@bsdforen.de>
+#
+# Redistribution and use in source and binary forms, with or without
+# modification, are permitted provided that the following conditions
+# are met:
+# 1. Redistributions of source code must retain the above copyright
+#    notice, this list of conditions and the following disclaimer.
+#
+# THIS SOFTWARE IS PROVIDED BY THE AUTHOR ``AS IS'' AND ANY EXPRESS OR
+# IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES
+# OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.
+# IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY DIRECT, INDIRECT,
+# INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT
+# NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+# DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+# THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+# (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
+# THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+#
+
+readonly version=1.1.1
+readonly name=uma
+
+# Return value.
+errno=0
+# Allow things to fail properly by ignoring SIGINT in the main process.
+trap '' int
+
+# Used to activate verbose output.
+verbose=
+# Will be set if files are locally available.
+local=
+
+vardir="%%VAR%%"
+lock="$vardir/run/$name.lock"
+lockpid="$vardir/run/$name.pid"
+identpid="$vardir/run/$name.ident.pid"
+conf="%%PREFIX%%/etc/$name.conf"
+
+# Use line breaks as a delimiter.
+IFS='
+'
+# Timezone UTC for age comparisons.
+export TZ=UTC
+
+# The bit position of errors.
+readonly ERR_LOCK=0
+readonly ERR_ARG=1
+readonly ERR_FETCH_PORTS=2
+readonly ERR_FETCH_VULNDB=3
+readonly ERR_FETCH_INDEX=4
+readonly ERR_EXTRACT_PORTS=5
+readonly ERR_UPDATE_PORTS=6
+
+#
+# Get environment variables.
+#
+
+# Load the configuration file if present.
+if [ -e "$conf" ]; then
+	. "$conf"
+fi
+
+# Local index location.
+: ${PKG_INDEX="$vardir/db/uma/FTPINDEX"}
+: ${FTP_TIMEOUT=60}
+
+# Logic from src/usr.sbin/pkg_install/add/main.c, plus the possibility to
+# override the architecture with ARCH.
+: ${PACKAGEROOT="ftp://ftp.freebsd.org"}
+: ${ARCH="$(uname -m)"}
+branch="$(uname -r | tr '[:upper:]' '[:lower:]')"
+number="${branch%%.*}"
+branch="${branch##*-}"
+case "$branch" in
+	release)
+		branch=$number-$branch
+	;;
+	stable|current)
+		branch=${number%%.*}-$branch
+	;;
+	*)
+		# Fallback to stable for prerelease and the like.
+		branch=${number%%.*}-stable
+	;;
+esac
+: ${BRANCH=$branch}
+: ${PACKAGESITE="$PACKAGEROOT/pub/FreeBSD/ports/$ARCH/packages-$BRANCH/Latest"}
+packagetree="${PACKAGESITE%/*?}"
+ftp="${PACKAGESITE#*://}"
+ftp="${ftp%%/*}"
+
+#
+# Generate PACKAGESITE_MIRRORS if only PACKAGEROOT_MIRRORS are given.
+# Note that PACKAGEROOT_MIRRORS and PACKAGESITE_MIRRORS are supposed to be
+# a ";" or line feed separated list. Semicolons will be converted to line
+# feeds in any case.
+#
+
+# Set PACKAGEROOT_MIRRORS if not set.
+if [ -z "$PACKAGEROOT_MIRRORS" ]; then
+	PACKAGEROOT_MIRRORS=
+	for i in $(jot 14); {
+		PACKAGEROOT_MIRRORS="${PACKAGEROOT_MIRRORS:+$PACKAGEROOT_MIRRORS$IFS}ftp://ftp$i.FreeBSD.org"
+	}
+fi
+
+# Convert semicolon in PACKAGEROOT_MIRRORS.
+PACKAGEROOT_MIRRORS="$(echo "$PACKAGEROOT_MIRRORS" | sed "s/;/\\$IFS/g")"
+# Build PACKAGESITE_MIRRORS.
+if [ -z "${PACKAGESITE_MIRRORS}" ]; then
+	PACKAGESITE_MIRRORS=
+	for MIRROR in $PACKAGEROOT_MIRRORS; {
+		PACKAGESITE_MIRRORS="${PACKAGESITE_MIRRORS:+$PACKAGESITE_MIRRORS$IFS}$MIRROR/pub/FreeBSD/ports/$ARCH/packages-$BRANCH/Latest"
+	}
+fi
+# Convert semicolon in PACKAGESITE_MIRRORS.
+PACKAGESITE_MIRRORS="$(echo "$PACKAGESITE_MIRRORS" | sed "s/;/\\$IFS/g")"
+
+# Remove duplicates.
+PACKAGEROOT_MIRRORS="$(echo "$PACKAGEROOT_MIRRORS" | sort -u)"
+PACKAGESITE_MIRRORS="$(echo "$PACKAGESITE_MIRRORS" | sort -u)"
+
+# Determine portsdir
+portsdir=$(make -V PORTSDIR -f /usr/share/mk/bsd.port.mk 2> /dev/null)
+portsdir="${portsdir:-%%PORTS%%}"
+
+export ARCH BRANCH PKG_INDEX FTP_TIMEOUT PACKAGEROOT PACKAGESITE
+export PACKAGEROOT_MIRRORS PACKAGESITE_MIRRORS
+
+#
+# This function is called by a trap when the script exits in verbose mode.
+# It reads errno to construct error messages.
+#
+# @param errno
+#	The exit status of the script.
+#
+verbose() {
+	if [ $(($errno >> $ERR_LOCK & 1)) -eq 1 ]; then
+		echo "ERROR($((1 << $ERR_LOCK))): Lock owned by someone else."
+	fi
+	if [ $(($errno >> $ERR_ARG & 1)) -eq 1 ]; then
+		echo "ERROR($((1 << $ERR_ARG))): An unknown parameter was supplied."
+	fi
+	if [ $(($errno >> $ERR_FETCH_PORTS & 1)) -eq 1 ]; then
+		echo "ERROR($((1 << $ERR_FETCH_PORTS))): Fetching the ports tree failed."
+	fi
+	if [ $(($errno >> $ERR_FETCH_VULNDB & 1)) -eq 1 ]; then
+		echo "ERROR($((1 << $ERR_FETCH_VULNDB))): Fetching security database failed."
+	fi
+	if [ $(($errno >> $ERR_FETCH_INDEX & 1)) -eq 1 ]; then
+		echo "ERROR($((1 << $ERR_FETCH_INDEX))): Fetching remote INDEX failed."
+	fi
+	if [ $(($errno >> $ERR_EXTRACT_PORTS & 1)) -eq 1 ]; then
+		echo "ERROR($((1 << $ERR_EXTRACT_PORTS))): Extracting the ports tree failed."
+	fi
+	if [ $(($errno >> $ERR_UPDATE_PORTS & 1)) -eq 1 ]; then
+		echo "ERROR($((1 << $ERR_UPDATE_PORTS))): Updating the ports tree failed."
+	fi
+}
+
+#
+# This function spawns a process that takes over a lock.
+#
+# @param pid
+#	The PID of the process that requested the lock.
+# @param lock
+#	The location of the lock file.
+# @param lockpid
+#	The location of the PID file for the lock holding process.
+#
+secureLock() {
+	lockf "$lock" sh -c "
+		trap 'exit 0' term
+		echo '$pid' > '$lock'
+		echo \"\$\$\" > '$lockpid'
+		trap 'rm \"$lockpid\"; exit 0' EXIT
+		while kill -0 '$pid' 2> /dev/null; do
+			sleep 2
+		done
+	" 2> /dev/null &
+}
+
+#
+# Checks whether the currently requesting process holds the lock.
+#
+# @param pid
+#	The PID of the process that requested the lock.
+# @param lock
+#	The location of the lock file.
+# @return
+#	Returns 0 if the lock is held for the requesting process or 1
+#	if the lock is missing or owned by another process.
+#
+hasLock() {
+	test "$pid" -eq "$(cat "$lock" 2> /dev/null)" 2> /dev/null
+	return $?
+}
+
+#
+# Creates a lock for the requesting process.
+# 
+# @param pid
+#	The PID of the process that requested the lock.
+# @param lock
+#	The location of the lock file.
+# @param lockpid
+#	The location of the PID file for the lock holding process.
+# @param portsdir
+#	The location of the FreeBSD ports tree.
+# @return
+#	Returns 0 on success, 1 on failure.
+#
+lock() {
+	local location
+
+	# The requestor already holds the lock.
+	hasLock && return 0
+
+	# The process requesting the lock does not exist.
+	kill -0 "$pid" 2> /dev/null || return 1 $(errno=1)
+
+	# Follow symlinks
+	location="$(pwd)"
+	if cd "$portsdir" && portsdir="$(pwd -P)"; then
+		# Portsdir exists, so we can test for make activity. This
+		# does not cover all cases, but it covers a lot.
+		if fstat "$portsdir" | awk '{print $2}' | grep -q make; then
+			errno=1
+			return 1
+		fi
+	fi
+	cd "$location"
+
+	# Try acquiring the lock.
+	lockf -st 0 "$lock" "$0" secure $pid 2> /dev/null || return 1 $(errno=1)
+	# Wait until the locking process is properly set up.
+	while ! [ -e "$lockpid" -a -e "$lock" ]; do
+		sleep 0.1
+	done
+	return 0
+}
+
+#
+# Frees a lock unless it is held for another process than the requestor.
+# 
+# @param lock
+#	The location of the lock file.
+# @param lockpid
+#	The location of the PID file for the lock holding process.
+# @return
+#	Returns 0 on success, 1 on failure.
+#
+unlock() {
+	if hasLock; then
+		# Free the lock.
+		kill -TERM "$(cat "$lockpid")"
+		# Wait for the locking process to clean up.
+		while [ -e "$lockpid" -o -e "$lock" ]; do
+			sleep 0.1
+		done
+		return 0
+	else
+		errno=1
+		return 1
+	fi
+}
+
+#
+# Prints the command and available parameters.
+#
+# @param name
+#	The name of the script.
+# @param version
+#	The version of the script.
+#
+printHelp() {
+	echo "$name v$version
+usage:
+	$name [-hv] [pid] [fetch] [extract] [update] [...]
+	$name [-hv] [pid] fetch [ports] [audit] [ftpindex]
+	$name [-hv] [pid] extract [ports]
+	$name [-hv] [pid] update [ports]
+	$name [-hv] lock [pid]
+	$name [-hv] unlock [pid]"
+}
+
+#
+# Reads the parameters and creates variables that indicates the presence
+# of these parameters.
+#
+# The last numeric value is treated as the requestor PID. It also deals
+#
+# @param @
+#	All parameters to process.
+# @param verbose
+#	Set to 1 if verbose mode is activated.
+# @param cmd_*
+#	Set by this function to indicate the presence of a parameter.
+#
+readParams() {
+	local flag
+	for flag; {
+		# A numerical parameter is the PID.
+		if [ "$flag" -eq  "$flag" ] 2> /dev/null; then
+			pid="${flag}"
+			continue
+		fi
+	
+		# Activate verbose mode for -v.
+		case "$flag" in
+			-v | --verbose)
+				trap 'verbose 1>&2' EXIT
+				verbose=1
+				continue
+			;;
+			-h | --help)
+				printHelp
+				continue
+			;;
+			-? | --*)
+				errno=$((1 << $ERR_ARG))
+				exit $errno
+			;;
+			-*)
+				# Split parameters.
+				readParams "${flag%${flag#-?}}" "-${flag#-?}"
+				continue
+			;;
+		esac
+
+		# If the variable is not predefined, the command is unknown.
+		if eval "test -n \"\${cmd_$flag=1}\""; then
+			errno=$((1 << $ERR_ARG))
+			exit $errno
+		fi
+		setvar "cmd_$flag" 1
+	}
+}
+
+pid="$$"
+cmd_lock=
+cmd_unlock=
+cmd_secure=
+cmd_env=
+cmd_fetch=
+cmd_extract=
+cmd_update=
+cmd_ports=
+cmd_audit=
+cmd_ftpindex=
+readParams "$@"
+
+#
+# Exclusive commands that will cause all others to be ignored, in order
+# of priority.
+#
+
+if [ -n "$cmd_unlock" ]; then
+	unlock
+	return $?
+fi
+
+if [ -n "$cmd_secure" ]; then
+	secureLock
+	return $?
+fi
+
+if [ -n "$cmd_lock" ]; then
+	lock
+	return $?
+fi
+
+#
+# Non-exclusive commands that do not require a lock.
+#
+
+if [ -n "$cmd_env" ]; then
+	echo "ARCH='$ARCH'"
+	echo "BRANCH='$BRANCH'"
+	echo "FTP_TIMEOUT='$FTP_TIMEOUT'"
+	echo "PACKAGEROOT='$PACKAGEROOT'"
+	echo "PACKAGESITE='$PACKAGESITE'"
+	echo "PKG_INDEX='$PKG_INDEX'"
+	echo "PACKAGEROOT_MIRRORS='$PACKAGEROOT_MIRRORS'"
+	echo "PACKAGESITE_MIRRORS='$PACKAGESITE_MIRRORS'"
+fi
+
+# Create a local lock if need be.
+localLock=
+if ! hasLock; then
+	localLock=1
+	lock || return $?
+fi
+
+# Ports tree commands.
+if [ -n "$cmd_ports" ]; then
+	if [ -n "$cmd_fetch" ]; then
+		portsnap fetch || errno="$((1 << $ERR_FETCH_PORTS | $errno))"
+	fi
+	if [ -n "$cmd_extract" ]; then
+		portsnap extract || errno=$((1 << $ERR_EXTRACT_PORTS | $errno))
+	fi
+	if [ -n "$cmd_update" ]; then
+		portsnap update || errno=$((1 << $ERR_UPDATE_PORTS | $errno))
+	fi
+fi
+
+# Portaudit commands.
+if [ -n "$cmd_audit" ]; then
+	if [ -n "$cmd_fetch" ]; then
+		portaudit -F || errno=$((1 << $ERR_FETCH_VULNDB | $errno))
+	fi
+fi
+
+# Package index commands.
+if [ -n "$cmd_ftpindex" ]; then
+	if ! mkdir -p "${PKG_INDEX%/*}" 2> /dev/null; then
+		test -n "$verbose" \
+			&& echo "The directory ${PKG_INDEX%/*} does not exist and cannot be created!"
+		errno=$((1 << $ERR_FETCH_INDEX | $errno))
+	elif [ -n "$cmd_fetch" ]; then
+		fetch -mo "$PKG_INDEX" "$packagetree/INDEX" \
+			|| errno=$((1 << $ERR_FETCH_INDEX | $errno))
+	fi
+fi
+
+
+# Free a local lock.
+test -n "$localLock" && unlock
+
+return $errno
+

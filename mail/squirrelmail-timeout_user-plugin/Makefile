@@ -2,8 +2,8 @@
 
 PORTNAME=	timeout_user
 PORTVERSION=	1.1.1
-PORTREVISION=	4
-CATEGORIES=		mail www
+PORTREVISION=	5
+CATEGORIES=	mail www
 DISTNAME=	${PORTNAME}-${PORTVERSION}-0.5
 
 MAINTAINER=	ports@FreeBSD.org
@@ -18,6 +18,5 @@ USE_GENERIC_PKGMESSAGE=	yes
 post-patch:
 	@${MV} ${WRKSRC}/${SQUIRREL_PLUGIN_NAME}/config.php ${WRKSRC}/${SQUIRREL_PLUGIN_NAME}/config.php.sample
 
-.include <bsd.port.pre.mk>
 .include "${.CURDIR}/../squirrelmail/bsd.squirrelmail.mk"
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

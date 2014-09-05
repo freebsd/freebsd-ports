@@ -19,6 +19,9 @@ USE_RUBY_SETUP=	yes
 DOCS=		BUGS CHANGELOG README
 EXAMPLES=	data/examples/ruby/borges/*
 
+DEPRECATED=	RubyForge shutdown May 15 2014
+EXPIRATION_DATE=	2014-09-20
+
 post-extract:
 # This port is not really RUBY_MODEXAMPLESDIR/RUBY_MODDOCDIR clean
 .for d in doc examples

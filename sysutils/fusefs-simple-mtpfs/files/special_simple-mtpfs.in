@@ -1,0 +1,18 @@
+#!/bin/sh
+#
+# Intended for use with /etc/auto_master containing
+# /mtp		-simple-mtpfs	-allow_other
+#
+
+out=$(%%PREFIX%%/bin/simple-mtpfs --list-devices 2>&1)
+[ $? -eq 0 ] || exit 1
+
+if [ $# -eq 0 ]; then
+	echo "$out" | sed 's/[^:]*: //' | sort -u
+	exit 0
+fi
+
+devno=$(echo "$out" | (fgrep "$1" || echo 0) | sed 's/:.*//')
+[ $devno -gt 0 ] || exit 1
+
+echo "/ -fstype=none,--device=$devno,mountprog=%%PREFIX%%/bin/simple-mtpfs :none"

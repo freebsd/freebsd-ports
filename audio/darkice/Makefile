@@ -81,7 +81,7 @@ CONFIGURE_ARGS+=	--without-faac
 
 .if ${PORT_OPTIONS:MAACPLUS}
 LIB_DEPENDS+=	libaacplus.so:${PORTSDIR}/audio/libaacplus \
-		samplerate:${PORTSDIR}/audio/libsamplerate
+		libsamplerate.so:${PORTSDIR}/audio/libsamplerate
 CONFIGURE_ARGS+=	--with-aacplus-prefix=${LOCALBASE} \
 			--with-samplerate-prefix=${LOCALBASE}
 .else

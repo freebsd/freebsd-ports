@@ -137,7 +137,6 @@
     SUBDIR += ratmen
     SUBDIR += ratmenu
     SUBDIR += ratpoison
-    SUBDIR += sapphire
     SUBDIR += sawfish
     SUBDIR += selectwm
     SUBDIR += simple-ccsm

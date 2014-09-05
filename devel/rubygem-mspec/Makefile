@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mspec
-PORTVERSION=	1.5.20
+PORTVERSION=	1.5.21
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 

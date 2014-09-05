@@ -1,8 +1,0 @@
-eXist is an Open Source native XML database featuring efficient, index-based
-XQuery processing, automatic indexing, extensions for full-text search,
-XUpdate support, XQuery update extensions and tight integration with existing
-XML development tools. The database implements the current XQuery 1.0 working
-drafts, with exception of the schema import and schema validation features
-defined as optional in the XQuery specification.
-
-WWW: http://exist-db.org/

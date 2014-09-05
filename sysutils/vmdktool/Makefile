@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	vmdktool
-PORTVERSION=	1.3
+PORTVERSION=	1.4
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.Awfulhak.org/vmdktool/ \
 		ftp://ftp.Awfulhak.org/pub/vmdktool/ \

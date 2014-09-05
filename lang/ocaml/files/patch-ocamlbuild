@@ -1,0 +1,24 @@
+--- ocamlbuild/ocamlbuild_executor.ml.orig	2011-10-06 11:39:50.358159931 +0300
++++ ocamlbuild/ocamlbuild_executor.ml	2011-10-06 12:48:32.966029354 +0300
+@@ -200,7 +200,11 @@
+               try
+                 read fd u 0 (String.length u)
+               with
+-              | Unix.Unix_error(_,_,_) -> 0
++              | Unix.Unix_error(e,_,_)  ->
++                let msg = error_message e in
++                display (fun oc -> fp oc
++                        "Error while reading stdout/stderr: %s\n" msg);
++                0
+             in
+             if m = 0 then
+               if job.job_dying then
+@@ -236,6 +240,8 @@
+       (*display begin fun oc -> fp oc "Terminating job %a\n%!" print_job_id job.job_id; end;*)
+ 
+       decr jobs_active;
++      clear_nonblock (doi job.job_stdout);
++      clear_nonblock (doi job.job_stderr); (* we would get EAGAIN below otherwise *)
+       do_read ~loop:true (doi job.job_stdout) job;
+       do_read ~loop:true (doi job.job_stderr) job;
+       outputs := FDM.remove (doi job.job_stdout) (FDM.remove (doi job.job_stderr) !outputs);

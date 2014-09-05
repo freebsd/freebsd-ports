@@ -258,7 +258,6 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/acpi-overview.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/adding-swap-space.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/advanced-networking.html
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/anoncvs.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/appendices.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/audit-administration.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/audit-config.html
@@ -320,8 +319,6 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/crypt.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/ctm.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/current-stable.html
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/cvs-tags.html
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/cvsup.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/desktop-browsers.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/desktop-finance.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/desktop-productivity.html
@@ -421,7 +418,6 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/mail-using.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/mail.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/makeworld.html
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/mirrors-afs.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/mirrors-ftp.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/mirrors-rsync.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/mirrors.html
@@ -466,7 +462,6 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/ports-overview.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/ports-using.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/ports.html
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/portsnap.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/ppp-and-slip.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/ppp-troubleshoot.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/ppp.html
@@ -499,6 +494,7 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/snapshots.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/sound-mp3.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/sound-setup.html
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/svn.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/swap-encrypting.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/synching.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/system-administration.html

@@ -1,9 +1,0 @@
---- apisyms-x86.orig	Sun Jan 28 11:31:08 2007
-+++ apisyms-x86	Sun Jan 28 11:31:14 2007
-@@ -3,6 +3,3 @@
- SYM_PLACE=sym/x86
- 
- xc =p =a def/POSIX/posix.prj -sym_place:=$SYM_PLACE -decor=rt
--xc =p X11.prj                -sym_place:=$SYM_PLACE -decor=rt
--xc =p Xm.prj                 -sym_place:=$SYM_PLACE -decor=rt
--xc =p XmP.prj                -sym_place:=$SYM_PLACE -decor=rt

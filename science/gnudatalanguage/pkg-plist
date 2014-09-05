@@ -1,33 +1,10 @@
 %%MASTER%%bin/gdl
-%%MASTER%%%%PORTEXAMPLES%%%%EXAMPLESDIR%%/testsuite/CMakeFiles/CMakeDirectoryInformation.cmake
-%%MASTER%%%%PORTEXAMPLES%%%%EXAMPLESDIR%%/testsuite/CMakeFiles/check.dir/DependInfo.cmake
-%%MASTER%%%%PORTEXAMPLES%%%%EXAMPLESDIR%%/testsuite/CMakeFiles/check.dir/build.make
-%%MASTER%%%%PORTEXAMPLES%%%%EXAMPLESDIR%%/testsuite/CMakeFiles/check.dir/cmake_clean.cmake
-%%MASTER%%%%PORTEXAMPLES%%%%EXAMPLESDIR%%/testsuite/CMakeFiles/check.dir/progress.make
-%%MASTER%%%%PORTEXAMPLES%%%%EXAMPLESDIR%%/testsuite/CMakeFiles/launchtest.dir/DependInfo.cmake
-%%MASTER%%%%PORTEXAMPLES%%%%EXAMPLESDIR%%/testsuite/CMakeFiles/launchtest.dir/build.make
-%%MASTER%%%%PORTEXAMPLES%%%%EXAMPLESDIR%%/testsuite/CMakeFiles/launchtest.dir/cmake_clean.cmake
-%%MASTER%%%%PORTEXAMPLES%%%%EXAMPLESDIR%%/testsuite/CMakeFiles/launchtest.dir/depend.make
-%%MASTER%%%%PORTEXAMPLES%%%%EXAMPLESDIR%%/testsuite/CMakeFiles/launchtest.dir/flags.make
-%%MASTER%%%%PORTEXAMPLES%%%%EXAMPLESDIR%%/testsuite/CMakeFiles/launchtest.dir/link.txt
-%%MASTER%%%%PORTEXAMPLES%%%%EXAMPLESDIR%%/testsuite/CMakeFiles/launchtest.dir/progress.make
-%%MASTER%%%%PORTEXAMPLES%%%%EXAMPLESDIR%%/testsuite/CMakeFiles/progress.marks
-%%MASTER%%%%PORTEXAMPLES%%%%EXAMPLESDIR%%/testsuite/CMakeFiles/test_ce.dir/DependInfo.cmake
-%%MASTER%%%%PORTEXAMPLES%%%%EXAMPLESDIR%%/testsuite/CMakeFiles/test_ce.dir/build.make
-%%MASTER%%%%PORTEXAMPLES%%%%EXAMPLESDIR%%/testsuite/CMakeFiles/test_ce.dir/cmake_clean.cmake
-%%MASTER%%%%PORTEXAMPLES%%%%EXAMPLESDIR%%/testsuite/CMakeFiles/test_ce.dir/depend.make
-%%MASTER%%%%PORTEXAMPLES%%%%EXAMPLESDIR%%/testsuite/CMakeFiles/test_ce.dir/flags.make
-%%MASTER%%%%PORTEXAMPLES%%%%EXAMPLESDIR%%/testsuite/CMakeFiles/test_ce.dir/link.txt
-%%MASTER%%%%PORTEXAMPLES%%%%EXAMPLESDIR%%/testsuite/CMakeFiles/test_ce.dir/progress.make
 %%MASTER%%%%PORTEXAMPLES%%%%EXAMPLESDIR%%/testsuite/CMakeLists.txt
-%%MASTER%%%%PORTEXAMPLES%%%%EXAMPLESDIR%%/testsuite/CTestTestfile.cmake
-%%MASTER%%%%PORTEXAMPLES%%%%EXAMPLESDIR%%/testsuite/Makefile
 %%MASTER%%%%PORTEXAMPLES%%%%EXAMPLESDIR%%/testsuite/Makefile.am
 %%MASTER%%%%PORTEXAMPLES%%%%EXAMPLESDIR%%/testsuite/README
 %%MASTER%%%%PORTEXAMPLES%%%%EXAMPLESDIR%%/testsuite/Saturn.jpg
 %%MASTER%%%%PORTEXAMPLES%%%%EXAMPLESDIR%%/testsuite/benchmark/bench_matrix_multiply.pro
 %%MASTER%%%%PORTEXAMPLES%%%%EXAMPLESDIR%%/testsuite/checks
-%%MASTER%%%%PORTEXAMPLES%%%%EXAMPLESDIR%%/testsuite/cmake_install.cmake
 %%MASTER%%%%PORTEXAMPLES%%%%EXAMPLESDIR%%/testsuite/example.grib
 %%MASTER%%%%PORTEXAMPLES%%%%EXAMPLESDIR%%/testsuite/image_test.pro
 %%MASTER%%%%PORTEXAMPLES%%%%EXAMPLESDIR%%/testsuite/launchtest.c
@@ -363,9 +340,5 @@
 %%MASTER%%@dirrm %%DATADIR%%/lib
 %%MASTER%%@dirrm %%DATADIR%%
 %%MASTER%%%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/testsuite/benchmark
-%%MASTER%%%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/testsuite/CMakeFiles/test_ce.dir
-%%MASTER%%%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/testsuite/CMakeFiles/launchtest.dir
-%%MASTER%%%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/testsuite/CMakeFiles/check.dir
-%%MASTER%%%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/testsuite/CMakeFiles
 %%MASTER%%%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/testsuite
 %%MASTER%%%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%

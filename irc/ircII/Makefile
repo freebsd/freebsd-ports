@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ircii
-PORTVERSION=	20131230
+PORTVERSION=	20140831
 PORTREVISION=	1
 CATEGORIES=	irc ipv6
 MASTER_SITES=	http://ircii.warped.com/
@@ -14,28 +14,36 @@ LICENSE=	BSD3CLAUSE
 
 GNU_CONFIGURE=	yes
 DATADIR=	${PREFIX}/share/irc
-USES=		tar:bzip2
+USES=		tar:bzip2 iconv
 
-OPTIONS_DEFINE=	IRCBUG EMACS_KEYS
-IRCBUG_DESC=	Install ircII bug-reporting script
-EMACS_KEYS_DESC=Use emacs meta keys
+OPTIONS_DEFINE=	IRCBUG EMACS_KEYS OPENSSL
+OPTIONS_DEFAULT=OPENSSL
 OPTIONS_SUB=	yes
 
+IRCBUG_DESC=	Install ircII bug-reporting script
+EMACS_KEYS_DESC=Use emacs meta keys
+
 EMACS_KEYS_CONFIGURE_WITH=	emacs-meta-keys
+OPENSSL_USE=			OPENSSL=yes
 
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/irc ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/ircflush ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_SCRIPT} ${WRKSRC}/ircbug ${STAGEDIR}${PREFIX}/bin
+.include <bsd.port.pre.mk>
 
-	${INSTALL_PROGRAM} ${WRKSRC}/ircio ${STAGEDIR}${PREFIX}/libexec
-	${INSTALL_PROGRAM} ${WRKSRC}/wserv ${STAGEDIR}${PREFIX}/libexec
+.if ${PORT_OPTIONS:MOPENSSL}
+CONFIGURE_ARGS+=	--with-openssl=${OPENSSLBASE}
+.else
+CONFIGURE_ARGS+=	--without-openssl
+.endif
 
-	${INSTALL_MAN} ${WRKSRC}/doc/ircII.1 ${STAGEDIR}${MANPREFIX}/man/man1
-	${INSTALL_MAN} ${WRKSRC}/doc/ircbug.1 ${STAGEDIR}${MANPREFIX}/man/man1
-	${LN} -sf ircII.1 ${STAGEDIR}${MANPREFIX}/man/man1/irc.1
+CPPFLAGS+=	-I${ICONV_PREFIX}/include
+LDFLAGS+=	-L${ICONV_PREFIX}/lib
 
-	@${MKDIR} ${STAGEDIR}${DATADIR}
-	(cd ${WRKSRC} && ${COPYTREE_SHARE} "help script" ${STAGEDIR}${DATADIR})
+post-patch:
+	@${REINPLACE_CMD} -e '/^mandir =/s/@mandir@/$${DESTDIR}&/' \
+		-e '/^LDFLAGS =/s/$$/ -s ${ICONV_LIB}/' \
+		-e '/^INCLUDES =/s|$$| -I${ICONV_PREFIX}/include -DHAVE_ICONV_OPEN|' \
+		${WRKSRC}/Makefile.in
 
-.include <bsd.port.mk>
+post-install:
+	${MV} -f ${STAGEDIR}${PREFIX}/bin/irc-${PORTVERSION} ${STAGEDIR}${PREFIX}/bin/irc
+
+.include <bsd.port.post.mk>

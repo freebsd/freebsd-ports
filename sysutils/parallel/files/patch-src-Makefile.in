@@ -1,0 +1,11 @@
+--- src/Makefile.in.orig	2014-08-23 06:30:21.000000000 +0800
++++ src/Makefile.in	2014-08-24 00:36:21.359988465 +0800
+@@ -525,7 +525,7 @@
+ 
+ install-exec-hook:
+ 	rm $(DESTDIR)$(bindir)/sem || true
+-	$(LN_S) $(DESTDIR)$(bindir)/parallel $(DESTDIR)$(bindir)/sem
++	$(LN_S) parallel $(DESTDIR)$(bindir)/sem
+ 
+ # Build documentation file if the tool to build exists.
+ # Otherwise: Use the distributed version

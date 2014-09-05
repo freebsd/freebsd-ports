@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	nmap
-DISTVERSION=	6.46
+DISTVERSION=	6.47
 CATEGORIES=	security ipv6
 MASTER_SITES=	http://nmap.org/dist/ \
 		LOCAL/ohauer
@@ -10,7 +10,7 @@ MASTER_SITES=	http://nmap.org/dist/ \
 MAINTAINER=	ohauer@FreeBSD.org
 COMMENT=	Port scanning utility for large networks
 
-# nmap-6.46 => r32840
+# nmap-6.47 => svn.nmap.org/nmap-releases/nmap-6.47 (r33605)
 # http://nmap.org/book/man-legal.html
 # Install the nmap modified license because of
 # http://insecure.org/news/download-com-fiasco.html
@@ -19,7 +19,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre
 
-USES=		gmake tar:bzip2
+USES=		tar:bzip2 gmake cpe
 GNU_CONFIGURE=	yes
 
 OPTIONS_SUB=	yes
@@ -58,7 +58,7 @@ CONFIGURE_ARGS+=--without-localdirs \
 .if ${CC} != "cc" && ${CC} !="clang"
 GCCLIBDIR_CMDS=	${CC} -print-file-name=libstdc++.so | ${SED} -e 's/libstdc++.so//'
 CONFIGURE_ARGS+=LDFLAGS="-L$$(${GCCLIBDIR_CMDS})"
-NDCC=	true
+NOT_BASE_CC=	true
 .endif
 
 # XXX limit results if we do a grep in the sources!
@@ -77,7 +77,7 @@ post-install:
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
 # gcc from ports is in use
-.if defined(NDCC)
+.if defined(NOT_BASE_CC)
 	@${ECHO_MSG} do not forget to adjust libnmap.conf
 .endif
 

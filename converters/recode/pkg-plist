@@ -2,7 +2,6 @@ bin/recode
 include/recode.h
 include/recodext.h
 lib/librecode.a
-lib/librecode.la
 lib/librecode.so
 lib/librecode.so.3
 lib/librecode.so.3.0.6

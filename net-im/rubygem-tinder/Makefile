@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	tinder
-PORTVERSION=	1.9.3
+PORTVERSION=	1.10.0
 CATEGORIES=	net-im rubygems
 MASTER_SITES=	RG
 
@@ -11,11 +11,11 @@ COMMENT=	Ruby API for interfacing with Campfire
 LICENSE=	MIT
 
 RUN_DEPENDS=	rubygem-eventmachine>=1.0:${PORTSDIR}/devel/rubygem-eventmachine \
-		rubygem-faraday>=0.8:${PORTSDIR}/www/rubygem-faraday\
+		rubygem-faraday>=0.9:${PORTSDIR}/www/rubygem-faraday\
 		rubygem-faraday_middleware>=0.9:${PORTSDIR}/www/rubygem-faraday_middleware \
 		rubygem-hashie>=1.0:${PORTSDIR}/devel/rubygem-hashie \
 		rubygem-json>=1.8.0:${PORTSDIR}/devel/rubygem-json \
-		rubygem-mime-types>=1.19:${PORTSDIR}/misc/rubygem-mime-types \
+		rubygem-mime-types>=0:${PORTSDIR}/misc/rubygem-mime-types \
 		rubygem-multi_json>=1.7:${PORTSDIR}/devel/rubygem-multi_json \
 		rubygem-twitter-stream>=0.1:${PORTSDIR}/net/rubygem-twitter-stream
 

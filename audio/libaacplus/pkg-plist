@@ -1,7 +1,6 @@
 bin/aacplusenc
 include/aacplus.h
 lib/libaacplus.a
-lib/libaacplus.la
 lib/libaacplus.so
 lib/libaacplus.so.2
 lib/libaacplus.so.2.0.2

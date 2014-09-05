@@ -3,7 +3,7 @@
 
 PORTNAME=	popular
 PORTVERSION=	1.5.5
-PORTREVISION=	4
+PORTREVISION=	6
 CATEGORIES=	mail
 MASTER_SITES=	http://www.remote.org/jochen/mail/popular/download/
 
@@ -24,19 +24,6 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib
 
 USE_RC_SUBR=	pcheckd pproxy pserv 0ringd
-
-OPTIONS_DEFINE=	DB4
-OPTIONS_DEFAULT=	DB4
-OPTIONS_SUB=	yes
-
-DB4_DESC=	Build db4 pdm module
-DB4_LIB_DEPENDS=	libdb4.so:${PORTSDIR}/databases/db4
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MDB4}
-PDM_MODULES+=	db4
-.endif
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${ETCDIR}

@@ -1,6 +1,6 @@
---- rude/Makefile.in.orig	Thu Jun 13 14:15:21 2002
-+++ rude/Makefile.in	Tue Jun 24 11:26:06 2003
-@@ -19,7 +19,7 @@
+--- rude/Makefile.in.orig	2002-06-13 20:15:21.000000000 +0800
++++ rude/Makefile.in	2014-08-27 22:09:51.580787385 +0800
+@@ -19,7 +19,7 @@ mandir        = @mandir@/man8
  sbindir       = @sbindir@
  srcdir        = @srcdir@
  
@@ -9,3 +9,15 @@
  VPATH    = @srcdir@
  
  CC       = @CC@
+@@ -50,9 +50,9 @@ distclean:
+ 
+ install: rude
+ 	@if [ ! -d $(bindir) ]; then mkdir -m 0755 $(bindir); fi;
+-	$(INSTALL) rude $(bindir)
++	$(INSTALL) rude $(DESTDIR)$(bindir)
+ 	@if [ ! -d $(mandir) ]; then mkdir -m 0755 $(mandir); fi;
+-	$(INSTALL) rude.8 $(mandir)
++	$(INSTALL) rude.8 $(DESTDIR)$(mandir)
+  
+ 
+ ##############################################################################

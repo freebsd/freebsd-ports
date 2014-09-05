@@ -69,11 +69,7 @@ post-install-script:
 	done
 	echo '@dirrm lib32/.libGL/dri' >> ${TMPPLIST}
 	echo '@dirrm lib32/.libGL' >> ${TMPPLIST}
-	if [ -n "${WITH_PKGNG}" ]; then \
-		echo '@dirrmtry lib32' >> ${TMPPLIST}; \
-	else \
-		echo '@unexec rmdir %D/lib32 2>/dev/null || true' >> ${TMPPLIST}; \
-	fi
+	echo '@dirrmtry lib32' >> ${TMPPLIST}; \
 	echo '@dirrm bin32' >> ${TMPPLIST}
 	# Install nvidia patching script
 	${INSTALL_SCRIPT} ${.CURDIR}/files/nvidia.sh ${STAGEDIR}${DATADIR}/patch-nvidia.sh
@@ -81,11 +77,9 @@ post-install-script:
 	@${CAT} ${PKGMESSAGE}
 
 post-package-script:
-	if [ -n "${WITH_PKGNG}" -a -z "${PACKAGE_BUILDING}" ]; then \
-		${XZ_CMD} -dc ${PKGFILE} | \
-		${SED} -e 's/\(freebsd:.*:x86\):32/\1:64/' -e 's/\(freebsd:.*:x86\):32/\1:64/' | \
-		${XZ_CMD} > ${WRKDIR}/${PKGNAME}${PKG_SUFX}; \
-		${MV} ${WRKDIR}/${PKGNAME}${PKG_SUFX} ${PKGFILE}; \
-	fi
+	${XZ_CMD} -dc ${PKGFILE} | \
+	${SED} -e 's/\(freebsd:.*:x86\):32/\1:64/' -e 's/\(freebsd:.*:x86\):32/\1:64/' | \
+	${XZ_CMD} > ${WRKDIR}/${PKGNAME}${PKG_SUFX}; \
+	${MV} ${WRKDIR}/${PKGNAME}${PKG_SUFX} ${PKGFILE}; \
 
 .include "${MASTERDIR}/Makefile"

@@ -3,9 +3,9 @@
 @@ -41,15 +41,15 @@
  
  
- GAME	= vultureseye
+ GAME	= vulture-nethack
 -MANDIR	= /usr/man/man6
-+MANDIR	= ${PREFIX}/man/man
++MANDIR	= ${PREFIX}/man6
  MANEXT	= 6
  
  # manual installation for most BSD-style systems

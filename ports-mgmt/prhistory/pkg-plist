@@ -1,2 +1,0 @@
-bin/prhistory
-@unexec echo "NOTICE: If you are permanently removing this utility, you may wish to delete the database file /var/db/ports/ports-pr.db"

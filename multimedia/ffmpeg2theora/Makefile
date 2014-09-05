@@ -16,10 +16,10 @@ LIB_DEPENDS=	libavcodec.so:${PORTSDIR}/multimedia/ffmpeg \
 		libtheora.so:${PORTSDIR}/multimedia/libtheora
 
 USES=		iconv pkgconfig scons tar:bzip2
-MAKE_ENV=	APPEND_CCFLAGS="${CPPFLAGS}" APPEND_LINKFLAGS="${LDFLAGS}" CCFLAGS="${CPPFLAGS}"
+MAKE_ENV=	APPEND_CCFLAGS="${CPPFLAGS}" APPEND_LINKFLAGS="${LDFLAGS}"
 
 CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 PLIST_FILES=	bin/ffmpeg2theora man/man1/ffmpeg2theora.1.gz
 

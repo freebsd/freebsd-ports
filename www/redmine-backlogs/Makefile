@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	backlogs
-PORTVERSION=	1.0.2
+PORTVERSION=	1.0.6
 CATEGORIES=	www
 
 MAINTAINER=	ports@FreeBSD.org
@@ -10,7 +10,7 @@ COMMENT=	Agile plugin for Redmine
 USE_GITHUB=	yes
 GH_ACCOUNT=	backlogs
 GH_PROJECT=	redmine_backlogs
-GH_COMMIT=	1e4f1af
+GH_COMMIT=	e60fbdb
 GH_TAGNAME=	v${PORTVERSION}
 
 RUN_DEPENDS+=	rubygem-icalendar>=0.4.2:${PORTSDIR}/devel/rubygem-icalendar \

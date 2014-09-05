@@ -3,12 +3,15 @@
 
 PORTNAME=	memcachedb
 PORTVERSION=	1.2.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	databases
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 
 MAINTAINER=	k@stereochro.me
 COMMENT=	Distributed storage system designed for persistence
+
+DEPRECATED=	Depends on deprecated Berkeley DB version, needs porting to DB_SITE
+EXPIRATION_DATE=2014-11-30
 
 LICENSE=	BSD3CLAUSE
 

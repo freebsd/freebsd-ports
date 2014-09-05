@@ -43,6 +43,12 @@ PGSQL$v_LIBVER?=	${PGSQL_LIBVER}
 
 .include "${PORTSDIR}/Mk/bsd.default-versions.mk"
 
+.for v in ${PGSQL_DEFAULT}
+.  if ! ${VALID_PGSQL_VER:M$v}
+IGNORE=		Invalid PGSQL default version ${PGSQL_DEFAULT}; valid versions are ${VALID_PGSQL_VER}
+.  endif
+.endfor
+
 .  for w in WITH DEFAULT
 .    ifdef $w_PGSQL_VER
 WARNING+=	"$w_PGSQL_VER is defined, consider using DEFAULT_VERSIONS=pgsql=${$w_PGSQL_VER:C,^.,&.,} instead"
@@ -64,13 +70,13 @@ _PGSQL_VER!=	${PG_CONFIG} --version | ${SED} -n 's/PostgreSQL[^0-9]*\([0-9][0-9]
 .  if defined(pgsql_ARGS)
 .    if ${pgsql_ARGS:M*+}
 .      for version in ${VALID_PGSQL_VER}
-.        if ${pgsql_ARGS:S/+//} <= ${version:S/.//}
+.        if ${pgsql_ARGS:S/+//} <= ${version}
 _WANT_PGSQL_VER+=${version}
 .        endif
 .      endfor
 .    elif ${pgsql_ARGS:M*-}
 .      for version in ${VALID_PGSQL_VER}
-.        if ${pgsql_ARGS:S/-//} >= ${version:S/.//}
+.        if ${pgsql_ARGS:S/-//} >= ${version}
 _WANT_PGSQL_VER+=${version}
 .        endif
 .      endfor

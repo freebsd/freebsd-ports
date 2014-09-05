@@ -1,8 +1,0 @@
-etc/macroscope.conf.template
-sbin/macroscope
-%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
-%%PORTDOCS%%%%DOCSDIR%%/INSTALL
-%%PORTDOCS%%%%DOCSDIR%%/NEWS
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/mysql-user
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

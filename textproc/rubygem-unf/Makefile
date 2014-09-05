@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	unf
-PORTVERSION=	0.1.1
+PORTVERSION=	0.1.4
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 

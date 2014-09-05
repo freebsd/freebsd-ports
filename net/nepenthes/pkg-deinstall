@@ -1,0 +1,46 @@
+#!/bin/sh
+
+if [ "$2" != "DEINSTALL" ]; then
+   exit 0
+fi
+
+if cmp -s ${PKG_PREFIX}/share/nepenthes/signatures/shellcode-signatures.sc \
+   /var/cache/nepenthes/signatures/shellcode-signatures.sc; then
+   rm -f /var/cache/nepenthes/signatures/shellcode-signatures.sc
+fi
+
+if [ -d /var/spool/nepenthes/submitpostgres ]; then
+   rmdir /var/spool/nepenthes/submitpostgres 2>/dev/null || true
+fi
+
+if [ -d /var/spool/nepenthes/gotek ]; then
+   rmdir /var/spool/nepenthes/gotek 2>/dev/null || true
+fi
+
+if [ -d /var/spool/nepenthes ]; then
+   rmdir /var/spool/nepenthes 2>/dev/null || true
+fi
+
+if [ -d /var/log/pcap ]; then
+   rmdir /var/log/pcap 2>/dev/null || true
+fi
+
+if [ -d /var/hexdumps ]; then
+   rmdir /var/hexdumps 2>/dev/null || true
+fi
+
+if [ -d /var/cache/nepenthes/signatures ]; then
+   rmdir /var/cache/nepenthes/signatures 2>/dev/null || true
+fi
+
+if [ -d /var/cache/nepenthes/pcap ]; then
+   rmdir /var/cache/nepenthes/pcap 2>/dev/null || true
+fi
+
+if [ -d /var/cache/nepenthes ]; then
+   rmdir /var/cache/nepenthes 2>/dev/null || true
+fi
+
+if [ -d /var/binaries ]; then
+   rmdir /var/binaries 2>/dev/null || true
+fi

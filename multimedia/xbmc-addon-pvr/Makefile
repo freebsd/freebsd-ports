@@ -19,9 +19,9 @@ GH_ACCOUNT=	opdenkamp
 GH_COMMIT=	9021115
 GH_TAGNAME=	9021115
 
-USES=		pkgconfig
+USES=		libtool pkgconfig
 USE_GL=		gl
-USE_AUTOTOOLS=	libtoolize aclocal libtool automake autoconf
+USE_AUTOTOOLS=	libtoolize aclocal automake autoconf
 MAKE_JOBS_SAFE=	yes
 AUTOMAKE_ARGS=	--add-missing
 GNU_CONFIGURE=	yes

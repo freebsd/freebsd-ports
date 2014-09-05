@@ -3,7 +3,7 @@
 
 PORTNAME=	gtk2
 PORTVERSION=	2.14.7
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	x11-toolkits linux
 MASTER_SITES=	CRITICAL/rpm/${LINUX_RPM_ARCH}/fedora/${LINUX_DIST_VER}
 PKGNAMEPREFIX=	linux-f10-
@@ -42,5 +42,9 @@ SRC_DISTFILES=	${PORTNAME}-${PORTVERSION}-${RPMVERSION}.src.rpm \
 		gtk-xfce-engine-2.4.3-1.fc10.src.rpm \
 		pixman-0.12.0-3.fc10.src.rpm \
 		jasper-1.900.1-8.fc9.src.rpm
+
+post-install:
+	${RM} ${STAGEDIR}${PREFIX}/usr/lib/gtk-2.0/modules/libferret.la
+	${RM} ${STAGEDIR}${PREFIX}/usr/lib/gtk-2.0/modules/libgail.la
 
 .include <bsd.port.mk>

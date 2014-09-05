@@ -1,6 +1,6 @@
---- lib/Makefile.in.orig	Mon Apr  9 10:45:45 2007
-+++ lib/Makefile.in	Mon Apr  9 10:49:48 2007
-@@ -500,14 +500,14 @@
+--- lib/Makefile.in.orig	2014-04-10 22:56:38.000000000 +0900
++++ lib/Makefile.in	2014-08-30 23:40:33.000000000 +0900
+@@ -678,14 +678,14 @@
  
  
  paperspecs.h: paperspecs Makefile
@@ -13,7 +13,7 @@
  	       if ($$4 == "in") factor = 72.0; \
  	       printf("    { \"%s\", %5f, %5f },\n", \
 -		      $$1, $$2 * factor, $$3 * factor); }' < $< >> $@
-+		      $$1, $$2 * factor, $$3 * factor); }' < $< paperspecs >> $@
++		      $$1, $$2 * factor, $$3 * factor); }' < paperspecs >> $@
+ 
  # Tell versions [3.59,3.63) of GNU make to not export all variables.
  # Otherwise a system limit (for SysV at least) may be exceeded.
- .NOEXPORT:

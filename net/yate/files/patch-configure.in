@@ -1,56 +1,11 @@
---- ./configure.in.orig	2012-12-21 18:26:49.000000000 +0400
-+++ ./configure.in	2013-02-14 19:58:02.000000000 +0400
-@@ -643,7 +643,7 @@
- AC_SUBST(MYSQL_VER)
- 
- HAVE_ZAP=no
--ZAP_FLAGS=""
-+ZAP_FLAGS="-I/usr/local/include"
- AC_ARG_ENABLE(dahdi,AC_HELP_STRING([--enable-dahdi],[Enable Dahdi driver (default: yes)]),want_dahdi=$enableval,want_dahdi=yes)
- if [[ "x$want_dahdi" = "xyes" ]]; then
- AC_MSG_CHECKING([for Dahdi generic headers])
-@@ -662,7 +662,7 @@
- #include <sys/ioctl.h>
- ],[ioctl(0,ZT_GETVERSION,(void*)0)],
- HAVE_ZAP="yes"
--ZAP_FLAGS="-DNEW_ZAPTEL_LOCATION -DHAVE_ZAP"
-+ZAP_FLAGS="-DNEW_ZAPTEL_LOCATION -DHAVE_ZAP -I/usr/local/include"
- )
- AC_MSG_RESULT([$HAVE_ZAP])
- if [[ "x$HAVE_ZAP" = "xno" ]]; then
-@@ -672,7 +672,7 @@
- #include <sys/ioctl.h>
- ],[ioctl(0,ZT_GETVERSION,(void*)0)],
- HAVE_ZAP="yes"
--ZAP_FLAGS="-DHAVE_ZAP"
-+ZAP_FLAGS="-DHAVE_ZAP -I/usr/local/include"
- )
- AC_MSG_RESULT([$HAVE_ZAP])
- fi
-@@ -973,7 +973,7 @@
- )
- CFLAGS="$SAVE_CFLAGS"
- if [[ "x$HAVE_SPEEX" = "xyes" ]]; then
--    SPEEX_INC="-I$ac_cv_use_libspeex"
-+    SPEEX_INC="-I$ac_cv_use_libspeex -I/usr/local/include"
- fi
- fi
- AC_MSG_RESULT([$HAVE_SPEEX])
-@@ -1155,7 +1155,7 @@
- PWLIB_INC="-I$ac_cv_use_pwlib/include" # Base dir, ok for ptlib
- if [[ "$vpw" '<' "02.00.00" ]]; then
-     # Pwlib-1.xm no ptlib (2.x) install into ptlib
--    PWLIB_INC="$PWLIB_INC/ptlib"
-+    PWLIB_INC="$PWLIB_INC $PWLIB_INC/ptlib"
-     if [[ "$vpw" '<' "01.06.00" ]]; then
-         # Very old pwlib needs more includes.
-         PWLIB_INC="$PWLIB_INC/unix/ptlib $PWLIB_INC/unix $PWLIB_INC"
-@@ -1288,7 +1288,7 @@
+--- configure.in.orig	2014-08-25 16:38:23.000000000 +0300
++++ configure.in	2014-08-25 16:38:50.000000000 +0300
+@@ -1338,7 +1338,7 @@ elif [[ "x$ac_cv_use_openssl" != "xno" ]
      AC_MSG_CHECKING([for OpenSSL in $ac_cv_use_openssl])
      verssl=no
      if [[ -f "$ac_cv_use_openssl/include/openssl/opensslconf.h" ]]; then
 -	verssl=`sed -n 's/^#define SHLIB_VERSION_NUMBER "\([0-9.]\+\)".*/\1/p' <$ac_cv_use_openssl/include/openssl/opensslv.h 2>/dev/null`
-+	verssl=`sed -n 's/^#define SHLIB_VERSION_NUMBER "\([0-9.]*\)"/\1/p' <$ac_cv_use_openssl/include/openssl/opensslv.h 2>/dev/null`
++	verssl=`sed -n 's/^#define SHLIB_VERSION_NUMBER "\([0-9.]*\)".*/\1/p' <$ac_cv_use_openssl/include/openssl/opensslv.h 2>/dev/null`
  	if [[ "x$verssl" != "x" ]]; then
  	    HAVE_OPENSSL=yes
  	    OPENSSL_VER="$verssl"

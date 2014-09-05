@@ -15,7 +15,7 @@ COMMENT=	International Components for Unicode (from IBM)
 LICENSE=	ICU
 LICENSE_NAME=	ICU license
 LICENSE_FILE=	${WRKSRC}/../license.html
-LICENSE_PERMS=	${_LICENSE_PERMS_DEFAULT}
+LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 GNU_CONFIGURE=		yes
 OPTIONS_DEFINE=	THREADS

@@ -51,12 +51,6 @@ R_POSTCMD_CHECK_OPTIONS?=	--timings
 R_POSTCMD_CHECK_OPTIONS+=	--no-manual --no-rebuild-vignettes
 .endif
 
-.if defined(NO_STAGE)
-check-makevars::
-	@${ECHO_MSG} "Makefile error: USE_R_MOD cannot be used with NO_STAGE"
-	@${FALSE}
-.endif
-
 regression-test: build
 	@cd ${WRKDIR} ; ${SETENV} ${MAKE_ENV} _R_CHECK_FORCE_SUGGESTS_=FALSE \
 	${R_COMMAND} ${R_PRECMD_CHECK_OPTIONS} CMD check \

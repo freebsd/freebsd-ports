@@ -1,30 +1,12 @@
-@unexec if cmp -s %D/%%ETCDIR%%/accel_maps %D/%%ETCDIR%%/accel_maps.sample; then rm -f %D/%%ETCDIR%%/accel_maps; fi
-%%ETCDIR%%/accel_maps.sample
-@exec if [ ! -f %D/%%ETCDIR%%/accel_maps ] ; then cp -p %D/%F %B/accel_maps; fi
-@unexec if cmp -s %D/%%ETCDIR%%/acl_local_networks %D/%%ETCDIR%%/acl_local_networks.sample; then rm -f %D/%%ETCDIR%%/acl_local_networks; fi
-%%ETCDIR%%/acl_local_networks.sample
-@exec if [ ! -f %D/%%ETCDIR%%/acl_local_networks ] ; then cp -p %D/%F %B/acl_local_networks; fi
-@unexec if cmp -s %D/%%ETCDIR%%/auth_template.html %D/%%ETCDIR%%/auth_template.html.sample; then rm -f %D/%%ETCDIR%%/auth_template.html; fi
-%%ETCDIR%%/auth_template.html.sample
-@exec if [ ! -f %D/%%ETCDIR%%/auth_template.html ] ; then cp -p %D/%F %B/auth_template.html; fi
-@unexec if cmp -s %D/%%ETCDIR%%/err_template.html %D/%%ETCDIR%%/err_template.html.sample; then rm -f %D/%%ETCDIR%%/err_template.html; fi
-%%ETCDIR%%/err_template.html.sample
-@exec if [ ! -f %D/%%ETCDIR%%/err_template.html ] ; then cp -p %D/%F %B/err_template.html; fi
-@unexec if cmp -s %D/%%ETCDIR%%/oops.cfg %D/%%ETCDIR%%/oops.cfg.sample; then rm -f %D/%%ETCDIR%%/oops.cfg; fi
-%%ETCDIR%%/oops.cfg.sample
-@exec if [ ! -f %D/%%ETCDIR%%/oops.cfg ] ; then cp -p %D/%F %B/oops.cfg; fi
-@unexec if cmp -s %D/%%ETCDIR%%/passwd %D/%%ETCDIR%%/passwd.sample; then rm -f %D/%%ETCDIR%%/passwd; fi
-%%ETCDIR%%/passwd.sample
-@exec if [ ! -f %D/%%ETCDIR%%/passwd ] ; then cp -p %D/%F %B/passwd; fi
-@unexec if cmp -s %D/%%ETCDIR%%/redir_rules %D/%%ETCDIR%%/redir_rules.sample; then rm -f %D/%%ETCDIR%%/redir_rules; fi
-%%ETCDIR%%/redir_rules.sample
-@exec if [ ! -f %D/%%ETCDIR%%/redir_rules ] ; then cp -p %D/%F %B/redir_rules; fi
-@unexec if cmp -s %D/%%ETCDIR%%/redir_template.html %D/%%ETCDIR%%/redir_template.html.sample; then rm -f %D/%%ETCDIR%%/redir_template.html; fi
-%%ETCDIR%%/redir_template.html.sample
-@exec if [ ! -f %D/%%ETCDIR%%/redir_template.html ] ; then cp -p %D/%F %B/redir_template.html; fi
-@unexec if cmp -s %D/%%ETCDIR%%/select.sql %D/%%ETCDIR%%/select.sql.sample; then rm -f %D/%%ETCDIR%%/select.sql; fi
-%%ETCDIR%%/select.sql.sample
-@exec if [ ! -f %D/%%ETCDIR%%/select.sql ] ; then cp -p %D/%F %B/select.sql; fi
+@sample %%ETCDIR%%/accel_maps.sample
+@sample %%ETCDIR%%/acl_local_networks.sample
+@sample %%ETCDIR%%/auth_template.html.sample
+@sample %%ETCDIR%%/err_template.html.sample
+@sample %%ETCDIR%%/oops.cfg.sample
+@sample %%ETCDIR%%/passwd.sample
+@sample %%ETCDIR%%/redir_rules.sample
+@sample %%ETCDIR%%/redir_template.html.sample
+@sample %%ETCDIR%%/select.sql.sample
 %%ETCDIR%%/tables/koi-alt.tab
 %%ETCDIR%%/tables/koi-iso.tab
 %%ETCDIR%%/tables/koi-win.tab
@@ -56,7 +38,6 @@ sbin/oopsctl
 @dirrmtry oops/DB
 @dirrmtry oops/storages
 @dirrmtry oops
-@cwd /
 @dirrmtry /var/log/oops
 @unexec rm -f /var/run/oops/oopsctl 2>/dev/null || true
 @unexec rm -f /var/run/oops/oops_statfile 2>/dev/null || true

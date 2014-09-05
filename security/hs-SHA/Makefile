@@ -12,8 +12,10 @@ LICENSE=	BSD3CLAUSE
 FLAGS_DEFINE=		EXE
 
 EXE_DESC=		Build a SHA2-384 executable similar to 'md5sum'
-EXE_FLAG_ENABLE=	Test
+EXE_FLAG_ENABLE=	exe
 EXE_FLAG_EXECUTABLE=	sha1 sha384
+
+FLAGS_DISABLE=		Test
 
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

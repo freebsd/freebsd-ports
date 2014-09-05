@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	jruby-rack
-PORTVERSION=	1.1.13.2
+PORTVERSION=	1.1.16
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 

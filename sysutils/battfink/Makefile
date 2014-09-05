@@ -11,13 +11,13 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Energy saving preferences app for GNOME
 
-USE_XORG=	x11
 INSTALLS_OMF=	yes
 USE_GNOME=	gnomeprefix libgnomeui
 USES=		gettext gmake pathfix pkgconfig tar:bzip2
+USE_XORG=	x11 xext
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+LIBS+=		-L${LOCALBASE}/lib -lX11 -lXext
 INSTALL_TARGET=	install-strip
 
 GCONF_SCHEMAS=	battfink.schemas

@@ -7,14 +7,17 @@ PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-1.8%20%28stable%29
 
-MAINTAINER= ports@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Greylisting policy server for Postfix using an SQL backend
+
+LICENSE=	GPLv2
 
 RUN_DEPENDS=	p5-Net-Server>=0:${PORTSDIR}/net/p5-Net-Server \
 		p5-IO-Multiplex>=0:${PORTSDIR}/devel/p5-IO-Multiplex \
 		p5-Pod-Parser>=0:${PORTSDIR}/textproc/p5-Pod-Parser
 
-USES=		perl5
+USES=		perl5 shebangfix
+SHEBANG_FILES=	${WRKSRC}/sqlgrey-logstats.pl ${WRKSRC}/update_sqlgrey_config ${WRKSRC}/sqlgrey
 USE_PERL5=	run
 USE_RC_SUBR=	sqlgrey
 NO_BUILD=	yes
@@ -24,20 +27,13 @@ USERS=		sqlgrey
 GROUPS=		${USERS}
 ETCDIR?=	etc/sqlgrey
 
-SUB_FILES=	pkg-install
-MY_SUB_LIST=	ETCDIR=${ETCDIR} ETCFILES="${ETCFILES}" USER=${USERS} GROUP=${GROUPS} PERL=${PERL}
-SUB_LIST+=	${MY_SUB_LIST}
-PLIST_SUB=	TOUCH=${TOUCH} ${MY_SUB_LIST}
-
-PKGINSTALL=	${WRKDIR}/pkg-install
-PKGDEINSTALL=	${PKGINSTALL}
-
-MAN1=	sqlgrey.1
+SUB_LIST+=	PERL=${PERL} USERS=${USERS} GROUPS=${GROUPS}
+PLIST_SUB=	TOUCH=${TOUCH}
 
 OPTIONS_DEFINE=	PGSQL MYSQL SQLITE STATS DOCS
+OPTIONS_DEFAULT=PGSQL
 STATS_DESC=	Depend on Date::Calc for logstats.pl script
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDOCS}
@@ -64,23 +60,18 @@ post-patch:
 	@${REINPLACE_CMD} -e 's-#!/usr/bin/perl-#!${PERL}-' -e 's!/etc/sqlgrey!${PREFIX}/${ETCDIR}!g' ${WRKSRC}/sqlgrey
 
 do-install:
-	@${INSTALL_SCRIPT} ${WRKSRC}/sqlgrey-logstats.pl ${PREFIX}/bin
-	@${INSTALL_SCRIPT} ${WRKSRC}/sqlgrey ${PREFIX}/sbin
-	@${INSTALL_SCRIPT} ${WRKSRC}/update_sqlgrey_config ${PREFIX}/sbin
-	@cd ${WRKSRC} && perldoc -u sqlgrey | pod2man sqlgrey > ${MANPREFIX}/man/man1/sqlgrey.1
-	@${MKDIR} ${PREFIX}/${ETCDIR}
+	@${INSTALL_SCRIPT} ${WRKSRC}/sqlgrey-logstats.pl ${STAGEDIR}/${PREFIX}/bin
+	@${INSTALL_SCRIPT} ${WRKSRC}/sqlgrey ${STAGEDIR}/${PREFIX}/sbin
+	@${INSTALL_SCRIPT} ${WRKSRC}/update_sqlgrey_config ${STAGEDIR}/${PREFIX}/sbin
+	@cd ${WRKSRC} && perldoc -u sqlgrey | pod2man sqlgrey > ${STAGEDIR}/${MANPREFIX}/man/man1/sqlgrey.1
+	@${MKDIR} ${STAGEDIR}/${PREFIX}/${ETCDIR}
 .for i in ${ETCFILES}
-	@${INSTALL_DATA} ${WRKSRC}/etc/${i} ${PREFIX}/${ETCDIR}/${i}.dist
-	@[ "${i}" = "dyn_fqdn.regexp" ] || [ "${i}" = "smtp_server.regexp" ] || [ "${i}" = "sqlgrey.conf" ] || ${TOUCH} ${PREFIX}/${ETCDIR}/${i}.local
-	@[ -f ${PREFIX}/${ETCDIR}/${i} ] || ${INSTALL_DATA} ${WRKSRC}/etc/${i} ${PREFIX}/${ETCDIR}/${i}
+	@${INSTALL_DATA} ${WRKSRC}/etc/${i} ${STAGEDIR}/${PREFIX}/${ETCDIR}/${i}.sample
 .endfor
 .if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
-	@${ECHO_MSG} "===> Documentation installed in ${DOCSDIR}."
+	@${MKDIR} ${STAGEDIR}/${DOCSDIR}
+	@${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}/${DOCSDIR}
+	@${ECHO_MSG} "===> Documentation installed in ${STAGEDIR}/${DOCSDIR}."
 .endif
-
-post-install:
-	@${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
 .include <bsd.port.mk>

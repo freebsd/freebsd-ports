@@ -22,9 +22,7 @@ include/dis-asm.h
 %%GOLD%%include/plugin-api.h
 include/symcat.h
 lib/libbfd.a
-lib/libbfd.la
 lib/libopcodes.a
-lib/libopcodes.la
 man/man1/addr2line.1.gz
 man/man1/ar.1.gz
 man/man1/as.1.gz

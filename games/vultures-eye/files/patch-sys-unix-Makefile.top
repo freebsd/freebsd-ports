@@ -6,7 +6,7 @@
  # make NetHack
 -PREFIX	 = /usr
 +#PREFIX	 = /usr
- GAME     = vultureseye
+ GAME     = vulture-nethack
  # GAME     = nethack.prg
  GAMEUID  = games
 -GAMEGRP  = bin
@@ -29,7 +29,7 @@
  # (if there is, you'll have to do the installation by hand or modify the
  # instructions)
 -GAMEDIR  = $(PREFIX)/games/lib/$(GAME)dir
-+GAMEDIR  = $(DATADIR)
++GAMEDIR  = $(PREFIX)/lib/$(GAME)dir
  VARDIR  = $(GAMEDIR)
 -SHELLDIR = $(PREFIX)/games
 +SHELLDIR = $(PREFIX)/bin

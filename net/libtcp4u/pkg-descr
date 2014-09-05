@@ -1,6 +1,0 @@
-Library for easy writing socket-oriented applications.
-Supports TCP and UDP protocols as well as some higher
-level protocols (HTTP, SMTP).
-Conctains tcp4u, http4u, tn4u, udp4u.
-
-WWW: http://membres.tripod.fr/phjounin/

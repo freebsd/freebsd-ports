@@ -1,0 +1,16 @@
+include/cmockery/cmockery.h
+include/cmockery/cmockery_override.h
+include/cmockery/pbc.h
+lib/libcmockery.a
+lib/libcmockery.so
+lib/libcmockery.so.0
+lib/libcmockery.so.0.0.0
+libdata/pkgconfig/cmockery2.pc
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/coverage.md
+%%PORTDOCS%%%%DOCSDIR%%/index.html
+%%PORTDOCS%%%%DOCSDIR%%/usage.md
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrmtry include/cmockery

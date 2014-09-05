@@ -1,0 +1,21 @@
+From 774cfec959227a52b9a54afa8b069277c2f7e656 Mon Sep 17 00:00:00 2001
+From: sheepluva <sheepyluva@gmail.com>
+Date: Fri, 15 Aug 2014 08:23:15 +0200
+Subject: [PATCH] part of patch in issue 803 (ty) - this hopefully should fix
+ issues with cmake Makefiles trying to run "Qt4::lrelease" in the shell
+
+---
+ share/hedgewars/Data/Locale/CMakeLists.txt | 3 +++
+ 1 file changed, 3 insertions(+)
+
+diff --git a/share/hedgewars/Data/Locale/CMakeLists.txt b/share/hedgewars/Data/Locale/CMakeLists.txt
+index 6075ecb..3e0dada 100644
+--- share/hedgewars/Data/Locale/CMakeLists.txt
++++ share/hedgewars/Data/Locale/CMakeLists.txt
+@@ -1,3 +1,6 @@
++find_package(Qt4 REQUIRED)
++include(${QT_USE_FILE})
++
+ file(GLOB txttrans2 ??.txt)
+ file(GLOB txttrans5 ?????.txt)
+ file(GLOB tsfiles *.ts)

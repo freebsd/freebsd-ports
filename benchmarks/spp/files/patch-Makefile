@@ -1,5 +1,5 @@
---- ./Makefile.orig	2013-05-22 03:50:24.000000000 +0200
-+++ ./Makefile	2014-02-16 12:29:01.767731648 +0100
+--- Makefile.orig	2013-05-22 01:50:24 UTC
++++ Makefile
 @@ -39,8 +39,8 @@
  SLIBS=  -pthread -lpcap
  BINDIR=./bin
@@ -25,16 +25,19 @@
  
  # turn on optimisation
  CFLAGS += -O2
-@@ -80,9 +80,10 @@
- 		echo "You must be root to install" && exit 1 ; \
- 	fi ;	
+@@ -76,13 +76,10 @@
+ 	    rm -f $(PROGRAM) *.o $(SRCDIR)/*.o *~
+ 
+ install:
+-	@if test "`id -u`" != "0" ; then \
+-		echo "You must be root to install" && exit 1 ; \
+-	fi ;	
  	@echo "Installing spp binary"
 -	$(INSTALL) -c -m 755 $(PROGRAM) /usr/local/bin/
-+	@strip $(PROGRAM)
-+	$(INSTALL) -c -m 755 $(PROGRAM) $(DESTDIR)$(PREFIX)/bin/
++	$(BSD_INSTALL_PROGRAM) $(PROGRAM) $(DESTDIR)$(PREFIX)/bin/
  	@echo "Installing manual page"
 -	$(INSTALL) -c -m 644 doc/spp.1 /usr/local/man/man1/	
-+	$(INSTALL) -c -m 644 doc/spp.1 $(DESTDIR)$(PREFIX)/man/man1/	
++	$(BSD_INSTALL_MAN) doc/spp.1 $(DESTDIR)$(PREFIX)/man/man1/	
  
  # target 'distro'
  #

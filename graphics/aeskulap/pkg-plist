@@ -1,11 +1,5 @@
 bin/aeskulap
-lib/aeskulap/libconfiguration.a
-lib/aeskulap/libconfiguration.la
-lib/aeskulap/libconfiguration.so.0.0
 lib/aeskulap/libconfiguration.so
-lib/aeskulap/libimagepool.a
-lib/aeskulap/libimagepool.la
-lib/aeskulap/libimagepool.so.0.0
 lib/aeskulap/libimagepool.so
 lib/aeskulap/libofstd.so
 lib/aeskulap/libdcmdata.so
@@ -40,6 +34,11 @@ share/applications/aeskulap.desktop
 %%DATADIR%%/images/stock-tool-eraser-22.png
 %%DATADIR%%/images/stock-tool-measure-22.png
 %%DATADIR%%/images/stock-tool-scale-22.png
+share/locale/de/LC_MESSAGES/aeskulap.mo
+share/locale/en/LC_MESSAGES/aeskulap.mo
+share/locale/es/LC_MESSAGES/aeskulap.mo
+share/locale/hu/LC_MESSAGES/aeskulap.mo
+share/locale/pt/LC_MESSAGES/aeskulap.mo
 @dirrm %%DATADIR%%/images
 @dirrm %%DATADIR%%/glade
 @dirrm %%DATADIR%%

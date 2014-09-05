@@ -1,0 +1,14 @@
+--- lib/hammer_cli_foreman/i18n.rb
++++ lib/hammer_cli_foreman/i18n.rb
+@@ -24,6 +24,11 @@ def locale_dir
+         '/usr/share/locale'
+       end
+ 
++
++      def domain_name
++        "#{super}@system"
++      end
++
+     end
+ 
+   end

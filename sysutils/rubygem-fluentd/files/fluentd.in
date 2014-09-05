@@ -13,7 +13,6 @@
 # 		  		Set it to YES to enable fluentd.
 # fluentd_config (path):	Set to %%PREFIX%%/etc/fluentd/fluent.conf
 # 		  		by default.
-# fluentd_db_dir (path):	Set DB dir (default: "/var/db/fluentd")
 # fluentd_flags (str):          Set to "" by default.
 
 . /etc/rc.subr
@@ -31,7 +30,7 @@ load_rc_config $name
 : ${fluentd_group="%%GROUP%%"}
 : ${fluentd_flags:=""}
 
-init_cmd="init_fluentd_dir"
+start_precmd="fluentd_start_precmd"
 
 command=%%PREFIX%%/bin/${name}
 pidfile=/var/run/${name}/${name}.pid
@@ -39,12 +38,10 @@ command_interpreter=%%RUBY%%
 
 command_args="-d $pidfile -c $fluentd_config"
 
-init_fluentd_dir()
+fluentd_start_precmd()
 {
-    # XXX: Using sudo for now.  fluentd user have /nonexistent as
-    # $HOME, and nologin as shell.
     install -d -o ${fluentd_user} -g ${fluentd_group} -m 775 ${fluentd_dir}
-    %%PREFIX%%/bin/sudo -u fluentd ${command} --setup ${fluentd_dir}
+    install -d -o ${fluentd_user} -g ${fluentd_group} -m 775 /var/run/fluentd
 }
 
 run_rc_command "$1"

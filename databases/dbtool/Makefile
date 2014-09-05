@@ -3,7 +3,7 @@
 
 PORTNAME=	dbtool
 PORTVERSION=	1.7
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	databases
 MASTER_SITES=	http://www.daemon.de/idisk/Apps/dbtool/
 
@@ -13,11 +13,6 @@ COMMENT=	Store and retrieve data in a key/value format in a hash database
 LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre
 
 OPTIONS_DEFINE=	BDB EXAMPLES
-
-BDB_LIB_DEPENDS=	libdb3.so:${PORTSDIR}/databases/db3
-BDB_CPPFLAGS=		-I${LOCALBASE}/include/db3
-BDB_CONFIGURE_ON=	--with-berkeley
-BDB_LIB_DEPENDS_OFF=	libgdbm.so:${PORTSDIR}/databases/gdbm
 
 EXAMPLES_RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
 
@@ -35,17 +30,27 @@ UB2PFX=		samples/locate/locate samples/locate/updatedb
 
 .include <bsd.port.options.mk>
 
+.if ${PORT_OPTIONS:MBDB}
+USE_BDB=	48+
+CPPFLAGS+=	-I${BDB_INCLUDE_DIR}
+LIBS+=		-L${BDB_LIB_DIR} -l${BDB_LIB_NAME}
+CONFIGURE_ARGS+=	--with-berkeley
+.else
+LIB_DEPENDS+=	libgdbm.so:${PORTSDIR}/databases/gdbm
+CONFIGURE_ARGS+=	--without-berkeley
+.endif
+
 post-patch:
+	${REINPLACE_CMD} -e 's,==,=,g' ${WRKSRC}/configure
 .for file in dbtool.cc engine.cc engine.h
-	@${REINPLACE_CMD} -e "s,stdin,input,g" ${WRKSRC}/${file}
+	${REINPLACE_CMD} -e "s,stdin,input,g" ${WRKSRC}/${file}
 .endfor
-	@${REINPLACE_CMD} -e "s,==,=,g" ${WRKSRC}/configure
 .if ${PORT_OPTIONS:MEXAMPLES}
 .for file in ${SH2BASH}
-	@${REINPLACE_CMD} -e "s|/bin/sh|${LOCALBASE}/bin/bash|" ${WRKSRC}/${file}
+	${REINPLACE_CMD} -e "s|/bin/sh|${LOCALBASE}/bin/bash|" ${WRKSRC}/${file}
 .endfor
 .for file in ${UB2PFX}
-	@${REINPLACE_CMD} -e "s|%%PREFIX%%|${PREFIX}|" ${WRKSRC}/${file}
+	${REINPLACE_CMD} -e "s|%%PREFIX%%|${PREFIX}|" ${WRKSRC}/${file}
 	@${RM} ${WRKSRC}/${file}.orig
 	@${RM} ${WRKSRC}/${file}~
 .endfor
@@ -53,6 +58,6 @@ post-patch:
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
-	@${CP} -Rp ${WRKSRC}/samples/* ${STAGEDIR}${EXAMPLESDIR}
+	${CP} -Rp ${WRKSRC}/samples/* ${STAGEDIR}${EXAMPLESDIR}
 
 .include <bsd.port.mk>

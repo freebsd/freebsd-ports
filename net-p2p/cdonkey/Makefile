@@ -3,7 +3,7 @@
 
 PORTNAME=	cdonkey
 PORTVERSION=	0.9.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net-p2p
 MASTER_SITES=	http://www.sourcefiles.org/Internet/File_Sharing/Edonkey/
 DISTNAME=	cDonkey-${PORTVERSION}

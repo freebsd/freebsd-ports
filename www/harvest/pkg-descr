@@ -1,8 +1,0 @@
-Harvest is a system to collect information and make it searchable
-using a Web interface. It can collect information using HTTP, FTP,
-NNTP, and local files. Supported formats include HTML, DVI, PS,
-fulltext, mail, man pages, news, troff, WordPerfect, C sources, and
-many more. Adding support for new formats is easy due to Harvest's
-modular design.
-
-WWW: http://harvest.sourceforge.net/

@@ -19,6 +19,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	OPT_CFLAGS=" "	# Inhibit -O3, our default CFLAGS are upheld
 USE_GNOME=	gtk20
 INSTALLS_ICONS=	yes
+LIBS+=		-lm
 
 # Unbreak parallel builds (-jX)
 post-patch:

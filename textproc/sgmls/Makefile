@@ -3,20 +3,20 @@
 
 PORTNAME=	sgmls
 PORTVERSION=	1.1.91
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc
 MASTER_SITES=	ftp://ftp.jclark.com/pub/sgmls/
-EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	SGML parser
 
+USES=		tar:Z
 WRKSRC=		${WRKDIR}/${PORTNAME}
 HAS_CONFIGURE=	yes
 INSTALL_TARGET=	install install.man
 
 PROGS=		sgmls sgmlsasp rast
-PKGDOCS=	ChangeLog INSTALL LICENSE NEWS README TODO
+PORTDOCS=	ChangeLog INSTALL LICENSE NEWS README TODO
 
 OPTIONS_DEFINE=	DOCS
 
@@ -30,9 +30,8 @@ post-build:
 	cd ${WRKSRC} && ${MAKE} test
 
 post-install:
-	@${ECHO_MSG} "===>   Installing documentation for ${PKGNAME}"
 	@-${MKDIR} ${STAGEDIR}${DOCSDIR}
-.for f in ${PKGDOCS}
+.for f in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}
 .endfor
 

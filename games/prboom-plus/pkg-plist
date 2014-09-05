@@ -1,0 +1,20 @@
+bin/prboom-plus
+bin/prboom-plus-game-server
+man/man5/prboom-plus.cfg.5.gz
+man/man6/prboom-plus.6.gz
+man/man6/prboom-plus-game-server.6.gz
+%%DATADIR%%/prboom-plus.wad
+@dirrmtry %%DATADIR%%
+%%PORTDOCS%%%%DOCSDIR%%/MBF.txt
+%%PORTDOCS%%%%DOCSDIR%%/MBFFAQ.txt
+%%PORTDOCS%%%%DOCSDIR%%/README.compat
+%%PORTDOCS%%%%DOCSDIR%%/README.demos
+%%PORTDOCS%%%%DOCSDIR%%/boom.txt
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/prboom-plus-history.html
+%%PORTDOCS%%%%DOCSDIR%%/prboom-plus-history.txt
+%%PORTDOCS%%%%DOCSDIR%%/prboom-plus-usage.txt
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%

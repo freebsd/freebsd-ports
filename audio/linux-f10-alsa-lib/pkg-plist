@@ -3,11 +3,8 @@ etc/asound.conf
 lib/libasound.so.2
 lib/libasound.so.2.0.0
 usr/bin/aserver
-usr/lib/alsa-lib/smixer/smixer-ac97.la
 usr/lib/alsa-lib/smixer/smixer-ac97.so
-usr/lib/alsa-lib/smixer/smixer-hda.la
 usr/lib/alsa-lib/smixer/smixer-hda.so
-usr/lib/alsa-lib/smixer/smixer-sbase.la
 usr/lib/alsa-lib/smixer/smixer-sbase.so
 usr/share/alsa/alsa.conf
 usr/share/alsa/cards/AACI.conf

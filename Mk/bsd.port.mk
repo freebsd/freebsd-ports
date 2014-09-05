@@ -587,44 +587,12 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #				  Installs all directories and files from ${WRKSRC}/doc
 #				  to ${DOCSDIR} except sed backup files.
 #
-# Set the following to specify all manpages that your port installs.
-# These manpages will be automatically listed in ${PLIST}.  Depending
-# on the setting of NO_MANCOMPRESS, the make rules will compress the
-# manpages for you.
-#
-# MAN<sect>		- A list of manpages, categorized by section.  For
-#				  example, if your port has "man/man1/foo.1" and
-#				  "man/mann/bar.n", set "MAN1=foo.1" and "MANN=bar.n".
-#				  The available sections chars are "123456789LN".
-# MAN<sect>_<lang>
-#				- If your port does not install all man pages for all
-#				  languages in MANLANG, language specific pages for
-#				  a language can be specified with this. For example,
-#				  if the port installs foo.1 in English, Japanese, and
-#				  German, bar.1 in English only, and baz.3 in German
-#				  only, set
-#					MANLANG=	"" de ja
-#					MAN1=		foo.1
-#					MAN1_EN=	bar.1
-#					MAN3_DE=	baz.3
-# MLINKS		- A list of <source, target> tuples for creating links
-#				  for manpages.  For example, "MLINKS= a.1 b.1 c.3 d.3"
-#				  will do an "ln -sf a.1 b.1" and "ln -sf c.3 d.3" in
-#				  appropriate directories.  (Use this even if the port
-#				  installs its own manpage links so they will show up
-#				  correctly in ${PLIST}.)
 # MANPREFIX		- The directory prefix for ${MAN<sect>} and ${MLINKS}.
 #				  Default: ${PREFIX}
 # MAN<sect>PREFIX
 #				- If manual pages of some sections install in different
 #				  locations than others, use these.
 #				  Default: ${MANPREFIX}
-# MANCOMPRESSED	- This variable can take values "yes", "no" or
-#				  "maybe".  "yes" means manpages are installed
-#				  compressed; "no" means they are not; "maybe" means
-#				  it changes depending on the value of NO_MANCOMPRESS.
-#				  Default: "yes" if USES=imake is set without the noman
-#				  argument, and "no" otherwise.
 #
 # Set the following to specify all .info files your port installs.
 #
@@ -645,6 +613,10 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #				  Should not be set when no documentation files are
 #				  installed.
 #				  Useful for dynamically generated documentation.
+#				  NOTE: this may fail to generate @dirrm entries for
+#				  complex patterns. In such a case, please abstain from
+#				  using DOCSDIR and add files and @dirrm-directories to
+#				  pkg-plist instead (see make makeplist).
 #
 # Set the following to specify all documentation your port installs into
 # ${EXAMPLESDIR}
@@ -1035,10 +1007,6 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #
 # For package:
 #
-# NO_LATEST_LINK
-#				- Do not install the "Latest" link for package.  Define this
-#				  if this port is a beta version of another stable port
-#				  which is also in the tree.
 # LATEST_LINK	- Install the "Latest" link for the package as ___.  Define
 #				  this if the "Latest" link name will be incorrectly determined.
 #
@@ -1106,6 +1074,7 @@ SRC_BASE?=		/usr/src
 USESDIR?=		${PORTSDIR}/Mk/Uses
 SCRIPTSDIR?=	${PORTSDIR}/Mk/Scripts
 LIB_DIRS?=		/lib /usr/lib ${LOCALBASE}/lib
+STAGEDIR?=	${WRKDIR}/stage
 NOTPHONY?=
 PKG_ENV+=		PORTSDIR=${PORTSDIR}
 CONFIGURE_ENV+=	XDG_DATA_HOME=${WRKDIR} \
@@ -1114,10 +1083,23 @@ CONFIGURE_ENV+=	XDG_DATA_HOME=${WRKDIR} \
 MAKE_ENV+=		XDG_DATA_HOME=${WRKDIR} \
 				XDG_CONFIG_HOME=${WRKDIR} \
 				HOME=${WRKDIR}
-
-.if defined(FORCE_STAGE)
-.undef NO_STAGE
-.endif
+QA_ENV+=	STAGEDIR=${STAGEDIR} \
+			PREFIX=${PREFIX} \
+			LOCALBASE=${LOCALBASE} \
+			"STRIP=${STRIP}" \
+			TMPPLIST=${TMPPLIST}
+CO_ENV+=	STAGEDIR=${STAGEDIR} \
+			PREFIX=${PREFIX} \
+			LOCALBASE=${LOCALBASE} \
+			WRKDIR=${WRKDIR} \
+			WRKSRC=${WRKSRC} \
+			MTREE_FILE=${MTREE_FILE} \
+			GNOME_MTREE_FILE=${GNOME_MTREE_FILE} \
+			TMPPLIST=${TMPPLIST} \
+			SCRIPTSDIR=${SCRIPTSDIR} \
+			PLIST_SUB_SED="${PLIST_SUB_SED}" \
+			PORT_OPTIONS="${PORT_OPTIONS}" \
+			PORTSDIR="${PORTSDIR}"
 
 # make sure bmake treats -V as expected
 .MAKE.EXPAND_VARIABLES= yes
@@ -1125,14 +1107,12 @@ MAKE_ENV+=		XDG_DATA_HOME=${WRKDIR} \
 .include "${PORTSDIR}/Mk/bsd.commands.mk"
 
 .if defined(NO_STAGE)
+BROKEN=				Not staged.
 DEPRECATED?=		Not staged. See http://lists.freebsd.org/pipermail/freebsd-ports-announce/2014-May/000080.html
 EXPIRATION_DATE?=	2014-08-31
 .endif
 
 .if defined(X_BUILD_FOR)
-.if defined(NO_STAGE)
-IGNORE=	Cross building is only compatible with stagified ports
-.endif
 .if !defined(.PARSEDIR)
 IGNORE=	Cross building can only be done when using bmake(1) as make(1)
 .endif
@@ -1177,15 +1157,17 @@ STRIPBIN=	${STRIP_CMD}
 makepatch:
 	@${MKDIR} ${FILESDIR}
 	@(cd ${PATCH_WRKSRC}; \
-		for i in `find . -type f -name '*.orig'`; do \
-			ORG=$$i; \
-			NEW=$${i%.orig}; \
-			cmp -s $${ORG} $${NEW} && continue; \
-			OUT=${FILESDIR}`${ECHO} $${NEW} | \
-				${SED} -e 's|/|__|g' \
-					-e 's|^\.__|/patch-|'`; \
-			${ECHO} ${DIFF} -ud $${ORG} $${NEW} '>' $${OUT}; \
-			${DIFF} -ud $${ORG} $${NEW} > $${OUT} || ${TRUE}; \
+		for f in `${FIND} . -type f -name '*.orig'`; do \
+			ORIG=$${f#./}; \
+			NEW=$${ORIG%.orig}; \
+			cmp -s $${ORIG} $${NEW} && continue; \
+			PATCH=`${ECHO} $${NEW} | ${SED} -e 's|/|__|g'`; \
+			OUT=${FILESDIR}/patch-$${PATCH}; \
+			${ECHO} ${DIFF} -ud $${ORIG} $${NEW} '>' $${OUT}; \
+			TZ=UTC ${DIFF} -ud $${ORIG} $${NEW} | ${SED} -e \
+				'/^---/s|\.[0-9]* +0000$$| UTC|' -e \
+				'/^+++/s|\([[:blank:]][-0-9:.+]*\)*$$||' \
+					> $${OUT} || ${TRUE}; \
 		done \
 	)
 .endif
@@ -1222,20 +1204,6 @@ OSVERSION!=	${AWK} '/^\#define[[:blank:]]__FreeBSD_version/ {print $$3}' < ${SRC
 .else
 OSVERSION!=	${SYSCTL} -n kern.osreldate
 .endif
-.endif
-
-.if ${OSVERSION} >= 1000017
-.if !defined(WITHOUT_PKGNG)
-WITH_PKGNG?=	yes
-.else
-.undef	WITH_PKGNG
-.endif
-.endif
-
-.if !defined(WITH_PKGNG) && !defined(NO_WARNING_PKG_INSTALL_EOL)
-WARNING+=	"pkg_install EOL is scheduled for 2014-09-01. Please migrate to pkgng"
-WARNING+=	"http://blogs.freebsdish.org/portmgr/2014/02/03/time-to-bid-farewell-to-the-old-pkg_-tools/"
-WARNING+=	"If you do not want to see this message again set NO_WARNING_PKG_INSTALL_EOL=yes in your make.conf"
 .endif
 
 # Enable new xorg for FreeBSD versions after Radeon KMS was imported unless
@@ -1505,6 +1473,18 @@ USES+=	python
 UID!=	${ID} -u
 .endif
 
+DESTDIRNAME?=	DESTDIR
+
+.if !empty(USES:Mdesktop-file-utils)
+QA_ENV+=	USESDESKTOPFILEUTILS=yes
+.endif
+.if !empty(USES:Mlibtool*)
+QA_ENV+=	USESLIBTOOL=yes
+.endif
+.if !empty(USES:Mshared-mime-info)
+QA_ENV+=	USESSHAREDMIMEINFO=yes
+.endif
+
 # Loading features
 .for f in ${USES}
 _f=${f:C/\:.*//g}
@@ -1585,10 +1565,6 @@ SUB_LIST+=	PREFIX=${PREFIX} LOCALBASE=${LOCALBASE} \
 PLIST_SUB_SED_MIN?=	2
 PLIST_SUB_SED?= ${PLIST_SUB:C/.*=.{1,${PLIST_SUB_SED_MIN}}$//g:NEXTRACT_SUFX=*:NOSREL=*:NLIB32DIR=*:NPREFIX=*:NLOCALBASE=*:NRESETPREFIX=*:N*="":N*="@comment*:C/([^=]*)="?([^"]*)"?/s!\2!%%\1%%!g;/g:C/\./\\./g}
 
-PLIST_REINPLACE+=	stopdaemon rmtry
-PLIST_REINPLACE_RMTRY=s!^@rmtry \(.*\)!@unexec rm -f %D/\1 2>/dev/null || true!
-PLIST_REINPLACE_STOPDAEMON=s!^@stopdaemon \(.*\)!@unexec %D/etc/rc.d/\1 forcestop 2>/dev/null || true!
-
 # kludge to strip trailing whitespace from CFLAGS;
 # sub-configure will not # survive double space
 CFLAGS:=	${CFLAGS:C/ $//}
@@ -1634,17 +1610,11 @@ PLIST_SUB+=	        PORTEXAMPLES="@comment "
 PLIST_SUB+=	        PORTEXAMPLES=""
 .endif
 
-.if defined(NOPORTDATA)
-PLIST_SUB+=	        PORTDATA="@comment "
-.else
-PLIST_SUB+=	        PORTDATA=""
-.endif
-
 CONFIGURE_SHELL?=	${SH}
 MAKE_SHELL?=	${SH}
 
-CONFIGURE_ENV+=	SHELL=${SH} CONFIG_SHELL=${SH}
-MAKE_ENV+=		SHELL=${SH} NO_LINT=YES
+CONFIGURE_ENV+=	SHELL=${CONFIGURE_SHELL} CONFIG_SHELL=${CONFIGURE_SHELL}
+MAKE_ENV+=		SHELL=${MAKE_SHELL} NO_LINT=YES
 
 .if defined(MANCOMPRESSED)
 .if ${MANCOMPRESSED} != yes && ${MANCOMPRESSED} != no && \
@@ -1694,16 +1664,17 @@ LIB32DIR=	lib
 .endif
 PLIST_SUB+=	LIB32DIR=${LIB32DIR}
 
-PKGNG_ORIGIN?=	ports-mgmt/pkg
-.if defined(WITH_PKGNG)
-.if ${WITH_PKGNG} == devel
-PKGNG_ORIGIN=		ports-mgmt/pkg-devel
+PKG_ORIGIN?=	ports-mgmt/pkg
+# Keep WITH_PKGNG for compat with scripts which are looking for it
+WITH_PKGNG?=	yes
+WITH_PKG?=	${WITH_PKGNG}
+
+.if ${WITH_PKG} == devel
+PKG_ORIGIN=		ports-mgmt/pkg-devel
 .endif
-.if !defined(PKG_DEPENDS)
-.if !defined(CLEAN_FETCH_ENV)
-PKG_DEPENDS+=		${LOCALBASE}/sbin/pkg:${PORTSDIR}/${PKGNG_ORIGIN}
-.endif
-.endif
+
+.if !defined(PKG_DEPENDS) && !defined(CLEAN_FETCH_ENV)
+PKG_DEPENDS+=	${LOCALBASE}/sbin/pkg:${PORTSDIR}/${PKG_ORIGIN}
 .endif
 
 .if defined(USE_GCC)
@@ -1816,20 +1787,44 @@ RUN_DEPENDS+=	${_GL_${_component}_RUN_DEPENDS}
 . endfor
 .endif
 
-.if !defined(NO_STAGE)
-.include "${PORTSDIR}/Mk/bsd.stage.mk"
+.if defined(_DESTDIR_VIA_ENV)
+MAKE_ENV+=	${DESTDIRNAME}=${STAGEDIR}
 .else
-# Ignore STAGEDIR if set from make.conf
-.undef STAGEDIR
-# From command line it is impossible to undefined so we must raise an error
-.if defined(STAGEDIR)
-IGNORE=	Do not define STAGEDIR in command line
-.endif
+MAKE_ARGS+=	${DESTDIRNAME}=${STAGEDIR}
 .endif
 
-.if defined(WITH_PKGNG)
-.include "${PORTSDIR}/Mk/bsd.pkgng.mk"
+CO_ENV+=	PACKAGE_DEPENDS="${_LIB_RUN_DEPENDS:C,[^:]*:([^:]*):?.*,\1,:C,${PORTSDIR}/,,}" \
+		PKG_QUERY="${PKG_QUERY}"
+
+.if defined(NO_PREFIX_RMDIR)
+CO_ENV+=	NO_PREFIX_RMDIR=1
+.else
+CO_ENV+=	NO_PREFIX_RMDIR=0
 .endif
+
+
+METADIR=		${WRKDIR}/.metadir
+MANIFESTF=		${METADIR}/+MANIFEST
+
+PKGPREINSTALL?=		${PKGDIR}/pkg-pre-install
+PKGPOSTINSTALL?=	${PKGDIR}/pkg-post-install
+PKGPREDEINSTALL?=	${PKGDIR}/pkg-pre-deinstall
+PKGPOSTDEINSTALL?=	${PKGDIR}/pkg-post-deinstall
+PKGPREUPGRADE?=		${PKGDIR}/pkg-pre-upgrade
+PKGPOSTUPGRADE?=	${PKGDIR}/pkg-post-upgrade
+PKGUPGRADE?=		${PKGDIR}/pkg-upgrade
+
+_FORCE_POST_PATTERNS=	rmdir kldxref mkfontscale mkfontdir fc-cache \
+						fonts.dir fonts.scale gtk-update-icon-cache \
+						gio-querymodules \
+						gtk-query-immodules \
+						ldconfig \
+						load-octave-pkg \
+						ocamlfind \
+						update-desktop-database update-mime-database \
+						gdk-pixbuf-query-loaders catalog.ports \
+						glib-compile-schemas \
+						ccache-update-links
 
 .if defined(USE_LOCAL_MK)
 .include "${PORTSDIR}/Mk/bsd.local.mk"
@@ -2037,21 +2032,15 @@ CFLAGS+=       -fno-strict-aliasing
 .endif
 .endif
 
-.if defined(USE_CSTD)
-CFLAGS:=	${CFLAGS:N-std=*} -std=${USE_CSTD}
+.for lang in C CXX
+.if defined(USE_${lang}STD)
+${lang}FLAGS:=	${${lang}FLAGS:N-std=*} -std=${USE_${lang}STD}
 .endif
 
-.if defined(CFLAGS_${ARCH})
-CFLAGS+=	${CFLAGS_${ARCH}}
+.if defined(${lang}FLAGS_${ARCH})
+${lang}FLAGS+=	${${lang}FLAGS_${ARCH}}
 .endif
-
-.if defined(USE_CXXSTD)
-CXXFLAGS:=	${CXXFLAGS:N-std=*} -std=${USE_CXXSTD}
-.endif
-
-.if defined(CXXFLAGS_${ARCH})
-CXXFLAGS+=	${CXXFLAGS_${ARCH}}
-.endif
+.endfor
 
 # Multiple make jobs support
 .if defined(DISABLE_MAKE_JOBS) || defined(MAKE_JOBS_UNSAFE)
@@ -2206,6 +2195,8 @@ _SHROWNGRP=
 _MANOWNGRP=
 .endif
 
+_SHAREMODE?=	0644
+
 # A few aliases for *-install targets
 INSTALL_PROGRAM= \
 	${INSTALL} ${COPY} ${STRIP} ${_BINOWNGRP} -m ${BINMODE}
@@ -2216,7 +2207,7 @@ INSTALL_LIB= \
 INSTALL_SCRIPT= \
 	${INSTALL} ${COPY} ${_BINOWNGRP} -m ${BINMODE}
 INSTALL_DATA= \
-	${INSTALL} ${COPY} ${_SHROWNGRP} -m ${SHAREMODE}
+	${INSTALL} ${COPY} ${_SHROWNGRP} -m ${_SHAREMODE}
 INSTALL_MAN= \
 	${INSTALL} ${COPY} ${_MANOWNGRP} -m ${MANMODE}
 
@@ -2287,11 +2278,7 @@ PKG_ARGS+=		-C "${CONFLICTS_INSTALL}"
 .if defined(PKG_NOCOMPRESS)
 PKG_SUFX?=		.tar
 .else
-.if defined(WITH_PKGNG)
 PKG_SUFX?=		.txz
-.else
-PKG_SUFX?=		.tbz
-.endif
 .endif
 # where pkg_add records its dirty deeds.
 PKG_DBDIR?=		/var/db/pkg
@@ -2802,101 +2789,6 @@ MAN${sect}PREFIX?=	${MANPREFIX}
 MANLPREFIX?=	${MANPREFIX}
 MANNPREFIX?=	${MANPREFIX}
 
-MANLANG?=	""	# english only by default
-
-.if !defined(NO_MANCOMPRESS)
-MANEXT=	.gz
-.endif
-
-.if (defined(MLINKS) || defined(_MLINKS_PREPEND)) && !defined(_MLINKS)
-
-.if defined(.PARSEDIR)
-_MLINKS=	 ${_MLINKS_PREPEND} \
-		 ${MANLANG:S,^,man/,:S,/"",,:@m@${MLINKS:@p@${MAN${p:E:C/(.).*/\1/g}PREFIX}/$m/man${p:E:C/(.).*/\1/g}/$p${MANEXT}@}@}
-.else
-__pmlinks!=	${ECHO_CMD} '${MLINKS:S/	/ /}' | ${AWK} \
- '{ if (NF % 2 != 0) { print "broken"; exit; } \
-	for (i=1; i<=NF; i++) { \
-		if ($$i ~ /^-$$/ && i != 1 && i % 2 != 0) \
-			{ $$i = $$(i-2); printf " " $$i " "; } \
-		else if ($$i ~ /^[^ ]+\.[1-9ln][^. ]*$$/ || $$i ~ /^\//) \
-			printf " " $$i " "; \
-		else \
-			{ print "broken"; exit; } \
-	} \
-  }' | ${SED} -e 's \([^/ ][^ ]*\.\(.\)[^. ]*\) $${MAN\2PREFIX}/$$$$$$$${__lang}/man\2/\1${MANEXT}g' -e 's/ //g' -e 's/MANlPREFIX/MANLPREFIX/g' -e 's/MANnPREFIX/MANNPREFIX/g'
-.if ${__pmlinks:Mbroken} == "broken"
-check-makevars::
-	@${ECHO_MSG} "${PKGNAME}: Makefile error: unable to parse MLINKS."
-	@${FALSE}
-.endif
-_MLINKS=	${_MLINKS_PREPEND}
-
-.for lang in ${MANLANG:S%^%man/%:S%^man/""$%man%}
-.for ___pmlinks in ${__pmlinks}
-.for __lang in ${lang}
-_MLINKS+=	${___pmlinks:S// /g}
-.endfor
-.endfor
-.endfor
-.endif
-.endif
-_COUNT=0
-.for ___tpmlinks in ${_MLINKS}
-.if ${_COUNT} == "1"
-_TMLINKS+=	${___tpmlinks}
-_COUNT=0
-.else
-_COUNT=1
-.endif
-.endfor
-
-.for manlang in ${MANLANG:S%^%man/%:S%^man/""$%man%}
-
-.for sect in 1 2 3 4 5 6 7 8 9 L N
-# MAN${sect} is for man pages installed for all languages in MANLANG for a given
-# section.
-.if defined(MAN${sect})
-_MANPAGES+=	${MAN${sect}:S%^%${MAN${sect}PREFIX}/${manlang}/man${sect:tl}/%}
-.endif
-
-# Language specific MAN${sect} variables are for man pages installed in that
-# language, but not necessarily all languages in MANLANG.
-.if defined(MAN${sect}_${manlang:S%^man/%%:tu})
-_MANPAGES+=	${MAN${sect}_${manlang:S%^man/%%:tu}:S%^%${MAN${sect}PREFIX}/${manlang}/man${sect:tl}/%}
-.endif
-
-.endfor
-
-.endfor
-
-# Special case for English, since it is defined with "" in MANLANG rather than
-# a language name and does not have man pages installed in a lang subdirectory
-# of MAN${sect}PREFIX.
-.for sect in 1 2 3 4 5 6 7 8 9 L N
-.if defined(MAN${sect}_EN)
-_MANPAGES+=	${MAN${sect}_EN:S%^%${MAN${sect}PREFIX}/man/man${sect:tl}/%}
-.endif
-.endfor
-
-.if !defined(_TMLINKS)
-_TMLINKS=
-.endif
-
-.if defined(_MANPAGES)
-
-.if defined(NO_MANCOMPRESS)
-__MANPAGES:=	${_MANPAGES:S%^${PREFIX}/%%}
-.else
-__MANPAGES:=	${_MANPAGES:S%^${PREFIX}/%%:S%$%.gz%}
-.endif
-
-.if ${MANCOMPRESSED} == "yes"
-_MANPAGES:=	${_MANPAGES:S%$%.gz%}
-.endif
-
-.endif
-
 .if ${PREFIX} == /usr
 INFO_PATH?=	share/info
 .else
@@ -3015,6 +2907,8 @@ IGNORE=		is not an interactive port
 IGNORE=		may not be placed on a CDROM: ${NO_CDROM}
 .elif (defined(RESTRICTED) && defined(NO_RESTRICTED))
 IGNORE=		is restricted: ${RESTRICTED}
+.elif (defined(NO_PACKAGE) && defined(PACKAGE_BUILDING))
+IGNORE=		may not be packaged: ${NO_PACKAGE}
 .elif defined(BROKEN)
 .if !defined(TRYBROKEN)
 IGNORE=		is marked as broken: ${BROKEN}
@@ -3051,10 +2945,9 @@ IGNORECMD=	${DO_NADA}
 IGNORECMD=	${ECHO_MSG} "===>  ${PKGNAME} "${IGNORE:Q}.;exit 1
 .endif
 
-_TARGETS=	check-sanity fetch checksum extract patch configure all build install reinstall package
-.if !defined(NO_STAGE)
-_TARGETS+=	stage restage
-.endif
+_TARGETS=	check-sanity fetch checksum extract patch configure all build \
+			install reinstall package stage restage
+
 .for target in ${_TARGETS}
 .if !target(${target})
 ${target}:
@@ -3126,11 +3019,7 @@ all:
 .endif
 
 .if !target(all)
-.  if defined(NO_STAGE)
-all: build
-.  else
 all: stage
-.  endif
 .endif
 
 .if !defined(DEPENDS_TARGET)
@@ -3181,13 +3070,6 @@ checksum: fetch
 .if defined(NO_BUILD) && !target(build)
 build: configure
 	@${TOUCH} ${TOUCH_FLAGS} ${BUILD_COOKIE}
-.endif
-
-# Disable staging. Be non-fatal here as some scripts may just call it as a
-# matter of correctness in their ordering.
-.if defined(NO_STAGE) && !target(stage)
-stage:
-	@${ECHO_MSG} "===>   This port does not yet support staging"
 .endif
 
 # Disable install
@@ -3265,37 +3147,19 @@ check-deprecated:
 
 # Check if the port is listed in the vulnerability database
 
-.if defined(WITH_PKGNG)
 AUDITFILE?=		${PKG_DBDIR}/vuln.xml
 _EXTRACT_AUDITFILE=	${CAT} "${AUDITFILE}"
-.else
-AUDITFILE?=		/var/db/portaudit/auditfile.tbz
-_EXTRACT_AUDITFILE=	${TAR} -jxOf "${AUDITFILE}" auditfile
-.endif
 
 check-vulnerable:
 .if !defined(DISABLE_VULNERABILITIES) && !defined(PACKAGE_BUILDING)
 	@if [ -f "${AUDITFILE}" ]; then \
-		if [ -n "${WITH_PKGNG}" ]; then \
-			if [ -x "${PKG_BIN}" ]; then \
-				vlist=`${PKG_BIN} audit "${PKGNAME}"`; \
-				if [ "$${vlist}" = "0 problem(s) in the installed packages found." ]; then \
-					vlist=""; \
-				fi; \
-			elif [ "${PORTNAME}" = "pkg" ]; then \
+		if [ -x "${PKG_BIN}" ]; then \
+			vlist=`${PKG_BIN} audit "${PKGNAME}"`; \
+			if [ "$${vlist}" = "0 problem(s) in the installed packages found." ]; then \
 				vlist=""; \
 			fi; \
-		elif [ -x "${LOCALBASE}/sbin/portaudit" ]; then \
-			vlist=`${LOCALBASE}/sbin/portaudit -X 14 "${PKGNAME}" \
-				2>&1 | grep -vE '^[0-9]+ problem\(s\) found.' \
-				|| true`; \
-			if [ -n "$$vlist" ]; then \
-				vlist=`${LOCALBASE}/sbin/portaudit -X 14 "${PKGNAME}" \
-					2>&1 | grep -vE '^[0-9]+ problem\(s\) found.' \
-					|| true`; \
-			fi ; \
-		else \
-			${ECHO_MSG} "===>  portaudit database exists, however, portaudit is not installed!"; \
+		elif [ "${PORTNAME}" = "pkg" ]; then \
+			vlist=""; \
 		fi; \
 		if [ -n "$$vlist" ]; then \
 			${ECHO_MSG} "===>  ${PKGNAME} has known vulnerabilities:"; \
@@ -3646,17 +3510,13 @@ check-conflicts: check-build-conflicts check-install-conflicts
 .if !target(check-build-conflicts)
 check-build-conflicts:
 .if ( defined(CONFLICTS) || defined(CONFLICTS_BUILD) ) && !defined(DISABLE_CONFLICTS) && !defined(DEFER_CONFLICTS_CHECK)
-	@found=`${PKG_INFO} -I ${CONFLICTS:C/.+/'&'/} ${CONFLICTS_BUILD:C/.+/'&'/} 2>/dev/null | ${AWK} '{print $$1}'`; \
-	conflicts_with=; \
-	for entry in $${found}; do \
-		if ${PKG_INFO} -e $${entry} ; then \
-			prfx=`${PKG_INFO} -q -p "$${entry}" 2> /dev/null | ${SED} -ne '1s/^@cwd //p'`; \
-			orgn=`${PKG_INFO} -q -o "$${entry}" 2> /dev/null`; \
-			if [ "/${PREFIX}" = "/$${prfx}" -a "/${PKGORIGIN}" != "/$${orgn}" ]; then \
-				conflicts_with="$${conflicts_with} $${entry}"; \
-			fi; \
+	@conflicts_with=$$( \
+	{ ${PKG_QUERY} -g "%n-%v %p %o" ${CONFLICTS:C/.+/'&'/} ${CONFLICTS_BUILD:C/.+/'&'/} 2>/dev/null || : ; } \
+		| while read pkgname prfx orgn; do \
+		if [ "/${PREFIX}" = "/$${prfx}" -a "/${PKGORIGIN}" != "/$${orgn}" ]; then \
+			${ECHO_CMD} -n " $${pkgname}"; \
 		fi; \
-	done; \
+	done); \
 	if [ -n "$${conflicts_with}" ]; then \
 		${ECHO_MSG}; \
 		${ECHO_MSG} "===>  ${PKGNAME} conflicts with installed package(s): "; \
@@ -3665,8 +3525,8 @@ check-build-conflicts:
 		done; \
 		${ECHO_MSG}; \
 		${ECHO_MSG} "      They will not build together."; \
-		${ECHO_MSG} "      Please remove them first with pkg_delete(1)."; \
-		exit 1; \
+		${ECHO_MSG} "      Please remove them first with pkg delete."; \
+		exit 1;\
 	fi
 .endif
 .endif
@@ -3674,17 +3534,13 @@ check-build-conflicts:
 .if !target(identify-install-conflicts)
 identify-install-conflicts:
 .if ( defined(CONFLICTS) || defined(CONFLICTS_INSTALL) ) && !defined(DISABLE_CONFLICTS)
-	@found=`${PKG_INFO} -I ${CONFLICTS:C/.+/'&'/} ${CONFLICTS_INSTALL:C/.+/'&'/} 2>/dev/null | ${AWK} '{print $$1}'`; \
-	conflicts_with=; \
-	for entry in $${found}; do \
-		if ${PKG_INFO} -e $${entry} ; then \
-			prfx=`${PKG_INFO} -q -p "$${entry}" 2> /dev/null | ${SED} -ne '1s/^@cwd //p'`; \
-			orgn=`${PKG_INFO} -q -o "$${entry}" 2> /dev/null`; \
-			if [ "/${PREFIX}" = "/$${prfx}" -a "/${PKGORIGIN}" != "/$${orgn}" ]; then \
-				conflicts_with="$${conflicts_with} $${entry}"; \
-			fi; \
+	@conflicts_with=$$( \
+	{ ${PKG_QUERY} -g "%n-%v %p %o" ${CONFLICTS:C/.+/'&'/} ${CONFLICTS_INSTALL:C/.+/'&'/} 2>/dev/null || : ; } \
+		| while read pkgname prfx orgn; do \
+		if [ "/${PREFIX}" = "/$${prfx}" -a "/${PKGORIGIN}" != "/$${orgn}" ]; then \
+			${ECHO_CMD} -n " $${pkgname}"; \
 		fi; \
-	done; \
+	done); \
 	if [ -n "$${conflicts_with}" ]; then \
 		${ECHO_MSG}; \
 		${ECHO_MSG} "===>  ${PKGNAME} conflicts with installed package(s): "; \
@@ -3703,17 +3559,13 @@ identify-install-conflicts:
 check-install-conflicts:
 .if ( defined(CONFLICTS) || defined(CONFLICTS_INSTALL) || ( defined(CONFLICTS_BUILD) && defined(DEFER_CONFLICTS_CHECK) ) ) && !defined(DISABLE_CONFLICTS) 
 .if defined(DEFER_CONFLICTS_CHECK)
-	@found=`${PKG_INFO} -I ${CONFLICTS:C/.+/'&'/} ${CONFLICTS_BUILD:C/.+/'&'/} ${CONFLICTS_INSTALL:C/.+/'&'/} 2>/dev/null | ${AWK} '{print $$1}'`; \
-	conflicts_with=; \
-	for entry in $${found}; do \
-		if ${PKG_INFO} -e $${entry} ; then \
-			prfx=`${PKG_INFO} -q -p "$${entry}" 2> /dev/null | ${SED} -ne '1s/^@cwd //p'`; \
-			orgn=`${PKG_INFO} -q -o "$${entry}" 2> /dev/null`; \
-			if [ "/${PREFIX}" = "/$${prfx}" -a "/${PKGORIGIN}" != "/$${orgn}" ]; then \
-				conflicts_with="$${conflicts_with} $${entry}"; \
-			fi; \
+	@conflicts_with=$$( \
+	{ ${PKG_QUERY} -g "%n-%v %p %o" ${CONFLICTS:C/.+/'&'/} ${CONFLICTS_BUILD:C/.+/'&'/} ${CONFLICTS_INSTALL:C/.+/'&'/} 2>/dev/null || : ; } \
+	       	| while read pkgname prfx orgn; do \
+		if [ "/${PREFIX}" = "/$${prfx}" -a "/${PKGORIGIN}" != "/$${orgn}" ]; then \
+			${ECHO_CMD} -n " $${pkgname}"; \
 		fi; \
-	done; \
+	done); \
 	if [ -n "$${conflicts_with}" ]; then \
 		${ECHO_MSG}; \
 		${ECHO_MSG} "===>  ${PKGNAME} conflicts with installed package(s): "; \
@@ -3721,21 +3573,17 @@ check-install-conflicts:
 			${ECHO_MSG} "      $${entry}"; \
 		done; \
 		${ECHO_MSG}; \
-		${ECHO_MSG} "      Please remove them first with pkg_delete(1)."; \
+		${ECHO_MSG} "      Please remove them first with pkg delete."; \
 		exit 1; \
 	fi
 .else
-	@found=`${PKG_INFO} -I ${CONFLICTS:C/.+/'&'/} ${CONFLICTS_INSTALL:C/.+/'&'/} 2>/dev/null | ${AWK} '{print $$1}'`; \
-	conflicts_with=; \
-	for entry in $${found}; do \
-		if ${PKG_INFO} -e $${entry} ; then \
-			prfx=`${PKG_INFO} -q -p "$${entry}" 2> /dev/null | ${SED} -ne '1s/^@cwd //p'`; \
-			orgn=`${PKG_INFO} -q -o "$${entry}" 2> /dev/null`; \
-			if [ "/${PREFIX}" = "/$${prfx}" -a "/${PKGORIGIN}" != "/$${orgn}" ]; then \
-				conflicts_with="$${conflicts_with} $${entry}"; \
-			fi; \
+	@conflicts_with=$$( \
+	{ ${PKG_QUERY} -g "%n-%v %p %o" ${CONFLICTS:C/.+/'&'/} ${CONFLICTS_INSTALL:C/.+/'&'/} 2>/dev/null || : ; } \
+	       	| while read pkgname prfx orgn; do \
+		if [ "/${PREFIX}" = "/$${prfx}" -a "/${PKGORIGIN}" != "/$${orgn}" ]; then \
+			${ECHO_CMD} -n " $${pkgname}"; \
 		fi; \
-	done; \
+	done); \
 	if [ -n "$${conflicts_with}" ]; then \
 		${ECHO_MSG}; \
 		${ECHO_MSG} "===>  ${PKGNAME} conflicts with installed package(s): "; \
@@ -3744,7 +3592,7 @@ check-install-conflicts:
 		done; \
 		${ECHO_MSG}; \
 		${ECHO_MSG} "      They install files into the same place."; \
-		${ECHO_MSG} "      Please remove them first with pkg_delete(1)."; \
+		${ECHO_MSG} "      Please remove them first with pkg delete."; \
 		exit 1; \
 	fi
 .endif # defined(DEFER_CONFLICTS_CHECK)
@@ -3761,6 +3609,8 @@ do-install:
 # Package
 
 .if !target(do-package)
+PKG_CREATE_ARGS=	-r ${STAGEDIR} -m ${METADIR} -p ${TMPPLIST}
+do-package: create-manifest
 do-package: ${TMPPLIST}
 	@if [ -d ${PACKAGES} ]; then \
 		if [ ! -d ${PKGREPOSITORY} ]; then \
@@ -3770,109 +3620,40 @@ do-package: ${TMPPLIST}
 			fi; \
 		fi; \
 	fi
-.if defined(NO_STAGE)
-	@if ${PKG_CMD} -b ${PKGNAME} ${PKGFILE}; then \
-		if [ -d ${PACKAGES} ]; then \
-			cd ${.CURDIR} && eval ${MAKE} package-links; \
-		fi; \
-	else \
-		cd ${.CURDIR} && eval ${MAKE} delete-package; \
-		exit 1; \
-	fi
-.else
-	@_LATE_PKG_ARGS=""; \
-	if [ -f ${PKGINSTALL} ]; then \
-		_LATE_PKG_ARGS="$${_LATE_PKG_ARGS} -i ${PKGINSTALL}"; \
-	fi; \
-	if [ -f ${PKGDEINSTALL} ]; then \
-		_LATE_PKG_ARGS="$${_LATE_PKG_ARGS} -k ${PKGDEINSTALL}"; \
-	fi; \
-	if [ -f ${PKGREQ} ]; then \
-		_LATE_PKG_ARGS="$${_LATE_PKG_ARGS} -r ${PKGREQ}"; \
-	fi; \
-	if [ -f ${PKGMESSAGE} ]; then \
-		_LATE_PKG_ARGS="$${_LATE_PKG_ARGS} -D ${PKGMESSAGE}"; \
-	fi; \
-	${MKDIR} ${WRKDIR}/pkg; \
-	if ! [ -d "${PREFIX}" ]; then \
-	    if ! ${MKDIR} ${PREFIX}; then \
-		    ${ECHO_MSG} "=> Unable to create PREFIX. PREFIX must exist to create a package with pkg_install." >&2; \
-		    ${ECHO_MSG} "=> Manually create ${PREFIX} first." >&2; \
-		    exit 1; \
-		fi; \
-	    made_prefix=1; \
-	fi; \
-	if ${PKG_CMD} -S ${STAGEDIR} ${PKG_ARGS} ${WRKDIR}/pkg/${PKGNAME}${PKG_SUFX}; then \
-		[ -n "$${made_prefix}" ] && ${RMDIR} ${PREFIX}; \
-		if [ -d ${PKGREPOSITORY} -a -w ${PKGREPOSITORY} ]; then \
-			${LN} -f ${WRKDIR}/pkg/${PKGNAME}${PKG_SUFX} ${PKGFILE} 2>/dev/null || \
-			    ${CP} -af ${WRKDIR}/pkg/${PKGNAME}${PKG_SUFX} ${PKGFILE}; \
-			cd ${.CURDIR} && eval ${MAKE} package-links; \
-		fi; \
-	else \
-		[ -n "$${made_prefix}" ] && ${RMDIR} ${PREFIX}; \
-		cd ${.CURDIR} && eval ${MAKE} delete-package; \
-		exit 1; \
-	fi
-.endif
-.endif
-
-# Some support rules for do-package
-
-.if !target(package-links)
-package-links: delete-package-links
 	@for cat in ${CATEGORIES}; do \
-		if [ ! -d ${PACKAGES}/$$cat ]; then \
-			if ! ${MKDIR} ${PACKAGES}/$$cat; then \
-				${ECHO_MSG} "=> Can't create directory ${PACKAGES}/$$cat."; \
-				exit 1; \
+		${RM} -f ${PACKAGES}/$$cat/${PKGNAMEPREFIX}${PORTNAME}*${PKG_SUFX} ; \
+	done
+	@${MKDIR} ${WRKDIR}/pkg
+	@if ${SETENV} ${PKG_ENV} FORCE_POST="${_FORCE_POST_PATTERNS}" ${PKG_CREATE} ${PKG_CREATE_ARGS} -f ${PKG_SUFX:S/.//} -o ${WRKDIR}/pkg ${PKGNAME}; then \
+		if [ -d ${PKGREPOSITORY} -a -w ${PKGREPOSITORY} ]; then \
+			${LN} -f ${WRKDIR}/pkg/${PKGNAME}${PKG_SUFX} ${PKGFILE} 2>/dev/null \
+				|| ${CP} -af ${WRKDIR}/pkg/${PKGNAME}${PKG_SUFX} ${PKGFILE}; \
+			if [ "${PKGORIGIN}" = "ports-mgmt/pkg" -o "${PKGORIGIN}" = "ports-mgmt/pkg-devel" ]; then \
+				if [ ! -d ${PKGLATESTREPOSITORY} ]; then \
+					if ! ${MKDIR} ${PKGLATESTREPOSITORY}; then \
+						${ECHO_MSG} "=> Can't create directory ${PKGLATESTREPOSITORY}."; \
+						exit 1; \
+					fi; \
+				fi ; \
+				${LN} -sf ../${PKGREPOSITORYSUBDIR}/${PKGNAME}${PKG_SUFX} ${PKGLATESTFILE} ; \
 			fi; \
 		fi; \
-		${LN} -sf `${ECHO_CMD} $$cat | ${SED} -e 'sa[^/]*a..ag'`/${PKGREPOSITORYSUBDIR}/${PKGNAME}${PKG_SUFX} ${PACKAGES}/$$cat; \
-	done
-.if !defined(NO_LATEST_LINK)
-	@if [ ! -d ${PKGLATESTREPOSITORY} ]; then \
-		if ! ${MKDIR} ${PKGLATESTREPOSITORY}; then \
-			${ECHO_MSG} "=> Can't create directory ${PKGLATESTREPOSITORY}."; \
-			exit 1; \
-		fi; \
+	else \
+		cd ${.CURDIR} && eval ${MAKE} delete-package >/dev/null; \
+		exit 1; \
 	fi
-	@${LN} -s ../${PKGREPOSITORYSUBDIR}/${PKGNAME}${PKG_SUFX} ${PKGLATESTFILE}
 .endif
-.endif
-
-.if !target(delete-package-links)
-delete-package-links:
-	@for cat in ${CATEGORIES}; do \
-		${RM} -f ${PACKAGES}/$$cat/${PKGNAME}${PKG_SUFX}; \
-	done
-.if !defined(NO_LATEST_LINK)
-	@${RM} -f ${PKGLATESTFILE}
-.endif
-.endif
+# Some support rules for do-package
 
 .if !target(delete-package)
-delete-package: delete-package-links
-.	if defined(NO_STAGE)
-	@${RM} -f ${PKGFILE}
-.	else
+delete-package:
+	@${ECHO_MSG} "===>  Deleting package for ${PKGNAME}"
 # When staging, the package may only be in the workdir if not root
 	@${RM} -f ${PKGFILE} ${WRKDIR}/pkg/${PKGNAME}${PKG_SUFX} 2>/dev/null || :
-.	endif
-.endif
-
-.if !target(delete-package-links-list)
-delete-package-links-list:
-	@for cat in ${CATEGORIES}; do \
-		${ECHO_CMD} ${RM} -f ${PACKAGES}/$$cat/${PKGNAME}${PKG_SUFX}; \
-	done
-.if !defined(NO_LATEST_LINK)
-	@${ECHO_CMD} ${RM} -f ${PKGLATESTFILE}
-.endif
 .endif
 
 .if !target(delete-package-list)
-delete-package-list: delete-package-links-list
+delete-package-list:
 	@${ECHO_CMD} "[ -f ${PKGFILE} ] && (${ECHO_CMD} deleting ${PKGFILE}; ${RM} -f ${PKGFILE})"
 .endif
 
@@ -3882,7 +3663,7 @@ delete-package-list: delete-package-links-list
 .if defined(FORCE_PKG_REGISTER)
 _INSTALL_PKG_ARGS=	-f
 .endif
-.if defined(INSTALLS_DEPENDS) && defined(WITH_PKGNG)
+.if defined(INSTALLS_DEPENDS)
 _INSTALL_PKG_ARGS+=	-A
 .endif
 install-package:
@@ -3899,33 +3680,22 @@ install-package:
 
 .if !target(check-already-installed)
 .if !defined(NO_PKG_REGISTER) && !defined(FORCE_PKG_REGISTER)
-check-already-installed: ${TMPPLIST_SORT} ${PKG_DBDIR}
-		@${ECHO_MSG} "===>  Checking if ${PKGORIGIN} already installed"; \
-		already_installed=`${PKG_INFO} -q -O ${PKGORIGIN}`; \
-		if [ -n "$${already_installed}" ]; then \
-				for p in $${already_installed}; do \
-						prfx=`${PKG_INFO} -q -p $${p} 2> /dev/null | ${SED} -ne '1s|^@cwd ||p'`; \
-						if [ "x${PREFIX}" = "x$${prfx}" ]; then \
-								df=`${PKG_INFO} -q -f $${p} 2> /dev/null | ${GREP} -v "^@" | ${SORT} -u | ${COMM} -12 - ${TMPPLIST_SORT}`; \
-								if [ -n "$${df}" ]; then \
-										found_package=$${p}; \
-										break; \
-								fi; \
-						fi; \
-				done; \
-		fi; \
-		if [ -d ${PKG_DBDIR}/${PKGNAME} -o -n "$${found_package}" ]; then \
-				if [ -d ${PKG_DBDIR}/${PKGNAME} ]; then \
-					${ECHO_CMD} "===>   ${PKGNAME} is already installed"; \
-				else \
-					${ECHO_CMD} "===>   An older version of ${PKGORIGIN} is already installed ($${found_package})"; \
-				fi; \
-				${ECHO_MSG} "      You may wish to \`\`make deinstall'' and install this port again"; \
-				${ECHO_MSG} "      by \`\`make reinstall'' to upgrade it properly."; \
-				${ECHO_MSG} "      If you really wish to overwrite the old port of ${PKGORIGIN}"; \
-				${ECHO_MSG} "      without deleting it first, set the variable \"FORCE_PKG_REGISTER\""; \
-				${ECHO_MSG} "      in your environment or the \"make install\" command line."; \
-				exit 1; \
+check-already-installed:
+		@${ECHO_MSG} "===>  Checking if ${PKGBASE} already installed"; \
+		pkgname=`${PKG_INFO} -q -O ${PKGBASE}`; \
+		if [ -n "$${pkgname}" ]; then \
+			v=`${PKG_VERSION} -t $${pkgname} ${PKGNAME}`; \
+			if [ "$${v}" = "<" ]; then \
+				${ECHO_CMD} "===>   An older version of ${PKGBASE} is already installed ($${pkgname})"; \
+			else \
+				${ECHO_CMD} "===>   ${PKGNAME} is already installed"; \
+			fi; \
+			${ECHO_MSG} "      You may wish to \`\`make deinstall'' and install this port again"; \
+			${ECHO_MSG} "      by \`\`make reinstall'' to upgrade it properly."; \
+			${ECHO_MSG} "      If you really wish to overwrite the old port of ${PKGBASE}"; \
+			${ECHO_MSG} "      without deleting it first, set the variable \"FORCE_PKG_REGISTER\""; \
+			${ECHO_MSG} "      in your environment or the \"make install\" command line."; \
+			exit 1; \
 		fi
 .endif
 .endif
@@ -3980,20 +3750,7 @@ install-ldconfig-file:
 .if defined(USE_LDCONFIG) || defined(USE_LDCONFIG32)
 .if defined(USE_LDCONFIG)
 .if defined(USE_LINUX_PREFIX)
-.if defined(NO_STAGE)
-	@${ECHO_MSG} "===>   Running linux ldconfig"
-	${LDCONFIG_CMD}
-.endif
 .else
-.if defined(NO_STAGE)
-.if !defined(INSTALL_AS_USER)
-	@${ECHO_MSG} "===>   Running ldconfig"
-	${LDCONFIG} -m ${USE_LDCONFIG}
-.else
-	@${ECHO_MSG} "===>   Running ldconfig (errors are ignored)"
-	-${LDCONFIG} -m ${USE_LDCONFIG}
-.endif
-.endif
 .if ${USE_LDCONFIG} != "${LOCALBASE}/lib" && !defined(INSTALL_AS_USER)
 	@${ECHO_MSG} "===>   Installing ldconfig configuration file"
 .if defined(NO_MTREE) || ${PREFIX} != ${LOCALBASE}
@@ -4008,15 +3765,6 @@ install-ldconfig-file:
 .endif
 .endif
 .if defined(USE_LDCONFIG32)
-.if defined(NO_STAGE)
-.if !defined(INSTALL_AS_USER)
-	@${ECHO_MSG} "===>   Running ldconfig"
-	${LDCONFIG} -32 -m ${USE_LDCONFIG32}
-.else
-	@${ECHO_MSG} "===>   Running ldconfig (errors are ignored)"
-	-${LDCONFIG} -32 -m ${USE_LDCONFIG32}
-.endif
-.endif
 .if !defined(INSTALL_AS_USER)
 	@${ECHO_MSG} "===>   Installing 32-bit ldconfig configuration file"
 .if defined(NO_MTREE) || ${PREFIX} != ${LOCALBASE}
@@ -4037,14 +3785,8 @@ install-ldconfig-file:
 
 .if !target(create-users-groups)
 .if defined(GROUPS) || defined(USERS)
-.if defined(WITH_PKGNG)
 _UG_OUTPUT=	${WRKDIR}/users-groups.sh
 PKGPREINSTALL+=	${_UG_OUTPUT}
-.else
-_UG_OUTPUT=	/dev/null
-.endif
-.endif
-.if defined(GROUPS) || defined(USERS)
 create-users-groups:
 .if defined(GROUPS)
 .for _file in ${GID_FILES}
@@ -4052,15 +3794,9 @@ create-users-groups:
 	@${ECHO_CMD} "** ${_file} doesn't exist. Exiting."; exit 1
 .endif
 .endfor
-.if defined(WITH_PKGNG)
-		@${RM} -f ${_UG_OUTPUT} || ${TRUE}
-.endif
+	@${RM} -f ${_UG_OUTPUT} || ${TRUE}
 	@${ECHO_MSG} "===> Creating users and/or groups."
-.if defined(WITH_PKGNG)
 	@${ECHO_CMD} "echo \"===> Creating users and/or groups.\"" >> ${_UG_OUTPUT}
-.else
-	@${ECHO_CMD} "@exec echo \"===> Creating users and/or groups.\"" >> ${TMPPLIST}
-.endif
 .for _group in ${GROUPS}
 # _bgpd:*:130:
 	@if ! ${GREP} -h ^${_group}: ${GID_FILES} >/dev/null 2>&1; then \
@@ -4069,23 +3805,9 @@ create-users-groups:
 	fi
 	@IFS=":"; ${GREP} -h ^${_group}: ${GID_FILES} | head -n 1 | while read group foo gid members; do \
 		gid=$$(($$gid+${GID_OFFSET})); \
-		if [ "${NO_STAGE}" = "yes" ]; then \
-		if ! ${PW} groupshow $$group >/dev/null 2>&1; then \
-			${ECHO_MSG} "Creating group \`$$group' with gid \`$$gid'."; \
-			${PW} groupadd $$group -g $$gid; \
-		else \
-			${ECHO_MSG} "Using existing group \`$$group'."; \
-		fi; \
-		fi ; \
-		if [ -z "${WITH_PKGNG}" ]; then \
-				${ECHO_CMD} "@exec if ! ${PW} groupshow $$group >/dev/null 2>&1; then \
-					echo \"Creating group '$$group' with gid '$$gid'.\"; \
-					${PW} groupadd $$group -g $$gid; else echo \"Using existing group '$$group'.\"; fi" >> ${TMPPLIST}; \
-		else \
-				${ECHO_CMD} -e "if ! ${PW} groupshow $$group >/dev/null 2>&1; then \n \
-					echo \"Creating group '$$group' with gid '$$gid'.\" \n \
-					${PW} groupadd $$group -g $$gid; else echo \"Using existing group '$$group'.\"\nfi" >> ${_UG_OUTPUT}; \
-		fi ; \
+		${ECHO_CMD} -e "if ! ${PW} groupshow $$group >/dev/null 2>&1; then \n \
+			echo \"Creating group '$$group' with gid '$$gid'.\" \n \
+			${PW} groupadd $$group -g $$gid; else echo \"Using existing group '$$group'.\"\nfi" >> ${_UG_OUTPUT}; \
 	done
 .endfor
 .endif
@@ -4106,27 +3828,11 @@ create-users-groups:
 		gid=$$(($$gid+${GID_OFFSET})); \
 		class="$${class:+-L }$$class"; \
 		homedir=$$(echo $$homedir | sed "s|^/usr/local|${PREFIX}|"); \
-		if [ "${NO_STAGE}" = "yes" ]; then \
-		if ! ${PW} usershow $$login >/dev/null 2>&1; then \
-			${ECHO_MSG}  "Creating user \`$$login' with uid \`$$uid'."; \
-			eval ${PW} useradd $$login -u $$uid -g $$gid $$class -c \"$$gecos\" -d $$homedir -s $$shell; \
-			case $$homedir in /|/nonexistent|/var/empty) ;; *) ${INSTALL} -d -g $$gid -o $$uid $$homedir;; esac; \
-		else \
-			${ECHO_MSG} "Using existing user \`$$login'."; \
-		fi; \
-		fi; \
-		if [ -z "${WITH_PKGNG}" ]; then \
-			${ECHO_CMD} "@exec if ! ${PW} usershow $$login >/dev/null 2>&1; then \
-				echo \"Creating user '$$login' with uid '$$uid'.\"; \
-				${PW} useradd $$login -u $$uid -g $$gid $$class -c \"$$gecos\" -d $$homedir -s $$shell; \
-				else echo \"Using existing user '$$login'.\"; fi" >> ${TMPPLIST}; \
-		else \
-			${ECHO_CMD} -e "if ! ${PW} usershow $$login >/dev/null 2>&1; then \n \
-				echo \"Creating user '$$login' with uid '$$uid'.\" \n \
-				${PW} useradd $$login -u $$uid -g $$gid $$class -c \"$$gecos\" -d $$homedir -s $$shell \n \
-				else \necho \"Using existing user '$$login'.\" \nfi" >> ${_UG_OUTPUT}; \
-		fi ; \
-		case $$homedir in /|/nonexistent|/var/empty) ;; *) ${ECHO_CMD} "@exec ${INSTALL} -d -g $$gid -o $$uid $$homedir" >> ${TMPPLIST};; esac; \
+		${ECHO_CMD} -e "if ! ${PW} usershow $$login >/dev/null 2>&1; then \n \
+			echo \"Creating user '$$login' with uid '$$uid'.\" \n \
+			${PW} useradd $$login -u $$uid -g $$gid $$class -c \"$$gecos\" -d $$homedir -s $$shell \n \
+			else \necho \"Using existing user '$$login'.\" \nfi" >> ${_UG_OUTPUT}; \
+		case $$homedir in /|/nonexistent|/var/empty) ;; *) ${ECHO_CMD} "${INSTALL} -d -g $$gid -o $$uid $$homedir" >> ${_UG_OUTPUT};; esac; \
 	done
 .endfor
 .if defined(GROUPS)
@@ -4137,21 +3843,9 @@ create-users-groups:
 		IFS=","; for _login in $$members; do \
 			for _user in ${USERS}; do \
 				if [ "x$${_user}" = "x$${_login}" ]; then \
-					if [ "${NO_STAGE}" = "yes" ]; then \
-					if ! ${PW} groupshow ${_group} | ${GREP} -qw $${_login}; then \
-						${ECHO_MSG} "Adding user \`$${_login}' to group \`${_group}'."; \
-						${PW} groupmod ${_group} -m $${_login}; \
-					fi; \
-					fi; \
-					if [ -z "${WITH_PKGNG}" ]; then \
-							${ECHO_CMD} "@exec if ! ${PW} groupshow ${_group} | ${GREP} -qw $${_login}; then \
-								echo \"Adding user '$${_login}' to group '${_group}'.\"; \
-								${PW} groupmod ${_group} -m $${_login}; fi" >> ${TMPPLIST}; \
-					else \
-							${ECHO_CMD} -e "if ! ${PW} groupshow ${_group} | ${GREP} -qw $${_login}; then \n \
-								echo \"Adding user '$${_login}' to group '${_group}'.\" \n \
-								${PW} groupmod ${_group} -m $${_login} \nfi" >> ${_UG_OUTPUT}; \
-					fi ; \
+					${ECHO_CMD} -e "if ! ${PW} groupshow ${_group} | ${GREP} -qw $${_login}; then \n \
+						echo \"Adding user '$${_login}' to group '${_group}'.\" \n \
+						${PW} groupmod ${_group} -m $${_login} \nfi" >> ${_UG_OUTPUT}; \
 				fi; \
 			done; \
 		done; \
@@ -4167,26 +3861,6 @@ create-users-groups:
 .endfor
 .endif
 .endif
-.endif
-.endif
-
-# PR ports/152498
-# XXX Make sure the commands to create group(s)
-# and user(s) are the first in pkg-plist
-.if !target(fix-plist-sequence)
-fix-plist-sequence: ${TMPPLIST}
-.if !defined(WITH_PKGNG) && (defined(GROUPS) || defined(USERS))
-	@${ECHO_CMD} "===> Correct pkg-plist sequence to create group(s) and user(s)"
-	@${EGREP} -e '^@exec echo.*Creating users and' -e '^@exec.*${PW}' -e '^@exec ${INSTALL} -d -g' ${TMPPLIST} > ${TMPGUCMD}
-	@${EGREP} -v -e '^@exec echo.*Creating users and' -e '^@exec.*${PW}' -e '^@exec ${INSTALL} -d -g' ${TMPPLIST} >> ${TMPGUCMD}
-	@${MV} -f ${TMPGUCMD} ${TMPPLIST}
-.endif
-.if !defined(WITH_PKGNG)
-	@cd ${.CURDIR} && { ${MAKE} pretty-print-config | fold -sw 120 | ${SED} -e 's/^/@comment OPTIONS:/'; } >> ${TMPPLIST}
-	@${AWK} -f ${KEYWORDS}/pkg_install.awk ${TMPPLIST} > ${TMPPLIST}.keyword && \
-	    ${MV} -f ${TMPPLIST}.keyword ${TMPPLIST}
-	@${ECHO_CMD} "@exec echo pkg_install EOL is scheduled for 2014-09-01. Please migrate to pkgng" >> ${TMPPLIST}
-	@${ECHO_CMD} "@exec echo http://blogs.freebsdish.org/portmgr/2014/02/03/time-to-bid-farewell-to-the-old-pkg_-tools/" >> ${TMPPLIST}
 .endif
 .endif
 
@@ -4317,27 +3991,18 @@ restage:
 
 .if !target(deinstall)
 deinstall:
-.if ${UID} != 0 && !defined(INSTALL_AS_USER)
+.if defined(UID) && ${UID} != 0 && !defined(INSTALL_AS_USER)
 	@${ECHO_MSG} "===>  Switching to root credentials for '${.TARGET}' target"
 	@cd ${.CURDIR} && \
 		${SU_CMD} "${MAKE} ${.TARGET}"
 	@${ECHO_MSG} "===>  Returning to user credentials"
 .else
-	@${ECHO_MSG} "===>  Deinstalling for ${PKGORIGIN}"
-	@found_names=`${PKG_INFO} -q -O ${PKGORIGIN}`; \
-	for p in $${found_names}; do \
-			check_name=`${ECHO_CMD} $${p} | ${SED} -e 's/-[^-]*$$//'`; \
-			if [ "$${check_name}" = "${PKGBASE}" ]; then \
-					prfx=`${PKG_INFO} -q -p $${p} 2> /dev/null | ${SED} -ne '1s|^@cwd ||p'`; \
-					if [ "x${PREFIX}" = "x$${prfx}" ]; then \
-							${ECHO_MSG} "===>   Deinstalling $${p}"; \
-							${PKG_DELETE} -f $${p}; \
-					else \
-							${ECHO_MSG} "===>   $${p} has a different PREFIX: $${prfx}, skipping"; \
-					fi; \
-			fi; \
-	done; \
-	if [ -z "$${found_names}" ]; then \
+	@${ECHO_MSG} "===>  Deinstalling for ${PKGBASE}"
+	@if ${PKG_INFO} -e ${PKGBASE}; then \
+		p=`${PKG_INFO} -q -O ${PKGBASE}`; \
+		${ECHO_MSG} "===>   Deinstalling $${p}"; \
+		${PKG_DELETE} -f ${PKGBASE} ; \
+	else \
 		${ECHO_MSG} "===>   ${PKGBASE} not installed, skipping"; \
 	fi
 	@${RM} -f ${INSTALL_COOKIE} ${PACKAGE_COOKIE}
@@ -4377,7 +4042,7 @@ deinstall-all:
 
 .if !target(do-clean)
 do-clean:
-.if !defined(NO_STAGE) && defined(NEED_ROOT) && ${UID} != 0 && !defined(INSTALL_AS_USER) && exists(${STAGE_COOKIE})
+.if defined(NEED_ROOT) && ${UID} != 0 && !defined(INSTALL_AS_USER) && exists(${STAGE_COOKIE})
 	@${ECHO_MSG} "===>  Switching to root credentials for '${.TARGET}' target"
 	@cd ${.CURDIR} && \
 		${SU_CMD} "${MAKE} ${.TARGET}"
@@ -4765,14 +4430,7 @@ pre-repackage:
 
 .if !target(package-noinstall)
 package-noinstall:
-.if defined(NO_STAGE)
-	@${MKDIR} ${WRKDIR}
-	@cd ${.CURDIR} && ${MAKE} ${_PACKAGE_REAL_SEQ}
-	@${RM} -f ${TMPPLIST}
-	-@${RMDIR} ${WRKDIR}
-.else
 	@cd ${.CURDIR} && ${MAKE} package
-.endif
 .endif
 
 ################################################################
@@ -4795,16 +4453,13 @@ _INSTALL_DEPENDS=	\
 			subpkgname=$${subpkgname\#\#*/} ; \
 			if [ -r "$${subpkgfile}" -a "$$target" = "${DEPENDS_TARGET}" ]; then \
 				${ECHO_MSG} "===>   Installing existing package $${subpkgfile}"; \
-				if [ -n "${WITH_PKGNG}" -a $${subpkgname} = "pkg" ]; then \
+				if [ $${subpkgname} = "pkg" ]; then \
 					[ -d ${WRKDIR} ] || ${MKDIR} ${WRKDIR} ; \
 					${TAR} xf $${subpkgfile} -C ${WRKDIR} -s ",/.*/,,g" "*/pkg-static" ; \
 					${WRKDIR}/pkg-static add $${subpkgfile}; \
 					${RM} -f ${WRKDIR}/pkg-static; \
 				else \
-					if [ -n "${WITH_PKGNG}" ]; then \
-						_pkg_add_a="-A"; \
-					fi; \
-					${PKG_ADD} $${_pkg_add_a} $${subpkgfile}; \
+					${PKG_ADD} -A $${subpkgfile}; \
 				fi; \
 			elif [ -n "${USE_PACKAGE_DEPENDS_ONLY}" -a "$${target}" = "${DEPENDS_TARGET}" ]; then \
 				${ECHO_MSG} "===>   ${PKGNAME} depends on package: $${subpkgfile} - not found"; \
@@ -5256,38 +4911,71 @@ PACKAGE-DEPENDS-LIST?= \
 
 ACTUAL-PACKAGE-DEPENDS?= \
 	if [ "${_LIB_RUN_DEPENDS}" != "  " ]; then \
-		origins=$$(for pkgname in ${PKG_DBDIR}/*; do \
-			if [ -e $$pkgname/+CONTENTS ]; then \
-				${ECHO_CMD} $${pkgname\#\#*/}; \
-				${SED} -n -e "s/@comment ORIGIN://p" $$pkgname/+CONTENTS; \
-			fi; \
-		done); \
-		for dir in ${_LIB_RUN_DEPENDS:C,[^:]*:([^:]*):?.*,\1,}; do \
-			tmp=$${dir\#${PORTSDIR}/}; \
-			if [ "$$tmp" = "$$dir" ]; then \
-				tmp=$${dir%/*}; \
-				dir=$${tmp\#\#*/}/$${dir\#\#*/}; \
-			else \
-				dir=$$tmp; \
-			fi; \
-			set -- $$origins; \
-			while [ $$\# -gt 1 ]; do \
-				if [ ! -d "${PORTSDIR}/$$2" ]; then \
-					shift; \
-					continue; \
-				fi; \
-				if [ "$$dir" = "$$2" ]; then \
-					${ECHO_CMD} $$1:$$dir; \
-					if [ -e ${PKG_DBDIR}/$$1/+CONTENTS -a -z "${EXPLICIT_PACKAGE_DEPENDS}" ]; then \
-						packagelist="$$packagelist ${PKG_DBDIR}/$$1/+CONTENTS"; \
-					fi; \
-					break; \
-				fi; \
-				shift 2; \
-			done; \
-		done; \
-		[ -z "$$packagelist" ] || ${AWK} -F '( |:)' 'BEGIN { pkgname="broken_contents" } /@pkgdep / { pkgname=$$2 } /@comment DEPORIGIN:/ { printf "%s:%s\n", pkgname, $$3; pkgname="broken_contents" }' $$packagelist; \
+		${PKG_QUERY} "\"%n\": {origin: %o, version: \"%v\"}" " " ${_LIB_RUN_DEPENDS:C,[^:]*:([^:]*):?.*,\1,:C,${PORTSDIR}/,,} 2>/dev/null || : ; \
 	fi
+
+create-manifest:
+	@${MKDIR} ${METADIR}; \
+	(\
+		echo "name: \"${PKGBASE}\"" ; \
+		echo "version: \"${PKGVERSION}\"" ; \
+		echo "origin: ${PKGORIGIN}" ; \
+		echo "comment: <<EOD" ; \
+		echo ${COMMENT:Q} ; \
+		echo "EOD" ; \
+		echo "maintainer: ${MAINTAINER}" ; \
+		echo "prefix: ${PREFIX}" ; \
+		[ -z "${WWW}" ] || echo "www: ${WWW}" ; \
+		echo "deps: { "; \
+		${ACTUAL-PACKAGE-DEPENDS} | ${GREP} -v -E ${PKG_IGNORE_DEPENDS} | ${SORT} -u ; \
+		echo "}" ; \
+		echo "categories: [ ${CATEGORIES:u:S/$/,/} ]" ; \
+		l=${LICENSE_COMB} ; \
+		[ -n "${NO_ARCH}" ] && echo "arch : `${PKG_BIN} config abi | ${CUT} -d: -f1,2`:*" ; \
+		echo "licenselogic: $${l:-single}" ; \
+		[ -z "${LICENSE}" ] || echo "licenses: [ ${LICENSE:u:S/$/,/} ]" ; \
+		[ -z "${USERS}" ] || echo "users: [ ${USERS:u:S/$/,/} ]" ; \
+		[ -z "${GROUPS}" ] || echo "groups: [ ${GROUPS:u:S/$/,/} ]" ; \
+	) > ${MANIFESTF}
+	@${ECHO_CMD} -n "options: {" >> ${MANIFESTF}
+.for opt in ${COMPLETE_OPTIONS_LIST}
+	@[ -z "${PORT_OPTIONS:M${opt}}" ] || match="on" ; ${ECHO_MSG} -n " ${opt}: $${match:-off}," >> ${MANIFESTF}
+.endfor
+	@${ECHO_CMD} "}" >> ${MANIFESTF}
+.if defined(PKG_NOTES)
+	@${ECHO_CMD} -n "annotations: {" >> ${MANIFESTF}
+.for note in ${PKG_NOTES}
+	@${ECHO_CMD} -n ' ${note}: "${PKG_NOTE_${note}:S/"/\"/g}",' >> ${MANIFESTF}
+.endfor
+	@${ECHO_CMD} " }" >> ${MANIFESTF}
+.endif
+	@[ -f ${PKGINSTALL} ] && ${CP} ${PKGINSTALL} ${METADIR}/+INSTALL; \
+	${RM} -f ${METADIR}/+PRE_INSTALL ; \
+	for a in ${PKGPREINSTALL}; do \
+		[ -f $$a ] && ${CAT} $$a >> ${METADIR}/+PRE_INSTALL ; \
+	done ; \
+	${RM} -f ${METADIR}/+POST_INSTALL ; \
+	for a in ${PKGPOSTINSTALL}; do \
+		[ -f $$a ] && ${CAT} $$a >> ${METADIR}/+POST_INSTALL ; \
+	done ; \
+	[ -f ${PKGDEINSTALL} ] && ${CP} ${PKGDEINSTALL} ${METADIR}/+DEINSTALL; \
+	${RM} -f ${METADIR}/+PRE_DEINSTALL ; \
+	for a in ${PKGPREDEINSTALL}; do \
+		[ -f $$a ] && ${CAT} $$a >> ${METADIR}/+PRE_DEINSTALL ; \
+	done ; \
+	${RM} -f ${METADIR}/+POST_DEINSTALL ; \
+	for a in ${PKGPOSTDEINSTALL}; do \
+		[ -f $$a ] && ${CAT} $$a >> ${METADIR}/+POST_DEINSTALL ; \
+	done ; \
+	[ -f ${PKGPOSTDEINSTALL} ] && ${CP} ${PKGPOSTDEINSTALL} ${METADIR}/+POST_DEINSTALL; \
+	[ -f ${PKGUPGRADE} ] && ${CP} ${PKGUPGRADE} ${METADIR}/+UPGRADE; \
+	[ -f ${PKGPREUPGRADE} ] && ${CP} ${PKGPREUPGRADE} ${METADIR}/+PRE_UPGRADE; \
+	[ -f ${PKGPOSTUPGRADE} ] && ${CP} ${PKGPOSTUPGRADE} ${METADIR}/+POST_UPGRADE; \
+	${CP} ${DESCR} ${METADIR}/+DESC; \
+	[ -f ${PKGMESSAGE} ] && ${CP} ${PKGMESSAGE} ${METADIR}/+DISPLAY || return 0
+.if !defined(NO_MTREE)
+	@[ -f ${MTREE_FILE} ] && ${CP} ${MTREE_FILE} ${METADIR}/+MTREE_DIRS || return 0
+.endif
 
 # Print out package names.
 
@@ -5466,7 +5154,7 @@ generate-plist: ${WRKDIR}
 	@${ECHO_MSG} "===>   Generating temporary packing list"
 	@${MKDIR} `${DIRNAME} ${TMPPLIST}`
 	@if [ ! -f ${DESCR} ]; then ${ECHO_MSG} "** Missing pkg-descr for ${PKGNAME}."; exit 1; fi
-.if defined(NO_STAGE) || defined(NEED_ROOT)
+.if defined(NEED_ROOT)
 	@>${TMPPLIST}
 .else
 	@${ECHO_CMD} -e "@owner root\n@group wheel" >${TMPPLIST}
@@ -5474,25 +5162,6 @@ generate-plist: ${WRKDIR}
 	@for file in ${PLIST_FILES}; do \
 		${ECHO_CMD} $${file} | ${SED} ${PLIST_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} >> ${TMPPLIST}; \
 	done
-.if defined(NO_STAGE)
-	@for man in ${__MANPAGES}; do \
-		${ECHO_CMD} $${man} >> ${TMPPLIST}; \
-	done
-.for _PREFIX in ${PREFIX}
-.if ${_TMLINKS:M${_PREFIX}*}x != x
-	@for i in ${_TMLINKS:M${_PREFIX}*:S|^${_PREFIX}/||}; do \
-		${ECHO_CMD} "$$i" >> ${TMPPLIST}; \
-	done
-.endif
-.if ${_TMLINKS:N${_PREFIX}*}x != x
-	@${ECHO_CMD} @cwd / >> ${TMPPLIST}
-	@for i in ${_TMLINKS:N${_PREFIX}*:S|^/||}; do \
-		${ECHO_CMD} "$$i" >> ${TMPPLIST}; \
-	done
-	@${ECHO_CMD} '@cwd ${PREFIX}' >> ${TMPPLIST}
-.endif
-.endfor
-.endif
 	@if [ -f ${PLIST} ]; then \
 		${SED} ${PLIST_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} ${PLIST} >> ${TMPPLIST}; \
 	fi
@@ -5502,12 +5171,6 @@ generate-plist: ${WRKDIR}
 .endfor
 .for dir in ${PLIST_DIRSTRY}
 	@${ECHO_CMD} ${dir} | ${SED} ${PLIST_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} -e 's,^,@dirrmtry ,' >> ${TMPPLIST}
-.endfor
-
-.for reinplace in ${PLIST_REINPLACE}
-.if defined(PLIST_REINPLACE_${reinplace:tu})
-	@${SED} -i "" -e '${PLIST_REINPLACE_${reinplace:tu}}' ${TMPPLIST}
-.endif
 .endfor
 
 .if defined(USE_LINUX_PREFIX)
@@ -5558,7 +5221,7 @@ add-plist-docs:
 .endfor
 	@${FIND} -P ${PORTDOCS:S/^/${STAGEDIR}${DOCSDIR}\//} ! -type d 2>/dev/null | \
 		${SED} -ne 's,^${STAGEDIR}${PREFIX}/,,p' >> ${TMPPLIST}
-	@${FIND} -P -d ${PORTDOCS:S/^/${STAGEDIR}${DOCSDIR}\//} -type d 2>/dev/null | \
+	@${FIND} -P -d ${PORTDOCS:C,/[^/]*[*?\[][^/]*$,,:S/^/${STAGEDIR}${DOCSDIR}\//} -type d 2>/dev/null | \
 		${SED} -ne 's,^${STAGEDIR}${PREFIX}/,@dirrm ,p' >> ${TMPPLIST}
 	@${ECHO_CMD} "@dirrm ${DOCSDIR_REL}" >> ${TMPPLIST}
 .endif
@@ -5580,14 +5243,14 @@ add-plist-examples:
 .endfor
 	@${FIND} -P ${PORTEXAMPLES:S/^/${STAGEDIR}${EXAMPLESDIR}\//} ! -type d 2>/dev/null | \
 		${SED} -ne 's,^${STAGEDIR}${PREFIX}/,,p' >> ${TMPPLIST}
-	@${FIND} -P -d ${PORTEXAMPLES:S/^/${STAGEDIR}${EXAMPLESDIR}\//} -type d 2>/dev/null | \
+	@${FIND} -P -d ${PORTEXAMPLES:C,/[^/]*[*?\[][^/]*$,,:S/^/${STAGEDIR}${EXAMPLESDIR}\//} -type d 2>/dev/null | \
 		${SED} -ne 's,^${STAGEDIR}${PREFIX}/,@dirrm ,p' >> ${TMPPLIST}
 	@${ECHO_CMD} "@dirrm ${EXAMPLESDIR_REL}" >> ${TMPPLIST}
 .endif
 .endif
 
 .if !target(add-plist-data)
-.if defined(PORTDATA) && !defined(NOPORTDATA)
+.if defined(PORTDATA)
 add-plist-data:
 	@if ${EGREP} -qe '^@cw?d' ${TMPPLIST} && \
 		[ "`${SED} -En -e '/^@cw?d[ 	]*/s,,,p' ${TMPPLIST} | ${TAIL} -n 1`" != "${PREFIX}" ]; then \
@@ -5602,7 +5265,7 @@ add-plist-data:
 .endfor
 	@${FIND} -P ${PORTDATA:S/^/${STAGEDIR}${DATADIR}\//} ! -type d 2>/dev/null | \
 		${SED} -ne 's,^${STAGEDIR}${PREFIX}/,,p' >> ${TMPPLIST}
-	@${FIND} -P -d ${PORTDATA:S/^/${STAGEDIR}${DATADIR}\//} -type d 2>/dev/null | \
+	@${FIND} -P -d ${PORTDATA:C,/[^/]*[*?\[][^/]*$,,:S/^/${STAGEDIR}${DATADIR}\//} -type d 2>/dev/null | \
 		${SED} -ne 's,^${STAGEDIR}${PREFIX}/,@dirrm ,p' >> ${TMPPLIST}
 	@${ECHO_CMD} "@dirrm ${DATADIR_REL}" >> ${TMPPLIST}
 .endif
@@ -5624,23 +5287,10 @@ add-plist-info:
 	fi
 # Process GNU INFO files at package install/deinstall time
 .for i in ${INFO}
-.if defined(NO_STAGE)
-	indexinfo ${PREFIX}/${INFO_PATH}
-.endif
-.if !defined(WITH_PKGNG)
-	@${ECHO_CMD} "@unexec indexinfo %D/${INFO_PATH}" >> ${TMPPLIST}
-	@${LS} ${STAGEDIR}${PREFIX}/${INFO_PATH}/$i.info* | ${SED} -e s:${STAGEDIR}${PREFIX}/::g >> ${TMPPLIST}
-	@${ECHO_CMD} "@exec indexinfo %D/${INFO_PATH}" >> ${TMPPLIST}
-.else
 	@${LS} ${STAGEDIR}${PREFIX}/${INFO_PATH}/$i.info* | ${SED} -e s:${STAGEDIR}${PREFIX}/:@info\ :g >> ${TMPPLIST}
-.endif
 .endfor
 .if defined(INFO_SUBDIR)
-.if !defined(WITH_PKGNG)
-	@${ECHO_CMD} "@unexec ${RMDIR} %D/${INFO_PATH}/${INFO_SUBDIR} 2> /dev/null || true" >> ${TMPPLIST}
-.else
 	@${ECHO_CMD} "@dirrmtry ${INFO_PATH}/${INFO_SUBDIR}" >> ${TMPPLIST}
-.endif
 .endif
 .if (${PREFIX} != "/usr")
 	@${ECHO_CMD} "@unexec indexinfo %D/${INFO_PATH}" >> ${TMPPLIST}
@@ -5657,7 +5307,7 @@ add-plist-info:
 .if (${PREFIX} != ${LOCALBASE} && ${PREFIX} != ${LINUXBASE} && \
     ${PREFIX} != "/usr" && !defined(NO_PREFIX_RMDIR))
 add-plist-post:
-	@${ECHO_CMD} "@unexec rmdir %D 2> /dev/null || true" >> ${TMPPLIST}
+	@${ECHO_CMD} "@dirrmtry ${PREFIX}" >> ${TMPPLIST}
 .endif
 .endif
 
@@ -5684,85 +5334,85 @@ install-rc-script:
 .endif
 .endif
 
-# Compress (or uncompress) and symlink manpages.
+# Compress all manpage not already compressed which are not hardlinks
+# Find all manpages which are not compressed and are hadlinks, and only get the list of inodes concerned, for each of them compress the first one found and recreate the hardlinks for the others
+# Fixes all dead symlinks left by the previous round
 .if !target(compress-man)
-.if defined(_MANPAGES) || defined(_MLINKS)
 compress-man:
-.if ${MANCOMPRESSED} == yes && defined(NO_MANCOMPRESS)
-	@${ECHO_MSG} "===>   Uncompressing manual pages for ${PKGNAME}"
-	@_manpages='${_MANPAGES:S/'/'\''/g}' && [ "$${_manpages}" != "" ] && ( eval ${GUNZIP_CMD} $${_manpages} ) || ${TRUE}
-.elif ${MANCOMPRESSED} == no && !defined(NO_MANCOMPRESS)
-	@${ECHO_MSG} "===>   Compressing manual pages for ${PKGNAME}"
-	@_manpages='${_MANPAGES:S/'/'\''/g}' && [ "$${_manpages}" != "" ] && ( eval ${GZIP_CMD} $${_manpages} ) || ${TRUE}
-.endif
-.if defined(_MLINKS)
-	@set -- ${_MLINKS}; \
-	while :; do \
-		[ $$# -eq 0 ] && break || ${TRUE}; \
-		${RM} -f $${2%.gz}; ${RM} -f $$2.gz; \
-		${LN} -fs `${ECHO_CMD} $$1 $$2 | ${AWK} '{ \
-					z=split($$1, a, /\//); x=split($$2, b, /\//); \
-					while (a[i] == b[i]) i++; \
-					for (q=i; q<x; q++) printf "../"; \
-					for (; i<z; i++) printf a[i] "/"; printf a[z]; }'` $$2; \
-		shift; shift; \
+	@${ECHO_MSG} "====> Compressing man pages (compress-man)"
+	@mdirs= ; \
+	for dir in ${MANDIRS:S/^/${STAGEDIR}/} ; do \
+		[ -d $$dir ] && mdirs="$$mdirs $$dir" ;\
+	done ; \
+	for dir in $$mdirs; do \
+		${FIND} $$dir -type f \! -name "*.gz" -links 1 -exec ${GZIP_CMD} {} \; ; \
+		${FIND} $$dir -type f \! -name "*.gz" \! -links 1 -exec ${STAT} -f '%i' {} \; | \
+			${SORT} -u | while read inode ; do \
+				unset ref ; \
+				for f in $$(${FIND} $$dir -type f -inum $${inode} -print); do \
+					if [ -z $$ref ]; then \
+						ref=$${f}.gz ; \
+						${GZIP_CMD} $${f} ; \
+						continue ; \
+					fi ; \
+					${RM} -f $${f} ; \
+					(cd $${f%/*}; ${LN} -f $${ref##*/} $${f##*/}.gz) ; \
+				done ; \
+			done ; \
+		${FIND} $$dir -type l \! -name "*.gz" | while read link ; do \
+				${LN} -sf $$(readlink $$link).gz $$link.gz ;\
+				${RM} -f $$link ; \
+		done; \
 	done
 .endif
-.endif
-.endif
 
-# Fake installation of package so that user can pkg_delete it later.
-# Also, make sure that an installed port is recognized correctly in
-# accordance to the @pkgdep directive in the packing lists
-
-.if !target(fake-pkg)
-.if !defined(NO_PKG_REGISTER)
-fake-pkg:
-	@if [ ! -d ${PKG_DBDIR} ]; then ${RM} -f ${PKG_DBDIR}; ${MKDIR} ${PKG_DBDIR}; fi
-	@${RM} -f /tmp/${PKGNAME}-required-by
-.if defined(FORCE_PKG_REGISTER)
-	@if [ -e ${PKG_DBDIR}/${PKGNAME}/+REQUIRED_BY ]; then \
-		${CP} ${PKG_DBDIR}/${PKGNAME}/+REQUIRED_BY /tmp/${PKGNAME}-required-by; \
-	fi
-	@${RM} -rf ${PKG_DBDIR}/${PKGNAME}
-.endif
-	@if [ ! -d ${PKG_DBDIR}/${PKGNAME} ]; then \
-		${ECHO_MSG} "===>   Registering installation for ${PKGNAME}"; \
-		${MKDIR} ${PKG_DBDIR}/${PKGNAME}; \
-		${PKG_CMD} ${PKG_ARGS} -O ${PKGFILE} > ${PKG_DBDIR}/${PKGNAME}/+CONTENTS; \
-		${CP} ${DESCR} ${PKG_DBDIR}/${PKGNAME}/+DESC; \
-		${ECHO_CMD} ${COMMENT:Q} > ${PKG_DBDIR}/${PKGNAME}/+COMMENT; \
-		if [ -f ${PKGINSTALL} ]; then \
-			${CP} ${PKGINSTALL} ${PKG_DBDIR}/${PKGNAME}/+INSTALL; \
-		fi; \
-		if [ -f ${PKGDEINSTALL} ]; then \
-			${CP} ${PKGDEINSTALL} ${PKG_DBDIR}/${PKGNAME}/+DEINSTALL; \
-		fi; \
-		if [ -f ${PKGREQ} ]; then \
-			${CP} ${PKGREQ} ${PKG_DBDIR}/${PKGNAME}/+REQUIRE; \
-		fi; \
-		if [ -f ${PKGMESSAGE} ]; then \
-			${CP} ${PKGMESSAGE} ${PKG_DBDIR}/${PKGNAME}/+DISPLAY; \
-			${ECHO_CMD} "@display +DISPLAY" >> ${PKG_DBDIR}/${PKGNAME}/+CONTENTS; \
-		fi; \
-		for dep in `${PKG_INFO} -qf ${PKGNAME} | ${AWK} '/^@pkgdep / {print $$2}' | ${SORT} -u`; do \
-			if [ -d ${PKG_DBDIR}/$$dep -a -z `${ECHO_CMD} $$dep | ${GREP} -E ${PKG_IGNORE_DEPENDS}` ]; then \
-				if ! ${GREP} ^${PKGNAME}$$ ${PKG_DBDIR}/$$dep/+REQUIRED_BY \
-					>/dev/null 2>&1; then \
-					${ECHO_CMD} ${PKGNAME} >> ${PKG_DBDIR}/$$dep/+REQUIRED_BY; \
-				fi; \
-			fi; \
-		done; \
-	fi
+.if !target(stage-dir)
+stage-dir:
+	@${MKDIR} ${STAGEDIR}${PREFIX}
 .if !defined(NO_MTREE)
-	@if [ -f ${MTREE_FILE} ]; then \
-		${CP} ${MTREE_FILE} ${PKG_DBDIR}/${PKGNAME}/+MTREE_DIRS; \
-	fi
+	@${MTREE_CMD} ${MTREE_ARGS} ${STAGEDIR}${PREFIX} > /dev/null
 .endif
-	@if [ -e /tmp/${PKGNAME}-required-by ]; then \
-		${CAT} /tmp/${PKGNAME}-required-by >> ${PKG_DBDIR}/${PKGNAME}/+REQUIRED_BY; \
-		${RM} -f /tmp/${PKGNAME}-required-by; \
-	fi
+.endif
+
+.if !target(makeplist)
+makeplist: stage
+	@${SETENV} ${CO_ENV} ${SH} ${SCRIPTSDIR}/check-stagedir.sh makeplist
+.endif
+
+.if !target(check-plist)
+check-plist: stage
+	@${ECHO_MSG} "====> Checking for pkg-plist issues (check-plist)"
+	@${SETENV} ${CO_ENV} ${SH} ${SCRIPTSDIR}/check-stagedir.sh checkplist
+	@${ECHO_MSG} "===> No pkg-plist issues found (check-plist)"
+.endif
+
+.if !target(check-orphans)
+check-orphans: check-plist
+.endif
+
+.if !target(stage-qa)
+stage-qa:
+	@${ECHO_MSG} "====> Running Q/A tests (stage-qa)"
+	@${SETENV} ${QA_ENV} ${SH} ${SCRIPTSDIR}/qa.sh
+.endif
+
+# Fake installation of package so that user can pkg delete it later.
+.if !target(fake-pkg)
+STAGE_ARGS=		-i ${STAGEDIR}
+
+.if !defined(NO_PKG_REGISTER)
+fake-pkg: create-manifest
+.if defined(INSTALLS_DEPENDS)
+	@${ECHO_MSG} "===>   Registering installation for ${PKGNAME} as automatic"
+.else
+	@${ECHO_MSG} "===>   Registering installation for ${PKGNAME}"
+.endif
+.if defined(INSTALLS_DEPENDS)
+	@${SETENV} ${PKG_ENV} FORCE_POST="${_FORCE_POST_PATTERNS}" ${PKG_CMD} -d ${STAGE_ARGS} -m ${METADIR} -f ${TMPPLIST}
+.else
+	@${SETENV} ${PKG_ENV} FORCE_POST="${_FORCE_POST_PATTERNS}" ${PKG_CMD} ${STAGE_ARGS} -m ${METADIR} -f ${TMPPLIST}
+.endif
+	@${RM} -rf ${METADIR}
 .endif
 .endif
 
@@ -6372,10 +6022,7 @@ show-dev-errors:
 # Please note that the order of the following targets is important, and
 # should not be modified.
 
-_TARGETS_STAGES=	SANITY PKG FETCH EXTRACT PATCH CONFIGURE BUILD INSTALL PACKAGE
-.if !defined(NO_STAGE)
-_TARGETS_STAGES+=	STAGE
-.endif
+_TARGETS_STAGES=	SANITY PKG FETCH EXTRACT PATCH CONFIGURE BUILD INSTALL PACKAGE STAGE
 
 # Define the SEQ of actions to take when each target is ran, and which targets
 # it depends on before running its SEQ.
@@ -6408,7 +6055,6 @@ _CONFIGURE_SEQ=	build-depends lib-depends configure-message run-autotools-fixup 
 _BUILD_DEP=		configure
 _BUILD_SEQ=		build-message pre-build pre-build-script do-build \
 				post-build post-build-script
-.if !defined(NO_STAGE)
 
 _STAGE_DEP=		build
 _STAGE_SEQ=		stage-message stage-dir run-depends lib-depends apply-slist pre-install generate-plist \
@@ -6418,11 +6064,11 @@ _STAGE_SUSEQ=	create-users-groups do-install \
 				kmod-post-install shared-mime-post-install \
 				webplugin-post-install post-install post-install-script \
 				desktop-file-post-install \
-				move-uniquefiles post-stage compress-man patch-lafiles \
+				move-uniquefiles patch-lafiles post-stage compress-man \
 				install-rc-script install-ldconfig-file install-license \
 				install-desktop-entries add-plist-info add-plist-docs \
 				add-plist-examples add-plist-data add-plist-post \
-				move-uniquefiles-plist fix-plist-sequence fix-packlist fix-perl-bs
+				move-uniquefiles-plist fix-packlist fix-perl-bs
 .if defined(DEVELOPER)
 _STAGE_SUSEQ+=	stage-qa
 .endif
@@ -6431,50 +6077,21 @@ _STAGE_SEQ+=	create-users-groups do-install \
 				kmod-post-install shared-mime-post-install \
 				webplugin-post-install post-install post-install-script \
 				desktop-file-post-install \
-				move-uniquefiles post-stage compress-man patch-lafiles \
+				move-uniquefiles patch-lafiles post-stage compress-man \
 				install-rc-script install-ldconfig-file install-license \
 				install-desktop-entries add-plist-info add-plist-docs \
 				add-plist-examples add-plist-data add-plist-post \
-				move-uniquefiles-plist fix-plist-sequence fix-packlist fix-perl-bs
+				move-uniquefiles-plist fix-packlist fix-perl-bs
 .if defined(DEVELOPER)
 _STAGE_SEQ+=	stage-qa
 .endif
 .endif
-.if defined(WITH_PKGNG)
 _INSTALL_DEP=	stage
 _INSTALL_SEQ=	install-message run-depends lib-depends check-already-installed
 _INSTALL_SUSEQ=	fake-pkg security-check
 
 _PACKAGE_DEP=	stage
 _PACKAGE_SEQ=	package-message pre-package pre-package-script do-package post-package-script
-
-.else # pkg_install
-
-_PACKAGE_DEP=	stage
-_PACKAGE_SEQ=	package-message pre-package pre-package-script do-package post-package-script
-
-_INSTALL_DEP=	package
-_INSTALL_SEQ=	install-message run-depends lib-depends check-already-installed
-_INSTALL_SUSEQ=	install-package security-check
-.endif
-
-.else # NO_STAGE
-
-_INSTALL_DEP=	build
-_INSTALL_SEQ=	install-message check-install-conflicts run-depends lib-depends apply-slist pre-install \
-				pre-install-script generate-plist check-already-installed
-_INSTALL_SUSEQ= check-umask install-mtree pre-su-install \
-				pre-su-install-script create-users-groups do-install \
-				install-desktop-entries install-license install-rc-script \
-				desktop-file-post-install kmod-post-install shared-mime-post-install webplugin-post-install \
-				post-install post-install-script add-plist-buildinfo \
-				add-plist-info add-plist-docs add-plist-examples \
-				add-plist-data add-plist-post fix-plist-sequence \
-				compress-man install-ldconfig-file fake-pkg security-check
-_PACKAGE_DEP=	install
-_PACKAGE_SEQ=	package-message pre-package pre-package-script \
-				do-package post-package-script
-.endif
 
 # Enforce order for -jN builds
 

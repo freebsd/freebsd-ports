@@ -3,6 +3,7 @@
 
 PORTNAME=	rack-ssl
 PORTVERSION=	1.3.4
+PORTEPOCH=	1
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 

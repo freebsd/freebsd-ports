@@ -16,7 +16,6 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	${ICONV_CONFIGURE_BASE} \
 		--enable-runidn \
 		--enable-extra-ace
-SHAREMODE=	644 # needed for libtool which runs ranlib on install
 
 USE_LDCONFIG=	yes
 

@@ -3,7 +3,7 @@
 
 PORTNAME=	vlogin
 PORTVERSION=	3.10.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail www
 DISTNAME=	${PORTNAME}-${PORTVERSION}-1.2.7
 
@@ -19,12 +19,12 @@ OPTIONS_DEFINE=	DOCS
 # We need to rearrange, install and cleanup documentation pre-install
 # because bsd.squirrelmail.mk installs everything under ${WRKSRC}/${PORTNAME}.
 pre-install::
-	cd ${WRKSRC}/${PORTNAME}/docs \
-	&& ${RM} .htaccess index.php \
-	&& ${MKDIR} ${STAGEDIR}${DOCSDIR} \
-	&& ${COPYTREE_SHARE} \* ${STAGEDIR}${DOCSDIR} \
-	&& cd ${WRKSRC}/${PORTNAME} \
-	&& ${RM} -rf README docs
+	${RM} ${WRKSRC}/${PORTNAME}/docs/.htaccess
+	${RM} ${WRKSRC}/${PORTNAME}/docs/index.php
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	(cd ${WRKSRC}/${PORTNAME}/docs && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR})
+	${RM} -rf ${WRKSRC}/${PORTNAME}/README
+	${RM} -rf ${WRKSRC}/${PORTNAME}/docs
 
 .include "${.CURDIR}/../squirrelmail/bsd.squirrelmail.mk"
 .include <bsd.port.mk>

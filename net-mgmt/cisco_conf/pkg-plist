@@ -1,9 +1,0 @@
-etc/ciscoconf/.joerc
-etc/ciscoconf/CiscoConf.conf.sample
-etc/ciscoconf/toggle_no.sed
-sbin/CiscoConf
-%%DOCSDIR%%/CiscoConf.html
-@dirrm etc/ciscoconf
-@dirrm %%DOCSDIR%%
-@cwd /
-@dirrm var/db/ciscoconf

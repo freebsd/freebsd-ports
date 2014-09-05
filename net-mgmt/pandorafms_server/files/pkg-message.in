@@ -1,6 +1,9 @@
 **********************************************************************
 
-Pandora FMS server has been installed
+Pandora FMS %%PANDORA_VERSION%% server has been installed.
+
+If your perl installation doesn't support threads, rebuild your perl
+with threads support.
 
 In order to run the Pandora FMS server, you need to edit
 %%ETCDIR%%/pandora_server.conf
@@ -16,11 +19,19 @@ following line to /etc/rc.conf or /etc/rc.conf.local:
   tentacle_server_enable="YES"
 
 
-By default pandora_db.pl script will run daily to purge old data
-stored in the Pandora FMS database, and maintain the database
-compacted.  If you don't want this behavior please set the following
-in your /etc/periodic.conf or /etc/periodic.conf.local:
+As of Pandora FMS 4.1, database maintenance script run hourly to
+improve performance and avoid locks on heavy loaded systems.
+Please put like a following line to your /etc/crontab:
 
-  daily_clean_pandoradb_enable="NO"
+  @hourly	root	%%PERL%% %%DATADIR%%/util/pandora_db.pl
+
+If you have a "daily_clean_pandoradb_enable" entry in /etc/periodic.conf,
+you can safely remove this line.
+
+**********************************************************************
+
+For upgrade instructions, please read:
+
+  http://wiki.pandorafms.com/index.php?title=Pandora:Documentation_en:Anexo_Upgrade
 
 **********************************************************************

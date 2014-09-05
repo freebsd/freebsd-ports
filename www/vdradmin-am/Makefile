@@ -65,7 +65,7 @@ post-patch:
 
 do-install:
 	${MKDIR} ${STAGEDIR}${ETCDIR}
-	${INSTALL_DATA} -m 644 ${FILESDIR}/vdradmind.conf ${STAGEDIR}${ETCDIR}/vdradmind.conf.sample
+	${INSTALL_DATA} ${FILESDIR}/vdradmind.conf ${STAGEDIR}${ETCDIR}/vdradmind.conf.sample
 	${MKDIR}  ${STAGEDIR}/var/cache/${PORTNAME} \
 		${STAGEDIR}/var/log/${PORTNAME} ${STAGEDIR}/var/run/${PORTNAME}
 	@(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} DESTDIR=${STAGEDIR} \

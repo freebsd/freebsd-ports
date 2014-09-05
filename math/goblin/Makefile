@@ -27,14 +27,11 @@ PORTDOCS=	*
 PORTEXAMPLES=	*
 
 CFLAGS+=	-I${LOCALBASE}/include/tcl${TCL_VER} -I${LOCALBASE}/include/ \
-		-I${LOCALBASE}/include/tk${TK_VER}
-LIBS+=		-L${LOCALBASE}/lib -ltcl${TCL_SHLIB_VER} -ltk${TK_SHLIB_VER} -lm
+		-I${LOCALBASE}/include/tk${TK_VER} -fPIC
+CXXFLAGS+=	-fPIC
+LIBS+=		-L${LOCALBASE}/lib -ltcl${TCL_SHLIB_VER} -ltk${TK_SHLIB_VER} -lm -pthread
 
 .include <bsd.port.options.mk>
-
-.if ${ARCH} == "amd64"
-CFLAGS+=	-fPIC
-.endif
 
 post-patch:
 	${REINPLACE_CMD} -e 's|/usr/bin/wish|${WISH}|g' ${WRKSRC}/display

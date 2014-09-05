@@ -1,0 +1,6 @@
+-----------------------------------------------------------------------------
+You must set PHRED_PARAMETER_FILE environment variable.
+
+The default parameter file in the distribution is located at:
+%%DATADIR%%/phredpar.dat
+-----------------------------------------------------------------------------

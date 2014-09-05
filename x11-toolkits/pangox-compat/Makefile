@@ -4,6 +4,7 @@
 
 PORTNAME=	pangox-compat
 PORTVERSION=	0.0.2
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -13,13 +14,13 @@ COMMENT=	Deprecated pangoX support
 
 BUILD_DEPENDS=	pango>=1.34.0:${PORTSDIR}/x11-toolkits/pango
 
+USES=		gmake libtool pathfix pkgconfig tar:xz
 USE_XORG=	x11 ice
 USE_LDCONFIG=	yes
-GNU_CONFIGURE=	yes
-USES=		gmake pathfix pkgconfig tar:xz
 USE_GNOME=	glib20 pango
+GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+LIBS+=		-L${LOCALBASE}/lib
 INSTALL_TARGET=	install-strip
 
 .include <bsd.port.mk>

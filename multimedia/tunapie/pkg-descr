@@ -1,7 +1,0 @@
-Tuner for streaming internet radio and TV (nsv stream), written in Python,
-providing searchable listings of audio and video media broadcasts from
-the shoutcast server (Winamp). Helper programs can be specified to play
-different categories of stream.
-
-Author:	James Stone
-WWW:	http://sourceforge.net/projects/tunapie

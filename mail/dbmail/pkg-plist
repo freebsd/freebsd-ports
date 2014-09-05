@@ -1,6 +1,4 @@
-@unexec if cmp -s %D/etc/dbmail.conf-dist %D/etc/dbmail.conf; then rm -f %D/etc/dbmail.conf; fi
-etc/dbmail.conf-dist
-@exec if [ ! -f %D/etc/dbmail.conf ] ; then cp -p %D/%F %B/dbmail.conf; fi
+@sample etc/dbmail.conf.sample
 %%LDAP%%lib/dbmail/libauth_ldap.so
 %%LDAP%%lib/dbmail/libauth_ldap.so.0
 %%LDAP%%lib/dbmail/libauth_ldap.so.0.0.0
@@ -49,6 +47,10 @@ sbin/dbmail-util
 %%DATADIR%%/mysql/migrate_from_1.x_to_2.0_innodb.mysql
 %%DATADIR%%/mysql/migrate_from_2.0_to_2.2.mysql
 %%DATADIR%%/mysql/update_headervalue_01.mysql
+%%DATADIR%%/mysql/upgrades/32001.mysql
+%%DATADIR%%/mysql/upgrades/32002.mysql
+%%DATADIR%%/mysql/upgrades/32003.mysql
+%%DATADIR%%/mysql/upgrades/32004.mysql
 %%DATADIR%%/oracle/dbmail_grant.sql
 %%DATADIR%%/oracle/dbmail_schema.sql
 %%DATADIR%%/oracle/dbmail_ts.sql
@@ -62,6 +64,10 @@ sbin/dbmail-util
 %%DATADIR%%/postgresql/create_tables.pgsql
 %%DATADIR%%/postgresql/migrate_from_1.x_to_2.0.pgsql
 %%DATADIR%%/postgresql/migrate_from_2.0_to_2.2.pgsql
+%%DATADIR%%/postgresql/upgrades/32001.psql
+%%DATADIR%%/postgresql/upgrades/32002.psql
+%%DATADIR%%/postgresql/upgrades/32003.psql
+%%DATADIR%%/postgresql/upgrades/32004.psql
 %%DATADIR%%/sqlite/2_1_7-2_2_0.sqlite
 %%DATADIR%%/sqlite/2_2-3_0.sqlite
 %%DATADIR%%/sqlite/2_2_5-2_3_0.sqlite
@@ -71,6 +77,10 @@ sbin/dbmail-util
 %%DATADIR%%/sqlite/3_0_2-3_1_0.sqlite
 %%DATADIR%%/sqlite/create_tables.sqlite
 %%DATADIR%%/sqlite/trigger.tmpl.sql
+%%DATADIR%%/sqlite/upgrades/32001.sqlite
+%%DATADIR%%/sqlite/upgrades/32002.sqlite
+%%DATADIR%%/sqlite/upgrades/32003.sqlite
+%%DATADIR%%/sqlite/upgrades/32004.sqlite
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/BUGS
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL
@@ -83,13 +93,17 @@ sbin/dbmail-util
 %%PORTDOCS%%%%DOCSDIR%%/README.qmail
 %%PORTDOCS%%%%DOCSDIR%%/README.sieve
 %%PORTDOCS%%%%DOCSDIR%%/README.smtp
+%%PORTDOCS%%%%DOCSDIR%%/README.security-password
 %%PORTDOCS%%%%DOCSDIR%%/README.solaris
 %%PORTDOCS%%%%DOCSDIR%%/README.usermap
 %%PORTDOCS%%%%DOCSDIR%%/THANKS
 %%PORTDOCS%%%%DOCSDIR%%/UPGRADING
+@dirrm %%DATADIR%%/sqlite/upgrades
 @dirrm %%DATADIR%%/sqlite
+@dirrm %%DATADIR%%/postgresql/upgrades
 @dirrm %%DATADIR%%/postgresql
 @dirrm %%DATADIR%%/oracle
+@dirrm %%DATADIR%%/mysql/upgrades
 @dirrm %%DATADIR%%/mysql
 @dirrm %%DATADIR%%
 @dirrm lib/dbmail

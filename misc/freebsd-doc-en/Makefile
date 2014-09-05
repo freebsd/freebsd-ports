@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	freebsd-doc
-PORTVERSION=	45106
-PORTREVISION=	1
+PORTVERSION=	45500
 PORTEPOCH=	1
 CATEGORIES=	misc docs
 MASTER_SITES=	LOCAL/blackend
@@ -14,6 +13,7 @@ COMMENT?=	Documentation from the FreeBSD Documentation Project
 
 BUILD_DEPENDS=	docproj>=2.0_1:${PORTSDIR}/textproc/docproj
 
+USES=		uidfix
 WRKSRC=		${WRKDIR}/doc
 PLIST_SUB=	DOCSDIR=${DOCBASE} \
 		DOCLANG=${DOCLANG} \
@@ -31,7 +31,6 @@ TMPDESTDIR=	${STAGEDIR}${DESTDIR}/${PREFIX}/${DOCBASE}
 DESTDIRNAME=	TMPDESTDIR
 
 PLIST=		${WRKDIR}/pkg-plist
-NEED_ROOT=	yes
 
 DOCLANG?=		en_US.ISO8859-1
 DOCLANG_PREFIX?=	${DOCLANG:C/_.*$//}

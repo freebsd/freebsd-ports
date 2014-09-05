@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	olefileio_pl
-PORTVERSION=	0.30
+PORTVERSION=	0.31
 CATEGORIES=	devel python
-MASTER_SITES=	http://cdn.bitbucket.org/decalage/olefileio_pl/downloads/
+MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	OleFileIO_PL-${PORTVERSION}
 
@@ -13,12 +13,10 @@ COMMENT=	Python module to read MS OLE2 files
 
 LICENSE=	MIT
 
-USES=		dos2unix zip
-USE_PYTHON=	yes
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
+USES=		dos2unix python zip
+USE_PYTHON=	distutils autoplist
 
 post-patch:
-	@${REINPLACE_CMD} "s|, 'OleFileIO_PL2'||" ${WRKSRC}/setup.py
+	@${REINPLACE_CMD} "/^if sys\.version_info/,/OleFileIO_PL2/d" ${WRKSRC}/setup.py
 
 .include <bsd.port.mk>

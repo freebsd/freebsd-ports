@@ -33,17 +33,14 @@ include/DPS/dpsfriends.h
 include/DPS/dpsops.h
 include/DPS/psops.h
 lib/libdps.a
-lib/libdps.la
 lib/libdps.so
 lib/libdps.so.0
 lib/libdps.so.0.0.1
 lib/libdpstk.a
-lib/libdpstk.la
 lib/libdpstk.so
 lib/libdpstk.so.0
 lib/libdpstk.so.0.0.1
 lib/libpsres.a
-lib/libpsres.la
 lib/libpsres.so
 lib/libpsres.so.0
 lib/libpsres.so.0.0.1

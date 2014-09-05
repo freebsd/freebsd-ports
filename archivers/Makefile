@@ -98,6 +98,7 @@
     SUBDIR += p5-Archive-Tar
     SUBDIR += p5-Archive-Zip
     SUBDIR += p5-Compress-Bzip2
+    SUBDIR += p5-Compress-LZ4
     SUBDIR += p5-Compress-LZF
     SUBDIR += p5-Compress-LZO
     SUBDIR += p5-Compress-LZW
@@ -149,6 +150,10 @@
     SUBDIR += php55-phar
     SUBDIR += php55-zip
     SUBDIR += php55-zlib
+    SUBDIR += php56-bz2
+    SUBDIR += php56-phar
+    SUBDIR += php56-zip
+    SUBDIR += php56-zlib
     SUBDIR += pigz
     SUBDIR += pixz
     SUBDIR += plzip
@@ -170,7 +175,7 @@
     SUBDIR += ruby-zip
     SUBDIR += rubygem-archive-tar-minitar
     SUBDIR += rubygem-archive-zip
-    SUBDIR += rubygem-bzip2
+    SUBDIR += rubygem-bzip2-ruby
     SUBDIR += rubygem-libarchive
     SUBDIR += rubygem-minitar
     SUBDIR += rubygem-rubyzip

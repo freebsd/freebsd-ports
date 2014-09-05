@@ -17,13 +17,11 @@ LIB_DEPENDS=	libtsk.so:${PORTSDIR}/sysutils/sleuthkit
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-USES=		shebangfix tar:tgz
+USES=		python:2 shebangfix tar:tgz
 SHEBANG_FILES=	samples/*.py
 python_OLD_CMD=	.*
 python_CMD=	${PYTHON_CMD}
-USE_PYTHON=	2
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
+USE_PYTHON=	distutils autoplist
 
 PORTDOCS=	README
 PORTEXAMPLES=	*

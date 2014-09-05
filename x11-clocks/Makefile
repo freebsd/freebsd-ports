@@ -54,7 +54,6 @@
     SUBDIR += wmfuzzy
     SUBDIR += wmtime
     SUBDIR += wmtimer
-    SUBDIR += xalarm
     SUBDIR += xclock
     SUBDIR += xdaliclock
     SUBDIR += xfce4-datetime-plugin

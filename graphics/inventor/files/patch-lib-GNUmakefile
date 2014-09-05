@@ -5,7 +5,7 @@
          -lGLU -lGL
  
 +ifeq ($(usingFreeBSD), 1)
-+LLDLIBS += -lXext %%ICONV_LIB%%
++LLDLIBS += %%ICONV_LIB%%
 +endif
 +
  OBJECTS = \

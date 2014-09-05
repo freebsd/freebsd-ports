@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	rubytree
-PORTVERSION=	0.8.3
+PORTVERSION=	0.9.4
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -11,8 +11,8 @@ COMMENT=	Implementation of the Tree data structure for the Ruby
 
 LICENSE=	BSD3CLAUSE
 
-RUN_DEPENDS=	rubygem-json>=0:${PORTSDIR}/devel/rubygem-json \
-		rubygem-structured_warnings>=0:${PORTSDIR}/devel/rubygem-structured_warnings
+RUN_DEPENDS=	rubygem-json>=1.8:${PORTSDIR}/devel/rubygem-json \
+		rubygem-structured_warnings>=0.1:${PORTSDIR}/devel/rubygem-structured_warnings
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes

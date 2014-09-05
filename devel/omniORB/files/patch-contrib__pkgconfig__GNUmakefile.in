@@ -5,7 +5,7 @@
  INSTALL=@INSTALL@
 
 -INSTALLDIR = $(INSTALLLIBDIR)/pkgconfig
-+INSTALLDIR = @prefix@/libdata/pkgconfig
++INSTALLDIR = %%STAGEDIR%%%%PREFIX%%/libdata/pkgconfig
 
  PKGFILES = omnithread3.pc omniORB4.pc omniDynamic4.pc \
             omniCOS4.pc omniCOSDynamic4.pc

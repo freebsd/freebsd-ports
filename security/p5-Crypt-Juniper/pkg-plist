@@ -1,4 +1,4 @@
-%%SITE_PERL%%//Crypt/Juniper.pm
+%%SITE_PERL%%/Crypt/Juniper.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/Juniper/.packlist
 %%PERL5_MAN3%%/Crypt::Juniper.3.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/Juniper

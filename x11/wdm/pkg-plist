@@ -12,9 +12,7 @@ lib/X11/wdm/Xservers.ws
 lib/X11/wdm/Xsession
 lib/X11/wdm/Xsession.XFree86
 lib/X11/wdm/Xsession.orig
-@unexec if cmp -s %D/lib/X11/wdm/Xsetup_0.dist %D/lib/X11/wdm/Xsetup_0; then rm -f %D/lib/X11/wdm/Xsetup_0; fi
-lib/X11/wdm/Xsetup_0.dist
-@exec [ -f %D/lib/X11/wdm/Xsetup_0 ] || (cp %D/lib/X11/wdm/Xsetup_0.dist %D/lib/X11/wdm/Xsetup_0)
+@sample lib/X11/wdm/Xsetup_0.sample
 lib/X11/wdm/pixmaps/Eagle.xpm
 lib/X11/wdm/pixmaps/Earth.jpg
 lib/X11/wdm/pixmaps/Earth200x130.xpm
@@ -24,9 +22,7 @@ lib/X11/wdm/pixmaps/StarsLogo.jpg
 lib/X11/wdm/pixmaps/beastie.xpm
 lib/X11/wdm/pixmaps/daemon1-HQ-1280x960.jpg
 lib/X11/wdm/pixmaps/gnuLogo.xpm
-@unexec if cmp -s %D/lib/X11/wdm/wdm-config.dist %D/lib/X11/wdm/wdm-config; then rm -f %D/lib/X11/wdm/wdm-config; fi
-lib/X11/wdm/wdm-config.dist
-@exec [ -f %D/lib/X11/wdm/wdm-config ] || (cp %D/lib/X11/wdm/wdm-config.dist %D/lib/X11/wdm/wdm-config)
+@sample lib/X11/wdm/wdm-config.sample
 lib/X11/wdm/wdm-config.in
 lib/X11/wdm/wdmReconfig
 man/man1/wdm.1.gz
@@ -40,10 +36,7 @@ share/locale/fr_FR/LC_MESSAGES/wdm.mo
 share/locale/ja/LC_MESSAGES/wdm.mo
 share/locale/ru/LC_MESSAGES/wdm.mo
 @dirrmtry lib/X11/wdm/pixmaps
-@exec mkdir -p %D/lib/X11/wdm/authdir
 @dirrmtry lib/X11/wdm/authdir
 @dirrmtry lib/X11/wdm
-%%PAM%%@cwd %%LOCALBASE%%
-%%PAM%%etc/pam.d/wdm
-@cwd /
+%%PAM%%%%LOCALBASE%%/etc/pam.d/wdm
 @dirrmtry /var/run/wdm

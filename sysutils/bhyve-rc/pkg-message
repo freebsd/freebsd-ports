@@ -1,0 +1,55 @@
+Configuration is done completely though rc.conf.
+The rc script won't touch any devices for you (neither disk, nor tap)
+so you need to make sure all of those have been initialized properly.
+
+General setup:
+kldload vmm
+net.link.tap.up_on_open=1
+
+Make it persistent:
+echo "net.link.tap.up_on_open=1" >> /etc/sysctl.conf
+cat >> /boot/loader.conf << EOF
+vmm_load="YES"
+EOF
+
+Minimal example:
+cat >> /etc/rc.conf << EOF
+cloned_interfaces="tap0 bridge0"
+bhyve_enable="YES"
+bhyve_diskdev="/dev/zvol/tank/bhyve/virt"
+EOF
+
+ifconfig tap0 create
+ifconfig bridge0 create
+
+service bhyve start
+tmux list-sessions
+tmux attach -t bhyve
+service bhyve status
+service bhyve stop
+
+Multi profile configuration example:
+cat >> /etc/rc.conf << EOF
+cloned_interfaces="tap0 tap1 bridge0"
+bhyve_enable="YES"
+bhyve_profiles="virt1 virt2"
+bhyve_virt1_diskdev="/dev/zvol/tank/bhyve/virt1"
+
+bhyve_virt2_tapdev="tap1"
+bhyve_virt2_diskdev="/dev/zvol/tank/bhyve/virt2"
+bhyve_virt2_memsize="8192"
+bhyve_virt2_ncpu="4"
+EOF
+
+ifconfig tap0 create
+ifconfig tap1 create
+ifconfig bridge0 create
+
+service bhyve start # start all
+service bhyve start virt2 # start individual
+tmux attach -t bhyve_virt1
+tmux attach -t bhyve_virt1
+service bhyve stop virt2 # stop individual
+service bhyve stop # stop all
+
+(by default ctrl-b d detaches from tmux).

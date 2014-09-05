@@ -39,6 +39,10 @@ DOCS_BUILD_DEPENDS=	hevea:${PORTSDIR}/textproc/hevea
 DOCS_CONFIGURE_OFF=	--with-doc none
 PORTDOCS=		*
 
+# Workaround bsd.ocaml.mk to fix packaging
+add-plist-post:
+	@${DO_NADA}
+
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "powerpc"

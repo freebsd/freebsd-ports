@@ -1,6 +1,0 @@
-NNML::Server server implements a minimal NNTP server. It is (hope-)
-fully conformant to rfc977. In addition the commands XOVER and
-AUTHINFO are implemented.
-
-Author:	Ulrich Pfeifer <pfeifer@ls6.informatik.uni-dortmund.de>
-WWW:	http://search.cpan.org/dist/NNML/

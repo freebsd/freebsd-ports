@@ -3,7 +3,7 @@
 
 PORTNAME=	visualboyadvance-m
 PORTVERSION=	1.8.0r${SVN_REV}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	emulators
 MASTER_SITES=	https://cooltrainer.org/freebsd-ports/visualboyadvance-m/
 
@@ -12,8 +12,7 @@ COMMENT=	Game Boy Advance emulator with GTK frontend
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png \
-		libsfml-system.so:${PORTSDIR}/devel/sfml
+LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png
 
 OPTIONS_DEFINE=	NLS FFMPEG LINK LIRC DEBUGGER
 OPTIONS_MULTI=	INTERFACE
@@ -104,6 +103,7 @@ CMAKE_ARGS+=	-DENABLE_NLS:BOOL=no
 
 .if ${PORT_OPTIONS:MLINK}
 CMAKE_ARGS+=	-DENABLE_LINK:BOOL=yes
+LIB_DEPENDS+=	libsfml1-system.so:${PORTSDIR}/devel/sfml1
 .else
 CMAKE_ARGS+=	-DENABLE_LINK:BOOL=no
 .endif
@@ -117,7 +117,14 @@ CMAKE_ARGS+=	-DENABLE_LIRC:BOOL=no
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g' ${WRKSRC}/CMakeScripts/FindSFML.cmake
+	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g; s|include/SFML|&1|; \
+		s|NAMES sfml-|NAMES sfml1-|' ${WRKSRC}/CMakeScripts/FindSFML.cmake
+	@${REINPLACE_CMD} -e '/#include/ s|SFML|&1|' \
+		${WRKSRC}/src/gba/GBASockClient.h \
+		${WRKSRC}/src/gba/GBALink.cpp \
+		${WRKSRC}/src/gba/GBALink.h
+	@${REINPLACE_CMD} -e '/SET.*LIRC_CLIENT_LIBRARY/ s|lirc_client|${LOCALBASE}/lib/lib&.so|' \
+		${WRKSRC}/CMakeLists.txt
 
 maint-gen-distfile:
 	@if [ -f ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX} ]; then \

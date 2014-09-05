@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	node
-PORTVERSION=	0.10.30
+PORTVERSION=	0.10.31
 CATEGORIES=	www
 MASTER_SITES=	http://nodejs.org/dist/v${PORTVERSION}/
 DISTNAME=	${PORTNAME}-v${PORTVERSION}
@@ -12,10 +12,9 @@ COMMENT=	V8 JavaScript for client and server
 
 LICENSE=	MIT
 
-USES=		gmake compiler execinfo
+USES=		gmake compiler execinfo python:2
 HAS_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-USE_PYTHON=	2
 
 CONFLICTS=	node-0.[02-9][0-9]* node-devel-0.[0-9]*
 

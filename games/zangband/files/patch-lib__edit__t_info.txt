@@ -1,0 +1,11 @@
+--- lib/edit/t_info.txt.orig
++++ lib/edit/t_info.txt
+@@ -92,7 +92,7 @@
+ L:MENTT:if (do_move == TRUE) then
+ L:MENTT:	if (bAnd(race.flags[0], RF0_NEVER_BLOW) ~= 0) and
+ L:MENTT:		(randint1(BREAK_MINOR_GLYPH) < race.level) then
+-L:MENTT:		if (field.fx == player.px) and (field.fy = player.py) then
++L:MENTT:		if (field.fx == player.px) and (field.fy == player.py) then
+ L:MENTT:			msgf("The rune explodes!")
+ L:MENTT:			fire_ball(GF_MANA, 0, 2 * ((player.lev / 2) + damroll(7, 7)), 2)
+ L:MENTT:		else

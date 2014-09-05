@@ -262,10 +262,12 @@ include/CLHEP/Units/GlobalSystemOfUnits.h
 include/CLHEP/Units/PhysicalConstants.h
 include/CLHEP/Units/SystemOfUnits.h
 include/CLHEP/Units/defs.h
+include/CLHEP/Utility/atomic_int.h
 include/CLHEP/Utility/defs.h
 include/CLHEP/Utility/keywords.h
 include/CLHEP/Utility/memory.h
 include/CLHEP/Utility/noncopyable.h
+include/CLHEP/Utility/thread_local.h
 include/CLHEP/Utility/type_traits.h
 include/CLHEP/Vector/AxisAngle.h
 include/CLHEP/Vector/AxisAngle.icc

@@ -1,0 +1,49 @@
+bin/utox
+share/applications/utox.desktop
+share/icons/hicolor/128x128/apps/utox.png
+share/icons/hicolor/14x14/apps/utox.png
+share/icons/hicolor/16x16/apps/utox.png
+share/icons/hicolor/192x192/apps/utox.png
+share/icons/hicolor/22x22/apps/utox.png
+share/icons/hicolor/24x24/apps/utox.png
+share/icons/hicolor/256x256/apps/utox.png
+share/icons/hicolor/32x32/apps/utox.png
+share/icons/hicolor/36x36/apps/utox.png
+share/icons/hicolor/48x48/apps/utox.png
+share/icons/hicolor/512x512/apps/utox.png
+share/icons/hicolor/64x64/apps/utox.png
+share/icons/hicolor/72x72/apps/utox.png
+share/icons/hicolor/96x96/apps/utox.png
+share/icons/hicolor/scalable/apps/utox.svg
+@dirrmtry share/icons/hicolor/128x128/apps
+@dirrmtry share/icons/hicolor/128x128
+@dirrmtry share/icons/hicolor/14x14/apps
+@dirrmtry share/icons/hicolor/14x14
+@dirrmtry share/icons/hicolor/16x16/apps
+@dirrmtry share/icons/hicolor/16x16
+@dirrmtry share/icons/hicolor/192x192/apps
+@dirrmtry share/icons/hicolor/192x192
+@dirrmtry share/icons/hicolor/22x22/apps
+@dirrmtry share/icons/hicolor/22x22
+@dirrmtry share/icons/hicolor/24x24/apps
+@dirrmtry share/icons/hicolor/24x24
+@dirrmtry share/icons/hicolor/256x256/apps
+@dirrmtry share/icons/hicolor/256x256
+@dirrmtry share/icons/hicolor/32x32/apps
+@dirrmtry share/icons/hicolor/32x32
+@dirrmtry share/icons/hicolor/36x36/apps
+@dirrmtry share/icons/hicolor/36x36
+@dirrmtry share/icons/hicolor/48x48/apps
+@dirrmtry share/icons/hicolor/48x48
+@dirrmtry share/icons/hicolor/512x512/apps
+@dirrmtry share/icons/hicolor/512x512
+@dirrmtry share/icons/hicolor/64x64/apps
+@dirrmtry share/icons/hicolor/64x64
+@dirrmtry share/icons/hicolor/72x72/apps
+@dirrmtry share/icons/hicolor/72x72
+@dirrmtry share/icons/hicolor/96x96/apps
+@dirrmtry share/icons/hicolor/96x96
+@dirrmtry share/icons/hicolor/scalable/apps
+@dirrmtry share/icons/hicolor/scalable
+@dirrmtry share/icons/hicolor
+@dirrmtry share/icons

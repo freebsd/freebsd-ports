@@ -1,8 +1,0 @@
-OpenAM is a H323 Answer Machine.
-It is used to record messages from other users while you
-are unavailable.
-
-It accepts calls from any H323 Video Conferencing client,
-including OhPhone (part of OpenH323) and MS NetMeeting.
-
-It makes use of PWLib and the OpenH323 stack from Equivalence Ltd Pty

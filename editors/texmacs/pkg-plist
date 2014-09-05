@@ -4150,16 +4150,14 @@ share/icons/gnome/scalable/mimetypes/text-texmacs.svg
 share/mime-info/texmacs.keys
 share/mime-info/texmacs.mime
 share/mime/packages/texmacs.xml
+share/mime/text/x-texmacs.xml
 share/pixmaps/TeXmacs.xpm
 @dirrmtry share/mime/text
-@dirrmtry share/mime/packages
 @dirrmtry share/mime-info
-@dirrmtry share/mime
 @dirrmtry share/icons/gnome/scalable/mimetypes
 @dirrmtry share/icons/gnome/scalable/apps
 @dirrmtry share/icons/gnome/scalable
 @dirrmtry share/icons/gnome
-@dirrmtry share/icons
 @dirrmtry share/application-registry
 @dirrm %%DATADIR%%/texts/test
 @dirrm %%DATADIR%%/texts

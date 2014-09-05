@@ -1,6 +1,6 @@
 --- Makefile.in.orig	2000-06-23 02:10:21.000000000 +0300
 +++ Makefile.in	2009-03-03 18:30:51.000000000 +0200
-@@ -111,7 +111,7 @@
+@@ -111,11 +111,11 @@
  EXTRA_DIST = mkoptable mkwhatis $(modsrc) $(scmsrc) CHANGES LICENCE_EXCEPTION
  
  # other directories
@@ -9,6 +9,11 @@
  
  noinst_LIBRARIES = libqs.a
  
+-shared_dir = $(prefix)/share/qscheme/$(VERSION)
++shared_dir = $(prefix)/lib/qscheme/$(VERSION)
+ 
+ scmobjdir = $(shared_dir)
+ scmobj_DATA = $(modobj) $(scmsrc)
 @@ -578,12 +578,12 @@
  	$(COMPILE) -o $@ -shared -fPIC -I$(incpcre) $(srcdir)/regex.c $(PCRE_LIB)
  
@@ -27,3 +32,12 @@
  
  # force sproto.h to be up to date. Otherwise compilation of
  # distribution may fail, because sproto.h can trigger the cfunction
+@@ -594,7 +594,7 @@
+ 
+ # force the x bit on the shared libraries
+ install-data-local:
+-	chmod +x $(shared_dir)/*.so
++	chmod +x $(DESTDIR)$(shared_dir)/*.so
+ 
+ whatis: whatis.qs
+ 

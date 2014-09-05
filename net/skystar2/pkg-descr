@@ -1,8 +1,0 @@
-A driver for DVB-S card (producer TechniSat, Germany, http://www.technisat.com/)
-SkyStar 2 TV PCI on chip FlexCop II or FlexCop IIB by B2C2inc (SkyStar2).
-In this version of the driver there is no support of TV. Only data.
-Written by paradox (http://paradox.org.ua/).
-
-For additional information see readme in the source tarball.
-
-WWW: http://paradox.org.ua/

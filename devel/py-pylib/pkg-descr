@@ -6,4 +6,4 @@ The pylib is a development support library featuring these tools and APIs:
   * py.code:  dynamic code generation and introspection
   * py.path:  uniform local and svn path objects
 
-WWW: http://pylib.org/
+WWW: http://pylib.org

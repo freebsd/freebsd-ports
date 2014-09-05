@@ -1,4 +1,3 @@
-%%TEXMFDISTDIR%%/source/xmltex/xmlplay/play.dtd
 %%TEXMFDISTDIR%%/tex/xmltex/base/iso-8859-1.xmt
 %%TEXMFDISTDIR%%/tex/xmltex/base/utf-16.xmt
 %%TEXMFDISTDIR%%/tex/xmltex/base/iso-8859-2.xmt
@@ -11,7 +10,6 @@
 %%TEXMFDISTDIR%%/tex/xmltex/base/windows-1250.xmt
 %%TEXMFDISTDIR%%/tex/xmltex/config/pdfxmltex.ini
 %%TEXMFDISTDIR%%/tex/xmltex/config/xmltex.ini
-%%TEXMFDISTDIR%%/tex/xmltex/xmlplay/play.xmt
 %%TEXMFDISTDIR%%/tex/xmltex/passivetex/mlnames.sty
 %%TEXMFDISTDIR%%/tex/xmltex/passivetex/teislides.xmt
 %%TEXMFDISTDIR%%/tex/xmltex/passivetex/fotex.xmt
@@ -39,15 +37,10 @@
 %%TEXMFDISTDIR%%/doc/otherformats/xmltex/base/portugeselatin1.xml
 %%TEXMFDISTDIR%%/doc/otherformats/xmltex/base/langtest.xml
 %%TEXMFDISTDIR%%/doc/otherformats/xmltex/base/testsec.xml
-%%TEXMFDISTDIR%%/doc/otherformats/xmltex/xmlplay/readme
-@dirrm %%TEXMFDISTDIR%%/doc/otherformats/xmltex/xmlplay
 @dirrm %%TEXMFDISTDIR%%/doc/otherformats/xmltex/base
 @dirrm %%TEXMFDISTDIR%%/doc/otherformats/xmltex
-@dirrm %%TEXMFDISTDIR%%/doc/otherformats
-@dirrm %%TEXMFDISTDIR%%/tex/xmltex/xmlplay
+@dirrmtry %%TEXMFDISTDIR%%/doc/otherformats
 @dirrm %%TEXMFDISTDIR%%/tex/xmltex/passivetex
 @dirrm %%TEXMFDISTDIR%%/tex/xmltex/config
 @dirrm %%TEXMFDISTDIR%%/tex/xmltex/base
 @dirrm %%TEXMFDISTDIR%%/tex/xmltex
-@dirrm %%TEXMFDISTDIR%%/source/xmltex/xmlplay
-@dirrm %%TEXMFDISTDIR%%/source/xmltex

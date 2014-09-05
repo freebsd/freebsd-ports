@@ -11,7 +11,7 @@ COMMENT=	Log normalizer
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libjson.so:${PORTSDIR}/devel/json-c \
+LIB_DEPENDS=	libjson-c.so:${PORTSDIR}/devel/json-c \
 		libestr.so:${PORTSDIR}/devel/libestr
 
 USES=		pathfix pkgconfig libtool

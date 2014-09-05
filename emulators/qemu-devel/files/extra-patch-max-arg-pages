@@ -1,0 +1,28 @@
+From 200e09e4bf497b43cace6b2b2b85b943f5d59dc1 Mon Sep 17 00:00:00 2001
+From: Sean Bruno <sbruno@freebsd.org>
+Date: Fri, 29 Aug 2014 14:56:00 +0000
+Subject: [PATCH] Increase MAX_ARG_PAGES to 64 (256k total arg).
+
+I've found that building packages, like binutils, exceeded 128k easily
+---
+ bsd-user/qemu.h | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+
+diff --git a/bsd-user/qemu.h b/bsd-user/qemu.h
+index 09af1b4..0731c64 100644
+--- a/bsd-user/qemu.h
++++ b/bsd-user/qemu.h
+@@ -121,10 +121,10 @@ extern unsigned long mmap_min_addr;
+ /* ??? See if we can avoid exposing so much of the loader internals.  */
+ /*
+  * MAX_ARG_PAGES defines the number of pages allocated for arguments
+- * and envelope for the new program. 32 should suffice, this gives
+- * a maximum env+arg of 128kB w/4KB pages!
++ * and envelope for the new program. 64 should suffice, this gives
++ * a maximum env+arg of 256kB w/4KB pages!
+  */
+-#define MAX_ARG_PAGES 32
++#define MAX_ARG_PAGES 64
+ 
+ /*
+  * This structure is used to hold the arguments that are

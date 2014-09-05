@@ -39,6 +39,7 @@ CFLAGS+=	-O3
 post-patch:
 	@${REINPLACE_CMD} \
 		-e 's|gimptool-2.0|${LOCALBASE}/bin/gimptool-2.0|' \
+		-e '/^LIBS =/s/$$/ -lm/' \
 		${WRKSRC}/src/Makefile
 #
 ## l10n

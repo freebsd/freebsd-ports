@@ -3,7 +3,7 @@
 
 PORTNAME=	jigdo
 PORTVERSION=	0.7.3
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	net-p2p
 MASTER_SITES=	http://atterer.org/sites/atterer/files/2009-08/${PORTNAME}/
 
@@ -15,7 +15,6 @@ RUN_DEPENDS=	${LOCALBASE}/bin/wget:${PORTSDIR}/ftp/wget
 USES=		gmake tar:bzip2
 USE_SUBMAKE=	yes
 GNU_CONFIGURE=	yes
-WITH_BDB_VER?=	43
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 
@@ -35,7 +34,7 @@ BDB_CONFIGURE_ON=	--with-libdb=-l${BDB_LIB_CXX_NAME}
 BDB_CONFIGURE_OFF=	--without-libdb
 BDB_CPPFLAGS=		-I${BDB_INCLUDE_DIR}
 BDB_LIBS=		-L${BDB_LIB_DIR}
-BDB_USE=		BDB=${WITH_BDB_VER}
+BDB_USE=		BDB=48+
 
 NLS_CONFIGURE_ENABLE=	nls
 NLS_USES=		gettext

@@ -16,6 +16,7 @@ LIB_DEPENDS=	libxerces-c.so:${PORTSDIR}/textproc/xerces-c3
 
 OPTIONS_DEFINE=	READLINE
 OPTIONS_DEFAULT=READLINE
+OPTIONS_SUB=	yes
 READLINE_DESC=	Enable readline support
 
 USE_OPENSSL=	yes
@@ -34,10 +35,11 @@ USES=		gmake
 
 .if ${PORT_OPTIONS:MREADLINE}
 USES+=		readline
-PLIST_SUB+=	READLINE=""
+.  if !exists(/usr/lib/libreadline.so)
+CONFIGURE_ARGS+=--with-readline-includes=${LOCALBASE}/include
+.  endif
 .else
 CONFIGURE_ENV+=	ac_cv_lib_readline_readline=no
-PLIST_SUB+=	READLINE="@comment "
 .endif
 
 post-patch:

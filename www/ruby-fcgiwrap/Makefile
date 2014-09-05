@@ -19,6 +19,9 @@ RUN_DEPENDS=	${RUBY_SITELIBDIR}/fcgi.rb:${PORTSDIR}/www/ruby-fcgi
 
 USE_RUBY=	yes
 
+DEPRECATED=	RubyForge shutdown May 15 2014
+EXPIRATION_DATE=	2014-09-20
+
 NO_BUILD=	yes
 
 do-install:

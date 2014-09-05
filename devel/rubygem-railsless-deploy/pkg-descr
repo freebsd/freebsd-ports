@@ -1,6 +1,0 @@
-Replacement for the rails deploy strategy which ships with Capistrano, allows
-you to deploy any platform with ease; some people have had huge success with
-this deploying rails projects where they needed to customise their deploy
-strategy beyond the code which ships with the Capistrano gem.
-
-WWW: https://github.com/leehambley/railsless-deploy/

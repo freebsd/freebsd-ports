@@ -32,7 +32,6 @@ PLIST_SUB=	LIBDIR="${LIBDIR:S/${PREFIX}\///}"
 LIBDIR=		${PREFIX}/lib/${PORTNAME}
 VM_ARCHS=	i386
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${ARCH} == "i386"
@@ -99,12 +98,12 @@ post-patch:
 
 do-install:
 .for bin in ${Q3BIN}
-	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/release/${bin} ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/release/${bin} ${STAGEDIR}${PREFIX}/bin
 .endfor
 .if ${PORT_OPTIONS:MGAMELIBS} || !defined(HAVE_VM_COMPILED)
 .for dir in baseq3 missionpack
-	@${MKDIR} ${LIBDIR}/${dir}
-	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/release/${dir}/*.so ${LIBDIR}/${dir}
+	@${MKDIR} ${STAGEDIR}${LIBDIR}/${dir}
+	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/release/${dir}/*.so ${STAGEDIR}${LIBDIR}/${dir}
 .endfor
 .endif
 

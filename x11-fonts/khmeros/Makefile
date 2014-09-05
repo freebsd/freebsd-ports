@@ -15,7 +15,7 @@ RUN_DEPENDS=	fc-cache:${PORTSDIR}/x11-fonts/fontconfig
 USES=		zip
 NO_BUILD=	yes
 
-FONTSDIR=	lib/X11/fonts/Khmer/
+FONTSDIR=	lib/X11/fonts/Khmer
 PLIST_SUB+=	FONTSDIR=${FONTSDIR}
 
 post-patch:

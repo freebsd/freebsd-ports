@@ -26,4 +26,7 @@ post-install:
 	${MKDIR} ${STAGEDIR}${RUBY_MODDOCDIR}
 	${INSTALL_DATA} ${WRKSRC}/README.mkdn ${STAGEDIR}${RUBY_MODDOCDIR}
 
+DEPRECATED=	RubyForge shutdown May 15 2014
+EXPIRATION_DATE=	2014-09-20
+
 .include <bsd.port.mk>

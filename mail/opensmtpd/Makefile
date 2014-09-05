@@ -3,7 +3,7 @@
 
 PORTNAME=	opensmtpd
 PORTVERSION=	5.4.2
-PORTREVISION=	3
+PORTREVISION=	4
 PORTEPOCH=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://www.opensmtpd.org/archives/ \
@@ -23,7 +23,8 @@ OPTIONS_DEFAULT=	CA_BUNDLE PAM
 
 CA_BUNDLE_DESC=	Install CA bundle for OpenSSL
 
-USE_AUTOTOOLS=	autoconf:env automake:env libtool:env
+USES=		libtool
+USE_AUTOTOOLS=	autoconf:env automake:env
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-libevent-dir=${LOCALBASE} --sysconfdir=${PREFIX}/etc/mail/ \
 		--with-mailwrapper

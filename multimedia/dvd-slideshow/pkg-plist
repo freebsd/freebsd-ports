@@ -3,6 +3,11 @@ bin/dvd-menu
 bin/dir2slideshow
 bin/gallery1-to-slideshow
 bin/jigl2slideshow
+man/man1/dir2slideshow.1.gz
+man/man1/dvd-menu.1.gz
+man/man1/dvd-slideshow.1.gz
+man/man1/gallery1-to-slideshow.1.gz
+man/man1/jigl2slideshow.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/changelog.html
 %%PORTDOCS%%%%DOCSDIR%%/gallery1-to-slideshow.html
 %%PORTDOCS%%%%DOCSDIR%%/dir2slideshow.html

@@ -23,9 +23,9 @@ include/csmith-2.1.0/volatile_runtime.c
 include/csmith-2.1.0/volatile_runtime.h
 include/csmith-2.1.0/windows/stdint.h
 lib/libcsmith.a
-lib/libcsmith.la
 lib/libcsmith.so
 lib/libcsmith.so.0
+lib/libcsmith.so.0.0.0
 %%PORTDOCS%%%%DOCSDIR%%/probabilities.txt
 @dirrm %%DOCSDIR%%
 @dirrm include/csmith-2.1.0/windows

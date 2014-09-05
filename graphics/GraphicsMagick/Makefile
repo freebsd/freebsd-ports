@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	GraphicsMagick
-PORTVERSION=	1.3.19
-PORTREVISION=	2
+PORTVERSION=	1.3.20
 PORTEPOCH=	1
 CATEGORIES=	graphics
 MASTER_SITES=	SF \
@@ -20,8 +19,6 @@ LIB_DEPENDS=	libjbig.so:${PORTSDIR}/graphics/jbigkit		\
 		libpng15.so:${PORTSDIR}/graphics/png		\
 		libtiff.so:${PORTSDIR}/graphics/tiff		\
 		libfreetype.so:${PORTSDIR}/print/freetype2
-
-CONFLICTS=	GraphicsMagick-1.[12].* GraphicsMagick12-*
 
 PORTSCOUT=	limit:^1\.3\.
 
@@ -40,15 +37,10 @@ PLIST_SUB=	Q="${QD}"
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-OPTIONS_DEFINE=		DOCS FPX OPENMP Q8BIT SSE TESTS WEBP X11
-OPTIONS_SINGLE=		X11
-OPTIONS_SINGLE_X11=	DPS
-OPTIONS_DEFAULT=	DPS OPENMP WEBP X11
+OPTIONS_DEFINE=		DOCS DPS FPX OPENMP Q8BIT SSE TESTS WEBP X11
+OPTIONS_DEFAULT=	OPENMP WEBP X11
 
-DPS_DESC=		Enable Display Ghostscript support
-DPS_LIB_DEPENDS=	libdps.so:${PORTSDIR}/x11/dgs
-DPS_USE=		XORG=xt
-DPS_CONFIGURE_WITH=	dps
+DPS_DESC=		Display Ghostscript support (must also select X11)
 FPX_LIB_DEPENDS+=	libfpx.so.[2-9]:${PORTSDIR}/graphics/libfpx
 FPX_CONFIGURE_WITH=	fpx
 OPENMP_USES=		compiler:openmp
@@ -65,6 +57,14 @@ X11_USE=		XORG=xext
 X11_CONFIGURE_WITH=	x
 
 .include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MX11} && ${PORT_OPTIONS:MDPS}
+LIB_DEPENDS+=	libdps.so:${PORTSDIR}/x11/dgs
+USE_XORG=	xt
+CONFIGURE_ARGS+=--with-dps
+.else
+CONFIGURE_ARGS+=--without-dps
+.endif
 
 .if ${PORT_OPTIONS:MQ8BIT}
 QD=		8

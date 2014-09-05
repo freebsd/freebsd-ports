@@ -3,7 +3,7 @@
 
 PORTNAME=	mdbtools
 PORTVERSION=	0.7.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	databases
 MASTER_SITES=	https://github.com/brianb/mdbtools/archive/
 DISTNAME=	${PORTVERSION}
@@ -18,14 +18,17 @@ BUILD_DEPENDS=	gawk:${PORTSDIR}/lang/gawk \
 		txt2man:${PORTSDIR}/textproc/txt2man
 LIB_DEPENDS=	libodbc.so:${PORTSDIR}/databases/unixODBC
 
-USES=		bison pkgconfig iconv
-USE_AUTOTOOLS=	libtool autoconf automake
+USES=		bison iconv libtool pathfix pkgconfig
+PATHFIX_MAKEFILEIN=	Makefile.am
+USE_AUTOTOOLS=	libtoolize aclocal autoconf automake
+AUTOMAKE_ARGS=	-a -c -f
 USE_LDCONFIG=	yes
 USE_GNOME=	glib20
 WANT_GNOME=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-libiconv-prefix=${LOCALBASE} \
+CONFIGURE_ARGS=	${ICONV_CONFIGURE_ARG} \
 		--with-unixodbc=${LOCALBASE}
+INSTALL_TARGET=	install-strip
 
 DOCS=		AUTHORS ChangeLog HACKING NEWS README TODO
 
@@ -36,24 +39,13 @@ OPTIONS_DEFINE=	DOCS
 .include <bsd.port.pre.mk>
 
 .if ${HAVE_GNOME:Mlibgnomeui}!=""
-USE_XORG=	x11
-USES+=		pathfix
+USE_XORG+=	x11
 USE_GNOME+=	gnomeprefix libgnomeui gconf2 intltool
 .endif
 
-.if ${ARCH} == "amd64" || ${ARCH} == "ia64"
-CFLAGS+=	-fpic
-.endif
-
 post-patch:
-	@${REINPLACE_CMD} -e \
-		's|(libdir)/pkgconfig|(prefix)/libdata/pkgconfig|g' \
-		${WRKSRC}/Makefile.am
 	@${REINPLACE_CMD} -e 's|$$(srcdir)/$$<|$$(srcdir)/$$>|g' \
 		${WRKSRC}/doc/Makefile.am
-
-pre-configure:
-	@cd ${WRKSRC} && ${AUTORECONF} -if
 
 post-configure:
 	@${REINPLACE_CMD} -e 's|^install-man:.*|install-man: install-man1|' \

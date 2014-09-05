@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	kaminari
-PORTVERSION=	0.14.1
+PORTVERSION=	0.16.1
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 

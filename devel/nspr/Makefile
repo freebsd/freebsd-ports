@@ -25,10 +25,6 @@ LIBRARIES=	libnspr4.so.1 libplc4.so.1 libplds4.so.1
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "arm"
-BROKEN=		Does not compile on arm
-.endif
-
 .if !defined(WITH_DEBUG)
 CONFIGURE_ARGS+=--disable-debug
 .endif

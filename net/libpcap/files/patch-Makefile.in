@@ -1,5 +1,5 @@
---- ./Makefile.in.orig	2013-12-03 10:11:53.000000000 -0500
-+++ ./Makefile.in	2013-12-28 22:38:41.000000000 -0500
+--- Makefile.in.orig	2013-12-03 15:11:53 UTC
++++ Makefile.in
 @@ -564,49 +564,19 @@
  		    $(DESTDIR)$(includedir)/$$i; done
  	[ -d $(DESTDIR)$(bindir) ] || \

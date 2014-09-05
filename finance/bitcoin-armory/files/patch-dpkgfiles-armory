@@ -1,0 +1,6 @@
+--- dpkgfiles/armory
++++ dpkgfiles/armory
+@@ -1,2 +1,2 @@
+ #!/bin/sh
+-exec python /usr/lib/armory/ArmoryQt.py "$@"
++exec python %%LOCALBASE%%/lib/armory/ArmoryQt.py "$@"

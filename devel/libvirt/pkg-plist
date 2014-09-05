@@ -24,15 +24,14 @@ include/libvirt/libvirt-qemu.h
 include/libvirt/libvirt.h
 include/libvirt/virterror.h
 lib/libvirt/lock-driver/lockd.so
-lib/libvirt/lock-driver/lockd.la
-lib/libvirt-lxc.la
 lib/libvirt-lxc.so
+lib/libvirt-lxc.so.0
 lib/libvirt-lxc.so.%%SHLIB_VER%%
-lib/libvirt-qemu.la
 lib/libvirt-qemu.so
+lib/libvirt-qemu.so.0
 lib/libvirt-qemu.so.%%SHLIB_VER%%
-lib/libvirt.la
 lib/libvirt.so
+lib/libvirt.so.0
 lib/libvirt.so.%%SHLIB_VER%%
 libdata/pkgconfig/libvirt.pc
 libdata/pkgconfig/libvirt-lxc.pc
@@ -268,17 +267,11 @@ share/gtk-doc/html/libvirt/up.png
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/libvirt.mo
 %%NLS%%share/locale/zu/LC_MESSAGES/libvirt.mo
 %%QEMU%%lib/libvirt/connection-driver/libvirt_driver_qemu.so
-%%QEMU%%lib/libvirt/connection-driver/libvirt_driver_qemu.la
-%%BHYVE%%lib/libvirt/connection-driver/libvirt_driver_bhyve.la
 %%BHYVE%%lib/libvirt/connection-driver/libvirt_driver_bhyve.so
 lib/libvirt/connection-driver/libvirt_driver_network.so
-lib/libvirt/connection-driver/libvirt_driver_network.la
 lib/libvirt/connection-driver/libvirt_driver_secret.so
-lib/libvirt/connection-driver/libvirt_driver_secret.la
 lib/libvirt/connection-driver/libvirt_driver_storage.so
-lib/libvirt/connection-driver/libvirt_driver_storage.la
 lib/libvirt/connection-driver/libvirt_driver_vbox.so
-lib/libvirt/connection-driver/libvirt_driver_vbox.la
 @dirrmtry etc/logrotate.d
 @dirrm include/libvirt
 @dirrm lib/libvirt/connection-driver

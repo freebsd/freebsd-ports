@@ -5,8 +5,4 @@ share/duff/join-duplicates.sh
 %%NLS%%share/locale/en@boldquot/LC_MESSAGES/duff.mo
 %%NLS%%share/locale/en@quot/LC_MESSAGES/duff.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/duff.mo
-%%NLS%%@dirrmtry share/locale/en@quot/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/en@quot
-%%NLS%%@dirrmtry share/locale/en@boldquot/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/en@boldquot
 @dirrm share/duff

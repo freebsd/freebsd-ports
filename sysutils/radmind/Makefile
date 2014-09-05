@@ -14,7 +14,7 @@ COMMENT=	Utility for administering filesystem changes
 LICENSE=	Michigan
 LICENSE_NAME=	University of Michigan License
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT
-LICENSE_PERMS=	${_LICENSE_PERMS_DEFAULT}
+LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 USE_OPENSSL=	yes
 USE_RC_SUBR=	radmind

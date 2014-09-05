@@ -1,9 +1,0 @@
-************************************************************************
-Klutz has been installed in %%HORDIR%% with your blank
-configuration files.
-
-Horde must be configured; if not, see `pkg_info -Dx horde-base'.
-
-Finally, you must login to Horde as a Horde Administrator to finish the
-configuration.
-************************************************************************

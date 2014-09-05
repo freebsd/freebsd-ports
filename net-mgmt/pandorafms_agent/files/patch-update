@@ -1,0 +1,1288 @@
+Index: ChangeLog
+===================================================================
+--- ChangeLog	(revision 10314)
++++ ChangeLog	(working copy)
+@@ -1,3 +1,33 @@
++2014-08-14  Koichiro Kikuchi <koichiro@rworks.jp>
++
++	* pandora_agent_installer: Fixed symlink source path.
++
++2014-08-13  Koichiro Kikuchi <koichiro@rworks.jp>
++
++	* FreeBSD/pandora_agent: Small fixes: use proper rc variables,
++	 remove obsolete function "set_rcvar" call and use "daemon" command
++	 to start pandora_agent.
++
++	* pandora_agent_installer: Refactored implementation and added
++	 "fakeroot" installation support.
++
++	* plugins/who.sh: Converted to bourne shell script.
++
++	* pandora_agent_daemon: Small bug fixes and refactorings.
++
++2014-08-12  Ramon Novoa  <rnovoa@artica.es>
++
++	* pandora_agent: Fixed to make the 'Command Snapshot' feature work.
++
++2014-08-12  Ramon Novoa  <rnovoa@artica.es>
++
++	* pandora_agent: Trim leading and trailing whitespaces from module names
++	  (like policies and windows agents do).
++
++2014-08-07  Ramon Novoa  <rnovoa@artica.es>
++
++	* pandora_agent_daemon: Fixes the ps call on HP-UX.
++
+ 2014-06-04  Koichiro KIKUCHI <koichiro@rworks.jp>
+ 
+ 	* pandora_agent: Allow spaces in module group names.
+Index: pandora_agent_installer
+===================================================================
+--- pandora_agent_installer	(revision 10314)
++++ pandora_agent_installer	(working copy)
+@@ -15,49 +15,79 @@
+ 
+ FORCE=0
+ LOG_TIMESTAMP=`date +"%Y/%m/%d %H:%M:%S"`
+-PANDORA_HOME=/usr/share/pandora_agent
+-PANDORA_BIN=/usr/bin/pandora_agent
+-PANDORA_EXEC_BIN=/usr/bin/pandora_agent_exec
+-PANDORA_REVENT_BIN=/usr/bin/pandora_revent
++
++PREFIX=/usr
++if [ "$OS_NAME" = "FreeBSD" ] || [ "$OS_NAME" = "NetBSD" ]
++then
++	PREFIX=/usr/local
++fi
++PANDORA_HOME=$PREFIX/share/pandora_agent
++PANDORA_BIN=$PREFIX/bin/pandora_agent
++PANDORA_EXEC_BIN=$PREFIX/bin/pandora_agent_exec
++PANDORA_REVENT_BIN=$PREFIX/bin/pandora_revent
+ PANDORA_TEMP=/var/spool/pandora
+ PANDORA_CFG=/etc/pandora
+ PANDORA_LOG_DIR=/var/log/pandora
+ PANDORA_LOG=pandora_agent.log
+-TENTACLE=/usr/bin/tentacle_client
+-TENTACLE_SERVER=/usr/bin/tentacle_server
+-PANDORA_MAN=/usr/share/man
++TENTACLE=$PREFIX/bin/tentacle_client
++TENTACLE_SERVER=$PREFIX/bin/tentacle_server
++PANDORA_MAN=$PREFIX/share/man
++PANDORA_STARTUP=/etc/init.d/pandora_agent_daemon
++DAEMON_SCRIPT=pandora_agent_daemon
++PANDORA_USER="root"
++PANDORA_PERL_PATH="perl"
++WITHOUT_TENTACLE_SERVER=0
++FAKEROOT=0
+ 
++# defaults for each platforms
++case $OS_NAME in
++AIX)
++    PANDORA_STARTUP=/etc/rc.pandora_agent_daemon
++	;;
++HP-UX)
++	PANDORA_STARTUP=/sbin/init.d/pandora_agent_daemon
++	;;
++FreeBSD)
++	PANDORA_CFG=$PREFIX/etc/pandora
++	PANDORA_MAN=$PREFIX/man
++	PANDORA_STARTUP=$PREFIX/etc/rc.d/pandora_agent
++	DAEMON_SCRIPT=$OS_NAME/pandora_agent
++	PANDORA_PERL_PATH=/usr/local/bin/perl
++	;;
++NetBSD)
++	PANDORA_CFG=/usr/local/etc/pandora
++	PANDORA_STARTUP=/etc/rc.d/pandora_agent
++	DAEMON_SCRIPT=$OS_NAME/pandora_agent
++	PANDORA_PERL_PATH=/usr/pkg/bin/perl
++	;;
++esac
++
+ MODE=$1
+-PANDORA_BASE=`echo $2 | sed -e 's/\/$//'`
++
++# options
++while :
++do
++	case "$2" in 
++	"--no-tentacle-server") WITHOUT_TENTACLE_SERVER=1;;
++	"--fakeroot") FAKEROOT=1;;
++	*) break;;
++	esac
++	shift
++done
++
++PANDORA_BASE=`echo $2 | sed -e 's|/$||'`
+ if [ "$3" != "" ]
+ then
+ 	PANDORA_USER=$3
+-	if [ "$PANDORA_BASE" = "" ]
++	if [ -z "$PANDORA_BASE" ]
+ 	then
+ 		echo "When specifying a custom user the agent must be installed to a custom location where that user has write permissions!"
+ 		exit 1
+ 	fi
+-else
+-	PANDORA_USER="root"
+ fi
+ 
+-if [ "$4" != "" ]
+-then
+-	PANDORA_PERL_PATH=$4
+-	echo $PANDORA_PERL_PATH > PANDORA_PERL_PATH.temp
+-        sed 's/\//\\\//g' PANDORA_PERL_PATH.temp > PANDORA_PERL_PATH.temp2
++[ "$4" ] && PANDORA_PERL_PATH=$4
+ 
+-        PANDORA_PERL_DECODED_PATH=`cat PANDORA_PERL_PATH.temp2`
+-        rm PANDORA_PERL_PATH.temp PANDORA_PERL_PATH.temp2
+-	#PANDORA_PERL_DECODED_PATH=`echo $PANDORA_PERL_PATH | sed -e "s.\/.\\\\\/.g"`
+-else
+-	PANDORA_PERL_PATH="perl"
+-	if [ "$OS_NAME" = "NetBSD" ]
+-	then
+-		PANDORA_PERL_DECODED_PATH="/usr/pkg/bin/perl"
+-	fi
+-fi
+-
+ # Check for Perl 5.6.x or higher available
+ PERL_VERSION=`$PANDORA_PERL_PATH -v | egrep 'v5.6|v5.7|v5.8|v5.9|v5.1[0-9]' | grep perl`
+ 
+@@ -69,17 +99,16 @@
+ 	exit 2
+ fi
+ 
+-UNIX_KIND=`uname -s`
+-if [ -z "`echo Linux HP-UX SunOS AIX Solaris Darwin BSD bsd FreeBSD NetBSD | grep \"$UNIX_KIND\"`" ]
++if [ -z "`echo Linux HP-UX SunOS AIX Solaris Darwin BSD bsd FreeBSD NetBSD | grep \"$OS_NAME\"`" ]
+ then
+-	echo "This system: '$UNIX_KIND' is not supported by this script"
++	echo "This system: '$OS_NAME' is not supported by this script"
+ 	echo "Please make the install yourself as it's described in documentation"
+ 	exit 1
+ fi
+ 
+ 
+ # check for root to do the install
+-if [ -z "`id | grep \"uid=0(root)\"`" ]
++if [ $FAKEROOT -ne 1 ] && [ -z "`id | grep \"uid=0(root)\"`" ]
+ then
+ 	echo "You need to be root to do the install. Please made a manual install"
+ 	echo "if you want to install Pandora FMS agent without root"
+@@ -91,7 +120,7 @@
+ help () {
+ 	echo "Syntax":
+ 	echo " "
+-	echo "    ./pandora_agent_installer < --mode > [ destination_path ] [ user_to_run_as ] [custom_perl_path]"
++	echo "    ./pandora_agent_installer < --mode > [ --option ] [ destination_path ] [ user_to_run_as ] [custom_perl_path]"
+ 	echo " "
+ 	echo "Modes:"
+ 	echo " "
+@@ -99,6 +128,11 @@
+ 	echo "  --install            To install Pandora FMS Agent on this system"
+ 	echo "  --uninstall          To uninstall/remove Pandora FMS Agent on this System"
+ 	echo " "	
++	echo "Option:"
++	echo " "
++	echo "  --no-tentacle-server  Skip tentacle server installation (by default tentalce server installed)"
++	echo "  --fakeroot            treate \"destination_path\" as root directory"
++	echo " "
+ 	echo "Some exaples of how to use the installer:"
+ 	echo " "
+ 	echo "   ./pandora_agent_installer --install"
+@@ -110,38 +144,12 @@
+ }
+ 
+ uninstall () {
+-	OS_NAME=`uname -s`
+-
+ 	if [ "$OS_NAME" = "Darwin" ]
+         then
+ 		launchctl remove com.pandorafms.pandorafms 
+ 		rm /Library/LaunchDaemons/com.pandorafms.pandorafms.plist 2> /dev/null
+ 	fi
+ 
+-
+-	if [ "$OS_NAME" = "FreeBSD" ]
+-	then
+-		PANDORA_HOME=/usr/local/share/pandora_agent
+-		PANDORA_BIN=/usr/local/bin/pandora_agent
+-		PANDORA_EXEC_BIN=/usr/local/bin/pandora_agent_exec
+-		PANDORA_REVENT_BIN=/usr/local/bin/pandora_revent
+-		PANDORA_CFG=/usr/local/etc/pandora
+-		TENTACLE=/usr/local/bin/tentacle_client
+-		TENTACLE_SERVER=/usr/local/bin/tentacle_server
+-		PANDORA_MAN=/usr/local/man
+-	fi
+-	if [ "$OS_NAME" = "NetBSD" ]
+-	then
+-		PANDORA_HOME=/usr/local/share/pandora_agent
+-		PANDORA_BIN=/usr/local/bin/pandora_agent
+-		PANDORA_EXEC_BIN=/usr/local/bin/pandora_agent_exec
+-		PANDORA_REVENT_BIN=/usr/local/bin/pandora_revent
+-		PANDORA_CFG=/usr/local/etc/pandora
+-		TENTACLE=/usr/local/bin/tentacle_client
+-		TENTACLE_SERVER=/usr/local/bin/tentacle_server
+-		PANDORA_MAN=/usr/share/man
+-	fi
+-
+ 	echo "Removing Pandora FMS Agent..."
+ 	rm -Rf $PANDORA_BASE$PANDORA_BIN 2> /dev/null
+ 	rm -Rf $PANDORA_BASE$PANDORA_EXEC_BIN 2> /dev/null
+@@ -168,16 +176,19 @@
+ 	rm -Rf $PANDORA_BASE/etc/rc.d/rc?.d/S90pandora_agent_daemon 2> /dev/null
+ 	rm -Rf $PANDORA_BASE/etc/rc.d/rc?.d/S90pandora_agent 2> /dev/null
+ 	rm -Rf $PANDORA_BASE/usr/local/etc/rc.d/pandora_agent 2> /dev/null
+-	rm -Rf /etc/init.d/pandora_agent_daemon 2> /dev/null
+-	rm -Rf /sbin/init.d/pandora_agent_daemon 2> /dev/null
+-	rm -Rf /etc/rc.pandora_agent_daemon 2> /dev/null
+-	rm -Rf /etc/rc?.d/S90pandora_agent_daemon 2> /dev/null
+-	rm -Rf /sbin/rc?.d/S90pandora_agent_daemon 2> /dev/null
+-	rm -Rf /etc/rc?.d/S90pandora_agent 2> /dev/null
+-	rm -Rf /sbin/rc?.d/S90pandora_agent 2> /dev/null
+-	rm -Rf /etc/rc.d/rc?.d/S90pandora_agent_daemon 2> /dev/null
+-	rm -Rf /etc/rc.d/rc?.d/S90pandora_agent 2> /dev/null
+-	rm -Rf /usr/local/etc/rc.d/pandora_agent 2> /dev/null
++	if [ $FAKEROOT -ne 1 ]
++	then
++		rm -Rf /etc/init.d/pandora_agent_daemon 2> /dev/null
++		rm -Rf /sbin/init.d/pandora_agent_daemon 2> /dev/null
++		rm -Rf /etc/rc.pandora_agent_daemon 2> /dev/null
++		rm -Rf /etc/rc?.d/S90pandora_agent_daemon 2> /dev/null
++		rm -Rf /sbin/rc?.d/S90pandora_agent_daemon 2> /dev/null
++		rm -Rf /etc/rc?.d/S90pandora_agent 2> /dev/null
++		rm -Rf /sbin/rc?.d/S90pandora_agent 2> /dev/null
++		rm -Rf /etc/rc.d/rc?.d/S90pandora_agent_daemon 2> /dev/null
++		rm -Rf /etc/rc.d/rc?.d/S90pandora_agent 2> /dev/null
++		rm -Rf /usr/local/etc/rc.d/pandora_agent 2> /dev/null
++	fi
+ 	
+ 	rm -Rf $PANDORA_BASE$PANDORA_HOME 2> /dev/null
+ 	rm -Rf $PANDORA_BASE$PANDORA_LOG_DIR 2> /dev/null
+@@ -201,36 +212,48 @@
+ 	echo "Done"
+ }
+ 
+-install () {
++#
++# install_perl_script [OPTIONS] SRCFILE DESTFILE
++#	Install perl script. If PANDORA_PERL_DECODED_PATH is set, path of the perl
++#	in shebang line is replaced with PANDORA_PERL_DECODED_PATH value.
++#	OPTIONS:
++#		-o OWNER  owner of the installed script
++#		-g GROUP  group of the installed script
++#		-m PREM   mode of the installed script
++#
++install_perl_script () {
++	OWNER=""; GROUP=""; PERM=""
++	while :
++	do
++		case $1 in
++		-o) OWNER=$2;;
++		-g) GROUP=$2;;
++		-m) PERM=$2;;
++		*)  break;;
++		esac
++		shift;shift
++	done
++	SRC="$1"
++	DEST="$2"
+ 
+-	OS_VERSION=`uname -r`
+-	OS_NAME=`uname -s`
+-	OLDFILENAMETMP=`date +"%Y-%m-%d"`
+-
+-	if [ "$OS_NAME" = "FreeBSD" ]
++	# do install
++	if echo $PANDORA_PERL_PATH | grep "/" > /dev/null && [ "$PANDORA_PERL_PATH" != "/usr/bin/perl" ]
+ 	then
+-		PANDORA_HOME=/usr/local/share/pandora_agent
+-		PANDORA_BIN=/usr/local/bin/pandora_agent
+-		PANDORA_EXEC_BIN=/usr/local/bin/pandora_agent_exec
+-		PANDORA_REVENT_BIN=/usr/local/bin/pandora_revent
+-		PANDORA_CFG=/usr/local/etc/pandora
+-		TENTACLE=/usr/local/bin/tentacle_client
+-		TENTACLE_SERVER=/usr/local/bin/tentacle_server
+-		PANDORA_MAN=/usr/local/man
++		sed -e "s:^#\!.*:#\!$PANDORA_PERL_PATH:g" $SRC > $DEST
++	else
++		cp $SRC $DEST
+ 	fi
+ 
+-	if [ "$OS_NAME" = "NetBSD" ]
+-	then
+-		PANDORA_HOME=/usr/local/share/pandora_agent
+-		PANDORA_BIN=/usr/local/bin/pandora_agent
+-		PANDORA_EXEC_BIN=/usr/local/bin/pandora_agent_exec
+-		PANDORA_REVENT_BIN=/usr/local/bin/pandora_revent
+-		PANDORA_CFG=/usr/local/etc/pandora
+-		TENTACLE=/usr/local/bin/tentacle_client
+-		TENTACLE_SERVER=/usr/local/bin/tentacle_server
+-		PANDORA_MAN=/usr/share/man
+-	fi
++	# set owner, group and permissions
++	[ "$OWNER" ] && chown $OWNER $DEST 2>/dev/null
++	[ "$GROUP" ] && chgrp $GROUP $DEST 2>/dev/null
++	[ "$PERM"  ] && chmod $PERM  $DEST
++}
+ 
++install () {
++	OS_VERSION=`uname -r`
++	OLDFILENAMETMP=`date +"%Y-%m-%d"`
++
+ 	echo "Detecting Unix distribution: $OS_NAME version $OS_VERSION"
+ 	if [ -f $PANDORA_BASE$PANDORA_HOME ] && [ "$FORCE" = "0" ]
+ 	then
+@@ -253,87 +276,49 @@
+ 
+ 	# Alter dynamically the daemon launcher and setup the new path 
+ 	# if PANDORA_BASE is customized.
+-	if [ ! -z "$PANDORA_BASE" ]
++	if [ "$PANDORA_BASE" ] && [ $FAKEROOT -ne 1 ]
+ 	then
+-		if [ "$OS_NAME" = "FreeBSD" ]
+-		then
+-			DAEMON_SCRIPT=FreeBSD/pandora_agent
+-			DAEMON_TEMP=pandora_agent_daemon_temp
+-		elif [ "$OS_NAME" = "NetBSD" ]
+-		then
+-			DAEMON_SCRIPT=NetBSD/pandora_agent
+-			DAEMON_TEMP=pandora_agent_daemon_temp
+-		else
+-			DAEMON_SCRIPT=pandora_agent_daemon
+-			DAEMON_TEMP=pandora_agent_daemon_temp
+-		fi
++		DAEMON_TEMP=pandora_agent_daemon_temp
+ 
+ 		# Backup the daemon script
+-		cp -f "$DAEMON_SCRIPT" "$DAEMON_SCRIPT.bak"
++		cp -f "$DAEMON_SCRIPT" "${DAEMON_SCRIPT}.bak"
+ 		
+ 		AGENT_CFG=$OS_NAME/pandora_agent.conf
+ 		AGENT_CFG_TEMP=$OS_NAME/pandora_agent.conf.temp
+ 
+ 		# Backup the configuration file
+-		cp -f "$AGENT_CFG" "$AGENT_CFG.bak"
++		cp -f "$AGENT_CFG" "${AGENT_CFG}.bak"
+ 
+-		echo $PANDORA_BASE > PANDORA_BASE.temp
+-		sed 's/\//\\\//g' PANDORA_BASE.temp > PANDORA_BASE.temp2
+-
+-		PANDORA_BASE_DECODED=`cat PANDORA_BASE.temp2`
+-		rm PANDORA_BASE.temp PANDORA_BASE.temp2
+-
+-		if [ "$OS_NAME" = "FreeBSD" -o "$OS_NAME" = "NetBSD" ]
++		if [ "$OS_NAME" = "FreeBSD" ] || [ "$OS_NAME" = "NetBSD" ]
+ 		then
+-			sed -e "s/^PATH\=[.]*/PATH\=$PANDORA_BASE_DECODED\/usr\/local\/bin\:/g" $DAEMON_SCRIPT > $DAEMON_TEMP
++			sed -e "\|^PATH=|s|=|=$PANDORA_BASE$PREFIX/bin:|" \
++				-e "s|/usr/local/etc/pandora|$PANDORA_BASE$PANDORA_CFG|g" \
++				-e "s|/usr/local/bin/pandora_agent|$PANDORA_BASE$PANDORA_BIN|g" \
++				$DAEMON_SCRIPT > $DAEMON_TEMP
+ 			mv $DAEMON_TEMP $DAEMON_SCRIPT
+-
+-			sed -e "s/^command\=[.]*/command\=$PANDORA_BASE_DECODED/g" $DAEMON_SCRIPT > $DAEMON_TEMP
+-			mv $DAEMON_TEMP $DAEMON_SCRIPT
+-
+-			sed -e 's/^command_args\=\"[.]*/command_args\=\"$PANDORA_BASE_DECODED/g' $DAEMON_SCRIPT > $DAEMON_TEMP
+-			mv $DAEMON_TEMP $DAEMON_SCRIPT
+-
+-			sed -e 's/^required_files\=\"[.]*/required_files\=\"$PANDORA_BASE_DECODED/g' $DAEMON_SCRIPT > $DAEMON_TEMP
+-			mv $DAEMON_TEMP $DAEMON_SCRIPT
+ 		else
+-			sed -e "s/^PATH\=[.]*/PATH\=$PANDORA_BASE_DECODED\/usr\/bin\:/g" $DAEMON_SCRIPT > $DAEMON_TEMP
++			sed -e "\|^PATH=|s|=|=$PANDORA_BASE/usr/bin:|" \
++				-e "\|^PANDORA_PATH=|s|=|=$PANDORA_BASE|" \
++				-e "\|^LOGFILE=|s|=|=$PANDORA_BASE|" \
++				-e "\|^DAEMON=|s|=|=$PANDORA_BASE|" \
++				-e "\|^DAEMON_TENTACLE=|s|=|=$PANDORA_BASE|" \
++				-e "s/^PANDORA_USER=.*/PANDORA_USER=$PANDORA_USER/"  \
++				$DAEMON_SCRIPT > $DAEMON_TEMP
+ 			mv  $DAEMON_TEMP $DAEMON_SCRIPT
+-
+-			sed -e "s/^PANDORA_PATH\=[.]*/PANDORA_PATH\=$PANDORA_BASE_DECODED/g"  $DAEMON_SCRIPT > $DAEMON_TEMP
+-			mv  $DAEMON_TEMP $DAEMON_SCRIPT
+-
+-			sed -e "s/^LOGFILE\=[.]*/LOGFILE\=$PANDORA_BASE_DECODED/g"  $DAEMON_SCRIPT > $DAEMON_TEMP
+-			mv  $DAEMON_TEMP $DAEMON_SCRIPT
+-
+-			sed -e "s/^DAEMON\=[.]*/DAEMON\=$PANDORA_BASE_DECODED/g"  $DAEMON_SCRIPT > $DAEMON_TEMP
+-			mv  $DAEMON_TEMP $DAEMON_SCRIPT
+-
+-			sed -e "s/^DAEMON_TENTACLE\=[.]*/DAEMON_TENTACLE\=$PANDORA_BASE_DECODED/g"  $DAEMON_SCRIPT > $DAEMON_TEMP
+-                        mv  $DAEMON_TEMP $DAEMON_SCRIPT
+- 
+-			sed -e "s/^PANDORA_USER\=.*/PANDORA_USER\=$PANDORA_USER/g"  $DAEMON_SCRIPT > $DAEMON_TEMP
+-			mv  $DAEMON_TEMP $DAEMON_SCRIPT
+ 		fi
+ 
+-		sed -e "s/^temporal [.]*/temporal $PANDORA_BASE_DECODED/g" $AGENT_CFG > $AGENT_CFG_TEMP
++		sed -e "s|^temporal[ 	]*|temporal $PANDORA_BASE|" \
++			-e "s|^logfile[ 	]*|logfile $PANDORA_BASE|" \
++			$AGENT_CFG > $AGENT_CFG_TEMP
+ 		mv $AGENT_CFG_TEMP $AGENT_CFG
+-
+-		sed -e "s/^logfile [.]*/logfile $PANDORA_BASE_DECODED/g" $AGENT_CFG > $AGENT_CFG_TEMP
+-		mv $AGENT_CFG_TEMP $AGENT_CFG
+ 	fi
+ 	echo "Creating Pandora FMS Agent home directory at $PANDORA_BASE$PANDORA_HOME"
+-	if [ ! -z "$PANDORA_BASE" ]
++	if [ "$PANDORA_BASE" ]
+ 	then
+ 		mkdir -p $PANDORA_BASE 2> /dev/null
+ 		mkdir -p $PANDORA_BASE/var/log 2> /dev/null
+ 		mkdir -p $PANDORA_BASE/$PANDORA_MAN/man1 2> /dev/null
+-		if [ "$OS_NAME" = "FreeBSD" -o "$OS_NAME" = "NetBSD" ]
+-		then
+-			mkdir -p $PANDORA_BASE/usr/local/bin 2> /dev/null
+-		else
+-			mkdir -p $PANDORA_BASE/usr/bin 2> /dev/null
+-		fi
++		mkdir -p $PANDORA_BASE$PREFIX/bin 2> /dev/null
+ 	fi
+ 
+ 	mkdir -p $PANDORA_BASE$PANDORA_HOME 2> /dev/null
+@@ -344,14 +329,14 @@
+ 	mkdir -p $PANDORA_BASE$PANDORA_TEMP/data_out 2> /dev/null
+ 	mkdir -p $PANDORA_BASE$PANDORA_CFG 2> /dev/null
+ 	mkdir -p $PANDORA_BASE$PANDORA_LOG_DIR 2> /dev/null
+-
++	
+ 	# Set the user the agent will run as
+ 	if [ "$PANDORA_USER" != "root" ]
+ 	then
+ 		sed -e "s/.*pandora_user .*/pandora_user $PANDORA_USER/" $AGENT_CFG > $AGENT_CFG_TEMP 2> /dev/null && \
+-		mv $AGENT_CFG_TEMP $AGENT_CFG
++			mv $AGENT_CFG_TEMP $AGENT_CFG
+ 		chmod 755 pandora_agent_daemon
+-		chown -R $PANDORA_USER $PANDORA_BASE
++		chown -R $PANDORA_USER $PANDORA_BASE 2>/dev/null
+ 	fi
+ 
+ 	# Create logfile
+@@ -365,32 +350,10 @@
+ 
+ 	# Copying agent and securing it
+ 	echo "Copying Pandora FMS Agent to $PANDORA_BASE$PANDORA_BIN..."
++	install_perl_script -m 755 -o $PANDORA_USER -g 0 pandora_agent $PANDORA_BASE$PANDORA_BIN
++	install_perl_script -m 755 -o $PANDORA_USER -g 0 pandora_agent_exec $PANDORA_BASE$PANDORA_EXEC_BIN
++	install_perl_script -m 755 -o $PANDORA_USER -g 0 pandora_revent $PANDORA_BASE$PANDORA_REVENT_BIN
+ 
+-	if [ "$PANDORA_PERL_DECODED_PATH" != "" ]
+-	then
+-        	sed -e "s:^#\!.*:#\!$PANDORA_PERL_DECODED_PATH:g" pandora_agent > $PANDORA_BASE$PANDORA_BIN
+-	else
+-        	cp pandora_agent $PANDORA_BASE$PANDORA_BIN
+-	fi
+-	chmod 755 $PANDORA_BASE$PANDORA_BIN
+-	if [ "$PANDORA_PERL_DECODED_PATH" != "" ]
+-        then
+-                sed -e "s:^#\!.*:#\!$PANDORA_PERL_DECODED_PATH:g" pandora_agent_exec > $PANDORA_BASE$PANDORA_EXEC_BIN
+-        else
+-                cp pandora_agent_exec $PANDORA_BASE$PANDORA_EXEC_BIN
+-        fi
+-	chmod 755 $PANDORA_BASE$PANDORA_EXEC_BIN
+-	if [ "$PANDORA_PERL_DECODED_PATH" != "" ]
+-        then
+-                sed -e "s:^#\!.*:#\!$PANDORA_PERL_DECODED_PATH:g" pandora_revent > $PANDORA_BASE$PANDORA_REVENT_BIN
+-        else
+-                cp pandora_revent $PANDORA_BASE$PANDORA_REVENT_BIN
+-        fi
+-	chmod 755 $PANDORA_BASE$PANDORA_REVENT_BIN
+-	chown $PANDORA_USER:0 $PANDORA_BASE$PANDORA_BIN
+-	chown $PANDORA_USER:0 $PANDORA_BASE$PANDORA_EXEC_BIN
+-	chown $PANDORA_USER:0 $PANDORA_BASE$PANDORA_REVENT_BIN
+-
+ 	echo "Copying Pandora FMS Agent configuration file to $PANDORA_BASE$PANDORA_CFG/pandora_agent.conf..."
+ 	if [ -f $PANDORA_BASE/$PANDORA_CFG/pandora_agent.conf ]
+ 	then
+@@ -400,49 +363,36 @@
+ 
+ 	echo "Copying Pandora FMS Agent plugins to $PANDORA_BASE$PANDORA_HOME/plugins..."
+ 
+-	if [ "$OS_NAME" = "NetBSD" ]
+-	then
+-		if [ ! -d $PANDORA_BASE$PANDORA_HOME/plugins ]
++	[ -d $PANDORA_BASE$PANDORA_HOME/plugins ] || mkdir -p $PANDORA_BASE$PANDORA_HOME/plugins >/dev/null 2>&1
++	for PLUGIN in plugins/*
++	do
++		if grep '^#!.*/perl' $PLUGIN >/dev/null 2>&1
+ 		then
+-			mkdir -p $PANDORA_BASE$PANDORA_HOME/plugins
++			install_perl_script $PLUGIN $PANDORA_BASE$PANDORA_HOME/$PLUGIN
++		else
++			cp $PLUGIN $PANDORA_BASE$PANDORA_HOME/plugins
+ 		fi
+-		for i in `ls -1 plugins`
+-		do 
+-			sed s:/usr/bin/perl:/usr/pkg/bin/perl: plugins/$i > plugins/$i.tmp
+-			cp plugins/$i.tmp $PANDORA_BASE$PANDORA_HOME/plugins/$i
+-			rm plugins/$i.tmp
+-		done
+-	else
+-		cp -r plugins $PANDORA_BASE$PANDORA_HOME
+-	fi
+-
++	done
+ 	chmod -R 700 $PANDORA_BASE$PANDORA_HOME/plugins
+-	ln -s $PANDORA_BASE$PANDORA_HOME/plugins $PANDORA_BASE$PANDORA_CFG
+ 
++	PANDORA_BASE_REAL="$PANDORA_BASE"
++	[ $FAKEROOT -eq 1 ] && PANDORA_BASE_REAL=""
++
++	ln -s $PANDORA_BASE_REAL$PANDORA_HOME/plugins $PANDORA_BASE$PANDORA_CFG
++
+ 	echo "Copying Pandora FMS Agent collections to $PANDORA_BASE$PANDORA_HOME/collections..."
+ 	cp -r collections $PANDORA_BASE$PANDORA_HOME
+ 	chmod -R 700 $PANDORA_BASE$PANDORA_HOME/collections
+-	ln -s $PANDORA_BASE$PANDORA_HOME/collections $PANDORA_BASE$PANDORA_CFG
++	ln -s $PANDORA_BASE_REAL$PANDORA_HOME/collections $PANDORA_BASE$PANDORA_CFG
+ 	
+-	echo "Copying tentacle server to $PANDORA_BASE$TENTACLE_SERVER"
+-	if [ "$PANDORA_PERL_DECODED_PATH" != "" ]
+-        then
+-                sed -e "s:^#\!.*:#\!$PANDORA_PERL_DECODED_PATH:g" tentacle_server > $PANDORA_BASE$TENTACLE_SERVER
+-        else
+-                cp tentacle_server $PANDORA_BASE$TENTACLE_SERVER
+-        fi
+-	chmod 755 $PANDORA_BASE$TENTACLE_SERVER	
+-	chown $PANDORA_USER:0 $PANDORA_BASE$TENTACLE_SERVER
++	if [ $WITHOUT_TENTACLE_SERVER -eq 0 ]
++	then
++		echo "Copying tentacle server to $PANDORA_BASE$TENTACLE_SERVER"
++		install_perl_script -m 755 -o $PANDORA_USER -g 0 tentacle_server $PANDORA_BASE$TENTACLE_SERVER
++	fi
+ 	
+ 	echo "Copying tentacle client to $PANDORA_BASE$TENTACLE"
+-	if [ "$PANDORA_PERL_DECODED_PATH" != "" ]
+-        then
+-                sed -e "s:^#\!.*:#\!$PANDORA_PERL_DECODED_PATH:g" tentacle_client > $PANDORA_BASE$TENTACLE
+-        else
+-                cp tentacle_client $PANDORA_BASE$TENTACLE
+-        fi
+-	chmod 755 $PANDORA_BASE$TENTACLE
+-	chown $PANDORA_USER:0 $PANDORA_BASE$TENTACLE	
++	install_perl_script -m 755 -o $PANDORA_USER -g 0 tentacle_client $PANDORA_BASE$TENTACLE	
+ 
+ 	echo "Installing the Pandora Agent and Tentacle Client manuals"
+ 	cp man/man1/tentacle_client.1.gz $PANDORA_BASE/$PANDORA_MAN/man1
+@@ -451,14 +401,14 @@
+ 	chmod 644 $PANDORA_BASE/$PANDORA_MAN/man1/pandora_agent.1.gz
+ 
+ 	echo "Setting secure permissions and ownership for all Pandora FMS Agent files..."
+-	chown -R $PANDORA_USER $PANDORA_BASE$PANDORA_HOME
++	chown -R $PANDORA_USER $PANDORA_BASE$PANDORA_HOME  2>/dev/null
+ 	chmod -R 700 $PANDORA_BASE$PANDORA_TEMP/data_out
+ 	chmod 711 $PANDORA_BASE$PANDORA_LOG_DIR
+ 	chmod 640 $PANDORA_BASE$PANDORA_LOG_DIR/$PANDORA_LOG
+-	chown $PANDORA_USER:0 $PANDORA_BASE$PANDORA_LOG_DIR/$PANDORA_LOG
+-	if [ "$OS_NAME" = "FreeBSD" -o "$OS_NAME" = "NetBSD" ]
++	chown $PANDORA_USER:0 $PANDORA_BASE$PANDORA_LOG_DIR/$PANDORA_LOG  2>/dev/null
++	if [ "$OS_NAME" = "FreeBSD" ] || [ "$OS_NAME" = "NetBSD" ]
+ 	then
+-		chown $PANDORA_USER:daemon $PANDORA_BASE$PANDORA_TEMP
++		chown $PANDORA_USER:daemon $PANDORA_BASE$PANDORA_TEMP 2>/dev/null
+ 		chmod -R 770 $PANDORA_BASE$PANDORA_TEMP
+ 		chmod 775 $PANDORA_BASE$PANDORA_TEMP
+ 	fi
+@@ -467,85 +417,55 @@
+ 
+ 	cp $OS_NAME/pandora_agent.conf $PANDORA_BASE$PANDORA_CFG/pandora_agent.conf
+ 	chmod 600 $PANDORA_BASE$PANDORA_CFG/pandora_agent.conf
+-	chown $PANDORA_USER $PANDORA_BASE$PANDORA_CFG/pandora_agent.conf
++	chown $PANDORA_USER $PANDORA_BASE$PANDORA_CFG/pandora_agent.conf 2>/dev/null
+ 
+-	if [ "$OS_NAME" = "FreeBSD" -o "$OS_NAME" = "NetBSD" ]
++	echo "Linking start-up daemon script '$DAEMON_SCRIPT' on $OS_NAME";
++
++	if [ "$OS_NAME" = "Darwin" ]
+ 	then
+-		echo "Linking start-up daemon script 'pandora_agent' on $OS_NAME";
++		# Specific service install on Darwin/macOSX
++		launchctl load -F Darwin/com.pandorafms.pandorafms.plist
++		echo "Start Pandora FMS service with 'launchctl start com.pandorafms.pandorafms'"
++		echo "This service has been scheduled to launch on each system startup"
+ 	else
+-		echo "Linking start-up daemon script 'pandora_agent_daemon' on $OS_NAME";
+-	fi
++		DESTDIR=""
++		[ "$PANDORA_BASE" ] && [ $FAKEROOT -eq 1 ] && DESTDIR=$PANDORA_BASE
+ 
+-	if [ "$OS_NAME" = "Darwin" ]
+-        then
+-        	# Specific service install on Darwin/macOSX
+-                launchctl load -F Darwin/com.pandorafms.pandorafms.plist
+-                echo "Start Pandora FMS service with 'launchctl start com.pandorafms.pandorafms'"
+-                echo "This service has been scheduled to launch on each system startup"
+-        fi
++		cp $DAEMON_SCRIPT $DESTDIR$PANDORA_STARTUP
++		chmod 755 $DESTDIR$PANDORA_STARTUP
++		chown root:0 $DESTDIR$PANDORA_STARTUP 2>/dev/null
+ 
+-	if [ "$OS_NAME" = "AIX" ]
+-	then
+-		cp pandora_agent_daemon /etc/rc.pandora_agent_daemon		
+-		ln -s /etc/rc.pandora_agent_daemon /etc/rc.d/rc2.d/S90pandora_agent_daemon
+-		chmod 755 $PANDORA_STARTUP
+-		chown root:0 $PANDORA_STARTUP
+-		echo "Pandora FMS agent has been included in /etc/rc.d/rc2.d/S90pandora_agent_daemon"
+-	fi
+-	
+-	if [ $OS_NAME = "HP-UX" ]
+-	then
+-		PANDORA_STARTUP=/sbin/init.d/pandora_agent_daemon
+-		cp pandora_agent_daemon $PANDORA_STARTUP
+-		ln -s /sbin/init.d/pandora_agent_daemon /sbin/rc3.d/S90pandora_agent_daemon 2> /dev/null
+-		ln -s /sbin/init.d/pandora_agent_daemon /sbin/rc2.d/S90pandora_agent_daemon 2> /dev/null
+-		chmod 755 $PANDORA_STARTUP
+-		chown root:0 $PANDORA_STARTUP
+-		echo "Pandora FMS agent has been included in /sbin/rcX.d/S90pandora_agent_daemon"
+-	fi
+-	
+-	if [ $OS_NAME = "SunOS" ]
+-	then
+-		PANDORA_STARTUP=/etc/init.d/pandora_agent_daemon
+-		cp pandora_agent_daemon $PANDORA_STARTUP 
+-		ln -s /etc/init.d/pandora_agent_daemon /etc/rc2.d/S90pandora_agent_daemon 2> /dev/null
+-		chmod 755 $PANDORA_STARTUP
+-		chown root:0 $PANDORA_STARTUP
+-		echo "Pandora FMS agent has been included in /etc/rc2.d/S90pandora_agent_daemon"
+-	fi
+-	
+-	if [ $OS_NAME = "Linux" ]
+-	then
+-		PANDORA_STARTUP=/etc/init.d/pandora_agent_daemon
+-		cp pandora_agent_daemon $PANDORA_STARTUP
+-		if [ -d /etc/rc.d/ ]
++		RCDIRS=""
++		MSG=""
++		if [ "$OS_NAME" = "AIX" ]
+ 		then
+-			ln -s /etc/init.d/pandora_agent_daemon /etc/rc.d/rc2.d/S90pandora_agent 2> /dev/null
+-			ln -s /etc/init.d/pandora_agent_daemon /etc/rc.d/rc3.d/S90pandora_agent 2> /dev/null
+-		else
+-			ln -s /etc/init.d/pandora_agent_daemon /etc/rc2.d/S90pandora_agent 2> /dev/null
+-			ln -s /etc/init.d/pandora_agent_daemon /etc/rc2.d/S90pandora_agent 2> /dev/null
++			RCDIRS=/etc/rc.d/rc2.d
++			MSG="Pandora FMS agent has been included in $DESTDIR/etc/rc.d/rc2.d/S90pandora_agent_daemon"
++		elif [ "$OS_NAME" = "HP-UX" ]
++		then
++			RCDIRS="/sbin/rc2.d /sbin/rc3.d"
++			MSG="Pandora FMS agent has been included in $DESTDIR/sbin/rcX.d/S90pandora_agent_daemon"
++		elif [ "$OS_NAME" = "SunOS" ]
++		then
++			RCDIRS=/etc/rc2.d
++			MSG="Pandora FMS agent has been included in $DESTDIR/etc/rc2.d/S90pandora_agent_daemon"
++		elif [ "$OS_NAME" = "Linux" ]
++		then
++			if [ -d /etc/rc.d/ ]
++			then
++				RCDIRS="/etc/rc.d/rc2.d /etc/rc.d/rc3.d"
++			else
++				RCDIRS="/etc/rc2.d /etc/rc3.d"
++			fi
+ 		fi
+-		chmod 755 $PANDORA_STARTUP
+-		chown root:0 $PANDORA_STARTUP
++		[ "$RCDIRS" ] && for RCDIR in $RCDIRS
++		do
++			[ $FAKEROOT -eq 1 ] && [ ! -d $DESTDIR$RCDIR ] && mkdir -p $DESTDIR$RCDIR >/dev/null 2>&1
++			ln -s $PANDORA_STARTUP $DESTDIR$RCDIR/S90pandora_agent 2> /dev/null
++		done
++		[ "$MSG" ] && echo "$MSG"
+ 	fi
+ 
+-	if [ "$OS_NAME" = "FreeBSD" ]
+-	then
+-		PANDORA_STARTUP=/usr/local/etc/rc.d/pandora_agent
+-		cp FreeBSD/pandora_agent $PANDORA_STARTUP
+-		chmod 555 $PANDORA_STARTUP
+-		chown root:wheel $PANDORA_STARTUP
+-	fi
+-
+-	if [ "$OS_NAME" = "NetBSD" ]
+-	then
+-		PANDORA_STARTUP=/etc/rc.d/pandora_agent
+-		cp NetBSD/pandora_agent $PANDORA_STARTUP
+-		chmod 555 $PANDORA_STARTUP
+-		chown root:wheel $PANDORA_STARTUP
+-	fi
+-
+ 	echo "Done."
+ 	echo " "
+ 	echo "You have your startup script ready at $PANDORA_STARTUP"
+Index: plugins/who.sh
+===================================================================
+--- plugins/who.sh	(revision 10314)
++++ plugins/who.sh	(working copy)
+@@ -1,10 +1,10 @@
+-#!/bin/bash
++#!/bin/sh
+ echo "<module>";
+ echo "<name>who</name>";
+ echo "<type>async_string</type>";
+ echo "<data><![CDATA["
+ WHO=`who`
+-if [ "$WHO" == "" ]; then
++if [ "$WHO" = "" ]; then
+ 	echo "None"
+ else
+ 	echo $WHO
+Index: tentacle_server
+===================================================================
+--- tentacle_server	(revision 10314)
++++ tentacle_server	(working copy)
+@@ -60,9 +60,15 @@
+ use warnings;
+ use Getopt::Std;
+ use IO::Select;
++use threads;
+ use Thread::Semaphore;
+ use POSIX ":sys_wait_h";
++use Time::HiRes qw(usleep);
+ 
++# Constants for Win32 services.
++use constant WIN32_SERVICE_STOPPED => 0x01;
++use constant WIN32_SERVICE_RUNNING => 0x04;
++
+ my $t_libwrap_installed = eval { require Authen::Libwrap } ? 1 : 0;
+ 
+ if ($t_libwrap_installed) {
+@@ -77,9 +83,8 @@
+       : eval { require IO::Socket::INET }  ? 'IO::Socket::INET'
+       : die $@;
+ 
+-if ($SOCKET_MODULE eq 'IO::Socket::INET') {
+-	print_log ("IO::Socket::INET6 is not found. IPv6 is disabled.");
+-}
++# Service name for Win32.
++my $SERVICE_NAME="Tentacle Server";
+ 
+ # Program version
+ our $VERSION = '0.4.0';
+@@ -130,7 +135,7 @@
+ my $t_select;
+ 
+ # Semaphore
+-my $t_sem;
++my $t_sem :shared;
+ 
+ # Server socket
+ my @t_server_sockets;
+@@ -197,6 +202,7 @@
+ 	print ("\t-p port\t\tPort to listen on (default $t_port).\n");
+ 	print ("\t-q\t\tQuiet. Do now print error messages.\n");
+ 	print ("\t-r number\tNumber of retries for network opertions (default $t_retries).\n");
++	print ("\t-S (install|uninstall|run) Manage the win32 service.\n");
+ 	print ("\t-t time\t\tTime-out for network operations in seconds (default ${t_timeout}s).\n");
+ 	print ("\t-v\t\tBe verbose.\n");
+ 	print ("\t-w\t\tPrompt for OpenSSL private key password.\n");
+@@ -241,27 +247,6 @@
+ }
+ 
+ ################################################################################
+-## SUB start_win_service
+-## Turn the current process into a Windows service.
+-################################################################################
+-#sub start_win_service {
+-#	require Win32::Daemon;
+-#
+-#	# Tell the OS to start the service
+-#	Win32::Daemon::StartService ();
+-#
+-#	# Wait until the service manager is ready
+-#	while (SERVICE_START_PENDING != Win32::Daemon::State()) {
+-#		sleep (1);
+-#	}
+-#
+-#	# Tell the service manager we are running
+-#	Win32::Daemon::State (SERVICE_RUNNING);
+-#
+-#	# Call Win32::Daemon::StopService() when done
+-#}
+-
+-################################################################################
+ ## SUB parse_options
+ ## Parse command line options and initialize global variables.
+ ################################################################################
+@@ -271,7 +256,7 @@
+ 	my @t_addresses_tmp;
+ 
+ 	# Get options
+-	if (getopts ('a:c:de:f:hi:k:m:op:qr:s:t:vwx:b:g:T', \%opts) == 0 || defined ($opts{'h'})) {
++	if (getopts ('a:b:c:de:f:g:hi:k:m:op:qr:s:S:t:Tvwx:', \%opts) == 0 || defined ($opts{'h'})) {
+ 		print_help ();
+ 		exit 1;
+ 	}
+@@ -467,19 +452,33 @@
+ 			error ("Authen::Libwrap is not installed.");
+ 		}
+ 	}
+-}
+ 
+-################################################################################
+-## SUB sigchld_handler
+-## Handle child process termination.
+-################################################################################
+-sub sigchld_handler {
++	# Win32 service management
++	if (defined ($opts{'S'})) {
++		my $service_action = $opts{'S'};
++		if ($^O ne 'MSWin32') {
++			error ("Windows services are only available on Win32.");
++		} else {
++			eval "use Win32::Daemon";
++			die($@) if ($@);
+ 
+-	while (waitpid(-1, &WNOHANG) > 0) {
+-		$t_sem->up ();
++			if ($service_action eq 'install') {
++				install_service();
++			} elsif ($service_action eq 'uninstall') {
++				uninstall_service();
++			} elsif ($service_action eq 'run') {
++				Win32::Daemon::RegisterCallbacks({
++			        start       =>  \&callback_start,
++			        running     =>  \&callback_running,
++			        stop        =>  \&callback_stop,
++				});
++				Win32::Daemon::StartService();
++				exit 0;
++			} else {
++				error("Unknown action: $service_action");
++			}
++		}
+ 	}
+-
+-	$SIG{CHLD} = \&sigchld_handler;
+ }
+ 
+ ################################################################################
+@@ -660,87 +659,86 @@
+ }
+ 
+ ################################################################################
+-## SUB accept_connection
+-## Accept an incoming connection and fork.
++## SUB accept_connections
++## Manage incoming connections.
+ ################################################################################
+-sub accept_connection {
++sub accept_connections {
+ 	my $pid;
+ 	my $t_server_socket;
+ 
+-	my @ready = $select->can_read;
++	# Start server
++	start_server ();
+ 
+-	foreach $t_server_socket (@ready) {
++	# Initialize semaphore
++	$t_sem = Thread::Semaphore->new ($t_max_conn);
+ 
+-		# Accept connection
+-		$t_client_socket = $t_server_socket->accept ();
++	while (1) {
++		my @ready = $select->can_read;
++		foreach $t_server_socket (@ready) {
+ 
+-		if (! defined ($t_client_socket)) {
++			# Accept connection
++			$t_client_socket = $t_server_socket->accept ();
+ 
+-			# EINTR
+-			if ($! ne '') {
+-				next;
++			if (! defined ($t_client_socket)) {
++				next if ($! ne ''); # EINTR
++				error ("accept: $!.");
+ 			}
+ 
+-			error ("accept: $!.");
+-		}
++			print_log ("Client connected from " . $t_client_socket->sockhost ());
+ 
+-		print_log ("Client connected from " . $t_client_socket->sockhost ());
+-
+-		# Fork and serve the client
+-		$pid = fork ();
+-		if (! defined ($pid)) {
+-			error ("Cannot fork: $!.");
++			# Create a new thread and serve the client
++			$t_sem->down();
++			my $thr = threads->create(\&serve_client);
++			if (! defined ($thr)) {
++				error ("Error creating thread: $!.");
++			}
++			$thr->detach();
+ 		}
+-	
+-		# Child
+-		if ($pid == 0) {
+-		
+-			# We do not need the server socket
+-			$t_server_socket->close ();
+ 
+-			if ($t_use_libwrap) {
+-				if (! hosts_ctl($t_program_name, $t_client_socket)) {
+-					print_log ("Connection from " . $t_client_socket->sockhost() . " is closed by tcpwrappers.");
+-					$t_client_socket->close ();
++		usleep (1000);
++	}
++}
+ 
+-					exit;
+-				}
+-			}
+-		
+-			# Add client socket to select queue
+-			$t_select = IO::Select->new ();
+-			$t_select->add ($t_client_socket);
+-		
+-			# Start SSL
+-			if ($t_ssl == 1) {
+-				start_ssl ();
+-			}
++################################################################################
++## SUB serve_client
++## Serve a connected client.
++################################################################################
++sub serve_client() {
+ 
+-			# Authenticate client
+-			if ($t_pwd ne '') {
+-				auth_pwd ();
+-			}
++	if ($t_use_libwrap) {
++		if (! hosts_ctl($t_program_name, $t_client_socket)) {
++			print_log ("Connection from " . $t_client_socket->sockhost() . " is closed by tcpwrappers.");
++			$t_client_socket->close ();
++			$t_sem->up();
++			return;
++		}
++	}
+ 
+-			# Check if proxy mode is enable
+-			if (defined ($t_proxy_ip)) {
+-
+-				serve_proxy_connection ();	
++	eval {		
++		# Add client socket to select queue
++		$t_select = IO::Select->new ();
++		$t_select->add ($t_client_socket);
+ 			
+-			} else {
+-			
+-				serve_connection ();
+-			}
+-
+-			$t_client_socket->close ();
+-
+-			# Must exit now
+-			exit;
++		# Start SSL
++		if ($t_ssl == 1) {
++			start_ssl ();
+ 		}
++	
++		# Authenticate client
++		if ($t_pwd ne '') {
++			auth_pwd ();
++		}
++	
++		# Check if proxy mode is enable
++		if (defined ($t_proxy_ip)) {
++			serve_proxy_connection ();	
++		} else {
++			serve_connection ();
++		}
++	};
+ 
+-		# Parent
+-		$t_client_socket->close ();
+-
+-	}
++	$t_client_socket->close ();
++	$t_sem->up();
+ }
+ 
+ ################################################################################
+@@ -1045,10 +1043,8 @@
+ sub error {
+ 
+ 	if ($t_quiet == 0) {
+-		print (STDERR "[err] $_[0]\n");
++		die("[err] $_[0]\n\n");
+ 	}
+-
+-	exit 1;
+ }
+ 
+ ################################################################################
+@@ -1414,6 +1410,91 @@
+ }
+ 
+ ################################################################################
++## SUB install_service
++## Install the Windows service.
++################################################################################
++sub install_service() {
++
++	my $service_path = $0;
++	my $service_params = "-s \"$t_directory\" -S run";
++
++	my %service_hash = (
++		machine =>  '',
++		name	=>  'TENTACLESRV',
++		display =>  $SERVICE_NAME,
++		path	=>  $service_path,
++		user	=>  '',
++		pwd	 =>  '',
++		description => 'Tentacle Server http://sourceforge.net/projects/tentacled/',
++		parameters => $service_params
++	);
++	
++	if (Win32::Daemon::CreateService(\%service_hash)) {
++		print "Successfully added.\n";
++		exit 0;
++	} else {
++		print "Failed to add service: " . Win32::FormatMessage(Win32::Daemon::GetLastError()) . "\n";
++		exit 1;
++	}
++}
++
++################################################################################
++## SUB uninstall_service
++## Install the Windows service.
++################################################################################
++sub uninstall_service() {
++	if (Win32::Daemon::DeleteService('', 'TENTACLESRV')) {
++		print "Successfully deleted.\n";
++		exit 0;
++	} else {
++		print "Failed to delete service: " . Win32::FormatMessage(Win32::Daemon::GetLastError()) . "\n";
++		exit 1;
++	}
++}
++
++################################################################################
++## SUB callback_running
++## Windows service callback function for the running event.
++################################################################################
++sub callback_running {
++
++	if (Win32::Daemon::State() == WIN32_SERVICE_RUNNING) {
++	}
++}
++
++################################################################################
++## SUB callback_start
++## Windows service callback function for the start event.
++################################################################################
++sub callback_start {
++
++	# Accept_connections ();
++	my $thr = threads->create(\&accept_connections);
++	if (!defined($thr)) {
++		Win32::Daemon::State(WIN32_SERVICE_STOPPED);
++		Win32::Daemon::StopService();
++		return;
++	}
++	$thr->detach();
++
++	Win32::Daemon::State(WIN32_SERVICE_RUNNING);
++}
++
++################################################################################
++## SUB callback_stop
++## Windows service callback function for the stop event.
++################################################################################
++sub callback_stop {
++
++	foreach my $t_server_socket (@t_server_sockets) {
++		$t_server_socket->close ();
++	}
++
++	Win32::Daemon::State(WIN32_SERVICE_STOPPED);
++	Win32::Daemon::StopService();
++}
++
++################################################################################
+ # Main
+ ################################################################################
+ 
+@@ -1444,25 +1525,16 @@
+ 
+ # Handle ctr-c
+ if ($^O eq 'MSWin32') {
++	no warnings;
+ 	$SIG{INT2} = \&stop_server;
++	use warnings;
+ }
+ else {
+ 	$SIG{INT} = \&stop_server;
+ }
+ 
+-# Handle SIGCHLD
+-$SIG{CHLD} = \&sigchld_handler;
+-
+-start_server ();
+-
+-# Initialize semaphore
+-$t_sem = Thread::Semaphore->new ($t_max_conn);
+-
+ # Accept connections
+-while (1) {
+-	$t_sem->down ();
+-	accept_connection ();
+-}
++accept_connections();
+ 
+ __END__
+ 
+Index: pandora_agent_daemon
+===================================================================
+--- pandora_agent_daemon	(revision 10314)
++++ pandora_agent_daemon	(working copy)
+@@ -34,38 +34,39 @@
+ 	OS_NAME=`uname -s`
+ 	if [ $OS_NAME = "HP-UX" ]
+ 	then
+-		PANDORA_PID=`ps -ex | grep "$DAEMON $PANDORA_PATH" | grep -v grep | head -1 | awk '{ print $1 }'`
+-	else
+-		if [ "$OS_NAME" = "SunOS" ]
++		PANDORA_PID=`ps -ef | grep "/usr/bin/perl $DAEMON" | grep -v grep | awk '{print $2}'`
++	elif [ "$OS_NAME" = "SunOS" ]
++	then
++		ZONENAME_CMD="/bin/zonename"
++		TRUNCATED_DAEMON=`echo "$DAEMON $PANDORA_PATH" | cut -c1-20`
++		if [ -x $ZONENAME_CMD ]
+ 		then
+-			ZONENAME_CMD="/bin/zonename"
+-			TRUNCATED_DAEMON=`echo "$DAEMON $PANDORA_PATH" | cut -c1-20`
+-			if [ -x $ZONENAME_CMD ]
+-			then
+-				ZONE=`$ZONENAME_CMD`
+-			else
+-				ZONE=
+-			fi
+-			if [ "$ZONE" = "global" ]
+-			then
+-				PANDORA_PID=`ps -f -z global | grep "$TRUNCATED_DAEMON" | grep -v grep | head -1 | awk '{ print $2 }'`
+-			else
+-				PANDORA_PID=`ps -Af | grep "$TRUNCATED_DAEMON" | grep -v grep | head -1 | awk '{ print $2 }'`
+-			fi
+-		elif [ "$OS_NAME" = "Linux" -a -x /usr/sbin/vzpid ]
++			ZONE=`$ZONENAME_CMD`
++		else
++			ZONE=
++		fi
++		if [ "$ZONE" = "global" ]
+ 		then
+-			for _pid in `ps -Af | grep "$DAEMON $PANDORA_PATH" | grep -v grep | awk '{ print $2 }'`
+-			do
+-				_ctid=`/usr/sbin/vzpid $_pid | awk '$1 == '$_pid' { print $2 }'`
+-				if [ "X$_ctid" = "X0" ]
+-				then
+-					PANDORA_PID=$_pid
+-					break
+-				fi
+-			done
++			PANDORA_PID=`ps -f -z global | grep "$TRUNCATED_DAEMON" | grep -v grep | head -1 | awk '{ print $2 }'`
+ 		else
+-			PANDORA_PID=`ps -Af | grep "$DAEMON $PANDORA_PATH" | grep -v grep | head -1 | awk '{ print $2 }'`
++			PANDORA_PID=`ps -Af | grep "$TRUNCATED_DAEMON" | grep -v grep | head -1 | awk '{ print $2 }'`
+ 		fi
++	elif [ "$OS_NAME" = "Linux" ] && [ -x /usr/sbin/vzpid ]
++	then
++		# Virtuozzo/OpenVZ
++		local _pid _ctid _pids
++		_pids=`ps -Af | grep "$DAEMON $PANDORA_PATH" | grep -v grep | awk '{ print $2 }'`
++		[ "$_pids" ] && for _pid in $_pids
++		do
++			_ctid=`/usr/sbin/vzpid $_pid | awk '$1 == '$_pid' { print $2 }'`
++			if [ "X$_ctid" = "X0" ]
++			then
++				PANDORA_PID=$_pid
++				break
++			fi
++		done
++	else
++		PANDORA_PID=`ps -Af | grep "$DAEMON $PANDORA_PATH" | grep -v grep | head -1 | awk '{ print $2 }'`
+ 	fi
+ 	
+ 	echo $PANDORA_PID
+Index: pandora_agent
+===================================================================
+--- pandora_agent	(revision 10314)
++++ pandora_agent	(working copy)
+@@ -343,6 +343,8 @@
+ 			init_module ($module);
+ 		} elsif ($line =~ /^\s*module_name\s+(.+)$/) {
+ 			$module->{'name'} = $1;
++			$module->{'name'} =~ s/\s+$//g;
++			$module->{'name'} =~ s/^\s+//g;
+ 		} elsif ($line =~ /^\s*module_description\s+(.+)$/) {
+ 			$module->{'description'} = $1;
+ 		} elsif ($line =~ /^\s*module_type\s+(\S+)\s*$/) {
+@@ -1727,12 +1729,7 @@
+ 		
+ 	# Data list
+ 	if ($#data > 0) {
+-		$Xml .= "	<datalist>\n";
+-		foreach my $data_item (@data) {
+-			chomp ($data_item);
+-			$Xml .= "	<data><value><![CDATA[$data_item]]></value></data>\n";
+-		}
+-		$Xml .= "	</datalist>\n";
++		$Xml .= "	<data><![CDATA[" . join('', @data) . "]]></data>\n";
+ 	# Single data
+ 	} else {
+ 		chomp ($data[0]);
+Index: FreeBSD/pandora_agent
+===================================================================
+--- FreeBSD/pandora_agent	(revision 10314)
++++ FreeBSD/pandora_agent	(working copy)
+@@ -3,6 +3,7 @@
+ # **********************************************************************
+ # Pandora FMS Agent Daemon launcher for FreeBSD
+ # (c) 2010 Junichi Satoh <junichi@rworks.jp>
++# (c) 2014 Koichiro Kikuchi <koichiro@rworks.jp>
+ #
+ # **********************************************************************
+ 
+@@ -18,7 +19,7 @@
+ . "/etc/rc.subr"
+ 
+ name="pandora_agent"
+-rcvar=`set_rcvar`
++rcvar=pandora_agent_enable
+ 
+ # read configuration and set defaults
+ pandora_agent_enable=${pandora_agent_enable:-"NO"}
+@@ -26,22 +27,15 @@
+ 
+ PATH=/bin:/usr/bin:/sbin:/usr/sbin:/usr/local/bin
+ 
+-command=/usr/local/bin/pandora_agent
+-command_args="/usr/local/etc/pandora &"
+-
+ pidfile=/var/run/$name.pid
+ required_files="/usr/local/etc/pandora/pandora_agent.conf"
+-start_postcmd=start_postcmd
+ stop_postcmd=stop_postcmd
+ 
+-procname="/usr/bin/perl"
++command=/usr/sbin/daemon
++command_interpreter=/usr/local/bin/perl
++procname=/usr/local/bin/pandora_agent
+ 
+-start_postcmd()
+-{
+-	sleep 1
+-	PANDORA_PID=`pgrep -f -j none $name`
+-	echo $PANDORA_PID > $pidfile
+-}
++command_args="-cfp $pidfile $procname /usr/local/etc/pandora"
+ 
+ stop_postcmd()
+ {

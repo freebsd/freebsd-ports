@@ -1,0 +1,11 @@
+--- lib/libdvd/libdvdnav/CMakeLists.txt.orig	2014-08-07 20:17:15.005520678 +0800
++++ lib/libdvd/libdvdnav/CMakeLists.txt	2014-08-07 20:17:42.827523919 +0800
+@@ -23,6 +23,8 @@
+   install(TARGETS dvdnav-${ARCH} DESTINATION ${RESOURCEPATH}/system/players/dvdplayer COMPONENT RUNTIME)
+ elseif(TARGET_COMMON_LINUX)
+   install(TARGETS dvdnav-${ARCH} DESTINATION ${BINPATH}/system/players/dvdplayer COMPONENT RUNTIME)
++elseif(TARGET_FREEBSD)
++  install(TARGETS dvdnav-${ARCH} DESTINATION ${LIBPATH}/system/players/dvdplayer COMPONENT RUNTIME)
+ elseif(TARGET_WIN32)
+   install(TARGETS dvdnav RUNTIME DESTINATION ${RESOURCEPATH}/system/players/dvdplayer LIBRARY DESTINATION ${RESOURCEPATH}/system COMPONENT RUNTIME)
+ endif(TARGET_COMMON_DARWIN)

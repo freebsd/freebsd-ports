@@ -3,6 +3,7 @@
 
 PORTNAME=	fsWalk
 PORTVERSION=	0.5.0
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	SF/razorbacktm/Nuggets
 PKGNAMEPREFIX=	razorback-
@@ -14,10 +15,12 @@ COMMENT=	Framework for an intelligence driven security - File System Walker
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	librazorback_api.so:${PORTSDIR}/security/razorback-api
+LIB_DEPENDS=	librazorback_api.so:${PORTSDIR}/security/razorback-api \
+		libjson-c.so:${PORTSDIR}/devel/json-c
 
 GNU_CONFIGURE=	yes
 USES=		libtool pkgconfig
+USE_AUTOTOOLS=	autoconf
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 

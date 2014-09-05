@@ -1,0 +1,27 @@
+--- Makefile.in.orig	2014-08-02 18:11:59.564717000 +0200
++++ Makefile.in	2014-08-29 16:09:56.000000000 +0200
+@@ -93,7 +93,7 @@
+ INSTALL_PROGRAM	= ${INSTALL} -m 755
+ INSTALL_DATA	= ${INSTALL} -m 644
+ INSTALL_SCRIPT	= ${INSTALL_PROGRAM}
+-INSTALL_LIBRARY	= ${INSTALL_DATA}
++INSTALL_LIBRARY	= ${INSTALL_DATA} -s
+ 
+ PACKAGE_NAME	= @PACKAGE_NAME@
+ PACKAGE_VERSION	= @PACKAGE_VERSION@
+@@ -222,11 +222,12 @@
+ 	@$(INSTALL_DATA_DIR) $(DESTDIR)$(mandir)/mann
+ 	@echo "Installing documentation in $(DESTDIR)$(mandir)"
+ 	@cd $(srcdir)/doc; for i in *.n; do \
++	    sfxname=`basename $$i | sed -e 's|.n$$|.i4|'`; \
+ 	    echo "Installing $$i"; \
+-	    rm -f $(DESTDIR)$(mandir)/mann/`basename $$i`; \
++	    rm -f $(DESTDIR)$(mandir)/mann/$$sfxname; \
+ 	    sed -e '/man\.macros/r man.macros' -e '/man\.macros/d' \
+-		$$i > $(DESTDIR)$(mandir)/mann/$$i; \
+-	    chmod 444 $(DESTDIR)$(mandir)/mann/$$i; \
++		$$i > $(DESTDIR)$(mandir)/mann/$$sfxname; \
++	    chmod 444 $(DESTDIR)$(mandir)/mann/$$sfxname; \
+ 	done
+ 
+ test: binaries libraries

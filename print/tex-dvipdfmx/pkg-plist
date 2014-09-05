@@ -3,49 +3,32 @@ bin/dvipdfmx
 bin/dvipdft
 bin/ebb
 bin/extractbb
+bin/xdvipdfmx
 man/man1/dvipdfm.1.gz
+man/man1/dvipdfmx.1.gz
 man/man1/dvipdft.1.gz
 man/man1/ebb.1.gz
 man/man1/extractbb.1.gz
+man/man1/xdvipdfmx.1.gz
+%%TEXMFDISTDIR%%/doc/dvipdfmx/dvipdfmx-special.pdf
+%%TEXMFDISTDIR%%/doc/dvipdfmx/dvipdfmx-special.tex
+%%TEXMFDISTDIR%%/dvipdfmx/dvipdfmx.cfg
+%%TEXMFDISTDIR%%/fonts/cmap/adobe-cmaps
+%%TEXMFDISTDIR%%/fonts/cmap/dvipdfmx/EUC-UCS2
+%%TEXMFDISTDIR%%/fonts/cmap/dvipdfmx/README
+%%TEXMFDISTDIR%%/fonts/cmap/dvipdfmx/UTF8-UCS2
 %%TEXMFDISTDIR%%/fonts/map/dvipdfm/lm/lm-ec.map
-%%TEXMFDISTDIR%%/fonts/map/dvipdfm/lm/lm-texnansi.map
-%%TEXMFDISTDIR%%/fonts/map/dvipdfm/lm/lm-rm.map
 %%TEXMFDISTDIR%%/fonts/map/dvipdfm/lm/lm-math.map
-%%TEXMFDISTDIR%%/fonts/map/dvipdfmx/.keep_me
-%%TEXMFDIR%%/dvipdfm/config/config
-%%TEXMFDIR%%/dvipdfm/config/config-win32
-%%TEXMFDIR%%/dvipdfmx/dvipdfmx.cfg
-%%TEXMFDIR%%/fonts/cmap/dvipdfmx/README
-%%TEXMFDIR%%/fonts/cmap/dvipdfmx/UTF8-UCS2
-%%TEXMFDIR%%/fonts/cmap/dvipdfmx/EUC-UCS2
-%%TEXMFDIR%%/fonts/cmap/adobe-cmaps
-%%TEXMFDIR%%/fonts/map/dvipdfmx/ckx.map
-%%TEXMFDIR%%/fonts/map/dvipdfmx/cid-x.map
-%%TEXMFDIR%%/fonts/map/dvipdfmx/updmap/.keep_me
-%%TEXMFDIR%%/doc/dvipdfm/mwicks.bb
-%%TEXMFDIR%%/doc/dvipdfm/something.eps
-%%TEXMFDIR%%/doc/dvipdfm/Makefile
-%%TEXMFDIR%%/doc/dvipdfm/dvipdfm.tex
-%%TEXMFDIR%%/doc/dvipdfm/dvipdfm.pdf
-%%TEXMFDIR%%/doc/dvipdfm/sample.tex
-%%TEXMFDIR%%/doc/dvipdfm/something.bb
-%%TEXMFDIR%%/doc/dvipdfm/mwicks.jpeg
-%%TEXMFDIR%%/doc/dvipdfm/something.fig
-%%TEXMFDIR%%/doc/dvipdfm/transistor.eps
-%%TEXMFDIR%%/doc/dvipdfm/transistor.pdf
-%%TEXMFDIR%%/doc/dvipdfm/transistor.fig
-%%TEXMFDIR%%/doc/dvipdfm/transistor.bb
-%%TEXMFDIR%%/doc/dvipdfm/something.pdf
-%%TEXMFDIR%%/doc/dvipdfmx/dvipdfmx-special.pdf
-%%TEXMFDIR%%/doc/dvipdfmx/dvipdfmx-special.tex
-@dirrm %%TEXMFDISTDIR%%/fonts/map/dvipdfm/lm
-@dirrm %%TEXMFDISTDIR%%/fonts/map/dvipdfm
+%%TEXMFDISTDIR%%/fonts/map/dvipdfm/lm/lm-rm.map
+%%TEXMFDISTDIR%%/fonts/map/dvipdfm/lm/lm-texnansi.map
+%%TEXMFDISTDIR%%/fonts/map/dvipdfmx/cid-x.map
+%%TEXMFDISTDIR%%/fonts/map/dvipdfmx/ckx.map
+@dirrmtry %%TEXMFDISTDIR%%/fonts/map/dvipdfmx/updmap
 @dirrmtry %%TEXMFDISTDIR%%/fonts/map/dvipdfmx
-@dirrm %%TEXMFDIR%%/doc/dvipdfmx
-@dirrm %%TEXMFDIR%%/doc/dvipdfm
-@dirrmtry %%TEXMFDIR%%/fonts/map/dvipdfmx/updmap
-@dirrmtry %%TEXMFDIR%%/fonts/map/dvipdfmx
-@dirrm %%TEXMFDIR%%/fonts/cmap/dvipdfmx
-@dirrm %%TEXMFDIR%%/dvipdfm/config
-@dirrm %%TEXMFDIR%%/dvipdfm
-@dirrm %%TEXMFDIR%%/dvipdfmx
+@dirrm %%TEXMFDISTDIR%%/fonts/map/dvipdfm/lm
+@dirrmtry %%TEXMFDISTDIR%%/fonts/map/dvipdfm
+@dirrmtry %%TEXMFDISTDIR%%/fonts/map
+@dirrm %%TEXMFDISTDIR%%/fonts/cmap/dvipdfmx
+@dirrmtry %%TEXMFDISTDIR%%/fonts/cmap
+@dirrm %%TEXMFDISTDIR%%/dvipdfmx
+@dirrm %%TEXMFDISTDIR%%/doc/dvipdfmx

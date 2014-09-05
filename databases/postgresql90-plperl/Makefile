@@ -8,13 +8,13 @@ PKGNAMESUFFIX?=	${DISTVERSION:R:S/.//}${COMPONENT}
 MAINTAINER=	pgsql@FreeBSD.org
 COMMENT=	Write SQL functions for PostgreSQL using Perl5
 
-RUN_DEPENDS=	postgres:${PORTSDIR}/databases/postgresql${WANT_PGSQL_VER}-server
+RUN_DEPENDS=	postgres:${PORTSDIR}/databases/postgresql${WANT_PGSQL_VER:S/.//}-server
 
-MASTERDIR=	${.CURDIR}/../../databases/postgresql${WANT_PGSQL_VER}-server
+MASTERDIR=	${.CURDIR}/../../databases/postgresql${WANT_PGSQL_VER:S/.//}-server
 
-WANT_PGSQL_VER?=90
+WANT_PGSQL_VER?=9.0
 
-USES=		perl5 readline
+USES+=		perl5 readline
 CONFIGURE_ARGS=	--with-perl
 
 BUILD_DIRS=	src/backend src/pl/plperl

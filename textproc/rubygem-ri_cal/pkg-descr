@@ -16,4 +16,4 @@ Enumeration of recurring occurrences. For example, if an Event has one
 or more recurrence rules, then the occurrences of the event can be enumerated
 as a series of Event occurrences.
 
-WWW: http://ri-cal.rubyforge.org/
+WWW: http://rubygems.org/gems/ri_cal/

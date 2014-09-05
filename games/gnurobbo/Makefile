@@ -27,6 +27,7 @@ OPTIONS_DEFINE=	DOCS
 post-patch:
 	@${REINPLACE_CMD} -e '/define DEBUG_DUMP_VM_USAGE/ d' ${WRKSRC}/game.c
 	@${REINPLACE_CMD} -e '/^install:/,$$ s|$$([A-Z_]*DIR)|${STAGEDIR}&| g' \
+		-e '/^LIBS=/s/$$/ -lm/' \
 		${WRKSRC}/Makefile
 
 post-install:

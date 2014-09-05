@@ -36,4 +36,7 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${RUBY_MODDOCDIR}/
 .endfor
 
+DEPRECATED=	Depends on deprecated math/ruby-narray
+EXPIRATION_DATE=	2014-09-20
+
 .include <bsd.port.mk>

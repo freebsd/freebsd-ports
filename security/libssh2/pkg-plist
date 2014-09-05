@@ -1,10 +1,10 @@
 include/libssh2.h
 include/libssh2_publickey.h
 include/libssh2_sftp.h
+lib/libssh2.a
 lib/libssh2.so
 lib/libssh2.so.1
-lib/libssh2.la
-lib/libssh2.a
+lib/libssh2.so.1.0.1
 man/man3/libssh2_agent_connect.3.gz
 man/man3/libssh2_agent_disconnect.3.gz
 man/man3/libssh2_agent_free.3.gz

@@ -1,5 +1,5 @@
 --- doc/Makefile.sub.orig	2002-07-26 22:48:54.000000000 +0900
-+++ doc/Makefile.sub	2014-02-07 13:42:25.000000000 +0900
++++ doc/Makefile.sub	2014-08-30 02:28:42.000000000 +0900
 @@ -110,7 +110,7 @@
  	$(GROFF) -Tps -ms -mwww >$@
  
@@ -9,7 +9,7 @@
       $(PROCESSEDEXAMPLEFILES) $(make_html)
  
  html: $(HTMLDOCFILES) $(HTMLEXAMPLEFILES)
-@@ -133,35 +133,25 @@
+@@ -133,54 +133,44 @@
  
  distfiles: groff gnu.eps gnu.png
  
@@ -56,3 +56,34 @@
  	done
  
  install_html: $(HTMLDOCFILES) $(HTMLEXAMPLEFILES)
+-	-test -d $(htmldocdir) || $(mkinstalldirs) $(htmldocdir)
++	-test -d $(DESTDIR)$(htmldocdir) || $(mkinstalldirs) $(DESTDIR)$(htmldocdir)
+ 	for f in $(HTMLDOCFILES); do \
+-	  rm -f $(htmldocdir)/$$f; \
+-	  $(INSTALL_DATA) $$f $(htmldocdir)/$$f; \
++	  rm -f $(DESTDIR)$(htmldocdir)/$$f; \
++	  $(INSTALL_DATA) $$f $(DESTDIR)$(htmldocdir)/$$f; \
+ 	done
+-	-test -d $(htmldocimagedir) || $(mkinstalldirs) $(htmldocimagedir)
+-	rm -f $(htmldocimagedir)/$(HTMLDOCIMAGEFILES)
+-	$(INSTALL_DATA) $(imagedir)/$(HTMLDOCIMAGEFILES) $(htmldocimagedir)
+-	-test -d $(exampledir) || $(mkinstalldirs) $(exampledir)
++	-test -d $(DESTDIR)$(htmldocimagedir) || $(mkinstalldirs) $(DESTDIR)$(htmldocimagedir)
++	rm -f $(DESTDIR)$(htmldocimagedir)/$(HTMLDOCIMAGEFILES)
++	$(INSTALL_DATA) $(imagedir)/$(HTMLDOCIMAGEFILES) $(DESTDIR)$(htmldocimagedir)
++	-test -d $(DESTDIR)$(exampledir) || $(mkinstalldirs) $(DESTDIR)$(exampledir)
+ 	for f in $(HTMLEXAMPLEFILES); do \
+-	  rm -f $(exampledir)/$$f; \
+-	  $(INSTALL_DATA) $$f $(exampledir)/$$f; \
++	  rm -f $(DESTDIR)$(exampledir)/$$f; \
++	  $(INSTALL_DATA) $$f $(DESTDIR)$(exampledir)/$$f; \
+ 	done
+-	-test -d $(exampleimagedir) || $(mkinstalldirs) $(exampleimagedir)
+-	rm -f $(exampleimagedir)/$(HTMLEXAMPLEIMAGEFILES)
+-	$(INSTALL_DATA) $(imagedir)/$(HTMLEXAMPLEIMAGEFILES) $(exampleimagedir)
++	-test -d $(DESTDIR)$(exampleimagedir) || $(mkinstalldirs) $(DESTDIR)$(exampleimagedir)
++	rm -f $(DESTDIR)$(exampleimagedir)/$(HTMLEXAMPLEIMAGEFILES)
++	$(INSTALL_DATA) $(imagedir)/$(HTMLEXAMPLEIMAGEFILES) $(DESTDIR)$(exampleimagedir)
+ 
+ uninstall_sub:
+ 	-for f in groff groff-*; do \

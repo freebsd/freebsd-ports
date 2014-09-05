@@ -12,16 +12,16 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	HTTP proxy server that eliminates ads
 
+LICENSE=	GPLv2
+
 ALL_TARGET=	# yes, an empty target.
 JDIR=		${PREFIX}/etc/junkbuster
-MAN1=		junkbuster.1
 SUB_FILES=	junkbuster pkg-message
 USE_RC_SUBR=	${PORTNAME}
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
 GNUREGEXP=	's:gnu_regex.h:gnu/regex.h:'
 
-NO_STAGE=	yes
 post-patch:
 .for f in junkbstr.ini saclfile.ini sblock.ini scookie.ini sforward.ini strust.ini win32.h
 	@${REINPLACE_CMD} -e "s:`/usr/bin/printf '\r'`::" ${WRKSRC}/${f}
@@ -31,17 +31,14 @@ post-patch:
 .endfor
 
 do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/junkbuster ${PREFIX}/sbin/junkbuster
-	@${MKDIR} -m 755 ${JDIR}
-	@${INSTALL_DATA} ${WRKSRC}/junkbstr.ini ${JDIR}/configfile.sample
-	@${INSTALL_DATA} ${WRKSRC}/sblock.ini ${JDIR}/blockfile.sample
-	@${INSTALL_DATA} ${WRKSRC}/saclfile.ini ${JDIR}/aclfile.sample
-	@${INSTALL_DATA} ${WRKSRC}/scookie.ini ${JDIR}/cookiefile.sample
-	@${INSTALL_DATA} ${WRKSRC}/sforward.ini ${JDIR}/forwardfile.sample
-	@${INSTALL_DATA} ${WRKSRC}/strust.ini ${JDIR}/trustfile.sample
-	@${INSTALL_MAN} ${WRKSRC}/junkbuster.1 ${PREFIX}/man/man1/
-
-post-install:
-	@${CAT} ${PKGMESSAGE}
+	${INSTALL_PROGRAM} ${WRKSRC}/junkbuster ${STAGEDIR}${PREFIX}/sbin/junkbuster
+	@${MKDIR} -m 755 ${STAGEDIR}${JDIR}
+	${INSTALL_DATA} ${WRKSRC}/junkbstr.ini ${STAGEDIR}${JDIR}/configfile.sample
+	${INSTALL_DATA} ${WRKSRC}/sblock.ini ${STAGEDIR}${JDIR}/blockfile.sample
+	${INSTALL_DATA} ${WRKSRC}/saclfile.ini ${STAGEDIR}${JDIR}/aclfile.sample
+	${INSTALL_DATA} ${WRKSRC}/scookie.ini ${STAGEDIR}${JDIR}/cookiefile.sample
+	${INSTALL_DATA} ${WRKSRC}/sforward.ini ${STAGEDIR}${JDIR}/forwardfile.sample
+	${INSTALL_DATA} ${WRKSRC}/strust.ini ${STAGEDIR}${JDIR}/trustfile.sample
+	${INSTALL_MAN} ${WRKSRC}/junkbuster.1 ${STAGEDIR}${MANPREFIX}/man/man1
 
 .include <bsd.port.mk>

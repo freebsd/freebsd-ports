@@ -11,6 +11,8 @@ DISTNAME=	${PORTNAME}_${BITS}-${PORTVERSION}
 MAINTAINER=	johans@FreeBSD.org
 COMMENT=	Optimizing Oberon-2 compiler of University of Kaiserslautern, Germany
 
+LICENSE=	GPLv2
+
 BUILD_DEPENDS=	xsltproc:${PORTSDIR}/textproc/libxslt
 RUN_DEPENDS=	libtool:${PORTSDIR}/devel/libtool
 LIB_DEPENDS=	libgc.so:${PORTSDIR}/devel/boehm-gc
@@ -31,6 +33,8 @@ OPTIONS_DEFINE=	DOCS
 post-patch:
 	@${REINPLACE_CMD} 's/dir=@/dir=$${DESTDIR}@/' \
 		 ${WRKSRC}/Makefile.config.in
+	@${REINPLACE_CMD} -e 's|@PERL@|${LOCALBASE}/bin/perl|' \
+		${WRKSRC}/rsrc/OOC/oobacktrace.in
 
 .include <bsd.port.pre.mk>
 

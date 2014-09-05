@@ -9,6 +9,8 @@ MASTER_SITES=	SF/enlightenment/${PORTNAME}/${PORTVERSION}/
 MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	Enlightenment DR16 window manager
 
+LICENSE=	MIT
+
 OPTIONS_DEFINE=	DOCS NLS SOUND
 SOUND_DESC=	Sound support via pulseaudio/libsndfile
 

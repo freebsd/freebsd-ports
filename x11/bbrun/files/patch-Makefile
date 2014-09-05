@@ -5,9 +5,9 @@
 -LIBDIR = -L/usr/lib -L/usr/X11R6/lib
 -LIBS   = -lXpm `pkg-config --libs gtk+-2.0`
 -CFLAGS = `pkg-config --cflags gtk+-2.0`
-+LIBDIR = -L${LOCALBASE}/lib
-+LIBS   = -lXpm `pkg-config --libs gtk+-2.0` ${LDFLAGS}
-+CFLAGS += `pkg-config --cflags gtk+-2.0`
++LIBDIR =
++LIBS   = ${LDFLAGS} `pkg-config --libs gtk+-2.0 x11 xext xpm`
++CFLAGS += `pkg-config --cflags gtk+-2.0 x11 xext xpm`
  
  OBJS   = bbrun.o \
           ../wmgeneral/wmgeneral.o \

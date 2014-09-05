@@ -35,7 +35,6 @@
     SUBDIR += aspell-ispell
     SUBDIR += ast-aspell
     SUBDIR += atom
-    SUBDIR += ats-contrib-parcomb
     SUBDIR += augeas
     SUBDIR += az-aspell
     SUBDIR += bar
@@ -75,7 +74,6 @@
     SUBDIR += clucene-qt4
     SUBDIR += clucene-qt5
     SUBDIR += coccigrep
-    SUBDIR += coco
     SUBDIR += code2html
     SUBDIR += codespell
     SUBDIR += colordiff
@@ -324,6 +322,7 @@
     SUBDIR += jrefentry
     SUBDIR += jshon
     SUBDIR += kdiff3
+    SUBDIR += kenlm
     SUBDIR += kibana
     SUBDIR += kmfl-european-latin
     SUBDIR += kmfl-khmer
@@ -344,7 +343,6 @@
     SUBDIR += lasem
     SUBDIR += latex-service
     SUBDIR += latex2html
-    SUBDIR += lemmatizer2
     SUBDIR += libabw
     SUBDIR += libabw00
     SUBDIR += libcrm114
@@ -466,7 +464,6 @@
     SUBDIR += opensp
     SUBDIR += opentoken
     SUBDIR += openvanilla-framework
-    SUBDIR += openvanilla-modules
     SUBDIR += or-aspell
     SUBDIR += ots
     SUBDIR += p5-AI-Categorizer
@@ -883,6 +880,7 @@
     SUBDIR += p5-UML-Sequence
     SUBDIR += p5-UML-State
     SUBDIR += p5-URI-Find
+    SUBDIR += p5-Unicode-CaseFold
     SUBDIR += p5-Unicode-CheckUTF8
     SUBDIR += p5-Unicode-Collate
     SUBDIR += p5-Unicode-EastAsianWidth
@@ -1124,22 +1122,31 @@
     SUBDIR += php55-xmlreader
     SUBDIR += php55-xmlwriter
     SUBDIR += php55-xsl
+    SUBDIR += php56-ctype
+    SUBDIR += php56-dom
+    SUBDIR += php56-pspell
+    SUBDIR += php56-simplexml
+    SUBDIR += php56-wddx
+    SUBDIR += php56-xml
+    SUBDIR += php56-xmlreader
+    SUBDIR += php56-xmlwriter
+    SUBDIR += php56-xsl
     SUBDIR += plover
     SUBDIR += po4a
     SUBDIR += pocketreader
-    SUBDIR += pootle
     SUBDIR += popup
     SUBDIR += popup-stacks
     SUBDIR += ppower4
     SUBDIR += print-n-times
     SUBDIR += prosper
-    SUBDIR += publican
+    SUBDIR += pugixml
     SUBDIR += pure-csv
     SUBDIR += pure-xml
     SUBDIR += py-4suite-xml
     SUBDIR += py-Chameleon
     SUBDIR += py-MarkupSafe
     SUBDIR += py-Tempita
+    SUBDIR += py-acora
     SUBDIR += py-asciinema
     SUBDIR += py-asv
     SUBDIR += py-bugzillatools
@@ -1178,6 +1185,7 @@
     SUBDIR += py-pyctpp2
     SUBDIR += py-pyelasticsearch
     SUBDIR += py-pygments
+    SUBDIR += py-pygtail
     SUBDIR += py-pyscss
     SUBDIR += py-pysrt
     SUBDIR += py-pystache
@@ -1238,12 +1246,12 @@
     SUBDIR += qu-aspell
     SUBDIR += queequeg
     SUBDIR += rand
+    SUBDIR += randlm
     SUBDIR += rapidxml
     SUBDIR += raptor
     SUBDIR += raptor2
     SUBDIR += rarian
     SUBDIR += rasqal
-    SUBDIR += rast
     SUBDIR += re_graph
     SUBDIR += redet
     SUBDIR += redland
@@ -1273,8 +1281,6 @@
     SUBDIR += ruby-diff
     SUBDIR += ruby-escape
     SUBDIR += ruby-format
-    SUBDIR += ruby-html-fillinform
-    SUBDIR += ruby-html-template
     SUBDIR += ruby-htmlrepair
     SUBDIR += ruby-htmlsplit
     SUBDIR += ruby-htree
@@ -1316,6 +1322,8 @@
     SUBDIR += rubygem-htmlentities
     SUBDIR += rubygem-ini
     SUBDIR += rubygem-itextomml
+    SUBDIR += rubygem-jekyll-gist
+    SUBDIR += rubygem-jekyll-paginate
     SUBDIR += rubygem-jekyll-sass-converter
     SUBDIR += rubygem-jsmin
     SUBDIR += rubygem-kramdown
@@ -1393,7 +1401,6 @@
     SUBDIR += senna
     SUBDIR += sgmlformat
     SUBDIR += sgmls
-    SUBDIR += sgmltools-lite
     SUBDIR += sgrep
     SUBDIR += sgrep2
     SUBDIR += sigil
@@ -1408,7 +1415,6 @@
     SUBDIR += sl-hyphen
     SUBDIR += sl-mythes
     SUBDIR += slides
-    SUBDIR += sml-fxp
     SUBDIR += smu
     SUBDIR += so-hunspell
     SUBDIR += soothsayer
@@ -1444,8 +1450,6 @@
     SUBDIR += te-aspell
     SUBDIR += te-hunspell
     SUBDIR += teckit
-    SUBDIR += tei-guidelines-p3
-    SUBDIR += tei-p3
     SUBDIR += templates_parser
     SUBDIR += tet-aspell
     SUBDIR += tex2im
@@ -1508,7 +1512,6 @@
     SUBDIR += words
     SUBDIR += wv
     SUBDIR += wv2
-    SUBDIR += xalan-c
     SUBDIR += xalan-j
     SUBDIR += xerces-c2
     SUBDIR += xerces-c2-devel

@@ -3,39 +3,39 @@
 
 PORTNAME=	gmimms
 DISTVERSION=	0.0.9
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	multimedia net
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
-MAINTAINER= ports@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Frontend to MiMMS (Multimedia Stream ripper)
+
+LICENSE=	GPLv2 # (or later)
 
 RUN_DEPENDS=	mimms:${PORTSDIR}/multimedia/mimms
 
 USES=		pkgconfig tar:bzip2
-GNU_CONFIGURE=	yes
 USE_GNOME=	gtk20
-CONFIGURE_ARGS+=--disable-nls
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--disable-nls
 INSTALL_TARGET=	install-exec
 
+CFLAGS+=	-Wno-error=return-type
+
+PORTDOCS=	AUTHORS ChangeLog INSTALL NEWS README
 PLIST_FILES=	bin/gmimms
 
-PORTDOCS=	AUTHORS ChangeLog COPYING INSTALL NEWS README
-
-DESKTOP_ENTRIES=	"GIMMS" \
+DESKTOP_ENTRIES=	"GMiMMS" \
 			"Multimedia Stream ripper" \
 			"" \
 			"gmimms" \
 			"GTK;AudioVideo;Network;" \
 			"false"
 
-NO_STAGE=	yes
+OPTIONS_DEFINE=	DOCS
+
 post-install:
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-.for doc in ${PORTDOCS}
-	@${INSTALL_DATA} ${WRKSRC}/${doc} ${DOCSDIR}
-.endfor
-.endif
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	(cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR})
 
 .include <bsd.port.mk>

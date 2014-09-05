@@ -1,5 +1,0 @@
-EclEmma is a free Java code coverage tool for Eclipse, available under the
-Eclipse Public License. Internally it is based on the great EMMA Java code
-coverage tool, trying to adopt EMMA's philosophy for the Eclipse workbench.
-
-WWW: http://www.eclemma.org/

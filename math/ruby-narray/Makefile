@@ -26,6 +26,9 @@ DOC_JA=		README.ja	SPEC.ja
 
 OPTIONS_DEFINE=	DOCS
 
+DEPRECATED=	RubyForge shutdown May 15 2014
+EXPIRATION_DATE=	2014-09-20
+
 post-install:
 	${MKDIR} ${STAGEDIR}${RUBY_MODDOCDIR}/ja
 .for f in ${DOC_EN}

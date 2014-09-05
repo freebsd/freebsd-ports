@@ -10,7 +10,7 @@ PKGNAMEPREFIX=	postgresql-
 MAINTAINER=	sunghyuk@gmail.com
 COMMENT=	PL/Lua procedural language for PostgreSQL database
 
-USES=		gmake lua pgsql:91-
+USES+=		gmake lua pgsql:9.1-
 INSTALL_TARGET=	install-strip
 
 SUB_FILES=	pkg-message

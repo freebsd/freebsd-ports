@@ -33,8 +33,8 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-mixer-applet \
 		--disable-networkmanager
 CONFIGURE_ENV=	OS_SYS="/usr/include"
-CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
-LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
+CPPFLAGS+=	-I${LOCALBASE}/include
+LIBS+=		-L${LOCALBASE}/lib
 
 GCONF_SCHEMAS=	charpick.schemas drivemount.schemas geyes.schemas \
 		mixer.schemas multiload.schemas stickynotes.schemas
@@ -78,7 +78,6 @@ IGNORE=		Python bindings for gnomedesktop are unsupported on ${ARCH}"
 .endif
 
 .if ${ARCH} != "i386" && ${ARCH} != "amd64"
-CFLAGS+=	-fPIC
 PLIST_SUB+=	BATTERY="@comment "
 .else
 GCONF_SCHEMAS+=	battstat.schemas
@@ -90,6 +89,10 @@ PLIST_SUB+=	CPUFREQ="@comment "
 .else
 PLIST_SUB+=	CPUFREQ=""
 GCONF_SCHEMAS+= cpufreq-applet.schemas
+.endif
+
+.if !(${OPSYS} == FreeBSD && ${OSVERSION} < 900033)
+LDFLAGS+=	-Wl,--add-needed
 .endif
 
 post-patch:

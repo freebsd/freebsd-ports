@@ -1,7 +1,0 @@
-T3X is a minimum procedural language: small, portable,
-block-structured, recursive, almost typeless, and to
-some degree object-oriented.
-
-This package contains the full optimizing T3X compiler
-with native 386, C, and bytecode back ends, complete
-documentation, and lots of tools.

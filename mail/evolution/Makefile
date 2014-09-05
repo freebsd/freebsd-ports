@@ -109,6 +109,12 @@ post-patch:
 		-e 's|-Wl,--no-undefined||g' \
 		-e 's|-Wmissing-include-dirs||g' \
 	    	${WRKSRC}/configure
+	@${REINPLACE_CMD} 's/g_thread_init.*/(void)0;/' \
+		${WRKSRC}/calendar/gui/alarm-notify/notify-main.c \
+		${WRKSRC}/capplet/settings/mail-guess-servers.c \
+		${WRKSRC}/capplet/anjal-settings-main.c \
+		${WRKSRC}/plugins/backup-restore/backup.c \
+		${WRKSRC}/shell/main.c
 	@${REINPLACE_CMD} -e 's|/usr|${LOCALBASE}|g' \
 		${WRKSRC}/modules/spamassassin/evolution-spamassassin.c \
 		${WRKSRC}/modules/bogofilter/evolution-bogofilter.c

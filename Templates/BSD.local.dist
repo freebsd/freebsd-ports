@@ -10,6 +10,8 @@
     etc
         devd
         ..
+        libmap.d
+        ..
         man.d
         ..
         newsyslog.conf.d
@@ -17,6 +19,8 @@
         pam.d
         ..
         rc.d
+        ..
+        rc.conf.d
         ..
     ..
     include

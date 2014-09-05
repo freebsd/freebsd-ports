@@ -3,7 +3,7 @@
 
 PORTNAME=	xrot
 PORTVERSION=	1.3.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	http://hanzubon.jp/mirrors/Vine/%SUBDIR%/ \
 		http://ftp.jaist.ac.jp/pub/Linux/Vine/%SUBDIR%/ \
@@ -13,7 +13,7 @@ MASTER_SITES=	http://hanzubon.jp/mirrors/Vine/%SUBDIR%/ \
 		http://ftp.vinelinux.org/pub/Vine/%SUBDIR%/
 MASTER_SITE_SUBDIR=	VinePlus/1.1/JG-0.9.1/sources
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	games@FreeBSD.org
 COMMENT=	Falling ball puzzle game for X
 
 WRKSRC=		${WRKDIR}/xrot

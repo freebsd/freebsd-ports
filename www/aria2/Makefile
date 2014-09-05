@@ -28,6 +28,7 @@ CONFIGURE_ENV=	OPENSSL_CFLAGS=-I${OPENSSLINC} \
 		ZLIB_LIBS="-L${LIBDIR} -lz" \
 		ac_cv_path_RST2HTML=no
 GNU_CONFIGURE=	yes
+INSTALL_TARGET=	install-strip
 USE_CXXSTD=	c++11
 USE_GNOME=	libxml2
 USE_LDCONFIG=	yes
@@ -53,8 +54,5 @@ ARIA2_DISK_CACHE?=	16M
 .if ${ARCH} == "powerpc" && ${OSVERSION} > 900000
 BROKEN=		Does not install on powerpc-9
 .endif
-
-post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libaria2.so.0.0.0
 
 .include <bsd.port.post.mk>

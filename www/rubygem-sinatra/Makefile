@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	sinatra
-PORTVERSION=	1.4.4
-PORTREVISION=	1
+PORTVERSION=	1.4.5
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
@@ -14,7 +13,7 @@ LICENSE=	MIT
 
 RUN_DEPENDS=	rubygem-rack>=1.4:${PORTSDIR}/www/rubygem-rack \
 		rubygem-rack-protection>=1.4:${PORTSDIR}/www/rubygem-rack-protection \
-		rubygem-tilt>=1.3.4:${PORTSDIR}/devel/rubygem-tilt
+		rubygem-tilt1>=1.3.4:${PORTSDIR}/devel/rubygem-tilt1
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	activemessaging
-PORTVERSION=	0.12.1
+PORTVERSION=	0.13.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 

@@ -18,6 +18,7 @@
     SUBDIR += fowsr
     SUBDIR += foxtrotgps
     SUBDIR += garmindev
+    SUBDIR += geographiclib
     SUBDIR += gkrellmoon2
     SUBDIR += gmapcatcher
     SUBDIR += google-earth

@@ -97,7 +97,6 @@ include/vdk-2/vdk/vdkustring.h
 include/vdk-2/vdk/vdkutils.h
 include/vdk-2/vdk/widcontain.h
 lib/libvdk-2.a
-lib/libvdk-2.la
 lib/libvdk-2.so
 lib/libvdk-2.so.2
 lib/libvdk-2.so.2.5.1

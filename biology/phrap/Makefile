@@ -1,11 +1,10 @@
-# Created by: Motomichi Matsuzaki <mzaki@biol.s.u-tokyo.ac.jp>
 # $FreeBSD$
 
 PORTNAME=	phrap
-PORTVERSION=	0.990329
+PORTVERSION=	1.090518
 CATEGORIES=	biology
 MASTER_SITES=	# put the tarball manually
-DISTFILES=	distrib.tar.Z
+DISTFILES=	distrib.tar.gz
 DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	mzaki@m.u-tokyo.ac.jp
@@ -19,19 +18,14 @@ IGNORE=		distribution files must be obtained via the authors
 NO_WRKSUBDIR=	yes
 
 MAKEFILE=	makefile
-ALL_TARGET=	all manyreads
+ALL_TARGET=	all
 
-BINARIES=	cluster cross_match cross_match.manyreads loco \
-		phrap phrap.longreads phrap.manyreads swat
+BINARIES=	calf_merge pcluster cross_match loco phrap swat
 SCRIPTS=	phrapview
-.for f in ${BINARIES} ${SCRIPTS}
-PLIST_FILES+=	bin/${f}
-.endfor
 
-PORTDATA=	BLOSUM50 BLOSUM62 PAM250 mat50 mat70 penalty2 vector.seq
+PORTDATA=	BLOSUM50 BLOSUM62 PAM250 mat50 mat70 mb_matrix penalty2 vector.seq
 PORTDOCS=	general.doc phrap.doc swat.doc
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .for f in ${DISTFILES}
@@ -42,21 +36,18 @@ IGNORE=	you must request the source code \(${DISTFILES}\) via e-mail, place it m
 
 do-install:
 .for f in ${BINARIES}
-	@${INSTALL_PROGRAM} ${WRKSRC}/${f} ${PREFIX}/bin/
-	@${CHMOD} a-r ${PREFIX}/bin/${f} # as required by the agreement
+	@${INSTALL_PROGRAM} ${WRKSRC}/${f} ${STAGEDIR}${PREFIX}/bin/
 .endfor
 .for f in ${SCRIPTS}
-	@${INSTALL_SCRIPT} ${WRKSRC}/${f} ${PREFIX}/bin/
+	@${INSTALL_SCRIPT} ${WRKSRC}/${f} ${STAGEDIR}${PREFIX}/bin/
 .endfor
-	@${MKDIR} ${DATADIR}
+	@${MKDIR} ${STAGEDIR}${DATADIR}
 .for f in ${PORTDATA}
-	@${INSTALL_DATA} ${WRKSRC}/${f} ${DATADIR}
+	@${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DATADIR}
 .endfor
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for f in ${PORTDOCS}
-	@${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}
 .endfor
-.endif
 
 .include <bsd.port.post.mk>

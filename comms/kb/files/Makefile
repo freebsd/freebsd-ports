@@ -13,4 +13,4 @@ kb_server:	kb_server.c
 
 kb:	boxes.c fboxes.c kb.c radio.c bsd_bells.c fields.c sboxes.c \
 	couzon.c init.c kb_server.c support.c elogs.c io.c network.c tree.c
-	${CC} ${CFLAGS} -DSPKR -I. ${LIBS} kb.c -o kb
+	${CC} ${CFLAGS} -DSPKR -I. ${LIBS} kb.c -o kb -lm

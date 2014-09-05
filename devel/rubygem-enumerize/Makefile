@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	enumerize
-PORTVERSION=	0.7.0
+PORTVERSION=	0.8.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -15,8 +15,6 @@ USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
 
 USE_RUBY_FEATURES=	iconv
-
-NOPORTDOCS=	yes
 
 
 .include <bsd.port.mk>

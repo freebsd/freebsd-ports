@@ -14,7 +14,7 @@ LIB_DEPENDS=	libexpat.so:${PORTSDIR}/textproc/expat2
 
 USE_LDCONFIG=	yes
 
-USES=		tcl
+USES=		tcl uidfix
 PLIST_SUB+=	TCL_VERSION=${TCL_VER}
 
 MAKEFILE=	${FILESDIR}/Makefile

@@ -3,6 +3,7 @@
 
 PORTNAME=	fox
 PORTVERSION=	1.7.49
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://ftp.fox-toolkit.org/pub/ \
    		ftp://ftp.fox-toolkit.org/pub/
@@ -19,7 +20,7 @@ PLIST_SUB+=	MAJORVER=${MAJORVER}
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}-${MAJORVER}
 
 GNU_CONFIGURE=	yes
-USES=		libtool:keepla pathfix
+USES=		libtool pathfix
 USE_GL=		glut
 USE_XORG=	sm xft
 USE_LDCONFIG=	yes

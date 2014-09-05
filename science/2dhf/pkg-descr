@@ -1,9 +1,0 @@
-A Numerical Hartree-Fock Program for Diatomic Molecules
-
-The program finds virtually exact solution of the Hartree-Fock
-and Hartree-Fock-Slater equations for diatomic molecules. The
-lowest eigenstates of a given irreducible representation and
-spin can be obtained. Distributed under GPL.
-
-WWW: http://scarecrow.1g.fi/2d/admin/getit.html
-

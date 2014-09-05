@@ -3,7 +3,7 @@
 
 PORTNAME=	unbound
 PORTVERSION=	1.4.22
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	dns
 MASTER_SITES=	http://unbound.net/downloads/
 
@@ -13,7 +13,7 @@ COMMENT=	Validating, recursive, and caching DNS resolver
 LICENSE=	BSD4CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES+=		gmake
+USES+=		gmake libtool
 USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--with-ssl=${OPENSSLBASE} --with-libexpat=${LOCALBASE}
@@ -32,7 +32,6 @@ PLIST_SUB+=	PYTHON=${PYTHON} MUNIN=${MUNIN}
 OPTIONS_DEFINE=	THREADS PYTHON GOST ECDSA MUNIN DOCS LIBEVENT
 OPTIONS_DEFAULT=THREADS ECDSA
 
-
 LIBEVENT_DESC=	Build against libevent (devel/libevent2)
 GOST_DESC=	Enable GOST support (requires OpenSSL >= 1.0)
 ECDSA_DESC=	Enable ECDSA (elliptic curve) support (OpenSSL >= 1.0)
@@ -43,7 +42,7 @@ MUNIN_DESC=	Install Munin plugin
 LIB_DEPENDS+=	libexpat.so:${PORTSDIR}/textproc/expat2 \
 		libldns.so:${PORTSDIR}/dns/ldns
 
-STRIP_FILES=	.libs/libunbound.so.4 unbound-checkconf unbound \
+STRIP_FILES=	.libs/libunbound.so unbound-checkconf unbound \
 		unbound-control .libs/unbound-host .libs/unbound-anchor
 
 .if ${PORT_OPTIONS:MPYTHON}

@@ -3,7 +3,7 @@
 
 PORTNAME=	yadifa
 PORTVERSION=	1.0.3
-PORTREVISION=	2
+PORTREVISION=	3
 DISTVERSIONSUFFIX=	-2880
 CATEGORIES=	dns ipv6
 MASTER_SITES=	http://cdn.yadifa.eu/sites/default/files/releases/
@@ -16,7 +16,7 @@ LICENSE=	BSD
 OPTIONS_DEFINE=	DOCS EXAMPLES TCL
 
 GNU_CONFIGURE=	yes
-USE_AUTOTOOLS=	libtool
+USES=		libtool
 USE_OPENSSL=	yes
 CONFIGURE_ARGS=	--localstatedir=/var
 TCL_USES=	tcl
@@ -32,7 +32,8 @@ post-configure:
 	${REINPLACE_CMD} -e 's|/usr/local/var|/var|' -e 's|/var/zones|/var/${PORTNAME}|' ${WRKSRC}/etc/yadifad.conf.example
 
 post-install:
-	${INSTALL_DATA} ${WRKSRC}/etc/yadifad.conf.example ${STAGEDIR}${PREFIX}/etc/
+	${INSTALL_DATA} ${WRKSRC}/etc/yadifad.conf.example \
+		${STAGEDIR}${PREFIX}/etc/yadifad.conf.sample
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
 	@${MV} ${STAGEDIR}/var/zones ${STAGEDIR}/var/${PORTNAME}

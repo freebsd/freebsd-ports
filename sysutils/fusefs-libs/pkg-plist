@@ -10,13 +10,13 @@ include/fuse/fuse_lowlevel_compat.h
 include/fuse/fuse_opt.h
 include/ulockmgr.h
 lib/libfuse.a
-lib/libfuse.la
 lib/libfuse.so
 lib/libfuse.so.2
+lib/libfuse.so.2.9.3
 lib/libulockmgr.a
-lib/libulockmgr.la
 lib/libulockmgr.so
 lib/libulockmgr.so.1
+lib/libulockmgr.so.1.0.1
 libdata/pkgconfig/fuse.pc
 man/man1/fusermount.1.gz
 man/man1/ulockmgr_server.1.gz

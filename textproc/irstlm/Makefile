@@ -3,7 +3,7 @@
 
 PORTNAME=	irstlm
 PORTVERSION=	5.80.03
-PORTREVISION=	1
+PORTREVISION=	3
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=${PORTNAME}/${PORTNAME}/${PORTNAME}-5.80
@@ -14,11 +14,12 @@ COMMENT=	The IRST Language Modeling Toolkit
 RUN_DEPENDS=	${LOCALBASE}/bin/bash:${PORTSDIR}/shells/bash
 
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--enable-shared
 USE_PERL5=	run
-USE_GCC=	yes
 USE_AUTOTOOLS=	libtoolize aclocal autoconf automake
 AUTOMAKE_ARGS=	--add-missing
 USES=		shebangfix libtool tar:tgz
+USE_LDCONFIG=	yes
 SHEBANG_FILES=	scripts/add-start-end.sh scripts/lm-stat.pl scripts/sort-lm.pl scripts/build-lm-qsub.sh scripts/mdtsel.sh scripts/split-dict.pl scripts/build-lm.sh scripts/merge-sublm.pl scripts/split-ngt.sh scripts/build-sublm.pl scripts/ngram-split.pl scripts/goograms2ngrams.pl scripts/rm-start-end.sh
 
 .include <bsd.port.mk>

@@ -6255,7 +6255,6 @@ games/sumwars||2014-06-30|Has expired: Broken for more than 5 months
 audio/ruby-esound||2014-06-30|Has expired: Broken for more than 5 months
 x11-toolkits/py-pyqwt||2014-06-30|Has expired: Broken for more than 5 months
 net-im/ysm||2014-06-30|Has expired: Broken for more than 5 months
-net-mgmt/send||2014-06-30|Has expired: Broken for more than 5 months
 net/p5-Jifty-Plugin-Authentication-Ldap||2014-06-30|Has expired: Broken for more than 5 months
 net-p2p/bittyrant||2014-06-30|Has expired: Broken for more than 5 months
 sysutils/gkrellm||2014-06-30|Has expired: GKrellM 1.X is no longer being developed, consider using 2.X
@@ -6763,9 +6762,577 @@ korean/unzip|archivers/unzip|2014-08-15|Merged with archivers/unzip as a new non
 russian/unzip|archivers/unzip|2014-08-15|Merged with archivers/unzip as a new non-default option
 mail/sendmail-sasl|mail/sendmail|2014-08-15|Removed: Use mail/sendmail instead
 print/cups-samba||2014-08-15|Removed: defunct for long, disappeared upstream
+databases/db4|databases/db48|2014-08-15|Superseded by databases/db48
+databases/db41|databases/db48|2014-08-15|Superseded by databases/db48
+databases/db41-nocrypto|databases/db48|2014-08-15|Superseded by databases/db48
+databases/db42|databases/db48|2014-08-15|Superseded by databases/db48
+databases/db42-nocrypto|databases/db48|2014-08-15|Superseded by databases/db48
+databases/db43|databases/db48|2014-08-15|Superseded by databases/db48
+databases/db44|databases/db48|2014-08-15|Superseded by databases/db48
+databases/db46|databases/db48|2014-08-15|Superseded by databases/db48
+databases/db47|databases/db48|2014-08-15|Superseded by databases/db48
 security/sguil-client|security/sguil|2014-08-16|Merged into new port security/sguil
 security/sguil-sensor|security/sguil|2014-08-16|Merged into new port security/sguil
 security/sguil-server|security/sguil|2014-08-16|Merged into new port security/sguil
 databases/jasperserver||2014-08-18|Has expired: Unstaged, depends on expiring devel/maven2
 devel/maven2|devel/maven3|2014-08-18|Has expired: No longer supported by the Apache Foundation. Use 3.x instead
 x11-clocks/alarm-clock||2014-08-18|Removed: disappeared upstream
+mail/rss2email|mail/rss2email2|2014-08-19|Renamed to avoid ambiguity with mail/rss2email3
+news/husky-base||2014-08-19|Obsolete due to husky-*-devel => husky-* migration
+news/husky-bsopack||2014-08-19|Obsolete due to husky-*-devel => husky-* migration
+news/husky-hptkill||2014-08-19|Obsolete due to husky-*-devel => husky-* migration
+news/husky-hptsqfix||2014-08-19|Obsolete due to husky-*-devel => husky-* migration
+news/husky-hpucode||2014-08-19|Obsolete due to husky-*-devel => husky-* migration
+news/husky-msged||2014-08-19|Obsolete due to husky-*-devel => husky-* migration
+news/husky-nltools||2014-08-19|Obsolete due to husky-*-devel => husky-* migration
+news/husky-sqpack||2014-08-19|Obsolete due to husky-*-devel => husky-* migration
+deskutils/horde3-hermes||2014-08-20|Has expired: EOL in April 2012
+deskutils/horde3-klutz||2014-08-20|Has expired: EOL in April 2012
+deskutils/horde3-kronolith||2014-08-20|Has expired: EOL in April 2012
+deskutils/horde3-mnemo||2014-08-20|Has expired: EOL in April 2012
+devel/horde3-chora||2014-08-20|Has expired: EOL in April 2012
+ftp/horde3-gollem||2014-08-20|Has expired: EOL in April 2012
+games/linux-steam||2014-08-20|Has expired: Unmaintained interactive port
+games/linux-ut2004-demo||2014-08-20|Has expired: Unmaintained restricted ancient demo
+mail/horde3-dimp||2014-08-20|Has expired: EOL in April 2012
+mail/horde3-forwards||2014-08-20|Has expired: EOL in April 2012
+mail/horde3-ingo||2014-08-20|Has expired: EOL in April 2012
+mail/horde3-mimp||2014-08-20|Has expired: EOL in April 2012
+mail/horde3-vacation||2014-08-20|Has expired: EOL in April 2012
+net-mgmt/horde3-nic||2014-08-20|Has expired: EOL in April 2012
+net-mgmt/nocol||2014-08-20|Has expired: Unmaintained interactive port
+net-mgmt/ourmon||2014-08-20|Has expired: Unmaintained interactive port
+net/wowzamediaserverpro||2014-08-20|Has expired: Unmaintained interactive port
+news/p5-NNML||2014-08-20|Has expired: Unmaintained interactive port
+print/dvips||2014-08-20|Has expired: Unmaintained interactive port
+print/xdvi||2014-08-20|Has expired: Unmaintained interactive port
+security/horde3-jeta||2014-08-20|Has expired: EOL in April 2012
+security/hunch||2014-08-20|Has expired: Likely unused interactive port
+www/horde3-ansel||2014-08-20|Has expired: EOL in April 2012
+www/horde3-meta||2014-08-20|Has expired: EOL in April 2012
+www/horde3-passwd||2014-08-20|Has expired: EOL in April 2012
+www/horde3-trean||2014-08-20|Has expired: EOL in April 2012
+www/wwwcount||2014-08-20|Has expired: Ancient interactive port
+x11-clocks/xalarm||2014-08-20|Has expired: Unmaintained interactive port
+mail/horde3-turba||2014-08-20|Has expired: EOL in April 2012
+deskutils/horde3-nag||2014-08-20|Has expired: EOL in April 2012
+devel/horde3-whups||2014-08-20|Has expired: EOL in April 2012
+mail/horde3-imp||2014-08-20|Has expired: EOL in April 2012
+www/horde3-base||2014-08-20|Has expired: EOL in April 2012
+print/tex-omegaware-old||2014-08-22|Deprecated in favor of print/tex-aleph
+databases/pg_filedump||2014-08-22|Has expired: Broken for more than 6 months
+devel/svnmerge||2014-08-22|Has expired: Broken for more than 6 months
+net-mgmt/circe||2014-08-22|Has expired: Broken for more than 6 months
+print/latex-aa||2014-08-22|Has expired: Broken for more than 6 months
+textproc/rast||2014-08-22|Has expired: Broken for more than 6 months
+www/abyssws||2014-08-22|Has expired: Broken for more than 6 months
+www/docebo||2014-08-22|Has expired: Not maintained upstream
+www/rejik||2014-08-22|Has expired: Broken for more than 6 months and depends on www/squid which reached EOL 2 years ago
+devel/rubygem-railsless-deploy||2014-08-22|Removed: Obsolete, Capistrano 3 does not ship with any Railsisms and is better than Capistrano 2 and railsless-deploy
+lang/gcc410|lang/gcc5|2014-08-22|Renamed to GCC 5 upstream
+security/pam_abl||2014-08-24|Has expired: Newer version requires large number of hacks, not worth the effort
+www/rubygem-feedzirra|www/rubygem-feedjira|2014-08-24|Has expired: Project renamed upstream, see www/rubygem-feedjira
+devel/picosat|math/picosat|2014-08-25|More appropriate primary category
+devel/py-pycosat|math/py-pycosat|2014-08-25|More appropriate primary category
+games/bomns3|games/3omns|2014-08-26|Has expired: Development ceased, use 3omns
+misc/rubygem-mime-types117|misc/rubygem-mime-types1|2014-08-26|Renamed to properly reflect version
+devel/rubygem-json146|devel/rubygem-json|2014-08-28|Has expired: Old version no longer required by dependencies
+archivers/rubygem-bzip2|archivers/rubygem-bzip2-ruby|2014-08-29|Rename to match our rubygems naming
+ports-mgmt/pkg_add_it||2014-08-30|Has expired: Does not support pkgng
+print/dviselect|print/texlive-base|2014-08-30|Use print/texlive-base instead
+chinese/acroread8-zh_CN||2014-08-30|Deprecated: many security issues are reported and Adobe no longer actively supports Adobe Reader for Unix
+chinese/acroread8-zh_TW||2014-08-30|Deprecated: many security issues are reported and Adobe no longer actively supports Adobe Reader for Unix
+french/acroread8||2014-08-30|Deprecated: many security issues are reported and Adobe no longer actively supports Adobe Reader for Unix
+french/acroread9||2014-08-30|Deprecated: many security issues are reported and Adobe no longer actively supports Adobe Reader for Unix
+german/acroread8||2014-08-30|Deprecated: many security issues are reported and Adobe no longer actively supports Adobe Reader for Unix
+german/acroread9||2014-08-30|Deprecated: many security issues are reported and Adobe no longer actively supports Adobe Reader for Unix
+japanese/acroread8||2014-08-30|Deprecated: many security issues are reported and Adobe no longer actively supports Adobe Reader for Unix
+japanese/acroread9||2014-08-30|Deprecated: many security issues are reported and Adobe no longer actively supports Adobe Reader for Unix
+korean/acroread8||2014-08-30|Deprecated: many security issues are reported and Adobe no longer actively supports Adobe Reader for Unix
+portuguese/acroread8||2014-08-30|Deprecated: many security issues are reported and Adobe no longer actively supports Adobe Reader for Unix
+print/acroread8||2014-08-30|Deprecated: many security issues are reported and Adobe no longer actively supports Adobe Reader for Unix
+print/acroread9||2014-08-30|Deprecated: many security issues are reported and Adobe no longer actively supports Adobe Reader for Unix
+print/acroreadwrapper||2014-08-30|Deprecated: many security issues are reported and Adobe no longer actively supports Adobe Reader for Unix
+print/dk-acroread8||2014-08-30|Deprecated: many security issues are reported and Adobe no longer actively supports Adobe Reader for Unix
+print/es-acroread8||2014-08-30|Deprecated: many security issues are reported and Adobe no longer actively supports Adobe Reader for Unix
+print/fi-acroread8||2014-08-30|Deprecated: many security issues are reported and Adobe no longer actively supports Adobe Reader for Unix
+print/it-acroread8||2014-08-30|Deprecated: many security issues are reported and Adobe no longer actively supports Adobe Reader for Unix
+print/nl-acroread8||2014-08-30|Deprecated: many security issues are reported and Adobe no longer actively supports Adobe Reader for Unix
+print/no-acroread8||2014-08-30|Deprecated: many security issues are reported and Adobe no longer actively supports Adobe Reader for Unix
+print/sv-acroread8||2014-08-30|Deprecated: many security issues are reported and Adobe no longer actively supports Adobe Reader for Unix
+net-p2p/p5-Net-DirectConnect-TigerHash||2014-08-31|Broken for many months and security/p5-Crypt-RHash is a suitable replacement
+games/childsplay_plugins||2014-08-31|Plugins package is no longer created for new versions of childsplay
+print/tex-texmflocal||2014-08-31|Removed: no longer required for TeXLive
+audio/emu10kx||2014-09-01|Not staged
+audio/festvox-us1-mbrola||2014-09-01|Not staged
+audio/festvox-us2-mbrola||2014-09-01|Not staged
+audio/festvox-us3-mbrola||2014-09-01|Not staged
+audio/ipod-sharp||2014-09-01|Not staged
+audio/linux-musicipserver||2014-09-01|Not staged
+audio/liquidsoap||2014-09-01|Not staged
+benchmarks/spec-sfs||2014-09-01|Not staged
+biology/blast||2014-09-01|Not staged
+biology/embassy||2014-09-01|Not staged
+biology/pymol||2014-09-01|Not staged
+cad/scv||2014-09-01|Not staged
+cad/systemc||2014-09-01|Not staged
+chinese/cmexfonts||2014-09-01|Not staged
+chinese/cwtex||2014-09-01|Not staged
+chinese/hanzim||2014-09-01|Not staged
+chinese/miniChinput||2014-09-01|Not staged
+chinese/moefonts-cid||2014-09-01|Not staged
+chinese/msttf||2014-09-01|Not staged
+chinese/pine4||2014-09-01|Not staged
+chinese/xsim||2014-09-01|Not staged
+chinese/zhcon||2014-09-01|Not staged
+comms/gammu-devel||2014-09-01|Not staged
+databases/cyrus-imspd||2014-09-01|Not staged
+databases/db4o-mono||2014-09-01|Not staged
+databases/dbXML||2014-09-01|Not staged
+databases/exist||2014-09-01|Not staged
+databases/flare||2014-09-01|Not staged
+databases/hk_classes||2014-09-01|Not staged
+databases/lsdb||2014-09-01|Not staged
+databases/msql3||2014-09-01|Not staged
+databases/mysqlcppapi||2014-09-01|Not staged
+databases/ocaml-pgocaml||2014-09-01|Not staged
+databases/pear-Doctrine12||2014-09-01|Not staged
+databases/ruby-msql||2014-09-01|Not staged
+databases/ruby-oci8||2014-09-01|Not staged
+deskutils/adesklets||2014-09-01|Not staged
+deskutils/org-mode.el||2014-09-01|Not staged
+deskutils/planner.el||2014-09-01|Not staged
+deskutils/remember.el||2014-09-01|Not staged
+devel/asdlgen||2014-09-01|Not staged
+devel/ats-contrib-testing||2014-09-01|Not staged
+devel/e4graph||2014-09-01|Not staged
+devel/eclipse-eclemma||2014-09-01|Not staged
+devel/elib||2014-09-01|Not staged
+devel/entity||2014-09-01|Not staged
+devel/flowdesigner||2014-09-01|Not staged
+devel/gjstest||2014-09-01|Not staged
+devel/jzmq||2014-09-01|Not staged
+devel/libparserutils||2014-09-01|Not staged
+devel/libslave||2014-09-01|Not staged
+devel/linux-kmod-compat||2014-09-01|Not staged
+devel/ml-doc||2014-09-01|Not staged
+devel/mongo-cxx-driver||2014-09-01|Not staged
+devel/nemiver||2014-09-01|Not staged
+devel/ocaml-event||2014-09-01|Not staged
+devel/ocamlweb||2014-09-01|Not staged
+devel/p4db||2014-09-01|Not staged
+devel/p5-Alzabo-GUI-Mason||2014-09-01|Not staged
+devel/php-java-bridge||2014-09-01|Not staged
+devel/pmk||2014-09-01|Not staged
+devel/pure-gen||2014-09-01|Not staged
+devel/ruby-amstd||2014-09-01|Not staged
+devel/ruby-avl||2014-09-01|Not staged
+devel/ruby-robjectteam||2014-09-01|Not staged
+devel/sfslite-dbg||2014-09-01|Not staged
+devel/sfslite-noopt||2014-09-01|Not staged
+devel/sfslite||2014-09-01|Not staged
+devel/sml_tk||2014-09-01|Not staged
+devel/stlport||2014-09-01|Not staged
+devel/sunterlib||2014-09-01|Not staged
+devel/tide||2014-09-01|Not staged
+devel/uppaal||2014-09-01|Not staged
+devel/ustl||2014-09-01|Not staged
+devel/vtg||2014-09-01|Not staged
+dns/poweradmin||2014-09-01|Not staged
+editors/color-mate||2014-09-01|Not staged
+editors/gnuserv||2014-09-01|Not staged
+editors/jext||2014-09-01|Not staged
+editors/komodo-ide||2014-09-01|Not staged
+editors/psgml||2014-09-01|Not staged
+editors/setedit||2014-09-01|Not staged
+editors/softmaker-office||2014-09-01|Not staged
+editors/textedit||2014-09-01|Not staged
+emulators/its||2014-09-01|Not staged
+emulators/linux-geepee32||2014-09-01|Not staged
+emulators/linux-systemsimcell||2014-09-01|Not staged
+emulators/psim-freebsd||2014-09-01|Not staged
+emulators/vMac||2014-09-01|Not staged
+finance/opentaxsolver||2014-09-01|Not staged
+french/facturier||2014-09-01|Not staged
+ftp/vsftpd-ext||2014-09-01|Not staged
+games/actx||2014-09-01|Not staged
+games/atitd||2014-09-01|Not staged
+games/avp-demo||2014-09-01|Not staged
+games/linux-sof||2014-09-01|Not staged
+games/quake3-freezetag||2014-09-01|Not staged
+games/rftg||2014-09-01|Not staged
+games/rftg||2014-09-01|Not staged
+german/manpages||2014-09-01|Not staged
+graphics/Cgraph||2014-09-01|Not staged
+graphics/glide3||2014-09-01|Not staged
+graphics/gdtclft||2014-09-01|Not staged
+graphics/ivtools||2014-09-01|Not staged
+graphics/linux_glide||2014-09-01|Not staged
+graphics/mingplot||2014-09-01|Not staged
+graphics/orca||2014-09-01|Not staged
+graphics/php5-chartdirector||2014-09-01|Not staged
+graphics/pinta||2014-09-01|Not staged
+graphics/ruby-rmagick||2014-09-01|Not staged
+graphics/sane-epkowa||2014-09-01|Not staged
+graphics/uDrawGraph||2014-09-01|Not staged
+graphics/visionworkbench||2014-09-01|Not staged
+irc/bobot++||2014-09-01|Not staged
+japanese/flex-sdk||2014-09-01|Not staged
+japanese/gqmpeg||2014-09-01|Not staged
+japanese/ja6||2014-09-01|Not staged
+japanese/lambdamoo||2014-09-01|Not staged
+japanese/makejvf||2014-09-01|Not staged
+japanese/mell||2014-09-01|Not staged
+japanese/mendexk-euc||2014-09-01|Not staged
+japanese/platex-japanese||2014-09-01|Not staged
+japanese/postgresql82-man||2014-09-01|Not staged
+japanese/prime-el||2014-09-01|Not staged
+japanese/rbnamazu||2014-09-01|Not staged
+java/jai-imageio||2014-09-01|Not staged
+java/jboss5||2014-09-01|Not staged
+java/jc||2014-09-01|Not staged
+java/poseidon||2014-09-01|Not staged
+lang/Sather||2014-09-01|Not staged
+lang/gnustep-guile||2014-09-01|Not staged
+lang/haskell-mode.el||2014-09-01|Not staged
+lang/hiphop-php||2014-09-01|Not staged
+lang/lush||2014-09-01|Not staged
+lang/metaocaml||2014-09-01|Not staged
+lang/mpd||2014-09-01|Not staged
+lang/ocaml-camlidl||2014-09-01|Not staged
+lang/ocaml-mode.el||2014-09-01|Not staged
+lang/ocs||2014-09-01|Not staged
+lang/oorexx||2014-09-01|Not staged
+lang/rakudo||2014-09-01|Not staged
+lang/sml-mode.el||2014-09-01|Not staged
+lang/sr||2014-09-01|Not staged
+lang/t3x||2014-09-01|Not staged
+lang/xds-c||2014-09-01|Not staged
+lang/xds||2014-09-01|Not staged
+lang/xotcl||2014-09-01|Not staged
+mail/elm+ME||2014-09-01|Not staged
+mail/elm||2014-09-01|Not staged
+mail/emh||2014-09-01|Not staged
+mail/extmail||2014-09-01|Not staged
+mail/extman||2014-09-01|Not staged
+mail/ezmlm-web||2014-09-01|Not staged
+mail/filtermail||2014-09-01|Not staged
+mail/firemime||2014-09-01|Not staged
+mail/firepay||2014-09-01|Not staged
+mail/ftrack||2014-09-01|Not staged
+mail/greylite||2014-09-01|Not staged
+mail/ilohamail||2014-09-01|Not staged
+mail/majordomo||2014-09-01|Not staged
+mail/openwebmail||2014-09-01|Not staged
+mail/p3scan||2014-09-01|Not staged
+mail/popd||2014-09-01|Not staged
+mail/popper||2014-09-01|Not staged
+mail/postfix-gps||2014-09-01|Not staged
+mail/postfix28||2014-09-01|Not staged
+mail/postfix29||2014-09-01|Not staged
+mail/postpals||2014-09-01|Not staged
+mail/premail||2014-09-01|Not staged
+mail/qmail-scanner1||2014-09-01|Not staged
+mail/qmail-scanner||2014-09-01|Not staged
+mail/qscan||2014-09-01|Not staged
+mail/quickml||2014-09-01|Not staged
+mail/rabl_client||2014-09-01|Not staged
+mail/rabl_server||2014-09-01|Not staged
+mail/relay-ctrl||2014-09-01|Not staged
+mail/reply-o-matic||2014-09-01|Not staged
+mail/sccmilter||2014-09-01|Not staged
+mail/smfsav||2014-09-01|Not staged
+mail/softfail||2014-09-01|Not staged
+mail/spmfilter-spamassassin||2014-09-01|Not staged
+mail/sqlgrey||2014-09-01|Not staged
+mail/synonym||2014-09-01|Not staged
+mail/uebimiau||2014-09-01|Not staged
+mail/vm-pop3d||2014-09-01|Not staged
+mail/vm||2014-09-01|Not staged
+mail/wmpop3lb||2014-09-01|Not staged
+mail/xf-spf||2014-09-01|Not staged
+math/atlas-devel||2014-09-01|Not staged
+math/bihar||2014-09-01|Not staged
+math/itl||2014-09-01|Not staged
+math/javanns||2014-09-01|Not staged
+math/javaview||2014-09-01|Not staged
+math/jsmath-fonts-sprite||2014-09-01|Not staged
+math/jsmath||2014-09-01|Not staged
+math/kash3||2014-09-01|Not staged
+math/matrix||2014-09-01|Not staged
+math/mprime||2014-09-01|Not staged
+math/petsc||2014-09-01|Not staged
+math/sdpa-gmp||2014-09-01|Not staged
+math/sedumi||2014-09-01|Not staged
+math/unixstat||2014-09-01|Not staged
+misc/amanda25-client||2014-09-01|Not staged
+misc/amanda25-server||2014-09-01|Not staged
+misc/amanda26-client||2014-09-01|Not staged
+misc/amanda26-server||2014-09-01|Not staged
+misc/amanda32-client||2014-09-01|Not staged
+misc/amanda32-server||2014-09-01|Not staged
+misc/callid||2014-09-01|Not staged
+misc/color-theme.el||2014-09-01|Not staged
+misc/dotfile||2014-09-01|Not staged
+misc/libhome||2014-09-01|Not staged
+misc/mshell||2014-09-01|Not staged
+misc/quranref||2014-09-01|Not staged
+misc/tet||2014-09-01|Not staged
+misc/xfce4-artwork||2014-09-01|Not staged
+multimedia/clive1||2014-09-01|Not staged
+multimedia/mplayerxp||2014-09-01|Not staged
+multimedia/tunapie||2014-09-01|Not staged
+net-im/gyach||2014-09-01|Not staged
+net-im/iserverd||2014-09-01|Not staged
+net-im/jabber-pyaim||2014-09-01|Not staged
+net-im/komclean||2014-09-01|Not staged
+net-im/libjingle||2014-09-01|Not staged
+net-im/linpopup||2014-09-01|Not staged
+net-mgmt/argus-monitor||2014-09-01|Not staged
+net-mgmt/aspathtree||2014-09-01|Not staged
+net-mgmt/bigsister||2014-09-01|Not staged
+net-mgmt/cisco_conf||2014-09-01|Not staged
+net-mgmt/fruity||2014-09-01|Not staged
+net-mgmt/ifgraph||2014-09-01|Not staged
+net-mgmt/ipacco||2014-09-01|Not staged
+net-mgmt/macroscope||2014-09-01|Not staged
+net-mgmt/nagios-check_kumofs||2014-09-01|Not staged
+net-mgmt/nagios-portaudit||2014-09-01|Not staged
+net-mgmt/nagios-silfreed-plugins||2014-09-01|Not staged
+net-mgmt/nagiostat||2014-09-01|Not staged
+net-mgmt/ndpmon||2014-09-01|Not staged
+net-mgmt/netams-front||2014-09-01|Not staged
+net-mgmt/openvmps||2014-09-01|Not staged
+net-mgmt/ramond||2014-09-01|Not staged
+net-mgmt/rancid-devel||2014-09-01|Not staged
+net-mgmt/satellite||2014-09-01|Not staged
+net-mgmt/wide-dhcp||2014-09-01|Not staged
+net-mgmt/yabm||2014-09-01|Not staged
+net-mgmt/zenpack-checkping||2014-09-01|Not staged
+net-mgmt/zenpack-dellmon||2014-09-01|Not staged
+net-mgmt/zenpack-deviceadvdetail||2014-09-01|Not staged
+net-mgmt/zenpack-devicesearch||2014-09-01|Not staged
+net-mgmt/zenpack-grap||2014-09-01|Not staged
+net-mgmt/zenpack-interfacegraphs||2014-09-01|Not staged
+net-mgmt/zenpack-libvirt||2014-09-01|Not staged
+net-mgmt/zenpack-macreport||2014-09-01|Not staged
+net-p2p/azureus2||2014-09-01|Not staged
+net-p2p/linux-jigdo||2014-09-01|Not staged
+net-p2p/mldonkey-perlreactor||2014-09-01|Not staged
+net-p2p/mldonkey-urlslave||2014-09-01|Not staged
+net-p2p/museekplus||2014-09-01|Not staged
+net-p2p/opennap||2014-09-01|Not staged
+net-p2p/solidcoin||2014-09-01|Not staged
+net-p2p/teknap||2014-09-01|Not staged
+net-p2p/vhcp||2014-09-01|Not staged
+net/DarwinStreamingServer||2014-09-01|Not staged
+net/acx100||2014-09-01|Not staged
+net/balance||2014-09-01|Not staged
+net/bcusdk-eibd||2014-09-01|Not staged
+net/blam||2014-09-01|Not staged
+net/bld||2014-09-01|Not staged
+net/click||2014-09-01|Not staged
+net/cnet||2014-09-01|Not staged
+net/cnupm||2014-09-01|Not staged
+net/ct||2014-09-01|Not staged
+net/entitymib||2014-09-01|Not staged
+net/freedbd||2014-09-01|Not staged
+net/frickin||2014-09-01|Not staged
+net/fspd||2014-09-01|Not staged
+net/hawknl-devel||2014-09-01|Not staged
+net/hawknl||2014-09-01|Not staged
+net/heybuddy||2014-09-01|Not staged
+net/ipa_ipfw||2014-09-01|Not staged
+net/iscsi-target||2014-09-01|Not staged
+net/kojoney||2014-09-01|Not staged
+net/libtcp4u||2014-09-01|Not staged
+net/mediaproxy||2014-09-01|Not staged
+net/mknbi||2014-09-01|Not staged
+net/mmucl||2014-09-01|Not staged
+net/ncplib||2014-09-01|Not staged
+net/ng_daphne||2014-09-01|Not staged
+net/ng_mikrotik_eoip||2014-09-01|Not staged
+net/openam||2014-09-01|Not staged
+net/openmcu||2014-09-01|Not staged
+net/openser||2014-09-01|Not staged
+net/pfflowd||2014-09-01|Not staged
+net/quagga-re||2014-09-01|Not staged
+net/rexx-sock||2014-09-01|Not staged
+net/ris||2014-09-01|Not staged
+net/rshell||2014-09-01|Not staged
+net/samba4wins||2014-09-01|Not staged
+net/ser||2014-09-01|Not staged
+net/silc-client||2014-09-01|Not staged
+net/silc-irssi-plugin||2014-09-01|Not staged
+net/silc-server||2014-09-01|Not staged
+net/skyfish||2014-09-01|Not staged
+net/skystar2||2014-09-01|Not staged
+net/tac_plus-libradius||2014-09-01|Not staged
+net/tcptraceroute-devel||2014-09-01|Not staged
+net/ushare||2014-09-01|Not staged
+net/v6eval||2014-09-01|Not staged
+net/vchat||2014-09-01|Not staged
+net/vserver||2014-09-01|Not staged
+net/wire||2014-09-01|Not staged
+net/wired-tracker||2014-09-01|Not staged
+net/wired||2014-09-01|Not staged
+net/xbone||2014-09-01|Not staged
+net/xipdump||2014-09-01|Not staged
+net/xorp-devel||2014-09-01|Not staged
+news/diablo||2014-09-01|Not staged
+palm/iSiloXC||2014-09-01|Not staged
+palm/py-synce-librapi2||2014-09-01|Not staged
+palm/py-synce-librra||2014-09-01|Not staged
+palm/synce-librapi2||2014-09-01|Not staged
+palm/synce-librra||2014-09-01|Not staged
+ports-mgmt/bxpkg||2014-09-01|Not staged
+ports-mgmt/pkgfe||2014-09-01|Not staged
+ports-mgmt/prhistory||2014-09-01|Not staged
+print/bophook||2014-09-01|Not staged
+print/examplep||2014-09-01|Not staged
+print/latex-acm||2014-09-01|Not staged
+print/latex-auto-greek||2014-09-01|Not staged
+print/latex-timing||2014-09-01|Not staged
+print/latex||2014-09-01|Not staged
+print/lgrind||2014-09-01|Not staged
+print/pdfcolorsplit||2014-09-01|Not staged
+print/pdq||2014-09-01|Not staged
+print/phppdflib||2014-09-01|Not staged
+print/ruby-panda||2014-09-01|Not staged
+print/scribus-devel||2014-09-01|Not staged
+russian/libcyrillic||2014-09-01|Not staged
+russian/prawda||2014-09-01|Not staged
+russian/pscyr||2014-09-01|Not staged
+russian/rux||2014-09-01|Not staged
+russian/tac+ia||2014-09-01|Not staged
+science/2dhf||2014-09-01|Not staged
+science/abinit||2014-09-01|Not staged
+science/dtiquery||2014-09-01|Not staged
+science/elmer-hutiter||2014-09-01|Not staged
+science/elmerpost||2014-09-01|Not staged
+science/g3data||2014-09-01|Not staged
+science/gamess||2014-09-01|Not staged
+science/mcstas||2014-09-01|Not staged
+science/minc||2014-09-01|Not staged
+science/psi3||2014-09-01|Not staged
+science/x11iraf||2014-09-01|Not staged
+science/xmds||2014-09-01|Not staged
+security/bioapi||2014-09-01|Not staged
+security/bsp_upektfmess||2014-09-01|Not staged
+security/distcache-devel||2014-09-01|Not staged
+security/mosref||2014-09-01|Not staged
+security/openvpn-beta||2014-09-01|Not staged
+security/pam_bsdbioapi||2014-09-01|Not staged
+security/php-Auth_OpenID2||2014-09-01|Not staged
+security/php-Auth_OpenID||2014-09-01|Not staged
+security/php-openid-ldap||2014-09-01|Not staged
+security/samhain-client||2014-09-01|Not staged
+security/samhain-server||2014-09-01|Not staged
+security/samhain||2014-09-01|Not staged
+security/scannedonly||2014-09-01|Not staged
+security/tinysu||2014-09-01|Not staged
+sysutils/asapm||2014-09-01|Not staged
+sysutils/asr-utils||2014-09-01|Not staged
+sysutils/be_agent||2014-09-01|Not staged
+sysutils/boxbackup-devel||2014-09-01|Not staged
+sysutils/bubblemon-dockapp||2014-09-01|Not staged
+sysutils/clockspeed-conf||2014-09-01|Not staged
+sysutils/comconsole||2014-09-01|Not staged
+sysutils/comiccron||2014-09-01|Not staged
+sysutils/contool||2014-09-01|Not staged
+sysutils/createrepo||2014-09-01|Not staged
+sysutils/cromwell||2014-09-01|Not staged
+sysutils/cvsweb-converters||2014-09-01|Not staged
+sysutils/eroaster||2014-09-01|Not staged
+sysutils/freqsdwn||2014-09-01|Not staged
+sysutils/ganglia-webfrontend||2014-09-01|Not staged
+sysutils/gnomebaker||2014-09-01|Not staged
+sysutils/ispman||2014-09-01|Not staged
+sysutils/jailadmin||2014-09-01|Not staged
+sysutils/jailuser||2014-09-01|Not staged
+sysutils/linux-afaapps||2014-09-01|Not staged
+sysutils/netident||2014-09-01|Not staged
+sysutils/news||2014-09-01|Not staged
+sysutils/nut22||2014-09-01|Not staged
+sysutils/nvtv||2014-09-01|Not staged
+sysutils/penv||2014-09-01|Not staged
+sysutils/pmap||2014-09-01|Not staged
+sysutils/replicant||2014-09-01|Not staged
+sysutils/sbniconfig||2014-09-01|Not staged
+sysutils/upsd||2014-09-01|Not staged
+sysutils/wmapm||2014-09-01|Not staged
+sysutils/xsi||2014-09-01|Not staged
+textproc/ats-contrib-parcomb||2014-09-01|Not staged
+textproc/coco||2014-09-01|Not staged
+textproc/lemmatizer2||2014-09-01|Not staged
+textproc/openvanilla-modules||2014-09-01|Not staged
+textproc/pootle||2014-09-01|Not staged
+textproc/publican||2014-09-01|Not staged
+textproc/ruby-html-fillinform||2014-09-01|Not staged
+textproc/ruby-html-template||2014-09-01|Not staged
+textproc/sgmltools-lite||2014-09-01|Not staged
+textproc/sml-fxp||2014-09-01|Not staged
+textproc/tei-guidelines-p3||2014-09-01|Not staged
+textproc/tei-p3||2014-09-01|Not staged
+textproc/xalan-c||2014-09-01|Not staged
+vietnamese/vntex||2014-09-01|Not staged
+vietnamese/vnxfonts||2014-09-01|Not staged
+vietnamese/xvnkb||2014-09-01|Not staged
+www/aria||2014-09-01|Not staged
+www/aswedit||2014-09-01|Not staged
+www/bk2site||2014-09-01|Not staged
+www/bluefish-devel||2014-09-01|Not staged
+www/bugmenot-firefox||2014-09-01|Not staged
+www/cacheboy16||2014-09-01|Not staged
+www/cakephp12||2014-09-01|Not staged
+www/cas||2014-09-01|Not staged
+www/dokeos||2014-09-01|Not staged
+www/dwoo||2014-09-01|Not staged
+www/elog||2014-09-01|Not staged
+www/eyeos-themes||2014-09-01|Not staged
+www/eyeos||2014-09-01|Not staged
+www/firefox-remote||2014-09-01|Not staged
+www/foswiki-ModPerlEngineContrib||2014-09-01|Not staged
+www/free-sa||2014-09-01|Not staged
+www/harvest||2014-09-01|Not staged
+www/htmlobject||2014-09-01|Not staged
+www/hypermail||2014-09-01|Not staged
+www/lusca-head||2014-09-01|Not staged
+www/mod_auth_form||2014-09-01|Not staged
+www/mod_auth_mellon||2014-09-01|Not staged
+www/mod_ftp||2014-09-01|Not staged
+www/mod_gnutls||2014-09-01|Not staged
+www/mod_log_dbd||2014-09-01|Not staged
+www/mod_pagespeed||2014-09-01|Not staged
+www/moodle24||2014-09-01|Not staged
+www/plugger-plugins-hubbe||2014-09-01|Not staged
+www/prado||2014-09-01|Not staged
+www/quixote||2014-09-01|Not staged
+www/ruboard||2014-09-01|Not staged
+www/ruby-div||2014-09-01|Not staged
+www/snownews||2014-09-01|Not staged
+www/squirm||2014-09-01|Not staged
+www/xapian-omega10||2014-09-01|Not staged
+x11-drivers/xf86-video-rdc||2014-09-01|Not staged
+x11-themes/bluecurve-themes||2014-09-01|Not staged
+x11-themes/cursor-bluecurve-theme||2014-09-01|Not staged
+x11-themes/gnome-bluecurve-theme||2014-09-01|Not staged
+x11-themes/icon-bluecurve-theme||2014-09-01|Not staged
+x11-themes/icons-buuf||2014-09-01|Not staged
+x11-themes/kde-icons-crystal-project||2014-09-01|Not staged
+x11-themes/kde-icons-nuovext||2014-09-01|Not staged
+x11-themes/kde-icons-os-k||2014-09-01|Not staged
+x11-themes/kde-icons-vista-inspirate||2014-09-01|Not staged
+x11-themes/metacity-bluecurve-theme||2014-09-01|Not staged
+x11-toolkits/paragui-devel||2014-09-01|Not staged
+x11-wm/sapphire||2014-09-01|Not staged
+x11-themes/gtk-bluecurve-theme||2014-09-02|Not staged
+biology/phd2fasta||2014-09-01|Not staged
+databases/kumofs||2014-09-01|Not staged
+devel/lxr||2014-09-01|Not staged
+devel/scsh-install-lib||2014-09-01|Not staged
+games/qix||2014-09-01|Not staged
+games/vdrift||2014-09-01|Not staged
+net-mgmt/zenpack-graphportlet||2014-09-01|Not staged
+sysutils/boxbackup||2014-09-01|Not staged
+www/webcalendar-devel|www/webcalendar|2014-09-04|Removed, use www/webcalendar instead

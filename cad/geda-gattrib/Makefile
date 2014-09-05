@@ -3,7 +3,7 @@
 
 PORTNAME=	gattrib
 PORTVERSION=	1.4.3
-PORTREVISION=	7
+PORTREVISION=	8
 PORTEPOCH=	1
 CATEGORIES=	cad
 MASTER_SITES=	ftp://ftp.geda.seul.org/pub/geda/release/v1.4/${PORTVERSION}/ \

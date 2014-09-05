@@ -94,6 +94,6 @@
 %%GNEWSENSE%%%%THEMEDIR%%/gnewsense/screenshot.png
 %%GNEWSENSE%%%%THEMEDIR%%/gnewsense/COPYRIGHT.background
 %%GNEWSENSE%%%%THEMEDIR%%/gnewsense/panel.png
-%%FREEBSD%%@dirrmtry %%THEMEDIR%%/gnewsense
+%%GNEWSENSE%%@dirrmtry %%THEMEDIR%%/gnewsense
 @dirrmtry share/slim/themes
 @dirrmtry share/slim

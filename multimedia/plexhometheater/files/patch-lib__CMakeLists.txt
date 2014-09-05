@@ -1,0 +1,11 @@
+--- lib/CMakeLists.txt.orig	2014-08-03 10:18:46.000000000 +0800
++++ lib/CMakeLists.txt	2014-08-03 10:19:05.000000000 +0800
+@@ -6,7 +6,7 @@
+   add_subdirectory(libdvd)
+ endif()
+ 
+-if(TARGET_COMMON_LINUX)
++if(TARGET_COMMON_LINUX OR TARGET_FREEBSD)
+   add_subdirectory(xbmc-dll-symbols)
+ endif()
+ 

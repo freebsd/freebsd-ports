@@ -1,4 +1,2 @@
-SHA256 (rabbitmq/cbeb2f3c3e6d.tar.bz2) = dcb7a8dd92b9323f4e343c2a0f0553da6a1cfa3a20d935df3e3d15c595d34669
-SIZE (rabbitmq/cbeb2f3c3e6d.tar.bz2) = 62277
-SHA256 (rabbitmq/df43f2bfcf0e.tar.bz2) = 535285def95c97ca6d697c4070a15042af35688cef1049c77c6ed64b78e972af
-SIZE (rabbitmq/df43f2bfcf0e.tar.bz2) = 17370
+SHA256 (rabbitmq-c-0.5.1.tar.bz2) = 23480c6fd9cc409d4974d850453b980b9038f9bed5c9bd68a85f160b66017544
+SIZE (rabbitmq-c-0.5.1.tar.bz2) = 142062

@@ -1,9 +1,9 @@
 bin/xdvi
 bin/xdvi-motif
 man/man1/xdvi.1.gz
-%%TEXMFDIR%%/xdvi/XDvi
-%%TEXMFDIR%%/xdvi/config.xdvi
-%%TEXMFDIR%%/xdvi/pixmaps/toolbar.xpm
-%%TEXMFDIR%%/xdvi/pixmaps/toolbar2.xpm
-@dirrm %%TEXMFDIR%%/xdvi/pixmaps
-@dirrm %%TEXMFDIR%%/xdvi
+%%TEXMFDISTDIR%%/xdvi/XDvi
+%%TEXMFDISTDIR%%/xdvi/config.xdvi
+%%TEXMFDISTDIR%%/xdvi/pixmaps/toolbar.xpm
+%%TEXMFDISTDIR%%/xdvi/pixmaps/toolbar2.xpm
+@dirrm %%TEXMFDISTDIR%%/xdvi/pixmaps
+@dirrm %%TEXMFDISTDIR%%/xdvi

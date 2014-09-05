@@ -1,6 +1,13 @@
---- Gemfile.orig	2013-06-07 03:50:59.578135079 +0000
-+++ Gemfile	2013-06-07 03:51:08.336134703 +0000
-@@ -16,56 +16,3 @@
+--- ./Gemfile.orig	2013-10-20 20:14:01.000000000 +0000
++++ ./Gemfile	2014-08-24 02:33:40.871164956 +0000
+@@ -10,62 +10,9 @@
+ 
+ gem "holidays", "~>1.0.3"
+ gem "icalendar"
+-gem "nokogiri", "< 1.6.0"
++gem "nokogiri"
+ gem "open-uri-cached"
+ gem "prawn"
  gem 'json'
  gem "system_timer" if RUBY_VERSION =~ /^1\.8\./ && RUBY_PLATFORM =~ /darwin|linux/
  

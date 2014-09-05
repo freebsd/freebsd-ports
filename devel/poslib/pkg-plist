@@ -28,13 +28,13 @@ include/poslib-%%VERSION%%/poslib/types.h
 include/poslib-%%VERSION%%/poslib/vsnprintf.h
 include/poslib-%%VERSION%%/poslib/w32poll.h
 lib/libposlib.a
-lib/libposlib.la
 lib/libposlib.so
 lib/libposlib.so.0
+lib/libposlib.so.0.0.0
 lib/libposserver.a
-lib/libposserver.la
 lib/libposserver.so
 lib/libposserver.so.0
+lib/libposserver.so.0.0.0
 lib/poslib-%%VERSION%%/include/poslib-config.h
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog

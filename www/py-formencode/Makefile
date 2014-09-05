@@ -16,10 +16,8 @@ LICENSE=	PSFL
 
 OPTIONS_DEFINE=	DOCS
 
-USES=		gettext:run zip
-USE_PYTHON=	2
-USE_PYDISTUTILS=yes
-PYDISTUTILS_AUTOPLIST=	yes
+USES=		gettext:run python:2 zip
+USE_PYTHON=	distutils autoplist
 
 DOCSDIR=	${PREFIX}/share/doc/py-${PORTNAME}
 PORTDOCS=	*

@@ -2,9 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	dbmail
-PORTVERSION=	3.1.17
+PORTVERSION=	3.2.0
 CATEGORIES=	mail
-MASTER_SITES=	http://git.dbmail.eu/paul/dbmail/snapshot/
+MASTER_SITES=	http://git.dbmail.eu/paul/dbmail/snapshot/ \
+		http://www.dbmail.org/download/3.2/
 
 MAINTAINER=	ahicks@p-o.co.uk
 COMMENT=	SQL database-based mail system (POP3 and IMAP)
@@ -22,8 +23,8 @@ BUILD_DEPENDS=	asciidoc:${PORTSDIR}/textproc/asciidoc \
 
 CONFLICTS=	dbmail22-[0-9]*
 
-OPTIONS_DEFINE=	DOCS LDAP SIEVE THREADS
-OPTIONS_DEFAULT=	SIEVE THREADS
+OPTIONS_DEFINE=	DOCS LDAP SIEVE
+OPTIONS_DEFAULT=	SIEVE
 SIEVE_DESC=	Sieve mail sorting language support
 
 OPTIONS_SUB=	yes
@@ -50,8 +51,6 @@ SIEVE_LIB_DEPENDS=	libsieve.so:${PORTSDIR}/mail/libsieve
 LDAP_CONFIGURE_WITH=	ldap
 LDAP_USE=		OPENLDAP=yes
 
-THREADS_EXTRA_PATCHES=	${FILESDIR}/extra-patch-acinclude.m4
-
 DBMAIL_USER?=	mailnull
 DBMAIL_GROUP?=	mail
 PIDDIR?=	/var/run/dbmail
@@ -61,13 +60,14 @@ PLIST_SUB+=	DBMAIL_USER="${DBMAIL_USER}" \
 		PIDDIR="${PIDDIR}"
 
 post-install:
-	${INSTALL_DATA} ${WRKSRC}/dbmail.conf ${STAGEDIR}${PREFIX}/etc/dbmail.conf-dist
+	${INSTALL_DATA} ${WRKSRC}/dbmail.conf ${STAGEDIR}${PREFIX}/etc/dbmail.conf.sample
 	@${MKDIR} ${STAGEDIR}${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/dbmail.schema ${STAGEDIR}${DATADIR}
-	@for f in mysql oracle postgresql sqlite; do \
-		${MKDIR} ${STAGEDIR}${DATADIR}/$$f ; \
-		${INSTALL_DATA} ${WRKSRC}/sql/$$f/* ${STAGEDIR}${DATADIR}/$$f; \
-	done
+	(cd ${WRKSRC}/sql && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR})
+	#@for f in mysql oracle postgresql sqlite; do \
+	#	${MKDIR} ${STAGEDIR}${DATADIR}/$$f ; \
+	#	${INSTALL_DATA} ${WRKSRC}/sql/$$f/* ${STAGEDIR}${DATADIR}/$$f; \
+	#done
 	@${MKDIR} ${STAGEDIR}${PIDDIR}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${DOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}

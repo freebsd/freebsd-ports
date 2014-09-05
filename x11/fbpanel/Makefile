@@ -15,6 +15,7 @@ LICENSE=	MIT
 
 USES=		gmake pkgconfig tar:bzip2
 USE_GNOME=	gtk20
+USE_XORG=	x11
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX}
 
@@ -26,6 +27,8 @@ DESKTOP_ENTRIES="${PORTNAME}" "${PORTNAME} NETWM compliant X11 desktop panel" \
 		"${PORTNAME}" "${PORTNAME}" "System;" false
 
 post-patch:
+	@${REINPLACE_CMD} -e '/LDFLAGS/s/$$/ -lX11 -lm/' \
+		${WRKSRC}/panel/Makefile.in
 	@${REINPLACE_CMD} -e 's|/bin/bash|/bin/sh|' ${WRKSRC}/scripts/install.sh
 	@${REINPLACE_CMD} -e 's|@DATADIR@|${DATADIR}|' \
 		${WRKSRC}/data/man/${PORTNAME}.1.in

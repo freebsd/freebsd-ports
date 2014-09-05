@@ -34,7 +34,6 @@
     SUBDIR += gstreamer1-plugins-curl
     SUBDIR += gwget
     SUBDIR += horde-gollem
-    SUBDIR += horde3-gollem
     SUBDIR += hs-curl
     SUBDIR += hsftp
     SUBDIR += jftp
@@ -69,6 +68,8 @@
     SUBDIR += php53-ftp
     SUBDIR += php55-curl
     SUBDIR += php55-ftp
+    SUBDIR += php56-curl
+    SUBDIR += php56-ftp
     SUBDIR += phpwebftp
     SUBDIR += plasma-applet-ftpmonitor
     SUBDIR += proftpd
@@ -94,7 +95,6 @@
     SUBDIR += uftp
     SUBDIR += urlgfe
     SUBDIR += vsftpd
-    SUBDIR += vsftpd-ext
     SUBDIR += waiho
     SUBDIR += weex
     SUBDIR += wget

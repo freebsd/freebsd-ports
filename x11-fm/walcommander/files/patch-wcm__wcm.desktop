@@ -1,0 +1,22 @@
+--- wcm/wcm.desktop.orig	2014-08-29 19:26:29.543471554 +0400
++++ wcm/wcm.desktop	2014-08-29 19:27:05.317468198 +0400
+@@ -0,0 +1,19 @@
++[Desktop Entry]
++Version=1.0
++Encoding=UTF-8
++Name=Wal Commander
++GenericName=file manager
++Comment=2-pane file manager
++Comment[fr]=2-gestionnaire de fichiers à panneaux
++Comment[de]=2-Fenster Dateimanager
++Comment[ja]=2-ペイン ファイル manager
++Comment[ru]=2-панельный файловый менеджер
++Comment[pl]=2-okno menedżer plików
++Comment[zh_CN]=2-面板 文件管理器
++Type=Application
++Exec=wcm
++TryExec=wcm
++Icon=wcm
++Terminal=false
++StartupNotify=false
++Categories=System;Utility;Core;FileTools;FileManager;

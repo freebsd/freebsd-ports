@@ -16,7 +16,7 @@ USE_XORG=	sm ice x11 xext xxf86vm
 USE_GL=		gl glu
 
 CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib -lGLU
+LIBS+=		-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--bindir=${PREFIX}/bin --datadir=${DATADIR}
 
 PLIST_FILES=	bin/${PORTNAME} bin/${PORTNAME}.x11
@@ -41,7 +41,10 @@ PLIST_FILES+=	bin/${PORTNAME}.glut
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} 's|bindir = .*|bindir = @bindir@|' ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} \
+		-e 's|bindir = .*|bindir = @bindir@|' \
+		-e '/^construo_glut_LDADD =/s/$$/ -lGLU -lGL/' \
+		${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} 's|pkgdatadir = .*|pkgdatadir = @datadir@/examples|' ${WRKSRC}/examples/Makefile.in
 	@${REINPLACE_CMD} '/stream/!s/std:://' ${WRKSRC}/vector.cxx
 	@${REINPLACE_CMD} 's|^\(#define CONSTRUO_DATADIR DATADIR\).*|\1|' ${WRKSRC}/construo.hxx

@@ -3,7 +3,7 @@
 
 PORTNAME=	cinepaint
 DISTVERSION=	1.0-4
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}/CinePaint/CinePaint-${DISTVERSION}
 
@@ -31,7 +31,6 @@ USE_GNOME=	gtk20
 USE_GHOSTSCRIPT_RUN=yes
 USE_PYTHON=	yes
 USE_AUTOTOOLS=	libtoolize aclocal automake autoconf
-LIBTOOLIZE_ARGS=--force
 ACLOCAL_ARGS=	-I aclocal
 AUTOMAKE_ARGS=	--copy --force-missing --foreign --add-missing
 USE_LDCONFIG=	yes

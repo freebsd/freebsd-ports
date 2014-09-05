@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	tshark
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	net ipv6
 
 MASTERDIR=	${.CURDIR}/../wireshark

@@ -3,10 +3,11 @@
 
 PORTNAME=	thrift
 PORTVERSION=	${THRIFT_PORTVERSION} # to keep in sync with thrift
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	devel
 
-MAINTAINER= ports@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C glib interface to Thrift
 
 PKGNAMESUFFIX=	-c_glib
@@ -20,11 +21,11 @@ BUILDIR=	${WRKDIR}/${DISTNAME}/lib/c_glib
 
 LIB_DEPENDS=	libglib-2.0.so:${PORTSDIR}/devel/glib20
 
-USE_AUTOTOOLS=	autoconf autoheader:env aclocal automake libtool
+USE_AUTOTOOLS=	autoconf autoheader:env aclocal automake
 ACLOCAL_ARGS=	-I${WRKSRC}/aclocal
 AUTOMAKE_ARGS=	--foreign --add-missing --copy
 
-USES=		pkgconfig gmake
+USES=		pkgconfig gmake libtool
 GNU_CONFIGURE=  yes
 USE_LDCONFIG=   yes
 MAKE_JOBS_UNSAFE= yes
@@ -44,8 +45,6 @@ CONFIGURE_ARGS+=        \
 		--without-php_extension \
 		--without-python \
 		--without-ruby
-
-NO_STAGE=	yes
 
 post-patch:
 	@${REINPLACE_CMD} 's,^pkgconfigdir = .*,pkgconfigdir=$${prefix}/libdata/pkgconfig,' ${WRKSRC}/lib/c_glib/Makefile.am

@@ -1,5 +1,5 @@
 #!/bin/sh
-#	$Id: pkg_update,v 1.77 2014/05/16 09:08:12 cvs Exp $
+#	$Id: pkg_update,v 1.78 2014/09/05 07:42:04 cvs Exp $
 #	$FreeBSD$
 #
 # Copyright (c) 2001-2006
@@ -151,7 +151,7 @@ read_env_local() {
 	if test -f "${fulldir}/Env.local"
 	then
 		echo "=== Reading ${fulldir}/Env.local"
-		local_env="env "`tr '\n' ' ' < "${fulldir}/Env.local"`
+		local_env=`tr '\n' ' ' < "${fulldir}/Env.local"`
 	fi
 }
 
@@ -375,7 +375,7 @@ port_uptodate() {
 	esac
 	#
 	# creates dependency
-	make checksum >&2
+	env ${pkg_env} make checksum >&2
 	#
 	if test ! -e "${depends}"
 	then
@@ -384,7 +384,7 @@ port_uptodate() {
 	fi
 	#
 	for fulldir in `
-	make all-depends-list |
+	env ${pkg_env} make all-depends-list |
 	sed -f "${depends}"`
 	do
 		dir="${fulldir##${portsdir}/}"
@@ -495,17 +495,17 @@ port_uptodate() {
 		if test -f "${base}/Env.local"
 		then
 			echo "=== Reading ${base}/Env.local"
-			local_env="env "`tr '\n' ' ' < "${base}/Env.local"`
+			local_env=`tr '\n' ' ' < "${base}/Env.local"`
 		fi
 		prefix="/usr/local"
 		if test ! -d "${prefix}"
 		then
 			mkdir -p "${prefix}"
 		fi
-		echo "cd ${base} && ${local_env} make package > ${logdir}/err,${log} 2>&1"
+		echo "cd ${base} && env ${pkg_env} ${local_env} make package > ${logdir}/err,${log} 2>&1"
 		case "$1" in
 		make*)
-			( cd "${base}" && ${local_env} make package </dev/null >> "${logdir}/err,${log}" 2>&1 )
+			( cd "${base}" && env ${pkg_env} ${local_env} make package </dev/null >> "${logdir}/err,${log}" 2>&1 )
 			pkgfile=`cd "${base}" && make -V PKGFILE`
 			if test -e "${pkgfile}"
 			then
@@ -514,7 +514,7 @@ port_uptodate() {
 					mv -f "${logdir}/build,${log}" "${logdir}/last,${log}"
 				fi
 				mv -f "${logdir}/err,${log}" "${logdir}/build,${log}"
-				( cd ${base} && make clean NOCLEANDEPENDS=yes )
+				( cd ${base} && env ${pkg_env} make clean NOCLEANDEPENDS=yes )
 				if run_pkg_installed
 				then
 					return 0
@@ -558,7 +558,7 @@ port_uptodate() {
 					mv -f "${logdir}/build,${log}" "${logdir}/last,${log}"
 				fi
 				mv -f "${logdir}/err,${log}" "${logdir}/build,${log}"
-				( cd ${base} && make clean NOCLEANDEPENDS=yes )
+				( cd ${base} && env ${pkg_env} make clean NOCLEANDEPENDS=yes )
 			else
 				echo "=====================================" >&2
 				echo "=== package ${pkgname} was not build" >&2
@@ -633,7 +633,7 @@ make_packages_in_dir() {
 				echo "port_uptodate: aborted!"
 			fi
 
-			make deinstall
+			env ${pkg_env} make deinstall
 			run_pkg_delete_all
 			if test -f ${localdir}/data/badfiles
 			then
@@ -1317,7 +1317,7 @@ dependency_update() {
 				then
 					continue
 				fi
-				( cd "${portsdir}/${dir}" && make run-depends-list ) |
+				( cd "${portsdir}/${dir}" && env ${pkg_env} make run-depends-list ) |
 				while read depdir
 				do
 					if test ! -d "${depdir}"
@@ -1983,6 +1983,29 @@ next_target() {
 	exec /bin/sh "${0}" "${@}"
 }
 #
+# make sure /etc/make.conf is set up
+validate_make_conf() {
+
+	use_packges=`make -f /usr/share/mk/bsd.port.mk ${nowarn} -V USE_PACKAGE_DEPENDS`
+	if test "${use_packges}" = ""
+	then
+		echo "### Please add to your /etc/make.conf ####" >&2
+		echo "USE_PACKAGE_DEPENDS=yes" >&2
+		exit 65
+	fi
+
+	depends_target=`make -f /usr/share/mk/bsd.port.mk ${nowarn} -V DEPENDS_TARGET`
+	case "${depends_target}" in
+	'package install')
+		;;
+	*)
+		echo "### Please add to your /etc/make.conf ####" >&2
+		echo "DEPENDS_TARGET=package install" >&2
+		exit 65
+		;;
+	esac
+}
+#
 # inform usage
 usage() {
 	echo "Usage:" >&2
@@ -2012,7 +2035,7 @@ usage() {
 	echo "    ${0##*/} replace-package [port] [...]" >&2
 	echo "    ${0##*/} clean ..." >&2
 	echo "    ${0##*/} check-installed-ports [port]" >&2
-	echo "    ${0##*/} cvsup ..." >&2
+	echo "    ${0##*/} update-ports ..." >&2
 	echo "    ${0##*/} full-update-jail [retry] ..." >&2
 	echo "    ${0##*/} show-extra-files" >&2
 	echo "    ${0##*/} check-update ..." >&2
@@ -2040,17 +2063,19 @@ inrequired="/tmp/inrequired-seen"
 failed="/tmp/easy-failed"
 failcount="/tmp/easy-failecount.txt"
 pkginfo_cache="/var/tmp/pkginfo_cache"
+pkg_prefix="/usr/pkgng"
+pkg_env="PKG_DEPENDS= PKG_PREFIX=${pkg_prefix} PKG_BIN=${pkg_prefix}/sbin/pkg-static"
 #
 #	get all path information from /etc/make.conf
 nowarn="COMMENT=0 CATEGORIES=0 PORTVERSION=0"
 portsdir=`make -f /usr/share/mk/bsd.port.mk ${nowarn} -V PORTSDIR`
 pkg_dbdir=`make -f /usr/share/mk/bsd.port.mk ${nowarn} -V PKG_DBDIR`
 packages=`make -f /usr/share/mk/bsd.port.mk ${nowarn} -V PACKAGES`
-if test -f /usr/sbin/pkg_add
+if test -e /usr/sbin/pkg
 then
-	pkgng=""
-else
 	pkgng="yes"
+else
+	pkgng=""
 fi
 quiet_mkdir "${pkginfo_cache}"
 #
@@ -2067,6 +2092,7 @@ make-packages)
 		exit 64
 	fi
 	shift
+	validate_make_conf
 	parse_default "${#}"
 	quiet_mkdir "${localdir}/data" "${logdir}"
 	for i in "${@}"
@@ -2455,7 +2481,7 @@ check-installed-ports)
 	fi
 	rm -f "${tmp1}" "${tmp2}"
 	;;
-cvsup)
+update-ports|cvsup)
 	sup=`cd ${portsdir} && make -V SUP`
 	if test -f "${cvsupscript}"
 	then
@@ -2514,6 +2540,14 @@ check-update)
 	/bin/sh "${0}" show-missing-packages
 	/bin/sh "${0}" show-missing-installed
 	next_target "${@}"
+	;;
+update-pkg)
+	cd "${portsdir}/ports-mgmt/pkg" && make clean deinstall PREFIX=/usr/pkgng package install
+	if test ! -h /usr/sbin/pkg
+	then
+		mv -f /usr/sbin/pkg /usr/sbin/pkg.orig
+		ln -s "${pkg_prefix}/sbin/pkg" /usr/sbin/pkg
+	fi
 	;;
 *)
 	usage

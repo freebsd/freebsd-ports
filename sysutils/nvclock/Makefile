@@ -50,5 +50,7 @@ post-patch:
 	@${REINPLACE_CMD} -E '/exec_prefix|bindir/s|\$$\(DESTDIR\)||' \
 		${WRKSRC}/src/gtk/Makefile.in \
 		${WRKSRC}/src/qt/Makefile.in
+	@${REINPLACE_CMD} 's/-lnvcontrol/& @X11_LIBS@/' \
+		${WRKSRC}/src/gtk/Makefile.in
 
 .include <bsd.port.mk>

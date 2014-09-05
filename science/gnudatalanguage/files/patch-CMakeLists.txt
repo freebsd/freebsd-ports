@@ -1,5 +1,32 @@
+Includes revisions 1.50 and 1.57 from upstream:
+
+  Fri Jun 13 21:45:44 2014 UTC by gilles-duvert
+  Applied Orion's patch #77
+
+  Mon Sep 1 11:23:18 2014 UTC by alaingdl
+  patch 78 related to change in CMake 3.0
+
+Both patches are required for CMake 3.0+ support.
 --- ./CMakeLists.txt.orig	2013-09-28 17:03:32.000000000 +0200
 +++ ./CMakeLists.txt	2013-09-30 16:19:09.000000000 +0200
+@@ -610,13 +610,11 @@
+                   message("-- Found Python executable: ${PYTHON_EXECUTABLE}")
+                 endif()
+ 	else()
+-		if(PYTHONVERSION)
+-			set(PythonLibs_FIND_VERSION ${PYTHONVERSION})
+-		else()
+-			set(PythonLibs_FIND_VERSION 2)
++                if(NOT PYTHONVERSION)
++                        set(PYTHONVERSION 2)
+ 		endif()
+-		find_package(PythonLibs)
+-		include(FindPythonInterp)
++		find_package(PythonInterp)
++		find_package(PythonLibs ${PYTHONVERSION})
+ 	endif()
+ 	set(USE_PYTHON ${PYTHONLIBS_FOUND})
+ 	if(PYTHONLIBS_FOUND)
 @@ -752,7 +752,7 @@
  endif(NOT PYTHON_MODULE)
  

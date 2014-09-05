@@ -53,6 +53,10 @@ post-install:
 	${INSTALL_DATA} ${INSTALL_WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}/
 .endfor
 
+# Workaround bsd.ocaml.mk to fix packaging
+add-plist-post:
+	@${DO_NADA}
+
 x-generate-plist:
 	${ECHO} %%RUBY_SITELIBDIR%%/langscan.rb > pkg-plist.new
 	${FIND} ${RUBY_SITEARCHLIBDIR}/${PORTNAME} -type f | ${SORT} | ${SED} -e 's,${RUBY_SITEARCHLIBDIR},%%RUBY_SITEARCHLIBDIR%%,' >> pkg-plist.new

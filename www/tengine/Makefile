@@ -549,7 +549,7 @@ WITH_HTTP_REWRITE=	yes
 .endif
 
 .if ${PORT_OPTIONS:MPOSTGRES}
-USE_PGSQL=	yes
+USES+=	pgsql
 WITH_HTTP_REWRITE=	yes
 NGINX_POSTGRES_VERSION=	0.9
 MASTER_SITES+=	http://labs.frickle.com/files/:postgres

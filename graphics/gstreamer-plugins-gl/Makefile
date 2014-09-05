@@ -3,7 +3,7 @@
 
 PORTNAME=	gstreamer-plugins-gl
 PORTVERSION=	0.10.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	http://gstreamer.freedesktop.org/src/gst-plugins-gl/
 DISTNAME=	${PORTNAME:S/gstreamer/gst/}-${PORTVERSION}
@@ -14,20 +14,17 @@ COMMENT=	GStreamer OpenGL video plugin
 LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png \
 		libjpeg.so:${PORTSDIR}/graphics/jpeg
 
+USES=		gettext gmake libtool pathfix pkgconfig tar:bzip2
 USE_LDCONFIG=	yes
-USES=	pathfix gettext gmake pkgconfig tar:bzip2
 USE_GSTREAMER=	yes
 USE_XORG=	ice x11
 USE_GL=		gl glu glew
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--disable-examples --disable-static
 CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
-CONFIGURE_ARGS=--disable-examples
+LIBS+=		-L${LOCALBASE}/lib
+INSTALL_TARGET=	install-strip
 
 PLIST_SUB=	VERSION="0.10"
-
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libgstgl-0.10.so.1
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/gstreamer-0.10/libgst*.so
 
 .include <bsd.port.mk>

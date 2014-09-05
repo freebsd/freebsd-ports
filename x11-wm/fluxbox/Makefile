@@ -3,6 +3,7 @@
 
 PORTNAME=	fluxbox
 PORTVERSION=	1.3.5
+PORTREVISION=	1
 CATEGORIES=	x11-wm
 MASTER_SITES=	SF
 DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}
@@ -14,6 +15,7 @@ COMMENT=	Small and fast window manager based on BlackBox
 LICENSE=	MIT
 
 RUN_DEPENDS=	xmessage:${PORTSDIR}/x11/xmessage
+LIB_DEPENDS=	libfribidi.so:${PORTSDIR}/converters/fribidi
 
 USE_XORG=	xextproto xft xpm xrandr
 USES=		gmake pkgconfig

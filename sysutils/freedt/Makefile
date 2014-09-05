@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	freedt
-PORTVERSION=	0.22
+PORTVERSION=	23
 CATEGORIES=	sysutils
 MASTER_SITES=	http://offog.org/files/ \
 		http://ftp.i-scream.org/pub/offog.org/files/

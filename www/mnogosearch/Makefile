@@ -38,6 +38,9 @@ CONFIGURE_ARGS=	--sysconfdir=${ETCDIR} \
 
 SUB_FILES+=	pkg-message
 
+PGSQL_USES=	pgsql
+PGSQL_CONFIGURE_ARGS+=	--with-pgsql=${LOCALBASE}
+
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MSSL}
@@ -60,11 +63,6 @@ CONFIGURE_ARGS+=	--with-extra-charsets=all
 
 .if ! ${PORT_OPTIONS:MSYSLOG}
 CONFIGURE_ARGS+=	--disable-syslog
-.endif
-
-.if ${PORT_OPTIONS:MPGSQL}
-USE_PGSQL=		yes
-CONFIGURE_ARGS+=	--with-pgsql=${LOCALBASE}
 .endif
 
 .if ${PORT_OPTIONS:MMSQL}

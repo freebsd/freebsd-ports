@@ -1,0 +1,14 @@
+# $FreeBSD$
+#
+# PROVIDE sendd
+# REQUIRE NETWORKING
+
+. /etc/rc.subr
+
+name=sendd
+rcvar="${name}_enable"
+command="%%PREFIX%%/sbin/$name"
+required_files="%%PREFIX%%/etc/${name}/${name}.conf"
+
+load_rc_config $name
+run_rc_command "$1"

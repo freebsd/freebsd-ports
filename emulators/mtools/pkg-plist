@@ -57,6 +57,4 @@ man/man1/mtoolstest.1.gz
 man/man1/mtype.1.gz
 man/man1/mzip.1.gz
 man/man5/mtools.5.gz
-@unexec if cmp -s %D/etc/mtools.conf %D/etc/mtools.conf.sample; then rm -f %D/etc/mtools.conf; fi
-etc/mtools.conf.sample
-@exec if [ ! -f %D/etc/mtools.conf ]; then cp %B/%f %D/etc/mtools.conf; fi
+@sample etc/mtools.conf.sample

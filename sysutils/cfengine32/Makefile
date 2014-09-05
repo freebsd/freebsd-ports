@@ -3,7 +3,7 @@
 
 PORTNAME=	cfengine
 PORTVERSION=	3.2.3
-PORTREVISION=	4
+PORTREVISION=	5
 PORTEPOCH=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	https://s3.amazonaws.com/cfengine.package-repos/tarballs/
@@ -14,7 +14,7 @@ MAINTAINER=	cy@FreeBSD.org
 COMMENT=	Systems administration tool for networks
 
 LATEST_LINK=	cfengine32
-FETCH_BEFORE_ARGS=   -o ${DISTDIR}/${DISTFILES}
+FETCH_BEFORE_ARGS=	-o ${DISTDIR}/${DISTFILES}
 
 CONFLICTS=	cfengine-[2]* cfengine-3.[345]* cfengine-devel-*
 
@@ -23,8 +23,7 @@ USE_RC_SUBR=	cf-execd cf-serverd
 LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre
 
 USES=		libtool
-WITH_BDB_VER?=	47
-USE_BDB=	yes
+USE_BDB=	48+
 USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
 # EXAMPLESDIR=	${PREFIX}/share/examples/cfengine3

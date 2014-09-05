@@ -3,6 +3,7 @@
 
 PORTNAME=	aegisub
 PORTVERSION=	3.2.0
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	http://ftp.aegisub.org/pub/archives/releases/source/:aegisub \
 		ftp://ftp.aegisub.org/pub/archives/releases/source/:aegisub \
@@ -49,7 +50,7 @@ INSTALLS_ICONS=	yes
 PLIST_SUB=	VERSION="${PORTVERSION:R}"
 
 CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib ${ICONV_LIB}
+LIBS+=		-L${LOCALBASE}/lib ${ICONV_LIB} -pthread
 
 OPTIONS_DEFINE=		ALSA DOCS FFMPEG FFTW HUNSPELL OPENAL PORTAUDIO \
 			PULSEAUDIO

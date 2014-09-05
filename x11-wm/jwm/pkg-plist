@@ -1,8 +1,6 @@
 bin/jwm
 man/man1/jwm.1.gz
-@unexec if cmp -s %D/etc/system.jwmrc %D/etc/system.jwmrc.sample; then rm -f %D/etc/system.jwmrc; fi
-etc/system.jwmrc.sample
-@exec if [ ! -f %D/etc/system.jwmrc ]; then cp -p %D/etc/system.jwmrc.sample %D/etc/system.jwmrc; fi
+@sample etc/system.jwmrc.sample
 %%NLS%%share/locale/de/LC_MESSAGES/jwm.mo
 %%NLS%%share/locale/es/LC_MESSAGES/jwm.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/jwm.mo

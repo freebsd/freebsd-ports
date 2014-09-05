@@ -35,7 +35,7 @@
 -CFLAGS  = -O1 -I. -DNDEBUG -Wall -fomit-frame-pointer
 -LDFLAGS = -s
 +CFLAGS  += -Os -I. -DNDEBUG -Wall -fomit-frame-pointer
-+LDFLAGS += -s
++# LDFLAGS += -s
  
  #==========================================================================
  # Directories
@@ -70,19 +70,19 @@
  
  $(MACH)/kosui$(EXEEXT) : $(KOSUIOBJ) $(COREOBJ) $(DEPLIB)
 -	$(CXX) -o$@ $(LDFLAGS) $(KOSUIOBJ) $(COREOBJ) $(LIBS)
-+	$(CXX) -o$@ $(LDFLAGS) $(KOSUIOBJ) $(COREOBJ) $(LIBS) ${PTHREAD_LIBS} -lutil
++	$(CXX) -o$@ $(LDFLAGS) $(KOSUIOBJ) $(COREOBJ) $(LIBS) -pthread -lutil
  
  $(MACH)/kawari_encode$(EXEEXT) : tool/kawari_encode$(OBJEXT) $(CRYPTOBJ)
 -	$(CXX) -o$@ tool/kawari_encode$(OBJEXT) $(CRYPTOBJ) $(LDFLAGS)
-+	$(CXX) -o$@ tool/kawari_encode$(OBJEXT) $(CRYPTOBJ) $(LDFLAGS) ${PTHREAD_LIBS} -lutil
++	$(CXX) -o$@ tool/kawari_encode$(OBJEXT) $(CRYPTOBJ) $(LDFLAGS) -pthread -lutil
  
  $(MACH)/kawari_encode2$(EXEEXT) : tool/kawari_encode2$(OBJEXT) $(CRYPTOBJ)
 -	$(CXX) -o$@ tool/kawari_encode2$(OBJEXT) $(CRYPTOBJ) $(LDFLAGS)
-+	$(CXX) -o$@ tool/kawari_encode2$(OBJEXT) $(CRYPTOBJ) $(LDFLAGS) ${PTHREAD_LIBS} -lutil
++	$(CXX) -o$@ tool/kawari_encode2$(OBJEXT) $(CRYPTOBJ) $(LDFLAGS) -pthread -lutil
  
  $(MACH)/kawari_decode2$(EXEEXT) : tool/kawari_decode2$(OBJEXT) $(CRYPTOBJ)
 -	$(CXX) -o$@ tool/kawari_decode2$(OBJEXT) $(CRYPTOBJ) $(LDFLAGS)
-+	$(CXX) -o$@ tool/kawari_decode2$(OBJEXT) $(CRYPTOBJ) $(LDFLAGS) ${PTHREAD_LIBS} -lutil
++	$(CXX) -o$@ tool/kawari_decode2$(OBJEXT) $(CRYPTOBJ) $(LDFLAGS) -pthread -lutil
  
  $(MACH)/libjvm.dll.a : win32jvm.def
  	dlltool --def win32jvm.def -l $@ --dllname jvm.dll -k -C -a

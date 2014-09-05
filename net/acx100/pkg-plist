@@ -1,8 +1,0 @@
-bin/ifdo
-sbin/acxtool
-@cwd %%KMODDIR%%
-if_acx.ko
-if_acx.ko.symbols
-acx100fw.ko
-acx111fw.ko
-@unexec kldxref %D

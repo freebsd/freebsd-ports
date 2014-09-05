@@ -1,5 +1,5 @@
-SHA256 (blacs/mpiblacs.tgz) = b56bcfc7c4cd6baefa314fd0e85d877eb11afda1641dd7ebb0b96c7f802f3b72
-SIZE (blacs/mpiblacs.tgz) = 74123
+SHA256 (blacs/mpiblacs.tgz) = 88dd7265d412022948debb7a2737226cd53a3bf73b0b62fc55ceb3ccc8a598f7
+SIZE (blacs/mpiblacs.tgz) = 152823
 SHA256 (blacs/blacstester.tgz) = 7e5a67b703f74f05435055dd314a7196007d9a273e6bb46058a19be71d3ba197
 SIZE (blacs/blacstester.tgz) = 81937
 SHA256 (blacs/mpiblacs-patch03.tgz) = 92dfba8a462a2f23102000a10532c00a9a5203b79ccad5a87f44ce83eb6bc7ed

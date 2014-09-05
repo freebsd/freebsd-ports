@@ -3,6 +3,7 @@
 
 PORTNAME=	prewikka
 PORTVERSION=	1.0.1p1
+PORTREVISION=	1
 CATEGORIES=	www security python
 MASTER_SITES=	https://www.prelude-ids.org/attachments/download/286/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}

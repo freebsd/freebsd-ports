@@ -3,7 +3,7 @@
 
 PORTNAME=	hesiod
 PORTVERSION=	3.2.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	dns
 MASTER_SITES=	ftp://athena-dist.mit.edu/pub/ATHENA/hesiod/
 

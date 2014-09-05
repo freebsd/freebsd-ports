@@ -57,6 +57,201 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="6318b303-3507-11e4-b76c-0011d823eebd">
+    <topic>trafficserver -- unspecified vulnerability</topic>
+    <affects>
+      <package>
+	<name>trafficserver</name>
+	<range><lt>5.0.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Bryan Call reports:</p>
+	<blockquote cite="http://mail-archives.apache.org/mod_mbox/trafficserver-users/201407.mbox/%3CBFCEC9C8-1BE9-4DCA-AF9C-B8FE798EEC07@yahoo-inc.com%3E">
+	  <p>Below is our announcement for the security issue reported to us
+	  from Yahoo! Japan.  All versions of Apache Traffic Server are
+	  vulnerable.  We urge users to upgrade to either 4.2.1.1 or 5.0.1
+	  immediately.</p>
+	  <p>This fixes CVE-2014-3525 and limits access to how the health
+	  checks are performed.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2014-3525</cvename>
+      <url>http://mail-archives.apache.org/mod_mbox/trafficserver-users/201407.mbox/%3CBFCEC9C8-1BE9-4DCA-AF9C-B8FE798EEC07@yahoo-inc.com%3E</url>
+    </references>
+    <dates>
+      <discovery>2014-07-23</discovery>
+      <entry>2014-09-05</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="fd5f305d-2d3d-11e4-aa3d-00262d5ed8ee">
+    <topic>chromium -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>chromium</name>
+	<range><lt>37.0.2062.94</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Google Chrome Releases reports:</p>
+	<blockquote cite="http://googlechromereleases.blogspot.nl/">
+	  <p>50 security fixes in this release, including:</p>
+	  <ul>
+	    <li>[386988] Critical CVE-2014-3176, CVE-2014-3177: A special reward
+	      to lokihardt@asrt for a combination of bugs in V8, IPC, sync, and
+	      extensions that can lead to remote code execution outside of the
+	      sandbox.</li>
+	    <li>[369860] High CVE-2014-3168: Use-after-free in SVG. Credit to
+	      cloudfuzzer.</li>
+	    <li>[387389] High CVE-2014-3169: Use-after-free in DOM. Credit to
+	      Andrzej Dyjak.</li>
+	    <li>[390624] High CVE-2014-3170: Extension permission dialog spoofing.
+	      Credit to Rob Wu.</li>
+	    <li>[390928] High CVE-2014-3171: Use-after-free in bindings. Credit to
+	      cloudfuzzer.</li>
+	    <li>[367567] Medium CVE-2014-3172: Issue related to extension debugging.
+	      Credit to Eli Grey.</li>
+	    <li>[376951] Medium CVE-2014-3173: Uninitialized memory read in WebGL.
+	      Credit to jmuizelaar.</li>
+	    <li>[389219] Medium CVE-2014-3174: Uninitialized memory read in Web
+	      Audio. Credit to Atte Kettunen from OUSPG.</li>
+	    <li>[406143] CVE-2014-3175: Various fixes from internal audits, fuzzing
+	      and other initiatives (Chrome 37).</li>
+
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2014-3168</cvename>
+      <cvename>CVE-2014-3169</cvename>
+      <cvename>CVE-2014-3170</cvename>
+      <cvename>CVE-2014-3171</cvename>
+      <cvename>CVE-2014-3172</cvename>
+      <cvename>CVE-2014-3173</cvename>
+      <cvename>CVE-2014-3174</cvename>
+      <cvename>CVE-2014-3175</cvename>
+      <cvename>CVE-2014-3176</cvename>
+      <cvename>CVE-2014-3177</cvename>
+      <url>http://googlechromereleases.blogspot.nl/</url>
+    </references>
+    <dates>
+      <discovery>2014-08-26</discovery>
+      <entry>2014-08-26</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="84203724-296b-11e4-bebd-000c2980a9f3">
+    <topic>file -- buffer overruns and missing buffer size tests</topic>
+    <affects>
+      <package>
+	<name>file</name>
+	<range><lt>5.19</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Christos Zoulas reports:</p>
+	<blockquote cite="http://mx.gw.com/pipermail/file/2014/001553.html">
+	  <p>A specially crafted file can cause a segmentation fault.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://mx.gw.com/pipermail/file/2014/001553.html</url>
+    </references>
+    <dates>
+      <discovery>2014-06-09</discovery>
+      <entry>2014-08-21</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="3c5579f7-294a-11e4-99f6-00e0814cab4e">
+    <topic>django -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>py27-django</name>
+	<range><ge>1.6</ge><lt>1.6.6</lt></range>
+      </package>
+      <package>
+	<name>py27-django15</name>
+	<range><ge>1.5</ge><lt>1.5.9</lt></range>
+      </package>
+      <package>
+	<name>py27-django14</name>
+	<range><ge>1.4</ge><lt>1.4.14</lt></range>
+      </package>
+      <package>
+	<name>py32-django</name>
+	<range><ge>1.6</ge><lt>1.6.6</lt></range>
+      </package>
+      <package>
+	<name>py32-django15</name>
+	<range><ge>1.5</ge><lt>1.5.9</lt></range>
+      </package>
+      <package>
+	<name>py33-django</name>
+	<range><ge>1.6</ge><lt>1.6.6</lt></range>
+      </package>
+      <package>
+	<name>py33-django15</name>
+	<range><ge>1.5</ge><lt>1.5.9</lt></range>
+      </package>
+      <package>
+	<name>py34-django</name>
+	<range><ge>1.6</ge><lt>1.6.6</lt></range>
+      </package>
+      <package>
+	<name>py34-django15</name>
+	<range><ge>1.5</ge><lt>1.5.9</lt></range>
+      </package>
+      <package>
+	<name>py27-django-devel</name>
+	<range><lt>20140821,1</lt></range>
+      </package>
+      <package>
+	<name>py32-django-devel</name>
+	<range><lt>20140821,1</lt></range>
+      </package>
+      <package>
+	<name>py33-django-devel</name>
+	<range><lt>20140821,1</lt></range>
+      </package>
+      <package>
+	<name>py34-django-devel</name>
+	<range><lt>20140821,1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Django project reports:</p>
+	<blockquote cite="https://www.djangoproject.com/weblog/2014/aug/20/security/">
+	  <p>These releases address an issue with reverse() generating external
+	    URLs; a denial of service involving file uploads; a potential
+	    session hijacking issue in the remote-user middleware; and a data
+	    leak in the administrative interface. We encourage all users of
+	    Django to upgrade as soon as possible.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://www.djangoproject.com/weblog/2014/aug/20/security/</url>
+      <cvename>CVE-2014-0480</cvename>
+      <cvename>CVE-2014-0481</cvename>
+      <cvename>CVE-2014-0482</cvename>
+      <cvename>CVE-2014-0483</cvename>
+    </references>
+    <dates>
+      <discovery>2014-08-20</discovery>
+      <entry>2014-08-21</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="d2a892b9-2605-11e4-9da0-00a0986f28c4">
     <topic>PHP multiple vulnerabilities</topic>
     <affects>
@@ -591,29 +786,29 @@ Notes:
     <affects>
       <package>
 	<name>apache22</name>
-	<range><gt>2.2.0</gt><lt>2.2.27_6</lt></range>
+	<range><gt>2.2.0</gt><lt>2.2.29</lt></range>
       </package>
       <package>
 	<name>apache22-event-mpm</name>
-	<range><gt>2.2.0</gt><lt>2.2.27_6</lt></range>
+	<range><gt>2.2.0</gt><lt>2.2.29</lt></range>
       </package>
       <package>
 	<name>apache22-itk-mpm</name>
-	<range><gt>2.2.0</gt><lt>2.2.27_6</lt></range>
+	<range><gt>2.2.0</gt><lt>2.2.29</lt></range>
       </package>
       <package>
 	<name>apache22-peruser-mpm</name>
-	<range><gt>2.2.0</gt><lt>2.2.27_6</lt></range>
+	<range><gt>2.2.0</gt><lt>2.2.29</lt></range>
       </package>
       <package>
 	<name>apache22-worker-mpm</name>
-	<range><gt>2.2.0</gt><lt>2.2.27_6</lt></range>
+	<range><gt>2.2.0</gt><lt>2.2.29</lt></range>
       </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
 	<p>Apache HTTP SERVER PROJECT reports:</p>
-	<blockquote cite="http://svn.apache.org/viewvc/httpd/httpd/branches/2.2.x/CHANGES?revision=1611816&amp;view=markup">
+	  <blockquote cite="http://www.apache.org/dist/httpd/CHANGES_2.2.29">
 	  <p> mod_deflate: The DEFLATE input filter (inflates request bodies) now
 	    limits the length and compression ratio of inflated request bodies to
 	    avoid denial of service via highly compressed bodies.  See directives
@@ -627,6 +822,10 @@ Notes:
 	    communication with scripts.</p>
 	  <p>Fix a race condition in scoreboard handling, which could lead to a heap
 	    buffer overflow.</p>
+	  <p>core: HTTP trailers could be used to replace HTTP headers late during
+	    request processing, potentially undoing or otherwise confusing modules
+	    that examined or modified request headers earlier.  Adds "MergeTrailers"
+	    directive to restore legacy behavior.</p>
 	</blockquote>
       </body>
     </description>
@@ -634,10 +833,12 @@ Notes:
       <cvename>CVE-2014-0118</cvename>
       <cvename>CVE-2014-0231</cvename>
       <cvename>CVE-2014-0226</cvename>
+      <cvename>CVE-2013-5704</cvename>
     </references>
     <dates>
       <discovery>2014-07-19</discovery>
       <entry>2014-07-24</entry>
+      <modified>2014-09-03</modified>
     </dates>
   </vuln>
 

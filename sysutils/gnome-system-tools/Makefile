@@ -4,7 +4,7 @@
 
 PORTNAME=	gnome-system-tools
 PORTVERSION=	2.32.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	sysutils gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -16,19 +16,20 @@ LIB_DEPENDS=	liboobs-1.so:${PORTSDIR}/devel/liboobs \
 		libpolkit-gtk-1.so:${PORTSDIR}/sysutils/polkit-gnome
 
 INSTALLS_ICONS=	yes
-USES=		gettext gmake pathfix pkgconfig tar:bzip2
+USES=		gettext gmake libtool pathfix pkgconfig tar:bzip2
 USE_LDCONFIG=	yes
 USE_GNOME=	gnomeprefix intlhack nautilus2
-USE_AUTOTOOLS=	libtool
 INSTALLS_OMF=	yes
-CONFIGURE_ARGS=	--enable-services
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--disable-static --enable-services
 CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+LIBS+=		-L${LOCALBASE}/lib
 
 GLIB_SCHEMAS=	org.gnome.system-tools.gschema.xml
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|gmodule-export-2.0|gmodule-export-2.0 gthread-2.0|g' \
 		${WRKSRC}/configure
+	@${REINPLACE_CMD} '/^time_admin_LDADD =/s/$$/ -lm/' ${WRKSRC}/src/time/Makefile.in
 
 .include <bsd.port.mk>

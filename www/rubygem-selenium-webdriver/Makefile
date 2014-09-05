@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	selenium-webdriver
-PORTVERSION=	2.38.0
+PORTVERSION=	2.42.0
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
@@ -11,9 +11,9 @@ COMMENT=	Tool for writing automated tests of websites
 
 LICENSE=	APACHE20
 
-RUN_DEPENDS=	rubygem-childprocess>=0.2.5${PORTVERSION}:${PORTSDIR}/devel/rubygem-childprocess \
-		rubygem-multi_json>=1:${PORTSDIR}/devel/rubygem-multi_json \
-		rubygem-rubyzip>=1:${PORTSDIR}/archivers/rubygem-rubyzip \
+RUN_DEPENDS=	rubygem-childprocess>=0.5.0:${PORTSDIR}/devel/rubygem-childprocess \
+		rubygem-multi_json>=1.0:${PORTSDIR}/devel/rubygem-multi_json \
+		rubygem-rubyzip>=1.0:${PORTSDIR}/archivers/rubygem-rubyzip \
 		rubygem-websocket>=1.0.4:${PORTSDIR}/www/rubygem-websocket
 
 USE_RUBY=	yes

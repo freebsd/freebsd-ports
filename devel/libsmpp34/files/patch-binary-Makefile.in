@@ -1,0 +1,11 @@
+--- binary/Makefile.in.orig	2014-07-14 15:29:16.000000000 +0300
++++ binary/Makefile.in	2014-07-14 15:28:49.000000000 +0300
+@@ -676,6 +676,8 @@ clean-libLTLIBRARIES:
+ 	done
+ libsmpp34.la: $(libsmpp34_la_OBJECTS) $(libsmpp34_la_DEPENDENCIES) 
+ 	$(libsmpp34_la_LINK) -rpath $(libdir) $(libsmpp34_la_OBJECTS) $(libsmpp34_la_LIBADD) $(LIBS)
++../binary/libsmpp34.la: $(libsmpp34_la_OBJECTS) $(libsmpp34_la_DEPENDENCIES) 
++	$(libsmpp34_la_LINK) -rpath $(libdir) $(libsmpp34_la_OBJECTS) $(libsmpp34_la_LIBADD) $(LIBS)
+ install-binPROGRAMS: $(bin_PROGRAMS)
+ 	@$(NORMAL_INSTALL)
+ 	test -z "$(bindir)" || $(MKDIR_P) "$(DESTDIR)$(bindir)"

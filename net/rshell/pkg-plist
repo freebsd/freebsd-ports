@@ -1,4 +1,0 @@
-bin/rshell
-share/dot.rshellrc
-@exec ln -f %D/bin/rshell %D/bin/rcopy
-@unexec rm %D/bin/rcopy

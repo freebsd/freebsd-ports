@@ -1,0 +1,12 @@
+--- lib/cpluff/CMakeLists.txt.orig	2014-08-09 08:23:29.709738677 +0800
++++ lib/cpluff/CMakeLists.txt	2014-08-09 08:24:08.439733715 +0800
+@@ -92,6 +92,9 @@
+   if(TARGET_COMMON_DARWIN)
+     add_library(cpluff-${ARCH} MODULE ${libcpluff_srcs})
+     install(TARGETS cpluff-${ARCH} DESTINATION ${RESOURCEPATH}/system COMPONENT RUNTIME)
++  elseif(TARGET_FREEBSD)
++    add_library(cpluff-${ARCH} SHARED ${libcpluff_srcs})
++    install(TARGETS cpluff-${ARCH} DESTINATION ${LIBPATH}/system COMPONENT RUNTIME)
+   elseif(TARGET_POSIX)
+     add_library(cpluff-${ARCH} SHARED ${libcpluff_srcs})
+     install(TARGETS cpluff-${ARCH} DESTINATION ${BINPATH}/system COMPONENT RUNTIME)

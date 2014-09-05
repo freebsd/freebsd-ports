@@ -148,7 +148,6 @@ share/locale/zh_TW/LC_MESSAGES/ggv.mo
 @dirrm share/gnome/help/ggv/C/figures
 @dirrm share/gnome/help/ggv/C
 @dirrm share/gnome/help/ggv
-@unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
 @dirrmtry share/locale/xh/LC_MESSAGES
 @dirrmtry share/locale/xh
 @dirrmtry share/locale/rw/LC_MESSAGES

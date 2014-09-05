@@ -3,7 +3,7 @@
 
 PORTNAME=	gtkextra
 PORTVERSION=	2.1.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	SF/${PORTNAME}/${PORTVERSION}
 DISTNAME=	${PORTNAME:S/gtk/gtk+/}-${PORTVERSION}
@@ -11,7 +11,7 @@ DISTNAME=	${PORTNAME:S/gtk/gtk+/}-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Useful widget set complementary to GTK+ 2.0
 
-USES=		gmake libtool:keepla pathfix pkgconfig
+USES=		gmake libtool pathfix pkgconfig
 USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes
 USE_CSTD=	gnu89

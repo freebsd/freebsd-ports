@@ -3,6 +3,7 @@
 
 PORTNAME=	libev
 PORTVERSION=	4.15
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://dist.schmorp.de/libev/ \
@@ -12,8 +13,9 @@ MAINTAINER=	vsevolod@FreeBSD.org
 COMMENT=	Full-featured and high-performance event loop library
 
 GNU_CONFIGURE=	yes
+INSTALL_TARGET=	install-strip
+USES=		libtool pkgconfig
 USE_LDCONFIG=	yes
-USES=		pkgconfig
 
 PKGCONFIGDIR?=	${PREFIX}/libdata/pkgconfig
 

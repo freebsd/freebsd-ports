@@ -33,6 +33,10 @@ CONFIGURE_ARGS=	${RUBY_CONFIGURE_ARGS} \
 		--with-ruby-version=minor \
 		--with-sitedir="${PREFIX}/lib/ruby/site_ruby" \
 		--with-vendordir="${PREFIX}/lib/ruby/vendor_ruby"
+
+CONFIGURE_ENV+=	LC_ALL=C
+MAKE_ENV+=	LC_ALL=C
+
 USE_OPENSSL=	yes
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	autoconf
@@ -48,15 +52,20 @@ MAKE_JOBS_UNSAFE=	yes
 
 NO_LATEST_LINK=	yes
 
-OPTIONS_DEFINE=		RDOC DEBUG
-OPTIONS_DEFAULT=	READLINE
-OPTIONS_RADIO=		EDIT
-OPTIONS_RADIO_EDIT=	LIBEDIT READLINE
+OPTIONS_DEFINE=		CAPIDOCS DEBUG DOCS EXAMPLES RDOC
+OPTIONS_DEFAULT=	RDOC READLINE
+OPTIONS_SINGLE=		EDIT
+OPTIONS_SINGLE_EDIT=	LIBEDIT READLINE
+OPTIONS_SUB=		yes
+CAPIDOCS_DESC=		Build and install C API documents
 RDOC_DESC=		Build and install Rdoc indexes
-DEBUG_DESC=		Compile-in debug info
 EDIT_DESC=		Which line editing lib to use
 LIBEDIT_DESC=		Use libedit
 READLINE_DESC=		Use libreadline
+CAPIDOCS_BUILD_DEPENDS=	doxygen>0:${PORTSDIR}/devel/doxygen \
+			dot:${PORTSDIR}/graphics/graphviz
+CAPIDOCS_CONFIGURE_OFF=	--disable-install-capi
+RDOC_CONFIGURE_OFF=	--disable-install-rdoc
 
 .include <bsd.port.options.mk>
 
@@ -81,15 +90,6 @@ _SUF1=	_${PORTREVISION}
 CPPFLAGS+=	-I${LOCALBASE}/include
 # Keep this, else ruby will fail to load libraries dependent op libpthread.
 LIBS+=		-L${LOCALBASE}/lib ${PTHREAD_LIBS}
-
-#
-# Disable doc generation if requested or docs disabled at all
-#
-.if ${PORT_OPTIONS:MRDOC} && ${PORT_OPTIONS:MDOCS}
-CONFIGURE_ARGS+=	--enable-install-doc
-.else
-CONFIGURE_ARGS+=	--disable-install-doc
-.endif
 
 CONFIGURE_ENV=	debugflags=
 
@@ -175,29 +175,32 @@ post-build:
 	@${RB_SET_CONF_VAR} "INSTALL_DATA" "ENV['RB_USER_INSTALL'] ? '${INSTALL} ${COPY} -m ${SHAREMODE}' : '${INSTALL_DATA}'"
 
 pre-su-install:
-	${MKDIR}	${STAGEDIR}${RUBY_DOCDIR}		\
-			${STAGEDIR}${RUBY_EXAMPLESDIR}	\
-			${STAGEDIR}${RUBY_RIDIR}		\
-			${STAGEDIR}${RUBY_SITERIDIR}	\
-			${STAGEDIR}${RUBY_SITEARCHLIBDIR}	\
-			${STAGEDIR}${RUBY_VENDORARCHLIBDIR}
-
-	${TOUCH} ${STAGEDIR}${RUBY_EXAMPLESDIR}/.keep_me
-	${TOUCH} ${STAGEDIR}${RUBY_DOCDIR}/.keep_me
-	${TOUCH} ${STAGEDIR}${RUBY_SITEARCHLIBDIR}/.keep_me
-	${TOUCH} ${STAGEDIR}${RUBY_VENDORARCHLIBDIR}/.keep_me
+	${MKDIR} ${STAGEDIR}${RUBY_SITEARCHLIBDIR}
+	${MKDIR} ${STAGEDIR}${RUBY_VENDORARCHLIBDIR}
+.if ${PORT_OPTIONS:MDOCS}
+	${MKDIR} ${STAGEDIR}${RUBY_DOCDIR}
+.endif
+.if ${PORT_OPTIONS:MEXAMPLES}
+	${MKDIR} ${STAGEDIR}${RUBY_EXAMPLESDIR}
+.endif
+.if ${PORT_OPTIONS:MRDOC}
+	${MKDIR} ${STAGEDIR}${RUBY_RIDIR}
+	${MKDIR} ${STAGEDIR}${RUBY_SITERIDIR}
+.endif
 
 post-install:
 #
 # XXX: hack to strip ruby binary. Ruby uses its own install script that seems
 # bogus to hack.
 #
-.if defined(STRIP) && ${STRIP} == -s
+.if defined(STRIP) && ${STRIP} == -s && ! ${PORT_OPTIONS:MDEBUG}
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${RUBY_NAME}
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libruby${RUBY_SHLIBVER}.so.${RUBY_SHLIBVER}
+	${FIND} ${STAGEDIR}${RUBY_ARCHLIBDIR} -type f -name '*\.so' -exec ${STRIP_CMD} {} \;
 .endif
 
 #
-# Link just installed "ruby" to "ruby18", etc.
+# Link just installed "ruby" to "ruby19", etc.
 #
 .if ${RUBY_VER} == ${RUBY_DEFAULT_VER}
 . for FILE in ${INSTALLED_SCRIPTS}
@@ -205,7 +208,6 @@ post-install:
 . endfor
 .endif
 
-.if ${PORT_OPTIONS:MDOCS}
 	# Create all dirs required (":u" isn't avaiable in STABLE yet :-()
 	${MKDIR} ${EXTSAMPLES:C,^([^/]+)/.*,\1,:S,^,${STAGEDIR}${RUBY_EXAMPLESDIR}/,}
 	${MKDIR} ${EXTDOCS:C,^([^/]+)/.*,\1,:S,^,${STAGEDIR}${RUBY_DOCDIR}/,}
@@ -224,104 +226,6 @@ post-install:
 			${WRKSRC}/LEGAL		\
 			${WRKSRC}/README*	\
 			${STAGEDIR}${RUBY_DOCDIR}/
-.endif
-
-#
-# Add generated RI files to pkg-plist
-#
-	@${FIND} -ds ${RUBY_RIDIR}/ ! -type d ! -name created.rid | \
-		${SED} 's,^${STAGEDIR}${PREFIX}/,,' >> ${TMPPLIST}
-	@${FIND} -ds ${RUBY_RIDIR}/ -type d -mindepth 1 | \
-		${SED} -E -e 's,^${STAGEDIR}${PREFIX}/,@dirrm ,' >> ${TMPPLIST}
-
-
-#
-# Add generated doxygen files to pkg-plist
-#
-	@${ECHO_CMD} "@unexec rmdir %D/${RUBY_SITERIDIR:S,^${PREFIX}/,,} 2>/dev/null || true" >> ${TMPPLIST}
-	@${ECHO_CMD} "@unexec rmdir %D/${RUBY_RIDIR:S,^${PREFIX}/,,} 2>/dev/null || true" >> ${TMPPLIST}
-	@${ECHO_CMD} "@unexec rmdir %D/share/ri/${RUBY_VER} 2>/dev/null || true" >> ${TMPPLIST}
-	@${ECHO_CMD} "@unexec rmdir %D/share/ri 2>/dev/null || true" >> ${TMPPLIST}
-	@${ECHO_CMD} "@unexec rmdir %D/${RUBY_DOCDIR:S,^${PREFIX}/,,} 2>/dev/null || true" >> ${TMPPLIST}
-
-	@${CAT} ${PKGMESSAGE}
-
-plist:
-	truncate -s0 pkg-plist
-.for FILE in ${INSTALLED_SCRIPTS}
-	@${ECHO_CMD} "bin/${FILE}%%RUBY_SUFFIX%%" >> pkg-plist
-	@${ECHO_CMD} "%%IF_DEFAULT%%bin/${FILE}" >> pkg-plist
-.endfor
-	@${ECHO_CMD} "lib/lib%%RUBY_NAME%%-static.a" >> pkg-plist
-	@${ECHO_CMD} "lib/lib%%RUBY_NAME%%.so" >> pkg-plist
-	@${ECHO_CMD} "lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%" >> pkg-plist
-	@${ECHO_CMD} "libdata/pkgconfig/ruby-1.9.pc" >> pkg-plist
-
-#
-# Includes
-#
-	@${FIND} -ds ${PREFIX}/include/ruby-${RUBY_VER} ! -type d | \
-		${SED} 's,^${PREFIX}/*,,' >> pkg-plist
-	@${FIND} -ds ${PREFIX}/include/ruby-${RUBY_VER} -type d | \
-		${SED} 's,^${PREFIX}/*,@dirrm ,' >> pkg-plist
-
-#
-# Vendor and site libs
-#
-	@${FIND} -Eds ${RUBY_DOCDIR}/ ! -type d ! -name .keep_me | \
-		${SED} 's,^${RUBY_DOCDIR},%%PORTDOCS%%%%RUBY_DOCDIR%%,' \
-		 >> pkg-plist
-	@${FIND} -Eds ${RUBY_DOCDIR}/ -type d -mindepth 1 | ${SORT} -r | \
-		${SED} -E -e \
-		's,^${RUBY_DOCDIR}(.*),%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%\1,' \
-		>> pkg-plist
-
-	@${FIND} -ds ${RUBY_EXAMPLESDIR}/ ! -type d ! -name .keep_me | \
-		${SED} 's,^${RUBY_EXAMPLESDIR},%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%,' \
-		 >> pkg-plist
-	@${FIND} -ds ${RUBY_EXAMPLESDIR}/ -type d -mindepth 1 | ${SORT} -r | \
-		${SED} -E -e \
-		's,^${RUBY_EXAMPLESDIR}(.*),%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%\1,' \
-		>> pkg-plist
-
-	@${ECHO_CMD} "%%RUBY_DOCDIR%%/.keep_me" >> pkg-plist
-#	@${ECHO_CMD} "@dirrmtry %%RUBY_DOCDIR%%" >> pkg-plist
-
-	@${ECHO_CMD} "%%RUBY_EXAMPLESDIR%%/.keep_me" >> pkg-plist
-	@${ECHO_CMD} "@dirrmtry %%RUBY_EXAMPLESDIR%%" >> pkg-plist
-
-	@${ECHO_CMD} "@exec /bin/mkdir -p %D/%%RUBY_RIDIR%%" >> pkg-plist
-	@${ECHO_CMD} "@exec env LC_TIME=C /bin/date > %D/%%RUBY_RIDIR%%/created.rid" >> pkg-plist
-	@${ECHO_CMD} "@unexec /bin/rm -f %D/%%RUBY_RIDIR%%/created.rid" \
-		>> pkg-plist
-
-	@${ECHO_CMD} "@exec /bin/mkdir -p %D/%%RUBY_SITERIDIR%%" >> pkg-plist
-	@${ECHO_CMD} "@exec env LC_TIME=C /bin/date > %D/%%RUBY_SITERIDIR%%/created.rid"  >> pkg-plist
-	@${ECHO_CMD} "@unexec /bin/rm -f %D/%%RUBY_SITERIDIR%%/created.rid" \
-		>> pkg-plist
-
-	@${FIND} -ds ${RUBY_LIBDIR}/ ! -type d | \
-		${SED} 's,^${RUBY_LIBDIR},%%RUBY_LIBDIR%%,' >> pkg-plist
-	@${FIND} -ds ${RUBY_LIBDIR}/ -type d | ${SORT} -r | \
-		${SED} -E -e 's,^${RUBY_LIBDIR}(.*),@dirrm %%RUBY_LIBDIR%%\1,' >> pkg-plist
-
-#
-# Find all gem files/folders
-#
-	@${ECHO_CMD} "%%RUBY_SITEARCHLIBDIR%%/.keep_me" >> pkg-plist
-	@${ECHO_CMD} "@dirrmtry %%RUBY_SITEARCHLIBDIR%%" >> pkg-plist
-	@${ECHO_CMD} "@dirrmtry %%RUBY_SITELIBDIR%%" >> pkg-plist
-	@${ECHO_CMD} "@dirrmtry lib/ruby/site_ruby" >> pkg-plist
-
-	@${ECHO_CMD} "%%RUBY_VENDORARCHLIBDIR%%/.keep_me" >> pkg-plist
-	@${ECHO_CMD} "@dirrmtry %%RUBY_VENDORARCHLIBDIR%%" >> pkg-plist
-	@${ECHO_CMD} "@dirrmtry %%RUBY_VENDORLIBDIR%%" >> pkg-plist
-	@${ECHO_CMD} "@dirrmtry lib/ruby/vendor_ruby" >> pkg-plist
-	@${ECHO_CMD} "@dirrmtry lib/ruby/gems" >> pkg-plist
-
-	@${ECHO_CMD} "@dirrmtry lib/ruby" >> pkg-plist
-
-	@${SED} -i "" -E -e "s,${RUBY_ARCH},%%RUBY_ARCH%%,g" pkg-plist
 
 test:
 	@(cd ${WRKSRC}; ${MAKE} test)

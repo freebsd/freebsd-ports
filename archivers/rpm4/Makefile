@@ -3,7 +3,7 @@
 
 PORTNAME=	rpm
 PORTVERSION=	4.11.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	archivers
 MASTER_SITES=	http://rpm.org/releases/rpm-${PORTVERSION:R}.x/ \
 		ftp://ftp.mirrorservice.org/sites/ftp.rpm.org/pub/rpm/dist/rpm-${PORTVERSION:E}.x/
@@ -23,6 +23,7 @@ PYTHON_CONFIGURE_ENABLE=python
 PYTHON_USE=	PYTHON=2.7
 NLS_CONFIGURE_ENABLE=nls
 NLS_USES=	gettext
+NLS_LIBS=	-lintl
 PORTDOCS=	*
 
 USES=		gmake libtool lua:51 pathfix shebangfix tar:bzip2

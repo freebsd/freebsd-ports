@@ -1,31 +1,14 @@
---- CMakeLists.txt.orig	2013-10-14 16:29:44.055730052 +0300
-+++ CMakeLists.txt	2013-10-14 16:30:05.395729128 +0300
-@@ -629,17 +629,17 @@
- install(FILES Copyright.txt DESTINATION ${CMAKE_DOC_DIR})
+Modules/ and Templates/ are installed by devel/cmake-modules.
+
+Not upstreamable.
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -576,7 +576,7 @@
  
  # Install script directories.
--install(
--  DIRECTORY Modules Templates
--  DESTINATION ${CMAKE_DATA_DIR}
--  FILE_PERMISSIONS OWNER_READ OWNER_WRITE GROUP_READ WORLD_READ
--  DIRECTORY_PERMISSIONS OWNER_READ OWNER_EXECUTE OWNER_WRITE
--                        GROUP_READ GROUP_EXECUTE
--                        WORLD_READ WORLD_EXECUTE
--  PATTERN "*.sh*" PERMISSIONS OWNER_READ OWNER_EXECUTE OWNER_WRITE
--                              GROUP_READ GROUP_EXECUTE
--                              WORLD_READ WORLD_EXECUTE
--  )
-+# install(
-+#   DIRECTORY Modules Templates
-+#   DESTINATION ${CMAKE_DATA_DIR}
-+#   FILE_PERMISSIONS OWNER_READ OWNER_WRITE GROUP_READ WORLD_READ
-+#   DIRECTORY_PERMISSIONS OWNER_READ OWNER_EXECUTE OWNER_WRITE
-+#                         GROUP_READ GROUP_EXECUTE
-+#                         WORLD_READ WORLD_EXECUTE
-+#   PATTERN "*.sh*" PERMISSIONS OWNER_READ OWNER_EXECUTE OWNER_WRITE
-+#                               GROUP_READ GROUP_EXECUTE
-+#                               WORLD_READ WORLD_EXECUTE
-+#   )
- 
- # process docs related install
- add_subdirectory(Docs)
+ install(
+-  DIRECTORY Help Modules Templates
++  DIRECTORY Help
+   DESTINATION ${CMAKE_DATA_DIR}
+   FILE_PERMISSIONS OWNER_READ OWNER_WRITE GROUP_READ WORLD_READ
+   DIRECTORY_PERMISSIONS OWNER_READ OWNER_EXECUTE OWNER_WRITE

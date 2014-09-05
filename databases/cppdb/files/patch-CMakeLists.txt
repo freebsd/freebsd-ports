@@ -1,0 +1,11 @@
+--- CMakeLists.txt.orig	2012-06-23 13:36:14.000000000 +0430
++++ CMakeLists.txt	2014-08-19 18:51:40.000000000 +0430
+@@ -196,7 +196,7 @@
+ endif()
+ 
+ if(NOT DISABLE_MYSQL)
+-	find_library(MYSQL_LIB mysqlclient)
++	find_library(MYSQL_LIB mysqlclient PATH_SUFFIXES mysql)
+ 	find_path(MYSQL_PATH mysql.h PATH_SUFFIXES mysql)
+ 	if(MYSQL_LIB AND MYSQL_PATH)
+ 		include_directories(${MYSQL_PATH})

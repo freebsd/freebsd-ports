@@ -17,12 +17,23 @@ LIB_DEPENDS=	libgtop-2.0.so:${PORTSDIR}/devel/libgtop \
 RUN_DEPENDS=	xauth:${PORTSDIR}/x11/xauth \
 		sudo:${PORTSDIR}/security/sudo
 
-USES=		desktop-file-utils gmake libtool pkgconfig
+USES=		gmake libtool pathfix pkgconfig
 USE_GNOME=	glib20 gconf2
 USE_LDCONFIG=	yes
+USE_XORG=	x11
 CONFIGURE_ARGS=	--enable-gtk-doc=no
 GNU_CONFIGURE=	yes
 GCONF_SCHEMAS=	gksu.schemas
-LIBS+=		`pkg-config --libs gtk+-x11-2.0`
+INSTALL_TARGET=	install-strip
+
+post-patch:
+	@${REINPLACE_CMD} '/AM_CFLAGS/s/-g -O2//' \
+		${WRKSRC}/gksu-properties/Makefile.in \
+		${WRKSRC}/libgksu/Makefile.in \
+		${WRKSRC}/libgksuui/Makefile.in
+	@${REINPLACE_CMD} '/^test_gksu_LDFLAGS =/s/glib-2.0/gtk+-2.0/' \
+		${WRKSRC}/libgksu/Makefile.in
+	@${REINPLACE_CMD} '/^libgksuui1_0_la_LIBADD =/s/$$/ -lX11/' \
+		${WRKSRC}/libgksuui/Makefile.in
 
 .include <bsd.port.mk>

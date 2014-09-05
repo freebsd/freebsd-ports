@@ -4,7 +4,7 @@
 
 PORTNAME=	rarian
 PORTVERSION=	0.8.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc gnome
 MASTER_SITES=	GNOME
 
@@ -23,16 +23,15 @@ DOCBOOK_VERSION=4.2
 
 CONFLICTS=	scrollkeeper-[0-9]*
 
-USES=		gmake pathfix tar:bzip2
+USES=		gmake libtool pathfix python tar:bzip2
 USE_GNOME=	gnomehier libxslt
-USE_PYTHON=	yes
-GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
+GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-convert-dir=${LOCALBASE}/share/omf \
-		--datadir=${PREFIX}/share \
 		--localstatedir=/var
 CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+LIBS+=		-L${LOCALBASE}/lib
+INSTALL_TARGET=	install-strip
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/lib/rarian|/db/rarian|' \

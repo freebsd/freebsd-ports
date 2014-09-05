@@ -33,7 +33,6 @@
     SUBDIR += cheese
     SUBDIR += clipgrab
     SUBDIR += clive
-    SUBDIR += clive1
     SUBDIR += clutter-gst
     SUBDIR += cuse4bsd-kmod
     SUBDIR += cx88
@@ -239,7 +238,6 @@
     SUBDIR += mplayer-fonts
     SUBDIR += mplayer-skins
     SUBDIR += mplayer2
-    SUBDIR += mplayerxp
     SUBDIR += mplex
     SUBDIR += mps-youtube
     SUBDIR += mpv
@@ -275,6 +273,7 @@
     SUBDIR += photofilmstrip
     SUBDIR += pitivi
     SUBDIR += playd
+    SUBDIR += plexhometheater
     SUBDIR += plexmediaserver
     SUBDIR += plexmediaserver-plexpass
     SUBDIR += podcastdl
@@ -352,7 +351,6 @@
     SUBDIR += totem-pl-parser
     SUBDIR += transcode
     SUBDIR += tstools
-    SUBDIR += tunapie
     SUBDIR += tvheadend
     SUBDIR += umph
     SUBDIR += umplayer
@@ -399,6 +397,7 @@
     SUBDIR += webcamd
     SUBDIR += win32-codecs
     SUBDIR += x264
+    SUBDIR += x265
     SUBDIR += xanim
     SUBDIR += xawtv
     SUBDIR += xbmc

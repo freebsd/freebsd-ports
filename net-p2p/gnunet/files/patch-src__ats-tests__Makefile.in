@@ -1,0 +1,22 @@
+--- src/ats-tests/Makefile.in.orig
++++ src/ats-tests/Makefile.in
+@@ -722,7 +722,8 @@
+  $(top_builddir)/src/testbed/libgnunettestbed.la \
+  $(top_builddir)/src/ats/libgnunetats.la \
+  $(top_builddir)/src/core/libgnunetcore.la \
+- $(top_builddir)/src/transport/libgnunettransport.la
++ $(top_builddir)/src/transport/libgnunettransport.la \
++ $(GN_LIBINTL)
+ 
+ gnunet_ats_sim_DEPENDENCIES = \
+  libgnunetatstesting.la \
+@@ -735,7 +736,8 @@
+  $(top_builddir)/src/util/libgnunetutil.la \
+  $(top_builddir)/src/ats/libgnunetats.la \
+  $(top_builddir)/src/core/libgnunetcore.la \
+- $(top_builddir)/src/transport/libgnunettransport.la
++ $(top_builddir)/src/transport/libgnunettransport.la \
++ $(GN_LIBINTL)
+ 
+ gnunet_solver_eval_DEPENDENCIES = \
+  $(top_builddir)/src/util/libgnunetutil.la

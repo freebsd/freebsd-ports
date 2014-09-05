@@ -1,4 +1,0 @@
-This is an implementation of iSCSI target, the server-side of ISCSI protocol,
-used to service remote iSCSI requests.
-
-WWW: http://www.netbsd.org/

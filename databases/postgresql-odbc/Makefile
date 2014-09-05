@@ -15,7 +15,7 @@ COMMENT=	PostgreSQL ODBC driver
 
 LICENSE=	LGPL20
 
-USES=		libtool pgsql
+USES+=		libtool pgsql
 USE_OPENSSL=	yes
 USE_LDCONFIG=	yes
 

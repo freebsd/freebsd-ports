@@ -23,6 +23,9 @@ RUN_DEPENDS=	rubygem-coderay>=0:${PORTSDIR}/textproc/rubygem-coderay \
 		rubygem-openid>=0:${PORTSDIR}/net/rubygem-openid \
 		rubygem-thin>=0:${PORTSDIR}/www/rubygem-thin
 
+DEPRECATED=	Depends on broken rubygem-dep_selector
+EXPIRES=	2014-09-25
+
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes

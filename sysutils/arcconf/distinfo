@@ -1,4 +1,2 @@
-SHA256 (asm_freebsd_x86_v7_30_18837.tgz) = 17fe9ee7996d23dad33feb4f281004e0a8dc915364626ab6fde4a140b8836afd
-SIZE (asm_freebsd_x86_v7_30_18837.tgz) = 104249384
-SHA256 (asm_freebsd_x64_v7_30_18837.tgz) = fb73848df8471b7c144042474eb6c3570a09a37b6cc10f8be07b0d7364ceb966
-SIZE (asm_freebsd_x64_v7_30_18837.tgz) = 101604376
+SHA256 (arcconf_v1_6_21062.zip) = fb740cb308fe8290f32b7e68f8f5bec54f9784a7377086769f2e2ec23e402ed0
+SIZE (arcconf_v1_6_21062.zip) = 10524609

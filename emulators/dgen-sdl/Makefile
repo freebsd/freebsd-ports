@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	dgen-sdl
-PORTVERSION=	1.32
+PORTVERSION=	1.33
 CATEGORIES=	emulators
 MASTER_SITES=	SF/dgen/dgen/${PORTVERSION}
 

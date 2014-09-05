@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	nut
-PORTVERSION=	19.2
-PORTREVISION=	1
+PORTVERSION=	20.0
 CATEGORIES=	misc
 MASTER_SITES=	SF
 PKGNAMEPREFIX=	health-
@@ -12,6 +11,7 @@ MAINTAINER=	jhale@FreeBSD.org
 COMMENT=	Nutrition software to record what you eat
 
 LICENSE=	GPLv2 # (or later)
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		gmake
 

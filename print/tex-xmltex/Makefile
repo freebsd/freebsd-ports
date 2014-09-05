@@ -2,10 +2,11 @@
 
 PORTNAME=	xmltex
 PORTVERSION=	1.9
+PORTREVISION=	1
 CATEGORIES=	print
-MASTER_SITES=	ftp://tug.org/historic/systems/texlive/2012/
+MASTER_SITES=	ftp://tug.org/historic/systems/texlive/2014/
 PKGNAMEPREFIX=	tex-
-DISTNAME=	texlive-20120701-texmf
+DISTNAME=	texlive-20140525-texmf
 DIST_SUBDIR=	TeX
 EXTRACT_ONLY=
 
@@ -13,13 +14,12 @@ MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Non-validating XML parser, written in TeX
 
 USES=		tar:xz
-USE_TEX=	texlive texmf pdftex fmtutil
+USE_TEX=	texmf pdftex fmtutil
 TEXHASHDIRS=	${TEXMFDISTDIR}
 EXTRACT_AFTER_ARGS=| ${TAR} -xf - -C ${STAGEDIR}${PREFIX}/share \
 		--strip-components 1 --no-same-permission --no-same-owner \
 		${EXTRACT_FILES:S,^,${DISTNAME}/,}
 EXTRACT_FILES= \
-	texmf-dist/source/xmltex \
 	texmf-dist/tex/xmltex \
 	texmf-dist/doc/otherformats/xmltex
 NO_WRKSRC=	yes

@@ -23,7 +23,6 @@ lib/pcscada/pcsc-thin-reader.ali
 lib/pcscada/pcsc-thin.ali
 lib/pcscada/pcsc-version.ali
 lib/pcscada/pcsc.ali
-%%PORTDOCS%%%%DOCSDIR%%/html/CHANGELOG.html
 %%PORTDOCS%%%%DOCSDIR%%/html/README.html
 %%PORTDOCS%%%%DOCSDIR%%/html/asciidoc.css
 %%PORTDOCS%%%%DOCSDIR%%/html/index.html

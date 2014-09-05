@@ -7,7 +7,7 @@ CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	cjpugmed@gmail.com
+MAINTAINER=	cpm@fbsd.es
 COMMENT=	Caching wrapper around the svnlook command
 
 LICENSE=	ART10 GPLv1

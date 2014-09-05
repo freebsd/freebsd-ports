@@ -3,7 +3,7 @@
 
 PORTNAME=	ncs
 PORTVERSION=	2.0.4
-PORTREVISION=	8
+PORTREVISION=	10
 CATEGORIES=	science parallel
 MASTER_SITES=	http://research.edf.com/fichiers/fckeditor/Commun/Innovation/logiciels/code_saturne/Releases/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.//g}
@@ -95,11 +95,7 @@ LIB_DEPENDS+=	libblas.so:${PORTSDIR}/math/blas
 BLAS_LIB=	-lblas
 .endif
 
-.if exists(${LOCALBASE}/bin/acroread)
-RUN_DEPENDS+=	acroread:${PORTSDIR}/print/acroreadwrapper
-.else
 RUN_DEPENDS+=	xpdf:${PORTSDIR}/graphics/xpdf
-.endif
 
 pre-everything::
 	@${ECHO_MSG}

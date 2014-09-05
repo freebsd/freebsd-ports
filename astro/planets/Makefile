@@ -20,15 +20,11 @@ ALL_TARGET=	${PORTNAME}
 
 OPTIONS_DEFINE=	DOCS
 
-PORTDOCS=	KEYBINDINGS.txt getting_started.html
-PLIST_FILES=	bin/planets man/man1/planets.1.gz
-
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/planets.1 ${STAGEDIR}${MANPREFIX}/man/man1
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-.for doc in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${doc} ${STAGEDIR}${DOCSDIR}
-.endfor
+	${INSTALL_DATA} ${WRKSRC}/KEYBINDINGS.txt ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/getting_started.html ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

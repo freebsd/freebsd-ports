@@ -1,9 +1,0 @@
-OpenMCU is a H323 Multipoint Conference Unit.
-
-It allows several people to take part in the same Video Conference or
-Internet Phone Call (VoIP) when using program using the H323 protocols.
-
-Applications using H323 include OpenH323, OhPhone, GnomeMeeting
-and Microsoft's NetMeeting.
-
-It makes use of PWLib and the OpenH323 stack from Equivalence Ltd Pty

@@ -4,27 +4,34 @@
 PORTNAME=	Pymacs
 PORTVERSION=	0.25
 CATEGORIES=	devel editors python elisp
-MASTER_SITES=	http://github.com/pinard/${PORTNAME}/archive/v${PORTVERSION}.tar.gz?dummy=/
+MASTER_SITES=	GH
 
-MAINTAINER= ports@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python package for scripting emacs
 
-USE_PYTHON=	yes
-USE_PYDISTUTILS=yes
-USE_PYTHON_PREFIX=	yes
-USE_EMACS=	yes
+LICENSE=	GPLv2
 
-NO_STAGE=	yes
+USE_GITHUB=	yes
+GH_ACCOUNT=	pinard
+GH_TAGNAME=	${PORTVERSION:S/^/v/}
+GH_COMMIT=	5989046
+
+USES=		python
+USE_EMACS=	yes
+USE_PYTHON=	distutils
+
 pre-configure:
 	@(cd ${WRKSRC}; \
 		${PYTHON_CMD} pppp -C ppppconfig.py Pymacs.py.in \
 			pppp.rst.in pymacs.el.in pymacs.rst.in \
 			contrib	tests)
 
-# Install the emacs side of things
+post-build:
+	(cd ${WRKSRC} && ${EMACS_CMD} -batch -q -no-site-file -no-init-file \
+		-f batch-byte-compile pymacs.el)
+
 post-install:
-	${INSTALL_DATA} ${WRKSRC}/pymacs.el ${PREFIX}/${EMACS_SITE_LISPDIR}
-	${EMACS_NAME} -batch -f batch-byte-compile \
-		${PREFIX}/${EMACS_SITE_LISPDIR}/pymacs.el
+	(cd ${WRKSRC} && ${INSTALL_DATA} pymacs.el pymacs.elc \
+		${STAGEDIR}${PREFIX}/${EMACS_SITE_LISPDIR})
 
 .include <bsd.port.mk>

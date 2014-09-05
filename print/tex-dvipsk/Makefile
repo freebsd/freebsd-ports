@@ -1,10 +1,9 @@
 # $FreeBSD$
 
 PORTNAME=	dvipsk
-PORTVERSION=	5.992
-PORTREVISION=	3
+PORTVERSION=	5.994
 CATEGORIES=	print
-MASTER_SITES=	ftp://tug.org/historic/systems/texlive/2012/
+MASTER_SITES=	ftp://tug.org/historic/systems/texlive/2014/
 PKGNAMEPREFIX=	tex-
 DISTNAME=	texlive-${DISTVERSION_TEXMF}-source
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
@@ -20,31 +19,27 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	libpaper.so:${PORTSDIR}/print/libpaper
 
 USES=		gmake tar:xz
-USE_TEX=	texlive kpathsea web2c texmf texhash
-TEXHASHDIRS=	${TEXMFDISTDIR} ${TEXMFDIR}
+USE_TEX=	kpathsea web2c texmf texhash
+TEXHASHDIRS=	${TEXMFDISTDIR}
 EXTRACT_AFTER_ARGS=	${EXTRACT_FILES:S,^,${DISTNAME}/,}
 EXTRACT_FILES= \
+	am \
 	m4 \
 	build-aux \
-	texk/am \
 	texk/dvipsk \
-	texk/lcdf-typetools \
-	texk/kpathsea
+	texk/lcdf-typetools
 EXTRACT_AFTER_ARGS_TEXMF= \
 	| ${TAR} -xf - -C ${STAGEDIR}${PREFIX}/share \
 	--strip-components 1 --no-same-permission --no-same-owner \
 	${EXTRACT_FILES_TEXMF:S,^,${DISTNAME_TEXMF}/,}
-DISTVERSION_TEXMF=	20120701
+DISTVERSION_TEXMF=	20140525
 DISTNAME_TEXMF=	texlive-${DISTVERSION_TEXMF}-texmf
 EXTRACT_FILES_TEXMF= \
+	texmf-dist/doc/dvips/ \
+	texmf-dist/dvips/ \
 	texmf-dist/fonts/map/dvips/ \
 	texmf-dist/fonts/enc/dvips/ \
-	texmf-dist/dvips/ \
-	texmf-dist/tex/generic/dvips/ \
-	texmf/fonts/map/dvips/ \
-	texmf/fonts/enc/dvips/ \
-	texmf/doc/dvips/ \
-	texmf/dvips/
+	texmf-dist/tex/generic/dvips/
 WRKSRC=	${WRKDIR}/${DISTNAME}/texk/dvipsk
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS= --with-paper \
@@ -61,8 +56,5 @@ INFO=	dvips
 pre-install:
 	${CAT} ${DISTDIR}/${DIST_SUBDIR}/texlive-${DISTVERSION_TEXMF}-texmf${EXTRACT_SUFX} \
 		${EXTRACT_AFTER_ARGS_TEXMF}
-
-post-install:
-	${INSTALL_DATA} ${WRKDIR}/texlive-${DISTVERSION_TEXMF}-source/texk/lcdf-typetools/7t.enc ${STAGEDIR}${PREFIX}/${TEXMFDISTDIR}/fonts/enc/dvips/base/7t.enc
 
 .include <bsd.port.mk>

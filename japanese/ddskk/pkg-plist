@@ -44,7 +44,7 @@
 %%EMACS_VERSION_SITE_LISPDIR%%/skk/skk-jisx0201.el
 %%EMACS_VERSION_SITE_LISPDIR%%/skk/skk-jisx0201.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/skk/skk-jisx0213.el
-@unexec rm -f %D/%%EMACS_VERSION_SITE_LISPDIR%%/skk/skk-jisx0213.elc || true
+@rmtry %%EMACS_VERSION_SITE_LISPDIR%%/skk/skk-jisx0213.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/skk/skk-jisyo-edit-mode.el
 %%EMACS_VERSION_SITE_LISPDIR%%/skk/skk-jisyo-edit-mode.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/skk/skk-kakasi.el
@@ -56,7 +56,7 @@
 %%EMACS_VERSION_SITE_LISPDIR%%/skk/skk-look.el
 %%EMACS_VERSION_SITE_LISPDIR%%/skk/skk-look.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/skk/skk-lookup.el
-@unexec rm -f %D/%%EMACS_VERSION_SITE_LISPDIR%%/skk/skk-lookup.elc || true
+@rmtry %%EMACS_VERSION_SITE_LISPDIR%%/skk/skk-lookup.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/skk/skk-macs.el
 %%EMACS_VERSION_SITE_LISPDIR%%/skk/skk-macs.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/skk/skk-num.el
@@ -84,9 +84,11 @@
 %%EMACS_VERSION_SITE_LISPDIR%%/skk/skk-viper.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/skk/skk.el
 %%EMACS_VERSION_SITE_LISPDIR%%/skk/skk.elc
-@dirrm %%EMACS_VERSION_SITE_LISPDIR%%/skk
 share/skk/NICOLA-SKK.tut
 share/skk/SKK.tut
 share/skk/SKK.tut.E
 share/skk/skk.xpm
 @dirrmtry share/skk
+@dirrm %%EMACS_VERSION_SITE_LISPDIR%%/skk
+@dirrmtry %%EMACS_VERSION_SITE_LISPDIR%%
+@dirrmtry %%EMACS_LIBDIR_WITH_VER%%

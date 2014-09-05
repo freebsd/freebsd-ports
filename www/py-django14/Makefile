@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	django
-PORTVERSION=	1.4.13
+PORTVERSION=	1.4.14
 CATEGORIES=	www python
 MASTER_SITES=	https://www.djangoproject.com/m/releases/${PORTVERSION:R}/ \
 		CHEESESHOP
@@ -15,22 +15,21 @@ MAINTAINER=	lwhsu@FreeBSD.org
 COMMENT=	High-level Python Web framework
 
 LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USE_PYTHON=	2
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
+USES=		cpe python:2
+USE_PYTHON=	autoplist distutils
 
 CONFLICTS=	py[23][0-9]-django-devel-[0-9]* py[23][0-9]-django-1.[0-35-9].*
+CPE_VENDOR=	djangoproject
 
 DOCSDIR=	${PREFIX}/share/doc/py-django
 
-# bypass infrastructure bug
-OPTIONSFILE=	${PORT_DBDIR}/py-${PORTNAME}/options
 OPTIONS_DEFINE=	FASTCGI HTMLDOCS
 OPTIONS_DEFAULT=SQLITE
 OPTIONS_GROUP=	DATABASE
 OPTIONS_GROUP_DATABASE=	PGSQL MYSQL SQLITE
-HTMLDOCS_DESC=	Install the HTML documentation (requires Sphinx)
+HTMLDOCS_DESC=	Install HTML documentation (requires Sphinx)
 
 PLIST_FILES=	man/man1/daily_cleanup.1.gz \
 		man/man1/django-admin.1.gz \

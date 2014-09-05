@@ -1,25 +1,25 @@
 # $FreeBSD$
 
 PORTNAME=	pytest
-PORTVERSION=	2.5.2
+PORTVERSION=	2.6.1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	rm@FreeBSD.org
-COMMENT=	Cross-project testing tool for Python
+COMMENT=	Mature full-featured Python testing tool
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pylib>=1.4.20:${PORTSDIR}/devel/py-pylib
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pylib>=1.4.22:${PORTSDIR}/devel/py-pylib
+TEST_DEPENDS:=	${RUN_DEPENDS} \
+		${PYTHON_PKGNAMEPREFIX}mock>0:${PORTSDIR}/devel/py-mock
 
-USE_PYTHON=		yes
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
-
-TEST_DEPENDS:=		${RUN_DEPENDS}
+USES=		python
+USE_PYTHON=	autoplist distutils
 
 regression-test: build
-	@cd ${WRKSRC} && PYTHONPATH=${WRKSRC} ${PYTHON_CMD} pytest.py --ignore=doc/ja
+	@cd ${WRKSRC} && ${PYTHON_CMD} ${PYDISTUTILS_SETUP} test
 
 .include <bsd.port.mk>

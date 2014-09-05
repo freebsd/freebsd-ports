@@ -14,7 +14,7 @@ COMMENT=	Port installed version check/report with shar archival
 LICENSE=	CHUCKY
 LICENSE_NAME=	CHUCKY BSD LICENSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
-LICENSE_PERMS=	${_LICENSE_PERMS_DEFAULT}
+LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 LIB_DEPENDS=	libpkg.so:${PORTSDIR}/ports-mgmt/pkg \
 		libsqlite3.so:${PORTSDIR}/databases/sqlite3

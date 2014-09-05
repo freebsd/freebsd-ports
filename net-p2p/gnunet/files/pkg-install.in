@@ -1,0 +1,11 @@
+#!/bin/sh
+
+GNUNET_DAEMON_DIR=%%GNUNET_DAEMON_DIR%%
+
+case $2 in
+POST-INSTALL)
+	if [ ! -d $GNUNET_DAEMON_DIR ]; then
+		install -d -o gnunet -g gnunet -m 700 $GNUNET_DAEMON_DIR
+	fi
+	;;
+esac

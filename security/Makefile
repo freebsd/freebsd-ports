@@ -35,7 +35,6 @@
     SUBDIR += belier
     SUBDIR += bfbtester
     SUBDIR += binwalk
-    SUBDIR += bioapi
     SUBDIR += blindelephant
     SUBDIR += botan110
     SUBDIR += bro
@@ -44,7 +43,6 @@
     SUBDIR += bruteforceblocker
     SUBDIR += bsdsfv
     SUBDIR += bsmtrace
-    SUBDIR += bsp_upektfmess
     SUBDIR += bugs
     SUBDIR += burpsuite
     SUBDIR += ca_root_nss
@@ -101,7 +99,6 @@
     SUBDIR += dirbuster
     SUBDIR += dirmngr
     SUBDIR += distcache
-    SUBDIR += distcache-devel
     SUBDIR += dmitry
     SUBDIR += doorman
     SUBDIR += doscan
@@ -129,6 +126,7 @@
     SUBDIR += fpc-openssl
     SUBDIR += fpm2
     SUBDIR += fprint_demo
+    SUBDIR += fprintd
     SUBDIR += fragroute
     SUBDIR += fragrouter
     SUBDIR += fsh
@@ -174,7 +172,6 @@
     SUBDIR += hlfl
     SUBDIR += hmap
     SUBDIR += honggfuzz
-    SUBDIR += horde3-jeta
     SUBDIR += hotssh
     SUBDIR += hs-Crypto
     SUBDIR += hs-DRBG
@@ -216,7 +213,6 @@
     SUBDIR += hs-x509-system
     SUBDIR += hs-x509-validation
     SUBDIR += httprint
-    SUBDIR += hunch
     SUBDIR += hydra
     SUBDIR += i2p
     SUBDIR += iaikpkcs11wrapper
@@ -329,7 +325,6 @@
     SUBDIR += mhash
     SUBDIR += mindterm-binary
     SUBDIR += monkeysphere
-    SUBDIR += mosref
     SUBDIR += munge
     SUBDIR += mussh
     SUBDIR += nacl
@@ -346,6 +341,7 @@
     SUBDIR += nmapsi4
     SUBDIR += nss
     SUBDIR += oath-toolkit
+    SUBDIR += obfsclient
     SUBDIR += obfsproxy
     SUBDIR += ocaml-cryptgps
     SUBDIR += ocaml-cryptokit
@@ -378,7 +374,6 @@
     SUBDIR += openvpn-admin
     SUBDIR += openvpn-auth-ldap
     SUBDIR += openvpn-auth-radius
-    SUBDIR += openvpn-beta
     SUBDIR += openvpn-devel
     SUBDIR += ophcrack
     SUBDIR += orthrus
@@ -497,6 +492,7 @@
     SUBDIR += p5-Crypt-RandPasswd
     SUBDIR += p5-Crypt-Random
     SUBDIR += p5-Crypt-Random-Source
+    SUBDIR += p5-Crypt-RHash
     SUBDIR += p5-Crypt-Rijndael
     SUBDIR += p5-Crypt-Rijndael_PP
     SUBDIR += p5-Crypt-SKey
@@ -510,6 +506,7 @@
     SUBDIR += p5-Crypt-SmbHash
     SUBDIR += p5-Crypt-Solitaire
     SUBDIR += p5-Crypt-TEA
+    SUBDIR += p5-Crypt-Tea_JS
     SUBDIR += p5-Crypt-T_e_a
     SUBDIR += p5-Crypt-TripleDES
     SUBDIR += p5-Crypt-Twofish
@@ -618,8 +615,6 @@
     SUBDIR += pad
     SUBDIR += pam-mysql
     SUBDIR += pam-pgsql
-    SUBDIR += pam_abl
-    SUBDIR += pam_bsdbioapi
     SUBDIR += pam_fprint
     SUBDIR += pam_google_authenticator
     SUBDIR += pam_helper
@@ -688,9 +683,6 @@
     SUBDIR += pgpdump
     SUBDIR += pgpgpg
     SUBDIR += pgpin
-    SUBDIR += php-Auth_OpenID
-    SUBDIR += php-Auth_OpenID2
-    SUBDIR += php-openid-ldap
     SUBDIR += php-suhosin
     SUBDIR += php5-filter
     SUBDIR += php5-hash
@@ -704,6 +696,10 @@
     SUBDIR += php55-hash
     SUBDIR += php55-mcrypt
     SUBDIR += php55-openssl
+    SUBDIR += php56-filter
+    SUBDIR += php56-hash
+    SUBDIR += php56-mcrypt
+    SUBDIR += php56-openssl
     SUBDIR += phpdeadlock
     SUBDIR += phpsecinfo
     SUBDIR += pidentd
@@ -867,6 +863,7 @@
     SUBDIR += ruby-hmac
     SUBDIR += ruby-password
     SUBDIR += ruby-tcpwrap
+    SUBDIR += rubygem-bcrypt
     SUBDIR += rubygem-bcrypt-ruby
     SUBDIR += rubygem-ezcrypto
     SUBDIR += rubygem-gpgr
@@ -894,15 +891,11 @@
     SUBDIR += rubygem-twitter_oauth
     SUBDIR += safesh
     SUBDIR += samba-virusfilter
-    SUBDIR += samhain
-    SUBDIR += samhain-client
-    SUBDIR += samhain-server
     SUBDIR += sancp
     SUBDIR += sasp
     SUBDIR += scamp
     SUBDIR += scanhill
     SUBDIR += scanlogd
-    SUBDIR += scannedonly
     SUBDIR += scanssh
     SUBDIR += scrypt
     SUBDIR += seahorse
@@ -981,7 +974,6 @@
     SUBDIR += tclsasl
     SUBDIR += tinc
     SUBDIR += tinyca
-    SUBDIR += tinysu
     SUBDIR += tlswrap
     SUBDIR += tor
     SUBDIR += tor-devel

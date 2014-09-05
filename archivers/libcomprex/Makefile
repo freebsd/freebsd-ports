@@ -3,7 +3,7 @@
 
 PORTNAME=	libcomprex
 PORTVERSION=	0.3.3
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	archivers
 MASTER_SITES=	SF/gnupdate/${PORTNAME}/${PORTVERSION}
 
@@ -16,7 +16,7 @@ OPTIONS_DEFINE=	NLS
 OPTIONS_SUB=	yes
 
 INSTALL_TARGET=	install-strip
-USES=		libtool:keepla pathfix pkgconfig
+USES=		libtool pathfix pkgconfig
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 

@@ -2,10 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	igbinary
-PORTVERSION=	1.1.1
-PORTREVISION=	1
+PORTVERSION=	1.2.1
 CATEGORIES=	converters
-MASTER_SITES=	http://pecl.php.net/get/
+MASTER_SITES=	http://pecl.php.net/get/ \
+		LOCAL/sunpoet
 PKGNAMEPREFIX=	pecl-
 DIST_SUBDIR=	PECL
 
@@ -21,6 +21,8 @@ USE_PHPIZE=	yes
 USES=		tar:tgz
 
 post-install:
+	${CHMOD} u+w ${STAGEDIR}${PREFIX}/lib/php/${PHP_EXT_DIR}/${PHP_MODNAME}.so
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/php/${PHP_EXT_DIR}/${PHP_MODNAME}.so
+	${CHMOD} u-w ${STAGEDIR}${PREFIX}/lib/php/${PHP_EXT_DIR}/${PHP_MODNAME}.so
 
 .include <bsd.port.mk>

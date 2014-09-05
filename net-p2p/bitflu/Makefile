@@ -2,59 +2,47 @@
 # $FreeBSD$
 
 PORTNAME=	bitflu
-PORTVERSION=	1.35
+PORTVERSION=	1.51
 CATEGORIES=	net-p2p
-MASTER_SITES=	http://bitflu.workaround.ch/bitflu/ CENKES
+MASTER_SITES=	http://bitflu.workaround.ch/bitflu/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	BitTorrent client written in Perl
 
-RUN_DEPENDS=	p5-Digest-SHA1>=0:${PORTSDIR}/security/p5-Digest-SHA1 \
-		p5-URI>=0:${PORTSDIR}/net/p5-URI \
-		p5-Danga-Socket>=0:${PORTSDIR}/devel/p5-Danga-Socket \
-		p5-XML-LibXML>=0:${PORTSDIR}/textproc/p5-XML-LibXML
+LICENSE=	ART20
+LICENSE_FILE=	${WRKSRC}/Documentation/artistic-2_0.txt
 
-PLUGINSDIR_BASE=lib/perl5
-PLUGINSDIR=	${PLUGINSDIR_BASE}/Bitflu
-USES=		perl5 tar:tgz
+RUN_DEPENDS=	p5-Digest-SHA1>=0:${PORTSDIR}/security/p5-Digest-SHA1 \
+		p5-Danga-Socket>=0:${PORTSDIR}/devel/p5-Danga-Socket
+
+USES=		perl5 shebangfix tar:tgz
 NO_BUILD=	yes
 
+SHEBANG_FILES=	bitflu.pl
 SUB_FILES=	pkg-message
-SUB_LIST=	DOCSDIR=${DOCSDIR} PLUGINSDIR=${PLUGINSDIR}
-PLIST_SUB=	PLUGINSDIR=${PLUGINSDIR}
 
 PORTDOCS=	ChangeLog.txt README.txt README_IPv6.txt
 
-OPTIONS_DEFINE=	IPV6 EXAMPLES DOCS
+OPTIONS_DEFINE=		DOCS EXAMPLES IPV6
 OPTIONS_DEFAULT=	IPV6
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MIPV6}
-RUN_DEPENDS+=	p5-IO-Socket-INET6>=0:${PORTSDIR}/net/p5-IO-Socket-INET6
-.endif
+IPV6_RUN_DEPENDS=	p5-IO-Socket-INET6>=0:${PORTSDIR}/net/p5-IO-Socket-INET6
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|'\''.bitflu.config'\''|"$$ENV{HOME}/.bitflu.config"|; \
-		s|\./plugins|${PREFIX}/${PLUGINSDIR_BASE}|; \
-		s|/usr/bin/perl|${PERL}|; \
-		s|\./workdir|$$ENV{HOME}/.bitflu.workdir|; \
-		s|--config=\.bitflu.config|--config=~/.bitflu.config|' \
+		s|\./plugins|${DATADIR}/plugins|; \
+		s|\./workdir|$$ENV{HOME}/.bitflu.workdir|' \
 		${WRKSRC}/bitflu.pl
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME}.pl \
 		${STAGEDIR}${PREFIX}/bin/${PORTNAME}
-	${MKDIR} ${STAGEDIR}${PREFIX}/${PLUGINSDIR}
-	${INSTALL_DATA} ${WRKSRC}/plugins/Bitflu/*.pm ${STAGEDIR}${PREFIX}/${PLUGINSDIR}/
-.if ${PORT_OPTIONS:MEXAMPLES}
-	${INSTALL} -d ${STAGEDIR}${EXAMPLESDIR}/
+	@${MKDIR} ${STAGEDIR}${DATADIR}/plugins/Bitflu
+	${INSTALL_DATA} ${WRKSRC}/plugins/Bitflu/*.pm ${STAGEDIR}${DATADIR}/plugins/Bitflu
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.config.example \
 		${STAGEDIR}${EXAMPLESDIR}/${PORTNAME}.config
-.endif
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
-.endif
 
 .include <bsd.port.mk>

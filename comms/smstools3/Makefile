@@ -85,7 +85,5 @@ post-install:
 	@${MKDIR} ${STAGEDIR}${SPOOLDIR}/incoming ${STAGEDIR}${SPOOLDIR}/outgoing \
 		${STAGEDIR}${SPOOLDIR}/checked ${STAGEDIR}${LOGDIR} \
 		${STAGEDIR}${PIDDIR}
-	@${CHOWN} -R ${SMSD_USER}:${SMSD_GROUP} ${STAGEDIR}${SPOOLDIR} \
-		${STAGEDIR}${LOGDIR} ${STAGEDIR}${PIDDIR}
 
 .include <bsd.port.mk>

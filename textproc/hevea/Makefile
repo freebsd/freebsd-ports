@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	hevea
-PORTVERSION=	2.16
+PORTVERSION=	2.17
 CATEGORIES=	textproc
 MASTER_SITES=	http://para.inria.fr/~maranget/hevea/distri/ \
 		ftp://ftp.inria.fr/INRIA/moscova/hevea/
@@ -35,11 +35,10 @@ post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/bibhva
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/hevea
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/hacha
-	@${MKDIR} ${STAGEDIR}${PREFIX}/share/doc/hevea
 .if ${PORT_OPTIONS:MDOCS}
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/doc/hevea
 	${INSTALL_DATA} ${DISTDIR}/${PORTNAME}-${PORTVERSION}-manual.pdf ${STAGEDIR}${PREFIX}/share/doc/hevea
 	(cd ${STAGEDIR}${PREFIX}/share/doc/hevea; ${TAR} xvfz ${DISTDIR}/${PORTNAME}-${PORTVERSION}-manual.tar.gz)
-	#@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${STAGEDIR}${PREFIX}/share/doc/hevea
 .endif
 	@${CAT} ${PKGMESSAGE}
 

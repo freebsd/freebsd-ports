@@ -1,3 +1,3 @@
-%%DATADIR%%/java/libopencv_java247.so
-%%DATADIR%%/java/opencv-247.jar
+%%DATADIR%%/java/libopencv_java%%OCV_VER%%.so
+%%DATADIR%%/java/opencv-%%OCV_VER%%.jar
 @dirrmtry %%DATADIR%%/java

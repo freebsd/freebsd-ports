@@ -1,0 +1,20 @@
+--- bfd/config.bfd.orig	1970-01-01 00:07:43.000000000 +0000
++++ bfd/config.bfd	1970-01-01 00:09:21.000000000 +0000
+@@ -323,7 +323,7 @@
+     targ_defvec=bfd_elf32_littlearm_vec
+     targ_selvecs=bfd_elf32_bigarm_vec
+     ;;
+-  armeb-*-elf | arm*b-*-linux-*)
++  armeb-*-elf | arm*b-*-freebsd* | arm*b-*-linux-*)
+     targ_defvec=bfd_elf32_bigarm_vec
+     targ_selvecs=bfd_elf32_littlearm_vec
+     ;;
+@@ -331,7 +331,7 @@
+     targ_defvec=bfd_elf32_littlearm_vec
+     targ_selvecs=bfd_elf32_bigarm_vec
+     ;;
+-  arm-*-elf | arm-*-freebsd* | arm*-*-linux-* | arm*-*-conix* | \
++  arm-*-elf | arm*-*-freebsd* | arm*-*-linux-* | arm*-*-conix* | \
+   arm*-*-uclinux* | arm-*-kfreebsd*-gnu | \
+   arm*-*-eabi* )
+     targ_defvec=bfd_elf32_littlearm_vec

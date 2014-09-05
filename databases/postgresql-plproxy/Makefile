@@ -12,24 +12,13 @@ COMMENT=	PL/Proxy - database partitioning system
 
 LICENSE=	BSD
 
-USES=		bison gmake
-USE_PGSQL=	yes
+USES+=		bison gmake pgsql
 
 PORTSCOUT=	site:http://pgfoundry.org/frs/?group_id=1000207
 
 .include <bsd.port.pre.mk>
 
-.if exists(${LOCALBASE}/bin/postmaster)
-PGSQL_VER!=	${LOCALBASE}/bin/postmaster -V | \
-		${SED} -En 's/.*PostgreSQL[^0-9]*([0-9]+)\.([0-9]+)\..*/\1\2/p'
-.elif exists(${LOCALBASE}/bin/pg_config)
-PGSQL_VER!=	${LOCALBASE}/bin/pg_config --version | \
-		${SED} -n 's/PostgreSQL[^0-9]*\([0-9][0-9]*\)\.\([0-9][0-9]*\)[^0-9].*/\1\2/p'
-.else
-PGSQL_VER=	${DEFAULT_PGSQL_VER}
-.endif
-
-.if ${PGSQL_VER} > 91
+.if ${PGSQL_VER} > 9.1
 PLIST_SUB+=	NEW_CONTRIB_DIR=""  OLD_CONTRIB_DIR="@comment "
 .else
 PLIST_SUB+=	NEW_CONTRIB_DIR="@comment "  OLD_CONTRIB_DIR=""

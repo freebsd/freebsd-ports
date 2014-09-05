@@ -1,14 +1,5 @@
 --- yasql.in.orig	2005-05-09 18:01:47.000000000 +0200
 +++ yasql.in	2010-11-18 15:10:32.000000000 +0100
-@@ -60,7 +60,7 @@
- 
- select((select(STDOUT), $| = 1)[0]); #unbuffer STDOUT
- 
--$sysconfdir = "/etc";
-+$sysconfdir = "%%LOCALBASE%%/etc";
- $sysconf = "$sysconfdir/yasql.conf";
- 
- # try to include Time::HiRes for fine grained benchmarking
 @@ -174,7 +174,7 @@
        wrn("Connection lost (timeout: $conf{connection_timeout})");
        quit(1);

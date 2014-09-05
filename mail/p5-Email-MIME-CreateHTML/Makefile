@@ -2,14 +2,15 @@
 # $FreeBSD$
 
 PORTNAME=	Email-MIME-CreateHTML
-PORTVERSION=	1.030
-PORTREVISION=	1
+PORTVERSION=	1.040
 CATEGORIES=	mail www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Multipart HTML Email builder
+
+LICENSE=	GPLv2
 
 BUILD_DEPENDS=	p5-File-Policy>=0:${PORTSDIR}/devel/p5-File-Policy \
 		p5-Data-Serializer>0:${PORTSDIR}/devel/p5-Data-Serializer \

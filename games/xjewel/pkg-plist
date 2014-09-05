@@ -1,7 +1,5 @@
 bin/xjewel
+man/man6/xjewel.6.gz
 lib/X11/xjewel/xjewel.scores
 %%FONTSDIR%%/seven_seg.pcf.gz
-@exec cd %D/%%FONTSDIR%% ; %D/bin/mkfontdir
-@unexec cd %D/%%FONTSDIR%% ; %D/bin/mkfontdir
-@unexec if [ `wc -c %D/%%FONTSDIR%%/fonts.dir | awk '{print $1}'` = 2 ]; then rm -f %D/%%FONTSDIR%%/fonts.dir; fi
 @dirrm lib/X11/xjewel

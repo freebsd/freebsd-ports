@@ -2,11 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	amavis-logwatch
-PORTVERSION=	1.51.02
+PORTVERSION=	1.51.03
 CATEGORIES=	mail
 MASTER_SITES=	SF/logreporters/${PORTNAME}/release/${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	danilo@FreeBSD.org
 COMMENT=	Amavisd-new log parser
 
 LICENSE=	MIT
@@ -22,8 +22,6 @@ SHEBANG_FILES=	amavis-logwatch
 OPTIONS_DEFINE=	EXAMPLES DOCS
 OPTIONS_DEFAULT=EXAMPLES DOCS
 
-.include <bsd.port.options.mk>
-
 post-patch:
 	@cd ${WRKSRC} && ${REINPLACE_CMD} -e '\
 		s!/usr/local/etc!${ETCDIR}! \
@@ -37,13 +35,9 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.conf.sample ${STAGEDIR}${ETCDIR}
 
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_MAN} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
-.endif
-.if ${PORT_OPTIONS:MEXAMPLES}
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTEXAMPLES} ${STAGEDIR}${EXAMPLESDIR}
-.endif
 
 .include <bsd.port.mk>

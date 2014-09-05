@@ -1,0 +1,38 @@
+--- win/vulture/GNUmakefile.orig
++++ win/vulture/GNUmakefile
+@@ -12,7 +12,7 @@
+ 	ifndef SDL_CONFIG
+ 		OS := $(shell uname -s)
+ 		ifeq ($(OS),FreeBSD)
+-			SDL_CONFIG := sdl11-config
++			SDL_CONFIG := sdl-config
+ 		else
+ 			SDL_CONFIG := sdl-config
+ 		endif
+@@ -20,7 +20,7 @@
+ 	SDL_CFLAGS = $(shell $(SDL_CONFIG) --cflags)
+ endif
+ 
+-CFLAGS := $(BASECFLAGS) $(SDL_CFLAGS) -DUSE_SDL_SYSCALLS -g3 -Wall
++CFLAGS := $(BASECFLAGS) $(SDL_CFLAGS) -DUSE_SDL_SYSCALLS -Wall
+ 
+ ifeq ($(BUILD), nethack)
+ 	BUILDDIR := build_nethack
+@@ -72,7 +72,7 @@
+ 
+ $(OUTPUT_OBJ): $(VOBJ)
+ 	@echo combining objects to $@
+-	@$(CXX) -nostdlib -Xlinker -r $(VOBJ) -lstdc++ -o $(OUTPUT_OBJ)
++	@$(CXX) -nostdlib -Xlinker -r $(VOBJ) -o $(OUTPUT_OBJ)
+ 
+ $(BUILDDIR)/vulture_tileconfig.parser.cpp $(BUILDDIR)/vulture_tileconfig.parser.h: vulture_tileconfig.parser.y
+ 	@echo generating parser
+@@ -84,7 +84,7 @@
+ $(BUILDDIR)/vulture_tileconfig.lexer.cpp: vulture_tileconfig.lexer.l
+ 	@echo generating lexer
+ 	@mkdir -p $(BUILDDIR)/winclass
+-	@flex -o $@ $<
++	@$(FLEX) -o $@ $<
+ 
+ # including the dependency files will cause them to be built if they don't exist
+ -include $(VDEPS)

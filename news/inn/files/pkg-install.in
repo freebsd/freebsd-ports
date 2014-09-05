@@ -10,6 +10,7 @@ RUNDIR="%%RUNDIR%%"
 TMPDIR="%%TMPDIR%%"
 NEWSBASE="%%NEWSBASE%%"
 NEWSSPOOL="%%NEWSSPOOL%%"
+DBZ_FILES="%%DBZ_FILES%%"
 
 EGDIR="%%EGDIR%%"
 
@@ -78,6 +79,17 @@ case $2 in
 			for f in ${EGDIR}/db/*; do
 				cp -pR ${f} ${DBDIR}
 			done
+			(if [ ! -f ${DBDIR}/history ] ; then
+				echo 'Creating empty history database...'
+				cd ${DBDIR}
+				touch history
+				chmod 644 history
+				chown news:news history
+				su -fm news -c "${NEWSBASE}/bin/makedbz -i"
+				for s in ${DBZ_FILES} ; do
+					mv history.n.${s} history.${s}
+				done
+			fi)
 		fi
 	fi
 

@@ -1,5 +1,5 @@
 include/superlu/colamd.h
-include/superlu/old_colamd.h
+include/superlu/html_mainpage.h
 include/superlu/slu_Cnames.h
 include/superlu/slu_cdefs.h
 include/superlu/slu_dcomplex.h
@@ -8,13 +8,14 @@ include/superlu/slu_scomplex.h
 include/superlu/slu_sdefs.h
 include/superlu/slu_util.h
 include/superlu/slu_zdefs.h
+include/superlu/superlu_enum_consts.h
 include/superlu/supermatrix.h
 lib/libsuperlu.a
 lib/libsuperlu.so
-lib/libsuperlu.so.4
-lib/libsuperlu_3.0.so
-@dirrm include/superlu
+lib/libsuperlu.so.%%P_VER%%
+lib/libsuperlu_%%P_VERSION%%.so
 %%PORTDOCS%%%%DOCSDIR%%/SLU_general.ps.gz
 %%PORTDOCS%%%%DOCSDIR%%/simax95.ps.gz
 %%PORTDOCS%%%%DOCSDIR%%/superlu_ug.pdf
+@dirrm include/superlu
 %%PORTDOCS%%@dirrm %%DOCSDIR%%

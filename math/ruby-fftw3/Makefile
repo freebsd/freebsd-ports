@@ -3,7 +3,7 @@
 
 PORTNAME=	fftw3
 PORTVERSION=	0.4
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	math ruby
 MASTER_SITES=	http://ruby.gfd-dennou.org/products/ruby-fftw3/release/ \
 		http://dennou-h.gfd-dennou.org/library/ruby/products/ruby-fftw3/release/ \
@@ -30,6 +30,9 @@ CONFIGURE_ARGS+=	--with-narray-include=${LOCALBASE}/lib/ruby/gems/${RUBY_VER}/ge
 DOCS=		LICENSE.txt doc/*
 
 OPTIONS_DEFINE=	DOCS
+
+DEPRECATED=	Depends on deprecated math/ruby-narray
+EXPIRATION_DATE=	2014-09-20
 
 post-install:
 	${MKDIR} ${STAGEDIR}${RUBY_MODDOCDIR}

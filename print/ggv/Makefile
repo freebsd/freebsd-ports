@@ -14,13 +14,17 @@ COMMENT=	GNOME 2 ghostscript viewer
 
 INSTALLS_OMF=	yes
 USE_GNOME=	gnomeprefix intlhack libgnomeui
-USES=		desktop-file-utils gettext gmake pathfix pkgconfig tar:bzip2
+USES=		desktop-file-utils gettext gmake libtool pathfix pkgconfig \
+		tar:bzip2
 USE_GHOSTSCRIPT=yes
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+LIBS+=		-L${LOCALBASE}/lib -lm
 INSTALL_TARGET=	install-strip
 
 GCONF_SCHEMAS=	ggv.schemas
+
+post-patch:
+	@${REINPLACE_CMD} '/^LIBS =/s/=.*/= @LIBS@/' ${WRKSRC}/src/Makefile.in
 
 .include <bsd.port.mk>

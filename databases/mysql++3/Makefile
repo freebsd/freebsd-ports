@@ -3,6 +3,7 @@
 
 PORTNAME=	mysql++
 PORTVERSION=	3.1.0
+PORTREVISION=	1
 CATEGORIES=	databases devel
 MASTER_SITES=	http://tangentsoft.net/mysql++/releases/ \
 		T32.TecNik93.com/ports/others_ports/${PORTNAME}/sources/
@@ -13,7 +14,7 @@ COMMENT=	Complex C++ API for MySQL${MYSQL_VER}
 
 USES=		gmake
 USE_MYSQL=	yes
-USE_AUTOTOOLS=	libtool
+GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--with-mysql=${LOCALBASE} --enable-thread-check
 USE_LDCONFIG=	yes
 PLIST_SUB+=	VER=${PORTVERSION}

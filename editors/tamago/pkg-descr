@@ -13,4 +13,4 @@ This package also includes enhancements from Debian, some of which are:
 - Partial support for Wnn7/Wnn8.
 - Support connection to cannaserver using UNIX domain socket.
 
-WWW: http://www.m17n.org/tamago/
+WWW: http://git.chise.org/gitweb/?p=elisp/tamago.git;a=summary

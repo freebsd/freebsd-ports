@@ -1,0 +1,5 @@
+1) A devd(8) configuration file has been installed. Please restart devd:
+
+    # service devd restart
+
+2) Add btsixad_enable=YES to /etc/rc.conf. See btsixad(8) for other options.

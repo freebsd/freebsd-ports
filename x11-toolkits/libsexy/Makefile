@@ -3,7 +3,7 @@
 
 PORTNAME=	libsexy
 PORTVERSION=	0.1.11
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	x11-toolkits devel
 MASTER_SITES=	http://releases.chipx86.com/libsexy/libsexy/
 
@@ -17,7 +17,7 @@ BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 GNU_CONFIGURE=	yes
-USES=		gettext libtool:keepla pathfix pkgconfig
+USES=		gettext libtool pathfix pkgconfig
 USE_GNOME=	gtk20 libxml2
 USE_LDCONFIG=	yes
 

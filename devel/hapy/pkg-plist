@@ -33,6 +33,5 @@ include/Hapy/Version.h
 include/Hapy/config.h
 include/Hapy/SizeCalc.h
 include/Hapy/DeepPrint.h
-lib/libHapy.la
 lib/libHapy.a
 @dirrm include/Hapy

@@ -9,15 +9,13 @@ PKGNAMESUFFIX?=	${DISTVERSION:R:S/.//}${COMPONENT}
 MAINTAINER=	pgsql@FreeBSD.org
 COMMENT=	Module for using Tcl to write SQL functions
 
-MASTERDIR=	${.CURDIR}/../../databases/postgresql${WANT_PGSQL_VER}-server
+MASTERDIR=	${.CURDIR}/../../databases/postgresql${WANT_PGSQL_VER:S/.//}-server
 
-BUILD_DEPENDS=	postgres:${POSTGRESQL_PORT}
-RUN_DEPENDS=	postgres:${POSTGRESQL_PORT}
-POSTGRESQL_PORT?=${PORTSDIR}/databases/postgresql${WANT_PGSQL_VER}-server
+WANT_PGSQL_VER?=9.1
 
-WANT_PGSQL_VER?=91
+USES+=		tcl pgsql:${WANT_PGSQL_VER}
+WANT_PGSQL=	server
 
-USES=		tcl
 CONFIGURE_ARGS=	--with-tcl --without-tk \
 		--with-tclconfig="${TCL_LIBDIR}" \
 		--with-includes="${TCL_INCLUDEDIR}"

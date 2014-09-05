@@ -3,7 +3,7 @@
 
 PORTNAME=	recode
 PORTVERSION=	3.6
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	converters
 
 MAINTAINER=	demon@FreeBSD.org
@@ -16,7 +16,7 @@ GH_TAGNAME=	v3.6
 GH_COMMIT=	2127b34
 
 GNU_CONFIGURE=	yes
-USES=		gettext iconv libtool:keepla perl5
+USES=		gettext iconv libtool perl5
 USE_PERL5=	run build
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--without-included-gettext

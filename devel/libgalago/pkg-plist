@@ -15,9 +15,9 @@ include/libgalago/galago-status.h
 include/libgalago/galago-value.h
 include/libgalago/galago.h
 lib/libgalago.a
-lib/libgalago.la
 lib/libgalago.so
 lib/libgalago.so.3
+lib/libgalago.so.3.0.0
 libdata/pkgconfig/libgalago.pc
 share/autopackage/skeletons/@galago.info/libgalago/skeleton.1
 share/gtk-doc/html/libgalago/GalagoAccount.html

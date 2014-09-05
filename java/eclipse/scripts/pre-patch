@@ -1,7 +1,5 @@
 #!/bin/sh
 
-set -x
-
 # Copy the Linux 'native' code for the FreeBSD versions
 # At this point, just make sure the directory and file names are "freebsd"
 # These files will be patched in the do-patch step. 

@@ -8,7 +8,7 @@ INN_LAYOUT?=		old
 # /var, where it should be.
 #-----------------------------------------------------------------------
 INN_NEWSBASE=		${PREFIX}/news
-INN_ETCDIR=		${INN_NEWSBASE}/etc
+INN_CONFDIR=		${INN_NEWSBASE}/etc
 INN_SHAREDIR=		${INN_NEWSBASE}/share
 INN_RUNDIR=		${VARBASE}/run/news
 INN_LOGDIR=		${VARBASE}/log/news
@@ -21,7 +21,7 @@ INN_NEWSSPOOL=		${VARBASE}/news
 # under /var.
 #-----------------------------------------------------------------------
 INN_NEWSBASE=		${PREFIX}/news
-INN_ETCDIR=		${PREFIX}/etc/news
+INN_CONFDIR=		${PREFIX}/etc/news
 INN_SHAREDIR=		${PREFIX}/share/inn
 INN_RUNDIR=		${VARBASE}/run/news
 INN_LOGDIR=		${VARBASE}/log/news
@@ -36,9 +36,9 @@ INN_NEWSSPOOL=		${VARBASE}/spool/news
 #-----------------------------------------------------------------------
 INN_NEWSBASE=		${PREFIX}/news
 .  if defined(WITH_STANDARD_ETC)
-INN_ETCDIR=		${PREFIX}/etc/inn
+INN_CONFDIR=		${PREFIX}/etc/inn
 .  else
-INN_ETCDIR?=		${INN_NEWSBASE}/etc
+INN_CONFDIR?=		${INN_NEWSBASE}/etc
 .  endif
 INN_RUNDIR=		${INN_NEWSBASE}/run
 INN_NEWSLOG?=		${VARBASE}/log/news
@@ -55,9 +55,9 @@ INN_NEWSSPOOL?=		${PREFIX}/news/spool
 .  endif
 .endif
 
-.for sub in NEWSBASE ETCDIR RUNDIR LOGDIR DBDIR TMPDIR NEWSSPOOL SHAREDIR
-PLIST_SUB+=		${sub}="${INN_${sub}:C,^${PREFIX},%D,}"
-SUB_LIST+=		${sub}="${INN_${sub}:C,^${PREFIX},${PREFIX},}"
+.for sub in NEWSBASE CONFDIR RUNDIR LOGDIR DBDIR TMPDIR NEWSSPOOL SHAREDIR
+PLIST_SUB+=		${sub}="${INN_${sub}}"
+SUB_LIST+=		${sub}="${INN_${sub}}"
 .endfor
 
 PLIST_SUB+=		CWDNEWSBASE="@cwd ${INN_NEWSBASE}"

@@ -3,7 +3,7 @@
 
 PORTNAME=	stringencoders
 PORTVERSION=	3.10.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 DISTNAME=	${PORTNAME}-v${PORTVERSION}
@@ -11,7 +11,7 @@ DISTNAME=	${PORTNAME}-v${PORTVERSION}
 MAINTAINER=	skreuzer@FreeBSD.org
 COMMENT=	Collection of high performance c-string transformations
 
-USES=		libtool:keepla perl5
+USES=		libtool perl5
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 

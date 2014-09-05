@@ -8,49 +8,38 @@ CATEGORIES=	mail converters
 MASTER_SITES=	http://www.five-ten-sg.com/libpst/packages/ \
 		http://fossies.org/unix/privat/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Tool for converting Outlook .pst files to mbox and other formats
 
 LICENSE=	GPLv2
 
 LIB_DEPENDS=	libgsf-1.so:${PORTSDIR}/devel/libgsf
 
-GNU_CONFIGURE=	yes
-USES=		iconv libtool pathfix gmake pkgconfig
+OPTIONS_DEFINE=	DOCS PST2DII
+OPTIONS_SUB=	yes
+PST2DII_DESC=	Allow Summation Document Image Information output
+
+CONFIGURE_ARGS=	--disable-python --enable-libpst-shared
 CPPFLAGS+=	-I${LOCALBASE}/include
+GNU_CONFIGURE=	yes
 LDFLAGS+=	-L${LOCALBASE}/lib ${ICONV_LIB}
-CONFIGURE_ARGS+=	--disable-python --enable-libpst-shared
 USE_LDCONFIG=	yes
+USES=		gmake iconv libtool pathfix pkgconfig
 
 PORTDOCS=	*
 
-OPTIONS_DEFINE=	DOCS PST2DII
-PST2DII_DESC=	Allow Summation Document Image Information output
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MPST2DII}
-CONFIGURE_ARGS+=	--enable-dii=yes
-BUILD_DEPENDS+=	${LOCALBASE}/bin/convert:${PORTSDIR}/graphics/ImageMagick
-RUN_DEPENDS+=	${LOCALBASE}/bin/convert:${PORTSDIR}/graphics/ImageMagick
-LIB_DEPENDS+=	libgd.so:${PORTSDIR}/graphics/gd
-PLIST_SUB+=	PST2DII=""
-.else
-CONFIGURE_ARGS+=	--enable-dii=no
-PLIST_SUB+=	PST2DII="@comment "
-.endif
+PST2DII_BUILD_DEPENDS=	${LOCALBASE}/bin/convert:${PORTSDIR}/graphics/ImageMagick
+PST2DII_CONFIGURE_OFF=	--enable-dii=no
+PST2DII_CONFIGURE_ON=	--enable-dii=yes
+PST2DII_LIB_DEPENDS=	libgd.so:${PORTSDIR}/graphics/gd
+PST2DII_RUN_DEPENDS=	${LOCALBASE}/bin/convert:${PORTSDIR}/graphics/ImageMagick
 
 post-patch:
-	${FIND} -X ${WRKSRC} -type f | ${XARGS} ${REINPLACE_CMD} \
-		-e 's/malloc.h/stdlib.h/g'
-	${REINPLACE_CMD} -e 's;doc\/@PACKAGE@-@VERSION@;doc\/@PACKAGE@;g' \
-		${WRKSRC}/Makefile.in ${WRKSRC}/html/Makefile.in
-.if ${PORT_OPTIONS:MDOCS}
-	${REINPLACE_CMD} -e '/html_DATA =/s/COPYING //' \
-		${WRKSRC}/Makefile.in
-.else
-	${REINPLACE_CMD} -e '/SUBDIRS =/s/=.*/= src man/' -e '/html_DATA =/d' \
-		${WRKSRC}/Makefile.in
-.endif
+	@${GREP} -lr malloc.h ${WRKSRC}/ | ${XARGS} ${REINPLACE_CMD} -e 's|malloc.h|stdlib.h|g'
+	@${REINPLACE_CMD} -e 's|doc\/@PACKAGE@-@VERSION@|doc\/@PACKAGE@|g' ${WRKSRC}/Makefile.in ${WRKSRC}/html/Makefile.in
+	@${REINPLACE_CMD} -e '/html_DATA =/ s|COPYING ||' ${WRKSRC}/Makefile.in
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libpst.so.4.1.10
 
 .include <bsd.port.mk>

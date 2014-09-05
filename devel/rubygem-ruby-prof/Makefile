@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ruby-prof
-PORTVERSION=	0.13.0
+PORTVERSION=	0.15.1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -12,6 +12,6 @@ COMMENT=	Fast profiler for Ruby
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
-PLIST_FILES=	bin/ruby-prof
+PLIST_FILES=	bin/ruby-prof bin/ruby-prof-check-trace
 
 .include <bsd.port.mk>

@@ -15,14 +15,13 @@ GH_ACCOUNT=	CraigCottingham
 GH_TAGNAME=	${GH_COMMIT}
 GH_COMMIT=	f8d9ced
 
-USES=	uidfix tar:bzip2
-USE_PGSQL=	server
+USES+=		uidfix tar:bzip2 pgsql
+WANT_PGSQL=	server
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
 USE_RUBY_RDOC=		yes
-NEED_ROOT=	yes
 
-POSTGRESQL_PORT?=	databases/postgresql${PGSQL_VER}-server
+POSTGRESQL_PORT?=	databases/postgresql${PGSQL_VER_NODOT}-server
 PGSQL_PORTDIR?=		${PORTSDIR}/${POSTGRESQL_PORT}
 PGSQL_WRKSRC_CMD=	cd ${PGSQL_PORTDIR} && ${MAKE} -V WRKSRC
 
@@ -51,8 +50,6 @@ post-build:
 	cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} rdoc
 .endif
 
-.include <bsd.port.pre.mk>
-
 post-install:
 	@${MKDIR} ${STAGEDIR}${RUBY_MODEXAMPLESDIR}/
 	${INSTALL_DATA} ${WRKDIR}/createlang.sql ${STAGEDIR}${RUBY_MODEXAMPLESDIR}/
@@ -67,4 +64,4 @@ post-install:
 		>> ${TMPPLIST}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

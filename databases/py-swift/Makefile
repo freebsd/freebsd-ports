@@ -2,12 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	swift
-PORTVERSION=	1.13.1
+PORTVERSION=	2.0.0
 CATEGORIES=	databases python
-MASTER_SITES=	http://launchpadlibrarian.net/173001998/
+MASTER_SITES=	http://launchpadlibrarian.net/179481023/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	trociny@FreeBSD.org
 COMMENT=	Highly available, distributed, eventually consistent object/blob store
 
 LICENSE=	APACHE20
@@ -36,54 +36,61 @@ GROUPS=		swift
 
 post-patch:
 	@${REINPLACE_CMD} -e "s|/etc/swift|${PREFIX}/etc/${PORTNAME}|" \
-	    ${WRKSRC}/bin/swift-account-audit \
-	    ${WRKSRC}/bin/swift-dispersion-populate \
-	    ${WRKSRC}/bin/swift-dispersion-report \
-	    ${WRKSRC}/bin/swift-get-nodes \
-	    ${WRKSRC}/bin/swift-object-info \
-	    ${WRKSRC}/bin/swift-recon \
-	    ${WRKSRC}/bin/swift-recon-cron \
-	    ${WRKSRC}/doc/manpages/account-server.conf.5 \
-	    ${WRKSRC}/doc/manpages/container-server.conf.5 \
-	    ${WRKSRC}/doc/manpages/dispersion.conf.5 \
-	    ${WRKSRC}/doc/manpages/object-expirer.conf.5 \
-	    ${WRKSRC}/doc/manpages/object-server.conf.5 \
-	    ${WRKSRC}/doc/manpages/proxy-server.conf.5 \
-	    ${WRKSRC}/doc/manpages/swift-dispersion-populate.1 \
-	    ${WRKSRC}/doc/manpages/swift-dispersion-report.1 \
-	    ${WRKSRC}/doc/manpages/swift-get-nodes.1 \
-	    ${WRKSRC}/doc/manpages/swift-recon.1 \
-	    ${WRKSRC}/etc/account-server.conf-sample \
-	    ${WRKSRC}/etc/container-server.conf-sample \
-	    ${WRKSRC}/etc/dispersion.conf-sample \
-	    ${WRKSRC}/etc/object-expirer.conf-sample \
-	    ${WRKSRC}/etc/object-server.conf-sample \
-	    ${WRKSRC}/etc/proxy-server.conf-sample \
-	    ${WRKSRC}/swift/account/reaper.py \
-	    ${WRKSRC}/swift/common/constraints.py \
-	    ${WRKSRC}/swift/common/db_replicator.py \
-	    ${WRKSRC}/swift/common/manager.py \
-	    ${WRKSRC}/swift/common/middleware/account_quotas.py \
-	    ${WRKSRC}/swift/common/middleware/container_sync.py \
-	    ${WRKSRC}/swift/common/middleware/gatekeeper.py \
-	    ${WRKSRC}/swift/common/middleware/list_endpoints.py \
-	    ${WRKSRC}/swift/common/middleware/memcache.py \
-	    ${WRKSRC}/swift/common/middleware/recon.py \
-	    ${WRKSRC}/swift/common/middleware/staticweb.py \
-	    ${WRKSRC}/swift/common/utils.py \
-	    ${WRKSRC}/swift/container/server.py \
-	    ${WRKSRC}/swift/container/sync.py \
-	    ${WRKSRC}/swift/container/updater.py \
-	    ${WRKSRC}/swift/obj/expirer.py \
-	    ${WRKSRC}/swift/obj/replicator.py \
-	    ${WRKSRC}/swift/obj/server.py \
-	    ${WRKSRC}/swift/obj/updater.py \
-	    ${WRKSRC}/swift/proxy/server.py \
-	    ${WRKSRC}/test/__init__.py \
-	    ${WRKSRC}/test/functional/tests.py \
-	    ${WRKSRC}/test/probe/common.py \
-	    ${WRKSRC}/test/sample.conf \
-	    ${WRKSRC}/test/unit/common/middleware/test_memcache.py
+		${WRKSRC}/bin/swift-account-audit \
+		${WRKSRC}/bin/swift-account-info \
+		${WRKSRC}/bin/swift-container-info \
+		${WRKSRC}/bin/swift-dispersion-populate \
+		${WRKSRC}/bin/swift-dispersion-report \
+		${WRKSRC}/bin/swift-get-nodes \
+		${WRKSRC}/bin/swift-object-info \
+		${WRKSRC}/bin/swift-recon \
+		${WRKSRC}/bin/swift-recon-cron \
+		${WRKSRC}/bin/swift-reconciler-enqueue \
+		${WRKSRC}/doc/manpages/account-server.conf.5 \
+		${WRKSRC}/doc/manpages/container-server.conf.5 \
+		${WRKSRC}/doc/manpages/dispersion.conf.5 \
+		${WRKSRC}/doc/manpages/object-expirer.conf.5 \
+		${WRKSRC}/doc/manpages/object-server.conf.5 \
+		${WRKSRC}/doc/manpages/proxy-server.conf.5 \
+		${WRKSRC}/doc/manpages/swift-dispersion-populate.1 \
+		${WRKSRC}/doc/manpages/swift-dispersion-report.1 \
+		${WRKSRC}/doc/manpages/swift-get-nodes.1 \
+		${WRKSRC}/doc/manpages/swift-recon.1 \
+		${WRKSRC}/etc/account-server.conf-sample \
+		${WRKSRC}/etc/container-reconciler.conf-sample \
+		${WRKSRC}/etc/container-server.conf-sample \
+		${WRKSRC}/etc/dispersion.conf-sample \
+		${WRKSRC}/etc/object-expirer.conf-sample \
+		${WRKSRC}/etc/object-server.conf-sample \
+		${WRKSRC}/etc/proxy-server.conf-sample \
+		${WRKSRC}/swift/account/reaper.py \
+		${WRKSRC}/swift/cli/info.py \
+		${WRKSRC}/swift/cli/recon.py \
+		${WRKSRC}/swift/common/constraints.py \
+		${WRKSRC}/swift/common/db_replicator.py \
+		${WRKSRC}/swift/common/manager.py \
+		${WRKSRC}/swift/common/middleware/account_quotas.py \
+		${WRKSRC}/swift/common/middleware/container_sync.py \
+		${WRKSRC}/swift/common/middleware/gatekeeper.py \
+		${WRKSRC}/swift/common/middleware/list_endpoints.py \
+		${WRKSRC}/swift/common/middleware/memcache.py \
+		${WRKSRC}/swift/common/middleware/recon.py \
+		${WRKSRC}/swift/common/middleware/staticweb.py \
+		${WRKSRC}/swift/common/utils.py \
+		${WRKSRC}/swift/container/reconciler.py \
+		${WRKSRC}/swift/container/server.py \
+		${WRKSRC}/swift/container/sync.py \
+		${WRKSRC}/swift/container/updater.py \
+		${WRKSRC}/swift/obj/expirer.py \
+		${WRKSRC}/swift/obj/replicator.py \
+		${WRKSRC}/swift/obj/server.py \
+		${WRKSRC}/swift/obj/updater.py \
+		${WRKSRC}/swift/proxy/server.py \
+		${WRKSRC}/test/__init__.py \
+		${WRKSRC}/test/functional/tests.py \
+		${WRKSRC}/test/probe/common.py \
+		${WRKSRC}/test/sample.conf \
+		${WRKSRC}/test/unit/common/middleware/test_memcache.py
 	@${FIND} ${WRKSRC} -type f -name "*.bak" -delete
 
 post-install:

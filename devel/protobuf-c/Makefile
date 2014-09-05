@@ -3,6 +3,7 @@
 
 PORTNAME=	protobuf-c
 PORTVERSION=	1.0.1
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/${GITHUB_USER}/${GITHUB_REPO}/releases/download/v${PORTVERSION}/ \
 		http://github.com/${GITHUB_USER}/${GITHUB_REPO}/releases/download/v${PORTVERSION}/
@@ -15,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libprotobuf.so:${PORTSDIR}/devel/protobuf
 
-USES=		gmake libtool:keepla pathfix pkgconfig
+USES=		gmake libtool pathfix pkgconfig
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 

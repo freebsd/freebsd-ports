@@ -37,7 +37,7 @@ USE_PHP+=		pdo_mysql
 .endif
 
 .if ${PORT_OPTIONS:MPGSQL}
-USE_PGSQL=		yes
+USES+=	pgsql
 CONFIGURE_ARGS+=	--with-postgresql=yes
 SUB_LIST+=		REQ_PGSQL=postgresql
 USE_PHP+=		pdo_pgsql

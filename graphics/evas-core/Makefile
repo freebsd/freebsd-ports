@@ -3,7 +3,7 @@
 
 PORTNAME=	core
 PORTVERSION=	1.7.9
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics enlightenment
 MASTER_SITES=	http://download.enlightenment.org/releases/ \
 		LOCAL/gblach/e17/

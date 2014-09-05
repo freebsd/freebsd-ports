@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	github-markdown
-PORTVERSION=	0.5.5
+PORTVERSION=	0.6.6
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 

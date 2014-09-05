@@ -1,6 +1,6 @@
 --- configure.orig	2011-06-24 16:37:28.000000000 -0500
 +++ configure
-@@ -13239,11 +13239,15 @@ case "$host" in
+@@ -7444,12 +7444,16 @@
    *-*-irix*)     plat_name="IRIX";     plat_def="__irix__";     os_v="6";;
    *-*-aix*)      plat_name="AIX";      plat_def="__aix__";      os_v="4";;
    *-*-darwin*)   plat_name="Darwin";   plat_def="__darwin__";   os_v="1";;
@@ -9,6 +9,7 @@
 -  *-*-freebsd5*) plat_name="FreeBSD";  plat_def="__freebsd__";  os_v="5";;
 -  *-*-freebsd6*) plat_name="FreeBSD";  plat_def="__freebsd__";  os_v="6";;
 -  *-*-freebsd7*) plat_name="FreeBSD";  plat_def="__freebsd__";  os_v="7";;
+-  *-*-freebsd8*) plat_name="FreeBSD";  plat_def="__freebsd__";  os_v="8";;
 +  *-*-dragonfly*) plat_name="FreeBSD";  plat_def="__freebsd__";  os_v="9";;
 +  *-*-freebsd3.*) plat_name="FreeBSD";  plat_def="__freebsd__";  os_v="3";;
 +  *-*-freebsd4.*) plat_name="FreeBSD";  plat_def="__freebsd__";  os_v="4";;
@@ -18,6 +19,7 @@
 +  *-*-freebsd8.*) plat_name="FreeBSD";  plat_def="__freebsd__";  os_v="8";;
 +  *-*-freebsd9.*) plat_name="FreeBSD";  plat_def="__freebsd__";  os_v="9";;
 +  *-*-freebsd10.*) plat_name="FreeBSD";  plat_def="__freebsd__";  os_v="10";;
++  *-*-freebsd11.*) plat_name="FreeBSD";  plat_def="__freebsd__";  os_v="11";;
    *-*-kfreebsd*) plat_name="kFreeBSD";  plat_def="__FreeBSD_kernel__";  os_v="6";;
    *-*-netbsd*)   plat_name="NetBSD";   plat_def="__netbsd__";   os_v="1";;
    *-*-openbsd*)  plat_name="OpenBSD";  plat_def="__openbsd__";  os_v="3";;

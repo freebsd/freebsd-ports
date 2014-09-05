@@ -1,5 +1,5 @@
---- Bmake.inc.orig	Mon Nov 13 14:17:35 2006
-+++ Bmake.inc	Mon Nov 13 14:19:18 2006
+--- Bmake.inc.orig	2014-08-22 23:54:21.000000000 +0200
++++ Bmake.inc	2014-08-22 23:55:10.000000000 +0200
 @@ -13,7 +13,7 @@
  #  -----------------------------
  #  The top level BLACS directory
@@ -66,14 +66,15 @@
 -   F77NO_OPTFLAGS = 
 -   F77FLAGS       = $(F77NO_OPTFLAGS) -O
 -   F77LOADER      = $(F77)
+-   F77LOADFLAGS   = 
+-   CC             = gcc
+-   CCFLAGS        = -O4
+-   CCLOADER       = $(CC)
 +   F77            = @LOCALBASE@/mpi/openmpi/bin/mpif77
 +   F77NO_OPTFLAGS = @F77EXTRAFLAGS@
 +   F77FLAGS       = @FFLAGS@
 +   F77LOADER      = @LOCALBASE@/mpi/openmpi/bin/mpif77
-    F77LOADFLAGS   = 
--   CC             = gcc
--   CCFLAGS        = -O4
--   CCLOADER       = $(CC)
++   F77LOADFLAGS   = @FFLAGS@
 +   CC             = @LOCALBASE@/mpi/openmpi/bin/mpicc
 +   CCFLAGS        = @CFLAGS@
 +   CCLOADER       = @LOCALBASE@/mpi/openmpi/bin/mpicc

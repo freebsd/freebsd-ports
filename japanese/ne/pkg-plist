@@ -1,13 +1,15 @@
 bin/ne
-etc/ne/key.eff
-etc/ne/key.ele
-etc/ne/key.system
-etc/ne/key.vz
-etc/ne/nerc
-etc/ne/nerc.ele
-etc/ne/term
-etc/ne/term.kterm
-etc/ne/term.rxvt
+%%ETCDIR%%/key.eff
+%%ETCDIR%%/key.ele
+%%ETCDIR%%/key.system
+%%ETCDIR%%/key.vz
+%%ETCDIR%%/nerc
+%%ETCDIR%%/nerc.ele
+%%ETCDIR%%/term
+%%ETCDIR%%/term.kterm
+%%ETCDIR%%/term.rxvt
+man/man1/ne.1.gz
+man/ja/man1/ne.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/BUGS.jp
 %%PORTDOCS%%%%DOCSDIR%%/CHANGES.jp
 %%PORTDOCS%%%%DOCSDIR%%/HISTORY.jp
@@ -15,4 +17,4 @@ etc/ne/term.rxvt
 %%PORTDOCS%%%%DOCSDIR%%/README.jp
 %%PORTDOCS%%%%DOCSDIR%%/TODO.jp
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm etc/ne
+@dirrm %%ETCDIR%%

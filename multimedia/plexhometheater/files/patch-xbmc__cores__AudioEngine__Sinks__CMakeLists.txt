@@ -1,0 +1,13 @@
+--- ./xbmc/cores/AudioEngine/Sinks/CMakeLists.txt.orig	2014-06-02 10:54:42.814711159 +0800
++++ ./xbmc/cores/AudioEngine/Sinks/CMakeLists.txt	2014-06-02 10:55:26.844707184 +0800
+@@ -8,8 +8,8 @@
+   set(ae_SRCS ${ae_SRCS} AESinkWASAPI.cpp AESinkWASAPI.h AESinkDirectSound.cpp AESinkDirectSound.h)
+ endif(TARGET_WIN32)
+ 
+-if(TARGET_COMMON_LINUX)
++if(TARGET_COMMON_LINUX OR TARGET_FREEBSD)
+   set(ae_SRCS ${ae_SRCS} AESinkOSS.cpp AESinkOSS.h)
+-endif(TARGET_COMMON_LINUX)
++endif(TARGET_COMMON_LINUX OR TARGET_FREEBSD)
+ 
+ add_sources(${ae_SRCS})

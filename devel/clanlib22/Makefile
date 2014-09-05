@@ -3,7 +3,7 @@
 
 PORTNAME=	clanlib
 PORTVERSION=	2.2.12
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	devel
 MASTER_SITES=	http://www.clanlib.org/download/releases-2.0/
 DISTNAME=	ClanLib-${PORTVERSION}
@@ -21,8 +21,8 @@ LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
 		libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig \
 		libpcre.so:${PORTSDIR}/devel/pcre
 
+USES=		gmake libtool pathfix pkgconfig tar:tgz
 USE_XORG=	x11
-USES=		gmake pathfix pkgconfig tar:tgz
 USE_LDCONFIG=	yes
 USE_GL=		yes
 USE_SQLITE=	yes
@@ -46,6 +46,7 @@ CONFIGURE_ARGS=	--disable-docs \
 		--enable-clanVorbis \
 		--enable-getaddr
 
+INSTALL_TARGET=	install-strip
 PLIST_SUB+=	VER=${PORTVERSION:R} \
 		SHORT_VER=${PORTVERSION:R:R}${PORTVERSION:R:E}
 

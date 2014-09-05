@@ -9,12 +9,15 @@ MASTER_SITES=	RG
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Library and command-line utility for tar archives
 
+LICENSE=	GPLv2 GPLv3 RUBY
+LICENSE_COMB=	dual
+
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
 
 PLIST_FILES=	bin/minitar
 
-CONFLICTS=	rubygem-archive-tar-minitar-[0-9]*
+CONFLICTS_INSTALL=	rubygem-archive-tar-minitar-[0-9]*
 
 .include <bsd.port.mk>

@@ -10,9 +10,9 @@ MASTER_SITES=	http://www.home.unix-ag.org/simon/gromit/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GRaphics Over Miscellaneous Objects (Gromit)
 
-USE_GNOME=	gtk20
 USES=		pkgconfig
-CFLAGS+=	-lm
+USE_GNOME=	gtk20
+USE_XORG=	x11
 
 DOCS=		AUTHORS ChangeLog README
 

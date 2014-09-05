@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pygments.rb
-PORTVERSION=	0.5.4
+PORTVERSION=	0.6.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -12,7 +12,7 @@ COMMENT=	Exposes the pygments syntax highlighter to Ruby
 LICENSE=	MIT
 
 RUN_DEPENDS=	rubygem-posix-spawn>=0.3.6:${PORTSDIR}/devel/rubygem-posix-spawn \
-		rubygem-yajl-ruby>=1.1.0:${PORTSDIR}/devel/rubygem-yajl-ruby
+		rubygem-yajl-ruby>=1.2.0:${PORTSDIR}/devel/rubygem-yajl-ruby
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes

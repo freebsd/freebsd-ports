@@ -14,8 +14,8 @@ COMMENT=	Perl module to display 3D data using OpenGL, GLU, GLUT, and GLX
 
 MANUAL_PACKAGE_BUILD=	fails to start X server on pointyhat
 
-CONFIGURE_ARGS=	interface=GLUT
-USES=		perl5 display:install
+CONFIGURE_ARGS=	interface=FREEGLUT
+USES=		perl5 display:configure
 USE_PERL5=	configure
 USE_GL=		glut
 

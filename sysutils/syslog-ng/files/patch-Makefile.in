@@ -6,8 +6,8 @@
  	    $(am__strip_dir) \
 -	    echo " ( cd '$(DESTDIR)$(libtestdir)' && $(RANLIB) $$f )"; \
 -	    ( cd "$(DESTDIR)$(libtestdir)" && $(RANLIB) $$f ) || exit $$?; \
-+	    echo " ( cd '$(DESTDIR)$(libtestdir)' && $(RANLIB) $$p )"; \
-+	    ( cd "$(DESTDIR)$(libtestdir)" && $(RANLIB) $$p ) || exit $$?; \
++	    echo " ( cd '$(DESTDIR)$(libtestdir)' && chmod u+w $$f && $(RANLIB) $$f )"; \
++	    ( cd "$(DESTDIR)$(libtestdir)" && chmod u+w $$f && $(RANLIB) $$f ) || exit $$?; \
  	  else :; fi; \
  	done
  

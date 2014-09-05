@@ -12,7 +12,7 @@ EXTRACT_AFTER_ARGS=	${DISTNAME}/tools/build/v2/engine
 
 do-build:
 	cd ${WRKSRC}/tools/build/v2/engine && \
-		${MAKE_ENV} ./build.sh ${CC}
+		${MAKE_ENV} ./build.sh cc
 
 do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/bin

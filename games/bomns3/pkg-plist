@@ -1,7 +1,0 @@
-bin/bomns3
-%%DATADIR%%/bomns3
-%%DATADIR%%/gfx/bomns3-icon.png
-%%DATADIR%%/gfx/sprites.png
-share/pixmaps/bomns3.png
-@dirrm %%DATADIR%%/gfx
-@dirrm %%DATADIR%%

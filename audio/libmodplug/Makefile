@@ -11,14 +11,12 @@ MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	ModPlug mod-like music shared libraries
 
 USES=		gmake pathfix pkgconfig libtool:keepla
+INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e '/^CXXFLAGS=/d' \
 		${WRKSRC}/configure
-
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libmodplug.so.1
 
 .include <bsd.port.mk>

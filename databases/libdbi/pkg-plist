@@ -2,9 +2,9 @@ include/dbi/dbd.h
 include/dbi/dbi-dev.h
 include/dbi/dbi.h
 lib/libdbi.a
-lib/libdbi.la
 lib/libdbi.so
-lib/libdbi.so.2
+lib/libdbi.so.1
+lib/libdbi.so.1.1.0
 libdata/pkgconfig/dbi.pc
 %%PORTDOCS%%%%DOCSDIR%%/driver-guide.pdf
 %%PORTDOCS%%%%DOCSDIR%%/driver-guide/contact.html

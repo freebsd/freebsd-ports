@@ -9,41 +9,41 @@ MASTER_SITES=	http://download.gna.org/${PORTNAME:S/brothers//}/
 DISTNAME=	${PORTNAME:S/b/B/g}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Balazar Brother is a free software 3D puzzle game
+COMMENT=	Free software 3D puzzle game
+
+LICENSE=	GPLv2
 
 LIB_DEPENDS=	libcal3d.so:${PORTSDIR}/graphics/cal3d \
 		libfreetype.so:${PORTSDIR}/print/freetype2
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/cerealizer/__init__.py:${PORTSDIR}/security/py-cerealizer \
-		${PYTHON_SITELIBDIR}/soya/__init__.py:${PORTSDIR}/graphics/py-soya3d \
-		${PYTHON_SITELIBDIR}/tofu/__init__.py:${PORTSDIR}/net/py-tofu \
-		${PYTHON_SITELIBDIR}/ogg/__init__.py:${PORTSDIR}/audio/py-vorbis
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ogg>0:${PORTSDIR}/audio/py-vorbis \
+		${PYTHON_PKGNAMEPREFIX}soya3d>0:${PORTSDIR}/graphics/py-soya3d \
+		${PYTHON_PKGNAMEPREFIX}tofu>0:${PORTSDIR}/net/py-tofu \
+		${PYTHON_PKGNAMEPREFIX}cerealizer>0:${PORTSDIR}/security/py-cerealizer
 
-USES=		gettext twisted tar:bzip2 gmake
-USE_PYTHON=	yes
-USE_PYDISTUTILS=yes
+NO_ARCH=	yes
+
+USES=		gettext python tar:bzip2 twisted
 USE_GL=		glew
+USE_PYTHON=	autoplist distutils
 
 PYDISTUTILS_PKGNAME=	BalazarBrothers
 PYDISTUTILS_EGGINFODIR=	${PREFIX}/share
 PYDISTUTILS_SETUP=	${PYSETUP}
-PYDISTUTILS_NOEGGINFO=	yes
 PYDISTUTILS_INSTALLNOSINGLE=	yes
-DATADIR=	share/balazar_brothers
 
-PLIST_SUB=	PYDISTUTILS_EGGINFO=${PYDISTUTILS_EGGINFO}
+DESKTOP_ENTRIES="BalazarBrothers" "" "" "balazarbrothers" "" ""
 
-OPTIONS_DEFINE=	OPENAL
+OPTIONS_DEFINE=		OPENAL
 OPTIONS_DEFAULT=	OPENAL
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
-.include <bsd.port.pre.mk>
-
-.if ${PORT_OPTIONS:MOPENAL}
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}openal>=0:${PORTSDIR}/audio/py-openal
-.endif
+OPENAL_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}openal>0:${PORTSDIR}/audio/py-openal
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/setup.cfg
+	@${REINPLACE_CMD} -e \
+		'/^install-purelib/s|=.*|= ${PREFIX}/share| ; \
+		 /^install-scripts/s|=.*|= ${PREFIX}/bin| ; \
+		 /^install-data/s|=.*|= ${PREFIX}/share|' ${WRKSRC}/setup.cfg
+	@${REINPLACE_CMD} -e \
+		'/LC_MESSAGES/s|".",||' ${WRKSRC}/setup.py
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

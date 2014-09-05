@@ -20,8 +20,7 @@ BUILD_DEPENDS=	boost-libs>0:${PORTSDIR}/devel/boost-libs \
 		gmm++>0:${PORTSDIR}/math/gmm++
 LIB_DEPENDS=	libsndfile.so:${PORTSDIR}/audio/libsndfile
 
-USES=		bison cmake
-USE_PYTHON=	2
+USES=		bison cmake python:2
 CMAKE_ARGS=	-DBUILD_CSOUNDVST:BOOL=OFF \
 		-DBUILD_JAVA_INTERFACE:BOOL=OFF \
 		-DBUILD_PD_CLASS:BOOL=OFF \
@@ -51,6 +50,7 @@ CURL_LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl
 CURL_CMAKE_OFF=		-DUSE_CURL:BOOL=OFF
 DSSI_DESC=		Build DSSI/LADSPA host opcodes
 DSSI_BUILD_DEPENDS=	dssi>0:${PORTSDIR}/audio/dssi
+DSSI_LIB_DEPENDS=	libasound.so:${PORTSDIR}/audio/alsa-lib
 DSSI_RUN_DEPENDS=	dssi>0:${PORTSDIR}/audio/dssi
 DSSI_CMAKE_OFF=		-DBUILD_DSSI_OPCODES:BOOL=OFF
 FLTK_DESC=		Build FLTK plugin and GUI

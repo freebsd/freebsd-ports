@@ -14,7 +14,7 @@ LIB_DEPENDS+=	libxmmsclient.so:${PORTSDIR}/audio/xmms2
 
 MASTERDIR=	${.CURDIR}/../xmms2
 
-USE_PYTHON=	yes
+USES=		python
 
 PLIST=		${.CURDIR}/pkg-plist
 

@@ -44,7 +44,7 @@ AP_LIB+=	-L${LOCALBASE}/lib/mysql -lmysqlclient
 .endif
 
 .if ${PORT_OPTIONS:MPGSQL}
-USE_PGSQL=	yes
+USES+=		pgsql
 CONFIGURE_ARGS+=	--enable-pgsql=yes
 SRC_FILE+=	db_postgresql.c
 AP_LIB+=	-lpq

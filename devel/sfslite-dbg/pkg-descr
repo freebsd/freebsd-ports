@@ -1,8 +1,0 @@
-See ../sfslite/pkg-descr.  A build of the sfslite libraries with 
-dmalloc debugging support (http://dmalloc.com) and without -O or
--O2 build flags.  For debugging an application built with the 
-SFS libraries.
-
-Maintained as port of the OKWS distribution by Maxwell Krohn.
-
-WWW: http://www.okws.org

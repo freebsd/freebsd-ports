@@ -68,10 +68,10 @@ RUN_DEPENDS=								\
 
 AOOVERSION1=		4
 AOOVERSION2=		1
-AOOVERSION3=		0
+AOOVERSION3=		1
 AOOVERSION=		${AOOVERSION1}.${AOOVERSION2}.${AOOVERSION3}
 AOOXXX=			${AOOVERSION1}${AOOVERSION2}${AOOVERSION3}
-SVNREVISION=		1589052
+SVNREVISION=		1617669
 OOOSRC=			apache-openoffice-${AOOVERSION}-r${SVNREVISION}-src${EXTRACT_SUFX}
 EXTSRC=			ApacheOpenOffice.ext_sources.${AOOVERSION1}.x.x.20140809.tar.gz
 
@@ -213,6 +213,8 @@ CONFIGURE_ARGS+=							\
 			--x-includes={LOCALBASE}/include		\
 			--x-libraries=${LOCALBASE}lib			\
 			--with-system-zlib
+# system-graphite causes breakage when compiled with clang and linked
+# with libc++ because aoo is compiled with gcc and linked with libstdc++.
 #			--with-system-graphite
 
 #OOOEXTENSIONS+=		minimizer/presentation-minimizer.oxt
@@ -228,107 +230,107 @@ pre-everything::
 # really tweak, extremely useful when you build all localized language versions
 # needed after when you build with ALL_LOCALIZED_LANGS.
 .if defined(TWEAK_L10N)
-	@${RM} -f ${WRKDIR}/.PLIST*
-	@${RM} -f ${WRKDIR}/.install_done.*
-	@${RM} -f ${WRKDIR}/.package_done.*
-	@${RM} -f ${WRKDIR}/.extract_done.*
-	@${RM} -f ${WRKDIR}/.patch_done.*
-	@${RM} -f ${WRKDIR}/.configure_done.*
-	@${RM} -f ${WRKDIR}/.build_done.*
-	@${MKDIR} ${WRKDIR}
-	@${TOUCH} ${EXTRACT_COOKIE}
-	@${TOUCH} ${PATCH_COOKIE}
-	@${TOUCH} ${CONFIGURE_COOKIE}
-	@${TOUCH} ${BUILD_COOKIE}
+	${RM} -f ${WRKDIR}/.PLIST*
+	${RM} -f ${WRKDIR}/.install_done.*
+	${RM} -f ${WRKDIR}/.package_done.*
+	${RM} -f ${WRKDIR}/.extract_done.*
+	${RM} -f ${WRKDIR}/.patch_done.*
+	${RM} -f ${WRKDIR}/.configure_done.*
+	${RM} -f ${WRKDIR}/.build_done.*
+	${MKDIR} ${WRKDIR}
+	${TOUCH} ${EXTRACT_COOKIE}
+	${TOUCH} ${PATCH_COOKIE}
+	${TOUCH} ${CONFIGURE_COOKIE}
+	${TOUCH} ${BUILD_COOKIE}
 .endif
 
 post-extract:
-	@${TAR} -C ${WRKSUBDIR} -xzf ${DISTDIR}/${DIST_SUBDIR}/${EXTSRC}
-	@${CP} ${DISTDIR}/${DIST_SUBDIR}/unowinreg.dll ${WRKSRC}/external/unowinreg/
-	@${RM} -rf ${WRKSRC}/l10n
+	${TAR} -C ${WRKSUBDIR} -xzf ${DISTDIR}/${DIST_SUBDIR}/${EXTSRC}
+	${CP} ${DISTDIR}/${DIST_SUBDIR}/unowinreg.dll ${WRKSRC}/external/unowinreg/
+	${RM} -rf ${WRKSRC}/l10n
 
 post-patch:
 .if defined (USE_GCC)
-	@${REINPLACE_CMD} -e "s+%%RPATH%%+-Wl,-rpath=${_GCC_RUNTIME}+" ${WRKSRC}/solenv/inc/unxfbsd.mk
-	@${REINPLACE_CMD} -e "s+%%RPATH%%+-Wl,-rpath=${_GCC_RUNTIME}+" ${WRKSRC}/solenv/gbuild/platform/freebsd.mk
+	${REINPLACE_CMD} -e "s+%%RPATH%%+-Wl,-rpath=${_GCC_RUNTIME}+" ${WRKSRC}/solenv/inc/unxfbsd.mk
+	${REINPLACE_CMD} -e "s+%%RPATH%%+-Wl,-rpath=${_GCC_RUNTIME}+" ${WRKSRC}/solenv/gbuild/platform/freebsd.mk
 .else
-	@${REINPLACE_CMD} -e "s+%%RPATH%%++" ${WRKSRC}/solenv/inc/unxfbsd.mk
-	@${REINPLACE_CMD} -e "s+%%RPATH%%++" ${WRKSRC}/solenv/gbuild/platform/freebsd.mk
+	${REINPLACE_CMD} -e "s+%%RPATH%%++" ${WRKSRC}/solenv/inc/unxfbsd.mk
+	${REINPLACE_CMD} -e "s+%%RPATH%%++" ${WRKSRC}/solenv/gbuild/platform/freebsd.mk
 .endif
 
 pre-configure:
-	@${LN} -sf ${UNZIP_CMD} ${WRKSRC}/solenv/bin/unzip
+	${LN} -sf ${UNZIP_CMD} ${WRKSRC}/solenv/bin/unzip
 
 do-build:
-	@cd ${WRKSUBDIR} ; ${PRINTF} "[repositories]\n" > source_config
-	@cd ${WRKSUBDIR} ; ${PRINTF} "main=active\n" >> source_config
-	@cd ${WRKSUBDIR} ; ${PRINTF} "extras=active\n" >> source_config
-	@cd ${WRKSRC} ; ./bootstrap
-	@cd ${WRKSRC} ; ${SETENV} "LANG=C" "LC_ALL=C" ${BASH} -c "source ${FREEBSD_ENV_SET} ; cd instsetoo_native/util  ; build.pl --all -P${MAKE_JOBS_NUMBER} -- -P${MAKE_JOBS_NUMBER}"
+	cd ${WRKSUBDIR} ; ${PRINTF} "[repositories]\n" > source_config
+	cd ${WRKSUBDIR} ; ${PRINTF} "main=active\n" >> source_config
+	cd ${WRKSUBDIR} ; ${PRINTF} "extras=active\n" >> source_config
+	cd ${WRKSRC} ; ./bootstrap
+	cd ${WRKSRC} ; ${SETENV} "LANG=C" "LC_ALL=C" ${BASH} -c "source ${FREEBSD_ENV_SET} ; cd instsetoo_native/util  ; build.pl --all -P${MAKE_JOBS_NUMBER} -- -P${MAKE_JOBS_NUMBER}"
 
 do-install:
-	@cd ${WRKSRC}/instsetoo_native/unxfbsd?.pro/Apache_OpenOffice/archive/install/${LOCALIZED_LANG}/ ; ${LS} *.tar.?z > ${WRKDIR}/INSTALLFILES
-	@${RM} -Rf ${WRKDIR}/tmp
-	@${MKDIR} ${WRKDIR}/tmp
+	cd ${WRKSRC}/instsetoo_native/unxfbsd?.pro/Apache_OpenOffice/archive/install/${LOCALIZED_LANG}/ ; ${LS} *.tar.?z > ${WRKDIR}/INSTALLFILES
+	${RM} -Rf ${WRKDIR}/tmp
+	${MKDIR} ${WRKDIR}/tmp
 	@for i in `${CAT} ${WRKDIR}/INSTALLFILES`; do \
 		${ECHO_CMD} "extracting $$i" ; \
 		cd ${WRKDIR}/tmp ; ${TAR} xfz ${WRKSRC}/instsetoo_native/unxfbsd?.pro/Apache_OpenOffice/archive/install/${LOCALIZED_LANG}/$$i ; \
 	done
-	@${MKDIR} ${STAGEDIR}${PREFIX}/${INSTALLATION_BASEDIR}
-	@cd ${WRKDIR}/tmp/*/ ; ${TAR} cf - -C . . | ${TAR} xf - -C ${STAGEDIR}${PREFIX}/${INSTALLATION_BASEDIR}
-	@${REINPLACE_CMD} -e 's/^UserInstallation.*$$/USERINSTALLATION/' ${STAGEDIR}${PREFIX}/${INSTALLATION_BASEDIR}/${OOODIR}/program/bootstraprc
-	@${REINPLACE_CMD} -e 's/USERINSTALLATION/UserInstallation=$$SYSUSERCONFIG\/\.openoffice\.org-devel\/${AOOVERSION1}/' ${STAGEDIR}${PREFIX}/${INSTALLATION_BASEDIR}/${OOODIR}/program/bootstraprc
-	@${MKDIR} ${STAGEDIR}${PREFIX}/${INSTALLATION_BASEDIR}/extensions/
-	@cd ${WRKSRC}/solver/${AOOXXX}/unxfbsd?.pro/bin/ ; ${INSTALL_DATA} ${OOOEXTENSIONS} ${STAGEDIR}${PREFIX}/${INSTALLATION_BASEDIR}/extensions/
+	${MKDIR} ${STAGEDIR}${PREFIX}/${INSTALLATION_BASEDIR}
+	cd ${WRKDIR}/tmp/*/ ; ${TAR} cf - -C . . | ${TAR} xf - -C ${STAGEDIR}${PREFIX}/${INSTALLATION_BASEDIR}
+	${REINPLACE_CMD} -e 's/^UserInstallation.*$$/USERINSTALLATION/' ${STAGEDIR}${PREFIX}/${INSTALLATION_BASEDIR}/${OOODIR}/program/bootstraprc
+	${REINPLACE_CMD} -e 's/USERINSTALLATION/UserInstallation=$$SYSUSERCONFIG\/\.openoffice\.org-devel\/${AOOVERSION1}/' ${STAGEDIR}${PREFIX}/${INSTALLATION_BASEDIR}/${OOODIR}/program/bootstraprc
+	${MKDIR} ${STAGEDIR}${PREFIX}/${INSTALLATION_BASEDIR}/extensions/
+	cd ${WRKSRC}/solver/${AOOXXX}/unxfbsd?.pro/bin/ ; ${INSTALL_DATA} ${OOOEXTENSIONS} ${STAGEDIR}${PREFIX}/${INSTALLATION_BASEDIR}/extensions/
 
 post-install:
-	@${FIND} ${STAGEDIR}${PREFIX}/${INSTALLATION_BASEDIR}/${OOODIR}/program -type f \( -name '*.so*' -or -name '*.bin' \) -print0 | ${XARGS} -0 -n1 ${STRIP_CMD}
-	@for prog in crashrep pagein uri-encode javaldx regmerge regview; do \
+	${FIND} ${STAGEDIR}${PREFIX}/${INSTALLATION_BASEDIR}/${OOODIR}/program -type f \( -name '*.so*' -or -name '*.bin' \) -print0 | ${XARGS} -0 -n1 ${STRIP_CMD}
+	for prog in crashrep pagein uri-encode javaldx regmerge regview; do \
 		${STRIP_CMD} ${STAGEDIR}${PREFIX}/${INSTALLATION_BASEDIR}/${OOODIR}/program/$${prog}; \
 	done
-	@${FIND} ${STAGEDIR}${PREFIX}/${INSTALLATION_BASEDIR} -type d -exec ${CHMOD} 755 {} \;
+	${FIND} ${STAGEDIR}${PREFIX}/${INSTALLATION_BASEDIR} -type d -exec ${CHMOD} 755 {} \;
 	@${ECHO_MSG} "===>  Add wrapper scripts";
-	@${CP} ${FILESDIR}/openoffice-wrapper ${WRKDIR}/
-	@${REINPLACE_CMD} -e 's#%%PREFIX%%#${PREFIX}#g' \
+	${CP} ${FILESDIR}/openoffice-wrapper ${WRKDIR}/
+	${REINPLACE_CMD} -e 's#%%PREFIX%%#${PREFIX}#g' \
 			-e 's#%%SVNREVISION%%#${SVNREVISION}#g' \
 			-e 's#%%OOODIR%%#${OOODIR}#g' \
 			-e 's#%%INSTALLATION_BASEDIR%%#${INSTALLATION_BASEDIR}#g' \
 			${WRKDIR}/openoffice-wrapper
-	@${INSTALL_SCRIPT} ${WRKDIR}/openoffice-wrapper \
+	${INSTALL_SCRIPT} ${WRKDIR}/openoffice-wrapper \
 		${STAGEDIR}${PREFIX}/bin/${EXECBASE}
-	@${LN} -fs ${EXECBASE} ${STAGEDIR}${PREFIX}/bin/${EXECBASE}-sbase
-	@${LN} -fs ${EXECBASE} ${STAGEDIR}${PREFIX}/bin/${EXECBASE}-scalc
-	@${LN} -fs ${EXECBASE} ${STAGEDIR}${PREFIX}/bin/${EXECBASE}-sdraw
-	@${LN} -fs ${EXECBASE} ${STAGEDIR}${PREFIX}/bin/${EXECBASE}-setofficelang
-	@${LN} -fs ${EXECBASE} ${STAGEDIR}${PREFIX}/bin/${EXECBASE}-simpress
-	@${LN} -fs ${EXECBASE} ${STAGEDIR}${PREFIX}/bin/${EXECBASE}-smath
-	@${LN} -fs ${EXECBASE} ${STAGEDIR}${PREFIX}/bin/${EXECBASE}-spadmin
-	@${LN} -fs ${EXECBASE} ${STAGEDIR}${PREFIX}/bin/${EXECBASE}-swriter
-	@${ECHO_CMD} "" > ${TMPPLIST}
-	@${ECHO_CMD} "share/licenses/${PKGNAME}/catalog.mk" >> ${TMPPLIST}
-	@${ECHO_CMD} "share/licenses/${PKGNAME}/LICENSE"    >> ${TMPPLIST}
-	@${ECHO_CMD} "share/licenses/${PKGNAME}/APACHE20"   >> ${TMPPLIST}
-	@cd ${STAGEDIR}${PREFIX} ; ${FIND} -s bin \( -type f -or -type l \) -name "${EXECBASE}*" >> ${TMPPLIST}
-	@cd ${STAGEDIR}${PREFIX} ; ${FIND} -s ${INSTALLATION_BASEDIR} \( -type f -or -type l \) >> ${TMPPLIST}
-	@cd ${STAGEDIR}${PREFIX} ; ${FIND} ${INSTALLATION_BASEDIR} -type d | ${SORT} -r | \
+	${LN} -fs ${EXECBASE} ${STAGEDIR}${PREFIX}/bin/${EXECBASE}-sbase
+	${LN} -fs ${EXECBASE} ${STAGEDIR}${PREFIX}/bin/${EXECBASE}-scalc
+	${LN} -fs ${EXECBASE} ${STAGEDIR}${PREFIX}/bin/${EXECBASE}-sdraw
+	${LN} -fs ${EXECBASE} ${STAGEDIR}${PREFIX}/bin/${EXECBASE}-setofficelang
+	${LN} -fs ${EXECBASE} ${STAGEDIR}${PREFIX}/bin/${EXECBASE}-simpress
+	${LN} -fs ${EXECBASE} ${STAGEDIR}${PREFIX}/bin/${EXECBASE}-smath
+	${LN} -fs ${EXECBASE} ${STAGEDIR}${PREFIX}/bin/${EXECBASE}-spadmin
+	${LN} -fs ${EXECBASE} ${STAGEDIR}${PREFIX}/bin/${EXECBASE}-swriter
+	${ECHO_CMD} "" > ${TMPPLIST}
+	${ECHO_CMD} "share/licenses/${PKGNAME}/catalog.mk" >> ${TMPPLIST}
+	${ECHO_CMD} "share/licenses/${PKGNAME}/LICENSE"    >> ${TMPPLIST}
+	${ECHO_CMD} "share/licenses/${PKGNAME}/APACHE20"   >> ${TMPPLIST}
+	cd ${STAGEDIR}${PREFIX} ; ${FIND} -s bin \( -type f -or -type l \) -name "${EXECBASE}*" >> ${TMPPLIST}
+	cd ${STAGEDIR}${PREFIX} ; ${FIND} -s ${INSTALLATION_BASEDIR} \( -type f -or -type l \) >> ${TMPPLIST}
+	cd ${STAGEDIR}${PREFIX} ; ${FIND} ${INSTALLATION_BASEDIR} -type d | ${SORT} -r | \
 		${XARGS} -n 1 ${ECHO_CMD} @dirrm >> ${TMPPLIST}
-	@for app in base calc draw impress math writer; do \
+	for app in base calc draw impress math writer; do \
 		${REINPLACE_CMD} -e "s/^Exec.*/Exec=${EXECBASE} -$${app} %U/" \
 			-e "s/^Icon.*/Icon=${EXECBASE}-$${app}.png/" \
 		${STAGEDIR}${PREFIX}/${INSTALLATION_BASEDIR}/${OOODIR}/share/xdg/$${app}.desktop ; \
 	done
-	@${REINPLACE_CMD} -e "s/^Exec.*/Exec=${EXECBASE}-spadmin %U/" \
+	${REINPLACE_CMD} -e "s/^Exec.*/Exec=${EXECBASE}-spadmin %U/" \
 		-e "s/^Icon.*/Icon=${EXECBASE}-printeradmin.png/" \
 		${STAGEDIR}${PREFIX}/${INSTALLATION_BASEDIR}/${OOODIR}/share/xdg/printeradmin.desktop
-	@${REINPLACE_CMD} -e "s/^Exec.*/Exec=${EXECBASE} -quickstart -nologo -nodefault/" \
+	${REINPLACE_CMD} -e "s/^Exec.*/Exec=${EXECBASE} -quickstart -nologo -nodefault/" \
 		${STAGEDIR}${PREFIX}/${INSTALLATION_BASEDIR}/${OOODIR}/share/xdg/startcenter.desktop
-	@${RM} ${STAGEDIR}${PREFIX}/${INSTALLATION_BASEDIR}/${OOODIR}/share/xdg/*.desktop.bak
-	@${RM} -f ${STAGEDIR}${DESKTOPDIR}/${EXECBASE}
-	@${MKDIR} ${STAGEDIR}${DESKTOPDIR}
-	@${LN} -sf ${PREFIX}/${INSTALLATION_BASEDIR}/${OOODIR}/share/xdg \
+	${RM} ${STAGEDIR}${PREFIX}/${INSTALLATION_BASEDIR}/${OOODIR}/share/xdg/*.desktop.bak
+	${RM} -f ${STAGEDIR}${DESKTOPDIR}/${EXECBASE}
+	${MKDIR} ${STAGEDIR}${DESKTOPDIR}
+	${LN} -sf ${PREFIX}/${INSTALLATION_BASEDIR}/${OOODIR}/share/xdg \
 			${STAGEDIR}${DESKTOPDIR}/${EXECBASE}
-	@${ECHO_CMD} "share/applications/${EXECBASE}" >> ${TMPPLIST}
-	@for dir in `ls ${ICONS}/hicolor | ${GREP} -v CVS`; do \
+	${ECHO_CMD} "share/applications/${EXECBASE}" >> ${TMPPLIST}
+	for dir in `ls ${ICONS}/hicolor | ${GREP} -v CVS`; do \
 		for app in base calc draw impress math printeradmin writer; do \
 			if [ -r ${ICONS}/hicolor/$${dir}/apps/$${app}.png ]; then \
 				${MKDIR} ${STAGEDIR}${PREFIX}/share/icons/hicolor/$${dir}/apps/ ; \
@@ -344,9 +346,9 @@ post-install:
 			${ECHO_CMD} "share/icons/hicolor/$${dir}/mimetypes/$${iconfile}" >> ${TMPPLIST} ; \
 		done ; \
 	done
-	@${ECHO_CMD} "@unexec ${RM} %D/share/icons/hicolor/icon-theme.cache 2>/dev/null || ${TRUE}" >> ${TMPPLIST}
-	@${ECHO_CMD} "@exec ${PREFIX}/bin/gtk-update-icon-cache -q -f %D/share/icons/hicolor 2>/dev/null || ${TRUE}" >> ${TMPPLIST}
-	@${ECHO_CMD} "@unexec ${PREFIX}/bin/gtk-update-icon-cache -q -f %D/share/icons/hicolor 2>/dev/null || ${TRUE}" >> ${TMPPLIST}
+	${ECHO_CMD} "@unexec ${RM} %D/share/icons/hicolor/icon-theme.cache 2>/dev/null || ${TRUE}" >> ${TMPPLIST}
+	${ECHO_CMD} "@exec ${PREFIX}/bin/gtk-update-icon-cache -q -f %D/share/icons/hicolor 2>/dev/null || ${TRUE}" >> ${TMPPLIST}
+	${ECHO_CMD} "@unexec ${PREFIX}/bin/gtk-update-icon-cache -q -f %D/share/icons/hicolor 2>/dev/null || ${TRUE}" >> ${TMPPLIST}
 
 .include <${FILESDIR}/Makefile.others>
 

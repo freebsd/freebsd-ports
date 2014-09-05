@@ -1,0 +1,85 @@
+--- Makefile.in.orig
++++ Makefile.in
+@@ -30,11 +30,11 @@
+ EDITOR=@EDITOR@
+ 
+ INSTALL=@INSTALL@
+-INSTALL_PROGRAM=@INSTALL_PROGRAM@ -s
++INSTALL_PROGRAM=@INSTALL_PROGRAM@
+ INSTALL_DATA=@INSTALL_DATA@
+ 
+ DEFS= @DEFS@
+-OPTS= -fforce-mem -fforce-addr -fstrength-reduce -funroll-loops -finline-functions
++OPTS= -fstrength-reduce -funroll-loops -finline-functions
+ CPPFLAGS= -I@srcdir@
+ CFLAGS= ${DEFS} ${CPPFLAGS} ${OPTS} @CFLAGS@
+ 
+@@ -121,43 +121,43 @@
+ install:: check-dirs install-libsxml install-libsxmlrpc
+ 
+ install-libsxml::
+-	-${RM} ${libdir}/${SXML_PLIB}
+-	${INSTALL_DATA} ${SXML_PLIB} ${libdir}
+-	${RANLIB} -t ${libdir}/${SXML_PLIB}
+-	-${RM} ${libdir}/${SXML_SLIB}
+-	-${RM} ${libdir}/${SXML_DLIB}
+-	-${RM} ${libdir}/${SXML_LIB}
++	-${RM} ${DESTDIR}${libdir}/${SXML_PLIB}
++	${INSTALL_DATA} ${SXML_PLIB} ${DESTDIR}${libdir}
++	${RANLIB} -t ${DESTDIR}${libdir}/${SXML_PLIB}
++	-${RM} ${DESTDIR}${libdir}/${SXML_SLIB}
++	-${RM} ${DESTDIR}${libdir}/${SXML_DLIB}
++	-${RM} ${DESTDIR}${libdir}/${SXML_LIB}
+ 	if [ -f ${SXML_SLIB} ]; then \
+-	  ${INSTALL} ${SXML_SLIB} ${libdir}; \
+-	  (cd ${libdir}; ${LN_S} ${SXML_SLIB} ${SXML_LIB}); \
++	  ${INSTALL} ${SXML_SLIB} ${DESTDIR}${libdir}; \
++	  (cd ${DESTDIR}${libdir}; ${LN_S} ${SXML_SLIB} ${SXML_LIB}); \
+ 	fi
+ 	if [ -f ${SXML_DYLIB} ]; then \
+-	  ${INSTALL} ${SXML_DYLIB} ${libdir}; \
+-	  (cd ${libdir}; ${LN_S} ${SXML_DYLIB} ${SXML_DLIB}); \
++	  ${INSTALL} ${SXML_DYLIB} ${DESTDIR}${libdir}; \
++	  (cd ${DESTDIR}${libdir}; ${LN_S} ${SXML_DYLIB} ${SXML_DLIB}); \
+ 	fi
+-	${INSTALL_DATA} ${SXML_HDR} ${includedir}
++	${INSTALL_DATA} ${SXML_HDR} ${DESTDIR}${includedir}
+ 
+ install-libsxmlrpc::
+-	-${RM} ${libdir}/${SXMLRPC_PLIB}
+-	${INSTALL_DATA} ${SXMLRPC_PLIB} ${libdir}
+-	${RANLIB} -t ${libdir}/${SXMLRPC_PLIB}
+-	-${RM} ${libdir}/${SXMLRPC_SLIB}
+-	-${RM} ${libdir}/${SXMLRPC_DLIB}
+-	-${RM} ${libdir}/${SXMLRPC_LIB}
++	-${RM} ${DESTDIR}${libdir}/${SXMLRPC_PLIB}
++	${INSTALL_DATA} ${SXMLRPC_PLIB} ${DESTDIR}${libdir}
++	${RANLIB} -t ${DESTDIR}${libdir}/${SXMLRPC_PLIB}
++	-${RM} ${DESTDIR}${libdir}/${SXMLRPC_SLIB}
++	-${RM} ${DESTDIR}${libdir}/${SXMLRPC_DLIB}
++	-${RM} ${DESTDIR}${libdir}/${SXMLRPC_LIB}
+ 	if [ -f ${SXMLRPC_SLIB} ]; then \
+-	  ${INSTALL} ${SXMLRPC_SLIB} ${libdir}; \
+-	  (cd ${libdir}; ${LN_S} ${SXMLRPC_SLIB} ${SXMLRPC_LIB}); \
++	  ${INSTALL} ${SXMLRPC_SLIB} ${DESTDIR}${libdir}; \
++	  (cd ${DESTDIR}${libdir}; ${LN_S} ${SXMLRPC_SLIB} ${SXMLRPC_LIB}); \
+ 	fi
+ 	if [ -f ${SXMLRPC_DYLIB} ]; then \
+-	  ${INSTALL} ${SXMLRPC_DYLIB} ${libdir}; \
+-	  (cd ${libdir}; ${LN_S} ${SXMLRPC_DYLIB} ${SXMLRPC_DLIB}); \
++	  ${INSTALL} ${SXMLRPC_DYLIB} ${DESTDIR}${libdir}; \
++	  (cd ${DESTDIR}${libdir}; ${LN_S} ${SXMLRPC_DYLIB} ${SXMLRPC_DLIB}); \
+ 	fi
+-	${INSTALL_DATA} ${SXMLRPC_HDR} ${includedir}
++	${INSTALL_DATA} ${SXMLRPC_HDR} ${DESTDIR}${includedir}
+ 
+ check-dirs::
+-	@if [ ! -d ${prefix}     ]; then ${MKDIR} ${prefix};     fi
+-	@if [ ! -d ${libdir}     ]; then ${MKDIR} ${libdir};     fi
+-	@if [ ! -d ${includedir} ]; then ${MKDIR} ${includedir}; fi
++	@if [ ! -d ${DESTDIR}${prefix}     ]; then ${MKDIR} ${DESTDIR}${prefix};     fi
++	@if [ ! -d ${DESTDIR}${libdir}     ]; then ${MKDIR} ${DESTDIR}${libdir};     fi
++	@if [ ! -d ${DESTDIR}${includedir} ]; then ${MKDIR} ${DESTDIR}${includedir}; fi
+ 
+ ###############################################################################
+ 

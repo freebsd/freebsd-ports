@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	amqp
-PORTVERSION=	1.0.9
+PORTVERSION=	1.4.0
 CATEGORIES=	net pear
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-

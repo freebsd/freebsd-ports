@@ -30,7 +30,6 @@ CONFIGURE_ARGS=	--enable-relocation \
 		--disable-isabelle-libs
 
 .if defined(HAS_MANUAL)
-PORTDOCS=	manual.pdf
 OPTIONS_DEFINE=	DOCS #ISABELLE COQ FRAMA_C
 .endif
 

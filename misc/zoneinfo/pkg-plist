@@ -223,8 +223,8 @@
 %%DATADIR%%/Asia/Beirut
 %%DATADIR%%/Asia/Bishkek
 %%DATADIR%%/Asia/Brunei
+%%DATADIR%%/Asia/Chita
 %%DATADIR%%/Asia/Choibalsan
-%%DATADIR%%/Asia/Chongqing
 %%DATADIR%%/Asia/Colombo
 %%DATADIR%%/Asia/Damascus
 %%DATADIR%%/Asia/Dhaka
@@ -232,7 +232,6 @@
 %%DATADIR%%/Asia/Dubai
 %%DATADIR%%/Asia/Dushanbe
 %%DATADIR%%/Asia/Gaza
-%%DATADIR%%/Asia/Harbin
 %%DATADIR%%/Asia/Hebron
 %%DATADIR%%/Asia/Ho_Chi_Minh
 %%DATADIR%%/Asia/Hong_Kong
@@ -245,7 +244,6 @@
 %%DATADIR%%/Asia/Kabul
 %%DATADIR%%/Asia/Kamchatka
 %%DATADIR%%/Asia/Karachi
-%%DATADIR%%/Asia/Kashgar
 %%DATADIR%%/Asia/Kathmandu
 %%DATADIR%%/Asia/Khandyga
 %%DATADIR%%/Asia/Kolkata
@@ -275,6 +273,7 @@
 %%DATADIR%%/Asia/Seoul
 %%DATADIR%%/Asia/Shanghai
 %%DATADIR%%/Asia/Singapore
+%%DATADIR%%/Asia/Srednekolymsk
 %%DATADIR%%/Asia/Taipei
 %%DATADIR%%/Asia/Tashkent
 %%DATADIR%%/Asia/Tbilisi
@@ -467,3 +466,20 @@
 %%DATADIR%%/WET
 %%DATADIR%%/posixrules
 %%DATADIR%%/zone.tab
+@dirrm %%DATADIR%%/SystemV
+@dirrm %%DATADIR%%/Pacific
+@dirrm %%DATADIR%%/Indian
+@dirrm %%DATADIR%%/Europe
+@dirrm %%DATADIR%%/Etc
+@dirrm %%DATADIR%%/Australia
+@dirrm %%DATADIR%%/Atlantic
+@dirrm %%DATADIR%%/Asia
+@dirrm %%DATADIR%%/Arctic
+@dirrm %%DATADIR%%/Antarctica
+@dirrm %%DATADIR%%/America/North_Dakota
+@dirrm %%DATADIR%%/America/Kentucky
+@dirrm %%DATADIR%%/America/Indiana
+@dirrm %%DATADIR%%/America/Argentina
+@dirrm %%DATADIR%%/America
+@dirrm %%DATADIR%%/Africa
+@dirrmtry %%DATADIR%%

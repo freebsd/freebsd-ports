@@ -1,121 +1,384 @@
-lib/amanda/libamdevice-%%SHLIBVER%%.so
-lib/amanda/libamdevice.a
-lib/amanda/libamdevice.la
-lib/amanda/libamdevice.so
-lib/amanda/libamserver-%%SHLIBVER%%.so
-lib/amanda/libamserver.a
-lib/amanda/libamserver.la
-lib/amanda/libamserver.so
-%%SITE_PERL%%/Amanda/Changer.pm
-%%SITE_PERL%%/Amanda/Changer/aggregate.pm
-%%SITE_PERL%%/Amanda/Changer/compat.pm
-%%SITE_PERL%%/Amanda/Changer/disk.pm
-%%SITE_PERL%%/Amanda/Changer/multi.pm
-%%SITE_PERL%%/Amanda/Changer/ndmp.pm
-%%SITE_PERL%%/Amanda/Changer/null.pm
-%%SITE_PERL%%/Amanda/Changer/rait.pm
-%%SITE_PERL%%/Amanda/Changer/robot.pm
-%%SITE_PERL%%/Amanda/Changer/single.pm
-%%SITE_PERL%%/Amanda/Cmdline.pm
-%%SITE_PERL%%/Amanda/Curinfo.pm
-%%SITE_PERL%%/Amanda/Curinfo/Info.pm
-%%SITE_PERL%%/Amanda/DB/Catalog.pm
-%%SITE_PERL%%/Amanda/Device.pm
-%%SITE_PERL%%/Amanda/Disklist.pm
-%%SITE_PERL%%/Amanda/Holding.pm
-%%SITE_PERL%%/Amanda/Interactivity.pm
-%%SITE_PERL%%/Amanda/Interactivity/email.pm
-%%SITE_PERL%%/Amanda/Interactivity/stdin.pm
-%%SITE_PERL%%/Amanda/Interactivity/tty.pm
-%%SITE_PERL%%/Amanda/Interactivity/tty_email.pm
-%%SITE_PERL%%/Amanda/Logfile.pm
-%%SITE_PERL%%/Amanda/Recovery/Clerk.pm
-%%SITE_PERL%%/Amanda/Recovery/Planner.pm
-%%SITE_PERL%%/Amanda/Recovery/Scan.pm
-%%SITE_PERL%%/Amanda/Report.pm
-%%SITE_PERL%%/Amanda/Report/human.pm
-%%SITE_PERL%%/Amanda/Report/postscript.pm
-%%SITE_PERL%%/Amanda/Report/xml.pm
-%%SITE_PERL%%/Amanda/ScanInventory.pm
-%%SITE_PERL%%/Amanda/Tapelist.pm
-%%SITE_PERL%%/Amanda/Taper/Controller.pm
-%%SITE_PERL%%/Amanda/Taper/Protocol.pm
-%%SITE_PERL%%/Amanda/Taper/Scan.pm
-%%SITE_PERL%%/Amanda/Taper/Scan/lexical.pm
-%%SITE_PERL%%/Amanda/Taper/Scan/oldest.pm
-%%SITE_PERL%%/Amanda/Taper/Scan/traditional.pm
-%%SITE_PERL%%/Amanda/Taper/Scribe.pm
-%%SITE_PERL%%/Amanda/Taper/Worker.pm
-%%SITE_PERL%%/Amanda/XferServer.pm
-%%SITE_PERL%%/auto/Amanda/Cmdline/libCmdline.la
-%%SITE_PERL%%/auto/Amanda/Cmdline/libCmdline.so
-%%SITE_PERL%%/auto/Amanda/Device/libDevice.la
-%%SITE_PERL%%/auto/Amanda/Device/libDevice.so
-%%SITE_PERL%%/auto/Amanda/Disklist/libDisklist.la
-%%SITE_PERL%%/auto/Amanda/Disklist/libDisklist.so
-%%SITE_PERL%%/auto/Amanda/Logfile/libLogfile.la
-%%SITE_PERL%%/auto/Amanda/Logfile/libLogfile.so
-%%SITE_PERL%%/auto/Amanda/Tapelist/libTapelist.la
-%%SITE_PERL%%/auto/Amanda/Tapelist/libTapelist.so
-%%SITE_PERL%%/auto/Amanda/XferServer/libXferServer.la
-%%SITE_PERL%%/auto/Amanda/XferServer/libXferServer.so
-%%PLOT%%libexec/amanda/amcat.awk
-libexec/amanda/amcheck-device
-libexec/amanda/amdumpd
-libexec/amanda/amindexd
-libexec/amanda/amlogroll
-%%PLOT%%libexec/amanda/amplot.awk
-%%PLOT%%libexec/amanda/amplot.g
-%%PLOT%%libexec/amanda/amplot.gp
-libexec/amanda/amtrmidx
-libexec/amanda/amtrmlog
-libexec/amanda/chg-disk
-libexec/amanda/chg-lib.sh
-libexec/amanda/chg-manual
-libexec/amanda/chg-multi
-libexec/amanda/chg-zd-mtx
-libexec/amanda/chunker
-libexec/amanda/amidxtaped
-libexec/amanda/driver
-libexec/amanda/dumper
-libexec/amanda/planner
-libexec/amanda/taper
-%%S3DEVICE%%sbin/activate-devpay
-sbin/amaddclient
-sbin/amadmin
-sbin/amcheck
-sbin/amcheckdb
-sbin/amcheckdump
-sbin/amcleanup
-sbin/amcleanupdisk
-sbin/amdevcheck
-sbin/amdump
-sbin/amfetchdump
-sbin/amflush
-sbin/amlabel
-sbin/amoverview
-%%PLOT%%sbin/amplot
-sbin/amreport
-sbin/amrestore
-sbin/amrmtape
-sbin/amserverconfig
-sbin/amstatus
-sbin/amtape
-sbin/amtapetype
-sbin/amtoc
-sbin/amvault
-@dirrm %%SITE_PERL%%/auto/Amanda/XferServer
-@dirrm %%SITE_PERL%%/auto/Amanda/Tapelist
-@dirrm %%SITE_PERL%%/auto/Amanda/Logfile
-@dirrm %%SITE_PERL%%/auto/Amanda/Disklist
-@dirrm %%SITE_PERL%%/auto/Amanda/Device
-@dirrm %%SITE_PERL%%/auto/Amanda/Cmdline
-@dirrm %%SITE_PERL%%/Amanda/Taper/Scan
-@dirrm %%SITE_PERL%%/Amanda/Taper
-@dirrm %%SITE_PERL%%/Amanda/Report
-@dirrm %%SITE_PERL%%/Amanda/Recovery
-@dirrm %%SITE_PERL%%/Amanda/Interactivity
-@dirrm %%SITE_PERL%%/Amanda/DB
-@dirrm %%SITE_PERL%%/Amanda/Curinfo
-@dirrm %%SITE_PERL%%/Amanda/Changer
-@dirrm include/amanda
+@comment To prevent orphans during check-plist of misc/amanda-server,
+@comment misc/amanda-client and misc/amanda-server share the same plist
+@comment
+@comment plist for misc/amanda-server below
+@comment
+%%SERVER_ONLY%%lib/amanda/libamdevice-%%SHLIBVER%%.so
+%%SERVER_ONLY%%lib/amanda/libamdevice.a
+%%SERVER_ONLY%%lib/amanda/libamdevice.la
+%%SERVER_ONLY%%lib/amanda/libamdevice.so
+%%SERVER_ONLY%%lib/amanda/libamserver-%%SHLIBVER%%.so
+%%SERVER_ONLY%%lib/amanda/libamserver.a
+%%SERVER_ONLY%%lib/amanda/libamserver.la
+%%SERVER_ONLY%%lib/amanda/libamserver.so
+%%SERVER_ONLY%%%%SITE_PERL%%/Amanda/Changer.pm
+%%SERVER_ONLY%%%%SITE_PERL%%/Amanda/Changer/aggregate.pm
+%%SERVER_ONLY%%%%SITE_PERL%%/Amanda/Changer/compat.pm
+%%SERVER_ONLY%%%%SITE_PERL%%/Amanda/Changer/disk.pm
+%%SERVER_ONLY%%%%SITE_PERL%%/Amanda/Changer/multi.pm
+%%SERVER_ONLY%%%%SITE_PERL%%/Amanda/Changer/ndmp.pm
+%%SERVER_ONLY%%%%SITE_PERL%%/Amanda/Changer/null.pm
+%%SERVER_ONLY%%%%SITE_PERL%%/Amanda/Changer/rait.pm
+%%SERVER_ONLY%%%%SITE_PERL%%/Amanda/Changer/robot.pm
+%%SERVER_ONLY%%%%SITE_PERL%%/Amanda/Changer/single.pm
+%%SERVER_ONLY%%%%SITE_PERL%%/Amanda/Cmdline.pm
+%%SERVER_ONLY%%%%SITE_PERL%%/Amanda/Curinfo.pm
+%%SERVER_ONLY%%%%SITE_PERL%%/Amanda/Curinfo/Info.pm
+%%SERVER_ONLY%%%%SITE_PERL%%/Amanda/DB/Catalog.pm
+%%SERVER_ONLY%%%%SITE_PERL%%/Amanda/Device.pm
+%%SERVER_ONLY%%%%SITE_PERL%%/Amanda/Disklist.pm
+%%SERVER_ONLY%%%%SITE_PERL%%/Amanda/Holding.pm
+%%SERVER_ONLY%%%%SITE_PERL%%/Amanda/Interactivity.pm
+%%SERVER_ONLY%%%%SITE_PERL%%/Amanda/Interactivity/email.pm
+%%SERVER_ONLY%%%%SITE_PERL%%/Amanda/Interactivity/stdin.pm
+%%SERVER_ONLY%%%%SITE_PERL%%/Amanda/Interactivity/tty.pm
+%%SERVER_ONLY%%%%SITE_PERL%%/Amanda/Interactivity/tty_email.pm
+%%SERVER_ONLY%%%%SITE_PERL%%/Amanda/Logfile.pm
+%%SERVER_ONLY%%%%SITE_PERL%%/Amanda/Recovery/Clerk.pm
+%%SERVER_ONLY%%%%SITE_PERL%%/Amanda/Recovery/Planner.pm
+%%SERVER_ONLY%%%%SITE_PERL%%/Amanda/Recovery/Scan.pm
+%%SERVER_ONLY%%%%SITE_PERL%%/Amanda/Report.pm
+%%SERVER_ONLY%%%%SITE_PERL%%/Amanda/Report/human.pm
+%%SERVER_ONLY%%%%SITE_PERL%%/Amanda/Report/postscript.pm
+%%SERVER_ONLY%%%%SITE_PERL%%/Amanda/Report/xml.pm
+%%SERVER_ONLY%%%%SITE_PERL%%/Amanda/ScanInventory.pm
+%%SERVER_ONLY%%%%SITE_PERL%%/Amanda/Tapelist.pm
+%%SERVER_ONLY%%%%SITE_PERL%%/Amanda/Taper/Controller.pm
+%%SERVER_ONLY%%%%SITE_PERL%%/Amanda/Taper/Protocol.pm
+%%SERVER_ONLY%%%%SITE_PERL%%/Amanda/Taper/Scan.pm
+%%SERVER_ONLY%%%%SITE_PERL%%/Amanda/Taper/Scan/lexical.pm
+%%SERVER_ONLY%%%%SITE_PERL%%/Amanda/Taper/Scan/oldest.pm
+%%SERVER_ONLY%%%%SITE_PERL%%/Amanda/Taper/Scan/traditional.pm
+%%SERVER_ONLY%%%%SITE_PERL%%/Amanda/Taper/Scribe.pm
+%%SERVER_ONLY%%%%SITE_PERL%%/Amanda/Taper/Worker.pm
+%%SERVER_ONLY%%%%SITE_PERL%%/Amanda/XferServer.pm
+%%SERVER_ONLY%%%%SITE_PERL%%/auto/Amanda/Cmdline/libCmdline.la
+%%SERVER_ONLY%%%%SITE_PERL%%/auto/Amanda/Cmdline/libCmdline.so
+%%SERVER_ONLY%%%%SITE_PERL%%/auto/Amanda/Device/libDevice.la
+%%SERVER_ONLY%%%%SITE_PERL%%/auto/Amanda/Device/libDevice.so
+%%SERVER_ONLY%%%%SITE_PERL%%/auto/Amanda/Disklist/libDisklist.la
+%%SERVER_ONLY%%%%SITE_PERL%%/auto/Amanda/Disklist/libDisklist.so
+%%SERVER_ONLY%%%%SITE_PERL%%/auto/Amanda/Logfile/libLogfile.la
+%%SERVER_ONLY%%%%SITE_PERL%%/auto/Amanda/Logfile/libLogfile.so
+%%SERVER_ONLY%%%%SITE_PERL%%/auto/Amanda/Tapelist/libTapelist.la
+%%SERVER_ONLY%%%%SITE_PERL%%/auto/Amanda/Tapelist/libTapelist.so
+%%SERVER_ONLY%%%%SITE_PERL%%/auto/Amanda/XferServer/libXferServer.la
+%%SERVER_ONLY%%%%SITE_PERL%%/auto/Amanda/XferServer/libXferServer.so
+%%SERVER_ONLY%%%%PLOT%%libexec/amanda/amcat.awk
+%%SERVER_ONLY%%libexec/amanda/amcheck-device
+%%SERVER_ONLY%%libexec/amanda/amdumpd
+%%SERVER_ONLY%%libexec/amanda/amindexd
+%%SERVER_ONLY%%libexec/amanda/amlogroll
+%%SERVER_ONLY%%%%PLOT%%libexec/amanda/amplot.awk
+%%SERVER_ONLY%%%%PLOT%%libexec/amanda/amplot.g
+%%SERVER_ONLY%%%%PLOT%%libexec/amanda/amplot.gp
+%%SERVER_ONLY%%libexec/amanda/amtrmidx
+%%SERVER_ONLY%%libexec/amanda/amtrmlog
+%%SERVER_ONLY%%libexec/amanda/chg-disk
+%%SERVER_ONLY%%libexec/amanda/chg-lib.sh
+%%SERVER_ONLY%%libexec/amanda/chg-manual
+%%SERVER_ONLY%%libexec/amanda/chg-multi
+%%SERVER_ONLY%%libexec/amanda/chg-zd-mtx
+%%SERVER_ONLY%%libexec/amanda/chunker
+%%SERVER_ONLY%%libexec/amanda/amidxtaped
+%%SERVER_ONLY%%libexec/amanda/driver
+%%SERVER_ONLY%%@mode 4750
+%%SERVER_ONLY%%@group %%AMANDA_GROUP%%
+%%SERVER_ONLY%%libexec/amanda/dumper
+%%SERVER_ONLY%%libexec/amanda/planner
+%%SERVER_ONLY%%@mode
+%%SERVER_ONLY%%@group
+%%SERVER_ONLY%%libexec/amanda/taper
+%%SERVER_ONLY%%man/man5/disklist.5.gz
+%%SERVER_ONLY%%man/man5/tapelist.5.gz
+%%SERVER_ONLY%%man/man7/amanda-changers.7.gz
+%%SERVER_ONLY%%man/man7/amanda-compatibility.7.gz
+%%SERVER_ONLY%%man/man7/amanda-devices.7.gz
+%%SERVER_ONLY%%man/man7/amanda-interactivity.7.gz
+%%SERVER_ONLY%%man/man7/amanda-taperscan.7.gz
+%%SERVER_ONLY%%man/man8/amaddclient.8.gz
+%%SERVER_ONLY%%man/man8/amadmin.8.gz
+%%SERVER_ONLY%%man/man8/amaespipe.8.gz
+%%SERVER_ONLY%%man/man8/amcheck.8.gz
+%%SERVER_ONLY%%man/man8/amcheckdb.8.gz
+%%SERVER_ONLY%%man/man8/amcheckdump.8.gz
+%%SERVER_ONLY%%man/man8/amcleanup.8.gz
+%%SERVER_ONLY%%man/man8/amcleanupdisk.8.gz
+%%SERVER_ONLY%%man/man8/amcrypt-ossl-asym.8.gz
+%%SERVER_ONLY%%man/man8/amcrypt-ossl.8.gz
+%%SERVER_ONLY%%man/man8/amcrypt.8.gz
+%%SERVER_ONLY%%man/man8/amcryptsimple.8.gz
+%%SERVER_ONLY%%man/man8/amdevcheck.8.gz
+%%SERVER_ONLY%%man/man8/amdump.8.gz
+%%SERVER_ONLY%%man/man8/amfetchdump.8.gz
+%%SERVER_ONLY%%man/man8/amflush.8.gz
+%%SERVER_ONLY%%man/man8/amgetconf.8.gz
+%%SERVER_ONLY%%man/man8/amgpgcrypt.8.gz
+%%SERVER_ONLY%%man/man8/amlabel.8.gz
+%%SERVER_ONLY%%man/man8/amoverview.8.gz
+%%SERVER_ONLY%%%%PLOT%%man/man8/amplot.8.gz
+%%SERVER_ONLY%%man/man8/amreport.8.gz
+%%SERVER_ONLY%%man/man8/amrestore.8.gz
+%%SERVER_ONLY%%man/man8/amrmtape.8.gz
+%%SERVER_ONLY%%man/man8/amserverconfig.8.gz
+%%SERVER_ONLY%%man/man8/amstatus.8.gz
+%%SERVER_ONLY%%man/man8/amtape.8.gz
+%%SERVER_ONLY%%man/man8/amtapetype.8.gz
+%%SERVER_ONLY%%man/man8/amtoc.8.gz
+%%SERVER_ONLY%%man/man8/amvault.8.gz
+%%SERVER_ONLY%%%%S3DEVICE%%sbin/activate-devpay
+%%SERVER_ONLY%%sbin/amaddclient
+%%SERVER_ONLY%%sbin/amadmin
+%%SERVER_ONLY%%@mode 4750
+%%SERVER_ONLY%%@group %%AMANDA_GROUP%%
+%%SERVER_ONLY%%sbin/amcheck
+%%SERVER_ONLY%%@mode
+%%SERVER_ONLY%%@group
+%%SERVER_ONLY%%sbin/amcheckdb
+%%SERVER_ONLY%%sbin/amcheckdump
+%%SERVER_ONLY%%sbin/amcleanup
+%%SERVER_ONLY%%sbin/amcleanupdisk
+%%SERVER_ONLY%%sbin/amdevcheck
+%%SERVER_ONLY%%sbin/amdump
+%%SERVER_ONLY%%sbin/amfetchdump
+%%SERVER_ONLY%%sbin/amflush
+%%SERVER_ONLY%%sbin/amlabel
+%%SERVER_ONLY%%sbin/amoverview
+%%SERVER_ONLY%%%%PLOT%%sbin/amplot
+%%SERVER_ONLY%%sbin/amreport
+%%SERVER_ONLY%%sbin/amrestore
+%%SERVER_ONLY%%sbin/amrmtape
+%%SERVER_ONLY%%sbin/amserverconfig
+%%SERVER_ONLY%%sbin/amstatus
+%%SERVER_ONLY%%sbin/amtape
+%%SERVER_ONLY%%sbin/amtapetype
+%%SERVER_ONLY%%sbin/amtoc
+%%SERVER_ONLY%%sbin/amvault
+%%SERVER_ONLY%%@dirrm %%SITE_PERL%%/auto/Amanda/XferServer
+%%SERVER_ONLY%%@dirrm %%SITE_PERL%%/auto/Amanda/Tapelist
+%%SERVER_ONLY%%@dirrm %%SITE_PERL%%/auto/Amanda/Logfile
+%%SERVER_ONLY%%@dirrm %%SITE_PERL%%/auto/Amanda/Disklist
+%%SERVER_ONLY%%@dirrm %%SITE_PERL%%/auto/Amanda/Device
+%%SERVER_ONLY%%@dirrm %%SITE_PERL%%/auto/Amanda/Cmdline
+%%SERVER_ONLY%%@dirrm %%SITE_PERL%%/Amanda/Taper/Scan
+%%SERVER_ONLY%%@dirrm %%SITE_PERL%%/Amanda/Taper
+%%SERVER_ONLY%%@dirrm %%SITE_PERL%%/Amanda/Report
+%%SERVER_ONLY%%@dirrm %%SITE_PERL%%/Amanda/Recovery
+%%SERVER_ONLY%%@dirrm %%SITE_PERL%%/Amanda/Interactivity
+%%SERVER_ONLY%%@dirrm %%SITE_PERL%%/Amanda/DB
+%%SERVER_ONLY%%@dirrm %%SITE_PERL%%/Amanda/Curinfo
+%%SERVER_ONLY%%@dirrm %%SITE_PERL%%/Amanda/Changer
+%%SERVER_ONLY%%@dirrm include/amanda
+@comment
+@comment plist for misc/amanda-client below
+@comment
+%%CLIENT_ONLY%%lib/amanda/libamanda-%%SHLIBVER%%.so
+%%CLIENT_ONLY%%lib/amanda/libamanda.a
+%%CLIENT_ONLY%%lib/amanda/libamanda.la
+%%CLIENT_ONLY%%lib/amanda/libamanda.so
+%%CLIENT_ONLY%%lib/amanda/libamandad-%%SHLIBVER%%.so
+%%CLIENT_ONLY%%lib/amanda/libamandad.a
+%%CLIENT_ONLY%%lib/amanda/libamandad.la
+%%CLIENT_ONLY%%lib/amanda/libamandad.so
+%%CLIENT_ONLY%%lib/amanda/libamar-%%SHLIBVER%%.so
+%%CLIENT_ONLY%%lib/amanda/libamar.a
+%%CLIENT_ONLY%%lib/amanda/libamar.la
+%%CLIENT_ONLY%%lib/amanda/libamar.so
+%%CLIENT_ONLY%%lib/amanda/libamclient-%%SHLIBVER%%.so
+%%CLIENT_ONLY%%lib/amanda/libamclient.a
+%%CLIENT_ONLY%%lib/amanda/libamclient.la
+%%CLIENT_ONLY%%lib/amanda/libamclient.so
+%%CLIENT_ONLY%%lib/amanda/libamglue-%%SHLIBVER%%.so
+%%CLIENT_ONLY%%lib/amanda/libamglue.a
+%%CLIENT_ONLY%%lib/amanda/libamglue.la
+%%CLIENT_ONLY%%lib/amanda/libamglue.so
+%%CLIENT_ONLY%%lib/amanda/libamxfer-%%SHLIBVER%%.so
+%%CLIENT_ONLY%%lib/amanda/libamxfer.a
+%%CLIENT_ONLY%%lib/amanda/libamxfer.la
+%%CLIENT_ONLY%%lib/amanda/libamxfer.so
+%%CLIENT_ONLY%%lib/amanda/libndmjob-%%SHLIBVER%%.so
+%%CLIENT_ONLY%%lib/amanda/libndmjob.a
+%%CLIENT_ONLY%%lib/amanda/libndmjob.la
+%%CLIENT_ONLY%%lib/amanda/libndmjob.so
+%%CLIENT_ONLY%%lib/amanda/libndmlib-%%SHLIBVER%%.so
+%%CLIENT_ONLY%%lib/amanda/libndmlib.a
+%%CLIENT_ONLY%%lib/amanda/libndmlib.la
+%%CLIENT_ONLY%%lib/amanda/libndmlib.so
+%%CLIENT_ONLY%%libexec/amanda/amanda-sh-lib.sh
+%%CLIENT_ONLY%%libexec/amanda/amandad
+%%CLIENT_ONLY%%libexec/amanda/amndmjob
+%%CLIENT_ONLY%%@mode 4750
+%%CLIENT_ONLY%%@group %%AMANDA_GROUP%%
+%%CLIENT_ONLY%%libexec/amanda/application/amgtar
+%%CLIENT_ONLY%%@mode
+%%CLIENT_ONLY%%@group
+%%CLIENT_ONLY%%libexec/amanda/application/amlog-script
+%%CLIENT_ONLY%%libexec/amanda/application/ampgsql
+%%CLIENT_ONLY%%libexec/amanda/application/amraw
+%%CLIENT_ONLY%%libexec/amanda/application/amsamba
+%%CLIENT_ONLY%%@mode 4750
+%%CLIENT_ONLY%%@group %%AMANDA_GROUP%%
+%%CLIENT_ONLY%%libexec/amanda/application/amstar
+%%CLIENT_ONLY%%@mode
+%%CLIENT_ONLY%%@group
+%%CLIENT_ONLY%%libexec/amanda/application/amsuntar
+%%CLIENT_ONLY%%libexec/amanda/application/amzfs-sendrecv
+%%CLIENT_ONLY%%libexec/amanda/application/amzfs-snapshot
+%%CLIENT_ONLY%%libexec/amanda/application/script-email
+%%CLIENT_ONLY%%@mode 4750
+%%CLIENT_ONLY%%@group %%AMANDA_GROUP%%
+%%CLIENT_ONLY%%libexec/amanda/calcsize
+%%CLIENT_ONLY%%libexec/amanda/killpgrp
+%%CLIENT_ONLY%%@mode
+%%CLIENT_ONLY%%@group
+%%CLIENT_ONLY%%libexec/amanda/ndmjob
+%%CLIENT_ONLY%%libexec/amanda/noop
+%%CLIENT_ONLY%%libexec/amanda/patch-system
+%%CLIENT_ONLY%%@mode 4750
+%%CLIENT_ONLY%%@group %%AMANDA_GROUP%%
+%%CLIENT_ONLY%%libexec/amanda/rundump
+%%CLIENT_ONLY%%libexec/amanda/runtar
+%%CLIENT_ONLY%%@mode
+%%CLIENT_ONLY%%@group
+%%CLIENT_ONLY%%libexec/amanda/selfcheck
+%%CLIENT_ONLY%%libexec/amanda/sendbackup
+%%CLIENT_ONLY%%libexec/amanda/sendsize
+%%CLIENT_ONLY%%libexec/amanda/teecount
+%%CLIENT_ONLY%%%%SITE_PERL%%/Amanda/Application.pm
+%%CLIENT_ONLY%%%%SITE_PERL%%/Amanda/Application/Zfs.pm
+%%CLIENT_ONLY%%%%SITE_PERL%%/Amanda/Archive.pm
+%%CLIENT_ONLY%%%%SITE_PERL%%/Amanda/BigIntCompat.pm
+%%CLIENT_ONLY%%%%SITE_PERL%%/Amanda/ClientService.pm
+%%CLIENT_ONLY%%%%SITE_PERL%%/Amanda/Config.pm
+%%CLIENT_ONLY%%%%SITE_PERL%%/Amanda/Config/FoldingHash.pm
+%%CLIENT_ONLY%%%%SITE_PERL%%/Amanda/Constants.pm
+%%CLIENT_ONLY%%%%SITE_PERL%%/Amanda/Debug.pm
+%%CLIENT_ONLY%%%%SITE_PERL%%/Amanda/Feature.pm
+%%CLIENT_ONLY%%%%SITE_PERL%%/Amanda/Header.pm
+%%CLIENT_ONLY%%%%SITE_PERL%%/Amanda/IPC/Binary.pm
+%%CLIENT_ONLY%%%%SITE_PERL%%/Amanda/IPC/LineProtocol.pm
+%%CLIENT_ONLY%%%%SITE_PERL%%/Amanda/MainLoop.pm
+%%CLIENT_ONLY%%%%SITE_PERL%%/Amanda/NDMP.pm
+%%CLIENT_ONLY%%%%SITE_PERL%%/Amanda/Paths.pm
+%%CLIENT_ONLY%%%%SITE_PERL%%/Amanda/Process.pm
+%%CLIENT_ONLY%%%%SITE_PERL%%/Amanda/Script.pm
+%%CLIENT_ONLY%%%%SITE_PERL%%/Amanda/Script_App.pm
+%%CLIENT_ONLY%%%%SITE_PERL%%/Amanda/Tests.pm
+%%CLIENT_ONLY%%%%SITE_PERL%%/Amanda/Util.pm
+%%CLIENT_ONLY%%%%SITE_PERL%%/Amanda/Xfer.pm
+%%CLIENT_ONLY%%%%SITE_PERL%%/auto/Amanda/Application/libApplication.la
+%%CLIENT_ONLY%%%%SITE_PERL%%/auto/Amanda/Application/libApplication.so
+%%CLIENT_ONLY%%%%SITE_PERL%%/auto/Amanda/Archive/libArchive.la
+%%CLIENT_ONLY%%%%SITE_PERL%%/auto/Amanda/Archive/libArchive.so
+%%CLIENT_ONLY%%%%SITE_PERL%%/auto/Amanda/Config/libConfig.la
+%%CLIENT_ONLY%%%%SITE_PERL%%/auto/Amanda/Config/libConfig.so
+%%CLIENT_ONLY%%%%SITE_PERL%%/auto/Amanda/Debug/libDebug.la
+%%CLIENT_ONLY%%%%SITE_PERL%%/auto/Amanda/Debug/libDebug.so
+%%CLIENT_ONLY%%%%SITE_PERL%%/auto/Amanda/Feature/libFeature.la
+%%CLIENT_ONLY%%%%SITE_PERL%%/auto/Amanda/Feature/libFeature.so
+%%CLIENT_ONLY%%%%SITE_PERL%%/auto/Amanda/Header/libHeader.la
+%%CLIENT_ONLY%%%%SITE_PERL%%/auto/Amanda/Header/libHeader.so
+%%CLIENT_ONLY%%%%SITE_PERL%%/auto/Amanda/IPC/Binary/libBinary.la
+%%CLIENT_ONLY%%%%SITE_PERL%%/auto/Amanda/IPC/Binary/libBinary.so
+%%CLIENT_ONLY%%%%SITE_PERL%%/auto/Amanda/MainLoop/libMainLoop.la
+%%CLIENT_ONLY%%%%SITE_PERL%%/auto/Amanda/MainLoop/libMainLoop.so
+%%CLIENT_ONLY%%%%SITE_PERL%%/auto/Amanda/NDMP/libNDMP.la
+%%CLIENT_ONLY%%%%SITE_PERL%%/auto/Amanda/NDMP/libNDMP.so
+%%CLIENT_ONLY%%%%SITE_PERL%%/auto/Amanda/Tests/libTests.la
+%%CLIENT_ONLY%%%%SITE_PERL%%/auto/Amanda/Tests/libTests.so
+%%CLIENT_ONLY%%%%SITE_PERL%%/auto/Amanda/Util/libUtil.la
+%%CLIENT_ONLY%%%%SITE_PERL%%/auto/Amanda/Util/libUtil.so
+%%CLIENT_ONLY%%%%SITE_PERL%%/auto/Amanda/Xfer/libXfer.la
+%%CLIENT_ONLY%%%%SITE_PERL%%/auto/Amanda/Xfer/libXfer.so
+%%CLIENT_ONLY%%man/man5/amanda-archive-format.5.gz
+%%CLIENT_ONLY%%man/man5/amanda-client.conf.5.gz
+%%CLIENT_ONLY%%man/man5/amanda.conf.5.gz
+%%CLIENT_ONLY%%man/man7/amanda-applications.7.gz
+%%CLIENT_ONLY%%man/man7/amanda-auth.7.gz
+%%CLIENT_ONLY%%man/man7/amanda-match.7.gz
+%%CLIENT_ONLY%%man/man7/amanda-scripts.7.gz
+%%CLIENT_ONLY%%man/man8/amanda.8.gz
+%%CLIENT_ONLY%%man/man8/amarchiver.8.gz
+%%CLIENT_ONLY%%man/man8/amdump_client.8.gz
+%%CLIENT_ONLY%%man/man8/amgtar.8.gz
+%%CLIENT_ONLY%%man/man8/ampgsql.8.gz
+%%CLIENT_ONLY%%man/man8/amraw.8.gz
+%%CLIENT_ONLY%%man/man8/amrecover.8.gz
+%%CLIENT_ONLY%%man/man8/amsamba.8.gz
+%%CLIENT_ONLY%%man/man8/amservice.8.gz
+%%CLIENT_ONLY%%man/man8/amstar.8.gz
+%%CLIENT_ONLY%%man/man8/amsuntar.8.gz
+%%CLIENT_ONLY%%man/man8/amzfs-sendrecv.8.gz
+%%CLIENT_ONLY%%man/man8/amzfs-snapshot.8.gz
+%%CLIENT_ONLY%%man/man8/script-email.8.gz
+%%CLIENT_ONLY%%sbin/amaespipe
+%%CLIENT_ONLY%%sbin/amarchiver
+%%CLIENT_ONLY%%sbin/amcrypt
+%%CLIENT_ONLY%%sbin/amcrypt-ossl
+%%CLIENT_ONLY%%sbin/amcrypt-ossl-asym
+%%CLIENT_ONLY%%sbin/amcryptsimple
+%%CLIENT_ONLY%%sbin/amdump_client
+%%CLIENT_ONLY%%sbin/amgetconf
+%%CLIENT_ONLY%%sbin/amgpgcrypt
+%%CLIENT_ONLY%%sbin/amoldrecover
+%%CLIENT_ONLY%%sbin/amrecover
+%%CLIENT_ONLY%%@mode 4750
+%%CLIENT_ONLY%%@group %%AMANDA_GROUP%%
+%%CLIENT_ONLY%%sbin/amservice
+%%CLIENT_ONLY%%@mode
+%%CLIENT_ONLY%%@group
+%%CLIENT_ONLY%%%%DATADIR%%/COPYRIGHT
+%%CLIENT_ONLY%%%%DATADIR%%/ChangeLog
+%%CLIENT_ONLY%%%%DATADIR%%/NEWS
+%%CLIENT_ONLY%%%%DATADIR%%/ReleaseNotes
+%%CLIENT_ONLY%%%%DATADIR%%/example/amanda-client-postgresql.conf
+%%CLIENT_ONLY%%%%DATADIR%%/example/amanda-client.conf
+%%CLIENT_ONLY%%%%DATADIR%%/example/amanda.conf
+%%CLIENT_ONLY%%%%DATADIR%%/example/chg-multi.conf
+%%CLIENT_ONLY%%%%DATADIR%%/example/chg-scsi.conf
+%%CLIENT_ONLY%%%%DATADIR%%/example/disklist
+%%CLIENT_ONLY%%%%DATADIR%%/example/inetd.conf.amandaclient
+%%CLIENT_ONLY%%%%DATADIR%%/example/inetd.conf.amandaserver
+%%CLIENT_ONLY%%%%DATADIR%%/example/label-templates/3hole.ps
+%%CLIENT_ONLY%%%%DATADIR%%/example/label-templates/8.5x11.ps
+%%CLIENT_ONLY%%%%DATADIR%%/example/label-templates/DIN-A4.ps
+%%CLIENT_ONLY%%%%DATADIR%%/example/label-templates/DLT-A4.ps
+%%CLIENT_ONLY%%%%DATADIR%%/example/label-templates/DLT.ps
+%%CLIENT_ONLY%%%%DATADIR%%/example/label-templates/EXB-8500.ps
+%%CLIENT_ONLY%%%%DATADIR%%/example/label-templates/HP-DAT.ps
+%%CLIENT_ONLY%%%%DATADIR%%/example/xinetd.amandaclient
+%%CLIENT_ONLY%%%%DATADIR%%/example/xinetd.amandaserver
+%%CLIENT_ONLY%%%%DATADIR%%/template.d/advanced.conf
+%%CLIENT_ONLY%%%%DATADIR%%/template.d/amanda-harddisk.conf
+%%CLIENT_ONLY%%%%DATADIR%%/template.d/amanda-single-tape.conf
+%%CLIENT_ONLY%%%%DATADIR%%/template.d/amanda-tape-changer.conf
+%%CLIENT_ONLY%%%%DATADIR%%/template.d/amanda-S3.conf
+%%CLIENT_ONLY%%%%DATADIR%%/template.d/dumptypes
+%%CLIENT_ONLY%%%%DATADIR%%/template.d/tapetypes
+%%CLIENT_ONLY%%%%DATADIR%%/template.d/README
+%%CLIENT_ONLY%%%%DATADIR%%/template.d/chg-manual.conf
+%%CLIENT_ONLY%%@dirrm %%SITE_PERL%%/auto/Amanda/Xfer
+%%CLIENT_ONLY%%@dirrm %%SITE_PERL%%/auto/Amanda/Util
+%%CLIENT_ONLY%%@dirrm %%SITE_PERL%%/auto/Amanda/Tests
+%%CLIENT_ONLY%%@dirrm %%SITE_PERL%%/auto/Amanda/NDMP
+%%CLIENT_ONLY%%@dirrm %%SITE_PERL%%/auto/Amanda/MainLoop
+%%CLIENT_ONLY%%@dirrm %%SITE_PERL%%/auto/Amanda/IPC/Binary
+%%CLIENT_ONLY%%@dirrm %%SITE_PERL%%/auto/Amanda/IPC
+%%CLIENT_ONLY%%@dirrm %%SITE_PERL%%/auto/Amanda/Header
+%%CLIENT_ONLY%%@dirrm %%SITE_PERL%%/auto/Amanda/Feature
+%%CLIENT_ONLY%%@dirrm %%SITE_PERL%%/auto/Amanda/Debug
+%%CLIENT_ONLY%%@dirrm %%SITE_PERL%%/auto/Amanda/Config
+%%CLIENT_ONLY%%@dirrm %%SITE_PERL%%/auto/Amanda/Archive
+%%CLIENT_ONLY%%@dirrm %%SITE_PERL%%/auto/Amanda/Application
+%%CLIENT_ONLY%%@dirrm %%SITE_PERL%%/auto/Amanda
+%%CLIENT_ONLY%%@dirrm %%SITE_PERL%%/Amanda/IPC
+%%CLIENT_ONLY%%@dirrm %%SITE_PERL%%/Amanda/Config
+%%CLIENT_ONLY%%@dirrm %%SITE_PERL%%/Amanda/Application
+%%CLIENT_ONLY%%@dirrm %%SITE_PERL%%/Amanda
+%%CLIENT_ONLY%%@dirrm %%DATADIR%%/template.d
+%%CLIENT_ONLY%%@dirrm %%DATADIR%%/example/label-templates
+%%CLIENT_ONLY%%@dirrm %%DATADIR%%/example
+%%CLIENT_ONLY%%@dirrm %%DATADIR%%
+%%CLIENT_ONLY%%@dirrm libexec/amanda/application
+%%CLIENT_ONLY%%@dirrm libexec/amanda
+%%CLIENT_ONLY%%@dirrm lib/amanda

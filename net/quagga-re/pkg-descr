@@ -1,6 +1,0 @@
-Quagga-RE (Release Engineering) is a process established on the base of
-the well-known Quagga Routing Suite project. The aim of this process is
-to deliver better tested version releases, in the first turn focused on
-OSPF and BGP stability.
-
-WWW: http://sourceforge.net/projects/quagga/files/Quagga-RE/

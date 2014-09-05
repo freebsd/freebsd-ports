@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mbdyn
-PORTVERSION=	1.4.0
-PORTREVISION=	3
+PORTVERSION=	1.4.3
 CATEGORIES=	science
 MASTER_SITES=	http://www.aero.polimi.it/~masarati/Download/mbdyn/
 
@@ -16,11 +15,11 @@ LIB_DEPENDS=	libarpack.so:${PORTSDIR}/math/arpack \
 		libumfpack.so:${PORTSDIR}/math/suitesparse
 
 GNU_CONFIGURE=	yes
-USES=		fortran gmake
-MAN1=		mbdyn.1
+USES=		fortran gmake libtool
 CPPFLAGS+=	-fpermissive -I${LOCALBASE}/include/suitesparse
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS+=	--program-prefix=''
+INSTALL_TARGET=	install-strip
 
 OPTIONS_DEFINE=	MPI METIS CHACO GINAC TCL
 MPI_DESC=	Enable mpich-support
@@ -29,7 +28,6 @@ CHACO_DESC=	Enable chaco-support
 GINAC_DESC=	Enable GiNaC-support (not implemented yet)
 TCL_DESC=	Enable tcl-support (not implemented yet)
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "powerpc"

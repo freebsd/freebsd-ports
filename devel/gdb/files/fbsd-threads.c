@@ -325,6 +325,11 @@ get_current_thread (void)
   lwp = get_current_lwp (proc_handle.pid);
   tmp = BUILD_LWP (lwp, proc_handle.pid);
   ptid = thread_from_lwp (tmp, &th, &ti);
+  if (in_thread_list (inferior_ptid) )
+    {
+      struct thread_info * ti_inf = inferior_thread();
+      ti_inf->ptid = ptid;
+    }
   if (!in_thread_list (ptid))
     {
       attach_thread (ptid, &th, &ti, 1);
@@ -439,7 +444,6 @@ static void
 fbsd_thread_activate (void)
 {
   fbsd_thread_active = 1;
-  init_thread_list();
   if (target_has_execution)
     enable_thread_event_reporting ();
   fbsd_thread_find_new_threads (NULL);

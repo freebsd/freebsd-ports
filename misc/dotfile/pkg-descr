@@ -1,9 +1,0 @@
-This is a port of the dotfile generator program.  It creates
-configuration files for many popular programs.
-
-The dotfile generator provides a handy way to create user-
-configuration files for many programs.  Modules are used
-to define the configuration options.  A sample template is
-provided to aid in creating new modules.
-
-WWW: http://www.blackie.dk/dotfile/

@@ -10,11 +10,9 @@ MASTER_SITES=	http://www.ka9q.net/code/cpuid/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	CPU identification utility
 
+USES=		uidfix
+MAKEFILE=	${FILESDIR}/Makefile.bsd
 PLIST_FILES=	bin/cpuid
 ONLY_FOR_ARCHS=	i386 amd64
-
-post-patch:
-	${MV} ${WRKSRC}/Makefile ${WRKSRC}/Makefile.bak && \
-	    ${CP} ${FILESDIR}/Makefile.bsd ${WRKSRC}/Makefile
 
 .include <bsd.port.mk>

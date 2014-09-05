@@ -3,7 +3,7 @@
 
 PORTNAME=	libwmf
 PORTVERSION=	0.2.8.4
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	graphics
 MASTER_SITES=	SF/wvware/${PORTNAME}/${PORTVERSION}
 
@@ -12,19 +12,19 @@ COMMENT=	Tools and library for converting Microsoft WMF (windows metafile)
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	freetype-config:${PORTSDIR}/print/freetype2
 LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
 		libpng.so:${PORTSDIR}/graphics/png \
 		libfreetype.so:${PORTSDIR}/print/freetype2
 
 CONFLICTS?=	libwmf-nox11-[0-9]*
 
-USE_AUTOTOOLS=	libtool
-USE_GNOME=	libxml2
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-sys-gd=no \
 		--with-png=${LOCALBASE} --with-jpeg=${LOCALBASE} \
 		--with-gsfontdir=${LOCALBASE}/share/ghostscript/fonts
+INSTALL_TARGET=	install-strip
+USES=		libtool
+USE_GNOME=	libxml2
 USE_LDCONFIG=	yes
 
 PORTDOCS=	*
@@ -41,10 +41,9 @@ X11_CONFIGURE_OFF=--with-x=no
 post-patch:
 	@${REINPLACE_CMD} -e 's|src include fonts doc|src include fonts|g' \
 		${WRKSRC}/Makefile.in
-	@${REINPLACE_CMD} -e 's|@LT_CURRENT@|2|g ; \
-		 s|@LIBWMF_GDK_PIXBUF_TRUE@|#|g ; \
+	@${REINPLACE_CMD} -e \
+		's|@LIBWMF_GDK_PIXBUF_TRUE@|#|g ; \
 		 s|@LIBWMF_GDK_PIXBUF_FALSE@||g ; \
-		 s|-release $$(LT_RELEASE)||g ; \
 		 s|: install-loaderLTLIBRARIES|:|g' ${WRKSRC}/src/Makefile.in
 
 post-install:

@@ -28,6 +28,10 @@ OPTIONS_DEFINE=	DOCS
 DESKTOP_ENTRIES="NuclearChess" "" "${PORTNAME}" \
 		"${PORTNAME}" "Game;BoardGame;" ""
 
+post-patch:
+	@${REINPLACE_CMD} '/^nuclearchess_LDADD =/s/$$/ -lm/' \
+		${WRKSRC}/src/Makefile.in
+
 post-install:
 	${INSTALL_DATA} ${_DISTDIR}/${PORTNAME}.png \
 		${STAGEDIR}${PREFIX}/share/pixmaps/

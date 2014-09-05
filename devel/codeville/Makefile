@@ -13,28 +13,20 @@ COMMENT=	Anarchic control version system without unnecessary re-merges
 
 LICENSE=	BSD3CLAUSE
 
-USES=		tar:xz
-USE_PYTHON=	yes
-
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
-PYDISTUTILS_PKGNAME=	Codeville
+USES=		python tar:xz
+USE_PYTHON=	distutils autoplist
 
 PORTDOCS=	LICENSE.txt
-EXAMPLE_FILES=	cdvserver.conf.sample
+PORTEXAMPLES=	cdvserver.conf.sample
 
-OPTIONS_DEFINE=	DOCS
-
-.include <bsd.port.options.mk>
+OPTIONS_DEFINE=	DOCS EXAMPLES
 
 post-install:
 # examples
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
-	@${INSTALL_DATA} ${WRKSRC}/${EXAMPLE_FILES} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/${PORTEXAMPLES} ${STAGEDIR}${EXAMPLESDIR}
 # documentation
-.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/${PORTDOCS} ${STAGEDIR}${DOCSDIR}
-.endif
+	${INSTALL_DATA} ${WRKSRC}/${PORTDOCS} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

@@ -3,6 +3,7 @@
 
 PORTNAME=	hydra
 PORTVERSION=	8.0
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	https://www.thc.org/releases/ \
 		PACKETSTORM/groups/thc/

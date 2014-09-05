@@ -384,7 +384,6 @@
 @dirrm lib/eclipse/plugins/com.ibm.icu.source.nl2_3.4.5.v200609270227
 @dirrm lib/eclipse/plugins/com.ibm.icu.source.nl1_3.4.5.v200609270227/META-INF
 @dirrm lib/eclipse/plugins/com.ibm.icu.source.nl1_3.4.5.v200609270227
-@dirrmtry lib/eclipse/plugins
 @dirrm lib/eclipse/features/org.eclipse.sdk.nlsBidi_3.2.1.v200609270227
 @dirrm lib/eclipse/features/org.eclipse.sdk.nls2a_3.2.1.v200609270227
 @dirrm lib/eclipse/features/org.eclipse.sdk.nls2_3.2.1.v200609270227
@@ -421,5 +420,3 @@
 @dirrm lib/eclipse/features/org.eclipse.jdt.nls2a_3.2.1.v200609270227
 @dirrm lib/eclipse/features/org.eclipse.jdt.nls2_3.2.1.v200609270227
 @dirrm lib/eclipse/features/org.eclipse.jdt.nls1_3.2.1.v200609270227
-@dirrmtry lib/eclipse/features
-@dirrmtry lib/eclipse

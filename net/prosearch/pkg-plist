@@ -1,3 +1,5 @@
+@owner %%WWWOWN%%
+@group %%WWWGRP%%
 %%SEARCHDIR%%/tools/prosearch/files/pkg-message.in
 %%SEARCHDIR%%/tools/prosearch/pkg-descr
 %%SEARCHDIR%%/tools/prosearch/pkg-plist
@@ -23,12 +25,13 @@
 %%SEARCHDIR%%/lib/lib.js
 %%SEARCHDIR%%/lib/search1.js
 %%SEARCHDIR%%/lib/player.js
-%%SEARCHDIR%%/lib/jquery-1.7.1.min.js
+%%SEARCHDIR%%/lib/jquery-1.10.1.min.js
 %%SEARCHDIR%%/lib/psmisc.pm
 %%SEARCHDIR%%/lib/psweb.pm
 %%SEARCHDIR%%/lib/lib.css
 %%SEARCHDIR%%/lib/pssql.pm
 %%SEARCHDIR%%/t/json.t
+%%SEARCHDIR%%/t/psmisc.t
 %%SEARCHDIR%%/WHATSNEW
 %%SEARCHDIR%%/search.sh.dist
 %%SEARCHDIR%%/config.pl.dist
@@ -80,7 +83,7 @@
 %%SEARCHDIR%%/web/lib/lib.js
 %%SEARCHDIR%%/web/lib/search1.js
 %%SEARCHDIR%%/web/lib/player.js
-%%SEARCHDIR%%/web/lib/jquery-1.7.1.min.js
+%%SEARCHDIR%%/web/lib/jquery-1.10.1.min.js
 %%SEARCHDIR%%/web/lib/psmisc.pm
 %%SEARCHDIR%%/web/lib/psweb.pm
 %%SEARCHDIR%%/web/lib/lib.css
@@ -107,6 +110,8 @@
 %%SEARCHDIR%%/COPYING
 %%SEARCHDIR%%/crawler.pl
 %%SEARCHDIR%%/confdef.pl
+@group
+@owner
 @dirrm %%SEARCHDIR%%/tools/prosearch/files
 @dirrm %%SEARCHDIR%%/tools/prosearch
 @dirrm %%SEARCHDIR%%/tools

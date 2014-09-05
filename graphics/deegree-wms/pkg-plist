@@ -2073,4 +2073,4 @@
 @group %%WWWGRP%%
 @dirrm %%TOMCATDIR%%/webapps/deegree-wms
 @group wheel
-@group root
+@owner root

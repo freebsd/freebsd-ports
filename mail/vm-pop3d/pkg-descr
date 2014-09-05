@@ -1,7 +1,0 @@
-vm-pop3d is a POP3 server. It is free to download and use. It supports
-alternative password files and mail spool directories; it can be used for
-setting up virtual email accounts -- mailboxes without real Unix owners for
-each. This will allow you to have multiple email accounts with the same name
-on one system. 
-
-WWW: http://www.reedmedia.net/software/virtualmail-pop3d/

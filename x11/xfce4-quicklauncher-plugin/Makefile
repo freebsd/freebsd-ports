@@ -14,6 +14,7 @@ COMMENT=	Quicklauncher plugin for Xfce
 
 LICENSE=	GPLv2
 
+SSP_UNSAFE=	yes
 GNU_CONFIGURE=	yes
 USES=		gettext gmake libtool pkgconfig tar:bzip2
 USE_GNOME=	gtk20 intltool intlhack

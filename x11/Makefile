@@ -131,6 +131,7 @@
     SUBDIR += kde4-workspace
     SUBDIR += kdelibs4
     SUBDIR += keybinder
+    SUBDIR += keybinder-gtk3
     SUBDIR += keyboardcast
     SUBDIR += keylaunch
     SUBDIR += keynav
@@ -192,6 +193,7 @@
     SUBDIR += listres
     SUBDIR += lsw
     SUBDIR += luit
+    SUBDIR += lumina
     SUBDIR += lupe
     SUBDIR += lxde-meta
     SUBDIR += lxmenu-data
@@ -296,6 +298,7 @@
     SUBDIR += vdesk
     SUBDIR += videoproto
     SUBDIR += viewres
+    SUBDIR += virtualgl
     SUBDIR += wbar
     SUBDIR += wbarconf
     SUBDIR += wdm

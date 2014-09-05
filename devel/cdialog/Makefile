@@ -2,7 +2,7 @@
 
 PORTNAME=	cdialog
 PORTVERSION=	1.2.20140219
-PORTEPOCH=	1
+PORTEPOCH=	2
 CATEGORIES=	devel
 MASTER_SITES=	ftp://invisible-island.net/${PORTNAME:S|^c||}/
 DISTNAME=	${PORTNAME:S|^c||}-${PORTVERSION:R}-${PORTVERSION:E}
@@ -14,7 +14,7 @@ LICENSE=	LGPL21
 
 OPTIONS_DEFINE=	EXAMPLES
 
-USES=		ncurses	libtool:keepla tar:tgz
+USES=		ncurses	libtool tar:tgz
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--enable-widec \

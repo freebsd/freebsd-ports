@@ -1,7 +1,0 @@
-MplayerXP is a branch of the well known mplayer (http://mplayerhq.hu)
-which is based on the new (thread based) core. The new core provides
-better CPU utilization and excellently improves performance of video
-decoding. Main goal of this project is to get monotonous CPU loading
-during movie playback.
-
-WWW: http://mplayerxp.sourceforge.net/

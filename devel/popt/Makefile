@@ -3,6 +3,7 @@
 
 PORTNAME=	popt
 PORTVERSION=	1.16
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://rpm5.org/files/popt/
 
@@ -11,13 +12,11 @@ COMMENT=	Getopt(3) like library with a number of enhancements, from Redhat
 
 OPTIONS_DEFINE=	NLS
 
-CONFIGURE_ARGS=	${ICONV_CONFIGURE_ARG} \
-		--program-prefix=""
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
 GNU_CONFIGURE=	yes
-USE_AUTOTOOLS=	libtool
-USES=		pathfix iconv
+CPPFLAGS+=	-I${LOCALBASE}/include
+LIBS+=		-L${LOCALBASE}/lib
+INSTALL_TARGET=	install-strip
+USES=		iconv libtool pathfix
 USE_LDCONFIG=	yes
 
 NLS_CONFIGURE_ENABLE=	nls

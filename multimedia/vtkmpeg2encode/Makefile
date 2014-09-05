@@ -14,7 +14,7 @@ COMMENT=	VTK MPEG2 encoding library
 LICENSE=	MPEG-2
 LICENSE_NAME=	MPEG-2 license
 LICENSE_FILE=	${WRKSRC}/mpeg2enc.h
-LICENSE_PERMS=	${_LICENSE_PERMS_DEFAULT}
+LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 USES=		cmake
 USE_LDCONFIG=	yes

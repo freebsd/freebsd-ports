@@ -18,13 +18,14 @@
 name=sqlgrey
 rcvar=sqlgrey_enable
 
+load_rc_config ${name}
+
 command=%%PREFIX%%/sbin/sqlgrey
 extra_commands=reload
 command_interpreter=%%PERL%%
 
-stop_postcmd=${name}_poststop
-
-load_rc_config $name
+start_precmd=${name}_prestart
+stop_postcmd="rm -f ${pidfile}"
 
 sqlgrey_enable=${sqlgrey_enable-"NO"}
 required_files=${sqlgrey_config-"%%PREFIX%%/%%ETCDIR%%/sqlgrey.conf"}
@@ -32,9 +33,11 @@ pidfile=${sqlgrey_pidfile-"/var/run/sqlgrey.pid"}
 
 command_args="--configfile=${required_files} --pidfile=${pidfile} --daemonize"
 
-sqlgrey_poststop()
+sqlgrey_prestart()
 {
-	rm -f $pidfile
+	if [ ! -d %%DATADIR%% ]; then
+		install -d -o %%USERS%% -g %%GROUPS%% -m 2775 %%DATADIR%%
+	fi
 }
 
 run_rc_command "$1"

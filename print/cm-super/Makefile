@@ -19,7 +19,7 @@ OPTIONS_SUB=	yes
 X11_BUILD_DEPENDS=	${LOCALBASE}/bin/type1inst:${PORTSDIR}/x11-fonts/p5-type1inst
 
 USES=		zip
-USE_TEX=	texlive base texmf infra
+USE_TEX=	base texmf infra
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 PLIST_SUB=	UPDMAP_SYS="${UPDMAP_SYS}" \
@@ -44,6 +44,8 @@ MAPFILES=	cm-super-t1.map \
 		cm-super-t2c.map \
 		cm-super-ts1.map \
 		cm-super-x2.map
+
+IGNORE=		print/texlive-texmf includes this package
 
 .include <bsd.port.options.mk>
 

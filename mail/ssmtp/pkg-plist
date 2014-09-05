@@ -1,9 +1,6 @@
-@group ssmtp
-sbin/ssmtp
-etc/ssmtp/revaliases.sample
-etc/ssmtp/ssmtp.conf.sample
-@group
+@(,ssmtp,2555) sbin/ssmtp
+@(,ssmtp,640) etc/ssmtp/revaliases.sample
+@(,ssmtp,640) etc/ssmtp/ssmtp.conf.sample
 man/man5/ssmtp.conf.5.gz
 man/man8/ssmtp.8.gz
-@exec chown root:ssmtp %D/etc/ssmtp
-@dirrmtry etc/ssmtp
+@dirrmtry(,ssmtp,750) etc/ssmtp

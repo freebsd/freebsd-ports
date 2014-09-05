@@ -35,6 +35,7 @@ CONFLICTS=	linux_base-7* linux_base-8* linux_base-debian* \
 USE_LINUX_PREFIX=	YES
 PREFIX_SUBDIR=
 .else
+BROKEN=		Fails to package
 NO_MTREE=	YES
 PKGNAMEPREFIX=	linux_dist-
 PREFIX_SUBDIR=	${PORTNAME}/

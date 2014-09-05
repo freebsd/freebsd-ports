@@ -20,6 +20,7 @@ OPTIONS_SUB=	yes
 CONFIGURE_ARGS=	--docdir=${DOCSDIR} --with-zlib=/usr
 CPPFLAGS+=	-I${LOCALBASE}/include
 GNU_CONFIGURE=	yes
+INSTALL_TARGET=	install-strip
 LDFLAGS+=	-L${LOCALBASE}/lib
 USE_LDCONFIG=	${PREFIX}/lib/httrack
 USES=		gmake iconv libtool shebangfix
@@ -42,6 +43,5 @@ post-patch:
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/html/httrack.css ${STAGEDIR}${DOCSDIR}/httrack.css
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/lib*.so ${STAGEDIR}${PREFIX}/lib/httrack/lib*.so
 
 .include <bsd.port.mk>

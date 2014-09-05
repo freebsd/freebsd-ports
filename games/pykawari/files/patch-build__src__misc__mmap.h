@@ -10,7 +10,16 @@
  //		if(it==end()) it=insert(pair<KeyType,DataType>(key,DataType()));
  //		if(it==upper_bound(key)) it=insert(pair<const KeyType,DataType>(key,DataType()));
 -		if(it==upper_bound(key)) it=insert(typename TMMap<KeyType,DataType>::value_type(key,DataType()));
-+		if(it==std::multimap<KeyType, DataType>::upper_bound(key)) it=insert(typename TMMap<KeyType,DataType>::value_type(key,DataType()));
++		if(it==std::multimap<KeyType, DataType>::upper_bound(key)) it=this->insert(typename TMMap<KeyType,DataType>::value_type(key,DataType()));
  		return((*it).second);
  	}
  /*
+@@ -43,7 +43,7 @@
+ 	void Add(const KeyType& key,const DataType& data)
+ 	{
+ //		insert(pair<const KeyType,DataType>(key,data));
+-		insert(typename TMMap::value_type(key,data));
++		this->insert(typename TMMap::value_type(key,data));
+ 	}
+ 
+ };

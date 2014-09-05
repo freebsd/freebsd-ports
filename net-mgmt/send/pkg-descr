@@ -1,0 +1,14 @@
+SEND is the implementation of RFC3971 Secure Neighbor Discovery
+(SEND). SEND cryptographically secures the IPv6 neighbor discovery
+protocol, countering the threats discussed in RFC3756 (IPv6 Neighbor
+Discovery (ND) Trust Models and Threats).
+
+The implementation is a new version of DoCoMo's SEND (send_0.2) that
+was implemented completely in user space. Novelty in send_0.3 is the
+native SEND API that avoids the need for the use of netgraph and BPF,
+which makes send_0.3 portable over different BSD platforms and
+significantlly more efficient.
+
+Also included in the distribution are implementations of RFC3972
+Cryptographically Generated Addresses (CGAs) and RFC3779 X.509
+Extensions for IP Addresses and AS Identifiers.

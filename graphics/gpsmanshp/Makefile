@@ -19,11 +19,10 @@ LIB_DEPENDS=	libshp.so:${PORTSDIR}/devel/shapelib \
 TCLVERSION?=	8.4
 PLIST_SUB=	TCLVERSION=${TCLVERSION} PORTVERSION=${PORTVERSION}
 
-NO_STAGE=	yes
+OPTIONS_DEFINE=	DOCS
+
 post-install:
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_MAN} ${WRKSRC}/doc/* ${DOCSDIR}
-.endif
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_MAN} ${WRKSRC}/doc/* ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

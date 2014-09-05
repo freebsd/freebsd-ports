@@ -6,7 +6,7 @@ PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	SAVANNAH/tinycc
 
-MAINTAINER=	cjpugmed@gmail.com
+MAINTAINER=	cpm@fbsd.es
 COMMENT=	Tiny C Compiler
 
 LICENSE=	LGPL21

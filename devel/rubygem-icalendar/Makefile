@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	icalendar
-PORTVERSION=	1.4.1
+PORTVERSION=	2.1.1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 

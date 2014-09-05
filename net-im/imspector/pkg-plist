@@ -1,12 +1,6 @@
-@unexec if cmp -s %D/%%ETCDIR%%/acl.txt.sample %D/%%ETCDIR%%/acl.txt; then rm -f %D/%%ETCDIR%%/acl.txt; fi
-%%ETCDIR%%/acl.txt.sample
-@exec if [ ! -f %D/%%ETCDIR%%/acl.txt ] ; then cp -p %D/%F %B/acl.txt; fi
-@unexec if cmp -s %D/%%ETCDIR%%/badwords.txt.sample %D/%%ETCDIR%%/badwords.txt; then rm -f %D/%%ETCDIR%%/badwords.txt; fi
-%%ETCDIR%%/badwords.txt.sample
-@exec if [ ! -f %D/%%ETCDIR%%/badwords.txt ] ; then cp -p %D/%F %B/badwords.txt; fi
-@unexec if cmp -s %D/%%ETCDIR%%/imspector.conf.sample %D/%%ETCDIR%%/imspector.conf; then rm -f %D/%%ETCDIR%%/imspector.conf; fi
-%%ETCDIR%%/imspector.conf.sample
-@exec if [ ! -f %D/%%ETCDIR%%/imspector.conf ] ; then cp -p %D/%F %B/imspector.conf; fi
+@sample %%ETCDIR%%/acl.txt.sample
+@sample %%ETCDIR%%/badwords.txt.sample
+@sample %%ETCDIR%%/imspector.conf.sample
 @exec /bin/mkdir -p /var/lib/imspector
 @exec /bin/mkdir -p /var/log/imspector
 lib/imspector/aclfilterplugin.so

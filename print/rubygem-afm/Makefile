@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	afm
-PORTVERSION=	0.2.0
+PORTVERSION=	0.2.2
 CATEGORIES=	print rubygems
 MASTER_SITES=	RG
 

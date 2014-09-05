@@ -1,0 +1,16 @@
+This module implements TEA, the Tiny Encryption Algorithm, and some Modes of
+Use, in Perl and JavaScript.
+
+The $key is a sufficiently longish string; at least 17 random 8-bit bytes for
+single encryption.
+
+Crypt::Tea_JS can be used for secret-key encryption in general, or, in
+particular, to communicate securely between browser and web-host. In this case,
+the simplest arrangement is for the user to enter the key into a JavaScript
+variable, and for the host to retrieve that user's key from a database. Or, for
+extra security, the first message (or even each message) between browser and
+host could contain a random challenge-string, which each end would then turn
+into a signature, and use that signature as the encryption-key for the session
+(or the reply).
+
+WWW: http://search.cpan.org/dist/Crypt-Tea_JS/

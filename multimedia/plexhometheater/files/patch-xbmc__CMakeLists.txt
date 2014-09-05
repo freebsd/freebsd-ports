@@ -1,0 +1,13 @@
+--- xbmc/CMakeLists.txt.orig	2014-08-05 20:17:14.627532749 +0800
++++ xbmc/CMakeLists.txt	2014-08-05 20:17:45.319521746 +0800
+@@ -10,6 +10,10 @@
+ 	list(APPEND subdirs linux)
+ endif(TARGET_POSIX)
+ 
++if(TARGET_FREEBSD)
++	list(APPEND subdirs freebsd)
++endif(TARGET_FREEBSD)
++
+ if(TARGET_WIN32)
+   list(APPEND subdirs win32)
+ endif(TARGET_WIN32)

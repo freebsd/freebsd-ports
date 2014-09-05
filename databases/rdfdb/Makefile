@@ -3,7 +3,7 @@
 
 PORTNAME=	rdfdb
 PORTVERSION=	0.46
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	databases
 MASTER_SITES=	http://www.guha.com/
 DISTNAME=	rdfdb_src

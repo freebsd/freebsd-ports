@@ -1,4 +1,3 @@
-@stopdaemon mysql-server
 bin/innochecksum
 bin/my_print_defaults
 bin/myisam_ftdump
@@ -168,5 +167,4 @@ man/man8/mysqld.8.gz
 @dirrm %%DATADIR%%/swedish
 @dirrm %%DATADIR%%/ukrainian
 @dirrm %%DATADIR%%
-@cwd /var
-@dirrmtry db/mysql
+@dirrmtry /var/db/mysql

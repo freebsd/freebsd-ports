@@ -3,13 +3,16 @@
 
 PORTNAME=	gcstar
 PORTVERSION=	1.7.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	misc
 MASTER_SITES=	http://download.gna.org/gcstar/ \
 		http://djdomics.free.fr/distfiles/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Open source application for managing your collections
+
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	p5-Gtk2>=0:${PORTSDIR}/x11-toolkits/p5-Gtk2 \
 		p5-XML-LibXML>=0:${PORTSDIR}/textproc/p5-XML-LibXML \
@@ -32,28 +35,21 @@ RUN_DEPENDS=	p5-Gtk2>=0:${PORTSDIR}/x11-toolkits/p5-Gtk2 \
 		p5-GD-Graph>=0:${PORTSDIR}/graphics/p5-GD-Graph \
 		p5-GD-TextUtil>=0:${PORTSDIR}/graphics/p5-GD-TextUtil
 
-MAN1=		gcstar.1
-MANCOMPRESSED=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
-USE_GNOME=	desktopfileutils
-USES=		perl5
+USES=		perl5 desktop-file-utils shared-mime-info shebangfix
+SHEBANG_FILES=	bin/gcstar
 USE_PERL5=	run
-
 NO_BUILD=	yes
 
-NO_STAGE=	yes
 do-install:
-		@${MKDIR} ${PREFIX}/share/mime/packages
-		@${FIND} ${WRKSRC}/ -name '*.orig' -delete
-		${PERL} ${WRKSRC}/install --prefix ${PREFIX} --noclean
-		${INSTALL_DATA} ${WRKSRC}/share/applications/gcstar.desktop \
-			${PREFIX}/share/applications/gcstar.desktop
-		${INSTALL_DATA} ${WRKSRC}/share/applications/gcstar.xml \
-			${PREFIX}/share/mime/packages/gcstar.xml
-		${INSTALL_DATA} ${WRKSRC}/share/gcstar/icons/gcstar_48x48.png \
-			${PREFIX}/share/pixmaps/gcstar.png
-
-post-install:
-		-@update-desktop-database
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/mime/packages
+	@${FIND} ${WRKSRC}/ -name '*.orig' -delete
+	${PERL} ${WRKSRC}/install --prefix ${STAGEDIR}${PREFIX} --noclean
+	${INSTALL_DATA} ${WRKSRC}/share/applications/gcstar.desktop \
+		${STAGEDIR}${PREFIX}/share/applications/gcstar.desktop
+	${INSTALL_DATA} ${WRKSRC}/share/applications/gcstar.xml \
+		${STAGEDIR}${PREFIX}/share/mime/packages/gcstar.xml
+	${INSTALL_DATA} ${WRKSRC}/share/gcstar/icons/gcstar_48x48.png \
+		${STAGEDIR}${PREFIX}/share/pixmaps/gcstar.png
 
 .include <bsd.port.mk>

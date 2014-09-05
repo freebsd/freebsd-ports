@@ -547,6 +547,8 @@ RESTRICTED_FILES=		${_PATCHFILES} ${_DISTFILES}
 .endif
 
 .if defined(_LICENSE_RESTRICTED)
+# _LICENSE_RESTRICTED contains 'delete-distfiles' and 'delete-package' if
+# needed with RESTRICTED_FILES filled from above.
 clean-restricted:	${_LICENSE_RESTRICTED}
 clean-restricted-list: ${_LICENSE_RESTRICTED:C/$/-list/}
 .else

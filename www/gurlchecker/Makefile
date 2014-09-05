@@ -14,18 +14,17 @@ COMMENT=	Gnome program to check a page/website for broken links
 LIB_DEPENDS=	libgnet-2.0.so:${PORTSDIR}/net/gnet2
 
 OPTIONS_DEFINE=	CROCO TIDY CLAMAV GNUTLS
-CROCO_DESC=Library for CSS2 validation
-TIDY_DESC=Library for HTML w3c validation
-CLAMAV_DESC=Library for virii scan
-GNUTLS_DESC=Library for HTTPS check
+OPTIONS_DEFAULT=CLAMAV GNUTLS
+CROCO_DESC=	Library for CSS2 validation
+TIDY_DESC=	Library for HTML w3c validation
+CLAMAV_DESC=	Library for virii scan
+GNUTLS_DESC=	Library for HTTPS check
 
-OPTIONS_DEFAULT=	CLAMAV GNUTLS
-
+USES=		gmake libtool pathfix pkgconfig
 USE_GNOME=	gnomeprefix intlhack libgnomeui
-USES=	pathfix gmake pkgconfig
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+LIBS+=		-L${LOCALBASE}/lib -lm
 
 .include <bsd.port.options.mk>
 
@@ -43,7 +42,7 @@ CONFIGURE_ARGS+=	--disable-croco
 .endif
 
 .if ${PORT_OPTIONS:MTIDY}
-LIB_DEPENDS+=	libtidy-0.99.so:${PORTSDIR}/www/tidy-lib
+LIB_DEPENDS+=	libtidy.so:${PORTSDIR}/www/tidy-lib
 .else
 CONFIGURE_ARGS+=	--disable-tidy
 .endif

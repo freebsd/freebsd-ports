@@ -7,7 +7,7 @@ CATEGORIES=	www
 MASTER_SITES=	http://phroggy.com/files/unix/ \
 		CRITICAL
 
-MAINTAINER=	ehaupt@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Squid redirect script for filtering web banners
 
 DEPRECATED=	Depends on www/squid which is two years past EOL

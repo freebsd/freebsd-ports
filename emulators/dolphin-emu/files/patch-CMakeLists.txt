@@ -1,5 +1,5 @@
---- CMakeLists.txt.orig	2013-09-16 04:58:51.000000000 +0200
-+++ CMakeLists.txt	2013-09-16 05:15:59.000000000 +0200
+--- CMakeLists.txt.orig	2013-09-23 16:15:52.000000000 +0400
++++ CMakeLists.txt	2014-08-20 17:37:42.000000000 +0400
 @@ -351,51 +351,81 @@
  		message("OpenMP parallelization disabled")
  	endif()
@@ -158,3 +158,20 @@
  
  	if(OPROFILING)
  		check_lib(OPROFILE opagent opagent.h)
+@@ -577,14 +618,14 @@
+ set(SFML_FIND_VERSION_MAJOR 1)
+ set(SFML_FIND_VERSION_MINOR 5)
+ if(NOT ${CMAKE_SYSTEM_NAME} MATCHES "Darwin" AND NOT ANDROID)
+-	include(FindSFML OPTIONAL)
++	#include(FindSFML OPTIONAL)
+ endif()
+ if(SFML_FOUND AND NOT SFML_VERSION_MAJOR) # SFML 1.x doesn't define SFML_VERSION_MAJOR
+ 	message("Using shared SFML")
+ else()
+ 	message("Using static SFML ${SFML_FIND_VERSION_MAJOR}.${SFML_FIND_VERSION_MINOR} from Externals")
+ 	add_subdirectory(Externals/SFML)
+-	include_directories(Externals/SFML/include)
++	include_directories(BEFORE Externals/SFML/include)
+ endif()
+ 
+ if(USE_UPNP)

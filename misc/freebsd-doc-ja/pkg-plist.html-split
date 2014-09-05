@@ -144,8 +144,6 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/crypt.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/ctm.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/current-stable.html
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/cvs-tags.html
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/cvsup.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/desktop-browsers.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/desktop-finance.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/desktop-productivity.html
@@ -274,7 +272,6 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/snapshots.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/sound-mp3.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/sound-setup.html
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/svn-mirrors.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/svn.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/synching.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/system-administration.html

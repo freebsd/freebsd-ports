@@ -15,7 +15,7 @@ LIB_DEPENDS=	libboost_filesystem.so:${PORTSDIR}/devel/boost-libs \
 		libcurl.so:${PORTSDIR}/ftp/curl \
 		libexpat.so:${PORTSDIR}/textproc/expat2 \
 		libgcrypt.so:${PORTSDIR}/security/libgcrypt \
-		libjson.so:${PORTSDIR}/devel/json-c \
+		libjson-c.so:${PORTSDIR}/devel/json-c \
 		libyajl.so:${PORTSDIR}/devel/yajl
 
 USE_GITHUB=	yes

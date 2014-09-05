@@ -16,7 +16,7 @@ USE_GNOME=	libwnck
 GNU_CONFIGURE=	yes
 USES=		pkgconfig gettext gmake
 CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+LIBS+=		-L${LOCALBASE}/lib -lX11
 
 PORTDOCS=	AUTHORS NEWS README TODO
 PLIST_FILES=	bin/devilspie \

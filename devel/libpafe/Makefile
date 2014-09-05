@@ -3,7 +3,7 @@
 
 PORTNAME=	libpafe
 PORTVERSION=	0.0.8
-#PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://homepage3.nifty.com/slokar/pasori/
 
@@ -15,13 +15,14 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-USES=		pkgconfig
+USES=		libtool pkgconfig
 
 PLIST_FILES=	bin/felica_dump bin/pasori_test \
 		include/libpafe/felica_command.h \
 		include/libpafe/libpafe.h \
 		include/libpafe/pasori_command.h \
-		lib/libpafe.a lib/libpafe.so lib/libpafe.la lib/libpafe.so.0
+		lib/libpafe.a lib/libpafe.so lib/libpafe.so.0 \
+		lib/libpafe.so.0.0.8
 PLIST_DIRS=	include/libpafe
 
 CONFIGURE_ENV+=	LIBUSB_CFLAGS="-I/usr/include" \

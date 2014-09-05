@@ -1,9 +1,0 @@
-sbin/bbdm
-include/birdb.h
-lib/libbirdb.so.0
-lib/libbirdb.a
-lib/libbirdb.so
-lib/pam_bsdbioapi.so
-@dirrm share/birdb
-%%DATADIR%%/upek_touchchip.cmsg
-@dirrm share/pam_bsdbioapi

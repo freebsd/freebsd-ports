@@ -19,29 +19,24 @@ WANT_PHP_WEB=	yes
 SUB_FILES=	pkg-message
 
 PORTDOCS=	ChangeLog README LICENSE
+OPTIONS_DEFINE=	DOCS
 
-NO_STAGE=	yes
 post-extract:
 	@${FIND} ${WRKSRC} -name '.cvsignore' -delete
 
 do-install:
-	${MKDIR} ${DATADIR}
+	${MKDIR} ${STAGEDIR}${DATADIR}
 .for DIR in lib test
-	${CP} -Rp ${WRKSRC}/${DIR} ${DATADIR}
-	${FIND} ${DATADIR} -type f | ${XARGS} ${CHMOD} ${SHAREMODE}
+	${CP} -Rp ${WRKSRC}/${DIR} ${STAGEDIR}${DATADIR}
+	${FIND} ${STAGEDIR}${DATADIR} -type f | ${XARGS} ${CHMOD} ${SHAREMODE}
 .endfor
-	${MKDIR} ${EXAMPLESDIR}
+	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 .for DIR in examples public_html smarty
-	${CP} -Rp ${WRKSRC}/${DIR} ${EXAMPLESDIR}
+	${CP} -Rp ${WRKSRC}/${DIR} ${STAGEDIR}${EXAMPLESDIR}
 .endfor
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for f in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/$f ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/$f ${STAGEDIR}${DOCSDIR}
 .endfor
-.endif
-
-post-install:
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>

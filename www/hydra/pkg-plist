@@ -1,10 +1,7 @@
-bin/hydra
 bin/boa_indexer
+bin/hydra
 bin/webindex.pl
-@unexec if cmp -s %D/etc/hydra/hydra.conf %D/etc/hydra/hydra.conf-dist; then rm -f %D/etc/hydra/hydra.conf; fi
-etc/hydra/hydra.conf-dist
-@exec [ -f %B/hydra.conf ] || cp %B/%f %B/hydra.conf
-@unexec if cmp -s %D/etc/hydra/mime.types %D/etc/hydra/mime.types-dist; then rm -f %D/etc/hydra/mime.types; fi
-etc/hydra/mime.types-dist
-@exec [ -f %B/mime.types ] || cp %B/%f %B/mime.types
-@unexec rmdir %D/etc/hydra 2> /dev/null || echo "Dont forget to remove %D/etc/hydra if you won't use hydra anymore"
+@sample %%ETCDIR%%/hydra.conf.sample
+@sample %%ETCDIR%%/mime.types.sample
+@dirrmtry %%ETCDIR%%
+@exec install -d -o www -g www %%LOGDIR%%

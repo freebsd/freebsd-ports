@@ -1,0 +1,7 @@
+%%PERL5_MAN3%%/Crypt::Rhash.3.gz
+%%SITE_PERL%%/%%PERL_ARCH%%/Crypt/Rhash.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/Rhash/.packlist
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/Rhash/Rhash.so
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/Rhash
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Crypt

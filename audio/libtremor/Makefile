@@ -3,7 +3,7 @@
 
 PORTNAME=	libtremor
 PORTVERSION=	1.2.0.s20040213
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	http://members.chello.nl/~g.mast/distfiles/
 DISTNAME=	tremor_snapshot_${SNAP_DATE}
@@ -13,7 +13,7 @@ COMMENT=	Integer-only fully Ogg Vorbis compliant decoder library
 
 SNAP_DATE=	02132004
 WRKSRC=		${WRKDIR}/Tremor
-USES=		libtool:keepla tar:tgz
+USES=		libtool tar:tgz
 USE_AUTOTOOLS=	aclocal automake autoconf libtoolize
 AUTOMAKE_ARGS=	-a -c
 LIBTOOLIZE_ARGS=-i -c

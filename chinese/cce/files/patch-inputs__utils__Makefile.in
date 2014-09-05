@@ -1,0 +1,11 @@
+--- inputs/utils/Makefile.in.orig	2004-02-14 13:17:24.000000000 +0900
++++ inputs/utils/Makefile.in	2014-08-25 17:13:20.000000000 +0900
+@@ -169,7 +169,7 @@
+ target_cpu = @target_cpu@
+ target_os = @target_os@
+ target_vendor = @target_vendor@
+-CCE_SHARE_DIR = $(DESTDIR)$(datadir)
++CCE_SHARE_DIR = $(datadir)
+ cin2tab_bindir = $(CCE_SHARE_DIR)/cce
+ cin2tab_SOURCES = cin2tab.c parse_cin.c table_cin.c pinyin_cin.c zhuyin_cin.c \
+ 	   	  convert.c pyzyutil.c pyzymap.c

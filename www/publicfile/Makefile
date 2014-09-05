@@ -3,11 +3,11 @@
 
 PORTNAME=	publicfile
 PORTVERSION=	0.52
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www ftp
 MASTER_SITES=	http://cr.yp.to/publicfile/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	uffe@uffe.org
 COMMENT=	Secure, read-only, anonymous HTTP/FTP server
 
 RUN_DEPENDS=	setuidgid:${PORTSDIR}/sysutils/daemontools \
@@ -23,7 +23,6 @@ SSL_DESC=		provide SSL support through ucspi-ssl
 CONFLICTS=	xshttpd-3*
 LEGAL_TEXT=	No license -- see http://cr.yp.to/softwarelaw.html
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 pre-everything::
@@ -89,5 +88,6 @@ post-patch:
 	@${ECHO_CMD} "${CC} ${CFLAGS}" > ${WRKSRC}/conf-cc
 	@${ECHO_CMD} "${CC} -s" > ${WRKSRC}/conf-ld
 	@${ECHO_CMD} "${PREFIX}" > ${WRKSRC}/conf-home
+	@${ECHO_CMD} "${STAGEDIR}${PREFIX}" > ${WRKSRC}/conf-stage
 
 .include <bsd.port.mk>

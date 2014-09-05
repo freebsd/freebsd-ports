@@ -3,6 +3,7 @@
 
 PORTNAME=	libtpl
 PORTVERSION=	1.6
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	GH
 
@@ -13,7 +14,7 @@ OPTIONS_DEFINE=	DOCS
 
 LICENSE=	BSD
 
-USES=	tar:bzip2
+USES=		libtool tar:bzip2
 USE_GITHUB=	yes
 GH_ACCOUNT=	waitman
 GH_TAGNAME=	${GH_COMMIT}
@@ -23,8 +24,8 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--enable-shared
 USE_LDCONFIG=	yes
 
-PLIST_FILES=	lib/libtpl.la lib/libtpl.a \
-		lib/libtpl.so lib/libtpl.so.0 \
+PLIST_FILES=	lib/libtpl.a lib/libtpl.so \
+		lib/libtpl.so.0 lib/libtpl.so.0.0.0 \
 		include/tpl.h
 
 PORTDOCS=	ChangeLog.txt examples.txt userguide.txt compiling.txt

@@ -1,8 +1,7 @@
-# Created by: Kurt Jaeger <fbsd-ports@opsec.eu>
 # $FreeBSD$
 
 PORTNAME=	cego
-PORTVERSION=	2.20.11
+PORTVERSION=	2.20.12
 CATEGORIES=	databases
 MASTER_SITES=	http://www.lemke-it.com/
 

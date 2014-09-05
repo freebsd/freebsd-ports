@@ -1,0 +1,29 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+# PROVIDE: perdition_managesieve
+# REQUIRE: DAEMON
+# KEYWORD: shutdown
+#
+# Add the following line to /etc/rc.conf to enable perdition.managesieve
+#
+# perdition_managesieve_enable="YES"
+# perdition_managesieve_flags="<set as needed>"
+#
+# See perdition(8) for flags
+#
+
+perdition_managesieve_enable=${perdition_managesieve_enable-"NO"}
+
+. /etc/rc.subr
+
+name="perdition_managesieve"
+rcvar=perdition_managesieve_enable
+
+command="%%PREFIX%%/sbin/perdition.managesieve"
+pidfile="/var/run/perdition.managesieve/perdition.managesieve.pid"
+
+load_rc_config $name
+
+run_rc_command "$1"

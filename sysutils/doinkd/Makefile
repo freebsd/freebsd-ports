@@ -3,7 +3,7 @@
 
 PORTNAME=	doinkd
 PORTVERSION=	0.01
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	sysutils
 MASTER_SITES=	SF/idled/${PORTNAME}/${PORTVERSION}/
 
@@ -14,8 +14,6 @@ USE_RC_SUBR=	${PORTNAME}
 
 MAKE_ARGS=	STAGEDIR=${STAGEDIR}
 
-.include <bsd.port.pre.mk>
-
 post-extract:
 	(cd ${WRKSRC}; make clean)
 
@@ -25,4 +23,4 @@ pre-install:
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/sbin/doinkd
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -1,15 +1,12 @@
 --- Jamrules.orig
 +++ Jamrules
-@@ -5,8 +5,9 @@
+@@ -5,8 +5,6 @@
  DATADIR = $(PREFIX)/share/gillo ; 
  DOCDIR  = $(PREFIX)/share/doc/gillo ; 
  
 -CCFLAGS  += -DENABLE_BINRELOC ;
 -if $(DEBUG) { CCFLAGS += -g -O0 -DDEBUG ; }
 -else CCFLAGS += -O3 ;
-+CCFLAGS  += $(CFLAGS) %%SDL_CFLAGS%% ;
-+HDRS = $(LOCALBASE)/include ;
-+#if $(DEBUG) { CCFLAGS += -g -O0 -DDEBUG ; }
-+#else CCFLAGS += -O3 ;
++OPTIM = ;
  C++FLAGS += $(CCFLAGS) ;
  #LINKFLAGS += -static ;

@@ -1,0 +1,10 @@
+PicoSAT is a satisfiability (SAT) solver for boolean variables in
+boolean expressions. A SAT solver can determine if it is possible to
+find assignments to boolean variables that would make a given set of
+expressions true. If it's satisfiable, it can also show a set of
+assignments that make the expression true.
+
+Many problems can be broken down into a large SAT problem (perhaps with
+thousands of variables), so SAT solvers have a variety of uses.
+
+WWW: http://fmv.jku.at/picosat

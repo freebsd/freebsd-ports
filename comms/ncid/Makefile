@@ -7,7 +7,7 @@ CATEGORIES=	comms
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION:S/.1//g}
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
-MAINTAINER=	cjpugmed@gmail.com
+MAINTAINER=	cpm@fbsd.es
 COMMENT=	Network based Caller ID package
 
 LICENSE=	GPLv3

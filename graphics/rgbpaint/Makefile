@@ -30,7 +30,7 @@ post-patch:
 	@${REINPLACE_CMD} 's|$$(MT_LANG_DEST)|$$(DESTDIR)&|g' \
 		${WRKSRC}/po/Makefile
 	@${REINPLACE_CMD} 's|$$(BIN_INSTALL)|$$(DESTDIR)&|g ; \
-		 /^LDFLAGS/s|)$$|) -lm -lintl|' \
+		 /^LDFLAGS/s|$$| -lX11 -lm -lintl|' \
 		${WRKSRC}/src/Makefile
 
 post-install:

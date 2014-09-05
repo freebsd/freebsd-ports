@@ -2,7 +2,7 @@
 +++ /tmp/Makefile	2011-05-26 19:30:35.000000000 -0400
 @@ -1,4 +1,6 @@
 -CFLAGS = -O2 -Wall # -D NOBEEP
-+CFLAGS = -L$(LOCALBASE)/lib -I$(LOCALBASE)/include -O2 -DNOBEEP -DNOMEMLOCK
++CFLAGS = -L$(LOCALBASE)/lib -I$(LOCALBASE)/include -O2 -DNOBEEP -DNOMEMLOCK -lgcrypt
 +
 +all: default
  

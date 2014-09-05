@@ -16,6 +16,6 @@ INSTALL_DIRS=	${BUILD_DIRS}
 CLIENT_ONLY=	yes
 COMPONENT=	-client
 USE_LDCONFIG=	yes
-USES=		readline
+USES+=		readline
 
 .include "${MASTERDIR}/Makefile"

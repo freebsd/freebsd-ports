@@ -13,7 +13,7 @@
  else
  $(BIN)/notecase$(EXE): updatesrc $(OBJS)
 -	$(LD) $(OBJS) -o $(BIN)/notecase$(EXE) $(FLAGS) $(LDFLAGS) $(GTKLIBS) > /dev/null
-+	$(LD) $(OBJS) -o $(BIN)/notecase$(EXE) $(FLAGS) $(LDFLAGS) $(GTKLIBS) -lz > /dev/null
++	$(LD) $(OBJS) -o $(BIN)/notecase$(EXE) $(FLAGS) $(LDFLAGS) $(GTKLIBS) -lX11 -lz > /dev/null
  endif	
  
  #

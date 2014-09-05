@@ -3,23 +3,23 @@
 
 PORTNAME=	libhid
 PORTVERSION=	0.2.16
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel
 MASTER_SITES=	http://alioth.debian.org/frs/download.php/1958/
 
 MAINTAINER=	ntarmos@cs.uoi.gr
 COMMENT=	User-space HID access library written in C
 
-USE_LDCONFIG=	yes
-USE_PYTHON=	yes
-USES=		gmake
-
-BUILD_DEPENDS+=	${LOCALBASE}/bin/xsltproc:${PORTSDIR}/textproc/libxslt \
+BUILD_DEPENDS=	${LOCALBASE}/bin/xsltproc:${PORTSDIR}/textproc/libxslt \
 		${LOCALBASE}/share/xsl/docbook/html:${PORTSDIR}/textproc/docbook-xsl \
 		${LOCALBASE}/bin/swig1.3:${PORTSDIR}/devel/swig13
 
-HAS_CONFIGURE=	yes
-CONFIGURE_ARGS+=--prefix=${PREFIX} --mandir=${MANPREFIX}/man --without-doxygen --disable-werror
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--without-doxygen --disable-werror
+INSTALL_TARGET=	install-strip
+USES=		gmake libtool pathfix
+USE_LDCONFIG=	yes
+USE_PYTHON=	yes
 
 EXTRA_PATCHES=	${FILESDIR}/extra-patch-usb
 

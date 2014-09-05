@@ -16,7 +16,7 @@ LIB_DEPENDS=	libtlen.so:${PORTSDIR}/polish/libtlen
 USES=		pkgconfig
 USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes
-USE_XORG=	xscrnsaver
+USE_XORG=	x11 xscrnsaver
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 WRKSRC=		${WRKDIR}/TleenX2-${PORTVERSION}
@@ -24,7 +24,10 @@ WRKSRC=		${WRKDIR}/TleenX2-${PORTVERSION}
 PORTDOCS=	README gg.txt sms.txt
 
 post-patch:
-	@${REINPLACE_CMD} -e 's,/usr/X11R6,${LOCALBASE},g' ${WRKSRC}/src/Makefile.in
+	@${REINPLACE_CMD} \
+		-e '/^tleenx2_LDADD =/,+1s,/usr/X11R6/lib/libXss.a,-lXss -lX11,' \
+		-e 's,/usr/X11R6/lib/libXss.a,,' \
+		${WRKSRC}/src/Makefile.in
 	@${REINPLACE_CMD} 's,/usr/local,${LOCALBASE},g; s,gcc,${CC},' \
 		${WRKSRC}/iksemel/Makefile
 	@${REINPLACE_CMD} 's,gcc,${CC},' ${WRKSRC}/jabby/Makefile

@@ -1,0 +1,31 @@
+Index: sci_gateway/cpp/builder_gateway_cpp.sce
+===================================================================
+--- sci_gateway/cpp/builder_gateway_cpp.sce	(revision 286)
++++ sci_gateway/cpp/builder_gateway_cpp.sce	(revision 287)
+@@ -120,7 +120,8 @@
+     opencv_libs = [];
+   end
+ 
+-
++  inter_cflags = inter_cflags + ' -D__USE_DEPRECATED_STACK_FUNCTIONS__';
++ 
+   tbx_build_gateway('gw_sivp', ..
+                     gw_cpp_table, ..
+                     gw_cpp_files, ..
+Index: sci_gateway/cpp/sivp_init.cpp
+===================================================================
+--- sci_gateway/cpp/sivp_init.cpp	(revision 286)
++++ sci_gateway/cpp/sivp_init.cpp	(revision 287)
+@@ -18,11 +18,11 @@
+  * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+  ***********************************************************************/
+ /*--------------------------------------------------------------------------*/
+-#include "api_scilab.h"
+ #include "localization.h"
+ #include "Scierror.h"
+ #include "common.h"
+ #include "gw_sivp.h"
++#include "api_scilab.h"
+ /*--------------------------------------------------------------------------*/
+ char sSIVP_PATH[MAX_FILENAME_LENGTH];
+ /*--------------------------------------------------------------------------*/

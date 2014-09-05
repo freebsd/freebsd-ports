@@ -1,5 +1,5 @@
---- Makefile.orig	Mon Jun 12 20:14:20 2006
-+++ Makefile	Sat Sep  1 22:34:43 2007
+--- Makefile.orig	2006-06-12 20:14:20.000000000 +0000
++++ Makefile	2014-08-21 23:22:20.000000000 +0000
 @@ -2,13 +2,14 @@
  # See file COPYRIGHT for more information.
  #
@@ -26,18 +26,27 @@
 -BIN=/usr/local/noweb
 -LIB=/usr/local/noweb/lib
 -MAN=/usr/local/noweb/man
-+BIN=${PREFIX}/bin
-+LIB=${PREFIX}/share/noweb
-+MAN=${PREFIX}/man
++BIN=${INSTALL_PREFIX}/bin
++LIB=${INSTALL_PREFIX}/share/noweb
++MAN=${INSTALL_PREFIX}/man
  MANEXT=1
  MAN7EXT=7
 -TEXINPUTS=/usr/local/tex/inputs
 -ELISP=/dev/null
 +TEXINPUTS=${LIB}/tex
-+ELISP=${PREFIX}/share/emacs/site-lisp
++ELISP=${INSTALL_PREFIX}/share/emacs/site-lisp
  
  # change WEAVE if you want a different version of noweave to be installed
  WEAVE=noweave		
+@@ -37,7 +38,7 @@
+ MAN7DIR=$(MAN)/man$(MAN7EXT)
+ CATDIR=$(MAN)/cat$(MANEXT)
+ CAT7DIR=$(MAN)/cat$(MAN7EXT)
+-LIBNAME=$(LIB)
++LIBNAME=${PREFIX}/share/noweb
+ TEXNAME=$(TEXINPUTS)
+ 
+ all: 
 @@ -179,7 +180,7 @@
  	rm -f $(CATDIR)/nountangle.$(MANEXT).gz
  	(cd $(CATDIR); ln notangle.$(MANEXT).gz nountangle.$(MANEXT).gz)

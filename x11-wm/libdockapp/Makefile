@@ -3,7 +3,7 @@
 
 PORTNAME=	libdockapp
 PORTVERSION=	0.6.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11-wm
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	xride
@@ -14,7 +14,7 @@ COMMENT=	Standard library for Window Maker dock apps
 OPTIONS_DEFINE=	EXAMPLES
 OPTIONS_SUB=	yes
 
-USES=		libtool:keepla tar:bzip2
+USES=		libtool tar:bzip2
 USE_LDCONFIG=	yes
 USE_XORG=	xext xpm
 GNU_CONFIGURE=	yes

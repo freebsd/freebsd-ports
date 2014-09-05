@@ -20,7 +20,7 @@ USES=		gettext shebangfix pkgconfig tar:bzip2
 USE_PYTHON=	yes
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+LIBS+=		-L${LOCALBASE}/lib -lm
 CONFIGURE_ARGS=	--disable-ladcca --disable-lash --disable-aseq
 SHEBANG_FILES=	ecarack
 

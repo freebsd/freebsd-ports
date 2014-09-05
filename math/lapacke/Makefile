@@ -16,7 +16,7 @@ LICENSE=	BSD
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USE_LDCONFIG=	yes
-USES=		fortran tar:tgz
+USES=		fortran tar:tgz uidfix
 
 OPTIONS_DEFINE=	PROFILE XLAPACKE DOCS
 PROFILE_DESC=	Build a profiling library

@@ -15,8 +15,8 @@ COMMENT=	Clipboard history management dockapp for Window Maker
 SUB_FILES=	pkg-message
 WRKSRC=		${WRKDIR}/${PORTNAME}
 USES=		pkgconfig
-USE_XORG=	xpm
 USE_GNOME=	gtk20
+USE_XORG=	x11
 
 OPTIONS_DEFINE=	DOCS
 

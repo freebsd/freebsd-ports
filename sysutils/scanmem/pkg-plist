@@ -1,0 +1,19 @@
+%%X11%%bin/gameconqueror
+bin/scanmem
+%%X11%%man/man1/gameconqueror.1.gz
+man/man1/scanmem.1.gz
+%%X11%%share/applications/GameConqueror.desktop
+%%X11%%share/gameconqueror/GameConqueror.py
+%%X11%%share/gameconqueror/GameConqueror.xml
+%%X11%%share/gameconqueror/GameConqueror_128x128.png
+%%X11%%share/gameconqueror/GameConqueror_72x72.png
+%%X11%%share/gameconqueror/backend.py
+%%X11%%share/gameconqueror/consts.py
+%%X11%%share/gameconqueror/hexview.py
+%%X11%%share/gameconqueror/misc.py
+%%X11%%share/pixmaps/GameConqueror_128x128.png
+%%X11%%share/pixmaps/GameConqueror_72x72.png
+%%X11%%@dirrm share/gameconqueror
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%X11%%%%PORTDOCS%%%%DOCSDIR%%/TODO
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

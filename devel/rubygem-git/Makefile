@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	git
-PORTVERSION=	1.2.5
+PORTVERSION=	1.2.8
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	kgio
-PORTVERSION=	2.8.0
+PORTVERSION=	2.9.2
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 

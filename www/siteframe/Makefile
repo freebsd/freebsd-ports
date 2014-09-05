@@ -19,7 +19,7 @@ USE_MYSQL=	yes
 
 # where to install
 NO_BUILD=	yes
-NO_WRKSUBDIR=	yes
+WRKSRC=		${WRKDIR}/__site
 .ifndef SITEFRAMEDIR
 .ifdef APACHE_DATADIR
 SITEFRAMEDIR=	${APACHE_DATADIR}/siteframe
@@ -32,12 +32,12 @@ SUB_FILES=	pkg-message
 SUB_LIST=	DIR=${SITEFRAMEDIR}
 PLIST_SUB=	WWWOWN="${WWWOWN}"
 
-do-extract:
-	@${MKDIR} ${WRKDIR}/${PORTNAME}
-	@ cd ${WRKDIR}/${PORTNAME}; ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${DISTDIR}/${DISTFILES} ${EXTRACT_AFTER_ARGS}
+post-extract:
+	@${MKDIR} ${WRKSRC}
+	@(cd ${WRKDIR} && ${MV} [CLRa-z]* _htaccess ${WRKSRC})
 
 do-install:
-	${MKDIR} ${STAGEDIR}${SITEFRAMEDIR}/
-	${CP} -R ${WRKDIR}/${PORTNAME}/* ${STAGEDIR}${SITEFRAMEDIR}/
+	${MKDIR} ${STAGEDIR}${SITEFRAMEDIR}
+	(cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${SITEFRAMEDIR})
 
 .include <bsd.port.mk>

@@ -8,4 +8,4 @@ predefined rules are met. These include session time, multiple logins,
 tty, idletime and group limits. Similar to the Unix idleout command,
 but much more configurable. Formerly idled.
 
-http://idled.sourceforge.net/
+WWW: http://idled.sourceforge.net/

@@ -23,6 +23,9 @@ CONFIGURE_ARGS=	-- --with-fcgi-include=${LOCALBASE}/include \
 
 DOCS=		ChangeLog README README.signals
 
+DEPRECATED=	RubyForge shutdown May 15 2014
+EXPIRATION_DATE=	2014-09-20
+
 post-install:
 	@${MKDIR} ${STAGEDIR}${RUBY_MODDOCDIR}
 .for f in ${DOCS}

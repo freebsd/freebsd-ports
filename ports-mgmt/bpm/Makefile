@@ -21,7 +21,6 @@ MAKE_ENV+=	OSTYPE="${OPSYS}"
 
 SUB_FILES=	bpm.desktop
 
-NO_STAGE=	yes
 post-patch:
 	@${FIND} ${WRKSRC} -name Makefile | ${XARGS} \
 		${REINPLACE_CMD} -e "s|-lintl|-lintl -L${LOCALBASE}/lib|g"
@@ -32,6 +31,6 @@ post-patch:
 		${WRKSRC}/src/*.h
 
 post-install:
-	${INSTALL_DATA} ${WRKDIR}/bpm.desktop ${PREFIX}/share/applications/bpm.desktop
+	${INSTALL_DATA} ${WRKDIR}/bpm.desktop ${STAGEDIR}${PREFIX}/share/applications/bpm.desktop
 
 .include <bsd.port.mk>

@@ -27,9 +27,7 @@ USE_SDL=	sdl image mixer ttf
 PLIST_FILES=	bin/${PORTNAME} bin/${PORTNAME}-server
 
 post-patch:
-	@${REINPLACE_CMD} -e \
-		's|-lpthread|${PTHREAD_LIBS}|g ; \
-		s|-Werror||' ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e 's|-Werror||' ${WRKSRC}/Makefile
 	@${REINPLACE_CMD} -e 's,%lu,%u,' ${WRKSRC}/src/server.cpp
 	@${REINPLACE_CMD} -e 's,__linux__,__${OPSYS}__,' \
 		${WRKSRC}/src/clipboard.cpp
