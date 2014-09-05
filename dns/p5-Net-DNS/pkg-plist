@@ -39,6 +39,7 @@
 %%PERL5_MAN3%%/Net::DNS::RR::NID.3.gz
 %%PERL5_MAN3%%/Net::DNS::RR::NS.3.gz
 %%PERL5_MAN3%%/Net::DNS::RR::NULL.3.gz
+%%PERL5_MAN3%%/Net::DNS::RR::OPENPGPKEY.3.gz
 %%PERL5_MAN3%%/Net::DNS::RR::OPT.3.gz
 %%PERL5_MAN3%%/Net::DNS::RR::PTR.3.gz
 %%PERL5_MAN3%%/Net::DNS::RR::PX.3.gz
@@ -54,6 +55,7 @@
 %%PERL5_MAN3%%/Net::DNS::RR::TXT.3.gz
 %%PERL5_MAN3%%/Net::DNS::RR::X25.3.gz
 %%PERL5_MAN3%%/Net::DNS::Resolver.3.gz
+%%PERL5_MAN3%%/Net::DNS::Resolver::android.3.gz
 %%PERL5_MAN3%%/Net::DNS::Resolver::Base.3.gz
 %%PERL5_MAN3%%/Net::DNS::Resolver::MSWin32.3.gz
 %%PERL5_MAN3%%/Net::DNS::Resolver::Recurse.3.gz
@@ -104,6 +106,7 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Net/DNS/RR/NID.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Net/DNS/RR/NS.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Net/DNS/RR/NULL.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Net/DNS/RR/OPENPGPKEY.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Net/DNS/RR/OPT.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Net/DNS/RR/PTR.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Net/DNS/RR/PX.pm
@@ -119,6 +122,7 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Net/DNS/RR/TXT.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Net/DNS/RR/X25.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Net/DNS/Resolver.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Net/DNS/Resolver/android.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Net/DNS/Resolver/Base.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Net/DNS/Resolver/MSWin32.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Net/DNS/Resolver/Recurse.pm
