@@ -485,6 +485,7 @@
     SUBDIR += p5-Crypt-RC4
     SUBDIR += p5-Crypt-RC5
     SUBDIR += p5-Crypt-RC6
+    SUBDIR += p5-Crypt-RHash
     SUBDIR += p5-Crypt-RIPEMD160
     SUBDIR += p5-Crypt-RSA
     SUBDIR += p5-Crypt-RSA-Yandex
@@ -492,7 +493,6 @@
     SUBDIR += p5-Crypt-RandPasswd
     SUBDIR += p5-Crypt-Random
     SUBDIR += p5-Crypt-Random-Source
-    SUBDIR += p5-Crypt-RHash
     SUBDIR += p5-Crypt-Rijndael
     SUBDIR += p5-Crypt-Rijndael_PP
     SUBDIR += p5-Crypt-SKey
@@ -506,8 +506,8 @@
     SUBDIR += p5-Crypt-SmbHash
     SUBDIR += p5-Crypt-Solitaire
     SUBDIR += p5-Crypt-TEA
-    SUBDIR += p5-Crypt-Tea_JS
     SUBDIR += p5-Crypt-T_e_a
+    SUBDIR += p5-Crypt-Tea_JS
     SUBDIR += p5-Crypt-TripleDES
     SUBDIR += p5-Crypt-Twofish
     SUBDIR += p5-Crypt-Twofish2

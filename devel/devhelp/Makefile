@@ -1,9 +1,10 @@
 # Created by: Adam Weinberger <adamw@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/devel/devhelp/Makefile 19814 2014-08-15 20:17:00Z gusi $
+#   $MCom: ports/trunk/devel/devhelp/Makefile 19822 2014-08-20 08:57:46Z gusi $
 
 PORTNAME=	devhelp
 PORTVERSION=	3.12.1
+PORTREVISION=	1
 CATEGORIES=	devel gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -13,7 +14,7 @@ COMMENT=	Developer help browser for GNOME 3
 
 LIB_DEPENDS=	libwebkitgtk-3.0.so:${PORTSDIR}/www/webkit-gtk3
 
-USES=		gettext gmake pathfix pkgconfig tar:xz
+USES=		gettext gmake libtool pathfix pkgconfig tar:xz
 USE_GNOME=	gnomeprefix gtk30 intlhack libxslt
 USE_XORG=	x11
 GNU_CONFIGURE=	yes
@@ -29,4 +30,3 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|gedit-plugin||g' ${WRKSRC}/misc/Makefile.in
 
 .include <bsd.port.mk>
-

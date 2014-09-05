@@ -1,9 +1,10 @@
 # Created by: Alexander Nedotsukov <bland@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/audio/goobox/Makefile 19571 2014-04-25 18:12:46Z kwm $
+#   $MCom: ports/trunk/audio/goobox/Makefile 19823 2014-08-20 09:28:14Z gusi $
 
 PORTNAME=	goobox
 PORTVERSION=	3.3.2
+PORTREVISION=	1
 CATEGORIES=	audio gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -26,6 +27,7 @@ GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
+INSTALL_TARGET=	install-strip
 
 OPTIONS_DEFINE=	NOTIFY
 OPTIONS_DEFAULT=NOTIFY

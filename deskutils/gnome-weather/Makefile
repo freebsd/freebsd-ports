@@ -1,10 +1,10 @@
 # Created by: Gustau Perez <gustau.perez@gmail.com>
 # $FreeBSD$
-#   $MCom: ports/trunk/deskutils/gnome-weather/Makefile 19744 2014-06-17 08:06:24Z gusi $
+#   $MCom: ports/trunk/deskutils/gnome-weather/Makefile 19822 2014-08-20 08:57:46Z gusi $
 
 PORTNAME=	gnome-weather
 PORTVERSION=	3.12.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3

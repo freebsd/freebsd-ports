@@ -1,10 +1,10 @@
 # Created by: Koop Mast <kwm@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/net/glib-networking/Makefile 19717 2014-06-01 08:41:11Z kwm $
+#   $MCom: ports/trunk/net/glib-networking/Makefile 19822 2014-08-20 08:57:46Z gusi $
 
 PORTNAME=	glib-networking
 PORTVERSION=	2.40.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -12,17 +12,17 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Network-related giomodules for glib
 
-BUILD_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:${PORTSDIR}/security/ca_root_nss \
+BUILD_DEPENDS=	ca_root_nss>=0:${PORTSDIR}/security/ca_root_nss \
 		gsettings-desktop-schemas>=0:${PORTSDIR}/devel/gsettings-desktop-schemas
 LIB_DEPENDS=	libgnutls.so:${PORTSDIR}/security/gnutls \
 		libgcrypt.so:${PORTSDIR}/security/libgcrypt \
 		libp11-kit.so:${PORTSDIR}/security/p11-kit \
 		libdbus-1.so:${PORTSDIR}/devel/dbus \
 		libproxy.so:${PORTSDIR}/net/libproxy
-RUN_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:${PORTSDIR}/security/ca_root_nss \
+RUN_DEPENDS=	ca_root_nss>=0:${PORTSDIR}/security/ca_root_nss \
 		gsettings-desktop-schemas>=0:${PORTSDIR}/devel/gsettings-desktop-schemas
 
-USES=		gettext gmake pathfix pkgconfig tar:xz
+USES=		gettext gmake libtool pathfix pkgconfig tar:xz
 USE_GNOME=	glib20 intltool
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-ca-certificates=${LOCALBASE}/share/certs/ca-root-nss.crt

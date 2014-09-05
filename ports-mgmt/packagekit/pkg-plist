@@ -66,56 +66,40 @@ include/PackageKit/plugin/pk-transaction.h
 lib/girepository-1.0/PackageKitGlib-1.0.typelib
 lib/girepository-1.0/PackageKitPlugin-1.0.typelib
 lib/libpackagekit-glib2.a
-lib/libpackagekit-glib2.la
 lib/libpackagekit-glib2.so
 lib/libpackagekit-glib2.so.16
+lib/libpackagekit-glib2.so.16.0.5
 lib/packagekit-backend/libpk_backend_dummy.a
-lib/packagekit-backend/libpk_backend_dummy.la
 lib/packagekit-backend/libpk_backend_dummy.so
 %%PORTS%%lib/packagekit-backend/libpk_backend_ports.a
-%%PORTS%%lib/packagekit-backend/libpk_backend_ports.la
 %%PORTS%%lib/packagekit-backend/libpk_backend_ports.so
 lib/packagekit-backend/libpk_backend_test_fail.a
-lib/packagekit-backend/libpk_backend_test_fail.la
 lib/packagekit-backend/libpk_backend_test_fail.so
 lib/packagekit-backend/libpk_backend_test_nop.a
-lib/packagekit-backend/libpk_backend_test_nop.la
 lib/packagekit-backend/libpk_backend_test_nop.so
 lib/packagekit-backend/libpk_backend_test_spawn.a
-lib/packagekit-backend/libpk_backend_test_spawn.la
 lib/packagekit-backend/libpk_backend_test_spawn.so
 lib/packagekit-backend/libpk_backend_test_succeed.a
-lib/packagekit-backend/libpk_backend_test_succeed.la
 lib/packagekit-backend/libpk_backend_test_succeed.so
 lib/packagekit-backend/libpk_backend_test_thread.a
-lib/packagekit-backend/libpk_backend_test_thread.la
 lib/packagekit-backend/libpk_backend_test_thread.so
 lib/packagekit-plugins/libpk_plugin-check-shared-libraries-in-use.a
-lib/packagekit-plugins/libpk_plugin-check-shared-libraries-in-use.la
 lib/packagekit-plugins/libpk_plugin-check-shared-libraries-in-use.so
 lib/packagekit-plugins/libpk_plugin-clear-firmware-requests.a
-lib/packagekit-plugins/libpk_plugin-clear-firmware-requests.la
 lib/packagekit-plugins/libpk_plugin-clear-firmware-requests.so
 lib/packagekit-plugins/libpk_plugin-no-update-process.a
-lib/packagekit-plugins/libpk_plugin-no-update-process.la
 lib/packagekit-plugins/libpk_plugin-no-update-process.so
 lib/packagekit-plugins/libpk_plugin-require-restart.a
-lib/packagekit-plugins/libpk_plugin-require-restart.la
 lib/packagekit-plugins/libpk_plugin-require-restart.so
 lib/packagekit-plugins/libpk_plugin-scan-desktop-files.a
-lib/packagekit-plugins/libpk_plugin-scan-desktop-files.la
 lib/packagekit-plugins/libpk_plugin-scan-desktop-files.so
 lib/packagekit-plugins/libpk_plugin-systemd-updates.a
-lib/packagekit-plugins/libpk_plugin-systemd-updates.la
 lib/packagekit-plugins/libpk_plugin-systemd-updates.so
 lib/packagekit-plugins/libpk_plugin-update-check-processes.a
-lib/packagekit-plugins/libpk_plugin-update-check-processes.la
 lib/packagekit-plugins/libpk_plugin-update-check-processes.so
 lib/packagekit-plugins/libpk_plugin-update-package-cache.a
-lib/packagekit-plugins/libpk_plugin-update-package-cache.la
 lib/packagekit-plugins/libpk_plugin-update-package-cache.so
 lib/packagekit-plugins/libpk_plugin_scripts.a
-lib/packagekit-plugins/libpk_plugin_scripts.la
 lib/packagekit-plugins/libpk_plugin_scripts.so
 %%PYTHON_SITELIBDIR%%/packagekit/__init__.py
 %%PYTHON_SITELIBDIR%%/packagekit/__init__.pyc
@@ -145,6 +129,10 @@ libexec/pk-clear-offline-update
 libexec/pk-command-not-found
 libexec/pk-offline-update
 libexec/pk-trigger-offline-update
+man/man1/pk-debuginfo-install.1.gz
+man/man1/pkcon.1.gz
+man/man1/pkgenpack.1.gz
+man/man1/pkmon.1.gz
 %%PORTS%%share/PackageKit/helpers/ports/portsBackend.rb
 %%PORTS%%share/PackageKit/helpers/ports/ruby_packagekit/enums.rb
 %%PORTS%%share/PackageKit/helpers/ports/ruby_packagekit/prints.rb
@@ -299,6 +287,8 @@ share/polkit-1/actions/org.freedesktop.packagekit.policy
 @unexec rmdir /var/cache/PackageKit/downloads 2>/dev/null || true
 @unexec rmdir /var/cache/PackageKit 2>/dev/null || true
 @unexec rmdir /var/cache 2>/dev/null || true
+/var/lib/PackageKit/transactions.db
+@unexec rm /var/lib/PackageKit/transactions.db 2> /dev/null || true
 @unexec rmdir /var/lib/PackageKit 2>/dev/null || true
 @unexec rmdir /var/lib 2>/dev/null || true
 @dirrmtry share/locale/te/LC_MESSAGES

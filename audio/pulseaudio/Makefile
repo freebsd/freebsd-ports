@@ -1,6 +1,6 @@
 # Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/audio/pulseaudio/Makefile 19813 2014-08-15 19:44:33Z gusi $
+#   $MCom: ports/trunk/audio/pulseaudio/Makefile 19840 2014-09-02 15:32:35Z kwm $
 #
 # !!!NOTE!!! Any PORTVERSION update to this port must be accompanied by
 # PORTREVISION bumps of depending ports.
@@ -20,7 +20,7 @@ LIB_DEPENDS=	libsamplerate.so:${PORTSDIR}/audio/libsamplerate \
 		libfftw3.so:${PORTSDIR}/math/fftw3 \
 		libfftw3f.so:${PORTSDIR}/math/fftw3-float \
 		liborc-0.4.so:${PORTSDIR}/devel/orc \
-		libjson.so:${PORTSDIR}/devel/json-c \
+		libjson-c.so:${PORTSDIR}/devel/json-c \
 		libdbus-1.so:${PORTSDIR}/devel/dbus \
 		libck-connector.so:${PORTSDIR}/sysutils/consolekit
 

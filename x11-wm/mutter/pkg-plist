@@ -28,9 +28,9 @@ include/mutter/meta/util.h
 include/mutter/meta/window.h
 include/mutter/meta/workspace.h
 lib/libmutter.a
-lib/libmutter.la
 lib/libmutter.so
 lib/libmutter.so.0
+lib/libmutter.so.0.0.0
 lib/mutter/Meta-3.0.gir
 lib/mutter/Meta-3.0.typelib
 lib/mutter/plugins/default.so

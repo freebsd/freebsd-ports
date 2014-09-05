@@ -1,9 +1,10 @@
 # Created by: Adam Weinberger <adamw@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/databases/glom/Makefile 19804 2014-08-13 14:55:11Z kwm $
+#   $MCom: ports/trunk/databases/glom/Makefile 19822 2014-08-20 08:57:46Z gusi $
 
 PORTNAME=	glom
 PORTVERSION=	1.24.0
+PORTREVISION=	1
 CATEGORIES=	databases gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -11,21 +12,21 @@ DIST_SUBDIR=	gnome3
 MAINTAINER=	kwm@FreeBSD.org
 COMMENT=	GNOME database designer and user interface
 
-BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-codes \
+BUILD_DEPENDS=	iso-codes>=0:${PORTSDIR}/misc/iso-codes \
 		libepc>=0.4.0:${PORTSDIR}/www/libepc \
-		${LOCALBASE}/libdata/pkgconfig/libgda-mysql-5.0.pc:${PORTSDIR}/databases/libgda5-mysql \
-		${LOCALBASE}/libdata/pkgconfig/libgda-postgres-5.0.pc:${PORTSDIR}/databases/libgda5-postgresql
+		libgda5-mysql>=0:${PORTSDIR}/databases/libgda5-mysql \
+		libgda5-postgresql>=0:${PORTSDIR}/databases/libgda5-postgresql
 LIB_DEPENDS=	libboost_python.so:${PORTSDIR}/devel/boost-python-libs \
 		libepc-1.0.so:${PORTSDIR}/www/libepc \
 		libgoocanvasmm-2.0.so:${PORTSDIR}/graphics/goocanvasmm2 \
 		libevview3.so:${PORTSDIR}/graphics/evince
-RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-codes \
-		${LOCALBASE}/libdata/pkgconfig/libgda-mysql-5.0.pc:${PORTSDIR}/databases/libgda5-mysql \
-		${LOCALBASE}/libdata/pkgconfig/libgda-postgres-5.0.pc:${PORTSDIR}/databases/libgda5-postgresql
+RUN_DEPENDS=	iso-codes>=0:${PORTSDIR}/misc/iso-codes \
+		libgda5-mysql>=0:${PORTSDIR}/databases/libgda5-mysql \
+		libgda5-postgresql>=0:${PORTSDIR}/databases/libgda5-postgresql
 
 GNU_CONFIGURE=	yes
-USES=		desktop-file-utils gettext gmake pathfix pkgconfig \
-		python shared-mime-info tar:xz
+USES=		desktop-file-utils gettext gmake libtool pathfix \
+		pkgconfig python shared-mime-info tar:xz
 USE_GNOME=	gnomedocutils gnomeprefix intltool pygobject3 libxml2 \
 		gtksourceviewmm3 libgdamm5
 USE_LDCONFIG=	yes

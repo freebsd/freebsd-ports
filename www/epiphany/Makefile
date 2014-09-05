@@ -1,9 +1,10 @@
 # Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/www/epiphany/Makefile 19804 2014-08-13 14:55:11Z kwm $
+#   $MCom: ports/trunk/www/epiphany/Makefile 19822 2014-08-20 08:57:46Z gusi $
 
 PORTNAME=	epiphany
 PORTVERSION=	3.12.1
+PORTREVISION=	1
 CATEGORIES=	www gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -27,7 +28,7 @@ RUN_DEPENDS=	iso-codes>=0:${PORTSDIR}/misc/iso-codes \
 		gnome-icon-theme-symbolic>=0:${PORTSDIR}/x11-themes/gnome-icon-theme-symbolic \
 		gnome-icon-theme>=0:${PORTSDIR}/misc/gnome-icon-theme
 
-USES=		desktop-file-utils gettext gmake pathfix \
+USES=		desktop-file-utils gettext gmake libtool pathfix \
 		pkgconfig python:3 tar:xz
 USE_GNOME=	gnomedesktop3 gnomeprefix intlhack libwnck3 libxml2 libxslt
 USE_XORG=	ice x11 sm

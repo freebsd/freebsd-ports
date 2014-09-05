@@ -53,9 +53,9 @@ include/pangomm-%%API_VERSION%%/pangomm/tabarray.h
 include/pangomm-%%API_VERSION%%/pangomm/types.h
 include/pangomm-%%API_VERSION%%/pangomm/wrap_init.h
 lib/libpangomm-%%API_VERSION%%.a
-lib/libpangomm-%%API_VERSION%%.la
 lib/libpangomm-%%API_VERSION%%.so
 lib/libpangomm-%%API_VERSION%%.so.1
+lib/libpangomm-%%API_VERSION%%.so.1.0.30
 lib/pangomm-%%API_VERSION%%/include/pangommconfig.h
 lib/pangomm-%%API_VERSION%%/proc/m4/convert.m4
 lib/pangomm-%%API_VERSION%%/proc/m4/convert_pango.m4

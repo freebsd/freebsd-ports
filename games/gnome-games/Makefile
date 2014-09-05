@@ -1,10 +1,10 @@
 # Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/games/gnome-games/Makefile 19643 2014-05-13 06:32:01Z gusi $
+#   $MCom: ports/trunk/games/gnome-games/Makefile 19848 2014-09-05 10:39:20Z kwm $
 
 PORTNAME=	gnome-games
 PORTVERSION=	3.12.2
-
+PORTREVISION=	1
 CATEGORIES=	games gnome
 MASTER_SITES=	# empty
 DISTFILES=	# empty
@@ -14,6 +14,7 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Gnome games meta port
 
 RUN_DEPENDS=	gnome-chess:${PORTSDIR}/games/gnome-chess \
+		sol:${PORTSDIR}/games/aisleriot \
 		five-or-more:${PORTSDIR}/games/five-or-more \
 		four-in-a-row:${PORTSDIR}/games/four-in-a-row \
 		gnome-nibbles:${PORTSDIR}/games/gnome-nibbles \

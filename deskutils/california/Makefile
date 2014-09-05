@@ -1,9 +1,9 @@
 # Created by: Gustau Perez <gustau.perez@gmail.com>
 # $FreeBSD$
-#   $MCom: ports/trunk/deskutils/california/Makefile 19781 2014-07-20 19:30:11Z gusi $
+#   $MCom: ports/trunk/deskutils/california/Makefile 19821 2014-08-20 08:42:08Z gusi $
 
 PORTNAME=	california
-PORTVERSION=	0.1.2
+PORTVERSION=	0.1.4
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3

@@ -1,10 +1,10 @@
 # Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/audio/rhythmbox/Makefile 19692 2014-05-26 07:42:16Z gusi $
+#   $MCom: ports/trunk/audio/rhythmbox/Makefile 19823 2014-08-20 09:28:14Z gusi $
 
 PORTNAME=	rhythmbox
 PORTVERSION=	3.0.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -41,6 +41,7 @@ INSTALLS_ICONS=	yes
 USE_LDCONFIG=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
+INSTALL_TARGET=	install-strip
 
 PLIST_SUB+=	PYTVER=${PYTHON_VER:S/.//}
 

@@ -58,10 +58,9 @@ include/glom-%%VERSION%%/libglom/report_builder.h
 include/glom-%%VERSION%%/libglom/sharedptr.h
 include/glom-%%VERSION%%/libglom/standard_table_prefs_fields.h
 include/glom-%%VERSION%%/libglom/utils.h
-lib/libglom-%%VERSION%%.la
 lib/libglom-%%VERSION%%.so
 lib/libglom-%%VERSION%%.so.0
-%%PYTHON_SITELIBDIR%%/glom_1_24.la
+lib/libglom-%%VERSION%%.so.0.0.0
 %%PYTHON_SITELIBDIR%%/glom_1_24.so
 libdata/pkgconfig/glom-%%VERSION%%.pc
 share/applications/glom.desktop
@@ -342,12 +341,6 @@ share/omf/glom/glom-sv.omf
 @dirrm %%DATADIR%%/glade/developer
 @dirrm %%DATADIR%%/glade
 @dirrm %%DATADIR%%
-@dirrmtry share/locale/sr@latin/LC_MESSAGES
-@dirrmtry share/locale/sr@latin
-@dirrmtry share/locale/rw/LC_MESSAGES
-@dirrmtry share/locale/rw
-@dirrmtry share/locale/dz/LC_MESSAGES
-@dirrmtry share/locale/dz
 @dirrm include/glom-%%VERSION%%/libglom/document/bakery/view
 @dirrm include/glom-%%VERSION%%/libglom/document/bakery
 @dirrm include/glom-%%VERSION%%/libglom/document

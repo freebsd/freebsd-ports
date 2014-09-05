@@ -1,11 +1,9 @@
 bin/gitg
 include/libgitg-1.0/libgitg/libgitg.h
 include/libgitg-ext-1.0/libgitg-ext/libgitg-ext.h
-lib/libgitg-1.0.la
 lib/libgitg-1.0.so
 lib/libgitg-1.0.so.0
 lib/libgitg-1.0.so.0.0.0
-lib/libgitg-ext-1.0.la
 lib/libgitg-ext-1.0.so
 lib/libgitg-ext-1.0.so.0
 lib/libgitg-ext-1.0.so.0.0.0
@@ -13,9 +11,7 @@ lib/girepository-1.0/Gitg-1.0.typelib
 lib/girepository-1.0/GitgExt-1.0.typelib
 lib/gitg/plugins/diff.plugin
 lib/gitg/plugins/files.plugin
-lib/gitg/plugins/libdiff.la
 lib/gitg/plugins/libdiff.so
-lib/gitg/plugins/libfiles.la
 lib/gitg/plugins/libfiles.so
 lib/python3.3/site-packages/gi/overrides/GitgExt.py
 lib/python3.3/site-packages/gi/overrides/__pycache__/GitgExt.cpython-33.pyc

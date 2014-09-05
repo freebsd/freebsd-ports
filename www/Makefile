@@ -1404,7 +1404,7 @@
     SUBDIR += php55-tidy
     SUBDIR += php56-opcache
     SUBDIR += php56-session
-    SUBDIR += php56-tidy   
+    SUBDIR += php56-tidy
     SUBDIR += phpbb
     SUBDIR += phpbb3
     SUBDIR += phpgroupware
@@ -1659,8 +1659,8 @@
     SUBDIR += py-scriptaculous
     SUBDIR += py-selector
     SUBDIR += py-selenium
-    SUBDIR += py-slimmer
     SUBDIR += py-slimit
+    SUBDIR += py-slimmer
     SUBDIR += py-slumber
     SUBDIR += py-splinter
     SUBDIR += py-surl

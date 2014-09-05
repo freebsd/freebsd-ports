@@ -1,9 +1,9 @@
 # Created by: Gustau Perez <gustau.perez@gmail.com>
 # $FreeBSD$
-#   $MCom: ports/trunk/mail/geary/Makefile 19782 2014-07-20 21:54:09Z gusi $
+#   $MCom: ports/trunk/mail/geary/Makefile 19841 2014-09-03 06:50:37Z gusi $
 
 PORTNAME=	geary
-PORTVERSION=	0.7.0
+PORTVERSION=	0.7.2
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -18,7 +18,8 @@ LIB_DEPENDS=	libgmime-2.6.so:${PORTSDIR}/mail/gmime26 \
 		libwebkitgtk-3.0.so:${PORTSDIR}/www/webkit-gtk3 \
 		libcanberra-gtk3.so:${PORTSDIR}/audio/libcanberra-gtk3 \
 		libnotify.so:${PORTSDIR}/devel/libnotify \
-		libgee-0.8.so:${PORTSDIR}/devel/libgee
+		libgee-0.8.so:${PORTSDIR}/devel/libgee \
+		libgcr-3.so:${PORTSDIR}/security/gcr
 
 USES=		cmake desktop-file-utils gettext gmake \
 		libtool pathfix pkgconfig tar:xz

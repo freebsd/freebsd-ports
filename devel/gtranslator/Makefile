@@ -1,9 +1,10 @@
 # Created by: Maxim Sobolev <sobomax@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/devel/gtranslator/Makefile 19814 2014-08-15 20:17:00Z gusi $
+#   $MCom: ports/trunk/devel/gtranslator/Makefile 19822 2014-08-20 08:57:46Z gusi $
 
 PORTNAME=	gtranslator
 PORTVERSION=	2.91.6
+PORTREVISION=	1
 CATEGORIES=	devel gnome
 MASTER_SITES=	GNOME
 
@@ -12,19 +13,19 @@ COMMENT=	GNOME application for creating GNU gettext translation files
 
 LICENSE=	GPLv3
 
-BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-codes \
+BUILD_DEPENDS=	iso-codes>=0:${PORTSDIR}/misc/iso-codes \
 		itstool:${PORTSDIR}/textproc/itstool \
-		${LOCALBASE}/libdata/pkgconfig/gsettings-desktop-schemas.pc:${PORTSDIR}/devel/gsettings-desktop-schemas
+		gsettings-desktop-schemas>=0:${PORTSDIR}/devel/gsettings-desktop-schemas
 LIB_DEPENDS=	libpeas-1.0.so:${PORTSDIR}/devel/libpeas \
 		libgdl-3.so:${PORTSDIR}/x11-toolkits/gdl \
 		libjson-glib-1.0.so:${PORTSDIR}/devel/json-glib
-RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-codes \
-		${LOCALBASE}/libdata/pkgconfig/gsettings-desktop-schemas.pc:${PORTSDIR}/devel/gsettings-desktop-schemas
+RUN_DEPENDS=	iso-codes>=0:${PORTSDIR}/misc/iso-codes \
+		gsettings-desktop-schemas>=0:${PORTSDIR}/devel/gsettings-desktop-schemas
 
 USE_GNOME=	intlhack gnomeprefix gtk30 libgda5 gtksourceview3 libxml2 \
 		introspection:build
-USES=		desktop-file-utils gettext gmake pathfix pkgconfig \
-		python tar:xz
+USES=		desktop-file-utils gettext gmake libtool pathfix \
+		pkgconfig python tar:xz
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 INSTALLS_ICONS=	yes

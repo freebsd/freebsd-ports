@@ -7336,3 +7336,21 @@ games/vdrift||2014-09-01|Not staged
 net-mgmt/zenpack-graphportlet||2014-09-01|Not staged
 sysutils/boxbackup||2014-09-01|Not staged
 www/webcalendar-devel|www/webcalendar|2014-09-04|Removed, use www/webcalendar instead
+devel/bug-buddy||%DATE%|removed.
+sysutils/tracker-gnome/||%DATE%|removed, it is outdated
+sysutils/tracker-libtrackergtk||%DATE%|removed, it is outdated
+sysutils/tracker-client|sysutils/tracker|%DATE%|moved
+x11/gnome2||%DATE%|removed in flavor of GNOME 3
+x11/gnome2-lite||%DATE%|removed in flavor of GNOME 3
+x11/gnome2-fifth-toe||%DATE%|removed
+x11/gnome2-power-tools||%DATE%|removed
+editors/gnome2-office||%DATE%|removed
+misc/gnome2-reference||%DATE%|removed
+devel/gnome2-hacker-tools||%DATE%|removed
+net-im/folks04|net-im/folks|%DATE%|moved
+security/seahorse-plugins||%DATE%|removed
+multimedia/libgnome-media-profiles||%DATE%|removed
+math/gcalctool|math/gnome-calculator|2014-15-03|Renamed
+www/epiphany-extensions||2014-13-03|Development has ceased
+x11/gnome-panel||2014-13-03|Development has ceased in favour of gnome-shell
+x11/gnome-screensaver||2014-08-26|not used in gnome3.

@@ -1,9 +1,9 @@
 # Created by: Maxim Sobolev <sobomax@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/x11-toolkits/pango/Makefile 19817 2014-08-17 13:21:16Z gusi $
+#   $MCom: ports/trunk/x11-toolkits/pango/Makefile 19844 2014-09-04 05:27:10Z gusi $
 
 PORTNAME=	pango
-PORTVERSION=	1.36.6
+PORTVERSION=	1.36.7
 PORTREVISION?=	0
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	GNOME
@@ -33,7 +33,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 INSTALL_TARGET=	install-strip
 
 VERSION=	1.8.0
-LIBVERSION=     0.3600.6
+LIBVERSION=     0.3600.7
 PLIST_SUB+=     VERSION=${VERSION} LIBVERSION=${LIBVERSION}
 
 FONTSCALE=	${LOCALBASE}/lib/X11/fonts/TTF/luximb.ttf

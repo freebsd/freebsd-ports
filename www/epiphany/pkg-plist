@@ -1,6 +1,5 @@
 bin/ephy-profile-migrator
 bin/epiphany
-lib/epiphany/%%EPHY_VERSION%%/web-extensions/libephywebextension.la
 lib/epiphany/%%EPHY_VERSION%%/web-extensions/libephywebextension.so
 libexec/epiphany-search-provider
 man/man1/epiphany.1.gz

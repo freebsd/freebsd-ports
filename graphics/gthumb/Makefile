@@ -1,9 +1,10 @@
 # Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/graphics/gthumb/Makefile 19814 2014-08-15 20:17:00Z gusi $
+#   $MCom: ports/trunk/graphics/gthumb/Makefile 19823 2014-08-20 09:28:14Z gusi $
 
 PORTNAME=	gthumb
 PORTVERSION=	3.2.8
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -16,7 +17,7 @@ BUILD_DEPENDS=	itstool:${PORTSDIR}/textproc/itstool \
 LIB_DEPENDS=	libunique-1.0.so:${PORTSDIR}/x11-toolkits/unique
 RUN_DEPENDS=	gsettings-desktop-schemas>=0:${PORTSDIR}/devel/gsettings-desktop-schemas
 
-USES=		desktop-file-utils bison gettext gmake pathfix \
+USES=		desktop-file-utils bison gettext gmake libtool pathfix \
 		pkgconfig tar:xz
 USE_GNOME=	gnomeprefix gtk30 intlhack librsvg2
 USE_LDCONFIG=	yes

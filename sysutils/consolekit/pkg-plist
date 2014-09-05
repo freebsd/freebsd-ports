@@ -12,10 +12,9 @@ etc/dbus-1/system.d/ConsoleKit.conf
 include/ConsoleKit/ck-connector/ck-connector.h
 lib/ConsoleKit/scripts/ck-system-restart
 lib/ConsoleKit/scripts/ck-system-stop
-lib/libck-connector.la
 lib/libck-connector.so
 lib/libck-connector.so.0
-lib/pam_ck_connector.la
+lib/libck-connector.so.0.0.0
 lib/pam_ck_connector.so
 libdata/pkgconfig/ck-connector.pc
 libexec/ck-collect-session-info

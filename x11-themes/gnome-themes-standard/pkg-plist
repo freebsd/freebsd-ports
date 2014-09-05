@@ -1,6 +1,4 @@
-lib/gtk-2.0/%%GTK2_VERSION%%/engines/libadwaita.la
 lib/gtk-2.0/%%GTK2_VERSION%%/engines/libadwaita.so
-lib/gtk-3.0/%%GTK3_VERSION%%/theming-engines/libadwaita.la
 lib/gtk-3.0/%%GTK3_VERSION%%/theming-engines/libadwaita.so
 share/gnome-background-properties/adwaita.xml
 share/icons/Adwaita/cursors/00008160000006810000408080010102

@@ -2179,7 +2179,6 @@
     SUBDIR += p5-IO-Pager
     SUBDIR += p5-IO-Pipely
     SUBDIR += p5-IO-Prompt
-    SUBDIR += p5-IO-Prompter
     SUBDIR += p5-IO-Prompt-Tiny
     SUBDIR += p5-IO-Prompter
     SUBDIR += p5-IO-Pty-Easy
@@ -3452,7 +3451,7 @@
     SUBDIR += php56-json
     SUBDIR += php56-pcntl
     SUBDIR += php56-readline
-    SUBDIR += php56-shmop 
+    SUBDIR += php56-shmop
     SUBDIR += php56-sysvmsg
     SUBDIR += php56-sysvsem
     SUBDIR += php56-sysvshm
@@ -4430,8 +4429,8 @@
     SUBDIR += rubygem-polyglot
     SUBDIR += rubygem-popen4
     SUBDIR += rubygem-posix-spawn
-    SUBDIR += rubygem-powerbar
     SUBDIR += rubygem-power_assert
+    SUBDIR += rubygem-powerbar
     SUBDIR += rubygem-prototype-rails
     SUBDIR += rubygem-pry
     SUBDIR += rubygem-pry-remote-em
@@ -4455,8 +4454,8 @@
     SUBDIR += rubygem-redis-store
     SUBDIR += rubygem-redmine_plugin_support
     SUBDIR += rubygem-ref
-    SUBDIR += rubygem-require_all
     SUBDIR += rubygem-request_store
+    SUBDIR += rubygem-require_all
     SUBDIR += rubygem-rgl
     SUBDIR += rubygem-rr
     SUBDIR += rubygem-rrd-ffi

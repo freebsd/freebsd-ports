@@ -1,5 +1,4 @@
 bin/gnome-weather
-lib/org.gnome.Weather.Application/libgd.la
 lib/org.gnome.Weather.Application/libgd.so
 lib/org.gnome.Weather.Application/girepository-1.0/Gd-1.0.typelib
 share/appdata/org.gnome.Weather.Application.appdata.xml

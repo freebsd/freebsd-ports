@@ -1,9 +1,9 @@
 # Created by: Gustau Perez <gustau.perez@gmail.com>
 # $FreeBSD$
-#   $MCom: ports/trunk/multimedia/libmediaart/Makefile 19806 2014-08-14 07:01:32Z gusi $
+#   $MCom: ports/trunk/multimedia/libmediaart/Makefile 19833 2014-08-26 15:43:46Z kwm $
 
 PORTNAME=	libmediaart
-PORTVERSION=	0.5.0
+PORTVERSION=	0.6.0
 CATEGORIES=	multimedia devel
 MASTER_SITES=	GNOME
 

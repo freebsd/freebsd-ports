@@ -34,41 +34,30 @@ include/libsocialweb/libsocialweb/sw-set.h
 include/libsocialweb/libsocialweb/sw-types.h
 include/libsocialweb/libsocialweb/sw-utils.h
 include/libsocialweb/libsocialweb/sw-web.h
-lib/libsocialweb/services/libfacebook.la
 lib/libsocialweb/services/libfacebook.so
-lib/libsocialweb/services/libflickr.la
 lib/libsocialweb/services/libflickr.so
-lib/libsocialweb/services/liblastfm.la
 lib/libsocialweb/services/liblastfm.so
-lib/libsocialweb/services/libmyspace.la
 lib/libsocialweb/services/libmyspace.so
-lib/libsocialweb/services/libphotobucket.la
 lib/libsocialweb/services/libphotobucket.so
-lib/libsocialweb/services/libplurk.la
 lib/libsocialweb/services/libplurk.so
-lib/libsocialweb/services/libsina.la
 lib/libsocialweb/services/libsina.so
-lib/libsocialweb/services/libsmugmug.la
 lib/libsocialweb/services/libsmugmug.so
-lib/libsocialweb/services/libtwitter.la
 lib/libsocialweb/services/libtwitter.so
-lib/libsocialweb/services/libvimeo.la
 lib/libsocialweb/services/libvimeo.so
-lib/libsocialweb/services/libyoutube.la
 lib/libsocialweb/services/libyoutube.so
 lib/girepository-1.0/SocialWebClient-0.25.typelib
-lib/libsocialweb-client.la
 lib/libsocialweb-client.so
 lib/libsocialweb-client.so.2
-lib/libsocialweb-keyfob.la
+lib/libsocialweb-client.so.2.0.0
 lib/libsocialweb-keyfob.so
 lib/libsocialweb-keyfob.so.0
-lib/libsocialweb-keystore.la
+lib/libsocialweb-keyfob.so.0.0.0
 lib/libsocialweb-keystore.so
 lib/libsocialweb-keystore.so.0
-lib/libsocialweb.la
+lib/libsocialweb-keystore.so.0.0.0
 lib/libsocialweb.so
 lib/libsocialweb.so.0
+lib/libsocialweb.so.0.0.0
 libdata/pkgconfig/libsocialweb-client.pc
 libdata/pkgconfig/libsocialweb-keyfob.pc
 libdata/pkgconfig/libsocialweb-keystore.pc
@@ -201,16 +190,8 @@ share/locale/zh_CN/LC_MESSAGES/libsocialweb.mo
 share/locale/zh_TW/LC_MESSAGES/libsocialweb.mo
 share/vala/vapi/libsocialweb-client.deps
 share/vala/vapi/libsocialweb-client.vapi
-@dirrmtry share/locale/ca@valencia/LC_MESSAGES
-@dirrmtry share/locale/ca@valencia
-@dirrmtry share/locale/bn_IN/LC_MESSAGES
-@dirrmtry share/locale/bn_IN
-@dirrmtry share/locale/ast/LC_MESSAGES
-@dirrmtry share/locale/ast
 @dirrm share/libsocialweb/services
 @dirrm share/libsocialweb
-@dirrmtry share/gtk-doc/html
-@dirrmtry share/gtk-doc
 @dirrm share/gtk-doc/html/libsocialweb
 @dirrm share/gtk-doc/html/libsocialweb-dbus
 @dirrm share/gtk-doc/html/libsocialweb-client

@@ -14,9 +14,9 @@ include/libsecret-1/libsecret/secret-value.h
 include/libsecret-1/libsecret/secret.h
 lib/girepository-1.0/Secret-1.typelib
 lib/libsecret-1.a
-lib/libsecret-1.la
 lib/libsecret-1.so
 lib/libsecret-1.so.0
+lib/libsecret-1.so.0.0.0
 libdata/pkgconfig/libsecret-1.pc
 libdata/pkgconfig/libsecret-unstable.pc
 man/man1/secret-tool.1.gz
@@ -118,8 +118,6 @@ share/locale/uk/LC_MESSAGES/libsecret.mo
 share/locale/zh_CN/LC_MESSAGES/libsecret.mo
 share/locale/zh_HK/LC_MESSAGES/libsecret.mo
 share/locale/zh_TW/LC_MESSAGES/libsecret.mo
-@dirrmtry share/locale/sr@latin/LC_MESSAGES
-@dirrmtry share/locale/sr@latin
 @dirrmtry share/locale/fur/LC_MESSAGES
 @dirrmtry share/locale/fur
 @dirrm share/gtk-doc/html/libsecret-1

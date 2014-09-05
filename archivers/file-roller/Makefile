@@ -1,9 +1,10 @@
 # Created by: Anders Nordby <anders@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/archivers/file-roller/Makefile 19814 2014-08-15 20:17:00Z gusi $
+#   $MCom: ports/trunk/archivers/file-roller/Makefile 19822 2014-08-20 08:57:46Z gusi $
 
 PORTNAME=	file-roller
 PORTVERSION=	3.12.2
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	archivers gnome
 MASTER_SITES=	GNOME
@@ -13,11 +14,11 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Archive manager for zip files, tar, etc
 
 BUILD_DEPENDS=	itstool:${PORTSDIR}/textproc/itstool
-RUN_DEPENDS=	${LOCALBASE}/bin/gtar:${PORTSDIR}/archivers/gtar \
-    		${LOCALBASE}/bin/unzip:${PORTSDIR}/archivers/unzip
+RUN_DEPENDS=	gtar:${PORTSDIR}/archivers/gtar \
+    		unzip:${PORTSDIR}/archivers/unzip
 
-USES=		desktop-file-utils gettext gmake pathfix \
-		pkgconfig tar:xz
+USES=		desktop-file-utils gettext gmake libtool \
+		pathfix pkgconfig tar:xz
 USE_GNOME=	gnomeprefix gtk30 intlhack introspection:build
 USE_XORG=	sm
 INSTALLS_ICONS=	yes

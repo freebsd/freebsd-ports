@@ -1,9 +1,9 @@
 bin/ghex
 include/gtkhex-3/gtkhex.h
 include/gtkhex-3/hex-document.h
-lib/libgtkhex-3.la
 lib/libgtkhex-3.so
 lib/libgtkhex-3.so.0
+lib/libgtkhex-3.so.0.0.0
 libdata/pkgconfig/gtkhex-3.pc
 share/GConf/gsettings/ghex.convert
 share/appdata/ghex.appdata.xml

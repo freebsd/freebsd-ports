@@ -1,11 +1,8 @@
 lib/gio/modules/libgiognomeproxy.a
-lib/gio/modules/libgiognomeproxy.la
 lib/gio/modules/libgiognomeproxy.so
 lib/gio/modules/libgiognutls.a
-lib/gio/modules/libgiognutls.la
 lib/gio/modules/libgiognutls.so
 lib/gio/modules/libgiolibproxy.a
-lib/gio/modules/libgiolibproxy.la
 lib/gio/modules/libgiolibproxy.so
 libexec/glib-pacrunner
 share/dbus-1/services/org.gtk.GLib.PACRunner.service

@@ -1,6 +1,6 @@
 # Created by: Koop Mast <kwm@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/devel/dconf/Makefile 19571 2014-04-25 18:12:46Z kwm $
+#   $MCom: ports/trunk/devel/dconf/Makefile 19847 2014-09-05 10:21:08Z kwm $
 
 PORTNAME?=	dconf
 PORTVERSION=	0.20.0
@@ -49,6 +49,8 @@ post-patch:
 		${WRKSRC}/bin/Makefile.in \
 		${WRKSRC}/client/Makefile.in \
 		${WRKSRC}/editor/Makefile.in
+	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
+		${WRKSRC}/docs/Makefile.in
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/dconf/db

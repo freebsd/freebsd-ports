@@ -1,9 +1,10 @@
 # Created by: Pawel Worach <pawel.worach@gmail.com>
 # $FreeBSD$
-#   $MCom: ports/trunk/x11-wm/mutter/Makefile 19814 2014-08-15 20:17:00Z gusi $
+#   $MCom: ports/trunk/x11-wm/mutter/Makefile 19828 2014-08-24 21:38:21Z kwm $
 
 PORTNAME=	mutter
 PORTVERSION=	3.12.2
+PORTREVISION=	2
 CATEGORIES=	x11-wm
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -20,7 +21,7 @@ LIB_DEPENDS=	libstartup-notification-1.so:${PORTSDIR}/x11/startup-notification \
 RUN_DEPENDS=	zenity3>=3.0.0:${PORTSDIR}/x11/zenity3 \
 		gsettings-desktop-schemas>=3.4.0:${PORTSDIR}/devel/gsettings-desktop-schemas
 
-USES=		gettext gmake pathfix pkgconfig tar:xz
+USES=		gettext gmake libtool pathfix pkgconfig tar:xz
 USE_GNOME=	gnomedesktop3 gnomehier gnomeprefix gtk30 intlhack \
 		introspection:build
 USE_XORG=	x11 xext xrandr xcomposite xcursor xinerama ice sm xfixes \

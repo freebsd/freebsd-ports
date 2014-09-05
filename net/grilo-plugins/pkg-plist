@@ -1,7 +1,7 @@
 lib/grilo-0.2/grl-apple-trailers.xml
 lib/grilo-0.2/grl-bliptv.xml
-lib/grilo-0.2/grl-bookmarks.xml
 %%DMAP%%lib/grilo-0.2/grl-dmap.xml
+%%DLEYNA%%lib/grilo-0.2/grl-dleyna.xml
 lib/grilo-0.2/grl-filesystem.xml
 lib/grilo-0.2/grl-flickr.xml
 lib/grilo-0.2/grl-freebox.xml
@@ -18,13 +18,12 @@ lib/grilo-0.2/grl-raitv.xml
 lib/grilo-0.2/grl-shoutcast.xml
 lib/grilo-0.2/grl-tmdb.xml
 %%TRACKER%%lib/grilo-0.2/grl-tracker.xml
-%%UPNP%%lib/grilo-0.2/grl-upnp.xml
 lib/grilo-0.2/grl-vimeo.xml
 lib/grilo-0.2/grl-youtube.xml
 lib/grilo-0.2/libgrlappletrailers.so
 lib/grilo-0.2/libgrlbliptv.so
-lib/grilo-0.2/libgrlbookmarks.so
 %%DMAP%%lib/grilo-0.2/libgrldmap.so
+%%DLEYNA%%lib/grilo-0.2/libgrldleyna.so
 lib/grilo-0.2/libgrlfilesystem.so
 lib/grilo-0.2/libgrlflickr.so
 lib/grilo-0.2/libgrlfreebox.so
@@ -41,12 +40,12 @@ lib/grilo-0.2/libgrlraitv.so
 lib/grilo-0.2/libgrlshoutcast.so
 lib/grilo-0.2/libgrltmdb.so
 %%TRACKER%%lib/grilo-0.2/libgrltracker.so
-%%UPNP%%lib/grilo-0.2/libgrlupnp.so
 lib/grilo-0.2/libgrlvimeo.so
 lib/grilo-0.2/libgrlyoutube.so
 share/help/C/examples/example-tmdb.c
 share/help/C/grilo-plugins/grilo-plugins.xml
 share/help/C/grilo-plugins/legal.xml
+share/locale/as/LC_MESSAGES/grilo-plugins.mo
 share/locale/ca/LC_MESSAGES/grilo-plugins.mo
 share/locale/ca@valencia/LC_MESSAGES/grilo-plugins.mo
 share/locale/cs/LC_MESSAGES/grilo-plugins.mo
@@ -55,6 +54,7 @@ share/locale/de/LC_MESSAGES/grilo-plugins.mo
 share/locale/el/LC_MESSAGES/grilo-plugins.mo
 share/locale/eo/LC_MESSAGES/grilo-plugins.mo
 share/locale/es/LC_MESSAGES/grilo-plugins.mo
+share/locale/eu/LC_MESSAGES/grilo-plugins.mo
 share/locale/fr/LC_MESSAGES/grilo-plugins.mo
 share/locale/gl/LC_MESSAGES/grilo-plugins.mo
 share/locale/he/LC_MESSAGES/grilo-plugins.mo

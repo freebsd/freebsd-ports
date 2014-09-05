@@ -1,10 +1,10 @@
 # Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/www/gnome-user-share/Makefile 19814 2014-08-15 20:17:00Z gusi $
+#   $MCom: ports/trunk/www/gnome-user-share/Makefile 19822 2014-08-20 08:57:46Z gusi $
 
 PORTNAME=	gnome-user-share
 PORTVERSION=	3.10.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www deskutils gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -17,10 +17,10 @@ LIB_DEPENDS=	libavahi-client.so:${PORTSDIR}/net/avahi-app \
 		libnotify.so:${PORTSDIR}/devel/libnotify \
 		libcanberra-gtk3.so:${PORTSDIR}/audio/libcanberra-gtk3 \
 		libunique-1.0.so:${PORTSDIR}/x11-toolkits/unique
-RUN_DEPENDS=	${LOCALBASE}/${APACHEMODDIR}/mod_dnssd.so:${PORTSDIR}/www/mod_dnssd \
+RUN_DEPENDS=	ap*-mod_dnssd>=0:${PORTSDIR}/www/mod_dnssd \
 		console-kit-daemon:${PORTSDIR}/sysutils/consolekit
 
-USES=		gettext gmake pkgconfig tar:xz
+USES=		gettext gmake libtool pkgconfig tar:xz
 USE_APACHE=	22
 USE_XORG=	sm
 USE_GNOME=	gnomeprefix gtk30 intlhack nautilus3

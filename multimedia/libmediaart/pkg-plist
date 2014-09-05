@@ -4,7 +4,7 @@ include/libmediaart-1.0/libmediaart/extractgeneric.h
 include/libmediaart-1.0/libmediaart/mediaart.h
 lib/libmediaart-1.0.so
 lib/libmediaart-1.0.so.0
-lib/libmediaart-1.0.so.0.500.0
+lib/libmediaart-1.0.so.0.600.0
 lib/girepository-1.0/MediaArt-1.0.typelib
 libdata/pkgconfig/libmediaart-1.0.pc
 share/gir-1.0/MediaArt-1.0.gir

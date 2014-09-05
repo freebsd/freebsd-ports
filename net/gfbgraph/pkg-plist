@@ -15,9 +15,9 @@ include/gfbgraph-0.2/gfbgraph/gfbgraph-simple-authorizer.h
 include/gfbgraph-0.2/gfbgraph/gfbgraph-user.h
 include/gfbgraph-0.2/gfbgraph/gfbgraph.h
 lib/libgfbgraph-0.2.a
-lib/libgfbgraph-0.2.la
 lib/libgfbgraph-0.2.so
 lib/libgfbgraph-0.2.so.0
+lib/libgfbgraph-0.2.so.0.0.0
 lib/girepository-1.0/GFBGraph-0.2.typelib
 libdata/pkgconfig/libgfbgraph-0.2.pc
 share/gir-1.0/GFBGraph-0.2.gir

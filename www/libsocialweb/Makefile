@@ -1,9 +1,10 @@
 # Created by: Koop Mast <kwm@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/www/libsocialweb/Makefile 19814 2014-08-15 20:17:00Z gusi $
+#   $MCom: ports/trunk/www/libsocialweb/Makefile 19822 2014-08-20 08:57:46Z gusi $
 
 PORTNAME=	libsocialweb
 PORTVERSION=	0.25.21
+PORTREVISION=	1
 CATEGORIES=	www gnome
 MASTER_SITES=	GNOME
 
@@ -14,7 +15,7 @@ BUILD_DEPENDS=	vapigen:${PORTSDIR}/lang/vala-vapigen
 LIB_DEPENDS=	librest-0.7.so:${PORTSDIR}/devel/librest \
 		libjson-glib-1.0.so:${PORTSDIR}/devel/json-glib
 
-USES=		gettext gmake pathfix pkgconfig tar:xz
+USES=		gettext gmake libtool pathfix pkgconfig tar:xz
 USE_GNOME=	gconf2 glib20 gnomehier intlhack introspection:build \
 		libxslt:build
 GNU_CONFIGURE=	yes

@@ -1,11 +1,11 @@
 # Created by: Anders F Bjorklund <afb@users.sourceforge.net>
 # $FreeBSD$
-#   $MCom: ports/trunk/ports-mgmt/packagekit/Makefile 19804 2014-08-13 14:55:11Z kwm $
+#   $MCom: ports/trunk/ports-mgmt/packagekit/Makefile 19822 2014-08-20 08:57:46Z gusi $
 
 PORTNAME=	packagekit
 PORTVERSION=	0.8.9
 CATEGORIES=	ports-mgmt sysutils
-MASTER_SITES=	http://www.packagekit.org/releases/
+MASTER_SITES=	http://www.freedesktop.org/software/PackageKit/releases/
 DISTNAME=	PackageKit-${PORTVERSION}
 
 MAINTAINER=	gnome@FreeBSD.org
@@ -15,8 +15,8 @@ BUILD_DEPENDS=	docbook2man:${PORTSDIR}/textproc/docbook-utils
 LIB_DEPENDS=	libpolkit-gobject-1.so:${PORTSDIR}/sysutils/polkit
 RUN_DEPENDS=	lsof:${PORTSDIR}/sysutils/lsof
 
-USES=		execinfo gettext gmake iconv pathfix pkgconfig \
-		python:2 shared-mime-info tar:xz
+USES=		execinfo gettext gmake iconv libtool pathfix \
+		pkgconfig python:2 shared-mime-info tar:xz
 USE_GNOME=	glib20 intltool introspection
 USE_LDCONFIG=	yes
 USE_SQLITE=	3

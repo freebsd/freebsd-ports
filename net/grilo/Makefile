@@ -1,10 +1,9 @@
 # Created by: Gustau Perez i Querol <gustau.perez@gmail.com>
 # $FreeBSD$
-#   $MCom: ports/trunk/net/grilo/Makefile 19813 2014-08-15 19:44:33Z gusi $
+#   $MCom: ports/trunk/net/grilo/Makefile 19829 2014-08-25 06:54:03Z gusi $
 
 PORTNAME=	grilo
-PORTVERSION=	0.2.10
-PORTREVISION=	1
+PORTVERSION=	0.2.11
 CATEGORIES=	net
 MASTER_SITES=	GNOME
 
@@ -23,7 +22,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--enable-vala -disable-debug
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-INSTALl_TARGET=	install-strip
+INSTALL_TARGET=	install-strip
 
 #  --enable-debug include debug symbols
 CONFIGURE_ARGS+=--enable-tests #          build unit tests

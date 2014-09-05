@@ -1,22 +1,21 @@
 # Created by: Michael Johnson <ahze@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/net-im/empathy/Makefile 19804 2014-08-13 14:55:11Z kwm $
+#   $MCom: ports/trunk/net-im/empathy/Makefile 19825 2014-08-21 07:05:53Z gusi $
 
 PORTNAME=	empathy
-PORTVERSION=	3.12.4
-PORTREVISION=	1
+PORTVERSION=	3.12.5
 CATEGORIES=	net-im gnome
 MASTER_SITES=	GNOME
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GNOME IM client based around telepathy
 
-BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-codes \
-		${LOCALBASE}/share/certs/ca-root-nss.crt:${PORTSDIR}/security/ca_root_nss \
+BUILD_DEPENDS=	iso-codes>=0:${PORTSDIR}/misc/iso-codes \
+		ca_root_nss>=0:${PORTSDIR}/security/ca_root_nss \
 		gsettings-desktop-schemas>=0:${PORTSDIR}/devel/gsettings-desktop-schemas \
 		geoclue>=0:${PORTSDIR}/net/geoclue \
 		itstool:${PORTSDIR}/textproc/itstool \
-    		${LOCALBASE}/libexec/mission-control-5:${PORTSDIR}/net-im/telepathy-mission-control
+    		mc-tool:${PORTSDIR}/net-im/telepathy-mission-control
 LIB_DEPENDS=	libenchant.so:${PORTSDIR}/textproc/enchant \
 		libgeocode-glib.so:${PORTSDIR}/net/geocode-glib \
 		libgoa-1.0.so:${PORTSDIR}/net/gnome-online-accounts \
@@ -32,11 +31,11 @@ LIB_DEPENDS=	libenchant.so:${PORTSDIR}/textproc/enchant \
 		libclutter-gst-2.0.so:${PORTSDIR}/multimedia/clutter-gst \
 		libwebkitgtk-3.0.so:${PORTSDIR}/www/webkit-gtk3 \
 		libsoup-2.4.so:${PORTSDIR}/devel/libsoup
-RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-codes \
-		${LOCALBASE}/share/certs/ca-root-nss.crt:${PORTSDIR}/security/ca_root_nss \
+RUN_DEPENDS=	iso-codes>=0:${PORTSDIR}/misc/iso-codes \
+		ca_root_nss>=0:${PORTSDIR}/security/ca_root_nss \
 		gsettings-desktop-schemas>=0:${PORTSDIR}/devel/gsettings-desktop-schemas \
 		geoclue>=0:${PORTSDIR}/net/geoclue \
-    		${LOCALBASE}/libexec/mission-control-5:${PORTSDIR}/net-im/telepathy-mission-control
+    		mc-tool:${PORTSDIR}/net-im/telepathy-mission-control
 
 USES=		gettext gmake libtool pathfix pkgconfig python tar:xz
 USE_GNOME=	evolutiondataserver3 gnomeprefix

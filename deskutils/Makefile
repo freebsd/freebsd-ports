@@ -90,6 +90,7 @@
     SUBDIR += gnome-shell-extension-openweather
     SUBDIR += gnome-shell-extension-overlay-icons
     SUBDIR += gnome-shell-extension-panel-osd
+    SUBDIR += gnome-shell-extension-recentitems
     SUBDIR += gnome-shell-extension-trash
     SUBDIR += gnome-shell-extension-weather
     SUBDIR += gnome-shell-extra-extensions

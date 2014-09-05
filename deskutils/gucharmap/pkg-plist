@@ -14,9 +14,9 @@ include/gucharmap-2.90/gucharmap/gucharmap-type-builtins.h
 include/gucharmap-2.90/gucharmap/gucharmap-unicode-info.h
 include/gucharmap-2.90/gucharmap/gucharmap.h
 lib/girepository-1.0/Gucharmap-2.90.typelib
-lib/libgucharmap_2_90.la
 lib/libgucharmap_2_90.so
 lib/libgucharmap_2_90.so.7
+lib/libgucharmap_2_90.so.7.0.0
 libdata/pkgconfig/gucharmap-2.90.pc
 share/appdata/gucharmap.appdata.xml
 share/applications/gucharmap.desktop

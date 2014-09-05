@@ -4,6 +4,7 @@ share/applications/geary-autostart.desktop
 share/applications/geary.desktop
 %%DATADIR%%/icons/archive-symbolic.svg
 %%DATADIR%%/icons/close-symbolic.svg
+%%DATADIR%%/icons/detach-symbolic.svg
 %%DATADIR%%/icons/document-symbolic.svg
 %%DATADIR%%/icons/edit-symbolic.svg
 %%DATADIR%%/icons/format-text-remove-symbolic.svg
@@ -43,6 +44,7 @@ share/applications/geary.desktop
 %%DATADIR%%/sql/version-019.sql
 %%DATADIR%%/sql/version-020.sql
 %%DATADIR%%/sql/version-021.sql
+%%DATADIR%%/sql/version-022.sql
 %%DATADIR%%/theming/message-viewer.css
 %%DATADIR%%/theming/message-viewer.html
 %%DATADIR%%/ui/accelerators.ui
@@ -50,6 +52,7 @@ share/applications/geary.desktop
 %%DATADIR%%/ui/account_list.glade
 %%DATADIR%%/ui/account_spinner.glade
 %%DATADIR%%/ui/app_menu.interface
+%%DATADIR%%/ui/certificate_warning_dialog.glade
 %%DATADIR%%/ui/composer.glade
 %%DATADIR%%/ui/composer_accelerators.ui
 %%DATADIR%%/ui/find_bar.glade

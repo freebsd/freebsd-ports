@@ -4,6 +4,7 @@
 
 PORTNAME=	brasero
 PORTVERSION=	3.11.3
+PORTREVISION=	1
 CATEGORIES=	sysutils audio multimedia gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -18,7 +19,7 @@ LIB_DEPENDS=	libnotify.so:${PORTSDIR}/devel/libnotify \
 RUN_DEPENDS=	growisofs:${PORTSDIR}/sysutils/dvd+rw-tools \
 		cdrdao:${PORTSDIR}/sysutils/cdrdao
 
-USES=		desktop-file-utils gettext gmake pathfix pkgconfig \
+USES=		desktop-file-utils gettext gmake libtool pathfix pkgconfig \
 		shared-mime-info tar:xz
 USE_GNOME=	gnomeprefix gtk30 intlhack libxml2
 GNU_CONFIGURE=	yes

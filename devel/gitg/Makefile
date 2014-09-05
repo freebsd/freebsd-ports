@@ -1,9 +1,10 @@
 # Created by: Gustau Perez <gustau.perez@gmail.com>
 # $FreeBSD$
-#   $MCom: ports/trunk/devel/gitg/Makefile 19804 2014-08-13 14:55:11Z kwm $
+#   $MCom: ports/trunk/devel/gitg/Makefile 19822 2014-08-20 08:57:46Z gusi $
 
 PORTNAME=	gitg
 PORTVERSION=	0.3.2
+PORTREVISION=	1
 CATEGORIES=	devel gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -19,7 +20,7 @@ LIB_DEPENDS=	libgit2-glib-1.0.so:${PORTSDIR}/devel/libgit2-glib \
 		libgtkspell3-3.so:${PORTSDIR}/textproc/gtkspell3 \
 		libgee-0.8.so:${PORTSDIR}/devel/libgee
 
-USES=		gettext gmake libtool:keepla pathfix pkgconfig \
+USES=		gettext gmake libtool pathfix pkgconfig \
 		python:3 tar:xz
 USE_GNOME=	gnomeprefix gtk30 gtksourceview3 intlhack libxslt
 USE_LDCONFIG=	yes
@@ -27,5 +28,6 @@ GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
 CFLAGS+=	-I${LOCALBASE}/include -Wno-error=format-nonliteral
 LDFLAGS+=	-L${LOCALBASE}/lib
+INSTALL_TARGET=	install-strip
 
 .include <bsd.port.mk>

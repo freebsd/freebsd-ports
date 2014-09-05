@@ -1,9 +1,10 @@
 # Created by: Gustau Perez <gustau.perez@gmail.com>
 # $FreeBSD$
-#    $MCom: ports/trunk/net/gfbgraph/Makefile 19814 2014-08-15 20:17:00Z gusi $
+#    $MCom: ports/trunk/net/gfbgraph/Makefile 19822 2014-08-20 08:57:46Z gusi $
 
 PORTNAME=	gfbgraph
 PORTVERSION=	0.2.2
+PORTREVISION=	1
 CATEGORIES=	net www
 MASTER_SITES=	GNOME
 
@@ -15,7 +16,7 @@ LIB_DEPENDS=	librest-0.7.so:${PORTSDIR}/devel/librest \
 		libgoa-1.0.so:${PORTSDIR}/net/gnome-online-accounts \
 		libjson-glib-1.0.so:${PORTSDIR}/devel/json-glib
 
-USES=		gettext gmake pathfix pkgconfig tar:xz
+USES=		gettext gmake libtool pathfix pkgconfig tar:xz
 USE_GNOME=	glib20 intlhack introspection:build
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes

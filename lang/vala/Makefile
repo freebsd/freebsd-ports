@@ -1,9 +1,10 @@
 # Created by: Michael Johnson <ahze@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/lang/vala/Makefile 19814 2014-08-15 20:17:00Z gusi $
+#   $MCom: ports/trunk/lang/vala/Makefile 19822 2014-08-20 08:57:46Z gusi $
 
 PORTNAME=	vala
 PORTVERSION=	0.24.0
+PORTREVISION=	1
 CATEGORIES=	lang gnome
 MASTER_SITES=	GNOME
 
@@ -12,7 +13,7 @@ COMMENT=	Programming language and compiler that converts Vala code into C code
 
 LICENSE=	LGPL21
 
-USES=		bison gettext gmake pathfix pkgconfig tar:xz
+USES=		bison gettext gmake libtool pathfix pkgconfig tar:xz
 USE_GNOME=	glib20 gnomeprefix libxslt
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
