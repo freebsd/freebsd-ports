@@ -7,7 +7,7 @@
 -		-${MKDIR} ${BINDIR}
 -		${INSTALL_PROGRAM} ${TGT} ${BINDIR}
 +		-${MKDIR} $(DESTDIR)${BINDIR}
-+		${INSTALL_PROGRAM} ${TGT} $(DESTDIR)${BINDIR}
++		${BSD_INSTALL_PROGRAM} ${TGT} $(DESTDIR)${BINDIR}
  
  install-inc:	${TGTLIB}
  #		-${MKDIR} ${INCDIR}
@@ -18,7 +18,7 @@
 -		-${MKDIR} ${DOCDIR}/html
 -		${INSTALL_DATA} doc/html/*.html doc/html/*.gif ${DOCDIR}/html
 +		-${MKDIR} $(DESTDIR)${DOCDIR}/html
-+		${INSTALL_DATA} doc/html/*.html doc/html/*.gif $(DESTDIR)${DOCDIR}/html
++		${BSD_INSTALL_DATA} doc/html/*.html doc/html/*.gif $(DESTDIR)${DOCDIR}/html
  
  ${TGT}:		${TGTLIB} ${MAINOBJ}
  		${CC} ${LFLAGS} -o ${TGT} ${MAINOBJ} ${TGTLIB} ${LIBS}
