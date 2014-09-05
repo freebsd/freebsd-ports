@@ -7,7 +7,7 @@ MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=bugzilla-de/${PORTVERSION:R}/${PORTVERSION}
 DISTNAME=	germzilla-${PORTVERSION}-1.utf-8
 
-MAINTAINER=	bugzilla@FreeBSD.org
+MAINTAINER=	bz-ports@FreeBSD.org
 COMMENT=	German localization for Bugzilla
 
 RUN_DEPENDS=	bugzilla44>=${PORTVERSION}:${PORTSDIR}/devel/bugzilla44
