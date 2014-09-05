@@ -1,0 +1,6 @@
+This module allows to perform case-insensitive lookups using case-folding.
+Case-folding is a part of the Unicode standard that allows any two strings
+that differ from one another only by case to map to the same "case-folded"
+form, even when those strings include characters with complex case-mappings.
+
+WWW: http://search.cpan.org/dist/Unicode-CaseFold/
