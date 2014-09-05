@@ -1,6 +1,6 @@
---- Makefile.orig	1995-03-06 22:00:20.000000000 +0800
-+++ Makefile	2014-05-24 22:09:47.087270512 +0800
-@@ -5,19 +5,20 @@ CC=gcc
+--- Makefile.orig	1995-03-06 14:00:20 UTC
++++ Makefile
+@@ -5,19 +5,19 @@
  endif
  
  # use cp backup option if you have gnu cp
@@ -8,7 +8,6 @@
 -CP=cp -b
 +#CP=cp
 +#CP=cp -b
-+INSTALL_CMD=	install -c -o bin -g bin
  
  # where you want to install
  ifndef PREFIX
@@ -25,7 +24,7 @@
  endif
  
  # actual location of prcc
-@@ -39,12 +40,13 @@ ifdef MALLOC_DEBUG
+@@ -39,12 +39,13 @@
  LOADLIBES=-L$(HOME)/lib -ldmalloc
  endif
  
@@ -43,7 +42,7 @@
  
  SRCS=cflow.sh prcc.c prcg.c
  
-@@ -64,17 +66,23 @@ PROTOTYPES= prcc.prototypes.h prcg.proto
+@@ -64,17 +65,23 @@
  prototypes: 	$(PROTOTYPES)
  
  
@@ -58,14 +57,14 @@
 +
  $(BINDIR)/prcc $(BINDIR)/prcg: $(BINDIR)/%:	%
 -	$(CP) $^ $@
-+	$(INSTALL_CMD) $^ $@
++	$(BSD_INSTALL_PROGRAM) $^ $@
  
  $(BINDIR)/cflow:	cflow
 -	$(CP) $^ $@
-+	$(INSTALL_CMD) -m0755 $^ $@
++	$(BSD_INSTALL_SCRIPT) $^ $@
 +
 +$(MANDIR)/cflow.1.gz:	cflow.1
-+	$(INSTALL_CMD) -m 0644 $^ $(MANDIR)
++	$(BSD_INSTALL_MAN) $^ $(MANDIR)
 +	gzip -9nf $(MANDIR)/cflow.1
  
  cflow:	cflow.sh
