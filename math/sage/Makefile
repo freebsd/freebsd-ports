@@ -3,7 +3,7 @@
 
 PORTNAME=	sage
 PORTVERSION=	6.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	math
 MASTER_SITES=	http://boxen.math.washington.edu/home/sagemath/sage-mirror/src/ \
 		http://mirrors.xmission.com/sage/src/ \
@@ -108,24 +108,25 @@ check regression-test test: build
 	cd ${WRKSRC} && ${SETENV} DOT_SAGE=${WRKSRC}/tmp/.sage ./sage -testall
 	${RM} -f ${WRKSRC}/python*.core
 
-INSTALL_SAGE_DIR=	${STAGEDIR}${PREFIX}/${PORTNAME}-${PORTVERSION}
+INSTALL_SAGE_DIR=	${PREFIX}/${PORTNAME}-${PORTVERSION}
+STAGED_SAGE_DIR=	${STAGEDIR}${INSTALL_SAGE_DIR}
 do-install:
 	cd ${WRKDIR} && ${FIND} -s ${WRKSRC} | \
 		${GREP} -v '^${WRKSRC}/upstream/' | \
 		${GREP} -v '^${WRKSRC}/tmp' | \
 		${SED} -e 's#${WRKDIR}/##' | \
 		${CPIO} -pmud -R ${BINOWN}:${BINGRP} ${STAGEDIR}${PREFIX}
-	${ECHO_CMD} | ${SETENV} DOT_SAGE=${INSTALL_SAGE_DIR}/tmp/.sage ${INSTALL_SAGE_DIR}/sage
-	${RM} -rf ${INSTALL_SAGE_DIR}/tmp/.sage
+	${ECHO_CMD} | ${SETENV} DOT_SAGE=${STAGED_SAGE_DIR}/tmp/.sage ${STAGED_SAGE_DIR}/sage
+	${RM} -rf ${STAGED_SAGE_DIR}/tmp/.sage
 	${SED} -e "s+#SAGE_ROOT.*+SAGE_ROOT=${INSTALL_SAGE_DIR}+" ${WRKSRC}/sage > ${STAGEDIR}${PREFIX}/bin/sage
 	${CHMOD} ${BINMODE} ${STAGEDIR}${PREFIX}/bin/sage
 
 post-install:
-	@${FIND} -s ${INSTALL_SAGE_DIR} -not -type d | \
+	@${FIND} -s ${STAGED_SAGE_DIR} -not -type d | \
 		${SED} -e 's#${STAGEDIR}${PREFIX}/##' >> ${TMPPLIST}
-	@${FIND} -s ${INSTALL_SAGE_DIR} -type d -empty | \
+	@${FIND} -s ${STAGED_SAGE_DIR} -type d -empty | \
 		${SED} -e 's#${STAGEDIR}${PREFIX}/#@exec ${MKDIR} %D/#' >> ${TMPPLIST}
-	@${FIND} -s ${INSTALL_SAGE_DIR} -type d -depth | \
+	@${FIND} -s ${STAGED_SAGE_DIR} -type d -depth | \
 		${SED} -e 's#${STAGEDIR}${PREFIX}/#@dirrm #' >> ${TMPPLIST}
 
 .include <bsd.port.pre.mk>
