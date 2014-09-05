@@ -11,6 +11,7 @@ MAINTAINER=	andrew@ugh.net.au
 COMMENT=	Implementation of the Eudora password changing protocol
 
 WRKSRC=		${WRKDIR}/poppwd
+USES=		uidfix
 
 PLIST_FILES=	libexec/poppwd \
 		man/man8/poppwd.8.gz
