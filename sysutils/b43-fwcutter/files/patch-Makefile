@@ -17,10 +17,10 @@
 -	install -o 0 -g 0 -m 755 $(BIN) $(PREFIX)/bin/
 -	install -d -o 0 -g 0 -m 755 $(PREFIX)/man/man1/
 -	install -o 0 -g 0 -m 644 $(BIN).1 $(PREFIX)/man/man1/
-+	install -d -o 0 -g 0 -m 755 $(DESTDIR)$(PREFIX)/bin/
-+	install -o 0 -g 0 -m 755 $(BIN) $(DESTDIR)$(PREFIX)/bin/
-+	install -d -o 0 -g 0 -m 755 $(DESTDIR)$(PREFIX)/man/man1/
-+	install -o 0 -g 0 -m 644 $(BIN).1 $(DESTDIR)$(PREFIX)/man/man1/
++	install -d -m 755 $(DESTDIR)$(PREFIX)/bin/
++	$(BSD_INSTALL_PROGRAM) $(BIN) $(DESTDIR)$(PREFIX)/bin/
++	install -d -m 755 $(DESTDIR)$(PREFIX)/man/man1/
++	$(BSD_INSTALL_MAN) $(BIN).1 $(DESTDIR)$(PREFIX)/man/man1/
  
  clean:
  	-rm -Rf obj dep *.orig *.rej *~
