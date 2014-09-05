@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	go.crypto
-PORTVERSION=	20140113
+PORTVERSION=	20140828
 CATEGORIES=	security devel
 MASTER_SITES=	http://www.c-s.li/ports/
 
@@ -14,6 +14,7 @@ GO_TARGET=	${GO_PKGNAME}/bcrypt		\
 		${GO_PKGNAME}/bn256		\
 		${GO_PKGNAME}/cast5		\
 		${GO_PKGNAME}/curve25519	\
+		${GO_PKGNAME}/hkdf		\
 		${GO_PKGNAME}/md4		\
 		${GO_PKGNAME}/nacl/box		\
 		${GO_PKGNAME}/nacl/secretbox	\
