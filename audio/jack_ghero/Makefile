@@ -14,7 +14,7 @@ LICENSE=	BSD
 
 LIB_DEPENDS=	libjack.so:${PORTSDIR}/audio/jack
 
-USES=		tar:bzip2
+USES=		tar:bzip2 uidfix
 
 PLIST_FILES=	sbin/jack_ghero \
 		man/man8/jack_ghero.8.gz
