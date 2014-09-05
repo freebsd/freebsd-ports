@@ -3,6 +3,7 @@
 
 PORTNAME=	ircii
 PORTVERSION=	20140831
+PORTREVISION=	1
 CATEGORIES=	irc ipv6
 MASTER_SITES=	http://ircii.warped.com/
 
@@ -43,6 +44,6 @@ post-patch:
 		${WRKSRC}/Makefile.in
 
 post-install:
-	${RM} ${STAGEDIR}${PREFIX}/bin/irc-${PORTVERSION}
+	${MV} -f ${STAGEDIR}${PREFIX}/bin/irc-${PORTVERSION} ${STAGEDIR}${PREFIX}/bin/irc
 
 .include <bsd.port.post.mk>
