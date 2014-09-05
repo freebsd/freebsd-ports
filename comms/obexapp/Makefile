@@ -14,7 +14,7 @@ LIB_DEPENDS=	libopenobex.so:${PORTSDIR}/comms/openobex \
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-USES=		iconv readline
+USES=		iconv readline uidfix
 PLIST_FILES=	bin/obexapp man/man1/obexapp.1.gz
 
 MAKE_ENV+=	NO_WERROR=yes
