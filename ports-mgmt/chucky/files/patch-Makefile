@@ -1,5 +1,5 @@
---- ./Makefile.orig	2013-03-22 05:11:27.000000000 +0100
-+++ ./Makefile	2014-02-24 11:23:24.503330584 +0100
+--- Makefile.orig	2013-03-22 04:11:27 UTC
++++ Makefile
 @@ -1,8 +1,8 @@
 -prefix=/usr/local
 -man7dir=/usr/local/man/man7
@@ -14,15 +14,14 @@
  
  all: chucky
  
-@@ -12,8 +12,9 @@
+@@ -12,8 +12,8 @@
  	rm chucky
  
  install:
 -	install -m 0755 -g wheel -o root chucky ${prefix}/bin
 -	-install -m 0644 -g wheel -o root chucky.7 ${man7dir}
-+	strip chucky
-+	install -m 0755 -g wheel -o root chucky $(DESTDIR)${prefix}/bin
-+	-install -m 0644 -g wheel -o root chucky.7 $(DESTDIR)${man7dir}
++	$(BSD_INSTALL_PROGRAM) chucky $(DESTDIR)${prefix}/bin
++	$(BSD_INSTALL_MAN) chucky.7 $(DESTDIR)${man7dir}
  
  deinstall:
  	rm -f ${prefix}/bin/chucky
