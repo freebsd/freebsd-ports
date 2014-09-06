@@ -15,6 +15,7 @@ NO_WRKSUBDIR=	Yes
 
 PLIST_FILES=	bin/fb \
 		man/man1/fb.1.gz
+USES=		uidfix
 MAKEFILE=	${FILESDIR}/Makefile.in
 MAKE_ARGS+=	PREFIX="${PREFIX}"
 
