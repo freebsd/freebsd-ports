@@ -19,4 +19,3 @@ share/applications/termit.desktop
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/termit.mo
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrmtry etc/xdg/termit
-@dirrmtry etc/xdg
