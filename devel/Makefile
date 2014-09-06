@@ -4195,7 +4195,6 @@
     SUBDIR += ruby-langscan
     SUBDIR += ruby-locale
     SUBDIR += ruby-locale2
-    SUBDIR += ruby-memoize
     SUBDIR += ruby-multi
     SUBDIR += ruby-ncurses
     SUBDIR += ruby-property
