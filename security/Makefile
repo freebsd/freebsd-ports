@@ -1005,6 +1005,7 @@
     SUBDIR += wapiti
     SUBDIR += webfwlog
     SUBDIR += webscarab
+    SUBDIR += webshag
     SUBDIR += whatweb
     SUBDIR += wipe
     SUBDIR += xca
