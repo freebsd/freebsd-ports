@@ -1,0 +1,7 @@
+Index: opera
+@@ -1,4 +1,5 @@
+ #!/bin/sh
+ export OPERA_DIR=${OPERA_DIR:-"${0%/*}"/share/opera}
+ export OPERA_PERSONALDIR=${OPERA_PERSONALDIR:-"${0%/*}"/profile}
++export LD_LIBRARY_PATH="${0%/*}"/lib/opera:$LD_LIBRARY_PATH
+ exec "${0%/*}"/lib/opera/opera "$@"
