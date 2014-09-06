@@ -1,0 +1,17 @@
+--- ./ext/files/puppetdb-ssl-setup.orig	2014-09-01 19:00:53.881157604 +0000
++++ ./ext/files/puppetdb-ssl-setup	2014-09-01 19:04:54.653139914 +0000
+@@ -226,11 +226,11 @@
+   agent_confdir=`puppet agent --configprint confdir`
+   agent_vardir=`puppet agent --configprint vardir`
+ 
+-  if [ -d "/etc/puppetlabs/puppetdb" ] ; then
+-    puppetdb_confdir="/etc/puppetlabs/puppetdb"
++  if [ -d "%%PREFIX%%/etc/puppetlabs/puppetdb" ] ; then
++    puppetdb_confdir="%%PREFIX%%/etc/puppetlabs/puppetdb"
+     user=pe-puppetdb
+   else
+-    puppetdb_confdir="/etc/puppetdb"
++    puppetdb_confdir="%%PREFIX%%/etc/puppetdb"
+     user=puppetdb
+   fi
+ fi

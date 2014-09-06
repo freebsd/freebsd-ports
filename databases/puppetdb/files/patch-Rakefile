@@ -1,0 +1,49 @@
+--- ./Rakefile.orig	2014-07-07 17:37:05.000000000 +0000
++++ ./Rakefile	2014-09-01 19:12:56.379106833 +0000
+@@ -80,29 +80,29 @@
+     @java_bin = "/opt/puppet/bin/java"
+ else
+     @install_dir = case @osfamily
+-      when /openbsd/
+-        "/usr/local/share/puppetdb"
++      when /openbsd/, /freebsd/
++        "%%PREFIX%%/share/puppetdb"
+       else
+         "/usr/share/puppetdb"
+       end
+-    @etc_dir = "/etc/puppetdb"
+-    @config_dir = "/etc/puppetdb/conf.d"
+-    @lib_dir = "/var/lib/puppetdb"
++    @etc_dir = "%%PREFIX%%/etc/puppetdb"
++    @config_dir = "%%PREFIX%%/etc/puppetdb/conf.d"
++    @lib_dir = "/var/db/puppetdb"
+     @libexec_dir = case @osfamily
+-      when /openbsd/
++      when /openbsd/, /freebsd/
+         "/usr/local/libexec/puppetdb"
+       when /redhat/, /suse/, /darwin/, /bsd/
+         "/usr/libexec/puppetdb"
+       else
+         "/usr/lib/puppetdb"
+       end
+-    @link = "/usr/share/puppetdb"
++    @link = "%%PREFIX%%/share/puppetdb"
+     @name = "puppetdb"
+     @sbin_dir = case @osfamily
+       when /archlinux/
+         "/usr/bin"
+       else
+-        "/usr/sbin"
++        "%%PREFIX%%/sbin"
+       end
+ end
+ 
+@@ -129,6 +129,8 @@
+     @plibdir = @pe ? PE_SITELIBDIR : (%x(ruby -rrbconfig -e "puts RbConfig::CONFIG['sitelibdir']").chomp)
+   when /openbsd/
+     @plibdir = @pe ? PE_SITELIBDIR : '/usr/local/lib/ruby/site_ruby/1.9.1'
++  when /freebsd/
++    @plibdir = @pe ? PE_SITELIBDIR : Facter.value(:rubysitedir).chomp
+   when /archlinux/
+     @plibdir = @pe ? PE_SITELIBDIR : (%x(ruby -rrbconfig -e 'puts RbConfig::CONFIG["vendorlibdir"]').chomp)
+ end

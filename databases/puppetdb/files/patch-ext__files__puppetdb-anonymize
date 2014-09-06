@@ -1,0 +1,9 @@
+--- ./ext/files/puppetdb-anonymize.orig	2014-09-01 19:00:53.880156353 +0000
++++ ./ext/files/puppetdb-anonymize	2014-09-01 19:08:46.772124148 +0000
+@@ -1,5 +1,5 @@
+ #!/bin/bash
+ 
+-. /usr/libexec/puppetdb/puppetdb.env
++. %%PREFIX%%/libexec/puppetdb/puppetdb.env
+ 
+ ${JAVA_BIN} -Xmx192m -XX:+HeapDumpOnOutOfMemoryError -XX:HeapDumpPath=/var/log/puppetdb/puppetdb-oom.hprof -Djava.security.egd=file:/dev/urandom -cp ${INSTALL_DIR}/puppetdb.jar clojure.main -m com.puppetlabs.puppetdb.core anonymize "$@"
