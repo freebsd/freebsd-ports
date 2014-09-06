@@ -1,0 +1,16 @@
+!!! ATTENTION !!!
+
+pkg_replace options changed. For more information,
+refer to pkg_replace(1).
+
+-----------------------------------------------------
+You can use various features.
+
+-IGNORE, USE_PKGS
+-BEFOREBUILD, AFTERBUILD, BEFOREINSTALL, AFTERINSTALL
+-User defined functions
+
+See examples in %%ETCDIR%%/pkg_replace.conf.sample.
+
+If you want to use those features,
+edit "%%ETCDIR%%/pkg_replace.conf".
