@@ -7000,3 +7000,7 @@ print/ghostscript7-commfont||2014-09-06|Not staged
 print/ghostscript7-jpnfont||2014-09-06|Not staged
 print/ghostscript7-korfont||2014-09-06|Not staged
 print/ghostscript7-nox11||2014-09-06|Not staged
+net/freeswitch-core-devel||2014-09-06|Not staged
+net/freeswitch-devel||2014-09-06|Not staged
+audio/freeswitch-sounds||2014-09-06|Not staged
+audio/freeswitch-music||2014-09-06|No purpose after unstaged freeswitch ports removed

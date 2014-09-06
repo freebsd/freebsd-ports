@@ -131,8 +131,6 @@
     SUBDIR += freeradius2
     SUBDIR += freeradius3
     SUBDIR += freerdp
-    SUBDIR += freeswitch-core-devel
-    SUBDIR += freeswitch-devel
     SUBDIR += freevrrpd
     SUBDIR += fspclient
     SUBDIR += fsplib
