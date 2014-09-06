@@ -2,31 +2,28 @@
 # $FreeBSD$
 
 PORTNAME=	pgaccess
-PORTVERSION=	0.99.0.20040219
-PORTREVISION=	3
+PORTVERSION=	1.00.20140902
 CATEGORIES=	databases tcl tk
-MASTER_SITES=	SF
-DISTNAME=	${PORTNAME}-${PORTVERSION:S/./_/g}
-EXTRACT_SUFX=	.tgz
+MASTER_SITES=	http://bsdforge.com/projects/source/databases/pgaccess/
 
-MAINTAINER= ports@FreeBSD.org
-COMMENT=	Powerful GUI PostgreSQL database administration tool and toolkit
+MAINTAINER=	portmaster@bsdforge.com
+COMMENT=	Powerful PostgreSQL database GUI administration tool and toolkit
 
-DEPRECATED=	not maintained upstreams for ten years
-EXPIRATION_DATE=2014-08-31
+LICENSE=	BSD4CLAUSE
 
-BUILD_DEPENDS+=	${RUN_DEPENDS}
 RUN_DEPENDS=	${LOCALBASE}/lib/pgtcl/pkgIndex.tcl:${PORTSDIR}/databases/pgtcl
 
-USE_PGSQL=	server:extract
+USES=		pgsql tk:84+ tar:xz
 
-TCLVERSION?=	8.4
+NO_ARCH=	yes
+
 DOCSDIR=	${PREFIX}/share/doc/postgresql/${PORTNAME}
 PGACCESSDIR=	${PREFIX}/share/postgresql/${PORTNAME}
 
 OPTIONS_DEFINE=	DOCS
 
-NO_STAGE=	yes
+.include <bsd.port.options.mk>
+
 post-patch:
 	@${REINPLACE_CMD} -e "s,/usr/bin,${PREFIX}/bin,g ; " ${WRKSRC}/lib/mainlib.tcl
 	@${RM} ${WRKSRC}/lib/mainlib.tcl.bak
@@ -34,25 +31,23 @@ post-patch:
 do-build:
 .for targetfile in pgaccess.tcl pgmonitor
 	@ ${SED} -e "s,%%LOCALBASE%%,${LOCALBASE},g; \
-		     s,%%TCL_VERSION%%,${TCLVERSION},g; \
+		     s,%%WISH%%,${WISH},g; \
 		     s,%%PREFIX%%,${PREFIX},g; \
 		     s,%%PROGRAM%%,${targetfile},g" \
 		< ${FILESDIR}/run-tcl-file > ${WRKDIR}/${targetfile:R}.sh
 .endfor
 
 do-install:
-	@${MKDIR} ${PGACCESSDIR} ; \
-	 cd ${WRKSRC} ;\
-	 ${TAR} cf - `${FIND} * ! \( -path win32\* -o -path doc\* \)` | \
-	 ( cd ${PGACCESSDIR}; ${TAR} xf - ) ; \
-	 ${CHOWN} -R 0:0 ${PGACCESSDIR}
+	@${MKDIR} ${STAGEDIR}${PGACCESSDIR} ; \
+	cd ${WRKSRC} ;\
+	${TAR} cf - `${FIND} * ! \( -path win32\* -o -path doc\* \)` | \
+	( cd ${STAGEDIR}${PGACCESSDIR}; ${TAR} xf - )
 .for targetfile in pgaccess pgmonitor
-	${INSTALL_SCRIPT} ${WRKDIR}/${targetfile}.sh ${PREFIX}/bin/${targetfile}
+	${INSTALL_SCRIPT} ${WRKDIR}/${targetfile}.sh ${STAGEDIR}${PREFIX}/bin/${targetfile}
 .endfor
-	@${MKDIR} ${DOCSDIR} ; \
-	 cd ${WRKSRC}/doc/html ;\
-	 ${TAR} cf - * | \
-	 ( cd ${DOCSDIR}; ${TAR} xf - ) ; \
-	 ${CHOWN} -R 0:0 ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR} ; \
+	cd ${WRKSRC}/doc/html ;\
+	${TAR} cf - * | \
+	( cd ${STAGEDIR}${DOCSDIR}; ${TAR} xf - )
 
 .include <bsd.port.mk>

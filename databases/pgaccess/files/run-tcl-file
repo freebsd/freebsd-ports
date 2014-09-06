@@ -1,6 +1,6 @@
 #!/bin/sh
 
-PATH_TO_WISH='%%LOCALBASE%%/bin/wish%%TCL_VERSION%%'
+PATH_TO_WISH='%%WISH%%'
 PGACCESS_HOME='%%PREFIX%%/share/postgresql/pgaccess'
 PGLIB='%%LOCALBASE%%/lib'
 PGPORT="${PGPORT:-5432}"
