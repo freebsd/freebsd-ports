@@ -22,13 +22,16 @@ USE_SDL=	mixer image
 USE_XORG=	xdmcp xau x11
 INSTALLS_ICONS=	yes
 
-PORTDOCS=	AUTHORS NEWS TODO
+PORTDOCS=	AUTHORS NEWS
 
 OPTIONS_DEFINE=	DOCS NLS
 OPTIONS_SUB=	yes
 
 NLS_CONFIGURE_ENABLE=	nls
 NLS_USES=	gettext:run
+
+# Do not use older versions
+PORTSCOUT=	skipv:2.~-1.2~beta1
 
 .include <bsd.port.options.mk>
 
