@@ -1,0 +1,5 @@
+QOF - Query Object Framework - library to add a query engine to C
+applications with generic XML backend.  A SQL database is not needed; any
+collection of C/C++ objects can act as tables.
+
+WWW: https://alioth.debian.org/projects/qof/

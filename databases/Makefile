@@ -784,6 +784,7 @@
     SUBDIR += pyspatialite
     SUBDIR += qdbm
     SUBDIR += qdbm-plus
+    SUBDIR += qof
     SUBDIR += qt4-ibase-plugin
     SUBDIR += qt4-mysql-plugin
     SUBDIR += qt4-odbc-plugin
