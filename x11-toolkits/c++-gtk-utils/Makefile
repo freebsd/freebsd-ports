@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	c++-gtk-utils
-PORTVERSION=	2.2.7
+PORTVERSION=	2.2.8
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	SF/cxx-gtk-utils/cxx-gtk-utils/${PORTVERSION}/
 DISTNAME=	c%2B%2B-gtk-utils-${PORTVERSION}
@@ -20,6 +20,8 @@ USE_LDCONFIG=	yes
 CONFIGURE_SCRIPT=	configure-gtk2
 CONFIGURE_ARGS+=	--docdir=${DOCSDIR}
 
+INSTALL_TARGET=	install-strip
+
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 PORTDOCS=	*
 
@@ -27,14 +29,7 @@ OPTIONS_DEFINE=	DEBUG DOCS
 
 DEBUG_CONFIGURE_ON=	--enable-debug
 
-.include <bsd.port.options.mk>
-
 post-configure:
 	@${REINPLACE_CMD} '/^SUBDIRS/ s|tests||' ${WRKSRC}/Makefile
-
-post-install:
-.if ! ${PORT_OPTIONS:MDEBUG}
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libcxx-gtk-utils-2-2.2.so.0.1.3
-.endif
 
 .include <bsd.port.mk>
