@@ -13,8 +13,9 @@ COMMENT=	Reliable event logging protocol library
 LIB_DEPENDS=	libgnutls.so:${PORTSDIR}/security/gnutls
 
 USES=		libtool pathfix pkgconfig
-USE_AUTOTOOLS=	automake aclocal
 USE_LDCONFIG=	yes
+GNU_CONFIGURE=	yes
+INSTALL_TARGET=	install-strip
 
 PLIST_FILES=	include/${PORTNAME}.h \
 		lib/${PORTNAME}.a \
@@ -27,10 +28,5 @@ PORT_VERBS=	relp
 post-patch:
 	@${REINPLACE_CMD} -e '/CFLAGS/s| -g||g' \
 		${WRKSRC}/configure
-	@${REINPLACE_CMD} -e 's|libdir)/pkgconfig|prefix)/libdata/pkgconfig|' \
-		${WRKSRC}/Makefile.am
-
-post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/librelp.so.0.1.0
 
 .include <bsd.port.mk>
