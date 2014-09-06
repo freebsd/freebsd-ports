@@ -1,0 +1,43 @@
+--- sys/unix/Makefile.doc.orig	2014-09-01 16:25:39.000000000 +0900
++++ sys/unix/Makefile.doc	2014-09-01 16:26:31.000000000 +0900
+@@ -40,16 +40,16 @@
+ 	latex Guidebook.tex
+ 
+ 
+-GAME	= nethack
+-MANDIR	= /usr/local/man/man6
++GAME	= %%HACKNAME%%
++MANDIR	= ${PREFIX}/man/man
+ MANEXT	= 6
+ 
+ # manual installation for most BSD-style systems
+-GAMEMANCREATE = cp nethack.6
+-LEVMANCREATE = cp lev_comp.6
+-DGNMANCREATE = cp dgn_comp.6
+-RCVRMANCREATE = cp recover.6
+-DLBMANCREATE = cp dlb.6
++GAMEMANCREATE = ${BSD_INSTALL_MAN} nethack.6
++LEVMANCREATE = ${BSD_INSTALL_MAN} lev_comp.6
++DGNMANCREATE = ${BSD_INSTALL_MAN} dgn_comp.6
++RCVRMANCREATE = ${BSD_INSTALL_MAN} recover.6
++DLBMANCREATE = ${BSD_INSTALL_MAN} dlb.6
+ # manual installation for most SYSV-style systems
+ # GAMEMANCREATE = nroff -man nethack.6 >
+ # LEVMANCREATE = nroff -man lev_comp.6 >
+@@ -58,11 +58,11 @@
+ # DLBMANCREATE = nroff -man dlb.6 >
+ 
+ manpages:
+-	-$(GAMEMANCREATE) $(MANDIR)/$(GAME).$(MANEXT)
+-	-$(LEVMANCREATE) $(MANDIR)/lev_comp.$(MANEXT)
+-	-$(DGNMANCREATE) $(MANDIR)/dgn_comp.$(MANEXT)
+-	-$(RCVRMANCREATE) $(MANDIR)/recover.$(MANEXT)
+-	-$(DLBMANCREATE) $(MANDIR)/dlb.$(MANEXT)
++	-$(GAMEMANCREATE) ${DESTDIR}$(MANDIR)$(MANEXT)/$(GAME).$(MANEXT)
++	-$(LEVMANCREATE) ${DESTDIR}$(MANDIR)$(MANEXT)/lev_comp.$(MANEXT)
++	-$(DGNMANCREATE) ${DESTDIR}$(MANDIR)$(MANEXT)/dgn_comp.$(MANEXT)
++	-$(RCVRMANCREATE) ${DESTDIR}$(MANDIR)$(MANEXT)/recover.$(MANEXT)
++	-$(DLBMANCREATE) ${DESTDIR}$(MANDIR)$(MANEXT)/dlb.$(MANEXT)
+ 
+ # manual creation for distribution
+ DISTRIB = Guidebook.txt nethack.txt lev_comp.txt dgn_comp.txt recover.txt dlb.txt
