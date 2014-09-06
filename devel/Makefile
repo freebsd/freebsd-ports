@@ -4536,6 +4536,7 @@
     SUBDIR += rubygem-turn
     SUBDIR += rubygem-typed-array
     SUBDIR += rubygem-tzinfo
+    SUBDIR += rubygem-tzinfo03
     SUBDIR += rubygem-unicode
     SUBDIR += rubygem-uuid
     SUBDIR += rubygem-uuidtools

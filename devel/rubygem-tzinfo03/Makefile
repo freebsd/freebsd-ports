@@ -2,9 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	tzinfo
-PORTVERSION=	1.2.2
+PORTVERSION=	0.3.41
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
+PKGNAMESUFFIX=	03
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Daylight-savings aware timezone support for Ruby
