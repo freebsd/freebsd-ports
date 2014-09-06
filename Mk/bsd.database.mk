@@ -540,9 +540,7 @@ FIREBIRD_VER=	${FIREBIRD_DEFAULT:S/.//}
 FIREBIRD_VER=	${USE_FIREBIRD}
 .endif
 
-.if ${FIREBIRD_VER} == "21"
-LIB_DEPENDS+=	libfbclient.so:${PORTSDIR}/databases/firebird21-client
-.elif ${FIREBIRD_VER} == "25"
+.if ${FIREBIRD_VER} == "25"
 LIB_DEPENDS+=	libfbclient.so:${PORTSDIR}/databases/firebird25-client
 .else
 IGNORE=		cannot install: unknown Firebird version: ${FIREBIRD_VER}
