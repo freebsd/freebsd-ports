@@ -213,8 +213,6 @@
     SUBDIR += php_doc
     SUBDIR += plain2
     SUBDIR += plan
-    SUBDIR += prime
-    SUBDIR += prime-dict
     SUBDIR += prn
     SUBDIR += py-mecab
     SUBDIR += py-tegaki
@@ -242,7 +240,6 @@
     SUBDIR += scim-honoka
     SUBDIR += scim-honoka-plugin-romkan
     SUBDIR += scim-honoka-plugin-wnn
-    SUBDIR += scim-prime
     SUBDIR += scim-skk
     SUBDIR += scim-tables
     SUBDIR += scim-tomoe
@@ -263,7 +260,6 @@
     SUBDIR += spamassassin
     SUBDIR += srd-fpw-package
     SUBDIR += suicavalue
-    SUBDIR += suikyo
     SUBDIR += t2ps
     SUBDIR += tdiary
     SUBDIR += tegaki-recognize
