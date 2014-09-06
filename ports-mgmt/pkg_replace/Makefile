@@ -2,41 +2,41 @@
 # $FreeBSD$
 
 PORTNAME=	pkg_replace
-PORTVERSION=	0.8.0
-PORTREVISION=	10
+PORTVERSION=	20140721
 CATEGORIES=	ports-mgmt
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_JP}
-MASTER_SITE_SUBDIR=	portutil/22116
-
-PATCH_SITES=	http://member.tokoha-u.ac.jp/~kdeguchi/download/
-PATCHFILES=	${PKGNAME}.patch
+MASTER_SITES=	http://member.tokoha-u.ac.jp/~kdeguchi/download/
 
 MAINTAINER=	kdeguchi@sz.tokoha-u.ac.jp
 COMMENT=	Utility for upgrading installed packages
 
-USES=	tar:bzip2
+USES=		tar:xz
 NO_ARCH=	yes
+NO_BUILD=	yes
 
-MAKE_ARGS=	PREFIX="${PREFIX}" \
-		PORTSDIR="${PORTSDIR}" PKG_DBDIR="${PKG_DBDIR}"
+PLIST_FILES=	sbin/pkg_replace \
+		man/man1/pkg_replace.1.gz \
+		"@sample %%ETCDIR%%/pkg_replace.conf.sample"
+PLIST_DIRSTRY=	%%ETCDIR%%
 
-OPTIONS_DEFINE=	PKGDB_FIX ZSH
-PKGDB_FIX_DESC=	Fixing tool of installed package dependencies
+SUB_FILES=	pkg-message
 
-OPTIONS_SUB=	yes
+PORTDOCS=	README README.ja
 
-.include <bsd.port.options.mk>
+OPTIONS_DEFINE=	DOCS
 
 post-patch:
-	@${REINPLACE_CMD} -e 's/pkg_replace/pkg_replace pkgdb_fix/' ${WRKSRC}/sbin/Makefile
-	@${REINPLACE_CMD} -e 's/mkdir -p $${FILESDIR}/@true/' ${WRKSRC}/share/zsh/Makefile
+	@${REINPLACE_CMD} -e 's|%%ETCDIR%%|${ETCDIR}|g;s|%%PKGCOMPATDIR%%|${PKGCOMPATDIR}|g' \
+		${WRKSRC}/${PORTNAME}.sh
 
-pre-install:
-	@${MKDIR} ${STAGEDIR}${PREFIX}/share/zsh/site-functions
-
-.if defined(WITH_PKGNG)
-post-install:
-	@${REINPLACE_CMD} -e '/pkgdb_fix/d' ${TMPPLIST}
-.endif
+do-install:
+	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME}.sh \
+		${STAGEDIR}${PREFIX}/sbin/${PORTNAME}
+	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 \
+		${STAGEDIR}${MANPREFIX}/man/man1/
+	@${MKDIR} ${STAGEDIR}${ETCDIR}
+	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.conf \
+		${STAGEDIR}${ETCDIR}/${PORTNAME}.conf.sample
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	(cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR})
 
 .include <bsd.port.mk>
