@@ -6993,3 +6993,4 @@ games/vdrift||2014-09-01|Not staged
 net-mgmt/zenpack-graphportlet||2014-09-01|Not staged
 sysutils/boxbackup||2014-09-01|Not staged
 www/webcalendar-devel|www/webcalendar|2014-09-04|Removed, use www/webcalendar instead
+devel/ruby-memoize||2014-09-06|Has expired: RubyForge shutdown May 15 2014
