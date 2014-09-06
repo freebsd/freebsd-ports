@@ -39,15 +39,12 @@ include/qof/sql_parser.h
 lib/libqof-backend-qsf.a
 lib/libqof-backend-qsf.so
 lib/libqof-backend-qsf.so.0
-lib/libqof-backend-qsf.so.0.0.7
 lib/libqof.a
 lib/libqof.so
 lib/libqof.so.1
-lib/libqof.so.1.0.10
 lib/libqofsql.a
 lib/libqofsql.so
 lib/libqofsql.so.1
-lib/libqofsql.so.1.0.1
 libdata/pkgconfig/qof-1.pc
 libdata/pkgconfig/qof.pc
 man/man1/gnotime-remote.1.gz
