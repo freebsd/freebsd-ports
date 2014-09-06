@@ -14,7 +14,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S/P/p/:S/.r/-RC/}
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	The Network Time Protocol Distribution
 
-FORBIDDEN=	CVE-2013-5211 / VU#348126
+FORBIDDEN=	CVE-2013-5211 / VU\#348126 - Please use net/ntp-devel, pending upstream stable branch update.
 LATEST_LINK=	${PORTNAME}
 
 USES=		libtool shebangfix
