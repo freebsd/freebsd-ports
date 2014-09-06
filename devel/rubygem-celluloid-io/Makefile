@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	celluloid-io
-PORTVERSION=	0.15.0
+PORTVERSION=	0.16.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -11,8 +11,8 @@ COMMENT=	Evented IO for Celluloid actors
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	rubygem-celluloid>=0.15.0:${PORTSDIR}/devel/rubygem-celluloid \
-		rubygem-nio4r>=0.5.0:${PORTSDIR}/devel/rubygem-nio4r
+RUN_DEPENDS=	rubygem-celluloid>=0.16.0:${PORTSDIR}/devel/rubygem-celluloid \
+		rubygem-nio4r>=1.0.0:${PORTSDIR}/devel/rubygem-nio4r
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
