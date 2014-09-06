@@ -20,9 +20,10 @@ OPTIONS_DEFINE=	DOCS MYDDAS
 OPTIONS_SUB=	yes
 MYDDAS_DESC=	Enable MySQL support
 
-DOCS_USE=		TEX=formats:build,dvipsk:build,texlive
+DOCS_USE=		TEX=formats:build,dvipsk:build
 DOCS_BUILD_DEPENDS=	${LOCALBASE}/bin/texi2html:${PORTSDIR}/textproc/texi2html \
 			${LOCALBASE}/bin/texi2pdf:${PORTSDIR}/print/texinfo
+DOCS_INSTALL_TARGET=	install install_doc
 
 MYDDAS_LIB_DEPENDS=		libiodbc.so:${PORTSDIR}/databases/libiodbc
 MYDDAS_CONFIGURE_ENABLE=	myddas myddas-top-level
@@ -32,7 +33,7 @@ STRIP=	#none
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--enable-max-performance --disable-clpbn-bp
-USES=	gmake
+USES=		gmake
 USE_GCC=	any
 
 EXTRACT_CMD=	${GZIP_CMD}
@@ -48,11 +49,6 @@ post-build:
 .if empty(PORT_OPTIONS:MDOCS)
 	# prevent the installation of docs files
 	${REINPLACE_CMD} -e '758,761d' ${WRKSRC}/Makefile
-.endif
-
-post-install:
-.if ${PORT_OPTIONS:MDOCS}
-	(cd ${WRKSRC} ; ${MAKE} DESTDIR=${STAGEDIR} install_docs)
 .endif
 
 .include <bsd.port.mk>
