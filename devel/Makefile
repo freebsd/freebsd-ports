@@ -390,7 +390,6 @@
     SUBDIR += eet
     SUBDIR += eggdbus
     SUBDIR += egypt
-    SUBDIR += eieio
     SUBDIR += eiffelstudio
     SUBDIR += eina
     SUBDIR += eio
@@ -4575,7 +4574,6 @@
     SUBDIR += sedsed
     SUBDIR += seed
     SUBDIR += seed3
-    SUBDIR += semantic
     SUBDIR += serdisplib
     SUBDIR += sfio
     SUBDIR += sfml
