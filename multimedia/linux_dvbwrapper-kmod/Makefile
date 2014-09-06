@@ -12,12 +12,9 @@ COMMENT=	Linux compatibility layer - DVB ioctl handler
 
 ONLY_FOR_ARCHS=	i386 amd64
 
-USES=		kmod
+USES=		kmod uidfix
 
-.include <bsd.port.pre.mk>
-
-PLIST_FILES+=	"@cwd /"
-PLIST_FILES+=	${KMODDIR:C,^/,,}/linux_dvbwrapper.ko
+PLIST_FILES=	${KMODDIR}/linux_dvbwrapper.ko
 
 CFLAGS+=	${DEBUG_FLAGS}
 
@@ -25,4 +22,4 @@ do-extract:
 	${MKDIR} ${WRKSRC}
 	${CP} ${FILESDIR}/Makefile ${FILESDIR}/*.[ch] ${WRKSRC}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
