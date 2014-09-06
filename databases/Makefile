@@ -54,8 +54,6 @@
     SUBDIR += erlang-mysql
     SUBDIR += evolution-data-server
     SUBDIR += fastdb
-    SUBDIR += firebird21-client
-    SUBDIR += firebird21-server
     SUBDIR += firebird25-client
     SUBDIR += firebird25-server
     SUBDIR += flamerobin
