@@ -12,9 +12,9 @@
 rcvar=trafficserver_enable
 name="trafficserver"
 trafficserver_enable=${trafficserver_enable:-"NO"}
-trafficserver_tm_pidfile=${trafficserver_tm_pidfile:-"/usr/local/var/trafficserver/manager.lock"}
-trafficserver_ts_pidfile=${trafficserver_ts_pidfile:-"/usr/local/var/trafficserver/server.lock"}
-pidfile="/var/run/traffic_cop.lock"
+trafficserver_tm_pidfile=${trafficserver_tm_pidfile:-"/var/run/trafficserver/manager.lock"}
+trafficserver_ts_pidfile=${trafficserver_ts_pidfile:-"/var/run/trafficserver/server.lock"}
+pidfile="/var/run/trafficserver/cop.lock"
 stop_cmd="trafficserver_stop"
 command=/usr/sbin/daemon
 command_args="-p ${pidfile} %%PREFIX%%/bin/traffic_cop"
