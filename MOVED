@@ -7015,3 +7015,5 @@ japanese/prime||2014-09-06|Not staged
 japanese/suikyo||2014-09-06|Not staged
 japanese/prime-dict||2014-09-06|Not staged
 japanese/scim-prime||2014-09-06|Cascade removal (japanese/prime dependency)
+graphics/povray31||2014-09-06|Not staged
+graphics/pvmpov||2014-09-06|Cascade removal (graphics/povray31)

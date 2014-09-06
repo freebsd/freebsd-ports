@@ -1,5 +1,0 @@
-PVMPOV lets you unleash the power of your network connected computers with
-POV-Ray. One master process distributes the rendering job over network and
-collects the result from the POV-Ray slaves.
-
-WWW: http://pvmpov.sourceforge.net/
