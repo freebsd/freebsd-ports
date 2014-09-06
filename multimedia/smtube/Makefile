@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	smtube
-PORTVERSION=	14.7.0
+PORTVERSION=	14.8.0
 CATEGORIES=	multimedia
 MASTER_SITES=	SF/smplayer/SMTube/${PORTVERSION}/
 
