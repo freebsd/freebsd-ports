@@ -14,7 +14,6 @@ COMMENT=	Perform consistency checks on DNS zone files
 GNU_CONFIGURE=	yes
 
 ALL_TARGET=	${PORTNAME}
-INSTALL_TARGET=	install
 
 BOOTFILE?=	/etc/namedb/named.boot
 CONFFILE?=	/etc/namedb/named.conf
@@ -27,5 +26,9 @@ post-patch:
 		s|/etc/named.conf|${CONFFILE}|' \
 			${WRKSRC}/${PORTNAME}.c \
 			${WRKSRC}/${PORTNAME}.8
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/nslint ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/nslint.8 ${STAGEDIR}${PREFIX}/man/man8
 
 .include <bsd.port.mk>
