@@ -32,7 +32,6 @@ USES=		tar:xz desktop-file-utils shared-mime-info
 USE_XORG=	x11 xext sm ice xft xrender
 REINPLACE_ARGS=	-i '' # no .bak files
 
-EXPLICIT_PACKAGE_DEPENDS=	yes
 WEBPLUGIN_SUBDIR=	${LOCALBASE}/lib/browser_plugins/symlinks/opera
 
 OPTIONS_DEFINE=	CUPS VIDEO GTK2 KDE4
