@@ -549,7 +549,6 @@
     SUBDIR += ocsigen
     SUBDIR += ojs2
     SUBDIR += ompload
-    SUBDIR += oops
     SUBDIR += opencart
     SUBDIR += openxmldir
     SUBDIR += opera
