@@ -1,17 +1,15 @@
-*** /dev/null	Wed Oct 13 00:00:00 1999
---- Makefile	Wed Oct 13 00:00:00 1999
-***************
-*** 0 ****
---- 1,12 ----
-+ all:
-+ 	bdftopcf knmhn12x.bdf > knmhn12x.pcf
-+ 	gzip -9 -nf knmhn12x.pcf
-+ install:
-+ 	if [ ! -d ${PREFIX}/${FONTSDIR} ] ; then \
-+ 	${MKDIR} ${PREFIX}/${FONTSDIR} ; fi
-+ 	${BSD_INSTALL_DATA} kaname-latin1.pcf.gz ${PREFIX}/${FONTSDIR}
-+ 	${BSD_INSTALL_DATA} knm12p.pcf.gz ${PREFIX}/${FONTSDIR}
-+ 	${BSD_INSTALL_DATA} knm12pb.pcf.gz ${PREFIX}/${FONTSDIR}
-+ 	${BSD_INSTALL_DATA} knmhn12x.pcf.gz ${PREFIX}/${FONTSDIR}
-+ 	${BSD_INSTALL_DATA} knmzn12x.pcf.gz ${PREFIX}/${FONTSDIR}
-+ 	${BSD_INSTALL_DATA} knmzn12xb.pcf.gz ${PREFIX}/${FONTSDIR}
+--- Makefile.orig	2014-05-08 22:08:32.000000000 +0900
++++ Makefile	2014-05-08 22:10:13.000000000 +0900
+@@ -0,0 +1,12 @@
++all:
++	bdftopcf knmhn12x.bdf > knmhn12x.pcf
++	gzip -9 -nf knmhn12x.pcf
++install:
++	if [ ! -d ${DESTDIR}${PREFIX}/${FONTSDIR} ] ; then \
++	${MKDIR} ${DESTDIR}${PREFIX}/${FONTSDIR} ; fi
++	${BSD_INSTALL_DATA} kaname-latin1.pcf.gz ${DESTDIR}${PREFIX}/${FONTSDIR}
++	${BSD_INSTALL_DATA} knm12p.pcf.gz ${DESTDIR}${PREFIX}/${FONTSDIR}
++	${BSD_INSTALL_DATA} knm12pb.pcf.gz ${DESTDIR}${PREFIX}/${FONTSDIR}
++	${BSD_INSTALL_DATA} knmhn12x.pcf.gz ${DESTDIR}${PREFIX}/${FONTSDIR}
++	${BSD_INSTALL_DATA} knmzn12x.pcf.gz ${DESTDIR}${PREFIX}/${FONTSDIR}
++	${BSD_INSTALL_DATA} knmzn12xb.pcf.gz ${DESTDIR}${PREFIX}/${FONTSDIR}
