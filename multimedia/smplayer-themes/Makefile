@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	smplayer-themes
-PORTVERSION=	20140607
+PORTVERSION=	14.9.0
 CATEGORIES=	multimedia audio kde
 MASTER_SITES=	SF/smplayer/SMPlayer-themes/${PORTVERSION}/
 
@@ -10,7 +10,7 @@ MAINTAINER=	nemysis@FreeBSD.org
 COMMENT=	Themes for SMPlayer
 
 USES=		tar:bzip2
-NO_BUILD=	yes
+USE_QT4=	rcc_build
 
 DATADIR=	${PREFIX}/share/smplayer
 
