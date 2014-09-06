@@ -25,7 +25,4 @@ MAKE_ENV+=	INST_INCDIR="${STAGEDIR}${PREFIX}/include"
 MAKE_ENV+=	INST_LIBDIR="${STAGEDIR}${PREFIX}/lib"
 MAKE_ENV+=	INST_MANDIR="${STAGEDIR}${PREFIX}/man"
 
-post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libgetline.so
-
 .include <bsd.port.mk>
