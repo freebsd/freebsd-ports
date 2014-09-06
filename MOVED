@@ -7007,3 +7007,7 @@ audio/freeswitch-music||2014-09-06|No purpose after unstaged freeswitch ports re
 devel/eieio||2014-09-06|Not staged
 devel/semantic||2014-09-06|Not staged
 editors/speedbar||2014-09-06|Not staged
+japanese/tk80||2014-09-06|Not staged
+japanese/tcl80||2014-09-06|Not staged
+japanese/tkhonyaku||2014-09-06|Cascade removal (ja-tcl/tk80 dependency)
+japanese/timidity++-tcltk||2014-09-06|Cascade removal (ja-tcl/tk80 dependency)

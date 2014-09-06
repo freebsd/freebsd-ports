@@ -265,7 +265,6 @@
     SUBDIR += suicavalue
     SUBDIR += suikyo
     SUBDIR += t2ps
-    SUBDIR += tcl80
     SUBDIR += tdiary
     SUBDIR += tegaki-recognize
     SUBDIR += tegaki-zinnia-japanese
@@ -274,9 +273,6 @@
     SUBDIR += tgif
     SUBDIR += tiarra
     SUBDIR += timidity++-slang
-    SUBDIR += timidity++-tcltk
-    SUBDIR += tk80
-    SUBDIR += tkhonyaku
     SUBDIR += today
     SUBDIR += tomoe
     SUBDIR += uim-anthy
