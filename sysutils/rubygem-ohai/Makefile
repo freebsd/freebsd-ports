@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ohai
-PORTVERSION=	7.2.0
+PORTVERSION=	7.2.4
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 
@@ -14,7 +14,7 @@ LICENSE=	APACHE20
 RUN_DEPENDS=	rubygem-ffi>=1.9.0:${PORTSDIR}/devel/rubygem-ffi \
 		rubygem-ffi-yajl>=1.0.1:${PORTSDIR}/devel/rubygem-ffi-yajl \
 		rubygem-ipaddress>=0:${PORTSDIR}/net/rubygem-ipaddress \
-		rubygem-mime-types>=1.16:${PORTSDIR}/misc/rubygem-mime-types \
+		rubygem-mime-types1>=1.16:${PORTSDIR}/misc/rubygem-mime-types1 \
 		rubygem-mixlib-cli>=0:${PORTSDIR}/devel/rubygem-mixlib-cli \
 		rubygem-mixlib-config>=0:${PORTSDIR}/devel/rubygem-mixlib-config \
 		rubygem-mixlib-log>=0:${PORTSDIR}/devel/rubygem-mixlib-log \
