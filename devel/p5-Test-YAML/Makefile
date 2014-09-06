@@ -18,6 +18,8 @@ RUN_DEPENDS=	p5-Test-Base>=0:${PORTSDIR}/devel/p5-Test-Base \
 		p5-Spiffy>=0:${PORTSDIR}/devel/p5-Spiffy \
 		${LOCALBASE}/bin/bash:${PORTSDIR}/shells/bash
 
+CONFLICTS=	p5-YAML-0.*
+
 USES=		perl5 shebangfix
 USE_PERL5=	configure
 
