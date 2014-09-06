@@ -9,19 +9,20 @@ echo Fetching GeoIP.dat and GeoIPv6.dat...
 _fetch() {
     url="$1"
     out="$2"
-    TEMPFILE="$(mktemp "%%DATADIR%%"/GeoIP.dat-XXXXXX)"
-    trap 'rc=$? ; set +e ; rm -f "'"$TEMPFILE"'" ; exit $rc' 0
-    if fetch -o - "$url" | gunzip >> "$TEMPFILE" ; then
-	chmod 444 "$TEMPFILE"
-	if ! mv -f "$TEMPFILE" "%%DATADIR%%"/"$2" ; then
-	    echo "Unable to replace %%DATADIR%%/$2"
-	    return 2
-	fi
+    TEMPDIR="$(mktemp -d /tmp/GeoIPupdate.XXXXXX)"
+    trap 'rc=$? ; set +e ; rm -rf "'"$TEMPDIR"'" ; exit $rc' 0
+    if fetch -o "$TEMPDIR/$out.gz" "$url"; then
+        gunzip "$TEMPDIR/$out.gz"
+        chmod 444 "$TEMPDIR/$out"
+        if ! mv -f "$TEMPDIR/$out" "%%DATADIR%%"/"$2"; then
+            echo "Unable to replace %%DATADIR%%/$2"
+            return 2
+        fi
     else
-	echo "$2 download failed"
-	return 1
+        echo "$2 download failed"
+        return 1
     fi
-    rm -f "$TEMPFILE"
+    rmdir "$TEMPDIR"
     trap - 0
     return 0
 }
