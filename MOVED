@@ -7004,3 +7004,6 @@ net/freeswitch-core-devel||2014-09-06|Not staged
 net/freeswitch-devel||2014-09-06|Not staged
 audio/freeswitch-sounds||2014-09-06|Not staged
 audio/freeswitch-music||2014-09-06|No purpose after unstaged freeswitch ports removed
+devel/eieio||2014-09-06|Not staged
+devel/semantic||2014-09-06|Not staged
+editors/speedbar||2014-09-06|Not staged

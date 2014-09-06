@@ -230,7 +230,6 @@
     SUBDIR += semi
     SUBDIR += slime
     SUBDIR += spe
-    SUBDIR += speedbar
     SUBDIR += ssam
     SUBDIR += ssed
     SUBDIR += sted
