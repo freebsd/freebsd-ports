@@ -1,0 +1,20 @@
+--- ./ext/files/puppetdb.orig	2014-09-01 19:00:53.880156353 +0000
++++ ./ext/files/puppetdb	2014-09-01 19:03:36.589145104 +0000
+@@ -6,7 +6,7 @@
+ 
+ # Display usage then exit
+ function usage {
+-  local libexecdir=/usr/libexec/puppetdb
++  local libexecdir=%%PREFIX%%/libexec/puppetdb
+   local files="${libexecdir}/puppetdb-*"
+ 
+   # Seems trying to match an asterisk is hard in bash
+@@ -48,7 +48,7 @@
+ function execsubcommand {
+   sub=$1
+   shift
+-  cmd="/usr/libexec/puppetdb/puppetdb-${sub}"
++  cmd="%%PREFIX%%/libexec/puppetdb/puppetdb-${sub}"
+ 
+   if [ -e ${cmd} ]; then
+     exec "${cmd}" "$@"

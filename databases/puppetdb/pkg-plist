@@ -1,0 +1,33 @@
+%%ETCDIR%%/logback.xml
+etc/newsyslog.conf.d/puppetdb
+libexec/puppetdb/puppetdb-anonymize
+libexec/puppetdb/puppetdb-export
+libexec/puppetdb/puppetdb-foreground
+libexec/puppetdb/puppetdb-import
+libexec/puppetdb/puppetdb-ssl-setup
+sbin/puppetdb-anonymize
+sbin/puppetdb-export
+sbin/puppetdb-foreground
+sbin/puppetdb-import
+sbin/puppetdb-ssl-setup
+sbin/puppetdb
+%%DATADIR%%/puppetdb.jar
+@group puppetdb
+@sample etc/puppetdb/conf.d/config.ini.sample
+@sample etc/puppetdb/conf.d/database.ini.sample
+@sample etc/puppetdb/conf.d/jetty.ini.sample
+@sample etc/puppetdb/conf.d/repl.ini.sample
+@group wheel
+@dirrmtry etc/puppetdb/conf.d
+@dirrmtry etc/puppetdb
+@dirrm libexec/puppetdb
+@dirrm %%DATADIR%%
+@cwd /
+@mode 0750
+@dirrmtry var/db/puppetdb/state
+@dirrmtry var/db/puppetdb/db
+@dirrmtry var/db/puppetdb/mq
+@dirrmtry var/db/puppetdb
+@owner puppetdb
+@dirrmtry var/log/puppetdb
+@cwd %%RESETPREFIX%%
