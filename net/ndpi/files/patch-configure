@@ -1,18 +1,18 @@
 --- configure.orig	2014-08-16 00:57:46.212599224 +0600
 +++ configure	2014-08-16 00:58:17.728596731 +0600
-@@ -12619,13 +12619,13 @@
+@@ -12620,13 +12620,8 @@
  
  
  
+-if test -d ".svn"; then :
 -SVN_RELEASE=`svn info . | grep "^Revision"|cut -d " " -f 2`
-+SVN_RELEASE="2014-08-13 21:10:03 +0600 (Wed, 13 Aug 2014)"
- 
- cat >>confdefs.h <<_ACEOF
- #define NDPI_SVN_RELEASE "r${SVN_RELEASE}"
- _ACEOF
- 
 -SVN_DATE=`svn info . | grep "^Last Changed Date"|cut -d " " -f 4-`
-+SVN_DATE="8122"
+-else
+-SVN_RELEASE="${PACKAGE_VERSION}"
+-SVN_DATE=`date`
+-fi
++SVN_RELEASE="8210"
++SVN_DATE="2014-09-06 23:19:42 +0600 (Sat, 06 Sep 2014)"
+ 
  
  cat >>confdefs.h <<_ACEOF
- #define NDPI_SVN_DATE "${SVN_DATE}"
