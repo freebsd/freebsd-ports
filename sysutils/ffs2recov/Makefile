@@ -9,7 +9,7 @@ MASTER_SITES=	http://www.exit.com/Archives/FreeBSD/
 MAINTAINER=	sten@blinkenlights.nl
 COMMENT=	Utility to recover UFS2 filesystems
 
-USES=	tar:bzip2
+USES=		tar:bzip2 uidfix
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 PLIST_FILES=	sbin/ffs2recov \
