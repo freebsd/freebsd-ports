@@ -14,6 +14,6 @@ COMMENT=	The original BSD rain program, ported from NetBSD
 PLIST_FILES=	bin/rain \
 		man/man6/rain.6.gz
 
-USES=	tar:bzip2
+USES=		tar:bzip2 uidfix
 
 .include <bsd.port.mk>
