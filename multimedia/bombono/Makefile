@@ -8,7 +8,7 @@ CATEGORIES=	multimedia
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-dvd/${PORTVERSION:R}
 DISTNAME=	${PORTNAME}-dvd-${PORTVERSION}
 
-MAINTAINER=	pawel@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	DVD authoring program
 
 BUILD_DEPENDS=	gm:${PORTSDIR}/graphics/GraphicsMagick
