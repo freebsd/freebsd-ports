@@ -1,36 +1,126 @@
---- ./doc/Makefile.in.orig	Wed Jun 28 02:17:33 2000
-+++ ./doc/Makefile.in	Sun Nov 14 16:04:44 2004
-@@ -26,21 +26,21 @@
- # Directory in which to install man pages
- mandir = @mandir@
+--- doc/Makefile.in.orig	2012-12-19 17:02:26 UTC
++++ doc/Makefile.in
+@@ -33,7 +33,7 @@ PRE_UNINSTALL = :
+ POST_UNINSTALL = :
+ subdir = doc
+ DIST_COMMON = $(srcdir)/Makefile.am $(srcdir)/Makefile.in \
+-	$(srcdir)/module.1.in $(srcdir)/modulefile.4.in
++	$(srcdir)/module.1.in $(srcdir)/modulefile.5.in
+ ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
+ am__aclocal_m4_deps = $(top_srcdir)/config/emtcl.m4 \
+ 	$(top_srcdir)/config/tcl.m4 $(top_srcdir)/acinclude.m4 \
+@@ -42,7 +42,7 @@ am__configure_deps = $(am__aclocal_m4_de
+ 	$(ACLOCAL_M4)
+ mkinstalldirs = $(install_sh) -d
+ CONFIG_HEADER = $(top_builddir)/config.h
+-CONFIG_CLEAN_FILES = module.1 modulefile.4
++CONFIG_CLEAN_FILES = module.1 modulefile.5
+ CONFIG_CLEAN_VPATH_FILES =
+ SOURCES =
+ DIST_SOURCES =
+@@ -74,10 +74,10 @@ am__uninstall_files_from_dir = { \
+          $(am__cd) "$$dir" && rm -f $$files; }; \
+   }
  man1dir = $(mandir)/man1
+-am__installdirs = "$(DESTDIR)$(man1dir)" "$(DESTDIR)$(man4dir)"
 -man4dir = $(mandir)/man4
++am__installdirs = "$(DESTDIR)$(man1dir)" "$(DESTDIR)$(man5dir)"
 +man5dir = $(mandir)/man5
+ NROFF = nroff
+-MANS = $(man1_MANS) $(man4_MANS)
++MANS = $(man1_MANS) $(man5_MANS)
+ DEJATOOL = $(PACKAGE)
+ RUNTESTDEFAULTFLAGS = --tool $$tool --srcdir $$srcdir
+ EXPECT = expect
+@@ -199,7 +199,7 @@ top_build_prefix = @top_build_prefix@
+ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
+ man1_MANS = module.1
+-man4_MANS = modulefile.4
++man5_MANS = modulefile.5
+ all: all-am
  
- SHELL = /bin/sh
+ .SUFFIXES:
+@@ -235,11 +235,11 @@ $(ACLOCAL_M4):  $(am__aclocal_m4_deps)
+ $(am__aclocal_m4_deps):
+ module.1: $(top_builddir)/config.status $(srcdir)/module.1.in
+ 	cd $(top_builddir) && $(SHELL) ./config.status $(subdir)/$@
+-modulefile.4: $(top_builddir)/config.status $(srcdir)/modulefile.4.in
++modulefile.5: $(top_builddir)/config.status $(srcdir)/modulefile.5.in
+ 	cd $(top_builddir) && $(SHELL) ./config.status $(subdir)/$@
+ install-man1: $(man1_MANS)
+ 	@$(NORMAL_INSTALL)
+-	test -z "$(man1dir)" || $(MKDIR_P) "$(DESTDIR)$(man1dir)"
++	test -z "$(DESTDIR)$(man1dir)" || $(MKDIR_P) "$(DESTDIR)$(man1dir)"
+ 	@list='$(man1_MANS)'; test -n "$(man1dir)" || exit 0; \
+ 	{ for i in $$list; do echo "$$i"; done; \
+ 	} | while read p; do \
+@@ -269,32 +269,32 @@ uninstall-man1:
+ 	} | sed -e 's,.*/,,;h;s,.*\.,,;s,^[^1][0-9a-z]*$$,1,;x' \
+ 	      -e 's,\.[0-9a-z]*$$,,;$(transform);G;s,\n,.,'`; \
+ 	dir='$(DESTDIR)$(man1dir)'; $(am__uninstall_files_from_dir)
+-install-man4: $(man4_MANS)
++install-man5: $(man5_MANS)
+ 	@$(NORMAL_INSTALL)
+-	test -z "$(man4dir)" || $(MKDIR_P) "$(DESTDIR)$(man4dir)"
+-	@list='$(man4_MANS)'; test -n "$(man4dir)" || exit 0; \
++	test -z "$(DESTDIR)$(man5dir)" || $(MKDIR_P) "$(DESTDIR)$(man5dir)"
++	@list='$(man5_MANS)'; test -n "$(man5dir)" || exit 0; \
+ 	{ for i in $$list; do echo "$$i"; done; \
+ 	} | while read p; do \
+ 	  if test -f $$p; then d=; else d="$(srcdir)/"; fi; \
+ 	  echo "$$d$$p"; echo "$$p"; \
+ 	done | \
+-	sed -e 'n;s,.*/,,;p;h;s,.*\.,,;s,^[^4][0-9a-z]*$$,4,;x' \
++	sed -e 'n;s,.*/,,;p;h;s,.*\.,,;s,^[^5][0-9a-z]*$$,5,;x' \
+ 	      -e 's,\.[0-9a-z]*$$,,;$(transform);G;s,\n,.,' | \
+ 	sed 'N;N;s,\n, ,g' | { \
+ 	list=; while read file base inst; do \
+ 	  if test "$$base" = "$$inst"; then list="$$list $$file"; else \
+-	    echo " $(INSTALL_DATA) '$$file' '$(DESTDIR)$(man4dir)/$$inst'"; \
+-	    $(INSTALL_DATA) "$$file" "$(DESTDIR)$(man4dir)/$$inst" || exit $$?; \
++	    echo " $(INSTALL_DATA) '$$file' '$(DESTDIR)$(man5dir)/$$inst'"; \
++	    $(INSTALL_DATA) "$$file" "$(DESTDIR)$(man5dir)/$$inst" || exit $$?; \
+ 	  fi; \
+ 	done; \
+ 	for i in $$list; do echo "$$i"; done | $(am__base_list) | \
+ 	while read files; do \
+ 	  test -z "$$files" || { \
+-	    echo " $(INSTALL_DATA) $$files '$(DESTDIR)$(man4dir)'"; \
+-	    $(INSTALL_DATA) $$files "$(DESTDIR)$(man4dir)" || exit $$?; }; \
++	    echo " $(INSTALL_DATA) $$files '$(DESTDIR)$(man5dir)'"; \
++	    $(INSTALL_DATA) $$files "$(DESTDIR)$(man5dir)" || exit $$?; }; \
+ 	done; }
  
- #### End of system configuration section. ####
+-uninstall-man4:
++uninstall-man5:
+ 	@$(NORMAL_UNINSTALL)
+ 	@list='$(man4_MANS)'; test -n "$(man4dir)" || exit 0; \
+ 	files=`{ for i in $$list; do echo "$$i"; done; \
+@@ -395,7 +395,7 @@ check-am: all-am
+ check: check-am
+ all-am: Makefile $(MANS)
+ installdirs:
+-	for dir in "$(DESTDIR)$(man1dir)" "$(DESTDIR)$(man4dir)"; do \
++	for dir in "$(DESTDIR)$(man1dir)" "$(DESTDIR)$(man5dir)"; do \
+ 	  test -z "$$dir" || $(MKDIR_P) "$$dir"; \
+ 	done
+ install: install-am
+@@ -464,7 +464,7 @@ install-info: install-info-am
  
--MAN_FILES= module.1 modulefile.4
-+MAN_FILES= module.1 modulefile.5
+ install-info-am:
  
--MAKEDIRS=  $(man1dir) $(man4dir)
-+MAKEDIRS=  $(man1dir) $(man5dir)
+-install-man: install-man1 install-man4
++install-man: install-man1 install-man5
  
- all:
+ install-pdf: install-pdf-am
  
- install: all install-dirs
- 	$(INSTALL_DATA) module.1     $(man1dir)
--	$(INSTALL_DATA) modulefile.4 $(man4dir)
-+	$(INSTALL_DATA) modulefile.5 $(man5dir)
- 
- install-dirs:
- 	@for i in $(MAKEDIRS) ; do \
-@@ -63,6 +63,6 @@
- mostlyclean: clean
- 
- distclean:	clean
--	rm -f module.1 modulefile.4
-+	rm -f module.1 modulefile.5
- 
- realclean:	distclean
+@@ -504,7 +504,7 @@ uninstall-man: uninstall-man1 uninstall-
+ 	install-data install-data-am install-dvi install-dvi-am \
+ 	install-exec install-exec-am install-html install-html-am \
+ 	install-info install-info-am install-man install-man1 \
+-	install-man4 install-pdf install-pdf-am install-ps \
++	install-man5 install-pdf install-pdf-am install-ps \
+ 	install-ps-am install-strip installcheck installcheck-am \
+ 	installdirs maintainer-clean maintainer-clean-generic \
+ 	mostlyclean mostlyclean-generic pdf pdf-am ps ps-am uninstall \
