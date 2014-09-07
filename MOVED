@@ -7040,3 +7040,5 @@ net/ns||2014-09-07|Cascade removal (lang/otcl)
 databases/frontbase||2014-09-07|Not staged
 databases/p5-DBD-FrontBase||2014-09-07|Cascade removal (databases/frontbase)
 databases/ruby-frontbase||2014-09-07|Cascade removal (databases/frontbase)
+devel/flex-sdk2||2014-09-07|Not staged
+devel/flex_compiler_shell||2014-09-07|Cascade removal (devel/flex-sdk2)
