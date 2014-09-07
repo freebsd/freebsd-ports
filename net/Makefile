@@ -280,7 +280,6 @@
     SUBDIR += libcmis
     SUBDIR += libdnet
     SUBDIR += libexosip2
-    SUBDIR += libexosip2-legacy
     SUBDIR += libfb
     SUBDIR += libfixbuf
     SUBDIR += libgnetwork
@@ -303,7 +302,6 @@
     SUBDIR += liboauth
     SUBDIR += libopennet
     SUBDIR += liboping
-    SUBDIR += libosip
     SUBDIR += libosip2
     SUBDIR += libpcap
     SUBDIR += libpcapnav
