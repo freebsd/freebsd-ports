@@ -1,5 +1,0 @@
-bin/ipmagic
-bin/magic
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/HOWTO
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
