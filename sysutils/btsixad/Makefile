@@ -12,6 +12,8 @@ LICENSE=	BSD2CLAUSE
 
 LIB_DEPENDS=	libcuse4bsd.so:${PORTSDIR}/multimedia/cuse4bsd-kmod
 
+USES=		uidfix
+
 PLIST_FILES=	sbin/btsixad \
 		etc/rc.d/btsixad \
 		etc/devd/btsixad.conf \
