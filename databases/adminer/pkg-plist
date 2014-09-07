@@ -1,3 +1,6 @@
+@owner %%WWWOWN%%
+@group %%WWWGRP%%
+@mode 0755
 %%FULL%%%%WWWDIR%%/adminer/call.inc.php
 %%FULL%%%%WWWDIR%%/adminer/create.inc.php
 %%FULL%%%%WWWDIR%%/adminer/database.inc.php
@@ -228,3 +231,6 @@
 %%FULL%%@dirrm %%WWWDIR%%/plugins
 %%FULL%%@dirrm %%WWWDIR%%/tests
 @dirrm %%WWWDIR%%
+@owner root
+@group wheel
+@mode
