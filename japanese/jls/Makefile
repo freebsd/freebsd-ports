@@ -15,6 +15,7 @@ MAINTAINER=	kazami@angels.vg
 COMMENT=	Japanized ls
 
 CONFLICTS=	sleuthkit-[0-9]*
+USES=		uidfix
 
 PLIST_FILES=	bin/jls \
 		man/man1/jls.1.gz
