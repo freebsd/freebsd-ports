@@ -142,6 +142,7 @@ bin/mp2bug
 %%PERL5_MAN3%%/ModPerl::RegistryLoader.3.gz
 %%PERL5_MAN3%%/ModPerl::RegistryPrefork.3.gz
 %%PERL5_MAN3%%/ModPerl::Util.3.gz
+%%AP24%%%%PERL5_MAN3%%/MyTest::Util.3.gz
 %%PERL5_MAN3%%/mod_perl2.3.gz
 %%SITE_PERL%%/%%PERL_ARCH%%/APR.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/APR/Base64.pm
@@ -222,6 +223,7 @@ bin/mp2bug
 %%SITE_PERL%%/%%PERL_ARCH%%/Apache2/PerlSections.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Apache2/PerlSections/Dump.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Apache2/Process.pm
+%%AP22%%%%AP24%%%%SITE_PERL%%/%%PERL_ARCH%%/Apache2/Provider.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Apache2/Reload.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Apache2/RequestIO.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Apache2/RequestRec.pm
@@ -250,6 +252,8 @@ bin/mp2bug
 %%SITE_PERL%%/%%PERL_ARCH%%/ModPerl/Const.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/ModPerl/FunctionMap.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/ModPerl/Global.pm
+%%AP24%%%%SITE_PERL%%/%%PERL_ARCH%%/ModPerl/InterpPool.pm
+%%AP24%%%%SITE_PERL%%/%%PERL_ARCH%%/ModPerl/Interpreter.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/ModPerl/MM.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/ModPerl/Manifest.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/ModPerl/MapUtil.pm
@@ -265,9 +269,12 @@ bin/mp2bug
 %%SITE_PERL%%/%%PERL_ARCH%%/ModPerl/StructureMap.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/ModPerl/TestReport.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/ModPerl/TestRun.pm
+%%AP24%%%%SITE_PERL%%/%%PERL_ARCH%%/ModPerl/TiPool.pm
+%%AP24%%%%SITE_PERL%%/%%PERL_ARCH%%/ModPerl/TiPoolConfig.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/ModPerl/TypeMap.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/ModPerl/Util.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/ModPerl/WrapXS.pm
+%%AP24%%%%SITE_PERL%%/%%PERL_ARCH%%/MyTest/Util.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/APR/APR.so
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/APR/Base64/Base64.so
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/APR/Brigade/Brigade.so
@@ -307,6 +314,7 @@ bin/mp2bug
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache2/MPM/MPM.so
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache2/Module/Module.so
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache2/Process/Process.so
+%%AP22%%%%AP24%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache2/Provider/Provider.so
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache2/RequestIO/RequestIO.so
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache2/RequestRec/RequestRec.so
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache2/RequestUtil/RequestUtil.so
@@ -320,6 +328,10 @@ bin/mp2bug
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache2/typemap
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/ModPerl/Const/Const.so
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/ModPerl/Global/Global.so
+%%AP24%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/ModPerl/InterpPool/InterpPool.so
+%%AP24%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/ModPerl/Interpreter/Interpreter.so
+%%AP24%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/ModPerl/TiPool/TiPool.so
+%%AP24%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/ModPerl/TiPoolConfig/TiPoolConfig.so
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/ModPerl/Util/Util.so
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/mod_perl2/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/mod_perl2.pm
@@ -336,6 +348,7 @@ bin/mp2bug
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Apache2
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Bundle
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/ModPerl
+%%AP24%%@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/MyTest
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/APR/Base64
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/APR/Brigade
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/APR/Bucket
@@ -375,6 +388,7 @@ bin/mp2bug
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache2/MPM
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache2/Module
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache2/Process
+%%AP22%%%%AP24%%@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache2/Provider
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache2/RequestIO
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache2/RequestRec
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache2/RequestUtil
@@ -388,6 +402,10 @@ bin/mp2bug
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache2
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/ModPerl/Const
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/ModPerl/Global
+%%AP24%%@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/ModPerl/InterpPool
+%%AP24%%@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/ModPerl/Interpreter
+%%AP24%%@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/ModPerl/TiPool
+%%AP24%%@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/ModPerl/TiPoolConfig
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/ModPerl/Util
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/ModPerl
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/mod_perl2
