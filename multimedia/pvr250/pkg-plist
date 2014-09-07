@@ -1,3 +1,0 @@
-@unexec rm %%MODULESDIR%%/cxm.ko
-@unexec rm %%MODULESDIR%%/cxm_iic.ko
-bin/pvr250-setchannel

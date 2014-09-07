@@ -111,8 +111,6 @@ GoogleEarthLinux-*	astro/google-earth	Not really sure about the redistribution t
 gorky17_demo*		games/linux-gorky17-demo	Redistribution is limited, see license
 groupoffice-com-*	www/groupoffice		Free for personal use only
 gsview*			print/gsview		Can only be distributed for free
-hcwPVRP2.sys		multimedia/pvr250	Driver is part of the CD-ROM distribution coming with the TV card
-hcwPVRP2.sys		multimedia/pvrxxx	Driver is part of the CD-ROM distribution coming with the TV card
 hdb_demo*		games/linux-hdb-demo	Redistribution is limited, see license
 HeroesOfMightAndMagic-*	games/HeroesOfMightAndMagic	Software is commercial
 homard-*		french/homard		The free downloading of HOMARD software is only allowed for coupling with Code_Aster. For any other use, a license agreement is requested. Please contact HOMARD project: <homard@edf.fr>.
@@ -173,7 +171,6 @@ mikachan-ttfonts/ver*.*	japanese/mikachan-ttfonts Do not sell distfile
 mindfocus-*		games/mindfocus		Contains commercial character data
 mindterm-*		security/mindterm-binary Do not sell for profit
 molden*			biology/molden		Free for academic, non-profit usage; do not redistribute source and executable
-msql-*			databases/msql		Not free for commercial organizations
 ncftpd-*		ftp/ncftpd		30 day evaluation license
 nero2_linux_*		games/linux-nerogame	Freeware, but license terms are unclear
 NeroDigitalAudio.zip	audio/linux-neroaaccodec Redistribution forbidden

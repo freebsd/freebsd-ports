@@ -1142,7 +1142,6 @@
     SUBDIR += pugixml
     SUBDIR += pure-csv
     SUBDIR += pure-xml
-    SUBDIR += py-4suite-xml
     SUBDIR += py-Chameleon
     SUBDIR += py-MarkupSafe
     SUBDIR += py-Tempita
