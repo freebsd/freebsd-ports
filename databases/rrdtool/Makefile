@@ -123,6 +123,8 @@ post-install:
 	@${ECHO_MSG} "# See ${EXAMPLESDIR} for some demonstration code        #"
 	@${ECHO_MSG} "############################################################################"
 .endif
+.if ${PORT_OPTIONS:MPERL_MODULE}
 	${STRIP_CMD} ${STAGEDIR}${SITE_PERL}/${PERL_ARCH}/auto/RRDs/RRDs.so
+.endif
 
 .include <bsd.port.mk>
