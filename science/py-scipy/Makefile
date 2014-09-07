@@ -3,16 +3,16 @@
 
 PORTNAME=	scipy
 PORTVERSION=	0.14.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	science python
 MASTER_SITES=	http://docs.scipy.org/doc/${DISTNAME}/:doc \
 		SF:source
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:source \
-		scipy-ref.pdf:doc
+		scipy-ref-${PORTVERSION}.pdf:doc
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
-MAINTAINER=	wen@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Scientific tools for Python
 
 LICENSE=	BSD3CLAUSE
@@ -31,7 +31,7 @@ OPTIONS_DEFAULT=SUITESPARSE
 ATLAS_DESC=	Use optimized blas library
 SUITESPARSE_DESC=	Use AMD and UMFPACK in SuiteSparse
 
-PORTDOCS=	scipy-ref.pdf
+PORTDOCS=	scipy-ref-${PORTVERSION}.pdf
 
 post-patch:
 	@${GREP} -lR "malloc\.h" ${WRKSRC} | ${XARGS} ${REINPLACE_CMD} \
@@ -58,12 +58,12 @@ PYDISTUTILS_CONFIGUREARGS+=	--fcompiler=gnu95
 PYDISTUTILS_BUILDARGS+=	--fcompiler=gnu95
 
 post-extract:
-	@${CP} ${DISTDIR}/scipy-ref.pdf ${WRKDIR}
+	@${CP} ${DISTDIR}/scipy-ref-${PORTVERSION}.pdf ${WRKDIR}
 
 post-install:
 .if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${WRKDIR}/scipy-ref.pdf ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKDIR}/scipy-ref-${PORTVERSION}.pdf ${STAGEDIR}${DOCSDIR}
 .endif
 
 .include <bsd.port.post.mk>
