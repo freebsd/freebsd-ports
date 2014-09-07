@@ -85,7 +85,6 @@
     SUBDIR += davmail
     SUBDIR += dbmail
     SUBDIR += dbmail22
-    SUBDIR += dcc-dccd
     SUBDIR += deforaos-mailer
     SUBDIR += delatt
     SUBDIR += dk-milter
