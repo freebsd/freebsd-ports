@@ -6,14 +6,13 @@ PORTVERSION=	1.0.4
 CATEGORIES=	devel
 MASTER_SITES=	http://people.freebsd.org/~alfred/sources/replay/
 DISTNAME=	replay-${PORTVERSION}
-USES=	tar:bzip2
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Program that helps you fix a build interactively
 
-PLIST_FILES=	bin/replay
+USES=		tar:bzip2 uidfix
+MAKE_ENV=	NO_MAN=yes
 
-post-patch:
-	@${REINPLACE_CMD} -e "s/NOMAN/NO_MAN/" ${WRKSRC}/Makefile
+PLIST_FILES=	bin/replay
 
 .include <bsd.port.mk>
