@@ -13,6 +13,7 @@ COMMENT=	Userland driver for Samsung WiMAX modems
 
 LICENSE=	GPLv2
 
+USES=		uidfix
 USE_RC_SUBR=	lvwimax
 
 PLIST_FILES=	etc/devd/lvwimax.conf sbin/lvwimax
