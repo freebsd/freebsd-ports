@@ -14,7 +14,7 @@ COMMENT=	Logs a report when a child process crashes
 
 LICENSE=	APACHE20
 
-MANUAL_PACKAGE_BUILD=	yes
+MANUAL_PACKAGE_BUILD=	requires apache WITH_EXCEPTION_HOOK=yes
 
 USE_APACHE=	22
 AP_FAST_BUILD=	yes
