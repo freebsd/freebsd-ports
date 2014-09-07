@@ -21,7 +21,7 @@ LIB_DEPENDS=	libcrack.so:${PORTSDIR}/security/cracklib
 MAKE_ARGS=	-DWITH_CRACKLIB
 .endif
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 
 DOCS=		APG_TIPS pronun.txt rfc0972.txt rfc1750.txt
 
