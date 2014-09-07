@@ -4,7 +4,7 @@ import javax.swing.UIManager;
 import javax.swing.Icon;
 import java.awt.EventQueue;
 
-public class Notifer extends JFrame{
+public class Notifier extends JFrame{
     
     //Using a standard Java icon
     private Icon optionIcon = UIManager.getIcon("FileView.computerIcon");
@@ -16,13 +16,13 @@ public class Notifer extends JFrame{
          public void run()
          {
              //create GUI frame
-             new Notifer().setVisible(true);          
+             new Notifier().setVisible(true);          
          }
      });
               
     }
     
-    public Notifer()
+    public Notifier()
     {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         //setTitle("Simple Dialog Box Example");
@@ -31,7 +31,7 @@ public class Notifer extends JFrame{
         setLocationRelativeTo(null); 
         
         // Show our warning to first time users
-        JOptionPane.showMessageDialog(this, "After the first time logging in with a new user, you will need to close the Minecraft Launcher and restart before the game will run." 
+        JOptionPane.showMessageDialog(this, "Before starting MineCraft, be sure to open your Profile and set the Java Executable to: '%%PREFIX%%/share/minecraft-client/minecraft-runtime'" 
                 ,"Important Notification", JOptionPane.PLAIN_MESSAGE);
 
 	System.exit(0);
