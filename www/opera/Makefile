@@ -68,6 +68,8 @@ OPERA_ARCH=	${ARCH:S,i386,intel,}
 
 .if ${OSVERSION} >= 1000054
 BUILD_DEPENDS+=	${LOCALBASE}/lib/compat/libstdc++.so.6:${PORTSDIR}/misc/compat9x
+.else
+PLIST_SUB+=	LIBSTDC="@comment "
 .endif
 
 post-extract:
@@ -97,7 +99,9 @@ do-configure:
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/opera ${STAGEDIR}${PREFIX}/bin/
 	${TAR} -C ${WRKSRC} -cf - lib man share | ${TAR} -C ${STAGEDIR}${PREFIX} -xf -
+.if ${OSVERSION} >= 1000054
 	${INSTALL_LIB} ${WRKSRC}/libstdc++.so.6 ${STAGEDIR}${PREFIX}/lib/opera
+.endif
 	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/libmap.d
 	${INSTALL_DATA} ${FILESDIR}/libmap.conf \
 		${STAGEDIR}${PREFIX}/etc/libmap.d/opera.conf
