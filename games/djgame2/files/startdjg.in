@@ -1,0 +1,13 @@
+#! /bin/sh
+
+DATADIR=%%DATADIR%%
+if [ ! -d ~/djgame2 ]; then
+	mkdir ~/djgame2
+	mkdir ~/djgame2/chat
+	cp -rp ${DATADIR}/* ~/djgame2
+fi
+
+cd ~/djgame2
+
+export LD_LIBRARY_PATH=./
+./Hall
