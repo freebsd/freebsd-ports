@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	spiped
-PORTVERSION=	1.4.0
+PORTVERSION=	1.4.1
 CATEGORIES=	sysutils security
 MASTER_SITES=	http://www.tarsnap.com/spiped/
 EXTRACT_SUFX=	.tgz
