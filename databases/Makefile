@@ -113,7 +113,6 @@
     SUBDIR += jrobin
     SUBDIR += jrrd
     SUBDIR += kbibtex
-    SUBDIR += kinterbasdb
     SUBDIR += kyotocabinet
     SUBDIR += kyototycoon
     SUBDIR += ldb
@@ -176,7 +175,6 @@
     SUBDIR += monetdb
     SUBDIR += mongodb
     SUBDIR += mrtg-mysql-load
-    SUBDIR += msql
     SUBDIR += mtop
     SUBDIR += my2cego
     SUBDIR += mydbf2mysql
