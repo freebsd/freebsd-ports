@@ -189,7 +189,6 @@
     SUBDIR += defendguin
     SUBDIR += diameter
     SUBDIR += digger-vgl
-    SUBDIR += djgame2
     SUBDIR += dmjava
     SUBDIR += dodgindiamond2
     SUBDIR += domination
