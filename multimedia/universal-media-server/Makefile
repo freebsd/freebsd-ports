@@ -3,22 +3,26 @@
 
 PORTNAME=	universal-media-server
 PORTVERSION=	4.0.0
+PORTREVISION=	1
 CATEGORIES=	multimedia java
 MASTER_SITES=	SF/unimediaserver/Official%20Releases/Linux
 DISTNAME=	UMS-${PORTVERSION}
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	dreamcat4@gmail.com
 COMMENT=	Universal Media Server
 
 LICENSE=	GPLv2
 
+BROKEN=		RC script broken, especially prestart target
+
+USES=		tar:tgz
 USE_JAVA=	yes
 JAVA_VERSION=	1.7+
 JAVA_VENDOR=	openjdk
 JAVA_RUN=	true
 
-OPTIONS_DEFINE=		MEDIAINFO FLAC DCRAW TSMUXER FFMPEG MPLAYER VLC MENCODER DOCS
+OPTIONS_DEFINE=		MEDIAINFO FLAC DCRAW TSMUXER FFMPEG MPLAYER VLC \
+			MENCODER DOCS
 OPTIONS_DEFAULT=	MEDIAINFO FLAC DCRAW
 
 MEDIAINFO_DESC=		Metadata information about video & audio files
@@ -54,29 +58,32 @@ UMS_PROFILE_PATH=	/var/db/${PORTNAME}
 UMS_LOG_DIR=		/var/log/${PORTNAME}
 UMS_PID_DIR=		/var/run/${PORTNAME}
 
+PLIST_SUB=	RCNAME=${USE_RC_SUBR} JAVA_HOME=${JAVA_HOME} JAVA=${JAVA}
 SUB_LIST=	RCNAME=${USE_RC_SUBR} JAVA_HOME=${JAVA_HOME} JAVA=${JAVA} \
-		UMS_PROFILE_PATH=${UMS_PROFILE_PATH}
-PLIST_SUB=	${SUB_LIST}
+		UMS_PROFILE_PATH=${UMS_PROFILE_PATH} \
+		UMS_LOG_DIR=${UMS_LOG_DIR} \
+		UMS_PID_DIR=${UMS_PID_DIR}
 SUB_FILES=	pkg-message
 USE_RC_SUBR=	universal_media_server
 
 .include <bsd.port.pre.mk>
 
 do-install:
-		@${MKDIR} ${STAGEDIR}${UMS_PROFILE_PATH}
-		@${CP} ${WRKSRC}/UMS.conf ${STAGEDIR}${UMS_PROFILE_PATH}/UMS.conf.sample
-		@${CP} ${WRKSRC}/WEB.conf ${STAGEDIR}${UMS_PROFILE_PATH}/WEB.conf.sample
-		@${MKDIR} ${STAGEDIR}${UMS_PID_DIR}
-		@${MKDIR} ${STAGEDIR}${UMS_LOG_DIR}
+	${MKDIR} ${STAGEDIR}${UMS_PROFILE_PATH} \
+		${STAGEDIR}${UMS_PID_DIR} \
+		${STAGEDIR}${UMS_LOG_DIR} \
+		${STAGEDIR}${DOCSDIR} \
+		${STAGEDIR}${DATADIR} \
+		${STAGEDIR}${ETCDIR}
+	${INSTALL_DATA} ${WRKSRC}/UMS.conf ${STAGEDIR}${ETCDIR}/UMS.conf.sample
+	${INSTALL_DATA} ${WRKSRC}/WEB.conf ${STAGEDIR}${ETCDIR}/WEB.conf.sample
 
-		@${MKDIR} ${STAGEDIR}${DOCSDIR}
-		@(cd ${WRKSRC}/documentation && ${COPYTREE_SHARE} \* ${STAGEDIR}${DOCSDIR})
-		@(cd ${WRKSRC} && ${RM} -rf documentation)
+	(cd ${WRKSRC}/documentation && ${COPYTREE_SHARE} \* ${STAGEDIR}${DOCSDIR})
+	(cd ${WRKSRC} && ${RM} -rf documentation)
 
-		@(cd ${WRKSRC}/linux && ${RM} -rf *)
-		@(cd ${WRKSRC}/linux && ${LN} -sf ${PREFIX}/bin/tsMuxeR tsMuxeR-new)
+	(cd ${WRKSRC}/linux && ${RM} -rf *)
+	(cd ${WRKSRC}/linux && ${LN} -sf ${PREFIX}/bin/tsMuxeR tsMuxeR-new)
 
-		@${MKDIR} ${STAGEDIR}${DATADIR}
-		@(cd ${WRKSRC} && ${COPYTREE_SHARE} \* ${STAGEDIR}${DATADIR})
+	(cd ${WRKSRC} && ${COPYTREE_SHARE} \* ${STAGEDIR}${DATADIR})
 
 .include <bsd.port.post.mk>
