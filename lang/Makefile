@@ -22,7 +22,6 @@
     SUBDIR += bigloo
     SUBDIR += bsh
     SUBDIR += bwbasic
-    SUBDIR += caml-light
     SUBDIR += ccl
     SUBDIR += cdent
     SUBDIR += cduce
