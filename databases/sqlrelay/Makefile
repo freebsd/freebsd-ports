@@ -21,6 +21,7 @@ CONFIGURE_ENV=		${SQLRELAY_CONFIGURE_ENV}
 CONFIGURE_ARGS=		${SQLRELAY_CONFIGURE_ARGS} \
 			--disable-tcl \
 			--disable-java \
+			--disable-msql \
 			--disable-perl \
 			--disable-php \
 			--disable-python \
@@ -33,7 +34,7 @@ PORTDOCS=	*
 
 .include "${.CURDIR}/Makefile.common"
 
-OPTIONS_DEFINE=	MSQL MYSQL ODBC ORACLE PGSQL SQLITE3 FREETDS FIREBIRD DOCS
+OPTIONS_DEFINE=	MYSQL ODBC ORACLE PGSQL SQLITE3 FREETDS FIREBIRD DOCS
 OPTIONS_SUB=	yes
 
 ORACLE_CONFIGURE_ENABLE=	oracle
@@ -62,13 +63,6 @@ USE_FIREBIRD=	yes
 CONFIGURE_ARGS+=	--with-firebird-prefix="${LOCALBASE}"
 .else
 CONFIGURE_ARGS+=	--disable-firebird
-.endif
-
-.if ${PORT_OPTIONS:MMSQL}
-LIB_DEPENDS+=		libmsql.so:${PORTSDIR}/databases/msql
-CONFIGURE_ARGS+=	--with-msql-prefix="${LOCALBASE}"
-.else
-CONFIGURE_ARGS+=	--disable-msql
 .endif
 
 .if ${PORT_OPTIONS:MPGSQL}
