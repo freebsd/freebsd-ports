@@ -10,8 +10,9 @@ MASTER_SITES=	LOCAL/bf
 MAINTAINER=	bf@FreeBSD.org
 COMMENT=	Display information gathered from MB power management controller
 
-LICENSE=	BSD
+LICENSE=	BSD2CLAUSE
 
+USES=		uidfix
 GNU_CONFIGURE=	yes
 
 ONLY_FOR_ARCHS=	i386 amd64
