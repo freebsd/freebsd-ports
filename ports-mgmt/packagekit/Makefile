@@ -4,7 +4,7 @@
 
 PORTNAME=	PackageKit
 PORTVERSION=	0.6.11
-PORTREVISION?=	5
+PORTREVISION?=	6
 CATEGORIES=	ports-mgmt sysutils
 MASTER_SITES=	http://www.packagekit.org/releases/
 
@@ -12,30 +12,29 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT?=	DBUS packaging abstraction layer
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/docbook2man:${PORTSDIR}/textproc/docbook-utils
-LIB_DEPENDS=	libexecinfo.so:${PORTSDIR}/devel/libexecinfo \
-		libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib \
+LIB_DEPENDS=	libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib \
 		libpolkit-gobject-1.so:${PORTSDIR}/sysutils/polkit \
 		libck-connector.so:${PORTSDIR}/sysutils/consolekit
 RUN_DEPENDS=	lsof:${PORTSDIR}/sysutils/lsof
 
-USES=		gettext gmake iconv pkgconfig shared-mime-info
+USES=		execinfo gettext gmake iconv libtool pathfix pkgconfig \
+		python:build shared-mime-info
 USE_GNOME=	glib20 intltool gnomehier introspection
 USE_SQLITE=	3
 USE_LDCONFIG=	yes
-USE_PYTHON_BUILD=	yes
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib -lexecinfo
+LIBS+=		-L${LOCALBASE}/lib -lexecinfo
 CONFIGURE_ARGS+=--with-security-framework=polkit \
 		--localstatedir=/var \
+		--disable-static \
 		--disable-gtk-doc \
 		--disable-managed \
 		--disable-browser-plugin \
 		--disable-gstreamer-plugin \
 		--disable-networkmanager \
 		--disable-connman
-
-MAKE_ARGS=	pkgconfigdir="${PREFIX}/libdata/pkgconfig"
+INSTALL_TARGET=	install-strip
 
 MAKE_JOBS_UNSAFE=yes
 
