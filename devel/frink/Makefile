@@ -10,7 +10,7 @@ MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	Tcl formatter and static tester
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-2.2.2
-
+USES=		uidfix
 MAKEFILE=	${FILESDIR}/Makefile.bsd
 
 OPTIONS_DEFINE=	DOCS
