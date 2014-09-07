@@ -288,8 +288,9 @@ APACHE_MPM!=		${APXS} -q MPM_NAME
 .	endif
 .elif defined(APACHE_PORT)
 _APACHE_VERSION!=	${ECHO_CMD} ${APACHE_PORT} | ${SED} -ne 's,.*/apache\([0-9]*\).*,\1,p'
-.else
-_APACHE_VERSION:=	${DEFAULT_APACHE_VERSION}
+#.else
+# the next line breaks ports with USE_APACHE(_RUN|_BUILD)=22
+#_APACHE_VERSION:=	${DEFAULT_APACHE_VERSION}
 .endif
 
 .if defined(USE_APACHE)
