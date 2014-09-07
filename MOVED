@@ -7033,3 +7033,7 @@ devel/baz||2014-09-07|Unstaged, obsolete, distfiles don't exist. Use devel/bzr i
 security/prelude-lml||2014-09-07|Not staged
 security/prelude-manager||2014-09-07|Not staged
 security/prelude-pflogger||2014-09-07|Not staged
+lang/otcl||2014-09-07|Not staged
+devel/tclcl||2014-09-07|Cascade removal (lang/otcl)
+net/nam||2014-09-07|Cascade removal (lang/otcl)
+net/ns||2014-09-07|Cascade removal (lang/otcl)
