@@ -11,6 +11,7 @@ MAINTAINER=	masaki@club.kyutech.ac.jp
 COMMENT=	Dump http-contents to stdout
 
 WRKSRC=		${WRKDIR}/http_get
+USES=		uidfix
 MAKEFILE=	${FILESDIR}/Makefile.bsd
 
 PLIST_FILES=	bin/http_get \
