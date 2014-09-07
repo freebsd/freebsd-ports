@@ -1,4 +1,4 @@
 SHA256 (scipy-0.14.0.tar.gz) = 4b41a3e6bf178df1c7f0ef3bfeabf1f56610329aca5dbd7b6d64da8ac9af6b14
 SIZE (scipy-0.14.0.tar.gz) = 10212944
-SHA256 (scipy-ref.pdf) = 04587215578188396723cea2eb7387460fd957706eec61ea1b67326822fdcb68
-SIZE (scipy-ref.pdf) = 7382958
+SHA256 (scipy-ref-0.14.0.pdf) = 8ecaf05c83b13d0730d23b4a374c5d7566a8b48d88addf06ead01c319ab2938c
+SIZE (scipy-ref-0.14.0.pdf) = 17398860
