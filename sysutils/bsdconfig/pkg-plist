@@ -1,0 +1,177 @@
+libexec/bsdconfig/020.docsinstall/INDEX
+libexec/bsdconfig/020.docsinstall/USAGE
+libexec/bsdconfig/020.docsinstall/docsinstall
+libexec/bsdconfig/020.docsinstall/include/messages.subr
+libexec/bsdconfig/030.packages/INDEX
+libexec/bsdconfig/030.packages/USAGE
+libexec/bsdconfig/030.packages/include/messages.subr
+libexec/bsdconfig/030.packages/packages
+libexec/bsdconfig/040.password/INDEX
+libexec/bsdconfig/040.password/USAGE
+libexec/bsdconfig/040.password/include/messages.subr
+libexec/bsdconfig/040.password/password
+libexec/bsdconfig/050.diskmgmt/INDEX
+libexec/bsdconfig/050.diskmgmt/USAGE
+libexec/bsdconfig/050.diskmgmt/diskmgmt
+libexec/bsdconfig/050.diskmgmt/include/messages.subr
+libexec/bsdconfig/070.usermgmt/INDEX
+libexec/bsdconfig/070.usermgmt/USAGE
+libexec/bsdconfig/070.usermgmt/groupadd
+libexec/bsdconfig/070.usermgmt/groupdel
+libexec/bsdconfig/070.usermgmt/groupedit
+libexec/bsdconfig/070.usermgmt/groupinput
+libexec/bsdconfig/070.usermgmt/include/messages.subr
+libexec/bsdconfig/070.usermgmt/include/usermgmt.hlp
+libexec/bsdconfig/070.usermgmt/useradd
+libexec/bsdconfig/070.usermgmt/userdel
+libexec/bsdconfig/070.usermgmt/useredit
+libexec/bsdconfig/070.usermgmt/userinput
+libexec/bsdconfig/070.usermgmt/usermgmt
+libexec/bsdconfig/080.console/INDEX
+libexec/bsdconfig/080.console/USAGE
+libexec/bsdconfig/080.console/console
+libexec/bsdconfig/080.console/font
+libexec/bsdconfig/080.console/include/messages.subr
+libexec/bsdconfig/080.console/keymap
+libexec/bsdconfig/080.console/repeat
+libexec/bsdconfig/080.console/saver
+libexec/bsdconfig/080.console/screenmap
+libexec/bsdconfig/080.console/ttys
+libexec/bsdconfig/090.timezone/INDEX
+libexec/bsdconfig/090.timezone/USAGE
+libexec/bsdconfig/090.timezone/include/messages.subr
+libexec/bsdconfig/090.timezone/timezone
+libexec/bsdconfig/110.mouse/INDEX
+libexec/bsdconfig/110.mouse/USAGE
+libexec/bsdconfig/110.mouse/disable
+libexec/bsdconfig/110.mouse/enable
+libexec/bsdconfig/110.mouse/flags
+libexec/bsdconfig/110.mouse/include/messages.subr
+libexec/bsdconfig/110.mouse/mouse
+libexec/bsdconfig/110.mouse/port
+libexec/bsdconfig/110.mouse/type
+libexec/bsdconfig/120.networking/INDEX
+libexec/bsdconfig/120.networking/USAGE
+libexec/bsdconfig/120.networking/defaultrouter
+libexec/bsdconfig/120.networking/devices
+libexec/bsdconfig/120.networking/hostname
+libexec/bsdconfig/120.networking/include/messages.subr
+libexec/bsdconfig/120.networking/nameservers
+libexec/bsdconfig/120.networking/networking
+libexec/bsdconfig/130.security/INDEX
+libexec/bsdconfig/130.security/USAGE
+libexec/bsdconfig/130.security/include/messages.subr
+libexec/bsdconfig/130.security/include/securelevel.hlp
+libexec/bsdconfig/130.security/kern_securelevel
+libexec/bsdconfig/130.security/security
+libexec/bsdconfig/140.startup/INDEX
+libexec/bsdconfig/140.startup/USAGE
+libexec/bsdconfig/140.startup/include/messages.subr
+libexec/bsdconfig/140.startup/misc
+libexec/bsdconfig/140.startup/rcadd
+libexec/bsdconfig/140.startup/rcconf
+libexec/bsdconfig/140.startup/rcdelete
+libexec/bsdconfig/140.startup/rcedit
+libexec/bsdconfig/140.startup/rcvar
+libexec/bsdconfig/140.startup/startup
+libexec/bsdconfig/150.ttys/INDEX
+libexec/bsdconfig/150.ttys/USAGE
+libexec/bsdconfig/150.ttys/include/messages.subr
+libexec/bsdconfig/150.ttys/ttys
+libexec/bsdconfig/USAGE
+libexec/bsdconfig/dot/INDEX
+libexec/bsdconfig/dot/USAGE
+libexec/bsdconfig/dot/dot
+libexec/bsdconfig/dot/include/messages.subr
+libexec/bsdconfig/include/bsdconfig.hlp
+libexec/bsdconfig/include/media.hlp
+libexec/bsdconfig/include/messages.subr
+libexec/bsdconfig/include/network_device.hlp
+libexec/bsdconfig/include/options.hlp
+libexec/bsdconfig/include/tcp.hlp
+libexec/bsdconfig/include/usage.hlp
+man/man8/bsdconfig.8.gz
+sbin/bsdconfig
+%%DATADIR%%/common.subr
+%%DATADIR%%/device.subr
+%%DATADIR%%/dialog.subr
+%%DATADIR%%/media/any.subr
+%%DATADIR%%/media/cdrom.subr
+%%DATADIR%%/media/common.subr
+%%DATADIR%%/media/directory.subr
+%%DATADIR%%/media/dos.subr
+%%DATADIR%%/media/floppy.subr
+%%DATADIR%%/media/ftp.subr
+%%DATADIR%%/media/http.subr
+%%DATADIR%%/media/httpproxy.subr
+%%DATADIR%%/media/network.subr
+%%DATADIR%%/media/nfs.subr
+%%DATADIR%%/media/options.subr
+%%DATADIR%%/media/tcpip.subr
+%%DATADIR%%/media/ufs.subr
+%%DATADIR%%/media/usb.subr
+%%DATADIR%%/mustberoot.subr
+%%DATADIR%%/networking/common.subr
+%%DATADIR%%/networking/device.subr
+%%DATADIR%%/networking/hostname.subr
+%%DATADIR%%/networking/ipaddr.subr
+%%DATADIR%%/networking/media.subr
+%%DATADIR%%/networking/netmask.subr
+%%DATADIR%%/networking/resolv.subr
+%%DATADIR%%/networking/routing.subr
+%%DATADIR%%/networking/services.subr
+%%DATADIR%%/packages/categories.subr
+%%DATADIR%%/packages/index.subr
+%%DATADIR%%/packages/packages.subr
+%%DATADIR%%/password/password.subr
+%%DATADIR%%/script.subr
+%%DATADIR%%/startup/rcconf.subr
+%%DATADIR%%/startup/rcedit.subr
+%%DATADIR%%/startup/rcvar.subr
+%%DATADIR%%/strings.subr
+%%DATADIR%%/struct.subr
+%%DATADIR%%/sysrc.subr
+%%DATADIR%%/timezone/continents.subr
+%%DATADIR%%/timezone/countries.subr
+%%DATADIR%%/timezone/iso3166.subr
+%%DATADIR%%/timezone/menus.subr
+%%DATADIR%%/timezone/zones.subr
+%%DATADIR%%/usermgmt/group_input.subr
+%%DATADIR%%/usermgmt/user_input.subr
+%%DATADIR%%/variable.subr
+@dirrm libexec/bsdconfig/020.docsinstall/include
+@dirrm libexec/bsdconfig/020.docsinstall
+@dirrm libexec/bsdconfig/030.packages/include
+@dirrm libexec/bsdconfig/030.packages
+@dirrm libexec/bsdconfig/040.password/include
+@dirrm libexec/bsdconfig/040.password
+@dirrm libexec/bsdconfig/050.diskmgmt/include
+@dirrm libexec/bsdconfig/050.diskmgmt
+@dirrm libexec/bsdconfig/070.usermgmt/include
+@dirrm libexec/bsdconfig/070.usermgmt
+@dirrm libexec/bsdconfig/080.console/include
+@dirrm libexec/bsdconfig/080.console
+@dirrm libexec/bsdconfig/090.timezone/include
+@dirrm libexec/bsdconfig/090.timezone
+@dirrm libexec/bsdconfig/110.mouse/include
+@dirrm libexec/bsdconfig/110.mouse
+@dirrm libexec/bsdconfig/120.networking/include
+@dirrm libexec/bsdconfig/120.networking
+@dirrm libexec/bsdconfig/130.security/include
+@dirrm libexec/bsdconfig/130.security
+@dirrm libexec/bsdconfig/140.startup/include
+@dirrm libexec/bsdconfig/140.startup
+@dirrm libexec/bsdconfig/150.ttys/include
+@dirrm libexec/bsdconfig/150.ttys
+@dirrm libexec/bsdconfig/dot/include
+@dirrm libexec/bsdconfig/dot
+@dirrm libexec/bsdconfig/include
+@dirrm libexec/bsdconfig
+@dirrm %%DATADIR%%/media
+@dirrm %%DATADIR%%/networking
+@dirrm %%DATADIR%%/packages
+@dirrm %%DATADIR%%/password
+@dirrm %%DATADIR%%/startup
+@dirrm %%DATADIR%%/timezone
+@dirrm %%DATADIR%%/usermgmt
+@dirrm %%DATADIR%%
