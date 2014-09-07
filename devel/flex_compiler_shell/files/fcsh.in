@@ -1,9 +1,0 @@
-#!/bin/sh
-
-[ -z "${PREFIX}" ]     && PREFIX="%%PREFIX%%"
-[ -z "${JAVAJARDIR}" ] && JAVAJARDIR="%%JAVAJARDIR%%/flex-sdk"
-[ -z "${FLEX_HOME}" ]  && FLEX_HOME=${PREFIX}/share/flex-sdk
-
-VMARGS="-Xmx384m -Dsun.io.useCanonCaches=false"
-
-java $VMARGS "-Dapplication.home=$FLEX_HOME" -jar "$JAVAJARDIR/fcsh.jar"

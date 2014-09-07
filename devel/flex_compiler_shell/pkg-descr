@@ -1,7 +1,0 @@
-The fcsh (Flex Compiler Shell) utility provides a shell environment
-that you use to compile Flex applications, modules, and component
-libraries. It works very similarly to the mxmlc and compc command line
-compilers, but it compiles faster than the mxmlc and compc
-command-line compilers.
-
-WWW: http://labs.adobe.com/wiki/index.php/Flex_Compiler_Shell

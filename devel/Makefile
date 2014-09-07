@@ -424,9 +424,7 @@
     SUBDIR += fistgen
     SUBDIR += flatzebra
     SUBDIR += flex-sdk
-    SUBDIR += flex-sdk2
     SUBDIR += flex-sdk35
-    SUBDIR += flex_compiler_shell
     SUBDIR += flexdock
     SUBDIR += flexjson
     SUBDIR += flickrnet
