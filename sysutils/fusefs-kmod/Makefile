@@ -2,6 +2,7 @@
 
 PORTNAME=	fusefs-kmod
 PORTVERSION=	0.263233
+PORTEPOCH=	1
 CATEGORIES=	sysutils kld
 
 MAINTAINER=	dpejesh@yahoo.com
