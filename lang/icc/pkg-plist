@@ -1,3 +1,5 @@
+@owner bin
+@group bin
 %%COMPILERDIR%%/bin/Errormatch.txt
 %%COMPILERDIR%%/bin/codecov
 %%COMPILERDIR%%/bin/icc
@@ -943,6 +945,8 @@
 %%COMPILERDIR%%/licenses/clicense
 %%COMPILERDIR%%/licenses/credist.txt
 %%COMPILERDIR%%/licenses/lgpltext
+%%COMPILERDIR%%/man/man1/icc.1.gz
+%%COMPILERDIR%%/man/man1/icpc.1.gz
 @unexec rmdir %D/%%COMPILERDIR%%/licenses >/dev/null 2>&1 || echo '*** License directory (%D/%%COMPILERDIR%%/licenses/) not removed, it may contain a license.'
 @dirrm %%COMPILERDIR%%/man/man1
 @dirrm %%COMPILERDIR%%/man
