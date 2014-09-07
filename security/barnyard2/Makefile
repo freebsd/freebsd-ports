@@ -14,7 +14,8 @@ GH_ACCOUNT=	firnsy
 GH_TAGNAME=	v2-${PORTVERSION}
 GH_COMMIT=	272eaf7
 
-OPTIONS_DEFINE=	64BIT ARUBA BRO GRE IPV6 MPLS MYSQL MYSQL_SSL ODBC PRELUDE PGSQL PORT_PCAP DOCS
+OPTIONS_DEFINE=	64BIT ARUBA BRO GRE IPV6 MPLS MYSQL MYSQL_SSL ODBC PGSQL \
+		PORT_PCAP DOCS
 NO_OPTIONS_SORT=yes
 
 64BIT_DESC=	Enable 64bit compilation (experimental)
@@ -22,7 +23,6 @@ ARUBA_DESC=	Enable aruba support
 BRO_DESC=	Enable bro support (libbroccoli)
 GRE_DESC=	Enable gre support
 MYSQL_SSL_DESC=	Enable mysql ssl support (experimental)
-PRELUDE_DESC=	Enable prelude support
 PORT_PCAP_DESC=	Use libpcap from ports
 
 .if defined(SLAVE)
@@ -60,8 +60,6 @@ MYSQL_CONFIGURE_ON=	--with-mysql-includes=${LOCALBASE}/include/mysql \
 MYSQL_SSL_CONFIGURE_ENABLE=	mysql-ssl-support
 ODBC_LIB_DEPENDS=	libodbc.so:${PORTSDIR}/databases/unixODBC
 ODBC_WITH=		odbc
-PRELUDE_BUILD_DEPENDS=	prelude-manager:${PORTSDIR}/security/prelude-manager
-PRELUDE_CONFIGURE_ENABLE=	prelude
 PGSQL_USE=		PGSQL=yes
 PGSQL_CONFIGURE_ON=	--with-postgresql=${LOCALBASE}/bin/pg_config --with-pgsql-includes=${LOCALBASE}/include/postgresql/server
 PGSQL_CONFIGURE_OFF=	--without-postgresql
