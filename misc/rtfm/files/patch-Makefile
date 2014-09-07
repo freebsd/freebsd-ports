@@ -6,8 +6,8 @@
  install: rtfm
 -	install -c -s -o root -g wheel -m 0755 rtfm /usr/local/bin
 -	install -c -o root -g wheel -m 0644 rtfm.1 ${PREFIX}/man/man1
-+	install -c -s -o root -g wheel -m 0755 rtfm $(DESTDIR)${PREFIX}/bin
-+	install -c -o root -g wheel -m 0644 rtfm.1 $(DESTDIR)${PREFIX}/man/man1
++	$(BSD_INSTALL_PROGRAM) rtfm $(DESTDIR)${PREFIX}/bin
++	$(BSD_INSTALL_MAN) rtfm.1 $(DESTDIR)${PREFIX}/man/man1
  
  clean:
  	rm -f rtfm
