@@ -22,7 +22,7 @@ USE_PYDISTUTILS=yes
 USE_GNOME=	pygtk2
 USES=		gettext
 
-OPTIONS_DEFINE=	FIREBIRD MSSQL MYSQL PGSQL SQLITE SYBASE DOCS
+OPTIONS_DEFINE=	MSSQL MYSQL PGSQL SQLITE SYBASE DOCS
 OPTIONS_DEFAULT=MYSQL PGSQL SQLITE
 
 SYBASE_DESC=	Sybase support
@@ -36,10 +36,6 @@ ALL_PORTDOCS=	*.html *.js
 ALL_PORTDOCS_SUBDIR=	_images _static debug layout misc printing sqlkit
 
 .include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MFIREBIRD}
-RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/kinterbasdb/__init__.py:${PORTSDIR}/databases/kinterbasdb
-.endif
 
 .if ${PORT_OPTIONS:MMSSQL}
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}mssql>0:${PORTSDIR}/databases/py-mssql
