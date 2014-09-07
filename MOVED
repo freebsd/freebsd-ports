@@ -7030,3 +7030,6 @@ lang/caml-light||2014-09-07|Not staged
 sysutils/fusefs-wdfs||2014-09-07|Not staged
 devel/pybaz||2014-09-07|Obsolete, use devel/bzr instead
 devel/baz||2014-09-07|Unstaged, obsolete, distfiles don't exist. Use devel/bzr instead
+security/prelude-lml||2014-09-07|Not staged
+security/prelude-manager||2014-09-07|Not staged
+security/prelude-pflogger||2014-09-07|Not staged
