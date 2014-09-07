@@ -3,6 +3,7 @@
 
 PORTNAME=	courier-authlib
 PORTVERSION=	0.66.1
+PORTREVISION?=	0
 CATEGORIES?=	security mail
 .if defined(PKGNAMESUFFIX)
 MASTER_SITES=	SF/courier/authlib/${PORTVERSION}
@@ -30,18 +31,13 @@ OPTIONS_DEFINE+=	GDBM
 
 .else	# !defined(PKGNAMESUFFIX)
 
-USES=		iconv gmake perl5 tar:bzip2
+USES=		iconv gmake libtool perl5 tar:bzip2
 USE_AUTOTOOLS=	libltdl
 GNU_CONFIGURE=	yes
 USE_SUBMAKE=	yes
-USE_LDCONFIG=	${PREFIX}/lib/${PORTNAME}
-#slave ports should have different UNIQUENAME, it is utilized by USE_LDCONFIG
-UNIQUENAME=	${PKGNAMEPREFIX}${PORTNAME}${PKGNAMESUFFIX}
 
 MAILOWN=	courier
 MAILGRP=	courier
-MAILUID=	465
-MAILGID=	465
 LOCALSTATEDIR=	/var
 AUTHDAEMONVAR=	${LOCALSTATEDIR}/run/authdaemond
 
@@ -49,11 +45,10 @@ VPOPMAILDIR?=	${LOCALBASE}/vpopmail
 USERDB?=	${PREFIX}/etc/userdb
 
 CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
-MAKE_ENV:=	${CONFIGURE_ENV}
+LIBS+=		-L${LOCALBASE}/lib
 
 CONFIGURE_ARGS=	--enable-unicode \
-		--enable-ltdl-install=no \
+		--disable-static \
 		--without-authcustom \
 		--without-authshadow \
 		--without-authpwd \
@@ -64,31 +59,26 @@ CONFIGURE_ARGS=	--enable-unicode \
 		--cache-file=${WRKDIR}/courier-authlib.cache \
 		--without-authsqlite
 
-INSTALL_TARGET=	install-strip install-configure
+INSTALL_TARGET=	install-strip
 
 DESCR=		${PKGDIR}/pkg-descr${PKGNAMESUFFIX}
 PLIST=		${PKGDIR}/pkg-plist${PKGNAMESUFFIX:S/gdbm/db/}
 
+PLIST_SUB+=	MAILOWN=${MAILOWN} MAILGRP=${MAILGRP}
+
 AUTHMOD=	auth${PKGNAMESUFFIX:S/-//:S/gdbm/db/}
 
 .if ${AUTHMOD} == authbase
-RUN_DEPENDS+=	${LOCALBASE}/share/sysconftool/sysconftool:${PORTSDIR}/devel/sysconftool
-CONFIGURE_ARGS+=--with-base --with-authpam
+CONFIGURE_ARGS+=--with-base --with-authpam --with-authpipe
 
-MAN1=		courierlogger.1 authtest.1
-
-MAN3=		authlib.3 auth_generic.3 auth_login.3 auth_getuserinfo.3 \
-		auth_enumerate.3 auth_passwd.3 auth_getoption.3 auth_sasl.3 \
-		auth_sasl_ex.3
+USERS=		${MAILOWN}
+GROUPS=		${MAILGRP}
 
 DOCS=		AUTHORS COPYING ChangeLog INSTALL NEWS README \
 		README.authdebug.html README_authlib.html
 
-PLIST_SUB+=	MAILOWN=${MAILOWN} MAILGRP=${MAILGRP} \
-		MAILUID=${MAILUID} MAILGID=${MAILGID} \
-		AUTHDAEMONVAR=${AUTHDAEMONVAR}
-SUB_LIST:=	${PLIST_SUB}
-SUB_FILES+=	pkg-install pkg-deinstall
+PLIST_SUB+=	AUTHDAEMONVAR=${AUTHDAEMONVAR}
+SUB_LIST+=	AUTHDAEMONVAR=${AUTHDAEMONVAR}
 
 .if defined(WITH_AUTHPIPE_PROG)
 CONFIGURE_ARGS+=--with-pipeprog=${WITH_AUTHPIPE_PROG}
@@ -96,12 +86,11 @@ CONFIGURE_ARGS+=--with-pipeprog=${WITH_AUTHPIPE_PROG}
 
 .else
 RUN_DEPENDS+=	courierauthconfig:${PORTSDIR}/security/courier-authlib-base
-CONFIGURE_ARGS+=--without-base --without-authpam
+CONFIGURE_ARGS+=--without-base --without-authpam --without-authpipe
 REMOVE_SUBDIRS+=liblock liblog
 .endif
 
 .if ${AUTHMOD} == authuserdb
-MAN8=		makeuserdb.8 userdb.8 userdbpw.8 pw2userdb.8
 .if ${PKGNAMESUFFIX} == -usergdbm
 CONFLICTS+=	${PORTNAME}-userdb-0.*
 LIB_DEPENDS+=	libgdbm.so:${PORTSDIR}/databases/gdbm
@@ -177,7 +166,6 @@ pre-everything::
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|$$VPOPMAILLIBS|& -lcrypt|g;  \
-		s|^\(INSTALL_STRIP_PROGRAM=\).*$$|\1"$${INSTALL_PROGRAM} -s"| ; \
 		s|mysql_connect|mysql_real_connect|g' \
 		${WRKSRC}/*/configure \
 		${WRKSRC}/configure
@@ -185,9 +173,6 @@ post-patch:
 	@${REINPLACE_CMD} -E 's,(^(ac_subdirs_all|subdirs).*)${subdir},\1,g' \
 		${WRKSRC}/configure
 .endfor
-	@${REINPLACE_CMD} -e 's|$$(INSTALL_DATA) \(.$$$$file.\)|${INSTALL_MAN} \1|' \
-		${WRKSRC}/*/Makefile.in \
-		${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e 's|^\(DEFAULTOPTIONS=\)""$$|\1"wbnodsn=1"|' \
 		-e 's|@ALLMODULES@|authuserdb authvchkpw authpam authldap authmysql authpgsql|' \
 		${WRKSRC}/authdaemonrc.in
@@ -199,18 +184,12 @@ pre-configure:
 		${RM} -f "${WRKDIR}/courier-authlib.cache" ; \
 	fi
 
-.if ${PKGNAMESUFFIX} == "-base"
-pre-install:
-	@PKG_PREFIX="${PREFIX}" ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
-.endif	# ${PKGNAMESUFFIX} == "-base"
-
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
-	@${INSTALL} ${_SHROWNGRP} -d ${STAGEDIR}${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for f in ${DOCS}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}
 .endfor
-.endif
+
 .endif	# !defined(PKGNAMESUFFIX)
 
 .include <bsd.port.post.mk>

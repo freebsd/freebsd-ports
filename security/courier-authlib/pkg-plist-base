@@ -1,37 +1,30 @@
-@unexec [ -x %D/sbin/authdaemond ] && %D/sbin/authdaemond stop || true
-@exec pw groupshow %%MAILGRP%% 2>/dev/null || pw groupadd %%MAILGRP%% -g %%MAILUID%% -h -
-@exec pw user show %%MAILOWN%% 2>/dev/null || pw useradd %%MAILOWN%% -u %%MAILUID%% -g %%MAILGID%% -h - -d /var/spool/courier -s /sbin/nologin -c "Courier Mail System"
 bin/courierauthconfig
-@unexec cmp -s %D/etc/authlib/authdaemonrc.dist %D/etc/authlib/authdaemonrc && rm -f %D/etc/authlib/authdaemonrc 2>/dev/null || true
-etc/authlib/authdaemonrc.dist
-@exec %%LOCALBASE%%/share/sysconftool/sysconftool %D/etc/authlib/authdaemonrc.dist && chmod 0600 %D/etc/authlib/authdaemonrc
-@exec chown -Rh %%MAILOWN%%:%%MAILGRP%% %D/etc/authlib && chmod 0750 %D/etc/authlib
+@sample(%%MAILOWN%%,%%MAILGRP%%,660) etc/authlib/authdaemonrc.sample
 include/courier_auth_config.h
 include/courierauth.h
 include/courierauthdebug.h
 include/courierauthsasl.h
 include/courierauthsaslclient.h
 include/courierauthstaticlist.h
-lib/courier-authlib/libcourierauth.a
-lib/courier-authlib/libcourierauth.la
 lib/courier-authlib/libcourierauth.so
-lib/courier-authlib/libcourierauthcommon.a
-lib/courier-authlib/libcourierauthcommon.la
 lib/courier-authlib/libcourierauthcommon.so
-lib/courier-authlib/libcourierauthsasl.a
-lib/courier-authlib/libcourierauthsasl.la
 lib/courier-authlib/libcourierauthsasl.so
-lib/courier-authlib/libcourierauthsaslclient.a
-lib/courier-authlib/libcourierauthsaslclient.la
 lib/courier-authlib/libcourierauthsaslclient.so
-lib/courier-authlib/libauthpam.a
-lib/courier-authlib/libauthpam.la
 lib/courier-authlib/libauthpam.so
-lib/courier-authlib/libauthpipe.a
-lib/courier-authlib/libauthpipe.la
 lib/courier-authlib/libauthpipe.so
 libexec/courier-authlib/authdaemond
 libexec/courier-authlib/authsystem.passwd
+man/man1/authtest.1.gz
+man/man1/%%MAILOWN%%logger.1.gz
+man/man3/auth_enumerate.3.gz
+man/man3/auth_generic.3.gz
+man/man3/auth_getoption.3.gz
+man/man3/auth_getuserinfo.3.gz
+man/man3/auth_login.3.gz
+man/man3/auth_passwd.3.gz
+man/man3/auth_sasl.3.gz
+man/man3/auth_sasl_ex.3.gz
+man/man3/authlib.3.gz
 sbin/authdaemond
 sbin/authenumerate
 sbin/authtest
@@ -45,7 +38,7 @@ sbin/courierlogger
 %%PORTDOCS%%%%DOCSDIR%%/README.authdebug.html
 %%PORTDOCS%%%%DOCSDIR%%/README_authlib.html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@unexec rm -rf %%AUTHDAEMONVAR%% 2>/dev/null || true
+@dirrmtry(%%MAILOWN%%,%%MAILGRP%%,750) %%AUTHDAEMONVAR%%
 @dirrmtry etc/authlib
-@dirrm libexec/courier-authlib
+@dirrm(%%MAILOWN%%,%%MAILGRP%%,755) libexec/courier-authlib
 @dirrm lib/courier-authlib
