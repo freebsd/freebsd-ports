@@ -7037,3 +7037,6 @@ lang/otcl||2014-09-07|Not staged
 devel/tclcl||2014-09-07|Cascade removal (lang/otcl)
 net/nam||2014-09-07|Cascade removal (lang/otcl)
 net/ns||2014-09-07|Cascade removal (lang/otcl)
+databases/frontbase||2014-09-07|Not staged
+databases/p5-DBD-FrontBase||2014-09-07|Cascade removal (databases/frontbase)
+databases/ruby-frontbase||2014-09-07|Cascade removal (databases/frontbase)
