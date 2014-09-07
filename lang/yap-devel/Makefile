@@ -23,7 +23,7 @@ MYDDAS_DESC=	Enable MySQL support
 DOCS_USE=		TEX=formats:build,dvipsk:build
 DOCS_BUILD_DEPENDS=	${LOCALBASE}/bin/texi2html:${PORTSDIR}/textproc/texi2html \
 			${LOCALBASE}/bin/texi2pdf:${PORTSDIR}/print/texinfo
-DOCS_INSTALL_TARGET=	install install_doc
+DOCS_INSTALL_TARGET=	install install_docs
 
 MYDDAS_LIB_DEPENDS=		libiodbc.so:${PORTSDIR}/databases/libiodbc
 MYDDAS_CONFIGURE_ENABLE=	myddas myddas-top-level
