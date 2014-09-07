@@ -3,6 +3,7 @@
 
 PORTNAME=	plan9port
 PORTVERSION=	20140306
+PORTREVISION=	1
 CATEGORIES=	devel plan9
 MASTER_SITES=	http://swtch.com/${PORTNAME}/
 
@@ -43,6 +44,7 @@ post-patch:
 		> ${WRKSRC}/src/cmd/9term/${OPSYS}.c
 	@${REINPLACE_CMD} -e 's|, swizz(void)|&, swizz8(void)|' \
 		${WRKSRC}/src/cmd/xd.c
+	@${REINPLACE_CMD} -e '/^cd $$PLAN9/d' ${WRKSRC}/lib/moveplan9.sh
 
 do-build:
 	cd ${WRKSRC} && CC9="${CC}" ./INSTALL
@@ -63,7 +65,7 @@ do-install:
 	${CP} -a ${WRKSRC} ${STAGEDIR}${PREFIX}
 
 post-install:
-	cd ${STAGEDIR}${PLAN9} && ${SETENV} PLAN9=${STAGEDIR}${PLAN9} \
+	cd ${STAGEDIR}${PLAN9} && ${SETENV} PLAN9=${PLAN9} \
 		PATH=${PATH}:${STAGEDIR}${PLAN9}/bin \
 			${SH} lib/moveplan9.sh ${WRKSRC}
 	${CHMOD} 01777 ${STAGEDIR}${PLAN9}/news
