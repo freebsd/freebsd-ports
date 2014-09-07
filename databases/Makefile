@@ -71,7 +71,6 @@
     SUBDIR += freetds
     SUBDIR += freetds-devel
     SUBDIR += freetds-msdblib
-    SUBDIR += frontbase
     SUBDIR += frontbase-jdbc
     SUBDIR += gadfly
     SUBDIR += galera
@@ -281,7 +280,6 @@
     SUBDIR += p5-DBD-AnyData
     SUBDIR += p5-DBD-CSV
     SUBDIR += p5-DBD-Excel
-    SUBDIR += p5-DBD-FrontBase
     SUBDIR += p5-DBD-Google
     SUBDIR += p5-DBD-InterBase
     SUBDIR += p5-DBD-LDAP
@@ -816,7 +814,6 @@
     SUBDIR += ruby-dbd_sqlite
     SUBDIR += ruby-dbd_sqlite3
     SUBDIR += ruby-dbi
-    SUBDIR += ruby-frontbase
     SUBDIR += ruby-gdbm
     SUBDIR += ruby-mysql
     SUBDIR += ruby-o_dbm
