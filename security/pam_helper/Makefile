@@ -9,7 +9,8 @@ MASTER_SITES=	http://www.marcuscom.com/pam_helper/
 MAINTAINER=	marcus@FreeBSD.org
 COMMENT=	Authenticate applications requiring PAM services
 
-USES=	tar:bzip2
+USES=		tar:bzip2 uidfix
+MAKE_ARGS=	BINOWN=${UID}
 
 PLIST_FILES=	bin/pam_helper
 
