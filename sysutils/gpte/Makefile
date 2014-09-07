@@ -9,10 +9,10 @@ MASTER_SITES=	ftp://segfault.kiev.ua/pub/
 MAINTAINER=	netch@segfault.kiev.ua
 COMMENT=	Simple command-line GPT partition editor
 
+USES=		uidfix
+MAKEFILE=	Makefile.bsd
+
 PLIST_FILES=	bin/gpte \
 		man/man8/gpte.8.gz
-
-post-extract:
-	cd ${WRKSRC} && ${CP} Makefile.bsd Makefile
 
 .include <bsd.port.mk>
