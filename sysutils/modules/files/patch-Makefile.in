@@ -1,0 +1,121 @@
+--- Makefile.in.orig	2012-12-19 18:02:26.000000000 +0100
++++ Makefile.in	2014-09-04 12:15:49.912860562 +0200
+@@ -74,7 +74,7 @@
+ 	ext/common/.profile
+ CONFIG_CLEAN_VPATH_FILES =
+ am__installdirs = "$(DESTDIR)$(bindir)" "$(DESTDIR)$(man1dir)" \
+-	"$(DESTDIR)$(man4dir)"
++	"$(DESTDIR)$(man5dir)"
+ PROGRAMS = $(bin_PROGRAMS)
+ am_modulecmd_OBJECTS = modulecmd-ModuleCmd_Avail.$(OBJEXT) \
+ 	modulecmd-ModuleCmd_Clear.$(OBJEXT) \
+@@ -150,7 +150,7 @@
+          $(am__cd) "$$dir" && rm -f $$files; }; \
+   }
+ man1dir = $(mandir)/man1
+-man4dir = $(mandir)/man4
++man5dir = $(mandir)/man5
+ NROFF = nroff
+ MANS = $(man_MANS)
+ RECURSIVE_CLEAN_TARGETS = mostlyclean-recursive clean-recursive	\
+@@ -320,7 +320,7 @@
+ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
+ ACLOCAL_AMFLAGS = -I config
+-man_MANS = doc/module.1 doc/modulefile.4
++man_MANS = doc/module.1 doc/modulefile.5
+ SUBDIRS = . init modulefiles @EXTDIR@ doc
+ DIST_SUBDIRS = . init modulefiles etc ext doc
+ SOURCES_H = modules_def.h getopt.h config.h
+@@ -1087,10 +1087,10 @@
+ 	} | sed -e 's,.*/,,;h;s,.*\.,,;s,^[^1][0-9a-z]*$$,1,;x' \
+ 	      -e 's,\.[0-9a-z]*$$,,;$(transform);G;s,\n,.,'`; \
+ 	dir='$(DESTDIR)$(man1dir)'; $(am__uninstall_files_from_dir)
+-install-man4: $(man_MANS)
++install-man5: $(man_MANS)
+ 	@$(NORMAL_INSTALL)
+-	test -z "$(man4dir)" || $(MKDIR_P) "$(DESTDIR)$(man4dir)"
+-	@list=''; test -n "$(man4dir)" || exit 0; \
++	test -z "$(man5dir)" || $(MKDIR_P) "$(DESTDIR)$(man5dir)"
++	@list=''; test -n "$(man5dir)" || exit 0; \
+ 	{ for i in $$list; do echo "$$i"; done; \
+ 	l2='$(man_MANS)'; for i in $$l2; do echo "$$i"; done | \
+ 	  sed -n '/\.4[a-z]*$$/p'; \
+@@ -1103,26 +1103,26 @@
+ 	sed 'N;N;s,\n, ,g' | { \
+ 	list=; while read file base inst; do \
+ 	  if test "$$base" = "$$inst"; then list="$$list $$file"; else \
+-	    echo " $(INSTALL_DATA) '$$file' '$(DESTDIR)$(man4dir)/$$inst'"; \
+-	    $(INSTALL_DATA) "$$file" "$(DESTDIR)$(man4dir)/$$inst" || exit $$?; \
++	    echo " $(INSTALL_DATA) '$$file' '$(DESTDIR)$(man5dir)/$$inst'"; \
++	    $(INSTALL_DATA) "$$file" "$(DESTDIR)$(man5dir)/$$inst" || exit $$?; \
+ 	  fi; \
+ 	done; \
+ 	for i in $$list; do echo "$$i"; done | $(am__base_list) | \
+ 	while read files; do \
+ 	  test -z "$$files" || { \
+-	    echo " $(INSTALL_DATA) $$files '$(DESTDIR)$(man4dir)'"; \
+-	    $(INSTALL_DATA) $$files "$(DESTDIR)$(man4dir)" || exit $$?; }; \
++	    echo " $(INSTALL_DATA) $$files '$(DESTDIR)$(man5dir)'"; \
++	    $(INSTALL_DATA) $$files "$(DESTDIR)$(man5dir)" || exit $$?; }; \
+ 	done; }
+ 
+-uninstall-man4:
++uninstall-man5:
+ 	@$(NORMAL_UNINSTALL)
+-	@list=''; test -n "$(man4dir)" || exit 0; \
++	@list=''; test -n "$(man5dir)" || exit 0; \
+ 	files=`{ for i in $$list; do echo "$$i"; done; \
+ 	l2='$(man_MANS)'; for i in $$l2; do echo "$$i"; done | \
+ 	  sed -n '/\.4[a-z]*$$/p'; \
+ 	} | sed -e 's,.*/,,;h;s,.*\.,,;s,^[^4][0-9a-z]*$$,4,;x' \
+ 	      -e 's,\.[0-9a-z]*$$,,;$(transform);G;s,\n,.,'`; \
+-	dir='$(DESTDIR)$(man4dir)'; $(am__uninstall_files_from_dir)
++	dir='$(DESTDIR)$(man5dir)'; $(am__uninstall_files_from_dir)
+ 
+ # This directory's subdirectories are mostly independent; you can cd
+ # into them and run `make' without going through this Makefile.
+@@ -1498,7 +1498,7 @@
+ all-am: Makefile $(PROGRAMS) $(MANS) config.h
+ installdirs: installdirs-recursive
+ installdirs-am:
+-	for dir in "$(DESTDIR)$(bindir)" "$(DESTDIR)$(man1dir)" "$(DESTDIR)$(man4dir)"; do \
++	for dir in "$(DESTDIR)$(bindir)" "$(DESTDIR)$(man1dir)" "$(DESTDIR)$(man5dir)"; do \
+ 	  test -z "$$dir" || $(MKDIR_P) "$$dir"; \
+ 	done
+ install: install-recursive
+@@ -1570,7 +1570,7 @@
+ 
+ install-info-am:
+ 
+-install-man: install-man1 install-man4
++install-man: install-man1 install-man5
+ 
+ install-pdf: install-pdf-recursive
+ 
+@@ -1603,7 +1603,7 @@
+ 
+ uninstall-am: uninstall-binPROGRAMS uninstall-man
+ 
+-uninstall-man: uninstall-man1 uninstall-man4
++uninstall-man: uninstall-man1 uninstall-man5
+ 
+ .MAKE: $(RECURSIVE_CLEAN_TARGETS) $(RECURSIVE_TARGETS) all check-am \
+ 	ctags-recursive install-am install-strip tags-recursive
+@@ -1619,14 +1619,14 @@
+ 	info-am install install-am install-binPROGRAMS install-data \
+ 	install-data-am install-dvi install-dvi-am install-exec \
+ 	install-exec-am install-html install-html-am install-info \
+-	install-info-am install-man install-man1 install-man4 \
++	install-info-am install-man install-man1 install-man5 \
+ 	install-pdf install-pdf-am install-ps install-ps-am \
+ 	install-strip installcheck installcheck-am installdirs \
+ 	installdirs-am maintainer-clean maintainer-clean-generic \
+ 	mostlyclean mostlyclean-compile mostlyclean-generic pdf pdf-am \
+ 	ps ps-am tags tags-recursive uninstall uninstall-am \
+ 	uninstall-binPROGRAMS uninstall-man uninstall-man1 \
+-	uninstall-man4
++	uninstall-man5
+ 
+ 
+ test: check-local
