@@ -9,7 +9,7 @@ MASTER_SITES=	http://virtual-estates.net/skem/
 MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	Cache earlier sendmail's verdicts for the relays
 
-USES=	tar:bzip2
+USES=		tar:bzip2 uidfix
 
 PLIST_FILES=	sbin/skem \
 		man/man8/skem.8.gz
@@ -22,9 +22,6 @@ SKEM_NETINET6_DESC=	Support IPv6 addresses (not tested)
 SKEM_NETINET_DESC=	Support IPv4 addresses
 
 OPTIONS_DEFAULT=	SKEM_NETINET
-
-post-install:
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.options.mk>
 
