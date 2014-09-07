@@ -12,13 +12,12 @@ COMMENT=	HTML Help Maker
 
 LIB_DEPENDS=	liblzxcomp.so:${PORTSDIR}/archivers/liblzxcomp
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+USES=		uidfix
+MAKEFILE=	${FILESDIR}/Makefile
 
 PLIST_FILES=	bin/hhm
 
 post-patch:
-	${MV} ${WRKSRC}/Makefile ${WRKSRC}/Makefile.prev
-	${CP} ${FILESDIR}/Makefile ${WRKSRC}/Makefile
 	${REINPLACE_CMD} -e 's!^typedef unsigned.*$$!!' ${WRKSRC}/hhm.c
 
 .include <bsd.port.mk>
