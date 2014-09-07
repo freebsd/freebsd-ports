@@ -1,0 +1,20 @@
+--- XMakefile.inc.orig	Tue Jun 20 10:31:09 2000
++++ XMakefile.inc	Tue Jun 20 10:43:22 2000
+@@ -20,8 +20,8 @@
+ #endif
+ 
+ .set LFLAGS	-L$(BD)obj -lfilter -ldiablo -lutil -lm
+-.set IDIR	/news
+-.set MDIR	/news/man
++.set IDIR	%%PREFIX%%/news
++.set MDIR	%%PREFIX%%/man
+ .set INSTALL	install
+ 
+ #ifdef __FreeBSD__
+@@ -41,5 +41,5 @@
+ .set INSTALL	/usr/ucb/install
+ #endif
+ 
+-.set DIST /news
++.set DIST %%PREFIX%%/news
+ 

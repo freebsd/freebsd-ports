@@ -11,6 +11,7 @@
     SUBDIR += cleanfeed
     SUBDIR += cnews
     SUBDIR += crashmail
+    SUBDIR += diablo
     SUBDIR += fidogate
     SUBDIR += fidogate-ds
     SUBDIR += golded+
