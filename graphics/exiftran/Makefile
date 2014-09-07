@@ -17,6 +17,7 @@ LIB_DEPENDS=	libexif.so:${PORTSDIR}/graphics/libexif \
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+USES=		uidfix
 MAKE_ARGS+=	WRKSRC=${WRKSRC} BINDIR=${PREFIX}/bin MANDIR=${MANPREFIX}/man
 
 PLIST_FILES=	bin/exiftran bin/thumbnail.cgi \
