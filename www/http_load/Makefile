@@ -10,6 +10,7 @@ DISTNAME=	${PORTNAME}-12mar2006
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Multiprocessing http performance test client
 
+USES=		uidfix
 MAKEFILE=	${FILESDIR}/Makefile.bsd
 
 PLIST_FILES=	bin/http_load \
