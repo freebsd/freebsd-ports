@@ -5,9 +5,9 @@ include/PackageKit/packagekit-qt/enum.h
 include/PackageKit/packagekit-qt/package.h
 include/PackageKit/packagekit-qt/transaction.h
 lib/libpackagekit-qt.a
-lib/libpackagekit-qt.la
 lib/libpackagekit-qt.so
 lib/libpackagekit-qt.so.14
+lib/libpackagekit-qt.so.14.0.5
 libdata/pkgconfig/packagekit-qt.pc
 share/cmake/Modules/FindQPackageKit.cmake
 @dirrmtry share/cmake/Modules
