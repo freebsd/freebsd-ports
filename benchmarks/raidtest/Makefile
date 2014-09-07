@@ -11,6 +11,7 @@ MAINTAINER=	pjd@FreeBSD.org
 COMMENT=	Test performance of storage devices
 
 NO_WRKSUBDIR=	yes
+USES=		uidfix
 PLIST_FILES=	bin/raidtest
 
 do-fetch:
