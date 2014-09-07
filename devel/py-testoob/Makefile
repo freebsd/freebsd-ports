@@ -12,9 +12,8 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Testoob is an advanced unit testing framework for PyUnit
 
-OPTIONS_DEFINE=	TWISTED HTML
+OPTIONS_DEFINE=	TWISTED
 TWISTED_DESC=	enable running in threads
-HTML_DESC=	enable HTML output
 
 USES=		tar:bzip2
 USE_PYTHON=	yes
@@ -25,10 +24,6 @@ PYDISTUTILS_AUTOPLIST=	yes
 
 .if ${PORT_OPTIONS:MTWISTED}
 USES+=		twisted
-.endif
-
-.if ${PORT_OPTIONS:MHTML}
-RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/Ft/Xml/__init__.py:${PORTSDIR}/textproc/py-4suite-xml
 .endif
 
 .include <bsd.port.post.mk>
