@@ -10,6 +10,8 @@ MASTER_SITES=	http://spatula.net/software/sex/
 MAINTAINER=	freebsd@spatula.net
 COMMENT=	Spouts silly mad-lib-style porn-like text
 
+USES=		uidfix
+
 PLIST_FILES=	bin/sex \
 		man/man6/sex.6.gz
 
