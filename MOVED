@@ -7022,3 +7022,6 @@ databases/msql||2014-09-07|Has expired: Not staged and BROKEN
 multimedia/pvr250||2014-09-07|Has expired: Not staged and BROKEN
 multimedia/pvrxxx||2014-09-07|Has expired: Not staged and BROKEN
 textproc/py-4suite-xml||2014-09-07|Has expired: Not staged
+mail/dcc-dccd||2014-09-07|Has expired: Not staged
+games/alienarena||2014-09-07|Has expired: Not staged
+games/alienarena-data||2014-09-07|Useless with alienarena removed
