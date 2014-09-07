@@ -1,4 +1,4 @@
- Created by: Sergey Skvortsov <skv@protey.ru>
+# Created by: Sergey Skvortsov <skv@protey.ru>
 # $FreeBSD$
 
 PORTNAME=	libdomainkeys
@@ -9,6 +9,7 @@ MASTER_SITES=	SF/domainkeys/${PORTNAME}/${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	DomainKeys library
 
+USES=		uidfix
 USE_LDCONFIG=	yes
 SHLIB_MAJOR=	3
 PLIST_SUB=	SHLIB_MAJOR="${SHLIB_MAJOR}"
