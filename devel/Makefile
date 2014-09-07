@@ -114,7 +114,6 @@
     SUBDIR += avro-cpp
     SUBDIR += awscli
     SUBDIR += bam
-    SUBDIR += baz
     SUBDIR += bcc
     SUBDIR += bcpp
     SUBDIR += beautifyphp
@@ -4070,7 +4069,6 @@
     SUBDIR += py3-dbus
     SUBDIR += py3-gobject3
     SUBDIR += py3-xdg
-    SUBDIR += pybaz
     SUBDIR += pybugz
     SUBDIR += pychecker
     SUBDIR += pycount
