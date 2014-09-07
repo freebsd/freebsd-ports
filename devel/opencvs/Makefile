@@ -14,6 +14,7 @@ LICENSE=	BSD2CLAUSE
 
 WRKSRC=		${WRKDIR}/cvs
 
+USES=		uidfix
 MAKE_ENV+=	BINDIR="${PREFIX}/bin" \
 		MANDIR="${MANPREFIX}/man/man" \
 		CATDIR="${MANPREFIX}/man/man"
