@@ -1,9 +1,4 @@
-@unexec cmp -s %D/etc/authlib/authmysqlrc.dist %D/etc/authlib/authmysqlrc && rm -f %D/etc/authlib/authmysqlrc 2>/dev/null || true
-etc/authlib/authmysqlrc.dist
-@exec %%LOCALBASE%%/share/sysconftool/sysconftool %D/etc/authlib/authmysqlrc.dist && chmod 0600 %D/etc/authlib/authmysqlrc
-lib/courier-authlib/libauthmysql.a
-lib/courier-authlib/libauthmysql.la
+@sample(%%MAILOWN%%,%%MAILGRP%%,660) etc/authlib/authmysqlrc.sample
 lib/courier-authlib/libauthmysql.so
 %%PORTDOCS%%%%DOCSDIR%%/README.authmysql.html
 %%PORTDOCS%%%%DOCSDIR%%/README.authmysql.myownquery
-

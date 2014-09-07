@@ -1,11 +1,12 @@
+lib/courier-authlib/libauthuserdb.so
 libexec/courier-authlib/makedatprog
+man/man8/makeuserdb.8.gz
+man/man8/pw2userdb.8.gz
+man/man8/userdb.8.gz
+man/man8/userdbpw.8.gz
 sbin/makeuserdb
 sbin/pw2userdb
 sbin/userdb
 sbin/userdb-test-cram-md5
 sbin/userdbpw
 sbin/vchkpw2userdb
-lib/courier-authlib/libauthuserdb.a
-lib/courier-authlib/libauthuserdb.la
-lib/courier-authlib/libauthuserdb.so
-
