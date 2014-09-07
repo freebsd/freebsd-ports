@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ncid
-PORTVERSION=	0.89
+PORTVERSION=	1.0
 CATEGORIES=	comms
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION:S/.1//g}
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
@@ -17,16 +17,18 @@ USES=		gmake perl5 tk
 ALL_TARGET=	local
 MAKE_ARGS=	WISH=${WISH} TCLSH=${TCLSH}
 INSTALL_TARGET=	freebsd-install
+MAKE_JOBS_UNSAFE=	yes
 
 SUB_FILES=	pkg-message
 
 OPTIONS_DEFINE=	DOCS
 
 WRKSRC=	${WRKDIR}/${PORTNAME}
-PORTDOCS=	CHANGES CONTRIBUTORS.md Devices.md FAQ.md Gateways.md GettingStarted.md \
-		INSTALL-Cygwin.md INSTALL-Fedora.md INSTALL-FreeBSD.md INSTALL-Mac.md \
-		INSTALL-Raspbian.md INSTALL-TiVo.md INSTALL-Ubuntu.md INSTALL-Win.md \
-		INSTALL.md LICENSE Modems.md NCID-SDK.odt README.docdir ReleaseNotes.md \
+PORTDOCS=	CHANGES CONTRIBUTORS.md Devices.md Documentation.md FAQ.md Gateways.md \
+		GettingStarted.md INSTALL-Cygwin.md INSTALL-Fedora.md INSTALL-FreeBSD.md \
+		INSTALL-Mac.md INSTALL-Raspbian.md INSTALL-Redhat.md INSTALL-TiVo.md \
+		INSTALL-Ubuntu.md INSTALL-Win.md INSTALL.md LICENSE Makefile Modems.md \
+		NCID-API.odt NCID-SDK.md NCID_Documentation.md README.docdir ReleaseNotes.md \
 		TODO.md Verbose.md mk-epub ncid-1.jpg
 
 .include <bsd.port.options.mk>
