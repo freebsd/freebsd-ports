@@ -132,10 +132,6 @@ GSSAPI_NONE_CONFIGURE_ON=	--without-gssapi
 
 .include <bsd.port.options.mk>
 
-.if (${ARCH} == "amd64")
-ARCH=		x86_64
-.endif
-
 .if !${PORT_OPTIONS:MLINKS} || ${PORT_OPTIONS:MREPLACE_BASE}
 PKGINSTALL=${NONEXISTENT}
 .endif
