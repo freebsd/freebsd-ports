@@ -1,0 +1,144 @@
+etc/rc.d/diablo.sh-sample
+man/man5/diablo-files.5.gz
+man/man5/diablo-kp.5.gz
+man/man8/dexpire.8.gz
+man/man8/dexpireover.8.gz
+man/man8/dfeedinfo.8.gz
+man/man8/dgrpctl.8.gz
+man/man8/dhisexpire.8.gz
+man/man8/diablo.8.gz
+man/man8/dicmd.8.gz
+man/man8/didump.8.gz
+man/man8/diloadfromspool.8.gz
+man/man8/dilookup.8.gz
+man/man8/dkp.8.gz
+man/man8/dnewslink.8.gz
+man/man8/doutq.8.gz
+man/man8/doverctl.8.gz
+man/man8/dpath.8.gz
+man/man8/drcmd.8.gz
+man/man8/dreadart.8.gz
+man/man8/dreaderd.8.gz
+man/man8/dreadover.8.gz
+man/man8/drequeue.8.gz
+man/man8/dspoolout.8.gz
+man/man8/dsyncgroups.8.gz
+@owner news
+@group news
+news/dactive.kp
+@mode 755
+news/dbin/.cvsignore
+news/dbin/.empty
+news/dbin/dcancel
+news/dbin/dclient
+news/dbin/dexpire
+news/dbin/dexpirecache
+news/dbin/dexpireover
+news/dbin/dexpirescoring
+news/dbin/dfeedinfo
+news/dbin/dfeedtest
+news/dbin/dgrpctl
+news/dbin/dhisbench
+news/dbin/dhisctl
+news/dbin/dhisexpire
+news/dbin/diablo
+news/dbin/dicmd
+news/dbin/diconvhist
+news/dbin/didate
+news/dbin/didump
+news/dbin/diload
+news/dbin/diloadfromspool
+news/dbin/dilookup
+news/dbin/dkp
+news/dbin/dlockhistory
+news/dbin/dnewslink
+news/dbin/doutq
+news/dbin/doverctl
+news/dbin/dpath
+news/dbin/dprimehostcache
+news/dbin/drcmd
+news/dbin/dreadart
+news/dbin/dreaderd
+news/dbin/dreadover
+news/dbin/drequeue
+news/dbin/dspaminfo
+news/dbin/dspoolout
+news/dbin/dstart
+news/dbin/dsyncgroups
+news/dbin/pgpverify
+news/dbin/plock
+news/dbin/showlocks
+@mode
+news/dcontrol.ctl
+news/dexpire.ctl
+news/diablo.config
+news/distrib.pats
+news/dnewsfeeds
+news/dreader.access
+news/dserver.hosts
+news/dspool.ctl
+news/moderators
+news/samples/adm/biweekly.atrim
+news/samples/adm/crontab.sample
+news/samples/adm/daily.atrim
+news/samples/adm/daily.reader
+news/samples/adm/hourly.expire
+news/samples/adm/old.biweekly.atrim.dexpire
+news/samples/adm/rc.news
+news/samples/adm/rot
+news/samples/adm/weekly.reader
+news/samples/dactive.kp
+news/samples/dcontrol.ctl
+news/samples/dexpire.ctl
+news/samples/diablo.config
+news/samples/diablo.hosts
+news/samples/distrib.pats
+news/samples/dnewsfeeds
+news/samples/dnntpspool.ctl
+news/samples/dreader.access
+news/samples/dserver.hosts
+news/samples/dspool.ctl
+news/samples/feeder+reader/README
+news/samples/feeder+reader/dactive.kp
+news/samples/feeder+reader/dcontrol.ctl
+news/samples/feeder+reader/dexpire.ctl
+news/samples/feeder+reader/diablo.config
+news/samples/feeder+reader/distrib.pats
+news/samples/feeder+reader/dnewsfeeds
+news/samples/feeder+reader/dreader.access
+news/samples/feeder+reader/dserver.hosts
+news/samples/feeder+reader/dspool.ctl
+news/samples/feeder+reader/moderators
+news/samples/feeder/diablo.config
+news/samples/feeder/dnewsfeeds
+news/samples/feeder/dspool.ctl
+news/samples/moderators
+news/samples/pgp-sample
+news/samples/reader/dactive.kp
+news/samples/reader/dcontrol.ctl
+news/samples/reader/dexpire.ctl
+news/samples/reader/diablo.config
+news/samples/reader/distrib.pats
+news/samples/reader/dreader.access
+news/samples/reader/dserver.hosts
+news/samples/reader/moderators
+@owner
+@group
+@dirrmtry news/dbin
+@dirrmtry news/dqueue
+@dirrmtry news/log
+@dirrmtry news/man/man5
+@dirrmtry news/man/man8
+@dirrmtry news/man
+@dirrmtry news/run
+@dirrmtry news/samples/adm
+@dirrmtry news/samples/feeder
+@dirrmtry news/samples/feeder+reader
+@dirrmtry news/samples/reader
+@dirrmtry news/samples
+@dirrmtry news/spool/cache
+@dirrmtry news/spool/group
+@dirrmtry news/spool/news
+@dirrmtry news/spool/postq
+@dirrmtry news/spool
+@dirrmtry news

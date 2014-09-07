@@ -1,0 +1,24 @@
+#!/bin/sh
+
+PKGNAME=$1
+
+case $2 in
+    PRE-INSTALL)
+	;;
+    POST-INSTALL)
+	NEWSBASE=${PREFIX:-/usr/local}/news
+        install -d \
+	    ${NEWSBASE}/dqueue \
+	    ${NEWSBASE}/spool \
+	    ${NEWSBASE}/spool/news \
+	    ${NEWSBASE}/spool/cache \
+	    ${NEWSBASE}/spool/group \
+	    ${NEWSBASE}/spool/postq
+	chown -R news:news ${NEWSBASE}
+	;;
+    *)
+	echo "Unexpected Argument $2!!!"
+	exit 1
+	;;
+esac
+exit 0

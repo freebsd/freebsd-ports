@@ -1,0 +1,6 @@
+Diablo is a comprehensive newsfeeding and newsreading software package
+that was originally developed by Matthew Dillon and is now run as an open
+source project.  Diablo is significantly faster and more robust than INN,
+and scales well to multi-server installations.
+
+WWW: http://www.openusenet.org/diablo/
