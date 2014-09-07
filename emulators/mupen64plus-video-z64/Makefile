@@ -24,5 +24,4 @@ EXTRACT_AFTER_ARGS=	#
 BUILD_WRKSRC=		${WRKSRC}/${PORTNAME}${PKGNAMESUFFIX}/projects/unix
 WRKSRC=			${WRKDIR}
 
-NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"
