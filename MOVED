@@ -6701,7 +6701,6 @@ mail/sccmilter||2014-09-01|Not staged
 mail/smfsav||2014-09-01|Not staged
 mail/softfail||2014-09-01|Not staged
 mail/spmfilter-spamassassin||2014-09-01|Not staged
-mail/sqlgrey||2014-09-01|Not staged
 mail/synonym||2014-09-01|Not staged
 mail/uebimiau||2014-09-01|Not staged
 mail/vm-pop3d||2014-09-01|Not staged
@@ -6952,7 +6951,6 @@ www/foswiki-ModPerlEngineContrib||2014-09-01|Not staged
 www/free-sa||2014-09-01|Not staged
 www/harvest||2014-09-01|Not staged
 www/htmlobject||2014-09-01|Not staged
-www/hypermail||2014-09-01|Not staged
 www/lusca-head||2014-09-01|Not staged
 www/mod_auth_form||2014-09-01|Not staged
 www/mod_auth_mellon||2014-09-01|Not staged
@@ -6982,7 +6980,7 @@ x11-themes/kde-icons-vista-inspirate||2014-09-01|Not staged
 x11-themes/metacity-bluecurve-theme||2014-09-01|Not staged
 x11-toolkits/paragui-devel||2014-09-01|Not staged
 x11-wm/sapphire||2014-09-01|Not staged
-x11-themes/gtk-bluecurve-theme||2014-09-02|Not staged
+x11-themes/gtk-bluecurve-theme||2014-09-01|Not staged
 biology/phd2fasta||2014-09-01|Not staged
 databases/kumofs||2014-09-01|Not staged
 devel/lxr||2014-09-01|Not staged
