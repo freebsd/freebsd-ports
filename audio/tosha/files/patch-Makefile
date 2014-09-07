@@ -1,19 +1,21 @@
---- Makefile.orig	1998-12-16 13:34:09.000000000 +0100
-+++ Makefile	2014-02-16 12:07:47.814820287 +0100
-@@ -54,14 +54,10 @@
+--- Makefile.orig	1998-12-16 12:34:09 UTC
++++ Makefile
+@@ -53,15 +53,10 @@
+ 	$(CC) $(CFLAGS) -o pcmfade pcmfade.o utils.o
  
  install:	$(BINS)
- 	strip $(BINS)
+-	strip $(BINS)
 -	install -s -g bin -o bin -m 755 $(BINS) $(BINDIR)
 -	install -c -g bin -o bin -m 644 tosharc $(ETCDIR)
-+	install -s -g bin -o bin -m 755 $(BINS) $(DESTDIR)$(BINDIR)
-+	install -c -g bin -o bin -m 644 tosharc $(DESTDIR)$(ETCDIR)
- 	install -c -g bin -o bin -m 644 tosha.1 pcmplay.1 pcmfade.1 \
+-	install -c -g bin -o bin -m 644 tosha.1 pcmplay.1 pcmfade.1 \
 -		$(MANDIR)/man1
 -.if !defined(NOMANCOMPRESS)
 -	cd $(MANDIR)/man1 ; \
 -	$(GZIP_CMD) tosha.1 pcmplay.1 pcmfade.1
 -.endif
++	$(BSD_INSTALL_PROGRAM) $(BINS) $(DESTDIR)$(BINDIR)
++	$(BSD_INSTALL_DATA) tosharc $(DESTDIR)$(ETCDIR)
++	$(BSD_INSTALL_MAN) tosha.1 pcmplay.1 pcmfade.1 \
 +		$(DESTDIR)$(MANDIR)/man1
  
  clean:
