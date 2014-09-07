@@ -367,7 +367,6 @@
     SUBDIR += mtr
     SUBDIR += mtr-nox11
     SUBDIR += nakenchat
-    SUBDIR += nam
     SUBDIR += nast
     SUBDIR += nbd-server
     SUBDIR += nc
@@ -400,7 +399,6 @@
     SUBDIR += nocatsplash
     SUBDIR += nos-ttb
     SUBDIR += nph
-    SUBDIR += ns
     SUBDIR += nss-pam-ldapd
     SUBDIR += nss-pam-ldapd-sasl
     SUBDIR += nss_ldap

@@ -180,7 +180,6 @@
     SUBDIR += onyx
     SUBDIR += oo2c
     SUBDIR += opendylan
-    SUBDIR += otcl
     SUBDIR += p2c
     SUBDIR += p5-Data-JavaScript
     SUBDIR += p5-Error

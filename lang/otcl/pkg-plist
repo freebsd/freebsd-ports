@@ -1,6 +1,0 @@
-bin/otclsh
-bin/owish
-include/otcl.h
-lib/libotcl.a
-lib/libotcl.so
-lib/libotcl.so.1

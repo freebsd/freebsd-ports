@@ -4652,7 +4652,6 @@
     SUBDIR += tcl-trf
     SUBDIR += tclap
     SUBDIR += tclcheck
-    SUBDIR += tclcl
     SUBDIR += tclgetopts
     SUBDIR += tcllib
     SUBDIR += tclmore
