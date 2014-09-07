@@ -16,6 +16,7 @@ RUN_DEPENDS=	netcat:${PORTSDIR}/net/netcat
 .endif
 
 MAKEFILE=	${FILESDIR}/Makefile
+USES=		uidfix
 USE_OPENSSL=	YES
 
 PLIST_FILES=	sbin/sst \
