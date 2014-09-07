@@ -2,10 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	ndpi
-PORTVERSION=	1.5.0
+PORTVERSION=	1.5.1
 CATEGORIES=	net
 MASTER_SITES=	SF/ntop/nDPI
-DISTNAME=	libndpi-${PORTVERSION}_r8115
+DISTNAME=	libndpi-${PORTVERSION}
 
 MAINTAINER=	5u623l20@gmail.com
 COMMENT=	NTOP-maintained superset of the popular OpenDPI library
@@ -22,10 +22,8 @@ GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 USES=	 	libtool pathfix pkgconfig compiler:c++11-lang
 WRKSRC=		${WRKDIR}/libndpi-${PORTVERSION}
+INSTALL_TARGET=	install-strip
 
 PLIST_SUB=	MAJOR_VER=${PORTVERSION}
-
-post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libndpi.so.1.0.0
 
 .include <bsd.port.mk>
