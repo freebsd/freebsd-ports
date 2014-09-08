@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	toxic
-PORTVERSION=	0.4.7.140815
+PORTVERSION=	0.5.0.140908
 CATEGORIES=	net-im
 
 MAINTAINER=	thierry@FreeBSD.org
@@ -21,7 +21,14 @@ RUN_DEPENDS=	${LOCALBASE}/lib/libtoxcore.a:${PORTSDIR}/net-im/tox
 USE_GITHUB=	yes
 GH_ACCOUNT=	tox
 GH_TAGNAME=	${GH_COMMIT}
-GH_COMMIT=	67f637a
+GH_COMMIT=	09f90d0
+
+OPTIONS_DEFINE=	X11
+OPTIONS_DEFAULT=X11
+
+X11_USE=	XORG=x11
+X11_CFLAGS_OFF=	DISABLE_X11=1 DISABLE_DESKTOP_NOTIFY=1
+X11_LIB_DEPENDS=libnotify.so:${PORTSDIR}/devel/libnotify
 
 WRKSRC=		${WRKDIR}/Tox-${PORTNAME}-${GH_COMMIT}
 BUILD_WRKSRC=	${WRKSRC}/build
@@ -40,7 +47,7 @@ LDFLAGS+=	-B${LOCALBASE}/bin
 
 pre-configure:
 	${REINPLACE_CMD} -e 's|PREFIX =|PREFIX?=|;s|$$(shell git rev-list HEAD --count)|${GH_COMMIT}|'	\
-		${BUILD_WRKSRC}/${MAKEFILE}
+		${WRKSRC}/cfg/global_vars.mk
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/toxic
