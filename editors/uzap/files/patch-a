@@ -34,8 +34,8 @@
  install: uzap
 -	install -s -m 771 uzap $(BINDIR)
 -	install -c -m 664 uzap.man $(MANDIR)/uzap.$(MSECT)
-+	install -s -m 755 -o bin -g bin uzap $(DESTDIR)$(BINDIR)
-+	install -c -m 644 -o bin -g bin uzap.man $(DESTDIR)$(MANDIR)/uzap.$(MSECT)
++	$(BSD_INSTALL_PROGRAM) uzap $(DESTDIR)$(BINDIR)
++	$(BSD_INSTALL_MAN) uzap.man $(DESTDIR)$(MANDIR)/uzap.$(MSECT)
  
  clean:
 -	rm -f *.o core uzap
