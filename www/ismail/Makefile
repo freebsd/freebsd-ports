@@ -17,6 +17,7 @@ USES=		tar:bzip2
 USE_PHP=	imap
 WANT_PHP_WEB=	yes
 
+PLIST_SUB=	WWWOWN="${WWWOWN}" WWWGRP="${WWWGRP}"
 SUB_FILES=	pkg-message
 
 OPTIONS_DEFINE=	DOCS
@@ -49,7 +50,6 @@ pre-install:
 do-install:
 	@${MKDIR} ${STAGEDIR}${WWWDIR}
 	${TAR} --exclude '*~' -C ${WRKSRC}/${PORTNAME} -cf - . | ${TAR} -C ${STAGEDIR}${WWWDIR} -xf -
-	@${CHOWN} -R www:www ${STAGEDIR}${WWWDIR}
 .if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/docs.html ${STAGEDIR}${DOCSDIR}
