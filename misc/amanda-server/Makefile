@@ -3,7 +3,7 @@
 
 PORTNAME=	amanda
 PORTVERSION=	3.3.2
-PORTREVISION=	2
+PORTREVISION?=	3
 PORTEPOCH=	1
 CATEGORIES=	misc
 MASTER_SITES=	SF/amanda/amanda%20-%20stable/${PORTVERSION}
@@ -19,7 +19,8 @@ WRKSRC=		${WRKDIR}/amanda-${PORTVERSION}
 SLAVEDIRS=	misc/amanda-client
 
 GNU_CONFIGURE=	yes
-USES=		charsetfix gmake pkgconfig perl5
+INSTALL_TARGET=	install-strip
+USES=		charsetfix gmake libtool perl5 pkgconfig
 USE_GNOME=	glib20
 USE_OPENSSL=	yes
 USE_LDCONFIG=	yes
