@@ -2,7 +2,7 @@
 
 PORTNAME=	sablevm
 PORTVERSION=	1.13
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	java devel
 MASTER_SITES=	SF
 
@@ -16,13 +16,14 @@ LIB_DEPENDS=	libpopt.so:${PORTSDIR}/devel/popt \
 RUN_DEPENDS=	fastjar:${PORTSDIR}/archivers/fastjar
 
 GNU_CONFIGURE=	yes
+INSTALL_TARGET=	install-strip
+USES=		gettext gmake iconv libtool pkgconfig
 USE_AUTOTOOLS=	libltdl
 USE_LDCONFIG=	yes
-USES=		pkgconfig gettext iconv gmake
 
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--includedir=${PREFIX}/include/${PORTNAME}
+CPPFLAGS+=	-I${LOCALBASE}/include
+LIBS+=		-L${LOCALBASE}/lib
 
 OPTIONS_DEFINE=	SVMCP
 OPTIONS_DEFAULT=SVMCP
