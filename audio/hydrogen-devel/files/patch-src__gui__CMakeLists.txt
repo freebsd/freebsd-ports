@@ -1,0 +1,10 @@
+--- ./src/gui/CMakeLists.txt.orig	2014-06-19 06:38:04.000000000 +0930
++++ ./src/gui/CMakeLists.txt	2014-08-13 02:18:55.069463221 +0930
+@@ -22,6 +22,7 @@
+     ${CMAKE_BINARY_DIR}/src/core/include        # generated config.h
+     ${LASH_INCLUDE_DIR}
+     ${QT_INCLUDES}
++    ${LIBSNDFILE_INCLUDE_DIR}
+ )
+ 
+ IF(APPLE)
