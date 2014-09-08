@@ -20,6 +20,9 @@ NO_WRKSUBDIR=	yes
 USES=		imake
 USE_XORG=	ice sm x11 xaw xext xmu xt
 
-PLIST_FILES=	bin/${PORTNAME} man/man1/${PORTNAME}.1.gz
+PLIST_FILES=	"@(,kmem,2555) bin/${PORTNAME}" man/man1/${PORTNAME}.1.gz
+
+post-patch:
+	@${REINPLACE_CMD} 's/InstKmemFlags/InstBinFlags/' ${WRKSRC}/Imakefile
 
 .include <bsd.port.mk>
