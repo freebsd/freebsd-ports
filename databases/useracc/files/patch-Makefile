@@ -10,12 +10,12 @@
 -	$(INSTALL) -c -g wheel -m 555 -o root etc/useracc.sh.sample $(PREFIX)/etc/rc.d
 -	$(INSTALL) -d -g wheel -m 755 -o root $(PREFIX)/man/man1
 -	$(INSTALL) -c -g wheel -m 444 -o root man/useracc.1.gz $(PREFIX)/man/man1
-+	$(INSTALL) -d -g wheel -m 755 -o root $(DESTDIR)$(PREFIX)/bin
-+	$(INSTALL) -c -g wheel -m 555 -o root -s bin/useracc $(DESTDIR)$(PREFIX)/bin
-+	$(INSTALL) -d -g wheel -m 755 -o root $(DESTDIR)$(PREFIX)/etc/rc.d
-+	$(INSTALL) -c -g wheel -m 555 -o root etc/useracc.sh.sample $(DESTDIR)$(PREFIX)/etc/rc.d
-+	$(INSTALL) -d -g wheel -m 755 -o root $(DESTDIR)$(PREFIX)/man/man1
-+	$(INSTALL) -c -g wheel -m 444 -o root man/useracc.1.gz $(DESTDIR)$(PREFIX)/man/man1
++	$(INSTALL) -d -m 755 $(DESTDIR)$(PREFIX)/bin
++	$(BSD_INSTALL_PROGRAM) bin/useracc $(DESTDIR)$(PREFIX)/bin
++	$(INSTALL) -d -m 755 $(DESTDIR)$(PREFIX)/etc/rc.d
++	$(BSD_INSTALL_DATA) etc/useracc.sh.sample $(DESTDIR)$(PREFIX)/etc/rc.d
++	$(INSTALL) -d -m 755 $(DESTDIR)$(PREFIX)/man/man1
++	$(BSD_INSTALL_MAN) man/useracc.1.gz $(DESTDIR)$(PREFIX)/man/man1
  
  useracc: useracc.o
  	$(CC) $(CFLAGS) useracc.o $(LDFLAGS) -o $@
