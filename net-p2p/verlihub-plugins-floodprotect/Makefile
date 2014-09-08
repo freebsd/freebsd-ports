@@ -3,16 +3,15 @@
 
 PORTNAME=	floodprotect
 PORTVERSION=	1.6
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net-p2p
 MASTER_SITES=	SF/verlihub/OldFiles
+DISTNAME=	${PLUGIN_NAME}
 
 MAINTAINER=	me@skylord.ru
 
 PLUGIN_NAME=	floodprot
 PLUGIN_DESC=	Floodprotect
 
-.include <bsd.port.pre.mk>
-.include "${PORTSDIR}/net-p2p/verlihub-plugins/Makefile.plugins"
-DISTNAME=	${PLUGIN_NAME}
-.include <bsd.port.post.mk>
+.include "../verlihub-plugins/Makefile.plugins"
+.include <bsd.port.mk>
