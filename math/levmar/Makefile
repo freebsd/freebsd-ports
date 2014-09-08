@@ -14,7 +14,7 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USE_LDCONFIG=	yes
-USES=		fortran tar:tgz
+USES=		fortran tar:tgz uidfix
 
 OPTIONS_DEFINE=	DOCS EXAMPLES PROFILE
 PROFILE_DESC=	Build a profiling library
