@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	openxpki
-PORTVERSION=	0.20.0.1
+PORTVERSION=	0.21.0.1
 CATEGORIES=	security perl5
 PKGNAMEPREFIX=	p5-
 DIST_SUBDIR=	openxpki
@@ -15,6 +15,20 @@ LICENSE=	APACHE20
 BUILD_DEPENDS=	\
 	p5-openxpki-i18n>=0.20.0.1:${PORTSDIR}/security/p5-openxpki-i18n \
 	openca-tools-forked>=1.4.0:${PORTSDIR}/security/openca-tools-forked \
+	p5-Class-Accessor-Chained>=0:${PORTSDIR}/devel/p5-Class-Accessor-Chained \
+	p5-Config-Merge>=0:${PORTSDIR}/devel/p5-Config-Merge \
+	p5-Connector>=0:${PORTSDIR}/devel/p5-Connector \
+	p5-JSON>=0:${PORTSDIR}/converters/p5-JSON \
+	p5-Crypt-OpenSSL-AES>=0:${PORTSDIR}/security/p5-Crypt-OpenSSL-AES \
+	p5-JSON>=0:${PORTSDIR}/converters/p5-JSON \
+	p5-LWP-Protocol-connect>=0:${PORTSDIR}/www/p5-LWP-Protocol-connect \
+	p5-LWP-Protocol-https>=0:${PORTSDIR}/www/p5-LWP-Protocol-https \
+	p5-Moose>=0:${PORTSDIR}/devel/p5-Moose \
+	p5-Crypt-SSLeay>=0:${PORTSDIR}/security/p5-Crypt-SSLeay \
+	p5-Path-Class>=0:${PORTSDIR}/devel/p5-Path-Class \
+	p5-Proc-SafeExec>=0:${PORTSDIR}/devel/p5-Proc-SafeExec \
+	p5-SOAP-Lite>=0:${PORTSDIR}/net/p5-SOAP-Lite \
+	p5-Switch>=0:${PORTSDIR}/lang/p5-Switch \
 	p5-Workflow>=0.31:${PORTSDIR}/devel/p5-Workflow \
 	p5-CGI-Session>=0:${PORTSDIR}/www/p5-CGI-Session \
 	p5-TimeDate>=0:${PORTSDIR}/devel/p5-TimeDate \
@@ -55,7 +69,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	openxpki
 GH_PROJECT=	openxpki
 GH_TAGNAME=	${GH_COMMIT}
-GH_COMMIT=	d4dd0ab
+GH_COMMIT=	908559d
 
 USE_OPENSSL=	yes
 USE_PERL5=	configure
