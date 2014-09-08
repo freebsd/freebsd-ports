@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	nzbget
-PORTVERSION=	12.0
-PORTREVISION=	3
+PORTVERSION=	13.0
 CATEGORIES=	news
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-stable/${PORTVERSION}
 
@@ -15,14 +14,20 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	libxml2.so:${PORTSDIR}/textproc/libxml2 \
 		libsigc-2.0.so:${PORTSDIR}/devel/libsigc++20
 
-USES=		pkgconfig
+USES=		ncurses pkgconfig shebangfix
 USE_RC_SUBR=	nzbget
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--with-libcurses-includes=${NCURSESINC} \
+		--with-libcurses-libraries=${NCURSESLIB}
 CONFIGURE_ENV=	LOCALBASE="${LOCALBASE}"
 MAKE_JOBS_UNSAFE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	${PTHREAD_LIBS}
 CFLAGS+=	${PTHREAD_CFLAGS}
+BINMODE=	0755
+
+SHEBANG_FILES=	scripts/*.py
+python_OLD_CMD=	/usr/bin/env python
 
 OPTIONS_DEFINE=	7Z PAR PYTHON RAR DOCS
 OPTIONS_SINGLE=	TLSLIB
@@ -39,14 +44,14 @@ PAR_CONFIGURE_ON=	--enable-parcheck --disable-libpar2-bugfixes-check
 PAR_CONFIGURE_OFF=	--disable-parcheck
 PAR_LIB_DEPENDS=	libpar2.so:${PORTSDIR}/archivers/libpar2
 
-PYTHON_USE=	PYTHON=yes
+PYTHON_USES=		python:run
 
 RAR_RUN_DEPENDS=	unrar:${PORTSDIR}/archivers/unrar
 
 OPENSSL_CONFIGURE_ON=	--with-tlslib=OpenSSL \
 			--with-openssl-includes=${OPENSSLINC} \
 			--with-openssl-libraries=${OPENSSLLIB}
-OPENSSL_USE=	OPENSSL=yes
+OPENSSL_USE=		OPENSSL=yes
 
 GNUTLS_CONFIGURE_ON=	--with-tlslib=GnuTLS
 GNUTLS_LIB_DEPENDS=	libgnutls.so:${PORTSDIR}/security/gnutls \
@@ -55,12 +60,8 @@ GNUTLS_LIB_DEPENDS=	libgnutls.so:${PORTSDIR}/security/gnutls \
 .include <bsd.port.options.mk>
 
 .if (${ARCH} == "i386")
-CONFIGURE_ARGS+=       --disable-sigchld-handler
+CONFIGURE_ARGS+=	--disable-sigchld-handler
 .endif
-
-post-configure:
-	# necessary for stage
-	@${REINPLACE_CMD} -e 's|555|655|g ; s|444|644|' ${WRKSRC}/Makefile
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/nzbget.conf \
