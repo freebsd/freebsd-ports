@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	HTML-Query
-PORTVERSION=	0.08
+PORTVERSION=	0.09
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -10,7 +10,10 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	vivek@khera.org
 COMMENT=	JQuery-like selection queries for HTML::Element
 
-RUN_DEPENDS+=	p5-Badger>0.0:${PORTSDIR}/devel/p5-Badger \
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
+
+RUN_DEPENDS+=	p5-Badger>=0.03:${PORTSDIR}/devel/p5-Badger \
 		p5-HTML-Tree>=3.23:${PORTSDIR}/www/p5-HTML-Tree
 
 USES=		perl5
