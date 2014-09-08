@@ -124,9 +124,9 @@ man/man6/sol.6.gz
 lib/girepository-1.0/GnomeGamesSupport-1.0.typelib
 lib/gnome-games/ar-cards-renderer
 lib/gnome-games/libgames-support-gi.a
-lib/gnome-games/libgames-support-gi.la
 lib/gnome-games/libgames-support-gi.so
 lib/gnome-games/libgames-support-gi.so.0
+lib/gnome-games/libgames-support-gi.so.0.0.0
 %%PYTHON_SITELIBDIR%%/glchess/__init__.py
 %%PYTHON_SITELIBDIR%%/glchess/__init__.pyc
 %%PYTHON_SITELIBDIR%%/glchess/__init__.pyo
