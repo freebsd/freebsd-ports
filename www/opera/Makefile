@@ -68,6 +68,7 @@ OPERA_ARCH=	${ARCH:S,i386,intel,}
 
 .if ${OSVERSION} >= 1000054
 BUILD_DEPENDS+=	${LOCALBASE}/lib/compat/libstdc++.so.6:${PORTSDIR}/misc/compat9x
+PLIST_SUB+=	LIBSTDC=""
 .else
 PLIST_SUB+=	LIBSTDC="@comment "
 .endif
