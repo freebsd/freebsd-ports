@@ -3,7 +3,7 @@
 
 PORTNAME=	mono
 PORTVERSION=	3.4.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	lang
 MASTER_SITES=	http://download.mono-project.com/sources/${PORTNAME}/
 

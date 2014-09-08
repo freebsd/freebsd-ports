@@ -3,7 +3,7 @@
 
 PORTNAME=	cvm
 PORTVERSION=	0.96
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES=	http://untroubled.org/${PORTNAME}/ \
 		http://untroubled.org/${PORTNAME}/archive/
@@ -21,7 +21,6 @@ USES=		libtool:build
 USE_LDCONFIG=	yes
 BGLIBS_INC=	${LOCALBASE}/include/bglibs
 BGLIBS_LIB=	${LOCALBASE}/lib/bglibs
-ALL_TARGET=	all
 
 DOCS=		NEWS README TODO *.html
 
