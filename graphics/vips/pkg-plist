@@ -66,11 +66,11 @@ include/vips/vipscpp.h
 lib/libvips.a
 lib/libvips.so
 lib/libvips.so.38
-lib/libvips.so.38.0.4
+lib/libvips.so.38.0.5
 lib/libvipsCC.a
 lib/libvipsCC.so
 lib/libvipsCC.so.38
-lib/libvipsCC.so.38.0.4
+lib/libvipsCC.so.38.0.5
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/vipsCC/VDisplay.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/vipsCC/VDisplay.pyc
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/vipsCC/VDisplay.pyo
