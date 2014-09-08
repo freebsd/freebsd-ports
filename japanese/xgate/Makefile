@@ -13,7 +13,7 @@ COMMENT=	Webmail system xGate implemented by Servlet over IMAP4/POP3
 
 RUN_DEPENDS=	${APP_HOME}/bin/bootstrap.jar:${PORTSDIR}/www/tomcat6
 
-USES=		uidfix dos2unix tar:tgz
+USES=		dos2unix tar:tgz
 NO_BUILD=	yes
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
