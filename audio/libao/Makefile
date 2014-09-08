@@ -3,13 +3,14 @@
 
 PORTNAME=	libao
 PORTVERSION=	1.2.0
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://downloads.xiph.org/releases/ao/
 
 MAINTAINER=	naddy@FreeBSD.org
 COMMENT=	Portable audio output library
 
-USES=		libtool:keepla pathfix pkgconfig
+USES=		libtool pathfix pkgconfig
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-static \
