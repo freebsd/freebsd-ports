@@ -294,6 +294,7 @@ bin/openxpkictl
 %%PERL5_MAN3%%/OpenXPKI::Tests.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Transport::Simple.3.gz
 %%PERL5_MAN3%%/OpenXPKI::VERSION.3.gz
+%%PERL5_MAN3%%/OpenXPKI::Workflow::Config.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Workflow::Factory.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Workflow::Handler.3.gz
 %%PERL5_MAN3%%/OpenXPKI::XML::Cache.3.gz
@@ -614,6 +615,7 @@ bin/openxpkictl
 %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Tests.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Transport/Simple.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/VERSION.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Workflow/Config.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Workflow/Factory.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Workflow/Handler.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/XML/Cache.pm

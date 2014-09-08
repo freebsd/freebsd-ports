@@ -1,9 +1,0 @@
---- src/man/Makefile.orig	Tue Nov  1 20:36:06 1994
-+++ src/man/Makefile	Sat Aug  5 09:59:15 2006
-@@ -3,4 +3,5 @@
- MANDIR=/usr/man/man$(MANEXT)
- 
- install:
--	for f in $(MAN); do cp $$f $(MANDIR)/`basename $$f .m`.$(MANEXT); done
-+	mkdir -p ${MANDIR}
-+	for f in $(MAN); do ${BSD_INSTALL_MAN} $$f $(MANDIR)/`basename $$f .m`.$(MANEXT); done

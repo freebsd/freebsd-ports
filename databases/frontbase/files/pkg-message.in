@@ -1,8 +1,0 @@
-
-FrontBase SQL Server has now been installed.
-
-To run FrontBase on startup add frontbase_enable="YES" to /etc/rc.conf
-
-To start the database manually, add the above config and run,
-  %%PREFIX%%/etc/rc.d/frontbase start
-

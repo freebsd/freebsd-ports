@@ -131,8 +131,6 @@
     SUBDIR += freeradius2
     SUBDIR += freeradius3
     SUBDIR += freerdp
-    SUBDIR += freeswitch-core-devel
-    SUBDIR += freeswitch-devel
     SUBDIR += freevrrpd
     SUBDIR += fspclient
     SUBDIR += fsplib
@@ -290,7 +288,6 @@
     SUBDIR += libdmapsharing
     SUBDIR += libdnet
     SUBDIR += libexosip2
-    SUBDIR += libexosip2-legacy
     SUBDIR += libfb
     SUBDIR += libfixbuf
     SUBDIR += libgnetwork
@@ -313,7 +310,6 @@
     SUBDIR += liboauth
     SUBDIR += libopennet
     SUBDIR += liboping
-    SUBDIR += libosip
     SUBDIR += libosip2
     SUBDIR += libpcap
     SUBDIR += libpcapnav
@@ -380,7 +376,6 @@
     SUBDIR += mtr
     SUBDIR += mtr-nox11
     SUBDIR += nakenchat
-    SUBDIR += nam
     SUBDIR += nast
     SUBDIR += nbd-server
     SUBDIR += nc
@@ -413,7 +408,6 @@
     SUBDIR += nocatsplash
     SUBDIR += nos-ttb
     SUBDIR += nph
-    SUBDIR += ns
     SUBDIR += nss-pam-ldapd
     SUBDIR += nss-pam-ldapd-sasl
     SUBDIR += nss_ldap

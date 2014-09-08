@@ -3,7 +3,7 @@
 
 PORTNAME=	ffmpeg
 PORTVERSION=	2.2.4
-PORTREVISION=	5
+PORTREVISION=	6
 PORTEPOCH=	1
 CATEGORIES=	multimedia audio ipv6 net
 MASTER_SITES=	http://ffmpeg.org/releases/
@@ -117,6 +117,7 @@ LIBBLURAY_LIB_DEPENDS=	libbluray.so:${PORTSDIR}/multimedia/libbluray
 LIBBLURAY_CONFIGURE_ENABLE=	libbluray
 
 # libv4l
+LIBV4L_BUILD_DEPENDS=	v4l_compat>0:${PORTSDIR}/multimedia/v4l_compat
 LIBV4L_LIB_DEPENDS=	libv4l2.so:${PORTSDIR}/multimedia/libv4l
 LIBV4L_CONFIGURE_ENABLE=	libv4l2
 LIBV4L_CONFIGURE_OFF=		--disable-indev=v4l2 \

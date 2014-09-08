@@ -3,6 +3,7 @@
 
 PORTNAME=	GeoIP
 PORTVERSION=	1.6.2
+PORTREVISION=	1
 CATEGORIES=	net geography
 
 MAINTAINER=	adamw@FreeBSD.org

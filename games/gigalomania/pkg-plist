@@ -1,6 +1,5 @@
 bin/gigalomania
 share/applications/gigalomania.desktop
-share/applications/gigalomania_fullscreen.desktop
 %%DATADIR%%/gfx/attacker_ammo.png
 %%DATADIR%%/gfx/attacker_flying.png
 %%DATADIR%%/gfx/attacker_walking_0_0.png
@@ -23,7 +22,10 @@ share/applications/gigalomania_fullscreen.desktop
 %%DATADIR%%/gfx/attacker_walking_3_1.png
 %%DATADIR%%/gfx/attacker_walking_3_2.png
 %%DATADIR%%/gfx/attacker_walking_3_3.png
-%%DATADIR%%/gfx/attacker_walking_4.png
+%%DATADIR%%/gfx/attacker_walking_4_0.png
+%%DATADIR%%/gfx/attacker_walking_4_1.png
+%%DATADIR%%/gfx/attacker_walking_4_2.png
+%%DATADIR%%/gfx/attacker_walking_4_3.png
 %%DATADIR%%/gfx/attacker_walking_5.png
 %%DATADIR%%/gfx/building_factory_4.png
 %%DATADIR%%/gfx/building_factory_5.png
@@ -52,6 +54,7 @@ share/applications/gigalomania_fullscreen.desktop
 %%DATADIR%%/gfx/building_tower_9.png
 %%DATADIR%%/gfx/deadtree1_00.png
 %%DATADIR%%/gfx/defenders.png
+%%DATADIR%%/gfx/explosions_test4.png
 %%DATADIR%%/gfx/features.png
 %%DATADIR%%/gfx/font.png
 %%DATADIR%%/gfx/icons.png
@@ -103,9 +106,28 @@ share/applications/gigalomania_fullscreen.desktop
 %%DATADIR%%/islands/x.map
 %%DATADIR%%/islands/yen.map
 %%DATADIR%%/islands/zinc.map
+%%DATADIR%%/sound/biplane.ogg
 %%DATADIR%%/sound/bomb.wav
+%%DATADIR%%/sound/ergonomically_terrific.wav
+%%DATADIR%%/sound/it_s_all_over.wav
+%%DATADIR%%/sound/jetplane.ogg
 %%DATADIR%%/sound/misc_menu_3.wav
 %%DATADIR%%/sound/pain1.wav
+%%DATADIR%%/sound/putting_you_on_hold.wav
+%%DATADIR%%/sound/spaceship.ogg
+%%DATADIR%%/sound/the_design_is_finished.wav
+%%DATADIR%%/sound/the_factory_s_been_destroyed.wav
+%%DATADIR%%/sound/the_lab_s_been_destroyed.wav
+%%DATADIR%%/sound/the_mine_is_destroyed.wav
+%%DATADIR%%/sound/the_production_run_s_completed.wav
+%%DATADIR%%/sound/the_sector_s_been_destroyed.wav
+%%DATADIR%%/sound/tower_critical.wav
+%%DATADIR%%/sound/we_re_running_out_of_elements.wav
+%%DATADIR%%/sound/we_ve_advanced_a_tech_level.wav
+%%DATADIR%%/sound/we_ve_been_nuked.wav
+%%DATADIR%%/sound/we_ve_conquered_the_sector.wav
+%%DATADIR%%/sound/we_ve_nuked_them.wav
+%%DATADIR%%/sound/we_ve_won.wav
 %%DATADIR%%/sound/woodbrk.wav
 share/pixmaps/gigalomania64.png
 @dirrm %%DATADIR%%/sound

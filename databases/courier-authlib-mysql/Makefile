@@ -1,6 +1,7 @@
 # Created by: Yarema <yds@CoolRat.org>
 # $FreeBSD$
 
+PORTREVISION=	1
 PKGNAMESUFFIX=	-mysql
 
 COMMENT=	MySQL support for the Courier authentication library

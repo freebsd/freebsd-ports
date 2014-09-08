@@ -41,7 +41,7 @@ USE_GHOSTSCRIPT=yes
 USE_GL=	glut
 USE_PERL5=	build
 USE_PYTHON=	yes
-USE_TEX=	dvipsk formats texlive
+USE_TEX=	dvipsk formats
 
 WRKSRC=	${WRKDIR}/${PORTNAME}-${PORTVERSION}
 

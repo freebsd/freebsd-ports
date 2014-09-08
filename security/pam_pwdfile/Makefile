@@ -10,6 +10,7 @@ MASTER_SITES=	http://cpbotha.net/files/pam_pwdfile/
 MAINTAINER=	mschout@gkg.net
 COMMENT=	Pam module for authenticating with flat passwd files
 
+USES=		uidfix
 MAKEFILE=	${FILESDIR}/Makefile.bsd
 
 PLIST_FILES=	lib/pam_pwdfile.so

@@ -48,7 +48,7 @@ ONLY_FOR_ARCHS=	i386 amd64 sparc64
 CONFLICTS=	zaptel-[0-9]* dahdi-kmod-*
 
 KMODDIR=	${PREFIX}/lib/dahdi
-USES=		kmod
+USES=		kmod uidfix
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "i386" || ${ARCH} == "amd64"

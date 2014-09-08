@@ -13,10 +13,10 @@ COMMENT=	Shows a graphics representation of the filesystem usage
 
 RUN_DEPENDS=	rubygem-cairo>=0:${PORTSDIR}/graphics/rubygem-cairo \
 		${RUBY_SITEARCHLIBDIR}/bdb.so:${PORTSDIR}/databases/ruby-bdb \
-		${RUBY_SITELIBDIR}/locale.rb:${PORTSDIR}/devel/ruby-locale2 \
-		${RUBY_ARCHLIBDIR}/iconv.so:${PORTSDIR}/converters/ruby-iconv
+		${RUBY_SITELIBDIR}/locale.rb:${PORTSDIR}/devel/ruby-locale2
 
 USE_RUBY=	yes
+USE_RUBY_FEATURES=	iconv
 NO_BUILD=	yes
 RUBY_SHEBANG_FILES=	${PORTNAME} ${PORTNAME}.rb ${PORTNAME}.cgi
 

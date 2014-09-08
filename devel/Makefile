@@ -115,7 +115,6 @@
     SUBDIR += avro-cpp
     SUBDIR += awscli
     SUBDIR += bam
-    SUBDIR += baz
     SUBDIR += bcc
     SUBDIR += bcpp
     SUBDIR += beautifyphp
@@ -391,7 +390,6 @@
     SUBDIR += eet
     SUBDIR += eggdbus
     SUBDIR += egypt
-    SUBDIR += eieio
     SUBDIR += eiffelstudio
     SUBDIR += eina
     SUBDIR += eio
@@ -427,9 +425,7 @@
     SUBDIR += fistgen
     SUBDIR += flatzebra
     SUBDIR += flex-sdk
-    SUBDIR += flex-sdk2
     SUBDIR += flex-sdk35
-    SUBDIR += flex_compiler_shell
     SUBDIR += flexdock
     SUBDIR += flexjson
     SUBDIR += flickrnet
@@ -584,6 +580,7 @@
     SUBDIR += gnustep
     SUBDIR += gnustep-make
     SUBDIR += go-flags
+    SUBDIR += go-hashicorp-logutils
     SUBDIR += go-json-rest
     SUBDIR += go-pretty
     SUBDIR += go-runewidth
@@ -1693,6 +1690,7 @@
     SUBDIR += p5-Config-YAML
     SUBDIR += p5-ConfigReader
     SUBDIR += p5-ConfigReader-Simple
+    SUBDIR += p5-Connector
     SUBDIR += p5-Const-Fast
     SUBDIR += p5-Context-Preserve
     SUBDIR += p5-Contextual-Return
@@ -2862,6 +2860,7 @@
     SUBDIR += p5-Test-Class-Most
     SUBDIR += p5-Test-ClassAPI
     SUBDIR += p5-Test-Classy
+    SUBDIR += p5-Test-CleanNamespaces
     SUBDIR += p5-Test-Cmd
     SUBDIR += p5-Test-Command
     SUBDIR += p5-Test-Command-Simple
@@ -4072,7 +4071,6 @@
     SUBDIR += py3-gobject3
     SUBDIR += py3-xdg
     SUBDIR += py_static_check
-    SUBDIR += pybaz
     SUBDIR += pybugz
     SUBDIR += pychecker
     SUBDIR += pycount
@@ -4197,7 +4195,6 @@
     SUBDIR += ruby-langscan
     SUBDIR += ruby-locale
     SUBDIR += ruby-locale2
-    SUBDIR += ruby-memoize
     SUBDIR += ruby-multi
     SUBDIR += ruby-ncurses
     SUBDIR += ruby-property
@@ -4426,6 +4423,7 @@
     SUBDIR += rubygem-piston
     SUBDIR += rubygem-pkg-config
     SUBDIR += rubygem-platform
+    SUBDIR += rubygem-plist
     SUBDIR += rubygem-polyglot
     SUBDIR += rubygem-popen4
     SUBDIR += rubygem-posix-spawn
@@ -4537,6 +4535,7 @@
     SUBDIR += rubygem-turn
     SUBDIR += rubygem-typed-array
     SUBDIR += rubygem-tzinfo
+    SUBDIR += rubygem-tzinfo03
     SUBDIR += rubygem-unicode
     SUBDIR += rubygem-uuid
     SUBDIR += rubygem-uuidtools
@@ -4574,7 +4573,11 @@
     SUBDIR += sdts++
     SUBDIR += sedsed
     SUBDIR += seed
+<<<<<<< HEAD
     SUBDIR += semantic
+=======
+    SUBDIR += seed3
+>>>>>>> 0fa2e2bc58e47cb929641b37720061bd662b3dbd
     SUBDIR += serdisplib
     SUBDIR += sfio
     SUBDIR += sfml
@@ -4655,7 +4658,6 @@
     SUBDIR += tcl-trf
     SUBDIR += tclap
     SUBDIR += tclcheck
-    SUBDIR += tclcl
     SUBDIR += tclgetopts
     SUBDIR += tcllib
     SUBDIR += tclmore

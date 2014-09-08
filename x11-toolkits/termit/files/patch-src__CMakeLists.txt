@@ -1,5 +1,5 @@
---- ./src/CMakeLists.txt.orig	2012-09-12 22:14:24.000000000 +0200
-+++ ./src/CMakeLists.txt	2012-09-12 22:16:09.000000000 +0200
+--- src/CMakeLists.txt.orig	2014-04-12 18:19:11 UTC
++++ src/CMakeLists.txt
 @@ -19,9 +19,9 @@
  
  SET(GTK_VERSION "" CACHE STRING "Gtk version")
@@ -12,20 +12,3 @@
  ENDIF(GTK_VERSION STREQUAL "")
  IF(NOT GTK_FOUND)
    message(FATAL_ERROR "Gtk library was not found.")
-@@ -45,7 +45,7 @@
- 
- SET(LUA_VERSION "" CACHE STRING "Lua version")
- IF(LUA_VERSION STREQUAL "")
--  pkg_search_module(LUA REQUIRED lua>=5.0 lua5.2 lua5.1)
-+  pkg_search_module(LUA REQUIRED lua>=5.0 lua-5.2 lua-5.1)
- ELSE(LUA_VERSION STREQUAL "")
-   pkg_search_module(LUA REQUIRED
-     lua=${LUA_VERSION} lua5.2=${LUA_VERSION} lua5.1=${LUA_VERSION} lua5.0=${LUA_VERSION})
-@@ -79,7 +79,6 @@
- 
- ADD_EXECUTABLE(${TARGET} ${TERMIT_SRCS})
- 
--SET(TERMIT_LDFLAGS "-ldl")
- FOREACH(ldflag ${VTE_LDFLAGS} ${GTK_LDFLAGS} ${LUA_LDFLAGS})
-   LIST(APPEND TERMIT_LDFLAGS "${ldflag}")
- ENDFOREACH(ldflag)

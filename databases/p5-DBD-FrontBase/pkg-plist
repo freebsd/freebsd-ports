@@ -1,9 +1,0 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/DBD/FB/.packlist
-%%SITE_PERL%%/%%PERL_ARCH%%/DBD/FB.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/DBD/FB/GetInfo.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/DBD/FB/FB.so
-%%PERL5_MAN3%%/DBD::FB.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/DBD/FB
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/DBD
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBD/FB
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBD

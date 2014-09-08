@@ -22,10 +22,9 @@ RUN_DEPENDS:=	${BUILD_DEPENDS} \
 
 DBDIR?=		/var/db
 
-USES=		gmake libtool
+USES=		gmake libtool python
 USE_AUTOTOOLS=	automake autoconf libtoolize
 USE_GNOME=	libxml2
-USE_PYTHON=	yes
 USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
@@ -79,6 +78,17 @@ CONFIGURE_ARGS+=	--enable-jumbo-frames
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}mako>0:${PORTSDIR}/textproc/py-mako
 .endif
 
+.include <bsd.port.pre.mk>
+
+# Quick and dirty hackaround - older binutils barf when asked to strip
+# an .a file, newer complain about missing sections and succeed.
+# The real fix would be for ntop to not try stripping .a files,
+# but upstream seems to have gone ahead with ntopng so this may not
+# ever be fixed.
+.if ${OSVERSION} < 900033
+USE_BINUTILS=	yes
+.endif
+
 pre-configure:
 	@cd ${WRKSRC} && ${SETENV} ${SCRIPTS_ENV} ${SH} autogen.sh --noconfig
 
@@ -88,4 +98,4 @@ pre-install:
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/ntop/plugins/*.so
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

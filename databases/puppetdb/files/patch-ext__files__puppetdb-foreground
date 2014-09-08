@@ -1,0 +1,12 @@
+--- ./ext/files/puppetdb-foreground.orig	2014-09-01 19:00:53.881157604 +0000
++++ ./ext/files/puppetdb-foreground	2014-09-01 19:09:39.676120322 +0000
+@@ -1,7 +1,7 @@
+ #!/bin/bash
+ 
+-. /usr/libexec/puppetdb/puppetdb.env
++. %%PREFIX%%/libexec/puppetdb/puppetdb.env
+ 
+ ARGS="$@"
+ 
+-su ${USER} -s /bin/bash -c "${JAVA_BIN} ${JAVA_ARGS} -cp ${INSTALL_DIR}/puppetdb.jar clojure.main -m com.puppetlabs.puppetdb.core services -c ${CONFIG} ${@}"
++su ${USER} -s %%PREFIX%%/bin/bash -c "${JAVA_BIN} ${JAVA_ARGS} -cp ${INSTALL_DIR}/puppetdb.jar clojure.main -m com.puppetlabs.puppetdb.core services -c ${CONFIG} ${@}"

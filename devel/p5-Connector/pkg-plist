@@ -1,0 +1,50 @@
+%%PERL5_MAN3%%/Connector.3.gz
+%%PERL5_MAN3%%/Connector::Builtin::Authentication::Password.3.gz
+%%PERL5_MAN3%%/Connector::Builtin::Authentication::PasswordScheme.3.gz
+%%PERL5_MAN3%%/Connector::Builtin::Env.3.gz
+%%PERL5_MAN3%%/Connector::Builtin::File::Path.3.gz
+%%PERL5_MAN3%%/Connector::Multi.3.gz
+%%PERL5_MAN3%%/Connector::Proxy.3.gz
+%%PERL5_MAN3%%/Connector::Proxy::Config::Versioned.3.gz
+%%PERL5_MAN3%%/Connector::Proxy::DBI.3.gz
+%%PERL5_MAN3%%/Connector::Proxy::Net::LDAP.3.gz
+%%PERL5_MAN3%%/Connector::Proxy::Net::LDAP::DN.3.gz
+%%PERL5_MAN3%%/Connector::Proxy::Net::LDAP::Simple.3.gz
+%%PERL5_MAN3%%/Connector::Proxy::Net::LDAP::Single.3.gz
+%%PERL5_MAN3%%/Connector::Proxy::Proc::SafeExec.3.gz
+%%PERL5_MAN3%%/Connector::Wrapper.3.gz
+%%SITE_PERL%%/Connector.pm
+%%SITE_PERL%%/Connector/Builtin.pm
+%%SITE_PERL%%/Connector/Builtin/Authentication/Password.pm
+%%SITE_PERL%%/Connector/Builtin/Authentication/PasswordScheme.pm
+%%SITE_PERL%%/Connector/Builtin/Env.pm
+%%SITE_PERL%%/Connector/Builtin/File/Path.pm
+%%SITE_PERL%%/Connector/Builtin/File/Simple.pm
+%%SITE_PERL%%/Connector/Builtin/Memory.pm
+%%SITE_PERL%%/Connector/Builtin/Static.pm
+%%SITE_PERL%%/Connector/Multi.pm
+%%SITE_PERL%%/Connector/Proxy.pm
+%%SITE_PERL%%/Connector/Proxy/Config/Std.pm
+%%SITE_PERL%%/Connector/Proxy/Config/Versioned.pm
+%%SITE_PERL%%/Connector/Proxy/DBI.pm
+%%SITE_PERL%%/Connector/Proxy/Net/LDAP.pm
+%%SITE_PERL%%/Connector/Proxy/Net/LDAP/DN.pm
+%%SITE_PERL%%/Connector/Proxy/Net/LDAP/Simple.pm
+%%SITE_PERL%%/Connector/Proxy/Net/LDAP/Single.pm
+%%SITE_PERL%%/Connector/Proxy/Proc/SafeExec.pm
+%%SITE_PERL%%/Connector/Proxy/SOAP/Lite.pm
+%%SITE_PERL%%/Connector/Proxy/YAML.pm
+%%SITE_PERL%%/Connector/Types.pm
+%%SITE_PERL%%/Connector/Wrapper.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Connector/.packlist
+@dirrmtry %%SITE_PERL%%/Connector/Builtin/Authentication
+@dirrmtry %%SITE_PERL%%/Connector/Builtin/File
+@dirrmtry %%SITE_PERL%%/Connector/Builtin
+@dirrmtry %%SITE_PERL%%/Connector/Proxy/Config
+@dirrmtry %%SITE_PERL%%/Connector/Proxy/Net/LDAP
+@dirrmtry %%SITE_PERL%%/Connector/Proxy/Net
+@dirrmtry %%SITE_PERL%%/Connector/Proxy/Proc
+@dirrmtry %%SITE_PERL%%/Connector/Proxy/SOAP
+@dirrmtry %%SITE_PERL%%/Connector/Proxy
+@dirrmtry %%SITE_PERL%%/Connector
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Connector

@@ -3,7 +3,7 @@
 
 PORTNAME=	apg
 PORTVERSION=	2.3.0b
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	security
 MASTER_SITES=	http://www.adel.nursat.kz/apg/download/
 MASTER_SITE_SUBDIR=	UNIX/misc
@@ -21,7 +21,7 @@ LIB_DEPENDS=	libcrack.so:${PORTSDIR}/security/cracklib
 MAKE_ARGS=	-DWITH_CRACKLIB
 .endif
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 
 DOCS=		APG_TIPS pronun.txt rfc0972.txt rfc1750.txt
 

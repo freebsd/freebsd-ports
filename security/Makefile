@@ -723,9 +723,6 @@
     SUBDIR += pond
     SUBDIR += portsentry
     SUBDIR += ppars
-    SUBDIR += prelude-lml
-    SUBDIR += prelude-manager
-    SUBDIR += prelude-pflogger
     SUBDIR += proftpd-mod_clamav
     SUBDIR += proxycheck
     SUBDIR += proxytunnel
@@ -827,6 +824,7 @@
     SUBDIR += quantis
     SUBDIR += quantis-kmod
     SUBDIR += racoon2
+    SUBDIR += radamsa
     SUBDIR += radiusniff
     SUBDIR += rainbowcrack
     SUBDIR += ranpwd
@@ -1004,6 +1002,7 @@
     SUBDIR += wapiti
     SUBDIR += webfwlog
     SUBDIR += webscarab
+    SUBDIR += webshag
     SUBDIR += whatweb
     SUBDIR += wipe
     SUBDIR += xca

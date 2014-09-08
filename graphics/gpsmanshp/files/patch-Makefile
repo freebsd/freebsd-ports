@@ -31,8 +31,8 @@
 -	-mkdir $(INSTALLDIR)
 -	cp gpsmanshp.so pkgIndex.tcl $(INSTALLDIR)
 +	-mkdir -p $(INSTALLDIR)
-+	install -c -s -m 555 -o root -g wheel gpsmanshp.so $(INSTALLDIR)/
-+	install -c -m 555 -o root -g wheel pkgIndex.tcl $(INSTALLDIR)/
++	$(BSD_INSTALL_LIB) gpsmanshp.so $(INSTALLDIR)/
++	$(BSD_INSTALL_SCRIPT) pkgIndex.tcl $(INSTALLDIR)/
  
  clean:
  	rm -f gpsmanshp.o gpsmanshp.so pkgIndex.tcl G*.aux G*.log

@@ -15,16 +15,14 @@ COMMENT=	File distribution system optimized for CVS
 ONLY_FOR_ARCHS=	amd64 i386 sparc64
 
 OPTIONS_DEFINE=	X11 STATIC
-OPTIONS_DEFAULT=	X11
+OPTIONS_DEFAULT=X11
 
-.include <bsd.port.options.mk>
+.include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MSTATIC}
 WITH_STATIC=	yes
 M3FLAGS+=	-DSTATIC
 .endif
-
-.include <bsd.port.pre.mk>
 
 .if ${ARCH} == "amd64"
 TARGET=		FBSD_AMD64
@@ -43,7 +41,7 @@ COMMENT+=	(non-GUI version)
 DESCR=		${PKGDIR}/pkg-descr.nogui
 CONFLICTS=	cvsup-[0-9]*
 .else
-.if ${ARCH} == "amd64"
+.if ${ARCH} == amd64
 IGNORE=		does not support GUI on amd64, please disable X11 option or use net/cvsup-without-gui instead
 .else
 USE_XORG+=	oldx dmx pixman xaw 
@@ -59,13 +57,13 @@ INSTALL_TARGET=	install BINDIR=${STAGEDIR}${PREFIX}/bin MANDIR=${STAGEDIR}${MANP
 pre-patch:
 .if ${ARCH} == "amd64"
 .for f in ${AMD64_PATCHES}
-	@cd ${WRKSRC} && ${PATCH} ${PATCH_ARGS} < ${PATCHDIR}/${f}
+	@(cd ${WRKSRC} && ${PATCH} ${PATCH_ARGS} < ${PATCHDIR}/${f})
 .endfor
 .endif
 
 post-install:
-	${MV} ${STAGEDIR}${PREFIX}/bin/cvsupd ${STAGEDIR}${PREFIX}/sbin/
+	${INSTALL_PROGRAM} ${STAGEDIR}${PREFIX}/bin/cvsupd ${STAGEDIR}${PREFIX}/sbin
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/cvsup
-	@${INSTALL_DATA} ${WRKSRC}/License ${STAGEDIR}${PREFIX}/share/cvsup/License
+	${INSTALL_DATA} ${WRKSRC}/License ${STAGEDIR}${PREFIX}/share/cvsup/License
 
 .include <bsd.port.post.mk>

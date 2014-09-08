@@ -3,6 +3,7 @@
 
 PORTNAME=	cracklib
 PORTVERSION=	2.9.0
+PORTREVISION=	1
 CATEGORIES=	security
 .if defined(PYTHON_SLAVEPORT)
 CATEGORIES+=	python
@@ -18,15 +19,15 @@ LICENSE=	LGPL21
 DICTPATH=	${PREFIX}/libdata/${PORTNAME}
 DICTFILE=	${DICTPATH}/pw_dict
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=--with-default-dict=${DICTPATH}
+CONFIGURE_ARGS=	--with-default-dict=${DICTPATH}
+INSTALL_TARGET=	install-strip
+USES=		gettext libtool
 USE_LDCONFIG=	yes
-USES=		gettext
 
 .if defined(PYTHON_SLAVEPORT)
-USE_PYTHON=	yes
+USES+=		python
 CONFIGURE_ARGS+=--with-python
 PLIST_FILES=	%%PYTHON_SITELIBDIR%%/_cracklib.a \
-		%%PYTHON_SITELIBDIR%%/_cracklib.la \
 		%%PYTHON_SITELIBDIR%%/_cracklib.so \
 		%%PYTHON_SITELIBDIR%%/cracklib.py \
 		%%PYTHON_SITELIBDIR%%/cracklib.pyc \
@@ -52,12 +53,14 @@ PLIST_DIRS=	libdata/cracklib \
 PLIST_FILES=	include/crack.h \
 		include/packer.h \
 		lib/libcrack.a \
-		lib/libcrack.la \
 		lib/libcrack.so \
-		lib/libcrack.so.11 \
+		lib/libcrack.so.2 \
+		lib/libcrack.so.2.9.0 \
 		libdata/cracklib/pw_dict.hwm \
 		libdata/cracklib/pw_dict.pwd \
 		libdata/cracklib/pw_dict.pwi \
+		man/man3/FascistCheck.3.gz \
+		man/man3/cracklib.3.gz \
 		sbin/cracklib-check \
 		sbin/cracklib-format \
 		sbin/cracklib-packer \
@@ -104,19 +107,16 @@ PLIST_FILES=	include/crack.h \
 
 .if defined(PYTHON_SLAVEPORT)
 pre-build:
-	cd ${WRKSRC}/lib && ${MAKE} libcrack.la
+	cd ${WRKSRC}/lib && ${MAKE_CMD} libcrack.la
 
 regression-test: extract
 	@(cd ${BUILD_WKRSRC}; \
 	${PYTHON_CMD} -c \
 	"from test_${PORTNAME} import run; run(use_dictpath=\"${DICTFILE}\")")
 .else
-PLIST_FILES+=	man/man3/${PORTNAME}.3.gz \
-		@exec\ ln\ -s\ man/man3/${PORTNAME}.3.gz\ man/man3/FascistCheck.3.gz \
-		@unexec\ rm\ man/man3/FascistCheck.3.gz
-
 post-install:
 	${INSTALL_MAN} ${FILESDIR}/${PORTNAME}.3 ${STAGEDIR}${MAN3PREFIX}/man/man3/
+	${LN} -s ${PORTNAME}.3 ${STAGEDIR}${MAN3PREFIX}/man/man3/FascistCheck.3
 	@${MKDIR} ${STAGEDIR}${DICTPATH}
 	${INSTALL_DATA} ${FILESDIR}/pw_dict* ${STAGEDIR}${DICTPATH}/
 .endif

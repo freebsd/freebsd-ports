@@ -11,6 +11,7 @@ MAINTAINER=	masaki@club.kyutech.ac.jp
 COMMENT=	Do a POST operaion and Dump http-contents to stdout
 
 WRKSRC=		${WRKDIR}/http_post
+USES=		uidfix
 MAKEFILE=	${FILESDIR}/Makefile.bsd
 
 PLIST_FILES=	bin/http_post \

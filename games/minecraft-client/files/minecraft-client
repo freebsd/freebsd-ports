@@ -1,43 +1,18 @@
 #!/bin/sh
 export JAVA_HOME=JAVA_HOME
 
-# Look for launcher_profiles to fix
-if [ -e "${HOME}/.minecraft/launcher_profiles.json" ] ; then
-   rm ${HOME}/.minecraft/launcher_profiles.json.new 2>/dev/null
-
-   # Lets make sure we set the fixed java executable script
-   while IFS='' read -r line
-   do
-     # Skip old javaDir lines
-     echo $line | grep -q '"javaDir": "'
-     if [ $? -eq 0 ] ; then continue ; fi
-
-     # If not a name line, add and continue
-     echo $line | grep -q '"name": "'
-     if [ $? -ne 0 ] ; then 
-       printf "%s\n" "$line" >> ${HOME}/.minecraft/launcher_profiles.json.new
-       continue
-     fi
-
-     # Found a profile entry, lets add the correct runtime
-     printf "%s\n" "$line" >> ${HOME}/.minecraft/launcher_profiles.json.new
-     echo '      "javaDir": "/usr/local/share/minecraft-client/minecraft-runtime",' >> ${HOME}/.minecraft/launcher_profiles.json.new
-     
-   done < ${HOME}/.minecraft/launcher_profiles.json
-
-   # See if we have dangling }
-   tail -1 ${HOME}/.minecraft/launcher_profiles.json.new | grep -q "^}"
-   if [ $? -ne 0 ] ; then
-     printf "}" >> ${HOME}/.minecraft/launcher_profiles.json.new
+# The first time warn the user to set the runtime executable in place of java
+if [ ! -e "${HOME}/.minecraft/notified-runtime" ] ; then
+   if [ ! -d "${HOME}/.minecraft" ] ; then
+      mkdir ${HOME}/.minecraft
    fi
+   touch ${HOME}/.minecraft/notified-runtime 2>/dev/null
 
-   mv ${HOME}/.minecraft/launcher_profiles.json.new ${HOME}/.minecraft/launcher_profiles.json
-else
    # No .minecraft dir, lets display the first time notification
-   javac -d /tmp /usr/local/share/minecraft-client/Notifer.java
+   javac -d /tmp /usr/local/share/minecraft-client/Notifier.java
    cd /tmp
-   java Notifer
-   rm Notifer*.class
+   # Run this as a background task, so that it appears over the launcher
+   ( sleep 3; java Notifier ; rm Notifier*.class ) &
 fi
 
 exec ${JAVA_HOME}/bin/java -Djava.nio.file.spi.DefaultFileSystemProvider=sun.nio.fs.BsdFileSystemProvider \

@@ -1,0 +1,7 @@
+TZInfo is a Ruby library that uses the standard tz database
+(http://www.twinsun.com/tz/tz-link.htm) to provide daylight savings
+aware transformations between times in different time zones.  The
+tz database is compiled into Ruby classes which are packaged in the
+release.  No external zoneinfo files are required at runtime.
+
+WWW: http://rubygems.org/gems/tzinfo/

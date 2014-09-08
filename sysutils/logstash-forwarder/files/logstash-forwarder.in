@@ -1,0 +1,31 @@
+#!/bin/sh
+# $FreeBSD$
+
+# PROVIDE: logstash_forwarder
+# REQUIRE: DAEMON
+# BEFORE: LOGIN
+# KEYWORD: shutdown
+
+# Add the following lines to /etc/rc.conf to enable logstash-forwarder:
+# logstash_forwarder_enable (bool):	Set to YES to logstash-forwarder
+# 					Default: NO
+# logstash_forwarder_flags (str):	Extra flags passed to logstash-forwarder
+# logstash_forwarder_conf (str):	logstash-forwarder configuration file
+#					Default: ${PREFIX}/etc/logstash-forwarder.conf
+
+
+. /etc/rc.subr
+
+name="logstash_forwarder"
+rcvar=logstash_forwarder_enable
+
+command="%%PREFIX%%/bin/logstash-forwarder"
+
+load_rc_config $name
+
+[ -z "$logstash_forwarder_enable" ]	&& logstash_forwarder_enable="NO"
+[ -z "$logstash_forwarder_conf" ]	&& logstash_forwarder_conf="%%PREFIX%%/etc/logstash-forwarder.conf"
+[ -z "$logstash_forwarder_flags" ]	&& logstash_forwarder_flags=""
+[ -n "$logstash_forwarder_conf" ]	&& logstash_forwarder_flags="$logstash_forwarder_flags -config=$logstash_forwarder_conf"
+
+run_rc_command "$1"

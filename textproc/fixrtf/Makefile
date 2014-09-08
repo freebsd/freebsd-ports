@@ -16,8 +16,8 @@ COMMENT=	Patch making it possible to embed PNGs into RTFs
 
 LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png
 
+USES=		uidfix
 WRKSRC=		${WRKDIR}/src
-
 SRC=		${.CURDIR}/src
 
 do-fetch:

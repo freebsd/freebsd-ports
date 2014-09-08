@@ -3,6 +3,7 @@
 %%GO_LIBDIR%%/%%GO_PKGNAME%%/bn256.a
 %%GO_LIBDIR%%/%%GO_PKGNAME%%/cast5.a
 %%GO_LIBDIR%%/%%GO_PKGNAME%%/curve25519.a
+%%GO_LIBDIR%%/%%GO_PKGNAME%%/hkdf.a
 %%GO_LIBDIR%%/%%GO_PKGNAME%%/md4.a
 %%GO_LIBDIR%%/%%GO_PKGNAME%%/nacl/box.a
 %%GO_LIBDIR%%/%%GO_PKGNAME%%/nacl/secretbox.a
@@ -54,6 +55,9 @@
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/curve25519/mont25519_amd64.go
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/curve25519/mul_amd64.s
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/curve25519/square_amd64.s
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/hkdf/example_test.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/hkdf/hkdf.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/hkdf/hkdf_test.go
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/md4/md4.go
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/md4/md4_test.go
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/md4/md4block.go
@@ -141,7 +145,14 @@
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/sha3/keccakf.go
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/sha3/sha3.go
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/sha3/sha3_test.go
-%%GO_SRCDIR%%/%%GO_PKGNAME%%/ssh/agent.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/ssh/agent/client.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/ssh/agent/client_test.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/ssh/agent/forward.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/ssh/agent/keyring.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/ssh/agent/server.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/ssh/agent/server_test.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/ssh/agent/testdata_test.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/ssh/benchmark_test.go
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/ssh/buffer.go
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/ssh/buffer_test.go
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/ssh/certs.go
@@ -154,9 +165,11 @@
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/ssh/client_auth_test.go
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/ssh/client_test.go
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/ssh/common.go
-%%GO_SRCDIR%%/%%GO_PKGNAME%%/ssh/common_test.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/ssh/connection.go
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/ssh/doc.go
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/ssh/example_test.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/ssh/handshake.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/ssh/handshake_test.go
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/ssh/kex.go
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/ssh/kex_test.go
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/ssh/keys.go
@@ -165,8 +178,9 @@
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/ssh/mempipe_test.go
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/ssh/messages.go
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/ssh/messages_test.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/ssh/mux.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/ssh/mux_test.go
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/ssh/server.go
-%%GO_SRCDIR%%/%%GO_PKGNAME%%/ssh/server_terminal.go
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/ssh/session.go
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/ssh/session_test.go
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/ssh/tcpip.go
@@ -176,12 +190,18 @@
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/ssh/terminal/util.go
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/ssh/terminal/util_bsd.go
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/ssh/terminal/util_linux.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/ssh/terminal/util_windows.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/ssh/test/agent_unix_test.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/ssh/test/cert_test.go
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/ssh/test/doc.go
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/ssh/test/forward_unix_test.go
-%%GO_SRCDIR%%/%%GO_PKGNAME%%/ssh/test/keys_test.go
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/ssh/test/session_test.go
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/ssh/test/tcpip_test.go
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/ssh/test/test_unix_test.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/ssh/test/testdata_test.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/ssh/testdata/doc.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/ssh/testdata/keys.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/ssh/testdata_test.go
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/ssh/transport.go
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/ssh/transport_test.go
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/twofish/twofish.go
@@ -191,47 +211,50 @@
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/xtea/xtea_test.go
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/xts/xts.go
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/xts/xts_test.go
-@dirrmtry %%GO_SRCDIR%%/%%GO_PKGNAME%%/xts
-@dirrmtry %%GO_SRCDIR%%/%%GO_PKGNAME%%/xtea
-@dirrmtry %%GO_SRCDIR%%/%%GO_PKGNAME%%/twofish
-@dirrmtry %%GO_SRCDIR%%/%%GO_PKGNAME%%/ssh/test
-@dirrmtry %%GO_SRCDIR%%/%%GO_PKGNAME%%/ssh/terminal
-@dirrmtry %%GO_SRCDIR%%/%%GO_PKGNAME%%/ssh
-@dirrmtry %%GO_SRCDIR%%/%%GO_PKGNAME%%/sha3
-@dirrmtry %%GO_SRCDIR%%/%%GO_PKGNAME%%/scrypt
-@dirrmtry %%GO_SRCDIR%%/%%GO_PKGNAME%%/salsa20/salsa
-@dirrmtry %%GO_SRCDIR%%/%%GO_PKGNAME%%/salsa20
-@dirrmtry %%GO_SRCDIR%%/%%GO_PKGNAME%%/ripemd160
-@dirrmtry %%GO_SRCDIR%%/%%GO_PKGNAME%%/poly1305
-@dirrmtry %%GO_SRCDIR%%/%%GO_PKGNAME%%/pbkdf2
-@dirrmtry %%GO_SRCDIR%%/%%GO_PKGNAME%%/otr
-@dirrmtry %%GO_SRCDIR%%/%%GO_PKGNAME%%/openpgp/s2k
-@dirrmtry %%GO_SRCDIR%%/%%GO_PKGNAME%%/openpgp/packet
-@dirrmtry %%GO_SRCDIR%%/%%GO_PKGNAME%%/openpgp/errors
-@dirrmtry %%GO_SRCDIR%%/%%GO_PKGNAME%%/openpgp/elgamal
-@dirrmtry %%GO_SRCDIR%%/%%GO_PKGNAME%%/openpgp/clearsign
-@dirrmtry %%GO_SRCDIR%%/%%GO_PKGNAME%%/openpgp/armor
-@dirrmtry %%GO_SRCDIR%%/%%GO_PKGNAME%%/openpgp
-@dirrmtry %%GO_SRCDIR%%/%%GO_PKGNAME%%/ocsp
-@dirrmtry %%GO_SRCDIR%%/%%GO_PKGNAME%%/nacl/secretbox
-@dirrmtry %%GO_SRCDIR%%/%%GO_PKGNAME%%/nacl/box
-@dirrmtry %%GO_SRCDIR%%/%%GO_PKGNAME%%/nacl
-@dirrmtry %%GO_SRCDIR%%/%%GO_PKGNAME%%/md4
-@dirrmtry %%GO_SRCDIR%%/%%GO_PKGNAME%%/curve25519
-@dirrmtry %%GO_SRCDIR%%/%%GO_PKGNAME%%/cast5
-@dirrmtry %%GO_SRCDIR%%/%%GO_PKGNAME%%/bn256
-@dirrmtry %%GO_SRCDIR%%/%%GO_PKGNAME%%/blowfish
-@dirrmtry %%GO_SRCDIR%%/%%GO_PKGNAME%%/bcrypt
-@dirrmtry %%GO_SRCDIR%%/%%GO_PKGNAME%%
-@dirrmtry %%GO_SRCDIR%%/code.google.com/p
-@dirrmtry %%GO_SRCDIR%%/code.google.com
-@dirrmtry %%GO_SRCDIR%%
-@dirrmtry %%GO_LIBDIR%%/%%GO_PKGNAME%%/salsa20
-@dirrmtry %%GO_LIBDIR%%/%%GO_PKGNAME%%/openpgp
 @dirrmtry %%GO_LIBDIR%%/%%GO_PKGNAME%%/nacl
+@dirrmtry %%GO_LIBDIR%%/%%GO_PKGNAME%%/openpgp
+@dirrmtry %%GO_LIBDIR%%/%%GO_PKGNAME%%/salsa20
 @dirrmtry %%GO_LIBDIR%%/%%GO_PKGNAME%%
 @dirrmtry %%GO_LIBDIR%%/code.google.com/p
 @dirrmtry %%GO_LIBDIR%%/code.google.com
 @dirrmtry %%GO_LIBDIR%%
 @dirrmtry share/go/pkg
+@dirrmtry %%GO_SRCDIR%%/%%GO_PKGNAME%%/bcrypt
+@dirrmtry %%GO_SRCDIR%%/%%GO_PKGNAME%%/blowfish
+@dirrmtry %%GO_SRCDIR%%/%%GO_PKGNAME%%/bn256
+@dirrmtry %%GO_SRCDIR%%/%%GO_PKGNAME%%/cast5
+@dirrmtry %%GO_SRCDIR%%/%%GO_PKGNAME%%/curve25519
+@dirrmtry %%GO_SRCDIR%%/%%GO_PKGNAME%%/hkdf
+@dirrmtry %%GO_SRCDIR%%/%%GO_PKGNAME%%/md4
+@dirrmtry %%GO_SRCDIR%%/%%GO_PKGNAME%%/nacl/box
+@dirrmtry %%GO_SRCDIR%%/%%GO_PKGNAME%%/nacl/secretbox
+@dirrmtry %%GO_SRCDIR%%/%%GO_PKGNAME%%/nacl
+@dirrmtry %%GO_SRCDIR%%/%%GO_PKGNAME%%/ocsp
+@dirrmtry %%GO_SRCDIR%%/%%GO_PKGNAME%%/openpgp/armor
+@dirrmtry %%GO_SRCDIR%%/%%GO_PKGNAME%%/openpgp/clearsign
+@dirrmtry %%GO_SRCDIR%%/%%GO_PKGNAME%%/openpgp/elgamal
+@dirrmtry %%GO_SRCDIR%%/%%GO_PKGNAME%%/openpgp/errors
+@dirrmtry %%GO_SRCDIR%%/%%GO_PKGNAME%%/openpgp/packet
+@dirrmtry %%GO_SRCDIR%%/%%GO_PKGNAME%%/openpgp/s2k
+@dirrmtry %%GO_SRCDIR%%/%%GO_PKGNAME%%/openpgp
+@dirrmtry %%GO_SRCDIR%%/%%GO_PKGNAME%%/otr
+@dirrmtry %%GO_SRCDIR%%/%%GO_PKGNAME%%/pbkdf2
+@dirrmtry %%GO_SRCDIR%%/%%GO_PKGNAME%%/poly1305
+@dirrmtry %%GO_SRCDIR%%/%%GO_PKGNAME%%/ripemd160
+@dirrmtry %%GO_SRCDIR%%/%%GO_PKGNAME%%/salsa20/salsa
+@dirrmtry %%GO_SRCDIR%%/%%GO_PKGNAME%%/salsa20
+@dirrmtry %%GO_SRCDIR%%/%%GO_PKGNAME%%/scrypt
+@dirrmtry %%GO_SRCDIR%%/%%GO_PKGNAME%%/sha3
+@dirrmtry %%GO_SRCDIR%%/%%GO_PKGNAME%%/ssh/agent
+@dirrmtry %%GO_SRCDIR%%/%%GO_PKGNAME%%/ssh/terminal
+@dirrmtry %%GO_SRCDIR%%/%%GO_PKGNAME%%/ssh/test
+@dirrmtry %%GO_SRCDIR%%/%%GO_PKGNAME%%/ssh/testdata
+@dirrmtry %%GO_SRCDIR%%/%%GO_PKGNAME%%/ssh
+@dirrmtry %%GO_SRCDIR%%/%%GO_PKGNAME%%/twofish
+@dirrmtry %%GO_SRCDIR%%/%%GO_PKGNAME%%/xtea
+@dirrmtry %%GO_SRCDIR%%/%%GO_PKGNAME%%/xts
+@dirrmtry %%GO_SRCDIR%%/%%GO_PKGNAME%%
+@dirrmtry %%GO_SRCDIR%%/code.google.com/p
+@dirrmtry %%GO_SRCDIR%%/code.google.com
+@dirrmtry %%GO_SRCDIR%%
 @dirrmtry share/go

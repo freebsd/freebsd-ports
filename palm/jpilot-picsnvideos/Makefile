@@ -3,7 +3,7 @@
 
 PORTNAME=	picsnvideos
 PORTVERSION=	0.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	palm comms graphics
 MASTER_SITES=	SF/${PORTNAME}/source%20code/${PORTVERSION}
 PKGNAMEPREFIX=	jpilot-
@@ -18,26 +18,24 @@ BUILD_DEPENDS=	jpilot:${PORTSDIR}/palm/jpilot
 LIB_DEPENDS=	libgdbm.so:${PORTSDIR}/databases/gdbm
 
 GNU_CONFIGURE=	yes
+LIBS+=		-L${LOCALBASE}/lib
+INSTALL_TARGET=	install-strip
+USES=		libtool
 
-LDFLAGS+=	-L${PREFIX}/lib
 PORTDOCS=	README AUTHORS
-PLIST_FILES=	lib/jpilot/plugins/libpicsnvideos.la	\
-		lib/jpilot/plugins/libpicsnvideos.so
+PLIST_FILES=	lib/jpilot/plugins/libpicsnvideos.so
 
 OPTIONS_DEFINE=	DOCS
 
-.include <bsd.port.options.mk>
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g' \
+		-e '/LIBS=/s/$$libs/$$LIBS/' \
 		${WRKSRC}/configure
 
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
-. for FILE in ${PORTDOCS}
+.for FILE in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${FILE} ${STAGEDIR}${DOCSDIR}
-. endfor
-.endif
+.endfor
 
 .include <bsd.port.mk>

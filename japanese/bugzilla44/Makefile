@@ -8,7 +8,7 @@ MASTER_SITES=	http://bug-ja.org/releases/4.4/ \
 MASTER_SITE_SUBDIR=	tota/bugzilla-ja
 DISTNAME=	Bugzilla-ja-${PORTVERSION}-template
 
-MAINTAINER=	bugzilla@FreeBSD.org
+MAINTAINER=	bz-ports@FreeBSD.org
 COMMENT=	Japanese localization for Bugzilla
 
 RUN_DEPENDS=	bugzilla44>=${PORTVERSION}:${PORTSDIR}/devel/bugzilla44

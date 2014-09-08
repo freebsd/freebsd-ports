@@ -1,0 +1,26 @@
+--- configure.in.orig	2004-04-13 00:46:24 UTC
++++ configure.in
+@@ -28,7 +28,7 @@
+ dnl AC_CHECK_LIB(dmalloc, malloc)
+ 
+ dnl -lpng::
+-AC_CHECK_LIB(png, png_libpng_ver, CFLAGS="$CFLAGS -DHAVE_LIBPNG" LDFLAGS="$LDFLAGS -lpng" )
++AC_CHECK_LIB(png, png_get_libpng_ver, CFLAGS="$CFLAGS -DHAVE_LIBPNG" LDFLAGS="$LDFLAGS -lpng" )
+ 
+ dnl -ltiff:
+ AC_CHECK_LIB(tiff, TIFFOpen, CFLAGS="$CFLAGS -DHAVE_LIBTIFF"  LDFLAGS="$LDFLAGS -ltiff")
+@@ -52,12 +52,12 @@
+    if test "z$DATABASE" = "zedb"; then
+      AC_CHECK_LIB(edb, e_db_open,
+ 	[LDFLAGS="$LDFLAGS -ledb" DATABASE="edb" AC_DEFINE([USE_EDB], [], [Use Edb])],
+-	[AC_MSG_RESULT([not found]),
++	[AC_MSG_RESULT([not found])
+ 	 AC_MSG_ERROR([please reinstall the Edb distribution])])
+    elif test "z$DATABASE" = "zdb"; then
+      AC_CHECK_LIB(db, db_create,
+ 	[LDFLAGS="$LDFLAGS -ldb" DATABASE="db" AC_DEFINE([USE_DB], [], [Use Berkeley DB])],
+-	[AC_MSG_RESULT([not found]),
++	[AC_MSG_RESULT([not found])
+ 	 AC_MSG_ERROR([please reinstall the Berkeley DB distribution])])
+    fi
+ fi

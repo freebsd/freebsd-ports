@@ -13,6 +13,6 @@ LICENSE=	BSD
 
 USE_RC_SUBR=	mbgsvcd
 
-USES=		kmod
+USES=		kmod uidfix
 
 .include <bsd.port.mk>

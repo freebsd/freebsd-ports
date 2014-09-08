@@ -32,7 +32,6 @@ ONLY_FOR_ARCHS=	i386 amd64
 
 NO_BUILD=	yes
 NO_MTREE=	yes
-EXPLICIT_PACKAGE_DEPENDS=	yes
 
 PLIST_FILES=	lib/opera/pluginwrapper/operapluginwrapper-ia32-linux
 

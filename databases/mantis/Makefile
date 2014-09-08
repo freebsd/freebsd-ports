@@ -2,12 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	mantis
-PORTVERSION=	1.2.15
+PORTVERSION=	1.2.17
 CATEGORIES=	databases www
 MASTER_SITES=	SF/${PORTNAME}bt/${PORTNAME}-stable/${PORTVERSION}
 DISTNAME=	mantisbt-${PORTVERSION}
 
-MAINTAINER=	dan@langille.org
+MAINTAINER=	dvl@FreeBSD.org
 COMMENT=	Bug tracking system written in PHP
 
 NO_BUILD=	yes

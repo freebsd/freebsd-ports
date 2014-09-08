@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	chef
-PORTVERSION=	11.14.2
+PORTVERSION=	11.14.6
 CATEGORIES=	sysutils
 MASTER_SITES=	RG
 
@@ -16,7 +16,7 @@ RUN_DEPENDS=	rubygem-chef-zero>=2.1.0:${PORTSDIR}/sysutils/rubygem-chef-zero \
 		rubygem-erubis>=0:${PORTSDIR}/www/rubygem-erubis \
 		rubygem-ffi-yajl>=1.0.1:${PORTSDIR}/devel/rubygem-ffi-yajl \
 		rubygem-highline>=1.6.9:${PORTSDIR}/devel/rubygem-highline \
-		rubygem-mime-types>=1.16:${PORTSDIR}/misc/rubygem-mime-types \
+		rubygem-mime-types1>=1.16:${PORTSDIR}/misc/rubygem-mime-types1 \
 		rubygem-mixlib-authentication>=1.3.0:${PORTSDIR}/devel/rubygem-mixlib-authentication \
 		rubygem-mixlib-cli>=1.4.0:${PORTSDIR}/devel/rubygem-mixlib-cli \
 		rubygem-mixlib-config>=2.1.0:${PORTSDIR}/devel/rubygem-mixlib-config \
@@ -25,6 +25,7 @@ RUN_DEPENDS=	rubygem-chef-zero>=2.1.0:${PORTSDIR}/sysutils/rubygem-chef-zero \
 		rubygem-net-ssh>=2.6:${PORTSDIR}/security/rubygem-net-ssh \
 		rubygem-net-ssh-multi>=1.1.0:${PORTSDIR}/security/rubygem-net-ssh-multi \
 		rubygem-ohai>=7.2.0:${PORTSDIR}/sysutils/rubygem-ohai \
+		rubygem-plist>=3.1.0:${PORTSDIR}/devel/rubygem-plist \
 		rubygem-pry>=0.9.0:${PORTSDIR}/devel/rubygem-pry \
 		rubygem-rest-client>=1.0.4:${PORTSDIR}/www/rubygem-rest-client
 

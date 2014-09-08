@@ -3,6 +3,7 @@
 
 PORTNAME=	mpv
 PORTVERSION=	0.5.1
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	multimedia audio
 MASTER_SITES=	GH:0 GHC:0 http://ftp.waf.io/pub/release/:1 \
@@ -131,6 +132,8 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|/pkgconfig/mpv.pc|data/pkgconfig/mpv.pc|g' \
 		-e 's|/zsh/vendor-completions|/zsh/site-functions|' \
 		${WRKSRC}/wscript_build.py
+	@${REINPLACE_CMD} -e "s|'libpulse', '>= 1.0'|'libpulse', '>= 0.9'|" \
+		${WRKSRC}/wscript
 	@${FIND} ${WRKSRC}/DOCS/man -name '*.rst' | ${XARGS} ${REINPLACE_CMD} \
 		-e 's|/usr/local|${PREFIX}|g'
 

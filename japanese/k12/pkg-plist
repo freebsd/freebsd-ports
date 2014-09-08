@@ -5,13 +5,10 @@
 %%FONTSDIR%%/knmhn12x.pcf.gz
 %%FONTSDIR%%/knmzn12x.pcf.gz
 %%FONTSDIR%%/knmzn12xb.pcf.gz
+@fontsdir %%FONTSDIR%%
 %%PORTDOCS%%%%DOCSDIR%%/gijutsu-siryou.doc
 %%PORTDOCS%%%%DOCSDIR%%/kaname.doc
 %%PORTDOCS%%%%DOCSDIR%%/readme
 %%PORTDOCS%%%%DOCSDIR%%/readme.kaname_bdf
 %%PORTDOCS%%%%DOCSDIR%%/readme.knm
-@exec cd %D/%%FONTSDIR%% ; %D/bin/mkfontdir
-@unexec cd %D/%%FONTSDIR%% ; %D/bin/mkfontdir
-@unexec if [ `wc -c %D/%%FONTSDIR%%/fonts.dir | awk '{print $1}'` = 2 ]; then rm -f %D/%%FONTSDIR%%/fonts.dir; fi
-@unexec if [ ! -s %D/%%FONTSDIR%%/fonts.alias ]; then rm -f %D/%%FONTSDIR%%/fonts.alias; fi
 %%PORTDOCS%%@dirrm %%DOCSDIR%%

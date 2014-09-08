@@ -3,16 +3,15 @@
 
 PORTNAME=	djgame2
 PORTVERSION=	3.2.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	games
-MASTER_SITES=	http://www.bluedj.com/download/src/
+MASTER_SITES=	SF/nemysisfreebsdp/${CATEGORIES}/${PORTNAME}/
 DISTNAME=	source-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	games@FreeBSD.org
 COMMENT=	bluedj contains many popular online games
 
-DEPRECATED=	Unfetchable, upstream disappeared
-EXPIRATION_DATE=2014-08-31
+LICENSE=	GPLv2
 
 NO_BUILD=	yes
 USE_QT4=	gui qt3support qmake_build uic_build rcc_build moc_build svg

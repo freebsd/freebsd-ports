@@ -54,8 +54,6 @@
     SUBDIR += erlang-mysql
     SUBDIR += evolution-data-server
     SUBDIR += fastdb
-    SUBDIR += firebird21-client
-    SUBDIR += firebird21-server
     SUBDIR += firebird25-client
     SUBDIR += firebird25-server
     SUBDIR += flamerobin
@@ -73,7 +71,6 @@
     SUBDIR += freetds
     SUBDIR += freetds-devel
     SUBDIR += freetds-msdblib
-    SUBDIR += frontbase
     SUBDIR += frontbase-jdbc
     SUBDIR += gadfly
     SUBDIR += galera
@@ -115,7 +112,6 @@
     SUBDIR += jrobin
     SUBDIR += jrrd
     SUBDIR += kbibtex
-    SUBDIR += kinterbasdb
     SUBDIR += kyotocabinet
     SUBDIR += kyototycoon
     SUBDIR += ldb
@@ -178,7 +174,6 @@
     SUBDIR += monetdb
     SUBDIR += mongodb
     SUBDIR += mrtg-mysql-load
-    SUBDIR += msql
     SUBDIR += mtop
     SUBDIR += my2cego
     SUBDIR += mydbf2mysql
@@ -285,7 +280,6 @@
     SUBDIR += p5-DBD-AnyData
     SUBDIR += p5-DBD-CSV
     SUBDIR += p5-DBD-Excel
-    SUBDIR += p5-DBD-FrontBase
     SUBDIR += p5-DBD-Google
     SUBDIR += p5-DBD-InterBase
     SUBDIR += p5-DBD-LDAP
@@ -701,6 +695,7 @@
     SUBDIR += proftpd-mod_sql_postgres
     SUBDIR += proftpd-mod_sql_sqlite
     SUBDIR += proftpd-mod_sql_tds
+    SUBDIR += puppetdb
     SUBDIR += puppetdb-terminus
     SUBDIR += pure-sql3
     SUBDIR += puredb
@@ -783,6 +778,7 @@
     SUBDIR += pyspatialite
     SUBDIR += qdbm
     SUBDIR += qdbm-plus
+    SUBDIR += qof
     SUBDIR += qt4-ibase-plugin
     SUBDIR += qt4-mysql-plugin
     SUBDIR += qt4-odbc-plugin
@@ -818,7 +814,6 @@
     SUBDIR += ruby-dbd_sqlite
     SUBDIR += ruby-dbd_sqlite3
     SUBDIR += ruby-dbi
-    SUBDIR += ruby-frontbase
     SUBDIR += ruby-gdbm
     SUBDIR += ruby-mysql
     SUBDIR += ruby-o_dbm

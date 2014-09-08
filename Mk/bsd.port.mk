@@ -582,7 +582,7 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #				  working on whole trees of directories, takes 3 arguments,
 #				  last one is find(1) arguments and optional.
 #				  Example use: 
-#				  cd ${WRKSRC}/doc && ${COPYTREE_SHARE} . ${DOCSDIR} "! -name *.bak"
+#				  cd ${WRKSRC}/doc && ${COPYTREE_SHARE} . ${DOCSDIR} "! -name *\.bak"
 #
 #				  Installs all directories and files from ${WRKSRC}/doc
 #				  to ${DOCSDIR} except sed backup files.
@@ -3390,7 +3390,7 @@ do-patch:
 		*) patch_file=$$i ;; \
 		esac ; \
 		${ECHO_MSG} "===>  Applying extra patch $$patch_file" ; \
-		case $$patfh_file in \
+		case $$patch_file in \
 		*.Z|*.gz) ${GZCAT} $$patch_file ;; \
 		*.bz2) ${BZCAT} $$patch_file ;; \
 		*.xz) ${XZCAT} $$patch_file ;; \

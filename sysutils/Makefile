@@ -293,7 +293,6 @@
     SUBDIR += fusefs-sqlfs
     SUBDIR += fusefs-sshfs
     SUBDIR += fusefs-unionfs
-    SUBDIR += fusefs-wdfs
     SUBDIR += fusefs-wikipediafs
     SUBDIR += fusefs-zip
     SUBDIR += fvcool
@@ -467,6 +466,7 @@
     SUBDIR += logrotate
     SUBDIR += logstalgia
     SUBDIR += logstash
+    SUBDIR += logstash-forwarder
     SUBDIR += logtool
     SUBDIR += logwatch
     SUBDIR += lookat

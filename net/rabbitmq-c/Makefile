@@ -3,7 +3,7 @@
 
 PORTNAME=	rabbitmq-c
 PORTVERSION=	0.0.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	http://hg.rabbitmq.com/rabbitmq-c/archive/:c \
 		http://hg.rabbitmq.com/rabbitmq-codegen/archive/:codegen
@@ -23,13 +23,13 @@ BUILD_DEPENDS=	python:${PORTSDIR}/lang/python \
 
 CONFLICTS=	rabbitmq-c-devel-[0-9]*
 
-USES=		gmake tar:bzip2
+GNU_CONFIGURE=	yes
+INSTALL_TARGET=	install-strip
+USES=		gmake libtool tar:bzip2
 USE_PYTHON=	yes
 USE_LDCONFIG=	yes
-GNU_CONFIGURE=	yes
-USE_AUTOTOOLS=	aclocal autoconf automake autoheader libtool
+USE_AUTOTOOLS=	aclocal autoconf automake autoheader libtoolize
 AUTOMAKE_ARGS=	-i --add-missing
-ACLOCAL_ARGS=	-I . -I ${LOCALBASE}/share/aclocal
 
 OPTIONS_DEFINE=	64BIT POPT
 64BIT_DESC=	Produce 64-bit library
@@ -57,11 +57,5 @@ CONFIGURE_ARGS+=	--without-popt
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|rabbitmq-codegen|rabbitmq-codegen-821f5ee7b040|g' ${WRKSRC}/configure.ac
-
-pre-configure:
-	@(cd ${CONFIGURE_WRKSRC} && ${SETENV} ${AUTOTOOLS_ENV} ${LIBTOOLIZE})
-
-post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/librabbitmq.so.0
 
 .include <bsd.port.mk>

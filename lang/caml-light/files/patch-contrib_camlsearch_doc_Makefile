@@ -1,6 +1,0 @@
---- contrib/camlsearch/doc/Makefile--	Thu Dec 22 21:41:25 1994
-+++ contrib/camlsearch/doc/Makefile	Sun Aug  6 14:01:43 2006
-@@ -1,2 +1,2 @@
- install:
--	cp camlsearch.l $(MANDIR)/camlsearch.$(MANEXT)
-+	${BSD_INSTALL_MAN} camlsearch.l $(MANDIR)/camlsearch.$(MANEXT)

@@ -2,16 +2,16 @@
 # $FreeBSD$
 
 PORTNAME=	gigalomania
-PORTVERSION=	0.26
+PORTVERSION=	0.27
 CATEGORIES=	games
-MASTER_SITES=	https://launchpadlibrarian.net/135701637/
+MASTER_SITES=	https://launchpadlibrarian.net/180606846/	
 DISTNAME=	${PORTNAME}src
 
 MAINTAINER=	pawel@FreeBSD.org
 COMMENT=	Open source 2D real time strategy god game
 
 USES=		zip
-USE_SDL=	image mixer sdl
+USE_SDL=	image2 mixer2 sdl2
 
 PORTDOCS=	readme.html
 
@@ -24,10 +24,9 @@ post-patch:
 		-e 's|/usr/X11R6|${LOCALBASE}|' \
 		${WRKSRC}/Makefile
 	@${FIND} ${WRKSRC} -exec ${GREP} -q "__linux" {} \; \
-		-exec ${REINPLACE_CMD} 's|__linux|__FreeBSD__|' {} \;
+		-exec ${REINPLACE_CMD} 's|__linux|__${OPSYS}__|' {} \;
 	@${REINPLACE_CMD} 's|/opt/gigalomania/||g' \
-		${WRKSRC}/gigalomania.desktop \
-		${WRKSRC}/gigalomania_fullscreen.desktop
+		${WRKSRC}/gigalomania.desktop 
 	@${REINPLACE_CMD} 's|/usr/share|${LOCALBASE}/share|g' \
 		${WRKSRC}/game.cpp \
 		${WRKSRC}/gamestate.cpp
@@ -35,12 +34,9 @@ post-patch:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
 	@${MKDIR} ${STAGEDIR}${DATADIR}
-.for dir in gfx islands sound
-	cd ${WRKSRC} && ${COPYTREE_SHARE} ${dir} ${STAGEDIR}${DATADIR}
-.endfor
+	(cd ${WRKSRC} && ${COPYTREE_SHARE} "gfx islands sound" \
+		${STAGEDIR}${DATADIR})
 	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.desktop \
-		${STAGEDIR}${PREFIX}/share/applications
-	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}_fullscreen.desktop \
 		${STAGEDIR}${PREFIX}/share/applications
 	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}64.png \
 		${STAGEDIR}${PREFIX}/share/pixmaps

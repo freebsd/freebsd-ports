@@ -10,5 +10,6 @@ MAINTAINER=	winter@jurai.net
 COMMENT=	Command line quota tools
 
 WRKSRC=		${WRKDIR}/setquota/
+USES=		uidfix
 
 .include <bsd.port.mk>

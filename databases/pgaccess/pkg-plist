@@ -56,8 +56,8 @@ bin/pgmonitor
 %%PORTDOCS%%%%DOCSDIR%%/win32.html
 share/postgresql/pgaccess/Makefile
 share/postgresql/pgaccess/README
-share/postgresql/pgaccess/changelog
-share/postgresql/pgaccess/copyright
+share/postgresql/pgaccess/CHANGELOG
+share/postgresql/pgaccess/LICENSE
 share/postgresql/pgaccess/demo/README.demo
 share/postgresql/pgaccess/demo/demo.pga
 share/postgresql/pgaccess/demo/formdemo72.sql
@@ -88,7 +88,7 @@ share/postgresql/pgaccess/images/icon_table.gif
 share/postgresql/pgaccess/images/icon_text.gif
 share/postgresql/pgaccess/images/icon_tree.gif
 share/postgresql/pgaccess/images/logo.gif
-share/postgresql/pgaccess/known_bugs
+share/postgresql/pgaccess/BUGS
 share/postgresql/pgaccess/lib/aggregates.tcl
 share/postgresql/pgaccess/lib/casts.tcl
 share/postgresql/pgaccess/lib/colors.tcl
@@ -365,7 +365,7 @@ share/postgresql/pgaccess/osx/README.osx
 share/postgresql/pgaccess/osx/dylib/libpgtcl.7.3.dylib.sit
 share/postgresql/pgaccess/pgaccess.tcl
 share/postgresql/pgaccess/pgmonitor
-share/postgresql/pgaccess/todo
+share/postgresql/pgaccess/TODO
 share/postgresql/pgaccess/utils/mkkit.tcl
 @dirrm share/postgresql/pgaccess/utils
 @dirrm share/postgresql/pgaccess/osx/dylib
@@ -391,7 +391,5 @@ share/postgresql/pgaccess/utils/mkkit.tcl
 @dirrm share/postgresql/pgaccess/extra
 @dirrm share/postgresql/pgaccess/demo
 @dirrm share/postgresql/pgaccess
-@dirrmtry share/postgresql
-%%PORTDOCS%%@dirrm share/doc/postgresql/pgaccess/tutorial
-%%PORTDOCS%%@dirrm share/doc/postgresql/pgaccess
-%%PORTDOCS%%@dirrmtry share/doc/postgresql
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/tutorial
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

@@ -9,6 +9,7 @@ MASTER_SITES=	http://portal-to-web.de/pam_mkhomedir/
 MAINTAINER=	gremlin@portal-to-web.de
 COMMENT=	Create HOME with a PAM module on demand
 
+USES=		uidfix
 SUB_FILES=	pkg-message
 
 PLIST_FILES=	lib/pam_mkhomedir.so \

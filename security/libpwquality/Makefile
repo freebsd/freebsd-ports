@@ -2,6 +2,7 @@
 
 PORTNAME=	libpwquality
 PORTVERSION=	1.2.4
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	https://fedorahosted.org/releases/l/i/libpwquality/
 

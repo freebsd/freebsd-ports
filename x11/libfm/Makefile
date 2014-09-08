@@ -16,15 +16,15 @@ BUILD_DEPENDS=	p5-XML-Parser>=0:${PORTSDIR}/textproc/p5-XML-Parser \
 LIB_DEPENDS=	libmenu-cache.so:${PORTSDIR}/x11/menu-cache \
 		libexif.so:${PORTSDIR}/graphics/libexif
 
-USES=		desktop-file-utils fam gmake pkgconfig shared-mime-info tar:xz libtool
+USES=		desktop-file-utils fam gmake libtool pathfix pkgconfig \
+		shared-mime-info tar:xz
 USE_GNOME=	gtk20
-USE_AUTOTOOLS=	aclocal automake libtoolize:env
-CONFIGURE_ARGS+=--sysconfdir=${LOCALBASE}/etc
-MAKE_ENV=	INSTALL_STRIP_FLAG=${STRIP}
 USE_LDCONFIG=	yes
-
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--sysconfdir=${LOCALBASE}/etc
 CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+LIBS+=		-L${LOCALBASE}/lib
+INSTALL_TARGET=	install-strip
 
 PORTDOCS=	AUTHORS NEWS README
 
@@ -41,14 +41,9 @@ PLIST_SUB+=	VER=4
 post-patch:
 	@${REINPLACE_CMD} -e 's|-DG_DISABLE_DEPRECATED||' \
 		${WRKSRC}/src/Makefile.in
-	@${REINPLACE_CMD} -e '/^pkgconfigdir/s|$$(libdir)|$$(prefix)/libdata|; \
-		s|libfm-gtk3.pc||' \
-		${WRKSRC}/Makefile.am
-	@${REINPLACE_CMD} -e '/libfm.conf/ d' ${WRKSRC}/data/Makefile.am
 
 post-install:
-	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/xdg/libfm
-	${INSTALL_DATA} ${WRKSRC}/data/libfm.conf \
+	${MV} ${STAGEDIR}${PREFIX}/etc/xdg/libfm/libfm.conf \
 		${STAGEDIR}${PREFIX}/etc/xdg/libfm/libfm.conf.sample
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}

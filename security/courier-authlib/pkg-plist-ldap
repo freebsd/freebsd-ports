@@ -1,11 +1,5 @@
-@unexec cmp -s %D/etc/authlib/authldaprc.dist %D/etc/authlib/authldaprc && rm -f %D/etc/authlib/authldaprc 2>/dev/null || true
-etc/authlib/authldaprc.dist
-@exec %%LOCALBASE%%/share/sysconftool/sysconftool %D/etc/authlib/authldaprc.dist && chmod 0600 %D/etc/authlib/authldaprc
-@unexec cmp -s %D/etc/openldap/schema/authldap.schema.default %D/etc/openldap/schema/authldap.schema && rm -f %D/etc/openldap/schema/authldap.schema 2>/dev/null || true
-etc/openldap/schema/authldap.schema.default
-@exec [ -f %D/etc/openldap/schema/authldap.schema ] || cp -p %D/etc/openldap/schema/authldap.schema.default %D/etc/openldap/schema/authldap.schema
-lib/courier-authlib/libauthldap.a
-lib/courier-authlib/libauthldap.la
+@sample(%%MAILOWN%%,%%MAILGRP%%,660) etc/authlib/authldaprc.sample
+@sample etc/openldap/schema/authldap.schema.sample
 lib/courier-authlib/libauthldap.so
 %%PORTDOCS%%%%DOCSDIR%%/README.ldap
 @dirrmtry etc/openldap/schema

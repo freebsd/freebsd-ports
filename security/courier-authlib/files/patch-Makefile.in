@@ -113,17 +113,6 @@
  man_MANS = $(man1) $(man3) auth_sasl_ex.3
  BUILT1 = authlib.html authldaprc.h authmysqlrc.h authpgsqlrc.h authpiperc.h \
  	authdaemonrc.h packageversion.h \
-@@ -935,8 +956,8 @@
- 	test -z "$$list2" || { \
- 	  echo " $(MKDIR_P) '$(DESTDIR)$(pkglibdir)'"; \
- 	  $(MKDIR_P) "$(DESTDIR)$(pkglibdir)" || exit 1; \
--	  echo " $(LIBTOOL) $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=install $(INSTALL) $(INSTALL_STRIP_FLAG) $$list2 '$(DESTDIR)$(pkglibdir)'"; \
--	  $(LIBTOOL) $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=install $(INSTALL) $(INSTALL_STRIP_FLAG) $$list2 "$(DESTDIR)$(pkglibdir)"; \
-+	  echo " $(LIBTOOL) $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=install $(INSTALL) -m 0444 $(INSTALL_STRIP_FLAG) $$list2 '$(DESTDIR)$(pkglibdir)'"; \
-+	  $(LIBTOOL) $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=install $(INSTALL) -m 0444 $(INSTALL_STRIP_FLAG) $$list2 "$(DESTDIR)$(pkglibdir)"; \
- 	}
- 
- uninstall-pkglibLTLIBRARIES:
 @@ -989,6 +1010,9 @@
  libauthuserdb.la: $(libauthuserdb_la_OBJECTS) $(libauthuserdb_la_DEPENDENCIES) $(EXTRA_libauthuserdb_la_DEPENDENCIES) 
  	$(AM_V_CCLD)$(libauthuserdb_la_LINK)  $(libauthuserdb_la_OBJECTS) $(libauthuserdb_la_LIBADD) $(LIBS)
@@ -151,28 +140,6 @@
  
  .c.o:
  @am__fastdepCC_TRUE@	$(AM_V_CC)$(COMPILE) -MT $@ -MD -MP -MF $(DEPDIR)/$*.Tpo -c -o $@ $<
-@@ -1328,8 +1355,8 @@
- 	sed 'N;N;s,\n, ,g' | { \
- 	list=; while read file base inst; do \
- 	  if test "$$base" = "$$inst"; then list="$$list $$file"; else \
--	    echo " $(INSTALL_DATA) '$$file' '$(DESTDIR)$(man1dir)/$$inst'"; \
--	    $(INSTALL_DATA) "$$file" "$(DESTDIR)$(man1dir)/$$inst" || exit $$?; \
-+	    echo " install  -o root -g wheel -m 444 '$$file' '$(DESTDIR)$(man1dir)/$$inst'"; \
-+	    install  -o root -g wheel -m 444 "$$file" "$(DESTDIR)$(man1dir)/$$inst" || exit $$?; \
- 	  fi; \
- 	done; \
- 	for i in $$list; do echo "$$i"; done | $(am__base_list) | \
-@@ -1371,8 +1398,8 @@
- 	sed 'N;N;s,\n, ,g' | { \
- 	list=; while read file base inst; do \
- 	  if test "$$base" = "$$inst"; then list="$$list $$file"; else \
--	    echo " $(INSTALL_DATA) '$$file' '$(DESTDIR)$(man3dir)/$$inst'"; \
--	    $(INSTALL_DATA) "$$file" "$(DESTDIR)$(man3dir)/$$inst" || exit $$?; \
-+	    echo " install  -o root -g wheel -m 444 '$$file' '$(DESTDIR)$(man3dir)/$$inst'"; \
-+	    install  -o root -g wheel -m 444 "$$file" "$(DESTDIR)$(man3dir)/$$inst" || exit $$?; \
- 	  fi; \
- 	done; \
- 	for i in $$list; do echo "$$i"; done | $(am__base_list) | \
 @@ -1771,18 +1798,26 @@
  
  info-am:
@@ -208,7 +175,7 @@
  install-html: install-html-recursive
  
  install-html-am:
-@@ -1862,6 +1897,12 @@
+@@ -1862,14 +1897,20 @@
  	uninstall-sbinPROGRAMS uninstall-sbinSCRIPTS
  
  
@@ -221,6 +188,30 @@
  authpgsqllib.lo: authpgsqllib.c authpgsqlrc.h
  
  @HAVE_AUTHPGSQL_TRUE@install-authpgsqlrc:
+ @HAVE_AUTHPGSQL_TRUE@	$(mkinstalldirs) $(DESTDIR)`dirname @authpgsqlrc@` || :
+ @HAVE_AUTHPGSQL_TRUE@	$(INSTALL_DATA) -m 660 $(srcdir)/authpgsqlrc \
+-@HAVE_AUTHPGSQL_TRUE@		$(DESTDIR)@authpgsqlrc@.dist
+-@HAVE_AUTHPGSQL_TRUE@	-chown @mailuser@ $(DESTDIR)@authpgsqlrc@.dist
+-@HAVE_AUTHPGSQL_TRUE@	-chgrp @mailgroup@ $(DESTDIR)@authpgsqlrc@.dist
++@HAVE_AUTHPGSQL_TRUE@		$(DESTDIR)@authpgsqlrc@.sample
++@HAVE_AUTHPGSQL_TRUE@	-chown @mailuser@ $(DESTDIR)@authpgsqlrc@.sample
++@HAVE_AUTHPGSQL_TRUE@	-chgrp @mailgroup@ $(DESTDIR)@authpgsqlrc@.sample
+ 
+ @HAVE_AUTHPGSQL_TRUE@uninstall-authpgsqlrc:
+ @HAVE_AUTHPGSQL_TRUE@	rm -f $(DESTDIR)@authpgsqlrc@.dist
+@@ -1888,9 +1929,9 @@
+ @HAVE_LDAP_TRUE@install-authldaprc:
+ @HAVE_LDAP_TRUE@	$(mkinstalldirs) $(DESTDIR)`dirname @authldaprc@` || :
+ @HAVE_LDAP_TRUE@	$(INSTALL_DATA) -m 660 $(srcdir)/authldaprc \
+-@HAVE_LDAP_TRUE@		$(DESTDIR)@authldaprc@.dist
+-@HAVE_LDAP_TRUE@	-chown @mailuser@ $(DESTDIR)@authldaprc@.dist
+-@HAVE_LDAP_TRUE@	-chgrp @mailgroup@ $(DESTDIR)@authldaprc@.dist
++@HAVE_LDAP_TRUE@		$(DESTDIR)@authldaprc@.sample
++@HAVE_LDAP_TRUE@	-chown @mailuser@ $(DESTDIR)@authldaprc@.sample
++@HAVE_LDAP_TRUE@	-chgrp @mailgroup@ $(DESTDIR)@authldaprc@.sample
+ 
+ @HAVE_LDAP_TRUE@uninstall-authldaprc:
+ @HAVE_LDAP_TRUE@	rm -f $(DESTDIR)@authldaprc@.dist
 @@ -1901,6 +1942,19 @@
  @HAVE_LDAP_FALSE@uninstall-authldaprc:
  @HAVE_LDAP_FALSE@	@:
@@ -228,7 +219,7 @@
 +@HAVE_LDAP_TRUE@install-ldapschema:
 +@HAVE_LDAP_TRUE@	$(mkinstalldirs) ${DESTDIR}${sysconfdir}/openldap/schema
 +@HAVE_LDAP_TRUE@	$(INSTALL_DATA) -m 0444 $(srcdir)/authldap.schema \
-+@HAVE_LDAP_TRUE@		${DESTDIR}${sysconfdir}/openldap/schema/authldap.schema.default
++@HAVE_LDAP_TRUE@		${DESTDIR}${sysconfdir}/openldap/schema/authldap.schema.sample
 +@HAVE_LDAP_TRUE@#	if test ! -f ${sysconfdir}/openldap/schema/authldap.schema ; then \
 +@HAVE_LDAP_TRUE@#		$(INSTALL_DATA) -m 0444 $(srcdir)/authldap.schema \
 +@HAVE_LDAP_TRUE@#			${sysconfdir}/openldap/schema/authldap.schema ; \
@@ -241,6 +232,32 @@
  authldaprc.h:
  	echo "#define AUTHLDAPRC \"@authldaprc@\"" >authldaprc.h
  
+@@ -1909,9 +1963,9 @@
+ @HAVE_AUTHMYSQL_TRUE@install-authmysqlrc:
+ @HAVE_AUTHMYSQL_TRUE@	$(mkinstalldirs) $(DESTDIR)`dirname @authmysqlrc@` || :
+ @HAVE_AUTHMYSQL_TRUE@	$(INSTALL_DATA) -m 660 $(srcdir)/authmysqlrc \
+-@HAVE_AUTHMYSQL_TRUE@		$(DESTDIR)@authmysqlrc@.dist
+-@HAVE_AUTHMYSQL_TRUE@	-chown @mailuser@ $(DESTDIR)@authmysqlrc@.dist
+-@HAVE_AUTHMYSQL_TRUE@	-chgrp @mailgroup@ $(DESTDIR)@authmysqlrc@.dist
++@HAVE_AUTHMYSQL_TRUE@		$(DESTDIR)@authmysqlrc@.sample
++@HAVE_AUTHMYSQL_TRUE@	-chown @mailuser@ $(DESTDIR)@authmysqlrc@.sample
++@HAVE_AUTHMYSQL_TRUE@	-chgrp @mailgroup@ $(DESTDIR)@authmysqlrc@.sample
+ 
+ @HAVE_AUTHMYSQL_TRUE@uninstall-authmysqlrc:
+ @HAVE_AUTHMYSQL_TRUE@	rm -f $(DESTDIR)@authmysqlrc@.dist
+@@ -1930,9 +1984,9 @@
+ @HAVE_AUTHSQLITE_TRUE@install-authsqliterc:
+ @HAVE_AUTHSQLITE_TRUE@	$(mkinstalldirs) $(DESTDIR)`dirname @authsqliterc@` || :
+ @HAVE_AUTHSQLITE_TRUE@	$(INSTALL_DATA) -m 660 $(srcdir)/authsqliterc \
+-@HAVE_AUTHSQLITE_TRUE@		$(DESTDIR)@authsqliterc@.dist
+-@HAVE_AUTHSQLITE_TRUE@	-chown @mailuser@ $(DESTDIR)@authsqliterc@.dist
+-@HAVE_AUTHSQLITE_TRUE@	-chgrp @mailgroup@ $(DESTDIR)@authsqliterc@.dist
++@HAVE_AUTHSQLITE_TRUE@		$(DESTDIR)@authsqliterc@.sample
++@HAVE_AUTHSQLITE_TRUE@	-chown @mailuser@ $(DESTDIR)@authsqliterc@.sample
++@HAVE_AUTHSQLITE_TRUE@	-chgrp @mailgroup@ $(DESTDIR)@authsqliterc@.sample
+ 
+ @HAVE_AUTHSQLITE_TRUE@uninstall-authsqliterc:
+ @HAVE_AUTHSQLITE_TRUE@	rm -f $(DESTDIR)@authsqliterc@.dist
 @@ -1951,16 +2005,22 @@
  authpiperc.h:
  	echo "#define PIPE_PROGRAM \"@authProg@\"" >authpiperc.h
@@ -255,19 +272,19 @@
 +@HAVE_BASE_TRUE@install-authdaemonrc:
 +@HAVE_BASE_TRUE@	$(mkinstalldirs) $(DESTDIR)`dirname @authdaemonrc@`
 +@HAVE_BASE_TRUE@	sed 's/@ALLMODULES@/$(modules:lib%.la=%)/' <authdaemonrc >authdaemonrc.tmp
-+@HAVE_BASE_TRUE@	$(INSTALL_DATA) -m 660 authdaemonrc.tmp $(DESTDIR)@authdaemonrc@.dist
++@HAVE_BASE_TRUE@	$(INSTALL_DATA) -m 660 authdaemonrc.tmp $(DESTDIR)@authdaemonrc@.sample
 +@HAVE_BASE_TRUE@	rm -f authdaemonrc.tmp
-+@HAVE_BASE_TRUE@	-chown @mailuser@ $(DESTDIR)@authdaemonrc@.dist
-+@HAVE_BASE_TRUE@	-chgrp @mailgroup@ $(DESTDIR)@authdaemonrc@.dist
-+
++@HAVE_BASE_TRUE@	-chown @mailuser@ $(DESTDIR)@authdaemonrc@.sample
++@HAVE_BASE_TRUE@	-chgrp @mailgroup@ $(DESTDIR)@authdaemonrc@.sample
+ 
+-uninstall-authdaemonrc:
+-	rm -f $(DESTDIR)@authdaemonrc@.dist
 +@HAVE_BASE_FALSE@install-authdaemonrc:
 +@HAVE_BASE_FALSE@	@:
 +
 +@HAVE_BASE_TRUE@uninstall-authdaemonrc:
 +@HAVE_BASE_TRUE@	rm -f $(DESTDIR)@authdaemonrc@.dist
- 
--uninstall-authdaemonrc:
--	rm -f $(DESTDIR)@authdaemonrc@.dist
++
 +@HAVE_BASE_FALSE@uninstall-authdaemonrc:
 +@HAVE_BASE_FALSE@	@:
  
@@ -316,7 +333,7 @@
  		$(INSTALL_SCRIPT) userdb/pw2userdb \
  				$(DESTDIR)$(sbindir)/pw2userdb ; \
  		$(INSTALL_SCRIPT) userdb/makeuserdb \
-@@ -2033,9 +2095,10 @@
+@@ -2033,9 +2099,10 @@
  				$(DESTDIR)$(sbindir)/userdb-test-cram-md5
  
  uninstall-hook: uninstall-authldaprc uninstall-authdaemonrc uninstall-authmysqlrc uninstall-authpgsqlrc uninstall-authsqliterc
@@ -328,7 +345,7 @@
  				$(DESTDIR)$(sbindir)/pw2userdb \
  				$(DESTDIR)$(sbindir)/makeuserdb \
  				$(DESTDIR)$(sbindir)/userdb \
-@@ -2046,7 +2109,7 @@
+@@ -2046,7 +2113,7 @@
  	$(SHELL) ./config.status --file=authlib.html
  
  authlib.3: authlib.3.in
@@ -336,21 +353,4 @@
 +@HAVE_BASE_TRUE@	$(SHELL) ./config.status --file=authlib.3
  
  @HAVE_SGML_TRUE@authpasswd.html: authpasswd.sgml libs/docbook/sgml2html
- @HAVE_SGML_TRUE@	libs/docbook/sgml2html authpasswd.sgml authpasswd.html
-@@ -2131,11 +2194,11 @@
- 	@SHELL@ authmigrate
- 
- install-configure:
--	test -f $(DESTDIR)@authdaemonrc@.dist && @SYSCONFTOOL@ $(DESTDIR)@authdaemonrc@.dist || true
--	test -f $(DESTDIR)@authmysqlrc@.dist && @SYSCONFTOOL@ $(DESTDIR)@authmysqlrc@.dist || true
--	test -f $(DESTDIR)@authpgsqlrc@.dist && @SYSCONFTOOL@ $(DESTDIR)@authpgsqlrc@.dist || true
--	test -f $(DESTDIR)@authldaprc@.dist && @SYSCONFTOOL@ $(DESTDIR)@authldaprc@.dist || true
--	test -f $(DESTDIR)@authsqliterc@.dist && @SYSCONFTOOL@ $(DESTDIR)@authsqliterc@.dist || true
-+@HAVE_BASE_TRUE@	test -f $(DESTDIR)@authdaemonrc@.dist && @SYSCONFTOOL@ $(DESTDIR)@authdaemonrc@.dist || true
-+@HAVE_AUTHMYSQL_TRUE@	test -f $(DESTDIR)@authmysqlrc@.dist && @SYSCONFTOOL@ $(DESTDIR)@authmysqlrc@.dist || true
-+@HAVE_AUTHPGSQL_TRUE@	test -f $(DESTDIR)@authpgsqlrc@.dist && @SYSCONFTOOL@ $(DESTDIR)@authpgsqlrc@.dist || true
-+@HAVE_LDAP_TRUE@	test -f $(DESTDIR)@authldaprc@.dist && @SYSCONFTOOL@ $(DESTDIR)@authldaprc@.dist || true
-+@HAVE_AUTHSQLITE_TRUE@	test -f $(DESTDIR)@authsqliterc@.dist && @SYSCONFTOOL@ $(DESTDIR)@authsqliterc@.dist || true
- 
- # For maintainer's use only
- 
+ @HAVE_SGML_TRUE@	libs/docbook/sgml2html authpasswd.sgml authpasswd.html 

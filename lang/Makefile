@@ -22,7 +22,6 @@
     SUBDIR += bigloo
     SUBDIR += bsh
     SUBDIR += bwbasic
-    SUBDIR += caml-light
     SUBDIR += ccl
     SUBDIR += cdent
     SUBDIR += cduce
@@ -182,7 +181,6 @@
     SUBDIR += onyx
     SUBDIR += oo2c
     SUBDIR += opendylan
-    SUBDIR += otcl
     SUBDIR += p2c
     SUBDIR += p5-Data-JavaScript
     SUBDIR += p5-Error

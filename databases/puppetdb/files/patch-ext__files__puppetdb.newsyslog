@@ -1,0 +1,6 @@
+--- ./ext/files/puppetdb.newsyslog.orig	2014-09-01 19:00:53.887156756 +0000
++++ ./ext/files/puppetdb.newsyslog	2014-09-01 19:00:53.887156756 +0000
+@@ -0,0 +1,3 @@
++# See man 5 newsyslog.conf or man.freebsd.org/newsyslog.conf(5)
++# logfilename			[owner:group]		mode	count	size	when	flags [/pid_file] [sig_num]
++/var/log/puppetdb/puppetdb.log	puppetdb:puppetdb	640	12	*	$W6D0	J	/var/run/puppetdb/puppetdb.pid

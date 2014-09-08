@@ -1,24 +1,3 @@
-@unexec if cmp -s %D/%%ETCDIR%%/cache.config %D/%%ETCDIR%%/cache.config.default; then rm %D/%%ETCDIR%%/cache.config; fi
-@unexec if cmp -s %D/%%ETCDIR%%/cluster.config %D/%%ETCDIR%%/cluster.config.default; then rm %D/%%ETCDIR%%/cluster.config; fi
-@unexec if cmp -s %D/%%ETCDIR%%/congestion.config %D/%%ETCDIR%%/congestion.config.default; then rm %D/%%ETCDIR%%/congestion.config; fi
-@unexec if cmp -s %D/%%ETCDIR%%/hosting.config %D/%%ETCDIR%%/hosting.config.default; then rm %D/%%ETCDIR%%/hosting.config; fi
-@unexec if cmp -s %D/%%ETCDIR%%/icp.config %D/%%ETCDIR%%/icp.config.default; then rm %D/%%ETCDIR%%/icp.config; fi
-@unexec if cmp -s %D/%%ETCDIR%%/ip_allow.config %D/%%ETCDIR%%/ip_allow.config.default; then rm %D/%%ETCDIR%%/ip_allow.config; fi
-@unexec if cmp -s %D/%%ETCDIR%%/log_hosts.config %D/%%ETCDIR%%/log_hosts.config.default; then rm %D/%%ETCDIR%%/log_hosts.config; fi
-@unexec if cmp -s %D/%%ETCDIR%%/logs_xml.config %D/%%ETCDIR%%/logs_xml.config.default; then rm %D/%%ETCDIR%%/logs_xml.config; fi
-@unexec if cmp -s %D/%%ETCDIR%%/parent.config %D/%%ETCDIR%%/parent.config.default; then rm %D/%%ETCDIR%%/parent.config; fi
-@unexec if cmp -s %D/%%ETCDIR%%/plugin.config %D/%%ETCDIR%%/plugin.config.default; then rm %D/%%ETCDIR%%/plugin.config; fi
-@unexec if cmp -s %D/%%ETCDIR%%/prefetch.config %D/%%ETCDIR%%/prefetch.config.default; then rm %D/%%ETCDIR%%/prefetch.config; fi
-@unexec if cmp -s %D/%%ETCDIR%%/records.config %D/%%ETCDIR%%/records.config.default; then rm %D/%%ETCDIR%%/records.config; fi
-@unexec if cmp -s %D/%%ETCDIR%%/remap.config %D/%%ETCDIR%%/remap.config.default; then rm %D/%%ETCDIR%%/remap.config; fi
-@unexec if cmp -s %D/%%ETCDIR%%/socks.config %D/%%ETCDIR%%/socks.config.default; then rm %D/%%ETCDIR%%/socks.config; fi
-@unexec if cmp -s %D/%%ETCDIR%%/splitdns.config %D/%%ETCDIR%%/splitdns.config.default; then rm %D/%%ETCDIR%%/splitdns.config; fi
-@unexec if cmp -s %D/%%ETCDIR%%/ssl_multicert.config %D/%%ETCDIR%%/ssl_multicert.config.default; then rm %D/%%ETCDIR%%/ssl_multicert.config; fi
-@unexec if cmp -s %D/%%ETCDIR%%/stats.config.xml %D/%%ETCDIR%%/stats.config.xml.default; then rm %D/%%ETCDIR%%/stats.config.xml; fi
-@unexec if cmp -s %D/%%ETCDIR%%/storage.config %D/%%ETCDIR%%/storage.config.default; then rm %D/%%ETCDIR%%/storage.config; fi
-@unexec if cmp -s %D/%%ETCDIR%%/update.config %D/%%ETCDIR%%/update.config.default; then rm %D/%%ETCDIR%%/update.config; fi
-@unexec if cmp -s %D/%%ETCDIR%%/vaddrs.config %D/%%ETCDIR%%/vaddrs.config.default; then rm %D/%%ETCDIR%%/vaddrs.config; fi
-@unexec if cmp -s %D/%%ETCDIR%%/volume.config %D/%%ETCDIR%%/volume.config.default; then rm %D/%%ETCDIR%%/volume.config; fi
 @unexec if [ ! -s %D/%%ETCDIR%%/proxy.pac ]; then rm -f %D/%%ETCDIR%%/proxy.pac; fi
 bin/traffic_cop
 bin/traffic_line
@@ -27,72 +6,14 @@ bin/traffic_logstats
 bin/traffic_manager
 bin/traffic_sac
 bin/traffic_server
+bin/traffic_top
 bin/trafficserver
 bin/tspush
 bin/tstop
 bin/tsxs
-include/ts/experimental.h
-include/ts/mgmtapi.h
-include/ts/remap.h
-include/ts/ts.h
-include/atscppapi/Async.h
-include/atscppapi/AsyncHttpFetch.h
-include/atscppapi/AsyncTimer.h
-include/atscppapi/CaseInsensitiveStringComparator.h
-include/atscppapi/ClientRequest.h
-include/atscppapi/GlobalPlugin.h
-include/atscppapi/GzipDeflateTransformation.h
-include/atscppapi/GzipInflateTransformation.h
-include/atscppapi/Headers.h
-include/atscppapi/HttpMethod.h
-include/atscppapi/HttpStatus.h
-include/atscppapi/HttpVersion.h
-include/atscppapi/Logger.h
-include/atscppapi/Mutex.h
-include/atscppapi/Plugin.h
-include/atscppapi/PluginInit.h
-include/atscppapi/RemapPlugin.h
-include/atscppapi/Request.h
-include/atscppapi/Response.h
-include/atscppapi/Stat.h
-include/atscppapi/Transaction.h
-include/atscppapi/TransactionPlugin.h
-include/atscppapi/Url.h
-include/atscppapi/noncopyable.h
-include/atscppapi/shared_ptr.h
-include/atscppapi/utils.h
-lib/libatscppapi.la
-lib/libatscppapi.so
-lib/libatscppapi.so.5
-lib/libtsmgmt.la
-lib/libtsmgmt.so
-lib/libtsmgmt.so.5
-lib/libtsmgmtshare.la
-lib/libtsmgmtshare.so
-lib/libtsmgmtshare.so.5
-lib/libtsutil.la
-lib/libtsutil.so
-lib/libtsutil.so.5
-libexec/trafficserver/cacheurl.la
-libexec/trafficserver/cacheurl.so
-libexec/trafficserver/conf_remap.la
-libexec/trafficserver/conf_remap.so
-libexec/trafficserver/gzip.la
-libexec/trafficserver/gzip.so
-libexec/trafficserver/libloader.la
-libexec/trafficserver/libloader.so
-libexec/trafficserver/regex_remap.la
-libexec/trafficserver/regex_remap.so
-libexec/trafficserver/stats_over_http.la
-libexec/trafficserver/stats_over_http.so
-%%SITE_PERL%%/Apache/TS.pm
-%%SITE_PERL%%/Apache/TS/AdminClient.pm
-%%SITE_PERL%%/Apache/TS/Config.pm
-%%SITE_PERL%%/Apache/TS/Config/Records.pm
-%%PERL5_MAN3%%/Apache::TS.3.gz
-%%PERL5_MAN3%%/Apache::TS::AdminClient.3.gz
-%%PERL5_MAN3%%/Apache::TS::Config::Records.3.gz
+%%ETCDIR%%/trafficserver-release
 @owner www
+@group www
 %%ETCDIR%%/body_factory/default/.body_factory_info
 %%ETCDIR%%/body_factory/default/README
 %%ETCDIR%%/body_factory/default/access#denied
@@ -109,6 +30,7 @@ libexec/trafficserver/stats_over_http.so
 %%ETCDIR%%/body_factory/default/interception#no_host
 %%ETCDIR%%/body_factory/default/redirect#moved_temporarily
 %%ETCDIR%%/body_factory/default/request#cycle_detected
+%%ETCDIR%%/body_factory/default/request#invalid_content_length
 %%ETCDIR%%/body_factory/default/request#no_content_length
 %%ETCDIR%%/body_factory/default/request#no_host
 %%ETCDIR%%/body_factory/default/request#scheme_unsupported
@@ -119,70 +41,157 @@ libexec/trafficserver/stats_over_http.so
 %%ETCDIR%%/body_factory/default/timeout#inactivity
 %%ETCDIR%%/body_factory/default/transcoding#unsupported
 %%ETCDIR%%/body_factory/default/urlrouting#no_mapping
-%%ETCDIR%%/cache.config.default
-%%ETCDIR%%/cluster.config.default
-%%ETCDIR%%/congestion.config.default
-%%ETCDIR%%/hosting.config.default
-%%ETCDIR%%/icp.config.default
-%%ETCDIR%%/ip_allow.config.default
-%%ETCDIR%%/log_hosts.config.default
-%%ETCDIR%%/logs_xml.config.default
-%%ETCDIR%%/parent.config.default
-%%ETCDIR%%/plugin.config.default
-%%ETCDIR%%/prefetch.config.default
-%%ETCDIR%%/records.config.default
-%%ETCDIR%%/remap.config.default
-%%ETCDIR%%/socks.config.default
-%%ETCDIR%%/splitdns.config.default
-%%ETCDIR%%/ssl_multicert.config.default
-%%ETCDIR%%/stats.config.xml.default
-%%ETCDIR%%/storage.config.default
-%%ETCDIR%%/update.config.default
-%%ETCDIR%%/vaddrs.config.default
-%%ETCDIR%%/volume.config.default
-@exec mkdir -p %D/%%ETCDIR%%/snapshots
-@exec chown -f www %D/%%ETCDIR%%/snapshots
+@sample %%ETCDIR%%/cache.config.sample
+@sample %%ETCDIR%%/cluster.config.sample
+@sample %%ETCDIR%%/congestion.config.sample
+@sample %%ETCDIR%%/hosting.config.sample
+@sample %%ETCDIR%%/icp.config.sample
+@sample %%ETCDIR%%/ip_allow.config.sample
+@sample %%ETCDIR%%/log_hosts.config.sample
+@sample %%ETCDIR%%/logs_xml.config.sample
+@sample %%ETCDIR%%/parent.config.sample
+@sample %%ETCDIR%%/plugin.config.sample
+@sample %%ETCDIR%%/prefetch.config.sample
+@sample %%ETCDIR%%/records.config.sample
+@sample %%ETCDIR%%/remap.config.sample
+@sample %%ETCDIR%%/socks.config.sample
+@sample %%ETCDIR%%/splitdns.config.sample
+@sample %%ETCDIR%%/ssl_multicert.config.sample
+@sample %%ETCDIR%%/stats.config.xml.sample
+@sample %%ETCDIR%%/storage.config.sample
+@sample %%ETCDIR%%/update.config.sample
+@sample %%ETCDIR%%/vaddrs.config.sample
+@sample %%ETCDIR%%/volume.config.sample
 @owner root
-%%ETCDIR%%/trafficserver-release
+@group wheel
+include/atscppapi/Async.h
+include/atscppapi/AsyncHttpFetch.h
+include/atscppapi/AsyncTimer.h
+include/atscppapi/CaseInsensitiveStringComparator.h
+include/atscppapi/ClientRequest.h
+include/atscppapi/GlobalPlugin.h
+include/atscppapi/GzipDeflateTransformation.h
+include/atscppapi/GzipInflateTransformation.h
+include/atscppapi/Headers.h
+include/atscppapi/HttpMethod.h
+include/atscppapi/HttpStatus.h
+include/atscppapi/HttpVersion.h
+include/atscppapi/InterceptPlugin.h
+include/atscppapi/Logger.h
+include/atscppapi/Mutex.h
+include/atscppapi/Plugin.h
+include/atscppapi/PluginInit.h
+include/atscppapi/RemapPlugin.h
+include/atscppapi/Request.h
+include/atscppapi/Response.h
+include/atscppapi/Stat.h
+include/atscppapi/Transaction.h
+include/atscppapi/TransactionPlugin.h
+include/atscppapi/TransformationPlugin.h
+include/atscppapi/Url.h
+include/atscppapi/noncopyable.h
+include/atscppapi/shared_ptr.h
+include/atscppapi/utils.h
+include/ts/apidefs.h     
+include/ts/experimental.h
+include/ts/mgmtapi.h
+include/ts/remap.h
+include/ts/ts.h
+lib/libatscppapi.so
+lib/libatscppapi.so.5
+lib/libatscppapi.so.5.0.1
+lib/libtsmgmt.so
+lib/libtsmgmt.so.5
+lib/libtsmgmt.so.5.0.1
+lib/libtsmgmtshare.so
+lib/libtsmgmtshare.so.5
+lib/libtsmgmtshare.so.5.0.1
+lib/libtsutil.so
+lib/libtsutil.so.5
+lib/libtsutil.so.5.0.1
+libexec/trafficserver/AsyncHttpFetch.so
+libexec/trafficserver/AsyncTimer.so
+libexec/trafficserver/ClientRedirect.so
+libexec/trafficserver/ClientRequest.so
+libexec/trafficserver/CustomResponse.so
+libexec/trafficserver/GlobalHookPlugin.so
+libexec/trafficserver/GzipTransformationPlugin.so
+libexec/trafficserver/HelloWorldPlugin.so
+libexec/trafficserver/InternalTransactionHandling.so
+libexec/trafficserver/LoggerExample.so
+libexec/trafficserver/MultipleTransactionHookPlugins.so
+libexec/trafficserver/NullTransformationPlugin.so
+libexec/trafficserver/PostBuffer.so
+libexec/trafficserver/RemapPlugin.so
+libexec/trafficserver/ServerResponse.so
+libexec/trafficserver/StatExample.so
+libexec/trafficserver/TimeoutExamplePlugin.so
+libexec/trafficserver/TransactionHookPlugin.so
+libexec/trafficserver/boom.so
+libexec/trafficserver/cacheurl.so
+libexec/trafficserver/conf_remap.so
+libexec/trafficserver/gzip.so
+libexec/trafficserver/header_rewrite.so
+libexec/trafficserver/intercept.so
+libexec/trafficserver/libloader.so
+libexec/trafficserver/regex_remap.so
+libexec/trafficserver/stats_over_http.so
+libexec/trafficserver/tcpinfo.so
+%%SITE_PERL%%/Apache/TS.pm
+%%SITE_PERL%%/Apache/TS.pm.in
+%%SITE_PERL%%/Apache/TS/AdminClient.pm
+%%SITE_PERL%%/Apache/TS/Config.pm
+%%SITE_PERL%%/Apache/TS/Config/Records.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache/TS/.packlist
+%%PERL5_MAN3%%/Apache::TS.3.gz
+%%PERL5_MAN3%%/Apache::TS::AdminClient.3.gz
+%%PERL5_MAN3%%/Apache::TS::Config::Records.3.gz
+%%PORTDOCS%%%%DOCSDIR%%/trafficshell/show_alarms.1
+%%PORTDOCS%%%%DOCSDIR%%/trafficshell/show_cache-stats.1
+%%PORTDOCS%%%%DOCSDIR%%/trafficshell/show_cache.1
+%%PORTDOCS%%%%DOCSDIR%%/trafficshell/show_cluster.1
+%%PORTDOCS%%%%DOCSDIR%%/trafficshell/show_dns-resolver.1
+%%PORTDOCS%%%%DOCSDIR%%/trafficshell/show_dns-stats.1
+%%PORTDOCS%%%%DOCSDIR%%/trafficshell/show_hostdb-stats.1
+%%PORTDOCS%%%%DOCSDIR%%/trafficshell/show_hostdb.1
+%%PORTDOCS%%%%DOCSDIR%%/trafficshell/show_http-stats.1
+%%PORTDOCS%%%%DOCSDIR%%/trafficshell/show_http-trans-stats.1
+%%PORTDOCS%%%%DOCSDIR%%/trafficshell/show_http.1
+%%PORTDOCS%%%%DOCSDIR%%/trafficshell/show_icp-stats.1
+%%PORTDOCS%%%%DOCSDIR%%/trafficshell/show_icp.1
+%%PORTDOCS%%%%DOCSDIR%%/trafficshell/show_logging-stats.1
+%%PORTDOCS%%%%DOCSDIR%%/trafficshell/show_logging.1
+%%PORTDOCS%%%%DOCSDIR%%/trafficshell/show_network.1
+%%PORTDOCS%%%%DOCSDIR%%/trafficshell/show_parent.1
+%%PORTDOCS%%%%DOCSDIR%%/trafficshell/show_port-tunnels.1
+%%PORTDOCS%%%%DOCSDIR%%/trafficshell/show_proxy-stats.1
+%%PORTDOCS%%%%DOCSDIR%%/trafficshell/show_proxy.1
+%%PORTDOCS%%%%DOCSDIR%%/trafficshell/show_remap.1
+%%PORTDOCS%%%%DOCSDIR%%/trafficshell/show_scheduled-update.1
+%%PORTDOCS%%%%DOCSDIR%%/trafficshell/show_security.1
+%%PORTDOCS%%%%DOCSDIR%%/trafficshell/show_socks.1
+%%PORTDOCS%%%%DOCSDIR%%/trafficshell/show_ssl.1
+%%PORTDOCS%%%%DOCSDIR%%/trafficshell/show_status.1
+%%PORTDOCS%%%%DOCSDIR%%/trafficshell/show_version.1
+%%PORTDOCS%%%%DOCSDIR%%/trafficshell/show_virtual-ip.1
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/trafficshell
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache/TS
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache
 @dirrm %%SITE_PERL%%/Apache/TS/Config
 @dirrm %%SITE_PERL%%/Apache/TS
 @dirrm %%SITE_PERL%%/Apache
 @dirrm libexec/trafficserver
 @dirrm include/ts
 @dirrm include/atscppapi
+@owner www
+@group www
 @dirrm %%ETCDIR%%/body_factory/default
 @dirrmtry %%ETCDIR%%/body_factory
 @dirrmtry %%ETCDIR%%/snapshots
 @dirrmtry %%ETCDIR%%
-@unexec rmdir "%%LOGDIR%%" 2>/dev/null || true
-@exec mkdir -p "%%LOGDIR%%"
-@exec chown -f www "%%LOGDIR%%"
-@exec chmod 700 "%%LOGDIR%%"
-@unexec rmdir "%%VARDIR%%" 2>/dev/null || true
-@exec mkdir -p "%%VARDIR%%"
-@exec chown -f www "%%VARDIR%%"
-@exec chmod 700 "%%VARDIR%%"
-@exec chown -f www %D/%%ETCDIR%%
-@exec chmod 700 %D/%%ETCDIR%%
-@exec if [ ! -f %D/%%ETCDIR%%/cache.config ]; then cp -p %D/%%ETCDIR%%/cache.config.default %D/%%ETCDIR%%/cache.config; fi
-@exec if [ ! -f %D/%%ETCDIR%%/cluster.config ]; then cp -p %D/%%ETCDIR%%/cluster.config.default %D/%%ETCDIR%%/cluster.config; fi
-@exec if [ ! -f %D/%%ETCDIR%%/congestion.config ]; then cp -p %D/%%ETCDIR%%/congestion.config.default %D/%%ETCDIR%%/congestion.config; fi
-@exec if [ ! -f %D/%%ETCDIR%%/hosting.config ]; then cp -p %D/%%ETCDIR%%/hosting.config.default %D/%%ETCDIR%%/hosting.config; fi
-@exec if [ ! -f %D/%%ETCDIR%%/icp.config ]; then cp -p %D/%%ETCDIR%%/icp.config.default %D/%%ETCDIR%%/icp.config; fi
-@exec if [ ! -f %D/%%ETCDIR%%/ip_allow.config ]; then cp -p %D/%%ETCDIR%%/ip_allow.config.default %D/%%ETCDIR%%/ip_allow.config; fi
-@exec if [ ! -f %D/%%ETCDIR%%/log_hosts.config ]; then cp -p %D/%%ETCDIR%%/log_hosts.config.default %D/%%ETCDIR%%/log_hosts.config; fi
-@exec if [ ! -f %D/%%ETCDIR%%/logs_xml.config ]; then cp -p %D/%%ETCDIR%%/logs_xml.config.default %D/%%ETCDIR%%/logs_xml.config; fi
-@exec if [ ! -f %D/%%ETCDIR%%/parent.config ]; then cp -p %D/%%ETCDIR%%/parent.config.default %D/%%ETCDIR%%/parent.config; fi
-@exec if [ ! -f %D/%%ETCDIR%%/plugin.config ]; then cp -p %D/%%ETCDIR%%/plugin.config.default %D/%%ETCDIR%%/plugin.config; fi
-@exec if [ ! -f %D/%%ETCDIR%%/prefetch.config ]; then cp -p %D/%%ETCDIR%%/prefetch.config.default %D/%%ETCDIR%%/prefetch.config; fi
-@exec if [ ! -f %D/%%ETCDIR%%/records.config ]; then cp -p %D/%%ETCDIR%%/records.config.default %D/%%ETCDIR%%/records.config; fi
-@exec if [ ! -f %D/%%ETCDIR%%/remap.config ]; then cp -p %D/%%ETCDIR%%/remap.config.default %D/%%ETCDIR%%/remap.config; fi
-@exec if [ ! -f %D/%%ETCDIR%%/socks.config ]; then cp -p %D/%%ETCDIR%%/socks.config.default %D/%%ETCDIR%%/socks.config; fi
-@exec if [ ! -f %D/%%ETCDIR%%/splitdns.config ]; then cp -p %D/%%ETCDIR%%/splitdns.config.default %D/%%ETCDIR%%/splitdns.config; fi
-@exec if [ ! -f %D/%%ETCDIR%%/ssl_multicert.config ]; then cp -p %D/%%ETCDIR%%/ssl_multicert.config.default %D/%%ETCDIR%%/ssl_multicert.config; fi
-@exec if [ ! -f %D/%%ETCDIR%%/stats.config.xml ]; then cp -p %D/%%ETCDIR%%/stats.config.xml.default %D/%%ETCDIR%%/stats.config.xml; fi
-@exec if [ ! -f %D/%%ETCDIR%%/storage.config ]; then cp -p %D/%%ETCDIR%%/storage.config.default %D/%%ETCDIR%%/storage.config; fi
-@exec if [ ! -f %D/%%ETCDIR%%/update.config ]; then cp -p %D/%%ETCDIR%%/update.config.default %D/%%ETCDIR%%/update.config; fi
-@exec if [ ! -f %D/%%ETCDIR%%/vaddrs.config ]; then cp -p %D/%%ETCDIR%%/vaddrs.config.default %D/%%ETCDIR%%/vaddrs.config; fi
-@exec if [ ! -f %D/%%ETCDIR%%/volume.config ]; then cp -p %D/%%ETCDIR%%/volume.config.default %D/%%ETCDIR%%/volume.config; fi
-@exec chmod -f 600 %D/%%ETCDIR%%/*.config
+@dirrmtry /var/cache/trafficserver
+@dirrmtry /var/log/trafficserver
+@dirrmtry /var/run/trafficserver
+@owner root
+@group wheel

@@ -39,7 +39,7 @@ USE_LDCONFIG=	yes
 USES=		perl5 libtool
 USE_PERL5=	build run fixpacklist
 
-CFLAGS+=	-I${LOCALBASE}/include
+CFLAGS+=	-I${LOCALBASE}/include -I${PKG_PREFIX}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ENV+=	PERLPROG="${PERL}" PSPROG="${PS_CMD}" SED="${SED}"
 CONFIGURE_ARGS+=--enable-shared --enable-internal-md5 \
@@ -49,7 +49,7 @@ CONFIGURE_ARGS+=--enable-shared --enable-internal-md5 \
 		--with-logfile="${NET_SNMP_LOGFILE}" \
 		--with-persistent-directory="${NET_SNMP_PERSISTENTDIR}" \
 		--with-gnu-ld --with-libwrap \
-		--with-ldflags="-lm -lkvm -ldevstat -lpkg -L${LOCALBASE}/lib ${LCRYPTO}"
+		--with-ldflags="-lm -lkvm -ldevstat -lpkg -L${LOCALBASE}/lib -L${PKG_PREFIX}/lib ${LCRYPTO}"
 SUB_FILES=	pkg-message
 
 .if defined(BATCH)

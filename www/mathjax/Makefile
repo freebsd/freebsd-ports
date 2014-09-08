@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	MathJax
-PORTVERSION=	2.4
+PORTVERSION=	2.4.0
 CATEGORIES=	www
 
 MAINTAINER=	lukasz.stelmach@iem.pw.edu.pl
@@ -11,9 +11,7 @@ COMMENT=	Cross-browser JavaScript display engine for mathematics
 NO_BUILD=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	mathjax
-GH_TAGNAME=	v${PORTVERSION}
-
-WRKSRC=	${WRKDIR}/${GH_ACCOUNT}-${PORTNAME}-f75c5d5
+GH_COMMIT=	bd9f6e0
 
 # Changing permissions of 30k files with find -exec (COPYTREE) is way
 # too slow.
@@ -23,7 +21,6 @@ do-install:
 		${FIND} -d . | ${CPIO} -dumpl ${STAGEDIR}${WWWDIR} >/dev/null 2>&1)
 	${FIND} -d ${STAGEDIR}${WWWDIR} -type d -print0 | ${XARGS} -0 ${CHMOD} 755
 	${FIND} -d ${STAGEDIR}${WWWDIR} -type f -print0 | ${XARGS} -0 ${CHMOD} ${SHAREMODE}
-	${CHOWN} -R ${BINOWN}:${BINGRP} ${STAGEDIR}${WWWDIR}
 	@(cd ${STAGEDIR}${PREFIX}; ${FIND} -s ${WWWDIR_REL} -not -type d) >> ${TMPPLIST}
 	@(cd ${STAGEDIR}${PREFIX}; ${FIND} -s -d ${WWWDIR_REL} -type d) \
 	| ${SED} -ne 's,^,@dirrm ,p' >> ${TMPPLIST}

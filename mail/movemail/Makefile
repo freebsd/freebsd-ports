@@ -10,6 +10,8 @@ MASTER_SITES=	http://wolfram.schneider.org/src/
 MAINTAINER=	wosch@FreeBSD.org
 COMMENT=	Move your mail box to another location
 
+USES=		uidfix
+
 PLIST_FILES=	bin/movemail \
 		man/man1/movemail.1.gz
 

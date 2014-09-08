@@ -1,0 +1,12 @@
+--- Makefile.in.orig	2014-09-05 12:45:49.000000000 -0700
++++ Makefile.in	2014-09-05 13:03:53.000000000 -0700
+@@ -1095,7 +1095,8 @@
+ 
+ install-data-local:
+ 	( cd $(srcdir) && find html -name SCCS -prune -o -type f \
+-		-exec $(INSTALL_DATA) -C -D {} $(DESTDIR)$(htmldir)/{} ";" )
++		-exec $(INSTALL_DATA) -d -C -m 755 `dirname $(DESTDIR)$(htmldir)/{}` ";" \
++		-exec $(INSTALL_DATA) -C {} $(DESTDIR)$(htmldir)/{} ";" )
+ 
+ uninstall-local:
+ 		rm -rf $(DESTDIR)$(htmldir)/html

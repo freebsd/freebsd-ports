@@ -3,7 +3,7 @@
 
 PORTNAME=	gotoblas
 PORTVERSION=	2.${GOTOBLAS2VER}.${LAPACKVER}
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	math
 MASTER_SITES=	${MASTER_SITE_LOCAL:S|%SUBDIR%|maho/gotoblas|} \
 		NL:lapack,lapack_tmg
@@ -13,10 +13,10 @@ DISTFILES=	GotoBLAS2-${GOTOBLAS2VER}_bsd.tar.gz \
 		large.tgz:lapack_tmg timing.tgz:lapack_tmg
 EXTRACT_ONLY=	${GOTOBLAS2_SRCFILE}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	cpm@fbsd.es
 COMMENT=	Fast implementation of Basic Linear Algebra Subprograms
 
-LICENSE=	BSD
+LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/00License.txt
 
 DIST_SUBDIR=	gotoblas
@@ -29,14 +29,15 @@ TIMING_FILE=	timing.tgz
 USE_LDCONFIG=	yes
 WRKSRC=		${WRKDIR}/GotoBLAS2
 
-USES=		fortran gmake perl5
-USE_GCC=	yes
+USES=		gmake perl5
+USE_GCC=	4.6+
 USE_PERL5=	build
 GOTOLIBS=	libgoto2 libgoto2p
 GOTOFILES=	${GOTOLIBS:S|$|.so|} ${GOTOLIBS:S|$|.so.1|} ${GOTOLIBS:S|$|.a|}
 PLIST_FILES=	${GOTOFILES:S|^|lib/|}
 SUB_FILES=	pkg-message
 SUB_LIST=	MAXTHREADS=${MAXTHREADS}
+MAKE_JOBS_UNSAFE=	yes
 
 .if defined(PACKAGE_BUILDING)
 OPTIONS_DEFAULT_i386=	DYNAMIC_ARCH
@@ -49,10 +50,9 @@ OPTIONS_DEFINE=	INTERFACE64 OPENMP
 DYNAMIC_ARCH_DESC=	Support multiple CPU types on i386 and amd64
 INTERFACE64_DESC=	Use 8 byte integers on 64-bit architectures
 OPENMP_DESC=		Use OpenMP for threading
-#		QUAD_PRECISION	"Support IEEE quad precision (experimental)" off
+#QUAD_PRECISION=	Support IEEE quad precision (experimental)
 
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 MAXTHREADS?=	8
 
@@ -74,16 +74,16 @@ GOTOFLAGS+=	INTERFACE64=1
 GOTOFLAGS+=	USE_OPENMP=1
 .endif
 
-.if ${PORT_OPTIONS:MQUAD_PRECISION}
-BROKEN=		WITH_QUAD_PRECISION is broken; please disable this option
-GOTOFLAGS+=	QUAD_PRECISION=1
-.endif
+#.if ${PORT_OPTIONS:MQUAD_PRECISION}
+#BROKEN=	WITH_QUAD_PRECISION is broken; please disable this option
+#GOTOFLAGS+=	QUAD_PRECISION=1
+#.endif
 
 post-extract:
 	${FIND} ${WRKSRC} -type f -name '.*' -delete
 	cd ${DISTDIR}/${DIST_SUBDIR} ; \
 	${CP} ${LAPACK_SRCFILE} ${LARGE_FILE} ${TIMING_FILE} ${WRKSRC}
-	${MKDIR} ${WRKDIR}/lib
+	${MKDIR} ${STAGEDIR}${PREFIX}/lib
 
 post-patch:
 	${REINPLACE_CMD} -e "s+%%FC%%+${FC}+" -e "s+%%CC%%+${CC}+" \
@@ -116,16 +116,14 @@ post-patch:
 do-build:
 	cd ${WRKSRC} ; ${SETENV} ${GOTOFLAGS} NUM_THREADS=1 USE_THREAD=0 \
 	${MAKE_CMD} ${MAKE_ARGS}
-	${CP} ${WRKSRC}/libgoto2.a ${WRKDIR}/lib/libgoto2.a
-	${CP} ${WRKSRC}/libgoto2.so ${WRKDIR}/lib/libgoto2.so.1
+	${CP} ${WRKSRC}/libgoto2.a ${STAGEDIR}${PREFIX}/lib/libgoto2.a
+	${CP} ${WRKSRC}/libgoto2.so ${STAGEDIR}${PREFIX}/lib/libgoto2.so.1
 	cd ${WRKSRC} ; ${MAKE_CMD} ${MAKE_ARGS} clean
 	cd ${WRKSRC} ; ${SETENV} ${GOTOFLAGS} NUM_THREADS=${MAXTHREADS} \
 	USE_THREAD=1 ${MAKE_CMD} ${MAKE_ARGS}
-	${CP} ${WRKSRC}/libgoto2.a ${WRKDIR}/lib/libgoto2p.a
-	${CP} ${WRKSRC}/libgoto2.so ${WRKDIR}/lib/libgoto2p.so.1
-.if ! ${PORT_OPTIONS:MDEBUG}
-	${LOCALBASE}/bin/strip -X ${WRKDIR}/lib/*.so.1
-.endif
+	${CP} ${WRKSRC}/libgoto2.a ${STAGEDIR}${PREFIX}/lib/libgoto2p.a
+	${CP} ${WRKSRC}/libgoto2.so ${STAGEDIR}${PREFIX}/lib/libgoto2p.so.1
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/*.so.1
 
 BENCHMARK_MAXTHREADS?=	${MAXTHREADS}
 .if ${PORT_OPTIONS:MOPENMP}
@@ -141,12 +139,12 @@ benchmark: build
 	USE_THREAD=1 ${BENCHMARK_THREADS_FLAG} ${MAKE_CMD} ${MAKE_ARGS}
 
 do-install:
-	cd ${WRKDIR}/lib ; \
+	cd ${STAGEDIR}${PREFIX}/lib ; \
 	${INSTALL_DATA} ${GOTOLIBS:S|$|.a|} ${GOTOLIBS:S|$|.so.1|} \
-	${PREFIX}/lib/
-	cd ${PREFIX}/lib ; \
+	${STAGEDIR}${PREFIX}/lib/
+	cd ${STAGEDIR}${PREFIX}/lib ; \
 	for i in ${GOTOLIBS:S|$|.so|}; do \
 		${LN} -sf $$i.1 $$i ; \
 	done
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

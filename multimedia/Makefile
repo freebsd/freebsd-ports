@@ -282,8 +282,6 @@
     SUBDIR += ppm2fli
     SUBDIR += projectx
     SUBDIR += ptx-kmod
-    SUBDIR += pvr250
-    SUBDIR += pvrxxx
     SUBDIR += pwcbsd
     SUBDIR += pwcview
     SUBDIR += py-enzyme

@@ -299,4 +299,5 @@ uvncrep:*:981:981::0:0:UltraVNC Repeater daemon:/nonexistent:/usr/sbin/nologin
 bro:*:982:982::0:0:Bro Network Security Monitor:/nonexistent:/usr/sbin/nologin
 syncthing:*:983:983::0:0:Syncthing Daemon:/var/tmp/syncthing:/usr/sbin/nologin
 tvheadend:*:984:984::0:0:TV Headend:/usr/local/etc/tvheadend:/bin/sh
+puppetdb:*:985:985::0:0:PuppetDB Daemon pseudo-user:/nonexistent:/usr/sbin/nologin
 nobody:*:65534:65534::0:0:Unprivileged user:/nonexistent:/usr/sbin/nologin

@@ -63,11 +63,6 @@
     SUBDIR += frescobaldi
     SUBDIR += ft2demos
     SUBDIR += ggv
-    SUBDIR += ghostscript7
-    SUBDIR += ghostscript7-commfont
-    SUBDIR += ghostscript7-jpnfont
-    SUBDIR += ghostscript7-korfont
-    SUBDIR += ghostscript7-nox11
     SUBDIR += ghostscript8
     SUBDIR += ghostscript8-nox11
     SUBDIR += ghostscript9

@@ -13,7 +13,7 @@ COMMENT=	Tool to check shared library links
 
 LICENSE=	BSD2CLAUSE
 
-USES=			tar:bzip2
+USES=			tar:bzip2 uidfix
 USE_RUBY=		yes
 USE_RUBY_FEATURES=	optparse
 

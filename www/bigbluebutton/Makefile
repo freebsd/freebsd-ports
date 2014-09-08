@@ -25,7 +25,7 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/pdf2swf:${PORTSDIR}/graphics/swftools \
 		${LOCALBASE}/etc/rc.d/red5:${PORTSDIR}/www/red5
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-MANUAL_PACKAGE_BUILD=	requires non-default configuration of dependency
+MANUAL_PACKAGE_BUILD=	requires www/tomcat6 with HTTP_PORT=8080
 
 USES=		dos2unix
 DOS2UNIX_REGEX=	.+\.(conf|jsp|properties|xml)$

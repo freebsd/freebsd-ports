@@ -1,12 +1,15 @@
---- doc/modulefile.5.in.orig	Fri Jan  4 05:59:16 2002
-+++ doc/modulefile.5.in	Sun Nov 14 16:19:28 2004
-@@ -1,4 +1,4 @@
--.TH MODULEFILE 4 "1 July 1994"
-+.TH MODULEFILE 5 "1 July 1994"
+--- doc/modulefile.5.in.orig	2014-09-04 09:37:33 UTC
++++ doc/modulefile.5.in
+@@ -1,6 +1,6 @@
+-.\" .TH MODULEFILE 4 "1 July 1994"
++.\" .TH MODULEFILE 5 "1 July 1994"
+ .\"  minor editorial edits grenker 20090711
+-.TH MODULEFILE 4 "July 2009" "Modules version @VERSION@" "Modules configuration"
++.TH MODULEFILE 5 "July 2009" "Modules version @VERSION@" "Modules configuration"
  .nh
  .SH NAME
- modulefile \- files containing Tcl code for The Modules package
-@@ -538,7 +538,7 @@
+ modulefile \- files containing Tcl code for the Modules package
+@@ -656,7 +656,7 @@
  .RE
  .RS
  .I a syslog facility

@@ -6,7 +6,7 @@
  install:
 -		install -c -o root -g bin -m 755 nologin $(PREFIX)/bin
 -		install -c -o root -g wheel -m 444 nologin.8 $(PREFIX)/man/man8
-+		install -c -o root -g bin -m 755 nologin $(DESTDIR)$(PREFIX)/bin
-+		install -c -o root -g wheel -m 444 nologin.8 $(DESTDIR)$(PREFIX)/man/man8
++		$(BSD_INSTALL_PROGRAM) nologin $(DESTDIR)$(PREFIX)/bin
++		$(BSD_INSTALL_MAN) nologin.8 $(DESTDIR)$(PREFIX)/man/man8
  clean:
  		-rm -f *.o *~ nologin

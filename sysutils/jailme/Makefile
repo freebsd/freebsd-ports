@@ -9,12 +9,11 @@ MASTER_SITES=	http://people.collaborativefusion.com/~wmoran/code/jailme/
 MAINTAINER=	wmoran@collaborativefusion.com
 COMMENT=	setuid version of jexec to allow normal users access to jails
 
-PLIST_FILES=	sbin/jailme
+PLIST_FILES=	"@(,,4751) sbin/jailme"
 
 USES=		tar:bzip2
 
-post-patch:
-	@${REINPLACE_CMD} -e 's|/usr/local|${STAGEDIR}${PREFIX}|' \
-		${WRKSRC}/${MAKEFILE}
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/jailme ${STAGEDIR}${PREFIX}/sbin
 
 .include <bsd.port.mk>

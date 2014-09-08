@@ -55,4 +55,7 @@ post-patch:
 	@${REINPLACE_CMD} -e '/WIDGET_LIBS=/ s|-lXm"$$|-lXm -lXpm"|' \
 		${WRKSRC}/configure
 
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/xbill
+
 .include <bsd.port.mk>

@@ -797,7 +797,6 @@
     SUBDIR += pornview
     SUBDIR += potrace
     SUBDIR += povray-meta
-    SUBDIR += povray31
     SUBDIR += povray36
     SUBDIR += povray37
     SUBDIR += ppmcaption
@@ -813,7 +812,6 @@
     SUBDIR += pstoedit
     SUBDIR += pstoepsi
     SUBDIR += pure-gl
-    SUBDIR += pvmpov
     SUBDIR += py-PyX
     SUBDIR += py-PyX12
     SUBDIR += py-aafigure

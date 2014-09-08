@@ -14,7 +14,6 @@ INSTALL_WRKSRC=	${BUILD_WRKSRC}
 
 PYTHON_SLAVEPORT=	yes
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e \
 	"{s#__version__ = '[^']*'#__version__ = '${PORTVERSION}'#;}" \

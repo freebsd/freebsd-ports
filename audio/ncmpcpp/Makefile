@@ -18,9 +18,6 @@ USES=		iconv libtool ncurses pkgconfig tar:bzip2
 USE_GCC=	any
 GNU_CONFIGURE=	yes
 USE_GNOME=	glib20
-USE_AUTOTOOLS=	automake aclocal
-AUTOMAKE_ARGS=	--add-missing
-ACLOCAL_ARGS=	--automake-acdir=${ACLOCAL_DIR} -I ${LOCALBASE}/share/aclocal
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 

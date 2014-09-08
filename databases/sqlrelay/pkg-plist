@@ -68,7 +68,6 @@ libdata/pkgconfig/sqlrelay-c++.pc
 libdata/pkgconfig/sqlrelay-c.pc
 %%FIREBIRD%%libexec/sqlrelay/sqlrconnection_firebird.so
 %%FREETDS%%libexec/sqlrelay/sqlrconnection_freetds.so
-%%MSQL%%libexec/sqlrelay/sqlrconnection_msql.so
 %%MYSQL%%libexec/sqlrelay/sqlrconnection_mysql.so
 %%ODBC%%libexec/sqlrelay/sqlrconnection_odbc.so
 %%PGSQL%%libexec/sqlrelay/sqlrconnection_postgresql.so

@@ -5,8 +5,7 @@ PORTNAME=	isakmpd
 PORTVERSION=	20041207
 PORTREVISION=	3
 CATEGORIES=	security net
-MASTER_SITES=	${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	simon
+MASTER_SITES=	LOCAL/simon
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	OpenBSD IKE daemon
@@ -21,6 +20,7 @@ BROKEN=		requires IPsec support
 BUILD_DEPENDS+=	keynote:${PORTSDIR}/security/keynote
 .endif
 
+USES=		uidfix
 USE_RC_SUBR=	isakmpd
 MAKE_ENV+=	BINDIR=${PREFIX}/sbin MANDIR=${PREFIX}/man/man LC_ALL=C
 

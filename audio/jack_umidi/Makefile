@@ -14,7 +14,7 @@ LICENSE=	BSD
 
 LIB_DEPENDS=	libjack.so:${PORTSDIR}/audio/jack
 
-USES=		tar:bzip2
+USES=		tar:bzip2 uidfix
 PLIST_FILES=	sbin/jack_umidi \
 		man/man8/jack_umidi.8.gz
 

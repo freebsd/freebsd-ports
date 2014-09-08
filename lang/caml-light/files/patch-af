@@ -1,8 +1,0 @@
---- contrib/camlsearch/emacs-lisp/Makefile.orig	Sat Feb  4 21:12:23 1995
-+++ contrib/camlsearch/emacs-lisp/Makefile	Sat Aug  5 10:00:54 2006
-@@ -1,3 +1,4 @@
- SOURCES=caml-search.el
- install: $(SOURCES)
--	cp $(SOURCES) $(ELISPDIR)
-+	mkdir -p $(ELISPDIR)
-+	${BSD_INSTALL_DATA} $(SOURCES) $(ELISPDIR)

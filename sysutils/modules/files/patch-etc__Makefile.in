@@ -1,0 +1,13 @@
+--- etc/Makefile.in.orig	2014-09-04 14:00:45.808429028 +0200
++++ etc/Makefile.in	2014-09-04 14:02:10.225903882 +0200
+@@ -403,8 +403,8 @@
+ 	@list='$(EXTRA_scripts)'; for p in $$list; do \
+ 	  if test -f $$p \
+ 	  ; then \
+-	   echo " $(INSTALL_PROGRAM_ENV) $(INSTALL_PROGRAM) $$p $(DESTDIR)$(prefix)/bin/$$p"; \
+-	   $(INSTALL_PROGRAM_ENV) $(INSTALL_PROGRAM) $$p $(DESTDIR)$(prefix)/bin/$$p; \
++	   echo " $(INSTALL_PROGRAM_ENV) $(INSTALL_SCRIPT) $$p $(DESTDIR)$(prefix)/bin/$$p"; \
++	   $(INSTALL_PROGRAM_ENV) $(INSTALL_SCRIPT) $$p $(DESTDIR)$(prefix)/bin/$$p; \
+ 	  else :; fi; \
+ 	done
+ 

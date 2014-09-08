@@ -1,6 +1,6 @@
 ==================================================================
-- SCEP prerequisite binary and i18n files for UI installed.
-- Enable utf8 locale (e.g. en_US.utf8) for the translation staff to work
+- SCEP prerequisite binary and i18n tools for UI installed.
+- Enable utf8 locale (e.g. en_US.utf8) for the translation staff to operate
   (translation is needed even for English language).
 - Install your favorite database (enable utf8 support) and a web server.
 - Perform deployment procedure for OpenXPKI in a regular way.

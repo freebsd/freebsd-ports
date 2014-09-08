@@ -35,6 +35,7 @@ DOCS_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sphinx>0:${PORTSDIR}/textproc/py-sphi
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's|distutils\(.command.install\) |setuptools\1 | ; \
+		 s|sphinx\.main|sphinx\.build_main| ; \
 		 /self.create_uninstaller()/d ; \
 		 /self.pkgmaintainer/s|0|1|' ${WRKSRC}/setup.py
 

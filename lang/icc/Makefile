@@ -7,25 +7,24 @@ PORTREVISION=	1
 CATEGORIES=	lang linux devel
 MASTER_SITES=
 DISTNAME=	l_cc_pc_${PORTVERSION:C/p.+$//}
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
 # netchild@FreeBSD.org is willing to review patches and to provide background
 # infos regarding this port
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Intels C/C++ compiler, set up to produce native FreeBSD binaries
 
+EXTRACT_DEPENDS=	rpm2cpio.pl:${PORTSDIR}/archivers/rpm2cpio
+
 PATCHLEVEL=	${PORTVERSION:C/(.+p)(.+)$/pe\2/}
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 .if ${PORTVERSION} != ${PATCHLEVEL}
 DISTFILES+=	${DISTNAME}_${PATCHLEVEL}${EXTRACT_SUFX}
-PATCH_DEPENDS=		${LINUX_BASE_PORT}
+PATCH_DEPENDS=	${LINUX_BASE_PORT}
 .endif
-
-EXTRACT_DEPENDS=	rpm2cpio.pl:${PORTSDIR}/archivers/rpm2cpio
 
 RESTRICTED=	Intel forbids any redistribution
 
 ONLY_FOR_ARCHS=		i386
-CONFLICTS=		linux_devtools*
 
 USE_LINUX=		yes
 
@@ -33,13 +32,14 @@ COMPILERDIR=	intel_cc_80
 PLIST_SUB=	COMPILERDIR=${COMPILERDIR}
 PATCH_WRKSRC=	${WRKSRC}/opt/${COMPILERDIR}
 
-MAN1=		icc.1
-MLINKS=		icc.1 icpc.1
+OPTIONS_DEFINE=	DOCS
+
+.include <bsd.port.options.mk>
+
 MANPREFIX=	${PREFIX}/${COMPILERDIR}
 
 ICC_SITE=	http://www.intel.com/software/products/compilers/
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 EXTRACT_AFTER_ARGS=	--exclude cdt-\*.zip \
@@ -51,13 +51,13 @@ EXTRACT_AFTER_ARGS=	--exclude cdt-\*.zip \
 			--exclude \*ia64.rpm \
 			--exclude flexlm64
 
-ICCCFGVAL!=	${UNAME} -r | ${SED} -e 's/\..*//'
+ICCCFGVAL_CMD=	${UNAME} -r | ${SED} -e 's/\..*//'
 
 GCCCOMPATVER=	340
 GXXINCLUDE=	/usr/include/c++/${GCCCOMPATVER:C/([0-9])([0-9]).+/\1.\2/}
 
-.for file in ${DISTFILES}
-.if !exists(${DISTDIR}/${DIST_SUBDIR}/${file})
+.for f in ${DISTFILES}
+.if !exists(${DISTDIR}/${DIST_SUBDIR}/${f})
 IGNORE=	Go to Intel Premier Support \(https://premier.intel.com/\) to obtain ${DISTFILES}. Product updates such as this compiler are posted regularly on Premier Support. You must have a license to obtain access to Premier Support. If you do not already have a license go to ${ICC_SITE} to review licensing options \(evaluation, commercial, and free non-commercial\) and obtain a license. Put ${DISTFILES} into ${DISTDIR} and run make again
 .endif
 .endfor
@@ -82,7 +82,7 @@ pre-patch: intel-patch
 	@for i in `${CAT} ${FILESDIR}/exclude`; do \
 		${RM} -rf ${WRKSRC}/opt/${COMPILERDIR}/$$i; \
 	done
-.if defined(NOPORTDOCS)
+.if ! ${PORT_OPTIONS:MDOCS}
 # Remove docs.
 	@for i in `${CAT} ${FILESDIR}/exclude_noportdocs`; do \
 		${RM} -rf ${WRKSRC}/opt/${COMPILERDIR}/$$i; \
@@ -122,7 +122,7 @@ post-patch:
 .endfor
 # Provide a more FreeBSD'ish compile environment
 .for i in icc.cfg icpc.cfg
-	@${ECHO_CMD} -e "-Qlocation,ld,${PREFIX}/${COMPILERDIR}/bin/ldwrapper\n\n-wr1125\n-we140\n\n-Ulinux\n-U__linux__\n-U__linux\n-U__gnu_linux__\n\n-D__FreeBSD__=${ICCCFGVAL}\n\n" >>${WRKSRC}/opt/${COMPILERDIR}/bin/${i}
+	@${ECHO_CMD} -e "-Qlocation,ld,${PREFIX}/${COMPILERDIR}/bin/ldwrapper\n\n-wr1125\n-we140\n\n-Ulinux\n-U__linux__\n-U__linux\n-U__gnu_linux__\n\n-D__FreeBSD__=$$(${ICCCFGVAL_CMD})\n\n" >>${WRKSRC}/opt/${COMPILERDIR}/bin/${i}
 	@${ECHO_CMD} -e "-D__wchar_t=__ct_rune_t\n" >>${WRKSRC}/opt/${COMPILERDIR}/bin/${i}
 	@${ECHO_CMD} -e "-restrict\n" >>${WRKSRC}/opt/${COMPILERDIR}/bin/${i}
 	@${CHMOD} a-x,g-w ${WRKSRC}/opt/${COMPILERDIR}/bin/${i}
@@ -159,12 +159,12 @@ do-build:
 		${WRKSRC}/opt/${COMPILERDIR}/bin/ldwrapper/ld \
 		${FILESDIR}/ld.c
 # We can't use STRIP_CMD, since we need the FreeBSD one, not the Linux one.
-	@/usr/bin/strip ${WRKSRC}/opt/${COMPILERDIR}/bin/ldwrapper/ld
+	@${STRIP_CMD} ${WRKSRC}/opt/${COMPILERDIR}/bin/ldwrapper/ld
 	@${CHMOD} 755 ${WRKSRC}/opt/${COMPILERDIR}/bin/ldwrapper/ld
 # Make ICC happy with regards to crtbegin.o, crtend.o and libgcc.a which it
 # expects to find in GXX_ROOT.
-.for file in crtbegin.o crtend.o libgcc.a
-	@cd ${WRKSRC}/opt/${COMPILERDIR}/lib && ${LN} -s /usr/lib/${file} ${file}
+.for f in crtbegin.o crtend.o libgcc.a
+	@cd ${WRKSRC}/opt/${COMPILERDIR}/lib && ${LN} -s /usr/lib/${f} ${f}
 .endfor
 # The static linking case expects a crtbeginT.o. Based upon inspection of
 # /usr/src/contrib/gnu/crtstuff.c it seems it's the same as crtbegin.o.
@@ -172,9 +172,10 @@ do-build:
 
 do-install:
 	@cd ${WRKSRC}/opt && ${FIND} . -print | \
-		${CPIO} -pdu -R ${BINOWN}:${BINGRP} --quiet ${PREFIX}
+		${CPIO} -pdu --quiet ${STAGEDIR}${PREFIX}
 
 post-install:
+	@${LN} -sf icc.1.gz ${STAGEDIR}${MANPREFIX}/man/man1/icpc.1.gz
 	@${ECHO} "${PKGNAME} is now installed in ${PREFIX}/${COMPILERDIR}, to use it you have to put your license into your \$${INTEL_FLEXLM_LICENSE} (default: ${PREFIX}/${COMPILERDIR}/licenses) directory and add ${PREFIX}/${COMPILERDIR}/bin to your PATH." | fmt
 	@${ECHO}
 	@${ECHO} "WARNING: If you use icc while having linux_devtools installed, icc will use the wrong includes and therefore will generate non-working binaries!" | fmt

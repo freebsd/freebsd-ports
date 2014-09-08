@@ -2,18 +2,17 @@ MPQC is the Massively Parallel Quantum Chemistry Program. It computes
 properties of atoms and molecules from first principles using the time
 independent Schrodinger equation. It runs on a wide range of architectures
 ranging from individual workstations to symmetric multiprocessors to
-massively parallel computers. Its design is object oriented, using the C++
-programming language.
+massively parallel computers. Its design is object oriented, using  C++.
 
 Capabilities
 o Closed shell and general restricted open shell Hartree-Fock energies and
-gradients
+  gradients
 o Second order open shell perturbation theory (OPT2[2]) and Z-averaged
-perturbation theory (ZAPT2) energies.
+  perturbation theory (ZAPT2) energies.
 o Second order closed shell Moller-Plesset perturbation theory energies and
-gradients.
+  gradients.
 o Robust internal coordinate geometry optimizer that efficiently optimizes
-molecules with many degrees of freedom.
+  molecules with many degrees of freedom.
 
 You can also validate your mpqc binaries when you employ other settings by:
 % make validate >& validate.log &

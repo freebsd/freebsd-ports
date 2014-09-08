@@ -18,7 +18,7 @@ LICENSE=	APACHE20
 
 LIB_DEPENDS=	libexecinfo.so:${PORTSDIR}/devel/libexecinfo
 
-MANUAL_PACKAGE_BUILD=	yes
+MANUAL_PACKAGE_BUILD=	requires apache WITH_EXCEPTION_HOOK=yes
 
 USE_APACHE=	22+
 AP_FAST_BUILD=	yes
