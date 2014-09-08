@@ -139,7 +139,6 @@ lib/libMonoSupportW.so
 lib/libikvm-native.a
 lib/libikvm-native.so
 lib/libmono-2.0.a
-lib/libmono-2.0.la
 lib/libmono-2.0.so
 lib/libmono-2.0.so.1
 lib/libmono-2.0.so.1.0.0

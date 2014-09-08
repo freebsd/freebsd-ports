@@ -23,7 +23,6 @@ include/cvm/sasl.h
 include/cvm/v1client.h
 include/cvm/v2client.h
 lib/libcvm-client.a
-lib/libcvm-client.la
 lib/libcvm-client.so
 lib/libcvm-command.a
 lib/libcvm-command.so
