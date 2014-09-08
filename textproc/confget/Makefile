@@ -16,7 +16,7 @@ OPTIONS_DEFINE=	EXAMPLES PCRE
 OPTIONS_DEFAULT=PCRE
 
 MAKE_ENV=	CFLAGS_CONF=-DHAVE_FGETLN
-USES=		gmake
+USES=		gmake uidfix
 
 PLIST_FILES=	bin/confget \
 		man/man1/confget.1.gz
