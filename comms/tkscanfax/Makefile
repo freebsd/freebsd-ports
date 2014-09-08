@@ -29,7 +29,6 @@ do-install:
 	@(cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${TKSCANFAXDIR})
 .for file in tkfax tkscan
 	${CHMOD} ${BINMODE} ${STAGEDIR}${TKSCANFAXDIR}/${file}
-	${CHOWN} ${BINOWN}:${BINGRP} ${STAGEDIR}${TKSCANFAXDIR}/${file}
 	${LN} -sf ${TKSCANFAXDIR}/${file} ${STAGEDIR}${PREFIX}/bin
 .endfor
 
