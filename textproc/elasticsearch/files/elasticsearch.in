@@ -58,6 +58,7 @@ java_options=" 	-server \
 		-XX:CMSInitiatingOccupancyFraction=75 \
 		-XX:+UseCMSInitiatingOccupancyOnly \
 		-XX:+HeapDumpOnOutOfMemoryError \
+		-XX:+DisableExplicitGC \
 		-Delasticsearch	\
 		-Des.config=${elasticsearch_config} \
 		-cp ${ES_CLASSPATH}"

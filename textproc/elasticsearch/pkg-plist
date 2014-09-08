@@ -11,17 +11,23 @@ etc/elasticsearch/logging.yml.sample
 @owner root
 @group wheel
 bin/elasticsearch-plugin
+lib/elasticsearch/antlr-runtime-3.5.jar
+lib/elasticsearch/asm-4.1.jar
+lib/elasticsearch/asm-commons-4.1.jar
 lib/elasticsearch/elasticsearch-%%PORTVERSION%%.jar
+lib/elasticsearch/groovy-all-2.3.2.jar
 lib/elasticsearch/jna-4.1.0.jar
 lib/elasticsearch/jts-1.13.jar
 lib/elasticsearch/log4j-1.2.17.jar
 lib/elasticsearch/lucene-analyzers-common-%%LUCENEVER%%.jar
 lib/elasticsearch/lucene-codecs-%%LUCENEVER%%.jar
 lib/elasticsearch/lucene-core-%%LUCENEVER%%.jar
+lib/elasticsearch/lucene-expressions-%%LUCENEVER%%.jar
 lib/elasticsearch/lucene-grouping-%%LUCENEVER%%.jar
 lib/elasticsearch/lucene-highlighter-%%LUCENEVER%%.jar
 lib/elasticsearch/lucene-join-%%LUCENEVER%%.jar
 lib/elasticsearch/lucene-memory-%%LUCENEVER%%.jar
+lib/elasticsearch/lucene-misc-%%LUCENEVER%%.jar
 lib/elasticsearch/lucene-queries-%%LUCENEVER%%.jar
 lib/elasticsearch/lucene-queryparser-%%LUCENEVER%%.jar
 lib/elasticsearch/lucene-sandbox-%%LUCENEVER%%.jar
