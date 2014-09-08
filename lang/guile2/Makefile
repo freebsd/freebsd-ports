@@ -3,7 +3,7 @@
 
 PORTNAME=	guile
 PORTVERSION=	2.0.11
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang scheme
 MASTER_SITES=	GNU
 #MASTER_SITES=	${MASTER_SITE_GNU}
@@ -21,13 +21,13 @@ LIB_DEPENDS=	libgmp.so:${PORTSDIR}/math/gmp \
 
 CONFLICTS_INSTALL=	guile-[0-9]*
 
-USE_AUTOTOOLS=	aclocal automake libltdl
-USES=		gmake ncurses pkgconfig readline
-GNU_CONFIGURE=	yes
+USES=		charsetfix gmake libtool ncurses pathfix pkgconfig readline
+USE_AUTOTOOLS=	libltdl
 USE_LDCONFIG=	yes
-LDFLAGS+=	-L${LOCALBASE}/lib
+GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
-USE_GCC=	any
+LIBS+=		-L${LOCALBASE}/lib
+INSTALL_TARGET=	install-strip
 
 PLIST_SUB=	GUILE_VER=${PORTVERSION:R}
 
@@ -51,16 +51,10 @@ INFO=		guile r5rs
 post-patch:
 	@cd ${WRKSRC} ; \
 	  ${REINPLACE_CMD} -e 's|<malloc\.h>|<stdlib.h>|g' ${REINPLACE_FILES}
-	@${REINPLACE_CMD} -e 's|2.63|%%AUTOCONF_VERSION%%|g' ${WRKSRC}/aclocal.m4
-	@${REINPLACE_CMD} -e 's|libdir)/pkgconfig|prefix)/libdata/pkgconfig|g' \
-	      ${WRKSRC}/meta/Makefile.in ${WRKSRC}/meta/Makefile.am
-	@${REINPLACE_CMD} -e 's|libdir}/pkgconfig|prefix}/libdata/pkgconfig|g' ${WRKSRC}/aclocal.m4
-	@${REINPLACE_CMD} -e 's|sys/time.h sys/timeb.h|sys/time.h |g' ${WRKSRC}/configure.ac \
+	@${REINPLACE_CMD} -e 's|sys/time.h sys/timeb.h|sys/time.h |g' \
 		${WRKSRC}/configure
-	@${REINPLACE_CMD} -e 's|install-exec-local: install-exec-localcharset|install-exec-local:|g' \
-	       	${WRKSRC}/lib/Makefile.am
 .if ${PORT_OPTIONS:MTHREADS}
-	@${REINPLACE_CMD} -e 's|bdw-gc|bdw-gc-threaded|g' ${WRKSRC}/configure.ac
+	@${REINPLACE_CMD} -e 's|bdw-gc|bdw-gc-threaded|g' ${WRKSRC}/configure
 .endif
 
 .include <bsd.port.mk>
