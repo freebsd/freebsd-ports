@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	toxcore
-PORTVERSION=	0.140814
-PORTREVISION=	1
+PORTVERSION=	0.140908
 CATEGORIES=	net-im net-p2p
 
 MAINTAINER=	thierry@FreeBSD.org
@@ -22,7 +21,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	irungentoo
 GH_PROJECT=	${PORTNAME}
 GH_TAGNAME=	${GH_COMMIT}
-GH_COMMIT=	7557b92
+GH_COMMIT=	a0302b7
 
 USE_AUTOTOOLS=	libtoolize aclocal autoconf autoheader automake
 AUTOMAKE_ARGS=	-a -c -f
