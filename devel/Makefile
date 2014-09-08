@@ -4573,11 +4573,6 @@
     SUBDIR += sdts++
     SUBDIR += sedsed
     SUBDIR += seed
-<<<<<<< HEAD
-    SUBDIR += semantic
-=======
-    SUBDIR += seed3
->>>>>>> 0fa2e2bc58e47cb929641b37720061bd662b3dbd
     SUBDIR += serdisplib
     SUBDIR += sfio
     SUBDIR += sfml
