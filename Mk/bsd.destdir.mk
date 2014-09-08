@@ -140,7 +140,7 @@ do-chroot:
 		_tp=$${_entry#*:}; \
 		_host_path=`${REALPATH} $${_tp%:*}`; \
 		_dest_path=$${_entry##*:}; \
-		_full_dest_path=`${REALPATH} $${_destdir}/$${_dest_path}`; \
+		_full_dest_path=`${REALPATH} -q $${_destdir}/$${_dest_path} || :`; \
 		_entry_was_created=0; \
 		_entry_should_mount=0; \
 		${DEBUG_MSG} "$${_mount_var}:$${_host_path}:$${_full_dest_path}"; \
