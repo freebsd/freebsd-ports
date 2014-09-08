@@ -1,0 +1,31 @@
+--- Makefile.in.orig	2007-05-15 20:54:14 UTC
++++ Makefile.in
+@@ -194,7 +194,7 @@
+ target_alias = @target_alias@
+ AUTOMAKE_OPTIONS = foreign
+ SUBDIRS = src
+-data_DATA = bopm.conf.sample bopm.conf.blitzed
++data_DATA = bopm.conf.blitzed
+ EXTRA_DIST = ChangeLog contrib INSTALL README bopm.conf.sample bopm.conf.blitzed network-bopm
+ all: all-recursive
+ 
+@@ -636,14 +636,14 @@
+ 
+ 
+ install-data-local:
+-	@if test -f $(sysconfdir)/bopm.conf ; then \
++	@if test -f $(DESTDIR)$(sysconfdir)/bopm.conf ; then \
+ 		echo "$@ will not overwrite existing $(sysconfdir)/bopm.conf"; \
+ 	else \
+-		$(mkinstalldirs) $(sysconfdir); \
+-		echo "$(INSTALL_DATA) bopm.conf.sample $(sysconfdir)/bopm.conf"; \
+-		$(INSTALL_DATA) bopm.conf.sample $(sysconfdir)/bopm.conf; \
++		$(mkinstalldirs) $(DESTDIR)$(sysconfdir); \
++		echo "$(INSTALL_DATA) bopm.conf.sample $(DESTDIR)$(sysconfdir)/bopm.conf.sample"; \
++		$(INSTALL_DATA) bopm.conf.sample $(DESTDIR)$(sysconfdir)/bopm.conf.sample; \
+ 	fi
+-	$(mkinstalldirs) $(localstatedir)
++	$(mkinstalldirs) $(DESTDIR)$(localstatedir)
+ 
+ uninstall-local:
+ 	@if test -f $(sysconfdir)/bopm.conf ; then \
