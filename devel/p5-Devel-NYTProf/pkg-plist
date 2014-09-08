@@ -1,9 +1,10 @@
+bin/flamegraph.pl
+bin/nytprofcalls
 bin/nytprofcg
 bin/nytprofcsv
 bin/nytprofhtml
 bin/nytprofmerge
 %%SITE_PERL%%/%%PERL_ARCH%%/Devel/auto/Devel/NYTProf/NYTProf.so
-%%SITE_PERL%%/%%PERL_ARCH%%/Devel/benchmark.pl
 %%SITE_PERL%%/%%PERL_ARCH%%/Devel/MemoryProfiling.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Devel/NYTProf.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Devel/NYTProf/Apache.pm
@@ -45,6 +46,7 @@ bin/nytprofmerge
 %%PERL5_MAN3%%/Devel::NYTProf::ReadStream.3.gz
 %%PERL5_MAN3%%/Devel::NYTProf::Run.3.gz
 %%PERL5_MAN3%%/Devel::NYTProf::Util.3.gz
+man/man1/nytprofcalls.1.gz
 man/man1/nytprofcg.1.gz
 man/man1/nytprofcsv.1.gz
 man/man1/nytprofhtml.1.gz
