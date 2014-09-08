@@ -1,12 +1,37 @@
+bin/dnscheck-dispatcher
+bin/dnscheckengine
+etc/rc.d/dnscheck-dispatcher
 libexec/dnscheck/dnscheck
 libexec/dnscheck/dnscheck-12hourmailer
 libexec/dnscheck/dnscheck-dispatcher
 libexec/dnscheck/dnscheck-hostsyntax
 libexec/dnscheck/dnscheck-preflight
 libexec/dnscheck/dnscheck-zonediff
-@dirrm libexec/dnscheck
-bin/dnscheckengine
-%%PORTDOCS%%%%DOCSDIR%%/DNSCheck Lib Descriptions.pdf
+man/man1/dnscheck-zonediff.1.gz
+man/man1/dnscheck-dispatcher.1.gz
+man/man1/dnscheck-preflight.1.gz
+man/man1/dnscheck-hostsyntax.1.gz
+man/man1/dnscheck.1.gz
+man/man1/dnscheck-12hourmailer.1.gz
+%%PERL5_MAN3%%/DNSCheck::Test::Nameserver.3.gz
+%%PERL5_MAN3%%/DNSCheck::Config.3.gz
+%%PERL5_MAN3%%/DNSCheck.3.gz
+%%PERL5_MAN3%%/DNSCheck::Lookup::DNS.3.gz
+%%PERL5_MAN3%%/DNSCheck::Test::Consistency.3.gz
+%%PERL5_MAN3%%/DNSCheck::Test::Host.3.gz
+%%PERL5_MAN3%%/DNSCheck::Test::Connectivity.3.gz
+%%PERL5_MAN3%%/DNSCheck::Overview.3.gz
+%%PERL5_MAN3%%/DNSCheck::Test::Address.3.gz
+%%PERL5_MAN3%%/DNSCheck::Test::DNSSEC.3.gz
+%%PERL5_MAN3%%/DNSCheck::Test::SMTP.3.gz
+%%PERL5_MAN3%%/DNSCheck::Lookup::ASN.3.gz
+%%PERL5_MAN3%%/DNSCheck::Test::Zone.3.gz
+%%PERL5_MAN3%%/DNSCheck::Logger.3.gz
+%%PERL5_MAN3%%/DNSCheck::Test::Common.3.gz
+%%PERL5_MAN3%%/DNSCheck::Test::Delegation.3.gz
+%%PERL5_MAN3%%/DNSCheck::Test::SOA.3.gz
+%%PERL5_MAN3%%/DNSCheck::Lookup::Resolver.3.gz
+%%PERL5_MAN3%%/DNSCheck::Test::Mail.3.gz
 %%SITE_PERL%%/DNSCheck.pm
 %%SITE_PERL%%/DNSCheck/Test/Address.pm
 %%SITE_PERL%%/DNSCheck/Test/Consistency.pm
@@ -28,13 +53,14 @@ bin/dnscheckengine
 %%SITE_PERL%%/DNSCheck/Lookup/DNS.pm
 %%SITE_PERL%%/DNSCheck/Lookup/Resolver.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/DNSCheck/.packlist
-@dirrm %%SITE_PERL%%/DNSCheck/Test
-@dirrm %%SITE_PERL%%/DNSCheck/Lookup
-@dirrm %%SITE_PERL%%/DNSCheck
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/DNSCheck
 share/dnscheck/locale/en.yaml
 share/dnscheck/locale/sv.yaml
 share/dnscheck/config.yaml
 share/dnscheck/policy.yaml
+@dirrm %%SITE_PERL%%/DNSCheck/Test
+@dirrm %%SITE_PERL%%/DNSCheck/Lookup
+@dirrm %%SITE_PERL%%/DNSCheck
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/DNSCheck
+@dirrm libexec/dnscheck
 @dirrmtry share/dnscheck/locale
 @dirrmtry share/dnscheck
