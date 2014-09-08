@@ -12,6 +12,6 @@ bin/amqp_unbind
 include/amqp.h
 include/amqp_framing.h
 lib/librabbitmq.a
-lib/librabbitmq.la
 lib/librabbitmq.so
 lib/librabbitmq.so.0
+lib/librabbitmq.so.0.0.0
