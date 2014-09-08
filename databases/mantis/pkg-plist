@@ -24,7 +24,8 @@
 %%WWWDIR%%/admin/install.php
 %%WWWDIR%%/admin/install_functions.php
 %%WWWDIR%%/admin/install_helper_functions.php
-%%WWWDIR%%/admin/move_db2disk.php
+%%WWWDIR%%/admin/move_attachments.php
+%%WWWDIR%%/admin/move_attachments_page.php
 %%WWWDIR%%/admin/schema.php
 %%WWWDIR%%/admin/system_utils.php
 %%WWWDIR%%/admin/test_email.php
@@ -50,6 +51,7 @@
 %%WWWDIR%%/api/soap/mc_tag_api.php
 %%WWWDIR%%/api/soap/mc_user_pref_api.php
 %%WWWDIR%%/api/soap/mc_user_profile_api.php
+%%WWWDIR%%/api/soap/wsdl-viewer.xsl
 %%WWWDIR%%/billing_inc.php
 %%WWWDIR%%/billing_page.php
 %%WWWDIR%%/browser_search_plugin.php
@@ -97,7 +99,6 @@
 %%WWWDIR%%/bugnote_stats_inc.php
 %%WWWDIR%%/bugnote_update.php
 %%WWWDIR%%/bugnote_view_inc.php
-%%WWWDIR%%/build.xml
 %%WWWDIR%%/changelog_page.php
 %%WWWDIR%%/config_defaults_inc.php
 %%WWWDIR%%/config_filter_defaults_inc.php
@@ -196,45 +197,6 @@
 %%WWWDIR%%/doc/en/developers.html
 %%WWWDIR%%/doc/en/developers.pdf
 %%WWWDIR%%/doc/en/developers.txt
-%%WWWDIR%%/docbook/README
-%%WWWDIR%%/docbook/administration_guide/en/Makefile
-%%WWWDIR%%/docbook/administration_guide/en/about.sgml
-%%WWWDIR%%/docbook/administration_guide/en/administration_guide.sgml
-%%WWWDIR%%/docbook/administration_guide/en/authentication.sgml
-%%WWWDIR%%/docbook/administration_guide/en/configuration.sgml
-%%WWWDIR%%/docbook/administration_guide/en/contributing.sgml
-%%WWWDIR%%/docbook/administration_guide/en/customizing_mantis.sgml
-%%WWWDIR%%/docbook/administration_guide/en/file-entities.ent
-%%WWWDIR%%/docbook/administration_guide/en/installation.sgml
-%%WWWDIR%%/docbook/administration_guide/en/page_descriptions.sgml
-%%WWWDIR%%/docbook/administration_guide/en/project_management.sgml
-%%WWWDIR%%/docbook/administration_guide/en/troubleshooting.sgml
-%%WWWDIR%%/docbook/administration_guide/en/user_management.sgml
-%%WWWDIR%%/docbook/administration_guide/en/workflow.sgml
-%%WWWDIR%%/docbook/developers/en/Makefile
-%%WWWDIR%%/docbook/developers/en/appendix.sgml
-%%WWWDIR%%/docbook/developers/en/contributers.sgml
-%%WWWDIR%%/docbook/developers/en/database.sgml
-%%WWWDIR%%/docbook/developers/en/developers.sgml
-%%WWWDIR%%/docbook/developers/en/event-reference-account.sgml
-%%WWWDIR%%/docbook/developers/en/event-reference-bug.sgml
-%%WWWDIR%%/docbook/developers/en/event-reference-filter.sgml
-%%WWWDIR%%/docbook/developers/en/event-reference-manage.sgml
-%%WWWDIR%%/docbook/developers/en/event-reference-notify.sgml
-%%WWWDIR%%/docbook/developers/en/event-reference-output.sgml
-%%WWWDIR%%/docbook/developers/en/event-reference.sgml
-%%WWWDIR%%/docbook/developers/en/events.sgml
-%%WWWDIR%%/docbook/developers/en/file-entities.ent
-%%WWWDIR%%/docbook/developers/en/integrators.sgml
-%%WWWDIR%%/docbook/developers/en/plugins-building-source.sgml
-%%WWWDIR%%/docbook/developers/en/plugins-building.sgml
-%%WWWDIR%%/docbook/developers/en/plugins.sgml
-%%WWWDIR%%/docbook/template/Makefile
-%%WWWDIR%%/docbook/template/chapter.sgml
-%%WWWDIR%%/docbook/template/file-entities.ent
-%%WWWDIR%%/docbook/template/stylesheet.css
-%%WWWDIR%%/docbook/template/stylesheet.dsl
-%%WWWDIR%%/docbook/template/template.sgml
 %%WWWDIR%%/excel_xml_export.php
 %%WWWDIR%%/file_download.php
 %%WWWDIR%%/history_inc.php
@@ -308,26 +270,6 @@
 %%WWWDIR%%/images/update.png
 %%WWWDIR%%/index.php
 %%WWWDIR%%/issues_rss.php
-%%WWWDIR%%/javascript/dev/addLoadEvent.js
-%%WWWDIR%%/javascript/dev/ajax.js
-%%WWWDIR%%/javascript/dev/common.js
-%%WWWDIR%%/javascript/dev/dynamic_filters.js
-%%WWWDIR%%/javascript/dev/jscalendar/calendar-blue.css
-%%WWWDIR%%/javascript/dev/jscalendar/calendar-setup.js
-%%WWWDIR%%/javascript/dev/jscalendar/calendar.js
-%%WWWDIR%%/javascript/dev/jscalendar/lang/calendar-en.js
-%%WWWDIR%%/javascript/dev/projax/MIT-LICENSE
-%%WWWDIR%%/javascript/dev/projax/builder.js
-%%WWWDIR%%/javascript/dev/projax/controls.js
-%%WWWDIR%%/javascript/dev/projax/dragdrop.js
-%%WWWDIR%%/javascript/dev/projax/effects.js
-%%WWWDIR%%/javascript/dev/projax/license.html
-%%WWWDIR%%/javascript/dev/projax/prototype.js
-%%WWWDIR%%/javascript/dev/projax/prototype_b.js
-%%WWWDIR%%/javascript/dev/projax/scriptaculous.js
-%%WWWDIR%%/javascript/dev/projax/slider.js
-%%WWWDIR%%/javascript/dev/time_tracking_stopwatch.js
-%%WWWDIR%%/javascript/dev/xmlhttprequest.js
 %%WWWDIR%%/javascript/min/addLoadEvent.js
 %%WWWDIR%%/javascript/min/ajax.js
 %%WWWDIR%%/javascript/min/common.js
@@ -351,6 +293,7 @@
 %%WWWDIR%%/jump_to_bug.php
 %%WWWDIR%%/lang/.htaccess
 %%WWWDIR%%/lang/langreadme.txt
+%%WWWDIR%%/lang/strings_aeb.txt
 %%WWWDIR%%/lang/strings_afrikaans.txt
 %%WWWDIR%%/lang/strings_amharic.txt
 %%WWWDIR%%/lang/strings_arabic.txt
@@ -364,6 +307,7 @@
 %%WWWDIR%%/lang/strings_croatian.txt
 %%WWWDIR%%/lang/strings_czech.txt
 %%WWWDIR%%/lang/strings_danish.txt
+%%WWWDIR%%/lang/strings_diq.txt
 %%WWWDIR%%/lang/strings_dutch.txt
 %%WWWDIR%%/lang/strings_english.txt
 %%WWWDIR%%/lang/strings_estonian.txt
@@ -380,6 +324,7 @@
 %%WWWDIR%%/lang/strings_japanese.txt
 %%WWWDIR%%/lang/strings_korean.txt
 %%WWWDIR%%/lang/strings_latvian.txt
+%%WWWDIR%%/lang/strings_lb.txt
 %%WWWDIR%%/lang/strings_lithuanian.txt
 %%WWWDIR%%/lang/strings_macedonian.txt
 %%WWWDIR%%/lang/strings_norwegian_bokmal.txt
@@ -399,6 +344,7 @@
 %%WWWDIR%%/lang/strings_spanish.txt
 %%WWWDIR%%/lang/strings_swedish.txt
 %%WWWDIR%%/lang/strings_swissgerman.txt
+%%WWWDIR%%/lang/strings_ta.txt
 %%WWWDIR%%/lang/strings_tagalog.txt
 %%WWWDIR%%/lang/strings_turkish.txt
 %%WWWDIR%%/lang/strings_ukrainian.txt
@@ -735,8 +681,8 @@
 %%WWWDIR%%/library/nusoap/nusoapmime.php
 %%WWWDIR%%/library/nusoap/readme_mantis.txt
 %%WWWDIR%%/library/phpmailer/LICENSE
-%%WWWDIR%%/library/phpmailer/README
-%%WWWDIR%%/library/phpmailer/changelog.txt
+%%WWWDIR%%/library/phpmailer/README.md
+%%WWWDIR%%/library/phpmailer/changelog.md
 %%WWWDIR%%/library/phpmailer/class.phpmailer.php
 %%WWWDIR%%/library/phpmailer/class.pop3.php
 %%WWWDIR%%/library/phpmailer/class.smtp.php
@@ -748,11 +694,13 @@
 %%WWWDIR%%/library/phpmailer/language/phpmailer.lang-cz.php
 %%WWWDIR%%/library/phpmailer/language/phpmailer.lang-de.php
 %%WWWDIR%%/library/phpmailer/language/phpmailer.lang-dk.php
+%%WWWDIR%%/library/phpmailer/language/phpmailer.lang-eo.php
 %%WWWDIR%%/library/phpmailer/language/phpmailer.lang-es.php
 %%WWWDIR%%/library/phpmailer/language/phpmailer.lang-et.php
 %%WWWDIR%%/library/phpmailer/language/phpmailer.lang-fi.php
 %%WWWDIR%%/library/phpmailer/language/phpmailer.lang-fo.php
 %%WWWDIR%%/library/phpmailer/language/phpmailer.lang-fr.php
+%%WWWDIR%%/library/phpmailer/language/phpmailer.lang-he.php
 %%WWWDIR%%/library/phpmailer/language/phpmailer.lang-hu.php
 %%WWWDIR%%/library/phpmailer/language/phpmailer.lang-it.php
 %%WWWDIR%%/library/phpmailer/language/phpmailer.lang-ja.php
@@ -762,10 +710,10 @@
 %%WWWDIR%%/library/phpmailer/language/phpmailer.lang-ro.php
 %%WWWDIR%%/library/phpmailer/language/phpmailer.lang-ru.php
 %%WWWDIR%%/library/phpmailer/language/phpmailer.lang-se.php
+%%WWWDIR%%/library/phpmailer/language/phpmailer.lang-sk.php
 %%WWWDIR%%/library/phpmailer/language/phpmailer.lang-tr.php
 %%WWWDIR%%/library/phpmailer/language/phpmailer.lang-zh.php
 %%WWWDIR%%/library/phpmailer/language/phpmailer.lang-zh_cn.php
-%%WWWDIR%%/library/phpmailer/readme_mantis.txt
 %%WWWDIR%%/library/projax/classes/JavaScript.php
 %%WWWDIR%%/library/projax/classes/Prototype.php
 %%WWWDIR%%/library/projax/classes/Scriptaculous.php
@@ -902,7 +850,6 @@
 %%WWWDIR%%/news_update.php
 %%WWWDIR%%/news_view_page.php
 %%WWWDIR%%/permalink_page.php
-%%WWWDIR%%/phing/tasks/mantisbt/ExtractMantisBTVersion.php
 %%WWWDIR%%/plugin.php
 %%WWWDIR%%/plugin_file.php
 %%WWWDIR%%/plugins/MantisCoreFormatting/MantisCoreFormatting.php
@@ -971,8 +918,10 @@
 %%WWWDIR%%/plugins/MantisGraph/lang/strings_french.txt
 %%WWWDIR%%/plugins/MantisGraph/lang/strings_galician.txt
 %%WWWDIR%%/plugins/MantisGraph/lang/strings_german.txt
+%%WWWDIR%%/plugins/MantisGraph/lang/strings_greek.txt
 %%WWWDIR%%/plugins/MantisGraph/lang/strings_hebrew.txt
 %%WWWDIR%%/plugins/MantisGraph/lang/strings_hungarian.txt
+%%WWWDIR%%/plugins/MantisGraph/lang/strings_icelandic.txt
 %%WWWDIR%%/plugins/MantisGraph/lang/strings_interlingua.txt
 %%WWWDIR%%/plugins/MantisGraph/lang/strings_italian.txt
 %%WWWDIR%%/plugins/MantisGraph/lang/strings_japanese.txt
@@ -980,6 +929,7 @@
 %%WWWDIR%%/plugins/MantisGraph/lang/strings_lithuanian.txt
 %%WWWDIR%%/plugins/MantisGraph/lang/strings_macedonian.txt
 %%WWWDIR%%/plugins/MantisGraph/lang/strings_norwegian_bokmal.txt
+%%WWWDIR%%/plugins/MantisGraph/lang/strings_norwegian_nynorsk.txt
 %%WWWDIR%%/plugins/MantisGraph/lang/strings_occitan.txt
 %%WWWDIR%%/plugins/MantisGraph/lang/strings_polish.txt
 %%WWWDIR%%/plugins/MantisGraph/lang/strings_portuguese_brazil.txt
@@ -997,6 +947,7 @@
 %%WWWDIR%%/plugins/MantisGraph/lang/strings_tagalog.txt
 %%WWWDIR%%/plugins/MantisGraph/lang/strings_turkish.txt
 %%WWWDIR%%/plugins/MantisGraph/lang/strings_ukrainian.txt
+%%WWWDIR%%/plugins/MantisGraph/lang/strings_urdu.txt
 %%WWWDIR%%/plugins/MantisGraph/lang/strings_vietnamese.txt
 %%WWWDIR%%/plugins/MantisGraph/pages/bug_graph_bycategory.php
 %%WWWDIR%%/plugins/MantisGraph/pages/bug_graph_bystatus.php
@@ -1047,6 +998,7 @@
 %%WWWDIR%%/plugins/XmlImportExport/lang/strings_french.txt
 %%WWWDIR%%/plugins/XmlImportExport/lang/strings_galician.txt
 %%WWWDIR%%/plugins/XmlImportExport/lang/strings_german.txt
+%%WWWDIR%%/plugins/XmlImportExport/lang/strings_greek.txt
 %%WWWDIR%%/plugins/XmlImportExport/lang/strings_hebrew.txt
 %%WWWDIR%%/plugins/XmlImportExport/lang/strings_hungarian.txt
 %%WWWDIR%%/plugins/XmlImportExport/lang/strings_interlingua.txt
@@ -1071,6 +1023,7 @@
 %%WWWDIR%%/plugins/XmlImportExport/lang/strings_swissgerman.txt
 %%WWWDIR%%/plugins/XmlImportExport/lang/strings_tagalog.txt
 %%WWWDIR%%/plugins/XmlImportExport/lang/strings_turkish.txt
+%%WWWDIR%%/plugins/XmlImportExport/lang/strings_ukrainian.txt
 %%WWWDIR%%/plugins/XmlImportExport/lang/strings_vietnamese.txt
 %%WWWDIR%%/plugins/XmlImportExport/mantis.dtd
 %%WWWDIR%%/plugins/XmlImportExport/pages/export.php
@@ -1101,6 +1054,7 @@
 %%WWWDIR%%/scripts/README
 %%WWWDIR%%/scripts/checkin.php
 %%WWWDIR%%/scripts/send_emails.php
+%%WWWDIR%%/scripts/travis_before_script.sh
 %%WWWDIR%%/search.php
 %%WWWDIR%%/set_project.php
 %%WWWDIR%%/signup.php
@@ -1113,31 +1067,6 @@
 %%WWWDIR%%/tag_update.php
 %%WWWDIR%%/tag_update_page.php
 %%WWWDIR%%/tag_view_page.php
-%%WWWDIR%%/tests/AllTests.php
-%%WWWDIR%%/tests/Mantis/AllTests.php
-%%WWWDIR%%/tests/Mantis/EnumTest.php
-%%WWWDIR%%/tests/Mantis/StringTest.php
-%%WWWDIR%%/tests/TestConfig.php
-%%WWWDIR%%/tests/bootstrap.php.sample
-%%WWWDIR%%/tests/soap/AllTests.php
-%%WWWDIR%%/tests/soap/AttachmentTest.php
-%%WWWDIR%%/tests/soap/CategoryTest.php
-%%WWWDIR%%/tests/soap/CompressionTest.php
-%%WWWDIR%%/tests/soap/EnumTest.php
-%%WWWDIR%%/tests/soap/FilterTest.php
-%%WWWDIR%%/tests/soap/IssueAddTest.php
-%%WWWDIR%%/tests/soap/IssueMonitorTest.php
-%%WWWDIR%%/tests/soap/IssueNoteTest.php
-%%WWWDIR%%/tests/soap/IssueUpdateTest.php
-%%WWWDIR%%/tests/soap/LoginTest.php
-%%WWWDIR%%/tests/soap/ProjectTest.php
-%%WWWDIR%%/tests/soap/RelationshipTest.php
-%%WWWDIR%%/tests/soap/SoapBase.php
-%%WWWDIR%%/tests/soap/TagTest.php
-%%WWWDIR%%/tests/soap/UserTest.php
-%%WWWDIR%%/tests/soap/VersionTest.php
-%%WWWDIR%%/tests/test.php
-%%WWWDIR%%/tests/test_config_get_set.php
 %%WWWDIR%%/verify.php
 %%WWWDIR%%/view.php
 %%WWWDIR%%/view_all_bug_page.php
@@ -1147,106 +1076,92 @@
 %%WWWDIR%%/view_user_page.php
 %%WWWDIR%%/wiki.php
 %%WWWDIR%%/xmlhttprequest.php
-@exec mkdir -p %D/%%WWWDIR%%/docbook/developers/en/build
-@exec mkdir -p %D/%%WWWDIR%%/docbook/administration_guide/en/build
-@exec mkdir -p %D/%%WWWDIR%%/docbook/adminguide/en/build
-@dirrm %%WWWDIR%%/tests/soap
-@dirrm %%WWWDIR%%/tests/Mantis
-@dirrm %%WWWDIR%%/tests
-@dirrm %%WWWDIR%%/scripts
-@dirrm %%WWWDIR%%/plugins/XmlImportExport/pages
-@dirrm %%WWWDIR%%/plugins/XmlImportExport/lang
-@dirrm %%WWWDIR%%/plugins/XmlImportExport/ImportXml
-@dirrm %%WWWDIR%%/plugins/XmlImportExport
-@dirrm %%WWWDIR%%/plugins/MantisGraph/pages
-@dirrm %%WWWDIR%%/plugins/MantisGraph/lang
-@dirrm %%WWWDIR%%/plugins/MantisGraph/core
-@dirrm %%WWWDIR%%/plugins/MantisGraph
-@dirrm %%WWWDIR%%/plugins/MantisCoreFormatting/pages
-@dirrm %%WWWDIR%%/plugins/MantisCoreFormatting/lang
-@dirrm %%WWWDIR%%/plugins/MantisCoreFormatting
-@dirrm %%WWWDIR%%/plugins
-@dirrm %%WWWDIR%%/phing/tasks/mantisbt
-@dirrm %%WWWDIR%%/phing/tasks
-@dirrm %%WWWDIR%%/phing
-@dirrm %%WWWDIR%%/library/utf8/utils
-@dirrm %%WWWDIR%%/library/utf8/native
-@dirrm %%WWWDIR%%/library/utf8/mbstring
-@dirrm %%WWWDIR%%/library/utf8/exp
-@dirrm %%WWWDIR%%/library/utf8
-@dirrm %%WWWDIR%%/library/rssbuilder/doc
-@dirrm %%WWWDIR%%/library/rssbuilder
-@dirrm %%WWWDIR%%/library/projax/classes
-@dirrm %%WWWDIR%%/library/projax
-@dirrm %%WWWDIR%%/library/phpmailer/language
-@dirrm %%WWWDIR%%/library/phpmailer
-@dirrm %%WWWDIR%%/library/nusoap
-@dirrm %%WWWDIR%%/library/ezc/autoload
-@dirrm %%WWWDIR%%/library/ezc/Graph/src/structs
-@dirrm %%WWWDIR%%/library/ezc/Graph/src/renderer
-@dirrm %%WWWDIR%%/library/ezc/Graph/src/palette
-@dirrm %%WWWDIR%%/library/ezc/Graph/src/options
-@dirrm %%WWWDIR%%/library/ezc/Graph/src/math
-@dirrm %%WWWDIR%%/library/ezc/Graph/src/interfaces
-@dirrm %%WWWDIR%%/library/ezc/Graph/src/exceptions
-@dirrm %%WWWDIR%%/library/ezc/Graph/src/element
-@dirrm %%WWWDIR%%/library/ezc/Graph/src/driver
-@dirrm %%WWWDIR%%/library/ezc/Graph/src/datasets/property
-@dirrm %%WWWDIR%%/library/ezc/Graph/src/datasets
-@dirrm %%WWWDIR%%/library/ezc/Graph/src/data_container
-@dirrm %%WWWDIR%%/library/ezc/Graph/src/colors
-@dirrm %%WWWDIR%%/library/ezc/Graph/src/charts
-@dirrm %%WWWDIR%%/library/ezc/Graph/src/axis
-@dirrm %%WWWDIR%%/library/ezc/Graph/src
-@dirrm %%WWWDIR%%/library/ezc/Graph
-@dirrm %%WWWDIR%%/library/ezc/Base/src/structs
-@dirrm %%WWWDIR%%/library/ezc/Base/src/options
-@dirrm %%WWWDIR%%/library/ezc/Base/src/metadata
-@dirrm %%WWWDIR%%/library/ezc/Base/src/interfaces
-@dirrm %%WWWDIR%%/library/ezc/Base/src/exceptions
-@dirrm %%WWWDIR%%/library/ezc/Base/src
-@dirrm %%WWWDIR%%/library/ezc/Base
-@dirrm %%WWWDIR%%/library/ezc
-@dirrm %%WWWDIR%%/library/disposable
-@dirrm %%WWWDIR%%/library/adodb/xsl
-@dirrm %%WWWDIR%%/library/adodb/session/old
-@dirrm %%WWWDIR%%/library/adodb/session
-@dirrm %%WWWDIR%%/library/adodb/perf
-@dirrm %%WWWDIR%%/library/adodb/lang
-@dirrm %%WWWDIR%%/library/adodb/drivers
-@dirrm %%WWWDIR%%/library/adodb/datadict
-@dirrm %%WWWDIR%%/library/adodb
-@dirrm %%WWWDIR%%/library
-@dirrm %%WWWDIR%%/lang
-@dirrm %%WWWDIR%%/javascript/min/projax
-@dirrm %%WWWDIR%%/javascript/min/jscalendar/lang
-@dirrm %%WWWDIR%%/javascript/min/jscalendar
-@dirrm %%WWWDIR%%/javascript/min
-@dirrm %%WWWDIR%%/javascript/dev/projax
-@dirrm %%WWWDIR%%/javascript/dev/jscalendar/lang
-@dirrm %%WWWDIR%%/javascript/dev/jscalendar
-@dirrm %%WWWDIR%%/javascript/dev
-@dirrm %%WWWDIR%%/javascript
-@dirrm %%WWWDIR%%/images/fileicons
-@dirrm %%WWWDIR%%/images
-@dirrm %%WWWDIR%%/docbook/template
-@dirrm %%WWWDIR%%/docbook/developers/en/build
-@dirrm %%WWWDIR%%/docbook/developers/en
-@dirrm %%WWWDIR%%/docbook/developers
-@dirrm %%WWWDIR%%/docbook/administration_guide/en/build
-@dirrm %%WWWDIR%%/docbook/administration_guide/en
-@dirrm %%WWWDIR%%/docbook/administration_guide
-@dirrm %%WWWDIR%%/docbook/adminguide/en/build
-@dirrm %%WWWDIR%%/docbook/adminguide/en
-@dirrm %%WWWDIR%%/docbook/adminguide
-@dirrm %%WWWDIR%%/docbook
-@dirrm %%WWWDIR%%/doc/en
-@dirrm %%WWWDIR%%/doc
-@dirrm %%WWWDIR%%/css
-@dirrm %%WWWDIR%%/core/classes
-@dirrm %%WWWDIR%%/core/cfdefs
-@dirrm %%WWWDIR%%/core
-@dirrm %%WWWDIR%%/api/soap
-@dirrm %%WWWDIR%%/api
-@dirrm %%WWWDIR%%/admin
-@dirrm %%WWWDIR%%
+@dirrmtry %%WWWDIR%%/admin
+@dirrmtry %%WWWDIR%%/api/soap
+@dirrmtry %%WWWDIR%%/api
+@dirrmtry %%WWWDIR%%/core/cfdefs
+@dirrmtry %%WWWDIR%%/core/classes
+@dirrmtry %%WWWDIR%%/core
+@dirrmtry %%WWWDIR%%/css
+@dirrmtry %%WWWDIR%%/doc/en
+@dirrmtry %%WWWDIR%%/doc
+@dirrmtry %%WWWDIR%%/docbook/adminguide/en/build
+@dirrmtry %%WWWDIR%%/docbook/adminguide/en
+@dirrmtry %%WWWDIR%%/docbook/adminguide
+@dirrmtry %%WWWDIR%%/docbook/administration_guide/en/build
+@dirrmtry %%WWWDIR%%/docbook/administration_guide/en
+@dirrmtry %%WWWDIR%%/docbook/administration_guide
+@dirrmtry %%WWWDIR%%/docbook/developers/en/build
+@dirrmtry %%WWWDIR%%/docbook/developers/en
+@dirrmtry %%WWWDIR%%/docbook/developers
+@dirrmtry %%WWWDIR%%/docbook
+@dirrmtry %%WWWDIR%%/images/fileicons
+@dirrmtry %%WWWDIR%%/images
+@dirrmtry %%WWWDIR%%/javascript/min/jscalendar/lang
+@dirrmtry %%WWWDIR%%/javascript/min/jscalendar
+@dirrmtry %%WWWDIR%%/javascript/min/projax
+@dirrmtry %%WWWDIR%%/javascript/min
+@dirrmtry %%WWWDIR%%/javascript
+@dirrmtry %%WWWDIR%%/lang
+@dirrmtry %%WWWDIR%%/library/adodb/datadict
+@dirrmtry %%WWWDIR%%/library/adodb/drivers
+@dirrmtry %%WWWDIR%%/library/adodb/lang
+@dirrmtry %%WWWDIR%%/library/adodb/perf
+@dirrmtry %%WWWDIR%%/library/adodb/session/old
+@dirrmtry %%WWWDIR%%/library/adodb/session
+@dirrmtry %%WWWDIR%%/library/adodb/xsl
+@dirrmtry %%WWWDIR%%/library/adodb
+@dirrmtry %%WWWDIR%%/library/disposable
+@dirrmtry %%WWWDIR%%/library/ezc/Base/src/exceptions
+@dirrmtry %%WWWDIR%%/library/ezc/Base/src/interfaces
+@dirrmtry %%WWWDIR%%/library/ezc/Base/src/metadata
+@dirrmtry %%WWWDIR%%/library/ezc/Base/src/options
+@dirrmtry %%WWWDIR%%/library/ezc/Base/src/structs
+@dirrmtry %%WWWDIR%%/library/ezc/Base/src
+@dirrmtry %%WWWDIR%%/library/ezc/Base
+@dirrmtry %%WWWDIR%%/library/ezc/Graph/src/axis
+@dirrmtry %%WWWDIR%%/library/ezc/Graph/src/charts
+@dirrmtry %%WWWDIR%%/library/ezc/Graph/src/colors
+@dirrmtry %%WWWDIR%%/library/ezc/Graph/src/data_container
+@dirrmtry %%WWWDIR%%/library/ezc/Graph/src/datasets/property
+@dirrmtry %%WWWDIR%%/library/ezc/Graph/src/datasets
+@dirrmtry %%WWWDIR%%/library/ezc/Graph/src/driver
+@dirrmtry %%WWWDIR%%/library/ezc/Graph/src/element
+@dirrmtry %%WWWDIR%%/library/ezc/Graph/src/exceptions
+@dirrmtry %%WWWDIR%%/library/ezc/Graph/src/interfaces
+@dirrmtry %%WWWDIR%%/library/ezc/Graph/src/math
+@dirrmtry %%WWWDIR%%/library/ezc/Graph/src/options
+@dirrmtry %%WWWDIR%%/library/ezc/Graph/src/palette
+@dirrmtry %%WWWDIR%%/library/ezc/Graph/src/renderer
+@dirrmtry %%WWWDIR%%/library/ezc/Graph/src/structs
+@dirrmtry %%WWWDIR%%/library/ezc/Graph/src
+@dirrmtry %%WWWDIR%%/library/ezc/Graph
+@dirrmtry %%WWWDIR%%/library/ezc/autoload
+@dirrmtry %%WWWDIR%%/library/ezc
+@dirrmtry %%WWWDIR%%/library/nusoap
+@dirrmtry %%WWWDIR%%/library/phpmailer/language
+@dirrmtry %%WWWDIR%%/library/phpmailer
+@dirrmtry %%WWWDIR%%/library/projax/classes
+@dirrmtry %%WWWDIR%%/library/projax
+@dirrmtry %%WWWDIR%%/library/rssbuilder/doc
+@dirrmtry %%WWWDIR%%/library/rssbuilder
+@dirrmtry %%WWWDIR%%/library/utf8/exp
+@dirrmtry %%WWWDIR%%/library/utf8/mbstring
+@dirrmtry %%WWWDIR%%/library/utf8/native
+@dirrmtry %%WWWDIR%%/library/utf8/utils
+@dirrmtry %%WWWDIR%%/library/utf8
+@dirrmtry %%WWWDIR%%/library
+@dirrmtry %%WWWDIR%%/plugins/MantisCoreFormatting/lang
+@dirrmtry %%WWWDIR%%/plugins/MantisCoreFormatting/pages
+@dirrmtry %%WWWDIR%%/plugins/MantisCoreFormatting
+@dirrmtry %%WWWDIR%%/plugins/MantisGraph/core
+@dirrmtry %%WWWDIR%%/plugins/MantisGraph/lang
+@dirrmtry %%WWWDIR%%/plugins/MantisGraph/pages
+@dirrmtry %%WWWDIR%%/plugins/MantisGraph
+@dirrmtry %%WWWDIR%%/plugins/XmlImportExport/ImportXml
+@dirrmtry %%WWWDIR%%/plugins/XmlImportExport/lang
+@dirrmtry %%WWWDIR%%/plugins/XmlImportExport/pages
+@dirrmtry %%WWWDIR%%/plugins/XmlImportExport
+@dirrmtry %%WWWDIR%%/plugins
+@dirrmtry %%WWWDIR%%/scripts
+@dirrmtry %%WWWDIR%%
