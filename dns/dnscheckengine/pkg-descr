@@ -1,6 +1,7 @@
-DNSCheck is a program that is designed to help people check, measure and 
-hopefully also understand the workings of the Domain Name System. When used to 
-check an domain (aka zone) is submitted to DNSCheck, it will investigate the
-general health by performing various tests and sanity checks.
+DNSCheck is a program that is designed to help people check, measure and
+hopefully also understand the workings of the Domain Name System. When
+used to check an domain (aka zone) is submitted to DNSCheck, it will
+investigate the general health by performing various tests and sanity
+checks.
 
 WWW: http://dnscheck.iis.se/
