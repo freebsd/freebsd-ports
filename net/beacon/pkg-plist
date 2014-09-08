@@ -1,16 +1,10 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Multicast/Beacon/Beacon.so
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Multicast/Beacon/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/Net/Multicast/Beacon.pm
-lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/perllocal.pod
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Multicast/Beacon
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Multicast/
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Net/Multicast/
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Net
 bin/beacon
-@unexec if cmp -s %D/etc/beacon.conf.sample %D/etc/beacon.conf; then rm -f %D/etc/beacon.conf; fi
-etc/beacon.conf.sample
-@exec if [ ! -f %D/etc/beacon.conf ] ; then cp -p %D/%F %B/beacon.conf; fi
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@sample etc/beacon.conf.sample
 etc/rc.d/beacon
