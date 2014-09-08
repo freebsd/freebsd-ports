@@ -3,7 +3,7 @@
 
 PORTNAME=	verlihub
 DISTVERSION=	0.9.8e-r2
-PORTREVISION=	5
+PORTREVISION=	6
 PORTEPOCH=	1
 CATEGORIES=	net-p2p
 MASTER_SITES=	SF/${PORTNAME}/Verlihub/${DISTVERSION}
@@ -18,9 +18,8 @@ LIB_DEPENDS=	libGeoIP.so:${PORTSDIR}/net/GeoIP \
 		libpcre.so:${PORTSDIR}/devel/pcre
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
 
-LDFLAGS+=	-L${LOCALBASE}/lib
+LIBS+=		-L${LOCALBASE}/lib
 USE_RC_SUBR=	verlihub
-USE_GCC=	any
 USES=		libtool
 USE_MYSQL=	yes
 GNU_CONFIGURE=	yes
