@@ -10,6 +10,7 @@ share/icons/hicolor/scalable/apps/venom.svg
 share/locale/de/LC_MESSAGES/Venom.mo
 share/locale/it/LC_MESSAGES/Venom.mo
 share/locale/ru/LC_MESSAGES/Venom.mo
+share/locale/zh_CN/LC_MESSAGES/Venom.mo
 share/pixmaps/venom.png
 share/venom/theme/default.css
 @dirrmtry share/venom/theme
