@@ -37,7 +37,8 @@ CONFIGURE_ARGS=	--disable-dmx \
 		--disable-libdrm \
 		--disable-glx-tls \
 		--disable-vbe \
-		--disable-vgahw
+		--disable-vgahw \
+		--enable-xvfb
 
 USE_XORG=	pixman x11 fixesproto damageproto xcmiscproto xtrans \
 		bigreqsproto randrproto renderproto xextproto inputproto \
