@@ -21,7 +21,6 @@ GNU_CONFIGURE=	yes
 PLIST_FILES=	bin/urlview \
 		etc/urlview.conf.sample \
 		man/man1/urlview.1.gz
-MAKE_ENV=	DESTDIR=${STAGEDIR}
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,/etc,${PREFIX}&,' \
