@@ -7,5 +7,4 @@ PKGNAMESUFFIX=	-mpich
 
 WITH_MPICH=	yes
 
-NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"
