@@ -3,6 +3,7 @@
 
 PORTNAME=	xorg-vfbserver
 PORTVERSION=	1.14.7
+PORTEPOCH=	1
 CATEGORIES=	x11-servers
 MASTER_SITES=	XORG
 MASTER_SITE_SUBDIR=	individual/xserver
