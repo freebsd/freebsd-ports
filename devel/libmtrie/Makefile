@@ -12,7 +12,7 @@ COMMENT=	Library to build an IP-netmask based mtrie
 
 LICENSE=	BSD
 
-USES=	tar:bzip2
+USES=		tar:bzip2 uidfix
 USE_LDCONFIG=	yes
 
 .if defined(NO_PROFILE)
