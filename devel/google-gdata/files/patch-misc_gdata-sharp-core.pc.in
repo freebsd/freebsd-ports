@@ -1,6 +1,3 @@
-
-$FreeBSD$
-
 --- misc/gdata-sharp-core.pc.in.orig
 +++ misc/gdata-sharp-core.pc.in
 @@ -5,4 +5,4 @@
