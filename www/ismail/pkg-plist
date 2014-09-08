@@ -1,3 +1,5 @@
+@owner %%WWWOWN%%
+@group %%WWWGRP%%
 %%WWWDIR%%/addressbook.php
 %%WWWDIR%%/addressbookdecrypt.php
 %%WWWDIR%%/addressbookentry.php
@@ -138,7 +140,6 @@
 %%WWWDIR%%/viewmailheader.php
 %%WWWDIR%%/xtree/xtree-css.php
 %%WWWDIR%%/xtree/xtree.php
-%%PORTDOCS%%%%DOCSDIR%%/docs.html
 @dirrm %%WWWDIR%%/include/datastores
 @dirrm %%WWWDIR%%/include
 @dirrm %%WWWDIR%%/locale/cs_CZ/LC_MESSAGES
@@ -158,4 +159,7 @@
 @dirrm %%WWWDIR%%/themes
 @dirrm %%WWWDIR%%/xtree
 @dirrm %%WWWDIR%%
+@owner root
+@group wheel
+%%PORTDOCS%%%%DOCSDIR%%/docs.html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
