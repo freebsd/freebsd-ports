@@ -1,0 +1,13 @@
+--- itcl/itk/Makefile.in.orig	2009-01-21 15:39:08 UTC
++++ itcl/itk/Makefile.in
+@@ -409,8 +409,8 @@
+ 	            $(INSTALL_PROGRAM) $$lib $(DESTDIR)$(libdir)/$$lib; \
+ 		fi; \
+ 	    else \
+-		echo " $(INSTALL_PROGRAM) $$p $(DESTDIR)$(libdir)/$$p"; \
+-	        $(INSTALL_PROGRAM) $$p $(DESTDIR)$(libdir)/$$p; \
++		echo " $(INSTALL_DATA) $$p $(DESTDIR)$(libdir)/$$p"; \
++	        $(INSTALL_DATA) $$p $(DESTDIR)$(libdir)/$$p; \
+ 	    fi; \
+ 	  else :; fi; \
+ 	done
