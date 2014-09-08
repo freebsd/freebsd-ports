@@ -1,0 +1,18 @@
+--- ./src/core/CMakeLists.txt.orig	2014-06-19 06:38:04.000000000 +0930
++++ ./src/core/CMakeLists.txt	2014-08-13 02:21:24.615462875 +0930
+@@ -9,6 +9,7 @@
+ INCLUDE_DIRECTORIES( include
+     ${CMAKE_SOURCE_DIR}/include                 # regular headers
+     ${CMAKE_CURRENT_BINARY_DIR}/include         # generated config.h
++    ${PORTAUDIO_INCLUDE_DIR}
+     ${QT_INCLUDES}
+     ${LIBTAR_INCLUDE_DIR}
+     ${LIBARCHIVE_INCLUDE_DIR}
+@@ -16,7 +17,6 @@
+     ${ALSA_INCLUDE_DIR}
+     ${OSS_INCLUDE_DIR}
+     ${JACK_INCLUDE_DIR}
+-    ${PORTAUDIO_INCLUDE_DIR}
+     ${PORTMIDI_INCLUDE_DIR}
+     ${COREAUDIO_INCLUDE_DIR}
+     ${COREMIDI_INCLUDE_DIR}

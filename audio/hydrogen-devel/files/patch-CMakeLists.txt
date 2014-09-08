@@ -1,25 +1,21 @@
 --- ./CMakeLists.txt.orig	2014-06-19 06:38:04.000000000 +0930
-+++ ./CMakeLists.txt	2014-06-21 03:49:38.036536435 +0930
-@@ -21,8 +21,12 @@
++++ ./CMakeLists.txt	2014-08-13 02:18:54.653463918 +0930
+@@ -21,8 +21,7 @@
  SET(VERSION_PATCH "6")
  SET(VERSION_SUFFIX "RC2")
  
 -#SET(VERSION "${VERSION_MAJOR}.${VERSION_MINOR}.${VERSION_PATCH}")
+-
 +SET(VERSION "${VERSION_MAJOR}.${VERSION_MINOR}.${VERSION_PATCH}")
- 
-+IF(LOCALBASE)
-+LINK_DIRECTORIES("${LOCALBASE}/lib")
-+INCLUDE_DIRECTORIES("${LOCALBASE}/include")
-+ENDIF(LOCALBASE)
  
  IF(VERSION_SUFFIX)
  	SET(DISPLAY_VERSION "${VERSION}-${VERSION_SUFFIX}")
-@@ -93,12 +97,12 @@
+@@ -93,12 +92,12 @@
  IF(APPLE)
  	SET(CMAKE_CXX_FLAGS "-O2")
  ELSE()
 -	SET(CMAKE_CXX_FLAGS "-O2 -fno-implement-inlines")
-+	SET(CMAKE_CXX_FLAGS "-O2 -fno-implement-inlines ${CMAKE_CXX_FLAGS}")
++	SET(CMAKE_CXX_FLAGS "-O2 ${CMAKE_CXX_FLAGS}")
  ENDIF()
  
 -SET(CMAKE_CXX_FLAGS_RELEASE "")
@@ -30,7 +26,7 @@
  
  
  IF(APPLE)
-@@ -114,9 +118,9 @@
+@@ -114,9 +113,9 @@
  MANDATORY_PKG(LIBSNDFILE)
  
  # TODO remove data from path
@@ -42,7 +38,7 @@
  IF(WIN32)
      SET(WANT_JACK FALSE)
      SET(Threads_PATH "C:/Program Files/GnuWin32")
-@@ -167,7 +171,7 @@
+@@ -167,7 +166,7 @@
  FIND_HELPER(LIBSNDFILE sndfile sndfile.h sndfile)
  FIND_HELPER(ALSA alsa alsa/asoundlib.h asound )
  FIND_LADSPA(LADSPA ladspa.h noise)
