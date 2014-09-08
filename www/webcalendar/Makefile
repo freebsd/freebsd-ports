@@ -11,7 +11,6 @@ COMMENT=	Web-based calendar application
 LICENSE=	GPLv2
 
 PORTSCOUT=	limit:^1\.2\. skipb:1
-USES=		uidfix
 USE_PHP=	pcre session
 WANT_PHP_WEB=	yes
 NO_BUILD=	yes
