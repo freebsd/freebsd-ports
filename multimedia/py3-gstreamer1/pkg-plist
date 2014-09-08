@@ -4,6 +4,5 @@
 %%PYTHON_SITELIBDIR%%/gi/overrides/__pycache__/GstPbutils.cpython-%%PVERSION%%.pyo
 %%PYTHON_SITELIBDIR%%/gi/overrides/Gst.py
 %%PYTHON_SITELIBDIR%%/gi/overrides/GstPbutils.py
-%%PYTHON_SITELIBDIR%%/gi/overrides/_gi_gst.la
 %%PYTHON_SITELIBDIR%%/gi/overrides/_gi_gst.so
 @dirrmtry %%PYTHON_SITELIBDIR%%/gi/overrides/__pycache__

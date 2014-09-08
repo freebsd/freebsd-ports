@@ -3,6 +3,7 @@
 
 PORTNAME=	gstreamer
 PORTVERSION=	1.2.1
+PORTREVISION=	1
 CATEGORIES=	multimedia python
 MASTER_SITES=	http://gstreamer.freedesktop.org/src/gst-python/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,14 +16,13 @@ COMMENT=	Python bindings for gstreamer
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		gmake pathfix pkgconfig tar:bzip2
-USE_PYTHON=	3
+USES=		gmake libtool pathfix pkgconfig python:3 tar:bzip2
 USE_GNOME=	py3gobject3
 USE_GSTREAMER1=	yes
 GNU_CONFIGURE=	yes
 PLIST_SUB=	VERSION="${GST_VERSION}"
 CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+LIBS+=		-L${LOCALBASE}/lib
 INSTALL_TARGET=	install-strip
 
 PLIST_SUB+=	PVERSION=${PYTHON_VER:S/.//}
