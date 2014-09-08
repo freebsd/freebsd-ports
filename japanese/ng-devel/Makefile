@@ -2,30 +2,42 @@
 # $FreeBSD$
 
 PORTNAME=	ng
-PORTVERSION=	1.5.b1
+DISTVERSION=	1.5beta1
 CATEGORIES=	japanese editors
-MASTER_SITES=	http://tomato.sakura.ne.jp/~amura/archives/ng/
-DISTNAME=	${PORTNAME}-1.5beta1
+MASTER_SITES=	http://tt.sakura.ne.jp/~amura/archives/ng/
+PKGNAMESUFFIX=	-devel
 
-MAINTAINER?=	ports@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Light Emacs-clone with Japanese support
 
-ALL_TARGET=	ng
 GNU_CONFIGURE=	yes
+ALL_TARGET=	ng
 
-MYPORTDOCS=	CHANGES.1_3 CHANGES.1_4 CHANGES.doc Ng.FAQ Ng.doc Ng.ref Ng.tut \
-		README.Ng README.SKG
-PKGNAMESUFFIX=	-devel
+CFLAGS+=	-Wno-error=return-type
+
 DOCSDIR=	${PREFIX}/share/doc/ja/${PORTNAME}
 
-NO_STAGE=	yes
+CONFLICTS=	ng-[0-9]*
+
+PORTDOCS=	${MYPORTDOCS:S/$/.euc-jp/}
+PLIST_FILES=	bin/ng
+
+OPTIONS_DEFINE=	CANNA DOCS
+
+CANNA_DESC=		Canna support
+CANNA_LIB_DEPENDS=	libcanna.so:${PORTSDIR}/japanese/canna-lib
+CANNA_CONFIGURE_ON=	--enable-canna=${LOCALBASE}
+
+MYPORTDOCS=	CHANGES.1_3 CHANGES.1_4 CHANGES.doc Ng.FAQ Ng.doc \
+		Ng.ref Ng.tut README.Ng README.SKG
+
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/ng ${PREFIX}/bin
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-.for file in ${MYPORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/docs/${file} ${DOCSDIR}/${file}.euc-jp
+	(cd ${WRKSRC} && ${INSTALL_PROGRAM} ng \
+		${STAGEDIR}${PREFIX}/bin)
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+.for i in ${MYPORTDOCS}
+	(cd ${WRKSRC}/docs && ${INSTALL_DATA} ${i} \
+		${STAGEDIR}${DOCSDIR}/${i:S/$/.euc-jp/})
 .endfor
-.endif
 
 .include <bsd.port.mk>
