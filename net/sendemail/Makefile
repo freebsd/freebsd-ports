@@ -12,33 +12,23 @@ DISTNAME=	${PORTNAME}-v${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Lightweight, completely command line based, SMTP email agent
 
-USES=		perl5
+USES=		perl5 shebangfix
 USE_PERL5=	run
 NO_BUILD=	yes
+SHEBANG_FILES=	${PORTNAME}
 
 PLIST_FILES=	bin/sendEmail
 PORTDOCS=	CHANGELOG README TODO
 
-OPTIONS_DEFINE=	SSL
-OPTIONS_DEFINE=	DOCS
+OPTIONS_DEFINE=	SSL DOCS
 SSL_DESC=	SSL/TLS support for communicating with the SMTP server
 
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
-.if ${PORT_OPTIONS:MSSL}
-RUN_DEPENDS+=	p5-IO-Socket-SSL>=0:${PORTSDIR}/security/p5-IO-Socket-SSL
-RUN_DEPENDS+=	p5-Crypt-SSLeay>=0:${PORTSDIR}/security/p5-Crypt-SSLeay
-.endif
-
-post-patch:
-	@${REINPLACE_CMD} -e "s,/usr/bin/perl,${PERL},g" \
-		${WRKSRC}/${PORTNAME}
+SSL_RUN_DEPENDS=p5-IO-Socket-SSL>=0:${PORTSDIR}/security/p5-IO-Socket-SSL \
+		p5-Crypt-SSLeay>=0:${PORTSDIR}/security/p5-Crypt-SSLeay
 
 do-install:
-	cd ${WRKSRC} && ${INSTALL_SCRIPT} ${PORTNAME} ${PREFIX}/bin
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	cd ${WRKSRC} && ${INSTALL_DATA} CHANGELOG README TODO ${DOCSDIR}
-.endif
+	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
