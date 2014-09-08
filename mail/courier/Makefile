@@ -3,7 +3,7 @@
 
 PORTNAME=	courier
 PORTVERSION=	0.65.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	mail ipv6
 MASTER_SITES=	SF
 
@@ -56,18 +56,12 @@ CALENDIR=	/var/spool/calendar
 MIMETYPES=	${LOCALBASE}/etc/mime.types
 WITH_TRANSPORT=	local esmtp dsn
 
-AUTOMAKE_ARGS=	--add-missing
-USE_AUTOTOOLS=	libtool aclocal automake
+USES=		fam gettext gmake libtool perl5 pkgconfig tar:bzip2
 USE_OPENSSL=	yes
 USE_SUBMAKE=	yes
-USES=		fam gettext gmake perl5 pkgconfig tar:bzip2
-
 USE_RC_SUBR=	courier
 
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
-MAKE_ENV:=	${CONFIGURE_ENV}
-
+GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-root-check \
 		--with-db=db \
 		--enable-syslog=1 --enable-use-flock \
@@ -92,8 +86,9 @@ CONFIGURE_ARGS=	--disable-root-check \
 		--with-transport='${WITH_TRANSPORT}' \
 		--with-default-maildrop=${MAILDROPDEFAULT} \
 		--with-paranoid-smtpext \
-		--enable-workarounds-for-imap-client-bugs \
-		--cache-file=${WRKDIR}/courier.cache
+		--enable-workarounds-for-imap-client-bugs
+CPPFLAGS+=	-I${LOCALBASE}/include
+LIBS+=		-L${LOCALBASE}/lib
 
 INSTALL_TARGET=	install-strip install-perms
 
@@ -137,10 +132,6 @@ PERIODIC_DESC=	modify/create periodic.conf
 
 .include "${.CURDIR}/Makefile.doc"
 .include "${.CURDIR}/Makefile.own"
-
-.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1000000
-USE_GCC=	4.6
-.endif
 
 .if ${PORT_OPTIONS:MLDAP}
 USE_OPENLDAP=	yes
@@ -298,16 +289,8 @@ post-patch:
 		${WRKSRC}/*/*/*/configure
 	@${REINPLACE_CMD} -E -e 's/(root|bin)[[:space:]]*bin/root	wheel/g' \
 		${WRKSRC}/courier/perms.sh.in
-
-pre-configure:
-	@if [ -f "${WRKDIR}/courier.cache" -a -s "${WRKDIR}/courier.cache" ]; then \
-		${RM} -f "${WRKDIR}/courier.cache"; \
-	fi
-	@cp ${LOCALBASE}/share/gettext/po/Makefile.in.in ${WRKSRC}/pcp/po
-	@cp ${LOCALBASE}/share/libtool/config/ltmain.sh ${WRKSRC}
-.for oldlt in . bdbobj cgi courier courier/libs courier/filters courier/filters/perlfilter courier/module.dsn courier/module.esmtp courier/module.local courier/module.uucp gdbmobj gpglib http11 imap ldapaddressbook libhmac liblock maildir maildrop makedat md5 numlib pcp random128 rfc822 rfc1035 rfc2045 sha1 tcpd unicode webmail
-	@cd ${WRKSRC}/${oldlt} && ${SETENV} ${SCRIPTS_ENV} ${SH} /usr/local/bin/aclocal
-.endfor
+	@${REINPLACE_CMD} '/^courieresmtp_LDADD =/s/$$/ -lcourierauth/' \
+		${WRKSRC}/courier/module.esmtp/Makefile.in
 
 post-build:
 	@${PERL} -pi -e 's|^(auth)\s+(required).*|$$1\t\t$$2\tpam_unix.so\ttry_first_pass|g;' \
