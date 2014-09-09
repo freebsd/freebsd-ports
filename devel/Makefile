@@ -267,6 +267,7 @@
     SUBDIR += cproto
     SUBDIR += cpuflags
     SUBDIR += creduce
+    SUBDIR += cross-binutils
     SUBDIR += critcl
     SUBDIR += cscope
     SUBDIR += cscout
