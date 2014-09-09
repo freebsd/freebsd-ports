@@ -14,8 +14,9 @@ COMMENT=	Userspace interface to kernel Direct Rendering Module services
 LIB_DEPENDS=	libpciaccess.so:${PORTSDIR}/devel/libpciaccess \
 		libpthread-stubs.so:${PORTSDIR}/devel/libpthread-stubs
 
-USES=		pkgconfig tar:bzip2
 GNU_CONFIGURE=	yes
+INSTALL_TARGET=	install-strip
+USES=		libtool pkgconfig tar:bzip2
 USE_LDCONFIG=	yes
 
 OPTIONS_DEFINE=	MANPAGES
@@ -50,7 +51,7 @@ PLIST_SUB+=	MAN="@comment "
 .endif
 
 LIBDRM_VERSION=	2.4.52
-LIBDRM_REVISION=0
+LIBDRM_REVISION=1
 PLIST_SUB+=	OLD="@comment " NEW=""
 EXTRA_PATCHES+=	${FILESDIR}/extra-configure \
 		${FILESDIR}/extra-tests_modetest_Makefile.in \
@@ -61,7 +62,7 @@ CONFIGURE_ARGS+=--disable-vmwgfx
 .else
 CONFIGURE_ARGS=	--enable-nouveau-experimental-api
 LIBDRM_VERSION=	2.4.17
-LIBDRM_REVISION=1
+LIBDRM_REVISION=2
 PLIST_SUB+=	OLD="" NEW="@comment " NOUVEAU=""
 .endif
 
@@ -80,8 +81,5 @@ pre-patch:
 	@${REINPLACE_CMD} 's|{libdir}/pkgconfig|{prefix}/libdata/pkgconfig|g; \
 			   s,i?86|x86_64),i?86|amd64|x86_64),g' \
 		${WRKSRC}/configure
-
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/lib*.so.*
 
 .include <bsd.port.mk>
