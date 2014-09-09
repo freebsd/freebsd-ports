@@ -73,10 +73,7 @@
     SUBDIR += csocks
     SUBDIR += csync2
     SUBDIR += ctrace
-    SUBDIR += cvsup
     SUBDIR += cvsup-static
-    SUBDIR += cvsup-without-gui
-    SUBDIR += cvsupchk
     SUBDIR += cvsync
     SUBDIR += cyphesis
     SUBDIR += czmq

@@ -60,7 +60,6 @@
     SUBDIR += erlang-runtime17
     SUBDIR += execline
     SUBDIR += expect
-    SUBDIR += ezm3
     SUBDIR += f2c
     SUBDIR += fasm
     SUBDIR += ferite
