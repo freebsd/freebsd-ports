@@ -15,7 +15,7 @@ COMMENT=	X11 image grabber
 BUILD_DEPENDS=	xrdb:${PORTSDIR}/x11/xrdb
 
 USES=		display:build imake:notall tar:Z
-USE_XORG=	x11
+USE_XORG=	x11 xaw
 
 MAKE_FLAGS=	BINDIR=${PREFIX}/bin MANDIR=${PREFIX}/man/man1 \
 		XAPPLOADDIR=${PREFIX}/lib/X11/app-defaults  -f
