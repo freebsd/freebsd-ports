@@ -1,5 +1,5 @@
---- ../pr/include/md/_freebsd.cfg.orig	2014-06-05 21:42:08.000000000 +0000
-+++ ../pr/include/md/_freebsd.cfg	2014-08-18 00:20:35.358964562 +0000
+--- ../pr/include/md/_freebsd.cfg
++++ ../pr/include/md/_freebsd.cfg
 @@ -251,6 +251,147 @@
  #define PR_ALIGN_OF_POINTER 8
  #define PR_ALIGN_OF_WORD    8
@@ -148,8 +148,8 @@
  #else
  
  #error "Unknown CPU architecture"
---- ../pr/include/md/_freebsd.h.orig	2014-08-18 00:19:52.236967851 +0000
-+++ ../pr/include/md/_freebsd.h	2014-08-18 00:19:52.507967938 +0000
+--- ../pr/include/md/_freebsd.h
++++ ../pr/include/md/_freebsd.h
 @@ -25,6 +25,12 @@
  #define _PR_SI_ARCHITECTURE "ia64"
  #elif defined(__amd64__)

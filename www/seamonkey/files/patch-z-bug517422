@@ -22,11 +22,17 @@ diff --git config/external/moz.build config/external/moz.build
 index f67c5c7..eb909ce 100644
 --- mozilla/config/external/moz.build
 +++ mozilla/config/external/moz.build
-@@ -15,13 +15,13 @@ if CONFIG['MOZ_UPDATER']:
+@@ -15,13 +15,19 @@ if CONFIG['MOZ_UPDATER']:
      if not CONFIG['MOZ_NATIVE_BZ2']:
          external_dirs += ['modules/libbz2']
  
 -if CONFIG['MOZ_VORBIS']:
++if not CONFIG['MOZ_NATIVE_OGG']:
++    external_dirs += ['media/libogg']
++
++if not CONFIG['MOZ_NATIVE_THEORA']:
++    external_dirs += ['media/libtheora']
++
 +if CONFIG['MOZ_VORBIS'] and not CONFIG['MOZ_NATIVE_VORBIS']:
      external_dirs += ['media/libvorbis']
  
@@ -39,16 +45,7 @@ index f67c5c7..eb909ce 100644
      external_dirs += ['media/libopus']
  
  if CONFIG['MOZ_WEBM']:
-@@ -34,16 +34,23 @@ if CONFIG['MOZ_VPX'] and not CONFIG['MOZ
-     external_dirs += ['media/libvpx']
- 
- if CONFIG['MOZ_OGG']:
--    external_dirs += ['media/libogg', 'media/libtheora']
-+    if not CONFIG['MOZ_NATIVE_OGG']:
-+        external_dirs += ['media/libogg']
-+    if not CONFIG['MOZ_NATIVE_THEORA']:
-+        external_dirs += ['media/libtheora']
- 
+@@ -36,14 +42,16 @@ if CONFIG['MOZ_VPX'] and not CONFIG['MOZ_NATIVE_LIBVPX']:
  if not CONFIG['MOZ_NATIVE_PNG']:
      external_dirs += ['media/libpng']
  
@@ -61,7 +58,10 @@ index f67c5c7..eb909ce 100644
  external_dirs += [
      'media/kiss_fft',
      'media/libcubeb',
+-    'media/libogg',
+-    'media/libtheora',
 -    'media/libspeex_resampler',
+     'media/libstagefright',
 -    'media/libsoundtouch',
  ]
  
@@ -122,7 +122,7 @@ diff --git configure.in configure.in
 index 87db361..7947626 100644
 --- mozilla/configure.in
 +++ mozilla/configure.in
-@@ -5211,6 +5211,57 @@ if test "${ac_cv_c_attribute_aligned}" != "0"; then
+@@ -5211,6 +5211,63 @@ if test "${ac_cv_c_attribute_aligned}" != "0"; then
  fi
  
  dnl ========================================================
@@ -136,6 +136,12 @@ index 87db361..7947626 100644
 +
 +if test -n "$MOZ_NATIVE_OGG"; then
 +    PKG_CHECK_MODULES(MOZ_OGG, ogg >= 1.2.1)
++
++    _SAVE_LIBS=$LIBS
++    LIBS="$LIBS $MOZ_OGG_LIBS"
++    AC_CHECK_FUNC(ogg_set_mem_functions, [],
++      [AC_DEFINE(MOZ_OGG_NO_MEM_REPORTING)])
++    LIBS=$_SAVE_LIBS
 +fi
 +
 +AC_SUBST(MOZ_NATIVE_OGG)
@@ -246,7 +252,7 @@ index 87db361..7947626 100644
 +MOZ_NATIVE_SOUNDTOUCH=)
 +
 +if test -n "$MOZ_NATIVE_SOUNDTOUCH"; then
-+    PKG_CHECK_MODULES(MOZ_SOUNDTOUCH, soundtouch >= 1.7.0)
++    PKG_CHECK_MODULES(MOZ_SOUNDTOUCH, soundtouch >= 1.8.0)
 +
 +    AC_LANG_SAVE
 +    AC_LANG_CPLUSPLUS
@@ -278,30 +284,19 @@ index 87db361..7947626 100644
  dnl = Disable VP8 decoder support
  dnl ========================================================
  MOZ_ARG_DISABLE_BOOL(webm,
-diff --git content/media/AudioStream.cpp content/media/AudioStream.cpp
-index 88c8aa6..6b03288 100644
---- mozilla/content/media/AudioStream.cpp
-+++ mozilla/content/media/AudioStream.cpp
-@@ -13,7 +13,6 @@
- #include "mozilla/Mutex.h"
- #include <algorithm>
- #include "mozilla/Preferences.h"
--#include "soundtouch/SoundTouch.h"
- #include "Latency.h"
- 
- namespace mozilla {
 diff --git content/media/AudioStream.h content/media/AudioStream.h
 index 085676d..00c54fb 100644
 --- mozilla/content/media/AudioStream.h
 +++ mozilla/content/media/AudioStream.h
-@@ -15,6 +15,7 @@
- #include "mozilla/StaticMutex.h"
+@@ -26,7 +26,7 @@ public:
+ };
  
- #include "cubeb/cubeb.h"
-+#include "soundtouch/SoundTouch.h"
+ namespace soundtouch {
+-class SoundTouch;
++class MOZ_IMPORT_API SoundTouch;
+ }
  
- template <>
- class nsAutoRefTraits<cubeb_stream> : public nsPointerRefTraits<cubeb_stream>
+ namespace mozilla {
 diff --git content/media/Makefile.in content/media/Makefile.in
 index fd34449..c6c42c8 100644
 --- mozilla/content/media/Makefile.in
@@ -429,10 +424,10 @@ index 00e77e7..55f48ab 100644
          }, {
            'dependencies': [
              '<(DEPTH)/third_party/opus/opus.gyp:opus'
-diff --git toolkit/library/Makefile.in toolkit/library/Makefile.in
+diff --git toolkit/library/libxul.mk toolkit/library/libxul.mk
 index d42137a..695e75a8 100644
---- mozilla/toolkit/library/Makefile.in
-+++ mozilla/toolkit/library/Makefile.in
+--- mozilla/toolkit/library/libxul.mk
++++ mozilla/toolkit/library/libxul.mk
 @@ -77,6 +77,34 @@ ifdef MOZ_NATIVE_HUNSPELL
  EXTRA_DSO_LDOPTS += $(MOZ_HUNSPELL_LIBS)
  endif
@@ -468,3 +463,31 @@ index d42137a..695e75a8 100644
  ifdef MOZ_NATIVE_LIBEVENT
  EXTRA_DSO_LDOPTS += $(MOZ_LIBEVENT_LIBS)
  endif
+diff --git xpcom/build/nsXPComInit.cpp xpcom/build/nsXPComInit.cpp
+index 2cf281e..6d7af0e 100644
+--- mozilla/xpcom/build/nsXPComInit.cpp
++++ mozilla/xpcom/build/nsXPComInit.cpp
+@@ -130,7 +130,9 @@ extern nsresult nsStringInputStreamConstructor(nsISupports *, REFNSIID, void **)
+ #include "mozilla/VisualEventTracer.h"
+ #endif
+ 
++#ifndef MOZ_OGG_NO_MEM_REPORTING
+ #include "ogg/ogg.h"
++#endif
+ #if defined(MOZ_VPX) && !defined(MOZ_VPX_NO_MEM_REPORTING)
+ #include "vpx_mem/vpx_mem.h"
+ #endif
+@@ -571,11 +573,13 @@ NS_InitXPCOM2(nsIServiceManager* *result,
+     // this oddness.
+     mozilla::SetICUMemoryFunctions();
+ 
++#ifndef MOZ_OGG_NO_MEM_REPORTING
+     // Do the same for libogg.
+     ogg_set_mem_functions(OggReporter::CountingMalloc,
+                           OggReporter::CountingCalloc,
+                           OggReporter::CountingRealloc,
+                           OggReporter::CountingFree);
++#endif
+ 
+ #if defined(MOZ_VPX) && !defined(MOZ_VPX_NO_MEM_REPORTING)
+     // And for VPX.

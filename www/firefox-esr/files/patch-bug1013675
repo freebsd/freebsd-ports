@@ -2,7 +2,7 @@ diff --git xpcom/base/nsDebugImpl.cpp xpcom/base/nsDebugImpl.cpp
 index 13a286f..293bd73 100644
 --- xpcom/base/nsDebugImpl.cpp
 +++ xpcom/base/nsDebugImpl.cpp
-@@ -45,13 +45,44 @@
+@@ -45,12 +45,43 @@
  #endif
  #endif
  
@@ -10,7 +10,6 @@ index 13a286f..293bd73 100644
 +#if defined(XP_MACOSX) || defined(__DragonFly__) || defined(__FreeBSD__) \
 + || defined(__NetBSD__) || defined(__OpenBSD__)
  #include <stdbool.h>
- #include <sys/types.h>
  #include <unistd.h>
 +#include <sys/param.h>
  #include <sys/sysctl.h>

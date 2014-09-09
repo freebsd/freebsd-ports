@@ -14,6 +14,7 @@ ETCSYMLINK_DESC=	Add symlink to /etc/ssl/cert.pem
 
 USES=		perl5
 USE_PERL5=	build
+NO_ARCH=	yes
 NO_WRKSUBDIR=	yes
 
 CERTDIR?=	share/certs
@@ -24,7 +25,7 @@ PLIST_SUB+=	CERTDIR=${CERTDIR}
 # !!!  Please DO NOT submit patches for new version until it has !!!
 # !!!  been committed there first.                               !!!
 # !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-VERSION_NSS=	3.16.3
+VERSION_NSS=	3.17
 #NSS_SUFFIX=	.with.ckbi.1.93
 CERTDATA_TXT_PATH=	nss-${VERSION_NSS}/nss/lib/ckfw/builtins/certdata.txt
 BUNDLE_PROCESSOR=	MAca-bundle.pl

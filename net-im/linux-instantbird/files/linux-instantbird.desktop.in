@@ -1,0 +1,11 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=Instantbird (Linux)
+GenericName=IM client (Linux)
+Comment=Instant Messaging and IRC client
+Exec=linux-instantbird %u
+Icon=%%PREFIX%%/lib/%%APP_NAME%%/chrome/icons/default/default48.png
+StartupNotify=false
+Terminal=false
+Type=Application
+Categories=Network;InstantMessaging;IRCClient;Chat;

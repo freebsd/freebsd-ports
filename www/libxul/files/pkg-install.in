@@ -1,0 +1,37 @@
+#!/bin/sh
+#
+#    $MCom: ports/www/mozilla/pkg-install.in,v 1.26 2008/08/04 16:58:03 mezz Exp $
+#
+# Date created:			Mon Nov 29, 2003
+# Whom:				Thierry Thomas (<thierry@pompo.net>)
+# Fix the chrome registry.
+
+umask 022
+PATH=/bin:/usr/bin
+
+[ "x$1" = "x" ] && exit 1
+[ "x$2" != "xPOST-INSTALL" ] && exit 0
+
+MOZDIR=%%MOZDIR%%
+MOZBIN=${MOZDIR}/%%MOZILLA_BIN%%
+REGXPCOM=${MOZDIR}/regxpcom
+REGCHROME=${MOZDIR}/regchrome
+
+rm -rf ${MOZDIR}/chrome/overlayinfo
+rm -f ${MOZDIR}/chrome/*.rdf
+mkdir -p ${MOZDIR}/chrome/overlayinfo
+rm -f ${MOZDIR}/component.reg
+
+cd ${MOZDIR} || exit 1
+if [ -f ${REGXPCOM} ]; then
+	./run-mozilla.sh ${REGXPCOM} || true
+fi
+if [ -f ${REGCHROME} ]; then
+	./run-mozilla.sh ${REGCHROME} || true
+fi
+if [ -f ${MOZBIN} -a "${1%-*}" = "nvu" ]; then
+	./run-mozilla.sh ${MOZBIN} -register > /dev/null 2>&1
+fi
+cp -R %%LOCALBASE%%/lib/xpi/symlinks/%%MOZILLA%%/ %%MOZDIR%%/extensions/ > /dev/null 2>&1
+
+exit 0

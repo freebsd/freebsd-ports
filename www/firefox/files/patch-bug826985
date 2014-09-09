@@ -132,23 +132,26 @@ index d46b5aa..e452223 100644
    'targets': [
      {
        'target_name': 'video_capture_module',
-@@ -49,6 +52,16 @@
-         }, {  # include_internal_video_capture == 1
-           'conditions': [
-             ['include_v4l2_video_capture==1', {
+@@ -46,6 +49,19 @@
+                 'linux/video_capture_linux.cc',
+                 'linux/video_capture_linux.h',
+               ],
 +              'conditions': [
 +                ['use_libv4l2==1', {
 +                  'defines': [
 +                    'HAVE_LIBV4L2',
++                  ],
++                  'cflags_mozilla': [
++                    '$(MOZ_LIBV4L2_CFLAGS)',
 +                  ],
 +                  'libraries': [
 +                    '-lv4l2',
 +                  ],
 +                }],
 +              ],
-               'include_dirs': [
-                 'linux',
-               ],
+             }],  # linux
+             ['OS=="mac"', {
+               'sources': [
 diff --git toolkit/library/Makefile.in toolkit/library/Makefile.in
 index 9c16ffa..1db3794 100644
 --- toolkit/library/libxul.mk

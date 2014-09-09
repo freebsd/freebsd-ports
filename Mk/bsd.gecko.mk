@@ -85,7 +85,8 @@ MOZILLA_VER?=	${PORTVERSION}
 MOZILLA_BIN?=	${PORTNAME}-bin
 MOZILLA_EXEC_NAME?=${MOZILLA}
 MOZ_RPATH?=	${MOZILLA}
-USES+=		cpe compiler:c++11-lib gmake iconv perl5 pkgconfig desktop-file-utils
+USES+=		cpe compiler:c++11-lib gmake iconv perl5 pkgconfig \
+			python:2,build desktop-file-utils
 CPE_VENDOR?=mozilla
 USE_PERL5=	build
 USE_XORG=	xext xrender xt
@@ -105,11 +106,6 @@ PKGINSTALL?=	${WRKDIR}/pkg-install
 PKGDEINSTALL?=	${WRKDIR}/pkg-deinstall
 PKGINSTALL_INC?=	${.CURDIR}/../../www/firefox/files/pkg-install.in
 PKGDEINSTALL_INC?=	${.CURDIR}/../../www/firefox/files/pkg-deinstall.in
-
-EXTRACT_AFTER_ARGS?=	--exclude */CVS/*	\
-			--exclude */macbuild/*			\
-			--exclude */package/*			\
-			--exclude mozilla*/gc/boehm
 
 MOZ_PKGCONFIG_FILES?=	${MOZILLA}-gtkmozembed ${MOZILLA}-js \
 			${MOZILLA}-xpcom ${MOZILLA}-plugin
@@ -132,93 +128,74 @@ _ALL_DEPENDS=	cairo event ffi graphite harfbuzz hunspell icu jpeg nspr nss opus 
 
 cairo_LIB_DEPENDS=	libcairo.so:${PORTSDIR}/graphics/cairo
 cairo_MOZ_OPTIONS=	--enable-system-cairo
-cairo_EXTRACT_AFTER_ARGS=	--exclude mozilla*/gfx/cairo/cairo
 
 event_LIB_DEPENDS=	libevent.so:${PORTSDIR}/devel/libevent2
 event_MOZ_OPTIONS=	--with-system-libevent
-event_EXTRACT_AFTER_ARGS=	--exclude mozilla*/ipc/chromium/src/third_party/libevent
 
 ffi_LIB_DEPENDS=	libffi.so:${PORTSDIR}/devel/libffi
 ffi_MOZ_OPTIONS=	--enable-system-ffi
-ffi_EXTRACT_AFTER_ARGS=	--exclude mozilla*/js/src/ctypes/libffi
 
 .if exists(${FILESDIR}/patch-bug847568) || exists(${FILESDIR}/patch-z-bug847568)
 graphite_LIB_DEPENDS=	libgraphite2.so:${PORTSDIR}/graphics/graphite2
 graphite_MOZ_OPTIONS=	--with-system-graphite2
-graphite_EXTRACT_AFTER_ARGS=	--exclude mozilla*/gfx/graphite2
 
 harfbuzz_LIB_DEPENDS=	libharfbuzz.so:${PORTSDIR}/print/harfbuzz
 harfbuzz_MOZ_OPTIONS=	--with-system-harfbuzz
-harfbuzz_EXTRACT_AFTER_ARGS=	--exclude mozilla*/gfx/harfbuzz
 .endif
 
 hunspell_LIB_DEPENDS=	libhunspell-1.3.so:${PORTSDIR}/textproc/hunspell
 hunspell_MOZ_OPTIONS=	--enable-system-hunspell
 
 icu_LIB_DEPENDS=		libicui18n.so:${PORTSDIR}/devel/icu
-icu_MOZ_OPTIONS=		--with-system-icu --with-intl-api --enable-intl-api
+icu_MOZ_OPTIONS=		--with-system-icu --with-intl-api
 
 -jpeg_BUILD_DEPENDS=yasm:${PORTSDIR}/devel/yasm
 # XXX depends on ports/180159 or package flavor support
 #jpeg_LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/libjpeg-turbo
 jpeg_LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg
 jpeg_MOZ_OPTIONS=	--with-system-jpeg=${LOCALBASE}
-jpeg_EXTRACT_AFTER_ARGS=	--exclude mozilla*/media/libjpeg
 
 nspr_LIB_DEPENDS=	libnspr4.so:${PORTSDIR}/devel/nspr
 nspr_MOZ_OPTIONS=	--with-system-nspr
 
 nss_LIB_DEPENDS=	libnss3.so:${PORTSDIR}/security/nss
 nss_MOZ_OPTIONS=	--with-system-nss
-nss_EXTRACT_AFTER_ARGS=	--exclude mozilla*/dbm \
-						--exclude mozilla*/security/coreconf \
-						--exclude mozilla*/security/nss
 
 .if exists(${FILESDIR}/patch-z-bug517422) || exists(${FILESDIR}/patch-zz-bug517422)
 opus_LIB_DEPENDS=	libopus.so:${PORTSDIR}/audio/opus
 opus_MOZ_OPTIONS=	--with-system-opus
-opus_EXTRACT_AFTER_ARGS=	--exclude mozilla*/media/libopus
 .endif
 
 pixman_LIB_DEPENDS=	libpixman-1.so:${PORTSDIR}/x11/pixman
 pixman_MOZ_OPTIONS=	--enable-system-pixman
-pixman_EXTRACT_AFTER_ARGS=	--exclude mozilla*/gfx/cairo/libpixman
 
 png_LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png
 png_MOZ_OPTIONS=	--with-system-png=${LOCALBASE}
-#png_EXTRACT_AFTER_ARGS=	--exclude mozilla*/media/libpng
 
 .if exists(${FILESDIR}/patch-z-bug517422) || exists(${FILESDIR}/patch-zz-bug517422)
 soundtouch_LIB_DEPENDS=	libSoundTouch.so:${PORTSDIR}/audio/soundtouch
 soundtouch_MOZ_OPTIONS=	--with-system-soundtouch
-soundtouch_EXTRACT_AFTER_ARGS=	--exclude mozilla*/media/libsoundtouch
 
 # XXX disabled: bug 913854 not yet upstreamed
 speex_LIB_DEPENDS=	libspeexdsp.so:${PORTSDIR}/audio/speex
 speex_MOZ_OPTIONS=	--with-system-speex
-speex_EXTRACT_AFTER_ARGS=	--exclude mozilla*/media/libspeex_resampler
 .endif
 
 sqlite_LIB_DEPENDS=	libsqlite3.so:${PORTSDIR}/databases/sqlite3
 sqlite_MOZ_OPTIONS=	--enable-system-sqlite
-sqlite_EXTRACT_AFTER_ARGS=	--exclude mozilla*/db/sqlite3
 
 .if exists(${FILESDIR}/patch-z-bug517422) || exists(${FILESDIR}/patch-zz-bug517422)
 # XXX disabled: update to 1.2.x or review backported fixes
 theora_LIB_DEPENDS=	libtheora.so:${PORTSDIR}/multimedia/libtheora
 theora_MOZ_OPTIONS=	--with-system-theora
-theora_EXTRACT_AFTER_ARGS=	--exclude mozilla*/media/libtheora
 
 vorbis_LIB_DEPENDS=	libvorbis.so:${PORTSDIR}/audio/libvorbis
 vorbis_MOZ_OPTIONS=	--with-system-vorbis --with-system-ogg
-vorbis_EXTRACT_AFTER_ARGS=	--exclude mozilla*/media/libvorbis \
-							--exclude mozilla*/media/libogg
 .endif
 
 -vpx_BUILD_DEPENDS=	yasm:${PORTSDIR}/devel/yasm
 vpx_LIB_DEPENDS=	libvpx.so:${PORTSDIR}/multimedia/libvpx
 vpx_MOZ_OPTIONS=	--with-system-libvpx
-vpx_EXTRACT_AFTER_ARGS=	--exclude mozilla*/media/libvpx
 
 .for use in ${USE_MOZILLA}
 ${use:S/-/_WITHOUT_/}=	${TRUE}
@@ -230,7 +207,6 @@ BUILD_DEPENDS+=	${${dep}_BUILD_DEPENDS}
 LIB_DEPENDS+=	${${dep}_LIB_DEPENDS}
 RUN_DEPENDS+=	${${dep}_RUN_DEPENDS}
 MOZ_OPTIONS+=	${${dep}_MOZ_OPTIONS}
-EXTRACT_AFTER_ARGS+=	${${dep}_EXTRACT_AFTER_ARGS}
 .else
 BUILD_DEPENDS+=	${-${dep}_BUILD_DEPENDS}
 .endif
@@ -278,7 +254,7 @@ MOZ_TOOLKIT=	cairo-gtk3
 USE_MOZILLA+=	-cairo # ports/169343
 USE_DISPLAY=yes # install
 USE_GNOME+=	pango
-. if ${MOZILLA_VER:R:R} >= 30
+. if ${MOZILLA_VER:R:R} >= 30 || ${MOZILLA} == "seamonkey"
 USE_QT5+=	qmake_build buildtools_build gui network quick printsupport
 . else
 USE_QT4+=	qmake_build moc_build rcc_build gui network opengl
@@ -402,6 +378,8 @@ BROKEN=			dtrace -G crashes with C++ object files
 MOZ_OPTIONS+=	--enable-dtrace
 LIBS+=			-lelf
 STRIP=
+.else
+MOZ_OPTIONS+=	--disable-dtrace
 .endif
 
 .if ${PORT_OPTIONS:MLOGGING} || ${PORT_OPTIONS:MDEBUG}

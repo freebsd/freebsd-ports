@@ -45,7 +45,7 @@ index f67c5c7..eb909ce 100644
      external_dirs += ['media/libopus']
  
  if CONFIG['MOZ_WEBM']:
-@@ -36,13 +42,15 @@ if CONFIG['MOZ_VPX'] and not CONFIG['MOZ_NATIVE_LIBVPX']:
+@@ -36,14 +42,16 @@ if CONFIG['MOZ_VPX'] and not CONFIG['MOZ_NATIVE_LIBVPX']:
  if not CONFIG['MOZ_NATIVE_PNG']:
      external_dirs += ['media/libpng']
  
@@ -61,6 +61,7 @@ index f67c5c7..eb909ce 100644
 -    'media/libogg',
 -    'media/libtheora',
 -    'media/libspeex_resampler',
+     'media/libstagefright',
 -    'media/libsoundtouch',
  ]
  
