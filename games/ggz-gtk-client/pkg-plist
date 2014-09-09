@@ -1,10 +1,10 @@
 bin/ggz-gtk
 include/ggz-embed.h
 include/ggz-gtk.h
-lib/libggz-gtk.so.1
-lib/libggz-gtk.so
-lib/libggz-gtk.la
 lib/libggz-gtk.a
+lib/libggz-gtk.so
+lib/libggz-gtk.so.1
+lib/libggz-gtk.so.1.0.0
 man/man6/ggz-gtk.6.gz
 share/applications/ggz-gtk.desktop
 share/ggz/ggz-gtk-client/about_bg.png
