@@ -3,7 +3,7 @@
 
 PORTNAME=	pinot
 PORTVERSION=	1.06
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	deskutils
 MASTER_SITES=	GOOGLE_CODE
 #MASTER_SITES=	http://colinf.chez.com/pinot/
@@ -14,7 +14,8 @@ COMMENT=	Personal search and metasearch for the Free Desktop
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	update-desktop-database:${PORTSDIR}/devel/desktop-file-utils
+BUILD_DEPENDS=	desktop-file-install:${PORTSDIR}/devel/desktop-file-utils \
+		update-mime-database:${PORTSDIR}/misc/shared-mime-info
 LIB_DEPENDS=	libxapian.so:${PORTSDIR}/databases/xapian-core		\
 		libgtkmm-2.4.so:${PORTSDIR}/x11-toolkits/gtkmm24	\
 		libexttextcat-2.0.so:${PORTSDIR}/textproc/libexttextcat	\
@@ -38,16 +39,15 @@ RUN_DEPENDS=	update-mime-database:${PORTSDIR}/misc/shared-mime-info	\
 
 PROJECTHOST=	${PORTNAME}-search
 
-LDFLAGS+=	-L${LOCALBASE}/lib
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-http=curl --with-ssl=${OPENSSLBASE} --enable-libarchive	\
 		--enable-mempool=no
 CONFIGURE_ENV=	MKDIR_P="${MKDIR}"
 CPPFLAGS+=	-I${LOCALBASE}/include
+LIBS+=		-L${LOCALBASE}/lib
 
-USES=		gettext pkgconfig shebangfix
+USES=		gettext libtool pkgconfig python shebangfix
 USE_OPENSSL=	yes
-USE_PYTHON=	yes
 USE_SQLITE=	3
 USE_XORG=	pixman
 USE_LDCONFIG=	${PREFIX}/lib/pinot/backends ${PREFIX}/lib/pinot/filters
@@ -81,7 +81,6 @@ post-patch:
 		${WRKSRC}/Tokenize/filters/external-filters.xml
 
 pre-configure:
-	${REINPLACE_CMD} -e 's|-lthr|${PTHREAD_LIBS}|' ${WRKSRC}/configure
 	${REINPLACE_CMD} -e 's|/usr/share|${LOCALBASE}/share|'	\
 		${LM2FIX:S|^|${WRKSRC}/|}
 	${REINPLACE_CMD} -e 's|libtextcat/|libtextcat/LM/|'	\
