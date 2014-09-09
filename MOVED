@@ -7052,3 +7052,6 @@ lang/ezm3||2014-09-09|Not staged
 net/cvsup-without-gui||2014-09-09|Cascade removal (lang/ezm3)
 net/cvsupchk||2014-09-09|Cascade removal (lang/ezm3)
 net/cvsup||2014-09-09|Cascade removal (lang/ezm3)
+dns/posadis||2014-09-09|Not staged
+net/etherboot||2014-09-09|Not staged
+games/linux-savage||2014-09-09|Not staged

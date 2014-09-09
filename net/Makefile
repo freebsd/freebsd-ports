@@ -111,7 +111,6 @@
     SUBDIR += empty
     SUBDIR += enet
     SUBDIR += erlang_xmlrpc
-    SUBDIR += etherboot
     SUBDIR += etrace
     SUBDIR += exabgp
     SUBDIR += exaddos
