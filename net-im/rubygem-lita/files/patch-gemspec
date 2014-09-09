@@ -1,0 +1,33 @@
+--- lita-3.3.1.gemspec.orig	2014-09-08 22:00:06 UTC
++++ lita-3.3.1.gemspec
+@@ -123,20 +123,6 @@
+       - !ruby/object:Gem::Version
+         version: 1.5.2
+ - !ruby/object:Gem::Dependency
+-  name: rb-readline
+-  requirement: !ruby/object:Gem::Requirement
+-    requirements:
+-    - - ">="
+-      - !ruby/object:Gem::Version
+-        version: 0.5.1
+-  type: :runtime
+-  prerelease: false
+-  version_requirements: !ruby/object:Gem::Requirement
+-    requirements:
+-    - - ">="
+-      - !ruby/object:Gem::Version
+-        version: 0.5.1
+-- !ruby/object:Gem::Dependency
+   name: redis-namespace
+   requirement: !ruby/object:Gem::Requirement
+     requirements:
+--- lita.gemspec.orig	2014-09-08 22:00:06 UTC
++++ lita.gemspec
+@@ -28,7 +28,6 @@
+   spec.add_runtime_dependency "multi_json", ">= 1.7.7"
+   spec.add_runtime_dependency "puma", ">= 2.7.1"
+   spec.add_runtime_dependency "rack", ">= 1.5.2"
+-  spec.add_runtime_dependency "rb-readline", ">= 0.5.1"
+   spec.add_runtime_dependency "redis-namespace", ">= 1.3.0"
+   spec.add_runtime_dependency "thor", ">= 0.18.1"
+ 
