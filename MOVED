@@ -7046,6 +7046,5 @@ emulators/virtualbox-ose-legacy||2014-09-09|Not staged
 emulators/virtualbox-ose-kmod-legacy||2014-09-09|No purpose after removal of virtualbox-ose-legacy
 devel/arm-eabi-gcc||2014-09-09|Not staged
 devel/cross-gcc||2014-09-09|Not staged
-devel/cross-binutils||2014-09-09|No purpose after removal of cross-gcc
 devel/arm-eabi-binutils||2014-09-09|No purpose after removal of arm-eabi-gcc
 sysutils/u-boot-beaglebone-eabi||2014-09-09|Cascade removal (devel/arm-eabi-gcc)
