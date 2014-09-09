@@ -39,7 +39,7 @@ RUN_DEPENDS+=	libxul>=24:${PORTSDIR}/www/libxul
 .elif ${_GECKO_ARGS:Mfirefox}
 
 _GECKO_DEFAULT_VERSION=	31
-_GECKO_VERSIONS=		31 33
+_GECKO_VERSIONS=		31 32
 _GECKO_TYPE=	firefox
 
 # Dependence lines for different Firefox versions

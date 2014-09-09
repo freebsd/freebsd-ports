@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	firefox
-DISTVERSION=	33.0b1
+DISTVERSION=	32.0
 DISTVERSIONSUFFIX=.source
 PORTEPOCH=	1
 CATEGORIES=	www ipv6
@@ -56,7 +56,7 @@ MOZ_OPTIONS=	--program-transform-name='s/firefox/${MOZILLA}/' \
 .include "${.CURDIR}/../../www/firefox/Makefile.options"
 .include <bsd.port.pre.mk>
 
-WRKSRC:=	${WRKDIR}/mozilla-beta
+WRKSRC:=	${WRKDIR}/mozilla-release
 
 # avoid clang 3.2/3.3 crash in js/src/jsgc.cpp on refillFreeList<(js::AllowGC)1>
 # http://svnweb.freebsd.org/changeset/base/255804
