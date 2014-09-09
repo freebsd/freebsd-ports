@@ -27,22 +27,16 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
 INSTALL_TARGET=	install-strip
-USES=		gmake libtool pathfix shebangfix python pkgconfig
+USES=		gmake libtool pathfix shebangfix python pkgconfig compiler:c++11-lang
 USE_AUTOTOOLS=	aclocal automake libtoolize
 USE_GNOME=	glib20
 
 OPTIONS_DEFINE=	NLS DOCS
 OPTIONS_DEFAULT=NLS
+OPTIONS_SUB=	yes
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MNLS}
-USES+=		gettext
-PLIST_SUB+=	NLS=""
-.else
-PLIST_SUB+=	NLS="@comment "
-CONFIGURE_ARGS+=	--disable-nls
-.endif
+NLS_USES=	gettext
+NLS_CONFIGURE_ENABLE=	nls
 
 #pre-configure:
 #	cd ${WRKSRC} && ./autogen.sh
