@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	redis
-DISTVERSION=	3.0.0-beta6
+DISTVERSION=	3.0.0-beta8
 CATEGORIES=	databases
 MASTER_SITES=	https://github.com/antirez/redis/archive/
 PKGNAMESUFFIX=	-devel
@@ -31,13 +31,14 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}
 .if ${PORT_OPTIONS:MLUA}
 USES+=		lua:51
 EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-src-Makefile.lua
-CFLAGS+=	-fPIC
-LDFLAGS+=	-Wl,-E
 .endif
 
 .if ${PORT_OPTIONS:MLUAJIT}
 LIB_DEPENDS+=	libluajit-5.1.so:${PORTSDIR}/lang/luajit
 EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-src-Makefile.luajit
+.endif
+
+.if ${PORT_OPTIONS:MLUA} || ${PORT_OPTIONS:MLUAJIT}
 CFLAGS+=	-fPIC
 LDFLAGS+=	-Wl,-E
 .endif
