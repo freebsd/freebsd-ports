@@ -113,7 +113,6 @@
     SUBDIR += icc
     SUBDIR += ici
     SUBDIR += icon
-    SUBDIR += ifc
     SUBDIR += intel2gas
     SUBDIR += intercal
     SUBDIR += io
@@ -160,7 +159,6 @@
     SUBDIR += nawk
     SUBDIR += nbc
     SUBDIR += nbfc
-    SUBDIR += neko
     SUBDIR += nesasm
     SUBDIR += newlisp
     SUBDIR += newlisp-devel

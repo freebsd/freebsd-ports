@@ -223,7 +223,6 @@
     SUBDIR += quit
     SUBDIR += roget-fpw
     SUBDIR += rogue_s
-    SUBDIR += rskkserv
     SUBDIR += ruby-eb
     SUBDIR += ruby-mecab
     SUBDIR += ruby-ming
