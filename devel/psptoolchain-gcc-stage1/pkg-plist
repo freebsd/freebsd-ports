@@ -161,9 +161,9 @@
 %%PSP_GCC_STAGE_PREFIX%%/libexec/gcc/psp/4.6.2/install-tools/fixincl
 %%PSP_GCC_STAGE_PREFIX%%/libexec/gcc/psp/4.6.2/install-tools/mkheaders
 %%PSP_GCC_STAGE_PREFIX%%/libexec/gcc/psp/4.6.2/install-tools/mkinstalldirs
-%%PSP_GCC_STAGE_PREFIX%%/libexec/gcc/psp/4.6.2/liblto_plugin.la
 %%PSP_GCC_STAGE_PREFIX%%/libexec/gcc/psp/4.6.2/liblto_plugin.so
 %%PSP_GCC_STAGE_PREFIX%%/libexec/gcc/psp/4.6.2/liblto_plugin.so.0
+%%PSP_GCC_STAGE_PREFIX%%/libexec/gcc/psp/4.6.2/liblto_plugin.so.0.0.0
 %%PSP_GCC_STAGE_PREFIX%%/libexec/gcc/psp/4.6.2/lto-wrapper
 %%PSP_GCC_STAGE_PREFIX%%/libexec/gcc/psp/4.6.2/lto1
 @dirrm %%PSP_GCC_STAGE_PREFIX%%/libexec/gcc/psp/4.6.2/install-tools
