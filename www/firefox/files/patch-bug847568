@@ -164,9 +164,9 @@ diff --git intl/unicharutil/util/Makefile.in intl/unicharutil/util/Makefile.in
 index f6b9f7c..60863f4 100644
 --- intl/unicharutil/util/Makefile.in
 +++ intl/unicharutil/util/Makefile.in
-@@ -15,3 +15,7 @@ include $(topsrcdir)/config/rules.mk
- ifdef ENABLE_INTL_API
- LOCAL_INCLUDES += $(MOZ_ICU_CFLAGS)
+@@ -21,3 +21,7 @@ ifdef _MSC_VER
+ OS_COMPILE_CXXFLAGS += -Zl
+ OS_COMPILE_CFLAGS += -Zl
  endif
 +
 +ifdef MOZ_NATIVE_HARFBUZZ
