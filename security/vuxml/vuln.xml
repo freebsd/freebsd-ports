@@ -57,6 +57,39 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="36a415c8-3867-11e4-b522-00262d5ed8ee">
+    <topic>www/chromium -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>chromium</name>
+	<range><lt>37.0.2062.120</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Google Chrome Releases reports:</p>
+	<blockquote cite="http://googlechromereleases.blogspot.nl/">
+	  <p>4 security fixes in this release, including:</p>
+	  <ul>
+	    <li>[401362] High CVE-2014-3178: Use-after-free in rendering.
+	      Credit to miaubiz.</li>
+	    <li>[411014] CVE-2014-3179: Various fixes from internal audits,
+	      fuzzing and other initiatives.</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2014-3178</cvename>
+      <cvename>CVE-2014-3179</cvename>
+      <url>http://googlechromereleases.blogspot.nl/</url>
+    </references>
+    <dates>
+      <discovery>2014-09-09</discovery>
+      <entry>2014-09-09</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="6318b303-3507-11e4-b76c-0011d823eebd">
     <topic>trafficserver -- unspecified vulnerability</topic>
     <affects>
