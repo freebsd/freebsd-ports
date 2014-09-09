@@ -63,6 +63,7 @@
     SUBDIR += licq-msn
     SUBDIR += licq-osd
     SUBDIR += licq-qt-gui
+    SUBDIR += linux-instantbird
     SUBDIR += loudmouth
     SUBDIR += mbpurple
     SUBDIR += mcabber

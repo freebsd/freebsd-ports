@@ -142,9 +142,9 @@ diff --git js/src/configure.in js/src/configure.in
 index bddd46d..d4b522e 100644
 --- js/src/configure.in
 +++ js/src/configure.in
-@@ -2348,116 +2348,13 @@ fi
+@@ -2077,116 +2077,13 @@ AC_LANG_CPLUSPLUS
  
- AC_LANG_C
+ MOZ_CXX11
  
 -dnl Check for .hidden assembler directive and visibility attribute.
 -dnl Borrowed from glibc configure.in
@@ -249,7 +249,7 @@ index bddd46d..d4b522e 100644
 -                       ])
 -        if test "$ac_cv_have_visibility_builtin_bug" = "no" -a \
 -                "$ac_cv_have_visibility_class_bug" = "no"; then
--          VISIBILITY_FLAGS='-I$(DIST)/system_wrappers_js -include $(topsrcdir)/config/gcc_hidden.h'
+-          VISIBILITY_FLAGS='-I$(DIST)/system_wrappers -include $(topsrcdir)/config/gcc_hidden.h'
 -          WRAP_SYSTEM_INCLUDES=1
 -        else
 -          VISIBILITY_FLAGS='-fvisibility=hidden'
@@ -259,7 +259,7 @@ index bddd46d..d4b522e 100644
 -  fi       # have visibility(hidden) attribute
 +  AC_DEFINE(HAVE_VISIBILITY_HIDDEN_ATTRIBUTE)
 +  AC_DEFINE(HAVE_VISIBILITY_ATTRIBUTE)
-+  VISIBILITY_FLAGS='-I$(DIST)/system_wrappers_js -include $(topsrcdir)/config/gcc_hidden.h'
++  VISIBILITY_FLAGS='-I$(DIST)/system_wrappers -include $(topsrcdir)/config/gcc_hidden.h'
 +  WRAP_SYSTEM_INCLUDES=1
  fi         # GNU_CC
  

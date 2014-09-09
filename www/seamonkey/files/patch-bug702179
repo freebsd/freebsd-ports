@@ -17,7 +17,7 @@ index 66549c1..75b848d 100644
  MOZ_PNG_LIBS='$(call EXPAND_LIBNAME_PATH,mozpng,$(DEPTH)/media/libpng)'
  
 -MOZ_JS_STATIC_LIBS='$(call EXPAND_LIBNAME_PATH,js_static,$(LIBXUL_DIST)/lib)'
-+MOZ_JS_STATIC_LIBS='$(call EXPAND_LIBNAME_PATH,js_static,$(DEPTH)/js/src/js/src)'
++MOZ_JS_STATIC_LIBS='$(call EXPAND_LIBNAME_PATH,js_static,$(DEPTH)/js/src)'
  MOZ_JS_SHARED_LIBS='$(call EXPAND_LIBNAME_PATH,mozjs,$(LIBXUL_DIST)/lib)'
  MOZ_FIX_LINK_PATHS='-Wl,-rpath-link,$(LIBXUL_DIST)/bin -Wl,-rpath-link,$(prefix)/lib'
  XPCOM_FROZEN_LDOPTS='$(call EXPAND_LIBNAME_PATH,xul mozalloc,$(LIBXUL_DIST)/bin)'
@@ -35,17 +35,14 @@ index e28160a..28ca5e8 100644
  SHARED_LIBRARY_LIBS += $(call EXPAND_LIBNAME_PATH,mfbt,$(DEPTH)/mfbt)
  ifndef MOZ_NATIVE_ZLIB
 diff --git suite/build/Makefile.in suite/build/Makefile.in
-index 66549c1..75b848d 100644
+index e28160a..28ca5e8 100644
 --- suite/build/Makefile.in
 +++ suite/build/Makefile.in
-@@ -33,6 +33,10 @@ EXTRA_DSO_LDOPTS += \
+@@ -28,6 +28,7 @@ EXTRA_DSO_LDOPTS += \
+ 	$(LIBS_DIR) \
+ 	$(call EXPAND_LIBNAME_PATH,unicharutil_external_s,$(LIBXUL_DIST)/lib) \
+ 	$(MOZ_JS_LIBS) \
++	$(MOZ_ZLIB_LIBS) \
+ 	$(XPCOM_STATICRUNTIME_GLUE_LDOPTS) \
+ 	$(MOZ_COMPONENT_LIBS) \
  	$(TK_LIBS) \
- 	$(NULL)
- 
-+ifndef ZLIB_IN_MOZGLUE
-+EXTRA_DSO_LDOPTS += $(MOZ_ZLIB_LIBS)
-+endif
-+
- include $(topsrcdir)/config/rules.mk
- 
- # Ensure that we don't embed a manifest referencing the CRT.

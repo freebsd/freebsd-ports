@@ -1,0 +1,74 @@
+bin/%%APP_NAME%%
+share/applications/%%APP_NAME%%.desktop
+lib/%%APP_NAME%%/Throbber-small.gif
+lib/%%APP_NAME%%/application.ini
+lib/%%APP_NAME%%/chrome.manifest
+lib/%%APP_NAME%%/chrome/icons/default/blistWindow.png
+lib/%%APP_NAME%%/chrome/icons/default/blistWindow16.png
+lib/%%APP_NAME%%/chrome/icons/default/blistWindow48.png
+lib/%%APP_NAME%%/chrome/icons/default/convWindow.png
+lib/%%APP_NAME%%/chrome/icons/default/convWindow16.png
+lib/%%APP_NAME%%/chrome/icons/default/convWindow48.png
+lib/%%APP_NAME%%/chrome/icons/default/default.png
+lib/%%APP_NAME%%/chrome/icons/default/default16.png
+lib/%%APP_NAME%%/chrome/icons/default/default48.png
+lib/%%APP_NAME%%/components/components.manifest
+lib/%%APP_NAME%%/components/libbonjour.so
+lib/%%APP_NAME%%/components/libmozgnome.so
+lib/%%APP_NAME%%/components/libpurplexpcom.so
+lib/%%APP_NAME%%/components/libtrayToolkit.so
+lib/%%APP_NAME%%/crashreporter
+lib/%%APP_NAME%%/crashreporter.ini
+lib/%%APP_NAME%%/defaults/pref/browser-prefs.js
+lib/%%APP_NAME%%/defaults/pref/channel-prefs.js
+lib/%%APP_NAME%%/dependentlibs.list
+lib/%%APP_NAME%%/dictionaries/%%LOCALE%%.aff
+lib/%%APP_NAME%%/dictionaries/%%LOCALE%%.dic
+lib/%%APP_NAME%%/extensions/{972ce4c6-7e08-4474-a285-3208198ce6fd}/icon.png
+lib/%%APP_NAME%%/extensions/{972ce4c6-7e08-4474-a285-3208198ce6fd}/install.rdf
+lib/%%APP_NAME%%/extensions/{972ce4c6-7e08-4474-a285-3208198ce6fd}/preview.png
+lib/%%APP_NAME%%/icons/default16.png
+lib/%%APP_NAME%%/icons/mozicon128.png
+lib/%%APP_NAME%%/icons/updater.png
+lib/%%APP_NAME%%/instantbird
+lib/%%APP_NAME%%/instantbird-bin
+lib/%%APP_NAME%%/libfreebl3.chk
+lib/%%APP_NAME%%/libfreebl3.so
+lib/%%APP_NAME%%/libmozalloc.so
+lib/%%APP_NAME%%/libmozsqlite3.so
+lib/%%APP_NAME%%/libnspr4.so
+lib/%%APP_NAME%%/libnss3.so
+lib/%%APP_NAME%%/libnssckbi.so
+lib/%%APP_NAME%%/libnssdbm3.chk
+lib/%%APP_NAME%%/libnssdbm3.so
+lib/%%APP_NAME%%/libnssutil3.so
+lib/%%APP_NAME%%/libplc4.so
+lib/%%APP_NAME%%/libplds4.so
+lib/%%APP_NAME%%/libsmime3.so
+lib/%%APP_NAME%%/libsoftokn3.chk
+lib/%%APP_NAME%%/libsoftokn3.so
+lib/%%APP_NAME%%/libssl3.so
+lib/%%APP_NAME%%/libxul.so
+lib/%%APP_NAME%%/mozilla-xremote-client
+lib/%%APP_NAME%%/omni.ja
+lib/%%APP_NAME%%/platform.ini
+lib/%%APP_NAME%%/plugin-container
+lib/%%APP_NAME%%/plugins
+lib/%%APP_NAME%%/precomplete
+lib/%%APP_NAME%%/removed-files
+lib/%%APP_NAME%%/run-mozilla.sh
+lib/%%APP_NAME%%/updater
+lib/%%APP_NAME%%/updater.ini
+@exec /bin/cp -R %%LOCALBASE%%/lib/xpi/symlinks/%%APP_NAME%%/  %D/lib/%%APP_NAME%%/extensions/ 2>/dev/null || true
+@unexec /usr/bin/find %D/lib/%%APP_NAME%%/extensions/  -depth 1 -type l -delete 2>/dev/null || true
+@dirrm lib/%%APP_NAME%%/chrome/icons/default
+@dirrm lib/%%APP_NAME%%/chrome/icons
+@dirrm lib/%%APP_NAME%%/chrome
+@dirrm lib/%%APP_NAME%%/components
+@dirrm lib/%%APP_NAME%%/defaults/pref
+@dirrm lib/%%APP_NAME%%/defaults
+@dirrm lib/%%APP_NAME%%/dictionaries
+@dirrm lib/%%APP_NAME%%/extensions/{972ce4c6-7e08-4474-a285-3208198ce6fd}
+@dirrm lib/%%APP_NAME%%/extensions
+@dirrm lib/%%APP_NAME%%/icons
+@dirrm lib/%%APP_NAME%%

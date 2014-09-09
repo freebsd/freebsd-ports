@@ -86,21 +86,20 @@ index ac38f40..87536b7 100644
  dnl Check for pixman and cairo
  dnl ========================================================
  
-diff --git content/base/src/Makefile.in content/base/src/Makefile.in
-index a618096..596901a 100644
---- mozilla/content/base/src/Makefile.in
-+++ mozilla/content/base/src/Makefile.in
-@@ -5,6 +5,10 @@
+diff --git content/base/src/moz.build content/base/src/moz.build
+index d4f6380..0ee55df 100644
+--- mozilla/content/base/src/moz.build
++++ mozilla/content/base/src/moz.build
+@@ -179,6 +179,9 @@ SOURCES += [
+     'nsObjectLoadingContent.cpp',
+ ]
  
- include $(topsrcdir)/config/rules.mk
- 
-+ifdef MOZ_NATIVE_HARFBUZZ
-+nsContentUtils.$(OBJ_SUFFIX): CXXFLAGS+=$(MOZ_HARFBUZZ_CFLAGS)
-+endif
++if CONFIG['MOZ_NATIVE_HARFBUZZ']:
++    SOURCES['nsContentUtils.cpp'].flags += [CONFIG['MOZ_HARFBUZZ_CFLAGS']]
 +
- # gcc requires -msse2 for this file since it uses SSE2 intrinsics.  (See bug
- # 585538 comment 12.)
- ifneq (,$(INTEL_ARCHITECTURE))
+ EXTRA_COMPONENTS += [
+     'contentAreaDropListener.js',
+     'contentAreaDropListener.manifest',
 diff --git gfx/moz.build gfx/moz.build
 index 519aa46..6929751 100644
 --- mozilla/gfx/moz.build
@@ -188,10 +187,10 @@ index 1cacbd7..f5d72bb 100644
  # Generate the include file containing compact, static definitions
  # for effective TLD data.
  etld_data.inc: $(srcdir)/prepare_tlds.py $(srcdir)/effective_tld_names.dat
-diff --git toolkit/library/Makefile.in toolkit/library/Makefile.in
+diff --git toolkit/library/libxul.mk toolkit/library/libxul.mk
 index 67f0db9..d42137a 100644
---- mozilla/toolkit/library/Makefile.in
-+++ mozilla/toolkit/library/Makefile.in
+--- mozilla/toolkit/library/libxul.mk
++++ mozilla/toolkit/library/libxul.mk
 @@ -89,6 +89,14 @@ ifndef MOZ_TREE_PIXMAN
  EXTRA_DSO_LDOPTS += $(MOZ_PIXMAN_LIBS)
  endif

@@ -3,7 +3,7 @@
 
 OPTIONS_DEFINE=	LANG_ACH \
 		LANG_AF \
-		LANG_AK \
+		LANG_AN \
 		LANG_SQ \
 		LANG_AR \
 		LANG_AS \
@@ -39,6 +39,7 @@ OPTIONS_DEFINE=	LANG_ACH \
 		LANG_HE \
 		LANG_HI \
 		LANG_HR \
+		LANG_HSB \
 		LANG_HU \
 		LANG_IS \
 		LANG_ID \
@@ -51,21 +52,20 @@ OPTIONS_DEFINE=	LANG_ACH \
 		LANG_KU \
 		LANG_LV \
 		LANG_LT \
-		LANG_LG \
 		LANG_LIJ \
 		LANG_MK \
 		LANG_MAI \
 		LANG_ML \
 		LANG_MR \
 		LANG_MN \
-		LANG_NSO \
+		LANG_MS \
 		LANG_NB \
 		LANG_NN \
 		LANG_OR \
 		LANG_FA \
 		LANG_PL \
 		LANG_PT \
-		LANG_PBR \
+		LANG_PBR\
 		LANG_PA \
 		LANG_RO \
 		LANG_RM \
@@ -82,13 +82,13 @@ OPTIONS_DEFINE=	LANG_ACH \
 		LANG_SV \
 		LANG_TW \
 		LANG_TA \
-		LANG_LK \
 		LANG_TE \
 		LANG_TH \
 		LANG_TR \
 		LANG_UK \
 		LANG_VI \
 		LANG_CY \
+		LANG_XH \
 		LANG_ZA \
 		LANG_ZU
 
@@ -97,8 +97,13 @@ OPTIONS_DEFAULT=LANG_AR LANG_BN LANG_BR LANG_CN LANG_ET LANG_DE LANG_FR \
 		LANG_MN LANG_PBR LANG_PA LANG_RU LANG_ES LANG_SON LANG_TE
 
 LANG_ACH_DESC?=	Acholi language support
+LANG_AN_DESC?=	Aragonese language support
 LANG_AS_DESC?=	Assamese language support
 LANG_CSB_DESC?=	Kashubian language support
 LANG_FF_DESC?=	Fulah language support
+LANG_HSB_DESC?=	Upper Sorbian language support
 LANG_KM_DESC?=	Khmer language support
 LANG_LIJ_DESC?=	Ligurian (Genoa) language support
+LANG_MS_DESC?=	Malay language support
+LANG_SW_DESC?=	Swahili language support
+LANG_XH_DESC?=	Xhosa language support
