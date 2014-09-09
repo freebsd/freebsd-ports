@@ -1,0 +1,1 @@
+IGNORE=	statically compiled binaries will not execute on DragonFly
