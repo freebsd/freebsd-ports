@@ -142,8 +142,6 @@
     SUBDIR += virtualbox-ose
     SUBDIR += virtualbox-ose-additions
     SUBDIR += virtualbox-ose-kmod
-    SUBDIR += virtualbox-ose-kmod-legacy
-    SUBDIR += virtualbox-ose-legacy
     SUBDIR += visualboyadvance-m
     SUBDIR += vmips
     SUBDIR += vmsbackup
