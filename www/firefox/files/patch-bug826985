@@ -132,7 +132,7 @@ index d46b5aa..e452223 100644
    'targets': [
      {
        'target_name': 'video_capture_module',
-@@ -46,6 +49,19 @@
+@@ -46,6 +49,16 @@
                  'linux/video_capture_linux.cc',
                  'linux/video_capture_linux.h',
                ],
@@ -140,9 +140,6 @@ index d46b5aa..e452223 100644
 +                ['use_libv4l2==1', {
 +                  'defines': [
 +                    'HAVE_LIBV4L2',
-+                  ],
-+                  'cflags_mozilla': [
-+                    '$(MOZ_LIBV4L2_CFLAGS)',
 +                  ],
 +                  'libraries': [
 +                    '-lv4l2',
