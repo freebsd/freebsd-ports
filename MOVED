@@ -7048,3 +7048,7 @@ devel/arm-eabi-gcc||2014-09-09|Not staged
 devel/cross-gcc||2014-09-09|Not staged
 devel/arm-eabi-binutils||2014-09-09|No purpose after removal of arm-eabi-gcc
 sysutils/u-boot-beaglebone-eabi||2014-09-09|Cascade removal (devel/arm-eabi-gcc)
+lang/ezm3||2014-09-09|Not staged
+net/cvsup-without-gui||2014-09-09|Cascade removal (lang/ezm3)
+net/cvsupchk||2014-09-09|Cascade removal (lang/ezm3)
+net/cvsup||2014-09-09|Cascade removal (lang/ezm3)
