@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	CSS-Inliner
-PORTVERSION=	3945
+PORTVERSION=	3948
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -13,8 +13,8 @@ COMMENT=	Library for converting CSS blocks and files to inline styles
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-HTML-Query>=0.08:${PORTSDIR}/www/p5-HTML-Query \
-		p5-HTML-Tree>=4.2:${PORTSDIR}/www/p5-HTML-Tree \
+BUILD_DEPENDS=	p5-HTML-Query>=0.09:${PORTSDIR}/www/p5-HTML-Query \
+		p5-HTML-Tree>=5.03:${PORTSDIR}/www/p5-HTML-Tree \
 		p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
 		p5-URI>=0:${PORTSDIR}/net/p5-URI
 RUN_DEPENDS:=	${BUILD_DEPENDS}
