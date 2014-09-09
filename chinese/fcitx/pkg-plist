@@ -368,8 +368,6 @@ share/mime/packages/x-fskin.xml
 @dirrmtry share/icons/gnome/scalable/status
 @dirrmtry share/icons/gnome/scalable
 @dirrmtry share/icons/gnome
-@dirrmtry share/icons/hicolor/scalable/status
-@dirrmtry share/icons/hicolor/scalable
 @dirrmtry %%DATADIR%%/table
 @dirrm %%DATADIR%%/skin/default
 @dirrm %%DATADIR%%/skin/dark
@@ -385,6 +383,7 @@ share/mime/packages/x-fskin.xml
 @dirrm %%DATADIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm share/cmake/fcitx
+@dirrmtry share/cmake
 @dirrm lib/fcitx
 @dirrm include/fcitx/module/x11
 @dirrm include/fcitx/module/spell
@@ -400,5 +399,3 @@ share/mime/packages/x-fskin.xml
 @dirrm include/fcitx-gclient
 @dirrm include/fcitx-config
 @dirrm include/fcitx
-@dirrmtry lib/girepository-1.0
-@dirrmtry share/gir-1.0
