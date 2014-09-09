@@ -11,6 +11,9 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-${PORTVERSION}/${PORTNAME}-0.4.tar.gz \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Active sniffer
 
+DEPRECATED=	Depends on expired net/libnet10
+EXPIRATION_DATE=	2014-09-30
+
 BUILD_DEPENDS=	${LIBNET_CONFIG}:${PORTSDIR}/net/libnet10
 
 PLIST_FILES=	man/man8/angst.8.gz sbin/angst

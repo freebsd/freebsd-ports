@@ -11,6 +11,9 @@ DISTNAME=	proxy-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Proxy for the XBox system link protocol
 
+DEPRECATED=	Depends on expired net/libnet10
+EXPIRATION_DATE=	2014-09-30
+
 BUILD_DEPENDS=	${LIBNET_CONFIG}:${PORTSDIR}/net/libnet10
 
 USE_RC_SUBR=	xboxproxy
