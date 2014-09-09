@@ -3,7 +3,7 @@
 
 PORTNAME=	gcc
 PORTVERSION=	${GCCVERSION}
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	devel
 MASTER_SITES=	GCC
@@ -25,7 +25,7 @@ SSP_UNSAFE=	yes
 
 ONLY_FOR_ARCHS=	amd64 i386 powerpc powerpc64 sparc64
 USE_LDCONFIG=	yes
-USES=		bison iconv gmake makeinfo perl5 tar:bzip2
+USES=		bison iconv gmake libtool makeinfo perl5 tar:bzip2
 USE_PERL5=	build
 
 GCC_TARG=	${PKGNAMEPREFIX:S/-$//}
