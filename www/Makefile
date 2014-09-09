@@ -1782,9 +1782,10 @@
     SUBDIR += rubygem-html2haml
     SUBDIR += rubygem-http
     SUBDIR += rubygem-http-cookie
-    SUBDIR += rubygem-httpi
+    SUBDIR += rubygem-http_router
     SUBDIR += rubygem-httparty
     SUBDIR += rubygem-httpclient
+    SUBDIR += rubygem-httpi
     SUBDIR += rubygem-innate
     SUBDIR += rubygem-jekyll
     SUBDIR += rubygem-jekyll-watch

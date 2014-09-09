@@ -1,0 +1,3 @@
+This library allows you to recognize and build URLs in a Rack application.
+
+WWW: http://github.com/joshbuddy/http_router
