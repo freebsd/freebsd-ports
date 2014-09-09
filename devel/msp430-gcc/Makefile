@@ -3,7 +3,7 @@
 
 PORTNAME=	gcc
 PORTVERSION=	${GCCVERSION}.${LTSVERSION}
-PORTREVISION=	2
+PORTREVISION=	3
 PORTEPOCH=	2
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEWARE} \
@@ -45,7 +45,7 @@ SRCDIR=		${WRKDIR}/${PORTNAME}-${GCCVERSION}
 WRKSRC=		${WRKDIR}/build
 PATCH_WRKSRC=	${SRCDIR}
 
-USES=		bison gmake iconv makeinfo perl5 tar:bzip2
+USES=		bison gmake iconv libtool makeinfo perl5 tar:bzip2
 USE_PERL5=	build
 
 GNU_CONFIGURE=	yes
