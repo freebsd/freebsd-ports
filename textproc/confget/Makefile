@@ -16,18 +16,20 @@ OPTIONS_DEFINE=	EXAMPLES PCRE
 OPTIONS_DEFAULT=PCRE
 
 MAKE_ENV=	CFLAGS_CONF=-DHAVE_FGETLN
-USES=		gmake uidfix
+USES=		gmake
 
 PLIST_FILES=	bin/confget \
 		man/man1/confget.1.gz
 PORTEXAMPLES=	t1.ini t2.ini
 
-EXAMPLES_MAKE_ENV=	EXAMPLESDIR=${EXAMPLESDIR}
 PCRE_LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre
 PCRE_MAKE_ENV_OFF=	PCRE_CFLAGS="" PCRE_LIBS=""
 
-post-build:
-	@${STRIP_CMD} ${WRKSRC}/confget
+do-install:
+	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/
+	${INSTALL_PROGRAM} ${WRKSRC}/confget ${STAGEDIR}${PREFIX}/bin/
+	${INSTALL_MAN} ${WRKSRC}/confget.1 ${STAGEDIR}${PREFIX}/man/man1/
+	cd ${WRKSRC}/t/ && ${INSTALL_DATA} ${PORTEXAMPLES} ${STAGEDIR}${EXAMPLESDIR}/
 
 regression-test test: build
 	cd ${WRKSRC}/ && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} test
