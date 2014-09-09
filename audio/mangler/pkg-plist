@@ -1,9 +1,9 @@
 bin/mangler
 include/ventrilo3.h
 lib/libventrilo3.a
-lib/libventrilo3.la
 lib/libventrilo3.so
 lib/libventrilo3.so.0
+lib/libventrilo3.so.0.0.0
 man/man1/mangler.1.gz
 share/applications/mangler.desktop
 share/pixmaps/mangler_logo.svg
