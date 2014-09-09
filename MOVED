@@ -7042,3 +7042,5 @@ databases/p5-DBD-FrontBase||2014-09-07|Cascade removal (databases/frontbase)
 databases/ruby-frontbase||2014-09-07|Cascade removal (databases/frontbase)
 devel/flex-sdk2||2014-09-07|Not staged
 devel/flex_compiler_shell||2014-09-07|Cascade removal (devel/flex-sdk2)
+emulators/virtualbox-ose-legacy||2014-09-09|Not staged
+emulators/virtualbox-ose-kmod-legacy||2014-09-09|No purpose after removal of virtualbox-ose-legacy
