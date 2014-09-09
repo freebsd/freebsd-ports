@@ -10,6 +10,9 @@ MASTER_SITES=	http://pedram.redhive.com/downloads/
 MAINTAINER=	lx@redundancy.redundancy.org
 COMMENT=	Tool to hijack DNS requests
 
+DEPRECATED=	Depends on expired net/libnet10
+EXPIRATION_DATE=	2014-09-30
+
 BUILD_DEPENDS=	${LIBNET_CONFIG}:${PORTSDIR}/net/libnet10
 
 LDFLAGS+=	-lpcap `${LIBNET_CONFIG} --libs`

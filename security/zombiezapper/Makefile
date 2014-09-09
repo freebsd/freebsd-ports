@@ -12,6 +12,9 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Send a terminate command to Trinoo/TFN/Stacheldracht DDoS agents
 
+DEPRECATED=	Depends on expired net/libnet10
+EXPIRATION_DATE=	2014-09-30
+
 BUILD_DEPENDS=	${LIBNET_CONFIG}:${PORTSDIR}/net/libnet10
 
 LIBNET_CONFIG?=	${LOCALBASE}/bin/libnet10-config

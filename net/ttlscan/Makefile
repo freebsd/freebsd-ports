@@ -10,6 +10,9 @@ MASTER_SITES=	http://www.wormulon.net/files/ttlscan/
 MAINTAINER=	mich@FreeBSD.org
 COMMENT=	TCP based scanner, showing ttl responses
 
+DEPRECATED=	Depends on expired net/libnet10
+EXPIRATION_DATE=	2014-09-30
+
 BUILD_DEPENDS=	${LOCALBASE}/include/dnet.h:${PORTSDIR}/net/libdnet \
 		${LIBNET_CONFIG}:${PORTSDIR}/net/libnet10
 

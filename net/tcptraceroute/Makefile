@@ -13,6 +13,9 @@ COMMENT=	Traceroute implementation using TCP packets
 
 LICENSE=	GPLv2
 
+DEPRECATED=	Depends on expired net/libnet10
+EXPIRATION_DATE=	2014-09-30
+
 BUILD_DEPENDS=	${LOCALBASE}/bin/libnet10-config:${PORTSDIR}/net/libnet10
 
 post-patch:

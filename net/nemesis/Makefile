@@ -11,6 +11,9 @@ MASTER_SITES=	SF
 MAINTAINER=	molter@tin.it
 COMMENT=	Command-line network packet creation and injection suite
 
+DEPRECATED=	Depends on expired net/libnet10
+EXPIRATION_DATE=	2014-09-30
+
 BUILD_DEPENDS=	${LIBNET_CONFIG}:${PORTSDIR}/net/libnet10
 
 GNU_CONFIGURE=	yes

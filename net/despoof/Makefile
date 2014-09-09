@@ -11,6 +11,9 @@ MASTER_SITE_SUBDIR=	UNIX/misc
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Command-line anti-spoofing detection utility
 
+DEPRECATED=	Depends on expired net/libnet10
+EXPIRATION_DATE=	2014-09-30
+
 BUILD_DEPENDS=	${LIBNET_CONFIG}:${PORTSDIR}/net/libnet10
 
 LIBNET_CONFIG?=	${LOCALBASE}/bin/libnet10-config
