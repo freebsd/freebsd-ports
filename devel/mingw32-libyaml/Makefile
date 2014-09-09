@@ -3,6 +3,7 @@
 
 PORTNAME=	libyaml
 PORTVERSION=	0.1.6
+PORTREVISION=	1
 CATEGORIES=	devel textproc
 MASTER_SITES=	http://pyyaml.org/download/libyaml/
 PKGNAMEPREFIX=	mingw32-
@@ -20,5 +21,6 @@ GNU_CONFIGURE_PREFIX=	${PREFIX}/mingw32
 CONFIGURE_ARGS=	--host="mingw32"
 CC=		${PKGNAMEPREFIX}gcc
 CFLAGS=		-O3	# Override CFLAGS for a cross-build
+USES=		libtool
 
 .include <bsd.port.mk>
