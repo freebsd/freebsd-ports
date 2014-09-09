@@ -30,9 +30,9 @@ include/mysql++/tiny_int.h
 include/mysql++/type_info.h
 include/mysql++/vallist.h
 lib/libmysqlpp.a
-lib/libmysqlpp.la
 lib/libmysqlpp.so
 lib/libmysqlpp.so.4
+lib/libmysqlpp.so.4.0.0
 %%PORTDOCS%%%%DOCSDIR%%/mysqlpp-refman.pdf
 %%PORTDOCS%%%%DOCSDIR%%/mysqlpp-userman.pdf
 %%PORTDOCS%%%%DOCSDIR%%/refman/html/annotated.html
