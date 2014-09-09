@@ -1,4 +1,2 @@
-man/man8/tcptraceroute.8.gz
-@mode 4555
-sbin/tcptraceroute
-@mode
+@(root,wheel,4555) bin/tcptraceroute
+man/man1/tcptraceroute.1.gz

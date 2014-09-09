@@ -2,23 +2,27 @@
 # $FreeBSD$
 
 PORTNAME=	tcptraceroute
-PORTVERSION=	1.4
-PORTREVISION=	2
+PORTVERSION=	1.5beta7
 CATEGORIES=	net
-MASTER_SITES=	http://michael.toren.net/code/tcptraceroute/ \
-		LOCAL/sunpoet
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Traceroute implementation using TCP packets
 
 LICENSE=	GPLv2
 
-DEPRECATED=	Depends on expired net/libnet10
-EXPIRATION_DATE=	2014-09-30
+LIB_DEPENDS=	libnet.so:${PORTSDIR}/net/libnet
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/libnet10-config:${PORTSDIR}/net/libnet10
+OPTIONS_DEFINE=	DOCS
 
-post-patch:
-	@${REINPLACE_CMD} -e 's|libnet-config|libnet10-config|' ${WRKSRC}/Makefile
+GNU_CONFIGURE=	yes
+USES=		gmake
+
+PORTDOCS=	*
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	mct
+GH_COMMIT=	1ec970e
+GH_PROJECT=	${PORTNAME}
+GH_TAGNAME=	${PORTNAME}-${PORTVERSION}
 
 .include <bsd.port.mk>
