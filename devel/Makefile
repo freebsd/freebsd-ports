@@ -69,8 +69,6 @@
     SUBDIR += argouml
     SUBDIR += argp-standalone
     SUBDIR += argtable
-    SUBDIR += arm-eabi-binutils
-    SUBDIR += arm-eabi-gcc
     SUBDIR += arm-elf-binutils
     SUBDIR += arm-gnueabi-binutils
     SUBDIR += armv6-freebsd10.0-xdev
@@ -270,8 +268,6 @@
     SUBDIR += cpuflags
     SUBDIR += creduce
     SUBDIR += critcl
-    SUBDIR += cross-binutils
-    SUBDIR += cross-gcc
     SUBDIR += cscope
     SUBDIR += cscout
     SUBDIR += csmith
