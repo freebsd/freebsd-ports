@@ -61,7 +61,7 @@
 -GL_CFLAGS = -I$(MESADIR)/include -I/usr/X11R6/include
 +ifdef OPTIMIZED_CFLAGS
 +  ifeq ($(ARCH),i386)
-+RELEASE_CFLAGS=$(BASE_CFLAGS) -O3 -fomit-frame-pointer -pipe -ffast-math -falign-loops=2 -falign-jumps=2 -falign-functions=2 -fno-strict-aliasing -fstrength-reduce
++RELEASE_CFLAGS=$(BASE_CFLAGS) -O3 -fomit-frame-pointer -pipe -ffast-math -falign-functions=2 -fno-strict-aliasing -fstrength-reduce
 +  else
 +RELEASE_CFLAGS=$(BASE_CFLAGS) -O3 -ffast-math -funroll-loops -fomit-frame-pointer -fexpensive-optimizations
 +  endif
