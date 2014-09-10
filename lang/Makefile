@@ -279,7 +279,6 @@
     SUBDIR += scala-docs
     SUBDIR += scheme48
     SUBDIR += scm
-    SUBDIR += scsh
     SUBDIR += sdcc
     SUBDIR += sdcc-devel
     SUBDIR += see
