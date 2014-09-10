@@ -1,24 +1,34 @@
 @unexec %%RC_DIR%%/etc/rc.d/slapd stop 2>&1 >/dev/null || true
-etc/openldap/slapd.ldif.default
-etc/openldap/slapd.ldif
-@unexec if cmp -s %D/etc/openldap/slapd.conf %D/etc/openldap/slapd.conf.default; then rm -f %D/etc/openldap/slapd.conf; fi
-etc/openldap/slapd.conf.default
-@exec [ -f %B/slapd.conf ] || cp %B/%f %B/slapd.conf
-etc/openldap/schema/ppolicy.ldif
-etc/openldap/schema/pmi.ldif
-etc/openldap/schema/openldap.ldif
-etc/openldap/schema/nis.ldif
-etc/openldap/schema/misc.ldif
-etc/openldap/schema/java.ldif
-etc/openldap/schema/inetorgperson.ldif
-etc/openldap/schema/dyngroup.ldif
-etc/openldap/schema/duaconf.ldif
-etc/openldap/schema/cosine.ldif
-etc/openldap/schema/core.ldif
-etc/openldap/schema/corba.ldif
-etc/openldap/schema/collective.ldif
-etc/openldap/schema/README
-%%BACK_BDB%%etc/openldap/DB_CONFIG.example
+%%ETCDIR%%/schema/README
+%%ETCDIR%%/schema/collective.ldif
+@sample %%ETCDIR%%/schema/collective.schema.sample
+%%ETCDIR%%/schema/corba.ldif
+@sample %%ETCDIR%%/schema/corba.schema.sample
+%%ETCDIR%%/schema/core.ldif
+@sample %%ETCDIR%%/schema/core.schema.sample
+%%ETCDIR%%/schema/cosine.ldif
+@sample %%ETCDIR%%/schema/cosine.schema.sample
+%%ETCDIR%%/schema/duaconf.ldif
+@sample %%ETCDIR%%/schema/duaconf.schema.sample
+%%ETCDIR%%/schema/dyngroup.ldif
+@sample %%ETCDIR%%/schema/dyngroup.schema.sample
+%%ETCDIR%%/schema/inetorgperson.ldif
+@sample %%ETCDIR%%/schema/inetorgperson.schema.sample
+%%ETCDIR%%/schema/java.ldif
+@sample %%ETCDIR%%/schema/java.schema.sample
+%%ETCDIR%%/schema/misc.ldif
+@sample %%ETCDIR%%/schema/misc.schema.sample
+%%ETCDIR%%/schema/nis.ldif
+@sample %%ETCDIR%%/schema/nis.schema.sample
+%%ETCDIR%%/schema/openldap.ldif
+@sample %%ETCDIR%%/schema/openldap.schema.sample
+%%ETCDIR%%/schema/pmi.ldif
+@sample %%ETCDIR%%/schema/pmi.schema.sample
+%%ETCDIR%%/schema/ppolicy.ldif
+@sample %%ETCDIR%%/schema/ppolicy.schema.sample
+@sample %%ETCDIR%%/slapd.conf.sample
+@sample %%ETCDIR%%/slapd.ldif.sample
+%%BACK_BDB%%%%ETCDIR%%/DB_CONFIG.example
 %%SLAPI%%lib/libslapi-%%OPENLDAP_MAJOR%%.so.%%SHLIB_MAJOR%%
 %%SLAPI%%lib/libslapi-%%OPENLDAP_MAJOR%%.so.%%SHLIB_MAJOR%%.10.2
 %%SLAPI%%lib/libslapi.a
@@ -88,16 +98,6 @@ etc/openldap/schema/README
 %%SMBPWD%%libexec/openldap/smbk5pwd.so
 %%SMBPWD%%libexec/openldap/smbk5pwd.so.0
 libexec/slapd
-%%MODULES%%@dirrmtry libexec/openldap
-sbin/slapacl
-sbin/slapadd
-sbin/slapauth
-sbin/slapcat
-sbin/slapdn
-sbin/slapindex
-sbin/slappasswd
-sbin/slapschema
-sbin/slaptest
 man/man5/slapd-bdb.5.gz
 man/man5/slapd-config.5.gz
 man/man5/slapd-dnssrv.5.gz
@@ -152,5 +152,15 @@ man/man8/slapindex.8.gz
 man/man8/slappasswd.8.gz
 man/man8/slapschema.8.gz
 man/man8/slaptest.8.gz
+sbin/slapacl
+sbin/slapadd
+sbin/slapauth
+sbin/slapcat
+sbin/slapdn
+sbin/slapindex
+sbin/slappasswd
+sbin/slapschema
+sbin/slaptest
+%%MODULES%%@dirrmtry libexec/openldap
 @dirrmtry(%%LDAP_USER%%,%%LDAP_GROUP%%,) %%LDAP_RUN_DIR%%
 @dirrmtry(%%LDAP_USER%%,%%LDAP_GROUP%%,) %%DATABASEDIR%%
