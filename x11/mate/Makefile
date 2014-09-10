@@ -21,12 +21,12 @@ RUN_DEPENDS=	mate-base>=1.6.0:${PORTSDIR}/x11/mate-base \
 		mate-calc:${PORTSDIR}/math/mate-calc \
 		mate-screenshot:${PORTSDIR}/deskutils/mate-utils \
 		mate-system-monitor:${PORTSDIR}/sysutils/mate-system-monitor \
-		eom:${PORTSDIR}/graphics/mate-image-viewer \
-		engrampa:${PORTSDIR}/archivers/mate-file-archiver \
-		atril:${PORTSDIR}/graphics/mate-document-viewer \
+		eom:${PORTSDIR}/graphics/eom \
+		engrampa:${PORTSDIR}/archivers/engrampa \
+		atril:${PORTSDIR}/graphics/atril \
 		mate-volume-control:${PORTSDIR}/audio/mate-media \
 		mate-power-manager:${PORTSDIR}/sysutils/mate-power-manager \
-		mozo:${PORTSDIR}/deskutils/mate-menu-editor \
+		mozo:${PORTSDIR}/deskutils/mozo \
 		mate-applets>=1.6.0:${PORTSDIR}/x11/mate-applets
 
 USE_MATE=	pluma:run 
