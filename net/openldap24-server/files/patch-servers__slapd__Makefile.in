@@ -1,6 +1,6 @@
---- servers/slapd/Makefile.in.orig	2008-02-11 15:26:43.000000000 -0800
-+++ servers/slapd/Makefile.in	2008-07-19 20:10:16.023473779 -0700
-@@ -371,7 +371,6 @@
+--- servers/slapd/Makefile.in.orig	2014-01-25 13:36:15 UTC
++++ servers/slapd/Makefile.in
+@@ -377,7 +377,6 @@
  
  install-slapd: FORCE
  	-$(MKDIR) $(DESTDIR)$(libexecdir)
@@ -8,7 +8,7 @@
  	$(LTINSTALL) $(INSTALLFLAGS) $(STRIP) -m 755 \
  		slapd$(EXEEXT) $(DESTDIR)$(libexecdir)
  	@for i in $(SUBDIRS); do \
-@@ -406,16 +405,18 @@
+@@ -412,43 +411,28 @@
  	touch all-cffiles
  
  install-schema: FORCE
@@ -28,12 +28,31 @@
 +	files=`cd $(srcdir)/schema ; echo *.schema` ; \
 +	for i in $$files ; do \
 +		echo $(INSTALL) $(INSTALLFLAGS) -m 444 schema/$$i $$SD/$$i ; \
-+		[ -f $$SD/$$i ] || $(INSTALL) $(INSTALLFLAGS) -m 444 $(srcdir)/schema/$$i $$SD/$$i ; \
-+		$(INSTALL) $(INSTALLFLAGS) -m 444 $(srcdir)/schema/$$i $$SD/$$i.default ; \
++		$(INSTALL) $(INSTALLFLAGS) -m 444 $(srcdir)/schema/$$i $$SD/$$i.sample ; \
  	done
  
  install-conf: FORCE
-@@ -441,8 +442,6 @@
+ 	@-$(MKDIR) $(DESTDIR)$(sysconfdir)
+-	$(INSTALL) $(INSTALLFLAGS) -m 600 slapd.conf.tmp $(DESTDIR)$(sysconfdir)/slapd.conf.default
+-	if test ! -f $(DESTDIR)$(sysconfdir)/slapd.conf; then \
+-		echo "installing slapd.conf in $(sysconfdir)"; \
+-		echo "$(INSTALL) $(INSTALLFLAGS) -m 600 slapd.conf.tmp $(DESTDIR)$(sysconfdir)/slapd.conf"; \
+-		$(INSTALL) $(INSTALLFLAGS) -m 600 slapd.conf.tmp $(DESTDIR)$(sysconfdir)/slapd.conf; \
+-	else \
+-		echo "PRESERVING EXISTING CONFIGURATION FILE $(DESTDIR)$(sysconfdir)/slapd.conf" ; \
+-	fi
+-	$(INSTALL) $(INSTALLFLAGS) -m 600 slapd.ldif.tmp $(DESTDIR)$(sysconfdir)/slapd.ldif.default
+-	if test ! -f $(DESTDIR)$(sysconfdir)/slapd.ldif; then \
+-		echo "installing slapd.ldif in $(sysconfdir)"; \
+-		echo "$(INSTALL) $(INSTALLFLAGS) -m 600 slapd.ldif.tmp $(DESTDIR)$(sysconfdir)/slapd.ldif"; \
+-		$(INSTALL) $(INSTALLFLAGS) -m 600 slapd.ldif.tmp $(DESTDIR)$(sysconfdir)/slapd.ldif; \
+-	else \
+-		echo "PRESERVING EXISTING CONFIGURATION FILE $(DESTDIR)$(sysconfdir)/slapd.ldif" ; \
+-	fi
++	$(INSTALL) $(INSTALLFLAGS) -m 600 slapd.conf.tmp $(DESTDIR)$(sysconfdir)/slapd.conf.sample
++	$(INSTALL) $(INSTALLFLAGS) -m 600 slapd.ldif.tmp $(DESTDIR)$(sysconfdir)/slapd.ldif.sample
+ 
+ install-db-config: FORCE
  	@-$(MKDIR) $(DESTDIR)$(localstatedir) $(DESTDIR)$(sysconfdir)
  	@-$(INSTALL) -m 700 -d $(DESTDIR)$(localstatedir)/openldap-data
  	$(INSTALL) $(INSTALLFLAGS) -m 600 $(srcdir)/DB_CONFIG \

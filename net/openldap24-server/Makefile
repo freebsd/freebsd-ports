@@ -58,8 +58,8 @@ WANT_OPENLDAP_VER?=	24
 BROKEN=			incompatible OpenLDAP version: ${WANT_OPENLDAP_VER}
 .endif
 
-PORTREVISION_CLIENT=	1
-PORTREVISION_SERVER=	3
+PORTREVISION_CLIENT=	2
+PORTREVISION_SERVER=	4
 OPENLDAP_SHLIB_MAJOR=	2
 OPENLDAP_MAJOR=		${DISTVERSION:R}
 
@@ -521,13 +521,7 @@ post-build:
 .endif
 .endif
 
-pre-su-install:
-	@if [ -f ${PKGINSTALL} ]; then \
-		${SETENV} PKG_PREFIX="${PREFIX}" ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL; \
-	fi
-.if ${PORT_OPTIONS:MMODULES} || ${PORT_OPTIONS:MDYNAMIC_BACKENDS} || ${PORT_OPTIONS:MSLAPI}
-	@${MKDIR} ${STAGEDIR}${PREFIX}/libexec/openldap
-.endif
+pre-install:
 .if !defined(CLIENT_ONLY)
 	@${MKDIR} ${STAGEDIR}${DATABASEDIR}
 .endif
@@ -544,16 +538,6 @@ post-install:
 		${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/lib$${library}-${OPENLDAP_MAJOR}.so.${OPENLDAP_SHLIB_MAJOR}; \
 	done
 .else
-	@${MKDIR} ${STAGEDIR}${LDAP_RUN_DIR}
-	@for schema in ${SCHEMATA}; do \
-		${ECHO_CMD} "@unexec if cmp -s %D/etc/openldap/schema/$${schema}.schema " \
-			"%D/etc/openldap/schema/$${schema}.schema.default; then" \
-			"rm -f %D/etc/openldap/schema/$${schema}.schema; fi"; \
-		${ECHO_CMD} "etc/openldap/schema/$${schema}.schema.default"; \
-		${ECHO_CMD} "@exec [ -f %B/$${schema}.schema ] || ${CP} %B/%f %B/$${schema}.schema"; \
-	done >>${TMPPLIST}
-	@${ECHO_CMD} "@unexec ${RMDIR} %D/etc/openldap/schema 2>/dev/null || true" >>${TMPPLIST}
-	@${ECHO_CMD} "@unexec ${RMDIR} %D/etc/openldap 2>/dev/null || true" >>${TMPPLIST}
 .if ${PORT_OPTIONS:MDYNAMIC_BACKENDS}
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/libexec/openldap/*.so.${OPENLDAP_SHLIB_MAJOR}
 .endif
@@ -571,6 +555,6 @@ post-install:
 		${STAGEDIR}${PREFIX}/libexec/openldap/
 	@${LN} -s pw-sha2.so.0 ${STAGEDIR}${PREFIX}/libexec/openldap/pw-sha2.so
 .endif
-.endif
+.endif # defined(CLIENT_ONLY)
 
 .include <bsd.port.post.mk>

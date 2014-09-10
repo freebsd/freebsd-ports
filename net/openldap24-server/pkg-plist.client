@@ -8,10 +8,7 @@ bin/ldappasswd
 bin/ldapsearch
 bin/ldapurl
 bin/ldapwhoami
-@unexec if cmp -s %D/etc/openldap/ldap.conf %D/etc/openldap/ldap.conf.default; then rm -f %D/etc/openldap/ldap.conf; fi
-etc/openldap/ldap.conf.default
-@exec [ -f %B/ldap.conf ] || cp %B/%f %B/ldap.conf
-@dirrmtry etc/openldap
+@sample %%ETCDIR%%/ldap.conf.sample
 include/lber.h
 include/lber_types.h
 include/ldap.h
@@ -230,3 +227,4 @@ man/man3/ldap_value_free.3.gz
 man/man3/ldap_value_free_len.3.gz
 man/man5/ldap.conf.5.gz
 man/man5/ldif.5.gz
+@dirrmtry %%ETCDIR%%
