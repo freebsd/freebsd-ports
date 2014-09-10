@@ -3,7 +3,7 @@
 
 PORTNAME=	fityk
 PORTVERSION=	0.9.8
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	math
 MASTER_SITES=	SF/xylib:xylib
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:DEFAULT \
@@ -19,7 +19,7 @@ BUILD_DEPENDS=	${LOCALBASE}/include/boost/spirit/include/classic_core.hpp:${PORT
 		gnuplot:${PORTSDIR}/math/gnuplot
 RUN_DEPENDS=	gnuplot:${PORTSDIR}/math/gnuplot
 
-USES=		desktop-file-utils gmake libtool:keepla shared-mime-info tar:bzip2
+USES=		desktop-file-utils gmake libtool shared-mime-info tar:bzip2
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 LDFLAGS+=	-lbz2 -lz
 USE_GITHUB=	yes
