@@ -3,7 +3,7 @@
 
 PORTNAME=	libkate
 PORTVERSION=	0.4.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 
@@ -11,12 +11,13 @@ MAINTAINER=	bar@FreeBSD.org
 COMMENT=	Codec for karaoke and text encapsulation for Ogg
 
 LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libogg.so:${PORTSDIR}/audio/libogg \
 		libpng.so:${PORTSDIR}/graphics/png
 
 GNU_CONFIGURE=	yes
-USES=		pkgconfig gmake libtool:oldver
+USES=		pkgconfig gmake libtool
 USE_LDCONFIG=	yes
 
 CFLAGS+=	"-I${LOCALBASE}/include"
