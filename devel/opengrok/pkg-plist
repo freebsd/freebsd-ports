@@ -1,25 +1,25 @@
-@unexec if cmp -s %D/%%T%%/webapps/opengrok/WEB-INF/web.xml %D/%%T%%/webapps/opengrok/WEB-INF/web.xml.%%CONF_EXT%%; then rm -f %D/%%T%%/webapps/opengrok/WEB-INF/web.xml; fi
 bin/opengrok
-%%PORTDOCS%%%%DOCSDIR%%/CHANGES.txt
-%%PORTDOCS%%%%DOCSDIR%%/EXAMPLE.txt
-%%PORTDOCS%%%%DOCSDIR%%/LICENSE.txt
 %%DATADIR%%/lib/ant.jar
 %%DATADIR%%/lib/bcel-5.2.jar
 %%DATADIR%%/lib/jrcs.jar
-%%DATADIR%%/lib/lucene-core-3.0.2.jar
-%%DATADIR%%/lib/lucene-spellchecker-3.0.2.jar
+%%DATADIR%%/lib/lucene-core-4.7.1.jar
+%%DATADIR%%/lib/lucene-queryparser-4.7.1.jar
+%%DATADIR%%/lib/lucene-suggest-4.7.1.jar
 %%DATADIR%%/lib/swing-layout-0.9.jar
 %%DATADIR%%/opengrok.jar
+@group %%OWNER%%
+@owner %%GROUP%%
 %%T%%/webapps/opengrok/META-INF/MANIFEST.MF
 %%T%%/webapps/opengrok/WEB-INF/lib/ant.jar
 %%T%%/webapps/opengrok/WEB-INF/lib/bcel-5.2.jar
 %%T%%/webapps/opengrok/WEB-INF/lib/jrcs.jar
-%%T%%/webapps/opengrok/WEB-INF/lib/lucene-core-3.0.2.jar
-%%T%%/webapps/opengrok/WEB-INF/lib/lucene-spellchecker-3.0.2.jar
+%%T%%/webapps/opengrok/WEB-INF/lib/lucene-analyzers-common-4.7.1.jar
+%%T%%/webapps/opengrok/WEB-INF/lib/lucene-core-4.7.1.jar
+%%T%%/webapps/opengrok/WEB-INF/lib/lucene-queryparser-4.7.1.jar
+%%T%%/webapps/opengrok/WEB-INF/lib/lucene-suggest-4.7.1.jar
 %%T%%/webapps/opengrok/WEB-INF/lib/opengrok.jar
 %%T%%/webapps/opengrok/WEB-INF/lib/swing-layout-0.9.jar
-%%T%%/webapps/opengrok/WEB-INF/web.xml.%%CONF_EXT%%
-@exec if [ ! -f %D/%%T%%/webapps/opengrok/WEB-INF/web.xml ]; then cp %D/%%T%%/webapps/opengrok/WEB-INF/web.xml.%%CONF_EXT%% %D/%%T%%/webapps/opengrok/WEB-INF/web.xml; fi
+@sample %%T%%/webapps/opengrok/WEB-INF/web.xml.sample
 %%T%%/webapps/opengrok/default/img/Logo.png
 %%T%%/webapps/opengrok/default/img/bg.png
 %%T%%/webapps/opengrok/default/img/button1.png
@@ -113,6 +113,8 @@ bin/opengrok
 %%T%%/webapps/opengrok/search.jsp
 %%T%%/webapps/opengrok/status.jsp
 %%T%%/webapps/opengrok/utils.js
+@group
+@owner
 @dirrmtry %%T%%/webapps/opengrok/META-INF
 @dirrmtry %%T%%/webapps/opengrok/WEB-INF/lib
 @dirrmtry %%T%%/webapps/opengrok/WEB-INF
@@ -125,4 +127,3 @@ bin/opengrok
 @dirrmtry %%T%%/webapps/opengrok
 @dirrmtry %%DATADIR%%/lib
 @dirrmtry %%DATADIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
