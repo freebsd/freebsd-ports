@@ -3,7 +3,7 @@
 
 PORTNAME=	revelation
 PORTVERSION=	0.4.14
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	security gnome
 MASTER_SITES=	https://bitbucket.org/erikg/revelation/downloads/
 
@@ -15,7 +15,7 @@ LICENSE=	GPLv2
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dbus>0:${PORTSDIR}/devel/py-dbus \
 		${PYTHON_PKGNAMEPREFIX}pycrypto>0:${PORTSDIR}/security/py-pycrypto
 LIB_DEPENDS=	libcrack.so:${PORTSDIR}/security/cracklib
-RUN_DEPENDS:=	${BULID_DEPENDS} \
+RUN_DEPENDS:=	${BUILD_DEPENDS} \
 		${PYTHON_PKGNAMEPREFIX}cracklib>0:${PORTSDIR}/security/py-cracklib
 
 USES=		desktop-file-utils gettext gmake pathfix pkgconfig python \
