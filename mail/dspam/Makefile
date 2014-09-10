@@ -503,7 +503,7 @@ post-install:
 	cd ${WRKSRC}/src/tools.sqlite_drv && \
 		${INSTALL_DATA} *.sql ${STAGEDIR}${EXAMPLESDIR}/sqlite
 .endif
-.endif	# NOPORTEXAMPLES
+.endif	# PORT_OPTIONS:MEXAMPLES
 
 .if ${PORT_OPTIONS:MWEBUI}
 	${MV} ${WRKSRC}/webui/cgi-bin/configure.pl ${WRKSRC}/webui/cgi-bin/configure.pl.sample
