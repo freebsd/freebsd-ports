@@ -25,7 +25,6 @@ include/mq4cpp/Trace.h
 include/mq4cpp/Vector.h
 include/mq4cpp/rijndael.h
 lib/libmq4cpp.a
-lib/libmq4cpp.la
 lib/libmq4cpp.so
 lib/libmq4cpp.so.1
 lib/libmq4cpp.so.1.16.0
