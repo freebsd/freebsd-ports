@@ -3,7 +3,7 @@
 
 PORTNAME=	mq4cpp
 PORTVERSION=	1.16
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel
 MASTER_SITES=	http://www.sixtyfourbit.org/Download/
 
@@ -13,7 +13,7 @@ COMMENT=	Message Queuing for C++
 OPTIONS_DEFINE=	DOCS
 
 USE_LDCONFIG=	yes
-USES=		dos2unix libtool:keepla pathfix pkgconfig tar:bzip2
+USES=		dos2unix libtool pathfix pkgconfig tar:bzip2
 GNU_CONFIGURE=	yes
 
 .include <bsd.port.mk>
