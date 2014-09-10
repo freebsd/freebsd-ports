@@ -39,7 +39,7 @@ post-patch:
 		${WRKSRC}/src/Makefile
 
 do-install:
-	${INSTALL_PROGRAM} -m 2555 ${WRKSRC}/src/products/upclient \
+	${INSTALL_PROGRAM} ${WRKSRC}/src/products/upclient \
 		${STAGEDIR}${PREFIX}/sbin
 	${INSTALL_MAN} ${WRKSRC}/src/products/upclient.8 \
 		${STAGEDIR}${MAN8PREFIX}/man/man8
