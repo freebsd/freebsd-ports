@@ -1,10 +1,12 @@
---- ./Makefile.orig	2009-07-11 22:18:22.000000000 +0200
-+++ ./Makefile	2011-02-14 14:34:38.000000000 +0100
-@@ -2,8 +2,9 @@
+--- Makefile.orig	2014-09-10 09:44:18.886311642 +0200
++++ Makefile	2014-09-10 09:44:13.089316817 +0200
+@@ -1,9 +1,10 @@
+ LEX	= flex
  BUILD	= jethro kraut cockney jive nyc ken ky00te newspeak nethackify scramble
  OTHER	= eleet b1ff chef jibberish upside-down rasterman studly fudd \
- 	  censor spammer uniencode pirate kenny scottish fanboy
+-	  censor spammer uniencode pirate kenny scottish fanboy lolcat
 -CFLAGS	= -O2 -lfl
++	  censor spammer uniencode pirate kenny scottish fanboy
 +LDFLAGS+=	-lfl
  export CFLAGS
 +export LDFLAGS
