@@ -2,7 +2,6 @@ bin/matdump
 include/matio.h
 include/matio_pubconf.h
 lib/libmatio.a
-lib/libmatio.la
 lib/libmatio.so
 lib/libmatio.so.2
 lib/libmatio.so.2.0.2
