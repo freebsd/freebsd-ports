@@ -182,9 +182,9 @@ SUEXEC_USERDIR?=	public_html
 # avoid duplicate search paths
 .if ${LOCALBASE} == ${PREFIX}
 SUEXEC_SAFEPATH?=	${LOCALBASE}/bin:/usr/bin:/bin
-.else	
+.else
 SUEXEC_SAFEPATH?=	${PREFIX}/bin:${LOCALBASE}/bin:/usr/bin:/bin
-.endif	
+.endif
 SUEXEC_LOGFILE?=	/var/log/httpd-suexec.log
 SUEXEC_UIDMIN?=		1000
 SUEXEC_GIDMIN?=		1000
@@ -214,13 +214,13 @@ APACHE_MODULES+=	${module}
 .endif
 
 .if defined(WITH_STATIC_MODULES)
-.  for module in ${APACHE_MODULES}
-.    if ${WITH_STATIC_MODULES:M${module}}
+.for module in ${APACHE_MODULES}
+.	if ${WITH_STATIC_MODULES:M${module}}
 _CONFIGURE_ARGS+=	--enable-${module:tl}
-.    else
+.	else
 _CONFIGURE_ARGS+=	--enable-${module:tl}=shared
-.    endif
-.  endfor
+.	endif
+.endfor
 CONFIGURE_ARGS+=	${_CONFIGURE_ARGS:O}
 .elif defined(WITH_STATIC_APACHE) || defined(WITH_ALL_STATIC_MODULES)
 WITH_STATIC_MODULES=	${APACHE_MODULES}
@@ -279,17 +279,8 @@ SRC_FILE?=	${MODULENAME}.c
 
 .if exists(${HTTPD})
 _APACHE_VERSION!=	${HTTPD} -V | ${SED} -ne 's/^Server version: Apache\/\([0-9]\)\.\([0-9]*\).*/\1\2/p'
-# XXX see mod_perl-2.0.6/Changes
-# Apache 2.4 and onwards doesn't require linking the MPM module
-# directly in the httpd binary anymore. APXS lost the MPM_NAME query,
-# so we can't assume a given MPM anymore.
-.	if ${_APACHE_VERSION} <= 22
-APACHE_MPM!=		${APXS} -q MPM_NAME
-.	endif
 .elif defined(APACHE_PORT)
 _APACHE_VERSION!=	${ECHO_CMD} ${APACHE_PORT} | ${SED} -ne 's,.*/apache\([0-9]*\).*,\1,p'
-.else
-_APACHE_VERSION:=	${DEFAULT_APACHE_VERSION}
 .endif
 
 .if defined(USE_APACHE)
@@ -306,29 +297,59 @@ _APACHE_VERSION_MINIMUM:=	${_APACHE_VERSION_MINIMUM_TMP:M[1-9][0-9]}
 _APACHE_VERSION_MAXIMUM_TMP:=	${_APACHE_VERSION_CHECK:C/.*-([1-9][0-9])/\1/}
 _APACHE_VERSION_MAXIMUM:=	${_APACHE_VERSION_MAXIMUM_TMP:M[1-9][0-9]}
 
-.if defined(_APACHE_VERSION)
-# Validate Apache version whether it meets USE_APACHE version restriction.
-.	if !empty(_APACHE_VERSION_MINIMUM) && (${_APACHE_VERSION} < ${_APACHE_VERSION_MINIMUM})
-_APACHE_VERSION_NONSUPPORTED=	${_APACHE_VERSION_MINIMUM} at least
-.	elif !empty(_APACHE_VERSION_MAXIMUM) && (${_APACHE_VERSION} > ${_APACHE_VERSION_MAXIMUM})
-_APACHE_VERSION_NONSUPPORTED=	${_APACHE_VERSION_MAXIMUM} at most
+# ==============================================================
+# num+
+.if ${_USE_APACHE:M*+}
+_APACHE_WANTED_VERSIONS=	${DEFAULT_APACHE_VERSION}
+
+# -num
+.elif ${_USE_APACHE:M\-[0-9][0-9]}
+.for _v in ${APACHE_SUPPORTED_VERSION:O}
+.	if ${_APACHE_VERSION_MAXIMUM} >= ${_v}
+_APACHE_WANTED_VERSIONS+=	${_v}
 .	endif
+.endfor
 
-.	if defined(_APACHE_VERSION_NONSUPPORTED) && !defined(AP_IGNORE_VERSION_CHECK)
+# num-num
+.elif ${_USE_APACHE:M[0-9][0-9]-[0-9][0-9]}
+.for _v in ${APACHE_SUPPORTED_VERSION}
+.	if ${_APACHE_VERSION_MINIMUM} <= ${_v} && ${_APACHE_VERSION_MAXIMUM} >= ${_v}
+_APACHE_WANTED_VERSIONS+=	${_v}
+.	endif
+.endfor
+
+# num
+.elif ${_USE_APACHE:M[0-9][0-9]}
+_APACHE_WANTED_VERSIONS=	${_USE_APACHE:M[0-9][0-9]}
+.endif
+# ==============================================================
+
+.if !defined(_APACHE_WANTED_VERSIONS)
+_APACHE_WANTED_VERSIONS=	${DEFAULT_APACHE_VERSION}
+.endif
+
+.for _v in ${_APACHE_WANTED_VERSIONS:O:u}
+_APACHE_HIGHEST_VERSION:=	${_v}
+.	if defined (_APACHE_VERSION) && ${_APACHE_VERSION} == ${_v}
+_APACHE_WANTED_VERSION:=	${_v}
+.	endif
+.endfor
+
+.if !defined(_APACHE_WANTED_VERSION)
+# next line is broken on 8.x and 9.x but working on 10
+#_APACHE_WANTED_VERSION:=	${_APACHE_WANTED_VERSIONS:O:u:M${DEFAULT_APACHE_VERSION}}
+# working line on 8.x, 9.x, 10
+_APACHE_WANTED_VERSION:=	${_APACHE_WANTED_VERSIONS:O:u:MDEFAULT_APACHE_VERSION}
+.	if empty(_APACHE_WANTED_VERSION)
+_APACHE_WANTED_VERSION:=	${_APACHE_HIGHEST_VERSION}
+.	endif
+.endif
+
+.if defined(_APACHE_VERSION) && ${_APACHE_VERSION} != ${_APACHE_WANTED_VERSION}
 BROKEN=	${_ERROR_MSG} apache${_APACHE_VERSION} is installed (or APACHE_PORT is defined) and port requires apache${_APACHE_VERSION_NONSUPPORTED}
-.	 endif
-.else 		# defined(_APACHE_VERSION)
-.	for ver in ${APACHE_SUPPORTED_VERSION}
-__VER=	${ver}
-.		if !defined(_APACHE_VERSION) && \
-			!(!empty(_APACHE_VERSION_MINIMUM) && ( ${__VER} < ${_APACHE_VERSION_MINIMUM} )) && \
-			!(!empty(_APACHE_VERSION_MAXIMUM) && ( ${__VER} > ${_APACHE_VERSION_MAXIMUM} ))
-_APACHE_VERSION=	${ver}
-.		endif
-.	endfor
-.endif 		# defined(_APACHE_VERSION)
+.endif
 
-APACHE_VERSION:=	${_APACHE_VERSION}
+APACHE_VERSION:=	${_APACHE_WANTED_VERSION}
 
 .if exists(${APXS})
 APXS_PREFIX!=	${APXS} -q prefix 2> /dev/null || echo NULL
@@ -487,7 +508,7 @@ do-build: ap-gen-plist
 do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/${APACHEMODDIR}
 	@${APXS} -S LIBEXECDIR=${STAGEDIR}${PREFIX}/${APACHEMODDIR} -i -n ${SHORTMODNAME} ${WRKSRC}/${MODULENAME}.${AP_BUILDEXT}
-.	if !defined(DEBUG)	
+.	if !defined(DEBUG)
 		@${ECHO_MSG} "===> strip ${APACHEMODDIR}/${MODULENAME}.so"
 		@[ -e ${STAGEDIR}${PREFIX}/${APACHEMODDIR}/${MODULENAME}.so ] && ${STRIP_CMD} ${STAGEDIR}${PREFIX}/${APACHEMODDIR}/${MODULENAME}.so
 .	else
