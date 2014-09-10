@@ -1,6 +1,6 @@
---- Makefile.in.orig	2014-05-24 01:53:08.831304467 +0800
-+++ Makefile.in	2014-05-24 01:53:59.915300970 +0800
-@@ -15,21 +15,21 @@ distclean:
+--- Makefile.in.orig	2013-06-16 16:33:09 UTC
++++ Makefile.in
+@@ -15,21 +15,21 @@
  	rm -f src/Makefile
  
  install:
@@ -19,21 +19,21 @@
 -	${INSTALL} -m 0644 -g wheel -o root src/fixed-dtoa.h @prefix@/include/double-conversion/
 -	${INSTALL} -m 0644 -g wheel -o root src/diy-fp.h @prefix@/include/double-conversion/
 -	${INSTALL} -m 0644 -g wheel -o root src/ieee.h @prefix@/include/double-conversion/
-+	${INSTALL} -m 0755 -g wheel -o root src/.libs/libdouble-conversion.so.0 $(DESTDIR)@prefix@/lib
-+	${INSTALL} -m 0755 -g wheel -o root src/.libs/libdouble-conversion.so $(DESTDIR)@prefix@/lib
-+	${INSTALL} -m 0755 -g wheel -o root src/.libs/libdouble-conversion.la $(DESTDIR)@prefix@/lib
-+	${INSTALL} -m 0755 -g wheel -o root src/.libs/libdouble-conversion.a $(DESTDIR)@prefix@/lib
++	$(BSD_INSTALL_LIB) src/.libs/libdouble-conversion.so.0.0.0 $(DESTDIR)@prefix@/lib
++	ln -sf libdouble-conversion.so.0.0.0 $(DESTDIR)@prefix@/lib/libdouble-conversion.so.0
++	ln -sf libdouble-conversion.so.0.0.0 $(DESTDIR)@prefix@/lib/libdouble-conversion.so
++	$(BSD_INSTALL_DATA) src/.libs/libdouble-conversion.a $(DESTDIR)@prefix@/lib
 +	mkdir -p $(DESTDIR)@prefix@/include/double-conversion
-+	${INSTALL} -m 0644 -g wheel -o root src/bignum-dtoa.h $(DESTDIR)@prefix@/include/double-conversion/
-+	${INSTALL} -m 0644 -g wheel -o root src/double-conversion.h $(DESTDIR)@prefix@/include/double-conversion/
-+	${INSTALL} -m 0644 -g wheel -o root src/strtod.h $(DESTDIR)@prefix@/include/double-conversion/
-+	${INSTALL} -m 0644 -g wheel -o root src/bignum.h $(DESTDIR)@prefix@/include/double-conversion/
-+	${INSTALL} -m 0644 -g wheel -o root src/fast-dtoa.h $(DESTDIR)@prefix@/include/double-conversion/
-+	${INSTALL} -m 0644 -g wheel -o root src/utils.h $(DESTDIR)@prefix@/include/double-conversion/
-+	${INSTALL} -m 0644 -g wheel -o root src/cached-powers.h $(DESTDIR)@prefix@/include/double-conversion/
-+	${INSTALL} -m 0644 -g wheel -o root src/fixed-dtoa.h $(DESTDIR)@prefix@/include/double-conversion/
-+	${INSTALL} -m 0644 -g wheel -o root src/diy-fp.h $(DESTDIR)@prefix@/include/double-conversion/
-+	${INSTALL} -m 0644 -g wheel -o root src/ieee.h $(DESTDIR)@prefix@/include/double-conversion/
++	$(BSD_INSTALL_DATA) src/bignum-dtoa.h $(DESTDIR)@prefix@/include/double-conversion/
++	$(BSD_INSTALL_DATA) src/double-conversion.h $(DESTDIR)@prefix@/include/double-conversion/
++	$(BSD_INSTALL_DATA) src/strtod.h $(DESTDIR)@prefix@/include/double-conversion/
++	$(BSD_INSTALL_DATA) src/bignum.h $(DESTDIR)@prefix@/include/double-conversion/
++	$(BSD_INSTALL_DATA) src/fast-dtoa.h $(DESTDIR)@prefix@/include/double-conversion/
++	$(BSD_INSTALL_DATA) src/utils.h $(DESTDIR)@prefix@/include/double-conversion/
++	$(BSD_INSTALL_DATA) src/cached-powers.h $(DESTDIR)@prefix@/include/double-conversion/
++	$(BSD_INSTALL_DATA) src/fixed-dtoa.h $(DESTDIR)@prefix@/include/double-conversion/
++	$(BSD_INSTALL_DATA) src/diy-fp.h $(DESTDIR)@prefix@/include/double-conversion/
++	$(BSD_INSTALL_DATA) src/ieee.h $(DESTDIR)@prefix@/include/double-conversion/
  
  deinstall:
  	rm -f @prefix@/lib/libdouble-conversion.so.0
