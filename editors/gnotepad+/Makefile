@@ -28,16 +28,11 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 DOCVERSION=	1.2.0
 
 OPTIONS_DEFINE=	DOCS
+OPTIONS_SUB=	yes
 
 DOCS_DISTFILES=	${PORTNAME}-help-${DOCVERSION}${EXTRACT_SUFX}:doc
 
 .include <bsd.port.options.mk>
-
-.if ! ${PORT_OPTIONS:MDOCS}
-PLIST_SUB+=	NOPORTDOCS=""
-.else
-PLIST_SUB+=	NOPORTDOCS="@comment "
-.endif
 
 post-extract:
 .if ${PORT_OPTIONS:MDOCS}
