@@ -26,7 +26,4 @@ MAKE_ARGS=	PREFIX=${STAGEDIR}${PREFIX}
 post-patch:
 	${RM} ${WRKSRC}/Include/getopt.h ${WRKSRC}/Modules/getopt.c
 
-post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/lnpdump
-
 .include <bsd.port.mk>

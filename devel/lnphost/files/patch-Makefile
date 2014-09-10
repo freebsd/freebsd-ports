@@ -36,10 +36,10 @@
 -	install -g root -o root -m 644 Docs/lnpdump.1.gz $(MANDIR)
 -	install -g root -o root -m 755 lnpdump$(EXT) $(BINDIR)
 +	${MAKE} -C Docs all
-+	install -g 0 -o 0 -m 644 Docs/lnpdump.1 $(MANDIR)
-+	install -g 0 -o 0 -m 755 lnpdump$(EXT) $(BINDIR)
-+	install -g 0 -o 0 -m 0644 lnphost.a $(LIBDIR)
-+	install -g 0 -o 0 -m 0644 Include/lnphost.h $(INCDIR)
++	$(BSD_INSTALL_MAN) Docs/lnpdump.1 $(MANDIR)
++	$(BSD_INSTALL_PROGRAM) lnpdump$(EXT) $(BINDIR)
++	$(BSD_INSTALL_DATA) lnphost.a $(LIBDIR)
++	$(BSD_INSTALL_DATA) Include/lnphost.h $(INCDIR)
  
  remove: needroot
 -	rm -f $(MANDIR)/lnpdump.1.gz
