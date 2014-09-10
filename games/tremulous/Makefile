@@ -7,7 +7,7 @@ PORTREVISION=	9
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION:R}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	games@FreeBSD.org
 COMMENT=	Free FPS game featuring two opposing teams: humans and aliens
 
 LICENSE=	GPLv2
@@ -39,7 +39,7 @@ SMP_CLIENT_DESC=	Build SMP (threaded) client
 .include <bsd.port.options.mk>
 
 .for arch in ${ARCH}
-.  if ${VM_ARCHS:M${arch}} != ""
+.  if ${VM_ARCHS:M${arch}}
 HAVE_VM_COMPILED=	yes
 .  endif
 .endfor
@@ -125,10 +125,13 @@ post-extract:
 post-patch:
 	@${REINPLACE_CMD} -e 's|botlib\.log|/dev/null|' \
 		${BUILD_WRKSRC}/src/botlib/be_interface.c
+	@${REINPLACE_CMD} -e '/callMask = 0/s|^static||' \
+		${BUILD_WRKSRC}/src/qcommon/vm_x86.c
 
 do-install:
 .for bin in ${TRBIN}
-	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/build/release/${bin} ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/build/release/${bin} \
+		${STAGEDIR}${PREFIX}/bin
 .endfor
 .if ${PORT_OPTIONS:MMASTER_SERVER}
 	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/src/master/release/tremmaster \
@@ -136,6 +139,7 @@ do-install:
 .endif
 	@${MKDIR} ${STAGEDIR}${DATADIR}/base
 	${INSTALL_DATA} ${WRKSRC}/base/* ${STAGEDIR}${DATADIR}/base
-	${INSTALL_DATA} ${WRKSRC}/tremulous.xpm ${STAGEDIR}${PREFIX}/share/pixmaps
+	${INSTALL_DATA} ${WRKSRC}/tremulous.xpm \
+		${STAGEDIR}${PREFIX}/share/pixmaps
 
 .include <bsd.port.mk>

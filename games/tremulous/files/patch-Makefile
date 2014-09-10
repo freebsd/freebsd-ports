@@ -62,7 +62,45 @@
  CDIR=$(MOUNT_DIR)/client
  SDIR=$(MOUNT_DIR)/server
  RDIR=$(MOUNT_DIR)/renderer
-@@ -412,18 +397,12 @@
+@@ -202,15 +187,13 @@
+ 
+   ifeq ($(ARCH),x86_64)
+     OPTIMIZE = -O3 -fomit-frame-pointer -ffast-math -funroll-loops \
+-      -falign-loops=2 -falign-jumps=2 -falign-functions=2 \
+-      -fstrength-reduce
++      -falign-functions=2 -fstrength-reduce
+     # experimental x86_64 jit compiler! you need GNU as
+     HAVE_VM_COMPILED = true
+   else
+   ifeq ($(ARCH),x86)
+     OPTIMIZE = -O3 -march=i586 -fomit-frame-pointer -ffast-math \
+-      -funroll-loops -falign-loops=2 -falign-jumps=2 \
+-      -falign-functions=2 -fstrength-reduce
++      -funroll-loops -falign-functions=2 -fstrength-reduce
+     HAVE_VM_COMPILED=true
+   else
+   ifeq ($(ARCH),ppc)
+@@ -293,7 +276,7 @@
+     GL_CFLAGS =
+   endif
+ 
+-  OPTIMIZE = -O3 -ffast-math -falign-loops=16
++  OPTIMIZE = -O3 -ffast-math
+ 
+   ifeq ($(ARCH),ppc)
+   BASE_CFLAGS += -faltivec
+@@ -375,8 +358,8 @@
+   GL_CFLAGS =
+   MINGW_CFLAGS = -DDONT_TYPEDEF_INT32
+ 
+-  OPTIMIZE = -O3 -march=i586 -fomit-frame-pointer -ffast-math -falign-loops=2 \
+-    -funroll-loops -falign-jumps=2 -falign-functions=2 -fstrength-reduce
++  OPTIMIZE = -O3 -march=i586 -fomit-frame-pointer -ffast-math \
++    -funroll-loops -falign-functions=2 -fstrength-reduce
+ 
+   DEBUG_CFLAGS=$(BASE_CFLAGS) -g -O0
+ 
+@@ -412,18 +395,12 @@
  
  ifeq ($(PLATFORM),freebsd)
  
@@ -84,7 +122,7 @@
  
    ifeq ($(USE_OPENAL),1)
      BASE_CFLAGS += -DUSE_OPENAL=1
-@@ -436,46 +415,62 @@
+@@ -436,46 +413,61 @@
      BASE_CFLAGS += -DUSE_CODEC_VORBIS=1
    endif
  
@@ -114,7 +152,7 @@
 -    BASE_CFLAGS += -DNO_VM_COMPILED
 +  ifeq ($(USE_SDL_AUDIO),1)
 +    BASE_CFLAGS += -DUSE_SDL_SOUND=1
-+  endif
+   endif
 +
 +  ifeq ($(USE_SDL_VIDEO),1)
 +    BASE_CFLAGS += -DUSE_SDL_VIDEO=1
@@ -124,10 +162,9 @@
 +    RELEASE_CFLAGS+=-O3 -ffast-math -funroll-loops -fomit-frame-pointer \
 +       -fexpensive-optimizations
 +    ifeq ($(ARCH),i386)
-+      RELEASE_CFLAGS+=-falign-loops=2 -falign-jumps=2 -falign-functions=2 \
-+         -fstrength-reduce
++      RELEASE_CFLAGS+=-falign-functions=2 -fstrength-reduce
 +    endif
-   endif
++  endif
 +
 +  HAVE_VM_COMPILED?=false
 +  ifneq ($(HAVE_VM_COMPILED),true)
@@ -170,7 +207,27 @@
      endif
    endif
  
-@@ -637,21 +632,22 @@
+@@ -574,16 +566,15 @@
+   OPTIMIZE = -O3 -ffast-math -funroll-loops
+ 
+   ifeq ($(ARCH),sparc)
+-    OPTIMIZE = -O3 -ffast-math -falign-loops=2 \
+-      -falign-jumps=2 -falign-functions=2 -fstrength-reduce \
++    OPTIMIZE = -O3 -ffast-math \
++      -falign-functions=2 -fstrength-reduce \
+       -mtune=ultrasparc -mv8plus -mno-faster-structs \
+       -funroll-loops
+     BASE_CFLAGS += -DNO_VM_COMPILED
+   else
+   ifeq ($(ARCH),x86)
+     OPTIMIZE = -O3 -march=i586  -ffast-math \
+-      -falign-loops=2 -falign-jumps=2 -falign-functions=2 \
+-      -funroll-loops -fstrength-reduce
++      -falign-functions=2 -funroll-loops -fstrength-reduce
+   endif
+   endif
+ 
+@@ -637,21 +628,22 @@
  TARGETS =
  
  ifneq ($(BUILD_SERVER),0)
@@ -201,7 +258,7 @@
  endif
  
  ifneq ($(BUILD_GAME_QVM),0)
-@@ -709,14 +705,14 @@
+@@ -709,14 +701,14 @@
  endif
  
  build_release: B=$(BR)
@@ -218,7 +275,7 @@
  
  targets: $(TARGETS)
  
-@@ -901,7 +897,7 @@
+@@ -901,7 +893,7 @@
    $(B)/client/tr_surface.o \
    $(B)/client/tr_world.o \
  
@@ -227,7 +284,7 @@
    Q3OBJ += $(B)/client/vm_x86.o
    Q3OBJ += \
      $(B)/client/snd_mixa.o \
-@@ -910,7 +906,7 @@
+@@ -910,7 +902,7 @@
      $(B)/client/snapvectora.o
  endif
  
@@ -236,7 +293,7 @@
    Q3OBJ += $(B)/client/vm_x86_64.o
  endif
  
-@@ -962,10 +958,10 @@
+@@ -962,10 +954,10 @@
      $(B)/client/sdl_glimp_smp.o
  endif
  
@@ -249,7 +306,7 @@
  	$(CC)  -o $@ $(Q3OBJ) $(Q3POBJ_SMP) $(CLIENT_LDFLAGS) \
  		$(THREAD_LDFLAGS) $(LDFLAGS) $(LIBSDLMAIN)
  
-@@ -1238,12 +1234,12 @@
+@@ -1238,12 +1230,12 @@
    $(B)/ded/null_input.o \
    $(B)/ded/null_snddma.o
  
@@ -264,7 +321,7 @@
    Q3DOBJ += $(B)/ded/vm_x86_64.o
  endif
  
-@@ -1253,7 +1249,7 @@
+@@ -1253,7 +1245,7 @@
    endif
  endif
  
@@ -273,7 +330,7 @@
  	$(CC) -o $@ $(Q3DOBJ) $(LDFLAGS)
  
  $(B)/ded/sv_bot.o : $(SDIR)/sv_bot.c; $(DO_DED_CC)
-@@ -1374,7 +1370,7 @@
+@@ -1374,7 +1366,7 @@
  CGOBJ = $(CGOBJ_) $(B)/base/cgame/cg_syscalls.o
  CGVMOBJ = $(CGOBJ_:%.o=%.asm) $(B)/base/game/bg_lib.asm
  
@@ -282,7 +339,7 @@
  	$(CC) $(SHLIBLDFLAGS) -o $@ $(CGOBJ)
  
  $(B)/base/vm/cgame.qvm: $(CGVMOBJ) $(CGDIR)/cg_syscalls.asm
-@@ -1418,7 +1414,7 @@
+@@ -1418,7 +1410,7 @@
  GOBJ = $(GOBJ_) $(B)/base/game/g_syscalls.o
  GVMOBJ = $(GOBJ_:%.o=%.asm) $(B)/base/game/bg_lib.asm
  
@@ -291,7 +348,7 @@
  	$(CC) $(SHLIBLDFLAGS) -o $@ $(GOBJ)
  
  $(B)/base/vm/game.qvm: $(GVMOBJ) $(GDIR)/g_syscalls.asm
-@@ -1444,7 +1440,7 @@
+@@ -1444,7 +1436,7 @@
  UIOBJ = $(UIOBJ_) $(B)/base/ui/ui_syscalls.o
  UIVMOBJ = $(UIOBJ_:%.o=%.asm) $(B)/base/game/bg_lib.asm
  
