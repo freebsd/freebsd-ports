@@ -1,0 +1,6 @@
+============================================================
+* The mod_log_sql modules have been installed.
+*
+* The module config file was installed as
+*   %%PREFIX%%/%%APACHEETCDIR%%/modules.d/%%APMODCFG%%
+============================================================
