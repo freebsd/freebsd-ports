@@ -1304,6 +1304,9 @@
     SUBDIR += rubygem-cssmin
     SUBDIR += rubygem-diff-lcs
     SUBDIR += rubygem-diffy
+    SUBDIR += rubygem-elasticsearch
+    SUBDIR += rubygem-elasticsearch-api
+    SUBDIR += rubygem-elasticsearch-transport
     SUBDIR += rubygem-escape_utils
     SUBDIR += rubygem-ezamar
     SUBDIR += rubygem-fast_xs
