@@ -6,8 +6,8 @@
  	gzip pty.1
 -	${INSTALL_MAN} pty.1.gz ${PREFIX}/man/man1/
 -	${INSTALL_PROGRAM} pty ${PREFIX}/bin
-+	${INSTALL_MAN} pty.1.gz ${DESTDIR}${MANPREFIX}/man/man1/
-+	${INSTALL_PROGRAM} pty ${DESTDIR}${PREFIX}/bin
++	${BSD_INSTALL_MAN} pty.1.gz ${DESTDIR}${MANPREFIX}/man/man1/
++	${BSD_INSTALL_PROGRAM} pty ${DESTDIR}${PREFIX}/bin
  
  deinstall:
  	rm -r ${PREFIX}/bin/pty
