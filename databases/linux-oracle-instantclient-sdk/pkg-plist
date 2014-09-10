@@ -1,42 +1,42 @@
-usr/lib/oracle/%%ORACLEVERSION%%/client/lib/libclntsh.so
-usr/lib/oracle/%%ORACLEVERSION%%/client/lib/libocci.so
-usr/share/oracle/%%ORACLEVERSION%%/client/cdemo81.c
-usr/share/oracle/%%ORACLEVERSION%%/client/demo.mk
-usr/share/oracle/%%ORACLEVERSION%%/client/occidemo.sql
-usr/share/oracle/%%ORACLEVERSION%%/client/occidemod.sql
-usr/share/oracle/%%ORACLEVERSION%%/client/occidml.cpp
-usr/include/oracle/%%ORACLEVERSION%%/client/nzerror.h
-usr/include/oracle/%%ORACLEVERSION%%/client/nzt.h
-usr/include/oracle/%%ORACLEVERSION%%/client/occi.h
-usr/include/oracle/%%ORACLEVERSION%%/client/occiAQ.h
-usr/include/oracle/%%ORACLEVERSION%%/client/occiCommon.h
-usr/include/oracle/%%ORACLEVERSION%%/client/occiControl.h
-usr/include/oracle/%%ORACLEVERSION%%/client/occiData.h
-usr/include/oracle/%%ORACLEVERSION%%/client/occiObjects.h
-usr/include/oracle/%%ORACLEVERSION%%/client/oci.h
-usr/include/oracle/%%ORACLEVERSION%%/client/oci1.h
-usr/include/oracle/%%ORACLEVERSION%%/client/oci8dp.h
-usr/include/oracle/%%ORACLEVERSION%%/client/ociap.h
-usr/include/oracle/%%ORACLEVERSION%%/client/ociapr.h
-usr/include/oracle/%%ORACLEVERSION%%/client/ocidef.h
-usr/include/oracle/%%ORACLEVERSION%%/client/ocidem.h
-usr/include/oracle/%%ORACLEVERSION%%/client/ocidfn.h
-usr/include/oracle/%%ORACLEVERSION%%/client/ociextp.h
-usr/include/oracle/%%ORACLEVERSION%%/client/ocikpr.h
-usr/include/oracle/%%ORACLEVERSION%%/client/ocixmldb.h
-usr/include/oracle/%%ORACLEVERSION%%/client/odci.h
-usr/include/oracle/%%ORACLEVERSION%%/client/oratypes.h
-usr/include/oracle/%%ORACLEVERSION%%/client/ori.h
-usr/include/oracle/%%ORACLEVERSION%%/client/orid.h
-usr/include/oracle/%%ORACLEVERSION%%/client/orl.h
-usr/include/oracle/%%ORACLEVERSION%%/client/oro.h
-usr/include/oracle/%%ORACLEVERSION%%/client/ort.h
-usr/include/oracle/%%ORACLEVERSION%%/client/xa.h
-@dirrm usr/include/oracle/%%ORACLEVERSION%%/client
-@dirrm usr/include/oracle/%%ORACLEVERSION%%
-@dirrm usr/include/oracle
-@dirrm usr/share/oracle/%%ORACLEVERSION%%/client
-@dirrm usr/share/oracle/%%ORACLEVERSION%%
-@dirrm usr/share/oracle
-@dirrmtry usr/include
-@dirrmtry usr/share
+usr/include/oracle/10.2.0.3/client/nzerror.h
+usr/include/oracle/10.2.0.3/client/nzt.h
+usr/include/oracle/10.2.0.3/client/occi.h
+usr/include/oracle/10.2.0.3/client/occiAQ.h
+usr/include/oracle/10.2.0.3/client/occiCommon.h
+usr/include/oracle/10.2.0.3/client/occiControl.h
+usr/include/oracle/10.2.0.3/client/occiData.h
+usr/include/oracle/10.2.0.3/client/occiObjects.h
+usr/include/oracle/10.2.0.3/client/oci.h
+usr/include/oracle/10.2.0.3/client/oci1.h
+usr/include/oracle/10.2.0.3/client/oci8dp.h
+usr/include/oracle/10.2.0.3/client/ociap.h
+usr/include/oracle/10.2.0.3/client/ociapr.h
+usr/include/oracle/10.2.0.3/client/ocidef.h
+usr/include/oracle/10.2.0.3/client/ocidem.h
+usr/include/oracle/10.2.0.3/client/ocidfn.h
+usr/include/oracle/10.2.0.3/client/ociextp.h
+usr/include/oracle/10.2.0.3/client/ocikpr.h
+usr/include/oracle/10.2.0.3/client/ocixmldb.h
+usr/include/oracle/10.2.0.3/client/odci.h
+usr/include/oracle/10.2.0.3/client/oratypes.h
+usr/include/oracle/10.2.0.3/client/ori.h
+usr/include/oracle/10.2.0.3/client/orid.h
+usr/include/oracle/10.2.0.3/client/orl.h
+usr/include/oracle/10.2.0.3/client/oro.h
+usr/include/oracle/10.2.0.3/client/ort.h
+usr/include/oracle/10.2.0.3/client/xa.h
+usr/lib/oracle/10.2.0.3/client/lib/libclntsh.so
+usr/lib/oracle/10.2.0.3/client/lib/libocci.so
+usr/share/oracle/10.2.0.3/client/cdemo81.c
+usr/share/oracle/10.2.0.3/client/demo.mk
+usr/share/oracle/10.2.0.3/client/occidemo.sql
+usr/share/oracle/10.2.0.3/client/occidemod.sql
+usr/share/oracle/10.2.0.3/client/occidml.cpp
+usr/share/oracle/10.2.0.3/client/occiobj.cpp
+usr/share/oracle/10.2.0.3/client/occiobj.typ
+@dirrmtry usr/include/oracle/10.2.0.3/client
+@dirrmtry usr/include/oracle/10.2.0.3
+@dirrmtry usr/include/oracle
+@dirrmtry usr/share/oracle/10.2.0.3/client
+@dirrmtry usr/share/oracle/10.2.0.3
+@dirrmtry usr/share/oracle
