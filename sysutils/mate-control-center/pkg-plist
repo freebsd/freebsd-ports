@@ -70,6 +70,328 @@ share/applications/mate-theme-installer.desktop
 share/applications/mate-window-properties.desktop
 share/applications/matecc.desktop
 share/desktop-directories/matecc.directory
+share/help/C/mate-control-center/config-accessibility-keyboard.xml
+share/help/C/mate-control-center/config-background.xml
+share/help/C/mate-control-center/config-behavior.xml
+share/help/C/mate-control-center/config-cds.xml
+share/help/C/mate-control-center/config-default-apps.xml
+share/help/C/mate-control-center/config-file-type.xml
+share/help/C/mate-control-center/config-hints.xml
+share/help/C/mate-control-center/config-html.xml
+share/help/C/mate-control-center/config-kbd.xml
+share/help/C/mate-control-center/config-keybindings.xml
+share/help/C/mate-control-center/config-mouse.xml
+share/help/C/mate-control-center/config-screensaver.xml
+share/help/C/mate-control-center/config-themes.xml
+share/help/C/mate-control-center/index.docbook
+share/help/ca/mate-control-center/config-accessibility-keyboard.xml
+share/help/ca/mate-control-center/config-background.xml
+share/help/ca/mate-control-center/config-behavior.xml
+share/help/ca/mate-control-center/config-cds.xml
+share/help/ca/mate-control-center/config-default-apps.xml
+share/help/ca/mate-control-center/config-file-type.xml
+share/help/ca/mate-control-center/config-hints.xml
+share/help/ca/mate-control-center/config-html.xml
+share/help/ca/mate-control-center/config-kbd.xml
+share/help/ca/mate-control-center/config-keybindings.xml
+share/help/ca/mate-control-center/config-mouse.xml
+share/help/ca/mate-control-center/config-screensaver.xml
+share/help/ca/mate-control-center/config-themes.xml
+share/help/ca/mate-control-center/index.docbook
+share/help/ca@valencia/mate-control-center/config-accessibility-keyboard.xml
+share/help/ca@valencia/mate-control-center/config-background.xml
+share/help/ca@valencia/mate-control-center/config-behavior.xml
+share/help/ca@valencia/mate-control-center/config-cds.xml
+share/help/ca@valencia/mate-control-center/config-default-apps.xml
+share/help/ca@valencia/mate-control-center/config-file-type.xml
+share/help/ca@valencia/mate-control-center/config-hints.xml
+share/help/ca@valencia/mate-control-center/config-html.xml
+share/help/ca@valencia/mate-control-center/config-kbd.xml
+share/help/ca@valencia/mate-control-center/config-keybindings.xml
+share/help/ca@valencia/mate-control-center/config-mouse.xml
+share/help/ca@valencia/mate-control-center/config-screensaver.xml
+share/help/ca@valencia/mate-control-center/config-themes.xml
+share/help/ca@valencia/mate-control-center/index.docbook
+share/help/cs/mate-control-center/config-accessibility-keyboard.xml
+share/help/cs/mate-control-center/config-background.xml
+share/help/cs/mate-control-center/config-behavior.xml
+share/help/cs/mate-control-center/config-cds.xml
+share/help/cs/mate-control-center/config-default-apps.xml
+share/help/cs/mate-control-center/config-file-type.xml
+share/help/cs/mate-control-center/config-hints.xml
+share/help/cs/mate-control-center/config-html.xml
+share/help/cs/mate-control-center/config-kbd.xml
+share/help/cs/mate-control-center/config-keybindings.xml
+share/help/cs/mate-control-center/config-mouse.xml
+share/help/cs/mate-control-center/config-screensaver.xml
+share/help/cs/mate-control-center/config-themes.xml
+share/help/cs/mate-control-center/index.docbook
+share/help/de/mate-control-center/config-accessibility-keyboard.xml
+share/help/de/mate-control-center/config-background.xml
+share/help/de/mate-control-center/config-behavior.xml
+share/help/de/mate-control-center/config-cds.xml
+share/help/de/mate-control-center/config-default-apps.xml
+share/help/de/mate-control-center/config-file-type.xml
+share/help/de/mate-control-center/config-hints.xml
+share/help/de/mate-control-center/config-html.xml
+share/help/de/mate-control-center/config-kbd.xml
+share/help/de/mate-control-center/config-keybindings.xml
+share/help/de/mate-control-center/config-mouse.xml
+share/help/de/mate-control-center/config-screensaver.xml
+share/help/de/mate-control-center/config-themes.xml
+share/help/de/mate-control-center/index.docbook
+share/help/el/mate-control-center/config-accessibility-keyboard.xml
+share/help/el/mate-control-center/config-background.xml
+share/help/el/mate-control-center/config-behavior.xml
+share/help/el/mate-control-center/config-cds.xml
+share/help/el/mate-control-center/config-default-apps.xml
+share/help/el/mate-control-center/config-file-type.xml
+share/help/el/mate-control-center/config-hints.xml
+share/help/el/mate-control-center/config-html.xml
+share/help/el/mate-control-center/config-kbd.xml
+share/help/el/mate-control-center/config-keybindings.xml
+share/help/el/mate-control-center/config-mouse.xml
+share/help/el/mate-control-center/config-screensaver.xml
+share/help/el/mate-control-center/config-themes.xml
+share/help/el/mate-control-center/index.docbook
+share/help/en_GB/mate-control-center/config-accessibility-keyboard.xml
+share/help/en_GB/mate-control-center/config-background.xml
+share/help/en_GB/mate-control-center/config-behavior.xml
+share/help/en_GB/mate-control-center/config-cds.xml
+share/help/en_GB/mate-control-center/config-default-apps.xml
+share/help/en_GB/mate-control-center/config-file-type.xml
+share/help/en_GB/mate-control-center/config-hints.xml
+share/help/en_GB/mate-control-center/config-html.xml
+share/help/en_GB/mate-control-center/config-kbd.xml
+share/help/en_GB/mate-control-center/config-keybindings.xml
+share/help/en_GB/mate-control-center/config-mouse.xml
+share/help/en_GB/mate-control-center/config-screensaver.xml
+share/help/en_GB/mate-control-center/config-themes.xml
+share/help/en_GB/mate-control-center/index.docbook
+share/help/es/mate-control-center/config-accessibility-keyboard.xml
+share/help/es/mate-control-center/config-background.xml
+share/help/es/mate-control-center/config-behavior.xml
+share/help/es/mate-control-center/config-cds.xml
+share/help/es/mate-control-center/config-default-apps.xml
+share/help/es/mate-control-center/config-file-type.xml
+share/help/es/mate-control-center/config-hints.xml
+share/help/es/mate-control-center/config-html.xml
+share/help/es/mate-control-center/config-kbd.xml
+share/help/es/mate-control-center/config-keybindings.xml
+share/help/es/mate-control-center/config-mouse.xml
+share/help/es/mate-control-center/config-screensaver.xml
+share/help/es/mate-control-center/config-themes.xml
+share/help/es/mate-control-center/index.docbook
+share/help/fr/mate-control-center/config-accessibility-keyboard.xml
+share/help/fr/mate-control-center/config-background.xml
+share/help/fr/mate-control-center/config-behavior.xml
+share/help/fr/mate-control-center/config-cds.xml
+share/help/fr/mate-control-center/config-default-apps.xml
+share/help/fr/mate-control-center/config-file-type.xml
+share/help/fr/mate-control-center/config-hints.xml
+share/help/fr/mate-control-center/config-html.xml
+share/help/fr/mate-control-center/config-kbd.xml
+share/help/fr/mate-control-center/config-keybindings.xml
+share/help/fr/mate-control-center/config-mouse.xml
+share/help/fr/mate-control-center/config-screensaver.xml
+share/help/fr/mate-control-center/config-themes.xml
+share/help/fr/mate-control-center/index.docbook
+share/help/id/mate-control-center/config-accessibility-keyboard.xml
+share/help/id/mate-control-center/config-background.xml
+share/help/id/mate-control-center/config-behavior.xml
+share/help/id/mate-control-center/config-cds.xml
+share/help/id/mate-control-center/config-default-apps.xml
+share/help/id/mate-control-center/config-file-type.xml
+share/help/id/mate-control-center/config-hints.xml
+share/help/id/mate-control-center/config-html.xml
+share/help/id/mate-control-center/config-kbd.xml
+share/help/id/mate-control-center/config-keybindings.xml
+share/help/id/mate-control-center/config-mouse.xml
+share/help/id/mate-control-center/config-screensaver.xml
+share/help/id/mate-control-center/config-themes.xml
+share/help/id/mate-control-center/index.docbook
+share/help/it/mate-control-center/config-accessibility-keyboard.xml
+share/help/it/mate-control-center/config-background.xml
+share/help/it/mate-control-center/config-behavior.xml
+share/help/it/mate-control-center/config-cds.xml
+share/help/it/mate-control-center/config-default-apps.xml
+share/help/it/mate-control-center/config-file-type.xml
+share/help/it/mate-control-center/config-hints.xml
+share/help/it/mate-control-center/config-html.xml
+share/help/it/mate-control-center/config-kbd.xml
+share/help/it/mate-control-center/config-keybindings.xml
+share/help/it/mate-control-center/config-mouse.xml
+share/help/it/mate-control-center/config-screensaver.xml
+share/help/it/mate-control-center/config-themes.xml
+share/help/it/mate-control-center/index.docbook
+share/help/ja/mate-control-center/config-accessibility-keyboard.xml
+share/help/ja/mate-control-center/config-background.xml
+share/help/ja/mate-control-center/config-behavior.xml
+share/help/ja/mate-control-center/config-cds.xml
+share/help/ja/mate-control-center/config-default-apps.xml
+share/help/ja/mate-control-center/config-file-type.xml
+share/help/ja/mate-control-center/config-hints.xml
+share/help/ja/mate-control-center/config-html.xml
+share/help/ja/mate-control-center/config-kbd.xml
+share/help/ja/mate-control-center/config-keybindings.xml
+share/help/ja/mate-control-center/config-mouse.xml
+share/help/ja/mate-control-center/config-screensaver.xml
+share/help/ja/mate-control-center/config-themes.xml
+share/help/ja/mate-control-center/index.docbook
+share/help/oc/mate-control-center/config-accessibility-keyboard.xml
+share/help/oc/mate-control-center/config-background.xml
+share/help/oc/mate-control-center/config-behavior.xml
+share/help/oc/mate-control-center/config-cds.xml
+share/help/oc/mate-control-center/config-default-apps.xml
+share/help/oc/mate-control-center/config-file-type.xml
+share/help/oc/mate-control-center/config-hints.xml
+share/help/oc/mate-control-center/config-html.xml
+share/help/oc/mate-control-center/config-kbd.xml
+share/help/oc/mate-control-center/config-keybindings.xml
+share/help/oc/mate-control-center/config-mouse.xml
+share/help/oc/mate-control-center/config-screensaver.xml
+share/help/oc/mate-control-center/config-themes.xml
+share/help/oc/mate-control-center/index.docbook
+share/help/pa/mate-control-center/config-accessibility-keyboard.xml
+share/help/pa/mate-control-center/config-background.xml
+share/help/pa/mate-control-center/config-behavior.xml
+share/help/pa/mate-control-center/config-cds.xml
+share/help/pa/mate-control-center/config-default-apps.xml
+share/help/pa/mate-control-center/config-file-type.xml
+share/help/pa/mate-control-center/config-hints.xml
+share/help/pa/mate-control-center/config-html.xml
+share/help/pa/mate-control-center/config-kbd.xml
+share/help/pa/mate-control-center/config-keybindings.xml
+share/help/pa/mate-control-center/config-mouse.xml
+share/help/pa/mate-control-center/config-screensaver.xml
+share/help/pa/mate-control-center/config-themes.xml
+share/help/pa/mate-control-center/index.docbook
+share/help/pl/mate-control-center/config-accessibility-keyboard.xml
+share/help/pl/mate-control-center/config-background.xml
+share/help/pl/mate-control-center/config-behavior.xml
+share/help/pl/mate-control-center/config-cds.xml
+share/help/pl/mate-control-center/config-default-apps.xml
+share/help/pl/mate-control-center/config-file-type.xml
+share/help/pl/mate-control-center/config-hints.xml
+share/help/pl/mate-control-center/config-html.xml
+share/help/pl/mate-control-center/config-kbd.xml
+share/help/pl/mate-control-center/config-keybindings.xml
+share/help/pl/mate-control-center/config-mouse.xml
+share/help/pl/mate-control-center/config-screensaver.xml
+share/help/pl/mate-control-center/config-themes.xml
+share/help/pl/mate-control-center/index.docbook
+share/help/pt/mate-control-center/config-accessibility-keyboard.xml
+share/help/pt/mate-control-center/config-background.xml
+share/help/pt/mate-control-center/config-behavior.xml
+share/help/pt/mate-control-center/config-cds.xml
+share/help/pt/mate-control-center/config-default-apps.xml
+share/help/pt/mate-control-center/config-file-type.xml
+share/help/pt/mate-control-center/config-hints.xml
+share/help/pt/mate-control-center/config-html.xml
+share/help/pt/mate-control-center/config-kbd.xml
+share/help/pt/mate-control-center/config-keybindings.xml
+share/help/pt/mate-control-center/config-mouse.xml
+share/help/pt/mate-control-center/config-screensaver.xml
+share/help/pt/mate-control-center/config-themes.xml
+share/help/pt/mate-control-center/index.docbook
+share/help/pt_BR/mate-control-center/config-accessibility-keyboard.xml
+share/help/pt_BR/mate-control-center/config-background.xml
+share/help/pt_BR/mate-control-center/config-behavior.xml
+share/help/pt_BR/mate-control-center/config-cds.xml
+share/help/pt_BR/mate-control-center/config-default-apps.xml
+share/help/pt_BR/mate-control-center/config-file-type.xml
+share/help/pt_BR/mate-control-center/config-hints.xml
+share/help/pt_BR/mate-control-center/config-html.xml
+share/help/pt_BR/mate-control-center/config-kbd.xml
+share/help/pt_BR/mate-control-center/config-keybindings.xml
+share/help/pt_BR/mate-control-center/config-mouse.xml
+share/help/pt_BR/mate-control-center/config-screensaver.xml
+share/help/pt_BR/mate-control-center/config-themes.xml
+share/help/pt_BR/mate-control-center/index.docbook
+share/help/ru/mate-control-center/config-accessibility-keyboard.xml
+share/help/ru/mate-control-center/config-background.xml
+share/help/ru/mate-control-center/config-behavior.xml
+share/help/ru/mate-control-center/config-cds.xml
+share/help/ru/mate-control-center/config-default-apps.xml
+share/help/ru/mate-control-center/config-file-type.xml
+share/help/ru/mate-control-center/config-hints.xml
+share/help/ru/mate-control-center/config-html.xml
+share/help/ru/mate-control-center/config-kbd.xml
+share/help/ru/mate-control-center/config-keybindings.xml
+share/help/ru/mate-control-center/config-mouse.xml
+share/help/ru/mate-control-center/config-screensaver.xml
+share/help/ru/mate-control-center/config-themes.xml
+share/help/ru/mate-control-center/index.docbook
+share/help/sv/mate-control-center/config-accessibility-keyboard.xml
+share/help/sv/mate-control-center/config-background.xml
+share/help/sv/mate-control-center/config-behavior.xml
+share/help/sv/mate-control-center/config-cds.xml
+share/help/sv/mate-control-center/config-default-apps.xml
+share/help/sv/mate-control-center/config-file-type.xml
+share/help/sv/mate-control-center/config-hints.xml
+share/help/sv/mate-control-center/config-html.xml
+share/help/sv/mate-control-center/config-kbd.xml
+share/help/sv/mate-control-center/config-keybindings.xml
+share/help/sv/mate-control-center/config-mouse.xml
+share/help/sv/mate-control-center/config-screensaver.xml
+share/help/sv/mate-control-center/config-themes.xml
+share/help/sv/mate-control-center/index.docbook
+share/help/th/mate-control-center/config-accessibility-keyboard.xml
+share/help/th/mate-control-center/config-background.xml
+share/help/th/mate-control-center/config-behavior.xml
+share/help/th/mate-control-center/config-cds.xml
+share/help/th/mate-control-center/config-default-apps.xml
+share/help/th/mate-control-center/config-file-type.xml
+share/help/th/mate-control-center/config-hints.xml
+share/help/th/mate-control-center/config-html.xml
+share/help/th/mate-control-center/config-kbd.xml
+share/help/th/mate-control-center/config-keybindings.xml
+share/help/th/mate-control-center/config-mouse.xml
+share/help/th/mate-control-center/config-screensaver.xml
+share/help/th/mate-control-center/config-themes.xml
+share/help/th/mate-control-center/index.docbook
+share/help/uk/mate-control-center/config-accessibility-keyboard.xml
+share/help/uk/mate-control-center/config-background.xml
+share/help/uk/mate-control-center/config-behavior.xml
+share/help/uk/mate-control-center/config-cds.xml
+share/help/uk/mate-control-center/config-default-apps.xml
+share/help/uk/mate-control-center/config-file-type.xml
+share/help/uk/mate-control-center/config-hints.xml
+share/help/uk/mate-control-center/config-html.xml
+share/help/uk/mate-control-center/config-kbd.xml
+share/help/uk/mate-control-center/config-keybindings.xml
+share/help/uk/mate-control-center/config-mouse.xml
+share/help/uk/mate-control-center/config-screensaver.xml
+share/help/uk/mate-control-center/config-themes.xml
+share/help/uk/mate-control-center/index.docbook
+share/help/vi/mate-control-center/config-accessibility-keyboard.xml
+share/help/vi/mate-control-center/config-background.xml
+share/help/vi/mate-control-center/config-behavior.xml
+share/help/vi/mate-control-center/config-cds.xml
+share/help/vi/mate-control-center/config-default-apps.xml
+share/help/vi/mate-control-center/config-file-type.xml
+share/help/vi/mate-control-center/config-hints.xml
+share/help/vi/mate-control-center/config-html.xml
+share/help/vi/mate-control-center/config-kbd.xml
+share/help/vi/mate-control-center/config-keybindings.xml
+share/help/vi/mate-control-center/config-mouse.xml
+share/help/vi/mate-control-center/config-screensaver.xml
+share/help/vi/mate-control-center/config-themes.xml
+share/help/vi/mate-control-center/index.docbook
+share/help/zh_CN/mate-control-center/config-accessibility-keyboard.xml
+share/help/zh_CN/mate-control-center/config-background.xml
+share/help/zh_CN/mate-control-center/config-behavior.xml
+share/help/zh_CN/mate-control-center/config-cds.xml
+share/help/zh_CN/mate-control-center/config-default-apps.xml
+share/help/zh_CN/mate-control-center/config-file-type.xml
+share/help/zh_CN/mate-control-center/config-hints.xml
+share/help/zh_CN/mate-control-center/config-html.xml
+share/help/zh_CN/mate-control-center/config-kbd.xml
+share/help/zh_CN/mate-control-center/config-keybindings.xml
+share/help/zh_CN/mate-control-center/config-mouse.xml
+share/help/zh_CN/mate-control-center/config-screensaver.xml
+share/help/zh_CN/mate-control-center/config-themes.xml
+share/help/zh_CN/mate-control-center/index.docbook
 share/icons/hicolor/16x16/apps/mate-network-properties.png
 share/icons/hicolor/16x16/apps/mate-preferences-desktop-display.png
 share/icons/hicolor/22x22/apps/mate-network-properties.png
@@ -98,6 +420,7 @@ share/locale/br/LC_MESSAGES/mate-control-center.mo
 share/locale/bs/LC_MESSAGES/mate-control-center.mo
 share/locale/ca/LC_MESSAGES/mate-control-center.mo
 share/locale/ca@valencia/LC_MESSAGES/mate-control-center.mo
+share/locale/cmn/LC_MESSAGES/mate-control-center.mo
 share/locale/crh/LC_MESSAGES/mate-control-center.mo
 share/locale/cs/LC_MESSAGES/mate-control-center.mo
 share/locale/cy/LC_MESSAGES/mate-control-center.mo
@@ -132,6 +455,7 @@ share/locale/kk/LC_MESSAGES/mate-control-center.mo
 share/locale/kn/LC_MESSAGES/mate-control-center.mo
 share/locale/ko/LC_MESSAGES/mate-control-center.mo
 share/locale/ku/LC_MESSAGES/mate-control-center.mo
+share/locale/ky/LC_MESSAGES/mate-control-center.mo
 share/locale/lt/LC_MESSAGES/mate-control-center.mo
 share/locale/lv/LC_MESSAGES/mate-control-center.mo
 share/locale/mai/LC_MESSAGES/mate-control-center.mo
@@ -169,6 +493,7 @@ share/locale/th/LC_MESSAGES/mate-control-center.mo
 share/locale/tr/LC_MESSAGES/mate-control-center.mo
 share/locale/ug/LC_MESSAGES/mate-control-center.mo
 share/locale/uk/LC_MESSAGES/mate-control-center.mo
+share/locale/ur/LC_MESSAGES/mate-control-center.mo
 share/locale/uz/LC_MESSAGES/mate-control-center.mo
 share/locale/uz@cyrillic/LC_MESSAGES/mate-control-center.mo
 share/locale/vi/LC_MESSAGES/mate-control-center.mo
@@ -241,106 +566,20 @@ share/locale/zu/LC_MESSAGES/mate-control-center.mo
 %%DATADIR%%/ui/mate-keyboard-properties-options-dialog.ui
 %%DATADIR%%/ui/mate-mouse-properties.ui
 %%DATADIR%%/ui/mate-network-properties.ui
-%%DATADIR%%/ui/mate-window-properties.ui
 share/mate/cursor-fonts/cursor-large-white.pcf
 share/mate/cursor-fonts/cursor-large.pcf
 share/mate/cursor-fonts/cursor-white.pcf
-share/mate/help/mate-control-center/C/config-accessibility-keyboard.xml
-share/mate/help/mate-control-center/C/config-background.xml
-share/mate/help/mate-control-center/C/config-behavior.xml
-share/mate/help/mate-control-center/C/config-cds.xml
-share/mate/help/mate-control-center/C/config-default-apps.xml
-share/mate/help/mate-control-center/C/config-file-type.xml
-share/mate/help/mate-control-center/C/config-hints.xml
-share/mate/help/mate-control-center/C/config-html.xml
-share/mate/help/mate-control-center/C/config-kbd.xml
-share/mate/help/mate-control-center/C/config-keybindings.xml
-share/mate/help/mate-control-center/C/config-mouse.xml
-share/mate/help/mate-control-center/C/config-screensaver.xml
-share/mate/help/mate-control-center/C/config-themes.xml
-share/mate/help/mate-control-center/C/mate-control-center.xml
-share/mate/help/mate-control-center/ca/mate-control-center.xml
-share/mate/help/mate-control-center/ca@valencia/mate-control-center.xml
-share/mate/help/mate-control-center/cs/mate-control-center.xml
-share/mate/help/mate-control-center/de/mate-control-center.xml
-share/mate/help/mate-control-center/el/mate-control-center.xml
-share/mate/help/mate-control-center/en_GB/mate-control-center.xml
-share/mate/help/mate-control-center/es/mate-control-center.xml
-share/mate/help/mate-control-center/fr/mate-control-center.xml
-share/mate/help/mate-control-center/id/mate-control-center.xml
-share/mate/help/mate-control-center/it/mate-control-center.xml
-share/mate/help/mate-control-center/ja/mate-control-center.xml
-share/mate/help/mate-control-center/oc/mate-control-center.xml
-share/mate/help/mate-control-center/pa/mate-control-center.xml
-share/mate/help/mate-control-center/pl/mate-control-center.xml
-share/mate/help/mate-control-center/pt/mate-control-center.xml
-share/mate/help/mate-control-center/pt_BR/mate-control-center.xml
-share/mate/help/mate-control-center/ru/mate-control-center.xml
-share/mate/help/mate-control-center/sv/mate-control-center.xml
-share/mate/help/mate-control-center/th/mate-control-center.xml
-share/mate/help/mate-control-center/uk/mate-control-center.xml
-share/mate/help/mate-control-center/vi/mate-control-center.xml
-share/mate/help/mate-control-center/zh_CN/mate-control-center.xml
-share/mime/packages/mate-theme-package.xml
-share/omf/mate-control-center/mate-control-center-C.omf
-share/omf/mate-control-center/mate-control-center-ca.omf
-share/omf/mate-control-center/mate-control-center-ca@valencia.omf
-share/omf/mate-control-center/mate-control-center-cs.omf
-share/omf/mate-control-center/mate-control-center-de.omf
-share/omf/mate-control-center/mate-control-center-el.omf
-share/omf/mate-control-center/mate-control-center-en_GB.omf
-share/omf/mate-control-center/mate-control-center-es.omf
-share/omf/mate-control-center/mate-control-center-fr.omf
-share/omf/mate-control-center/mate-control-center-id.omf
-share/omf/mate-control-center/mate-control-center-it.omf
-share/omf/mate-control-center/mate-control-center-ja.omf
-share/omf/mate-control-center/mate-control-center-oc.omf
-share/omf/mate-control-center/mate-control-center-pa.omf
-share/omf/mate-control-center/mate-control-center-pl.omf
-share/omf/mate-control-center/mate-control-center-pt.omf
-share/omf/mate-control-center/mate-control-center-pt_BR.omf
-share/omf/mate-control-center/mate-control-center-ru.omf
-share/omf/mate-control-center/mate-control-center-sv.omf
-share/omf/mate-control-center/mate-control-center-th.omf
-share/omf/mate-control-center/mate-control-center-uk.omf
-share/omf/mate-control-center/mate-control-center-vi.omf
-share/omf/mate-control-center/mate-control-center-zh_CN.omf
 share/polkit-1/actions/org.mate.randr.policy
 share/thumbnailers/mate-font-viewer.thumbnailer
 share/mime/application/x-mate-theme-package.xml
+share/mime/packages/mate-theme-package.xml
 @dirrmtry share/thumbnailers
 @dirrmtry share/polkit-1/actions
 @dirrmtry share/polkit-1
-@dirrm share/omf/mate-control-center
-@dirrm share/mate/help/mate-control-center/zh_CN
-@dirrm share/mate/help/mate-control-center/vi
-@dirrm share/mate/help/mate-control-center/uk
-@dirrm share/mate/help/mate-control-center/th
-@dirrm share/mate/help/mate-control-center/sv
-@dirrm share/mate/help/mate-control-center/ru
-@dirrm share/mate/help/mate-control-center/pt_BR
-@dirrm share/mate/help/mate-control-center/pt
-@dirrm share/mate/help/mate-control-center/pl
-@dirrm share/mate/help/mate-control-center/pa
-@dirrm share/mate/help/mate-control-center/oc
-@dirrm share/mate/help/mate-control-center/ja
-@dirrm share/mate/help/mate-control-center/it
-@dirrm share/mate/help/mate-control-center/id
-@dirrm share/mate/help/mate-control-center/fr
-@dirrm share/mate/help/mate-control-center/es
-@dirrm share/mate/help/mate-control-center/en_GB
-@dirrm share/mate/help/mate-control-center/el
-@dirrm share/mate/help/mate-control-center/de
-@dirrm share/mate/help/mate-control-center/cs
-@dirrm share/mate/help/mate-control-center/ca@valencia
-@dirrm share/mate/help/mate-control-center/ca
-@dirrm share/mate/help/mate-control-center/C
-@dirrm share/mate/help/mate-control-center
+@dirrmtry share/mime/application
 @dirrm share/mate/cursor-fonts
 @dirrm %%DATADIR%%/ui
 @dirrm %%DATADIR%%/pixmaps
-@dirrm %%DATADIR%%/keybindings
-@dirrm %%DATADIR%%
 @dirrmtry share/locale/zu/LC_MESSAGES
 @dirrmtry share/locale/zu
 @dirrmtry share/locale/zh_HK/LC_MESSAGES
@@ -349,6 +588,8 @@ share/mime/application/x-mate-theme-package.xml
 @dirrmtry share/locale/xh
 @dirrmtry share/locale/uz@cyrillic/LC_MESSAGES
 @dirrmtry share/locale/uz@cyrillic
+@dirrmtry share/locale/ur/LC_MESSAGES
+@dirrmtry share/locale/ur
 @dirrmtry share/locale/ug/LC_MESSAGES
 @dirrmtry share/locale/ug
 @dirrmtry share/locale/te/LC_MESSAGES
@@ -371,6 +612,8 @@ share/mime/application/x-mate-theme-package.xml
 @dirrmtry share/locale/mg
 @dirrmtry share/locale/mai/LC_MESSAGES
 @dirrmtry share/locale/mai
+@dirrmtry share/locale/ky/LC_MESSAGES
+@dirrmtry share/locale/ky
 @dirrmtry share/locale/ku/LC_MESSAGES
 @dirrmtry share/locale/ku
 @dirrmtry share/locale/kk/LC_MESSAGES
@@ -381,6 +624,8 @@ share/mime/application/x-mate-theme-package.xml
 @dirrmtry share/locale/dz
 @dirrmtry share/locale/crh/LC_MESSAGES
 @dirrmtry share/locale/crh
+@dirrmtry share/locale/cmn/LC_MESSAGES
+@dirrmtry share/locale/cmn
 @dirrmtry share/locale/ca@valencia/LC_MESSAGES
 @dirrmtry share/locale/ca@valencia
 @dirrmtry share/locale/bn_IN/LC_MESSAGES
@@ -391,6 +636,53 @@ share/mime/application/x-mate-theme-package.xml
 @dirrmtry share/locale/ast
 @dirrmtry share/locale/as/LC_MESSAGES
 @dirrmtry share/locale/as
+@dirrmtry share/help/zh_CN/mate-control-center
+@dirrmtry share/help/zh_CN
+@dirrmtry share/help/vi/mate-control-center
+@dirrmtry share/help/vi
+@dirrmtry share/help/uk/mate-control-center
+@dirrmtry share/help/uk
+@dirrmtry share/help/th/mate-control-center
+@dirrmtry share/help/th
+@dirrmtry share/help/sv/mate-control-center
+@dirrmtry share/help/sv
+@dirrmtry share/help/ru/mate-control-center
+@dirrmtry share/help/ru
+@dirrmtry share/help/pt_BR/mate-control-center
+@dirrmtry share/help/pt_BR
+@dirrmtry share/help/pt/mate-control-center
+@dirrmtry share/help/pt
+@dirrmtry share/help/pl/mate-control-center
+@dirrmtry share/help/pl
+@dirrmtry share/help/pa/mate-control-center
+@dirrmtry share/help/pa
+@dirrmtry share/help/oc/mate-control-center
+@dirrmtry share/help/oc
+@dirrmtry share/help/ja/mate-control-center
+@dirrmtry share/help/ja
+@dirrmtry share/help/it/mate-control-center
+@dirrmtry share/help/it
+@dirrmtry share/help/id/mate-control-center
+@dirrmtry share/help/id
+@dirrmtry share/help/fr/mate-control-center
+@dirrmtry share/help/fr
+@dirrmtry share/help/es/mate-control-center
+@dirrmtry share/help/es
+@dirrmtry share/help/en_GB/mate-control-center
+@dirrmtry share/help/en_GB
+@dirrmtry share/help/el/mate-control-center
+@dirrmtry share/help/el
+@dirrmtry share/help/de/mate-control-center
+@dirrmtry share/help/de
+@dirrmtry share/help/cs/mate-control-center
+@dirrmtry share/help/cs
+@dirrmtry share/help/ca@valencia/mate-control-center
+@dirrmtry share/help/ca@valencia
+@dirrmtry share/help/ca/mate-control-center
+@dirrmtry share/help/ca
+@dirrmtry share/help/C/mate-control-center
+@dirrmtry share/help/C
+@dirrmtry share/help
 @dirrmtry share/desktop-directories
 @dirrm lib/window-manager-settings
 @dirrm include/mate-window-settings-2.0

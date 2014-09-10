@@ -45,6 +45,7 @@
     SUBDIR += apvlv
     SUBDIR += aqsis
     SUBDIR += asciio
+    SUBDIR += atril
     SUBDIR += autopano-sift-c
     SUBDIR += autoq3d
     SUBDIR += autotrace
@@ -139,6 +140,7 @@
     SUBDIR += eog
     SUBDIR += eog-plugins
     SUBDIR += eos-movrec
+    SUBDIR += eom
     SUBDIR += epdfview
     SUBDIR += epeg
     SUBDIR += epix

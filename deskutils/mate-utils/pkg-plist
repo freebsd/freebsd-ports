@@ -39,8 +39,202 @@ share/applications/mate-screenshot.desktop
 share/applications/mate-search-tool.desktop
 share/applications/mate-system-log.desktop
 share/dbus-1/services/org.mate.panel.applet.DictionaryAppletFactory.service
-share/icons/mate/24x24/apps/baobab.png
-share/icons/mate/scalable/apps/baobab.svg
+share/doc/mate-dict/GdictClientContext.html
+share/doc/mate-dict/GdictContext.html
+share/doc/mate-dict/GdictDatabaseChooser.html
+share/doc/mate-dict/GdictDefbox.html
+share/doc/mate-dict/GdictSource.html
+share/doc/mate-dict/GdictSourceChooser.html
+share/doc/mate-dict/GdictSourceLoader.html
+share/doc/mate-dict/GdictSpeller.html
+share/doc/mate-dict/GdictStrategyChooser.html
+share/doc/mate-dict/ch05.html
+share/doc/mate-dict/ch06.html
+share/doc/mate-dict/context-types.html
+share/doc/mate-dict/context.html
+share/doc/mate-dict/gdict-utils.html
+share/doc/mate-dict/gdict.html
+share/doc/mate-dict/gdictui.html
+share/doc/mate-dict/home.png
+share/doc/mate-dict/index.html
+share/doc/mate-dict/index.sgml
+share/doc/mate-dict/introduction.html
+share/doc/mate-dict/ix01.html
+share/doc/mate-dict/ix02.html
+share/doc/mate-dict/ix03.html
+share/doc/mate-dict/ix04.html
+share/doc/mate-dict/left-insensitive.png
+share/doc/mate-dict/left.png
+share/doc/mate-dict/mate-dict-gdict-utils.html
+share/doc/mate-dict/mate-dict-gdict-version.html
+share/doc/mate-dict/mate-dict.devhelp2
+share/doc/mate-dict/right-insensitive.png
+share/doc/mate-dict/right.png
+share/doc/mate-dict/sources.html
+share/doc/mate-dict/style.css
+share/doc/mate-dict/up-insensitive.png
+share/doc/mate-dict/up.png
+share/help/C/mate-dictionary/index.docbook
+share/help/C/mate-dictionary/legal.xml
+share/help/C/mate-disk-usage-analyzer/index.docbook
+share/help/C/mate-disk-usage-analyzer/legal.xml
+share/help/C/mate-search-tool/index.docbook
+share/help/C/mate-search-tool/legal.xml
+share/help/C/mate-system-log/figures/syslog_window.png
+share/help/C/mate-system-log/index.docbook
+share/help/C/mate-system-log/legal.xml
+share/help/ca/mate-dictionary/index.docbook
+share/help/ca/mate-dictionary/legal.xml
+share/help/ca/mate-disk-usage-analyzer/index.docbook
+share/help/ca/mate-disk-usage-analyzer/legal.xml
+share/help/ca/mate-search-tool/index.docbook
+share/help/ca/mate-search-tool/legal.xml
+share/help/ca/mate-system-log/figures/syslog_window.png
+share/help/ca/mate-system-log/index.docbook
+share/help/ca/mate-system-log/legal.xml
+share/help/cs/mate-dictionary/index.docbook
+share/help/cs/mate-dictionary/legal.xml
+share/help/cs/mate-disk-usage-analyzer/index.docbook
+share/help/cs/mate-disk-usage-analyzer/legal.xml
+share/help/cs/mate-search-tool/index.docbook
+share/help/cs/mate-search-tool/legal.xml
+share/help/cs/mate-system-log/figures/syslog_window.png
+share/help/cs/mate-system-log/index.docbook
+share/help/cs/mate-system-log/legal.xml
+share/help/da/mate-dictionary/index.docbook
+share/help/da/mate-dictionary/legal.xml
+share/help/da/mate-disk-usage-analyzer/index.docbook
+share/help/da/mate-disk-usage-analyzer/legal.xml
+share/help/de/mate-dictionary/index.docbook
+share/help/de/mate-dictionary/legal.xml
+share/help/de/mate-disk-usage-analyzer/index.docbook
+share/help/de/mate-disk-usage-analyzer/legal.xml
+share/help/de/mate-search-tool/index.docbook
+share/help/de/mate-search-tool/legal.xml
+share/help/de/mate-system-log/figures/syslog_window.png
+share/help/de/mate-system-log/index.docbook
+share/help/de/mate-system-log/legal.xml
+share/help/el/mate-dictionary/index.docbook
+share/help/el/mate-dictionary/legal.xml
+share/help/el/mate-disk-usage-analyzer/index.docbook
+share/help/el/mate-disk-usage-analyzer/legal.xml
+share/help/el/mate-search-tool/index.docbook
+share/help/el/mate-search-tool/legal.xml
+share/help/el/mate-system-log/figures/syslog_window.png
+share/help/el/mate-system-log/index.docbook
+share/help/el/mate-system-log/legal.xml
+share/help/en_GB/mate-dictionary/index.docbook
+share/help/en_GB/mate-dictionary/legal.xml
+share/help/en_GB/mate-disk-usage-analyzer/index.docbook
+share/help/en_GB/mate-disk-usage-analyzer/legal.xml
+share/help/en_GB/mate-search-tool/index.docbook
+share/help/en_GB/mate-search-tool/legal.xml
+share/help/en_GB/mate-system-log/figures/syslog_window.png
+share/help/en_GB/mate-system-log/index.docbook
+share/help/en_GB/mate-system-log/legal.xml
+share/help/es/mate-dictionary/index.docbook
+share/help/es/mate-dictionary/legal.xml
+share/help/es/mate-disk-usage-analyzer/index.docbook
+share/help/es/mate-disk-usage-analyzer/legal.xml
+share/help/es/mate-search-tool/index.docbook
+share/help/es/mate-search-tool/legal.xml
+share/help/es/mate-system-log/figures/syslog_window.png
+share/help/es/mate-system-log/index.docbook
+share/help/es/mate-system-log/legal.xml
+share/help/eu/mate-dictionary/index.docbook
+share/help/eu/mate-dictionary/legal.xml
+share/help/eu/mate-disk-usage-analyzer/index.docbook
+share/help/eu/mate-disk-usage-analyzer/legal.xml
+share/help/eu/mate-search-tool/index.docbook
+share/help/eu/mate-search-tool/legal.xml
+share/help/eu/mate-system-log/figures/syslog_window.png
+share/help/eu/mate-system-log/index.docbook
+share/help/eu/mate-system-log/legal.xml
+share/help/fi/mate-dictionary/index.docbook
+share/help/fi/mate-dictionary/legal.xml
+share/help/fi/mate-disk-usage-analyzer/index.docbook
+share/help/fi/mate-disk-usage-analyzer/legal.xml
+share/help/fi/mate-search-tool/index.docbook
+share/help/fi/mate-search-tool/legal.xml
+share/help/fi/mate-system-log/figures/syslog_window.png
+share/help/fi/mate-system-log/index.docbook
+share/help/fi/mate-system-log/legal.xml
+share/help/fr/mate-dictionary/index.docbook
+share/help/fr/mate-dictionary/legal.xml
+share/help/fr/mate-disk-usage-analyzer/index.docbook
+share/help/fr/mate-disk-usage-analyzer/legal.xml
+share/help/fr/mate-search-tool/index.docbook
+share/help/fr/mate-search-tool/legal.xml
+share/help/fr/mate-system-log/figures/syslog_window.png
+share/help/fr/mate-system-log/index.docbook
+share/help/fr/mate-system-log/legal.xml
+share/help/it/mate-dictionary/index.docbook
+share/help/it/mate-dictionary/legal.xml
+share/help/it/mate-disk-usage-analyzer/index.docbook
+share/help/it/mate-disk-usage-analyzer/legal.xml
+share/help/it/mate-search-tool/index.docbook
+share/help/it/mate-search-tool/legal.xml
+share/help/it/mate-system-log/figures/syslog_window.png
+share/help/it/mate-system-log/index.docbook
+share/help/it/mate-system-log/legal.xml
+share/help/ko/mate-search-tool/index.docbook
+share/help/ko/mate-search-tool/legal.xml
+share/help/ko/mate-system-log/figures/syslog_window.png
+share/help/ko/mate-system-log/index.docbook
+share/help/ko/mate-system-log/legal.xml
+share/help/oc/mate-dictionary/index.docbook
+share/help/oc/mate-dictionary/legal.xml
+share/help/oc/mate-disk-usage-analyzer/index.docbook
+share/help/oc/mate-disk-usage-analyzer/legal.xml
+share/help/oc/mate-search-tool/index.docbook
+share/help/oc/mate-search-tool/legal.xml
+share/help/oc/mate-system-log/figures/syslog_window.png
+share/help/oc/mate-system-log/index.docbook
+share/help/oc/mate-system-log/legal.xml
+share/help/pl/mate-disk-usage-analyzer/index.docbook
+share/help/pl/mate-disk-usage-analyzer/legal.xml
+share/help/ru/mate-dictionary/index.docbook
+share/help/ru/mate-dictionary/legal.xml
+share/help/ru/mate-disk-usage-analyzer/index.docbook
+share/help/ru/mate-disk-usage-analyzer/legal.xml
+share/help/ru/mate-search-tool/index.docbook
+share/help/ru/mate-search-tool/legal.xml
+share/help/ru/mate-system-log/figures/syslog_window.png
+share/help/ru/mate-system-log/index.docbook
+share/help/ru/mate-system-log/legal.xml
+share/help/sv/mate-dictionary/index.docbook
+share/help/sv/mate-dictionary/legal.xml
+share/help/sv/mate-disk-usage-analyzer/index.docbook
+share/help/sv/mate-disk-usage-analyzer/legal.xml
+share/help/sv/mate-search-tool/index.docbook
+share/help/sv/mate-search-tool/legal.xml
+share/help/sv/mate-system-log/figures/syslog_window.png
+share/help/sv/mate-system-log/index.docbook
+share/help/sv/mate-system-log/legal.xml
+share/help/uk/mate-dictionary/index.docbook
+share/help/uk/mate-dictionary/legal.xml
+share/help/uk/mate-disk-usage-analyzer/index.docbook
+share/help/uk/mate-disk-usage-analyzer/legal.xml
+share/help/uk/mate-search-tool/index.docbook
+share/help/uk/mate-search-tool/legal.xml
+share/help/uk/mate-system-log/figures/syslog_window.png
+share/help/uk/mate-system-log/index.docbook
+share/help/uk/mate-system-log/legal.xml
+share/help/zh_CN/mate-dictionary/index.docbook
+share/help/zh_CN/mate-dictionary/legal.xml
+share/help/zh_CN/mate-disk-usage-analyzer/index.docbook
+share/help/zh_CN/mate-disk-usage-analyzer/legal.xml
+share/help/zh_CN/mate-search-tool/index.docbook
+share/help/zh_CN/mate-search-tool/legal.xml
+share/help/zh_CN/mate-system-log/figures/syslog_window.png
+share/help/zh_CN/mate-system-log/index.docbook
+share/help/zh_CN/mate-system-log/legal.xml
+share/help/zh_HK/mate-disk-usage-analyzer/index.docbook
+share/help/zh_HK/mate-disk-usage-analyzer/legal.xml
+share/help/zh_TW/mate-disk-usage-analyzer/index.docbook
+share/help/zh_TW/mate-disk-usage-analyzer/legal.xml
+share/icons/hicolor/24x24/apps/mate-disk-usage-analyzer.png
+share/icons/hicolor/scalable/apps/mate-disk-usage-analyzer.svg
 share/locale/af/LC_MESSAGES/mate-utils.mo
 share/locale/am/LC_MESSAGES/mate-utils.mo
 share/locale/ar/LC_MESSAGES/mate-utils.mo
@@ -56,6 +250,7 @@ share/locale/br/LC_MESSAGES/mate-utils.mo
 share/locale/bs/LC_MESSAGES/mate-utils.mo
 share/locale/ca/LC_MESSAGES/mate-utils.mo
 share/locale/ca@valencia/LC_MESSAGES/mate-utils.mo
+share/locale/cmn/LC_MESSAGES/mate-utils.mo
 share/locale/crh/LC_MESSAGES/mate-utils.mo
 share/locale/cs/LC_MESSAGES/mate-utils.mo
 share/locale/cy/LC_MESSAGES/mate-utils.mo
@@ -85,9 +280,11 @@ share/locale/id/LC_MESSAGES/mate-utils.mo
 share/locale/it/LC_MESSAGES/mate-utils.mo
 share/locale/ja/LC_MESSAGES/mate-utils.mo
 share/locale/ka/LC_MESSAGES/mate-utils.mo
+share/locale/kk/LC_MESSAGES/mate-utils.mo
 share/locale/kn/LC_MESSAGES/mate-utils.mo
 share/locale/ko/LC_MESSAGES/mate-utils.mo
 share/locale/ku/LC_MESSAGES/mate-utils.mo
+share/locale/ky/LC_MESSAGES/mate-utils.mo
 share/locale/lt/LC_MESSAGES/mate-utils.mo
 share/locale/lv/LC_MESSAGES/mate-utils.mo
 share/locale/mai/LC_MESSAGES/mate-utils.mo
@@ -125,6 +322,7 @@ share/locale/th/LC_MESSAGES/mate-utils.mo
 share/locale/tr/LC_MESSAGES/mate-utils.mo
 share/locale/ug/LC_MESSAGES/mate-utils.mo
 share/locale/uk/LC_MESSAGES/mate-utils.mo
+share/locale/ur/LC_MESSAGES/mate-utils.mo
 share/locale/vi/LC_MESSAGES/mate-utils.mo
 share/locale/wa/LC_MESSAGES/mate-utils.mo
 share/locale/xh/LC_MESSAGES/mate-utils.mo
@@ -145,627 +343,23 @@ share/mate-panel/applets/org.mate.DictionaryApplet.mate-panel-applet
 share/mate-screenshot/mate-screenshot.ui
 %%DATADIR%%/logview-filter.ui
 %%DATADIR%%/logview-toolbar.xml
-share/mate/help/mate-dictionary/C/figures/mate-dictionary-add-source.png
-share/mate/help/mate-dictionary/C/figures/mate-dictionary-applet-window.png
-share/mate/help/mate-dictionary/C/figures/mate-dictionary-applet.png
-share/mate/help/mate-dictionary/C/figures/mate-dictionary-application.png
-share/mate/help/mate-dictionary/C/figures/mate-dictionary-find.png
-share/mate/help/mate-dictionary/C/figures/mate-dictionary-lookup.png
-share/mate/help/mate-dictionary/C/figures/mate-dictionary-preferences-print.png
-share/mate/help/mate-dictionary/C/figures/mate-dictionary-preferences-source.png
-share/mate/help/mate-dictionary/C/legal.xml
-share/mate/help/mate-dictionary/C/mate-dictionary.xml
-share/mate/help/mate-dictionary/ca/figures/mate-dictionary-add-source.png
-share/mate/help/mate-dictionary/ca/figures/mate-dictionary-applet-window.png
-share/mate/help/mate-dictionary/ca/figures/mate-dictionary-applet.png
-share/mate/help/mate-dictionary/ca/figures/mate-dictionary-application.png
-share/mate/help/mate-dictionary/ca/figures/mate-dictionary-find.png
-share/mate/help/mate-dictionary/ca/figures/mate-dictionary-lookup.png
-share/mate/help/mate-dictionary/ca/figures/mate-dictionary-preferences-print.png
-share/mate/help/mate-dictionary/ca/figures/mate-dictionary-preferences-source.png
-share/mate/help/mate-dictionary/ca/mate-dictionary.xml
-share/mate/help/mate-dictionary/cs/figures/mate-dictionary-add-source.png
-share/mate/help/mate-dictionary/cs/figures/mate-dictionary-applet-window.png
-share/mate/help/mate-dictionary/cs/figures/mate-dictionary-applet.png
-share/mate/help/mate-dictionary/cs/figures/mate-dictionary-application.png
-share/mate/help/mate-dictionary/cs/figures/mate-dictionary-find.png
-share/mate/help/mate-dictionary/cs/figures/mate-dictionary-lookup.png
-share/mate/help/mate-dictionary/cs/figures/mate-dictionary-preferences-print.png
-share/mate/help/mate-dictionary/cs/figures/mate-dictionary-preferences-source.png
-share/mate/help/mate-dictionary/cs/mate-dictionary.xml
-share/mate/help/mate-dictionary/da/figures/mate-dictionary-add-source.png
-share/mate/help/mate-dictionary/da/figures/mate-dictionary-applet-window.png
-share/mate/help/mate-dictionary/da/figures/mate-dictionary-applet.png
-share/mate/help/mate-dictionary/da/figures/mate-dictionary-application.png
-share/mate/help/mate-dictionary/da/figures/mate-dictionary-find.png
-share/mate/help/mate-dictionary/da/figures/mate-dictionary-lookup.png
-share/mate/help/mate-dictionary/da/figures/mate-dictionary-preferences-print.png
-share/mate/help/mate-dictionary/da/figures/mate-dictionary-preferences-source.png
-share/mate/help/mate-dictionary/da/mate-dictionary.xml
-share/mate/help/mate-dictionary/de/figures/mate-dictionary-add-source.png
-share/mate/help/mate-dictionary/de/figures/mate-dictionary-applet-window.png
-share/mate/help/mate-dictionary/de/figures/mate-dictionary-applet.png
-share/mate/help/mate-dictionary/de/figures/mate-dictionary-application.png
-share/mate/help/mate-dictionary/de/figures/mate-dictionary-find.png
-share/mate/help/mate-dictionary/de/figures/mate-dictionary-lookup.png
-share/mate/help/mate-dictionary/de/figures/mate-dictionary-preferences-print.png
-share/mate/help/mate-dictionary/de/figures/mate-dictionary-preferences-source.png
-share/mate/help/mate-dictionary/de/mate-dictionary.xml
-share/mate/help/mate-dictionary/el/figures/mate-dictionary-add-source.png
-share/mate/help/mate-dictionary/el/figures/mate-dictionary-applet-window.png
-share/mate/help/mate-dictionary/el/figures/mate-dictionary-applet.png
-share/mate/help/mate-dictionary/el/figures/mate-dictionary-application.png
-share/mate/help/mate-dictionary/el/figures/mate-dictionary-find.png
-share/mate/help/mate-dictionary/el/figures/mate-dictionary-lookup.png
-share/mate/help/mate-dictionary/el/figures/mate-dictionary-preferences-print.png
-share/mate/help/mate-dictionary/el/figures/mate-dictionary-preferences-source.png
-share/mate/help/mate-dictionary/el/mate-dictionary.xml
-share/mate/help/mate-dictionary/en_GB/figures/mate-dictionary-add-source.png
-share/mate/help/mate-dictionary/en_GB/figures/mate-dictionary-applet-window.png
-share/mate/help/mate-dictionary/en_GB/figures/mate-dictionary-applet.png
-share/mate/help/mate-dictionary/en_GB/figures/mate-dictionary-application.png
-share/mate/help/mate-dictionary/en_GB/figures/mate-dictionary-find.png
-share/mate/help/mate-dictionary/en_GB/figures/mate-dictionary-lookup.png
-share/mate/help/mate-dictionary/en_GB/figures/mate-dictionary-preferences-print.png
-share/mate/help/mate-dictionary/en_GB/figures/mate-dictionary-preferences-source.png
-share/mate/help/mate-dictionary/en_GB/mate-dictionary.xml
-share/mate/help/mate-dictionary/es/figures/mate-dictionary-add-source.png
-share/mate/help/mate-dictionary/es/figures/mate-dictionary-applet-window.png
-share/mate/help/mate-dictionary/es/figures/mate-dictionary-applet.png
-share/mate/help/mate-dictionary/es/figures/mate-dictionary-application.png
-share/mate/help/mate-dictionary/es/figures/mate-dictionary-find.png
-share/mate/help/mate-dictionary/es/figures/mate-dictionary-lookup.png
-share/mate/help/mate-dictionary/es/figures/mate-dictionary-preferences-print.png
-share/mate/help/mate-dictionary/es/figures/mate-dictionary-preferences-source.png
-share/mate/help/mate-dictionary/es/mate-dictionary.xml
-share/mate/help/mate-dictionary/eu/figures/mate-dictionary-add-source.png
-share/mate/help/mate-dictionary/eu/figures/mate-dictionary-applet-window.png
-share/mate/help/mate-dictionary/eu/figures/mate-dictionary-applet.png
-share/mate/help/mate-dictionary/eu/figures/mate-dictionary-application.png
-share/mate/help/mate-dictionary/eu/figures/mate-dictionary-find.png
-share/mate/help/mate-dictionary/eu/figures/mate-dictionary-lookup.png
-share/mate/help/mate-dictionary/eu/figures/mate-dictionary-preferences-print.png
-share/mate/help/mate-dictionary/eu/figures/mate-dictionary-preferences-source.png
-share/mate/help/mate-dictionary/eu/mate-dictionary.xml
-share/mate/help/mate-dictionary/fi/figures/mate-dictionary-add-source.png
-share/mate/help/mate-dictionary/fi/figures/mate-dictionary-applet-window.png
-share/mate/help/mate-dictionary/fi/figures/mate-dictionary-applet.png
-share/mate/help/mate-dictionary/fi/figures/mate-dictionary-application.png
-share/mate/help/mate-dictionary/fi/figures/mate-dictionary-find.png
-share/mate/help/mate-dictionary/fi/figures/mate-dictionary-lookup.png
-share/mate/help/mate-dictionary/fi/figures/mate-dictionary-preferences-print.png
-share/mate/help/mate-dictionary/fi/figures/mate-dictionary-preferences-source.png
-share/mate/help/mate-dictionary/fi/mate-dictionary.xml
-share/mate/help/mate-dictionary/fr/figures/mate-dictionary-add-source.png
-share/mate/help/mate-dictionary/fr/figures/mate-dictionary-applet-window.png
-share/mate/help/mate-dictionary/fr/figures/mate-dictionary-applet.png
-share/mate/help/mate-dictionary/fr/figures/mate-dictionary-application.png
-share/mate/help/mate-dictionary/fr/figures/mate-dictionary-find.png
-share/mate/help/mate-dictionary/fr/figures/mate-dictionary-lookup.png
-share/mate/help/mate-dictionary/fr/figures/mate-dictionary-preferences-print.png
-share/mate/help/mate-dictionary/fr/figures/mate-dictionary-preferences-source.png
-share/mate/help/mate-dictionary/fr/mate-dictionary.xml
-share/mate/help/mate-dictionary/it/figures/mate-dictionary-add-source.png
-share/mate/help/mate-dictionary/it/figures/mate-dictionary-applet-window.png
-share/mate/help/mate-dictionary/it/figures/mate-dictionary-applet.png
-share/mate/help/mate-dictionary/it/figures/mate-dictionary-application.png
-share/mate/help/mate-dictionary/it/figures/mate-dictionary-find.png
-share/mate/help/mate-dictionary/it/figures/mate-dictionary-lookup.png
-share/mate/help/mate-dictionary/it/figures/mate-dictionary-preferences-print.png
-share/mate/help/mate-dictionary/it/figures/mate-dictionary-preferences-source.png
-share/mate/help/mate-dictionary/it/mate-dictionary.xml
-share/mate/help/mate-dictionary/oc/figures/mate-dictionary-add-source.png
-share/mate/help/mate-dictionary/oc/figures/mate-dictionary-applet-window.png
-share/mate/help/mate-dictionary/oc/figures/mate-dictionary-applet.png
-share/mate/help/mate-dictionary/oc/figures/mate-dictionary-application.png
-share/mate/help/mate-dictionary/oc/figures/mate-dictionary-find.png
-share/mate/help/mate-dictionary/oc/figures/mate-dictionary-lookup.png
-share/mate/help/mate-dictionary/oc/figures/mate-dictionary-preferences-print.png
-share/mate/help/mate-dictionary/oc/figures/mate-dictionary-preferences-source.png
-share/mate/help/mate-dictionary/oc/mate-dictionary.xml
-share/mate/help/mate-dictionary/ru/figures/mate-dictionary-add-source.png
-share/mate/help/mate-dictionary/ru/figures/mate-dictionary-applet-window.png
-share/mate/help/mate-dictionary/ru/figures/mate-dictionary-applet.png
-share/mate/help/mate-dictionary/ru/figures/mate-dictionary-application.png
-share/mate/help/mate-dictionary/ru/figures/mate-dictionary-find.png
-share/mate/help/mate-dictionary/ru/figures/mate-dictionary-lookup.png
-share/mate/help/mate-dictionary/ru/figures/mate-dictionary-preferences-print.png
-share/mate/help/mate-dictionary/ru/figures/mate-dictionary-preferences-source.png
-share/mate/help/mate-dictionary/ru/mate-dictionary.xml
-share/mate/help/mate-dictionary/sv/figures/mate-dictionary-add-source.png
-share/mate/help/mate-dictionary/sv/figures/mate-dictionary-applet-window.png
-share/mate/help/mate-dictionary/sv/figures/mate-dictionary-applet.png
-share/mate/help/mate-dictionary/sv/figures/mate-dictionary-application.png
-share/mate/help/mate-dictionary/sv/figures/mate-dictionary-find.png
-share/mate/help/mate-dictionary/sv/figures/mate-dictionary-lookup.png
-share/mate/help/mate-dictionary/sv/figures/mate-dictionary-preferences-print.png
-share/mate/help/mate-dictionary/sv/figures/mate-dictionary-preferences-source.png
-share/mate/help/mate-dictionary/sv/mate-dictionary.xml
-share/mate/help/mate-dictionary/uk/figures/mate-dictionary-add-source.png
-share/mate/help/mate-dictionary/uk/figures/mate-dictionary-applet-window.png
-share/mate/help/mate-dictionary/uk/figures/mate-dictionary-applet.png
-share/mate/help/mate-dictionary/uk/figures/mate-dictionary-application.png
-share/mate/help/mate-dictionary/uk/figures/mate-dictionary-find.png
-share/mate/help/mate-dictionary/uk/figures/mate-dictionary-lookup.png
-share/mate/help/mate-dictionary/uk/figures/mate-dictionary-preferences-print.png
-share/mate/help/mate-dictionary/uk/figures/mate-dictionary-preferences-source.png
-share/mate/help/mate-dictionary/uk/mate-dictionary.xml
-share/mate/help/mate-dictionary/zh_CN/figures/mate-dictionary-add-source.png
-share/mate/help/mate-dictionary/zh_CN/figures/mate-dictionary-applet-window.png
-share/mate/help/mate-dictionary/zh_CN/figures/mate-dictionary-applet.png
-share/mate/help/mate-dictionary/zh_CN/figures/mate-dictionary-application.png
-share/mate/help/mate-dictionary/zh_CN/figures/mate-dictionary-find.png
-share/mate/help/mate-dictionary/zh_CN/figures/mate-dictionary-lookup.png
-share/mate/help/mate-dictionary/zh_CN/figures/mate-dictionary-preferences-print.png
-share/mate/help/mate-dictionary/zh_CN/figures/mate-dictionary-preferences-source.png
-share/mate/help/mate-dictionary/zh_CN/mate-dictionary.xml
-share/mate/help/mate-disk-usage-analyzer/C/figures/baobab_fullscan.png
-share/mate/help/mate-disk-usage-analyzer/C/figures/baobab_prefs.png
-share/mate/help/mate-disk-usage-analyzer/C/figures/baobab_remote.png
-share/mate/help/mate-disk-usage-analyzer/C/figures/baobab_ringschart1.png
-share/mate/help/mate-disk-usage-analyzer/C/figures/baobab_ringschart2.png
-share/mate/help/mate-disk-usage-analyzer/C/figures/baobab_treemaps.png
-share/mate/help/mate-disk-usage-analyzer/C/figures/baobab_window.png
-share/mate/help/mate-disk-usage-analyzer/C/legal.xml
-share/mate/help/mate-disk-usage-analyzer/C/mate-disk-usage-analyzer.xml
-share/mate/help/mate-disk-usage-analyzer/ca/figures/baobab_fullscan.png
-share/mate/help/mate-disk-usage-analyzer/ca/figures/baobab_prefs.png
-share/mate/help/mate-disk-usage-analyzer/ca/figures/baobab_remote.png
-share/mate/help/mate-disk-usage-analyzer/ca/figures/baobab_ringschart1.png
-share/mate/help/mate-disk-usage-analyzer/ca/figures/baobab_ringschart2.png
-share/mate/help/mate-disk-usage-analyzer/ca/figures/baobab_treemaps.png
-share/mate/help/mate-disk-usage-analyzer/ca/figures/baobab_window.png
-share/mate/help/mate-disk-usage-analyzer/ca/mate-disk-usage-analyzer.xml
-share/mate/help/mate-disk-usage-analyzer/cs/figures/baobab_fullscan.png
-share/mate/help/mate-disk-usage-analyzer/cs/figures/baobab_prefs.png
-share/mate/help/mate-disk-usage-analyzer/cs/figures/baobab_remote.png
-share/mate/help/mate-disk-usage-analyzer/cs/figures/baobab_ringschart1.png
-share/mate/help/mate-disk-usage-analyzer/cs/figures/baobab_ringschart2.png
-share/mate/help/mate-disk-usage-analyzer/cs/figures/baobab_treemaps.png
-share/mate/help/mate-disk-usage-analyzer/cs/figures/baobab_window.png
-share/mate/help/mate-disk-usage-analyzer/cs/mate-disk-usage-analyzer.xml
-share/mate/help/mate-disk-usage-analyzer/da/figures/baobab_fullscan.png
-share/mate/help/mate-disk-usage-analyzer/da/figures/baobab_prefs.png
-share/mate/help/mate-disk-usage-analyzer/da/figures/baobab_remote.png
-share/mate/help/mate-disk-usage-analyzer/da/figures/baobab_ringschart1.png
-share/mate/help/mate-disk-usage-analyzer/da/figures/baobab_ringschart2.png
-share/mate/help/mate-disk-usage-analyzer/da/figures/baobab_treemaps.png
-share/mate/help/mate-disk-usage-analyzer/da/figures/baobab_window.png
-share/mate/help/mate-disk-usage-analyzer/da/mate-disk-usage-analyzer.xml
-share/mate/help/mate-disk-usage-analyzer/de/figures/baobab_fullscan.png
-share/mate/help/mate-disk-usage-analyzer/de/figures/baobab_prefs.png
-share/mate/help/mate-disk-usage-analyzer/de/figures/baobab_remote.png
-share/mate/help/mate-disk-usage-analyzer/de/figures/baobab_ringschart1.png
-share/mate/help/mate-disk-usage-analyzer/de/figures/baobab_ringschart2.png
-share/mate/help/mate-disk-usage-analyzer/de/figures/baobab_treemaps.png
-share/mate/help/mate-disk-usage-analyzer/de/figures/baobab_window.png
-share/mate/help/mate-disk-usage-analyzer/de/mate-disk-usage-analyzer.xml
-share/mate/help/mate-disk-usage-analyzer/el/figures/baobab_fullscan.png
-share/mate/help/mate-disk-usage-analyzer/el/figures/baobab_prefs.png
-share/mate/help/mate-disk-usage-analyzer/el/figures/baobab_remote.png
-share/mate/help/mate-disk-usage-analyzer/el/figures/baobab_ringschart1.png
-share/mate/help/mate-disk-usage-analyzer/el/figures/baobab_ringschart2.png
-share/mate/help/mate-disk-usage-analyzer/el/figures/baobab_treemaps.png
-share/mate/help/mate-disk-usage-analyzer/el/figures/baobab_window.png
-share/mate/help/mate-disk-usage-analyzer/el/mate-disk-usage-analyzer.xml
-share/mate/help/mate-disk-usage-analyzer/en_GB/figures/baobab_fullscan.png
-share/mate/help/mate-disk-usage-analyzer/en_GB/figures/baobab_prefs.png
-share/mate/help/mate-disk-usage-analyzer/en_GB/figures/baobab_remote.png
-share/mate/help/mate-disk-usage-analyzer/en_GB/figures/baobab_ringschart1.png
-share/mate/help/mate-disk-usage-analyzer/en_GB/figures/baobab_ringschart2.png
-share/mate/help/mate-disk-usage-analyzer/en_GB/figures/baobab_treemaps.png
-share/mate/help/mate-disk-usage-analyzer/en_GB/figures/baobab_window.png
-share/mate/help/mate-disk-usage-analyzer/en_GB/mate-disk-usage-analyzer.xml
-share/mate/help/mate-disk-usage-analyzer/es/figures/baobab_fullscan.png
-share/mate/help/mate-disk-usage-analyzer/es/figures/baobab_prefs.png
-share/mate/help/mate-disk-usage-analyzer/es/figures/baobab_remote.png
-share/mate/help/mate-disk-usage-analyzer/es/figures/baobab_ringschart1.png
-share/mate/help/mate-disk-usage-analyzer/es/figures/baobab_ringschart2.png
-share/mate/help/mate-disk-usage-analyzer/es/figures/baobab_treemaps.png
-share/mate/help/mate-disk-usage-analyzer/es/figures/baobab_window.png
-share/mate/help/mate-disk-usage-analyzer/es/mate-disk-usage-analyzer.xml
-share/mate/help/mate-disk-usage-analyzer/eu/figures/baobab_fullscan.png
-share/mate/help/mate-disk-usage-analyzer/eu/figures/baobab_prefs.png
-share/mate/help/mate-disk-usage-analyzer/eu/figures/baobab_remote.png
-share/mate/help/mate-disk-usage-analyzer/eu/figures/baobab_ringschart1.png
-share/mate/help/mate-disk-usage-analyzer/eu/figures/baobab_ringschart2.png
-share/mate/help/mate-disk-usage-analyzer/eu/figures/baobab_treemaps.png
-share/mate/help/mate-disk-usage-analyzer/eu/figures/baobab_window.png
-share/mate/help/mate-disk-usage-analyzer/eu/mate-disk-usage-analyzer.xml
-share/mate/help/mate-disk-usage-analyzer/fi/figures/baobab_fullscan.png
-share/mate/help/mate-disk-usage-analyzer/fi/figures/baobab_prefs.png
-share/mate/help/mate-disk-usage-analyzer/fi/figures/baobab_remote.png
-share/mate/help/mate-disk-usage-analyzer/fi/figures/baobab_ringschart1.png
-share/mate/help/mate-disk-usage-analyzer/fi/figures/baobab_ringschart2.png
-share/mate/help/mate-disk-usage-analyzer/fi/figures/baobab_treemaps.png
-share/mate/help/mate-disk-usage-analyzer/fi/figures/baobab_window.png
-share/mate/help/mate-disk-usage-analyzer/fi/mate-disk-usage-analyzer.xml
-share/mate/help/mate-disk-usage-analyzer/fr/figures/baobab_fullscan.png
-share/mate/help/mate-disk-usage-analyzer/fr/figures/baobab_prefs.png
-share/mate/help/mate-disk-usage-analyzer/fr/figures/baobab_remote.png
-share/mate/help/mate-disk-usage-analyzer/fr/figures/baobab_ringschart1.png
-share/mate/help/mate-disk-usage-analyzer/fr/figures/baobab_ringschart2.png
-share/mate/help/mate-disk-usage-analyzer/fr/figures/baobab_treemaps.png
-share/mate/help/mate-disk-usage-analyzer/fr/figures/baobab_window.png
-share/mate/help/mate-disk-usage-analyzer/fr/mate-disk-usage-analyzer.xml
-share/mate/help/mate-disk-usage-analyzer/it/figures/baobab_fullscan.png
-share/mate/help/mate-disk-usage-analyzer/it/figures/baobab_prefs.png
-share/mate/help/mate-disk-usage-analyzer/it/figures/baobab_remote.png
-share/mate/help/mate-disk-usage-analyzer/it/figures/baobab_ringschart1.png
-share/mate/help/mate-disk-usage-analyzer/it/figures/baobab_ringschart2.png
-share/mate/help/mate-disk-usage-analyzer/it/figures/baobab_treemaps.png
-share/mate/help/mate-disk-usage-analyzer/it/figures/baobab_window.png
-share/mate/help/mate-disk-usage-analyzer/it/mate-disk-usage-analyzer.xml
-share/mate/help/mate-disk-usage-analyzer/oc/figures/baobab_fullscan.png
-share/mate/help/mate-disk-usage-analyzer/oc/figures/baobab_prefs.png
-share/mate/help/mate-disk-usage-analyzer/oc/figures/baobab_remote.png
-share/mate/help/mate-disk-usage-analyzer/oc/figures/baobab_ringschart1.png
-share/mate/help/mate-disk-usage-analyzer/oc/figures/baobab_ringschart2.png
-share/mate/help/mate-disk-usage-analyzer/oc/figures/baobab_treemaps.png
-share/mate/help/mate-disk-usage-analyzer/oc/figures/baobab_window.png
-share/mate/help/mate-disk-usage-analyzer/oc/mate-disk-usage-analyzer.xml
-share/mate/help/mate-disk-usage-analyzer/pl/figures/baobab_fullscan.png
-share/mate/help/mate-disk-usage-analyzer/pl/figures/baobab_prefs.png
-share/mate/help/mate-disk-usage-analyzer/pl/figures/baobab_remote.png
-share/mate/help/mate-disk-usage-analyzer/pl/figures/baobab_ringschart1.png
-share/mate/help/mate-disk-usage-analyzer/pl/figures/baobab_ringschart2.png
-share/mate/help/mate-disk-usage-analyzer/pl/figures/baobab_treemaps.png
-share/mate/help/mate-disk-usage-analyzer/pl/figures/baobab_window.png
-share/mate/help/mate-disk-usage-analyzer/pl/mate-disk-usage-analyzer.xml
-share/mate/help/mate-disk-usage-analyzer/ru/figures/baobab_fullscan.png
-share/mate/help/mate-disk-usage-analyzer/ru/figures/baobab_prefs.png
-share/mate/help/mate-disk-usage-analyzer/ru/figures/baobab_remote.png
-share/mate/help/mate-disk-usage-analyzer/ru/figures/baobab_ringschart1.png
-share/mate/help/mate-disk-usage-analyzer/ru/figures/baobab_ringschart2.png
-share/mate/help/mate-disk-usage-analyzer/ru/figures/baobab_treemaps.png
-share/mate/help/mate-disk-usage-analyzer/ru/figures/baobab_window.png
-share/mate/help/mate-disk-usage-analyzer/ru/mate-disk-usage-analyzer.xml
-share/mate/help/mate-disk-usage-analyzer/sv/figures/baobab_fullscan.png
-share/mate/help/mate-disk-usage-analyzer/sv/figures/baobab_prefs.png
-share/mate/help/mate-disk-usage-analyzer/sv/figures/baobab_remote.png
-share/mate/help/mate-disk-usage-analyzer/sv/figures/baobab_ringschart1.png
-share/mate/help/mate-disk-usage-analyzer/sv/figures/baobab_ringschart2.png
-share/mate/help/mate-disk-usage-analyzer/sv/figures/baobab_treemaps.png
-share/mate/help/mate-disk-usage-analyzer/sv/figures/baobab_window.png
-share/mate/help/mate-disk-usage-analyzer/sv/mate-disk-usage-analyzer.xml
-share/mate/help/mate-disk-usage-analyzer/uk/figures/baobab_fullscan.png
-share/mate/help/mate-disk-usage-analyzer/uk/figures/baobab_prefs.png
-share/mate/help/mate-disk-usage-analyzer/uk/figures/baobab_remote.png
-share/mate/help/mate-disk-usage-analyzer/uk/figures/baobab_ringschart1.png
-share/mate/help/mate-disk-usage-analyzer/uk/figures/baobab_ringschart2.png
-share/mate/help/mate-disk-usage-analyzer/uk/figures/baobab_treemaps.png
-share/mate/help/mate-disk-usage-analyzer/uk/figures/baobab_window.png
-share/mate/help/mate-disk-usage-analyzer/uk/mate-disk-usage-analyzer.xml
-share/mate/help/mate-disk-usage-analyzer/zh_CN/figures/baobab_fullscan.png
-share/mate/help/mate-disk-usage-analyzer/zh_CN/figures/baobab_prefs.png
-share/mate/help/mate-disk-usage-analyzer/zh_CN/figures/baobab_remote.png
-share/mate/help/mate-disk-usage-analyzer/zh_CN/figures/baobab_ringschart1.png
-share/mate/help/mate-disk-usage-analyzer/zh_CN/figures/baobab_ringschart2.png
-share/mate/help/mate-disk-usage-analyzer/zh_CN/figures/baobab_treemaps.png
-share/mate/help/mate-disk-usage-analyzer/zh_CN/figures/baobab_window.png
-share/mate/help/mate-disk-usage-analyzer/zh_CN/mate-disk-usage-analyzer.xml
-share/mate/help/mate-disk-usage-analyzer/zh_HK/figures/baobab_fullscan.png
-share/mate/help/mate-disk-usage-analyzer/zh_HK/figures/baobab_prefs.png
-share/mate/help/mate-disk-usage-analyzer/zh_HK/figures/baobab_remote.png
-share/mate/help/mate-disk-usage-analyzer/zh_HK/figures/baobab_ringschart1.png
-share/mate/help/mate-disk-usage-analyzer/zh_HK/figures/baobab_ringschart2.png
-share/mate/help/mate-disk-usage-analyzer/zh_HK/figures/baobab_treemaps.png
-share/mate/help/mate-disk-usage-analyzer/zh_HK/figures/baobab_window.png
-share/mate/help/mate-disk-usage-analyzer/zh_HK/mate-disk-usage-analyzer.xml
-share/mate/help/mate-disk-usage-analyzer/zh_TW/figures/baobab_fullscan.png
-share/mate/help/mate-disk-usage-analyzer/zh_TW/figures/baobab_prefs.png
-share/mate/help/mate-disk-usage-analyzer/zh_TW/figures/baobab_remote.png
-share/mate/help/mate-disk-usage-analyzer/zh_TW/figures/baobab_ringschart1.png
-share/mate/help/mate-disk-usage-analyzer/zh_TW/figures/baobab_ringschart2.png
-share/mate/help/mate-disk-usage-analyzer/zh_TW/figures/baobab_treemaps.png
-share/mate/help/mate-disk-usage-analyzer/zh_TW/figures/baobab_window.png
-share/mate/help/mate-disk-usage-analyzer/zh_TW/mate-disk-usage-analyzer.xml
-share/mate/help/mate-search-tool/C/figures/mate-search-tool_window.png
-share/mate/help/mate-search-tool/C/legal.xml
-share/mate/help/mate-search-tool/C/mate-search-tool.xml
-share/mate/help/mate-search-tool/ca/figures/mate-search-tool_window.png
-share/mate/help/mate-search-tool/ca/mate-search-tool.xml
-share/mate/help/mate-search-tool/cs/figures/mate-search-tool_window.png
-share/mate/help/mate-search-tool/cs/mate-search-tool.xml
-share/mate/help/mate-search-tool/de/figures/mate-search-tool_window.png
-share/mate/help/mate-search-tool/de/mate-search-tool.xml
-share/mate/help/mate-search-tool/el/figures/mate-search-tool_window.png
-share/mate/help/mate-search-tool/el/mate-search-tool.xml
-share/mate/help/mate-search-tool/en_GB/figures/mate-search-tool_window.png
-share/mate/help/mate-search-tool/en_GB/mate-search-tool.xml
-share/mate/help/mate-search-tool/es/figures/mate-search-tool_window.png
-share/mate/help/mate-search-tool/es/mate-search-tool.xml
-share/mate/help/mate-search-tool/eu/figures/mate-search-tool_window.png
-share/mate/help/mate-search-tool/eu/mate-search-tool.xml
-share/mate/help/mate-search-tool/fi/figures/mate-search-tool_window.png
-share/mate/help/mate-search-tool/fi/mate-search-tool.xml
-share/mate/help/mate-search-tool/fr/figures/mate-search-tool_window.png
-share/mate/help/mate-search-tool/fr/mate-search-tool.xml
-share/mate/help/mate-search-tool/it/figures/mate-search-tool_window.png
-share/mate/help/mate-search-tool/it/mate-search-tool.xml
-share/mate/help/mate-search-tool/ko/figures/mate-search-tool_window.png
-share/mate/help/mate-search-tool/ko/mate-search-tool.xml
-share/mate/help/mate-search-tool/oc/figures/mate-search-tool_window.png
-share/mate/help/mate-search-tool/oc/mate-search-tool.xml
-share/mate/help/mate-search-tool/ru/figures/mate-search-tool_window.png
-share/mate/help/mate-search-tool/ru/mate-search-tool.xml
-share/mate/help/mate-search-tool/sv/figures/mate-search-tool_window.png
-share/mate/help/mate-search-tool/sv/mate-search-tool.xml
-share/mate/help/mate-search-tool/uk/figures/mate-search-tool_window.png
-share/mate/help/mate-search-tool/uk/mate-search-tool.xml
-share/mate/help/mate-search-tool/zh_CN/figures/mate-search-tool_window.png
-share/mate/help/mate-search-tool/zh_CN/mate-search-tool.xml
-share/mate/help/mate-system-log/C/figures/syslog_window.png
-share/mate/help/mate-system-log/C/legal.xml
-share/mate/help/mate-system-log/C/mate-system-log.xml
-share/mate/help/mate-system-log/ca/figures/syslog_window.png
-share/mate/help/mate-system-log/ca/mate-system-log.xml
-share/mate/help/mate-system-log/cs/figures/syslog_window.png
-share/mate/help/mate-system-log/cs/mate-system-log.xml
-share/mate/help/mate-system-log/de/figures/syslog_window.png
-share/mate/help/mate-system-log/de/mate-system-log.xml
-share/mate/help/mate-system-log/el/figures/syslog_window.png
-share/mate/help/mate-system-log/el/mate-system-log.xml
-share/mate/help/mate-system-log/en_GB/figures/syslog_window.png
-share/mate/help/mate-system-log/en_GB/mate-system-log.xml
-share/mate/help/mate-system-log/es/figures/syslog_window.png
-share/mate/help/mate-system-log/es/mate-system-log.xml
-share/mate/help/mate-system-log/eu/figures/syslog_window.png
-share/mate/help/mate-system-log/eu/mate-system-log.xml
-share/mate/help/mate-system-log/fi/figures/syslog_window.png
-share/mate/help/mate-system-log/fi/mate-system-log.xml
-share/mate/help/mate-system-log/fr/figures/syslog_window.png
-share/mate/help/mate-system-log/fr/mate-system-log.xml
-share/mate/help/mate-system-log/it/figures/syslog_window.png
-share/mate/help/mate-system-log/it/mate-system-log.xml
-share/mate/help/mate-system-log/ko/figures/syslog_window.png
-share/mate/help/mate-system-log/ko/mate-system-log.xml
-share/mate/help/mate-system-log/oc/figures/syslog_window.png
-share/mate/help/mate-system-log/oc/mate-system-log.xml
-share/mate/help/mate-system-log/ru/figures/syslog_window.png
-share/mate/help/mate-system-log/ru/mate-system-log.xml
-share/mate/help/mate-system-log/sv/figures/syslog_window.png
-share/mate/help/mate-system-log/sv/mate-system-log.xml
-share/mate/help/mate-system-log/uk/figures/syslog_window.png
-share/mate/help/mate-system-log/uk/mate-system-log.xml
-share/mate/help/mate-system-log/zh_CN/figures/syslog_window.png
-share/mate/help/mate-system-log/zh_CN/mate-system-log.xml
-share/omf/mate-dictionary/mate-dictionary-C.omf
-share/omf/mate-dictionary/mate-dictionary-ca.omf
-share/omf/mate-dictionary/mate-dictionary-cs.omf
-share/omf/mate-dictionary/mate-dictionary-da.omf
-share/omf/mate-dictionary/mate-dictionary-de.omf
-share/omf/mate-dictionary/mate-dictionary-el.omf
-share/omf/mate-dictionary/mate-dictionary-en_GB.omf
-share/omf/mate-dictionary/mate-dictionary-es.omf
-share/omf/mate-dictionary/mate-dictionary-eu.omf
-share/omf/mate-dictionary/mate-dictionary-fi.omf
-share/omf/mate-dictionary/mate-dictionary-fr.omf
-share/omf/mate-dictionary/mate-dictionary-it.omf
-share/omf/mate-dictionary/mate-dictionary-oc.omf
-share/omf/mate-dictionary/mate-dictionary-ru.omf
-share/omf/mate-dictionary/mate-dictionary-sv.omf
-share/omf/mate-dictionary/mate-dictionary-uk.omf
-share/omf/mate-dictionary/mate-dictionary-zh_CN.omf
-share/omf/mate-disk-usage-analyzer/mate-disk-usage-analyzer-C.omf
-share/omf/mate-disk-usage-analyzer/mate-disk-usage-analyzer-ca.omf
-share/omf/mate-disk-usage-analyzer/mate-disk-usage-analyzer-cs.omf
-share/omf/mate-disk-usage-analyzer/mate-disk-usage-analyzer-da.omf
-share/omf/mate-disk-usage-analyzer/mate-disk-usage-analyzer-de.omf
-share/omf/mate-disk-usage-analyzer/mate-disk-usage-analyzer-el.omf
-share/omf/mate-disk-usage-analyzer/mate-disk-usage-analyzer-en_GB.omf
-share/omf/mate-disk-usage-analyzer/mate-disk-usage-analyzer-es.omf
-share/omf/mate-disk-usage-analyzer/mate-disk-usage-analyzer-eu.omf
-share/omf/mate-disk-usage-analyzer/mate-disk-usage-analyzer-fi.omf
-share/omf/mate-disk-usage-analyzer/mate-disk-usage-analyzer-fr.omf
-share/omf/mate-disk-usage-analyzer/mate-disk-usage-analyzer-it.omf
-share/omf/mate-disk-usage-analyzer/mate-disk-usage-analyzer-oc.omf
-share/omf/mate-disk-usage-analyzer/mate-disk-usage-analyzer-pl.omf
-share/omf/mate-disk-usage-analyzer/mate-disk-usage-analyzer-ru.omf
-share/omf/mate-disk-usage-analyzer/mate-disk-usage-analyzer-sv.omf
-share/omf/mate-disk-usage-analyzer/mate-disk-usage-analyzer-uk.omf
-share/omf/mate-disk-usage-analyzer/mate-disk-usage-analyzer-zh_CN.omf
-share/omf/mate-disk-usage-analyzer/mate-disk-usage-analyzer-zh_HK.omf
-share/omf/mate-disk-usage-analyzer/mate-disk-usage-analyzer-zh_TW.omf
-share/omf/mate-search-tool/mate-search-tool-C.omf
-share/omf/mate-search-tool/mate-search-tool-ca.omf
-share/omf/mate-search-tool/mate-search-tool-cs.omf
-share/omf/mate-search-tool/mate-search-tool-de.omf
-share/omf/mate-search-tool/mate-search-tool-el.omf
-share/omf/mate-search-tool/mate-search-tool-en_GB.omf
-share/omf/mate-search-tool/mate-search-tool-es.omf
-share/omf/mate-search-tool/mate-search-tool-eu.omf
-share/omf/mate-search-tool/mate-search-tool-fi.omf
-share/omf/mate-search-tool/mate-search-tool-fr.omf
-share/omf/mate-search-tool/mate-search-tool-it.omf
-share/omf/mate-search-tool/mate-search-tool-ko.omf
-share/omf/mate-search-tool/mate-search-tool-oc.omf
-share/omf/mate-search-tool/mate-search-tool-ru.omf
-share/omf/mate-search-tool/mate-search-tool-sv.omf
-share/omf/mate-search-tool/mate-search-tool-uk.omf
-share/omf/mate-search-tool/mate-search-tool-zh_CN.omf
-share/omf/mate-system-log/mate-system-log-C.omf
-share/omf/mate-system-log/mate-system-log-ca.omf
-share/omf/mate-system-log/mate-system-log-cs.omf
-share/omf/mate-system-log/mate-system-log-de.omf
-share/omf/mate-system-log/mate-system-log-el.omf
-share/omf/mate-system-log/mate-system-log-en_GB.omf
-share/omf/mate-system-log/mate-system-log-es.omf
-share/omf/mate-system-log/mate-system-log-eu.omf
-share/omf/mate-system-log/mate-system-log-fi.omf
-share/omf/mate-system-log/mate-system-log-fr.omf
-share/omf/mate-system-log/mate-system-log-it.omf
-share/omf/mate-system-log/mate-system-log-ko.omf
-share/omf/mate-system-log/mate-system-log-oc.omf
-share/omf/mate-system-log/mate-system-log-ru.omf
-share/omf/mate-system-log/mate-system-log-sv.omf
-share/omf/mate-system-log/mate-system-log-uk.omf
-share/omf/mate-system-log/mate-system-log-zh_CN.omf
 share/pixmaps/mate-search-tool/thumbnail_frame.png
-@dirrm share/pixmaps/mate-search-tool
-@dirrm share/omf/mate-system-log
-@dirrm share/omf/mate-search-tool
-@dirrm share/omf/mate-disk-usage-analyzer
-@dirrm share/omf/mate-dictionary
-@dirrm share/mate/help/mate-system-log/zh_CN/figures
-@dirrm share/mate/help/mate-system-log/zh_CN
-@dirrm share/mate/help/mate-system-log/uk/figures
-@dirrm share/mate/help/mate-system-log/uk
-@dirrm share/mate/help/mate-system-log/sv/figures
-@dirrm share/mate/help/mate-system-log/sv
-@dirrm share/mate/help/mate-system-log/ru/figures
-@dirrm share/mate/help/mate-system-log/ru
-@dirrm share/mate/help/mate-system-log/oc/figures
-@dirrm share/mate/help/mate-system-log/oc
-@dirrm share/mate/help/mate-system-log/ko/figures
-@dirrm share/mate/help/mate-system-log/ko
-@dirrm share/mate/help/mate-system-log/it/figures
-@dirrm share/mate/help/mate-system-log/it
-@dirrm share/mate/help/mate-system-log/fr/figures
-@dirrm share/mate/help/mate-system-log/fr
-@dirrm share/mate/help/mate-system-log/fi/figures
-@dirrm share/mate/help/mate-system-log/fi
-@dirrm share/mate/help/mate-system-log/eu/figures
-@dirrm share/mate/help/mate-system-log/eu
-@dirrm share/mate/help/mate-system-log/es/figures
-@dirrm share/mate/help/mate-system-log/es
-@dirrm share/mate/help/mate-system-log/en_GB/figures
-@dirrm share/mate/help/mate-system-log/en_GB
-@dirrm share/mate/help/mate-system-log/el/figures
-@dirrm share/mate/help/mate-system-log/el
-@dirrm share/mate/help/mate-system-log/de/figures
-@dirrm share/mate/help/mate-system-log/de
-@dirrm share/mate/help/mate-system-log/cs/figures
-@dirrm share/mate/help/mate-system-log/cs
-@dirrm share/mate/help/mate-system-log/ca/figures
-@dirrm share/mate/help/mate-system-log/ca
-@dirrm share/mate/help/mate-system-log/C/figures
-@dirrm share/mate/help/mate-system-log/C
-@dirrm share/mate/help/mate-system-log
-@dirrm share/mate/help/mate-search-tool/zh_CN/figures
-@dirrm share/mate/help/mate-search-tool/zh_CN
-@dirrm share/mate/help/mate-search-tool/uk/figures
-@dirrm share/mate/help/mate-search-tool/uk
-@dirrm share/mate/help/mate-search-tool/sv/figures
-@dirrm share/mate/help/mate-search-tool/sv
-@dirrm share/mate/help/mate-search-tool/ru/figures
-@dirrm share/mate/help/mate-search-tool/ru
-@dirrm share/mate/help/mate-search-tool/oc/figures
-@dirrm share/mate/help/mate-search-tool/oc
-@dirrm share/mate/help/mate-search-tool/ko/figures
-@dirrm share/mate/help/mate-search-tool/ko
-@dirrm share/mate/help/mate-search-tool/it/figures
-@dirrm share/mate/help/mate-search-tool/it
-@dirrm share/mate/help/mate-search-tool/fr/figures
-@dirrm share/mate/help/mate-search-tool/fr
-@dirrm share/mate/help/mate-search-tool/fi/figures
-@dirrm share/mate/help/mate-search-tool/fi
-@dirrm share/mate/help/mate-search-tool/eu/figures
-@dirrm share/mate/help/mate-search-tool/eu
-@dirrm share/mate/help/mate-search-tool/es/figures
-@dirrm share/mate/help/mate-search-tool/es
-@dirrm share/mate/help/mate-search-tool/en_GB/figures
-@dirrm share/mate/help/mate-search-tool/en_GB
-@dirrm share/mate/help/mate-search-tool/el/figures
-@dirrm share/mate/help/mate-search-tool/el
-@dirrm share/mate/help/mate-search-tool/de/figures
-@dirrm share/mate/help/mate-search-tool/de
-@dirrm share/mate/help/mate-search-tool/cs/figures
-@dirrm share/mate/help/mate-search-tool/cs
-@dirrm share/mate/help/mate-search-tool/ca/figures
-@dirrm share/mate/help/mate-search-tool/ca
-@dirrm share/mate/help/mate-search-tool/C/figures
-@dirrm share/mate/help/mate-search-tool/C
-@dirrm share/mate/help/mate-search-tool
-@dirrm share/mate/help/mate-disk-usage-analyzer/zh_TW/figures
-@dirrm share/mate/help/mate-disk-usage-analyzer/zh_TW
-@dirrm share/mate/help/mate-disk-usage-analyzer/zh_HK/figures
-@dirrm share/mate/help/mate-disk-usage-analyzer/zh_HK
-@dirrm share/mate/help/mate-disk-usage-analyzer/zh_CN/figures
-@dirrm share/mate/help/mate-disk-usage-analyzer/zh_CN
-@dirrm share/mate/help/mate-disk-usage-analyzer/uk/figures
-@dirrm share/mate/help/mate-disk-usage-analyzer/uk
-@dirrm share/mate/help/mate-disk-usage-analyzer/sv/figures
-@dirrm share/mate/help/mate-disk-usage-analyzer/sv
-@dirrm share/mate/help/mate-disk-usage-analyzer/ru/figures
-@dirrm share/mate/help/mate-disk-usage-analyzer/ru
-@dirrm share/mate/help/mate-disk-usage-analyzer/pl/figures
-@dirrm share/mate/help/mate-disk-usage-analyzer/pl
-@dirrm share/mate/help/mate-disk-usage-analyzer/oc/figures
-@dirrm share/mate/help/mate-disk-usage-analyzer/oc
-@dirrm share/mate/help/mate-disk-usage-analyzer/it/figures
-@dirrm share/mate/help/mate-disk-usage-analyzer/it
-@dirrm share/mate/help/mate-disk-usage-analyzer/fr/figures
-@dirrm share/mate/help/mate-disk-usage-analyzer/fr
-@dirrm share/mate/help/mate-disk-usage-analyzer/fi/figures
-@dirrm share/mate/help/mate-disk-usage-analyzer/fi
-@dirrm share/mate/help/mate-disk-usage-analyzer/eu/figures
-@dirrm share/mate/help/mate-disk-usage-analyzer/eu
-@dirrm share/mate/help/mate-disk-usage-analyzer/es/figures
-@dirrm share/mate/help/mate-disk-usage-analyzer/es
-@dirrm share/mate/help/mate-disk-usage-analyzer/en_GB/figures
-@dirrm share/mate/help/mate-disk-usage-analyzer/en_GB
-@dirrm share/mate/help/mate-disk-usage-analyzer/el/figures
-@dirrm share/mate/help/mate-disk-usage-analyzer/el
-@dirrm share/mate/help/mate-disk-usage-analyzer/de/figures
-@dirrm share/mate/help/mate-disk-usage-analyzer/de
-@dirrm share/mate/help/mate-disk-usage-analyzer/da/figures
-@dirrm share/mate/help/mate-disk-usage-analyzer/da
-@dirrm share/mate/help/mate-disk-usage-analyzer/cs/figures
-@dirrm share/mate/help/mate-disk-usage-analyzer/cs
-@dirrm share/mate/help/mate-disk-usage-analyzer/ca/figures
-@dirrm share/mate/help/mate-disk-usage-analyzer/ca
-@dirrm share/mate/help/mate-disk-usage-analyzer/C/figures
-@dirrm share/mate/help/mate-disk-usage-analyzer/C
-@dirrm share/mate/help/mate-disk-usage-analyzer
-@dirrm share/mate/help/mate-dictionary/zh_CN/figures
-@dirrm share/mate/help/mate-dictionary/zh_CN
-@dirrm share/mate/help/mate-dictionary/uk/figures
-@dirrm share/mate/help/mate-dictionary/uk
-@dirrm share/mate/help/mate-dictionary/sv/figures
-@dirrm share/mate/help/mate-dictionary/sv
-@dirrm share/mate/help/mate-dictionary/ru/figures
-@dirrm share/mate/help/mate-dictionary/ru
-@dirrm share/mate/help/mate-dictionary/oc/figures
-@dirrm share/mate/help/mate-dictionary/oc
-@dirrm share/mate/help/mate-dictionary/it/figures
-@dirrm share/mate/help/mate-dictionary/it
-@dirrm share/mate/help/mate-dictionary/fr/figures
-@dirrm share/mate/help/mate-dictionary/fr
-@dirrm share/mate/help/mate-dictionary/fi/figures
-@dirrm share/mate/help/mate-dictionary/fi
-@dirrm share/mate/help/mate-dictionary/eu/figures
-@dirrm share/mate/help/mate-dictionary/eu
-@dirrm share/mate/help/mate-dictionary/es/figures
-@dirrm share/mate/help/mate-dictionary/es
-@dirrm share/mate/help/mate-dictionary/en_GB/figures
-@dirrm share/mate/help/mate-dictionary/en_GB
-@dirrm share/mate/help/mate-dictionary/el/figures
-@dirrm share/mate/help/mate-dictionary/el
-@dirrm share/mate/help/mate-dictionary/de/figures
-@dirrm share/mate/help/mate-dictionary/de
-@dirrm share/mate/help/mate-dictionary/da/figures
-@dirrm share/mate/help/mate-dictionary/da
-@dirrm share/mate/help/mate-dictionary/cs/figures
-@dirrm share/mate/help/mate-dictionary/cs
-@dirrm share/mate/help/mate-dictionary/ca/figures
-@dirrm share/mate/help/mate-dictionary/ca
-@dirrm share/mate/help/mate-dictionary/C/figures
-@dirrm share/mate/help/mate-dictionary/C
-@dirrm share/mate/help/mate-dictionary
-@dirrm %%DATADIR%%
-@dirrm share/mate-screenshot
+@dirrmtry share/pixmaps/mate-search-tool
+@dirrmtry %%DATADIR%%
+@dirrmtry share/mate-screenshot
 @dirrmtry share/mate-panel/applets
 @dirrmtry share/mate-panel
-@dirrm share/mate-disk-usage-analyzer/pixmaps
-@dirrm share/mate-disk-usage-analyzer
-@dirrm share/mate-dictionary
-@dirrm share/mate-dict/sources
-@dirrm share/mate-dict
+@dirrmtry share/mate-disk-usage-analyzer/pixmaps
+@dirrmtry share/mate-disk-usage-analyzer
+@dirrmtry share/mate-dictionary
+@dirrmtry share/mate-dict/sources
+@dirrmtry share/mate-dict
 @dirrmtry share/locale/zh_HK/LC_MESSAGES
 @dirrmtry share/locale/zh_HK
 @dirrmtry share/locale/xh/LC_MESSAGES
 @dirrmtry share/locale/xh
+@dirrmtry share/locale/ur/LC_MESSAGES
+@dirrmtry share/locale/ur
 @dirrmtry share/locale/ug/LC_MESSAGES
 @dirrmtry share/locale/ug
 @dirrmtry share/locale/te/LC_MESSAGES
@@ -788,14 +382,20 @@ share/pixmaps/mate-search-tool/thumbnail_frame.png
 @dirrmtry share/locale/mg
 @dirrmtry share/locale/mai/LC_MESSAGES
 @dirrmtry share/locale/mai
+@dirrmtry share/locale/ky/LC_MESSAGES
+@dirrmtry share/locale/ky
 @dirrmtry share/locale/ku/LC_MESSAGES
 @dirrmtry share/locale/ku
+@dirrmtry share/locale/kk/LC_MESSAGES
+@dirrmtry share/locale/kk
 @dirrmtry share/locale/en@shaw/LC_MESSAGES
 @dirrmtry share/locale/en@shaw
 @dirrmtry share/locale/dz/LC_MESSAGES
 @dirrmtry share/locale/dz
 @dirrmtry share/locale/crh/LC_MESSAGES
 @dirrmtry share/locale/crh
+@dirrmtry share/locale/cmn/LC_MESSAGES
+@dirrmtry share/locale/cmn
 @dirrmtry share/locale/ca@valencia/LC_MESSAGES
 @dirrmtry share/locale/ca@valencia
 @dirrmtry share/locale/bn_IN/LC_MESSAGES
@@ -806,11 +406,116 @@ share/pixmaps/mate-search-tool/thumbnail_frame.png
 @dirrmtry share/locale/ast
 @dirrmtry share/locale/as/LC_MESSAGES
 @dirrmtry share/locale/as
-@dirrmtry share/icons/mate/scalable/apps
-@dirrmtry share/icons/mate/scalable
-@dirrmtry share/icons/mate/24x24/apps
-@dirrmtry share/icons/mate/24x24
-@dirrmtry share/icons/mate
-@dirrmtry share/icons
-@dirrm include/mate-dict/gdict
-@dirrm include/mate-dict
+@dirrmtry share/help/zh_TW/mate-disk-usage-analyzer
+@dirrmtry share/help/zh_TW
+@dirrmtry share/help/zh_HK/mate-disk-usage-analyzer
+@dirrmtry share/help/zh_HK
+@dirrmtry share/help/zh_CN/mate-system-log/figures
+@dirrmtry share/help/zh_CN/mate-system-log
+@dirrmtry share/help/zh_CN/mate-search-tool
+@dirrmtry share/help/zh_CN/mate-disk-usage-analyzer
+@dirrmtry share/help/zh_CN/mate-dictionary
+@dirrmtry share/help/zh_CN
+@dirrmtry share/help/uk/mate-system-log/figures
+@dirrmtry share/help/uk/mate-system-log
+@dirrmtry share/help/uk/mate-search-tool
+@dirrmtry share/help/uk/mate-disk-usage-analyzer
+@dirrmtry share/help/uk/mate-dictionary
+@dirrmtry share/help/uk
+@dirrmtry share/help/sv/mate-system-log/figures
+@dirrmtry share/help/sv/mate-system-log
+@dirrmtry share/help/sv/mate-search-tool
+@dirrmtry share/help/sv/mate-disk-usage-analyzer
+@dirrmtry share/help/sv/mate-dictionary
+@dirrmtry share/help/sv
+@dirrmtry share/help/ru/mate-system-log/figures
+@dirrmtry share/help/ru/mate-system-log
+@dirrmtry share/help/ru/mate-search-tool
+@dirrmtry share/help/ru/mate-disk-usage-analyzer
+@dirrmtry share/help/ru/mate-dictionary
+@dirrmtry share/help/ru
+@dirrmtry share/help/pl/mate-disk-usage-analyzer
+@dirrmtry share/help/pl
+@dirrmtry share/help/oc/mate-system-log/figures
+@dirrmtry share/help/oc/mate-system-log
+@dirrmtry share/help/oc/mate-search-tool
+@dirrmtry share/help/oc/mate-disk-usage-analyzer
+@dirrmtry share/help/oc/mate-dictionary
+@dirrmtry share/help/oc
+@dirrmtry share/help/ko/mate-system-log/figures
+@dirrmtry share/help/ko/mate-system-log
+@dirrmtry share/help/ko/mate-search-tool
+@dirrmtry share/help/ko
+@dirrmtry share/help/it/mate-system-log/figures
+@dirrmtry share/help/it/mate-system-log
+@dirrmtry share/help/it/mate-search-tool
+@dirrmtry share/help/it/mate-disk-usage-analyzer
+@dirrmtry share/help/it/mate-dictionary
+@dirrmtry share/help/it
+@dirrmtry share/help/fr/mate-system-log/figures
+@dirrmtry share/help/fr/mate-system-log
+@dirrmtry share/help/fr/mate-search-tool
+@dirrmtry share/help/fr/mate-disk-usage-analyzer
+@dirrmtry share/help/fr/mate-dictionary
+@dirrmtry share/help/fr
+@dirrmtry share/help/fi/mate-system-log/figures
+@dirrmtry share/help/fi/mate-system-log
+@dirrmtry share/help/fi/mate-search-tool
+@dirrmtry share/help/fi/mate-disk-usage-analyzer
+@dirrmtry share/help/fi/mate-dictionary
+@dirrmtry share/help/fi
+@dirrmtry share/help/eu/mate-system-log/figures
+@dirrmtry share/help/eu/mate-system-log
+@dirrmtry share/help/eu/mate-search-tool
+@dirrmtry share/help/eu/mate-disk-usage-analyzer
+@dirrmtry share/help/eu/mate-dictionary
+@dirrmtry share/help/eu
+@dirrmtry share/help/es/mate-system-log/figures
+@dirrmtry share/help/es/mate-system-log
+@dirrmtry share/help/es/mate-search-tool
+@dirrmtry share/help/es/mate-disk-usage-analyzer
+@dirrmtry share/help/es/mate-dictionary
+@dirrmtry share/help/es
+@dirrmtry share/help/en_GB/mate-system-log/figures
+@dirrmtry share/help/en_GB/mate-system-log
+@dirrmtry share/help/en_GB/mate-search-tool
+@dirrmtry share/help/en_GB/mate-disk-usage-analyzer
+@dirrmtry share/help/en_GB/mate-dictionary
+@dirrmtry share/help/en_GB
+@dirrmtry share/help/el/mate-system-log/figures
+@dirrmtry share/help/el/mate-system-log
+@dirrmtry share/help/el/mate-search-tool
+@dirrmtry share/help/el/mate-disk-usage-analyzer
+@dirrmtry share/help/el/mate-dictionary
+@dirrmtry share/help/el
+@dirrmtry share/help/de/mate-system-log/figures
+@dirrmtry share/help/de/mate-system-log
+@dirrmtry share/help/de/mate-search-tool
+@dirrmtry share/help/de/mate-disk-usage-analyzer
+@dirrmtry share/help/de/mate-dictionary
+@dirrmtry share/help/de
+@dirrmtry share/help/da/mate-disk-usage-analyzer
+@dirrmtry share/help/da/mate-dictionary
+@dirrmtry share/help/da
+@dirrmtry share/help/cs/mate-system-log/figures
+@dirrmtry share/help/cs/mate-system-log
+@dirrmtry share/help/cs/mate-search-tool
+@dirrmtry share/help/cs/mate-disk-usage-analyzer
+@dirrmtry share/help/cs/mate-dictionary
+@dirrmtry share/help/cs
+@dirrmtry share/help/ca/mate-system-log/figures
+@dirrmtry share/help/ca/mate-system-log
+@dirrmtry share/help/ca/mate-search-tool
+@dirrmtry share/help/ca/mate-disk-usage-analyzer
+@dirrmtry share/help/ca/mate-dictionary
+@dirrmtry share/help/ca
+@dirrmtry share/help/C/mate-system-log/figures
+@dirrmtry share/help/C/mate-system-log
+@dirrmtry share/help/C/mate-search-tool
+@dirrmtry share/help/C/mate-disk-usage-analyzer
+@dirrmtry share/help/C/mate-dictionary
+@dirrmtry share/help/C
+@dirrmtry share/help
+@dirrmtry share/doc/mate-dict
+@dirrmtry include/mate-dict/gdict
+@dirrmtry include/mate-dict

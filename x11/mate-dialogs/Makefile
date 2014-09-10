@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mate-dialogs
-PORTVERSION=	1.6.2
+PORTVERSION=	1.8.0
 CATEGORIES=	x11 mate
 MASTER_SITES=	MATE
 DIST_SUBDIR=	mate
@@ -10,19 +10,16 @@ DIST_SUBDIR=	mate
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Display MATE dialogs from the command line
 
-BUILD_DEPENDS=	rarian-sk-config:${PORTSDIR}/textproc/rarian
-RUN_DEPENDS=	rarian-sk-config:${PORTSDIR}/textproc/rarian
+BUILD_DEPENDS=	itstool:${PORTSDIR}/textproc/itstool
 
 PORTSCOUT=	limitw:1,even
 
 USES=		gettext gmake pathfix pkgconfig tar:xz
-USE_MATE=	docutils
-USE_GNOME=	gnomehier glib20 gtk20 intlhack
-INSTALLS_OMF=	yes
+USE_GNOME=	gnomehier gtk20 intlhack
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-gtk=2.0
 CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+LDFLAGS+=	-I${LOCALBASE}/lib
 
 OPTIONS_DEFINE=	NOTIFY
 OPTIONS_DEFAULT=NOTIFY
@@ -35,9 +32,5 @@ CONFIGURE_ARGS+=--enable-libnotify
 .else
 CONFIGURE_ARGS+=--disable-libnotify
 .endif
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|bin_SCRIPTS = gdialog||g' \
-		${WRKSRC}/src/Makefile.am
 
 .include <bsd.port.mk>

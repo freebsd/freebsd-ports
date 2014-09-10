@@ -1,0 +1,64 @@
+--- charpick/Makefile.in.orig	2014-04-12 15:38:00.000000000 +0200
++++ charpick/Makefile.in	2014-04-12 15:39:28.000000000 +0200
+@@ -78,7 +78,7 @@
+ POST_UNINSTALL = :
+ build_triplet = @build@
+ host_triplet = @host@
+-libexec_PROGRAMS = charpick_applet2$(EXEEXT)
++libexec_PROGRAMS = mate-charpick_applet2$(EXEEXT)
+ subdir = charpick
+ DIST_COMMON = $(srcdir)/Makefile.in $(srcdir)/Makefile.am \
+ 	$(top_srcdir)/depcomp
+@@ -98,10 +98,11 @@
+ am__installdirs = "$(DESTDIR)$(libexecdir)" "$(DESTDIR)$(appletdir)" \
+ 	"$(DESTDIR)$(servicedir)" "$(DESTDIR)$(uidir)"
+ PROGRAMS = $(libexec_PROGRAMS)
+-am_charpick_applet2_OBJECTS = charpick.$(OBJEXT) properties.$(OBJEXT)
+-charpick_applet2_OBJECTS = $(am_charpick_applet2_OBJECTS)
++am_mate_charpick_applet2_OBJECTS = charpick.$(OBJEXT) \
++	properties.$(OBJEXT)
++mate_charpick_applet2_OBJECTS = $(am_mate_charpick_applet2_OBJECTS)
+ am__DEPENDENCIES_1 =
+-charpick_applet2_DEPENDENCIES = $(am__DEPENDENCIES_1) \
++mate_charpick_applet2_DEPENDENCIES = $(am__DEPENDENCIES_1) \
+ 	$(am__DEPENDENCIES_1)
+ AM_V_lt = $(am__v_lt_@AM_V@)
+ am__v_lt_ = $(am__v_lt_@AM_DEFAULT_V@)
+@@ -141,8 +142,8 @@
+ am__v_CCLD_ = $(am__v_CCLD_@AM_DEFAULT_V@)
+ am__v_CCLD_0 = @echo "  CCLD    " $@;
+ am__v_CCLD_1 = 
+-SOURCES = $(charpick_applet2_SOURCES)
+-DIST_SOURCES = $(charpick_applet2_SOURCES)
++SOURCES = $(mate_charpick_applet2_SOURCES)
++DIST_SOURCES = $(mate_charpick_applet2_SOURCES)
+ RECURSIVE_TARGETS = all-recursive check-recursive cscopelist-recursive \
+ 	ctags-recursive dvi-recursive html-recursive info-recursive \
+ 	install-data-recursive install-dvi-recursive \
+@@ -488,11 +489,11 @@
+ 	$(MATE_APPLETS4_CFLAGS)		\
+ 	$(GUCHARMAP_CFLAGS)
+ 
+-charpick_applet2_SOURCES = charpick.c \
++mate_charpick_applet2_SOURCES = charpick.c \
+                           charpick.h \
+                           properties.c
+ 
+-charpick_applet2_LDADD = \
++mate_charpick_applet2_LDADD = \
+ 		       $(MATE_APPLETS4_LIBS)	\
+ 		       $(GUCHARMAP_LIBS)
+ 
+@@ -596,9 +597,9 @@
+ 	echo " rm -f" $$list; \
+ 	rm -f $$list
+ 
+-charpick_applet2$(EXEEXT): $(charpick_applet2_OBJECTS) $(charpick_applet2_DEPENDENCIES) $(EXTRA_charpick_applet2_DEPENDENCIES) 
+-	@rm -f charpick_applet2$(EXEEXT)
+-	$(AM_V_CCLD)$(LINK) $(charpick_applet2_OBJECTS) $(charpick_applet2_LDADD) $(LIBS)
++mate-charpick_applet2$(EXEEXT): $(mate_charpick_applet2_OBJECTS) $(mate_charpick_applet2_DEPENDENCIES) $(EXTRA_mate_charpick_applet2_DEPENDENCIES) 
++	@rm -f mate-charpick_applet2$(EXEEXT)
++	$(AM_V_CCLD)$(LINK) $(mate_charpick_applet2_OBJECTS) $(mate_charpick_applet2_LDADD) $(LIBS)
+ 
+ mostlyclean-compile:
+ 	-rm -f *.$(OBJEXT)

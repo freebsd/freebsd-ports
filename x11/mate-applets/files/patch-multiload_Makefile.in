@@ -1,0 +1,70 @@
+--- multiload/Makefile.in.orig	2014-04-12 15:38:40.000000000 +0200
++++ multiload/Makefile.in	2014-04-12 15:39:29.000000000 +0200
+@@ -78,7 +78,7 @@
+ POST_UNINSTALL = :
+ build_triplet = @build@
+ host_triplet = @host@
+-libexec_PROGRAMS = multiload-applet-2$(EXEEXT)
++libexec_PROGRAMS = mate-multiload-applet-2$(EXEEXT)
+ subdir = multiload
+ DIST_COMMON = $(srcdir)/Makefile.in $(srcdir)/Makefile.am \
+ 	$(top_srcdir)/depcomp AUTHORS
+@@ -98,12 +98,13 @@
+ am__installdirs = "$(DESTDIR)$(libexecdir)" "$(DESTDIR)$(appletdir)" \
+ 	"$(DESTDIR)$(servicedir)" "$(DESTDIR)$(uidir)"
+ PROGRAMS = $(libexec_PROGRAMS)
+-am_multiload_applet_2_OBJECTS = linux-proc.$(OBJEXT) \
++am_mate_multiload_applet_2_OBJECTS = linux-proc.$(OBJEXT) \
+ 	load-graph.$(OBJEXT) main.$(OBJEXT) properties.$(OBJEXT) \
+ 	netspeed.$(OBJEXT) autoscaler.$(OBJEXT)
+-multiload_applet_2_OBJECTS = $(am_multiload_applet_2_OBJECTS)
++mate_multiload_applet_2_OBJECTS =  \
++	$(am_mate_multiload_applet_2_OBJECTS)
+ am__DEPENDENCIES_1 =
+-multiload_applet_2_DEPENDENCIES = $(am__DEPENDENCIES_1) \
++mate_multiload_applet_2_DEPENDENCIES = $(am__DEPENDENCIES_1) \
+ 	$(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1) \
+ 	$(am__DEPENDENCIES_1)
+ AM_V_lt = $(am__v_lt_@AM_V@)
+@@ -144,8 +145,8 @@
+ am__v_CCLD_ = $(am__v_CCLD_@AM_DEFAULT_V@)
+ am__v_CCLD_0 = @echo "  CCLD    " $@;
+ am__v_CCLD_1 = 
+-SOURCES = $(multiload_applet_2_SOURCES)
+-DIST_SOURCES = $(multiload_applet_2_SOURCES)
++SOURCES = $(mate_multiload_applet_2_SOURCES)
++DIST_SOURCES = $(mate_multiload_applet_2_SOURCES)
+ RECURSIVE_TARGETS = all-recursive check-recursive cscopelist-recursive \
+ 	ctags-recursive dvi-recursive html-recursive info-recursive \
+ 	install-data-recursive install-dvi-recursive \
+@@ -492,7 +493,7 @@
+ 	$(MATEDESKTOP_CFLAGS)	\
+ 	$(GIO_CFLAGS)
+ 
+-multiload_applet_2_SOURCES = \
++mate_multiload_applet_2_SOURCES = \
+ 			global.h	\
+ 			linux-proc.h	\
+ 			load-graph.h	\
+@@ -504,7 +505,7 @@
+ 			autoscaler.c	\
+ 			autoscaler.h
+ 
+-multiload_applet_2_LDADD = \
++mate_multiload_applet_2_LDADD = \
+ 				$(MATE_APPLETS4_LIBS) 	\
+ 				$(GTOP_APPLETS_LIBS)	\
+ 				$(MATEDESKTOP_LIBS)		\
+@@ -611,9 +612,9 @@
+ 	echo " rm -f" $$list; \
+ 	rm -f $$list
+ 
+-multiload-applet-2$(EXEEXT): $(multiload_applet_2_OBJECTS) $(multiload_applet_2_DEPENDENCIES) $(EXTRA_multiload_applet_2_DEPENDENCIES) 
+-	@rm -f multiload-applet-2$(EXEEXT)
+-	$(AM_V_CCLD)$(LINK) $(multiload_applet_2_OBJECTS) $(multiload_applet_2_LDADD) $(LIBS)
++mate-multiload-applet-2$(EXEEXT): $(mate_multiload_applet_2_OBJECTS) $(mate_multiload_applet_2_DEPENDENCIES) $(EXTRA_mate_multiload_applet_2_DEPENDENCIES) 
++	@rm -f mate-multiload-applet-2$(EXEEXT)
++	$(AM_V_CCLD)$(LINK) $(mate_multiload_applet_2_OBJECTS) $(mate_multiload_applet_2_LDADD) $(LIBS)
+ 
+ mostlyclean-compile:
+ 	-rm -f *.$(OBJEXT)

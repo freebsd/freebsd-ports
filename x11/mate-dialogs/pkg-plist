@@ -1,5 +1,241 @@
 bin/matedialog
 man/man1/matedialog.1.gz
+share/help/C/matedialog/figures/matedialog-calendar-screenshot.png
+share/help/C/matedialog/figures/matedialog-entry-screenshot.png
+share/help/C/matedialog/figures/matedialog-error-screenshot.png
+share/help/C/matedialog/figures/matedialog-fileselection-screenshot.png
+share/help/C/matedialog/figures/matedialog-information-screenshot.png
+share/help/C/matedialog/figures/matedialog-list-screenshot.png
+share/help/C/matedialog/figures/matedialog-notification-screenshot.png
+share/help/C/matedialog/figures/matedialog-progress-screenshot.png
+share/help/C/matedialog/figures/matedialog-question-screenshot.png
+share/help/C/matedialog/figures/matedialog-text-screenshot.png
+share/help/C/matedialog/figures/matedialog-warning-screenshot.png
+share/help/C/matedialog/index.docbook
+share/help/C/matedialog/legal.xml
+share/help/bg/matedialog/figures/matedialog-calendar-screenshot.png
+share/help/bg/matedialog/figures/matedialog-entry-screenshot.png
+share/help/bg/matedialog/figures/matedialog-error-screenshot.png
+share/help/bg/matedialog/figures/matedialog-fileselection-screenshot.png
+share/help/bg/matedialog/figures/matedialog-information-screenshot.png
+share/help/bg/matedialog/figures/matedialog-list-screenshot.png
+share/help/bg/matedialog/figures/matedialog-notification-screenshot.png
+share/help/bg/matedialog/figures/matedialog-progress-screenshot.png
+share/help/bg/matedialog/figures/matedialog-question-screenshot.png
+share/help/bg/matedialog/figures/matedialog-text-screenshot.png
+share/help/bg/matedialog/figures/matedialog-warning-screenshot.png
+share/help/bg/matedialog/index.docbook
+share/help/bg/matedialog/legal.xml
+share/help/cs/matedialog/figures/matedialog-calendar-screenshot.png
+share/help/cs/matedialog/figures/matedialog-entry-screenshot.png
+share/help/cs/matedialog/figures/matedialog-error-screenshot.png
+share/help/cs/matedialog/figures/matedialog-fileselection-screenshot.png
+share/help/cs/matedialog/figures/matedialog-information-screenshot.png
+share/help/cs/matedialog/figures/matedialog-list-screenshot.png
+share/help/cs/matedialog/figures/matedialog-notification-screenshot.png
+share/help/cs/matedialog/figures/matedialog-progress-screenshot.png
+share/help/cs/matedialog/figures/matedialog-question-screenshot.png
+share/help/cs/matedialog/figures/matedialog-text-screenshot.png
+share/help/cs/matedialog/figures/matedialog-warning-screenshot.png
+share/help/cs/matedialog/index.docbook
+share/help/cs/matedialog/legal.xml
+share/help/da/matedialog/figures/matedialog-calendar-screenshot.png
+share/help/da/matedialog/figures/matedialog-entry-screenshot.png
+share/help/da/matedialog/figures/matedialog-error-screenshot.png
+share/help/da/matedialog/figures/matedialog-fileselection-screenshot.png
+share/help/da/matedialog/figures/matedialog-information-screenshot.png
+share/help/da/matedialog/figures/matedialog-list-screenshot.png
+share/help/da/matedialog/figures/matedialog-notification-screenshot.png
+share/help/da/matedialog/figures/matedialog-progress-screenshot.png
+share/help/da/matedialog/figures/matedialog-question-screenshot.png
+share/help/da/matedialog/figures/matedialog-text-screenshot.png
+share/help/da/matedialog/figures/matedialog-warning-screenshot.png
+share/help/da/matedialog/index.docbook
+share/help/da/matedialog/legal.xml
+share/help/de/matedialog/figures/matedialog-calendar-screenshot.png
+share/help/de/matedialog/figures/matedialog-entry-screenshot.png
+share/help/de/matedialog/figures/matedialog-error-screenshot.png
+share/help/de/matedialog/figures/matedialog-fileselection-screenshot.png
+share/help/de/matedialog/figures/matedialog-information-screenshot.png
+share/help/de/matedialog/figures/matedialog-list-screenshot.png
+share/help/de/matedialog/figures/matedialog-notification-screenshot.png
+share/help/de/matedialog/figures/matedialog-progress-screenshot.png
+share/help/de/matedialog/figures/matedialog-question-screenshot.png
+share/help/de/matedialog/figures/matedialog-text-screenshot.png
+share/help/de/matedialog/figures/matedialog-warning-screenshot.png
+share/help/de/matedialog/index.docbook
+share/help/de/matedialog/legal.xml
+share/help/el/matedialog/figures/matedialog-calendar-screenshot.png
+share/help/el/matedialog/figures/matedialog-entry-screenshot.png
+share/help/el/matedialog/figures/matedialog-error-screenshot.png
+share/help/el/matedialog/figures/matedialog-fileselection-screenshot.png
+share/help/el/matedialog/figures/matedialog-information-screenshot.png
+share/help/el/matedialog/figures/matedialog-list-screenshot.png
+share/help/el/matedialog/figures/matedialog-notification-screenshot.png
+share/help/el/matedialog/figures/matedialog-progress-screenshot.png
+share/help/el/matedialog/figures/matedialog-question-screenshot.png
+share/help/el/matedialog/figures/matedialog-text-screenshot.png
+share/help/el/matedialog/figures/matedialog-warning-screenshot.png
+share/help/el/matedialog/index.docbook
+share/help/el/matedialog/legal.xml
+share/help/en_GB/matedialog/figures/matedialog-calendar-screenshot.png
+share/help/en_GB/matedialog/figures/matedialog-entry-screenshot.png
+share/help/en_GB/matedialog/figures/matedialog-error-screenshot.png
+share/help/en_GB/matedialog/figures/matedialog-fileselection-screenshot.png
+share/help/en_GB/matedialog/figures/matedialog-information-screenshot.png
+share/help/en_GB/matedialog/figures/matedialog-list-screenshot.png
+share/help/en_GB/matedialog/figures/matedialog-notification-screenshot.png
+share/help/en_GB/matedialog/figures/matedialog-progress-screenshot.png
+share/help/en_GB/matedialog/figures/matedialog-question-screenshot.png
+share/help/en_GB/matedialog/figures/matedialog-text-screenshot.png
+share/help/en_GB/matedialog/figures/matedialog-warning-screenshot.png
+share/help/en_GB/matedialog/index.docbook
+share/help/en_GB/matedialog/legal.xml
+share/help/es/matedialog/figures/matedialog-calendar-screenshot.png
+share/help/es/matedialog/figures/matedialog-entry-screenshot.png
+share/help/es/matedialog/figures/matedialog-error-screenshot.png
+share/help/es/matedialog/figures/matedialog-fileselection-screenshot.png
+share/help/es/matedialog/figures/matedialog-information-screenshot.png
+share/help/es/matedialog/figures/matedialog-list-screenshot.png
+share/help/es/matedialog/figures/matedialog-notification-screenshot.png
+share/help/es/matedialog/figures/matedialog-progress-screenshot.png
+share/help/es/matedialog/figures/matedialog-question-screenshot.png
+share/help/es/matedialog/figures/matedialog-text-screenshot.png
+share/help/es/matedialog/figures/matedialog-warning-screenshot.png
+share/help/es/matedialog/index.docbook
+share/help/es/matedialog/legal.xml
+share/help/eu/matedialog/figures/matedialog-calendar-screenshot.png
+share/help/eu/matedialog/figures/matedialog-entry-screenshot.png
+share/help/eu/matedialog/figures/matedialog-error-screenshot.png
+share/help/eu/matedialog/figures/matedialog-fileselection-screenshot.png
+share/help/eu/matedialog/figures/matedialog-information-screenshot.png
+share/help/eu/matedialog/figures/matedialog-list-screenshot.png
+share/help/eu/matedialog/figures/matedialog-notification-screenshot.png
+share/help/eu/matedialog/figures/matedialog-progress-screenshot.png
+share/help/eu/matedialog/figures/matedialog-question-screenshot.png
+share/help/eu/matedialog/figures/matedialog-text-screenshot.png
+share/help/eu/matedialog/figures/matedialog-warning-screenshot.png
+share/help/eu/matedialog/index.docbook
+share/help/eu/matedialog/legal.xml
+share/help/fi/matedialog/figures/matedialog-calendar-screenshot.png
+share/help/fi/matedialog/figures/matedialog-entry-screenshot.png
+share/help/fi/matedialog/figures/matedialog-error-screenshot.png
+share/help/fi/matedialog/figures/matedialog-fileselection-screenshot.png
+share/help/fi/matedialog/figures/matedialog-information-screenshot.png
+share/help/fi/matedialog/figures/matedialog-list-screenshot.png
+share/help/fi/matedialog/figures/matedialog-notification-screenshot.png
+share/help/fi/matedialog/figures/matedialog-progress-screenshot.png
+share/help/fi/matedialog/figures/matedialog-question-screenshot.png
+share/help/fi/matedialog/figures/matedialog-text-screenshot.png
+share/help/fi/matedialog/figures/matedialog-warning-screenshot.png
+share/help/fi/matedialog/index.docbook
+share/help/fi/matedialog/legal.xml
+share/help/fr/matedialog/figures/matedialog-calendar-screenshot.png
+share/help/fr/matedialog/figures/matedialog-entry-screenshot.png
+share/help/fr/matedialog/figures/matedialog-error-screenshot.png
+share/help/fr/matedialog/figures/matedialog-fileselection-screenshot.png
+share/help/fr/matedialog/figures/matedialog-information-screenshot.png
+share/help/fr/matedialog/figures/matedialog-list-screenshot.png
+share/help/fr/matedialog/figures/matedialog-notification-screenshot.png
+share/help/fr/matedialog/figures/matedialog-progress-screenshot.png
+share/help/fr/matedialog/figures/matedialog-question-screenshot.png
+share/help/fr/matedialog/figures/matedialog-text-screenshot.png
+share/help/fr/matedialog/figures/matedialog-warning-screenshot.png
+share/help/fr/matedialog/index.docbook
+share/help/fr/matedialog/legal.xml
+share/help/oc/matedialog/figures/matedialog-calendar-screenshot.png
+share/help/oc/matedialog/figures/matedialog-entry-screenshot.png
+share/help/oc/matedialog/figures/matedialog-error-screenshot.png
+share/help/oc/matedialog/figures/matedialog-fileselection-screenshot.png
+share/help/oc/matedialog/figures/matedialog-information-screenshot.png
+share/help/oc/matedialog/figures/matedialog-list-screenshot.png
+share/help/oc/matedialog/figures/matedialog-notification-screenshot.png
+share/help/oc/matedialog/figures/matedialog-progress-screenshot.png
+share/help/oc/matedialog/figures/matedialog-question-screenshot.png
+share/help/oc/matedialog/figures/matedialog-text-screenshot.png
+share/help/oc/matedialog/figures/matedialog-warning-screenshot.png
+share/help/oc/matedialog/index.docbook
+share/help/oc/matedialog/legal.xml
+share/help/pt_BR/matedialog/figures/matedialog-calendar-screenshot.png
+share/help/pt_BR/matedialog/figures/matedialog-entry-screenshot.png
+share/help/pt_BR/matedialog/figures/matedialog-error-screenshot.png
+share/help/pt_BR/matedialog/figures/matedialog-fileselection-screenshot.png
+share/help/pt_BR/matedialog/figures/matedialog-information-screenshot.png
+share/help/pt_BR/matedialog/figures/matedialog-list-screenshot.png
+share/help/pt_BR/matedialog/figures/matedialog-notification-screenshot.png
+share/help/pt_BR/matedialog/figures/matedialog-progress-screenshot.png
+share/help/pt_BR/matedialog/figures/matedialog-question-screenshot.png
+share/help/pt_BR/matedialog/figures/matedialog-text-screenshot.png
+share/help/pt_BR/matedialog/figures/matedialog-warning-screenshot.png
+share/help/pt_BR/matedialog/index.docbook
+share/help/pt_BR/matedialog/legal.xml
+share/help/ru/matedialog/figures/matedialog-calendar-screenshot.png
+share/help/ru/matedialog/figures/matedialog-entry-screenshot.png
+share/help/ru/matedialog/figures/matedialog-error-screenshot.png
+share/help/ru/matedialog/figures/matedialog-fileselection-screenshot.png
+share/help/ru/matedialog/figures/matedialog-information-screenshot.png
+share/help/ru/matedialog/figures/matedialog-list-screenshot.png
+share/help/ru/matedialog/figures/matedialog-notification-screenshot.png
+share/help/ru/matedialog/figures/matedialog-progress-screenshot.png
+share/help/ru/matedialog/figures/matedialog-question-screenshot.png
+share/help/ru/matedialog/figures/matedialog-text-screenshot.png
+share/help/ru/matedialog/figures/matedialog-warning-screenshot.png
+share/help/ru/matedialog/index.docbook
+share/help/ru/matedialog/legal.xml
+share/help/sv/matedialog/figures/matedialog-calendar-screenshot.png
+share/help/sv/matedialog/figures/matedialog-entry-screenshot.png
+share/help/sv/matedialog/figures/matedialog-error-screenshot.png
+share/help/sv/matedialog/figures/matedialog-fileselection-screenshot.png
+share/help/sv/matedialog/figures/matedialog-information-screenshot.png
+share/help/sv/matedialog/figures/matedialog-list-screenshot.png
+share/help/sv/matedialog/figures/matedialog-notification-screenshot.png
+share/help/sv/matedialog/figures/matedialog-progress-screenshot.png
+share/help/sv/matedialog/figures/matedialog-question-screenshot.png
+share/help/sv/matedialog/figures/matedialog-text-screenshot.png
+share/help/sv/matedialog/figures/matedialog-warning-screenshot.png
+share/help/sv/matedialog/index.docbook
+share/help/sv/matedialog/legal.xml
+share/help/uk/matedialog/figures/matedialog-calendar-screenshot.png
+share/help/uk/matedialog/figures/matedialog-entry-screenshot.png
+share/help/uk/matedialog/figures/matedialog-error-screenshot.png
+share/help/uk/matedialog/figures/matedialog-fileselection-screenshot.png
+share/help/uk/matedialog/figures/matedialog-information-screenshot.png
+share/help/uk/matedialog/figures/matedialog-list-screenshot.png
+share/help/uk/matedialog/figures/matedialog-notification-screenshot.png
+share/help/uk/matedialog/figures/matedialog-progress-screenshot.png
+share/help/uk/matedialog/figures/matedialog-question-screenshot.png
+share/help/uk/matedialog/figures/matedialog-text-screenshot.png
+share/help/uk/matedialog/figures/matedialog-warning-screenshot.png
+share/help/uk/matedialog/index.docbook
+share/help/uk/matedialog/legal.xml
+share/help/zh_CN/matedialog/figures/matedialog-calendar-screenshot.png
+share/help/zh_CN/matedialog/figures/matedialog-entry-screenshot.png
+share/help/zh_CN/matedialog/figures/matedialog-error-screenshot.png
+share/help/zh_CN/matedialog/figures/matedialog-fileselection-screenshot.png
+share/help/zh_CN/matedialog/figures/matedialog-information-screenshot.png
+share/help/zh_CN/matedialog/figures/matedialog-list-screenshot.png
+share/help/zh_CN/matedialog/figures/matedialog-notification-screenshot.png
+share/help/zh_CN/matedialog/figures/matedialog-progress-screenshot.png
+share/help/zh_CN/matedialog/figures/matedialog-question-screenshot.png
+share/help/zh_CN/matedialog/figures/matedialog-text-screenshot.png
+share/help/zh_CN/matedialog/figures/matedialog-warning-screenshot.png
+share/help/zh_CN/matedialog/index.docbook
+share/help/zh_CN/matedialog/legal.xml
+share/matedialog/clothes/hawaii-shirt.png
+share/matedialog/clothes/mate-tshirt.png
+share/matedialog/clothes/monk.png
+share/matedialog/clothes/sunglasses.png
+share/matedialog/clothes/surfboard.png
+share/matedialog/matedialog-calendar.png
+share/matedialog/matedialog-entry.png
+share/matedialog/matedialog-file.png
+share/matedialog/matedialog-list.png
+share/matedialog/matedialog-notification.png
+share/matedialog/matedialog-progress.png
+share/matedialog/matedialog-scale.png
+share/matedialog/matedialog-text.png
+share/matedialog/matedialog.png
+share/matedialog/matedialog.ui
 share/locale/am/LC_MESSAGES/mate-dialogs.mo
 share/locale/ar/LC_MESSAGES/mate-dialogs.mo
 share/locale/as/LC_MESSAGES/mate-dialogs.mo
@@ -13,6 +249,7 @@ share/locale/bn_IN/LC_MESSAGES/mate-dialogs.mo
 share/locale/bs/LC_MESSAGES/mate-dialogs.mo
 share/locale/ca/LC_MESSAGES/mate-dialogs.mo
 share/locale/ca@valencia/LC_MESSAGES/mate-dialogs.mo
+share/locale/cmn/LC_MESSAGES/mate-dialogs.mo
 share/locale/cs/LC_MESSAGES/mate-dialogs.mo
 share/locale/cy/LC_MESSAGES/mate-dialogs.mo
 share/locale/da/LC_MESSAGES/mate-dialogs.mo
@@ -41,9 +278,11 @@ share/locale/is/LC_MESSAGES/mate-dialogs.mo
 share/locale/it/LC_MESSAGES/mate-dialogs.mo
 share/locale/ja/LC_MESSAGES/mate-dialogs.mo
 share/locale/ka/LC_MESSAGES/mate-dialogs.mo
+share/locale/kk/LC_MESSAGES/mate-dialogs.mo
 share/locale/kn/LC_MESSAGES/mate-dialogs.mo
 share/locale/ko/LC_MESSAGES/mate-dialogs.mo
 share/locale/ku/LC_MESSAGES/mate-dialogs.mo
+share/locale/ky/LC_MESSAGES/mate-dialogs.mo
 share/locale/lt/LC_MESSAGES/mate-dialogs.mo
 share/locale/lv/LC_MESSAGES/mate-dialogs.mo
 share/locale/mai/LC_MESSAGES/mate-dialogs.mo
@@ -86,281 +325,6 @@ share/locale/xh/LC_MESSAGES/mate-dialogs.mo
 share/locale/zh_CN/LC_MESSAGES/mate-dialogs.mo
 share/locale/zh_HK/LC_MESSAGES/mate-dialogs.mo
 share/locale/zh_TW/LC_MESSAGES/mate-dialogs.mo
-share/mate/help/matedialog/C/figures/matedialog-calendar-screenshot.png
-share/mate/help/matedialog/C/figures/matedialog-entry-screenshot.png
-share/mate/help/matedialog/C/figures/matedialog-error-screenshot.png
-share/mate/help/matedialog/C/figures/matedialog-fileselection-screenshot.png
-share/mate/help/matedialog/C/figures/matedialog-information-screenshot.png
-share/mate/help/matedialog/C/figures/matedialog-list-screenshot.png
-share/mate/help/matedialog/C/figures/matedialog-notification-screenshot.png
-share/mate/help/matedialog/C/figures/matedialog-progress-screenshot.png
-share/mate/help/matedialog/C/figures/matedialog-question-screenshot.png
-share/mate/help/matedialog/C/figures/matedialog-text-screenshot.png
-share/mate/help/matedialog/C/figures/matedialog-warning-screenshot.png
-share/mate/help/matedialog/C/legal.xml
-share/mate/help/matedialog/C/matedialog.xml
-share/mate/help/matedialog/bg/figures/matedialog-calendar-screenshot.png
-share/mate/help/matedialog/bg/figures/matedialog-entry-screenshot.png
-share/mate/help/matedialog/bg/figures/matedialog-error-screenshot.png
-share/mate/help/matedialog/bg/figures/matedialog-fileselection-screenshot.png
-share/mate/help/matedialog/bg/figures/matedialog-information-screenshot.png
-share/mate/help/matedialog/bg/figures/matedialog-list-screenshot.png
-share/mate/help/matedialog/bg/figures/matedialog-notification-screenshot.png
-share/mate/help/matedialog/bg/figures/matedialog-progress-screenshot.png
-share/mate/help/matedialog/bg/figures/matedialog-question-screenshot.png
-share/mate/help/matedialog/bg/figures/matedialog-text-screenshot.png
-share/mate/help/matedialog/bg/figures/matedialog-warning-screenshot.png
-share/mate/help/matedialog/bg/matedialog.xml
-share/mate/help/matedialog/cs/figures/matedialog-calendar-screenshot.png
-share/mate/help/matedialog/cs/figures/matedialog-entry-screenshot.png
-share/mate/help/matedialog/cs/figures/matedialog-error-screenshot.png
-share/mate/help/matedialog/cs/figures/matedialog-fileselection-screenshot.png
-share/mate/help/matedialog/cs/figures/matedialog-information-screenshot.png
-share/mate/help/matedialog/cs/figures/matedialog-list-screenshot.png
-share/mate/help/matedialog/cs/figures/matedialog-notification-screenshot.png
-share/mate/help/matedialog/cs/figures/matedialog-progress-screenshot.png
-share/mate/help/matedialog/cs/figures/matedialog-question-screenshot.png
-share/mate/help/matedialog/cs/figures/matedialog-text-screenshot.png
-share/mate/help/matedialog/cs/figures/matedialog-warning-screenshot.png
-share/mate/help/matedialog/cs/matedialog.xml
-share/mate/help/matedialog/da/figures/matedialog-calendar-screenshot.png
-share/mate/help/matedialog/da/figures/matedialog-entry-screenshot.png
-share/mate/help/matedialog/da/figures/matedialog-error-screenshot.png
-share/mate/help/matedialog/da/figures/matedialog-fileselection-screenshot.png
-share/mate/help/matedialog/da/figures/matedialog-information-screenshot.png
-share/mate/help/matedialog/da/figures/matedialog-list-screenshot.png
-share/mate/help/matedialog/da/figures/matedialog-notification-screenshot.png
-share/mate/help/matedialog/da/figures/matedialog-progress-screenshot.png
-share/mate/help/matedialog/da/figures/matedialog-question-screenshot.png
-share/mate/help/matedialog/da/figures/matedialog-text-screenshot.png
-share/mate/help/matedialog/da/figures/matedialog-warning-screenshot.png
-share/mate/help/matedialog/da/matedialog.xml
-share/mate/help/matedialog/de/figures/matedialog-calendar-screenshot.png
-share/mate/help/matedialog/de/figures/matedialog-entry-screenshot.png
-share/mate/help/matedialog/de/figures/matedialog-error-screenshot.png
-share/mate/help/matedialog/de/figures/matedialog-fileselection-screenshot.png
-share/mate/help/matedialog/de/figures/matedialog-information-screenshot.png
-share/mate/help/matedialog/de/figures/matedialog-list-screenshot.png
-share/mate/help/matedialog/de/figures/matedialog-notification-screenshot.png
-share/mate/help/matedialog/de/figures/matedialog-progress-screenshot.png
-share/mate/help/matedialog/de/figures/matedialog-question-screenshot.png
-share/mate/help/matedialog/de/figures/matedialog-text-screenshot.png
-share/mate/help/matedialog/de/figures/matedialog-warning-screenshot.png
-share/mate/help/matedialog/de/matedialog.xml
-share/mate/help/matedialog/el/figures/matedialog-calendar-screenshot.png
-share/mate/help/matedialog/el/figures/matedialog-entry-screenshot.png
-share/mate/help/matedialog/el/figures/matedialog-error-screenshot.png
-share/mate/help/matedialog/el/figures/matedialog-fileselection-screenshot.png
-share/mate/help/matedialog/el/figures/matedialog-information-screenshot.png
-share/mate/help/matedialog/el/figures/matedialog-list-screenshot.png
-share/mate/help/matedialog/el/figures/matedialog-notification-screenshot.png
-share/mate/help/matedialog/el/figures/matedialog-progress-screenshot.png
-share/mate/help/matedialog/el/figures/matedialog-question-screenshot.png
-share/mate/help/matedialog/el/figures/matedialog-text-screenshot.png
-share/mate/help/matedialog/el/figures/matedialog-warning-screenshot.png
-share/mate/help/matedialog/el/matedialog.xml
-share/mate/help/matedialog/en_GB/figures/matedialog-calendar-screenshot.png
-share/mate/help/matedialog/en_GB/figures/matedialog-entry-screenshot.png
-share/mate/help/matedialog/en_GB/figures/matedialog-error-screenshot.png
-share/mate/help/matedialog/en_GB/figures/matedialog-fileselection-screenshot.png
-share/mate/help/matedialog/en_GB/figures/matedialog-information-screenshot.png
-share/mate/help/matedialog/en_GB/figures/matedialog-list-screenshot.png
-share/mate/help/matedialog/en_GB/figures/matedialog-notification-screenshot.png
-share/mate/help/matedialog/en_GB/figures/matedialog-progress-screenshot.png
-share/mate/help/matedialog/en_GB/figures/matedialog-question-screenshot.png
-share/mate/help/matedialog/en_GB/figures/matedialog-text-screenshot.png
-share/mate/help/matedialog/en_GB/figures/matedialog-warning-screenshot.png
-share/mate/help/matedialog/en_GB/matedialog.xml
-share/mate/help/matedialog/es/figures/matedialog-calendar-screenshot.png
-share/mate/help/matedialog/es/figures/matedialog-entry-screenshot.png
-share/mate/help/matedialog/es/figures/matedialog-error-screenshot.png
-share/mate/help/matedialog/es/figures/matedialog-fileselection-screenshot.png
-share/mate/help/matedialog/es/figures/matedialog-information-screenshot.png
-share/mate/help/matedialog/es/figures/matedialog-list-screenshot.png
-share/mate/help/matedialog/es/figures/matedialog-notification-screenshot.png
-share/mate/help/matedialog/es/figures/matedialog-progress-screenshot.png
-share/mate/help/matedialog/es/figures/matedialog-question-screenshot.png
-share/mate/help/matedialog/es/figures/matedialog-text-screenshot.png
-share/mate/help/matedialog/es/figures/matedialog-warning-screenshot.png
-share/mate/help/matedialog/es/matedialog.xml
-share/mate/help/matedialog/eu/figures/matedialog-calendar-screenshot.png
-share/mate/help/matedialog/eu/figures/matedialog-entry-screenshot.png
-share/mate/help/matedialog/eu/figures/matedialog-error-screenshot.png
-share/mate/help/matedialog/eu/figures/matedialog-fileselection-screenshot.png
-share/mate/help/matedialog/eu/figures/matedialog-information-screenshot.png
-share/mate/help/matedialog/eu/figures/matedialog-list-screenshot.png
-share/mate/help/matedialog/eu/figures/matedialog-notification-screenshot.png
-share/mate/help/matedialog/eu/figures/matedialog-progress-screenshot.png
-share/mate/help/matedialog/eu/figures/matedialog-question-screenshot.png
-share/mate/help/matedialog/eu/figures/matedialog-text-screenshot.png
-share/mate/help/matedialog/eu/figures/matedialog-warning-screenshot.png
-share/mate/help/matedialog/eu/matedialog.xml
-share/mate/help/matedialog/fi/figures/matedialog-calendar-screenshot.png
-share/mate/help/matedialog/fi/figures/matedialog-entry-screenshot.png
-share/mate/help/matedialog/fi/figures/matedialog-error-screenshot.png
-share/mate/help/matedialog/fi/figures/matedialog-fileselection-screenshot.png
-share/mate/help/matedialog/fi/figures/matedialog-information-screenshot.png
-share/mate/help/matedialog/fi/figures/matedialog-list-screenshot.png
-share/mate/help/matedialog/fi/figures/matedialog-notification-screenshot.png
-share/mate/help/matedialog/fi/figures/matedialog-progress-screenshot.png
-share/mate/help/matedialog/fi/figures/matedialog-question-screenshot.png
-share/mate/help/matedialog/fi/figures/matedialog-text-screenshot.png
-share/mate/help/matedialog/fi/figures/matedialog-warning-screenshot.png
-share/mate/help/matedialog/fi/matedialog.xml
-share/mate/help/matedialog/fr/figures/matedialog-calendar-screenshot.png
-share/mate/help/matedialog/fr/figures/matedialog-entry-screenshot.png
-share/mate/help/matedialog/fr/figures/matedialog-error-screenshot.png
-share/mate/help/matedialog/fr/figures/matedialog-fileselection-screenshot.png
-share/mate/help/matedialog/fr/figures/matedialog-information-screenshot.png
-share/mate/help/matedialog/fr/figures/matedialog-list-screenshot.png
-share/mate/help/matedialog/fr/figures/matedialog-notification-screenshot.png
-share/mate/help/matedialog/fr/figures/matedialog-progress-screenshot.png
-share/mate/help/matedialog/fr/figures/matedialog-question-screenshot.png
-share/mate/help/matedialog/fr/figures/matedialog-text-screenshot.png
-share/mate/help/matedialog/fr/figures/matedialog-warning-screenshot.png
-share/mate/help/matedialog/fr/matedialog.xml
-share/mate/help/matedialog/oc/figures/matedialog-calendar-screenshot.png
-share/mate/help/matedialog/oc/figures/matedialog-entry-screenshot.png
-share/mate/help/matedialog/oc/figures/matedialog-error-screenshot.png
-share/mate/help/matedialog/oc/figures/matedialog-fileselection-screenshot.png
-share/mate/help/matedialog/oc/figures/matedialog-information-screenshot.png
-share/mate/help/matedialog/oc/figures/matedialog-list-screenshot.png
-share/mate/help/matedialog/oc/figures/matedialog-notification-screenshot.png
-share/mate/help/matedialog/oc/figures/matedialog-progress-screenshot.png
-share/mate/help/matedialog/oc/figures/matedialog-question-screenshot.png
-share/mate/help/matedialog/oc/figures/matedialog-text-screenshot.png
-share/mate/help/matedialog/oc/figures/matedialog-warning-screenshot.png
-share/mate/help/matedialog/oc/matedialog.xml
-share/mate/help/matedialog/pt_BR/figures/matedialog-calendar-screenshot.png
-share/mate/help/matedialog/pt_BR/figures/matedialog-entry-screenshot.png
-share/mate/help/matedialog/pt_BR/figures/matedialog-error-screenshot.png
-share/mate/help/matedialog/pt_BR/figures/matedialog-fileselection-screenshot.png
-share/mate/help/matedialog/pt_BR/figures/matedialog-information-screenshot.png
-share/mate/help/matedialog/pt_BR/figures/matedialog-list-screenshot.png
-share/mate/help/matedialog/pt_BR/figures/matedialog-notification-screenshot.png
-share/mate/help/matedialog/pt_BR/figures/matedialog-progress-screenshot.png
-share/mate/help/matedialog/pt_BR/figures/matedialog-question-screenshot.png
-share/mate/help/matedialog/pt_BR/figures/matedialog-text-screenshot.png
-share/mate/help/matedialog/pt_BR/figures/matedialog-warning-screenshot.png
-share/mate/help/matedialog/pt_BR/matedialog.xml
-share/mate/help/matedialog/ru/figures/matedialog-calendar-screenshot.png
-share/mate/help/matedialog/ru/figures/matedialog-entry-screenshot.png
-share/mate/help/matedialog/ru/figures/matedialog-error-screenshot.png
-share/mate/help/matedialog/ru/figures/matedialog-fileselection-screenshot.png
-share/mate/help/matedialog/ru/figures/matedialog-information-screenshot.png
-share/mate/help/matedialog/ru/figures/matedialog-list-screenshot.png
-share/mate/help/matedialog/ru/figures/matedialog-notification-screenshot.png
-share/mate/help/matedialog/ru/figures/matedialog-progress-screenshot.png
-share/mate/help/matedialog/ru/figures/matedialog-question-screenshot.png
-share/mate/help/matedialog/ru/figures/matedialog-text-screenshot.png
-share/mate/help/matedialog/ru/figures/matedialog-warning-screenshot.png
-share/mate/help/matedialog/ru/matedialog.xml
-share/mate/help/matedialog/sv/figures/matedialog-calendar-screenshot.png
-share/mate/help/matedialog/sv/figures/matedialog-entry-screenshot.png
-share/mate/help/matedialog/sv/figures/matedialog-error-screenshot.png
-share/mate/help/matedialog/sv/figures/matedialog-fileselection-screenshot.png
-share/mate/help/matedialog/sv/figures/matedialog-information-screenshot.png
-share/mate/help/matedialog/sv/figures/matedialog-list-screenshot.png
-share/mate/help/matedialog/sv/figures/matedialog-notification-screenshot.png
-share/mate/help/matedialog/sv/figures/matedialog-progress-screenshot.png
-share/mate/help/matedialog/sv/figures/matedialog-question-screenshot.png
-share/mate/help/matedialog/sv/figures/matedialog-text-screenshot.png
-share/mate/help/matedialog/sv/figures/matedialog-warning-screenshot.png
-share/mate/help/matedialog/sv/matedialog.xml
-share/mate/help/matedialog/uk/figures/matedialog-calendar-screenshot.png
-share/mate/help/matedialog/uk/figures/matedialog-entry-screenshot.png
-share/mate/help/matedialog/uk/figures/matedialog-error-screenshot.png
-share/mate/help/matedialog/uk/figures/matedialog-fileselection-screenshot.png
-share/mate/help/matedialog/uk/figures/matedialog-information-screenshot.png
-share/mate/help/matedialog/uk/figures/matedialog-list-screenshot.png
-share/mate/help/matedialog/uk/figures/matedialog-notification-screenshot.png
-share/mate/help/matedialog/uk/figures/matedialog-progress-screenshot.png
-share/mate/help/matedialog/uk/figures/matedialog-question-screenshot.png
-share/mate/help/matedialog/uk/figures/matedialog-text-screenshot.png
-share/mate/help/matedialog/uk/figures/matedialog-warning-screenshot.png
-share/mate/help/matedialog/uk/matedialog.xml
-share/mate/help/matedialog/zh_CN/figures/matedialog-calendar-screenshot.png
-share/mate/help/matedialog/zh_CN/figures/matedialog-entry-screenshot.png
-share/mate/help/matedialog/zh_CN/figures/matedialog-error-screenshot.png
-share/mate/help/matedialog/zh_CN/figures/matedialog-fileselection-screenshot.png
-share/mate/help/matedialog/zh_CN/figures/matedialog-information-screenshot.png
-share/mate/help/matedialog/zh_CN/figures/matedialog-list-screenshot.png
-share/mate/help/matedialog/zh_CN/figures/matedialog-notification-screenshot.png
-share/mate/help/matedialog/zh_CN/figures/matedialog-progress-screenshot.png
-share/mate/help/matedialog/zh_CN/figures/matedialog-question-screenshot.png
-share/mate/help/matedialog/zh_CN/figures/matedialog-text-screenshot.png
-share/mate/help/matedialog/zh_CN/figures/matedialog-warning-screenshot.png
-share/mate/help/matedialog/zh_CN/matedialog.xml
-share/matedialog/clothes/hawaii-shirt.png
-share/matedialog/clothes/mate-tshirt.png
-share/matedialog/clothes/monk.png
-share/matedialog/clothes/sunglasses.png
-share/matedialog/clothes/surfboard.png
-share/matedialog/matedialog-calendar.png
-share/matedialog/matedialog-entry.png
-share/matedialog/matedialog-file.png
-share/matedialog/matedialog-list.png
-share/matedialog/matedialog-notification.png
-share/matedialog/matedialog-progress.png
-share/matedialog/matedialog-scale.png
-share/matedialog/matedialog-text.png
-share/matedialog/matedialog.png
-share/matedialog/matedialog.ui
-share/omf/matedialog/matedialog-C.omf
-share/omf/matedialog/matedialog-bg.omf
-share/omf/matedialog/matedialog-cs.omf
-share/omf/matedialog/matedialog-da.omf
-share/omf/matedialog/matedialog-de.omf
-share/omf/matedialog/matedialog-el.omf
-share/omf/matedialog/matedialog-en_GB.omf
-share/omf/matedialog/matedialog-es.omf
-share/omf/matedialog/matedialog-eu.omf
-share/omf/matedialog/matedialog-fi.omf
-share/omf/matedialog/matedialog-fr.omf
-share/omf/matedialog/matedialog-oc.omf
-share/omf/matedialog/matedialog-pt_BR.omf
-share/omf/matedialog/matedialog-ru.omf
-share/omf/matedialog/matedialog-sv.omf
-share/omf/matedialog/matedialog-uk.omf
-share/omf/matedialog/matedialog-zh_CN.omf
-@dirrm share/omf/matedialog
-@dirrm share/matedialog/clothes
-@dirrm share/matedialog
-@dirrm share/mate/help/matedialog/zh_CN/figures
-@dirrm share/mate/help/matedialog/zh_CN
-@dirrm share/mate/help/matedialog/uk/figures
-@dirrm share/mate/help/matedialog/uk
-@dirrm share/mate/help/matedialog/sv/figures
-@dirrm share/mate/help/matedialog/sv
-@dirrm share/mate/help/matedialog/ru/figures
-@dirrm share/mate/help/matedialog/ru
-@dirrm share/mate/help/matedialog/pt_BR/figures
-@dirrm share/mate/help/matedialog/pt_BR
-@dirrm share/mate/help/matedialog/oc/figures
-@dirrm share/mate/help/matedialog/oc
-@dirrm share/mate/help/matedialog/fr/figures
-@dirrm share/mate/help/matedialog/fr
-@dirrm share/mate/help/matedialog/fi/figures
-@dirrm share/mate/help/matedialog/fi
-@dirrm share/mate/help/matedialog/eu/figures
-@dirrm share/mate/help/matedialog/eu
-@dirrm share/mate/help/matedialog/es/figures
-@dirrm share/mate/help/matedialog/es
-@dirrm share/mate/help/matedialog/en_GB/figures
-@dirrm share/mate/help/matedialog/en_GB
-@dirrm share/mate/help/matedialog/el/figures
-@dirrm share/mate/help/matedialog/el
-@dirrm share/mate/help/matedialog/de/figures
-@dirrm share/mate/help/matedialog/de
-@dirrm share/mate/help/matedialog/da/figures
-@dirrm share/mate/help/matedialog/da
-@dirrm share/mate/help/matedialog/cs/figures
-@dirrm share/mate/help/matedialog/cs
-@dirrm share/mate/help/matedialog/bg/figures
-@dirrm share/mate/help/matedialog/bg
-@dirrm share/mate/help/matedialog/C/figures
-@dirrm share/mate/help/matedialog/C
-@dirrm share/mate/help/matedialog
 @dirrmtry share/locale/zh_HK/LC_MESSAGES
 @dirrmtry share/locale/zh_HK
 @dirrmtry share/locale/xh/LC_MESSAGES
@@ -387,12 +351,18 @@ share/omf/matedialog/matedialog-zh_CN.omf
 @dirrmtry share/locale/mg
 @dirrmtry share/locale/mai/LC_MESSAGES
 @dirrmtry share/locale/mai
+@dirrmtry share/locale/ky/LC_MESSAGES
+@dirrmtry share/locale/ky
 @dirrmtry share/locale/ku/LC_MESSAGES
 @dirrmtry share/locale/ku
+@dirrmtry share/locale/kk/LC_MESSAGES
+@dirrmtry share/locale/kk
 @dirrmtry share/locale/en@shaw/LC_MESSAGES
 @dirrmtry share/locale/en@shaw
 @dirrmtry share/locale/dz/LC_MESSAGES
 @dirrmtry share/locale/dz
+@dirrmtry share/locale/cmn/LC_MESSAGES
+@dirrmtry share/locale/cmn
 @dirrmtry share/locale/ca@valencia/LC_MESSAGES
 @dirrmtry share/locale/ca@valencia
 @dirrmtry share/locale/bn_IN/LC_MESSAGES
@@ -403,3 +373,57 @@ share/omf/matedialog/matedialog-zh_CN.omf
 @dirrmtry share/locale/ast
 @dirrmtry share/locale/as/LC_MESSAGES
 @dirrmtry share/locale/as
+@dirrmtry share/matedialog/clothes
+@dirrmtry share/matedialog
+@dirrm share/help/zh_CN/matedialog/figures
+@dirrm share/help/zh_CN/matedialog
+@dirrmtry share/help/zh_CN
+@dirrm share/help/uk/matedialog/figures
+@dirrm share/help/uk/matedialog
+@dirrmtry share/help/uk
+@dirrm share/help/sv/matedialog/figures
+@dirrm share/help/sv/matedialog
+@dirrmtry share/help/sv
+@dirrm share/help/ru/matedialog/figures
+@dirrm share/help/ru/matedialog
+@dirrmtry share/help/ru
+@dirrm share/help/pt_BR/matedialog/figures
+@dirrm share/help/pt_BR/matedialog
+@dirrmtry share/help/pt_BR
+@dirrm share/help/oc/matedialog/figures
+@dirrm share/help/oc/matedialog
+@dirrmtry share/help/oc
+@dirrm share/help/fr/matedialog/figures
+@dirrm share/help/fr/matedialog
+@dirrmtry share/help/fr
+@dirrm share/help/fi/matedialog/figures
+@dirrm share/help/fi/matedialog
+@dirrmtry share/help/fi
+@dirrm share/help/eu/matedialog/figures
+@dirrm share/help/eu/matedialog
+@dirrmtry share/help/eu
+@dirrm share/help/es/matedialog/figures
+@dirrm share/help/es/matedialog
+@dirrmtry share/help/es
+@dirrm share/help/en_GB/matedialog/figures
+@dirrm share/help/en_GB/matedialog
+@dirrmtry share/help/en_GB
+@dirrm share/help/el/matedialog/figures
+@dirrm share/help/el/matedialog
+@dirrmtry share/help/el
+@dirrm share/help/de/matedialog/figures
+@dirrm share/help/de/matedialog
+@dirrmtry share/help/de
+@dirrm share/help/da/matedialog/figures
+@dirrm share/help/da/matedialog
+@dirrmtry share/help/da
+@dirrm share/help/cs/matedialog/figures
+@dirrm share/help/cs/matedialog
+@dirrmtry share/help/cs
+@dirrm share/help/bg/matedialog/figures
+@dirrm share/help/bg/matedialog
+@dirrmtry share/help/bg
+@dirrm share/help/C/matedialog/figures
+@dirrm share/help/C/matedialog
+@dirrmtry share/help/C
+@dirrmtry share/help

@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mate-screensaver
-PORTVERSION=	1.6.1
-PORTREVISION=	1
+PORTVERSION=	1.8.0
 CATEGORIES=	x11 mate
 MASTER_SITES=	MATE
 DIST_SUBDIR=	mate
@@ -17,7 +16,7 @@ LIB_DEPENDS=	libdbus-1.so:${PORTSDIR}/devel/dbus \
 
 PORTSCOUT=	limitw:1,even
 
-USES=		gettext gmake libtool pathfix pkgconfig tar:xz
+USES=		gettext gmake pathfix pkgconfig tar:xz
 USE_GL=		gl
 USE_MATE=	desktop libmatekbd menus
 USE_XORG=	ice sm x11 xext xtst xxf86misc xxf86vm xscrnsaver
@@ -32,19 +31,16 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 
 GLIB_SCHEMAS=	org.mate.screensaver.gschema.xml
 
-#PLIST=		${WRKDIR}/pkg-plist
 SUB_FILES+=	mate-screensaver.pam
 
-XSCREENSAVER_DIR=	${PREFIX}/share/xscreensaver/config
+XSCREENSAVER_DIR=	${LOCALBASE}/share/xscreensaver/config
 SCREENSAVER_DIR=	share/applications/screensavers
 
 XSCREENSAVER_EXCLUDE=	"(popsquares.xml)"
 
-OPTIONS_DEFINE=	PAM KEYRING HACKS
-OPTIONS_DEFAULT=PAM KEYRING
+OPTIONS_DEFINE=	PAM XSCREENSAVER
+OPTIONS_DEFAULT=PAM
 PAM_DESC=	Pluggable Authentication Module support
-KEYRING_DESC=	MateKeyring integration (needs PAM)
-HACKS_DESC=	Install extra gnome xscreensavers
 
 .include <bsd.port.options.mk>
 
@@ -62,42 +58,26 @@ CONFIGURE_ARGS+=--disable-pam
 PLIST_SUB+=	PAM="@comment "
 .endif
 
-.if ${PORT_OPTIONS:MKEYRING} && ${PORT_OPTIONS:MPAM}
-SUB_LIST+=	PAM_KEYRING=
-USE_MATE+=	keyring:run
-.else
-SUB_LIST+=	PAM_KEYRING=\#
-.endif
-
-pre-everything::
-.if !${PORT_OPTIONS:MPAM} && ${PORT_OPTIONS:MKEYRING}
-	@${ECHO_MSG} "Keyring integration is disabled because it needs PAM."
-.endif
-
 post-patch:
 .if ${PORT_OPTIONS:MPAM}
 	@${REINPLACE_CMD} -e 's|/etc/pam.d|${PREFIX}/etc/pam.d|g' \
 		${WRKSRC}/src/gs-auth-pam.c
 .endif
 
-#.if defined (HACKS)
 #pre-install:
 #	@${CAT} ${.CURDIR}/pkg-plist > ${PLIST}
-#	@cd ${STAGEDIR}${XSCREENSAVER_DIR} && ${FIND} -s * -maxdepth 1 -type f -name "*.xml" | \
+#	@cd ${XSCREENSAVER_DIR} && ${FIND} -s * -maxdepth 1 -type f -name "*.xml" | \
 #		${GREP} -Ev ${XSCREENSAVER_EXCLUDE} | \
 #		${SED} -e 's:^:${SCREENSAVER_DIR}/:' | \
 #		${SED} -e 's:[.]xml$$:.desktop:' >> ${PLIST}
 #	@${ECHO_CMD} @dirrm ${SCREENSAVER_DIR} >> ${PLIST}
-#.endif
 
 post-install:
-#.if defined(HACKS)
-#	${MKDIR} ${STAGEDIR}${PREFIX}/${SCREENSAVER_DIR}
+	${MKDIR} ${STAGEDIR}${PREFIX}/${SCREENSAVER_DIR}
 #	cd ${STAGEDIR}${PREFIX}/${SCREENSAVER_DIR} && \
-#		${FIND} -s ${STAGEDIR}${XSCREENSAVER_DIR} -maxdepth 1 -type f -name "*.xml" | \
+#		${FIND} -s ${XSCREENSAVER_DIR} -maxdepth 1 -type f -name "*.xml" | \
 #			${GREP} -Ev ${XSCREENSAVER_EXCLUDE} | \
 #			${XARGS} ${WRKSRC}/data/migrate-xscreensaver-config.sh
-#.endif
 .if ${PORT_OPTIONS:MPAM}
 	${INSTALL_DATA} ${WRKDIR}/mate-screensaver.pam ${STAGEDIR}${PREFIX}/etc/pam.d/mate-screensaver
 .endif
