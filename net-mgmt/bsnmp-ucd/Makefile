@@ -9,8 +9,9 @@ MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 MAINTAINER=	trociny@FreeBSD.org
 COMMENT=	bsnmpd module that implements parts of UCD-SNMP-MIB
 
-LICENSE=	BSD
+LICENSE=	BSD2CLAUSE
 
+USES=		uidfix
 MAKE_ENV+=	NO_OBJ=yes
 
 post-patch:
