@@ -2,9 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	dnsmasq
-PORTVERSION=	2.69r4
-DISTVERSION=	2.69rc4
-PORTREVISION=	1
+DISTVERSION=	2.72rc1
 CATEGORIES=	dns ipv6
 MASTER_SITES=	http://www.thekelleys.org.uk/dnsmasq/release-candidates/
 PKGNAMESUFFIX=	-devel
@@ -15,7 +13,6 @@ COMMENT=	Lightweight DNS forwarder, DHCP, and TFTP server
 LICENSE=	GPLv2
 
 CONFLICTS_INSTALL=dnsmasq-2*
-IGNORE=		- build stable version instead, it is newer than this release candidate
 
 PORTDOCS=	CHANGELOG CHANGELOG.archive FAQ doc.html setup.html
 
