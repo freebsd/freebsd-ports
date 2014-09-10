@@ -21,7 +21,6 @@ include/FTGL/FTSimpleLayout.h
 include/FTGL/FTTextureGlyph.h
 include/FTGL/ftgl.h
 lib/libftgl.a
-lib/libftgl.la
 lib/libftgl.so
 lib/libftgl.so.2
 lib/libftgl.so.2.1.3
