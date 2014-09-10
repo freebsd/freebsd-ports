@@ -3,7 +3,7 @@
 
 PORTNAME=	glpk
 PORTVERSION=	4.52.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	glpk
@@ -20,7 +20,7 @@ IODBC_DESC=	MathProg iodbc support
 MYSQL_DESC=	MathProg mysql support
 
 GNU_CONFIGURE=	yes
-USES=		gmake libtool:keepla
+USES=		gmake libtool
 USE_LDCONFIG=	yes
 CFLAGS+=	-trigraphs
 CPPFLAGS+=	-D_LSEEK_DECLARED -I${LOCALBASE}/include
