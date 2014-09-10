@@ -3,7 +3,7 @@
 
 PORTNAME=	xspread
 PORTVERSION=	3.1.1c
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	math
 MASTER_SITES=	http://archive.debian.org/%SUBDIR%/ \
 		http://mirror.safehostnet.com/debian-archive/%SUBDIR%/ \
@@ -52,10 +52,6 @@ do-install:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/x/notes ${STAGEDIR}${DOCSDIR}
-.for dir in doc documents sample_files tests
-	@${TAR} -C ${WRKSRC} --exclude '*.tmp' -cf - ${dir} | \
-		${TAR} -C ${STAGEDIR}${DOCSDIR} --unlink -xf -
-.endfor
-	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${STAGEDIR}${DOCSDIR}
+	(cd ${WRKSRC} && ${COPYTREE_SHARE} "doc documents sample_files tests" ${STAGEDIR}${DOCSDIR} "! -name *.tmp")
 
 .include <bsd.port.mk>
