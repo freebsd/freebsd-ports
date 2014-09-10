@@ -28,10 +28,11 @@ USES=		bison gmake libtool tar:bzip2
 GNU_CONFIGURE=	yes
 
 .if defined(PKGNAMEPREFIX)
+BUTARGET?=	${PKGNAMEPREFIX}${OPSYS:tl}
 OPTIONS_EXCLUDE=	NLS
 INFO_PATH=	${PKGNAMEPREFIX:S/-$//}/info
 CONFIGURE_ARGS+=	--disable-shared \
-			--target=${PKGNAMEPREFIX}${OPSYS:tl}
+			--target=${BUTARGET}
 .else
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
