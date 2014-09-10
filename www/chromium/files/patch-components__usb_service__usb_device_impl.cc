@@ -1,8 +1,8 @@
---- ./components/usb_service/usb_device_impl.cc.orig	2014-08-12 21:02:37.000000000 +0200
-+++ ./components/usb_service/usb_device_impl.cc	2014-08-13 09:56:57.000000000 +0200
-@@ -10,7 +10,11 @@
- #include "components/usb_service/usb_context.h"
- #include "components/usb_service/usb_device_handle.h"
+--- ./components/usb_service/usb_device_impl.cc.orig	2014-08-20 21:02:55.000000000 +0200
++++ ./components/usb_service/usb_device_impl.cc	2014-08-22 15:06:25.000000000 +0200
+@@ -12,7 +12,11 @@
+ #include "components/usb_service/usb_error.h"
+ #include "components/usb_service/usb_interface_impl.h"
  #include "content/public/browser/browser_thread.h"
 +#if defined(OS_FREEBSD)
 +#include "libusb.h"

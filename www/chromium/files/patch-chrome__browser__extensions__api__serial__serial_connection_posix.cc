@@ -1,5 +1,5 @@
---- ./chrome/browser/extensions/api/serial/serial_connection_posix.cc.orig	2014-08-12 21:01:44.000000000 +0200
-+++ ./chrome/browser/extensions/api/serial/serial_connection_posix.cc	2014-08-13 09:56:56.000000000 +0200
+--- ./chrome/browser/extensions/api/serial/serial_connection_posix.cc.orig	2014-08-20 21:01:58.000000000 +0200
++++ ./chrome/browser/extensions/api/serial/serial_connection_posix.cc	2014-08-22 15:06:24.000000000 +0200
 @@ -36,7 +36,7 @@
      BITRATE_TO_SPEED_CASE(9600)
      BITRATE_TO_SPEED_CASE(19200)

@@ -1,5 +1,5 @@
---- ./build/linux/unbundle/libwebp.gyp.orig	2014-08-12 21:02:52.000000000 +0200
-+++ ./build/linux/unbundle/libwebp.gyp	2014-08-13 09:56:56.000000000 +0200
+--- ./build/linux/unbundle/libwebp.gyp.orig	2014-08-20 21:02:29.000000000 +0200
++++ ./build/linux/unbundle/libwebp.gyp	2014-08-22 15:06:24.000000000 +0200
 @@ -14,13 +14,7 @@
        },
        'link_settings': {

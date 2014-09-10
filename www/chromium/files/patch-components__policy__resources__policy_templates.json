@@ -1,5 +1,5 @@
---- ./components/policy/resources/policy_templates.json.orig	2014-08-12 21:02:36.000000000 +0200
-+++ ./components/policy/resources/policy_templates.json	2014-08-13 09:56:57.000000000 +0200
+--- ./components/policy/resources/policy_templates.json.orig	2014-08-20 21:02:55.000000000 +0200
++++ ./components/policy/resources/policy_templates.json	2014-08-22 15:06:25.000000000 +0200
 @@ -1513,7 +1513,7 @@
            'name': 'GSSAPILibraryName',
            'type': 'string',
@@ -9,7 +9,7 @@
            'features': {
              'dynamic_refresh': False,
              'per_profile': False,
-@@ -3643,7 +3643,7 @@
+@@ -3697,7 +3697,7 @@
        'name': 'RequireOnlineRevocationChecksForLocalAnchors',
        'type': 'main',
        'schema': { 'type': 'boolean' },
@@ -18,7 +18,7 @@
        'features': {
          'dynamic_refresh': True,
          'per_profile': False,
-@@ -4305,7 +4305,7 @@
+@@ -4377,7 +4377,7 @@
        'name': 'BackgroundModeEnabled',
        'type': 'main',
        'schema': { 'type': 'boolean' },

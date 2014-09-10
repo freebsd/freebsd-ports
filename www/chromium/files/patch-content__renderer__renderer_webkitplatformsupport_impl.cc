@@ -1,6 +1,6 @@
---- ./content/renderer/renderer_webkitplatformsupport_impl.cc.orig	2014-08-12 21:01:19.000000000 +0200
-+++ ./content/renderer/renderer_webkitplatformsupport_impl.cc	2014-08-13 09:56:57.000000000 +0200
-@@ -91,7 +91,7 @@
+--- ./content/renderer/renderer_webkitplatformsupport_impl.cc.orig	2014-08-20 21:02:43.000000000 +0200
++++ ./content/renderer/renderer_webkitplatformsupport_impl.cc	2014-08-22 15:06:26.000000000 +0200
+@@ -92,7 +92,7 @@
  
  #if defined(OS_POSIX)
  #include "base/file_descriptor_posix.h"
@@ -9,7 +9,7 @@
  #include <map>
  #include <string>
  
-@@ -179,7 +179,7 @@
+@@ -183,7 +183,7 @@
    scoped_refptr<ThreadSafeSender> thread_safe_sender_;
  };
  
@@ -18,7 +18,7 @@
  // WebKit doesn't use WebSandboxSupport on android so we don't need to
  // implement anything here.
  class RendererWebKitPlatformSupportImpl::SandboxSupport {
-@@ -272,7 +272,7 @@
+@@ -277,7 +277,7 @@
  }
  
  blink::WebSandboxSupport* RendererWebKitPlatformSupportImpl::sandboxSupport() {
@@ -27,7 +27,7 @@
    // WebKit doesn't use WebSandboxSupport on android.
    return NULL;
  #else
-@@ -590,7 +590,7 @@
+@@ -595,7 +595,7 @@
    return FontLoader::CGFontRefFromBuffer(font_data, font_data_size, out);
  }
  

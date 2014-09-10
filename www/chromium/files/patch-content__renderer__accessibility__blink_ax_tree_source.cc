@@ -1,6 +1,6 @@
---- ./content/renderer/accessibility/blink_ax_tree_source.cc.orig	2014-08-12 21:01:18.000000000 +0200
-+++ ./content/renderer/accessibility/blink_ax_tree_source.cc	2014-08-13 09:56:57.000000000 +0200
-@@ -431,13 +431,15 @@
+--- ./content/renderer/accessibility/blink_ax_tree_source.cc.orig	2014-08-20 21:02:43.000000000 +0200
++++ ./content/renderer/accessibility/blink_ax_tree_source.cc	2014-08-22 15:06:26.000000000 +0200
+@@ -441,13 +441,15 @@
      dst->AddIntAttribute(ui::AX_ATTR_SCROLL_X, scroll_offset.width());
      dst->AddIntAttribute(ui::AX_ATTR_SCROLL_Y, scroll_offset.height());
  

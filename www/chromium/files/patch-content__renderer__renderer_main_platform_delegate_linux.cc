@@ -1,25 +1,19 @@
---- ./content/renderer/renderer_main_platform_delegate_linux.cc.orig	2014-08-12 21:01:19.000000000 +0200
-+++ ./content/renderer/renderer_main_platform_delegate_linux.cc	2014-08-13 09:56:57.000000000 +0200
-@@ -50,11 +50,14 @@
-   // http://code.google.com/p/chromium/wiki/LinuxSUIDSandbox
-   //
-   // Anything else is started in InitializeSandbox().
-+#if !defined(OS_BSD)
-   LinuxSandbox::InitializeSandbox();
-+#endif
-   return true;
+--- ./content/renderer/renderer_main_platform_delegate_linux.cc.orig	2014-08-20 21:02:43.000000000 +0200
++++ ./content/renderer/renderer_main_platform_delegate_linux.cc	2014-08-22 15:06:26.000000000 +0200
+@@ -40,6 +40,7 @@
  }
  
- void RendererMainPlatformDelegate::RunSandboxTests(bool no_sandbox) {
+ bool RendererMainPlatformDelegate::EnableSandbox() {
 +#if !defined(OS_BSD)
-   // The LinuxSandbox class requires going through initialization before
-   // GetStatus() and others can be used.  When we are not launched through the
-   // Zygote, this initialization will only happen in the renderer process if
-@@ -89,6 +92,7 @@
+   // The setuid sandbox is started in the zygote process: zygote_main_linux.cc
+   // http://code.google.com/p/chromium/wiki/LinuxSUIDSandbox
+   //
+@@ -70,7 +71,7 @@
      CHECK_EQ(errno, EPERM);
    }
  #endif  // __x86_64__
-+#endif
+-
++#endif  // ! OS_BSD
+   return true;
  }
  
- }  // namespace content

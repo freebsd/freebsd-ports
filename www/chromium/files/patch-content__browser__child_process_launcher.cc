@@ -1,6 +1,6 @@
---- ./content/browser/child_process_launcher.cc.orig	2014-08-12 21:01:25.000000000 +0200
-+++ ./content/browser/child_process_launcher.cc	2014-08-13 09:56:57.000000000 +0200
-@@ -66,7 +66,7 @@
+--- ./content/browser/child_process_launcher.cc.orig	2014-08-20 21:02:49.000000000 +0200
++++ ./content/browser/child_process_launcher.cc	2014-08-22 15:06:25.000000000 +0200
+@@ -68,7 +68,7 @@
  #else
          terminate_child_on_shutdown_(true)
  #endif
@@ -9,7 +9,7 @@
          , zygote_(false)
  #endif
          {
-@@ -232,7 +232,7 @@
+@@ -234,7 +234,7 @@
      // child termination.
      base::ScopedFD ipcfd_closer(ipcfd);
  
@@ -18,7 +18,7 @@
      GetContentClient()->browser()->
          GetAdditionalMappedFilesForChildProcess(*cmd_line, child_process_id,
                                                  &files_to_register);
-@@ -242,7 +242,7 @@
+@@ -244,7 +244,7 @@
                                                            process_type);
      } else
      // Fall through to the normal posix case below when we're not zygoting.
@@ -27,7 +27,7 @@
      {
        // Convert FD mapping to FileHandleMappingVector
        base::FileHandleMappingVector fds_to_map;
-@@ -253,7 +253,7 @@
+@@ -255,7 +255,7 @@
                  base::GlobalDescriptors::kBaseDescriptor));
        }
  
@@ -36,7 +36,7 @@
        if (process_type == switches::kRendererProcess) {
          const int sandbox_fd =
              RenderSandboxHostLinux::GetInstance()->GetRendererSocket();
-@@ -261,7 +261,7 @@
+@@ -263,7 +263,7 @@
              sandbox_fd,
              GetSandboxFD()));
        }
@@ -45,7 +45,7 @@
  
        // Actually launch the app.
        base::LaunchOptions options;
-@@ -307,7 +307,7 @@
+@@ -322,7 +322,7 @@
        base::Bind(
            &Context::Notify,
            this_object.get(),
@@ -54,7 +54,7 @@
            use_zygote,
  #endif
            handle));
-@@ -315,7 +315,7 @@
+@@ -330,7 +330,7 @@
    }
  
    void Notify(
@@ -63,7 +63,7 @@
        bool zygote,
  #endif
        base::ProcessHandle handle) {
-@@ -328,7 +328,7 @@
+@@ -343,7 +343,7 @@
      if (!handle)
        LOG(ERROR) << "Failed to launch child process";
  
@@ -72,7 +72,7 @@
      zygote_ = zygote;
  #endif
      if (client_) {
-@@ -355,7 +355,7 @@
+@@ -370,7 +370,7 @@
          BrowserThread::PROCESS_LAUNCHER, FROM_HERE,
          base::Bind(
              &Context::TerminateInternal,
@@ -81,7 +81,7 @@
              zygote_,
  #endif
              process_.handle()));
-@@ -372,7 +372,7 @@
+@@ -387,7 +387,7 @@
    }
  
    static void TerminateInternal(
@@ -90,7 +90,7 @@
        bool zygote,
  #endif
        base::ProcessHandle handle) {
-@@ -386,13 +386,13 @@
+@@ -401,13 +401,13 @@
      process.Terminate(RESULT_CODE_NORMAL_EXIT);
      // On POSIX, we must additionally reap the child.
  #if defined(OS_POSIX)
@@ -106,7 +106,7 @@
      {
        base::EnsureProcessTerminated(handle);
      }
-@@ -413,7 +413,7 @@
+@@ -428,7 +428,7 @@
  #if defined(OS_ANDROID)
    // The fd to close after creating the process.
    int ipcfd_;
@@ -115,7 +115,7 @@
    bool zygote_;
  #endif
  };
-@@ -455,7 +455,7 @@
+@@ -470,7 +470,7 @@
        *exit_code = context_->exit_code_;
      return context_->termination_status_;
    }

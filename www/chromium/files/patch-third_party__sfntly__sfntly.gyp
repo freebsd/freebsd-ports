@@ -1,5 +1,5 @@
---- ./third_party/sfntly/sfntly.gyp.orig	2014-08-12 21:02:45.000000000 +0200
-+++ ./third_party/sfntly/sfntly.gyp	2014-08-13 09:56:59.000000000 +0200
+--- ./third_party/sfntly/sfntly.gyp.orig	2014-08-20 21:03:05.000000000 +0200
++++ ./third_party/sfntly/sfntly.gyp	2014-08-22 15:06:27.000000000 +0200
 @@ -126,7 +126,7 @@
          'cpp/src/sample/chromium/subsetter_impl.h',
        ],

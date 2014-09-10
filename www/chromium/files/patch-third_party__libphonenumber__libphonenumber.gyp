@@ -1,5 +1,5 @@
---- ./third_party/libphonenumber/libphonenumber.gyp.orig	2014-08-12 21:02:49.000000000 +0200
-+++ ./third_party/libphonenumber/libphonenumber.gyp	2014-08-13 09:56:58.000000000 +0200
+--- ./third_party/libphonenumber/libphonenumber.gyp.orig	2014-08-20 21:02:59.000000000 +0200
++++ ./third_party/libphonenumber/libphonenumber.gyp	2014-08-22 15:06:27.000000000 +0200
 @@ -11,6 +11,7 @@
        # generated protocol headers to be available with "phonenumbers" include
        # path, e.g. #include "phonenumbers/foo.pb.h".

@@ -1,6 +1,6 @@
---- ./chrome/common/chrome_switches.h.orig	2014-08-12 21:02:17.000000000 +0200
-+++ ./chrome/common/chrome_switches.h	2014-08-13 09:56:57.000000000 +0200
-@@ -386,7 +386,7 @@
+--- ./chrome/common/chrome_switches.h.orig	2014-08-20 21:01:56.000000000 +0200
++++ ./chrome/common/chrome_switches.h	2014-08-22 15:06:25.000000000 +0200
+@@ -378,7 +378,7 @@
  extern const char kPasswordStore[];
  #endif
  

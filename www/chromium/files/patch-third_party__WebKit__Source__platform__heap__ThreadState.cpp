@@ -1,7 +1,7 @@
---- ./third_party/WebKit/Source/platform/heap/ThreadState.cpp.orig	2014-08-12 21:07:16.000000000 +0200
-+++ ./third_party/WebKit/Source/platform/heap/ThreadState.cpp	2014-08-13 09:56:58.000000000 +0200
-@@ -45,13 +45,22 @@
- extern "C" void* __libc_stack_end;  // NOLINT
+--- ./third_party/WebKit/Source/platform/heap/ThreadState.cpp.orig	2014-08-20 21:07:57.000000000 +0200
++++ ./third_party/WebKit/Source/platform/heap/ThreadState.cpp	2014-08-22 15:06:26.000000000 +0200
+@@ -50,13 +50,22 @@
+ #include <sanitizer/msan_interface.h>
  #endif
  
 +#if OS(FREEBSD)
@@ -24,7 +24,7 @@
          void* base;
          size_t size;
          int error = pthread_attr_getstack(&attr, &base, &size);
-@@ -59,6 +68,9 @@
+@@ -64,6 +73,9 @@
          pthread_attr_destroy(&attr);
          return reinterpret_cast<Address>(base) + size;
      }

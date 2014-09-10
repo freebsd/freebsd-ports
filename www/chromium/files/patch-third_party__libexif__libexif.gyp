@@ -1,5 +1,5 @@
---- ./third_party/libexif/libexif.gyp.orig	2014-07-15 21:03:04.000000000 +0200
-+++ ./third_party/libexif/libexif.gyp	2014-08-11 15:06:34.000000000 +0200
+--- ./third_party/libexif/libexif.gyp.orig	2014-08-20 21:03:07.000000000 +0200
++++ ./third_party/libexif/libexif.gyp	2014-08-21 23:18:11.000000000 +0200
 @@ -5,9 +5,9 @@
  {
    'variables': {

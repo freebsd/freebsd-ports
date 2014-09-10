@@ -1,6 +1,6 @@
---- ./ppapi/proxy/file_io_resource.cc.orig	2014-08-12 21:01:17.000000000 +0200
-+++ ./ppapi/proxy/file_io_resource.cc	2014-08-13 09:56:58.000000000 +0200
-@@ -294,15 +294,17 @@
+--- ./ppapi/proxy/file_io_resource.cc.orig	2014-08-20 21:02:40.000000000 +0200
++++ ./ppapi/proxy/file_io_resource.cc	2014-08-22 15:06:26.000000000 +0200
+@@ -283,15 +283,17 @@
  
    if (check_quota_) {
      int64_t increase = 0;
@@ -22,7 +22,7 @@
      }
  
      if (increase > 0) {
-@@ -319,7 +321,7 @@
+@@ -315,7 +317,7 @@
        if (append)
          append_mode_write_amount_ += bytes_to_write;
        else
@@ -31,7 +31,7 @@
      }
    }
    return WriteValidated(offset, buffer, bytes_to_write, callback);
-@@ -597,9 +599,9 @@
+@@ -593,9 +595,9 @@
    } else {
      DCHECK_LE(offset + bytes_to_write - max_written_offset_, granted);
  
@@ -43,4 +43,4 @@
 +      max_written_offset_ = _max_offset;
    }
  
-   int32_t result = WriteValidated(offset, buffer, bytes_to_write, callback);
+   if (callback->is_blocking()) {
