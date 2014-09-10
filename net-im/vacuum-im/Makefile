@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	vacuum
-PORTVERSION=	1.2.2
+PORTVERSION=	1.2.4
 CATEGORIES=	net-im
-MASTER_SITES=	GOOGLE_CODE
+MASTER_SITES=	https://googledrive.com/host/0B7A5K_290X8-d1hjQmJaSGZmTTA/
 PKGNAMESUFFIX=	-im
 
 MAINTAINER=	vg@FreeBSD.org
@@ -14,7 +14,7 @@ LICENSE=	GPLv3
 
 PROJECTHOST=	${PORTNAME}${PKGNAMESUFFIX}
 
-USES=		cmake tar:xz
+USES=		cmake
 USE_XORG=	xscrnsaver
 USE_LDCONFIG=	yes
 USE_QT4=	gui xml qmake_build uic_build moc_build rcc_build \
