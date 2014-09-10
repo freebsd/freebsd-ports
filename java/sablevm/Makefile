@@ -33,5 +33,7 @@ SVMCP_RUN_DEPENDS=	${LOCALBASE}/lib/sablevm-classpath/libjavalang.so:${PORTSDIR}
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,^subdirs=".*,,' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e '/^sablevm_LDADD =/s/$$/ -lpopt/' \
+		${WRKSRC}/src/sablevm/Makefile.in
 
 .include <bsd.port.mk>
