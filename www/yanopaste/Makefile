@@ -3,7 +3,7 @@
 
 PORTNAME=	yanopaste
 PORTVERSION=	1.3.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
@@ -13,9 +13,6 @@ COMMENT=	Yet Another Nopaste
 NO_BUILD=	yes
 USE_PHP=	xsl session xmlwriter xmlreader
 SUB_FILES=	pkg-message
-WWWDIR?=	${PREFIX}/www/${PORTNAME}
-
-.include <bsd.port.pre.mk>
 
 post-patch:
 	${FIND} ${WRKSRC} -name .svn -type d | ${XARGS} ${RM} -rf
@@ -23,8 +20,6 @@ post-patch:
 do-install:
 	@${MKDIR} ${STAGEDIR}${WWWDIR}
 	${CP} -R ${WRKSRC}/ ${STAGEDIR}${WWWDIR}
-	@${TOUCH} ${STAGEDIR}${WWWDIR}/config.php
-	@${CHOWN} ${WWWOWN} ${STAGEDIR}${WWWDIR}/config.php
 
 create-plist:
 	@${FIND} -s ${WRKSRC}/${file} -not -type d \
@@ -34,4 +29,4 @@ create-plist:
 	@${FIND} -ds ${WRKSRC}/${file} -type d \
 	| ${SED} -e 's,^${WRKSRC},@dirrm %%WWWDIR%%,' >> ${PLIST}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
