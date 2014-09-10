@@ -3,7 +3,7 @@
 
 PORTNAME=	refdb
 PORTVERSION=	0.9.9
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	textproc
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-src/${PORTNAME}-src-${PORTVERSION}-1
 DISTNAME=	${PORTNAME}-${PORTVERSION}-1
@@ -15,42 +15,36 @@ LIB_DEPENDS=	libexpat.so:${PORTSDIR}/textproc/expat2 \
 		libbtparse.so:${PORTSDIR}/textproc/btparse \
 		libdbi.so:${PORTSDIR}/databases/libdbi
 
-USES=		gmake iconv perl5
+USES=		gmake iconv readline perl5 libtool pkgconfig pathfix shebangfix
 HAS_CONFIGURE=	yes
-ALL_TARGET=
+INSTALL_TARGET=	install-strip
+PORTDOCS=	*
 
 CFLAGS+=	-I${LOCALBASE}/include
 
-CONFIGURE_ARGS+=	--with-expat-lib=${LOCALBASE}/lib
-CONFIGURE_ARGS+=	--with-classpath-root=${PREFIX}/share/java/classes
-CONFIGURE_ARGS+=	--with-refdb-url=http://localhost/refdb
-DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}-${PORTVERSION}-1
-
+CONFIGURE_ARGS=	--with-expat-lib=${LOCALBASE}/lib \
+		--with-classpath-root=${PREFIX}/share/java/classes \
+		--with-refdb-url=http://localhost/refdb
 XMLCATMGR=	${LOCALBASE}/bin/xmlcatmgr
 
-OPTIONS_DEFINE=	CATALOG
-
-OPTIONS_SINGLE=	DB
+OPTIONS_DEFINE=		DOCS CATALOG
+OPTIONS_SINGLE=		DB
 OPTIONS_SINGLE_DB=	MYSQL PGSQL SQLITE
-CATALOG_DESC=	Install SGML catalog
+OPTIONS_EXCLUDE=	CATALOG 	# may not be implemented correctly
+CATALOG_DESC=		Install SGML catalog
 
-OPTIONS_DEFAULT=	MYSQL
+OPTIONS_DEFAULT=	PGSQL
+DOCS_BUILD_DEPENDS=	xsltproc:${PORTSDIR}/textproc/libxslt \
+			docbook-xsl>=0:${PORTSDIR}/textproc/docbook-xsl
 
-MAN1=	bib2ris.1 bib2ris-utf8.1 db2ris.1 eenc.1 en2ris.1 marc2ris.1 med2ris.1 \
-	refdb-backup.1 refdb-bug.1 refdb-ms.1 refdb-restore.1 \
-	refdb_dos2unix.1 refdb_latex2utf8txt.1 refdba.1 \
-	refdbc.1 refdbctl.1 refdbd.1 refdbib.1 refdbjade.1 \
-	refdbnd.1 refdbxml.1 refdbxp.1 runbib.1 \
-	refdb-sruserver.1 refdbsru.1
-#MAN7=	RefDB.7
-MAN8=	refdb.8 refdb.sh.8 refdb-init.8
+SHEBANG_FILES=          ${WRKSRC}/scripts/*
 
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
+USE_RC_SUBR=            refdbd
+
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MMYSQL}
-USE_MYSQL=	yes
+USES+=  mysql
 # If libdbi-drivers has been built without MySQL driver, abort
 .if exists(${LOCALBASE}/lib/dbd) && !exists(${LOCALBASE}/lib/dbd/libdbdmysql.so)
 IGNORE=		rebuild databases/libdbi-drivers with MySQL support
@@ -60,7 +54,7 @@ BUILD_DEPENDS+=	${LOCALBASE}/lib/dbd:${PORTSDIR}/databases/libdbi-drivers
 CONFIGURE_ARGS+=	--with-db-server=mysql
 
 .elif ${PORT_OPTIONS:MPGSQL}
-USE_PGSQL=	yes
+USES+=  pgsql
 # If libdbi-drivers has been built without PostgreSQL driver, abort
 .if exists(${LOCALBASE}/lib/dbd) && !exists(${LOCALBASE}/lib/dbd/libdbdpgsql.so)
 IGNORE=		rebuild databases/libdbi-drivers with PostgreSQL support
@@ -72,7 +66,7 @@ CONFIGURE_ARGS+=	--with-db-server=pgsql
 .elif ${PORT_OPTIONS:MSQLITE}
 LIB_DEPENDS+=	libsqlite3.so:${PORTSDIR}/databases/sqlite3
 # If libdbi-drivers has been built without SQLite driver, abort
-.if exists(${LOCALBASE}/lib/dbd) && !exists(${LOCALBASE}/lib/dbd/libdbdsqlite.so)
+.if exists(${LOCALBASE}/lib/dbd) && !exists(${LOCALBASE}/lib/dbd/libdbdsqlite3.so)
 IGNORE=		rebuild databases/libdbi-drivers with SQLite support
 .elif !exists(${LOCALBASE}/lib/dbd)
 BUILD_DEPENDS+=	${LOCALBASE}/lib/dbd:${PORTSDIR}/databases/libdbi-drivers
@@ -80,14 +74,27 @@ BUILD_DEPENDS+=	${LOCALBASE}/lib/dbd:${PORTSDIR}/databases/libdbi-drivers
 CONFIGURE_ARGS+=	--with-db-server=sqlite
 .endif
 
+.if ${PORT_OPTIONS:MDOCS}
+CONFIGURE_ARGS+=	--with-docbook-xsl=${PREFIX}/share/xsl/docbook \
+			--without-docbook-xsl-ns \
+			--without-tei-xsl \
+			--without-tei-xsl-ns
+.else
+CONFIGURE_ARGS+=	--disable-docs
+.endif
+
 .if ${PORT_OPTIONS:MCATALOG}
 RUN_DEPENDS+=	xmlcatmgr:${PORTSDIR}/textproc/xmlcatmgr
 .endif
 
+post-patch:
+	${REINPLACE_CMD} -e 's|$$(PACKAGE)-$$(VERSION)|refdb|g' \
+		${WRKSRC}/doc/Makefile.in
+
 post-install:
 .if ${PORT_OPTIONS:MCATALOG}
-	@[ -f ${PREFIX}/share/sgml/catalog.ports ] || ${TOUCH} ${PREFIX}/share/sgml/catalog.ports
-	@${XMLCATMGR} -s -c ${PREFIX}/share/sgml/catalog.ports lookup "${PREFIX}/share/refdb/refdb.cat" > /dev/null || ${XMLCATMGR} -s -c ${PREFIX}/share/sgml/catalog.ports add CATALOG "${PREFIX}/share/refdb/refdb.cat" -- > /dev/null
+	@[ -f ${STAGEDIR}${PREFIX}/share/sgml/catalog.ports ] || ${TOUCH} ${STAGEDIR}${PREFIX}/share/sgml/catalog.ports
+	@${XMLCATMGR} -s -c ${STAGEDIR}${PREFIX}/share/sgml/catalog.ports lookup "${STAGEDIR}${PREFIX}/share/refdb/refdb.cat" > /dev/null || ${XMLCATMGR} -s -c ${STAGEDIR}${PREFIX}/share/sgml/catalog.ports add CATALOG "${STAGEDIR}${PREFIX}/share/refdb/refdb.cat" -- > /dev/null
 .endif
 	@${ECHO_MSG} "To complete RefDB installation:"
 .if ${PORT_OPTIONS:MMYSQL}
@@ -119,14 +126,5 @@ post-install:
 	@${ECHO_MSG} "   sqlite refdb < ${PREFIX}/share/refdb/sql/refdb.dump.sqlite"
 	@${ECHO_MSG} ""
 .endif
-	@${INSTALL_SCRIPT} -m 755 ${WRKSRC}/scripts/refdb ${PREFIX}/etc/rc.d/refdb.sh.dist
-	@${ECHO_MSG} "2. To run refdbd at system startup, rename the startup script:"
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} "   mv ${PREFIX}/etc/rc.d/refdb.sh.dist ${PREFIX}/etc/rc.d/refdb.sh"
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} "3. Customise the configuration scripts in ${PREFIX}/etc/refdb,"
-	@${ECHO_MSG} "   as described in the RefDB documentation at:"
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} "   http://refdb.sourceforge.net/manual/x593.html#SECT1-MYSTERY-INIT-FILES"
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

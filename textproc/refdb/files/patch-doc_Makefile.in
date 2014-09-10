@@ -1,0 +1,33 @@
+--- doc/Makefile.in.orig	2014-09-10 12:40:48 UTC
++++ doc/Makefile.in
+@@ -227,8 +227,8 @@ tei_xsl_ns = @tei_xsl_ns@
+ trang_cmd = @trang_cmd@
+ var_dir = @var_dir@
+ xml_decl = @xml_decl@
+-docdir = $(datadir)/doc/$(PACKAGE)-$(VERSION)/refdb-manual
+-doc_DATA = refdb-manual.pdf refdb-manual/*
++docdir = $(datadir)/doc/refdb
++doc_DATA = refdb-manual/*
+ indexdir = $(datadir)/doc/$(PACKAGE)-$(VERSION)/
+ index_DATA = index.html
+ citestylexdir = $(datadir)/doc/$(PACKAGE)-$(VERSION)/citestylex
+@@ -779,7 +779,7 @@ uninstall-am: uninstall-citationlistxDAT
+ 	uninstall-xnoteelementsDATA
+ 
+ 
+-all: refdb-manual.pdf refdb-manual/* citestylex/elements.html risx/elements.html citationlistx/elements.html xnote/elements.html
++all: refdb-manual-html citestylex/elements.html risx/elements.html citationlistx/elements.html xnote/elements.html
+ 
+ ####################################################################
+ # building the manual
+@@ -804,9 +804,8 @@ refdb-manual.pdf: $(manual_sources) $(ma
+ # we have to give Java a little extra memory lest fop will die a horrible death
+ 	JAVA_OPTS=-Xmx256M fop -fo refdb-manual.fo -pdf refdb-manual.pdf
+ 
+-refdb-manual/*: $(manual_sources) $(manpage_sources) $(png_images) refdb-manual-statustable.xml include/manual-xhtml.xsl
++refdb-manual-html: $(manual_sources) $(manpage_sources) $(png_images) refdb-manual-statustable.xml include/manual-xhtml.xsl
+ 	@echo "Creating HTML manual...";
+-	rm -rf refdb-manual/*
+ # building outside the source dir won't work here because the docbook
+ # stylesheets screw up the location of the image files for HTML output
+ 	mkdir -p refdb-manual && cp $(html_extra_files) refdb-manual/ && xsltproc -o refdb-manual/ --nonet --xinclude include/manual-xhtml.xsl refdb-manual.xml
