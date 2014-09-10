@@ -147,7 +147,6 @@ include/gloox/vcardmanager.h
 include/gloox/vcardupdate.h
 include/gloox/xhtmlim.h
 lib/libgloox.a
-lib/libgloox.la
 lib/libgloox.so
 lib/libgloox.so.12
 lib/libgloox.so.12.0.0

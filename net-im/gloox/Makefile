@@ -3,7 +3,7 @@
 
 PORTNAME=	gloox
 PORTVERSION=	1.0.10
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net-im
 MASTER_SITES=	http://camaya.net/download/
 
@@ -11,11 +11,12 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Jabber/XMPP client library
 
 LICENSE=	GPLv3
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libidn.so:${PORTSDIR}/dns/libidn \
 		libgnutls.so:${PORTSDIR}/security/gnutls
 
-USES=		libtool:keepla pathfix pkgconfig tar:bzip2
+USES=		libtool pathfix pkgconfig tar:bzip2
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
