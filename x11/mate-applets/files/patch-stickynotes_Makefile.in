@@ -1,0 +1,80 @@
+--- stickynotes/Makefile.in.orig	2014-04-14 17:43:53.000000000 +0200
++++ stickynotes/Makefile.in	2014-04-14 17:44:52.000000000 +0200
+@@ -78,8 +78,7 @@
+ POST_UNINSTALL = :
+ build_triplet = @build@
+ host_triplet = @host@
+-@BUILD_STICKYNOTES_APPLET_TRUE@libexec_PROGRAMS =  \
+-@BUILD_STICKYNOTES_APPLET_TRUE@	stickynotes_applet$(EXEEXT)
++@BUILD_STICKYNOTES_APPLET_TRUE@libexec_PROGRAMS = mate-stickynotes_applet$(EXEEXT)
+ subdir = stickynotes
+ DIST_COMMON = $(srcdir)/Makefile.in $(srcdir)/Makefile.am \
+ 	$(top_srcdir)/depcomp README TODO
+@@ -100,20 +99,21 @@
+ 	"$(DESTDIR)$(builderdir)" "$(DESTDIR)$(convertdir)" \
+ 	"$(DESTDIR)$(servicedir)" "$(DESTDIR)$(uidir)"
+ PROGRAMS = $(libexec_PROGRAMS)
+-am__stickynotes_applet_SOURCES_DIST = util.h util.c stickynotes.h \
++am__mate_stickynotes_applet_SOURCES_DIST = util.h util.c stickynotes.h \
+ 	stickynotes_callbacks.h stickynotes_applet.h \
+ 	stickynotes_applet_callbacks.h stickynotes.c \
+ 	stickynotes_callbacks.c stickynotes_applet.c \
+ 	stickynotes_applet_callbacks.c
+-@BUILD_STICKYNOTES_APPLET_TRUE@am_stickynotes_applet_OBJECTS =  \
++@BUILD_STICKYNOTES_APPLET_TRUE@am_mate_stickynotes_applet_OBJECTS =  \
+ @BUILD_STICKYNOTES_APPLET_TRUE@	util.$(OBJEXT) \
+ @BUILD_STICKYNOTES_APPLET_TRUE@	stickynotes.$(OBJEXT) \
+ @BUILD_STICKYNOTES_APPLET_TRUE@	stickynotes_callbacks.$(OBJEXT) \
+ @BUILD_STICKYNOTES_APPLET_TRUE@	stickynotes_applet.$(OBJEXT) \
+ @BUILD_STICKYNOTES_APPLET_TRUE@	stickynotes_applet_callbacks.$(OBJEXT)
+-stickynotes_applet_OBJECTS = $(am_stickynotes_applet_OBJECTS)
++mate_stickynotes_applet_OBJECTS =  \
++	$(am_mate_stickynotes_applet_OBJECTS)
+ am__DEPENDENCIES_1 =
+-@BUILD_STICKYNOTES_APPLET_TRUE@stickynotes_applet_DEPENDENCIES =  \
++@BUILD_STICKYNOTES_APPLET_TRUE@mate_stickynotes_applet_DEPENDENCIES =  \
+ @BUILD_STICKYNOTES_APPLET_TRUE@	$(am__DEPENDENCIES_1) \
+ @BUILD_STICKYNOTES_APPLET_TRUE@	$(am__DEPENDENCIES_1) \
+ @BUILD_STICKYNOTES_APPLET_TRUE@	$(am__DEPENDENCIES_1) \
+@@ -156,8 +156,8 @@
+ am__v_CCLD_ = $(am__v_CCLD_@AM_DEFAULT_V@)
+ am__v_CCLD_0 = @echo "  CCLD    " $@;
+ am__v_CCLD_1 = 
+-SOURCES = $(stickynotes_applet_SOURCES)
+-DIST_SOURCES = $(am__stickynotes_applet_SOURCES_DIST)
++SOURCES = $(mate_stickynotes_applet_SOURCES)
++DIST_SOURCES = $(am__mate_stickynotes_applet_SOURCES_DIST)
+ RECURSIVE_TARGETS = all-recursive check-recursive cscopelist-recursive \
+ 	ctags-recursive dvi-recursive html-recursive info-recursive \
+ 	install-data-recursive install-dvi-recursive \
+@@ -512,7 +512,7 @@
+ @BUILD_STICKYNOTES_APPLET_TRUE@	-DSTICKYNOTES_MENU_UI_DIR=\""$(uidir)"\"\
+ @BUILD_STICKYNOTES_APPLET_TRUE@	-DSTICKYNOTES_ICONDIR=\"$(datadir)/pixmaps/mate-stickynotes/\"
+ 
+-@BUILD_STICKYNOTES_APPLET_TRUE@stickynotes_applet_SOURCES = \
++@BUILD_STICKYNOTES_APPLET_TRUE@mate_stickynotes_applet_SOURCES = \
+ @BUILD_STICKYNOTES_APPLET_TRUE@	util.h \
+ @BUILD_STICKYNOTES_APPLET_TRUE@	util.c \
+ @BUILD_STICKYNOTES_APPLET_TRUE@	stickynotes.h \
+@@ -524,7 +524,7 @@
+ @BUILD_STICKYNOTES_APPLET_TRUE@	stickynotes_applet.c \
+ @BUILD_STICKYNOTES_APPLET_TRUE@	stickynotes_applet_callbacks.c
+ 
+-@BUILD_STICKYNOTES_APPLET_TRUE@stickynotes_applet_LDADD = \
++@BUILD_STICKYNOTES_APPLET_TRUE@mate_stickynotes_applet_LDADD = \
+ @BUILD_STICKYNOTES_APPLET_TRUE@	$(STICKYNOTES_LIBS)	\
+ @BUILD_STICKYNOTES_APPLET_TRUE@	$(MATE_APPLETS4_LIBS)	\
+ @BUILD_STICKYNOTES_APPLET_TRUE@	$(LIBWNCK_LIBS)		\
+@@ -634,9 +634,9 @@
+ 	echo " rm -f" $$list; \
+ 	rm -f $$list
+ 
+-stickynotes_applet$(EXEEXT): $(stickynotes_applet_OBJECTS) $(stickynotes_applet_DEPENDENCIES) $(EXTRA_stickynotes_applet_DEPENDENCIES) 
+-	@rm -f stickynotes_applet$(EXEEXT)
+-	$(AM_V_CCLD)$(LINK) $(stickynotes_applet_OBJECTS) $(stickynotes_applet_LDADD) $(LIBS)
++mate-stickynotes_applet$(EXEEXT): $(mate_stickynotes_applet_OBJECTS) $(mate_stickynotes_applet_DEPENDENCIES) $(EXTRA_mate_stickynotes_applet_DEPENDENCIES) 
++	@rm -f mate-stickynotes_applet$(EXEEXT)
++	$(AM_V_CCLD)$(LINK) $(mate_stickynotes_applet_OBJECTS) $(mate_stickynotes_applet_LDADD) $(LIBS)
+ 
+ mostlyclean-compile:
+ 	-rm -f *.$(OBJEXT)

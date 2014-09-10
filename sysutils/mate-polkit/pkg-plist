@@ -15,6 +15,7 @@ share/locale/ar/LC_MESSAGES/mate-polkit.mo
 share/locale/be/LC_MESSAGES/mate-polkit.mo
 share/locale/bn_IN/LC_MESSAGES/mate-polkit.mo
 share/locale/ca/LC_MESSAGES/mate-polkit.mo
+share/locale/cmn/LC_MESSAGES/mate-polkit.mo
 share/locale/cs/LC_MESSAGES/mate-polkit.mo
 share/locale/da/LC_MESSAGES/mate-polkit.mo
 share/locale/de/LC_MESSAGES/mate-polkit.mo
@@ -29,11 +30,13 @@ share/locale/gl/LC_MESSAGES/mate-polkit.mo
 share/locale/gu/LC_MESSAGES/mate-polkit.mo
 share/locale/he/LC_MESSAGES/mate-polkit.mo
 share/locale/hi/LC_MESSAGES/mate-polkit.mo
+share/locale/hr/LC_MESSAGES/mate-polkit.mo
 share/locale/hu/LC_MESSAGES/mate-polkit.mo
 share/locale/id/LC_MESSAGES/mate-polkit.mo
 share/locale/it/LC_MESSAGES/mate-polkit.mo
 share/locale/ja/LC_MESSAGES/mate-polkit.mo
 share/locale/kn/LC_MESSAGES/mate-polkit.mo
+share/locale/ko/LC_MESSAGES/mate-polkit.mo
 share/locale/ky/LC_MESSAGES/mate-polkit.mo
 share/locale/lt/LC_MESSAGES/mate-polkit.mo
 share/locale/lv/LC_MESSAGES/mate-polkit.mo
@@ -58,17 +61,22 @@ share/locale/te/LC_MESSAGES/mate-polkit.mo
 share/locale/th/LC_MESSAGES/mate-polkit.mo
 share/locale/tr/LC_MESSAGES/mate-polkit.mo
 share/locale/uk/LC_MESSAGES/mate-polkit.mo
+share/locale/ur/LC_MESSAGES/mate-polkit.mo
 share/locale/zh_CN/LC_MESSAGES/mate-polkit.mo
 share/locale/zh_HK/LC_MESSAGES/mate-polkit.mo
 share/locale/zh_TW/LC_MESSAGES/mate-polkit.mo
 @dirrmtry share/locale/zh_HK/LC_MESSAGES
 @dirrmtry share/locale/zh_HK
+@dirrmtry share/locale/ur/LC_MESSAGES
+@dirrmtry share/locale/ur
 @dirrmtry share/locale/te/LC_MESSAGES
 @dirrmtry share/locale/te
 @dirrmtry share/locale/mr/LC_MESSAGES
 @dirrmtry share/locale/mr
 @dirrmtry share/locale/ky/LC_MESSAGES
 @dirrmtry share/locale/ky
+@dirrmtry share/locale/cmn/LC_MESSAGES
+@dirrmtry share/locale/cmn
 @dirrmtry share/locale/bn_IN/LC_MESSAGES
 @dirrmtry share/locale/bn_IN
 @dirrm include/polkit-gtk-mate-1/polkitgtkmate

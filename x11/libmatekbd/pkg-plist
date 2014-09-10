@@ -6,12 +6,10 @@ include/libmatekbd/matekbd-keyboard-drawing.h
 include/libmatekbd/matekbd-status.h
 include/libmatekbd/matekbd-util.h
 lib/libmatekbd.a
-lib/libmatekbd.la
 lib/libmatekbd.so
 lib/libmatekbd.so.4
 lib/libmatekbd.so.4.2.0
 lib/libmatekbdui.a
-lib/libmatekbdui.la
 lib/libmatekbdui.so
 lib/libmatekbdui.so.4
 lib/libmatekbdui.so.4.2.0
@@ -29,6 +27,7 @@ share/locale/bn/LC_MESSAGES/libmatekbd.mo
 share/locale/bn_IN/LC_MESSAGES/libmatekbd.mo
 share/locale/ca/LC_MESSAGES/libmatekbd.mo
 share/locale/ca@valencia/LC_MESSAGES/libmatekbd.mo
+share/locale/cmn/LC_MESSAGES/libmatekbd.mo
 share/locale/cs/LC_MESSAGES/libmatekbd.mo
 share/locale/da/LC_MESSAGES/libmatekbd.mo
 share/locale/de/LC_MESSAGES/libmatekbd.mo
@@ -37,6 +36,7 @@ share/locale/el/LC_MESSAGES/libmatekbd.mo
 share/locale/en@shaw/LC_MESSAGES/libmatekbd.mo
 share/locale/en_AU/LC_MESSAGES/libmatekbd.mo
 share/locale/en_GB/LC_MESSAGES/libmatekbd.mo
+share/locale/en_US/LC_MESSAGES/libmatekbd.mo
 share/locale/eo/LC_MESSAGES/libmatekbd.mo
 share/locale/es/LC_MESSAGES/libmatekbd.mo
 share/locale/et/LC_MESSAGES/libmatekbd.mo
@@ -48,6 +48,7 @@ share/locale/gl/LC_MESSAGES/libmatekbd.mo
 share/locale/gu/LC_MESSAGES/libmatekbd.mo
 share/locale/he/LC_MESSAGES/libmatekbd.mo
 share/locale/hi/LC_MESSAGES/libmatekbd.mo
+share/locale/hr/LC_MESSAGES/libmatekbd.mo
 share/locale/hu/LC_MESSAGES/libmatekbd.mo
 share/locale/id/LC_MESSAGES/libmatekbd.mo
 share/locale/it/LC_MESSAGES/libmatekbd.mo
@@ -55,6 +56,7 @@ share/locale/ja/LC_MESSAGES/libmatekbd.mo
 share/locale/ka/LC_MESSAGES/libmatekbd.mo
 share/locale/kn/LC_MESSAGES/libmatekbd.mo
 share/locale/ko/LC_MESSAGES/libmatekbd.mo
+share/locale/ky/LC_MESSAGES/libmatekbd.mo
 share/locale/lt/LC_MESSAGES/libmatekbd.mo
 share/locale/lv/LC_MESSAGES/libmatekbd.mo
 share/locale/mai/LC_MESSAGES/libmatekbd.mo
@@ -103,10 +105,16 @@ share/locale/zh_TW/LC_MESSAGES/libmatekbd.mo
 @dirrmtry share/locale/mr
 @dirrmtry share/locale/mai/LC_MESSAGES
 @dirrmtry share/locale/mai
+@dirrmtry share/locale/ky/LC_MESSAGES
+@dirrmtry share/locale/ky
+@dirrmtry share/locale/en_US/LC_MESSAGES
+@dirrmtry share/locale/en_US
 @dirrmtry share/locale/en@shaw/LC_MESSAGES
 @dirrmtry share/locale/en@shaw
 @dirrmtry share/locale/dz/LC_MESSAGES
 @dirrmtry share/locale/dz
+@dirrmtry share/locale/cmn/LC_MESSAGES
+@dirrmtry share/locale/cmn
 @dirrmtry share/locale/ca@valencia/LC_MESSAGES
 @dirrmtry share/locale/ca@valencia
 @dirrmtry share/locale/bn_IN/LC_MESSAGES

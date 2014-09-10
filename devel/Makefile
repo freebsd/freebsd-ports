@@ -878,6 +878,7 @@
     SUBDIR += ireport
     SUBDIR += isl
     SUBDIR += itext
+    SUBDIR += i386-linux-binutils
     SUBDIR += jakarta-commons-configuration
     SUBDIR += jakarta-commons-daemon
     SUBDIR += jakarta-commons-io

@@ -1,8 +1,114 @@
 bin/mate-volume-control
 libexec/mate_mixer_applet2
+man/man1/mate-volume-control.1.gz
 share/MateConf/gsettings/mate-volume-control.convert
 share/applications/mate-volume-control.desktop
 share/dbus-1/services/org.mate.panel.applet.MixerAppletFactory.service
+share/help/C/mate-mixer_applet2/figures/volumecontrol_applet.png
+share/help/C/mate-mixer_applet2/index.docbook
+share/help/C/mate-mixer_applet2/legal.xml
+share/help/C/mate-volume-control/figures/mate-volume-control_window.png
+share/help/C/mate-volume-control/index.docbook
+share/help/C/mate-volume-control/legal.xml
+share/help/ca/mate-mixer_applet2/figures/volumecontrol_applet.png
+share/help/ca/mate-mixer_applet2/index.docbook
+share/help/ca/mate-mixer_applet2/legal.xml
+share/help/ca/mate-volume-control/figures/mate-volume-control_window.png
+share/help/ca/mate-volume-control/index.docbook
+share/help/ca/mate-volume-control/legal.xml
+share/help/cs/mate-mixer_applet2/figures/volumecontrol_applet.png
+share/help/cs/mate-mixer_applet2/index.docbook
+share/help/cs/mate-mixer_applet2/legal.xml
+share/help/cs/mate-volume-control/figures/mate-volume-control_window.png
+share/help/cs/mate-volume-control/index.docbook
+share/help/cs/mate-volume-control/legal.xml
+share/help/da/mate-mixer_applet2/figures/volumecontrol_applet.png
+share/help/da/mate-mixer_applet2/index.docbook
+share/help/da/mate-mixer_applet2/legal.xml
+share/help/da/mate-volume-control/figures/mate-volume-control_window.png
+share/help/da/mate-volume-control/index.docbook
+share/help/da/mate-volume-control/legal.xml
+share/help/de/mate-mixer_applet2/figures/volumecontrol_applet.png
+share/help/de/mate-mixer_applet2/index.docbook
+share/help/de/mate-mixer_applet2/legal.xml
+share/help/de/mate-volume-control/figures/mate-volume-control_window.png
+share/help/de/mate-volume-control/index.docbook
+share/help/de/mate-volume-control/legal.xml
+share/help/el/mate-mixer_applet2/figures/volumecontrol_applet.png
+share/help/el/mate-mixer_applet2/index.docbook
+share/help/el/mate-mixer_applet2/legal.xml
+share/help/el/mate-volume-control/figures/mate-volume-control_window.png
+share/help/el/mate-volume-control/index.docbook
+share/help/el/mate-volume-control/legal.xml
+share/help/en_GB/mate-mixer_applet2/figures/volumecontrol_applet.png
+share/help/en_GB/mate-mixer_applet2/index.docbook
+share/help/en_GB/mate-mixer_applet2/legal.xml
+share/help/en_GB/mate-volume-control/figures/mate-volume-control_window.png
+share/help/en_GB/mate-volume-control/index.docbook
+share/help/en_GB/mate-volume-control/legal.xml
+share/help/es/mate-mixer_applet2/figures/volumecontrol_applet.png
+share/help/es/mate-mixer_applet2/index.docbook
+share/help/es/mate-mixer_applet2/legal.xml
+share/help/es/mate-volume-control/figures/mate-volume-control_window.png
+share/help/es/mate-volume-control/index.docbook
+share/help/es/mate-volume-control/legal.xml
+share/help/eu/mate-mixer_applet2/figures/volumecontrol_applet.png
+share/help/eu/mate-mixer_applet2/index.docbook
+share/help/eu/mate-mixer_applet2/legal.xml
+share/help/fi/mate-mixer_applet2/figures/volumecontrol_applet.png
+share/help/fi/mate-mixer_applet2/index.docbook
+share/help/fi/mate-mixer_applet2/legal.xml
+share/help/fr/mate-mixer_applet2/figures/volumecontrol_applet.png
+share/help/fr/mate-mixer_applet2/index.docbook
+share/help/fr/mate-mixer_applet2/legal.xml
+share/help/fr/mate-volume-control/figures/mate-volume-control_window.png
+share/help/fr/mate-volume-control/index.docbook
+share/help/fr/mate-volume-control/legal.xml
+share/help/hu/mate-mixer_applet2/figures/volumecontrol_applet.png
+share/help/hu/mate-mixer_applet2/index.docbook
+share/help/hu/mate-mixer_applet2/legal.xml
+share/help/it/mate-mixer_applet2/figures/volumecontrol_applet.png
+share/help/it/mate-mixer_applet2/index.docbook
+share/help/it/mate-mixer_applet2/legal.xml
+share/help/it/mate-volume-control/figures/mate-volume-control_window.png
+share/help/it/mate-volume-control/index.docbook
+share/help/it/mate-volume-control/legal.xml
+share/help/ko/mate-mixer_applet2/figures/volumecontrol_applet.png
+share/help/ko/mate-mixer_applet2/index.docbook
+share/help/ko/mate-mixer_applet2/legal.xml
+share/help/oc/mate-mixer_applet2/figures/volumecontrol_applet.png
+share/help/oc/mate-mixer_applet2/index.docbook
+share/help/oc/mate-mixer_applet2/legal.xml
+share/help/oc/mate-volume-control/figures/mate-volume-control_window.png
+share/help/oc/mate-volume-control/index.docbook
+share/help/oc/mate-volume-control/legal.xml
+share/help/pa/mate-mixer_applet2/figures/volumecontrol_applet.png
+share/help/pa/mate-mixer_applet2/index.docbook
+share/help/pa/mate-mixer_applet2/legal.xml
+share/help/pt_BR/mate-mixer_applet2/figures/volumecontrol_applet.png
+share/help/pt_BR/mate-mixer_applet2/index.docbook
+share/help/pt_BR/mate-mixer_applet2/legal.xml
+share/help/ru/mate-mixer_applet2/figures/volumecontrol_applet.png
+share/help/ru/mate-mixer_applet2/index.docbook
+share/help/ru/mate-mixer_applet2/legal.xml
+share/help/ru/mate-volume-control/figures/mate-volume-control_window.png
+share/help/ru/mate-volume-control/index.docbook
+share/help/ru/mate-volume-control/legal.xml
+share/help/sv/mate-mixer_applet2/figures/volumecontrol_applet.png
+share/help/sv/mate-mixer_applet2/index.docbook
+share/help/sv/mate-mixer_applet2/legal.xml
+share/help/sv/mate-volume-control/figures/mate-volume-control_window.png
+share/help/sv/mate-volume-control/index.docbook
+share/help/sv/mate-volume-control/legal.xml
+share/help/uk/mate-mixer_applet2/figures/volumecontrol_applet.png
+share/help/uk/mate-mixer_applet2/index.docbook
+share/help/uk/mate-mixer_applet2/legal.xml
+share/help/zh_CN/mate-mixer_applet2/figures/volumecontrol_applet.png
+share/help/zh_CN/mate-mixer_applet2/index.docbook
+share/help/zh_CN/mate-mixer_applet2/legal.xml
+share/help/zh_CN/mate-volume-control/figures/mate-volume-control_window.png
+share/help/zh_CN/mate-volume-control/index.docbook
+share/help/zh_CN/mate-volume-control/legal.xml
 share/icons/mate/16x16/devices/gvc-3d-sound.png
 share/icons/mate/16x16/devices/gvc-headphones.png
 share/icons/mate/16x16/devices/gvc-line-in.png
@@ -23,6 +129,7 @@ share/locale/br/LC_MESSAGES/mate-media.mo
 share/locale/bs/LC_MESSAGES/mate-media.mo
 share/locale/ca/LC_MESSAGES/mate-media.mo
 share/locale/ca@valencia/LC_MESSAGES/mate-media.mo
+share/locale/cmn/LC_MESSAGES/mate-media.mo
 share/locale/cs/LC_MESSAGES/mate-media.mo
 share/locale/cy/LC_MESSAGES/mate-media.mo
 share/locale/da/LC_MESSAGES/mate-media.mo
@@ -30,6 +137,7 @@ share/locale/de/LC_MESSAGES/mate-media.mo
 share/locale/dz/LC_MESSAGES/mate-media.mo
 share/locale/el/LC_MESSAGES/mate-media.mo
 share/locale/en@shaw/LC_MESSAGES/mate-media.mo
+share/locale/en_AU/LC_MESSAGES/mate-media.mo
 share/locale/en_CA/LC_MESSAGES/mate-media.mo
 share/locale/en_GB/LC_MESSAGES/mate-media.mo
 share/locale/es/LC_MESSAGES/mate-media.mo
@@ -49,9 +157,11 @@ share/locale/id/LC_MESSAGES/mate-media.mo
 share/locale/it/LC_MESSAGES/mate-media.mo
 share/locale/ja/LC_MESSAGES/mate-media.mo
 share/locale/ka/LC_MESSAGES/mate-media.mo
+share/locale/kk/LC_MESSAGES/mate-media.mo
 share/locale/kn/LC_MESSAGES/mate-media.mo
 share/locale/ko/LC_MESSAGES/mate-media.mo
 share/locale/ku/LC_MESSAGES/mate-media.mo
+share/locale/ky/LC_MESSAGES/mate-media.mo
 share/locale/lt/LC_MESSAGES/mate-media.mo
 share/locale/lv/LC_MESSAGES/mate-media.mo
 share/locale/mai/LC_MESSAGES/mate-media.mo
@@ -89,6 +199,7 @@ share/locale/tk/LC_MESSAGES/mate-media.mo
 share/locale/tr/LC_MESSAGES/mate-media.mo
 share/locale/ug/LC_MESSAGES/mate-media.mo
 share/locale/uk/LC_MESSAGES/mate-media.mo
+share/locale/ur/LC_MESSAGES/mate-media.mo
 share/locale/vi/LC_MESSAGES/mate-media.mo
 share/locale/wa/LC_MESSAGES/mate-media.mo
 share/locale/xh/LC_MESSAGES/mate-media.mo
@@ -100,203 +211,23 @@ share/mate-2.0/ui/mixer-applet-menu.xml
 %%DATADIR%%/pixmaps/chain.png
 %%DATADIR%%/sounds/mate-sounds-default.xml
 share/mate-panel/applets/org.mate.applets.MixerApplet.mate-panel-applet
-share/mate/help/mate-mixer_applet2/C/figures/volumecontrol_applet.png
-share/mate/help/mate-mixer_applet2/C/legal.xml
-share/mate/help/mate-mixer_applet2/C/mate-mixer_applet2.xml
-share/mate/help/mate-mixer_applet2/ca/figures/volumecontrol_applet.png
-share/mate/help/mate-mixer_applet2/ca/mate-mixer_applet2.xml
-share/mate/help/mate-mixer_applet2/cs/figures/volumecontrol_applet.png
-share/mate/help/mate-mixer_applet2/cs/mate-mixer_applet2.xml
-share/mate/help/mate-mixer_applet2/da/figures/volumecontrol_applet.png
-share/mate/help/mate-mixer_applet2/da/mate-mixer_applet2.xml
-share/mate/help/mate-mixer_applet2/de/figures/volumecontrol_applet.png
-share/mate/help/mate-mixer_applet2/de/mate-mixer_applet2.xml
-share/mate/help/mate-mixer_applet2/el/figures/volumecontrol_applet.png
-share/mate/help/mate-mixer_applet2/el/mate-mixer_applet2.xml
-share/mate/help/mate-mixer_applet2/en_GB/figures/volumecontrol_applet.png
-share/mate/help/mate-mixer_applet2/en_GB/mate-mixer_applet2.xml
-share/mate/help/mate-mixer_applet2/es/figures/volumecontrol_applet.png
-share/mate/help/mate-mixer_applet2/es/mate-mixer_applet2.xml
-share/mate/help/mate-mixer_applet2/eu/figures/volumecontrol_applet.png
-share/mate/help/mate-mixer_applet2/eu/mate-mixer_applet2.xml
-share/mate/help/mate-mixer_applet2/fi/figures/volumecontrol_applet.png
-share/mate/help/mate-mixer_applet2/fi/mate-mixer_applet2.xml
-share/mate/help/mate-mixer_applet2/fr/figures/volumecontrol_applet.png
-share/mate/help/mate-mixer_applet2/fr/mate-mixer_applet2.xml
-share/mate/help/mate-mixer_applet2/hu/figures/volumecontrol_applet.png
-share/mate/help/mate-mixer_applet2/hu/mate-mixer_applet2.xml
-share/mate/help/mate-mixer_applet2/it/figures/volumecontrol_applet.png
-share/mate/help/mate-mixer_applet2/it/mate-mixer_applet2.xml
-share/mate/help/mate-mixer_applet2/ko/figures/volumecontrol_applet.png
-share/mate/help/mate-mixer_applet2/ko/mate-mixer_applet2.xml
-share/mate/help/mate-mixer_applet2/oc/figures/volumecontrol_applet.png
-share/mate/help/mate-mixer_applet2/oc/mate-mixer_applet2.xml
-share/mate/help/mate-mixer_applet2/pa/figures/volumecontrol_applet.png
-share/mate/help/mate-mixer_applet2/pa/mate-mixer_applet2.xml
-share/mate/help/mate-mixer_applet2/pt_BR/figures/volumecontrol_applet.png
-share/mate/help/mate-mixer_applet2/pt_BR/mate-mixer_applet2.xml
-share/mate/help/mate-mixer_applet2/ru/figures/volumecontrol_applet.png
-share/mate/help/mate-mixer_applet2/ru/mate-mixer_applet2.xml
-share/mate/help/mate-mixer_applet2/sv/figures/volumecontrol_applet.png
-share/mate/help/mate-mixer_applet2/sv/mate-mixer_applet2.xml
-share/mate/help/mate-mixer_applet2/uk/figures/volumecontrol_applet.png
-share/mate/help/mate-mixer_applet2/uk/mate-mixer_applet2.xml
-share/mate/help/mate-mixer_applet2/zh_CN/figures/volumecontrol_applet.png
-share/mate/help/mate-mixer_applet2/zh_CN/mate-mixer_applet2.xml
-share/mate/help/mate-volume-control/C/figures/mate-volume-control_window.png
-share/mate/help/mate-volume-control/C/legal.xml
-share/mate/help/mate-volume-control/C/mate-volume-control.xml
-share/mate/help/mate-volume-control/ca/figures/mate-volume-control_window.png
-share/mate/help/mate-volume-control/ca/mate-volume-control.xml
-share/mate/help/mate-volume-control/cs/figures/mate-volume-control_window.png
-share/mate/help/mate-volume-control/cs/mate-volume-control.xml
-share/mate/help/mate-volume-control/da/figures/mate-volume-control_window.png
-share/mate/help/mate-volume-control/da/mate-volume-control.xml
-share/mate/help/mate-volume-control/de/figures/mate-volume-control_window.png
-share/mate/help/mate-volume-control/de/mate-volume-control.xml
-share/mate/help/mate-volume-control/el/figures/mate-volume-control_window.png
-share/mate/help/mate-volume-control/el/mate-volume-control.xml
-share/mate/help/mate-volume-control/en_GB/figures/mate-volume-control_window.png
-share/mate/help/mate-volume-control/en_GB/mate-volume-control.xml
-share/mate/help/mate-volume-control/es/figures/mate-volume-control_window.png
-share/mate/help/mate-volume-control/es/mate-volume-control.xml
-share/mate/help/mate-volume-control/fr/figures/mate-volume-control_window.png
-share/mate/help/mate-volume-control/fr/mate-volume-control.xml
-share/mate/help/mate-volume-control/it/figures/mate-volume-control_window.png
-share/mate/help/mate-volume-control/it/mate-volume-control.xml
-share/mate/help/mate-volume-control/oc/figures/mate-volume-control_window.png
-share/mate/help/mate-volume-control/oc/mate-volume-control.xml
-share/mate/help/mate-volume-control/ru/figures/mate-volume-control_window.png
-share/mate/help/mate-volume-control/ru/mate-volume-control.xml
-share/mate/help/mate-volume-control/sv/figures/mate-volume-control_window.png
-share/mate/help/mate-volume-control/sv/mate-volume-control.xml
-share/mate/help/mate-volume-control/zh_CN/figures/mate-volume-control_window.png
-share/mate/help/mate-volume-control/zh_CN/mate-volume-control.xml
-share/omf/mate-mixer_applet2/mate-mixer_applet2-C.omf
-share/omf/mate-mixer_applet2/mate-mixer_applet2-ca.omf
-share/omf/mate-mixer_applet2/mate-mixer_applet2-cs.omf
-share/omf/mate-mixer_applet2/mate-mixer_applet2-da.omf
-share/omf/mate-mixer_applet2/mate-mixer_applet2-de.omf
-share/omf/mate-mixer_applet2/mate-mixer_applet2-el.omf
-share/omf/mate-mixer_applet2/mate-mixer_applet2-en_GB.omf
-share/omf/mate-mixer_applet2/mate-mixer_applet2-es.omf
-share/omf/mate-mixer_applet2/mate-mixer_applet2-eu.omf
-share/omf/mate-mixer_applet2/mate-mixer_applet2-fi.omf
-share/omf/mate-mixer_applet2/mate-mixer_applet2-fr.omf
-share/omf/mate-mixer_applet2/mate-mixer_applet2-hu.omf
-share/omf/mate-mixer_applet2/mate-mixer_applet2-it.omf
-share/omf/mate-mixer_applet2/mate-mixer_applet2-ko.omf
-share/omf/mate-mixer_applet2/mate-mixer_applet2-oc.omf
-share/omf/mate-mixer_applet2/mate-mixer_applet2-pa.omf
-share/omf/mate-mixer_applet2/mate-mixer_applet2-pt_BR.omf
-share/omf/mate-mixer_applet2/mate-mixer_applet2-ru.omf
-share/omf/mate-mixer_applet2/mate-mixer_applet2-sv.omf
-share/omf/mate-mixer_applet2/mate-mixer_applet2-uk.omf
-share/omf/mate-mixer_applet2/mate-mixer_applet2-zh_CN.omf
-share/omf/mate-volume-control/mate-volume-control-C.omf
-share/omf/mate-volume-control/mate-volume-control-ca.omf
-share/omf/mate-volume-control/mate-volume-control-cs.omf
-share/omf/mate-volume-control/mate-volume-control-da.omf
-share/omf/mate-volume-control/mate-volume-control-de.omf
-share/omf/mate-volume-control/mate-volume-control-el.omf
-share/omf/mate-volume-control/mate-volume-control-en_GB.omf
-share/omf/mate-volume-control/mate-volume-control-es.omf
-share/omf/mate-volume-control/mate-volume-control-fr.omf
-share/omf/mate-volume-control/mate-volume-control-it.omf
-share/omf/mate-volume-control/mate-volume-control-oc.omf
-share/omf/mate-volume-control/mate-volume-control-ru.omf
-share/omf/mate-volume-control/mate-volume-control-sv.omf
-share/omf/mate-volume-control/mate-volume-control-zh_CN.omf
 share/sounds/mate/default/alerts/bark.ogg
 share/sounds/mate/default/alerts/drip.ogg
 share/sounds/mate/default/alerts/glass.ogg
 share/sounds/mate/default/alerts/sonar.ogg
-@dirrm share/sounds/mate/default/alerts
-@dirrm share/sounds/mate/default
-@dirrm share/sounds/mate
-@dirrm share/omf/mate-volume-control
-@dirrm share/omf/mate-mixer_applet2
-@dirrm share/mate/help/mate-volume-control/zh_CN/figures
-@dirrm share/mate/help/mate-volume-control/zh_CN
-@dirrm share/mate/help/mate-volume-control/sv/figures
-@dirrm share/mate/help/mate-volume-control/sv
-@dirrm share/mate/help/mate-volume-control/ru/figures
-@dirrm share/mate/help/mate-volume-control/ru
-@dirrm share/mate/help/mate-volume-control/oc/figures
-@dirrm share/mate/help/mate-volume-control/oc
-@dirrm share/mate/help/mate-volume-control/it/figures
-@dirrm share/mate/help/mate-volume-control/it
-@dirrm share/mate/help/mate-volume-control/fr/figures
-@dirrm share/mate/help/mate-volume-control/fr
-@dirrm share/mate/help/mate-volume-control/es/figures
-@dirrm share/mate/help/mate-volume-control/es
-@dirrm share/mate/help/mate-volume-control/en_GB/figures
-@dirrm share/mate/help/mate-volume-control/en_GB
-@dirrm share/mate/help/mate-volume-control/el/figures
-@dirrm share/mate/help/mate-volume-control/el
-@dirrm share/mate/help/mate-volume-control/de/figures
-@dirrm share/mate/help/mate-volume-control/de
-@dirrm share/mate/help/mate-volume-control/da/figures
-@dirrm share/mate/help/mate-volume-control/da
-@dirrm share/mate/help/mate-volume-control/cs/figures
-@dirrm share/mate/help/mate-volume-control/cs
-@dirrm share/mate/help/mate-volume-control/ca/figures
-@dirrm share/mate/help/mate-volume-control/ca
-@dirrm share/mate/help/mate-volume-control/C/figures
-@dirrm share/mate/help/mate-volume-control/C
-@dirrm share/mate/help/mate-volume-control
-@dirrm share/mate/help/mate-mixer_applet2/zh_CN/figures
-@dirrm share/mate/help/mate-mixer_applet2/zh_CN
-@dirrm share/mate/help/mate-mixer_applet2/uk/figures
-@dirrm share/mate/help/mate-mixer_applet2/uk
-@dirrm share/mate/help/mate-mixer_applet2/sv/figures
-@dirrm share/mate/help/mate-mixer_applet2/sv
-@dirrm share/mate/help/mate-mixer_applet2/ru/figures
-@dirrm share/mate/help/mate-mixer_applet2/ru
-@dirrm share/mate/help/mate-mixer_applet2/pt_BR/figures
-@dirrm share/mate/help/mate-mixer_applet2/pt_BR
-@dirrm share/mate/help/mate-mixer_applet2/pa/figures
-@dirrm share/mate/help/mate-mixer_applet2/pa
-@dirrm share/mate/help/mate-mixer_applet2/oc/figures
-@dirrm share/mate/help/mate-mixer_applet2/oc
-@dirrm share/mate/help/mate-mixer_applet2/ko/figures
-@dirrm share/mate/help/mate-mixer_applet2/ko
-@dirrm share/mate/help/mate-mixer_applet2/it/figures
-@dirrm share/mate/help/mate-mixer_applet2/it
-@dirrm share/mate/help/mate-mixer_applet2/hu/figures
-@dirrm share/mate/help/mate-mixer_applet2/hu
-@dirrm share/mate/help/mate-mixer_applet2/fr/figures
-@dirrm share/mate/help/mate-mixer_applet2/fr
-@dirrm share/mate/help/mate-mixer_applet2/fi/figures
-@dirrm share/mate/help/mate-mixer_applet2/fi
-@dirrm share/mate/help/mate-mixer_applet2/eu/figures
-@dirrm share/mate/help/mate-mixer_applet2/eu
-@dirrm share/mate/help/mate-mixer_applet2/es/figures
-@dirrm share/mate/help/mate-mixer_applet2/es
-@dirrm share/mate/help/mate-mixer_applet2/en_GB/figures
-@dirrm share/mate/help/mate-mixer_applet2/en_GB
-@dirrm share/mate/help/mate-mixer_applet2/el/figures
-@dirrm share/mate/help/mate-mixer_applet2/el
-@dirrm share/mate/help/mate-mixer_applet2/de/figures
-@dirrm share/mate/help/mate-mixer_applet2/de
-@dirrm share/mate/help/mate-mixer_applet2/da/figures
-@dirrm share/mate/help/mate-mixer_applet2/da
-@dirrm share/mate/help/mate-mixer_applet2/cs/figures
-@dirrm share/mate/help/mate-mixer_applet2/cs
-@dirrm share/mate/help/mate-mixer_applet2/ca/figures
-@dirrm share/mate/help/mate-mixer_applet2/ca
-@dirrm share/mate/help/mate-mixer_applet2/C/figures
-@dirrm share/mate/help/mate-mixer_applet2/C
-@dirrm share/mate/help/mate-mixer_applet2
-@dirrmtry share/mate-panel/applets
-@dirrmtry share/mate-panel
-@dirrm %%DATADIR%%/sounds
-@dirrm %%DATADIR%%/pixmaps
-@dirrm %%DATADIR%%
+@dirrmtry share/icons/mate/16x16/devices
+@dirrmtry share/sounds/mate/default/alerts
+@dirrmtry share/sounds/mate/default
+@dirrmtry share/sounds/mate
+@dirrmtry %%DATADIR%%/sounds
+@dirrmtry %%DATADIR%%/pixmaps
+@dirrmtry %%DATADIR%%
 @dirrmtry share/locale/zh_HK/LC_MESSAGES
 @dirrmtry share/locale/zh_HK
 @dirrmtry share/locale/xh/LC_MESSAGES
 @dirrmtry share/locale/xh
+@dirrmtry share/locale/ur/LC_MESSAGES
+@dirrmtry share/locale/ur
 @dirrmtry share/locale/ug/LC_MESSAGES
 @dirrmtry share/locale/ug
 @dirrmtry share/locale/te/LC_MESSAGES
@@ -317,12 +248,18 @@ share/sounds/mate/default/alerts/sonar.ogg
 @dirrmtry share/locale/mg
 @dirrmtry share/locale/mai/LC_MESSAGES
 @dirrmtry share/locale/mai
+@dirrmtry share/locale/ky/LC_MESSAGES
+@dirrmtry share/locale/ky
 @dirrmtry share/locale/ku/LC_MESSAGES
 @dirrmtry share/locale/ku
+@dirrmtry share/locale/kk/LC_MESSAGES
+@dirrmtry share/locale/kk
 @dirrmtry share/locale/en@shaw/LC_MESSAGES
 @dirrmtry share/locale/en@shaw
 @dirrmtry share/locale/dz/LC_MESSAGES
 @dirrmtry share/locale/dz
+@dirrmtry share/locale/cmn/LC_MESSAGES
+@dirrmtry share/locale/cmn
 @dirrmtry share/locale/ca@valencia/LC_MESSAGES
 @dirrmtry share/locale/ca@valencia
 @dirrmtry share/locale/bn_IN/LC_MESSAGES
@@ -333,8 +270,95 @@ share/sounds/mate/default/alerts/sonar.ogg
 @dirrmtry share/locale/ast
 @dirrmtry share/locale/as/LC_MESSAGES
 @dirrmtry share/locale/as
-@dirrmtry share/icons/mate/16x16/status
-@dirrmtry share/icons/mate/16x16/devices
-@dirrmtry share/icons/mate/16x16
-@dirrmtry share/icons/mate
-@dirrmtry share/icons
+@dirrmtry share/help/zh_CN/mate-volume-control/figures
+@dirrmtry share/help/zh_CN/mate-volume-control
+@dirrmtry share/help/zh_CN/mate-mixer_applet2/figures
+@dirrmtry share/help/zh_CN/mate-mixer_applet2
+@dirrmtry share/help/zh_CN
+@dirrmtry share/help/uk/mate-mixer_applet2/figures
+@dirrmtry share/help/uk/mate-mixer_applet2
+@dirrmtry share/help/uk
+@dirrmtry share/help/sv/mate-volume-control/figures
+@dirrmtry share/help/sv/mate-volume-control
+@dirrmtry share/help/sv/mate-mixer_applet2/figures
+@dirrmtry share/help/sv/mate-mixer_applet2
+@dirrmtry share/help/sv
+@dirrmtry share/help/ru/mate-volume-control/figures
+@dirrmtry share/help/ru/mate-volume-control
+@dirrmtry share/help/ru/mate-mixer_applet2/figures
+@dirrmtry share/help/ru/mate-mixer_applet2
+@dirrmtry share/help/ru
+@dirrmtry share/help/pt_BR/mate-mixer_applet2/figures
+@dirrmtry share/help/pt_BR/mate-mixer_applet2
+@dirrmtry share/help/pt_BR
+@dirrmtry share/help/pa/mate-mixer_applet2/figures
+@dirrmtry share/help/pa/mate-mixer_applet2
+@dirrmtry share/help/pa
+@dirrmtry share/help/oc/mate-volume-control/figures
+@dirrmtry share/help/oc/mate-volume-control
+@dirrmtry share/help/oc/mate-mixer_applet2/figures
+@dirrmtry share/help/oc/mate-mixer_applet2
+@dirrmtry share/help/oc
+@dirrmtry share/help/ko/mate-mixer_applet2/figures
+@dirrmtry share/help/ko/mate-mixer_applet2
+@dirrmtry share/help/ko
+@dirrmtry share/help/it/mate-volume-control/figures
+@dirrmtry share/help/it/mate-volume-control
+@dirrmtry share/help/it/mate-mixer_applet2/figures
+@dirrmtry share/help/it/mate-mixer_applet2
+@dirrmtry share/help/it
+@dirrmtry share/help/hu/mate-mixer_applet2/figures
+@dirrmtry share/help/hu/mate-mixer_applet2
+@dirrmtry share/help/hu
+@dirrmtry share/help/fr/mate-volume-control/figures
+@dirrmtry share/help/fr/mate-volume-control
+@dirrmtry share/help/fr/mate-mixer_applet2/figures
+@dirrmtry share/help/fr/mate-mixer_applet2
+@dirrmtry share/help/fr
+@dirrmtry share/help/fi/mate-mixer_applet2/figures
+@dirrmtry share/help/fi/mate-mixer_applet2
+@dirrmtry share/help/fi
+@dirrmtry share/help/eu/mate-mixer_applet2/figures
+@dirrmtry share/help/eu/mate-mixer_applet2
+@dirrmtry share/help/eu
+@dirrmtry share/help/es/mate-volume-control/figures
+@dirrmtry share/help/es/mate-volume-control
+@dirrmtry share/help/es/mate-mixer_applet2/figures
+@dirrmtry share/help/es/mate-mixer_applet2
+@dirrmtry share/help/es
+@dirrmtry share/help/en_GB/mate-volume-control/figures
+@dirrmtry share/help/en_GB/mate-volume-control
+@dirrmtry share/help/en_GB/mate-mixer_applet2/figures
+@dirrmtry share/help/en_GB/mate-mixer_applet2
+@dirrmtry share/help/en_GB
+@dirrmtry share/help/el/mate-volume-control/figures
+@dirrmtry share/help/el/mate-volume-control
+@dirrmtry share/help/el/mate-mixer_applet2/figures
+@dirrmtry share/help/el/mate-mixer_applet2
+@dirrmtry share/help/el
+@dirrmtry share/help/de/mate-volume-control/figures
+@dirrmtry share/help/de/mate-volume-control
+@dirrmtry share/help/de/mate-mixer_applet2/figures
+@dirrmtry share/help/de/mate-mixer_applet2
+@dirrmtry share/help/de
+@dirrmtry share/help/da/mate-volume-control/figures
+@dirrmtry share/help/da/mate-volume-control
+@dirrmtry share/help/da/mate-mixer_applet2/figures
+@dirrmtry share/help/da/mate-mixer_applet2
+@dirrmtry share/help/da
+@dirrmtry share/help/cs/mate-volume-control/figures
+@dirrmtry share/help/cs/mate-volume-control
+@dirrmtry share/help/cs/mate-mixer_applet2/figures
+@dirrmtry share/help/cs/mate-mixer_applet2
+@dirrmtry share/help/cs
+@dirrmtry share/help/ca/mate-volume-control/figures
+@dirrmtry share/help/ca/mate-volume-control
+@dirrmtry share/help/ca/mate-mixer_applet2/figures
+@dirrmtry share/help/ca/mate-mixer_applet2
+@dirrmtry share/help/ca
+@dirrmtry share/help/C/mate-volume-control/figures
+@dirrmtry share/help/C/mate-volume-control
+@dirrmtry share/help/C/mate-mixer_applet2/figures
+@dirrmtry share/help/C/mate-mixer_applet2
+@dirrmtry share/help/C
+@dirrmtry share/help

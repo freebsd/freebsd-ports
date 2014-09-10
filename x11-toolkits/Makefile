@@ -99,7 +99,6 @@
     SUBDIR += libgnomeui-reference
     SUBDIR += libgnomeuimm26
     SUBDIR += libgtksourceviewmm
-    SUBDIR += libmatewnck
     SUBDIR += libpanelappletmm
     SUBDIR += libsexy
     SUBDIR += libsexymm
