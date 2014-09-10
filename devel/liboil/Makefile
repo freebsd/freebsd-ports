@@ -4,16 +4,17 @@
 
 PORTNAME=	liboil
 PORTVERSION=	0.3.17
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	http://liboil.freedesktop.org/download/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library of optimized inner loops
 
-LICENSE=	BSD2CLAUSE
+LICENSE=	BSD2CLAUSE BSD3CLAUSE MIT
+LICENSE_COMB=	multi
 
-USES=		libtool:keepla pkgconfig
+USES=		libtool pkgconfig
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--disable-gtk-doc \
