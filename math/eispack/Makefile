@@ -15,7 +15,7 @@ COMMENT=	Eigenvalue system package
 DIST_SUBDIR=	${PORTNAME}
 NO_WRKSUBDIR=	yes
 
-USES=		fortran
+USES=		fortran uidfix
 USE_LDCONFIG=	yes
 
 SHLIB_MAJOR=	2
