@@ -7,7 +7,6 @@ bin/smistrip
 bin/smixlate
 include/smi.h
 lib/libsmi.a
-lib/libsmi.la
 lib/libsmi.so
 lib/libsmi.so.2
 lib/libsmi.so.2.0.27
