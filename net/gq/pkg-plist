@@ -28,5 +28,3 @@ share/omf/gq-manual/gq-manual-de.omf
 @dirrm share/gnome/help/gq-manual/de
 @dirrm share/gnome/help/gq-manual
 @dirrm share/omf/gq-manual
-@exec %%PREFIX%%/bin/update-mime-database %%PREFIX%%/share/mime
-@unexec %%PREFIX%%/bin/update-mime-database %%PREFIX%%/share/mime
