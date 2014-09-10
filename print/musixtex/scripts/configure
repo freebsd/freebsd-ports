@@ -2,20 +2,20 @@
 set +x
 cd $WRKSRC || exit 1
 
-examples="adagio.tex albinoni.tex angescam.tex angescao.tex angescax.tex \
-         avemaria.tex avemarid.tex avemaril.tex avemario.tex avemarix.tex \
-         avemaroo.tex aveverch.tex aveverdd.tex aveveruc.tex aveverud.tex \
-         aveverum.tex chanson.tex dissonan.tex fantaisc.tex fantaisd.tex \
-         fantaisi.tex fantcmol.tex fantfuga.tex fstsaens.tex fugcmoll.tex \
-         fugue.tex gloriab.tex glorias.tex gloriax.tex gymnoman.tex \
-         ilestne.tex ilestnex.tex ilfaitda.tex ilfaitdx.tex kv315.tex \
-         kv315f.tex kv315h.tex kv315o.tex kv315org.tex marcello.tex \
-         marcon1.tex marcon2.tex marcon3.tex marconf.tex marconh.tex \
-         marcono.tex onuitbri.tex onuitbrr.tex onuitbrx.tex ostinato.tex \
-         pacifiqb.tex pacifiqn.tex pacifiqt.tex parnasum.tex prelfug.tex \
-         prelude.tex racine.tex recit.tex recueil.tex reves.tex romances.tex \
-         souvenir.tex souvenix.tex tierce.tex traeumer.tex widor.tex \
-         widor_16.tex widor_20.tex"
+examples="adagio.tex albinoni.tex angescam.tex angescao.tex angescax.tex\
+	avemaria.tex avemarid.tex avemaril.tex avemario.tex avemarix.tex\
+	avemaroo.tex aveverch.tex aveverdd.tex aveveruc.tex aveverud.tex\
+	aveverum.tex chanson.tex dissonan.tex fantaisc.tex fantaisd.tex\
+	fantaisi.tex fantcmol.tex fantfuga.tex fstsaens.tex fugcmoll.tex\
+	fugue.tex gloriab.tex glorias.tex gloriax.tex gymnoman.tex\
+	ilestne.tex ilestnex.tex ilfaitda.tex ilfaitdx.tex kv315.tex\
+	kv315f.tex kv315h.tex kv315o.tex kv315org.tex marcello.tex\
+	marcon1.tex marcon2.tex marcon3.tex marconf.tex marconh.tex\
+	marcono.tex onuitbri.tex onuitbrr.tex onuitbrx.tex ostinato.tex\
+	pacifiqb.tex pacifiqn.tex pacifiqt.tex parnasum.tex prelfug.tex\
+	prelude.tex racine.tex recit.tex recueil.tex reves.tex romances.tex\
+	souvenir.tex souvenix.tex tierce.tex traeumer.tex widor.tex\
+	widor_16.tex widor_20.tex"
               
 cat > Makefile <<END
 all:
@@ -24,17 +24,21 @@ all:
 		initex '&tex ../system/dos/musixtex.ins \dump')
 
 install:
-	install -c -s -o bin -g bin musixflx $PREFIX/bin/
-	(cd $PREFIX/bin; ln -sf virtex musixtex)
-	install -c -o bin -g bin mf/*.mf $PREFIX/share/texmf/metafont/
-	install -c -o bin -g bin tfm/*.tfm $PREFIX/share/texmf/fonts/tfm/
-	install -c -o bin -g bin tex/musixtex.fmt $PREFIX/share/texmf/web2c/
-	install -c -o bin -g bin tex/*.tex tex/*.sty $PREFIX/share/texmf/tex/
-	install -c -o bin -g bin tex/musixdoc.tex  tex/musixdoc.sty tex/backgrnd.sty \\
-		$PREFIX/share/texmf/documentation/
-	mkdir -p $PREFIX/share/texmf/documentation/musixtex.examples
-	for f in $examples; do install -c -o bin -g bin  examples/\$\$f \\
-		$PREFIX/share/texmf/documentation/musixtex.examples/; done
+	mkdir -p \${DESTDIR}${PREFIX}/share/texmf/documentation/musixtex.examples \
+		\${DESTDIR}${PREFIX}/share/texmf/fonts/tfm \
+		\${DESTDIR}${PREFIX}/share/texmf/metafont \
+		\${DESTDIR}${PREFIX}/share/texmf/tex \
+		\${DESTDIR}${PREFIX}/share/texmf/web2c 
+	${BSD_INSTALL_PROGRAM} musixflx \${DESTDIR}${PREFIX}/bin/
+	(cd \${DESTDIR}${PREFIX}/bin; ln -sf virtex musixtex)
+	${BSD_INSTALL_DATA} mf/*.mf \${DESTDIR}${PREFIX}/share/texmf/metafont
+	${BSD_INSTALL_DATA} tfm/*.tfm \${DESTDIR}${PREFIX}/share/texmf/fonts/tfm
+	${BSD_INSTALL_DATA} tex/musixtex.fmt \${DESTDIR}${PREFIX}/share/texmf/web2c
+	${BSD_INSTALL_DATA} tex/*.tex tex/*.sty \${DESTDIR}${PREFIX}/share/texmf/tex
+	${BSD_INSTALL_DATA} tex/musixdoc.tex tex/musixdoc.sty tex/backgrnd.sty \\
+		\${DESTDIR}${PREFIX}/share/texmf/documentation/
+	(cd examples && ${BSD_INSTALL_DATA} ${examples} \\
+		\${DESTDIR}${PREFIX}/share/texmf/documentation/musixtex.examples/)
 END
 
 exit 0
