@@ -3,7 +3,7 @@
 
 PORTNAME=	quat
 PORTVERSION=	1.20
-PORTREVISION=	13
+PORTREVISION=	14
 CATEGORIES=	graphics
 #MASTER_SITES=	http://www.physcip.uni-stuttgart.de/phy11733/download/
 MASTER_SITES=	http://www.sourcefiles.org/Graphics/Fractals/

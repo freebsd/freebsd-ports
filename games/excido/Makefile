@@ -3,7 +3,7 @@
 
 PORTNAME=	excido
 PORTVERSION=	0.1.5c
-PORTREVISION=	13
+PORTREVISION=	14
 CATEGORIES=	games
 MASTER_SITES=	http://offload2.icculus.org:9090/excido/ \
 		http://offload1.icculus.org:9090/excido/

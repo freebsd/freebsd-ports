@@ -3,6 +3,7 @@
 
 PORTNAME=	vacuum
 PORTVERSION=	1.2.4
+PORTREVISION=	1
 CATEGORIES=	net-im
 MASTER_SITES=	https://googledrive.com/host/0B7A5K_290X8-d1hjQmJaSGZmTTA/
 PKGNAMESUFFIX=	-im

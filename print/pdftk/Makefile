@@ -3,7 +3,7 @@
 
 PORTNAME=	pdftk
 PORTVERSION=	2.02
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	print
 MASTER_SITES=	http://www.pdflabs.com/tools/pdftk-the-pdf-toolkit/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src

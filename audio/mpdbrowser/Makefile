@@ -3,6 +3,7 @@
 
 PORTNAME=	mpdbrowser
 PORTVERSION=	0.9.20
+PORTREVISION=	1
 CATEGORIES=	audio python
 MASTER_SITES=	http://mpdbrowser.tuxfamily.org/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}

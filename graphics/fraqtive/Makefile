@@ -3,6 +3,7 @@
 
 PORTNAME=	fraqtive
 PORTVERSION=	0.4.6
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	SF/fraqtive/Fraqtive/Fraqtive%20${PORTVERSION}/
 

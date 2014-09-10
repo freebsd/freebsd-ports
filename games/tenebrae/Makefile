@@ -3,7 +3,7 @@
 
 PORTNAME=	tenebrae
 PORTVERSION=	1.04
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	games
 MASTER_SITES=	http://tenebrae.sourceforge.net/downloads/
 DISTFILES=	${PORTNAME}_src${EXTRACT_SUFX} \

@@ -3,7 +3,7 @@
 
 PORTNAME=	qslim
 PORTVERSION=	2.1
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	graphics
 MASTER_SITES=	http://mgarland.org/files/dist/ \
 		CENKES

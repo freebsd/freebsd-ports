@@ -3,7 +3,7 @@
 
 PORTNAME=	daimonin
 PORTVERSION=	0.10.5
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	games
 MASTER_SITES=	http://mirror.amdmi3.ru/distfiles/
 #		http://daimonin.svn.sourceforge.net/viewvc/daimonin/main/client/?view=tar&pathrev=${SVN_REVISION}&file= # disabled - weird fetch magic required

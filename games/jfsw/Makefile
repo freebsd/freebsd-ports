@@ -3,7 +3,7 @@
 
 PORTNAME=	jfsw
 PORTVERSION=	20051009
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	games
 MASTER_SITES=	http://users.on.net/~jonof/buildport/
 DISTFILES=	${PORTNAME}_src_${PORTVERSION}.zip \

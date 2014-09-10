@@ -3,7 +3,7 @@
 
 PORTNAME=	fs-uae
 PORTVERSION=	2.4.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	emulators
 MASTER_SITES=	http://fs-uae.net/stable/${PORTVERSION}/
 

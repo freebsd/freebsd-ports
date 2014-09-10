@@ -3,6 +3,7 @@
 
 PORTNAME=	minetest_game
 PORTVERSION=	0.4.10
+PORTREVISION=	1
 CATEGORIES=	games
 
 MAINTAINER=	amdmi3@FreeBSD.org

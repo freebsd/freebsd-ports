@@ -3,6 +3,7 @@
 
 PORTNAME=	mobility
 PORTVERSION=	1.2.2
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	http://dev.gentoo.org/~pesa/distfiles/ \
 		LOCAL/vg

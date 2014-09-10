@@ -3,7 +3,7 @@
 
 PORTNAME=	mediadownloader
 PORTVERSION=	1.5.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	multimedia www
 MASTER_SITES=	SF/googleimagedown/project/${PORTVERSION}/
 DISTNAME=	${PORTNAME}_${PORTVERSION}-src

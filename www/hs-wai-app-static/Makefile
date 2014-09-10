@@ -2,6 +2,7 @@
 
 PORTNAME=	wai-app-static
 PORTVERSION=	3.0.0
+PORTREVISION=	1
 CATEGORIES=	www haskell
 
 MAINTAINER=	haskell@FreeBSD.org

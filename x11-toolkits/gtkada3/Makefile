@@ -3,6 +3,7 @@
 
 PORTNAME=	gtkada
 PORTVERSION=	3.8.3.1
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://downloads.dragonlace.net/src/
 PKGNAMESUFFIX=	3

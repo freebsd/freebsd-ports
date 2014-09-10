@@ -2,7 +2,7 @@
 
 PORTNAME=	geany-plugin-webhelper
 PORTVERSION=	${GEANY_VER}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 
 MAINTAINER=	makc@FreeBSD.org

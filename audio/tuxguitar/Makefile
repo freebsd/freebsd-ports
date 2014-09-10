@@ -3,7 +3,7 @@
 
 PORTNAME=	tuxguitar
 PORTVERSION=	1.2
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	audio java
 MASTER_SITES=	SF/${PORTNAME}/TuxGuitar/TuxGuitar-${PORTVERSION}:src \
 		${MASTER_SITE_LOCAL}/gahr/:fluid \

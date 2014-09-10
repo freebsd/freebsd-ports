@@ -3,6 +3,7 @@
 
 PORTNAME=	sdlCC
 PORTVERSION=	0.0.1
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://jcatki.no-ip.org/files/
 

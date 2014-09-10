@@ -3,6 +3,7 @@
 
 PORTNAME=	timer-applet
 PORTVERSION=	2.1.4
+PORTREVISION=	1
 CATEGORIES=	deskutils
 MASTER_SITES=	http://launchpadlibrarian.net/52401395/
 

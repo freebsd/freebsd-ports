@@ -3,7 +3,7 @@
 
 PORTNAME=	alphabet_sounds_fr
 PORTVERSION=	0.3
-PORTREVISION=	13
+PORTREVISION=	14
 CATEGORIES=	french games
 MASTER_SITES=	SF/childsplay/OldFiles
 DISTNAME=	alphabet_sounds_fr

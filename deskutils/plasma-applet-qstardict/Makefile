@@ -2,7 +2,7 @@
 
 PORTNAME=	qstardict
 PORTVERSION=	1.0.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	deskutils textproc kde
 MASTER_SITES=	http://qstardict.ylsoftware.com/files/
 PKGNAMEPREFIX=	plasma-applet-

@@ -3,6 +3,7 @@
 
 PORTNAME=	diskio
 PORTVERSION=	20130510
+PORTREVISION=	1
 CATEGORIES=	x11-wm enlightenment
 MASTER_SITES=	LOCAL/gblach/e17/modules/
 PKGNAMEPREFIX=	e17-module-

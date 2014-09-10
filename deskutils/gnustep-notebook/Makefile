@@ -2,7 +2,7 @@
 
 PORTNAME=	notebook
 PORTVERSION=	0.3
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	deskutils gnustep
 MASTER_SITES=	http://notebook.cowgar.com/NoteBook/releases/ \
 		http://io.debian.net/~tar/debian/notebook/

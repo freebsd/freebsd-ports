@@ -3,7 +3,7 @@
 
 PORTNAME=	xdiskusage
 PORTVERSION=	1.48
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	x11-fm
 MASTER_SITES=	http://xdiskusage.sourceforge.net/ \
 		http://www.gnu-darwin.org/distfiles/

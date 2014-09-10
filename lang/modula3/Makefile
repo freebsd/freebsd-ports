@@ -3,7 +3,7 @@
 
 PORTNAME=	modula3
 PORTVERSION=	5.8.6
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	lang
 MASTER_SITES=	https://modula3.elegosoft.com/cm3/releng/ \
 		http://downloads.dragonlace.net/m3/ \

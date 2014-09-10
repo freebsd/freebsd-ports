@@ -3,6 +3,7 @@
 
 PORTNAME=	fgrun
 PORTVERSION=	3.0.0
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	https://gitorious.org/${GO_ACCOUNT}/${GO_PROJECT}/archive/${GO_TAGNAME}.tar.gz?dummy= \
 		LOCAL/martymac

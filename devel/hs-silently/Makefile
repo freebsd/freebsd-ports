@@ -2,7 +2,7 @@
 
 PORTNAME=	silently
 PORTVERSION=	1.2.4.1
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org

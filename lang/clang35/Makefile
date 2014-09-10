@@ -2,6 +2,7 @@
 
 PORTNAME=	clang
 DISTVERSION=	3.5.0rc2
+PORTREVISION=	1
 CATEGORIES=	lang devel
 MASTER_SITES=   http://llvm.org/pre-releases/3.5/rc2/
 PKGNAMESUFFIX=	${LLVM_SUFFIX}

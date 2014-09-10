@@ -3,6 +3,7 @@
 
 PORTNAME=	gl
 PORTVERSION=	0.6
+PORTREVISION=	1
 CATEGORIES=	graphics scheme
 MASTER_SITES=	SF/gauche/Gauche-gl
 PKGNAMEPREFIX=	gauche-

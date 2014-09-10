@@ -3,7 +3,7 @@
 
 PORTNAME=	meshlab
 DISTVERSION=	1.3.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	cad
 MASTER_SITES=	${MASTER_SITE_LOCAL}/gahr/ \
 		http://people.freebsd.org/~gahr/distfiles/

@@ -3,7 +3,7 @@
 
 PORTNAME=	d2x-xl
 PORTVERSION=	1.14.121
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	games
 MASTER_SITES=	SF/d2x-xl/Linux/Archive:source \
 		SF/d2x-xl/Linux:source \

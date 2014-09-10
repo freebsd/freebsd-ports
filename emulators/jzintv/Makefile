@@ -3,7 +3,7 @@
 
 PORTNAME=	jzintv
 PORTVERSION=	1.0b4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	emulators
 MASTER_SITES=	http://spatula-city.org/~im14u2c/intv/dl/
 DISTFILES=	${PORTNAME}-1.0-beta4-src${EXTRACT_SUFX} \

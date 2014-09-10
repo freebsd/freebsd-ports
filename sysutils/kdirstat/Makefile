@@ -3,7 +3,7 @@
 
 PORTNAME=	kdirstat
 PORTVERSION=	2.7.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils kde
 MASTER_SITES=	https://bitbucket.org/jeromerobert/k4dirstat/get/
 DISTNAME=	k4dirstat-${PORTVERSION}

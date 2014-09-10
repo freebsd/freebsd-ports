@@ -3,7 +3,7 @@
 
 PORTNAME=	trimines
 PORTVERSION=	1.3.0
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	games
 MASTER_SITES=	http://www.freewebs.com/trimines/ \
 		http://mirror.amdmi3.ru/distfiles/

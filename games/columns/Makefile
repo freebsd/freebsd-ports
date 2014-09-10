@@ -3,7 +3,7 @@
 
 PORTNAME=	columns
 PORTVERSION=	1.2b
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	games
 # mastersite disappeared in December 2000
 MASTER_SITES=	${MASTER_SITE_LOCAL}

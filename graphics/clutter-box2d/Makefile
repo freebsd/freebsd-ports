@@ -3,7 +3,7 @@
 
 PORTNAME=	clutter-box2d
 PORTVERSION=	0.10.0
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	graphics
 MASTER_SITES=	http://source.clutter-project.org/sources/${PORTNAME}/0.10/
 

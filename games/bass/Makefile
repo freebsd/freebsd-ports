@@ -3,7 +3,7 @@
 
 PORTNAME=	bass
 PORTVERSION=	1.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	games
 MASTER_SITES=	SF/scummvm/extras/Beneath%20a%20Steel%20Sky
 DISTNAME=	bass-cd-1.2

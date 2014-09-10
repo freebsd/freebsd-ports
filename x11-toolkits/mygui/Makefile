@@ -3,6 +3,7 @@
 
 PORTNAME=	mygui
 PORTVERSION=	3.2.1.svn20140422
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits graphics devel
 MASTER_SITES=	http://mirror.amdmi3.ru/distfiles/
 #		SF/my-gui/MyGUI/MyGUI_${PORTVERSION}

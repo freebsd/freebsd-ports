@@ -3,6 +3,7 @@
 
 PORTNAME=	bio
 PORTVERSION=	0.5.3
+PORTREVISION=	1
 CATEGORIES=	science haskell
 
 MAINTAINER=	haskell@FreeBSD.org

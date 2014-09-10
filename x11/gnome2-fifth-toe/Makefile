@@ -2,7 +2,7 @@
 # $FreeBSD$
 #   $MCom: ports/x11/gnome2-fifth-toe/Makefile,v 1.92 2007/10/18 23:45:20 marcus Exp $
 
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	x11 gnome
 PKGNAMESUFFIX=	-fifth-toe
 

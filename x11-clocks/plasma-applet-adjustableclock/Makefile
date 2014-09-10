@@ -2,7 +2,7 @@
 
 PORTNAME=	adjustableclock
 PORTVERSION=	4.1.4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11-clocks deskutils kde
 MASTER_SITES=	http://kde-look.org/CONTENT/content-files/
 PKGNAMEPREFIX=	plasma-applet-

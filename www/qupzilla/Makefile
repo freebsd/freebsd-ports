@@ -2,6 +2,7 @@
 
 PORTNAME=	qupzilla
 PORTVERSION=	1.6.6
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	https://github.com/QupZilla/${PORTNAME}/releases/download/v${PORTVERSION}/
 DISTNAME=	QupZilla-${PORTVERSION}

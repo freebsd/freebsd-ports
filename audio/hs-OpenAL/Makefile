@@ -3,6 +3,7 @@
 
 PORTNAME=	OpenAL
 PORTVERSION=	1.6.0.0
+PORTREVISION=	1
 CATEGORIES=	audio haskell
 
 MAINTAINER=	haskell@FreeBSD.org

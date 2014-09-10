@@ -3,6 +3,7 @@
 
 PORTNAME=	sagittarius
 PORTVERSION=	0.5.7
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	http://distfiles.pirateparty.in/%SUBDIR%/ \
 		${MASTER_SITE_LOCAL}

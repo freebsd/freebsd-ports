@@ -2,7 +2,7 @@
 # $FreeBSD$
 #    $MCom: ports/net/libproxy-webkit/Makefile,v 1.13 2011/03/06 23:12:41 kwm Exp $
 
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net www
 PKGNAMESUFFIX=	-webkit
 

@@ -3,7 +3,7 @@
 
 PORTNAME=	lablgl
 PORTVERSION=	20120306
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics
 MASTER_SITES=	http://wwwfun.kurims.kyoto-u.ac.jp/soft/lsl/dist/ \
 		https://forge.ocamlcore.org/frs/download.php/816/

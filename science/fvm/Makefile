@@ -3,7 +3,7 @@
 
 PORTNAME=	fvm
 PORTVERSION=	0.15.3
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	science parallel
 MASTER_SITES=	http://research.edf.com/fichiers/fckeditor/Commun/Innovation/logiciels/code_saturne/Releases/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.//g}

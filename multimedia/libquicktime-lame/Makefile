@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libquicktime
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	multimedia
 PKGNAMESUFFIX=	-lame
 

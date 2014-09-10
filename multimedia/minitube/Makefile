@@ -2,7 +2,7 @@
 
 PORTNAME=	minitube
 PORTVERSION=	2.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia www
 MASTER_SITES=	http://flavio.tordini.org/files/minitube/
 

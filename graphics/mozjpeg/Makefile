@@ -3,6 +3,7 @@
 
 PORTNAME=	mozjpeg
 PORTVERSION=	2.1
+PORTREVISION=	1
 CATEGORIES=	graphics
 
 MAINTAINER=	horia@racoviceanu.com

@@ -3,7 +3,7 @@
 
 PORTNAME=	subtitleeditor
 PORTVERSION=	0.41.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	multimedia
 MASTER_SITES=	http://download.gna.org/${PORTNAME}/${PORTVERSION:C/\.[0-9]*$//}/ \
 		CRITICAL

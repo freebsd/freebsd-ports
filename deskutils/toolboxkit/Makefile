@@ -2,7 +2,7 @@
 
 PORTNAME=	toolbox
 PORTVERSION=	0.8
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	deskutils gnustep
 MASTER_SITES=	http://ftp.azc.uam.mx/mirrors/gnu/savannah/files/toolbox/Release.pkg/0.8/ \
 		${MASTER_SITE_LOCAL}

@@ -3,7 +3,7 @@
 
 PORTNAME=	openarena
 PORTVERSION=	${GAMEVERSION}.s${SVNREVISION}
-PORTREVISION=	0
+PORTREVISION=	1
 PORTEPOCH=	1
 MASTER_SITES=	SF/oarena/src \
 		http://files.poulsander.com/~poul19/public_files/oa/dev088/

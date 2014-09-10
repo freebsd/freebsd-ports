@@ -3,7 +3,7 @@
 
 PORTNAME=	pipenightdreams
 PORTVERSION=	0.10.0
-PORTREVISION=	12
+PORTREVISION=	13
 CATEGORIES=	games
 MASTER_SITES=	http://www.libsdl.org/projects/pipenightdreams/packages/
 

@@ -3,7 +3,7 @@
 
 PORTNAME=	lablgtk2
 PORTVERSION=	2.16.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://forge.ocamlcore.org/frs/download.php/979/ \
 		LOCAL/bf

@@ -2,7 +2,7 @@
 
 PORTNAME=	kiconedit
 PORTVERSION=	${EXTRA_VER}
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	graphics kde
 MASTER_SITES=	KDE/stable/extragear
 DIST_SUBDIR=	KDE/extragear

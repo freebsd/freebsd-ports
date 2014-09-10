@@ -2,6 +2,7 @@
 
 PORTNAME=	esqueleto
 PORTVERSION=	1.4.4
+PORTREVISION=	1
 CATEGORIES=	databases haskell
 
 MAINTAINER=	haskell@FreeBSD.org

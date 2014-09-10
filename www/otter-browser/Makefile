@@ -2,6 +2,7 @@
 
 PORTNAME=	otter
 PORTVERSION=	0.9.02
+PORTREVISION=	1
 CATEGORIES=	www
 # Avoid pkgname conflict with misc/otter
 PKGNAMESUFFIX=	-browser

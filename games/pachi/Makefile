@@ -3,7 +3,7 @@
 
 PORTNAME=	pachi
 PORTVERSION=	1.0
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	games
 MASTER_SITES=	SF/dragontech/Pachi%20el%20marciano/Pachi%20el%20marciano%20${PORTVERSION}
 DISTNAME=	pachi_source

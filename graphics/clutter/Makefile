@@ -4,7 +4,7 @@
 
 PORTNAME=	clutter
 PORTVERSION=	1.4.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	graphics
 MASTER_SITES=	GNOME \
 		http://source.clutter-project.org/sources/${PORTNAME}/${PORTVERSION:R}/

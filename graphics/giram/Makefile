@@ -3,7 +3,7 @@
 
 PORTNAME=	giram
 PORTVERSION=	0.3.5
-PORTREVISION=	18
+PORTREVISION=	19
 CATEGORIES=	graphics
 MASTER_SITES=	http://freebsd.nsu.ru/distfiles/
 

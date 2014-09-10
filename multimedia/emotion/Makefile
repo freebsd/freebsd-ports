@@ -3,6 +3,7 @@
 
 PORTNAME=	emotion
 PORTVERSION=	1.7.9
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	multimedia enlightenment
 MASTER_SITES=	http://download.enlightenment.org/releases/ \

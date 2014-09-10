@@ -3,7 +3,7 @@
 
 PORTNAME=	repsnapper
 PORTVERSION=	2.3.2a3
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	cad
 MASTER_SITES=	https://codeload.github.com/timschmidt/repsnapper/tar.gz/
 DISTNAME=	${PORTVERSION}

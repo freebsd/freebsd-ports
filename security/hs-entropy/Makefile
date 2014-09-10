@@ -2,6 +2,7 @@
 
 PORTNAME=	entropy
 PORTVERSION=	0.3.2
+PORTREVISION=	1
 CATEGORIES=	security haskell
 
 MAINTAINER=	haskell@FreeBSD.org

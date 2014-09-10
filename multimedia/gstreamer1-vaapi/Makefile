@@ -3,6 +3,7 @@
 
 PORTNAME=	gstreamer1-vaapi
 PORTVERSION=	0.5.7
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	http://www.freedesktop.org/software/vaapi/releases/gstreamer-vaapi/
 DISTNAME=	gstreamer-vaapi-${PORTVERSION}

@@ -3,7 +3,7 @@
 
 PORTNAME=	tuxtype
 PORTVERSION=	1.8.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	games
 MASTER_SITES=	http://alioth.debian.org/frs/download.php/3270/ \
 		http://alioth.debian.org/frs/download.php/3540/:t4k_common

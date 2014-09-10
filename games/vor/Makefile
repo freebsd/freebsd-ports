@@ -3,7 +3,7 @@
 
 PORTNAME=	vor
 PORTVERSION=	0.5.5
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	games
 MASTER_SITES=	http://qualdan.com/vor/ \
 		http://mirror.amdmi3.ru/distfiles/

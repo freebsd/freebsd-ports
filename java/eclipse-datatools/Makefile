@@ -3,6 +3,7 @@
 
 PORTNAME=	datatools
 PORTVERSION=	1.12
+PORTREVISION=	1
 CATEGORIES=	java devel databases
 MASTER_SITES=	${MASTER_SITE_ECLIPSE:S,/eclipse/downloads/drops/,/,}
 MASTER_SITE_SUBDIR=datatools/downloads/${PORTVERSION}

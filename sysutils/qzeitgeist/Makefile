@@ -2,6 +2,7 @@
 
 PORTNAME=	qzeitgeist
 PORTVERSION=	0.8.0
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_KDE:C@$@:kde@} \
 		http://launchpad.net/zeitgeist/${ZEITGEIST_VERSION:R}/${ZEITGEIST_VERSION}/+download/

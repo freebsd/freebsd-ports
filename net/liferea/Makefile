@@ -3,7 +3,7 @@
 
 PORTNAME=	liferea
 PORTVERSION=	1.10.8
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net gnome
 MASTER_SITES=	https://github.com/lwindolf/liferea/releases/download/v${PORTVERSION}/ \
 		http://rainbow-runner.nl/~kwm/distfiles/

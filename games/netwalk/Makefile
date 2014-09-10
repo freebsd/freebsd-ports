@@ -3,6 +3,7 @@
 
 PORTNAME=	netwalk
 PORTVERSION=	0.4.11
+PORTREVISION=	1
 CATEGORIES=	games
 
 MAINTAINER=	nemysis@FreeBSD.org

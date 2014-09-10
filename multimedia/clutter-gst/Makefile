@@ -4,7 +4,7 @@
 
 PORTNAME=	clutter-gst
 PORTVERSION=	1.3.4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	multimedia
 MASTER_SITES=	http://source.clutter-project.org/sources/${PORTNAME}/${PORTVERSION:R}/
 

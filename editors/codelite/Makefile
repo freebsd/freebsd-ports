@@ -3,6 +3,7 @@
 
 PORTNAME=	codelite
 DISTVERSION=	6.1.1
+PORTREVISION=	1
 CATEGORIES=	editors devel
 
 MAINTAINER=	gahr@FreeBSD.org

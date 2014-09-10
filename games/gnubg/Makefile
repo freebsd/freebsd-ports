@@ -3,7 +3,7 @@
 
 PORTNAME=	gnubg
 PORTVERSION=	1.03.001
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	http://www.c-s.li/ports/ \
 		http://files.gnubg.org/media/sources/
