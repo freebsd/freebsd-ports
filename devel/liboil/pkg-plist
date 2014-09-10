@@ -17,7 +17,6 @@ include/liboil-0.3/liboil/liboiltest.h
 include/liboil-0.3/liboil/liboiltypes.h
 include/liboil-0.3/liboil/liboilutils.h
 lib/liboil-0.3.a
-lib/liboil-0.3.la
 lib/liboil-0.3.so
 lib/liboil-0.3.so.0
 lib/liboil-0.3.so.0.3.0
