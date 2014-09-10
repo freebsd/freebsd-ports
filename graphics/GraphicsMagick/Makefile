@@ -9,7 +9,7 @@ MASTER_SITES=	SF \
 		ftp://ftp.graphicsmagick.org/pub/GraphicsMagick/1.3/
 MASTER_SITE_SUBDIR=	${PORTNAME:tl}/${PORTNAME:tl}/${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bapt@FreeBSD.org
 COMMENT=	Fast image processing tools based on ImageMagick
 
 LIB_DEPENDS=	libjbig.so:${PORTSDIR}/graphics/jbigkit		\
