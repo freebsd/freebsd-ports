@@ -29,6 +29,7 @@
 %%SITE_PERL%%/SNMP/Info/Layer1/Cyclades.pm
 %%SITE_PERL%%/SNMP/Info/Layer1/S3000.pm
 %%SITE_PERL%%/SNMP/Info/Layer2.pm
+%%SITE_PERL%%/SNMP/Info/Layer2/3Com.pm
 %%SITE_PERL%%/SNMP/Info/Layer2/Airespace.pm
 %%SITE_PERL%%/SNMP/Info/Layer2/Aironet.pm
 %%SITE_PERL%%/SNMP/Info/Layer2/Allied.pm
@@ -49,6 +50,7 @@
 %%SITE_PERL%%/SNMP/Info/Layer2/NWSS2300.pm
 %%SITE_PERL%%/SNMP/Info/Layer2/Orinoco.pm
 %%SITE_PERL%%/SNMP/Info/Layer2/Trapeze.pm
+%%SITE_PERL%%/SNMP/Info/Layer2/Ubiquiti.pm
 %%SITE_PERL%%/SNMP/Info/Layer2/ZyXEL_DSLAM.pm
 %%SITE_PERL%%/SNMP/Info/Layer3.pm
 %%SITE_PERL%%/SNMP/Info/Layer3/Arista.pm
@@ -135,6 +137,7 @@
 %%PERL5_MAN3%%/SNMP::Info::Layer1::Cyclades.3.gz
 %%PERL5_MAN3%%/SNMP::Info::Layer1::S3000.3.gz
 %%PERL5_MAN3%%/SNMP::Info::Layer2.3.gz
+%%PERL5_MAN3%%/SNMP::Info::Layer2::3Com.3.gz
 %%PERL5_MAN3%%/SNMP::Info::Layer2::Airespace.3.gz
 %%PERL5_MAN3%%/SNMP::Info::Layer2::Aironet.3.gz
 %%PERL5_MAN3%%/SNMP::Info::Layer2::Allied.3.gz
@@ -155,6 +158,7 @@
 %%PERL5_MAN3%%/SNMP::Info::Layer2::Netgear.3.gz
 %%PERL5_MAN3%%/SNMP::Info::Layer2::Orinoco.3.gz
 %%PERL5_MAN3%%/SNMP::Info::Layer2::Trapeze.3.gz
+%%PERL5_MAN3%%/SNMP::Info::Layer2::Ubiquiti.3.gz
 %%PERL5_MAN3%%/SNMP::Info::Layer2::ZyXEL_DSLAM.3.gz
 %%PERL5_MAN3%%/SNMP::Info::Layer3.3.gz
 %%PERL5_MAN3%%/SNMP::Info::Layer3::Aironet.3.gz
