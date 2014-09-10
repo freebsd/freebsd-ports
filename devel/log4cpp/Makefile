@@ -17,18 +17,18 @@ USE_LDCONFIG=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 # doxygen build is BROKEN atm
-#.if exists (${LOCALBASE}/bin/doxygen) || !defined (NOPORTDOCS)
+#.if exists (${LOCALBASE}/bin/doxygen) || ${PORT_OPTIONS:MDOCS}
 #BUILD_DEPENDS+=	doxygen:${PORTSDIR}/devel/doxygen
 #.else
 CONFIGURE_ARGS+=	--disable-doxygen
 #.endif
 
-#.if !exists (${LOCALBASE}/bin/doxygen) && !defined (NOPORTDOCS)
+#.if !exists (${LOCALBASE}/bin/doxygen) && ${PORT_OPTIONS:MDOCS}
 #pre-everything::
 #	@${ECHO_CMD}
 #	@${ECHO_CMD} By default, this port uses doxygen to build its documentation.\
 #It currently is not present your system, and if you do not want to install it, abort\
-#this build by hitting CTRL+C and re-run the installation with -DNOPORTDOCS | ${FMT} 74
+#this build by hitting CTRL+C and re-run the installation with OPTIONS_UNSET=DOCS | ${FMT} 74
 #	@${ECHO_CMD}
 #	@sleep 3
 #.endif
