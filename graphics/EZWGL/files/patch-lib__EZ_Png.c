@@ -1,5 +1,5 @@
---- lib/EZ_Png.c.orig	1999-12-03 22:49:22.000000000 +0100
-+++ lib/EZ_Png.c	2012-04-27 07:56:25.000000000 +0200
+--- lib/EZ_Png.c.orig	1999-12-03 21:49:22 UTC
++++ lib/EZ_Png.c
 @@ -37,6 +37,7 @@
  #if defined(HAVE_LIBPNG) && defined(PNG_SUPPORT)
  #undef EXTERN 

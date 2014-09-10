@@ -1,5 +1,5 @@
---- configure.orig	Sat Dec  4 06:48:55 1999
-+++ configure	Sat Apr  8 18:00:00 2000
+--- configure.orig	1999-12-03 21:48:55 UTC
++++ configure
 @@ -1008,7 +1008,7 @@
      fi
      CFLAGS="$CCOPTS"
