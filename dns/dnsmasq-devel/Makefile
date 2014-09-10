@@ -3,6 +3,7 @@
 
 PORTNAME=	dnsmasq
 DISTVERSION=	2.72rc1
+PORTREVISION=	1
 CATEGORIES=	dns ipv6
 MASTER_SITES=	http://www.thekelleys.org.uk/dnsmasq/release-candidates/
 PKGNAMESUFFIX=	-devel
@@ -19,14 +20,18 @@ PORTDOCS=	CHANGELOG CHANGELOG.archive FAQ doc.html setup.html
 SUB_FILES=	pkg-message
 
 CFLAGS+=	-Wall -Wno-unused-value
+CPPFLAGS+=	-I${LOCALBASE}/include
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}" PREFIX="${PREFIX}" COPTS="${CFLAGS}" LIBS="${LDFLAGS}" RPM_OPT_FLAGS="${CPPFLAGS}"
 
-OPTIONS_DEFINE=		IPV6 DBUS NLS IDN LUA DNSSEC DOCS
+OPTIONS_DEFINE=		IPV6 DBUS LUA DNSSEC DOCS
 OPTIONS_DEFAULT=	IPV6 NLS DNSSEC
 OPTIONS_EXCLUDE+=	EXAMPLES
-NLS_DESC=	National Language Support (NLS, enables IDN)
-IDN_DESC=	International Domain Names (IDN) WITHOUT NLS
-LUA_DESC=	Support lease-change scripts in LUA
+OPTIONS_RADIO=		INTL
+OPTIONS_RADIO_INTL=	IDN NLS
+INTL_DESC=	Internationalization Support Level
+NLS_DESC=	IDN+NLS: Int'l Domain Names & National Language support
+IDN_DESC=	IDN: Int'l Domain Names WITHOUT full NLS
+LUA_DESC=	Support lease-change scripts written in Lua
 DNSSEC_DESC=	Enable DNSSEC caching and validation
 USES=		shebangfix tar:xz
 SHEBANG_FILES=	contrib/dynamic-dnsmasq/dynamic-dnsmasq.pl \
@@ -39,32 +44,40 @@ CFLAGS+=	-DNO_IPV6
 .endif
 
 .if ${PORT_OPTIONS:MNLS}
-USES+=		pkgconfig gettext
+USES+=		pkgconfig gettext iconv gmake
 LIB_DEPENDS+=	libidn.so:${PORTSDIR}/dns/libidn
 PLIST_SUB+=	NLS=""
 ALL_TARGET=	all-i18n
-USES+=		gmake
+_intllibs=	-lintl
 .else
+_intllibs=
 PLIST_SUB+=	NLS="@comment "
 .if ${PORT_OPTIONS:MIDN}
+USES+=		iconv
 CFLAGS+=	-DHAVE_IDN
 LIB_DEPENDS+=	libidn.so:${PORTSDIR}/dns/libidn
+_intllibs+=	-lidn
 .endif
 .endif
 
 .if ${PORT_OPTIONS:MDBUS}
 LIB_DEPENDS+=	libdbus-1.so:${PORTSDIR}/devel/dbus
 USES+=		pkgconfig
+CPPFLAGS+=	`pkg-config --cflags dbus-1`
 CFLAGS+=	-DHAVE_DBUS
+LDFLAGS+=	`pkg-config --libs dbus-1`
 .endif
 
 .if ${PORT_OPTIONS:MLUA}
+CPPFLAGS+=	-I${LUA_INCDIR}
 CFLAGS+=	-DHAVE_LUASCRIPT
+LDFLAGS+=	-L${LUA_LIBDIR} -llua-${LUA_VER}
 USES+=		lua
 .endif
 
 .if ${PORT_OPTIONS:MDNSSEC}
 CFLAGS+=	-DHAVE_DNSSEC
+USES+=		pkgconfig
 LIB_DEPENDS+=	libnettle.so:${PORTSDIR}/security/nettle
 LIB_DEPENDS+=	libgmp.so:${PORTSDIR}/math/gmp
 .endif
@@ -73,15 +86,16 @@ USE_RC_SUBR=	dnsmasq
 
 .include <bsd.port.pre.mk>
 
+LDFLAGS+=	-L${LOCALBASE}/lib ${_intllibs} ${ICONV_LIB}
+
 post-patch:
 	${REINPLACE_CMD} -e "s/lua5\.1/lua-${LUA_VER}/" ${WRKSRC}/Makefile
 
-pre-configure:
-	@:
+pre-configure: pretty-print-config
 .if ${PORT_OPTIONS:MIDN}
 .if empty(PORT_OPTIONS:MNLS)
 	@if ${OBJDUMP} -p ${LOCALBASE}/lib/libidn.so \
-		| ${EGREP} -q "NEEDED[[:space:]]+lib(intl|iconv)\.so" ; \
+		| ${EGREP} -q 'NEEDED[[:space:]]+libintl\.so' ; \
 	then ${ECHO} ; ${ECHO} 'WARNING: dns/libidn was compiled with NLS support!' ; \
 	${ECHO} 'Recompile libidn WITHOUT_NLS to get rid of NLS dependencies.' ; ${ECHO} ; \
 	fi
