@@ -3,6 +3,7 @@
 
 PORTNAME=	libsmi
 PORTVERSION=	0.4.8
+PORTREVISION=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	ftp://ftp.ibr.cs.tu-bs.de/pub/local/libsmi/ \
 		LOCAL/bms
@@ -12,7 +13,7 @@ COMMENT=	Library to access SMI MIB information
 
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
-USES=		gmake libtool:keepla pathfix pkgconfig
+USES=		gmake libtool pathfix pkgconfig
 PIBDIR=		${PREFIX}/share/smi/pibs
 MIBDIR=		${PREFIX}/share/smi/mibs
 GNU_CONFIGURE=	yes
