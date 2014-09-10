@@ -3,12 +3,8 @@ bin/spflooder
 bin/spmonitor
 bin/sptuser
 bin/spuser
-@unexec if cmp -s %D/etc/spread.access_ip.sample %D/etc/spread.access_ip; then rm -f %D/etc/spread.access_ip; fi
-etc/spread.access_ip.sample
-@exec if [ ! -f %D/etc/spread.access_ip ] ; then cp -p %D/%F %B/spread.access_ip; fi
-@unexec if cmp -s %D/etc/spread.conf.sample %D/etc/spread.conf; then rm -f %D/etc/spread.conf; fi
-etc/spread.conf.sample
-@exec if [ ! -f %D/etc/spread.conf ] ; then cp -p %D/%F %B/spread.conf; fi
+@sample etc/spread.access_ip.sample
+@sample etc/spread.conf.sample
 include/fl.h
 include/sp.h
 include/sp_events.h
@@ -26,12 +22,32 @@ lib/libtspread-core.so
 lib/libtspread-core.so.3
 lib/libtspread-core.so.3.0.0
 sbin/spread
-%%PORTDOCS%%%%DOCSDIR%%/DynamicConfiguration.txt
-%%PORTDOCS%%%%DOCSDIR%%/Flush_or_SpreadAPI.txt
-%%PORTDOCS%%%%DOCSDIR%%/MultithreadedClients.txt
-%%PORTDOCS%%%%DOCSDIR%%/Short_Buffer_Handling.txt
-%%PORTDOCS%%%%DOCSDIR%%/TODO
-%%PORTDOCS%%%%DOCSDIR%%/PORTING
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
+man/man1/spflooder.1.gz
+man/man1/spmonitor.1.gz
+man/man1/spread.1.gz
+man/man1/sptuser.1.gz
+man/man1/spuser.1.gz
+man/man3/SP_connect.3.gz
+man/man3/SP_disconnect.3.gz
+man/man3/SP_equal_group_ids.3.gz
+man/man3/SP_error.3.gz
+man/man3/SP_get_memb_info.3.gz
+man/man3/SP_get_vs_set_members.3.gz
+man/man3/SP_get_vs_sets_info.3.gz
+man/man3/SP_join.3.gz
+man/man3/SP_kill.3.gz
+man/man3/SP_leave.3.gz
+man/man3/SP_multicast.3.gz
+man/man3/SP_multigroup_multicast.3.gz
+man/man3/SP_multigroup_scat_multicast.3.gz
+man/man3/SP_poll.3.gz
+man/man3/SP_receive.3.gz
+man/man3/SP_scat_get_memb_info.3.gz
+man/man3/SP_scat_get_vs_set_members.3.gz
+man/man3/SP_scat_get_vs_sets_info.3.gz
+man/man3/SP_scat_multicast.3.gz
+man/man3/SP_scat_receive.3.gz
+man/man3/SP_version.3.gz
+man/man3/libspread.3.gz
 @exec install -m 750 -o %%USERS%% -g %%GROUPS%% -d %%RUNDIR%%
 @dirrmtry %%RUNDIR%%

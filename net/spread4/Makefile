@@ -7,8 +7,8 @@ CATEGORIES=	net perl5
 MASTER_SITES=	LOCAL/ohauer
 DISTNAME=	spread-src-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	The Spread Group Communication System, a network toolkit
+MAINTAINER=	portmaster@bsdforge.com
+COMMENT=	Spread Group Communication System, a network toolkit
 
 GNU_CONFIGURE=	yes
 USES=		gmake
@@ -26,58 +26,29 @@ SUB_LIST+=	USERS=${USERS} GROUPS=${GROUPS}
 WRKSRC=		${WRKDIR}/spread-src-${PORTVERSION}
 
 PKGMESSAGE=	${WRKSRC}/license.txt
-
-DOCFILES=	DynamicConfiguration.txt Flush_or_SpreadAPI.txt \
+LICENSE_FILE=	${WRKSRC}/license.txt
+OPTIONS_DEFINE=	DOCS
+PORTDOCS=	DynamicConfiguration.txt Flush_or_SpreadAPI.txt \
 		MultithreadedClients.txt Short_Buffer_Handling.txt \
 		TODO PORTING
-MAN1=		spflooder.1 spmonitor.1 spread.1 sptuser.1 spuser.1
-MAN3=		SP_connect.3 SP_disconnect.3 SP_equal_group_ids.3 \
-		SP_error.3 SP_get_memb_info.3 SP_get_vs_set_members.3 \
-		SP_get_vs_sets_info.3 SP_join.3 SP_kill.3 \
-		SP_leave.3 SP_multicast.3 SP_multigroup_multicast.3 \
-		SP_multigroup_scat_multicast.3 SP_poll.3 SP_receive.3 \
-		SP_scat_get_memb_info.3 SP_scat_get_vs_set_members.3 \
-		SP_scat_get_vs_sets_info.3 SP_scat_multicast.3 \
-		SP_scat_receive.3 SP_version.3 libspread.3
-
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
 
 post-extract:
-		@${REINPLACE_CMD} -e 's|INSTALLSUBDIRS=daemon docs|INSTALLSUBDIRS=daemon|' \
+	@${REINPLACE_CMD} -e 's|INSTALLSUBDIRS=daemon docs|INSTALLSUBDIRS=daemon|' \
 		${WRKSRC}/Makefile.in
 
 post-install:
-	${INSTALL_DATA} -m 644 ${WRKSRC}/docs/sample.spread.conf \
-		${PREFIX}/etc/spread.conf.sample
-	${INSTALL_DATA} -m 644 ${WRKSRC}/docs/sample.spread.access_ip \
-		${PREFIX}/etc/spread.access_ip.sample
+	(cd ${STAGEDIR}${PREFIX}/lib/ && ${STRIP_CMD} libspread.so.3.0.0 \
+		libspread-core.so.3.0.0 libtspread-core.so.3.0.0)
+	${INSTALL_DATA} ${WRKSRC}/docs/sample.spread.conf \
+		${STAGEDIR}${PREFIX}/etc/spread.conf.sample
+	${INSTALL_DATA} ${WRKSRC}/docs/sample.spread.access_ip \
+		${STAGEDIR}${PREFIX}/etc/spread.access_ip.sample
+	(cd ${WRKSRC} && ${INSTALL_DATA} docs/*.1 \
+		${STAGEDIR}${MANPREFIX}/man/man1)
+	(cd ${WRKSRC} && ${INSTALL_DATA} docs/*.3 \
+		${STAGEDIR}${MANPREFIX}/man/man3)
+	@${MKDIR} ${STAGEDIR}${DOCSDIR} ${STAGEDIR}${RUNDIR}
+	(cd ${WRKSRC}/docs && \
+		${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR})
 
-.if !exists(${PREFIX}/etc/spread.conf)
-	${INSTALL_DATA} -m 644 ${WRKSRC}/docs/sample.spread.conf \
-		${PREFIX}/etc/spread.conf
-.endif
-
-.if !exists(${PREFIX}/etc/spread.access_ip)
-	${INSTALL_DATA} -m 644 ${WRKSRC}/docs/sample.spread.access_ip \
-		${PREFIX}/etc/spread.access_ip
-.endif
-
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-.for f in ${DOCFILES}
-	${INSTALL_DATA} ${WRKSRC}/docs/${f} ${DOCSDIR}
-.endfor
-.endif
-
-.for f in ${MAN1}
-	${INSTALL_MAN} ${WRKSRC}/docs/${f} ${LOCALBASE}/man/man1/
-.endfor
-
-.for f in ${MAN3}
-	${INSTALL_MAN} ${WRKSRC}/docs/${f} ${LOCALBASE}/man/man3/
-.endfor
-	@${INSTALL} -m 750 -o ${USERS} -g ${GROUPS} -d ${RUNDIR}
-	@${CAT} ${PKGMESSAGE}
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
