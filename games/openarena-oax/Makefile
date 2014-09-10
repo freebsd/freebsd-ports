@@ -3,6 +3,7 @@
 
 PORTNAME=	oax
 PORTVERSION=	B51
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://files.poulsander.com/~poul19/public_files/eliminationSource/
 DISTNAME=	${PORTNAME}${PORTVERSION}

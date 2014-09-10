@@ -3,6 +3,7 @@
 
 PORTNAME=	tiled
 PORTVERSION=	0.9.1
+PORTREVISION=	1
 CATEGORIES=	graphics editors games
 MASTER_SITES=	SF/tiled/tiled-qt/${PORTVERSION}
 DISTNAME=	tiled-qt-${PORTVERSION}

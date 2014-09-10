@@ -2,6 +2,7 @@
 
 PORTNAME=	xf86-input-wacom
 PORTVERSION=	0.24.99.1
+PORTREVISION=	1
 CATEGORIES=	x11-drivers
 MASTER_SITES=	SF/linuxwacom/${PORTNAME}
 

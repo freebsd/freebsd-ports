@@ -2,6 +2,7 @@
 
 PORTNAME=	conduit-combinators
 PORTVERSION=	0.2.8.2
+PORTREVISION=	1
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org

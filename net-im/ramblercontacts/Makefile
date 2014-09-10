@@ -3,7 +3,7 @@
 
 PORTNAME=	ramblercontacts
 PORTVERSION=	0.3.2.1030
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-im russian
 MASTER_SITES=	http://freebsd.nsu.ru/distfiles/
 DISTNAME=	${PORTNAME}_v${PORTVERSION}_beta_src

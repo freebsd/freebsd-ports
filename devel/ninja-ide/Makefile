@@ -3,7 +3,7 @@
 
 PORTNAME=	ninja-ide
 PORTVERSION=	2.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	http://nivit.altervista.org/FreeBSD/ports/distfiles/
 

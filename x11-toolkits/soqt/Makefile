@@ -3,7 +3,7 @@
 
 PORTNAME=	SoQt
 PORTVERSION=	1.5.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	https://bitbucket.org/Coin3D/coin/downloads/
 DIST_SUBDIR=	KDE

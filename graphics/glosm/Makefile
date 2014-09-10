@@ -3,7 +3,7 @@
 
 PORTNAME=	glosm
 PORTVERSION=	0.0.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics geography
 MASTER_SITES=	http://cloud.github.com/downloads/AMDmi3/glosm/ \
 		http://mirror.amdmi3.ru/distfiles/

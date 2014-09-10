@@ -3,7 +3,7 @@
 
 PORTNAME=	uzbl
 DISTVERSION=	0.0.0.${GITDATE}
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www
 MASTER_SITES=	http://www.linta.de/distfiles/
 

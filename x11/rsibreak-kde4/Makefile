@@ -3,7 +3,7 @@
 
 PORTNAME=	rsibreak
 DISTVERSION=	0.11
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11 kde
 MASTER_SITES=	LOCAL/crees/${PORTNAME} \
 		http://pkgs.fedoraproject.org/repo/pkgs/rsibreak/rsibreak-0.11.tar.bz2/d5dd540efd18900aa508eee381bcaafd/

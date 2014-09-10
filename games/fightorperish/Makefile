@@ -3,6 +3,7 @@
 
 PORTNAME=	fightorperish
 PORTVERSION=	0.5
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.tuxpaint.org/unix/x/fop/src/ \
 		SF/nemysisfreebsdp/${CATEGORIES}/${PORTNAME}/:icons

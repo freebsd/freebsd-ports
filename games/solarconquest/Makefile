@@ -3,7 +3,7 @@
 
 PORTNAME=	solarconquest
 PORTVERSION=	0.2
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	games
 MASTER_SITES=	http://games.sajthelper.com/ \
 		LOCAL/ehaupt \

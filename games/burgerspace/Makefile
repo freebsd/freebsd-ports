@@ -3,6 +3,7 @@
 
 PORTNAME=	burgerspace
 PORTVERSION=	1.9.2
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://perso.b2b2c.ca/sarrazip/dev/ \
 		LOCAL/martymac

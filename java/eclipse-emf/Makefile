@@ -3,6 +3,7 @@
 
 PORTNAME=	emf
 PORTVERSION=	2.9.2
+PORTREVISION=	1
 CATEGORIES=	java devel
 MASTER_SITES=	${MASTER_SITE_ECLIPSE:S,/eclipse/downloads/drops/,/,}
 MASTER_SITE_SUBDIR=modeling/emf/emf/downloads/drops/${PORTVERSION}/R201402031126

@@ -3,7 +3,7 @@
 
 PORTNAME=	milkytracker
 PORTVERSION=	0.90.86
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	http://www.milkytracker.org/files/ \
 		CRITICAL

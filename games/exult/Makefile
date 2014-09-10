@@ -3,7 +3,7 @@
 
 PORTNAME=	exult
 PORTVERSION=	1.5.0.20130315
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	http://www.math.leidenuniv.nl/~wpalenst/cvs/
 DISTNAME=	exult-20130315-0400

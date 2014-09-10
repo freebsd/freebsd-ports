@@ -3,6 +3,7 @@
 
 PORTNAME=	contractor
 PORTVERSION=	0.3.1
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	https://launchpadlibrarian.net/176424633/ \
 	https://launchpad.net/${PORTNAME}/${PORTVERSION:R}/${PORTVERSION}/+download/

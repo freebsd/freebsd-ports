@@ -3,7 +3,7 @@
 
 PORTNAME=	tuxkart
 PORTVERSION=	0.4.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	games
 MASTER_SITES=	http://tuxkart.sourceforge.net/dist/ \
 		SF/nemysisfreebsdp/${CATEGORIES}/:icons

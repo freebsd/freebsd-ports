@@ -3,6 +3,7 @@
 
 PORTNAME=	afternoonstalker
 PORTVERSION=	1.1.5
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://perso.b2b2c.ca/sarrazip/dev/ \
 		LOCAL/martymac

@@ -2,7 +2,7 @@
 
 PORTNAME=	sdl2_net
 PORTVERSION=	2.0.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net
 MASTER_SITES=	http://www.libsdl.org/projects/SDL_net/release/
 DISTNAME=	SDL2_net-${PORTVERSION}

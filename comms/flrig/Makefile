@@ -3,6 +3,7 @@
 
 PORTNAME=	flrig
 PORTVERSION=	1.3.16
+PORTREVISION=	1
 CATEGORIES=	comms hamradio
 MASTER_SITES=	http://www.w1hkj.com/downloads/flrig/ \
 		${MASTER_SITE_LOCAL}

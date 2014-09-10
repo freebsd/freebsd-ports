@@ -3,6 +3,7 @@
 
 PORTNAME=	sfml
 PORTVERSION=	2.1
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.sfml-dev.org/download/sfml/${PORTVERSION}/
 DISTNAME=	SFML-${PORTVERSION}-sources

@@ -3,7 +3,7 @@
 
 PORTNAME=	sdlskk
 PORTVERSION=	0.5
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel graphics ruby
 MASTER_SITES=	http://www.kmc.gr.jp/~ohai/sdlskk/
 DIST_SUBDIR=	ruby

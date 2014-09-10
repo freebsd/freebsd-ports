@@ -3,6 +3,7 @@
 
 PORTNAME=	pharo
 DISTVERSION=	1.4
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	https://gforge.inria.fr/frs/download.php/30620/
 DISTNAME=	Pharo-${DISTVERSION}-${SVNVERSION}

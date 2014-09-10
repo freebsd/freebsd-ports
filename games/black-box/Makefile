@@ -3,7 +3,7 @@
 
 PORTNAME=	black-box
 PORTVERSION=	1.4.8
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	http://www.linux-games.com/black-box/ \
 		SF/nemysisfreebsdp/${CATEGORIES}/:icons

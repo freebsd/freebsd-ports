@@ -3,7 +3,7 @@
 
 PORTNAME=	sdl_image
 PORTVERSION=	1.2.12
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.libsdl.org/projects/SDL_image/release/
 DISTNAME=	SDL_image-${PORTVERSION}

@@ -3,7 +3,7 @@
 
 PORTNAME=	sdl_lopan
 PORTVERSION=	10
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	games
 MASTER_SITES=	http://www.linuxmotors.com/sdllopan/downloads/ \
 		SF/nemysisfreebsdp/${CATEGORIES}/:icons

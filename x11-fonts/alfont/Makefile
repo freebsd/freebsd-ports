@@ -3,7 +3,7 @@
 
 PORTNAME=	alfont
 PORTVERSION=	209
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-fonts
 MASTER_SITES=	http://opensnc.sourceforge.net/alfont/mirror/ \
 		SF/nemysisfreebsdp/${CATEGORIES}/${PORTNAME}/:nemysis

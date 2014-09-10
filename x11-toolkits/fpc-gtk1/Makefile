@@ -1,7 +1,7 @@
 # Created by: Alonso Cardenas Marquez <acm@FreeBSD.org>
 # $FreeBSD$
 
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits lang
 PKGNAMESUFFIX=	-gtk1
 

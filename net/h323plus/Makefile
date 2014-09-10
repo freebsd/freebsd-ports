@@ -2,6 +2,7 @@
 
 PORTNAME=	h323plus
 PORTVERSION=	1.26.5
+PORTREVISION=	1
 CATEGORIES=	net multimedia
 MASTER_SITES=	http://www.h323plus.org/source/download/
 DISTNAME=	${PORTNAME}-v${PORTVERSION:S/./_/g}

@@ -3,7 +3,7 @@
 
 PORTNAME=	gimp-data-extras
 PORTVERSION=	2.0.2
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.gimp.org/pub/%SUBDIR%/ \
 		http://gimp.mirrors.hoobly.com/%SUBDIR%/ \

@@ -3,7 +3,7 @@
 
 PORTNAME=	hugo
 PORTVERSION=	2.12
-PORTREVISION=	13
+PORTREVISION=	14
 CATEGORIES=	emulators
 MASTER_SITES=	http://www.zeograd.com/download/ \
 		http://www.sourcefiles.org/Emulators/Videogames/

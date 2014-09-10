@@ -3,6 +3,7 @@
 
 PORTNAME=	netcdf-fortran
 PORTVERSION=	4.4.0
+PORTREVISION=	1
 CATEGORIES=	science
 
 MAINTAINER=	sunpoet@FreeBSD.org

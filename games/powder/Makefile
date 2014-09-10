@@ -3,7 +3,7 @@
 
 PORTNAME=	powder
 PORTVERSION=	115
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	http://www.zincland.com/powder/release/ \
 		http://mirror.amdmi3.ru/distfiles/

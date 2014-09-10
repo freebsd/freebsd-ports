@@ -3,7 +3,7 @@
 
 PORTNAME=	cleanq3
 PORTVERSION=	0.5.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games
 MASTER_SITES=	http://www.bfeared.com/library/quake/archive/quakedev/temor/downloads/
 DISTNAME=	CleanQ3_v${PORTVERSION}-srcbin

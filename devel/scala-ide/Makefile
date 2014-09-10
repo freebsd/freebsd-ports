@@ -3,6 +3,7 @@
 
 PORTNAME=	scala-ide
 DISTVERSION=	3.0.4
+PORTREVISION=	1
 CATEGORIES=	devel java
 #MASTER_SITES=	http://download.scala-ide.org/sdk/e37/scala210/dev/
 MASTER_SITES=	http://download.scala-ide.org/sdk/helium/e38/scala211/stable/

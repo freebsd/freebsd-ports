@@ -3,6 +3,7 @@
 
 PORTNAME=	playd
 PORTVERSION=	1.22.3
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	http://files.bsdroot.lv/my/FreeBSD/distfiles/
 DISTNAME=	playd.sh-${PORTVERSION}

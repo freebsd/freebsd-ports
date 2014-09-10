@@ -3,7 +3,7 @@
 
 PORTNAME=	violetland
 PORTVERSION=	0.4.3
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	games
 MASTER_SITES=	GOOGLE_CODE \
 		http://mirror.amdmi3.ru/distfiles/

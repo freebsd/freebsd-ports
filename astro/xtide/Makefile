@@ -3,7 +3,7 @@
 
 PORTNAME=	xtide
 PORTVERSION=	2.13.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	astro geography
 MASTER_SITES=	http://www.c-s.li/ports/ \
 		ftp://ftp.flaterco.com/xtide/

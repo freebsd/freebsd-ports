@@ -3,7 +3,7 @@
 
 PORTNAME=	dpmod
 PORTVERSION=	20071120
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	http://offload1.icculus.org/twilight/darkplaces/files/
 PKGNAMEPREFIX=	${Q1PKGNAMEPREFIX}

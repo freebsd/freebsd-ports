@@ -3,7 +3,7 @@
 
 PORTNAME=	edje
 PORTVERSION=	1.7.9
-PORTREVISION=	2
+PORTREVISION=	3
 PORTEPOCH=	2
 CATEGORIES=	graphics enlightenment
 MASTER_SITES=	http://download.enlightenment.org/releases/ \

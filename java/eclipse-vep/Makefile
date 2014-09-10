@@ -3,7 +3,7 @@
 
 PORTNAME=	vep
 PORTVERSION=	1.2
-PORTREVISION=	4
+PORTREVISION=	5
 PORTEPOCH=	1
 CATEGORIES=	java devel
 MASTER_SITES=	${MASTER_SITE_ECLIPSE:S,/eclipse/downloads/drops/,/tools/ve/downloads/drops/,}

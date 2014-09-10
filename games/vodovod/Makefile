@@ -3,6 +3,7 @@
 
 PORTNAME=	vodovod
 PORTVERSION=	1.10
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://download.gna.org/vodovod/ \
 		SF/nemysisfreebsdp/:icons

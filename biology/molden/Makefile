@@ -3,7 +3,7 @@
 
 PORTNAME=	molden
 PORTVERSION=	5.0.7
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	biology
 MASTER_SITES=	ftp://ftp.cmbi.ru.nl/pub/molgraph/molden/

@@ -3,7 +3,7 @@
 
 PORTNAME=	minbif
 PORTVERSION=	1.0.5
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	irc net-im
 MASTER_SITES=	https://symlink.me/attachments/download/148/
 

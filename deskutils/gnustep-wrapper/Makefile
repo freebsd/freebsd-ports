@@ -2,7 +2,7 @@
 
 PORTNAME=	wrapper
 PORTVERSION=	0.1.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	deskutils gnustep
 #MASTER_SITES=	ftp://ftp.raffael.ch/software/GNUstepWrapper/
 MASTER_SITES=	${MASTER_SITE_LOCAL}

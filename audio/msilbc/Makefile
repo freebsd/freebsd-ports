@@ -2,7 +2,7 @@
 
 PORTNAME=	msilbc
 PORTVERSION=	2.0.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio net
 MASTER_SITES=	SAVANNAH/linphone/plugins/sources/
 

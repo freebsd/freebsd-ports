@@ -3,7 +3,7 @@
 
 PORTNAME=	frozen-bubble
 DISTVERSION=	2.2.1-beta1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	games
 MASTER_SITES=	http://www.frozen-bubble.org/data/
 

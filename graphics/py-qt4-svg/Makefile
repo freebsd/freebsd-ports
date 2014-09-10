@@ -2,6 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	svg
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	graphics devel python
 

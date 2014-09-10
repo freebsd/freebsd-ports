@@ -3,7 +3,7 @@
 
 PORTNAME=	54321
 PORTVERSION=	1.0.2001.11.16
-PORTREVISION=	12
+PORTREVISION=	13
 CATEGORIES=	games
 MASTER_SITES=	http://old.nklein.com/products/54321/%SUBDIR%/ \
 		http://www.sourcefiles.org/Games/Puzzle/

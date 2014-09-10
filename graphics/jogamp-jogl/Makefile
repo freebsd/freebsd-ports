@@ -3,7 +3,7 @@
 
 PORTNAME=	jogamp-jogl
 PORTVERSION=	2.1.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics devel java
 MASTER_SITES=	http://jogamp.org/deployment/jogamp-current/archive/Sources/
 DISTFILES=	jogl-v${PORTVERSION}.tar.7z \

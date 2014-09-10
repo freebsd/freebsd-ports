@@ -3,7 +3,7 @@
 
 PORTNAME=	autobench
 PORTVERSION=	2.1.2
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	benchmarks www
 MASTER_SITES=	http://www.xenoclast.org/autobench/downloads/ \
 		http://www.sfr-fresh.com/unix/privat/

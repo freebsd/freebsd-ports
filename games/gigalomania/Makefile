@@ -3,6 +3,7 @@
 
 PORTNAME=	gigalomania
 PORTVERSION=	0.27
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	https://launchpadlibrarian.net/180606846/	
 DISTNAME=	${PORTNAME}src

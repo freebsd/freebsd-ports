@@ -3,7 +3,7 @@
 
 PORTNAME=	focusblur
 PORTVERSION=	3.2.6
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	graphics
 MASTER_SITES=	http://registry.gimp.org/files/
 PKGNAMEPREFIX=	gimp-

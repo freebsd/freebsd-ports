@@ -3,6 +3,7 @@
 
 PORTNAME=	unknown-horizons
 PORTVERSION=	2013.3
+PORTREVISION=	1
 CATEGORIES=	games
 #MASTER_SITES=	SF/unknownhorizons/Unknown%20Horizons/${PORTVERSION}/
 MASTER_SITES=	GH

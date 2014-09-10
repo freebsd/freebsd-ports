@@ -4,7 +4,7 @@
 
 PORTNAME=	service-discovery-applet
 PORTVERSION=	0.4.3
-PORTREVISION=	14
+PORTREVISION=	15
 CATEGORIES=	net dns gnome
 MASTER_SITES=	http://0pointer.de/~sebest/
 

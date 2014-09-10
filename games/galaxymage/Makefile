@@ -3,7 +3,7 @@
 
 PORTNAME=	galaxymage
 PORTVERSION=	0.3.0
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	games python
 MASTER_SITES=	http://download.gna.org/tactics/
 

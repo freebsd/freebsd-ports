@@ -3,7 +3,7 @@
 
 PORTNAME=	lprof
 PORTVERSION=	20080514
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	graphics
 MASTER_SITES=	http://mirror.amdmi3.ru/distfiles/ \
 		LOCAL/amdmi3

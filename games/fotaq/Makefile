@@ -3,6 +3,7 @@
 
 PORTNAME=	fotaq
 PORTVERSION=	1.1
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	SF/scummvm/extras/Flight%20of%20the%20Amazon%20Queen
 DISTNAME=	FOTAQ_Talkie-${PORTVERSION}

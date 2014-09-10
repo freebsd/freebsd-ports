@@ -3,7 +3,7 @@
 
 PORTNAME=	quake3
 PORTVERSION=	1.32c
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	games
 MASTER_SITES=	ftp://mancubus.net/pub/idgames/idstuff/source/ \
 		http://ftp.mancubus.net/pub/idgames/idstuff/source/ \

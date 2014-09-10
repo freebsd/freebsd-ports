@@ -3,7 +3,7 @@
 
 PORTNAME=	alienblaster
 PORTVERSION=	1.1.0
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	games
 MASTER_SITES=	http://www.schwardtnet.de/alienblaster/archives/
 

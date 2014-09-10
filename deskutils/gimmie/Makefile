@@ -3,7 +3,7 @@
 
 PORTNAME=	gimmie
 PORTVERSION=	0.2.7
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	http://www.beatniksoftware.com/gimmie/releases/ \
 		LOCAL/beech

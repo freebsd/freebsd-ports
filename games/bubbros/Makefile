@@ -3,6 +3,7 @@
 
 PORTNAME=	bubbros
 PORTVERSION=	1.6.2
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	SF/bub-n-bros/bub-n-bros/${PORTVERSION}
 DIST_SUBDIR=	python

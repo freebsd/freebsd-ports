@@ -2,7 +2,7 @@
 
 PORTNAME=	frodo
 PORTVERSION=	4.1b
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	emulators tk
 MASTER_SITES=	http://frodo.cebix.net/downloads/
 DISTNAME=	FrodoV4_1b.Src

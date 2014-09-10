@@ -3,7 +3,7 @@
 
 PORTNAME=	sdl_mixer
 PORTVERSION=	1.2.12
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	audio
 MASTER_SITES=	http://www.libsdl.org/projects/SDL_mixer/release/
 DISTNAME=	SDL_mixer-${PORTVERSION}

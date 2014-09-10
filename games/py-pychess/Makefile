@@ -3,6 +3,7 @@
 
 PORTNAME=	pychess
 PORTVERSION=	0.10.1
+PORTREVISION=	1
 CATEGORIES=	games python
 MASTER_SITES=	http://www.pychess.org/download/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}

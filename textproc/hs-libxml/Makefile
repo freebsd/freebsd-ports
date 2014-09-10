@@ -2,7 +2,7 @@
 
 PORTNAME=	libxml
 PORTVERSION=	0.1.1
-PORTREVISION=	14
+PORTREVISION=	15
 CATEGORIES=	textproc haskell
 
 MAINTAINER=	haskell@FreeBSD.org

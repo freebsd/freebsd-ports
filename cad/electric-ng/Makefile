@@ -3,6 +3,7 @@
 
 PORTNAME=	electric
 PORTVERSION=	9.05
+PORTREVISION=	1
 CATEGORIES=	cad java
 MASTER_SITES=	${MASTER_SITE_GNU} \
 		http://www.staticfreesoft.com/:1 \

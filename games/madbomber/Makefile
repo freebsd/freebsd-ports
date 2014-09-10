@@ -3,7 +3,7 @@
 
 PORTNAME=	madbomber
 PORTVERSION=	0.2.5
-PORTREVISION=	13
+PORTREVISION=	14
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.tuxpaint.org/unix/x/madbomber/src/
 

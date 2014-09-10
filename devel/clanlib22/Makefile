@@ -3,7 +3,7 @@
 
 PORTNAME=	clanlib
 PORTVERSION=	2.2.12
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	devel
 MASTER_SITES=	http://www.clanlib.org/download/releases-2.0/
 DISTNAME=	ClanLib-${PORTVERSION}

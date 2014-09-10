@@ -3,7 +3,7 @@
 
 PORTNAME=	sdpara
 PORTVERSION=	7.2.1
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	math parallel
 MASTER_SITES=	http://sdpa.indsys.chuo-u.ac.jp/sdpa/files/
 DISTFILES=	${SRCFILE}#${MANUALFILE}

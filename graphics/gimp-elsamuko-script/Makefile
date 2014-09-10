@@ -3,7 +3,7 @@
 
 PORTNAME=	elsamuko
 DISTVERSION=	0.24
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	https://sites.google.com/site/${PORTNAME}/gimp/
 PKGNAMEPREFIX=	gimp-

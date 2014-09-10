@@ -3,7 +3,7 @@
 
 PORTNAME=	sdl_jewels
 PORTVERSION=	1.1.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	games
 MASTER_SITES=	http://www.linuxmotors.com/gljewel/downloads/ \
 		SF/nemysisfreebsdp/${CATEGORIES}/:icons

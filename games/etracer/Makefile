@@ -3,7 +3,7 @@
 
 PORTNAME=		etracer
 PORTVERSION=		0.4
-PORTREVISION=		9
+PORTREVISION=	10
 CATEGORIES=		games
 MASTER_SITES=		SF/extremetuxracer/extreme-tuxracer/${PORTVERSION}
 DISTNAME=		extremetuxracer-${PORTVERSION}

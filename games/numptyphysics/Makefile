@@ -3,7 +3,7 @@
 
 PORTNAME=	numptyphysics
 DISTVERSION=	0.3.r20090104
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	games
 MASTER_SITES=	http://mirror.amdmi3.ru/distfiles/ \
 		ftp://ftp.openbsd.org/pub/OpenBSD/distfiles/ \

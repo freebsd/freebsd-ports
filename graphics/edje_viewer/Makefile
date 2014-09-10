@@ -3,6 +3,7 @@
 
 PORTNAME=	edje_viewer
 PORTVERSION=	20130520
+PORTREVISION=	1
 CATEGORIES=	graphics enlightenment
 MASTER_SITES=	LOCAL/gblach/e17/extra/
 

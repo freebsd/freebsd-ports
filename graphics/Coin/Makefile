@@ -3,7 +3,7 @@
 
 PORTNAME=	Coin
 PORTVERSION=	3.1.3
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	graphics
 MASTER_SITES=	https://bitbucket.org/Coin3D/coin/downloads/
 

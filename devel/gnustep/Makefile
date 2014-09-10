@@ -3,7 +3,7 @@
 
 PORTNAME=	gnustep
 PORTVERSION=	1.28.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel lang gnustep
 MASTER_SITES=	# empty
 DISTFILES=	# empty

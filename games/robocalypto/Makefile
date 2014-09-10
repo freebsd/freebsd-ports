@@ -4,6 +4,7 @@
 PORTNAME=	robocalypto
 PORTVERSION=	0.08
 DISTVERSIONSUFFIX=	-alpha4c
+PORTREVISION=	1
 CATEGORIES=	games python
 MASTER_SITES=	GOOGLE_CODE \
 		SF/nemysisfreebsdp/games/:icons

@@ -3,6 +3,7 @@
 
 PORTNAME=	dillo
 PORTVERSION=	3.0.4
+PORTREVISION=	1
 CATEGORIES=	www ipv6
 MASTER_SITES=	http://www.dillo.org/download/ LOCAL/bf/dillo/ \
 		TEX_CTAN:hyphen

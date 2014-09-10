@@ -3,6 +3,7 @@
 
 PORTNAME=	player
 PORTVERSION=	0.1.6
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	http://www.defora.org/os/download/download/4297/
 PKGNAMEPREFIX=	deforaos-

@@ -3,7 +3,7 @@
 
 PORTNAME=	atr3d
 PORTVERSION=	0.6
-PORTREVISION=	15
+PORTREVISION=	16
 CATEGORIES=	games
 MASTER_SITES=	http://rodrigo.osorio.free.fr/freebsd/distfiles/
 DISTNAME=	${PORTNAME}_source_${PORTVERSION}

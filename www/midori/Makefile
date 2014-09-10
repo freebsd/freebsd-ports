@@ -3,7 +3,7 @@
 
 PORTNAME=	midori
 PORTVERSION=	0.5.8
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	www xfce
 MASTER_SITES=	http://www.midori-browser.org/downloads/
 DISTNAME=	${PORTNAME}_${PORTVERSION}_all_

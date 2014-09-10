@@ -3,6 +3,7 @@
 
 PORTNAME=	pcbsd-utils-qt4
 PORTVERSION=	1409841477
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.pcbsd.org/~kris/software/ \
 		ftp://ftp.pcbsd.org/pub/software/

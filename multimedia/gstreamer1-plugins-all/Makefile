@@ -3,7 +3,7 @@
 
 PORTNAME=	gstreamer1-plugins-all
 PORTVERSION=	${GST1_VERSION}
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	# empty
 DISTFILES=	# empty

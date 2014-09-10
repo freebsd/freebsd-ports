@@ -3,6 +3,7 @@
 
 PORTNAME=	mmex
 PORTVERSION=	0.9.9.0
+PORTREVISION=	1
 CATEGORIES=	finance
 MASTER_SITES=	http://www.codelathe.com/${PORTNAME}/installer/linux/ \
 		SF/moneymanagerex/moneymanagerex/Version%20${PORTVERSION}
