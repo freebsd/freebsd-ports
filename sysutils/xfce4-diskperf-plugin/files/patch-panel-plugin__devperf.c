@@ -1,6 +1,6 @@
---- ./panel-plugin/devperf.c.orig	2012-04-03 10:22:41.000000000 -0300
-+++ ./panel-plugin/devperf.c	2013-09-11 17:45:00.000000000 -0300
-@@ -225,6 +225,94 @@
+--- panel-plugin/devperf.c.orig	2012-04-03 13:22:41 UTC
++++ panel-plugin/devperf.c
+@@ -225,6 +225,93 @@
  
  	/**************************	Linux End	***************/
  
@@ -22,8 +22,13 @@
 +
 +#define MAXNAMELEN 256
 +
++struct statinfo stats;
++struct devinfo dinfo;
++
 +int DevPerfInit ()
 +{
++	stats.dinfo = &dinfo;
++
 +	return (0);
 +}   
 +
@@ -36,16 +41,10 @@
 +{
 +	struct timeval tv;
 +	struct timespec ts;
-+	struct statinfo stats;
-+	struct devinfo dinfo;
 +	struct devstat dev;
 +	kvm_t *kd = NULL;
 +	int i, found = 0;
 +	char *check_dev = (char *) p_pvDevice;
-+
-+	memset(&stats, 0, sizeof(stats));
-+	memset(&dinfo, 0, sizeof(dinfo));
-+	stats.dinfo = &dinfo;
 +
 +	if(devstat_getdevs(kd, &stats) == -1) {
 +		syslog(0, "DISKPERF: getdevs fail");
