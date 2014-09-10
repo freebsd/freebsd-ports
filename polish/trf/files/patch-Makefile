@@ -1,5 +1,5 @@
---- Makefile.orig	Fri Oct  3 18:00:32 2003
-+++ Makefile	Fri Oct  3 18:01:51 2003
+--- Makefile.orig	2003-02-02 18:33:55 UTC
++++ Makefile
 @@ -1,5 +1,7 @@
 +CC ?= gcc
 +CFLAGS+=-DFREEBSD
@@ -9,7 +9,7 @@
  
  all:
  	@case "`uname -s`" in \
-@@ -19,7 +21,7 @@
+@@ -19,14 +21,14 @@
  	gcc -DLINUX -Wall -o trfs trfs.c
  
  freebsd:
@@ -18,3 +18,12 @@
  
  trfs:
  	make all
+ 
+ install: trfs
+-	install -o root -g wheel -m 755 trfs $(DESTDIR)$(prefix)/bin
+-	install -o root -g wheel -m 755 trf  $(DESTDIR)$(prefix)/bin
++	$(BSD_INSTALL_PROGRAM) trfs $(DESTDIR)$(prefix)/bin
++	$(BSD_INSTALL_SCRIPT) trf  $(DESTDIR)$(prefix)/bin
+ 
+ clean:
+ 	rm trfs || true
