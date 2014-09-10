@@ -3,7 +3,7 @@
 
 PORTNAME=	libggz
 PORTVERSION=	${GGZ_VERSION}
-PORTREVISION=	14
+PORTREVISION=	15
 CATEGORIES=	games
 
 MAINTAINER=	ports@FreeBSD.org
@@ -11,7 +11,7 @@ COMMENT=	The GGZ Gaming Zone - Base Library
 
 LIB_DEPENDS=	libgcrypt.so:${PORTSDIR}/security/libgcrypt
 
-USES=		libtool:oldver pathfix
+USES=		libtool pathfix
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-debug
 USE_LDCONFIG=	yes
