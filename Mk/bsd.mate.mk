@@ -42,28 +42,23 @@ Mate_Pre_Include=			bsd.mate.mk
 #
 
 # non-version specific components. Do not use :build/:run on those.
-_USE_MATE_ALL=	autogen intlhack intltool ltasneededhack lthack ltverhack
-# These *hack* tools are the same as in bsd.gnome.mk but are run in
-# pre-configure because pre-patch is when we run autogen.sh.
+_USE_MATE_ALL=	autogen intlhack intltool
 
 # MATE components, you can use the :build or :run if need. Without the :build
 # and :run, it will be added in both build and run dependency. It will check
 # for the library dependency first. If not exists then do the build/run on
 # the *.pc file instead.
 _USE_MATE_ALL+=	caja common controlcenter desktop dialogs docutils icontheme \
-		keyring libmatekbd libmatekeyring libmateweather libmatewnck \
+		libmatekbd libmateweather \
 		marco menus mucharmap notificationdaemon panel polkit pluma \
 		settingsdaemon
 
 SCROLLKEEPER_DIR=	/var/db/rarian
 
-lthack_PRE_PATCH=	${FIND} ${WRKSRC} -name "configure" -type f | ${XARGS} ${REINPLACE_CMD} -e \
-				'/^LIBTOOL_DEPS="$$ac_aux_dir\/ltmain.sh"$$/s|$$|; $$ac_aux_dir/ltconfig $$LIBTOOL_DEPS;|'
-
 caja_DETECT=		${LOCALBASE}/libdata/pkgconfig/libcaja-extension.pc
-caja_BUILD_DEPENDS=	${caja_DETECT}:${PORTSDIR}/x11-fm/mate-file-manager
-caja_LIB_DEPENDS=	libcaja-extension.so:${PORTSDIR}/x11-fm/mate-file-manager
-caja_RUN_DEPENDS=	${caja_DETECT}:${PORTSDIR}/x11-fm/mate-file-manager
+caja_BUILD_DEPENDS=	${caja_DETECT}:${PORTSDIR}/x11-fm/caja
+caja_LIB_DEPENDS=	libcaja-extension.so:${PORTSDIR}/x11-fm/caja
+caja_RUN_DEPENDS=	${caja_DETECT}:${PORTSDIR}/x11-fm/caja
 
 mucharmap_DETECT=		${LOCALBASE}/libdata/pkgconfig/mucharmap-2.pc
 mucharmap_BUILD_DEPENDS=${mucharmap_DETECT}:${PORTSDIR}/deskutils/mate-character-map
@@ -108,35 +103,20 @@ intlhack_PRE_PATCH=		${FIND} ${WRKSRC} -name "intltool-merge.in" | ${XARGS} ${RE
 USE_MATE+=				intltool
 .endif
 
-keyring_DETECT=		${LOCALBASE}/libdata/pkgconfig/mate-gcr-0.pc
-keyring_BUILD_DEPENDS=	${keyring_DETECT}:${PORTSDIR}/security/mate-keyring
-keyring_LIB_DEPENDS=	libmategcr.so:${PORTSDIR}/security/mate-keyring
-keyring_RUN_DEPENDS=	${keyring_DETECT}:${PORTSDIR}/security/mate-keyring
-
 libmatekbd_DETECT=		${LOCALBASE}/libdata/pkgconfig/libmatekbd.pc
 libmatekbd_BUILD_DEPENDS=	${libmatekbd_DETECT}:${PORTSDIR}/x11/libmatekbd
 libmatekbd_LIB_DEPENDS=		libmatekbd.so:${PORTSDIR}/x11/libmatekbd
 libmatekbd_RUN_DEPENDS=		${libmatekbd_DETECT}:${PORTSDIR}/x11/libmatekbd
-
-libmatekeyring_DETECT=		${LOCALBASE}/libdata/pkgconfig/mate-keyring-1.pc
-libmatekeyring_BUILD_DEPENDS=	${libmatekeyring_DETECT}:${PORTSDIR}/security/libmatekeyring
-libmatekeyring_LIB_DEPENDS=	libmate-keyring.so:${PORTSDIR}/security/libmatekeyring
-libmatekeyring_RUN_DEPENDS=	${libmatekeyring_DETECT}:${PORTSDIR}/security/libmatekeyring
 
 libmateweather_DETECT=		${LOCALBASE}/libdata/pkgconfig/mateweather.pc
 libmateweather_BUILD_DEPENDS=	${libmateweather_DETECT}:${PORTSDIR}/net/libmateweather
 libmateweather_LIB_DEPENDS=	libmateweather.so:${PORTSDIR}/net/libmateweather
 libmateweather_RUN_DEPENDS=	${libmateweather_DETECT}:${PORTSDIR}/net/libmateweather
 
-libmatewnck_DETECT=		${LOCALBASE}/libdata/pkgconfig/libmatewnck.pc
-libmatewnck_BUILD_DEPENDS=	${libmatewnck_DETECT}:${PORTSDIR}/x11-toolkits/libmatewnck
-libmatewnck_LIB_DEPENDS=	libmatewnck.so:${PORTSDIR}/x11-toolkits/libmatewnck
-libmatewnck_RUN_DEPENDS=	${libmatewnck_DETECT}:${PORTSDIR}/x11-toolkits/libmatewnck
-
 marco_DETECT=		${LOCALBASE}/libdata/pkgconfig/libmarco-private.pc
-marco_BUILD_DEPENDS=	${marco_DETECT}:${PORTSDIR}/x11-wm/mate-window-manager
-marco_LIB_DEPENDS=	libmarco-private.so:${PORTSDIR}/x11-wm/mate-window-manager
-marco_RUN_DEPENDS=	${marco_DETECT}:${PORTSDIR}/x11-wm/mate-window-manager
+marco_BUILD_DEPENDS=	${marco_DETECT}:${PORTSDIR}/x11-wm/marco
+marco_LIB_DEPENDS=	libmarco-private.so:${PORTSDIR}/x11-wm/marco
+marco_RUN_DEPENDS=	${marco_DETECT}:${PORTSDIR}/x11-wm/marco
 
 menus_DETECT=		${LOCALBASE}/libdata/pkgconfig/libmate-menu.pc
 menus_BUILD_DEPENDS=	${menus_DETECT}:${PORTSDIR}/x11/mate-menus
@@ -158,8 +138,8 @@ polkit_LIB_DEPENDS=	libpolkit-gtk-mate-1.so:${PORTSDIR}/sysutils/mate-polkit
 polkit_RUN_DEPENDS=	${polkit_DETECT}:${PORTSDIR}/sysutils/mate-polkit
 
 pluma_DETECT=		${LOCALBASE}/libdata/pkgconfig/pluma.pc
-pluma_BUILD_DEPENDS=	${pluma_DETECT}:${PORTSDIR}/editors/mate-text-editor
-pluma_RUN_DEPENDS=	${pluma_DETECT}:${PORTSDIR}/editors/mate-text-editor
+pluma_BUILD_DEPENDS=	${pluma_DETECT}:${PORTSDIR}/editors/pluma
+pluma_RUN_DEPENDS=	${pluma_DETECT}:${PORTSDIR}/editors/pluma
 
 settingsdaemon_DETECT=		${LOCALBASE}/libdata/pkgconfig/mate-settings-daemon.pc
 settingsdaemon_BUILD_DEPENDS=	${settingsdaemon_DETECT}:${PORTSDIR}/sysutils/mate-settings-daemon
@@ -175,49 +155,6 @@ settingsdaemon_RUN_DEPENDS=	${settingsdaemon_DETECT}:${PORTSDIR}/sysutils/mate-s
 Mate_Post_Include=		bsd.mate.mk
 
 .if defined(USE_MATE)
-# Then handle the ltverhack component (it has to be done here, because
-# we rely on some bsd.autotools.mk variables, and bsd.autotools.mk is
-# included in the post-makefile section).
-.if defined(_AUTOTOOL_libtool)
-lthacks_CONFIGURE_ENV=	ac_cv_path_DOLT_BASH=
-lthacks_PRE_PATCH=		${CP} -pf ${LTMAIN} ${WRKDIR}/mate-ltmain.sh && \
-						${CP} -pf ${LIBTOOL} ${WRKDIR}/mate-libtool && \
-						for file in ${LIBTOOLFILES}; do \
-							${REINPLACE_CMD} -e \
-								'/^ltmain=/!s|$$ac_aux_dir/ltmain\.sh|${LIBTOOLFLAGS} ${WRKDIR}/mate-ltmain.sh|g; \
-								 /^LIBTOOL=/s|$$(top_builddir)/libtool|${WRKDIR}/mate-libtool|g' \
-								${PATCH_WRKSRC}/$$file; \
-						done;
-.else
-.  if ${USE_MATE:Mltverhack*}!="" || ${USE_MATE:Mltasneededhack}!=""
-IGNORE=	cannot install: ${PORTNAME} uses the ltverhack and/or ltasneededhack MATE components but does not use libtool
-.  endif
-.endif
-
-.if ${USE_MATE:Mltverhack\:*:C/^[^:]+:([^:]+).*/\1/}==""
-ltverhack_LIB_VERSION=	major=.`expr $$current - $$age`
-.else
-ltverhack_LIB_VERSION=	major=".${USE_MATE:Mltverhack\:*:C/^[^:]+:([^:]+).*/\1/}"
-.endif
-ltverhack_PATCH_DEPENDS=${LIBTOOL_DEPENDS}
-ltverhack_PRE_PATCH=	for file in mate-ltmain.sh mate-libtool; do \
-							if [ -f ${WRKDIR}/$$file ]; then \
-								${REINPLACE_CMD} -e \
-									'/freebsd-elf)/,/;;/ s|major="\.$$current"|${ltverhack_LIB_VERSION}|; \
-									 /freebsd-elf)/,/;;/ s|versuffix="\.$$current"|versuffix="$$major"|' \
-									${WRKDIR}/$$file; \
-							fi; \
-						done
-
-ltasneededhack_PATCH_DEPENDS=${LIBTOOL_DEPENDS}
-ltasneededhack_PRE_PATCH=	if [ -f ${WRKDIR}/mate-libtool ]; then \
-								${REINPLACE_CMD} -e \
-									'/^archive_cmds=/s/-shared/-shared -Wl,--as-needed/ ; \
-									/^archive_expsym_cmds=/s/-shared/-shared -Wl,--as-needed/' \
-									${WRKDIR}/mate-libtool; \
-							fi
-
-
 # Comparing between USE_MATE and _USE_MATE_ALL to make sure the component
 # exists in _USE_MATE_ALL. If it does not exist then give an error about it.
 #. for component in ${USE_MATE:O:u:C/^([^:]+).*/\1/}
@@ -227,11 +164,6 @@ ltasneededhack_PRE_PATCH=	if [ -f ${WRKDIR}/mate-libtool ]; then \
 .error cannot install: Unknown component USE_MATE=${component}
 .  endif
 . endfor
-
-. if ${USE_MATE:Mltverhack*}!= "" || ${USE_MATE:Mltasneededhack}!= ""
-MATE_PRE_PATCH+=	${lthacks_PRE_PATCH}
-CONFIGURE_ENV+=		${lthacks_CONFIGURE_ENV}
-. endif
 
 . for component in ${USE_MATE:O:u:C/^([^:]+).*/\1/}
 .  if defined(${component}_PATCH_DEPENDS)
