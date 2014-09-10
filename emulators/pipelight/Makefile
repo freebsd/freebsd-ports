@@ -3,7 +3,7 @@
 
 PORTNAME=	pipelight
 DISTVERSION=	0.2.7.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	emulators
 MASTER_SITES=	https://bitbucket.org/mmueller2012/pipelight/get/ \
 		http://repos.fds-team.de/pluginloader/v${DISTVERSION}/:plg
