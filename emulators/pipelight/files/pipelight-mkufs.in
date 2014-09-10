@@ -89,6 +89,6 @@ fi
 chown $username:$username ${userhome}/.wine-pipelight
 
 # Save to fstab
-echo "/dev/zvol/$zpool/$username-pipelight  ${userhome}/.wine-pipelight	ufs            rw              0       0" >> /etc/fstab
+echo "/dev/zvol/$zpool/$username-pipelight  ${userhome}/.wine-pipelight	ufs            rw,late              0       0" >> /etc/fstab
 
 echo "ZVOL created and mounted to: ${userhome}/.wine-pipelight"
