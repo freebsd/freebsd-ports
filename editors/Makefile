@@ -219,7 +219,7 @@
     SUBDIR += p5-Vimana
     SUBDIR += paredit-mode.el
     SUBDIR += pico-alpine
-    SUBDUR += pluma
+    SUBDIR += pluma
     SUBDIR += poedit
     SUBDIR += puff
     SUBDIR += py-room
