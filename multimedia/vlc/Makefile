@@ -302,6 +302,10 @@ PORTDOCS=	*
 
 .include <bsd.port.options.mk>
 
+.if ${PORT_OPTIONS:MPULSEAUDIO} && ${OSVERSION} <= 900044
+IGNORE=		Pulseaudio is unsupported with rtld prior to FreeBSD-9.x
+.endif
+
 .if ${PORT_OPTIONS:MSKINS}
 .if ${PORT_OPTIONS:MQT4}
 LIB_DEPENDS+=	libminizip.so:${PORTSDIR}/archivers/minizip \
