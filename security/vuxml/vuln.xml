@@ -57,6 +57,38 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="36858e78-3963-11e4-ad84-000c29f6ae42">
+    <topic>security/ossec-hids-* -- root escalation via temp files</topic>
+    <affects>
+      <package>
+	<name>ossec-hids-server</name>
+	<name>ossec-hids-client</name>
+	<name>ossec-hids-local</name>
+	<range><lt>2.8.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>OSSEC reports:</p>
+	<blockquote cite="http://www.ossec.net/?p=1135">
+	  <p>This correction will create the temp file for the hosts deny file
+	    in /var/ossec and will use mktemp where available to create
+	    NON-predictable temp file name. In cases where mktemp is not
+	    available we have written a BAD version of mktemp, but should be a
+	    little better then just process id.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2014-5284</cvename>
+      <url>http://www.ossec.net/?p=1135</url>
+    </references>
+    <dates>
+      <discovery>2014-09-09</discovery>
+      <entry>2014-09-11</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="36a415c8-3867-11e4-b522-00262d5ed8ee">
     <topic>www/chromium -- multiple vulnerabilities</topic>
     <affects>
