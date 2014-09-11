@@ -11,12 +11,3 @@
  
  CXX_FOR_BUILD = $(CXX)
  
-@@ -385,7 +385,7 @@
- 
- # Flags to pass down to all sub-makes.
- BASE_FLAGS_TO_PASS = \
--	"DESTDIR=$(DESTDIR)" \
-+	"DESTDIR=%%DESTDIR%%" \
- 	"RPATH_ENVVAR=$(RPATH_ENVVAR)" \
- 	"TARGET_SUBDIR=$(TARGET_SUBDIR)" \
- 	"bindir=$(bindir)" \
