@@ -3,7 +3,6 @@ bin/mp3rtp
 man/man1/lame.1.gz
 include/lame/lame.h
 lib/libmp3lame.a
-lib/libmp3lame.la
 lib/libmp3lame.so
 lib/libmp3lame.so.0
 lib/libmp3lame.so.0.0.0
