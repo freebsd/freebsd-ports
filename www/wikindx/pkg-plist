@@ -7,6 +7,8 @@
 %%PORTDOCS%%%%DOCSDIR%%/README_CMS
 %%PORTDOCS%%%%DOCSDIR%%/README_RSS
 %%PORTDOCS%%%%DOCSDIR%%/UPGRADE
+@owner %%WWWOWN%%
+@group %%WWWGRP%%
 %%WWWDIR%%/attachments/ATTACHMENTS
 %%WWWDIR%%/config.php
 %%WWWDIR%%/core/admin/ADMIN.php
@@ -845,4 +847,6 @@
 @dirrm %%WWWDIR%%/core
 @dirrm %%WWWDIR%%/attachments
 @dirrm %%WWWDIR%%
+@owner root
+@group wheel
 @dirrm %%DOCSDIR%%
