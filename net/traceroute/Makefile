@@ -12,13 +12,12 @@ COMMENT=	Version of 'traceroute' that shows the AS network number of each hop
 
 RELEASEDATE=	991603
 NO_WRKSUBDIR=	yes
-PLIST_FILES=	sbin/traceroute man/man8/traceroute.8.gz
+PLIST_FILES=	"@(,,4555) sbin/traceroute" man/man8/traceroute.8.gz
 USES=		tar:Z
 
 do-install:
-	${INSTALL} -c -m 4755 -o root -g bin ${WRKSRC}/traceroute \
+	${INSTALL_PROGRAM} ${WRKSRC}/traceroute \
 		${STAGEDIR}${PREFIX}/sbin
 	${INSTALL_MAN} ${WRKSRC}/traceroute.8 ${STAGEDIR}${PREFIX}/man/man8
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/sbin/traceroute
 
 .include <bsd.port.mk>
