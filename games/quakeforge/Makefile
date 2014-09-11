@@ -3,7 +3,7 @@
 
 PORTNAME=	quakeforge
 PORTVERSION=	0.5.5
-PORTREVISION=	13
+PORTREVISION=	14
 CATEGORIES=	games
 MASTER_SITES=	SF/quake/quake/${PORTVERSION}:sf
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:sf
@@ -17,14 +17,15 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png
 
-USE_AUTOTOOLS=	libtool
-USES=		bison compiler:nestedfct gmake tar:bzip2
-USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
+INSTALL_TARGET=	install-strip
+USES=		bison compiler:nestedfct gmake libtool tar:bzip2
+USE_LDCONFIG=	yes
 WANT_SDL=	yes
 
 CONFIGURE_ARGS+=--with-global-cfg=${PREFIX}/etc/quakeforge.conf \
 		--with-sharepath=${DATADIR} \
+		--disable-debug \
 		--disable-optimize
 
 OPTIONS_DEFINE=		CLIENTS OPTIMIZED_CFLAGS SDL SERVERS SKYBOXES VORBIS \
