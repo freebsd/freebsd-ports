@@ -871,7 +871,7 @@ www/CDash/xml_handlers/upload_handler.php
 @dirrm www/CDash/sql/mysql
 @dirrm www/CDash/sql
 @dirrm www/CDash/scripts
-@dirrm www/CDash/rss
+@dirrm(%%WWWOWN%%,,) www/CDash/rss
 @dirrm www/CDash/models
 @dirrm www/CDash/local
 @dirrm www/CDash/javascript/images
@@ -879,7 +879,7 @@ www/CDash/xml_handlers/upload_handler.php
 @dirrm www/CDash/iphone
 @dirrm www/CDash/images
 @dirrm www/CDash/cdash
-@dirrm www/CDash/backup
+@dirrm(%%WWWOWN%%,,) www/CDash/backup
 @dirrm www/CDash/api
 @dirrm www/CDash/ajax
 @dirrm www/CDash
