@@ -20,7 +20,7 @@ NO_PACKAGE=	yes
 SNAPDATE=	20140626144503
 
 USES=			tar:xz iconv perl5 pathfix libtool
-USE_AUTOTOOLS=		automake autoconf libtool:env
+USE_AUTOTOOLS=		automake:env autoconf:env libtoolize:env
 USE_PERL5=		build
 USE_PYTHON_BUILD=	2
 USE_LDCONFIG=		yes
@@ -134,7 +134,6 @@ debug_autoconf:
 	@${ECHO} "AUTOCONF_DIR: ${AUTOCONF_DIR}"
 	@${ECHO} "BUILD_DEPENDS: ${BUILD_DEPENDS}"
 	@${ECHO} "ACLOCAL_DIR: ${ACLOCAL_DIR}"
-	@${ECHO} "LIBTOOLFILES: ${LIBTOOLFILES}"
 	@${ECHO} "LIBTOOL_SHAREDIR: ${LIBTOOL_SHAREDIR}"
 	@${ECHO} "LIBTOOL_LIBEXECDIR: ${LIBTOOL_LIBEXECDIR}"
 	@${ECHO} "LIBTOOL_M4: ${LIBTOOL_M4}"
