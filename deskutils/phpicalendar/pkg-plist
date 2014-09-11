@@ -1,3 +1,5 @@
+@owner %%WWWOWN%%
+@group %%WWWGRP%%
 %%WWWDIR%%/AUTHORS
 %%WWWDIR%%/COPYING
 %%WWWDIR%%/README
@@ -393,3 +395,5 @@
 @dirrm %%WWWDIR%%/calendars
 @dirrm %%WWWDIR%%/admin
 @dirrmtry %%WWWDIR%%
+@owner root
+@group wheel
