@@ -3,7 +3,7 @@
 
 PORTNAME=	boinc-astropulse
 PORTVERSION=	6.01
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	astro
 MASTER_SITES=	${MASTER_SITE_LOCAL} \
 		ftp://rene-ladan.nl/pub/distfiles/
@@ -21,16 +21,14 @@ BUILD_DEPENDS=	${LOCALBASE}/include/fftw3.h:${PORTSDIR}/math/fftw3 \
 RUN_DEPENDS=	boinc_client:${PORTSDIR}/net/boinc-client
 LIB_DEPENDS=	libfftw3f.so:${PORTSDIR}/math/fftw3-float
 
-USES=		tar:xz gmake pkgconfig
-USE_AUTOTOOLS=	autoconf:env automake:env libtool
 GNU_CONFIGURE=	yes
+USES=		gmake libtool pkgconfig tar:xz
+USE_AUTOTOOLS=	libtoolize aclocal autoconf autoheader automake
+AUTOMAKE_ARGS=	-a -c -f
 WRKSRC=		${WRKDIR}/${DISTNAME}/client
 
-CFLAGS+=	-O2 -I${LOCALBASE}/include/boinc -I${LOCALBASE}/include \
-		-L${LOCALBASE}/lib
-.if defined(CPUTYPE)
-CFLAGS+=	-march=${CPUTYPE}
-.endif
+CPPFLAGS+=	-I${LOCALBASE}/include/boinc -I${LOCALBASE}/include
+LIBS+=		-L${LOCALBASE}/lib
 
 # these must match settings in ${PORTSDIR}/net/boinc-client/Makefile
 BOINC_CLIENT_USER?=	boinc
@@ -52,11 +50,6 @@ X11_CONFIGURE_ENABLE=	graphics
 
 .if ! ${PORT_OPTIONS:MX11}
 BUILD_DEPENDS+=	${LOCALBASE}/include/boinc/std_fixes.h:${PORTSDIR}/net/boinc-client
-.endif
-
-.if ${ARCH} == amd64 || ${ARCH} == i386
-# comment out if world is built with clang and port with gcc
-CFLAGS+=	-mtune=native
 .endif
 
 SETI_WORK!=	cd ${.CURDIR}/../boinc-setiathome-v7 && ${MAKE} -V WRKSRC
@@ -81,9 +74,6 @@ PLIST_SUB+=	AP_BINARY=${AP_BINARY} \
 		BOINC_CLIENT_HOME=${BOINC_CLIENT_HOME} \
 		BOINC_CLIENT_USER=${BOINC_CLIENT_USER} \
 		BOINC_CLIENT_GROUP=${BOINC_CLIENT_GROUP}
-
-pre-configure:
-	(cd ${WRKSRC} ; ./_autosetup)
 
 do-install:
 	${INSTALL} -d ${STAGEDIR}${BOINC_CLIENT_HOME}/projects
