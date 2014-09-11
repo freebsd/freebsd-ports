@@ -1,0 +1,239 @@
+@unexec /bin/rm %D/share/icons/hicolor/icon-theme.cache 2>/dev/null || /usr/bin/true
+@owner root
+@group wheel
+bin/xboard
+bin/cmail
+man/man6/xboard.6.gz
+share/applications/xboard-config.desktop
+share/applications/xboard-fen-viewer.desktop
+share/applications/xboard-pgn-viewer.desktop
+share/applications/xboard-tourney.desktop
+share/applications/xboard.desktop
+share/icons/hicolor/48x48/apps/xboard.png
+share/icons/hicolor/scalable/apps/xboard.svg
+share/mime/packages/xboard.xml
+%%DATADIR%%/pixmaps/textures/board32.png
+%%DATADIR%%/pixmaps/textures/board48.png
+%%DATADIR%%/pixmaps/textures/cross32.png
+%%DATADIR%%/pixmaps/textures/cross48.png
+%%DATADIR%%/pixmaps/textures/ini32.png
+%%DATADIR%%/pixmaps/textures/ini48.png
+%%DATADIR%%/themes/conf/chu
+%%DATADIR%%/themes/conf/ics
+%%DATADIR%%/themes/conf/judkins
+%%DATADIR%%/themes/conf/judkins.fen
+%%DATADIR%%/themes/conf/mini
+%%DATADIR%%/themes/conf/mini.fen
+%%DATADIR%%/themes/conf/sho
+%%DATADIR%%/themes/conf/sho.fen
+%%DATADIR%%/themes/conf/shogi
+%%DATADIR%%/themes/conf/xiangqi
+%%DATADIR%%/themes/conf/xq
+%%DATADIR%%/themes/default/BlackAdvisor.svg
+%%DATADIR%%/themes/default/BlackArchbishop.svg
+%%DATADIR%%/themes/default/BlackBishop.svg
+%%DATADIR%%/themes/default/BlackCanon.svg
+%%DATADIR%%/themes/default/BlackChancellor.svg
+%%DATADIR%%/themes/default/BlackClaw.svg
+%%DATADIR%%/themes/default/BlackCobra.svg
+%%DATADIR%%/themes/default/BlackCommoner.svg
+%%DATADIR%%/themes/default/BlackCrownedBishop.svg
+%%DATADIR%%/themes/default/BlackCrownedRook.svg
+%%DATADIR%%/themes/default/BlackDolphin.svg
+%%DATADIR%%/themes/default/BlackElephant.svg
+%%DATADIR%%/themes/default/BlackGold.svg
+%%DATADIR%%/themes/default/BlackGoldKnight.svg
+%%DATADIR%%/themes/default/BlackGoldLance.svg
+%%DATADIR%%/themes/default/BlackGoldPawn.svg
+%%DATADIR%%/themes/default/BlackGoldSilver.svg
+%%DATADIR%%/themes/default/BlackHCrown.svg
+%%DATADIR%%/themes/default/BlackHSword.svg
+%%DATADIR%%/themes/default/BlackHawk.svg
+%%DATADIR%%/themes/default/BlackKing.svg
+%%DATADIR%%/themes/default/BlackKnight.svg
+%%DATADIR%%/themes/default/BlackLance.svg
+%%DATADIR%%/themes/default/BlackLeopard.svg
+%%DATADIR%%/themes/default/BlackLion.svg
+%%DATADIR%%/themes/default/BlackMarshall.svg
+%%DATADIR%%/themes/default/BlackNightrider.svg
+%%DATADIR%%/themes/default/BlackPawn.svg
+%%DATADIR%%/themes/default/BlackPrincess.svg
+%%DATADIR%%/themes/default/BlackPromoBishop.svg
+%%DATADIR%%/themes/default/BlackPromoDragon.svg
+%%DATADIR%%/themes/default/BlackPromoHSword.svg
+%%DATADIR%%/themes/default/BlackPromoHorse.svg
+%%DATADIR%%/themes/default/BlackPromoRook.svg
+%%DATADIR%%/themes/default/BlackPromoSword.svg
+%%DATADIR%%/themes/default/BlackQueen.svg
+%%DATADIR%%/themes/default/BlackRook.svg
+%%DATADIR%%/themes/default/BlackSword.svg
+%%DATADIR%%/themes/default/BlackUnicorn.svg
+%%DATADIR%%/themes/default/WhiteAdvisor.svg
+%%DATADIR%%/themes/default/WhiteArchbishop.svg
+%%DATADIR%%/themes/default/WhiteBishop.svg
+%%DATADIR%%/themes/default/WhiteCanon.svg
+%%DATADIR%%/themes/default/WhiteChancellor.svg
+%%DATADIR%%/themes/default/WhiteClaw.svg
+%%DATADIR%%/themes/default/WhiteCobra.svg
+%%DATADIR%%/themes/default/WhiteCommoner.svg
+%%DATADIR%%/themes/default/WhiteCrownedBishop.svg
+%%DATADIR%%/themes/default/WhiteCrownedRook.svg
+%%DATADIR%%/themes/default/WhiteDolphin.svg
+%%DATADIR%%/themes/default/WhiteElephant.svg
+%%DATADIR%%/themes/default/WhiteGold.svg
+%%DATADIR%%/themes/default/WhiteGoldKnight.svg
+%%DATADIR%%/themes/default/WhiteGoldLance.svg
+%%DATADIR%%/themes/default/WhiteGoldPawn.svg
+%%DATADIR%%/themes/default/WhiteGoldSilver.svg
+%%DATADIR%%/themes/default/WhiteHCrown.svg
+%%DATADIR%%/themes/default/WhiteHSword.svg
+%%DATADIR%%/themes/default/WhiteHawk.svg
+%%DATADIR%%/themes/default/WhiteKing.svg
+%%DATADIR%%/themes/default/WhiteKnight.svg
+%%DATADIR%%/themes/default/WhiteLance.svg
+%%DATADIR%%/themes/default/WhiteLeopard.svg
+%%DATADIR%%/themes/default/WhiteLion.svg
+%%DATADIR%%/themes/default/WhiteMarshall.svg
+%%DATADIR%%/themes/default/WhiteNightrider.svg
+%%DATADIR%%/themes/default/WhitePawn.svg
+%%DATADIR%%/themes/default/WhitePrincess.svg
+%%DATADIR%%/themes/default/WhitePromoBishop.svg
+%%DATADIR%%/themes/default/WhitePromoDragon.svg
+%%DATADIR%%/themes/default/WhitePromoHSword.svg
+%%DATADIR%%/themes/default/WhitePromoHorse.svg
+%%DATADIR%%/themes/default/WhitePromoRook.svg
+%%DATADIR%%/themes/default/WhitePromoSword.svg
+%%DATADIR%%/themes/default/WhiteQueen.svg
+%%DATADIR%%/themes/default/WhiteRook.svg
+%%DATADIR%%/themes/default/WhiteSword.svg
+%%DATADIR%%/themes/default/WhiteUnicorn.svg
+%%DATADIR%%/themes/default/eo_Analyzing.svg
+%%DATADIR%%/themes/default/eo_Black.svg
+%%DATADIR%%/themes/default/eo_Clear.svg
+%%DATADIR%%/themes/default/eo_Ponder.svg
+%%DATADIR%%/themes/default/eo_Thinking.svg
+%%DATADIR%%/themes/default/eo_Unknown.svg
+%%DATADIR%%/themes/default/eo_White.svg
+%%DATADIR%%/themes/default/icon_black.svg
+%%DATADIR%%/themes/default/icon_white.svg
+%%DATADIR%%/themes/shogi/BlackAdvisor.svg
+%%DATADIR%%/themes/shogi/BlackBishop.svg
+%%DATADIR%%/themes/shogi/BlackCrownedBishop.svg
+%%DATADIR%%/themes/shogi/BlackCrownedRook.svg
+%%DATADIR%%/themes/shogi/BlackGold.svg
+%%DATADIR%%/themes/shogi/BlackGoldKnight.svg
+%%DATADIR%%/themes/shogi/BlackGoldLance.svg
+%%DATADIR%%/themes/shogi/BlackGoldPawn.svg
+%%DATADIR%%/themes/shogi/BlackGoldSilver.svg
+%%DATADIR%%/themes/shogi/BlackKing.svg
+%%DATADIR%%/themes/shogi/BlackKnight.svg
+%%DATADIR%%/themes/shogi/BlackLance.svg
+%%DATADIR%%/themes/shogi/BlackPawn.svg
+%%DATADIR%%/themes/shogi/BlackRook.svg
+%%DATADIR%%/themes/shogi/WhiteAdvisor.svg
+%%DATADIR%%/themes/shogi/WhiteBishop.svg
+%%DATADIR%%/themes/shogi/WhiteCrownedBishop.svg
+%%DATADIR%%/themes/shogi/WhiteCrownedRook.svg
+%%DATADIR%%/themes/shogi/WhiteGold.svg
+%%DATADIR%%/themes/shogi/WhiteGoldKnight.svg
+%%DATADIR%%/themes/shogi/WhiteGoldLance.svg
+%%DATADIR%%/themes/shogi/WhiteGoldPawn.svg
+%%DATADIR%%/themes/shogi/WhiteGoldSilver.svg
+%%DATADIR%%/themes/shogi/WhiteKing.svg
+%%DATADIR%%/themes/shogi/WhiteKnight.svg
+%%DATADIR%%/themes/shogi/WhiteLance.svg
+%%DATADIR%%/themes/shogi/WhitePawn.svg
+%%DATADIR%%/themes/shogi/WhiteRook.svg
+%%DATADIR%%/themes/textures/hatch.png
+%%DATADIR%%/themes/textures/wood_d.png
+%%DATADIR%%/themes/textures/wood_l.png
+%%DATADIR%%/themes/textures/xqboard.png
+%%DATADIR%%/themes/xiangqi/BlackAdvisor.svg
+%%DATADIR%%/themes/xiangqi/BlackCanon.svg
+%%DATADIR%%/themes/xiangqi/BlackElephant.svg
+%%DATADIR%%/themes/xiangqi/BlackGold.svg
+%%DATADIR%%/themes/xiangqi/BlackKnight.svg
+%%DATADIR%%/themes/xiangqi/BlackPawn.svg
+%%DATADIR%%/themes/xiangqi/BlackRook.svg
+%%DATADIR%%/themes/xiangqi/WhiteAdvisor.svg
+%%DATADIR%%/themes/xiangqi/WhiteCanon.svg
+%%DATADIR%%/themes/xiangqi/WhiteElephant.svg
+%%DATADIR%%/themes/xiangqi/WhiteGold.svg
+%%DATADIR%%/themes/xiangqi/WhiteKnight.svg
+%%DATADIR%%/themes/xiangqi/WhitePawn.svg
+%%DATADIR%%/themes/xiangqi/WhiteRook.svg
+%%DATADIR%%/sounds/README
+%%DATADIR%%/sounds/alarm.wav
+%%DATADIR%%/sounds/challenge.wav
+%%DATADIR%%/sounds/channel.wav
+%%DATADIR%%/sounds/channel1.wav
+%%DATADIR%%/sounds/ching.wav
+%%DATADIR%%/sounds/click.wav
+%%DATADIR%%/sounds/cymbal.wav
+%%DATADIR%%/sounds/ding1.wav
+%%DATADIR%%/sounds/draw.wav
+%%DATADIR%%/sounds/drip.wav
+%%DATADIR%%/sounds/gong.wav
+%%DATADIR%%/sounds/honkhonk.wav
+%%DATADIR%%/sounds/kibitz.wav
+%%DATADIR%%/sounds/laser.wav
+%%DATADIR%%/sounds/lose.wav
+%%DATADIR%%/sounds/move.wav
+%%DATADIR%%/sounds/penalty.wav
+%%DATADIR%%/sounds/phone.wav
+%%DATADIR%%/sounds/pop.wav
+%%DATADIR%%/sounds/pop2.wav
+%%DATADIR%%/sounds/request.wav
+%%DATADIR%%/sounds/roar.wav
+%%DATADIR%%/sounds/seek.wav
+%%DATADIR%%/sounds/shout.wav
+%%DATADIR%%/sounds/slap.wav
+%%DATADIR%%/sounds/squeak.wav
+%%DATADIR%%/sounds/sshout.wav
+%%DATADIR%%/sounds/swish.wav
+%%DATADIR%%/sounds/tell.wav
+%%DATADIR%%/sounds/thud.wav
+%%DATADIR%%/sounds/unfinished.wav
+%%DATADIR%%/sounds/whipcrak.wav
+%%DATADIR%%/sounds/win.wav
+%%DATADIR%%/sounds/woodthunk.wav
+%%NLS%%share/locale/da/LC_MESSAGES/xboard.mo
+%%NLS%%share/locale/de/LC_MESSAGES/xboard.mo
+%%NLS%%share/locale/es/LC_MESSAGES/xboard.mo
+%%NLS%%share/locale/it/LC_MESSAGES/xboard.mo
+%%NLS%%share/locale/nl/LC_MESSAGES/xboard.mo
+%%NLS%%share/locale/ru/LC_MESSAGES/xboard.mo
+%%NLS%%share/locale/tr/LC_MESSAGES/xboard.mo
+%%NLS%%share/locale/uk/LC_MESSAGES/xboard.mo
+%%NLS%%share/locale/vi/LC_MESSAGES/xboard.mo
+%%NLS%%share/locale/zh_CN/LC_MESSAGES/xboard.mo
+%%NLS%%share/locale/zh_HK/LC_MESSAGES/xboard.mo
+%%NLS%%share/locale/zh_TW/LC_MESSAGES/xboard.mo
+@dirrmtry share/locale/zh_HK/LC_MESSAGES
+@dirrmtry share/locale/zh_HK
+@dirrmtry %%DATADIR%%/pixmaps/textures
+@dirrmtry %%DATADIR%%/pixmaps
+@dirrmtry %%DATADIR%%/sounds
+@dirrmtry %%DATADIR%%/themes/conf
+@dirrmtry %%DATADIR%%/themes/default
+@dirrmtry %%DATADIR%%/themes/shogi
+@dirrmtry %%DATADIR%%/themes/textures
+@dirrmtry %%DATADIR%%/themes/xiangqi
+@dirrmtry %%DATADIR%%/themes
+@dirrmtry %%DATADIR%%
+@dirrmtry share/games
+@dirrmtry share/icons/hicolor/48x48/apps
+@dirrmtry share/icons/hicolor/48x48
+@dirrmtry share/icons/hicolor/scalable/apps
+@dirrmtry share/icons/hicolor/scalable
+@dirrmtry share/icons/hicolor
+@dirrmtry share/icons
+@dirrmtry share/mime/packages
+@dirrmtry share/mime
+@sample etc/xboard.conf.sample
+@exec /usr/local/bin/update-mime-database %D/share/mime
+@unexec /usr/local/bin/update-mime-database %D/share/mime
+@exec /usr/local/bin/gtk-update-icon-cache -q -f %D/share/icons/hicolor 2>/dev/null || /usr/bin/true
+@unexec /usr/local/bin/gtk-update-icon-cache -q -f %D/share/icons/hicolor 2>/dev/null || /usr/bin/true
+@exec /usr/local/bin/update-desktop-database -q > /dev/null || /usr/bin/true
+@unexec /usr/local/bin/update-desktop-database -q > /dev/null || /usr/bin/true

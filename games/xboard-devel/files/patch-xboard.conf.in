@@ -1,0 +1,15 @@
+--- xboard.conf.in.orig	2014-07-02 14:34:53.000000000 +0200
++++ xboard.conf.in	2014-08-21 00:56:04.000000000 +0200
+@@ -70,11 +70,7 @@
+ ; Engines & adjudicatons in engine-engine games
+ ;
+ -firstChessProgram fairymax
+--firstChessProgramNames {fairymax
+-"Fruit 2.1" -fcp fruit -fUCI
+-"Crafty" -fcp crafty
+-"GNU Chess" -fcp gnuchess
+-}
++-firstChessProgramNames {}
+ -niceEngines 0
+ -polyglotDir ""
+ -adapterCommand 'polyglot -noini -ec "%fcp" -ed "%fd" -uci NalimovCache=%defaultCacheSizeEGTB -pg ShowTbHits=true'
