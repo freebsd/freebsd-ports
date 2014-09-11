@@ -2,25 +2,24 @@
 # $FreeBSD$
 
 PORTNAME=	openxcom
-PORTVERSION=	0.9.0
-PORTREVISION=	4
+PORTVERSION=	1.0.0
 CATEGORIES=	games
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Open-source reimplementation of the original X-Com
 
 LICENSE=	GPLv3
-LICENSE_FILE=	${WRKSRC}/COPYING
+LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 LIB_DEPENDS=	libyaml-cpp.so:${PORTSDIR}/devel/yaml-cpp
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	SupSuper
 GH_PROJECT=	OpenXcom
-GH_TAGNAME=	v0.9
-GH_COMMIT=	5c8b540
+GH_TAGNAME=	v1.0
+GH_COMMIT=	b396c74
 
-USES=		gmake pkgconfig
+USES=		compiler:c++11-lang gmake pkgconfig
 USE_SDL=	sdl mixer image gfx
 USE_GL=		gl
 
@@ -37,15 +36,7 @@ PORTDATA=	*
 
 OPTIONS_DEFINE=	DOCS
 
-.include <bsd.port.options.mk>
-
-.if ${OSVERSION} < 1000000
-USE_GCC=	yes
-.endif
-
 post-patch:
-	@${REINPLACE_CMD} -e 's|malloc.h|stdlib.h|' ${WRKSRC}/src/pch.h \
-		${WRKSRC}/src/Engine/Surface.cpp
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|' ${WRKSRC}/README.txt \
 		${WRKSRC}/src/Engine/CrossPlatform.cpp
 
@@ -55,6 +46,6 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/res/linux/icons/openxcom.svg ${STAGEDIR}${PREFIX}/share/pixmaps/
 	cd ${WRKSRC}/bin && ${COPYTREE_SHARE} data ${STAGEDIR}${DATADIR}/
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README.txt ${STAGEDIR}${DOCSDIR}/
+	${INSTALL_DATA} ${WRKSRC}/README.txt ${WRKSRC}/CHANGELOG.txt ${STAGEDIR}${DOCSDIR}/
 
 .include <bsd.port.mk>
