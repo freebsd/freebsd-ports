@@ -1,0 +1,25 @@
+--- xboard.texi.orig	2014-01-06 18:15:22.000000000 +0100
++++ xboard.texi	2014-08-14 23:43:17.000000000 +0200
+@@ -64,6 +64,7 @@
+ * Chess Servers::   Using XBoard with an Internet Chess Server (ICS).
+ * Firewalls::       Connecting to a chess server through a firewall.
+ * Environment::     Environment variables.
++* Zippy::           XBoard as computer player on an Internet Chess Server (ICS).
+ * Limitations::     Known limitations and/or bugs.
+ * Problems::        How and where to report any problems you run into.
+ * Contributors::    People who have helped developing XBoard.
+@@ -3805,6 +3806,14 @@
+ but see the SOCKS Web site at http://www.socks.permeo.com/.
+ If you are missing SOCKS, try http://www.funbureau.com/.
+ 
++@node Zippy
++@chapter Zippy
++@cindex Zippy
++@cindex ICS
++@cindex ICS computer player
++Be a computer player on an Internet Chess Server (ICS).
++See file @code{%%DOCSDIR%%/zippy.README} for description.
++
+ @node Environment
+ @chapter Environment variables
+ @cindex Environment variables
