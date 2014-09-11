@@ -12,8 +12,6 @@ COMMENT=	XML stream reformatter
 
 LICENSE=	GPLv2
 
-#MANCOMPRESSED=	no
-
 SOURCES=	error.c indent.c buffer.c main.c
 
 PLIST_FILES=	bin/xmlindent man/man1/xmlindent.1.gz
