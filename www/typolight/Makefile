@@ -13,15 +13,10 @@ NO_BUILD=	yes
 USE_PHP=	xsl mysql iconv gd
 USE_MYSQL=	yes
 SUB_FILES=	pkg-message
-WWWDIR?=	${PREFIX}/www/${PORTNAME}
-
-.include <bsd.port.pre.mk>
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${WWWDIR}
 	${CP} -R ${WRKSRC}/ ${STAGEDIR}${WWWDIR}
-	${TOUCH} ${STAGEDIR}${WWWDIR}/system/config/localconfig.php
-	@${CHOWN} ${WWWOWN} ${STAGEDIR}${WWWDIR}/system/config/localconfig.php
 
 create-plist:
 	@${FIND} -s ${WRKSRC}/${file} -not -type d \
@@ -31,4 +26,4 @@ create-plist:
 	@${FIND} -ds ${WRKSRC}/${file} -type d \
 	| ${SED} -e 's,^${WRKSRC},@dirrm %%WWWDIR%%,' >> ${PLIST}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
