@@ -161,6 +161,7 @@ sbin/slapindex
 sbin/slappasswd
 sbin/slapschema
 sbin/slaptest
+@dirrmtry %%ETCDIR%%/schema
 %%MODULES%%@dirrmtry libexec/openldap
 @dirrmtry(%%LDAP_USER%%,%%LDAP_GROUP%%,) %%LDAP_RUN_DIR%%
 @dirrmtry(%%LDAP_USER%%,%%LDAP_GROUP%%,) %%DATABASEDIR%%

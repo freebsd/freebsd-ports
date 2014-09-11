@@ -538,6 +538,7 @@ post-install:
 		${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/lib$${library}-${OPENLDAP_MAJOR}.so.${OPENLDAP_SHLIB_MAJOR}; \
 	done
 .else
+	@${MKDIR} ${STAGEDIR}${LDAP_RUN_DIR}
 .if ${PORT_OPTIONS:MDYNAMIC_BACKENDS}
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/libexec/openldap/*.so.${OPENLDAP_SHLIB_MAJOR}
 .endif
