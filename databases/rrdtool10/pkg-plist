@@ -6,6 +6,7 @@ include/rrd.h
 lib/librrd.a
 lib/librrd.so
 lib/librrd.so.0
+lib/librrd.so.0.0.0
 %%PERL5_MAN3%%/RRDp.3.gz
 %%PERL5_MAN3%%/RRDs.3.gz
 %%SITE_PERL%%/RRDp.pm
