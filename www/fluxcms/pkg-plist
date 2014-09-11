@@ -1,3 +1,5 @@
+@owner %%WWWOWN%%
+@group %%WWWGRP%%
 %%INSTALLDIR%%/LICENSE
 %%INSTALLDIR%%/NEWS
 %%INSTALLDIR%%/README
@@ -2544,14 +2546,6 @@
 %%INSTALLDIR%%/webinc/tests/web.php
 %%INSTALLDIR%%/xml/blogcomment.xml
 %%INSTALLDIR%%/xml/contact.xml
-@exec mkdir -p %D/%%INSTALLDIR%%/admin/data/admin/navi/tree
-@exec mkdir -p %D/%%INSTALLDIR%%/admin/webinc/selenium/html-xpath
-@exec mkdir -p %D/%%INSTALLDIR%%/inc/bx/editors/ooo/skeleton/Pictures
-@exec mkdir -p %D/%%INSTALLDIR%%/install/dist/_hosts/live
-@exec mkdir -p %D/%%INSTALLDIR%%/install/dist/_hosts
-@exec mkdir -p %D/%%INSTALLDIR%%/themes/mobile/preview
-@exec mkdir -p %D/%%INSTALLDIR%%/webinc/fck/editor/skins/default/toolbar
-@exec chown -R %%WWWOWN%%:%%WWWGRP%% %D/%%INSTALLDIR%%
 @dirrm %%INSTALLDIR%%/xml
 @dirrm %%INSTALLDIR%%/webinc/tests
 @dirrm %%INSTALLDIR%%/webinc/plugins/patforms
@@ -3085,3 +3079,5 @@
 @dirrm %%INSTALLDIR%%/admin
 @dirrmtry %%INSTALLDIR%%/themes
 @dirrmtry %%INSTALLDIR%%
+@owner root
+@group wheel

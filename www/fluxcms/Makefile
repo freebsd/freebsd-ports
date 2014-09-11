@@ -40,6 +40,5 @@ post-patch:
 do-install:
 	@${MKDIR} ${STAGEDIR}${INSTALLDIR}
 	@${CP} -R ${WRKSRC}/*  ${STAGEDIR}${INSTALLDIR}
-	@${CHOWN} ${WWWOWN}:${WWWGRP}  ${STAGEDIR}${INSTALLDIR}
 
 .include <bsd.port.post.mk>
