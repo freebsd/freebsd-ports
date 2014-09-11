@@ -4744,6 +4744,7 @@
     SUBDIR += yajl
     SUBDIR += yajl-tcl
     SUBDIR += yaml-cpp
+    SUBDIR += yaml-cpp03
     SUBDIR += yasm
     SUBDIR += yasm-devel
     SUBDIR += z80-asm
