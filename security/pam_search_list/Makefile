@@ -10,7 +10,7 @@ DISTNAME=	${PORTNAME:S/_/-/g}-${PORTVERSION}
 MAINTAINER=	v.a.popov@gmail.com
 COMMENT=	PAM module to search arbitrary file for user
 
-USES=		tar:xz
+USES=		tar:xz uidfix
 
 PLIST_FILES=	lib/libpam_search_list.a \
 		lib/libpam_search_list_p.a \
