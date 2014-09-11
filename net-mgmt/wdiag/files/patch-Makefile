@@ -9,9 +9,9 @@
 -	$(INSTALL) -o root wstop $(DEST_PREFIX)/bin
 -	$(INSTALL) -o root -d $(DEST_PREFIX)/share/examples/wdiag
 -	$(INSTALL) -o root ../examples/wdiag.conf $(DEST_PREFIX)/share/examples/wdiag
-+	$(INSTALL) -o root westell $(DESTDIR)$(DEST_PREFIX)/bin
-+	$(INSTALL) -o root wstart $(DESTDIR)$(DEST_PREFIX)/bin
-+	$(INSTALL) -o root wstop $(DESTDIR)$(DEST_PREFIX)/bin
-+	$(INSTALL) -o root -d $(DESTDIR)$(DEST_PREFIX)/share/examples/wdiag
-+	$(INSTALL) -o root ../examples/wdiag.conf $(DESTDIR)$(DEST_PREFIX)/share/examples/wdiag
++	$(BSD_INSTALL_PROGRAM) westell $(DESTDIR)$(DEST_PREFIX)/bin
++	$(BSD_INSTALL_PROGRAM) wstart $(DESTDIR)$(DEST_PREFIX)/bin
++	$(BSD_INSTALL_PROGRAM) wstop $(DESTDIR)$(DEST_PREFIX)/bin
++	$(INSTALL) -d $(DESTDIR)$(DEST_PREFIX)/share/examples/wdiag
++	$(BSD_INSTALL_DATA) ../examples/wdiag.conf $(DESTDIR)$(DEST_PREFIX)/share/examples/wdiag
  
