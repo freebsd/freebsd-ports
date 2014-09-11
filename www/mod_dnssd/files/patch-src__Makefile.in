@@ -1,5 +1,5 @@
---- src/Makefile.in.orig	2009-01-22 17:42:02.000000000 +0100
-+++ src/Makefile.in	2014-07-25 15:51:40.137601137 +0200
+--- src/Makefile.in.orig
++++ src/Makefile.in
 @@ -15,9 +15,10 @@
  # permissions and limitations under the License.
  
@@ -18,7 +18,7 @@
  
  install: all
 -	$(APXS) -i -a mod_dnssd.la 
-+	$(APXS) $(APXS_STAGE) -i -a mod_dnssd.la 
++	$(APXS) $(APXS_STAGE) -i mod_dnssd.la
  
  clean:
  	rm -rf *.o *.so *.loT .deps/ *.la *.lo *.slo .libs/
