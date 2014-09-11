@@ -1,0 +1,88 @@
+@(%%DCCUSER%%,%%DCCGROUP%%,4555) bin/cdcc
+%%DCCIFD%%bin/dccif-test
+@(%%DCCUSER%%,%%DCCGROUP%%,4555) bin/dccproc
+dcc/cgi-bin/README
+dcc/cgi-bin/chgpasswd
+dcc/cgi-bin/common
+dcc/cgi-bin/common.pm
+dcc/cgi-bin/edit-whiteclnt
+dcc/cgi-bin/http2https
+dcc/cgi-bin/list-log
+dcc/cgi-bin/list-msg
+dcc/cgi-bin/webuser-notify
+@sample dcc/cgi-bin/footer.sample
+@sample dcc/cgi-bin/header.sample
+dcc/libexec/check_ip_range
+dcc/libexec/ck2ip
+dcc/libexec/cron-dccd
+%%DCCIFD%%dcc/libexec/dccifd
+%%DCCM%%dcc/libexec/dccm
+%%DCCD%%dcc/libexec/dbclean
+%%DCCD%%dcc/libexec/dblist
+%%DCCD%%dcc/libexec/dump-clients
+dcc/libexec/dcc-nagios
+dcc/libexec/dcc-stats-collect
+dcc/libexec/dcc-stats-graph
+dcc/libexec/dcc-stats-init
+dcc/libexec/dcc-stats-update
+%%DCCD%%dcc/libexec/dccd
+@(%%DCCUSER%%,%%DCCGROUP%%,4555) dcc/libexec/dccsight
+%%IFD_MILT%%dcc/libexec/dns-helper
+dcc/libexec/fetchblack
+dcc/libexec/fetchids
+dcc/libexec/fetch-testmsg-whitelist
+dcc/libexec/fix-map
+dcc/libexec/hackmc
+dcc/libexec/list-clients
+dcc/libexec/logger
+dcc/libexec/newwebuser
+dcc/libexec/rcDCC
+dcc/libexec/start-dccd
+dcc/libexec/start-dccifd
+dcc/libexec/start-dccm
+dcc/libexec/start-grey
+dcc/libexec/stats-get
+dcc/libexec/stop-dccd
+dcc/libexec/updatedcc
+dcc/libexec/uninstalldcc
+dcc/libexec/wlist
+man/man8/cdcc.8.gz
+man/man8/dbclean.8.gz
+man/man8/dblist.8.gz
+man/man8/dcc.8.gz
+man/man8/dccd.8.gz
+man/man8/dccifd.8.gz
+man/man8/dccm.8.gz
+man/man8/dccproc.8.gz
+man/man8/dccsight.8.gz
+@dirrm dcc/libexec
+@dirrm dcc/cgi-bin
+%%ALT_HOME%%@dirrmtry dcc
+%%ALT_HOME%%@cwd /var
+@owner %%DCCUSER%%
+@group %%DCCGROUP%%
+@sample dcc/dcc_conf.sample
+@sample dcc/flod.sample
+@sample dcc/grey_flod.sample
+@sample dcc/grey_whitelist.sample
+@sample dcc/ids.sample
+@sample dcc/map.txt.sample
+@sample dcc/map.sample
+@sample dcc/whiteclnt.sample
+@sample dcc/whitecommon.sample
+@sample dcc/whitelist.sample
+%%IFD_MILT%%@unexec [ -e %D/dcc/whiteclnt.dccw ] && rm -f %D/dcc/whiteclnt.dccw || true
+%%IFD_MILT%%@unexec [ -e %D/dcc/whiteclnt.dccx ] && rm -f %D/dcc/whiteclnt.dccx || true
+%%DCCD%%@unexec [ -e %D/dcc/dcc_db ] && rm -f %D/dcc/dcc_db || true
+%%DCCD%%@unexec [ -e %D/dcc/dcc_db.hash ] && rm -f %D/dcc/dcc_db.hash || true
+%%DCCD%%@unexec [ -e %D/dcc/flod.map ] && rm -f %D/dcc/flod.map || true
+%%DCCD%%@unexec [ -e %D/dcc/dccd_clients ] && rm -f %D/dcc/dccd_clients || true
+%%DCCGREY%%@unexec [ -e %D/dcc/grey_db.hash ] && rm -f %D/dcc/grey_db.hash || true
+%%DCCGREY%%@unexec [ -e %D/dcc/grey_flod.map ] && rm -f %D/dcc/grey_flod.map || true
+%%DCCGREY%%@unexec [ -e %D/dcc/grey_clients ] && rm -f %D/dcc/grey_clients || true
+@dirrmtry dcc/log
+%%NO_ALT_HOME%%@group wheel
+%%NO_ALT_HOME%%@owner root
+@dirrmtry dcc
+%%ALT_HOME%%@group wheel
+%%ALT_HOME%%@owner root

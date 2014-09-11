@@ -1,0 +1,19 @@
+ALT_HOME:
+
+DCC keeps its config files in its home directory but writes
+status and database files there as well.  This latter point
+means that the FreeBSD default home directory for DCC,
+/usr/local/dcc, cannot be mounted read-only.
+
+DCC's default home dir of /var/dcc breaks FreeBSD hierarchy
+conventions, but allows for a read-only /usr.
+
+Setting ALT_HOME on will set DCC's home to /var/dcc, but keep
+its binaries in /usr/local/dcc/libexec.  Since this also means
+DCC's config files will be in /var/dcc, for convenience a soft
+link from /usr/local/etc/dcc to /var/dcc may be created.
+
+Note also that dccifd's default socket location is DCC's home,
+so if /var/dcc is used for the home, then programs like
+SpamAssassin may need to be explicitly told where to find
+dccifd's socket.

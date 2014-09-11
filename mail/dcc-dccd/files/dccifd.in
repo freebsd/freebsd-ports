@@ -1,0 +1,64 @@
+#!/bin/sh
+
+# $FreeBSD$
+#
+# PROVIDE: dccifd
+# REQUIRE: LOGIN
+# BEFORE: mail
+# KEYWORD: shutdown
+
+#
+# To enable dccifd add the following lines to /etc/rc.conf:
+#
+#dccifd_enable="YES"
+#
+# and in %%DCCHOME%%/dcc_conf change:
+#
+#DCCIFD_ENABLE=off
+#
+# to:
+#
+#DCCIFD_ENABLE=on
+#
+#
+# See %%DCCHOME%%/dcc_conf to configure startup options
+
+. /etc/rc.subr
+
+name=dccifd
+rcvar=dccifd_enable
+
+load_rc_config $name
+
+# Set defaults
+: ${dccifd_enable:="NO"}
+: ${dccifd_home="%%DCCHOME%%"}
+: ${dccifd_libexec="%%PREFIX%%/dcc/libexec"}
+: ${dccifd_conf="$dccifd_home/dcc_conf"}
+
+pidfile=${dccifd_pidfile:-"/var/run/dcc/dccifd.pid"}
+procname="${dccifd_libexec}/dccifd"
+required_dirs="${dccifd_home} ${dccifd_libexec}"
+required_files="${dccifd_conf} ${dccifd_libexec}/rcDCC"
+
+start_precmd="start_precmd"
+start_cmd="start_dcc"
+
+start_precmd()
+{
+X=`grep ^DCCIFD_ENABLE ${dccifd_conf}`
+eval $X
+if [ "$DCCIFD_ENABLE"  != "on" ]
+then
+	echo "Warning ${X} needs to be on in ${dccifd_conf} to start dccifd"
+	return 1
+fi
+}
+
+start_dcc()
+{
+	echo Starting dccifd.
+	${dccifd_libexec}/rcDCC -m dccifd start
+}
+
+run_rc_command "$1"

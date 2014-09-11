@@ -1,0 +1,10 @@
+--- dccsight/Makefile.in.orig	2014-08-06 14:43:42 UTC
++++ dccsight/Makefile.in
+@@ -46,7 +46,5 @@
+ 
+ @MAKE_DOT@ifndef NO_SUID
+ # dccsight needs to be SUID to read the server passwords
+-BINMODE	=4$(DCC_MODE)
+-BINOWN	=@DCCSUID@
+ @MAKE_DOT@endif
+ @MAKE_INC2@

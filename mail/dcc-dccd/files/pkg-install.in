@@ -1,0 +1,26 @@
+#!/bin/sh
+# $FreeBSD: /tmp/pcvs/ports/mail/dcc-dccd/files/pkg-install.in,v 1.2 2011-07-04 19:39:45 crees Exp $
+
+PREFIX=${PKG_PREFIX:-%%PREFIX%%}
+
+DCCHOME=%%DCCHOME%%
+
+if [ "$2" = "POST-INSTALL" ]; then
+
+	echo "=> Generating unique passwords for your DCC install..."
+	echo "=>"
+	echo "=> Note this will make map.sample, map.txt.sample and"
+	echo "=> ids.sample fail their MD5 checks on package removal."
+
+	/bin/sh $PREFIX/dcc/libexec/fix-map \
+	-n .sample \
+	-I $DCCHOME/ids.sample -i $DCCHOME/ids \
+	-T $DCCHOME/map.txt.sample -t $DCCHOME/map.txt \
+	-m $DCCHOME/map
+
+        for file in ids map map.txt ; do
+                /bin/cp -p $DCCHOME/$file $DCCHOME/${file}.sample
+        done
+fi
+
+exit 0

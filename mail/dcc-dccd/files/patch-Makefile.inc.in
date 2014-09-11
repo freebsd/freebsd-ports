@@ -1,0 +1,23 @@
+--- Makefile.inc.in.orig	2014-08-06 14:43:42 UTC
++++ Makefile.inc.in
+@@ -102,7 +102,6 @@
+ DCC_OWN	    =@DCCSUID@
+ @MAKE_DOT@endif
+ @MAKE_DOT@endif
+-BINOWN	    =$(DCC_OWN)
+ 
+ @MAKE_DOT@ifndef DCC_GRP
+ DCC_GRP	    =@DCC_GRP@
+@@ -129,9 +128,9 @@
+ SET_MANOWN=
+ SET_DCCOWN=
+ @MAKE_DOT@else
+-SET_BINOWN=-o $(BINOWN) -g $(BINGRP)
+-SET_MANOWN=-o $(MANOWN) -g $(MANGRP)
+-SET_DCCOWN=-o @DCCSUID@ -g $(BINGRP)
++SET_BINOWN=
++SET_MANOWN=
++SET_DCCOWN=
+ @MAKE_DOT@endif
+ 
+ @MAKE_DOT@ifdef PROG

@@ -49,7 +49,7 @@ CONFIGURE_ARGS=	SYSCONFDIR="${PREFIX}/etc" \
 OPTIONS_DEFINE=		AS_ROOT GNUPG SSL UPDATE_AND_COMPILE
 OPTIONS_GROUP=		DATABASE PLUGINS
 OPTIONS_GROUP_DATABASE=	MYSQL PGSQL
-OPTIONS_GROUP_PLUGINS=	DKIM PYZOR RAZOR RELAY_COUNTRY SPF_QUERY
+OPTIONS_GROUP_PLUGINS=	DCC DKIM PYZOR RAZOR RELAY_COUNTRY SPF_QUERY
 OPTIONS_DEFAULT=	AS_ROOT GNUPG SSL UPDATE_AND_COMPILE
 
 AS_ROOT_DESC=		Run spamd as root (recommended)
@@ -60,6 +60,7 @@ UPDATE_AND_COMPILE_DESC=Download and compile rulesets (recommended)
 DATABASE_DESC=		Optional user-config/bayes database backends
 
 PLUGINS_DESC=		Optional SpamAssassin plugins
+DCC_DESC=		DCC digest list support (mail/dcc-dccd)
 DKIM_DESC=		Verify DKIM records (mail/p5-Mail-DKIM)
 PYZOR_DESC=		Pyzor digest list support (mail/pyzor)
 RAZOR_DESC=		Vipul's Razor digest list support (mail/razor-agents)
@@ -71,6 +72,7 @@ SUB_LIST+=	SPAMD_OWN="${USERS}:${GROUPS}"
 PLIST_SUB+=	USER=${USERS} GROUP=${GROUPS}
 OPTIONS_SUB=	yes
 
+DCC_RUN_DEPENDS=	dcc-dccd>=1.3.111:${PORTSDIR}/mail/dcc-dccd
 DKIM_RUN_DEPENDS=	p5-IO-Socket-SSL>=0:${PORTSDIR}/security/p5-IO-Socket-SSL \
 			p5-Mail-DKIM>=0.37:${PORTSDIR}/mail/p5-Mail-DKIM \
 			p5-Crypt-OpenSSL-RSA>=0.26_1:${PORTSDIR}/security/p5-Crypt-OpenSSL-RSA
@@ -88,6 +90,7 @@ SSL_CONFIGURE_ON=	ENABLE_SSL=yes
 SSL_CONFIGURE_OFF=	ENABLE_SSL=no
 
 # plugin names in rules/*.pre, for enabling/disabling
+DCC_INITVAR=		DCC
 DKIM_INITVAR=		DKIM
 PYZOR_INITVAR=		Pyzor
 RAZOR_INITVAR=		Razor2
