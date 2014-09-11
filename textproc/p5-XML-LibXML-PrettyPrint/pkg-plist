@@ -1,6 +1,8 @@
+bin/xml-pretty
 %%SITE_PERL%%/XML/LibXML/PrettyPrint.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/LibXML/PrettyPrint/.packlist
 %%PERL5_MAN3%%/XML::LibXML::PrettyPrint.3.gz
+man/man1/xml-pretty.1.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/LibXML/PrettyPrint
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/LibXML
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML
