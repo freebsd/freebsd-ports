@@ -1,6 +1,6 @@
---- Makefile.in.orig	Sun Aug  8 12:40:15 2004
-+++ Makefile.in	Wed Mar 16 21:26:50 2005
-@@ -701,21 +701,7 @@
+--- Makefile.am.orig	2004-08-04 15:20:32 UTC
++++ Makefile.am
+@@ -33,21 +33,7 @@
  # lets schedule the perl stuff for installation
  # the special call to install-sh is because the -d switch is not portable
  # mac os X has its perl module in bundles so it seems
@@ -21,9 +21,9 @@
 -	fi
 +install-data-local: site-perl-inst
  
- # rules for building the perl module
  
-@@ -795,8 +781,8 @@
+ # use relaxed rules when building dists
+@@ -137,8 +123,8 @@
  site-perl-inst: site-perl-install
  
  site-perl-install: all perl-piped/Makefile perl-shared/Makefile
