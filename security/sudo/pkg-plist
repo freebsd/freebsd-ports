@@ -1,9 +1,7 @@
 bin/sudo
 bin/sudoedit
 bin/sudoreplay
-@unexec if cmp -s %D/etc/sudoers.sample %D/etc/sudoers; then rm -f %D/etc/sudoers; fi
-etc/sudoers.sample
-@exec if [ ! -f %D/etc/sudoers ] ; then cp -p %D/%F %B/sudoers; fi
+@sample etc/sudoers.sample
 @unexec if cmp -s %D/etc/pam.d/sudo.default %D/etc/pam.d/sudo; then rm -f %D/etc/pam.d/sudo ; fi
 etc/pam.d/sudo.default
 @exec if [ ! -f %D/etc/pam.d/sudo ] ; then cp -p %D/%F %B/sudo; fi
