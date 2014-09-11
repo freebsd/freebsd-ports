@@ -1,3 +1,5 @@
+@owner %%WWWOWN%%
+@group %%WWWGRP%%
 %%WWWDIR%%/LICENSE
 %%WWWDIR%%/README
 %%WWWDIR%%/ajaxcreatetable.php
@@ -139,3 +141,5 @@
 @dirrm %%WWWDIR%%/exports
 @dirrm %%WWWDIR%%/css
 @dirrmtry %%WWWDIR%%
+@owner root
+@group wheel
