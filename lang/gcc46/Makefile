@@ -3,7 +3,7 @@
 
 PORTNAME=	gcc46
 PORTVERSION=	4.6.4
-PORTREVISION=	2
+PORTREVISION=	3
 PORTEPOCH=	1
 CATEGORIES=	lang java
 MASTER_SITES=	${MASTER_SITE_GCC}
@@ -32,7 +32,7 @@ DISTVERSION=	${PORTVERSION}
 GCC_VERSION=	${PORTVERSION:C/(.+)\.[0-9]{8}/\1/}
 SUFFIX=		${PORTVERSION:C/([0-9]+).([0-9]+).*/\1\2/}
 ONLY_FOR_ARCHS=	amd64 i386 ia64 powerpc sparc64
-USES=		gmake iconv makeinfo perl5 tar:bzip2
+USES=		gmake iconv libtool makeinfo perl5 tar:bzip2
 USE_BINUTILS=	yes
 USE_PERL5=	build
 SSP_UNSAFE=	yes
@@ -125,9 +125,7 @@ full-regression-test: build
 	; ${SRCDIR}/contrib/test_summary
 .endif
 
-post-install:
-	${FIND} ${STAGEDIR}${TARGLIB} ${STAGEDIR}${LIBEXEC} \
-	        -name '*.la' | ${XARGS} ${RM}
+post-stage:
 	${RM} -f ${STAGEDIR}${PREFIX}/man/man7/*
 	${RM} -f ${STAGEDIR}${PREFIX}/bin/rebuild-gcj-db${SUFFIX} \
 	         ${STAGEDIR}${PREFIX}/man/man1/rebuild-gcj-db${SUFFIX}.1
