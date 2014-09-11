@@ -3,18 +3,18 @@
 
 PORTNAME=	sqlite
 PORTVERSION=	2.8.17
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	databases
 MASTER_SITES=	http://www.sqlite.org/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	SQL database engine in a C library
 
-USES=		gmake pkgconfig readline
-USE_AUTOTOOLS=	libtool
+GNU_CONFIGURE=	yes
+USES=		gmake libtool pkgconfig readline
 USE_LDCONFIG=	YES
 
-CONFIGURE_ARGS=		--prefix=${PREFIX} --with-hints=freebsd.hints
+CONFIGURE_ARGS=	--with-hints=freebsd.hints
 
 DOCSDIR=	${PREFIX}/share/doc/sqlite2
 EXAMPLESDIR=	${PREFIX}/share/examples/sqlite2
@@ -55,7 +55,7 @@ MAKE_ENV+=	TCL_VER=${TCL_VER}
 
 post-patch:
 	@${REINPLACE_CMD} -e "s/tclsh \$$(TOP)/\$$(TCLSH) \$$(TOP)/g" \
-		 -e "s|\./libtool|${LIBTOOL}|g" ${WRKSRC}/Makefile.in
+		${WRKSRC}/Makefile.in
 .if ${PORT_OPTIONS:MTCL} || !empty(PORT_OPTIONS:MDOCS)
 	@${ECHO} "config_TARGET_TCL_INC=\"-I${TCL_INCLUDEDIR}\"" \
 		> ${WRKSRC}/freebsd.hints
