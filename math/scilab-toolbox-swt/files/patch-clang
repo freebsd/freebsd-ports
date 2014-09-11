@@ -1,0 +1,118 @@
+--- ./sci_gateway/c/swt_common.h.orig
++++ ./sci_gateway/c/swt_common.h
+@@ -323,10 +323,10 @@
+ //extern int is_scalar (int row, int col);
+ //extern int is_vector (int row, int col);
+ //extern int is_matrix (int row, int col);
+-extern void void_check (int number, int *type);
+-extern void scalar_check (int number, int *type);
+-extern void vector_check (int number, int *type);
+-extern void matrix_check (int number, int *type);
++extern int void_check (int number, int *type);
++extern int scalar_check (int number, int *type);
++extern int vector_check (int number, int *type);
++extern int matrix_check (int number, int *type);
+ extern void real_or_complex (int number, int *type);
+ extern int sci_matrix_vector_real (int number);
+ extern int sci_matrix_vector_complex (int number);
+@@ -341,8 +341,8 @@
+ extern int scalar_string_check(char *l, char c);
+ extern int length_check(int number, int leng);
+ extern int vector_length_check(int number1, int number2);
+-extern void vector_length_compare(int number, int leng, int *res);
+-extern void matrix_length_compare(int number, int rowLeng, 
++extern int vector_length_compare(int number, int leng, int *res);
++extern int matrix_length_compare(int number, int rowLeng, 
+ 				  int colLeng, int *resRow, 
+ 				  int *resCol);
+ extern int matrix_length_check (int number1, int number2);
+--- ./sci_gateway/c/validate.c.orig
++++ ./sci_gateway/c/validate.c
+@@ -42,7 +42,7 @@
+ /*-------------------------------------------
+  * Dimension Checking
+  *-----------------------------------------*/
+-void void_check (int number, int *type)
++int void_check (int number, int *type)
+ {
+   int row, col;
+   GetMatrixdims(number,&row,&col);
+@@ -50,10 +50,10 @@
+     *type = 1;
+   else
+     *type = 0;
+-  //return;
++  return 1;
+ }
+ 
+-void scalar_check (int number, int *type)
++int scalar_check (int number, int *type)
+ {
+   int row, col;
+   GetMatrixdims(number,&row,&col);
+@@ -61,10 +61,10 @@
+     *type = 1;
+   else
+     *type = 0;
+-  //return;
++  return 1;
+ }
+ 
+-void vector_check (int number, int *type)
++int vector_check (int number, int *type)
+ {
+   int row, col;
+   GetMatrixdims(number,&row,&col);
+@@ -74,10 +74,10 @@
+     *type = 1;
+   else
+     *type = 0;
+-  //return;
++  return 1;
+ }
+ 
+-void matrix_check (int number, int *type)
++int matrix_check (int number, int *type)
+ {
+   int row, col;
+   GetMatrixdims(number,&row,&col);
+@@ -85,7 +85,7 @@
+     *type = 1;
+   else
+     *type = 0;
+-  //return;
++  return 1;
+ }
+ 
+ void real_or_complex (int number, int *type)
+@@ -234,7 +234,7 @@
+     return 0;
+ }
+ 
+-void vector_length_compare(int number, int leng, int *res)
++int vector_length_compare(int number, int leng, int *res)
+ {
+   int row, col;
+   GetMatrixdims(number,&row,&col);
+@@ -244,10 +244,10 @@
+     *res = 1;
+   else
+     *res = -1;
+-  return;
++  return 1;
+ }
+ 
+-void matrix_length_compare(int number, int rowLeng, int colLeng, 
++int matrix_length_compare(int number, int rowLeng, int colLeng, 
+ 			   int *resRow, int *resCol)
+ {
+   int row, col;
+@@ -264,7 +264,7 @@
+     *resCol = 1;
+   else
+     *resCol = -1;
+-  return;
++  return 1;
+ }
+ 
+ int 
