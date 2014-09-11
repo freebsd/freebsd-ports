@@ -6,8 +6,6 @@ DISTFILES=	${PORTNAME}${PKGNAMESUFFIX}-src-${PORTVERSION}.0${EXTRACT_SUFX}:plugi
 
 COMMENT=	Low-level RDP plugin for the Mupen64Plus
 
-BROKEN=		Fails to build
-
 LIB_DEPENDS=	libmupen64plus.so.2:${PORTSDIR}/emulators/mupen64plus-core
 
 USE_GL=		gl glu glew
@@ -17,7 +15,7 @@ MASTERDIR=	${.CURDIR}/../mupen64plus-core
 
 OPTIONS_DEFINE=	#
 
-CFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/${PORTNAME}
+CFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/GL -I${LOCALBASE}/include/${PORTNAME}
 LDFLAGS+=	-L${LOCALBASE}/lib
 
 EXTRACT_AFTER_ARGS=	#
