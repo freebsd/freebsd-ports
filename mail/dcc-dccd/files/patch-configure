@@ -1,0 +1,11 @@
+--- configure.orig	2014-08-06 14:43:42 UTC
++++ configure
+@@ -1950,7 +1950,7 @@
+ 	#   compressed via /usr/share/mk
+ 	mancat=man
+ 	MANX='$(MAN8)'
+-	USE_DCCMANINSTALL='# USE_DCCMANINSTALL=no'
++	USE_DCCMANINSTALL='USE_DCCMANINSTALL=yes'
+ 	;;
+     DragonFly)
+ 	# default to /usr/local/man/man8 and use nroff files, possibly

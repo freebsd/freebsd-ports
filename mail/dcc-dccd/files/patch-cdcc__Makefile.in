@@ -1,0 +1,10 @@
+--- cdcc/Makefile.in.orig	2014-08-06 14:43:42 UTC
++++ cdcc/Makefile.in
+@@ -45,7 +45,5 @@
+ 
+ @MAKE_DOT@ifndef NO_SUID
+ # cdcc needs to be SUID to read the server passwords
+-BINMODE	=4$(DCC_MODE)
+-BINOWN	=@DCCSUID@
+ @MAKE_DOT@endif
+ @MAKE_INC2@

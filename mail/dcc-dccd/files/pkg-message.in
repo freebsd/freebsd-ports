@@ -1,0 +1,53 @@
+
+==========================================================================
+
+Installation Notes
+------------------
+
+Make certain you edit %%DCCHOME%%/dcc_conf to enable the daemons you 
+wish to run, in addition to adding their respective dcc*_enable="YES" 
+lines to /etc/rc.conf or /etc/rc.conf.local.
+
+Daemon startup flags are also specified in %%DCCHOME%%/dcc_conf.
+
+
+If you run the DCC server, %%LOCALBASE%%/dcc/libexec/cron-dccd should be
+run at least daily from the crontab to clean old checksums from the DB.
+
+
+If you just run the client, you may still wish to add
+%%LOCALBASE%%/dcc/libexec/cron-dccd to your crontab to clean up the
+client's log files on a regular basis. dcc_conf's DBCLEAN_LOGDAYS
+variable controls the number of days to keep logs.
+
+
+If your site handles more than 100,000 messages per day, to decrease the
+load on the public DCC servers and increase the responsiveness of your
+DCC clients, you should set up your own, local DCC server connected to 
+the global network of DCC servers.  See: 
+
+http://www.dcc-servers.net/dcc/#local-server
+
+
+==========================================================================
+
+
+DCC Usage Restrictions Notice
+-----------------------------
+
+The free DCC source is available only for non-commercial and some other
+uses.  It is not available to organizations that sell anti-spam appliances
+or provide managed email services as opposed to common Internet service.
+It has always been wrong to take and sell the CPU cycles, bandwidth, and
+human system administration labor of the public DCC servers.
+
+Please read the LICENSE file in the DCC source:
+
+%%WRKSRC%%/LICENSE
+
+or at:
+
+http://www.dcc-servers.net/dcc/dcc-tree/LICENSE
+
+
+==========================================================================
