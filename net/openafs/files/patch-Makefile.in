@@ -1,5 +1,5 @@
---- openafs-1.6.1/Makefile.in.orig	2012-03-27 08:03:34.000000000 +0900
-+++ openafs-1.6.1/Makefile.in	2012-06-24 06:37:47.000000000 +0900
+--- Makefile.in.orig	2012-03-27 08:03:34.000000000 +0900
++++ Makefile.in	2012-06-24 06:37:47.000000000 +0900
 @@ -338,6 +338,7 @@
 
  venus: cmd comerr volser ptserver libafscp

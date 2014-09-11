@@ -1,0 +1,41 @@
+--- configure.orig	2014-05-14 23:21:46.000000000 +0900
++++ configure	2014-05-22 08:44:37.000000000 +0900
+@@ -30264,13 +30264,15 @@
+ 		;;
+ 
+ 	i386_fbsd_*)
++		KERN_OPTMZ=
++		LWP_OPTMZ=
+ 		MT_CFLAGS='-DAFS_PTHREAD_ENV -pthread -D_REENTRANT ${XCFLAGS}'
+-		MT_LIBS="-pthread"
+-		PAM_OPTMZ=-O2
+-		PAM_CFLAGS="-pipe -fPIC"
++		MT_LIBS="${_MT_LIBS:--pthread}"
++		PAM_OPTMZ=
++		PAM_CFLAGS="${_PAM_CFLAGS:--pipe -fPIC}"
+ 		SHLIB_LDFLAGS="-shared -Xlinker -x"
+ 		SHLIB_LINKER="${MT_CC} -shared"
+-		XCFLAGS="-pipe"
++		XCFLAGS="${_XCFLAGS:--pipe}"
+ 		;;
+ 
+ 	i386_dfbsd_*)
+@@ -30284,12 +30286,15 @@
+ 		;;
+ 
+ 	amd64_fbsd_*)
++		KERN_OPTMZ=
++		LWP_OPTMZ=
+ 		MT_CFLAGS='-DAFS_PTHREAD_ENV -pthread -D_REENTRANT ${XCFLAGS}'
+-		MT_LIBS="-pthread"
+-		PAM_CFLAGS="-O2 -pipe -fPIC"
++		MT_LIBS="${_MT_LIBS:--pthread}"
++		PAM_OPTMZ=
++		PAM_CFLAGS="${_PAM_CFLAGS:--O2 -pipe -fPIC}"
+ 		SHLIB_LDFLAGS="-shared -Xlinker -x"
+ 		SHLIB_LINKER="${MT_CC} -shared"
+-		XCFLAGS="-O2 -pipe -fPIC"
++		XCFLAGS="${_XCFLAGS:--O2 -pipe -fPIC}"
+ 		;;
+ 
+ 	*nbsd2*|*nbsd3*|*nbsd4*|*nbsd5*|*nbsd6*)
