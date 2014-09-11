@@ -5,4 +5,6 @@ projects/%%SETI_SITE%%/%%AP_BINARY%%
 %%X11%%projects/%%SETI_SITE%%/ap_graphics
 @dirrmtry projects/%%SETI_SITE%%
 @dirrmtry projects
-@exec chown -R %%BOINC_CLIENT_USER%%:%%BOINC_CLIENT_GROUP%% projects/
+@owner root
+@group wheel
+@cwd
