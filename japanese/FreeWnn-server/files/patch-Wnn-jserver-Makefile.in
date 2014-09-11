@@ -1,12 +1,14 @@
-Index: Wnn/jserver/Makefile.in
-===================================================================
-RCS file: /home/cvs/private/hrs/freewnn/Wnn/jserver/Makefile.in,v
-retrieving revision 1.1.1.1
-retrieving revision 1.2
-diff -u -p -r1.1.1.1 -r1.2
---- Wnn/jserver/Makefile.in	20 Dec 2008 07:13:30 -0000	1.1.1.1
-+++ Wnn/jserver/Makefile.in	2 Jan 2009 21:09:34 -0000	1.2
-@@ -80,13 +80,15 @@ SRC20= $(WNNETCSRC)/getopt.c
+--- Wnn/jserver/Makefile.in.orig	2004-05-22 01:39:32.000000000 +0900
++++ Wnn/jserver/Makefile.in	2014-09-10 01:24:03.000000000 +0900
+@@ -36,7 +36,6 @@
+ top_builddir = @top_builddir@
+ 
+ INSTALL         = @INSTALL@ $(INSTALLFLAGS)
+-LOCAL_INSTFLAGS = -o $(WNNOWNER)
+ 
+  JSERVERDEFINES = -DJSERVER -DWRITE_CHECK
+        INCLUDES = -I$(WNNINCLUDESRC) -I$(top_builddir) -I$(srcdir)
+@@ -80,13 +79,15 @@
  OBJ20= getopt.o
  SRC21= $(WNNETCSRC)/getopt1.c
  OBJ21= getopt1.o
@@ -24,7 +26,16 @@ diff -u -p -r1.1.1.1 -r1.2
  
  all:: jserver
  
-@@ -151,6 +153,9 @@ $(OBJ20) : $(SRC20) $(WNNINCLUDESRC)/get
+@@ -104,7 +105,7 @@
+ install:: jserver
+ 	@if [ -d $(DESTDIR)$(JWNNBINDIR) ]; then set +x; \
+ 	else (set -x; $(MKDIRHIER) $(DESTDIR)$(JWNNBINDIR)); fi
+-	$(LIBTOOL) --mode=install $(INSTALL) $(INSTPGMFLAGS) $(INSTUIDFLAGS) $(LOCAL_INSTFLAGS) jserver $(DESTDIR)$(JWNNBINDIR)/jserver
++	$(LIBTOOL) --mode=install $(INSTALL) $(INSTPGMFLAGS) jserver $(DESTDIR)$(JWNNBINDIR)/jserver
+ 
+ $(OBJ0) : $(SRC0)
+ 	$(CC) -c $(CFLAGS) $(SERVERINITDEF) $(SOLINGERDEFS) $(srcdir)/`basename $@ .o`.c
+@@ -151,6 +152,9 @@
  $(OBJ21) : $(SRC21) $(WNNINCLUDESRC)/getopt.h
  	$(CC) -c $(CFLAGS) $(WNNETCSRC)/`basename $@ .o`.c
  
