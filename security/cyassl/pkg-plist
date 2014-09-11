@@ -2,7 +2,7 @@ bin/cyassl-config
 lib/libcyassl.a
 lib/libcyassl.so
 lib/libcyassl.so.5
-lib/libcyassl.so.5.0.6
+lib/libcyassl.so.5.1.0
 libdata/pkgconfig/cyassl.pc
 include/cyassl/openssl/asn1.h
 include/cyassl/openssl/bio.h
@@ -44,6 +44,7 @@ include/cyassl/ctaocrypt/blake2-impl.h
 include/cyassl/ctaocrypt/blake2-int.h
 include/cyassl/ctaocrypt/blake2.h
 include/cyassl/ctaocrypt/camellia.h
+include/cyassl/ctaocrypt/chacha.h
 include/cyassl/ctaocrypt/coding.h
 include/cyassl/ctaocrypt/compress.h
 include/cyassl/ctaocrypt/des3.h
@@ -64,6 +65,7 @@ include/cyassl/ctaocrypt/misc.h
 include/cyassl/ctaocrypt/mpi_class.h
 include/cyassl/ctaocrypt/mpi_superclass.h
 include/cyassl/ctaocrypt/pkcs7.h
+include/cyassl/ctaocrypt/poly1305.h
 include/cyassl/ctaocrypt/pwdbased.h
 include/cyassl/ctaocrypt/rabbit.h
 include/cyassl/ctaocrypt/random.h
