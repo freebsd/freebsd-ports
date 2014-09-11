@@ -3,7 +3,7 @@
 
 PORTNAME=	phpicalendar
 PORTVERSION=	2.24
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	deskutils www
 MASTER_SITES=	SF/${PORTNAME}/OldFiles
 
@@ -13,6 +13,7 @@ COMMENT=	Webbased calendar with iCal support
 USES=		tar:tgz
 NO_BUILD=	yes
 USE_PHP=	session pcre
+PLIST_SUB=	WWWOWN="${WWWOWN}" WWWGRP="${WWWGRP}"
 SUB_FILES=	pkg-message
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/${PORTNAME}
 
@@ -24,13 +25,10 @@ do-install:
 	${MKDIR} ${STAGEDIR}${WWWDIR}
 .for dir in admin calendars functions images includes languages rss templates
 	@${CP} -Rv ${WRKSRC}/${dir} ${STAGEDIR}${WWWDIR}
-	${CHOWN} -R ${WWWOWN}:${WWWGRP} ${STAGEDIR}${WWWDIR}/${dir}
 .endfor
 .for f in index.php TIMEZONES error.php day.php preferences.php print.php search.php week.php month.php year.php README COPYING AUTHORS
 	@${CP} -v ${WRKSRC}/${f} ${STAGEDIR}${WWWDIR}
-	${CHOWN} ${WWWOWN}:${WWWGRP} ${STAGEDIR}${WWWDIR}/${f}
 .endfor
 	@${CP} -v ${WRKSRC}/config.inc-dist.php ${STAGEDIR}${WWWDIR}/config.inc.php.sample
-	${CHOWN} ${WWWOWN}:${WWWGRP} ${STAGEDIR}${WWWDIR}/config.inc.php.sample
 
 .include <bsd.port.mk>
