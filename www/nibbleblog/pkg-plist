@@ -1,3 +1,5 @@
+@owner %%WWWOWN%%
+@group %%WWWGRP%%
 %%WWWDIR%%/COPYRIGHT.txt
 %%WWWDIR%%/LICENSE.txt
 %%WWWDIR%%/.htaccess
@@ -177,4 +179,5 @@
 @dirrm %%WWWDIR%%/admin/ajax
 @dirrm %%WWWDIR%%/admin
 @dirrmtry %%WWWDIR%%
-@exec mkdir -p %D/%%WWWDIR%%/content
+@owner root
+@group wheel
