@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	rpm
-PORTVERSION=	4.11.2
-PORTREVISION=	2
+PORTVERSION=	4.11.3
 CATEGORIES=	archivers
 MASTER_SITES=	http://rpm.org/releases/rpm-${PORTVERSION:R}.x/ \
 		ftp://ftp.mirrorservice.org/sites/ftp.rpm.org/pub/rpm/dist/rpm-${PORTVERSION:E}.x/
@@ -20,7 +19,7 @@ OPTIONS_DEFINE=	PYTHON NLS DOCS
 OPTIONS_DEFAULT=PYTHON NLS
 OPTIONS_SUB=	yes
 PYTHON_CONFIGURE_ENABLE=python
-PYTHON_USE=	PYTHON=2.7
+PYTHON_USES=	python:2.7
 NLS_CONFIGURE_ENABLE=nls
 NLS_USES=	gettext
 NLS_LIBS=	-lintl
