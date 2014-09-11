@@ -3,7 +3,7 @@
 
 PORTNAME=	opencolorio
 PORTVERSION=	1.0.8
-PORTREVISION?=	2
+PORTREVISION?=	3
 CATEGORIES=	graphics multimedia
 
 MAINTAINER?=	FreeBSD@Shaneware.biz
@@ -39,7 +39,7 @@ CMAKE_ARGS+=	-DOCIO_USE_SSE:BOOL=OFF
 .if ${SLAVE_PORT} == no
 BUILD_DEPENDS=	python:${PORTSDIR}/lang/python
 LIB_DEPENDS=	libtinyxml.so:${PORTSDIR}/textproc/tinyxml \
-		libyaml-cpp.so:${PORTSDIR}/devel/yaml-cpp
+		libyaml-cpp03.so:${PORTSDIR}/devel/yaml-cpp03
 USE_PYTHON=	yes
 USE_LDCONFIG=	yes
 CMAKE_ARGS+=	-DOCIO_BUILD_APPS:BOOL=OFF \
@@ -59,5 +59,10 @@ CMAKE_ARGS+=	-DOCIO_BUILD_DOCS:BOOL=ON
 .else
 CMAKE_ARGS+=	-DOCIO_BUILD_DOCS:BOOL=OFF
 .endif
+
+post-patch:
+	@${REINPLACE_CMD} -e '/pkg_check_modules/ s|yaml-cpp|&03|' \
+		${WRKSRC}/CMakeLists.txt
+	@${REINPLACE_CMD} -e 's|yaml-cpp|&03|' ${WRKSRC}/src/core/OCIOYaml.h
 
 .include <bsd.port.mk>
