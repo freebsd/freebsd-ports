@@ -68,7 +68,7 @@ lib/libpyglib-gi-2.0-%%PYTHON_VERSION%%.so.0.0.0
 %%PYTHON_SITELIBDIR%%/gi/types.py
 %%PYTHON_SITELIBDIR%%/gi/types.pyc
 %%PYTHON_SITELIBDIR%%/gi/types.pyo
-%%PYTHON_SITELIBDIR%%/pygobject-%%VERSION%%-py%%PYTHON_VER%%-%%OPSYS%%-%%UNAME_R%%-%%ARCH%%.egg-info
+%%PYTHON_SITELIBDIR%%/pygobject-%%VERSION%%-py%%PYTHON_VER%%-%%OPSYS%%-%%UNAME_R%%-%%UNAME_M%%.egg-info
 %%PYTHON_SITELIBDIR%%/pygtkcompat/__init__.py
 %%PYTHON_SITELIBDIR%%/pygtkcompat/__init__.pyc
 %%PYTHON_SITELIBDIR%%/pygtkcompat/__init__.pyo
