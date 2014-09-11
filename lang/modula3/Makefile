@@ -26,7 +26,7 @@ DST1=		m3-bootstrap.AMD64.FREEBSD.92.tar.bz2:boot
 DST2=		m3-bootstrap.x86_64.DRAGONFLY.36.tar.bz2:boot
 
 ONLY_FOR_ARCHS=		amd64
-CONFLICTS_INSTALL=	cvsup-*
+CONFLICTS_INSTALL=	binary-cvsup-*
 
 USES=		gmake pgsql
 USE_XORG=	xaw xmu xext xt sm ice x11
