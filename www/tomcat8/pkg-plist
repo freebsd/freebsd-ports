@@ -31,7 +31,7 @@
 %%T%%/lib/catalina-storeconfig.jar
 %%T%%/lib/catalina-tribes.jar
 %%T%%/lib/catalina.jar
-%%T%%/lib/ecj-4.4RC4.jar
+%%T%%/lib/ecj-4.4.jar
 %%T%%/lib/el-api.jar
 %%T%%/lib/jasper-el.jar
 %%T%%/lib/jasper.jar
@@ -136,6 +136,7 @@
 %%T%%/webapps/docs/config/resources.html
 %%T%%/webapps/docs/config/server.html
 %%T%%/webapps/docs/config/service.html
+%%T%%/webapps/docs/config/sessionidgenerator.html
 %%T%%/webapps/docs/config/systemprops.html
 %%T%%/webapps/docs/config/valve.html
 %%T%%/webapps/docs/connectors.html
