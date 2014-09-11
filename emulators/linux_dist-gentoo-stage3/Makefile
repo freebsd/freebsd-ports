@@ -13,6 +13,7 @@ LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	multi
 
 RESTRICTED=	binaries licensed under GNU GPL without accompanying source
+BROKEN=		Fails to package
 
 USES=		tar:bzip2
 DIST_SUBDIR=		gentoo-linux
@@ -35,7 +36,6 @@ CONFLICTS=	linux_base-7* linux_base-8* linux_base-debian* \
 USE_LINUX_PREFIX=	YES
 PREFIX_SUBDIR=
 .else
-BROKEN=		Fails to package
 NO_MTREE=	YES
 PKGNAMEPREFIX=	linux_dist-
 PREFIX_SUBDIR=	${PORTNAME}/
