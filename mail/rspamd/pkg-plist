@@ -3,11 +3,6 @@ bin/rspamd
 bin/rspamc-%%RSPAMDVERSION%%
 bin/rspamc
 %%REDIRECTOR%%bin/rspamd-redirector
-lib/librspamdclient.so.%%RSPAMDVERSION%%
-lib/librspamdclient.so
-lib/librspamdclient_static.a
-include/rspamd/librspamdclient.h
-
 etc/rspamd/lua/regexp/drugs.lua
 etc/rspamd/lua/regexp/fraud.lua
 etc/rspamd/lua/regexp/headers.lua
@@ -24,52 +19,41 @@ etc/rspamd/lua/hfilter.lua
 %%DATADIR%%/lua/phishing.lua
 %%DATADIR%%/lua/ratelimit.lua
 %%DATADIR%%/lua/rbl.lua
+%%DATADIR%%/lua/settings.lua
 %%DATADIR%%/lua/trie.lua
 %%DATADIR%%/lua/whitelist.lua
-
-@unexec if cmp -s %D/etc/rspamd/rspamd.conf %D/etc/rspamd/rspamd.conf.sample ; then rm -f %D/etc/rspamd/rspamd.conf ; fi
-etc/rspamd/rspamd.conf.sample
-@exec if [ ! -f %D/etc/rspamd/rspamd.conf ]; then cp -p %D/%F %B/rspamd.conf; fi
-@unexec if cmp -s %D/etc/rspamd/2tld.inc %D/etc/rspamd/2tld.inc.sample ; then rm -f %D/etc/rspamd/2tld.inc ; fi
-etc/rspamd/2tld.inc.sample
-@exec if [ ! -f %D/etc/rspamd/2tld.inc ]; then cp -p %D/%F %B/2tld.inc; fi
-@unexec if cmp -s %D/etc/rspamd/composites.conf %D/etc/rspamd/composites.conf.sample ; then rm -f %D/etc/rspamd/composites.conf ; fi
-etc/rspamd/composites.conf.sample
-@exec if [ ! -f %D/etc/rspamd/composites.conf ]; then cp -p %D/%F %B/composites.conf; fi
-@unexec if cmp -s %D/etc/rspamd/logging.conf %D/etc/rspamd/logging.conf.sample ; then rm -f %D/etc/rspamd/logging.conf ; fi
-etc/rspamd/logging.conf.sample
-@exec if [ ! -f %D/etc/rspamd/logging.conf ]; then cp -p %D/%F %B/logging.conf; fi
-@unexec if cmp -s %D/etc/rspamd/metrics.conf %D/etc/rspamd/metrics.conf.sample ; then rm -f %D/etc/rspamd/metrics.conf ; fi
-etc/rspamd/metrics.conf.sample
-@exec if [ ! -f %D/etc/rspamd/metrics.conf ]; then cp -p %D/%F %B/metrics.conf; fi
-@unexec if cmp -s %D/etc/rspamd/modules.conf %D/etc/rspamd/modules.conf.sample ; then rm -f %D/etc/rspamd/modules.conf ; fi
-etc/rspamd/modules.conf.sample
-@exec if [ ! -f %D/etc/rspamd/modules.conf ]; then cp -p %D/%F %B/modules.conf; fi
-@unexec if cmp -s %D/etc/rspamd/options.conf %D/etc/rspamd/options.conf.sample ; then rm -f %D/etc/rspamd/options.conf ; fi
-etc/rspamd/options.conf.sample
-@exec if [ ! -f %D/etc/rspamd/options.conf ]; then cp -p %D/%F %B/options.conf; fi
-@unexec if cmp -s %D/etc/rspamd/statistic.conf %D/etc/rspamd/statistic.conf.sample ; then rm -f %D/etc/rspamd/statistic.conf ; fi
-etc/rspamd/statistic.conf.sample
-@exec if [ ! -f %D/etc/rspamd/statistic.conf ]; then cp -p %D/%F %B/statistic.conf; fi
-@unexec if cmp -s %D/etc/rspamd/surbl-whitelist.inc %D/etc/rspamd/surbl-whitelist.inc.sample ; then rm -f %D/etc/rspamd/surbl-whitelist.inc ; fi
-etc/rspamd/surbl-whitelist.inc.sample
-@exec if [ ! -f %D/etc/rspamd/surbl-whitelist.inc ]; then cp -p %D/%F %B/surbl-whitelist.inc; fi
-@unexec if cmp -s %D/etc/rspamd/workers.conf %D/etc/rspamd/workers.conf.sample ; then rm -f %D/etc/rspamd/workers.conf ; fi
-etc/rspamd/workers.conf.sample
-@exec if [ ! -f %D/etc/rspamd/workers.conf ]; then cp -p %D/%F %B/workers.conf; fi
-
+%%DATADIR%%/www/index.html
+%%DATADIR%%/www/plugins.txt
+%%DATADIR%%/www/img/spinner.gif
+%%DATADIR%%/www/img/desc.png
+%%DATADIR%%/www/img/asc.png
+%%DATADIR%%/www/img/spinner.png
+%%DATADIR%%/www/README.md
+%%DATADIR%%/www/js/rspamd.js
+%%DATADIR%%/www/js/jquery.paginatetable.js
+%%DATADIR%%/www/css/rspamd.css
+@sample etc/rspamd/rspamd.conf.sample
+@sample etc/rspamd/2tld.inc.sample
+@sample etc/rspamd/composites.conf.sample
+@sample etc/rspamd/logging.conf.sample
+@sample etc/rspamd/metrics.conf.sample
+@sample etc/rspamd/modules.conf.sample
+@sample etc/rspamd/options.conf.sample
+@sample etc/rspamd/statistic.conf.sample
+@sample etc/rspamd/surbl-whitelist.inc.sample
+@sample etc/rspamd/workers.conf.sample
 man/man1/rspamc.1.gz
 man/man8/rspamd.8.gz
-
-
 @dirrmtry %%DATADIR%%/lua
+@dirrmtry %%DATADIR%%/www/js
+@dirrmtry %%DATADIR%%/www/css
+@dirrmtry %%DATADIR%%/www/img
+@dirrmtry %%DATADIR%%/www
 @dirrmtry %%DATADIR%%
 @dirrmtry etc/rspamd/lua/regexp
 @dirrmtry etc/rspamd/lua
 @dirrmtry etc/rspamd
-@dirrmtry include/rspamd
 %%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%
-
 @owner nobody
 @group nobody
 @dirrmtry /var/db/rspamd
