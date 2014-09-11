@@ -1,0 +1,17 @@
+--- src/libafs/MakefileProto.FBSD.in.orig	2014-05-14 23:09:14.000000000 +0900
++++ src/libafs/MakefileProto.FBSD.in	2014-05-22 08:00:36.000000000 +0900
+@@ -41,10 +41,12 @@
+ <all>
+ 
+ KDEFS=-Wall -nostdinc -I/usr/include -D_KERNEL -DKLD_MODULE \
+-	-elf \
+ 	-mno-mmx -mno-3dnow -mno-sse -mno-sse2 \
+-	-mno-align-long-strings -fno-common -ffreestanding \
++	-fno-common -ffreestanding \
+ 	-I${KBLD} -include opt_global.h -fno-strict-aliasing
++.if ${COMPILER_TYPE} != clang
++KDEFS+=	-elf -mno-align-long-strings
++.endif
+ 
+ DBUG = -O2
+ #DBUG = -O -g
