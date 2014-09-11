@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ossec-hids
-PORTVERSION=	2.8
+PORTVERSION=	2.8.1
 PORTREVISION?=	0
 CATEGORIES=	security
 MASTER_SITES=	http://www.ossec.net/files/ \
