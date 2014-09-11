@@ -3,6 +3,7 @@
 
 PORTNAME=	palomino
 PORTVERSION=	20131231
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://www.palomino3d.org/software/${PORTNAME}/
 DISTFILES=	${PORTNAME}_src_${PORTVERSION}.txz \

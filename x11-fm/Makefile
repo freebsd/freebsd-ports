@@ -4,6 +4,7 @@
     COMMENT = X11 file managers
 
     SUBDIR += asfiles
+    SUBDIR += caja
     SUBDIR += catseye-fm
     SUBDIR += deforaos-browser
     SUBDIR += doublecmd
@@ -14,7 +15,6 @@
     SUBDIR += gnome-commander2
     SUBDIR += gprename
     SUBDIR += krusader2
-    SUBDIR += mate-file-manager
     SUBDIR += mtoolsfm
     SUBDIR += mucommander
     SUBDIR += nautilus

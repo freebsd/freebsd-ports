@@ -10,7 +10,7 @@ MASTER_SITES=	http://wolfram.schneider.org/src/
 MAINTAINER=	wosch@FreeBSD.org
 COMMENT=	Manual page consistency checker
 
-USES=		perl5 shebangfix
+USES=		perl5 shebangfix uidfix
 USE_PERL5=	run
 SHEBANG_FILES=	manck.pl
 

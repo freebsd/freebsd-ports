@@ -3,7 +3,7 @@
 
 PORTNAME=	osgearth
 PORTVERSION=	2.5
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	graphics geography
 MASTER_SITES=	https://github.com/gwaldron/${PORTNAME}/archive/
 

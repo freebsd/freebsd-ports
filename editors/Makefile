@@ -198,7 +198,6 @@
     SUBDIR += libreoffice-zu
     SUBDIR += madedit
     SUBDIR += manedit
-    SUBDIR += mate-text-editor
     SUBDIR += mg
     SUBDIR += mined
     SUBDIR += mlview
@@ -219,6 +218,7 @@
     SUBDIR += p5-Vimana
     SUBDIR += paredit-mode.el
     SUBDIR += pico-alpine
+    SUBDIR += pluma
     SUBDIR += poedit
     SUBDIR += puff
     SUBDIR += py-room

@@ -3,7 +3,7 @@
 
 PORTNAME=	bitcoin
 PORTVERSION=	0.9.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-p2p finance
 MASTER_SITES=	http://vps.robbak.com/distfiles/ \
 		${MASTER_SITE_LOCAL} \

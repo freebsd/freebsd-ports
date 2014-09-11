@@ -3,7 +3,7 @@
 
 PORTNAME=	pmars
 PORTVERSION=	0.9.2
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	games
 MASTER_SITES=	http://corewar.co.uk/pihlaja/pmars-sdl/
 PKGNAMESUFFIX=	-sdl

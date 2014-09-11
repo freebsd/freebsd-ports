@@ -12,12 +12,13 @@ COMMENT=	Object-Document-Mapper for working with MongoDB
 
 LICENSE=	MIT
 
-BROKEN=		Conflicts with pymongo dependency
-
 RUN_DEPENDS=	pymongo>=2.5:${PORTSDIR}/databases/pymongo
 
-USE_PYTHON=		yes
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
+USES=		python
+USE_PYTHON=	autoplist distutils
+
+# bson is provided by pymongo
+post-patch:
+	@${RM} -rf ${WRKSRC}/bson
 
 .include <bsd.port.mk>

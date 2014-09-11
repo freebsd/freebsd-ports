@@ -87,6 +87,7 @@ RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}mako>0:${PORTSDIR}/textproc/py-mako
 # ever be fixed.
 .if ${OSVERSION} < 900033
 USE_BINUTILS=	yes
+CONFIGURE_ARGS+=	STRIP=${LOCALBASE}/bin/strip
 .endif
 
 pre-configure:

@@ -3,6 +3,7 @@
 
 PORTNAME=	lamprop
 PORTVERSION=	1.5.0
+PORTREVISION=	1
 CATEGORIES=	science
 MASTER_SITES=	http://rsmith.home.xs4all.nl/files/
 

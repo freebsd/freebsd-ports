@@ -2,6 +2,7 @@
 
 PORTNAME=	sie-nmsg
 PORTVERSION=	0.17.0
+PORTREVISION=	1
 CATEGORIES=	net dns
 MASTER_SITES=	https://dl.farsightsecurity.com/dist/sie-nmsg/ \
 		http://dl.farsightsecurity.com/dist/sie-nmsg/

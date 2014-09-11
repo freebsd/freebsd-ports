@@ -2,6 +2,7 @@
 
 PORTNAME=	stm-chans
 PORTVERSION=	3.0.0.2
+PORTREVISION=	1
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org

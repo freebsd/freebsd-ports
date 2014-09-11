@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	jsonc
-PORTVERSION=	1.3.1
+PORTVERSION=	1.3.6
 CATEGORIES=	devel
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-

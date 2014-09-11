@@ -3,7 +3,7 @@
 
 PORTNAME=	nightfall
 PORTVERSION=	1.70
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	astro
 MASTER_SITES=	http://www.la-samhna.de/nightfall/
 

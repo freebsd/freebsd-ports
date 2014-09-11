@@ -132,10 +132,10 @@ index d46b5aa..e452223 100644
    'targets': [
      {
        'target_name': 'video_capture_module',
-@@ -49,6 +52,16 @@
-         }, {  # include_internal_video_capture == 1
-           'conditions': [
-             ['include_v4l2_video_capture==1', {
+@@ -46,6 +49,16 @@
+                 'linux/video_capture_linux.cc',
+                 'linux/video_capture_linux.h',
+               ],
 +              'conditions': [
 +                ['use_libv4l2==1', {
 +                  'defines': [
@@ -146,13 +146,13 @@ index d46b5aa..e452223 100644
 +                  ],
 +                }],
 +              ],
-               'include_dirs': [
-                 'linux',
-               ],
+             }],  # linux
+             ['OS=="mac"', {
+               'sources': [
 diff --git toolkit/library/Makefile.in toolkit/library/Makefile.in
 index 9c16ffa..1db3794 100644
---- mozilla/toolkit/library/Makefile.in
-+++ mozilla/toolkit/library/Makefile.in
+--- mozilla/toolkit/library/libxul.mk
++++ mozilla/toolkit/library/libxul.mk
 @@ -182,6 +182,10 @@ endif
  
  EXTRA_DSO_LDOPTS += $(call EXPAND_LIBNAME_PATH,gkmedias,$(DIST)/lib)

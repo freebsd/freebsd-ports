@@ -31,12 +31,10 @@ include/gtkglext-1.0/gtk/gtkglversion.h
 include/gtkglext-1.0/gtk/gtkglwidget.h
 lib/gtkglext-1.0/include/gdkglext-config.h
 lib/libgdkglext-x11-1.0.a
-lib/libgdkglext-x11-1.0.la
 lib/libgdkglext-x11-1.0.so
 lib/libgdkglext-x11-1.0.so.0
 lib/libgdkglext-x11-1.0.so.0.0.0
 lib/libgtkglext-x11-1.0.a
-lib/libgtkglext-x11-1.0.la
 lib/libgtkglext-x11-1.0.so
 lib/libgtkglext-x11-1.0.so.0
 lib/libgtkglext-x11-1.0.so.0.0.0

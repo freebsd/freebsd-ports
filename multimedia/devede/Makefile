@@ -3,6 +3,7 @@
 
 PORTNAME=	devede
 DISTVERSION=	3.23.0
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	http://www.rastersoft.com/descargas/ \
 		http://bsd-geek.de/FreeBSD/distfiles/

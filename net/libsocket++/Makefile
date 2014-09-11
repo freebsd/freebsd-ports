@@ -3,7 +3,7 @@
 
 PORTNAME=	libsocket++
 PORTVERSION=	1.12.13
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net
 MASTER_SITES=	http://src.linuxhacker.at/socket++/
 DISTNAME=	socket++-${PORTVERSION}
@@ -18,7 +18,7 @@ OPTIONS_DEFINE=	DOCS
 
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-USES=		libtool:keepla makeinfo
+USES=		libtool makeinfo
 USE_AUTOTOOLS=	aclocal autoheader automake autoconf libtoolize
 AUTOMAKE_ARGS=	-a -c
 LIBTOOLIZE_ARGS=-i -c

@@ -2,7 +2,7 @@
 
 PORTNAME=	geany-plugin-devhelp
 PORTVERSION=	${GEANY_VER}
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel
 
 MAINTAINER=	makc@FreeBSD.org

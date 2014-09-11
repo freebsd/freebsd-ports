@@ -11,6 +11,9 @@ DISTNAME=	scdp-${PORTVERSION:S/.b/b/}
 MAINTAINER=	arved@FreeBSD.org
 COMMENT=	Tool that sends CDP (CISCO Discovery Protocol) Packets
 
+DEPRECATED=	Depends on expired net/libnet10
+EXPIRATION_DATE=	2014-09-30
+
 BUILD_DEPENDS=	${LIBNET_CONFIG}:${PORTSDIR}/net/libnet10
 
 LICENSE=	GPLv2

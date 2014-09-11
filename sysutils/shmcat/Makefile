@@ -2,29 +2,22 @@
 # $FreeBSD$
 
 PORTNAME=	shmcat
-PORTVERSION=	1.6
+PORTVERSION=	1.7
 CATEGORIES=	sysutils
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF/${PORTNAME}
 
 MAINTAINER=	gasol.wu@gmail.com
 COMMENT=	Simple tool that dumps System V shared memory segments
 
-USE_BZIP2=	yes
-USES=		iconv
+LICENSE=	GPLv2
+
+USES=		tar:bzip2 iconv
 GNU_CONFIGURE=	yes
 
 OPTIONS_DEFINE=	NLS
+OPTIONS_SUB=	yes
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MNLS}
-MANLANG=	"" de
-USES+=		gettext
-PLIST_SUB+=	NLS=""
-.else
-CONFIGURE_ARGS+=--disable-nls
-PLIST_SUB+=	NLS="@comment "
-.endif
+NLS_USES=		gettext
+NLS_CONFIGURE_ENABLE=	nls
 
 .include <bsd.port.mk>

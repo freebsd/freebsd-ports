@@ -2,7 +2,6 @@ bin/cfityk
 bin/fityk
 bin/xyconv
 include/fityk.h
-lib/libfityk.la
 lib/libfityk.so
 lib/libfityk.so.3
 lib/libfityk.so.3.0.0

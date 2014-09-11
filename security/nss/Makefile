@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	nss
-PORTVERSION=	3.16.3
+PORTVERSION=	3.17
 #DISTVERSIONSUFFIX=	.with.ckbi.1.93
 CATEGORIES=	security
 MASTER_SITES=	MOZILLA/security/${PORTNAME}/releases/${DISTNAME:tu:C/[-.]/_/g}_RTM/src
@@ -41,14 +41,16 @@ INSTALL_BINS=	certcgi certutil checkcert cmsutil crlutil derdump makepqg \
 		p7verify pk12util rsaperf shlibsign signtool signver \
 		ssltap strsclnt symkeyutil vfychain vfyserv
 
-.if !defined(WITH_DEBUG)
+OPTIONS_DEFINE=	DEBUG
+
+.include <bsd.port.options.mk>
+
+.if ! ${PORT_OPTIONS:MDEBUG}
 MAKE_ENV+=	BUILD_OPT=1
 BINS=		${DIST}/${OPSYS}${OSREL}_OPT.OBJ
 .else
 BINS=		${DIST}/${OPSYS}${OSREL}_DBG.OBJ
 .endif
-
-.include <bsd.port.pre.mk>
 
 .if ${ARCH} == amd64
 USE_BINUTILS=	# intel-gcm.s
@@ -82,7 +84,7 @@ do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/include/nss/nss ${STAGEDIR}${PREFIX}/lib/nss
 	${FIND} ${DIST}/public/nss -type l \
 	    	-exec ${INSTALL_DATA} {} ${STAGEDIR}${PREFIX}/include/nss/nss \;
-	${INSTALL_DATA} ${BINS}/lib/*.so.1 \
+	${INSTALL_LIB} ${BINS}/lib/*.so.1 \
 		${STAGEDIR}${PREFIX}/lib/nss
 	${INSTALL_DATA} ${BINS}/lib/libcrmf.a \
 	    	${STAGEDIR}${PREFIX}/lib/nss
@@ -95,4 +97,4 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/nss-config ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_DATA} ${WRKDIR}/nss.pc ${STAGEDIR}${PREFIX}/libdata/pkgconfig
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

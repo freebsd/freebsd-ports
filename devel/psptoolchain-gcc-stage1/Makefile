@@ -3,7 +3,7 @@
 
 PORTNAME=		gcc
 PORTVERSION=		4.6.2
-PORTREVISION=		2
+PORTREVISION?=		3
 CATEGORIES=		devel
 MASTER_SITES=		${MASTER_SITE_GCC}
 MASTER_SITE_SUBDIR=	releases/${DISTNAME}/
@@ -35,7 +35,7 @@ BUILD_DEPENDS+=		psp-addr2line:${PORTSDIR}/devel/psptoolchain-binutils \
 			psp-strings:${PORTSDIR}/devel/psptoolchain-binutils \
 			psp-strip:${PORTSDIR}/devel/psptoolchain-binutils
 
-USES=			gmake tar:bzip2
+USES=			gmake libtool tar:bzip2
 PATCH_WRKSRC=		${SRCDIR}
 CONFIGURE_SCRIPT=	../${SRCDIR:S/${WRKDIR}\///}/configure
 

@@ -1,0 +1,68 @@
+--- drivemount/Makefile.in.orig	2014-04-12 15:38:12.000000000 +0200
++++ drivemount/Makefile.in	2014-04-12 15:39:28.000000000 +0200
+@@ -78,7 +78,7 @@
+ POST_UNINSTALL = :
+ build_triplet = @build@
+ host_triplet = @host@
+-libexec_PROGRAMS = drivemount_applet2$(EXEEXT)
++libexec_PROGRAMS = mate-drivemount_applet2$(EXEEXT)
+ subdir = drivemount
+ DIST_COMMON = $(srcdir)/Makefile.in $(srcdir)/Makefile.am \
+ 	$(top_srcdir)/depcomp AUTHORS
+@@ -98,11 +98,12 @@
+ am__installdirs = "$(DESTDIR)$(libexecdir)" "$(DESTDIR)$(appletdir)" \
+ 	"$(DESTDIR)$(servicedir)" "$(DESTDIR)$(uidir)"
+ PROGRAMS = $(libexec_PROGRAMS)
+-am_drivemount_applet2_OBJECTS = drivemount.$(OBJEXT) \
++am_mate_drivemount_applet2_OBJECTS = drivemount.$(OBJEXT) \
+ 	drive-list.$(OBJEXT) drive-button.$(OBJEXT)
+-drivemount_applet2_OBJECTS = $(am_drivemount_applet2_OBJECTS)
++mate_drivemount_applet2_OBJECTS =  \
++	$(am_mate_drivemount_applet2_OBJECTS)
+ am__DEPENDENCIES_1 =
+-drivemount_applet2_DEPENDENCIES = $(am__DEPENDENCIES_1)
++mate_drivemount_applet2_DEPENDENCIES = $(am__DEPENDENCIES_1)
+ AM_V_lt = $(am__v_lt_@AM_V@)
+ am__v_lt_ = $(am__v_lt_@AM_DEFAULT_V@)
+ am__v_lt_0 = --silent
+@@ -141,8 +142,8 @@
+ am__v_CCLD_ = $(am__v_CCLD_@AM_DEFAULT_V@)
+ am__v_CCLD_0 = @echo "  CCLD    " $@;
+ am__v_CCLD_1 = 
+-SOURCES = $(drivemount_applet2_SOURCES)
+-DIST_SOURCES = $(drivemount_applet2_SOURCES)
++SOURCES = $(mate_drivemount_applet2_SOURCES)
++DIST_SOURCES = $(mate_drivemount_applet2_SOURCES)
+ RECURSIVE_TARGETS = all-recursive check-recursive cscopelist-recursive \
+ 	ctags-recursive dvi-recursive html-recursive info-recursive \
+ 	install-data-recursive install-dvi-recursive \
+@@ -487,14 +488,14 @@
+ 	-DDRIVEMOUNT_MENU_UI_DIR=\""$(uidir)"\"	\
+ 	$(MATE_APPLETS4_CFLAGS)
+ 
+-drivemount_applet2_SOURCES = \
++mate_drivemount_applet2_SOURCES = \
+ 	drivemount.c		\
+ 	drive-list.c		\
+ 	drive-list.h		\
+ 	drive-button.c		\
+ 	drive-button.h
+ 
+-drivemount_applet2_LDADD = \
++mate_drivemount_applet2_LDADD = \
+ 	$(MATE_APPLETS4_LIBS)
+ 
+ appletdir = $(datadir)/mate-panel/applets
+@@ -595,9 +596,9 @@
+ 	echo " rm -f" $$list; \
+ 	rm -f $$list
+ 
+-drivemount_applet2$(EXEEXT): $(drivemount_applet2_OBJECTS) $(drivemount_applet2_DEPENDENCIES) $(EXTRA_drivemount_applet2_DEPENDENCIES) 
+-	@rm -f drivemount_applet2$(EXEEXT)
+-	$(AM_V_CCLD)$(LINK) $(drivemount_applet2_OBJECTS) $(drivemount_applet2_LDADD) $(LIBS)
++mate-drivemount_applet2$(EXEEXT): $(mate_drivemount_applet2_OBJECTS) $(mate_drivemount_applet2_DEPENDENCIES) $(EXTRA_mate_drivemount_applet2_DEPENDENCIES) 
++	@rm -f mate-drivemount_applet2$(EXEEXT)
++	$(AM_V_CCLD)$(LINK) $(mate_drivemount_applet2_OBJECTS) $(mate_drivemount_applet2_LDADD) $(LIBS)
+ 
+ mostlyclean-compile:
+ 	-rm -f *.$(OBJEXT)

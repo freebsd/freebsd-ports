@@ -3,7 +3,7 @@
 
 PORTNAME=	libqxt
 PORTVERSION=	0.6.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	http://dev.libqxt.org/libqxt/get/
 DISTNAME=	v${PORTVERSION}

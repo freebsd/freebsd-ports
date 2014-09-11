@@ -1,0 +1,20 @@
+--- Wnn/wnncons/dic/Makefile.in.orig	2001-08-14 22:43:21.000000000 +0900
++++ Wnn/wnncons/dic/Makefile.in	2014-09-10 01:43:05.000000000 +0900
+@@ -33,7 +33,6 @@
+ top_builddir = ../../..
+ 
+ INSTALL         = @INSTALL@ $(INSTALLFLAGS)
+-LOCAL_INSTFLAGS = -o $(WNNOWNER)
+ 
+            ATOD = $(WNNJUTILSRC)/atod
+        WNNTOUCH = $(WNNJUTILSRC)/wnntouch
+@@ -85,8 +84,7 @@
+ 	@for i in $(DICS); do if [ -f $(DESTDIR)$(JWNNWNNCONSDICDIR)/$$i ]; then \
+ 	set +x; \
+ 	else (set -x; \
+-	$(INSTALL) $(INSTDATFLAGS) $(LOCAL_INSTFLAGS) $$i $(DESTDIR)$(JWNNWNNCONSDICDIR); \
+-	$(WNNTOUCH) $(DESTDIR)$(JWNNWNNCONSDICDIR)/$$i); fi \
++	$(INSTALL) $(INSTDATFLAGS) $$i $(DESTDIR)$(JWNNWNNCONSDICDIR)); fi \
+ 	done
+ 
+ depend::

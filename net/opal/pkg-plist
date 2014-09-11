@@ -161,6 +161,7 @@ lib/opal-%%VERSION%%/codecs/video/mpeg4_ffmpeg_ptplugin.so
 %%FAX%%lib/opal-%%VERSION%%/fax/spandsp_ptplugin.so
 %%LID%%lib/opal-%%VERSION%%/lid/vpb_ptplugin.so
 libdata/pkgconfig/opal.pc
+%%LID%%@dirrm lib/opal-%%VERSION%%/lid
 %%FAX%%@dirrm lib/opal-%%VERSION%%/fax
 %%VIDEO%%@dirrm lib/opal-%%VERSION%%/codecs/video
 @dirrm lib/opal-%%VERSION%%/codecs/audio

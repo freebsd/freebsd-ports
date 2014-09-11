@@ -3,8 +3,7 @@
 #   $MCom: ports/trunk/sysutils/mate-power-manager/Makefile 19789 2014-08-05 07:43:54Z gusi $
 
 PORTNAME=	mate-power-manager
-PORTVERSION=	1.6.2
-PORTREVISION=	1
+PORTVERSION=	1.8.0
 CATEGORIES=	sysutils mate
 MASTER_SITES=	MATE
 DIST_SUBDIR=	mate
@@ -12,6 +11,7 @@ DIST_SUBDIR=	mate
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Power management system for the MATE Desktop
 
+BUILD_DEPENDS=	itstool:${PORTSDIR}/textproc/itstool
 LIB_DEPENDS=	libcanberra-gtk.so:${PORTSDIR}/audio/libcanberra \
 		libdbus-1.so:${PORTSDIR}/devel/dbus \
 		libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib \
@@ -22,28 +22,27 @@ RUN_DEPENDS=	pkexec:${PORTSDIR}/sysutils/polkit
 
 PORTSCOUT=	limitw:1,even
 
-USES=		execinfo gettext gmake pathfix pkgconfig tar:xz
-USE_MATE=	autogen common:build docutils intlhack libmatekeyring \
-		panel
+USES=		gettext gmake libtool pathfix pkgconfig tar:xz
+USE_MATE=	panel
 USE_XORG=	x11 xext xproto xrandr xrender
-USE_GNOME=	cairo glib20 gnomehier gtk20
-INSTALLS_OMF=	yes
-USE_AUTOTOOLS=	aclocal:env autoconf:env automake:env libtool libtoolize:env
+USE_GNOME=	cairo glib20 gnomehier gtk20 intlhack
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
+CONFIGURE_ENV=	LIBS="-lexecinfo"
 CONFIGURE_ARGS=	--with-doc-dir=${PREFIX}/share/doc \
 		--disable-docbook-docs \
-		--with-gtk=2.0 \
-		--with-systemdinhibit=no
+		--with-gtk=2.0
+# needs gnome-keyring 3.0.0+
+CONFIGURE_ARGS+=--without-keyring
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-PATHFIX_MAKEFILEIN=	Makefile.*
 
 GLIB_SCHEMAS=	org.mate.power-manager.gschema.xml
 
 post-patch:
 	@${REINPLACE_CMD} -e "s|docbook2man|docbook2man_disabled|g" \
-		${WRKSRC}/configure.ac
-	@${CHMOD} +x ${WRKSRC}/autogen.sh
+		${WRKSRC}/configure
+	@${TOUCH} ${WRKSRC}/aclocal.m4 ${WRKSRC}/Makefile.in \
+		${WRKSRC}/configure ${WRKSRC}/config.h.in
 
 .include <bsd.port.mk>

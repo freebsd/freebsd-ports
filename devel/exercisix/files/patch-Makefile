@@ -7,9 +7,9 @@
 -	install -o root -g wheel  -m 444 $(FILES) $(FILESDIR)
 -	install -C -o root -g wheel -m 444 $(INCS) $(INCLUDEDIR)
 -	install -o root -g wheel -m 444 $(COMPRESSED_MAN) $(MANDIR)3
-+	install -o root -g wheel  -m 444 $(FILES) $(DESTDIR)$(FILESDIR)
-+	install -C -o root -g wheel -m 444 $(INCS) $(DESTDIR)$(INCLUDEDIR)
-+	install -o root -g wheel -m 444 $(COMPRESSED_MAN) $(DESTDIR)$(MANDIR)3
++	$(BSD_INSTALL_DATA) $(FILES) $(DESTDIR)$(FILESDIR)
++	$(BSD_INSTALL_DATA) $(INCS) $(DESTDIR)$(INCLUDEDIR)
++	$(BSD_INSTALL_MAN) $(COMPRESSED_MAN) $(DESTDIR)$(MANDIR)3
  
  $(FILESDIR):
 -	mkdir $(FILESDIR)

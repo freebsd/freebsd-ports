@@ -3,7 +3,7 @@
 
 PORTNAME=	sdl
 PORTVERSION=	2.1.3.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel graphics audio ruby
 MASTER_SITES=	https://ohai.github.io/rubysdl/archives/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}

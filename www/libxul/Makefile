@@ -2,9 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	libxul
-DISTVERSION=	24.7.0
+DISTVERSION=	24.8.0
 CATEGORIES?=	www devel
-MASTER_SITES=	MOZILLA/firefox/releases/${DISTVERSION}esr/source
+MASTER_SITES=	MOZILLA/firefox/releases/${DISTVERSION}esr/source \
+		https://ftp.mozilla.org/pub/mozilla.org/firefox/candidates/${DISTVERSION}esr-candidates/build1/source/
 DISTNAME=	firefox-${DISTVERSION}esr.source
 
 MAINTAINER?=	gecko@FreeBSD.org
@@ -29,7 +30,6 @@ WRKSRC=		${WRKDIR}/mozilla-esr24
 CONFLICTS=	libxul-1.9.*
 
 USE_AUTOTOOLS=	autoconf213:env
-USE_PYTHON_BUILD=2
 WANT_GNOME=	yes
 USE_QT4=	# empty
 QT_NONSTANDARD=	yes

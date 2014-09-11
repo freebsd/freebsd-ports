@@ -3,6 +3,7 @@
 
 PORTNAME=	pyside
 PORTVERSION=	1.2.2
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	https://download.qt-project.org/official_releases/pyside/
 PKGNAMESUFFIX=	${PYTHON_PKGNAMESUFFIX}

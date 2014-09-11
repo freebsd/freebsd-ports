@@ -3,6 +3,7 @@
 
 PORTNAME=	libspf
 DISTVERSION=	1.0.0-p5
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://www.libspf.org/files/src/ \
 		${MASTER_SITE_LOCAL}
@@ -13,10 +14,11 @@ COMMENT=	Sender Policy Framework (SPF) library and client
 
 MAKE_JOBS_UNSAFE=yes
 
-USES=	tar:bzip2
-USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes
-
+INSTALL_TARGET=	install-strip
+USES=		libtool tar:bzip2
+USE_AUTOTOOLS=	libtoolize aclocal autoconf autoheader automake
+AUTOMAKE_ARGS=	-a -c -f
 USE_LDCONFIG=	yes
 
 PORTDOCS=	*
@@ -38,10 +40,6 @@ CONFIGURE_ARGS+=	--enable-logfile-stats
 .if ${PORT_OPTIONS:MDEBUG}
 CONFIGURE_ARGS+=	--enable-debug
 .endif
-
-post-patch:
-	@${REINPLACE_CMD} -e "s|CFLAGS =|CFLAGS +=|" \
-		${WRKSRC}/src/libspf/Makefile.in ${WRKSRC}/src/spfqtool/Makefile.in
 
 post-install:
 .if ${PORT_OPTIONS:MDOCS}

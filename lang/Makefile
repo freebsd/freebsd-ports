@@ -61,7 +61,6 @@
     SUBDIR += erlang-runtime17
     SUBDIR += execline
     SUBDIR += expect
-    SUBDIR += ezm3
     SUBDIR += f2c
     SUBDIR += fasm
     SUBDIR += ferite
@@ -115,7 +114,6 @@
     SUBDIR += icc
     SUBDIR += ici
     SUBDIR += icon
-    SUBDIR += ifc
     SUBDIR += intel2gas
     SUBDIR += intercal
     SUBDIR += io
@@ -162,7 +160,6 @@
     SUBDIR += nawk
     SUBDIR += nbc
     SUBDIR += nbfc
-    SUBDIR += neko
     SUBDIR += nesasm
     SUBDIR += newlisp
     SUBDIR += newlisp-devel
@@ -283,7 +280,6 @@
     SUBDIR += scala-docs
     SUBDIR += scheme48
     SUBDIR += scm
-    SUBDIR += scsh
     SUBDIR += sdcc
     SUBDIR += sdcc-devel
     SUBDIR += see

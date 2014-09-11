@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	jacode.pl
-PORTVERSION=	2.13.4.10
+PORTVERSION=	2.13.4.11
 CATEGORIES=	japanese perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:INA/${PORTNAME:S|.pl||}
@@ -20,7 +20,7 @@ PLIST_FILES=	${SITE_PERL_REL}/${PORTNAME}
 NO_BUILD=	yes
 
 pre-install:
-	@cd ${WRKSRC}; ${PERL} ${WRKSRC}/test.pl
+	@cd ${WRKSRC}; ${PERL} ${WRKSRC}/t/001_test.t
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/${SITE_PERL_REL}

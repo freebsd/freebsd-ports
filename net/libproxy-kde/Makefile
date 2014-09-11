@@ -2,7 +2,7 @@
 # $FreeBSD$
 #    $MCom: ports/net/libproxy-kde/Makefile,v 1.1 2011/01/12 13:10:53 kwm Exp $
 
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	net devel
 PKGNAMESUFFIX=	-kde
 

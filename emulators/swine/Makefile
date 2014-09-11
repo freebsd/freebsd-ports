@@ -3,6 +3,7 @@
 
 PORTNAME=	swine
 PORTVERSION=	1.0.4
+PORTREVISION=	1
 CATEGORIES=	emulators deskutils python
 
 MAINTAINER=	koalative@gmail.com

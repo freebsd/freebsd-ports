@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	nspr
-DISTVERSION=	4.10.6
+DISTVERSION=	4.10.7
 CATEGORIES=	devel
 MASTER_SITES=	MOZILLA/${PORTNAME}/releases/v${PORTVERSION}/src
 
@@ -23,11 +23,9 @@ MAKE_ENV=	DIST=${WRKSRC}/dist
 
 LIBRARIES=	libnspr4.so.1 libplc4.so.1 libplds4.so.1
 
-.include <bsd.port.pre.mk>
+OPTIONS_DEFINE=	DEBUG
 
-.if !defined(WITH_DEBUG)
-CONFIGURE_ARGS+=--disable-debug
-.endif
+DEBUG_CONFIGURE_ENABLE=debug
 
 do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/include/nspr
@@ -46,17 +44,17 @@ do-install:
 .if defined(STRIP) && ${STRIP} != ""
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/${lib}
 .endif
-	${CHMOD} ${BINMODE} ${STAGEDIR}${PREFIX}/lib/${lib}
+	${CHMOD} ${LIBMODE} ${STAGEDIR}${PREFIX}/lib/${lib}
 	${LN} -sf ${lib} ${STAGEDIR}${PREFIX}/lib/${lib:R}
 .endfor
 
 prtests:
-	${MAKE_CMD} -C ${WRKSRC}/pr/tests
+	${DO_MAKE_BUILD} -C ${WRKSRC}/pr/tests
 	${LN} -sf libmy.so.1 ${WRKSRC}/pr/tests/dll/libmy.so
 	cd ${WRKSRC}/pr/tests && ../../../pr/tests/runtests.sh
 
 libtests:
-	${MAKE_CMD} -C ${WRKSRC}/lib/tests
+	${DO_MAKE_BUILD} -C ${WRKSRC}/lib/tests
 	${WRKSRC}/lib/tests/string
 	${WRKSRC}/lib/tests/base64t
 	# The test below is commented out, because arena requires
@@ -79,4 +77,4 @@ post-build:
 	#
 #.endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

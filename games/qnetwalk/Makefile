@@ -3,6 +3,7 @@
 
 PORTNAME=	qnetwalk
 PORTVERSION=	1.4
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://qt.osdn.org.ua/ \
 		http://mirror.amdmi3.ru/distfiles/

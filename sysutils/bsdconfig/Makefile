@@ -30,7 +30,7 @@ MAKE_ARGS+=	LIBEXECDIR="${PREFIX}/libexec" \
 
 OPTIONS_DEFINE=	EXAMPLES
 
-.include <bsd.port.options.mk>
+.include <bsd.port.pre.mk>
 
 .if ${OPSYS} == FreeBSD
 .  if ${OSVERSION} < 900030
@@ -51,4 +51,4 @@ post-patch:
 		-e 's|^\(BSDCONFIG=\).*|\1${PREFIX}/sbin/${PORTNAME}|' \
 		${WRKSRC}/dot/dot
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

@@ -2,6 +2,7 @@
 
 PORTNAME=	monad-logger
 PORTVERSION=	0.3.7.1
+PORTREVISION=	1
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org

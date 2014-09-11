@@ -1,12 +1,14 @@
-Index: kWnn/jserver/Makefile.in
-===================================================================
-RCS file: /home/cvs/private/hrs/freewnn/kWnn/jserver/Makefile.in,v
-retrieving revision 1.1.1.1
-retrieving revision 1.2
-diff -u -p -r1.1.1.1 -r1.2
---- kWnn/jserver/Makefile.in	20 Dec 2008 07:13:30 -0000	1.1.1.1
-+++ kWnn/jserver/Makefile.in	2 Jan 2009 21:09:35 -0000	1.2
-@@ -80,13 +80,17 @@ SRC20= $(KWNNETCSRC)/getopt.c
+--- ./kWnn/jserver/Makefile.in.orig	2004-05-22 01:39:32.000000000 +0900
++++ ./kWnn/jserver/Makefile.in	2014-09-10 01:31:51.000000000 +0900
+@@ -38,7 +38,6 @@
+  JSERVERDEFINES = -DJSERVER -DWRITE_CHECK
+        INCLUDES = -I$(KWNNJSERVERSRC) -I$(KWNNINCLUDESRC) -I$(top_builddir)
+         DEFINES = $(KWNNDEFINES) $(JSERVERDEFINES) $(WNNTERM) $(KWNNLANGDEF)
+-LOCAL_INSTFLAGS = $(INSTUIDFLAGS) -o $(WNNOWNER)
+   SERVERINITDEF = -DSERVER_INIT_FILE=\"/$(KWNNLANG)/kserverrc\"
+     HINSIDEFINE = -DHINSIDATA_FILE=\"/$(KWNNLANG)/hinsi.data\"
+         WRAPLIB = @WRAPLIB@
+@@ -80,13 +79,17 @@
  OBJ20= getopt.o
  SRC21= $(KWNNETCSRC)/getopt1.c
  OBJ21= getopt1.o
@@ -25,7 +27,16 @@ diff -u -p -r1.1.1.1 -r1.2
      $(OBJSUPPORT)
  
  all:: $(HDRS) $(SRC0) $(SRC1) kserver
-@@ -572,6 +576,9 @@ $(OBJ20) : $(SRC20) $(KWNNINCLUDESRC)/ge
+@@ -105,7 +108,7 @@
+ install:: kserver
+ 	@if [ -d $(DESTDIR)$(KWNNBINDIR) ]; then set +x; \
+ 	else (set -x; $(MKDIRHIER) $(DESTDIR)$(KWNNBINDIR)); fi
+-	$(LIBTOOL) --mode=install $(INSTALL) $(INSTALLFLAGS) $(INSTPGMFLAGS) $(LOCAL_INSTFLAGS) kserver $(DESTDIR)$(KWNNBINDIR)/kserver
++	$(LIBTOOL) --mode=install $(INSTALL) $(INSTALLFLAGS) $(INSTPGMFLAGS) kserver $(DESTDIR)$(KWNNBINDIR)/kserver
+ 
+ includes:: $(HDRS) $(SRC0) $(SRC1)
+ 
+@@ -572,6 +575,9 @@
  $(OBJ21) : $(SRC21) $(KWNNINCLUDESRC)/getopt.h
  	$(CC) -c $(CFLAGS)  $(KWNNETCSRC)/`basename $@ .o`.c
  

@@ -3,6 +3,7 @@
 
 PORTNAME=	e_dbus
 PORTVERSION=	1.7.9
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	devel enlightenment
 MASTER_SITES=	http://download.enlightenment.org/releases/ \

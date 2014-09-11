@@ -2,6 +2,7 @@
 
 PORTNAME=	vimb
 PORTVERSION=	2.6
+PORTREVISION=	1
 CATEGORIES=	www
 
 MAINTAINER=	mike.d.ft402@gmail.com

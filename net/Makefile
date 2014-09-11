@@ -73,9 +73,7 @@
     SUBDIR += csocks
     SUBDIR += csync2
     SUBDIR += ctrace
-    SUBDIR += cvsup
-    SUBDIR += cvsup-without-gui
-    SUBDIR += cvsupchk
+    SUBDIR += cvsup-static
     SUBDIR += cvsync
     SUBDIR += cyphesis
     SUBDIR += czmq
@@ -113,7 +111,6 @@
     SUBDIR += empty
     SUBDIR += enet
     SUBDIR += erlang_xmlrpc
-    SUBDIR += etherboot
     SUBDIR += etrace
     SUBDIR += exabgp
     SUBDIR += exaddos
@@ -1009,6 +1006,7 @@
     SUBDIR += rubygem-httpauth
     SUBDIR += rubygem-ipaddress
     SUBDIR += rubygem-iproto
+    SUBDIR += rubygem-lita-gems
     SUBDIR += rubygem-macaddr
     SUBDIR += rubygem-net-ldap
     SUBDIR += rubygem-net-netrc

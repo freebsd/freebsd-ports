@@ -15,4 +15,3 @@ lib/wnn/ko_KR/dic/sys/hword.dic
 lib/wnn/ko_KR/dic/sys/single.dic
 @dirrm lib/wnn/ko_KR/dic/sys
 @dirrm lib/wnn/ko_KR/dic
-@dirrm lib/wnn/ko_KR

@@ -4,20 +4,18 @@
 
 PORTNAME=	gstreamer
 PORTVERSION=	0.10.13
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	multimedia
 MASTER_SITES=	http://gstreamer.freedesktop.org/src/gst-ffmpeg/:ffmpeg \
 		http://libav.org/releases/:libav
 PKGNAMESUFFIX=	-ffmpeg
-DISTFILES=	gst-ffmpeg-${PORTVERSION}.tar.bz2:ffmpeg \
-		libav-${LIBAV_VERSION}.tar.xz:libav
+DISTFILES=	gst-ffmpeg-${PORTVERSION}.tar.bz2:ffmpeg
 
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	GStreamer plug-in for manipulating MPEG video streams
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	yasm:${PORTSDIR}/devel/yasm
 LIB_DEPENDS=	liborc-0.4.so:${PORTSDIR}/devel/orc
 
 LIBAV_VERSION=	0.7.7
@@ -26,16 +24,21 @@ USES=		compiler:features gmake libtool pkgconfig
 USE_LDCONFIG=	yes
 USE_GSTREAMER=	yes
 GNU_CONFIGURE=	yes
+PLIST_SUB=	VERSION="${PORTVERSION:R}"
+
+OPTIONS_DEFINE=	FFMPEG
+FFMPEG_DESC?=	Use system ffmpeg instead of internal libav
+
+FFMPEG_LIB_DEPENDS=libavcodec0.so:${PORTSDIR}/multimedia/ffmpeg0
+FFMPEG_CONFIGURE_WITH=system-ffmpeg
+
+FFMPEG_DISTFILES_OFF=libav-${LIBAV_VERSION}.tar.xz:libav
+FFMPEG_BUILD_DEPENDS_OFF=yasm:${PORTSDIR}/devel/yasm
+FFMPEG_LDFLAGS_OFF=-Wl,-Bsymbolic
+FFMPEG_CONFIGURE_OFF=--with-ffmpeg-extra-configure="${FFMPEG_CONFIG}"
 FFMPEG_CONFIG=	--cc=${CC} \
 		--enable-runtime-cpudetect \
 		--enable-pic
-LDFLAGS+=	-Wl,-Bsymbolic
-CONFIGURE_ENV=	PKG_CONFIG=${PKG_CONFIG}
-
-PLIST_SUB=	VERSION="${GST_VERSION}"
-
-PKG_CONFIG?="${LOCALBASE}/bin/pkg-config"
-GST_VERSION=${PORTVERSION:C/..$//}
 
 # sse hardware vector support
 .if defined(MACHINE_CPU) && (${MACHINE_CPU:Msse} == "sse" || ${MACHINE_CPU:Mamd64} == "amd64")
@@ -52,16 +55,16 @@ WITHOUT_BUILTIN_VECTOR=	yes
 
 # builtin vector, requires mmx and sse
 .if !defined(WITHOUT_BUILTIN_VECTOR) && defined(WITH_BUILTIN_VECTOR)
-CFLAGS+=		-msse
+FFMPEG_CFLAGS_OFF+=-msse
 .endif
-
-CONFIGURE_ARGS+=	--with-ffmpeg-extra-configure="${FFMPEG_CONFIG}"
 
 .include <bsd.port.pre.mk>
 
+.if ! ${PORT_OPTIONS:MFFMPEG}
 .if ${OSVERSION} < 900033 || ${ARCH} == ia64
 BUILD_DEPENDS+=	${LOCALBASE}/bin/as:${PORTSDIR}/devel/binutils
-MAKE_ENV=	COMPILER_PATH=${LOCALBASE}/bin
+CONFIGURE_ENV+=	COMPILER_PATH=${LOCALBASE}/bin
+MAKE_ENV+=	COMPILER_PATH=${LOCALBASE}/bin
 .endif
 
 .if ${ARCH} == powerpc64
@@ -69,13 +72,25 @@ FFMPEG_CONFIG+=	--arch=ppc64
 .endif
 
 .if ${COMPILER_TYPE} == "gcc"
-CFLAGS+= -fno-force-addr
+CFLAGS+=	-fno-force-addr
 .endif
 
-post-patch:
+post-extract:
 	@${MV} ${WRKSRC}/gst-libs/ext/libav ${WRKSRC}/gst-libs/ext/libav.old
 	@${MV} ${WRKDIR}/libav-${LIBAV_VERSION} ${WRKSRC}/gst-libs/ext/libav
 	@${CP} ${WRKSRC}/gst-libs/ext/libav.old/config.* \
 		${WRKSRC}/gst-libs/ext/libav/
+.endif # FFMPEG
+
+post-patch:
+	@${REINPLACE_CMD} -Ee '/sleep 15/d; /PKG_CONFIG/\
+		s/lib(av(format|codec|util)|postproc|swscale)/&0/g' \
+		${WRKSRC}/configure
+	@${REINPLACE_CMD} 's/[[:<:]]ARCH[[:>:]]/LIBAV_ARCH/' \
+		${WRKSRC}/gst-libs/ext/libav/Makefile \
+		${WRKSRC}/gst-libs/ext/libav/common.mak \
+		${WRKSRC}/gst-libs/ext/libav/configure \
+		${WRKSRC}/gst-libs/ext/libav/libavcodec/Makefile \
+		${WRKSRC}/gst-libs/ext/libav/libavfilter/Makefile
 
 .include <bsd.port.post.mk>

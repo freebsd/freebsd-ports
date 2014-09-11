@@ -29,7 +29,9 @@ ONLY_FOR_ARCHS=	i386 amd64
 APP_NAME=	${PKGBASE}
 BIN_NAME?=	${PORTNAME}
 USE_LINUX=	yes
-USE_LINUX_APPS+=	atk fontconfig gtk2 hicontheme pango
+USE_LINUX_APPS+=alsalib alsa-plugins-oss atk dbusglib dbuslibs \
+		fontconfig gtk2 hicontheme pango
+
 WRKSRC?=	${WRKDIR}/${BIN_NAME}
 FDIR=		${STAGEDIR}${PREFIX}/lib/${APP_NAME}
 COMMON_DIR=	${.CURDIR}/../../www/linux-seamonkey
@@ -77,14 +79,6 @@ post-patch:
 
 	# empty port preferences
 	@${DO_NADA} >>${PREFS_FILE}
-
-. if (${DISTVERSION:R:R} < 28 && ${PORTNAME} != "seamonkey") || \
- (${PORTNAME} == "seamonkey" && ${DISTVERSION:C/[0-9]*\.//:C/[ab].*//} < 25)
-	# dummy resident-unique for make about:memory's "measure"
-	@${REINPLACE_CMD} -i '' \
-		's,/proc/self/smaps\(.Private\),////////dev/null\1,' \
-		${WRKSRC}/libxul.so
-. endif
 .endif
 
 .if !target(do-install)

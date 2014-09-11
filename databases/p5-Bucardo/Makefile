@@ -3,7 +3,7 @@
 
 PORTNAME=	Bucardo
 PORTVERSION=	5.1.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	databases perl5
 MASTER_SITES=	http://bucardo.org/downloads/ LOCAL/mat/${PORTNAME}
 PKGNAMEPREFIX=	p5-
@@ -16,10 +16,10 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	p5-DBI>=1.51:${PORTSDIR}/databases/p5-DBI \
 		p5-DBD-Pg>=2.0:${PORTSDIR}/databases/p5-DBD-Pg \
+		p5-Encode-Locale>=0:${PORTSDIR}/converters/p5-Encode-Locale \
+		p5-boolean>=0:${PORTSDIR}/devel/p5-boolean \
 		p5-DBIx-Safe>=1.2.4:${PORTSDIR}/databases/p5-DBIx-Safe
-RUN_DEPENDS=	p5-DBI>=1.51:${PORTSDIR}/databases/p5-DBI \
-		p5-DBD-Pg>=2.0:${PORTSDIR}/databases/p5-DBD-Pg \
-		p5-DBIx-Safe>=1.2.4:${PORTSDIR}/databases/p5-DBIx-Safe
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=	perl5
 USE_PERL5=	configure

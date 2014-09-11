@@ -3,7 +3,7 @@
 
 PORTNAME=	iplog
 PORTVERSION=	1.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net-p2p
 MASTER_SITES=	SF/verlihub/VH_IPLog/${DISTVERSION}
 
@@ -11,6 +11,5 @@ MAINTAINER=	me@skylord.ru
 
 PLUGIN_DESC=	IPLog
 
-.include <bsd.port.pre.mk>
-.include "${PORTSDIR}/net-p2p/verlihub-plugins/Makefile.plugins"
-.include <bsd.port.post.mk>
+.include "../verlihub-plugins/Makefile.plugins"
+.include <bsd.port.mk>

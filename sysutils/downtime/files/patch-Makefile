@@ -12,12 +12,12 @@
 -	$(INSTALL) -c -g $(GROUP) -o $(OWNER) -m 444 downtime.xml $(PREFIX)/share/mime/packages
 -	update-mime-database $(PREFIX)/share/mime
 -	update-desktop-database $(PREFIX)/share/applications
-+	$(INSTALL) -c -g $(GROUP) -o $(OWNER) -m 755 downtime $(DESTDIR)$(PREFIX)/bin
-+	$(INSTALL) -c -g $(GROUP) -o $(OWNER) -m 444 downtime.1.gz $(DESTDIR)$(PREFIX)/man/man1
-+	$(INSTALL) -c -d -g $(GROUP) -o $(OWNER) -m 755 $(DESTDIR)$(PREFIX)/share/applications
-+	$(INSTALL) -c -g $(GROUP) -o $(OWNER) -m 444 downtime.desktop $(DESTDIR)$(PREFIX)/share/applications
-+	$(INSTALL) -c -d -g $(GROUP) -o $(OWNER) -m 755 $(DESTDIR)$(PREFIX)/share/mime/packages
-+	$(INSTALL) -c -g $(GROUP) -o $(OWNER) -m 444 downtime.xml $(DESTDIR)$(PREFIX)/share/mime/packages
++	$(BSD_INSTALL_PROGRAM) downtime $(DESTDIR)$(PREFIX)/bin
++	$(BSD_INSTALL_MAN) downtime.1.gz $(DESTDIR)$(PREFIX)/man/man1
++	$(INSTALL) -c -d -m 755 $(DESTDIR)$(PREFIX)/share/applications
++	$(BSD_INSTALL_DATA) downtime.desktop $(DESTDIR)$(PREFIX)/share/applications
++	$(INSTALL) -c -d -m 755 $(DESTDIR)$(PREFIX)/share/mime/packages
++	$(BSD_INSTALL_DATA) downtime.xml $(DESTDIR)$(PREFIX)/share/mime/packages
  
  clean:
  	-rm $(OBJS) *.core *~ downtime downtime.1.gz downtime-*.tar.gz

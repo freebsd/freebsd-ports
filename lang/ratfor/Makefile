@@ -3,7 +3,7 @@
 
 PORTNAME=	ratfor
 PORTVERSION=	1985.06
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	lang
 MASTER_SITES=	${MASTER_SITE_LOCAL}  \
 		http://sepwww.stanford.edu/sep/prof/

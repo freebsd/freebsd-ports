@@ -1,18 +1,23 @@
 bin/mate-about
-include/mate-desktop-2.0/libmate/mate-desktop-item.h
-include/mate-desktop-2.0/libmate/mate-desktop-utils.h
-include/mate-desktop-2.0/libmateui/mate-bg-crossfade.h
-include/mate-desktop-2.0/libmateui/mate-bg.h
-include/mate-desktop-2.0/libmateui/mate-desktop-thumbnail.h
-include/mate-desktop-2.0/libmateui/mate-rr-config.h
-include/mate-desktop-2.0/libmateui/mate-rr-labeler.h
-include/mate-desktop-2.0/libmateui/mate-rr.h
+bin/mate-gsettings-toggle
+include/mate-desktop-2.0/libmate-desktop/mate-bg-crossfade.h
+include/mate-desktop-2.0/libmate-desktop/mate-bg.h
+include/mate-desktop-2.0/libmate-desktop/mate-dconf.h
+include/mate-desktop-2.0/libmate-desktop/mate-desktop-item.h
+include/mate-desktop-2.0/libmate-desktop/mate-desktop-thumbnail.h
+include/mate-desktop-2.0/libmate-desktop/mate-desktop-utils.h
+include/mate-desktop-2.0/libmate-desktop/mate-desktop.h
+include/mate-desktop-2.0/libmate-desktop/mate-gsettings.h
+include/mate-desktop-2.0/libmate-desktop/mate-rr-config.h
+include/mate-desktop-2.0/libmate-desktop/mate-rr-labeler.h
+include/mate-desktop-2.0/libmate-desktop/mate-rr.h
 lib/libmate-desktop-2.a
 lib/libmate-desktop-2.so
 lib/libmate-desktop-2.so.17
 lib/libmate-desktop-2.so.17.1.4
 libdata/pkgconfig/mate-desktop-2.0.pc
 man/man1/mate-about.1.gz
+man/man1/mate-gsettings-toggle.1.gz
 share/MateConf/gsettings/mate-desktop.convert
 share/applications/mate-about.desktop
 %%DOCSDIR%%/MateBG.html
@@ -24,6 +29,7 @@ share/applications/mate-about.desktop
 %%DOCSDIR%%/index.html
 %%DOCSDIR%%/index.sgml
 %%DOCSDIR%%/intro.html
+%%DOCSDIR%%/left-insensitive.png
 %%DOCSDIR%%/left.png
 %%DOCSDIR%%/libmate.html
 %%DOCSDIR%%/mate-desktop-Miscellaneous-Functions.html
@@ -35,9 +41,11 @@ share/applications/mate-about.desktop
 %%DOCSDIR%%/mate-desktop-mate-rr-screen.html
 %%DOCSDIR%%/mate-desktop.devhelp2
 %%DOCSDIR%%/randr.html
+%%DOCSDIR%%/right-insensitive.png
 %%DOCSDIR%%/right.png
 %%DOCSDIR%%/style.css
 %%DOCSDIR%%/thumbnail.html
+%%DOCSDIR%%/up-insensitive.png
 %%DOCSDIR%%/up.png
 share/libmate-desktop/pnp.ids
 share/locale/af/LC_MESSAGES/mate-desktop.mo
@@ -56,6 +64,7 @@ share/locale/br/LC_MESSAGES/mate-desktop.mo
 share/locale/bs/LC_MESSAGES/mate-desktop.mo
 share/locale/ca/LC_MESSAGES/mate-desktop.mo
 share/locale/ca@valencia/LC_MESSAGES/mate-desktop.mo
+share/locale/cmn/LC_MESSAGES/mate-desktop.mo
 share/locale/crh/LC_MESSAGES/mate-desktop.mo
 share/locale/cs/LC_MESSAGES/mate-desktop.mo
 share/locale/cy/LC_MESSAGES/mate-desktop.mo
@@ -123,6 +132,7 @@ share/locale/pt_BR/LC_MESSAGES/mate-desktop.mo
 share/locale/ro/LC_MESSAGES/mate-desktop.mo
 share/locale/ru/LC_MESSAGES/mate-desktop.mo
 share/locale/rw/LC_MESSAGES/mate-desktop.mo
+share/locale/sc/LC_MESSAGES/mate-desktop.mo
 share/locale/si/LC_MESSAGES/mate-desktop.mo
 share/locale/sk/LC_MESSAGES/mate-desktop.mo
 share/locale/sl/LC_MESSAGES/mate-desktop.mo
@@ -173,6 +183,8 @@ share/mate-about/mate-version.xml
 @dirrmtry share/locale/sr@latin
 @dirrmtry share/locale/si/LC_MESSAGES
 @dirrmtry share/locale/si
+@dirrmtry share/locale/sc/LC_MESSAGES
+@dirrmtry share/locale/sc
 @dirrmtry share/locale/rw/LC_MESSAGES
 @dirrmtry share/locale/rw
 @dirrmtry share/locale/ps/LC_MESSAGES
@@ -213,6 +225,8 @@ share/mate-about/mate-version.xml
 @dirrmtry share/locale/dz
 @dirrmtry share/locale/crh/LC_MESSAGES
 @dirrmtry share/locale/crh
+@dirrmtry share/locale/cmn/LC_MESSAGES
+@dirrmtry share/locale/cmn
 @dirrmtry share/locale/ca@valencia/LC_MESSAGES
 @dirrmtry share/locale/ca@valencia
 @dirrmtry share/locale/bn_IN/LC_MESSAGES
@@ -227,6 +241,5 @@ share/mate-about/mate-version.xml
 @dirrmtry share/locale/an
 @dirrm share/libmate-desktop
 @dirrm %%DOCSDIR%%
-@dirrm include/mate-desktop-2.0/libmateui
-@dirrm include/mate-desktop-2.0/libmate
+@dirrm include/mate-desktop-2.0/libmate-desktop
 @dirrm include/mate-desktop-2.0

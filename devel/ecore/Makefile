@@ -3,6 +3,7 @@
 
 PORTNAME=	ecore
 PORTVERSION=	1.7.9
+PORTREVISION=	1
 PORTEPOCH=	2
 CATEGORIES=	devel enlightenment
 MASTER_SITES=	# none

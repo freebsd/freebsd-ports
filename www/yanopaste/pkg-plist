@@ -3,7 +3,6 @@
 %%WWWDIR%%/INSTALL
 %%WWWDIR%%/LICENSE
 %%WWWDIR%%/common.js
-%%WWWDIR%%/config.php
 %%WWWDIR%%/config.php.sample
 %%WWWDIR%%/functions.php
 %%WWWDIR%%/header.jpg
@@ -154,4 +153,4 @@
 %%WWWDIR%%/upgrade.php
 @dirrm %%WWWDIR%%/includes/geshi
 @dirrm %%WWWDIR%%/includes
-@dirrm %%WWWDIR%%/
+@dirrm %%WWWDIR%%

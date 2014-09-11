@@ -11,7 +11,7 @@ MASTER_SITE_SUBDIR=	knu
 MAINTAINER=	knu@FreeBSD.org
 COMMENT=	Tool to help merge one file to another interactively
 
-USES=	tar:bzip2
+USES=		tar:bzip2 uidfix
 
 MAKE_ARGS=	PREFIX="${PREFIX}" MANPREFIX="${MANPREFIX}"
 MAKEFILE=	BSDmakefile

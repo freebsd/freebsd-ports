@@ -3,7 +3,7 @@
 
 PORTNAME=	dcross
 PORTVERSION=	2.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games python
 MASTER_SITES=	GOOGLE_CODE \
 		SF/nemysisfreebsdp/games/:icons

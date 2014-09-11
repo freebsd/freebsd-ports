@@ -3,7 +3,7 @@
 
 PORTNAME=	pipepanic
 PORTVERSION=	0.1.3
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	games
 MASTER_SITES=	http://www.users.waitrose.com/~thunor/pipepanic/dload/ \
 		LOCAL/ehaupt \

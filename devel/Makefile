@@ -70,8 +70,6 @@
     SUBDIR += argouml
     SUBDIR += argp-standalone
     SUBDIR += argtable
-    SUBDIR += arm-eabi-binutils
-    SUBDIR += arm-eabi-gcc
     SUBDIR += arm-elf-binutils
     SUBDIR += arm-gnueabi-binutils
     SUBDIR += armv6-freebsd10.0-xdev
@@ -270,9 +268,8 @@
     SUBDIR += cproto
     SUBDIR += cpuflags
     SUBDIR += creduce
-    SUBDIR += critcl
     SUBDIR += cross-binutils
-    SUBDIR += cross-gcc
+    SUBDIR += critcl
     SUBDIR += cscope
     SUBDIR += cscout
     SUBDIR += csmith
@@ -882,6 +879,7 @@
     SUBDIR += ireport
     SUBDIR += isl
     SUBDIR += itext
+    SUBDIR += i386-linux-binutils
     SUBDIR += jakarta-commons-configuration
     SUBDIR += jakarta-commons-daemon
     SUBDIR += jakarta-commons-io
@@ -4323,6 +4321,7 @@
     SUBDIR += rubygem-gdata
     SUBDIR += rubygem-gem_plugin
     SUBDIR += rubygem-gemcutter
+    SUBDIR += rubygem-gems
     SUBDIR += rubygem-generator_spec
     SUBDIR += rubygem-georuby
     SUBDIR += rubygem-getopt
@@ -4344,6 +4343,7 @@
     SUBDIR += rubygem-gyoku
     SUBDIR += rubygem-hashery
     SUBDIR += rubygem-hashie
+    SUBDIR += rubygem-hashie2
     SUBDIR += rubygem-highline
     SUBDIR += rubygem-hike
     SUBDIR += rubygem-hitimes

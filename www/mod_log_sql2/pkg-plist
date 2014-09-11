@@ -1,7 +1,6 @@
+@sample %%APACHEETCDIR%%/modules.d/%%APMODCFG%%
 %%APACHEMODDIR%%/%%AP_MODULE%%
-@exec %D/sbin/apxs -e -a -n %%AP_NAME%% %D/%F
-@unexec %D/sbin/apxs -e -A -n %%AP_NAME%% %D/%F
-%%DBI%%%%APACHEMODDIR%%/mod_log_sql_dbi.so
 %%APACHEMODDIR%%/mod_log_sql_mysql.so
-%%APACHE2X%%%%APACHEMODDIR%%/mod_log_sql_logio.so
-%%SSL%%%%APACHEMODDIR%%/mod_log_sql_ssl.so
+%%APACHEMODDIR%%/mod_log_sql_logio.so
+%%APACHEMODDIR%%/mod_log_sql_ssl.so
+%%DBI%%%%APACHEMODDIR%%/mod_log_sql_dbi.so

@@ -3,6 +3,7 @@
 
 PORTNAME=	pgpool-II
 PORTVERSION=	3.0.4
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	http://pgfoundry.org/frs/download.php/3076/
 PKGNAMESUFFIX=	30
@@ -12,8 +13,9 @@ COMMENT=	Connection pool server for PostgreSQL
 
 LICENSE=	BSD
 
-USES=		gmake
 GNU_CONFIGURE=	yes
+INSTALL_TARGET=	install-strip
+USES=		gmake libtool
 USE_PGSQL=	yes
 USE_LDCONFIG=	yes
 
@@ -28,8 +30,6 @@ PORTDOCShtml+=	tutorial-en.html tutorial-ja.html
 OPTIONS_DEFINE=	DOCS
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|echo aout|echo elf|g' \
-	${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's| pg_config| ${LOCALBASE}/bin/pg_config|g' \
 	${WRKSRC}/sql/pgpool-recovery/Makefile
 

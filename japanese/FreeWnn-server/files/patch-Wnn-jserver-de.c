@@ -2,10 +2,10 @@ Index: Wnn/jserver/de.c
 ===================================================================
 RCS file: /home/cvs/private/hrs/freewnn/Wnn/jserver/de.c,v
 retrieving revision 1.1.1.1
-retrieving revision 1.7
-diff -u -p -r1.1.1.1 -r1.7
+retrieving revision 1.8
+diff -u -p -r1.1.1.1 -r1.8
 --- Wnn/jserver/de.c	20 Dec 2008 07:13:30 -0000	1.1.1.1
-+++ Wnn/jserver/de.c	2 Jan 2010 14:05:14 -0000	1.7
++++ Wnn/jserver/de.c	9 Sep 2014 16:18:01 -0000	1.8
 @@ -1,7 +1,7 @@
  /*
   * FreeWnn is a network-extensible Kana-to-Kanji conversion system.
@@ -709,7 +709,7 @@ diff -u -p -r1.1.1.1 -r1.7
  }
  
  /**     クライアントをcblkから削除する  **/
-@@ -555,746 +505,724 @@ new_client (void)               /* NewCl
+@@ -555,746 +505,726 @@ new_client (void)               /* NewCl
  void
  del_client (void)
  {
@@ -1599,6 +1599,8 @@ diff -u -p -r1.1.1.1 -r1.7
 -    }
 -  setsockopt (sock_d_in, SOL_SOCKET, SO_REUSEADDR, (char *) &on, sizeof (int));
 +#endif /* INET6 */
++			default:
++				continue;
 +			}
 +			setsockopt (sock_d_in, SOL_SOCKET, SO_REUSEADDR, (char *) &on, sizeof (int));
  #ifdef SO_DONTLINGER
@@ -1971,7 +1973,7 @@ diff -u -p -r1.1.1.1 -r1.7
  }
  
  void
-@@ -1302,25 +1230,25 @@ js_kill (void)
+@@ -1302,25 +1232,25 @@ js_kill (void)
  {
    if (clientp == 1)
      {

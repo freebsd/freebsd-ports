@@ -1,0 +1,13 @@
+include/nx/MD5.h
+include/nx/NX.h
+include/nx/NXalert.h
+include/nx/NXmitshm.h
+include/nx/NXpack.h
+include/nx/NXproto.h
+include/nx/NXrender.h
+include/nx/NXvars.h
+lib/libXcomp.a
+lib/libXcomp.so
+lib/libXcomp.so.3
+lib/libXcomp.so.3.5.0
+@dirrmtry include/nx

@@ -1,6 +1,75 @@
 bin/mate-terminal
+bin/mate-terminal.wrapper
 man/man1/mate-terminal.1.gz
 share/applications/mate-terminal.desktop
+share/help/C/mate-terminal/figures/mate-terminal-default.png
+share/help/C/mate-terminal/figures/mate-terminal-tabbed.png
+share/help/C/mate-terminal/index.docbook
+share/help/C/mate-terminal/legal.xml
+share/help/ca/mate-terminal/figures/mate-terminal-default.png
+share/help/ca/mate-terminal/figures/mate-terminal-tabbed.png
+share/help/ca/mate-terminal/index.docbook
+share/help/ca/mate-terminal/legal.xml
+share/help/cs/mate-terminal/figures/mate-terminal-default.png
+share/help/cs/mate-terminal/figures/mate-terminal-tabbed.png
+share/help/cs/mate-terminal/index.docbook
+share/help/cs/mate-terminal/legal.xml
+share/help/da/mate-terminal/figures/mate-terminal-default.png
+share/help/da/mate-terminal/figures/mate-terminal-tabbed.png
+share/help/da/mate-terminal/index.docbook
+share/help/da/mate-terminal/legal.xml
+share/help/de/mate-terminal/figures/mate-terminal-default.png
+share/help/de/mate-terminal/figures/mate-terminal-tabbed.png
+share/help/de/mate-terminal/index.docbook
+share/help/de/mate-terminal/legal.xml
+share/help/el/mate-terminal/figures/mate-terminal-default.png
+share/help/el/mate-terminal/figures/mate-terminal-tabbed.png
+share/help/el/mate-terminal/index.docbook
+share/help/el/mate-terminal/legal.xml
+share/help/en_GB/mate-terminal/figures/mate-terminal-default.png
+share/help/en_GB/mate-terminal/figures/mate-terminal-tabbed.png
+share/help/en_GB/mate-terminal/index.docbook
+share/help/en_GB/mate-terminal/legal.xml
+share/help/es/mate-terminal/figures/mate-terminal-default.png
+share/help/es/mate-terminal/figures/mate-terminal-tabbed.png
+share/help/es/mate-terminal/index.docbook
+share/help/es/mate-terminal/legal.xml
+share/help/fr/mate-terminal/figures/mate-terminal-default.png
+share/help/fr/mate-terminal/figures/mate-terminal-tabbed.png
+share/help/fr/mate-terminal/index.docbook
+share/help/fr/mate-terminal/legal.xml
+share/help/it/mate-terminal/figures/mate-terminal-default.png
+share/help/it/mate-terminal/figures/mate-terminal-tabbed.png
+share/help/it/mate-terminal/index.docbook
+share/help/it/mate-terminal/legal.xml
+share/help/ko/mate-terminal/figures/mate-terminal-default.png
+share/help/ko/mate-terminal/figures/mate-terminal-tabbed.png
+share/help/ko/mate-terminal/index.docbook
+share/help/ko/mate-terminal/legal.xml
+share/help/oc/mate-terminal/figures/mate-terminal-default.png
+share/help/oc/mate-terminal/figures/mate-terminal-tabbed.png
+share/help/oc/mate-terminal/index.docbook
+share/help/oc/mate-terminal/legal.xml
+share/help/pt_BR/mate-terminal/figures/mate-terminal-default.png
+share/help/pt_BR/mate-terminal/figures/mate-terminal-tabbed.png
+share/help/pt_BR/mate-terminal/index.docbook
+share/help/pt_BR/mate-terminal/legal.xml
+share/help/ru/mate-terminal/figures/mate-terminal-default.png
+share/help/ru/mate-terminal/figures/mate-terminal-tabbed.png
+share/help/ru/mate-terminal/index.docbook
+share/help/ru/mate-terminal/legal.xml
+share/help/sv/mate-terminal/figures/mate-terminal-default.png
+share/help/sv/mate-terminal/figures/mate-terminal-tabbed.png
+share/help/sv/mate-terminal/index.docbook
+share/help/sv/mate-terminal/legal.xml
+share/help/uk/mate-terminal/figures/mate-terminal-default.png
+share/help/uk/mate-terminal/figures/mate-terminal-tabbed.png
+share/help/uk/mate-terminal/index.docbook
+share/help/uk/mate-terminal/legal.xml
+share/help/zh_CN/mate-terminal/figures/mate-terminal-default.png
+share/help/zh_CN/mate-terminal/figures/mate-terminal-tabbed.png
+share/help/zh_CN/mate-terminal/index.docbook
+share/help/zh_CN/mate-terminal/legal.xml
 share/locale/am/LC_MESSAGES/mate-terminal.mo
 share/locale/ar/LC_MESSAGES/mate-terminal.mo
 share/locale/as/LC_MESSAGES/mate-terminal.mo
@@ -15,6 +84,7 @@ share/locale/br/LC_MESSAGES/mate-terminal.mo
 share/locale/bs/LC_MESSAGES/mate-terminal.mo
 share/locale/ca/LC_MESSAGES/mate-terminal.mo
 share/locale/ca@valencia/LC_MESSAGES/mate-terminal.mo
+share/locale/cmn/LC_MESSAGES/mate-terminal.mo
 share/locale/cs/LC_MESSAGES/mate-terminal.mo
 share/locale/cy/LC_MESSAGES/mate-terminal.mo
 share/locale/da/LC_MESSAGES/mate-terminal.mo
@@ -87,6 +157,7 @@ share/locale/th/LC_MESSAGES/mate-terminal.mo
 share/locale/tr/LC_MESSAGES/mate-terminal.mo
 share/locale/ug/LC_MESSAGES/mate-terminal.mo
 share/locale/uk/LC_MESSAGES/mate-terminal.mo
+share/locale/ur/LC_MESSAGES/mate-terminal.mo
 share/locale/vi/LC_MESSAGES/mate-terminal.mo
 share/locale/wa/LC_MESSAGES/mate-terminal.mo
 share/locale/xh/LC_MESSAGES/mate-terminal.mo
@@ -102,144 +173,13 @@ share/locale/zh_TW/LC_MESSAGES/mate-terminal.mo
 %%DATADIR%%/skey-challenge.ui
 %%DATADIR%%/terminal.about
 %%DATADIR%%/terminal.xml
-share/mate/help/mate-terminal/C/figures/mate-terminal-default.png
-share/mate/help/mate-terminal/C/figures/mate-terminal-tabbed.png
-share/mate/help/mate-terminal/C/legal.xml
-share/mate/help/mate-terminal/C/mate-terminal.xml
-share/mate/help/mate-terminal/bg/figures/mate-terminal-default.png
-share/mate/help/mate-terminal/bg/figures/mate-terminal-tabbed.png
-share/mate/help/mate-terminal/bg/legal.xml
-share/mate/help/mate-terminal/bg/mate-terminal.xml
-share/mate/help/mate-terminal/ca/figures/mate-terminal-default.png
-share/mate/help/mate-terminal/ca/figures/mate-terminal-tabbed.png
-share/mate/help/mate-terminal/ca/mate-terminal.xml
-share/mate/help/mate-terminal/cs/figures/mate-terminal-default.png
-share/mate/help/mate-terminal/cs/figures/mate-terminal-tabbed.png
-share/mate/help/mate-terminal/cs/mate-terminal.xml
-share/mate/help/mate-terminal/da/figures/mate-terminal-default.png
-share/mate/help/mate-terminal/da/figures/mate-terminal-tabbed.png
-share/mate/help/mate-terminal/da/mate-terminal.xml
-share/mate/help/mate-terminal/de/figures/mate-terminal-default.png
-share/mate/help/mate-terminal/de/figures/mate-terminal-tabbed.png
-share/mate/help/mate-terminal/de/mate-terminal.xml
-share/mate/help/mate-terminal/el/figures/mate-terminal-default.png
-share/mate/help/mate-terminal/el/figures/mate-terminal-tabbed.png
-share/mate/help/mate-terminal/el/mate-terminal.xml
-share/mate/help/mate-terminal/en_GB/figures/mate-terminal-default.png
-share/mate/help/mate-terminal/en_GB/figures/mate-terminal-tabbed.png
-share/mate/help/mate-terminal/en_GB/mate-terminal.xml
-share/mate/help/mate-terminal/es/figures/mate-terminal-default.png
-share/mate/help/mate-terminal/es/figures/mate-terminal-tabbed.png
-share/mate/help/mate-terminal/es/mate-terminal.xml
-share/mate/help/mate-terminal/fr/figures/mate-terminal-default.png
-share/mate/help/mate-terminal/fr/figures/mate-terminal-tabbed.png
-share/mate/help/mate-terminal/fr/mate-terminal.xml
-share/mate/help/mate-terminal/it/figures/mate-terminal-default.png
-share/mate/help/mate-terminal/it/figures/mate-terminal-tabbed.png
-share/mate/help/mate-terminal/it/mate-terminal.xml
-share/mate/help/mate-terminal/ja/figures/mate-terminal-default.png
-share/mate/help/mate-terminal/ja/figures/mate-terminal-tabbed.png
-share/mate/help/mate-terminal/ja/legal.xml
-share/mate/help/mate-terminal/ja/mate-terminal.xml
-share/mate/help/mate-terminal/ko/figures/mate-terminal-default.png
-share/mate/help/mate-terminal/ko/figures/mate-terminal-tabbed.png
-share/mate/help/mate-terminal/ko/mate-terminal.xml
-share/mate/help/mate-terminal/oc/figures/mate-terminal-default.png
-share/mate/help/mate-terminal/oc/figures/mate-terminal-tabbed.png
-share/mate/help/mate-terminal/oc/mate-terminal.xml
-share/mate/help/mate-terminal/pt_BR/figures/mate-terminal-default.png
-share/mate/help/mate-terminal/pt_BR/figures/mate-terminal-tabbed.png
-share/mate/help/mate-terminal/pt_BR/mate-terminal.xml
-share/mate/help/mate-terminal/ro/figures/mate-terminal-default.png
-share/mate/help/mate-terminal/ro/figures/mate-terminal-tabbed.png
-share/mate/help/mate-terminal/ro/legal.xml
-share/mate/help/mate-terminal/ro/mate-terminal.xml
-share/mate/help/mate-terminal/ru/figures/mate-terminal-default.png
-share/mate/help/mate-terminal/ru/figures/mate-terminal-tabbed.png
-share/mate/help/mate-terminal/ru/mate-terminal.xml
-share/mate/help/mate-terminal/sv/figures/mate-terminal-default.png
-share/mate/help/mate-terminal/sv/figures/mate-terminal-tabbed.png
-share/mate/help/mate-terminal/sv/mate-terminal.xml
-share/mate/help/mate-terminal/uk/figures/mate-terminal-default.png
-share/mate/help/mate-terminal/uk/figures/mate-terminal-tabbed.png
-share/mate/help/mate-terminal/uk/mate-terminal.xml
-share/mate/help/mate-terminal/zh_CN/figures/mate-terminal-default.png
-share/mate/help/mate-terminal/zh_CN/figures/mate-terminal-tabbed.png
-share/mate/help/mate-terminal/zh_CN/mate-terminal.xml
-share/mate/help/mate-terminal/zh_TW/figures/mate-terminal-default.png
-share/mate/help/mate-terminal/zh_TW/figures/mate-terminal-tabbed.png
-share/mate/help/mate-terminal/zh_TW/legal.xml
-share/mate/help/mate-terminal/zh_TW/mate-terminal.xml
-share/omf/mate-terminal/mate-terminal-C.omf
-share/omf/mate-terminal/mate-terminal-bg.omf
-share/omf/mate-terminal/mate-terminal-ca.omf
-share/omf/mate-terminal/mate-terminal-cs.omf
-share/omf/mate-terminal/mate-terminal-da.omf
-share/omf/mate-terminal/mate-terminal-de.omf
-share/omf/mate-terminal/mate-terminal-el.omf
-share/omf/mate-terminal/mate-terminal-en_GB.omf
-share/omf/mate-terminal/mate-terminal-es.omf
-share/omf/mate-terminal/mate-terminal-fr.omf
-share/omf/mate-terminal/mate-terminal-it.omf
-share/omf/mate-terminal/mate-terminal-ja.omf
-share/omf/mate-terminal/mate-terminal-ko.omf
-share/omf/mate-terminal/mate-terminal-oc.omf
-share/omf/mate-terminal/mate-terminal-pt_BR.omf
-share/omf/mate-terminal/mate-terminal-ro.omf
-share/omf/mate-terminal/mate-terminal-ru.omf
-share/omf/mate-terminal/mate-terminal-sv.omf
-share/omf/mate-terminal/mate-terminal-uk.omf
-share/omf/mate-terminal/mate-terminal-zh_CN.omf
-share/omf/mate-terminal/mate-terminal-zh_TW.omf
-@dirrm share/omf/mate-terminal
-@dirrm share/mate/help/mate-terminal/zh_TW/figures
-@dirrm share/mate/help/mate-terminal/zh_TW
-@dirrm share/mate/help/mate-terminal/zh_CN/figures
-@dirrm share/mate/help/mate-terminal/zh_CN
-@dirrm share/mate/help/mate-terminal/uk/figures
-@dirrm share/mate/help/mate-terminal/uk
-@dirrm share/mate/help/mate-terminal/sv/figures
-@dirrm share/mate/help/mate-terminal/sv
-@dirrm share/mate/help/mate-terminal/ru/figures
-@dirrm share/mate/help/mate-terminal/ru
-@dirrm share/mate/help/mate-terminal/ro/figures
-@dirrm share/mate/help/mate-terminal/ro
-@dirrm share/mate/help/mate-terminal/pt_BR/figures
-@dirrm share/mate/help/mate-terminal/pt_BR
-@dirrm share/mate/help/mate-terminal/oc/figures
-@dirrm share/mate/help/mate-terminal/oc
-@dirrm share/mate/help/mate-terminal/ko/figures
-@dirrm share/mate/help/mate-terminal/ko
-@dirrm share/mate/help/mate-terminal/ja/figures
-@dirrm share/mate/help/mate-terminal/ja
-@dirrm share/mate/help/mate-terminal/it/figures
-@dirrm share/mate/help/mate-terminal/it
-@dirrm share/mate/help/mate-terminal/fr/figures
-@dirrm share/mate/help/mate-terminal/fr
-@dirrm share/mate/help/mate-terminal/es/figures
-@dirrm share/mate/help/mate-terminal/es
-@dirrm share/mate/help/mate-terminal/en_GB/figures
-@dirrm share/mate/help/mate-terminal/en_GB
-@dirrm share/mate/help/mate-terminal/el/figures
-@dirrm share/mate/help/mate-terminal/el
-@dirrm share/mate/help/mate-terminal/de/figures
-@dirrm share/mate/help/mate-terminal/de
-@dirrm share/mate/help/mate-terminal/da/figures
-@dirrm share/mate/help/mate-terminal/da
-@dirrm share/mate/help/mate-terminal/cs/figures
-@dirrm share/mate/help/mate-terminal/cs
-@dirrm share/mate/help/mate-terminal/ca/figures
-@dirrm share/mate/help/mate-terminal/ca
-@dirrm share/mate/help/mate-terminal/bg/figures
-@dirrm share/mate/help/mate-terminal/bg
-@dirrm share/mate/help/mate-terminal/C/figures
-@dirrm share/mate/help/mate-terminal/C
-@dirrm share/mate/help/mate-terminal
 @dirrm %%DATADIR%%
 @dirrmtry share/locale/zh_HK/LC_MESSAGES
 @dirrmtry share/locale/zh_HK
 @dirrmtry share/locale/xh/LC_MESSAGES
 @dirrmtry share/locale/xh
+@dirrmtry share/locale/ur/LC_MESSAGES
+@dirrmtry share/locale/ur
 @dirrmtry share/locale/ug/LC_MESSAGES
 @dirrmtry share/locale/ug
 @dirrmtry share/locale/te/LC_MESSAGES
@@ -276,6 +216,8 @@ share/omf/mate-terminal/mate-terminal-zh_TW.omf
 @dirrmtry share/locale/en@shaw
 @dirrmtry share/locale/dz/LC_MESSAGES
 @dirrmtry share/locale/dz
+@dirrmtry share/locale/cmn/LC_MESSAGES
+@dirrmtry share/locale/cmn
 @dirrmtry share/locale/ca@valencia/LC_MESSAGES
 @dirrmtry share/locale/ca@valencia
 @dirrmtry share/locale/bn_IN/LC_MESSAGES
@@ -286,3 +228,55 @@ share/omf/mate-terminal/mate-terminal-zh_TW.omf
 @dirrmtry share/locale/ast
 @dirrmtry share/locale/as/LC_MESSAGES
 @dirrmtry share/locale/as
+@dirrm share/help/zh_CN/mate-terminal/figures
+@dirrm share/help/zh_CN/mate-terminal
+@dirrmtry share/help/zh_CN
+@dirrm share/help/uk/mate-terminal/figures
+@dirrm share/help/uk/mate-terminal
+@dirrmtry share/help/uk
+@dirrm share/help/sv/mate-terminal/figures
+@dirrm share/help/sv/mate-terminal
+@dirrmtry share/help/sv
+@dirrm share/help/ru/mate-terminal/figures
+@dirrm share/help/ru/mate-terminal
+@dirrmtry share/help/ru
+@dirrm share/help/pt_BR/mate-terminal/figures
+@dirrm share/help/pt_BR/mate-terminal
+@dirrmtry share/help/pt_BR
+@dirrm share/help/oc/mate-terminal/figures
+@dirrm share/help/oc/mate-terminal
+@dirrmtry share/help/oc
+@dirrm share/help/ko/mate-terminal/figures
+@dirrm share/help/ko/mate-terminal
+@dirrmtry share/help/ko
+@dirrm share/help/it/mate-terminal/figures
+@dirrm share/help/it/mate-terminal
+@dirrmtry share/help/it
+@dirrm share/help/fr/mate-terminal/figures
+@dirrm share/help/fr/mate-terminal
+@dirrmtry share/help/fr
+@dirrm share/help/es/mate-terminal/figures
+@dirrm share/help/es/mate-terminal
+@dirrmtry share/help/es
+@dirrm share/help/en_GB/mate-terminal/figures
+@dirrm share/help/en_GB/mate-terminal
+@dirrmtry share/help/en_GB
+@dirrm share/help/el/mate-terminal/figures
+@dirrm share/help/el/mate-terminal
+@dirrmtry share/help/el
+@dirrm share/help/de/mate-terminal/figures
+@dirrm share/help/de/mate-terminal
+@dirrmtry share/help/de
+@dirrm share/help/da/mate-terminal/figures
+@dirrm share/help/da/mate-terminal
+@dirrmtry share/help/da
+@dirrm share/help/cs/mate-terminal/figures
+@dirrm share/help/cs/mate-terminal
+@dirrmtry share/help/cs
+@dirrm share/help/ca/mate-terminal/figures
+@dirrm share/help/ca/mate-terminal
+@dirrmtry share/help/ca
+@dirrm share/help/C/mate-terminal/figures
+@dirrm share/help/C/mate-terminal
+@dirrmtry share/help/C
+@dirrmtry share/help

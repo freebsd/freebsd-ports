@@ -1,0 +1,49 @@
+--- Wnn/pubdicplus/Makefile.in.orig	2004-04-25 03:56:40.000000000 +0900
++++ Wnn/pubdicplus/Makefile.in	2014-09-10 01:42:29.000000000 +0900
+@@ -35,7 +35,6 @@
+  WNNJUTILOBJ = $(top_builddir)/Wnn/jutil
+ 
+ INSTALL         = @INSTALL@ $(INSTALLFLAGS)
+-LOCAL_INSTFLAGS = -o $(WNNOWNER)
+ 
+        INCLUDES = -I$(top_builddir)
+            ATOD = $(WNNJUTILOBJ)/atod
+@@ -377,8 +376,7 @@
+ install::
+ 	@case '${MFLAGS}' in *[i]*) set +e;; esac;
+ 	@for i in $(JWNNDICDIR); do if [ -d $(DESTDIR)$$i ]; then \
+-	set +x; else (set -x; $(MKDIRHIER) $(DESTDIR)$$i; \
+-	chown $(WNNOWNER) $(DESTDIR)$$i); fi \
++	set +x; else (set -x; $(MKDIRHIER) $(DESTDIR)$$i); fi; \
+ 	done
+ 
+ install:: $(DIC)
+@@ -388,8 +386,7 @@
+ 	@for i in $(DIC); do if [ -f $(DESTDIR)$(JWNNPUBDICDIR)/$$i ]; then \
+ 	set +x; \
+ 	else (set -x; \
+-	$(INSTALL) $(INSTLIBFLAGS) $(LOCAL_INSTFLAGS) $$i $(DESTDIR)$(JWNNPUBDICDIR); \
+-	$(WNNTOUCH) $(DESTDIR)$(JWNNPUBDICDIR)/$$i); fi \
++	$(INSTALL) $(INSTLIBFLAGS) $$i $(DESTDIR)$(JWNNPUBDICDIR)); fi \
+ 	done
+ 
+ install:: $(FZKDATA)
+@@ -399,8 +396,7 @@
+ 	@for i in $(FZKDATA); do if [ -f $(DESTDIR)$(JWNNPUBDICDIR)/$$i ]; then \
+ 	set +x; \
+ 	else (set -x; \
+-	$(INSTALL) $(INSTLIBFLAGS) $(LOCAL_INSTFLAGS) $$i $(DESTDIR)$(JWNNPUBDICDIR); \
+-	$(WNNTOUCH) $(DESTDIR)$(JWNNPUBDICDIR)/$$i); fi \
++	$(INSTALL) $(INSTLIBFLAGS) $$i $(DESTDIR)$(JWNNPUBDICDIR)); fi \
+ 	done
+ 
+ install:: $(FZK_SRC)
+@@ -409,7 +405,7 @@
+ 	@for flag in ${MAKEFLAGS} ''; do \
+ 	case "$$flag" in *=*) ;; *[i]*) set +e;; esac; done; \
+ 	for i in $(FZK_SRC); do \
+-	(set -x; $(INSTALL) $(INSTDATFLAGS) $(LOCAL_INSTFLAGS) $$i $(DESTDIR)$(JWNNFZKSRCDIR)); \
++	(set -x; $(INSTALL) $(INSTDATFLAGS) $$i $(DESTDIR)$(JWNNFZKSRCDIR)); \
+ 	done
+ 
+ depend::

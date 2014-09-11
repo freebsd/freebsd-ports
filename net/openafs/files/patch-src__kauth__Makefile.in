@@ -1,10 +1,10 @@
---- openafs-1.6.1/src/kauth/Makefile.in.orig
-+++ openafs-1.6.1/src/kauth/Makefile.in
+--- src/kauth/Makefile.in.orig
++++ src/kauth/Makefile.in
 @@ -24,6 +24,8 @@ LT_deps = $(top_builddir)/src/ubik/liboafs_ubik.la \
  	  $(top_builddir)/src/rxkad/liboafs_rxkad.la
  LT_libs =
  
-+INSTALL_KAUTH = @INSTALL_KAUTH@
++INSTALL_KAUTH = no
 +
  INCLS=${TOP_INCDIR}/ubik.h \
               ${TOP_INCDIR}/lwp.h \

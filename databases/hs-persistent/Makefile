@@ -2,6 +2,7 @@
 
 PORTNAME=	persistent
 PORTVERSION=	1.3.1.1
+PORTREVISION=	1
 CATEGORIES=	databases haskell
 
 MAINTAINER=	haskell@FreeBSD.org

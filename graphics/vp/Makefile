@@ -3,6 +3,7 @@
 
 PORTNAME=	vp
 PORTVERSION=	1.8
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://elfga.com/~erik/files/
 

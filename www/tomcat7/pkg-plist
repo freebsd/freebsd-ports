@@ -30,7 +30,7 @@
 %%T%%/lib/catalina-ha.jar
 %%T%%/lib/catalina-tribes.jar
 %%T%%/lib/catalina.jar
-%%T%%/lib/ecj-P20140317-1600.jar
+%%T%%/lib/ecj-4.4.jar
 %%T%%/lib/el-api.jar
 %%T%%/lib/jasper-el.jar
 %%T%%/lib/jasper.jar
@@ -299,6 +299,8 @@
 %%T%%/webapps/examples/WEB-INF/classes/num/NumberGuessBean.java
 %%T%%/webapps/examples/WEB-INF/classes/sessions/DummyCart.class
 %%T%%/webapps/examples/WEB-INF/classes/sessions/DummyCart.java
+%%T%%/webapps/examples/WEB-INF/classes/util/CookieFilter.class
+%%T%%/webapps/examples/WEB-INF/classes/util/CookieFilter.java
 %%T%%/webapps/examples/WEB-INF/classes/util/HTMLFilter.class
 %%T%%/webapps/examples/WEB-INF/classes/util/HTMLFilter.java
 %%T%%/webapps/examples/WEB-INF/classes/validators/DebugValidator.class

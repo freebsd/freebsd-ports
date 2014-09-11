@@ -3,7 +3,7 @@
 
 PORTNAME=	sablevm-classpath
 PORTVERSION=	1.13
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	java devel
 MASTER_SITES=	SF/sablevm/sablevm/${PORTVERSION}
 
@@ -15,16 +15,16 @@ LICENSE=	GPLv2
 BUILD_DEPENDS=	jikes:${PORTSDIR}/java/jikes
 
 GNU_CONFIGURE=	yes
-USES=		gmake pkgconfig
+INSTALL_TARGET=	install-strip
+USES=		gmake libtool pkgconfig
 USE_LDCONFIG=	${PREFIX}/lib/${PORTNAME}
 USE_XORG=	x11 ice xtst sm
-WANT_GNOME=	yes
 
 PLIST_SUB+=	PORTVERSION=${PORTVERSION}
 
+CONFIGURE_ARGS=	--disable-alsa --disable-dssi
 CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
-CONFIGURE_ARGS+=--disable-alsa --disable-dssi
+LIBS+=		-L${LOCALBASE}/lib
 
 OPTIONS_DEFINE=	CAIRO GTK2 ZIP
 OPTIONS_DEFAULT=GTK2 ZIP

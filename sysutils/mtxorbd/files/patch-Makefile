@@ -13,6 +13,6 @@
 +	install -d $(DESTDIR)${PREFIX}/sbin/
 +	install -d $(DESTDIR)${PREFIX}/share/mtxorbd/
 +	install -d $(DESTDIR)${PREFIX}/man/man1/
-+	install -C -o root -g bin -m 555 mtxorbd $(DESTDIR)${PREFIX}/sbin/
-+	install -C -o root -g bin -m 444 devices.conf $(DESTDIR)${PREFIX}/share/mtxorbd/
-+	install -C -o root -g man -m 444 mtxorbd.1 $(DESTDIR)${PREFIX}/man/man1/
++	$(BSD_INSTALL_PROGRAM) mtxorbd $(DESTDIR)${PREFIX}/sbin/
++	$(BSD_INSTALL_DATA) devices.conf $(DESTDIR)${PREFIX}/share/mtxorbd/
++	$(BSD_INSTALL_MAN) mtxorbd.1 $(DESTDIR)${PREFIX}/man/man1/

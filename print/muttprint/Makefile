@@ -30,6 +30,13 @@ CUPS_RUN_DEPENDS=	cupstestppd:${PORTSDIR}/print/cups-base \
 PAPERSIZE=	letter
 .endif
 
+# muttprint-langinfo is not built for russian/muttprint
+.if defined(MASTERDIR)
+PLIST_SUB+=	LANGINFO="@comment "
+.else
+PLIST_SUB+=	LANGINFO=""
+.endif
+
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MCUPS}

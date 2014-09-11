@@ -3,6 +3,7 @@
 
 PORTNAME=	windowbuilder
 PORTVERSION=	1.6.1
+PORTREVISION=	1
 CATEGORIES=	java devel
 MASTER_SITES=	${MASTER_SITE_ECLIPSE:S,/eclipse/downloads/drops/,/windowbuilder/WB/release/,} \
 		${MASTER_SITE_LOCAL:S,%SUBDIR%/,ale/:native,}

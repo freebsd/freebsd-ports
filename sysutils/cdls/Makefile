@@ -20,7 +20,7 @@ USES=		ncurses
 CONFIGURE_ARGS+=	NCURSES_CONFIG=/usr/bin/true
 .endif
 
-post-patch:
-	@${REINPLACE_CMD} -e 's|/usr/local|${STAGEDIR}${PREFIX}|g' ${WRKSRC}/Makefile
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/cdls ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.post.mk>

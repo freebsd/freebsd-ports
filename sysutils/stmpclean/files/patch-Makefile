@@ -19,8 +19,8 @@
 -	install -c -o 0 -g 0 -m 0444 stmpclean.8 $(MANDIR)/
 +	if [ ! -d $(DESTDIR)$(BINDIR) ] ; then mkdir -p -m 0755 $(DESTDIR)$(BINDIR); fi
 +	if [ ! -d $(DESTDIR)$(MANDIR) ] ; then mkdir -p -m 0755 $(DESTDIR)$(MANDIR); fi
-+	install -c -o 0 -g 0 -m 0555 stmpclean $(DESTDIR)$(BINDIR)/
-+	install -c -o 0 -g 0 -m 0444 stmpclean.8 $(DESTDIR)$(MANDIR)/
++	$(BSD_INSTALL_PROGRAM) stmpclean $(DESTDIR)$(BINDIR)/
++	$(BSD_INSTALL_MAN) stmpclean.8 $(DESTDIR)$(MANDIR)/
  
  stmpclean.o:	stmpclean.c
  

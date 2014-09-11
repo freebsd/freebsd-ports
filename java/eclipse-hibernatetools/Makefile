@@ -3,7 +3,7 @@
 
 PORTNAME=	hibernatetools
 DISTVERSION=	3.2.3.GA
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	java devel databases
 MASTER_SITES=	SF/jboss/JBossTools/JBossTools%202.1.2.GA
 PKGNAMEPREFIX=	eclipse-

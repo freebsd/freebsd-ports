@@ -2,7 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	firefox-i18n
-PORTVERSION=	31.0
+PORTVERSION=	32.0
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	MOZILLA/${PORTNAME:S|-i18n||}/releases/${PORTVERSION}/linux-i686/xpi
 PKGNAMEPREFIX=
@@ -14,7 +15,7 @@ COMMENT=	Localized interface for Firefox
 
 EXTRACT_DEPENDS=	zip:${PORTSDIR}/archivers/zip
 
-USES=		zip:infozip gecko:firefox,31
+USES=		zip:infozip gecko:firefox,32
 USE_XPI=	firefox linux-firefox
 
 NO_ARCH=	yes

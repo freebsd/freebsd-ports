@@ -4,7 +4,7 @@ PORTNAME=	haskell-platform
 PORTVERSION=	2014.2.0.0
 # Please note that the port *strictly depends* on certain versions of other
 # ports, so revisit the USE_CABAL line on bumping the portrevision.  Thanks!
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org

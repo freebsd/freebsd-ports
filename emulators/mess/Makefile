@@ -3,6 +3,7 @@
 
 PORTNAME=	mess
 PORTVERSION=	0.154${PATCHSUFFIX}
+PORTREVISION=	1
 CATEGORIES=	emulators
 MASTER_SITES=	http://mamedev.mameworld.info/releases/ \
 		http://emumovies.com/aarongiles/releases/ \

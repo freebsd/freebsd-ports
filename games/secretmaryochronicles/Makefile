@@ -3,7 +3,7 @@
 
 PORTNAME=	secretmaryochronicles
 PORTVERSION=	1.10.git20140514
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	http://mirror.amdmi3.ru/distfiles/
 # it could use github.com/Quintus/SMC, but it needs to be packaged

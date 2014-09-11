@@ -1,0 +1,115 @@
+--- command/Makefile.in.orig	2014-04-14 17:31:14.000000000 +0200
++++ command/Makefile.in	2014-04-14 17:32:42.000000000 +0200
+@@ -78,7 +78,7 @@
+ POST_UNINSTALL = :
+ build_triplet = @build@
+ host_triplet = @host@
+-libexec_PROGRAMS = command-applet$(EXEEXT)
++libexec_PROGRAMS = mate-command-applet$(EXEEXT)
+ subdir = command
+ DIST_COMMON = $(srcdir)/Makefile.in $(srcdir)/Makefile.am \
+ 	$(top_srcdir)/depcomp
+@@ -98,18 +98,19 @@
+ am__installdirs = "$(DESTDIR)$(libexecdir)" "$(DESTDIR)$(appletsdir)" \
+ 	"$(DESTDIR)$(servicedir)"
+ PROGRAMS = $(libexec_PROGRAMS)
+-am_command_applet_OBJECTS = command_applet-command.$(OBJEXT)
+-command_applet_OBJECTS = $(am_command_applet_OBJECTS)
++am_mate_command_applet_OBJECTS =  \
++	mate_command_applet-command.$(OBJEXT)
++mate_command_applet_OBJECTS = $(am_mate_command_applet_OBJECTS)
+ am__DEPENDENCIES_1 =
+-command_applet_DEPENDENCIES = $(am__DEPENDENCIES_1)
++mate_command_applet_DEPENDENCIES = $(am__DEPENDENCIES_1)
+ AM_V_lt = $(am__v_lt_@AM_V@)
+ am__v_lt_ = $(am__v_lt_@AM_DEFAULT_V@)
+ am__v_lt_0 = --silent
+ am__v_lt_1 = 
+-command_applet_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CC \
++mate_command_applet_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CC \
+ 	$(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=link $(CCLD) \
+-	$(command_applet_CFLAGS) $(CFLAGS) $(AM_LDFLAGS) $(LDFLAGS) -o \
+-	$@
++	$(mate_command_applet_CFLAGS) $(CFLAGS) $(AM_LDFLAGS) \
++	$(LDFLAGS) -o $@
+ AM_V_P = $(am__v_P_@AM_V@)
+ am__v_P_ = $(am__v_P_@AM_DEFAULT_V@)
+ am__v_P_0 = false
+@@ -144,8 +145,8 @@
+ am__v_CCLD_ = $(am__v_CCLD_@AM_DEFAULT_V@)
+ am__v_CCLD_0 = @echo "  CCLD    " $@;
+ am__v_CCLD_1 = 
+-SOURCES = $(command_applet_SOURCES)
+-DIST_SOURCES = $(command_applet_SOURCES)
++SOURCES = $(mate_command_applet_SOURCES)
++DIST_SOURCES = $(mate_command_applet_SOURCES)
+ am__can_run_installinfo = \
+   case $$AM_UPDATE_INFO_DIR in \
+     n|no|NO) false;; \
+@@ -447,10 +448,10 @@
+ 	-DMATELOCALEDIR=\""$(prefix)/$(DATADIRNAME)/locale"\" \
+ 	$(DISABLE_DEPRECATED_CFLAGS)
+ 
+-APPLET_LOCATION = $(libexecdir)/command-applet
+-command_applet_SOURCES = command.c
+-command_applet_LDADD = $(MATE_APPLETS4_LIBS)
+-command_applet_CFLAGS = $(WARN_CFLAGS)
++APPLET_LOCATION = $(libexecdir)/mate-command-applet
++mate_command_applet_SOURCES = command.c
++mate_command_applet_LDADD = $(MATE_APPLETS4_LIBS)
++mate_command_applet_CFLAGS = $(WARN_CFLAGS)
+ appletsdir = $(datadir)/mate-panel/applets
+ applets_in_files = org.mate.applets.CommandApplet.mate-panel-applet.in
+ applets_DATA = $(applets_in_files:.mate-panel-applet.in=.mate-panel-applet)
+@@ -548,9 +549,9 @@
+ 	echo " rm -f" $$list; \
+ 	rm -f $$list
+ 
+-command-applet$(EXEEXT): $(command_applet_OBJECTS) $(command_applet_DEPENDENCIES) $(EXTRA_command_applet_DEPENDENCIES) 
+-	@rm -f command-applet$(EXEEXT)
+-	$(AM_V_CCLD)$(command_applet_LINK) $(command_applet_OBJECTS) $(command_applet_LDADD) $(LIBS)
++mate-command-applet$(EXEEXT): $(mate_command_applet_OBJECTS) $(mate_command_applet_DEPENDENCIES) $(EXTRA_mate_command_applet_DEPENDENCIES) 
++	@rm -f mate-command-applet$(EXEEXT)
++	$(AM_V_CCLD)$(mate_command_applet_LINK) $(mate_command_applet_OBJECTS) $(mate_command_applet_LDADD) $(LIBS)
+ 
+ mostlyclean-compile:
+ 	-rm -f *.$(OBJEXT)
+@@ -558,7 +559,7 @@
+ distclean-compile:
+ 	-rm -f *.tab.c
+ 
+-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/command_applet-command.Po@am__quote@
++@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/mate_command_applet-command.Po@am__quote@
+ 
+ .c.o:
+ @am__fastdepCC_TRUE@	$(AM_V_CC)$(COMPILE) -MT $@ -MD -MP -MF $(DEPDIR)/$*.Tpo -c -o $@ $<
+@@ -581,19 +582,19 @@
+ @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+ @am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(LTCOMPILE) -c -o $@ $<
+ 
+-command_applet-command.o: command.c
+-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(command_applet_CFLAGS) $(CFLAGS) -MT command_applet-command.o -MD -MP -MF $(DEPDIR)/command_applet-command.Tpo -c -o command_applet-command.o `test -f 'command.c' || echo '$(srcdir)/'`command.c
+-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/command_applet-command.Tpo $(DEPDIR)/command_applet-command.Po
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='command.c' object='command_applet-command.o' libtool=no @AMDEPBACKSLASH@
++mate_command_applet-command.o: command.c
++@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(mate_command_applet_CFLAGS) $(CFLAGS) -MT mate_command_applet-command.o -MD -MP -MF $(DEPDIR)/mate_command_applet-command.Tpo -c -o mate_command_applet-command.o `test -f 'command.c' || echo '$(srcdir)/'`command.c
++@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/mate_command_applet-command.Tpo $(DEPDIR)/mate_command_applet-command.Po
++@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='command.c' object='mate_command_applet-command.o' libtool=no @AMDEPBACKSLASH@
+ @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(command_applet_CFLAGS) $(CFLAGS) -c -o command_applet-command.o `test -f 'command.c' || echo '$(srcdir)/'`command.c
++@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(mate_command_applet_CFLAGS) $(CFLAGS) -c -o mate_command_applet-command.o `test -f 'command.c' || echo '$(srcdir)/'`command.c
+ 
+-command_applet-command.obj: command.c
+-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(command_applet_CFLAGS) $(CFLAGS) -MT command_applet-command.obj -MD -MP -MF $(DEPDIR)/command_applet-command.Tpo -c -o command_applet-command.obj `if test -f 'command.c'; then $(CYGPATH_W) 'command.c'; else $(CYGPATH_W) '$(srcdir)/command.c'; fi`
+-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/command_applet-command.Tpo $(DEPDIR)/command_applet-command.Po
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='command.c' object='command_applet-command.obj' libtool=no @AMDEPBACKSLASH@
++mate_command_applet-command.obj: command.c
++@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(mate_command_applet_CFLAGS) $(CFLAGS) -MT mate_command_applet-command.obj -MD -MP -MF $(DEPDIR)/mate_command_applet-command.Tpo -c -o mate_command_applet-command.obj `if test -f 'command.c'; then $(CYGPATH_W) 'command.c'; else $(CYGPATH_W) '$(srcdir)/command.c'; fi`
++@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/mate_command_applet-command.Tpo $(DEPDIR)/mate_command_applet-command.Po
++@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='command.c' object='mate_command_applet-command.obj' libtool=no @AMDEPBACKSLASH@
+ @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(command_applet_CFLAGS) $(CFLAGS) -c -o command_applet-command.obj `if test -f 'command.c'; then $(CYGPATH_W) 'command.c'; else $(CYGPATH_W) '$(srcdir)/command.c'; fi`
++@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(mate_command_applet_CFLAGS) $(CFLAGS) -c -o mate_command_applet-command.obj `if test -f 'command.c'; then $(CYGPATH_W) 'command.c'; else $(CYGPATH_W) '$(srcdir)/command.c'; fi`
+ 
+ mostlyclean-libtool:
+ 	-rm -f *.lo

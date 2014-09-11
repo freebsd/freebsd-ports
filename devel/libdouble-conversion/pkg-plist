@@ -11,4 +11,5 @@ include/double-conversion/utils.h
 lib/libdouble-conversion.a
 lib/libdouble-conversion.so
 lib/libdouble-conversion.so.0
+lib/libdouble-conversion.so.0.0.0
 @dirrm include/double-conversion

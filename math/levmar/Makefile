@@ -3,7 +3,7 @@
 
 PORTNAME=	levmar
 PORTVERSION=	2.6
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	math
 MASTER_SITES=	http://users.ics.forth.gr/~lourakis/levmar/
 
@@ -14,7 +14,7 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USE_LDCONFIG=	yes
-USES=		fortran tar:tgz
+USES=		fortran tar:tgz uidfix
 
 OPTIONS_DEFINE=	DOCS EXAMPLES PROFILE
 PROFILE_DESC=	Build a profiling library

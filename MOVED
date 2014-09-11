@@ -7403,3 +7403,35 @@ databases/p5-DBD-FrontBase||2014-09-07|Cascade removal (databases/frontbase)
 databases/ruby-frontbase||2014-09-07|Cascade removal (databases/frontbase)
 devel/flex-sdk2||2014-09-07|Not staged
 devel/flex_compiler_shell||2014-09-07|Cascade removal (devel/flex-sdk2)
+emulators/virtualbox-ose-legacy||2014-09-09|Not staged
+emulators/virtualbox-ose-kmod-legacy||2014-09-09|No purpose after removal of virtualbox-ose-legacy
+devel/arm-eabi-gcc||2014-09-09|Not staged
+devel/cross-gcc||2014-09-09|Not staged
+devel/arm-eabi-binutils||2014-09-09|No purpose after removal of arm-eabi-gcc
+sysutils/u-boot-beaglebone-eabi||2014-09-09|Cascade removal (devel/arm-eabi-gcc)
+lang/ezm3||2014-09-09|Not staged
+net/cvsup-without-gui||2014-09-09|Cascade removal (lang/ezm3)
+net/cvsupchk||2014-09-09|Cascade removal (lang/ezm3)
+net/cvsup||2014-09-09|Cascade removal (lang/ezm3)
+dns/posadis||2014-09-09|Not staged
+net/etherboot||2014-09-09|Not staged
+games/linux-savage||2014-09-09|Not staged
+lang/neko||2014-09-09|Not staged
+lang/ifc||2014-09-09|Not staged
+japanese/rskkserv||2014-09-09|Not staged
+graphics/passepartout||2014-09-09|Not staged
+lang/scsh||2014-10-09|Not staged
+net-mgmt/zenoss||2014-10-09|Not staged
+archivers/mate-file-archiver|archivers/engrampa|2014-09-10|renamed
+deskutils/mate-menu-editor|deskutils/mozo|2014-02-22|renamed
+editors/mate-text-editor|editors/pluma|2014-02-22|renamed
+graphics/mate-document-viewer|graphics/atril|2014-09-10|renamed
+graphics/mate-image-viewer|graphics/eom|2014-02-22|renamed
+x11-fm/mate-file-manager|x11-fm/caja|2014-09-10|renamed
+x11-wm/mate-window-manager|x11-wm/marco|2014-02-22|renamed
+deskutils/mate-character-map||2014-04-10|removed
+deskutils/mate-file-manager-open-terminal||2014-04-10|removed
+security/libmatekeyring||2014-04-10|removed
+security/mate-keyring||2014-04-10|removed
+textproc/mate-doc-utils||2014-04-10|removed
+x11-toolkits/libmatewnck||2014-04-10|removed

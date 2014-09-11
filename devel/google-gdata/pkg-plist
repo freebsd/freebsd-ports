@@ -16,9 +16,9 @@ lib/mono/gac/Google.GData.AccessControl/1.4.0.2__b4b8eb9a7afc8328/Google.GData.A
 lib/mono/gac/Google.GData.Apps/1.4.0.2__e6feebfe441b89cb/Google.GData.Apps.dll
 lib/mono/gac/Google.GData.Blogger/1.4.0.2__6f8943d33947d761/Google.GData.Blogger.dll
 lib/mono/gac/Google.GData.Calendar/1.4.0.2__aa6748391206b888/Google.GData.Calendar.dll
-lib/mono/gac/Google.GData.Client/1.4.0.2__04a59ca9b0273830/Google.GData.Client.dll
-lib/mono/gac/Google.GData.Client/1.4.0.2__04a59ca9b0273830/Google.GData.Client.dll.config
-lib/mono/gac/Google.GData.Client/1.4.0.2__04a59ca9b0273830/libz.so.1.2.3
+%%GGCDIR%%/Google.GData.Client.dll
+%%GGCDIR%%/Google.GData.Client.dll.config
+%%GGCDIR%%/libz.so.1.2.3
 lib/mono/gac/Google.GData.CodeSearch/1.4.0.2__cac30bb7c678972d/Google.GData.CodeSearch.dll
 lib/mono/gac/Google.GData.Contacts/1.4.0.2__7e065189dd4b982f/Google.GData.Contacts.dll
 lib/mono/gac/Google.GData.Documents/1.4.0.2__099e9a853da5b089/Google.GData.Documents.dll

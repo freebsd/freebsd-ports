@@ -3,13 +3,13 @@
 
 PORTNAME=	EZWGL
 PORTVERSION=	1.50
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	graphics devel
 MASTER_SITES=	ftp://ftp.ma.utexas.edu/pub/mzou/
 DISTFILES=	${DISTNAME}-demo.tgz ${DISTNAME}-doc.tgz ${DISTNAME}-src.tgz
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	The EZ Widget and Graphics Library
+COMMENT=	EZ Widget and Graphics Library
 
 LIB_DEPENDS=	libtiff.so:${PORTSDIR}/graphics/tiff \
 		libpng15.so:${PORTSDIR}/graphics/png
@@ -19,37 +19,35 @@ USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/libpng15
 LIBS+=		-L${LOCALBASE}/lib
+PORTDOCS=	*
+PORTEXAMPLES=	*
+
 NOPRECIOUSMAKEVARS=	yes # Otherwise 'make readmes' is broken
 
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
+BROKEN_sparc64=	Does not compile on sparc64
 
-.include "${FILESDIR}/manpages"
+OPTIONS_DEFINE=	DOCS EXAMPLES
 
-.if ${ARCH} == "sparc64"
-BROKEN=		Does not compile on sparc64
-.endif
+.include ".${CURDIR}/Makefile.manlinks"
+.include <bsd.port.options.mk>
 
 post-extract:
-	${FIND} ${WRKSRC} -name CVS | ${XARGS} ${RM} -rf
+	@${FIND} ${WRKSRC} -name CVS -type d | ${XARGS} ${RM} -r
 
-post-install:
-.for file in ${MAN3}
-	${INSTALL_MAN} ${WRKSRC}/doc/man3/${file} ${PREFIX}/man/man3
-.endfor
-	@${MKDIR} ${PREFIX}/share/examples/EZ
-	${TAR} -C ${WRKSRC}/examples --exclude 'Makefile.in' -cf - . | \
-		${TAR} -C ${PREFIX}/share/examples/EZ --unlink -xf -
-	${TAR} -C ${WRKSRC} --exclude 'Makefile.in' -cf - demos | \
-		${TAR} -C ${PREFIX}/share/examples/EZ --unlink -xf -
-	${FIND} ${PREFIX}/share/examples/EZ | ${XARGS} ${CHOWN} ${SHAREOWN}:${SHAREGRP}
-	${FIND} ${PREFIX}/share/examples/EZ -type f | ${XARGS} ${CHMOD} ${SHAREMODE}
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${PREFIX}/share/doc/EZ
-	${TAR} -C ${WRKSRC}/doc --exclude 'misc' -cf - html ps | \
-		${TAR} -C ${PREFIX}/share/doc/EZ --unlink -xf -
-	${FIND} ${PREFIX}/share/doc/EZ | ${XARGS} ${CHOWN} ${SHAREOWN}:${SHAREGRP}
-	${FIND} ${PREFIX}/share/doc/EZ -type f | ${XARGS} ${CHMOD} ${SHAREMODE}
-.endif
+do-install:
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR} ${STAGEDIR}${DOCSDIR}/ps
+	${INSTALL_DATA} ${WRKSRC}/include/EZ.h ${STAGEDIR}${PREFIX}/include
+	${INSTALL_DATA} ${WRKSRC}/lib/libEZ.a ${STAGEDIR}${PREFIX}/lib
+	${INSTALL_LIB} ${WRKSRC}/lib/libEZ.so.1 ${STAGEDIR}${PREFIX}/lib
+	(cd ${STAGEDIR}${PREFIX}/lib && ${LN} -s libEZ.so.1 libEZ.so)
+	${INSTALL_MAN} ${WRKSRC}/doc/man3/*.3 ${STAGEDIR}${MANPREFIX}/man/man3
+	(cd ${WRKSRC}/examples && ${COPYTREE_SHARE} . \
+		${STAGEDIR}${EXAMPLESDIR} "! -name Makefile.in")
+	(cd ${WRKSRC} && ${COPYTREE_SHARE} demos \
+		${STAGEDIR}${EXAMPLESDIR} "! -name Makefile.in")
+	(cd ${WRKSRC}/doc && ${COPYTREE_SHARE} html ${STAGEDIR}${DOCSDIR})
+	${INSTALL_DATA} ${WRKSRC}/doc/ps/*.ps ${STAGEDIR}${DOCSDIR}/ps
 
-.include <bsd.port.post.mk>
+post-install: install-manlinks
+
+.include <bsd.port.mk>

@@ -3,6 +3,7 @@
 
 PORTNAME=	octave-forge-bim
 PORTVERSION=	1.1.4
+PORTREVISION=	1
 CATEGORIES=	math
 
 MAINTAINER=	stephen@FreeBSD.org

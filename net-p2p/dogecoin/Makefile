@@ -3,7 +3,7 @@
 
 PORTNAME=	dogecoin
 PORTVERSION=	1.5.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net-p2p finance
 
 MAINTAINER=	swills@FreeBSD.org

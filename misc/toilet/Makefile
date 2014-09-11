@@ -3,7 +3,7 @@
 
 PORTNAME=	toilet
 PORTVERSION=	0.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	misc
 MASTER_SITES=	http://caca.zoy.org/raw-attachment/wiki/toilet/
 

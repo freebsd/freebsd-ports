@@ -3,7 +3,7 @@
 
 PORTNAME=	atris
 PORTVERSION=	1.0.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	http://www.wkiri.com/projects/atris/
 PKGNAMESUFFIX=	-sounds

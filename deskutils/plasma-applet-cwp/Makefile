@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	cwp
-PORTVERSION=	1.11.0
+PORTVERSION=	1.11.1
 PORTREVISION=	1
 CATEGORIES=	deskutils kde
 MASTER_SITES=	http://kde-look.org/CONTENT/content-files/

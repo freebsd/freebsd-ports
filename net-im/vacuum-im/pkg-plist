@@ -1046,6 +1046,18 @@ share/pixmaps/vacuum.png
 %%DATADIR%%/resources/statusicons/smtp/perr.png
 %%DATADIR%%/resources/statusicons/smtp/statusicons.def.xml
 %%DATADIR%%/resources/statusicons/smtp/xa.png
+%%DATADIR%%/resources/statusicons/twitter/ask.png
+%%DATADIR%%/resources/statusicons/twitter/away.png
+%%DATADIR%%/resources/statusicons/twitter/chatty.png
+%%DATADIR%%/resources/statusicons/twitter/dnd.png
+%%DATADIR%%/resources/statusicons/twitter/icon.def.xml
+%%DATADIR%%/resources/statusicons/twitter/invisible.png
+%%DATADIR%%/resources/statusicons/twitter/noauth.png
+%%DATADIR%%/resources/statusicons/twitter/offline.png
+%%DATADIR%%/resources/statusicons/twitter/online.png
+%%DATADIR%%/resources/statusicons/twitter/perr.png
+%%DATADIR%%/resources/statusicons/twitter/statusicons.def.xml
+%%DATADIR%%/resources/statusicons/twitter/xa.png
 %%DATADIR%%/resources/statusicons/vkontakte/ask.png
 %%DATADIR%%/resources/statusicons/vkontakte/away.png
 %%DATADIR%%/resources/statusicons/vkontakte/chatty.png
@@ -1388,6 +1400,7 @@ share/pixmaps/vacuum.png
 @dirrm %%DATADIR%%/resources/statusicons/skype
 @dirrm %%DATADIR%%/resources/statusicons/sms
 @dirrm %%DATADIR%%/resources/statusicons/smtp
+@dirrm %%DATADIR%%/resources/statusicons/twitter
 @dirrm %%DATADIR%%/resources/statusicons/vkontakte
 @dirrm %%DATADIR%%/resources/statusicons/weather
 @dirrm %%DATADIR%%/resources/statusicons/yahoo

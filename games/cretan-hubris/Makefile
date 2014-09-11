@@ -3,7 +3,7 @@
 
 PORTNAME=	cretan-hubris
 PORTVERSION=	0.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games
 MASTER_SITES=	SF/radius-engine/egp/
 

@@ -6,29 +6,28 @@
 PLUGIN_NAME?=	${PORTNAME}
 
 PKGNAMEPREFIX=	verlihub-plugins-
-DISTNAME=	${PLUGIN_NAME}-${PORTVERSION}
+DISTNAME?=	${PLUGIN_NAME}-${PORTVERSION}
 WRKSRC?=	${WRKDIR}/${PLUGIN_NAME}
 
-COMMENT?=	${PLUGIN_DESC} plugin for the VerliHub - a Direct Connect protocol server
+COMMENT?=	${PLUGIN_DESC} plugin for VerliHub - a Direct Connect protocol server
 
 BUILD_DEPENDS+=	${LOCALBASE}/bin/verlihub:${PORTSDIR}/net-p2p/verlihub
 RUN_DEPENDS+=	${LOCALBASE}/bin/verlihub:${PORTSDIR}/net-p2p/verlihub
 
-USE_GCC=	any
 GNU_CONFIGURE=	yes
-CFLAGS+=	-fPIC
+INSTALL_TARGET=	install-strip
+USES+=		libtool
+USE_GCC=	any
 
 PLIST_FILES+=	lib/lib${PLUGIN_NAME}_pi.a \
-		lib/lib${PLUGIN_NAME}_pi.la \
 		lib/lib${PLUGIN_NAME}_pi.so \
 		lib/lib${PLUGIN_NAME}_pi.so.0 \
+		lib/lib${PLUGIN_NAME}_pi.so.0.0.0 \
 		etc/verlihub/plugins/lib${PLUGIN_NAME}_pi.so
+PLIST_DIRSTRY+=	etc/verlihub/plugins etc/verlihub
 
 PKGMESSAGE=	${WRKDIR}/pkg-message
 PKGMESSAGE_TEMPLATE=	${PORTSDIR}/net-p2p/verlihub-plugins/pkg-message.plugins
-
-post-patch::
-	@${REINPLACE_CMD} -e 's,echo aout,echo elf,' ${WRKSRC}/configure
 
 post-build::
 	@${SED} -e 's,%%PLUGIN_DESC%%,${PLUGIN_DESC},' < \
@@ -38,5 +37,3 @@ post-install::
 	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/verlihub/plugins
 	${LN} -sf ../../../lib/lib${PLUGIN_NAME}_pi.so \
 		${STAGEDIR}${PREFIX}/etc/verlihub/plugins
-	@${ECHO_CMD} '@unexec rmdir %D/etc/verlihub/plugins 2>/dev/null || true' >> ${TMPPLIST}
-	@${ECHO_CMD} '@unexec rmdir %D/etc/verlihub 2>/dev/null || true' >> ${TMPPLIST}

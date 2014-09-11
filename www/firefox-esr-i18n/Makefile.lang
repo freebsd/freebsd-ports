@@ -1,13 +1,13 @@
 # Created by: Koji Yokota <yokota@res.otaru-uc.ac.jp>
 # $FreeBSD$
 
-FIREFOX_I18N_ALL_=	ach af ak ar as ast be bg bn-BD bn-IN br bs ca cs csb  \
-			cy da de el en-GB en-US en-ZA eo es-AR es-CL es-ES     \
-			es-MX et eu fa ff fi fr fy-NL ga-IE gd gl gu-IN he     \
-			hi-IN hr hu hy-AM id is it ja kk km kn ko ku lg lij lt \
-			lv mai mk ml mr nb-NO nl nn-NO nso or pa-IN pl pt-BR   \
-			pt-PT rm ro ru si sk sl son sq sr sv-SE ta-LK ta te th \
-			tr uk vi zh-CN zh-TW zu
+FIREFOX_I18N_ALL_=	ach af an ar as ast be bg bn-BD bn-IN br bs ca cs	\
+			csb cy da de el en-GB en-US en-ZA eo es-AR es-CL	\
+			es-ES es-MX et eu fa ff fi fr fy-NL ga-IE gd gl		\
+			gu-IN he hi-IN hr hsb hu hy-AM id is it ja kk km	\
+			kn ko ku lij lt lv mai mk ml mr ms nb-NO nl nn-NO	\
+			or pa-IN pl pt-BR pt-PT rm ro ru si sk sl son sq	\
+			sr sv-SE ta te th tr uk vi xh zh-CN zh-TW zu
 
 .if defined(FIREFOX_I18N_ALL) || defined(PACKAGE_BUILDING) || target(package)
 FIREFOX_I18N=   ${FIREFOX_I18N_ALL_}
@@ -18,8 +18,8 @@ FIREFOX_I18N+=  ach
 .if ${PORT_OPTIONS:MLANG_AF}
 FIREFOX_I18N+=  af
 .endif
-.if ${PORT_OPTIONS:MLANG_AK}
-FIREFOX_I18N+=  ak
+.if ${PORT_OPTIONS:MLANG_AN}
+FIREFOX_I18N+=  an
 .endif
 .if ${PORT_OPTIONS:MLANG_AR}
 FIREFOX_I18N+=  ar
@@ -135,6 +135,9 @@ FIREFOX_I18N+=  hi-IN
 .if ${PORT_OPTIONS:MLANG_HR}
 FIREFOX_I18N+=  hr
 .endif
+.if ${PORT_OPTIONS:MLANG_HSB}
+FIREFOX_I18N+=  hsb
+.endif
 .if ${PORT_OPTIONS:MLANG_HU}
 FIREFOX_I18N+=  hu
 .endif
@@ -168,9 +171,6 @@ FIREFOX_I18N+=  ko
 .if ${PORT_OPTIONS:MLANG_KU}
 FIREFOX_I18N+=  ku
 .endif
-.if ${PORT_OPTIONS:MLANG_LG}
-FIREFOX_I18N+=  lg
-.endif
 .if ${PORT_OPTIONS:MLANG_LIJ}
 FIREFOX_I18N+=  lij
 .endif
@@ -192,6 +192,9 @@ FIREFOX_I18N+=  ml
 .if ${PORT_OPTIONS:MLANG_MR}
 FIREFOX_I18N+=  mr
 .endif
+.if ${PORT_OPTIONS:MLANG_MS}
+FIREFOX_I18N+=  ms
+.endif
 .if ${PORT_OPTIONS:MLANG_NB}
 FIREFOX_I18N+=  nb-NO
 .endif
@@ -200,9 +203,6 @@ FIREFOX_I18N+=  nl
 .endif
 .if ${PORT_OPTIONS:MLANG_NN}
 FIREFOX_I18N+=  nn-NO
-.endif
-.if ${PORT_OPTIONS:MLANG_NSO}
-FIREFOX_I18N+=  nso
 .endif
 .if ${PORT_OPTIONS:MLANG_OR}
 FIREFOX_I18N+=  or
@@ -249,11 +249,11 @@ FIREFOX_I18N+=  sr
 .if ${PORT_OPTIONS:MLANG_SV}
 FIREFOX_I18N+=  sv-SE
 .endif
+.if ${PORT_OPTIONS:MLANG_SW}
+FIREFOX_I18N+=  sw
+.endif
 .if ${PORT_OPTIONS:MLANG_TA}
 FIREFOX_I18N+=  ta
-.endif
-.if ${PORT_OPTIONS:MLANG_LK}
-FIREFOX_I18N+=  ta-LK
 .endif
 .if ${PORT_OPTIONS:MLANG_TE}
 FIREFOX_I18N+=  te
@@ -269,6 +269,9 @@ FIREFOX_I18N+=  uk
 .endif
 .if ${PORT_OPTIONS:MLANG_VI}
 FIREFOX_I18N+=  vi
+.endif
+.if ${PORT_OPTIONS:MLANG_XH}
+FIREFOX_I18N+=  xh
 .endif
 .if ${PORT_OPTIONS:MLANG_CN}
 FIREFOX_I18N+=  zh-CN

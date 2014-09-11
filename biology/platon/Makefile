@@ -3,6 +3,7 @@
 
 PORTNAME=	platon
 PORTVERSION=	2014.07.13
+PORTREVISION=	1
 CATEGORIES=	biology
 # Please note that the upstream vendor does not perform any discernible
 # versioning. Therefore, the distfile has to be hosted elsewhere in order

@@ -3,7 +3,7 @@
 
 PORTNAME=	checkstyle
 PORTVERSION=	3.4.1.0
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	java devel
 MASTER_SITES=	SF/eclipse-cs/Eclipse%20Checkstyle%20Plug-in/v3.4.1
 PKGNAMEPREFIX=	eclipse-

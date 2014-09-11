@@ -2,7 +2,7 @@
 
 PORTNAME=	lazysmallcheck
 PORTVERSION=	0.6
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org

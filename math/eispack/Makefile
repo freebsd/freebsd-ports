@@ -3,7 +3,7 @@
 
 PORTNAME=	eispack
 PORTVERSION=	1.0
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	math
 MASTER_SITES=	NL
 DISTFILES=	${SRCS}
@@ -15,7 +15,7 @@ COMMENT=	Eigenvalue system package
 DIST_SUBDIR=	${PORTNAME}
 NO_WRKSUBDIR=	yes
 
-USES=		fortran
+USES=		fortran uidfix
 USE_LDCONFIG=	yes
 
 SHLIB_MAJOR=	2

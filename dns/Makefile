@@ -141,7 +141,6 @@
     SUBDIR += pear-File_DNS
     SUBDIR += pear-Net_DNS
     SUBDIR += pear-Net_DNS2
-    SUBDIR += posadis
     SUBDIR += powerdns
     SUBDIR += powerdns-devel
     SUBDIR += powerdns-recursor

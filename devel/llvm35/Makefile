@@ -2,6 +2,7 @@
 
 PORTNAME=	llvm
 DISTVERSION=	3.5.0rc2
+PORTREVISION=	1
 CATEGORIES=	devel lang
 MASTER_SITES=	http://llvm.org/pre-releases/3.5/rc2/
 #http://llvm.org/pre-releases/3.5/rc2/llvm-3.5.0rc2.src.tar.xz

@@ -24,7 +24,7 @@ load_rc_config $name
 : ${bopm_config="%%PREFIX%%/etc/bopm.conf"}
 
 bopm_user="bopm"
-pidfile="%%LOGDIR%%/bopm.pid"
+pidfile="/var/run/bopm.pid"
 required_files="${bopm_config}"
 
 # NOTE: bopm behaves differently with or without the -d flag.

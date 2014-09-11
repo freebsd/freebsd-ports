@@ -3,6 +3,7 @@
 
 PORTNAME=	BitcoinArmory
 PORTVERSION=	0.92.1
+PORTREVISION=	1
 CATEGORIES=	finance
 MASTER_SITES=	https://codeload.github.com/etotheipi/BitcoinArmory/tar.gz/v${PORTVERSION}?dummy=/
 

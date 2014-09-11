@@ -3,6 +3,7 @@
 
 PORTNAME=	plaso
 PORTVERSION=	1.1.0
+PORTREVISION=	1
 CATEGORIES=	security python
 MASTER_SITES=	https://googledrive.com/host/0B30H7z4S52FleW5vUHBnblJfcjg/${PORTVERSION}/release/ \
 		LOCAL/antoine

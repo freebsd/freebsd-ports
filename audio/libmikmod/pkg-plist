@@ -1,7 +1,6 @@
 bin/libmikmod-config
 include/mikmod.h
 lib/libmikmod.a
-lib/libmikmod.la
 lib/libmikmod.so
 lib/libmikmod.so.3
 lib/libmikmod.so.3.3.0

@@ -3,7 +3,7 @@
 
 PORTNAME=	uhexen2
 PORTVERSION=	1.4.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/HoT%20-%20Other%20content/extra%20data \
 		SF/${PORTNAME}/HoT%20-%20Other%20content/hexen2%20mods:mods \

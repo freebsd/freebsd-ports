@@ -103,6 +103,8 @@ man/ru.KOI8-R/man8/atslogmaster.8.gz
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/textlogs/Siemens Hicom-250.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/textlogs/Siemens Hicom-350H.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/textlogs/Telrad.txt
+%%WWW%%@owner %%WWWOWN%%
+%%WWW%%@group %%WWWGRP%%
 %%WWW%%%%WWWDIR%%/phonebook/index.html
 %%WWW%%%%WWWDIR%%/phonebook/index.php
 %%WWW%%%%WWWDIR%%/intern/index.html
@@ -333,6 +335,8 @@ man/ru.KOI8-R/man8/atslogmaster.8.gz
 %%WWW%%@dirrmtry %%WWWDIR%%/calls/query
 %%WWW%%@dirrmtry %%WWWDIR%%/calls
 %%WWW%%@dirrmtry %%WWWDIR%%
+%%WWW%%@owner root
+%%WWW%%@group wheel
 @dirrmtry libexec/atslog
 @dirrmtry %%DATADIR%%/lang
 @dirrmtry %%DATADIR%%/sql

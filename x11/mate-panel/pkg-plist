@@ -29,6 +29,7 @@ share/doc/mate-panel-applet/applet-writing.html
 share/doc/mate-panel-applet/home.png
 share/doc/mate-panel-applet/index.html
 share/doc/mate-panel-applet/index.sgml
+share/doc/mate-panel-applet/left-insensitive.png
 share/doc/mate-panel-applet/left.png
 share/doc/mate-panel-applet/mate-panel-applet-Panel-Applet-MateConf-Utilities.html
 share/doc/mate-panel-applet/mate-panel-applet-mate-panel-applet.html
@@ -36,12 +37,155 @@ share/doc/mate-panel-applet/mate-panel-applet.devhelp2
 share/doc/mate-panel-applet/mate-panel-applet.html
 share/doc/mate-panel-applet/multi-applets.html
 share/doc/mate-panel-applet/panel-signals.html
+share/doc/mate-panel-applet/right-insensitive.png
 share/doc/mate-panel-applet/right.png
 share/doc/mate-panel-applet/server-files.html
 share/doc/mate-panel-applet/session-saving.html
 share/doc/mate-panel-applet/style.css
+share/doc/mate-panel-applet/up-insensitive.png
 share/doc/mate-panel-applet/up.png
 share/gir-1.0/MatePanelApplet-4.0.gir
+share/help/C/mate-clock/figures/clock_applet.png
+share/help/C/mate-clock/index.docbook
+share/help/C/mate-clock/legal.xml
+share/help/C/mate-fish/figures/fish_applet.png
+share/help/C/mate-fish/index.docbook
+share/help/C/mate-fish/legal.xml
+share/help/ar/mate-clock/figures/clock_applet.png
+share/help/ar/mate-clock/index.docbook
+share/help/ar/mate-clock/legal.xml
+share/help/ca/mate-clock/figures/clock_applet.png
+share/help/ca/mate-clock/index.docbook
+share/help/ca/mate-clock/legal.xml
+share/help/ca/mate-fish/figures/fish_applet.png
+share/help/ca/mate-fish/index.docbook
+share/help/ca/mate-fish/legal.xml
+share/help/cs/mate-clock/figures/clock_applet.png
+share/help/cs/mate-clock/index.docbook
+share/help/cs/mate-clock/legal.xml
+share/help/cs/mate-fish/figures/fish_applet.png
+share/help/cs/mate-fish/index.docbook
+share/help/cs/mate-fish/legal.xml
+share/help/da/mate-clock/figures/clock_applet.png
+share/help/da/mate-clock/index.docbook
+share/help/da/mate-clock/legal.xml
+share/help/de/mate-clock/figures/clock_applet.png
+share/help/de/mate-clock/index.docbook
+share/help/de/mate-clock/legal.xml
+share/help/de/mate-fish/figures/fish_applet.png
+share/help/de/mate-fish/index.docbook
+share/help/de/mate-fish/legal.xml
+share/help/el/mate-clock/figures/clock_applet.png
+share/help/el/mate-clock/index.docbook
+share/help/el/mate-clock/legal.xml
+share/help/el/mate-fish/figures/fish_applet.png
+share/help/el/mate-fish/index.docbook
+share/help/el/mate-fish/legal.xml
+share/help/en_GB/mate-clock/figures/clock_applet.png
+share/help/en_GB/mate-clock/index.docbook
+share/help/en_GB/mate-clock/legal.xml
+share/help/en_GB/mate-fish/figures/fish_applet.png
+share/help/en_GB/mate-fish/index.docbook
+share/help/en_GB/mate-fish/legal.xml
+share/help/es/mate-clock/figures/clock_applet.png
+share/help/es/mate-clock/index.docbook
+share/help/es/mate-clock/legal.xml
+share/help/es/mate-fish/figures/fish_applet.png
+share/help/es/mate-fish/index.docbook
+share/help/es/mate-fish/legal.xml
+share/help/eu/mate-clock/figures/clock_applet.png
+share/help/eu/mate-clock/index.docbook
+share/help/eu/mate-clock/legal.xml
+share/help/eu/mate-fish/figures/fish_applet.png
+share/help/eu/mate-fish/index.docbook
+share/help/eu/mate-fish/legal.xml
+share/help/fi/mate-clock/figures/clock_applet.png
+share/help/fi/mate-clock/index.docbook
+share/help/fi/mate-clock/legal.xml
+share/help/fi/mate-fish/figures/fish_applet.png
+share/help/fi/mate-fish/index.docbook
+share/help/fi/mate-fish/legal.xml
+share/help/fr/mate-clock/figures/clock_applet.png
+share/help/fr/mate-clock/index.docbook
+share/help/fr/mate-clock/legal.xml
+share/help/fr/mate-fish/figures/fish_applet.png
+share/help/fr/mate-fish/index.docbook
+share/help/fr/mate-fish/legal.xml
+share/help/it/mate-clock/figures/clock_applet.png
+share/help/it/mate-clock/index.docbook
+share/help/it/mate-clock/legal.xml
+share/help/it/mate-fish/figures/fish_applet.png
+share/help/it/mate-fish/index.docbook
+share/help/it/mate-fish/legal.xml
+share/help/ja/mate-clock/figures/clock_applet.png
+share/help/ja/mate-clock/index.docbook
+share/help/ja/mate-clock/legal.xml
+share/help/ja/mate-fish/figures/fish_applet.png
+share/help/ja/mate-fish/index.docbook
+share/help/ja/mate-fish/legal.xml
+share/help/ko/mate-clock/figures/clock_applet.png
+share/help/ko/mate-clock/index.docbook
+share/help/ko/mate-clock/legal.xml
+share/help/ko/mate-fish/figures/fish_applet.png
+share/help/ko/mate-fish/index.docbook
+share/help/ko/mate-fish/legal.xml
+share/help/nl/mate-clock/figures/clock_applet.png
+share/help/nl/mate-clock/index.docbook
+share/help/nl/mate-clock/legal.xml
+share/help/oc/mate-clock/figures/clock_applet.png
+share/help/oc/mate-clock/index.docbook
+share/help/oc/mate-clock/legal.xml
+share/help/oc/mate-fish/figures/fish_applet.png
+share/help/oc/mate-fish/index.docbook
+share/help/oc/mate-fish/legal.xml
+share/help/pa/mate-clock/figures/clock_applet.png
+share/help/pa/mate-clock/index.docbook
+share/help/pa/mate-clock/legal.xml
+share/help/pt/mate-clock/figures/clock_applet.png
+share/help/pt/mate-clock/index.docbook
+share/help/pt/mate-clock/legal.xml
+share/help/pt_BR/mate-clock/figures/clock_applet.png
+share/help/pt_BR/mate-clock/index.docbook
+share/help/pt_BR/mate-clock/legal.xml
+share/help/ru/mate-clock/figures/clock_applet.png
+share/help/ru/mate-clock/index.docbook
+share/help/ru/mate-clock/legal.xml
+share/help/ru/mate-fish/figures/fish_applet.png
+share/help/ru/mate-fish/index.docbook
+share/help/ru/mate-fish/legal.xml
+share/help/sr/mate-clock/figures/clock_applet.png
+share/help/sr/mate-clock/index.docbook
+share/help/sr/mate-clock/legal.xml
+share/help/sv/mate-clock/figures/clock_applet.png
+share/help/sv/mate-clock/index.docbook
+share/help/sv/mate-clock/legal.xml
+share/help/sv/mate-fish/figures/fish_applet.png
+share/help/sv/mate-fish/index.docbook
+share/help/sv/mate-fish/legal.xml
+share/help/th/mate-clock/figures/clock_applet.png
+share/help/th/mate-clock/index.docbook
+share/help/th/mate-clock/legal.xml
+share/help/th/mate-fish/figures/fish_applet.png
+share/help/th/mate-fish/index.docbook
+share/help/th/mate-fish/legal.xml
+share/help/uk/mate-clock/figures/clock_applet.png
+share/help/uk/mate-clock/index.docbook
+share/help/uk/mate-clock/legal.xml
+share/help/uk/mate-fish/figures/fish_applet.png
+share/help/uk/mate-fish/index.docbook
+share/help/uk/mate-fish/legal.xml
+share/help/zh_CN/mate-clock/figures/clock_applet.png
+share/help/zh_CN/mate-clock/index.docbook
+share/help/zh_CN/mate-clock/legal.xml
+share/help/zh_CN/mate-fish/figures/fish_applet.png
+share/help/zh_CN/mate-fish/index.docbook
+share/help/zh_CN/mate-fish/legal.xml
+share/help/zh_HK/mate-clock/figures/clock_applet.png
+share/help/zh_HK/mate-clock/index.docbook
+share/help/zh_HK/mate-clock/legal.xml
+share/help/zh_TW/mate-clock/figures/clock_applet.png
+share/help/zh_TW/mate-clock/index.docbook
+share/help/zh_TW/mate-clock/legal.xml
 share/icons/hicolor/16x16/apps/mate-panel-clock.png
 share/icons/hicolor/16x16/apps/mate-panel-drawer.png
 share/icons/hicolor/16x16/apps/mate-panel-fish.png
@@ -113,6 +257,7 @@ share/locale/br/LC_MESSAGES/mate-panel.mo
 share/locale/bs/LC_MESSAGES/mate-panel.mo
 share/locale/ca/LC_MESSAGES/mate-panel.mo
 share/locale/ca@valencia/LC_MESSAGES/mate-panel.mo
+share/locale/cmn/LC_MESSAGES/mate-panel.mo
 share/locale/crh/LC_MESSAGES/mate-panel.mo
 share/locale/cs/LC_MESSAGES/mate-panel.mo
 share/locale/cy/LC_MESSAGES/mate-panel.mo
@@ -196,6 +341,7 @@ share/locale/th/LC_MESSAGES/mate-panel.mo
 share/locale/tr/LC_MESSAGES/mate-panel.mo
 share/locale/ug/LC_MESSAGES/mate-panel.mo
 share/locale/uk/LC_MESSAGES/mate-panel.mo
+share/locale/ur/LC_MESSAGES/mate-panel.mo
 share/locale/uz/LC_MESSAGES/mate-panel.mo
 share/locale/uz@cyrillic/LC_MESSAGES/mate-panel.mo
 share/locale/vi/LC_MESSAGES/mate-panel.mo
@@ -211,7 +357,9 @@ share/locale/zu/LC_MESSAGES/mate-panel.mo
 %%DATADIR%%/applets/org.mate.panel.FishApplet.mate-panel-applet
 %%DATADIR%%/applets/org.mate.panel.NotificationAreaApplet.mate-panel-applet
 %%DATADIR%%/applets/org.mate.panel.Wncklet.mate-panel-applet
-%%DATADIR%%/panel-default-layout.mate
+%%DATADIR%%/layouts/default.layout
+%%DATADIR%%/layouts/linuxmint.layout
+%%DATADIR%%/layouts/opensuse.layout
 %%DATADIR%%/pixmaps/clock-calendar-icon.png
 %%DATADIR%%/pixmaps/clock-face-large.svg
 %%DATADIR%%/pixmaps/clock-face-small-day.svg
@@ -244,294 +392,9 @@ share/locale/zu/LC_MESSAGES/mate-panel.mo
 %%DATADIR%%/ui/window-menu-menu.xml
 %%DATADIR%%/ui/workspace-switcher-menu.xml
 %%DATADIR%%/ui/workspace-switcher.ui
-share/mate/help/mate-applet-clock/C/figures/clock_applet.png
-share/mate/help/mate-applet-clock/C/legal.xml
-share/mate/help/mate-applet-clock/C/mate-applet-clock.xml
-share/mate/help/mate-applet-clock/ar/figures/clock_applet.png
-share/mate/help/mate-applet-clock/ar/legal.xml
-share/mate/help/mate-applet-clock/ar/mate-applet-clock.xml
-share/mate/help/mate-applet-clock/ca/figures/clock_applet.png
-share/mate/help/mate-applet-clock/ca/legal.xml
-share/mate/help/mate-applet-clock/ca/mate-applet-clock.xml
-share/mate/help/mate-applet-clock/cs/figures/clock_applet.png
-share/mate/help/mate-applet-clock/cs/legal.xml
-share/mate/help/mate-applet-clock/cs/mate-applet-clock.xml
-share/mate/help/mate-applet-clock/da/figures/clock_applet.png
-share/mate/help/mate-applet-clock/da/legal.xml
-share/mate/help/mate-applet-clock/da/mate-applet-clock.xml
-share/mate/help/mate-applet-clock/de/figures/clock_applet.png
-share/mate/help/mate-applet-clock/de/legal.xml
-share/mate/help/mate-applet-clock/de/mate-applet-clock.xml
-share/mate/help/mate-applet-clock/el/figures/clock_applet.png
-share/mate/help/mate-applet-clock/el/legal.xml
-share/mate/help/mate-applet-clock/el/mate-applet-clock.xml
-share/mate/help/mate-applet-clock/en_GB/figures/clock_applet.png
-share/mate/help/mate-applet-clock/en_GB/legal.xml
-share/mate/help/mate-applet-clock/en_GB/mate-applet-clock.xml
-share/mate/help/mate-applet-clock/es/figures/clock_applet.png
-share/mate/help/mate-applet-clock/es/legal.xml
-share/mate/help/mate-applet-clock/es/mate-applet-clock.xml
-share/mate/help/mate-applet-clock/eu/figures/clock_applet.png
-share/mate/help/mate-applet-clock/eu/legal.xml
-share/mate/help/mate-applet-clock/eu/mate-applet-clock.xml
-share/mate/help/mate-applet-clock/fi/figures/clock_applet.png
-share/mate/help/mate-applet-clock/fi/legal.xml
-share/mate/help/mate-applet-clock/fi/mate-applet-clock.xml
-share/mate/help/mate-applet-clock/fr/figures/clock_applet.png
-share/mate/help/mate-applet-clock/fr/legal.xml
-share/mate/help/mate-applet-clock/fr/mate-applet-clock.xml
-share/mate/help/mate-applet-clock/it/figures/clock_applet.png
-share/mate/help/mate-applet-clock/it/legal.xml
-share/mate/help/mate-applet-clock/it/mate-applet-clock.xml
-share/mate/help/mate-applet-clock/ja/figures/clock_applet.png
-share/mate/help/mate-applet-clock/ja/legal.xml
-share/mate/help/mate-applet-clock/ja/mate-applet-clock.xml
-share/mate/help/mate-applet-clock/ko/figures/clock_applet.png
-share/mate/help/mate-applet-clock/ko/legal.xml
-share/mate/help/mate-applet-clock/ko/mate-applet-clock.xml
-share/mate/help/mate-applet-clock/nl/figures/clock_applet.png
-share/mate/help/mate-applet-clock/nl/legal.xml
-share/mate/help/mate-applet-clock/nl/mate-applet-clock.xml
-share/mate/help/mate-applet-clock/oc/figures/clock_applet.png
-share/mate/help/mate-applet-clock/oc/legal.xml
-share/mate/help/mate-applet-clock/oc/mate-applet-clock.xml
-share/mate/help/mate-applet-clock/pa/figures/clock_applet.png
-share/mate/help/mate-applet-clock/pa/legal.xml
-share/mate/help/mate-applet-clock/pa/mate-applet-clock.xml
-share/mate/help/mate-applet-clock/pt/figures/clock_applet.png
-share/mate/help/mate-applet-clock/pt/legal.xml
-share/mate/help/mate-applet-clock/pt/mate-applet-clock.xml
-share/mate/help/mate-applet-clock/pt_BR/figures/clock_applet.png
-share/mate/help/mate-applet-clock/pt_BR/legal.xml
-share/mate/help/mate-applet-clock/pt_BR/mate-applet-clock.xml
-share/mate/help/mate-applet-clock/ru/figures/clock_applet.png
-share/mate/help/mate-applet-clock/ru/legal.xml
-share/mate/help/mate-applet-clock/ru/mate-applet-clock.xml
-share/mate/help/mate-applet-clock/sr/figures/clock_applet.png
-share/mate/help/mate-applet-clock/sr/legal.xml
-share/mate/help/mate-applet-clock/sr/mate-applet-clock.xml
-share/mate/help/mate-applet-clock/sv/figures/clock_applet.png
-share/mate/help/mate-applet-clock/sv/legal.xml
-share/mate/help/mate-applet-clock/sv/mate-applet-clock.xml
-share/mate/help/mate-applet-clock/th/figures/clock_applet.png
-share/mate/help/mate-applet-clock/th/legal.xml
-share/mate/help/mate-applet-clock/th/mate-applet-clock.xml
-share/mate/help/mate-applet-clock/uk/figures/clock_applet.png
-share/mate/help/mate-applet-clock/uk/legal.xml
-share/mate/help/mate-applet-clock/uk/mate-applet-clock.xml
-share/mate/help/mate-applet-clock/zh_CN/figures/clock_applet.png
-share/mate/help/mate-applet-clock/zh_CN/legal.xml
-share/mate/help/mate-applet-clock/zh_CN/mate-applet-clock.xml
-share/mate/help/mate-applet-clock/zh_HK/figures/clock_applet.png
-share/mate/help/mate-applet-clock/zh_HK/legal.xml
-share/mate/help/mate-applet-clock/zh_HK/mate-applet-clock.xml
-share/mate/help/mate-applet-clock/zh_TW/figures/clock_applet.png
-share/mate/help/mate-applet-clock/zh_TW/legal.xml
-share/mate/help/mate-applet-clock/zh_TW/mate-applet-clock.xml
-share/mate/help/mate-applet-fish/C/figures/fish_applet.png
-share/mate/help/mate-applet-fish/C/legal.xml
-share/mate/help/mate-applet-fish/C/mate-applet-fish.xml
-share/mate/help/mate-applet-fish/ca/figures/fish_applet.png
-share/mate/help/mate-applet-fish/ca/legal.xml
-share/mate/help/mate-applet-fish/ca/mate-applet-fish.xml
-share/mate/help/mate-applet-fish/cs/figures/fish_applet.png
-share/mate/help/mate-applet-fish/cs/legal.xml
-share/mate/help/mate-applet-fish/cs/mate-applet-fish.xml
-share/mate/help/mate-applet-fish/de/figures/fish_applet.png
-share/mate/help/mate-applet-fish/de/legal.xml
-share/mate/help/mate-applet-fish/de/mate-applet-fish.xml
-share/mate/help/mate-applet-fish/el/figures/fish_applet.png
-share/mate/help/mate-applet-fish/el/legal.xml
-share/mate/help/mate-applet-fish/el/mate-applet-fish.xml
-share/mate/help/mate-applet-fish/en_GB/figures/fish_applet.png
-share/mate/help/mate-applet-fish/en_GB/legal.xml
-share/mate/help/mate-applet-fish/en_GB/mate-applet-fish.xml
-share/mate/help/mate-applet-fish/es/figures/fish_applet.png
-share/mate/help/mate-applet-fish/es/legal.xml
-share/mate/help/mate-applet-fish/es/mate-applet-fish.xml
-share/mate/help/mate-applet-fish/eu/figures/fish_applet.png
-share/mate/help/mate-applet-fish/eu/legal.xml
-share/mate/help/mate-applet-fish/eu/mate-applet-fish.xml
-share/mate/help/mate-applet-fish/fi/figures/fish_applet.png
-share/mate/help/mate-applet-fish/fi/legal.xml
-share/mate/help/mate-applet-fish/fi/mate-applet-fish.xml
-share/mate/help/mate-applet-fish/fr/figures/fish_applet.png
-share/mate/help/mate-applet-fish/fr/legal.xml
-share/mate/help/mate-applet-fish/fr/mate-applet-fish.xml
-share/mate/help/mate-applet-fish/it/figures/fish_applet.png
-share/mate/help/mate-applet-fish/it/legal.xml
-share/mate/help/mate-applet-fish/it/mate-applet-fish.xml
-share/mate/help/mate-applet-fish/ja/figures/fish_applet.png
-share/mate/help/mate-applet-fish/ja/legal.xml
-share/mate/help/mate-applet-fish/ja/mate-applet-fish.xml
-share/mate/help/mate-applet-fish/ko/figures/fish_applet.png
-share/mate/help/mate-applet-fish/ko/legal.xml
-share/mate/help/mate-applet-fish/ko/mate-applet-fish.xml
-share/mate/help/mate-applet-fish/oc/figures/fish_applet.png
-share/mate/help/mate-applet-fish/oc/legal.xml
-share/mate/help/mate-applet-fish/oc/mate-applet-fish.xml
-share/mate/help/mate-applet-fish/ru/figures/fish_applet.png
-share/mate/help/mate-applet-fish/ru/legal.xml
-share/mate/help/mate-applet-fish/ru/mate-applet-fish.xml
-share/mate/help/mate-applet-fish/sv/figures/fish_applet.png
-share/mate/help/mate-applet-fish/sv/legal.xml
-share/mate/help/mate-applet-fish/sv/mate-applet-fish.xml
-share/mate/help/mate-applet-fish/th/figures/fish_applet.png
-share/mate/help/mate-applet-fish/th/legal.xml
-share/mate/help/mate-applet-fish/th/mate-applet-fish.xml
-share/mate/help/mate-applet-fish/uk/figures/fish_applet.png
-share/mate/help/mate-applet-fish/uk/legal.xml
-share/mate/help/mate-applet-fish/uk/mate-applet-fish.xml
-share/mate/help/mate-applet-fish/zh_CN/figures/fish_applet.png
-share/mate/help/mate-applet-fish/zh_CN/legal.xml
-share/mate/help/mate-applet-fish/zh_CN/mate-applet-fish.xml
-share/omf/mate-applet-clock/mate-applet-clock-C.omf
-share/omf/mate-applet-clock/mate-applet-clock-ar.omf
-share/omf/mate-applet-clock/mate-applet-clock-ca.omf
-share/omf/mate-applet-clock/mate-applet-clock-cs.omf
-share/omf/mate-applet-clock/mate-applet-clock-da.omf
-share/omf/mate-applet-clock/mate-applet-clock-de.omf
-share/omf/mate-applet-clock/mate-applet-clock-el.omf
-share/omf/mate-applet-clock/mate-applet-clock-en_GB.omf
-share/omf/mate-applet-clock/mate-applet-clock-es.omf
-share/omf/mate-applet-clock/mate-applet-clock-eu.omf
-share/omf/mate-applet-clock/mate-applet-clock-fi.omf
-share/omf/mate-applet-clock/mate-applet-clock-fr.omf
-share/omf/mate-applet-clock/mate-applet-clock-it.omf
-share/omf/mate-applet-clock/mate-applet-clock-ja.omf
-share/omf/mate-applet-clock/mate-applet-clock-ko.omf
-share/omf/mate-applet-clock/mate-applet-clock-nl.omf
-share/omf/mate-applet-clock/mate-applet-clock-oc.omf
-share/omf/mate-applet-clock/mate-applet-clock-pa.omf
-share/omf/mate-applet-clock/mate-applet-clock-pt.omf
-share/omf/mate-applet-clock/mate-applet-clock-pt_BR.omf
-share/omf/mate-applet-clock/mate-applet-clock-ru.omf
-share/omf/mate-applet-clock/mate-applet-clock-sr.omf
-share/omf/mate-applet-clock/mate-applet-clock-sv.omf
-share/omf/mate-applet-clock/mate-applet-clock-th.omf
-share/omf/mate-applet-clock/mate-applet-clock-uk.omf
-share/omf/mate-applet-clock/mate-applet-clock-zh_CN.omf
-share/omf/mate-applet-clock/mate-applet-clock-zh_HK.omf
-share/omf/mate-applet-clock/mate-applet-clock-zh_TW.omf
-share/omf/mate-applet-fish/mate-applet-fish-C.omf
-share/omf/mate-applet-fish/mate-applet-fish-ca.omf
-share/omf/mate-applet-fish/mate-applet-fish-cs.omf
-share/omf/mate-applet-fish/mate-applet-fish-de.omf
-share/omf/mate-applet-fish/mate-applet-fish-el.omf
-share/omf/mate-applet-fish/mate-applet-fish-en_GB.omf
-share/omf/mate-applet-fish/mate-applet-fish-es.omf
-share/omf/mate-applet-fish/mate-applet-fish-eu.omf
-share/omf/mate-applet-fish/mate-applet-fish-fi.omf
-share/omf/mate-applet-fish/mate-applet-fish-fr.omf
-share/omf/mate-applet-fish/mate-applet-fish-it.omf
-share/omf/mate-applet-fish/mate-applet-fish-ja.omf
-share/omf/mate-applet-fish/mate-applet-fish-ko.omf
-share/omf/mate-applet-fish/mate-applet-fish-oc.omf
-share/omf/mate-applet-fish/mate-applet-fish-ru.omf
-share/omf/mate-applet-fish/mate-applet-fish-sv.omf
-share/omf/mate-applet-fish/mate-applet-fish-th.omf
-share/omf/mate-applet-fish/mate-applet-fish-uk.omf
-share/omf/mate-applet-fish/mate-applet-fish-zh_CN.omf
-@dirrm share/omf/mate-applet-fish
-@dirrm share/omf/mate-applet-clock
-@dirrm share/mate/help/mate-applet-fish/zh_CN/figures
-@dirrm share/mate/help/mate-applet-fish/zh_CN
-@dirrm share/mate/help/mate-applet-fish/uk/figures
-@dirrm share/mate/help/mate-applet-fish/uk
-@dirrm share/mate/help/mate-applet-fish/th/figures
-@dirrm share/mate/help/mate-applet-fish/th
-@dirrm share/mate/help/mate-applet-fish/sv/figures
-@dirrm share/mate/help/mate-applet-fish/sv
-@dirrm share/mate/help/mate-applet-fish/ru/figures
-@dirrm share/mate/help/mate-applet-fish/ru
-@dirrm share/mate/help/mate-applet-fish/oc/figures
-@dirrm share/mate/help/mate-applet-fish/oc
-@dirrm share/mate/help/mate-applet-fish/ko/figures
-@dirrm share/mate/help/mate-applet-fish/ko
-@dirrm share/mate/help/mate-applet-fish/ja/figures
-@dirrm share/mate/help/mate-applet-fish/ja
-@dirrm share/mate/help/mate-applet-fish/it/figures
-@dirrm share/mate/help/mate-applet-fish/it
-@dirrm share/mate/help/mate-applet-fish/fr/figures
-@dirrm share/mate/help/mate-applet-fish/fr
-@dirrm share/mate/help/mate-applet-fish/fi/figures
-@dirrm share/mate/help/mate-applet-fish/fi
-@dirrm share/mate/help/mate-applet-fish/eu/figures
-@dirrm share/mate/help/mate-applet-fish/eu
-@dirrm share/mate/help/mate-applet-fish/es/figures
-@dirrm share/mate/help/mate-applet-fish/es
-@dirrm share/mate/help/mate-applet-fish/en_GB/figures
-@dirrm share/mate/help/mate-applet-fish/en_GB
-@dirrm share/mate/help/mate-applet-fish/el/figures
-@dirrm share/mate/help/mate-applet-fish/el
-@dirrm share/mate/help/mate-applet-fish/de/figures
-@dirrm share/mate/help/mate-applet-fish/de
-@dirrm share/mate/help/mate-applet-fish/cs/figures
-@dirrm share/mate/help/mate-applet-fish/cs
-@dirrm share/mate/help/mate-applet-fish/ca/figures
-@dirrm share/mate/help/mate-applet-fish/ca
-@dirrm share/mate/help/mate-applet-fish/C/figures
-@dirrm share/mate/help/mate-applet-fish/C
-@dirrm share/mate/help/mate-applet-fish
-@dirrm share/mate/help/mate-applet-clock/zh_TW/figures
-@dirrm share/mate/help/mate-applet-clock/zh_TW
-@dirrm share/mate/help/mate-applet-clock/zh_HK/figures
-@dirrm share/mate/help/mate-applet-clock/zh_HK
-@dirrm share/mate/help/mate-applet-clock/zh_CN/figures
-@dirrm share/mate/help/mate-applet-clock/zh_CN
-@dirrm share/mate/help/mate-applet-clock/uk/figures
-@dirrm share/mate/help/mate-applet-clock/uk
-@dirrm share/mate/help/mate-applet-clock/th/figures
-@dirrm share/mate/help/mate-applet-clock/th
-@dirrm share/mate/help/mate-applet-clock/sv/figures
-@dirrm share/mate/help/mate-applet-clock/sv
-@dirrm share/mate/help/mate-applet-clock/sr/figures
-@dirrm share/mate/help/mate-applet-clock/sr
-@dirrm share/mate/help/mate-applet-clock/ru/figures
-@dirrm share/mate/help/mate-applet-clock/ru
-@dirrm share/mate/help/mate-applet-clock/pt_BR/figures
-@dirrm share/mate/help/mate-applet-clock/pt_BR
-@dirrm share/mate/help/mate-applet-clock/pt/figures
-@dirrm share/mate/help/mate-applet-clock/pt
-@dirrm share/mate/help/mate-applet-clock/pa/figures
-@dirrm share/mate/help/mate-applet-clock/pa
-@dirrm share/mate/help/mate-applet-clock/oc/figures
-@dirrm share/mate/help/mate-applet-clock/oc
-@dirrm share/mate/help/mate-applet-clock/nl/figures
-@dirrm share/mate/help/mate-applet-clock/nl
-@dirrm share/mate/help/mate-applet-clock/ko/figures
-@dirrm share/mate/help/mate-applet-clock/ko
-@dirrm share/mate/help/mate-applet-clock/ja/figures
-@dirrm share/mate/help/mate-applet-clock/ja
-@dirrm share/mate/help/mate-applet-clock/it/figures
-@dirrm share/mate/help/mate-applet-clock/it
-@dirrm share/mate/help/mate-applet-clock/fr/figures
-@dirrm share/mate/help/mate-applet-clock/fr
-@dirrm share/mate/help/mate-applet-clock/fi/figures
-@dirrm share/mate/help/mate-applet-clock/fi
-@dirrm share/mate/help/mate-applet-clock/eu/figures
-@dirrm share/mate/help/mate-applet-clock/eu
-@dirrm share/mate/help/mate-applet-clock/es/figures
-@dirrm share/mate/help/mate-applet-clock/es
-@dirrm share/mate/help/mate-applet-clock/en_GB/figures
-@dirrm share/mate/help/mate-applet-clock/en_GB
-@dirrm share/mate/help/mate-applet-clock/el/figures
-@dirrm share/mate/help/mate-applet-clock/el
-@dirrm share/mate/help/mate-applet-clock/de/figures
-@dirrm share/mate/help/mate-applet-clock/de
-@dirrm share/mate/help/mate-applet-clock/da/figures
-@dirrm share/mate/help/mate-applet-clock/da
-@dirrm share/mate/help/mate-applet-clock/cs/figures
-@dirrm share/mate/help/mate-applet-clock/cs
-@dirrm share/mate/help/mate-applet-clock/ca/figures
-@dirrm share/mate/help/mate-applet-clock/ca
-@dirrm share/mate/help/mate-applet-clock/ar/figures
-@dirrm share/mate/help/mate-applet-clock/ar
-@dirrm share/mate/help/mate-applet-clock/C/figures
-@dirrm share/mate/help/mate-applet-clock/C
-@dirrm share/mate/help/mate-applet-clock
 @dirrm %%DATADIR%%/ui
 @dirrm %%DATADIR%%/pixmaps
+@dirrm %%DATADIR%%/layouts
 @dirrm %%DATADIR%%/applets
 @dirrm %%DATADIR%%
 @dirrmtry share/locale/zu/LC_MESSAGES
@@ -546,6 +409,8 @@ share/omf/mate-applet-fish/mate-applet-fish-zh_CN.omf
 @dirrmtry share/locale/xh
 @dirrmtry share/locale/uz@cyrillic/LC_MESSAGES
 @dirrmtry share/locale/uz@cyrillic
+@dirrmtry share/locale/ur/LC_MESSAGES
+@dirrmtry share/locale/ur
 @dirrmtry share/locale/ug/LC_MESSAGES
 @dirrmtry share/locale/ug
 @dirrmtry share/locale/te/LC_MESSAGES
@@ -600,6 +465,8 @@ share/omf/mate-applet-fish/mate-applet-fish-zh_CN.omf
 @dirrmtry share/locale/dz
 @dirrmtry share/locale/crh/LC_MESSAGES
 @dirrmtry share/locale/crh
+@dirrmtry share/locale/cmn/LC_MESSAGES
+@dirrmtry share/locale/cmn
 @dirrmtry share/locale/ca@valencia/LC_MESSAGES
 @dirrmtry share/locale/ca@valencia
 @dirrmtry share/locale/bn_IN/LC_MESSAGES
@@ -610,6 +477,129 @@ share/omf/mate-applet-fish/mate-applet-fish-zh_CN.omf
 @dirrmtry share/locale/ast
 @dirrmtry share/locale/as/LC_MESSAGES
 @dirrmtry share/locale/as
+@dirrmtry share/help/zh_TW/mate-clock/figures
+@dirrmtry share/help/zh_TW/mate-clock
+@dirrmtry share/help/zh_TW
+@dirrmtry share/help/zh_HK/mate-clock/figures
+@dirrmtry share/help/zh_HK/mate-clock
+@dirrmtry share/help/zh_HK
+@dirrmtry share/help/zh_CN/mate-fish/figures
+@dirrmtry share/help/zh_CN/mate-fish
+@dirrmtry share/help/zh_CN/mate-clock/figures
+@dirrmtry share/help/zh_CN/mate-clock
+@dirrmtry share/help/zh_CN
+@dirrmtry share/help/uk/mate-fish/figures
+@dirrmtry share/help/uk/mate-fish
+@dirrmtry share/help/uk/mate-clock/figures
+@dirrmtry share/help/uk/mate-clock
+@dirrmtry share/help/uk
+@dirrmtry share/help/th/mate-fish/figures
+@dirrmtry share/help/th/mate-fish
+@dirrmtry share/help/th/mate-clock/figures
+@dirrmtry share/help/th/mate-clock
+@dirrmtry share/help/th
+@dirrmtry share/help/sv/mate-fish/figures
+@dirrmtry share/help/sv/mate-fish
+@dirrmtry share/help/sv/mate-clock/figures
+@dirrmtry share/help/sv/mate-clock
+@dirrmtry share/help/sv
+@dirrmtry share/help/sr/mate-clock/figures
+@dirrmtry share/help/sr/mate-clock
+@dirrmtry share/help/sr
+@dirrmtry share/help/ru/mate-fish/figures
+@dirrmtry share/help/ru/mate-fish
+@dirrmtry share/help/ru/mate-clock/figures
+@dirrmtry share/help/ru/mate-clock
+@dirrmtry share/help/ru
+@dirrmtry share/help/pt_BR/mate-clock/figures
+@dirrmtry share/help/pt_BR/mate-clock
+@dirrmtry share/help/pt_BR
+@dirrmtry share/help/pt/mate-clock/figures
+@dirrmtry share/help/pt/mate-clock
+@dirrmtry share/help/pt
+@dirrmtry share/help/pa/mate-clock/figures
+@dirrmtry share/help/pa/mate-clock
+@dirrmtry share/help/pa
+@dirrmtry share/help/oc/mate-fish/figures
+@dirrmtry share/help/oc/mate-fish
+@dirrmtry share/help/oc/mate-clock/figures
+@dirrmtry share/help/oc/mate-clock
+@dirrmtry share/help/oc
+@dirrmtry share/help/nl/mate-clock/figures
+@dirrmtry share/help/nl/mate-clock
+@dirrmtry share/help/nl
+@dirrmtry share/help/ko/mate-fish/figures
+@dirrmtry share/help/ko/mate-fish
+@dirrmtry share/help/ko/mate-clock/figures
+@dirrmtry share/help/ko/mate-clock
+@dirrmtry share/help/ko
+@dirrmtry share/help/ja/mate-fish/figures
+@dirrmtry share/help/ja/mate-fish
+@dirrmtry share/help/ja/mate-clock/figures
+@dirrmtry share/help/ja/mate-clock
+@dirrmtry share/help/ja
+@dirrmtry share/help/it/mate-fish/figures
+@dirrmtry share/help/it/mate-fish
+@dirrmtry share/help/it/mate-clock/figures
+@dirrmtry share/help/it/mate-clock
+@dirrmtry share/help/it
+@dirrmtry share/help/fr/mate-fish/figures
+@dirrmtry share/help/fr/mate-fish
+@dirrmtry share/help/fr/mate-clock/figures
+@dirrmtry share/help/fr/mate-clock
+@dirrmtry share/help/fr
+@dirrmtry share/help/fi/mate-fish/figures
+@dirrmtry share/help/fi/mate-fish
+@dirrmtry share/help/fi/mate-clock/figures
+@dirrmtry share/help/fi/mate-clock
+@dirrmtry share/help/fi
+@dirrmtry share/help/eu/mate-fish/figures
+@dirrmtry share/help/eu/mate-fish
+@dirrmtry share/help/eu/mate-clock/figures
+@dirrmtry share/help/eu/mate-clock
+@dirrmtry share/help/eu
+@dirrmtry share/help/es/mate-fish/figures
+@dirrmtry share/help/es/mate-fish
+@dirrmtry share/help/es/mate-clock/figures
+@dirrmtry share/help/es/mate-clock
+@dirrmtry share/help/es
+@dirrmtry share/help/en_GB/mate-fish/figures
+@dirrmtry share/help/en_GB/mate-fish
+@dirrmtry share/help/en_GB/mate-clock/figures
+@dirrmtry share/help/en_GB/mate-clock
+@dirrmtry share/help/en_GB
+@dirrmtry share/help/el/mate-fish/figures
+@dirrmtry share/help/el/mate-fish
+@dirrmtry share/help/el/mate-clock/figures
+@dirrmtry share/help/el/mate-clock
+@dirrmtry share/help/el
+@dirrmtry share/help/de/mate-fish/figures
+@dirrmtry share/help/de/mate-fish
+@dirrmtry share/help/de/mate-clock/figures
+@dirrmtry share/help/de/mate-clock
+@dirrmtry share/help/de
+@dirrmtry share/help/da/mate-clock/figures
+@dirrmtry share/help/da/mate-clock
+@dirrmtry share/help/da
+@dirrmtry share/help/cs/mate-fish/figures
+@dirrmtry share/help/cs/mate-fish
+@dirrmtry share/help/cs/mate-clock/figures
+@dirrmtry share/help/cs/mate-clock
+@dirrmtry share/help/cs
+@dirrmtry share/help/ca/mate-fish/figures
+@dirrmtry share/help/ca/mate-fish
+@dirrmtry share/help/ca/mate-clock/figures
+@dirrmtry share/help/ca/mate-clock
+@dirrmtry share/help/ca
+@dirrmtry share/help/ar/mate-clock/figures
+@dirrmtry share/help/ar/mate-clock
+@dirrmtry share/help/ar
+@dirrmtry share/help/C/mate-fish/figures
+@dirrmtry share/help/C/mate-fish
+@dirrmtry share/help/C/mate-clock/figures
+@dirrmtry share/help/C/mate-clock
+@dirrmtry share/help/C
+@dirrmtry share/help
 @dirrm share/doc/mate-panel-applet
 @dirrmtry lib/mate-panel/modules
 @dirrmtry lib/mate-panel

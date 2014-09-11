@@ -1,8 +1,0 @@
-#
-# $FreeBSD$
-#
-
-export ZENHOME=%%ZENHOME%%
-export PYTHONPATH=$ZENHOME/lib/python
-export PATH=$ZENHOME/bin:$PATH
-export INSTANCE_HOME=$ZENHOME

@@ -3,7 +3,7 @@
 
 PORTNAME=	vlc
 DISTVERSION=	2.1.5
-PORTREVISION=	7
+PORTREVISION=	9
 PORTEPOCH=	4
 CATEGORIES=	multimedia audio ipv6 net www
 MASTER_SITES=	http://download.videolan.org/pub/videolan/${PORTNAME}/${DISTVERSION:S/a$//}/ \
@@ -301,6 +301,10 @@ PORTDATA=	*
 PORTDOCS=	*
 
 .include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MPULSEAUDIO} && ${OSVERSION} <= 900044
+IGNORE=		Pulseaudio is unsupported with rtld prior to FreeBSD-9.x
+.endif
 
 .if ${PORT_OPTIONS:MSKINS}
 .if ${PORT_OPTIONS:MQT4}

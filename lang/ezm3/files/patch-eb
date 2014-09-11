@@ -1,17 +1,0 @@
-This patch is to work around some strange gmake environment-related
-bogons on the FreeBSD/sparc64 platform.  It doesn't really fix a
-bug in the ezm3 port.
-
---- language/modula3/m3compiler/m3cc/gcc/gcc/Makefile.in.orig	Fri Apr 18 14:31:46 2003
-+++ language/modula3/m3compiler/m3cc/gcc/gcc/Makefile.in	Fri Apr 18 14:32:11 2003
-@@ -691,8 +691,8 @@
- 	-e 's|%% *|../|g' \
- 	-e 's|%||g'
- SUBDIR_FLAGS_TO_PASS = $(ORDINARY_FLAGS_TO_PASS) \
--	"CC=`echo @quoted_cc_set_by_configure@ | $(PREPEND_DOTDOT_TO_RELATIVE_PATHS)`" \
--	"STAGE_PREFIX=`echo @quoted_stage_prefix_set_by_configure@ | $(PREPEND_DOTDOT_TO_RELATIVE_PATHS)`"
-+	"CC=`echo @quoted_cc_set_by_configure@ | $(PREPEND_DOTDOT_TO_RELATIVE_PATHS)`"
-+
- #
- # Lists of files for various purposes.
- 

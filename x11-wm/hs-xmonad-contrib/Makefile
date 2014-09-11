@@ -3,6 +3,7 @@
 
 PORTNAME=	xmonad-contrib
 PORTVERSION=	0.11.3
+PORTREVISION=	1
 CATEGORIES=	x11-wm haskell
 
 MAINTAINER=	haskell@FreeBSD.org

@@ -1,0 +1,64 @@
+--- geyes/Makefile.in.orig	2014-04-12 15:38:22.000000000 +0200
++++ geyes/Makefile.in	2014-04-12 15:39:29.000000000 +0200
+@@ -78,7 +78,7 @@
+ POST_UNINSTALL = :
+ build_triplet = @build@
+ host_triplet = @host@
+-libexec_PROGRAMS = geyes_applet2$(EXEEXT)
++libexec_PROGRAMS = mate-geyes_applet2$(EXEEXT)
+ subdir = geyes
+ DIST_COMMON = $(srcdir)/Makefile.in $(srcdir)/Makefile.am \
+ 	$(top_srcdir)/depcomp AUTHORS NEWS README
+@@ -98,10 +98,10 @@
+ am__installdirs = "$(DESTDIR)$(libexecdir)" "$(DESTDIR)$(appletdir)" \
+ 	"$(DESTDIR)$(servicedir)" "$(DESTDIR)$(uidir)"
+ PROGRAMS = $(libexec_PROGRAMS)
+-am_geyes_applet2_OBJECTS = geyes.$(OBJEXT) themes.$(OBJEXT)
+-geyes_applet2_OBJECTS = $(am_geyes_applet2_OBJECTS)
++am_mate_geyes_applet2_OBJECTS = geyes.$(OBJEXT) themes.$(OBJEXT)
++mate_geyes_applet2_OBJECTS = $(am_mate_geyes_applet2_OBJECTS)
+ am__DEPENDENCIES_1 =
+-geyes_applet2_DEPENDENCIES = $(am__DEPENDENCIES_1)
++mate_geyes_applet2_DEPENDENCIES = $(am__DEPENDENCIES_1)
+ AM_V_lt = $(am__v_lt_@AM_V@)
+ am__v_lt_ = $(am__v_lt_@AM_DEFAULT_V@)
+ am__v_lt_0 = --silent
+@@ -140,8 +140,8 @@
+ am__v_CCLD_ = $(am__v_CCLD_@AM_DEFAULT_V@)
+ am__v_CCLD_0 = @echo "  CCLD    " $@;
+ am__v_CCLD_1 = 
+-SOURCES = $(geyes_applet2_SOURCES)
+-DIST_SOURCES = $(geyes_applet2_SOURCES)
++SOURCES = $(mate_geyes_applet2_SOURCES)
++DIST_SOURCES = $(mate_geyes_applet2_SOURCES)
+ RECURSIVE_TARGETS = all-recursive check-recursive cscopelist-recursive \
+ 	ctags-recursive dvi-recursive html-recursive info-recursive \
+ 	install-data-recursive install-dvi-recursive \
+@@ -488,12 +488,12 @@
+ 	-DGEYES_THEMES_DIR=\""$(pkgdatadir)/geyes/"\"	\
+ 	-DGEYES_MENU_UI_DIR=\""$(uidir)"\"
+ 
+-geyes_applet2_SOURCES = \
++mate_geyes_applet2_SOURCES = \
+         geyes.c \
+ 	themes.c \
+ 	geyes.h
+ 
+-geyes_applet2_LDADD = \
++mate_geyes_applet2_LDADD = \
+ 	$(MATE_APPLETS4_LIBS) \
+ 	-lm
+ 
+@@ -608,9 +608,9 @@
+ 	echo " rm -f" $$list; \
+ 	rm -f $$list
+ 
+-geyes_applet2$(EXEEXT): $(geyes_applet2_OBJECTS) $(geyes_applet2_DEPENDENCIES) $(EXTRA_geyes_applet2_DEPENDENCIES) 
+-	@rm -f geyes_applet2$(EXEEXT)
+-	$(AM_V_CCLD)$(LINK) $(geyes_applet2_OBJECTS) $(geyes_applet2_LDADD) $(LIBS)
++mate-geyes_applet2$(EXEEXT): $(mate_geyes_applet2_OBJECTS) $(mate_geyes_applet2_DEPENDENCIES) $(EXTRA_mate_geyes_applet2_DEPENDENCIES) 
++	@rm -f mate-geyes_applet2$(EXEEXT)
++	$(AM_V_CCLD)$(LINK) $(mate_geyes_applet2_OBJECTS) $(mate_geyes_applet2_LDADD) $(LIBS)
+ 
+ mostlyclean-compile:
+ 	-rm -f *.$(OBJEXT)

@@ -14,7 +14,7 @@ DISTNAME=	HTMLgen
 MAINTAINER=	python@FreeBSD.org
 COMMENT=	Python library for the generation of HTML documents
 
-USE_PYTHON=	2
+USES=		python:2
 NO_BUILD=	yes
 
 OPTIONS_DEFINE=	DOCS
@@ -26,10 +26,6 @@ post-patch:
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	@${TAR} -C ${WRKSRC} -cf - README html image | \
-		${TAR} -C ${STAGEDIR}${DOCSDIR} -xvf -
-	@${CHOWN} -R ${BINOWN}:${BINGRP} ${STAGEDIR}${DOCSDIR}
-	@${FIND} ${STAGEDIR}${DOCSDIR} -type d -exec ${CHMOD} 0555 {} \;
-	@${FIND} ${STAGEDIR}${DOCSDIR} -type f -exec ${CHMOD} 0444 {} \;
+	(cd ${WRKSRC} && ${COPYTREE_SHARE} "README html image" ${STAGEDIR}${DOCSDIR})
 
 .include <bsd.port.mk>

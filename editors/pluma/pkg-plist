@@ -1,0 +1,675 @@
+bin/pluma
+include/pluma/pluma-app.h
+include/pluma/pluma-commands.h
+include/pluma/pluma-debug.h
+include/pluma/pluma-document.h
+include/pluma/pluma-encodings-combo-box.h
+include/pluma/pluma-encodings.h
+include/pluma/pluma-file-chooser-dialog.h
+include/pluma/pluma-help.h
+include/pluma/pluma-message-bus.h
+include/pluma/pluma-message-type.h
+include/pluma/pluma-message.h
+include/pluma/pluma-notebook.h
+include/pluma/pluma-panel.h
+include/pluma/pluma-plugin.h
+include/pluma/pluma-prefs-manager-app.h
+include/pluma/pluma-prefs-manager.h
+include/pluma/pluma-progress-message-area.h
+include/pluma/pluma-status-combo-box.h
+include/pluma/pluma-statusbar.h
+include/pluma/pluma-tab.h
+include/pluma/pluma-utils.h
+include/pluma/pluma-view.h
+include/pluma/pluma-window.h
+lib/pluma/plugin-loaders/libcloader.so
+lib/pluma/plugin-loaders/libpythonloader.so
+lib/pluma/plugins/changecase.pluma-plugin
+lib/pluma/plugins/docinfo.pluma-plugin
+lib/pluma/plugins/externaltools.pluma-plugin
+lib/pluma/plugins/externaltools/__init__.py
+lib/pluma/plugins/externaltools/__init__.pyc
+lib/pluma/plugins/externaltools/__init__.pyo
+lib/pluma/plugins/externaltools/capture.py
+lib/pluma/plugins/externaltools/capture.pyc
+lib/pluma/plugins/externaltools/capture.pyo
+lib/pluma/plugins/externaltools/filelookup.py
+lib/pluma/plugins/externaltools/filelookup.pyc
+lib/pluma/plugins/externaltools/filelookup.pyo
+lib/pluma/plugins/externaltools/functions.py
+lib/pluma/plugins/externaltools/functions.pyc
+lib/pluma/plugins/externaltools/functions.pyo
+lib/pluma/plugins/externaltools/library.py
+lib/pluma/plugins/externaltools/library.pyc
+lib/pluma/plugins/externaltools/library.pyo
+lib/pluma/plugins/externaltools/linkparsing.py
+lib/pluma/plugins/externaltools/linkparsing.pyc
+lib/pluma/plugins/externaltools/linkparsing.pyo
+lib/pluma/plugins/externaltools/manager.py
+lib/pluma/plugins/externaltools/manager.pyc
+lib/pluma/plugins/externaltools/manager.pyo
+lib/pluma/plugins/externaltools/outputpanel.py
+lib/pluma/plugins/externaltools/outputpanel.pyc
+lib/pluma/plugins/externaltools/outputpanel.pyo
+lib/pluma/plugins/filebrowser.pluma-plugin
+lib/pluma/plugins/libchangecase.so
+lib/pluma/plugins/libdocinfo.so
+lib/pluma/plugins/libfilebrowser.so
+lib/pluma/plugins/libmodelines.so
+lib/pluma/plugins/libsort.so
+lib/pluma/plugins/libspell.so
+lib/pluma/plugins/libtaglist.so
+lib/pluma/plugins/libtime.so
+lib/pluma/plugins/modelines.pluma-plugin
+lib/pluma/plugins/pythonconsole.pluma-plugin
+lib/pluma/plugins/pythonconsole/__init__.py
+lib/pluma/plugins/pythonconsole/__init__.pyc
+lib/pluma/plugins/pythonconsole/__init__.pyo
+lib/pluma/plugins/pythonconsole/config.py
+lib/pluma/plugins/pythonconsole/config.pyc
+lib/pluma/plugins/pythonconsole/config.pyo
+lib/pluma/plugins/pythonconsole/console.py
+lib/pluma/plugins/pythonconsole/console.pyc
+lib/pluma/plugins/pythonconsole/console.pyo
+lib/pluma/plugins/quickopen.pluma-plugin
+lib/pluma/plugins/quickopen/__init__.py
+lib/pluma/plugins/quickopen/__init__.pyc
+lib/pluma/plugins/quickopen/__init__.pyo
+lib/pluma/plugins/quickopen/popup.py
+lib/pluma/plugins/quickopen/popup.pyc
+lib/pluma/plugins/quickopen/popup.pyo
+lib/pluma/plugins/quickopen/virtualdirs.py
+lib/pluma/plugins/quickopen/virtualdirs.pyc
+lib/pluma/plugins/quickopen/virtualdirs.pyo
+lib/pluma/plugins/quickopen/windowhelper.py
+lib/pluma/plugins/quickopen/windowhelper.pyc
+lib/pluma/plugins/quickopen/windowhelper.pyo
+lib/pluma/plugins/snippets.pluma-plugin
+lib/pluma/plugins/snippets/Completion.py
+lib/pluma/plugins/snippets/Completion.pyc
+lib/pluma/plugins/snippets/Completion.pyo
+lib/pluma/plugins/snippets/Document.py
+lib/pluma/plugins/snippets/Document.pyc
+lib/pluma/plugins/snippets/Document.pyo
+lib/pluma/plugins/snippets/Exporter.py
+lib/pluma/plugins/snippets/Exporter.pyc
+lib/pluma/plugins/snippets/Exporter.pyo
+lib/pluma/plugins/snippets/Helper.py
+lib/pluma/plugins/snippets/Helper.pyc
+lib/pluma/plugins/snippets/Helper.pyo
+lib/pluma/plugins/snippets/Importer.py
+lib/pluma/plugins/snippets/Importer.pyc
+lib/pluma/plugins/snippets/Importer.pyo
+lib/pluma/plugins/snippets/LanguageManager.py
+lib/pluma/plugins/snippets/LanguageManager.pyc
+lib/pluma/plugins/snippets/LanguageManager.pyo
+lib/pluma/plugins/snippets/Library.py
+lib/pluma/plugins/snippets/Library.pyc
+lib/pluma/plugins/snippets/Library.pyo
+lib/pluma/plugins/snippets/Manager.py
+lib/pluma/plugins/snippets/Manager.pyc
+lib/pluma/plugins/snippets/Manager.pyo
+lib/pluma/plugins/snippets/Parser.py
+lib/pluma/plugins/snippets/Parser.pyc
+lib/pluma/plugins/snippets/Parser.pyo
+lib/pluma/plugins/snippets/Placeholder.py
+lib/pluma/plugins/snippets/Placeholder.pyc
+lib/pluma/plugins/snippets/Placeholder.pyo
+lib/pluma/plugins/snippets/Snippet.py
+lib/pluma/plugins/snippets/Snippet.pyc
+lib/pluma/plugins/snippets/Snippet.pyo
+lib/pluma/plugins/snippets/SubstitutionParser.py
+lib/pluma/plugins/snippets/SubstitutionParser.pyc
+lib/pluma/plugins/snippets/SubstitutionParser.pyo
+lib/pluma/plugins/snippets/WindowHelper.py
+lib/pluma/plugins/snippets/WindowHelper.pyc
+lib/pluma/plugins/snippets/WindowHelper.pyo
+lib/pluma/plugins/snippets/__init__.py
+lib/pluma/plugins/snippets/__init__.pyc
+lib/pluma/plugins/snippets/__init__.pyo
+lib/pluma/plugins/sort.pluma-plugin
+lib/pluma/plugins/spell.pluma-plugin
+lib/pluma/plugins/taglist.pluma-plugin
+lib/pluma/plugins/time.pluma-plugin
+libdata/pkgconfig/pluma.pc
+libexec/pluma/pluma-bugreport.sh
+man/man1/pluma.1.gz
+share/MateConf/gsettings/pluma.convert
+share/applications/pluma.desktop
+%%PORTDOCS%%%%DOCSDIR%%/PlumaMessage.html
+%%PORTDOCS%%%%DOCSDIR%%/PlumaMessageBus.html
+%%PORTDOCS%%%%DOCSDIR%%/PlumaMessageType.html
+%%PORTDOCS%%%%DOCSDIR%%/PlumaPlugin.html
+%%PORTDOCS%%%%DOCSDIR%%/ch01.html
+%%PORTDOCS%%%%DOCSDIR%%/home.png
+%%PORTDOCS%%%%DOCSDIR%%/index.html
+%%PORTDOCS%%%%DOCSDIR%%/index.sgml
+%%PORTDOCS%%%%DOCSDIR%%/left-insensitive.png
+%%PORTDOCS%%%%DOCSDIR%%/left.png
+%%PORTDOCS%%%%DOCSDIR%%/pluma-PlumaPrintJob.html
+%%PORTDOCS%%%%DOCSDIR%%/pluma-pluma-app.html
+%%PORTDOCS%%%%DOCSDIR%%/pluma-pluma-convert.html
+%%PORTDOCS%%%%DOCSDIR%%/pluma-pluma-debug.html
+%%PORTDOCS%%%%DOCSDIR%%/pluma-pluma-document.html
+%%PORTDOCS%%%%DOCSDIR%%/pluma-pluma-encodings-option-menu.html
+%%PORTDOCS%%%%DOCSDIR%%/pluma-pluma-encodings.html
+%%PORTDOCS%%%%DOCSDIR%%/pluma-pluma-file-chooser-dialog.html
+%%PORTDOCS%%%%DOCSDIR%%/pluma-pluma-help.html
+%%PORTDOCS%%%%DOCSDIR%%/pluma-pluma-metadata-manager.html
+%%PORTDOCS%%%%DOCSDIR%%/pluma-pluma-notebook.html
+%%PORTDOCS%%%%DOCSDIR%%/pluma-pluma-panel.html
+%%PORTDOCS%%%%DOCSDIR%%/pluma-pluma-prefs-manager-app.html
+%%PORTDOCS%%%%DOCSDIR%%/pluma-pluma-prefs-manager.html
+%%PORTDOCS%%%%DOCSDIR%%/pluma-pluma-print-job-preview.html
+%%PORTDOCS%%%%DOCSDIR%%/pluma-pluma-progress-message-area.html
+%%PORTDOCS%%%%DOCSDIR%%/pluma-pluma-statusbar.html
+%%PORTDOCS%%%%DOCSDIR%%/pluma-pluma-tab.html
+%%PORTDOCS%%%%DOCSDIR%%/pluma-pluma-utils.html
+%%PORTDOCS%%%%DOCSDIR%%/pluma-pluma-view.html
+%%PORTDOCS%%%%DOCSDIR%%/pluma-pluma-window.html
+%%PORTDOCS%%%%DOCSDIR%%/pluma.devhelp2
+%%PORTDOCS%%%%DOCSDIR%%/right-insensitive.png
+%%PORTDOCS%%%%DOCSDIR%%/right.png
+%%PORTDOCS%%%%DOCSDIR%%/style.css
+%%PORTDOCS%%%%DOCSDIR%%/up-insensitive.png
+%%PORTDOCS%%%%DOCSDIR%%/up.png
+share/help/C/pluma/figures/pluma_format_bold.png
+share/help/C/pluma/figures/pluma_format_italic.png
+share/help/C/pluma/figures/pluma_format_strikethrough.png
+share/help/C/pluma/figures/pluma_format_underline.png
+share/help/C/pluma/figures/pluma_recent_files_menu_icon.png
+share/help/C/pluma/figures/pluma_window.png
+share/help/C/pluma/index.docbook
+share/help/C/pluma/legal.xml
+share/help/ar/pluma/figures/pluma_format_bold.png
+share/help/ar/pluma/figures/pluma_format_italic.png
+share/help/ar/pluma/figures/pluma_format_strikethrough.png
+share/help/ar/pluma/figures/pluma_format_underline.png
+share/help/ar/pluma/figures/pluma_recent_files_menu_icon.png
+share/help/ar/pluma/figures/pluma_window.png
+share/help/ar/pluma/index.docbook
+share/help/ar/pluma/legal.xml
+share/help/bg/pluma/figures/pluma_format_bold.png
+share/help/bg/pluma/figures/pluma_format_italic.png
+share/help/bg/pluma/figures/pluma_format_strikethrough.png
+share/help/bg/pluma/figures/pluma_format_underline.png
+share/help/bg/pluma/figures/pluma_recent_files_menu_icon.png
+share/help/bg/pluma/figures/pluma_window.png
+share/help/bg/pluma/index.docbook
+share/help/bg/pluma/legal.xml
+share/help/ca/pluma/figures/pluma_format_bold.png
+share/help/ca/pluma/figures/pluma_format_italic.png
+share/help/ca/pluma/figures/pluma_format_strikethrough.png
+share/help/ca/pluma/figures/pluma_format_underline.png
+share/help/ca/pluma/figures/pluma_recent_files_menu_icon.png
+share/help/ca/pluma/figures/pluma_window.png
+share/help/ca/pluma/index.docbook
+share/help/ca/pluma/legal.xml
+share/help/cs/pluma/figures/pluma_format_bold.png
+share/help/cs/pluma/figures/pluma_format_italic.png
+share/help/cs/pluma/figures/pluma_format_strikethrough.png
+share/help/cs/pluma/figures/pluma_format_underline.png
+share/help/cs/pluma/figures/pluma_recent_files_menu_icon.png
+share/help/cs/pluma/figures/pluma_window.png
+share/help/cs/pluma/index.docbook
+share/help/cs/pluma/legal.xml
+share/help/da/pluma/figures/pluma_format_bold.png
+share/help/da/pluma/figures/pluma_format_italic.png
+share/help/da/pluma/figures/pluma_format_strikethrough.png
+share/help/da/pluma/figures/pluma_format_underline.png
+share/help/da/pluma/figures/pluma_recent_files_menu_icon.png
+share/help/da/pluma/figures/pluma_window.png
+share/help/da/pluma/index.docbook
+share/help/da/pluma/legal.xml
+share/help/de/pluma/figures/pluma_format_bold.png
+share/help/de/pluma/figures/pluma_format_italic.png
+share/help/de/pluma/figures/pluma_format_strikethrough.png
+share/help/de/pluma/figures/pluma_format_underline.png
+share/help/de/pluma/figures/pluma_recent_files_menu_icon.png
+share/help/de/pluma/figures/pluma_window.png
+share/help/de/pluma/index.docbook
+share/help/de/pluma/legal.xml
+share/help/el/pluma/figures/pluma_format_bold.png
+share/help/el/pluma/figures/pluma_format_italic.png
+share/help/el/pluma/figures/pluma_format_strikethrough.png
+share/help/el/pluma/figures/pluma_format_underline.png
+share/help/el/pluma/figures/pluma_recent_files_menu_icon.png
+share/help/el/pluma/figures/pluma_window.png
+share/help/el/pluma/index.docbook
+share/help/el/pluma/legal.xml
+share/help/es/pluma/figures/pluma_format_bold.png
+share/help/es/pluma/figures/pluma_format_italic.png
+share/help/es/pluma/figures/pluma_format_strikethrough.png
+share/help/es/pluma/figures/pluma_format_underline.png
+share/help/es/pluma/figures/pluma_recent_files_menu_icon.png
+share/help/es/pluma/figures/pluma_window.png
+share/help/es/pluma/index.docbook
+share/help/es/pluma/legal.xml
+share/help/fi/pluma/figures/pluma_format_bold.png
+share/help/fi/pluma/figures/pluma_format_italic.png
+share/help/fi/pluma/figures/pluma_format_strikethrough.png
+share/help/fi/pluma/figures/pluma_format_underline.png
+share/help/fi/pluma/figures/pluma_recent_files_menu_icon.png
+share/help/fi/pluma/figures/pluma_window.png
+share/help/fi/pluma/index.docbook
+share/help/fi/pluma/legal.xml
+share/help/fr/pluma/figures/pluma_format_bold.png
+share/help/fr/pluma/figures/pluma_format_italic.png
+share/help/fr/pluma/figures/pluma_format_strikethrough.png
+share/help/fr/pluma/figures/pluma_format_underline.png
+share/help/fr/pluma/figures/pluma_recent_files_menu_icon.png
+share/help/fr/pluma/figures/pluma_window.png
+share/help/fr/pluma/index.docbook
+share/help/fr/pluma/legal.xml
+share/help/hu/pluma/figures/pluma_format_bold.png
+share/help/hu/pluma/figures/pluma_format_italic.png
+share/help/hu/pluma/figures/pluma_format_strikethrough.png
+share/help/hu/pluma/figures/pluma_format_underline.png
+share/help/hu/pluma/figures/pluma_recent_files_menu_icon.png
+share/help/hu/pluma/figures/pluma_window.png
+share/help/hu/pluma/index.docbook
+share/help/hu/pluma/legal.xml
+share/help/it/pluma/figures/pluma_format_bold.png
+share/help/it/pluma/figures/pluma_format_italic.png
+share/help/it/pluma/figures/pluma_format_strikethrough.png
+share/help/it/pluma/figures/pluma_format_underline.png
+share/help/it/pluma/figures/pluma_recent_files_menu_icon.png
+share/help/it/pluma/figures/pluma_window.png
+share/help/it/pluma/index.docbook
+share/help/it/pluma/legal.xml
+share/help/ja/pluma/figures/pluma_format_bold.png
+share/help/ja/pluma/figures/pluma_format_italic.png
+share/help/ja/pluma/figures/pluma_format_strikethrough.png
+share/help/ja/pluma/figures/pluma_format_underline.png
+share/help/ja/pluma/figures/pluma_recent_files_menu_icon.png
+share/help/ja/pluma/figures/pluma_window.png
+share/help/ja/pluma/index.docbook
+share/help/ja/pluma/legal.xml
+share/help/ko/pluma/figures/pluma_format_bold.png
+share/help/ko/pluma/figures/pluma_format_italic.png
+share/help/ko/pluma/figures/pluma_format_strikethrough.png
+share/help/ko/pluma/figures/pluma_format_underline.png
+share/help/ko/pluma/figures/pluma_recent_files_menu_icon.png
+share/help/ko/pluma/figures/pluma_window.png
+share/help/ko/pluma/index.docbook
+share/help/ko/pluma/legal.xml
+share/help/oc/pluma/figures/pluma_format_bold.png
+share/help/oc/pluma/figures/pluma_format_italic.png
+share/help/oc/pluma/figures/pluma_format_strikethrough.png
+share/help/oc/pluma/figures/pluma_format_underline.png
+share/help/oc/pluma/figures/pluma_recent_files_menu_icon.png
+share/help/oc/pluma/figures/pluma_window.png
+share/help/oc/pluma/index.docbook
+share/help/oc/pluma/legal.xml
+share/help/pt_BR/pluma/figures/pluma_format_bold.png
+share/help/pt_BR/pluma/figures/pluma_format_italic.png
+share/help/pt_BR/pluma/figures/pluma_format_strikethrough.png
+share/help/pt_BR/pluma/figures/pluma_format_underline.png
+share/help/pt_BR/pluma/figures/pluma_recent_files_menu_icon.png
+share/help/pt_BR/pluma/figures/pluma_window.png
+share/help/pt_BR/pluma/index.docbook
+share/help/pt_BR/pluma/legal.xml
+share/help/ru/pluma/figures/pluma_format_bold.png
+share/help/ru/pluma/figures/pluma_format_italic.png
+share/help/ru/pluma/figures/pluma_format_strikethrough.png
+share/help/ru/pluma/figures/pluma_format_underline.png
+share/help/ru/pluma/figures/pluma_recent_files_menu_icon.png
+share/help/ru/pluma/figures/pluma_window.png
+share/help/ru/pluma/index.docbook
+share/help/ru/pluma/legal.xml
+share/help/sv/pluma/figures/pluma_format_bold.png
+share/help/sv/pluma/figures/pluma_format_italic.png
+share/help/sv/pluma/figures/pluma_format_strikethrough.png
+share/help/sv/pluma/figures/pluma_format_underline.png
+share/help/sv/pluma/figures/pluma_recent_files_menu_icon.png
+share/help/sv/pluma/figures/pluma_window.png
+share/help/sv/pluma/index.docbook
+share/help/sv/pluma/legal.xml
+share/help/th/pluma/figures/pluma_format_bold.png
+share/help/th/pluma/figures/pluma_format_italic.png
+share/help/th/pluma/figures/pluma_format_strikethrough.png
+share/help/th/pluma/figures/pluma_format_underline.png
+share/help/th/pluma/figures/pluma_recent_files_menu_icon.png
+share/help/th/pluma/figures/pluma_window.png
+share/help/th/pluma/index.docbook
+share/help/th/pluma/legal.xml
+share/help/uk/pluma/figures/pluma_format_bold.png
+share/help/uk/pluma/figures/pluma_format_italic.png
+share/help/uk/pluma/figures/pluma_format_strikethrough.png
+share/help/uk/pluma/figures/pluma_format_underline.png
+share/help/uk/pluma/figures/pluma_recent_files_menu_icon.png
+share/help/uk/pluma/figures/pluma_window.png
+share/help/uk/pluma/index.docbook
+share/help/uk/pluma/legal.xml
+share/help/zh_CN/pluma/figures/pluma_format_bold.png
+share/help/zh_CN/pluma/figures/pluma_format_italic.png
+share/help/zh_CN/pluma/figures/pluma_format_strikethrough.png
+share/help/zh_CN/pluma/figures/pluma_format_underline.png
+share/help/zh_CN/pluma/figures/pluma_recent_files_menu_icon.png
+share/help/zh_CN/pluma/figures/pluma_window.png
+share/help/zh_CN/pluma/index.docbook
+share/help/zh_CN/pluma/legal.xml
+share/help/zh_HK/pluma/figures/pluma_format_bold.png
+share/help/zh_HK/pluma/figures/pluma_format_italic.png
+share/help/zh_HK/pluma/figures/pluma_format_strikethrough.png
+share/help/zh_HK/pluma/figures/pluma_format_underline.png
+share/help/zh_HK/pluma/figures/pluma_recent_files_menu_icon.png
+share/help/zh_HK/pluma/figures/pluma_window.png
+share/help/zh_HK/pluma/index.docbook
+share/help/zh_HK/pluma/legal.xml
+share/help/zh_TW/pluma/figures/pluma_format_bold.png
+share/help/zh_TW/pluma/figures/pluma_format_italic.png
+share/help/zh_TW/pluma/figures/pluma_format_strikethrough.png
+share/help/zh_TW/pluma/figures/pluma_format_underline.png
+share/help/zh_TW/pluma/figures/pluma_recent_files_menu_icon.png
+share/help/zh_TW/pluma/figures/pluma_window.png
+share/help/zh_TW/pluma/index.docbook
+share/help/zh_TW/pluma/legal.xml
+share/locale/af/LC_MESSAGES/pluma.mo
+share/locale/am/LC_MESSAGES/pluma.mo
+share/locale/ar/LC_MESSAGES/pluma.mo
+share/locale/as/LC_MESSAGES/pluma.mo
+share/locale/ast/LC_MESSAGES/pluma.mo
+share/locale/az/LC_MESSAGES/pluma.mo
+share/locale/be/LC_MESSAGES/pluma.mo
+share/locale/be@latin/LC_MESSAGES/pluma.mo
+share/locale/bg/LC_MESSAGES/pluma.mo
+share/locale/bn/LC_MESSAGES/pluma.mo
+share/locale/bn_IN/LC_MESSAGES/pluma.mo
+share/locale/br/LC_MESSAGES/pluma.mo
+share/locale/bs/LC_MESSAGES/pluma.mo
+share/locale/ca/LC_MESSAGES/pluma.mo
+share/locale/ca@valencia/LC_MESSAGES/pluma.mo
+share/locale/cmn/LC_MESSAGES/pluma.mo
+share/locale/crh/LC_MESSAGES/pluma.mo
+share/locale/cs/LC_MESSAGES/pluma.mo
+share/locale/cy/LC_MESSAGES/pluma.mo
+share/locale/da/LC_MESSAGES/pluma.mo
+share/locale/de/LC_MESSAGES/pluma.mo
+share/locale/dz/LC_MESSAGES/pluma.mo
+share/locale/el/LC_MESSAGES/pluma.mo
+share/locale/en@shaw/LC_MESSAGES/pluma.mo
+share/locale/en_AU/LC_MESSAGES/pluma.mo
+share/locale/en_CA/LC_MESSAGES/pluma.mo
+share/locale/en_GB/LC_MESSAGES/pluma.mo
+share/locale/eo/LC_MESSAGES/pluma.mo
+share/locale/es/LC_MESSAGES/pluma.mo
+share/locale/et/LC_MESSAGES/pluma.mo
+share/locale/eu/LC_MESSAGES/pluma.mo
+share/locale/fa/LC_MESSAGES/pluma.mo
+share/locale/fi/LC_MESSAGES/pluma.mo
+share/locale/fr/LC_MESSAGES/pluma.mo
+share/locale/ga/LC_MESSAGES/pluma.mo
+share/locale/gl/LC_MESSAGES/pluma.mo
+share/locale/gu/LC_MESSAGES/pluma.mo
+share/locale/he/LC_MESSAGES/pluma.mo
+share/locale/hi/LC_MESSAGES/pluma.mo
+share/locale/hr/LC_MESSAGES/pluma.mo
+share/locale/hu/LC_MESSAGES/pluma.mo
+share/locale/hy/LC_MESSAGES/pluma.mo
+share/locale/id/LC_MESSAGES/pluma.mo
+share/locale/is/LC_MESSAGES/pluma.mo
+share/locale/it/LC_MESSAGES/pluma.mo
+share/locale/ja/LC_MESSAGES/pluma.mo
+share/locale/ka/LC_MESSAGES/pluma.mo
+share/locale/kk/LC_MESSAGES/pluma.mo
+share/locale/kn/LC_MESSAGES/pluma.mo
+share/locale/ko/LC_MESSAGES/pluma.mo
+share/locale/ku/LC_MESSAGES/pluma.mo
+share/locale/ky/LC_MESSAGES/pluma.mo
+share/locale/la/LC_MESSAGES/pluma.mo
+share/locale/lt/LC_MESSAGES/pluma.mo
+share/locale/lv/LC_MESSAGES/pluma.mo
+share/locale/mai/LC_MESSAGES/pluma.mo
+share/locale/mg/LC_MESSAGES/pluma.mo
+share/locale/mi/LC_MESSAGES/pluma.mo
+share/locale/mk/LC_MESSAGES/pluma.mo
+share/locale/ml/LC_MESSAGES/pluma.mo
+share/locale/mn/LC_MESSAGES/pluma.mo
+share/locale/mr/LC_MESSAGES/pluma.mo
+share/locale/ms/LC_MESSAGES/pluma.mo
+share/locale/nb/LC_MESSAGES/pluma.mo
+share/locale/nds/LC_MESSAGES/pluma.mo
+share/locale/ne/LC_MESSAGES/pluma.mo
+share/locale/nl/LC_MESSAGES/pluma.mo
+share/locale/nn/LC_MESSAGES/pluma.mo
+share/locale/oc/LC_MESSAGES/pluma.mo
+share/locale/or/LC_MESSAGES/pluma.mo
+share/locale/pa/LC_MESSAGES/pluma.mo
+share/locale/pl/LC_MESSAGES/pluma.mo
+share/locale/ps/LC_MESSAGES/pluma.mo
+share/locale/pt/LC_MESSAGES/pluma.mo
+share/locale/pt_BR/LC_MESSAGES/pluma.mo
+share/locale/ro/LC_MESSAGES/pluma.mo
+share/locale/ru/LC_MESSAGES/pluma.mo
+share/locale/rw/LC_MESSAGES/pluma.mo
+share/locale/si/LC_MESSAGES/pluma.mo
+share/locale/sk/LC_MESSAGES/pluma.mo
+share/locale/sl/LC_MESSAGES/pluma.mo
+share/locale/sq/LC_MESSAGES/pluma.mo
+share/locale/sr/LC_MESSAGES/pluma.mo
+share/locale/sr@latin/LC_MESSAGES/pluma.mo
+share/locale/sv/LC_MESSAGES/pluma.mo
+share/locale/ta/LC_MESSAGES/pluma.mo
+share/locale/te/LC_MESSAGES/pluma.mo
+share/locale/th/LC_MESSAGES/pluma.mo
+share/locale/tk/LC_MESSAGES/pluma.mo
+share/locale/tr/LC_MESSAGES/pluma.mo
+share/locale/uk/LC_MESSAGES/pluma.mo
+share/locale/ur/LC_MESSAGES/pluma.mo
+share/locale/vi/LC_MESSAGES/pluma.mo
+share/locale/wa/LC_MESSAGES/pluma.mo
+share/locale/xh/LC_MESSAGES/pluma.mo
+share/locale/zh_CN/LC_MESSAGES/pluma.mo
+share/locale/zh_HK/LC_MESSAGES/pluma.mo
+share/locale/zh_TW/LC_MESSAGES/pluma.mo
+%%DATADIR%%/icons/pluma-plugin.png
+%%DATADIR%%/plugins/docinfo/docinfo.ui
+%%DATADIR%%/plugins/externaltools/tools/build
+%%DATADIR%%/plugins/externaltools/tools/open-terminal-here
+%%DATADIR%%/plugins/externaltools/tools/remove-trailing-spaces
+%%DATADIR%%/plugins/externaltools/tools/run-command
+%%DATADIR%%/plugins/externaltools/tools/search-recursive
+%%DATADIR%%/plugins/externaltools/tools/switch-c
+%%DATADIR%%/plugins/externaltools/ui/outputpanel.ui
+%%DATADIR%%/plugins/externaltools/ui/tools.ui
+%%DATADIR%%/plugins/filebrowser/pluma-file-browser-widget-ui.xml
+%%DATADIR%%/plugins/modelines/language-mappings
+%%DATADIR%%/plugins/pythonconsole/ui/config.ui
+%%DATADIR%%/plugins/snippets/c.xml
+%%DATADIR%%/plugins/snippets/chdr.xml
+%%DATADIR%%/plugins/snippets/cpp.xml
+%%DATADIR%%/plugins/snippets/css.xml
+%%DATADIR%%/plugins/snippets/docbook.xml
+%%DATADIR%%/plugins/snippets/fortran.xml
+%%DATADIR%%/plugins/snippets/global.xml
+%%DATADIR%%/plugins/snippets/haskell.xml
+%%DATADIR%%/plugins/snippets/html.xml
+%%DATADIR%%/plugins/snippets/idl.xml
+%%DATADIR%%/plugins/snippets/java.xml
+%%DATADIR%%/plugins/snippets/javascript.xml
+%%DATADIR%%/plugins/snippets/lang/snippets.lang
+%%DATADIR%%/plugins/snippets/latex.xml
+%%DATADIR%%/plugins/snippets/mallard.xml
+%%DATADIR%%/plugins/snippets/perl.xml
+%%DATADIR%%/plugins/snippets/php.xml
+%%DATADIR%%/plugins/snippets/python.xml
+%%DATADIR%%/plugins/snippets/ruby.xml
+%%DATADIR%%/plugins/snippets/sh.xml
+%%DATADIR%%/plugins/snippets/snippets.xml
+%%DATADIR%%/plugins/snippets/tcl.xml
+%%DATADIR%%/plugins/snippets/ui/snippets.ui
+%%DATADIR%%/plugins/snippets/xml.xml
+%%DATADIR%%/plugins/snippets/xslt.xml
+%%DATADIR%%/plugins/sort/sort.ui
+%%DATADIR%%/plugins/spell/languages-dialog.ui
+%%DATADIR%%/plugins/spell/spell-checker.ui
+%%DATADIR%%/plugins/taglist/HTML.tags.gz
+%%DATADIR%%/plugins/taglist/Latex.tags.gz
+%%DATADIR%%/plugins/taglist/XSLT.tags.gz
+%%DATADIR%%/plugins/taglist/XUL.tags.gz
+%%DATADIR%%/plugins/time/pluma-time-dialog.ui
+%%DATADIR%%/plugins/time/pluma-time-setup-dialog.ui
+%%DATADIR%%/ui/pluma-encodings-dialog.ui
+%%DATADIR%%/ui/pluma-preferences-dialog.ui
+%%DATADIR%%/ui/pluma-print-preferences.ui
+%%DATADIR%%/ui/pluma-search-dialog.ui
+%%DATADIR%%/ui/pluma-ui.xml
+@dirrmtry %%DATADIR%%/ui
+@dirrmtry %%DATADIR%%/plugins/time
+@dirrmtry %%DATADIR%%/plugins/taglist
+@dirrmtry %%DATADIR%%/plugins/spell
+@dirrmtry %%DATADIR%%/plugins/sort
+@dirrmtry %%DATADIR%%/plugins/snippets/ui
+@dirrmtry %%DATADIR%%/plugins/snippets/lang
+@dirrmtry %%DATADIR%%/plugins/snippets
+@dirrmtry %%DATADIR%%/plugins/pythonconsole/ui
+@dirrmtry %%DATADIR%%/plugins/pythonconsole
+@dirrmtry %%DATADIR%%/plugins/modelines
+@dirrmtry %%DATADIR%%/plugins/filebrowser
+@dirrmtry %%DATADIR%%/plugins/externaltools/ui
+@dirrmtry %%DATADIR%%/plugins/externaltools/tools
+@dirrmtry %%DATADIR%%/plugins/externaltools
+@dirrmtry %%DATADIR%%/plugins/docinfo
+@dirrmtry %%DATADIR%%/plugins
+@dirrmtry %%DATADIR%%/icons
+@dirrmtry %%DATADIR%%
+@dirrmtry share/locale/zh_HK/LC_MESSAGES
+@dirrmtry share/locale/zh_HK
+@dirrmtry share/locale/xh/LC_MESSAGES
+@dirrmtry share/locale/xh
+@dirrmtry share/locale/ur/LC_MESSAGES
+@dirrmtry share/locale/ur
+@dirrmtry share/locale/te/LC_MESSAGES
+@dirrmtry share/locale/te
+@dirrmtry share/locale/sr@latin/LC_MESSAGES
+@dirrmtry share/locale/sr@latin
+@dirrmtry share/locale/si/LC_MESSAGES
+@dirrmtry share/locale/si
+@dirrmtry share/locale/rw/LC_MESSAGES
+@dirrmtry share/locale/rw
+@dirrmtry share/locale/ps/LC_MESSAGES
+@dirrmtry share/locale/ps
+@dirrmtry share/locale/oc/LC_MESSAGES
+@dirrmtry share/locale/oc
+@dirrmtry share/locale/nds/LC_MESSAGES
+@dirrmtry share/locale/nds
+@dirrmtry share/locale/mr/LC_MESSAGES
+@dirrmtry share/locale/mr
+@dirrmtry share/locale/mi/LC_MESSAGES
+@dirrmtry share/locale/mi
+@dirrmtry share/locale/mg/LC_MESSAGES
+@dirrmtry share/locale/mg
+@dirrmtry share/locale/mai/LC_MESSAGES
+@dirrmtry share/locale/mai
+@dirrmtry share/locale/la/LC_MESSAGES
+@dirrmtry share/locale/la
+@dirrmtry share/locale/ky/LC_MESSAGES
+@dirrmtry share/locale/ky
+@dirrmtry share/locale/ku/LC_MESSAGES
+@dirrmtry share/locale/ku
+@dirrmtry share/locale/kk/LC_MESSAGES
+@dirrmtry share/locale/kk
+@dirrmtry share/locale/hy/LC_MESSAGES
+@dirrmtry share/locale/hy
+@dirrmtry share/locale/en@shaw/LC_MESSAGES
+@dirrmtry share/locale/en@shaw
+@dirrmtry share/locale/dz/LC_MESSAGES
+@dirrmtry share/locale/dz
+@dirrmtry share/locale/crh/LC_MESSAGES
+@dirrmtry share/locale/crh
+@dirrmtry share/locale/cmn/LC_MESSAGES
+@dirrmtry share/locale/cmn
+@dirrmtry share/locale/ca@valencia/LC_MESSAGES
+@dirrmtry share/locale/ca@valencia
+@dirrmtry share/locale/bn_IN/LC_MESSAGES
+@dirrmtry share/locale/bn_IN
+@dirrmtry share/locale/be@latin/LC_MESSAGES
+@dirrmtry share/locale/be@latin
+@dirrmtry share/locale/ast/LC_MESSAGES
+@dirrmtry share/locale/ast
+@dirrmtry share/locale/as/LC_MESSAGES
+@dirrmtry share/locale/as
+@dirrmtry share/help/zh_TW/pluma/figures
+@dirrmtry share/help/zh_TW/pluma
+@dirrmtry share/help/zh_TW
+@dirrmtry share/help/zh_HK/pluma/figures
+@dirrmtry share/help/zh_HK/pluma
+@dirrmtry share/help/zh_HK
+@dirrmtry share/help/zh_CN/pluma/figures
+@dirrmtry share/help/zh_CN/pluma
+@dirrmtry share/help/zh_CN
+@dirrmtry share/help/uk/pluma/figures
+@dirrmtry share/help/uk/pluma
+@dirrmtry share/help/uk
+@dirrmtry share/help/th/pluma/figures
+@dirrmtry share/help/th/pluma
+@dirrmtry share/help/th
+@dirrmtry share/help/sv/pluma/figures
+@dirrmtry share/help/sv/pluma
+@dirrmtry share/help/sv
+@dirrmtry share/help/ru/pluma/figures
+@dirrmtry share/help/ru/pluma
+@dirrmtry share/help/ru
+@dirrmtry share/help/pt_BR/pluma/figures
+@dirrmtry share/help/pt_BR/pluma
+@dirrmtry share/help/pt_BR
+@dirrmtry share/help/oc/pluma/figures
+@dirrmtry share/help/oc/pluma
+@dirrmtry share/help/oc
+@dirrmtry share/help/ko/pluma/figures
+@dirrmtry share/help/ko/pluma
+@dirrmtry share/help/ko
+@dirrmtry share/help/ja/pluma/figures
+@dirrmtry share/help/ja/pluma
+@dirrmtry share/help/ja
+@dirrmtry share/help/it/pluma/figures
+@dirrmtry share/help/it/pluma
+@dirrmtry share/help/it
+@dirrmtry share/help/hu/pluma/figures
+@dirrmtry share/help/hu/pluma
+@dirrmtry share/help/hu
+@dirrmtry share/help/fr/pluma/figures
+@dirrmtry share/help/fr/pluma
+@dirrmtry share/help/fr
+@dirrmtry share/help/fi/pluma/figures
+@dirrmtry share/help/fi/pluma
+@dirrmtry share/help/fi
+@dirrmtry share/help/es/pluma/figures
+@dirrmtry share/help/es/pluma
+@dirrmtry share/help/es
+@dirrmtry share/help/el/pluma/figures
+@dirrmtry share/help/el/pluma
+@dirrmtry share/help/el
+@dirrmtry share/help/de/pluma/figures
+@dirrmtry share/help/de/pluma
+@dirrmtry share/help/de
+@dirrmtry share/help/da/pluma/figures
+@dirrmtry share/help/da/pluma
+@dirrmtry share/help/da
+@dirrmtry share/help/cs/pluma/figures
+@dirrmtry share/help/cs/pluma
+@dirrmtry share/help/cs
+@dirrmtry share/help/ca/pluma/figures
+@dirrmtry share/help/ca/pluma
+@dirrmtry share/help/ca
+@dirrmtry share/help/bg/pluma/figures
+@dirrmtry share/help/bg/pluma
+@dirrmtry share/help/bg
+@dirrmtry share/help/ar/pluma/figures
+@dirrmtry share/help/ar/pluma
+@dirrmtry share/help/ar
+@dirrmtry share/help/C/pluma/figures
+@dirrmtry share/help/C/pluma
+@dirrmtry share/help/C
+@dirrmtry share/help
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%
+@dirrm libexec/pluma
+@dirrm lib/pluma/plugins/snippets
+@dirrm lib/pluma/plugins/quickopen
+@dirrm lib/pluma/plugins/pythonconsole
+@dirrm lib/pluma/plugins/externaltools
+@dirrm lib/pluma/plugins
+@dirrm lib/pluma/plugin-loaders
+@dirrm lib/pluma
+@dirrm include/pluma

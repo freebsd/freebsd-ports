@@ -1,4 +1,4 @@
-# Created by: Radim Kolar <hsn@sanatana.iol.cz>
+# Created by: Radim Kolar <hsn@sendmail.cz>
 # $FreeBSD$
 
 PORTNAME=	openmq
@@ -30,6 +30,7 @@ JAVA_VENDOR=	openjdk
 
 WRKSRC=		${WRKDIR}/mq
 PLIST=		${WRKDIR}/pkg-plist
+MAKE_ENV+=	ANT_OPTS=-Xmx1g
 
 .ifndef IMQ_CLIENT
 OPTIONS_DEFINE=	DOCS EXAMPLES

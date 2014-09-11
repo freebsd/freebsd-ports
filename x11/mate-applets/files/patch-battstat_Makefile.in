@@ -1,0 +1,72 @@
+--- battstat/Makefile.in.orig	2014-04-12 15:37:50.000000000 +0200
++++ battstat/Makefile.in	2014-04-12 15:39:28.000000000 +0200
+@@ -78,7 +78,7 @@
+ POST_UNINSTALL = :
+ build_triplet = @build@
+ host_triplet = @host@
+-libexec_PROGRAMS = battstat-applet-2$(EXEEXT)
++libexec_PROGRAMS = mate-battstat-applet-2$(EXEEXT)
+ subdir = battstat
+ DIST_COMMON = $(srcdir)/Makefile.in $(srcdir)/Makefile.am \
+ 	$(top_srcdir)/depcomp
+@@ -99,15 +99,15 @@
+ 	"$(DESTDIR)$(builderdir)" "$(DESTDIR)$(servicedir)" \
+ 	"$(DESTDIR)$(uidir)"
+ PROGRAMS = $(libexec_PROGRAMS)
+-am_battstat_applet_2_OBJECTS = properties.$(OBJEXT) \
++am_mate_battstat_applet_2_OBJECTS = properties.$(OBJEXT) \
+ 	battstat_applet.$(OBJEXT) power-management.$(OBJEXT) \
+ 	acpi-linux.$(OBJEXT) acpi-freebsd.$(OBJEXT) \
+ 	battstat-hal.$(OBJEXT) battstat-upower.$(OBJEXT)
+-battstat_applet_2_OBJECTS = $(am_battstat_applet_2_OBJECTS)
++mate_battstat_applet_2_OBJECTS = $(am_mate_battstat_applet_2_OBJECTS)
+ am__DEPENDENCIES_1 =
+ @HAVE_LIBAPM_FALSE@@NEED_LIBAPM_TRUE@am__DEPENDENCIES_2 =  \
+ @HAVE_LIBAPM_FALSE@@NEED_LIBAPM_TRUE@	apmlib/libapm.a
+-battstat_applet_2_DEPENDENCIES = $(am__DEPENDENCIES_1) \
++mate_battstat_applet_2_DEPENDENCIES = $(am__DEPENDENCIES_1) \
+ 	$(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1) \
+ 	$(am__DEPENDENCIES_2) $(am__DEPENDENCIES_1)
+ AM_V_lt = $(am__v_lt_@AM_V@)
+@@ -148,8 +148,8 @@
+ am__v_CCLD_ = $(am__v_CCLD_@AM_DEFAULT_V@)
+ am__v_CCLD_0 = @echo "  CCLD    " $@;
+ am__v_CCLD_1 = 
+-SOURCES = $(battstat_applet_2_SOURCES)
+-DIST_SOURCES = $(battstat_applet_2_SOURCES)
++SOURCES = $(mate_battstat_applet_2_SOURCES)
++DIST_SOURCES = $(mate_battstat_applet_2_SOURCES)
+ RECURSIVE_TARGETS = all-recursive check-recursive cscopelist-recursive \
+ 	ctags-recursive dvi-recursive html-recursive info-recursive \
+ 	install-data-recursive install-dvi-recursive \
+@@ -508,7 +508,7 @@
+ 	-DG_LOG_DOMAIN=\"battstat_applet\"	\
+ 	-DBATTSTAT_MENU_UI_DIR=\""$(uidir)"\"
+ 
+-battstat_applet_2_SOURCES = \
++mate_battstat_applet_2_SOURCES = \
+ 	battstat.h \
+ 	pixmaps.h \
+ 	properties.c \
+@@ -523,7 +523,7 @@
+ 	battstat-upower.c \
+ 	battstat-upower.h
+ 
+-battstat_applet_2_LDADD = \
++mate_battstat_applet_2_LDADD = \
+ 		     $(MATE_APPLETS4_LIBS) \
+ 		     $(LIBNOTIFY_LIBS) \
+ 		     $(HAL_LIBS) \
+@@ -632,9 +632,9 @@
+ 	echo " rm -f" $$list; \
+ 	rm -f $$list
+ 
+-battstat-applet-2$(EXEEXT): $(battstat_applet_2_OBJECTS) $(battstat_applet_2_DEPENDENCIES) $(EXTRA_battstat_applet_2_DEPENDENCIES) 
+-	@rm -f battstat-applet-2$(EXEEXT)
+-	$(AM_V_CCLD)$(LINK) $(battstat_applet_2_OBJECTS) $(battstat_applet_2_LDADD) $(LIBS)
++mate-battstat-applet-2$(EXEEXT): $(mate_battstat_applet_2_OBJECTS) $(mate_battstat_applet_2_DEPENDENCIES) $(EXTRA_mate_battstat_applet_2_DEPENDENCIES) 
++	@rm -f mate-battstat-applet-2$(EXEEXT)
++	$(AM_V_CCLD)$(LINK) $(mate_battstat_applet_2_OBJECTS) $(mate_battstat_applet_2_LDADD) $(LIBS)
+ 
+ mostlyclean-compile:
+ 	-rm -f *.$(OBJEXT)

@@ -23,7 +23,7 @@ USE_OPENSSL=	yes
 USE_OPENLDAP=	yes
 USES=		gettext gmake pkgconfig shared-mime-info desktop-file-utils
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-ldap-prefix=${LOCALBASE}
+CONFIGURE_ARGS=	--with-ldap-prefix=${LOCALBASE} --disable-update-mimedb
 DND_CONFIGURE_ENABLE=	browser-dns
 CACHE_CONFIGURE_ENABLE=	cache
 INSTALLS_ICONS=	yes

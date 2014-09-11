@@ -498,17 +498,26 @@ lib/node_modules/npm/node_modules/columnify/node_modules/strip-ansi/node_modules
 lib/node_modules/npm/node_modules/columnify/node_modules/strip-ansi/node_modules/ansi-regex/readme.md
 lib/node_modules/npm/node_modules/columnify/node_modules/strip-ansi/package.json
 lib/node_modules/npm/node_modules/columnify/node_modules/strip-ansi/readme.md
-lib/node_modules/npm/node_modules/columnify/node_modules/wcwidth.js/INSTALL.md
-lib/node_modules/npm/node_modules/columnify/node_modules/wcwidth.js/LICENSE.md
-lib/node_modules/npm/node_modules/columnify/node_modules/wcwidth.js/NEWS
-lib/node_modules/npm/node_modules/columnify/node_modules/wcwidth.js/README.md
-lib/node_modules/npm/node_modules/columnify/node_modules/wcwidth.js/node_modules/underscore/LICENSE
-lib/node_modules/npm/node_modules/columnify/node_modules/wcwidth.js/node_modules/underscore/README.md
-lib/node_modules/npm/node_modules/columnify/node_modules/wcwidth.js/node_modules/underscore/package.json
-lib/node_modules/npm/node_modules/columnify/node_modules/wcwidth.js/node_modules/underscore/underscore-min.js
-lib/node_modules/npm/node_modules/columnify/node_modules/wcwidth.js/node_modules/underscore/underscore.js
-lib/node_modules/npm/node_modules/columnify/node_modules/wcwidth.js/package.json
-lib/node_modules/npm/node_modules/columnify/node_modules/wcwidth.js/wcwidth.js
+lib/node_modules/npm/node_modules/columnify/node_modules/wcwidth/.npmignore
+lib/node_modules/npm/node_modules/columnify/node_modules/wcwidth/LICENSE
+lib/node_modules/npm/node_modules/columnify/node_modules/wcwidth/Readme.md
+lib/node_modules/npm/node_modules/columnify/node_modules/wcwidth/combining.js
+lib/node_modules/npm/node_modules/columnify/node_modules/wcwidth/docs/index.md
+lib/node_modules/npm/node_modules/columnify/node_modules/wcwidth/index.js
+lib/node_modules/npm/node_modules/columnify/node_modules/wcwidth/node_modules/defaults/.npmignore
+lib/node_modules/npm/node_modules/columnify/node_modules/wcwidth/node_modules/defaults/README.md
+lib/node_modules/npm/node_modules/columnify/node_modules/wcwidth/node_modules/defaults/index.js
+lib/node_modules/npm/node_modules/columnify/node_modules/wcwidth/node_modules/defaults/node_modules/clone/.npmignore
+lib/node_modules/npm/node_modules/columnify/node_modules/wcwidth/node_modules/defaults/node_modules/clone/.travis.yml
+lib/node_modules/npm/node_modules/columnify/node_modules/wcwidth/node_modules/defaults/node_modules/clone/LICENSE
+lib/node_modules/npm/node_modules/columnify/node_modules/wcwidth/node_modules/defaults/node_modules/clone/README.md
+lib/node_modules/npm/node_modules/columnify/node_modules/wcwidth/node_modules/defaults/node_modules/clone/clone.js
+lib/node_modules/npm/node_modules/columnify/node_modules/wcwidth/node_modules/defaults/node_modules/clone/package.json
+lib/node_modules/npm/node_modules/columnify/node_modules/wcwidth/node_modules/defaults/node_modules/clone/test.js
+lib/node_modules/npm/node_modules/columnify/node_modules/wcwidth/node_modules/defaults/package.json
+lib/node_modules/npm/node_modules/columnify/node_modules/wcwidth/node_modules/defaults/test.js
+lib/node_modules/npm/node_modules/columnify/node_modules/wcwidth/package.json
+lib/node_modules/npm/node_modules/columnify/node_modules/wcwidth/test/index.js
 lib/node_modules/npm/node_modules/columnify/package.json
 lib/node_modules/npm/node_modules/columnify/utils.js
 lib/node_modules/npm/node_modules/columnify/width.js
@@ -1631,6 +1640,7 @@ lib/node_modules/npm/test/tap/shrinkwrap-shared-dev-dependency.js
 lib/node_modules/npm/test/tap/shrinkwrap-shared-dev-dependency/desired-shrinkwrap-results.json
 lib/node_modules/npm/test/tap/shrinkwrap-shared-dev-dependency/package.json
 lib/node_modules/npm/test/tap/sorted-package-json.js
+lib/node_modules/npm/test/tap/spawn-enoent.js
 lib/node_modules/npm/test/tap/startstop.js
 lib/node_modules/npm/test/tap/startstop/package.json
 lib/node_modules/npm/test/tap/test-run-ls.js
@@ -1963,9 +1973,13 @@ lib/node_modules/npm/wercker.yml
 @dirrm lib/node_modules/npm/node_modules/fstream
 @dirrm lib/node_modules/npm/node_modules/editor/example
 @dirrm lib/node_modules/npm/node_modules/editor
-@dirrm lib/node_modules/npm/node_modules/columnify/node_modules/wcwidth.js/node_modules/underscore
-@dirrm lib/node_modules/npm/node_modules/columnify/node_modules/wcwidth.js/node_modules
-@dirrm lib/node_modules/npm/node_modules/columnify/node_modules/wcwidth.js
+@dirrm lib/node_modules/npm/node_modules/columnify/node_modules/wcwidth/test
+@dirrm lib/node_modules/npm/node_modules/columnify/node_modules/wcwidth/node_modules/defaults/node_modules/clone
+@dirrm lib/node_modules/npm/node_modules/columnify/node_modules/wcwidth/node_modules/defaults/node_modules
+@dirrm lib/node_modules/npm/node_modules/columnify/node_modules/wcwidth/node_modules/defaults
+@dirrm lib/node_modules/npm/node_modules/columnify/node_modules/wcwidth/node_modules
+@dirrm lib/node_modules/npm/node_modules/columnify/node_modules/wcwidth/docs
+@dirrm lib/node_modules/npm/node_modules/columnify/node_modules/wcwidth
 @dirrm lib/node_modules/npm/node_modules/columnify/node_modules/strip-ansi/node_modules/ansi-regex
 @dirrm lib/node_modules/npm/node_modules/columnify/node_modules/strip-ansi/node_modules
 @dirrm lib/node_modules/npm/node_modules/columnify/node_modules/strip-ansi

@@ -15,7 +15,7 @@ diff --git xpcom/base/nsUUIDGenerator.cpp xpcom/base/nsUUIDGenerator.cpp
 index 0687344..ca3ff8b 100644
 --- mozilla/xpcom/base/nsUUIDGenerator.cpp
 +++ mozilla/xpcom/base/nsUUIDGenerator.cpp
-@@ -15,6 +15,10 @@
+@@ -16,6 +16,10 @@
  
  #include "nsUUIDGenerator.h"
  
@@ -25,71 +25,71 @@ index 0687344..ca3ff8b 100644
 +
  using namespace mozilla;
  
- NS_IMPL_ISUPPORTS1(nsUUIDGenerator, nsIUUIDGenerator)
-@@ -34,7 +38,7 @@ nsUUIDGenerator::Init()
-     // We're a service, so we're guaranteed that Init() is not going
-     // to be reentered while we're inside Init().
-     
+ NS_IMPL_ISUPPORTS(nsUUIDGenerator, nsIUUIDGenerator)
+@@ -35,7 +39,7 @@ nsUUIDGenerator::Init()
+   // We're a service, so we're guaranteed that Init() is not going
+   // to be reentered while we're inside Init().
+ 
 -#if !defined(XP_WIN) && !defined(XP_MACOSX) && !defined(ANDROID)
 +#if !defined(XP_WIN) && !defined(XP_MACOSX) && !defined(HAVE_ARC4RANDOM)
-     /* initialize random number generator using NSPR random noise */
-     unsigned int seed;
+   /* initialize random number generator using NSPR random noise */
+   unsigned int seed;
  
-@@ -67,7 +71,7 @@ nsUUIDGenerator::Init()
-         return NS_ERROR_FAILURE;
+@@ -72,7 +76,7 @@ nsUUIDGenerator::Init()
+   }
  #endif
  
 -#endif /* non XP_WIN and non XP_MACOSX */
 +#endif /* non XP_WIN and non XP_MACOSX and non ARC4RANDOM */
  
-     return NS_OK;
+   return NS_OK;
  }
-@@ -114,13 +118,16 @@ nsUUIDGenerator::GenerateUUIDInPlace(nsID* id)
-      * back to it; instead, we use the value returned when we called
-      * initstate, since older glibc's have broken setstate() return values
-      */
+@@ -122,13 +126,16 @@ nsUUIDGenerator::GenerateUUIDInPlace(nsID* aId)
+    * back to it; instead, we use the value returned when we called
+    * initstate, since older glibc's have broken setstate() return values
+    */
 -#ifndef ANDROID
 +#ifndef HAVE_ARC4RANDOM
-     setstate(mState);
+   setstate(mState);
  #endif
  
 +#ifdef HAVE_ARC4RANDOM_BUF
-+    arc4random_buf(id, sizeof(nsID));
++  arc4random_buf(aId, sizeof(nsID));
 +#else /* HAVE_ARC4RANDOM_BUF */
-     size_t bytesLeft = sizeof(nsID);
-     while (bytesLeft > 0) {
+   size_t bytesLeft = sizeof(nsID);
+   while (bytesLeft > 0) {
 -#ifdef ANDROID
 +#ifdef HAVE_ARC4RANDOM
-         long rval = arc4random();
-         const size_t mRBytes = 4;
+     long rval = arc4random();
+     const size_t mRBytes = 4;
  #else
-@@ -141,6 +148,7 @@ nsUUIDGenerator::GenerateUUIDInPlace(nsID* id)
+@@ -150,6 +157,7 @@ nsUUIDGenerator::GenerateUUIDInPlace(nsID* aId)
  
-         bytesLeft -= toWrite;
-     }
+     bytesLeft -= toWrite;
+   }
 +#endif /* HAVE_ARC4RANDOM_BUF */
  
-     /* Put in the version */
-     id->m2 &= 0x0fff;
-@@ -150,7 +158,7 @@ nsUUIDGenerator::GenerateUUIDInPlace(nsID* id)
-     id->m3[0] &= 0x3f;
-     id->m3[0] |= 0x80;
+   /* Put in the version */
+   aId->m2 &= 0x0fff;
+@@ -159,7 +167,7 @@ nsUUIDGenerator::GenerateUUIDInPlace(nsID* aId)
+   aId->m3[0] &= 0x3f;
+   aId->m3[0] |= 0x80;
  
 -#ifndef ANDROID
 +#ifndef HAVE_ARC4RANDOM
-     /* Restore the previous RNG state */
-     setstate(mSavedState);
+   /* Restore the previous RNG state */
+   setstate(mSavedState);
  #endif
 diff --git xpcom/base/nsUUIDGenerator.h xpcom/base/nsUUIDGenerator.h
 index 6a24212..68ed6f2 100644
 --- mozilla/xpcom/base/nsUUIDGenerator.h
 +++ mozilla/xpcom/base/nsUUIDGenerator.h
-@@ -27,7 +27,7 @@ private:
+@@ -29,7 +29,7 @@ private:
  protected:
  
-     mozilla::Mutex mLock;
+   mozilla::Mutex mLock;
 -#if !defined(XP_WIN) && !defined(XP_MACOSX) && !defined(ANDROID)
 +#if !defined(XP_WIN) && !defined(XP_MACOSX) && !defined(HAVE_ARC4RANDOM)
-     char mState[128];
-     char *mSavedState;
-     uint8_t mRBytes;
+   char mState[128];
+   char* mSavedState;
+   uint8_t mRBytes;

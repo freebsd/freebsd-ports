@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	O2-tools
-PORTVERSION=	2.00
+PORTVERSION=	2.01
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.imglab.org/p/O2/archives/
 

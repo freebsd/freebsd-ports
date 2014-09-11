@@ -1,0 +1,17 @@
+--- ./libraries/libldap/Makefile.in.orig	2014-08-27 09:41:52.000000000 +0200
++++ ./libraries/libldap/Makefile.in	2014-08-27 09:43:35.000000000 +0200
+@@ -72,13 +72,6 @@
+ 	$(LTFINISH) $(DESTDIR)$(libdir)
+ 	-$(MKDIR) $(DESTDIR)$(sysconfdir)
+ 	@for i in $(CFFILES); do \
+-		if test ! -f $(DESTDIR)$(sysconfdir)/$$i; then \
+-			echo "installing $$i in $(sysconfdir)"; \
+-			echo "$(INSTALL) $(INSTALLFLAGS) -m 644  $(srcdir)/$$i $(DESTDIR)$(sysconfdir)/$$i"; \
+-			$(INSTALL) $(INSTALLFLAGS) -m 644 $(srcdir)/$$i $(DESTDIR)$(sysconfdir)/$$i; \
+-		else \
+-			echo "PRESERVING EXISTING CONFIGURATION FILE $(sysconfdir)/$$i" ; \
+-		fi; \
+-		$(INSTALL) $(INSTALLFLAGS) -m 644 $(srcdir)/$$i $(DESTDIR)$(sysconfdir)/$$i.default; \
++		$(INSTALL) $(INSTALLFLAGS) -m 644 $(srcdir)/$$i $(DESTDIR)$(sysconfdir)/$$i.sample; \
+ 	done
+ 

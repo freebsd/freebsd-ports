@@ -3,7 +3,7 @@
 
 PORTNAME=	asc
 PORTVERSION=	2.6.0.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}-hq/ASC%20Source/${PORTVERSION:R} \
 		http://www.asc-hq.org/music/:music

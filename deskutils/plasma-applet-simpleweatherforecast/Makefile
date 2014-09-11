@@ -3,7 +3,7 @@
 
 PORTNAME=	simpleweatherforecast
 PORTVERSION=	1.3
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	deskutils kde
 MASTER_SITES=	http://kde-look.org/CONTENT/content-files/
 PKGNAMEPREFIX=	plasma-applet-

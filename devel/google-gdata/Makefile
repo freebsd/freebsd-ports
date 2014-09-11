@@ -4,25 +4,29 @@
 PORTNAME=	google-gdata
 PORTVERSION=	1.4.0.2
 CATEGORIES=	devel
-MASTER_SITES=	http://google-gdata.googlecode.com/files/:1 \
-    		http://www.zlib.net/:2
+MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}:1 \
+		http://www.zlib.net/:2
 DISTNAME=	libgoogle-data-mono-${PORTVERSION}
-DISTFILES=	libgoogle-data-mono-${PORTVERSION}${EXTRACT_SUFX}:1 zlib-${ZLIB_VERSION}${EXTRACT_SUFX}:2
+DISTFILES=	libgoogle-data-mono-${PORTVERSION}${EXTRACT_SUFX}:1 zlib-${ZLIBVER}${EXTRACT_SUFX}:2
 
-MAINTAINER= ports@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	.NET library for the Google Data API
 
 BUILD_DEPENDS=	gmcs:${PORTSDIR}/lang/mono
 
+USES=		dos2unix gmake
+DOS2UNIX_FILES=	Makefile misc/gdata-sharp-core.pc.in
+
 # google-gdata depends on _THIS_ version of zlib so make them happy.
-ZLIB_VERSION=	1.2.3
+ZLIBVER=	1.2.3
 
-USES=		gmake
+# Google GData Client library directory
+GGCDIR=		lib/mono/gac/Google.GData.Client/1.4.0.2__04a59ca9b0273830
+PLIST_SUB=	GGCDIR=${GGCDIR}
 
-NO_STAGE=	yes
 pre-configure:
-	@${ECHO_CMD} "--->  Configuring for zlib-${ZLIB_VERSION}"
-	@(cd ${WRKDIR}/zlib-${ZLIB_VERSION} && \
+	@${ECHO_CMD} "--->  Configuring for zlib-${ZLIBVER}"
+	(cd ${WRKDIR}/zlib-${ZLIBVER} && \
 	    ${SET_LATE_CONFIGURE_ARGS} \
 	    if ! ${SETENV} CC="${CC}" CPP="${CPP}" CXX="${CXX}" \
 	    CFLAGS="${CFLAGS}" CPPFLAGS="${CPPFLAGS}" CXXFLAGS="${CXXFLAGS}" \
@@ -38,13 +42,14 @@ pre-configure:
 	    fi)
 
 pre-build:
-	@${ECHO_CMD} "--->  Building for zlib-${ZLIB_VERSION}"
-	@cd ${WRKDIR}/zlib-${ZLIB_VERSION} && ${MAKE}
+	@${ECHO_CMD} "--->  Building for zlib-${ZLIBVER}"
+	(cd ${WRKDIR}/zlib-${ZLIBVER} && ${MAKE_CMD})
 	@${ECHO_CMD} "--->  Returning to build for ${PKGNAME}"
 
 post-install:
-	@${CP} ${WRKDIR}/zlib-${ZLIB_VERSION}/libz.so.${ZLIB_VERSION} \
-	    ${WRKSRC}/misc/Google.GData.Client.dll.config \
-	    ${PREFIX}/lib/mono/gac/Google.GData.Client/${PORTVERSION}__04a59ca9b0273830/
+	${INSTALL_LIB} ${WRKDIR}/zlib-${ZLIBVER}/libz.so.${ZLIBVER} \
+		${STAGEDIR}${PREFIX}/${GGCDIR}
+	${INSTALL_DATA} ${WRKSRC}/misc/Google.GData.Client.dll.config \
+		${STAGEDIR}${PREFIX}/${GGCDIR}
 
 .include <bsd.port.mk>

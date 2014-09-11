@@ -2,6 +2,7 @@
 
 PORTNAME=	gtksourceview2
 PORTVERSION=	0.12.5.0
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits haskell
 
 MAINTAINER=	haskell@FreeBSD.org

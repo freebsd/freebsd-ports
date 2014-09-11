@@ -17,6 +17,7 @@
     SUBDIR += bitcollider
     SUBDIR += cairo-dock
     SUBDIR += cairo-dock-plugins
+    SUBDIR += caja-extensions
     SUBDIR += cal
     SUBDIR += calcurse
     SUBDIR += calibre
@@ -154,9 +155,6 @@
     SUBDIR += ljclive
     SUBDIR += ljit
     SUBDIR += logjam
-    SUBDIR += mate-character-map
-    SUBDIR += mate-file-manager-open-terminal
-    SUBDIR += mate-menu-editor
     SUBDIR += mate-notification-daemon
     SUBDIR += mate-utils
     SUBDIR += mdh
@@ -164,6 +162,7 @@
     SUBDIR += menumaker
     SUBDIR += mirall
     SUBDIR += moregroupware
+    SUBDIR += mozo
     SUBDIR += mrundlg
     SUBDIR += msynctool
     SUBDIR += multisync

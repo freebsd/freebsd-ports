@@ -3,7 +3,7 @@
 
 PORTNAME=	qct
 PORTVERSION=	1.7
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	devel python
 MASTER_SITES=	http://qct.sourceforge.net/
 

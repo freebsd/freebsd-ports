@@ -18,9 +18,9 @@ etc/pool_hba.conf.sample
 include/pcp.h
 include/pool_type.h
 lib/libpcp.a
-lib/libpcp.la
 lib/libpcp.so
 lib/libpcp.so.0
+lib/libpcp.so.0.0.0
 lib/postgresql/pgpool-recovery.so
 man/man8/pgpool.8.gz
 %%DATADIR%%/dist_def_pgbench.sql
@@ -31,7 +31,6 @@ man/man8/pgpool.8.gz
 %%EXAMPLESDIR%%/pgpool_recovery_pitr
 %%EXAMPLESDIR%%/pgpool_remote_start
 share/postgresql/contrib/pgpool-recovery.sql
-lib/postgresql/pgpool-recovery.so
 @dirrmtry share/postgresql/contrib
 @dirrm %%EXAMPLESDIR%%
 @dirrm %%DATADIR%%

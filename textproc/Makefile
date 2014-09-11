@@ -415,7 +415,6 @@
     SUBDIR += man2html
     SUBDIR += markdown
     SUBDIR += markdown-mode.el
-    SUBDIR += mate-doc-utils
     SUBDIR += mathml-xsd
     SUBDIR += mdocml
     SUBDIR += meld
@@ -1305,6 +1304,9 @@
     SUBDIR += rubygem-cssmin
     SUBDIR += rubygem-diff-lcs
     SUBDIR += rubygem-diffy
+    SUBDIR += rubygem-elasticsearch
+    SUBDIR += rubygem-elasticsearch-api
+    SUBDIR += rubygem-elasticsearch-transport
     SUBDIR += rubygem-escape_utils
     SUBDIR += rubygem-ezamar
     SUBDIR += rubygem-fast_xs

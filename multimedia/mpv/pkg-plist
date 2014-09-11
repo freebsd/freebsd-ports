@@ -5,7 +5,7 @@ etc/mpv/mpv.conf.sample
 include/mpv/client.h
 lib/libmpv.so
 lib/libmpv.so.1
-lib/libmpv.so.1.3.0
+lib/libmpv.so.1.4.0
 libdata/pkgconfig/mpv.pc
 man/man1/mpv.1.gz
 share/applications/mpv.desktop

@@ -3,7 +3,7 @@
 
 PORTNAME=	pantomime
 PORTVERSION=	1.2.0
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	mail gnustep
 MASTER_SITES=	http://download.gna.org/gnustep-nonfsf/
 DISTNAME=	Pantomime-${PORTVERSION}

@@ -1,0 +1,58 @@
+--- configure	2014-02-11 22:29:35.000000000 +0100
++++ configure	2014-02-11 22:26:04.000000000 +0100
+@@ -15126,6 +15151,55 @@
+ GLIB_MKENUMS="$($PKG_CONFIG --variable=glib_mkenums glib-2.0)"
+ 
+ 
++{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for kinfo_getfile in -lutil" >&5
++$as_echo_n "checking for kinfo_getfile in -lutil... " >&6; }
++if ${ac_cv_lib_util_kinfo_getfile+:} false; then :
++  $as_echo_n "(cached) " >&6
++else
++  ac_check_lib_save_LIBS=$LIBS
++LIBS="-lutil  $LIBS"
++cat confdefs.h - <<_ACEOF >conftest.$ac_ext
++/* end confdefs.h.  */
++
++/* Override any GCC internal prototype to avoid an error.
++   Use char because int might match the return type of a GCC
++   builtin and then its argument prototype would still apply.  */
++#ifdef __cplusplus
++extern "C"
++#endif
++char kinfo_getfile ();
++int
++main ()
++{
++return kinfo_getfile ();
++  ;
++  return 0;
++}
++_ACEOF
++if ac_fn_c_try_link "$LINENO"; then :
++  ac_cv_lib_util_kinfo_getfile=yes
++else
++  ac_cv_lib_util_kinfo_getfile=no
++fi
++rm -f core conftest.err conftest.$ac_objext \
++    conftest$ac_exeext conftest.$ac_ext
++LIBS=$ac_check_lib_save_LIBS
++fi
++{ $as_echo "$as_me:${as_lineno-$LINENO}: result: $ac_cv_lib_util_kinfo_getfile" >&5
++$as_echo "$ac_cv_lib_util_kinfo_getfile" >&6; }
++if test "x$ac_cv_lib_util_kinfo_getfile" = xyes; then :
++  LIBS="${LIBS} -lutil"
++
++$as_echo "#define HAVE_KINFO_GETFILE 1" >>confdefs.h
++
++
++else
++  :
++
++fi
++
++
++
+ # *****
+ # S/Key
+ # *****

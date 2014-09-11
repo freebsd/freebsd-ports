@@ -8,7 +8,7 @@
 -	mkdir ${PREFIX}/share/doc/mailfmt
 -	install -c -o root -g wheel -m 644 ./mailfmt.1.gz ${PREFIX}/man/man1
 -	install -c -o root -g wheel -m 644 ./mailfmt-license.txt ${PREFIX}/share/doc/mailfmt
-+	install -c -o root -g wheel -m 755 ./mailfmt $(DESTDIR)${PREFIX}/bin
++	$(BSD_INSTALL_SCRIPT) ./mailfmt $(DESTDIR)${PREFIX}/bin
 +#	mkdir ${PREFIX}/share/doc/mailfmt
-+	install -c -o root -g wheel -m 644 ./mailfmt.1.gz $(DESTDIR)${PREFIX}/man/man1
++	$(BSD_INSTALL_MAN) ./mailfmt.1.gz $(DESTDIR)${PREFIX}/man/man1
 +#	install -c -o root -g wheel -m 644 ./mailfmt-license.txt ${PREFIX}/share/doc/mailfmt

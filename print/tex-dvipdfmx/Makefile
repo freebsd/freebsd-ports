@@ -3,6 +3,7 @@
 
 PORTNAME=	dvipdfmx
 PORTVERSION=	20140317
+PORTREVISION=	1
 CATEGORIES=	print
 MASTER_SITES=	ftp://tug.org/historic/systems/texlive/2014/
 PKGNAMEPREFIX=	tex-
@@ -72,9 +73,5 @@ pre-install:
 post-install:
 	${LN} -f -s ${LOCALBASE}/share/fonts/adobe-cmaps \
 		${STAGEDIR}${PREFIX}/${TEXMFDISTDIR}/fonts/cmap/adobe-cmaps
-
-Xpost-install:
-	${RM} -f ${STAGEDIR}${PREFIX}/${TEXMFDISTDIR}/fonts/map/glyphlist/glyphlist.txt \
-		${STAGEDIR}${PREFIX}/${TEXMFDISTDIR}/fonts/map/glyphlist/pdfglyphlist.txt
 
 .include <bsd.port.mk>

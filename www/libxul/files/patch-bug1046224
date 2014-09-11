@@ -1,0 +1,26 @@
+diff --git configure.in configure.in
+index 1853029..559bd45 100644
+--- configure.in
++++ configure.in
+@@ -2651,7 +2651,7 @@ if test "$ac_cv_sockaddr_sa_len" = true ; then
+   AC_DEFINE(HAVE_SA_LEN)
+ fi
+ 
+-AC_ARG_ENABLE(dtrace,
++MOZ_ARG_ENABLE_BOOL(dtrace,
+               [  --enable-dtrace         build with dtrace support if available (default=no)],
+               [enable_dtrace="yes"],)
+ if test "x$enable_dtrace" = "xyes"; then
+diff --git js/src/configure.in js/src/configure.in
+index 134dfd3..682c1fb 100644
+--- js/src/configure.in
++++ js/src/configure.in
+@@ -2153,7 +2153,7 @@ dnl Quota support
+ MOZ_CHECK_HEADERS(sys/quota.h)
+ MOZ_CHECK_HEADERS(linux/quota.h)
+ 
+-AC_ARG_ENABLE(dtrace,
++MOZ_ARG_ENABLE_BOOL(dtrace,
+               [  --enable-dtrace         build with dtrace support if available (default=no)],
+               [enable_dtrace="yes"],)
+ if test "x$enable_dtrace" = "xyes"; then

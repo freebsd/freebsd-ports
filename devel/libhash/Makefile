@@ -11,6 +11,7 @@ COMMENT=	Library for manipulating hash tables
 
 WRKSRC=		${WRKDIR}/libhash
 
+USES=		uidfix
 USE_LDCONFIG=	yes
 
 .if defined(NO_PROFILE)

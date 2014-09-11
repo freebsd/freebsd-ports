@@ -3,7 +3,7 @@
 
 PORTNAME=	icebreaker
 PORTVERSION=	1.9.8
-PORTREVISION=	1 
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://mattdm.org/icebreaker/1.9.x/ \
 		SF/nemysisfreebsdp/games/${PORTNAME}/:icons

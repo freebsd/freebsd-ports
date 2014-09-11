@@ -21,14 +21,15 @@ LICENSE_NAME=	IBM Public License Version 1.0
 LICENSE_FILE=	${WRKSRC}/doc/LICENSE
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-AFS_DISTVERSION=1.6.7
+AFS_DISTVERSION=	1.6.9
 DBVERSION=	2013-01-28
 
-USES=		kmod
+USES=		kmod tar:bzip2
 USE_LDCONFIG=	yes
-PATCH_STRIP=	-p1
-USE_BZIP2=	yes
 HAS_CONFIGURE=	yes
+CONFIGURE_ENV=	_XCFLAGS="${CFLAGS} -fPIC" \
+		_PAM_CFLAGS="${CFLAGS} -fPIC" \
+		_MT_LIBS="${PTHREAD_LIBS}"
 CONFIGURE_ARGS=	--prefix=${PREFIX} \
 		--localstatedir=/var \
 		--mandir=${MANPREFIX}/man \
@@ -40,10 +41,13 @@ CONFIGURE_ARGS=	--prefix=${PREFIX} \
 		--includedir=${PREFIX}/include/openafs \
 		${CONFIGURE_TARGET}
 WRKSRC=		${WRKDIR}/${PORTNAME}-${AFS_DISTVERSION}
+MAKE_ENV=	COMPILER_TYPE=${COMPILER_TYPE}
 USE_RC_SUBR=	afsd afsserver
 
 CONFLICTS=	coda-server-6.[0-9]* heimdal-[0-9]*
 ONLY_FOR_ARCHS=	i386 amd64
+
+MAKE_JOBS_UNSAFE=	yes
 
 AFSMNTDIR?=	/afs
 AFSSTATEDIR?=	/var/${PORTNAME}
@@ -67,6 +71,10 @@ FUSE_CONFIGURE_OFF=	--disable-fuse-client
 
 .include <bsd.port.pre.mk>
 
+.if ${COMPILER_TYPE} == clang
+CFLAGS+=	-mstackrealign
+.endif
+
 KERNCONF?=	GENERIC
 KERNCONFDIR?=	${SRC_BASE}/sys/${ARCH}/conf
 
@@ -88,12 +96,6 @@ post-extract:
 	${MKDIR} ${WRKDIR}/conf
 	cd ${KERNCONFDIR} && \
 	    /usr/sbin/config -d ${WRKDIR}/conf ${_KERNCONF} >/dev/null
-
-post-patch:
-.if ${COMPILER_TYPE} == clang
-	${REINPLACE_CMD} -e 's/XCFLAGS="-O2 -pipe -fPIC"/XCFLAGS="${CFLAGS} -fPIC -mstackrealign"/' ${WRKSRC}/configure
-	${REINPLACE_CMD} -e 's/-mno-align-long-strings//' ${WRKSRC}/src/libafs/MakefileProto.FBSD.in
-.endif
 
 create-sample-files:
 	@${ECHO_CMD} openafs.org > ${WRKDIR}/ThisCell

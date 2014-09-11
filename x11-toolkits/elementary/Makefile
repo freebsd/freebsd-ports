@@ -3,6 +3,7 @@
 
 PORTNAME=	elementary
 PORTVERSION=	1.7.9
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits enlightenment
 MASTER_SITES=	http://download.enlightenment.org/releases/ \
 		LOCAL/gblach/e17/

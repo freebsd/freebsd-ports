@@ -2,6 +2,7 @@
 
 PORTNAME=	angel
 PORTVERSION=	0.5.0
+PORTREVISION=	1
 CATEGORIES=	sysutils haskell
 
 MAINTAINER=	haskell@FreeBSD.org

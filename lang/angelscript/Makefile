@@ -14,7 +14,7 @@ LICENSE=	ZLIB
 
 MAKEFILE=	makefile
 MAKE_ARGS=	LOCAL=${STAGEDIR}${PREFIX}
-USES=		gmake zip
+USES=		gmake zip compiler:c++0x
 USE_LDCONFIG=	yes
 
 WRKSRC=		${WRKDIR}/sdk/angelscript/projects/gnuc/

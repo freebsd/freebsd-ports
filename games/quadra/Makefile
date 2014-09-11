@@ -3,7 +3,7 @@
 
 PORTNAME=	quadra
 PORTVERSION=	1.3.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	games
 MASTER_SITES=	http://kbrandt.sdf-eu.org/FreeBSD/distfiles/ \
 		ftp://ftp.bsdforen.de/pub/BSDForen/distfiles/ \

@@ -1,0 +1,25 @@
+--- ./Xwnmo/xwnmo/Makefile.in.orig	2014-09-10 01:28:06.000000000 +0900
++++ ./Xwnmo/xwnmo/Makefile.in	2014-09-10 01:28:19.000000000 +0900
+@@ -26,7 +26,6 @@
+ top_builddir = ../..
+ 
+ INSTALL         = @INSTALL@ $(INSTALLFLAGS)
+-LOCAL_INSTFLAGS = -o $(WNNOWNER)
+ 
+        INCLUDES = $(XWNMOINCLUDES)
+ 
+@@ -181,12 +180,12 @@
+ install:: xwnmo
+ 	@if [ -d $(DESTDIR)$(BINDIR) ]; then set +x; \
+ 	else (set -x; $(MKDIRHIER) $(DESTDIR)$(BINDIR)); fi
+-	$(INSTALL) $(INSTPGMFLAGS) $(INSTBINFLAGS) $(LOCAL_INSTFLAGS) xwnmo $(DESTDIR)$(BINDIR)/xwnmo
++	$(INSTALL) $(INSTPGMFLAGS) $(INSTBINFLAGS) xwnmo $(DESTDIR)$(BINDIR)/xwnmo
+ 
+ install:: killxwnmo
+ 	@if [ -d $(DESTDIR)$(BINDIR) ]; then set +x; \
+ 	else (set -x; $(MKDIRHIER) $(DESTDIR)$(BINDIR)); fi
+-	$(INSTALL) $(INSTPGMFLAGS) $(INSTBINFLAGS) $(LOCAL_INSTFLAGS) killxwnmo $(DESTDIR)$(BINDIR)/killxwnmo
++	$(INSTALL) $(INSTPGMFLAGS) $(INSTBINFLAGS) killxwnmo $(DESTDIR)$(BINDIR)/killxwnmo
+ 
+ install:: Xwnmo.ad
+ 	@if [ -d $(DESTDIR)$(XAPPLOADDIR) ]; then set +x; \

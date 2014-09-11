@@ -3,6 +3,7 @@
 
 PORTNAME=	vultures
 PORTVERSION=	2.3.67
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://ftp.dk.debian.org/getdeb/%SUBDIR%/ \
 		http://ftp.heanet.ie/mirrors/www.getdeb.net/getdeb/%SUBDIR%/ \

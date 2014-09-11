@@ -3,6 +3,7 @@
 
 PORTNAME=	secrettower
 PORTVERSION=	0.2.0
+PORTREVISION=	1
 CATEGORIES=	games python
 DIST_SUBDIR=	python
 

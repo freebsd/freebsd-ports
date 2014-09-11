@@ -1,6 +1,12 @@
 bin/nzbget
+@sample etc/nzbget.conf.sample
 sbin/nzbgetd
+@comment %%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/README
 %%DATADIR%%/nzbget.conf
+%%DATADIR%%/scripts/EMail.py
+%%DATADIR%%/scripts/Logger.py
 %%DATADIR%%/webui/config.js
 %%DATADIR%%/webui/downloads.js
 %%DATADIR%%/webui/edit.js
@@ -20,24 +26,20 @@ sbin/nzbgetd
 %%DATADIR%%/webui/lib/bootstrap.css
 %%DATADIR%%/webui/lib/bootstrap.js
 %%DATADIR%%/webui/lib/bootstrap.min.js
+%%DATADIR%%/webui/lib/elycharts.js
+%%DATADIR%%/webui/lib/elycharts.min.js
 %%DATADIR%%/webui/lib/jquery.js
 %%DATADIR%%/webui/lib/jquery.min.js
+%%DATADIR%%/webui/lib/raphael.js
+%%DATADIR%%/webui/lib/raphael.min.js
 %%DATADIR%%/webui/messages.js
 %%DATADIR%%/webui/status.js
 %%DATADIR%%/webui/style.css
 %%DATADIR%%/webui/upload.js
 %%DATADIR%%/webui/util.js
-%%PORTDOCS%%%%DOCSDIR%%/COPYING
-%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%DATADIR%%/ppscripts/EMail.py
-%%DATADIR%%/ppscripts/Logger.py
-@dirrmtry %%DATADIR%%/ppscripts
-@dirrm %%DATADIR%%/webui/img
-@dirrm %%DATADIR%%/webui/lib
-@dirrm %%DATADIR%%/webui
-@dirrm %%DATADIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@unexec if cmp -s %D/etc/nzbget.conf %D/etc/nzbget.conf.sample; then rm -f %D/etc/nzbget.conf; fi
-etc/nzbget.conf.sample
-@exec [ -f %D/etc/nzbget.conf ] || cp %D/etc/nzbget.conf.sample %D/etc/nzbget.conf
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%
+@dirrmtry %%DATADIR%%/scripts
+@dirrmtry %%DATADIR%%/webui/img
+@dirrmtry %%DATADIR%%/webui/lib
+@dirrmtry %%DATADIR%%/webui
+@dirrmtry %%DATADIR%%

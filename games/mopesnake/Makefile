@@ -3,7 +3,7 @@
 
 PORTNAME=	mopesnake
 PORTVERSION=	0.5
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	games python
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION} \
 		SF/nemysisfreebsdp/games/:icons

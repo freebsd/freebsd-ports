@@ -412,6 +412,8 @@ man/man1/pdsend.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/5.reference/openpanel-help.pd
 %%PORTDOCS%%%%DOCSDIR%%/5.reference/operators-help.pd
 %%PORTDOCS%%%%DOCSDIR%%/5.reference/osc~-help.pd
+%%PORTDOCS%%%%DOCSDIR%%/5.reference/oscformat-help.pd
+%%PORTDOCS%%%%DOCSDIR%%/5.reference/oscparse-help.pd
 %%PORTDOCS%%%%DOCSDIR%%/5.reference/otherbinops-help.pd
 %%PORTDOCS%%%%DOCSDIR%%/5.reference/pack-help.pd
 %%PORTDOCS%%%%DOCSDIR%%/5.reference/pd-help.pd

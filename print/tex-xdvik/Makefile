@@ -3,7 +3,7 @@
 
 PORTNAME=	xdvik
 PORTVERSION=	22.87
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	print
 MASTER_SITES=	SF/xdvi/${PORTNAME}/${PORTVERSION}
 PKGNAMEPREFIX=	tex-
@@ -18,12 +18,13 @@ LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2 \
 USES=		iconv gmake motif
 USE_TEX=	web2c kpathsea texmf texhash
 TEXHASHDIRS=	${TEXMFDISTDIR}
-USE_XORG=	ice sm x11 xmu xpm xt
+USE_XORG=	ice sm x11 xmu xpm xt xi
 WRKSRC=		${WRKDIR}/${DISTNAME}/texk/xdvik
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-shared \
 		--datarootdir=${LOCALBASE}/share \
 		--with-xdvi-x-toolkit=motif \
+		--enable-xi2-scrolling \
 		--with-iconv \
 		--with-xpm \
 		--with-system-kpathsea \

@@ -5,7 +5,6 @@ bin/sablevm
 include/sablevm/jni.h
 include/sablevm/jni_system_specific.h
 lib/libsablevm-1.13.so
-lib/libsablevm.la
 lib/libsablevm.so
 lib/sablevm/bin/jar
 lib/sablevm/bin/java

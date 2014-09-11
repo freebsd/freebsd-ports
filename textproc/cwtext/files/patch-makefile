@@ -1,18 +1,17 @@
---- makefile.orig	2004-12-16 07:15:22.000000000 -0500
-+++ makefile	2013-12-30 18:06:28.000000000 -0500
-@@ -1,11 +1,10 @@
+--- makefile.orig	2004-12-16 12:15:22 UTC
++++ makefile
+@@ -1,11 +1,9 @@
 -PREFIX=/usr/local
 -
  ALL: cwtext cwpcm cwmm
-+STAGEDIR=%%STAGEDIR%%
  
  install: ALL
 -	install -sc cwtext ${PREFIX}/bin
 -	install -sc cwpcm ${PREFIX}/bin
 -	install -sc cwmm ${PREFIX}/bin
-+	install  -s -o root -g wheel -m 555 cwtext ${STAGEDIR}${PREFIX}/bin
-+	install  -s -o root -g wheel -m 555 cwpcm ${STAGEDIR}${PREFIX}/bin
-+	install  -s -o root -g wheel -m 555 cwmm ${STAGEDIR}${PREFIX}/bin
++	$(BSD_INSTALL_PROGRAM) cwtext ${DESTDIR}${PREFIX}/bin
++	$(BSD_INSTALL_PROGRAM) cwpcm ${DESTDIR}${PREFIX}/bin
++	$(BSD_INSTALL_PROGRAM) cwmm ${DESTDIR}${PREFIX}/bin
  
  cwmm: cwmm.o morse.o
  	${CC} ${CFLAGS} -o cwmm $^

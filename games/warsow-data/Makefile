@@ -3,7 +3,7 @@
 
 PORTNAME=	data
 PORTVERSION=	1.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	SF/warsow.mirror/Warsow%20${PORTVERSION} \
 		http://www.warsow.net:1337/~warsow/${PORTVERSION}/ \

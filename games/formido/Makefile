@@ -3,6 +3,7 @@
 
 PORTNAME=	formido
 PORTVERSION=	1.0.1
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://www.mhgames.org/files/formido/ \
 		http://mirror.amdmi3.ru/distfiles/

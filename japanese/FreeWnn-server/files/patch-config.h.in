@@ -1,0 +1,63 @@
+Index: config.h.in
+===================================================================
+RCS file: /home/cvs/private/hrs/freewnn/config.h.in,v
+retrieving revision 1.1.1.1
+retrieving revision 1.3
+diff -u -p -r1.1.1.1 -r1.3
+--- config.h.in	20 Dec 2008 07:13:30 -0000	1.1.1.1
++++ config.h.in	2 Jan 2010 11:58:36 -0000	1.3
+@@ -33,12 +33,24 @@
+ /* Define to 1 if you have the `FD_SET' function. */
+ #undef HAVE_FD_SET
+ 
++/* Define to 1 if you have the `freeaddrinfo' function. */
++#undef HAVE_FREEADDRINFO
++
++/* Define to 1 if you have the `gai_strerror' function. */
++#undef HAVE_GAI_STRERROR
++
++/* Define to 1 if you have the `getaddrinfo' function. */
++#undef HAVE_GETADDRINFO
++
+ /* Define to 1 if you have the `getdtablesize' function. */
+ #undef HAVE_GETDTABLESIZE
+ 
+ /* Define to 1 if you have the `gethostname' function. */
+ #undef HAVE_GETHOSTNAME
+ 
++/* Define to 1 if you have the `getnameinfo' function. */
++#undef HAVE_GETNAMEINFO
++
+ /* Define to 1 if you have the `getopt' function. */
+ #undef HAVE_GETOPT
+ 
+@@ -147,6 +159,18 @@
+ /* Define to 1 if you have the `strrchr' function. */
+ #undef HAVE_STRRCHR
+ 
++/* Define to 1 if the system has the type `struct addrinfo'. */
++#undef HAVE_STRUCT_ADDRINFO
++
++/* Define to 1 if the system has the type `struct in6_addr'. */
++#undef HAVE_STRUCT_IN6_ADDR
++
++/* Define to 1 if the system has the type `struct sockaddr_in6'. */
++#undef HAVE_STRUCT_SOCKADDR_IN6
++
++/* Define to 1 if the system has the type `struct sockaddr_storage'. */
++#undef HAVE_STRUCT_SOCKADDR_STORAGE
++
+ /* Define to 1 if you have the `syslog' function. */
+ #undef HAVE_SYSLOG
+ 
+@@ -201,6 +225,10 @@
+ /* Define to 1 if you have the `wait3' function. */
+ #undef HAVE_WAIT3
+ 
++/* Define to the sub-directory in which libtool stores uninstalled libraries.
++   */
++#undef LT_OBJDIR
++
+ /* Define to the address where bug reports for this package should be sent. */
+ #undef PACKAGE_BUGREPORT
+ 

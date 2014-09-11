@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mate-utils
-PORTVERSION=	1.6.0
-PORTREVISION=	1
+PORTVERSION=	1.8.0
 CATEGORIES=	deskutils mate
 MASTER_SITES=	MATE
 DIST_SUBDIR=	mate
@@ -11,20 +10,17 @@ DIST_SUBDIR=	mate
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	MATE support utilities
 
-BUILD_DEPENDS=	gtkdoc-check:${PORTSDIR}/textproc/gtk-doc \
-		scrollkeeper-config:${PORTSDIR}/textproc/rarian
+BUILD_DEPENDS=	itstool:${PORTSDIR}/textproc/itstool
 LIB_DEPENDS=	libgtop-2.0.so:${PORTSDIR}/devel/libgtop \
 		libcanberra-gtk.so:${PORTSDIR}/audio/libcanberra
 
 PORTSCOUT=	limitw:1,even
 
 USES=		gettext gmake libtool pathfix pkgconfig tar:xz
-USE_MATE=	autogen common:build docutils intlhack panel
+USE_MATE=	panel
 USE_XORG=	x11 xext
-USE_GNOME=	glib20 gnomehier gtk20
+USE_GNOME=	gnomehier gtk20 intlhack
 USE_LDCONFIG=	yes
-INSTALLS_OMF=	yes
-USE_AUTOTOOLS=	aclocal:env autoconf:env automake:env libtoolize:env
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-maintainer-flags=no \
 		--disable-gtk-doc \
@@ -32,7 +28,7 @@ CONFIGURE_ARGS=	--enable-maintainer-flags=no \
 INSTALLS_ICONS=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-PATHFIX_MAKEFILEIN=	Makefile.*
+INSTALL_TARGET=	install-strip
 
 GLIB_SCHEMAS=	org.mate.dictionary.gschema.xml \
 		org.mate.disk-usage-analyzer.gschema.xml \

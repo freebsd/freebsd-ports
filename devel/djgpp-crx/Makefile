@@ -15,10 +15,8 @@ MAINTAINER=	johnson.peter@gmail.com
 COMMENT=	Headers and Libraries for DJGPP cross-development
 
 USES=		zip
+MAKEFILE=	${FILESDIR}/Makefile
 NO_MTREE=	yes
 NO_WRKSUBDIR=	yes
-
-post-extract:
-	@${CP} ${FILESDIR}/Makefile ${WRKDIR}
 
 .include <bsd.port.mk>

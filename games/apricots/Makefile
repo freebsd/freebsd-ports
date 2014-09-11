@@ -3,7 +3,7 @@
 
 PORTNAME=	apricots
 PORTVERSION=	0.2.6
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	games
 MASTER_SITES=	http://www.fishies.org.uk/ \
 		http://mirror.amdmi3.ru/distfiles/

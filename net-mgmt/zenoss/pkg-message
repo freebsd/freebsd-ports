@@ -1,9 +1,0 @@
-================================================================================
-
-Add the following line to /etc/rc.conf to enable zenoss:
-zenoss_enable="YES"
-
-To initialize zenoss, you can run the following (as root):
-service zenoss init
-
-================================================================================

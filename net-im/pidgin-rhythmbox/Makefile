@@ -3,7 +3,7 @@
 
 PORTNAME=	pidgin-rhythmbox
 PORTVERSION=	2.0
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	net-im audio
 MASTER_SITES=	http://jon.oberheide.org/pidgin-rhythmbox/downloads/
 

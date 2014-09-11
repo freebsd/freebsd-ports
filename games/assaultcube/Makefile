@@ -3,6 +3,7 @@
 
 PORTNAME=	assaultcube
 PORTVERSION=	1.2.0.2
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	SF/actiongame/AssaultCube%20Version%20${PORTVERSION}
 DISTNAME=	AssaultCube_v${PORTVERSION}

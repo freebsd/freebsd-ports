@@ -3,7 +3,7 @@
 
 PORTNAME=	vectoroids
 PORTVERSION=	1.1.0
-PORTREVISION=	15
+PORTREVISION=	16
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.tuxpaint.org/unix/x/vectoroids/src/
 

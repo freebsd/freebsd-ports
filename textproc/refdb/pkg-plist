@@ -23,69 +23,52 @@ bin/refdbsru
 bin/refdbxml
 bin/refdbxp
 bin/runbib
-etc/rc.d/refdb.sh.dist
-etc/refdb/bib2riscgirc.example
-etc/refdb/bib2risrc.example
-etc/refdb/db2risrc.example
-etc/refdb/marc2risrc.example
-etc/refdb/med2riscgirc.example
-etc/refdb/med2risrc.example
-etc/refdb/refdbarc.example
-etc/refdb/refdbcgirc.example
-etc/refdb/refdbcrc.example
-etc/refdb/refdbdrc.mysql.example
-etc/refdb/refdbdrc.pgsql.example
-etc/refdb/refdbdrc.sqlite.example
-etc/refdb/refdbdrc.sqlite3.example
-etc/refdb/refdbibrc.example
-etc/refdb/refdbjaderc.example
-etc/refdb/refdbsrurc.example
-etc/refdb/refdbxmlrc.example
-etc/refdb/runbibrc.example
-share/refdb/examples/pubmed.txt
-share/refdb/examples/pubmed.xml
-share/refdb/sql/refdb.3.dump.mysql41
-share/refdb/sql/refdb.3.dump.pgsql
-share/refdb/sql/refdb.3.dump.sqlite
-share/refdb/sru/mods.xsl
-share/refdb/sru/refdbsru.css
-share/refdb/sru/refdbsru.xsl
-share/refdb/sru/risx.xsl
-share/refdb/styles/APA.xml
-share/refdb/styles/Biomaterials.xml
-share/refdb/styles/Murdoch.Law.xml
-share/refdb/styles/Tissue_Eng.xml
-share/refdb/www/css/main.css
-share/refdb/www/css/navigationlist.css
-share/refdb/www/css/refdb-frequency.css
-share/refdb/www/css/refdb.css
-share/refdb/www/images/bg.gif
-share/refdb/www/images/left.gif
-share/refdb/www/images/left_on.gif
-share/refdb/www/images/norm_left.gif
-share/refdb/www/images/norm_left_on.gif
-share/refdb/www/images/norm_right.gif
-share/refdb/www/images/norm_right_on.gif
-share/refdb/www/images/refdb.png
-share/refdb/www/images/right.gif
-share/refdb/www/images/right_on.gif
-share/refdb/www/includes/functions.inc.php
-share/refdb/www/includes/refdblib.inc.php
-share/refdb/www/index.php
-share/refdb/www/xsl/MARC21slim2English.xsl
-share/refdb/www/xsl/MARC21slim2RISX.xsl
-share/refdb/www/xsl/refdb-entry-parts.xsl
-share/refdb/www/xsl/refdb-entry-structure-buttons.xsl
-share/refdb/www/xsl/refdb-entry-structure.xsl
-share/refdb/xsl/citationsraw.xsl
-share/refdb/xsl/docbk-refdb-xsl/docbk-fo/docbk-refdb-fo-ns.xsl
-share/refdb/xsl/docbk-refdb-xsl/docbk-html/docbk-refdb-html-ns.xsl
-share/refdb/xsl/docbk-refdb-xsl/docbk-lib/docbk-refdblib-ns.xsl
-share/refdb/xsl/docbk-refdb-xsl/docbk-xhtml/docbk-refdb-xhtml-ns.xsl
-share/refdb/xsl/makecss-ns.xsl
-share/refdb/xsl/tei-refdb-xsl/tei-fo/tei-refdb-fo-ns.xsl
-share/refdb/xsl/tei-refdb-xsl/tei-html/tei-refdb-html-ns.xsl
-share/refdb/xsl/tei-refdb-xsl/tei-lib/tei-refdblib-ns.xsl
+%%ETCDIR%%/bib2riscgirc.example
+%%ETCDIR%%/bib2risrc.example
+%%ETCDIR%%/db2risrc.example
+%%ETCDIR%%/marc2risrc.example
+%%ETCDIR%%/med2riscgirc.example
+%%ETCDIR%%/med2risrc.example
+%%ETCDIR%%/refdbarc.example
+%%ETCDIR%%/refdbcgirc.example
+%%ETCDIR%%/refdbcrc.example
+%%ETCDIR%%/refdbdrc.mysql.example
+%%ETCDIR%%/refdbdrc.pgsql.example
+%%ETCDIR%%/refdbdrc.sqlite.example
+%%ETCDIR%%/refdbdrc.sqlite3.example
+%%ETCDIR%%/refdbibrc.example
+%%ETCDIR%%/refdbjaderc.example
+%%ETCDIR%%/refdbsrurc.example
+%%ETCDIR%%/refdbxmlrc.example
+%%ETCDIR%%/runbibrc.example
+man/man1/bib2ris-utf8.1.gz
+man/man1/bib2ris.1.gz
+man/man1/db2ris.1.gz
+man/man1/eenc.1.gz
+man/man1/en2ris.1.gz
+man/man1/marc2ris.1.gz
+man/man1/med2ris.1.gz
+man/man1/refdb-backup.1.gz
+man/man1/refdb-bug.1.gz
+man/man1/refdb-ms.1.gz
+man/man1/refdb-restore.1.gz
+man/man1/refdb-sruserver.1.gz
+man/man1/refdb_dos2unix.1.gz
+man/man1/refdb_latex2utf8txt.1.gz
+man/man1/refdba.1.gz
+man/man1/refdbc.1.gz
+man/man1/refdbctl.1.gz
+man/man1/refdbd.1.gz
+man/man1/refdbib.1.gz
+man/man1/refdbjade.1.gz
+man/man1/refdbnd.1.gz
+man/man1/refdbsru.1.gz
+man/man1/refdbxml.1.gz
+man/man1/refdbxp.1.gz
+man/man1/runbib.1.gz
+man/man8/refdb-init.8.gz
+man/man8/refdb.8.gz
+man/man8/refdb.sh.8.gz
 %%DATADIR%%/declarations/docbook.dcl
 %%DATADIR%%/declarations/xml.dcl
 %%DATADIR%%/dsssl/bibdb2tei.dsl
@@ -115,6 +98,8 @@ share/refdb/xsl/tei-refdb-xsl/tei-lib/tei-refdblib-ns.xsl
 %%DATADIR%%/examples/dbtest.short.sgml
 %%DATADIR%%/examples/dbxtest.short.xml
 %%DATADIR%%/examples/dbxtest.xml
+%%DATADIR%%/examples/pubmed.txt
+%%DATADIR%%/examples/pubmed.xml
 %%DATADIR%%/examples/readme.examples
 %%DATADIR%%/examples/serif.bib
 %%DATADIR%%/examples/teitest.short.xml
@@ -130,653 +115,100 @@ share/refdb/xsl/tei-refdb-xsl/tei-lib/tei-refdblib-ns.xsl
 %%DATADIR%%/sql/refdb.2.dump.mysql41
 %%DATADIR%%/sql/refdb.2.dump.pgsql
 %%DATADIR%%/sql/refdb.2.dump.sqlite
+%%DATADIR%%/sql/refdb.3.dump.mysql41
+%%DATADIR%%/sql/refdb.3.dump.pgsql
+%%DATADIR%%/sql/refdb.3.dump.sqlite
+%%DATADIR%%/sru/mods.xsl
+%%DATADIR%%/sru/refdbsru.css
+%%DATADIR%%/sru/refdbsru.xsl
+%%DATADIR%%/sru/risx.xsl
+%%DATADIR%%/styles/APA.xml
+%%DATADIR%%/styles/Biomaterials.xml
 %%DATADIR%%/styles/Eur.J.Pharmacol.xml
 %%DATADIR%%/styles/J.Biol.Chem.xml
+%%DATADIR%%/styles/Murdoch.Law.xml
+%%DATADIR%%/styles/Tissue_Eng.xml
 %%DATADIR%%/styles/bibtex-abbrev.xml
 %%DATADIR%%/styles/bibtex-full.xml
 %%DATADIR%%/styles/citekey.xml
 %%DATADIR%%/styles/schemas.xml
+%%DATADIR%%/www/css/main.css
+%%DATADIR%%/www/css/navigationlist.css
+%%DATADIR%%/www/css/refdb-frequency.css
+%%DATADIR%%/www/css/refdb.css
+%%DATADIR%%/www/images/bg.gif
+%%DATADIR%%/www/images/left.gif
+%%DATADIR%%/www/images/left_on.gif
+%%DATADIR%%/www/images/norm_left.gif
+%%DATADIR%%/www/images/norm_left_on.gif
+%%DATADIR%%/www/images/norm_right.gif
+%%DATADIR%%/www/images/norm_right_on.gif
+%%DATADIR%%/www/images/refdb.png
+%%DATADIR%%/www/images/right.gif
+%%DATADIR%%/www/images/right_on.gif
+%%DATADIR%%/www/includes/functions.inc.php
+%%DATADIR%%/www/includes/refdblib.inc.php
+%%DATADIR%%/www/index.php
+%%DATADIR%%/www/xsl/MARC21slim2English.xsl
+%%DATADIR%%/www/xsl/MARC21slim2RISX.xsl
+%%DATADIR%%/www/xsl/refdb-entry-parts.xsl
+%%DATADIR%%/www/xsl/refdb-entry-structure-buttons.xsl
+%%DATADIR%%/www/xsl/refdb-entry-structure.xsl
 %%DATADIR%%/xsl/bibdb2tei.xsl
 %%DATADIR%%/xsl/citations.xsl
+%%DATADIR%%/xsl/citationsraw.xsl
 %%DATADIR%%/xsl/common-refdb/refdbvar.xsl
+%%DATADIR%%/xsl/docbk-refdb-xsl/docbk-fo/docbk-refdb-fo-ns.xsl
 %%DATADIR%%/xsl/docbk-refdb-xsl/docbk-fo/docbk-refdb-fo.xsl
+%%DATADIR%%/xsl/docbk-refdb-xsl/docbk-html/docbk-refdb-html-ns.xsl
 %%DATADIR%%/xsl/docbk-refdb-xsl/docbk-html/docbk-refdb-html.xsl
+%%DATADIR%%/xsl/docbk-refdb-xsl/docbk-lib/docbk-refdblib-ns.xsl
 %%DATADIR%%/xsl/docbk-refdb-xsl/docbk-lib/docbk-refdblib.xsl
+%%DATADIR%%/xsl/docbk-refdb-xsl/docbk-xhtml/docbk-refdb-xhtml-ns.xsl
 %%DATADIR%%/xsl/docbk-refdb-xsl/docbk-xhtml/docbk-refdb-xhtml.xsl
+%%DATADIR%%/xsl/makecss-ns.xsl
 %%DATADIR%%/xsl/makecss.xsl
+%%DATADIR%%/xsl/tei-refdb-xsl/tei-fo/tei-refdb-fo-ns.xsl
 %%DATADIR%%/xsl/tei-refdb-xsl/tei-fo/tei-refdb-fo.xsl
+%%DATADIR%%/xsl/tei-refdb-xsl/tei-html/tei-refdb-html-ns.xsl
 %%DATADIR%%/xsl/tei-refdb-xsl/tei-html/tei-refdb-html.xsl
+%%DATADIR%%/xsl/tei-refdb-xsl/tei-lib/tei-refdblib-ns.xsl
 %%DATADIR%%/xsl/tei-refdb-xsl/tei-lib/tei-refdblib.xsl
-%%DOCSDIR%%/citationlistx/dtdelem.html
-%%DOCSDIR%%/citationlistx/dtdelem/citation.html
-%%DOCSDIR%%/citationlistx/dtdelem/citationlist.html
-%%DOCSDIR%%/citationlistx/dtdelem/xref.html
-%%DOCSDIR%%/citationlistx/dtdent.html
-%%DOCSDIR%%/citationlistx/ele-desc/citation.html
-%%DOCSDIR%%/citationlistx/ele-desc/citationlist.html
-%%DOCSDIR%%/citationlistx/ele-desc/xref.html
-%%DOCSDIR%%/citationlistx/elements.html
-%%DOCSDIR%%/citationlistx/elements/citation.html
-%%DOCSDIR%%/citationlistx/elements/citationlist.html
-%%DOCSDIR%%/citationlistx/elements/xref.html
-%%DOCSDIR%%/citationlistx/entities.html
-%%DOCSDIR%%/citationlistx/index.html
-%%DOCSDIR%%/citationlistx/notations.html
-%%DOCSDIR%%/citestylex/dtdelem.html
-%%DOCSDIR%%/citestylex/dtdelem/abbreviatefirst.html
-%%DOCSDIR%%/citestylex/dtdelem/abbreviatesubseq.html
-%%DOCSDIR%%/citestylex/dtdelem/abstract.html
-%%DOCSDIR%%/citestylex/dtdelem/address.html
-%%DOCSDIR%%/citestylex/dtdelem/aempty.html
-%%DOCSDIR%%/citestylex/dtdelem/apr.html
-%%DOCSDIR%%/citestylex/dtdelem/area.html
-%%DOCSDIR%%/citestylex/dtdelem/asame.html
-%%DOCSDIR%%/citestylex/dtdelem/aug.html
-%%DOCSDIR%%/citestylex/dtdelem/author.html
-%%DOCSDIR%%/citestylex/dtdelem/authorlist.html
-%%DOCSDIR%%/citestylex/dtdelem/authornames.html
-%%DOCSDIR%%/citestylex/dtdelem/authoronly.html
-%%DOCSDIR%%/citestylex/dtdelem/authorseps.html
-%%DOCSDIR%%/citestylex/dtdelem/bibliotitle.html
-%%DOCSDIR%%/citestylex/dtdelem/bibstyle.html
-%%DOCSDIR%%/citestylex/dtdelem/chapternum.html
-%%DOCSDIR%%/citestylex/dtdelem/citekey.html
-%%DOCSDIR%%/citestylex/dtdelem/citestyle.html
-%%DOCSDIR%%/citestylex/dtdelem/citseparator.html
-%%DOCSDIR%%/citestylex/dtdelem/citstyle.html
-%%DOCSDIR%%/citestylex/dtdelem/classcodeintl.html
-%%DOCSDIR%%/citestylex/dtdelem/classcodeus.html
-%%DOCSDIR%%/citestylex/dtdelem/classification.html
-%%DOCSDIR%%/citestylex/dtdelem/comment.html
-%%DOCSDIR%%/citestylex/dtdelem/computer.html
-%%DOCSDIR%%/citestylex/dtdelem/conferencelocation.html
-%%DOCSDIR%%/citestylex/dtdelem/dec.html
-%%DOCSDIR%%/citestylex/dtdelem/degree.html
-%%DOCSDIR%%/citestylex/dtdelem/edition.html
-%%DOCSDIR%%/citestylex/dtdelem/feb.html
-%%DOCSDIR%%/citestylex/dtdelem/firstsep.html
-%%DOCSDIR%%/citestylex/dtdelem/following.html
-%%DOCSDIR%%/citestylex/dtdelem/intextdef.html
-%%DOCSDIR%%/citestylex/dtdelem/issue.html
-%%DOCSDIR%%/citestylex/dtdelem/jan.html
-%%DOCSDIR%%/citestylex/dtdelem/journalname.html
-%%DOCSDIR%%/citestylex/dtdelem/jul.html
-%%DOCSDIR%%/citestylex/dtdelem/jun.html
-%%DOCSDIR%%/citestylex/dtdelem/link.html
-%%DOCSDIR%%/citestylex/dtdelem/mar.html
-%%DOCSDIR%%/citestylex/dtdelem/may.html
-%%DOCSDIR%%/citestylex/dtdelem/mediatype.html
-%%DOCSDIR%%/citestylex/dtdelem/misc.html
-%%DOCSDIR%%/citestylex/dtdelem/months.html
-%%DOCSDIR%%/citestylex/dtdelem/namefirst.html
-%%DOCSDIR%%/citestylex/dtdelem/nameother.html
-%%DOCSDIR%%/citestylex/dtdelem/notes.html
-%%DOCSDIR%%/citestylex/dtdelem/nov.html
-%%DOCSDIR%%/citestylex/dtdelem/numvolumes.html
-%%DOCSDIR%%/citestylex/dtdelem/oct.html
-%%DOCSDIR%%/citestylex/dtdelem/ostype.html
-%%DOCSDIR%%/citestylex/dtdelem/pagerange.html
-%%DOCSDIR%%/citestylex/dtdelem/pages.html
-%%DOCSDIR%%/citestylex/dtdelem/pamphletnum.html
-%%DOCSDIR%%/citestylex/dtdelem/preceeding.html
-%%DOCSDIR%%/citestylex/dtdelem/pubdate.html
-%%DOCSDIR%%/citestylex/dtdelem/publisher.html
-%%DOCSDIR%%/citestylex/dtdelem/pubplace.html
-%%DOCSDIR%%/citestylex/dtdelem/pubtype.html
-%%DOCSDIR%%/citestylex/dtdelem/rangeseparator.html
-%%DOCSDIR%%/citestylex/dtdelem/recipientemail.html
-%%DOCSDIR%%/citestylex/dtdelem/refnumber.html
-%%DOCSDIR%%/citestylex/dtdelem/refstyle.html
-%%DOCSDIR%%/citestylex/dtdelem/registrynum.html
-%%DOCSDIR%%/citestylex/dtdelem/runningtime.html
-%%DOCSDIR%%/citestylex/dtdelem/secondsep.html
-%%DOCSDIR%%/citestylex/dtdelem/section.html
-%%DOCSDIR%%/citestylex/dtdelem/senderemail.html
-%%DOCSDIR%%/citestylex/dtdelem/sep.html
-%%DOCSDIR%%/citestylex/dtdelem/separator.html
-%%DOCSDIR%%/citestylex/dtdelem/serial.html
-%%DOCSDIR%%/citestylex/dtdelem/singlepage.html
-%%DOCSDIR%%/citestylex/dtdelem/stylename.html
-%%DOCSDIR%%/citestylex/dtdelem/styleset.html
-%%DOCSDIR%%/citestylex/dtdelem/text.html
-%%DOCSDIR%%/citestylex/dtdelem/texted.html
-%%DOCSDIR%%/citestylex/dtdelem/textmultiple.html
-%%DOCSDIR%%/citestylex/dtdelem/textsingle.html
-%%DOCSDIR%%/citestylex/dtdelem/threeseps.html
-%%DOCSDIR%%/citestylex/dtdelem/threesepseach.html
-%%DOCSDIR%%/citestylex/dtdelem/threesepslast.html
-%%DOCSDIR%%/citestylex/dtdelem/title.html
-%%DOCSDIR%%/citestylex/dtdelem/twoseps.html
-%%DOCSDIR%%/citestylex/dtdelem/typeofwork.html
-%%DOCSDIR%%/citestylex/dtdelem/url.html
-%%DOCSDIR%%/citestylex/dtdelem/userdef.html
-%%DOCSDIR%%/citestylex/dtdelem/volume.html
-%%DOCSDIR%%/citestylex/dtdelem/yearonly.html
-%%DOCSDIR%%/citestylex/dtdent.html
-%%DOCSDIR%%/citestylex/ele-desc/abbreviatefirst.html
-%%DOCSDIR%%/citestylex/ele-desc/abbreviatesubseq.html
-%%DOCSDIR%%/citestylex/ele-desc/abstract.html
-%%DOCSDIR%%/citestylex/ele-desc/address.html
-%%DOCSDIR%%/citestylex/ele-desc/aempty.html
-%%DOCSDIR%%/citestylex/ele-desc/apr.html
-%%DOCSDIR%%/citestylex/ele-desc/area.html
-%%DOCSDIR%%/citestylex/ele-desc/asame.html
-%%DOCSDIR%%/citestylex/ele-desc/aug.html
-%%DOCSDIR%%/citestylex/ele-desc/author.html
-%%DOCSDIR%%/citestylex/ele-desc/authorlist.html
-%%DOCSDIR%%/citestylex/ele-desc/authornames.html
-%%DOCSDIR%%/citestylex/ele-desc/authoronly.html
-%%DOCSDIR%%/citestylex/ele-desc/authorseps.html
-%%DOCSDIR%%/citestylex/ele-desc/bibliotitle.html
-%%DOCSDIR%%/citestylex/ele-desc/bibstyle.html
-%%DOCSDIR%%/citestylex/ele-desc/chapternum.html
-%%DOCSDIR%%/citestylex/ele-desc/citekey.html
-%%DOCSDIR%%/citestylex/ele-desc/citestyle.html
-%%DOCSDIR%%/citestylex/ele-desc/citseparator.html
-%%DOCSDIR%%/citestylex/ele-desc/citstyle.html
-%%DOCSDIR%%/citestylex/ele-desc/classcodeintl.html
-%%DOCSDIR%%/citestylex/ele-desc/classcodeus.html
-%%DOCSDIR%%/citestylex/ele-desc/classification.html
-%%DOCSDIR%%/citestylex/ele-desc/comment.html
-%%DOCSDIR%%/citestylex/ele-desc/computer.html
-%%DOCSDIR%%/citestylex/ele-desc/conferencelocation.html
-%%DOCSDIR%%/citestylex/ele-desc/dec.html
-%%DOCSDIR%%/citestylex/ele-desc/degree.html
-%%DOCSDIR%%/citestylex/ele-desc/edition.html
-%%DOCSDIR%%/citestylex/ele-desc/feb.html
-%%DOCSDIR%%/citestylex/ele-desc/firstsep.html
-%%DOCSDIR%%/citestylex/ele-desc/following.html
-%%DOCSDIR%%/citestylex/ele-desc/intextdef.html
-%%DOCSDIR%%/citestylex/ele-desc/issue.html
-%%DOCSDIR%%/citestylex/ele-desc/jan.html
-%%DOCSDIR%%/citestylex/ele-desc/journalname.html
-%%DOCSDIR%%/citestylex/ele-desc/jul.html
-%%DOCSDIR%%/citestylex/ele-desc/jun.html
-%%DOCSDIR%%/citestylex/ele-desc/link.html
-%%DOCSDIR%%/citestylex/ele-desc/mar.html
-%%DOCSDIR%%/citestylex/ele-desc/may.html
-%%DOCSDIR%%/citestylex/ele-desc/mediatype.html
-%%DOCSDIR%%/citestylex/ele-desc/months.html
-%%DOCSDIR%%/citestylex/ele-desc/namefirst.html
-%%DOCSDIR%%/citestylex/ele-desc/nameother.html
-%%DOCSDIR%%/citestylex/ele-desc/notes.html
-%%DOCSDIR%%/citestylex/ele-desc/nov.html
-%%DOCSDIR%%/citestylex/ele-desc/numvolumes.html
-%%DOCSDIR%%/citestylex/ele-desc/oct.html
-%%DOCSDIR%%/citestylex/ele-desc/ostype.html
-%%DOCSDIR%%/citestylex/ele-desc/pagerange.html
-%%DOCSDIR%%/citestylex/ele-desc/pages.html
-%%DOCSDIR%%/citestylex/ele-desc/pamphletnum.html
-%%DOCSDIR%%/citestylex/ele-desc/preceeding.html
-%%DOCSDIR%%/citestylex/ele-desc/pubdate.html
-%%DOCSDIR%%/citestylex/ele-desc/publisher.html
-%%DOCSDIR%%/citestylex/ele-desc/pubplace.html
-%%DOCSDIR%%/citestylex/ele-desc/pubtype.html
-%%DOCSDIR%%/citestylex/ele-desc/rangeseparator.html
-%%DOCSDIR%%/citestylex/ele-desc/recipientemail.html
-%%DOCSDIR%%/citestylex/ele-desc/refnumber.html
-%%DOCSDIR%%/citestylex/ele-desc/refstyle.html
-%%DOCSDIR%%/citestylex/ele-desc/registrynum.html
-%%DOCSDIR%%/citestylex/ele-desc/runningtime.html
-%%DOCSDIR%%/citestylex/ele-desc/secondsep.html
-%%DOCSDIR%%/citestylex/ele-desc/section.html
-%%DOCSDIR%%/citestylex/ele-desc/senderemail.html
-%%DOCSDIR%%/citestylex/ele-desc/sep.html
-%%DOCSDIR%%/citestylex/ele-desc/separator.html
-%%DOCSDIR%%/citestylex/ele-desc/serial.html
-%%DOCSDIR%%/citestylex/ele-desc/singlepage.html
-%%DOCSDIR%%/citestylex/ele-desc/stylename.html
-%%DOCSDIR%%/citestylex/ele-desc/styleset.html
-%%DOCSDIR%%/citestylex/ele-desc/text.html
-%%DOCSDIR%%/citestylex/ele-desc/textmultiple.html
-%%DOCSDIR%%/citestylex/ele-desc/textsingle.html
-%%DOCSDIR%%/citestylex/ele-desc/threeseps.html
-%%DOCSDIR%%/citestylex/ele-desc/threesepseach.html
-%%DOCSDIR%%/citestylex/ele-desc/threesepslast.html
-%%DOCSDIR%%/citestylex/ele-desc/title.html
-%%DOCSDIR%%/citestylex/ele-desc/twoseps.html
-%%DOCSDIR%%/citestylex/ele-desc/typeofwork.html
-%%DOCSDIR%%/citestylex/ele-desc/url.html
-%%DOCSDIR%%/citestylex/ele-desc/userdef.html
-%%DOCSDIR%%/citestylex/ele-desc/volume.html
-%%DOCSDIR%%/citestylex/ele-desc/yearonly.html
-%%DOCSDIR%%/citestylex/elements.html
-%%DOCSDIR%%/citestylex/elements/abbreviatefirst.html
-%%DOCSDIR%%/citestylex/elements/abbreviatesubseq.html
-%%DOCSDIR%%/citestylex/elements/abstract.html
-%%DOCSDIR%%/citestylex/elements/address.html
-%%DOCSDIR%%/citestylex/elements/aempty.html
-%%DOCSDIR%%/citestylex/elements/apr.html
-%%DOCSDIR%%/citestylex/elements/area.html
-%%DOCSDIR%%/citestylex/elements/asame.html
-%%DOCSDIR%%/citestylex/elements/aug.html
-%%DOCSDIR%%/citestylex/elements/author.html
-%%DOCSDIR%%/citestylex/elements/authorlist.html
-%%DOCSDIR%%/citestylex/elements/authornames.html
-%%DOCSDIR%%/citestylex/elements/authoronly.html
-%%DOCSDIR%%/citestylex/elements/authorseps.html
-%%DOCSDIR%%/citestylex/elements/bibliotitle.html
-%%DOCSDIR%%/citestylex/elements/bibstyle.html
-%%DOCSDIR%%/citestylex/elements/chapternum.html
-%%DOCSDIR%%/citestylex/elements/citekey.html
-%%DOCSDIR%%/citestylex/elements/citestyle.html
-%%DOCSDIR%%/citestylex/elements/citseparator.html
-%%DOCSDIR%%/citestylex/elements/citstyle.html
-%%DOCSDIR%%/citestylex/elements/classcodeintl.html
-%%DOCSDIR%%/citestylex/elements/classcodeus.html
-%%DOCSDIR%%/citestylex/elements/classification.html
-%%DOCSDIR%%/citestylex/elements/comment.html
-%%DOCSDIR%%/citestylex/elements/computer.html
-%%DOCSDIR%%/citestylex/elements/conferencelocation.html
-%%DOCSDIR%%/citestylex/elements/dec.html
-%%DOCSDIR%%/citestylex/elements/degree.html
-%%DOCSDIR%%/citestylex/elements/edition.html
-%%DOCSDIR%%/citestylex/elements/feb.html
-%%DOCSDIR%%/citestylex/elements/firstsep.html
-%%DOCSDIR%%/citestylex/elements/following.html
-%%DOCSDIR%%/citestylex/elements/intextdef.html
-%%DOCSDIR%%/citestylex/elements/issue.html
-%%DOCSDIR%%/citestylex/elements/jan.html
-%%DOCSDIR%%/citestylex/elements/journalname.html
-%%DOCSDIR%%/citestylex/elements/jul.html
-%%DOCSDIR%%/citestylex/elements/jun.html
-%%DOCSDIR%%/citestylex/elements/link.html
-%%DOCSDIR%%/citestylex/elements/mar.html
-%%DOCSDIR%%/citestylex/elements/may.html
-%%DOCSDIR%%/citestylex/elements/mediatype.html
-%%DOCSDIR%%/citestylex/elements/misc.html
-%%DOCSDIR%%/citestylex/elements/months.html
-%%DOCSDIR%%/citestylex/elements/namefirst.html
-%%DOCSDIR%%/citestylex/elements/nameother.html
-%%DOCSDIR%%/citestylex/elements/notes.html
-%%DOCSDIR%%/citestylex/elements/nov.html
-%%DOCSDIR%%/citestylex/elements/numvolumes.html
-%%DOCSDIR%%/citestylex/elements/oct.html
-%%DOCSDIR%%/citestylex/elements/ostype.html
-%%DOCSDIR%%/citestylex/elements/pagerange.html
-%%DOCSDIR%%/citestylex/elements/pages.html
-%%DOCSDIR%%/citestylex/elements/pamphletnum.html
-%%DOCSDIR%%/citestylex/elements/preceeding.html
-%%DOCSDIR%%/citestylex/elements/pubdate.html
-%%DOCSDIR%%/citestylex/elements/publisher.html
-%%DOCSDIR%%/citestylex/elements/pubplace.html
-%%DOCSDIR%%/citestylex/elements/pubtype.html
-%%DOCSDIR%%/citestylex/elements/rangeseparator.html
-%%DOCSDIR%%/citestylex/elements/recipientemail.html
-%%DOCSDIR%%/citestylex/elements/refnumber.html
-%%DOCSDIR%%/citestylex/elements/refstyle.html
-%%DOCSDIR%%/citestylex/elements/registrynum.html
-%%DOCSDIR%%/citestylex/elements/runningtime.html
-%%DOCSDIR%%/citestylex/elements/secondsep.html
-%%DOCSDIR%%/citestylex/elements/section.html
-%%DOCSDIR%%/citestylex/elements/senderemail.html
-%%DOCSDIR%%/citestylex/elements/sep.html
-%%DOCSDIR%%/citestylex/elements/separator.html
-%%DOCSDIR%%/citestylex/elements/serial.html
-%%DOCSDIR%%/citestylex/elements/singlepage.html
-%%DOCSDIR%%/citestylex/elements/stylename.html
-%%DOCSDIR%%/citestylex/elements/styleset.html
-%%DOCSDIR%%/citestylex/elements/text.html
-%%DOCSDIR%%/citestylex/elements/texted.html
-%%DOCSDIR%%/citestylex/elements/textmultiple.html
-%%DOCSDIR%%/citestylex/elements/textsingle.html
-%%DOCSDIR%%/citestylex/elements/threeseps.html
-%%DOCSDIR%%/citestylex/elements/threesepseach.html
-%%DOCSDIR%%/citestylex/elements/threesepslast.html
-%%DOCSDIR%%/citestylex/elements/title.html
-%%DOCSDIR%%/citestylex/elements/twoseps.html
-%%DOCSDIR%%/citestylex/elements/typeofwork.html
-%%DOCSDIR%%/citestylex/elements/url.html
-%%DOCSDIR%%/citestylex/elements/userdef.html
-%%DOCSDIR%%/citestylex/elements/volume.html
-%%DOCSDIR%%/citestylex/elements/yearonly.html
-%%DOCSDIR%%/citestylex/entities.html
-%%DOCSDIR%%/citestylex/index.html
-%%DOCSDIR%%/citestylex/notations.html
-%%DOCSDIR%%/index.html
-%%DOCSDIR%%/refdb-manual/ch01.html
-%%DOCSDIR%%/refdb-manual/ch01s02.html
-%%DOCSDIR%%/refdb-manual/ch01s03.html
-%%DOCSDIR%%/refdb-manual/ch01s04.html
-%%DOCSDIR%%/refdb-manual/ch01s05.html
-%%DOCSDIR%%/refdb-manual/ch01s06.html
-%%DOCSDIR%%/refdb-manual/ch01s07.html
-%%DOCSDIR%%/refdb-manual/ch02.html
-%%DOCSDIR%%/refdb-manual/ch02s02.html
-%%DOCSDIR%%/refdb-manual/ch02s03.html
-%%DOCSDIR%%/refdb-manual/ch02s04.html
-%%DOCSDIR%%/refdb-manual/ch02s05.html
-%%DOCSDIR%%/refdb-manual/ch03.html
-%%DOCSDIR%%/refdb-manual/ch03s02.html
-%%DOCSDIR%%/refdb-manual/ch04.html
-%%DOCSDIR%%/refdb-manual/ch04s02.html
-%%DOCSDIR%%/refdb-manual/ch04s03.html
-%%DOCSDIR%%/refdb-manual/ch04s04.html
-%%DOCSDIR%%/refdb-manual/ch04s05.html
-%%DOCSDIR%%/refdb-manual/ch04s06.html
-%%DOCSDIR%%/refdb-manual/ch04s07.html
-%%DOCSDIR%%/refdb-manual/ch04s08.html
-%%DOCSDIR%%/refdb-manual/ch04s09.html
-%%DOCSDIR%%/refdb-manual/ch04s10.html
-%%DOCSDIR%%/refdb-manual/ch04s11.html
-%%DOCSDIR%%/refdb-manual/ch05.html
-%%DOCSDIR%%/refdb-manual/ch05s02.html
-%%DOCSDIR%%/refdb-manual/ch05s03.html
-%%DOCSDIR%%/refdb-manual/ch05s04.html
-%%DOCSDIR%%/refdb-manual/ch05s05.html
-%%DOCSDIR%%/refdb-manual/ch05s06.html
-%%DOCSDIR%%/refdb-manual/ch05s07.html
-%%DOCSDIR%%/refdb-manual/ch05s08.html
-%%DOCSDIR%%/refdb-manual/ch05s09.html
-%%DOCSDIR%%/refdb-manual/ch06.html
-%%DOCSDIR%%/refdb-manual/ch06s02.html
-%%DOCSDIR%%/refdb-manual/ch06s03.html
-%%DOCSDIR%%/refdb-manual/ch06s04.html
-%%DOCSDIR%%/refdb-manual/ch06s05.html
-%%DOCSDIR%%/refdb-manual/ch07.html
-%%DOCSDIR%%/refdb-manual/ch07s02.html
-%%DOCSDIR%%/refdb-manual/ch07s03.html
-%%DOCSDIR%%/refdb-manual/ch07s04.html
-%%DOCSDIR%%/refdb-manual/ch07s05.html
-%%DOCSDIR%%/refdb-manual/ch07s06.html
-%%DOCSDIR%%/refdb-manual/ch08.html
-%%DOCSDIR%%/refdb-manual/ch08s02.html
-%%DOCSDIR%%/refdb-manual/ch08s03.html
-%%DOCSDIR%%/refdb-manual/ch08s04.html
-%%DOCSDIR%%/refdb-manual/ch08s05.html
-%%DOCSDIR%%/refdb-manual/ch08s06.html
-%%DOCSDIR%%/refdb-manual/ch08s07.html
-%%DOCSDIR%%/refdb-manual/ch08s08.html
-%%DOCSDIR%%/refdb-manual/ch08s09.html
-%%DOCSDIR%%/refdb-manual/ch08s10.html
-%%DOCSDIR%%/refdb-manual/ch08s11.html
-%%DOCSDIR%%/refdb-manual/ch09.html
-%%DOCSDIR%%/refdb-manual/ch09s02.html
-%%DOCSDIR%%/refdb-manual/ch09s03.html
-%%DOCSDIR%%/refdb-manual/ch09s04.html
-%%DOCSDIR%%/refdb-manual/ch09s05.html
-%%DOCSDIR%%/refdb-manual/ch09s06.html
-%%DOCSDIR%%/refdb-manual/ch10.html
-%%DOCSDIR%%/refdb-manual/ch10s02.html
-%%DOCSDIR%%/refdb-manual/ch10s03.html
-%%DOCSDIR%%/refdb-manual/ch11.html
-%%DOCSDIR%%/refdb-manual/ch11s02.html
-%%DOCSDIR%%/refdb-manual/ch12.html
-%%DOCSDIR%%/refdb-manual/ch13.html
-%%DOCSDIR%%/refdb-manual/ch14.html
-%%DOCSDIR%%/refdb-manual/ch14s02.html
-%%DOCSDIR%%/refdb-manual/ch14s03.html
-%%DOCSDIR%%/refdb-manual/ch14s04.html
-%%DOCSDIR%%/refdb-manual/ch14s05.html
-%%DOCSDIR%%/refdb-manual/ch15.html
-%%DOCSDIR%%/refdb-manual/ch16.html
-%%DOCSDIR%%/refdb-manual/ch16s02.html
-%%DOCSDIR%%/refdb-manual/ch16s03.html
-%%DOCSDIR%%/refdb-manual/ch16s04.html
-%%DOCSDIR%%/refdb-manual/ch16s05.html
-%%DOCSDIR%%/refdb-manual/ch16s06.html
-%%DOCSDIR%%/refdb-manual/ch16s07.html
-%%DOCSDIR%%/refdb-manual/ch16s08.html
-%%DOCSDIR%%/refdb-manual/ch16s09.html
-%%DOCSDIR%%/refdb-manual/ch16s10.html
-%%DOCSDIR%%/refdb-manual/ch16s11.html
-%%DOCSDIR%%/refdb-manual/ch16s12.html
-%%DOCSDIR%%/refdb-manual/ch16s13.html
-%%DOCSDIR%%/refdb-manual/ch17.html
-%%DOCSDIR%%/refdb-manual/ch17s02.html
-%%DOCSDIR%%/refdb-manual/ch17s03.html
-%%DOCSDIR%%/refdb-manual/ch17s04.html
-%%DOCSDIR%%/refdb-manual/ch17s05.html
-%%DOCSDIR%%/refdb-manual/ch18.html
-%%DOCSDIR%%/refdb-manual/ch18s02.html
-%%DOCSDIR%%/refdb-manual/ch19.html
-%%DOCSDIR%%/refdb-manual/ch19s02.html
-%%DOCSDIR%%/refdb-manual/ch19s03.html
-%%DOCSDIR%%/refdb-manual/ch20.html
-%%DOCSDIR%%/refdb-manual/ch20s02.html
-%%DOCSDIR%%/refdb-manual/ch21.html
-%%DOCSDIR%%/refdb-manual/ch21s02.html
-%%DOCSDIR%%/refdb-manual/ch22.html
-%%DOCSDIR%%/refdb-manual/ch22s02.html
-%%DOCSDIR%%/refdb-manual/ch22s03.html
-%%DOCSDIR%%/refdb-manual/ch22s04.html
-%%DOCSDIR%%/refdb-manual/ch23.html
-%%DOCSDIR%%/refdb-manual/ch23s02.html
-%%DOCSDIR%%/refdb-manual/ch23s03.html
-%%DOCSDIR%%/refdb-manual/ch23s04.html
-%%DOCSDIR%%/refdb-manual/co01.html
-%%DOCSDIR%%/refdb-manual/index.html
-%%DOCSDIR%%/refdb-manual/manual.css
-%%DOCSDIR%%/refdb-manual/pr01.html
-%%DOCSDIR%%/refdb-manual/pr01s02.html
-%%DOCSDIR%%/refdb-manual/pr01s03.html
-%%DOCSDIR%%/refdb-manual/pt01.html
-%%DOCSDIR%%/refdb-manual/pt02.html
-%%DOCSDIR%%/refdb-manual/pt03.html
-%%DOCSDIR%%/refdb-manual/pt04.html
-%%DOCSDIR%%/refdb-manual/pt05.html
-%%DOCSDIR%%/refdb-manual/re01.html
-%%DOCSDIR%%/refdb-manual/re02.html
-%%DOCSDIR%%/refdb-manual/re03.html
-%%DOCSDIR%%/refdb-manual/re04.html
-%%DOCSDIR%%/refdb-manual/re05.html
-%%DOCSDIR%%/refdb-manual/re06.html
-%%DOCSDIR%%/refdb-manual/re07.html
-%%DOCSDIR%%/refdb-manual/re08.html
-%%DOCSDIR%%/refdb-manual/re09.html
-%%DOCSDIR%%/refdb-manual/re10.html
-%%DOCSDIR%%/refdb-manual/re11.html
-%%DOCSDIR%%/refdb-manual/re12.html
-%%DOCSDIR%%/refdb-manual/re13.html
-%%DOCSDIR%%/refdb-manual/re14.html
-%%DOCSDIR%%/refdb-manual/re15.html
-%%DOCSDIR%%/refdb-manual/re16.html
-%%DOCSDIR%%/refdb-manual/re17.html
-%%DOCSDIR%%/refdb-manual/re18.html
-%%DOCSDIR%%/refdb-manual/re19.html
-%%DOCSDIR%%/refdb-manual/re20.html
-%%DOCSDIR%%/refdb-manual/re21.html
-%%DOCSDIR%%/refdb-manual/re22.html
-%%DOCSDIR%%/refdb-manual/re23.html
-%%DOCSDIR%%/refdb-manual/re24.html
-%%DOCSDIR%%/refdb-manual/re25.html
-%%DOCSDIR%%/refdb-manual/re26.html
-%%DOCSDIR%%/refdb-manual/refdb-manual.pdf
-%%DOCSDIR%%/refdb-manual/refdbmanualfig1.png
-%%DOCSDIR%%/refdb-manual/refdbmanualfig2.png
-%%DOCSDIR%%/refdb-manual/refdbmanualfig3.png
-%%DOCSDIR%%/refdb-manual/refdbmanualfig4.png
-%%DOCSDIR%%/refdb-manual/refdbmanualfig5.png
-%%DOCSDIR%%/risx/dtdelem.html
-%%DOCSDIR%%/risx/dtdelem/abstract.html
-%%DOCSDIR%%/risx/dtdelem/address.html
-%%DOCSDIR%%/risx/dtdelem/author.html
-%%DOCSDIR%%/risx/dtdelem/availability.html
-%%DOCSDIR%%/risx/dtdelem/city.html
-%%DOCSDIR%%/risx/dtdelem/contents.html
-%%DOCSDIR%%/risx/dtdelem/date.html
-%%DOCSDIR%%/risx/dtdelem/day.html
-%%DOCSDIR%%/risx/dtdelem/endpage.html
-%%DOCSDIR%%/risx/dtdelem/entry.html
-%%DOCSDIR%%/risx/dtdelem/firstname.html
-%%DOCSDIR%%/risx/dtdelem/issue.html
-%%DOCSDIR%%/risx/dtdelem/keyword.html
-%%DOCSDIR%%/risx/dtdelem/lastname.html
-%%DOCSDIR%%/risx/dtdelem/libinfo.html
-%%DOCSDIR%%/risx/dtdelem/link.html
-%%DOCSDIR%%/risx/dtdelem/middlename.html
-%%DOCSDIR%%/risx/dtdelem/misc.html
-%%DOCSDIR%%/risx/dtdelem/month.html
-%%DOCSDIR%%/risx/dtdelem/name.html
-%%DOCSDIR%%/risx/dtdelem/notes.html
-%%DOCSDIR%%/risx/dtdelem/otherinfo.html
-%%DOCSDIR%%/risx/dtdelem/part.html
-%%DOCSDIR%%/risx/dtdelem/pubdate.html
-%%DOCSDIR%%/risx/dtdelem/pubinfo.html
-%%DOCSDIR%%/risx/dtdelem/publication.html
-%%DOCSDIR%%/risx/dtdelem/publisher.html
-%%DOCSDIR%%/risx/dtdelem/reprint.html
-%%DOCSDIR%%/risx/dtdelem/ris.html
-%%DOCSDIR%%/risx/dtdelem/serial.html
-%%DOCSDIR%%/risx/dtdelem/set.html
-%%DOCSDIR%%/risx/dtdelem/startpage.html
-%%DOCSDIR%%/risx/dtdelem/suffix.html
-%%DOCSDIR%%/risx/dtdelem/title.html
-%%DOCSDIR%%/risx/dtdelem/userdef.html
-%%DOCSDIR%%/risx/dtdelem/volume.html
-%%DOCSDIR%%/risx/dtdelem/year.html
-%%DOCSDIR%%/risx/dtdent.html
-%%DOCSDIR%%/risx/ele-desc/abstract.html
-%%DOCSDIR%%/risx/ele-desc/address.html
-%%DOCSDIR%%/risx/ele-desc/author.html
-%%DOCSDIR%%/risx/ele-desc/availability.html
-%%DOCSDIR%%/risx/ele-desc/city.html
-%%DOCSDIR%%/risx/ele-desc/contents.html
-%%DOCSDIR%%/risx/ele-desc/date.html
-%%DOCSDIR%%/risx/ele-desc/day.html
-%%DOCSDIR%%/risx/ele-desc/endpage.html
-%%DOCSDIR%%/risx/ele-desc/entry.html
-%%DOCSDIR%%/risx/ele-desc/firstname.html
-%%DOCSDIR%%/risx/ele-desc/issue.html
-%%DOCSDIR%%/risx/ele-desc/keyword.html
-%%DOCSDIR%%/risx/ele-desc/lastname.html
-%%DOCSDIR%%/risx/ele-desc/libinfo.html
-%%DOCSDIR%%/risx/ele-desc/middlename.html
-%%DOCSDIR%%/risx/ele-desc/misc.html
-%%DOCSDIR%%/risx/ele-desc/month.html
-%%DOCSDIR%%/risx/ele-desc/name.html
-%%DOCSDIR%%/risx/ele-desc/notes.html
-%%DOCSDIR%%/risx/ele-desc/otherinfo.html
-%%DOCSDIR%%/risx/ele-desc/part.html
-%%DOCSDIR%%/risx/ele-desc/pubdate.html
-%%DOCSDIR%%/risx/ele-desc/pubinfo.html
-%%DOCSDIR%%/risx/ele-desc/publication.html
-%%DOCSDIR%%/risx/ele-desc/publisher.html
-%%DOCSDIR%%/risx/ele-desc/reprint.html
-%%DOCSDIR%%/risx/ele-desc/ris.html
-%%DOCSDIR%%/risx/ele-desc/serial.html
-%%DOCSDIR%%/risx/ele-desc/set.html
-%%DOCSDIR%%/risx/ele-desc/startpage.html
-%%DOCSDIR%%/risx/ele-desc/suffix.html
-%%DOCSDIR%%/risx/ele-desc/title.html
-%%DOCSDIR%%/risx/ele-desc/url.html
-%%DOCSDIR%%/risx/ele-desc/userdef.html
-%%DOCSDIR%%/risx/ele-desc/volume.html
-%%DOCSDIR%%/risx/ele-desc/year.html
-%%DOCSDIR%%/risx/elements.html
-%%DOCSDIR%%/risx/elements/abstract.html
-%%DOCSDIR%%/risx/elements/address.html
-%%DOCSDIR%%/risx/elements/author.html
-%%DOCSDIR%%/risx/elements/availability.html
-%%DOCSDIR%%/risx/elements/city.html
-%%DOCSDIR%%/risx/elements/contents.html
-%%DOCSDIR%%/risx/elements/date.html
-%%DOCSDIR%%/risx/elements/day.html
-%%DOCSDIR%%/risx/elements/endpage.html
-%%DOCSDIR%%/risx/elements/entry.html
-%%DOCSDIR%%/risx/elements/firstname.html
-%%DOCSDIR%%/risx/elements/issue.html
-%%DOCSDIR%%/risx/elements/keyword.html
-%%DOCSDIR%%/risx/elements/lastname.html
-%%DOCSDIR%%/risx/elements/libinfo.html
-%%DOCSDIR%%/risx/elements/link.html
-%%DOCSDIR%%/risx/elements/middlename.html
-%%DOCSDIR%%/risx/elements/misc.html
-%%DOCSDIR%%/risx/elements/month.html
-%%DOCSDIR%%/risx/elements/name.html
-%%DOCSDIR%%/risx/elements/notes.html
-%%DOCSDIR%%/risx/elements/otherinfo.html
-%%DOCSDIR%%/risx/elements/part.html
-%%DOCSDIR%%/risx/elements/pubdate.html
-%%DOCSDIR%%/risx/elements/pubinfo.html
-%%DOCSDIR%%/risx/elements/publication.html
-%%DOCSDIR%%/risx/elements/publisher.html
-%%DOCSDIR%%/risx/elements/reprint.html
-%%DOCSDIR%%/risx/elements/ris.html
-%%DOCSDIR%%/risx/elements/serial.html
-%%DOCSDIR%%/risx/elements/set.html
-%%DOCSDIR%%/risx/elements/startpage.html
-%%DOCSDIR%%/risx/elements/suffix.html
-%%DOCSDIR%%/risx/elements/title.html
-%%DOCSDIR%%/risx/elements/url.html
-%%DOCSDIR%%/risx/elements/userdef.html
-%%DOCSDIR%%/risx/elements/volume.html
-%%DOCSDIR%%/risx/elements/year.html
-%%DOCSDIR%%/risx/entities.html
-%%DOCSDIR%%/risx/index.html
-%%DOCSDIR%%/risx/notations.html
-%%DOCSDIR%%/xnote/dtdelem.html
-%%DOCSDIR%%/xnote/dtdelem/content.html
-%%DOCSDIR%%/xnote/dtdelem/keyword.html
-%%DOCSDIR%%/xnote/dtdelem/link.html
-%%DOCSDIR%%/xnote/dtdelem/title.html
-%%DOCSDIR%%/xnote/dtdelem/ulink.html
-%%DOCSDIR%%/xnote/dtdelem/xnote.html
-%%DOCSDIR%%/xnote/dtdelem/xnoteset.html
-%%DOCSDIR%%/xnote/dtdent.html
-%%DOCSDIR%%/xnote/ele-desc/content.html
-%%DOCSDIR%%/xnote/ele-desc/keyword.html
-%%DOCSDIR%%/xnote/ele-desc/link.html
-%%DOCSDIR%%/xnote/ele-desc/title.html
-%%DOCSDIR%%/xnote/ele-desc/ulink.html
-%%DOCSDIR%%/xnote/ele-desc/xnote.html
-%%DOCSDIR%%/xnote/ele-desc/xnoteset.html
-%%DOCSDIR%%/xnote/elements.html
-%%DOCSDIR%%/xnote/elements/content.html
-%%DOCSDIR%%/xnote/elements/keyword.html
-%%DOCSDIR%%/xnote/elements/link.html
-%%DOCSDIR%%/xnote/elements/title.html
-%%DOCSDIR%%/xnote/elements/ulink.html
-%%DOCSDIR%%/xnote/elements/xnote.html
-%%DOCSDIR%%/xnote/elements/xnoteset.html
-%%DOCSDIR%%/xnote/entities.html
-%%DOCSDIR%%/xnote/index.html
-%%DOCSDIR%%/xnote/notations.html
-@dirrm share/refdb/xsl/tei-refdb-xsl/tei-lib
-@dirrm share/refdb/xsl/tei-refdb-xsl/tei-html
-@dirrm share/refdb/xsl/tei-refdb-xsl/tei-fo
-@dirrm share/refdb/xsl/tei-refdb-xsl
-@dirrm share/refdb/xsl/docbk-refdb-xsl/docbk-xhtml
-@dirrm share/refdb/xsl/docbk-refdb-xsl/docbk-lib
-@dirrm share/refdb/xsl/docbk-refdb-xsl/docbk-html
-@dirrm share/refdb/xsl/docbk-refdb-xsl/docbk-fo
-@dirrm share/refdb/xsl/docbk-refdb-xsl
-@dirrm share/refdb/xsl/common-refdb
-@dirrm share/refdb/xsl
-@dirrm share/refdb/www/xsl
-@dirrm share/refdb/www/includes
-@dirrm share/refdb/www/images
-@dirrm share/refdb/www/css
-@dirrm share/refdb/www
-@dirrm share/refdb/styles
-@dirrm share/refdb/sru
-@dirrm share/refdb/sql
-@dirrm share/refdb/examples
-@dirrm share/refdb/dtd
-@dirrm share/refdb/dsssl/print
-@dirrm share/refdb/dsssl/lib
-@dirrm share/refdb/dsssl/html
-@dirrm share/refdb/dsssl
-@dirrm share/refdb/declarations
-@dirrm share/refdb/db
-@dirrm share/refdb
-@dirrm etc/refdb
-@dirrm %%DOCSDIR%%/xnote/elements
-@dirrm %%DOCSDIR%%/xnote/ele-desc
-@dirrm %%DOCSDIR%%/xnote/dtdelem
-@dirrm %%DOCSDIR%%/xnote
-@dirrm %%DOCSDIR%%/risx/elements
-@dirrm %%DOCSDIR%%/risx/ele-desc
-@dirrm %%DOCSDIR%%/risx/dtdelem
-@dirrm %%DOCSDIR%%/risx
-@dirrm %%DOCSDIR%%/refdb-manual
-@dirrm %%DOCSDIR%%/citestylex/elements
-@dirrm %%DOCSDIR%%/citestylex/ele-desc
-@dirrm %%DOCSDIR%%/citestylex/dtdelem
-@dirrm %%DOCSDIR%%/citestylex
-@dirrm %%DOCSDIR%%/citationlistx/elements
-@dirrm %%DOCSDIR%%/citationlistx/ele-desc
-@dirrm %%DOCSDIR%%/citationlistx/dtdelem
-@dirrm %%DOCSDIR%%/citationlistx
-@dirrm %%DOCSDIR%%
-@exec mkdir -p %D/share/refdb/db
+@exec mkdir -p %D/var/lib/refdb/db
+@exec mkdir -p %D/var/log
+@exec mkdir -p %D/var/run
+@dirrm %%ETCDIR%%
+@dirrm %%DATADIR%%/db
+@dirrm %%DATADIR%%/declarations
+@dirrm %%DATADIR%%/dsssl/html
+@dirrm %%DATADIR%%/dsssl/lib
+@dirrm %%DATADIR%%/dsssl/print
+@dirrm %%DATADIR%%/dsssl
+@dirrm %%DATADIR%%/dtd
+@dirrm %%DATADIR%%/examples
+@dirrm %%DATADIR%%/sql
+@dirrm %%DATADIR%%/sru
+@dirrm %%DATADIR%%/styles
+@dirrm %%DATADIR%%/www/css
+@dirrm %%DATADIR%%/www/images
+@dirrm %%DATADIR%%/www/includes
+@dirrm %%DATADIR%%/www/xsl
+@dirrm %%DATADIR%%/www
+@dirrm %%DATADIR%%/xsl/common-refdb
+@dirrm %%DATADIR%%/xsl/docbk-refdb-xsl/docbk-fo
+@dirrm %%DATADIR%%/xsl/docbk-refdb-xsl/docbk-html
+@dirrm %%DATADIR%%/xsl/docbk-refdb-xsl/docbk-lib
+@dirrm %%DATADIR%%/xsl/docbk-refdb-xsl/docbk-xhtml
+@dirrm %%DATADIR%%/xsl/docbk-refdb-xsl
+@dirrm %%DATADIR%%/xsl/tei-refdb-xsl/tei-fo
+@dirrm %%DATADIR%%/xsl/tei-refdb-xsl/tei-html
+@dirrm %%DATADIR%%/xsl/tei-refdb-xsl/tei-lib
+@dirrm %%DATADIR%%/xsl/tei-refdb-xsl
+@dirrm %%DATADIR%%/xsl
+@dirrm %%DATADIR%%
+@dirrm var/lib/refdb/db
+@dirrm var/lib/refdb
+@dirrmtry var/lib
+@dirrmtry var/log
+@dirrmtry var/run
+@dirrmtry var

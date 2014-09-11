@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	redis
-DISTVERSION=	2.8.11
+DISTVERSION=	2.8.14
 CATEGORIES=	databases
 MASTER_SITES=	http://download.redis.io/releases/
 
@@ -25,13 +25,14 @@ TESTS_DESC=	Install lang/tcl for redis unit tests
 .if ${PORT_OPTIONS:MLUA}
 USES+=		lua:51
 EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-src-Makefile.lua
-CFLAGS+=	-fPIC
-LDFLAGS+=	-Wl,-E
 .endif
 
 .if ${PORT_OPTIONS:MLUAJIT}
 LIB_DEPENDS+=	libluajit-5.1.so:${PORTSDIR}/lang/luajit
 EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-src-Makefile.luajit
+.endif
+
+.if ${PORT_OPTIONS:MLUA} || ${PORT_OPTIONS:MLUAJIT}
 CFLAGS+=	-fPIC
 LDFLAGS+=	-Wl,-E
 .endif

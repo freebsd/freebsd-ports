@@ -3,7 +3,7 @@
 
 PORTNAME=	umfpack
 PORTVERSION=	4.4
-PORTREVISION=	6
+PORTREVISION=	7
 PORTEPOCH=	2
 CATEGORIES=	math
 MASTER_SITES=	http://garr.dl.sourceforge.net/sourceforge/elmerfem/

@@ -1,12 +1,14 @@
-Index: cWnn/jserver/Makefile.in
-===================================================================
-RCS file: /home/cvs/private/hrs/freewnn/cWnn/jserver/Makefile.in,v
-retrieving revision 1.1.1.1
-retrieving revision 1.2
-diff -u -p -r1.1.1.1 -r1.2
---- cWnn/jserver/Makefile.in	20 Dec 2008 07:13:30 -0000	1.1.1.1
-+++ cWnn/jserver/Makefile.in	2 Jan 2009 21:09:35 -0000	1.2
-@@ -82,6 +82,8 @@ SRC20= $(CWNNETCSRC)/getopt.c
+--- ./cWnn/jserver/Makefile.in.orig	2004-05-22 01:39:32.000000000 +0900
++++ ./cWnn/jserver/Makefile.in	2014-09-10 01:29:51.000000000 +0900
+@@ -38,7 +38,6 @@
+  JSERVERDEFINES = -DJSERVER -DWRITE_CHECK
+        INCLUDES = -I$(CWNNINCLUDESRC) -I$(top_builddir)
+         DEFINES = $(CWNNDEFINES) $(JSERVERDEFINES) $(WNNTERM) $(CWNNLANGDEF)
+-LOCAL_INSTFLAGS = $(INSTUIDFLAGS) -o $(WNNOWNER)
+   SERVERINITDEF = -DSERVER_INIT_FILE=\"/$(CWNNLANG)/cserverrc\"
+     HINSIDEFINE = -DHINSIDATA_FILE=\"/$(CWNNLANG)/cixing.data\"
+  TSERVERINITDEF = -DSERVER_INIT_FILE=\"/$(TWNNLANG)/tserverrc\"
+@@ -82,6 +81,8 @@
  OBJ20= getopt.o
  SRC21= $(CWNNETCSRC)/getopt1.c
  OBJ21= getopt1.o
@@ -15,7 +17,7 @@ diff -u -p -r1.1.1.1 -r1.2
  TSRC0= de_t.c
  TOBJ0= de_t.o
  TSRCGETHINSI= gethinsi_t.c
-@@ -90,11 +92,11 @@ OBJSUPPORT = @JS_SUPPORTOBJS@
+@@ -90,11 +91,11 @@
  TSRCS= $(TSRC0) $(TSRCGETHINSI)
  SRCS= $(SRC0) $(SRC1) $(SRC3) $(SRC4) $(SRC5) $(SRC6) $(SRC7) \
      $(SRCGETHINSI) $(SRC9) $(SRC10) $(SRC11) $(SRC12) $(SRC13) $(SRC14) \
@@ -29,7 +31,22 @@ diff -u -p -r1.1.1.1 -r1.2
  
  TOBJS= $(TOBJ0) $(OBJ1) $(OBJ3) $(OBJ4) $(OBJ5) $(OBJ6) $(OBJ7) \
      $(TOBJGETHINSI) $(OBJ9) $(OBJ10) $(OBJ11) $(OBJ12) $(OBJ13) $(OBJ14) \
-@@ -609,6 +611,9 @@ $(OBJ20) : $(SRC20) $(CWNNINCLUDESRC)/ge
+@@ -129,12 +130,12 @@
+ install:: cserver
+ 	@if [ -d $(DESTDIR)$(CWNNBINDIR) ]; then set +x; \
+ 	else (set -x; $(MKDIRHIER) $(DESTDIR)$(CWNNBINDIR)); fi
+-	$(LIBTOOL) --mode=install $(INSTALL) $(INSTPGMFLAGS) $(LOCAL_INSTFLAGS) cserver $(DESTDIR)$(CWNNBINDIR)/cserver
++	$(LIBTOOL) --mode=install $(INSTALL) $(INSTPGMFLAGS) cserver $(DESTDIR)$(CWNNBINDIR)/cserver
+ 
+ install:: tserver
+ 	@if [ -d $(DESTDIR)$(CWNNBINDIR) ]; then set +x; \
+ 	else (set -x; $(MKDIRHIER) $(DESTDIR)$(CWNNBINDIR)); fi
+-	$(LIBTOOL) --mode=install $(INSTALL) $(INSTPGMFLAGS) $(LOCAL_INSTFLAGS) tserver $(DESTDIR)$(CWNNBINDIR)/tserver
++	$(LIBTOOL) --mode=install $(INSTALL) $(INSTPGMFLAGS) tserver $(DESTDIR)$(CWNNBINDIR)/tserver
+ 
+ includes:: $(HDRS) $(SRC0) $(SRC1) $(TSRCS)
+ 
+@@ -609,6 +610,9 @@
  $(OBJ21) : $(SRC21) $(CWNNINCLUDESRC)/getopt.h
  	$(CC) -c $(CFLAGS)  $(CWNNETCSRC)/`basename $@ .o`.c
  

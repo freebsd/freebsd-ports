@@ -3,6 +3,7 @@
 
 PORTNAME=	seaview
 PORTVERSION=	4.5.2
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	biology
 MASTER_SITES=	http://doua.prabi.fr/software/seaview_data/ \

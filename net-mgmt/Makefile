@@ -324,6 +324,5 @@
     SUBDIR += zabbix22-frontend
     SUBDIR += zabbix22-proxy
     SUBDIR += zabbix22-server
-    SUBDIR += zenoss
 
 .include <bsd.port.subdir.mk>

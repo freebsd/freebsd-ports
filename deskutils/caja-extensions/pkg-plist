@@ -1,0 +1,83 @@
+bin/caja-sendto
+include/caja-sendto/caja-sendto-plugin.h
+lib/caja-sendto/plugins/libnstburn.so
+lib/caja-sendto/plugins/libnstemailclient.so
+lib/caja-sendto/plugins/libnstgajim.so
+lib/caja-sendto/plugins/libnstpidgin.so
+lib/caja-sendto/plugins/libnstremovable_devices.so
+lib/caja-sendto/plugins/libnstupnp.so
+lib/caja/extensions-2.0/libcaja-gksu.so
+lib/caja/extensions-2.0/libcaja-image-converter.so
+lib/caja/extensions-2.0/libcaja-open-terminal.so
+lib/caja/extensions-2.0/libcaja-sendto.so
+lib/caja/extensions-2.0/libcaja-share.so
+libdata/pkgconfig/caja-sendto.pc
+man/man1/caja-sendto.1.gz
+share/MateConf/gsettings/caja-open-terminal.convert
+share/MateConf/gsettings/caja-sendto-convert
+%%DATADIR%%/caja-image-resize.ui
+%%DATADIR%%/caja-image-rotate.ui
+%%DATADIR%%/caja-sendto.ui
+%%DATADIR%%/share-dialog.ui
+share/glib-2.0/schemas/org.mate.Caja.Sendto.gschema.xml
+share/glib-2.0/schemas/org.mate.caja-open-terminal.gschema.xml
+share/gtk-doc/html/caja-sendto/api-index-full.html
+share/gtk-doc/html/caja-sendto/caja-sendto-caja-sendto-plugin.html
+share/gtk-doc/html/caja-sendto/caja-sendto.devhelp2
+share/gtk-doc/html/caja-sendto/ch01.html
+share/gtk-doc/html/caja-sendto/home.png
+share/gtk-doc/html/caja-sendto/index.html
+share/gtk-doc/html/caja-sendto/index.sgml
+share/gtk-doc/html/caja-sendto/left-insensitive.png
+share/gtk-doc/html/caja-sendto/left.png
+share/gtk-doc/html/caja-sendto/right-insensitive.png
+share/gtk-doc/html/caja-sendto/right.png
+share/gtk-doc/html/caja-sendto/style.css
+share/gtk-doc/html/caja-sendto/up-insensitive.png
+share/gtk-doc/html/caja-sendto/up.png
+share/locale/am/LC_MESSAGES/caja-extensions.mo
+share/locale/ar/LC_MESSAGES/caja-extensions.mo
+share/locale/be/LC_MESSAGES/caja-extensions.mo
+share/locale/bg/LC_MESSAGES/caja-extensions.mo
+share/locale/cmn/LC_MESSAGES/caja-extensions.mo
+share/locale/cs/LC_MESSAGES/caja-extensions.mo
+share/locale/da/LC_MESSAGES/caja-extensions.mo
+share/locale/de/LC_MESSAGES/caja-extensions.mo
+share/locale/el/LC_MESSAGES/caja-extensions.mo
+share/locale/en_AU/LC_MESSAGES/caja-extensions.mo
+share/locale/en_GB/LC_MESSAGES/caja-extensions.mo
+share/locale/es/LC_MESSAGES/caja-extensions.mo
+share/locale/eu/LC_MESSAGES/caja-extensions.mo
+share/locale/fr/LC_MESSAGES/caja-extensions.mo
+share/locale/gl/LC_MESSAGES/caja-extensions.mo
+share/locale/hr/LC_MESSAGES/caja-extensions.mo
+share/locale/hu/LC_MESSAGES/caja-extensions.mo
+share/locale/it/LC_MESSAGES/caja-extensions.mo
+share/locale/kk/LC_MESSAGES/caja-extensions.mo
+share/locale/ko/LC_MESSAGES/caja-extensions.mo
+share/locale/mk/LC_MESSAGES/caja-extensions.mo
+share/locale/ms/LC_MESSAGES/caja-extensions.mo
+share/locale/nl/LC_MESSAGES/caja-extensions.mo
+share/locale/pl/LC_MESSAGES/caja-extensions.mo
+share/locale/pt/LC_MESSAGES/caja-extensions.mo
+share/locale/pt_BR/LC_MESSAGES/caja-extensions.mo
+share/locale/ru/LC_MESSAGES/caja-extensions.mo
+share/locale/sk/LC_MESSAGES/caja-extensions.mo
+share/locale/sl/LC_MESSAGES/caja-extensions.mo
+share/locale/sv/LC_MESSAGES/caja-extensions.mo
+share/locale/tr/LC_MESSAGES/caja-extensions.mo
+share/locale/uk/LC_MESSAGES/caja-extensions.mo
+share/locale/vi/LC_MESSAGES/caja-extensions.mo
+share/locale/zh_CN/LC_MESSAGES/caja-extensions.mo
+share/locale/zh_TW/LC_MESSAGES/caja-extensions.mo
+@dirrmtry share/locale/kk/LC_MESSAGES
+@dirrmtry share/locale/kk
+@dirrmtry share/locale/cmn/LC_MESSAGES
+@dirrmtry share/locale/cmn
+@dirrmtry share/gtk-doc/html/caja-sendto
+@dirrmtry share/gtk-doc/html
+@dirrmtry share/gtk-doc
+@dirrmtry %%DATADIR%%
+@dirrm lib/caja-sendto/plugins
+@dirrm lib/caja-sendto
+@dirrm include/caja-sendto

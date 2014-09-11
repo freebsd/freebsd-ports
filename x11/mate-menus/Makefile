@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mate-menus
-PORTVERSION=	1.6.0
-PORTREVISION=	2
+PORTVERSION=	1.8.0
 CATEGORIES=	x11 mate
 MASTER_SITES=	MATE
 DIST_SUBDIR=	mate
@@ -13,16 +12,13 @@ COMMENT=	Implementation of the FreeDesktop Desktop Menu Spec
 
 PORTSCOUT=	limitw:1,even
 
-USES=		gettext gmake libtool pathfix pkgconfig tar:xz
-USE_MATE=	autogen common:build intlhack
-USE_GNOME=	glib20 gnomehier introspection:build
-USE_PYTHON=	yes
+USES=		gettext gmake libtool pathfix pkgconfig \
+		python tar:xz
+USE_GNOME=	glib20 gnomehier intlhack introspection:build
 USE_LDCONFIG=	yes
-USE_AUTOTOOLS=	aclocal:env autoconf:env automake:env libtoolize:env
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-PATHFIX_MAKEFILEIN=	Makefile.*
 INSTALL_TARGET=	install-strip
 
 post-patch:

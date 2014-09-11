@@ -65,6 +65,7 @@
     SUBDIR += licq-msn
     SUBDIR += licq-osd
     SUBDIR += licq-qt-gui
+    SUBDIR += linux-instantbird
     SUBDIR += loudmouth
     SUBDIR += mbpurple
     SUBDIR += mcabber
@@ -133,6 +134,7 @@
     SUBDIR += ramblercontacts
     SUBDIR += rubygem-earthquake
     SUBDIR += rubygem-hipchat
+    SUBDIR += rubygem-lita
     SUBDIR += rubygem-termtter
     SUBDIR += rubygem-tinder
     SUBDIR += sendxmpp

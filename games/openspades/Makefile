@@ -3,6 +3,7 @@
 
 PORTNAME=	openspades
 PORTVERSION=	0.0.12
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://yvt.jp/files/programs/osppaks/:data
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} DevPaks27.zip:data

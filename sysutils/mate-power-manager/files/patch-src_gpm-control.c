@@ -1,26 +1,26 @@
---- src/gpm-control.c.orig	2014-04-06 20:51:17.215212718 +0000
-+++ src/gpm-control.c	2014-04-06 20:53:11.708207714 +0000
-@@ -289,7 +289,11 @@
+--- src/gpm-control.c.orig	2014-04-20 19:32:33.624174324 +0000
++++ src/gpm-control.c	2014-04-20 19:33:52.860168682 +0000
+@@ -290,7 +290,11 @@
  		g_object_unref(proxy);
  	}
  	else {
-+#ifdef HAVE_OLD_UPOWER
++#ifdef HAVE_OLD_UPOWER		
  		ret = up_client_suspend_sync (control->priv->client, NULL, error);
 +#else
-+		ret = FALSE;
++                ret = FALSE;
 +#endif
  	}
  
  	egg_debug ("emitting resume");
-@@ -399,7 +403,11 @@
+@@ -400,7 +404,11 @@
  		}
  	}
  	else {
-+#ifdef HAVE_OLD_UPOWER
++#ifdef HAVE_OLD_UPOWER		
  		ret = up_client_hibernate_sync (control->priv->client, NULL, error);
 +#else
-+		ret = FALSE;
-+#endif
++                ret = FALSE;
++#endif		
  	}
  
  	egg_debug ("emitting resume");

@@ -3,7 +3,7 @@
 
 PORTNAME=	gnuboy
 PORTVERSION=	1.0.3
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	emulators games
 MASTER_SITES=	http://www.sourcefiles.org/Emulators/Videogames/
 

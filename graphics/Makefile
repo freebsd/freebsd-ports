@@ -45,6 +45,7 @@
     SUBDIR += apvlv
     SUBDIR += aqsis
     SUBDIR += asciio
+    SUBDIR += atril
     SUBDIR += autopano-sift-c
     SUBDIR += autoq3d
     SUBDIR += autotrace
@@ -141,6 +142,7 @@
     SUBDIR += eog
     SUBDIR += eog-plugins
     SUBDIR += eos-movrec
+    SUBDIR += eom
     SUBDIR += epdfview
     SUBDIR += epeg
     SUBDIR += epix
@@ -575,8 +577,6 @@
     SUBDIR += mapnik
     SUBDIR += mapserver
     SUBDIR += mapyrus
-    SUBDIR += mate-document-viewer
-    SUBDIR += mate-image-viewer
     SUBDIR += megapov
     SUBDIR += mesa-demos
     SUBDIR += meshviewer
@@ -728,7 +728,6 @@
     SUBDIR += panoglview
     SUBDIR += panomatic
     SUBDIR += partio
-    SUBDIR += passepartout
     SUBDIR += pdf2svg
     SUBDIR += pear-Horde_Image
     SUBDIR += pear-IO_SWF

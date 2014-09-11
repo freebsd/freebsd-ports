@@ -3,7 +3,7 @@
 
 PORTNAME=	atslog
 PORTVERSION=	2.1.1
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	comms
 MASTER_SITES=	BERLIOS
 
@@ -19,12 +19,14 @@ WWW_DESC=	Install web interface
 WWWGD_DESC=	Graphic reports
 
 GNU_CONFIGURE=	yes
-USES=		perl5
+USES=		perl5 shebangfix
 USE_RC_SUBR=	${PORTNAME}d
+SHEBANG_FILES=	include/atslogcleardb.pl.in include/atslogdb.pl.in
 PORTDOCS=	CHANGES ChangeLog DEINSTALL INSTALL LICENSE TODO UPDATING USAGE
 SUB_FILES=	pkg-message
 CONFIGS=	${PORTNAME}.conf.default ${PORTNAME}.conf.default.rus
 CONFIGURE_ARGS+=--localstatedir=/var
+PLIST_SUB=	WWWOWN="${WWWOWN}" WWWGRP="${WWWGRP}"
 OPTIONS_SUB=yes
 
 .include <bsd.port.options.mk>
@@ -102,7 +104,6 @@ do-install:
 	${FIND} -E . -type f ! -iregex "(.*Makefile|.*\.orig)" -exec \
 		${INSTALL_DATA} "{}" "${STAGEDIR}${WWWDIR}/{}" \;
 	${MV} ${STAGEDIR}${WWWDIR}/include/config.inc.php.default ${STAGEDIR}${WWWDIR}/include/config.inc.php.sample
-	${CHOWN} -R ${WWWOWN}:${WWWGRP} ${STAGEDIR}${WWWDIR}
 
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for i in ${PORTDOCS}

@@ -4,6 +4,7 @@ share/backgrounds/mate/abstract/Gulp.png
 share/backgrounds/mate/abstract/Silk.png
 share/backgrounds/mate/abstract/Spring.png
 share/backgrounds/mate/abstract/Waves.png
+share/backgrounds/mate/desktop/Float-into-MATE.png
 share/backgrounds/mate/desktop/GreenTraditional.jpg
 share/backgrounds/mate/desktop/Stripes.png
 share/backgrounds/mate/nature/Aqua.jpg
@@ -19,6 +20,7 @@ share/backgrounds/mate/nature/TwoWings.jpg
 share/backgrounds/mate/nature/Wood.jpg
 share/backgrounds/mate/nature/YellowFlower.jpg
 share/locale/af/LC_MESSAGES/mate-backgrounds.mo
+share/locale/am/LC_MESSAGES/mate-backgrounds.mo
 share/locale/an/LC_MESSAGES/mate-backgrounds.mo
 share/locale/ar/LC_MESSAGES/mate-backgrounds.mo
 share/locale/as/LC_MESSAGES/mate-backgrounds.mo
@@ -30,6 +32,7 @@ share/locale/bn/LC_MESSAGES/mate-backgrounds.mo
 share/locale/bn_IN/LC_MESSAGES/mate-backgrounds.mo
 share/locale/ca/LC_MESSAGES/mate-backgrounds.mo
 share/locale/ca@valencia/LC_MESSAGES/mate-backgrounds.mo
+share/locale/cmn/LC_MESSAGES/mate-backgrounds.mo
 share/locale/cs/LC_MESSAGES/mate-backgrounds.mo
 share/locale/cy/LC_MESSAGES/mate-backgrounds.mo
 share/locale/da/LC_MESSAGES/mate-backgrounds.mo
@@ -37,10 +40,12 @@ share/locale/de/LC_MESSAGES/mate-backgrounds.mo
 share/locale/dz/LC_MESSAGES/mate-backgrounds.mo
 share/locale/el/LC_MESSAGES/mate-backgrounds.mo
 share/locale/en@shaw/LC_MESSAGES/mate-backgrounds.mo
+share/locale/en_AU/LC_MESSAGES/mate-backgrounds.mo
 share/locale/en_CA/LC_MESSAGES/mate-backgrounds.mo
 share/locale/en_GB/LC_MESSAGES/mate-backgrounds.mo
 share/locale/eo/LC_MESSAGES/mate-backgrounds.mo
 share/locale/es/LC_MESSAGES/mate-backgrounds.mo
+share/locale/es_MX/LC_MESSAGES/mate-backgrounds.mo
 share/locale/et/LC_MESSAGES/mate-backgrounds.mo
 share/locale/eu/LC_MESSAGES/mate-backgrounds.mo
 share/locale/fa/LC_MESSAGES/mate-backgrounds.mo
@@ -53,6 +58,7 @@ share/locale/gl/LC_MESSAGES/mate-backgrounds.mo
 share/locale/gu/LC_MESSAGES/mate-backgrounds.mo
 share/locale/he/LC_MESSAGES/mate-backgrounds.mo
 share/locale/hi/LC_MESSAGES/mate-backgrounds.mo
+share/locale/hr/LC_MESSAGES/mate-backgrounds.mo
 share/locale/hu/LC_MESSAGES/mate-backgrounds.mo
 share/locale/hy/LC_MESSAGES/mate-backgrounds.mo
 share/locale/id/LC_MESSAGES/mate-backgrounds.mo
@@ -150,6 +156,8 @@ share/mate-background-properties/mate-nature.xml
 @dirrmtry share/locale/en@shaw
 @dirrmtry share/locale/dz/LC_MESSAGES
 @dirrmtry share/locale/dz
+@dirrmtry share/locale/cmn/LC_MESSAGES
+@dirrmtry share/locale/cmn
 @dirrmtry share/locale/ca@valencia/LC_MESSAGES
 @dirrmtry share/locale/ca@valencia
 @dirrmtry share/locale/bn_IN/LC_MESSAGES

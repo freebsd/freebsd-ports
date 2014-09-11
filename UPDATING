@@ -5,6 +5,32 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20140909:
+  AFFECTS: users seeing build errors about missing *.la files
+  AUTHOR: tijl@FreeBSD.org
+
+  We are in the process of adjusting or, if possible, removing libtool archives
+  (*.la files) from all ports because they can otherwise cause overlinking
+  between packages.  This is the problem where in the dependency chain A->B->C
+  an extra link is added from A to C even if A does not use C directly.  This
+  makes some updates to port C expensive because then both A and B have to be
+  rebuilt instead of just B.
+
+  This is mostly behind the scenes work that you won't notice.  In fact most
+  ports have already been converted.  You may however run into build errors
+  about missing *.la files if a port update in the past went wrong and left
+  behind *.la files with references to other *.la files that are no longer
+  there.  In this case, please run the following command:
+
+  find /usr/local/lib -name '*.la' | xargs grep -l 'libfoo\.la' | xargs pkg which
+  (Replace libfoo\.la with the *.la file that is missing.)
+
+  This command will print a list of *.la files that refer to the missing *.la
+  file and what package they belong to.  First, where it says "not found in the
+  datatbase", remove the *.la file.  After removing all such files, where it
+  says "installed by package X", rebuild X.  Eventually the list printed by
+  that command will be empty and the build error should be gone.
+
 20140826:
   AFFECTS: users of ports-mgmt/pkg, ports-mgmt/pkg-devel
   AUTHOR: bdrewery@FreeBSD.org

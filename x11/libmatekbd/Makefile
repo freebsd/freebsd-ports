@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libmatekbd
-PORTVERSION=	1.6.1
-PORTREVISION=	3
+PORTVERSION=	1.8.0
 CATEGORIES=	x11 mate
 MASTER_SITES=	MATE
 DIST_SUBDIR=	mate
@@ -15,8 +14,8 @@ LIB_DEPENDS=	libxklavier.so:${PORTSDIR}/x11/libxklavier
 
 PORTSCOUT=	limitw:1,even
 
-USES=		gettext gmake libtool:keepla pathfix pkgconfig tar:xz
-USE_GNOME=	gnomehier glib20 gtk20 intlhack
+USES=		gettext gmake libtool pathfix pkgconfig tar:xz
+USE_GNOME=	gnomehier gtk20 intlhack
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-gtk=2.0

@@ -3,6 +3,7 @@
 
 PORTNAME=	libffi
 PORTVERSION=	3.0.13
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	ftp://sourceware.org/pub/libffi/
 PKGNAMEPREFIX=	mingw32-
@@ -18,6 +19,7 @@ GNU_CONFIGURE_PREFIX=	${PREFIX}/mingw32
 CONFIGURE_ARGS=	--host="mingw32" --enable-shared
 CC=		${PKGNAMEPREFIX}gcc
 CFLAGS=		-O2	# Override CFLAGS for a cross-build
+USES=		libtool
 PLIST_SUB=	PORTVERSION=${PORTVERSION}
 
 post-patch:

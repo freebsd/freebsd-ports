@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	tomcat-native
-PORTVERSION=	1.1.30
-PORTREVISION=	1
+PORTVERSION=	1.1.31
 CATEGORIES=	www java
 MASTER_SITES=	APACHE
 MASTER_SITE_SUBDIR=	tomcat/tomcat-connectors/native/${PORTVERSION}/source
@@ -34,7 +33,7 @@ CONFIGURE_ARGS=	--with-apr=${LOCALBASE} \
 PLIST_FILES=	lib/libtcnative-1.a \
 		lib/libtcnative-1.so \
 		lib/libtcnative-1.so.0 \
-		lib/libtcnative-1.so.0.1.30
+		lib/libtcnative-1.so.0.1.31
 
 .include <bsd.port.options.mk>
 

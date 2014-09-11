@@ -1,24 +1,26 @@
---- mate-session/gsm-logout-dialog.c.orig	2014-04-06 23:10:11.756637268 +0000
-+++ mate-session/gsm-logout-dialog.c	2014-04-06 23:11:06.531633477 +0000
-@@ -200,13 +200,21 @@
- static gboolean
- gsm_logout_supports_system_suspend (GsmLogoutDialog *logout_dialog)
- {
+--- mate-session/gsm-logout-dialog.c.orig	2014-03-05 20:39:13.000000000 +0000
++++ mate-session/gsm-logout-dialog.c	2014-04-20 18:19:12.537577789 +0000
+@@ -214,8 +214,10 @@
+ #if defined(HAVE_SYSTEMD) && defined(HAVE_UPOWER)
+         else
+ #endif
+-#ifdef HAVE_UPOWER
 +#ifdef HAVE_OLD_UPOWER
-         return up_client_get_can_suspend (logout_dialog->priv->up_client);
+         ret = up_client_get_can_suspend (logout_dialog->priv->up_client);
 +#else
-+	return FALSE;
-+#endif
++        ret = FALSE;
+ #endif
+         return ret;
  }
- 
- static gboolean
- gsm_logout_supports_system_hibernate (GsmLogoutDialog *logout_dialog)
- {
+@@ -232,8 +234,10 @@
+ #if defined(HAVE_SYSTEMD) && defined(HAVE_UPOWER)
+         else
+ #endif
+-#ifdef HAVE_UPOWER
 +#ifdef HAVE_OLD_UPOWER
-         return up_client_get_can_hibernate (logout_dialog->priv->up_client);
+         ret = up_client_get_can_hibernate (logout_dialog->priv->up_client);
 +#else
-+	return FALSE;
-+#endif
++        ret = FALSE;
+ #endif
+         return ret;
  }
- 
- static gboolean

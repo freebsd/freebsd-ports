@@ -2,6 +2,7 @@
 
 PORTNAME=	semigroups
 PORTVERSION=	0.15.2
+PORTREVISION=	1
 CATEGORIES=	math haskell
 
 MAINTAINER=	haskell@FreeBSD.org

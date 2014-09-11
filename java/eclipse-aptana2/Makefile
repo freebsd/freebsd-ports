@@ -4,6 +4,7 @@
 PORTNAME=	aptana
 PORTVERSION=	2.0.5.1278522500
 #PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	java devel
 MASTER_SITES=	http://nivi.interfree.it/distfiles/eclipse-aptana2/
 PKGNAMEPREFIX=	eclipse-

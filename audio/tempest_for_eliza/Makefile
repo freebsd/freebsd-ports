@@ -3,7 +3,7 @@
 
 PORTNAME=	tempest_for_eliza
 PORTVERSION=	1.0.5
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	audio
 MASTER_SITES=	http://www.erikyyy.de/tempest/
 

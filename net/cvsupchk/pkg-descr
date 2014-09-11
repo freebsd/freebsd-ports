@@ -1,4 +1,0 @@
-cvsupchk is a python script that checks a CVSup maintained directory hierarchy
-against the corresponding CVSup checkouts file. It looks for a number of
-anomalies: missing checked out files, deleted files being present, extra RCS
-files, 'dead' directories being present and so on.

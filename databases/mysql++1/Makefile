@@ -3,7 +3,7 @@
 
 PORTNAME=	mysql++
 PORTVERSION=	1.7.40
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	databases devel
 MASTER_SITES=	http://tangentsoft.net/mysql++/releases/
 PKGNAMESUFFIX=	1-mysql${MYSQL_VER}
@@ -11,12 +11,14 @@ PKGNAMESUFFIX=	1-mysql${MYSQL_VER}
 MAINTAINER=	sergey@network-asp.biz
 COMMENT=	Complex C++ API for MySQL${MYSQL_VER}
 
-USE_MYSQL=	yes
-USE_AUTOTOOLS=	libtool
+GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-mysql=${LOCALBASE} \
 		--includedir=${PREFIX}/include/mysql++ \
 		--disable-examples
+INSTALL_TARGET=	install-strip
+USES=		libtool
 USE_LDCONFIG=	yes
+USE_MYSQL=	yes
 
 CONFLICTS=	${PORTNAME}*-2.*
 
