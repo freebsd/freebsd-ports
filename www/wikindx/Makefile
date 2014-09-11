@@ -3,6 +3,7 @@
 
 PORTNAME=	wikindx
 PORTVERSION=	3.8.2
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}3_8_2
 DISTNAME=	${PORTNAME}${PORTVERSION:S/./_/g}
@@ -14,7 +15,7 @@ USE_PHP=	session mysql xml ctype
 
 NO_BUILD=	YES
 WRKSRC=		${WRKDIR}/wikindx3
-WWWDIR?=	www/wikindx
+PLIST_SUB=	WWWOWN="${WWWOWN}" WWWGRP="${WWWGRP}"
 ROOTFILES=	config.php index.php rss.php
 ROOTDIRS=	attachments core docs files languages modules \
 		papers styles templates update
@@ -23,15 +24,11 @@ DOCFILES=	CHANGELOG CUSTOMIZATION DISCLAIMER INSTALL \
 
 OPTIONS_DEFINE=	DOCS
 
-pre-install:
-	@${ECHO} ${WWWDIR}
-
 do-install:
-	-${MKDIR} ${STAGEDIR}${PREFIX}/${WWWDIR}
-	(cd ${WRKSRC} && ${CP} ${ROOTFILES} ${STAGEDIR}${PREFIX}/${WWWDIR}/ )
-	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${STAGEDIR}${PREFIX}/${WWWDIR}
+	${MKDIR} ${STAGEDIR}${WWWDIR}
+	(cd ${WRKSRC} && ${CP} ${ROOTFILES} ${STAGEDIR}${WWWDIR}/ )
 .for i in ${ROOTDIRS}
-	@(cd ${WRKSRC} && ${COPYTREE_SHARE} ${i} ${STAGEDIR}${PREFIX}/${WWWDIR}/ )
+	@(cd ${WRKSRC} && ${COPYTREE_SHARE} ${i} ${STAGEDIR}${WWWDIR}/ )
 .endfor
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for i in ${DOCFILES}
