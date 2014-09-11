@@ -3,7 +3,7 @@
 
 PORTNAME=	openspc
 PORTVERSION=	0.3.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	http://membres.lycos.fr/pixels/ \
 		CRITICAL
@@ -13,15 +13,24 @@ MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Command-line player for .spc and .zst files
 
 ONLY_FOR_ARCHS=	i386	# contains x86 asm code
-USE_LDCONFIG=	yes
-USE_AUTOTOOLS=	libtool
+GNU_CONFIGURE=	yes
+INSTALL_TARGET=	install-strip
+USES=		libtool
+USE_AUTOTOOLS=	libtoolize aclocal autoconf autoheader automake
+AUTOMAKE_ARGS=	-a -c -f
 USE_GCC=	any
+USE_LDCONFIG=	yes
 
 PORTDOCS=	README
-PLIST_FILES=	bin/OpenSPClite include/OpenSPC.h lib/libOpenSPC.so \
-		lib/libOpenSPC.so.3 lib/libOpenSPC.la lib/libOpenSPC.a
+PLIST_FILES=	bin/OpenSPClite include/OpenSPC.h lib/libOpenSPC.a \
+		lib/libOpenSPC.so lib/libOpenSPC.so.0 lib/libOpenSPC.so.0.3.1
 
 OPTIONS_DEFINE=	DOCS
+
+post-patch:
+	@${REINPLACE_CMD} '1,/AUDIOFILE/d' ${WRKSRC}/acinclude.m4
+	@${REINPLACE_CMD} '/AC_PROG_CC/{p;s/.*/AM_PROG_AS/;}' \
+		${WRKSRC}/configure.in
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
