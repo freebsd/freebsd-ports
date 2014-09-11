@@ -1,0 +1,19 @@
+--- ./Xwnmo/xjutil/Makefile.in.orig	2014-09-10 01:27:13.000000000 +0900
++++ ./Xwnmo/xjutil/Makefile.in	2014-09-10 01:27:24.000000000 +0900
+@@ -26,7 +26,6 @@
+ top_builddir = ../..
+ 
+ INSTALL         = @INSTALL@ $(INSTALLFLAGS)
+-LOCAL_INSTFLAGS = -o $(WNNOWNER)
+ 
+        INCLUDES = -I. $(XWNMOINCLUDES) -I$(XWNMOSRC)
+ 
+@@ -115,7 +114,7 @@
+ install:: xjutil
+ 	@if [ -d $(DESTDIR)$(BINDIR) ]; then set +x; \
+ 	else (set -x; $(MKDIRHIER) $(DESTDIR)$(BINDIR)); fi
+-	$(INSTALL) $(INSTPGMFLAGS) $(INSTBINFLAGS) $(LOCAL_INSTFLAGS) xjutil $(DESTDIR)$(BINDIR)/xjutil
++	$(INSTALL) $(INSTPGMFLAGS) $(INSTBINFLAGS) xjutil $(DESTDIR)$(BINDIR)/xjutil
+ 
+ install.man:: xjutil.man
+ 	@if [ -d $(DESTDIR)$(MANDIR) ]; then set +x; \

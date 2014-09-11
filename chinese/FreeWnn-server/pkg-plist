@@ -28,3 +28,18 @@ lib/wnn/zh_TW/dic/sys/full.conR
 @dirrm lib/wnn/zh_CN/dic
 @dirrm lib/wnn/zh_TW/dic/sys
 @dirrm lib/wnn/zh_TW/dic
+man/ja/man1/catod.1.gz
+man/ja/man1/catof.1.gz
+man/ja/man1/cdicsort.1.gz
+man/ja/man1/cdtoa.1.gz
+man/ja/man1/cserver.1.gz
+man/ja/man1/cuum.1.gz
+man/ja/man1/cwddel.1.gz
+man/ja/man1/cwdreg.1.gz
+man/ja/man1/cwnnkill.1.gz
+man/ja/man1/cwnnstat.1.gz
+man/ja/man1/cwnntouch.1.gz
+man/ja/man4/cenv.4.gz
+man/ja/man4/ckey.4.gz
+man/ja/man4/cst_end.4.gz
+man/ja/man4/cwnn.4.gz

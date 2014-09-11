@@ -1,0 +1,30 @@
+--- ./kWnn/kdic/Makefile.in.orig	2004-04-25 03:56:40.000000000 +0900
++++ ./kWnn/kdic/Makefile.in	2014-09-11 16:28:24.000000000 +0900
+@@ -31,7 +31,6 @@
+ KWNNJUTILOBJ = $(top_builddir)/kWnn/jutil
+ 
+ INSTALL      = @INSTALL@
+-INSTALLFLAGS = -o $(WNNOWNER)
+ 
+         ATOD = $(KWNNJUTILOBJ)/katod
+         ATOF = $(KWNNJUTILOBJ)/katof
+@@ -76,8 +75,7 @@
+ install::
+ 	@case '${MFLAGS}' in *[i]*) set +e;; esac;
+ 	@for i in $(KWNNDICDIR); do if [ -d $(DESTDIR)$$i ]; then \
+-	set +x; else (set -x; $(MKDIRHIER) $(DESTDIR)$$i; \
+-	chown $(WNNOWNER) $(DESTDIR)$$i); fi \
++	set +x; else (set -x; $(MKDIRHIER) $(DESTDIR)$$i); fi \
+ 	done
+ 
+ install:: $(ALLTGT)
+@@ -87,8 +85,7 @@
+ 	@for i in $(ALLTGT); do if [ -f $(DESTDIR)$(KWNNSYSDICDIR)/$$i ]; then \
+ 	set +x; \
+ 	else (set -x; \
+-	$(INSTALL) -c $(INSTALLFLAGS) $(INSTLIBFLAGS) $$i $(DESTDIR)$(KWNNSYSDICDIR); \
+-	$(WNNTOUCH) $(DESTDIR)$(KWNNSYSDICDIR)/$$i); fi \
++	$(INSTALL) -c $(INSTLIBFLAGS) $$i $(DESTDIR)$(KWNNSYSDICDIR)); fi \
+ 	done
+ 
+ depend::

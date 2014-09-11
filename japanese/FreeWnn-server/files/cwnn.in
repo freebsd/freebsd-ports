@@ -16,6 +16,8 @@ start_precmd=start_precmd
 stop_postcmd=stop_postcmd
 WTCMD=%%PREFIX%%/bin/cWnn4/cwnntouch
 
+: ${cwnn_enable:=NO}
+
 start_precmd()
 {
 	rm -f /tmp/cd_sockV4
@@ -28,5 +30,5 @@ stop_postcmd()
 	rm -f /tmp/cd_sockV4
 }
 
-load_rc_config ${name}
+load_rc_config $name
 run_rc_command $1
