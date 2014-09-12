@@ -3,7 +3,7 @@
 
 PORTNAME=		krb5-maint
 PORTVERSION=		1.11.5
-PORTREVISION=		2
+PORTREVISION=		3
 CATEGORIES=		security
 MASTER_SITES=		http://web.mit.edu/kerberos/dist/krb5/${PORTVERSION:C/^[0-9]*\.[0-9]*/&X/:C/X\.[0-9]*$//:C/X//}/
 DISTNAME=		krb5-${PORTVERSION}-signed
@@ -21,14 +21,13 @@ BUILD_DEPENDS=		gm4:${PORTSDIR}/devel/m4
 
 CONFLICTS=		heimdal-[0-9]* srp-[0-9]* krb5-[0-9]*
 
-LATEST_LINK=		${PORTNAME}-19
 KERBEROSV_URL=		http://web.mit.edu/kerberos/
+USES=			gettext gmake perl5
 USE_PERL5=		build
 USE_LDCONFIG=		yes
 USE_CSTD=		gnu99
-USE_AUTOTOOLS=		libtool
-USES=		gettext gmake perl5
-CONFIGURE_ARGS?=	--enable-shared --without-system-verto
+GNU_CONFIGURE=		yes
+CONFIGURE_ARGS?=	--without-system-verto
 CONFIGURE_ENV=		INSTALL="${INSTALL}" YACC="${YACC}"
 MAKE_ARGS=		INSTALL="${INSTALL}"
 
