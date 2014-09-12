@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ffmpeg
-PORTVERSION=	2.2.4
-PORTREVISION=	6
+PORTVERSION=	2.3.3
 PORTEPOCH=	1
 CATEGORIES=	multimedia audio ipv6 net
 MASTER_SITES=	http://ffmpeg.org/releases/
@@ -11,8 +10,8 @@ MASTER_SITES=	http://ffmpeg.org/releases/
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Realtime audio/video encoder/converter and streaming server
 
-LICENSE=		GPLv2 LGPL21
-LICENSE_COMB=		multi
+LICENSE=	GPLv2 LGPL21
+LICENSE_COMB=	multi
 
 BUILD_DEPENDS=	yasm:${PORTSDIR}/devel/yasm \
 		${LOCALBASE}/bin/as:${PORTSDIR}/devel/binutils \
@@ -21,6 +20,7 @@ BUILD_DEPENDS=	yasm:${PORTSDIR}/devel/yasm \
 HAS_CONFIGURE=	yes
 CONFIGURE_LOG=	config.err
 USES=		gmake pkgconfig perl5 tar:bzip2
+USE_LDCONFIG=	yes
 USE_PERL5=	build
 WANT_SDL=	yes
 
@@ -40,6 +40,8 @@ FDK_AAC_DESC=	AAC audio encoding via Fraunhofer FDK
 FFSERVER_DESC=	Build and install ffserver
 LIBV4L_DESC=	Video for Linux support
 X11GRAB_DESC=	Enable x11 grabbing
+
+OPTIONS_SUB=	yes
 
 # aacplus
 AACPLUS_LIB_DEPENDS=	libaacplus.so:${PORTSDIR}/audio/libaacplus
@@ -200,10 +202,7 @@ XVID_CONFIGURE_ENABLE=	libxvid
 
 FFPROGS=	ffmpeg ffprobe
 INSTALL_TARGET=	install-progs install-data install-libs install-headers
-#FFMPEG_SUFFIX=	2
-#PLIST_SUB+=	SUFF="${FFMPEG_SUFFIX}"
 
-#USE_LDCONFIG=	${PREFIX}/lib/ffmpeg${FFMPEG_SUFFIX}
 DATADIR=	${PREFIX}/share/${PORTNAME}${PKGNAMESUFFIX}
 
 .include <bsd.port.options.mk>
@@ -254,9 +253,10 @@ CONFIGURE_ARGS+=--prefix="${PREFIX}" \
 		--extra-ldflags="-L${LOCALBASE}/lib ${FFMPEG_LDFLAGS}" \
 		--extra-libs="${PTHREAD_LIBS}"
 
-DOC_FILES=	Changelog CREDITS INSTALL LICENSE MAINTAINERS README
+DOC_FILES=	Changelog CREDITS INSTALL.md LICENSE.md MAINTAINERS \
+		README.md RELEASE_NOTES
 # under doc subdirectory
-DOC_DOCFILES=	APIchanges RELEASE_NOTES *.txt *.html
+DOC_DOCFILES=	APIchanges *.txt *.html
 PORTDOCS=	*
 
 .if ${PORT_OPTIONS:MDEBUG}
@@ -294,20 +294,15 @@ CFLAGS+=	-O3 -ffast-math -fno-finite-math-only -fomit-frame-pointer
 
 # ffserver
 .if ${PORT_OPTIONS:MFFSERVER}
-PLIST_SUB+=	FFSERVER=""
-PLIST_FILES+=	man/man1/ffserver.1.gz
 FFPROGS+=	ffserver
-. if ${PORT_OPTIONS:MDOCS}
+.if ${PORT_OPTIONS:MDOCS}
 DOC_DOCFILES+=	ffserver.html
-. endif
-.else
-PLIST_SUB+=	FFSERVER="@comment "
+.endif
 .endif
 
 # sdl
 .if ${PORT_OPTIONS:MSDL}
 USE_SDL+=	sdl
-PLIST_FILES+=	bin/ffplay man/man1/ffplay.1.gz
 FFPROGS+=	ffplay
 .if ${PORT_OPTIONS:MDOCS}
 DOC_DOCFILES+=	ffplay.html

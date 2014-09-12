@@ -1,9 +1,11 @@
 bin/ffmpeg
+%%SDL%%bin/ffplay
 bin/ffprobe
 %%FFSERVER%%bin/ffserver
 %%FFSERVER%%@sample etc/ffserver.conf.sample
 include/libavcodec/avcodec.h
 include/libavcodec/avfft.h
+include/libavcodec/dv_profile.h
 include/libavcodec/dxva2.h
 include/libavcodec/old_codec_ids.h
 include/libavcodec/vaapi.h
@@ -44,6 +46,7 @@ include/libavutil/common.h
 include/libavutil/cpu.h
 include/libavutil/crc.h
 include/libavutil/dict.h
+include/libavutil/display.h
 include/libavutil/downmix_info.h
 include/libavutil/error.h
 include/libavutil/eval.h
@@ -51,6 +54,7 @@ include/libavutil/ffversion.h
 include/libavutil/fifo.h
 include/libavutil/file.h
 include/libavutil/frame.h
+include/libavutil/hash.h
 include/libavutil/hmac.h
 include/libavutil/imgutils.h
 include/libavutil/intfloat.h
@@ -71,6 +75,7 @@ include/libavutil/pixdesc.h
 include/libavutil/pixfmt.h
 include/libavutil/random_seed.h
 include/libavutil/rational.h
+include/libavutil/replaygain.h
 include/libavutil/ripemd.h
 include/libavutil/samplefmt.h
 include/libavutil/sha.h
@@ -79,6 +84,7 @@ include/libavutil/stereo3d.h
 include/libavutil/time.h
 include/libavutil/timecode.h
 include/libavutil/timestamp.h
+include/libavutil/threadmessage.h
 include/libavutil/version.h
 include/libavutil/xtea.h
 include/libpostproc/postprocess.h
@@ -90,27 +96,27 @@ include/libswscale/version.h
 lib/libavcodec.a
 lib/libavcodec.so
 lib/libavcodec.so.55
-lib/libavcodec.so.55.52.102
+lib/libavcodec.so.55.69.100
 lib/libavdevice.a
 lib/libavdevice.so
 lib/libavdevice.so.55
-lib/libavdevice.so.55.10.100
+lib/libavdevice.so.55.13.102
 lib/libavfilter.a
 lib/libavfilter.so
 lib/libavfilter.so.4
-lib/libavfilter.so.4.2.100
+lib/libavfilter.so.4.11.100
 lib/libavformat.a
 lib/libavformat.so
 lib/libavformat.so.55
-lib/libavformat.so.55.33.100
+lib/libavformat.so.55.48.100
 lib/libavresample.a
 lib/libavresample.so
 lib/libavresample.so.1
-lib/libavresample.so.1.2.0
+lib/libavresample.so.1.3.0
 lib/libavutil.a
 lib/libavutil.so
 lib/libavutil.so.52
-lib/libavutil.so.52.66.100
+lib/libavutil.so.52.92.100
 lib/libpostproc.a
 lib/libpostproc.so
 lib/libpostproc.so.52
@@ -118,11 +124,11 @@ lib/libpostproc.so.52.3.100
 lib/libswresample.a
 lib/libswresample.so
 lib/libswresample.so.0
-lib/libswresample.so.0.18.100
+lib/libswresample.so.0.19.100
 lib/libswscale.a
 lib/libswscale.so
 lib/libswscale.so.2
-lib/libswscale.so.2.5.102
+lib/libswscale.so.2.6.100
 libdata/pkgconfig/libavcodec.pc
 libdata/pkgconfig/libavdevice.pc
 libdata/pkgconfig/libavfilter.pc
@@ -133,11 +139,13 @@ libdata/pkgconfig/libpostproc.pc
 libdata/pkgconfig/libswresample.pc
 libdata/pkgconfig/libswscale.pc
 man/man1/ffmpeg.1.gz
+%%SDL%%man/man1/ffplay.1.gz
 man/man1/ffprobe.1.gz
+%%FFSERVER%%man/man1/ffserver.1.gz
 %%DATADIR%%/examples/Makefile
 %%DATADIR%%/examples/README
-%%DATADIR%%/examples/avcodec.c
 %%DATADIR%%/examples/avio_reading.c
+%%DATADIR%%/examples/decoding_encoding.c
 %%DATADIR%%/examples/demuxing_decoding.c
 %%DATADIR%%/examples/filter_audio.c
 %%DATADIR%%/examples/filtering_audio.c
@@ -148,14 +156,13 @@ man/man1/ffprobe.1.gz
 %%DATADIR%%/examples/resampling_audio.c
 %%DATADIR%%/examples/scaling_video.c
 %%DATADIR%%/examples/transcode_aac.c
+%%DATADIR%%/examples/transcoding.c
 %%DATADIR%%/ffprobe.xsd
 %%DATADIR%%/libvpx-1080p.ffpreset
 %%DATADIR%%/libvpx-1080p50_60.ffpreset
 %%DATADIR%%/libvpx-360p.ffpreset
 %%DATADIR%%/libvpx-720p.ffpreset
 %%DATADIR%%/libvpx-720p50_60.ffpreset
-%%DATADIR%%/libx264-ipod320.ffpreset
-%%DATADIR%%/libx264-ipod640.ffpreset
 @dirrm %%DATADIR%%/examples
 @dirrm %%DATADIR%%
 @dirrm include/libswscale
