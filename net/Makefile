@@ -144,6 +144,7 @@
     SUBDIR += gnome-nettool
     SUBDIR += gnu-dico
     SUBDIR += gnu-radius
+    SUBDIR += go-cs
     SUBDIR += go.net
     SUBDIR += gofish
     SUBDIR += gogoc
