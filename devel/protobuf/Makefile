@@ -3,7 +3,7 @@
 
 PORTNAME=	protobuf
 PORTVERSION=	2.5.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 
@@ -12,7 +12,7 @@ COMMENT=	Data interchange format library
 
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-USES=		gmake pathfix pkgconfig tar:bzip2 libtool:keepla
+USES=		gmake pathfix pkgconfig tar:bzip2 libtool
 ONLY_FOR_ARCHS=	i386 amd64
 
 # clang will generate code that just doesn't work with clementine-player
