@@ -113,6 +113,7 @@
     SUBDIR += cfengine34
     SUBDIR += cfengine35
     SUBDIR += cfengine36
+    SUBDIR += cfengine36-rc
     SUBDIR += chgrep
     SUBDIR += ciso
     SUBDIR += ck4up
