@@ -29,6 +29,7 @@ GH_COMMIT=	5a5e1cd
 WRKSRC=		${WRKDIR}/${GH_ACCOUNT}-${GH_PROJECT}-${GH_COMMIT}/${GH_PROJECT}
 
 ONLY_FOR_ARCHS=	i386 amd64
+USE_PERL5=	run build fixpacklist
 NOPRECIOUSMAKEVARS=	# don't override $(ARCH) in ffmpeg makefiles
 USES=		gmake libtool perl5 pkgconfig
 USE_QT4=	gui sql network script linguist_build l10n sql-mysql_run \
@@ -84,8 +85,7 @@ MAKE_ENV+=	COMPILER_PATH=${LOCALBASE}/bin
 
 .if ${PORT_OPTIONS:MBINDINGS}
 CONFIGURE_ARGS+=	--python=${PYTHON_CMD}
-USE_PYTHON=	yes
-INSTALLS_EGGINFO=yes
+USES+=		python
 PYDISTUTILS_PKGNAME=MythTV
 PYDISTUTILS_PKGVERSION=0.27._1
 
