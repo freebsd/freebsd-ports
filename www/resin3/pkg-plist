@@ -1,4 +1,7 @@
-etc/resin3/app-default.xml
+etc/%%APP_NAME%%/app-default.xml
+@sample etc/%%APP_NAME%%/resin.xml.sample
+@owner %%USERS%%
+@group %%GROUPS%%
 %%APP_NAME%%/lib/activation.jar
 %%APP_NAME%%/lib/ejb-15.jar
 %%APP_NAME%%/lib/hessian.jar
@@ -749,14 +752,6 @@ etc/resin3/app-default.xml
 %%APP_NAME%%/webapps/resin-doc/pdf/resin-reference.xml
 %%APP_NAME%%/webapps/resin-doc/pdf/xml2pdf.xsl
 %%APP_NAME%%/webapps/resin-doc/toc.xml
-sbin/resin3ctl
-%%MOD_DIR%%/mod_caucho.so
-%%APACHE%%@exec %%APXS%% -e -a -n caucho %f
-%%APACHE%%@unexec %%APXS%% -e -A -n caucho %f
-@unexec if cmp -s %D/etc/%%APP_NAME%%/resin.xml %D/etc/%%APP_NAME%%/resin.xml-dist; then rm -f %D/etc/%%APP_NAME%%/resin.xml ; %else echo If permanently deleting this package, %D/etc/%%APP_NAME%%/resin.xml must be removed manually; fi
-etc/%%APP_NAME%%/resin.xml-dist
-@exec if test -f %B/resin.xml ; then echo Keeping %B/resin.xml intact from previous installation; else cp %F %B/resin.xml; fi
-@exec chown -R %%USERS%%:%%GROUPS%% %D/%%APP_NAME%%
 @dirrm %%APP_NAME%%/webapps/resin-doc/pdf
 @dirrm %%APP_NAME%%/webapps/resin-doc/images
 @dirrm %%APP_NAME%%/webapps/resin-doc/examples/soa-services/WEB-INF/classes/example
@@ -1076,4 +1071,10 @@ etc/%%APP_NAME%%/resin.xml-dist
 @dirrm %%APP_NAME%%/webapps
 @dirrm %%APP_NAME%%/lib
 @dirrm %%APP_NAME%%
-@dirrm etc/resin3
+@owner root
+@group wheel
+sbin/resin3ctl
+%%MOD_DIR%%/mod_caucho.so
+%%APACHE%%@exec %%APXS%% -e -a -n caucho %f
+%%APACHE%%@unexec %%APXS%% -e -A -n caucho %f
+@dirrm etc/%%APP_NAME%%
