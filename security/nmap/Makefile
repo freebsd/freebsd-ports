@@ -55,7 +55,7 @@ CONFIGURE_ARGS+=--without-localdirs \
 		--without-nmap-update
 
 # fix for gcc from ports
-.if ${CC} != "cc" && ${CC} !="clang"
+.if ${CC} != "cc" && ${CC} !="clang" && !${CC:M*ccache/cc}
 GCCLIBDIR_CMDS=	${CC} -print-file-name=libstdc++.so | ${SED} -e 's/libstdc++.so//'
 CONFIGURE_ARGS+=LDFLAGS="-L$$(${GCCLIBDIR_CMDS})"
 NOT_BASE_CC=	true
