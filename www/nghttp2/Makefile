@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	nghttp2
-PORTVERSION=	0.5.1
-PORTREVISION=	1
+PORTVERSION=	0.6.0
 CATEGORIES=	www net
 MASTER_SITES=	https://github.com/tatsuhiro-t/${PORTNAME}/releases/download/v${PORTVERSION}/ \
 		LOCAL/sunpoet
@@ -52,5 +51,6 @@ CONFIGURE_ARGS+=--with-jemalloc
 
 post-patch:
 	@${REINPLACE_CMD} -e '/JEMALLOC_LIBS/ s|-ljemalloc||' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e '/ENONET/d' ${WRKSRC}/src/shrpx_listen_handler.cc
 
 .include <bsd.port.post.mk>
