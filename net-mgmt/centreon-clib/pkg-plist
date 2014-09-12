@@ -46,6 +46,7 @@ include/centreon/com/centreon/concurrency/thread_posix.hh
 include/centreon/com/centreon/concurrency/thread_win32.hh
 include/centreon/com/centreon/concurrency/write_locker.hh
 include/centreon/com/centreon/exceptions/basic.hh
+include/centreon/com/centreon/exceptions/interruption.hh
 include/centreon/com/centreon/io/directory_entry.hh
 include/centreon/com/centreon/io/file_entry.hh
 include/centreon/com/centreon/io/file_stream.hh
