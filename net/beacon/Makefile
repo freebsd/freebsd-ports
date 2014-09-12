@@ -30,12 +30,8 @@ IPV6_DESC=		Enable IPv6 PTR lookups
 IPV6_CONFIGURE_ENABLE=	ipv6
 IPV6_BUILD_DEPENDS=	p5-Socket6>=0:${PORTSDIR}/net/p5-Socket6
 
-.include <bsd.port.options.mk>
-
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${SITE_PERL}/${PERL_ARCH}/auto/Net/Multicast/Beacon/Beacon.so
-	cd ${WRKSRC}/src/FreeBSD/ && \
-		${INSTALL_DATA} beacon ${STAGEDIR}${PREFIX}/etc/rc.d
 	${RM} ${STAGEDIR}${PREFIX}/lib/perl5/${PERL_VER}/${PERL_ARCH}/perllocal*
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}/
 	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
