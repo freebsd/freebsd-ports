@@ -64,5 +64,9 @@ post-patch:
 	@${REINPLACE_CMD} -e '/pkg_check_modules/ s|yaml-cpp|&03|' \
 		${WRKSRC}/CMakeLists.txt
 	@${REINPLACE_CMD} -e 's|yaml-cpp|&03|' ${WRKSRC}/src/core/OCIOYaml.h
+.if ${SLAVE_PORT} == yes
+	@${FIND} ${WRKSRC}/src/apps -name main.cpp | ${XARGS} \
+		${REINPLACE_CMD} '/namespace OIIO/d'
+.endif
 
 .include <bsd.port.mk>
