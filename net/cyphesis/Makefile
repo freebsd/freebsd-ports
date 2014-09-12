@@ -3,7 +3,7 @@
 
 PORTNAME=	cyphesis
 PORTVERSION=	0.6.2
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	net
 MASTER_SITES=	SF/worldforge/${PORTNAME}%20%28server%29/${PORTVERSION}
 
@@ -23,22 +23,18 @@ LIB_DEPENDS=	libAtlas-0.6.so:${PORTSDIR}/devel/atlas-devel \
 CONFIGURE_ARGS=	--with-python=${LOCALBASE}
 
 GNU_CONFIGURE=	yes
-USES=		gmake pathfix pkgconfig compiler:c++11-lib tar:bzip2
+USES=		gmake pathfix pkgconfig compiler:c++11-lib tar:bzip2 \
+		python:2 pgsql
 USE_LDCONFIG=	yes
-USE_PGSQL=	yes
-USE_PYTHON=	2
 
 CFLAGS+=	-I${LOCALBASE}/include
 
-MAN1=		cyclient.1 cycmd.1 cyphesis.1 cyphesis-tools.1 cyaddrules.1 \
-		cyconvertrules.1 cydumprules.1 cyloadrules.1 cypasswd.1
-
 OPTIONS_DEFINE=	DOCS
 
-.include <bsd.port.options.mk>
+.include <bsd.port.pre.mk>
 
 .if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1000000
-BROKEN=		Does not compile with clang
+BROKEN=		Does not compile on FreeBSD 10+
 .endif
 
 post-patch:
@@ -60,7 +56,6 @@ post-patch:
 		${WRKSRC}/server/CommUnixListener.cpp
 
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}/conf
 .for file in README COPYING AUTHORS THANKS NEWS ChangeLog TODO FIXME
@@ -69,6 +64,5 @@ post-install:
 .for xmlfile in acorn.xml basic.xml cyphesis.vconf mason.xml werewolf.xml
 	@${INSTALL_DATA} ${WRKSRC}/data/${xmlfile} ${STAGEDIR}${DOCSDIR}/conf
 .endfor
-.endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

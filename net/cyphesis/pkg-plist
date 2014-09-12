@@ -34,6 +34,15 @@ etc/cyphesis/minimal.d/basic.xml
 etc/cyphesis/minimal.d/characters.xml
 etc/cyphesis/minimal.d/environment.xml
 etc/cyphesis/minimal.d/terrain.xml
+man/man/cyclient.1.gz
+man/man/cycmd.1.gz
+man/man/cyphesis.1.gz
+man/man/cyphesis-tools.1.gz
+man/man/cyaddrules.1.gz
+man/man/cyconvertrules.1.gz
+man/man/cydumprules.1.gz
+man/man/cyloadrules.1.gz
+man/man/cypasswd.1.gz
 %%DATADIR%%/rulesets/basic/mind/Goal.py
 %%DATADIR%%/rulesets/basic/mind/Knowledge.py
 %%DATADIR%%/rulesets/basic/mind/Memory.py
