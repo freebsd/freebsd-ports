@@ -2,7 +2,7 @@
 
 PORTNAME=	xf86-input-penmount
 PORTVERSION=	${PEN_VERSION}
-PORTREVISION=	1
+PORTREVISION=	${PEN_REVISION}
 CATEGORIES=	x11-drivers
 
 MAINTAINER=	x11@FreeBSD.org
@@ -14,10 +14,10 @@ XORG_CAT=	driver
 
 .if defined(WITH_NEW_XORG)
 PEN_VERSION=	1.5.0
-PEN_REVISION=	1
+PEN_REVISION=	2
 .else
 PEN_VERSION=	1.4.1
-PEN_REVISION=	2
+PEN_REVISION=	3
 .endif
 
 .include <bsd.port.mk>
