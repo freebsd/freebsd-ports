@@ -74,10 +74,6 @@ OPTIONS_DEFAULT:=${OPTIONS_DEFAULT:S/GSTREAMER//}
 
 .include <bsd.port.pre.mk>
 
-.if ${COMPILER_TYPE} == gcc
-BROKEN=		run-time link paths not set on gcc-based systems
-.endif
-
 WRKSRC=		${WRKDIR}/comm-esr31
 MOZSRC:=	${WRKSRC}/mozilla
 
