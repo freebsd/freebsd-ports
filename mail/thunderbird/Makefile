@@ -44,7 +44,7 @@ USE_QT5=	# empty
 QT_NONSTANDARD=	yes
 ALL_TARGET=	default
 USE_GL=		gl
-USES=		dos2unix tar:bzip2
+USES=		dos2unix tar:bzip2 compiler:features
 DOS2UNIX_FILES=	mozilla/media/webrtc/trunk/webrtc/system_wrappers/source/spreadsortlib/spreadsort.hpp
 
 MOZ_OPTIONS=	--program-transform-name='s/thunderbird/${MOZILLA}/' \
@@ -73,6 +73,10 @@ MAKEFILE=	${WRKSRC}/client.mk
 OPTIONS_DEFAULT:=${OPTIONS_DEFAULT:S/GSTREAMER//}
 
 .include <bsd.port.pre.mk>
+
+.if ${COMPILER_TYPE} == gcc
+BROKEN=		run-time link paths not set on gcc-based systems
+.endif
 
 WRKSRC=		${WRKDIR}/comm-esr31
 MOZSRC:=	${WRKSRC}/mozilla
