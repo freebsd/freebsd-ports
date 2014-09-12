@@ -27,4 +27,10 @@ RUBYGEM_AUTOPLIST=yes
 
 PLIST_FILES=	bin/lita
 
-.include <bsd.port.mk>
+.incldue <bsd.port.pre.mk>
+
+.if ${RUBY_VER} == 1.9
+IGNORE=		Requires Ruby 2.0 or newer
+.endif
+
+.include <bsd.port.post.mk>
