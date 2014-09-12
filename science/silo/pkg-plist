@@ -6,6 +6,9 @@ bin/silofile
 include/ioperf.h
 include/pmpio.h
 include/silo.h
+include/silo_exports.h
+include/silo_f77.inc
+include/silo_f9x.inc
 include/silo.inc
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/Silo.so
 lib/libsilo%%SUFX_HDF5%%.so
