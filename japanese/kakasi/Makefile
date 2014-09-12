@@ -3,7 +3,7 @@
 
 PORTNAME=	kakasi
 PORTVERSION=	2.3.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	japanese textproc
 MASTER_SITES=	http://kakasi.namazu.org/stable/
 
@@ -13,7 +13,7 @@ COMMENT=	Kanji-Kana Simple Inverter, language filter for Japanese
 LICENSE=	GPLv2
 
 GNU_CONFIGURE=	yes
-USES=		iconv libtool:oldver
+USES=		iconv libtool
 USE_LDCONFIG=	yes
 
 OPTIONS_DEFINE=	DOCS
