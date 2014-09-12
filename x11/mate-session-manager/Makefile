@@ -1,6 +1,5 @@
 # Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/x11/mate-session-manager/Makefile 19789 2014-08-05 07:43:54Z gusi $
 
 PORTNAME=	mate-session-manager
 PORTVERSION=	1.8.1

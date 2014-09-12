@@ -911,4 +911,3 @@ share/vala/vapi/libedataserver-%%EVO_VERSION%%.vapi
 @dirrm include/evolution-data-server/libebackend
 @dirrm include/evolution-data-server/camel
 @dirrm include/evolution-data-server
-

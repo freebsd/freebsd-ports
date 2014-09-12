@@ -1,9 +1,9 @@
 # Created by: Michael Johnson <ahze@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/net-im/empathy/Makefile 19825 2014-08-21 07:05:53Z gusi $
+#   $MCom: ports/trunk/net-im/empathy/Makefile 19852 2014-09-12 08:26:20Z gusi $
 
 PORTNAME=	empathy
-PORTVERSION=	3.12.5
+PORTVERSION=	3.12.6
 CATEGORIES=	net-im gnome
 MASTER_SITES=	GNOME
 
@@ -72,10 +72,10 @@ SALUT_RUN_DEPENDS=	${LOCALBASE}/libexec/telepathy-salut:${PORTSDIR}/net-im/telep
 HAZE_RUN_DEPENDS=	${LOCALBASE}/libexec/telepathy-haze:${PORTSDIR}/net-im/telepathy-haze
 MAP_USE=		GL=gl
 MAP_LIB_DEPENDS=	libchamplain-0.12.so:${PORTSDIR}/graphics/libchamplain
-MAP_CONFIGURE_ENABLE=	map	
+MAP_CONFIGURE_ENABLE=	map
 CHEESE_BUILD_DEPENDS=	cheese>=0:${PORTSDIR}/multimedia/cheese
 CHEESE_RUN_DEPENDS=	cheese>=0:${PORTSDIR}/multimedia/cheese
-CHEESE_CONFIGURE_WITH=	cheese	
+CHEESE_CONFIGURE_WITH=	cheese
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|clutter-gst-1.0|clutter-gst-2.0|g ;\

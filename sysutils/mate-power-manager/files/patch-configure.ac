@@ -1,6 +1,6 @@
---- configure.ac.orig	2013-07-24 17:54:08.000000000 +0000
-+++ configure.ac	2014-04-06 20:11:12.483380459 +0000
-@@ -57,21 +57,14 @@
+--- configure.ac.orig	2012-07-12 13:47:37.000000000 -0500
++++ configure.ac	2012-07-28 23:08:29.000000000 -0500
+@@ -58,21 +58,14 @@
  	WARNINGFLAGS="$WARNINGFLAGS -Wreturn-type"
  	WARNINGFLAGS="$WARNINGFLAGS -Wformat-nonliteral"
  	WARNINGFLAGS="$WARNINGFLAGS -Wformat-security"
@@ -22,32 +22,7 @@
  	WARNINGFLAGS="$WARNINGFLAGS -Wno-strict-aliasing"
  else
  	WARNINGFLAGS=""
-@@ -168,6 +161,13 @@
- 
- PKG_CHECK_MODULES(LIBNOTIFY, libnotify >= $LIBNOTIFY_REQUIRED)
- 
-+# We can only support old upower
-+PKG_CHECK_MODULES(UPOWER, upower-glib < 0.99.0, have_old_upower=yes, have_old_upower=no)
-+AS_IF([test x$have_old_upower = xyes], [
-+  AC_DEFINE([HAVE_OLD_UPOWER], [1], [Define if we have an older upower])
-+])
-+AM_CONDITIONAL(HAVE_OLD_UPOWER, test x$have_old_upower = xyes)
-+
- dnl ----------------------------------------------------------------------------
- dnl - Unique
- dnl ----------------------------------------------------------------------------
-@@ -328,14 +328,26 @@
- AC_SUBST(GPM_EXTRA_LIBS)
- 
- dnl ---------------------------------------------------------------------------
--dnl - Is docbook2man available?
-+dnl - Is docbook2man_disabled available?
- dnl ---------------------------------------------------------------------------
--AC_PATH_PROG(DOCBOOK2MAN, docbook2man, no)
-+AC_PATH_PROG(DOCBOOK2MAN, docbook2man_disabled, no)
- if test "$DOCBOOK2MAN" = "no" ; then
--	AC_MSG_WARN([docbook2man not found, will not be able to build man documentation])
-+	AC_MSG_WARN([docbook2man_disabled not found, will not be able to build man documentation])
+@@ -340,6 +333,18 @@
  fi
  AM_CONDITIONAL(HAVE_DOCBOOK2MAN, [test "$DOCBOOK2MAN" != "no"])
  

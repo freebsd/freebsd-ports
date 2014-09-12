@@ -1,6 +1,5 @@
 # Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/sysutils/mate-power-manager/Makefile 19789 2014-08-05 07:43:54Z gusi $
 
 PORTNAME=	mate-power-manager
 PORTVERSION=	1.8.0
@@ -17,6 +16,7 @@ LIB_DEPENDS=	libcanberra-gtk.so:${PORTSDIR}/audio/libcanberra \
 		libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib \
 		libunique-1.0.so:${PORTSDIR}/x11-toolkits/unique \
 		libupower-glib.so:${PORTSDIR}/sysutils/upower \
+		libexecinfo.so:${PORTSDIR}/devel/libexecinfo \
 		libnotify.so:${PORTSDIR}/devel/libnotify
 RUN_DEPENDS=	pkexec:${PORTSDIR}/sysutils/polkit
 

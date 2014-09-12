@@ -1,6 +1,5 @@
 # Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/x11/mate-applets/Makefile 19804 2014-08-13 14:55:11Z kwm $
 
 PORTNAME=	mate-applets
 PORTVERSION=	1.8.0
