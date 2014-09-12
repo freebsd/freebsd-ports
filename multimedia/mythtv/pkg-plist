@@ -230,6 +230,7 @@ include/mythtv/libmythbase/mythobservable.h
 include/mythtv/libmythbase/mythplugin.h
 include/mythtv/libmythbase/mythpluginapi.h
 include/mythtv/libmythbase/mythqtcompat.h
+include/mythtv/libmythbase/mythsingledownload.h
 include/mythtv/libmythbase/mythsocket.h
 include/mythtv/libmythbase/mythsocket_cb.h
 include/mythtv/libmythbase/mythstorage.h
@@ -415,6 +416,7 @@ include/mythtv/mythplugin.h
 include/mythtv/mythpluginapi.h
 include/mythtv/mythqtcompat.h
 include/mythtv/mythrssmanager.h
+include/mythtv/mythsingledownload.h
 include/mythtv/mythsocket.h
 include/mythtv/mythsocket_cb.h
 include/mythtv/mythstorage.h
@@ -491,12 +493,14 @@ include/mythtv/xmlparse.h
 include/mythtv/zeromq/zmq.h
 include/mythtv/zeromq/zmq.hpp
 include/mythtv/zeromq/zmq_utils.h
-%%BINDINGS%%%%SITE_PERL%%/MythTV.pm
+%%BINDINGS%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/MythTV/.packlist
 %%BINDINGS%%%%SITE_PERL%%/IO/Socket/INET/MythTV.pm
+%%BINDINGS%%%%SITE_PERL%%/MythTV.pm
+%%BINDINGS%%%%SITE_PERL%%/MythTV/Channel.pm
 %%BINDINGS%%%%SITE_PERL%%/MythTV/Program.pm
 %%BINDINGS%%%%SITE_PERL%%/MythTV/Recording.pm
-%%BINDINGS%%%%SITE_PERL%%/MythTV/Channel.pm
 %%BINDINGS%%%%SITE_PERL%%/MythTV/StorageGroup.pm
+%%BINDINGS%%%%PYTHON_SITELIBDIR%%/MythTV-0.27.0-py2.7.egg-info
 %%BINDINGS%%%%PYTHON_SITELIBDIR%%/MythTV/__init__.py
 %%BINDINGS%%%%PYTHON_SITELIBDIR%%/MythTV/__init__.pyc
 %%BINDINGS%%%%PYTHON_SITELIBDIR%%/MythTV/_conn_mysqldb.py
@@ -563,6 +567,7 @@ include/mythtv/zeromq/zmq_utils.h
 %%BINDINGS%%%%PYTHON_SITELIBDIR%%/MythTV/ttvdb/tvdb_exceptions.py
 %%BINDINGS%%%%PYTHON_SITELIBDIR%%/MythTV/ttvdb/tvdb_exceptions.pyc
 %%BINDINGS%%%%PYTHON_SITELIBDIR%%/MythTV/ttvdb/tvdb_ui.py
+%%BINDINGS%%%%PYTHON_SITELIBDIR%%/MythTV/ttvdb/tvdb_ui.pyc
 %%BINDINGS%%%%PYTHON_SITELIBDIR%%/MythTV/utility/__init__.py
 %%BINDINGS%%%%PYTHON_SITELIBDIR%%/MythTV/utility/__init__.pyc
 %%BINDINGS%%%%PYTHON_SITELIBDIR%%/MythTV/utility/altdict.py
@@ -579,7 +584,6 @@ include/mythtv/zeromq/zmq_utils.h
 %%BINDINGS%%%%PYTHON_SITELIBDIR%%/MythTV/utility/other.pyc
 %%BINDINGS%%%%PYTHON_SITELIBDIR%%/MythTV/utility/singleton.py
 %%BINDINGS%%%%PYTHON_SITELIBDIR%%/MythTV/utility/singleton.pyc
-%%BINDINGS%%%%PYTHON_SITELIBDIR%%/MythTV/ttvdb/tvdb_ui.pyc
 %%BINDINGS%%%%PYTHON_SITELIBDIR%%/MythTV/wikiscripts/__init__.py
 %%BINDINGS%%%%PYTHON_SITELIBDIR%%/MythTV/wikiscripts/__init__.pyc
 %%BINDINGS%%%%PYTHON_SITELIBDIR%%/MythTV/wikiscripts/wikiscripts.py
@@ -676,7 +680,7 @@ lib/mythtv/filters/libpostprocess.so
 lib/mythtv/filters/libquickdnr.so
 lib/mythtv/filters/libvflip.so
 lib/mythtv/filters/libyadif.so
-lib/pkgconfig/libmythzmq.pc
+libdata/pkgconfig/libmythzmq.pc
 %%DATADIR%%/CDS_scpd.xml
 %%DATADIR%%/CMGR_scpd.xml
 %%DATADIR%%/MFEXML_scpd.xml
@@ -2315,7 +2319,6 @@ lib/pkgconfig/libmythzmq.pc
 @dirrm %%DATADIR%%/bindings
 @dirrm %%DATADIR%%/backend-config
 @dirrmtry %%DATADIR%%
-@dirrmtry lib/pkgconfig
 @dirrm lib/mythtv/filters
 @dirrmtry lib/mythtv
 %%BINDINGS%%@dirrm %%PYTHON_SITELIBDIR%%/MythTV/wikiscripts
@@ -2324,6 +2327,7 @@ lib/pkgconfig/libmythzmq.pc
 %%BINDINGS%%@dirrm %%PYTHON_SITELIBDIR%%/MythTV/ttvdb
 %%BINDINGS%%@dirrm %%PYTHON_SITELIBDIR%%/MythTV/tmdb3
 %%BINDINGS%%@dirrm %%PYTHON_SITELIBDIR%%/MythTV
+%%BINDINGS%%@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MythTV
 %%BINDINGS%%@dirrmtry %%SITE_PERL%%/IO/Socket/INET
 %%BINDINGS%%@dirrmtry %%SITE_PERL%%/IO/Socket
 %%BINDINGS%%@dirrmtry %%SITE_PERL%%/IO
