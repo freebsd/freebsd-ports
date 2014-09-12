@@ -17,9 +17,12 @@ MASTER_SITES=	ftp://ftp.ucsb.edu/pub/mirrors/procmail/ \
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Local mail delivery agent
 
+LICENSE=	GPLv2
+
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
 INSTALL_TARGET=	install.bin install.man
+USES=		cpe
 
 PORTDOCS=	FAQ FEATURES HISTORY KNOWN_BUGS README
 PORTEXAMPLES=	1procmailrc 1rmail 2procmailrc 2rmail 3procmailrc 3rmail \
