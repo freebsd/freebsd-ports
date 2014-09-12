@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	wrk
-PORTVERSION=	3.0.4
+PORTVERSION=	3.1.1
 CATEGORIES=	benchmarks www
 MASTER_SITES=	https://github.com/wg/wrk/archive/
 DISTNAME=	${PORTVERSION}
@@ -19,9 +19,6 @@ USES=		gmake
 CFLAGS+=	-std=c99 -D_DECLARE_C99_LDBL_MATH
 
 PLIST_FILES=	bin/wrk
-
-post-patch:
-	@${REINPLACE_CMD} 's|%%PREFIX%%|${PREFIX}|g;' ${WRKSRC}/Makefile
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
