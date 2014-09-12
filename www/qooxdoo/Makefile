@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	qooxdoo
-PORTVERSION=	2.1.1
-PORTREVISION=	0
+PORTVERSION=	4.0.1
 CATEGORIES=	www devel
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-current/${PORTVERSION}/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-sdk
@@ -14,37 +13,43 @@ COMMENT=	Comprehensive and innovative Ajax application framework
 LICENSE=	LGPL3 EPL
 LICENSE_COMB=	dual
 
-FIND_FILES=	${WRKSRC} -type f -name "*.py" -print0
-FIND_FILES_BAK=	${WRKSRC} -type f -and \( -name "*.orig" -or -name "*.bak" \)
-
-QXDDIRS=	component framework tool
-
-REINPLACE_ARGS=	-e 's,/usr/bin/env python,&${PYTHON_VER},' -i.bak
-
-USE_PYTHON=	2
-USES=		zip
-
-SHAREMODE=	644
+USES=		zip python:2
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
+PORTDOCS=	*
+PORTEXAMPLES=	*
+
 post-patch:
-	${FIND} ${FIND_FILES} | ${XARGS} -0 ${REINPLACE_CMD}
-	${FIND} ${FIND_FILES_BAK} -delete
+	${FIND} ${WRKSRC} -type f -name '*.py' -print0 | ${XARGS} -0 \
+		${REINPLACE_CMD} -e 's|/usr/bin/env python|&${PYTHON_VER}|'
+	${FIND} ${WRKSRC} -type f -and \( -name '*.orig' -or -name '*.bak' \) -delete
 
 do-build:
 	${PYTHON_CMD} -m compileall -f ${WRKSRC}/tool
 	${PYTHON_CMD} -O -m compileall -f ${WRKSRC}/tool
 
 do-install:
-	${MKDIR} ${STAGEDIR}${DATADIR}
-.for D in ${QXDDIRS}
-	cd ${WRKSRC} && ${COPYTREE_SHARE} ${D} ${STAGEDIR}${DATADIR}
-.endfor
-	cd ${WRKSRC}/documentation/manual && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}
-	cd ${WRKSRC}/application && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/version.txt ${STAGEDIR}${DATADIR}
-	${CHMOD} ${BINMODE} ${STAGEDIR}${DATADIR}/tool/bin/*.py
-	${INSTALL_SCRIPT} ${WRKSRC}/create-application.py ${STAGEDIR}${DATADIR}/create-application.py
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	(cd ${WRKSRC} && ${COPYTREE_SHARE} \
+		"create-application.py component framework tool version.txt" \
+		${STAGEDIR}${DATADIR})
+	(cd ${WRKSRC}/documentation/manual && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR})
+	(cd ${WRKSRC}/application && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR})
+
+# build plist
+# make the python files executable
+	@${ECHO_CMD} '@mode ${BINMODE}' >> ${TMPPLIST}
+	@${FIND} ${STAGEDIR}${DATADIR} -type f -name '*.py' | ${SORT} | \
+		${SED} -e 's|^${STAGEDIR}${PREFIX}/||' >> ${TMPPLIST}
+
+	@${ECHO_CMD} '@mode 644' >> ${TMPPLIST}
+	@${FIND} ${STAGEDIR}${DATADIR} -type f \! -name '*.py' | ${SORT} | \
+		${SED} -e 's|^${STAGEDIR}${PREFIX}/||' >> ${TMPPLIST}
+
+	@${ECHO_CMD} '@mode' >> ${TMPPLIST}
+	@${FIND} ${STAGEDIR}${DATADIR}/* -type d | ${SORT} -r | \
+		${SED} -e 's|^${STAGEDIR}${PREFIX}/|@dirrmtry |' >> ${TMPPLIST}
+	@${ECHO_CMD} '@dirrmtry ${DATADIR_REL}' >> ${TMPPLIST}
 
 .include <bsd.port.mk>
