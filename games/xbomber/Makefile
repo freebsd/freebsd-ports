@@ -25,8 +25,6 @@ do-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}
 	${TAR} -C ${WRKSRC} -cf - bitmaps jungle levels pixmaps sounds | \
 		${TAR} -C ${STAGEDIR}${DATADIR} --unlink -xf -
-	@${FIND} ${STAGEDIR}${PREFIX}/share/xbomber | \
-		${XARGS} ${CHOWN} ${SHAREOWN}:${SHAREGRP}
 	@${FIND} ${STAGEDIR}${PREFIX}/share/xbomber -type f | \
 		${XARGS} ${CHMOD} ${SHAREMODE}
 .if ${PORT_OPTIONS:MDOCS}
