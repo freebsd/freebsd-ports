@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	centreon-clib
-PORTVERSION=	1.2.0
+PORTVERSION=	1.4.1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://download.centreon.com/centreon-clib/
 
