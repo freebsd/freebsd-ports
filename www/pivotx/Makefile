@@ -88,7 +88,6 @@ do-install:
 	@${MKDIR} '${STAGEDIR}${WWWDIR}'
 	@cd '${WRKSRC}' && ${COPYTREE_SHARE} . '${STAGEDIR}${WWWDIR}'
 .for DIR in ${WRITABLEDIRS}
-	@${CHOWN} -R '${WWWOWN}:${WWWGRP}' '${STAGEDIR}${WWWDIR}/${DIR}'
 	@${FIND} '${STAGEDIR}${WWWDIR}/${DIR}' -type d -print0 | ${XARGS} -0 ${CHMOD} u=rwx,go=rx
 	@${FIND} '${STAGEDIR}${WWWDIR}/${DIR}' -type f -print0 | ${XARGS} -0 ${CHMOD} u=rw,go=r
 .endfor
