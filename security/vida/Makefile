@@ -10,8 +10,8 @@ MASTER_SITES=	http://vidatapipe.sourceforge.net/
 MAINTAINER=	mich@FreeBSD.org
 COMMENT=	Vida is a multi-datapipe handler
 
-BUILD_DEPENDS=	libnet10-config:${PORTSDIR}/net/libnet10
-RUN_DEPENDS=	libnet10-config:${PORTSDIR}/net/libnet10
+BUILD_DEPENDS=	${LIBNET_CONFIG}:${PORTSDIR}/net/libnet10
+RUN_DEPENDS=	${LIBNET_CONFIG}:${PORTSDIR}/net/libnet10
 
 LDFLAGS+=	${PTHREAD_LIBS} -lncurses -lpcap `${LIBNET_CONFIG} --libs`
 
@@ -21,6 +21,9 @@ LIBNET_CONFIG?=	${LOCALBASE}/bin/libnet10-config
 
 PLIST_FILES=	bin/vida \
 		man/man1/vida.1.gz
+
+DEPRECATED=	Depends on expired net/libnet10
+EXPIRATION_DATE=2014-09-30
 
 do-build:
 	(cd ${WRKSRC} && \
