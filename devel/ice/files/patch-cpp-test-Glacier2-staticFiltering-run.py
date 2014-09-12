@@ -14,11 +14,11 @@
      domainname = ""
  
 +print "Network and process debug output:"
-+subprocess.call(["/usr/bin/netstat", "-an"])
-+subprocess.call(["/bin/ps", "-alxww"])
-+subprocess.call(["/usr/bin/sockstat"])
 +subprocess.call(["/sbin/ifconfig", "-a"])
 +subprocess.call(["/sbin/sysctl", "-a"])
++subprocess.call(["/bin/ps", "-alxww"])
++subprocess.call(["/usr/bin/sockstat"])
++subprocess.call(["/usr/bin/netstat", "-an"])
  testcases = [
          ('testing category filter',
                  ('', '', '', 'foo "a cat with spaces"', '', ''),
