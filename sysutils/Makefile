@@ -731,6 +731,7 @@
     SUBDIR += py-psutil
     SUBDIR += py-psutil121
     SUBDIR += py-pytsk
+    SUBDIR += py-queuelib
     SUBDIR += py-ranger
     SUBDIR += py-salt
     SUBDIR += py-salt-api

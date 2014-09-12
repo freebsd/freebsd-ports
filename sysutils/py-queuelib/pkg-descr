@@ -1,0 +1,7 @@
+Queuelib is a collection of persistent (disk-based) queues for
+Python.
+
+Queuelib's goals are speed and simplicity. It was originally part
+of the Scrapy framework and stripped out into its own library.
+
+WWW: https://github.com/scrapy/queuelib
