@@ -44,7 +44,7 @@ USE_QT5=	# empty
 QT_NONSTANDARD=	yes
 ALL_TARGET=	default
 USE_GL=		gl
-USES=		dos2unix tar:bzip2 compiler:features
+USES=		dos2unix tar:bzip2
 DOS2UNIX_FILES=	mozilla/media/webrtc/trunk/webrtc/system_wrappers/source/spreadsortlib/spreadsort.hpp
 
 MOZ_OPTIONS=	--program-transform-name='s/thunderbird/${MOZILLA}/' \
