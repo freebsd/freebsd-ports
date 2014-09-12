@@ -13,7 +13,7 @@ COMMENT=	Off-Screen Mesa implementation of the OpenGL API
 LIB_DEPENDS=	libexpat.so:${PORTSDIR}/textproc/expat2
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/libxml2mod.so:${PORTSDIR}/textproc/py-libxml2
 
-USES=		gmake pkgconfig tar:bzip2 libtool python:2
+USES=		gmake pkgconfig tar:bzip2 libtool python:2 bison
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--enable-osmesa \
