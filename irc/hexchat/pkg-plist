@@ -8,6 +8,7 @@ lib/hexchat/plugins/checksum.so
 %%PYTHON%%lib/hexchat/plugins/python.so
 libdata/pkgconfig/hexchat-plugin.pc
 man/man1/hexchat.1.gz
+share/appdata/hexchat.appdata.xml
 share/applications/hexchat.desktop
 %%DBUS%%share/dbus-1/services/org.hexchat.service.service
 share/icons/hicolor/48x48/apps/hexchat.png
@@ -35,7 +36,7 @@ share/icons/hicolor/scalable/apps/hexchat.svg
 %%NLS%%share/locale/hu/LC_MESSAGES/hexchat.mo
 %%NLS%%share/locale/id/LC_MESSAGES/hexchat.mo
 %%NLS%%share/locale/it/LC_MESSAGES/hexchat.mo
-%%NLS%%share/locale/ja/LC_MESSAGES/hexchat.mo
+%%NLS%%share/locale/ja_JP/LC_MESSAGES/hexchat.mo
 %%NLS%%share/locale/kn/LC_MESSAGES/hexchat.mo
 %%NLS%%share/locale/ko/LC_MESSAGES/hexchat.mo
 %%NLS%%share/locale/lt/LC_MESSAGES/hexchat.mo
@@ -56,17 +57,18 @@ share/icons/hicolor/scalable/apps/hexchat.svg
 %%NLS%%share/locale/sl/LC_MESSAGES/hexchat.mo
 %%NLS%%share/locale/sq/LC_MESSAGES/hexchat.mo
 %%NLS%%share/locale/sr/LC_MESSAGES/hexchat.mo
+%%NLS%%share/locale/sr@latin/LC_MESSAGES/hexchat.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/hexchat.mo
 %%NLS%%share/locale/th/LC_MESSAGES/hexchat.mo
+%%NLS%%share/locale/tr/LC_MESSAGES/hexchat.mo
 %%NLS%%share/locale/uk/LC_MESSAGES/hexchat.mo
 %%NLS%%share/locale/vi/LC_MESSAGES/hexchat.mo
 %%NLS%%share/locale/wa/LC_MESSAGES/hexchat.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/hexchat.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/hexchat.mo
 share/pixmaps/hexchat.png
-%%NLS%%@dirrmtry share/locale/rw/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/rw
-%%NLS%%@dirrmtry share/locale/ast/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/ast
 @dirrm lib/hexchat/plugins
 @dirrm lib/hexchat
+@dirrmtry share/appdata
+%%NLS%%@dirrmtry share/locale/ja_JP/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/ja_JP
