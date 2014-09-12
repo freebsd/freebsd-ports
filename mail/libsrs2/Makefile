@@ -3,7 +3,7 @@
 
 PORTNAME=		libsrs2
 PORTVERSION=		1.0.18
-PORTREVISION=		2
+PORTREVISION=		3
 CATEGORIES=		mail
 MASTER_SITES=		http://www.libsrs2.org/%SUBDIR%/
 MASTER_SITE_SUBDIR=	srs
@@ -13,7 +13,7 @@ COMMENT=		Sender Rewriting Scheme 2 C Implementation
 
 CONFLICTS=		p5-Mail-SRS*
 
-USES=		libtool:keepla
+USES=		libtool
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=		yes
 
