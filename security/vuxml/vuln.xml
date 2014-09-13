@@ -57,6 +57,36 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="cc627e6c-3b89-11e4-b629-6805ca0b3d42">
+    <topic>phpMyAdmin -- XSRF/CSRF due to DOM based XSS in the micro history feature</topic>
+    <affects>
+      <package>
+	<name>phpMyAdmin</name>
+	<range><ge>4.2.0</ge><lt>4.2.8.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The phpMyAdmin development team reports:</p>
+	<blockquote cite="http://www.phpmyadmin.net/home_page/security/PMASA-2014-10.php">
+	  <p>XSRF/CSRF due to DOM based XSS in the micro history feature.</p>
+	  <p>By deceiving a logged-in user to click on a crafted URL,
+	    it is possible to perform remote code execution and in some
+	    cases, create a root account due to a DOM based XSS
+	    vulnerability in the micro history feature.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://www.phpmyadmin.net/home_page/security/PMASA-2014-10.php</url>
+      <cvename>CVE-2014-6300</cvename>
+    </references>
+    <dates>
+      <discovery>2014-09-13</discovery>
+      <entry>2014-09-13</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="36858e78-3963-11e4-ad84-000c29f6ae42">
     <topic>security/ossec-hids-* -- root escalation via temp files</topic>
     <affects>
