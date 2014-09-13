@@ -977,7 +977,6 @@
     SUBDIR += ruby-growl
     SUBDIR += ruby-icmp
     SUBDIR += ruby-ldap
-    SUBDIR += ruby-net-geoip
     SUBDIR += ruby-tcpsocketpipe
     SUBDIR += ruby-tserver
     SUBDIR += rubygem-amazon-ec2
