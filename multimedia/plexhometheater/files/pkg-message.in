@@ -1,0 +1,10 @@
+
+To run plexhometheater from the command line, be sure to
+use the %%PREFIX%%/bin/plexhometheater.sh shell script
+rather than the %%PREFIX%%/bin/plexhometheater binary directly.
+
+To run plexhometheater from the command line, run
+
+	%%PREFIX%%/bin/plexhometheater.sh
+
+rather than the %%PREFIX%%/bin/plexhometheater binary.

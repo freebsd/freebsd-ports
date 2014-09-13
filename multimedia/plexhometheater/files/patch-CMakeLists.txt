@@ -18,3 +18,12 @@
          install(DIRECTORY /usr/lib/python${PYTHON_VERSION} DESTINATION ${LIBPATH}/lib/ COMPONENT RUNTIME
            PATTERN python${PYTHON_VERSION}/test EXCLUDE
            REGEX .*\\.pyc$ EXCLUDE
+@@ -161,7 +161,7 @@
+ if(XRANDR_FOUND)
+   add_executable(xbmc-xrandr xbmc-xrandr.c)
+   target_link_libraries(xbmc-xrandr ${CONFIG_LIBRARY_XRANDR} ${CONFIG_LIBRARY_X11} -lm)
+-  install(TARGETS xbmc-xrandr DESTINATION ${BINPATH})
++  install(TARGETS xbmc-xrandr DESTINATION ${LIBPATH})
+ endif()
+   
+ include(CPackConfig)
