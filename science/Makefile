@@ -164,6 +164,7 @@
     SUBDIR += ruby-gphys
     SUBDIR += ruby-netcdf
     SUBDIR += rubygem-ai4r
+    SUBDIR += rubygem-cdo
     SUBDIR += rubygem-netcdf
     SUBDIR += sigrok-cli
     SUBDIR += sigrok-firmware
