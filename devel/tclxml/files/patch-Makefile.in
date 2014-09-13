@@ -1,0 +1,20 @@
+--- Makefile.in.orig	2013-03-30 17:17:07 UTC
++++ Makefile.in
+@@ -423,13 +423,15 @@
+ 	@mkdir -p $(DESTDIR)$(pkglibdir)
+ 	@list='$(lib_BINARIES)'; for p in $$list; do \
+ 	  if test -f $$p; then \
+-	    echo " $(INSTALL_PROGRAM) $$p $(DESTDIR)$(pkglibdir)/$$p"; \
+-	    $(INSTALL_PROGRAM) $$p $(DESTDIR)$(pkglibdir)/$$p; \
+ 	    stub=`echo $$p|sed -e "s/.*\(stub\).*/\1/"`; \
+ 	    if test "x$$stub" = "xstub"; then \
++	    echo " $(INSTALL_DATA) $$p $(DESTDIR)$(pkglibdir)/$$p"; \
++	    $(INSTALL_DATA) $$p $(DESTDIR)$(pkglibdir)/$$p; \
+ 	    echo " $(RANLIB_STUB) $(DESTDIR)$(pkglibdir)/$$p"; \
+ 	    $(RANLIB_STUB) $(DESTDIR)$(pkglibdir)/$$p; \
+ 	    else \
++	    echo " $(INSTALL_PROGRAM) $$p $(DESTDIR)$(pkglibdir)/$$p"; \
++	    $(INSTALL_PROGRAM) $$p $(DESTDIR)$(pkglibdir)/$$p; \
+ 	    echo " $(RANLIB) $(DESTDIR)$(pkglibdir)/$$p"; \
+ 	    $(RANLIB) $(DESTDIR)$(pkglibdir)/$$p; \
+ 	    fi; \
