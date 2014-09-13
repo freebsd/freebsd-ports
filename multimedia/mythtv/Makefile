@@ -31,7 +31,7 @@ WRKSRC=		${WRKDIR}/${GH_ACCOUNT}-${GH_PROJECT}-${GH_COMMIT}/${GH_PROJECT}
 ONLY_FOR_ARCHS=	i386 amd64
 USE_PERL5=	run build fixpacklist
 NOPRECIOUSMAKEVARS=	# don't override $(ARCH) in ffmpeg makefiles
-USES=		gmake libtool perl5 pkgconfig
+USES=		gmake libtool perl5 pkgconfig pathfix
 USE_QT4=	gui sql network script linguist_build l10n sql-mysql_run \
 		moc_build qmake_build rcc_build uic_build imageformats
 QT_NONSTANDARD=	yes

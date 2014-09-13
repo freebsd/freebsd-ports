@@ -2329,8 +2329,6 @@ libdata/pkgconfig/libmythzmq.pc
 %%BINDINGS%%@dirrm %%PYTHON_SITELIBDIR%%/MythTV
 %%BINDINGS%%@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MythTV
 %%BINDINGS%%@dirrmtry %%SITE_PERL%%/IO/Socket/INET
-%%BINDINGS%%@dirrmtry %%SITE_PERL%%/IO/Socket
-%%BINDINGS%%@dirrmtry %%SITE_PERL%%/IO
 %%BINDINGS%%@dirrm %%SITE_PERL%%/MythTV
 @dirrm include/mythtv/zeromq
 @dirrm include/mythtv/upnp
