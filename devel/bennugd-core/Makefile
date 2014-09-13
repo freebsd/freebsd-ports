@@ -3,6 +3,7 @@
 
 PORTNAME=	core
 PORTVERSION=	svn20130912
+PORTREVISION=	1
 CATEGORIES=	devel games
 MASTER_SITES=	http://mirror.amdmi3.ru/distfiles/
 PKGNAMEPREFIX=	bennugd-
@@ -11,7 +12,7 @@ DISTNAME=	bennugd-${PORTVERSION}
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	High level open source game development suite, core libs
 
-USES=		tar:bzip2 dos2unix
+USES=		dos2unix libtool tar:bzip2
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS= --bindir="${PREFIX}/libexec"
 SUB_FILES=	bgdc bgdi
@@ -27,7 +28,7 @@ WRKSRC=		${WRKDIR}/bennugd/${PORTNAME}
 
 PLIST_FILES=	bin/bgdc bin/bgdi \
 		libexec/bgdc libexec/bgdi \
-		lib/libbgdrtm.la lib/libbgdrtm.so
+		lib/libbgdrtm.so
 
 post-extract:
 	@${CHMOD} a+x ${WRKSRC}/configure ${WRKSRC}/install-sh
