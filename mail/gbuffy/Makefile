@@ -3,7 +3,7 @@
 
 PORTNAME=	gbuffy
 PORTVERSION=	0.2.6
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	mail
 MASTER_SITES=	http://www.fiction.net/blong/programs/gbuffy/gbuffy-${PORTVERSION}/
 

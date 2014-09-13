@@ -9,39 +9,18 @@
  
  
  #
-@@ -134,10 +134,8 @@
- lib_LTLIBRARIES = libgtk.la
- 
- # libtool stuff: set version and export symbols for resolving
--libgtkincludedir = $(includedir)/gtk-1.2/gtk
--libgtk_la_LDFLAGS = @STRIP_BEGIN@ 	-version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE)		-release $(LT_RELEASE) 						-export-dynamic							@GLIB_DEPLIBS@ 							@x_ldflags@							@x_libs@ 							-lm							@STRIP_END@
--
--#	$(top_builddir)/gdk/libgdk.la
-+libgtkincludedir = $(includedir)/gtk
-+libgtk_la_LDFLAGS = @STRIP_BEGIN@ 	-version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE)		-release $(LT_RELEASE) 						-export-dynamic							@GLIB_DEPLIBS@ 							@x_ldflags@							@x_libs@ 							-lm					$(top_builddir)/gdk/libgdk.la	@STRIP_END@
- 
- #
- # setup source file variables
-@@ -190,8 +188,8 @@
+@@ -190,8 +190,8 @@
  gen_sources = xgen-gdef xgen-gtbh xgen-gtbvc xgen-gtbic xgen-gtbec xgen-gmh xgen-gmc
  CLEANFILES =  $(gen_sources)
  
 -gtkconfdir = $(sysconfdir)/gtk
 -gtkconf_DATA = gtkrc.az gtkrc.el gtkrc.eo gtkrc.he gtkrc.hy gtkrc.ja 	gtkrc.ko gtkrc.ru gtkrc.tr gtkrc.th gtkrc.uk gtkrc.iso-8859-2 	gtkrc.iso-8859-5 gtkrc.iso-8859-13 gtkrc.iso-8859-14 	gtkrc.iso-8859-15 gtkrc.zh_CN gtkrc.zh_TW.big5 	gtkrc.ka_GE.georgianacademy gtkrc.ka_GE.georgianps 	gtkrc.vi_VN.tcvn gtkrc.vi_VN.viscii gtkrc.cp1251 gtkrc.cp1255
 +gtkconfdir = $(datadir)/themes/Default/gtk
-+gtkconf_DATA = gtkrc.az gtkrc.el gtkrc.eo gtkrc.he gtkrc.hy gtkrc.ja 	gtkrc.ko gtkrc.ru gtkrc.tr gtkrc.th gtkrc.uk gtkrc.iso-8859-2 	gtkrc.iso-8859-5 gtkrc.iso-8859-13 gtkrc.iso-8859-14 	gtkrc.iso-8859-15 gtkrc.zh_CN gtkrc.ka_GE.georgianacademy gtkrc.ka_GE.georgianps 	gtkrc.vi_VN.tcvn gtkrc.vi_VN.viscii gtkrc.cp1251 gtkrc.cp1255
++gtkconf_DATA = gtkrc.az gtkrc.el gtkrc.eo gtkrc.he gtkrc.hy gtkrc.ja 	gtkrc.ko gtkrc.ru gtkrc.tr gtkrc.th gtkrc.uk gtkrc.iso-8859-2 	gtkrc.iso-8859-5 gtkrc.iso-8859-13 gtkrc.iso-8859-14 	gtkrc.iso-8859-15 gtkrc.zh_CN gtkrc.zh_TW.Big5 	gtkrc.ka_GE.georgianacademy gtkrc.ka_GE.georgianps 	gtkrc.vi_VN.tcvn gtkrc.vi_VN.viscii gtkrc.cp1251 gtkrc.cp1255
  
  
  #
-@@ -415,6 +413,7 @@
- 	    $(INSTALL_DATA) $$p $(DESTDIR)$(gtkconfdir)/$$p; \
- 	  fi; fi; \
- 	done
-+	$(INSTALL_DATA) gtkrc.zh_TW.big5 $(DESTDIR)$(gtkconfdir)/gtkrc.zh_TW.Big5
- 
- uninstall-gtkconfDATA:
- 	@$(NORMAL_UNINSTALL)
-@@ -1362,7 +1361,7 @@
+@@ -1362,7 +1362,7 @@
  uninstall-am: uninstall-libLTLIBRARIES uninstall-gtkconfDATA \
  		uninstall-libgtkincludeHEADERS uninstall-local
  uninstall: uninstall-am

@@ -1,14 +1,5 @@
 --- Makefile.in.orig	Thu Mar 15 10:48:50 2001
 +++ Makefile.in	Wed Nov 20 14:39:44 2002
-@@ -37,7 +37,7 @@
- DESTDIR =
- 
- pkgdatadir = $(datadir)/@PACKAGE@
--pkglibdir = $(libdir)/@PACKAGE@
-+pkglibdir = $(prefix)/libdata/pkgconfig
- pkgincludedir = $(includedir)/@PACKAGE@
- 
- top_builddir = .
 @@ -96,9 +96,9 @@
  
  AUTOMAKE_OPTIONS = 1.4
@@ -17,38 +8,19 @@
 +SUBDIRS = . gmodule gthread docs
  
 -configincludedir = $(pkglibdir)/include
-+configincludedir = $(includedir)
++configincludedir = $(includedir)/glib-1.2
  
  bin_SCRIPTS = glib-config
  
-@@ -114,7 +114,7 @@
- libglib_la_SOURCES =  	garray.c		gcache.c		gcompletion.c		gdataset.c		gdate.c         	gerror.c		ghash.c			ghook.c			giochannel.c    	giounix.c       	glist.c			gmain.c         	gmem.c			gmessages.c		gmutex.c		gnode.c			gprimes.c		grel.c			gscanner.c		gslist.c		gstrfuncs.c		gstring.c		gtimer.c		gtree.c			gutils.c
- 
- 
--glibincludedir = $(includedir)/glib-1.2
-+glibincludedir = $(includedir)
- glibinclude_HEADERS =  	glib.h
- 
- 
-@@ -134,7 +134,7 @@
- m4datadir = $(datadir)/aclocal
- m4data_DATA = glib.m4
- 
--pkgconfigdir = $(libdir)/pkgconfig
-+pkgconfigdir = $(pkglibdir)
- pkgconfig_DATA = glib.pc gmodule.pc gthread.pc
- ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
- mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
-@@ -574,7 +574,7 @@
+@@ -574,7 +574,6 @@
  	      || exit 1; \
  	  fi; \
  	done
 -	$(MAKE) $(AM_MAKEFLAGS) top_distdir="$(top_distdir)" distdir="$(distdir)" dist-hook
-+
  garray.lo garray.o : garray.c glib.h glibconfig.h
  gcache.lo gcache.o : gcache.c glib.h glibconfig.h
  gcompletion.lo gcompletion.o : gcompletion.c glib.h glibconfig.h
-@@ -629,7 +629,7 @@
+@@ -629,7 +628,7 @@
  		uninstall-configincludeDATA uninstall-m4dataDATA \
  		uninstall-pkgconfigDATA uninstall-glibincludeHEADERS
  uninstall: uninstall-recursive
@@ -59,15 +31,6 @@
  install-strip:
 --- gmodule/Makefile.in.orig	Fri Mar  2 17:37:21 2001
 +++ gmodule/Makefile.in	Tue Mar  6 09:24:01 2001
-@@ -100,7 +100,7 @@
- 
- BUILT_SOURCES = gmoduleconf.h
- 
--glibincludedir = $(includedir)/glib-1.2
-+glibincludedir = $(includedir)
- glibinclude_HEADERS =  		gmodule.h
- 
- 
 @@ -341,7 +341,7 @@
  install: install-am
  uninstall-am: uninstall-libLTLIBRARIES uninstall-glibincludeHEADERS
@@ -79,15 +42,6 @@
  	$(MAKE) $(AM_MAKEFLAGS) AM_INSTALL_PROGRAM_FLAGS=-s install
 --- gthread/Makefile.in.orig	Tue Mar  6 09:12:20 2001
 +++ gthread/Makefile.in	Tue Mar  6 09:12:59 2001
-@@ -127,7 +127,7 @@
- testgthread_OBJECTS =  testgthread.o
- testgthread_DEPENDENCIES =  ../libglib.la libgthread.la
- testgthread_LDFLAGS = 
--CFLAGS = @CFLAGS@
-+CFLAGS = @CFLAGS@ @G_THREAD_CFLAGS@
- COMPILE = $(CC) $(DEFS) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
- LTCOMPILE = $(LIBTOOL) --mode=compile $(CC) $(DEFS) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
- CCLD = $(CC)
 @@ -300,7 +300,7 @@
  install: install-am
  uninstall-am: uninstall-libLTLIBRARIES

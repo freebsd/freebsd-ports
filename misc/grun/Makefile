@@ -3,7 +3,7 @@
 
 PORTNAME=	grun
 PORTVERSION=	0.8.1
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	misc
 MASTER_SITES=	http://www.brettnacher.org/users/dominik/FreeBSD/
 

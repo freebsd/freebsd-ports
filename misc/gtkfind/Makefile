@@ -3,7 +3,7 @@
 
 PORTNAME=	gtkfind
 PORTVERSION=	1.1
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	misc
 MASTER_SITES=	http://www.bayofrum.net/dist/${PORTNAME}/ \
 		http://www.purplehat.org/downloads/gtkfind/

@@ -3,7 +3,7 @@
 
 PORTNAME=	xmms-shn
 PORTVERSION=	2.4.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	audio
 MASTER_SITES=	http://www.etree.org/shnutils/xmms-shn/dist/src/
 

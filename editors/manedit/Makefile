@@ -3,7 +3,7 @@
 
 PORTNAME=	manedit
 PORTVERSION=	1.2.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	editors
 MASTER_SITES=	http://wolfsinger.com/~wolfpack/packages/
 
