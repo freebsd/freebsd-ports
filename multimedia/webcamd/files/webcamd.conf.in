@@ -31,5 +31,11 @@ notify 100 {
 	match "subsystem"	"INTERFACE";
 	match "type"		"ATTACH";
 	match "intclass"	"0x03";
+#
+# Limit HID device attach to Wacom Devices
+# else webcamd might attach to your keyboard
+# and mouse
+#
+	match "vendor"		"0x056a";
 	action "env LD_PRELOAD=%%LIBHAL%%%%LIBCUSE%% %%PREFIX%%/etc/rc.d/webcamd start $cdev $interface";
 };
