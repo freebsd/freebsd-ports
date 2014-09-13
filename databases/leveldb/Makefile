@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	leveldb
-PORTVERSION=	1.15.0
-PORTREVISION=	3
+PORTVERSION=	1.17
 CATEGORIES=	databases
-MASTER_SITES=	GOOGLE_CODE
+MASTER_SITES=	LOCAL/sunpoet
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Fast and lightweight key/value database library by Google
@@ -17,7 +16,7 @@ OPTIONS_DEFAULT=SNAPPY
 
 LDFLAGS+=	-L${LOCALBASE}/lib
 USE_LDCONFIG=	yes
-USES=		gmake
+USES=		gmake tar:xz
 
 PLIST_SUB=	SHLIB_MAJOR=${SHLIB_MAJOR} \
 		SHLIB_MINOR=${SHLIB_MINOR}
@@ -25,8 +24,8 @@ PLIST_SUB=	SHLIB_MAJOR=${SHLIB_MAJOR} \
 NOT_FOR_ARCHS=	powerpc
 NOT_FOR_ARCHS_REASON=	not yet ported to this platform
 
-SHLIB_MAJOR=	${PORTVERSION:R:R}
-SHLIB_MINOR=	${PORTVERSION:R:E}
+SHLIB_MAJOR=	${PORTVERSION:R}
+SHLIB_MINOR=	${PORTVERSION:E}
 
 GPERFTOOLS_LIB_DEPENDS=	libtcmalloc.so:${PORTSDIR}/devel/google-perftools
 SNAPPY_LIB_DEPENDS=	libsnappy.so:${PORTSDIR}/archivers/snappy
