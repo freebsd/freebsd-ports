@@ -13,16 +13,14 @@ COMMENT=	Ncurses based, lynx style info documentation browser
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		makeinfo ncurses tar:bzip2
+USES=		libtool makeinfo ncurses tar:bzip2
 USE_AUTOTOOLS=	libtoolize aclocal autoheader automake autoconf
-LIBTOOLIZE_ARGS=--force
 ACLOCAL_ARGS=	-I macros
 AUTOMAKE_ARGS=	--add-missing --force-missing
 CONFIGURE_ARGS=	--with-localedir=${PREFIX}/share/locale
 
-CFLAGS+=	-DHAVE_LOCALE_H
 CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+LIBS+=		-L${LOCALBASE}/lib
 
 INFO=		pinfo
 PLIST_FILES=	bin/pinfo etc/pinforc man/man1/pinfo.1.gz
@@ -44,13 +42,7 @@ USES+=		gettext:build
 CONFIGURE_ARGS+=--disable-nls
 .endif
 
-post-patch:
-	@${REINPLACE_CMD} -e \
-		's|@MKINSTALLDIRS@|$$(top_srcdir)/tools/install-sh -d|' \
-		${WRKSRC}/po/Makefile.in.in
-
 pre-configure:
-	@${MKDIR} ${WRKSRC}/tools
-	@${LN} -sf ${LOCALBASE}/share/gettext/config.rpath ${WRKSRC}/tools
+	@(cd ${WRKSRC} && ${LOCALBASE}/bin/autopoint -f)
 
 .include <bsd.port.mk>
