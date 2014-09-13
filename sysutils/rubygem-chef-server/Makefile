@@ -17,7 +17,7 @@ RUN_DEPENDS=	rubygem-chef-expander>=${PORTREVISION}:${PORTSDIR}/sysutils/rubygem
 		rubygem-chef-solr>=${PORTREVISION}:${PORTSDIR}/sysutils/rubygem-chef-solr
 
 DEPRECATED=	Depends on broken rubygem-dep_selector
-EXPIRES=	2014-09-25
+EXPIRATION_DATE=	2014-09-25
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
