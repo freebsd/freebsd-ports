@@ -3,7 +3,7 @@
 
 PORTNAME=	hastymail2
 PORTVERSION=	1.1
-PORTREVISION=	4
+PORTREVISION=	5
 PORTEPOCH=	1
 CATEGORIES=	www mail
 MASTER_SITES=	SF/hastymail/Hastymail2%20Stable%20Releases/Hastymail2%201.1/
@@ -26,6 +26,7 @@ WIKEDVERSION=	1_1
 WRKSRC=		${WRKDIR}/${PORTNAME}_${WIKEDVERSION}
 NO_BUILD=	yes
 FIND_SKIP_OPTS=	-not -name hastymail2.conf.example -not -name '*.orig'
+PLIST_SUB=	WWWOWN="${WWWOWN}" WWWGRP="${WWWGRP}"
 
 OPTIONS_DEFINE=	PGSQL MYSQL DB ICONV MBSTRING
 
@@ -69,7 +70,6 @@ do-install:
 	@${MKDIR} ${STAGEDIR}${WWWDIR}
 	@cd ${WRKSRC} && ${FIND} . ${FIND_SKIP_OPTS} \
 		| ${PAX} -rwd ${STAGEDIR}${WWWDIR}
-	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${STAGEDIR}${WWWDIR}
 	@${MKDIR} ${STAGEDIR}${ETCDIR}
 	@${INSTALL_DATA} ${WRKSRC}/hastymail2.conf.example \
 		${STAGEDIR}${ETCDIR}/hastymail2.conf.sample
