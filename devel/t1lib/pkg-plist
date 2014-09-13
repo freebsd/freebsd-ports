@@ -5,9 +5,11 @@ include/t1lib.h
 lib/libt1.a
 lib/libt1.so
 lib/libt1.so.5
+lib/libt1.so.5.1.2
 %%X11%%lib/libt1x.a
 %%X11%%lib/libt1x.so
 %%X11%%lib/libt1x.so.5
+%%X11%%lib/libt1x.so.5.1.2
 %%PORTDOCS%%%%DOCSDIR%%/t1lib_doc.pdf
 %%DATADIR%%/t1lib.config
 @dirrm %%DATADIR%%
