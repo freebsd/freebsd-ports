@@ -1,3 +1,5 @@
+@owner %%WWWOWN%%
+@group %%WWWGRP%%
 %%WWWDIR%%/CONTRIB
 %%WWWDIR%%/COPYING
 %%WWWDIR%%/ChangeLog
@@ -857,3 +859,5 @@
 @dirrm %%WWWDIR%%/css
 @dirrmtry %%WWWDIR%%/config
 @dirrmtry %%WWWDIR%%
+@owner root
+@group wheel
