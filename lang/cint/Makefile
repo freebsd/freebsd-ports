@@ -16,7 +16,7 @@ EXTRACT_SUFX=	.tgz
 HAS_CONFIGURE=	yes
 CONFIGURE_ENV=	CC="${CC}" CXX="${CXX}" LDFLAGS="${LDFLAGS}"
 USE_GCC=	yes
-USES=		gmake
+USES=		gmake readline
 USE_LDCONFIG=	${PREFIX}/lib/cint
 ALL_TARGET=
 
