@@ -11,23 +11,19 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=		gahr@FreeBSD.org
 COMMENT=		Program for finding and playing free music from the Internet
 
-LIB_DEPENDS=		libsigc-2.0.so:${PORTSDIR}/devel/libsigc++20 \
-			libgtkmm-2.4.so:${PORTSDIR}/x11-toolkits/gtkmm24 \
-			libgconfmm-2.6.so:${PORTSDIR}/devel/gconfmm26 \
-			libxml++-2.6.so:${PORTSDIR}/textproc/libxml++26 \
-			libvorbis.so:${PORTSDIR}/audio/libvorbis \
+LIB_DEPENDS=		libvorbis.so:${PORTSDIR}/audio/libvorbis \
 			libao.so:${PORTSDIR}/audio/libao
 
 USES=			pathfix pkgconfig libtool
 GNU_CONFIGURE=		yes
-USE_GNOME=		gnomeprefix
+USE_GNOME=		gconfmm26 gnomeprefix gtkmm24
 USE_LDCONFIG=		yes
-LIBTOOLFLAGS=		--tag=CXX
 CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
-CONFIGURE_ENV=	LIBS="`pkg-config --libs glibmm-2.4`"
+LIBS+=		-L${LOCALBASE}/lib
 
 post-patch:
+	@${REINPLACE_CMD} '/^rainbow_get_LDADD =/s/$$/ $$(RAINBOW_LIBS)/' \
+		${WRKSRC}/rainbow/Makefile.in
 	@${REINPLACE_CMD} -e 's|CCLD = $$(CC)|CCLD = $$(CXX)|' \
 		${WRKSRC}/roboradio/mp3/Makefile.in
 	@${REINPLACE_CMD} -e 's|static char|static const char|' \
