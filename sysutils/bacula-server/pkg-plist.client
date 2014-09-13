@@ -1,7 +1,5 @@
-@sample %%ETCDIR%%/bacula-fd.conf.sample
-@group bacula
-@sample %%ETCDIR%%/bconsole.conf.sample
-@group wheel
+@sample(,bacula,640) %%ETCDIR%%/bacula-fd.conf.sample
+@sample(,bacula,640) %%ETCDIR%%/bconsole.conf.sample
 lib/libbac-%%LIB_VERSION%%.so
 lib/libbac.la
 lib/libbac.so
@@ -16,9 +14,7 @@ man/man8/bacula.8.gz
 man/man8/bacula-fd.8.gz
 man/man8/bconsole.8.gz
 sbin/bacula-fd
-@group bacula
-sbin/bconsole
-@group wheel
+@(,bacula,750) sbin/bconsole
 @exec mkdir -p %%BACULA_DIR%%
 @dirrmtry %%BACULA_DIR%%
 @dirrmtry share/bacula
