@@ -2,19 +2,18 @@
 # $FreeBSD$
 
 PORTNAME=	sysv_ipc
-PORTVERSION=	0.6.6
-PORTREVISION=	1
+PORTVERSION=	0.6.8
 CATEGORIES=	devel python
-MASTER_SITES=	http://semanchuk.com/philip/sysv_ipc/
+MASTER_SITES=	http://semanchuk.com/philip/sysv_ipc/ \
+		CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	lwhsu@FreeBSD.org
 COMMENT=	System V IPC for Python
 
-LICENSE=	BSD
+LICENSE=	BSD2CLAUSE
 
-USE_PYTHON=	yes
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
+USES=	python
+USE_PYTHON=	distutils autoplist
 
 .include <bsd.port.mk>
