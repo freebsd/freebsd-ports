@@ -1,12 +1,16 @@
 *********************************************************************
-1) webcamd requires the cuse4bsd kernel module, please load this
-by doing
+1) webcamd requires the cuse4bsd or cuse kernel module, depending on
+how webcamd was compiled. Please load this dependency by doing:
 
        # kldload cuse4bsd
+or
+       # kldload cuse
 
-or adding
+or by adding
 
        cuse4bsd_load="YES"
+or
+       cuse_load="YES"
 
 to your /boot/loader.conf.
 
@@ -14,7 +18,7 @@ to your /boot/loader.conf.
 
 to your /etc/rc.conf
 
-3) Please restart devd as the configuration changed
+3) Please restart devd to start webcamd
 
 	# service devd restart
 
@@ -22,4 +26,6 @@ to your /etc/rc.conf
 
 	# pw groupmod webcamd -m <username>
 
+5) If webcamd still did not start, consult the installed webcamd rc.d
+script for more help and instructions on how to start webcamd.
 *********************************************************************
