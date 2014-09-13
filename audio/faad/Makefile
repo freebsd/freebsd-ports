@@ -35,9 +35,6 @@ post-patch:
 	@${ECHO_CMD} "SUBDIRS = libfaad common frontend" > \
 		${WRKSRC}/Makefile.am
 
-pre-configure:
-	@cd ${WRKSRC}; ${SETENV} ${AUTOTOOLS_ENV} ${LIBTOOLIZE} --automake
-
 post-configure:
 	@${REINPLACE_CMD} "s/444/644/g" ${WRKSRC}/common/mp4ff/Makefile
 

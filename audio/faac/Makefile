@@ -29,7 +29,4 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|<mp4\.h>|<mp4v2/mp4v2.h>|g' \
 		${WRKSRC}/frontend/main.c \
 
-pre-configure:
-	@cd ${WRKSRC}; ${SETENV} ${AUTOTOOLS_ENV} ${LIBTOOLIZE} --automake
-
 .include <bsd.port.mk>
