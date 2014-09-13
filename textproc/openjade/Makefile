@@ -20,6 +20,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-default-catalog=${PREFIX}/share/sgml/catalog \
 		--datadir=${DATADIR}
 INSTALL_TARGET=	install install-man
+MAKE_ENV=	STRIP="${STRIP}"
 PLIST_SUB=	XMLCATMGR=${XMLCATMGR} \
 		CATALOG_PORTS_SGML=${CATALOG_PORTS_SGML}
 
