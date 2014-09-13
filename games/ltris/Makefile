@@ -3,7 +3,7 @@
 
 PORTNAME=	ltris
 PORTVERSION=	1.0.19
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	games
 MASTER_SITES=	SF/lgames/${PORTNAME}
@@ -36,11 +36,5 @@ post-patch:
 		 s/--mode=666//g' ${WRKSRC}/src/Makefile.in
 	@${REINPLACE_CMD} -e 's/^inline //' \
 		${WRKSRC}/src/sdl.h ${WRKSRC}/src/tools.h
-
-post-install:
-	@${CHMOD} 2755 ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
-	@${CHOWN} root:games ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
-	@${CHMOD} 0664 ${STAGEDIR}${DATADIR}/${PORTNAME}.hscr
-	@${CHOWN} root:games ${STAGEDIR}${DATADIR}/${PORTNAME}.hscr
 
 .include <bsd.port.mk>
