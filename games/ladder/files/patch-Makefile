@@ -27,7 +27,7 @@
 +all: $(TARGET)
 +
 +install:
-+	install -c -s -o root -g games -m 2555 ladder $(DESTDIR)${PREFIX}/bin
++	$(BSD_INSTALL_PROGRAM) ladder $(DESTDIR)${PREFIX}/bin
 +
  # ladder.c:	ladder.m4
  
