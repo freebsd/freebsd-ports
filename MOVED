@@ -7021,7 +7021,6 @@ databases/msql||2014-09-07|Has expired: Not staged and BROKEN
 multimedia/pvr250||2014-09-07|Has expired: Not staged and BROKEN
 multimedia/pvrxxx||2014-09-07|Has expired: Not staged and BROKEN
 textproc/py-4suite-xml||2014-09-07|Has expired: Not staged
-mail/dcc-dccd||2014-09-07|Has expired: Not staged
 games/alienarena||2014-09-07|Has expired: Not staged
 games/alienarena-data||2014-09-07|Useless with alienarena removed
 net/libexosip2-legacy|net/libexosip2|2014-09-07|Has expired: Superseded by net/libexosip2
@@ -7059,18 +7058,19 @@ lang/neko||2014-09-09|Not staged
 lang/ifc||2014-09-09|Not staged
 japanese/rskkserv||2014-09-09|Not staged
 graphics/passepartout||2014-09-09|Not staged
-lang/scsh||2014-10-09|Not staged
-net-mgmt/zenoss||2014-10-09|Not staged
+lang/scsh||2014-09-10|Not staged
+net-mgmt/zenoss||2014-09-10|Not staged
 archivers/mate-file-archiver|archivers/engrampa|2014-09-10|renamed
-deskutils/mate-menu-editor|deskutils/mozo|2014-02-22|renamed
-editors/mate-text-editor|editors/pluma|2014-02-22|renamed
+deskutils/mate-menu-editor|deskutils/mozo|2014-09-10|renamed
+editors/mate-text-editor|editors/pluma|2014-09-10|renamed
 graphics/mate-document-viewer|graphics/atril|2014-09-10|renamed
-graphics/mate-image-viewer|graphics/eom|2014-02-22|renamed
+graphics/mate-image-viewer|graphics/eom|2014-09-10|renamed
 x11-fm/mate-file-manager|x11-fm/caja|2014-09-10|renamed
-x11-wm/mate-window-manager|x11-wm/marco|2014-02-22|renamed
-deskutils/mate-character-map||2014-04-10|removed
-deskutils/mate-file-manager-open-terminal||2014-04-10|removed
-security/libmatekeyring||2014-04-10|removed
-security/mate-keyring||2014-04-10|removed
-textproc/mate-doc-utils||2014-04-10|removed
-x11-toolkits/libmatewnck||2014-04-10|removed
+x11-wm/mate-window-manager|x11-wm/marco|2014-09-10|renamed
+deskutils/mate-character-map||2014-09-10|removed
+deskutils/mate-file-manager-open-terminal||2014-09-10|removed
+security/libmatekeyring||2014-09-10|removed
+security/mate-keyring||2014-09-10|removed
+textproc/mate-doc-utils||2014-09-10|removed
+x11-toolkits/libmatewnck||2014-09-10|removed
+net/ruby-net-geoip|net/rubygem-geoip|2014-09-13|Has expired: Broken
