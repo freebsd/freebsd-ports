@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	spdylay
-PORTVERSION=	1.3.0
+PORTVERSION=	1.3.1
 CATEGORIES=	www net
 MASTER_SITES=	https://github.com/tatsuhiro-t/${PORTNAME}/releases/download/v${PORTVERSION}/ \
 		LOCAL/sunpoet
@@ -12,7 +12,9 @@ COMMENT=	SPDY protocol version 2, 3 and 3.1 implementation in C
 
 LICENSE=	MIT
 
+BUILD_DEPENDS=	libevent2>=2.0.8:${PORTSDIR}/devel/libevent2
 LIB_DEPENDS=	libevent_openssl.so:${PORTSDIR}/devel/libevent2
+RUN_DEPENDS=	libevent2>=2.0.8:${PORTSDIR}/devel/libevent2
 
 CONFIGURE_ARGS=	--enable-examples \
 		--enable-src
