@@ -18,7 +18,8 @@ OPTIONS_DEFINE=	DOCS
 CONFLICTS=	trafd-3.0.*
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
-
+MAKE_ARGS=	INSTALL_FILE="${INSTALL_DATA}" INSTALL_PROGRAM="${INSTALL_PROGRAM}" \
+		INSTALL_SCRIPT="${INSTALL_SCRIPT}"
 MAKE_JOBS_UNSAFE=	yes
 
 .include <bsd.port.options.mk>
@@ -39,9 +40,6 @@ post-patch:
 		${WRKSRC}/lib/interfaces.c
 
 post-install:
-.for i in bin/traflog bin/trafstat sbin/trafd sbin/trafstatd
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/${i}
-.endfor
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for i in README WhatsNew
 	(cd ${WRKSRC} && ${INSTALL_DATA} ${i} ${STAGEDIR}${DOCSDIR})
