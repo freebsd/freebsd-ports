@@ -10,6 +10,7 @@ DISTNAME=	portshaker-${PORTVERSION}
 MAINTAINER?=	romain@FreeBSD.org
 COMMENT?=	Maintain ports tree using multiple sources
 
+USES+=		uidfix
 USE_GITHUB=	yes
 GH_ACCOUNT=	smortex
 GH_PROJECT=	portshaker
