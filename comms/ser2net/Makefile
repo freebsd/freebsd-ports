@@ -16,7 +16,6 @@ OPTIONS_DEFINE=	DOCS
 USE_RC_SUBR=	${PORTNAME}
 
 USE_AUTOTOOLS=	libtoolize aclocal automake autoconf
-LIBTOOLIZE_ARGS=--copy --force
 AUTOMAKE_ARGS=	--add-missing
 
 PORTDOCS=	AUTHORS ChangeLog INSTALL NEWS README

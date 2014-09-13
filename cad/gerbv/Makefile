@@ -17,7 +17,6 @@ OPTIONS_DEFINE=	DOCS EXAMPLES
 USES=		desktop-file-utils gmake libtool pathfix pkgconfig
 USE_GNOME=	gtk20
 USE_AUTOTOOLS=	libtoolize aclocal autoheader automake autoconf
-LIBTOOLIZE_ARGS=--copy --force
 AUTOMAKE_ARGS=	--add-missing --copy --foreign
 CONFIGURE_ENV=	ac_aux_dir="."
 USE_LDCONFIG=	yes

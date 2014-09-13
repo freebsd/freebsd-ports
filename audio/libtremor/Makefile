@@ -16,7 +16,6 @@ WRKSRC=		${WRKDIR}/Tremor
 USES=		libtool tar:tgz
 USE_AUTOTOOLS=	aclocal automake autoconf libtoolize
 AUTOMAKE_ARGS=	-a -c
-LIBTOOLIZE_ARGS=-i -c
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 

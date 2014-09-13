@@ -22,7 +22,6 @@ USES=		gettext
 USE_AUTOTOOLS=	aclocal automake autoconf libtoolize
 ACLOCAL_ARGS=	-I ${LOCALBASE}/share/locale
 AUTOMAKE_ARGS=	--add-missing --copy --force-missing --foreign
-LIBTOOLIZE_ARGS=--copy --force
 CONFIGURE_ENV=	WXRC="${WXRC_CMD}"
 
 post-patch:

@@ -18,7 +18,6 @@ USES=		libtool
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
-LIBTOOLIZE_ARGS=--copy --force
 ACLOCAL_ARGS=	-I ${LOCALBASE}/share/aclocal
 AUTOMAKE_ARGS=	--add-missing
 

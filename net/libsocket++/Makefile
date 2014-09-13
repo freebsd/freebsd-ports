@@ -21,7 +21,6 @@ USE_LDCONFIG=	yes
 USES=		libtool makeinfo
 USE_AUTOTOOLS=	aclocal autoheader automake autoconf libtoolize
 AUTOMAKE_ARGS=	-a -c
-LIBTOOLIZE_ARGS=-i -c
 
 INFO=	socket++
 

@@ -12,7 +12,6 @@ COMMENT=	OWFS -- 1-Wire file system
 LICENSE=	GPLv2
 
 USES=		libtool
-LIBTOOLIZE_ARGS=-c -f -i
 ACLOCAL_ARGS=	-I${LOCALBASE}/share/aclocal
 
 USE_AUTOTOOLS=	libtoolize aclocal autoheader autoconf automake

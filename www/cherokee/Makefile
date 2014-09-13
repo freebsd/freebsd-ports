@@ -30,7 +30,6 @@ python_CMD=	${PYTHON_CMD}
 USE_RC_SUBR=	cherokee
 USE_OPENSSL=	yes
 USE_AUTOTOOLS=	libtoolize aclocal automake autoheader autoconf
-LIBTOOLIZE_ARGS=--copy --force
 AUTOMAKE_ARGS=	--add-missing --copy --foreign
 CONFIGURE_ARGS=	--disable-silent-rules \
 		--disable-static \

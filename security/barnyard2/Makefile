@@ -32,7 +32,6 @@ OPTIONS_DEFAULT+=	TCL
 .endif
 
 USE_AUTOTOOLS=	libtoolize aclocal autoheader automake autoconf
-LIBTOOLIZE_ARGS=--copy --force
 AUTOMAKE_ARGS=	--add-missing --copy
 ACLOCAL_ARGS=	-I m4 -I ${LOCALBASE}/share/aclocal
 

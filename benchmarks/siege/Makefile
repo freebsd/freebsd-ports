@@ -15,7 +15,6 @@ LICENSE=	GPLv2
 USES=		perl5
 USE_OPENSSL=	yes
 USE_AUTOTOOLS=	libtoolize aclocal autoheader automake autoconf
-LIBTOOLIZE_ARGS=--copy --force
 AUTOMAKE_ARGS=	--add-missing --copy
 CONFIGURE_ENV=	PERL="${PERL}"
 CONFIGURE_ARGS=	--with-ssl=${OPENSSLBASE} --disable-shared \
