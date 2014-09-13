@@ -1,6 +1,3 @@
-@exec mkdir -p %%PEBBLE_HOME%%
-@unexec if cmp -s %D/etc/pebble.properties.sample %D/etc/pebble.properties; then rm -f %D/etc/pebble.properties; fi
-etc/pebble.properties.sample
-@exec cp -n %D/%F %B/pebble.properties
-@unexec rmdir "/var/lib/pebble" >/dev/null 2>&1 || :
-@unexec rmdir "/var/lib" >/dev/null 2>&1 || :
+@sample etc/pebble.properties.sample
+@dirrmtry(%%WWWOWN%%,%%WWWGRP%%,) /var/lib/pebble
+@dirrmtry /var/lib
