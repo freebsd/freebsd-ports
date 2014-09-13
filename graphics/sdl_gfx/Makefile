@@ -18,7 +18,6 @@ USES=		gmake libtool pathfix
 PATHFIX_MAKEFILEIN=	Makefile.am
 USE_AUTOTOOLS=	libtoolize aclocal autoconf automake
 AUTOMAKE_ARGS=	-a -c -f
-LIBTOOLIZE_ARGS=-i -c -f
 USE_SDL=	sdl
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--includedir=${PREFIX}/include

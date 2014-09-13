@@ -26,7 +26,6 @@ USES=		bison gmake libtool perl5 shebangfix
 SHEBANG_FILES=	progs/mincview/mincview
 USE_PERL5=	build
 USE_AUTOTOOLS=	libtoolize aclocal autoheader automake autoconf
-LIBTOOLIZE_ARGS=--copy --force
 ACLOCAL_ARGS=	-I m4 --automake-acdir=${ACLOCAL_DIR}
 AUTOMAKE_ARGS=	--add-missing --copy --force-missing
 CONFIGURE_ARGS=	--enable-shared=yes --enable-static=yes

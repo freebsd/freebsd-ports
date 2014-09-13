@@ -18,7 +18,6 @@ GH_COMMIT=	40cf516
 
 USE_AUTOTOOLS=	aclocal autoconf autoheader automake libtoolize
 AUTOMAKE_ARGS=	--add-missing --copy
-LIBTOOLIZE_ARGS=--copy
 
 USES=		iconv:wchar_t libtool
 USE_LDCONFIG=	yes

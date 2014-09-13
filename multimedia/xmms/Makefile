@@ -80,7 +80,6 @@ INSTALL_TARGET=	install-strip
 #		librcd.so:${PORTSDIR}/devel/librcd
 #
 #USE_AUTOTOOLS=	aclocal autoheader libtoolize autoconf automake
-#LIBTOOLIZE_ARGS=-i -c -f
 #AUTOMAKE_ARGS=	-a -c -f
 #USE_OPENSSL=	yes
 #.endif

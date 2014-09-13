@@ -18,7 +18,6 @@ USES=		dos2unix gmake libtool
 DOS2UNIX_FILES=	Makefile.in *.cpp *.h
 USE_GCC=	any
 USE_AUTOTOOLS=	libtoolize aclocal autoconf
-LIBTOOLIZE_ARGS=--copy --force
 USE_LDCONFIG=	yes
 
 LDFLAGS+=	-pthread

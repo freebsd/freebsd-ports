@@ -16,7 +16,6 @@ USES=		libtool
 GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	aclocal autoheader automake autoconf libtoolize
 AUTOMAKE_ARGS=	-a -c -f
-LIBTOOLIZE_ARGS=-i -c -f
 USE_LDCONFIG=	yes
 
 PLIST_FILES=	include/ght_hash_table.h \

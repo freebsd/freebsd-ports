@@ -17,7 +17,6 @@ USE_AUTOTOOLS=	libtoolize aclocal autoheader automake autoconf
 USE_LDCONFIG=	yes
 
 DOS2UNIX_FILES=	configure.ac
-LIBTOOLIZE_ARGS=--copy --force --quiet
 AUTOMAKE_ARGS=	--add-missing --copy
 ACLOCAL_ARGS=	-I ${LOCALBASE}/share/aclocal
 INSTALL_TARGET=	install-strip
