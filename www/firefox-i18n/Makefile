@@ -15,7 +15,7 @@ COMMENT=	Localized interface for Firefox
 
 EXTRACT_DEPENDS=	zip:${PORTSDIR}/archivers/zip
 
-USES=		zip:infozip gecko:firefox,32
+USES=		zip:infozip gecko:firefox,32,build
 USE_XPI=	firefox linux-firefox
 
 NO_ARCH=	yes
@@ -31,9 +31,6 @@ PLISTF?=	${WRKDIR}/plist_files
 
 .include "${.CURDIR}/Makefile.option"
 .include <bsd.port.pre.mk>
-
-# make sure that firefox always gets upgraded before this port
-BUILD_DEPENDS+=	firefox>=0:${PORTSDIR}/www/firefox
 
 .ifndef WITHOUT_SWITCHER
 RUN_DEPENDS+=	xpi-quick-locale-switcher>=0:${PORTSDIR}/www/xpi-quick-locale-switcher
