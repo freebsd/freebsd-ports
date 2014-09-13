@@ -22,6 +22,6 @@ PLIST_FILES=	bin/puma bin/pumactl
 PORTSCOUT=	ignore
 
 DEPRECATED=	Old version no longer needed
-EXPIRATION=	2014-10-01
+EXPIRATION_DATE=	2014-10-01
 
 .include <bsd.port.mk>
