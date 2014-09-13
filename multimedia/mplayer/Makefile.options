@@ -54,6 +54,10 @@ CATEGORIES+=	ipv6
 CONFIGURE_ARGS+=	--disable-inet6
 .endif
 
+.if ${PORT_OPTIONS:MMEMALIGN}
+EXTRA_PATCHES+=		${FILESDIR}/extra-patch-memalign
+.endif
+
 .if ${PORT_OPTIONS:MRTMP}
 LIB_DEPENDS+=		librtmp.so:${PORTSDIR}/multimedia/librtmp
 CONFIGURE_ARGS+=	--enable-librtmp
@@ -144,7 +148,7 @@ MAKE_ENV+=	COMPILER_PATH=${LOCALBASE}/bin
 #trying to compile a debug version with the default flags.
 .if ${PORT_OPTIONS:MDEBUG}
 WITH_DEBUG=	yes
-CONFIGURE_ARGS+=	--enable-debug
+CONFIGURE_ARGS+=	--enable-debug=3
 .if ${ARCH} == "i386" && !defined(WITH_BASE_CLANG)
 DEBUG_FLAGS=	-g -fomit-frame-pointer
 .endif
