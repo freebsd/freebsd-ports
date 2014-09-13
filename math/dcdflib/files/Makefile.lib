@@ -10,7 +10,7 @@ SRCS=		dcdflib.c ipmpar.c
 CFLAGS?=	-O2
 
 beforeinstall:
-	${INSTALL} -C -o ${BINOWN} -g ${BINGRP} -m 444 ${.CURDIR}/../doc/dcdflib.h \
-		${PREFIX}/include
+	${BSD_INSTALL_DATA} ${.CURDIR}/../doc/dcdflib.h \
+		${DESTDIR}${PREFIX}/include
 
 .include <bsd.lib.mk>
