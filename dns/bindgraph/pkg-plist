@@ -1,4 +1,4 @@
 %%CGIDIR%%/bindgraph.cgi
 sbin/bindgraph.pl
 @dirrmtry %%CGIDIR%%
-@dirrmtry %%DATADIR%%
+@dirrmtry(%%BINDGRAPH_USER%%,%%BINDGRAPH_GROUP%%,) %%DATADIR%%
