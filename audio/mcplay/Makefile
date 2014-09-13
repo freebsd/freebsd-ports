@@ -3,6 +3,7 @@
 
 PORTNAME=	mcplay
 DISTVERSION=	0.3i
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://www.yahuxo.de/${PORTNAME}/ \
 		http://www.sourcefiles.org/Multimedia/MP3/Front_End/

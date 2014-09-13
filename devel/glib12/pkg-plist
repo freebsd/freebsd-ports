@@ -1,20 +1,23 @@
 bin/glib-config
 bin/glib12-config
-include/glib12/glib.h
-include/glib12/glibconfig.h
-include/glib12/gmodule.h
-lib/libglib-12.a
-lib/libglib-12.so
-lib/libglib-12.so.3
-lib/libgmodule-12.a
-lib/libgmodule-12.so
-lib/libgmodule-12.so.3
-lib/libgthread-12.a
-lib/libgthread-12.so
-lib/libgthread-12.so.3
+include/glib-1.2/glib.h
+include/glib-1.2/glibconfig.h
+include/glib-1.2/gmodule.h
+lib/libglib-1.2.so.0
+lib/libglib-1.2.so.0.0.10
+lib/libglib.a
+lib/libglib.so
+lib/libgmodule-1.2.so.0
+lib/libgmodule-1.2.so.0.0.10
+lib/libgmodule.a
+lib/libgmodule.so
+lib/libgthread-1.2.so.0
+lib/libgthread-1.2.so.0.0.10
+lib/libgthread.a
+lib/libgthread.so
 libdata/pkgconfig/glib.pc
 libdata/pkgconfig/gmodule.pc
 libdata/pkgconfig/gthread.pc
 share/aclocal/glib.m4
 man/man1/glib-config.1.gz
-@dirrm include/glib12
+@dirrm include/glib-1.2

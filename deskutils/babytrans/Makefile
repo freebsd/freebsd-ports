@@ -3,7 +3,7 @@
 
 PORTNAME=	babytrans
 PORTVERSION=	0.9.1
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	deskutils
 MASTER_SITES=	http://fjolliton.free.fr/babytrans/
 

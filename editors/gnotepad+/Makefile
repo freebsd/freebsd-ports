@@ -3,7 +3,7 @@
 
 PORTNAME=	gnotepad+
 PORTVERSION=	1.3.3
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	editors www gnome
 MASTER_SITES=	SF/gnotepad/gnotepad-stable/${PORTVERSION} \
 		SF/gnotepad/gnotepad%20User_s%20Manual/${DOCVERSION}:doc
