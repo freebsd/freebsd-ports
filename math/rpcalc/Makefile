@@ -40,4 +40,10 @@ do-install:
 		${PYTHON_CMD} -O ${PYTHON_LIBDIR}/compileall.py \
 		-d ${DATADIR} -f ${DATADIR_REL})
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if defined(PACKAGE_BUILDING) && ${PYTHON_VER} != ${PYTHON_DEFAULT}
+IGNORE= you have python ${PYTHON_DEFAULT} set as the default, and this needs ${PYTHON_VER}
+.endif
+
+.include <bsd.port.post.mk>
