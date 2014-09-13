@@ -44,10 +44,6 @@ CFLAGS+=	${INCLUDE} -DCDEV_MAJOR_=${CDEV_MAJOR}
 
 all:	vnode_if.h
 
-@:
-	@${ECHO} ${.TARGET} "->" ${SYS}
-	@ln -s ${SYS} ${.TARGET}
-
 #afterinstall: device
 
 device:
