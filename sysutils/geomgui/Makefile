@@ -22,6 +22,7 @@ PLIST_FILES=	bin/geomgui \
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local|${STAGEDIR}${PREFIX}|' \
+		-e 's,-o root -g wheel,,' \
 		${WRKSRC}/Makefile.in
 
 .include <bsd.port.mk>
