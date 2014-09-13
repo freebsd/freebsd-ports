@@ -25,23 +25,20 @@ RUN_DEPENDS=	psselect:${PORTSDIR}/print/psutils \
 USE_XORG=	xft xmu xpm
 USE_GHOSTSCRIPT_RUN=yes
 GNU_CONFIGURE=	yes
-USES=		libtool shebangfix tar:bzip2
-USE_AUTOTOOLS=	libtoolize
+USES=		libtool:build shebangfix tar:bzip2
 SHEBANG_FILES=	share/bin/imgmerge share/bin/xpaint_ocr
 
 CPPFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/freetype2 \
 		-I${LOCALBASE}/include/freetype2/freetype
-LDFLAGS+=	-L${LOCALBASE}/lib
+LIBS+=		-L${LOCALBASE}/lib
 MAKE_ENV+=	RM="${RM} -f"
 
-post-extract:
-	@${RM} -f ${WRKSRC}/XPaint.ad
-
 post-patch:
+	@${RM} -f ${WRKSRC}/XPaint.ad
 	@${REINPLACE_CMD} -e 's/-ldl //' \
 		-e 's|freetype/||g' \
 		${WRKSRC}/configure ${WRKSRC}/rw/configure
-	@${REINPLACE_CMD} -e '/^LIBTOOL/d' \
+	@${REINPLACE_CMD} -e '/^LIBTOOL =/s|=.*|= ${LOCALBASE}/bin/libtool|' \
 		-e '/^install-exec-am:/s/install-libLTLIBRARIES//' \
 		${WRKSRC}/rw/Makefile.in
 	@${REINPLACE_CMD} -e '/if (!image)/s/return;/return -1;/' \
