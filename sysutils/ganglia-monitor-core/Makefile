@@ -27,7 +27,6 @@ GMETAD_DESC=	include gmetad
 
 USES=		libtool pkgconfig
 USE_PYTHON=	yes
-LIBTOOLFILES=	configure libmetrics/configure
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-setuid=ganglia --enable-setgid=ganglia \
