@@ -1,0 +1,10 @@
+--- xbmc/cdrip/CMakeLists.txt.orig	2014-09-13 10:49:51.253607190 +0800
++++ xbmc/cdrip/CMakeLists.txt	2014-09-13 10:53:30.657607851 +0800
+@@ -1,5 +1,7 @@
+ find_all_sources(. cdrip_SRCS)
+ list(REMOVE_ITEM cdrip_SRCS ./EncoderFFmpeg.cpp)
+ list(REMOVE_ITEM cdrip_SRCS ./EncoderFFmpeg.h)
++list(REMOVE_ITEM cdrip_SRCS ./EncoderLame.cpp)
++list(REMOVE_ITEM cdrip_SRCS ./EncoderLame.h)
+ list(REMOVE_ITEM cdrip_SRCS ./CDDARipper.cpp)
+ add_sources(${cdrip_SRCS})
