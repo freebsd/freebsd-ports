@@ -26,7 +26,7 @@ USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
 
 DEPRECATED=	Depends on broken rubygem-dep_selector
-EXPIRES=	2014-09-25
+EXPIRATION_DATE=	2014-09-25
 
 PLIST_FILES=	bin/chef-expander \
 		bin/chef-expander-vnode \
