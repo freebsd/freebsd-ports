@@ -1,0 +1,5 @@
+%%PERL5_MAN3%%/Tk::WaitBox.3.gz
+%%SITE_PERL%%/Tk/WaitBox.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Tk/WaitBox/.packlist
+@dirrmtry %%SITE_PERL%%/Tk
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tk/WaitBox
