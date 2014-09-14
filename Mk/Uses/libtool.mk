@@ -77,7 +77,7 @@ patch-lafiles:
 		${XARGS} ${SED} -i '' -e "/dependency_libs=/s/=.*/=''/"
 .else
 	@${FIND} ${STAGEDIR} -type l -exec ${SH} -c			\
-		'case `${REALPATH} "{}"` in				\
+		'case `${REALPATH} -q "{}"` in				\
 			*.la) ${ECHO_CMD} "{}" ;; esac' \; |		\
 		${XARGS} ${GREP} -l 'libtool library' | ${XARGS} ${RM}
 	@${FIND} ${STAGEDIR} -type f -name '*.la' |			\
