@@ -2,7 +2,7 @@
 
 PORTNAME=	lurker
 PORTVERSION=	2.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail
 MASTER_SITES=	SF:0 \
 		SF/${PORTNAME}/mimelib/${MIMELIB_VERSION}/:1
@@ -22,6 +22,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--with-mimelib-local \
 		--with-default-www-dir=${PREFIX}/www/lurker \
 		--with-cgi-bin-dir=${PREFIX}/www/lurker
+PLIST_SUB=	WWWOWN="${WWWOWN}" WWWGRP="${WWWGRP}"
 
 OPTIONS_DEFINE=	DOCS
 
@@ -34,7 +35,6 @@ post-install:
 	${INSTALL_MAN} ${WRKSRC}/INSTALL ${STAGEDIR}${DOCSDIR}
 	${INSTALL_MAN} ${WRKSRC}/FAQ ${STAGEDIR}${DOCSDIR}
 	${INSTALL_MAN} ${WRKSRC}/ChangeLog ${STAGEDIR}${DOCSDIR}
-	@${CHOWN} -R www:www ${STAGEDIR}${PREFIX}/www/lurker
 	${INSTALL_DATA} ${WRKSRC}/lurker.conf ${STAGEDIR}${PREFIX}/etc/lurker/lurker.conf.sample
 	${INSTALL_DATA} ${WRKSRC}/apache.conf ${STAGEDIR}${PREFIX}/etc/lurker/apache.conf.sample
 
