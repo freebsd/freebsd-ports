@@ -2,6 +2,7 @@
 
 PORTNAME=	turbolinks
 PORTVERSION=	2.3.0
+PORTREVISION=	1
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
@@ -12,7 +13,6 @@ USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
 
-RUN_DEPENDS=	rubygem-coffee-rails>=0:${PORTSDIR}/devel/rubygem-coffee-rails
-
+RUN_DEPENDS=	rubygem-coffee-rails4>=4.0.1:${PORTSDIR}/devel/rubygem-coffee-rails4
 
 .include <bsd.port.mk>
