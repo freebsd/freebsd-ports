@@ -1,10 +1,9 @@
 # $FreeBSD$
 
 PORTNAME=	rt
-PORTVERSION=	4.0.21
+PORTVERSION=	4.0.22
 CATEGORIES=	www
-MASTER_SITES=	http://download.bestpractical.com/pub/rt/release/ \
-		SF/requesttracker/
+MASTER_SITES=	http://download.bestpractical.com/pub/rt/release/
 PKGNAMESUFFIX=	40
 
 MAINTAINER=	matthew@FreeBSD.org
@@ -86,7 +85,7 @@ SPAWN_FCGI_RUN_DEPENDS=		${LOCALBASE}/bin/spawn-fcgi:${PORTSDIR}/www/spawn-fcgi
 MYSQL_USE=			MYSQL=yes
 MYSQL_RUN_DEPENDS=		${MYSQL_DEPS}
 
-PGSQL_USE=			PGSQL=yes
+PGSQL_USES=			pgsql
 PGSQL_RUN_DEPENDS=		${PGSQL_DEPS}
 
 ORACLE_RUN_DEPENDS=		${ORACLE_DEPS}
