@@ -113,7 +113,7 @@ MYSQL_DEPS=	p5-DBD-mysql>=2.1018:${PORTSDIR}/databases/p5-DBD-mysql
 
 ORACLE_DEPS=	p5-DBD-Oracle>0:${PORTSDIR}/databases/p5-DBD-Oracle
 
-PGSQL_DEPS=	p5-DBD-Pg32=3.2.1:${PORTSDIR}/databases/p5-DBD-Pg32
+PGSQL_DEPS=	p5-DBD-Pg>=3.3.1:${PORTSDIR}/databases/p5-DBD-Pg
 
 SQLITE_DEPS=	p5-DBD-SQLite>=1.00:${PORTSDIR}/databases/p5-DBD-SQLite
 
