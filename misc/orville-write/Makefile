@@ -12,8 +12,9 @@ COMMENT=	Advanced replacement for write/mesg
 GNU_CONFIGURE=	yes
 CFLAGS+=	-Wno-return-type
 
-PLIST_FILES=	bin/amin bin/helpers bin/huh bin/jot bin/mesg bin/tel \
-		bin/telegram bin/write etc/orville.conf etc/wrthist etc/wrttmp \
+PLIST_FILES=	"@(,,4711) bin/amin" "@(,,4711) bin/helpers" "@(,,4711) bin/huh" \
+		bin/jot "@(,,4711) bin/mesg" bin/tel bin/telegram \
+		"@(,,6711) bin/write" etc/orville.conf etc/wrthist etc/wrttmp \
 		man/man1/amin.1.gz man/man1/helpers.1.gz man/man1/huh.1.gz \
 		man/man1/mesg.1.gz man/man1/write.1.gz
 
@@ -37,10 +38,10 @@ EXTRA_PATCHES=	${PATCHDIR}/utmpx-wrttmp.h \
 
 do-install:
 .for i in amin helpers huh mesg
-	${INSTALL_PROGRAM} -m 4711 ${WRKSRC}/${i} ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/${i} ${STAGEDIR}${PREFIX}/bin
 .endfor
 .for i in write
-	${INSTALL_PROGRAM} -m 6711 ${WRKSRC}/${i} ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/${i} ${STAGEDIR}${PREFIX}/bin
 .endfor
 .for i in jot tel telegram
 	${LN} -sf write ${STAGEDIR}${PREFIX}/bin/${i}
