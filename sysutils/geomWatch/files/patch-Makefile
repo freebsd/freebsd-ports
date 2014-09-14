@@ -6,8 +6,8 @@
  install:
 -	install -s -o root -g wheel -m 755 geomWatch ${PREFIX}/sbin
 -	install -o root -g wheel -m 400 geomWatch.conf.sample ${PREFIX}/etc
-+	install -s -o root -g wheel -m 755 geomWatch $(DESTDIR)${PREFIX}/sbin
-+	install -o root -g wheel -m 400 geomWatch.conf.sample $(DESTDIR)${PREFIX}/etc
++	$(BSD_INSTALL_PROGRAM) geomWatch $(DESTDIR)${PREFIX}/sbin
++	$(BSD_INSTALL_DATA) -m 400 geomWatch.conf.sample $(DESTDIR)${PREFIX}/etc
  
  clean:
  	rm -f geomWatch
