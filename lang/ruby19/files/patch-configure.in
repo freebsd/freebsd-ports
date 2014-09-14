@@ -1,6 +1,6 @@
---- configure.in.orig	2014-03-20 05:49:55.847385089 +0000
-+++ configure.in	2014-03-20 05:50:09.238383528 +0000
-@@ -1139,11 +1139,11 @@
+--- configure.in.orig	2014-02-14 20:52:53.000000000 +0900
++++ configure.in	2014-09-07 15:25:14.000000000 +0900
+@@ -1184,11 +1184,11 @@
  [superux*], [	ac_cv_func_setitimer=no
  		],
  [	LIBS="-lm $LIBS"])
@@ -17,7 +17,7 @@
  if test "${enable_win95}" = maybe; then
      AC_HAVE_LIBRARY(unicows, [enable_win95=yes], [enable_win95=no])
  fi
-@@ -1789,7 +1789,7 @@
+@@ -1834,7 +1834,7 @@
  fi
  
  if test x"$enable_pthread" = xyes; then
@@ -26,7 +26,7 @@
  	AC_CHECK_LIB($pthread_lib, pthread_kill,
  		     rb_with_pthread=yes, rb_with_pthread=no)
  	if test "$rb_with_pthread" = "yes"; then break; fi
-@@ -1803,6 +1803,7 @@
+@@ -1848,6 +1848,7 @@
  	[c],    [],
  	[root], [],
  	[c_r],  [MAINLIBS="-pthread $MAINLIBS"],
@@ -34,7 +34,21 @@
  	        [AS_CASE(["$target_os"],
  		    [openbsd*], [LIBS="-pthread $LIBS"],
  		    [LIBS="-l$pthread_lib $LIBS"])])
-@@ -2041,7 +2042,6 @@
+@@ -1933,11 +1934,8 @@
+ 
+ AS_CASE(["$target_os"],
+ [freebsd*], [
+-    AC_CHECK_HEADERS([/usr/local/include/execinfo.h])
+-    if test "x$ac_cv_header__usr_local_include_execinfo_h" = xyes; then :
+-	RUBY_APPEND_OPTION(CPPFLAGS, -I/usr/local/include)
+-	LDFLAGS="${LDFLAGS:+$LDFLAGS }-L/usr/local/lib"
+-	DLDFLAGS="${DLDFLAGS:+$DLDFLAGS }-L/usr/local/lib"
++    AC_CHECK_HEADERS([execinfo.h])
++    if test "x$ac_cv_header_execinfo_h" = xyes; then :
+ 	AC_CHECK_LIB([execinfo], [backtrace])
+     fi])
+ AC_CHECK_FUNCS(backtrace)
+@@ -2086,7 +2084,6 @@
  			: ${LDSHARED='$(CC) -shared'}
  			if test "$rb_cv_binary_elf" = yes; then
  			    LDFLAGS="$LDFLAGS -rdynamic"
@@ -42,7 +56,7 @@
  			else
  			  test "$GCC" = yes && test "$rb_cv_prog_gnu_ld" = yes || LDSHARED="ld -Bshareable"
  			fi
-@@ -2348,6 +2348,7 @@
+@@ -2393,6 +2390,7 @@
      [freebsd*|dragonfly*], [
  	SOLIBS='$(LIBS)'
  	LIBRUBY_SO='lib$(RUBY_SO_NAME).so.$(MAJOR)$(MINOR)'
