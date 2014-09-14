@@ -2,56 +2,52 @@
 # $FreeBSD$
 
 PORTNAME=	convertall
-PORTVERSION=	0.5.2
-PORTREVISION=	3
+PORTVERSION=	0.6.0
 CATEGORIES=	math
 MASTER_SITES=	SF/${PORTNAME}/${PORTVERSION}
-DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX} \
-		${PORTNAME}-i18n-${PORTVERSION}a${EXTRACT_SUFX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	jhale@FreeBSD.org
 COMMENT=	Another unit converter
 
 LICENSE=	GPLv2 # (or later)
+LICENSE_FILE=	${WRKSRC}/doc/LICENSE
 
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/PyQt4/QtGui.so:${PORTSDIR}/x11-toolkits/py-qt4-gui
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}qt4-gui>=0:${PORTSDIR}/x11-toolkits/py-qt4-gui
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}qt4-gui>=0:${PORTSDIR}/x11-toolkits/py-qt4-gui
 
+USES=		python:3.2+
+
+CONFIGURE_ARGS=	-p ${PREFIX} -d ${DOCSDIR} -i ${DATADIR}/icons -b ${STAGEDIR}
+NO_BUILD=	yes
+
+PLIST_SUB=	PYTHON_SUFFIX="${PYTHON_SUFFIX}"
 WRKSRC=		${WRKDIR}/ConvertAll
 
-USE_PYTHON=	yes
+DESKTOP_ENTRIES="ConvertAll" \
+		"Unit Converter" \
+		"${DATADIR}/icons/${PORTNAME}.svg" \
+		"${PORTNAME}" \
+		"Qt;Utility;Calculator;" \
+		false
 
-DESKTOP_ENTRIES="ConvertAll" "Unit converter" "${DATADIR}/icons/${PORTNAME}.svg" \
-		"${PORTNAME}" "Utility;Calculator;" true
+OPTIONS_DEFINE=	NLS
+OPTIONS_SUB=	yes
 
-OPTIONS_DEFINE=	DOCS
-
-post-patch:
-	@cd ${WRKSRC}/source && ${REINPLACE_CMD} -e \
-		"/^dataFilePath/s|None|\'${DATADIR}\'|g ; \
-		 /^helpFilePath/s|None|\'${DOCSDIR}\'|g ; \
-		 /^iconPath/s|None|\'${DATADIR}/icons\'|g ; \
-		 /^translationPath/s|'translations'|'${DATADIR}/translations'|" convertall.py
-
-do-build:
-	@${ECHO_CMD} '#!/bin/sh' > ${WRKDIR}/convertall.sh
-	@${ECHO_CMD} 'exec ${PYTHON_CMD} ${PYTHON_SITELIBDIR}/convertall/convertall.py $$*' >> ${WRKDIR}/convertall.sh
-	@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${WRKSRC}/source
-	@${PYTHON_CMD} -O ${PYTHON_LIBDIR}/compileall.py ${WRKSRC}/source
+NLS_CONFIGURE_OFF=	-s
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKDIR}/convertall.sh ${STAGEDIR}${PREFIX}/bin/convertall
-	@${MKDIR} ${STAGEDIR}${PYTHON_SITELIBDIR}/convertall
-	${INSTALL_DATA} ${WRKSRC}/source/*.py ${STAGEDIR}${PYTHON_SITELIBDIR}/convertall
-	${INSTALL_DATA} ${WRKSRC}/source/*.pyc ${STAGEDIR}${PYTHON_SITELIBDIR}/convertall
-	${INSTALL_DATA} ${WRKSRC}/source/*.pyo ${STAGEDIR}${PYTHON_SITELIBDIR}/convertall
-	@${MKDIR} ${STAGEDIR}${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/data/*.dat ${STAGEDIR}${DATADIR}
-	@${MKDIR} ${STAGEDIR}${DATADIR}/icons
-	${INSTALL_DATA} ${WRKSRC}/icons/*.png ${STAGEDIR}${DATADIR}/icons
-	${INSTALL_DATA} ${WRKSRC}/icons/*.svg ${STAGEDIR}${DATADIR}/icons
-	@${MKDIR} ${STAGEDIR}${DATADIR}/translations
-	${INSTALL_DATA} ${WRKSRC}/translations/*.qm ${STAGEDIR}${DATADIR}/translations
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/doc/*.html ${STAGEDIR}${DOCSDIR}
+	(cd ${WRKSRC} && ${PYTHON_CMD} install.py ${CONFIGURE_ARGS})
+	(cd ${STAGEDIR}${PREFIX} && \
+		${PYTHON_CMD} -O ${PYTHON_LIBDIR}/compileall.py \
+		-d ${DATADIR} -f ${DATADIR_REL})
 
-.include <bsd.port.mk>
+post-install:
+	(cd ${STAGEDIR}${DOCSDIR} && ${RM} INSTALL LICENSE)
+
+.include <bsd.port.pre.mk>
+
+.if defined(PACKAGE_BUILDING) && ${PYTHON_VER} != ${PYTHON_DEFAULT}
+IGNORE=	you have python ${PYTHON_DEFAULT} set as the default, and this needs ${PYTHON_VER}
+.endif
+
+.include <bsd.port.post.mk>
