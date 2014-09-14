@@ -17,17 +17,15 @@ LIB_DEPENDS=	libmcrypt.so:${PORTSDIR}/security/libmcrypt \
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		gettext perl5 gmake libtool
-USE_AUTOTOOLS=	libtoolize
+USES=		gettext gmake libtool:build perl5
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include -fpermissive
 LIBS+=		-L${LOCALBASE}/lib -lintl -lmcrypt
+MAKE_ARGS=	LIBTOOL="${LOCALBASE}/bin/libtool"
 
 OPTIONS_DEFINE=	DOCS
 
 post-patch:
-	${REINPLACE_CMD} -e 's,SHELL) libtool,SHELL) ${LIBTOOL} --tag=CXX,' \
-		${WRKSRC}/src/Makefile.in
-	${REINPLACE_CMD} -e 's,-O2,${CFLAGS},' ${WRKSRC}/configure
+	@${REINPLACE_CMD} '/CXXFLAGS=/s|-O2|${CXXFLAGS}|' ${WRKSRC}/configure
 
 .include <bsd.port.mk>
