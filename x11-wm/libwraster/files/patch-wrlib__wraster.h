@@ -1,11 +1,17 @@
---- wrlib/wraster.h.orig	2014-09-09 16:49:44 UTC
-+++ wrlib/wraster.h
-@@ -61,7 +61,7 @@
+--- wrlib/wraster.h.orig	2014-08-30 21:29:09.000000000 +0900
++++ wrlib/wraster.h	2014-09-15 02:31:40.000000000 +0900
+@@ -61,7 +61,13 @@
   * mechanism and define an internal macro appropriately. Please note that the macro are not considered being
   * part of the public API.
   */
 -#if __GNUC__ >= 3
-+#if (__GNUC__ >= 4 && __GNUC_MINOR__ >= 5) || __has_extension(attribute_deprecated_with_message)
++#ifndef __has_feature
++#define	__has_feature(x) 0
++#endif
++#ifndef __has_extension
++#define	__has_extension __has_feature
++#endif
++#if __has_extension(attribute_deprecated_with_message)
  #define __wrlib_deprecated(msg)  __attribute__ ((deprecated(msg)))
  #else
  #define __wrlib_deprecated(msg)
