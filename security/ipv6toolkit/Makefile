@@ -11,7 +11,7 @@ COMMENT=	Set of IPv6 security assessment tools
 
 LICENSE=	GPLv3
 
-USES=		shebangfix
+USES=		shebangfix uidfix
 SHEBANG_FILES=	tools/blackhole6 tools/script6
 MAKE_ENV=	DATADIR=${DATADIR} WRKSRC=${WRKSRC}
 SUB_FILES=	BSDMakefile Makefile Makefile.lib
