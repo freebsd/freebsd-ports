@@ -1,0 +1,4 @@
+Tk::WaitBox is a perl5 package which implements a very flexible
+WaitBox widget.
+
+WWW: http://search.cpan.org/dist/Tk-WaitBox/
