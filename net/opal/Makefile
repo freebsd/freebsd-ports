@@ -3,7 +3,7 @@
 
 PORTNAME=	opal
 PORTVERSION=	3.10.10
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	net
 MASTER_SITES=	GNOME
 
@@ -211,7 +211,7 @@ CONFIGURE_ARGS+=	--disable-h281
 
 # keep version in lib_depend, to see the difference between spandsp-devel and normal
 .if ${PORT_OPTIONS:MFAX}
-LIB_DEPENDS+=	libspandsp.so.2.0.0:${PORTSDIR}/comms/spandsp-devel
+LIB_DEPENDS+=	libspandsp.so.2:${PORTSDIR}/comms/spandsp-devel
 CONFIGURE_ARGS+=	--enable-spandsp --enable-fax --enable-t38
 PLIST_SUB+=	FAX=""
 .else
