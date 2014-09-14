@@ -472,34 +472,34 @@ lib/leofs/lib/leo_dcerl-0.2.10/ebin/leo_dcerl_sup.beam
 lib/leofs/lib/leo_dcerl-0.2.10/ebin/lru.beam
 lib/leofs/lib/leo_dcerl-0.2.10/include/leo_dcerl.hrl
 lib/leofs/lib/leo_dcerl-0.2.10/priv/lru.so
-lib/leofs/lib/leo_gateway-1.1.2/ebin/leo_gateway.app
-lib/leofs/lib/leo_gateway-1.1.2/ebin/leo_gateway_api.beam
-lib/leofs/lib/leo_gateway-1.1.2/ebin/leo_gateway_app.beam
-lib/leofs/lib/leo_gateway-1.1.2/ebin/leo_gateway_cache_statistics.beam
-lib/leofs/lib/leo_gateway-1.1.2/ebin/leo_gateway_http_behaviour.beam
-lib/leofs/lib/leo_gateway-1.1.2/ebin/leo_gateway_http_commons.beam
-lib/leofs/lib/leo_gateway-1.1.2/ebin/leo_gateway_http_req_handler.beam
-lib/leofs/lib/leo_gateway-1.1.2/ebin/leo_gateway_large_object_handler.beam
-lib/leofs/lib/leo_gateway-1.1.2/ebin/leo_gateway_qos_stat.beam
-lib/leofs/lib/leo_gateway-1.1.2/ebin/leo_gateway_rest_api.beam
-lib/leofs/lib/leo_gateway-1.1.2/ebin/leo_gateway_rpc_handler.beam
-lib/leofs/lib/leo_gateway-1.1.2/ebin/leo_gateway_s3_api.beam
-lib/leofs/lib/leo_gateway-1.1.2/ebin/leo_gateway_sup.beam
-lib/leofs/lib/leo_gateway-1.1.2/ebin/leo_nfs_file_handler.beam
-lib/leofs/lib/leo_gateway-1.1.2/ebin/leo_nfs_mount3_server.beam
-lib/leofs/lib/leo_gateway-1.1.2/ebin/leo_nfs_mount3_svc.beam
-lib/leofs/lib/leo_gateway-1.1.2/ebin/leo_nfs_mount3_xdr.beam
-lib/leofs/lib/leo_gateway-1.1.2/ebin/leo_nfs_proto3_server.beam
-lib/leofs/lib/leo_gateway-1.1.2/ebin/leo_nfs_proto3_svc.beam
-lib/leofs/lib/leo_gateway-1.1.2/ebin/leo_nfs_proto3_xdr.beam
-lib/leofs/lib/leo_gateway-1.1.2/ebin/leo_nfs_state_behaviour.beam
-lib/leofs/lib/leo_gateway-1.1.2/ebin/leo_nfs_state_ets.beam
-lib/leofs/lib/leo_gateway-1.1.2/ebin/leofs.beam
-lib/leofs/lib/leo_gateway-1.1.2/include/leo_gateway.hrl
-lib/leofs/lib/leo_gateway-1.1.2/include/leo_http.hrl
-lib/leofs/lib/leo_gateway-1.1.2/priv/leo_gateway.conf
-lib/leofs/lib/leo_gateway-1.1.2/priv/leo_gateway.conf.test
-lib/leofs/lib/leo_gateway-1.1.2/priv/leo_gateway.schema
+lib/leofs/lib/leo_gateway-1.1.3/ebin/leo_gateway.app
+lib/leofs/lib/leo_gateway-1.1.3/ebin/leo_gateway_api.beam
+lib/leofs/lib/leo_gateway-1.1.3/ebin/leo_gateway_app.beam
+lib/leofs/lib/leo_gateway-1.1.3/ebin/leo_gateway_cache_statistics.beam
+lib/leofs/lib/leo_gateway-1.1.3/ebin/leo_gateway_http_behaviour.beam
+lib/leofs/lib/leo_gateway-1.1.3/ebin/leo_gateway_http_commons.beam
+lib/leofs/lib/leo_gateway-1.1.3/ebin/leo_gateway_http_req_handler.beam
+lib/leofs/lib/leo_gateway-1.1.3/ebin/leo_gateway_large_object_handler.beam
+lib/leofs/lib/leo_gateway-1.1.3/ebin/leo_gateway_qos_stat.beam
+lib/leofs/lib/leo_gateway-1.1.3/ebin/leo_gateway_rest_api.beam
+lib/leofs/lib/leo_gateway-1.1.3/ebin/leo_gateway_rpc_handler.beam
+lib/leofs/lib/leo_gateway-1.1.3/ebin/leo_gateway_s3_api.beam
+lib/leofs/lib/leo_gateway-1.1.3/ebin/leo_gateway_sup.beam
+lib/leofs/lib/leo_gateway-1.1.3/ebin/leo_nfs_file_handler.beam
+lib/leofs/lib/leo_gateway-1.1.3/ebin/leo_nfs_mount3_server.beam
+lib/leofs/lib/leo_gateway-1.1.3/ebin/leo_nfs_mount3_svc.beam
+lib/leofs/lib/leo_gateway-1.1.3/ebin/leo_nfs_mount3_xdr.beam
+lib/leofs/lib/leo_gateway-1.1.3/ebin/leo_nfs_proto3_server.beam
+lib/leofs/lib/leo_gateway-1.1.3/ebin/leo_nfs_proto3_svc.beam
+lib/leofs/lib/leo_gateway-1.1.3/ebin/leo_nfs_proto3_xdr.beam
+lib/leofs/lib/leo_gateway-1.1.3/ebin/leo_nfs_state_behaviour.beam
+lib/leofs/lib/leo_gateway-1.1.3/ebin/leo_nfs_state_ets.beam
+lib/leofs/lib/leo_gateway-1.1.3/ebin/leofs.beam
+lib/leofs/lib/leo_gateway-1.1.3/include/leo_gateway.hrl
+lib/leofs/lib/leo_gateway-1.1.3/include/leo_http.hrl
+lib/leofs/lib/leo_gateway-1.1.3/priv/leo_gateway.conf
+lib/leofs/lib/leo_gateway-1.1.3/priv/leo_gateway.conf.test
+lib/leofs/lib/leo_gateway-1.1.3/priv/leo_gateway.schema
 lib/leofs/lib/leo_logger-1.0.5/ebin/lager_format.beam
 lib/leofs/lib/leo_logger-1.0.5/ebin/lager_stdlib.beam
 lib/leofs/lib/leo_logger-1.0.5/ebin/lager_trunc_io.beam
@@ -515,30 +515,30 @@ lib/leofs/lib/leo_logger-1.0.5/ebin/leo_logger_server.beam
 lib/leofs/lib/leo_logger-1.0.5/ebin/leo_logger_sup.beam
 lib/leofs/lib/leo_logger-1.0.5/ebin/leo_logger_util.beam
 lib/leofs/lib/leo_logger-1.0.5/include/leo_logger.hrl
-lib/leofs/lib/leo_manager-1.1.2/ebin/leo_manager.app
-lib/leofs/lib/leo_manager-1.1.2/ebin/leo_manager_api.beam
-lib/leofs/lib/leo_manager-1.1.2/ebin/leo_manager_app.beam
-lib/leofs/lib/leo_manager-1.1.2/ebin/leo_manager_cluster_monitor.beam
-lib/leofs/lib/leo_manager-1.1.2/ebin/leo_manager_console.beam
-lib/leofs/lib/leo_manager-1.1.2/ebin/leo_manager_console_behaiviour.beam
-lib/leofs/lib/leo_manager-1.1.2/ebin/leo_manager_formatter_json.beam
-lib/leofs/lib/leo_manager-1.1.2/ebin/leo_manager_formatter_text.beam
-lib/leofs/lib/leo_manager-1.1.2/ebin/leo_manager_mnesia.beam
-lib/leofs/lib/leo_manager-1.1.2/ebin/leo_manager_mq_client.beam
-lib/leofs/lib/leo_manager-1.1.2/ebin/leo_manager_ring_sync.beam
-lib/leofs/lib/leo_manager-1.1.2/ebin/leo_manager_sup.beam
-lib/leofs/lib/leo_manager-1.1.2/ebin/leo_manager_table_sync.beam
-lib/leofs/lib/leo_manager-1.1.2/ebin/leo_manager_transformer.beam
-lib/leofs/lib/leo_manager-1.1.2/ebin/tcp_server.beam
-lib/leofs/lib/leo_manager-1.1.2/ebin/tcp_server_acceptor.beam
-lib/leofs/lib/leo_manager-1.1.2/ebin/tcp_server_sup.beam
-lib/leofs/lib/leo_manager-1.1.2/include/leo_manager.hrl
-lib/leofs/lib/leo_manager-1.1.2/include/tcp_server.hrl
-lib/leofs/lib/leo_manager-1.1.2/priv/leo_manager_0.conf
-lib/leofs/lib/leo_manager-1.1.2/priv/leo_manager_0.conf.test
-lib/leofs/lib/leo_manager-1.1.2/priv/leo_manager_0.schema
-lib/leofs/lib/leo_manager-1.1.2/priv/leo_manager_1.conf
-lib/leofs/lib/leo_manager-1.1.2/priv/leo_manager_1.schema
+lib/leofs/lib/leo_manager-1.1.3/ebin/leo_manager.app
+lib/leofs/lib/leo_manager-1.1.3/ebin/leo_manager_api.beam
+lib/leofs/lib/leo_manager-1.1.3/ebin/leo_manager_app.beam
+lib/leofs/lib/leo_manager-1.1.3/ebin/leo_manager_cluster_monitor.beam
+lib/leofs/lib/leo_manager-1.1.3/ebin/leo_manager_console.beam
+lib/leofs/lib/leo_manager-1.1.3/ebin/leo_manager_console_behaiviour.beam
+lib/leofs/lib/leo_manager-1.1.3/ebin/leo_manager_formatter_json.beam
+lib/leofs/lib/leo_manager-1.1.3/ebin/leo_manager_formatter_text.beam
+lib/leofs/lib/leo_manager-1.1.3/ebin/leo_manager_mnesia.beam
+lib/leofs/lib/leo_manager-1.1.3/ebin/leo_manager_mq_client.beam
+lib/leofs/lib/leo_manager-1.1.3/ebin/leo_manager_ring_sync.beam
+lib/leofs/lib/leo_manager-1.1.3/ebin/leo_manager_sup.beam
+lib/leofs/lib/leo_manager-1.1.3/ebin/leo_manager_table_sync.beam
+lib/leofs/lib/leo_manager-1.1.3/ebin/leo_manager_transformer.beam
+lib/leofs/lib/leo_manager-1.1.3/ebin/tcp_server.beam
+lib/leofs/lib/leo_manager-1.1.3/ebin/tcp_server_acceptor.beam
+lib/leofs/lib/leo_manager-1.1.3/ebin/tcp_server_sup.beam
+lib/leofs/lib/leo_manager-1.1.3/include/leo_manager.hrl
+lib/leofs/lib/leo_manager-1.1.3/include/tcp_server.hrl
+lib/leofs/lib/leo_manager-1.1.3/priv/leo_manager_0.conf
+lib/leofs/lib/leo_manager-1.1.3/priv/leo_manager_0.conf.test
+lib/leofs/lib/leo_manager-1.1.3/priv/leo_manager_0.schema
+lib/leofs/lib/leo_manager-1.1.3/priv/leo_manager_1.conf
+lib/leofs/lib/leo_manager-1.1.3/priv/leo_manager_1.schema
 lib/leofs/lib/leo_mcerl-0.4.0/ebin/leo_mcerl.app
 lib/leofs/lib/leo_mcerl-0.4.0/ebin/leo_mcerl.beam
 lib/leofs/lib/leo_mcerl-0.4.0/ebin/leo_mcerl_app.beam
@@ -574,31 +574,31 @@ lib/leofs/lib/leo_pod-0.6.2/ebin/leo_pod.app
 lib/leofs/lib/leo_pod-0.6.2/ebin/leo_pod.beam
 lib/leofs/lib/leo_pod-0.6.2/ebin/leo_pod_manager.beam
 lib/leofs/lib/leo_pod-0.6.2/ebin/leo_pod_sup.beam
-lib/leofs/lib/leo_redundant_manager-1.8.7/ebin/leo_cluster_tbl_conf.beam
-lib/leofs/lib/leo_redundant_manager-1.8.7/ebin/leo_cluster_tbl_member.beam
-lib/leofs/lib/leo_redundant_manager-1.8.7/ebin/leo_cluster_tbl_ring.beam
-lib/leofs/lib/leo_redundant_manager-1.8.7/ebin/leo_cluster_tbl_sync_behaviour.beam
-lib/leofs/lib/leo_redundant_manager-1.8.7/ebin/leo_mdcr_manage_behaviour.beam
-lib/leofs/lib/leo_redundant_manager-1.8.7/ebin/leo_mdcr_sync_cluster_behaviour.beam
-lib/leofs/lib/leo_redundant_manager-1.8.7/ebin/leo_mdcr_tbl_cluster_info.beam
-lib/leofs/lib/leo_redundant_manager-1.8.7/ebin/leo_mdcr_tbl_cluster_member.beam
-lib/leofs/lib/leo_redundant_manager-1.8.7/ebin/leo_mdcr_tbl_cluster_mgr.beam
-lib/leofs/lib/leo_redundant_manager-1.8.7/ebin/leo_mdcr_tbl_cluster_stat.beam
-lib/leofs/lib/leo_redundant_manager-1.8.7/ebin/leo_mdcr_tbl_sync.beam
-lib/leofs/lib/leo_redundant_manager-1.8.7/ebin/leo_membership_cluster_local.beam
-lib/leofs/lib/leo_redundant_manager-1.8.7/ebin/leo_membership_cluster_remote.beam
-lib/leofs/lib/leo_redundant_manager-1.8.7/ebin/leo_membership_mq_client.beam
-lib/leofs/lib/leo_redundant_manager-1.8.7/ebin/leo_redundant_manager.app
-lib/leofs/lib/leo_redundant_manager-1.8.7/ebin/leo_redundant_manager.beam
-lib/leofs/lib/leo_redundant_manager-1.8.7/ebin/leo_redundant_manager_api.beam
-lib/leofs/lib/leo_redundant_manager-1.8.7/ebin/leo_redundant_manager_app.beam
-lib/leofs/lib/leo_redundant_manager-1.8.7/ebin/leo_redundant_manager_chash.beam
-lib/leofs/lib/leo_redundant_manager-1.8.7/ebin/leo_redundant_manager_sup.beam
-lib/leofs/lib/leo_redundant_manager-1.8.7/ebin/leo_redundant_manager_worker.beam
-lib/leofs/lib/leo_redundant_manager-1.8.7/ebin/leo_ring_tbl_transformer.beam
-lib/leofs/lib/leo_redundant_manager-1.8.7/include/leo_redundant_manager.hrl
-lib/leofs/lib/leo_redundant_manager-1.8.7/priv/basho_bench_driver_leo_redundant_manager.erl
-lib/leofs/lib/leo_redundant_manager-1.8.7/priv/leo_redundant_manager_test.config
+lib/leofs/lib/leo_redundant_manager-1.8.8/ebin/leo_cluster_tbl_conf.beam
+lib/leofs/lib/leo_redundant_manager-1.8.8/ebin/leo_cluster_tbl_member.beam
+lib/leofs/lib/leo_redundant_manager-1.8.8/ebin/leo_cluster_tbl_ring.beam
+lib/leofs/lib/leo_redundant_manager-1.8.8/ebin/leo_cluster_tbl_sync_behaviour.beam
+lib/leofs/lib/leo_redundant_manager-1.8.8/ebin/leo_mdcr_manage_behaviour.beam
+lib/leofs/lib/leo_redundant_manager-1.8.8/ebin/leo_mdcr_sync_cluster_behaviour.beam
+lib/leofs/lib/leo_redundant_manager-1.8.8/ebin/leo_mdcr_tbl_cluster_info.beam
+lib/leofs/lib/leo_redundant_manager-1.8.8/ebin/leo_mdcr_tbl_cluster_member.beam
+lib/leofs/lib/leo_redundant_manager-1.8.8/ebin/leo_mdcr_tbl_cluster_mgr.beam
+lib/leofs/lib/leo_redundant_manager-1.8.8/ebin/leo_mdcr_tbl_cluster_stat.beam
+lib/leofs/lib/leo_redundant_manager-1.8.8/ebin/leo_mdcr_tbl_sync.beam
+lib/leofs/lib/leo_redundant_manager-1.8.8/ebin/leo_membership_cluster_local.beam
+lib/leofs/lib/leo_redundant_manager-1.8.8/ebin/leo_membership_cluster_remote.beam
+lib/leofs/lib/leo_redundant_manager-1.8.8/ebin/leo_membership_mq_client.beam
+lib/leofs/lib/leo_redundant_manager-1.8.8/ebin/leo_redundant_manager.app
+lib/leofs/lib/leo_redundant_manager-1.8.8/ebin/leo_redundant_manager.beam
+lib/leofs/lib/leo_redundant_manager-1.8.8/ebin/leo_redundant_manager_api.beam
+lib/leofs/lib/leo_redundant_manager-1.8.8/ebin/leo_redundant_manager_app.beam
+lib/leofs/lib/leo_redundant_manager-1.8.8/ebin/leo_redundant_manager_chash.beam
+lib/leofs/lib/leo_redundant_manager-1.8.8/ebin/leo_redundant_manager_sup.beam
+lib/leofs/lib/leo_redundant_manager-1.8.8/ebin/leo_redundant_manager_worker.beam
+lib/leofs/lib/leo_redundant_manager-1.8.8/ebin/leo_ring_tbl_transformer.beam
+lib/leofs/lib/leo_redundant_manager-1.8.8/include/leo_redundant_manager.hrl
+lib/leofs/lib/leo_redundant_manager-1.8.8/priv/basho_bench_driver_leo_redundant_manager.erl
+lib/leofs/lib/leo_redundant_manager-1.8.8/priv/leo_redundant_manager_test.config
 lib/leofs/lib/leo_rpc-0.8.9/ebin/leo_rpc.app
 lib/leofs/lib/leo_rpc-0.8.9/ebin/leo_rpc.beam
 lib/leofs/lib/leo_rpc-0.8.9/ebin/leo_rpc_app.beam
@@ -639,23 +639,23 @@ lib/leofs/lib/leo_statistics-1.0.6/ebin/leo_statistics_snmpm.beam
 lib/leofs/lib/leo_statistics-1.0.6/ebin/leo_statistics_sup.beam
 lib/leofs/lib/leo_statistics-1.0.6/ebin/leo_statistics_user.beam
 lib/leofs/lib/leo_statistics-1.0.6/include/leo_statistics.hrl
-lib/leofs/lib/leo_storage-1.1.2/ebin/leo_storage.app
-lib/leofs/lib/leo_storage-1.1.2/ebin/leo_storage_api.beam
-lib/leofs/lib/leo_storage-1.1.2/ebin/leo_storage_app.beam
-lib/leofs/lib/leo_storage-1.1.2/ebin/leo_storage_handle_sync.beam
-lib/leofs/lib/leo_storage-1.1.2/ebin/leo_storage_handler_directory.beam
-lib/leofs/lib/leo_storage-1.1.2/ebin/leo_storage_handler_object.beam
-lib/leofs/lib/leo_storage-1.1.2/ebin/leo_storage_mq.beam
-lib/leofs/lib/leo_storage-1.1.2/ebin/leo_storage_read_repairer.beam
-lib/leofs/lib/leo_storage-1.1.2/ebin/leo_storage_replicator.beam
-lib/leofs/lib/leo_storage-1.1.2/ebin/leo_storage_statistics.beam
-lib/leofs/lib/leo_storage-1.1.2/ebin/leo_storage_sup.beam
-lib/leofs/lib/leo_storage-1.1.2/ebin/leo_sync_local_cluster.beam
-lib/leofs/lib/leo_storage-1.1.2/ebin/leo_sync_remote_cluster.beam
-lib/leofs/lib/leo_storage-1.1.2/include/leo_storage.hrl
-lib/leofs/lib/leo_storage-1.1.2/priv/leo_storage.conf
-lib/leofs/lib/leo_storage-1.1.2/priv/leo_storage.conf.test
-lib/leofs/lib/leo_storage-1.1.2/priv/leo_storage.schema
+lib/leofs/lib/leo_storage-1.1.3/ebin/leo_storage.app
+lib/leofs/lib/leo_storage-1.1.3/ebin/leo_storage_api.beam
+lib/leofs/lib/leo_storage-1.1.3/ebin/leo_storage_app.beam
+lib/leofs/lib/leo_storage-1.1.3/ebin/leo_storage_handle_sync.beam
+lib/leofs/lib/leo_storage-1.1.3/ebin/leo_storage_handler_directory.beam
+lib/leofs/lib/leo_storage-1.1.3/ebin/leo_storage_handler_object.beam
+lib/leofs/lib/leo_storage-1.1.3/ebin/leo_storage_mq.beam
+lib/leofs/lib/leo_storage-1.1.3/ebin/leo_storage_read_repairer.beam
+lib/leofs/lib/leo_storage-1.1.3/ebin/leo_storage_replicator.beam
+lib/leofs/lib/leo_storage-1.1.3/ebin/leo_storage_statistics.beam
+lib/leofs/lib/leo_storage-1.1.3/ebin/leo_storage_sup.beam
+lib/leofs/lib/leo_storage-1.1.3/ebin/leo_sync_local_cluster.beam
+lib/leofs/lib/leo_storage-1.1.3/ebin/leo_sync_remote_cluster.beam
+lib/leofs/lib/leo_storage-1.1.3/include/leo_storage.hrl
+lib/leofs/lib/leo_storage-1.1.3/priv/leo_storage.conf
+lib/leofs/lib/leo_storage-1.1.3/priv/leo_storage.conf.test
+lib/leofs/lib/leo_storage-1.1.3/priv/leo_storage.schema
 lib/leofs/lib/lz4-0.2.2/ebin/lz4.app
 lib/leofs/lib/lz4-0.2.2/ebin/lz4.beam
 lib/leofs/lib/lz4-0.2.2/priv/lz4_nif.so
@@ -1285,17 +1285,17 @@ sbin/leofs-adm
 @dirrmtry lib/leofs/lib/leo_dcerl-0.2.10/include
 @dirrmtry lib/leofs/lib/leo_dcerl-0.2.10/priv
 @dirrmtry lib/leofs/lib/leo_dcerl-0.2.10
-@dirrmtry lib/leofs/lib/leo_gateway-1.1.2/ebin
-@dirrmtry lib/leofs/lib/leo_gateway-1.1.2/include
-@dirrmtry lib/leofs/lib/leo_gateway-1.1.2/priv
-@dirrmtry lib/leofs/lib/leo_gateway-1.1.2
+@dirrmtry lib/leofs/lib/leo_gateway-1.1.3/ebin
+@dirrmtry lib/leofs/lib/leo_gateway-1.1.3/include
+@dirrmtry lib/leofs/lib/leo_gateway-1.1.3/priv
+@dirrmtry lib/leofs/lib/leo_gateway-1.1.3
 @dirrmtry lib/leofs/lib/leo_logger-1.0.5/ebin
 @dirrmtry lib/leofs/lib/leo_logger-1.0.5/include
 @dirrmtry lib/leofs/lib/leo_logger-1.0.5
-@dirrmtry lib/leofs/lib/leo_manager-1.1.2/ebin
-@dirrmtry lib/leofs/lib/leo_manager-1.1.2/include
-@dirrmtry lib/leofs/lib/leo_manager-1.1.2/priv
-@dirrmtry lib/leofs/lib/leo_manager-1.1.2
+@dirrmtry lib/leofs/lib/leo_manager-1.1.3/ebin
+@dirrmtry lib/leofs/lib/leo_manager-1.1.3/include
+@dirrmtry lib/leofs/lib/leo_manager-1.1.3/priv
+@dirrmtry lib/leofs/lib/leo_manager-1.1.3
 @dirrmtry lib/leofs/lib/leo_mcerl-0.4.0/ebin
 @dirrmtry lib/leofs/lib/leo_mcerl-0.4.0/include
 @dirrmtry lib/leofs/lib/leo_mcerl-0.4.0/priv
@@ -1311,10 +1311,10 @@ sbin/leofs-adm
 @dirrmtry lib/leofs/lib/leo_ordning_reda-0.10.8
 @dirrmtry lib/leofs/lib/leo_pod-0.6.2/ebin
 @dirrmtry lib/leofs/lib/leo_pod-0.6.2
-@dirrmtry lib/leofs/lib/leo_redundant_manager-1.8.7/ebin
-@dirrmtry lib/leofs/lib/leo_redundant_manager-1.8.7/include
-@dirrmtry lib/leofs/lib/leo_redundant_manager-1.8.7/priv
-@dirrmtry lib/leofs/lib/leo_redundant_manager-1.8.7
+@dirrmtry lib/leofs/lib/leo_redundant_manager-1.8.8/ebin
+@dirrmtry lib/leofs/lib/leo_redundant_manager-1.8.8/include
+@dirrmtry lib/leofs/lib/leo_redundant_manager-1.8.8/priv
+@dirrmtry lib/leofs/lib/leo_redundant_manager-1.8.8
 @dirrmtry lib/leofs/lib/leo_rpc-0.8.9/ebin
 @dirrmtry lib/leofs/lib/leo_rpc-0.8.9/include
 @dirrmtry lib/leofs/lib/leo_rpc-0.8.9
@@ -1324,10 +1324,10 @@ sbin/leofs-adm
 @dirrmtry lib/leofs/lib/leo_statistics-1.0.6/ebin
 @dirrmtry lib/leofs/lib/leo_statistics-1.0.6/include
 @dirrmtry lib/leofs/lib/leo_statistics-1.0.6
-@dirrmtry lib/leofs/lib/leo_storage-1.1.2/ebin
-@dirrmtry lib/leofs/lib/leo_storage-1.1.2/include
-@dirrmtry lib/leofs/lib/leo_storage-1.1.2/priv
-@dirrmtry lib/leofs/lib/leo_storage-1.1.2
+@dirrmtry lib/leofs/lib/leo_storage-1.1.3/ebin
+@dirrmtry lib/leofs/lib/leo_storage-1.1.3/include
+@dirrmtry lib/leofs/lib/leo_storage-1.1.3/priv
+@dirrmtry lib/leofs/lib/leo_storage-1.1.3
 @dirrmtry lib/leofs/lib/lz4-0.2.2/ebin
 @dirrmtry lib/leofs/lib/lz4-0.2.2/priv
 @dirrmtry lib/leofs/lib/lz4-0.2.2
