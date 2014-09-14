@@ -9,6 +9,7 @@ BINDIR?=	${PREFIX}/sbin
 .endif
 MANDIR?=	${PREFIX}/man/man
 NO_MANCOMPRESS=
+WITH_INSTALL_AS_USER=yes
 
 .PATH: ${.CURDIR}/../tools ${.CURDIR}/../manuals
 
