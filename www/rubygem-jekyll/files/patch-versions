@@ -1,5 +1,5 @@
---- jekyll-2.3.0.gemspec.orig	2014-08-24 22:22:41.000000000 +0200
-+++ jekyll-2.3.0.gemspec	2014-08-24 22:23:14.000000000 +0200
+--- jekyll-2.4.0.gemspec.orig	2014-08-24 22:22:41.000000000 +0200
++++ jekyll-2.4.0.gemspec	2014-08-24 22:23:14.000000000 +0200
 @@ -28,7 +28,7 @@
    name: kramdown
    requirement: !ruby/object:Gem::Requirement
