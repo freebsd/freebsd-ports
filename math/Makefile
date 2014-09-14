@@ -602,6 +602,7 @@
     SUBDIR += ruby-narray_miss
     SUBDIR += ruby-numru_misc
     SUBDIR += ruby-numru_units
+    SUBDIR += rubygem-fftw3
     SUBDIR += rubygem-narray
     SUBDIR += rubygem-narray_miss
     SUBDIR += rubygem-numru-misc
