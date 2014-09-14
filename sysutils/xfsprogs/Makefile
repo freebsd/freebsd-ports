@@ -3,7 +3,7 @@
 
 PORTNAME=	xfsprogs
 PORTVERSION=	2.9.8
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://oss.sgi.com/projects/xfs/cmd_tars/ \
 		ftp://oss.sgi.com/projects/xfs/previous/cmd_tars/
@@ -17,13 +17,10 @@ LICENSE=	LGPL21 GPLv2
 LICENSE_COMB=	multi
 LICENSE_FILE=	${WRKSRC}/doc/COPYING
 
-USES=		gettext gmake libtool readline
-USE_AUTOTOOLS=	autoconf libtoolize
+USES=		gettext gmake libtool:build readline
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV+=		INSTALL="${INSTALL} ${_BINOWNGRP}" \
-			LIBTOOL=${LIBTOOL} OPTIMIZER=" "
-MAKE_ENV+=		INSTALL="${INSTALL} ${_BINOWNGRP}"
-CONFIGURE_ARGS+=	--disable-shared --enable-readline
+CONFIGURE_ENV=	OPTIMIZER=" "
+CONFIGURE_ARGS=	--disable-shared --enable-readline
 ALL_TARGET=
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
@@ -33,13 +30,10 @@ OPTIONS_DEFINE=	DOCS
 post-patch:
 	@${REINPLACE_CMD} -e '/utmp/d' \
 		${WRKSRC}/quota/report.c ${WRKSRC}/quota/util.c
-	@${FIND} ${WRKDIR} -name "*.m4" | ${XARGS} ${REINPLACE_CMD} -e \
-		's|/usr/local|'${LOCALBASE}'|g'
-	@${RM} -f ${WRKSRC}/configure
-
-post-configure:
-	@${FIND} ${WRKSRC}/include -name "builddefs" | ${XARGS} ${REINPLACE_CMD} -e \
-		's|LIBRT =|LIBRT = -lrt|g'
+	@${REINPLACE_CMD} \
+		-e 's|/usr/local|${LOCALBASE}|g' \
+		-e 's/lio_listio/timer_create/' \
+		${WRKSRC}/configure
 	@${REINPLACE_CMD} 's|$$(PKG_DOC_DIR)|$$(DESTDIR)&|g' ${WRKSRC}/Makefile
 .for dir in db doc fsck growfs io logprint mdrestore mkfs quota repair rtcp
 	@${REINPLACE_CMD} -E 's,PKG_(BIN|DOC|INC|SBIN)_DIR,DESTDIR)$$(&,g' \
