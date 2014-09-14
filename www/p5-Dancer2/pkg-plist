@@ -29,7 +29,6 @@ bin/dancer2
 %%SITE_PERL%%/Dancer2/Cookbook.pod
 %%SITE_PERL%%/Dancer2/Core.pm
 %%SITE_PERL%%/Dancer2/Core/App.pm
-%%SITE_PERL%%/Dancer2/Core/Context.pm
 %%SITE_PERL%%/Dancer2/Core/Cookie.pm
 %%SITE_PERL%%/Dancer2/Core/DSL.pm
 %%SITE_PERL%%/Dancer2/Core/Dispatcher.pm
@@ -45,6 +44,7 @@ bin/dancer2
 %%SITE_PERL%%/Dancer2/Core/Role/DSL.pm
 %%SITE_PERL%%/Dancer2/Core/Role/Engine.pm
 %%SITE_PERL%%/Dancer2/Core/Role/Handler.pm
+%%SITE_PERL%%/Dancer2/Core/Role/HasLocation.pm
 %%SITE_PERL%%/Dancer2/Core/Role/Headers.pm
 %%SITE_PERL%%/Dancer2/Core/Role/Hookable.pm
 %%SITE_PERL%%/Dancer2/Core/Role/Logger.pm
@@ -92,7 +92,6 @@ bin/dancer2
 %%PERL5_MAN3%%/Dancer2::Cookbook.3.gz
 %%PERL5_MAN3%%/Dancer2::Core.3.gz
 %%PERL5_MAN3%%/Dancer2::Core::App.3.gz
-%%PERL5_MAN3%%/Dancer2::Core::Context.3.gz
 %%PERL5_MAN3%%/Dancer2::Core::Cookie.3.gz
 %%PERL5_MAN3%%/Dancer2::Core::DSL.3.gz
 %%PERL5_MAN3%%/Dancer2::Core::Dispatcher.3.gz
@@ -108,6 +107,7 @@ bin/dancer2
 %%PERL5_MAN3%%/Dancer2::Core::Role::DSL.3.gz
 %%PERL5_MAN3%%/Dancer2::Core::Role::Engine.3.gz
 %%PERL5_MAN3%%/Dancer2::Core::Role::Handler.3.gz
+%%PERL5_MAN3%%/Dancer2::Core::Role::HasLocation.3.gz
 %%PERL5_MAN3%%/Dancer2::Core::Role::Headers.3.gz
 %%PERL5_MAN3%%/Dancer2::Core::Role::Hookable.3.gz
 %%PERL5_MAN3%%/Dancer2::Core::Role::Logger.3.gz
