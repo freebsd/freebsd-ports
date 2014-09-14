@@ -3,7 +3,7 @@
 #
 
 PORTNAME=	xfce4-bsdcpufreq-plugin
-PORTVERSION=	0.1.1
+PORTVERSION=	0.2
 CATEGORIES=	sysutils xfce
 
 MAINTAINER=	riggs@FreeBSD.org
@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	riggs-
-GH_COMMIT=	66ef781
+GH_COMMIT=	be17b3a
 GH_TAGNAME=	${GH_COMMIT}
 
 USE_GNOME=	gtk20
