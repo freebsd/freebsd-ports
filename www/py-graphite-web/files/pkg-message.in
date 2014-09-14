@@ -1,7 +1,25 @@
-==============================================================================
+========================================================================
 
-To run graphite, you will need to setup Apache by creating a vhost similar to
-the following:
+Please note that this port/package overrides the default installation layout
+for Graphite! To setup graphite, you will need to:
+
+* Set the SECRET_KEY in %%PREFIX%%/etc/graphite/local_settings.py
+
+* Initialize the sqlite user database and create the admin user:
+
+	python2 %%PYTHON_SITELIBDIR%%/graphite/manage.py syncdb
+
+* Build the index:
+
+        %%PREFIX%%/bin/build-index.sh
+
+* Change the ownership of the user database so the webapp can write to it:
+
+	chown -R %%WWWOWN%%:%%WWWGRP%% /var/db/graphite/ /var/log/graphite/
+
+* Setup a web server:
+
+Setup Apache by creating a vhost similar to the following:
 
 <VirtualHost *:80>
 	ServerName graphite
@@ -55,20 +73,6 @@ the following:
 	</Directory>
 
 </VirtualHost>
-
-You should set the SECRET_KEY in %%PREFIX%%/etc/graphite/local_settings.py
-
-Then initialize the sqlite user database and create the admin user:
-
-	python2 %%PYTHON_SITELIBDIR%%/graphite/manage.py syncdb
-
-Then build the index:
-
-        %%PREFIX%%/bin/build-index.sh
-
-Change the ownership of the user database so the webapp can write to it:
-
-	chown -R %%WWWOWN%%:%%WWWGRP%% /var/db/graphite/ /var/log/graphite/
 
 Now you should be able to access the graphite virtual host you created in the
 first step.
