@@ -5,6 +5,7 @@
 %%SITE_PERL%%/DBIx/SearchBuilder/Record/Cachable.pm
 %%SITE_PERL%%/DBIx/SearchBuilder/Handle/Informix.pm
 %%SITE_PERL%%/DBIx/SearchBuilder/Handle/Pg.pm
+%%SITE_PERL%%/DBIx/SearchBuilder/Handle/Pg32.pm
 %%SITE_PERL%%/DBIx/SearchBuilder/Handle/mysql.pm
 %%SITE_PERL%%/DBIx/SearchBuilder/Handle/mysqlPP.pm
 %%SITE_PERL%%/DBIx/SearchBuilder/Handle/ODBC.pm
@@ -21,6 +22,7 @@
 %%PERL5_MAN3%%/DBIx::SearchBuilder::Handle::ODBC.3.gz
 %%PERL5_MAN3%%/DBIx::SearchBuilder::Handle::Oracle.3.gz
 %%PERL5_MAN3%%/DBIx::SearchBuilder::Handle::Pg.3.gz
+%%PERL5_MAN3%%/DBIx::SearchBuilder::Handle::Pg32.3.gz
 %%PERL5_MAN3%%/DBIx::SearchBuilder::Handle::SQLite.3.gz
 %%PERL5_MAN3%%/DBIx::SearchBuilder::Handle::Sybase.3.gz
 %%PERL5_MAN3%%/DBIx::SearchBuilder::Handle::mysql.3.gz
