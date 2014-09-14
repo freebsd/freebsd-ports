@@ -84,9 +84,7 @@ post-patch:
 	    -e "s,^\.$$,@dirrmtry %%WWWDIR%%," \
 	    -e "s,^\.,@dirrm %%WWWDIR%%,"	     >>${PLIST}
 
-do-install: install-app install-conf
-
-install-app:
+do-install:
 	cd ${WRKSRC} ; \
 	for src in $$( ${FIND} . ! -name .cvsignore ! -name '*.bak' ) ; do \
 	    dst=${STAGEDIR}${WWWDIR}$${src#.} ; \
@@ -96,9 +94,5 @@ install-app:
 		${INSTALL_DATA} "$$src" "$$dst" ; \
 	    fi \
 	done
-
-install-conf: install-app
-	${CHMOD} 0640 ${STAGEDIR}${WWWDIR}/${CFG_FILE}.sample ; \
-	${CHGRP} ${WWWGRP} ${STAGEDIR}${WWWDIR}/${CFG_FILE}.sample ;
 
 .include <bsd.port.mk>
