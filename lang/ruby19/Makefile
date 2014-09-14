@@ -17,8 +17,7 @@ COMMENT?=	Object-oriented interpreted scripting language
 LICENSE=	BSD2CLAUSE RUBY
 LICENSE_COMB=	dual
 
-LIB_DEPENDS=	libexecinfo.so:${PORTSDIR}/devel/libexecinfo \
-		libyaml.so:${PORTSDIR}/textproc/libyaml
+LIB_DEPENDS=	libyaml.so:${PORTSDIR}/textproc/libyaml
 
 # Using LIB_DEPENDS finds the libffi from gcc which causes problems
 BUILD_DEPENDS=	libffi>=0:${PORTSDIR}/devel/libffi
@@ -69,7 +68,7 @@ RDOC_CONFIGURE_OFF=	--disable-install-rdoc
 
 .include <bsd.port.options.mk>
 
-USES=		tar:bzip2 cpe
+USES=		cpe execinfo tar:bzip2
 
 CPE_VENDOR=	ruby-lang
 CPE_VERSION=	${RUBY_RELVERSION}
