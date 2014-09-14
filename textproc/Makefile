@@ -1354,6 +1354,7 @@
     SUBDIR += rubygem-sanitize
     SUBDIR += rubygem-sass
     SUBDIR += rubygem-sass-rails
+    SUBDIR += rubygem-sass-rails4
     SUBDIR += rubygem-sass32
     SUBDIR += rubygem-sax-machine
     SUBDIR += rubygem-simplecov-html

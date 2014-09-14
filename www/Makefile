@@ -1735,6 +1735,7 @@
     SUBDIR += rubygem-actionpack
     SUBDIR += rubygem-actionpack4
     SUBDIR += rubygem-activeresource
+    SUBDIR += rubygem-activeresource4
     SUBDIR += rubygem-acts-as-taggable-on
     SUBDIR += rubygem-addressable
     SUBDIR += rubygem-akami
@@ -1792,6 +1793,7 @@
     SUBDIR += rubygem-journey
     SUBDIR += rubygem-jquery-atwho-rails
     SUBDIR += rubygem-jquery-rails
+    SUBDIR += rubygem-jquery-rails4
     SUBDIR += rubygem-jquery-turbolinks
     SUBDIR += rubygem-jquery-ui-rails
     SUBDIR += rubygem-jruby-rack
@@ -1835,7 +1837,9 @@
     SUBDIR += rubygem-rack-test
     SUBDIR += rubygem-rack15
     SUBDIR += rubygem-rails
+    SUBDIR += rubygem-rails4
     SUBDIR += rubygem-railties
+    SUBDIR += rubygem-railties4
     SUBDIR += rubygem-raindrops
     SUBDIR += rubygem-ramaze
     SUBDIR += rubygem-raphael-rails
