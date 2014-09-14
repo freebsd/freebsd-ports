@@ -4,12 +4,8 @@ bin/lurker-params
 bin/lurker-prune
 bin/lurker-regenerate
 bin/lurker-search
-@unexec if cmp -s %D/etc/lurker/lurker.conf.sample $D/etc/lurker/lurker.conf; then rm -f $D/etc/lurker/lurker.conf; fi
-etc/lurker/lurker.conf.sample
-@exec if [ ! -f %D/etc/lurker/lurker.conf ] ; then cp -p $D/%F %B/lurker.conf; fi
-@unexec if cmp -s %D/etc/lurker/apache.conf.sample $D/etc/lurker/apache.conf; then rm -f $D/etc/lurker/apache.conf; fi
-etc/lurker/apache.conf.sample
-@exec if [ ! -f %D/etc/lurker/apache.conf ] ; then cp -p $D/%F %B/apache.conf; fi
+@sample etc/lurker/lurker.conf.sample
+@sample etc/lurker/apache.conf.sample
 man/man1/lurker-index.1.gz
 man/man1/lurker-list.1.gz
 man/man1/lurker-params.1.gz
@@ -19,6 +15,8 @@ man/man1/lurker-search.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL
 %%PORTDOCS%%%%DOCSDIR%%/FAQ
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+@owner %%WWWOWN%%
+@group %%WWWGRP%%
 www/lurker/bounce.cgi
 www/lurker/imgs/a.png
 www/lurker/imgs/b.png
@@ -82,5 +80,7 @@ www/lurker/ui/thread.xsl
 @dirrm www/lurker/imgs
 @dirrm www/lurker/attach
 @dirrm www/lurker
+@owner root
+@group wheel
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm etc/lurker
