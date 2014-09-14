@@ -401,7 +401,7 @@ include/armadillo_bits/xvec_htrans_bones.hpp
 include/armadillo_bits/xvec_htrans_meat.hpp
 lib/libarmadillo.so
 lib/libarmadillo.so.4
-lib/libarmadillo.so.4.400.1
+lib/libarmadillo.so.4.400.2
 share/Armadillo/CMake/ArmadilloConfig.cmake
 share/Armadillo/CMake/ArmadilloConfigVersion.cmake
 share/Armadillo/CMake/ArmadilloLibraryDepends-%%CMAKE_BUILD_TYPE%%.cmake
