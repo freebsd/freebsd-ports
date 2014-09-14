@@ -18,6 +18,10 @@ CONFLICTS=	eject-[0-9]*
 
 USES=		tar:xz
 
-MAKE_ARGS+=	STAGEDIR=${STAGEDIR}
+do-install:
+	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/eject.allow ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/eject ${STAGEDIR}${PREFIX}/sbin
+	${INSTALL_MAN} ${WRKSRC}/eject.1 ${STAGEDIR}${PREFIX}/man/man1
 
 .include <bsd.port.mk>
