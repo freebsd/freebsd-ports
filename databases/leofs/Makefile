@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	leofs
-PORTVERSION=	1.1.2
+PORTVERSION=	1.1.3
 CATEGORIES=	databases
 
 MAINTAINER=	trociny@FreeBSD.org
@@ -22,8 +22,8 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/erlang16/bin/erlc:${PORTSDIR}/lang/erlang-runtim
 USE_GITHUB=	yes
 GH_ACCOUNT=	leo-project
 GH_PROJECT=	leofs
-GH_TAGNAME=	fe7ca6d
-GH_COMMIT=	fe7ca6d
+GH_TAGNAME=	e004a01
+GH_COMMIT=	e004a01
 
 LEOFS_USER=	leofs
 LEOFS_GROUP=	leofs
@@ -69,9 +69,9 @@ MAKE_JOBS_UNSAFE=yes
 MAKE_ENV=	PATH=${LOCALBASE}/lib/erlang16/bin:${PATH}
 
 LEOFS_DEPS=	\
-	leo-project/leo_gateway=${PORTVERSION}?703c1f5:leo_gateway \
-	leo-project/leo_manager=${PORTVERSION}?cbbbe7d:leo_manager \
-	leo-project/leo_storage=${PORTVERSION}?c3fc8c3:leo_storage \
+	leo-project/leo_gateway=${PORTVERSION}?8f95e21:leo_gateway \
+	leo-project/leo_manager=${PORTVERSION}?1cc4603:leo_manager \
+	leo-project/leo_storage=${PORTVERSION}?7c2df63:leo_storage \
 	DeadZen/goldrush=0.1.6?71e6321:goldrush \
 	basho/cuttlefish=origin/develop?6b23fc4:cuttlefish \
 	basho/eleveldb=1.4.10?a84b18c:eleveldb \
@@ -98,7 +98,7 @@ LEOFS_DEPS=	\
 	leo-project/leo_object_storage=1.1.4?32435b2:leo_object_storage \
 	leo-project/leo_ordning_reda=0.10.8?4fbc957:leo_ordning_reda \
 	leo-project/leo_pod=0.6.2?cfd8557:leo_pod \
-	leo-project/leo_redundant_manager=1.8.7?62fd8fc:leo_redundant_manager \
+	leo-project/leo_redundant_manager=1.8.8?1e03077:leo_redundant_manager \
 	leo-project/leo_rpc=0.8.9?d01130c:leo_rpc \
 	leo-project/leo_s3_libs=1.1.2?b59ff76:leo_s3_libs \
 	leo-project/leo_statistics=1.0.6?58402d1:leo_statistics \

@@ -194,7 +194,7 @@ gen_config()
     app_config=`echo ${args} | sed -nEe 's/^.*(app\.[0-9.]*\.config).*$/\1/p'`
     vm_args=`echo ${args} | sed -nEe 's/^.*(vm\.[0-9.]*\.args).*$/\1/p'`
 
-    if [ -z "${app_config}" -o  -z "${vm_args}" ]
+    if [ -z "${app_config}" -o -z "${vm_args}" ]
     then
         echo "Failed to parse ${LEOFS_SERVER}.conf" >&2
         exit 1
