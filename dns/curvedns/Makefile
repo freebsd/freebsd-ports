@@ -3,7 +3,7 @@
 
 PORTNAME=	curvedns
 PORTVERSION=	0.88.b
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	dns
 DISTNAME=	curvedns-0.88-unstable
 
@@ -30,6 +30,7 @@ GROUPS=		bind
 CURVE_UID=	53
 CURVE_GID=	53
 
+PLIST_SUB=	CURVE_UID="${USERS}" CURVE_GID="${GROUPS}"
 SUB_FILES=	pkg-message
 
 do-install:
