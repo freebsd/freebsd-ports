@@ -3,7 +3,7 @@
 
 PORTNAME=	asterisk
 PORTVERSION=	1.8.30.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net
 MASTER_SITES=	http://downloads.asterisk.org/pub/telephony/asterisk/ \
 		http://downloads.asterisk.org/pub/telephony/asterisk/old-releases/
@@ -104,7 +104,7 @@ CURL_CONFIGURE_ON=	--with-libcurl
 CURL_CONFIGURE_OFF=	--with-libcurl=no
 CURL_LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl
 SPANDSP_CONFIGURE_WITH=	spandsp
-SPANDSP_LIB_DEPENDS=	libspandsp.so.2.0.0:${PORTSDIR}/comms/spandsp-devel
+SPANDSP_LIB_DEPENDS=	libspandsp.so.2:${PORTSDIR}/comms/spandsp-devel
 EXCHANGE_CONFIGURE_OFF=	--without-neon --without-neon29
 EXCHANGE_LIB_DEPENDS=	libneon.so:${PORTSDIR}/www/neon29
 SRTP_CONFIGURE_WITH=	srtp

@@ -3,7 +3,7 @@
 
 PORTNAME=	spandsp
 DISTVERSION=	0.0.6pre21
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	comms
 MASTER_SITES=	http://www.soft-switch.org/downloads/spandsp/
 PKGNAMESUFFIX=	-devel
@@ -15,11 +15,10 @@ LIB_DEPENDS=	libtiff.so:${PORTSDIR}/graphics/tiff
 
 WRKSRC=		${WRKDIR}/spandsp-${DISTVERSION:C/pre.*//}
 
-USES=		gmake libtool pathfix tar:tgz
-USE_AUTOTOOLS=	autoconf
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib" -C
+CPPFLAGS+=	-I${LOCALBASE}/include
+LIBS+=		-L${LOCALBASE}/lib
+USES=		gmake libtool pathfix tar:tgz
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
 
@@ -39,6 +38,9 @@ USE_GNOME+=	libxslt
 .else
 CONFIGURE_ARGS+=--disable-doc
 .endif
+
+post-patch:
+	@${REINPLACE_CMD} 's/tgmath\.h//' ${WRKSRC}/configure
 
 post-install:
 .if ${PORT_OPTIONS:MDOCS}
