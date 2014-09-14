@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	wine
-DISTVERSION=	1.7.25
-PORTREVISION=	1
+DISTVERSION=	1.7.26
 PORTEPOCH=	1
 CATEGORIES=	emulators
 MASTER_SITES=	SF/${PORTNAME}/Source \
@@ -30,9 +29,8 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--verbose --disable-tests \
 		--without-alsa --without-capi --without-dbus \
 		--without-gphoto --without-gsm --without-gstreamer \
-		--without-mpg123 --without-opencl \
-		--with-oss --without-sane --without-tiff \
-		--without-v4l --with-xcomposite --without-xinerama
+		--without-opencl --with-oss --without-sane --without-tiff \
+		--with-xcomposite --without-xinerama
 CONFIGURE_ENV=	FLEX="${LOCALBASE}/bin/flex"
 WINELIBDIR?=	${PREFIX}/lib
 .if !defined(USE_LDCONFIG32)
@@ -45,7 +43,7 @@ SHEBANG_FILES=	tools/winemaker tools/winedump/function_grep.pl
 SUB_FILES=	pkg-message
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
-OPTIONS_DEFINE=	COMPHOLIO CUPS DOCS DOSBOX GNUTLS HAL LDAP LIBXSLT OPENAL WINEMAKER GECKO MONO X11
+OPTIONS_DEFINE=	COMPHOLIO CUPS DOCS DOSBOX GNUTLS HAL LDAP LIBXSLT MPG123 OPENAL V4L WINEMAKER X11 GECKO MONO
 OPTIONS_DEFAULT=X11
 OPTIONS_SUB=	yes
 
@@ -78,8 +76,14 @@ LIBXSLT_LIB_DEPENDS=	libxslt.so:${PORTSDIR}/textproc/libxslt
 
 MONO_RUN_DEPENDS=	${DATADIR}/mono/wine-mono-4.5.2.msi:${PORTSDIR}/emulators/wine-mono-devel
 
+MPG123_CONFIGURE_WITH=	mpg123
+MPG123_LIB_DEPENDS=	libmpg123.so:${PORTSDIR}/audio/mpg123
+
 OPENAL_CONFIGURE_WITH=	openal
 OPENAL_USES=		openal
+
+V4L_CONFIGURE_WITH=	v4l
+V4L_LIB_DEPENDS=	libv4l1.so:${PORTSDIR}/multimedia/libv4l
 
 WINEMAKER_RUN_DEPENDS=	p5-XML-LibXML>0:${PORTSDIR}/textproc/p5-XML-LibXML
 
