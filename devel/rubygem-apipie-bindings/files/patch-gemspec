@@ -1,6 +1,6 @@
---- ./apipie-bindings-0.0.8.gemspec.orig	2014-08-24 19:44:19.530232640 +0000
-+++ ./apipie-bindings-0.0.8.gemspec	2014-08-24 19:44:37.144232003 +0000
-@@ -72,7 +72,7 @@
+--- apipie-bindings-0.0.9.gemspec.orig	2014-08-29 16:34:08.000000000 +0200
++++ apipie-bindings-0.0.9.gemspec	2014-08-29 16:34:20.000000000 +0200
+@@ -78,7 +78,7 @@
      requirements:
      - - ~>
        - !ruby/object:Gem::Version
