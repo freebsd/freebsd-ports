@@ -5,6 +5,7 @@ PORTNAME=	sass-rails
 PORTVERSION=	4.0.3
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
+PKGNAMESUFFIX=	4
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Sass adapter for the Rails asset pipeline
