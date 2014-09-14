@@ -3,6 +3,7 @@
 
 PORTNAME=	racket
 PORTVERSION=	6.1
+PORTREVISION=	1
 CATEGORIES=	lang scheme
 MASTER_SITES=	http://mirror.racket-lang.org/installers/${PORTVERSION}/ \
 		http://www.cs.utah.edu/plt/installers/${PORTVERSION}/ \
@@ -16,38 +17,24 @@ DIST_SUBDIR=	${PORTNAME}/${PORTVERSION}
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Interactive, integrated, graphical Scheme programming environment
 
-MAKE_JOBS_UNSAFE=yes
-
-OPTIONS_DEFINE=		RACKET_PLACES
-RACKET_PLACES_DESC=	Enable Places
-OPTIONS_DEFAULT=	RACKET_PLACES
-
-CONFLICTS=	racket-minimal-[0-9]*
-
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--enable-shared --enable-pthread \
-		--enable-lt=${LIBTOOL}
-
-.include <bsd.port.options.mk>
-
-.if defined(WITHOUT_X11)
-IGNORE=		requires X11; use lang/racket-textual instead
-.endif
-
-LIB_DEPENDS+=	libffi.so:${PORTSDIR}/devel/libffi		\
+LIB_DEPENDS=	libffi.so:${PORTSDIR}/devel/libffi	\
 		libcairo.so:${PORTSDIR}/graphics/cairo	\
 		libjpeg.so:${PORTSDIR}/graphics/jpeg	\
 		libpng15.so:${PORTSDIR}/graphics/png
 
-.if ${PORT_OPTIONS:MRACKET_PLACES}
-CONFIGURE_ARGS+=	--enable-places
-.else
-CONFIGURE_ARGS+=	--disable-places
-.endif
+MAKE_JOBS_UNSAFE=yes
 
-# Force the "configure" script to look in $LOCALBASE for -lpng and -ljpeg
-LDFLAGS+=	-L${LOCALBASE}/lib
+OPTIONS_DEFINE=		RACKET_PLACES
+OPTIONS_DEFAULT=	RACKET_PLACES
+RACKET_PLACES_DESC=	Enable Places
+RACKET_PLACES_CONFIGURE_ENABLE=	places
+
+CONFLICTS=	racket-minimal-[0-9]*
+
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--disable-lt --enable-shared --enable-pthread
 CPPFLAGS+=	-I${LOCALBASE}/include
+LIBS+=		-L${LOCALBASE}/lib
 
 WRKSRC=		${WRKDIR}/racket-${PORTVERSION}/src
 USES=		iconv libtool tar:tgz
@@ -57,7 +44,7 @@ USE_SQLITE=	3
 
 ONLY_FOR_ARCHS=	i386 amd64
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if ${ARCH} == "amd64"
 CPPFLAGS+=	-DLONG64
@@ -67,4 +54,4 @@ post-install:
 	${REINPLACE_CMD} -e "s@${STAGEDIR}@@" ${STAGEDIR}${PREFIX}/share/applications/*.desktop
 	${RM} ${STAGEDIR}${PREFIX}/share/applications/*.bak
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
