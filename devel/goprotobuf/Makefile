@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	goprotobuf
-PORTVERSION=	20131010
-PORTREVISION=	1
+PORTVERSION=	20140812
 CATEGORIES=	devel
 MASTER_SITES=	http://www.c-s.li/ports/
 
