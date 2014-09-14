@@ -2,17 +2,16 @@
 # $FreeBSD$
 
 PORTNAME=	ecs
-PORTVERSION=	2.0.2
-PORTREVISION=	7
+PORTVERSION=	2.0.3
 CATEGORIES=	science
-MASTER_SITES=	http://research.edf.com/fichiers/fckeditor/Commun/Innovation/logiciels/code_saturne/Releases/
-DISTNAME=	${PORTNAME}-${PORTVERSION:S/.//g}
+MASTER_SITES=	http://code-saturne.org/releases/
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Code_Saturne Preprocessor
 
 LICENSE=	GPLv2
 
+BUILD_DEPENDS+=	${LOCALBASE}/lib/libscotch.a:${PORTSDIR}/cad/scotch
 LIB_DEPENDS=	libmed.so:${PORTSDIR}/french/med	\
 		libbft.so:${PORTSDIR}/science/bft	\
 		libhdf5.so:${PORTSDIR}/science/hdf5	\
@@ -20,27 +19,20 @@ LIB_DEPENDS=	libmed.so:${PORTSDIR}/french/med	\
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-USES=		gmake zip
+USES=		gmake
 USE_TEX=	dvipsk
 GNU_CONFIGURE=	yes
-CPPFLAGS=	-I${LOCALBASE}/include
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--with-bft=${LOCALBASE}		\
 		--with-hdf5=${LOCALBASE}	\
 		--with-cgns=${LOCALBASE}	\
+		--without-adf --without-ccm	\
+		--with-scotch=${LOCALBASE}	\
 		--with-med=${LOCALBASE}		\
 		--with-metis=${LOCALBASE}	\
 		--with-metis-include=${LOCALBASE}/include/metis
-CONFIGURE_ENV=	PTHREAD_LIBS=${PTHREAD_LIBS} CPPFLAGS="${CPPFLAGS}"	\
-		LDFLAGS="-L${LOCALBASE}/lib"
-
-.if defined(WITH_CCMIO)
-LIB_DEPENDS+=	libadf.so:${PORTSDIR}/science/libccmio	\
-		libccmio.so:${PORTSDIR}/science/libccmio
-CONFIGURE_ARGS+=--with-adf=${LOCALBASE}		\
-		--with-ccm=${LOCALBASE}
-.else
-CONFIGURE_ARGS+=--without-adf --without-ccm
-.endif
+CONFIGURE_ENV=	PTHREAD_LIBS=${PTHREAD_LIBS}
 
 OPTIONS_DEFINE=	DOCS NLS
 OPTIONS_SUB=	yes
@@ -70,11 +62,6 @@ LIB_DEPENDS+=	libmetis.so.1:${PORTSDIR}/math/metis4
 .else
 # Prefer metis-edf to avoid conflict with Code_Aster
 LIB_DEPENDS+=	libmetis.so.0:${PORTSDIR}/math/metis-edf
-.endif
-
-.if ${ARCH} == "i386"
-BUILD_DEPENDS+=	${LOCALBASE}/lib/libscotch.a:${PORTSDIR}/cad/scotch
-CONFIGURE_ARGS+=	--with-scotch=${LOCALBASE}
 .endif
 
 pre-configure:
