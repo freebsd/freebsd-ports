@@ -2,11 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	fvm
-PORTVERSION=	0.15.3
-PORTREVISION=	12
+PORTVERSION=	0.15.4
 CATEGORIES=	science parallel
-MASTER_SITES=	http://research.edf.com/fichiers/fckeditor/Commun/Innovation/logiciels/code_saturne/Releases/
-DISTNAME=	${PORTNAME}-${PORTVERSION:S/.//g}
+MASTER_SITES=	http://code-saturne.org/releases/
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Code_Saturne Finite Volume Mesh
@@ -20,7 +18,7 @@ LIB_DEPENDS=	libmed.so:${PORTSDIR}/french/med	\
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-USES=		libtool zip
+USES=		libtool
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-bft=${LOCALBASE}	\
