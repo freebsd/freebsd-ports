@@ -1,5 +1,5 @@
 @owner %%WWWOWN%%
-@group %%WWGRP%%
+@group %%WWWGRP%%
 %%PHPBBDIR%%/.htaccess
 %%PHPBBDIR%%/adm/images/arrow_down.gif
 %%PHPBBDIR%%/adm/images/arrow_left.gif
