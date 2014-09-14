@@ -1,4 +1,3 @@
-%%RTHOME%%/plugins/RT-Authen-ExternalAuth/etc/RT_SiteConfig.pm
 %%RTHOME%%/plugins/RT-Authen-ExternalAuth/html/Callbacks/ExternalAuth/Elements/Header/Head
 %%RTHOME%%/plugins/RT-Authen-ExternalAuth/html/Callbacks/ExternalAuth/autohandler/Auth
 %%RTHOME%%/plugins/RT-Authen-ExternalAuth/html/Callbacks/ExternalAuth/autohandler/Session
@@ -24,7 +23,6 @@ man/auto/RT/Authen/ExternalAuth/.packlist.gz
 @dirrm %%RTHOME%%/plugins/RT-Authen-ExternalAuth/html/Callbacks/ExternalAuth
 @dirrm %%RTHOME%%/plugins/RT-Authen-ExternalAuth/html/Callbacks
 @dirrm %%RTHOME%%/plugins/RT-Authen-ExternalAuth/html
-@dirrm %%RTHOME%%/plugins/RT-Authen-ExternalAuth/etc
 @dirrm %%RTHOME%%/plugins/RT-Authen-ExternalAuth
 @dirrm man/auto/RT/Authen/ExternalAuth
 @dirrmtry man/auto/RT/Authen
