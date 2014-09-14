@@ -126,7 +126,6 @@ do-install:
 	@${INSTALL_DATA} ${WRKSRC}/extras/${i} ${STAGEDIR}${EXAMPLESDIR}
 .endfor
 
-	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${STAGEDIR}${WWWDIR}
 	@${ECHO_CMD} '@exec ${CHOWN} -R ${WWWOWN}:${WWWGRP} ${WWWDIR}' >> ${TMPPLIST}
 
 .include <bsd.port.mk>
