@@ -570,7 +570,6 @@
     SUBDIR += rubygem-exception_notification
     SUBDIR += rubygem-larch
     SUBDIR += rubygem-mail
-    SUBDIR += rubygem-mail25
     SUBDIR += rubygem-mailfactory
     SUBDIR += rubygem-pony
     SUBDIR += rubygem-qmail
