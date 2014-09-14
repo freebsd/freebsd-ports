@@ -3,6 +3,7 @@
 
 PORTNAME=	rpm
 PORTVERSION=	4.11.3
+PORTREVISION=	1
 CATEGORIES=	archivers
 MASTER_SITES=	http://rpm.org/releases/rpm-${PORTVERSION:R}.x/ \
 		ftp://ftp.mirrorservice.org/sites/ftp.rpm.org/pub/rpm/dist/rpm-${PORTVERSION:E}.x/
