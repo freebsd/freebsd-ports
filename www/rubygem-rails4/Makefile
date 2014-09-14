@@ -27,7 +27,7 @@ RUN_DEPENDS=	rubygem-actionmailer4>=${PORTVERSION}:${PORTSDIR}/mail/rubygem-acti
 		rubygem-sqlite3>=1.3.9:${PORTSDIR}/databases/rubygem-sqlite3 \
 		rubygem-execjs>=2.2.1:${PORTSDIR}/devel/rubygem-execjs \
 		rubygem-coffee-rails4>=4.0.1:${PORTSDIR}/devel/rubygem-coffee-rails4 \
-		rubygem-sass-rails>=4.0.3:${PORTSDIR}/textproc/rubygem-sass-rails4 \
+		rubygem-sass-rails4>=4.0.3:${PORTSDIR}/textproc/rubygem-sass-rails4 \
 		rubygem-spring>=1.1.3:${PORTSDIR}/devel/rubygem-spring \
 		rubygem-jquery-rails4>=3.1.2:${PORTSDIR}/www/rubygem-jquery-rails4 \
 		rubygem-jbuilder>=2.1.3:${PORTSDIR}/devel/rubygem-jbuilder \
