@@ -3,6 +3,7 @@
 
 PORTNAME=	actionmailer
 PORTVERSION=	3.2.19
+PORTREVISION=	1
 CATEGORIES=	mail rubygems
 MASTER_SITES=	RG
 
@@ -12,7 +13,7 @@ COMMENT=	Easy email delivery and testing for Ruby
 LICENSE=	MIT
 
 RUN_DEPENDS=	rubygem-actionpack>=${PORTVERSION}:${PORTSDIR}/www/rubygem-actionpack \
-		rubygem-mail>=2.5.4:${PORTSDIR}/mail/rubygem-mail
+		rubygem-mail25>=2.5.4:${PORTSDIR}/mail/rubygem-mail25
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
