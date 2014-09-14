@@ -13,7 +13,7 @@ COMMENT=	UNIX manual page editor and viewer
 WRKSRC=		${WRKDIR}/${DISTNAME}/${PORTNAME}
 
 MAKEFILE=	Makefile.FreeBSD
-USES=	tar:bzip2
+USES=		tar:bzip2
 USE_GNOME=	gtk12
 
 MAKE_ARGS=	STAGEDIR="$(STAGEDIR)"
@@ -26,6 +26,7 @@ post-patch:
 	@${REINPLACE_CMD} -e '/^MAN/s/.bz2//' \
 		-e 's/(PREFIX)/(STAGEDIR)$$&/' \
 		-e '/@echo/s/^/#/' \
+		-e 's/-o root -g wheel//' \
 		${WRKSRC}/Makefile.install.FreeBSD
 	@${REINPLACE_CMD} -e '/^SRC_C =/s//& mntent_compat.c/' \
 		${WRKSRC}/Makefile.srclist
