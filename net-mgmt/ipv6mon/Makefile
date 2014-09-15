@@ -1,9 +1,8 @@
-# Created by: Hiroki Sato <hrs@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	ipv6mon
 PORTVERSION=	1.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net-mgmt ipv6
 MASTER_SITES=	http://www.si6networks.com/tools/ipv6mon/
 DISTNAME=	${PORTNAME}-v${PORTVERSION}
@@ -11,14 +10,8 @@ DISTNAME=	${PORTNAME}-v${PORTVERSION}
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Tool for monitoring IPv6 address usage
 
-OPTIONS_DEFINE=	DOCS
-
 LICENSE=	GPLv3
 
-USES=		uidfix
-#Ignore "normal" destdir from port infra
-DESTDIRNAME=	IGNOREME
-MAKE_ENV=	DESTDIR=${STAGEDIR}${PREFIX}/
 CFLAGS+=	-DIPV6MON_CONF=\\\"${PREFIX}/etc/ipv6mon.conf\\\"
 USERS=		${PORTNAME}
 GROUPS=		${PORTNAME}
@@ -30,7 +23,10 @@ PORTDOCS=	README.TXT \
 		ipv6mon-manual.odt \
 		ipv6mon-manual.pdf
 
+OPTIONS_DEFINE=	DOCS
+
 post-extract:
+	${INSTALL_DATA} ${FILESDIR}/Makefile ${WRKSRC}
 	${INSTALL_DATA} ${WRKSRC}/manuals/* ${WRKSRC}
 
 post-install:
