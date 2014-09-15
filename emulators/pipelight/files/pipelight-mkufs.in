@@ -60,7 +60,7 @@ if [ $? -eq 0 ] ; then
 fi
 
 # Create the ZVOL
-zfs create -V 200M $zpool/$username-pipelight
+zfs create -V 400M $zpool/$username-pipelight
 if [ $? -ne 0 ] ; then
    echo "Failed creating ZVOL"
    exit 1
