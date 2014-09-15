@@ -3,7 +3,7 @@
 
 PORTNAME=	aalib
 PORTVERSION=	1.4.r5
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	graphics
 MASTER_SITES=	SF/aa-project/aa-lib/1.4rc5
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.r/rc/}
@@ -16,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 OPTIONS_DEFINE=	X11
 
-USES=		libtool:keepla ncurses makeinfo
+USES=		libtool ncurses makeinfo
 WRKSRC=		${WRKDIR}/${PORTNAME}-1.4.0
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
