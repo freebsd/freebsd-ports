@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	rspec-core
-PORTVERSION=	3.0.4
+PORTVERSION=	3.1.2
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -11,7 +11,7 @@ COMMENT=	RSpec Core provides the structure for writing executable examples
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	rubygem-rspec-support>=0:${PORTSDIR}/devel/rubygem-rspec-support
+RUN_DEPENDS=	rubygem-rspec-support>=3.1.0:${PORTSDIR}/devel/rubygem-rspec-support
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
