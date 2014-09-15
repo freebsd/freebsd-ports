@@ -3,7 +3,7 @@
 
 PORTNAME=	iulib
 PORTVERSION=	0.4
-PORTREVISION=	13
+PORTREVISION=	14
 CATEGORIES=	graphics
 MASTER_SITES=	GOOGLE_CODE
 
@@ -20,15 +20,13 @@ OPTIONS_DEFINE=	SDL VIDIO
 SDL_DESC=	Enable SDL for graphical debugging
 VIDIO_DESC=	Enable Video Input/Output (using ffmpeg)
 
-USES=		libtool tar:tgz
+USES=		libtool python:build tar:tgz
 USE_GCC=	any
-USE_PYTHON_BUILD=	yes
 USE_AUTOTOOLS=	libtoolize aclocal automake autoconf
-ACLOCAL_ARGS=	--automake-acdir=${ACLOCAL_DIR} -I${LOCALBASE}/share/aclocal
 AUTOMAKE_ARGS=	--add-missing
 USE_LDCONFIG=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+LIBS+=		-L${LOCALBASE}/lib
 INSTALL_TARGET=	install-strip
 
 .include <bsd.port.options.mk>
@@ -53,9 +51,6 @@ post-patch:
 
 pre-configure:
 	@(cd ${CONFIGURE_WRKSRC} \
-	  && ${SETENV} ${PYTHON_CMD} genAM.py >Makefile.am \
-	  && ${SETENV} ${AUTOTOOLS_ENV} ${LIBTOOLIZE} --automake)
-
-run-autotools: run-autotools-aclocal run-autotools-automake run-autotools-autoconf
+	  && ${SETENV} ${PYTHON_CMD} genAM.py > Makefile.am)
 
 .include <bsd.port.mk>

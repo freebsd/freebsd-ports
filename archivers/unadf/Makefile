@@ -21,7 +21,6 @@ USE_AUTOTOOLS=	libtoolize aclocal autoconf autoheader automake
 #
 # args below adapted from adflib: autogen.sh
 #
-LIBTOOLIZE_ARGS=--copy --force
 AUTOMAKE_ARGS=	--add-missing
 
 #

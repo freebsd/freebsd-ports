@@ -3,7 +3,7 @@
 
 PORTNAME=	znibbles
 PORTVERSION=	0.0.7
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	games
 MASTER_SITES=	http://old.koalateam.com/ftp/pub/games/znibbles/ \
 		http://www.jfouffa.com/vmallet/archives/

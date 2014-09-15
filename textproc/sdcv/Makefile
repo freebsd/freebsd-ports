@@ -15,7 +15,6 @@ LICENSE=	GPLv2 # (or later)
 USES=		gettext pkgconfig readline tar:bzip2
 USE_GNOME=	glib20
 USE_AUTOTOOLS=	libtoolize aclocal automake autoconf
-LIBTOOLIZE_ARGS=--copy --force
 ACLOCAL_ARGS=	--automake-acdir=${ACLOCAL_DIR} -I m4
 AUTOMAKE_ARGS=	--add-missing --copy
 

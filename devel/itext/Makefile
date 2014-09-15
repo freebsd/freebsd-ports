@@ -55,8 +55,7 @@ do-install:
 		${STAGEDIR}${PREFIX}/bin/
 .if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}/apidocs
-	@${CP} -R ${WRKDIR}/build/docs/* ${STAGEDIR}${DOCSDIR}/apidocs
-	@${CHOWN} -h -R ${SHAREOWN}:${SHAREGRP} ${STAGEDIR}${DOCSDIR}/apidocs
+	(cd ${WRKDIR}/build/docs && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}/apidocs)
 .endif
 
 .include <bsd.port.mk>

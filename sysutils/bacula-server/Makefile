@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	bacula
-DISTVERSION=	7.0.4
-PORTREVISION?=	1
+DISTVERSION=	7.0.5
 CATEGORIES?=	sysutils
 MASTER_SITES=	SF/bacula/bacula/${PORTVERSION}
 PKGNAMEPREFIX?=	#
@@ -78,11 +77,11 @@ CONFIGURE_ARGS+=--with-dir-user=${BACULA_USER} \
 .endif
 
 # The user/group IDs below are registered, see
-# http://www.freebsd.org/doc/en_US.ISO8859-1/books/porters-handbook/book.html#DADS-UID
+# http://www.freebsd.org/doc/en_US.ISO8859-1/books/porters-handbook/book.html#users-and-groups
 #
 BACULA_USER?=	bacula
 BACULA_GROUP?=	${BACULA_USER}
-BACULA_UID?=	910
+BACULA_UID?=	bacula
 BACULA_GID?=	${BACULA_UID}
 BACULA_DIR?=	/var/db/bacula
 
@@ -146,8 +145,14 @@ post-patch:
 	# This port does not install docs.  See bacula-docs for that
 	${REINPLACE_CMD} -e '/docdir/d' ${WRKSRC}/Makefile.in
 	# Change $(ECHO) to echo in some Makefile.in files
-	@${REINPLACE_CMD} -e 's|$$(ECHO)|echo|g' ${WRKSRC}/src/filed/Makefile.in \
-		${WRKSRC}/src/console/Makefile.in
+	@${REINPLACE_CMD} -e 's|$$(ECHO)|echo|g'  \
+		${WRKSRC}/src/filed/Makefile.in   \
+		${WRKSRC}/src/console/Makefile.in \
+		${WRKSRC}/src/cats/Makefile.in    \
+		${WRKSRC}/src/dird/Makefile.in    \
+		${WRKSRC}/src/stored/Makefile.in  \
+		${WRKSRC}/src/tools/Makefile.in
+
 	# Default bconsole.conf is in ${ETCDIR}
 	@${REINPLACE_CMD} -e 's|./bconsole.conf|${ETCDIR}/bconsole.conf|g' ${WRKSRC}/src/console/console.c
 	@${REINPLACE_CMD} -e 's|^MAN8 =|MAN8 ?=|g' -e 's|^MAN1 =|MAN1 ?=|g' ${WRKSRC}/manpages/Makefile.in
@@ -175,7 +180,6 @@ post-install:
 .else
 	${INSTALL_SCRIPT} ${FILESDIR}/chio-bacula ${STAGEDIR}${PREFIX}/sbin
 	${INSTALL_DATA} ${FILESDIR}/bacula-barcodes ${STAGEDIR}${ETCDIR}/bacula-barcodes.sample
-	${CHMOD} o+x ${STAGEDIR}${PREFIX}/sbin/bsmtp
 .endif
 	for na in ${CONFFILES}; do \
 		${MV} ${STAGEDIR}${ETCDIR}/bacula-$$na.conf ${STAGEDIR}${ETCDIR}/bacula-$$na.conf.sample; \

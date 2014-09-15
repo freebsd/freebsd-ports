@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	plexhometheater
-PORTVERSION=	1.2.1
-PORTREVISION=	4
+PORTVERSION=	1.2.2
 CATEGORIES=	multimedia
 
 MAINTAINER=	woodsb02@gmail.com
@@ -40,7 +39,6 @@ LIB_DEPENDS=	libass.so:${PORTSDIR}/multimedia/libass \
 		libmad.so:${PORTSDIR}/audio/libmad \
 		libmicrohttpd.so:${PORTSDIR}/www/libmicrohttpd \
 		libmodplug.so:${PORTSDIR}/audio/libmodplug \
-		libmp3lame.so:${PORTSDIR}/audio/lame \
 		libmpeg2.so:${PORTSDIR}/multimedia/libmpeg2 \
 		libpcre.so:${PORTSDIR}/devel/pcre \
 		libplist.so:${PORTSDIR}/devel/libplist \
@@ -67,8 +65,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:${PORTSDIR}/databases/py-sqlite3 \
 USE_GITHUB=	yes
 GH_ACCOUNT=	plexinc
 GH_PROJECT=	plex-home-theater-public
-GH_COMMIT=	bdd03dd
-GH_TAGNAME=	pht-v1.2.1
+GH_COMMIT=	2d6426d
+GH_TAGNAME=	pht-v1.2.2
 
 USES=		cmake:outsource iconv pkgconfig python:2
 CMAKE_ARGS+=	-DENABLE_AUTOUPDATE:BOOL=false
@@ -77,16 +75,15 @@ CMAKE_ARGS+=	-DENABLE_PYTHON:BOOL=false
 CMAKE_ARGS+=	-DUSE_INTERNAL_FFMPEG:BOOL=true
 CMAKE_ARGS+=	-DCREATE_BUNDLE:BOOL=false
 CMAKE_ARGS+=	-DCMAKE_PREFIX_PATH=${LOCALBASE}
+CFLAGS+=	-isystem${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 USE_XORG=	xt xmu xtst xrandr
 USE_GL=		glu
 USE_SDL=	image sdl mixer
-USE_JAVA=	yes
-JAVA_BUILD=	jre
 INSTALLS_ICONS=	yes
 ONLY_FOR_ARCHS=	i386 amd64
 
-SUB_FILES=	${PORTNAME}.sh
+SUB_FILES=	${PORTNAME}.sh pkg-message
 
 DESKTOP_ENTRIES="Plex Home Theater" \
 		"${COMMENT}" \
@@ -116,6 +113,18 @@ PLIST_SUB+=	ARCH="x86"
 .else
 PLIST_SUB+=	ARCH="x86_64"
 .endif
+
+.if ${OPSYS} == "FreeBSD" && ${OSVERSION} < 900033
+BUILD_DEPENDS+=	${LOCALBASE}/bin/as:${PORTSDIR}/devel/binutils
+MAKE_ENV=	COMPILER_PATH=${LOCALBASE}/bin
+.endif
+
+post-patch:
+	@${REINPLACE_CMD} 's/[[:<:]]ARCH[[:>:]]/FFMPEG_ARCH/' \
+		${WRKSRC}/lib/ffmpeg/Makefile \
+		${WRKSRC}/lib/ffmpeg/common.mak \
+		${WRKSRC}/lib/ffmpeg/configure \
+		${WRKSRC}/lib/ffmpeg/libavcodec/Makefile
 
 post-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME}.sh ${STAGEDIR}${PREFIX}/bin

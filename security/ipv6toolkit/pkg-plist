@@ -1,4 +1,5 @@
 bin/addr6
+sbin/blackhole6
 sbin/flow6
 sbin/frag6
 sbin/icmp6
@@ -6,13 +7,16 @@ sbin/jumbo6
 sbin/na6
 sbin/ni6
 sbin/ns6
+sbin/path6
 sbin/ra6
 sbin/rd6
 sbin/rs6
 sbin/scan6
+sbin/script6
 sbin/tcp6
 etc/ipv6toolkit.conf
 man/man1/addr6.1.gz
+man/man1/blackhole6.1.gz
 man/man1/flow6.1.gz
 man/man1/frag6.1.gz
 man/man1/icmp6.1.gz
@@ -20,11 +24,14 @@ man/man1/jumbo6.1.gz
 man/man1/na6.1.gz
 man/man1/ni6.1.gz
 man/man1/ns6.1.gz
+man/man1/path6.1.gz
 man/man1/ra6.1.gz
 man/man1/rd6.1.gz
 man/man1/rs6.1.gz
 man/man1/scan6.1.gz
+man/man1/script6.1.gz
 man/man1/tcp6.1.gz
 man/man5/ipv6toolkit.conf.5.gz
+man/man7/ipv6toolkit.7.gz
 %%DATADIR%%/oui.txt
 @dirrm %%DATADIR%%

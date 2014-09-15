@@ -9,8 +9,10 @@ bin/protoc-gen-go
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/proto/equal.go
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/proto/equal_test.go
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/proto/extensions.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/proto/extensions_test.go
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/proto/lib.go
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/proto/message_set.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/proto/message_set_test.go
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/proto/pointer_reflect.go
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/proto/pointer_unsafe.go
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/proto/properties.go

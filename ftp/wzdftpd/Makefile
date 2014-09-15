@@ -23,7 +23,6 @@ OPTIONS_SUB=	yes
 
 USES=		pkgconfig libtool
 USE_AUTOTOOLS=	libtoolize aclocal autoheader automake autoconf
-LIBTOOLIZE_ARGS=--copy --force
 ACLOCAL_ARGS=	-I m4 -I ac-helpers
 AUTOMAKE_ARGS=	--add-missing --copy
 CONFIGURE_ARGS=	--sysconfdir=${ETCDIR} --without-pam --disable-bonjour

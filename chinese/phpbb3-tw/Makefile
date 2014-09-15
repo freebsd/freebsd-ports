@@ -3,7 +3,7 @@
 
 PORTNAME=	phpbb
 PORTVERSION=	3.0.11
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	chinese www
 MASTER_SITES=	http://www.phpbb-tw.net/phpbb/download/ \
 		http://freebsd.ee.ccu.edu.tw/phpBB/

@@ -1,3 +1,5 @@
+@owner %%WWWOWN%%
+@group %%WWWGRP%%
 www/truc/FCKeditor/_docs/contents/001.html
 www/truc/FCKeditor/_docs/contents/002.html
 www/truc/FCKeditor/_docs/contents/002/filebrowserconnector.gif
@@ -1844,3 +1846,5 @@ www/truc/user_manage_page.php
 @dirrmtry www/truc/FCKeditor/_docs
 @dirrmtry www/truc/FCKeditor
 @dirrmtry www/truc
+@owner root
+@owner wheel

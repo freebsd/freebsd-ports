@@ -3,7 +3,7 @@
 
 PORTNAME=	sqlbuddy
 PORTVERSION=	1.3.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	databases www
 MASTER_SITES=	http://www.sqlbuddy.com/download/
 DISTNAME=	${PORTNAME}_1_3_3
@@ -19,6 +19,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 USE_PHP=	ctype pcre session mysql
 WANT_PHP_WEB=	yes
 
+PLIST_SUB=	WWWOWN="${WWWOWN}" WWWGRP="${WWWGRP}"
 SUB_FILES=	pkg-message
 
 pre-everything::
@@ -35,6 +36,5 @@ do-install:
 	@${ECHO_MSG} "Installing SQL Buddy under ${WWWDIR}/"
 	@${MKDIR} ${STAGEDIR}${WWWDIR}
 	@cd ${WRKSRC} && ${CP} -R * ${STAGEDIR}${WWWDIR}
-	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${STAGEDIR}${WWWDIR}
 
 .include <bsd.port.mk>

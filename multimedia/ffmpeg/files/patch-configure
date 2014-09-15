@@ -1,15 +1,20 @@
---- configure.orig
-+++ configure
-@@ -2147,7 +2147,7 @@ yasmexe_default="yasm"
- nogas=":"
+--- configure.orig	2014-08-17 15:33:04.000000000 +0200
++++ configure	2014-09-12 15:07:50.647439045 +0200
+@@ -2649,12 +2649,7 @@
+ host_os=$target_os_default
  
  # machine
--arch_default=$(uname -m)
+-if test "$target_os_default" = aix; then
+-    arch_default=$(uname -p)
+-    strip_default="strip -X32_64"
+-else
+-    arch_default=$(uname -m)
+-fi
 +arch_default=$(uname -p)
  cpu="generic"
  
- # OS
-@@ -4373,7 +4373,7 @@ ifndef MAIN_MAKEFILE
+ # configurable options
+@@ -5381,7 +5376,7 @@
  SRC_PATH:=\$(SRC_PATH:.%=..%)
  endif
  CC_IDENT=$cc_ident
@@ -18,7 +23,7 @@
  CC=$cc
  CXX=$cxx
  AS=$as
-@@ -4555,7 +4555,7 @@ exec_prefix=\${prefix}
+@@ -5590,7 +5585,7 @@
  libdir=$libdir
  includedir=$incdir
  
@@ -27,7 +32,7 @@
  Description: $comment
  Version: $version
  Requires: $(enabled shared || echo $requires)
-@@ -4569,10 +4569,10 @@ EOF
+@@ -5604,10 +5599,10 @@
  mkdir -p doc/examples/pc-uninstalled
  includedir=${source_path}
  [ "$includedir" = . ] && includedir="\${pcfiledir}/../../.."

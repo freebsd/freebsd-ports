@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	pcaprub
-PORTVERSION=	0.11.3
+PORTVERSION=	0.12.0
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 

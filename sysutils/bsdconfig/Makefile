@@ -16,7 +16,7 @@ COMMENT=	Utility to configure various aspects of FreeBSD
 
 LICENSE=	BSD2CLAUSE
 
-USES=		tar:txz
+USES=		tar:txz uidfix
 NO_WRKSUBDIR=	yes
 PORTEXAMPLES=	browse_packages.sh bsdconfigrc
 

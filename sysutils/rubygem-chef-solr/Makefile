@@ -15,7 +15,7 @@ RUN_DEPENDS=	apache-solr>=0:${PORTSDIR}/textproc/apache-solr \
 		rubygem-chef>=${PORTVERSION}:${PORTSDIR}/sysutils/rubygem-chef
 
 DEPRECATED=	Depends on broken rubygem-dep_selector
-EXPIRES=	2014-09-25
+EXPIRATION_DATE=	2014-09-25
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes

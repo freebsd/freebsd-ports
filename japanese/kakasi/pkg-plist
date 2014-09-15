@@ -6,9 +6,9 @@ bin/rdic_conv
 bin/wx2_conv
 include/libkakasi.h
 lib/libkakasi.a
-lib/libkakasi.la
 lib/libkakasi.so
-lib/libkakasi.so.3
+lib/libkakasi.so.2
+lib/libkakasi.so.2.1.0
 man/ja/man1/kakasi.1.gz
 man/man1/kakasi.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog.lib

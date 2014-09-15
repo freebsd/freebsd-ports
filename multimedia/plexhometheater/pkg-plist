@@ -1,6 +1,5 @@
 bin/plexhometheater
 bin/plexhometheater.sh
-bin/xbmc-xrandr
 lib/plexhometheater/system/ImageLib-%%ARCH%%-freebsd.so
 lib/plexhometheater/system/libcpluff-%%ARCH%%-freebsd.so
 lib/plexhometheater/system/players/dvdplayer/avcodec-53-%%ARCH%%-freebsd.so
@@ -10,6 +9,7 @@ lib/plexhometheater/system/players/dvdplayer/avutil-51-%%ARCH%%-freebsd.so
 lib/plexhometheater/system/players/dvdplayer/postproc-52-%%ARCH%%-freebsd.so
 lib/plexhometheater/system/players/dvdplayer/swresample-0-%%ARCH%%-freebsd.so
 lib/plexhometheater/system/players/dvdplayer/swscale-2-%%ARCH%%-freebsd.so
+lib/plexhometheater/xbmc-xrandr
 %%DATADIR%%/Credits.html
 %%DATADIR%%/addons/repository.pvr-android.xbmc.org/addon.xml
 %%DATADIR%%/addons/repository.pvr-android.xbmc.org/icon.png

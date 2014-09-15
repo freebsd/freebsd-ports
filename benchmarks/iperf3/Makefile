@@ -3,6 +3,7 @@
 
 PORTNAME=	iperf
 PORTVERSION=	3.0.7
+PORTREVISION=	1
 CATEGORIES=	benchmarks ipv6
 MASTER_SITES=	http://downloads.es.net/pub/iperf/
 PKGNAMESUFFIX=	3
@@ -10,10 +11,11 @@ PKGNAMESUFFIX=	3
 MAINTAINER=	bmah@FreeBSD.org
 COMMENT=	Improved tool to measure TCP and UDP bandwidth
 
-LICENSE=	BSD3CLAUSE
+LICENSE=	BSD3CLAUSE MIT
+LICENSE_COMB=	multi
 
 GNU_CONFIGURE=	yes
-USES=		libtool:keepla
+USES=		libtool
 USE_LDCONFIG=	yes
 
 PORTDOCS=	AUTHORS README.md RELEASE_NOTES

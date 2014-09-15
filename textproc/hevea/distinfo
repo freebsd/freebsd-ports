@@ -1,2 +1,6 @@
 SHA256 (hevea-2.18.tar.gz) = be665556a62cc80d6e159c59b7f2e5137c0e104f49aa54eaf7b025935150feaf
 SIZE (hevea-2.18.tar.gz) = 407339
+SHA256 (hevea-2.18-manual.pdf) = fa26bcbfac0391896e2f243bae09a142aaaebbf99ba6d97231b21612d6ab14fa
+SIZE (hevea-2.18-manual.pdf) = 643367
+SHA256 (hevea-2.18-manual.tar.gz) = e8c23da06b715b75486d390180cf22ea992bb39966145d24e225a70ec3910368
+SIZE (hevea-2.18-manual.tar.gz) = 497617

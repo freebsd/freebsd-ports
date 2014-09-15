@@ -1,8 +1,6 @@
-@sample %%ETCDIR%%/bacula-barcodes.sample
-@group bacula
-@sample %%ETCDIR%%/bacula-dir.conf.sample
-@group wheel
-@sample %%ETCDIR%%/bacula-sd.conf.sample
+@sample(,bacula,640) %%ETCDIR%%/bacula-barcodes.sample
+@sample(,bacula,) %%ETCDIR%%/bacula-dir.conf.sample
+@sample(,bacula,) %%ETCDIR%%/bacula-sd.conf.sample
 lib/libbaccats-%%LIB_VERSION%%.so
 lib/libbaccats.la
 lib/libbaccats.so
@@ -21,9 +19,7 @@ sbin/bls
 sbin/bpluginfo
 sbin/bregex
 sbin/bscan
-@mode 755
 sbin/bsmtp
-@mode
 sbin/btape
 sbin/btraceback
 sbin/bwild
@@ -75,4 +71,3 @@ man/man8/btape.8.gz
 man/man8/btraceback.8.gz
 man/man8/bwild.8.gz
 man/man8/dbcheck.8.gz
-@dirrmtry %%ETCDIR%%

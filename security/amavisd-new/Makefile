@@ -2,6 +2,7 @@
 
 PORTNAME=	amavisd-new
 PORTVERSION=	2.9.1
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	security
 MASTER_SITES=	http://www.ijs.si/software/amavisd/ \
@@ -21,8 +22,9 @@ RUN_DEPENDS=	p5-Unix-Syslog>=0:${PORTSDIR}/sysutils/p5-Unix-Syslog \
 		p5-Net-Server>=2.0:${PORTSDIR}/net/p5-Net-Server \
 		p5-Mail-DKIM>=0.33:${PORTSDIR}/mail/p5-Mail-DKIM
 
-USES=		perl5 tar:xz
+USES=		perl5 shebangfix tar:xz
 USE_PERL5=	run
+SHEBANG_FILES=	amavisd-agent amavisd-nanny amavisd-release
 
 NO_BUILD=	yes
 
@@ -32,6 +34,8 @@ DOCS=		AAAREADME.first AMAVIS-MIB.txt INSTALL LDAP.schema LICENSE \
 
 AMAVISUSER?=	vscan
 AMAVISGROUP?=	vscan
+USERS=		${AMAVISUSER}
+GROUPS=		${AMAVISGROUP}
 AMAVISDIR?=	/var/amavis
 AMAVISQUARANTINE?=	/var/virusmails
 DAEMON?=	/usr/sbin/daemon -p
@@ -234,9 +238,6 @@ post-patch:
 				-e 's|$$localhost_name = .localhost.;|$$localhost_name = $$myhostname;|' \
 			${WRKSRC}/amavisd
 
-pre-install:
-	@${SH} ${PKGINSTALL} ${DISTNAME} PRE-INSTALL
-
 do-install:
 .if ${PORT_OPTIONS:MP0F}
 	${INSTALL_SCRIPT} ${WRKSRC}/p0f-analyzer.pl ${STAGEDIR}${PREFIX}/sbin
@@ -256,9 +257,6 @@ do-install:
 .endfor
 	@${CP} -pr ${WRKSRC}/README_FILES/images/ ${STAGEDIR}${DOCSDIR}/images
 .endif
-
-post-install:
 	${LN} -s ${PREFIX}/sbin/amavisd-release ${STAGEDIR}${PREFIX}/sbin/amavisd-requeue
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>

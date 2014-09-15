@@ -3,15 +3,16 @@
 
 PORTNAME=	gtkwave
 PORTVERSION=	3.3.60
+PORTREVISION=	1
 CATEGORIES=	cad
 MASTER_SITES=	http://gtkwave.sourceforge.net/
-DISTNAME=	gtkwave-${PORTVERSION}
 
 MAINTAINER=	zeising@FreeBSD.org
 COMMENT=	Electronic Waveform Viewer
 
-USES=		desktop-file-utils gmake pkgconfig
+USES=		desktop-file-utils gmake pkgconfig shared-mime-info
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--disable-mime-update
 USE_GNOME=	gtk20
 INSTALLS_ICONS=	yes
 

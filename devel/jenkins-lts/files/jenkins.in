@@ -50,7 +50,7 @@ load_rc_config "${name}"
 
 : ${jenkins_enable="NO"}
 : ${jenkins_home="%%JENKINS_HOME%%"}
-: ${jenkins_args="--webroot=${jenkins_home}/war --httpListenAddress=127.0.0.1 --httpPort=8180 --ajp13ListenAddress=127.0.0.1 --ajp13Port=8009 --prefix=/jenkins"}
+: ${jenkins_args="--webroot=${jenkins_home}/war --httpPort=8180 --prefix=/jenkins"}
 : ${jenkins_java_home="%%JAVA_HOME%%"}
 : ${jenkins_user="%%JENKINS_USER%%"}
 : ${jenkins_group="%%JENKINS_GROUP%%"}

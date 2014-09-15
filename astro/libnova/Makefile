@@ -14,7 +14,6 @@ GNU_CONFIGURE=	yes
 USES=		libtool
 USE_AUTOTOOLS=	aclocal autoheader autoconf automake libtoolize
 AUTOMAKE_ARGS=	-a -c -f
-LIBTOOLIZE_ARGS=-i -c -f
 USE_LDCONFIG=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}

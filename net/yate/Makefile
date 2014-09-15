@@ -3,7 +3,7 @@
 
 PORTNAME=	yate
 DISTVERSION=	5.4.0p1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	http://yate.null.ro/tarballs/yate5/
 DISTNAME=	${PORTNAME}-5.4.0-1
@@ -105,7 +105,7 @@ PLIST_SUB+=		WITH_AMRNB="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MSPANDSP}
-LIB_DEPENDS+=	libspandsp.so.2.0.0:${PORTSDIR}/comms/spandsp-devel
+LIB_DEPENDS+=	libspandsp.so.2:${PORTSDIR}/comms/spandsp-devel
 CONFIGURE_ARGS+=	--with-spandsp
 PLIST_SUB+=		WITH_SPANDSP=""
 .else

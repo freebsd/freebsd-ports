@@ -9,7 +9,6 @@ TEST_TARGETS=	base_unittests \
 		sql_unittests \
 		content_unittests \
 		cc_unittests \
-		ui_unittests \
 		url_unittests \
 		compositor_unittests \
 		ipc_tests \

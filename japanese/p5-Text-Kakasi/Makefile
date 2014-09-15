@@ -3,6 +3,7 @@
 
 PORTNAME=	Text-Kakasi
 PORTVERSION=	2.04
+PORTREVISION=	1
 CATEGORIES=	japanese textproc perl5
 MASTER_SITES=	CPAN
 

@@ -15,7 +15,6 @@ LICENSE=	GPLv2
 
 USES=		gmake libtool tar:bzip2
 USE_AUTOTOOLS=	libtoolize aclocal autoheader automake autoconf
-LIBTOOLIZE_ARGS=--copy --force
 ACLOCAL_ARGS=	# empty
 AUTOMAKE_ARGS=	--copy --add-missing --foreign
 USE_LDCONFIG=	yes

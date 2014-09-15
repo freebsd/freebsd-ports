@@ -12,8 +12,4 @@ USE_GL=		glew glut
 
 EXTRA_PATCHES=	${FILESDIR}/extra-patch-CMakeLists.txt
 
-post-patch:
-	@${FIND} ${WRKSRC}/src/apps -name main.cpp | ${XARGS} \
-		${REINPLACE_CMD} '/namespace OIIO/d'
-
 .include "${MASTERDIR}/Makefile"

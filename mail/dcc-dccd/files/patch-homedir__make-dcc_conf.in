@@ -1,0 +1,13 @@
+--- homedir/make-dcc_conf.in.orig	2014-08-06 14:43:42 UTC
++++ homedir/make-dcc_conf.in
+@@ -83,10 +83,6 @@
+ if test -n "$FORCE" -o ! -f "$CUR"; then
+     cp $PROTOTYPE $CUR$FORCE
+     chmod 0644 $CUR$FORCE
+-    if test -n "@DCCSUID@" -a -z "$NO_SUID"; then
+-	set +e		# do not die if the user name is not in the passwd file
+-	chown @DCCSUID@ $CUR$FORCE
+-    fi
+     exit
+ fi
+ 

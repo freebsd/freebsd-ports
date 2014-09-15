@@ -3,7 +3,7 @@
 
 PORTNAME=	Sablot
 PORTVERSION=	1.0.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	textproc
 MASTER_SITES=	SF/sablotron/sablotron-${PORTVERSION}
 
@@ -33,7 +33,7 @@ DOM_CONFIGURE_ENABLE=		dom
 DOCUMENT_ERRORS_CONFIGURE_ENABLE=	document-errors
 
 GNU_CONFIGURE=	yes
-USES=		gmake iconv libtool:keepla
+USES=		gmake iconv libtool
 USE_LDCONFIG=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib -lexpat ${ICONV_LIB}

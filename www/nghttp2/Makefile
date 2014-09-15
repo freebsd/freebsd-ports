@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	nghttp2
-PORTVERSION=	0.5.1
-PORTREVISION=	1
+PORTVERSION=	0.6.1
 CATEGORIES=	www net
 MASTER_SITES=	https://github.com/tatsuhiro-t/${PORTNAME}/releases/download/v${PORTVERSION}/ \
 		LOCAL/sunpoet
@@ -13,8 +12,12 @@ COMMENT=	HTTP/2.0 C Library
 
 LICENSE=	MIT
 
+BUILD_DEPENDS=	libevent2>=2.0.8:${PORTSDIR}/devel/libevent2 \
+		spdylay>=1.3.0:${PORTSDIR}/www/spdylay
 LIB_DEPENDS=	libevent_openssl.so:${PORTSDIR}/devel/libevent2 \
 		libspdylay.so:${PORTSDIR}/www/spdylay
+RUN_DEPENDS=	libevent2>=2.0.8:${PORTSDIR}/devel/libevent2 \
+		spdylay>=1.3.0:${PORTSDIR}/www/spdylay
 
 OPTIONS_DEFINE=	HPACK
 OPTIONS_SUB=	yes

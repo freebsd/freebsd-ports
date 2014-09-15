@@ -11,6 +11,8 @@ MASTER_SITES=	http://bioinformatics.org/ghemical/download/release20111012/	\
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Support libraries of science/ghemical port
 
+BROKEN=		Fails to configure
+
 BUILD_DEPENDS=	obabel:${PORTSDIR}/science/openbabel \
 		intltool-update:${PORTSDIR}/textproc/intltool \
 		ld:${PORTSDIR}/devel/binutils

@@ -1,6 +1,6 @@
-@unexec if cmp -s %D/%%ETCDIR%%/hastymail2.conf.sample %D/%%ETCDIR%%/hastymail2.conf; then rm -f %D/%%ETCDIR%%/hastymail2.conf; fi
-%%ETCDIR%%/hastymail2.conf.sample
-@exec if [ ! -f %D/%%ETCDIR%%/hastymail2.conf ]; then cp -p %D/%F %B/hastymail2.conf; fi
+@sample %%ETCDIR%%/hastymail2.conf.sample
+@owner %%WWWOWN%%
+@group %%WWWGRP%%
 %%WWWDIR%%/CHANGES
 %%WWWDIR%%/COPYING
 %%WWWDIR%%/INSTALL
@@ -1616,4 +1616,6 @@
 @dirrmtry %%WWWDIR%%/db
 @dirrmtry %%WWWDIR%%/contrib
 @dirrmtry %%WWWDIR%%
+@owner root
+@group wheel
 @dirrmtry %%ETCDIR%%

@@ -3,7 +3,7 @@
 
 PORTNAME?=	muttprint
 PORTVERSION=	0.72d
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES?=	print mail
 MASTER_SITES=	SF/muttprint/muttprint/muttprint-${PORTVERSION}
 
@@ -28,13 +28,6 @@ CUPS_RUN_DEPENDS=	cupstestppd:${PORTSDIR}/print/cups-base \
 
 .if !defined(PAPERSIZE)
 PAPERSIZE=	letter
-.endif
-
-# muttprint-langinfo is not built for russian/muttprint
-.if defined(MASTERDIR)
-PLIST_SUB+=	LANGINFO="@comment "
-.else
-PLIST_SUB+=	LANGINFO=""
 .endif
 
 .include <bsd.port.options.mk>

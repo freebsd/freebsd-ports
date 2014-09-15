@@ -85,6 +85,7 @@
     SUBDIR += davmail
     SUBDIR += dbmail
     SUBDIR += dbmail22
+    SUBDIR += dcc-dccd
     SUBDIR += deforaos-mailer
     SUBDIR += delatt
     SUBDIR += dk-milter
@@ -567,9 +568,11 @@
     SUBDIR += ruby-rfilter
     SUBDIR += ruby-rmail
     SUBDIR += rubygem-actionmailer
+    SUBDIR += rubygem-actionmailer4
     SUBDIR += rubygem-exception_notification
     SUBDIR += rubygem-larch
     SUBDIR += rubygem-mail
+    SUBDIR += rubygem-mail25
     SUBDIR += rubygem-mailfactory
     SUBDIR += rubygem-pony
     SUBDIR += rubygem-qmail

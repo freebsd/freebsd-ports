@@ -3,7 +3,7 @@
 
 PORTNAME=	musica
 PORTVERSION=	1.1.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	http://ict.ewi.tudelft.nl/~erik/open-source/musica/
 

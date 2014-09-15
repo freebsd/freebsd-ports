@@ -28,7 +28,6 @@ CONFIGURE_SCRIPT=	../dist/configure
 USES=		libtool:keepla
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install_include install_lib install_utilities
-LIBTOOLFILES=	${CONFIGURE_SCRIPT}
 WRKSRC=		${WRKDIR}/${DISTNAME}/build_unix
 USE_LDCONFIG=	yes
 

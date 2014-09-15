@@ -11,7 +11,9 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library of C Routines for Cumulative Distribution Functions
 
 WRKSRC=		${WRKDIR}/dcdflib.c/src
+USES=		uidfix
 USE_LDCONFIG=	yes
+MAKEFILE=	${FILESDIR}/Makefile.lib
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME:S/.c//}
 OPTIONS_DEFINE= DOCS
 
@@ -20,9 +22,6 @@ PLIST_SUB+=	PROFILE="@comment "
 .else
 PLIST_SUB+=	PROFILE=""
 .endif
-
-post-extract:
-	@${CP} ${FILESDIR}/Makefile.lib ${WRKSRC}/Makefile
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

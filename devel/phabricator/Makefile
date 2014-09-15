@@ -27,7 +27,7 @@ GD_USE=		PHP=gd
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MOPCACHE}
-.	if ${PHP_EXT_DIR}  >= 20121212
+.	if ${PHP_EXT_DIR:C|[^0-9]||g}  >= 20121212
 USE_PHP+=	opcache
 RUN_DEPENDS+=	 ${PHPBASE}/lib/php/${PHP_EXT_DIR}/apcu.so:${PORTSDIR}/devel/pecl-APCu
 .	else

@@ -2,4 +2,4 @@ GTKWave is a fully featured GTK+ based wave viewer for Unix and
 Win32 which reads LXT, LXT2, VZT, and GHW files as well as standard
 Verilog VCD/EVCD files and allows their viewing.
 
-WWW:	http://gtkwave.sourceforge.net/
+WWW: http://gtkwave.sourceforge.net/

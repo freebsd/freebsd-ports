@@ -2,11 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	ncs
-PORTVERSION=	2.0.4
-PORTREVISION=	11
+PORTVERSION=	2.0.7
 CATEGORIES=	science parallel
-MASTER_SITES=	http://research.edf.com/fichiers/fckeditor/Commun/Innovation/logiciels/code_saturne/Releases/
-DISTNAME=	${PORTNAME}-${PORTVERSION:S/.//g}
+MASTER_SITES=	http://code-saturne.org/releases/
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Code_Saturne Kernel
@@ -23,9 +21,8 @@ RUN_DEPENDS=	xmgrace:${PORTSDIR}/math/grace	\
 		xterm:${PORTSDIR}/x11/xterm	\
 		cs_preprocess:${PORTSDIR}/science/ecs
 
-USES=		fortran gettext gmake iconv libtool shebangfix zip
+USES=		fortran gettext gmake iconv libtool python shebangfix
 USE_GNOME=	libxml2
-USE_PYTHON=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 SHEBANG_FILES=	bin/runcase.in
 CPPFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/libxml2
@@ -36,12 +33,14 @@ MAKE_ENV=	NOM_ARCH=${OPSYS} CS_MPI_PATH=${MPI_HOME}/bin	\
 		PTHREAD_LIBS=${PTHREAD_LIBS} TERM=${TERM}	\
 		MPI_HOME=${MPI_HOME} MPI_LIBS="${MPI_LIBS}"
 USE_LDCONFIG=	yes
-NEED_ROOT=	yes
 
 FORTRANLIBDIR=	`${DIRNAME} \\`${FC} -print-libgcc-file-name\\``
 FORTRANLIBDIR2=	`${DIRNAME} \\`${FC} -print-libgcc-file-name\\``/../../../
 
-OPTIONS_DEFINE=	DOCS EXAMPLES
+OPTIONS_DEFINE=		DOCS EXAMPLES BATCH
+BATCH_DESC=		Use Torque to submit batches
+BATCH_CONFIGURE_WITH=	batch=PBS
+BATCH_LIB_DEPENDS=	libtorque.so:${PORTSDIR}/sysutils/torque
 
 .include <bsd.port.options.mk>
 

@@ -979,6 +979,7 @@ lib/wine/dpnet.dll.so
 lib/wine/dpnhpast.dll.so
 lib/wine/dpnlobby.dll.so
 lib/wine/dpnsvr.exe.so
+lib/wine/dpvoice.dll.so
 lib/wine/dpwsockx.dll.so
 lib/wine/drmclien.dll.so
 lib/wine/dsound.dll.so
@@ -1187,6 +1188,7 @@ lib/wine/fakedlls/dpnet.dll
 lib/wine/fakedlls/dpnhpast.dll
 lib/wine/fakedlls/dpnlobby.dll
 lib/wine/fakedlls/dpnsvr.exe
+lib/wine/fakedlls/dpvoice.dll
 lib/wine/fakedlls/dpwsockx.dll
 lib/wine/fakedlls/drmclien.dll
 lib/wine/fakedlls/dsound.dll
@@ -1353,6 +1355,7 @@ lib/wine/fakedlls/ngen.exe
 lib/wine/fakedlls/normaliz.dll
 lib/wine/fakedlls/notepad.exe
 lib/wine/fakedlls/npmshtml.dll
+lib/wine/fakedlls/npptools.dll
 lib/wine/fakedlls/ntdll.dll
 lib/wine/fakedlls/ntdsapi.dll
 lib/wine/fakedlls/ntoskrnl.exe
@@ -1529,6 +1532,7 @@ lib/wine/fakedlls/winefile.exe
 lib/wine/fakedlls/winemapi.dll
 lib/wine/fakedlls/winemenubuilder.exe
 lib/wine/fakedlls/winemine.exe
+%%MPG123%%lib/wine/fakedlls/winemp3.acm
 lib/wine/fakedlls/winemsibuilder.exe
 lib/wine/fakedlls/wineoss.drv
 lib/wine/fakedlls/winepath.exe
@@ -1913,6 +1917,7 @@ lib/wine/ngen.exe.so
 lib/wine/normaliz.dll.so
 lib/wine/notepad.exe.so
 lib/wine/npmshtml.dll.so
+lib/wine/npptools.dll.so
 lib/wine/ntdll.dll.so
 lib/wine/ntdsapi.dll.so
 lib/wine/ntoskrnl.exe.so
@@ -2091,6 +2096,7 @@ lib/wine/winemenubuilder.exe.so
 lib/wine/winemine.exe.so
 lib/wine/winemsibuilder.exe.so
 lib/wine/wineoss.drv.so
+%%MPG123%%lib/wine/winemp3.acm.so
 lib/wine/winepath.exe.so
 lib/wine/wineps.drv.so
 lib/wine/wineps16.drv16.so

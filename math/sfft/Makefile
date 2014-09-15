@@ -16,7 +16,7 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	libfftw3.so:${PORTSDIR}/math/fftw3
 
-USES=		zip
+USES=		uidfix zip
 USE_GCC=	yes
 USE_LDCONFIG=	yes
 

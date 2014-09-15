@@ -33,17 +33,6 @@ man/man1/vermin.1.gz
 man/man1/vzt2vcd.1.gz
 man/man1/vztminer.1.gz
 man/man5/gtkwaverc.5.gz
-share/mime/application/vnd.gtkwave-ae2.xml
-share/mime/application/vnd.gtkwave-aet.xml
-share/mime/application/vnd.gtkwave-evcd.xml
-share/mime/application/vnd.gtkwave-fst.xml
-share/mime/application/vnd.gtkwave-ghw.xml
-share/mime/application/vnd.gtkwave-gtkw.xml
-share/mime/application/vnd.gtkwave-lx2.xml
-share/mime/application/vnd.gtkwave-lxt2.xml
-share/mime/application/vnd.gtkwave-lxt.xml
-share/mime/application/vnd.gtkwave-vcd.xml
-share/mime/application/vnd.gtkwave-vzt.xml
 share/mime/packages/x-gtkwave-extension-ae2.xml
 share/mime/packages/x-gtkwave-extension-aet.xml
 share/mime/packages/x-gtkwave-extension-evcd.xml
@@ -95,6 +84,7 @@ share/icons/gnome/48x48/mimetypes/gnome-mime-application-vnd.gtkwave-vzt.png
 share/icons/gtkwave_256x256x32.png
 share/icons/gtkwave_files_256x256x32.png
 share/icons/gtkwave_savefiles_256x256x32.png
+%%EXAMPLESDIR%%/des.fst
 %%EXAMPLESDIR%%/des.gtkw
 %%EXAMPLESDIR%%/des.tcl
 %%EXAMPLESDIR%%/des.v
@@ -103,9 +93,6 @@ share/icons/gtkwave_savefiles_256x256x32.png
 %%EXAMPLESDIR%%/transaction.c
 %%EXAMPLESDIR%%/gtkwaverc
 @dirrm %%EXAMPLESDIR%%
-@dirrmtry share/mime/application
-@dirrmtry share/mime/packages
-@dirrmtry share/mime
 @dirrmtry share/icons/gnome/16x16/mimetypes
 @dirrmtry share/icons/gnome/16x16
 @dirrmtry share/icons/gnome/32x32/mimetypes
@@ -113,6 +100,3 @@ share/icons/gtkwave_savefiles_256x256x32.png
 @dirrmtry share/icons/gnome/48x48/mimetypes
 @dirrmtry share/icons/gnome/48x48
 @dirrmtry share/icons/gnome
-@dirrmtry share/icons
-@exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
-@unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true

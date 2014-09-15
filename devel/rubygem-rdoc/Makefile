@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	rdoc
-PORTVERSION=	3.12.2
+PORTVERSION=	4.1.2
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 

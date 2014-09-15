@@ -1051,6 +1051,7 @@
     SUBDIR += xblast
     SUBDIR += xblood
     SUBDIR += xboard
+    SUBDIR += xboard-devel
     SUBDIR += xboing
     SUBDIR += xbomb
     SUBDIR += xbomber

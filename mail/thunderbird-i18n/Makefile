@@ -13,7 +13,7 @@ DIST_SUBDIR=	xpi/${DISTNAME}
 MAINTAINER=	gecko@FreeBSD.org
 COMMENT=	Localized interface for Thunderbird
 
-USES=		gecko:thunderbird zip
+USES=		gecko:thunderbird,build zip
 USE_XPI=	thunderbird
 
 NO_BUILD=	yes

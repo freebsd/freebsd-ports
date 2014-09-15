@@ -1,0 +1,64 @@
+#!/bin/sh
+
+# $FreeBSD$
+#
+# PROVIDE: dccm
+# REQUIRE: LOGIN
+# BEFORE: mail
+# KEYWORD: shutdown
+
+#
+# To enable dccm add the following lines to /etc/rc.conf:
+#
+#dccm_enable="YES"
+#
+# and in %%DCCHOME%%/dcc_conf change:
+#
+#DCCM_ENABLE=off
+#
+# to:
+#
+#DCCM_ENABLE=on
+#
+#
+# See %%DCCHOME%%/dcc_conf to configure startup options
+
+. /etc/rc.subr
+
+name=dccm
+rcvar=dccm_enable
+
+load_rc_config $name
+
+# Set defaults
+: ${dccm_enable:="NO"}
+: ${dccm_home="%%DCCHOME%%"}
+: ${dccm_libexec="%%PREFIX%%/dcc/libexec"}
+: ${dccm_conf="$dccm_home/dcc_conf"}
+
+pidfile=${dccm_pidfile:-"/var/run/dcc/dccm.pid"}
+procname="${dccm_libexec}/dccm"
+required_dirs="${dccm_home} ${dccm_libexec}"
+required_files="${dccm_conf} ${dccm_libexec}/rcDCC"
+
+start_precmd="start_precmd"
+start_cmd="start_dcc"
+
+start_precmd()
+{
+X=`grep ^DCCM_ENABLE ${dccm_conf}`
+eval $X
+if [ "$DCCM_ENABLE"  != "on" ]
+then
+	echo "Warning ${X} needs to be on in ${dccm_conf} to start dccm"
+	return 1
+fi
+}
+
+start_dcc()
+{
+	echo Starting dccm.
+	${dccm_libexec}/rcDCC -m dccm start
+}
+
+run_rc_command "$1"

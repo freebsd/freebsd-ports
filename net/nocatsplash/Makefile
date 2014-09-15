@@ -3,7 +3,7 @@
 
 PORTNAME=	nocatsplash
 PORTVERSION=	0.82
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net
 MASTER_SITES=	http://farrokhi.net/distfiles/ \
 		http://nocat.net/download/NoCatSplash/

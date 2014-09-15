@@ -9,7 +9,7 @@
 ### Class::Accessor 0.34
 ### Crypt::Eksblowfish
 ### DBI 1.37
-### DBIx::SearchBuilder 1.65
+### DBIx::SearchBuilder 1.66
 ### Data::GUID
 ### Date::Extract 0.02
 ### Date::Manip
@@ -80,7 +80,7 @@ CORE_DEPS=	p5-Apache-Session>=1.53:${PORTSDIR}/www/p5-Apache-Session				\
 		p5-Class-Accessor>=0.34:${PORTSDIR}/devel/p5-Class-Accessor				\
 		p5-Crypt-Eksblowfish>0:${PORTSDIR}/security/p5-Crypt-Eksblowfish			\
 		p5-DBI>=1.37:${PORTSDIR}/databases/p5-DBI						\
-		p5-DBIx-SearchBuilder>=1.59:${PORTSDIR}/databases/p5-DBIx-SearchBuilder			\
+		p5-DBIx-SearchBuilder>=1.66:${PORTSDIR}/databases/p5-DBIx-SearchBuilder			\
 		p5-Data-GUID>0:${PORTSDIR}/devel/p5-Data-GUID						\
 		p5-Date-Extract>=0.02:${PORTSDIR}/devel/p5-Date-Extract					\
 		p5-Date-Manip>0:${PORTSDIR}/devel/p5-Date-Manip						\
@@ -235,9 +235,9 @@ MYSQL_DEPS=	p5-DBD-mysql>=2.1018:${PORTSDIR}/databases/p5-DBD-mysql
 ORACLE_DEPS=	p5-DBD-Oracle>0:${PORTSDIR}/databases/p5-DBD-Oracle
 
 ### --- PGSQL ---
-### DBD::Pg 3.2.1
+### DBD::Pg 3.3.1
 
-PGSQL_DEPS=	p5-DBD-Pg32=3.2.1:${PORTSDIR}/databases/p5-DBD-Pg32
+PGSQL_DEPS=	p5-DBD-Pg>=3.3.1:${PORTSDIR}/databases/p5-DBD-Pg
 
 ### --- SQLITE ---
 ### DBD::SQLite 1.00

@@ -3,7 +3,7 @@
 
 PORTNAME=	gcombust
 PORTVERSION=	0.1.55
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	sysutils
 MASTER_SITES=	http://mirror.symnds.com/software/misc/ \
 		http://www.egr.msu.edu/~mcdouga9/

@@ -1,3 +1,5 @@
+@owner %%WWWOWN%%
+@group %%WWWGRP%%
 %%WWWDIR%%/CHANGES.txt
 %%WWWDIR%%/CODING.txt
 %%WWWDIR%%/CONTRIBUTORS.txt
@@ -2593,3 +2595,5 @@
 @dirrm %%WWWDIR%%/views
 @dirrm %%WWWDIR%%data
 @dirrm %%WWWDIR%%
+@owner root
+@group wheel

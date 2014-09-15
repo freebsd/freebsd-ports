@@ -3,7 +3,6 @@
 
 PORTNAME=	bacula
 PKGNAMESUFFIX=	-bat
-PORTREVISION=	5
 
 COMMENT=	Network backup solution (GUI)
 

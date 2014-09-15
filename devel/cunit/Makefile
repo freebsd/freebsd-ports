@@ -38,7 +38,6 @@ PORTDATA=	*
 PORTDOCS=	*
 
 AUTOMAKE_ARGS=	--add-missing
-LIBTOOLIZE_ARGS=--copy --force --install
 PATHFIX_MAKEFILEIN=	Makefile.am
 
 AUTOMATED_CONFIGURE_ENABLE=	automated

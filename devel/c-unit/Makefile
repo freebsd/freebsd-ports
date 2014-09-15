@@ -23,7 +23,6 @@ DATADIR=	${PREFIX}/share/CUnit
 EXAMPLESDIR=	${PREFIX}/share/examples/CUnit
 
 AUTOMAKE_ARGS=	--add-missing
-LIBTOOLIZE_ARGS=--copy --force --install
 PATHFIX_MAKEFILEIN=	Makefile.am
 
 OPTIONS_DEFINE=		AUT BAS CON CUR DEB EXA ITE MEM

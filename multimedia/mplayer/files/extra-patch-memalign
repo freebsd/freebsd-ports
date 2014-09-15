@@ -1,0 +1,26 @@
+--- configure.orig	2014-08-23 15:59:32.000000000 +0200
++++ configure	2014-09-11 18:37:11.383671007 +0200
+@@ -3766,17 +3766,17 @@
+ echores "$aligned_malloc"
+ 
+ 
+-echocheck "memalign()"
++echocheck "aligned_alloc()"
+ # XXX restrict to x86 ? extend to other CPUs/cacheline sizes ?
+-def_memalign_hack='#define CONFIG_MEMALIGN_HACK 0'
++def_memalign='#define HAVE_MEMALIGN 0'
+ _memalign=no
+-statement_check malloc.h 'memalign(64, sizeof(char))' && _memalign=yes
++statement_check stdlib.h 'aligned_alloc(32, 32*sizeof(char))' && _memalign=yes
+ if test "$_memalign" = yes ; then
+-  def_memalign='#define HAVE_MEMALIGN 1'
++  def_map_memalign='#define memalign(a, b) aligned_alloc(a, b)'
++  def_memalign_hack='#define CONFIG_MEMALIGN_HACK 0'
+ else
+-  def_memalign='#define HAVE_MEMALIGN 0'
+   def_map_memalign='#define memalign(a, b) malloc(b)'
+-  darwin || def_memalign_hack='#define CONFIG_MEMALIGN_HACK 1'
++  def_memalign_hack='#define CONFIG_MEMALIGN_HACK 1'
+ fi
+ echores "$_memalign"
+ 

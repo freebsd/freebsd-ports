@@ -180,9 +180,6 @@ include/vortex.h
 %%PYTHON_SITELIBDIR%%/ncs/Pages/BatchRunningModel.py
 %%PYTHON_SITELIBDIR%%/ncs/Pages/BatchRunningModel.pyc
 %%PYTHON_SITELIBDIR%%/ncs/Pages/BatchRunningModel.pyo
-%%PYTHON_SITELIBDIR%%/ncs/Pages/BatchRunningPBSJobManagementDialogForm.py
-%%PYTHON_SITELIBDIR%%/ncs/Pages/BatchRunningPBSJobManagementDialogForm.pyc
-%%PYTHON_SITELIBDIR%%/ncs/Pages/BatchRunningPBSJobManagementDialogForm.pyo
 %%PYTHON_SITELIBDIR%%/ncs/Pages/BatchRunningUserFilesDialogForm.py
 %%PYTHON_SITELIBDIR%%/ncs/Pages/BatchRunningUserFilesDialogForm.pyc
 %%PYTHON_SITELIBDIR%%/ncs/Pages/BatchRunningUserFilesDialogForm.pyo
@@ -752,7 +749,8 @@ man/man1/cs_solver.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/COMPATIBILITY
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/developper.pdf
+%%PORTDOCS%%%%DOCSDIR%%/developer.pdf
+%%PORTDOCS%%%%DOCSDIR%%/howto.pdf
 %%PORTDOCS%%%%DOCSDIR%%/install.pdf
 %%PORTDOCS%%%%DOCSDIR%%/refcard.pdf
 %%PORTDOCS%%%%DOCSDIR%%/theory.pdf

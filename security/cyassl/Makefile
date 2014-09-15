@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	cyassl
-PORTVERSION=	3.1.0
+PORTVERSION=	3.2.0
 CATEGORIES=	security devel
 MASTER_SITES=	http://www.yassl.com/
 
@@ -15,7 +15,10 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-dependency-tracking \
 		--enable-shared --enable-static \
 		--enable-dtls --enable-opensslextra --enable-ipv6 \
-		--enable-dsa --enable-ecc --enable-sni
+		--enable-dsa --enable-dh --enable-ecc --enable-sni \
+		--enable-ripemd --enable-sha512 \
+		--enable-chacha --enable-poly1305
+
 USE_LDCONFIG=	yes
 PORTDOCS=	*
 

@@ -11,6 +11,8 @@ COMMENT=	Simple console text editor
 
 RUN_DEPENDS=	munger:${PORTSDIR}/lang/munger
 
+MAKE_ENV=	INSTALL_MAN="${INSTALL_MAN}" INSTALL_SCRIPT="${INSTALL_SCRIPT}"
+
 PLIST_FILES=	bin/dkns \
 		man/man1/dkns.1.gz
 

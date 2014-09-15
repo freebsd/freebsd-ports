@@ -3,7 +3,7 @@
 
 PORTNAME=	libGL
 PORTVERSION=	${MESAVERSION}
-PORTREVISION=	1
+PORTREVISION=	${LIBGLREVISION}
 CATEGORIES=	graphics
 
 COMMENT=	OpenGL library that renders using GLX or DRI
@@ -19,10 +19,10 @@ SUB_FILES=	pkg-install pkg-deinstall
 .include <bsd.port.options.mk>
 
 .if defined(WITH_NEW_XORG)
-LIBGLREVISION=	1
+LIBGLREVISION=	2
 LIB_DEPENDS+=	libglapi.so:${PORTSDIR}/graphics/libglapi
 .else
-LIBGLREVISION=	4
+LIBGLREVISION=	5
 .endif
 
 .include "${.CURDIR}/bsd.mesalib.mk"

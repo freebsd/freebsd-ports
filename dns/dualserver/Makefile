@@ -2,14 +2,16 @@
 # $FreeBSD$
 
 PORTNAME=	dualserver
-PORTVERSION=	7.02
+PORTVERSION=	6.94
+PORTEPOCH=	1
 CATEGORIES=	dns net
-MASTER_SITES=	SF/dhcp-dns-server/Dual%20DHCP%20DNS%20Server/ \
-		http://rodrigo.osorio.free.fr/freebsd/distfiles/
+MASTER_SITES=	http://rodrigo.osorio.free.fr/freebsd/distfiles/
 DISTNAME=	${PORTNAME}V${PORTVERSION}
 
 MAINTAINER=	rodrigo@FreeBSD.org
 COMMENT=	Combined DHCP/DNS server for small LANs
+
+LICENSE=	GPLv2
 
 USES=		dos2unix
 USE_RC_SUBR=	dualserver

@@ -1,15 +1,13 @@
 # $FreeBSD$
 
 PORTNAME=	lolcat
-PORTREVISION=	1
+PORTREVISION=	2
 PORTVERSION=	42.0.99
 CATEGORIES=	games
 MASTER_SITES=	RG
 
 MAINTAINER=	arved@FreeBSD.org
 COMMENT=	Rainbows and unicorns
-
-CONFLICTS=	filters-[0-9]*
 
 RUN_DEPENDS=	rubygem-trollop>=1.9:${PORTSDIR}/devel/rubygem-trollop \
 		rubygem-paint>=0.8.5:${PORTSDIR}/devel/rubygem-paint

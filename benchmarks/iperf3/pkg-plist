@@ -1,7 +1,6 @@
 bin/iperf3
 include/iperf_api.h
 lib/libiperf.a
-lib/libiperf.la
 lib/libiperf.so
 lib/libiperf.so.0
 lib/libiperf.so.0.0.0

@@ -3,7 +3,7 @@
 
 PORTNAME=	pebble
 PORTVERSION=	2.3.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www java
 MASTER_SITES=	SF
 
@@ -35,6 +35,7 @@ PORTDOCS=	configuration.html credits.html images index.html \
 		screenshots.html security.html upgrading1x.html \
 		upgrading2x.html
 PLIST_FILES=	${WEBAPP_SUBDIR}/${PORTNAME}.war
+PLIST_SUB=	WWWOWN="${WWWOWN}" WWWGRP="${WWWGRP}"
 PEBBLE_CONTEXT=	WEB-INF/applicationContext-pebble.xml
 
 do-patch:
@@ -44,7 +45,6 @@ do-patch:
 
 do-install:
 	@${MKDIR} "${STAGEDIR}${PEBBLE_HOME}"
-	${CHOWN} "www:www" "${STAGEDIR}${PEBBLE_HOME}"
 	${INSTALL_DATA} ${WRKDIR}/pebble.properties ${STAGEDIR}${PEBBLE_PROPERTIES}.sample
 	@${MKDIR} ${STAGEDIR}${WEBAPP_DIR}
 	${INSTALL_DATA} ${WRKSRC}/pebble.war ${STAGEDIR}${WEBAPP_DIR}/${PORTNAME}.war

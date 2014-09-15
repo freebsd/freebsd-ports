@@ -23,7 +23,6 @@ CONFIGURE_ENV=	RST2MAN=true
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	aclocal libtoolize automake autoconf
 ACLOCAL_ARGS=	-I m4
-LIBTOOLFLAGS=	--copy --force --disable-static
 AUTOMAKE_ARGS=	--add-missing --copy --foreign
 INSTALL_TARGET=	install-strip
 

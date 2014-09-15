@@ -114,6 +114,7 @@
     SUBDIR += cfengine34
     SUBDIR += cfengine35
     SUBDIR += cfengine36
+    SUBDIR += cfengine36-rc
     SUBDIR += chgrep
     SUBDIR += cinnamon-control-center
     SUBDIR += cinnamon-settings-daemon
@@ -397,6 +398,7 @@
     SUBDIR += isomaster
     SUBDIR += isomd5sum
     SUBDIR += istatd
+    SUBDIR += jadm
     SUBDIR += jail-primer
     SUBDIR += jail2
     SUBDIR += jailctl
@@ -736,6 +738,7 @@
     SUBDIR += py-psutil
     SUBDIR += py-psutil121
     SUBDIR += py-pytsk
+    SUBDIR += py-queuelib
     SUBDIR += py-ranger
     SUBDIR += py-salt
     SUBDIR += py-salt-api

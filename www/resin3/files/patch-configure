@@ -1,51 +1,6 @@
 --- configure.orig	2012-11-08 21:22:27.000000000 +0100
 +++ configure	2013-02-07 12:28:12.000000000 +0100
-@@ -7585,11 +7585,6 @@
- 
- 
- 
--# This can be used to rebuild libtool when needed
--LIBTOOL_DEPS="$ltmain"
--
--# Always use our own libtool.
--LIBTOOL='$(SHELL) $(top_builddir)/libtool'
- 
- 
- 
-@@ -11464,29 +11459,9 @@
- # Only expand once:
- 
- 
--#
--# libtool stuff
--#
--if test -z "${LTFLAGS}"; then
--  LTFLAGS="--silent"
--fi
--
--LIBTOOL_SCRIPT="`pwd`/libtool"
--LIBTOOL="${LIBTOOL_SCRIPT} ${LTFLAGS}"
--libtoolversion=`${SHELL} ${LIBTOOL_SCRIPT} --version`
--case $libtoolversion in
--     *1.4*)
--       SH_LIBTOOL="${LIBTOOL_SCRIPT}"
--       SHLTCFLAGS="-prefer-pic"
--       LTCFLAGS="-prefer-non-pic -static"
--       ;;
--     *)
--       SH_LIBTOOL="${SHELL} ${LIBTOOL_SCRIPT} ${LTFLAGS}"
--       SHLTCFLAGS=""
--       LTCFLAGS=""
--       ;;
--esac
--
-+SH_LIBTOOL="${SHELL} ${LIBTOOL}"
-+SHLTCFLAGS=""
-+LTCFLAGS=""
- 
- 
- 
-@@ -12271,26 +12246,6 @@
+@@ -12271,26 +12271,6 @@
    *freebsd*)
  	PROXY_LIBS='-lpthread'
          jni_os=freebsd

@@ -3,7 +3,7 @@
 
 PORTNAME?=	xorg-server
 PORTVERSION=	${XORG_VERSION}
-PORTREVISION?=	1
+PORTREVISION?=	${XORG_REVISION}
 PORTEPOCH?=	1
 CATEGORIES=	x11-servers
 MASTER_SITES=	XORG
@@ -35,7 +35,7 @@ OPTIONS_EXCLUDE_sparc64=	HAL
 
 .if defined(WITH_NEW_XORG)
 XORG_VERSION=	1.12.4
-XORG_REVISION=	8
+XORG_REVISION=	9
 PLIST_SUB+=	OLD="@comment " NEW=""
 EXTRA_PATCHES+=	${FILESDIR}/extra-clang \
 		${FILESDIR}/extra-configure \
@@ -43,7 +43,7 @@ EXTRA_PATCHES+=	${FILESDIR}/extra-clang \
 		${FILESDIR}/extra-new-dix_dixfonts.c
 .else
 XORG_VERSION=	1.7.7
-XORG_REVISION=	13
+XORG_REVISION=	14
 PLIST_SUB+=	OLD="" NEW="@comment "
 EXTRA_PATCHES+=	${FILESDIR}/extra-Xext-xace.c \
 		${FILESDIR}/extra-Xserver-os-xprintf.c \

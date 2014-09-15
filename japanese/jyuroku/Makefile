@@ -3,7 +3,7 @@
 
 PORTNAME=	jyuroku
 PORTVERSION=	1.32
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	japanese
 MASTER_SITES=	http://homepage3.nifty.com/seto-yoneji/
 EXTRACT_SUFX=	.tgz

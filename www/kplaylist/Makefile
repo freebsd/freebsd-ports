@@ -3,7 +3,7 @@
 
 PORTNAME=	kplaylist
 PORTVERSION=	1.8.505
-PORTREVISION?=	1
+PORTREVISION?=	2
 CATEGORIES=	www multimedia
 MASTER_SITES=	http://www.kplaylist.net/archive.php?file=1.8.505&tar=true/
 DISTNAME=	${PORTNAME}.${PORTVERSION}
@@ -18,16 +18,14 @@ RUN_DEPENDS=	lame:${PORTSDIR}/audio/lame \
 USE_PHP=	curl mysql session iconv
 
 WRKSRC=		${WRKDIR}
-WWWDIR?=	${PREFIX}/www/${PORTNAME}
 NO_BUILD=	yes
 
-PLIST_FILES=	%%WWWDIR%%/index.php
-PLIST_DIRS=	%%WWWDIR%%
+PLIST_FILES=	"@(${WWWOWN},${WWWGRP},) %%WWWDIR%%/index.php" \
+		"@dirrm(${WWWOWN},${WWWGRP},) %%WWWDIR%%"
 
 do-install:
 	${MKDIR} ${STAGEDIR}${WWWDIR}
 	@cd ${WRKSRC} && ${CP} kplaylist.1.8.505.php \
 		${STAGEDIR}${WWWDIR}/index.php
-	${CHOWN} -R ${WWWOWN}:${WWWGRP} ${STAGEDIR}${WWWDIR} 
 
 .include <bsd.port.mk>

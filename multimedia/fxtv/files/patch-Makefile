@@ -23,16 +23,16 @@
 -	install -c -m 555 -o root fxtv $(X11BASEINST)/bin
 -	install -c -m 555 -o root fxtv_cnvt.sh $(FXTV_LIBDIR)
 +	mkdir -p $(DESTDIR)$(FXTV_LIBDIR)/bitmaps
-+	install -c -m 444 -o root $(PIXMAPS) $(DESTDIR)$(FXTV_LIBDIR)/bitmaps
-+	install -c -m 444 -o root README $(DESTDIR)$(FXTV_LIBDIR)
++	$(BSD_INSTALL_DATA) $(PIXMAPS) $(DESTDIR)$(FXTV_LIBDIR)/bitmaps
++	$(BSD_INSTALL_DATA) README $(DESTDIR)$(FXTV_LIBDIR)
 +	mkdir -p $(DESTDIR)$(X11BASEINST)/lib/X11/app-defaults
-+	install -c -m 444 -o root Fxtv \
++	$(BSD_INSTALL_DATA) Fxtv \
 +		$(DESTDIR)$(X11BASEINST)/lib/X11/app-defaults
 +	mkdir -p $(DESTDIR)$(X11BASEINST)/bin
-+	install -c -m 444 -o root fxtv.1 \
++	$(BSD_INSTALL_MAN) fxtv.1 \
 +		$(DESTDIR)$(X11BASEINST)/man/man1/fxtv.1
-+	install -c -m 555 -o root fxtv $(DESTDIR)$(X11BASEINST)/bin
-+	install -c -m 555 -o root fxtv_cnvt.sh $(DESTDIR)$(FXTV_LIBDIR)
++	$(BSD_INSTALL_PROGRAM) fxtv $(DESTDIR)$(X11BASEINST)/bin
++	$(BSD_INSTALL_SCRIPT) fxtv_cnvt.sh $(DESTDIR)$(FXTV_LIBDIR)
  
  clean:
  	rm -f *.o fxtv *.core *~

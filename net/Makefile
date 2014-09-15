@@ -149,6 +149,7 @@
     SUBDIR += gnome-online-miners
     SUBDIR += gnu-dico
     SUBDIR += gnu-radius
+    SUBDIR += go-cs
     SUBDIR += go.net
     SUBDIR += gofish
     SUBDIR += gogoc
@@ -874,6 +875,7 @@
     SUBDIR += py-google
     SUBDIR += py-gspreadsheet
     SUBDIR += py-impacket
+    SUBDIR += py-ipaddress
     SUBDIR += py-iplib
     SUBDIR += py-kombu
     SUBDIR += py-ldap2
@@ -901,6 +903,7 @@
     SUBDIR += py-pypcap
     SUBDIR += py-pysendfile
     SUBDIR += py-pysphere
+    SUBDIR += py-pyvmomi
     SUBDIR += py-pyzmq
     SUBDIR += py-qt4-network
     SUBDIR += py-radix
@@ -984,7 +987,6 @@
     SUBDIR += ruby-growl
     SUBDIR += ruby-icmp
     SUBDIR += ruby-ldap
-    SUBDIR += ruby-net-geoip
     SUBDIR += ruby-tcpsocketpipe
     SUBDIR += ruby-tserver
     SUBDIR += rubygem-amazon-ec2

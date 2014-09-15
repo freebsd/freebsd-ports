@@ -46,16 +46,17 @@ include/rpm/rpmfc.h
 include/rpm/rpmspec.h
 lib/librpm.so
 lib/librpm.so.3
-lib/librpm.so.3.2.1
+lib/librpm.so.3.2.2
 lib/librpmbuild.so
 lib/librpmbuild.so.3
-lib/librpmbuild.so.3.2.1
+lib/librpmbuild.so.3.2.2
 lib/librpmio.so
 lib/librpmio.so.3
-lib/librpmio.so.3.2.1
+lib/librpmio.so.3.2.2
 lib/librpmsign.so
 lib/librpmsign.so.1
-lib/librpmsign.so.1.2.1
+lib/librpmsign.so.1.2.2
+lib/rpm/appdata.prov
 lib/rpm/rpm.daily
 lib/rpm/rpm.log
 lib/rpm/macros.perl
@@ -165,6 +166,7 @@ lib/rpm/platform/sh-freebsd/macros
 lib/rpm/platform/sh3-freebsd/macros
 lib/rpm/platform/sh4-freebsd/macros
 lib/rpm/platform/sh4a-freebsd/macros
+lib/rpm/platform/m68k-freebsd/macros
 lib/rpm-plugins/exec.so
 man/fr/man8/rpm.8.gz
 man/ja/man8/rpm.8.gz
@@ -224,13 +226,14 @@ man/sk/man8/rpm.8.gz
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/rpm.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/rpm.mo
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/rpm/__init__.py
-%%PYTHON%%%%PYTHON_SITELIBDIR%%/rpm/_rpmmodule.so
-%%PYTHON%%%%PYTHON_SITELIBDIR%%/rpm/_rpmbmodule.so
-%%PYTHON%%%%PYTHON_SITELIBDIR%%/rpm/_rpmsmodule.so
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/rpm/_rpm.so
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/rpm/_rpmb.so
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/rpm/_rpms.so
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/rpm/transaction.py
 libdata/pkgconfig/rpm.pc
 @dirrm lib/rpm/fileattrs
 @dirrm lib/rpm-plugins
+@dirrm lib/rpm/platform/m68k-freebsd
 @dirrm lib/rpm/platform/aarch64-freebsd
 @dirrm lib/rpm/platform/noarch-freebsd
 @dirrm lib/rpm/platform/athlon-freebsd

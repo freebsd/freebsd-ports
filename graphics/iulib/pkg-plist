@@ -55,5 +55,6 @@ include/iulib/vidio.h
 lib/libiulib.a
 lib/libiulib.so
 lib/libiulib.so.0
+lib/libiulib.so.0.0.0
 @dirrm include/colib
 @dirrm include/iulib

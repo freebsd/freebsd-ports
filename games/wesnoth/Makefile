@@ -19,9 +19,8 @@ LIB_DEPENDS=	libboost_thread.so:${PORTSDIR}/devel/boost-libs \
 		libpng15.so:${PORTSDIR}/graphics/png
 
 USE_SDL=	image mixer net ttf
-USE_GNOME=	pango desktopfileutils
-USE_BZIP2=	yes
-USES=		cmake pkgconfig
+USE_GNOME=	pango
+USES=		cmake desktop-file-utils pkgconfig tar:bzip2
 CMAKE_ARGS=	-DMANDIR="man"
 
 MAN6=		wesnoth.6

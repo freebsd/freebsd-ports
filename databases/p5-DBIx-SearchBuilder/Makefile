@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	DBIx-SearchBuilder
-PORTVERSION=	1.65
-PORTREVISION=	1
+PORTVERSION=	1.66
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -25,5 +24,9 @@ TEST_DEPENDS=	p5-DBD-SQLite>=0:${PORTSDIR}/databases/p5-DBD-SQLite
 
 USES=		perl5
 USE_PERL5=	configure
+
+post-patch:
+		${CP} ${WRKSRC}/lib/DBIx/SearchBuilder/Handle/Pg.pm ${WRKSRC}/lib/DBIx/SearchBuilder/Handle/Pg32.pm
+		${REINPLACE_CMD} -e 's/Pg/Pg32/g' ${WRKSRC}/lib/DBIx/SearchBuilder/Handle/Pg32.pm
 
 .include <bsd.port.mk>

@@ -204,8 +204,6 @@ man/man1/fail2ban-regex.1.gz
 man/man1/fail2ban-server.1.gz
 man/man1/fail2ban.1.gz
 man/man5/fail2ban-jail.conf.5.gz
-/var/db/fail2ban/.keep_me
-/var/run/fail2ban/.keep_me
 @dirrm %%PYTHON_SITELIBDIR%%/fail2ban/tests
 @dirrm %%PYTHON_SITELIBDIR%%/fail2ban/server
 @dirrm %%PYTHON_SITELIBDIR%%/fail2ban/client

@@ -1,20 +1,5 @@
 --- configure.orig	2001-03-15 16:44:01.000000000 +0100
 +++ configure	2012-12-12 11:10:38.000000000 +0100
-@@ -587,10 +587,10 @@
- 
- 
- # libtool versioning
--LT_RELEASE=$GLIB_MAJOR_VERSION.$GLIB_MINOR_VERSION
--LT_CURRENT=`expr $GLIB_MICRO_VERSION - $GLIB_INTERFACE_AGE`
--LT_REVISION=$GLIB_INTERFACE_AGE
--LT_AGE=`expr $GLIB_BINARY_AGE - $GLIB_INTERFACE_AGE`
-+LT_RELEASE=12
-+LT_CURRENT=3
-+LT_REVISION=0
-+LT_AGE=0
- 
- 
- 
 @@ -3496,7 +3496,7 @@
  
  
@@ -24,43 +9,6 @@
  do
  echo $ac_n "checking for $ac_func""... $ac_c" 1>&6
  echo "configure:3503: checking for $ac_func" >&5
-@@ -4390,6 +4390,12 @@
- 	  linux*)
- 	    G_MODULE_LDFLAGS='-rdynamic'
- 	    ;;
-+	  freebsd*)
-+	    objformat=`test -x /usr/bin/objformat && /usr/bin/objformat || echo aout`
-+	    if test $objformat = "elf"; then
-+		    G_MODULE_LDFLAGS='-Wl,-E'
-+	    fi
-+	    ;;
- 	esac
- 	LIBS_orig="$LIBS"
- 	LDFLAGS_orig="$LDFLAGS"
-@@ -5177,11 +5183,8 @@
-             	        G_THREAD_CFLAGS="$G_THREAD_CFLAGS -mthreads"
- 		fi
- 		;;
--	*-freebsd2.2*)
--		G_THREAD_CFLAGS="$G_THREAD_CFLAGS -D_THREAD_SAFE"
--
--		# FreeBSD 2.2.x shiped with gcc 2.7.2.x, which doesn't support
--		# -mthreads flag.
-+	*-*-freebsd*)
-+		G_THREAD_LIBS="-pthread"
- 		;;
-     esac
- 
-@@ -5469,9 +5472,6 @@
- 
- 
- 
--CFLAGS="$CFLAGS $G_THREAD_CFLAGS"
--
--
-         case "$mutex_has_default" in
-         "yes")
-                 echo $ac_n "checking size of $mutex_default_type""... $ac_c" 1>&6
 @@ -5568,6 +5568,63 @@
  
  

@@ -3,7 +3,7 @@
 
 PORTNAME=	libcue
 PORTVERSION=	1.4.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc
 MASTER_SITES=	SF
 
@@ -12,7 +12,7 @@ COMMENT=	CUE Sheet Parser Library
 
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-USES=		gettext libtool:keepla pathfix tar:bzip2
+USES=		gettext libtool pathfix tar:bzip2
 INSTALL_TARGET=	install-strip
 
 .include <bsd.port.mk>

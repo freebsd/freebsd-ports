@@ -2,7 +2,7 @@
 
 PORTNAME=	fail2ban
 PORTVERSION=	0.9.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	security python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -39,12 +39,12 @@ FILES=		${WRKSRC}/bin/fail2ban-client \
 FAIL2BAN_DBDIR=	/var/db/${PORTNAME}
 
 post-patch:
-#	@${ECHO_CMD} ${FILES} | ${XARGS} ${REINPLACE_CMD} -e 's,/etc/fail2ban,${ETCDIR},g'
 	@${REINPLACE_CMD} -e 's,/etc/fail2ban,${ETCDIR},g' ${FILES}
 	@${REINPLACE_CMD} -e 's,paths-debian.conf,paths-freebsd.conf,g' \
 		${WRKSRC}/config/jail.conf
 	@${REINPLACE_CMD} -e 's,/var/lib/fail2ban/fail2ban.sqlite3,${FAIL2BAN_DBDIR}/fail2ban.sqlite3,g' \
 		${WRKSRC}/config/fail2ban.conf
+	@${REINPLACE_CMD} -e 's,"/dev/log","/var/run/log",g' ${WRKSRC}/fail2ban/server/server.py
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${FAIL2BAN_DBDIR} ${STAGEDIR}/var/run/fail2ban
@@ -54,7 +54,5 @@ post-install:
 	@${INSTALL_MAN} ${WRKSRC}/man/${file}.1 ${STAGEDIR}${MANPREFIX}/man/man1
 .endfor
 	@${INSTALL_MAN} ${WRKSRC}/man/jail.conf.5 ${STAGEDIR}${MANPREFIX}/man/man5/fail2ban-jail.conf.5
-	@${TOUCH} ${STAGEDIR}${FAIL2BAN_DBDIR}/.keep_me
-	@${TOUCH} ${STAGEDIR}/var/run/fail2ban/.keep_me
 
 .include <bsd.port.mk>

@@ -4,6 +4,7 @@
 PORTNAME=	racket
 PKGNAMESUFFIX=	-minimal
 PORTVERSION=	6.1
+PORTREVISION=	1
 CATEGORIES=	lang scheme
 MASTER_SITES=	http://mirror.racket-lang.org/installers/${PORTVERSION}/ \
 		http://www.cs.utah.edu/plt/installers/${PORTVERSION}/ \
@@ -18,31 +19,21 @@ DIST_SUBDIR=	${PORTNAME}${PKGNAMESUFFIX}/${PORTVERSION}
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Interactive, integrated, graphical Scheme programming environment
 
+LIB_DEPENDS=	libffi.so:${PORTSDIR}/devel/libffi
+
 MAKE_JOBS_UNSAFE=yes
 
 OPTIONS_DEFINE=		RACKET_PLACES
-RACKET_PLACES_DESC=	Enable Places
 OPTIONS_DEFAULT=	RACKET_PLACES
+RACKET_PLACES_DESC=	Enable Places
+RACKET_PLACES_CONFIGURE_ENABLE=	places
 
 CONFLICTS=	racket-[0-9]*
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--enable-shared --enable-pthread \
-		--enable-lt=${LIBTOOL}
-
-.include <bsd.port.options.mk>
-
-LIB_DEPENDS+=	libffi.so:${PORTSDIR}/devel/libffi
-
-.if ${PORT_OPTIONS:MRACKET_PLACES}
-CONFIGURE_ARGS+=	--enable-places
-.else
-CONFIGURE_ARGS+=	--disable-places
-.endif
-
-# Force the "configure" script to look in $LOCALBASE for -lpng and -ljpeg
-LDFLAGS+=	-L${LOCALBASE}/lib
+CONFIGURE_ARGS=	--disable-lt --enable-shared --enable-pthread
 CPPFLAGS+=	-I${LOCALBASE}/include
+LIBS+=		-L${LOCALBASE}/lib
 
 WRKSRC=		${WRKDIR}/racket-${PORTVERSION}/src
 USES=		iconv libtool tar:tgz
@@ -50,10 +41,10 @@ USE_LDCONFIG=	yes
 
 ONLY_FOR_ARCHS=	i386 amd64
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if ${ARCH} == "amd64"
 CPPFLAGS+=	-DLONG64
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

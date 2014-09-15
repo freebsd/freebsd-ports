@@ -1,2 +1,2 @@
-bin/ladder
-@unexec if [ -f /var/games/ladder.scores ] ; then rm /var/games/ladder.scores; fi
+@(,games,2555) bin/ladder
+@rmtry /var/games/ladder.scores

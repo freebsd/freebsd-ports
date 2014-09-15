@@ -20,7 +20,7 @@
  FLAGS += -DPLOT_3D
  ## You might have to change this path
 -GL_LIB = -lGL -lGLU -L/usr/X11/lib
-+GL_LIB = -lGL -lGLU -L$(LOCALBASE)/lib
++GL_LIB = -lGL -lGLU -L$(LOCALBASE)/lib -lX11
  ## The next path will be required on some Mac-systems to compile
  ##FLAGS += -I/usr/X11/include/GL
  

@@ -37,7 +37,6 @@ do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/cops
 	${TAR} -C ${WRKSRC} --exclude "*.old" -cf - . | \
 		${TAR} -C ${STAGEDIR}${PREFIX}/cops --unlink -xf -
-	${CHOWN} -R ${BINOWN}:${BINGRP} ${STAGEDIR}${PREFIX}/cops
 	${CHMOD} -R go-rwx ${STAGEDIR}${PREFIX}/cops
 
 .include <bsd.port.mk>

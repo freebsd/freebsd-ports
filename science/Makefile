@@ -135,6 +135,7 @@
     SUBDIR += psychopy
     SUBDIR += pulseview
     SUBDIR += py-DendroPy
+    SUBDIR += py-cdo
     SUBDIR += py-coards
     SUBDIR += py-h5py
     SUBDIR += py-hcluster
@@ -163,6 +164,7 @@
     SUBDIR += ruby-gphys
     SUBDIR += ruby-netcdf
     SUBDIR += rubygem-ai4r
+    SUBDIR += rubygem-cdo
     SUBDIR += rubygem-netcdf
     SUBDIR += sigrok-cli
     SUBDIR += sigrok-firmware

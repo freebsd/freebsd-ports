@@ -6,7 +6,7 @@ PORTREVISION=	4
 CATEGORIES=	multimedia audio ipv6 net
 MASTER_SITES=	http://libav.org/releases/
 
-MAINTAINER=	mva@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Realtime audio/video conversion library
 
 BUILD_DEPENDS=	yasm:${PORTSDIR}/devel/yasm

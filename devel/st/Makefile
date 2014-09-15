@@ -10,6 +10,7 @@ MASTER_SITES=	SF/${PORTNAME}ate-threads/${PORTNAME}ate-threads/${PORTVERSION}
 MAINTAINER=	lippe@FreeBSD.org
 COMMENT=	State Threads Library for Internet Applications
 
+USES=		uidfix
 USE_LDCONFIG=	yes
 ONLY_FOR_ARCHS=	i386 alpha amd64
 

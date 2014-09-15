@@ -3,7 +3,7 @@
 
 PORTNAME=	peeper
 PORTVERSION=	0.1
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	x11
 MASTER_SITES=	http://peeper.sourceforge.net/
 

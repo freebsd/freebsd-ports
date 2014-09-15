@@ -1,0 +1,58 @@
+# Description: do not define __BSD_VISIBLE/_XOPEN_SOURCE/_POSIX_C_SOURCE
+# in include/python2.7/pyconfig.h
+# Submitted by: antoine
+
+--- configure.orig	2014-09-06 14:42:50 UTC
++++ configure
+@@ -2919,13 +2919,6 @@
+ 
+ 
+ # The later defininition of _XOPEN_SOURCE and _POSIX_C_SOURCE disables
+-# certain features on FreeBSD, so we need __BSD_VISIBLE to re-enable
+-# them.
+-
+-$as_echo "#define __BSD_VISIBLE 1" >>confdefs.h
+-
+-
+-# The later defininition of _XOPEN_SOURCE and _POSIX_C_SOURCE disables
+ # u_int on Irix 5.3. Defining _BSD_TYPES brings it back.
+ 
+ $as_echo "#define _BSD_TYPES 1" >>confdefs.h
+@@ -3293,9 +3286,8 @@
+   # but used in struct sockaddr.sa_family. Reported by Tim Rice.
+   SCO_SV/3.2)
+     define_xopen_source=no;;
+-  # On FreeBSD 4, the math functions C89 does not cover are never defined
+-  # with _XOPEN_SOURCE and __BSD_VISIBLE does not re-enable them.
+-  FreeBSD/4.*)
++  # On FreeBSD,  defining _XOPEN_SOURCE to 600 requests a strict environment.
++  FreeBSD/*)
+     define_xopen_source=no;;
+   # On MacOS X 10.2, a bug in ncurses.h means that it craps out if
+   # _XOPEN_EXTENDED_SOURCE is defined. Apparently, this is fixed in 10.3, which
+--- configure.ac.orig	2014-09-06 14:42:50 UTC
++++ configure.ac
+@@ -88,11 +88,6 @@
+ AC_DEFINE(_NETBSD_SOURCE, 1, [Define on NetBSD to activate all library features])
+ 
+ # The later defininition of _XOPEN_SOURCE and _POSIX_C_SOURCE disables
+-# certain features on FreeBSD, so we need __BSD_VISIBLE to re-enable
+-# them.
+-AC_DEFINE(__BSD_VISIBLE, 1, [Define on FreeBSD to activate all library features])
+-
+-# The later defininition of _XOPEN_SOURCE and _POSIX_C_SOURCE disables
+ # u_int on Irix 5.3. Defining _BSD_TYPES brings it back.
+ AC_DEFINE(_BSD_TYPES, 1, [Define on Irix to enable u_int])
+ 
+@@ -426,9 +421,8 @@
+   # but used in struct sockaddr.sa_family. Reported by Tim Rice.
+   SCO_SV/3.2)
+     define_xopen_source=no;;
+-  # On FreeBSD 4, the math functions C89 does not cover are never defined
+-  # with _XOPEN_SOURCE and __BSD_VISIBLE does not re-enable them.
+-  FreeBSD/4.*)
++  # On FreeBSD,  defining _XOPEN_SOURCE to 600 requests a strict environment.
++  FreeBSD/*)
+     define_xopen_source=no;;
+   # On MacOS X 10.2, a bug in ncurses.h means that it craps out if 
+   # _XOPEN_EXTENDED_SOURCE is defined. Apparently, this is fixed in 10.3, which

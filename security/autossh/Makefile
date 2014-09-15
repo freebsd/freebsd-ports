@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	autossh
-PORTVERSION=	1.4c
+PORTVERSION=	1.4d
 CATEGORIES=	security
 MASTER_SITES=	http://www.harding.motd.ca/autossh/
 EXTRACT_SUFX=	.tgz

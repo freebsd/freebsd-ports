@@ -3,6 +3,7 @@
 
 PORTNAME=	gcc5
 PORTVERSION=	5.0.s20140907
+PORTREVISION=	1
 CATEGORIES=	lang java
 MASTER_SITES=	${MASTER_SITE_GCC}
 MASTER_SITE_SUBDIR=	snapshots/${DISTVERSION}
@@ -32,7 +33,7 @@ DISTVERSION=	${PORTVERSION:C/([0-9]+).*\.s([0-9]+)/\1-\2/}
 GCC_VERSION=	${PORTVERSION:C/(.+)\.s[0-9]{8}/\1.0/}
 SUFFIX=		${PORTVERSION:C/([0-9]+).*/\1/}
 ONLY_FOR_ARCHS=	amd64 i386 powerpc powerpc64 sparc64
-USES=		gmake iconv makeinfo perl5 tar:bzip2
+USES=		gmake iconv libtool makeinfo perl5 tar:bzip2
 USE_BINUTILS=	yes
 USE_PERL5=	build
 SSP_UNSAFE=	yes
@@ -133,9 +134,7 @@ full-regression-test: build
 	; ${SRCDIR}/contrib/test_summary
 .endif
 
-post-install:
-	${FIND} ${STAGEDIR}${TARGLIB} ${STAGEDIR}${LIBEXEC} \
-	        -name '*.la' | ${XARGS} ${RM}
+post-stage:
 	${RM} -f ${STAGEDIR}${PREFIX}/man/man7/*
 	${RM} -f ${STAGEDIR}${PREFIX}/bin/rebuild-gcj-db${SUFFIX} \
 	         ${STAGEDIR}${PREFIX}/man/man1/rebuild-gcj-db${SUFFIX}.1
