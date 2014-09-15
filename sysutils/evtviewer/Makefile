@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	evtViewer
-PORTVERSION=	0.5
-PORTREVISION=	2
+PORTVERSION=	0.6
 CATEGORIES=	sysutils
 MASTER_SITES=	SF/${PORTNAME:tl}/${PORTNAME:tl}/${PORTNAME}-${PORTVERSION} \
 		http://contribs.martymac.org/evtViewer/
