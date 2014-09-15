@@ -3919,6 +3919,7 @@
     SUBDIR += py-sysctl
     SUBDIR += py-sysv_ipc
     SUBDIR += py-tables
+    SUBDIR += py-tabulate
     SUBDIR += py-tapi
     SUBDIR += py-tarantool-queue
     SUBDIR += py-tconfpy
