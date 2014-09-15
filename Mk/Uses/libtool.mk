@@ -4,12 +4,9 @@
 #
 # Feature:	libtool
 # Usage:	USES=libtool or USES=libtool:args
-# Valid args:	keepla	Normally libtool libraries (*.la) are not installed.
-#			With this option they are.  This is needed as long
-#			as there are dependent ports with .la libraries that
-#			refer to .la libraries in this port.  As soon as all
-#			those dependent ports have some form of USES=libtool
-#			keepla can be removed.
+# Valid args:	keepla	Don't remove libtool libraries (*.la) from the stage
+#			directory.  Some ports need them at runtime (e.g. ports
+#			that call lt_dlopen from libltdl).
 #		build	Add a build dependency on devel/libtool.  This can
 #			be used when a port does not generate its own libtool
 #			script and relies on the system to provide one.
