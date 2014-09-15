@@ -8,4 +8,7 @@ or TCP wrappers.
 
 Please install redis server from databases/redis or use -r to specify
 a remote one.
+
+Please use ntopng-geoipupdate.sh to update GeoIP database to the
+latest.
 ----------------------------------------------------------------------------
