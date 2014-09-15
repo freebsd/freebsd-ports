@@ -24,8 +24,17 @@ CONFIGURE_ARGS=	--includedir=${PREFIX}/include
 USE_LDCONFIG=	yes
 
 OPTIONS_DEFINE_i386=	MMX
+OPTIONS_DEFINE_amd64=	MMX
 
 MMX_CONFIGURE_ENABLE=	mmx
 MMX_CFLAGS=		-DUSE_MMX
+
+.include <bsd.port.options.mk>
+
+.if !${PORT_OPTIONS:MMMX}
+# Every platform not supporting the MMX knob must disable
+# MMX support explicitly
+CONFIGURE_ARGS+=	--disable-mmx
+.endif
 
 .include <bsd.port.mk>
