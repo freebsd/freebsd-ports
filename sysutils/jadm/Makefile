@@ -16,6 +16,10 @@ BUILD_DEPENDS=	${PYTHON_LIBDIR}/site-packages/paramiko/:${PORTSDIR}/security/py-
 		${PYTHON_LIBDIR}/site-packages/netifaces.so:${PORTSDIR}/net/py-netifaces \
 		${PYTHON_LIBDIR}/site-packages/tabulate.py:${PORTSDIR}/devel/py-tabulate \
 		${PYTHON_LIBDIR}/site-packages/ipaddress.py:${PORTSDIR}/net/py-ipaddress
+RUN_DEPENDS=	${PYTHON_LIBDIR}/site-packages/paramiko/:${PORTSDIR}/security/py-paramiko \
+		${PYTHON_LIBDIR}/site-packages/netifaces.so:${PORTSDIR}/net/py-netifaces \
+		${PYTHON_LIBDIR}/site-packages/tabulate.py:${PORTSDIR}/devel/py-tabulate \
+		${PYTHON_LIBDIR}/site-packages/ipaddress.py:${PORTSDIR}/net/py-ipaddress
 
 USES=		python
 USE_PYTHON=	distutils autoplist
