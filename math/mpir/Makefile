@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mpir
-DISTVERSION=	2.7.0-alpha10
+DISTVERSION=	2.7.0-alpha11
 CATEGORIES=	math
 MASTER_SITES=	http://www.mpir.org/
 
