@@ -17,6 +17,8 @@ RUN_DEPENDS=	rubygem-actionpack>=${PORTVERSION}:${PORTSDIR}/www/rubygem-actionpa
 		rubygem-rack-ssl>=1.3.2:${PORTSDIR}/www/rubygem-rack-ssl \
 		rubygem-rake>=0:${PORTSDIR}/devel/rubygem-rake
 
+CONFLICTS_INSTALL=	rubygem-railties4-[0-9]*
+
 USE_RUBY=	yes
 USE_RAKE=	yes
 USE_RUBYGEMS=	yes
