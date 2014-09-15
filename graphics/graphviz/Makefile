@@ -197,8 +197,8 @@ PLIST_SUB+=	TCL_VER="${TCL_VER}"
 .endif
 
 .if ${PORT_OPTIONS:MICONV}
-CONFIGURE_ARGS+=	--with-iconvlibdir=${LOCALBASE}/lib
-CONFIGURE_ARGS+=	--with-iconvincludedir=${LOCALBASE}/include
+CONFIGURE_ARGS+=	--with-iconvlibdir=${ICONV_PREFIX}/lib
+CONFIGURE_ARGS+=	--with-iconvincludedir=${ICONV_PREFIX}/include
 .else
 CONFIGURE_ARGS+=	--without-libiconv-prefix
 .endif
