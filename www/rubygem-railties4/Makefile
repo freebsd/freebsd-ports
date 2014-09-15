@@ -16,6 +16,8 @@ RUN_DEPENDS=	rubygem-actionpack4>=${PORTVERSION}:${PORTSDIR}/www/rubygem-actionp
 		rubygem-activesupport4>=${PORTVERSION}:${PORTSDIR}/devel/rubygem-activesupport4 \
 		rubygem-thor>=0.18.1:${PORTSDIR}/devel/rubygem-thor
 
+CONFLICTS_INSTALL=	rubygem-railties-[0-9]*
+
 USE_RUBY=	yes
 USE_RAKE=	yes
 USE_RUBYGEMS=	yes
