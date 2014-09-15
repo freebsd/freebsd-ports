@@ -49,6 +49,7 @@ KEY_LYNX_CONFIGURE_ON=	--with-keymap=lynx
 
 .if ${PORT_OPTIONS:MINLINE_IMAGE}
 PKGMESSAGE=	${MASTERDIR}/pkg-message
+CONFIGURE_ENV += LDFLAGS="-L${LOCALBASE}/lib" LIBS="-lX11"
 .else
 # Don't use pkg-message
 PKGMESSAGE=	${NONEXISTENT}
