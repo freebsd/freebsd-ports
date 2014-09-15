@@ -866,6 +866,7 @@
     SUBDIR += py-google
     SUBDIR += py-gspreadsheet
     SUBDIR += py-impacket
+    SUBDIR += py-ipaddress
     SUBDIR += py-iplib
     SUBDIR += py-kombu
     SUBDIR += py-ldap2
