@@ -3,7 +3,7 @@
 
 PORTNAME=	liblqr-1
 DISTVERSION=	0.4.1
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	graphics
 MASTER_SITES=	http://liblqr.wdfiles.com/local--files/en:download-page/ \
 		http://mirror.amdmi3.ru/distfiles/
@@ -11,7 +11,7 @@ MASTER_SITES=	http://liblqr.wdfiles.com/local--files/en:download-page/ \
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Easy to use C/C++ seam carving library
 
-USES=		tar:bzip2 gettext gmake pkgconfig libtool:oldver
+USES=		tar:bzip2 gettext gmake pkgconfig libtool
 GNU_CONFIGURE=	yes
 USE_GNOME=	glib20
 INSTALL_TARGET=	install-strip
