@@ -394,6 +394,7 @@
     SUBDIR += isomaster
     SUBDIR += isomd5sum
     SUBDIR += istatd
+    SUBDIR += jadm
     SUBDIR += jail-primer
     SUBDIR += jail2
     SUBDIR += jailctl
