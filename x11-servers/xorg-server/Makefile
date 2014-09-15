@@ -114,6 +114,13 @@ PLIST_SUB+=	SUID=""
 PLIST_SUB+=	SUID="@comment "
 .endif
 
+.if ${ARCH} == armv6
+.if defined(WITH_NEW_XORG)
+EXTRA_PATCHES+=	${FILESDIR}/extra-arm-patch-hw__xfree86__os-support__bsd__Makefile.in
+EXTRA_PATCHES+=	${FILESDIR}/extra-arm-patch-include__servermd.h
+.endif
+.endif
+
 .if ${ARCH} == i386
 .if defined(WITH_NEW_XORG)
 EXTRA_PATCHES+=	${FILESDIR}/extra-new-arch-i386
