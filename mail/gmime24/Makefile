@@ -3,7 +3,7 @@
 
 PORTNAME=	gmime
 PORTVERSION=	2.4.33
-PORTREVISION?=	1
+PORTREVISION?=	2
 CATEGORIES?=	mail
 MASTER_SITES=	GNOME
 PKGNAMESUFFIX?=	24
@@ -18,7 +18,7 @@ CONFLICTS=	gmime-1.0.*
 SLAVEDIRS=	mail/gmime2-sharp
 
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}24
-USES+=		gmake iconv libtool:oldver pathfix pkgconfig tar:xz
+USES+=		gmake iconv libtool pathfix pkgconfig tar:xz
 USE_GNOME?=	glib20
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
