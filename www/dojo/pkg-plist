@@ -5621,6 +5621,8 @@
 %%WWWDIR%%/dojox/encoding/digests/_sha-32.js.uncompressed.js
 %%WWWDIR%%/dojox/encoding/digests/_sha-64.js
 %%WWWDIR%%/dojox/encoding/digests/_sha-64.js.uncompressed.js
+%%WWWDIR%%/dojox/encoding/digests/_sha2.js
+%%WWWDIR%%/dojox/encoding/digests/_sha2.js.uncompressed.js
 %%WWWDIR%%/dojox/encoding/easy64.js
 %%WWWDIR%%/dojox/encoding/easy64.js.uncompressed.js
 %%WWWDIR%%/dojox/flash.js
