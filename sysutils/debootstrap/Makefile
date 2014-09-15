@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	debootstrap
-PORTVERSION=	1.0.60
-PORTREVISION=	1
+PORTVERSION=	1.0.61
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_DEBIAN}
 MASTER_SITE_SUBDIR=	pool/main/d/${PORTNAME}
@@ -12,11 +11,13 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 MAINTAINER=	lifanov@mail.lifanov.com
 COMMENT=	Install Debian base system into a directory
 
-RUN_DEPENDS=	wget:${PORTSDIR}/ftp/wget \
-		dpkg:${PORTSDIR}/archivers/dpkg
+LICENSE=	GPLv2
+
+RUN_DEPENDS=	wget:${PORTSDIR}/ftp/wget
 
 WRKSRC=		${WRKDIR}/${DISTNAME:S/_/-/}
 NO_BUILD=	yes
+NO_ARCH=	yes
 USES=		gmake perl5 tar:xz
 USE_PERL5=	run
 MAKE_ARGS=	DESTDIR="${STAGEDIR}"
@@ -26,6 +27,9 @@ ONLY_FOR_ARCHS_REASON=	Debian GNU/kFreeBSD available only for i386 and amd64
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,%%PREFIX%%,${PREFIX},g' \
+		${WRKSRC}/Makefile \
+		${WRKSRC}/debootstrap
+	@${REINPLACE_CMD} -e 's,%%DATADIR%%,${DATADIR},g' \
 		${WRKSRC}/Makefile \
 		${WRKSRC}/debootstrap
 
