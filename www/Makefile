@@ -43,7 +43,6 @@
     SUBDIR += b2evolution
     SUBDIR += bacula-web
     SUBDIR += baikal
-    SUBDIR += bannerfilter
     SUBDIR += bblog
     SUBDIR += bigbluebutton
     SUBDIR += bins
@@ -105,8 +104,6 @@
     SUBDIR += ctemplate
     SUBDIR += cutycapt
     SUBDIR += dalbum
-    SUBDIR += dansguardian
-    SUBDIR += dansguardian-devel
     SUBDIR += davical
     SUBDIR += dddbl
     SUBDIR += decss
@@ -1916,7 +1913,6 @@
     SUBDIR += spreadlogd
     SUBDIR += sqstat
     SUBDIR += squid
-    SUBDIR += squid32
     SUBDIR += squid33
     SUBDIR += squid_radius_auth
     SUBDIR += squidclamav
@@ -2083,7 +2079,6 @@
     SUBDIR += vdradmin-am
     SUBDIR += vee
     SUBDIR += vertx
-    SUBDIR += videocache
     SUBDIR += vimb
     SUBDIR += visitors
     SUBDIR += volta
