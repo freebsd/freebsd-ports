@@ -25,12 +25,15 @@ PATCHFILES=	FreeBSD_silence_nosuid_mk1.patch:nosid
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	HTTP Caching Proxy
 
+DEPRECATED=	Reached EOL on 13 July 2013, use www/squid (v3.4) instead
+EXPIRATION_DATE=2015-01-31
+
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 SQUID_STABLE_VER=	13
 
-CONFLICTS_INSTALL=	squid-2.[0-9].* squid32-* cacheboy-[0-9]* lusca-head-[0-9]*
+CONFLICTS_INSTALL=	squid-3*
 
 USES=		perl5 tar:bzip2 shebangfix
 SHEBANG_FILES=	scripts/*.pl contrib/*.pl src/*.pl tools/*.pl\
