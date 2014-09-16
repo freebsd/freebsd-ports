@@ -1,7 +1,7 @@
 bin/ksba-config
 include/ksba.h
 lib/libksba.a
-lib/libksba.la
 lib/libksba.so
-lib/libksba.so.19
+lib/libksba.so.8
+lib/libksba.so.8.11.1
 share/aclocal/ksba.m4
