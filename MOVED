@@ -7074,8 +7074,8 @@ security/mate-keyring||2014-09-10|removed
 textproc/mate-doc-utils||2014-09-10|removed
 x11-toolkits/libmatewnck||2014-09-10|removed
 net/ruby-net-geoip|net/rubygem-geoip|2014-09-13|Has expired: Broken
-www/bannerfilter||Depends on www/squid (v2.7) which is two years past EOL
-www/dansguardian||Depends on www/squid (v2.7) which is two years past EOL
-www/dansguardian-devel||Depends on www/squid (v2.7) which is two years past EOL
-www/videocache||Depends on www/squid (v2.7) which is two years past EOL
-www/squid32||Readed EOL on 14 August 2012
+www/bannerfilter||2014-09-16|Depends on www/squid (v2.7) which is two years past EOL
+www/dansguardian||2014-09-16|Depends on www/squid (v2.7) which is two years past EOL
+www/dansguardian-devel||2014-09-16|Depends on www/squid (v2.7) which is two years past EOL
+www/videocache||2014-09-16|Depends on www/squid (v2.7) which is two years past EOL
+www/squid32||2014-09-16|Readed EOL on 14 August 2012
