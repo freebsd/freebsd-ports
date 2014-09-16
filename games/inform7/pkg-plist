@@ -6,135 +6,137 @@ bin/i7
 bin/inform6
 bin/ni
 man/man6/i7.6.gz
-%%DATADIR%%/Extensions/Emily Short/Skeleton Keys.i7x
-%%DATADIR%%/Extensions/Emily Short/Punctuation Removal.i7x
-%%DATADIR%%/Extensions/Emily Short/Locksmith.i7x
-%%DATADIR%%/Extensions/Emily Short/Menus.i7x
-%%DATADIR%%/Extensions/Emily Short/Inanimate Listeners.i7x
-%%DATADIR%%/Extensions/Emily Short/Glulx Text Effects.i7x
-%%DATADIR%%/Extensions/Emily Short/Glulx Entry Points.i7x
-%%DATADIR%%/Extensions/Emily Short/Complex Listing.i7x
-%%DATADIR%%/Extensions/Emily Short/Glulx Image Centering.i7x
-%%DATADIR%%/Extensions/Emily Short/Basic Help Menu.i7x
-%%DATADIR%%/Extensions/Emily Short/Basic Screen Effects.i7x
-%%DATADIR%%/Extensions/Graham Nelson/Unicode Full Character Names.i7x
-%%DATADIR%%/Extensions/Graham Nelson/Unicode Character Names.i7x
-%%DATADIR%%/Extensions/Graham Nelson/Standard Rules.i7x
-%%DATADIR%%/Extensions/Graham Nelson/Rideable Vehicles.i7x
-%%DATADIR%%/Extensions/Graham Nelson/Metric Units.i7x
-%%DATADIR%%/Extensions/Graham Nelson/English Language.i7x
-%%DATADIR%%/Extensions/Graham Nelson/Approximate Metric Units.i7x
-%%DATADIR%%/Extensions/Reserved/Templates/Vorple/zvm.min.js
-%%DATADIR%%/Extensions/Reserved/Templates/Vorple/vorple.parchment.min.js
-%%DATADIR%%/Extensions/Reserved/Templates/Vorple/vorple.css
-%%DATADIR%%/Extensions/Reserved/Templates/Vorple/soundmanager2.swf
-%%DATADIR%%/Extensions/Reserved/Templates/Vorple/(manifest).txt
-%%DATADIR%%/Extensions/Reserved/Templates/Standard/index.html
-%%DATADIR%%/Extensions/Reserved/Templates/Standard/source.html
-%%DATADIR%%/Extensions/Reserved/Templates/Standard/play.html
-%%DATADIR%%/Extensions/Reserved/Templates/Standard/style.css
-%%DATADIR%%/Extensions/Reserved/Templates/Classic/index.html
-%%DATADIR%%/Extensions/Reserved/Templates/Classic/source.html
-%%DATADIR%%/Extensions/Reserved/Templates/Quixe/quixe.min.js
-%%DATADIR%%/Extensions/Reserved/Templates/Quixe/glkote.css
-%%DATADIR%%/Extensions/Reserved/Templates/Quixe/waiting.gif
-%%DATADIR%%/Extensions/Reserved/Templates/Quixe/dialog.css
-%%DATADIR%%/Extensions/Reserved/Templates/Quixe/glkote.min.js
-%%DATADIR%%/Extensions/Reserved/Templates/Quixe/(manifest).txt
-%%DATADIR%%/Extensions/Reserved/Templates/Parchment/jquery.min.js
-%%DATADIR%%/Extensions/Reserved/Templates/Parchment/parchment.min.js
-%%DATADIR%%/Extensions/Reserved/Templates/Parchment/parchment.min.css
-%%DATADIR%%/Extensions/Reserved/Templates/Parchment/zvm.min.js
-%%DATADIR%%/Extensions/Reserved/Templates/Parchment/(manifest).txt
-%%DATADIR%%/Extensions/Reserved/Languages/Swedish/flag.png
-%%DATADIR%%/Extensions/Reserved/Languages/Swedish/about.txt
-%%DATADIR%%/Extensions/Reserved/Languages/Spanish/flag.png
-%%DATADIR%%/Extensions/Reserved/Languages/Spanish/about.txt
-%%DATADIR%%/Extensions/Reserved/Languages/Italian/flag.png
-%%DATADIR%%/Extensions/Reserved/Languages/Italian/about.txt
-%%DATADIR%%/Extensions/Reserved/Languages/German/flag.png
-%%DATADIR%%/Extensions/Reserved/Languages/German/about.txt
-%%DATADIR%%/Extensions/Reserved/Languages/French/flag.png
-%%DATADIR%%/Extensions/Reserved/Languages/French/about.txt
-%%DATADIR%%/Extensions/Reserved/Languages/English/Syntax.preform
-%%DATADIR%%/Extensions/Reserved/Languages/English/flag.png
-%%DATADIR%%/Extensions/Reserved/Languages/English/about.txt
-%%DATADIR%%/Extensions/Reserved/definitions.html
-%%DATADIR%%/Extensions/Reserved/ZMachine.i6t
-%%DATADIR%%/Extensions/Reserved/WorldModel.i6t
-%%DATADIR%%/Extensions/Reserved/WinExtensionsModel.html
-%%DATADIR%%/Extensions/Reserved/WinExtensionFileModel.html
-%%DATADIR%%/Extensions/Reserved/Utilities.i6t
-%%DATADIR%%/Extensions/Reserved/UnicodeData.i6t
-%%DATADIR%%/Extensions/Reserved/Time.i6t
-%%DATADIR%%/Extensions/Reserved/Text.i6t
-%%DATADIR%%/Extensions/Reserved/Tests.i6t
-%%DATADIR%%/Extensions/Reserved/Tables.i6t
-%%DATADIR%%/Extensions/Reserved/StoredAction.i6t
-%%DATADIR%%/Extensions/Reserved/Sort.i6t
-%%DATADIR%%/Extensions/Reserved/Small Cover.jpg
-%%DATADIR%%/Extensions/Reserved/Rulebooks.i6t
-%%DATADIR%%/Extensions/Reserved/Relations.i6t
-%%DATADIR%%/Extensions/Reserved/RelationKind.i6t
-%%DATADIR%%/Extensions/Reserved/RegExp.i6t
-%%DATADIR%%/Extensions/Reserved/RealNumber.i6t
-%%DATADIR%%/Extensions/Reserved/RTP.i6t
-%%DATADIR%%/Extensions/Reserved/Printing.i6t
-%%DATADIR%%/Extensions/Reserved/Postcard.pdf
-%%DATADIR%%/Extensions/Reserved/Postcard.html
-%%DATADIR%%/Extensions/Reserved/Parser.i6t
-%%DATADIR%%/Extensions/Reserved/Output.i6t
-%%DATADIR%%/Extensions/Reserved/OutOfWorld.i6t
-%%DATADIR%%/Extensions/Reserved/OrderOfPlay.i6t
-%%DATADIR%%/Extensions/Reserved/Number.i6t
-%%DATADIR%%/Extensions/Reserved/Main.i6t
-%%DATADIR%%/Extensions/Reserved/MStack.i6t
-%%DATADIR%%/Extensions/Reserved/Load-Times.i6t
-%%DATADIR%%/Extensions/Reserved/Load-Sounds.i6t
-%%DATADIR%%/Extensions/Reserved/Load-Scenes.i6t
-%%DATADIR%%/Extensions/Reserved/Load-Files.i6t
-%%DATADIR%%/Extensions/Reserved/Load-Figures.i6t
-%%DATADIR%%/Extensions/Reserved/Load-Core.i6t
-%%DATADIR%%/Extensions/Reserved/Load-Actions.i6t
-%%DATADIR%%/Extensions/Reserved/Lists.i6t
-%%DATADIR%%/Extensions/Reserved/ListWriter.i6t
-%%DATADIR%%/Extensions/Reserved/Light.i6t
-%%DATADIR%%/Extensions/Reserved/Language.i6t
-%%DATADIR%%/Extensions/Reserved/IntroductionToIF.pdf
-%%DATADIR%%/Extensions/Reserved/Introduction.i6t
-%%DATADIR%%/Extensions/Reserved/Glulx.i6t
-%%DATADIR%%/Extensions/Reserved/Flex.i6t
-%%DATADIR%%/Extensions/Reserved/FileIO.i6t
-%%DATADIR%%/Extensions/Reserved/Figures.i6t
-%%DATADIR%%/Extensions/Reserved/ExtensionsModel.html
-%%DATADIR%%/Extensions/Reserved/ExtensionFileModel.html
-%%DATADIR%%/Extensions/Reserved/Definitions.i6t
-%%DATADIR%%/Extensions/Reserved/DefaultCover.jpg
-%%DATADIR%%/Extensions/Reserved/Cover.jpg
-%%DATADIR%%/Extensions/Reserved/Combinations.i6t
-%%DATADIR%%/Extensions/Reserved/Chronology.i6t
-%%DATADIR%%/Extensions/Reserved/Char.i6t
-%%DATADIR%%/Extensions/Reserved/CblorbModel.html
-%%DATADIR%%/Extensions/Reserved/BlockValues.i6t
-%%DATADIR%%/Extensions/Reserved/Activities.i6t
-%%DATADIR%%/Extensions/Reserved/Actions.i6t
-%%DATADIR%%/Extensions/Eric Eve/Epistemology.i7x
-@dirrmtry %%DATADIR%%/Extensions/Reserved/Templates/Vorple
-@dirrmtry %%DATADIR%%/Extensions/Reserved/Templates/Standard
-@dirrmtry %%DATADIR%%/Extensions/Reserved/Templates/Quixe
-@dirrmtry %%DATADIR%%/Extensions/Reserved/Templates/Parchment
-@dirrmtry %%DATADIR%%/Extensions/Reserved/Templates/Classic
-@dirrmtry %%DATADIR%%/Extensions/Reserved/Templates
-@dirrmtry %%DATADIR%%/Extensions/Reserved/Languages/Swedish
-@dirrmtry %%DATADIR%%/Extensions/Reserved/Languages/Spanish
-@dirrmtry %%DATADIR%%/Extensions/Reserved/Languages/Italian
-@dirrmtry %%DATADIR%%/Extensions/Reserved/Languages/German
-@dirrmtry %%DATADIR%%/Extensions/Reserved/Languages/French
-@dirrmtry %%DATADIR%%/Extensions/Reserved/Languages/English
-@dirrmtry %%DATADIR%%/Extensions/Reserved/Languages
-@dirrmtry %%DATADIR%%/Extensions/Reserved
-@dirrmtry %%DATADIR%%/Extensions/Graham Nelson
-@dirrmtry %%DATADIR%%/Extensions/Eric Eve
-@dirrmtry %%DATADIR%%/Extensions/Emily Short
-@dirrmtry %%DATADIR%%/Extensions
-@dirrmtry %%DATADIR%%
+%%DATADIR%%/Internal/Templates/Vorple/zvm.min.js
+%%DATADIR%%/Internal/Templates/Vorple/vorple.parchment.min.js
+%%DATADIR%%/Internal/Templates/Vorple/vorple.css
+%%DATADIR%%/Internal/Templates/Vorple/soundmanager2.swf
+%%DATADIR%%/Internal/Templates/Vorple/(manifest).txt
+%%DATADIR%%/Internal/Templates/Standard/index.html
+%%DATADIR%%/Internal/Templates/Standard/source.html
+%%DATADIR%%/Internal/Templates/Standard/play.html
+%%DATADIR%%/Internal/Templates/Standard/style.css
+%%DATADIR%%/Internal/Templates/Classic/index.html
+%%DATADIR%%/Internal/Templates/Classic/source.html
+%%DATADIR%%/Internal/Templates/Quixe/quixe.min.js
+%%DATADIR%%/Internal/Templates/Quixe/glkote.css
+%%DATADIR%%/Internal/Templates/Quixe/waiting.gif
+%%DATADIR%%/Internal/Templates/Quixe/dialog.css
+%%DATADIR%%/Internal/Templates/Quixe/glkote.min.js
+%%DATADIR%%/Internal/Templates/Quixe/(manifest).txt
+%%DATADIR%%/Internal/Templates/Parchment/jquery.min.js
+%%DATADIR%%/Internal/Templates/Parchment/parchment.min.js
+%%DATADIR%%/Internal/Templates/Parchment/parchment.min.css
+%%DATADIR%%/Internal/Templates/Parchment/zvm.min.js
+%%DATADIR%%/Internal/Templates/Parchment/(manifest).txt
+%%DATADIR%%/Internal/Miscellany/definitions.html
+%%DATADIR%%/Internal/Miscellany/WinExtensionsModel.html
+%%DATADIR%%/Internal/Miscellany/WinExtensionFileModel.html
+%%DATADIR%%/Internal/Miscellany/Small Cover.jpg
+%%DATADIR%%/Internal/Miscellany/Postcard.pdf
+%%DATADIR%%/Internal/Miscellany/IntroductionToIF.pdf
+%%DATADIR%%/Internal/Miscellany/ExtensionsModel.html
+%%DATADIR%%/Internal/Miscellany/ExtensionFileModel.html
+%%DATADIR%%/Internal/Miscellany/DefaultCover.jpg
+%%DATADIR%%/Internal/Miscellany/Cover.jpg
+%%DATADIR%%/Internal/Miscellany/CblorbModel.html
+%%DATADIR%%/Internal/Languages/Swedish/flag.png
+%%DATADIR%%/Internal/Languages/Swedish/about.txt
+%%DATADIR%%/Internal/Languages/Spanish/flag.png
+%%DATADIR%%/Internal/Languages/Spanish/about.txt
+%%DATADIR%%/Internal/Languages/Italian/flag.png
+%%DATADIR%%/Internal/Languages/Italian/about.txt
+%%DATADIR%%/Internal/Languages/German/flag.png
+%%DATADIR%%/Internal/Languages/German/about.txt
+%%DATADIR%%/Internal/Languages/French/flag.png
+%%DATADIR%%/Internal/Languages/French/about.txt
+%%DATADIR%%/Internal/Languages/English/Syntax.preform
+%%DATADIR%%/Internal/Languages/English/flag.png
+%%DATADIR%%/Internal/Languages/English/about.txt
+%%DATADIR%%/Internal/I6T/ZMachine.i6t
+%%DATADIR%%/Internal/I6T/WorldModel.i6t
+%%DATADIR%%/Internal/I6T/Utilities.i6t
+%%DATADIR%%/Internal/I6T/UnicodeData.i6t
+%%DATADIR%%/Internal/I6T/Time.i6t
+%%DATADIR%%/Internal/I6T/Text.i6t
+%%DATADIR%%/Internal/I6T/Tests.i6t
+%%DATADIR%%/Internal/I6T/Tables.i6t
+%%DATADIR%%/Internal/I6T/StoredAction.i6t
+%%DATADIR%%/Internal/I6T/Sort.i6t
+%%DATADIR%%/Internal/I6T/Rulebooks.i6t
+%%DATADIR%%/Internal/I6T/Relations.i6t
+%%DATADIR%%/Internal/I6T/RelationKind.i6t
+%%DATADIR%%/Internal/I6T/RegExp.i6t
+%%DATADIR%%/Internal/I6T/RealNumber.i6t
+%%DATADIR%%/Internal/I6T/RTP.i6t
+%%DATADIR%%/Internal/I6T/Printing.i6t
+%%DATADIR%%/Internal/I6T/Parser.i6t
+%%DATADIR%%/Internal/I6T/Output.i6t
+%%DATADIR%%/Internal/I6T/OutOfWorld.i6t
+%%DATADIR%%/Internal/I6T/OrderOfPlay.i6t
+%%DATADIR%%/Internal/I6T/Number.i6t
+%%DATADIR%%/Internal/I6T/Main.i6t
+%%DATADIR%%/Internal/I6T/MStack.i6t
+%%DATADIR%%/Internal/I6T/Load-Times.i6t
+%%DATADIR%%/Internal/I6T/Load-Sounds.i6t
+%%DATADIR%%/Internal/I6T/Load-Scenes.i6t
+%%DATADIR%%/Internal/I6T/Load-Files.i6t
+%%DATADIR%%/Internal/I6T/Load-Figures.i6t
+%%DATADIR%%/Internal/I6T/Load-Core.i6t
+%%DATADIR%%/Internal/I6T/Load-Actions.i6t
+%%DATADIR%%/Internal/I6T/Lists.i6t
+%%DATADIR%%/Internal/I6T/ListWriter.i6t
+%%DATADIR%%/Internal/I6T/Light.i6t
+%%DATADIR%%/Internal/I6T/Language.i6t
+%%DATADIR%%/Internal/I6T/Introduction.i6t
+%%DATADIR%%/Internal/I6T/Glulx.i6t
+%%DATADIR%%/Internal/I6T/Flex.i6t
+%%DATADIR%%/Internal/I6T/FileIO.i6t
+%%DATADIR%%/Internal/I6T/Figures.i6t
+%%DATADIR%%/Internal/I6T/Definitions.i6t
+%%DATADIR%%/Internal/I6T/Combinations.i6t
+%%DATADIR%%/Internal/I6T/Chronology.i6t
+%%DATADIR%%/Internal/I6T/Char.i6t
+%%DATADIR%%/Internal/I6T/BlockValues.i6t
+%%DATADIR%%/Internal/I6T/Activities.i6t
+%%DATADIR%%/Internal/I6T/Actions.i6t
+%%DATADIR%%/Internal/Extensions/Graham Nelson/Unicode Full Character Names.i7x
+%%DATADIR%%/Internal/Extensions/Graham Nelson/Unicode Character Names.i7x
+%%DATADIR%%/Internal/Extensions/Graham Nelson/Standard Rules.i7x
+%%DATADIR%%/Internal/Extensions/Graham Nelson/Rideable Vehicles.i7x
+%%DATADIR%%/Internal/Extensions/Graham Nelson/Metric Units.i7x
+%%DATADIR%%/Internal/Extensions/Graham Nelson/English Language.i7x
+%%DATADIR%%/Internal/Extensions/Graham Nelson/Approximate Metric Units.i7x
+%%DATADIR%%/Internal/Extensions/Emily Short/Skeleton Keys.i7x
+%%DATADIR%%/Internal/Extensions/Eric Eve/Epistemology.i7x
+%%DATADIR%%/Internal/Extensions/Emily Short/Punctuation Removal.i7x
+%%DATADIR%%/Internal/Extensions/Emily Short/Menus.i7x
+%%DATADIR%%/Internal/Extensions/Emily Short/Locksmith.i7x
+%%DATADIR%%/Internal/Extensions/Emily Short/Inanimate Listeners.i7x
+%%DATADIR%%/Internal/Extensions/Emily Short/Glulx Text Effects.i7x
+%%DATADIR%%/Internal/Extensions/Emily Short/Glulx Entry Points.i7x
+%%DATADIR%%/Internal/Extensions/Emily Short/Complex Listing.i7x
+%%DATADIR%%/Internal/Extensions/Emily Short/Glulx Image Centering.i7x
+%%DATADIR%%/Internal/Extensions/Emily Short/Basic Help Menu.i7x
+%%DATADIR%%/Internal/Extensions/Emily Short/Basic Screen Effects.i7x
+@dirrm %%DATADIR%%/Internal/Templates/Vorple
+@dirrm %%DATADIR%%/Internal/Templates/Standard
+@dirrm %%DATADIR%%/Internal/Templates/Quixe
+@dirrm %%DATADIR%%/Internal/Templates/Parchment
+@dirrm %%DATADIR%%/Internal/Templates/Classic
+@dirrm %%DATADIR%%/Internal/Templates
+@dirrm %%DATADIR%%/Internal/Languages/Swedish
+@dirrm %%DATADIR%%/Internal/Languages/Spanish
+@dirrm %%DATADIR%%/Internal/Languages/Italian
+@dirrm %%DATADIR%%/Internal/Languages/German
+@dirrm %%DATADIR%%/Internal/Languages/French
+@dirrm %%DATADIR%%/Internal/Languages/English
+@dirrm %%DATADIR%%/Internal/Languages
+@dirrm %%DATADIR%%/Internal/Miscellany
+@dirrm %%DATADIR%%/Internal/Extensions/Reserved
+@dirrm %%DATADIR%%/Internal/Extensions/Graham Nelson
+@dirrm %%DATADIR%%/Internal/Extensions/Eric Eve
+@dirrm %%DATADIR%%/Internal/Extensions/Emily Short
+@dirrm %%DATADIR%%/Internal/Extensions
+@dirrm %%DATADIR%%/Internal/I6T
+@dirrm %%DATADIR%%/Internal
+@dirrm %%DATADIR%%
