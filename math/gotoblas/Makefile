@@ -42,18 +42,16 @@ MAKE_JOBS_UNSAFE=	yes
 OPTIONS_DEFINE_i386=	DYNAMIC_ARCH
 OPTIONS_DEFINE_amd64=	DYNAMIC_ARCH
 OPTIONS_DEFINE=	INTERFACE64 OPENMP
+
+OPTIONS_DEFAULT_i386=	DYNAMIC_ARCH
+OPTIONS_DEFAULT_amd64=	DYNAMIC_ARCH
+
 DYNAMIC_ARCH_DESC=	Support multiple CPU types on i386 and amd64
 INTERFACE64_DESC=	Use 8 byte integers on 64-bit architectures
 OPENMP_DESC=		Use OpenMP for threading
 #QUAD_PRECISION=	Support IEEE quad precision (experimental)
 
 .include <bsd.port.options.mk>
-
-.if ${ARCH} == "i386"
-OPTIONS_DEFAULT_i386=	DYNAMIC_ARCH
-.elif ${ARCH} == "amd64"
-OPTIONS_DEFAULT_amd64=	DYNAMIC_ARCH
-.endif
 
 MAXTHREADS?=	8
 
