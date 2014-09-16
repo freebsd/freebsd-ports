@@ -15,6 +15,6 @@ RUN_DEPENDS=	p5-Dancer>0:${PORTSDIR}/www/p5-Dancer
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 USES=		perl5
-USE_PERL5=	configure fixpacklist
+USE_PERL5=	configure
 
 .include <bsd.port.mk>
