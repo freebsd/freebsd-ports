@@ -17,6 +17,8 @@ ONLY_FOR_ARCHS_REASON=	requires linprocfs(5)
 
 USES=		readline
 GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	ac_cv_file__proc_self_maps=yes \
+		ac_cv_file__proc_self_mem=yes
 
 OPTIONS_DEFINE=	X11 DOCS
 OPTIONS_SUB=	yes
