@@ -6,8 +6,7 @@
 # See http://www.infracaninophile.co.uk/articles/sphinxse.html
 
 PORTNAME=	sphinxsearch
-PORTVERSION=	2.1.9
-PORTREVISION=	1
+PORTVERSION=	2.2.4
 CATEGORIES=	textproc databases
 MASTER_SITES=	http://sphinxsearch.com/files/ \
 		http://snowball.tartarus.org/dist/:libstemmer
@@ -120,7 +119,7 @@ EXAMPLES=	example.sql api
 DOCS=		doc/sphinx.css doc/sphinx.html doc/sphinx.txt doc/sphinx.xml
 DOCSRC=		${WRKSRC}/doc
 
-MAN1SRC=	indexer.1 indextool.1 search.1 spelldump.1
+MAN1SRC=	indexer.1 indextool.1 spelldump.1
 MAN8SRC=	searchd.8
 
 post-extract:
@@ -147,7 +146,6 @@ do-install: install-bin install-docs install-man install-examples
 install-bin:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/indexer   ${STAGEDIR}${PREFIX}/bin/indexer
 	${INSTALL_PROGRAM} ${WRKSRC}/src/indextool ${STAGEDIR}${PREFIX}/bin/indextool
-	${INSTALL_PROGRAM} ${WRKSRC}/src/search	   ${STAGEDIR}${PREFIX}/bin/search
 	${INSTALL_PROGRAM} ${WRKSRC}/src/spelldump ${STAGEDIR}${PREFIX}/bin/spelldump
 	${INSTALL_PROGRAM} ${WRKSRC}/src/searchd   ${STAGEDIR}${PREFIX}/sbin/searchd
 	${INSTALL_DATA}	   ${WRKSRC}/sphinx.conf.dist ${STAGEDIR}${CFGFILE}.sample
