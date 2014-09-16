@@ -1664,8 +1664,9 @@ LIB32DIR=	lib
 .endif
 PLIST_SUB+=	LIB32DIR=${LIB32DIR}
 
+# Keep PKGNG_ORIGIN/WITH_PKGNG for compat with scripts which are looking for it
 PKG_ORIGIN?=	ports-mgmt/pkg
-# Keep WITH_PKGNG for compat with scripts which are looking for it
+PKGNG_ORIGIN=	${PKG_ORIGIN}
 WITH_PKGNG?=	yes
 WITH_PKG?=	${WITH_PKGNG}
 
@@ -3657,8 +3658,8 @@ delete-package-list:
 	@${ECHO_CMD} "[ -f ${PKGFILE} ] && (${ECHO_CMD} deleting ${PKGFILE}; ${RM} -f ${PKGFILE})"
 .endif
 
-# Used if !defined(NO_STAGE) during install, or manually to install package
-# from local repository.
+# Used by scripts and users to install a package from local repository.
+# Poudriere -i uses this, please keep.
 .if !target(install-package)
 .if defined(FORCE_PKG_REGISTER)
 _INSTALL_PKG_ARGS=	-f
