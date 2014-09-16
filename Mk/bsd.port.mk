@@ -3254,7 +3254,7 @@ do-fetch:
 						continue 2; \
 					else \
 						${ECHO_MSG} "=> Fetched file size mismatch (expected $${CKSIZE}, actual $${actual_size})"; \
-						if [ $${sites_remaining} -gt 1 ]; then \
+						if [ $${sites_remaining} -gt 0 ]; then \
 							${ECHO_MSG} "=> Trying next site"; \
 							${RM} -f $${file}; \
 						fi; \
