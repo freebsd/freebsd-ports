@@ -10,6 +10,17 @@ in the release notes and/or placed into UPDATING.
 
 All ports committers are allowed to commit to this file.
 
+20140916:
+AUTHOR: tijl@FreeBSD.org
+
+  The installation of *.la files without some form of USES=libtool in the
+  port Makefile will now result in a stage-qa error.  Previously this would
+  only cause a warning.
+
+  The :keepla argument to USES=libtool is no longer special.  It is now
+  only needed if a port uses *.la files at run-time and no longer to fix
+  link problems in other ports.
+
 20140901:
 AUTHOR: bapt@FreeBSD.org
 
