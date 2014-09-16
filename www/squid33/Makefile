@@ -25,7 +25,7 @@ PATCHFILES=	FreeBSD_silence_nosuid_mk1.patch:nosid
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	HTTP Caching Proxy
 
-DEPRECATED=	Reached EOL on 13 July 2013, use www/squid (v3.4) instead
+DEPRECATED=	Reached EOL on 28 August 2014, use www/squid (v3.4) instead
 EXPIRATION_DATE=2015-01-31
 
 LICENSE=	GPLv2
