@@ -175,7 +175,7 @@ PHP_HEADER_DIRS=libmbfl libmbfl/filters libmbfl/mbfl libmbfl/nls
 
 .if ${PHP_MODNAME} == "mcrypt"
 LIB_DEPENDS+=	libltdl.so:${PORTSDIR}/devel/libltdl \
-		libmcrypt.so.8:${PORTSDIR}/security/libmcrypt
+		libmcrypt.so:${PORTSDIR}/security/libmcrypt
 
 CONFIGURE_ARGS+=--with-mcrypt=${LOCALBASE}
 .endif
