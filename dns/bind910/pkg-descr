@@ -10,15 +10,6 @@ Views: One server process can provide multiple "views" of the DNS namespace,
      e.g. an "inside" view to certain clients, and an "outside" view to others.
 Multiprocessor Support
 
-BIND 9.9 includes a number of changes from BIND 9.8 and earlier releases,
-including:
-	NXDOMAIN redirection
-	Improved startup and reconfiguration time, especially with large
-		numbers of authoritative zones
-	New "inline-signing" option, allows named to sign zones completely
-		transparently, including static zones
-	Many other new features, especially for DNSSEC
-
-See the CHANGES file for more information on features.
+See the CHANGES file for more information on new features.
 
 WWW: https://www.isc.org/software/bind
