@@ -8,7 +8,8 @@ CATEGORIES=	math
 MAINTAINER=	demon@FreeBSD.org
 COMMENT=	A statistical machine translation system
 
-BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash
+BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash \
+		bjam:${PORTSDIR}/devel/boost-jam
 LIB_DEPENDS=	libboost_thread.so:${PORTSDIR}/devel/boost-libs \
 		libRandLM.so:${PORTSDIR}/textproc/randlm \
 		libirstlm.so:${PORTSDIR}/textproc/irstlm
