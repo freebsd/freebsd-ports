@@ -1,0 +1,20 @@
+--- log_analysis.in.orig	2012-04-17 20:39:50.000000000 +1000
++++ log_analysis.in	2014-09-03 09:06:30.000000000 +1000
+@@ -8788,8 +8788,6 @@
+ Before the config is parsed, it is passed through a preprocessor inspired
+ by the L<aide(1)> preprocessor.
+ 
+-=over 4
+-
+ =head2 Pattern directives
+ 
+ These directives describe your logs, and are the main point of this
+@@ -8799,6 +8797,8 @@
+ the message.  For each perl pattern, you specify one or more
+ destinations that describe what you want done with it.
+ 
++=over 4
++
+ =item B<logtype:> I<type>
+ 
+ Future patterns should be applied to this logtype (ie. sulog, syslog,
