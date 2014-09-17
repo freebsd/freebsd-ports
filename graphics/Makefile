@@ -1019,6 +1019,7 @@
     SUBDIR += wxsvg
     SUBDIR += xaos
     SUBDIR += xbmbrowser
+    SUBDIR += xcftools
     SUBDIR += xd3d
     SUBDIR += xdgagrab
     SUBDIR += xface.el
