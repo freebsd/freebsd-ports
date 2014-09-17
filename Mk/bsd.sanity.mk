@@ -106,16 +106,6 @@ DEV_ERROR+=	"USE_PYDISTUTILS=easy_install is no longer supported, please use USE
 DEV_WARNING+=	"PYDISTUTILS_PKGNAME has no effect for USE_PYDISTUTILS=yes and PYDISTUTILS_AUTOPLIST=yes"
 .endif
 
-.if defined(USE_AUTOTOOLS)
-.  if ${USE_AUTOTOOLS:Mlibtool} || ${USE_AUTOTOOLS:Mlibtool\:env}
-DEV_WARNING+=	"USE_AUTOTOOLS=libtool is deprecated, please use USES=libtool"
-.  endif
-.endif
-
-.if defined(USE_GNOME) && ${USE_GNOME:Mltverhack*}
-DEV_WARNING+=	"USE_GNOME=ltverhack is deprecated, please use USES=libtool"
-.endif
-
 .if defined(USE_PYTHON) && (${USE_PYTHON} == "yes" || ${USE_PYTHON:C/[-0-9.+]*//} == "")
 _PYTHON_VAL := ${USE_PYTHON}
 .if ${_PYTHON_VAL} != "yes"
