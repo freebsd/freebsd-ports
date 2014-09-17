@@ -3779,6 +3779,7 @@
     SUBDIR += py-mwlib.rl
     SUBDIR += py-mx-experimental
     SUBDIR += py-mygpoclient
+    SUBDIR += py-nagioscheck
     SUBDIR += py-ncurses
     SUBDIR += py-nose
     SUBDIR += py-notifier
