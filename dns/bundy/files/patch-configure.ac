@@ -1,5 +1,5 @@
---- ./configure.ac.orig	2014-05-10 18:58:02.000000000 +0200
-+++ ./configure.ac	2014-05-12 22:32:30.000000000 +0200
+--- configure.ac.orig	2014-08-22 06:39:30 UTC
++++ configure.ac
 @@ -110,7 +110,7 @@
  CXXFLAGS_SAVED=$CXXFLAGS
  CFLAGS="$CFLAGS $CXX_LIBTOOL_LDFLAGS"
