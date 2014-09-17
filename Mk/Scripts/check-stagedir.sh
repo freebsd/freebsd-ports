@@ -88,7 +88,7 @@ parse_plist() {
 			;;
 			esac
 		;;
-		# Handle [dirrmty] Keywords
+		# Handle [dirrmtry] Keywords
 		@fc\ *|@fcfontsdir\ *|@fontsdir\ *)
 			set -- $line
 			shift
