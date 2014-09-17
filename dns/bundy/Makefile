@@ -37,8 +37,6 @@ USES=	compiler:c++11-lang pathfix pkgconfig libtool python:3 autoreconf
 
 USE_LDCONFIG=	yes
 PATHFIX_MAKEFILEIN=	Makefile.am
-ACLOCAL_ARGS=	-I m4macros
-AUTOMAKE_ARGS=	--add-missing
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--localstatedir=/var	\
 		--without-werror \
