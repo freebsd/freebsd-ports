@@ -3387,6 +3387,7 @@
     SUBDIR += pecl-spread
     SUBDIR += pecl-statgrab
     SUBDIR += pecl-svn
+    SUBDIR += pecl-swoole
     SUBDIR += pecl-test_helpers
     SUBDIR += pecl-uopz
     SUBDIR += pecl-uploadprogress
