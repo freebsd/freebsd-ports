@@ -28,6 +28,9 @@ LIB_DEPENDS=	libbotan-1.10.so:${PORTSDIR}/security/botan110 \
 		libsqlite3.so:${PORTSDIR}/databases/sqlite3
 RUN_DEPENDS=	${PYTHON_LIBDIR}/lib-dynload/_sqlite3.so:${PORTSDIR}/databases/py-sqlite3
 
+DEPRECATED=	Is not developed any more, use dns/bundy
+EXPIRATION_DATE=	2015-12-31
+
 USE_PYTHON=	3
 USE_OPENSSL=	yes
 USE_LDCONFIG=	yes
