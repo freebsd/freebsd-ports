@@ -29,10 +29,13 @@ name="courier_authdaemond"
 rcvar=courier_authdaemond_enable
 
 command="${sbindir}/authdaemond"
+procname="${sbindir}/courierlogger"
 pidfile="${authdaemonvar}/pid"
 socket="${authdaemonvar}/socket"
 
+start_precmd="echo 'Starting ${name}.'"
 start_cmd="${command} start"
+stop_precmd="echo 'Stopping ${name}.'"
 stop_cmd="${command} stop"
 stop_postcmd="rm -f ${pidfile} ${pidfile}.lock ${socket}"
 required_dirs="${authdaemonvar}"
