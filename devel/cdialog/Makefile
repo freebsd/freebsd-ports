@@ -14,7 +14,7 @@ LICENSE=	LGPL21
 
 OPTIONS_DEFINE=	EXAMPLES
 
-USES=		ncurses	libtool tar:tgz
+USES=		libtool:build ncurses tar:tgz
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--enable-widec \
@@ -23,8 +23,6 @@ CONFIGURE_ARGS=	--enable-widec \
 		--with-ncursesw \
 		--with-package=${PORTNAME}
 MAKEFILE=	makefile
-
-BUILD_DEPENDS=	libtool:${PORTSDIR}/devel/libtool
 
 INSTALL_TARGET=	install-strip install-man install-lib
 
