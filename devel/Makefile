@@ -3838,6 +3838,7 @@
     SUBDIR += py-pylib
     SUBDIR += py-pymarc
     SUBDIR += py-pympler
+    SUBDIR += py-pyparsing15
     SUBDIR += py-pyro
     SUBDIR += py-pyshapelib
     SUBDIR += py-pytemplate
