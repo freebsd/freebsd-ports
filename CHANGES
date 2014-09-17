@@ -10,6 +10,16 @@ in the release notes and/or placed into UPDATING.
 
 All ports committers are allowed to commit to this file.
 
+20140917:
+AUTHOR: tijl@FreeBSD.org
+
+  Support for USE_AUTOTOOLS=libtool, USE_GNOME=ltasneededhack,
+  USE_GNOME=lthack and USE_GNOME=ltverhack has been removed.  Ports
+  should use USES=libtool instead.
+
+  Support for USE_AUTOTOOLS=libltdl has been removed.  Ports should
+  use LIB_DEPENDS=libltdl.so:${PORTSDIR}/devel/libltdl
+
 20140916:
 AUTHOR: tijl@FreeBSD.org
 

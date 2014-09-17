@@ -68,8 +68,8 @@ Gnome_Pre_Include=			bsd.gnome.mk
 #
 
 # non-version specific components
-_USE_GNOME_ALL= esound intlhack intltool introspection ltasneededhack lthack \
-		ltverhack gnomehack referencehack gnomehier gnomemimedata \
+_USE_GNOME_ALL= esound intlhack intltool introspection \
+		gnomehack referencehack gnomehier gnomemimedata \
 		gnomeprefix
 
 # GNOME 1 components
@@ -115,9 +115,6 @@ gnomehack_PRE_PATCH=	${FIND} ${WRKSRC} -name "${GNOME_MAKEFILEIN}*" -type f | ${
 
 referencehack_PRE_PATCH=	${FIND} ${WRKSRC} -name "Makefile.in" -type f | ${XARGS} ${REINPLACE_CMD} -e \
 				"s|test \"\$$\$$installfiles\" = '\$$(srcdir)/html/\*'|:|"
-
-lthack_PRE_PATCH=	${FIND} ${WRKSRC} -name "configure" -type f | ${XARGS} ${REINPLACE_CMD} -e \
-				'/^LIBTOOL_DEPS="$$ac_aux_dir\/ltmain.sh"$$/s|$$|; $$ac_aux_dir/ltconfig $$LIBTOOL_DEPS;|'
 
 GNOME_MTREE_FILE?=		${LOCALBASE}/etc/mtree/BSD.gnome.dist
 gnomehier_DETECT=	${GNOME_MTREE_FILE}
@@ -698,61 +695,6 @@ _USE_GNOME+=	${${component}_USE_GNOME_IMPL} ${component}
 PLIST_SUB+=			GTK2_VERSION="${GTK2_VERSION}" \
 				GTK3_VERSION="${GTK3_VERSION}"
 
-# Then handle the ltverhack component (it has to be done here, because
-# we rely on some bsd.autotools.mk variables, and bsd.autotools.mk is
-# included in the post-makefile section).
-.if defined(_AUTOTOOL_libtool)
-lthacks_CONFIGURE_ENV=		ac_cv_path_DOLT_BASH=
-lthacks_PRE_PATCH=	\
-	${CP} -pf ${LTMAIN} ${WRKDIR}/gnome-ltmain.sh && \
-	${CP} -pf ${LIBTOOL} ${WRKDIR}/gnome-libtool && \
-	for file in ${LIBTOOLFILES}; do \
-		${REINPLACE_CMD} -e \
-		'/^ltmain=/!s|$$ac_aux_dir/ltmain\.sh|${LIBTOOLFLAGS} ${WRKDIR}/gnome-ltmain.sh|g; \
-		 /^LIBTOOL=/s|$$(top_builddir)/libtool|${WRKDIR}/gnome-libtool|g' \
-		${PATCH_WRKSRC}/$$file; \
-	done;
-.else
-.  if ${USE_GNOME:Mltasneededhack}!=""
-IGNORE=	cannot install: ${PORTNAME} uses the ltasneededhack GNOME component but does not use libtool
-.  endif
-.endif
-
-.if ${USE_GNOME:Mltverhack\:*:C/^[^:]+:([^:]+).*/\1/}==""
-ltverhack_LIB_VERSION=	major=.`expr $$current - $$age`
-.else
-ltverhack_LIB_VERSION=	major=".${USE_GNOME:Mltverhack\:*:C/^[^:]+:([^:]+).*/\1/}"
-.endif
-
-.if defined(USE_AUTOTOOLS) &&  ${USE_AUTOTOOLS:Mlibtool*}
-ltverhack_PATCH_DEPENDS=${LIBTOOL_DEPENDS}
-ltverhack_PATCH_FILES=	../gnome-ltmain.sh ../gnome-libtool
-.else
-ltverhack_PATCH_FILES?=	ltmain.sh libtool
-.endif
-
-ltverhack_PRE_PATCH=	\
-	for file in ${ltverhack_PATCH_FILES}; do \
-		if [ -f ${WRKSRC}/$$file ]; then \
-			${REINPLACE_CMD} -e \
-			'/freebsd-elf)/,/;;/ s|major="\.$$current"|${ltverhack_LIB_VERSION}|; \
-			 /freebsd-elf)/,/;;/ s|versuffix="\.$$current"|versuffix="$$major"|' \
-			-e \
-			'/freebsd-elf)/,/;;/ s|major=\.$$current|${ltverhack_LIB_VERSION}|; \
-			 /freebsd-elf)/,/;;/ s|versuffix=\.$$current|versuffix="$$major"|' \
-			${WRKSRC}/$$file; \
-		fi; \
-	done
-
-ltasneededhack_PATCH_DEPENDS=${LIBTOOL_DEPENDS}
-ltasneededhack_PRE_PATCH=	\
-	if [ -f ${WRKDIR}/gnome-libtool ]; then \
-		${REINPLACE_CMD} -e \
-		'/^archive_cmds=/s/-shared/-shared -Wl,--as-needed/ ; \
-		 /^archive_expsym_cmds=/s/-shared/-shared -Wl,--as-needed/' \
-		${WRKDIR}/gnome-libtool; \
-	fi
-
 # Set USE_CSTD for all ports that depend on glib12
 .if defined(_USE_GNOME) && !empty(_USE_GNOME:Mglib12)
 USE_CSTD=	gnu89
@@ -761,22 +703,6 @@ USE_CSTD=	gnu89
 # Then traverse through all components, check which of them
 # exist in ${_USE_GNOME} and set variables accordingly
 .ifdef _USE_GNOME
-
-. if ${USE_GNOME:Mltasneededhack}!= ""
-_GNOME_NEED_LIBTOOL=1
-. endif
-
-# this is splitted out from the above entry because fmake trows a fit otherwise
-. if defined(USE_AUTOTOOLS) && ${USE_AUTOTOOLS:Mlibtool*}
-.  if ${USE_GNOME:Mltverhack*}!= ""
-_GNOME_NEED_LIBTOOL=1
-.  endif
-. endif
-
-. if defined(_GNOME_NEED_LIBTOOL)
-GNOME_PRE_PATCH+=	${lthacks_PRE_PATCH}
-CONFIGURE_ENV+=		${lthacks_CONFIGURE_ENV}
-. endif
 
 . for component in ${_USE_GNOME:O:u}
 .  if defined(${component}_PATCH_DEPENDS)
