@@ -23,7 +23,6 @@ NDIR_CMD=	cd ${PLUGINS} && ${MAKE} -VWRKSRC
 # Needed for build target on net-mgmt/nagios-plugins
 EXTRA_DEPENDS=	automake>0:${PORTSDIR}/devel/automake \
 		autoconf>0:${PORTSDIR}/devel/autoconf \
-		libtool>0:${PORTSDIR}/devel/libtool \
 		gmake:${PORTSDIR}/devel/gmake
 
 do-extract:
