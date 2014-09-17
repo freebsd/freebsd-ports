@@ -15,10 +15,10 @@ COMMENT=	High-level interface for RDF
 LICENSE=	APACHE20 GPLv2 GPLv3 LGPL21
 LICENSE_COMB=	dual
 
-LIB_DEPENDS=	libraptor2.so:${PORTSDIR}/textproc/raptor2 \
+LIB_DEPENDS=	libltdl.so:${PORTSDIR}/devel/libltdl \
+		libraptor2.so:${PORTSDIR}/textproc/raptor2 \
 		librasqal.so:${PORTSDIR}/textproc/rasqal
 
-USE_AUTOTOOLS=	libltdl
 USE_PERL5=	build
 USES=		gmake libtool pathfix perl5 pkgconfig shebangfix
 SHEBANG_FILES=	scripts/touch-mtime.pl

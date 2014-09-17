@@ -14,12 +14,13 @@ COMMENT=	GNU Ubiquitous Intelligent Language for Extension
 
 LICENSE=	LGPL21
 
-LIB_DEPENDS=	libgmp.so:${PORTSDIR}/math/gmp
+LIB_DEPENDS=	libltdl.so:${PORTSDIR}/devel/libltdl \
+		libgmp.so:${PORTSDIR}/math/gmp
 
 CONFLICTS_INSTALL=	guile2-[0-9]*
 
 USES=		gmake libtool makeinfo ncurses pathfix
-USE_AUTOTOOLS=	autoheader libltdl
+USE_AUTOTOOLS=	autoheader
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CFLAGS+=	-fwrapv

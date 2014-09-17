@@ -14,9 +14,11 @@ COMMENT=	Systems & network statistics collection daemon
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+LIB_DEPENDS=	libltdl.so:${PORTSDIR}/devel/libltdl
+
 USES=		gmake pkgconfig tar:bzip2 libtool
 GNU_CONFIGURE=	yes
-USE_AUTOTOOLS=	aclocal autoconf autoheader automake libltdl libtoolize
+USE_AUTOTOOLS=	aclocal autoconf autoheader automake libtoolize
 
 # Only autoconf stage and sigrok plugin need GLIB:
 BUILD_DEPENDS+=	${LOCALBASE}/libdata/pkgconfig/glib-2.0.pc:${PORTSDIR}/devel/glib20

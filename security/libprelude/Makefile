@@ -13,7 +13,8 @@ COMMENT=	Framework library for Prelude NIDS
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE.README
 
-LIB_DEPENDS=	libgmp.so:${PORTSDIR}/math/gmp \
+LIB_DEPENDS=	libltdl.so:${PORTSDIR}/devel/libltdl \
+		libgmp.so:${PORTSDIR}/math/gmp \
 		libgnutls.so:${PORTSDIR}/security/gnutls \
 		libgcrypt.so:${PORTSDIR}/security/libgcrypt \
 		libgpg-error.so:${PORTSDIR}/security/libgpg-error \
@@ -24,7 +25,6 @@ OPTIONS_DEFINE=	DOCS PERL PYTHON
 OPTIONS_SUB=	yes
 
 USES=		charsetfix gettext gmake iconv libtool pathfix pkgconfig
-USE_AUTOTOOLS=	libltdl
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-static \

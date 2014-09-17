@@ -17,13 +17,14 @@ COMMENT=	Subsystem for High-Availability Clustering
 LICENSE=	GPLv2 LGPL21
 LICENSE_COMB=	multi
 
-LIB_DEPENDS=	libgnutls.so:${PORTSDIR}/security/gnutls \
+LIB_DEPENDS=	libltdl.so:${PORTSDIR}/devel/libltdl \
+		libgnutls.so:${PORTSDIR}/security/gnutls \
 		libnet.so:${PORTSDIR}/net/libnet \
 		libuuid.so:${PORTSDIR}/misc/e2fsprogs-libuuid \
 		libxml2.so:${PORTSDIR}/textproc/libxml2
 BUILD_DEPENDS=	bison:${PORTSDIR}/devel/bison
 
-USE_AUTOTOOLS=	autoconf autoheader automake aclocal libltdl libtoolize
+USE_AUTOTOOLS=	autoconf autoheader automake aclocal libtoolize
 AUTOMAKE_ARGS=	--add-missing --include-deps --copy
 
 USES=		gettext gmake libtool pkgconfig tar:bzip2 shebangfix

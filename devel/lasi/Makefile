@@ -12,11 +12,12 @@ DISTNAME=	libLASi-${PORTVERSION}
 MAINTAINER=	lme@FreeBSD.org
 COMMENT=	C++ stream output interface for creating Postscript documents
 
+LIB_DEPENDS=	libltdl.so:${PORTSDIR}/devel/libltdl
+
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
 USES=		cmake pkgconfig
 USE_GNOME=	pango
-USE_AUTOTOOLS=	libltdl
 PKG_CONFIG_PATH=	${PREFIX}/libdata/pkgconfig
 CONFIGURE_ENV+=	PKG_CONFIG_PATH=${PKG_CONFIG_PATH}
 

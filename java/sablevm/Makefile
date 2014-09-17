@@ -12,13 +12,13 @@ COMMENT=	Java VM created by McGill University's Sable Research Group
 LICENSE=	LGPL21
 
 LIB_DEPENDS=	libpopt.so:${PORTSDIR}/devel/popt \
-		libffi.so:${PORTSDIR}/devel/libffi
+		libffi.so:${PORTSDIR}/devel/libffi \
+		libltdl.so:${PORTSDIR}/devel/libltdl
 RUN_DEPENDS=	fastjar:${PORTSDIR}/archivers/fastjar
 
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 USES=		gettext gmake iconv libtool pkgconfig
-USE_AUTOTOOLS=	libltdl
 USE_LDCONFIG=	yes
 
 CONFIGURE_ARGS=	--includedir=${PREFIX}/include/${PORTNAME}

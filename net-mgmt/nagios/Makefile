@@ -12,13 +12,14 @@ COMMENT=	Powerful network monitoring system
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libgd.so:${PORTSDIR}/graphics/gd
+LIB_DEPENDS=	libltdl.so:${PORTSDIR}/devel/libltdl \
+		libgd.so:${PORTSDIR}/graphics/gd
 
 PORTSCOUT=	limit:^3.
 
 USES=		iconv perl5 uidfix
 USE_PERL5=	build
-USE_AUTOTOOLS=	autoconf libltdl
+USE_AUTOTOOLS=	autoconf
 USE_PHP=	yes
 USE_RC_SUBR=	nagios
 

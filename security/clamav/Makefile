@@ -12,7 +12,8 @@ COMMENT=	Command line virus scanner written entirely in C
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl
+LIB_DEPENDS=	libltdl.so:${PORTSDIR}/devel/libltdl \
+		libcurl.so:${PORTSDIR}/ftp/curl
 
 OPTIONS_DEFINE=	ARC ARJ LHA UNZOO UNRAR LLVM TESTS MILTER LDAP ICONV STDERR \
 		EXPERIMENTAL DOCS IPV6 DMG_XAR
@@ -64,7 +65,6 @@ PLIST_SUB+=	DBDIR=${DBDIR:S/^\///} \
 		CLAMAVUSER=${CLAMAVUSER} \
 		CLAMAVGROUP=${CLAMAVGROUP}
 PY_NO_THREAD=	${WRKDIR}/.python-has-no-threads
-USE_AUTOTOOLS=	libltdl
 OPTIONS_SUB=	yes
 
 CONFIGURE_ARGS=	--libdir=${PREFIX}/lib \

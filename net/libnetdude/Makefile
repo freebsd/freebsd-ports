@@ -10,14 +10,14 @@ MASTER_SITES=	SF/netdude/${PORTNAME}/${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library for manipulating libpcap/tcpdump trace files
 
-LIB_DEPENDS=	libpcapnav.so:${PORTSDIR}/net/libpcapnav
+LIB_DEPENDS=	libltdl.so:${PORTSDIR}/devel/libltdl \
+		libpcapnav.so:${PORTSDIR}/net/libpcapnav
 
 USES=		libtool
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-gtk-doc --disable-static --with-html-dir=${DOCSDIR}
 CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib
-USE_AUTOTOOLS=	libltdl
 USE_GNOME=	glib12
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip

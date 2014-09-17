@@ -12,8 +12,9 @@ COMMENT=	Command-line player for MPEG Layer 1, 2, and 3 audio files
 
 LICENSE=	LGPL21
 
+LIB_DEPENDS=	libltdl.so:${PORTSDIR}/devel/libltdl
+
 USES=		tar:bzip2 gmake libtool:keepla pathfix
-USE_AUTOTOOLS=	libltdl
 USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes

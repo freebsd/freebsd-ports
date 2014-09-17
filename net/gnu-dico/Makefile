@@ -12,9 +12,10 @@ PKGNAMEPREFIX=	gnu-
 MAINTAINER=	goran.tal@gmail.com
 COMMENT=	Flexible modular implementation of DICT server
 
+LIB_DEPENDS=	libltdl.so:${PORTSDIR}/devel/libltdl
+
 USE_LDCONFIG=	yes
 USES=		tar:xz gmake libtool
-USE_AUTOTOOLS=	libltdl
 
 GNU_CONFIGURE=	yes
 CFLAGS+=	-Wno-error=return-type

@@ -17,7 +17,8 @@ LICENSE_COMB=	dual
 
 LLVM_VERSION=	32
 
-LIB_DEPENDS=	libgmp.so:${PORTSDIR}/math/gmp \
+LIB_DEPENDS=	libltdl.so:${PORTSDIR}/devel/libltdl \
+		libgmp.so:${PORTSDIR}/math/gmp \
 		libmpfr.so:${PORTSDIR}/math/mpfr
 BUILD_DEPENDS=	llvm-config${LLVM_VERSION}:${PORTSDIR}/devel/llvm${LLVM_VERSION}
 RUN_DEPENDS:=	${BUILD_DEPENDS}
@@ -25,7 +26,6 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 SUB_FILES=	pkg-message
 
 USES=		gmake iconv pathfix pkgconfig
-USE_AUTOTOOLS=	libltdl
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-libgmp-prefix=${LOCALBASE} --enable-release \
 		--with-tool-prefix=${LOCALBASE}/llvm${LLVM_VERSION}/bin

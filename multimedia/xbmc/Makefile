@@ -34,6 +34,7 @@ LIB_DEPENDS=	libass.so:${PORTSDIR}/multimedia/libass \
 		liblzo2.so:${PORTSDIR}/archivers/lzo2 \
 		libjasper.so:${PORTSDIR}/graphics/jasper \
 		libjpeg.so:${PORTSDIR}/graphics/jpeg \
+		libltdl.so:${PORTSDIR}/devel/libltdl \
 		libmad.so:${PORTSDIR}/audio/libmad \
 		libmodplug.so:${PORTSDIR}/audio/libmodplug \
 		libmpeg2.so:${PORTSDIR}/multimedia/libmpeg2 \
@@ -52,7 +53,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:${PORTSDIR}/databases/py-sqlite3 \
 		xdpyinfo:${PORTSDIR}/x11/xdpyinfo
 
 USES=		gmake iconv:wchar_t libtool:build pkgconfig python:2
-USE_AUTOTOOLS=	autoconf:env automake:env libltdl
+USE_AUTOTOOLS=	autoconf:env automake:env
 GNU_CONFIGURE=	yes
 USE_XORG=	xt xmu xtst
 USE_GL=		glu

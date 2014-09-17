@@ -13,12 +13,14 @@ COMMENT=	SOund eXchange - universal sound sample translator
 LICENSE=	LGPL21 GPLv2
 LICENSE_COMB=	dual
 
+LIB_DEPENDS=	libltdl.so:${PORTSDIR}/devel/libltdl
+
 CONFLICTS=	play-[0-9]*
 
 GNU_CONFIGURE=	yes
 USES=		pkgconfig libtool
 USE_LDCONFIG=	yes
-USE_AUTOTOOLS=	aclocal autoconf automake libltdl
+USE_AUTOTOOLS=	aclocal autoconf automake
 
 OPTIONS_DEFINE=	ALSA AO AMRNB AMRWB FFMPEG FLAC GSM ID3TAG LADSPA LAME \
 		MAD PNG PULSEAUDIO SNDFILE VORBIS WAVPACK

@@ -14,13 +14,13 @@ COMMENT=	Implementation of the Freedesktop sound theme spec
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/LGPL
 
-LIB_DEPENDS=	libvorbisfile.so:${PORTSDIR}/audio/libvorbis
+LIB_DEPENDS=	libvorbisfile.so:${PORTSDIR}/audio/libvorbis \
+		libltdl.so:${PORTSDIR}/devel/libltdl
 
 USES=		gmake libtool pathfix pkgconfig
 USE_GNOME=	gnomeprefix gtk20 gconf2
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
-USE_AUTOTOOLS=	libltdl
 CONFIGURE_ARGS=	--disable-lynx --disable-tdb --disable-alsa
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
