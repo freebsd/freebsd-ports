@@ -3,7 +3,7 @@
 
 PORTNAME=	bind10
 PORTVERSION=	1.2.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	dns
 MASTER_SITES=	${MASTER_SITE_ISC}
 MASTER_SITE_SUBDIR=	${PORTNAME}/${PORTVERSION}
@@ -33,7 +33,7 @@ EXPIRATION_DATE=	2015-12-31
 
 USE_OPENSSL=	yes
 USE_LDCONFIG=	yes
-USES=	compiler:c++11-lang pathfix pkgconfig python:3
+USES=	compiler:c++11-lang pathfix pkgconfig python:3 libtool
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--localstatedir=/var	\
@@ -43,8 +43,6 @@ CONFIGURE_ARGS=	--localstatedir=/var	\
 PLIST_SUB+=	PORTNAME=${PORTNAME}
 
 OPTIONS_DEFINE=	DOCS
-
-PORTDOCS=	*
 
 post-install:
 	${MV} ${STAGEDIR}${ETCDIR}/cmdctl-certfile.pem ${STAGEDIR}${ETCDIR}/cmdctl-certfile.pem.sample
