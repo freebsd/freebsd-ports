@@ -59,6 +59,8 @@ post-patch:
 post-install:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}/pdf
 	${INSTALL_DATA} ${WRKSRC}/doc/crypt.pdf ${STAGEDIR}${DOCSDIR}/pdf
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libtomcrypt_prof.so.0
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libtomcrypt.so.0
 
 .if defined(MAINTAINER_MODE)
 test:	build
