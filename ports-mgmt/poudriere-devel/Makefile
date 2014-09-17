@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	poudriere
-PORTVERSION=	3.0.99.20140827
+PORTVERSION=	3.0.99.20140916
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	LOCAL/bdrewery/${PORTNAME}/ \
 		http://fossil.etoilebsd.net/poudriere/tarball/
@@ -15,7 +15,7 @@ LICENSE=	BSD2CLAUSE
 
 CONFLICTS_INSTALL=	poudriere-[0-9]*
 
-FSL_CHKIN=	7c2b030b2b
+FSL_CHKIN=	d7e95d9102
 
 GNU_CONFIGURE=	yes
 ETCDIR=		${PREFIX}/etc/poudriere.d

@@ -18,7 +18,6 @@ include/afflib/afflib_i.h
 include/afflib/aftimer.h
 include/afflib/utils.h
 lib/libafflib.a
-lib/libafflib.la
 lib/libafflib.so
 lib/libafflib.so.0
 lib/libafflib.so.0.0.0

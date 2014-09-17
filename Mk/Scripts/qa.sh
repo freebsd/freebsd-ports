@@ -196,10 +196,10 @@ suidfiles() {
 
 libtool() {
 	if [ -z "${USESLIBTOOL}" ]; then
-		find ${STAGEDIR} -type f -name '*.la' | while read f; do
+		find ${STAGEDIR} -name '*.la' | while read f; do
 			grep -q 'libtool library' "${f}" &&
-				warn ".la libraries found, port needs USES=libtool" &&
-				return 0 || true
+				err ".la libraries found, port needs USES=libtool" &&
+				return 1 || true
 		done
 		# The return above continues here.
 	fi

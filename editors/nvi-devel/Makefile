@@ -3,7 +3,7 @@
 
 PORTNAME=	nvi
 PORTVERSION=	1.81.6
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	editors
 MASTER_SITES=	http://garage.linux.student.kuleuven.be/~skimo/nvi/devel/ \
 		http://www.kotnet.org/~skimo/nvi/devel/
@@ -20,7 +20,7 @@ WIDECHAR_DESC=	Enable wide-character support (UTF-8)
 WRKSRC=			${WRKDIR}/${DISTNAME}/build.unix
 GNU_CONFIGURE=		yes
 USE_LDCONFIG=		yes
-USES=			iconv libtool:keepla pkgconfig tar:bzip2
+USES=			iconv libtool pkgconfig tar:bzip2
 USE_BDB=		42+
 CONFIGURE_ARGS+=	--with-db-prefix=${LOCALBASE} \
 			--program-prefix=n

@@ -3,6 +3,7 @@
 
 PORTNAME=	libosmesa
 PORTVERSION=	10.2.7
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.freedesktop.org/pub/mesa/${PORTVERSION}/
 DISTNAME=	MesaLib-${PORTVERSION}
@@ -11,11 +12,14 @@ MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	Off-Screen Mesa implementation of the OpenGL API
 
 LIB_DEPENDS=	libexpat.so:${PORTSDIR}/textproc/expat2
-BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/libxml2mod.so:${PORTSDIR}/textproc/py-libxml2
+BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/libxml2mod.so:${PORTSDIR}/textproc/py-libxml2 \
+    		${LOCALBASE}/bin/flex:${PORTSDIR}/textproc/flex
 
-USES=		gmake pkgconfig tar:bzip2 libtool python:2 bison
+USES=		bison gmake pkgconfig tar:bzip2 libtool python:2
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
+CONFIGURE_ENV+=	ac_cv_prog_YACC=${LOCALBASE}/bin/bison \
+		ac_cv_prog_LEX=${LOCALBASE}/bin/flex
 CONFIGURE_ARGS+=--enable-osmesa \
 		--disable-driglx-direct \
 		--disable-gallium-llvm \

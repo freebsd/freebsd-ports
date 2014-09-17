@@ -1,7 +1,6 @@
 %%DATADIR%%/Plex DLNA Server
 %%DATADIR%%/Plex Media Scanner
 %%DATADIR%%/Plex Media Server
-%%DATADIR%%/Resources/DejaVuUniversal.ttf
 %%DATADIR%%/Resources/Graphics/DefaultAlbumCover.png
 %%DATADIR%%/Resources/Graphics/actor-icon.png
 %%DATADIR%%/Resources/Graphics/album-fanart.jpg
@@ -26,6 +25,7 @@
 %%DATADIR%%/Resources/LICENSE
 %%DATADIR%%/Resources/Plex New Transcoder
 %%DATADIR%%/Resources/Plex Transcoder
+%%DATADIR%%/Resources/PlexFont-Regular.ttf
 %%DATADIR%%/Resources/Plug-ins/Framework.bundle/Contents/Info.plist
 %%DATADIR%%/Resources/Plug-ins/Framework.bundle/Contents/Resources/Platforms/FreeBSD/i386/Frameworks/README
 %%DATADIR%%/Resources/Plug-ins/Framework.bundle/Contents/Resources/Platforms/FreeBSD/i386/Libraries/README
@@ -1424,7 +1424,6 @@
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.gametrailers/URL/GameTrailers/ServiceCode.pys
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.giantbomb/ServiceInfo.plist
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.giantbomb/URL/GiantBomb/ServiceCode.pys
-%%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.giantbomb/URL/GiantBomb/ServicePrefs.json
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.goal/ServiceInfo.plist
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.goal/URL/Goal/ServiceCode.pys
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.golfchannel/ServiceInfo.plist
@@ -1502,6 +1501,8 @@
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.nme/URL/NME/ServiceCode.pys
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.nos/ServiceInfo.plist
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.nos/URL/NOS/ServiceCode.pys
+%%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.nowthisnews/ServiceInfo.plist
+%%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.nowthisnews/URL/NowThis News/ServiceCode.pys
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.npo/ServiceInfo.plist
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.npo/URL/NPO/ServiceCode.pys
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.nytimes.lens/ServiceInfo.plist
@@ -1650,8 +1651,6 @@
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.vesti/URL/Vesti/ServiceCode.pys
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.vevo/ServiceInfo.plist
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.vevo/URL/Vevo/ServiceCode.pys
-%%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.vgtv/ServiceInfo.plist
-%%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.vgtv/URL/VGTV/ServiceCode.pys
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.vice/ServiceInfo.plist
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.vice/URL/Vice/ServiceCode.pys
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.viddler/ServiceInfo.plist
@@ -1820,6 +1819,7 @@
 %%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/img/ios/startup-iphone-portrait.png
 %%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/img/ios/startup-iphone-portrait@2x.png
 %%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/img/ios/startup-iphone5-portrait@2x.png
+%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/img/plex-icon-server.svg
 %%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/img/plex-logo.svg
 %%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/img/plex-pass.png
 %%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/img/plex-pass@2x.png
@@ -2069,6 +2069,7 @@
 %%DATADIR%%/Resources/Profiles/Internet Explorer.xml
 %%DATADIR%%/Resources/Profiles/Mystery 3.xml
 %%DATADIR%%/Resources/Profiles/Mystery 4.xml
+%%DATADIR%%/Resources/Profiles/Mystery 5.xml
 %%DATADIR%%/Resources/Profiles/Mystery.xml
 %%DATADIR%%/Resources/Profiles/Opera.xml
 %%DATADIR%%/Resources/Profiles/Panasonic Viera 3D TV.xml
@@ -2077,6 +2078,7 @@
 %%DATADIR%%/Resources/Profiles/Plex Home Theater.xml
 %%DATADIR%%/Resources/Profiles/Popcorn Hour.xml
 %%DATADIR%%/Resources/Profiles/Roku-3.1.xml
+%%DATADIR%%/Resources/Profiles/Roku-5000X-6.0.xml
 %%DATADIR%%/Resources/Profiles/Roku.xml
 %%DATADIR%%/Resources/Profiles/RokuDLNA-3.1.xml
 %%DATADIR%%/Resources/Profiles/RokuDLNA-5.1.xml
@@ -2963,16 +2965,14 @@
 %%DATADIR%%/Resources/none-combiner-artists.xml
 %%DATADIR%%/Resources/none-combiner-movies.xml
 %%DATADIR%%/Resources/none-combiner-shows.xml
-%%DATADIR%%/Resources/rickroll.ts
 %%DATADIR%%/Resources/rootCA.pem
 %%DATADIR%%/Resources/rsync
 %%DATADIR%%/Resources/server.crt
 %%DATADIR%%/Resources/server.key
 %%DATADIR%%/Resources/themoviedb-combiner-movies.xml
 %%DATADIR%%/Resources/thetvdb-combiner-shows.xml
-%%DATADIR%%/libass.so.5
-%%DATADIR%%/libavcodec.so.54
-%%DATADIR%%/libavformat.so.54
+%%DATADIR%%/libavcodec.so.55
+%%DATADIR%%/libavformat.so.55
 %%DATADIR%%/libavutil.so.52
 %%DATADIR%%/libboost_chrono.so.1.50.0
 %%DATADIR%%/libboost_filesystem.so.1.50.0
@@ -2986,21 +2986,18 @@
 %%DATADIR%%/libcurl.so.7
 %%DATADIR%%/libexpat.so.6
 %%DATADIR%%/libexslt.so.8
-%%DATADIR%%/libfontconfig.so.5
 %%DATADIR%%/libfreeimage.so.3
-%%DATADIR%%/libfreetype.so.12
-%%DATADIR%%/libfribidi.so.3
 %%DATADIR%%/libiconv.so.7
 %%DATADIR%%/libidn.so.17
 %%DATADIR%%/libmediainfo.so.0
-%%DATADIR%%/libminiupnpc.so.8
+%%DATADIR%%/libminiupnpc.so.10
 %%DATADIR%%/libmp3lame.so.0
 %%DATADIR%%/libnatpmp.so.1
 %%DATADIR%%/libopencv_core.so.2.4
 %%DATADIR%%/libopencv_imgproc.so.2.4
+%%DATADIR%%/libpng16.so.16
 %%DATADIR%%/libpython2.7.so
 %%DATADIR%%/libpython2.7.so.1
-%%DATADIR%%/librtmp.so.0
 %%DATADIR%%/libsoci_core-gcc-3_0.so.3.0.0
 %%DATADIR%%/libsoci_sqlite3-gcc-3_0.so.3.0.0
 %%DATADIR%%/libsqlite3.so.8
@@ -3411,6 +3408,9 @@
 @dirrmtry %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.nos/URL/NOS
 @dirrmtry %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.nos/URL
 @dirrmtry %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.nos
+@dirrmtry %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.nowthisnews/URL/NowThis News
+@dirrmtry %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.nowthisnews/URL
+@dirrmtry %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.nowthisnews
 @dirrmtry %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.npo/URL/NPO
 @dirrmtry %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.npo/URL
 @dirrmtry %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.npo
@@ -3626,9 +3626,6 @@
 @dirrmtry %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.vevo/URL/Vevo
 @dirrmtry %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.vevo/URL
 @dirrmtry %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.vevo
-@dirrmtry %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.vgtv/URL/VGTV
-@dirrmtry %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.vgtv/URL
-@dirrmtry %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.vgtv
 @dirrmtry %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.vice/URL/Vice
 @dirrmtry %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.vice/URL
 @dirrmtry %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.vice

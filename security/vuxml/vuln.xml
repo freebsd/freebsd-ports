@@ -57,6 +57,38 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="77b784bb-3dc6-11e4-b191-f0def16c5c1b">
+    <topic>nginx -- inject commands into SSL session vulnerability</topic>
+    <affects>
+      <package>
+	<name>nginx</name>
+	<range><ge>0.6.0</ge><lt>1.6.2,2</lt></range>
+      </package>
+      <package>
+	<name>nginx-devel</name>
+	<range><ge>0.5.6</ge><lt>1.7.5</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The nginx project reports:</p>
+	<blockquote cite="http://mailman.nginx.org/pipermail/nginx-announce/2014/000147.html">
+	  <p>Security: it was possible to reuse SSL sessions in unrelated contexts
+	     if a shared SSL session cache or the same TLS session ticket key was
+	     used for multiple "server" blocks (CVE-2014-3616).</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2014-3616</cvename>
+      <url>http://mailman.nginx.org/pipermail/nginx-announce/2014/000147.html</url>
+    </references>
+    <dates>
+      <discovery>2014-09-16</discovery>
+      <entry>2014-09-16</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="cc627e6c-3b89-11e4-b629-6805ca0b3d42">
     <topic>phpMyAdmin -- XSRF/CSRF due to DOM based XSS in the micro history feature</topic>
     <affects>

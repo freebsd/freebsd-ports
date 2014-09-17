@@ -1,9 +1,0 @@
-bin/update-vc
-@sample etc/videocache.conf.sample
-%%DATADIR%%/Errors.py
-%%DATADIR%%/__init__.py
-%%DATADIR%%/config.py
-%%DATADIR%%/parser.py
-%%DATADIR%%/videocache.py
-man/man8/videocache.8.gz
-@dirrm %%DATADIR%%

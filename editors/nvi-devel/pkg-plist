@@ -2,7 +2,6 @@ bin/nex
 bin/nvi
 bin/nview
 lib/libvi.a
-lib/libvi.la
 lib/libvi.so
 lib/libvi.so.0
 lib/libvi.so.0.0.0

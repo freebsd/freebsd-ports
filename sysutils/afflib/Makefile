@@ -3,7 +3,7 @@
 
 PORTNAME=	afflib
 PORTVERSION=	3.7.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.digitalcorpora.org/downloads/${PORTNAME}/
 
@@ -17,7 +17,7 @@ LIB_DEPENDS=	libexpat.so:${PORTSDIR}/textproc/expat2 \
 
 USE_LDCONFIG=	yes
 USE_OPENSSL=	yes
-USES=		fuse libtool:keepla pathfix
+USES=		fuse libtool pathfix
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-s3=yes
 INSTALL_TARGET=	install-strip

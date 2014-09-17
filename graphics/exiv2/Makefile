@@ -3,7 +3,7 @@
 
 PORTNAME=	exiv2
 PORTVERSION=	0.24
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.exiv2.org/
@@ -16,7 +16,7 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	libexpat.so:${PORTSDIR}/textproc/expat2
 
 GNU_CONFIGURE=	yes
-USES=		gettext gmake iconv libtool:keepla
+USES=		gettext gmake iconv libtool
 USE_LDCONFIG=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include

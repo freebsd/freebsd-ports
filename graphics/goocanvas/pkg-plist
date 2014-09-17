@@ -17,7 +17,6 @@ include/goocanvas-1.0/goocanvastext.h
 include/goocanvas-1.0/goocanvasutils.h
 include/goocanvas-1.0/goocanvaswidget.h
 lib/libgoocanvas.a
-lib/libgoocanvas.la
 lib/libgoocanvas.so
 lib/libgoocanvas.so.3
 lib/libgoocanvas.so.3.5.0

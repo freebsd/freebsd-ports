@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	gogglesmm
-PORTVERSION=	0.13.2
-PORTREVISION=	1
+PORTVERSION=	0.13.3
 CATEGORIES=	audio
+MASTER_SITES=	GH
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Music collection manager and player
@@ -18,9 +18,9 @@ LIB_DEPENDS=	libtag.so:${PORTSDIR}/audio/taglib \
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	${PORTNAME}
-GH_COMMIT=	ea16b55
+GH_COMMIT=	259f253
 
-USES=		compiler:c++11-lang desktop-file-utils gmake pkgconfig
+USES=		compiler:c++0x desktop-file-utils gmake pkgconfig
 USE_SQLITE=	yes
 HAS_CONFIGURE=	yes
 CONFIGURE_ENV=	LINK="${CXX}" \
@@ -31,7 +31,6 @@ CONFIGURE_ARGS=	--prefix=${PREFIX} --fox-prefix=${LOCALBASE} \
 		--without-rsound --without-mpcdec
 INSTALLS_ICONS=	yes
 
-CFLAGS+=	-Wno-error=return-type
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib -pthread
 
@@ -86,6 +85,12 @@ VORBIS_CONFIGURE_OFF=	--without-off --without-vorbis
 WAVPACK_LIB_DEPENDS=	libwavpack.so:${PORTSDIR}/audio/wavpack
 WAVPACK_CONFIGURE_OFF=	--without-wavpack
 
+.include <bsd.port.pre.mk>
+
+.if ${COMPILER_TYPE} == clang && ${COMPILER_VERSION} < 34
+USE_GCC=	yes
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's|share/man|man|' ${WRKSRC}/configure
@@ -112,4 +117,4 @@ post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/gogglesmm/libgap_*.so
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

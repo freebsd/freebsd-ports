@@ -25,14 +25,15 @@ include/tbb/internal/_aggregator_impl.h
 include/tbb/internal/_concurrent_queue_impl.h
 include/tbb/internal/_concurrent_unordered_impl.h
 include/tbb/internal/_flow_graph_impl.h
+include/tbb/internal/_flow_graph_indexer_impl.h
 include/tbb/internal/_flow_graph_item_buffer_impl.h
 include/tbb/internal/_flow_graph_join_impl.h
 include/tbb/internal/_flow_graph_node_impl.h
-include/tbb/internal/_flow_graph_or_impl.h
 include/tbb/internal/_flow_graph_tagged_buffer_impl.h
 include/tbb/internal/_flow_graph_trace_impl.h
 include/tbb/internal/_flow_graph_types_impl.h
 include/tbb/internal/_mutex_padding.h
+include/tbb/internal/_range_iterator.h
 include/tbb/internal/_tbb_strings.h
 include/tbb/internal/_tbb_windef.h
 include/tbb/internal/_x86_eliding_mutex_impl.h

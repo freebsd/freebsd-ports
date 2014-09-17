@@ -1619,17 +1619,752 @@ bin/jruby
 %%JRUBY_HOME%%/lib/ruby/2.0/yaml.rb
 %%JRUBY_HOME%%/lib/ruby/2.0/yaml/dbm.rb
 %%JRUBY_HOME%%/lib/ruby/2.0/yaml/store.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/axiom-types-0.1.1/.rspec
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/axiom-types-0.1.1/.rubocop.yml
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/axiom-types-0.1.1/.ruby-gemset
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/axiom-types-0.1.1/.travis.yml
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/axiom-types-0.1.1/.yardopts
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/axiom-types-0.1.1/CONTRIBUTING.md
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/axiom-types-0.1.1/Gemfile
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/axiom-types-0.1.1/Gemfile.devtools
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/axiom-types-0.1.1/Guardfile
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/axiom-types-0.1.1/LICENSE
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/axiom-types-0.1.1/README.md
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/axiom-types-0.1.1/Rakefile
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/axiom-types-0.1.1/TODO
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/axiom-types-0.1.1/axiom-types.gemspec
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/axiom-types-0.1.1/config/devtools.yml
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/axiom-types-0.1.1/config/flay.yml
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/axiom-types-0.1.1/config/flog.yml
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/axiom-types-0.1.1/config/mutant.yml
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/axiom-types-0.1.1/config/reek.yml
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/axiom-types-0.1.1/config/roodi.yml
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/axiom-types-0.1.1/config/rubocop.yml
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/axiom-types-0.1.1/config/yardstick.yml
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/axiom-types-0.1.1/lib/axiom-types.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/axiom-types-0.1.1/lib/axiom/types.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/axiom-types-0.1.1/lib/axiom/types/array.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/axiom-types-0.1.1/lib/axiom/types/boolean.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/axiom-types-0.1.1/lib/axiom/types/class.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/axiom-types-0.1.1/lib/axiom/types/collection.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/axiom-types-0.1.1/lib/axiom/types/date.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/axiom-types-0.1.1/lib/axiom/types/date_time.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/axiom-types-0.1.1/lib/axiom/types/decimal.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/axiom-types-0.1.1/lib/axiom/types/encodable.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/axiom-types-0.1.1/lib/axiom/types/float.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/axiom-types-0.1.1/lib/axiom/types/hash.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/axiom-types-0.1.1/lib/axiom/types/integer.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/axiom-types-0.1.1/lib/axiom/types/length_comparable.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/axiom-types-0.1.1/lib/axiom/types/numeric.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/axiom-types-0.1.1/lib/axiom/types/object.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/axiom-types-0.1.1/lib/axiom/types/set.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/axiom-types-0.1.1/lib/axiom/types/string.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/axiom-types-0.1.1/lib/axiom/types/support/infinity.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/axiom-types-0.1.1/lib/axiom/types/support/options.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/axiom-types-0.1.1/lib/axiom/types/symbol.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/axiom-types-0.1.1/lib/axiom/types/time.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/axiom-types-0.1.1/lib/axiom/types/type.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/axiom-types-0.1.1/lib/axiom/types/value_comparable.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/axiom-types-0.1.1/lib/axiom/types/version.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/axiom-types-0.1.1/spec/spec_helper.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/axiom-types-0.1.1/spec/unit/axiom/types/array/class_methods/infer_spec.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/axiom-types-0.1.1/spec/unit/axiom/types/boolean/class_methods/infer_spec.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/axiom-types-0.1.1/spec/unit/axiom/types/class_methods/finalize_spec.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/axiom-types-0.1.1/spec/unit/axiom/types/class_methods/infer_spec.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/axiom-types-0.1.1/spec/unit/axiom/types/collection/class_methods/finalize_spec.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/axiom-types-0.1.1/spec/unit/axiom/types/collection/class_methods/infer_spec.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/axiom-types-0.1.1/spec/unit/axiom/types/encodable/class_methods/extended_spec.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/axiom-types-0.1.1/spec/unit/axiom/types/encodable/finalize_spec.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/axiom-types-0.1.1/spec/unit/axiom/types/hash/class_methods/finalize_spec.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/axiom-types-0.1.1/spec/unit/axiom/types/hash/class_methods/infer_spec.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/axiom-types-0.1.1/spec/unit/axiom/types/infinity/coerce_spec.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/axiom-types-0.1.1/spec/unit/axiom/types/infinity/spaceship_operator_spec.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/axiom-types-0.1.1/spec/unit/axiom/types/infinity/succ_spec.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/axiom-types-0.1.1/spec/unit/axiom/types/length_comparable/class_methods/extended_spec.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/axiom-types-0.1.1/spec/unit/axiom/types/length_comparable/finalize_spec.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/axiom-types-0.1.1/spec/unit/axiom/types/length_comparable/range_spec.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/axiom-types-0.1.1/spec/unit/axiom/types/negative_infinity/spaceship_operator_spec.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/axiom-types-0.1.1/spec/unit/axiom/types/object/class_methods/coercion_method_spec.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/axiom-types-0.1.1/spec/unit/axiom/types/object/class_methods/finalize_spec.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/axiom-types-0.1.1/spec/unit/axiom/types/object/class_methods/infer_spec.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/axiom-types-0.1.1/spec/unit/axiom/types/object/class_methods/inspect_spec.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/axiom-types-0.1.1/spec/unit/axiom/types/object/class_methods/primitive_spec.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/axiom-types-0.1.1/spec/unit/axiom/types/options/accept_options_spec.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/axiom-types-0.1.1/spec/unit/axiom/types/options/inherited_spec.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/axiom-types-0.1.1/spec/unit/axiom/types/set/class_methods/infer_spec.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/axiom-types-0.1.1/spec/unit/axiom/types/type/class_methods/anonymous_predicate_spec.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/axiom-types-0.1.1/spec/unit/axiom/types/type/class_methods/base_predicate_spec.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/axiom-types-0.1.1/spec/unit/axiom/types/type/class_methods/base_spec.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/axiom-types-0.1.1/spec/unit/axiom/types/type/class_methods/constraint_spec.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/axiom-types-0.1.1/spec/unit/axiom/types/type/class_methods/finalize_spec.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/axiom-types-0.1.1/spec/unit/axiom/types/type/class_methods/include_predicate_spec.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/axiom-types-0.1.1/spec/unit/axiom/types/type/class_methods/includes_spec.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/axiom-types-0.1.1/spec/unit/axiom/types/type/class_methods/infer_spec.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/axiom-types-0.1.1/spec/unit/axiom/types/type/class_methods/new_spec.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/axiom-types-0.1.1/spec/unit/axiom/types/value_comparable/class_methods/extended_spec.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/axiom-types-0.1.1/spec/unit/axiom/types/value_comparable/finalize_spec.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/axiom-types-0.1.1/spec/unit/axiom/types/value_comparable/range_spec.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/coercible-1.0.0/.rspec
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/coercible-1.0.0/.travis.yml
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/coercible-1.0.0/Changelog.md
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/coercible-1.0.0/Gemfile
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/coercible-1.0.0/Gemfile.devtools
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/coercible-1.0.0/Guardfile
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/coercible-1.0.0/LICENSE.txt
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/coercible-1.0.0/README.md
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/coercible-1.0.0/Rakefile
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/coercible-1.0.0/coercible.gemspec
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/coercible-1.0.0/config/flay.yml
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/coercible-1.0.0/config/flog.yml
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/coercible-1.0.0/config/mutant.yml
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/coercible-1.0.0/config/roodi.yml
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/coercible-1.0.0/config/site.reek
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/coercible-1.0.0/lib/coercible.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/coercible-1.0.0/lib/coercible/coercer.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/coercible-1.0.0/lib/coercible/coercer/array.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/coercible-1.0.0/lib/coercible/coercer/configurable.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/coercible-1.0.0/lib/coercible/coercer/date.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/coercible-1.0.0/lib/coercible/coercer/date_time.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/coercible-1.0.0/lib/coercible/coercer/decimal.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/coercible-1.0.0/lib/coercible/coercer/false_class.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/coercible-1.0.0/lib/coercible/coercer/float.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/coercible-1.0.0/lib/coercible/coercer/hash.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/coercible-1.0.0/lib/coercible/coercer/integer.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/coercible-1.0.0/lib/coercible/coercer/numeric.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/coercible-1.0.0/lib/coercible/coercer/object.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/coercible-1.0.0/lib/coercible/coercer/string.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/coercible-1.0.0/lib/coercible/coercer/symbol.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/coercible-1.0.0/lib/coercible/coercer/time.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/coercible-1.0.0/lib/coercible/coercer/time_coercions.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/coercible-1.0.0/lib/coercible/coercer/true_class.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/coercible-1.0.0/lib/coercible/configuration.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/coercible-1.0.0/lib/coercible/version.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/coercible-1.0.0/lib/support/options.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/coercible-1.0.0/lib/support/type_lookup.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/coercible-1.0.0/spec/integration/configuring_coercers_spec.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/coercible-1.0.0/spec/shared/unit/coerced_predicate.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/coercible-1.0.0/spec/shared/unit/configurable.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/coercible-1.0.0/spec/spec_helper.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/coercible-1.0.0/spec/unit/coercible/coercer/array/coerced_predicate_spec.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/coercible-1.0.0/spec/unit/coercible/coercer/array/to_set_spec.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/coercible-1.0.0/spec/unit/coercible/coercer/class_methods/new_spec.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/coercible-1.0.0/spec/unit/coercible/coercer/configurable/config_name_spec.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/coercible-1.0.0/spec/unit/coercible/coercer/configurable/config_spec.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/coercible-1.0.0/spec/unit/coercible/coercer/date/coerced_predicate_spec.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/coercible-1.0.0/spec/unit/coercible/coercer/date/to_date_spec.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/coercible-1.0.0/spec/unit/coercible/coercer/date/to_datetime_spec.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/coercible-1.0.0/spec/unit/coercible/coercer/date/to_string_spec.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/coercible-1.0.0/spec/unit/coercible/coercer/date/to_time_spec.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/coercible-1.0.0/spec/unit/coercible/coercer/date_time/coerced_predicate_spec.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/coercible-1.0.0/spec/unit/coercible/coercer/date_time/to_date_spec.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/coercible-1.0.0/spec/unit/coercible/coercer/date_time/to_datetime_spec.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/coercible-1.0.0/spec/unit/coercible/coercer/date_time/to_string_spec.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/coercible-1.0.0/spec/unit/coercible/coercer/date_time/to_time_spec.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/coercible-1.0.0/spec/unit/coercible/coercer/decimal/coerced_predicate_spec.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/coercible-1.0.0/spec/unit/coercible/coercer/decimal/to_decimal_spec.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/coercible-1.0.0/spec/unit/coercible/coercer/decimal/to_float_spec.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/coercible-1.0.0/spec/unit/coercible/coercer/decimal/to_integer_spec.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/coercible-1.0.0/spec/unit/coercible/coercer/decimal/to_string_spec.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/coercible-1.0.0/spec/unit/coercible/coercer/element_reader_spec.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/coercible-1.0.0/spec/unit/coercible/coercer/false_class/coerced_predicate_spec.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/coercible-1.0.0/spec/unit/coercible/coercer/false_class/to_string_spec.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/coercible-1.0.0/spec/unit/coercible/coercer/float/coerced_predicate_spec.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/coercible-1.0.0/spec/unit/coercible/coercer/float/to_datetime_spec.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/coercible-1.0.0/spec/unit/coercible/coercer/float/to_decimal_spec.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/coercible-1.0.0/spec/unit/coercible/coercer/float/to_float_spec.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/coercible-1.0.0/spec/unit/coercible/coercer/float/to_integer_spec.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/coercible-1.0.0/spec/unit/coercible/coercer/float/to_string_spec.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/coercible-1.0.0/spec/unit/coercible/coercer/hash/coerced_predicate_spec.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/coercible-1.0.0/spec/unit/coercible/coercer/hash/to_date_spec.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/coercible-1.0.0/spec/unit/coercible/coercer/hash/to_datetime_spec.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/coercible-1.0.0/spec/unit/coercible/coercer/hash/to_time_spec.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/coercible-1.0.0/spec/unit/coercible/coercer/integer/coerced_predicate_spec.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/coercible-1.0.0/spec/unit/coercible/coercer/integer/datetime_format_spec.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/coercible-1.0.0/spec/unit/coercible/coercer/integer/datetime_proc_spec.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/coercible-1.0.0/spec/unit/coercible/coercer/integer/to_boolean_spec.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/coercible-1.0.0/spec/unit/coercible/coercer/integer/to_datetime_spec.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/coercible-1.0.0/spec/unit/coercible/coercer/integer/to_decimal_spec.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/coercible-1.0.0/spec/unit/coercible/coercer/integer/to_float_spec.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/coercible-1.0.0/spec/unit/coercible/coercer/integer/to_integer_spec.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/coercible-1.0.0/spec/unit/coercible/coercer/integer/to_string_spec.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/coercible-1.0.0/spec/unit/coercible/coercer/integer_spec.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/coercible-1.0.0/spec/unit/coercible/coercer/numeric/to_decimal_spec.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/coercible-1.0.0/spec/unit/coercible/coercer/numeric/to_float_spec.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/coercible-1.0.0/spec/unit/coercible/coercer/numeric/to_integer_spec.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/coercible-1.0.0/spec/unit/coercible/coercer/numeric/to_string_spec.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/coercible-1.0.0/spec/unit/coercible/coercer/object/coerced_predicate_spec.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/coercible-1.0.0/spec/unit/coercible/coercer/object/inspect_spec.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/coercible-1.0.0/spec/unit/coercible/coercer/object/method_missing_spec.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/coercible-1.0.0/spec/unit/coercible/coercer/object/to_array_spec.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/coercible-1.0.0/spec/unit/coercible/coercer/object/to_hash_spec.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/coercible-1.0.0/spec/unit/coercible/coercer/object/to_integer_spec.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/coercible-1.0.0/spec/unit/coercible/coercer/object/to_string_spec.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/coercible-1.0.0/spec/unit/coercible/coercer/string/class_methods/config_spec.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/coercible-1.0.0/spec/unit/coercible/coercer/string/coerced_predicate_spec.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/coercible-1.0.0/spec/unit/coercible/coercer/string/to_boolean_spec.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/coercible-1.0.0/spec/unit/coercible/coercer/string/to_constant_spec.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/coercible-1.0.0/spec/unit/coercible/coercer/string/to_date_spec.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/coercible-1.0.0/spec/unit/coercible/coercer/string/to_datetime_spec.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/coercible-1.0.0/spec/unit/coercible/coercer/string/to_decimal_spec.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/coercible-1.0.0/spec/unit/coercible/coercer/string/to_float_spec.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/coercible-1.0.0/spec/unit/coercible/coercer/string/to_integer_spec.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/coercible-1.0.0/spec/unit/coercible/coercer/string/to_symbol_spec.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/coercible-1.0.0/spec/unit/coercible/coercer/string/to_time_spec.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/coercible-1.0.0/spec/unit/coercible/coercer/string_spec.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/coercible-1.0.0/spec/unit/coercible/coercer/symbol/coerced_predicate_spec.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/coercible-1.0.0/spec/unit/coercible/coercer/symbol/to_string_spec.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/coercible-1.0.0/spec/unit/coercible/coercer/time/coerced_predicate_spec.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/coercible-1.0.0/spec/unit/coercible/coercer/time/to_integer_spec.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/coercible-1.0.0/spec/unit/coercible/coercer/time/to_time_spec.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/coercible-1.0.0/spec/unit/coercible/coercer/time_coercions/to_date_spec.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/coercible-1.0.0/spec/unit/coercible/coercer/time_coercions/to_datetime_spec.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/coercible-1.0.0/spec/unit/coercible/coercer/time_coercions/to_string_spec.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/coercible-1.0.0/spec/unit/coercible/coercer/time_coercions/to_time_spec.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/coercible-1.0.0/spec/unit/coercible/coercer/true_class/coerced_predicate_spec.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/coercible-1.0.0/spec/unit/coercible/coercer/true_class/to_string_spec.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/coercible-1.0.0/spec/unit/coercible/configuration/class_methods/build_spec.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/descendants_tracker-0.0.4/.rspec
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/descendants_tracker-0.0.4/.ruby-gemset
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/descendants_tracker-0.0.4/.travis.yml
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/descendants_tracker-0.0.4/CONTRIBUTING.md
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/descendants_tracker-0.0.4/Gemfile
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/descendants_tracker-0.0.4/Gemfile.devtools
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/descendants_tracker-0.0.4/Guardfile
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/descendants_tracker-0.0.4/LICENSE
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/descendants_tracker-0.0.4/README.md
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/descendants_tracker-0.0.4/Rakefile
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/descendants_tracker-0.0.4/TODO
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/descendants_tracker-0.0.4/config/devtools.yml
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/descendants_tracker-0.0.4/config/flay.yml
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/descendants_tracker-0.0.4/config/flog.yml
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/descendants_tracker-0.0.4/config/mutant.yml
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/descendants_tracker-0.0.4/config/reek.yml
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/descendants_tracker-0.0.4/config/rubocop.yml
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/descendants_tracker-0.0.4/config/yardstick.yml
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/descendants_tracker-0.0.4/descendants_tracker.gemspec
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/descendants_tracker-0.0.4/lib/descendants_tracker.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/descendants_tracker-0.0.4/lib/descendants_tracker/version.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/descendants_tracker-0.0.4/spec/rcov.opts
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/descendants_tracker-0.0.4/spec/spec.opts
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/descendants_tracker-0.0.4/spec/spec_helper.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/descendants_tracker-0.0.4/spec/support/config_alias.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/descendants_tracker-0.0.4/spec/unit/descendants_tracker/add_descendant_spec.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/descendants_tracker-0.0.4/spec/unit/descendants_tracker/descendants_spec.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/descendants_tracker-0.0.4/spec/unit/descendants_tracker/inherited_spec.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/equalizer-0.0.9/.reek.yml
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/equalizer-0.0.9/.rspec
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/equalizer-0.0.9/.rubocop.yml
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/equalizer-0.0.9/.ruby-gemset
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/equalizer-0.0.9/.travis.yml
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/equalizer-0.0.9/.yardstick.yml
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/equalizer-0.0.9/CONTRIBUTING.md
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/equalizer-0.0.9/Gemfile
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/equalizer-0.0.9/LICENSE
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/equalizer-0.0.9/README.md
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/equalizer-0.0.9/Rakefile
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/equalizer-0.0.9/equalizer.gemspec
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/equalizer-0.0.9/lib/equalizer.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/equalizer-0.0.9/lib/equalizer/version.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/equalizer-0.0.9/spec/spec_helper.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/equalizer-0.0.9/spec/support/config_alias.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/equalizer-0.0.9/spec/unit/equalizer/included_spec.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/equalizer-0.0.9/spec/unit/equalizer/methods/eql_predicate_spec.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/equalizer-0.0.9/spec/unit/equalizer/methods/equality_operator_spec.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/equalizer-0.0.9/spec/unit/equalizer/universal_spec.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/ice_nine-0.11.0/.pelusa.yml
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/ice_nine-0.11.0/.rspec
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/ice_nine-0.11.0/.ruby-gemset
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/ice_nine-0.11.0/.travis.yml
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/ice_nine-0.11.0/.yardopts
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/ice_nine-0.11.0/CONTRIBUTING.md
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/ice_nine-0.11.0/Gemfile
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/ice_nine-0.11.0/Gemfile.devtools
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/ice_nine-0.11.0/Guardfile
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/ice_nine-0.11.0/LICENSE
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/ice_nine-0.11.0/README.md
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/ice_nine-0.11.0/Rakefile
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/ice_nine-0.11.0/TODO
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/ice_nine-0.11.0/benchmarks/speed.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/ice_nine-0.11.0/config/devtools.yml
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/ice_nine-0.11.0/config/flay.yml
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/ice_nine-0.11.0/config/flog.yml
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/ice_nine-0.11.0/config/mutant.yml
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/ice_nine-0.11.0/config/reek.yml
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/ice_nine-0.11.0/config/roodi.yml
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/ice_nine-0.11.0/config/rubocop.yml
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/ice_nine-0.11.0/config/yardstick.yml
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/ice_nine-0.11.0/ice_nine.gemspec
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/ice_nine-0.11.0/lib/ice_nine.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/ice_nine-0.11.0/lib/ice_nine/core_ext/object.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/ice_nine-0.11.0/lib/ice_nine/freezer.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/ice_nine-0.11.0/lib/ice_nine/freezer/array.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/ice_nine-0.11.0/lib/ice_nine/freezer/false_class.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/ice_nine-0.11.0/lib/ice_nine/freezer/hash.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/ice_nine-0.11.0/lib/ice_nine/freezer/hash/state.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/ice_nine-0.11.0/lib/ice_nine/freezer/module.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/ice_nine-0.11.0/lib/ice_nine/freezer/nil_class.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/ice_nine-0.11.0/lib/ice_nine/freezer/no_freeze.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/ice_nine-0.11.0/lib/ice_nine/freezer/numeric.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/ice_nine-0.11.0/lib/ice_nine/freezer/object.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/ice_nine-0.11.0/lib/ice_nine/freezer/range.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/ice_nine-0.11.0/lib/ice_nine/freezer/rubinius.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/ice_nine-0.11.0/lib/ice_nine/freezer/struct.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/ice_nine-0.11.0/lib/ice_nine/freezer/symbol.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/ice_nine-0.11.0/lib/ice_nine/freezer/true_class.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/ice_nine-0.11.0/lib/ice_nine/support/recursion_guard.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/ice_nine-0.11.0/lib/ice_nine/version.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/ice_nine-0.11.0/spec/integration/ice_nine/class_methods/deep_freeze_bang_spec.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/ice_nine-0.11.0/spec/integration/ice_nine/class_methods/deep_freeze_spec.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/ice_nine-0.11.0/spec/shared/array_deep_freeze_shared_spec.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/ice_nine-0.11.0/spec/shared/hash_deep_freeze_shared_spec.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/ice_nine-0.11.0/spec/shared/ice_nine_deep_freeze_shared_spec.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/ice_nine-0.11.0/spec/shared/no_freeze_deep_freeze_shared_spec.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/ice_nine-0.11.0/spec/shared/object_deep_freeze_shared_spec.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/ice_nine-0.11.0/spec/shared/range_deep_freeze_shared_spec.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/ice_nine-0.11.0/spec/spec_helper.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/ice_nine-0.11.0/spec/support/config_alias.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/ice_nine-0.11.0/spec/unit/ice_nine/class_methods/deep_freeze_bang_spec.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/ice_nine-0.11.0/spec/unit/ice_nine/class_methods/deep_freeze_spec.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/ice_nine-0.11.0/spec/unit/ice_nine/core_ext/object/deep_freeze_bang_spec.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/ice_nine-0.11.0/spec/unit/ice_nine/core_ext/object/deep_freeze_spec.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/ice_nine-0.11.0/spec/unit/ice_nine/freezer/array/class_methods/deep_freeze_spec.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/ice_nine-0.11.0/spec/unit/ice_nine/freezer/class_methods/element_reader_spec.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/ice_nine-0.11.0/spec/unit/ice_nine/freezer/false_class/class_methods/deep_freeze_spec.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/ice_nine-0.11.0/spec/unit/ice_nine/freezer/hash/class_methods/deep_freeze_spec.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/ice_nine-0.11.0/spec/unit/ice_nine/freezer/module/class_methods/deep_freeze_spec.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/ice_nine-0.11.0/spec/unit/ice_nine/freezer/nil_class/class_methods/deep_freeze_spec.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/ice_nine-0.11.0/spec/unit/ice_nine/freezer/no_freeze/class_methods/deep_freeze_spec.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/ice_nine-0.11.0/spec/unit/ice_nine/freezer/numeric/class_methods/deep_freeze_spec.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/ice_nine-0.11.0/spec/unit/ice_nine/freezer/object/class_methods/deep_freeze_spec.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/ice_nine-0.11.0/spec/unit/ice_nine/freezer/range/class_methods/deep_freeze_spec.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/ice_nine-0.11.0/spec/unit/ice_nine/freezer/struct/class_methods/deep_freeze_spec.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/ice_nine-0.11.0/spec/unit/ice_nine/freezer/symbol/class_methods/deep_freeze_spec.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/ice_nine-0.11.0/spec/unit/ice_nine/freezer/true_class/class_methods/deep_freeze_spec.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/ice_nine-0.11.0/spec/unit/ice_nine/recursion_guard/frozen/guard_spec.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/ice_nine-0.11.0/spec/unit/ice_nine/recursion_guard/object_set/guard_spec.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/ice_nine-0.11.0/spec/unit/object/deep_freeze_spec.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/maven-tools-1.0.4/Gemfile
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/maven-tools-1.0.4/MIT-LICENSE
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/maven-tools-1.0.4/Mavenfile
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/maven-tools-1.0.4/README.md
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/maven-tools-1.0.4/Rakefile
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/maven-tools-1.0.4/lib/maven-tools.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/maven-tools-1.0.4/lib/maven/tools/artifact.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/maven-tools-1.0.4/lib/maven/tools/coordinate.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/maven-tools-1.0.4/lib/maven/tools/dsl.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/maven-tools-1.0.4/lib/maven/tools/gemfile_lock.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/maven-tools-1.0.4/lib/maven/tools/gemspec_dependencies.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/maven-tools-1.0.4/lib/maven/tools/jarfile.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/maven-tools-1.0.4/lib/maven/tools/model.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/maven-tools-1.0.4/lib/maven/tools/pom.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/maven-tools-1.0.4/lib/maven/tools/version.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/maven-tools-1.0.4/lib/maven/tools/versions.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/maven-tools-1.0.4/lib/maven/tools/visitor.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/maven-tools-1.0.4/lib/maven_tools.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/maven-tools-1.0.4/maven-tools.gemspec
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/maven-tools-1.0.4/spec/artifact_spec.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/maven-tools-1.0.4/spec/coordinate_spec.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/maven-tools-1.0.4/spec/gemfile/Gemfile
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/maven-tools-1.0.4/spec/gemfile/Mavenfile
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/maven-tools-1.0.4/spec/gemfile/bouncy-castle-java.gemspec
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/maven-tools-1.0.4/spec/gemfile/bouncy-castle-version.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/maven-tools-1.0.4/spec/gemfile/pom.xml
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/maven-tools-1.0.4/spec/gemfile_include_jars/Gemfile
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/maven-tools-1.0.4/spec/gemfile_include_jars/Mavenfile
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/maven-tools-1.0.4/spec/gemfile_include_jars/bouncy-castle-java.gemspec
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/maven-tools-1.0.4/spec/gemfile_include_jars/bouncy-castle-version.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/maven-tools-1.0.4/spec/gemfile_include_jars/pom.xml
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/maven-tools-1.0.4/spec/gemfile_with_access_to_model/Gemfile
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/maven-tools-1.0.4/spec/gemfile_with_access_to_model/Mavenfile
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/maven-tools-1.0.4/spec/gemfile_with_access_to_model/bouncy-castle-java.gemspec
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/maven-tools-1.0.4/spec/gemfile_with_access_to_model/pom.xml
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/maven-tools-1.0.4/spec/gemfile_with_custom_source/Gemfile
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/maven-tools-1.0.4/spec/gemfile_with_custom_source/Mavenfile
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/maven-tools-1.0.4/spec/gemfile_with_custom_source/bouncy-castle-java.gemspec
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/maven-tools-1.0.4/spec/gemfile_with_custom_source/pom.xml
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/maven-tools-1.0.4/spec/gemfile_with_custom_source/src/java/.keep
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/maven-tools-1.0.4/spec/gemfile_with_custom_source_and_custom_jarname/Gemfile
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/maven-tools-1.0.4/spec/gemfile_with_custom_source_and_custom_jarname/Mavenfile
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/maven-tools-1.0.4/spec/gemfile_with_custom_source_and_custom_jarname/bouncy-castle-java.gemspec
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/maven-tools-1.0.4/spec/gemfile_with_custom_source_and_custom_jarname/pom.xml
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/maven-tools-1.0.4/spec/gemfile_with_custom_source_and_custom_jarname/src/java/.keep
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/maven-tools-1.0.4/spec/gemfile_with_extras/Gemfile
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/maven-tools-1.0.4/spec/gemfile_with_extras/Mavenfile
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/maven-tools-1.0.4/spec/gemfile_with_extras/bouncy-castle-java.gemspec
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/maven-tools-1.0.4/spec/gemfile_with_extras/bouncy-castle-version.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/maven-tools-1.0.4/spec/gemfile_with_extras/pom.xml
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/maven-tools-1.0.4/spec/gemfile_with_groups/Gemfile
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/maven-tools-1.0.4/spec/gemfile_with_groups/Mavenfile
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/maven-tools-1.0.4/spec/gemfile_with_groups/pom.xml
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/maven-tools-1.0.4/spec/gemfile_with_groups_and_lockfile/Gemfile
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/maven-tools-1.0.4/spec/gemfile_with_groups_and_lockfile/Gemfile.lock
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/maven-tools-1.0.4/spec/gemfile_with_groups_and_lockfile/Mavenfile
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/maven-tools-1.0.4/spec/gemfile_with_groups_and_lockfile/pom.xml
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/maven-tools-1.0.4/spec/gemfile_with_lock/Gemfile
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/maven-tools-1.0.4/spec/gemfile_with_lock/Gemfile.lock
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/maven-tools-1.0.4/spec/gemfile_with_lock/Mavenfile
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/maven-tools-1.0.4/spec/gemfile_with_lock/bouncy-castle-java.gemspec
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/maven-tools-1.0.4/spec/gemfile_with_lock/bouncy-castle-version.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/maven-tools-1.0.4/spec/gemfile_with_lock/pom.xml
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/maven-tools-1.0.4/spec/gemfile_with_path/Gemfile
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/maven-tools-1.0.4/spec/gemfile_with_path/Mavenfile
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/maven-tools-1.0.4/spec/gemfile_with_path/pom.xml
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/maven-tools-1.0.4/spec/gemfile_with_platforms/Gemfile
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/maven-tools-1.0.4/spec/gemfile_with_platforms/Mavenfile
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/maven-tools-1.0.4/spec/gemfile_with_platforms/pom.xml
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/maven-tools-1.0.4/spec/gemfile_with_source/Mavenfile
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/maven-tools-1.0.4/spec/gemfile_with_source/bouncy-castle-java.gemspec
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/maven-tools-1.0.4/spec/gemfile_with_source/bouncy-castle-version.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/maven-tools-1.0.4/spec/gemfile_with_source/pom.xml
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/maven-tools-1.0.4/spec/gemfile_with_source/src/main/java/.keep
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/maven-tools-1.0.4/spec/gemfile_with_source_and_custom_jarname/Gemfile
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/maven-tools-1.0.4/spec/gemfile_with_source_and_custom_jarname/Mavenfile
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/maven-tools-1.0.4/spec/gemfile_with_source_and_custom_jarname/bouncy-castle-java.gemspec
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/maven-tools-1.0.4/spec/gemfile_with_source_and_custom_jarname/pom.xml
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/maven-tools-1.0.4/spec/gemfile_with_source_and_custom_jarname/src/main/java/.keep
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/maven-tools-1.0.4/spec/gemfile_with_source_and_no_jar/Gemfile
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/maven-tools-1.0.4/spec/gemfile_with_source_and_no_jar/Mavenfile
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/maven-tools-1.0.4/spec/gemfile_with_source_and_no_jar/bouncy-castle-java.gemspec
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/maven-tools-1.0.4/spec/gemfile_with_source_and_no_jar/pom.xml
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/maven-tools-1.0.4/spec/gemfile_with_source_and_no_jar/src/main/java/.keep
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/maven-tools-1.0.4/spec/gemfile_with_test_group/Gemfile
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/maven-tools-1.0.4/spec/gemfile_with_test_group/Gemfile.lock
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/maven-tools-1.0.4/spec/gemfile_with_test_group/Mavenfile
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/maven-tools-1.0.4/spec/gemfile_with_test_group/pom.xml
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/maven-tools-1.0.4/spec/gemfile_without_gemspec/Gemfile
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/maven-tools-1.0.4/spec/gemfile_without_gemspec/Mavenfile
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/maven-tools-1.0.4/spec/gemfile_without_gemspec/pom.xml
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/maven-tools-1.0.4/spec/gemspec/Mavenfile
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/maven-tools-1.0.4/spec/gemspec/bouncy-castle-java.gemspec
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/maven-tools-1.0.4/spec/gemspec/bouncy-castle-version.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/maven-tools-1.0.4/spec/gemspec/pom.xml
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/maven-tools-1.0.4/spec/gemspec_dependencies_spec.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/maven-tools-1.0.4/spec/gemspec_in_profile/Mavenfile
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/maven-tools-1.0.4/spec/gemspec_in_profile/bouncy-castle-java.gemspec
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/maven-tools-1.0.4/spec/gemspec_in_profile/bouncy-castle-version.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/maven-tools-1.0.4/spec/gemspec_in_profile/pom.xml
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/maven-tools-1.0.4/spec/gemspec_include_jars/Mavenfile
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/maven-tools-1.0.4/spec/gemspec_include_jars/bouncy-castle-java.gemspec
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/maven-tools-1.0.4/spec/gemspec_include_jars/bouncy-castle-version.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/maven-tools-1.0.4/spec/gemspec_include_jars/pom.xml
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/maven-tools-1.0.4/spec/gemspec_no_rubygems_repo/Mavenfile
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/maven-tools-1.0.4/spec/gemspec_no_rubygems_repo/bouncy-castle-java.gemspec
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/maven-tools-1.0.4/spec/gemspec_no_rubygems_repo/pom.xml
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/maven-tools-1.0.4/spec/gemspec_prerelease/Mavenfile
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/maven-tools-1.0.4/spec/gemspec_prerelease/bouncy-castle-java.gemspec
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/maven-tools-1.0.4/spec/gemspec_prerelease/pom.xml
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/maven-tools-1.0.4/spec/gemspec_prerelease_snapshot/Mavenfile
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/maven-tools-1.0.4/spec/gemspec_prerelease_snapshot/bouncy-castle-java.gemspec
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/maven-tools-1.0.4/spec/gemspec_prerelease_snapshot/pom.xml
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/maven-tools-1.0.4/spec/gemspec_with_access_to_model/Mavenfile
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/maven-tools-1.0.4/spec/gemspec_with_access_to_model/bouncy-castle-java.gemspec
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/maven-tools-1.0.4/spec/gemspec_with_access_to_model/pom.xml
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/maven-tools-1.0.4/spec/gemspec_with_custom_source/Mavenfile
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/maven-tools-1.0.4/spec/gemspec_with_custom_source/bouncy-castle-java.gemspec
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/maven-tools-1.0.4/spec/gemspec_with_custom_source/pom.xml
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/maven-tools-1.0.4/spec/gemspec_with_custom_source/src/java/.keep
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/maven-tools-1.0.4/spec/gemspec_with_custom_source_and_custom_jarname/Mavenfile
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/maven-tools-1.0.4/spec/gemspec_with_custom_source_and_custom_jarname/bouncy-castle-java.gemspec
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/maven-tools-1.0.4/spec/gemspec_with_custom_source_and_custom_jarname/pom.xml
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/maven-tools-1.0.4/spec/gemspec_with_custom_source_and_custom_jarname/src/java/.keep
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/maven-tools-1.0.4/spec/gemspec_with_extras/Mavenfile
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/maven-tools-1.0.4/spec/gemspec_with_extras/bouncy-castle-java.gemspec
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/maven-tools-1.0.4/spec/gemspec_with_extras/bouncy-castle-version.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/maven-tools-1.0.4/spec/gemspec_with_extras/pom.xml
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/maven-tools-1.0.4/spec/gemspec_with_prereleased_dependency/Mavenfile
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/maven-tools-1.0.4/spec/gemspec_with_prereleased_dependency/bouncy-castle-java.gemspec
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/maven-tools-1.0.4/spec/gemspec_with_prereleased_dependency/pom.xml
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/maven-tools-1.0.4/spec/gemspec_with_prereleased_dependency_and_no_repo/Mavenfile
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/maven-tools-1.0.4/spec/gemspec_with_prereleased_dependency_and_no_repo/bouncy-castle-java.gemspec
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/maven-tools-1.0.4/spec/gemspec_with_prereleased_dependency_and_no_repo/pom.xml
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/maven-tools-1.0.4/spec/gemspec_with_source/Mavenfile
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/maven-tools-1.0.4/spec/gemspec_with_source/bouncy-castle-java.gemspec
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/maven-tools-1.0.4/spec/gemspec_with_source/bouncy-castle-version.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/maven-tools-1.0.4/spec/gemspec_with_source/pom.xml
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/maven-tools-1.0.4/spec/gemspec_with_source/src/main/java/.keep
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/maven-tools-1.0.4/spec/gemspec_with_source_and_custom_jarname/Mavenfile
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/maven-tools-1.0.4/spec/gemspec_with_source_and_custom_jarname/bouncy-castle-java.gemspec
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/maven-tools-1.0.4/spec/gemspec_with_source_and_custom_jarname/pom.xml
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/maven-tools-1.0.4/spec/gemspec_with_source_and_custom_jarname/src/main/java/.keep
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/maven-tools-1.0.4/spec/gemspec_with_source_and_no_jar/Mavenfile
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/maven-tools-1.0.4/spec/gemspec_with_source_and_no_jar/bouncy-castle-java.gemspec
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/maven-tools-1.0.4/spec/gemspec_with_source_and_no_jar/pom.xml
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/maven-tools-1.0.4/spec/gemspec_with_source_and_no_jar/src/main/java/.keep
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/maven-tools-1.0.4/spec/jarfile_spec.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/maven-tools-1.0.4/spec/mavenfile/Mavenfile
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/maven-tools-1.0.4/spec/my/my.gemspec
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/maven-tools-1.0.4/spec/pom.xml
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/maven-tools-1.0.4/spec/pom_from_jarfile/Jarfile
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/maven-tools-1.0.4/spec/pom_from_jarfile/pom.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/maven-tools-1.0.4/spec/pom_from_jarfile/pom.xml
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/maven-tools-1.0.4/spec/pom_from_jarfile_with_repos/Jarfile
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/maven-tools-1.0.4/spec/pom_from_jarfile_with_repos/Mavenfile
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/maven-tools-1.0.4/spec/pom_from_jarfile_with_repos/pom.xml
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/maven-tools-1.0.4/spec/pom_maven_alternative_style/pom.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/maven-tools-1.0.4/spec/pom_maven_hash_style/pom.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/maven-tools-1.0.4/spec/pom_maven_style/pom.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/maven-tools-1.0.4/spec/pom_spec.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/maven-tools-1.0.4/spec/pom_with_execute/pom.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/maven-tools-1.0.4/spec/pom_with_execute/pom.xml
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/maven-tools-1.0.4/spec/spec_helper.rb
 %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/rake-10.1.0/bin/rake
 %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/rdoc-4.0.1/bin/rdoc
 %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/rdoc-4.0.1/bin/ri
-%%JRUBY_HOME%%/lib/ruby/gems/shared/specifications/default/bouncy-castle-java-1.5.0147.gemspec
-%%JRUBY_HOME%%/lib/ruby/gems/shared/specifications/default/jruby-openssl-0.9.3.gemspec
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/ruby-maven-3.1.1.0.8/bin/m2.conf
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/ruby-maven-3.1.1.0.8/bin/m2jruby.conf
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/ruby-maven-3.1.1.0.8/bin/rmvn
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/ruby-maven-3.1.1.0.8/ext/ruby/tesla-polyglot-ruby-0.1.1.jar
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/ruby-maven-3.1.1.0.8/lib/tesla-polyglot-cli-0.1.1.jar
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/ruby-maven-3.1.1.0.8/lib/tesla-polyglot-common-0.1.1.jar
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/ruby-maven-3.1.1.0.8/ruby/maven/ruby.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/ruby-maven-3.1.1.0.8/ruby/maven/ruby/maven.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/ruby-maven-3.1.1.0.8/ruby/maven/ruby/tasks.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/ruby-maven-3.1.1.0.8/ruby/maven/ruby/version.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/ruby-maven-3.1.1.0.8/ruby/ruby-maven.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/ruby-maven-3.1.1.0.8/ruby/ruby_maven.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/ruby-maven-3.1.1.0.8/ruby/tesla_maven.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/ruby-maven-libs-3.1.1/LICENSE
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/ruby-maven-libs-3.1.1/NOTICE
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/ruby-maven-libs-3.1.1/README.txt
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/ruby-maven-libs-3.1.1/bin/m2.conf
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/ruby-maven-libs-3.1.1/bin/mvn
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/ruby-maven-libs-3.1.1/bin/mvnDebug
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/ruby-maven-libs-3.1.1/bin/mvnyjp
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/ruby-maven-libs-3.1.1/boot/plexus-classworlds-2.5.1.jar
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/ruby-maven-libs-3.1.1/conf/logging/simplelogger.properties
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/ruby-maven-libs-3.1.1/conf/settings.xml
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/ruby-maven-libs-3.1.1/lib/aether-api-0.9.0.M2.jar
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/ruby-maven-libs-3.1.1/lib/aether-api.license
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/ruby-maven-libs-3.1.1/lib/aether-connector-wagon-0.9.0.M2.jar
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/ruby-maven-libs-3.1.1/lib/aether-connector-wagon.license
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/ruby-maven-libs-3.1.1/lib/aether-impl-0.9.0.M2.jar
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/ruby-maven-libs-3.1.1/lib/aether-impl.license
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/ruby-maven-libs-3.1.1/lib/aether-spi-0.9.0.M2.jar
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/ruby-maven-libs-3.1.1/lib/aether-spi.license
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/ruby-maven-libs-3.1.1/lib/aether-util-0.9.0.M2.jar
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/ruby-maven-libs-3.1.1/lib/aether-util.license
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/ruby-maven-libs-3.1.1/lib/aopalliance-1.0.jar
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/ruby-maven-libs-3.1.1/lib/cdi-api-1.0.jar
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/ruby-maven-libs-3.1.1/lib/cdi-api.license
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/ruby-maven-libs-3.1.1/lib/commons-cli-1.2.jar
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/ruby-maven-libs-3.1.1/lib/ext/README.txt
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/ruby-maven-libs-3.1.1/lib/guava-11.0.2.jar
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/ruby-maven-libs-3.1.1/lib/javax.inject-1.jar
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/ruby-maven-libs-3.1.1/lib/jsr250-api-1.0.jar
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/ruby-maven-libs-3.1.1/lib/jsr250-api.license
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/ruby-maven-libs-3.1.1/lib/jsr305-1.3.9.jar
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/ruby-maven-libs-3.1.1/lib/maven-aether-provider-3.1.1.jar
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/ruby-maven-libs-3.1.1/lib/maven-artifact-3.1.1.jar
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/ruby-maven-libs-3.1.1/lib/maven-compat-3.1.1.jar
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/ruby-maven-libs-3.1.1/lib/maven-core-3.1.1.jar
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/ruby-maven-libs-3.1.1/lib/maven-embedder-3.1.1.jar
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/ruby-maven-libs-3.1.1/lib/maven-model-3.1.1.jar
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/ruby-maven-libs-3.1.1/lib/maven-model-builder-3.1.1.jar
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/ruby-maven-libs-3.1.1/lib/maven-plugin-api-3.1.1.jar
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/ruby-maven-libs-3.1.1/lib/maven-repository-metadata-3.1.1.jar
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/ruby-maven-libs-3.1.1/lib/maven-settings-3.1.1.jar
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/ruby-maven-libs-3.1.1/lib/maven-settings-builder-3.1.1.jar
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/ruby-maven-libs-3.1.1/lib/org.eclipse.sisu.inject-0.0.0.M5.jar
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/ruby-maven-libs-3.1.1/lib/org.eclipse.sisu.inject.license
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/ruby-maven-libs-3.1.1/lib/org.eclipse.sisu.plexus-0.0.0.M5.jar
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/ruby-maven-libs-3.1.1/lib/org.eclipse.sisu.plexus.license
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/ruby-maven-libs-3.1.1/lib/plexus-cipher-1.7.jar
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/ruby-maven-libs-3.1.1/lib/plexus-cipher.license
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/ruby-maven-libs-3.1.1/lib/plexus-component-annotations-1.5.5.jar
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/ruby-maven-libs-3.1.1/lib/plexus-interpolation-1.19.jar
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/ruby-maven-libs-3.1.1/lib/plexus-sec-dispatcher-1.3.jar
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/ruby-maven-libs-3.1.1/lib/plexus-sec-dispatcher.license
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/ruby-maven-libs-3.1.1/lib/plexus-utils-3.0.15.jar
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/ruby-maven-libs-3.1.1/lib/sisu-guice-3.1.3-no_aop.jar
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/ruby-maven-libs-3.1.1/lib/slf4j-api-1.7.5.jar
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/ruby-maven-libs-3.1.1/lib/slf4j-api.license
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/ruby-maven-libs-3.1.1/lib/slf4j-simple-1.7.5.jar
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/ruby-maven-libs-3.1.1/lib/slf4j-simple.license
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/ruby-maven-libs-3.1.1/lib/wagon-file-2.4.jar
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/ruby-maven-libs-3.1.1/lib/wagon-http-2.4-shaded.jar
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/ruby-maven-libs-3.1.1/lib/wagon-provider-api-2.4.jar
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/ruby-maven-libs-3.1.1/ruby/maven.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/thread_safe-0.3.4-java/.travis.yml
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/thread_safe-0.3.4-java/Gemfile
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/thread_safe-0.3.4-java/LICENSE
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/thread_safe-0.3.4-java/README.md
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/thread_safe-0.3.4-java/Rakefile
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/thread_safe-0.3.4-java/examples/bench_cache.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/thread_safe-0.3.4-java/ext/org/jruby/ext/thread_safe/JRubyCacheBackendLibrary.java
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/thread_safe-0.3.4-java/ext/org/jruby/ext/thread_safe/jsr166e/ConcurrentHashMap.java
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/thread_safe-0.3.4-java/ext/org/jruby/ext/thread_safe/jsr166e/ConcurrentHashMapV8.java
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/thread_safe-0.3.4-java/ext/org/jruby/ext/thread_safe/jsr166e/LongAdder.java
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/thread_safe-0.3.4-java/ext/org/jruby/ext/thread_safe/jsr166e/Striped64.java
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/thread_safe-0.3.4-java/ext/org/jruby/ext/thread_safe/jsr166e/nounsafe/ConcurrentHashMapV8.java
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/thread_safe-0.3.4-java/ext/org/jruby/ext/thread_safe/jsr166e/nounsafe/LongAdder.java
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/thread_safe-0.3.4-java/ext/org/jruby/ext/thread_safe/jsr166e/nounsafe/Striped64.java
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/thread_safe-0.3.4-java/ext/org/jruby/ext/thread_safe/jsr166y/ThreadLocalRandom.java
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/thread_safe-0.3.4-java/ext/thread_safe/JrubyCacheBackendService.java
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/thread_safe-0.3.4-java/lib/thread_safe.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/thread_safe-0.3.4-java/lib/thread_safe/atomic_reference_cache_backend.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/thread_safe-0.3.4-java/lib/thread_safe/cache.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/thread_safe-0.3.4-java/lib/thread_safe/jruby_cache_backend.jar
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/thread_safe-0.3.4-java/lib/thread_safe/mri_cache_backend.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/thread_safe-0.3.4-java/lib/thread_safe/non_concurrent_cache_backend.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/thread_safe-0.3.4-java/lib/thread_safe/synchronized_cache_backend.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/thread_safe-0.3.4-java/lib/thread_safe/synchronized_delegator.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/thread_safe-0.3.4-java/lib/thread_safe/util.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/thread_safe-0.3.4-java/lib/thread_safe/util/adder.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/thread_safe-0.3.4-java/lib/thread_safe/util/atomic_reference.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/thread_safe-0.3.4-java/lib/thread_safe/util/cheap_lockable.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/thread_safe-0.3.4-java/lib/thread_safe/util/power_of_two_tuple.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/thread_safe-0.3.4-java/lib/thread_safe/util/striped64.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/thread_safe-0.3.4-java/lib/thread_safe/util/volatile.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/thread_safe-0.3.4-java/lib/thread_safe/util/volatile_tuple.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/thread_safe-0.3.4-java/lib/thread_safe/util/xor_shift_random.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/thread_safe-0.3.4-java/lib/thread_safe/version.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/thread_safe-0.3.4-java/test/src/thread_safe/SecurityManager.java
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/thread_safe-0.3.4-java/test/test_array.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/thread_safe-0.3.4-java/test/test_cache.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/thread_safe-0.3.4-java/test/test_cache_loops.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/thread_safe-0.3.4-java/test/test_hash.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/thread_safe-0.3.4-java/test/test_helper.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/thread_safe-0.3.4-java/test/test_synchronized_delegator.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/thread_safe-0.3.4-java/thread_safe.gemspec
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/virtus-1.0.3/.pelusa.yml
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/virtus-1.0.3/.rspec
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/virtus-1.0.3/.ruby-gemset
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/virtus-1.0.3/.ruby-version
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/virtus-1.0.3/.travis.yml
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/virtus-1.0.3/.yardopts
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/virtus-1.0.3/CONTRIBUTING.md
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/virtus-1.0.3/Changelog.md
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/virtus-1.0.3/Gemfile
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/virtus-1.0.3/Gemfile.devtools
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/virtus-1.0.3/Guardfile
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/virtus-1.0.3/LICENSE
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/virtus-1.0.3/README.md
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/virtus-1.0.3/Rakefile
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/virtus-1.0.3/TODO.md
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/virtus-1.0.3/config/flay.yml
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/virtus-1.0.3/config/flog.yml
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/virtus-1.0.3/config/mutant.yml
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/virtus-1.0.3/config/reek.yml
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/virtus-1.0.3/config/yardstick.yml
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/virtus-1.0.3/lib/virtus.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/virtus-1.0.3/lib/virtus/attribute.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/virtus-1.0.3/lib/virtus/attribute/accessor.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/virtus-1.0.3/lib/virtus/attribute/boolean.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/virtus-1.0.3/lib/virtus/attribute/builder.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/virtus-1.0.3/lib/virtus/attribute/coercer.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/virtus-1.0.3/lib/virtus/attribute/coercible.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/virtus-1.0.3/lib/virtus/attribute/collection.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/virtus-1.0.3/lib/virtus/attribute/default_value.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/virtus-1.0.3/lib/virtus/attribute/default_value/from_callable.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/virtus-1.0.3/lib/virtus/attribute/default_value/from_clonable.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/virtus-1.0.3/lib/virtus/attribute/default_value/from_symbol.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/virtus-1.0.3/lib/virtus/attribute/embedded_value.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/virtus-1.0.3/lib/virtus/attribute/hash.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/virtus-1.0.3/lib/virtus/attribute/lazy_default.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/virtus-1.0.3/lib/virtus/attribute/strict.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/virtus-1.0.3/lib/virtus/attribute_set.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/virtus-1.0.3/lib/virtus/builder.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/virtus-1.0.3/lib/virtus/builder/hook_context.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/virtus-1.0.3/lib/virtus/class_inclusions.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/virtus-1.0.3/lib/virtus/class_methods.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/virtus-1.0.3/lib/virtus/coercer.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/virtus-1.0.3/lib/virtus/configuration.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/virtus-1.0.3/lib/virtus/const_missing_extensions.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/virtus-1.0.3/lib/virtus/extensions.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/virtus-1.0.3/lib/virtus/instance_methods.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/virtus-1.0.3/lib/virtus/model.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/virtus-1.0.3/lib/virtus/module_extensions.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/virtus-1.0.3/lib/virtus/support/equalizer.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/virtus-1.0.3/lib/virtus/support/options.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/virtus-1.0.3/lib/virtus/support/type_lookup.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/virtus-1.0.3/lib/virtus/value_object.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/virtus-1.0.3/lib/virtus/version.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/virtus-1.0.3/spec/integration/building_module_spec.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/virtus-1.0.3/spec/integration/collection_member_coercion_spec.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/virtus-1.0.3/spec/integration/custom_attributes_spec.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/virtus-1.0.3/spec/integration/custom_collection_attributes_spec.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/virtus-1.0.3/spec/integration/default_values_spec.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/virtus-1.0.3/spec/integration/defining_attributes_spec.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/virtus-1.0.3/spec/integration/embedded_value_spec.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/virtus-1.0.3/spec/integration/extending_objects_spec.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/virtus-1.0.3/spec/integration/hash_attributes_coercion_spec.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/virtus-1.0.3/spec/integration/inheritance_spec.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/virtus-1.0.3/spec/integration/injectible_coercers_spec.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/virtus-1.0.3/spec/integration/mass_assignment_with_accessors_spec.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/virtus-1.0.3/spec/integration/overriding_virtus_spec.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/virtus-1.0.3/spec/integration/required_attributes_spec.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/virtus-1.0.3/spec/integration/struct_as_embedded_value_spec.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/virtus-1.0.3/spec/integration/using_modules_spec.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/virtus-1.0.3/spec/integration/value_object_with_custom_constructor_spec.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/virtus-1.0.3/spec/integration/virtus/instance_level_attributes_spec.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/virtus-1.0.3/spec/integration/virtus/value_object_spec.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/virtus-1.0.3/spec/shared/constants_helpers.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/virtus-1.0.3/spec/shared/freeze_method_behavior.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/virtus-1.0.3/spec/shared/idempotent_method_behaviour.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/virtus-1.0.3/spec/shared/options_class_method.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/virtus-1.0.3/spec/spec_helper.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/virtus-1.0.3/spec/unit/virtus/attribute/boolean/coerce_spec.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/virtus-1.0.3/spec/unit/virtus/attribute/boolean/value_coerced_predicate_spec.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/virtus-1.0.3/spec/unit/virtus/attribute/class_methods/build_spec.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/virtus-1.0.3/spec/unit/virtus/attribute/class_methods/coerce_spec.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/virtus-1.0.3/spec/unit/virtus/attribute/coerce_spec.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/virtus-1.0.3/spec/unit/virtus/attribute/coercible_predicate_spec.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/virtus-1.0.3/spec/unit/virtus/attribute/collection/class_methods/build_spec.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/virtus-1.0.3/spec/unit/virtus/attribute/collection/coerce_spec.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/virtus-1.0.3/spec/unit/virtus/attribute/custom_collection_spec.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/virtus-1.0.3/spec/unit/virtus/attribute/defined_spec.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/virtus-1.0.3/spec/unit/virtus/attribute/embedded_value/class_methods/build_spec.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/virtus-1.0.3/spec/unit/virtus/attribute/embedded_value/coerce_spec.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/virtus-1.0.3/spec/unit/virtus/attribute/get_spec.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/virtus-1.0.3/spec/unit/virtus/attribute/hash/class_methods/build_spec.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/virtus-1.0.3/spec/unit/virtus/attribute/hash/coerce_spec.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/virtus-1.0.3/spec/unit/virtus/attribute/lazy_predicate_spec.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/virtus-1.0.3/spec/unit/virtus/attribute/rename_spec.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/virtus-1.0.3/spec/unit/virtus/attribute/required_predicate_spec.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/virtus-1.0.3/spec/unit/virtus/attribute/set_default_value_spec.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/virtus-1.0.3/spec/unit/virtus/attribute/set_spec.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/virtus-1.0.3/spec/unit/virtus/attribute/value_coerced_predicate_spec.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/virtus-1.0.3/spec/unit/virtus/attribute_set/append_spec.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/virtus-1.0.3/spec/unit/virtus/attribute_set/define_reader_method_spec.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/virtus-1.0.3/spec/unit/virtus/attribute_set/define_writer_method_spec.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/virtus-1.0.3/spec/unit/virtus/attribute_set/each_spec.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/virtus-1.0.3/spec/unit/virtus/attribute_set/element_reference_spec.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/virtus-1.0.3/spec/unit/virtus/attribute_set/element_set_spec.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/virtus-1.0.3/spec/unit/virtus/attribute_set/merge_spec.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/virtus-1.0.3/spec/unit/virtus/attribute_set/reset_spec.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/virtus-1.0.3/spec/unit/virtus/attribute_spec.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/virtus-1.0.3/spec/unit/virtus/attributes_reader_spec.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/virtus-1.0.3/spec/unit/virtus/attributes_writer_spec.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/virtus-1.0.3/spec/unit/virtus/class_methods/finalize_spec.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/virtus-1.0.3/spec/unit/virtus/class_methods/new_spec.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/virtus-1.0.3/spec/unit/virtus/config_spec.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/virtus-1.0.3/spec/unit/virtus/element_reader_spec.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/virtus-1.0.3/spec/unit/virtus/element_writer_spec.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/virtus-1.0.3/spec/unit/virtus/freeze_spec.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/virtus-1.0.3/spec/unit/virtus/model_spec.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/virtus-1.0.3/spec/unit/virtus/module_spec.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/virtus-1.0.3/spec/unit/virtus/set_default_attributes_spec.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/virtus-1.0.3/spec/unit/virtus/value_object_spec.rb
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/virtus-1.0.3/virtus.gemspec
+%%JRUBY_HOME%%/lib/ruby/gems/shared/specifications/axiom-types-0.1.1.gemspec
+%%JRUBY_HOME%%/lib/ruby/gems/shared/specifications/coercible-1.0.0.gemspec
+%%JRUBY_HOME%%/lib/ruby/gems/shared/specifications/default/ffi-1.9.3-java.gemspec
+%%JRUBY_HOME%%/lib/ruby/gems/shared/specifications/default/jar-dependencies-0.0.9.gemspec
+%%JRUBY_HOME%%/lib/ruby/gems/shared/specifications/default/jruby-openssl-0.9.5-java.gemspec
 %%JRUBY_HOME%%/lib/ruby/gems/shared/specifications/default/json-1.8.0-java.gemspec
-%%JRUBY_HOME%%/lib/ruby/gems/shared/specifications/default/krypt-0.0.1.gemspec
-%%JRUBY_HOME%%/lib/ruby/gems/shared/specifications/default/krypt-core-0.0.1-universal-java.gemspec
-%%JRUBY_HOME%%/lib/ruby/gems/shared/specifications/default/krypt-provider-jdk-0.0.1.gemspec
+%%JRUBY_HOME%%/lib/ruby/gems/shared/specifications/default/krypt-0.0.2.gemspec
+%%JRUBY_HOME%%/lib/ruby/gems/shared/specifications/default/krypt-core-0.0.2-universal-java.gemspec
+%%JRUBY_HOME%%/lib/ruby/gems/shared/specifications/default/krypt-provider-jdk-0.0.2.gemspec
 %%JRUBY_HOME%%/lib/ruby/gems/shared/specifications/default/rake-10.1.0.gemspec
 %%JRUBY_HOME%%/lib/ruby/gems/shared/specifications/default/rdoc-4.0.1.gemspec
+%%JRUBY_HOME%%/lib/ruby/gems/shared/specifications/descendants_tracker-0.0.4.gemspec
+%%JRUBY_HOME%%/lib/ruby/gems/shared/specifications/equalizer-0.0.9.gemspec
+%%JRUBY_HOME%%/lib/ruby/gems/shared/specifications/ice_nine-0.11.0.gemspec
+%%JRUBY_HOME%%/lib/ruby/gems/shared/specifications/maven-tools-1.0.4.gemspec
+%%JRUBY_HOME%%/lib/ruby/gems/shared/specifications/ruby-maven-3.1.1.0.8.gemspec
+%%JRUBY_HOME%%/lib/ruby/gems/shared/specifications/ruby-maven-libs-3.1.1.gemspec
+%%JRUBY_HOME%%/lib/ruby/gems/shared/specifications/thread_safe-0.3.4-java.gemspec
+%%JRUBY_HOME%%/lib/ruby/gems/shared/specifications/virtus-1.0.3.gemspec
 %%JRUBY_HOME%%/lib/ruby/shared/Win32API.rb
 %%JRUBY_HOME%%/lib/ruby/shared/ant.rb
 %%JRUBY_HOME%%/lib/ruby/shared/ant/ant.rb
@@ -1638,9 +2373,6 @@ bin/jruby
 %%JRUBY_HOME%%/lib/ruby/shared/ant/rake.rb
 %%JRUBY_HOME%%/lib/ruby/shared/ant/target.rb
 %%JRUBY_HOME%%/lib/ruby/shared/ant/tasks/raketasks.rb
-%%JRUBY_HOME%%/lib/ruby/shared/bcpkix-jdk15on-1.47.jar
-%%JRUBY_HOME%%/lib/ruby/shared/bcprov-jdk15on-1.47.jar
-%%JRUBY_HOME%%/lib/ruby/shared/bouncy-castle-java.rb
 %%JRUBY_HOME%%/lib/ruby/shared/ffi.rb
 %%JRUBY_HOME%%/lib/ruby/shared/ffi/autopointer.rb
 %%JRUBY_HOME%%/lib/ruby/shared/ffi/buffer.rb
@@ -1764,6 +2496,7 @@ bin/jruby
 %%JRUBY_HOME%%/lib/ruby/shared/ffi/platform/x86_64-darwin/syslog.rb
 %%JRUBY_HOME%%/lib/ruby/shared/ffi/platform/x86_64-darwin/types.conf
 %%JRUBY_HOME%%/lib/ruby/shared/ffi/platform/x86_64-darwin/zlib.rb
+%%JRUBY_HOME%%/lib/ruby/shared/ffi/platform/x86_64-freebsd/syslog.rb
 %%JRUBY_HOME%%/lib/ruby/shared/ffi/platform/x86_64-freebsd/types.conf
 %%JRUBY_HOME%%/lib/ruby/shared/ffi/platform/x86_64-linux/errno.rb
 %%JRUBY_HOME%%/lib/ruby/shared/ffi/platform/x86_64-linux/etc.rb
@@ -1818,6 +2551,10 @@ bin/jruby
 %%JRUBY_HOME%%/lib/ruby/shared/fiddle/function.rb
 %%JRUBY_HOME%%/lib/ruby/shared/fiddle/jruby.rb
 %%JRUBY_HOME%%/lib/ruby/shared/gauntlet_rubygems.rb
+%%JRUBY_HOME%%/lib/ruby/shared/jar-dependencies.rb
+%%JRUBY_HOME%%/lib/ruby/shared/jar_dependencies.rb
+%%JRUBY_HOME%%/lib/ruby/shared/jar_install_post_install_hook.rb
+%%JRUBY_HOME%%/lib/ruby/shared/jar_installer.rb
 %%JRUBY_HOME%%/lib/ruby/shared/java/inspect.rb
 %%JRUBY_HOME%%/lib/ruby/shared/jopenssl.jar
 %%JRUBY_HOME%%/lib/ruby/shared/jopenssl/load.rb
@@ -1891,8 +2628,6 @@ bin/jruby
 %%JRUBY_HOME%%/lib/ruby/shared/json/pure/generator.rb
 %%JRUBY_HOME%%/lib/ruby/shared/json/pure/parser.rb
 %%JRUBY_HOME%%/lib/ruby/shared/json/version.rb
-%%JRUBY_HOME%%/lib/ruby/shared/krypt-core.rb
-%%JRUBY_HOME%%/lib/ruby/shared/krypt-provider-jdk.rb
 %%JRUBY_HOME%%/lib/ruby/shared/krypt.rb
 %%JRUBY_HOME%%/lib/ruby/shared/krypt/asn1.rb
 %%JRUBY_HOME%%/lib/ruby/shared/krypt/asn1/common.rb
@@ -1901,6 +2636,7 @@ bin/jruby
 %%JRUBY_HOME%%/lib/ruby/shared/krypt/codec/base64.rb
 %%JRUBY_HOME%%/lib/ruby/shared/krypt/codec/base_codec.rb
 %%JRUBY_HOME%%/lib/ruby/shared/krypt/codec/hex.rb
+%%JRUBY_HOME%%/lib/ruby/shared/krypt/core.rb
 %%JRUBY_HOME%%/lib/ruby/shared/krypt/core/version.rb
 %%JRUBY_HOME%%/lib/ruby/shared/krypt/digest.rb
 %%JRUBY_HOME%%/lib/ruby/shared/krypt/hmac.rb
@@ -1909,6 +2645,15 @@ bin/jruby
 %%JRUBY_HOME%%/lib/ruby/shared/krypt/pkcs5.rb
 %%JRUBY_HOME%%/lib/ruby/shared/krypt/pkcs5/pbkdf2.rb
 %%JRUBY_HOME%%/lib/ruby/shared/krypt/provider.rb
+%%JRUBY_HOME%%/lib/ruby/shared/krypt/provider/ffi.rb
+%%JRUBY_HOME%%/lib/ruby/shared/krypt/provider/ffi/digest.rb
+%%JRUBY_HOME%%/lib/ruby/shared/krypt/provider/ffi/ffi_helper.rb
+%%JRUBY_HOME%%/lib/ruby/shared/krypt/provider/ffi/provider.rb
+%%JRUBY_HOME%%/lib/ruby/shared/krypt/provider/ffi/provider_api.rb
+%%JRUBY_HOME%%/lib/ruby/shared/krypt/provider/jdk.rb
+%%JRUBY_HOME%%/lib/ruby/shared/krypt/provider/jdk/version.rb
+%%JRUBY_HOME%%/lib/ruby/shared/krypt/provider/provider.rb
+%%JRUBY_HOME%%/lib/ruby/shared/krypt/version.rb
 %%JRUBY_HOME%%/lib/ruby/shared/krypt/x509.rb
 %%JRUBY_HOME%%/lib/ruby/shared/krypt/x509/certificate.rb
 %%JRUBY_HOME%%/lib/ruby/shared/krypt/x509/common.rb
@@ -1929,6 +2674,8 @@ bin/jruby
 %%JRUBY_HOME%%/lib/ruby/shared/openssl/ssl.rb
 %%JRUBY_HOME%%/lib/ruby/shared/openssl/x509-internal.rb
 %%JRUBY_HOME%%/lib/ruby/shared/openssl/x509.rb
+%%JRUBY_HOME%%/lib/ruby/shared/org/bouncycastle/bcpkix-jdk15on/1.47/bcpkix-jdk15on-1.47.jar
+%%JRUBY_HOME%%/lib/ruby/shared/org/bouncycastle/bcprov-jdk15on/1.47/bcprov-jdk15on-1.47.jar
 %%JRUBY_HOME%%/lib/ruby/shared/psych.rb
 %%JRUBY_HOME%%/lib/ruby/shared/psych/coder.rb
 %%JRUBY_HOME%%/lib/ruby/shared/psych/core_ext.rb
@@ -2186,8 +2933,17 @@ bin/jruby
 @dirrm %%JRUBY_HOME%%/lib/ruby/shared/psych/json
 @dirrm %%JRUBY_HOME%%/lib/ruby/shared/psych/handlers
 @dirrm %%JRUBY_HOME%%/lib/ruby/shared/psych
+@dirrm %%JRUBY_HOME%%/lib/ruby/shared/org/bouncycastle/bcprov-jdk15on/1.47
+@dirrm %%JRUBY_HOME%%/lib/ruby/shared/org/bouncycastle/bcprov-jdk15on
+@dirrm %%JRUBY_HOME%%/lib/ruby/shared/org/bouncycastle/bcpkix-jdk15on/1.47
+@dirrm %%JRUBY_HOME%%/lib/ruby/shared/org/bouncycastle/bcpkix-jdk15on
+@dirrm %%JRUBY_HOME%%/lib/ruby/shared/org/bouncycastle
+@dirrm %%JRUBY_HOME%%/lib/ruby/shared/org
 @dirrm %%JRUBY_HOME%%/lib/ruby/shared/openssl
 @dirrm %%JRUBY_HOME%%/lib/ruby/shared/krypt/x509
+@dirrm %%JRUBY_HOME%%/lib/ruby/shared/krypt/provider/jdk
+@dirrm %%JRUBY_HOME%%/lib/ruby/shared/krypt/provider/ffi
+@dirrm %%JRUBY_HOME%%/lib/ruby/shared/krypt/provider
 @dirrm %%JRUBY_HOME%%/lib/ruby/shared/krypt/pkcs5
 @dirrm %%JRUBY_HOME%%/lib/ruby/shared/krypt/ossl
 @dirrm %%JRUBY_HOME%%/lib/ruby/shared/krypt/core
@@ -2244,10 +3000,271 @@ bin/jruby
 @dirrm %%JRUBY_HOME%%/lib/ruby/shared
 @dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/specifications/default
 @dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/specifications
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/virtus-1.0.3/spec/unit/virtus/class_methods
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/virtus-1.0.3/spec/unit/virtus/attribute_set
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/virtus-1.0.3/spec/unit/virtus/attribute/hash/class_methods
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/virtus-1.0.3/spec/unit/virtus/attribute/hash
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/virtus-1.0.3/spec/unit/virtus/attribute/embedded_value/class_methods
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/virtus-1.0.3/spec/unit/virtus/attribute/embedded_value
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/virtus-1.0.3/spec/unit/virtus/attribute/collection/class_methods
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/virtus-1.0.3/spec/unit/virtus/attribute/collection
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/virtus-1.0.3/spec/unit/virtus/attribute/class_methods
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/virtus-1.0.3/spec/unit/virtus/attribute/boolean
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/virtus-1.0.3/spec/unit/virtus/attribute
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/virtus-1.0.3/spec/unit/virtus
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/virtus-1.0.3/spec/unit
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/virtus-1.0.3/spec/shared
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/virtus-1.0.3/spec/integration/virtus
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/virtus-1.0.3/spec/integration
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/virtus-1.0.3/spec
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/virtus-1.0.3/lib/virtus/support
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/virtus-1.0.3/lib/virtus/builder
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/virtus-1.0.3/lib/virtus/attribute/default_value
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/virtus-1.0.3/lib/virtus/attribute
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/virtus-1.0.3/lib/virtus
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/virtus-1.0.3/lib
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/virtus-1.0.3/config
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/virtus-1.0.3
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/thread_safe-0.3.4-java/test/src/thread_safe
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/thread_safe-0.3.4-java/test/src
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/thread_safe-0.3.4-java/test
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/thread_safe-0.3.4-java/lib/thread_safe/util
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/thread_safe-0.3.4-java/lib/thread_safe
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/thread_safe-0.3.4-java/lib
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/thread_safe-0.3.4-java/ext/thread_safe
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/thread_safe-0.3.4-java/ext/org/jruby/ext/thread_safe/jsr166y
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/thread_safe-0.3.4-java/ext/org/jruby/ext/thread_safe/jsr166e/nounsafe
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/thread_safe-0.3.4-java/ext/org/jruby/ext/thread_safe/jsr166e
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/thread_safe-0.3.4-java/ext/org/jruby/ext/thread_safe
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/thread_safe-0.3.4-java/ext/org/jruby/ext
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/thread_safe-0.3.4-java/ext/org/jruby
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/thread_safe-0.3.4-java/ext/org
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/thread_safe-0.3.4-java/ext
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/thread_safe-0.3.4-java/examples
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/thread_safe-0.3.4-java
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/ruby-maven-libs-3.1.1/ruby
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/ruby-maven-libs-3.1.1/lib/ext
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/ruby-maven-libs-3.1.1/lib
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/ruby-maven-libs-3.1.1/conf/logging
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/ruby-maven-libs-3.1.1/conf
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/ruby-maven-libs-3.1.1/boot
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/ruby-maven-libs-3.1.1/bin
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/ruby-maven-libs-3.1.1
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/ruby-maven-3.1.1.0.8/ruby/maven/ruby
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/ruby-maven-3.1.1.0.8/ruby/maven
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/ruby-maven-3.1.1.0.8/ruby
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/ruby-maven-3.1.1.0.8/lib
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/ruby-maven-3.1.1.0.8/ext/ruby
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/ruby-maven-3.1.1.0.8/ext
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/ruby-maven-3.1.1.0.8/bin
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/ruby-maven-3.1.1.0.8
 @dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/rdoc-4.0.1/bin
 @dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/rdoc-4.0.1
 @dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/rake-10.1.0/bin
 @dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/rake-10.1.0
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/maven-tools-1.0.4/spec/pom_with_execute
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/maven-tools-1.0.4/spec/pom_maven_style
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/maven-tools-1.0.4/spec/pom_maven_hash_style
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/maven-tools-1.0.4/spec/pom_maven_alternative_style
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/maven-tools-1.0.4/spec/pom_from_jarfile_with_repos
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/maven-tools-1.0.4/spec/pom_from_jarfile
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/maven-tools-1.0.4/spec/my
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/maven-tools-1.0.4/spec/mavenfile
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/maven-tools-1.0.4/spec/gemspec_with_source_and_no_jar/src/main/java
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/maven-tools-1.0.4/spec/gemspec_with_source_and_no_jar/src/main
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/maven-tools-1.0.4/spec/gemspec_with_source_and_no_jar/src
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/maven-tools-1.0.4/spec/gemspec_with_source_and_no_jar
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/maven-tools-1.0.4/spec/gemspec_with_source_and_custom_jarname/src/main/java
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/maven-tools-1.0.4/spec/gemspec_with_source_and_custom_jarname/src/main
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/maven-tools-1.0.4/spec/gemspec_with_source_and_custom_jarname/src
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/maven-tools-1.0.4/spec/gemspec_with_source_and_custom_jarname
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/maven-tools-1.0.4/spec/gemspec_with_source/src/main/java
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/maven-tools-1.0.4/spec/gemspec_with_source/src/main
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/maven-tools-1.0.4/spec/gemspec_with_source/src
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/maven-tools-1.0.4/spec/gemspec_with_source
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/maven-tools-1.0.4/spec/gemspec_with_prereleased_dependency_and_no_repo
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/maven-tools-1.0.4/spec/gemspec_with_prereleased_dependency
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/maven-tools-1.0.4/spec/gemspec_with_extras
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/maven-tools-1.0.4/spec/gemspec_with_custom_source_and_custom_jarname/src/java
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/maven-tools-1.0.4/spec/gemspec_with_custom_source_and_custom_jarname/src
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/maven-tools-1.0.4/spec/gemspec_with_custom_source_and_custom_jarname
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/maven-tools-1.0.4/spec/gemspec_with_custom_source/src/java
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/maven-tools-1.0.4/spec/gemspec_with_custom_source/src
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/maven-tools-1.0.4/spec/gemspec_with_custom_source
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/maven-tools-1.0.4/spec/gemspec_with_access_to_model
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/maven-tools-1.0.4/spec/gemspec_prerelease_snapshot
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/maven-tools-1.0.4/spec/gemspec_prerelease
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/maven-tools-1.0.4/spec/gemspec_no_rubygems_repo
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/maven-tools-1.0.4/spec/gemspec_include_jars
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/maven-tools-1.0.4/spec/gemspec_in_profile
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/maven-tools-1.0.4/spec/gemspec
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/maven-tools-1.0.4/spec/gemfile_without_gemspec
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/maven-tools-1.0.4/spec/gemfile_with_test_group
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/maven-tools-1.0.4/spec/gemfile_with_source_and_no_jar/src/main/java
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/maven-tools-1.0.4/spec/gemfile_with_source_and_no_jar/src/main
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/maven-tools-1.0.4/spec/gemfile_with_source_and_no_jar/src
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/maven-tools-1.0.4/spec/gemfile_with_source_and_no_jar
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/maven-tools-1.0.4/spec/gemfile_with_source_and_custom_jarname/src/main/java
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/maven-tools-1.0.4/spec/gemfile_with_source_and_custom_jarname/src/main
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/maven-tools-1.0.4/spec/gemfile_with_source_and_custom_jarname/src
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/maven-tools-1.0.4/spec/gemfile_with_source_and_custom_jarname
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/maven-tools-1.0.4/spec/gemfile_with_source/src/main/java
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/maven-tools-1.0.4/spec/gemfile_with_source/src/main
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/maven-tools-1.0.4/spec/gemfile_with_source/src
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/maven-tools-1.0.4/spec/gemfile_with_source
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/maven-tools-1.0.4/spec/gemfile_with_platforms
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/maven-tools-1.0.4/spec/gemfile_with_path
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/maven-tools-1.0.4/spec/gemfile_with_lock
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/maven-tools-1.0.4/spec/gemfile_with_groups_and_lockfile
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/maven-tools-1.0.4/spec/gemfile_with_groups
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/maven-tools-1.0.4/spec/gemfile_with_extras
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/maven-tools-1.0.4/spec/gemfile_with_custom_source_and_custom_jarname/src/java
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/maven-tools-1.0.4/spec/gemfile_with_custom_source_and_custom_jarname/src
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/maven-tools-1.0.4/spec/gemfile_with_custom_source_and_custom_jarname
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/maven-tools-1.0.4/spec/gemfile_with_custom_source/src/java
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/maven-tools-1.0.4/spec/gemfile_with_custom_source/src
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/maven-tools-1.0.4/spec/gemfile_with_custom_source
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/maven-tools-1.0.4/spec/gemfile_with_access_to_model
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/maven-tools-1.0.4/spec/gemfile_include_jars
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/maven-tools-1.0.4/spec/gemfile
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/maven-tools-1.0.4/spec
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/maven-tools-1.0.4/lib/maven/tools
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/maven-tools-1.0.4/lib/maven
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/maven-tools-1.0.4/lib
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/maven-tools-1.0.4
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/ice_nine-0.11.0/spec/unit/object
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/ice_nine-0.11.0/spec/unit/ice_nine/recursion_guard/object_set
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/ice_nine-0.11.0/spec/unit/ice_nine/recursion_guard/frozen
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/ice_nine-0.11.0/spec/unit/ice_nine/recursion_guard
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/ice_nine-0.11.0/spec/unit/ice_nine/freezer/true_class/class_methods
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/ice_nine-0.11.0/spec/unit/ice_nine/freezer/true_class
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/ice_nine-0.11.0/spec/unit/ice_nine/freezer/symbol/class_methods
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/ice_nine-0.11.0/spec/unit/ice_nine/freezer/symbol
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/ice_nine-0.11.0/spec/unit/ice_nine/freezer/struct/class_methods
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/ice_nine-0.11.0/spec/unit/ice_nine/freezer/struct
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/ice_nine-0.11.0/spec/unit/ice_nine/freezer/range/class_methods
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/ice_nine-0.11.0/spec/unit/ice_nine/freezer/range
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/ice_nine-0.11.0/spec/unit/ice_nine/freezer/object/class_methods
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/ice_nine-0.11.0/spec/unit/ice_nine/freezer/object
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/ice_nine-0.11.0/spec/unit/ice_nine/freezer/numeric/class_methods
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/ice_nine-0.11.0/spec/unit/ice_nine/freezer/numeric
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/ice_nine-0.11.0/spec/unit/ice_nine/freezer/no_freeze/class_methods
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/ice_nine-0.11.0/spec/unit/ice_nine/freezer/no_freeze
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/ice_nine-0.11.0/spec/unit/ice_nine/freezer/nil_class/class_methods
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/ice_nine-0.11.0/spec/unit/ice_nine/freezer/nil_class
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/ice_nine-0.11.0/spec/unit/ice_nine/freezer/module/class_methods
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/ice_nine-0.11.0/spec/unit/ice_nine/freezer/module
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/ice_nine-0.11.0/spec/unit/ice_nine/freezer/hash/class_methods
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/ice_nine-0.11.0/spec/unit/ice_nine/freezer/hash
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/ice_nine-0.11.0/spec/unit/ice_nine/freezer/false_class/class_methods
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/ice_nine-0.11.0/spec/unit/ice_nine/freezer/false_class
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/ice_nine-0.11.0/spec/unit/ice_nine/freezer/class_methods
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/ice_nine-0.11.0/spec/unit/ice_nine/freezer/array/class_methods
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/ice_nine-0.11.0/spec/unit/ice_nine/freezer/array
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/ice_nine-0.11.0/spec/unit/ice_nine/freezer
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/ice_nine-0.11.0/spec/unit/ice_nine/core_ext/object
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/ice_nine-0.11.0/spec/unit/ice_nine/core_ext
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/ice_nine-0.11.0/spec/unit/ice_nine/class_methods
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/ice_nine-0.11.0/spec/unit/ice_nine
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/ice_nine-0.11.0/spec/unit
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/ice_nine-0.11.0/spec/support
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/ice_nine-0.11.0/spec/shared
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/ice_nine-0.11.0/spec/integration/ice_nine/class_methods
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/ice_nine-0.11.0/spec/integration/ice_nine
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/ice_nine-0.11.0/spec/integration
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/ice_nine-0.11.0/spec
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/ice_nine-0.11.0/lib/ice_nine/support
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/ice_nine-0.11.0/lib/ice_nine/freezer/hash
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/ice_nine-0.11.0/lib/ice_nine/freezer
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/ice_nine-0.11.0/lib/ice_nine/core_ext
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/ice_nine-0.11.0/lib/ice_nine
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/ice_nine-0.11.0/lib
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/ice_nine-0.11.0/config
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/ice_nine-0.11.0/benchmarks
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/ice_nine-0.11.0
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/equalizer-0.0.9/spec/unit/equalizer/methods
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/equalizer-0.0.9/spec/unit/equalizer
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/equalizer-0.0.9/spec/unit
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/equalizer-0.0.9/spec/support
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/equalizer-0.0.9/spec
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/equalizer-0.0.9/lib/equalizer
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/equalizer-0.0.9/lib
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/equalizer-0.0.9
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/descendants_tracker-0.0.4/spec/unit/descendants_tracker
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/descendants_tracker-0.0.4/spec/unit
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/descendants_tracker-0.0.4/spec/support
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/descendants_tracker-0.0.4/spec
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/descendants_tracker-0.0.4/lib/descendants_tracker
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/descendants_tracker-0.0.4/lib
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/descendants_tracker-0.0.4/config
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/descendants_tracker-0.0.4
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/coercible-1.0.0/spec/unit/coercible/configuration/class_methods
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/coercible-1.0.0/spec/unit/coercible/configuration
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/coercible-1.0.0/spec/unit/coercible/coercer/true_class
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/coercible-1.0.0/spec/unit/coercible/coercer/time_coercions
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/coercible-1.0.0/spec/unit/coercible/coercer/time
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/coercible-1.0.0/spec/unit/coercible/coercer/symbol
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/coercible-1.0.0/spec/unit/coercible/coercer/string/class_methods
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/coercible-1.0.0/spec/unit/coercible/coercer/string
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/coercible-1.0.0/spec/unit/coercible/coercer/object
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/coercible-1.0.0/spec/unit/coercible/coercer/numeric
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/coercible-1.0.0/spec/unit/coercible/coercer/integer
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/coercible-1.0.0/spec/unit/coercible/coercer/hash
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/coercible-1.0.0/spec/unit/coercible/coercer/float
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/coercible-1.0.0/spec/unit/coercible/coercer/false_class
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/coercible-1.0.0/spec/unit/coercible/coercer/decimal
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/coercible-1.0.0/spec/unit/coercible/coercer/date_time
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/coercible-1.0.0/spec/unit/coercible/coercer/date
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/coercible-1.0.0/spec/unit/coercible/coercer/configurable
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/coercible-1.0.0/spec/unit/coercible/coercer/class_methods
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/coercible-1.0.0/spec/unit/coercible/coercer/array
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/coercible-1.0.0/spec/unit/coercible/coercer
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/coercible-1.0.0/spec/unit/coercible
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/coercible-1.0.0/spec/unit
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/coercible-1.0.0/spec/shared/unit
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/coercible-1.0.0/spec/shared
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/coercible-1.0.0/spec/integration
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/coercible-1.0.0/spec
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/coercible-1.0.0/lib/support
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/coercible-1.0.0/lib/coercible/coercer
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/coercible-1.0.0/lib/coercible
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/coercible-1.0.0/lib
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/coercible-1.0.0/config
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/coercible-1.0.0
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/axiom-types-0.1.1/spec/unit/axiom/types/value_comparable/class_methods
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/axiom-types-0.1.1/spec/unit/axiom/types/value_comparable
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/axiom-types-0.1.1/spec/unit/axiom/types/type/class_methods
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/axiom-types-0.1.1/spec/unit/axiom/types/type
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/axiom-types-0.1.1/spec/unit/axiom/types/set/class_methods
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/axiom-types-0.1.1/spec/unit/axiom/types/set
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/axiom-types-0.1.1/spec/unit/axiom/types/options
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/axiom-types-0.1.1/spec/unit/axiom/types/object/class_methods
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/axiom-types-0.1.1/spec/unit/axiom/types/object
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/axiom-types-0.1.1/spec/unit/axiom/types/negative_infinity
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/axiom-types-0.1.1/spec/unit/axiom/types/length_comparable/class_methods
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/axiom-types-0.1.1/spec/unit/axiom/types/length_comparable
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/axiom-types-0.1.1/spec/unit/axiom/types/infinity
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/axiom-types-0.1.1/spec/unit/axiom/types/hash/class_methods
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/axiom-types-0.1.1/spec/unit/axiom/types/hash
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/axiom-types-0.1.1/spec/unit/axiom/types/encodable/class_methods
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/axiom-types-0.1.1/spec/unit/axiom/types/encodable
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/axiom-types-0.1.1/spec/unit/axiom/types/collection/class_methods
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/axiom-types-0.1.1/spec/unit/axiom/types/collection
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/axiom-types-0.1.1/spec/unit/axiom/types/class_methods
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/axiom-types-0.1.1/spec/unit/axiom/types/boolean/class_methods
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/axiom-types-0.1.1/spec/unit/axiom/types/boolean
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/axiom-types-0.1.1/spec/unit/axiom/types/array/class_methods
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/axiom-types-0.1.1/spec/unit/axiom/types/array
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/axiom-types-0.1.1/spec/unit/axiom/types
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/axiom-types-0.1.1/spec/unit/axiom
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/axiom-types-0.1.1/spec/unit
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/axiom-types-0.1.1/spec
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/axiom-types-0.1.1/lib/axiom/types/support
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/axiom-types-0.1.1/lib/axiom/types
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/axiom-types-0.1.1/lib/axiom
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/axiom-types-0.1.1/lib
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/axiom-types-0.1.1/config
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/axiom-types-0.1.1
 @dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems
 @dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared
 @dirrm %%JRUBY_HOME%%/lib/ruby/gems

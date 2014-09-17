@@ -57,9 +57,7 @@ PLIST_SUB+=	GNOME=""
 PLIST_SUB+=	GNOME="@comment "
 .endif
 
-.if ${OSVERSION} >= 1000000
-STATIC_LIBEXECINFO=
-.else
+.if !exists(/usr/lib/libexecinfo.so)
 STATIC_LIBEXECINFO=	${LOCALBASE}/lib/libexecinfo.a
 .endif
 

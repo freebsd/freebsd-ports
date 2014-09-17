@@ -1,10 +1,5 @@
-Squid is a high-performance proxy caching server for web clients,
-supporting FTP, gopher, and HTTP data objects. Unlike traditional
-caching software, Squid handles all requests in a single, non-blocking,
-I/O-driven process.
-
-Squid supports SSL, extensive access controls, and full request logging.
-By using the lightweight Internet Cache Protocol, Squid caches can be
-arranged in a hierarchy or mesh for additional bandwidth savings.
+Squid is a fully-featured HTTP/1.0 proxy which is almost (but not quite)
+HTTP/1.1 compliant. Squid offers a rich access control, authorization and
+logging environment to develop web proxy and content serving applications.
 
 WWW: http://www.squid-cache.org/

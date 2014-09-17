@@ -37,7 +37,7 @@ FONTS=		Scr7 Scr8 Scr9 Scr10 Scr11 Scr12 \
 		space10 type13
 
 post-extract:
-	@(cd ${WRKSRC} && ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} \
+	@(cd ${WRKSRC} && ${TAR} ${EXTRACT_BEFORE_ARGS} \
 		sgi-fonts.tar.gz ${EXTRACT_AFTER_ARGS})
 
 post-patch:

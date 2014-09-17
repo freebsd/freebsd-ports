@@ -3,7 +3,7 @@
 
 PORTNAME=	heimdal
 PORTVERSION=	1.5.2
-PORTREVISION=	15
+PORTREVISION=	16
 CATEGORIES=	security ipv6
 MASTER_SITES=	http://www.h5l.org/dist/src/ \
 		http://ftp.pdc.kth.se/pub/heimdal/src/ \
@@ -38,6 +38,9 @@ CONFIGURE_ARGS=	--with-libintl \
 		--with-hdbdir="/var/${PORTNAME}" \
 		--sysconfdir="${PREFIX}/etc"
 MAKE_ENV=	INSTALL_CATPAGES=no
+.if !exists(/etc/rc.d/ipropd_master)
+USE_RC_SUBR=	ipropd_master ipropd_slave
+.endif
 
 INFO=		heimdal hx509
 
