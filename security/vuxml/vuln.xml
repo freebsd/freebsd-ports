@@ -57,6 +57,58 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="38242d51-3e58-11e4-ac2f-bcaec565249c">
+    <topic>dbus -- multiple vulnabilities</topic>
+    <affects>
+      <package>
+	<name>dbus</name>
+	<range><lt>1.8.8</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Simon McVittie reports:</p>
+	<blockquote cite="http://lists.freedesktop.org/archives/dbus/2014-September/016343.html">
+	  <p>Do not accept an extra fd in the padding of a cmsg message,
+	     which could lead to a 4-byte heap buffer overrun
+	     (CVE-2014-3635).</p>
+	  <p>Reduce default for maximum Unix file descriptors passed per
+	     message from 1024 to 16, preventing a uid with the default
+	     maximum number of connections from exhausting the system
+	     bus' file descriptors under Linux's default rlimit
+	     (CVE-2014-3636).</p>
+	  <p>Disconnect connections that still have a fd pending
+	     unmarshalling after a new configurable limit,
+	     pending_fd_timeout (defaulting to 150 seconds), removing
+	     the possibility of creating an abusive connection that
+	     cannot be disconnected by setting up a circular reference
+	     to a connection's file descriptor (CVE-2014-3637).</p>
+	  <p>Reduce default for maximum pending replies per connection
+	     from 8192 to 128, mitigating an algorithmic complexity
+	     denial-of-service attack (CVE-2014-3638).</p>
+	  <p>Reduce default for authentication timeout on the system
+	     bus from 30 seconds to 5 seconds, avoiding denial of service
+	     by using up all unauthenticated connection slots; and when
+	     all unauthenticated connection slots are used up, make new
+	     connection attempts block instead of disconnecting them
+	     (CVE-2014-3639).</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2014-3635</cvename>
+      <cvename>CVE-2014-3636</cvename>
+      <cvename>CVE-2014-3637</cvename>
+      <cvename>CVE-2014-3638</cvename>
+      <cvename>CVE-2014-3639</cvename>
+      <url>http://lists.freedesktop.org/archives/dbus/2014-September/016343.html</url>
+    </references>
+    <dates>
+      <discovery>2014-09-16</discovery>
+      <entry>2014-09-17</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="77b784bb-3dc6-11e4-b191-f0def16c5c1b">
     <topic>nginx -- inject commands into SSL session vulnerability</topic>
     <affects>
