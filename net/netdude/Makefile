@@ -10,10 +10,10 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	NETwork DUmp data Displayer and Editor for tcpdump tracefiles
 
-LIB_DEPENDS=	libnetdude.so:${PORTSDIR}/net/libnetdude
+LIB_DEPENDS=	libltdl.so:${PORTSDIR}/devel/libltdl \
+		libnetdude.so:${PORTSDIR}/net/libnetdude
 
 USES=		gettext iconv libtool gmake
-USE_AUTOTOOLS=	libltdl
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-gtk-doc --with-html-dir=${DOCSDIR}
 LIBS+=		-L${LOCALBASE}/lib -lltdl

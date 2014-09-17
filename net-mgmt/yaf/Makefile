@@ -13,12 +13,12 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libfixbuf.so:${PORTSDIR}/net/libfixbuf \
+		libltdl.so:${PORTSDIR}/devel/libltdl \
 		libpcre.so:${PORTSDIR}/devel/pcre
 
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 USES=		libtool pathfix perl5 pkgconfig
-USE_AUTOTOOLS=	libltdl
 USE_GNOME=	glib20
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--disable-doxygen-doc --enable-applabel --enable-plugins

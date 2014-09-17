@@ -220,7 +220,7 @@ USE_RC_SUBR=		slapd
 EXTRA_PATCHES+=		${FILESDIR}/extrapatch-Makefile.in
 
 .if ${PORT_OPTIONS:MMODULES} || ${PORT_OPTIONS:MDYNAMIC_BACKENDS} || ${PORT_OPTIONS:MSLAPI}
-USE_AUTOTOOLS+=		libltdl
+LIB_DEPENDS+=		libltdl.so:${PORTSDIR}/devel/libltdl
 CONFIGURE_ARGS+=	--enable-modules
 PLIST_SUB+=		MODULES=""
 .else

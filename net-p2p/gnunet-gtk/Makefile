@@ -12,13 +12,13 @@ COMMENT=	GTK interface to GNUnet
 LICENSE=	GPLv3
 
 LIB_DEPENDS=	libgladeui-1.so:${PORTSDIR}/devel/glade3 \
+		libltdl.so:${PORTSDIR}/devel/libltdl \
 		libqrencode.so:${PORTSDIR}/graphics/libqrencode \
 		libgnunetutil.so:${PORTSDIR}/net-p2p/gnunet \
 		libunique-1.0.so:${PORTSDIR}/x11-toolkits/unique
 
 USES=		gmake iconv libtool pathfix pkgconfig
 USE_GNOME=	gtk20
-USE_AUTOTOOLS=	libltdl
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-gtktest \
 		--with-gtk-version=2 \

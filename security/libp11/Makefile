@@ -12,9 +12,10 @@ COMMENT=	Small layer on top of PKCS\#11 API
 
 LICENSE=	LGPL21
 
+LIB_DEPENDS=	libltdl.so:${PORTSDIR}/devel/libltdl
+
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
-USE_AUTOTOOLS=	libltdl
 USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
 USES=		libtool pkgconfig

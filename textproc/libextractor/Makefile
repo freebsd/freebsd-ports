@@ -11,10 +11,11 @@ COMMENT=	Library for keyword extraction
 
 LICENSE=	GPLv3 # (or later)
 
+LIB_DEPENDS=	libltdl.so:${PORTSDIR}/devel/libltdl
+
 USES=		iconv gettext libtool makeinfo pathfix pkgconfig
 USE_GNOME=	gtk20
 USE_PYTHON=	yes
-USE_AUTOTOOLS=	libltdl
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-gtk-version=2 \
 		--with-ltdl=${LOCALBASE}

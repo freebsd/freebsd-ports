@@ -12,11 +12,12 @@ COMMENT=	Library for splitting of various audio files
 
 LICENSE=	GPLv2
 
+LIB_DEPENDS=	libltdl.so:${PORTSDIR}/devel/libltdl
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-cutter --disable-doxygen_doc
 USES=		libtool pathfix pkgconfig
 USE_LDCONFIG=	yes
-USE_AUTOTOOLS=	libltdl
 
 OPTIONS_MULTI=	plugin
 OPTIONS_MULTI_plugin=	MAD VORBIS

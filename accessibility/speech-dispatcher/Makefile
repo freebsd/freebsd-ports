@@ -13,10 +13,10 @@ LICENSE=	GPLv2 LGPL21
 LICENSE_COMB=	multi
 
 LIB_DEPENDS=	libdotconf.so:${PORTSDIR}/devel/dotconf \
+		libltdl.so:${PORTSDIR}/devel/libltdl \
 		libsndfile.so:${PORTSDIR}/audio/libsndfile
 
 # gnomehier is required because of share/sounds directory.
-USE_AUTOTOOLS=	libltdl
 USE_GNOME=	glib20 gnomehier intltool
 USES=		gettext gmake pathfix pkgconfig libtool
 GNU_CONFIGURE=	yes

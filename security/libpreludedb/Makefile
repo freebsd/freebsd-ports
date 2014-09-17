@@ -12,7 +12,8 @@ COMMENT=	Framework library for access to Prelude NIDS database
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libgmp.so:${PORTSDIR}/math/gmp \
+LIB_DEPENDS=	libltdl.so:${PORTSDIR}/devel/libltdl \
+		libgmp.so:${PORTSDIR}/math/gmp \
 		libgnutls.so:${PORTSDIR}/security/gnutls \
 		libgcrypt.so:${PORTSDIR}/security/libgcrypt \
 		libgpg-error.so:${PORTSDIR}/security/libgpg-error \
@@ -21,7 +22,6 @@ LIB_DEPENDS=	libgmp.so:${PORTSDIR}/math/gmp \
 		libp11-kit.so:${PORTSDIR}/security/p11-kit
 
 USES=		gettext gmake iconv libtool
-USE_AUTOTOOLS=	libltdl
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-gtk-doc=no \
 		--with-html-dir=${PREFIX}/share/doc

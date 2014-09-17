@@ -73,8 +73,8 @@ DAHDI_LIB_DEPENDS=	libpri.so:${PORTSDIR}/misc/libpri \
 			libopenr2.so:${PORTSDIR}/misc/openr2
 ODBC_CONFIGURE_WITH=	unixodbc
 ODBC_CONFIGURE_ON=	--with-ltdl
-ODBC_USE=		AUTOTOOLS=libltdl
-ODBC_LIB_DEPENDS=	libodbc.so:${PORTSDIR}/databases/unixODBC
+ODBC_LIB_DEPENDS=	libodbc.so:${PORTSDIR}/databases/unixODBC \
+			libltdl.so:${PORTSDIR}/devel/libltdl
 FREETDS_CONFIGURE_ON=	--with-tds=${LOCALBASE}
 FREETDS_CONFIGURE_OFF=	--without-tds
 FREETDS_LIB_DEPENDS=	libtds.so:${PORTSDIR}/databases/freetds

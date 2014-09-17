@@ -12,9 +12,10 @@ COMMENT=	Graphical certification authority
 
 LICENSE=	BSD
 
+LIB_DEPENDS=	libltdl.so:${PORTSDIR}/devel/libltdl
+
 USE_OPENSSL=	yes
 USE_QT4=	gui moc_build uic_build qmake_build rcc_build linguist_build
-USE_AUTOTOOLS=	libltdl
 USES=		desktop-file-utils gmake shared-mime-info
 DESTDIRNAME=	destdir
 
