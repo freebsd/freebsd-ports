@@ -13,7 +13,7 @@ MASTER_SITES=	SF \
 		http://T32.TecNik93.com/FreeBSD/ports/${PORTNAME}/sources/
 MASTER_SITE_SUBDIR=${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	danny@dannywarren.com
 COMMENT=	Bayesian spam filter
 
 MIN_OPTIONS_VER=	${PORTNAME}-3.9.0
