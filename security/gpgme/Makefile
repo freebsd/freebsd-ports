@@ -3,6 +3,7 @@
 
 PORTNAME=	gpgme
 PORTVERSION=	1.5.1
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	GNUPG/gpgme
 
@@ -15,7 +16,7 @@ LIB_DEPENDS=	libassuan.so:${PORTSDIR}/security/libassuan \
 		libgpg-error.so:${PORTSDIR}/security/libgpg-error
 
 GNU_CONFIGURE=	yes
-USES=		cpe gmake libtool:keepla tar:bzip2
+USES=		cpe gmake libtool tar:bzip2
 USE_LDCONFIG=	yes
 
 CONFIGURE_ARGS=	--includedir=${PREFIX}/include/gpgme
