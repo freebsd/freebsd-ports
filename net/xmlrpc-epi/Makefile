@@ -3,7 +3,7 @@
 
 PORTNAME=	xmlrpc-epi
 PORTVERSION=	0.54.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-base/${PORTVERSION}/
 
@@ -14,7 +14,7 @@ LICENSE=	MIT
 
 LIB_DEPENDS=	libexpat.so:${PORTSDIR}/textproc/expat2
 
-USES=		gmake iconv libtool:keepla tar:bzip2
+USES=		gmake iconv libtool tar:bzip2
 USE_LDCONFIG=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib ${ICONV_LIB}
