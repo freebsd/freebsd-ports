@@ -1,6 +1,14 @@
---- src/VBox/HostDrivers/Support/freebsd/Makefile.orig	2013-10-17 00:51:57.724397794 +0400
-+++ src/VBox/HostDrivers/Support/freebsd/Makefile	2013-10-17 00:52:05.491398026 +0400
-@@ -170,6 +170,7 @@
+--- src/VBox/HostDrivers/Support/freebsd/Makefile.orig	2014-09-09 23:54:29.000000000 +0400
++++ src/VBox/HostDrivers/Support/freebsd/Makefile	2014-09-15 02:58:19.712268153 +0400
+@@ -81,6 +81,7 @@
+ 	handletable.c \
+ 	handletablectx.c \
+ 	once.c \
++	term.c \
+ 	thread.c
+ 
+ .PATH:	${.CURDIR}/common/string
+@@ -170,6 +171,7 @@
  SRCS += \
  	semspinmutex-r0drv-generic.c \
  	mpnotification-r0drv-generic.c \
