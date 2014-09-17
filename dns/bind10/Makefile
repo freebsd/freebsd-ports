@@ -20,21 +20,20 @@ LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/interprocess/sync/interprocess_upgradable_mutex.hpp:${PORTSDIR}/devel/boost-libs \
 		${LOCALBASE}/include/log4cplus/logger.h:${PORTSDIR}/devel/log4cplus \
 		sqlite3>=3.3.9:${PORTSDIR}/databases/sqlite3 \
-		${PYTHON_LIBDIR}/lib-dynload/_sqlite3.so:${PORTSDIR}/databases/py-sqlite3
+		${PYTHON_PKGNAMEPREFIX}sqlite3>0:${PORTSDIR}/databases/py-sqlite3
 LIB_DEPENDS=	libbotan-1.10.so:${PORTSDIR}/security/botan110 \
 		liblog4cplus.so:${PORTSDIR}/devel/log4cplus \
 		libicuuc.so:${PORTSDIR}/devel/icu \
 		libgmp.so:${PORTSDIR}/math/gmp \
 		libsqlite3.so:${PORTSDIR}/databases/sqlite3
-RUN_DEPENDS=	${PYTHON_LIBDIR}/lib-dynload/_sqlite3.so:${PORTSDIR}/databases/py-sqlite3
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:${PORTSDIR}/databases/py-sqlite3
 
 DEPRECATED=	Is not developed any more, use dns/bundy
 EXPIRATION_DATE=	2015-12-31
 
-USE_PYTHON=	3
 USE_OPENSSL=	yes
 USE_LDCONFIG=	yes
-USES=	compiler:c++11-lang pathfix pkgconfig
+USES=	compiler:c++11-lang pathfix pkgconfig python:3
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--localstatedir=/var	\
