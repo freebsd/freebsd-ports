@@ -1631,6 +1631,7 @@
     SUBDIR += py-praw
     SUBDIR += py-prewikka
     SUBDIR += py-py-restclient
+    SUBDIR += py-pyjwt
     SUBDIR += py-pylons
     SUBDIR += py-pyquery
     SUBDIR += py-pyramid
