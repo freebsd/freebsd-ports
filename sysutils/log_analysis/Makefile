@@ -17,12 +17,9 @@ CONFIGURE_ENV=	PERL="${PERL}"
 
 PORTDOCS=	*
 PORTEXAMPLES=	*
+PORTDATA=	*
 PLIST_FILES=	bin/log_analysis \
-		man/man1/log_analysis.1.gz \
-		%%DATADIR%%/AUTHORS \
-		%%DATADIR%%/Tk/resizebutton.pm
-PLIST_DIRS=	%%DATADIR%%/Tk \
-		%%DATADIR%%
+		man/man1/log_analysis.1.gz
 
 OPTIONS_DEFINE=	DOCS EXAMPLES TK
 
