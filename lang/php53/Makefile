@@ -15,12 +15,11 @@ COMMENT=	PHP Scripting Language
 LATEST_LINK=	${PKGNAMEPREFIX}${PORTNAME}${PKGNAMESUFFIX}
 
 USES=		tar:bzip2 cpe
+CPE_PRODUCT=	php
 .if !defined(PKGNAMESUFFIX)
 USE_AUTOTOOLS=	autoconf
 
 LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre
-
-CPE_PRODUCT=	php
 
 CONFIGURE_ARGS=	\
 		--with-layout=GNU \
