@@ -6051,8 +6051,8 @@ _PATCH_SEQ=		ask-license patch-message patch-depends pathfix dos2unix fix-sheban
 _CONFIGURE_DEP=	patch
 _CONFIGURE_SEQ=	build-depends lib-depends configure-message run-autotools-fixup \
 				configure-autotools pre-configure pre-configure-script \
-				run-autotools patch-libtool do-configure post-configure \
-				post-configure-script
+				run-autotools do-autoreconf patch-libtool do-configure \
+				post-configure post-configure-script
 _BUILD_DEP=		configure
 _BUILD_SEQ=		build-message pre-build pre-build-script do-build \
 				post-build post-build-script
