@@ -1529,6 +1529,12 @@ CD_MOUNTPTS?=	/cdrom ${CD_MOUNTPT}
 WWWOWN?=	www
 WWWGRP?=	www
 
+# Keep PKGNG_ORIGIN/WITH_PKGNG for compat with scripts which are looking for it
+PKG_ORIGIN?=	ports-mgmt/pkg
+PKGNG_ORIGIN=	${PKG_ORIGIN}
+WITH_PKGNG?=	yes
+WITH_PKG?=	${WITH_PKGNG}
+
 .endif
 # End of pre-makefile section.
 
@@ -1662,12 +1668,6 @@ IGNORE=		requires i386 (or compatible) platform to run
 LIB32DIR=	lib
 .endif
 PLIST_SUB+=	LIB32DIR=${LIB32DIR}
-
-# Keep PKGNG_ORIGIN/WITH_PKGNG for compat with scripts which are looking for it
-PKG_ORIGIN?=	ports-mgmt/pkg
-PKGNG_ORIGIN=	${PKG_ORIGIN}
-WITH_PKGNG?=	yes
-WITH_PKG?=	${WITH_PKGNG}
 
 .if ${WITH_PKG} == devel
 PKG_ORIGIN=		ports-mgmt/pkg-devel
