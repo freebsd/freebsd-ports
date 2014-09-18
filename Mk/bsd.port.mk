@@ -574,8 +574,7 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 # INSTALL_SCRIPT
 #				- A command to install executable scripts.
 # INSTALL_DATA	- A command to install sharable data.
-# INSTALL_MAN	- A command to install manpages.  May or not compress,
-#				  depending on the value of MANCOMPRESSED (see below).
+# INSTALL_MAN	- A command to install manpages.
 # COPYTREE_BIN
 # COPYTREE_SHARE
 #				- Similiar to INSTALL_PROGRAM and INSTALL_DATA commands but
@@ -1615,17 +1614,6 @@ MAKE_SHELL?=	${SH}
 
 CONFIGURE_ENV+=	SHELL=${CONFIGURE_SHELL} CONFIG_SHELL=${CONFIGURE_SHELL}
 MAKE_ENV+=		SHELL=${MAKE_SHELL} NO_LINT=YES
-
-.if defined(MANCOMPRESSED)
-.if ${MANCOMPRESSED} != yes && ${MANCOMPRESSED} != no && \
-	${MANCOMPRESSED} != maybe
-check-makevars::
-	@${ECHO_MSG} "${PKGNAME}: Makefile error: value of MANCOMPRESSED (is \"${MANCOMPRESSED}\") can only be \"yes\", \"no\" or \"maybe\"".
-	@${FALSE}
-.endif
-.endif
-
-MANCOMPRESSED?=	no
 
 .if defined(PATCHFILES)
 .if ${PATCHFILES:M*.zip}x != x

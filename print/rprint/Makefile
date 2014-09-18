@@ -12,7 +12,6 @@ COMMENT=	Remote printing utility using a raw bidirectional tcp connection
 
 LICENSE=	BSD4CLAUSE
 
-MANCOMPRESSED=	yes
 PLIST_FILES=	bin/rprint man/man1/rprint.1.gz
 
 post-patch:

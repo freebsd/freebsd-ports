@@ -48,7 +48,6 @@ SUB_FILES+=	pkg-install.client pkg-deinstall.client pkg-message.client
 SUB_FILES+=	pkg-message.server
 .endif
 
-MANCOMPRESSED=	yes
 CONFIGURE_ARGS+=--with-tcp-wrappers=/usr/lib \
 		--enable-smartalloc \
 		--sysconfdir=${ETCDIR} \
