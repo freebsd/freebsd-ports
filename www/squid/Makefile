@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	squid
-PORTVERSION=	3.4.7
-PORTREVISION=	1
+PORTVERSION=	3.4.8
 CATEGORIES=	www ipv6
 MASTER_SITES=	http://www.squid-cache.org/Versions/v3/${PORTVERSION:R}/ \
 		http://www2.us.squid-cache.org/Versions/v3/${PORTVERSION:R}/ \
@@ -222,7 +221,7 @@ negotiate_auth=	kerberos wrapper
 . if ${OPSYS} == DragonFly
 LIB_DEPENDS+=	libkrb5.so:${PORTSDIR}/security/krb5
 . endif
-# the kerberos_ldap_group external helper depends on LDAP and SASL:
+# the kerberos_ldap_group external helper also depends on LDAP and SASL:
 . if ${PORT_OPTIONS:MAUTH_LDAP} && ${PORT_OPTIONS:MAUTH_SASL}
 external_acl+=	kerberos_ldap_group
 . endif
