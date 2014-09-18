@@ -35,6 +35,7 @@ load_rc_config ${name}
 : ${inspircd_pidfile="%%INSPIRCD_RUN%%/inspircd.pid"}
 : ${inspircd_user="%%USERS%%"}
 : ${inspircd_group="%%GROUPS%%"}
+: ${inspircd_data="/var/db/inspircd"}
 : ${inspircd_logfile="%%INSPIRCD_LOG%%"}
 : ${inspircd_flags="${inspircd_flags} --logfile ${inspircd_logfile} --config ${inspircd_config}"}
 
@@ -55,6 +56,7 @@ inspircd_prestart()
 	for i in ${inspircd_pidfile} ${inspircd_logfile}; do
 		install -d -m 755 -o ${inspircd_user} -g ${inspircd_group} ${i%/*}
 	done
+	install -d -m 755 -o ${inspircd_user} -g ${inspircd_group} ${inspircd_data}
 }
 
 run_rc_command "$1"
