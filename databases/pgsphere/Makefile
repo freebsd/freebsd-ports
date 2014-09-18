@@ -15,7 +15,9 @@ LICENSE=	BSD3CLAUSE
 
 OPTIONS_DEFINE=	DOCS
 
-MAKE_ARGS=	PG_CONFIG=${LOCALBASE}/bin/pg_config USE_PGXS=1 docdir=${DOCSDIR}
+MAKE_ARGS=	PG_CONFIG=${LOCALBASE}/bin/pg_config USE_PGXS=1 \
+		docdir=${DOCSDIR} \
+		install_bin=/usr/bin/install
 USE_LDCONFIG=	yes
 USES=		gmake pgsql
 
@@ -29,6 +31,12 @@ DOCS_MAKE_ARGS_OFF=	DOCS=""
 DOCS_PLIST_DIRS=	%%DOCSDIR%%/contrib
 DOCS_PLIST_FILES=	%%DOCSDIR%%/contrib/README.pg_sphere \
 			%%DOCSDIR%%/contrib/COPYRIGHT.pg_sphere
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|int4|int32|g' ${WRKSRC}/line.c ${WRKSRC}/line.h
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/postgresql/pg_sphere.so
 
 regression-test test: build
 	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} installcheck
