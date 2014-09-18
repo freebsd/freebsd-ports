@@ -8,10 +8,12 @@ bin/tsiyindump
 include/tabe/tabe.h
 %%X11%%lib/libbims.a
 %%X11%%lib/libbims.so
-%%X11%%lib/libbims.so.3
+%%X11%%lib/libbims.so.2
+%%X11%%lib/libbims.so.2.1.0
 lib/libtabe.a
 lib/libtabe.so
-lib/libtabe.so.3
+lib/libtabe.so.2
+lib/libtabe.so.2.1.0
 lib/tabe/tsi.db
 lib/tabe/yin.db
 %%PORTDOCS%%%%DOCSDIR%%/BoPoMoFo.shtml
