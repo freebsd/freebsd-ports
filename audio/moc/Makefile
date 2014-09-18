@@ -3,7 +3,7 @@
 
 PORTNAME=	moc
 PORTVERSION=	2.4.4
-PORTREVISION=	17
+PORTREVISION=	18
 CATEGORIES=	audio
 MASTER_SITES=	ftp://ftp.daper.net/pub/soft/moc/stable/
 
@@ -71,5 +71,8 @@ CURL_CONFIGURE_OFF=	--without-curl
 RCC_LIB_DEPENDS=	librcc.so:${PORTSDIR}/devel/librcc \
 		librcd.so:${PORTSDIR}/devel/librcd
 RCC_CONFIGURE_OFF=	--without-rcc
+
+post-patch:
+	@${REINPLACE_CMD} -e '/PKG_CONFIG/ s|alsa|no-&|g' ${WRKSRC}/configure
 
 .include <bsd.port.mk>
