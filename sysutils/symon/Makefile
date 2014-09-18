@@ -3,7 +3,7 @@
 
 PORTNAME=	symon
 PORTVERSION=	2.86
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://wpd.home.xs4all.nl/symon/philes/ \
 		${MASTER_SITE_LOCAL}
@@ -19,6 +19,7 @@ USE_PERL5=	build
 MAKE_JOBS_UNSAFE=	yes
 
 USERS=		_symon
+GROUPS=		_symon
 
 # Synonym for WITHOUT_SYMUX
 .if defined(WITHOUT_RRD)
