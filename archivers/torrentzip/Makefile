@@ -11,6 +11,7 @@ DISTNAME=	trrntzip_v${PORTVERSION:S/.//}_src
 MAINTAINER=	swhetzel@gmail.com
 COMMENT=	Efficient way to prepare zipfiles for BitTorrent
 
+GNU_CONFIGURE=	yes
 USES=		autoreconf
 WRKSRC=		${WRKDIR}/trrntzip
 
