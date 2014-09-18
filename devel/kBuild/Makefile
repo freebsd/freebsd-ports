@@ -15,8 +15,7 @@ COMMENT=	Makefile framework
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/flex:${PORTSDIR}/textproc/flex
 
-USE_AUTOTOOLS=	automake autoconf
-USES=		gmake makeinfo
+USES=		autoreconf:build gmake makeinfo
 
 CONFLICTS_INSTALL=	kBuild-devel-[0-9]*
 
@@ -56,10 +55,6 @@ post-patch:
 	for f in ${WRKSRC}/kBuild/tools/*.kmk; do \
 		${REINPLACE_CMD} -e 's|gcc|${CC}|g' $$f ; \
 	done
-
-# Override autotools
-run-autotools:
-do-configure:
 
 do-build:
 	cd ${WRKSRC} && ${SETENV} ${KBUILD_ENV} ./kBuild/env.sh --full ${MAKE_CMD} -f bootstrap.gmk
