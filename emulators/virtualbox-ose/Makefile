@@ -28,9 +28,12 @@ LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png \
 RUN_DEPENDS=	${LOCALBASE}/etc/rc.d/vboxnet:${PORTSDIR}/emulators/virtualbox-ose-kmod \
 		cdrecord:${PORTSDIR}/sysutils/cdrtools
 
+CPE_VENDOR=	oracle
+CPE_PRODUCT=	vm_virtualbox
+
 WRKSRC=		${WRKDIR}/VirtualBox-${PORTVERSION}
 ONLY_FOR_ARCHS=	i386 amd64
-USES=		compiler iconv pkgconfig tar:bzip2
+USES=		compiler cpe iconv pkgconfig tar:bzip2
 USE_GNOME=	libidl
 USE_PYTHON_BUILD=	yes
 
