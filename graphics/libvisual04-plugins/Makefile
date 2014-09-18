@@ -3,7 +3,7 @@
 
 PORTNAME=	libvisual
 PORTVERSION=	0.4.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-plugins/${PORTNAME}-plugins-${PORTVERSION}
 PKGNAMESUFFIX=	04-plugins
@@ -14,7 +14,7 @@ COMMENT=	Set of plugins for the libvisual framework
 
 LIB_DEPENDS=	libvisual-${MAJORMINOR}.so:${PORTSDIR}/graphics/libvisual04
 
-USES=		libtool:keepla pkgconfig
+USES=		libtool pkgconfig
 USE_GL=		yes
 USE_XORG=	x11
 GNU_CONFIGURE=	yes
@@ -27,6 +27,7 @@ CONFIGURE_ARGS=	--disable-alsa \
 		--prefix=${PREFIX}
 CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib
+INSTALL_TARGET=	install-strip
 
 MAJORMINOR=	${PORTVERSION:C/.[0-9]+$//}
 
@@ -34,10 +35,7 @@ DATADIR=	${PREFIX}/share/${PORTNAME}-${PKGNAMESUFFIX:C/.*-//}-${MAJORMINOR}
 PLIST_SUB=	PLUGINS_BASE_DIR=${LOCALBASE}/lib/${PORTNAME}-${MAJORMINOR} \
 		DATADIR_REL=${DATADIR_REL}
 
-pre-configure:
-# /usr/bin/objformat is obsolete, hardcode the object format
-	@${REINPLACE_CMD} -e 's,objformat=.*,objformat=elf,' \
-		${WRKSRC}/configure
+post-patch:
 # link some plugins with libGLU because they need it
 	@${REINPLACE_CMD} -e 's,^\(LDFLAGS = \),\1-lGLU ,' \
 		${WRKSRC}/plugins/actor/lv_gltest/Makefile.in \
