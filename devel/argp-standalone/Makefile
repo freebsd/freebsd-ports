@@ -12,12 +12,9 @@ MASTER_SITE_SUBDIR=	sem
 MAINTAINER=	sem@FreeBSD.org
 COMMENT=	Standalone version of arguments parsing functions from GLIBC
 
-USES=		libtool
+USES=		autoreconf libtool
 USE_CSTD=	gnu89
 GNU_CONFIGURE=	yes
-USE_AUTOTOOLS=	aclocal autoconf automake libtoolize
-AUTOMAKE_ARGS=	-c -a
-ACLOCAL_ARGS=	--automake-acdir=${ACLOCAL_DIR} -I ${LOCALBASE}/share/aclocal
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
 
