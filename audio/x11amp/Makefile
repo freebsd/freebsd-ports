@@ -25,10 +25,8 @@ MAKE_ENV=	PTHREAD_LIBS="${PTHREAD_LIBS}"
 
 post-extract:
 	@${CP} ${FILESDIR}/main.xpm ${WRKSRC}/x11amp/defskin
-	@${CHMOD} a+x ${WRKSRC}/ltconfig
 
 post-patch:
-	@${REINPLACE_CMD} -e '/objformat=/s|=.*|=elf|' ${WRKSRC}/ltconfig
 	@${REINPLACE_CMD} 's|-o root -g wheel||' ${WRKSRC}/libx11amp/Makefile.in
 
 .include <bsd.port.mk>
