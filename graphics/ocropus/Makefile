@@ -23,10 +23,8 @@ SDL_DESC=	Enable SDL for graphical debugging
 LEPTONICA_DESC=	Enable Leptonica image analysis
 
 MAKE_JOBS_UNSAFE=	yes
-USE_PYTHON_BUILD=	yes
-USE_AUTOTOOLS=	aclocal automake autoconf
-AUTOMAKE_ARGS=	--add-missing
-USES=		gmake
+USES=		autoreconf gmake python:build
+GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--without-fst --without-tesseract --with-iulib=${LOCALBASE}
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
@@ -48,13 +46,5 @@ CONFIGURE_ARGS+=--without-leptonica
 pre-configure:
 	@(cd ${CONFIGURE_WRKSRC} \
 	  && ${SETENV} ${PYTHON_CMD} genAM.py >Makefile.am)
-
-run-autotools: run-autotools-aclocal run-autotools-automake run-autotools-autoconf
-
-run-autotools-autoconf:
-	@(cd ${CONFIGURE_WRKSRC} && ${SETENV} ${AUTOTOOLS_ENV} ${AUTOCONF} \
-		${AUTOCONF_ARGS})
-	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|'\
-		${WRKSRC}/configure
 
 .include <bsd.port.mk>
