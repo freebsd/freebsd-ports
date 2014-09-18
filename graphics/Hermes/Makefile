@@ -3,7 +3,7 @@
 
 PORTNAME=	Hermes
 PORTVERSION=	1.3.3
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.su.se/pub/lunar/source-archive/ \
 		GENTOO/distfiles
@@ -11,11 +11,9 @@ MASTER_SITES=	ftp://ftp.su.se/pub/lunar/source-archive/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fast pixel formats conversion library
 
-USES=		gmake libtool tar:bzip2
-USE_AUTOTOOLS=	libtoolize
 GNU_CONFIGURE=	yes
-MAKE_ARGS=	ACLOCAL="${TRUE}" AUTOCONF="${TRUE}" AUTOMAKE="${TRUE}" \
-		AUTOHEADER="${TRUE}"
+INSTALL_TARGET=	install-strip
+USES=		gmake libtool tar:bzip2
 USE_LDCONFIG=	yes
 
 PORTDOCS=	*
@@ -33,18 +31,15 @@ DOC_FILES3=	api.sgml
 
 OPTIONS_DEFINE=	DOCS
 
-.include <bsd.port.pre.mk>
+BROKEN_sparc64=		interchanges red and blue colour channels in images
 
-.if ${ARCH} == sparc64
-IGNORE=		is broken on sparc64: interchanges red and blue colour channels in images
-.endif
+post-extract:
+	${TOUCH} ${WRKSRC}/src/hrconfig.h.in
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/lib${PORTNAME}.so.1
-
 	@${MKDIR} ${STAGEDIR}${DOCSDIR3}
 	${INSTALL_DATA} ${DOC_FILES1:S|^|${DOCSRCDIR1}/|} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${DOC_FILES2:S|^|${DOCSRCDIR2}/|} ${STAGEDIR}${DOCSDIR2}
 	${INSTALL_DATA} ${DOC_FILES3:S|^|${DOCSRCDIR3}/|} ${STAGEDIR}${DOCSDIR3}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
