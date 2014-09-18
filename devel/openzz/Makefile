@@ -13,16 +13,14 @@ COMMENT=	Interpreted dynamic parser
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:R}
 
-USES=		libtool readline
 GNU_CONFIGURE=	yes
-USE_LDCONFIG=	yes
 CFLAGS+=	-Wno-return-type
+INSTALL_TARGET=	install-strip
+USES=		libtool readline
+USE_LDCONFIG=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e "s/cfree/free/g" ${WRKSRC}/src/list.c
 	@${REINPLACE_CMD} -e "s/argv\[\]/*argv/" ${WRKSRC}/src/zzbind.h
-
-post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/*.so
 
 .include <bsd.port.mk>
