@@ -14,11 +14,9 @@ LIB_DEPENDS=	libmp4v2.so:${PORTSDIR}/multimedia/mp4v2
 
 RESTRICTED=	Distribution in binary form is prohibited
 
-USES=		dos2unix gmake libtool tar:bzip2
-USE_AUTOTOOLS=	aclocal autoheader automake autoconf libtoolize
+USES=		autoreconf dos2unix gmake libtool tar:bzip2
+INSTALL_TARGET=	install-strip
 GNU_CONFIGURE=	yes
-ACLOCAL_ARGS=	-I . -I ${LOCALBASE}/share/aclocal
-AUTOMAKE_ARGS=	--add-missing
 CONFIGURE_ARGS=	--with-mp4v2
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
