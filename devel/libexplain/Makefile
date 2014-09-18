@@ -16,15 +16,14 @@ LICENSE=	LGPL3
 BUILD_DEPENDS=	gsed:${PORTSDIR}/textproc/gsed
 RUN_DEPENDS=	lsof:${PORTSDIR}/sysutils/lsof
 
-USES=		bison gettext gmake libtool
+USES=		bison gettext gmake libtool:build
 USE_GHOSTSCRIPT_BUILD=	yes
-USE_AUTOTOOLS=	libtoolize
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	ac_cv_header_linux_kd_h=no
 USE_LDCONFIG=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+LIBS+=		-L${LOCALBASE}/lib
 
 PATCHLEVEL=	D012
 
