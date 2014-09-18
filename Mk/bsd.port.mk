@@ -1099,6 +1099,7 @@ CO_ENV+=	STAGEDIR=${STAGEDIR} \
 			PLIST_SUB_SED="${PLIST_SUB_SED}" \
 			PORT_OPTIONS="${PORT_OPTIONS}" \
 			PORTSDIR="${PORTSDIR}"
+MINIMAL_PKG_VERSION=	1.3.7
 
 # make sure bmake treats -V as expected
 .MAKE.EXPAND_VARIABLES= yes
@@ -1217,6 +1218,16 @@ WITH_NEW_XORG?=	yes
 
 # Only define tools here (for transition period with between pkg tools)
 .include "${PORTSDIR}/Mk/bsd.commands.mk"
+
+.if exists(${PKG_BIN})
+.if !defined(_PKG_VERSION)
+_PKG_VERSION!=	${PKG_BIN} -v
+.endif
+_PKG_STATUS!=	${PKG_BIN} version -t ${_PKG_VERSION:S/-/\./g} ${MINIMAL_PKG_VERSION}
+.if ${_PKG_STATUS} == "<"
+IGNORE=		You need pkg(8) at least version ${MINIMAL_PKG_VERSION} and you have ${_PKG_VERSION} please consider upgrading pkg(8) first
+.endif
+.endif
 
 MASTERDIR?=	${.CURDIR}
 
