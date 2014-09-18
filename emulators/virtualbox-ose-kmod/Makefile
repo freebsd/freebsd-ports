@@ -18,7 +18,10 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	kmk:${PORTSDIR}/devel/kBuild
 
-USES=		kmod tar:bzip2
+CPE_VENDOR=	oracle
+CPE_PRODUCT=	vm_virtualbox
+
+USES=		cpe kmod tar:bzip2
 UNIQUENAME=	${PORTNAME}${PKGNAMESUFFIX}
 PATCHDIR=	${.CURDIR}/../${PORTNAME}/files
 WRKSRC=		${WRKDIR}/VirtualBox-${PORTVERSION}

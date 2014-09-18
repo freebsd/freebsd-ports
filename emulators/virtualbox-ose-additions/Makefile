@@ -19,11 +19,14 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 BUILD_DEPENDS=	yasm:${PORTSDIR}/devel/yasm \
 		kmk:${PORTSDIR}/devel/kBuild
 
+CPE_VENDOR=	oracle
+CPE_PRODUCT=	vm_virtualbox
+
 UNIQUENAME=	${PORTNAME}${PKGNAMESUFFIX}
 PATCHDIR=	${.CURDIR}/../${PORTNAME}/files
 WRKSRC=		${WRKDIR}/VirtualBox-${PORTVERSION}
 USE_RC_SUBR=	vboxguest vboxservice
-USES=		compiler:features iconv kmod tar:bzip2
+USES=		compiler:features cpe iconv kmod tar:bzip2
 ONLY_FOR_ARCHS=	i386 amd64
 USE_PYTHON_BUILD=	yes
 MAKE_JOBS_UNSAFE=	yes
