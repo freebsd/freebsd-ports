@@ -8,7 +8,7 @@
 
 PORTNAME=	libpano12
 PORTVERSION=	2.8.6
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	graphics java
 MASTER_SITES=	SF/panotools/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
@@ -21,9 +21,7 @@ LIB_DEPENDS=	libtiff.so:${PORTSDIR}/graphics/tiff \
 
 USE_GNOME=	gtk20 glib20 pango atk
 
-USES=		libtool
-USE_AUTOTOOLS=	autoconf:env autoheader:env aclocal:env \
-		automake:env libtoolize
+USES=		autoreconf libtool
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include/gtk-2.0 \
 		-I${LOCALBASE}/include/glib-2.0 \
@@ -33,6 +31,7 @@ CPPFLAGS+=	-I${LOCALBASE}/include/gtk-2.0 \
 CONFIGURE_ARGS=	--with-png=${LOCALBASE} \
 		--with-jpeg=${LOCALBASE} \
 		--with-tiff=${LOCALBASE}
+INSTALL_TARGET=	install-strip
 
 USE_LDCONFIG=	yes
 
@@ -44,8 +43,5 @@ CONFIGURE_ARGS+=	--with-java=${JAVA_HOME}
 .else
 CONFIGURE_ARGS+=	--without-java
 .endif
-
-pre-configure:
-	cd ${WRKSRC} && ./bootstrap
 
 .include <bsd.port.mk>
