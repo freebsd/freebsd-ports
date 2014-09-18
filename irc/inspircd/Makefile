@@ -2,15 +2,13 @@
 # $FreeBSD$
 
 PORTNAME=	inspircd
-PORTVERSION=	2.0.14
-PORTREVISION=	6
+PORTVERSION=	2.0.17
 CATEGORIES=	irc
 
 MAINTAINER=	feld@FreeBSD.org
 COMMENT=	Modular C++ IRC daemon
 
 LICENSE=	GPLv2
-LICENSE_FILE=	${WRKSRC}/docs/COPYING
 
 CONFLICTS=	inspircd-1.*
 
@@ -18,7 +16,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	inspircd
 GH_PROJECT=	${GH_ACCOUNT}
 GH_TAGNAME=	v${PORTVERSION}
-GH_COMMIT=	5661a9e
+GH_COMMIT=	2cc3d7e
 
 USE_RC_SUBR=	${PORTNAME}
 MAKEFILE=	BSDmakefile
@@ -42,12 +40,14 @@ USE_PERL5=	build
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-cc=${CXX} --config-dir=${ETCDIR} \
 		--module-dir=${PREFIX}/lib/${PORTNAME}/modules \
-		--prefix=${PREFIX}/lib/${PORTNAME} --binary-dir=${PREFIX}/bin \
+		--prefix=${PREFIX}/lib/${PORTNAME} \
+		--binary-dir=${PREFIX}/bin --library-dir=${PREFIX}/lib/${PORTNAME} \
+		--log-dir=${INSPIRCD_LOG} --data-dir=/var/db/inspircd \
 		--enable-kqueue --disable-interactive \
 		--uid=${INSPIRCD_UID}
 
 OPTIONS_DEFINE=	MYSQL PGSQL SQLITE LDAPAUTH LDAPOPER GNUTLS OPENSSL PCRE POSIX
-OPTIONS_DEFAULT=	POSIX
+OPTIONS_DEFAULT=	OPENSSL POSIX
 
 GNUTLS_DESC=	Build m_ssl_gnutls module
 LDAPAUTH_DESC=	Build m_ldapauth module
