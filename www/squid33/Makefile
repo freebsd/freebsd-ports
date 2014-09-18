@@ -3,7 +3,7 @@
 
 PORTNAME=	squid
 PORTVERSION=	3.3.${SQUID_STABLE_VER}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www ipv6
 MASTER_SITES=	http://www.squid-cache.org/Versions/v3/${PORTVERSION:R}/ \
 		http://www2.us.squid-cache.org/Versions/v3/${PORTVERSION:R}/ \
@@ -21,7 +21,9 @@ PATCH_SITES=	http://www.squid-cache.org/%SUBDIR%/ \
 		http://www1.jp.squid-cache.org/%SUBDIR%/ \
 		http://master.squid-cache.org/~amosjeffries/patches/:nosid
 PATCH_SITE_SUBDIR=	Versions/v3/${PORTVERSION:R}/changesets
-PATCHFILES=	FreeBSD_silence_nosuid_mk1.patch:nosid
+PATCHFILES=	FreeBSD_silence_nosuid_mk1.patch:nosid \
+		squid-3.3-12682.patch \
+		squid-3.3-12683.patch
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	HTTP Caching Proxy
@@ -228,7 +230,7 @@ negotiate_auth=	kerberos wrapper
 .  if ${OPSYS} == DragonFly
 LIB_DEPENDS+=	libkrb5.so:${PORTSDIR}/security/krb5
 .  endif
-# the kerberos_ldap_group external helper depends on LDAP and SASL:
+# the kerberos_ldap_group external helper also depends on LDAP and SASL:
 . if ${PORT_OPTIONS:MAUTH_LDAP} && ${PORT_OPTIONS:MAUTH_SASL}
 external_acl+=	kerberos_ldap_group
 . endif
