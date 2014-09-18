@@ -1,3 +1,5 @@
+@owner %%WWWOWN%%
+@group %%WWWGRP%%
 %%WWWDIR%%/ChangeLog
 %%WWWDIR%%/README
 %%WWWDIR%%/config.php
@@ -29,3 +31,5 @@
 @dirrm %%WWWDIR%%/documents/default
 @dirrm %%WWWDIR%%/documents
 @dirrm %%WWWDIR%%
+@owner root
+@group wheel
