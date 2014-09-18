@@ -49,38 +49,6 @@ WX_UNICODE=	yes
 
 USE_GL=		glew glut
 
-MANCOMPRESSED=	yes
-
-MAN1=		align_image_stack.1 \
-		autooptimiser.1 \
-		autopano-noop.sh.1 \
-		calibrate_lens_gui.1 \
-		celeste_standalone.1 \
-		checkpto.1 \
-		cpclean.1 \
-		cpfind.1 \
-		deghosting_mask.1 \
-		fulla.1 \
-		hugin.1 \
-		hugin_hdrmerge.1 \
-		hugin_stitch_project.1 \
-		icpfind.1 \
-		nona.1 \
-		linefind.1 \
-		matchpoint.1 \
-		nona_gui.1 \
-		pano_modify.1 \
-		pano_trafo.1 \
-		pto2mk.1 \
-		pto_gen.1 \
-		pto_lensstack.1 \
-		pto_merge.1 \
-		pto_var.1 \
-		tca_correct.1 \
-		PTBatcher.1 \
-		PTBatcherGUI.1 \
-		vig_optimize.1
-
 post-configure:
 	${REINPLACE_CMD} \
 		's/-pthread;-D_THREAD_SAFE/-pthread -D_THREAD_SAFE/g' \

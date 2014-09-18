@@ -23,7 +23,6 @@ USES=		uidfix
 # CCACHE has options, so may need d4p, make d4p not ccache friendly
 # to avoid circular dependency
 NO_CCACHE=	yes
-MANCOMPRESSED=	yes
 MAKE_ENV+=	__MAKE_CONF=/dev/null SRCCONF=/dev/null
 
 .if !defined(D4P_SLAVE)

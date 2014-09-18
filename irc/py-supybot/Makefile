@@ -19,7 +19,6 @@ PYDISTUTILS_EGGINFO=	supybot-${PORTVERSION}-py${PYTHON_VER}.egg-info
 
 DOCS=	ACKS ChangeLog INSTALL LICENSE README RELNOTES
 
-MANCOMPRESSED=	no
 MAN1=	supybot.1 supybot-adduser.1 supybot-wizard.1 supybot-botchk.1 \
 	supybot-plugin-create.1 supybot-plugin-doc.1
 
