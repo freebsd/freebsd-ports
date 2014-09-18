@@ -2260,21 +2260,6 @@ TMPPLIST?=	${WRKDIR}/.PLIST.mktmp
 TMPPLIST_SORT?=	${WRKDIR}/.PLIST.mktmp.sorted
 TMPGUCMD?=	${WRKDIR}/.PLIST.gucmd
 
-.if !defined(PKG_ARGS)
-PKG_ARGS=		-v -c -${COMMENT:Q} -d ${DESCR} -f ${TMPPLIST} -p ${PREFIX} -P "`cd ${.CURDIR} && ${MAKE} actual-package-depends | ${GREP} -v -E ${PKG_IGNORE_DEPENDS} | ${SORT} -u -t : -k 2`" ${EXTRA_PKG_ARGS} $${_LATE_PKG_ARGS}
-.if !defined(NO_MTREE)
-PKG_ARGS+=		-m ${MTREE_FILE}
-.endif
-.if defined(PKGORIGIN)
-PKG_ARGS+=		-o ${PKGORIGIN}
-.endif
-.if defined(CONFLICTS) && !defined(DISABLE_CONFLICTS)
-PKG_ARGS+=		-C "${CONFLICTS}"
-.endif
-.if defined(CONFLICTS_INSTALL) && !defined(DISABLE_CONFLICTS)
-PKG_ARGS+=		-C "${CONFLICTS_INSTALL}"
-.endif
-.endif
 .if defined(PKG_NOCOMPRESS)
 PKG_SUFX?=		.tar
 .else
