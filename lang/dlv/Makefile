@@ -11,17 +11,18 @@ EXTRACT_SUFX=
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Disjunctive Datalog System
 
-NO_BUILD=	yes
+NO_WRKSUBDIR=	yes
+EXTRACT_CMD=	${CP}
+EXTRACT_BEFORE_ARGS=
+EXTRACT_AFTER_ARGS=	${WRKSRC}
 PLIST_FILES=	bin/dlv
 ONLY_FOR_ARCHS=	i386 amd64
 RESTRICTED=	Not sure if we can redistribute it
 
-do-extract:
-	${RM} -rf ${WRKDIR}
-	${MKDIR} ${WRKDIR}
+do-build:
+	${BRANDELF} -t Linux ${WRKSRC}/${DISTNAME}
 
 do-install:
-	${INSTALL_SCRIPT} ${DISTDIR}/${DISTNAME} ${STAGEDIR}${PREFIX}/bin/dlv
-	${BRANDELF} -t Linux ${STAGEDIR}${PREFIX}/bin/dlv
+	${INSTALL_SCRIPT} ${WRKSRC}/${DISTNAME} ${STAGEDIR}${PREFIX}/bin/dlv
 
 .include <bsd.port.mk>
