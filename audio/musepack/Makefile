@@ -13,11 +13,9 @@ COMMENT=	Decoder, encoder, and replaygain for musepack (mpc)
 LICENSE=	BSD3CLAUSE GPLv2 LGPL21 #or later for the (L)GPL'ed part
 LICENSE_COMB=	multi
 
-USES=		libtool
+USES=		autoreconf libtool
 USE_LDCONFIG=	yes
-USE_AUTOTOOLS=	aclocal autoheader libtoolize automake autoconf
 GNU_CONFIGURE=	yes
-ACLOCAL_ARGS=	-I. -I ${LOCALBASE}/share/aclocal
-AUTOMAKE_ARGS=	--add-missing
+INSTALL_TARGET=	install-strip
 
 .include <bsd.port.mk>
