@@ -3,4 +3,4 @@ interpreting the results of computational chemistry packages. The current
 version, cclib 0.9, parses output files from ADF, GAMESS (US), GAMESS-UK,
 Gaussian, Jaguar, Molpro, ORCA and PC GAMESS.
 
-WWW: http://cclib.sourceforge.net/
+WWW: http://cclib.github.io
