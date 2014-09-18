@@ -5002,7 +5002,7 @@ missing:
 		fi; \
 	done
 
-# shwo missing dependencies by name
+# Show missing dependencies by name
 missing-packages:
 	@_packages=$$(${PKG_INFO} -aq); \
 	for dir in $$(${ALL-DEPENDS-LIST}); do \
