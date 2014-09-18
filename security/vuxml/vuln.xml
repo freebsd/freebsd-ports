@@ -57,6 +57,41 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="d3324c55-3f11-11e4-ad16-001999f8d30b">
+    <topic>squid -- Buffer overflow in SNMP processing</topic>
+    <affects>
+      <package>
+	<name>squid</name>
+	<range><lt>3.4.8</lt></range>
+      </package>
+      <package>
+	<name>squid32</name>
+	<range><gt>0</gt></range>
+      </package>
+      <package>
+	<name>squid33</name>
+	<range><lt>3.3.13_2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The squid-cache project reports:</p>
+	<blockquote cite="http://www.squid-cache.org/Advisories/SQUID-2014_3.txt">
+	  <p>Due to incorrect buffer management Squid can be caused
+	  by an attacker to write outside its allocated SNMP buffer.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://www.squid-cache.org/Advisories/SQUID-2014_3.txt</url>
+      <cvename>CVE-2014-6270</cvename>
+    </references>
+    <dates>
+      <discovery>2014-09-15</discovery>
+      <entry>2014-09-18</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="38242d51-3e58-11e4-ac2f-bcaec565249c">
     <topic>dbus -- multiple vulnabilities</topic>
     <affects>
