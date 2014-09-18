@@ -2,6 +2,7 @@
 
 PORTNAME=	pkg
 DISTVERSION=	1.3.7
+_PKG_VERSION=	${DISTVERSION}
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	\
 		http://mirror.shatow.net/freebsd/${PORTNAME}/ \
