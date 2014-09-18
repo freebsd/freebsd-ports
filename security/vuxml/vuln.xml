@@ -57,6 +57,44 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="e60d9e65-3f6b-11e4-ad16-001999f8d30b">
+    <topic>asterisk -- Remotely triggered crash</topic>
+    <affects>
+      <package>
+	<name>asterisk11</name>
+	<range><lt>11.12.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Asterisk project reports:</p>
+	<blockquote cite="https://www.asterisk.org/security">
+	  <p>When an out of call message - delivered by either the
+	    SIP or PJSIP channel driver or the XMPP stack - is handled
+	    in Asterisk, a crash can occur if the channel servicing
+	    the message is sent into the ReceiveFax dialplan application
+	    while using the res_fax_spandsp module.</p>
+	  <p>Note that this crash does not occur when using the
+	    res_fax_digium module.  While this crash technically
+	    occurs due to a configuration issue, as attempting to
+	    receive a fax from a channel driver that only contains
+	    textual information will never succeed, the likelihood
+	    of having it occur is sufficiently high as to warrant
+	    this advisory.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://downloads.asterisk.org/pub/security/AST-2014-010.pdf</url>
+      <url>https://issues.asterisk.org/jira/browse/ASTERISK-24301</url>
+      <url>https://www.asterisk.org/security</url>
+    </references>
+    <dates>
+      <discovery>2014-09-05</discovery>
+      <entry>2014-09-18</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="d3324c55-3f11-11e4-ad16-001999f8d30b">
     <topic>squid -- Buffer overflow in SNMP processing</topic>
     <affects>
