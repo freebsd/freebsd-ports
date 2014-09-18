@@ -726,6 +726,7 @@ abills/README
 abills/bin/abm_console
 abills/bin/ipn_stats.pl
 abills/bin/multi_docs.pl
+@owner %%WWWOWN%%
 abills/cgi-bin/admin/charts.swf
 abills/cgi-bin/admin/help.cgi
 abills/cgi-bin/admin/index.cgi
@@ -986,6 +987,7 @@ abills/cgi-bin/styles/default/js/selectbox/jquery.selectbox-0.6.1.js
 abills/cgi-bin/styles/default/js/selectbox/jquery.selectbox.css
 abills/cgi-bin/styles/default/styleIE.css
 abills/cgi-bin/styles/default/styleLib.css
+@owner root
 abills/db/Abon.sql
 abills/db/Ashield.sql
 abills/db/Bonus.sql
@@ -1209,6 +1211,7 @@ abills/update.sh
 @dirrm abills/docs/img
 @dirrm abills/docs
 @dirrm abills/db
+@owner %%WWWOWN%%
 @dirrm abills/cgi-bin/styles/default/js/selectbox
 @dirrm abills/cgi-bin/styles/default/js
 @dirrm abills/cgi-bin/styles/default/img
@@ -1235,6 +1238,7 @@ abills/update.sh
 @dirrm abills/cgi-bin/ajax
 @dirrm abills/cgi-bin/admin
 @dirrm abills/cgi-bin
+@owner root
 @dirrm abills/bin
 @dirrm abills/Abills/templates/fonts
 @dirrm abills/Abills/templates
