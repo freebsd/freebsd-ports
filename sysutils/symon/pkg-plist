@@ -12,4 +12,3 @@
 @dirrm share/symon/client
 @dirrm %%DATADIR%%
 @dirrm %%EXAMPLESDIR%%
-@unexec echo "Warning: If you will *NOT* use this package anymore, please remove the _symon user manually."
