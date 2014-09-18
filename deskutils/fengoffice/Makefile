@@ -3,6 +3,7 @@
 
 PORTNAME=	fengoffice
 PORTVERSION=	2.3.2.1
+PORTREVISION=	1
 CATEGORIES=	deskutils
 MASTER_SITES=	SF/opengoo/${PORTNAME}/${PORTNAME}_${PORTVERSION}
 DISTNAME=	${PORTNAME}_${PORTVERSION}
@@ -35,22 +36,18 @@ post-extract:
 
 pre-install:
 	@${RM} -f ${PLIST}
-
+	@${ECHO_CMD} -e '@owner ${WWWOWN}\n@group ${WWWGRP}' >> ${PLIST}
 	@cd ${WRKSRC} && \
 		${FIND} . -type f | ${SORT} | ${SED} -e 's|^|www/fengoffice/|' -e 's|\./||g' >> ${PLIST} && \
 			${FIND} . -type d | ${SORT} -r | ${SED} -e 's|^|@dirrm www/fengoffice|' -e 's|\.||g' >> ${PLIST}
-
+	@${ECHO_CMD} -e '@owner root\n@group wheel' >> ${PLIST}
 	@${ECHO_CMD} "%%PORTDOCS%%%%DOCSDIR%%/README" >> ${PLIST}
 	@${ECHO_CMD} "%%PORTDOCS%%@dirrm %%DOCSDIR%%" >> ${PLIST}
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${FENGOFFICE_WWWDIR}
 	cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${FENGOFFICE_WWWDIR}
-	${CHOWN} -R ${WWWOWN}:${WWWGRP} ${STAGEDIR}${FENGOFFICE_WWWDIR}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKDIR}/${PORTNAME}-docs/README ${STAGEDIR}${DOCSDIR}
-
-post-install:
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
