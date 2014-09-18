@@ -9,7 +9,7 @@ DISTNAME=	${PORTNAME:S/r/R/}_${PORTVERSION}
 DIST_SUBDIR=	java
 
 MAINTAINER=	games@FreeBSD.org
-COMMENT=	Action adventure in space
+COMMENT=	Action adventure in Space
 
 LICENSE=	GPLv3
 
