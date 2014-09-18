@@ -13,7 +13,7 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		autoreconf libtool pkgconfig tar:xz
-HAS_CONFIGURE=	yes
+GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-documentation
 USE_XORG=	dri2proto xext
 USE_LDCONFIG=	yes

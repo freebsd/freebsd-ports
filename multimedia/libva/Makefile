@@ -18,7 +18,7 @@ LIB_DEPENDS=	libdrm.so:${PORTSDIR}/graphics/libdrm
 USES=		autoreconf libtool pkgconfig tar:bzip2
 USE_XORG=	glproto pciaccess xext xfixes
 USE_GL=		gl
-HAS_CONFIGURE=	yes
+GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--program-prefix=va
 USE_LDCONFIG=	yes
 
