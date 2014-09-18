@@ -27,8 +27,15 @@ WRKSRC_SUBDIR=	generate/unix
 MAKE_ARGS=	HOST=_FreeBSD NOOPT=TRUE PROGS="${ACPICA_TOOLS}"
 MAKE_ARGS+=	CC="${CC}" LEX="${FLEX}" YACC="${YACC}"
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 902505
+BUILD_DEPENDS+=	gm4:${PORTSDIR}/devel/m4
+MAKE_ARGS+=	MACROPROC="${LOCALBASE}/bin/gm4"
+.endif
+
 do-install:
 	@${INSTALL_PROGRAM} ${ACPICA_TOOLS:S,^,${WRKSRC}/bin/,} \
 	    ${STAGEDIR}${PREFIX}/bin
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
