@@ -124,7 +124,7 @@ CACHE_DIGESTS_DESC=	Use cache digests
 DEBUG_DESC=		Build with extended debugging support
 DELAY_POOLS_DESC=	Delay pools (bandwidth limiting)
 DNS_HELPER_DESC=	Use external dnsserver processes for DNS
-ECAP_DESC=		Loadable content adaptation modules (broken on FreeBSD 10+)
+ECAP_DESC=		Loadable content adaptation modules
 ESI_DESC=		ESI support
 FOLLOW_XFF_DESC=	Support for the X-Following-For header
 FS_AUFS_DESC=		AUFS (async-io) support
@@ -286,17 +286,6 @@ CONFIGURE_ARGS+=	--enable-url-rewrite-helpers="${rewrite_helpers}"
 CONFIGURE_ARGS+=	--with-openssl="${OPENSSLBASE}"
 CFLAGS+=		-I${OPENSSLINC}
 LDFLAGS+=		-L${OPENSSLLIB}
-.endif
-
-.if ${PORT_OPTIONS:MECAP}
-.if ${OPSYS} == FreeBSD && ${OSVERSION} > 1000000
-# re-evaluate on FreeBSD 10+ with the next release
-# http://www.squid-cache.org/mail-archive/squid-users/201402/0324.html
-BROKEN=		ECAP and clang are not friendly
-.endif
-LIB_DEPENDS+=	libecap.so:${PORTSDIR}/www/libecap
-CFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
 .endif
 
 .if ${PORT_OPTIONS:MSTACKTRACES}
