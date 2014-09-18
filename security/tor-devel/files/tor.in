@@ -39,7 +39,7 @@ required_dirs=${tor_datadir}
 pidfile=${tor_pidfile}
 command="%%PREFIX%%/bin/${name}"
 command_args="-f ${tor_conf} --PidFile ${tor_pidfile} --RunAsDaemon 1 --DataDirectory ${tor_datadir} --+Log ${tor_loglevel}\ file\ ${tor_logfile}"
-extra_commands="log"
+extra_commands="log reload"
 log_cmd="${name}_log"
 
 tor_log() {
