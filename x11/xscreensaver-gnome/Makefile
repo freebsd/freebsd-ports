@@ -20,9 +20,10 @@ LIB_DEPENDS=	libgle.so:${PORTSDIR}/graphics/gle \
 USE_XORG=	x11 xpm
 USE_GL=		gl
 USE_PERL5=	run
-USE_GNOME=	gnomehier libglade2 gnomehack
-USES+=		dos2unix gettext gmake perl5 pkgconfig
+USE_GNOME=	gnomehier libglade2
+USES+=		dos2unix gettext gmake perl5 pathfix pkgconfig
 GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	ac_x_app_defaults=${PREFIX}/lib/X11/app-defaults
 CONFIGURE_ARGS=	--with-gtk --with-gl --with-gle --with-pixbuf --with-xpm \
 		--with-jpeg=${LOCALBASE} --with-xshm-ext --with-xdbe-ext \
 		--with-hackdir=${PREFIX}/bin/xscreensaver-hacks \
