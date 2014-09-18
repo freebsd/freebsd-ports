@@ -12,9 +12,8 @@ COMMENT=	General-purpose tool for parameter handling in C++
 
 LICENSE=	GPLv2 # (or later)
 
-USES=		gmake libtool
-USE_AUTOTOOLS=	libtoolize
 GNU_CONFIGURE=	yes
+USES=		gmake libtool:build
 USE_LDCONFIG=	yes
 
 post-install:
