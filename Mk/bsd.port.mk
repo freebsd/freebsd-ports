@@ -1223,9 +1223,9 @@ WITH_NEW_XORG?=	yes
 .if !defined(_PKG_VERSION)
 _PKG_VERSION!=	${PKG_BIN} -v
 .endif
-_PKG_STATUS!=	${PKG_BIN} version -t ${_PKG_VERSION:S/-/\./g} ${MINIMAL_PKG_VERSION}
+_PKG_STATUS!=	${PKG_BIN} version -t ${_PKG_VERSION:C/-.*//g} ${MINIMAL_PKG_VERSION}
 .if ${_PKG_STATUS} == "<"
-IGNORE=		You need pkg(8) at least version ${MINIMAL_PKG_VERSION} and you have ${_PKG_VERSION} please consider upgrading pkg(8) first
+IGNORE=		pkg(8) must be version ${MINIMAL_PKG_VERSION} or greater, but you have ${_PKG_VERSION}. You must upgrade pkg(8) first
 .endif
 .endif
 
