@@ -397,14 +397,16 @@ include/armadillo_bits/unwrap_spmat.hpp
 include/armadillo_bits/upgrade_val.hpp
 include/armadillo_bits/wall_clock_bones.hpp
 include/armadillo_bits/wall_clock_meat.hpp
+include/armadillo_bits/xtrans_mat_bones.hpp
+include/armadillo_bits/xtrans_mat_meat.hpp
 include/armadillo_bits/xvec_htrans_bones.hpp
 include/armadillo_bits/xvec_htrans_meat.hpp
 lib/libarmadillo.so
 lib/libarmadillo.so.4
-lib/libarmadillo.so.4.400.2
+lib/libarmadillo.so.4.450.0
 share/Armadillo/CMake/ArmadilloConfig.cmake
 share/Armadillo/CMake/ArmadilloConfigVersion.cmake
-share/Armadillo/CMake/ArmadilloLibraryDepends-%%CMAKE_BUILD_TYPE%%.cmake
+share/Armadillo/CMake/ArmadilloLibraryDepends-release.cmake
 share/Armadillo/CMake/ArmadilloLibraryDepends.cmake
 @dirrmtry include/armadillo_bits
 @dirrmtry share/Armadillo/CMake
