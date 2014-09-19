@@ -14,7 +14,6 @@ MASTERDIR=	${.CURDIR}/../../x11-toolkits/vte3
 WRKSRC=		${WRKDIR}/${DISTNAME}/${PORTNAME}
 PATCHDIR=	${.CURDIR}/files
 PLIST=		${.CURDIR}/pkg-plist
-USES=		pathfix
 USE_GNOME=	gnomeprefix
 CONFIGURE_ARGS=	# empty
 PATCH_STRIP=	-p1
