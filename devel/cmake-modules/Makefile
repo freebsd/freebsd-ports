@@ -1,6 +1,7 @@
 # Created by: gahr
 # $FreeBSD$
 
+PORTREVISION=	0
 PKGNAMESUFFIX=	-modules
 
 COMMENT=	Modules and Templates for CMake
@@ -19,4 +20,5 @@ PLIST=		${.CURDIR}/pkg-plist
 DESCR=		${.CURDIR}/pkg-descr
 
 MASTERDIR=	${.CURDIR}/../cmake
+
 .include "${MASTERDIR}/Makefile"
