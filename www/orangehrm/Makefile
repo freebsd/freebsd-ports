@@ -3,6 +3,7 @@
 
 PORTNAME=	orangehrm
 PORTVERSION=	3.1.2
+PORTREVISION=	1
 CATEGORIES=	www misc
 MASTER_SITES=	SF/${PORTNAME}/stable/${PORTVERSION}
 
@@ -17,19 +18,14 @@ SUB_FILES=	pkg-message
 HRMDIR=		www/orangehrm
 
 pre-install:
-	@${FIND} -s -d ${WRKSRC} -type l | ${SED} "s#${WRKSRC}#${HRMDIR}#g" >${PLIST}
+	@${ECHO_CMD} -e '@owner ${WWWOWN}\n@group ${WWWGRP}' > ${PLIST}
+	@${FIND} -s -d ${WRKSRC} -type l | ${SED} "s#${WRKSRC}#${HRMDIR}#g" >>${PLIST}
 	@${FIND} -s -d ${WRKSRC} -type f | ${SED} "s#${WRKSRC}#${HRMDIR}#g" >>${PLIST}
 	@${FIND} -s -d ${WRKSRC} -type d  | ${SED} "s#${WRKSRC}#@dirrm ${HRMDIR}#g" >> ${PLIST}
+	@${ECHO_CMD} -e '@owner root\n@group wheel' >> ${PLIST}
 
 do-install:
 	@cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/${HRMDIR}
-	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${STAGEDIR}${PREFIX}/${HRMDIR}
-	@${ECHO_CMD} '@exec ${CHOWN} -R ${WWWOWN}:${WWWGRP} ${STAGEDIR}${PREFIX}/${HRMDIR}' \
-		>> ${TMPPLIST}
 	${CHMOD} -R 755 ${STAGEDIR}${PREFIX}/${HRMDIR}
-	@${ECHO_CMD} '@exec ${CHMOD} -R 755 ${STAGEDIR}${PREFIX}/${HRMDIR}' >> ${TMPPLIST}
-
-post-install:
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
