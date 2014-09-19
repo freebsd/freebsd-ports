@@ -1,12 +1,13 @@
 # $FreeBSD$
 
 PORTNAME=	poudriere
-PORTVERSION=	3.0.99.20140916
+PORTVERSION=	3.0.99.20140919
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	LOCAL/bdrewery/${PORTNAME}/ \
-		http://fossil.etoilebsd.net/poudriere/tarball/
+		http://mirror.shatow.net/freebsd/${PORTNAME}/ \
+		GH
 PKGNAMESUFFIX=	-devel
-DISTFILES=	${PORTNAME}-${PORTVERSION}.tar.gz?uuid=${FSL_CHKIN}
+DISTNAME=	${GH_ACCOUNT}-${GH_PROJECT}-${PORTVERSION}-0-g${GH_COMMIT}
 
 MAINTAINER=	bdrewery@FreeBSD.org
 COMMENT=	Port build and test system
@@ -15,7 +16,10 @@ LICENSE=	BSD2CLAUSE
 
 CONFLICTS_INSTALL=	poudriere-[0-9]*
 
-FSL_CHKIN=	d7e95d9102
+USE_GITHUB=	yes
+GH_ACCOUNT=	freebsd
+GH_COMMIT=	4555dff
+GH_TAGNAME=	${GH_COMMIT}
 
 GNU_CONFIGURE=	yes
 ETCDIR=		${PREFIX}/etc/poudriere.d
