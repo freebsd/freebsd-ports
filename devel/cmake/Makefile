@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	cmake
-PORTVERSION=	3.0.1
-PORTREVISION?=	1
+PORTVERSION=	3.0.2
+PORTREVISION?=	0
 CATEGORIES=	devel
 MASTER_SITES=	http://www.cmake.org/files/v3.0/
 
