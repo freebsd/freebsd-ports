@@ -140,6 +140,7 @@
     SUBDIR += nat
     SUBDIR += nbtscan
     SUBDIR += ndoutils
+    SUBDIR += ndpmon
     SUBDIR += nedi
     SUBDIR += nefu
     SUBDIR += net-snmp
