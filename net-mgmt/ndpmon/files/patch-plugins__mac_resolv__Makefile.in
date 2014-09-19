@@ -1,0 +1,9 @@
+--- plugins/mac_resolv/Makefile.in.orig	2014-09-05 10:53:57 UTC
++++ plugins/mac_resolv/Makefile.in
+@@ -7,5 +7,5 @@
+ 	-rm -rf *~ *.o 
+ 
+ mac_resolv.o: mac_resolv.c
+-	-./make-manuf
++	-perl ./make-manuf
+ 	$(CC) $(FLAGS) `xml2-config  --cflags` -c mac_resolv.c -o mac_resolv.o
