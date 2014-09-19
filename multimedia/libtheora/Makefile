@@ -3,7 +3,7 @@
 
 PORTNAME=	libtheora
 PORTVERSION=	1.1.1
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	multimedia
 MASTER_SITES=	http://downloads.xiph.org/releases/theora/ \
 		http://distfiles.master.finkmirrors.net/
@@ -14,15 +14,15 @@ COMMENT=	Theora video codec for the Ogg multimedia streaming system
 LIB_DEPENDS=	libvorbis.so:${PORTSDIR}/audio/libvorbis
 
 GNU_CONFIGURE=	yes
-USES=		libtool:keepla tar:bzip2
-USE_LDCONFIG=	yes
+CONFIGURE_ARGS=	--disable-sdltest \
+		--disable-examples
 CPPFLAGS+=	-I${LOCALBASE}/include 
 LIBS+=		-L${LOCALBASE}/lib
-CONFIGURE_ARGS+=--disable-sdltest \
-		--enable-shared \
-		--disable-examples
+INSTALL_TARGET=	install-strip
+USES=		libtool tar:bzip2
+USE_LDCONFIG=	yes
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|doc||g' ${WRKSRC}/Makefile.in
@@ -32,4 +32,4 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|#define OC_X86_ASM|#undef OC_X86_ASM|' ${WRKSRC}/configure
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
