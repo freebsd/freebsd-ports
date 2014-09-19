@@ -2,8 +2,6 @@
 
 PORTNAME=	libotr
 PORTVERSION=	3.2.1
-# Please do not bump PORTREVISION for this port unless you have
-# confirmed via testing that it is necessary
 PORTREVISION=	3
 CATEGORIES=	security net-im net
 MASTER_SITES=	http://www.c-s.li/ports/ \
@@ -17,23 +15,17 @@ COMMENT=	Portable OTR Messaging Library and toolkit
 
 LICENSE=	LGPL21
 
-BUILD_DEPENDS=	pkgconf:${PORTSDIR}/devel/pkgconf
 LIB_DEPENDS=	libgpg-error.so:${PORTSDIR}/security/libgpg-error \
 		libgcrypt.so:${PORTSDIR}/security/libgcrypt
 
 CONFLICTS=	libotr-*
 
-USE_AUTOTOOLS=	autoconf
-USES=		libtool cpe
 GNU_CONFIGURE=	yes
+USES=		cpe libtool pathfix
 USE_LDCONFIG=	yes
 CPE_VENDOR=	cypherpunks
 
 verify: checksum
 	gpg --verify ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX}.asc
-
-post-patch:
-	@${REINPLACE_CMD} -e 's#^pkgconfigdir .*#pkgconfigdir = ${PREFIX}/libdata/pkgconfig#' \
-	    ${WRKSRC}/Makefile.in ${WRKSRC}/Makefile.am
 
 .include <bsd.port.mk>
