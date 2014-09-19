@@ -61,7 +61,7 @@ PLIST_SUB+=	VERSION=${PORTVERSION}
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 1000000
-LIB_DEPENDS+=	libarchive.so:${PORTSDIR}/archivers/libarchive
+LIB_DEPENDS+=	libarchive.so.13:${PORTSDIR}/archivers/libarchive
 .endif
 
 post-patch:
