@@ -16,10 +16,6 @@ USES=		motif libtool
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
-.include <bsd.port.pre.mk>
+CFLAGS_sparc64=	-O0
 
-.if ${ARCH} == "sparc64"
-CFLAGS+=	-O0
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
