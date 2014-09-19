@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	hypermail
-PORTVERSION=	2.2.0
-PORTREVISION=	3
+PORTVERSION=	2.3.0
 CATEGORIES=	www mail
 MASTER_SITES=	SF
 
@@ -22,6 +21,7 @@ CONFIGURE_ARGS=	--with-htmldir=${STAGEDIR}${PREFIX}/share/doc/hypermail \
 		--with-gdbm=${LOCALBASE}
 
 CFLAGS+=	-L${LOCALBASE}/lib
+WRKSRC=		${WRKDIR}/${PORTNAME}
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}/${PREFIX}/bin/hypermail \
