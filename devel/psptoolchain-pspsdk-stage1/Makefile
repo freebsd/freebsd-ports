@@ -14,11 +14,10 @@ COMMENT=		PlayStation Portable development toolchain ${PORTNAME}
 
 PSP_SDK_STAGE_PREFIX=	psp/stage1
 
-USE_AUTOTOOLS=		aclocal:env autoheader:env automake:env autoconf:env
 HAS_CONFIGURE=		yes
-USES=			gmake libtool
 CONFIGURE_ARGS?=	--prefix=${PREFIX}/${PSP_SDK_STAGE_PREFIX} \
 			--with-pspdev="${LOCALBASE}/${PSP_SDK_STAGE_PREFIX}"
+USES=			autoreconf:build gmake
 
 # First stage only needs to install some data needed to compile newlib.
 # Patch a hardcoded prefix, such that we can set our own stage1 subdir.
