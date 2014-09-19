@@ -53,8 +53,7 @@ CONFIGURE_ARGS+=--with-external-db \
 		--with-popt-prefix="${LOCALBASE}" \
 		--sysconfdir=${PREFIX}/etc \
 		--localstatedir=/var \
-		--without-javaglue \
-		--without-dbus
+		--without-javaglue
 CONFIGURE_ENV+=	LUA_CFLAGS=-I${LUA_INCDIR} \
 		LUA_LIBS="-L${LUA_LIBDIR} -llua-${LUA_VER} -lm"
 PLIST_SUB+=	VERSION=${PORTVERSION}
