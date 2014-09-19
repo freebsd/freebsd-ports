@@ -14,12 +14,11 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	libmaa.so:${PORTSDIR}/devel/libmaa
 
-USES=		gmake libtool
+USES=		gmake libtool:build
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-cflags="${CFLAGS}"
 ALL_TARGET=	dictfmt
 INSTALL_TARGET=	install.dictfmt
-USE_AUTOTOOLS=	libtoolize
 
 PLIST_FILES=	bin/dictfmt bin/dictfmt_index2suffix bin/dictfmt_index2word \
 		bin/dictunformat man/man1/dictfmt.1.gz \
@@ -27,6 +26,6 @@ PLIST_FILES=	bin/dictfmt bin/dictfmt_index2suffix bin/dictfmt_index2word \
 		man/man1/dictfmt_index2word.1.gz man/man1/dictunformat.1.gz
 
 CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+LIBS+=		-L${LOCALBASE}/lib
 
 .include <bsd.port.mk>
