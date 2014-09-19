@@ -13,10 +13,8 @@ DISTNAME=	DevIL-${PORTVERSION}
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Full featured cross-platform image library
 
-USES=		pkgconfig libtool
-USE_AUTOTOOLS=	aclocal autoheader automake autoconf
-ACLOCAL_ARGS=	-I m4 -I ${LOCALBASE}/share/aclocal
-AUTOMAKE_ARGS=	--add-missing --copy --force-missing
+USES=		autoreconf pkgconfig libtool
+GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-ILU \
 		--disable-allegro --disable-directx8 --disable-directx9 \
 		--without-libsquish
