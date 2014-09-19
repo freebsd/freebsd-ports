@@ -2,7 +2,7 @@
 
 PORTNAME=	squidGuard
 PORTVERSION=	1.4
-PORTREVISION=	14
+PORTREVISION=	15
 CATEGORIES=	www
 MASTER_SITES=	http://www.squidguard.org/Downloads/:a \
 		http://www.squidguard.org/Downloads/Contrib/:b
@@ -16,8 +16,6 @@ COMMENT=	Fast redirector for squid
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
-
-RUN_DEPENDS=	${LOCALBASE}/sbin/squid:${PORTSDIR}/www/squid
 
 USE_BDB=	yes
 GNU_CONFIGURE=	yes
@@ -44,12 +42,22 @@ SUB_FILES=	pkg-deinstall pkg-message
 SUB_LIST=	PORTNAME=${PORTNAME}
 
 OPTIONS_DEFINE=		DNS_BL DOCS EXAMPLES LDAP QUOTE_STRING
+OPTIONS_SINGLE=		SV
+OPTIONS_SINGLE_SV=	SQUID34 SQUID33
+OPTIONS_DEFAULT=	SQUID34
 
 EXAMPLES_DESC=	Install sample blacklists
 DNS_BL_DESC=	Enable DNS based blacklists
 QUOTE_STRING_DESC=	Add quoted string patch
+SQUID33_DESC=   Depend on Squid 3.3 (DEPERCATED)
+SQUID34_DESC=   Depend on Squid 3.4
 
 OPTIONS_SUB=		yes
+SQUID33_RUN_DEPENDS=	${LOCALBASE}/sbin/squid:${PORTSDIR}/www/squid33
+SQUID34_RUN_DEPENDS=	${LOCALBASE}/sbin/squid:${PORTSDIR}/www/squid
+SQUID34_EXTRA_PATCHES=	${FILESDIR}/extrapatch-squid34:-p1
+QUOTE_STRING_EXTRA_PATCHES=	${DISTDIR}/squidGuard-1.4-quoted_string_support.diff:-p2
+DNS_BL_EXTRA_PATCHES=	${DISTDIR}/squidGuard-1.4-dnsbl.patch:-p1
 LDAP_CONFIGURE_ON=	--with-ldap
 LDAP_CONFIGURE_OFF=	--without-ldap
 LDAP_LDFLAGS=		-L${LOCALBASE}/lib
@@ -71,12 +79,6 @@ post-patch:
 		${REINPLACE_CMD} -E -e 's,(db_version),\1_4002,g' \
 			${WRKSRC}/configure ; \
 	fi
-.if ${PORT_OPTIONS:MQUOTE_STRING}
-	${PATCH} -d ${WRKSRC} --forward --quiet -p2 <${DISTDIR}/squidGuard-1.4-quoted_string_support.diff
-.endif
-.if ${PORT_OPTIONS:MDNS_BL}
-	${PATCH} -d ${WRKSRC} --forward --quiet -p1 <${DISTDIR}/squidGuard-1.4-dnsbl.patch
-.endif
 
 post-build:
 .if ${PORT_OPTIONS:MEXAMPLES}
