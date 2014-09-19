@@ -32,12 +32,14 @@ firstboot_pkgs_run()
 
 	# Bootstrap if necessary
 	if ! pkg -N 2>/dev/null; then
-		env ASSUME_ALWAYS_YES=YES pkg bootstrap
+		env ASSUME_ALWAYS_YES=YES pkg bootstrap |
+		    cat
 	fi
 
 	# Install requested packages, if any
 	if ! [ -z "$firstboot_pkgs_list" ]; then
-		env ASSUME_ALWAYS_YES=YES pkg install $firstboot_pkgs_list </dev/null
+		env ASSUME_ALWAYS_YES=YES pkg install $firstboot_pkgs_list </dev/null |
+		    cat
 	fi
 
 	# Count rc.d scripts again
