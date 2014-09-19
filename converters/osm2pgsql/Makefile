@@ -19,9 +19,8 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	openstreetmap
 GH_COMMIT=	237b125
 
-USES=		gmake libtool lua pgsql tar:bzip2
-USE_AUTOTOOLS=	autoconf automake aclocal autoheader libtoolize
-AUTOMAKE_ARGS=	-a -c -f
+USES=		autoreconf gmake libtool lua pgsql tar:bzip2
+GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	LUA="${LUA_CMD}" \
 		LUA_INCLUDE="-I${LUA_INCDIR}" \
 		LUA_LIB="-L${LUA_LIBDIR} -llua-${LUA_VER}"
