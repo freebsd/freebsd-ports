@@ -21,10 +21,11 @@ RUN_DEPENDS=	dos2unix:${PORTSDIR}/converters/unix2dos \
 		tidy:${PORTSDIR}/www/tidy-lib \
 		xpdf:${PORTSDIR}/graphics/xpdf
 
-CONFIGURE_ARGS+=	--with-freedesktop_org-menu=${GNOME_LOCALSTATEDIR}/applications --with-icon-path=${GNOME_LOCALSTATEDIR}/pixmaps
+CONFIGURE_ARGS=	--with-freedesktop_org-menu=${GNOME_LOCALSTATEDIR}/applications \
+		--with-icon-path=${GNOME_LOCALSTATEDIR}/pixmaps --disable-update-databases
 GNU_CONFIGURE=	yes
 USES=		gmake pkgconfig desktop-file-utils shared-mime-info
-USE_GNOME=	libgnomeui desktopfileutils gnomehier
+USE_GNOME=	libgnomeui gnomehier
 USE_TEX=	latex
 
 OPTIONS_DEFINE=	CONTEXT VNTEX UNIKEY_GTK NLS DOCS
