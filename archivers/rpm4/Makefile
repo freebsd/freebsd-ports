@@ -3,6 +3,7 @@
 
 PORTNAME=	rpm
 PORTVERSION=	4.12.0.1
+PORTREVISION=	1
 CATEGORIES=	archivers
 MASTER_SITES=	http://rpm.org/releases/rpm-${PORTVERSION:R:R}.x/ \
 		ftp://ftp.mirrorservice.org/sites/ftp.rpm.org/pub/rpm/dist/rpm-${PORTVERSION:E}.x/
@@ -58,6 +59,12 @@ CONFIGURE_ENV+=	LUA_CFLAGS=-I${LUA_INCDIR} \
 		LUA_LIBS="-L${LUA_LIBDIR} -llua-${LUA_VER} -lm"
 PLIST_SUB+=	VERSION=${PORTVERSION}
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 1000000
+LIB_DEPENDS+=	libarchive.so:${PORTSDIR}/archivers/libarchive
+.endif
+
 post-patch:
 	${REINPLACE_CMD} -e 's:\.\./\.\./bin/::' ${WRKSRC}/Makefile.in
 	${REINPLACE_CMD} -e 's/(hpux)/& || defined(__FreeBSD__)/' \
@@ -70,4 +77,4 @@ post-install:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC}/doc && ${COPYTREE_SHARE} librpm/html ${STAGEDIR}${DOCSDIR}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
