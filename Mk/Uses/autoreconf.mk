@@ -4,28 +4,29 @@
 # other build scripts.
 #
 # Autoreconf encapsulates the following commands.  Each command applies to a
-# single configure.ac.  If configure.ac defines subdirectories with their own
-# configure.ac (using AC_CONFIG_SUBDIRS), autoreconf will recursively update
-# those as well.
+# single configure.ac or configure.in (old name).  If configure.ac defines
+# subdirectories with their own configure.ac (using AC_CONFIG_SUBDIRS),
+# autoreconf will recursively update those as well.
 #
-# aclocal	Looks up definitions of m4 macros used in configure.ac and
-#		copies them from their source *.m4 file to aclocal.m4.  Most
-#		*.m4 files are installed by devel/autoconf and devel/automake,
-#		but some ports have their own *.m4 files with custom macros.
+# aclocal	Looks up definitions of m4 macros used in configure.ac that are
+#		not provided by autoconf and copies them from their source *.m4
+#		file to aclocal.m4.  Local *.m4 files included with the source
+#		code take precedence over systemwide *.m4 files.
 #		Must be run whenever configure.ac or *.m4 files with macros
 #		used in configure.ac have been modified.
-#		Must also be run whenever autoconf or automake must be run
-#		because the autoconf/automake macros in aclocal.m4 must have
-#		the same version as the autoconf/automake commands.
-# autoconf	Generates configure from configure.ac and the macro definitions
-#		in aclocal.m4.
-#		Must be run whenever either of these two files has been
+#		Must also be run whenever automake must be run because the
+#		automake macros in aclocal.m4 must have the same version as the
+#		automake command.
+# autoconf	Generates configure from configure.ac using macro definitions
+#		provided by autoconf itself and aclocal.m4.
+#		Must be run whenever configure.ac or aclocal.m4 has been
 #		modified.
-# autoheader	Same as autoconf, but also generates a config header (typically
-#		config.h.in).
+# autoheader	Generates a configuration header (typically config.h.in) from
+#		configure.ac and the macro definitions in aclocal.m4.
 #		Must be run whenever configure.ac or aclocal.m4 has been
 #		modified and configure.ac (or one of the macros it uses)
-#		contains AC_CONFIG_HEADERS.
+#		contains AC_CONFIG_HEADERS, AC_CONFIG_HEADER (undocumented) or
+#		AM_CONFIG_HEADER (obsolete).
 # automake	Generates Makefile.in from Makefile.am for each Makefile
 #		specified in configure.ac.  Also updates build scripts like
 #		compile, depcomp, install-sh, ylwrap,...
@@ -60,10 +61,12 @@ BUILD_DEPENDS+=	autoconf-2.69:${PORTSDIR}/devel/autoconf \
 		aclocal-1.14:${PORTSDIR}/devel/automake \
 		automake-1.14:${PORTSDIR}/devel/automake
 
+# Depend on autopoint if USES contains gettext* but not gettext:run
 .if ${USES:Mgettext} || (${USES:Mgettext\:*} && empty(USES:Mgettext\:run))
 BUILD_DEPENDS+=	autopoint:${PORTSDIR}/devel/gettext
 .endif
 
+# Depend on libtoolize if USES contains libtool* but not libtool:build
 .if ${USES:Mlibtool} || (${USES:Mlibtool\:*} && empty(USES:Mlibtool\:*build*))
 BUILD_DEPENDS+=	libtoolize:${PORTSDIR}/devel/libtool
 .endif
