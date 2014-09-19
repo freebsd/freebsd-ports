@@ -16,19 +16,13 @@ LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png \
 		libtiff.so:${PORTSDIR}/graphics/tiff \
 		libgif.so:${PORTSDIR}/graphics/giflib
 
-# TODO: Remove :oldver together with version-info patching in pre-configure.
-USES=		gmake libtool:oldver pathfix tar:bzip2
+USES=		gmake libtool pathfix tar:bzip2
 USE_XORG=	sm xext x11
 USE_GNOME=	gtk12
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc/imlib --disable-modules
 CPPFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/libpng15
-LDFLAGS+=	-L${LOCALBASE}/lib
-
-pre-configure:
-	@${REINPLACE_CMD} -e "s|10:15:9|5:0:0|" ${WRKSRC}/*/Makefile.in
-	@${REINPLACE_CMD} -e "s|glib-config|${GLIB_CONFIG}|" ${WRKSRC}/configure
-	@${REINPLACE_CMD} -e "s|@SUPPORT_LIBS@|-L${LOCALBASE}/lib @SUPPORT_LIBS@|" ${WRKSRC}/imlib-config.in
+LIBS+=		-L${LOCALBASE}/lib
 
 .include <bsd.port.mk>

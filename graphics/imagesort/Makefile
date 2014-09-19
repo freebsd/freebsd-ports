@@ -3,7 +3,7 @@
 
 PORTNAME=	imagesort
 PORTVERSION=	2.0
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	graphics
 MASTER_SITES=	SUNSITE/apps/graphics/viewers/X
 
