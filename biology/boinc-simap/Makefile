@@ -12,6 +12,9 @@ EXTRACT_ONLY=	${HMMER_BINARY}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Similarity Matrix of Proteins project for BOINC
 
+DEPRECATED=	Project shutting down, see http://boincsimap.org/boincsimap/forum_thread.php?id=88
+EXPIRATION_DATE=2015-01-01
+
 LIB_DEPENDS=	libc.so.6:${PORTSDIR}/misc/compat6x
 RUN_DEPENDS=	boinc_client:${PORTSDIR}/net/boinc-client
 
