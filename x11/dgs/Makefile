@@ -30,9 +30,6 @@ pre-patch:
 		${REINPLACE_CMD} -e 's|manm|mann|g'
 
 post-patch:
-	${REINPLACE_CMD} -e 's|echo aout|echo elf|' \
-	-e 's|freebsd2\*)|freebsd2.\*)|' -e 's|freebsd1\*)|freebsd1.\*)|' \
-		${WRKSRC}/DPS/ltconfig
 	${REINPLACE_CMD} -e 's,@prefix@,$$(DESTDIR)@prefix@,g' \
 		-e 's,@mandir@,$$(DESTDIR)@mandir@,g' \
 		${WRKSRC}/gs/unix-gcc.mak.in
