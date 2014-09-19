@@ -687,11 +687,11 @@ CONFIGURE_ARGS+=--add-module=${WRKDIR}/openresty-redis2-nginx-module-${GIT_REDIS
 .endif
 
 .if ${PORT_OPTIONS:MRTMP}
-IGNORE=	RTMP: update require
-NGINX_RTMP_VERSION=	1.1.4
+NGINX_RTMP_VERSION=	1.1.5
 MASTER_SITES+=	https://github.com/arut/nginx-rtmp-module/archive/v${NGINX_RTMP_VERSION}/:rtmp
 DISTFILES+=	rtmp-nginx-module-v${NGINX_RTMP_VERSION}.tar.gz:rtmp
 CONFIGURE_ARGS+=--add-module=${WRKDIR}/nginx-rtmp-module-${NGINX_RTMP_VERSION}
+EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-arut-rtmp-module
 .endif
 
 .if ${PORT_OPTIONS:MSET_MISC}
