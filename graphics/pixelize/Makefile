@@ -3,7 +3,7 @@
 
 PORTNAME=	pixelize
 PORTVERSION=	1.0.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://lashwhip.com/pub/ \
 		http://www.c-s.li/ports/ \

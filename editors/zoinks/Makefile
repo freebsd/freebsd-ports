@@ -3,6 +3,7 @@
 
 PORTNAME=	zoinks
 PORTVERSION=	0.4.1
+PORTREVISION=	1
 CATEGORIES=	editors
 MASTER_SITES=	http://zoinks.mikelockwood.com/download/
 
