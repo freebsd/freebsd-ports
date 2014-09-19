@@ -1,24 +1,42 @@
 @sample etc/yadifad.conf.sample
 include/dnscore/alarm.h
+include/dnscore/allocator.h
+include/dnscore/async.h
 include/dnscore/avl.c.inc
 include/dnscore/avl.h.inc
 include/dnscore/base16.h
 include/dnscore/base32.h
 include/dnscore/base32hex.h
 include/dnscore/base64.h
+include/dnscore/basic-priority-queue.h
 include/dnscore/buffer_input_stream.h
 include/dnscore/buffer_output_stream.h
+include/dnscore/bytearray_input_stream.h
 include/dnscore/bytearray_output_stream.h
+include/dnscore/chroot.h
 include/dnscore/clone_input_output_stream.h
+include/dnscore/cmdline.h
+include/dnscore/concat_input_stream.h
+include/dnscore/config-cmdline.h
+include/dnscore/config_file_reader.h
+include/dnscore/config_settings.h
 include/dnscore/counter_output_stream.h
 include/dnscore/ctrl-rfc.h
 include/dnscore/debug.h
 include/dnscore/debug_config.h
+include/dnscore/digest.h
+include/dnscore/dns-udp.h
+include/dnscore/dns_resource_record.h
+include/dnscore/dnscore-config-features.h
 include/dnscore/dnscore-config.h
 include/dnscore/dnscore.h
 include/dnscore/dnsformat.h
+include/dnscore/dnskey.h
+include/dnscore/dnskey_dsa.h
+include/dnscore/dnskey_rsa.h
 include/dnscore/dnsname.h
 include/dnscore/dnsname_set.h
+include/dnscore/dnssec_errors.h
 include/dnscore/fdtools.h
 include/dnscore/file_input_stream.h
 include/dnscore/file_output_stream.h
@@ -26,29 +44,42 @@ include/dnscore/filter_input_stream.h
 include/dnscore/fingerprint.h
 include/dnscore/format.h
 include/dnscore/host_address.h
+include/dnscore/hsdllist.h
+include/dnscore/identity.h
 include/dnscore/input_stream.h
 include/dnscore/io_stream.h
+include/dnscore/limited_input_stream.h
+include/dnscore/list-dl.h
+include/dnscore/list-sl.h
+include/dnscore/logger-output-stream.h
 include/dnscore/logger.h
-include/dnscore/logger_channel.h
 include/dnscore/logger_channel_file.h
 include/dnscore/logger_channel_stream.h
 include/dnscore/logger_channel_syslog.h
 include/dnscore/logger_handle.h
 include/dnscore/message.h
+include/dnscore/message_dnsupdate.h
+include/dnscore/message_verify_rrsig.h
 include/dnscore/mt_output_stream.h
 include/dnscore/mutex.h
 include/dnscore/network.h
+%%NSID%%include/dnscore/nsid.h
 include/dnscore/output_stream.h
+include/dnscore/pace.h
 include/dnscore/packet_reader.h
 include/dnscore/packet_writer.h
+include/dnscore/parser.h
 include/dnscore/parsing.h
+include/dnscore/pid.h
+include/dnscore/pipe_stream.h
+include/dnscore/pool.h
 include/dnscore/print_stream.h
 include/dnscore/ptr_vector.h
 include/dnscore/random.h
-include/dnscore/rdtsc.h
 include/dnscore/rfc.h
-include/dnscore/scheduler.h
 include/dnscore/serial.h
+include/dnscore/server-setup.h
+include/dnscore/service.h
 include/dnscore/string_set.h
 include/dnscore/sys_error.h
 include/dnscore/sys_get_cpu_count.h
@@ -61,24 +92,26 @@ include/dnscore/threaded_queue.h
 include/dnscore/threaded_ringbuffer.h
 include/dnscore/threaded_ringbuffer_cw.h
 include/dnscore/threaded_ringlist.h
+include/dnscore/threaded_sll_cw.h
+include/dnscore/timeformat.h
 include/dnscore/timems.h
 include/dnscore/treeset.h
 include/dnscore/tsig.h
 include/dnscore/typebitmap.h
 include/dnscore/u32_set.h
+include/dnscore/u64_set.h
 include/dnscore/xfr_copy.h
+include/dnscore/xfr_input_stream.h
 include/dnscore/zonefile_reader.h
 include/dnsdb/avl.h
 include/dnsdb/btree.h
+include/dnsdb/dictionary-node.h
 include/dnsdb/dictionary.h
 include/dnsdb/dnsdb-config.h
-include/dnsdb/dnskey.h
 include/dnsdb/dnsrdata.h
 include/dnsdb/dnssec.h
 include/dnsdb/dnssec_config.h
-include/dnsdb/dnssec_dsa.h
 include/dnsdb/dnssec_keystore.h
-include/dnsdb/dnssec_rsa.h
 include/dnsdb/dnssec_scheduler.h
 include/dnsdb/dnssec_task.h
 include/dnsdb/dynupdate.h
@@ -86,6 +119,8 @@ include/dnsdb/hash.h
 include/dnsdb/htable.h
 include/dnsdb/htbt.h
 include/dnsdb/icmtl_input_stream.h
+include/dnsdb/journal.h
+include/dnsdb/journal_ix.h
 include/dnsdb/nsec.h
 include/dnsdb/nsec3.h
 include/dnsdb/nsec3_collection.h
@@ -96,12 +131,19 @@ include/dnsdb/nsec3_load.h
 include/dnsdb/nsec3_name_error.h
 include/dnsdb/nsec3_nodata_error.h
 include/dnsdb/nsec3_owner.h
+include/dnsdb/nsec3_rrsig_updater.h
 include/dnsdb/nsec3_types.h
 include/dnsdb/nsec3_update.h
 include/dnsdb/nsec3_zone.h
 include/dnsdb/nsec_collection.h
 include/dnsdb/nsec_common.h
+include/dnsdb/rr_canonize.h
 include/dnsdb/rrsig.h
+include/dnsdb/rrsig_updater.h
+include/dnsdb/zdb-config-features.h
+include/dnsdb/zdb-zone-answer-axfr.h
+include/dnsdb/zdb-zone-answer-ixfr.h
+include/dnsdb/zdb-zone-reader-filter.h
 include/dnsdb/zdb.h
 include/dnsdb/zdb_alloc.h
 include/dnsdb/zdb_config.h
@@ -112,42 +154,43 @@ include/dnsdb/zdb_listener.h
 include/dnsdb/zdb_record.h
 include/dnsdb/zdb_rr_label.h
 include/dnsdb/zdb_sanitize.h
-include/dnsdb/zdb_store.h
 include/dnsdb/zdb_types.h
 include/dnsdb/zdb_utils.h
 include/dnsdb/zdb_zone.h
+include/dnsdb/zdb_zone_axfr_input_stream.h
 include/dnsdb/zdb_zone_label.h
 include/dnsdb/zdb_zone_label_iterator.h
 include/dnsdb/zdb_zone_load.h
 include/dnsdb/zdb_zone_load_interface.h
+include/dnsdb/zdb_zone_process.h
 include/dnsdb/zdb_zone_write.h
-include/dnsdb/zonefile.h
 include/dnszone/dnszone-config.h
 include/dnszone/dnszone.h
-include/dnszone/output_stream_write_rdata.h
-include/dnszone/resourcerecord.h
+include/dnszone/hints_file_reader.h
 include/dnszone/zone_axfr_reader.h
 include/dnszone/zone_file_reader.h
 lib/libdnscore.a
 lib/libdnsdb.a
 lib/libdnszone.a
+man/man1/yadifa.1.gz
 man/man1/yadifad.1.gz
 man/man5/yadifad.conf.5.gz
 sbin/yadifad
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/yadifad-master.conf.example
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/yadifad-slave.conf.example
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/yadifad.conf.example
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/yadifad.init.example
 /var/yadifa/masters/0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.ip6.arpa.zone
 /var/yadifa/masters/0.0.127.in-addr.arpa.zone
 /var/yadifa/masters/localhost.zone
 /var/yadifa/masters/localhost6.zone
 /var/yadifa/masters/somedomain.eu.zone
-@unexec rmdir "/var/yadifa/xfr" >/dev/null 2>&1 || :
-@unexec rmdir "/var/yadifa/slaves" >/dev/null 2>&1 || :
-@unexec rmdir "/var/yadifa/masters" >/dev/null 2>&1 || :
-@unexec rmdir "/var/yadifa/keys" >/dev/null 2>&1 || :
-@unexec rmdir "/var/yadifa" >/dev/null 2>&1 || :
-%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%
-@dirrmtry include/dnszone
-@dirrmtry include/dnsdb
 @dirrmtry include/dnscore
+@dirrmtry include/dnsdb
+@dirrmtry include/dnszone
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%
+@dirrmtry /var/yadifa/keys
+@dirrmtry /var/yadifa/masters
+@dirrmtry /var/yadifa/slaves
+@dirrmtry /var/yadifa/xfr
+@dirrmtry /var/yadifa
