@@ -2070,7 +2070,7 @@ libexec/squid/cachemgr.cgi
 %%AUTH_KERB%%%%AUTH_LDAP%%%%AUTH_SASL%%libexec/squid/cert_tool
 %%SSL%%libexec/squid/cert_valid.pl
 libexec/squid/digest_file_auth
-libexec/squid/diskd
+%%FS_DISKD%%libexec/squid/diskd
 %%DNS_HELPER%%libexec/squid/dnsserver
 libexec/squid/ext_file_userip_acl
 %%AUTH_KERB%%%%AUTH_LDAP%%%%AUTH_SASL%%libexec/squid/ext_kerberos_ldap_group_acl
