@@ -12,10 +12,8 @@ COMMENT=	Evolving Artificial Life
 
 LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2
 
-USES=		libtool pkgconfig tar:bzip2
+USES=		autoreconf libtool pkgconfig tar:bzip2
 GNU_CONFIGURE=	yes
-USE_AUTOTOOLS=	autoconf aclocal autoheader automake libtoolize
-AUTOMAKE_ARGS=	-a -c -f
 USE_SDL=	sdl
 USE_GL=		gl
 CPPFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/freetype2
