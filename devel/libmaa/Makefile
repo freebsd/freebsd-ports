@@ -31,6 +31,7 @@ PLIST_FILES=	include/maa.h \
 PORTDOCS=	${DOCS:T}
 
 post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libmaa.so.3
 	${MKDIR} ${STAGEDIR}${DOCSDIR}/
 	cd ${WRKSRC}/ && ${INSTALL_DATA} ${DOCS} ${STAGEDIR}${DOCSDIR}/
 
