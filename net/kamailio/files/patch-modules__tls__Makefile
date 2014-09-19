@@ -1,0 +1,11 @@
+--- modules/tls/Makefile.orig	2014-08-06 15:29:51 UTC
++++ modules/tls/Makefile
+@@ -9,6 +9,8 @@
+ auto_gen=
+ NAME=tls.so
+ 
++skip_cfg_install?=yes
++
+ ifeq ($(CROSS_COMPILE),)
+ SSL_BUILDER=$(shell \
+ 	if pkg-config --exists libssl; then \
