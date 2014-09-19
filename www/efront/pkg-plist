@@ -1,3 +1,5 @@
+@owner %%WWWOWN%%
+@group %%WWWGRP%%
 %%WWWDIR%%/CHANGELOG.txt
 %%WWWDIR%%/INSTALL.txt
 %%WWWDIR%%/LICENSE.txt
@@ -3423,3 +3425,5 @@
 @dirrm %%WWWDIR%%/www/themes
 @dirrm %%WWWDIR%%/www
 @dirrm %%WWWDIR%%
+@owner root
+@group wheel
