@@ -969,6 +969,7 @@
     SUBDIR += libcidr
     SUBDIR += libcii
     SUBDIR += libclaw
+    SUBDIR += libclc
     SUBDIR += libcli
     SUBDIR += libconfig
     SUBDIR += libconfuse
