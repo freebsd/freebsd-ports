@@ -1,15 +1,15 @@
-etc/snmp/snmptt.conf.generic-dist
-etc/snmp/snmptt.ini-dist
+@sample etc/snmp/snmptt.conf.generic.sample
+@sample etc/snmp/snmptt.ini.sample
 sbin/snmptt
 sbin/snmptt-net-snmp-test
 sbin/snmpttconvert
 sbin/snmpttconvertmib
 sbin/snmptthandler
-%%PORTDOCS%%%%DOCSDIR%%/faqs.html
-%%PORTDOCS%%%%DOCSDIR%%/index.html
-%%PORTDOCS%%%%DOCSDIR%%/layout1.css
-%%PORTDOCS%%%%DOCSDIR%%/snmptt.html
-%%PORTDOCS%%%%DOCSDIR%%/snmpttconvert.html
-%%PORTDOCS%%%%DOCSDIR%%/snmpttconvertmib.html
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%
-@dirrmtry etc/snmp
+%%DOCSDIR%%/faqs.html
+%%DOCSDIR%%/index.html
+%%DOCSDIR%%/layout1.css
+%%DOCSDIR%%/snmptt.html
+%%DOCSDIR%%/snmpttconvert.html
+%%DOCSDIR%%/snmpttconvertmib.html
+@dirrm %%DOCSDIR%%
+@dirrm etc/snmp
