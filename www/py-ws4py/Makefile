@@ -12,9 +12,8 @@ COMMENT=	WebSocket package for Python
 
 LICENSE=	BSD3CLAUSE
 
-USE_PYTHON=	yes
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
+USES=		python
+USE_PYTHON=	distutils autoplist
 
 NO_ARCH=	yes
 
