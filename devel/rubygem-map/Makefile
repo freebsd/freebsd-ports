@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	map
-PORTVERSION=	6.5.4
+PORTVERSION=	6.5.5
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
