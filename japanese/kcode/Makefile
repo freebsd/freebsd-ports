@@ -25,10 +25,10 @@ RUN_DEPENDS=	ja-p5-Jcode>=0:${PORTSDIR}/japanese/p5-Jcode
 do-extract:
 	${MKDIR} ${WRKSRC}
 	${GZCAT} ${DISTDIR}/${DIST_SUBDIR}/${DISTFILES} > ${WRKSRC}/kcode
-	pod2man ${WRKSRC}/kcode ${WRKSRC}/kcode.1
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/kcode ${STAGEDIR}${PREFIX}/bin
+	pod2man ${WRKSRC}/kcode ${WRKSRC}/kcode.1
 	${INSTALL_MAN} ${WRKSRC}/kcode.1 ${STAGEDIR}${MANPREFIX}/man/ja/man1
 
 .include <bsd.port.mk>
