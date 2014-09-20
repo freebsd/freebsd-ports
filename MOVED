@@ -7078,3 +7078,4 @@ www/dansguardian||2014-09-16|Depends on www/squid (v2.7) which is two years past
 www/dansguardian-devel||2014-09-16|Depends on www/squid (v2.7) which is two years past EOL
 www/videocache||2014-09-16|Depends on www/squid (v2.7) which is two years past EOL
 www/squid32||2014-09-16|Readed EOL on 14 August 2012
+net/ruby-growl|net/rubygem-ruby-growl|2014-09-20|Renamed

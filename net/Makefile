@@ -977,7 +977,6 @@
     SUBDIR += rtpproxy
     SUBDIR += rtptools
     SUBDIR += ruby-dict
-    SUBDIR += ruby-growl
     SUBDIR += ruby-icmp
     SUBDIR += ruby-ldap
     SUBDIR += ruby-tcpsocketpipe
@@ -1024,6 +1023,7 @@
     SUBDIR += rubygem-rightgogrid
     SUBDIR += rubygem-righthttpconnection
     SUBDIR += rubygem-rightslicehost
+    SUBDIR += rubygem-ruby-growl
     SUBDIR += rubygem-rubyntlm
     SUBDIR += rubygem-rubyntlm01
     SUBDIR += rubygem-rubytter
