@@ -50,11 +50,6 @@ MAKE_CMD_ARGS+=	ARCH=x86_64
 
 CFLAGS+=	${DEBUG_FLAGS}
 
-# Not sure about the exact OSVERSION:
-.if ${OSVERSION} > 1000015
-BROKEN=		KPI changes in 10 and up, use bhyve or vbox
-.endif
-
 post-patch:
 # Apply extra patches from the qemu-devel list; in the unlikely case that
 # these cause regressions please define WITHOUT_EXTRA_PATCHES and post
