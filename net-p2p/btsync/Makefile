@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	btsync
-PORTVERSION=	1.3.109
+PORTVERSION=	1.4.75
 CATEGORIES=	net-p2p
 MASTER_SITES=	http://syncapp.bittorrent.com/${PORTVERSION}/
 DISTNAME=	${PORTNAME}_freebsd_${CONFIG_ARCH}-${PORTVERSION}
@@ -42,9 +42,10 @@ post-extract:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/temp/btsync ${STAGEDIR}${PREFIX}/bin
 	${WRKSRC}/temp/btsync --dump-sample-config > ${STAGEDIR}${PREFIX}/etc/${PORTNAME}.conf.sample
-	${REINPLACE_CMD} -e 's;\(^ *"storage_path" *: *\)"/.*",;\1"/var/db/${PORTNAME}",;' ${STAGEDIR}${PREFIX}/etc/${PORTNAME}.conf.sample
+	${REINPLACE_CMD} -e 's;^//\( *"storage_path" *: *\)"/.*",;\1"/var/db/${PORTNAME}",;' ${STAGEDIR}${PREFIX}/etc/${PORTNAME}.conf.sample
+	${REINPLACE_CMD} -e 's;^//\( *"pid_file" *: *"/var/run/${PORTNAME}/${PORTNAME}.pid",\);\1;' ${STAGEDIR}${PREFIX}/etc/${PORTNAME}.conf.sample
 
 post-install:
-	${MKDIR} ${STAGEDIR}/var/db/btsync
+	${MKDIR} ${STAGEDIR}/var/db/${PORTNAME}
 
 .include <bsd.port.post.mk>

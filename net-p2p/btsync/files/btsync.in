@@ -18,9 +18,6 @@
 #                               what you want it to be. It uses '%%GROUP%%'
 #                               group by default. Do not sets it as empty or it
 #                               will run as wheel.
-# %%PORTNAME%%_data_dir:        Directory where %%PORTNAME%% configuration
-#                               data is stored.
-#                               Default: /var/db/%%PORTNAME%%
 
 . /etc/rc.subr
 name="%%PORTNAME%%"
@@ -30,10 +27,16 @@ load_rc_config $name
 : ${%%PORTNAME%%_enable:="NO"}
 : ${%%PORTNAME%%_user:="%%USER%%"}
 : ${%%PORTNAME%%_group:="%%GROUP%%"}
-: ${%%PORTNAME%%_data_dir:="/var/db/%%PORTNAME%%"}
 
-pidfile="$btsync_data_dir/sync.pid"
+pidfile="/var/run/%%PORTNAME%%/%%PORTNAME%%.pid"
 command="%%PREFIX%%/bin/btsync"
 command_args="--config %%PREFIX%%/etc/%%PORTNAME%%.conf"
+
+start_precmd=%%PORTNAME%%_prestart
+%%PORTNAME%%_prestart(){
+	if [ ! -d ${pidfile%/*} ]; then
+		install -d -o $%%PORTNAME%%_user -g $%%PORTNAME%%_group ${pidfile%/*}
+	fi
+}
 
 run_rc_command "$1"
