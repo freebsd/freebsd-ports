@@ -2,6 +2,7 @@ bin/ttfread
 etc/cups/cups-browsed.conf
 etc/fonts/conf.d/99pdftoopvp.conf
 include/cupsfilters/colord.h
+include/cupsfilters/colormanager.h
 include/cupsfilters/driver.h
 include/cupsfilters/image.h
 include/cupsfilters/raster.h
