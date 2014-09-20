@@ -12,7 +12,16 @@ DISTFILES=	apr-${APR_VERSION}.tar.gz apr-util-${APU_VERSION}.tar.gz
 MAINTAINER=	apache@FreeBSD.org
 COMMENT=	Apache Portability Library
 
+LICENSE=	APACHE20
+
 LIB_DEPENDS=	libexpat.so:${PORTSDIR}/textproc/expat2
+
+USES=		iconv pathfix libtool:keepla
+USE_LDCONFIG=	yes
+GNU_CONFIGURE=	yes
+
+APR_VERSION=	1.5.1
+APU_VERSION=	1.5.3
 
 OPTIONS_SUB=		yes
 OPTIONS_GROUP=		APR APU
@@ -22,28 +31,35 @@ OPTIONS_RADIO=		CRYPTO
 OPTIONS_RADIO_CRYPTO=	SSL NSS
 OPTIONS_DEFAULT=	THREADS IPV6 DEVRANDOM BDB GDBM SSL
 
-DEVRANDOM_DESC=	Use /dev/random or compatible
-NDBM_DESC=	NDBM support
-SSL_DESC=	OpenSSL crypto driver
-NSS_DESC=	NSS crypto driver
+DEVRANDOM_DESC=		Use /dev/random or compatible
+NDBM_DESC=		NDBM support
+NSS_DESC=		NSS crypto driver
+SSL_DESC=		OpenSSL crypto driver
 
-APR_VERSION=	1.5.1
-APU_VERSION=	1.5.3
-
-USES=		iconv pathfix libtool:keepla
-USE_LDCONFIG=	yes
-GNU_CONFIGURE=	yes
+# APR-Util Options
+BDB_USE=		BDB=48+
+FREETDS_LIB_DEPENDS=	libsybdb.so:${PORTSDIR}/databases/freetds
+GDBM_LIB_DEPENDS=	libgdbm.so:${PORTSDIR}/databases/gdbm
+LDAP_USE=		OPENLDAP=yes
+MYSQL_USE=		MYSQL=yes
+NSS_LIB_DEPENDS=	libnss3.so:${PORTSDIR}/security/nss
+PGSQL_USE=		PGSQL=yes
+SQLITE_USE=		SQLITE=yes
+SSL_USE=		OPENSSL=yes
 
 NO_WRKSUBDIR=	yes
 APR_WRKDIR=	${WRKDIR}/apr-${APR_VERSION}
 APU_WRKDIR=	${WRKDIR}/apr-util-${APU_VERSION}
 
-PLIST_SUB+=	SHLIB_APR_MAJOR="${SHLIB_APR_MAJOR}" SHLIB_APU_MAJOR="${SHLIB_APU_MAJOR}"
-SHLIB_APR_MAJOR=	${APR_VERSION:C/^1/0/}
-SHLIB_APU_MAJOR=	${APU_VERSION:C/^1/0/}
+SHLIB_APR_MAJOR=${APR_VERSION:C/^1/0/}
+SHLIB_APU_MAJOR=${APU_VERSION:C/^1/0/}
+
+PLIST_SUB+=	SHLIB_APR_MAJOR="${SHLIB_APR_MAJOR}" \
+		SHLIB_APU_MAJOR="${SHLIB_APU_MAJOR}"
 
 APR_CONF_ARGS=	--with-installbuilddir=${DATADIR}/build-1 \
 		--enable-posix-shm
+
 APU_CONF_ARGS=	--with-apr=${APR_WRKDIR} \
 		--with-expat=${LOCALBASE} \
 		--with-iconv=${ICONV_PREFIX}
@@ -72,7 +88,6 @@ APR_CONF_ARGS+=	--without-devrandom
 ######### APR-Util Options
 .if ${PORT_OPTIONS:MGDBM}
 APU_EXTRAS=	yes
-LIB_DEPENDS+=	libgdbm.so:${PORTSDIR}/databases/gdbm
 APU_CONF_ARGS+=	--with-gdbm=${LOCALBASE}
 .else
 APU_CONF_ARGS+=	--without-gdbm
@@ -80,7 +95,6 @@ APU_CONF_ARGS+=	--without-gdbm
 
 .if ${PORT_OPTIONS:MBDB}
 APU_EXTRAS=	yes
-USE_BDB=	48+
 APU_CONF_ARGS+=	--with-berkeley-db=${BDB_INCLUDE_DIR}:${BDB_LIB_DIR}
 .else
 APU_CONF_ARGS+=	--without-berkeley-db
@@ -95,9 +109,8 @@ APU_CONF_ARGS+=	--without-ndbm
 
 .if ${PORT_OPTIONS:MLDAP}
 APU_EXTRAS=	yes
-USE_OPENLDAP=	yes
 APU_CONF_ARGS+=	--with-ldap-include=${LOCALBASE}/include \
-	--with-ldap-lib=${LOCALBASE}/lib --with-ldap=ldap
+		--with-ldap-lib=${LOCALBASE}/lib --with-ldap=ldap
 .else
 APU_CONF_ARGS+=	--without-ldap
 .endif
@@ -105,14 +118,12 @@ APU_CONF_ARGS+=	--without-ldap
 .if ${PORT_OPTIONS:MFREETDS}
 APU_EXTRAS=	yes
 APU_CONF_ARGS+=	--with-freetds=${LOCALBASE}
-LIB_DEPENDS+=	libsybdb.so:${PORTSDIR}/databases/freetds
 .else
 APU_CONF_ARGS+=	--without-freetds
 .endif
 
 .if ${PORT_OPTIONS:MMYSQL}
 APU_EXTRAS=	yes
-USE_MYSQL=	yes
 APU_CONF_ARGS+=	--with-mysql=${LOCALBASE}
 CPPFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/mysql -DHAVE_MYSQL_H
 LIBS+=		-L${LOCALBASE}/lib/mysql
@@ -122,7 +133,6 @@ APU_CONF_ARGS+=	--without-mysql
 
 .if ${PORT_OPTIONS:MPGSQL}
 APU_EXTRAS=	yes
-USE_PGSQL=	yes
 APU_CONF_ARGS+=	--with-pgsql=${LOCALBASE}
 CONFIGURE_ENV+=	ac_cv_path_PGSQL_CONFIG=""
 .else
@@ -131,7 +141,6 @@ APU_CONF_ARGS+=	--without-pgsql
 
 .if ${PORT_OPTIONS:MSQLITE}
 APU_EXTRAS=	yes
-USE_SQLITE=	yes
 APU_CONF_ARGS+=	--with-sqlite3=${LOCALBASE}
 .else
 APU_CONF_ARGS+=	--without-sqlite3
@@ -144,7 +153,6 @@ APU_CONF_ARGS+=	--with-crypto
 
 .if ${PORT_OPTIONS:MSSL}
 APU_EXTRAS=	yes
-USE_OPENSSL=	yes
 CPPFLAGS+=	-I${OPENSSLINC}
 LDFLAGS+=	-L${OPENSSLLIB}
 APU_CONF_ARGS+=	--with-openssl=${OPENSSLBASE}
@@ -154,13 +162,16 @@ APU_CONF_ARGS+=	--without-openssl
 
 .if ${PORT_OPTIONS:MNSS}
 APU_EXTRAS=	yes
-LIB_DEPENDS+=	libnss3.so:${PORTSDIR}/security/nss
 CPPFLAGS+=	-I${LOCALBASE}/include/nss
 LDFLAGS+=	-L${LOCALBASE}/lib/nss
 APU_CONF_ARGS+=	--with-nss=${LOCALBASE}
 .endif
 
 CONFIGURE_ENV+=	CC="${CC}" CFLAGS="${CFLAGS}" CPPFLAGS="${CPPFLAGS}"
+
+post-extract:
+# cleanup files not used on this platform
+	@${FIND} ${WRKSRC} -type f \( -name 'NWGNU*' -o -name '*.ds?' -o -name '*.dep' -o -name '*.mak' -o -name '*.win' \) -delete
 
 .if defined(APU_EXTRAS)
 PLIST_SUB+=	APU_EXTRAS=""
@@ -179,9 +190,9 @@ post-patch:
 
 do-configure:
 	@(cd ${APR_WRKDIR} && \
-		${SETENV} ${CONFIGURE_ENV} ./configure ${CONFIGURE_ARGS} ${APR_CONF_ARGS})
+		${SETENV} ${CONFIGURE_ENV} ./configure ${APR_CONF_ARGS} ${CONFIGURE_ARGS})
 	@(cd ${APU_WRKDIR} && \
-		${SETENV} ${CONFIGURE_ENV} ./configure ${CONFIGURE_ARGS} ${APU_CONF_ARGS})
+		${SETENV} ${CONFIGURE_ENV} ./configure ${APU_CONF_ARGS} ${CONFIGURE_ARGS})
 
 do-build:
 	@(cd ${APR_WRKDIR} && ${SETENV} ${MAKE_ENV} ${MAKE} ${_MAKE_JOBS})
@@ -192,7 +203,7 @@ do-install:
 	@(cd ${APU_WRKDIR} && ${SETENV} ${MAKE_ENV} ${MAKE} ${INSTALL_TARGET} ${MAKE_ARGS})
 
 post-install:
-	@${FIND} ${STAGEDIR}${PREFIX}/lib/ -name \*.so | ${XARGS} ${STRIP_CMD} 
+	@${FIND} ${STAGEDIR}${PREFIX}/lib/ -name \*.so | ${XARGS} ${STRIP_CMD}
 
 test: build
 	-@(cd ${APR_WRKDIR} && ${SETENV} ${MAKE_ENV} ${MAKE} test)
