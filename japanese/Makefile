@@ -134,6 +134,7 @@
     SUBDIR += kon2-16dot
     SUBDIR += kpcal
     SUBDIR += kterm
+    SUBDIR += latex-jlisting
     SUBDIR += leafrogue
     SUBDIR += less
     SUBDIR += libreoffice
