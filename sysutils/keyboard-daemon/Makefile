@@ -2,15 +2,16 @@
 
 PORTNAME=	keyboard-daemon
 PORTVERSION=	0.7
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.bayofrum.net/dist/${PORTNAME}/
 
 MAINTAINER=	crees@FreeBSD.org
 COMMENT=	Listens on a keyboard device and executes commands on keypresses
 
-LICENSE=	BSD
+LICENSE=	BSD2CLAUSE
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/libcfu.a:${PORTSDIR}/devel/libcfu
+LIB_DEPENDS=	libcfu.so:${PORTSDIR}/devel/libcfu
 
 USES=		tar:bzip2
 
