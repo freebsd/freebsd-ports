@@ -902,7 +902,6 @@
     SUBDIR += ruby-gdal
     SUBDIR += ruby-image_size
     SUBDIR += ruby-imlib2
-    SUBDIR += ruby-ming
     SUBDIR += ruby-svg
     SUBDIR += ruby-tgif
     SUBDIR += rubygem-cairo

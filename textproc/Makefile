@@ -1282,7 +1282,6 @@
     SUBDIR += ruby-htmlrepair
     SUBDIR += ruby-htmlsplit
     SUBDIR += ruby-htree
-    SUBDIR += ruby-liquid
     SUBDIR += ruby-rd-mode.el
     SUBDIR += ruby-rdtool
     SUBDIR += ruby-rss

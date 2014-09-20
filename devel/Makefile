@@ -4165,7 +4165,6 @@
     SUBDIR += remake
     SUBDIR += replay
     SUBDIR += rhtvision
-    SUBDIR += ri-emacs
     SUBDIR += rlog
     SUBDIR += rlwrap
     SUBDIR += roboctl
@@ -4186,7 +4185,6 @@
     SUBDIR += ruby-date2
     SUBDIR += ruby-dialogs
     SUBDIR += ruby-event-loop
-    SUBDIR += ruby-fastri
     SUBDIR += ruby-flexmock
     SUBDIR += ruby-gems
     SUBDIR += ruby-intl
@@ -4194,8 +4192,6 @@
     SUBDIR += ruby-krossruby
     SUBDIR += ruby-langscan
     SUBDIR += ruby-locale
-    SUBDIR += ruby-locale2
-    SUBDIR += ruby-multi
     SUBDIR += ruby-ncurses
     SUBDIR += ruby-property
     SUBDIR += ruby-qtruby
@@ -4205,7 +4201,6 @@
     SUBDIR += ruby-rreadline
     SUBDIR += ruby-sdl
     SUBDIR += ruby-setup.rb
-    SUBDIR += ruby-statgrab
     SUBDIR += ruby-subversion
     SUBDIR += ruby-tzfile
     SUBDIR += ruby-wirble
@@ -4293,7 +4288,6 @@
     SUBDIR += rubygem-docile
     SUBDIR += rubygem-dotenv-deployment
     SUBDIR += rubygem-drydock
-    SUBDIR += rubygem-echoe
     SUBDIR += rubygem-edavis10-object_daddy
     SUBDIR += rubygem-elif
     SUBDIR += rubygem-enumerize
@@ -4477,7 +4471,6 @@
     SUBDIR += rubygem-ruby-sdl-ffi
     SUBDIR += rubygem-ruby2ruby
     SUBDIR += rubygem-ruby_parser
-    SUBDIR += rubygem-rubyforge
     SUBDIR += rubygem-rubygame
     SUBDIR += rubygem-rubygems-tasks
     SUBDIR += rubygem-rubyinlineaccel

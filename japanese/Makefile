@@ -225,7 +225,6 @@
     SUBDIR += rogue_s
     SUBDIR += ruby-eb
     SUBDIR += ruby-mecab
-    SUBDIR += ruby-ming
     SUBDIR += ruby-romkan
     SUBDIR += ruby-uconv
     SUBDIR += ruby-usersguide

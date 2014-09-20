@@ -276,7 +276,6 @@
     SUBDIR += plexmediaserver
     SUBDIR += plexmediaserver-plexpass
     SUBDIR += podcastdl
-    SUBDIR += podcatcher
     SUBDIR += poe
     SUBDIR += ppm2fli
     SUBDIR += projectx
@@ -317,7 +316,6 @@
     SUBDIR += replex
     SUBDIR += rox-videothumbnail
     SUBDIR += rtmpdump
-    SUBDIR += ruby-flvtool2
     SUBDIR += rubygem-clutter-gstreamer
     SUBDIR += rubygem-flvtool2
     SUBDIR += rubygem-gstreamer
@@ -386,7 +384,6 @@
     SUBDIR += vdr-plugins
     SUBDIR += vic
     SUBDIR += vlc
-    SUBDIR += vodcatcher
     SUBDIR += vstream-client
     SUBDIR += vtkmpeg2encode
     SUBDIR += w_scan

@@ -383,7 +383,6 @@
     SUBDIR += rpl
     SUBDIR += rtfm
     SUBDIR += ruby-progressbar
-    SUBDIR += ruby-vpim
     SUBDIR += rubygem-dotenv
     SUBDIR += rubygem-iesd
     SUBDIR += rubygem-mime-types

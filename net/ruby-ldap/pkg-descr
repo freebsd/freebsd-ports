@@ -1,6 +1,0 @@
-Ruby/LDAP is a Ruby extension library which provides LDAP interface
-based on RFC1823.
-
-Supported LDAP libraries are OpenLDAP, Michigan LDAP, and NetscapeSDK.
-
-WWW: http://rubyforge.org/projects/ruby-ldap/

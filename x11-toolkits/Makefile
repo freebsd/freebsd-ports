@@ -218,7 +218,6 @@
     SUBDIR += qwt6
     SUBDIR += qwt6-designerplugin
     SUBDIR += rep-gtk2
-    SUBDIR += ruby-fox16
     SUBDIR += rubygem-gdk3
     SUBDIR += rubygem-gtk2
     SUBDIR += rubygem-gtk3

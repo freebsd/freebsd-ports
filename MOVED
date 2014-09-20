@@ -7079,3 +7079,40 @@ www/dansguardian-devel||2014-09-16|Depends on www/squid (v2.7) which is two year
 www/videocache||2014-09-16|Depends on www/squid (v2.7) which is two years past EOL
 www/squid32||2014-09-16|Readed EOL on 14 August 2012
 net/ruby-growl|net/rubygem-ruby-growl|2014-09-20|Renamed
+sysutils/moreutils-parallel|sysutils/moreutils|2014-09-20|Has expired: Use moreutils-parallel in sysutils/moreutils instead
+science/ruby-netcdf||2014-09-20|Has expired: Depends on deprecated math/ruby-narray
+x11-toolkits/ruby-fox16||2014-09-20|Has expired: RubyForge shutdown May 15 2014
+math/ruby-gnuplot||2014-09-20|Has expired: Depends on deprecated math/ruby-narray
+science/ruby-gphys||2014-09-20|Has expired: Depends on deprecated math/ruby-narray
+math/ruby-fftw3||2014-09-20|Has expired: Depends on deprecated math/ruby-narray
+science/ruby-dcl||2014-09-20|Has expired: Depends on deprecated math/ruby-narray
+math/ruby-numru_misc||2014-09-20|Has expired: Depends on deprecated math/ruby-narray
+math/ruby-narray||2014-09-20|Has expired: RubyForge shutdown May 15 2014
+textproc/ruby-liquid||2014-09-20|Has expired: RubyForge shutdown May 15 2014
+comms/callsign||2014-09-20|Has expired: RubyForge shutdown May 15 2014
+misc/ruby-vpim||2014-09-20|Has expired: RubyForge shutdown May 15 2014
+net/ruby-ldap||2014-09-20|Has expired: RubyForge shutdown May 15 2014
+devel/rubygem-echoe||2014-09-20|Has expired: Depends on deprecated rubyforge
+www/ruby-borges||2014-09-20|Has expired: RubyForge shutdown May 15 2014
+www/ruby-fcgiwrap||2014-09-20|Has expired: RubyForge shutdown May 15 2014
+www/rubygem-scrubyt||2014-09-20|Has expired: RubyForge shutdown May 15 2014
+devel/ruby-multi||2014-09-20|Has expired: RubyForge shutdown May 15 2014
+databases/ruby-dbd_sqlite3||2014-09-20|Has expired: RubyForge shutdown May 15 2014
+math/ruby-gsl||2014-09-20|Has expired: RubyForge shutdown May 15 2014
+security/ruby-gpgme||2014-09-20|Has expired: RubyForge shutdown May 15 2014
+multimedia/vodcatcher||2014-09-20|Has expired: RubyForge shutdown May 15 2014
+japanese/ruby-ming||2014-09-20|Has expired: RubyForge shutdown May 15 2014
+devel/ruby-statgrab||2014-09-20|Has expired: RubyForge shutdown May 15 2014
+security/ruby-crypt||2014-09-20|Has expired: RubyForge shutdown May 15 2014
+sysutils/philesight||2014-09-20|Has expired: Depends on deprecated devel/ruby-locale2
+multimedia/podcatcher||2014-09-20|Has expired: RubyForge shutdown May 15 2014
+audio/ruby-mp3info||2014-09-20|Has expired: RubyForge shutdown May 15 2014
+multimedia/ruby-flvtool2||2014-09-20|Has expired: RubyForge shutdown May 15 2014
+audio/ruby-freedb||2014-09-20|Has expired: RubyForge shutdown May 15 2014
+graphics/ruby-ming||2014-09-20|Has expired: RubyForge shutdown May 15 2014
+devel/ruby-locale2||2014-09-20|Has expired: RubyForge shutdown May 15 2014
+devel/rubygem-rubyforge||2014-09-20|Has expired: RubyForge shutdown May 15 2014
+databases/ruby-dbd_odbc||2014-09-20|Has expired: RubyForge shutdown May 15 2014
+devel/ruby-fastri||2014-09-20|Has expired: RubyForge shutdown May 15 2014
+devel/ri-emacs||2014-09-20|Has expired: RubyForge shutdown May 15 2014
+security/p5-openxpki-client-html-mason||2014-09-20|Has expired: security/p5-openxpki-0.15+ abandoned Mason UI technology in favor of FastCGI

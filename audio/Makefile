@@ -630,8 +630,6 @@
     SUBDIR += rsynth
     SUBDIR += rubberband
     SUBDIR += ruby-audiofile
-    SUBDIR += ruby-freedb
-    SUBDIR += ruby-mp3info
     SUBDIR += ruby-mp3tag
     SUBDIR += ruby-smf
     SUBDIR += ruby-taglib
