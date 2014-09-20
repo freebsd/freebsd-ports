@@ -214,6 +214,7 @@ foreman_proxy:*:812:
 puppet:*:814:
 btsync:*:817:
 jenkins:*:818:
+rundeck:*:819:
 openacs:*:820:
 dotlrn:*:821:
 polw:*:825:

@@ -824,6 +824,7 @@
     SUBDIR += rubygem-teamocil
     SUBDIR += rubygem-winrm
     SUBDIR += rubygem-yell
+    SUBDIR += rundeck
     SUBDIR += runit
     SUBDIR += runwhen
     SUBDIR += safe-rm
