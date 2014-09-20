@@ -6,6 +6,7 @@ share/applications/lxappearance.desktop
 %%NLS%%share/locale/ar/LC_MESSAGES/lxappearance.mo
 %%NLS%%share/locale/be/LC_MESSAGES/lxappearance.mo
 %%NLS%%share/locale/bg/LC_MESSAGES/lxappearance.mo
+%%NLS%%share/locale/ca/LC_MESSAGES/lxappearance.mo
 %%NLS%%share/locale/cs/LC_MESSAGES/lxappearance.mo
 %%NLS%%share/locale/da/LC_MESSAGES/lxappearance.mo
 %%NLS%%share/locale/de/LC_MESSAGES/lxappearance.mo
