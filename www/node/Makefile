@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	node
-PORTVERSION=	0.10.31
+PORTVERSION=	0.10.32
 CATEGORIES=	www
 MASTER_SITES=	http://nodejs.org/dist/v${PORTVERSION}/
 DISTNAME=	${PORTNAME}-v${PORTVERSION}
@@ -53,8 +53,5 @@ post-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/lib/node_modules/
 	${TOUCH} ${STAGEDIR}${PREFIX}/lib/node_modules/.keepme
 	${CHMOD} ${MANMODE} ${STAGEDIR}${PREFIX}/man/man1/node.1
-	@${ECHO_MSG}
-	@${ECHO_MSG} "Note: If you need npm (Node Package Manager), please install www/npm."
-	@${ECHO_MSG}
 
 .include <bsd.port.post.mk>
