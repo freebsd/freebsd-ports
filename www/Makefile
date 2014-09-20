@@ -1727,7 +1727,6 @@
     SUBDIR += rt42
     SUBDIR += ruby-amazon
     SUBDIR += ruby-aws
-    SUBDIR += ruby-fcgi
     SUBDIR += ruby-google
     SUBDIR += ruby-wgettsv
     SUBDIR += rubygem-actionpack
