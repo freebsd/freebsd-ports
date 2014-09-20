@@ -3,7 +3,7 @@
 
 PORTNAME=	slim
 PORTVERSION=	1.3.6
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11
 MASTER_SITES=	ftp://ftp.berlios.de/pub/slim/ \
 		SF/slim.berlios
@@ -31,8 +31,10 @@ CMAKE_ARGS=	-DUSE_CONSOLEKIT=yes \
 	-DBUILD_SLIMLOCK=no \
 	-DBUILD_SHARED_LIBS=yes
 
-OPTIONS_DEFINE=		PAM
+OPTIONS_DEFINE=		PAM UTF8
 OPTIONS_DEFAULT=	PAM
+
+UTF8_DESC=	Support UTF-8 characters
 
 PLIST_SUB+=	VERSION="${PORTVERSION}"
 
@@ -44,6 +46,11 @@ PLIST_SUB+=	PAM=""
 .else
 CMAKE_ARGS+=	-DUSE_PAM=no
 PLIST_SUB+=	PAM="@comment "
+.endif
+
+.if ${PORT_OPTIONS:MUTF8}
+# patch taken from slim-unicode in Arch User Repository
+EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-utf8
 .endif
 
 post-patch:

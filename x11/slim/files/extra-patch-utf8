@@ -1,0 +1,938 @@
+--- const.h.orig	2014-08-12 18:08:28.000000000 +0200
++++ const.h	2014-08-12 18:09:20.000000000 +0200
+@@ -24,9 +24,6 @@
+ #define HIDE		0
+ #define SHOW		1
+ 
+-#define GET_NAME	0
+-#define GET_PASSWD  1
+-
+ #define OK_EXIT	 0
+ #define ERR_EXIT	1
+ 
+--- main.cpp.orig	2014-08-12 18:08:28.000000000 +0200
++++ main.cpp	2014-08-12 18:09:20.000000000 +0200
+@@ -16,6 +16,8 @@
+ 
+ int main(int argc, char** argv)
+ {
++    // We need to set the locale to get the input encoded in UTF-8
++    setlocale (LC_ALL, "");
+ 	LoginApp = new App(argc, argv);
+ 	LoginApp->Run();
+ 	return 0;
+--- panel.cpp.orig	2014-08-12 18:08:28.000000000 +0200
++++ panel.cpp	2014-08-12 18:09:20.000000000 +0200
+@@ -13,6 +13,7 @@
+ #include <poll.h>
+ #include <X11/extensions/Xrandr.h>
+ #include "panel.h"
++#include "util.h"
+ 
+ using namespace std;
+ 
+@@ -78,6 +79,15 @@
+ 	XftColorAllocName(Dpy, visual, colormap,
+ 					  cfg->getOption("session_shadow_color").c_str(), &sessionshadowcolor);
+ 
++	/* Build XIC and XIM to be able to get unicode string from keyboard events */
++	char classname = 0;
++	displayIc = NULL;
++	displayIm = XOpenIM(Dpy, NULL, &classname, &classname);
++	if(displayIm) {
++		displayIc = XCreateIC(displayIm, XNInputStyle, XIMPreeditNothing | XIMStatusNothing,
++							  XNResourceName, &classname,
++							  XNResourceClass, &classname, NULL);
++	}
+ 	/* Load properties from config / theme */
+ 	input_name_x = cfg->getIntOption("input_name_x");
+ 	input_name_y = cfg->getIntOption("input_name_y");
+@@ -91,6 +101,8 @@
+ 		input_pass_y = input_name_y;
+ 	}
+ 
++	Reset();
++
+ 	/* Load panel and background image */
+ 	string panelpng = "";
+ 	panelpng = panelpng + themedir +"/panel.png";
+@@ -210,6 +222,12 @@
+ 	Visual* visual = DefaultVisual(Dpy, Scr);
+ 	Colormap colormap = DefaultColormap(Dpy, Scr);
+ 
++	if(displayIc) {
++		XDestroyIC(displayIc);
++	}
++	if(displayIm) {
++		XCloseIM(displayIm);
++	}
+ 	XftColorFree(Dpy, visual, colormap, &inputcolor);
+ 	XftColorFree(Dpy, visual, colormap, &inputshadowcolor);
+ 	XftColorFree(Dpy, visual, colormap, &welcomecolor);
+@@ -289,7 +307,8 @@
+ 
+ 	XftDraw *draw = XftDrawCreate(Dpy, Win,
+ 		DefaultVisual(Dpy, Scr), DefaultColormap(Dpy, Scr));
+-		XftTextExtents8(Dpy, msgfont, reinterpret_cast<const XftChar8*>(message.c_str()),
++
++	XftTextExtentsUtf8(Dpy, msgfont, reinterpret_cast<const XftChar8*>(message.c_str()),
+ 		message.length(), &extents);
+ 
+ 	string cfgX = cfg->getOption("passwd_feedback_x");
+@@ -300,7 +319,7 @@
+ 	int msg_y = Cfg::absolutepos(cfgY, XHeightOfScreen(ScreenOfDisplay(Dpy, Scr)), extents.height);
+ 
+ 	OnExpose();
+-	SlimDrawString8(draw, &msgcolor, msgfont, msg_x, msg_y, message,
++	SlimDrawStringUtf8(draw, &msgcolor, msgfont, msg_x, msg_y, message,
+ 		&msgshadowcolor, shadowXOffset, shadowYOffset);
+ 
+ 	if (cfg->getOption("bell") == "1")
+@@ -312,7 +331,7 @@
+ 	OnExpose();
+ 	// The message should stay on the screen even after the password field is
+ 	// cleared, methinks. I don't like this solution, but it works.
+-	SlimDrawString8(draw, &msgcolor, msgfont, msg_x, msg_y, message,
++	SlimDrawStringUtf8(draw, &msgcolor, msgfont, msg_x, msg_y, message,
+ 		&msgshadowcolor, shadowXOffset, shadowYOffset);
+ 	XSync(Dpy, True);
+ 	XftDrawDestroy(draw);
+@@ -330,9 +349,8 @@
+ 		draw = XftDrawCreate(Dpy, Root,
+ 			DefaultVisual(Dpy, Scr), DefaultColormap(Dpy, Scr));
+ 
+-	XftTextExtents8(Dpy, msgfont,
+-		reinterpret_cast<const XftChar8*>(text.c_str()),
+-					text.length(), &extents);
++	XftTextExtentsUtf8(Dpy, msgfont,
++		reinterpret_cast<const XftChar8*>(text.c_str()), text.length(), &extents);
+ 	cfgX = cfg->getOption("msg_x");
+ 	cfgY = cfg->getOption("msg_y");
+ 	int shadowXOffset = cfg->getIntOption("msg_shadow_xoffset");
+@@ -347,9 +365,8 @@
+ 		msg_y = Cfg::absolutepos(cfgY, XHeightOfScreen(ScreenOfDisplay(Dpy, Scr)), extents.height);
+ 	}
+ 
+-	SlimDrawString8 (draw, &msgcolor, msgfont, msg_x, msg_y,
+-					 text,
+-					 &msgshadowcolor,
++	SlimDrawStringUtf8(draw, &msgcolor, msgfont, msg_x, msg_y,
++					   text, &msgshadowcolor,
+ 					 shadowXOffset, shadowYOffset);
+ 	XFlush(Dpy);
+ 	XftDrawDestroy(draw);
+@@ -383,24 +400,27 @@
+ }
+ 
+ void Panel::Cursor(int visible) {
+-	const char* text = NULL;
+-	int xx = 0, yy = 0, y2 = 0, cheight = 0;
++	const uint16_t* text = NULL;
++	int xx = 0, yy = 0, y2 = 0, cheight = 0, textLen = 0;
+ 	const char* txth = "Wj"; /* used to get cursor height */
+ 
+ 	if (mode == Mode_Lock) {
+-			text = HiddenPasswdBuffer.c_str();
++			text = hiddenPasswdBuffer;
++			textLen = passwdBufferLen;
+ 			xx = input_pass_x;
+ 			yy = input_pass_y;
+ 	} else {
+ 		switch(field) {
+ 			case Get_Passwd:
+-				text = HiddenPasswdBuffer.c_str();
++				text = hiddenPasswdBuffer;
++				textLen = passwdBufferLen;
+ 				xx = input_pass_x;
+ 				yy = input_pass_y;
+ 				break;
+ 
+ 			case Get_Name:
+-				text = NameBuffer.c_str();
++				text = nameBuffer;
++				textLen = nameBufferLen;
+ 				xx = input_name_x;
+ 				yy = input_name_y;
+ 				break;
+@@ -411,7 +431,7 @@
+ 	XftTextExtents8(Dpy, font, (XftChar8*)txth, strlen(txth), &extents);
+ 	cheight = extents.height;
+ 	y2 = yy - extents.y + extents.height;
+-	XftTextExtents8(Dpy, font, (XftChar8*)text, strlen(text), &extents);
++	XftTextExtents16(Dpy, font, (XftChar16*)text, textLen, &extents);
+ 	xx += extents.width;
+ 
+ 	if(visible == SHOW) {
+@@ -478,27 +498,25 @@
+ 		XClearWindow(Dpy, Win);
+ 
+ 	if (input_pass_x != input_name_x || input_pass_y != input_name_y){
+-		SlimDrawString8 (draw, &inputcolor, font, input_name_x, input_name_y,
+-						 NameBuffer,
+-						 &inputshadowcolor,
++		SlimDrawString16(draw, &inputcolor, font, input_name_x, input_name_y,
++						 nameBuffer, nameBufferLen, &inputshadowcolor,
+ 						 inputShadowXOffset, inputShadowYOffset);
+-		SlimDrawString8 (draw, &inputcolor, font, input_pass_x, input_pass_y,
+-						 HiddenPasswdBuffer,
+-						 &inputshadowcolor,
++		SlimDrawString16(draw, &inputcolor, font, input_pass_x, input_pass_y,
++						 hiddenPasswdBuffer, passwdBufferLen, &inputshadowcolor,
+ 						 inputShadowXOffset, inputShadowYOffset);
+ 	} else { /*single input mode */
+ 		switch(field) {
+ 			case Get_Passwd:
+-				SlimDrawString8 (draw, &inputcolor, font,
++				SlimDrawString16(draw, &inputcolor, font,
+ 								 input_pass_x, input_pass_y,
+-								 HiddenPasswdBuffer,
++								 hiddenPasswdBuffer, passwdBufferLen,
+ 								 &inputshadowcolor,
+ 								 inputShadowXOffset, inputShadowYOffset);
+ 				break;
+ 			case Get_Name:
+-				SlimDrawString8 (draw, &inputcolor, font,
++				SlimDrawString16(draw, &inputcolor, font,
+ 								 input_name_x, input_name_y,
+-								 NameBuffer,
++								 nameBuffer, nameBufferLen,
+ 								 &inputshadowcolor,
+ 								 inputShadowXOffset, inputShadowYOffset);
+ 				break;
+@@ -510,35 +528,105 @@
+ 	ShowText();
+ }
+ 
+-void Panel::EraseLastChar(string &formerString) {
++int Panel::FieldEraseLastChar(const uint16_t **buf, int *len) {
++
++	static const uint16_t emptyBuf = 0;
++	int formerTextBufferLen = 0;
++
+ 	switch(field) {
+-	case GET_NAME:
+-		if (! NameBuffer.empty()) {
+-			formerString=NameBuffer;
+-			NameBuffer.erase(--NameBuffer.end());
++		case Get_Name:
++			formerTextBufferLen = nameBufferLen;
++			if (nameBufferLen > 0) {
++				nameBufferLen--;
+ 		}
++			*buf = nameBuffer;
++			*len = nameBufferLen;
+ 		break;
+ 
+-	case GET_PASSWD:
+-		if (!PasswdBuffer.empty()) {
+-			formerString=HiddenPasswdBuffer;
+-			PasswdBuffer.erase(--PasswdBuffer.end());
+-			HiddenPasswdBuffer.erase(--HiddenPasswdBuffer.end());
++		case Get_Passwd:
++			formerTextBufferLen = passwdBufferLen;
++			if (passwdBufferLen > 0) {
++				passwdBufferLen--;
++				passwdBuffer[passwdBufferLen] = 0;
+ 		}
++			*buf = hiddenPasswdBuffer;
++			*len = passwdBufferLen;
++			break;
++
++		default:
++			*buf = &emptyBuf;
++			*len = 0;
+ 		break;
+ 	}
++	return formerTextBufferLen;
+ }
+ 
++int Panel::FieldClear(const uint16_t **buf, int *len) {
++
++	static const uint16_t emptyBuf = 0;
++	int formerTextBufferLen = 0;
++
++	switch(field) {
++		case Get_Name:
++			formerTextBufferLen = nameBufferLen;
++			nameBufferLen = 0;
++			*buf = nameBuffer;
++			*len = nameBufferLen;
++			break;
++
++		case Get_Passwd:
++			formerTextBufferLen = passwdBufferLen;
++			memset(passwdBuffer, 0, sizeof(passwdBuffer));
++			passwdBufferLen = 0;
++			*buf = hiddenPasswdBuffer;
++			*len = passwdBufferLen;
++			break;
++
++		default:
++			*buf = &emptyBuf;
++			*len = 0;
++			break;
++	}
++	return formerTextBufferLen;
++}
++
++/* Check if the input character is allowed */
++bool Panel::isUtf16CharAllowed(uint16_t c) {
++	return ((0x020 <= c && c <= 0x07E) || (0x0A0 <= c && c != 0x0AD));
++}
++
++#define SIZE_BUFFER_KEY_PRESS 64
++
+ bool Panel::OnKeyPress(XEvent& event) {
+-	char ascii;
++	int formerTextBufferLen = -1;
++	int textBufferLen = -1;
++	const uint16_t *textBuffer = NULL;
+ 	KeySym keysym;
++	int nbReadBuf = -1;
++	uint16_t utf16buf[SIZE_BUFFER_KEY_PRESS];
++	if(displayIc)
++	{
++		Status status;
++		char databuf[SIZE_BUFFER_KEY_PRESS];
++		nbReadBuf = Xutf8LookupString(displayIc, &event.xkey, databuf,
++									  SIZE_BUFFER_KEY_PRESS, &keysym, &status);
++		if(nbReadBuf > 0) {
++			nbReadBuf = Util::utf8ToUtf16(databuf, nbReadBuf,
++										  utf16buf, SIZE_BUFFER_KEY_PRESS);
++		}
++	}
++	else
++	{
+ 	XComposeStatus compstatus;
+-	int xx = 0;
+-	int yy = 0;
+-	string text;
+-	string formerString = "";
++		char databuf[SIZE_BUFFER_KEY_PRESS];
++		nbReadBuf = XLookupString(&event.xkey, databuf,
++								  SIZE_BUFFER_KEY_PRESS, &keysym, &compstatus);
++		if(nbReadBuf > 0) {
++			nbReadBuf = Util::utf8ToUtf16(databuf, nbReadBuf,
++										  utf16buf, SIZE_BUFFER_KEY_PRESS);
++		}
++	}
+ 
+-	XLookupString(&event.xkey, &ascii, 1, &keysym, &compstatus);
+ 	switch(keysym){
+ 		case XK_F1:
+ 			SwitchSession();
+@@ -553,17 +641,17 @@
+ 		case XK_KP_Enter:
+ 			if (field==Get_Name){
+ 				/* Don't allow an empty username */
+-				if (NameBuffer.empty()) return true;
++				if (nameBufferLen <= 0) return true;
+ 
+-				if (NameBuffer==CONSOLE_STR){
++				if (Util::utf16EqualToAscii(CONSOLE_STR, nameBuffer, nameBufferLen)) {
+ 					action = Console;
+-				} else if (NameBuffer==HALT_STR){
++				} else if (Util::utf16EqualToAscii(HALT_STR, nameBuffer, nameBufferLen)) {
+ 					action = Halt;
+-				} else if (NameBuffer==REBOOT_STR){
++				} else if (Util::utf16EqualToAscii(REBOOT_STR, nameBuffer, nameBufferLen)) {
+ 					action = Reboot;
+-				} else if (NameBuffer==SUSPEND_STR){
++				} else if (Util::utf16EqualToAscii(SUSPEND_STR, nameBuffer, nameBufferLen)) {
+ 					action = Suspend;
+-				} else if (NameBuffer==EXIT_STR){
++				} else if (Util::utf16EqualToAscii(EXIT_STR, nameBuffer, nameBufferLen)) {
+ 					action = Exit;
+ 				} else{
+ 					if (mode == Mode_DM)
+@@ -581,80 +669,80 @@
+ 	switch(keysym){
+ 		case XK_Delete:
+ 		case XK_BackSpace:
+-			EraseLastChar(formerString);
++			formerTextBufferLen = FieldEraseLastChar(&textBuffer, &textBufferLen);
+ 			break;
+ 
+ 		case XK_w:
+ 		case XK_u:
+ 			if (reinterpret_cast<XKeyEvent&>(event).state & ControlMask) {
+-				switch(field) {
+-					case Get_Passwd:
+-						formerString = HiddenPasswdBuffer;
+-						HiddenPasswdBuffer.clear();
+-						PasswdBuffer.clear();
+-						break;
+-					case Get_Name:
+-						formerString = NameBuffer;
+-						NameBuffer.clear();
+-						break;
+-				}
++				formerTextBufferLen = FieldClear(&textBuffer, &textBufferLen);
+ 				break;
+ 			}
+ 		case XK_h:
+ 			if (reinterpret_cast<XKeyEvent&>(event).state & ControlMask) {
+-				EraseLastChar(formerString);
++				formerTextBufferLen = FieldEraseLastChar(&textBuffer, &textBufferLen);
+ 				break;
+ 			}
+ 			/* Deliberate fall-through */
+ 
+ 		default:
+-			if (isprint(ascii) && (keysym < XK_Shift_L || keysym > XK_Hyper_R)){
++			if(nbReadBuf > 0) {
+ 				switch(field) {
+-					case GET_NAME:
+-						formerString=NameBuffer;
+-						if (NameBuffer.length() < INPUT_MAXLENGTH_NAME-1){
+-							NameBuffer.append(&ascii,1);
+-						};
++					case Get_Name:
++						formerTextBufferLen = nameBufferLen;
++						for(int i = 0; i < nbReadBuf &&
++							nameBufferLen < INPUT_MAXLENGTH_NAME; i++) {
++
++							if(isUtf16CharAllowed(utf16buf[i])) {
++								nameBuffer[nameBufferLen++] = utf16buf[i];
++							}
++						}
++						textBuffer = nameBuffer;
++						textBufferLen = nameBufferLen;
+ 						break;
+-					case GET_PASSWD:
+-						formerString=HiddenPasswdBuffer;
+-						if (PasswdBuffer.length() < INPUT_MAXLENGTH_PASSWD-1){
+-							PasswdBuffer.append(&ascii,1);
+-							HiddenPasswdBuffer.append("*");
+-						};
++
++					case Get_Passwd:
++						formerTextBufferLen = passwdBufferLen;
++						for(int i = 0; i < nbReadBuf &&
++							passwdBufferLen < INPUT_MAXLENGTH_PASSWD; i++) {
++
++							if(isUtf16CharAllowed(utf16buf[i])) {
++								passwdBuffer[passwdBufferLen] = utf16buf[i];
++								hiddenPasswdBuffer[passwdBufferLen++] = (uint16_t)'*';
++							}
++						}
++						textBuffer = hiddenPasswdBuffer;
++						textBufferLen = passwdBufferLen;
+ 					break;
+-				};
+-			};
++				}
++			}
+ 			break;
+ 	};
+ 
+-	XGlyphInfo extents;
+-	XftDraw *draw = XftDrawCreate(Dpy, Win,
+-			  DefaultVisual(Dpy, Scr), DefaultColormap(Dpy, Scr));
++	int xx = 0, yy = 0;
++	if (formerTextBufferLen > 0 || textBufferLen > 0) {
+ 
+ 	switch(field) {
+ 		case Get_Name:
+-			text = NameBuffer;
+ 			xx = input_name_x;
+ 			yy = input_name_y;
+ 			break;
+ 
+ 		case Get_Passwd:
+-			text = HiddenPasswdBuffer;
+ 			xx = input_pass_x;
+ 			yy = input_pass_y;
+ 			break;
+ 	}
++	}
+ 
+-	if (!formerString.empty()){
++	if (formerTextBufferLen > 0) {
++		XGlyphInfo extents;
+ 		const char* txth = "Wj"; /* get proper maximum height ? */
+ 		XftTextExtents8(Dpy, font,
+ 				reinterpret_cast<const XftChar8*>(txth), strlen(txth), &extents);
+ 		int maxHeight = extents.height;
+ 
+-		XftTextExtents8(Dpy, font,
+-				reinterpret_cast<const XftChar8*>(formerString.c_str()),
+-						formerString.length(), &extents);
++		XftTextExtents16(Dpy, font, (XftChar16*)textBuffer, formerTextBufferLen, &extents);
+ 		int maxLength = extents.width;
+ 
+ 		if (mode == Mode_Lock)
+@@ -666,14 +754,15 @@
+ 				maxLength + 6, maxHeight + 6, false);
+ 	}
+ 
+-	if (!text.empty()) {
+-		SlimDrawString8 (draw, &inputcolor, font, xx, yy,
+-				 text,
+-				 &inputshadowcolor,
+-				 inputShadowXOffset, inputShadowYOffset);
++	if(textBufferLen > 0) {
++		XftDraw *draw = XftDrawCreate(Dpy, Win, DefaultVisual(Dpy, Scr), DefaultColormap(Dpy, Scr));
++		if(draw != NULL) {
++			SlimDrawString16(draw, &inputcolor, font, xx, yy, textBuffer, textBufferLen,
++							&inputshadowcolor, inputShadowXOffset, inputShadowYOffset);
++			XftDrawDestroy(draw);
++		}
+ 	}
+ 
+-	XftDrawDestroy (draw);
+ 	Cursor(SHOW);
+ 	return true;
+ }
+@@ -690,7 +779,7 @@
+ 	XftDraw *draw = XftDrawCreate(Dpy, Win,
+ 		  DefaultVisual(Dpy, Scr), DefaultColormap(Dpy, Scr));
+ 	/* welcome message */
+-	XftTextExtents8(Dpy, welcomefont, (XftChar8*)welcome_message.c_str(),
++	XftTextExtentsUtf8(Dpy, welcomefont, (XftChar8*)welcome_message.c_str(),
+ 					strlen(welcome_message.c_str()), &extents);
+ 	cfgX = cfg->getOption("welcome_x");
+ 	cfgY = cfg->getOption("welcome_y");
+@@ -700,9 +789,8 @@
+ 	welcome_x = Cfg::absolutepos(cfgX, image->Width(), extents.width);
+ 	welcome_y = Cfg::absolutepos(cfgY, image->Height(), extents.height);
+ 	if (welcome_x >= 0 && welcome_y >= 0) {
+-		SlimDrawString8 (draw, &welcomecolor, welcomefont,
+-						 welcome_x, welcome_y,
+-						 welcome_message,
++		SlimDrawStringUtf8(draw, &welcomecolor, welcomefont,
++						   welcome_x, welcome_y, welcome_message,
+ 						 &welcomeshadowcolor, shadowXOffset, shadowYOffset);
+ 	}
+ 
+@@ -710,7 +798,7 @@
+ 	string msg;
+ 	if ((!singleInputMode|| field == Get_Passwd) && mode == Mode_DM) {
+ 		msg = cfg->getOption("password_msg");
+-		XftTextExtents8(Dpy, enterfont, (XftChar8*)msg.c_str(),
++		XftTextExtentsUtf8(Dpy, enterfont, (XftChar8*)msg.c_str(),
+ 						strlen(msg.c_str()), &extents);
+ 		cfgX = cfg->getOption("password_x");
+ 		cfgY = cfg->getOption("password_y");
+@@ -719,14 +807,14 @@
+ 		password_x = Cfg::absolutepos(cfgX, image->Width(), extents.width);
+ 		password_y = Cfg::absolutepos(cfgY, image->Height(), extents.height);
+ 		if (password_x >= 0 && password_y >= 0){
+-			SlimDrawString8 (draw, &entercolor, enterfont, password_x, password_y,
++			SlimDrawStringUtf8(draw, &entercolor, enterfont, password_x, password_y,
+ 							 msg, &entershadowcolor, shadowXOffset, shadowYOffset);
+ 		}
+ 	}
+ 
+ 	if (!singleInputMode|| field == Get_Name) {
+ 		msg = cfg->getOption("username_msg");
+-		XftTextExtents8(Dpy, enterfont, (XftChar8*)msg.c_str(),
++		XftTextExtentsUtf8(Dpy, enterfont, (XftChar8*)msg.c_str(),
+ 						strlen(msg.c_str()), &extents);
+ 		cfgX = cfg->getOption("username_x");
+ 		cfgY = cfg->getOption("username_y");
+@@ -735,7 +823,7 @@
+ 		username_x = Cfg::absolutepos(cfgX, image->Width(), extents.width);
+ 		username_y = Cfg::absolutepos(cfgY, image->Height(), extents.height);
+ 		if (username_x >= 0 && username_y >= 0){
+-			SlimDrawString8 (draw, &entercolor, enterfont, username_x, username_y,
++			SlimDrawStringUtf8(draw, &entercolor, enterfont, username_x, username_y,
+ 							 msg, &entershadowcolor, shadowXOffset, shadowYOffset);
+ 		}
+ 	}
+@@ -776,7 +864,7 @@
+ 
+ 	XftDraw *draw = XftDrawCreate(Dpy, Root,
+ 								  DefaultVisual(Dpy, Scr), DefaultColormap(Dpy, Scr));
+-	XftTextExtents8(Dpy, sessionfont, reinterpret_cast<const XftChar8*>(currsession.c_str()),
++	XftTextExtentsUtf8(Dpy, sessionfont, reinterpret_cast<const XftChar8*>(currsession.c_str()),
+ 					currsession.length(), &extents);
+ 	msg_x = cfg->getOption("session_x");
+ 	msg_y = cfg->getOption("session_y");
+@@ -785,16 +873,37 @@
+ 	int shadowXOffset = cfg->getIntOption("session_shadow_xoffset");
+ 	int shadowYOffset = cfg->getIntOption("session_shadow_yoffset");
+ 
+-	SlimDrawString8(draw, &sessioncolor, sessionfont, x, y,
+-					currsession,
+-					&sessionshadowcolor,
+-					shadowXOffset, shadowYOffset);
++	SlimDrawStringUtf8(draw, &sessioncolor, sessionfont, x, y,
++					   currsession, &sessionshadowcolor, shadowXOffset, shadowYOffset);
+ 	XFlush(Dpy);
+ 	XftDrawDestroy(draw);
+ }
+ 
++void Panel::SlimDrawString16(XftDraw *d, XftColor *color, XftFont *font,
++							 int x, int y, const uint16_t *str, int strLen,
++							 XftColor* shadowColor, int xOffset, int yOffset)
++{
++	int calc_x = 0;
++	int calc_y = 0;
++	if (mode == Mode_Lock) {
++		calc_x = viewport.x;
++		calc_y = viewport.y;
++	}
++
++	if (xOffset && yOffset) {
++		XftDrawString16(d, shadowColor, font,
++			x + xOffset + calc_x,
++			y + yOffset + calc_y,
++			(XftChar16*)str, strLen);
++	}
++
++	XftDrawString16(d, color, font,
++		x + calc_x,
++		y + calc_y,
++		(XftChar16*)str, strLen);
++}
+ 
+-void Panel::SlimDrawString8(XftDraw *d, XftColor *color, XftFont *font,
++void Panel::SlimDrawStringUtf8(XftDraw *d, XftColor *color, XftFont *font,
+ 							int x, int y, const string& str,
+ 							XftColor* shadowColor,
+ 							int xOffset, int yOffset)
+@@ -831,28 +940,31 @@
+ }
+ 
+ void Panel::ResetName(void){
+-	NameBuffer.clear();
++	nameBufferLen = 0;
++	memset(nameBuffer, 0, sizeof(nameBuffer));
+ }
+ 
+ void Panel::ResetPasswd(void){
+-	PasswdBuffer.clear();
+-	HiddenPasswdBuffer.clear();
++	passwdBufferLen = 0;
++	memset(passwdBuffer, 0, sizeof(passwdBuffer));
++	memset(hiddenPasswdBuffer, 0, sizeof(hiddenPasswdBuffer));
+ }
+ 
+ void Panel::SetName(const string& name){
+-	NameBuffer=name;
++	nameBufferLen = Util::utf8ToUtf16(name.c_str(), name.length(),
++									  nameBuffer, INPUT_MAXLENGTH_NAME);
+ 	if (mode == Mode_DM)
+ 		action = Login;
+ 	else
+ 		action = Lock;
+ }
+ 
+-const string& Panel::GetName(void) const{
+-	return NameBuffer;
++const string Panel::GetName(void) const{
++	return Util::utf16BufToUtf8String(nameBuffer, nameBufferLen);
+ }
+ 
+-const string& Panel::GetPasswd(void) const{
+-	return PasswdBuffer;
++const string Panel::GetPasswd(void) const{
++	return Util::utf16BufToUtf8String(passwdBuffer, passwdBufferLen);
+ }
+ 
+ Rectangle Panel::GetPrimaryViewport() {
+--- panel.h.orig	2014-08-12 18:08:28.000000000 +0200
++++ panel.h	2014-08-12 18:09:20.000000000 +0200
+@@ -20,6 +20,7 @@
+ #include <X11/Xmu/WinUtil.h>
+ #include <sys/wait.h>
+ #include <stdlib.h>
++#include <stdint.h>
+ #include <signal.h>
+ #include <iostream>
+ #include <string>
+@@ -86,20 +87,26 @@
+ 	void ResetName(void);
+ 	void ResetPasswd(void);
+ 	void SetName(const std::string &name);
+-	const std::string& GetName(void) const;
+-	const std::string& GetPasswd(void) const;
++	const std::string GetName(void) const;
++	const std::string GetPasswd(void) const;
+ 	void SwitchSession();
+ private:
+ 	Panel();
+ 	void Cursor(int visible);
+ 	unsigned long GetColor(const char *colorname);
+ 	void OnExpose(void);
+-	void EraseLastChar(string &formerString);
++	int FieldEraseLastChar(const uint16_t **buf, int *len);
++	int FieldClear(const uint16_t **buf, int *len);
+ 	bool OnKeyPress(XEvent& event);
+ 	void ShowText();
+ 	void ShowSession();
+ 
+-	void SlimDrawString8(XftDraw *d, XftColor *color, XftFont *font,
++	static bool isUtf16CharAllowed(uint16_t c);
++	void SlimDrawString16(XftDraw *d, XftColor *color, XftFont *font,
++						  int x, int y, const uint16_t *str, int strLen,
++						  XftColor* shadowColor, int xOffset, int yOffset);
++
++	void SlimDrawStringUtf8(XftDraw *d, XftColor *color, XftFont *font,
+ 							int x, int y, const std::string &str,
+ 							XftColor *shadowColor,
+ 							int xOffset, int yOffset);
+@@ -136,12 +143,16 @@
+ 	XftColor entershadowcolor;
+ 	ActionType action;
+ 	FieldType field;
++	XIM displayIm;
++	XIC displayIc;
+ 	//Pixmap   background;
+ 	
+ 	/* Username/Password */
+-	std::string NameBuffer;
+-	std::string PasswdBuffer;
+-	std::string HiddenPasswdBuffer;
++	uint16_t nameBuffer[INPUT_MAXLENGTH_NAME + 1];
++	int nameBufferLen;
++	uint16_t passwdBuffer[INPUT_MAXLENGTH_PASSWD + 1];
++	int passwdBufferLen;
++	uint16_t hiddenPasswdBuffer[INPUT_MAXLENGTH_PASSWD + 1];
+ 
+ 	/* screen stuff */
+ 	Rectangle viewport;
+--- slimlock.cpp.orig	2014-08-12 18:08:28.000000000 +0200
++++ slimlock.cpp	2014-08-12 18:09:24.000000000 +0200
+@@ -48,19 +48,19 @@
+ void *RaiseWindow(void *data);
+ 
+ // I really didn't wanna put these globals here, but it's the only way...
+-Display* dpy;
+-int scr;
+-Window win;
+-Cfg* cfg;
+-Panel* loginPanel;
+-string themeName = "";
+-
+-pam_handle_t *pam_handle;
+-struct pam_conv conv = {ConvCallback, NULL};
+-
+-CARD16 dpms_standby, dpms_suspend, dpms_off, dpms_level;
+-BOOL dpms_state, using_dpms;
+-int term;
++static Display* dpy;
++static int scr;
++static Window win;
++static Cfg* cfg;
++static Panel* loginPanel;
++static string themeName = "";
++
++static pam_handle_t *pam_handle;
++static struct pam_conv conv = {ConvCallback, NULL};
++
++static CARD16 dpms_standby, dpms_suspend, dpms_off, dpms_level;
++static BOOL dpms_state, using_dpms;
++static int term;
+ 
+ static void
+ die(const char *errstr, ...) {
+@@ -73,6 +73,10 @@
+ }
+ 
+ int main(int argc, char **argv) {
++
++	// We need to set the locale to get the input encoded in UTF-8
++	setlocale (LC_ALL, "");
++
+ 	if((argc == 2) && !strcmp("-v", argv[1]))
+ 		die(APPNAME"-"VERSION", © 2010-2012 Joel Burget\n");
+ 	else if(argc != 1)
+--- switchuser.h.orig	2014-08-12 18:08:28.000000000 +0200
++++ switchuser.h	2014-08-12 18:09:20.000000000 +0200
+@@ -32,8 +32,6 @@
+ 	void Login(const char* cmd, const char* mcookie);
+ 
+ private:
+-	SwitchUser();
+-	void SetEnvironment();
+ 	void SetUserId();
+ 	void Execute(const char* cmd);
+ 	void SetClientAuth(const char* mcookie);
+--- util.cpp.orig	2014-08-12 18:08:28.000000000 +0200
++++ util.cpp	2014-08-12 18:09:20.000000000 +0200
+@@ -67,3 +67,162 @@
+ 
+ 	return pid + tm + (ts.tv_sec ^ ts.tv_nsec);
+ }
++
++/* Given a UTF-8 encoded string pointed to by utf8 of length length in
++bytes, returns the corresponding UTF-16 encoded string in the
++buffer pointed to by utf16.  The maximum number of UTF-16 encoding
++units (i.e., Unit16s) allowed in the buffer is specified in
++utf16_max_length.  The return value is the number of UTF-16
++encoding units placed in the output buffer pointed to by utf16.
++
++In case of an error, -1 is returned, leaving some unusable partial
++results in the output buffer.
++
++The caller must estimate the size of utf16 buffer by itself before
++calling this function.  Insufficient output buffer is considered as
++an error, and once an error occured, this function doesn't give any
++clue how large the result will be.
++
++The error cases include following:
++
++- Invalid byte sequences were in the input UTF-8 bytes.  The caller
++	has no way to know what point in the input buffer was the
++	errornous byte.
++
++- The input contained a character (a valid UTF-8 byte sequence)
++	whose scalar value exceeded the range that UTF-16 can represent
++	(i.e., characters whose Unicode scalar value above 0x110000).
++
++- The output buffer has no enough space to hold entire utf16 data.
++
++Please note:
++
++- '\0'-termination is not assumed both on the input UTF-8 string
++	and on the output UTF-16 string; any legal zero byte in the input
++	UTF-8 string will be converted to a 16-bit zero in output.  As a
++	side effect, the last UTF-16 encoding unit stored in the output
++	buffer will have a non-zero value if the input UTF-8 was not
++	'\0'-terminated.
++
++- UTF-8 aliases are *not* considered as an error.  They are
++	converted to UTF-16.  For example, 0xC0 0xA0, 0xE0 0x80 0xA0,
++	and 0xF0 0x80 0x80 0xA0 are all mapped to a single UTF-16
++	encoding unit 0x0020.
++
++- Three byte UTF-8 sequences whose value corresponds to a surrogate
++	code or other reserved scalar value are not considered as an
++	error either.  They may cause an invalid UTF-16 data (e.g., those
++	containing unpaired surrogates).
++
++*/
++int Util::utf8ToUtf16(const char *buf, const int utf8_length, uint16_t *utf16, const int utf16_max_length) {
++
++	/* p moves over the output buffer.  max_ptr points to the next to the last slot of the buffer.  */
++	uint16_t *p = utf16;
++	const uint16_t *max_ptr = utf16 + utf16_max_length;
++	const unsigned char *utf8 = (const unsigned char *)buf;
++
++	/* end_of_input points to the last byte of input as opposed to the next to the last byte.  */
++	unsigned char const *const end_of_input = utf8 + utf8_length - 1;
++
++	while (utf8 <= end_of_input) {
++		const unsigned char c = *utf8;
++		if (p >= max_ptr) {
++			/* No more output space.  */
++			return -1;
++		}
++		if (c < 0x80) {
++			/* One byte ASCII.  */
++			*p++ = c;
++			utf8 += 1;
++		} else if (c < 0xC0) {
++			/* Follower byte without preceeding leader bytes.  */
++			return -1;
++		} else if (c < 0xE0) {
++			/* Two byte sequence.  We need one follower byte.  */
++			if (end_of_input - utf8 < 1 || (((utf8[1] ^ 0x80)) & 0xC0)) {
++				return -1;
++			}
++			*p++ = (uint16_t)(0xCF80 + (c << 6) + utf8[1]);
++			utf8 += 2;
++		} else if (c < 0xF0) {
++			/* Three byte sequence.  We need two follower byte.  */
++			if (end_of_input - utf8 < 2 || (((utf8[1] ^ 0x80) | (utf8[2] ^ 0x80)) & 0xC0)) {
++				return -1;
++			}
++			*p++ = (uint16_t)(0xDF80 + (c << 12) + (utf8[1] << 6) + utf8[2]);
++			utf8 += 3;
++		} else if (c < 0xF8) {
++			int plane;
++			/* Four byte sequence.  We need three follower bytes.  */
++			if (end_of_input - utf8 < 3 || (((utf8[1] ^ 0x80) | (utf8[2] ^0x80) | (utf8[3] ^ 0x80)) & 0xC0)) {
++				return -1;
++			}
++			plane = (-0xC8 + (c << 2) + (utf8[1] >> 4));
++			if (plane == 0) {
++				/* This four byte sequence is an alias that
++						corresponds to a Unicode scalar value in BMP.
++				It fits in an UTF-16 encoding unit.  */
++				*p++ = (uint16_t)(0xDF80 + (utf8[1] << 12) + (utf8[2] << 6) + utf8[3]);
++			} else if (plane <= 16) {
++				/* This is a legal four byte sequence that corresponds to a surrogate pair.  */
++				if (p + 1 >= max_ptr) {
++					/* No enough space on the output buffer for the pair.  */
++					return -1;
++				}
++				*p++ = (uint16_t)(0xE5B8 + (c << 8) + (utf8[1] << 2) + (utf8[2] >> 4));
++				*p++ = (uint16_t)(0xDB80 + ((utf8[2] & 0x0F) << 6) + utf8[3]);
++			} else {
++				/* This four byte sequence is out of UTF-16 code space.  */
++				return -1;
++			}
++			utf8 += 4;
++		} else {
++			/* Longer sequence or unused byte.  */
++			return -1;
++		}
++	}
++	return p - utf16;
++}
++
++/* Compare an ASCII string with an UTF-16 string */
++bool Util::utf16EqualToAscii(const char *ascii, uint16_t *utf16, int utf16Len) {
++
++	while(*ascii != 0 && utf16Len > 0) {
++		if(*utf16++ != (uint16_t)*ascii++) {
++			return false;
++		}
++		utf16Len--;
++	}
++	return *ascii == 0 && utf16Len == 0;
++}
++
++std::string Util::utf16BufToUtf8String(const uint16_t *utf16Buf, int utf16Len) {
++
++	std::string outStr;
++	outStr.reserve(utf16Len * 2);
++
++	while(*utf16Buf != 0 && utf16Len > 0) {
++
++		const uint16_t c16 = *utf16Buf++;
++		if (c16 <= 0x007F) {
++			outStr.push_back((char)c16);
++		}
++		else if (c16 <= 0x07FF) {
++			unsigned char c = 0xC0 | ((unsigned char)(c16 >> 6));
++			outStr.push_back(c);
++			c = 0x80 | ((unsigned char)(c16 & 0x003F));
++			outStr.push_back(c);
++		}
++		else {
++			unsigned char c = 0xE0 | ((unsigned char)(c16 >> 12));
++			outStr.push_back(c);
++			c = 0x80 | ((unsigned char)((c16 >> 6) & 0x003F));
++			outStr.push_back(c);
++			c = 0x80 | ((unsigned char)(c16 & 0x003F));
++			outStr.push_back(c);
++		}
++		utf16Len--;
++	}
++	return outStr;
++}
+--- util.h.orig	2014-08-12 18:08:28.000000000 +0200
++++ util.h	2014-08-12 18:09:20.000000000 +0200
+@@ -10,6 +10,7 @@
+ #define _UTIL_H__
+ 
+ #include <string>
++#include <stdint.h>
+ 
+ namespace Util {
+ 	bool add_mcookie(const std::string &mcookie, const char *display,
+@@ -19,6 +20,10 @@
+ 	long random(void);
+ 
+ 	long makeseed(void);
++	int utf8ToUtf16(const char *utf8, const int utf8_length,
++					uint16_t *utf16, const int utf16_max_length);
++	bool utf16EqualToAscii(const char *ascii, uint16_t *utf16, int utf16Len);
++	std::string utf16BufToUtf8String(const uint16_t *utf16Buf, int utf16Len);
+ }
+ 
+ #endif /* _UTIL_H__ */
