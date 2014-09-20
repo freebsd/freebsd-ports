@@ -62,6 +62,7 @@
     SUBDIR += cakephp22
     SUBDIR += cakephp23
     SUBDIR += calamaris
+    SUBDIR += calendarserver
     SUBDIR += castget
     SUBDIR += caudium14
     SUBDIR += cblog
