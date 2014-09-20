@@ -335,10 +335,10 @@
     SUBDIR += gnake
     SUBDIR += gnarr
     SUBDIR += gno3dtet
+    SUBDIR += gnome-chess
     SUBDIR += gnome-games
     SUBDIR += gnomeattacks
     SUBDIR += gnomebreakout
-    SUBDIR += gnomechess
     SUBDIR += gnomekiss
     SUBDIR += gnomesudoku
     SUBDIR += gnono
