@@ -3,7 +3,7 @@
 
 PORTNAME=	ircd-ratbox
 PORTVERSION=	3.0.8
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	irc ipv6
 MASTER_SITES=	http://www.ratbox.org/download/				\
 		http://www.ratbox.org/download/old/
@@ -20,6 +20,8 @@ USES=		libtool tar:bzip2
 USE_RC_SUBR=	ircd-ratbox
 USE_SQLITE=	3
 USE_LDCONFIG=	${PREFIX}/lib/ircd-ratbox
+
+MAKE_JOBS_UNSAFE=	yes
 
 USERS=		ircd
 GROUPS=		${USERS}
@@ -72,15 +74,21 @@ CONFIGURE_ARGS+=	--disable-openssl
 .endif
 
 .if ${PORT_OPTIONS:MIPV6}
+CONFIGURE_ARGS+=	--enable-ipv6
+.else
 CONFIGURE_ARGS+=	--disable-ipv6
 .endif
 
 .if ${PORT_OPTIONS:MZIPLINKS}
+CONFIGURE_ARGS+=	--enable-zlib
+.else
 CONFIGURE_ARGS+=	--disable-zlib
 .endif
 
 .if ${PORT_OPTIONS:MSHARED_MODS}
-CONFIGURE_ARGS+=	--disable-shared-modules
+CONFIGURE_ARGS+=	--disable-static
+.else
+CONFIGURE_ARGS+=	--enable-static
 .endif
 
 .if ${PORT_OPTIONS:MASSERT}
