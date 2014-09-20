@@ -1,4 +1,5 @@
 bin/ggobi
+@sample etc/xdg/ggobi/ggobirc.sample
 include/ggobi/GGStructSizes.c
 include/ggobi/GGobiAPI.h
 include/ggobi/GGobiApp.h
@@ -50,6 +51,8 @@ lib/libggobi.so.0
 lib/libggobi.so.0.0.0
 libdata/pkgconfig/ggobi.pc
 share/applications/ggobi.desktop
+%%PORTDOCS%%%%DOCSDIR%%/XML.pdf
+%%PORTDOCS%%%%DOCSDIR%%/manual.pdf
 %%DATADIR%%/data/Shipman.csv
 %%DATADIR%%/data/Shipman.xml
 %%DATADIR%%/data/adhoc.xml
@@ -114,22 +117,16 @@ share/applications/ggobi.desktop
 %%DATADIR%%/plugins/ggvis/plugin.so.0.0.0
 %%DATADIR%%/share/colorschemes.xml
 share/pixmaps/ggobi.png
-@dirrm %%DATADIR%%/share
-@dirrm %%DATADIR%%/plugins/ggvis
-@dirrm %%DATADIR%%/plugins/VarCloud
-@dirrm %%DATADIR%%/plugins/GraphLayout
-@dirrm %%DATADIR%%/plugins/GraphAction
-@dirrm %%DATADIR%%/plugins/DescribeDisplay
-@dirrm %%DATADIR%%/plugins/DataViewer
-@dirrm %%DATADIR%%/plugins
-@dirrm %%DATADIR%%/data
-@dirrm %%DATADIR%%
+@dirrm etc/xdg/ggobi
 @dirrm include/ggobi
-@unexec if cmp -s %D/etc/xdg/ggobi/ggobirc.sample %D/etc/xdg/ggobi/ggobirc; then rm -f %D/etc/xdg/ggobi/ggobirc; fi
-etc/xdg/ggobi/ggobirc.sample
-@exec if [ ! -f %B/ggobirc ]; then cp -p %D/%F %B/ggobirc; fi
-%%DOCSDIR%%/XML.pdf
-%%DOCSDIR%%/manual.pdf
-@dirrm %%DOCSDIR%%
-@dirrmtry etc/xdg/ggobi
-@dirrmtry etc/xdg
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm %%DATADIR%%/data
+@dirrm %%DATADIR%%/plugins/DataViewer
+@dirrm %%DATADIR%%/plugins/DescribeDisplay
+@dirrm %%DATADIR%%/plugins/GraphAction
+@dirrm %%DATADIR%%/plugins/GraphLayout
+@dirrm %%DATADIR%%/plugins/VarCloud
+@dirrm %%DATADIR%%/plugins/ggvis
+@dirrm %%DATADIR%%/plugins
+@dirrm %%DATADIR%%/share
+@dirrm %%DATADIR%%

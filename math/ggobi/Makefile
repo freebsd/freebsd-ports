@@ -2,41 +2,31 @@
 # $FreeBSD$
 
 PORTNAME=	ggobi
-PORTVERSION=	2.1.9
-PORTREVISION=	3
+PORTVERSION=	2.1.11
 CATEGORIES=	math graphics
 MASTER_SITES=	http://www.ggobi.org/downloads/
 
 MAINTAINER=	rhurlin@gwdg.de
 COMMENT=	Data visualization system
 
-USES=		libtool pathfix pkgconfig tar:bzip2
+LICENSE=	EPL
+
+LIB_DEPENDS=	libltdl.so:${PORTSDIR}/devel/libltdl
+
+USES=		pkgconfig tar:bzip2 libtool pathfix desktop-file-utils
 USE_GNOME=	gtk20 libxml2
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 
 CONFIGURE_ARGS+=	--with-all-plugins
 
+SUB_FILES=	pkg-message
+
 ALL_TARGET=	all ggobirc
+INSTALL_TARGET=	install-strip
 
-post-patch:
-	@${REINPLACE_CMD} -e 's|ND_coord_i|ND_coord|' \
-		${WRKSRC}/plugins/GraphLayout/graphviz.c
-	@${REINPLACE_CMD} '/ltdl/d' ${WRKSRC}/src/plugin.h
-	@${REINPLACE_CMD} -e 's|#line 0|#line 1|' \
-		${WRKSRC}/src/ggobi-data.c \
-		${WRKSRC}/src/ggobi-renderer-cairo.c \
-		${WRKSRC}/src/ggobi-renderer-factory.c \
-		${WRKSRC}/src/ggobi-renderer.c
-
-post-configure:
-# build gets irritated by the presence of an external graphviz version
-	@${REINPLACE_CMD} -e 's|#define HAVE_LIBGVC 1|/* #define HAVE_LIBGVC 1 */|' \
-		${WRKSRC}/plugins/GraphLayout/config.h
-	@${REINPLACE_CMD} -e 's|LIBGVC_CFLAGS = -I${LOCALBASE}/include/graphviz|LIBGVC_CFLAGS =|' \
-		${WRKSRC}/plugins/GraphLayout/Makefile
-	@${REINPLACE_CMD} -e 's|LIBGVC_LIBS = -L${LOCALBASE}/lib/graphviz -lgvc -lgraph -lcdt|LIBGVC_LIBS =|' \
-		${WRKSRC}/plugins/GraphLayout/Makefile
+post-build:
+	@${REINPLACE_CMD} -e 's|plugin.la|plugin.so|g' ${WRKSRC}/ggobirc
 
 post-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/etc/xdg/ggobi
