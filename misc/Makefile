@@ -13,6 +13,7 @@
     SUBDIR += asbutton
     SUBDIR += asr-manpages
     SUBDIR += astrolog
+    SUBDIR += auto-multiple-choice
     SUBDIR += bb
     SUBDIR += bbjd
     SUBDIR += bdelta
