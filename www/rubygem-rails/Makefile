@@ -3,7 +3,7 @@
 
 PORTNAME=	rails
 PORTVERSION=	3.2.19
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
@@ -49,14 +49,12 @@ USES=		cpe
 CPE_VENDOR=	rubyonrails
 CPE_PRODUCT=	ruby_on_rails
 
-OPTIONS_DEFINE=	FCGI PASSENGER MEMCACHE_CLIENT
-FCGI_DESC=	FastCGI backend
+OPTIONS_DEFINE=	PASSENGER MEMCACHE_CLIENT
 MONGRELCLUSTER_DESC=	Mongrel Cluster backend
 PASSENGER_DESC=	Passenger backend
 MEMCACHE_CLIENT_DESC=	MemCache-Client support
 OPTIONSFILE=	${PORT_DBDIR}/rubygem-${PORTNAME}/options
 
-FCGI_RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/fcgi.so:${PORTSDIR}/www/ruby-fcgi
 MEMCACHE_CLIENT_RUN_DEPENDS=	rubygem-memcache-client>=1.2.0:${PORTSDIR}/databases/rubygem-memcache-client
 PASSENGER_RUN_DEPENDS=	rubygem-passenger>=2.2.15:${PORTSDIR}/www/rubygem-passenger
 
