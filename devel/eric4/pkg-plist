@@ -3025,7 +3025,7 @@ share/applications/eric4.desktop
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/modpython_dbg.pyc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/rhallo.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/rhallo.pyc
-share/pixmaps/eric.png
+share/pixmaps/eric4.png
 share/qt4/qsci/api/python/eric4.api
 share/qt4/qsci/api/python/zope-2.10.7.api
 share/qt4/qsci/api/python/zope-2.11.2.api
