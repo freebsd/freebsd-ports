@@ -7116,3 +7116,4 @@ databases/ruby-dbd_odbc||2014-09-20|Has expired: RubyForge shutdown May 15 2014
 devel/ruby-fastri||2014-09-20|Has expired: RubyForge shutdown May 15 2014
 devel/ri-emacs||2014-09-20|Has expired: RubyForge shutdown May 15 2014
 security/p5-openxpki-client-html-mason||2014-09-20|Has expired: security/p5-openxpki-0.15+ abandoned Mason UI technology in favor of FastCGI
+math/ruby-narray_miss||2014-09-20|Removed, depended on deleted math/ruby-narray
