@@ -4,7 +4,6 @@ include/libmms/mmsh.h
 include/libmms/mmsio.h
 include/libmms/mmsx.h
 lib/libmms.a
-lib/libmms.la
 lib/libmms.so
 lib/libmms.so.0
 lib/libmms.so.0.0.2

@@ -3,7 +3,7 @@
 
 PORTNAME=	libmms
 PORTVERSION=	0.6.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	SF
 
@@ -12,7 +12,7 @@ COMMENT=	Library for parsing mms:// and mmsh:// type network streams
 
 LICENSE=	LGPL21
 
-USES=		gettext libtool:keepla pathfix pkgconfig
+USES=		gettext libtool pathfix pkgconfig
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
