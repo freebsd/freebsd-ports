@@ -14,6 +14,7 @@
 # spawn_fcgi_bindsocket
 # spawn_fcgi_web_server_addrs
 # spawn_fcgi_allowed_env
+# spawn_fcgi_command_interpreter
 
 . /etc/rc.subr
 
@@ -48,6 +49,10 @@ if [ -n "${spawn_fcgi_chroot_dir}" ]; then
     _spawn_fcgi_chroot="-c ${spawn_fcgi_chroot_dir}"
 else
     _spawn_fcgi_chroot=""
+fi
+
+if [ -n "${spawn_fcgi_command_interpreter}" ]; then
+  command_interpreter=${spawn_fcgi_command_interpreter}
 fi
 
 command="/usr/local/bin/spawn-fcgi"

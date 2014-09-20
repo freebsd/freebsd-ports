@@ -3,6 +3,7 @@
 
 PORTNAME=	spawn-fcgi
 PORTVERSION=	1.6.4
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://download.lighttpd.net/spawn-fcgi/releases-1.6.x/
 
