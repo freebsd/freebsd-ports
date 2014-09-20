@@ -595,12 +595,7 @@
     SUBDIR += rpy
     SUBDIR += rpy2
     SUBDIR += ruby-algebra
-    SUBDIR += ruby-fftw3
-    SUBDIR += ruby-gnuplot
-    SUBDIR += ruby-gsl
-    SUBDIR += ruby-narray
     SUBDIR += ruby-narray_miss
-    SUBDIR += ruby-numru_misc
     SUBDIR += ruby-numru_units
     SUBDIR += rubygem-fftw3
     SUBDIR += rubygem-narray

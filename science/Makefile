@@ -160,9 +160,6 @@
     SUBDIR += pyteomics.biolccc
     SUBDIR += qcl
     SUBDIR += qtresistors
-    SUBDIR += ruby-dcl
-    SUBDIR += ruby-gphys
-    SUBDIR += ruby-netcdf
     SUBDIR += rubygem-ai4r
     SUBDIR += rubygem-cdo
     SUBDIR += rubygem-netcdf

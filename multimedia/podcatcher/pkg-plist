@@ -1,6 +1,0 @@
-bin/podcatcher
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/arguments.txt
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/options.yaml
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/subscriptions.opml
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/subscriptions.pcast
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%

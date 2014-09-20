@@ -1,5 +1,0 @@
-%%RUBY_SITEARCHLIBDIR%%/gpgme_n.so
-%%RUBY_SITELIBDIR%%/gpgme.rb
-%%RUBY_SITELIBDIR%%/gpgme/compat.rb
-%%RUBY_SITELIBDIR%%/gpgme/constants.rb
-@dirrm %%RUBY_SITELIBDIR%%/gpgme

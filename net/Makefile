@@ -978,7 +978,6 @@
     SUBDIR += rtptools
     SUBDIR += ruby-dict
     SUBDIR += ruby-icmp
-    SUBDIR += ruby-ldap
     SUBDIR += ruby-tcpsocketpipe
     SUBDIR += ruby-tserver
     SUBDIR += rubygem-amazon-ec2

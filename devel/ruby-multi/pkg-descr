@@ -1,6 +1,0 @@
-The Multiple Dispatch Library lets programmers use multiple dispatch
-and pattern matching in Ruby method definitions, choosing different
-method bodies depending on the types and values of the parameters
-the method is invoked with.
-
-WWW: http://multi.rubyforge.org/

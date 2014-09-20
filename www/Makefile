@@ -1726,9 +1726,7 @@
     SUBDIR += rt42
     SUBDIR += ruby-amazon
     SUBDIR += ruby-aws
-    SUBDIR += ruby-borges
     SUBDIR += ruby-fcgi
-    SUBDIR += ruby-fcgiwrap
     SUBDIR += ruby-google
     SUBDIR += ruby-wgettsv
     SUBDIR += rubygem-actionpack
@@ -1855,7 +1853,6 @@
     SUBDIR += rubygem-robots
     SUBDIR += rubygem-savon
     SUBDIR += rubygem-scrapi
-    SUBDIR += rubygem-scrubyt
     SUBDIR += rubygem-select2-rails
     SUBDIR += rubygem-selenium-webdriver
     SUBDIR += rubygem-simple-rss
