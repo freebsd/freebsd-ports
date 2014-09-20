@@ -30,11 +30,11 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 OPTIONS_DEFINE=		DOCS GCRYPT LZO NLS
 OPTIONS_SUB=		yes
 
-GCRYPT_CONFIGURE_ENABLE=libgcrypt-linking
+GCRYPT_CONFIGURE_OFF=	--disable-libgcrypt-linking
 GCRYPT_LIB_DEPENDS=	libgcrypt.so:${PORTSDIR}/security/libgcrypt
 LZO_DESC=		Support lzo compression via liblzo2
 LZO_LIB_DEPENDS=	liblzo2.so:${PORTSDIR}/archivers/lzo2
-LZO_CONFIGURE_ENABLE=	liblzo2-linking
+LZO_CONFIGURE_OFF=	--disable-liblzo2-linking
 NLS_USES=		gettext
 NLS_CONFIGURE_ENABLE=	nls
 
