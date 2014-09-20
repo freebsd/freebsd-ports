@@ -2,6 +2,7 @@
 
 PORTNAME=	mDNSResponder_nss
 PORTVERSION=	544
+PORTREVISION=	1
 CATEGORIES=	dns net
 MASTER_SITES=	http://opensource.apple.com/tarballs/mDNSResponder/
 DISTNAME=	${PORTNAME:S/_nss//}-${PORTVERSION}
@@ -28,14 +29,22 @@ do-build:
 	(cd ${WRKSRC}/mDNSPosix && ${LD} -shared nss_mdns.o nss_mdns_freebsd.o \
 		-o nss_mdns.so.1 -L${PREFIX}/lib -R${PREFIX}/lib -ldns_sd)
 
+post-build:
+	${STRIP_CMD} ${WRKSRC}/mDNSPosix/nss_mdns.so.1
+
 do-install:
-	${INSTALL_LIB} ${WRKSRC}/mDNSPosix/nss_mdns.so.1 ${STAGEDIR}${PREFIX}/lib
-	${LN} -sf ${PREFIX}/lib/nss_mdns.so.1 ${STAGEDIR}${PREFIX}/lib/nss_mdns.so
+	${INSTALL_LIB} ${WRKSRC}/mDNSPosix/nss_mdns.so.1 \
+		${STAGEDIR}${PREFIX}/lib
+	${LN} -sf ${PREFIX}/lib/nss_mdns.so.1 \
+		${STAGEDIR}${PREFIX}/lib/nss_mdns.so
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/mDNSPosix/nss_mdns.conf ${STAGEDIR}${EXAMPLESDIR}
-	${INSTALL_MAN} ${WRKSRC}/mDNSPosix/nss_mdns.conf.5 ${STAGEDIR}${MANPREFIX}/man/man5
+	${INSTALL_DATA} ${WRKSRC}/mDNSPosix/nss_mdns.conf \
+		${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_MAN} ${WRKSRC}/mDNSPosix/nss_mdns.conf.5 \
+		${STAGEDIR}${MANPREFIX}/man/man5
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/nss_mdns.so.1
+	${INSTALL_DATA} ${WRKSRC}/mDNSPosix/nss_mdns.conf \
+		${STAGEDIR}${PREFIX}/etc/nss_mdns.conf.sample
 
 .include <bsd.port.mk>
