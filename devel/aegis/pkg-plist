@@ -33,6 +33,7 @@ man/man1/aefind.1.gz
 man/man1/aefinish.1.gz
 man/man1/aefp.1.gz
 man/man1/aeget.1.gz
+man/man1/aegrep.1.gz
 man/man1/aegis.1.gz
 man/man1/aegis.cgi.1.gz
 man/man1/aeib.1.gz
@@ -47,6 +48,7 @@ man/man1/aelic.1.gz
 man/man1/aelock.1.gz
 man/man1/aelpf.1.gz
 man/man1/aels.1.gz
+man/man1/aelsf.1.gz
 man/man1/aemakegen.1.gz
 man/man1/aemeasure.1.gz
 man/man1/aemt.1.gz
@@ -136,6 +138,9 @@ bin/aefind
 bin/aefinish
 bin/aeget
 bin/aeget.instal
+bin/aefp
+bin/aegrep
+bin/aelsf
 @mode 4755
 bin/aegis
 bin/aeimport
@@ -158,7 +163,6 @@ bin/aesvt
 bin/aetar
 bin/aexml
 bin/aexver
-bin/find_sizes
 bin/tkaeca
 bin/tkaegis
 bin/tkaenc
@@ -167,6 +171,9 @@ bin/tkaer
 bin/xaegis
 etc/profile.d/aegis.sh
 etc/profile.d/aegis.csh
+etc/profile.d/aegis.bash
+etc/profile.d/aegis.zsh
+%%NLS%%share/locale/da/LC_MESSAGES/aegis.mo
 %%NLS%%share/locale/de/LC_MESSAGES/aegis.mo
 %%NLS%%share/locale/en/LC_MESSAGES/aegis.mo
 %%NLS%%share/locale/es/LC_MESSAGES/aegis.mo
@@ -177,8 +184,10 @@ etc/profile.d/aegis.csh
 %%NLS%%share/locale/ro/LC_MESSAGES/aegis.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/aegis.mo
 %%NLS%%share/locale/vi/LC_MESSAGES/aegis.mo
-@exec mkdir -p %D/com
-@exec install -d -o 3 -g 3 -m 0755 %D/com/aegis
-@unexec rm -d %D/com/aegis 2>/dev/null || true
-@dirrmtry etc/profile.d
+@owner bin
+@group sys
+@dirrmtry com/aegis
 @dirrmtry com
+@owner root
+@group wheel
+@dirrmtry etc/profile.d

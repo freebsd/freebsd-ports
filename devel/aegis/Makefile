@@ -2,16 +2,17 @@
 # $FreeBSD$
 
 PORTNAME=	aegis
-PORTVERSION=	4.24.3
-PORTREVISION=	3
+PORTVERSION=	4.25
 CATEGORIES=	devel
 MASTER_SITES=	SF
+DISTVERSIONSUFFIX=	.D510
 
 MAINTAINER=	aryeh.friedman@gmail.com
 COMMENT=	Transaction-based software configuration management system
 
 LICENSE=	GPLv3
 
+BUILD_DEPENDS=	ps2pdf:${PORTSDIR}/print/ghostscript9-nox11
 LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl
 RUN_DEPENDS=	tkdiff:${PORTSDIR}/textproc/tkdiff
 
@@ -56,10 +57,7 @@ post-configure:
 .endif
 
 post-install:
-.for dir in de en
-	${MKDIR} ${STAGEDIR}${DOCSDIR}/${dir}
-	cd ${WRKSRC}/lib/${dir} && ${INSTALL_DATA} *.ps *.txt ${STAGEDIR}${DOCSDIR}/${dir}
-.endfor
+	${MKDIR} -p ${STAGEDIR}${PREFIX}/com/aegis
 # Fails to reinstall because keeps track of created directories, so make it
 # forget that, by recreating them on each install.
 	@${FIND} ${WRKSRC} -type f -name ".*dir" -delete
