@@ -23,13 +23,13 @@ USE_PERL5=	run
 USE_GNOME=	gnomehier libglade2
 USES+=		dos2unix gettext gmake perl5 pathfix pkgconfig
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	ac_x_app_defaults=${PREFIX}/lib/X11/app-defaults
 CONFIGURE_ARGS=	--with-gtk --with-gl --with-gle --with-pixbuf --with-xpm \
 		--with-jpeg=${LOCALBASE} --with-xshm-ext --with-xdbe-ext \
 		--with-hackdir=${PREFIX}/bin/xscreensaver-hacks \
 		--with-configdir=${PREFIX}/share/xscreensaver/config \
 		--with-dpms-ext --with-xinerama-ext --with-xf86vmode-ext \
-		--with-xf86gamma-ext --with-randr-ext --enable-locking
+		--with-xf86gamma-ext --with-randr-ext --enable-locking \
+		--with-x-app-defaults=${PREFIX}/lib/X11/app-defaults
 DESTDIRNAME=	install_prefix
 CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib -lintl
