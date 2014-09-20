@@ -1,0 +1,40 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+# PROVIDE: caldavd
+# REQUIRE: DAEMON
+#
+# Add the following lines to /etc/rc.conf to run caldavd:
+#
+# caldavd_enable (bool):           Set it to "YES" to enable caldavd.
+#                                Default is "NO".
+# caldavd_conf (file):             Local config file.
+#                                Default is "/usr/local/etc/caldavd.conf".
+# caldavd_flags (string):          Flags to pass to caldavd.
+#                                Default is empty.
+#
+
+. /etc/rc.subr
+
+: ${caldavd_enable="NO"}
+: ${caldavd_conf="%%PREFIX%%/etc/caldavd/caldavd.plist"}
+
+name="caldavd"
+rcvar=`set_rcvar`
+command="%%PREFIX%%/bin/caldavd"
+command_args=" -f ${caldavd_conf} -R kqueue"
+
+extra_commands="reload"
+pidfile="/var/db/${name}/${name}.pid"
+
+
+required_files="${caldavd_conf}"
+
+stop_cmd=" if [ -f ${pidfile} ] ; then kill -TERM `cat ${pidfile}` ; else echo 'Not running.'; fi "
+start_precmd="install -d -o %%USER%% /var/db/caldavd/Data/Documents /var/db/caldavd/Documents && install -d /var/log/caldavd"
+reload_cmd=" if [ -f ${pidfile} ] ; then kill -HUP `cat ${pidfile}` ; else echo 'Not running.'; fi "
+status_cmd=" if [ -f ${pidfile} ] ; then ps -xl `cat ${pidfile}` ; else echo 'Not running.'; fi "
+
+load_rc_config ${name}
+run_rc_command "$1"
