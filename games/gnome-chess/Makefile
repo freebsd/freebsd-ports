@@ -1,15 +1,13 @@
 # Created by: Jeremy Lea <reg@shale.csir.co.za>
 # $FreeBSD$
 
-PORTNAME=	gnomechess
+PORTNAME=	gnome-chess
 PORTVERSION=	3.10.2
 PORTREVISION=	2
 CATEGORIES=	games gnome
 MASTER_SITES=	GNOME
-MASTER_SITE_SUBDIR=	sources/gnome-chess/3.10
-DISTNAME=	gnome-chess-${PORTVERSION}
 
-MAINTAINER=	johans@FreeBSD.org
+MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GUI chess front-end to crafy, for the GNOME Desktop Environment
 
 RUN_DEPENDS=	crafty:${PORTSDIR}/games/crafty
