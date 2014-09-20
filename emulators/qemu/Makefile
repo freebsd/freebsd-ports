@@ -3,7 +3,7 @@
 
 PORTNAME=	qemu
 PORTVERSION=	0.11.1
-PORTREVISION=	15
+PORTREVISION=	16
 CATEGORIES=	emulators
 MASTER_SITES=	${MASTER_SITE_SAVANNAH} \
 		http://bellard.org/qemu/
@@ -35,7 +35,7 @@ GNS3_DESC=		gns3 patches (udp, promiscuous multicast)
 CDROM_DMA_DESC=		IDE CDROM DMA
 ADD_AUDIO_DESC=		Emulate more audio hardware (experimental!)
 ALL_TARGETS_DESC=	Also build non-x86 targets
-OPTIONS_DEFAULT=	SDL GNUTLS CURL PCAP GNS3 CDROM_DMA ALL_TARGETS
+OPTIONS_DEFAULT=	SDL GNUTLS CURL PCAP GNS3 CDROM_DMA
 
 .include <bsd.port.pre.mk>
 
