@@ -97,7 +97,7 @@ man/man3/libgetdns.3.gz
 %%PORTDOCS%%%%DOCSDIR%%/LICENSE
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
 %%PORTDOCS%%%%DOCSDIR%%/README.md
-%%PORTDOCS%%%%DOCSDIR%%/spec/getdns-0.501.tgz
+%%PORTDOCS%%%%DOCSDIR%%/spec/getdns-0.508.tgz
 %%PORTDOCS%%%%DOCSDIR%%/spec/index.html
 %%PORTDOCS%%@dirrmtry %%DOCSDIR%%/spec
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
