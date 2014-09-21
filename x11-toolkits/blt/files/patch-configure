@@ -1,5 +1,5 @@
---- configure.orig	2010-11-30 17:51:02.000000000 -0500
-+++ configure
+--- configure.orig	2010-11-30 22:51:02.000000000 +0000
++++ configure	2014-09-13 06:33:34.000000000 +0000
 @@ -975,7 +975,7 @@ cat > conftest.$ac_ext << EOF
  #line 976 "configure"
  #include "confdefs.h"
@@ -141,3 +141,14 @@
      # Not available on all versions:  check for include file.
      ac_safe=`echo "dlfcn.h" | sed 'y%./+-%__p_%'`
  echo $ac_n "checking for dlfcn.h""... $ac_c" 1>&6
+@@ -4110,8 +4114,8 @@ fi
+ 
+     if test "$test_ok" = yes; then
+       SHLIB_CFLAGS="-fpic"
+-      SHLIB_LD="ld"
+-      SHLIB_LD_FLAGS="-Bshareable -x"
++      SHLIB_LD="${CC}"
++      SHLIB_LD_FLAGS="-shared -Wl,-x"
+     fi
+     ;;
+ 
