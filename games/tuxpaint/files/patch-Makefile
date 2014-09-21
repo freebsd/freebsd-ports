@@ -1,35 +1,19 @@
 --- Makefile.orig	2013-03-18 11:17:31.189596000 +0000
 +++ Makefile	2010-10-19 01:08:15.000000000 +0900
-@@ -157,7 +157,7 @@ CURSOR_SHAPES:=LARGE
+@@ -143,9 +143,9 @@
  
+ # Docs and man page:
+ DOC_PREFIX:=$(DESTDIR)$(PREFIX)/share/doc/tuxpaint
+-DEVDOC_PREFIX:=$(DESTDIR)$(PREFIX)/share/doc/tuxpaint-dev
+-MAN_PREFIX:=$(DESTDIR)$(PREFIX)/share/man
+-DEVMAN_PREFIX:=$(DESTDIR)$(PREFIX)/share/man
++DEVDOC_PREFIX:=$(DESTDIR)$(PREFIX)/share/doc/tuxpaint/dev
++MAN_PREFIX:=$(DESTDIR)$(PREFIX)/man
++DEVMAN_PREFIX:=$(DESTDIR)$(PREFIX)/man
  
- # Libraries, paths, and flags:
--SDL_LIBS:=$(shell sdl-config --libs) -lSDL_image -lSDL_ttf
-+SDL_LIBS:=$(shell sdl-config --libs) -lSDL_image -lSDL_ttf -lpng15 -lintl
- 
- # Sound support
- SDL_MIXER_LIB:=$(call linktest,-lSDL_mixer,$(SDL_LIBS))
-@@ -303,7 +303,8 @@
- INSTALLED_MOFILES:=$(patsubst trans/%.mo,$(LOCALE_PREFIX)/%/LC_MESSAGES/tuxpaint.mo,$(MOFILES))
- 
- $(INSTALLED_MOFILES): $(LOCALE_PREFIX)/%/LC_MESSAGES/tuxpaint.mo: trans/%.mo
--	install -D -m 644 $< $@
-+	test -d `dirname $@` || mkdir -p `dirname $@`
-+	$(BSD_INSTALL_DATA) $< $@
- 
- .PHONY: uninstall-i18n
- uninstall-i18n:
-@@ -448,9 +449,6 @@
- 	@install -d $(INCLUDE_PREFIX)/tuxpaint
- 	@cp src/tp_magic_api.h $(INCLUDE_PREFIX)/tuxpaint
- 	@chmod a+r,g-w,o-w $(INCLUDE_PREFIX)/tuxpaint/tp_magic_api.h
--	@install -d $(DEVDOC_PREFIX)
--	@cp -R magic/docs/* $(DEVDOC_PREFIX)
--	@chmod a=rX,g=rX,u=rwX $(DEVDOC_PREFIX)
- 
- # Installs the various parts for the MinGW/MSYS development/testing environment.
- 
-@@ -557,8 +555,10 @@
+ # BASH tab-completion file:
+ COMPLETIONDIR:=$(DESTDIR)/etc/bash_completion.d
+@@ -610,8 +607,8 @@
  	@echo
  	@echo "...Installing default config file..."
  	@install -d $(CONFDIR)
@@ -37,41 +21,30 @@
 -	@chmod 644 $(CONFDIR)/tuxpaint.conf
 +	@cp src/tuxpaint.conf $(CONFDIR)/tuxpaint.conf.sample
 +	@chmod 644 $(CONFDIR)/tuxpaint.conf.sample
-+	@test -f $(CONFDIR)/tuxpaint.conf || \
-+		cp $(CONFDIR)/tuxpaint.conf.sample $(CONFDIR)/tuxpaint.conf
  
+ # Install BASH completion file:
+ .PHONY: install-bash-completion
+@@ -1152,10 +1143,10 @@
+ 	@echo "...Generating 'Magic' tool API configuration script..."
+ 	@sed -e s/__VERSION__/$(VER_VERSION)/ \
+ 		-e s/__APIVERSION__/$(MAGIC_API_VERSION)/ \
+-		-e s=__INCLUDE__=$(INCLUDE_PREFIX)/tuxpaint= \
+-		-e s=__DATAPREFIX__=$(DATA_PREFIX)= \
+-		-e s=__PLUGINPREFIX__=$(MAGIC_PREFIX)= \
+-		-e s=__PLUGINDOCPREFIX__=$(DOC_PREFIX)/magic-docs= \
++		-e s=__INCLUDE__=$(patsubst $(DESTDIR)%,%,$(INCLUDE_PREFIX))/tuxpaint= \
++		-e s=__DATAPREFIX__=$(patsubst $(DESTDIR)%,%,$(DATA_PREFIX))= \
++		-e s=__PLUGINPREFIX__=$(patsubst $(DESTDIR)%,%,$(MAGIC_PREFIX))= \
++		-e s=__PLUGINDOCPREFIX__=$(patsubst $(DESTDIR)%,%,$(DOC_PREFIX))/magic-docs= \
+ 		src/tp-magic-config.sh.in \
+ 		> tp-magic-config
  
- # Install example stamps
-@@ -575,7 +575,8 @@
- INSTALLED_STARTERS:=$(patsubst %,$(DATA_PREFIX)/%,$(STARTERS))
+@@ -1178,7 +1169,7 @@
+ PLUGIN_LIBS:=$($(OS)_PLUGIN_LIBS)
  
- $(INSTALLED_STARTERS): $(DATA_PREFIX)/%: %
--	install -D -m 644 $< $@
-+	test -d `dirname $@` || mkdir -p `dirname $@`
-+	$(BSD_INSTALL_DATA) $< $@
+ #MAGIC_CFLAGS:=-g3 -O2 -fvisibility=hidden -fno-common -W -Wstrict-prototypes -Wmissing-prototypes -Wall $(MAGIC_SDL_CPPFLAGS) -Isrc/
+-MAGIC_CFLAGS:=-g3 -O2 -fno-common -W -Wstrict-prototypes -Wmissing-prototypes -Wall $(MAGIC_SDL_CPPFLAGS) -Isrc/
++MAGIC_CFLAGS:=$(OPTFLAGS) -fno-common -W -Wstrict-prototypes -Wmissing-prototypes -Wall $(MAGIC_SDL_CPPFLAGS) -Isrc/
+ SHARED_FLAGS:=-shared -fpic -Wl,--warn-shared-textrel
  
- # Install example starters
- .PHONY: install-example-starters
-@@ -794,6 +795,9 @@
- 	@cp -R docs/* $(DOC_PREFIX)
- 	@cp -R magic/magic-docs $(DOC_PREFIX)
- 	@chmod -R a=rX,g=rX,u=rwX $(DOC_PREFIX)
-+	@install -d $(DEVDOC_PREFIX)
-+	@cp -R magic/docs/* $(DEVDOC_PREFIX)
-+	@chmod -R a=rX,g=rX,u=rwX $(DEVDOC_PREFIX)
- 
- 
- # Install the man page:
-@@ -807,12 +811,6 @@
- 	@cp src/manpage/tuxpaint.1 $(MAN_PREFIX)/man1
- 	@gzip -f $(MAN_PREFIX)/man1/tuxpaint.1
- 	@chmod a+rx,g-w,o-w $(MAN_PREFIX)/man1/tuxpaint.1.gz
--	@# pl/man1 directory...
--	@install -d $(MAN_PREFIX)/pl/man1/
--	@# tuxpaint-pl.1
--	@cp src/manpage/tuxpaint-pl.1 $(MAN_PREFIX)/pl/man1/tuxpaint.1
--	@gzip -f $(MAN_PREFIX)/pl/man1/tuxpaint.1
--	@chmod a+rx,g-w,o-w $(MAN_PREFIX)/pl/man1/tuxpaint.1.gz
- 	@# tuxpaint-import.1
- 	@cp src/manpage/tuxpaint-import.1 $(MAN_PREFIX)/man1/
- 	@gzip -f $(MAN_PREFIX)/man1/tuxpaint-import.1
+ MAGIC_C:=$(wildcard magic/src/*.c)
