@@ -7097,7 +7097,7 @@ www/ruby-borges||2014-09-20|Has expired: RubyForge shutdown May 15 2014
 www/ruby-fcgiwrap||2014-09-20|Has expired: RubyForge shutdown May 15 2014
 www/rubygem-scrubyt||2014-09-20|Has expired: RubyForge shutdown May 15 2014
 devel/ruby-multi||2014-09-20|Has expired: RubyForge shutdown May 15 2014
-databases/ruby-dbd_sqlite3||2014-09-20|Has expired: RubyForge shutdown May 15 2014
+databases/ruby-dbd_sqlite3|databases/rubygem-dbd-sqlite3|2014-09-20|Replaced by rubygem-dbd-sqlite
 math/ruby-gsl||2014-09-20|Has expired: RubyForge shutdown May 15 2014
 security/ruby-gpgme||2014-09-20|Has expired: RubyForge shutdown May 15 2014
 multimedia/vodcatcher||2014-09-20|Has expired: RubyForge shutdown May 15 2014
@@ -7112,10 +7112,14 @@ audio/ruby-freedb||2014-09-20|Has expired: RubyForge shutdown May 15 2014
 graphics/ruby-ming||2014-09-20|Has expired: RubyForge shutdown May 15 2014
 devel/ruby-locale2||2014-09-20|Has expired: RubyForge shutdown May 15 2014
 devel/rubygem-rubyforge||2014-09-20|Has expired: RubyForge shutdown May 15 2014
-databases/ruby-dbd_odbc||2014-09-20|Has expired: RubyForge shutdown May 15 2014
+databases/ruby-dbd_odbc|databases/rubygem-dbd-odbc|2014-09-20|Replaced by rubygem-dbd-odbc
 devel/ruby-fastri||2014-09-20|Has expired: RubyForge shutdown May 15 2014
 devel/ri-emacs||2014-09-20|Has expired: RubyForge shutdown May 15 2014
 security/p5-openxpki-client-html-mason||2014-09-20|Has expired: security/p5-openxpki-0.15+ abandoned Mason UI technology in favor of FastCGI
 math/ruby-narray_miss||2014-09-20|Removed, depended on deleted math/ruby-narray
 games/gnomechess|games/gnome-chess|2014-09-20|Renamed to match port name.
 www/ruby-fcgi||2014-09-20|Has expired: RubyForge shutdown May 15 2014
+databases/ruby-dbi|databases/rubygem-dbi|Replaced by rubygem-dbi
+databases/ruby-dbd_mysql|databases/rubygem-dbd-mysql|Replaced by rubygem-dbd-mysql
+databases/ruby-dbd_pg|databases/rubygem-dbd-pg|Replaced by rubygem-dbd-pg
+databases/ruby-dbd_sqlite|databases/rubygem-dbd-sqlite3|Replaced by rubygem-dbd-sqlite
