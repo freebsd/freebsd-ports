@@ -836,7 +836,6 @@
     SUBDIR += rubygem-dbd-mysql
     SUBDIR += rubygem-dbd-odbc
     SUBDIR += rubygem-dbd-pg
-    SUBDIR += rubygem-dbd-sqlite
     SUBDIR += rubygem-dbd-sqlite3
     SUBDIR += rubygem-dbi
     SUBDIR += rubygem-dm-active_model
