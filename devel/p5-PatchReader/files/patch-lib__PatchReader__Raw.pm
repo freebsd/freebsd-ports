@@ -9,7 +9,7 @@
      $this->_maybe_end_file();
  
      if ($1 eq "/dev/null") {
-@@ -54,9 +54,12 @@
+@@ -54,9 +54,11 @@
  
      $this->{IN_HEADER} = 1;
  
