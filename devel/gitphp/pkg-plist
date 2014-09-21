@@ -1,3 +1,5 @@
+@owner %%WWWOWN%%
+@group %%WWWGRP%%
 %%WWWDIR%%/config/gitphp.conf.defaults.php
 %%WWWDIR%%/config/gitphp.conf.php.example
 %%WWWDIR%%/config/projects.conf.php.example
@@ -798,3 +800,5 @@
 @dirrm %%WWWDIR%%/config
 @dirrm %%WWWDIR%%/cache
 @dirrm %%WWWDIR%%
+@owner root
+@group wheel
