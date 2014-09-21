@@ -89,10 +89,14 @@ X11_CONFIGURE_WITH=	x
 
 .include <bsd.port.options.mk>
 
+.if ${OPSYS} == FreeBSD
 .if ${OSVERSION} < 1000000
 PLIST_SUB+=	LIBCOM_ERR=""
 .else
 PLIST_SUB+=	LIBCOM_ERR="@comment "
+.endif
+.else
+PLIST_SUB+=	LIBCOM_ERR=""
 .endif
 
 .if ${PORT_OPTIONS:MLDAP}
