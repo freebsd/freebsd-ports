@@ -1,27 +1,26 @@
+bin/bsqldb
 bin/datacopy
+bin/defncopy
 bin/freebcp
+bin/fisql
+bin/osql
 bin/tdspool
 bin/tsql
-bin/bsqldb
-bin/defncopy
-etc/freetds.conf.dist
-etc/freetds/interfaces.dist
-etc/locales.conf.dist
-etc/pool.conf.dist
+@sample %%ETCDIR%%/freetds.conf.sample
+@sample %%ETCDIR%%/interfaces.sample
+@sample %%ETCDIR%%/locales.conf.sample
+@sample %%ETCDIR%%/pool.conf.sample
 include/bkpublic.h
 include/cspublic.h
 include/cstypes.h
 include/ctpublic.h
+include/odbcss.h
 include/sqldb.h
 include/sqlfront.h
 include/sybdb.h
 include/syberror.h
 include/sybfront.h
-include/tds.h
 include/tds_sysdep_public.h
-include/tdsconvert.h
-include/tdssrv.h
-include/tdsver.h
 lib/libct.a
 lib/libct.la
 lib/libct.so
@@ -32,24 +31,19 @@ lib/libsybdb.la
 lib/libsybdb.so
 lib/libsybdb.so.5
 lib/libsybdb.so.5.0.0
-lib/libtds.a
-lib/libtds.la
-lib/libtds.so
-lib/libtds.so.5
-lib/libtds.so.5.0.0
-lib/libtdssrv.a
-lib/libtdssrv.la
-lib/libtdssrv.so
-lib/libtdssrv.so.2
-lib/libtdssrv.so.2.0.0
 man/man1/bsqldb.1.gz
+man/man1/bsqlodbc.1.gz
 man/man1/datacopy.1.gz
 man/man1/defncopy.1.gz
+man/man1/fisql.1.gz
 man/man1/freebcp.1.gz
+man/man1/osql.1.gz
 man/man1/tsql.1.gz
+man/man5/freetds.conf.5.gz
+%%ODBC%%bin/bsqlodbc
 %%ODBC%%lib/libtdsodbc.so
 %%ODBC%%lib/libtdsodbc.so.0
 %%ODBC%%lib/libtdsodbc.so.0.0.0
 %%ODBC%%lib/libtdsodbc.la
 %%ODBC%%lib/libtdsodbc.a
-@dirrm etc/freetds
+@dirrm %%ETCDIR%%
