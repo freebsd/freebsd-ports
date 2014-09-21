@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	bson
-PORTVERSION=	1.10.2
+PORTVERSION=	1.11.1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	1
@@ -16,6 +16,6 @@ USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
 
-PORTSCOUT=	ignore
+PORTSCOUT=	limit:^1\.
 
 .include <bsd.port.mk>
