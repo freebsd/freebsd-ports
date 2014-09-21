@@ -3,9 +3,7 @@ bin/pronto
 bin/pronto-main
 bin/prontobrowser
 bin/prontoget
-@group mail
-bin/prontolock
-@group
+@(,mail,2755) bin/prontolock
 bin/prontosend
 lib/pronto/HtmlStripper.pm
 lib/pronto/Pronto/About.pm
