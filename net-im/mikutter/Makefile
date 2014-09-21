@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mikutter
-PORTVERSION=	3.0.5
-PORTREVISION=	1
+PORTVERSION=	3.0.6
 CATEGORIES=	net-im ruby
 MASTER_SITES=	http://mikutter.hachune.net/bin/ \
 		LOCAL
@@ -16,8 +15,8 @@ COMMENT=	Simple, powerful, and moeful Twitter client
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	rubygem-gtk2>=2.1.0:${PORTSDIR}/x11-toolkits/rubygem-gtk2 \
-		rubygem-cairo>=1.12.8:${PORTSDIR}/graphics/rubygem-cairo \
+RUN_DEPENDS=	rubygem-gtk2>=2.2.0:${PORTSDIR}/x11-toolkits/rubygem-gtk2 \
+		rubygem-cairo>=1.12.9:${PORTSDIR}/graphics/rubygem-cairo \
 		rubygem-addressable>=2.3.5:${PORTSDIR}/www/rubygem-addressable \
 		rubygem-hmac>=0.4.0:${PORTSDIR}/security/rubygem-hmac \
 		rubygem-json>=1.8.1:${PORTSDIR}/devel/rubygem-json \
