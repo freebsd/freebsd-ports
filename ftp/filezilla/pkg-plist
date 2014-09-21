@@ -532,62 +532,62 @@ share/icons/hicolor/16x16/apps/filezilla.png
 share/icons/hicolor/32x32/apps/filezilla.png
 share/icons/hicolor/48x48/apps/filezilla.png
 share/icons/hicolor/scalable/apps/filezilla.svg
-share/locale/an/LC_MESSAGES/filezilla.mo
-share/locale/ar/LC_MESSAGES/filezilla.mo
-share/locale/bg_BG/LC_MESSAGES/filezilla.mo
-share/locale/ca/LC_MESSAGES/filezilla.mo
-share/locale/ca_ES@valencia/LC_MESSAGES/filezilla.mo
-share/locale/co/LC_MESSAGES/filezilla.mo
-share/locale/cs_CZ/LC_MESSAGES/filezilla.mo
-share/locale/da_DK/LC_MESSAGES/filezilla.mo
-share/locale/de/LC_MESSAGES/filezilla.mo
-share/locale/el/LC_MESSAGES/filezilla.mo
-share/locale/es/LC_MESSAGES/filezilla.mo
-share/locale/et_EE/LC_MESSAGES/filezilla.mo
-share/locale/eu/LC_MESSAGES/filezilla.mo
-share/locale/eu_ES/LC_MESSAGES/filezilla.mo
-share/locale/fa_IR/LC_MESSAGES/filezilla.mo
-share/locale/fi_FI/LC_MESSAGES/filezilla.mo
-share/locale/fr/LC_MESSAGES/filezilla.mo
-share/locale/gl_ES/LC_MESSAGES/filezilla.mo
-share/locale/he_IL/LC_MESSAGES/filezilla.mo
-share/locale/hr/LC_MESSAGES/filezilla.mo
-share/locale/hu_HU/LC_MESSAGES/filezilla.mo
-share/locale/hy/LC_MESSAGES/filezilla.mo
-share/locale/id_ID/LC_MESSAGES/filezilla.mo
-share/locale/is/LC_MESSAGES/filezilla.mo
-share/locale/it/LC_MESSAGES/filezilla.mo
-share/locale/ja_JP/LC_MESSAGES/filezilla.mo
-share/locale/ka/LC_MESSAGES/filezilla.mo
-share/locale/kab/LC_MESSAGES/filezilla.mo
-share/locale/km_KH/LC_MESSAGES/filezilla.mo
-share/locale/ko_KR/LC_MESSAGES/filezilla.mo
-share/locale/ku/LC_MESSAGES/filezilla.mo
-share/locale/ky/LC_MESSAGES/filezilla.mo
-share/locale/lo_LA/LC_MESSAGES/filezilla.mo
-share/locale/lt_LT/LC_MESSAGES/filezilla.mo
-share/locale/lv_LV/LC_MESSAGES/filezilla.mo
-share/locale/mk_MK/LC_MESSAGES/filezilla.mo
-share/locale/nb_NO/LC_MESSAGES/filezilla.mo
-share/locale/ne/LC_MESSAGES/filezilla.mo
-share/locale/nl/LC_MESSAGES/filezilla.mo
-share/locale/nn_NO/LC_MESSAGES/filezilla.mo
-share/locale/oc/LC_MESSAGES/filezilla.mo
-share/locale/pl_PL/LC_MESSAGES/filezilla.mo
-share/locale/pt_BR/LC_MESSAGES/filezilla.mo
-share/locale/pt_PT/LC_MESSAGES/filezilla.mo
-share/locale/ro_RO/LC_MESSAGES/filezilla.mo
-share/locale/ru/LC_MESSAGES/filezilla.mo
-share/locale/sk_SK/LC_MESSAGES/filezilla.mo
-share/locale/sl_SI/LC_MESSAGES/filezilla.mo
-share/locale/sr/LC_MESSAGES/filezilla.mo
-share/locale/sv/LC_MESSAGES/filezilla.mo
-share/locale/th_TH/LC_MESSAGES/filezilla.mo
-share/locale/tr/LC_MESSAGES/filezilla.mo
-share/locale/uk_UA/LC_MESSAGES/filezilla.mo
-share/locale/vi_VN/LC_MESSAGES/filezilla.mo
-share/locale/zh_CN/LC_MESSAGES/filezilla.mo
-share/locale/zh_TW/LC_MESSAGES/filezilla.mo
+%%NLS%%share/locale/an/LC_MESSAGES/filezilla.mo
+%%NLS%%share/locale/ar/LC_MESSAGES/filezilla.mo
+%%NLS%%share/locale/bg_BG/LC_MESSAGES/filezilla.mo
+%%NLS%%share/locale/ca/LC_MESSAGES/filezilla.mo
+%%NLS%%share/locale/ca_ES@valencia/LC_MESSAGES/filezilla.mo
+%%NLS%%share/locale/co/LC_MESSAGES/filezilla.mo
+%%NLS%%share/locale/cs_CZ/LC_MESSAGES/filezilla.mo
+%%NLS%%share/locale/da_DK/LC_MESSAGES/filezilla.mo
+%%NLS%%share/locale/de/LC_MESSAGES/filezilla.mo
+%%NLS%%share/locale/el/LC_MESSAGES/filezilla.mo
+%%NLS%%share/locale/es/LC_MESSAGES/filezilla.mo
+%%NLS%%share/locale/et_EE/LC_MESSAGES/filezilla.mo
+%%NLS%%share/locale/eu/LC_MESSAGES/filezilla.mo
+%%NLS%%share/locale/eu_ES/LC_MESSAGES/filezilla.mo
+%%NLS%%share/locale/fa_IR/LC_MESSAGES/filezilla.mo
+%%NLS%%share/locale/fi_FI/LC_MESSAGES/filezilla.mo
+%%NLS%%share/locale/fr/LC_MESSAGES/filezilla.mo
+%%NLS%%share/locale/gl_ES/LC_MESSAGES/filezilla.mo
+%%NLS%%share/locale/he_IL/LC_MESSAGES/filezilla.mo
+%%NLS%%share/locale/hr/LC_MESSAGES/filezilla.mo
+%%NLS%%share/locale/hu_HU/LC_MESSAGES/filezilla.mo
+%%NLS%%share/locale/hy/LC_MESSAGES/filezilla.mo
+%%NLS%%share/locale/id_ID/LC_MESSAGES/filezilla.mo
+%%NLS%%share/locale/is/LC_MESSAGES/filezilla.mo
+%%NLS%%share/locale/it/LC_MESSAGES/filezilla.mo
+%%NLS%%share/locale/ja_JP/LC_MESSAGES/filezilla.mo
+%%NLS%%share/locale/ka/LC_MESSAGES/filezilla.mo
+%%NLS%%share/locale/kab/LC_MESSAGES/filezilla.mo
+%%NLS%%share/locale/km_KH/LC_MESSAGES/filezilla.mo
+%%NLS%%share/locale/ko_KR/LC_MESSAGES/filezilla.mo
+%%NLS%%share/locale/ku/LC_MESSAGES/filezilla.mo
+%%NLS%%share/locale/ky/LC_MESSAGES/filezilla.mo
+%%NLS%%share/locale/lo_LA/LC_MESSAGES/filezilla.mo
+%%NLS%%share/locale/lt_LT/LC_MESSAGES/filezilla.mo
+%%NLS%%share/locale/lv_LV/LC_MESSAGES/filezilla.mo
+%%NLS%%share/locale/mk_MK/LC_MESSAGES/filezilla.mo
+%%NLS%%share/locale/nb_NO/LC_MESSAGES/filezilla.mo
+%%NLS%%share/locale/ne/LC_MESSAGES/filezilla.mo
+%%NLS%%share/locale/nl/LC_MESSAGES/filezilla.mo
+%%NLS%%share/locale/nn_NO/LC_MESSAGES/filezilla.mo
+%%NLS%%share/locale/oc/LC_MESSAGES/filezilla.mo
+%%NLS%%share/locale/pl_PL/LC_MESSAGES/filezilla.mo
+%%NLS%%share/locale/pt_BR/LC_MESSAGES/filezilla.mo
+%%NLS%%share/locale/pt_PT/LC_MESSAGES/filezilla.mo
+%%NLS%%share/locale/ro_RO/LC_MESSAGES/filezilla.mo
+%%NLS%%share/locale/ru/LC_MESSAGES/filezilla.mo
+%%NLS%%share/locale/sk_SK/LC_MESSAGES/filezilla.mo
+%%NLS%%share/locale/sl_SI/LC_MESSAGES/filezilla.mo
+%%NLS%%share/locale/sr/LC_MESSAGES/filezilla.mo
+%%NLS%%share/locale/sv/LC_MESSAGES/filezilla.mo
+%%NLS%%share/locale/th_TH/LC_MESSAGES/filezilla.mo
+%%NLS%%share/locale/tr/LC_MESSAGES/filezilla.mo
+%%NLS%%share/locale/uk_UA/LC_MESSAGES/filezilla.mo
+%%NLS%%share/locale/vi_VN/LC_MESSAGES/filezilla.mo
+%%NLS%%share/locale/zh_CN/LC_MESSAGES/filezilla.mo
+%%NLS%%share/locale/zh_TW/LC_MESSAGES/filezilla.mo
 share/pixmaps/filezilla.png
 @dirrmtry %%DATADIR%%/docs
 @dirrmtry %%DATADIR%%/resources/16x16
@@ -623,61 +623,61 @@ share/pixmaps/filezilla.png
 @dirrmtry %%DATADIR%%/resources/xrc
 @dirrmtry %%DATADIR%%/resources
 @dirrmtry %%DATADIR%%
-@dirrmtry share/locale/ca_ES@valencia/LC_MESSAGES
-@dirrmtry share/locale/ca_ES@valencia
-@dirrmtry share/locale/co/LC_MESSAGES
-@dirrmtry share/locale/co
-@dirrmtry share/locale/cs_CZ/LC_MESSAGES
-@dirrmtry share/locale/cs_CZ
-@dirrmtry share/locale/da_DK/LC_MESSAGES
-@dirrmtry share/locale/da_DK
-@dirrmtry share/locale/et_EE/LC_MESSAGES
-@dirrmtry share/locale/et_EE
-@dirrmtry share/locale/eu_ES/LC_MESSAGES
-@dirrmtry share/locale/eu_ES
-@dirrmtry share/locale/fi_FI/LC_MESSAGES
-@dirrmtry share/locale/fi_FI
-@dirrmtry share/locale/gl_ES/LC_MESSAGES
-@dirrmtry share/locale/gl_ES
-@dirrmtry share/locale/he_IL/LC_MESSAGES
-@dirrmtry share/locale/he_IL
-@dirrmtry share/locale/hu_HU/LC_MESSAGES
-@dirrmtry share/locale/hu_HU
-@dirrmtry share/locale/id_ID/LC_MESSAGES
-@dirrmtry share/locale/id_ID
-@dirrmtry share/locale/ja_JP/LC_MESSAGES
-@dirrmtry share/locale/ja_JP
-@dirrmtry share/locale/kab/LC_MESSAGES
-@dirrmtry share/locale/kab
-@dirrmtry share/locale/km_KH/LC_MESSAGES
-@dirrmtry share/locale/km_KH
-@dirrmtry share/locale/ko_KR/LC_MESSAGES
-@dirrmtry share/locale/ko_KR
-@dirrmtry share/locale/ky/LC_MESSAGES
-@dirrmtry share/locale/ky
-@dirrmtry share/locale/lo_LA/LC_MESSAGES
-@dirrmtry share/locale/lo_LA
-@dirrmtry share/locale/lt_LT/LC_MESSAGES
-@dirrmtry share/locale/lt_LT
-@dirrmtry share/locale/lv_LV/LC_MESSAGES
-@dirrmtry share/locale/lv_LV
-@dirrmtry share/locale/mk_MK/LC_MESSAGES
-@dirrmtry share/locale/mk_MK
-@dirrmtry share/locale/nb_NO/LC_MESSAGES
-@dirrmtry share/locale/nb_NO
-@dirrmtry share/locale/nn_NO/LC_MESSAGES
-@dirrmtry share/locale/nn_NO
-@dirrmtry share/locale/pl_PL/LC_MESSAGES
-@dirrmtry share/locale/pl_PL
-@dirrmtry share/locale/ro_RO/LC_MESSAGES
-@dirrmtry share/locale/ro_RO
-@dirrmtry share/locale/sk_SK/LC_MESSAGES
-@dirrmtry share/locale/sk_SK
-@dirrmtry share/locale/sl_SI/LC_MESSAGES
-@dirrmtry share/locale/sl_SI
-@dirrmtry share/locale/th_TH/LC_MESSAGES
-@dirrmtry share/locale/th_TH
-@dirrmtry share/locale/uk_UA/LC_MESSAGES
-@dirrmtry share/locale/uk_UA
-@dirrmtry share/locale/vi_VN/LC_MESSAGES
-@dirrmtry share/locale/vi_VN
+%%NLS%%@dirrmtry share/locale/ca_ES@valencia
+%%NLS%%@dirrmtry share/locale/ca_ES@valencia/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/co
+%%NLS%%@dirrmtry share/locale/co/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/cs_CZ
+%%NLS%%@dirrmtry share/locale/cs_CZ/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/da_DK
+%%NLS%%@dirrmtry share/locale/da_DK/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/et_EE
+%%NLS%%@dirrmtry share/locale/et_EE/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/eu_ES
+%%NLS%%@dirrmtry share/locale/eu_ES/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/fi_FI
+%%NLS%%@dirrmtry share/locale/fi_FI/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/gl_ES
+%%NLS%%@dirrmtry share/locale/gl_ES/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/he_IL
+%%NLS%%@dirrmtry share/locale/he_IL/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/hu_HU
+%%NLS%%@dirrmtry share/locale/hu_HU/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/id_ID
+%%NLS%%@dirrmtry share/locale/id_ID/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/ja_JP
+%%NLS%%@dirrmtry share/locale/ja_JP/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/kab
+%%NLS%%@dirrmtry share/locale/kab/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/km_KH
+%%NLS%%@dirrmtry share/locale/km_KH/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/ko_KR
+%%NLS%%@dirrmtry share/locale/ko_KR/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/ky
+%%NLS%%@dirrmtry share/locale/ky/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/lo_LA
+%%NLS%%@dirrmtry share/locale/lo_LA/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/lt_LT
+%%NLS%%@dirrmtry share/locale/lt_LT/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/lv_LV
+%%NLS%%@dirrmtry share/locale/lv_LV/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/mk_MK
+%%NLS%%@dirrmtry share/locale/mk_MK/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/nb_NO
+%%NLS%%@dirrmtry share/locale/nb_NO/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/nn_NO
+%%NLS%%@dirrmtry share/locale/nn_NO/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/pl_PL
+%%NLS%%@dirrmtry share/locale/pl_PL/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/ro_RO
+%%NLS%%@dirrmtry share/locale/ro_RO/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/sk_SK
+%%NLS%%@dirrmtry share/locale/sk_SK/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/sl_SI
+%%NLS%%@dirrmtry share/locale/sl_SI/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/th_TH
+%%NLS%%@dirrmtry share/locale/th_TH/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/uk_UA
+%%NLS%%@dirrmtry share/locale/uk_UA/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/vi_VN
+%%NLS%%@dirrmtry share/locale/vi_VN/LC_MESSAGES
