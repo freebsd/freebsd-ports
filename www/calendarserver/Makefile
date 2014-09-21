@@ -3,7 +3,7 @@
 PORTNAME=	calendarserver
 PORTVERSION=	5.1
 CATEGORIES=	www python
-MASTER_SITES=	https://svn.calendarserver.org/repository/calendarserver/CalendarServer/tags/release/
+MASTER_SITES=	LOCAL/wg
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	CalendarServer-${PORTVERSION}
 
@@ -46,7 +46,7 @@ USE_RC_SUBR=	caldavd
 
 SVN_REPOSITORY_URL=	http://svn.calendarserver.org/repository/calendarserver
 SVN_TAG1=	CalendarServer/tags/release/${DISTNAME}
-SVN_CMD1=	svn export
+SVN_CMD1=	svn export -r13980
 SVN_TAG2=	PyCalendar/trunk
 SVN_CMD2=	svn export -r11458
 
