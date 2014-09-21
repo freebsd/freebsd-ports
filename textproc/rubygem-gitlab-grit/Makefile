@@ -1,12 +1,12 @@
 # $FreeBSD$
 
 PORTNAME=	gitlab-grit
-PORTVERSION=	2.7.0
+PORTVERSION=	2.7.1
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
-COMMENT=	Library for extracting information from a git repository in an object oriented manner
+COMMENT=	Library for extracting information from a git repository
 
 RUN_DEPENDS=	rubygem-charlock_holmes>=0.6.9:${PORTSDIR}/textproc/rubygem-charlock_holmes \
 		rubygem-diff-lcs>=1.1:${PORTSDIR}/textproc/rubygem-diff-lcs \
@@ -16,6 +16,5 @@ RUN_DEPENDS=	rubygem-charlock_holmes>=0.6.9:${PORTSDIR}/textproc/rubygem-charloc
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
-
 
 .include <bsd.port.mk>
