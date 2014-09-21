@@ -3,6 +3,7 @@
 
 PORTNAME=	puredb
 PORTVERSION=	2.1
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	http://pureftpd.sourceforge.net/puredb/
 DISTNAME=	pure-db-${PORTVERSION}
@@ -10,7 +11,7 @@ DISTNAME=	pure-db-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Set of libraries for creating and reading constant databases
 
-USES=		libtool:oldver
+USES=		libtool
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
