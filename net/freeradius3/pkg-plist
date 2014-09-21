@@ -15,6 +15,7 @@ bin/radwho
 bin/radzap
 bin/rlm_ippool_tool
 bin/smbencrypt
+include/freeradius/attributes.h
 include/freeradius/base64.h
 include/freeradius/build.h
 include/freeradius/conf.h
@@ -315,8 +316,8 @@ sbin/radmin
 %%PORTDOCS%%%%DOCSDIR%%/deployment/performance-testing
 %%PORTDOCS%%%%DOCSDIR%%/deployment/supervise-radiusd.rst
 %%PORTDOCS%%%%DOCSDIR%%/deployment/tuning_guide
-%%PORTDOCS%%%%DOCSDIR%%/developer/DIFFS.rst
 %%PORTDOCS%%%%DOCSDIR%%/developer/coding-methods.rst
+%%PORTDOCS%%%%DOCSDIR%%/developer/contributing.rst
 %%PORTDOCS%%%%DOCSDIR%%/developer/module_interface.rst
 %%PORTDOCS%%%%DOCSDIR%%/developer/release-method.rst
 %%PORTDOCS%%%%DOCSDIR%%/index.rst
@@ -326,6 +327,7 @@ sbin/radmin
 %%PORTDOCS%%%%DOCSDIR%%/modules/rlm_dbm
 %%PORTDOCS%%%%DOCSDIR%%/modules/rlm_eap
 %%PORTDOCS%%%%DOCSDIR%%/modules/rlm_expiration
+%%PORTDOCS%%%%DOCSDIR%%/modules/rlm_krb5
 %%PORTDOCS%%%%DOCSDIR%%/modules/rlm_pam
 %%PORTDOCS%%%%DOCSDIR%%/modules/rlm_passwd
 %%PORTDOCS%%%%DOCSDIR%%/modules/rlm_python
@@ -407,13 +409,13 @@ sbin/radmin
 %%PORTDOCS%%%%DOCSDIR%%/rfc/rfc6911.txt
 %%PORTDOCS%%%%DOCSDIR%%/rfc/rfc6929.txt
 %%PORTDOCS%%%%DOCSDIR%%/rfc/rfc6930.txt
-%%PORTDOCS%%%%DOCSDIR%%/schemas/ldap/iplanet.ldif
-%%PORTDOCS%%%%DOCSDIR%%/schemas/ldap/iplanet.schema
-%%PORTDOCS%%%%DOCSDIR%%/schemas/ldap/openldap.ldif
-%%PORTDOCS%%%%DOCSDIR%%/schemas/ldap/openldap.schema
-%%PORTDOCS%%%%DOCSDIR%%/schemas/ldap/radiusclients-edirectory.ldif
-%%PORTDOCS%%%%DOCSDIR%%/schemas/ldap/radiusclients-openldap.ldif
-%%PORTDOCS%%%%DOCSDIR%%/schemas/ldap/radiusclients-openldap.schema
+%%PORTDOCS%%%%DOCSDIR%%/schemas/ldap/edir/freeradius-clients.ldif
+%%PORTDOCS%%%%DOCSDIR%%/schemas/ldap/iplanet/freeradius.ldif
+%%PORTDOCS%%%%DOCSDIR%%/schemas/ldap/iplanet/freeradius.schema
+%%PORTDOCS%%%%DOCSDIR%%/schemas/ldap/openldap/freeradius-clients.ldif
+%%PORTDOCS%%%%DOCSDIR%%/schemas/ldap/openldap/freeradius-clients.schema
+%%PORTDOCS%%%%DOCSDIR%%/schemas/ldap/openldap/freeradius.ldif
+%%PORTDOCS%%%%DOCSDIR%%/schemas/ldap/openldap/freeradius.schema
 %%PORTDOCS%%%%DOCSDIR%%/schemas/sql
 %%PORTDOCS%%%%DOCSDIR%%/vendor/ascend
 %%PORTDOCS%%%%DOCSDIR%%/vendor/bay
@@ -463,6 +465,7 @@ sbin/radmin
 %%EXAMPLESDIR%%/raddb/mods-available/cache_eap
 %%EXAMPLESDIR%%/raddb/mods-available/chap
 %%EXAMPLESDIR%%/raddb/mods-available/counter
+%%EXAMPLESDIR%%/raddb/mods-available/couchbase
 %%EXAMPLESDIR%%/raddb/mods-available/cui
 %%EXAMPLESDIR%%/raddb/mods-available/date
 %%EXAMPLESDIR%%/raddb/mods-available/detail
@@ -550,6 +553,7 @@ sbin/radmin
 %%EXAMPLESDIR%%/raddb/mods-config/sql/cui/sqlite/queries.conf
 %%EXAMPLESDIR%%/raddb/mods-config/sql/cui/sqlite/schema.sql
 %%EXAMPLESDIR%%/raddb/mods-config/sql/ippool-dhcp/mysql/queries.conf
+%%EXAMPLESDIR%%/raddb/mods-config/sql/ippool-dhcp/mysql/schema.sql
 %%EXAMPLESDIR%%/raddb/mods-config/sql/ippool-dhcp/oracle/queries.conf
 %%EXAMPLESDIR%%/raddb/mods-config/sql/ippool-dhcp/oracle/schema.sql
 %%EXAMPLESDIR%%/raddb/mods-config/sql/ippool-dhcp/sqlite/queries.conf
@@ -619,6 +623,7 @@ sbin/radmin
 %%EXAMPLESDIR%%/raddb/policy.d/canonicalization
 %%EXAMPLESDIR%%/raddb/policy.d/control
 %%EXAMPLESDIR%%/raddb/policy.d/cui
+%%EXAMPLESDIR%%/raddb/policy.d/debug
 %%EXAMPLESDIR%%/raddb/policy.d/dhcp
 %%EXAMPLESDIR%%/raddb/policy.d/eap
 %%EXAMPLESDIR%%/raddb/policy.d/filter
@@ -627,6 +632,7 @@ sbin/radmin
 %%EXAMPLESDIR%%/raddb/radiusd.conf
 %%EXAMPLESDIR%%/raddb/sites-available/README
 %%EXAMPLESDIR%%/raddb/sites-available/buffered-sql
+%%EXAMPLESDIR%%/raddb/sites-available/channel_bindings
 %%EXAMPLESDIR%%/raddb/sites-available/check-eap-tls
 %%EXAMPLESDIR%%/raddb/sites-available/coa
 %%EXAMPLESDIR%%/raddb/sites-available/control-socket
@@ -694,20 +700,24 @@ sbin/radmin
 %%DATADIR%%/dictionary.cisco.bbsm
 %%DATADIR%%/dictionary.cisco.vpn3000
 %%DATADIR%%/dictionary.cisco.vpn5000
+%%DATADIR%%/dictionary.citrix
 %%DATADIR%%/dictionary.clavister
 %%DATADIR%%/dictionary.colubris
 %%DATADIR%%/dictionary.columbia_university
 %%DATADIR%%/dictionary.compat
+%%DATADIR%%/dictionary.compatible
 %%DATADIR%%/dictionary.cosine
 %%DATADIR%%/dictionary.dante
 %%DATADIR%%/dictionary.dhcp
 %%DATADIR%%/dictionary.digium
 %%DATADIR%%/dictionary.dlink
+%%DATADIR%%/dictionary.dragonwave
 %%DATADIR%%/dictionary.efficientip
 %%DATADIR%%/dictionary.eltex
 %%DATADIR%%/dictionary.epygi
 %%DATADIR%%/dictionary.equallogic
 %%DATADIR%%/dictionary.ericsson
+%%DATADIR%%/dictionary.ericsson.packet.core.networks
 %%DATADIR%%/dictionary.erx
 %%DATADIR%%/dictionary.extreme
 %%DATADIR%%/dictionary.f5
@@ -795,8 +805,11 @@ sbin/radmin
 %%DATADIR%%/dictionary.rfc6929
 %%DATADIR%%/dictionary.rfc6930
 %%DATADIR%%/dictionary.rfc7055
+%%DATADIR%%/dictionary.rfc7268
+%%DATADIR%%/dictionary.riverbed
 %%DATADIR%%/dictionary.riverstone
 %%DATADIR%%/dictionary.roaringpenguin
+%%DATADIR%%/dictionary.ruckus
 %%DATADIR%%/dictionary.sg
 %%DATADIR%%/dictionary.shasta
 %%DATADIR%%/dictionary.shiva
@@ -807,6 +820,7 @@ sbin/radmin
 %%DATADIR%%/dictionary.springtide
 %%DATADIR%%/dictionary.starent
 %%DATADIR%%/dictionary.starent.vsa1
+%%DATADIR%%/dictionary.surfnet
 %%DATADIR%%/dictionary.symbol
 %%DATADIR%%/dictionary.t_systems_nova
 %%DATADIR%%/dictionary.telebit
@@ -843,6 +857,9 @@ sbin/radmin
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/developer
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/modules
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/rfc
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/schemas/ldap/edir
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/schemas/ldap/iplanet
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/schemas/ldap/openldap
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/schemas/ldap
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/schemas
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/vendor
