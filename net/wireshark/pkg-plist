@@ -12,13 +12,13 @@ bin/tshark
 %%TEXT2PCAP%%
 lib/libfiletap.so
 lib/libfiletap.so.0
-lib/libfiletap.so.0.0.0
+lib/libfiletap.so.0.0.1
 lib/libwireshark.so
 lib/libwireshark.so.5
-lib/libwireshark.so.5.0.0
+lib/libwireshark.so.5.0.1
 lib/libwiretap.so
 lib/libwiretap.so.4
-lib/libwiretap.so.4.0.0
+lib/libwiretap.so.4.0.1
 lib/libwsutil.so
 lib/libwsutil.so.4
 lib/libwsutil.so.4.0.0
