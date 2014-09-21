@@ -27,7 +27,8 @@ USE_LDCONFIG=	yes
 USE_XORG=	xft xinerama xmu xpm
 SHEBANG_FILES=	util/wkdemenu.pl
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	ac_cv_header_sys_inotify_h=no
+CONFIGURE_ENV=	ac_cv_header_sys_inotify_h=no \
+		wm_cv_func_secure_getenv=no
 CONFIGURE_ARGS=	--with-pixmapdir=${PREFIX}/include/X11/pixmaps \
 		--with-nlsdir=${PREFIX}/share/locale \
 		--with-libs-from="-L${LOCALBASE}/lib" \
