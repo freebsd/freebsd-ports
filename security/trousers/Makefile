@@ -25,7 +25,10 @@ INSTALL_TARGET=	install-strip
 GNU_CONFIGURE=	YES
 CONFIGURE_ARGS=	--with-gui=none --enable-static \
 		--localstatedir=${PREFIX}/var \
-		--with-tssuser=${USERS} --with-tssgroup=${GROUPS} RANLIB=:
+		--with-tssuser=${USERS} \
+		--with-tssgroup=${GROUPS} \
+		--with-openssl=${OPENSSLBASE} \
+		RANLIB=:
 MAKE_ENV=	ICONV_LIB=${ICONV_LIB} \
 		ICONV_PREFIX=${ICONV_PREFIX}
 SUB_FILES=	pkg-message
