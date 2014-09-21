@@ -271,7 +271,7 @@ share/mime/packages/nip2.xml
 %%DATADIR%%/compat/7.9/_stdenv.def
 %%DATADIR%%/compat/7.9/_types.def
 %%DATADIR%%/data/AdobeRGB1998.icc
-%%DATADIR%%/data/HP5000_UVDuraImageGlossMaxQ.icc
+%%DATADIR%%/data/cmyk.icm
 %%DATADIR%%/data/examples/1_point_mosaic/1pt_mosaic.ws
 %%DATADIR%%/data/examples/1_point_mosaic/cd1.1.jpg
 %%DATADIR%%/data/examples/1_point_mosaic/cd1.2.jpg
