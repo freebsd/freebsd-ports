@@ -837,6 +837,7 @@
     SUBDIR += rubygem-data_objects
     SUBDIR += rubygem-datamapper
     SUBDIR += rubygem-dbd-mysql
+    SUBDIR += rubygem-dbd-pg
     SUBDIR += rubygem-dbi
     SUBDIR += rubygem-dm-active_model
     SUBDIR += rubygem-dm-aggregates
