@@ -128,6 +128,7 @@ bin/mikutter
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/achievement/po/el/achievement.po
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/achievement/po/en/achievement.po
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/achievement/po/es/achievement.po
+%%RUBY_SITELIBDIR%%/mikutter/core/plugin/achievement/po/pt_PT/achievement.po
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/achievement/po/ro_RO/achievement.po
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/achievement/po/ru/achievement.po
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/achievement/po/vi/achievement.po
@@ -141,6 +142,7 @@ bin/mikutter
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/activity/po/el/activity.po
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/activity/po/en/activity.po
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/activity/po/es/activity.po
+%%RUBY_SITELIBDIR%%/mikutter/core/plugin/activity/po/pt_PT/activity.po
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/activity/po/ro_RO/activity.po
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/activity/po/ru/activity.po
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/activity/po/vi/activity.po
@@ -162,6 +164,7 @@ bin/mikutter
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/bugreport/po/el/bugreport.po
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/bugreport/po/en/bugreport.po
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/bugreport/po/es/bugreport.po
+%%RUBY_SITELIBDIR%%/mikutter/core/plugin/bugreport/po/pt_PT/bugreport.po
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/bugreport/po/ro_RO/bugreport.po
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/bugreport/po/ru/bugreport.po
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/bugreport/po/vi/bugreport.po
@@ -177,6 +180,7 @@ bin/mikutter
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/change_account/po/el/change_account.po
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/change_account/po/en/change_account.po
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/change_account/po/es/change_account.po
+%%RUBY_SITELIBDIR%%/mikutter/core/plugin/change_account/po/pt_PT/change_account.po
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/change_account/po/ro_RO/change_account.po
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/change_account/po/ru/change_account.po
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/change_account/po/vi/change_account.po
@@ -191,6 +195,7 @@ bin/mikutter
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/command/po/el/command.po
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/command/po/en/command.po
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/command/po/es/command.po
+%%RUBY_SITELIBDIR%%/mikutter/core/plugin/command/po/pt_PT/command.po
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/command/po/ro_RO/command.po
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/command/po/ru/command.po
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/command/po/vi/command.po
@@ -205,6 +210,7 @@ bin/mikutter
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/console/po/el/console.po
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/console/po/en/console.po
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/console/po/es/console.po
+%%RUBY_SITELIBDIR%%/mikutter/core/plugin/console/po/pt_PT/console.po
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/console/po/ro_RO/console.po
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/console/po/ru/console.po
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/console/po/vi/console.po
@@ -220,6 +226,7 @@ bin/mikutter
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/direct_message/po/el/direct_message.po
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/direct_message/po/en/direct_message.po
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/direct_message/po/es/direct_message.po
+%%RUBY_SITELIBDIR%%/mikutter/core/plugin/direct_message/po/pt_PT/direct_message.po
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/direct_message/po/ro_RO/direct_message.po
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/direct_message/po/ru/direct_message.po
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/direct_message/po/vi/direct_message.po
@@ -235,6 +242,7 @@ bin/mikutter
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/display_requirements/po/el/display_requirements.po
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/display_requirements/po/en/display_requirements.po
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/display_requirements/po/es/display_requirements.po
+%%RUBY_SITELIBDIR%%/mikutter/core/plugin/display_requirements/po/pt_PT/display_requirements.po
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/display_requirements/po/ro_RO/display_requirements.po
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/display_requirements/po/ru/display_requirements.po
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/display_requirements/po/vi/display_requirements.po
@@ -250,6 +258,7 @@ bin/mikutter
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/extract/po/el/extract.po
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/extract/po/en/extract.po
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/extract/po/es/extract.po
+%%RUBY_SITELIBDIR%%/mikutter/core/plugin/extract/po/pt_PT/extract.po
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/extract/po/ro_RO/extract.po
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/extract/po/ru/extract.po
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/extract/po/vi/extract.po
@@ -272,6 +281,7 @@ bin/mikutter
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/gtk/po/en/gtk.po
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/gtk/po/es/gtk.po
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/gtk/po/ja/gtk.po
+%%RUBY_SITELIBDIR%%/mikutter/core/plugin/gtk/po/pt_PT/gtk.po
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/gtk/po/ro_RO/gtk.po
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/gtk/po/ru/gtk.po
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/gtk/po/vi/gtk.po
@@ -295,6 +305,7 @@ bin/mikutter
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/gui/po/el/gui.po
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/gui/po/en/gui.po
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/gui/po/es/gui.po
+%%RUBY_SITELIBDIR%%/mikutter/core/plugin/gui/po/pt_PT/gui.po
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/gui/po/ro_RO/gui.po
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/gui/po/ru/gui.po
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/gui/po/vi/gui.po
@@ -322,6 +333,7 @@ bin/mikutter
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/home_timeline/po/el/home_timeline.po
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/home_timeline/po/en/home_timeline.po
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/home_timeline/po/es/home_timeline.po
+%%RUBY_SITELIBDIR%%/mikutter/core/plugin/home_timeline/po/pt_PT/home_timeline.po
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/home_timeline/po/ro_RO/home_timeline.po
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/home_timeline/po/ru/home_timeline.po
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/home_timeline/po/vi/home_timeline.po
@@ -343,6 +355,7 @@ bin/mikutter
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/mentions/po/el/mentions.po
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/mentions/po/en/mentions.po
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/mentions/po/es/mentions.po
+%%RUBY_SITELIBDIR%%/mikutter/core/plugin/mentions/po/pt_PT/mentions.po
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/mentions/po/ro_RO/mentions.po
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/mentions/po/ru/mentions.po
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/mentions/po/vi/mentions.po
@@ -356,6 +369,7 @@ bin/mikutter
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/notify/po/el/notify.po
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/notify/po/en/notify.po
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/notify/po/es/notify.po
+%%RUBY_SITELIBDIR%%/mikutter/core/plugin/notify/po/pt_PT/notify.po
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/notify/po/ro_RO/notify.po
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/notify/po/ru/notify.po
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/notify/po/vi/notify.po
@@ -370,6 +384,7 @@ bin/mikutter
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/openimg/po/el/openimg.po
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/openimg/po/en/openimg.po
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/openimg/po/es/openimg.po
+%%RUBY_SITELIBDIR%%/mikutter/core/plugin/openimg/po/pt_PT/openimg.po
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/openimg/po/ro_RO/openimg.po
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/openimg/po/ru/openimg.po
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/openimg/po/vi/openimg.po
@@ -382,6 +397,7 @@ bin/mikutter
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/profile/po/el/profile.po
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/profile/po/en/profile.po
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/profile/po/es/profile.po
+%%RUBY_SITELIBDIR%%/mikutter/core/plugin/profile/po/pt_PT/profile.po
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/profile/po/ro_RO/profile.po
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/profile/po/ru/profile.po
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/profile/po/vi/profile.po
@@ -395,6 +411,7 @@ bin/mikutter
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/proxy/po/el/proxy.po
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/proxy/po/en/proxy.po
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/proxy/po/es/proxy.po
+%%RUBY_SITELIBDIR%%/mikutter/core/plugin/proxy/po/pt_PT/proxy.po
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/proxy/po/ro_RO/proxy.po
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/proxy/po/ru/proxy.po
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/proxy/po/vi/proxy.po
@@ -408,6 +425,7 @@ bin/mikutter
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/ratelimit/po/el/ratelimit.po
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/ratelimit/po/en/ratelimit.po
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/ratelimit/po/es/ratelimit.po
+%%RUBY_SITELIBDIR%%/mikutter/core/plugin/ratelimit/po/pt_PT/ratelimit.po
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/ratelimit/po/ro_RO/ratelimit.po
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/ratelimit/po/ru/ratelimit.po
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/ratelimit/po/vi/ratelimit.po
@@ -423,6 +441,7 @@ bin/mikutter
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/saved_search/po/el/saved_search.po
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/saved_search/po/en/saved_search.po
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/saved_search/po/es/saved_search.po
+%%RUBY_SITELIBDIR%%/mikutter/core/plugin/saved_search/po/pt_PT/saved_search.po
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/saved_search/po/ro_RO/saved_search.po
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/saved_search/po/ru/saved_search.po
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/saved_search/po/vi/saved_search.po
@@ -436,6 +455,7 @@ bin/mikutter
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/search/po/el/search.po
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/search/po/en/search.po
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/search/po/es/search.po
+%%RUBY_SITELIBDIR%%/mikutter/core/plugin/search/po/pt_PT/search.po
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/search/po/ro_RO/search.po
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/search/po/ru/search.po
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/search/po/vi/search.po
@@ -449,6 +469,7 @@ bin/mikutter
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/set_input/po/el/set_input.po
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/set_input/po/en/set_input.po
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/set_input/po/es/set_input.po
+%%RUBY_SITELIBDIR%%/mikutter/core/plugin/set_input/po/pt_PT/set_input.po
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/set_input/po/ro_RO/set_input.po
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/set_input/po/ru/set_input.po
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/set_input/po/vi/set_input.po
@@ -462,6 +483,7 @@ bin/mikutter
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/set_view/po/el/set_view.po
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/set_view/po/en/set_view.po
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/set_view/po/es/set_view.po
+%%RUBY_SITELIBDIR%%/mikutter/core/plugin/set_view/po/pt_PT/set_view.po
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/set_view/po/ro_RO/set_view.po
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/set_view/po/ru/set_view.po
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/set_view/po/vi/set_view.po
@@ -479,6 +501,7 @@ bin/mikutter
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/settings/po/el/settings.po
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/settings/po/en/settings.po
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/settings/po/es/settings.po
+%%RUBY_SITELIBDIR%%/mikutter/core/plugin/settings/po/pt_PT/settings.po
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/settings/po/ro_RO/settings.po
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/settings/po/ru/settings.po
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/settings/po/vi/settings.po
@@ -494,6 +517,7 @@ bin/mikutter
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/shortcutkey/po/el/shortcutkey.po
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/shortcutkey/po/en/shortcutkey.po
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/shortcutkey/po/es/shortcutkey.po
+%%RUBY_SITELIBDIR%%/mikutter/core/plugin/shortcutkey/po/pt_PT/shortcutkey.po
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/shortcutkey/po/ro_RO/shortcutkey.po
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/shortcutkey/po/ru/shortcutkey.po
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/shortcutkey/po/vi/shortcutkey.po
@@ -508,6 +532,7 @@ bin/mikutter
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/smartthread/po/el/smartthread.po
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/smartthread/po/en/smartthread.po
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/smartthread/po/es/smartthread.po
+%%RUBY_SITELIBDIR%%/mikutter/core/plugin/smartthread/po/pt_PT/smartthread.po
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/smartthread/po/ro_RO/smartthread.po
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/smartthread/po/ru/smartthread.po
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/smartthread/po/vi/smartthread.po
@@ -521,6 +546,7 @@ bin/mikutter
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/sound/po/el/sound.po
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/sound/po/en/sound.po
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/sound/po/es/sound.po
+%%RUBY_SITELIBDIR%%/mikutter/core/plugin/sound/po/pt_PT/sound.po
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/sound/po/ro_RO/sound.po
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/sound/po/ru/sound.po
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/sound/po/vi/sound.po
@@ -536,6 +562,7 @@ bin/mikutter
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/streaming/po/el/streaming.po
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/streaming/po/en/streaming.po
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/streaming/po/es/streaming.po
+%%RUBY_SITELIBDIR%%/mikutter/core/plugin/streaming/po/pt_PT/streaming.po
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/streaming/po/ro_RO/streaming.po
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/streaming/po/ru/streaming.po
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/streaming/po/vi/streaming.po
@@ -631,6 +658,7 @@ share/applications/mikutter.desktop
 @dirrm %%RUBY_SITELIBDIR%%/mikutter/core/plugin/streaming/po/vi
 @dirrm %%RUBY_SITELIBDIR%%/mikutter/core/plugin/streaming/po/ru
 @dirrm %%RUBY_SITELIBDIR%%/mikutter/core/plugin/streaming/po/ro_RO
+@dirrm %%RUBY_SITELIBDIR%%/mikutter/core/plugin/streaming/po/pt_PT
 @dirrm %%RUBY_SITELIBDIR%%/mikutter/core/plugin/streaming/po/es
 @dirrm %%RUBY_SITELIBDIR%%/mikutter/core/plugin/streaming/po/en
 @dirrm %%RUBY_SITELIBDIR%%/mikutter/core/plugin/streaming/po/el
@@ -644,6 +672,7 @@ share/applications/mikutter.desktop
 @dirrm %%RUBY_SITELIBDIR%%/mikutter/core/plugin/sound/po/vi
 @dirrm %%RUBY_SITELIBDIR%%/mikutter/core/plugin/sound/po/ru
 @dirrm %%RUBY_SITELIBDIR%%/mikutter/core/plugin/sound/po/ro_RO
+@dirrm %%RUBY_SITELIBDIR%%/mikutter/core/plugin/sound/po/pt_PT
 @dirrm %%RUBY_SITELIBDIR%%/mikutter/core/plugin/sound/po/es
 @dirrm %%RUBY_SITELIBDIR%%/mikutter/core/plugin/sound/po/en
 @dirrm %%RUBY_SITELIBDIR%%/mikutter/core/plugin/sound/po/el
@@ -657,6 +686,7 @@ share/applications/mikutter.desktop
 @dirrm %%RUBY_SITELIBDIR%%/mikutter/core/plugin/smartthread/po/vi
 @dirrm %%RUBY_SITELIBDIR%%/mikutter/core/plugin/smartthread/po/ru
 @dirrm %%RUBY_SITELIBDIR%%/mikutter/core/plugin/smartthread/po/ro_RO
+@dirrm %%RUBY_SITELIBDIR%%/mikutter/core/plugin/smartthread/po/pt_PT
 @dirrm %%RUBY_SITELIBDIR%%/mikutter/core/plugin/smartthread/po/es
 @dirrm %%RUBY_SITELIBDIR%%/mikutter/core/plugin/smartthread/po/en
 @dirrm %%RUBY_SITELIBDIR%%/mikutter/core/plugin/smartthread/po/el
@@ -670,6 +700,7 @@ share/applications/mikutter.desktop
 @dirrm %%RUBY_SITELIBDIR%%/mikutter/core/plugin/shortcutkey/po/vi
 @dirrm %%RUBY_SITELIBDIR%%/mikutter/core/plugin/shortcutkey/po/ru
 @dirrm %%RUBY_SITELIBDIR%%/mikutter/core/plugin/shortcutkey/po/ro_RO
+@dirrm %%RUBY_SITELIBDIR%%/mikutter/core/plugin/shortcutkey/po/pt_PT
 @dirrm %%RUBY_SITELIBDIR%%/mikutter/core/plugin/shortcutkey/po/es
 @dirrm %%RUBY_SITELIBDIR%%/mikutter/core/plugin/shortcutkey/po/en
 @dirrm %%RUBY_SITELIBDIR%%/mikutter/core/plugin/shortcutkey/po/el
@@ -683,6 +714,7 @@ share/applications/mikutter.desktop
 @dirrm %%RUBY_SITELIBDIR%%/mikutter/core/plugin/settings/po/vi
 @dirrm %%RUBY_SITELIBDIR%%/mikutter/core/plugin/settings/po/ru
 @dirrm %%RUBY_SITELIBDIR%%/mikutter/core/plugin/settings/po/ro_RO
+@dirrm %%RUBY_SITELIBDIR%%/mikutter/core/plugin/settings/po/pt_PT
 @dirrm %%RUBY_SITELIBDIR%%/mikutter/core/plugin/settings/po/es
 @dirrm %%RUBY_SITELIBDIR%%/mikutter/core/plugin/settings/po/en
 @dirrm %%RUBY_SITELIBDIR%%/mikutter/core/plugin/settings/po/el
@@ -696,6 +728,7 @@ share/applications/mikutter.desktop
 @dirrm %%RUBY_SITELIBDIR%%/mikutter/core/plugin/set_view/po/vi
 @dirrm %%RUBY_SITELIBDIR%%/mikutter/core/plugin/set_view/po/ru
 @dirrm %%RUBY_SITELIBDIR%%/mikutter/core/plugin/set_view/po/ro_RO
+@dirrm %%RUBY_SITELIBDIR%%/mikutter/core/plugin/set_view/po/pt_PT
 @dirrm %%RUBY_SITELIBDIR%%/mikutter/core/plugin/set_view/po/es
 @dirrm %%RUBY_SITELIBDIR%%/mikutter/core/plugin/set_view/po/en
 @dirrm %%RUBY_SITELIBDIR%%/mikutter/core/plugin/set_view/po/el
@@ -709,6 +742,7 @@ share/applications/mikutter.desktop
 @dirrm %%RUBY_SITELIBDIR%%/mikutter/core/plugin/set_input/po/vi
 @dirrm %%RUBY_SITELIBDIR%%/mikutter/core/plugin/set_input/po/ru
 @dirrm %%RUBY_SITELIBDIR%%/mikutter/core/plugin/set_input/po/ro_RO
+@dirrm %%RUBY_SITELIBDIR%%/mikutter/core/plugin/set_input/po/pt_PT
 @dirrm %%RUBY_SITELIBDIR%%/mikutter/core/plugin/set_input/po/es
 @dirrm %%RUBY_SITELIBDIR%%/mikutter/core/plugin/set_input/po/en
 @dirrm %%RUBY_SITELIBDIR%%/mikutter/core/plugin/set_input/po/el
@@ -722,6 +756,7 @@ share/applications/mikutter.desktop
 @dirrm %%RUBY_SITELIBDIR%%/mikutter/core/plugin/search/po/vi
 @dirrm %%RUBY_SITELIBDIR%%/mikutter/core/plugin/search/po/ru
 @dirrm %%RUBY_SITELIBDIR%%/mikutter/core/plugin/search/po/ro_RO
+@dirrm %%RUBY_SITELIBDIR%%/mikutter/core/plugin/search/po/pt_PT
 @dirrm %%RUBY_SITELIBDIR%%/mikutter/core/plugin/search/po/es
 @dirrm %%RUBY_SITELIBDIR%%/mikutter/core/plugin/search/po/en
 @dirrm %%RUBY_SITELIBDIR%%/mikutter/core/plugin/search/po/el
@@ -735,6 +770,7 @@ share/applications/mikutter.desktop
 @dirrm %%RUBY_SITELIBDIR%%/mikutter/core/plugin/saved_search/po/vi
 @dirrm %%RUBY_SITELIBDIR%%/mikutter/core/plugin/saved_search/po/ru
 @dirrm %%RUBY_SITELIBDIR%%/mikutter/core/plugin/saved_search/po/ro_RO
+@dirrm %%RUBY_SITELIBDIR%%/mikutter/core/plugin/saved_search/po/pt_PT
 @dirrm %%RUBY_SITELIBDIR%%/mikutter/core/plugin/saved_search/po/es
 @dirrm %%RUBY_SITELIBDIR%%/mikutter/core/plugin/saved_search/po/en
 @dirrm %%RUBY_SITELIBDIR%%/mikutter/core/plugin/saved_search/po/el
@@ -749,6 +785,7 @@ share/applications/mikutter.desktop
 @dirrm %%RUBY_SITELIBDIR%%/mikutter/core/plugin/ratelimit/po/vi
 @dirrm %%RUBY_SITELIBDIR%%/mikutter/core/plugin/ratelimit/po/ru
 @dirrm %%RUBY_SITELIBDIR%%/mikutter/core/plugin/ratelimit/po/ro_RO
+@dirrm %%RUBY_SITELIBDIR%%/mikutter/core/plugin/ratelimit/po/pt_PT
 @dirrm %%RUBY_SITELIBDIR%%/mikutter/core/plugin/ratelimit/po/es
 @dirrm %%RUBY_SITELIBDIR%%/mikutter/core/plugin/ratelimit/po/en
 @dirrm %%RUBY_SITELIBDIR%%/mikutter/core/plugin/ratelimit/po/el
@@ -762,6 +799,7 @@ share/applications/mikutter.desktop
 @dirrm %%RUBY_SITELIBDIR%%/mikutter/core/plugin/proxy/po/vi
 @dirrm %%RUBY_SITELIBDIR%%/mikutter/core/plugin/proxy/po/ru
 @dirrm %%RUBY_SITELIBDIR%%/mikutter/core/plugin/proxy/po/ro_RO
+@dirrm %%RUBY_SITELIBDIR%%/mikutter/core/plugin/proxy/po/pt_PT
 @dirrm %%RUBY_SITELIBDIR%%/mikutter/core/plugin/proxy/po/es
 @dirrm %%RUBY_SITELIBDIR%%/mikutter/core/plugin/proxy/po/en
 @dirrm %%RUBY_SITELIBDIR%%/mikutter/core/plugin/proxy/po/el
@@ -775,6 +813,7 @@ share/applications/mikutter.desktop
 @dirrm %%RUBY_SITELIBDIR%%/mikutter/core/plugin/profile/po/vi
 @dirrm %%RUBY_SITELIBDIR%%/mikutter/core/plugin/profile/po/ru
 @dirrm %%RUBY_SITELIBDIR%%/mikutter/core/plugin/profile/po/ro_RO
+@dirrm %%RUBY_SITELIBDIR%%/mikutter/core/plugin/profile/po/pt_PT
 @dirrm %%RUBY_SITELIBDIR%%/mikutter/core/plugin/profile/po/es
 @dirrm %%RUBY_SITELIBDIR%%/mikutter/core/plugin/profile/po/en
 @dirrm %%RUBY_SITELIBDIR%%/mikutter/core/plugin/profile/po/el
@@ -788,6 +827,7 @@ share/applications/mikutter.desktop
 @dirrm %%RUBY_SITELIBDIR%%/mikutter/core/plugin/openimg/po/vi
 @dirrm %%RUBY_SITELIBDIR%%/mikutter/core/plugin/openimg/po/ru
 @dirrm %%RUBY_SITELIBDIR%%/mikutter/core/plugin/openimg/po/ro_RO
+@dirrm %%RUBY_SITELIBDIR%%/mikutter/core/plugin/openimg/po/pt_PT
 @dirrm %%RUBY_SITELIBDIR%%/mikutter/core/plugin/openimg/po/es
 @dirrm %%RUBY_SITELIBDIR%%/mikutter/core/plugin/openimg/po/en
 @dirrm %%RUBY_SITELIBDIR%%/mikutter/core/plugin/openimg/po/el
@@ -801,6 +841,7 @@ share/applications/mikutter.desktop
 @dirrm %%RUBY_SITELIBDIR%%/mikutter/core/plugin/notify/po/vi
 @dirrm %%RUBY_SITELIBDIR%%/mikutter/core/plugin/notify/po/ru
 @dirrm %%RUBY_SITELIBDIR%%/mikutter/core/plugin/notify/po/ro_RO
+@dirrm %%RUBY_SITELIBDIR%%/mikutter/core/plugin/notify/po/pt_PT
 @dirrm %%RUBY_SITELIBDIR%%/mikutter/core/plugin/notify/po/es
 @dirrm %%RUBY_SITELIBDIR%%/mikutter/core/plugin/notify/po/en
 @dirrm %%RUBY_SITELIBDIR%%/mikutter/core/plugin/notify/po/el
@@ -814,6 +855,7 @@ share/applications/mikutter.desktop
 @dirrm %%RUBY_SITELIBDIR%%/mikutter/core/plugin/mentions/po/vi
 @dirrm %%RUBY_SITELIBDIR%%/mikutter/core/plugin/mentions/po/ru
 @dirrm %%RUBY_SITELIBDIR%%/mikutter/core/plugin/mentions/po/ro_RO
+@dirrm %%RUBY_SITELIBDIR%%/mikutter/core/plugin/mentions/po/pt_PT
 @dirrm %%RUBY_SITELIBDIR%%/mikutter/core/plugin/mentions/po/es
 @dirrm %%RUBY_SITELIBDIR%%/mikutter/core/plugin/mentions/po/en
 @dirrm %%RUBY_SITELIBDIR%%/mikutter/core/plugin/mentions/po/el
@@ -830,6 +872,7 @@ share/applications/mikutter.desktop
 @dirrm %%RUBY_SITELIBDIR%%/mikutter/core/plugin/home_timeline/po/vi
 @dirrm %%RUBY_SITELIBDIR%%/mikutter/core/plugin/home_timeline/po/ru
 @dirrm %%RUBY_SITELIBDIR%%/mikutter/core/plugin/home_timeline/po/ro_RO
+@dirrm %%RUBY_SITELIBDIR%%/mikutter/core/plugin/home_timeline/po/pt_PT
 @dirrm %%RUBY_SITELIBDIR%%/mikutter/core/plugin/home_timeline/po/es
 @dirrm %%RUBY_SITELIBDIR%%/mikutter/core/plugin/home_timeline/po/en
 @dirrm %%RUBY_SITELIBDIR%%/mikutter/core/plugin/home_timeline/po/el
@@ -844,6 +887,7 @@ share/applications/mikutter.desktop
 @dirrm %%RUBY_SITELIBDIR%%/mikutter/core/plugin/gui/po/vi
 @dirrm %%RUBY_SITELIBDIR%%/mikutter/core/plugin/gui/po/ru
 @dirrm %%RUBY_SITELIBDIR%%/mikutter/core/plugin/gui/po/ro_RO
+@dirrm %%RUBY_SITELIBDIR%%/mikutter/core/plugin/gui/po/pt_PT
 @dirrm %%RUBY_SITELIBDIR%%/mikutter/core/plugin/gui/po/es
 @dirrm %%RUBY_SITELIBDIR%%/mikutter/core/plugin/gui/po/en
 @dirrm %%RUBY_SITELIBDIR%%/mikutter/core/plugin/gui/po/el
@@ -857,6 +901,7 @@ share/applications/mikutter.desktop
 @dirrm %%RUBY_SITELIBDIR%%/mikutter/core/plugin/gtk/po/vi
 @dirrm %%RUBY_SITELIBDIR%%/mikutter/core/plugin/gtk/po/ru
 @dirrm %%RUBY_SITELIBDIR%%/mikutter/core/plugin/gtk/po/ro_RO
+@dirrm %%RUBY_SITELIBDIR%%/mikutter/core/plugin/gtk/po/pt_PT
 @dirrm %%RUBY_SITELIBDIR%%/mikutter/core/plugin/gtk/po/ja
 @dirrm %%RUBY_SITELIBDIR%%/mikutter/core/plugin/gtk/po/es
 @dirrm %%RUBY_SITELIBDIR%%/mikutter/core/plugin/gtk/po/en
@@ -872,6 +917,7 @@ share/applications/mikutter.desktop
 @dirrm %%RUBY_SITELIBDIR%%/mikutter/core/plugin/extract/po/vi
 @dirrm %%RUBY_SITELIBDIR%%/mikutter/core/plugin/extract/po/ru
 @dirrm %%RUBY_SITELIBDIR%%/mikutter/core/plugin/extract/po/ro_RO
+@dirrm %%RUBY_SITELIBDIR%%/mikutter/core/plugin/extract/po/pt_PT
 @dirrm %%RUBY_SITELIBDIR%%/mikutter/core/plugin/extract/po/es
 @dirrm %%RUBY_SITELIBDIR%%/mikutter/core/plugin/extract/po/en
 @dirrm %%RUBY_SITELIBDIR%%/mikutter/core/plugin/extract/po/el
@@ -885,6 +931,7 @@ share/applications/mikutter.desktop
 @dirrm %%RUBY_SITELIBDIR%%/mikutter/core/plugin/display_requirements/po/vi
 @dirrm %%RUBY_SITELIBDIR%%/mikutter/core/plugin/display_requirements/po/ru
 @dirrm %%RUBY_SITELIBDIR%%/mikutter/core/plugin/display_requirements/po/ro_RO
+@dirrm %%RUBY_SITELIBDIR%%/mikutter/core/plugin/display_requirements/po/pt_PT
 @dirrm %%RUBY_SITELIBDIR%%/mikutter/core/plugin/display_requirements/po/es
 @dirrm %%RUBY_SITELIBDIR%%/mikutter/core/plugin/display_requirements/po/en
 @dirrm %%RUBY_SITELIBDIR%%/mikutter/core/plugin/display_requirements/po/el
@@ -898,6 +945,7 @@ share/applications/mikutter.desktop
 @dirrm %%RUBY_SITELIBDIR%%/mikutter/core/plugin/direct_message/po/vi
 @dirrm %%RUBY_SITELIBDIR%%/mikutter/core/plugin/direct_message/po/ru
 @dirrm %%RUBY_SITELIBDIR%%/mikutter/core/plugin/direct_message/po/ro_RO
+@dirrm %%RUBY_SITELIBDIR%%/mikutter/core/plugin/direct_message/po/pt_PT
 @dirrm %%RUBY_SITELIBDIR%%/mikutter/core/plugin/direct_message/po/es
 @dirrm %%RUBY_SITELIBDIR%%/mikutter/core/plugin/direct_message/po/en
 @dirrm %%RUBY_SITELIBDIR%%/mikutter/core/plugin/direct_message/po/el
@@ -911,6 +959,7 @@ share/applications/mikutter.desktop
 @dirrm %%RUBY_SITELIBDIR%%/mikutter/core/plugin/console/po/vi
 @dirrm %%RUBY_SITELIBDIR%%/mikutter/core/plugin/console/po/ru
 @dirrm %%RUBY_SITELIBDIR%%/mikutter/core/plugin/console/po/ro_RO
+@dirrm %%RUBY_SITELIBDIR%%/mikutter/core/plugin/console/po/pt_PT
 @dirrm %%RUBY_SITELIBDIR%%/mikutter/core/plugin/console/po/es
 @dirrm %%RUBY_SITELIBDIR%%/mikutter/core/plugin/console/po/en
 @dirrm %%RUBY_SITELIBDIR%%/mikutter/core/plugin/console/po/el
@@ -924,6 +973,7 @@ share/applications/mikutter.desktop
 @dirrm %%RUBY_SITELIBDIR%%/mikutter/core/plugin/command/po/vi
 @dirrm %%RUBY_SITELIBDIR%%/mikutter/core/plugin/command/po/ru
 @dirrm %%RUBY_SITELIBDIR%%/mikutter/core/plugin/command/po/ro_RO
+@dirrm %%RUBY_SITELIBDIR%%/mikutter/core/plugin/command/po/pt_PT
 @dirrm %%RUBY_SITELIBDIR%%/mikutter/core/plugin/command/po/es
 @dirrm %%RUBY_SITELIBDIR%%/mikutter/core/plugin/command/po/en
 @dirrm %%RUBY_SITELIBDIR%%/mikutter/core/plugin/command/po/el
@@ -937,6 +987,7 @@ share/applications/mikutter.desktop
 @dirrm %%RUBY_SITELIBDIR%%/mikutter/core/plugin/change_account/po/vi
 @dirrm %%RUBY_SITELIBDIR%%/mikutter/core/plugin/change_account/po/ru
 @dirrm %%RUBY_SITELIBDIR%%/mikutter/core/plugin/change_account/po/ro_RO
+@dirrm %%RUBY_SITELIBDIR%%/mikutter/core/plugin/change_account/po/pt_PT
 @dirrm %%RUBY_SITELIBDIR%%/mikutter/core/plugin/change_account/po/es
 @dirrm %%RUBY_SITELIBDIR%%/mikutter/core/plugin/change_account/po/en
 @dirrm %%RUBY_SITELIBDIR%%/mikutter/core/plugin/change_account/po/el
@@ -950,6 +1001,7 @@ share/applications/mikutter.desktop
 @dirrm %%RUBY_SITELIBDIR%%/mikutter/core/plugin/bugreport/po/vi
 @dirrm %%RUBY_SITELIBDIR%%/mikutter/core/plugin/bugreport/po/ru
 @dirrm %%RUBY_SITELIBDIR%%/mikutter/core/plugin/bugreport/po/ro_RO
+@dirrm %%RUBY_SITELIBDIR%%/mikutter/core/plugin/bugreport/po/pt_PT
 @dirrm %%RUBY_SITELIBDIR%%/mikutter/core/plugin/bugreport/po/es
 @dirrm %%RUBY_SITELIBDIR%%/mikutter/core/plugin/bugreport/po/en
 @dirrm %%RUBY_SITELIBDIR%%/mikutter/core/plugin/bugreport/po/el
@@ -966,6 +1018,7 @@ share/applications/mikutter.desktop
 @dirrm %%RUBY_SITELIBDIR%%/mikutter/core/plugin/activity/po/vi
 @dirrm %%RUBY_SITELIBDIR%%/mikutter/core/plugin/activity/po/ru
 @dirrm %%RUBY_SITELIBDIR%%/mikutter/core/plugin/activity/po/ro_RO
+@dirrm %%RUBY_SITELIBDIR%%/mikutter/core/plugin/activity/po/pt_PT
 @dirrm %%RUBY_SITELIBDIR%%/mikutter/core/plugin/activity/po/es
 @dirrm %%RUBY_SITELIBDIR%%/mikutter/core/plugin/activity/po/en
 @dirrm %%RUBY_SITELIBDIR%%/mikutter/core/plugin/activity/po/el
@@ -979,6 +1032,7 @@ share/applications/mikutter.desktop
 @dirrm %%RUBY_SITELIBDIR%%/mikutter/core/plugin/achievement/po/vi
 @dirrm %%RUBY_SITELIBDIR%%/mikutter/core/plugin/achievement/po/ru
 @dirrm %%RUBY_SITELIBDIR%%/mikutter/core/plugin/achievement/po/ro_RO
+@dirrm %%RUBY_SITELIBDIR%%/mikutter/core/plugin/achievement/po/pt_PT
 @dirrm %%RUBY_SITELIBDIR%%/mikutter/core/plugin/achievement/po/es
 @dirrm %%RUBY_SITELIBDIR%%/mikutter/core/plugin/achievement/po/en
 @dirrm %%RUBY_SITELIBDIR%%/mikutter/core/plugin/achievement/po/el
