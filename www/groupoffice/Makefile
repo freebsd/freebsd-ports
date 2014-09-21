@@ -49,8 +49,6 @@ do-install:
 	@${MKDIR} ${STAGEDIR}${WWWDIR}
 	${CP} -R ${WRKSRC}/ ${STAGEDIR}${WWWDIR}
 	@${TOUCH} ${STAGEDIR}${WWWDIR}/config.php
-	@${CHOWN} ${WWWOWN} ${STAGEDIR}${WWWDIR}/config.php
-	@${CAT} ${PKGMESSAGE}
 
 create-plist:
 	@${FIND} -s ${WRKSRC}/${file} -not -type d \
