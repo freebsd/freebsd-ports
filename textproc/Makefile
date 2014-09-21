@@ -1292,6 +1292,7 @@
     SUBDIR += ruby-xmlparser
     SUBDIR += ruby-xmlscan
     SUBDIR += rubygem-albino
+    SUBDIR += rubygem-amatch
     SUBDIR += rubygem-asciidoctor
     SUBDIR += rubygem-augeas
     SUBDIR += rubygem-charlock_holmes
