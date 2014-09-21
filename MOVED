@@ -7119,7 +7119,7 @@ security/p5-openxpki-client-html-mason||2014-09-20|Has expired: security/p5-open
 math/ruby-narray_miss||2014-09-20|Removed, depended on deleted math/ruby-narray
 games/gnomechess|games/gnome-chess|2014-09-20|Renamed to match port name.
 www/ruby-fcgi||2014-09-20|Has expired: RubyForge shutdown May 15 2014
-databases/ruby-dbi|databases/rubygem-dbi|Replaced by rubygem-dbi
-databases/ruby-dbd_mysql|databases/rubygem-dbd-mysql|Replaced by rubygem-dbd-mysql
-databases/ruby-dbd_pg|databases/rubygem-dbd-pg|Replaced by rubygem-dbd-pg
-databases/ruby-dbd_sqlite|databases/rubygem-dbd-sqlite3|Replaced by rubygem-dbd-sqlite
+databases/ruby-dbi|databases/rubygem-dbi|2014-09-21|Replaced by rubygem-dbi
+databases/ruby-dbd_mysql|databases/rubygem-dbd-mysql|2014-09-21|Replaced by rubygem-dbd-mysql
+databases/ruby-dbd_pg|databases/rubygem-dbd-pg|2014-09-21|Replaced by rubygem-dbd-pg
+databases/ruby-dbd_sqlite|databases/rubygem-dbd-sqlite3|2014-09-21|Replaced by rubygem-dbd-sqlite3
