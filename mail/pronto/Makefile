@@ -34,7 +34,7 @@ SHEBANG_FILES=	cpronto.pl pronto pronto-main prontobrowser prontolock \
 
 post-patch:
 	@${REINPLACE_CMD} -E -e 's,(BIN|LIB)DIR),DESTDIR)$$(&,g' \
-		-e 's,-o root -g mail,,' \
+		-e 's,-m2755 -o root -g mail,,' \
 		${WRKSRC}/Makefile
 	@${FIND} ${WRKSRC} -type f | ${XARGS} ${REINPLACE_CMD} -e \
 	's,/usr/local,${PREFIX},g' ${WRKSRC}/Makefile
