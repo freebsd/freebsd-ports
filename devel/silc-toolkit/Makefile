@@ -30,4 +30,7 @@ THREADS_CONFIGURE_WITH=	pthreads
 IPV6_CONFIGURE_ENABLE=	ipv6
 OPTIMIZED_ASM_CONFIGURE_ENABLE=	asm
 
+post-configure:
+	@${REINPLACE_CMD} 's|-fno-regmove||' ${WRKSRC}/lib/silccrypt/Makefile
+
 .include <bsd.port.mk>
