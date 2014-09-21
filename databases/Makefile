@@ -808,7 +808,6 @@
     SUBDIR += rrdtool12
     SUBDIR += ruby-bdb
     SUBDIR += ruby-cdb
-    SUBDIR += ruby-dbi
     SUBDIR += ruby-gdbm
     SUBDIR += ruby-mysql
     SUBDIR += ruby-o_dbm
