@@ -2,12 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	sequel
-PORTVERSION=	4.13.0
+PORTVERSION=	4.14.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
-COMMENT=	The Database Toolkit for Ruby
+COMMENT=	Database Toolkit for Ruby
 
 LICENSE=	MIT
 
