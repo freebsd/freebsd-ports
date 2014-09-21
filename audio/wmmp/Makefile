@@ -3,6 +3,7 @@
 
 PORTNAME=	WMmp
 PORTVERSION=	0.10.0
+PORTREVISION=	1
 CATEGORIES=	audio windowmaker
 MASTER_SITES=	SF/musicpd/${PORTNAME}/${PORTVERSION}
 
@@ -12,7 +13,10 @@ COMMENT=	Window Maker Dockapp for MusicPD
 GNU_CONFIGURE=	yes
 USE_XORG=	x11 xpm
 
-PLIST_FILES=	bin/WMmp \
+PLIST_FILES=	"@(,kmem,2555) bin/WMmp" \
 		man/man1/WMmp.1.gz
+
+post-patch:
+	@${REINPLACE_CMD} '/SETGID_FLAGS=/d' ${WRKSRC}/configure
 
 .include <bsd.port.mk>
