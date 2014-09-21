@@ -1274,7 +1274,6 @@
     SUBDIR += rtfreader
     SUBDIR += rtfx
     SUBDIR += rubber
-    SUBDIR += ruby-amatch
     SUBDIR += ruby-deplate
     SUBDIR += ruby-diff
     SUBDIR += ruby-escape

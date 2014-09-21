@@ -7122,3 +7122,4 @@ databases/ruby-dbi|databases/rubygem-dbi|2014-09-21|Replaced by rubygem-dbi
 databases/ruby-dbd_mysql|databases/rubygem-dbd-mysql|2014-09-21|Replaced by rubygem-dbd-mysql
 databases/ruby-dbd_pg|databases/rubygem-dbd-pg|2014-09-21|Replaced by rubygem-dbd-pg
 databases/ruby-dbd_sqlite|databases/rubygem-dbd-sqlite3|2014-09-21|Replaced by rubygem-dbd-sqlite3
+textproc/ruby-amatch/textproc/rubygem-amatch||2014-09-21|Replaced by textproc/rubygem-amatch
