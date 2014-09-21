@@ -19,7 +19,6 @@ lib/libxerces-c-3.1.so
 lib/libxerces-c.so.3
 lib/libxerces-c.so
 lib/libxerces-c.a
-lib/libxerces-c.la
 include/xercesc/dom/DOM.hpp
 include/xercesc/dom/DOMAttr.hpp
 include/xercesc/dom/DOMCDATASection.hpp
