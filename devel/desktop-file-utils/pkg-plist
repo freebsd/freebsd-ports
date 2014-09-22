@@ -7,3 +7,4 @@ man/man1/desktop-file-install.1.gz
 man/man1/desktop-file-validate.1.gz
 man/man1/update-desktop-database.1.gz
 share/emacs/site-lisp/desktop-entry-mode.el
+@dir share/applications

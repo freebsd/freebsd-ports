@@ -2,6 +2,7 @@
 
 PORTNAME=	xmlcatmgr
 PORTVERSION=	2.2
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	SF
 
@@ -25,10 +26,10 @@ SUB_LIST=	XMLCATMGR=${XMLCATMGR} \
 		CATALOG_PORTS_SGML=${CATALOG_PORTS_SGML} \
 		CATALOG_PORTS_XML=${CATALOG_PORTS_XML}
 PLIST_FILES=	bin/xmlcatmgr man/man1/xmlcatmgr.1.gz
+PLIST_DIRS=	share/xml share/sgml
 PORTDOCS=	AUTHORS COPYING NEWS README TODO
 
-XMLCATMGR?=		${PREFIX}/bin/xmlcatmgr
-CATALOG_MASTER_SGML?=	${PREFIX}/share/sgml/catalog
+XMLCATMGR?=		${PREFIX}/bin/xmlcatmgrCATALOG_MASTER_SGML?=	${PREFIX}/share/sgml/catalog
 CATALOG_PORTS_SGML?=	${PREFIX}/share/sgml/catalog.ports
 CATALOG_MASTER_XML?=	${PREFIX}/share/xml/catalog
 CATALOG_PORTS_XML?=	${PREFIX}/share/xml/catalog.ports

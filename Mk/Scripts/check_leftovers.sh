@@ -89,7 +89,7 @@ while read modtype path extra; do
 			esac
 			# Don't show dirs already in plist (due to parents)
 			grep -qE \
-			    "^@(unexec rmdir \"?(%D/|${PREFIX})?${path#${PREFIX}/}[ \"]|dirrm(try)? ${path#${PREFIX}/}\$)" \
+			    "^@(unexec rmdir \"?(%D/|${PREFIX})?${path#${PREFIX}/}[ \"]|dir(rm|rmtry)? ${path#${PREFIX}/}\$)" \
 			    ${tmpplist} && continue
 		fi
 
