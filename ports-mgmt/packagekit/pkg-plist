@@ -386,44 +386,6 @@ share/mime/packages/packagekit-catalog.xml
 share/mime/packages/packagekit-package-list.xml
 share/mime/packages/packagekit-servicepack.xml
 share/polkit-1/actions/org.freedesktop.packagekit.policy
-@exec mkdir -p /var/cache/PackageKit/downloads
-@unexec rmdir /var/cache/PackageKit/downloads 2>/dev/null || true
-@unexec rmdir /var/cache/PackageKit 2>/dev/null || true
-@unexec rmdir /var/lib/PackageKit 2>/dev/null || true
-@unexec rmdir /var/lib 2>/dev/null || true
-@dirrmtry share/locale/te/LC_MESSAGES
-@dirrmtry share/locale/te
-@dirrmtry share/locale/sr@latin/LC_MESSAGES
-@dirrmtry share/locale/sr@latin
-@dirrmtry share/locale/mr/LC_MESSAGES
-@dirrmtry share/locale/mr
-@dirrmtry share/locale/bn_IN/LC_MESSAGES
-@dirrmtry share/locale/bn_IN
-@dirrmtry share/locale/as/LC_MESSAGES
-@dirrmtry share/locale/as
-@dirrm share/gtk-doc/html/PackageKit
-@dirrmtry share/gtk-doc/html
-@dirrmtry share/gtk-doc
-%%PORTS%%@dirrm share/PackageKit/website/img/thumbnails
-%%PORTS%%@dirrm share/PackageKit/website/img
-%%PORTS%%@dirrm share/PackageKit/website
-%%PORTS%%@dirrm share/PackageKit/helpers/test_spawn
-%%PORTS%%@dirrm share/PackageKit/helpers/ports/ruby_packagekit
-%%PORTS%%@dirrm share/PackageKit/helpers/ports
-%%PORTS%%@dirrm share/PackageKit/helpers
-%%PORTS%%@dirrm share/PackageKit
-@dirrm %%PYTHON_SITELIBDIR%%/packagekit
-@dirrm lib/packagekit-backend
-@dirrm include/PackageKit/packagekit-glib2
-@dirrm include/PackageKit/backend
-@dirrm include/PackageKit
-@dirrmtry etc/sysconfig
-@dirrmtry etc/profile.d
-@dirrmtry etc/cron.daily
-@dirrmtry etc/PackageKit/events/post-transaction.d
-@dirrmtry etc/PackageKit/events/pre-transaction.d
-@dirrmtry etc/PackageKit/events
-@dirrmtry etc/PackageKit
-@cwd /
-@comment /var/lib/PackageKit/transactions.db
-@cwd
+@dir /var/cache/PackageKit/downloads
+@dir /var/lib/PackageKit
+@dir /var/lib
