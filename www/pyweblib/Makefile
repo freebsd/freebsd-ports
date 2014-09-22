@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pyweblib
-PORTVERSION=	1.3.10
-PORTREVISION=	1
+PORTVERSION=	1.3.11
 CATEGORIES=	www
 MASTER_SITES=	http://www.stroeder.com/pylib/PyWebLib/download/
 
@@ -12,8 +11,8 @@ COMMENT=	Yet another web programming framework for Python
 
 LICENSE=	GPLv2
 
-USE_PYTHON=	yes
-USE_PYDISTUTILS=	yes
+USES=		python
+USE_PYTHON=	autoplist distutils
 
 PORTDOCS=	pyweblib.forms.html pyweblib.helper.html \
 		pyweblib.html pyweblib.httphelper.html \
@@ -21,6 +20,8 @@ PORTDOCS=	pyweblib.forms.html pyweblib.helper.html \
 EXAMPLES=	*.py
 
 OPTIONS_DEFINE=	DOCS
+
+PORTEXAMPLES=	*
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/cgi-bin ${STAGEDIR}${DOCSDIR}
