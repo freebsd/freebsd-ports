@@ -1,0 +1,15 @@
+--- src/bytes/Makefile.orig	2014-09-16 11:21:46 UTC
++++ src/bytes/Makefile
+@@ -19,9 +19,9 @@
+ 	$(OCAMLBUILD) $$files
+ 
+ install: all
+-	mkdir -p "$(prefix)$(OCAML_SITELIB)/bytes"
+-	cd _build/ && cp ../META $(BYTE_FILES) "$(prefix)$(OCAML_SITELIB)/bytes"
+-	cd _build/ && for f in $(NATIVE_FILES) $(NATIVE_FILES_DYNLINK); do if [ -f "$$f" ]; then cp $$f "$(prefix)$(OCAML_SITELIB)/bytes"; fi; done
++	mkdir -p "$(DESTDIR)$(prefix)$(OCAML_SITELIB)/bytes"
++	cd _build/ && cp ../META $(BYTE_FILES) "$(DESTDIR)$(prefix)$(OCAML_SITELIB)/bytes"
++	cd _build/ && for f in $(NATIVE_FILES) $(NATIVE_FILES_DYNLINK); do if [ -f "$$f" ]; then cp $$f "$(DESTDIR)$(prefix)$(OCAML_SITELIB)/bytes"; fi; done
+ 
+ uninstall: 
+ 	rm -rf "$(prefix)$(OCAML_SITELIB)/bytes"
