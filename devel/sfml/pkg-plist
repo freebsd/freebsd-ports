@@ -106,9 +106,3 @@ libdata/pkgconfig/sfml-graphics.pc
 libdata/pkgconfig/sfml-network.pc
 libdata/pkgconfig/sfml-system.pc
 libdata/pkgconfig/sfml-window.pc
-@dirrm include/SFML/Audio
-@dirrm include/SFML/Graphics
-@dirrm include/SFML/Network
-@dirrm include/SFML/System
-@dirrm include/SFML/Window
-@dirrm include/SFML
