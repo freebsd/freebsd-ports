@@ -15,12 +15,9 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 CONFLICTS_INSTALL=	nagios-plugins-*
 
-USES=		charsetfix gmake perl5 libtool
+USES=		charsetfix gmake perl5 libtool autoreconf
 CHARSETFIX_MAKEFILEIN=Makefile.am
 USE_SUBMAKE=	yes
-USE_AUTOTOOLS=	aclocal autoconf automake autoheader
-ACLOCAL_ARGS=	-I m4 -I gl/m4
-AUTOMAKE_ARGS=	--add-missing
 
 OPTIONS_DEFINE=	QSTAT FPING NETSNMP RADIUS MYSQL PGSQL LDAP IPV6 JAIL NLS DBI EXTRAOPTS
 OPTIONS_SINGLE=	DNS
@@ -100,7 +97,7 @@ MYSQL_USE=	mysql=yes
 MYSQL_CONFIGURE_ON=	--with-mysql=${LOCALBASE}
 MYSQL_CONFIGURE_OFF=	--without-mysql
 
-PGSQL_USE=	pgsql=yes
+PGSQL_USES=	pgsql
 PGSQL_CONFIGURE_ON=	--with-pgsql=${LOCALBASE}
 PGSQL_CONFIGURE_OFF=	--without-pgsql
 
@@ -109,6 +106,7 @@ LDAP_CONFIGURE_WITH=	ldap
 
 NLS_USES=	gettext
 NLS_CONFIGURE_ENABLE=	nls
+NLS_USES_OFF=	gettext:build
 
 DBI_LIB_DEPENDS=	libdbi.so:${PORTSDIR}/databases/libdbi
 DBI_CONFIGURE_WITH=	dbi
