@@ -187,4 +187,3 @@ lib/libMyGUIEngine.so.3
 lib/libMyGUIEngine.so.3.2.0
 lib/libPlugin_StrangeButton.so
 libdata/pkgconfig/MYGUI.pc
-@dirrm include/MYGUI
