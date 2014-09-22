@@ -20,12 +20,11 @@ EXTRACT_CMD=	${SH}
 EXTRACT_BEFORE_ARGS=
 EXTRACT_AFTER_ARGS=
 
-.include <bsd.port.pre.mk>
-
-PLIST_FILES+=	"@cwd /"
-PLIST_FILES+=	${KMODDIR:C,^/,,}/${PORTNAME}.ko
+PLIST_FILES+=	${KMODDIR}/${PORTNAME}.ko
 
 CFLAGS+=	${DEBUG_FLAGS}
+
+.include <bsd.port.options.mk>
 
 .if ${ARCH} == "powerpc" || ${ARCH} == "sparc64"
 BROKEN=		Does not compile on powerpc or sparc64
@@ -34,4 +33,4 @@ BROKEN=		Does not compile on powerpc or sparc64
 do-install:
 	${INSTALL} ${WRKSRC}/${PORTNAME}.ko ${STAGEDIR}${KMODDIR}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
