@@ -122,10 +122,3 @@ man/man1/word-list-compress.1.gz
 %%NLS%%share/locale/vi/LC_MESSAGES/aspell.mo
 %%NLS%%share/locale/wa/LC_MESSAGES/aspell.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/aspell.mo
-@dirrm include/pspell
-%%NLS%%@dirrmtry share/locale/rw/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/rw
-%%NLS%%@dirrmtry share/locale/ast/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/ast
-@dirrmtry %%DATADIR%%
-@dirrm lib/aspell-%%VER%%
