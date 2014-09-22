@@ -18,6 +18,7 @@ USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
+INSTALL_TARGET=	install-strip
 
 .if ${MACHINE_CPU:Mmmx}
 CONFIGURE_ARGS=	--enable-mmx

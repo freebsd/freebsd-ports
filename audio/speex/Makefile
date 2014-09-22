@@ -19,6 +19,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-ogg-dir=${LOCALBASE}
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
+INSTALL_TARGET=	install-strip
 
 .include <bsd.port.pre.mk>
 
@@ -34,9 +35,5 @@ post-patch:
 		${WRKSRC}/*/*.h
 	@${REINPLACE_CMD} -e 's| in -lgnugetopt||g ; \
 		 s|LIBS="-lgnugetopt|LIBS="|g' ${WRKSRC}/configure
-
-post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libspeex.so.1
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libspeexdsp.so.1
 
 .include <bsd.port.post.mk>
