@@ -38,7 +38,8 @@ SQUID_STABLE_VER=	13
 
 CONFLICTS_INSTALL=	squid-3*
 
-USES=		perl5 tar:bzip2 shebangfix
+USES=		cpe perl5 tar:bzip2 shebangfix
+CPE_VENDOR=	squid-cache
 SHEBANG_FILES=	scripts/*.pl contrib/*.pl src/*.pl tools/*.pl\
 		helpers/external_acl/kerberos_ldap_group/cert_tool
 GNU_CONFIGURE=	yes
