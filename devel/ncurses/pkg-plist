@@ -979,5 +979,3 @@ share/misc/tabset/vt100
 share/misc/tabset/vt300
 share/misc/terminfo.db
 @exec find %D/share/misc -name "*.terminfo" -exec %D/bin/tic {} \;
-@dirrmtry share/misc/tabset
-@dirrm include/ncurses
