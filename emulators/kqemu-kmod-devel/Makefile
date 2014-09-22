@@ -35,10 +35,7 @@ OPTIONS_DEFINE=	DOCS
 
 PORTDOCS=	kqemu-doc.html kqemu-tech.html
 PLIST_FILES=	"include/kqemu/kqemu.h"
-PLIST_FILES+=	"@dirrm include/kqemu"
-PLIST_FILES+=	"@cwd /"
-PLIST_FILES+=	${KMODDIR:C,^/,,}/kqemu.ko
-PLIST_FILES+=	"@cwd ${PREFIX}"
+PLIST_FILES+=	${KMODDIR}/kqemu.ko
 
 MAKEFILE=	Makefile.freebsd
 
