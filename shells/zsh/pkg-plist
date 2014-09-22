@@ -40,8 +40,7 @@ bin/zsh-%%ZSH_VER%%
 %%NO_STATIC%%@dirrm lib/zsh/%%ZSH_VER%%/zsh
 %%NO_STATIC%%@dirrm lib/zsh/%%ZSH_VER%%
 %%NO_STATIC%%@dirrm lib/zsh
-@exec mkdir -p %D/%%DATADIR%%/site-functions 2> /dev/null || true
-@dirrmtry %%DATADIR%%/site-functions
+@dir %%DATADIR%%/site-functions
 %%DATADIR%%/%%ZSH_VER%%/functions/Calendar.zwc
 %%DATADIR%%/%%ZSH_VER%%/functions/Calendar/age
 %%DATADIR%%/%%ZSH_VER%%/functions/Calendar/calendar
@@ -1122,35 +1121,3 @@ man/man1/zshroadmap.1.gz
 man/man1/zshtcpsys.1.gz
 man/man1/zshzftpsys.1.gz
 man/man1/zshzle.1.gz
-@dirrm %%DATADIR%%/%%ZSH_VER%%/functions/Zle
-@dirrm %%DATADIR%%/%%ZSH_VER%%/functions/Zftp
-@dirrm %%DATADIR%%/%%ZSH_VER%%/functions/VCS_Info/Backends
-@dirrm %%DATADIR%%/%%ZSH_VER%%/functions/VCS_Info
-@dirrm %%DATADIR%%/%%ZSH_VER%%/functions/TCP
-@dirrm %%DATADIR%%/%%ZSH_VER%%/functions/Prompts
-@dirrm %%DATADIR%%/%%ZSH_VER%%/functions/Newuser
-@dirrm %%DATADIR%%/%%ZSH_VER%%/functions/Misc
-@dirrm %%DATADIR%%/%%ZSH_VER%%/functions/MIME
-@dirrm %%DATADIR%%/%%ZSH_VER%%/functions/Exceptions
-@dirrm %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Zsh
-@dirrm %%DATADIR%%/%%ZSH_VER%%/functions/Completion/X
-@dirrm %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix
-@dirrm %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Solaris
-@dirrm %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Redhat
-@dirrm %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Mandriva
-@dirrm %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Linux
-@dirrm %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Debian
-@dirrm %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Darwin
-@dirrm %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Cygwin
-@dirrm %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Base
-@dirrm %%DATADIR%%/%%ZSH_VER%%/functions/Completion/BSD
-@dirrm %%DATADIR%%/%%ZSH_VER%%/functions/Completion/AIX
-@dirrm %%DATADIR%%/%%ZSH_VER%%/functions/Completion/openSUSE
-@dirrm %%DATADIR%%/%%ZSH_VER%%/functions/Completion
-@dirrm %%DATADIR%%/%%ZSH_VER%%/functions/Calendar
-@dirrm %%DATADIR%%/%%ZSH_VER%%/functions/Chpwd
-@dirrm %%DATADIR%%/%%ZSH_VER%%/functions
-@dirrm %%DATADIR%%/%%ZSH_VER%%/help
-@dirrm %%DATADIR%%/%%ZSH_VER%%/scripts
-@dirrm %%DATADIR%%/%%ZSH_VER%%
-@dirrmtry %%DATADIR%%
