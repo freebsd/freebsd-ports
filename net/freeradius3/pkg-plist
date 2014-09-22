@@ -534,6 +534,7 @@ sbin/radmin
 %%EXAMPLESDIR%%/raddb/mods-config/preprocess/hints
 %%EXAMPLESDIR%%/raddb/mods-config/preprocess/huntgroups
 %%RLMPYTHON%%%%EXAMPLESDIR%%/raddb/mods-config/python/example.py
+%%RLMPYTHON%%%%EXAMPLESDIR%%/raddb/mods-config/python/radiusd.py
 %%EXAMPLESDIR%%/raddb/mods-config/sql/counter/mysql/dailycounter.conf
 %%EXAMPLESDIR%%/raddb/mods-config/sql/counter/mysql/expire_on_login.conf
 %%EXAMPLESDIR%%/raddb/mods-config/sql/counter/mysql/monthlycounter.conf
