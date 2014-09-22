@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libisocodes
-PORTVERSION=	1.2
+PORTVERSION=	1.2.1
 CATEGORIES=	misc
 MASTER_SITES=	http://pkg-isocodes.alioth.debian.org/downloads/
 
@@ -12,13 +12,15 @@ COMMENT=	Interaction library for iso-codes
 LICENSE=	GPLv3
 
 BUILD_DEPENDS=	valac:${PORTSDIR}/lang/vala
-LIB_DEPENDS=	libgee.so:${PORTSDIR}/devel/libgee06
+LIB_DEPENDS=	libgee-0.8.so:${PORTSDIR}/devel/libgee
 RUN_DEPENDS=	iso-codes>=0:${PORTSDIR}/misc/iso-codes
 
 GNU_CONFIGURE=	yes
 USES=		gettext gmake libtool pathfix pkgconfig tar:xz
 USE_GNOME=	glib20 gnomehier introspection:build libxml2
 INSTALL_TARGET=	install-strip
+
+PLIST_SUB+=	VERSION=${PORTVERSION}
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/share/xml/|${LOCALBASE}/share/xml/|g' \

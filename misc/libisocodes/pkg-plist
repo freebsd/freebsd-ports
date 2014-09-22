@@ -1,11 +1,11 @@
 include/libisocodes.h
-lib/girepository-1.0/libisocodes-1.2.typelib
+lib/girepository-1.0/libisocodes-%%VERSION%%.typelib
 lib/libisocodes.a
 lib/libisocodes.so
 lib/libisocodes.so.1
 lib/libisocodes.so.1.1.0
 libdata/pkgconfig/libisocodes.pc
-share/gir-1.0/libisocodes-1.2.gir
+share/gir-1.0/libisocodes-%%VERSION%%.gir
 share/locale/cs/LC_MESSAGES/libisocodes.mo
 share/locale/da/LC_MESSAGES/libisocodes.mo
 share/locale/de/LC_MESSAGES/libisocodes.mo
