@@ -13,11 +13,9 @@ LICENSE=	GPLv3
 
 PLIST_FILES=	bin/ioping man/man1/ioping.1.gz
 
-MAKE_ENV=	VERSION=${PORTVERSION}
-
 do-build:
-	cd ${WRKSRC}; \
-	${SETENV} ${MAKE_ENV} ${CC} ${CFLAGS} -DVERSION=${PORTVERSION} ioping.c -o ioping
+	(cd ${WRKSRC} && ${CC} ${CFLAGS} -DVERSION=${PORTVERSION} ioping.c \
+		-o ioping ${LDFLAGS} -lm
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/ioping ${STAGEDIR}${PREFIX}/bin
