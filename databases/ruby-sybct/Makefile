@@ -3,6 +3,7 @@
 
 PORTNAME=	sybct
 PORTVERSION=	0.2.12
+PORTREVISION=	1
 CATEGORIES=	databases ruby
 MASTER_SITES=	http://enjoy1.bb-east.ne.jp/~tetsu/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
@@ -12,7 +13,7 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Ruby module for accessing Sybase databases
 
-LIB_DEPENDS=	libtds.so:${PORTSDIR}/databases/freetds
+LIB_DEPENDS=	libsybdb.so:${PORTSDIR}/databases/freetds
 
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
