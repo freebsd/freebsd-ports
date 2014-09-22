@@ -1026,7 +1026,6 @@
     SUBDIR += libgee06
     SUBDIR += libgetline
     SUBDIR += libghthash
-    SUBDIR += libgii
     SUBDIR += libgit2
     SUBDIR += libglade2
     SUBDIR += libglade2-reference
