@@ -26,8 +26,3 @@ bin/uniconvw
 share/applications/uniconvw.desktop
 share/pixmaps/uniconvw.png
 share/pixmaps/uniconvw.xpm
-@dirrm %%PYTHON_SITELIBDIR%%/uniconvw/uc_win
-@dirrm %%PYTHON_SITELIBDIR%%/uniconvw/uc_gtk
-@dirrm %%PYTHON_SITELIBDIR%%/uniconvw/resources
-@dirrm %%PYTHON_SITELIBDIR%%/uniconvw
-@dirrm %%PYTHON_SITELIBDIR%%
