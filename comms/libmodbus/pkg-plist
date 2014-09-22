@@ -57,5 +57,3 @@ man/man3/modbus_write_bits.3.gz
 man/man3/modbus_write_register.3.gz
 man/man3/modbus_write_registers.3.gz
 man/man7/libmodbus.7.gz
-@dirrmtry include/modbus
-@dirrmtry include/libmodbus
