@@ -21,7 +21,7 @@ you update your ports collection, before attempting any port upgrades.
        OVERRIDE_LINUX_NONBASE_PORTS=c6
   3. Make sure no linux application is running.
   4. Set appropriate sysctl (compat.linux.osrelease=2.6.18).
-  5. Install emulation/linux-c6.
+  5. Install emulators/linux-c6.
 
   That should be enough in most circumstances. If you experience difficulties,
   please be sure to expand step 1 to:
