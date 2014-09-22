@@ -19,5 +19,3 @@ etc/twms.conf.default
 %%DATADIR%%/irs_nxt.jpg
 %%DATADIR%%/yahoo_nxt.jpg
 %%DATADIR%%/yandex_nxt.jpg
-@dirrm %%DATADIR%%
-@dirrm %%PYTHON_SITELIBDIR%%/twms
