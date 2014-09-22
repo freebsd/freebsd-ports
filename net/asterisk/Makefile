@@ -82,7 +82,7 @@ ODBC_LIB_DEPENDS=	libodbc.so:${PORTSDIR}/databases/unixODBC \
 			libltdl.so:${PORTSDIR}/devel/libltdl
 FREETDS_CONFIGURE_ON=	--with-tds=${LOCALBASE}
 FREETDS_CONFIGURE_OFF=	--without-tds
-FREETDS_LIB_DEPENDS=	libtds.so:${PORTSDIR}/databases/freetds
+FREETDS_LIB_DEPENDS=	libsybdb.so:${PORTSDIR}/databases/freetds
 PGSQL_CONFIGURE_WITH=	postgres
 PGSQL_USES=		pgsql
 MYSQL_CONFIGURE_WITH=	mysqlclient
