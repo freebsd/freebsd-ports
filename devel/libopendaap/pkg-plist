@@ -6,4 +6,3 @@ lib/libopendaap.so.0
 lib/libopendaap.so.0.1.0
 libdata/pkgconfig/opendaap.pc
 man/man3/libopendaap.3.gz
-@dirrm include/daap
