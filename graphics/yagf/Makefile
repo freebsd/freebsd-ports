@@ -31,6 +31,10 @@ USE_QT4=	corelib gui imageformats linguist_build \
 CPPFLAGS+=	-I${LOCALBASE}/include
 CFLAGS+=	-I${LOCALBASE}/include
 
+PLIST_FILES=	bin/yagf lib/yagf/libxspreload.so share/applications/YAGF.desktop\
+		share/icons/hicolor/96x96/apps/yagf.png share/pixmaps/yagf.png
+PORTDATA=	*
+
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MCUNEIFORM}
