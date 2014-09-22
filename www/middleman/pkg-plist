@@ -4,7 +4,4 @@ bin/mman
 man/man8/mman.8.gz
 %%PORTDOCS%%%%DOCSDIR%%/README.html
 %%PORTDOCS%%%%DOCSDIR%%/filter.pl
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@cwd /
-@exec mkdir -p %%MMAN_CACHE%%
-@dirrmtry %%MMAN_CACHE%%
+@dir %%MMAN_CACHE%%
