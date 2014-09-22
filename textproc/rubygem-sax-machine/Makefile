@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	sax-machine
-PORTVERSION=	0.2.1
+PORTVERSION=	1.0.0
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
