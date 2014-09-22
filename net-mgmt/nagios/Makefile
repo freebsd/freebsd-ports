@@ -19,7 +19,6 @@ PORTSCOUT=	limit:^3.
 
 USES=		iconv perl5 uidfix
 USE_PERL5=	build
-USE_AUTOTOOLS=	autoconf
 USE_PHP=	yes
 USE_RC_SUBR=	nagios
 
@@ -34,7 +33,6 @@ CONFIGURE_ARGS=	--with-command-user=${NAGIOSUSER} \
 		--with-cgiurl=${NAGIOSCGIURL} \
 		--sbindir=${PREFIX}/${NAGIOSWWWDIR}/cgi-bin \
 		--libexecdir=${PREFIX}/libexec/nagios \
-		--datarootdir=${PREFIX}/${NAGIOSWWWDIR} \
 		--datadir=${PREFIX}/${NAGIOSWWWDIR} \
 		--sysconfdir=${PREFIX}/etc/nagios \
 		--localstatedir=${NAGIOSDIR} \
@@ -101,6 +99,7 @@ post-extract:
 .include <bsd.port.options.mk>
 
 post-patch:
+	@${REINPLACE_CMD} '/^INSTALL_OPTS=/d' ${WRKSRC}/configure
 .if ${PORT_OPTIONS:MUNHANDLED_HACK}
 	@${REINPLACE_CMD} -e 's#;serviceprops=42\&#;serviceprops=10\&#g' \
 		-e 's#;hostprops=42\"#;hostprops=10\"#g' ${WRKSRC}/html/side.php
