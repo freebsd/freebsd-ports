@@ -26,7 +26,8 @@ CPPFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/openh323
 CFLAGS+=	-I${LOCALBASE}/include
 USE_GCC=	yes
 USE_GNOME=	libxml2
-USES=		bison gmake
+USES=		bison cpe gmake
+CPE_VENDOR=	digium
 USE_RC_SUBR=	asterisk
 MAKE_ENV=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 		PTHREAD_LIBS="${PTHREAD_LIBS}" \
