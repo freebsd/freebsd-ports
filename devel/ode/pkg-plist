@@ -23,4 +23,3 @@ include/ode/rotation.h
 include/ode/timer.h
 lib/libode.a
 libdata/pkgconfig/ode.pc
-@dirrm include/ode
