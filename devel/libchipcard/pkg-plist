@@ -76,15 +76,3 @@ share/chipcard/cards/starcoscard.xml
 share/chipcard/cards/zkacard.xml
 share/chipcard/drivers/cyberjack_pcsc.xml
 share/chipcard/drivers/generic_pcsc.xml
-@dirrm share/chipcard/drivers
-@dirrm share/chipcard/cards/generic_pcsc
-@dirrm share/chipcard/cards/cyberjack_pcsc
-@dirrm share/chipcard/cards
-@dirrm share/chipcard/apps
-@dirrm share/chipcard
-@dirrm include/libchipcard5/chipcard/sharedstuff
-@dirrm include/libchipcard5/chipcard/ct
-@dirrm include/libchipcard5/chipcard/cards
-@dirrm include/libchipcard5/chipcard
-@dirrm include/libchipcard5
-@dirrm etc/chipcard
