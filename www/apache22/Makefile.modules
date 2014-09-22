@@ -18,19 +18,6 @@
 
 .if defined(_PREMKINCLUDED)
 
-# check if APR was build with thread support
-.if exists(${APR_CONFIG})
-APR_LIBS!=	${SH} ${APR_CONFIG} --libs | ${SED} -e 's/-//g'
-.  if defined(APR_LIBS) && !empty(APR_LIBS)
-_T=pthread
-.    for lib in ${APR_LIBS}
-. 	if ${_T:M${lib}}
-APR_HAS_THREADS=	yes
-.	endif
-.    endfor
-.  endif
-.endif	# exists APR_CONFIG
-
 # check if APR-util module exists
 .if exists(${APU_CONFIG})
 .  if ${PORT_OPTIONS:MLDAP} || ${PORT_OPTIONS:MAUTHNZ_LDAP}
@@ -70,13 +57,10 @@ PKGNAMESUFFIX=		-${WITH_MPM}-mpm
 
 .if ${WITH_MPM} == "worker" || ${WITH_MPM} == "event"
 PORT_OPTIONS+=		CGID
-.if ${PORT_OPTIONS:MCGI}
+.  if ${PORT_OPTIONS:MCGI}
 IGNORE=	When using a multi-threaded MPM, the module CGID should be used in place CGI. \
 	Please de-select CGI and select CGID instead. \
 	See http://httpd.apache.org/docs/2.2/mod/mod_cgi.html
-.endif
-.if exists(${APR_CONFIG}) && !defined(APR_HAS_THREADS)
-IGNORE=	requires APR threads. Please rebuild APR with THREAD support
 .  endif
 .endif
 # =============================================
@@ -108,15 +92,6 @@ IGNORE=	AUTH_BASIC and AUTH_DIGEST need at least one AUTHN provider
 .if ${PORT_OPTIONS:MAUTH_BASIC}
 .  if !${APACHE_MODULES:MAUTHZ*}
 IGNORE=	AUTH_BASIC need at least one AUTHZ provider
-.  endif
-.endif
-
-.if defined(APR_HAS_THREADS)
-CFLAGS+=	${PTHREAD_CFLAGS}
-LDFLAGS+=	${PTHREAD_LIBS}
-.else
-.  if exists(${APR_CONFIG}) && ${PORT_OPTIONS:MMEM_CACHE}
-IGNORE=	MEM_CACHE requires APR threads. Please rebuild APR with THREAD support
 .  endif
 .endif
 

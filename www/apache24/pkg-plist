@@ -1,7 +1,3 @@
-@comment keep the next three lines on top (only required for old pkg_... tools)
-@exec mkdir -p %D/%%ETCDIR%%/envvars.d
-@exec mkdir -p %D/%%ETCDIR%%/extra
-@exec mkdir -p %D/%%ETCDIR%%/Includes
 bin/ab
 bin/htdbm
 bin/htdigest
@@ -548,22 +544,7 @@ sbin/split-logfile
 %%WWWDIR%%/icons/world2.png
 %%WWWDIR%%/icons/xml.png
 @unexec rm -f %D/%%ETCDIR%%/httpd.conf.bak 2> /dev/null || true
-@dirrmtry %%ETCDIR%%/Includes
-@dirrmtry %%ETCDIR%%/envvars.d
-@dirrmtry %%ETCDIR%%/extra
-@dirrmtry %%ETCDIR%%/modules.d
-@dirrmtry %%ETCDIR%%
-@dirrmtry include/apache24
-@dirrmtry libexec/apache24
-@dirrm %%DATADIR%%/build
-@dirrm %%DATADIR%%
-@dirrm %%EXAMPLESDIR%%/extra
-@dirrm %%EXAMPLESDIR%%/modules.d
-@dirrm %%EXAMPLESDIR%%
-@dirrmtry %%WWWDIR%%/cgi-bin
-@dirrmtry %%WWWDIR%%/data
-@dirrm %%WWWDIR%%/error/include
-@dirrm %%WWWDIR%%/error
-@dirrm %%WWWDIR%%/icons/small
-@dirrm %%WWWDIR%%/icons
-@dirrmtry %%WWWDIR%%
+@dir %%ETCDIR%%/Includes
+@dir %%ETCDIR%%/envvars.d
+@dir %%ETCDIR%%/extra
+@dir %%WWWDIR%%/data

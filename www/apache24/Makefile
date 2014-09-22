@@ -2,7 +2,7 @@
 
 PORTNAME=	apache24
 PORTVERSION=	2.4.10
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www ipv6
 MASTER_SITES=	${MASTER_SITE_APACHE_HTTPD}
 DISTNAME=	httpd-${PORTVERSION}
@@ -12,7 +12,7 @@ MAINTAINER=	apache@FreeBSD.org
 COMMENT=	Version 2.4.x of Apache web server
 
 LIB_DEPENDS=	libexpat.so:${PORTSDIR}/textproc/expat2 \
-		libapr-1.so.0.5.1:${PORTSDIR}/devel/apr1 \
+		libapr-1.so:${PORTSDIR}/devel/apr1 \
 		libpcre.so:${PORTSDIR}/devel/pcre
 
 CONFLICTS_INSTALL=	caudium14-1.* \
@@ -154,14 +154,13 @@ post-install:
 # place for module configuration samples
 	@${MKDIR} ${STAGEDIR}/${EXAMPLESDIR}/modules.d
 	${INSTALL_DATA} ${FILESDIR}/README_modules.d ${STAGEDIR}${EXAMPLESDIR}/modules.d
-
-# suppress warning for non binary files
-	-@${STRIP_CMD} ${STAGEDIR}${PREFIX}/sbin/* \
-		${STAGEDIR}${PREFIX}/bin/* \
-		${STAGEDIR}${PREFIX}/libexec/apache24/*.so 2>/dev/null
+# strip returns an error for non binary files, but we have a big mix
+	-${STRIP_CMD} ${STAGEDIR}${PREFIX}/sbin/* 2>/dev/null
+	-${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/*
+	-${STRIP_CMD} ${STAGEDIR}${PREFIX}/libexec/apache24/mod_*.so
 
 .if ${PORT_OPTIONS:MLOG_FORENSIC}
-	@${INSTALL_SCRIPT} ${WRKSRC}/support/check_forensic ${STAGEDIR}${PREFIX}/sbin
+	${INSTALL_SCRIPT} ${WRKSRC}/support/check_forensic ${STAGEDIR}${PREFIX}/sbin
 .endif
 
 # maintainer only, check for new modules
