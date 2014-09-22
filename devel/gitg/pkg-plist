@@ -66,24 +66,3 @@ share/icons/hicolor/scalable/apps/gitg.svg
 %%NLS%%share/locale/sv/LC_MESSAGES/gitg.mo
 %%NLS%%share/locale/uk/LC_MESSAGES/gitg.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/gitg.mo
-@dirrmtry share/icons/hicolor/scalable/apps
-@dirrmtry share/icons/hicolor/scalable
-@dirrmtry share/icons/hicolor/48x48/apps
-@dirrmtry share/icons/hicolor/48x48
-@dirrmtry share/icons/hicolor/32x32/apps
-@dirrmtry share/icons/hicolor/32x32
-@dirrmtry share/icons/hicolor/24x24/apps
-@dirrmtry share/icons/hicolor/24x24
-@dirrmtry share/icons/hicolor/22x22/apps
-@dirrmtry share/icons/hicolor/22x22
-@dirrmtry share/icons/hicolor/16x16/apps
-@dirrmtry share/icons/hicolor/16x16
-@dirrmtry share/icons/hicolor
-@dirrmtry share/icons
-@dirrm %%DATADIR%%/ui
-@dirrm %%DATADIR%%/styles
-@dirrm %%DATADIR%%/language-specs
-@dirrm %%DATADIR%%/icons
-@dirrm %%DATADIR%%
-@dirrm include/libgitg-1.0/libgitg
-@dirrm include/libgitg-1.0
