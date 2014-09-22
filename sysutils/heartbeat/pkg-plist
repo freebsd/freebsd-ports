@@ -1,26 +1,12 @@
 bin/cl_respawn
-@group %%GROUP%%
-@mode 2555
-bin/cl_status
-@group
-@mode
+@(,%%GROUP%%,2555) bin/cl_status
 %%MGMT%%bin/hb_gui
 etc/ha.d/README.config
-%%PORTDOCS%%@unexec if cmp -s %D/etc/ha.d/authkeys.sample %D/etc/ha.d/authkeys; then rm -f %D/etc/ha.d/authkeys; fi
-@mode 0600
-%%PORTDOCS%%etc/ha.d/authkeys.sample
-@mode
-%%PORTDOCS%%@exec if [ ! -f %D/etc/ha.d/authkeys ]; then cp -p %D/%F %B/authkeys; fi
-%%PORTDOCS%%@unexec if cmp -s %D/etc/ha.d/ha.cf.sample %D/etc/ha.d/ha.cf; then rm -f %D/etc/ha.d/ha.cf; fi
-%%PORTDOCS%%etc/ha.d/ha.cf.sample
-%%PORTDOCS%%@exec if [ ! -f %D/etc/ha.d/ha.cf ]; then cp -p %D/%F %B/ha.cf; fi
+%%PORTDOCS%%@sample(,,0600) etc/ha.d/authkeys.sample
+%%PORTDOCS%%@sample etc/ha.d/ha.cf.sample
 etc/ha.d/harc
-%%PORTDOCS%%@unexec if cmp -s %D/etc/ha.d/logd.cf.sample %D/etc/ha.d/logd.cf; then rm -f %D/etc/ha.d/logd.cf; fi
-%%PORTDOCS%%etc/ha.d/logd.cf.sample
-%%PORTDOCS%%@exec if [ ! -f %D/etc/ha.d/logd.cf ]; then cp -p %D/%F %B/logd.cf; fi
-%%LDIRECTORD%%@unexec if cmp -s %D/etc/ha.d/ldirectord.cf.sample %D/etc/ha.d/ldirectord.cf; then rm -f %D/etc/ha.d/ldirectord.cf; fi
-%%LDIRECTORD%%etc/ha.d/ldirectord.cf.sample
-%%LDIRECTORD%%@exec if [ ! -f %D/etc/ha.d/ldirectord.cf ]; then cp -p %D/%F %B/ldirectord.cf; fi
+%%PORTDOCS%%@sample etc/ha.d/logd.cf.sample
+%%LDIRECTORD%%@sample etc/ha.d/ldirectord.cf.sample
 etc/ha.d/rc.d/ask_resources
 etc/ha.d/rc.d/hb_takeover
 etc/ha.d/rc.d/ip-request
@@ -606,78 +592,19 @@ sbin/stonith
 %%DATADIR%%/stonithdtest/STONITHDBasicSanityCheck
 %%MGMT%%share/locale/zh_CN/LC_MESSAGES/haclient.mo
 %%DATADIR%%/utillib.sh
-@dirrm %%DATADIR%%/stonithdtest
-@dirrm %%DATADIR%%/lrmtest/testcases
-@dirrm %%DATADIR%%/lrmtest
-@dirrm %%DATADIR%%/cts
-%%MGMT%%@dirrm share/heartbeat-gui
-@dirrm %%DATADIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm lib/stonith/plugins/stonith2
-@dirrm lib/stonith/plugins/external
-@dirrm lib/stonith/plugins
-@dirrm lib/stonith
-@dirrm lib/pils/plugins/InterfaceMgr
-@dirrm lib/pils/plugins
-@dirrm lib/pils
-@dirrm lib/heartbeat/stonithdtest
-@dirrm lib/heartbeat/plugins/tiebreaker
-@dirrm lib/heartbeat/plugins/test
-@dirrm lib/heartbeat/plugins/quorumd
-@dirrm lib/heartbeat/plugins/quorum
-@dirrm lib/heartbeat/plugins/RAExec
-@dirrm lib/heartbeat/plugins/HBcompress
-@dirrm lib/heartbeat/plugins/HBcomm
-@dirrm lib/heartbeat/plugins/HBauth
-@dirrm lib/heartbeat/plugins/AppHBNotification
-@dirrm lib/heartbeat/plugins
-%%MGMT%%@dirrm lib/heartbeat-gui
-@dirrm lib/heartbeat
-@dirrm include/stonith
-@dirrm include/saf
-@dirrm include/pils
-@dirrm include/ocf
-%%MGMT%%@dirrm include/heartbeat/mgmt
-@dirrm include/heartbeat/lrm
-@dirrm include/heartbeat/fencing
-@dirrm include/heartbeat/crm/pengine
-@dirrm include/heartbeat/crm/common
-@dirrm include/heartbeat/crm
-@dirrm include/heartbeat
-@dirrm include/clplumbing
-@dirrmtry etc/ocf/resource.d/heartbeat
-@dirrmtry etc/ocf/resource.d
-@dirrmtry etc/ocf
-@dirrmtry etc/logrotate.d
-@dirrmtry etc/ha.d/resource.d
-@dirrmtry etc/ha.d/rc.d
-@dirrmtry etc/ha.d
-@unexec rmdir "/var/lib/heartbeat/cores/%%USER%%" >/dev/null 2>&1 || :
-@exec install -d -m 700 -o %%USER%% /var/lib/heartbeat/cores/%%USER%%
-@unexec rmdir "/var/lib/heartbeat/cores/nobody" >/dev/null 2>&1 || :
-@exec install -d -m 700 -o nobody /var/lib/heartbeat/cores/nobody
-@unexec rmdir "/var/lib/heartbeat/cores/root" >/dev/null 2>&1 || :
-@exec install -d -m 700 /var/lib/heartbeat/cores/root
-@unexec rmdir "/var/lib/heartbeat/cores" >/dev/null 2>&1 || :
-@exec install -d -m 755 /var/lib/heartbeat/cores
-@unexec rmdir "/var/lib/heartbeat/crm" >/dev/null 2>&1 || :
-@exec install -d -m 750 -o %%USER%% -g %%GROUP%% /var/lib/heartbeat/crm
-@unexec rmdir "/var/lib/heartbeat/fencing" >/dev/null 2>&1 || :
-@exec install -d -m 770 -g %%GROUP%% /var/lib/heartbeat/fencing
-@unexec rmdir "/var/lib/heartbeat/lrm" >/dev/null 2>&1 || :
-@exec install -d -m 770 -g %%GROUP%% /var/lib/heartbeat/lrm
-%%MGMT%%@unexec rmdir "/var/lib/heartbeat/mgmt" >/dev/null 2>&1 || :
-%%MGMT%%@exec install -d -m 770 -g %%GROUP%% /var/lib/heartbeat/mgmt
-@unexec rmdir "/var/lib/heartbeat/pengine" >/dev/null 2>&1 || :
-@unexec rmdir "/var/lib/heartbeat" >/dev/null 2>&1 || :
-@unexec rmdir "/var/lib" >/dev/null 2>&1 || :
-@unexec rmdir "/var/run/heartbeat/pengine" >/dev/null 2>&1 || :
-@exec install -d -m 750 -o %%USER%% -g %%GROUP%% /var/run/heartbeat/pengine
-@unexec rmdir "/var/run/heartbeat/ccm" >/dev/null 2>&1 || :
-@exec install -d -m 750 -o %%USER%% -g %%GROUP%% /var/run/heartbeat/ccm
-@unexec rmdir "/var/run/heartbeat/crm" >/dev/null 2>&1 || :
-@exec install -d -m 750 -o %%USER%% -g %%GROUP%% /var/run/heartbeat/crm
-@unexec rmdir "/var/run/heartbeat" >/dev/null 2>&1 || :
-@exec install -d -m 750 -o %%USER%% -g %%GROUP%% /var/run/heartbeat
-@cwd /
-var/run/heartbeat.pid
+@dir(%%USER%%,,700) /var/lib/heartbeat/cores/%%USER%%
+@dir(nobody,,700) /var/lib/heartbeat/cores/nobody
+@dir(,,700) /var/lib/heartbeat/core/root
+@dir /var/lib/heartbeat/cores/
+@dir(%%USER%%,,750) /var/lib/heartbeat/crm/
+@dir(,%%GROUP%%,770) /var/lib/heartbeat/fencing/
+@dir(,%%GROUP%%,770) /var/lib/heartbeat/lrm/
+@dir(,%%GROUP%%,770) /var/lib/heartbeat/mgmt/
+@dir /var/lib/heartbeat/pengine
+@dir /var/lib/heartbeat/
+@dir /var/lib/
+@dir(%%USER%%,%%GROUP%%,750) /var/run/heartbeat/pengine
+@dir(%%USER%%,%%GROUP%%,750) /var/run/heartbeat/ccm
+@dir(%%USER%%,%%GROUP%%,750) /var/run/heartbeat/crm
+@dir(%%USER%%,%%GROUP%%,750) /var/run/heartbeat
+/var/run/heartbeat.pid

@@ -2,6 +2,4 @@ bin/downtimes
 man/man1/downtimes.1.gz
 man/man8/downtimed.8.gz
 sbin/downtimed
-@cwd /
-@exec mkdir -p /var/db/downtimed
-@dirrmtry /var/db/downtimed
+@dir /var/db/downtimed
