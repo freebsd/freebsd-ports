@@ -1,3 +1,2 @@
 sbin/acpi_call
-@cwd /%%KMODDIR%%
-acpi_call.ko
+/%%KMODDIR%%/acpi_call.ko
