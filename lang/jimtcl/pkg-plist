@@ -8,4 +8,3 @@ include/jim-win32compat.h
 include/jim.h
 lib/jim/README.extensions
 lib/libjim.so.0.75
-@dirrmtry lib/jim
