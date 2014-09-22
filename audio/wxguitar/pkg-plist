@@ -9,6 +9,3 @@ share/applications/wxGuitar.desktop
 %%DATADIR%%/sounds/E2.wav
 %%DATADIR%%/sounds/G1.wav
 %%DATADIR%%/sounds/H1.wav
-@dirrm %%DATADIR%%/sounds
-@dirrm %%DATADIR%%/pixmaps
-@dirrm %%DATADIR%%
