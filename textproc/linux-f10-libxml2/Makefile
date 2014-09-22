@@ -6,16 +6,15 @@ PORTVERSION=	2.7.3
 PORTREVISION=	2
 CATEGORIES=	textproc linux
 MASTER_SITES=	CRITICAL/rpm/${LINUX_RPM_ARCH}/fedora/${LINUX_DIST_VER}
-PKGNAMEPREFIX=	linux-f10-
-DISTNAME=	${PORTNAME}-${PORTVERSION}-${RPMVERSION}
 
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	Library providing XML and HTML support (Linux Fedora 10)
 
 CONFLICTS=	linux-libxml2-[0-9]* linux-f8-libxml2-[0-9]*
 
+USE_LINUX=	f10
 USE_LINUX_RPM=	yes
-LINUX_DIST_VER=	10
+
 RPMVERSION=	1.fc10
 BRANDELF_DIRS=	usr/bin
 USE_LDCONFIG=	yes

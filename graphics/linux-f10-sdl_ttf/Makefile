@@ -10,6 +10,7 @@ DISTNAME=	SDL_ttf-${PORTVERSION}-1
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library to use TrueType fonts in SDL applications (Linux version)
 
+USE_LINUX=	f10
 USE_LINUX_RPM=	yes
 USE_LINUX_APPS=	sdl12
 USE_LDCONFIG=	yes

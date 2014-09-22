@@ -1,0 +1,10 @@
+etc/alsa/pulse-default.conf
+usr/lib/alsa-lib/libasound_module_conf_pulse.so
+usr/lib/alsa-lib/libasound_module_ctl_pulse.so
+usr/lib/alsa-lib/libasound_module_pcm_pulse.so
+%%PORTDOCS%%usr/%%DOCSDIR%%-1.0.21/COPYING
+%%PORTDOCS%%usr/%%DOCSDIR%%-1.0.21/COPYING.GPL
+%%PORTDOCS%%usr/%%DOCSDIR%%-1.0.21/README-pulse
+@dirrmtry etc/alsa
+@dirrmtry usr/lib/alsa-lib
+%%PORTDOCS%%@dirrmtry usr/%%DOCSDIR%%-1.0.21
