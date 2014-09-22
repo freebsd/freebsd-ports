@@ -39,20 +39,3 @@ share/locale/ru/LC_MESSAGES/gimp20-lqr-plugin.mo
 share/locale/sr/LC_MESSAGES/gimp20-lqr-plugin.mo
 share/locale/zh_CN/LC_MESSAGES/gimp20-lqr-plugin.mo
 share/locale/zh_TW/LC_MESSAGES/gimp20-lqr-plugin.mo
-@dirrmtry share/locale/ro_RO/LC_MESSAGES
-@dirrmtry share/locale/ro_RO
-@dirrmtry share/locale/nb_NO/LC_MESSAGES
-@dirrmtry share/locale/nb_NO
-@dirrmtry share/locale/eu_ES/LC_MESSAGES
-@dirrmtry share/locale/eu_ES
-@dirrmtry share/locale/es_AR/LC_MESSAGES
-@dirrmtry share/locale/es_AR
-@dirrm %%DATADIR%%/help/ru/images
-@dirrm %%DATADIR%%/help/ru
-@dirrm %%DATADIR%%/help/it/images
-@dirrm %%DATADIR%%/help/it
-@dirrm %%DATADIR%%/help/en/images
-@dirrm %%DATADIR%%/help/en
-@dirrm %%DATADIR%%/help/css
-@dirrm %%DATADIR%%/help
-@dirrm %%DATADIR%%
