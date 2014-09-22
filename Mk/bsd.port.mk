@@ -3141,7 +3141,7 @@ check-vulnerable:
 .if !defined(DISABLE_VULNERABILITIES) && !defined(PACKAGE_BUILDING)
 	@if [ -f "${AUDITFILE}" ]; then \
 		if [ -x "${PKG_BIN}" ]; then \
-			vlist=`${PKG_BIN} audit "${PKGNAME}"`; \
+			vlist=`${PKG_BIN} audit "${PKGNAME}" || :`; \
 			if [ "$${vlist}" = "0 problem(s) in the installed packages found." ]; then \
 				vlist=""; \
 			fi; \
