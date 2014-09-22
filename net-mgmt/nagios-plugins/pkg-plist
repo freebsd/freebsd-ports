@@ -69,4 +69,3 @@ libexec/nagios/utils.pm
 libexec/nagios/utils.sh
 %%NLS%%share/locale/fr/LC_MESSAGES/nagios-plugins.mo
 %%NLS%%share/locale/de/LC_MESSAGES/nagios-plugins.mo
-@dirrmtry libexec/nagios
