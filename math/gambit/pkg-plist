@@ -38,4 +38,3 @@ include/libgambit/stratitr.h
 include/libgambit/stratspt.h
 include/libgambit/vector.h
 include/libgambit/vector.imp
-@dirrm include/libgambit
