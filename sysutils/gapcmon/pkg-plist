@@ -13,4 +13,3 @@ share/pixmaps/gapc_prefs.png
 share/pixmaps/onbatt.png
 share/pixmaps/online.png
 share/pixmaps/unplugged.png
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
