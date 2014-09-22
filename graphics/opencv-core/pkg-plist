@@ -26,8 +26,3 @@ lib/libopencv_imgproc.so.2
 lib/libopencv_imgproc.so.%%VERSION%%
 libdata/pkgconfig/opencv-core.pc
 share/cmake/Modules/FindOpenCVCore.cmake
-@dirrmtry include/opencv2/core
-@dirrmtry include/opencv2/imgproc
-@dirrmtry include/opencv2
-@dirrmtry share/cmake/Modules
-@dirrmtry share/cmake
