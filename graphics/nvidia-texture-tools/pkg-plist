@@ -10,4 +10,3 @@ lib/libnvcore.so
 lib/libnvimage.so
 lib/libnvmath.so
 lib/libnvtt.so
-@dirrm include/nvtt
