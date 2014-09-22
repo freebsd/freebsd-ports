@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	rudiments
-PORTVERSION=	0.46
-PORTREVISION=	2
+PORTVERSION=	0.47
 CATEGORIES=	devel
 MASTER_SITES=	SF
 
@@ -41,6 +40,6 @@ post-patch:
 		 /finish/s| $$(libdir)| $${DESTDIR}$$(libdir)|'
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/librudiments-0.46.so.1
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/librudiments-0.47.so.1
 
 .include <bsd.port.mk>

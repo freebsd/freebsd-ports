@@ -1,7 +1,7 @@
---- configure.orig	2012-02-17 13:38:13.000000000 +0900
-+++ configure	2012-04-13 00:56:01.000000000 +0900
-@@ -15691,6 +15691,9 @@
- 	*minix* )
+--- configure.orig	2014-06-21 04:23:02 UTC
++++ configure
+@@ -15765,6 +15765,9 @@
+ 	*mingw32* )
  		WERROR=""
  		;;
 +	freebsd* )
@@ -10,7 +10,7 @@
  	*)
  		;;
  esac
-@@ -17476,8 +17479,8 @@
+@@ -17738,8 +17741,8 @@
  
  
  	HAVE_PTHREAD=""
@@ -21,16 +21,7 @@
  
  	if ( test "$cross_compiling" = "yes" )
  	then
-@@ -17496,7 +17499,7 @@
- 
- 	else
- 
--				for i in "pthread" "c_r" "thread" "pthreads" "gthreads" ""
-+				for i in "thread" "pthreads" "gthreads" ""
- 		do
- 			if ( test -n "$i" )
- 			then
-@@ -17530,9 +17533,6 @@
+@@ -17795,9 +17798,6 @@
  STATIC=""
  HEADERSANDLIBSPATH=""
  
@@ -40,7 +31,7 @@
  eval "PTHREADSTATIC=\"\""
  if ( test -n "" )
  then
-@@ -17747,9 +17747,6 @@
+@@ -18012,9 +18012,6 @@
  LIBSTRING=`echo $LIBSTRING | sed -e "s|-L/usr/lib$||g" -e "s|-L/lib$||g" -e "s|-L/usr/lib ||g" -e "s|-L/lib ||g"`
  LIBSTRING=`echo $LIBSTRING | sed -e "s|-L/usr/lib64$||g" -e "s|-L/lib64$||g" -e "s|-L/usr/lib64 ||g" -e "s|-L/lib64 ||g"`
  
@@ -50,7 +41,7 @@
  eval "PTHREADSTATIC=\"$STATIC\""
  if ( test -n "" )
  then
-@@ -29618,47 +29615,47 @@
+@@ -30750,47 +30747,47 @@
  # prepend DESTDIR where appropriate
  if ( test "`echo $ac_default_prefix | cut -c1`" = "/" )
  then
