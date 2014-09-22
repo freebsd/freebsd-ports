@@ -31,6 +31,3 @@ man/man3/XcmEvents.3.gz
 man/man3/XcolorProfile.3.gz
 man/man3/XcolorRegion.3.gz
 man/man3/libXcm.3.gz
-@dirrmtry lib/cmake/Xcm
-@dirrmtry lib/cmake
-@dirrmtry include/X11/Xcm
