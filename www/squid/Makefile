@@ -29,7 +29,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 CONFLICTS_INSTALL=	squid33-*
 
-USES=		perl5 tar:xz shebangfix
+USES=		cpe perl5 tar:xz shebangfix
+CPE_VENDOR=	squid-cache
 SHEBANG_FILES=	scripts/*.pl contrib/*.pl src/*.pl tools/*.pl \
 		helpers/external_acl/kerberos_ldap_group/cert_tool \
 		helpers/ssl/cert_valid.pl
