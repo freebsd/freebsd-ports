@@ -1,4 +1,3 @@
-@stopdaemon anubis
 %%GSASL%%bin/anubisusr
 bin/msg2smtp.pl
 sbin/anubis
@@ -27,4 +26,3 @@ man/man1/anubis.1.gz
 %%NLS%%share/locale/uk/LC_MESSAGES/anubis.mo
 %%NLS%%share/locale/vi/LC_MESSAGES/anubis.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/anubis.mo
-@dirrm share/anubis
