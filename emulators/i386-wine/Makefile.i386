@@ -30,6 +30,8 @@ IGNORE=		This port is not for consumption on FreeBSD/i386.  To cross-build for F
 # Hook into post-install and do some adapting to make i386 binaries work nicely
 # under FreeBSD/amd64
 post-install-script:
+	# Fix pkg-plist references
+	${REINPLACE_CMD} -e 's!lib/!lib32/!g' ${TMPPLIST}
 	# Install bounce script to access the 32bit executables
 	${INSTALL_SCRIPT} ${.CURDIR}/files/binbounce ${STAGEDIR}${PREFIX}/bin/wine
 	for i in `grep ^bin ${TMPPLIST} | xargs -n1 basename` ; do \
