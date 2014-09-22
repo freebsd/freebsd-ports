@@ -19,7 +19,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/pygame/__init__.py:${PORTSDIR}/devel/py-game
 
-USE_PYTHON=	yes
+USES=		python
 NO_BUILD=	yes
 
 PORTDOCS=	*
