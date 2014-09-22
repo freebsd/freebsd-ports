@@ -188,11 +188,3 @@ lib/libclaw_tween.so.1.7.4
 %%DATADIR%%/cmake/libclaw-config-version.cmake
 %%DATADIR%%/cmake/libclaw-config.cmake
 share/locale/fr/LC_MESSAGES/libclaw.mo
-@dirrm %%DATADIR%%/cmake
-@dirrm %%DATADIR%%
-@dirrm include/claw/tween/easing/impl
-@dirrm include/claw/tween/easing
-@dirrm include/claw/tween
-@dirrm include/claw/meta
-@dirrm include/claw/impl
-@dirrm include/claw
