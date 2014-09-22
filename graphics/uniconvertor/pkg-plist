@@ -258,18 +258,3 @@ bin/uniconvertor
 %%PYTHON_SITELIBDIR%%/uniconvertor/share/fonts/descr.txt
 %%PYTHON_SITELIBDIR%%/uniconvertor/share/ps_templates/sk1-proc.ps
 %%PYTHON_SITELIBDIR%%/uniconvertor/share/ps_templates/sketch-proc.ps
-@dirrm %%PYTHON_SITELIBDIR%%/uniconvertor/share/ps_templates
-@dirrm %%PYTHON_SITELIBDIR%%/uniconvertor/share/fonts
-@dirrm %%PYTHON_SITELIBDIR%%/uniconvertor/share
-@dirrm %%PYTHON_SITELIBDIR%%/uniconvertor/app/utils
-@dirrm %%PYTHON_SITELIBDIR%%/uniconvertor/app/scripts
-@dirrm %%PYTHON_SITELIBDIR%%/uniconvertor/app/modules
-@dirrm %%PYTHON_SITELIBDIR%%/uniconvertor/app/managers
-@dirrm %%PYTHON_SITELIBDIR%%/uniconvertor/app/io
-@dirrm %%PYTHON_SITELIBDIR%%/uniconvertor/app/events
-@dirrm %%PYTHON_SITELIBDIR%%/uniconvertor/app/conf
-@dirrm %%PYTHON_SITELIBDIR%%/uniconvertor/app/Scripting
-@dirrm %%PYTHON_SITELIBDIR%%/uniconvertor/app/Lib
-@dirrm %%PYTHON_SITELIBDIR%%/uniconvertor/app/Graphics
-@dirrm %%PYTHON_SITELIBDIR%%/uniconvertor/app
-@dirrm %%PYTHON_SITELIBDIR%%/uniconvertor
