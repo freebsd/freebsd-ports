@@ -30,6 +30,8 @@ USES=		cmake gettext
 CMAKE_ARGS=	-Dlibclaw_DIR="${LOCALBASE}/share/libclaw/cmake" \
 		-DBEAR_NO_EDITOR=YES
 
+PORTDATA=	*
+
 OPTIONS_DEFINE=	NLS
 OPTIONS_SUB=	yes
 
