@@ -17,8 +17,11 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ldap2>=2.4.0:${PORTSDIR}/net/py-ldap2 \
 		${LOCALBASE}/etc/mime.types:${PORTSDIR}/misc/mime-support
 
 OPTIONS_DEFINE=	DOCS
-USE_PYTHON=	yes
+USES=		python
 SUB_FILES=	pkg-message
+
+PORTDOCS=	*
+PORTDATA=	*
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
