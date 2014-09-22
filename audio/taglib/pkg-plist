@@ -108,4 +108,3 @@ lib/libtag_c.so.0
 lib/libtag_c.so.0.0.0
 libdata/pkgconfig/taglib.pc
 libdata/pkgconfig/taglib_c.pc
-@dirrm include/taglib
