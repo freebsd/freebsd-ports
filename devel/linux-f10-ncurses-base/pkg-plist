@@ -152,4 +152,3 @@ usr/share/terminfo/x/xterms
 @dirrm lib/terminfo/a
 @dirrm lib/terminfo
 @dirrm etc/terminfo
-@exec mkdir -p %D/etc/terminfo

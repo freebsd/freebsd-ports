@@ -58,8 +58,7 @@ BIN_DISTFILES=	basesystem-10.0-1.noarch.rpm \
 		zlib-1.2.3-18.fc9.${LINUX_RPM_ARCH}.rpm
 
 .if defined(PACKAGE_BUILDING)
-
-MASTER_SITES+= FEDORA_LINUX
+MASTER_SITES+=	FEDORA_LINUX
 MASTER_SITE_SUBDIR+= ../updates/${PORTVERSION}/SRPMS \
 		../releases/${PORTVERSION}/Everything/source/SRPMS/
 
@@ -76,7 +75,6 @@ SRC_DISTFILES+=	acl-2.2.47-3.fc10.src.rpm \
 		fedora-release-10-1.src.rpm \
 		filesystem-2.4.19-1.fc10.src.rpm \
 		freetype-2.3.7-1.fc10.src.rpm \
-		gamin-0.1.9-6.fc10.src.rpm \
 		gcc-4.3.2-7.src.rpm \
 		gdbm-1.8.0-29.fc10.src.rpm \
 		glib-1.2.10-32.fc10.src.rpm \
@@ -193,6 +191,10 @@ do-build:
 
 # Restore the status quo for usr/bin/*db4* files
 #	@${CHMOD} u-w ${WRKSRC}/usr/bin/*db4*
+
+# Install locales
+	@${MV} ${WRKSRC}/usr/lib/locale/locale-archive.tmpl \
+		${WRKSRC}/usr/lib/locale/locale-archive
 
 do-install:
 #

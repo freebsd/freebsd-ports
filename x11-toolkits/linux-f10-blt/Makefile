@@ -3,16 +3,16 @@
 
 PORTNAME=	blt
 PORTVERSION=	2.4
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits linux
-PKGNAMEPREFIX=	linux-f10-
-DISTNAME=	${PORTNAME}-${PORTVERSION}-${RPMVERSION}
 
 MAINTAINER=	devel@stasyan.com
 COMMENT=	BLT widget extension to Tcl/Tk scripting language development (Linux Fedora 10)
 
+USE_LINUX=	f10
 USE_LINUX_RPM=	yes
-USE_LINUX_APPS=	tcl84 tk84 xorglibs
-LINUX_DIST_VER=	10
+USE_LINUX_APPS=	tcl85 tk85 xorglibs
+
 RPMVERSION=	28.z.fc10
 USE_LDCONFIG=	yes
 

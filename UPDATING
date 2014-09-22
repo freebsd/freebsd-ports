@@ -5,6 +5,35 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20140922:
+  AFFECTS: users of emulators/linux_base-f10 and emulators/linux_base-c6
+  AUTHOR: xmj@FreeBSD.org
+
+  The complete drop-in replacement linux-c6 port infrastructure is in ports 
+  and will shortly replace the current linux-f10- ports as default.
+
+  To switch to the linux-c6 infrastructure you should:
+
+  0. Backup all your vital information!
+  1. Remove the current linux base port and all linux-f10- ports.
+  2. Add the following lines to /etc/make.conf:
+       OVERRIDE_LINUX_BASE_PORT=c6
+       OVERRIDE_LINUX_NONBASE_PORTS=c6
+  3. Make sure no linux application is running.
+  4. Set appropriate sysctl (compat.linux.osrelease=2.6.18).
+  5. Install emulation/linux-c6.
+
+  That should be enough in most circumstances. If you experience difficulties,
+  please be sure to expand step 1 to:
+
+  1a. Remove all ports which depend on linux base port.
+  1b. Remove linux base port.
+  1c. Clean /compat/linux/ directory.
+
+  Should you encounter any other difficulties not fixed by these extended
+  steps, please submit an issue report in Bugzilla and send an email to FreeBSD's
+  emulation@ mailing list.
+
 20140909:
   AFFECTS: users seeing build errors about missing *.la files
   AUTHOR: tijl@FreeBSD.org

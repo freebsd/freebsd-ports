@@ -24,6 +24,7 @@
     SUBDIR += kmag
     SUBDIR += kmousetool
     SUBDIR += kmouth
+    SUBDIR += linux-c6-atk
     SUBDIR += linux-f10-atk
     SUBDIR += mousetweaks
     SUBDIR += orca
