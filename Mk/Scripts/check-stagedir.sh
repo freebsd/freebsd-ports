@@ -54,14 +54,15 @@ parse_plist() {
 		    | sed -Ee 's/^@\([^)]*\)[[:space:]]+//' \
 			-e 's/^(@[[:alpha:]]+)\([^)]*\)[[:space:]]+/\1 /')"
 		case $line in
-		@dirrm*|'@unexec rmdir'*|'@unexec /bin/rmdir'*)
+		@dir*|'@unexec rmdir'*|'@unexec /bin/rmdir'*)
 			line="$(printf %s "$line" \
 			    | sed -Ee 's/\|\|.*//;s|[[:space:]]+[0-9]*[[:space:]]*>[&]?[[:space:]]*[^[:space:]]+||g' \
 			        -e "/^@unexec[[:space:]]+(\/bin\/)?rmdir( -p)?/s|([^%])%D([^%])|\1${cwd}\2|g" \
 			        -e '/^@unexec[[:space:]]+(\/bin\/)?rmdir( -p)?/s|"(.*)"[[:space:]]*|\1|g' \
 			        -e 's/@unexec[[:space:]]+(\/bin\/)?rmdir( -p)?[[:space:]]+//' \
-				-e 's/@dirrm(try)?[[:space:]]+//' \
+				-e 's/@dir(rm|rmtry)?[[:space:]]+//' \
 				-e 's/[[:space:]]+$//')"
+			continue
 			case "$line" in
 			/*) echo >&3 "${comment}${line%/}" ;;
 			*)  echo >&3 "${comment}${cwd}/${line%/}" ;;
@@ -288,6 +289,7 @@ check_orphans_from_plist() {
 	# Handle whitelisting
 	while read path; do
 		case "${path}" in
+		'@dirrmtry '[^/]*) ;;
 		*.bak) ;;
 		*.orig) ;;
 		*/.DS_Store) ;;
@@ -467,7 +469,6 @@ check_orphans_from_plist || ret=1
 sort -u ${WRKDIR}/.plist-dirs-unsorted-no-comments \
     >${WRKDIR}/.plist-dirs-sorted-no-comments
 
-check_invalid_directories_mtree || ret=1
 check_invalid_directories_from_dependencies || ret=1
 check_missing_plist_items || ret=1
 

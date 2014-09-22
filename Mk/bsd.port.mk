@@ -1099,7 +1099,7 @@ CO_ENV+=	STAGEDIR=${STAGEDIR} \
 			PLIST_SUB_SED="${PLIST_SUB_SED}" \
 			PORT_OPTIONS="${PORT_OPTIONS}" \
 			PORTSDIR="${PORTSDIR}"
-MINIMAL_PKG_VERSION=	1.3.7
+MINIMAL_PKG_VERSION=	1.3.8
 
 # make sure bmake treats -V as expected
 .MAKE.EXPAND_VARIABLES= yes
@@ -3695,39 +3695,8 @@ check-umask:
 .endif
 
 .if !target(install-mtree)
-install-mtree: ${PREFIX}
-	@if [ ${UID} != 0 ]; then \
-		if [ -w ${PREFIX}/ ]; then \
-			${ECHO_MSG} "Warning: not superuser, you may get some errors during installation."; \
-		else \
-			${ECHO_MSG} "Error: ${PREFIX}/ not writable."; \
-			${FALSE}; \
-		fi; \
-	fi
-.if !defined(NO_MTREE)
-	@if [ ${UID} = 0 ]; then \
-		if [ ! -f ${MTREE_FILE} ]; then \
-			${ECHO_MSG} "Error: mtree file \"${MTREE_FILE}\" is missing."; \
-			${ECHO_MSG} "Copy it from a suitable location (e.g., ${SRC_BASE}/etc/mtree) and try again."; \
-			exit 1; \
-		else \
-			${MTREE_CMD} ${MTREE_ARGS} ${PREFIX}/ >/dev/null; \
-			if [ ${PREFIX} = ${LOCALBASE} -a "${MTREE_FILE_DEFAULT}" = "yes" ]; then \
-				cd ${PREFIX}/share/nls; \
-				for link in POSIX en_US.US-ASCII; \
-				do \
-					if [ x"`${READLINK_CMD} $${link}`" != x"C" ]; \
-					then \
-						${LN} -shf C $${link}; \
-					fi; \
-				done; \
-			fi; \
-		fi; \
-	else \
-		${ECHO_MSG} "Warning: not superuser, can't run mtree."; \
-		${ECHO_MSG} "You may want to become root and try again to ensure correct permissions."; \
-	fi
-.endif
+install-mtree:
+	@${DO_NADA}
 .endif
 
 .if !target(install-ldconfig-file)
