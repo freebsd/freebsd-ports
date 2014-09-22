@@ -28,4 +28,3 @@ lib/libmhgui.so
 lib/libmhgui.so.0
 lib/libmhgui.so.0.0.0
 libdata/pkgconfig/mhgui.pc
-@dirrm include/mhgui
