@@ -125,13 +125,3 @@ share/locale/fr/LC_MESSAGES/oyranos.mo
 share/pixmaps/lcms_logo2.png
 share/pixmaps/oyranos_logo.png
 share/pixmaps/qcmsevents.svg
-@dirrmtry share/color/settings
-@dirrmtry share/color
-@dirrmtry lib/oyranos/cmake
-@dirrmtry lib/oyranos
-@dirrmtry lib/color/modules
-@dirrmtry lib/color
-@dirrmtry include/oyranos/alpha
-@dirrmtry include/oyranos
-@dirrmtry %%QT_ETCDIR%%/autostart
-@dirrmtry %%QT_ETCDIR%%
