@@ -25,7 +25,7 @@ RESTRICTED_FILES=	${DISTFILES:Nlinux-f10-flashsupport*:C/:[^:]+$//}
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 
-USES=		webplugin:linux
+USES=		webplugin:linux desktop-file-utils
 WEBPLUGIN_FILES=	libflashplayer.so
 
 OPTIONS_DEFINE=	GNOME
