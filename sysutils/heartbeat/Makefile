@@ -137,6 +137,7 @@ post-patch:
 
 post-install:
 	${MKDIR} -m 0750 ${STAGEDIR}/var/run/heartbeat/pengine
+	${MKDIR} ${STAGEDIR}/var/lib/heartbeat/mgmt
 	${TOUCH} ${STAGEDIR}/var/run/heartbeat.pid
 
 .if ${PORT_OPTIONS:MDOCS}
