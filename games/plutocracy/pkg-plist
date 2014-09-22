@@ -6,4 +6,3 @@ bin/plutocracy
 %%PYTHON_SITELIBDIR%%/plutocracy/cargo.py
 %%PYTHON_SITELIBDIR%%/plutocracy/cargo.pyc
 %%PYTHON_SITELIBDIR%%/plutocracy/cargo.pyo
-@dirrm %%PYTHON_SITELIBDIR%%/plutocracy
