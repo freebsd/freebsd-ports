@@ -21,5 +21,3 @@ share/icons/hicolor/22x22/apps/waheela.png
 share/icons/hicolor/32x32/apps/waheela.png
 share/icons/hicolor/48x48/apps/waheela.png
 share/icons/hicolor/64x64/apps/waheela.png
-@dirrm share/config/waheela/themes
-@dirrm share/config/waheela

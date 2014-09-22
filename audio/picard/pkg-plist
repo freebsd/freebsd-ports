@@ -390,28 +390,3 @@ share/locale/nl/LC_MESSAGES/picard.mo
 share/locale/pl/LC_MESSAGES/picard.mo
 share/locale/pt_BR/LC_MESSAGES/picard.mo
 share/locale/sv/LC_MESSAGES/picard.mo
-@dirrmtry share/icons/hicolor/48x48/apps
-@dirrmtry share/icons/hicolor/48x48
-@dirrmtry share/icons/hicolor/32x32/apps
-@dirrmtry share/icons/hicolor/32x32
-@dirrmtry share/icons/hicolor/256x256/apps
-@dirrmtry share/icons/hicolor/256x256
-@dirrmtry share/icons/hicolor/24x24/apps
-@dirrmtry share/icons/hicolor/24x24
-@dirrmtry share/icons/hicolor/16x16/apps
-@dirrmtry share/icons/hicolor/16x16
-@dirrmtry share/icons/hicolor/128x128/apps
-@dirrmtry share/icons/hicolor/128x128
-@dirrmtry share/icons/hicolor
-@dirrmtry share/icons
-@dirrm %%PYTHON_SITELIBDIR%%/picard/util
-@dirrm %%PYTHON_SITELIBDIR%%/picard/ui/options
-@dirrm %%PYTHON_SITELIBDIR%%/picard/ui
-@dirrm %%PYTHON_SITELIBDIR%%/picard/plugins/replaygain
-@dirrm %%PYTHON_SITELIBDIR%%/picard/plugins/lastfmplus
-@dirrm %%PYTHON_SITELIBDIR%%/picard/plugins/lastfm
-@dirrm %%PYTHON_SITELIBDIR%%/picard/plugins
-@dirrm %%PYTHON_SITELIBDIR%%/picard/formats/mutagenext
-@dirrm %%PYTHON_SITELIBDIR%%/picard/formats
-@dirrm %%PYTHON_SITELIBDIR%%/picard/browser
-@dirrm %%PYTHON_SITELIBDIR%%/picard

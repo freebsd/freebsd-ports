@@ -34,4 +34,3 @@ lib/liblastfm.so.1.0.8
 %%FINGERPRINT%%lib/liblastfm_fingerprint.so
 %%FINGERPRINT%%lib/liblastfm_fingerprint.so.1
 %%FINGERPRINT%%lib/liblastfm_fingerprint.so.1.0.8
-@dirrm include/lastfm
