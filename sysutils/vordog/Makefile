@@ -11,6 +11,7 @@ COMMENT=	Watchdog(9) driver for watchdog timer of Vortex86
 
 ONLY_FOR_ARCHS=	i386
 USES=		kmod
+PLIST_FILES=	${KMODDIR}/${PORTNAME}.ko
 
 do-install:
 	${INSTALL_KLD} ${WRKSRC}/vordog.ko ${STAGEDIR}${KMODDIR}
