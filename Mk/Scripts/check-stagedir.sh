@@ -289,7 +289,7 @@ check_orphans_from_plist() {
 	# Handle whitelisting
 	while read path; do
 		case "${path}" in
-		'@dirrmtry '[^/]*) ;;
+		*'@dirrmtry '[^/]*) ;;
 		*.bak) ;;
 		*.orig) ;;
 		*/.DS_Store) ;;
