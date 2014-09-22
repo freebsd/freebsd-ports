@@ -1,7 +1,3 @@
-@comment keep the next three lines on top (only required for old pkg_... tools)
-@exec mkdir -p %D/%%ETCDIR%%/envvars.d
-@exec mkdir -p %D/%%ETCDIR%%/extra
-@exec mkdir -p %D/%%ETCDIR%%/Includes
 %%ETCDIR%%/Includes/no-accf.conf
 %%ETCDIR%%/modules.d/README_modules.d
 include/apache22/ap_compat.h
@@ -463,22 +459,7 @@ sbin/split-logfile
 %%WWWDIR%%/icons/world2.gif
 %%WWWDIR%%/icons/world2.png
 @unexec rm -f %D/%%ETCDIR%%/httpd.conf.bak 2> /dev/null || true
-@dirrmtry %%ETCDIR%%/Includes
-@dirrmtry %%ETCDIR%%/envvars.d
-@dirrmtry %%ETCDIR%%/extra
-@dirrmtry %%ETCDIR%%/modules.d
-@dirrmtry %%ETCDIR%%
-@dirrmtry include/apache22
-@dirrmtry libexec/apache22
-@dirrm %%DATADIR%%/build
-@dirrm %%DATADIR%%
-@dirrm %%EXAMPLESDIR%%/extra
-@dirrm %%EXAMPLESDIR%%/modules.d
-@dirrm %%EXAMPLESDIR%%
-@dirrmtry %%WWWDIR%%/cgi-bin
-@dirrmtry %%WWWDIR%%/data
-@dirrm %%WWWDIR%%/error/include
-@dirrm %%WWWDIR%%/error
-@dirrm %%WWWDIR%%/icons/small
-@dirrm %%WWWDIR%%/icons
-@dirrmtry %%WWWDIR%%
+@dir %%ETCDIR%%/Includes
+@dir %%ETCDIR%%/envvars.d
+@dir %%ETCDIR%%/extra
+@dir %%WWWDIR%%/data
