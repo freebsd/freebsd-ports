@@ -27,36 +27,20 @@ man/man8/radmind.8.gz
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/SPEC
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@cwd /
-@unexec if cmp -s %%RADMIND_BASE_DIR%%/config.sample %%RADMIND_BASE_DIR%%/config; then rm -f %%RADMIND_BASE_DIR%%/config; fi
-@mode 700
-%%RADMIND_BASE_DIR%%/config.sample
-@mode
+@sample(,,700) /%%RADMIND_BASE_DIR%%/config.sample
 @owner %%RADMINUSER%%
 @group %%RADMINUSER%%
-@unexec rmdir %D/%%RADMIND_BASE_DIR%%/transcript 2>/dev/null || true
-@exec install -d -o %%RADMINUSER%% -g %%RADMINUSER%% %D/%%RADMIND_BASE_DIR%%/transcript
-@unexec rmdir %D/%%RADMIND_BASE_DIR%%/tmp/transcript 2>/dev/null || true
-@exec install -d -o %%RADMINUSER%% -g %%RADMINUSER%% %D/%%RADMIND_BASE_DIR%%/tmp/transcript
-@unexec rmdir %D/%%RADMIND_BASE_DIR%%/tmp/file 2>/dev/null || true
-@exec install -d -o %%RADMINUSER%% -g %%RADMINUSER%% %D/%%RADMIND_BASE_DIR%%/tmp/file
-@unexec rmdir %D/%%RADMIND_BASE_DIR%%/tmp 2>/dev/null || true
-@exec install -d -o %%RADMINUSER%% -g %%RADMINUSER%% %D/%%RADMIND_BASE_DIR%%/tmp
-@unexec rmdir %D/%%RADMIND_BASE_DIR%%/special 2>/dev/null || true
-@exec install -d -o %%RADMINUSER%% -g %%RADMINUSER%% %D/%%RADMIND_BASE_DIR%%/special
-@unexec rmdir %D/%%RADMIND_BASE_DIR%%/postapply 2>/dev/null || true
-@exec install -d -o %%RADMINUSER%% -g %%RADMINUSER%% %D/%%RADMIND_BASE_DIR%%/postapply
-@unexec rmdir %D/%%RADMIND_BASE_DIR%%/preapply 2>/dev/null || true
-@exec install -d -o %%RADMINUSER%% -g %%RADMINUSER%% %D/%%RADMIND_BASE_DIR%%/preapply
-@unexec rmdir %D/%%RADMIND_BASE_DIR%%/file 2>/dev/null || true
-@exec install -d -o %%RADMINUSER%% -g %%RADMINUSER%% %D/%%RADMIND_BASE_DIR%%/file
-@unexec rmdir %D/%%RADMIND_BASE_DIR%%/command 2>/dev/null || true
-@exec install -d -o %%RADMINUSER%% -g %%RADMINUSER%% %D/%%RADMIND_BASE_DIR%%/command
-@unexec rmdir %D/%%RADMIND_BASE_DIR%%/client 2>/dev/null || true
-@exec install -d -o %%RADMINUSER%% -g %%RADMINUSER%% %D/%%RADMIND_BASE_DIR%%/client
-@unexec rmdir %D/%%RADMIND_BASE_DIR%%/cert 2>/dev/null || true
-@exec install -d -o %%RADMINUSER%% -g %%RADMINUSER%% %D/%%RADMIND_BASE_DIR%%/cert
-@unexec rmdir %D/%%RADMIND_BASE_DIR%% 2>/dev/null || true
-@exec install -d -o %%RADMINUSER%% -g %%RADMINUSER%% %D/%%RADMIND_BASE_DIR%%
+@dir /%%RADMIND_BASE_DIR%%/transcript
+@dir /%%RADMIND_BASE_DIR%%/tmp/transcript
+@dir /%%RADMIND_BASE_DIR%%/tmp/file
+@dir /%%RADMIND_BASE_DIR%%/tmp
+@dir /%%RADMIND_BASE_DIR%%/special
+@dir /%%RADMIND_BASE_DIR%%/postapply
+@dir /%%RADMIND_BASE_DIR%%/preapply
+@dir /%%RADMIND_BASE_DIR%%/file
+@dir /%%RADMIND_BASE_DIR%%/command
+@dir /%%RADMIND_BASE_DIR%%/client
+@dir /%%RADMIND_BASE_DIR%%/cert
+@dir /%%RADMIND_BASE_DIR%%
 @owner
 @group
