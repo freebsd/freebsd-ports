@@ -18,7 +18,12 @@ USES=		tar:bzip2 gettext gmake
 USE_PYTHON=	yes
 USE_GNOME=	pygtk2
 
+PLIST_FILES=	bin/metromap \
+		share/applications/metromap.desktop \
+		share/icons/hicolor/48x48/apps/metromap.png \
+		share/locale/ru/LC_MESSAGES/metromap.mo
 PORTDOCS=	AUTHORS NEWS README README.data TODO
+PORTDATA=	*
 
 OPTIONS_DEFINE=	DOCS
 
