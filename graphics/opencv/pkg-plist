@@ -224,27 +224,3 @@ libdata/pkgconfig/opencv.pc
 %%DATADIR%%/lbpcascades/lbpcascade_frontalface.xml
 %%DATADIR%%/lbpcascades/lbpcascade_profileface.xml
 %%DATADIR%%/lbpcascades/lbpcascade_silverware.xml
-@dirrm %%DATADIR%%/lbpcascades
-@dirrm %%DATADIR%%/haarcascades
-@dirrmtry %%DATADIR%%
-@dirrm include/opencv2/videostab
-@dirrm include/opencv2/video
-@dirrm include/opencv2/ts
-@dirrm include/opencv2/superres
-@dirrm include/opencv2/stitching/detail
-@dirrm include/opencv2/stitching
-@dirrm include/opencv2/photo
-@dirrm include/opencv2/ocl
-@dirrm include/opencv2/objdetect
-%%NONFREE%%@dirrm include/opencv2/nonfree
-@dirrm include/opencv2/ml
-@dirrm include/opencv2/legacy
-@dirrm include/opencv2/highgui
-@dirrm include/opencv2/gpu/device/detail
-@dirrm include/opencv2/gpu/device
-@dirrm include/opencv2/gpu
-@dirrm include/opencv2/flann
-@dirrm include/opencv2/features2d
-@dirrm include/opencv2/contrib
-@dirrm include/opencv2/calib3d
-@dirrm include/opencv
