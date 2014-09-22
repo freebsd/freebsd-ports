@@ -1,6 +1,6 @@
---- ./cgi/Makefile.in.orig	2013-11-25 14:16:25.000000000 +0000
-+++ ./cgi/Makefile.in	2014-01-24 22:43:36.000000000 +0000
-@@ -182,9 +182,9 @@
+--- cgi/Makefile.in.orig	2014-08-12 15:00:01 UTC
++++ cgi/Makefile.in
+@@ -201,9 +201,9 @@
  	$(MAKE) install-basic
  
  install-basic:

@@ -1,5 +1,5 @@
---- ./contrib/Makefile.in.orig	2013-11-25 14:16:25.000000000 +0000
-+++ ./contrib/Makefile.in	2014-01-24 22:44:01.000000000 +0000
+--- contrib/Makefile.in.orig	2014-08-12 15:00:01 UTC
++++ contrib/Makefile.in
 @@ -52,10 +52,10 @@
  devclean: distclean
  

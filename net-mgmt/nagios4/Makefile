@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	nagios
-PORTVERSION=	4.0.7
-PORTREVISION=	1
+PORTVERSION=	4.0.8
 CATEGORIES=	net-mgmt
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-4.x/${PORTNAME}-${PORTVERSION}
 PKGNAMESUFFIX=	4
@@ -18,7 +17,6 @@ LIB_DEPENDS=	libltdl.so:${PORTSDIR}/devel/libltdl \
 
 USES=		gmake iconv perl5 uidfix
 USE_PERL5=	build
-USE_AUTOTOOLS=	autoconf
 USE_PHP=	xml
 USE_RC_SUBR=	nagios
 
@@ -33,7 +31,6 @@ CONFIGURE_ARGS=	--with-command-user=${NAGIOSUSER} \
 		--with-cgiurl=${NAGIOSCGIURL} \
 		--sbindir=${PREFIX}/${NAGIOSWWWDIR}/cgi-bin \
 		--libexecdir=${PREFIX}/libexec/nagios \
-		--datarootdir=${PREFIX}/${NAGIOSWWWDIR} \
 		--datadir=${PREFIX}/${NAGIOSWWWDIR} \
 		--sysconfdir=${PREFIX}/etc/nagios \
 		--localstatedir=${NAGIOSDIR} \
@@ -90,6 +87,9 @@ NANOSLEEP_CONFIGURE_ENABLE=	nanosleep
 # sed -e 's#;serviceprops=42\&#;serviceprops=10\&#g' -e \
 #	 's#;hostprops=42\"#;hostprops=10\"#g' ${WRKSRC}/html/side.php
 UNHANDLED_HACK_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-html__side.php
+
+post-patch:
+	@${REINPLACE_CMD} '/^INSTALL_OPTS=/d;/COMMAND_OPTS=/d' ${WRKSRC}/configure
 
 post-install:
 	@${MV} ${STAGEDIR}${PREFIX}/${NAGIOSWWWDIR}/config.inc.php ${STAGEDIR}${PREFIX}/${NAGIOSWWWDIR}/config.inc.php.sample
