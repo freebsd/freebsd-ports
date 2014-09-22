@@ -17,8 +17,6 @@ CONFIGURE_ARGS=	--with-pkg-config-dir=${PREFIX}/libdata/pkgconfig:/usr/libdata/p
 		--with-system-libdir=/usr/lib \
 		--with-system-includedir=/usr/include
 MAKE_ARGS=	MANDIR="${MAN1PREFIX}/man/man1"
-PLIST_DIRS=	pop
-PLIST_DIRSTRY=	pip
 
 CONFLICTS_INSTALL=	pkg-config-*
 
