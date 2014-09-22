@@ -1,4 +1,6 @@
 bin/rudiments-config
+include/rudiments/bytebuffer.h
+include/rudiments/bytestring.h
 include/rudiments/character.h
 include/rudiments/charstring.h
 include/rudiments/chat.h
@@ -33,6 +35,9 @@ include/rudiments/modemserver.h
 include/rudiments/parameterstring.h
 include/rudiments/passwdentry.h
 include/rudiments/permissions.h
+include/rudiments/private/bytebuffer.h
+include/rudiments/private/bytebufferincludes.h
+include/rudiments/private/bytestringincludes.h
 include/rudiments/private/characterincludes.h
 include/rudiments/private/charstring.h
 include/rudiments/private/charstringincludes.h
@@ -114,7 +119,6 @@ include/rudiments/private/processincludes.h
 include/rudiments/private/protocolentry.h
 include/rudiments/private/protocolentryincludes.h
 include/rudiments/private/randomnumberincludes.h
-include/rudiments/private/rawbufferincludes.h
 include/rudiments/private/regularexpression.h
 include/rudiments/private/regularexpressionincludes.h
 include/rudiments/private/rpcentry.h
@@ -139,6 +143,10 @@ include/rudiments/private/shmfileincludes.h
 include/rudiments/private/signalclassesincludes.h
 include/rudiments/private/signalhandler.h
 include/rudiments/private/signalset.h
+include/rudiments/private/singlylinkedlist.h
+include/rudiments/private/singlylinkedlistincludes.h
+include/rudiments/private/singlylinkedlistinlines.h
+include/rudiments/private/singlylinkedlistnode.h
 include/rudiments/private/snoozeincludes.h
 include/rudiments/private/socketclient.h
 include/rudiments/private/socketclientincludes.h
@@ -161,8 +169,6 @@ include/rudiments/private/unixsocketserver.h
 include/rudiments/private/unixsocketserverincludes.h
 include/rudiments/private/unixsocketutil.h
 include/rudiments/private/unixsocketutilincludes.h
-include/rudiments/private/variablebuffer.h
-include/rudiments/private/variablebufferincludes.h
 include/rudiments/private/winsock.h
 include/rudiments/private/xmldom.h
 include/rudiments/private/xmldomincludes.h
@@ -173,7 +179,6 @@ include/rudiments/private/xmlsaxincludes.h
 include/rudiments/process.h
 include/rudiments/protocolentry.h
 include/rudiments/randomnumber.h
-include/rudiments/rawbuffer.h
 include/rudiments/regularexpression.h
 include/rudiments/resultcodes.h
 include/rudiments/rpcentry.h
@@ -186,6 +191,7 @@ include/rudiments/shadowentry.h
 include/rudiments/sharedmemory.h
 include/rudiments/shmfile.h
 include/rudiments/signalclasses.h
+include/rudiments/singlylinkedlist.h
 include/rudiments/snooze.h
 include/rudiments/socketclient.h
 include/rudiments/socketserver.h
@@ -197,7 +203,6 @@ include/rudiments/threadmutex.h
 include/rudiments/unixsocketclient.h
 include/rudiments/unixsocketserver.h
 include/rudiments/unixsocketutil.h
-include/rudiments/variablebuffer.h
 include/rudiments/xmldom.h
 include/rudiments/xmldomnode.h
 include/rudiments/xmlsax.h
