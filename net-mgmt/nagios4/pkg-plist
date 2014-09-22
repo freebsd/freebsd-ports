@@ -1,7 +1,3 @@
-@exec install -d %D/%%NAGIOSWWWDIR%%/ssi
-@exec install -d -m 775 -o %%NAGIOSUSER%% -g %%NAGIOSGROUP%% %%NAGIOSDIR%% %%NAGIOSDIR%%/archives
-@exec install -d -m 2775 -o %%NAGIOSUSER%% -g %%NAGIOSGROUP%% %%NAGIOSDIR%%/checkresults
-@exec install -d -m 775 -o %%NAGIOSUSER%% -g %%WWWGRP%% %%NAGIOSDIR%%/rw
 bin/nagios
 bin/nagiostats
 %%ETCDIR%%/cgi.cfg-sample
@@ -385,26 +381,10 @@ bin/nagiostats
 %%NAGIOSWWWDIR%%/stylesheets/summary.css
 %%NAGIOSWWWDIR%%/stylesheets/tac.css
 %%NAGIOSWWWDIR%%/stylesheets/trends.css
-@dirrmtry %%ETCDIR%%/objects
-@dirrmtry %%ETCDIR%%
-@dirrmtry libexec/nagios
-@dirrm %%NAGIOSWWWDIR%%/cgi-bin
-@dirrm %%NAGIOSWWWDIR%%/contexthelp
-@dirrm %%NAGIOSWWWDIR%%/docs/images
-@dirrm %%NAGIOSWWWDIR%%/docs
-@dirrm %%NAGIOSWWWDIR%%/images/logos
-@dirrm %%NAGIOSWWWDIR%%/images
-@dirrm %%NAGIOSWWWDIR%%/includes/rss/extlib
-@dirrm %%NAGIOSWWWDIR%%/includes/rss
-@dirrm %%NAGIOSWWWDIR%%/includes
-@dirrm %%NAGIOSWWWDIR%%/js
-@dirrm %%NAGIOSWWWDIR%%/media
-@dirrm %%NAGIOSWWWDIR%%/ssi
-@dirrm %%NAGIOSWWWDIR%%/stylesheets
-@dirrmtry %%NAGIOSWWWDIR%%
-@dirrmtry %%NAGIOSDIR%%/archives
-@dirrmtry %%NAGIOSDIR%%/checkresults
-@dirrmtry %%NAGIOSDIR%%/rw
-@dirrmtry %%NAGIOSDIR%%
+@dir %%NAGIOSWWWDIR%%/ssi
+@dir(%%NAGIOSUSER%%,%%NAGIOSGROUP%%,775) %%NAGIOSDIR%%/archives
+@dir(%%NAGIOSUSER%%,%%NAGIOSGROUP%%,2775) %%NAGIOSDIR%%/checkresults
+@dir(%%NAGIOSUSER%%,%%WWWGRP%%,775) %%NAGIOSDIR%%/rw
+@dir(%%NAGIOSUSER%%,%%NAGIOSGROUP%%,775) %%NAGIOSDIR%%
 @unexec if [ -d %%NAGIOSDIR%% ]; then echo "==> If you are permanently removing this port, you should do a ``rm -rf %%NAGIOSDIR%%`` to remove any files left behind."; fi
 @unexec if [ -d %%ETCDIR%% ]; then echo "==> If you are permanently removing this port, you should do a ``rm -rf %%ETCDIR%%`` to remove any configuration files."; fi

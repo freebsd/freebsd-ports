@@ -1,5 +1,5 @@
---- ./Makefile.in.orig	2014-06-03 16:41:42.000000000 +0200
-+++ ./Makefile.in	2014-06-05 16:54:17.000000000 +0200
+--- Makefile.in.orig	2014-08-12 15:00:01 UTC
++++ Makefile.in
 @@ -245,11 +245,10 @@
  	$(MAKE) install-basic
  

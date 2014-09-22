@@ -1,5 +1,5 @@
---- ./sample-config/template-object/templates.cfg.in.orig	2013-11-25 14:16:25.000000000 +0000
-+++ ./sample-config/template-object/templates.cfg.in	2014-01-24 22:40:43.000000000 +0000
+--- sample-config/template-object/templates.cfg.in.orig	2014-08-12 15:00:01 UTC
++++ sample-config/template-object/templates.cfg.in
 @@ -61,17 +61,17 @@
          }
  

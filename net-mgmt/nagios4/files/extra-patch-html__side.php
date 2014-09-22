@@ -1,5 +1,5 @@
---- ./html/side.php.orig	2014-06-03 16:41:42.000000000 +0200
-+++ ./html/side.php	2014-06-09 12:08:47.000000000 +0200
+--- html/side.php.orig	2014-08-12 15:00:01 UTC
++++ html/side.php
 @@ -56,8 +56,8 @@
  			<li>
  				<a href="<?php echo $cfg["cgi_base_url"];?>/status.cgi?host=all&amp;servicestatustypes=28" target="<?php echo $link_target;?>">Problems</a>
