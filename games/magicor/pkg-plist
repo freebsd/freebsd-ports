@@ -28,8 +28,3 @@ etc/magicor/magicor.conf.dist
 %%PYTHON_SITELIBDIR%%/magicor/states/options.py
 %%PYTHON_SITELIBDIR%%/magicor/states/play.py
 %%PYTHON_SITELIBDIR%%/magicor/states/title.py
-@dirrm %%PYTHON_SITELIBDIR%%/magicor/states
-@dirrm %%PYTHON_SITELIBDIR%%/magicor/sprites
-@dirrm %%PYTHON_SITELIBDIR%%/magicor/editor
-@dirrm %%PYTHON_SITELIBDIR%%/magicor
-@dirrmtry etc/magicor
