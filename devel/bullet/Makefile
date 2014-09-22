@@ -3,9 +3,8 @@
 
 PORTNAME=	bullet
 PORTVERSION=	2.82
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel
-PORTREVISION=	1
 MASTER_SITES=	GOOGLE_CODE
 DISTNAME=	${PORTNAME}-${PORTVERSION}-${SVN_COMMIT}
 
@@ -18,9 +17,9 @@ USE_GL=		gl glu glut
 USE_XORG=	x11
 
 USES=		cmake tar:tgz
+CMAKE_ARGS=	-DBUILD_SHARED_LIBS:BOOL=ON
 
 CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-pthread
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}-${SVN_COMMIT}
 
@@ -29,12 +28,6 @@ PORTDOCS=	*
 SVN_COMMIT=	r2704
 
 OPTIONS_DEFINE=	DOCS
-
-.include <bsd.port.pre.mk>
-
-.if (${ARCH} == "amd64") || (${ARCH} == "ia64")
-CFLAGS+=	-DUSE_ADDR64
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e "s|{OPENGL_glu_LIBRARY}|{OPENGL_glu_LIBRARY} -lcompat|g" ${WRKSRC}/Demos/AllBulletDemos/CMakeLists.txt
@@ -45,4 +38,4 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/BulletLicense.txt ${STAGEDIR}/${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/ChangeLog ${STAGEDIR}/${DOCSDIR}/CHANGELOG
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

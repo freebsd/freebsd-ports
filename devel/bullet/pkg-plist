@@ -229,10 +229,14 @@ include/bullet/vectormath/sse/vectormath_aos.h
 include/bullet/vectormath/vmInclude.h
 lib/cmake/bullet/BulletConfig.cmake
 lib/cmake/bullet/UseBullet.cmake
-lib/libBulletCollision.a
-lib/libBulletDynamics.a
-lib/libBulletSoftBody.a
-lib/libLinearMath.a
+lib/libBulletCollision.so
+lib/libBulletCollision.so.2.82
+lib/libBulletDynamics.so
+lib/libBulletDynamics.so.2.82
+lib/libBulletSoftBody.so
+lib/libBulletSoftBody.so.2.82
+lib/libLinearMath.so
+lib/libLinearMath.so.2.82
 libdata/pkgconfig/bullet.pc
 @dirrmtry lib/cmake/bullet
 @dirrmtry lib/cmake
