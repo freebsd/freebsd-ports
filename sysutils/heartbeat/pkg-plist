@@ -594,15 +594,15 @@ sbin/stonith
 %%DATADIR%%/utillib.sh
 @dir(%%USER%%,,700) /var/lib/heartbeat/cores/%%USER%%
 @dir(nobody,,700) /var/lib/heartbeat/cores/nobody
-@dir(,,700) /var/lib/heartbeat/core/root
-@dir /var/lib/heartbeat/cores/
-@dir(%%USER%%,,750) /var/lib/heartbeat/crm/
-@dir(,%%GROUP%%,770) /var/lib/heartbeat/fencing/
-@dir(,%%GROUP%%,770) /var/lib/heartbeat/lrm/
-@dir(,%%GROUP%%,770) /var/lib/heartbeat/mgmt/
+@dir(,,700) /var/lib/heartbeat/cores/root
+@dir /var/lib/heartbeat/cores
+@dir(%%USER%%,,750) /var/lib/heartbeat/crm
+@dir(,%%GROUP%%,770) /var/lib/heartbeat/fencing
+@dir(,%%GROUP%%,770) /var/lib/heartbeat/lrm
+@dir(,%%GROUP%%,770) /var/lib/heartbeat/mgmt
 @dir /var/lib/heartbeat/pengine
-@dir /var/lib/heartbeat/
-@dir /var/lib/
+@dir /var/lib/heartbeat
+@dir /var/lib
 @dir(%%USER%%,%%GROUP%%,750) /var/run/heartbeat/pengine
 @dir(%%USER%%,%%GROUP%%,750) /var/run/heartbeat/ccm
 @dir(%%USER%%,%%GROUP%%,750) /var/run/heartbeat/crm
