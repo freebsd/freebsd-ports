@@ -59,7 +59,7 @@ CALDAVD_USER=	caldavd
 USERS=		${CALDAVD_USER}
 GROUPS=		${CALDAVD_USER}
 
-do-fetch:
+maint-gen-distfile:
 	@if [ ! -f "${DISTDIR}/${DISTNAME}${EXTRACT_SUFX}" ] ; then \
 		${MKDIR} ${WRKDIR} ; cd ${WRKDIR} ; ${RM} -Rf ${WRKDIR}/${DISTNAME} ; \
 		${ECHO_MSG} "=> Checking out CalendarServer from svn.calendarserver.org/..."; \
