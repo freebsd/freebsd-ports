@@ -7123,3 +7123,6 @@ databases/ruby-dbd_mysql|databases/rubygem-dbd-mysql|2014-09-21|Replaced by ruby
 databases/ruby-dbd_pg|databases/rubygem-dbd-pg|2014-09-21|Replaced by rubygem-dbd-pg
 databases/ruby-dbd_sqlite|databases/rubygem-dbd-sqlite3|2014-09-21|Replaced by rubygem-dbd-sqlite3
 textproc/ruby-amatch/textproc/rubygem-amatch||2014-09-21|Replaced by textproc/rubygem-amatch
+graphics/libggi||2014-09-22|Has expired: Unmaintained upstream
+devel/libgii||2014-09-22|Has expired: Unmaintained upstream
+graphics/fpc-ggi||2014-09-22|Has expired: Unmaintained upstream

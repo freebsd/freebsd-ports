@@ -199,7 +199,6 @@
     SUBDIR += founts
     SUBDIR += fpc-cairo
     SUBDIR += fpc-fpgtk
-    SUBDIR += fpc-ggi
     SUBDIR += fpc-graph
     SUBDIR += fpc-hermes
     SUBDIR += fpc-imagemagick
@@ -500,7 +499,6 @@
     SUBDIR += libgaiagraphics
     SUBDIR += libgeotiff
     SUBDIR += libgfx
-    SUBDIR += libggi
     SUBDIR += libglapi
     SUBDIR += libglesv2
     SUBDIR += libgltext
