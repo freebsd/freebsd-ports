@@ -14,4 +14,3 @@ man/man1/ktoblzcheck.1.gz
 %%DATADIR%%/bundesbank.pl
 %%DATADIR%%/ibandata.txt
 %%DATADIR%%/online_update.pl
-@dirrmtry %%DATADIR%%
