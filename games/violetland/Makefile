@@ -22,7 +22,10 @@ CMAKE_ARGS=	-DDATA_INSTALL_DIR="${DATADIR}"
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-v${PORTVERSION}
 
+PLIST_FILES=	bin/violetland \
+		share/applications/violetland.desktop
 PORTDOCS=	*
+PORTDATA=	*
 
 OPTIONS_DEFINE=	DOCS
 
