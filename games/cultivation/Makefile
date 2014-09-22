@@ -21,6 +21,8 @@ WRKSRC=		${WRKDIR}/${DISTNAME}/game2
 BUILD_WRKSRC=	${WRKSRC}/gameSource
 MAKE_ARGS=	CXX=${CXX}
 
+PLIST_FILES=	bin/Cultivation
+PORTDATA=	*
 PORTDOCS=	changeLog.txt how_to_play.txt
 
 OPTIONS_DEFINE=	DOCS
