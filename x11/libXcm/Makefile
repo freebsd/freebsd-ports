@@ -12,7 +12,8 @@ COMMENT=	X Colour Management Library
 LICENSE=	MIT
 
 XORG_CAT=	lib
-USES=		pathfix pkgconfig
+USES=		libtool:keepla pathfix pkgconfig
 USE_XORG=	xfixes xmu
+INSTALL_TARGET=	install-strip
 
 .include <bsd.port.mk>
