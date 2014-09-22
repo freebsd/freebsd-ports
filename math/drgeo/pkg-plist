@@ -43,12 +43,3 @@ share/locale/sv/LC_MESSAGES/drgeo.mo
 share/locale/uk/LC_MESSAGES/drgeo.mo
 share/locale/zh_CN/LC_MESSAGES/drgeo.mo
 share/locale/zh_TW/LC_MESSAGES/drgeo.mo
-@dirrmtry share/texmacs/TeXmacs/plugins/drgeo/progs
-@dirrmtry share/texmacs/TeXmacs/plugins/drgeo
-@dirrmtry share/texmacs/TeXmacs/plugins
-@dirrmtry share/texmacs/TeXmacs
-@dirrmtry share/texmacs
-@dirrmtry share/locale/mr/LC_MESSAGES
-@dirrmtry share/locale/mr
-@dirrmtry share/locale/rw/LC_MESSAGES
-@dirrmtry share/locale/rw
