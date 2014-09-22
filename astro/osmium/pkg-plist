@@ -77,18 +77,3 @@ include/osmium/utils/delta.hpp
 include/osmium/utils/filter_and_accumulate.hpp
 include/osmium/utils/stringtable.hpp
 include/osmium/utils/timestamp.hpp
-@dirrm include/osmium/utils
-@dirrm include/osmium/tags
-@dirrm include/osmium/storage/byid
-@dirrm include/osmium/storage
-@dirrm include/osmium/relations
-@dirrm include/osmium/output
-@dirrm include/osmium/osm
-@dirrm include/osmium/multipolygon
-@dirrm include/osmium/javascript/wrapper
-@dirrm include/osmium/javascript
-@dirrm include/osmium/input
-@dirrm include/osmium/handler
-@dirrm include/osmium/geometry
-@dirrm include/osmium/export
-@dirrm include/osmium
