@@ -523,20 +523,3 @@
 %%PYTHON_SITELIBDIR%%/sk1libs/utils/system.py
 %%PYTHON_SITELIBDIR%%/sk1libs/utils/system.pyc
 %%PYTHON_SITELIBDIR%%/sk1libs/utils/system.pyo
-@dirrm %%PYTHON_SITELIBDIR%%/sk1libs/utils
-@dirrm %%PYTHON_SITELIBDIR%%/sk1libs/pycms/profiles
-@dirrm %%PYTHON_SITELIBDIR%%/sk1libs/pycms
-@dirrm %%PYTHON_SITELIBDIR%%/sk1libs/libpdf/pdfgen
-@dirrm %%PYTHON_SITELIBDIR%%/sk1libs/libpdf/pdfbase
-@dirrm %%PYTHON_SITELIBDIR%%/sk1libs/libpdf/lib
-@dirrm %%PYTHON_SITELIBDIR%%/sk1libs/libpdf
-@dirrm %%PYTHON_SITELIBDIR%%/sk1libs/imaging
-@dirrm %%PYTHON_SITELIBDIR%%/sk1libs/ft2engine/fallback_fonts
-@dirrm %%PYTHON_SITELIBDIR%%/sk1libs/ft2engine
-@dirrm %%PYTHON_SITELIBDIR%%/sk1libs/filters/preview
-@dirrm %%PYTHON_SITELIBDIR%%/sk1libs/filters/parsing
-@dirrm %%PYTHON_SITELIBDIR%%/sk1libs/filters/import
-@dirrm %%PYTHON_SITELIBDIR%%/sk1libs/filters/formats
-@dirrm %%PYTHON_SITELIBDIR%%/sk1libs/filters/export
-@dirrm %%PYTHON_SITELIBDIR%%/sk1libs/filters
-@dirrm %%PYTHON_SITELIBDIR%%/sk1libs
