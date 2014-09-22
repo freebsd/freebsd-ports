@@ -12,7 +12,7 @@ COMMENT=	Color data for color managed applications
 LICENSE=	ZLIB
 LICENSE_FILE=	${WRKSRC}/COPYING    # Has a Copyright note
 
-USES=	tar:bzip2
+USES=		tar:bzip2
 GNU_CONFIGURE=	yes
 
 SYSCOLORDIR=	share/color
