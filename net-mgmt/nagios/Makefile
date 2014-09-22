@@ -3,7 +3,7 @@
 
 PORTNAME=	nagios
 PORTVERSION=	3.5.1
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	net-mgmt
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-3.x/${PORTNAME}-${PORTVERSION}
 
@@ -17,7 +17,7 @@ LIB_DEPENDS=	libltdl.so:${PORTSDIR}/devel/libltdl \
 
 PORTSCOUT=	limit:^3.
 
-USES=		iconv perl5 uidfix
+USES=		iconv perl5
 USE_PERL5=	build
 USE_PHP=	yes
 USE_RC_SUBR=	nagios
