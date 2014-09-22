@@ -10,6 +10,3 @@ lib/libgpgme.so
 lib/libgpgme.so.11
 lib/libgpgme.so.11.13.0
 share/aclocal/gpgme.m4
-@dirrm lib/common-lisp/gpgme
-@dirrmtry lib/common-lisp
-@dirrm include/gpgme
