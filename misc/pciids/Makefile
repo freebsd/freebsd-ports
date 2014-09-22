@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	pciids
-PORTVERSION=	20140916
+PORTVERSION=	20140922
 CATEGORIES=	misc
-MASTER_SITES=	LOCAL/antoine LOCAL/sunpoet
+MASTER_SITES=	LOCAL/sunpoet
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Database of all known IDs used in PCI devices
