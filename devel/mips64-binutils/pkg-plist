@@ -198,7 +198,3 @@ mips64-freebsd/lib/ldscripts/elf64ltsmip_fbsd.xsc
 mips64-freebsd/lib/ldscripts/elf64ltsmip_fbsd.xsw
 mips64-freebsd/lib/ldscripts/elf64ltsmip_fbsd.xu
 mips64-freebsd/lib/ldscripts/elf64ltsmip_fbsd.xw
-@dirrmtry mips64-freebsd/bin
-@dirrmtry mips64-freebsd/lib/ldscripts
-@dirrmtry mips64-freebsd/lib
-@dirrmtry mips64-freebsd

@@ -112,7 +112,3 @@ man/man1/i386-pc-linux-gnu-strings.1.gz
 man/man1/i386-pc-linux-gnu-strip.1.gz
 man/man1/i386-pc-linux-gnu-windmc.1.gz
 man/man1/i386-pc-linux-gnu-windres.1.gz
-@dirrmtry i386-pc-linux-gnu/bin
-@dirrmtry i386-pc-linux-gnu/lib/ldscripts
-@dirrmtry i386-pc-linux-gnu/lib
-@dirrmtry i386-pc-linux-gnu

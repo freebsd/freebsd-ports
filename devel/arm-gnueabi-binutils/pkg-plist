@@ -78,7 +78,3 @@ man/man1/arm-gnueabi-freebsd-strings.1.gz
 man/man1/arm-gnueabi-freebsd-strip.1.gz
 man/man1/arm-gnueabi-freebsd-windmc.1.gz
 man/man1/arm-gnueabi-freebsd-windres.1.gz
-@dirrmtry arm-gnueabi-freebsd/bin
-@dirrmtry arm-gnueabi-freebsd/lib/ldscripts
-@dirrmtry arm-gnueabi-freebsd/lib
-@dirrmtry arm-gnueabi-freebsd
