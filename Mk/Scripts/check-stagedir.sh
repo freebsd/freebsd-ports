@@ -62,7 +62,6 @@ parse_plist() {
 			        -e 's/@unexec[[:space:]]+(\/bin\/)?rmdir( -p)?[[:space:]]+//' \
 				-e 's/@dir(rm|rmtry)?[[:space:]]+//' \
 				-e 's/[[:space:]]+$//')"
-			continue
 			case "$line" in
 			/*) echo >&3 "${comment}${line%/}" ;;
 			*)  echo >&3 "${comment}${cwd}/${line%/}" ;;
