@@ -19,7 +19,3 @@ man/man1/ofxdump.1.gz
 %%DATADIR%%/dtd/ofx160.dtd
 %%DATADIR%%/dtd/ofx201.dtd
 %%DATADIR%%/dtd/opensp.dcl
-@dirrm %%DATADIR%%/dtd
-@dirrm %%DATADIR%%
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%
-@dirrm include/libofx
