@@ -23,4 +23,3 @@
 %%PYTHON_SITELIBDIR%%/xode/transform.py
 %%PYTHON_SITELIBDIR%%/xode/transform.pyc
 %%PYTHON_SITELIBDIR%%/xode/transform.pyo
-@dirrm %%PYTHON_SITELIBDIR%%/xode
