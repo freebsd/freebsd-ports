@@ -25,6 +25,7 @@ USE_PYTHON=	distutils
 SUB_FILES=	pkg-message
 SUB_LIST+=	PYTHON_SITELIBDIR=${PYTHON_SITELIBDIR} WWWOWN=${WWWOWN} \
 		WWWGRP=${WWWGRP} DATADIR=${DATADIR}
+PLIST_SUB+=	WWWOWN=${WWWOWN} WWWGRP=${WWWGRP}
 
 post-patch:
 	@${RM} ${WRKSRC}/bin/build-index.sh.orig
@@ -44,8 +45,6 @@ post-install:
 	@(cd ${WRKSRC}/webapp/content && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR}/content)
 	@${MKDIR} ${STAGEDIR}/var/log/graphite/webapp
 	@${MKDIR} ${STAGEDIR}/var/db/graphite
-	@${CHOWN} ${WWWOWN} ${STAGEDIR}/var/log/graphite
-	@${CHOWN} ${WWWOWN} ${STAGEDIR}/var/db/graphite
 	@${CP} ${STAGEDIR}${PYTHON_SITELIBDIR}/graphite/local_settings.py.example ${STAGEDIR}${PREFIX}/etc/graphite/local_settings.py.example
 	@${LN} -s ${PREFIX}/etc/graphite/local_settings.py ${STAGEDIR}${PYTHON_SITELIBDIR}/graphite/local_settings.py
 
