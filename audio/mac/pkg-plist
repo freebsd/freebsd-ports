@@ -27,4 +27,3 @@ lib/libmac.a
 lib/libmac.so
 lib/libmac.so.2
 lib/libmac.so.2.0.0
-@dirrm include/mac

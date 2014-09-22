@@ -194,4 +194,3 @@ man/man3/SoundStringToFileFormat.3.gz
 man/man3/SoundTellFile.3.gz
 man/man3/SoundWriteFile.3.gz
 man/man5/nasd.conf.5.gz
-@dirrm include/audio
