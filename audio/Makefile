@@ -392,7 +392,6 @@
     SUBDIR += libworkman
     SUBDIR += libxmp
     SUBDIR += lingot
-    SUBDIR += linux-c6-openal-soft
     SUBDIR += linux-c6-alsa-lib
     SUBDIR += linux-c6-alsa-plugins-oss
     SUBDIR += linux-c6-alsa-plugins-pulseaudio
