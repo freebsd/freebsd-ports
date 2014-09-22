@@ -19,9 +19,12 @@ RUN_DEPENDS=	flare:${PORTSDIR}/games/flare-engine
 USES=		cmake
 CMAKE_BUILD_TYPE=	#empty
 INSTALLS_ICONS=	yes
+NO_ARCH=	yes
 
 CMAKE_ARGS=	-DBINDIR="bin" -DDATADIR="share/flare"
 
+PLIST_FILES=	share/applications/flare.desktop \
+		share/icons/hicolor/scalable/apps/flare.svg
 PORTDOCS=	*
 PORTDATA=	*
 
