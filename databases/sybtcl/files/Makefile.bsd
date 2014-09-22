@@ -7,7 +7,7 @@ LOCALBASE?=	/usr/local
 PREFIX?=	${LOCALBASE}
 TCL_VER?=	8.4
 TCL_DVER=	${TCL_VER:S/.//}
-WARNS?=	2
+WARNS?=	0
 
 CFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/tcl${TCL_VER}
 LDADD=		-L${LOCALBASE}/lib -lsybdb # -ltcl${TCL_DVER}
