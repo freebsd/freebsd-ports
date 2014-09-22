@@ -4,4 +4,3 @@ lib/libGLC.so
 lib/libGLC.so.0
 lib/libGLC.so.0.0.7
 libdata/pkgconfig/quesoglc.pc
-@dirrmtry include/GL
