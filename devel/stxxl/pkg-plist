@@ -139,14 +139,3 @@ include/stxxl/timer
 include/stxxl/types
 include/stxxl/vector
 lib/libstxxl.a
-@dirrm include/stxxl/bits/utils
-@dirrm include/stxxl/bits/stream
-@dirrm include/stxxl/bits/mng
-@dirrm include/stxxl/bits/io
-@dirrm include/stxxl/bits/containers/btree
-@dirrm include/stxxl/bits/containers
-@dirrm include/stxxl/bits/compat
-@dirrm include/stxxl/bits/common
-@dirrm include/stxxl/bits/algo
-@dirrm include/stxxl/bits
-@dirrm include/stxxl
