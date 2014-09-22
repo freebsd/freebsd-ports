@@ -35,15 +35,3 @@ share/icons/hicolor/scalable/apps/tiled.svg
 %%DATADIR%%/translations/tiled_pt_BR.qm
 %%DATADIR%%/translations/tiled_ru.qm
 %%DATADIR%%/translations/tiled_zh.qm
-@dirrm %%DATADIR%%/translations
-@dirrm %%DATADIR%%
-@dirrmtry share/icons/hicolor/scalable/apps
-@dirrmtry share/icons/hicolor/scalable
-@dirrmtry share/icons/hicolor/32x32/apps
-@dirrmtry share/icons/hicolor/32x32
-@dirrmtry share/icons/hicolor/16x16/apps
-@dirrmtry share/icons/hicolor/16x16
-@dirrmtry share/icons/hicolor
-@dirrmtry share/icons
-@dirrm lib/tiled/plugins
-@dirrm lib/tiled
