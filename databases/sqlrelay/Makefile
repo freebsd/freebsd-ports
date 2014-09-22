@@ -3,20 +3,18 @@
 
 PORTNAME=	${SQLRELAY_PORTNAME}
 PORTVERSION=	${SQLRELAY_PORTVERSION}
-PORTREVISION=	2
 CATEGORIES=	databases
 MASTER_SITES=	SF
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	pi@FreeBSD.org
 COMMENT=	Persistent DB connection pooling/proxying/load balancing system
 
 LIB_DEPENDS=	librudiments.so:${PORTSDIR}/devel/rudiments
 
-BROKEN=		Does not build
 WANT_GNOME=	yes
-USES=		gmake
-USE_AUTOTOOLS=	autoconf libtool
+USES=		gmake autoreconf libtool
 CPPFLAGS+=	-I${LOCALBASE}/include
+GNU_CONFIGURE=	yes
 CONFIGURE_ENV=		${SQLRELAY_CONFIGURE_ENV}
 CONFIGURE_ARGS=		${SQLRELAY_CONFIGURE_ARGS} \
 			--disable-tcl \
@@ -26,11 +24,47 @@ CONFIGURE_ARGS=		${SQLRELAY_CONFIGURE_ARGS} \
 			--disable-php \
 			--disable-python \
 			--disable-ruby \
+			--disable-erlang \
 			--disable-zope
 MAKE_JOBS_UNSAFE=yes
 USE_LDCONFIG=	yes
 
 PORTDOCS=	*
+
+TOSTRIP=	bin/sqlr-start \
+		bin/sqlr-listener \
+		bin/sqlr-connection \
+		bin/sqlr-scaler \
+		bin/sqlr-cachemanager \
+		bin/sqlr-fields \
+		bin/sqlr-query \
+		bin/sqlr-export \
+		bin/sqlr-import \
+		bin/sqlr-pwdenc \
+		bin/sqlr-status \
+		bin/sqlrsh \
+		lib/libsqlrutil.so.0.0.0 \
+		lib/libsqlrclient.so.0.0.0 \
+		lib/libsqlrclientwrapper.so.0.0.0 \
+		lib/libpqsqlrelay.so.0.0.0 \
+		lib/libmysql3sqlrelay.so.0.0.0 \
+		lib/libmysql40sqlrelay.so.0.0.0 \
+		lib/libmysql41sqlrelay.so.0.0.0 \
+		lib/libmysql50sqlrelay.so.0.0.0 \
+		lib/libmysql51sqlrelay.so.0.0.0 \
+		lib/libsqlrserver.so.0.0.0 \
+		libexec/sqlrelay/sqlrquery_sqlrcmdgstat.so \
+		libexec/sqlrelay/sqlrquery_sqlrcmdcstat.so \
+		libexec/sqlrelay/sqlrlogger_debug.so \
+		libexec/sqlrelay/sqlrlogger_slowqueries.so \
+		libexec/sqlrelay/sqlrlogger_custom_nw.so \
+		libexec/sqlrelay/sqlrlogger_custom_sc.so \
+		libexec/sqlrelay/sqlrpwdenc_rot.so \
+		libexec/sqlrelay/sqlrpwdenc_md5.so \
+		libexec/sqlrelay/sqlrpwdenc_crypt.so \
+		libexec/sqlrelay/sqlrauth_default.so \
+		libexec/sqlrelay/sqlrauth_sqlrelay.so \
+		libexec/sqlrelay/sqlrconnection_router.so
 
 .include "${.CURDIR}/Makefile.common"
 
@@ -54,6 +88,7 @@ CONFIGURE_ARGS+=	--without-gdbm-prefix \
 .if ${PORT_OPTIONS:MMYSQL}
 USE_MYSQL=	yes
 CONFIGURE_ARGS+=	--with-mysql-prefix="${LOCALBASE}"
+TOSTRIP+=		libexec/sqlrelay/sqlrconnection_mysql.so
 .else
 CONFIGURE_ARGS+=	--disable-mysql
 .endif
@@ -101,5 +136,10 @@ post-patch:
 
 post-configure:
 	@${REINPLACE_CMD} 's,-Werror,,' ${WRKSRC}/config.mk
+
+post-stage:
+.for f in ${TOSTRIP}
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${f}
+.endfor
 
 .include <bsd.port.mk>
