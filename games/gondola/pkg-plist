@@ -60,7 +60,3 @@ lib/gondola/snowui/scrollbox.py
 lib/gondola/snowui/scrollbox.pyc
 lib/gondola/snowui/widget.py
 lib/gondola/snowui/widget.pyc
-@dirrm lib/gondola/snowui
-@dirrm lib/gondola/simplejson
-@dirrm lib/gondola/gamelib
-@dirrm lib/gondola
