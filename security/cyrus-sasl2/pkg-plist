@@ -5,7 +5,6 @@ include/sasl/prop.h
 include/sasl/sasl.h
 include/sasl/saslplug.h
 include/sasl/saslutil.h
-@dirrm include/sasl
 lib/libsasl2.a
 lib/libsasl2.la
 lib/libsasl2.so
@@ -161,7 +160,3 @@ sbin/saslpasswd2
 %%PORTDOCS%%%%DOCSDIR%%/html/sysadmin.html
 %%PORTDOCS%%%%DOCSDIR%%/html/upgrading.html
 %%PORTDOCS%%%%DOCSDIR%%/html/windows.html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrmtry lib/sasl2
-@cwd %%PREFIX%%
