@@ -15,7 +15,7 @@ PLIST_FILES=	bin/ioping man/man1/ioping.1.gz
 
 do-build:
 	(cd ${WRKSRC} && ${CC} ${CFLAGS} -DVERSION=${PORTVERSION} ioping.c \
-		-o ioping ${LDFLAGS} -lm
+		-o ioping ${LDFLAGS} -lm)
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/ioping ${STAGEDIR}${PREFIX}/bin
