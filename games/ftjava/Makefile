@@ -29,7 +29,9 @@ DATAFILES=	Images IncomingGames OutgoingGames Ships FTJava.jar \
 		mailapi.jar png.jar pop3.jar skeetutil.jar smtp.jar xerces.jar \
 		xercesImpl.jar xmlParserAPIs.jar
 
+PLIST_FILES=	bin/ftjava
 PORTDOCS=	FTJava_Linux.html faq.html FTJava_Documentation.html
+PORTDATA=	*
 
 SUB_FILES=	ftjava.sh
 
