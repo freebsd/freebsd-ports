@@ -10,4 +10,4 @@ COMMENT=	Engine for performing and rendering text diffs
 
 USES=	pear
 
-.include <bsd.pear.mk>
+.include <bsd.port.mk>
