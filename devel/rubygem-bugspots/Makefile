@@ -2,15 +2,17 @@
 # $FreeBSD$
 
 PORTNAME=	bugspots
-PORTVERSION=	0.1.2
+PORTVERSION=	0.2.1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	tota@FreeBSD.org
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Bugspots - Bug Prediction Heuristic
 
-RUN_DEPENDS=	rubygem-grit>=0:${PORTSDIR}/devel/rubygem-grit \
-		rubygem-rainbow>=0:${PORTSDIR}/devel/rubygem-rainbow
+LICENSE=	MIT
+
+RUN_DEPENDS=	rubygem-rainbow>=0:${PORTSDIR}/devel/rubygem-rainbow \
+		rubygem-rugged>=0.21.0:${PORTSDIR}/devel/rubygem-rugged
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
