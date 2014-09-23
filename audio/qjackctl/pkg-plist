@@ -10,7 +10,3 @@ share/locale/qjackctl_it.qm
 share/locale/qjackctl_ja.qm
 share/locale/qjackctl_nl.qm
 share/locale/qjackctl_ru.qm
-@dirrmtry share/icons/hicolor/32x32/apps
-@dirrmtry share/icons/hicolor/32x32
-@dirrmtry share/icons/hicolor
-@dirrmtry share/icons
