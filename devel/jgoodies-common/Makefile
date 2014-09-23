@@ -47,7 +47,7 @@ post-patch:
 	${REINPLACE_CMD} -E 's|<a .[^>]+>License</a>|<abbr title="BSD 3-clause. License-file installation disabled">License</abbr>|'\
 		${WRKSRC}/README.html
 .else
-	${REINPLACE_CMD} -E 's|href="LICENSE.txt"|href="../../../${_LICENSE_DIR_REL}/BSD"|' \
+	${REINPLACE_CMD} -E 's|href="LICENSE.txt"|href="../../../${_LICENSE_DIR:S,^${PREFIX}/,,}/BSD"|' \
 		${WRKSRC}/README.html
 .endif
 
