@@ -1,6 +1,4 @@
-@mode 0755
-sbin/debootstrap
-@mode
+@(,,0755) sbin/debootstrap
 man/man8/debootstrap.8.gz
 %%DATADIR%%/functions
 %%DATADIR%%/scripts/breezy
@@ -43,5 +41,3 @@ man/man8/debootstrap.8.gz
 %%DATADIR%%/scripts/wheezy
 %%DATADIR%%/scripts/woody
 %%DATADIR%%/scripts/woody.buildd
-@dirrm %%DATADIR%%/scripts
-@dirrm %%DATADIR%%
