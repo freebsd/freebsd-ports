@@ -10,7 +10,6 @@ MASTER_SITES=	http://te4.org/dl/t-engine/ \
 DISTFILES=	t-engine4-src-${PORTVERSION}${EXTRACT_SUFX} \
 		${PORTNAME}.png:icons
 EXTRACT_ONLY=	t-engine4-src-${PORTVERSION}${EXTRACT_SUFX}
-PLIST_SUB=	PORTVERSION=${PORTVERSION}
 
 MAINTAINER=	lifanov@mail.lifanov.com
 COMMENT=	Epic tactical turn-based roguelike adventure
@@ -23,6 +22,7 @@ LIB_DEPENDS=	libvorbisfile.so:${PORTSDIR}/audio/libvorbis
 DESKTOP_ENTRIES="ToME 4" "" "${PORTNAME}" \
 		"${PORTNAME}" "Game;RolePlaying;" ""
 
+PLIST_SUB=	PORTVERSION=${PORTVERSION}
 WRKSRC=		${WRKDIR}/t-engine4-src-${PORTVERSION}
 MAKE_ARGS+=	config=release verbose=yes ARCH=""
 USES=		gmake openal:al tar:bzip2
@@ -40,12 +40,10 @@ pre-build:
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}
-
 	${INSTALL_PROGRAM} ${WRKSRC}/t-engine ${STAGEDIR}${DATADIR}
-	${INSTALL} -m 0755 ${WRKDIR}/tome4 ${STAGEDIR}${PREFIX}/bin/
+	${INSTALL_SCRIPT} ${WRKDIR}/tome4 ${STAGEDIR}${PREFIX}/bin
 	(cd ${WRKSRC}; ${COPYTREE_SHARE} "bootstrap game" ${STAGEDIR}${DATADIR})
-
 	${INSTALL_DATA} ${_DISTDIR}/${PORTNAME}.png \
-		${STAGEDIR}${PREFIX}/share/pixmaps/
+		${STAGEDIR}${PREFIX}/share/pixmaps
 
 .include <bsd.port.mk>
