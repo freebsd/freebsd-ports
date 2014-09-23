@@ -116,7 +116,7 @@ GEOIP_LIB_DEPENDS=	libGeoIP.so:${PORTSDIR}/net/GeoIP
 GOST_CONFIGURE_WITH=	gost
 
 PYTHON_CONFIGURE_WITH=	python
-PYTHON_USES=	python gmake
+PYTHON_USES=	python
 
 DLZ_POSTGRESQL_CONFIGURE_ON=	--with-dlz-postgres=yes
 DLZ_POSTGRESQL_USE=		pgsql=yes
