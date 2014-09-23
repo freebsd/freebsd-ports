@@ -13,6 +13,7 @@
     SUBDIR += ach
     SUBDIR += adzap
     SUBDIR += amphetadesk
+    SUBDIR += alef-webfont
     SUBDIR += analog
     SUBDIR += anyremote2html
     SUBDIR += anyterm
