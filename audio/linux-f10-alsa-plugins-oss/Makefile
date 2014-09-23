@@ -6,7 +6,7 @@ PORTVERSION=	1.0.21
 PORTREVISION=	3
 CATEGORIES=	audio linux
 
-MAINTAINER=	hashiz@meridiani.jp
+MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	OSS plugin for ALSA (Linux Fedora 10)
 
 ONLY_FOR_ARCHS=	i386 amd64
