@@ -218,13 +218,3 @@ share/icons/ximian-south/temp-home.png
 share/icons/ximian-south/theme_preview.png
 share/icons/ximian-south/trash-accept.png
 share/icons/ximian-south/trash-empty-accept.png
-@dirrm share/icons/ximian-south/scalable
-@dirrm share/icons/ximian-south/extra_icons
-@dirrm share/icons/ximian-south/48x48/mimetypes
-@dirrm share/icons/ximian-south/48x48/filesystems
-@dirrm share/icons/ximian-south/48x48/emblems
-@dirrm share/icons/ximian-south/48x48/devices
-@dirrm share/icons/ximian-south/48x48
-@dirrm share/icons/ximian-south/.xvpics
-@dirrm share/icons/ximian-south
-@dirrmtry share/icons
