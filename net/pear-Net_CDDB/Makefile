@@ -15,9 +15,6 @@ RUN_DEPENDS=	${PEARDIR}/Net/Socket.php:${PORTSDIR}/net/pear-Net_Socket \
 		${PEARDIR}/HTTP/Request.php:${PORTSDIR}/www/pear-HTTP_Request \
 		${PEARDIR}/MDB2.php:${PORTSDIR}/databases/pear-MDB2
 
-USES=		dos2unix
-PEAR_AUTOINSTALL=	yes
+USES=		dos2unix pear
 
-.include <bsd.port.pre.mk>
-.include "${PORTSDIR}/devel/pear/bsd.pear.mk"
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

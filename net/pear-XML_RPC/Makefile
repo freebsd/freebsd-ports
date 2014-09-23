@@ -8,12 +8,7 @@ CATEGORIES=	net devel pear
 MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	PHP implementation of the XML-RPC protocol
 
-BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
-RUN_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
-
 USE_PHP=	xml
-PEAR_AUTOINSTALL=	yes
+USES=	pear
 
-.include <bsd.port.pre.mk>
-.include "${PORTSDIR}/devel/pear/bsd.pear.mk"
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
