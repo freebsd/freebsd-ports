@@ -612,10 +612,6 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #				  Should not be set when no documentation files are
 #				  installed.
 #				  Useful for dynamically generated documentation.
-#				  NOTE: this may fail to generate @dirrm entries for
-#				  complex patterns. In such a case, please abstain from
-#				  using DOCSDIR and add files and @dirrm-directories to
-#				  pkg-plist instead (see make makeplist).
 #
 # Set the following to specify all documentation your port installs into
 # ${EXAMPLESDIR}
@@ -3714,9 +3710,7 @@ install-ldconfig-file:
 .endif
 	@${ECHO_CMD} ${USE_LDCONFIG} | ${TR} ' ' '\n' \
 		> ${STAGEDIR}${LOCALBASE}/${LDCONFIG_DIR}/${UNIQUENAME}
-	@${ECHO_CMD} "@cwd ${LOCALBASE}" >> ${TMPPLIST}
-	@${ECHO_CMD} ${LDCONFIG_DIR}/${UNIQUENAME} >> ${TMPPLIST}
-	@${ECHO_CMD} "@cwd ${PREFIX}" >> ${TMPPLIST}
+	@${ECHO_CMD} ${LOCALBASE}/${LDCONFIG_DIR}/${UNIQUENAME} >> ${TMPPLIST}
 .endif
 .endif
 .endif
@@ -3728,9 +3722,7 @@ install-ldconfig-file:
 .endif
 	@${ECHO_CMD} ${USE_LDCONFIG32} | ${TR} ' ' '\n' \
 		> ${STAGEDIR}${LOCALBASE}/${LDCONFIG32_DIR}/${UNIQUENAME}
-	@${ECHO_CMD} "@cwd ${LOCALBASE}" >> ${TMPPLIST}
-	@${ECHO_CMD} ${LDCONFIG32_DIR}/${UNIQUENAME} >> ${TMPPLIST}
-	@${ECHO_CMD} "@cwd ${PREFIX}" >> ${TMPPLIST}
+	@${ECHO_CMD} ${LOCALBASE}/${LDCONFIG32_DIR}/${UNIQUENAME} >> ${TMPPLIST}
 .endif
 .endif
 .if defined(INSTALLS_SHLIB)
