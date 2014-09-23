@@ -79,33 +79,3 @@ share/omf/drivel/drivel-cs.omf
 share/omf/drivel/drivel-de.omf
 share/omf/drivel/drivel-pt.omf
 share/pixmaps/drivel-48.png
-@dirrm share/omf/drivel
-@dirrmtry share/locale/zh_HK/LC_MESSAGES
-@dirrmtry share/locale/zh_HK
-@dirrmtry share/locale/te/LC_MESSAGES
-@dirrmtry share/locale/te
-@dirrmtry share/locale/rw/LC_MESSAGES
-@dirrmtry share/locale/rw
-@dirrmtry share/locale/oc/LC_MESSAGES
-@dirrmtry share/locale/oc
-@dirrmtry share/locale/dz/LC_MESSAGES
-@dirrmtry share/locale/dz
-@dirrmtry share/icons/gnome/48x48/mimetypes
-@dirrmtry share/icons/gnome/48x48
-@dirrmtry share/icons/gnome/32x32/mimetypes
-@dirrmtry share/icons/gnome/32x32
-@dirrmtry share/icons/gnome/24x24/mimetypes
-@dirrmtry share/icons/gnome/24x24
-@dirrmtry share/icons/gnome/22x22/mimetypes
-@dirrmtry share/icons/gnome/22x22
-@dirrmtry share/icons/gnome/16x16/mimetypes
-@dirrmtry share/icons/gnome/16x16
-@dirrmtry share/icons/gnome
-@dirrmtry share/icons
-@dirrmtry share/gnome/help/drivel/pt
-@dirrmtry share/gnome/help/drivel/de
-@dirrmtry share/gnome/help/drivel/cs
-@dirrmtry share/gnome/help/drivel/C
-@dirrmtry share/gnome/help/drivel
-@dirrmtry %%DATADIR%%/glade
-@dirrmtry %%DATADIR%%
