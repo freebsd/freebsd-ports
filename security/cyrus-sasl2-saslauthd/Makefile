@@ -115,6 +115,8 @@ post-install:
 	@${ECHO_MSG} "SASLAUTHD_RUNPATH was specified."
 	@${ECHO_MSG} "Make sure you create ${SASLAUTHD_RUNPATH}."
 	@${ECHO_MSG} ""
+.else
+	@${MKDIR} ${STAGEDIR}/var/run/saslauthd
 .endif
 .if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}/saslauthd
