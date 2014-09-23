@@ -12,14 +12,10 @@ COMMENT=	Base package that all ezc components packages rely on
 
 LICENSE=	BSD
 
-BUILD_DEPENDS=	pear>=1.4.2:${PORTSDIR}/devel/pear \
-		${PEARDIR}/.channels/components.ez.no.reg:${PORTSDIR}/devel/pear-channel-ezc
-RUN_DEPENDS=	pear>=1.4.2:${PORTSDIR}/devel/pear \
-		${PEARDIR}/.channels/components.ez.no.reg:${PORTSDIR}/devel/pear-channel-ezc
+BUILD_DEPENDS=	${PEARDIR}/.channels/components.ez.no.reg:${PORTSDIR}/devel/pear-channel-ezc
+RUN_DEPENDS=	${PEARDIR}/.channels/components.ez.no.reg:${PORTSDIR}/devel/pear-channel-ezc
 
 PEAR_CHANNEL=	ezc
-PEAR_AUTOINSTALL=	yes
+USES=	pear
 
-.include <bsd.port.pre.mk>
-.include "${PORTSDIR}/devel/pear/bsd.pear.mk"
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

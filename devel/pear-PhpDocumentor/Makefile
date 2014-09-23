@@ -13,31 +13,15 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 CONFLICTS=	pear-PHPDoc-[0-9]*
 
-LATEST_LINK=	pear-${PORTNAME}
+USES=	pear
 OPTIONS_DEFINE=	XML_BEAUTIFIER
 XML_BEAUTIFIER_DESC=	XML_Beautifier support
 
-PEAR_AUTOINSTALL=	yes
-
-.include <bsd.port.pre.mk>
-.include "${PORTSDIR}/devel/pear/bsd.pear.mk"
-
-.if ${PORT_OPTIONS:MXML_BEAUTIFIER}
-RUN_DEPENDS+=	${PEARDIR}/XML/Beautifier.php:${PORTSDIR}/textproc/pear-XML_Beautifier
-.endif
-
-post-patch:
-.for file in ${SUBFILES}
-	@${REINPLACE_CMD} -e 's|@VER@|${PORTVERSION}|g ; \
-		 s|@PEAR-DIR@|${PEARDIR}|g ; \
-		 s|@DATA-DIR@|${DATADIR:S,/${PORTNAME}$,,}|g ; \
-		 s|@WEB-DIR@|${DATADIR:S,/${PORTNAME}$,,}|g ; \
-		 s|@DOC-DIR@|${DOCSDIR:S,/${PORTNAME}$,,}|g' ${WRKSRC}/${file}
-.endfor
+XML_BEAUTIFIER_RUN_DEPENDS=	${PEARDIR}/XML/Beautifier.php:${PORTSDIR}/textproc/pear-XML_Beautifier
 
 post-extract:
 .for dir in ${DUMMYDIRS}
 	${TOUCH} ${WRKSRC}/${dir}/.peardummy
 .endfor
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

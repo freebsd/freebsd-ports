@@ -8,8 +8,6 @@ CATEGORIES=	devel pear
 MAINTAINER=	5u623l20@gmail.com
 COMMENT=	Implements singly and doubly-linked lists
 
-PEAR_AUTOINSTALL=	yes
+USES=	pear
 
-.include <bsd.port.pre.mk>
-.include "${PORTSDIR}/devel/pear/bsd.pear.mk"
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
