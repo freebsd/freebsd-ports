@@ -11,8 +11,3 @@ share/icons/hicolor/48x48/apps/patchage.png
 share/icons/hicolor/512x512/apps/patchage.png
 share/icons/hicolor/scalable/apps/patchage.svg
 %%DATADIR%%/patchage.glade
-@dirrm %%DATADIR%%
-@dirrmtry share/icons/hicolor/512x512/apps
-@dirrmtry share/icons/hicolor/512x512
-@dirrmtry share/icons/hicolor
-@dirrmtry share/icons
