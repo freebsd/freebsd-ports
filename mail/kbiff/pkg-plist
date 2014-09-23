@@ -63,14 +63,3 @@ share/locale/sv/LC_MESSAGES/kbiff.mo
 share/locale/tr/LC_MESSAGES/kbiff.mo
 share/locale/uk/LC_MESSAGES/kbiff.mo
 share/locale/zh_TW.Big5/LC_MESSAGES/kbiff.mo
-@dirrmtry share/icons/locolor/32x32/apps
-@dirrmtry share/icons/locolor/32x32
-@dirrmtry share/icons/locolor/16x16/apps
-@dirrmtry share/icons/locolor/16x16
-@dirrmtry share/icons/locolor
-@dirrm share/doc/HTML/fr/kbiff
-@dirrm share/doc/HTML/es/kbiff
-@dirrm share/doc/HTML/en/kbiff
-@dirrm share/doc/HTML/de/kbiff
-@dirrm share/apps/kbiff/pics
-@dirrm share/apps/kbiff
