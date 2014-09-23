@@ -80,7 +80,7 @@ Apache_Pre_Include=		bsd.apache.mk
 .include "${PORTSDIR}/Mk/bsd.default-versions.mk"
 
 .if defined(DEFAULT_APACHE_VER)
-WARNING+=	"DEFAULT_APACHE_VER is defined, consider using DEFAULT_VERSIONS=apache=${DEFAULT_APACHE_VER} instead"
+WARNING+=	"DEFAULT_APACHE_VER is defined, consider using DEFAULT_VERSIONS+=apache=${DEFAULT_APACHE_VER} instead"
 .endif
 
 DEFAULT_APACHE_VERSION?=	${APACHE_DEFAULT:S/.//}
