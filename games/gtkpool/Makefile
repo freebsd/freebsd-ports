@@ -8,16 +8,18 @@ CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.seul.org/pub/gtkpool/ \
 		http://www.sourcefiles.org/Games/Sports/Pool/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	games@FreeBSD.org
 COMMENT=	2D pool game using the GTK+ toolkit
 
-USES=		gmake perl5 pkgconfig
+USES=		autoreconf gmake perl5 pkgconfig
 USE_GNOME=	gtk20
 USE_PERL5=	build
-USE_AUTOTOOLS=	aclocal automake autoheader autoconf
-ACLOCAL_ARGS=	-I ${LOCALBASE}/share/aclocal
-AUTOMAKE_ARGS=	--add-missing
+GNU_CONFIGURE=	yes
 USE_GCC=	any
+
+PLIST_FILES=	bin/gtkpool \
+		share/icons/gtkpool.png
+PORTDATA=	*
 
 post-patch:
 .for file in application.cpp options.cpp
