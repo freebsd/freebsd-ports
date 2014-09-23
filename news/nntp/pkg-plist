@@ -16,6 +16,4 @@ sbin/nntpd
 %%PORTDOCS%%%%DOCSDIR%%/support-README
 %%PORTDOCS%%%%DOCSDIR%%/xfer-README
 %%PORTDOCS%%%%DOCSDIR%%/xmit-README
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@cwd %%VARBASE%%
-%%NEWSCTL%%/overview.fmt
+%%NEWSCTL%%%%VARBASE%%/overview.fmt
