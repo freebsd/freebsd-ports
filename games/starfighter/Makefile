@@ -17,8 +17,7 @@ COMMENT=	Liberate the universe from the evil company WEAPCO
 
 LICENSE=	GPLv2
 
-USES=		gmake iconv shebangfix
-USE_PYTHON_BUILD=	2
+USES=		gmake iconv python:2,build shebangfix
 USE_XORG=	x11 xau xdmcp
 USE_SDL=	image mixer
 WITH_ZLIB=	yes
@@ -56,6 +55,8 @@ post-patch:
 		${WRKSRC}/makefile
 
 post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+
 	${INSTALL_DATA} ${_DISTDIR}/${PORTNAME}.png \
 		${STAGEDIR}${PREFIX}/share/pixmaps/
 
