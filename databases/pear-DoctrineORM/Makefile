@@ -18,9 +18,7 @@ RUN_DEPENDS=	${PEARDIR}/.channels/pear.doctrine-project.org.reg:${PORTSDIR}/deve
 	${PEARDIR}/Symfony/Component/Console/Application.php:${PORTSDIR}/devel/pear-Symfony_Component_Console \
 	${PEARDIR}/Symfony/Component/Yaml/Yaml.php:${PORTSDIR}/textproc/pear-Symfony_Component_Yaml
 
+USES=	pear
 PEAR_CHANNEL=	doctrine
-PEAR_AUTOINSTALL=	yes
 
-.include <bsd.port.pre.mk>
-.include "${PORTSDIR}/devel/pear/bsd.pear.mk"
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
