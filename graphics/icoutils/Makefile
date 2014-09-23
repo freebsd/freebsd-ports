@@ -13,11 +13,7 @@ LICENSE=	GPLv3
 
 LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png
 
-OPTIONS_DEFINE=	RESSCRIPTS
-RESSCRIPTS_DESC=	PERL resource scripts
-
-USE_BZIP2=	yes
-USES=		shebangfix
+USES=		shebangfix tar:bzip2
 SHEBANG_FILES=	extresso/*.in
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-nls
@@ -25,10 +21,11 @@ CONFIGURE_ARGS=	--disable-nls
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-PLIST_FILES=	bin/icotool \
-		bin/wrestool \
-		man/man1/icotool.1.gz \
-		man/man1/wrestool.1.gz
+PLIST_FILES=	bin/icotool bin/wrestool \
+		man/man1/icotool.1.gz man/man1/wrestool.1.gz
+
+OPTIONS_DEFINE=	RESSCRIPTS
+RESSCRIPTS_DESC=	Additional resource scripts written in Perl
 
 .include <bsd.port.options.mk>
 
@@ -36,20 +33,12 @@ PLIST_FILES=	bin/icotool \
 RUN_DEPENDS+=	p5-libwww>=0:${PORTSDIR}/www/p5-libwww
 USES+=		perl5
 USE_PERL5=	run
-MAN1+=		extresso.1 genresscript.1
-PLIST_FILES+=	bin/extresso \
-		bin/genresscript
-.endif
-
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == "sparc64"
-BROKEN=		Does not link on sparc64
+PLIST_FILES+=	bin/extresso bin/genresscript \
+		man/man1/extresso.1.gz man/man1/genresscript.1.gz
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e \
-		'/^SUBDIRS/s|extresso||' ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e '/^SUBDIRS/s|extresso||' ${WRKSRC}/Makefile.in
 
 post-install:
 .if ${PORT_OPTIONS:MRESSCRIPTS}
@@ -57,4 +46,4 @@ post-install:
 		${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${INSTALL_TARGET})
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
