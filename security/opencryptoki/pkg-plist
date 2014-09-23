@@ -27,22 +27,7 @@ man/man1/pkcsconf.1.gz
 man/man5/pk_config_data.5.gz
 man/man7/opencryptoki.7.gz
 man/man8/pkcsslotd.8.gz
-@dirrm lib/pkcs11
-@dirrm lib/opencryptoki/stdll
-@dirrm lib/opencryptoki
-@dirrm include/opencryptoki
-@cwd /var
-@exec install -d -o _pkcs11 -g _pkcs11 -m 700 %D/lib/opencryptoki
-@exec install -d -o _pkcs11 -g _pkcs11 -m 700 %D/lib/opencryptoki/swtok
-@exec install -d -o _pkcs11 -g _pkcs11 -m 700 %D/lib/opencryptoki/tpm
-@owner _pkcs11
-@group _pkcs11
-@mode 0700
-@dirrmtry lib/opencryptoki/tpm
-@dirrmtry lib/opencryptoki/swtok
-@dirrmtry lib/opencryptoki
-@owner
-@group
-@mode
-@dirrmtry lib
-@cwd %%RESETPREFIX%%
+@dir(_pkcs11,_pkcs11,700) /var/lib/opencryptoki/swtok
+@dir(_pkcs11,_pkcs11,700) /var/lib/opencryptoki/tpm
+@dir(_pkcs11,_pkcs11,700) /var/lib/opencryptoki
+@dir /var/lib
