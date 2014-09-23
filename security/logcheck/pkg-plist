@@ -200,21 +200,5 @@ sbin/logcheck
 sbin/logtail
 sbin/logtail2
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/crontab.in
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
-@dirrm %%ETCDIR%%/violations.ignore.d
-@dirrm %%ETCDIR%%/violations.d
-@dirrm %%ETCDIR%%/ignore.d.workstation
-@dirrm %%ETCDIR%%/ignore.d.server
-@dirrm %%ETCDIR%%/ignore.d.paranoid
-@dirrm %%ETCDIR%%/cracking.d
-@dirrm %%ETCDIR%%
-@dirrm %%DATADIR%%/detectrotate
-@dirrm %%DATADIR%%
-@cwd /
-@exec mkdir -p %%DBDIR%%
-@exec chown %%LOGCHECK_USER%%:%%LOGCHECK_GROUP%% %%DBDIR%%
-@dirrmtry %%DBDIR%%
-@exec mkdir -p %%RUNDIR%%
-@exec chown %%LOGCHECK_USER%%:%%LOGCHECK_GROUP%% %%RUNDIR%%
-@dirrmtry %%RUNDIR%%
-@cwd
+@dir(%%LOGCHECK_USER%%,%%LOGCHECK_GROUP%%,) %%DBDIR%%
+@dir(%%LOGCHECK_USER%%,%%LOGCHECK_GROUP%%,) %%RUNDIR%%
