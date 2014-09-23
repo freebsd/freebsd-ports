@@ -889,25 +889,3 @@ share/icons/AquaFusion/64x64/mimetypes/gnome-mime-video-x-msvideo.png
 share/icons/AquaFusion/64x64/mimetypes/gnome-package.png
 share/icons/AquaFusion/ChangeLog
 share/icons/AquaFusion/index.theme
-@dirrm share/icons/AquaFusion/64x64/mimetypes
-@dirrm share/icons/AquaFusion/64x64/filesystems
-@dirrm share/icons/AquaFusion/64x64/devices
-@dirrm share/icons/AquaFusion/64x64/apps
-@dirrm share/icons/AquaFusion/64x64
-@dirrm share/icons/AquaFusion/48x48/mimetypes
-@dirrm share/icons/AquaFusion/48x48/filesystems
-@dirrm share/icons/AquaFusion/48x48/devices
-@dirrm share/icons/AquaFusion/48x48/apps
-@dirrm share/icons/AquaFusion/48x48
-@dirrm share/icons/AquaFusion/36x36/mimetypes
-@dirrm share/icons/AquaFusion/36x36/filesystems
-@dirrm share/icons/AquaFusion/36x36/devices
-@dirrm share/icons/AquaFusion/36x36/apps
-@dirrm share/icons/AquaFusion/36x36
-@dirrm share/icons/AquaFusion/24x24/stock
-@dirrm share/icons/AquaFusion/24x24/filesystems
-@dirrm share/icons/AquaFusion/24x24/devices
-@dirrm share/icons/AquaFusion/24x24/apps
-@dirrm share/icons/AquaFusion/24x24
-@dirrm share/icons/AquaFusion
-@dirrmtry share/icons
