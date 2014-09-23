@@ -9,15 +9,11 @@ DISTNAME=	Mail_mimeDecode-${PORTVERSION}
 MAINTAINER=	joehorn@gmail.com
 COMMENT=	Provides a class to decode mime messages
 
-BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear \
-		${PEARDIR}/Mail/mime.php:${PORTSDIR}/mail/pear-Mail_Mime
-RUN_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear \
-		${PEARDIR}/Mail/mime.php:${PORTSDIR}/mail/pear-Mail_Mime
+BUILD_DEPENDS=	${PEARDIR}/Mail/mime.php:${PORTSDIR}/mail/pear-Mail_Mime
+RUN_DEPENDS=	${PEARDIR}/Mail/mime.php:${PORTSDIR}/mail/pear-Mail_Mime
 
 LICENSE=	BSD
 
-PEAR_AUTOINSTALL=	yes
+USES=	pear
 
-.include <bsd.port.pre.mk>
-.include "${PORTSDIR}/devel/pear/bsd.pear.mk"
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
