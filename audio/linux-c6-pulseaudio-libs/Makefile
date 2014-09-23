@@ -3,6 +3,7 @@
 
 PORTNAME=	pulseaudio-libs
 PORTVERSION=	0.9.21
+PORTREVISION=	1
 CATEGORIES=	audio linux
 
 MAINTAINER=	emulation@FreeBSD.org
@@ -10,7 +11,7 @@ COMMENT=	Libraries for PulseAudio clients (Linux CentOS ${LINUX_DIST_VER})
 
 USE_LINUX=	c6
 USE_LINUX_RPM=	yes
-USE_LINUX_APPS=	xorglibs
+USE_LINUX_APPS=	dbuslibs libasyncns libsndfile xorglibs
 
 RPMVERSION=	14.el6_3
 USE_LDCONFIG=	yes
