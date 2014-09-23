@@ -197,11 +197,3 @@ bin/puddletag
 man/man1/puddletag.1.gz
 share/applications/puddletag.desktop
 share/pixmaps/puddletag.png
-@dirrm %%PYTHON_SITELIBDIR%%/puddlestuff/tagsources/mp3tag
-@dirrm %%PYTHON_SITELIBDIR%%/puddlestuff/tagsources
-@dirrm %%PYTHON_SITELIBDIR%%/puddlestuff/plugins
-@dirrm %%PYTHON_SITELIBDIR%%/puddlestuff/masstag
-@dirrm %%PYTHON_SITELIBDIR%%/puddlestuff/mainwin
-@dirrm %%PYTHON_SITELIBDIR%%/puddlestuff/libraries
-@dirrm %%PYTHON_SITELIBDIR%%/puddlestuff/audioinfo
-@dirrm %%PYTHON_SITELIBDIR%%/puddlestuff
