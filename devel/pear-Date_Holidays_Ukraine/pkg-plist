@@ -1,5 +1,0 @@
-share/pear/Date/Holidays/Driver/Ukraine.php
-share/pear/packages/pear-Date_Holidays_Ukraine-0.1.2/package.xml
-share/pear/tests/Date_Holidays_Ukraine/Date_Holidays_Driver_Ukraine_TestSuite.php
-@dirrm share/pear/tests/Date_Holidays_Ukraine
-@dirrm share/pear/packages/pear-Date_Holidays_Ukraine-0.1.2

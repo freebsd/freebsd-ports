@@ -1,5 +1,0 @@
-share/pear/Date/Holidays/Driver/Slovenia.php
-share/pear/packages/pear-Date_Holidays_Slovenia-0.1.2/package.xml
-share/pear/tests/Date_Holidays_Slovenia/Date_Holidays_Driver_Slovenia_TestSuite.php
-@dirrm share/pear/tests/Date_Holidays_Slovenia
-@dirrm share/pear/packages/pear-Date_Holidays_Slovenia-0.1.2
