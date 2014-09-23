@@ -11,7 +11,7 @@ MASTER_SITES=	${MASTER_SITE_LOCAL:S!$!skv/!} \
 MAINTAINER=	vsevolod@FreeBSD.org
 COMMENT=	Netgraph IP accounting
 
-LICENSE=	BSD
+LICENSE=	BSD2CLAUSE
 
 USES=	kmod uidfix
 
