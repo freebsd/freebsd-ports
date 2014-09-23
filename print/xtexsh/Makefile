@@ -23,8 +23,6 @@ USES+=		tk desktop-file-utils
 INSTALLS_ICONS=	yes
 PORTDOCS=	*
 
-.include <bsd.port.options.mk>
-
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's|/usr/bin/wish|${WISH}|g ; \
