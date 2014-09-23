@@ -1,3 +1,4 @@
+include/clunk/backend.h
 include/clunk/buffer.h
 include/clunk/clunk.h
 include/clunk/clunk_assert.h
@@ -16,4 +17,3 @@ include/clunk/sse_fft_context.h
 include/clunk/stream.h
 include/clunk/v3.h
 lib/libclunk.so
-@dirrm include/clunk
