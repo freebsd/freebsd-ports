@@ -10,19 +10,15 @@ PKGNAMEPREFIX=	pear-
 MAINTAINER=	gasol.wu@gmail.com
 COMMENT=	Code browser that augments the code with information
 
-BUILD_DEPENDS=	pear>=1.8.1:${PORTSDIR}/devel/pear \
-		pear-Console_CommandLine>=1.1.3:${PORTSDIR}/devel/pear-Console_CommandLine \
+BUILD_DEPENDS=	pear-Console_CommandLine>=1.1.3:${PORTSDIR}/devel/pear-Console_CommandLine \
 		pear-File_Iterator>=1.3.0:${PORTSDIR}/devel/pear-File_Iterator \
 		pear-Log>=1.2.1:${PORTSDIR}/sysutils/pear-Log
-RUN_DEPENDS=	pear>=1.8.1:${PORTSDIR}/devel/pear \
-		pear-Console_CommandLine>=1.1.3:${PORTSDIR}/devel/pear-Console_CommandLine \
+RUN_DEPENDS=	pear-Console_CommandLine>=1.1.3:${PORTSDIR}/devel/pear-Console_CommandLine \
 		pear-File_Iterator>=1.3.0:${PORTSDIR}/devel/pear-File_Iterator \
 		pear-Log>=1.2.1:${PORTSDIR}/sysutils/pear-Log
 
+USES=	pear
 USE_PHP=	dom
 PEAR_CHANNEL=	phpunit
-PEAR_AUTOINSTALL=	yes
 
-.include <bsd.port.pre.mk>
-.include "${PORTSDIR}/devel/pear/bsd.pear.mk"
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

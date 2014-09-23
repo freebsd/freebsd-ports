@@ -12,16 +12,12 @@ COMMENT=	Set of classes to do different actions with the console
 
 LICENSE=	BSD
 
-BUILD_DEPENDS=	pear>=1.4.2:${PORTSDIR}/devel/pear \
-		pear-ezc_Base>=1.8:${PORTSDIR}/devel/pear-ezc_Base \
+BUILD_DEPENDS=	pear-ezc_Base>=1.8:${PORTSDIR}/devel/pear-ezc_Base \
 		${PEARDIR}/.channels/components.ez.no.reg:${PORTSDIR}/devel/pear-channel-ezc
-RUN_DEPENDS=	pear>=1.4.2:${PORTSDIR}/devel/pear \
-		pear-ezc_Base>=1.8:${PORTSDIR}/devel/pear-ezc_Base \
+RUN_DEPENDS=	pear-ezc_Base>=1.8:${PORTSDIR}/devel/pear-ezc_Base \
 		${PEARDIR}/.channels/components.ez.no.reg:${PORTSDIR}/devel/pear-channel-ezc
 
 PEAR_CHANNEL=	ezc
-PEAR_AUTOINSTALL=	yes
+USES=	pear
 
-.include <bsd.port.pre.mk>
-.include "${PORTSDIR}/devel/pear/bsd.pear.mk"
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -21,9 +21,6 @@ RUN_DEPENDS=	pear>=1.9.4:${PORTSDIR}/devel/pear \
 		pear-Text_Template>=1.1.0:${PORTSDIR}/textproc/pear-Text_Template
 
 PEAR_CHANNEL=	phpunit
-PEAR_AUTOINSTALL=	yes
-IGNORE_WITH_PHP=52
+USES=	pear
 
-.include <bsd.port.pre.mk>
-.include "${PORTSDIR}/devel/pear/bsd.pear.mk"
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
