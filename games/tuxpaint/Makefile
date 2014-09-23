@@ -6,10 +6,11 @@ PORTVERSION=	0.9.22
 CATEGORIES=	games
 MASTER_SITES=	SF
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	games@FreeBSD.org
 COMMENT=	Drawing program designed for young children
 
 LICENSE=	GPLv2 # (or later)
+LICENSE_FILE=	${WRKSRC}/docs/COPYING.txt
 
 LIB_DEPENDS=	libfribidi.so:${PORTSDIR}/converters/fribidi \
 		libpaper.so:${PORTSDIR}/print/libpaper
@@ -36,6 +37,9 @@ INSTALL_TARGET=	install-gettext install-im install-magic-plugins \
 		install-example-stamps install-example-starters \
 		install-gnome install-icon install-bin install-importscript \
 		install-data install-doc install-man
+
+PORTDOCS=	*
+PORTDATA=	*
 
 OPTIONS_DEFINE=	DOCS
 
