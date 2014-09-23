@@ -2,7 +2,5 @@ bin/ambit
 lib/libambit.sh
 man/man1/ambit.1.gz
 @sample etc/ambit.conf.sample
-@exec mkdir -p %%AMBITDIR%%/hosts
-@cwd /
-@dirrmtry %%AMBITDIR%%/hosts
-@dirrmtry %%AMBITDIR%%
+@dir %%AMBITDIR%%/hosts
+@dir %%AMBITDIR%%
