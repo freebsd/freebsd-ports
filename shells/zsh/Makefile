@@ -104,7 +104,7 @@ post-build:
 	cd ${WRKSRC} && /usr/bin/soelim ${WRKSRC}/Doc/zshall.1.source > \
 		${WRKSRC}/Doc/zshall.1
 .if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${PREFIX}/info
+	@${MKDIR} ${STAGEDIR}${PREFIX}/info
 	makeinfo --no-split --output=${WRKSRC}/Doc/zsh.info \
 		${WRKSRC}/Doc/zsh.texi
 .endif
