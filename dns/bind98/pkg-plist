@@ -7,8 +7,10 @@ bin/nsupdate
 include/bind9/check.h
 include/bind9/getaddresses.h
 include/bind9/version.h
+include/dns/acache.h
 include/dns/acl.h
 include/dns/adb.h
+include/dns/bit.h
 include/dns/byaddr.h
 include/dns/cache.h
 include/dns/callbacks.h
@@ -21,25 +23,34 @@ include/dns/dbtable.h
 include/dns/diff.h
 include/dns/dispatch.h
 include/dns/dlz.h
+include/dns/dlz_dlopen.h
+include/dns/dns64.h
 include/dns/dnssec.h
 include/dns/ds.h
+include/dns/ecdb.h
 include/dns/enumclass.h
 include/dns/enumtype.h
 include/dns/events.h
 include/dns/fixedname.h
+include/dns/forward.h
 include/dns/iptable.h
 include/dns/journal.h
+include/dns/keydata.h
 include/dns/keyflags.h
 include/dns/keytable.h
 include/dns/keyvalues.h
 include/dns/lib.h
 include/dns/log.h
+include/dns/lookup.h
 include/dns/master.h
 include/dns/masterdump.h
 include/dns/message.h
 include/dns/name.h
 include/dns/ncache.h
 include/dns/nsec.h
+include/dns/nsec3.h
+include/dns/opcode.h
+include/dns/order.h
 include/dns/peer.h
 include/dns/portlist.h
 include/dns/private.h
@@ -58,14 +69,17 @@ include/dns/resolver.h
 include/dns/result.h
 include/dns/rootns.h
 include/dns/rpz.h
+include/dns/rriterator.h
 include/dns/sdb.h
 include/dns/sdlz.h
 include/dns/secalg.h
 include/dns/secproto.h
 include/dns/soa.h
 include/dns/ssu.h
+include/dns/stats.h
 include/dns/tcpmsg.h
 include/dns/time.h
+include/dns/timer.h
 include/dns/tkey.h
 include/dns/tsec.h
 include/dns/tsig.h
@@ -85,6 +99,8 @@ include/dst/result.h
 include/isc/app.h
 include/isc/assertions.h
 include/isc/atomic.h
+include/isc/backtrace.h
+include/isc/base32.h
 include/isc/base64.h
 include/isc/bind9.h
 include/isc/bitstring.h
@@ -110,6 +126,7 @@ include/isc/httpd.h
 include/isc/int.h
 include/isc/interfaceiter.h
 include/isc/iterated_hash.h
+include/isc/keyboard.h
 include/isc/lang.h
 include/isc/lex.h
 include/isc/lfsr.h
@@ -127,12 +144,14 @@ include/isc/namespace.h
 include/isc/net.h
 include/isc/netaddr.h
 include/isc/netdb.h
+include/isc/netscope.h
 include/isc/offset.h
 include/isc/once.h
 include/isc/ondestroy.h
 include/isc/os.h
 include/isc/parseint.h
 include/isc/platform.h
+include/isc/portset.h
 include/isc/print.h
 include/isc/quota.h
 include/isc/radix.h
@@ -152,9 +171,11 @@ include/isc/sha2.h
 include/isc/sockaddr.h
 include/isc/socket.h
 include/isc/stat.h
+include/isc/stats.h
 include/isc/stdio.h
 include/isc/stdlib.h
 include/isc/stdtime.h
+include/isc/strerror.h
 include/isc/string.h
 include/isc/symtab.h
 include/isc/syslog.h
@@ -182,6 +203,7 @@ include/isccc/util.h
 include/isccc/version.h
 include/isccfg/aclconf.h
 include/isccfg/cfg.h
+include/isccfg/dnsconf.h
 include/isccfg/grammar.h
 include/isccfg/log.h
 include/isccfg/namedconf.h
@@ -198,6 +220,8 @@ include/lwres/net.h
 include/lwres/netdb.h
 include/lwres/platform.h
 include/lwres/result.h
+include/lwres/stdlib.h
+include/lwres/string.h
 include/lwres/version.h
 lib/libbind9.a
 lib/libdns.a
@@ -342,23 +366,7 @@ sbin/rndc-confgen
 %%NOBASE%%%%ETCDIR%%/master/localhost-forward.db
 %%NOBASE%%%%ETCDIR%%/master/localhost-reverse.db
 %%NOBASE%%%%ETCDIR%%/rndc.conf.sample
-%%NOBASE%%@exec mkdir -p %D/%%ETCDIR%%/dynamic
-%%NOBASE%%@exec chown bind:bind %D/%%ETCDIR%%/dynamic
-%%NOBASE%%@dirrmtry %%ETCDIR%%/dynamic
-%%NOBASE%%@exec mkdir -p %D/%%ETCDIR%%/master
-%%NOBASE%%@exec chown bind:bind %D/%%ETCDIR%%/master
-%%NOBASE%%@dirrmtry %%ETCDIR%%/master
-%%NOBASE%%@exec mkdir -p %D/%%ETCDIR%%/slave
-%%NOBASE%%@exec chown bind:bind %D/%%ETCDIR%%/slave
-%%NOBASE%%@dirrmtry %%ETCDIR%%/slave
-%%NOBASE%%@exec mkdir -p %D/%%ETCDIR%%/working
-%%NOBASE%%@exec chown bind:bind %D/%%ETCDIR%%/working
-%%NOBASE%%@dirrmtry %%ETCDIR%%/working
-%%NOBASE%%@dirrmtry %%ETCDIR%%
-@dirrm include/bind9
-@dirrm include/dns
-@dirrm include/dst
-@dirrmtry include/isc
-@dirrm include/isccc
-@dirrm include/isccfg
-@dirrm include/lwres
+%%NOBASE%%@dir(bind,bind,) %%ETCDIR%%/dynamic
+%%NOBASE%%@dir(bind,bind,) %%ETCDIR%%/master
+%%NOBASE%%@dir(bind,bind,) %%ETCDIR%%/slave
+%%NOBASE%%@dir(bind,bind,) %%ETCDIR%%/working
