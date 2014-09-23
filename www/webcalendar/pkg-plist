@@ -399,35 +399,9 @@
 %%WWWDIR%%/week_ssi.php
 %%WWWDIR%%/year.php
 @mode 755
-@dirrm %%WWWDIR%%/translations
-@dirrm %%WWWDIR%%/tools
-@dirrm %%WWWDIR%%/themes
-@dirrm %%WWWDIR%%/tests
-@dirrm %%WWWDIR%%/install/sql
-@dirrm %%WWWDIR%%/install
-@dirrm %%WWWDIR%%/includes/menu/themes/touch_of_greydient
-@dirrm %%WWWDIR%%/includes/menu/themes/touch_of_grey
-@dirrm %%WWWDIR%%/includes/menu/themes/spring
-@dirrm %%WWWDIR%%/includes/menu/themes/office2003
-@dirrm %%WWWDIR%%/includes/menu/themes/default
-@dirrm %%WWWDIR%%/includes/menu/themes/darkness
-@dirrm %%WWWDIR%%/includes/menu/themes/autumn
-@dirrm %%WWWDIR%%/includes/menu/themes
-@dirrm %%WWWDIR%%/includes/menu/icons/mini
-@dirrm %%WWWDIR%%/includes/menu/icons
-@dirrm %%WWWDIR%%/includes/menu
-@dirrm %%WWWDIR%%/includes/js
-@dirrm %%WWWDIR%%/includes/classes/phpmailer
-@dirrm %%WWWDIR%%/includes/classes/hKit
-@dirrm %%WWWDIR%%/includes/classes/captcha
-@dirrm %%WWWDIR%%/includes/classes
-@dirrmtry %%WWWDIR%%/includes
-@dirrm %%WWWDIR%%/images
-@dirrm %%WWWDIR%%/icons
-@dirrm %%WWWDIR%%/docs
-@dirrmtry %%WWWDIR%%
+@dir %%WWWDIR%%/includes
+@dir %%WWWDIR%%
 @mode
 @owner
 @group
 %%EXAMPLESDIR%%/%%CONFFILE%%
-@dirrm %%EXAMPLESDIR%%
