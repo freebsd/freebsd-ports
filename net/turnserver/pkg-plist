@@ -6,18 +6,25 @@ bin/turnutils_uclient
 lib/libturnclient.a
 etc/turnserver.conf.default
 etc/turnuserdb.conf.default
+man/man1/turnserver.1.gz
+man/man1/turnadmin.1.gz
+man/man1/turnutils.1.gz
+man/man1/turnutils_peer.1.gz
+man/man1/turnutils_stunclient.1.gz
+man/man1/turnutils_uclient.1.gz
+man/man1/rfc5766-turn-server.1.gz
 %%DATADIR%%/schema.sql
 %%DATADIR%%/schema.userdb.redis
 %%DATADIR%%/schema.stats.redis
 %%DATADIR%%/testredisdbsetup.sh
-@dirrmtry %%DATADIR%%
+@dir %%DATADIR%%
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/etc/turnserver.conf
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/etc/turnuserdb.conf
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/etc/turn_client_cert.pem
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/etc/turn_client_pkey.pem
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/etc/turn_server_cert.pem
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/etc/turn_server_pkey.pem
-%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/etc
+%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/etc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/scripts/readme.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/scripts/peer.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/scripts/basic/relay.sh
@@ -45,6 +52,7 @@ etc/turnuserdb.conf.default
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/scripts/longtermsecure/secure_dos_attack.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/scripts/longtermsecuredb/secure_relay_with_db_psql.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/scripts/longtermsecuredb/secure_relay_with_db_mysql.sh
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/scripts/longtermsecuredb/secure_relay_with_db_mysql_ssl.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/scripts/longtermsecuredb/secure_relay_with_db_redis.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/scripts/restapi/secure_relay_secret.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/scripts/restapi/secure_relay_secret_with_db_mysql.sh
@@ -57,22 +65,21 @@ etc/turnuserdb.conf.default
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/scripts/shorttermsecure/secure_relay_short_term_mech.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/scripts/selfloadbalance/secure_dos_attack.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/scripts/selfloadbalance/secure_relay.sh
-%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/scripts/basic
-%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/scripts/loadbalance
-%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/scripts/longtermsecure
-%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/scripts/longtermsecuredb
-%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/scripts/restapi
-%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/scripts/shorttermsecure
-%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/scripts/selfloadbalance
-%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/scripts
-%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%
+%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/scripts/basic
+%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/scripts/loadbalance
+%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/scripts/longtermsecure
+%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/scripts/longtermsecuredb
+%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/scripts/restapi
+%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/scripts/shorttermsecure
+%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/scripts/selfloadbalance
+%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/scripts
+%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%
 include/turn/ns_turn_defs.h
 include/turn/client/TurnMsgLib.h
 include/turn/client/ns_turn_ioaddr.h
 include/turn/client/ns_turn_msg.h
 include/turn/client/ns_turn_msg_addr.h
 include/turn/client/ns_turn_msg_defs.h
-@dirrmtry include/turn/client/
-@dirrmtry include/turn
+@dir include/turn/client
+@dir include/turn
 @stopdaemon turnserver
-@dirrmtry include/turn/client
