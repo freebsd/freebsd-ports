@@ -70,12 +70,3 @@ share/locale/tr/LC_MESSAGES/kaffeine.mo
 share/locale/uk/LC_MESSAGES/kaffeine.mo
 share/locale/zh_CN/LC_MESSAGES/kaffeine.mo
 share/locale/zh_TW/LC_MESSAGES/kaffeine.mo
-@dirrm share/apps/kaffeine
-@dirrmtry share/icons/oxygen/48x48/actions
-@dirrmtry share/icons/oxygen/48x48
-@dirrmtry share/icons/oxygen/32x32/actions
-@dirrmtry share/icons/oxygen/32x32
-@dirrmtry share/icons/oxygen/22x22/actions
-@dirrmtry share/icons/oxygen/22x22
-@dirrmtry share/icons/oxygen/16x16/actions
-@dirrmtry share/icons/oxygen/16x16
