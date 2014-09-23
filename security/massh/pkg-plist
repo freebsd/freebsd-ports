@@ -2,11 +2,6 @@ bin/massh
 lib/libmassh.sh
 @sample etc/massh.conf.sample
 man/man1/massh.1.gz
-@exec mkdir -p %%MASSHDIR%%/pull
-@exec mkdir -p %%MASSHDIR%%/push
-@exec mkdir -p %%MASSHDIR%%/scripts
-@cwd / 
-@dirrmtry %%MASSHDIR%%/pull
-@dirrmtry %%MASSHDIR%%/push
-@dirrmtry %%MASSHDIR%%/scripts
-@dirrmtry %%MASSHDIR%% 
+@dir %%MASSHDIR%%/pull
+@dir %%MASSHDIR%%/push
+@dir %%MASSHDIR%%/scripts
