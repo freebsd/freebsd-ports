@@ -5,16 +5,13 @@
 
 case $2 in
 POST-DEINSTALL)
-	rmdir /var/cache/pacman/pkg 2>/dev/null || true
-	rmdir /var/cache/pacman 2>/dev/null || true
-	rmdir /var/lib/pacman 2>/dev/null || true
-	rmdir /var/lib 2>/dev/null || true
-	if [ -e /var/lib/pacman -o -e /var/cache/pacman ]; then
+	if find /var/lib/pacman /var/cache/pacman -type f 2>/dev/null | grep -q ''; then
 		echo ""
 		echo "To completely remove the port, please remove the following"
-		echo "directories and the content manualy:"
+		echo "directories and the content manualy if its no longer needed:"
 		echo ""
-		echo "    /var/lib/pacman /var/cache/pacman"
+		echo "    /var/cache/pacman"
+		echo "    /var/lib/pacman"
 		echo ""
 	fi
 	;;
