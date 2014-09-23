@@ -14,7 +14,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 USES=		dos2unix
 USE_PHP=	session
-DEFAULT_VERSIONS=	php=5
+DEFAULT_VERSIONS+=	php=5
 CONFLICTS=	AutoIndex-1*
 LATEST_LINK=	AutoIndex2
 NO_BUILD=	yes
@@ -23,10 +23,12 @@ INSTALLDIR?=	${WWWDIR}
 PLIST_SUB=	WWWOWN=${WWWOWN} WWWGRP=${WWWGRP} \
 		INSTALLDIR=${INSTALLDIR:S,^${PREFIX}/,,}
 
+post-extract:
+	${MV} ${WRKSRC}/config.php ${WRKSRC}/config.php.sample
+	${MV} ${WRKSRC}/.htpasswd.autoindex ${WRKSRC}/.htpasswd.autoindex.sample
+
 do-install:
 	@${MKDIR} ${STAGEDIR}${INSTALLDIR}
-	cd ${WRKSRC} && ${MV} config.php config.php.sample
-	cd ${WRKSRC} && ${MV} .htpasswd.autoindex .htpasswd.autoindex.sample
-	cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${INSTALLDIR}
+	(cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${INSTALLDIR})
 
 .include <bsd.port.mk>
