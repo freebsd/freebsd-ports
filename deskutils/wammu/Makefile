@@ -3,7 +3,7 @@
 
 PORTNAME=		wammu
 PORTVERSION=		0.36
-PORTREVISION=	8
+PORTREVISION=		8
 CATEGORIES=		deskutils
 MASTER_SITES=		http://dl.cihar.com/wammu/v0/ \
 			http://dl.cihar.com.nyud.net/wammu/v0/
@@ -15,9 +15,8 @@ LICENSE=		GPLv2
 
 LIB_DEPENDS+=		libGammu.so:${PORTSDIR}/comms/gammu
 
-USES=			gettext pkgconfig
-USE_PYTHON=		yes
-USE_PYDISTUTILS=	yes
+USES=			gettext pkgconfig python tar:bz2
+USE_PYTHON=		distutils
 USE_WX=			3.0+
 WX_COMPS=		python:lib
 
