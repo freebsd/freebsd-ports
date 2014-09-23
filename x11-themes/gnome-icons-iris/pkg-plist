@@ -197,13 +197,3 @@ share/icons/Iris/scalable/mimetypes/gnome-mime-video-x-ms-asf.svg
 share/icons/Iris/scalable/mimetypes/gnome-mime-video-x-ms-wmv.svg
 share/icons/Iris/scalable/mimetypes/gnome-mime-video-x-msvideo.svg
 share/icons/Iris/scalable/mimetypes/gnome-objectfile.svg
-@dirrm share/icons/Iris/scalable/mimetypes
-@dirrm share/icons/Iris/scalable/filesystems
-@dirrm share/icons/Iris/scalable/emblems
-@dirrm share/icons/Iris/scalable/devices
-@dirrm share/icons/Iris/scalable/apps
-@dirrm share/icons/Iris/scalable
-@dirrm share/icons/Iris/36x36/apps
-@dirrm share/icons/Iris/36x36
-@dirrm share/icons/Iris
-@dirrmtry share/icons
