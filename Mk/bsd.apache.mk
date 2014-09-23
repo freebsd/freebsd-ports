@@ -118,13 +118,6 @@ IGNORE=	${_ERROR_MSG} Illegal use of USE_APACHE ( no version specified )
 
 # ===============================================================
 .if defined(AP_PORT_IS_SERVER)
-# MFC TODO: remove this check
-# used only by www/cakephp* ports
-.if defined(SLAVE_PORT_MODULES)
-DEFAULT_MODULES_CATEGORIES+=	SLAVE_PORT
-ALL_MODULES_CATEGORIES+=	SLAVE_PORT
-.endif
-
 # Module selection
 .for category in ${DEFAULT_MODULES_CATEGORIES}
 DEFAULT_MODULES+=	${${category}_MODULES}
