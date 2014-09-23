@@ -14,8 +14,6 @@ RUN_DEPENDS=	${PEARDIR}/Mail.php:${PORTSDIR}/mail/pear-Mail \
 		${PEARDIR}/HTTP/Request.php:${PORTSDIR}/www/pear-HTTP_Request
 
 USE_PHP=	gettext
-PEAR_AUTOINSTALL=	yes
+USES=	pear
 
-.include <bsd.port.pre.mk>
-.include "${PORTSDIR}/devel/pear/bsd.pear.mk"
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

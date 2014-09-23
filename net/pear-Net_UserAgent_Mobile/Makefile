@@ -9,12 +9,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}RC1
 MAINTAINER=	smatsui@karashi.org
 COMMENT=	PEAR class that parses HTTP mobile user agent string
 
-BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
-RUN_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
-
 USE_PHP=	pcre
-PEAR_AUTOINSTALL=	yes
+USES=	pear
 
-.include <bsd.port.pre.mk>
-.include "${PORTSDIR}/devel/pear/bsd.pear.mk"
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
