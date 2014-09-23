@@ -41,7 +41,3 @@ share/icons/hicolor/512x512/apps/LabPlot2.png
 share/icons/hicolor/64x64/apps/LabPlot2.png
 share/icons/hicolor/scalable/apps/LabPlot2.svgz
 share/mime/packages/labplot2.xml
-@dirrmtry share/icons/hicolor/512x512/apps
-@dirrmtry share/icons/hicolor/512x512
-@dirrm share/apps/LabPlot2/pics
-@dirrm share/apps/LabPlot2
