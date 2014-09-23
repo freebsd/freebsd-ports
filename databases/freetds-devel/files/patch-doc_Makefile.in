@@ -1,47 +1,20 @@
---- doc/Makefile.in.orig	2011-09-06 20:44:07.000000000 +0200
-+++ doc/Makefile.in	2011-09-06 20:54:10.000000000 +0200
-@@ -507,7 +507,7 @@
- 
- info-am:
- 
--install-data-am: install-data-local install-man
-+install-data-am: install-man
- 
- install-dvi: install-dvi-am
- 
-@@ -561,7 +561,7 @@
- 	clean-local dist-hook distclean distclean-generic \
- 	distclean-libtool distdir dvi dvi-am html html-am info info-am \
- 	install install-am install-data install-data-am \
--	install-data-local install-dvi install-dvi-am install-exec \
-+	install-dvi install-dvi-am install-exec \
- 	install-exec-am install-html install-html-am install-info \
- 	install-info-am install-man install-man1 install-man5 \
- 	install-pdf install-pdf-am install-ps install-ps-am \
-@@ -641,16 +641,16 @@
+--- doc/Makefile.in.orig	2014-09-23 16:23:48.662499737 +0600
++++ doc/Makefile.in	2014-09-23 16:24:52.193494422 +0600
+@@ -671,16 +671,7 @@
  
  # If we built the documentation ourselves, install that, 
  # else if we have access to distributed documentation, install that.  
--install-data-local: installdirs $(noinst_DATA)
--	$(mkinstalldirs) $(DOCDIR) 2>&1
+-install-data-local: $(INSTALLDIRS) $(noinst_DATA)
+-	$(MKDIR_P) $(DOCDIR) 2>&1
 -	if test -r $(DOCDIR)/userguide ; then d=.; else d="$(srcdir)"; fi; \
--	find $$d/$(DOCDIR)/userguide \( -type f -o -type l \) -exec \
--		$(INSTALL_DATA) {} $(TARGET_DOCDIR)/userguide ';'
+-	find $$d/$(DOCDIR)/userguide \( -type f -o -type l \) \
+-		-exec $(INSTALL) {} $(TARGET_DOCDIR)/userguide ';'
 -	if test -r $(DOCDIR)/reference ; then d=.; else d="$(srcdir)"; fi; \
--	find $$d/$(DOCDIR)/reference \( -type f -o -type l \) -exec \
--		$(INSTALL_DATA) {} $(TARGET_DOCDIR)/reference ';'
--	cd $(srcdir) && find images -name \*.gif -exec \
--		$(INSTALL_DATA) {} $(TARGET_DOCDIR)/{} ';'
-+#install-data-local: installdirs $(noinst_DATA)
-+#	$(mkinstalldirs) $(DOCDIR) 2>&1
-+#	if test -r $(DOCDIR)/userguide ; then d=.; else d="$(srcdir)"; fi; \
-+#	find $$d/$(DOCDIR)/userguide \( -type f -o -type l \) -exec \
-+#		$(INSTALL_DATA) {} $(TARGET_DOCDIR)/userguide ';'
-+#	if test -r $(DOCDIR)/reference ; then d=.; else d="$(srcdir)"; fi; \
-+#	find $$d/$(DOCDIR)/reference \( -type f -o -type l \) -exec \
-+#		$(INSTALL_DATA) {} $(TARGET_DOCDIR)/reference ';'
-+#	cd $(srcdir) && find images -name \*.gif -exec \
-+#		$(INSTALL_DATA) {} $(TARGET_DOCDIR)/{} ';'
+-	find $$d/$(DOCDIR)/reference \( -type f -o -type l \) \
+-		-exec $(INSTALL) {} $(TARGET_DOCDIR)/reference ';'
+-	find $(srcdir)/images -name \*.gif \
+-		-exec  $(INSTALL) {} $(TARGET_DOCDIR)/images/ ';'
++install-data-local:
  
  uninstall-local:
  	rm -rf $(TARGET_DOCDIR)
