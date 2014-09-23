@@ -3,6 +3,7 @@
 
 PORTNAME=	alsa-plugins-pulseaudio
 PORTVERSION=	1.0.21
+PORTREVISION=	1
 CATEGORIES=	audio linux
 PKGNAMEPREFIX=	linux-${USE_LINUX}-
 
@@ -19,7 +20,7 @@ SRC_DISTFILES=	alsa-plugins-1.0.21-3.el6.src.rpm
 
 ONLY_FOR_ARCHS=	i386 amd64
 USE_LINUX=	c6
-USE_LINUX_APPS=	pulseaudio-libs
+USE_LINUX_APPS=	alsalib pulseaudio-libs
 USE_LINUX_RPM=	yes
 RPMVERSION=	3.el6
 
