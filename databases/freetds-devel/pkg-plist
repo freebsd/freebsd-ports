@@ -6,10 +6,10 @@ bin/freebcp
 bin/osql
 bin/tdspool
 bin/tsql
-etc/freetds/interfaces.dist
-etc/freetds.conf.dist
-etc/locales.conf.dist
-etc/pool.conf.dist
+@sample %%ETCDIR%%/freetds.conf.sample
+@sample %%ETCDIR%%/interfaces.sample
+@sample %%ETCDIR%%/locales.conf.sample
+@sample %%ETCDIR%%/pool.conf.sample
 include/bkpublic.h
 include/cspublic.h
 include/cstypes.h
@@ -40,10 +40,29 @@ lib/libsybdb.la
 lib/libsybdb.so
 lib/libsybdb.so.5
 lib/libsybdb.so.5.0.0
-lib/libtdsodbc.so.0.0.0
-lib/libtdsodbc.so.0
-lib/libtdsodbc.so
-lib/libtdsodbc.la
-lib/libtdsodbc.a
-bin/bsqlodbc
-@dirrm etc/freetds
+%%ODBC%%lib/libtdsodbc.so.0.0.0
+%%ODBC%%lib/libtdsodbc.so.0
+%%ODBC%%lib/libtdsodbc.so
+%%ODBC%%lib/libtdsodbc.la
+%%ODBC%%lib/libtdsodbc.a
+%%ODBC%%bin/bsqlodbc
+%%PORTDOCS%%%%DOCSDIR%%/images/1.gif
+%%PORTDOCS%%%%DOCSDIR%%/images/10.gif
+%%PORTDOCS%%%%DOCSDIR%%/images/2.gif
+%%PORTDOCS%%%%DOCSDIR%%/images/3.gif
+%%PORTDOCS%%%%DOCSDIR%%/images/4.gif
+%%PORTDOCS%%%%DOCSDIR%%/images/5.gif
+%%PORTDOCS%%%%DOCSDIR%%/images/6.gif
+%%PORTDOCS%%%%DOCSDIR%%/images/7.gif
+%%PORTDOCS%%%%DOCSDIR%%/images/8.gif
+%%PORTDOCS%%%%DOCSDIR%%/images/9.gif
+%%PORTDOCS%%%%DOCSDIR%%/images/caution.gif
+%%PORTDOCS%%%%DOCSDIR%%/images/important.gif
+%%PORTDOCS%%%%DOCSDIR%%/images/note.gif
+%%PORTDOCS%%%%DOCSDIR%%/images/tip.gif
+%%PORTDOCS%%%%DOCSDIR%%/images/warning.gif
+%%PORTDOCS%%%%DOCSDIR%%/reference/index.html
+%%PORTDOCS%%%%DOCSDIR%%/userguide/index.htm
+%%PORTDOCS%%%%DOCSDIR%%/userguide/index.html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm %%ETCDIR%%
