@@ -21,7 +21,9 @@ USES=		zip
 WRKSRC=		${WRKDIR}/RailroadRampage_Linux
 SUB_FILES=	${PORTNAME}
 
+PLIST_FILES=	bin/railroad-rampage
 PORTDOCS=	ReadMe.txt
+PORTDATA=	*
 
 DESKTOP_ENTRIES="Railroad Rampage" \
 		"Tower Defence-like Arcade and Strategy combination" \
