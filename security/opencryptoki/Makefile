@@ -21,6 +21,7 @@ USES=		gmake libtool tar:bzip2
 USE_LDCONFIG=	${PREFIX}/lib/opencryptoki
 USE_AUTOTOOLS=	libtoolize aclocal autoconf automake
 AUTOMAKE_ARGS=	-a -c -f
+INSTALL_TARGET=	install-strip
 CONFIGURE_ARGS=	--enable-swtok --enable-tpmtok \
 		--disable-crtok --disable-aeptok \
 		--disable-ccatok --disable-bcomtok \
