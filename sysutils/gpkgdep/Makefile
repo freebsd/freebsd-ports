@@ -12,6 +12,9 @@ COMMENT=	Shows package dependencies in tree views
 
 LICENSE=	GPLv2
 
+DEPRECATED=	Requires old pkg_info
+EXPIRATION_DATE=2014-09-30
+
 USE_GNOME=	gtk20
 USE_AUTOTOOLS=	automake14 autoconf
 AUTOMAKE_ARGS=	--add-missing
