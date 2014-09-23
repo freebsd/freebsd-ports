@@ -87,7 +87,6 @@ RUN_DEPENDS+=	dns/linux-f10-libasyncns>0:${PORTSDIR}/dns/linux-f10-libasyncns \
 		graphics/linux-f10-sdl_ttf>0:${PORTSDIR}/graphics/linux-f10-sdl_ttf \
 		graphics/linux-f10-jpeg>0:${PORTSDIR}/graphics/linux-f10-jpeg \
 		graphics/linux-f10-tiff>0:${PORTSDIR}/graphics/linux-f10-tiff \
-		graphics/linux-f10-dri>0:${PORTSDIR}/graphics/linux-f10-dri \
 		graphics/linux-f10-imlib>0:${PORTSDIR}/graphics/linux-f10-imlib \
 		graphics/linux-f10-ungif>0:${PORTSDIR}/graphics/linux-f10-ungif \
 		graphics/linux-f10-libmng>0:${PORTSDIR}/graphics/linux-f10-libmng \
@@ -95,5 +94,11 @@ RUN_DEPENDS+=	dns/linux-f10-libasyncns>0:${PORTSDIR}/dns/linux-f10-libasyncns \
 		graphics/linux-f10-glew>0:${PORTSDIR}/graphics/linux-f10-glew \
 		graphics/linux-f10-cairo>0:${PORTSDIR}/graphics/linux-f10-cairo
 # don't pull in graphics/linux-f10-libGLU -- conflicts with graphics/linux-f10-dri
+
+OPTIONS_DEFINE=	NVIDIA_GL
+NVIDIA_GL_DESC=	Use GL driver from nvidia-driver
+
+NVIDIA_GL_RUN_DEPENDS=	${LINUXBASE}/usr/lib/libGL.so.1:${PORTSDIR}/x11/nvidia-driver
+NVIDIA_GL_RUN_DEPENDS_OFF=	linux-f10-dri>0:${PORTSDIR}/graphics/linux-f10-dri
 
 .include <bsd.port.mk>
