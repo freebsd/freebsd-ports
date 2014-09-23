@@ -3249,7 +3249,7 @@ do-fetch:
 	    fi; \
 	 done
 .if defined(PATCHFILES)
-	cd ${_DISTDIR};\
+	@cd ${_DISTDIR};\
 	${_PATCH_SITES_ENV} ; \
 	for _file in ${PATCHFILES}; do \
 		file=`${ECHO_CMD} $$_file | ${SED} -E -e 's/:[^-:][^:]*$$//'` ; \
