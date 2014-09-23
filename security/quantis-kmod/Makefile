@@ -22,8 +22,6 @@ EXTRACT_BEFORE_ARGS=	-aqo
 
 WRKSRC=		${WRKDIR}/Quantis-${DISTVERSION}/Drivers/Unix/QuantisPci
 
-PLIST_FILES=	"@cwd ${KMODDIR}" \
-		"quantis.ko" \
-		"@cwd ${PREFIX}"
+PLIST_FILES=	${KMODDIR}/quantis.ko
 
 .include <bsd.port.mk>
