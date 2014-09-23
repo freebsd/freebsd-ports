@@ -247,20 +247,3 @@ share/icons/hicolor/scalable/apps/gxneur.svg
 %%NLS%%share/locale/ro/LC_MESSAGES/gxneur.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/gxneur.mo
 %%NLS%%share/locale/uk/LC_MESSAGES/gxneur.mo
-@dirrmtry share/icons/hicolor/scalable/apps
-@dirrmtry share/icons/hicolor/scalable
-@dirrmtry share/icons/hicolor/48x48/apps
-@dirrmtry share/icons/hicolor/48x48
-@dirrmtry share/icons/hicolor/32x32/apps
-@dirrmtry share/icons/hicolor/32x32
-@dirrmtry share/icons/hicolor/24x24/apps
-@dirrmtry share/icons/hicolor/24x24
-@dirrmtry share/icons/hicolor/22x22/apps
-@dirrmtry share/icons/hicolor/22x22
-@dirrmtry share/icons/hicolor/16x16/apps
-@dirrmtry share/icons/hicolor/16x16
-@dirrmtry share/icons/hicolor
-@dirrmtry share/icons
-@dirrm %%DATADIR%%/pixmaps
-@dirrm %%DATADIR%%/glade
-@dirrm %%DATADIR%%
