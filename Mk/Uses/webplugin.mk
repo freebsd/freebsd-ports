@@ -54,7 +54,6 @@
 #	[...]
 #	%%WEBPLUGIN_DIR%%/fooplugin.so
 #	%%WEBPLUGIN_DIR%%/fooplugin.xpi
-#	@dirrmtry %%WEBPLUGIN_DIR%%
 #	------------------------------------------------------
 #
 # Here is what it will look like when it creates the symlinks:
@@ -93,7 +92,6 @@
 #	lib/application/fooplugin.la
 #	lib/application/fooplugin.so
 #	lib/application/fooplugin.xpi
-#	@dirrm lib/application
 #	------------------------------------------------------
 #
 # Here is what it will look like when it creates symlinks:
