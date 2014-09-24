@@ -3,7 +3,7 @@
 
 PORTNAME=	phproxy
 PORTVERSION=	0.5b2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	www
 MASTER_SITES=	SF/poxy/PHProxy/0.5%20beta%202
 DISTNAME=	poxy-${DISTVERSION}
@@ -16,6 +16,7 @@ WANT_PHP_WEB=	YES
 USES=		zip:infozip
 USE_PHP=	ctype pcre
 EXTRACT_AFTER_ARGS+=	-d ${WRKSRC}
+PLIST_SUB=	WWWOWN="${WWWOWN}" WWWGRP="${WWWGRP}"
 
 DOCFILES=	ChangeLog.txt LICENSE.txt README.txt TODO.txt
 
@@ -30,6 +31,5 @@ do-install:
 	@${RM} ${WRKSRC}/*.txt
 	${MKDIR} ${STAGEDIR}${WWWDIR}
 	@(cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${WWWDIR}/)
-	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${STAGEDIR}${WWWDIR}
 
 .include <bsd.port.mk>
