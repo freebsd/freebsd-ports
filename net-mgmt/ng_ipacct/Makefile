@@ -13,7 +13,7 @@ COMMENT=	Netgraph IP accounting
 
 LICENSE=	BSD2CLAUSE
 
-USES=	kmod uidfix
+USES=		kmod uidfix
 
 MAKE_ENV=	BINDIR="${PREFIX}/sbin"
 
@@ -23,6 +23,9 @@ CFLAGS+=	-DMEM_USE_ZONE
 
 post-extract:
 	@${MV} ${WRKDIR}/${PORTNAME} ${WRKSRC}
+
+post-patch:
+	@${REINPLACE_CMD} 's,{MANDIR},{DESTDIR}$$&,' ${WRKSRC}/man_ru/Makefile
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/include/netgraph
