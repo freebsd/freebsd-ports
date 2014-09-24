@@ -8,6 +8,15 @@ bin/taskcoach
 %%PYTHON_SITELIBDIR%%/taskcoachlib/application/application.py
 %%PYTHON_SITELIBDIR%%/taskcoachlib/application/application.pyc
 %%PYTHON_SITELIBDIR%%/taskcoachlib/application/application.pyo
+%%PYTHON_SITELIBDIR%%/taskcoachlib/changes/__init__.py
+%%PYTHON_SITELIBDIR%%/taskcoachlib/changes/__init__.pyc
+%%PYTHON_SITELIBDIR%%/taskcoachlib/changes/__init__.pyo
+%%PYTHON_SITELIBDIR%%/taskcoachlib/changes/monitor.py
+%%PYTHON_SITELIBDIR%%/taskcoachlib/changes/monitor.pyc
+%%PYTHON_SITELIBDIR%%/taskcoachlib/changes/monitor.pyo
+%%PYTHON_SITELIBDIR%%/taskcoachlib/changes/sync.py
+%%PYTHON_SITELIBDIR%%/taskcoachlib/changes/sync.pyc
+%%PYTHON_SITELIBDIR%%/taskcoachlib/changes/sync.pyo
 %%PYTHON_SITELIBDIR%%/taskcoachlib/command/__init__.py
 %%PYTHON_SITELIBDIR%%/taskcoachlib/command/__init__.pyc
 %%PYTHON_SITELIBDIR%%/taskcoachlib/command/__init__.pyo
@@ -137,6 +146,9 @@ bin/taskcoach
 %%PYTHON_SITELIBDIR%%/taskcoachlib/domain/date/dateandtime.py
 %%PYTHON_SITELIBDIR%%/taskcoachlib/domain/date/dateandtime.pyc
 %%PYTHON_SITELIBDIR%%/taskcoachlib/domain/date/dateandtime.pyo
+%%PYTHON_SITELIBDIR%%/taskcoachlib/domain/date/fix.py
+%%PYTHON_SITELIBDIR%%/taskcoachlib/domain/date/fix.pyc
+%%PYTHON_SITELIBDIR%%/taskcoachlib/domain/date/fix.pyo
 %%PYTHON_SITELIBDIR%%/taskcoachlib/domain/date/recurrence.py
 %%PYTHON_SITELIBDIR%%/taskcoachlib/domain/date/recurrence.pyc
 %%PYTHON_SITELIBDIR%%/taskcoachlib/domain/date/recurrence.pyo
@@ -206,6 +218,24 @@ bin/taskcoach
 %%PYTHON_SITELIBDIR%%/taskcoachlib/domain/task/tasklist.py
 %%PYTHON_SITELIBDIR%%/taskcoachlib/domain/task/tasklist.pyc
 %%PYTHON_SITELIBDIR%%/taskcoachlib/domain/task/tasklist.pyo
+%%PYTHON_SITELIBDIR%%/taskcoachlib/filesystem/__init__.py
+%%PYTHON_SITELIBDIR%%/taskcoachlib/filesystem/__init__.pyc
+%%PYTHON_SITELIBDIR%%/taskcoachlib/filesystem/__init__.pyo
+%%PYTHON_SITELIBDIR%%/taskcoachlib/filesystem/base.py
+%%PYTHON_SITELIBDIR%%/taskcoachlib/filesystem/base.pyc
+%%PYTHON_SITELIBDIR%%/taskcoachlib/filesystem/base.pyo
+%%PYTHON_SITELIBDIR%%/taskcoachlib/filesystem/fs_darwin.py
+%%PYTHON_SITELIBDIR%%/taskcoachlib/filesystem/fs_darwin.pyc
+%%PYTHON_SITELIBDIR%%/taskcoachlib/filesystem/fs_darwin.pyo
+%%PYTHON_SITELIBDIR%%/taskcoachlib/filesystem/fs_inotify.py
+%%PYTHON_SITELIBDIR%%/taskcoachlib/filesystem/fs_inotify.pyc
+%%PYTHON_SITELIBDIR%%/taskcoachlib/filesystem/fs_inotify.pyo
+%%PYTHON_SITELIBDIR%%/taskcoachlib/filesystem/fs_poller.py
+%%PYTHON_SITELIBDIR%%/taskcoachlib/filesystem/fs_poller.pyc
+%%PYTHON_SITELIBDIR%%/taskcoachlib/filesystem/fs_poller.pyo
+%%PYTHON_SITELIBDIR%%/taskcoachlib/filesystem/fs_win32.py
+%%PYTHON_SITELIBDIR%%/taskcoachlib/filesystem/fs_win32.pyc
+%%PYTHON_SITELIBDIR%%/taskcoachlib/filesystem/fs_win32.pyo
 %%PYTHON_SITELIBDIR%%/taskcoachlib/gui/__init__.py
 %%PYTHON_SITELIBDIR%%/taskcoachlib/gui/__init__.pyc
 %%PYTHON_SITELIBDIR%%/taskcoachlib/gui/__init__.pyo
@@ -218,6 +248,9 @@ bin/taskcoach
 %%PYTHON_SITELIBDIR%%/taskcoachlib/gui/dialog/attributesync.py
 %%PYTHON_SITELIBDIR%%/taskcoachlib/gui/dialog/attributesync.pyc
 %%PYTHON_SITELIBDIR%%/taskcoachlib/gui/dialog/attributesync.pyo
+%%PYTHON_SITELIBDIR%%/taskcoachlib/gui/dialog/backupmanager.py
+%%PYTHON_SITELIBDIR%%/taskcoachlib/gui/dialog/backupmanager.pyc
+%%PYTHON_SITELIBDIR%%/taskcoachlib/gui/dialog/backupmanager.pyo
 %%PYTHON_SITELIBDIR%%/taskcoachlib/gui/dialog/developer_message.py
 %%PYTHON_SITELIBDIR%%/taskcoachlib/gui/dialog/developer_message.pyc
 %%PYTHON_SITELIBDIR%%/taskcoachlib/gui/dialog/developer_message.pyo
@@ -1451,6 +1484,7 @@ bin/taskcoach
 share/applications/taskcoach.desktop
 share/pixmaps/taskcoach.png
 @dirrm %%PYTHON_SITELIBDIR%%/taskcoachlib/application
+@dirrm %%PYTHON_SITELIBDIR%%/taskcoachlib/changes
 @dirrm %%PYTHON_SITELIBDIR%%/taskcoachlib/command
 @dirrm %%PYTHON_SITELIBDIR%%/taskcoachlib/config
 @dirrm %%PYTHON_SITELIBDIR%%/taskcoachlib/domain/attachment
@@ -1466,6 +1500,7 @@ share/pixmaps/taskcoach.png
 @dirrm %%PYTHON_SITELIBDIR%%/taskcoachlib/domain/note
 @dirrm %%PYTHON_SITELIBDIR%%/taskcoachlib/domain/task
 @dirrm %%PYTHON_SITELIBDIR%%/taskcoachlib/domain
+@dirrm %%PYTHON_SITELIBDIR%%/taskcoachlib/filesystem
 @dirrm %%PYTHON_SITELIBDIR%%/taskcoachlib/gui/dialog
 @dirrm %%PYTHON_SITELIBDIR%%/taskcoachlib/gui/uicommand
 @dirrm %%PYTHON_SITELIBDIR%%/taskcoachlib/gui/viewer
