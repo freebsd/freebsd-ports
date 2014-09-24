@@ -13,20 +13,20 @@ All ports committers are allowed to commit to this file.
 20140922:
 AUTHOR: bapt@FreeBSD.org
 
-  pkg(8) now automatically handle the directories under PREFIX and will
+  pkg(8) now automatically handles the directories under PREFIX and will
   automatically remove them as needed.
-  New @dir keyword has been introduce to handle special directory handling:
+  The @dir keyword has been introduced to handle special directory handling:
   - directories with special credentials
   - empty directories
   - directories out of PREFIX
-  As a consequence @dirrm and @dirrmtry are now consider as deprecated.
+  As a consequence @dirrm and @dirrmtry are now considered deprecated.
 
   Credentials can now be passed in arguments to keywords (empty keyword means
   file):
   @(user,group,mode) file1
   @dir(user,group,mode) directory_with_special_credential
 
-  PLIST_DIRSTRY is now considered as deprecated, PLIST_DIRS should be used
+  PLIST_DIRSTRY is now considered deprecated, PLIST_DIRS should be used
   instead.
 
 20140917:
