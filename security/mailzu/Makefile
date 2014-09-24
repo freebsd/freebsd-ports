@@ -3,7 +3,7 @@
 
 PORTNAME=	mailzu
 DISTVERSION=	0.8rc3
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	security
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/MailZu%200.8RC3
 DISTNAME=	MailZu_${DISTVERSION:S/rc/RC/}
@@ -18,6 +18,7 @@ RUN_DEPENDS=	${LOCALBASE}/sbin/amavisd:${PORTSDIR}/security/amavisd-new \
 		${PEARDIR}/Mail/mimeDecode.php:${PORTSDIR}/mail/pear-Mail_mimeDecode
 
 PEARDIR?=	${LOCALBASE}/share/pear
+PLIST_SUB=	WWWOWN="${WWWOWN}" WWWGRP="${WWWGRP}"
 SUB_LIST+=	PKGNAME=${PKGNAME}
 SUB_FILES=	pkg-message
 NO_BUILD=	yes
@@ -43,13 +44,10 @@ PORTDOCS=	*
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${WWWDIR}
-	${CHOWN} ${WWWOWN}:${WWWGRP} ${STAGEDIR}${WWWDIR}
 	${INSTALL_DATA} ${WRKSRC}/*.php* ${WRKSRC}/*.js* ${WRKSRC}/*.css* ${STAGEDIR}${WWWDIR}
 	(cd ${WRKSRC} && ${COPYTREE_SHARE} "config contrib img lang lib templates" \
 		${STAGEDIR}${WWWDIR} "! -name *.orig")
 	(cd ${WRKSRC} && ${COPYTREE_BIN} scripts ${STAGEDIR}${WWWDIR})
-
-post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/CHANGELOG ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/docs/* ${STAGEDIR}${DOCSDIR}
