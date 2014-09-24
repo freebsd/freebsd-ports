@@ -1,6 +1,7 @@
 bin/dconf-editor
-share/appdata/dconf-editor.appdata.xml
-share/applications/dconf-editor.desktop
+share/appdata/ca.desrt.dconf-editor.appdata.xml
+share/applications/ca.desrt.dconf-editor.desktop
+share/dbus-1/services/ca.desrt.dconf-editor.service
 share/icons/HighContrast/16x16/apps/dconf-editor.png
 share/icons/HighContrast/22x22/apps/dconf-editor.png
 share/icons/HighContrast/24x24/apps/dconf-editor.png

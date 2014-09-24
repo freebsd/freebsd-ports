@@ -1,10 +1,9 @@
 # Created by: Gustau Perez i Querol <gustau.perez@gmail.com>
 # $FreeBSD$
-#    $MCom: ports/trunk/lang/cjs/Makefile 19804 2014-08-13 14:55:11Z kwm $
+#    $MCom: ports/trunk/lang/cjs/Makefile 19857 2014-09-13 09:46:37Z gusi $
 
 PORTNAME=	cjs
-PORTVERSION=	2.2.1
-PORTREVISION=	1
+PORTVERSION=	2.2.2
 CATEGORIES=	lang gnome
 MASTER_SITES=	http://github.com/linuxmint/${PORTNAME}/archive/${PORTVERSION}.tar.gz?dummy=/
 DIST_SUBDIR=	gnome3

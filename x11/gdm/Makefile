@@ -1,6 +1,6 @@
 # Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/x11/gdm/Makefile 19789 2014-08-05 07:43:54Z gusi $
+#   $MCom: ports/trunk/x11/gdm/Makefile 19859 2014-09-14 11:33:14Z kwm $
 
 PORTNAME=	gdm
 PORTVERSION=	3.12.2
@@ -12,7 +12,7 @@ DIST_SUBDIR=	gnome3
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GNOME 3 version of xdm display manager
 
-BUILD_DEPENDS=	zenity3>=3.0.0:${PORTSDIR}/x11/zenity3 \
+BUILD_DEPENDS=	zenity>=3.0.0:${PORTSDIR}/x11/zenity \
 		itstool:${PORTSDIR}/textproc/itstool \
     		${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-codes
 LIB_DEPENDS=	libck-connector.so:${PORTSDIR}/sysutils/consolekit \
@@ -22,7 +22,7 @@ LIB_DEPENDS=	libck-connector.so:${PORTSDIR}/sysutils/consolekit \
 		libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig \
 		libaccountsservice.so:${PORTSDIR}/sysutils/accountsservice \
 		libcanberra-gtk3.so:${PORTSDIR}/audio/libcanberra-gtk3
-RUN_DEPENDS=	zenity3>=3.0.0:${PORTSDIR}/x11/zenity3 \
+RUN_DEPENDS=	zenity>=3.0.0:${PORTSDIR}/x11/zenity \
 		gnome-settings-daemon>=3.0.0:${PORTSDIR}/sysutils/gnome-settings-daemon \
 		gnome-keyring-3:${PORTSDIR}/security/gnome-keyring \
 		gnome-session>=3.0.0:${PORTSDIR}/x11/gnome-session \

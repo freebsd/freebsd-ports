@@ -1,10 +1,9 @@
 # Created by: Koop Mast <kwm@FreeBSD.org>
 # $FreeBSD$
-#    $MCom: ports/trunk/graphics/colord/Makefile 19822 2014-08-20 08:57:46Z gusi $
+#    $MCom: ports/trunk/graphics/colord/Makefile 19898 2014-09-20 11:04:55Z kwm $
 
 PORTNAME=	colord
-PORTVERSION=	1.0.6
-PORTREVISION=	1
+PORTVERSION=	1.1.7
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.freedesktop.org/software/colord/releases/
 
@@ -24,7 +23,7 @@ USE_SQLITE=	3
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 MAKE_JOBS_UNSAFE=yes
-CONFIGURE_ARGS=	--disable-gudev \
+CONFIGURE_ARGS=	--disable-udev \
 		--enable-gtk-doc-html=no \
 		--disable-bash-completion \
 		--disable-gusb \
@@ -64,7 +63,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|lib/color|db/color|g' \
 		-e 's|/usr/share/color|${PREFIX}/share/color|g' \
 		${WRKSRC}/src/cd-main.c \
-		${WRKSRC}/src/cd-profile-store.c \
+		${WRKSRC}/lib/colord/cd-icc-store.c \
 		${WRKSRC}/src/cd-profile.c
 .if ! ${PORT_OPTIONS:MMANPAGES}
 	@${REINPLACE_CMD} -e "s|2MAN_TRUE=$$|2MAN_TRUE='#'|g ; \
@@ -72,6 +71,6 @@ post-patch:
 .endif
 
 post-install:
-	${MKDIR} ${STAGEDIR}/var/db/colord/icc
+	@${MKDIR} ${STAGEDIR}/var/db/colord/icc
 
 .include <bsd.port.mk>

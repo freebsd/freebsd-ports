@@ -86,6 +86,7 @@
     SUBDIR += clutter-box2d
     SUBDIR += clutter-gtk
     SUBDIR += clutter-gtk3
+    SUBDIR += cluttermm
     SUBDIR += cogl
     SUBDIR += colord
     SUBDIR += colord-gtk
@@ -141,8 +142,8 @@
     SUBDIR += entangle
     SUBDIR += eog
     SUBDIR += eog-plugins
-    SUBDIR += eos-movrec
     SUBDIR += eom
+    SUBDIR += eos-movrec
     SUBDIR += epdfview
     SUBDIR += epeg
     SUBDIR += epix
@@ -551,14 +552,14 @@
     SUBDIR += linplasma
     SUBDIR += linux-XnViewMP
     SUBDIR += linux-adobesvg
-    SUBDIR += linux-c6-sdl_image
-    SUBDIR += linux-c6-sdl_ttf
+    SUBDIR += linux-c6-cairo
     SUBDIR += linux-c6-dri
     SUBDIR += linux-c6-dri-compat
     SUBDIR += linux-c6-jpeg
-    SUBDIR += linux-c6-tiff
-    SUBDIR += linux-c6-cairo
     SUBDIR += linux-c6-png
+    SUBDIR += linux-c6-sdl_image
+    SUBDIR += linux-c6-sdl_ttf
+    SUBDIR += linux-c6-tiff
     SUBDIR += linux-f10-cairo
     SUBDIR += linux-f10-dri
     SUBDIR += linux-f10-gdk-pixbuf

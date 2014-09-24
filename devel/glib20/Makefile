@@ -1,10 +1,9 @@
 # Created by: Vanilla I. Shu <vanilla@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/devel/glib20/Makefile 19813 2014-08-15 19:44:33Z gusi $
+#   $MCom: ports/trunk/devel/glib20/Makefile 19909 2014-09-24 09:45:23Z kwm $
 
 PORTNAME=	glib
-PORTVERSION=	2.40.0
-PORTREVISION=	4
+PORTVERSION=	2.40.2
 CATEGORIES=	devel
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -41,7 +40,7 @@ INSTALL_TARGET=	install-strip
 
 SHEBANG_FILES=	*/*.pl glib/gen-iswide-table.py
 
-LIBVERSION=	0.4000.0
+LIBVERSION=	0.4002.0
 PLIST_SUB+=	LIBVERSION=${LIBVERSION}
 
 OPTIONS_DEFINE=	COLLATION_FIX DEBUG GDB

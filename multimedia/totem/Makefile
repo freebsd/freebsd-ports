@@ -1,6 +1,6 @@
 # Created by: Hendrik Scholz <hendrik@scholz.net>
 # $FreeBSD$
-#   $MCom: ports/trunk/multimedia/totem/Makefile 19818 2014-08-18 13:35:59Z gusi $
+#   $MCom: ports/trunk/multimedia/totem/Makefile 19889 2014-09-19 08:02:10Z gusi $
 
 PORTNAME=	totem
 PORTVERSION=	3.12.2
@@ -16,7 +16,7 @@ BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-
 		appdata-tools>=0:${PORTSDIR}/devel/appdata-tools \
 		itstool:${PORTSDIR}/textproc/itstool \
 		grilo-plugins>=0:${PORTSDIR}/net/grilo-plugins
-LIB_DEPENDS=	libgdata.so.13:${PORTSDIR}/devel/libgdata \
+LIB_DEPENDS=	libgdata.so:${PORTSDIR}/devel/libgdata \
 		libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib \
 		libclutter-gst-2.0.so:${PORTSDIR}/multimedia/clutter-gst \
 		libclutter-gtk-1.0.so:${PORTSDIR}/graphics/clutter-gtk3 \

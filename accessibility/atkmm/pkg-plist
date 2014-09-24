@@ -42,9 +42,9 @@ include/atkmm-1.6/atkmm/wrap_init.h
 lib/atkmm-1.6/include/atkmmconfig.h
 lib/atkmm-1.6/proc/m4/convert.m4
 lib/atkmm-1.6/proc/m4/convert_atk.m4
-lib/libatkmm-1.6.la
 lib/libatkmm-1.6.so
-lib/libatkmm-1.6.so.2
+lib/libatkmm-1.6.so.1
+lib/libatkmm-1.6.so.1.1.0
 libdata/pkgconfig/atkmm-1.6.pc
 @dirrm lib/atkmm-1.6/proc/m4
 @dirrm lib/atkmm-1.6/proc

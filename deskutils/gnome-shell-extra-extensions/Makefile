@@ -1,6 +1,6 @@
 # Created by: Gustau Perez i Querol <gustau.perez@gmail.com>
 # $FreeBSD$
-#   $MCom: ports/trunk/deskutils/gnome-shell-extra-extensions/Makefile 19846 2014-09-04 15:11:08Z gusi $
+#   $MCom: ports/trunk/deskutils/gnome-shell-extra-extensions/Makefile 19880 2014-09-15 19:43:06Z kwm $
 
 PORTNAME=	gnome-shell-extra-extensions
 PORTVERSION=	3.12.2
@@ -25,7 +25,7 @@ RUN_DEPENDS=	gnome-shell-extension-weather>=0:${PORTSDIR}/deskutils/gnome-shell-
 		gnome-shell-extension-trash>=0:${PORTSDIR}/deskutils/gnome-shell-extension-trash \
 		gnome-shell-extension-dashtodock>=0:${PORTSDIR}/deskutils/gnome-shell-extension-dashtodock \
 		gnome-shell-extension-audio-output-switcher>=0:${PORTSDIR}/deskutils/gnome-shell-extension-audio-output-switcher \
-		gnome-shell-extension-recentitems>=0:${PORTSDIR}/deskutils/gnome-shell-extension-recentitems
+		gnome-shell-extension-recent-items>=0:${PORTSDIR}/deskutils/gnome-shell-extension-recent-items
 
 NO_BUILD=	yes
 NO_INSTALL=	yes

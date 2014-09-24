@@ -12,8 +12,8 @@
     SUBDIR += WebMagick
     SUBDIR += ach
     SUBDIR += adzap
-    SUBDIR += amphetadesk
     SUBDIR += alef-webfont
+    SUBDIR += amphetadesk
     SUBDIR += analog
     SUBDIR += anyremote2html
     SUBDIR += anyterm
@@ -377,8 +377,8 @@
     SUBDIR += links
     SUBDIR += links-hacked
     SUBDIR += links1
-    SUBDIR += linux-c6-qt47-webkit
     SUBDIR += linux-c6-flashplugin11
+    SUBDIR += linux-c6-qt47-webkit
     SUBDIR += linux-f10-flashplugin11
     SUBDIR += linux-firefox
     SUBDIR += linux-libgtkembedmoz

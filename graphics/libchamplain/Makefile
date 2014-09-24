@@ -1,9 +1,9 @@
 # Created by: Koop Mast <kwm@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/graphics/libchamplain/Makefile 19762 2014-07-02 18:26:14Z gusi $
+#   $MCom: ports/trunk/graphics/libchamplain/Makefile 19896 2014-09-20 08:08:54Z kwm $
 
 PORTNAME=	libchamplain
-PORTVERSION=	0.12.8
+PORTVERSION=	0.12.9
 CATEGORIES=	graphics
 MASTER_SITES=	GNOME
 
@@ -25,10 +25,5 @@ CONFIGURE_ARGS=	--enable-gtk-doc-html=no
 INSTALL_TARGET=	install-strip
 
 PLIST_SUB=	VERSION=0.12
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|DOC_MODULE = libchamplain|DOC_MODULE = libchamplain-gtk3|g' \
-		${WRKSRC}/docs/reference/Makefile.in \
-		${WRKSRC}/docs/reference-gtk/Makefile.in
 
 .include <bsd.port.mk>

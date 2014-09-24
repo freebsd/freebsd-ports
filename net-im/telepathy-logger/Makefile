@@ -1,6 +1,6 @@
 # Created by: Koop Mast <kwm@FreeBSD.org>
 # $FreeBSD$
-#    $MCom: ports/trunk/net-im/telepathy-logger/Makefile 19804 2014-08-13 14:55:11Z kwm $
+#    $MCom: ports/trunk/net-im/telepathy-logger/Makefile 19882 2014-09-16 12:34:00Z kwm $
 
 PORTNAME=	telepathy-logger
 PORTVERSION=	0.8.0
@@ -12,8 +12,8 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Logger utility library for the Telepathy framework
 
 BUILD_DEPENDS=	g-ir-scanner:${PORTSDIR}/devel/gobject-introspection
-LIB_DEPENDS=	dbus-glib-1:${PORTSDIR}/devel/dbus-glib \
-		telepathy-glib:${PORTSDIR}/net-im/telepathy-glib
+LIB_DEPENDS=	libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib \
+		libtelepathy-glib.so:${PORTSDIR}/net-im/telepathy-glib
 
 LICENSE=	LGPL21
 

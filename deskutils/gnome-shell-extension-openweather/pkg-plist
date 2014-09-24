@@ -16,6 +16,7 @@ lib/locale/nb/LC_MESSAGES/gnome-shell-extension-openweather.mo
 lib/locale/nl/LC_MESSAGES/gnome-shell-extension-openweather.mo
 lib/locale/pl/LC_MESSAGES/gnome-shell-extension-openweather.mo
 lib/locale/pt/LC_MESSAGES/gnome-shell-extension-openweather.mo
+lib/locale/pt_BR/LC_MESSAGES/gnome-shell-extension-openweather.mo
 lib/locale/ro/LC_MESSAGES/gnome-shell-extension-openweather.mo
 lib/locale/ru/LC_MESSAGES/gnome-shell-extension-openweather.mo
 lib/locale/sk/LC_MESSAGES/gnome-shell-extension-openweather.mo
@@ -64,6 +65,8 @@ share/gnome-shell/extensions/openweather-extension@jenslody.de/weather-settings.
 @dirrmtry lib/locale/nl
 @dirrmtry lib/locale/pl/LC_MESSAGES
 @dirrmtry lib/locale/pl
+@dirrmtry lib/locale/pt_BR/LC_MESSAGES
+@dirrmtry lib/locale/pt_BR
 @dirrmtry lib/locale/pt/LC_MESSAGES
 @dirrmtry lib/locale/pt
 @dirrmtry lib/locale/ro/LC_MESSAGES

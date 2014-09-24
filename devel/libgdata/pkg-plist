@@ -10,7 +10,6 @@ include/libgdata/gdata/gcontact/gdata-gcontact-jot.h
 include/libgdata/gdata/gcontact/gdata-gcontact-language.h
 include/libgdata/gdata/gcontact/gdata-gcontact-relation.h
 include/libgdata/gdata/gcontact/gdata-gcontact-website.h
-include/libgdata/gdata/gdata-goa-authorizer.h
 include/libgdata/gdata/gd/gdata-gd-email-address.h
 include/libgdata/gdata/gd/gdata-gd-im-address.h
 include/libgdata/gdata/gd/gdata-gd-name.h
@@ -35,6 +34,7 @@ include/libgdata/gdata/gdata-download-stream.h
 include/libgdata/gdata/gdata-entry.h
 include/libgdata/gdata/gdata-enums.h
 include/libgdata/gdata/gdata-feed.h
+include/libgdata/gdata/gdata-goa-authorizer.h
 include/libgdata/gdata/gdata-oauth1-authorizer.h
 include/libgdata/gdata/gdata-parsable.h
 include/libgdata/gdata/gdata-query.h
@@ -70,6 +70,14 @@ include/libgdata/gdata/services/documents/gdata-documents-service.h
 include/libgdata/gdata/services/documents/gdata-documents-spreadsheet.h
 include/libgdata/gdata/services/documents/gdata-documents-text.h
 include/libgdata/gdata/services/documents/gdata-documents-upload-query.h
+include/libgdata/gdata/services/freebase/gdata-freebase-enums.h
+include/libgdata/gdata/services/freebase/gdata-freebase-query.h
+include/libgdata/gdata/services/freebase/gdata-freebase-result.h
+include/libgdata/gdata/services/freebase/gdata-freebase-search-query.h
+include/libgdata/gdata/services/freebase/gdata-freebase-search-result.h
+include/libgdata/gdata/services/freebase/gdata-freebase-service.h
+include/libgdata/gdata/services/freebase/gdata-freebase-topic-query.h
+include/libgdata/gdata/services/freebase/gdata-freebase-topic-result.h
 include/libgdata/gdata/services/picasaweb/gdata-picasaweb-album.h
 include/libgdata/gdata/services/picasaweb/gdata-picasaweb-comment.h
 include/libgdata/gdata/services/picasaweb/gdata-picasaweb-enums.h
@@ -78,9 +86,13 @@ include/libgdata/gdata/services/picasaweb/gdata-picasaweb-file.h
 include/libgdata/gdata/services/picasaweb/gdata-picasaweb-query.h
 include/libgdata/gdata/services/picasaweb/gdata-picasaweb-service.h
 include/libgdata/gdata/services/picasaweb/gdata-picasaweb-user.h
+include/libgdata/gdata/services/tasks/gdata-tasks-query.h
+include/libgdata/gdata/services/tasks/gdata-tasks-service.h
+include/libgdata/gdata/services/tasks/gdata-tasks-task.h
+include/libgdata/gdata/services/tasks/gdata-tasks-tasklist.h
 include/libgdata/gdata/services/youtube/gdata-youtube-category.h
-include/libgdata/gdata/services/youtube/gdata-youtube-content.h
 include/libgdata/gdata/services/youtube/gdata-youtube-comment.h
+include/libgdata/gdata/services/youtube/gdata-youtube-content.h
 include/libgdata/gdata/services/youtube/gdata-youtube-credit.h
 include/libgdata/gdata/services/youtube/gdata-youtube-enums.h
 include/libgdata/gdata/services/youtube/gdata-youtube-query.h
@@ -90,8 +102,8 @@ include/libgdata/gdata/services/youtube/gdata-youtube-video.h
 lib/girepository-1.0/GData-0.0.typelib
 lib/libgdata.a
 lib/libgdata.so
-lib/libgdata.so.13
-lib/libgdata.so.13.5.4
+lib/libgdata.so.19
+lib/libgdata.so.19.2.0
 libdata/pkgconfig/libgdata.pc
 share/doc/gdata/GDataAPPCategories.html
 share/doc/gdata/GDataAccessHandler.html
@@ -115,8 +127,8 @@ share/doc/gdata/GDataContactsContact.html
 share/doc/gdata/GDataContactsGroup.html
 share/doc/gdata/GDataContactsQuery.html
 share/doc/gdata/GDataContactsService.html
-share/doc/gdata/GDataDocumentsDrawing.html
 share/doc/gdata/GDataDocumentsDocument.html
+share/doc/gdata/GDataDocumentsDrawing.html
 share/doc/gdata/GDataDocumentsEntry.html
 share/doc/gdata/GDataDocumentsFeed.html
 share/doc/gdata/GDataDocumentsFolder.html
@@ -130,6 +142,13 @@ share/doc/gdata/GDataDocumentsUploadQuery.html
 share/doc/gdata/GDataDownloadStream.html
 share/doc/gdata/GDataEntry.html
 share/doc/gdata/GDataFeed.html
+share/doc/gdata/GDataFreebaseQuery.html
+share/doc/gdata/GDataFreebaseResult.html
+share/doc/gdata/GDataFreebaseSearchQuery.html
+share/doc/gdata/GDataFreebaseSearchResult.html
+share/doc/gdata/GDataFreebaseService.html
+share/doc/gdata/GDataFreebaseTopicQuery.html
+share/doc/gdata/GDataFreebaseTopicResult.html
 share/doc/gdata/GDataGContactCalendar.html
 share/doc/gdata/GDataGContactEvent.html
 share/doc/gdata/GDataGContactExternalID.html
@@ -165,6 +184,10 @@ share/doc/gdata/GDataPicasaWebService.html
 share/doc/gdata/GDataPicasaWebUser.html
 share/doc/gdata/GDataQuery.html
 share/doc/gdata/GDataService.html
+share/doc/gdata/GDataTasksQuery.html
+share/doc/gdata/GDataTasksService.html
+share/doc/gdata/GDataTasksTask.html
+share/doc/gdata/GDataTasksTasklist.html
 share/doc/gdata/GDataUploadStream.html
 share/doc/gdata/GDataYouTubeCategory.html
 share/doc/gdata/GDataYouTubeComment.html
@@ -195,6 +218,8 @@ share/doc/gdata/ch14.html
 share/doc/gdata/ch15.html
 share/doc/gdata/ch16.html
 share/doc/gdata/ch17.html
+share/doc/gdata/ch18.html
+share/doc/gdata/ch19.html
 share/doc/gdata/data-flow.png
 share/doc/gdata/gdata-GData-Types.html
 share/doc/gdata/gdata-Version-Information.html
@@ -220,6 +245,9 @@ share/doc/gdata/ix15.html
 share/doc/gdata/ix16.html
 share/doc/gdata/ix17.html
 share/doc/gdata/ix18.html
+share/doc/gdata/ix19.html
+share/doc/gdata/ix20.html
+share/doc/gdata/ix21.html
 share/doc/gdata/left-insensitive.png
 share/doc/gdata/left.png
 share/doc/gdata/pt01.html
@@ -309,7 +337,9 @@ share/vala/vapi/libgdata.vapi
 @dirrmtry share/locale/as
 @dirrm share/doc/gdata
 @dirrm include/libgdata/gdata/services/youtube
+@dirrm include/libgdata/gdata/services/tasks
 @dirrm include/libgdata/gdata/services/picasaweb
+@dirrm include/libgdata/gdata/services/freebase
 @dirrm include/libgdata/gdata/services/documents
 @dirrm include/libgdata/gdata/services/contacts
 @dirrm include/libgdata/gdata/services/calendar

@@ -32,7 +32,7 @@ RUN_DEPENDS?=	dconf-editor:${PORTSDIR}/devel/dconf-editor \
 		${LOCALBASE}/lib/X11/fonts/bitstream-vera/Vera.ttf:${PORTSDIR}/x11-fonts/bitstream-vera \
 		${LOCALBASE}/share/hal/fdi/information/10freedesktop/10-camera-ptp.fdi:${PORTSDIR}/sysutils/hal-info \
 		yelp>=3.0.0:${PORTSDIR}/x11/yelp \
-		zenity3>=3.0.0:${PORTSDIR}/x11/zenity3 \
+		zenity>=3.0.0:${PORTSDIR}/x11/zenity \
 		seahorse>=3.0.0:${PORTSDIR}/security/seahorse \
 		metacity>=2.34.0:${PORTSDIR}/x11-wm/metacity \
 		gnome-control-center>=3.0.0:${PORTSDIR}/sysutils/gnome-control-center \

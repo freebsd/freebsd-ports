@@ -1,9 +1,9 @@
 # Created by: Koop Mast <kwm@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/devel/dconf/Makefile 19847 2014-09-05 10:21:08Z kwm $
+#   $MCom: ports/trunk/devel/dconf/Makefile 19891 2014-09-19 23:16:11Z gusi $
 
 PORTNAME?=	dconf
-PORTVERSION=	0.20.0
+PORTVERSION=	0.22.0
 CATEGORIES=	devel gnome
 MASTER_SITES=	GNOME
 DISTNAME=	dconf-${PORTVERSION}

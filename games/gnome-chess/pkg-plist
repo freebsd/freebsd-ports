@@ -350,4 +350,3 @@ share/locale/zh_TW/LC_MESSAGES/gnome-chess.mo
 @dirrm share/gnome-chess
 @dirrmtry share/appdata
 @dirrm %%ETCDIR%%
-

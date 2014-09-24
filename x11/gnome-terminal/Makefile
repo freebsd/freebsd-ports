@@ -1,9 +1,10 @@
 # Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/x11/gnome-terminal/Makefile 19757 2014-06-25 08:10:47Z gusi $
+#   $MCom: ports/trunk/x11/gnome-terminal/Makefile 19904 2014-09-20 17:53:10Z kwm $
 
 PORTNAME=	gnome-terminal
 PORTVERSION=	3.12.3
+PORTREVISION=	2
 CATEGORIES=	x11 gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -19,7 +20,7 @@ LIB_DEPENDS=	libstartup-notification-1.so:${PORTSDIR}/x11/startup-notification \
 RUN_DEPENDS=	gsettings-desktop-schemas>=0:${PORTSDIR}/devel/gsettings-desktop-schemas
 
 USES=		gettext gmake libtool pathfix pkgconfig tar:xz
-USE_GNOME=	gnomeprefix gtk30 intlhack nautilus3 vte3
+USE_GNOME=	dconf gnomeprefix gtk30 intlhack nautilus3 vte3
 USE_XORG=	sm ice
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-search-provider

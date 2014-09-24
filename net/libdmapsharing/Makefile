@@ -1,6 +1,6 @@
 # Created by: Gustau Perez <gustau.perez@gmail.com>
 # $FreeBSD$
-#   $MCom: ports/trunk/net/libdmapsharing/Makefile 19813 2014-08-15 19:44:33Z gusi $
+#   $MCom: ports/trunk/net/libdmapsharing/Makefile 19884 2014-09-17 07:41:30Z kwm $
 
 PORTNAME=	libdmapsharing
 PORTVERSION=	2.9.24
@@ -28,6 +28,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib `pkg-config --libs gtk+-3.0`
 INSTALL_TARGET=	install-strip
 
 OPTIONS_SUB=	yes
+OPTIONS_DEFAULT=	AVAHI
 OPTIONS_SINGLE=	MDNS
 OPTIONS_SINGLE_MDNS=	AVAHI MDNSRESPONDER
 AVAHI_LIB_DEPENDS=	libavahi-core.so:${PORTSDIR}/net/avahi-app

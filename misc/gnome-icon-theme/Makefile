@@ -1,9 +1,10 @@
 # Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports-experimental/trunk/misc/gnome-icon-theme/Makefile 19327 2014-03-25 14:49:54Z gusi $
+#   $MCom$
 
 PORTNAME=	gnome-icon-theme
 PORTVERSION=	3.12.0
+PORTREVISION=	1
 CATEGORIES=	misc gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -13,7 +14,8 @@ COMMENT=	Collection of icons for the GNOME desktop
 
 BUILD_DEPENDS=	${LOCALBASE}/share/icons/hicolor/index.theme:${PORTSDIR}/misc/hicolor-icon-theme \
 		icon-naming-utils>=0.8.7:${PORTSDIR}/x11-themes/icon-naming-utils
-RUN_DEPENDS=	${LOCALBASE}/share/icons/hicolor/index.theme:${PORTSDIR}/misc/hicolor-icon-theme
+RUN_DEPENDS=	${LOCALBASE}/share/icons/hicolor/index.theme:${PORTSDIR}/misc/hicolor-icon-theme \
+		gnome-icon-theme-symbolic>=0:${PORTSDIR}/x11-themes/gnome-icon-theme-symbolic
 
 GNU_CONFIGURE=	yes
 USES=		gmake pathfix pkgconfig tar:xz

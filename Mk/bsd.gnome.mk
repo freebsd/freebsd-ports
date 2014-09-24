@@ -69,7 +69,7 @@ Gnome_Pre_Include=			bsd.gnome.mk
 
 # non-version specific components
 _USE_GNOME_ALL= esound intlhack intltool introspection \
-		ltverhack gnomehack referencehack gnomehier gnomemimedata \
+		gnomehack referencehack gnomehier gnomemimedata \
 		gnomeprefix
 
 # GNOME 1 components
@@ -296,7 +296,7 @@ libxml2_BUILD_DEPENDS=	xml2-config:${PORTSDIR}/textproc/libxml2
 libxml2_LIB_DEPENDS=	libxml2.so:${PORTSDIR}/textproc/libxml2
 libxml2_RUN_DEPENDS=	xml2-config:${PORTSDIR}/textproc/libxml2
 libxml2_DETECT=		${LOCALBASE}/libdata/pkgconfig/libxml-2.0.pc
- 
+
 libxslt_BUILD_DEPENDS=	xsltproc:${PORTSDIR}/textproc/libxslt
 libxslt_LIB_DEPENDS=	libxslt.so:${PORTSDIR}/textproc/libxslt
 libxslt_RUN_DEPENDS=	${libxslt_BUILD_DEPENDS}
@@ -477,7 +477,7 @@ intltool_BUILD_DEPENDS=	${intltool_DETECT}:${PORTSDIR}/textproc/intltool
 intlhack_PRE_PATCH=		${FIND} ${WRKSRC} -name "intltool-merge.in" | ${XARGS} ${REINPLACE_CMD} -e \
 				's|mkdir $$lang or|mkdir $$lang, 0777 or| ; \
 				 s|^push @INC, "/.*|push @INC, "${LOCALBASE}/share/intltool";| ; \
-				 s|/usr/bin/iconv|${LOCALBASE}/bin/iconv|g ; \
+				 s|/usr/bin/iconv|${ICONV_CMD}|g ; \
 				 s|unpack *[(]'"'"'U\*'"'"'|unpack ('"'"'C*'"'"'|'
 intlhack_USE_GNOME_IMPL=intltool
 
@@ -692,48 +692,6 @@ _USE_GNOME+=	${${component}_USE_GNOME_IMPL} ${component}
 PLIST_SUB+=			GTK2_VERSION="${GTK2_VERSION}" \
 				GTK3_VERSION="${GTK3_VERSION}"
 
-# Then handle the ltverhack component (it has to be done here, because
-# we rely on some bsd.autotools.mk variables, and bsd.autotools.mk is
-# included in the post-makefile section).
-.if defined(_AUTOTOOL_libtool)
-lthacks_CONFIGURE_ENV=		ac_cv_path_DOLT_BASH=
-lthacks_PRE_PATCH=	\
-	${CP} -pf ${LTMAIN} ${WRKDIR}/gnome-ltmain.sh && \
-	${CP} -pf ${LIBTOOL} ${WRKDIR}/gnome-libtool && \
-	for file in ${LIBTOOLFILES}; do \
-		${REINPLACE_CMD} -e \
-		'/^ltmain=/!s|$$ac_aux_dir/ltmain\.sh|${LIBTOOLFLAGS} ${WRKDIR}/gnome-ltmain.sh|g; \
-		 /^LIBTOOL=/s|$$(top_builddir)/libtool|${WRKDIR}/gnome-libtool|g' \
-		${PATCH_WRKSRC}/$$file; \
-	done;
-.endif
-
-.if ${USE_GNOME:Mltverhack\:*:C/^[^:]+:([^:]+).*/\1/}==""
-ltverhack_LIB_VERSION=	major=.`expr $$current - $$age`
-.else
-ltverhack_LIB_VERSION=	major=".${USE_GNOME:Mltverhack\:*:C/^[^:]+:([^:]+).*/\1/}"
-.endif
-
-.if defined(USE_AUTOTOOLS) &&  ${USE_AUTOTOOLS:Mlibtool*}
-ltverhack_PATCH_DEPENDS=${LIBTOOL_DEPENDS}
-ltverhack_PATCH_FILES=	../gnome-ltmain.sh ../gnome-libtool
-.else
-ltverhack_PATCH_FILES?=	ltmain.sh libtool
-.endif
-
-ltverhack_PRE_PATCH=	\
-	for file in ${ltverhack_PATCH_FILES}; do \
-		if [ -f ${WRKSRC}/$$file ]; then \
-			${REINPLACE_CMD} -e \
-			'/freebsd-elf)/,/;;/ s|major="\.$$current"|${ltverhack_LIB_VERSION}|; \
-			 /freebsd-elf)/,/;;/ s|versuffix="\.$$current"|versuffix="$$major"|' \
-			-e \
-			'/freebsd-elf)/,/;;/ s|major=\.$$current|${ltverhack_LIB_VERSION}|; \
-			 /freebsd-elf)/,/;;/ s|versuffix=\.$$current|versuffix="$$major"|' \
-			${WRKSRC}/$$file; \
-		fi; \
-	done
-
 # Set USE_CSTD for all ports that depend on glib12
 .if defined(_USE_GNOME) && !empty(_USE_GNOME:Mglib12)
 USE_CSTD=	gnu89
@@ -742,18 +700,6 @@ USE_CSTD=	gnu89
 # Then traverse through all components, check which of them
 # exist in ${_USE_GNOME} and set variables accordingly
 .ifdef _USE_GNOME
-
-# this is splitted out from the above entry because fmake trows a fit otherwise
-. if defined(USE_AUTOTOOLS) && ${USE_AUTOTOOLS:Mlibtool*}
-.  if ${USE_GNOME:Mltverhack*}!= ""
-_GNOME_NEED_LIBTOOL=1
-.  endif
-. endif
-
-. if defined(_GNOME_NEED_LIBTOOL)
-GNOME_PRE_PATCH+=	${lthacks_PRE_PATCH}
-CONFIGURE_ENV+=		${lthacks_CONFIGURE_ENV}
-. endif
 
 . for component in ${_USE_GNOME:O:u}
 .  if defined(${component}_PATCH_DEPENDS)
@@ -797,7 +743,7 @@ GNOME_PRE_PATCH+=	; ${${component}_PRE_PATCH}
 . endfor
 .endif
 
-. if defined(GCONF_SCHEMAS) && ! defined(NO_STAGE)
+. if defined(GCONF_SCHEMAS)
 MAKE_ENV+=	GCONF_DISABLE_MAKEFILE_SCHEMA_INSTALL=1
 . endif
 .endif
@@ -887,18 +833,13 @@ gnome-post-install:
 .  if defined(INSTALLS_ICONS)
 	@${RM} -f ${TMPPLIST}.icons1
 	@for i in `${GREP} "^share/icons/.*/" ${TMPPLIST} | ${CUT} -d / -f 1-3 | ${SORT} -u`; do \
-		${ECHO_CMD} "@unexec /bin/rm %D/$${i}/icon-theme.cache 2>/dev/null || /usr/bin/true" \
+		${ECHO_CMD} "@rmtry $${i}/icon-theme.cache" \
 			>> ${TMPPLIST}.icons1; \
 		${ECHO_CMD} "@exec ${LOCALBASE}/bin/gtk-update-icon-cache -q -f %D/$${i} 2>/dev/null || /usr/bin/true" \
 			>> ${TMPPLIST}; \
 		${ECHO_CMD} "@unexec ${LOCALBASE}/bin/gtk-update-icon-cache -q -f %D/$${i} 2>/dev/null || /usr/bin/true" \
 			>> ${TMPPLIST}; \
 	done
-.if defined(NO_STAGE)
-	@for i in `${GREP} "^share/icons/.*/" ${TMPPLIST} | ${CUT} -d / -f 1-3 | ${SORT} -u`; do \
-		${LOCALBASE}/bin/gtk-update-icon-cache -q -f ${PREFIX}/$${i} 2>/dev/null || ${TRUE}; \
-	done
-.endif
 	@if test -f ${TMPPLIST}.icons1; then \
 		${CAT} ${TMPPLIST}.icons1 ${TMPPLIST} > ${TMPPLIST}.icons2; \
 		${RM} -f ${TMPPLIST}.icons1; \

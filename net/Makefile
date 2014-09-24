@@ -1189,6 +1189,7 @@
     SUBDIR += udpxy
     SUBDIR += udt
     SUBDIR += uget
+    SUBDIR += uhttpmock
     SUBDIR += ulxmlrpcpp
     SUBDIR += unfs3
     SUBDIR += unison

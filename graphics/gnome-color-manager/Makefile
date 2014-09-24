@@ -1,9 +1,10 @@
 # Created by: FreeBSD GNOME Team <gnome@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/graphics/gnome-color-manager/Makefile 19770 2014-07-08 15:57:45Z gusi $
+#   $MCom: ports/trunk/graphics/gnome-color-manager/Makefile 19879 2014-09-15 08:17:00Z gusi $
 
 PORTNAME=	gnome-color-manager
 PORTVERSION=	3.12.3
+PORTREVISION=	2
 CATEGORIES=	graphics gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3

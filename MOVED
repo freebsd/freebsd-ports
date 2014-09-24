@@ -7488,3 +7488,23 @@ graphics/libggi||2014-09-22|Has expired: Unmaintained upstream
 devel/libgii||2014-09-22|Has expired: Unmaintained upstream
 graphics/fpc-ggi||2014-09-22|Has expired: Unmaintained upstream
 www/mediawiki121||2014-09-23|Has expired: Not maintained upstream
+devel/bug-buddy||%DATE%|removed.
+sysutils/tracker-gnome/||%DATE%|removed, it is outdated
+sysutils/tracker-libtrackergtk||%DATE%|removed, it is outdated
+sysutils/tracker-client|sysutils/tracker|%DATE%|moved
+x11/gnome2||%DATE%|removed in flavor of GNOME 3
+x11/gnome2-lite||%DATE%|removed in flavor of GNOME 3
+x11/gnome2-fifth-toe||%DATE%|removed
+x11/gnome2-power-tools||%DATE%|removed
+editors/gnome2-office||%DATE%|removed
+misc/gnome2-reference||%DATE%|removed
+devel/gnome2-hacker-tools||%DATE%|removed
+net-im/folks04|net-im/folks|%DATE%|moved
+security/seahorse-plugins||%DATE%|removed
+multimedia/libgnome-media-profiles||%DATE%|removed
+math/gcalctool|math/gnome-calculator|2014-15-03|Renamed
+www/epiphany-extensions||2014-13-03|Development has ceased
+x11/gnome-panel||2014-13-03|Development has ceased in favour of gnome-shell
+x11/gnome-screensaver||2014-08-26|not used in gnome3.
+x11/zenity3|x11/zenity|2014-09-14|merged
+devel/cluttermm|graphics/cluttermm|2014-09-20|moved to beter cat

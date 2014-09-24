@@ -232,6 +232,8 @@
     SUBDIR += ssam
     SUBDIR += ssed
     SUBDIR += sted
+    SUBDIR += sublime
+    SUBDIR += sublime3
     SUBDIR += tamago
     SUBDIR += tea
     SUBDIR += teco
@@ -266,7 +268,5 @@
     SUBDIR += zile
     SUBDIR += zim
     SUBDIR += zoinks
-    SUBDIR += sublime
-    SUBDIR += sublime3
 
 .include <bsd.port.subdir.mk>

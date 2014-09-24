@@ -1,39 +1,36 @@
 # Created by: Franz Klammer <klammer@webonaut.com>
 # $FreeBSD$
-#   $MCom: ports/trunk/x11/zenity/Makefile 19804 2014-08-13 14:55:11Z kwm $
+#   $MCom: ports/trunk/x11/zenity/Makefile 19874 2014-09-14 17:29:23Z kwm $
 
 PORTNAME=	zenity
-PORTVERSION=	2.32.1
-PORTREVISION=	2
+PORTVERSION=	3.12.1
+PORTREVISION=	1
 CATEGORIES=	x11 gnome
 MASTER_SITES=	GNOME
-DIST_SUBDIR=	gnome2
+DIST_SUBDIR=	gnome3
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Display GNOME dialogs from the command line
 
-BUILD_DEPENDS=	rarian-sk-config:${PORTSDIR}/textproc/rarian
-RUN_DEPENDS=	rarian-sk-config:${PORTSDIR}/textproc/rarian
+LICENSE=	LGPL20
 
-CONFLICTS=	gtkada-1.2.* zenity3-*
+BUILD_DEPENDS=	itstool:${PORTSDIR}/textproc/itstool
 
-USE_GNOME=	gnomeprefix gtk20 gnomedocutils intlhack
-USES=		gettext gmake pathfix pkgconfig tar:bzip2
+CONFLICTS=	gtkada-1.2.* zenity-2.*
+
+USES=		gettext gmake pathfix pkgconfig perl5 tar:xz
+USE_GNOME=	gnomeprefix gtk30 intlhack
+USE_XORG=	x11
 GNU_CONFIGURE=	yes
-INSTALLS_OMF=	yes
-CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
+CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
 OPTIONS_DEFINE=	NOTIFY
 OPTIONS_DEFAULT=NOTIFY
+NOTIFY_LIB_DEPENDS=	libnotify.so:${PORTSDIR}/devel/libnotify
+NOTIFY_CONFIGURE_ENABLE=libnotify
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MNOTIFY}
-LIB_DEPENDS+=		libnotify.so:${PORTSDIR}/devel/libnotify
-CONFIGURE_ARGS+=	--enable-libnotify
-.else
-CONFIGURE_ARGS+=	--disable-libnotify
-.endif
+post-patch:
+	@${RM} ${WRKSRC}/src/gdialog
 
 .include <bsd.port.mk>

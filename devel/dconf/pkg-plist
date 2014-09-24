@@ -105,6 +105,8 @@ share/vala/vapi/dconf.deps
 share/vala/vapi/dconf.vapi
 @dirrmtry share/locale/ug/LC_MESSAGES
 @dirrmtry share/locale/ug
+@dirrmtry share/locale/fur/LC_MESSAGES
+@dirrmtry share/locale/fur
 @dirrmtry share/locale/an/LC_MESSAGES
 @dirrmtry share/locale/an
 @dirrm share/gtk-doc/html/dconf

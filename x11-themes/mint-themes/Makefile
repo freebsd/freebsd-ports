@@ -1,6 +1,6 @@
 # Created by: Gustau Perez i Querol <gustau.perez@gmail.com>
 # $FreeBSD$
-#   $MCom: ports/trunk/x11-themes/mint-themes/Makefile 19573 2014-04-25 20:51:12Z gusi $
+#   $MCom: ports/trunk/x11-themes/mint-themes/Makefile 19873 2014-09-14 17:17:23Z kwm $
 
 PORTNAME=	mint-themes
 PORTVERSION=	0.0.41cf70d
@@ -18,7 +18,6 @@ GH_TAGNAME=	${GH_COMMIT}
 
 WRKSRC=		${WRKDIR}/linuxmint-${PORTNAME}-41cf70d
 
-USES=		zip
 NO_CONFIGURE=	yes
 NO_BUILD=	yes
 

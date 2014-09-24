@@ -1,11 +1,11 @@
---- Makefile.in.orig	2013-03-29 15:05:15.000000000 +0000
-+++ Makefile.in	2013-03-29 15:06:06.000000000 +0000
-@@ -387,7 +387,7 @@
+--- Makefile.in.orig	2014-09-20 11:19:51.251881889 +0200
++++ Makefile.in	2014-09-20 11:20:28.024080455 +0200
+@@ -424,7 +424,7 @@
  # this needs client/cd-create-profile
  
  # this needs data/profiles/*.icc
--SUBDIRS = etc policy man lib rules po client contrib doc examples data \
-+SUBDIRS = etc policy man lib po client contrib doc examples data \
- 	src
+-SUBDIRS = policy man lib rules po client contrib doc examples data src
++SUBDIRS = policy man lib po client contrib doc examples data src
  DISTCHECK_CONFIGURE_FLAGS = \
  	--enable-introspection				\
+ 	--enable-fd-fallback				\

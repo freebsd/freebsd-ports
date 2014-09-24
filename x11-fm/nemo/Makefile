@@ -1,9 +1,9 @@
 # Created by: Gustau Perez i Querol <gustau.perez@gmail.com>
 # $FreeBSD$
-#    $MCom: ports/trunk/x11-fm/nemo/Makefile 19804 2014-08-13 14:55:11Z kwm $
+#    $MCom: ports/trunk/x11-fm/nemo/Makefile 19857 2014-09-13 09:46:37Z gusi $
 
 PORTNAME=	nemo
-PORTVERSION=	2.2.3
+PORTVERSION=	2.2.4
 CATEGORIES=	x11-fm gnome
 MASTER_SITES=	http://github.com/linuxmint/${PORTNAME}/archive/${PORTVERSION}.tar.gz?dummy=/
 DIST_SUBDIR=	gnome3

@@ -1,0 +1,15 @@
+include/libuhttpmock-0.0/uhttpmock/uhm-resolver.h
+include/libuhttpmock-0.0/uhttpmock/uhm-server.h
+include/libuhttpmock-0.0/uhttpmock/uhm-version.h
+include/libuhttpmock-0.0/uhttpmock/uhm.h
+lib/girepository-1.0/Uhm-0.0.typelib
+lib/libuhttpmock-0.0.a
+lib/libuhttpmock-0.0.so
+lib/libuhttpmock-0.0.so.0
+lib/libuhttpmock-0.0.so.0.1.0
+libdata/pkgconfig/libuhttpmock-0.0.pc
+share/gir-1.0/Uhm-0.0.gir
+share/vala/vapi/libuhttpmock-0.0.deps
+share/vala/vapi/libuhttpmock-0.0.vapi
+@dirrmtry include/libuhttpmock-0.0/uhttpmock
+@dirrmtry include/libuhttpmock-0.0

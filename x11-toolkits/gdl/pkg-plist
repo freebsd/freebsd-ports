@@ -13,35 +13,35 @@ lib/libgdl-3.so
 lib/libgdl-3.so.5
 lib/libgdl-3.so.5.0.8
 libdata/pkgconfig/gdl-3.0.pc
-share/doc/gdl3-3.0/GdlDock.html
-share/doc/gdl3-3.0/GdlDockBar.html
-share/doc/gdl3-3.0/GdlDockItem.html
-share/doc/gdl3-3.0/GdlDockItemButtonImage.html
-share/doc/gdl3-3.0/GdlDockItemGrip.html
-share/doc/gdl3-3.0/GdlDockLayout.html
-share/doc/gdl3-3.0/GdlDockMaster.html
-share/doc/gdl3-3.0/GdlDockNotebook.html
-share/doc/gdl3-3.0/GdlDockObject.html
-share/doc/gdl3-3.0/GdlDockPaned.html
-share/doc/gdl3-3.0/GdlDockPlaceholder.html
-share/doc/gdl3-3.0/GdlDockTablabel.html
-share/doc/gdl3-3.0/GdlPreviewWindow.html
-share/doc/gdl3-3.0/GdlSwitcher.html
-share/doc/gdl3-3.0/annotation-glossary.html
-share/doc/gdl3-3.0/api-index-full.html
-share/doc/gdl3-3.0/api.html
-share/doc/gdl3-3.0/core.html
-share/doc/gdl3-3.0/deprecated.html
-share/doc/gdl3-3.0/gdl.devhelp2
-share/doc/gdl3-3.0/home.png
-share/doc/gdl3-3.0/index.html
-share/doc/gdl3-3.0/index.sgml
-share/doc/gdl3-3.0/left.png
-share/doc/gdl3-3.0/private.html
-share/doc/gdl3-3.0/right.png
-share/doc/gdl3-3.0/style.css
-share/doc/gdl3-3.0/up.png
-share/doc/gdl3-3.0/widget.html
+share/doc/gdl-3.0/GdlDock.html
+share/doc/gdl-3.0/GdlDockBar.html
+share/doc/gdl-3.0/GdlDockItem.html
+share/doc/gdl-3.0/GdlDockItemButtonImage.html
+share/doc/gdl-3.0/GdlDockItemGrip.html
+share/doc/gdl-3.0/GdlDockLayout.html
+share/doc/gdl-3.0/GdlDockMaster.html
+share/doc/gdl-3.0/GdlDockNotebook.html
+share/doc/gdl-3.0/GdlDockObject.html
+share/doc/gdl-3.0/GdlDockPaned.html
+share/doc/gdl-3.0/GdlDockPlaceholder.html
+share/doc/gdl-3.0/GdlDockTablabel.html
+share/doc/gdl-3.0/GdlPreviewWindow.html
+share/doc/gdl-3.0/GdlSwitcher.html
+share/doc/gdl-3.0/annotation-glossary.html
+share/doc/gdl-3.0/api-index-full.html
+share/doc/gdl-3.0/api.html
+share/doc/gdl-3.0/core.html
+share/doc/gdl-3.0/deprecated.html
+share/doc/gdl-3.0/gdl-3.0.devhelp2
+share/doc/gdl-3.0/home.png
+share/doc/gdl-3.0/index.html
+share/doc/gdl-3.0/index.sgml
+share/doc/gdl-3.0/left.png
+share/doc/gdl-3.0/private.html
+share/doc/gdl-3.0/right.png
+share/doc/gdl-3.0/style.css
+share/doc/gdl-3.0/up.png
+share/doc/gdl-3.0/widget.html
 share/gir-1.0/Gdl-3.gir
 share/locale/am/LC_MESSAGES/gdl-3.mo
 share/locale/ar/LC_MESSAGES/gdl-3.mo
@@ -150,6 +150,6 @@ share/locale/zh_TW/LC_MESSAGES/gdl-3.mo
 @dirrmtry share/locale/ast
 @dirrmtry share/locale/as/LC_MESSAGES
 @dirrmtry share/locale/as
-@dirrm share/doc/gdl3-3.0
+@dirrm share/doc/gdl-3.0
 @dirrm include/libgdl-3.0/gdl
 @dirrm include/libgdl-3.0

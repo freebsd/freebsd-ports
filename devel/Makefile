@@ -231,7 +231,6 @@
     SUBDIR += clig
     SUBDIR += clisp-hyperspec
     SUBDIR += clojure-cider
-    SUBDIR += cluttermm
     SUBDIR += cmake
     SUBDIR += cmake-fedora
     SUBDIR += cmake-gui
@@ -268,8 +267,8 @@
     SUBDIR += cproto
     SUBDIR += cpuflags
     SUBDIR += creduce
-    SUBDIR += cross-binutils
     SUBDIR += critcl
+    SUBDIR += cross-binutils
     SUBDIR += cscope
     SUBDIR += cscout
     SUBDIR += csmith
@@ -864,6 +863,7 @@
     SUBDIR += htable
     SUBDIR += hub
     SUBDIR += hwloc
+    SUBDIR += i386-linux-binutils
     SUBDIR += ice
     SUBDIR += icmake
     SUBDIR += icu
@@ -879,7 +879,6 @@
     SUBDIR += ireport
     SUBDIR += isl
     SUBDIR += itext
-    SUBDIR += i386-linux-binutils
     SUBDIR += jakarta-commons-configuration
     SUBDIR += jakarta-commons-daemon
     SUBDIR += jakarta-commons-io
@@ -1023,7 +1022,6 @@
     SUBDIR += libgalago
     SUBDIR += libgamepad
     SUBDIR += libgdata
-    SUBDIR += libgdata06
     SUBDIR += libgee
     SUBDIR += libgee06
     SUBDIR += libgetline
@@ -1184,15 +1182,15 @@
     SUBDIR += libzrtpcpp
     SUBDIR += libzvbi
     SUBDIR += lightning
-    SUBDIR += linux-c6-ncurses-base
-    SUBDIR += linux-c6-devtools
     SUBDIR += linux-c6-dbus-glib
-    SUBDIR += linux-c6-qt47
     SUBDIR += linux-c6-dbus-libs
+    SUBDIR += linux-c6-devtools
     SUBDIR += linux-c6-libglade2
     SUBDIR += linux-c6-libpciaccess
-    SUBDIR += linux-c6-sdl12
+    SUBDIR += linux-c6-ncurses-base
     SUBDIR += linux-c6-nspr
+    SUBDIR += linux-c6-qt47
+    SUBDIR += linux-c6-sdl12
     SUBDIR += linux-f10-allegro
     SUBDIR += linux-f10-dbus-glib
     SUBDIR += linux-f10-dbus-libs
@@ -4508,8 +4506,8 @@
     SUBDIR += rubygem-soap4r
     SUBDIR += rubygem-spring
     SUBDIR += rubygem-sprockets
-    SUBDIR += rubygem-sprockets211
     SUBDIR += rubygem-sprockets-rails
+    SUBDIR += rubygem-sprockets211
     SUBDIR += rubygem-spruz
     SUBDIR += rubygem-state_machine
     SUBDIR += rubygem-statsd

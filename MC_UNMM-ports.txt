@@ -49,7 +49,7 @@ deskutils/gnome-shell-extension-mediaplayer
 deskutils/gnome-shell-extension-openweather
 deskutils/gnome-shell-extension-overlay-icons
 deskutils/gnome-shell-extension-panel-osd
-deskutils/gnome-shell-extension-recentitems
+deskutils/gnome-shell-extension-recent-items
 deskutils/gnome-shell-extension-trash
 deskutils/gnome-shell-extension-weather
 deskutils/gnome-shell-extra-extensions
@@ -67,7 +67,6 @@ deskutils/notification-daemon
 devel/anjuta
 devel/anjuta-extras
 devel/appdata-tools
-devel/cluttermm
 devel/dconf
 devel/dconf-editor
 devel/devhelp
@@ -83,7 +82,6 @@ devel/gtranslator
 devel/gvfs
 devel/json-glib
 devel/libgdata
-devel/libgdata06
 devel/libgee
 devel/libgit2-glib
 devel/libgsf
@@ -93,11 +91,8 @@ devel/liboobs
 devel/libpeas
 devel/libsoup
 devel/libsoup-gnome
-devel/py-dbus
 devel/py-gobject3
-devel/py3-dbus
 devel/py3-gobject3
-devel/pydbus-common
 devel/pygobject3-common
 devel/seed
 editors/gedit
@@ -120,12 +115,11 @@ games/lightsoff
 games/quadrapassel
 games/swell-foop
 games/tali
-graphics/cairo
 graphics/clutter
 graphics/clutter-gtk3
+graphics/cluttermm
 graphics/cogl
 graphics/colord
-graphics/colord-gtk
 graphics/eog
 graphics/eog-plugins
 graphics/evince
@@ -174,6 +168,7 @@ net/libdmapsharing
 net/libgweather
 net/libproxy
 net/libzapojit
+net/uhttpmock
 net/vinagre
 net/vino
 net-im/ekiga
@@ -214,7 +209,6 @@ sysutils/gnome-control-center
 sysutils/gnome-power-manager
 sysutils/gnome-settings-daemon
 sysutils/gnome-system-monitor
-sysutils/mate-power-manager
 sysutils/polkit-gnome
 sysutils/system-tools-backends
 sysutils/tracker
@@ -245,13 +239,9 @@ x11/gnome3
 x11/gnome3-lite
 x11/libgnomekbd
 x11/libxklavier
-x11/mate-applets
-x11/mate-session-manager
 x11/yelp
 x11/zenity
-x11/zenity3
 x11-fm/gnome-commander2
-x11-fm/mate-file-manager
 x11-fm/nautilus
 x11-fm/nemo
 x11-fm/sushi
@@ -264,7 +254,6 @@ x11-toolkits/gdl
 x11-toolkits/gtk30
 x11-toolkits/gtkmm30
 x11-toolkits/gtksourceview3
-x11-toolkits/libwnck
 x11-toolkits/libwnck3
 x11-toolkits/pango
 x11-toolkits/pangomm
