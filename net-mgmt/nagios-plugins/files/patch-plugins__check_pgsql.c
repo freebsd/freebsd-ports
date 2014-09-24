@@ -1,5 +1,5 @@
---- ./plugins/check_pgsql.c.orig	2014-04-16 00:19:03.000000000 +0200
-+++ ./plugins/check_pgsql.c	2014-05-20 23:08:11.000000000 +0200
+--- plugins/check_pgsql.c.orig	2014-04-15 22:19:03 UTC
++++ plugins/check_pgsql.c
 @@ -36,6 +36,7 @@
  #include "utils.h"
  

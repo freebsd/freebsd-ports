@@ -1,5 +1,5 @@
---- ./plugins/check_dig.c.orig	2014-03-04 20:21:36.000000000 +0100
-+++ ./plugins/check_dig.c	2014-04-15 11:42:41.000000000 +0200
+--- plugins/check_dig.c.orig	2014-03-04 21:41:57 UTC
++++ plugins/check_dig.c
 @@ -94,8 +94,8 @@
    timeout_interval_dig = ceil((double) timeout_interval / (double) number_tries);
  

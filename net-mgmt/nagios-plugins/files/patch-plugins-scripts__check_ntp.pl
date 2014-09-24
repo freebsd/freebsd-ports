@@ -1,5 +1,5 @@
---- ./plugins-scripts/check_ntp.pl.orig	2014-03-04 20:21:36.000000000 +0100
-+++ ./plugins-scripts/check_ntp.pl	2014-04-14 10:22:50.000000000 +0200
+--- plugins-scripts/check_ntp.pl.orig	2014-03-04 21:41:57 UTC
++++ plugins-scripts/check_ntp.pl
 @@ -313,7 +313,6 @@
  				}
  			} else {

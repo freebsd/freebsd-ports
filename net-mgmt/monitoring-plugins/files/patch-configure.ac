@@ -1,5 +1,5 @@
---- ./configure.ac.orig	2014-06-24 15:08:41.000000000 +0200
-+++ ./configure.ac	2014-06-25 13:28:18.000000000 +0200
+--- configure.ac.orig	2014-07-11 09:15:18 UTC
++++ configure.ac
 @@ -44,6 +44,7 @@
  gl_EARLY
  AC_PROG_GCC_TRADITIONAL
@@ -403,3 +403,12 @@
  
  AC_PATH_PROG(PATH_TO_LSPS,lsps)
  if (test -n "$PATH_TO_LSPS")
+@@ -1737,7 +1508,7 @@
+ AC_SUBST(DEPLIBS)
+ 
+ AM_GNU_GETTEXT([external], [need-ngettext])
+-AM_GNU_GETTEXT_VERSION(0.15)
++AM_GNU_GETTEXT_VERSION(0.18)
+ 
+ dnl Check for Redhat spopen problem
+ dnl Wierd problem where ECHILD is returned from a wait call in error
