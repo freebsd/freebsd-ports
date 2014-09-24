@@ -3,6 +3,7 @@
 
 PORTNAME=	vagrant
 PORTVERSION=	1.6.3
+PORTREVISION=	1
 CATEGORIES=	sysutils rubygems devel
 MASTER_SITES=	LOCAL/swills https://codeload.github.com/mitchellh/vagrant/legacy.tar.gz/v${PORTVERSION}?dummy=/
 
