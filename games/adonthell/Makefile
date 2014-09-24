@@ -10,7 +10,7 @@ MASTER_SITES=	SAVANNAH
 DISTFILES=	${PORTNAME}-src-${PORTVERSION}${EXTRACT_SUFX} \
 	   	wastesedge-src-${WEDGE_VERSION}${EXTRACT_SUFX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	games@FreeBSD.org
 COMMENT=	Free role playing game
 
 LICENSE=	GPLv2
@@ -29,7 +29,12 @@ CONFIGURE_ARGS=	--disable-py-debug
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-PLIST_SUB=	VERSION="${PORTVERSION:R}"
+PLIST_FILES=	bin/adonthell \
+		bin/adonthell-${PORTVERSION:R} \
+		bin/adonthell-wastesedge \
+		share/pixmaps/wastesedge_16x16.xpm \
+		share/pixmaps/wastesedge_32x32.xpm
+PORTDATA=	*
 
 BROKEN_sparc64=	Does not build on sparc64
 
