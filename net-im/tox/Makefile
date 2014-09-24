@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	toxcore
-PORTVERSION=	0.140908
-PORTREVISION=	1
+PORTVERSION=	0.140924
 CATEGORIES=	net-im net-p2p
 
 MAINTAINER=	thierry@FreeBSD.org
@@ -14,7 +13,6 @@ LICENSE=	GPLv3
 BUILD_DEPENDS=	checkmk:${PORTSDIR}/devel/libcheck
 LIB_DEPENDS=	libvpx.so:${PORTSDIR}/multimedia/libvpx		\
 		libopus.so:${PORTSDIR}/audio/opus		\
-		libopenal.so.1:${PORTSDIR}/audio/openal-soft	\
 		libv4l2.so:${PORTSDIR}/multimedia/libv4l	\
 		libswscale.so:${PORTSDIR}/multimedia/ffmpeg
 
@@ -22,12 +20,12 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	irungentoo
 GH_PROJECT=	${PORTNAME}
 GH_TAGNAME=	${GH_COMMIT}
-GH_COMMIT=	a0302b7
+GH_COMMIT=	744f51e
 
 USE_AUTOTOOLS=	libtoolize aclocal autoconf autoheader automake
 AUTOMAKE_ARGS=	-a -c -f
 CONFIGURE_ARGS=	--enable-testing
-USES=		pkgconfig pathfix libtool
+USES=		libtool openal:soft pathfix pkgconfig
 USE_SDL=	yes
 USE_LDCONFIG=	yes
 PATHFIX_MAKEFILEIN=	Makefile.am
