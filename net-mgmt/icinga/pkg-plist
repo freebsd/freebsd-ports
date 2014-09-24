@@ -2,23 +2,23 @@ bin/icinga
 bin/icingastats
 %%IDOUTILS%%bin/ido2db
 %%IDOUTILS%%bin/log2ido
-%%ETCDIR%%/cgi.cfg-sample
-%%ETCDIR%%/cgiauth.cfg-sample
-%%ETCDIR%%/icinga.cfg-sample
-%%IDOUTILS%%%%ETCDIR%%/ido2db.cfg-sample
-%%IDOUTILS%%%%ETCDIR%%/idomod.cfg-sample
-%%IDOUTILS%%%%ETCDIR%%/modules/idoutils.cfg-sample
-%%ETCDIR%%/objects/commands.cfg-sample
-%%ETCDIR%%/objects/contacts.cfg-sample
-%%IDOUTILS%%%%ETCDIR%%/objects/ido2db_check_proc.cfg-sample
-%%ETCDIR%%/objects/localhost.cfg-sample
-%%ETCDIR%%/objects/notifications.cfg-sample
-%%ETCDIR%%/objects/printer.cfg-sample
-%%ETCDIR%%/objects/switch.cfg-sample
-%%ETCDIR%%/objects/templates.cfg-sample
-%%ETCDIR%%/objects/timeperiods.cfg-sample
-%%ETCDIR%%/objects/windows.cfg-sample
-%%ETCDIR%%/resource.cfg-sample
+@sample %%ETCDIR%%/cgi.cfg.sample
+@sample %%ETCDIR%%/cgiauth.cfg.sample
+@sample %%ETCDIR%%/icinga.cfg.sample
+@sample %%IDOUTILS%%%%ETCDIR%%/ido2db.cfg.sample
+@sample %%IDOUTILS%%%%ETCDIR%%/idomod.cfg.sample
+@sample %%IDOUTILS%%%%ETCDIR%%/modules/idoutils.cfg.sample
+@sample %%ETCDIR%%/objects/commands.cfg.sample
+@sample %%ETCDIR%%/objects/contacts.cfg.sample
+@sample %%IDOUTILS%%%%ETCDIR%%/objects/ido2db_check_proc.cfg.sample
+@sample %%ETCDIR%%/objects/localhost.cfg.sample
+@sample %%ETCDIR%%/objects/notifications.cfg.sample
+@sample %%ETCDIR%%/objects/printer.cfg.sample
+@sample %%ETCDIR%%/objects/switch.cfg.sample
+@sample %%ETCDIR%%/objects/templates.cfg.sample
+@sample %%ETCDIR%%/objects/timeperiods.cfg.sample
+@sample %%ETCDIR%%/objects/windows.cfg.sample
+@sample %%ETCDIR%%/resource.cfg.sample
 %%IDOUTILS%%lib/idomod.so
 libexec/icinga/eventhandlers/disable_active_service_checks
 libexec/icinga/eventhandlers/disable_notifications
@@ -29,7 +29,7 @@ libexec/icinga/eventhandlers/enable_notifications
 libexec/icinga/eventhandlers/redundancy-scenario1/handle-master-host-event
 libexec/icinga/eventhandlers/redundancy-scenario1/handle-master-proc-event
 libexec/icinga/eventhandlers/submit_check_result
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/apache22/icinga.conf-sample
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/apache22/icinga.conf.sample
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/idoutils/config/ido2db.cfg-sample
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/idoutils/config/ido2db.cfg-sample.in
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/idoutils/config/ido2db_check_proc.cfg
@@ -62,6 +62,8 @@ libexec/icinga/eventhandlers/submit_check_result
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/idoutils/db/mysql/upgrade/mysql-upgrade-1.8.0.sql
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/idoutils/db/mysql/upgrade/mysql-upgrade-1.9.0.sql
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/idoutils/db/mysql/upgrade/mysql-upgrade-1.11.3.sql
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/idoutils/db/mysql/upgrade/mysql-upgrade-1.11.6.sql
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/idoutils/db/mysql/upgrade/mysql-upgrade-1.11.7.sql
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/idoutils/db/oracle/create_icinga_objects_oracle.sql
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/idoutils/db/oracle/create_oracle_sys.sql
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/idoutils/db/oracle/icinga_defines.sql
@@ -82,6 +84,8 @@ libexec/icinga/eventhandlers/submit_check_result
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/idoutils/db/oracle/upgrade/oracle-upgrade-1.7.0.sql
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/idoutils/db/oracle/upgrade/oracle-upgrade-1.8.0.sql
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/idoutils/db/oracle/upgrade/oracle-upgrade-1.9.0.sql
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/idoutils/db/oracle/upgrade/oracle-upgrade-1.11.6.sql
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/idoutils/db/oracle/upgrade/oracle-upgrade-1.11.7.sql
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/idoutils/db/oracle/upgrade/oracle_alter_icinga13_numbers.sql
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/idoutils/db/oracle/upgrade/oracle_alter_icinga13_objects.sql
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/idoutils/db/oracle/upgrade/oracle_recreate_icinga13_functions.sql
@@ -99,6 +103,8 @@ libexec/icinga/eventhandlers/submit_check_result
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/idoutils/db/pgsql/upgrade/pgsql-upgrade-1.7.0.sql
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/idoutils/db/pgsql/upgrade/pgsql-upgrade-1.8.0.sql
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/idoutils/db/pgsql/upgrade/pgsql-upgrade-1.9.0.sql
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/idoutils/db/pgsql/upgrade/pgsql-upgrade-1.11.6.sql
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/idoutils/db/pgsql/upgrade/pgsql-upgrade-1.11.7.sql
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/idoutils/db/queries/comment_history.sql
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/idoutils/db/queries/comments.sql
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/idoutils/db/queries/contact_notification_methods.sql
@@ -2372,52 +2378,3 @@ libexec/icinga/eventhandlers/submit_check_result
 %%ICINGAWWWDIR%%/stylesheets/tac.css
 %%ICINGAWWWDIR%%/stylesheets/tacheader.css
 %%ICINGAWWWDIR%%/stylesheets/trends.css
-@dirrmtry %%ICINGAWWWDIR%%/stylesheets
-@dirrmtry %%ICINGAWWWDIR%%/ssi
-@dirrmtry %%ICINGAWWWDIR%%/media
-@dirrmtry %%ICINGAWWWDIR%%/log
-@dirrmtry %%ICINGAWWWDIR%%/js
-@dirrmtry %%ICINGAWWWDIR%%/jquery-ui/ui
-@dirrmtry %%ICINGAWWWDIR%%/jquery-ui/themes/base/images
-@dirrmtry %%ICINGAWWWDIR%%/jquery-ui/themes/base
-@dirrmtry %%ICINGAWWWDIR%%/jquery-ui/themes
-@dirrmtry %%ICINGAWWWDIR%%/jquery-ui-addon
-@dirrmtry %%ICINGAWWWDIR%%/jquery-ui
-@dirrmtry %%ICINGAWWWDIR%%/images/logos/vendors
-@dirrmtry %%ICINGAWWWDIR%%/images/logos/other
-@dirrmtry %%ICINGAWWWDIR%%/images/logos/hardware
-@dirrmtry %%ICINGAWWWDIR%%/images/logos/equipment
-@dirrmtry %%ICINGAWWWDIR%%/images/logos
-@dirrmtry %%ICINGAWWWDIR%%/images
-@dirrmtry %%ICINGAWWWDIR%%/docs/stylesheets
-@dirrmtry %%ICINGAWWWDIR%%/docs/js
-@dirrmtry %%ICINGAWWWDIR%%/docs/images/flags
-@dirrmtry %%ICINGAWWWDIR%%/docs/images
-@dirrmtry %%ICINGAWWWDIR%%/docs/en
-@dirrmtry %%ICINGAWWWDIR%%/docs/de
-@dirrmtry %%ICINGAWWWDIR%%/docs
-@dirrmtry %%ICINGAWWWDIR%%/cgi-bin
-@dirrmtry %%ICINGAWWWDIR%%
-%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/apache22
-%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/idoutils/db/scripts
-%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/idoutils/db/queries
-%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/idoutils/db/pgsql/upgrade
-%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/idoutils/db/pgsql/fix
-%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/idoutils/db/pgsql
-%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/idoutils/db/oracle/upgrade
-%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/idoutils/db/oracle
-%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/idoutils/db/mysql/upgrade
-%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/idoutils/db/mysql
-%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/idoutils/db
-%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/idoutils/config/updates
-%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/idoutils/config
-%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/idoutils
-%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%
-@dirrmtry libexec/icinga/eventhandlers/redundancy-scenario1
-@dirrmtry libexec/icinga/eventhandlers/distributed-monitoring
-@dirrmtry libexec/icinga/eventhandlers
-@dirrmtry libexec/icinga
-@dirrmtry %%ETCDIR%%/objects
-@dirrmtry %%ETCDIR%%/modules
-@dirrmtry %%ETCDIR%%/conf.d
-@dirrmtry %%ETCDIR%%

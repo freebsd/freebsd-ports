@@ -1,9 +1,15 @@
---- module/idoutils/Makefile.in.orig	2014-03-13 11:46:50.000000000 +0100
-+++ module/idoutils/Makefile.in	2014-03-13 21:48:34.176304857 +0100
-@@ -60,5 +60,5 @@ install: 
- 	$(INSTALL) -b -m 664 $(INSTALL_OPTS) config/ido2db.cfg-sample $(DESTDIR)$(CFGDIR)
- 	$(INSTALL) -b -m 664 $(INSTALL_OPTS) config/idomod.cfg-sample $(DESTDIR)$(CFGDIR)
- 	$(INSTALL) -b -m 664 $(INSTALL_OPTS) config/idoutils.cfg-sample $(DESTDIR)$(CFGDIR)/modules
+--- module/idoutils/Makefile.in.orig	2014-09-24 21:24:54.580929462 +0200
++++ module/idoutils/Makefile.in	2014-09-24 21:25:56.330324547 +0200
+@@ -57,8 +57,8 @@
+ 	$(INSTALL) -m 775 $(INSTALL_OPTS) -d $(DESTDIR)$(CFGDIR)
+ 	$(INSTALL) -m 775 $(INSTALL_OPTS) -d $(DESTDIR)$(CFGDIR)/objects
+ 	$(INSTALL) -m 775 $(INSTALL_OPTS) -d $(DESTDIR)$(CFGDIR)/modules
+-	$(INSTALL) -b -m 664 $(INSTALL_OPTS) config/ido2db.cfg-sample $(DESTDIR)$(CFGDIR)
+-	$(INSTALL) -b -m 664 $(INSTALL_OPTS) config/idomod.cfg-sample $(DESTDIR)$(CFGDIR)
+-	$(INSTALL) -b -m 664 $(INSTALL_OPTS) config/idoutils.cfg-sample $(DESTDIR)$(CFGDIR)/modules
 -	$(INSTALL) -b -m 664 $(INSTALL_OPTS) config/ido2db_check_proc.cfg $(DESTDIR)$(CFGDIR)/objects/ido2db_check_proc.cfg
-+	$(INSTALL) -b -m 664 $(INSTALL_OPTS) config/ido2db_check_proc.cfg $(DESTDIR)$(CFGDIR)/objects/ido2db_check_proc.cfg-sample
++	$(INSTALL) -b -m 664 $(INSTALL_OPTS) config/ido2db.cfg-sample $(DESTDIR)$(CFGDIR)/ido2db.cfg.sample
++	$(INSTALL) -b -m 664 $(INSTALL_OPTS) config/idomod.cfg-sample $(DESTDIR)$(CFGDIR)/idomod.cfg.sample
++	$(INSTALL) -b -m 664 $(INSTALL_OPTS) config/idoutils.cfg-sample $(DESTDIR)$(CFGDIR)/modules/idoutils.cfg.sample
++	$(INSTALL) -b -m 664 $(INSTALL_OPTS) config/ido2db_check_proc.cfg $(DESTDIR)$(CFGDIR)/objects/ido2db_check_proc.cfg.sample
  

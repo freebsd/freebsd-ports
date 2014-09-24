@@ -179,8 +179,8 @@
  	$(INSTALL) -m 775 $(INSTALL_OPTS) -d $(DESTDIR)$(CFGDIR)
 -	$(INSTALL) -b -m 664 $(INSTALL_OPTS) sample-config/cgi.cfg $(DESTDIR)$(CFGDIR)/cgi.cfg
 -	$(INSTALL) -b -m 664 $(INSTALL_OPTS) sample-config/cgiauth.cfg $(DESTDIR)$(CFGDIR)/cgiauth.cfg
-+	$(INSTALL) -b -m 664 $(INSTALL_OPTS) sample-config/cgi.cfg $(DESTDIR)$(CFGDIR)/cgi.cfg-sample
-+	$(INSTALL) -b -m 664 $(INSTALL_OPTS) sample-config/cgiauth.cfg $(DESTDIR)$(CFGDIR)/cgiauth.cfg-sample
++	$(INSTALL) -b -m 664 $(INSTALL_OPTS) sample-config/cgi.cfg $(DESTDIR)$(CFGDIR)/cgi.cfg.sample
++	$(INSTALL) -b -m 664 $(INSTALL_OPTS) sample-config/cgiauth.cfg $(DESTDIR)$(CFGDIR)/cgiauth.cfg.sample
  
  
  install-config: install-cgiconf
@@ -199,17 +199,17 @@
 -	$(INSTALL) -b -m 664 $(INSTALL_OPTS) sample-config/template-object/windows.cfg $(DESTDIR)$(CFGDIR)/objects/windows.cfg
 -	$(INSTALL) -b -m 664 $(INSTALL_OPTS) sample-config/template-object/printer.cfg $(DESTDIR)$(CFGDIR)/objects/printer.cfg
 -	$(INSTALL) -b -m 664 $(INSTALL_OPTS) sample-config/template-object/switch.cfg $(DESTDIR)$(CFGDIR)/objects/switch.cfg
-+	$(INSTALL) -b -m 664 $(INSTALL_OPTS) sample-config/icinga.cfg $(DESTDIR)$(CFGDIR)/icinga.cfg-sample
-+	$(INSTALL) -b -m 660 $(INSTALL_OPTS) sample-config/resource.cfg $(DESTDIR)$(CFGDIR)/resource.cfg-sample
-+	$(INSTALL) -b -m 664 $(INSTALL_OPTS) sample-config/template-object/templates.cfg $(DESTDIR)$(CFGDIR)/objects/templates.cfg-sample
-+	$(INSTALL) -b -m 664 $(INSTALL_OPTS) sample-config/template-object/commands.cfg $(DESTDIR)$(CFGDIR)/objects/commands.cfg-sample
-+	$(INSTALL) -b -m 664 $(INSTALL_OPTS) sample-config/template-object/contacts.cfg $(DESTDIR)$(CFGDIR)/objects/contacts.cfg-sample
-+	$(INSTALL) -b -m 664 $(INSTALL_OPTS) sample-config/template-object/notifications.cfg $(DESTDIR)$(CFGDIR)/objects/notifications.cfg-sample
-+	$(INSTALL) -b -m 664 $(INSTALL_OPTS) sample-config/template-object/timeperiods.cfg $(DESTDIR)$(CFGDIR)/objects/timeperiods.cfg-sample
-+	$(INSTALL) -b -m 664 $(INSTALL_OPTS) sample-config/template-object/localhost.cfg $(DESTDIR)$(CFGDIR)/objects/localhost.cfg-sample
-+	$(INSTALL) -b -m 664 $(INSTALL_OPTS) sample-config/template-object/windows.cfg $(DESTDIR)$(CFGDIR)/objects/windows.cfg-sample
-+	$(INSTALL) -b -m 664 $(INSTALL_OPTS) sample-config/template-object/printer.cfg $(DESTDIR)$(CFGDIR)/objects/printer.cfg-sample
-+	$(INSTALL) -b -m 664 $(INSTALL_OPTS) sample-config/template-object/switch.cfg $(DESTDIR)$(CFGDIR)/objects/switch.cfg-sample
++	$(INSTALL) -b -m 664 $(INSTALL_OPTS) sample-config/icinga.cfg $(DESTDIR)$(CFGDIR)/icinga.cfg.sample
++	$(INSTALL) -b -m 660 $(INSTALL_OPTS) sample-config/resource.cfg $(DESTDIR)$(CFGDIR)/resource.cfg.sample
++	$(INSTALL) -b -m 664 $(INSTALL_OPTS) sample-config/template-object/templates.cfg $(DESTDIR)$(CFGDIR)/objects/templates.cfg.sample
++	$(INSTALL) -b -m 664 $(INSTALL_OPTS) sample-config/template-object/commands.cfg $(DESTDIR)$(CFGDIR)/objects/commands.cfg.sample
++	$(INSTALL) -b -m 664 $(INSTALL_OPTS) sample-config/template-object/contacts.cfg $(DESTDIR)$(CFGDIR)/objects/contacts.cfg.sample
++	$(INSTALL) -b -m 664 $(INSTALL_OPTS) sample-config/template-object/notifications.cfg $(DESTDIR)$(CFGDIR)/objects/notifications.cfg.sample
++	$(INSTALL) -b -m 664 $(INSTALL_OPTS) sample-config/template-object/timeperiods.cfg $(DESTDIR)$(CFGDIR)/objects/timeperiods.cfg.sample
++	$(INSTALL) -b -m 664 $(INSTALL_OPTS) sample-config/template-object/localhost.cfg $(DESTDIR)$(CFGDIR)/objects/localhost.cfg.sample
++	$(INSTALL) -b -m 664 $(INSTALL_OPTS) sample-config/template-object/windows.cfg $(DESTDIR)$(CFGDIR)/objects/windows.cfg.sample
++	$(INSTALL) -b -m 664 $(INSTALL_OPTS) sample-config/template-object/printer.cfg $(DESTDIR)$(CFGDIR)/objects/printer.cfg.sample
++	$(INSTALL) -b -m 664 $(INSTALL_OPTS) sample-config/template-object/switch.cfg $(DESTDIR)$(CFGDIR)/objects/switch.cfg.sample
  
  	@echo ""
  	@echo "*** Config files installed ***"
@@ -218,7 +218,7 @@
  install-webconf:
  	$(MKDIR) -p -m 775 $(DESTDIR)$(HTTPD_CONF)
 -	$(INSTALL) -b -m 644 $(INSTALL_OPTS) sample-config/httpd.conf $(DESTDIR)$(HTTPDCONFFILE)
-+	$(INSTALL) -b -m 644 $(INSTALL_OPTS) sample-config/httpd.conf $(DESTDIR)$(HTTPDCONFFILE)-sample
++	$(INSTALL) -b -m 644 $(INSTALL_OPTS) sample-config/httpd.conf $(DESTDIR)$(HTTPDCONFFILE).sample
  	@if [ x$(APACHE24_DEBIAN) = xyes ]; then \
  		echo " Debian Apache 2.4 detected. " ;\
  		echo " Run 'a2enconf icinga' and 'service apache2 reload'" ;\
@@ -227,7 +227,7 @@
  
  	$(MKDIR) -p -m 775 $(DESTDIR)$(HTTPD_CONF)
 -	$(INSTALL) -b -m 644 $(INSTALL_OPTS) icinga.htpasswd $(DESTDIR)$(HTTPAUTHFILE)
-+	$(INSTALL) -b -m 644 $(INSTALL_OPTS) icinga.htpasswd $(DESTDIR)$(HTTPAUTHFILE)-sample
++	$(INSTALL) -b -m 644 $(INSTALL_OPTS) icinga.htpasswd $(DESTDIR)$(HTTPAUTHFILE).sample
  
  	@echo ""
  	@echo "*** Icinga http auth file installed ***"
