@@ -13,9 +13,9 @@ COMMENT=	World wide web server benchmarking with SSL support
 
 WRKSRC=		${WRKDIR}/WebStone${PORTVERSION}/src
 
+GNU_CONFIGURE=	yes
 USES=		tar:tgz
 USE_OPENSSL=	yes
-USE_AUTOTOOLS=	autoconf213
 ALL_TARGET=	install
 MAKE_JOBS_UNSAFE=	yes
 
