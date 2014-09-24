@@ -34,6 +34,9 @@ EIFFEL_HOST=	${OPSYS:tl}-${EIFFEL_ARCH}
 PLIST_SUB+=	EIFFEL_HOST="${EIFFEL_HOST}"
 SUB_LIST+=	EIFFEL_HOST="${EIFFEL_HOST}"
 
+PLIST_FILES=	bin/${PORTNAME}
+PORTDATA=	*
+
 .include <bsd.port.pre.mk>
 
 # Try native version first, then try i386 compatibility framework.
@@ -43,14 +46,6 @@ EIFFEL_ARCH=		${arch:S/i386/x86/:S/amd64/x86-64/}
 . else
 IA32_BINARY_PORT=	yes
 EIFFEL_ARCH=		x86
-. endif
-.endfor
-
-.for arch in ${NATIVE_ARCHS}
-. if ${EIFFEL_ARCH} == ${arch:S/i386/x86/:S/amd64/x86-64/}
-PLIST_SUB+=	${arch:tu}=""
-. else
-PLIST_SUB+=	${arch:tu}="@comment "
 . endif
 .endfor
 
