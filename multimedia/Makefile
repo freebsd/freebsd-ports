@@ -385,6 +385,7 @@
     SUBDIR += vdr-plugin-xvdr
     SUBDIR += vdr-plugins
     SUBDIR += vic
+    SUBDIR += vid.stab
     SUBDIR += vlc
     SUBDIR += vstream-client
     SUBDIR += vtkmpeg2encode
