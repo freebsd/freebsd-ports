@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	micropython
-PORTVERSION=	1.2
+PORTVERSION=	1.3.1
 CATEGORIES=	lang python
 
 MAINTAINER=	mva@FreeBSD.org
@@ -11,13 +11,13 @@ LICENSE=	MIT
 
 LIB_DEPENDS=	libffi.so:${PORTSDIR}/devel/libffi
 
-USES=			gmake pkgconfig python:build readline shebangfix
+USES=		gmake pkgconfig python:build readline shebangfix
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	micropython
 GH_PROJECT=	micropython
-GH_TAGNAME=	v1.2
-GH_COMMIT=	d94863d
+GH_TAGNAME=	v1.3.1
+GH_COMMIT=	0f6d298
 
 PLIST_FILES=	bin/micropython
 
