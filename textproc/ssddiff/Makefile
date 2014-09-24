@@ -12,23 +12,23 @@ COMMENT=	Diff application for semistructured data such as XML files
 
 LICENSE=	GPLv2 # (or later)
 
-USES=		pkgconfig tar:bzip2
-USE_GNOME=	libxml2 
-USE_GCC=	any
-USE_AUTOTOOLS=	automake14
+GNU_CONFIGURE=	yes
+USES=		autoreconf pkgconfig tar:bzip2
+USE_GNOME=	libxml2
 
 PLIST_FILES=	bin/xmldiff
 
-post-extract:
-	@${FIND} ${WRKSRC} -type l -delete
-
 post-patch:
-.for f in config.guess config.sub install-sh missing mkinstalldirs
-	@${LN} -sf ${AUTOMAKE_DIR}/${f} ${WRKSRC}/${f}
-.endfor
+	@${FIND} ${WRKSRC} -type l -delete
 	@${REINPLACE_CMD} -e \
 		's|^CXXFLAGS|AM_CPPFLAGS|' ${WRKSRC}/src/Makefile.am
 	@${REINPLACE_CMD} -e \
 		's|"getopt\.h"|<unistd.h>|' ${WRKSRC}/src/main.cc
+	@${REINPLACE_CMD} \
+		-e 's/hash</__gnu_cxx::&/' -e 's/hash<char/& const/' \
+		${WRKSRC}/src/doc.h ${WRKSRC}/src/out_common.cc \
+		${WRKSRC}/src/out_merged.cc ${WRKSRC}/src/out_xupdate.cc \
+		${WRKSRC}/src/out_xupdate.h ${WRKSRC}/src/ustring.cc \
+		${WRKSRC}/src/ustring.h
 
 .include <bsd.port.mk>
