@@ -90,8 +90,7 @@ PKGMESSAGE=	${PKGDIR}/pkg-message.xface
 DIST_SUBDIR=	mutt
 WRKSRC=		${WRKDIR}/${DISTNAME:S/i$//}
 GNU_CONFIGURE=	yes
-USE_AUTOTOOLS=	automake autoconf
-AUTOMAKE_ARGS=	--add-missing
+USES+=		autoreconf
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ENV=	CC="${CC} -I${LOCALBASE}/include"
 CONFIGURE_ARGS=	--enable-pop --enable-imap --disable-fcntl \
@@ -137,39 +136,19 @@ WITH_MUTT_KRB5_SYS=YES
 .endif
 .endif
 
-post-patch::
+post-patch:
 	@${REINPLACE_CMD} -e 's,/usr/bin/gpg,${LOCALBASE}/bin/gpg,g' \
 		${WRKSRC}/contrib/gpg.rc
 	@${REINPLACE_CMD} -e 's,pgp6,pgp,g' \
 		${WRKSRC}/contrib/pgp6.rc
 	@${REINPLACE_CMD} -E -e 's|@samplesdir@|${EXAMPLESDIR}|g' \
 		${WRKSRC}/contrib/Makefile.in
-
 .if ${PORT_OPTIONS:MMUTT_XFACE}
-post-patch::
 	@${ECHO} "===>  Applying XFACE patch"
 	slrnface_dir=`${FIND} ${PORTSDIR}/news/slrnface/work -type d \
 			-name slrnface-\*`; \
 	cd ${BUILD_WRKSRC}; ${PATCH} ${PATCH_ARGS} < $$slrnface_dir/mutt.patch
 .endif
-
-pre-configure::
-	@(cd ${WRKSRC}; ${SETENV} ${AUTOMAKE_ENV} ${ACLOCAL} -I m4)
-.if defined(WITH_MUTT_KRB5_SYS)
-	@${ECHO_CMD} "#define HAVE_HEIMDAL" >> ${WRKSRC}/config.h.in
-	@${REINPLACE_CMD} -e 's|<gssapi/gssapi\.h>|<gssapi.h>|' \
-		${WRKSRC}/imap/auth_gss.c
-.endif
-
-# XXX
-# this should be done automagically by aclocal but ....
-# for now, this will have to do
-pre-build:
-	@${REINPLACE_CMD} -E -e "s|^(ACLOCAL = ).+|\1${ACLOCAL}|" \
-			-e "s|^(AUTOCONF = ).+|\1${AUTOCONF}|" \
-			-e "s|^(AUTOMAKE = ).+|\1${AUTOMAKE}|" \
-			-e "s|^(AUTOHEADER = ).+|\1${AUTOHEADER}|" \
-		${BUILD_WRKSRC}/Makefile
 
 .if ${PORT_OPTIONS:MDOCS}
 post-build:
