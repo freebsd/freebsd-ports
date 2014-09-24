@@ -1,5 +1,5 @@
---- src/Make.inc.orig	2003-04-10 12:51:47.000000000 +0200
-+++ src/Make.inc	2013-11-17 09:08:44.000000000 +0100
+--- src/Make.inc.orig	2003-04-10 10:51:47 UTC
++++ src/Make.inc
 @@ -4,7 +4,7 @@
  #
  #
@@ -39,7 +39,8 @@
 +	$(INSTALL) -m 755    radtest $(DESTROOT)$(BINDIR)
  	# Install the man pages
  	@for section in 1 5 8; do \
- 		$(DINSTALL) $(MANDIR)/man$$section; \
+-		$(DINSTALL) $(MANDIR)/man$$section; \
++		$(DINSTALL) $(DESTROOT)$(MANDIR)/man$$section; \
  		for manfile in ../doc/*.$$section*; do \
 -		    echo $(INSTALL) -m 644 $$manfile $(MANDIR)/man$$section; \
 -		    $(INSTALL) -m 644 $$manfile $(MANDIR)/man$$section; \
