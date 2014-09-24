@@ -13,9 +13,8 @@ COMMENT=	Convert Excel and PowerPoint files to HTML and text
 
 LICENSE=	GPLv2
 
+GNU_CONFIGURE=	yes
 USES=		gmake tar:tgz
-
-USE_AUTOTOOLS=	automake14 autoconf
 
 OPTIONS_DEFINE=	DOCS
 
