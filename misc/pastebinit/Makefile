@@ -6,7 +6,7 @@ PORTREVISION=	1
 CATEGORIES=	misc python
 MASTER_SITES=	https://launchpadlibrarian.net/106457425/
 
-MAINTAINER=	eadler@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Command line utility for pastebing
 
 LICENSE=	GPLv2

@@ -5,7 +5,7 @@ PORTVERSION=	1.5.1
 PORTREVISION=	2
 CATEGORIES=	graphics linux
 
-MAINTAINER=	eadler@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	OpenGL Extension Wrangler Library (Linux Fedora 10)
 
 ONLY_FOR_ARCHS=	i386 amd64

@@ -7,7 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	devel
 #MASTER_SITES=	http://embed.cs.utah.edu/creduce/
 
-MAINTAINER=	eadler@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Produces small test cases
 
 

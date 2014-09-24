@@ -6,7 +6,7 @@ PORTVERSION=	1.30
 CATEGORIES=	sysutils
 MASTER_SITES=	http://codemonkey.org.uk/projects/x86info/
 
-MAINTAINER=	eadler@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	x86 CPU identification utility
 
 LICENSE=	GPLv2
