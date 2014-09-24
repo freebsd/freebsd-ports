@@ -1,14 +1,11 @@
-
-$FreeBSD$
-
---- inc/Module/Install/RTx.pm.orig
+--- inc/Module/Install/RTx.pm.orig	2014-09-22 20:18:51 UTC
 +++ inc/Module/Install/RTx.pm
-@@ -101,7 +101,7 @@
+@@ -85,7 +85,7 @@
      my %index = map { $_ => 1 } @INDEX_DIRS;
      $self->no_index( directory => $_ ) foreach grep !$index{$_}, @DIRS;
  
 -    my $args = join ', ', map "q($_)", map { ($_, $path{$_}) }
 +    my $args = join ', ', map "q($_)", map { ($_, "\${DESTDIR}$path{$_}") }
-         grep $subdirs{$_}, keys %path;
+         sort keys %path;
  
-     print "./$_\t=> $path{$_}\n" for sort keys %subdirs;
+     printf "%-10s => %s\n", $_, $path{$_} for sort keys %path;

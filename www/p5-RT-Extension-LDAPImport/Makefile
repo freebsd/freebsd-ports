@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	RT-Extension-LDAPImport
-PORTVERSION=	0.35
-PORTREVISON=	2
+PORTVERSION=	0.36
 CATEGORIES=	www net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -24,8 +23,7 @@ USES+=		perl5
 USE_PERL5=	configure
 
 OPTIONS_SINGLE=                 RTVERSION
-OPTIONS_SINGLE_RTVERSION=       RT38 RT40 RT42
-RT38_DESC=                      Install for rt-3.8.x (www/rt38)
+OPTIONS_SINGLE_RTVERSION=       RT40 RT42
 RT40_DESC=                      Install for rt-4.0.x (www/rt40)
 RT42_DESC=                      Install for rt-4.2.x (www/rt42)
 OPTIONS_DEFAULT=                RT42
@@ -49,7 +47,7 @@ MAN3PREFIX=	${PREFIX}
 PLIST_SUB+=	RTHOME=share/rt${RT_VER}
 
 # Note: You can install using an arbitrary $PREFIX but only if it
-# matches the $PREFIX used to install www/rt{38,40,42}.  Hence ignore
+# matches the $PREFIX used to install www/rt{40,42}.  Hence ignore
 # $PREFIX in the environment and inherit settings from RT.pm
 do-configure:
 	@cd ${CONFIGURE_WRKSRC} && \
