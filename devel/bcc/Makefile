@@ -13,7 +13,4 @@ USES=		uidfix
 
 CONFLICTS=	bin86-[0-9]* dev86-[0-9]*
 
-pre-install:
-	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/bcc
-
 .include <bsd.port.mk>
