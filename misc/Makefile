@@ -74,6 +74,7 @@
     SUBDIR += esniper
     SUBDIR += estic
     SUBDIR += excel-writer
+    SUBDIR += exercism
     SUBDIR += explosions
     SUBDIR += fbless
     SUBDIR += felis
