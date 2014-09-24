@@ -49,6 +49,7 @@ PLIST_SUB+=	X11="@comment "
 .else
 USE_XORG+=	xpm xaw
 PLIST_SUB+=	X11=""
+CFLAGS+=	-I${LOCALBASE}/include
 .endif
 
 post-extract:
