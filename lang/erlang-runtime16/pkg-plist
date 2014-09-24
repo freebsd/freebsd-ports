@@ -1,4 +1,0 @@
-@comment Insert PLIST here
-@comment -=[ begin PLIST.lib-erlang ]=-
-@comment -=[ end PLIST.lib-erlang ]=-
-@dirrmtry lib/%%ERLANG_LIB%%
