@@ -15,7 +15,8 @@ LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre
 USES=		gmake
 USE_GCC=	yes
 MAKE_ENV=	_LDFLAGS="${LDFLAGS}"
-SCRIPTS_ENV=	PKG_PREFIX=${PREFIX} NONEXISTENT=${NONEXISTENT} PASSWD=/etc/passwd STAGEDIR=${STAGEDIR}
+
+USERS=		pop3vscan
 
 PLIST_FILES=	etc/pop3vscan.conf.sample \
 		etc/pop3vscan.mail.sample \
@@ -40,8 +41,5 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/pop3vscan.conf ${STAGEDIR}${PREFIX}/etc/pop3vscan.conf.sample
 	${INSTALL_DATA} ${WRKSRC}/pop3vscan.mail ${STAGEDIR}${PREFIX}/etc/pop3vscan.mail.sample
 	${INSTALL_SCRIPT} ${FILESDIR}/pop3vscan.sh ${STAGEDIR}${PREFIX}/etc/rc.d/
-
-post-install:
-	@${SETENV} ${SCRIPTS_ENV} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
 .include <bsd.port.mk>
