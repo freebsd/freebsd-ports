@@ -57,6 +57,42 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="71ad81da-4414-11e4-a33e-3c970e169bc2">
+    <topic>bash -- remote code execution vulnerability</topic>
+    <affects>
+      <package>
+	<name>bash</name>
+	<name>bash-static</name>
+	<range><gt>3.0</gt><lt>3.0.17</lt></range>
+	<range><gt>3.1</gt><lt>3.1.18</lt></range>
+	<range><gt>3.2</gt><lt>3.2.52</lt></range>
+	<range><gt>4.0</gt><lt>4.0.39</lt></range>
+	<range><gt>4.1</gt><lt>4.1.12</lt></range>
+	<range><gt>4.2</gt><lt>4.2.48</lt></range>
+	<range><gt>4.3</gt><lt>4.3.25</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Chet Ramey reports:</p>
+	<blockquote cite="https://lists.gnu.org/archive/html/bug-bash/2014-09/msg00081.html">
+	  <p>Under certain circumstances, bash will execute user code
+	    while processing the environment for exported function
+	    definitions.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2014-6271</cvename>
+      <url>https://securityblog.redhat.com/2014/09/24/bash-specially-crafted-environment-variables-code-injection-attack/</url>
+      <url>https://lists.gnu.org/archive/html/bug-bash/2014-09/msg00081.html</url>
+    </references>
+    <dates>
+      <discovery>2014-09-24</discovery>
+      <entry>2014-09-24</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="e60d9e65-3f6b-11e4-ad16-001999f8d30b">
     <topic>asterisk -- Remotely triggered crash</topic>
     <affects>
