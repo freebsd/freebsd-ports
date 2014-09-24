@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	kdenlive
-PORTVERSION=	0.9.6
-PORTREVISION=	5
+PORTVERSION=	0.9.8
 CATEGORIES=	multimedia kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${PORTNAME}/${PORTVERSION}/src/
@@ -24,58 +23,43 @@ USES=		cmake pkgconfig shared-mime-info tar:bzip2
 CMAKE_ARGS=	-DFFMPEG_SUFFIX:STRING="${FFMPEG_SUFX}"
 
 # Keep in sync with multimedia/mlt, possibly.
-FFMPEG_SUFX=
+FFMPEG_SUFX=	# Currently empty.
 
-OPTIONS_DEFINE=	DVDWIZARD FREI0R LADSPA NLS SCREENCAST XINE
-OPTIONS_DEFAULT=DVDWIZARD FREI0R LADSPA SCREENCAST XINE
+OPTIONS_DEFINE=	DVDWIZARD FREI0R LADSPA NLS SCREENCAST V4L XINE
+OPTIONS_DEFAULT=DVDWIZARD FREI0R LADSPA SCREENCAST V4L XINE
+OPTIONS_SUB=	yes
 
 DVDWIZARD_DESC=	DVD authoring via DVDAuthor and cdrtools
 SCREENCAST_DESC=Screen capture support via recordMyDesktop
-#V4L_DESC=	Webcam support via Video 4 Linux
+V4L_DESC=	Webcam support via Video 4 Linux
 XINE_DESC=	DVD preview support via xine
 
-.include <bsd.port.options.mk>
+DVDWIZARD_RUN_DEPENDS=	dvdauthor:${PORTSDIR}/multimedia/dvdauthor \
+			cdrecord:${PORTSDIR}/sysutils/cdrtools
 
-.if ${PORT_OPTIONS:MDVDWIZARD}
-RUN_DEPENDS+=	dvdauthor:${PORTSDIR}/multimedia/dvdauthor \
-		cdrecord:${PORTSDIR}/sysutils/cdrtools
-.endif
+FREI0R_RUN_DEPENDS=	frei0r-plugins>=0:${PORTSDIR}/graphics/frei0r-plugins
 
-.if ${PORT_OPTIONS:MFREI0R}
-RUN_DEPENDS+=	frei0r-plugins>=0:${PORTSDIR}/graphics/frei0r-plugins
-.endif
+LADSPA_RUN_DEPENDS=	swhplugins>=0:${PORTSDIR}/audio/swhplugins
 
-.if ${PORT_OPTIONS:MLADSPA}
-RUN_DEPENDS+=	swhplugins>=0:${PORTSDIR}/audio/swhplugins
-.endif
+NLS_USES=		gettext
+NLS_CMAKE_OFF=		-DBUILD_po:BOOL=FALSE
 
-.if ${PORT_OPTIONS:MNLS}
-USES+=		gettext
-PLIST_SUB+=	NLS=""
-.else
-CMAKE_ARGS+=	-DBUILD_po:BOOL=FALSE
-PLIST_SUB+=	NLS="@comment "
-.endif
+SCREENCAST_RUN_DEPENDS=	recordmydesktop:${PORTSDIR}/multimedia/recordmydesktop
 
-.if ${PORT_OPTIONS:MSCREENCAST}
-RUN_DEPENDS+=	recordmydesktop:${PORTSDIR}/multimedia/recordmydesktop
-.endif
+V4L_LIB_DEPENDS=	libv4l2.so:${PORTSDIR}/multimedia/libv4l
+V4L_BUILD_DEPENDS=	${LOCALBASE}/include/linux/videodev2.h:${PORTSDIR}/multimedia/v4l_compat
+V4L_CMAKE_OFF=		-DWITH_LibV4L2:BOOL=FALSE
 
-#.if ${PORT_OPTIONS:MV4L}
-#LIB_DEPENDS+=	v4l2:${PORTSDIR}/multimedia/libv4l
-#BUILD_DEPENDS+=	${LOCALBASE}/include/linux/videodev2.h:${PORTSDIR}/multimedia/v4l_compat
-#.else
-CMAKE_ARGS+=	-DWITH_V4L:BOOL=FALSE
-#.endif
-
-.if ${PORT_OPTIONS:MXINE}
-RUN_DEPENDS+=	xine:${PORTSDIR}/multimedia/xine
-.endif
+XINE_RUN_DEPENDS=	xine:${PORTSDIR}/multimedia/xine
 
 post-patch:
 	@${REINPLACE_CMD} -E -e '/${PORTNAME}.(menu|xpm)/ d' \
 		${PATCH_WRKSRC}/data/CMakeLists.txt
 	@${REINPLACE_CMD} -e '/^update_xdg_mimetypes/ d; /SharedMimeInfo/ d' \
 		${PATCH_WRKSRC}/src/mimetypes/CMakeLists.txt
+.for lang in bs ca ca@valencia cs da de el es et fi fr ga gl he hr hu it ja lt mr nb nds nl pl pt pt_BR ro ru sk sl sv tr ug uk zh_CN zh_TW
+	@${REINPLACE_CMD} -e 's,fr ALL,${lang} ALL,' \
+		${PATCH_WRKSRC}/po/${lang}/CMakeLists.txt
+.endfor
 
 .include <bsd.port.mk>
