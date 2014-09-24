@@ -636,9 +636,4 @@ share/xscreensaver/config/xmatrix.xml
 share/xscreensaver/config/xrayswarm.xml
 share/xscreensaver/config/xspirograph.xml
 share/xscreensaver/config/zoom.xml
-@dirrm share/xscreensaver/config
-@dirrm share/xscreensaver/glade
-@dirrm share/xscreensaver
-@dirrm bin/xscreensaver-hacks
-@cwd %%LOCALBASE%%
-lib/X11/app-defaults/XScreenSaver
+%%LOCALBASE%%/lib/X11/app-defaults/XScreenSaver

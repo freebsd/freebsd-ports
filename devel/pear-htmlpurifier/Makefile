@@ -16,11 +16,9 @@ COMMENT=	PHP HTML filter library
 LICENSE=	LGPL21
 
 BUILD_DEPENDS=	${PEARDIR}/.channels/htmlpurifier.org.reg:${PORTSDIR}/devel/pear-channel-htmlpurifier
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+RUN_DEPENDS=	${PEARDIR}/.channels/htmlpurifier.org.reg:${PORTSDIR}/devel/pear-channel-htmlpurifier
 
 PEAR_CHANNEL=	htmlpurifier.org
-PEAR_AUTOINSTALL=	yes
+USES=	pear
 
-.include <bsd.port.pre.mk>
-.include "${PORTSDIR}/devel/pear/bsd.pear.mk"
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -17,20 +17,20 @@ COMMENT=	Subsystem for High-Availability Clustering
 LICENSE=	GPLv2 LGPL21
 LICENSE_COMB=	multi
 
-LIB_DEPENDS=	libgnutls.so:${PORTSDIR}/security/gnutls \
+LIB_DEPENDS=	libltdl.so:${PORTSDIR}/devel/libltdl \
+		libgnutls.so:${PORTSDIR}/security/gnutls \
 		libnet.so:${PORTSDIR}/net/libnet \
 		libuuid.so:${PORTSDIR}/misc/e2fsprogs-libuuid \
 		libxml2.so:${PORTSDIR}/textproc/libxml2
 BUILD_DEPENDS=	bison:${PORTSDIR}/devel/bison
 
-USE_AUTOTOOLS=	autoconf autoheader automake aclocal libltdl libtoolize
+USE_AUTOTOOLS=	autoconf autoheader automake aclocal libtoolize
 AUTOMAKE_ARGS=	--add-missing --include-deps --copy
 
-USES=		gettext gmake libtool pkgconfig tar:bzip2 shebangfix
+USES=		gettext gmake libtool pkgconfig python tar:bzip2 shebangfix
 SHEBANG_FILES=	ldirectord/ldirectord.in
 USE_GNOME=	glib20
 USE_LDCONFIG=	yes
-USE_PYTHON=	yes
 
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
@@ -137,6 +137,7 @@ post-patch:
 
 post-install:
 	${MKDIR} -m 0750 ${STAGEDIR}/var/run/heartbeat/pengine
+	${MKDIR} ${STAGEDIR}/var/lib/heartbeat/mgmt
 	${TOUCH} ${STAGEDIR}/var/run/heartbeat.pid
 
 .if ${PORT_OPTIONS:MDOCS}

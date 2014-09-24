@@ -3,12 +3,11 @@
 
 PORTNAME=	nss_ldap
 PORTVERSION=	${NSS_LDAP_VERSION}
+PORTREVISION=	1
 CATEGORIES=	net linux
 MASTER_SITES=	ftp://ftp.pbone.net/mirror/archive.fedoraproject.org/fedora/linux/updates/testing/10/i386/ \
 		http://archives.fedoraproject.org/pub/archive/fedora/linux/updates/testing/10/i386/ \
 		http://herveybayaustralia.com.au/ports/distfiles/
-PKGNAMEPREFIX=	linux-f10-
-DISTNAME=	${PORTNAME}-${NSS_LDAP_VERSION}-${RPMVERSION}
 
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	RFC 2307 NSS Module (Linux Fedora 10)
@@ -20,9 +19,10 @@ OPTIONS_DEFINE=	DOCS PAM
 
 NSS_LDAP_VERSION=264
 
+USE_LINUX=	f10
 USE_LINUX_RPM=	yes
 USE_LINUX_PREFIX=yes
-LINUX_DIST_VER=	10
+
 RPMVERSION=	6.fc10
 USE_LDCONFIG=	yes
 

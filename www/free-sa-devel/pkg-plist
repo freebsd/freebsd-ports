@@ -86,17 +86,4 @@ man/man5/free-sa.conf.5.gz
 %%WWWDIR%%/themes/silver/lsa.css
 %%WWWDIR%%/themes/silver/rsa.css
 %%WWWDIR%%/themes/silver/s.png
-@dirrm %%WWWDIR%%/themes/silver
-@dirrm %%WWWDIR%%/themes/sarg
-@dirrm %%WWWDIR%%/themes/rbsec
-@dirrm %%WWWDIR%%/themes/qbiq
-@dirrm %%WWWDIR%%/themes/blues
-@dirrm %%WWWDIR%%/themes
-@dirrm %%WWWDIR%%/cgi-bin
-@dirrmtry %%WWWDIR%%
-@dirrm %%DATADIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrmtry etc/free-sa
-@cwd /
-@dirrmtry var/cache/free-sa
-@cwd %%RESETPREFIX%%
+@dir /var/cache/free-sa

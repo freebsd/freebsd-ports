@@ -10,4 +10,3 @@ lib/libgwengui-fox16.so
 lib/libgwengui-fox16.so.0
 lib/libgwengui-fox16.so.0.0.0
 libdata/pkgconfig/gwengui-fox16.pc
-@dirrm include/gwenhywfar4/gwen-gui-fox16

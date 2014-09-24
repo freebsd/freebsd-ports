@@ -23,17 +23,3 @@ share/icons/text-vnd.cgats.png
 share/mime/packages/x-color-cgats.xml
 share/mime/packages/x-color-icc.xml
 share/pixmaps/icc-profiles-openicc_logo.png
-@dirrmtry share/mime/packages
-@dirrmtry share/mime
-@dirrmtry share/icons
-@dirrmtry %%SYSCOLORDIR%%/target/fogra
-@dirrmtry %%SYSCOLORDIR%%/target/NPES
-@dirrmtry %%SYSCOLORDIR%%/target
-@dirrmtry %%SYSCOLORDIR%%/settings
-@dirrmtry %%SYSCOLORDIR%%/icc/lcms
-@dirrmtry %%SYSCOLORDIR%%/icc/basICColor
-@dirrmtry %%SYSCOLORDIR%%/icc/PhotoGamut
-@dirrmtry %%SYSCOLORDIR%%/icc/Oyranos
-@dirrmtry %%SYSCOLORDIR%%/icc/OpenICC
-@dirrmtry %%SYSCOLORDIR%%/icc
-@dirrmtry %%SYSCOLORDIR%%

@@ -20,7 +20,6 @@ USE_RC_SUBR=	pfstatd
 MAN8=		pfstat.8 \
 		pfstatd.8
 
-MANCOMPRESSED=	no
 PLIST_FILES=	bin/pfstat \
 		bin/pfstatd
 

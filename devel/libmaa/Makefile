@@ -19,10 +19,9 @@ OPTIONS_DEFINE=	DOCS
 ALL_TARGET=	lib
 CPPFLAGS+=	-I${LOCALBASE}/include
 GNU_CONFIGURE=	yes
-LDFLAGS+=	-L${LOCALBASE}/lib
-USE_AUTOTOOLS=	libtoolize
+LIBS+=		-L${LOCALBASE}/lib
 USE_LDCONFIG=	yes
-USES=		gmake libtool
+USES=		gmake libtool:build
 
 DOCS=		README doc/libmaa.600dpi.ps
 PLIST_FILES=	include/maa.h \
@@ -31,12 +30,9 @@ PLIST_FILES=	include/maa.h \
 		lib/libmaa.so.3
 PORTDOCS=	${DOCS:T}
 
-.include <bsd.port.options.mk>
-
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libmaa.so.3
 	${MKDIR} ${STAGEDIR}${DOCSDIR}/
 	cd ${WRKSRC}/ && ${INSTALL_DATA} ${DOCS} ${STAGEDIR}${DOCSDIR}/
-.endif
 
 .include <bsd.port.mk>

@@ -8,7 +8,7 @@ CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/Version%20${SCORCH_VERSION}
 DISTNAME=	Scorched3D-${SCORCH_VERSION}-src
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	games@FreeBSD.org
 COMMENT=	3D version of the classic DOS game Scorched Earth
 
 LICENSE=	GPLv2
@@ -47,6 +47,11 @@ SCORCH_REVISION=	# none
 
 MYSQL_USE=	MYSQL=yes
 MYSQL_CONFIGURE_ON=	--with-mysql
+
+PLIST_FILES=	bin/scorched3d \
+		bin/scorched3dc \
+		bin/scorched3ds
+PORTDATA=	*
 
 post-extract:
 	@${RM} -f ${WRKSRC}/src/client/GLEXT/[a-z]*

@@ -18,17 +18,13 @@ LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre
 USE_EFL=	imlib2
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+LIBS+=		-L${LOCALBASE}/lib
+INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
 USES=		libtool pathfix
 
-.include <bsd.port.pre.mk>
-
-.if defined(WITH_MMX) && (${ARCH} == "i386")
-CONFIGURE_ARGS=	--enable-mmx
+.if defined(MACHINE_CPU) && ${MACHINE_CPU:Mmmx}
+CONFIGURE_ARGS+=--enable-mmx
 .endif
 
-post-build:
-	@${STRIP_CMD} ${WRKSRC}/src/.libs/libast.so.2
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

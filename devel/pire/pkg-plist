@@ -39,6 +39,3 @@ lib/libpire_unit.a
 lib/libpire_unit.so
 lib/libpire_unit.so.0
 lib/libpire_unit.so.0.0.0
-@dirrm include/pire/scanners
-@dirrm include/pire/stub
-@dirrm include/pire

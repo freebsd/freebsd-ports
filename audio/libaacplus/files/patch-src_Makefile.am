@@ -1,11 +1,11 @@
---- src/Makefile.am.orig	2012-02-05 17:48:09.719522837 +0000
-+++ src/Makefile.am	2012-02-05 17:49:47.572522148 +0000
+--- src/Makefile.am.orig	2010-11-11 06:27:41.000000000 +0900
++++ src/Makefile.am	2014-05-22 07:32:03.000000000 +0900
 @@ -206,14 +206,14 @@
  	$(MAKE) unpack_3gp_sources
  
  $(srcdir)/FloatFR_aacPlusenc:
 -	cd $(srcdir) && $(UNZIP) 26410-800-ANSI-C_source_code.zip
-+	cd $(srcdir) && /usr/bin/tar xf 26410-800-ANSI-C_source_code.zip
++	cd $(srcdir) && /usr/bin/bsdtar xf 26410-800-ANSI-C_source_code.zip
  	mv -f $(srcdir)/3GPP_enhanced_aacPlus_src_*/FloatFR_aacPlusenc $(srcdir)
  	rm -rf $(srcdir)/3GPP_enhanced_aacPlus_src_*
  
@@ -13,7 +13,7 @@
  $(srcdir)/26410-800-ANSI-C_source_code.zip: $(srcdir)/26410-800.zip
  	rm -f $(srcdir)/26410-800-ANSI-C_source_code.zip $(srcdir)/26410-800.doc
 -	cd $(srcdir) && $(UNZIP) 26410-800.zip
-+	cd $(srcdir) && /usr/bin/tar xf 26410-800.zip
++	cd $(srcdir) && /usr/bin/bsdtar xf 26410-800.zip
  	mv $(srcdir)/26410-800.doc $(top_srcdir)/26410-800.doc
  	chmod og-w $(top_srcdir)/26410-800.doc
  

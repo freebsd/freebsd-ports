@@ -1,0 +1,133 @@
+bin/_calendarserver_preamble.py
+bin/calendarserver_dbinspect
+bin/calendarserver_dkimtool
+bin/calendarserver_icalendar_validate
+bin/calendarserver_load_augmentdb
+bin/calendarserver_make_partition
+bin/calendarserver_manage_postgres
+bin/calendarserver_monitor_amp_notifications
+bin/calendarserver_monitor_notifications
+bin/calendarserver_monitor_work
+bin/calendarserver_verify_data
+bin/icalendar_split
+bin/make-ssl-ca
+bin/make-ssl-key
+bin/proxyclean
+bin/watch_memcached
+man/man8/caldavd.8.gz
+man/man8/calendarserver_bootstrap_database.8.gz
+man/man8/calendarserver_command_gateway.8.gz
+man/man8/calendarserver_config.8.gz
+man/man8/calendarserver_export.8.gz
+man/man8/calendarserver_manage_principals.8.gz
+man/man8/calendarserver_manage_push.8.gz
+man/man8/calendarserver_manage_timezones.8.gz
+man/man8/calendarserver_migrate_resources.8.gz
+man/man8/calendarserver_monitor_notifications.8.gz
+man/man8/calendarserver_purge_attachments.8.gz
+man/man8/calendarserver_purge_events.8.gz
+man/man8/calendarserver_purge_principals.8.gz
+man/man8/calendarserver_shell.8.gz
+%%PORTDOCS%%%%DOCSDIR%%/Admin/DirectoryService-Apache.rst
+%%PORTDOCS%%%%DOCSDIR%%/Admin/DirectoryService-OpenDirectory.rst
+%%PORTDOCS%%%%DOCSDIR%%/Admin/DirectoryService-XML.rst
+%%PORTDOCS%%%%DOCSDIR%%/Admin/DirectoryServices.rst
+%%PORTDOCS%%%%DOCSDIR%%/Admin/ExtendedLogItems.rst
+%%PORTDOCS%%%%DOCSDIR%%/Admin/LoadSimulation.rst
+%%PORTDOCS%%%%DOCSDIR%%/Admin/MultiServerDeployment.rst
+%%PORTDOCS%%%%DOCSDIR%%/Admin/iSchedule.txt
+%%PORTDOCS%%%%DOCSDIR%%/Client-Server/Principal Bootstrap.graffle.zip
+%%PORTDOCS%%%%DOCSDIR%%/Client-Server/Principal Bootstrap.pdf
+%%PORTDOCS%%%%DOCSDIR%%/Client-Server/calendar-client.rst
+%%PORTDOCS%%%%DOCSDIR%%/Developer/Calendar Store API.graffle
+%%PORTDOCS%%%%DOCSDIR%%/Developer/Calendar Store Schema.graffle
+%%PORTDOCS%%%%DOCSDIR%%/Extensions/caldav-ctag.txt
+%%PORTDOCS%%%%DOCSDIR%%/Extensions/caldav-ctag.xml
+%%PORTDOCS%%%%DOCSDIR%%/Extensions/caldav-notifications.txt
+%%PORTDOCS%%%%DOCSDIR%%/Extensions/caldav-notifications.xml
+%%PORTDOCS%%%%DOCSDIR%%/Extensions/caldav-privatecomments.txt
+%%PORTDOCS%%%%DOCSDIR%%/Extensions/caldav-privatecomments.xml
+%%PORTDOCS%%%%DOCSDIR%%/Extensions/caldav-privateevents.txt
+%%PORTDOCS%%%%DOCSDIR%%/Extensions/caldav-privateevents.xml
+%%PORTDOCS%%%%DOCSDIR%%/Extensions/caldav-proxy.txt
+%%PORTDOCS%%%%DOCSDIR%%/Extensions/caldav-proxy.xml
+%%PORTDOCS%%%%DOCSDIR%%/Extensions/caldav-pubsubdiscovery.txt
+%%PORTDOCS%%%%DOCSDIR%%/Extensions/caldav-pubsubdiscovery.xml
+%%PORTDOCS%%%%DOCSDIR%%/Extensions/caldav-schedulingchanges.txt
+%%PORTDOCS%%%%DOCSDIR%%/Extensions/caldav-schedulingchanges.xml
+%%PORTDOCS%%%%DOCSDIR%%/Extensions/caldav-sharing.txt
+%%PORTDOCS%%%%DOCSDIR%%/Extensions/caldav-sharing.xml
+%%PORTDOCS%%%%DOCSDIR%%/Extensions/calendarserver-bulk-change.txt
+%%PORTDOCS%%%%DOCSDIR%%/Extensions/calendarserver-bulk-change.xml
+%%PORTDOCS%%%%DOCSDIR%%/Extensions/icalendar-maskuids.txt
+%%PORTDOCS%%%%DOCSDIR%%/Extensions/icalendar-maskuids.xml
+%%PORTDOCS%%%%DOCSDIR%%/RFC/RFC6764-srv-CalDAV.txt
+%%PORTDOCS%%%%DOCSDIR%%/RFC/RFC6868-Parameter Value Encoding.txt
+%%PORTDOCS%%%%DOCSDIR%%/RFC/draft-daboo-caldav-extensions.txt
+%%PORTDOCS%%%%DOCSDIR%%/RFC/draft-daboo-calendar-availability.txt
+%%PORTDOCS%%%%DOCSDIR%%/RFC/draft-daboo-carddav-directory-gateway.txt
+%%PORTDOCS%%%%DOCSDIR%%/RFC/draft-desruisseaux-ischedule.txt
+%%PORTDOCS%%%%DOCSDIR%%/RFC/rfc2616-HTTP.txt
+%%PORTDOCS%%%%DOCSDIR%%/RFC/rfc2617-HTTP Auth.txt
+%%PORTDOCS%%%%DOCSDIR%%/RFC/rfc3253-DeltaV.txt
+%%PORTDOCS%%%%DOCSDIR%%/RFC/rfc3283-Calendaring.txt
+%%PORTDOCS%%%%DOCSDIR%%/RFC/rfc3744-WebDAV ACL.txt
+%%PORTDOCS%%%%DOCSDIR%%/RFC/rfc4331-WebDAV Quota.txt
+%%PORTDOCS%%%%DOCSDIR%%/RFC/rfc4559-SPNEGO.txt
+%%PORTDOCS%%%%DOCSDIR%%/RFC/rfc4791-CalDAV.txt
+%%PORTDOCS%%%%DOCSDIR%%/RFC/rfc4918-WebDAV.txt
+%%PORTDOCS%%%%DOCSDIR%%/RFC/rfc5397-Current Principal.txt
+%%PORTDOCS%%%%DOCSDIR%%/RFC/rfc5545-iCalendar.txt
+%%PORTDOCS%%%%DOCSDIR%%/RFC/rfc5546-iTIP.txt
+%%PORTDOCS%%%%DOCSDIR%%/RFC/rfc5689-Extended MKCOL.txt
+%%PORTDOCS%%%%DOCSDIR%%/RFC/rfc5785-well-known-uris.txt
+%%PORTDOCS%%%%DOCSDIR%%/RFC/rfc5842-BIND.txt
+%%PORTDOCS%%%%DOCSDIR%%/RFC/rfc5995-POST addmember.txt
+%%PORTDOCS%%%%DOCSDIR%%/RFC/rfc6047-iMIP.txt
+%%PORTDOCS%%%%DOCSDIR%%/RFC/rfc6321-xCal.txt
+%%PORTDOCS%%%%DOCSDIR%%/RFC/rfc6350-vCard4.txt
+%%PORTDOCS%%%%DOCSDIR%%/RFC/rfc6351-xCard.txt
+%%PORTDOCS%%%%DOCSDIR%%/RFC/rfc6352-CardDAV.txt
+%%PORTDOCS%%%%DOCSDIR%%/RFC/rfc6578-WebDAV Sync.txt
+%%PORTDOCS%%%%DOCSDIR%%/RFC/rfc6638-CalDAV-Scheduling.txt
+%%PORTDOCS%%%%DOCSDIR%%/current.sql
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/auth/accounts-test.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/auth/accounts.dtd
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/auth/accounts.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/auth/augments-default.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/auth/augments-test.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/auth/augments.dtd
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/auth/proxies-test.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/auth/proxies.dtd
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/auth/resources-test.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/caldavd-apple.plist
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/caldavd-partitioning-primary.plist
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/caldavd-partitioning-secondary.plist
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/caldavd-test.plist
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/caldavd.plist
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/localservers-test.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/localservers.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mime.types
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/remoteservers-test.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/remoteservers.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/resources.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/resources/caldavd-resources.plist
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/resources/locations-resources-orig.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/resources/locations-resources.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/resources/users-groups.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/servers.dtd
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/servertoserver.dtd
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sudoers.plist
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test/accounts.xml
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/test
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/resources
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/auth
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/RFC
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/Extensions
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/Developer
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/Client-Server
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/Admin
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrmtry etc/caldavd/auth
+@dirrmtry etc/caldavd

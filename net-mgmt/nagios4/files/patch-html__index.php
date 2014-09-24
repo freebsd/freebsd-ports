@@ -1,5 +1,5 @@
---- ./html/index.php.orig	2014-06-03 16:41:42.000000000 +0200
-+++ ./html/index.php	2014-06-05 12:49:28.000000000 +0200
+--- html/index.php.orig	2014-08-12 15:00:01 UTC
++++ html/index.php
 @@ -1,6 +1,7 @@
  <?php
 +include_once(dirname(__FILE__).'/includes/utils.inc.php');

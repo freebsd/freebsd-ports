@@ -14,13 +14,12 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	libmaa.so:${PORTSDIR}/devel/libmaa
 
-USES=		bison gmake libtool
+USES=		bison gmake libtool:build
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--without-local-zlib --with-cflags="${CFLAGS}" \
 		--with-etcdir=${PREFIX}/etc
 CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
-USE_AUTOTOOLS=	libtoolize
+LIBS+=		-L${LOCALBASE}/lib
 ALL_TARGET=	dict
 INSTALL_TARGET=	install.dict
 

@@ -22,7 +22,6 @@ include/libecap/common/version.h
 include/libecap/host/host.h
 include/libecap/host/xaction.h
 lib/libecap.a
-lib/libecap.la
 lib/libecap.so
 lib/libecap.so.2
 lib/libecap.so.2.0.0

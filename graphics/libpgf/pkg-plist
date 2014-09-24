@@ -7,4 +7,3 @@ lib/libpgf.so
 lib/libpgf.so.6
 lib/libpgf.so.6.0.11
 libdata/pkgconfig/libpgf.pc
-@dirrm include/libpgf

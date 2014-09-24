@@ -3,7 +3,7 @@
 
 PORTNAME=	remmina
 PORTVERSION=	1.0.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net gnome
 
 MAINTAINER=	fluffy@FreeBSD.org
@@ -11,7 +11,7 @@ COMMENT=	The GTK+ Remote Desktop Client
 
 LICENSE=	GPLv2
 
-USES=		cmake desktop-file-utils gmake pkgconfig
+USES=		cmake gmake pkgconfig
 USE_GNOME=	atk gdkpixbuf2 glib20 gtk20 pango
 INSTALLS_ICONS=	yes
 LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS} -Wl,-rpath -Wl,${LOCALBASE}/lib -lX11 \
@@ -26,13 +26,12 @@ GH_COMMIT=	356c033
 GH_TAGNAME=	${PORTVERSION}
 WRKSRC=		${WRKDIR}/${GH_ACCOUNT}-Remmina-${GH_COMMIT}
 
-OPTIONS_DEFINE=	SSH GCRYPT TERM AVAHI UNIQUE NLS
-OPTIONS_DEFAULT=	SSH GCRYPT TERM AVAHI UNIQUE NLS
+OPTIONS_DEFINE=	SSH GCRYPT TERM AVAHI NLS
+OPTIONS_DEFAULT=	SSH GCRYPT TERM AVAHI NLS
 SSH_DESC=	Build with SSH tunneling support
 GCRYPT_DESC=	Build with libgcrypt support for password encryption
 TERM_DESC=	Build with terminal support
 AVAHI_DESC=	Build with Avahi support
-UNIQUE_DESC=	Build with Unique-App support
 
 .include <bsd.port.options.mk>
 
@@ -75,12 +74,6 @@ LIB_DEPENDS+=	libavahi-ui.so:${PORTSDIR}/net/avahi-gtk
 CMAKE_ARGS+=	-DWITH_AVAHI=OFF
 .endif
 
-.if ${PORT_OPTIONS:MUNIQUE}
-LIB_DEPENDS+=	libunique-1.0.so:${PORTSDIR}/x11-toolkits/unique
-.else
-CMAKE_ARGS+=	-DWITH_UNIQUE=OFF
-.endif
-
 post-patch:
 	# fix pkgconfig
 	${REINPLACE_CMD} -e 's,$${CMAKE_INSTALL_LIBDIR}/pkgconfig,libdata/pkgconfig,' ${WRKSRC}/remmina/CMakeLists.txt
@@ -91,8 +84,5 @@ post-patch:
 .if !${PORT_OPTIONS:MNLS}
 	${REINPLACE_CMD} -e's|add_subdirectory(po)||' ${WRKSRC}/remmina/CMakeLists.txt
 .endif
-
-post-install:
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>

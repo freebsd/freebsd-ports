@@ -14,6 +14,5 @@ MANDIR=		${PREFIX}/man/man
 
 MAN=	ipv6mon.8 ipv6mon.conf.5
 NO_MANCOMPRESS=
-WITH_INSTALL_AS_USER=yes
 
 .include <bsd.prog.mk>

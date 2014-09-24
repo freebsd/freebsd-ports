@@ -46,6 +46,8 @@ IGNORE=	WITH_PKG is not defined to 'devel', this version is the devel one
 .else
 LATEST_LINK=	pkg
 PKGNAMESUFFIX=
+#define PKG_DEPENDS to nothing to avoid infinite loop looking for pkg :)
+PKG_DEPENDS=
 .endif
 .if exists(${LOCALBASE}/sbin/pkg_info) || exists(/usr/sbin/pkg_info)
 NB_OLDPKGS!=	pkg_info 2>/dev/null | wc -l
@@ -74,8 +76,6 @@ pre-everything::
 LATEST_LINK=	pkg-devel
 .endif
 
-#define PKG_DEPENDS to nothing to avoid infinite loop looking for pkg :)
-PKG_DEPENDS=
 .undef INSTALLS_DEPENDS
 .if !exists(${LOCALBASE}/sbin/pkg)
 PKG_BIN=	${WRKSRC}/src/pkg-static

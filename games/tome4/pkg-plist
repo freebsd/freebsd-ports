@@ -1,4 +1,4 @@
-bin/tome4
+@(,,0755) bin/tome4
 share/pixmaps/tome4.png
 %%DATADIR%%/bootstrap/boot.lua
 %%DATADIR%%/game/addons/tome-addon-dev.teaa
@@ -177,50 +177,3 @@ share/pixmaps/tome4.png
 %%DATADIR%%/game/thirdparty/socket/url.lua
 %%DATADIR%%/game/thirdparty/tween.lua
 %%DATADIR%%/t-engine
-@dirrm %%DATADIR%%/bootstrap
-@dirrm %%DATADIR%%/game/addons
-@dirrm %%DATADIR%%/game/engines
-@dirrm %%DATADIR%%/game/loader
-@dirrm %%DATADIR%%/game/modules/example/class/interface
-@dirrm %%DATADIR%%/game/modules/example/class
-@dirrm %%DATADIR%%/game/modules/example/data/birth
-@dirrm %%DATADIR%%/game/modules/example/data/general/grids
-@dirrm %%DATADIR%%/game/modules/example/data/general/npcs
-@dirrm %%DATADIR%%/game/modules/example/data/general
-@dirrm %%DATADIR%%/game/modules/example/data/gfx/particles
-@dirrm %%DATADIR%%/game/modules/example/data/gfx
-@dirrm %%DATADIR%%/game/modules/example/data/rooms
-@dirrm %%DATADIR%%/game/modules/example/data/zones/dungeon
-@dirrm %%DATADIR%%/game/modules/example/data/zones
-@dirrm %%DATADIR%%/game/modules/example/data
-@dirrm %%DATADIR%%/game/modules/example/dialogs
-@dirrm %%DATADIR%%/game/modules/example
-@dirrm %%DATADIR%%/game/modules/example_realtime/class/interface
-@dirrm %%DATADIR%%/game/modules/example_realtime/class
-@dirrm %%DATADIR%%/game/modules/example_realtime/data/birth
-@dirrm %%DATADIR%%/game/modules/example_realtime/data/general/grids
-@dirrm %%DATADIR%%/game/modules/example_realtime/data/general/npcs
-@dirrm %%DATADIR%%/game/modules/example_realtime/data/general
-@dirrm %%DATADIR%%/game/modules/example_realtime/data/gfx/particles
-@dirrm %%DATADIR%%/game/modules/example_realtime/data/gfx
-@dirrm %%DATADIR%%/game/modules/example_realtime/data/rooms
-@dirrm %%DATADIR%%/game/modules/example_realtime/data/zones/dungeon
-@dirrm %%DATADIR%%/game/modules/example_realtime/data/zones
-@dirrm %%DATADIR%%/game/modules/example_realtime/data
-@dirrm %%DATADIR%%/game/modules/example_realtime/dialogs
-@dirrm %%DATADIR%%/game/modules/example_realtime
-@dirrm %%DATADIR%%/game/modules
-@dirrm %%DATADIR%%/game/profile-thread
-@dirrm %%DATADIR%%/game/thirdparty/cef3/locales
-@dirrm %%DATADIR%%/game/thirdparty/cef3
-@dirrm %%DATADIR%%/game/thirdparty/jit
-@dirrm %%DATADIR%%/game/thirdparty/licenses
-@dirrm %%DATADIR%%/game/thirdparty/lpeg
-@dirrm %%DATADIR%%/game/thirdparty/lxp
-@dirrm %%DATADIR%%/game/thirdparty/moonscript/compile
-@dirrm %%DATADIR%%/game/thirdparty/moonscript
-@dirrm %%DATADIR%%/game/thirdparty/remdebug
-@dirrm %%DATADIR%%/game/thirdparty/socket
-@dirrm %%DATADIR%%/game/thirdparty
-@dirrm %%DATADIR%%/game
-@dirrm %%DATADIR%%

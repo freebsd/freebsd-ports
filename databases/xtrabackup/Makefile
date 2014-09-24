@@ -5,7 +5,7 @@ PORTNAME=	xtrabackup
 PORTVERSION=	2.1.7
 PORTREVISION=	1
 CATEGORIES=	databases
-MASTER_SITES=	http://www.percona.com/downloads/%SUBDIR%/
+MASTER_SITES=	http://www.percona.com/downloads/XtraBackup/XtraBackup-${PORTVERSION}/source/
 DISTNAME=	percona-${PORTNAME}-${DISTVERSIONPREFIX}${DISTVERSION}${DISTVERSIONSUFFIX}
 DISTFILES=	percona-xtrabackup-${PORTVERSION}.tar.gz
 EXTRACT_ONLY=	percona-xtrabackup-${PORTVERSION}.tar.gz
@@ -15,8 +15,9 @@ COMMENT=	OpenSource version of InnoDB backup with support of Percona extensions
 
 LICENSE=	GPLv2
 
-# quilt is requiered by build.sh
+# quilt is required by build.sh
 BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash \
+		cmake:${PORTSDIR}/devel/cmake \
 		quilt:${PORTSDIR}/devel/quilt \
 		bison:${PORTSDIR}/devel/bison
 LIB_DEPENDS=	libgcrypt.so:${PORTSDIR}/security/libgcrypt \
@@ -25,11 +26,7 @@ RUN_DEPENDS=	p5-DBD-mysql>=0:${PORTSDIR}/databases/p5-DBD-mysql \
 		qpress:${PORTSDIR}/archivers/qpress
 
 # autotool is in use for 5.1 builds
-USE_AUTOTOOLS=	automake autoheader autoconf aclocal libtoolize
-# MySQL 5.5 using CMAKE
-USES=		cmake iconv gettext gmake libtool perl5
-
-MASTER_SITE_SUBDIR=	XtraBackup/XtraBackup-${PORTVERSION}/source/
+USES=		autoreconf:build gettext gmake iconv libtool perl5
 
 PLIST_FILES=	bin/xtrabackup bin/xtrabackup_55 bin/xtrabackup_56 bin/xbstream \
 		bin/innobackupex bin/xbcrypt
@@ -52,15 +49,5 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/xbstream ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/src/xbcrypt ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_SCRIPT} ${WRKSRC}/innobackupex ${STAGEDIR}${PREFIX}/bin
-
-# autoconf is running by build.sh
-do-configure:
-run-autotools-aclocal:
-run-autotools-automake:
-run-autotools-autoconf:
-run-autotools-autoheader:
-run-autotools-libtoolize:
-patch-autotools-libtool:
-	@${TRUE}
 
 .include <bsd.port.mk>

@@ -1,6 +1,14 @@
---- src/VBox/Additions/common/VBoxGuest/freebsd/files_vboxguest.orig	2014-01-04 05:34:34.000000000 +0000
-+++ src/VBox/Additions/common/VBoxGuest/freebsd/files_vboxguest	2014-01-04 05:34:41.000000000 +0000
-@@ -185,6 +185,7 @@
+--- src/VBox/Additions/common/VBoxGuest/freebsd/files_vboxguest.orig	2014-09-09 23:46:56.000000000 +0400
++++ src/VBox/Additions/common/VBoxGuest/freebsd/files_vboxguest	2014-09-18 22:06:32.817093478 +0400
+@@ -102,6 +102,7 @@
+     ${PATH_ROOT}/src/VBox/Runtime/common/misc/handletable.h=>common/misc/handletable.h \
+     ${PATH_ROOT}/src/VBox/Runtime/common/misc/handletablectx.cpp=>common/misc/handletablectx.c \
+     ${PATH_ROOT}/src/VBox/Runtime/common/misc/once.cpp=>common/misc/once.c \
++    ${PATH_ROOT}/src/VBox/Runtime/common/misc/term.cpp=>common/misc/term.c \
+     ${PATH_ROOT}/src/VBox/Runtime/common/misc/thread.cpp=>common/misc/thread.c \
+     ${PATH_ROOT}/src/VBox/Runtime/common/misc/RTAssertMsg1Weak.cpp=>common/misc/RTAssertMsg1Weak.c \
+     ${PATH_ROOT}/src/VBox/Runtime/common/misc/RTAssertMsg2.cpp=>common/misc/RTAssertMsg2.c \
+@@ -185,6 +186,7 @@
      ${PATH_ROOT}/src/VBox/Runtime/r0drv/freebsd/sleepqueue-r0drv-freebsd.h=>r0drv/freebsd/sleepqueue-r0drv-freebsd.h \
      ${PATH_ROOT}/src/VBox/Runtime/r0drv/generic/semspinmutex-r0drv-generic.c=>r0drv/generic/semspinmutex-r0drv-generic.c \
      ${PATH_ROOT}/src/VBox/Runtime/r0drv/generic/mpnotification-r0drv-generic.cpp=>r0drv/generic/mpnotification-r0drv-generic.c \

@@ -27,7 +27,8 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 CPPFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/openh323
 USE_GCC=	yes
 USE_GNOME=	libxml2
-USES=		bison gmake shebangfix
+USES=		bison cpe gmake shebangfix
+CPE_VENDOR=	digium
 SHEBANG_FILES=	agi/agi-test.agi \
 		agi/jukebox.agi
 STRIP=
@@ -77,11 +78,11 @@ DAHDI_LIB_DEPENDS=	libpri.so:${PORTSDIR}/misc/libpri \
 			libopenr2.so:${PORTSDIR}/misc/openr2
 ODBC_CONFIGURE_WITH=	unixodbc
 ODBC_CONFIGURE_ON=	--with-ltdl
-ODBC_USE=		AUTOTOOLS=libltdl
-ODBC_LIB_DEPENDS=	libodbc.so:${PORTSDIR}/databases/unixODBC
+ODBC_LIB_DEPENDS=	libodbc.so:${PORTSDIR}/databases/unixODBC \
+			libltdl.so:${PORTSDIR}/devel/libltdl
 FREETDS_CONFIGURE_ON=	--with-tds=${LOCALBASE}
 FREETDS_CONFIGURE_OFF=	--without-tds
-FREETDS_LIB_DEPENDS=	libtds.so:${PORTSDIR}/databases/freetds
+FREETDS_LIB_DEPENDS=	libsybdb.so:${PORTSDIR}/databases/freetds
 PGSQL_CONFIGURE_WITH=	postgres
 PGSQL_USES=		pgsql
 MYSQL_CONFIGURE_WITH=	mysqlclient

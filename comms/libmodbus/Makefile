@@ -14,5 +14,6 @@ LICENSE=	LGPL21
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 USES=		gmake libtool pathfix
+INSTALL_TARGET=	install-strip
 
 .include <bsd.port.mk>

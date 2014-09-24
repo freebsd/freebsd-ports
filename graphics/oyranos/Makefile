@@ -13,7 +13,6 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/doxygen:${PORTSDIR}/devel/doxygen
 RUN_DEPENDS=	${LOCALBASE}/share/color/icc/OpenICC/sRGB.icc:${PORTSDIR}/graphics/icc-profiles-openicc \
 		${LOCALBASE}/share/color/icc/basICColor/ISOcoated_v2_300_bas.ICC:${PORTSDIR}/graphics/icc-profiles-basiccolor
 LIB_DEPENDS=	libraw.so:${PORTSDIR}/graphics/libraw \
-		libxml2.so:${PORTSDIR}/textproc/libxml2 \
 		libexiv2.so:${PORTSDIR}/graphics/exiv2 \
 		libpng15.so:${PORTSDIR}/graphics/png \
 		libcairo.so:${PORTSDIR}/graphics/cairo \

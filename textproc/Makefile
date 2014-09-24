@@ -393,6 +393,9 @@
     SUBDIR += libxslt-reference
     SUBDIR += libyaml
     SUBDIR += link-grammar
+    SUBDIR += linux-c6-aspell
+    SUBDIR += linux-c6-expat
+    SUBDIR += linux-c6-libxml2
     SUBDIR += linux-f10-aspell
     SUBDIR += linux-f10-expat
     SUBDIR += linux-f10-libxml2
@@ -1274,7 +1277,6 @@
     SUBDIR += rtfreader
     SUBDIR += rtfx
     SUBDIR += rubber
-    SUBDIR += ruby-amatch
     SUBDIR += ruby-deplate
     SUBDIR += ruby-diff
     SUBDIR += ruby-escape
@@ -1282,7 +1284,6 @@
     SUBDIR += ruby-htmlrepair
     SUBDIR += ruby-htmlsplit
     SUBDIR += ruby-htree
-    SUBDIR += ruby-liquid
     SUBDIR += ruby-rd-mode.el
     SUBDIR += ruby-rdtool
     SUBDIR += ruby-rss
@@ -1293,6 +1294,7 @@
     SUBDIR += ruby-xmlparser
     SUBDIR += ruby-xmlscan
     SUBDIR += rubygem-albino
+    SUBDIR += rubygem-amatch
     SUBDIR += rubygem-asciidoctor
     SUBDIR += rubygem-augeas
     SUBDIR += rubygem-charlock_holmes

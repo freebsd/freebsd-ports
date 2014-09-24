@@ -43,10 +43,7 @@ PLIST_SUB+=	WITH_PGSQL=""
 PLIST_SUB+=	WITH_PGSQL="@comment "
 .endif
 
-.include <bsd.port.pre.mk>
+post-patch:
+	@${REINPLACE_CMD} '/^echoping_LDADD =/s/$$/ -lm/' ${WRKSRC}/Makefile.in
 
-.if ${ARCH} == "ia64" || ${ARCH} == "powerpc"
-BROKEN=		Does not link on ia64 or powerpc
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

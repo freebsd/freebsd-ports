@@ -19,5 +19,3 @@ man/man5/toxic.conf.5.gz
 %%DATADIR%%/sounds/TransferPending.wav
 %%DATADIR%%/toxic.conf.example
 %%DATADIR%%/toxic.conf.example-e
-@dirrm %%DATADIR%%/sounds
-@dirrm %%DATADIR%%

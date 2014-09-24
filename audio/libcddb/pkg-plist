@@ -14,4 +14,3 @@ lib/libcddb.la
 lib/libcddb.so
 lib/libcddb.so.4
 libdata/pkgconfig/libcddb.pc
-@dirrm include/cddb

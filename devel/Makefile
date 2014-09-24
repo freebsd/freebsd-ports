@@ -970,6 +970,7 @@
     SUBDIR += libcidr
     SUBDIR += libcii
     SUBDIR += libclaw
+    SUBDIR += libclc
     SUBDIR += libcli
     SUBDIR += libconfig
     SUBDIR += libconfuse
@@ -1027,7 +1028,6 @@
     SUBDIR += libgee06
     SUBDIR += libgetline
     SUBDIR += libghthash
-    SUBDIR += libgii
     SUBDIR += libgit2
     SUBDIR += libgit2-glib
     SUBDIR += libglade2
@@ -1184,6 +1184,15 @@
     SUBDIR += libzrtpcpp
     SUBDIR += libzvbi
     SUBDIR += lightning
+    SUBDIR += linux-c6-ncurses-base
+    SUBDIR += linux-c6-devtools
+    SUBDIR += linux-c6-dbus-glib
+    SUBDIR += linux-c6-qt47
+    SUBDIR += linux-c6-dbus-libs
+    SUBDIR += linux-c6-libglade2
+    SUBDIR += linux-c6-libpciaccess
+    SUBDIR += linux-c6-sdl12
+    SUBDIR += linux-c6-nspr
     SUBDIR += linux-f10-allegro
     SUBDIR += linux-f10-dbus-glib
     SUBDIR += linux-f10-dbus-libs
@@ -3390,6 +3399,7 @@
     SUBDIR += pecl-spread
     SUBDIR += pecl-statgrab
     SUBDIR += pecl-svn
+    SUBDIR += pecl-swoole
     SUBDIR += pecl-test_helpers
     SUBDIR += pecl-uopz
     SUBDIR += pecl-uploadprogress
@@ -3781,6 +3791,7 @@
     SUBDIR += py-mwlib.rl
     SUBDIR += py-mx-experimental
     SUBDIR += py-mygpoclient
+    SUBDIR += py-nagioscheck
     SUBDIR += py-ncurses
     SUBDIR += py-nose
     SUBDIR += py-notifier
@@ -3839,6 +3850,7 @@
     SUBDIR += py-pylib
     SUBDIR += py-pymarc
     SUBDIR += py-pympler
+    SUBDIR += py-pyparsing15
     SUBDIR += py-pyro
     SUBDIR += py-pyshapelib
     SUBDIR += py-pytemplate
@@ -4164,7 +4176,6 @@
     SUBDIR += remake
     SUBDIR += replay
     SUBDIR += rhtvision
-    SUBDIR += ri-emacs
     SUBDIR += rlog
     SUBDIR += rlwrap
     SUBDIR += roboctl
@@ -4185,7 +4196,6 @@
     SUBDIR += ruby-date2
     SUBDIR += ruby-dialogs
     SUBDIR += ruby-event-loop
-    SUBDIR += ruby-fastri
     SUBDIR += ruby-flexmock
     SUBDIR += ruby-gems
     SUBDIR += ruby-intl
@@ -4193,8 +4203,6 @@
     SUBDIR += ruby-krossruby
     SUBDIR += ruby-langscan
     SUBDIR += ruby-locale
-    SUBDIR += ruby-locale2
-    SUBDIR += ruby-multi
     SUBDIR += ruby-ncurses
     SUBDIR += ruby-property
     SUBDIR += ruby-qtruby
@@ -4204,7 +4212,6 @@
     SUBDIR += ruby-rreadline
     SUBDIR += ruby-sdl
     SUBDIR += ruby-setup.rb
-    SUBDIR += ruby-statgrab
     SUBDIR += ruby-subversion
     SUBDIR += ruby-tzfile
     SUBDIR += ruby-wirble
@@ -4222,6 +4229,7 @@
     SUBDIR += rubygem-app_config
     SUBDIR += rubygem-arrayfields
     SUBDIR += rubygem-ascii85
+    SUBDIR += rubygem-aspectr
     SUBDIR += rubygem-atomic
     SUBDIR += rubygem-atoulme-antwrap
     SUBDIR += rubygem-attic
@@ -4292,7 +4300,6 @@
     SUBDIR += rubygem-docile
     SUBDIR += rubygem-dotenv-deployment
     SUBDIR += rubygem-drydock
-    SUBDIR += rubygem-echoe
     SUBDIR += rubygem-edavis10-object_daddy
     SUBDIR += rubygem-elif
     SUBDIR += rubygem-enumerize
@@ -4476,7 +4483,6 @@
     SUBDIR += rubygem-ruby-sdl-ffi
     SUBDIR += rubygem-ruby2ruby
     SUBDIR += rubygem-ruby_parser
-    SUBDIR += rubygem-rubyforge
     SUBDIR += rubygem-rubygame
     SUBDIR += rubygem-rubygems-tasks
     SUBDIR += rubygem-rubyinlineaccel

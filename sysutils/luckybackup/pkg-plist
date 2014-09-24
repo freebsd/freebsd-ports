@@ -138,10 +138,3 @@ share/luckybackup/translations/luckybackup_zh_TW.qm
 share/luckybackup/translations/luckybackup_zh_TW.ts
 share/pixmaps/luckybackup.png
 share/pixmaps/luckybackup.xpm
-@dirrm share/luckybackup/translations
-@dirrm share/luckybackup
-@dirrm share/doc/luckybackup/manual/images
-@dirrm share/doc/luckybackup/manual/data
-@dirrm share/doc/luckybackup/manual
-@dirrm share/doc/luckybackup/license
-@dirrm share/doc/luckybackup

@@ -15,7 +15,6 @@ SUB_FILES=	pkg-message
 
 USES=		kmod uidfix tar:bzip2
 
-PLIST_FILES=	"@cwd /%%KMODDIR%%"
-PLIST_FILES+=	mono.ko
+PLIST_FILES=	${KMODDIR}/mono.ko
 
 .include <bsd.port.mk>

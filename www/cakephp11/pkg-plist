@@ -1,3 +1,11 @@
+%%CONFDIR%%/cakephp.conf
+%%PORTDOCS%%%%DOCSDIR%%/CHANGELOG.txt
+%%PORTDOCS%%%%DOCSDIR%%/COPYING.txt
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL.txt
+%%PORTDOCS%%%%DOCSDIR%%/README.txt
+@owner www
+@group www
+%%WWWDIR%%/.htaccess
 %%WWWDIR%%/app/.htaccess
 %%WWWDIR%%/app/config/acl.ini.php
 %%WWWDIR%%/app/config/bootstrap.php
@@ -154,90 +162,4 @@
 %%WWWDIR%%/cake/scripts/templates/skel/webroot/index.php
 %%WWWDIR%%/cake/scripts/templates/skel/webroot/js/vendors.php
 %%WWWDIR%%/cake/scripts/templates/views/home.thtml
-%%PORTDOCS%%%%DOCSDIR%%/CHANGELOG.txt
-%%PORTDOCS%%%%DOCSDIR%%/COPYING.txt
-%%PORTDOCS%%%%DOCSDIR%%/INSTALL.txt
-%%PORTDOCS%%%%DOCSDIR%%/README.txt
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
 %%WWWDIR%%/index.php
-%%WWWDIR%%/.htaccess
-%%CONFDIR%%/cakephp.conf
-@dirrm %%WWWDIR%%/vendors
-@dirrm %%WWWDIR%%/cake/scripts/templates/views
-@dirrm %%WWWDIR%%/cake/scripts/templates/skel/webroot/js
-@dirrm %%WWWDIR%%/cake/scripts/templates/skel/webroot/img
-@dirrm %%WWWDIR%%/cake/scripts/templates/skel/webroot/files
-@dirrm %%WWWDIR%%/cake/scripts/templates/skel/webroot/css
-@dirrm %%WWWDIR%%/cake/scripts/templates/skel/webroot
-@dirrm %%WWWDIR%%/cake/scripts/templates/skel/views/pages
-@dirrm %%WWWDIR%%/cake/scripts/templates/skel/views/layouts
-@dirrm %%WWWDIR%%/cake/scripts/templates/skel/views/helpers
-@dirrm %%WWWDIR%%/cake/scripts/templates/skel/views/errors
-@dirrm %%WWWDIR%%/cake/scripts/templates/skel/views/elements
-@dirrm %%WWWDIR%%/cake/scripts/templates/skel/views
-@dirrm %%WWWDIR%%/cake/scripts/templates/skel/vendors
-@dirrm %%WWWDIR%%/cake/scripts/templates/skel/tmp/tests
-@dirrm %%WWWDIR%%/cake/scripts/templates/skel/tmp/sessions
-@dirrm %%WWWDIR%%/cake/scripts/templates/skel/tmp/logs
-@dirrm %%WWWDIR%%/cake/scripts/templates/skel/tmp/cache/views
-@dirrm %%WWWDIR%%/cake/scripts/templates/skel/tmp/cache/persistent
-@dirrm %%WWWDIR%%/cake/scripts/templates/skel/tmp/cache/models
-@dirrm %%WWWDIR%%/cake/scripts/templates/skel/tmp/cache
-@dirrm %%WWWDIR%%/cake/scripts/templates/skel/tmp
-@dirrm %%WWWDIR%%/cake/scripts/templates/skel/plugins
-@dirrm %%WWWDIR%%/cake/scripts/templates/skel/models/behaviors
-@dirrm %%WWWDIR%%/cake/scripts/templates/skel/models
-@dirrm %%WWWDIR%%/cake/scripts/templates/skel/controllers/components
-@dirrm %%WWWDIR%%/cake/scripts/templates/skel/controllers
-@dirrm %%WWWDIR%%/cake/scripts/templates/skel/config/sql
-@dirrm %%WWWDIR%%/cake/scripts/templates/skel/config
-@dirrm %%WWWDIR%%/cake/scripts/templates/skel
-@dirrm %%WWWDIR%%/cake/scripts/templates
-@dirrm %%WWWDIR%%/cake/scripts
-@dirrm %%WWWDIR%%/cake/libs/view/templates/scaffolds
-@dirrm %%WWWDIR%%/cake/libs/view/templates/pages
-@dirrm %%WWWDIR%%/cake/libs/view/templates/layouts
-@dirrm %%WWWDIR%%/cake/libs/view/templates/errors
-@dirrm %%WWWDIR%%/cake/libs/view/templates/elements
-@dirrm %%WWWDIR%%/cake/libs/view/templates
-@dirrm %%WWWDIR%%/cake/libs/view/helpers
-@dirrm %%WWWDIR%%/cake/libs/view
-@dirrm %%WWWDIR%%/cake/libs/model/dbo
-@dirrm %%WWWDIR%%/cake/libs/model/datasources
-@dirrm %%WWWDIR%%/cake/libs/model
-@dirrm %%WWWDIR%%/cake/libs/controller/components/iniacl
-@dirrm %%WWWDIR%%/cake/libs/controller/components/dbacl/models
-@dirrm %%WWWDIR%%/cake/libs/controller/components/dbacl
-@dirrm %%WWWDIR%%/cake/libs/controller/components
-@dirrm %%WWWDIR%%/cake/libs/controller
-@dirrm %%WWWDIR%%/cake/libs
-@dirrm %%WWWDIR%%/cake/config
-@dirrm %%WWWDIR%%/cake
-@dirrm %%WWWDIR%%/app/webroot/js
-@dirrm %%WWWDIR%%/app/webroot/img
-@dirrm %%WWWDIR%%/app/webroot/files
-@dirrm %%WWWDIR%%/app/webroot/css
-@dirrm %%WWWDIR%%/app/webroot
-@dirrm %%WWWDIR%%/app/views/pages
-@dirrm %%WWWDIR%%/app/views/layouts
-@dirrm %%WWWDIR%%/app/views/helpers
-@dirrm %%WWWDIR%%/app/views/errors
-@dirrm %%WWWDIR%%/app/views/elements
-@dirrm %%WWWDIR%%/app/views
-@dirrm %%WWWDIR%%/app/vendors
-@dirrm %%WWWDIR%%/app/tmp/tests
-@dirrm %%WWWDIR%%/app/tmp/sessions
-@dirrm %%WWWDIR%%/app/tmp/logs
-@dirrm %%WWWDIR%%/app/tmp/cache/views
-@dirrm %%WWWDIR%%/app/tmp/cache/persistent
-@dirrm %%WWWDIR%%/app/tmp/cache/models
-@dirrm %%WWWDIR%%/app/tmp/cache
-@dirrm %%WWWDIR%%/app/tmp
-@dirrm %%WWWDIR%%/app/plugins
-@dirrm %%WWWDIR%%/app/models
-@dirrm %%WWWDIR%%/app/controllers/components
-@dirrm %%WWWDIR%%/app/controllers
-@dirrm %%WWWDIR%%/app/config/sql
-@dirrm %%WWWDIR%%/app/config
-@dirrm %%WWWDIR%%/app
-@dirrm %%WWWDIR%%

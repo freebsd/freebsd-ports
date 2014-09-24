@@ -12,9 +12,7 @@ lib/libapt-inst.so.1.1.0
 lib/libapt-pkg.so
 lib/libapt-pkg.so.3.11
 lib/libapt-pkg.so.3.11.0
-@exec mkdir -p %D/share/apt/keyrings
-@dirrm share/apt/keyrings
-@dirrm share/apt
+@dir share/apt/keyrings
 libexec/apt/methods/cdrom
 libexec/apt/methods/copy
 libexec/apt/methods/file
@@ -27,14 +25,11 @@ libexec/apt/methods/rred
 libexec/apt/methods/rsh
 libexec/apt/methods/ssh
 libexec/apt/methods/bzip2
-@dirrm libexec/apt/methods
-@dirrm libexec/apt
 libexec/dpkg/methods/apt/desc.apt
 libexec/dpkg/methods/apt/names
 libexec/dpkg/methods/apt/install
 libexec/dpkg/methods/apt/setup
 libexec/dpkg/methods/apt/update
-@dirrm libexec/dpkg/methods/apt
 include/apt-pkg/mmap.h
 include/apt-pkg/error.h
 include/apt-pkg/configuration.h
@@ -106,28 +101,20 @@ man/man8/apt-config.8.gz
 man/man8/apt-get.8.gz
 man/man8/apt-key.8.gz
 man/man8/apt-secure.8.gz
-@dirrm include/apt-pkg
-@exec mkdir -p %D/etc/apt/conf.d
-@dirrm etc/apt/conf.d
+@dir etc/apt/conf.d
 @sample etc/apt/sources.list.sample
 @sample etc/apt/apt.conf.sample
-@dirrm etc/apt
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/COPYING.GPL
 %%PORTDOCS%%%%DOCSDIR%%/README.progress-reporting
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/apt.conf
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sources.list
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/configure-index
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
-@cwd /
-@exec mkdir -p %D%%APTDIR%%/cache/archives/partial
-@dirrm %%APTDIR%%/cache/archives/partial
-@dirrm %%APTDIR%%/cache/archives
-@dirrm %%APTDIR%%/cache
-@exec mkdir -p %D%%APTDIR%%/state/lists/partial
-@dirrm %%APTDIR%%/state/lists/partial
-@dirrm %%APTDIR%%/state/lists
-@dirrm %%APTDIR%%/state
-@dirrm %%APTDIR%%
+@dir /%%APTDIR%%/cache/archives/partial
+@dir /%%APTDIR%%/cache/archives
+@dir /%%APTDIR%%/cache
+@dir /%%APTDIR%%/state/lists/partial
+@dir /%%APTDIR%%/state/lists
+@dir /%%APTDIR%%/state
+@dir /%%APTDIR%%

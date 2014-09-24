@@ -162,16 +162,3 @@ share/gwenhywfar/typemaker2/c/tree_base.tm2
 share/gwenhywfar/typemaker2/c/uint32_t.tm2
 share/gwenhywfar/typemaker2/c/uint64_t.tm2
 share/locale/de/LC_MESSAGES/gwenhywfar.mo
-@dirrm share/gwenhywfar/typemaker2/c
-@dirrm share/gwenhywfar/typemaker2
-@dirrm share/gwenhywfar/dialogs
-@dirrm share/gwenhywfar
-@dirrm lib/gwenhywfar/plugins/%%GWEN_SHLIB_VER%%/dbio
-@dirrm lib/gwenhywfar/plugins/%%GWEN_SHLIB_VER%%/ct
-@dirrm lib/gwenhywfar/plugins/%%GWEN_SHLIB_VER%%/configmgr
-@dirrm lib/gwenhywfar/plugins/%%GWEN_SHLIB_VER%%
-@dirrm lib/gwenhywfar/plugins
-@dirrm lib/gwenhywfar
-@dirrm include/gwenhywfar4/gwenhywfar
-@dirrm include/gwenhywfar4/gwen-gui-cpp
-@dirrm include/gwenhywfar4

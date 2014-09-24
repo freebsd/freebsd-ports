@@ -3,7 +3,7 @@
 
 PORTNAME=	libmcrypt
 PORTVERSION=	2.5.8
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES=	SF/mcrypt/Libmcrypt/${PORTVERSION}
 
@@ -16,6 +16,6 @@ CONFIGURE_ARGS=	--enable-static
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
-USES=		libtool:oldver
+USES=		libtool
 
 .include <bsd.port.mk>

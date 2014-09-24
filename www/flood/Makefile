@@ -13,13 +13,11 @@ COMMENT=	Profile-driven HTTP load tester
 LIB_DEPENDS=	libexpat.so:${PORTSDIR}/textproc/expat2 \
 		libapr-1.so:${PORTSDIR}/devel/apr1
 
-WRKSRC=		${WRKDIR}/httpd-test/flood
-USE_AUTOTOOLS=	autoconf libtoolize
-CONFIGURE_ARGS=	--disable-shared \
-		--with-apr=${LOCALBASE}/bin/apr-1-config \
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--with-apr=${LOCALBASE}/bin/apr-1-config \
 		--with-apr-util=${LOCALBASE}/bin/apu-1-config
-LDFLAGS+=	-L${PREFIX}/lib
-USES=		gmake iconv libtool
+USES=		autoreconf gmake iconv
+WRKSRC=		${WRKDIR}/httpd-test/flood
 
 EX_SCRIPTS=	analyze-relative analyze-relative-ramp
 EX_DATA=	flood.dtd relative-averages-time.awk round-robin-dynamic.xml \

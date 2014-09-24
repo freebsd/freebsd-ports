@@ -18,11 +18,9 @@ GH_PROJECT=	python-${PORTNAME}
 GH_TAGNAME=	v${PORTVERSION}
 GH_COMMIT=	cfeb3b5
 
-USES=		shebangfix
+USES=		shebangfix python
 SHEBANG_FILES=	examples/helloworld.py
-USE_PYTHON=	yes
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
+USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes
 

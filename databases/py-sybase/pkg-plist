@@ -70,6 +70,3 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/rpc.sql
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/timeout.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/timeout.readme
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/icons
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%

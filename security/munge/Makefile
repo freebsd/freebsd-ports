@@ -18,6 +18,7 @@ CONFIGURE_ARGS=	--localstatedir=/var
 USES=		libtool pathfix perl5 tar:bzip2
 USE_LDCONFIG=	yes
 USE_RC_SUBR=	munged
+INSTALL_TARGET=	install-strip
 
 post-install:
 	${RM} -r ${STAGEDIR}${PREFIX}/etc/default

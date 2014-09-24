@@ -70,4 +70,3 @@ lib/libmusicbrainz5.so
 lib/libmusicbrainz5.so.0
 lib/libmusicbrainz5.so.0.0.1
 libdata/pkgconfig/libmusicbrainz5.pc
-@dirrm include/musicbrainz5

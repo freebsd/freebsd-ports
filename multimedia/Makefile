@@ -196,6 +196,8 @@
     SUBDIR += libxine
     SUBDIR += libxspf
     SUBDIR += libzen
+    SUBDIR += linux-c6-libtheora
+    SUBDIR += linux-c6-libv4l
     SUBDIR += linux-f10-libtheora
     SUBDIR += linux-f10-libv4l
     SUBDIR += linux-realplayer
@@ -277,7 +279,6 @@
     SUBDIR += plexmediaserver
     SUBDIR += plexmediaserver-plexpass
     SUBDIR += podcastdl
-    SUBDIR += podcatcher
     SUBDIR += poe
     SUBDIR += ppm2fli
     SUBDIR += projectx
@@ -318,7 +319,6 @@
     SUBDIR += replex
     SUBDIR += rox-videothumbnail
     SUBDIR += rtmpdump
-    SUBDIR += ruby-flvtool2
     SUBDIR += rubygem-clutter-gstreamer
     SUBDIR += rubygem-flvtool2
     SUBDIR += rubygem-gstreamer
@@ -387,8 +387,8 @@
     SUBDIR += vdr-plugin-xvdr
     SUBDIR += vdr-plugins
     SUBDIR += vic
+    SUBDIR += vid.stab
     SUBDIR += vlc
-    SUBDIR += vodcatcher
     SUBDIR += vstream-client
     SUBDIR += vtkmpeg2encode
     SUBDIR += w_scan

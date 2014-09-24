@@ -59,7 +59,7 @@ BROKEN=			incompatible OpenLDAP version: ${WANT_OPENLDAP_VER}
 .endif
 
 PORTREVISION_CLIENT=	2
-PORTREVISION_SERVER=	4
+PORTREVISION_SERVER=	5
 OPENLDAP_SHLIB_MAJOR=	2
 OPENLDAP_MAJOR=		${DISTVERSION:R}
 
@@ -220,7 +220,7 @@ USE_RC_SUBR=		slapd
 EXTRA_PATCHES+=		${FILESDIR}/extrapatch-Makefile.in
 
 .if ${PORT_OPTIONS:MMODULES} || ${PORT_OPTIONS:MDYNAMIC_BACKENDS} || ${PORT_OPTIONS:MSLAPI}
-USE_AUTOTOOLS+=		libltdl
+LIB_DEPENDS+=		libltdl.so:${PORTSDIR}/devel/libltdl
 CONFIGURE_ARGS+=	--enable-modules
 PLIST_SUB+=		MODULES=""
 .else
@@ -539,22 +539,18 @@ post-install:
 	done
 .else
 	@${MKDIR} ${STAGEDIR}${LDAP_RUN_DIR}
-.if ${PORT_OPTIONS:MDYNAMIC_BACKENDS}
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/libexec/openldap/*.so.${OPENLDAP_SHLIB_MAJOR}
-.endif
 .if ${PORT_OPTIONS:MSMBPWD}
-	@${INSTALL_DATA} ${WRKSRC}/contrib/slapd-modules/smbk5pwd/smbk5pwd.la \
-		${STAGEDIR}${PREFIX}/libexec/openldap/
-	@${INSTALL_PROGRAM} ${WRKSRC}/contrib/slapd-modules/smbk5pwd/.libs/smbk5pwd.so.0 \
-		${STAGEDIR}${PREFIX}/libexec/openldap/
-	@${LN} -s smbk5pwd.so.0 ${STAGEDIR}${PREFIX}/libexec/openldap/smbk5pwd.so
+	@(cd ${WRKSRC}/contrib/slapd-modules/smbk5pwd && ${SETENV} ${MAKE_ENV} \
+		${MAKE_CMD} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} install)
+	${RM} ${STAGEDIR}${PREFIX}/libexec/openldap/smbk5pwd.a
 .endif
 .if ${PORT_OPTIONS:MSHA2}
-	@${INSTALL_DATA} ${WRKSRC}/contrib/slapd-modules/passwd/sha2/pw-sha2.la \
-		${STAGEDIR}${PREFIX}/libexec/openldap/
-	@${INSTALL_PROGRAM} ${WRKSRC}/contrib/slapd-modules/passwd/sha2/.libs/pw-sha2.so.0 \
-		${STAGEDIR}${PREFIX}/libexec/openldap/
-	@${LN} -s pw-sha2.so.0 ${STAGEDIR}${PREFIX}/libexec/openldap/pw-sha2.so
+	@(cd ${WRKSRC}/contrib/slapd-modules/passwd/sha2 && ${SETENV} ${MAKE_ENV} \
+		${MAKE_CMD} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} install)
+	${RM} ${STAGEDIR}${PREFIX}/libexec/openldap/pw-sha2.a
+.endif
+.if ${PORT_OPTIONS:MDYNAMIC_BACKENDS} || ${PORT_OPTIONS:MSMBPWD} || ${PORT_OPTIONS:MSHA2}
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/libexec/openldap/*.so
 .endif
 .endif # defined(CLIENT_ONLY)
 

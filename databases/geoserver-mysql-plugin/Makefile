@@ -2,14 +2,16 @@
 # $FreeBSD$
 
 PORTNAME=	geoserver
-PORTVERSION=	2.1.1
+PORTVERSION=	2.5.2
 CATEGORIES=	databases geography java
-MASTER_SITES=	SF/${PORTNAME}/GeoServer%20Extensions/${PORTVERSION}
+MASTER_SITES=	SF/${PORTNAME}/GeoServer/${PORTVERSION}/extensions
 PKGNAMESUFFIX=	-mysql-plugin
 DISTNAME=	${PORTNAME}-${PORTVERSION}${PKGNAMESUFFIX}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	MySQL DataStore implementation for GeoServer
+
+LICENSE=	LGPL21
 
 RUN_DEPENDS=	${LOCALBASE}/geoserver/start.jar:${PORTSDIR}/graphics/geoserver
 
@@ -18,10 +20,8 @@ NO_BUILD=	yes
 
 GSLIBDIR=	geoserver/webapps/geoserver/WEB-INF/lib
 SUB_FILES=	pkg-message
-PLIST_FILES=	${GSLIBDIR}/gt-jdbc-mysql-2.7.2.jar \
-		${GSLIBDIR}/mysql-connector-java-5.1.5.jar
-
-LICENSE=	LGPL21
+PLIST_FILES=	${GSLIBDIR}/gt-jdbc-mysql-11.2.jar \
+		${GSLIBDIR}/mysql-connector-java-5.1.17.jar
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/${GSLIBDIR}

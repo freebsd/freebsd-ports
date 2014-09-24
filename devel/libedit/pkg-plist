@@ -29,4 +29,3 @@ man/man3/el_tok_line.3.gz
 man/man3/el_tok_reset.3.gz
 man/man3/el_tok_str.3.gz
 man/man5/editrc.5.gz
-@dirrmtry include/editline

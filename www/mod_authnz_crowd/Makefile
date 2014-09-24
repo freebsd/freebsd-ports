@@ -15,16 +15,14 @@ LICENSE=	APACHE20
 
 LIB_DEPENDS=	libsvn_client-1.so:${PORTSDIR}/devel/subversion \
 		libcurl.so:${PORTSDIR}/ftp/curl
-
 RUN_DEPENDS=	${LOCALBASE}/${APACHEMODDIR}/mod_dav_svn.so:${PORTSDIR}/www/mod_dav_svn
 
-USES=		libtool
-USE_AUTOTOOLS=	autoconf:env automake:env libtoolize
 GNU_CONFIGURE=	yes
+LIBS+=		-L${LOCALBASE}/lib
+USES=		autoreconf libtool
 USE_GNOME=	libxml2
 USE_GCC=	any
 USE_APACHE=	22
-MAKE_JOBS_SAFE= yes
 
 SUB_FILES=	pkg-message zzz_authnz_crowd.conf
 SUB_LIST+=	APACHEETCDIR=${APACHEETCDIR} \
@@ -34,8 +32,6 @@ PLIST_FILES=	${APACHEMODDIR}/mod_authnz_crowd.so \
 		${APACHEMODDIR}/mod_authz_svn_crowd.so \
 		${APACHEETCDIR}/Includes/zzz_authnz_crowd.conf
 
-LDFLAGS+=	-L${PREFIX}/lib
-
 post-patch:
 	${REINPLACE_CMD} -e 's|@APXS_STAGE@|-S LIBEXECDIR=${STAGEDIR}${PREFIX}/${APACHEMODDIR}|' \
 		${WRKSRC}/src/Makefile.am
@@ -43,7 +39,6 @@ post-patch:
 pre-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/${APACHEMODDIR}
 	@${MKDIR} ${STAGEDIR}${PREFIX}/${APACHEETCDIR}/Includes
-
 
 post-install:
 	${INSTALL_DATA} ${WRKDIR}/zzz_authnz_crowd.conf \

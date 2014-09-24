@@ -1,14 +1,6 @@
 --- configure.orig	Mon Jun 24 11:41:40 2002
 +++ configure	Sat Nov 30 21:02:28 2002
-@@ -7115,6 +7115,7 @@
- 
- # This can be used to rebuild libtool when needed
- LIBTOOL_DEPS="$ac_aux_dir/ltmain.sh"
-+$ac_aux_dir/ltconfig $LIBTOOL_DEPS
- 
- # Always use our own libtool.
- LIBTOOL='$(SHELL) $(top_builddir)/libtool'
-@@ -8339,6 +8340,9 @@
+@@ -8339,6 +8339,9 @@
  case "$host" in
  	*-*-darwin*)
  	  PTY_HELPER_GID=admin

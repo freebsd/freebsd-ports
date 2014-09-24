@@ -13,13 +13,13 @@ COMMENT=	C++ Framework for Motif
 
 LICENSE=	LGPL20 # (or later)
 
+GNU_CONFIGURE=	yes
 USES=		imake:env motif
-USE_AUTOTOOLS=	autoconf213
 
 post-patch:
 	@${REINPLACE_CMD} -e \
-		'/^CFLAGS=/s|-g|@CFLAGS@| ; \
-		 /^CXXFLAGS=/s|-g|@CXXFLAGS@| ; \
+		'/^CFLAGS=/s|-g|${CFLAGS}| ; \
+		 /^CXXFLAGS=/s|-g|${CXXFLAGS}| ; \
 		 s| $$(exec_prefix)| $$(DESTDIR)$$(exec_prefix)| ; \
 		 s| $$(prefix)| $$(DESTDIR)$$(prefix)|' ${WRKSRC}/Makefile.in
 

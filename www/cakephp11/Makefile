@@ -15,14 +15,13 @@ COMMENT=	Framework for developing PHP web applications
 
 USES=		tar:bzip2
 USE_APACHE_RUN=	22+
-SLAVE_PORT_MODULES=	REWRITE
 
 CONFLICTS=	cakephp-1[23]-* cakephp-2?-.* cakephp-2.3.*
 NO_BUILD=	yes
 
 USE_PHP=	pcre session
 WANT_PHP_WEB=	yes
-DEFAULT_VERSIONS=	php=5
+DEFAULT_VERSIONS+=	php=5
 
 SUB_FILES=	pkg-message
 
@@ -62,20 +61,17 @@ DB_DEFINED=	no
 
 .if ${PORT_OPTIONS:MMYSQL}
 DB_DEPENDS+=	${LOCALBASE}/lib/php/${PHP_EXT_DIR}/pdo_mysql.so:${PORTSDIR}/databases/php5-pdo_mysql
-DB_DEFINED=	yes
 .endif
 
 .if ${PORT_OPTIONS:MPGSQL}
 DB_DEPENDS+=	${LOCALBASE}/lib/php/${PHP_EXT_DIR}/pdo_pgsql.so:${PORTSDIR}/databases/php5-pdo_pgsql
-DB_DEFINED=	yes
 .endif
 
 .if ${PORT_OPTIONS:MSQLITE}
 DB_DEPENDS+=	${LOCALBASE}/lib/php/${PHP_EXT_DIR}/pdo_sqlite.so:${PORTSDIR}/databases/php5-pdo_sqlite
-DB_DEFINED=	yes
 .endif
 
-.if ${DB_DEFINED} == "yes"
+.if defined(DB_DEPENDS) && !empty(DB_DEPENDS)
 RUN_DEPENDS+=	${LOCALBASE}/lib/php/${PHP_EXT_DIR}/pdo.so:${PORTSDIR}/databases/php5-pdo \
 		${DB_DEPENDS}
 .endif
@@ -102,7 +98,6 @@ do-install:
 			${WRKSRC}/cake \
 			${WRKSRC}/index.php \
 			${WRKSRC}/vendors ${STAGEDIR}${WWWDIR}
-	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${STAGEDIR}${WWWDIR}
 	@${FIND} ${STAGEDIR}${WWWDIR} -type f -print0 | ${XARGS} -0 ${CHMOD} 644
 	@${FIND} ${STAGEDIR}${WWWDIR} -type d -print0 | ${XARGS} -0 ${CHMOD} 755
 

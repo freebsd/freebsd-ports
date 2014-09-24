@@ -15,16 +15,15 @@
 . /etc/rc.subr
 
 name=dhcprelay
-rcvar=dhcprelay_enable
+rcvar=${name}_enable
+
+load_rc_config ${name}
+
+: ${dhcprelay_enable="NO"}
+: ${dhcprelay_ifaces=""}
 
 pidfile=/var/run/${name}.pid
 command=%%PREFIX%%/bin/${name}
 command_args="${dhcprelay_ifaces} ${dhcprelay_server}"
-
-# echo $rc_flags
-
-load_rc_config ${name}
-
-dhcprelay_enable=${dhcprelay_enable:-"NO"}
 
 run_rc_command "$1"

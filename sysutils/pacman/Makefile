@@ -3,7 +3,7 @@
 
 PORTNAME=	pacman
 PORTVERSION=	4.0.3
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://ftp.archlinux.org/other/pacman/ \
 		http://mirror.amdmi3.ru/distfiles/
@@ -79,7 +79,6 @@ post-patch:
 .endif
 
 post-install:
-	@${RM} -rf ${STAGEDIR}/var # handled by pkg-install
 .for f in makepkg.conf pacman.conf
 	${INSTALL_DATA} ${WRKSRC}/etc/${f} ${STAGEDIR}${PREFIX}/etc/${f}.dist
 .endfor

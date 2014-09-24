@@ -17,17 +17,16 @@ RUN_DEPENDS=	umap:${PORTSDIR}/converters/p5-Unicode-Map8
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		gmake libtool pkgconfig iconv tar:bzip2
-GNU_CONFIGURE=	yes
+USES=		gmake iconv libtool pathfix pkgconfig tar:bzip2
 USE_LDCONFIG=	yes
+GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-html-dir=${DOCSDIR}
-
 CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+LIBS+=		-L${LOCALBASE}/lib
 
 OPTIONS_DEFINE=	DOCS
 
-post-patch::
-	@${REINPLACE_CMD} -e 's/$$(LN_S)/$$(LN_S) -f/' ${WRKSRC}/src/Makefile.in
+post-patch:
+	@${REINPLACE_CMD} '/SUBDIRS =/s/test//' ${WRKSRC}/src/Makefile.in
 
 .include <bsd.port.mk>

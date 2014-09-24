@@ -4,4 +4,3 @@ lib/libofa.so
 lib/libofa.so.0
 lib/libofa.so.0.0.0
 libdata/pkgconfig/libofa.pc
-@dirrm include/ofa1

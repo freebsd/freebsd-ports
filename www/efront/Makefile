@@ -2,11 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	efront
-DISTVERSION=	3.6.6
-PORTREVISION=	1
+DISTVERSION=	3.6.14
 CATEGORIES=	www
-MASTER_SITES=	SF/${PORTNAME}learning/${PORTNAME}learning/eFront%20v3.6.6/
-DISTNAME=	${PORTNAME}_${PORTVERSION}_build8242
+MASTER_SITES=	SF/${PORTNAME}learning/${PORTNAME}learning/eFront%20v3.6.14/
+DISTNAME=	${PORTNAME}_${PORTVERSION}_build18016_community
 
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Elearning and Human Capital Development platform
@@ -19,6 +18,7 @@ EFRONT_DIRS=	libraries PEAR \
 		upload www backups
 
 NO_BUILD=	yes
+PLIST_SUB=	WWWOWN="${WWWOWN}" WWWGRP="${WWWGRP}"
 SUB_FILES=	pkg-message
 
 do-install:
@@ -29,14 +29,6 @@ do-install:
 .for i in ${EFRONT_DIRS}
 	@cd ${WRKDIR} && ${COPYTREE_SHARE} ${i} ${STAGEDIR}${WWWDIR}
 .endfor
-	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${STAGEDIR}${WWWDIR}
 	@${CHMOD} -R 755 ${STAGEDIR}${WWWDIR}
-
-post-install:
-	@${ECHO_CMD} '@exec ${CHOWN} -R ${WWWOWN}:${WWWGRP} ${STAGEDIR}${WWWDIR}' \
-		>> ${TMPPLIST}
-	@${ECHO_CMD} '@exec ${CHMOD} -R 755 ${STAGEDIR}${WWWDIR}' \
-		>> ${TMPPLIST}
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>

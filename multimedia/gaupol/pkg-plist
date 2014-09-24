@@ -560,38 +560,5 @@ share/icons/hicolor/scalable/apps/gaupol.svg
 %%NLS%%share/locale/ru/LC_MESSAGES/gaupol.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/gaupol.mo
 %%NLS%%share/locale/tr/LC_MESSAGES/gaupol.mo
-@dirrmtry share/icons/hicolor/scalable/apps
-@dirrmtry share/icons/hicolor/scalable
-@dirrmtry share/icons/hicolor/32x32/apps
-@dirrmtry share/icons/hicolor/32x32
-@dirrmtry share/icons/hicolor/24x24/apps
-@dirrmtry share/icons/hicolor/24x24
-@dirrmtry share/icons/hicolor/22x22/apps
-@dirrmtry share/icons/hicolor/22x22
-@dirrmtry share/icons/hicolor/16x16/apps
-@dirrmtry share/icons/hicolor/16x16
-@dirrmtry share/icons/hicolor
-@dirrmtry share/icons
-@dirrm %%DATADIR%%/ui/text-assistant
-@dirrm %%DATADIR%%/ui
-@dirrm %%DATADIR%%/patterns
-@dirrm %%DATADIR%%/iso-codes
-@dirrm %%DATADIR%%/headers
-@dirrm %%DATADIR%%/extensions/side-pane
-@dirrm %%DATADIR%%/extensions/custom-framerates
-@dirrm %%DATADIR%%/extensions/bookmarks
-@dirrm %%DATADIR%%/extensions
-@dirrm %%DATADIR%%
-@dirrm %%PYTHON_SITELIBDIR%%/gaupol/renderers
-@dirrm %%PYTHON_SITELIBDIR%%/gaupol/enums
-@dirrm %%PYTHON_SITELIBDIR%%/gaupol/dialogs
-@dirrm %%PYTHON_SITELIBDIR%%/gaupol/agents
-@dirrm %%PYTHON_SITELIBDIR%%/gaupol/actions
-@dirrm %%PYTHON_SITELIBDIR%%/gaupol
-@dirrm %%PYTHON_SITELIBDIR%%/aeidon/tags
-@dirrm %%PYTHON_SITELIBDIR%%/aeidon/files
-@dirrm %%PYTHON_SITELIBDIR%%/aeidon/enums
-@dirrm %%PYTHON_SITELIBDIR%%/aeidon/agents
-@dirrm %%PYTHON_SITELIBDIR%%/aeidon
 @exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
 @unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true

@@ -12,8 +12,9 @@ COMMENT=	MPEG audio analysis toolkit
 
 LICENSE=	GPLv2
 
-USES=		gmake libtool
 GNU_CONFIGURE=	yes
+INSTALL_TARGET=	install-strip
+USES=		gmake libtool
 USE_LDCONFIG=	yes
 
 PORTDOCS=	API.html ChangeLog THANKS applications.html
@@ -29,6 +30,5 @@ post-install:
 .for f in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/doc/${f} ${STAGEDIR}${DOCSDIR}
 .endfor
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/*.so.1.* ${STAGEDIR}${PREFIX}/lib/Maaate/*.so.1.*
 
 .include <bsd.port.mk>

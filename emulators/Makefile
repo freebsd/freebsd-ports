@@ -70,6 +70,8 @@
     SUBDIR += libspectrum
     SUBDIR += linux_base-f10
     SUBDIR += linux_base-gentoo-stage3
+    SUBDIR += linux-c6
+    SUBDIR += linux-f10
     SUBDIR += linux_dist-gentoo-stage3
     SUBDIR += lisaem
     SUBDIR += loemu

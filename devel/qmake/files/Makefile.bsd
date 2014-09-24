@@ -32,12 +32,12 @@ CXXFLAGS+=-DQT_NO_TEXTCODEC -DQT_NO_UNICODETABLES -DQT_NO_COMPONENT \
 
 PROG_CXX=	qmake
 BINDIR=	${PREFIX}/bin
-SHAREDIR=${STAGEDIR}${PREFIX}/share/qt
+SHAREDIR=	${PREFIX}/share/qt
 
-${SHAREDIR}:
+${DESTDIR}${SHAREDIR}:
 	mkdir -p "$@"
 
-beforeinstall: ${SHAREDIR}
-	cp -Rp ${.CURDIR:H}/mkspecs ${SHAREDIR}
+beforeinstall: ${DESTDIR}${SHAREDIR}
+	cp -Rp ${.CURDIR:H}/mkspecs ${DESTDIR}${SHAREDIR}
 
 .include <bsd.prog.mk>

@@ -8,7 +8,7 @@ MASTER_SITES=	http://www.bdsoft.com/dist/
 DISTNAME=	g${PORTNAME}
 EXTRACT_SUFX=	.tar
 
-MAINTAINER=	eadler@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	STL Error Message Decryptor for C++
 
 USES=		perl5

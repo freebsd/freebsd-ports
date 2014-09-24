@@ -23,7 +23,6 @@ USES=		imake
 USE_XORG=	xpm xext x11
 USE_CSTD=	gnu89
 INSTALL_TARGET=	install install.man
-MANCOMPRESSED=	yes
 CFLAGS+=	-Wno-return-type
 
 SRCDIRS=	afterstep \

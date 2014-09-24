@@ -178,11 +178,10 @@ PHP_HEADER_DIRS=libmbfl libmbfl/filters libmbfl/mbfl libmbfl/nls
 .endif
 
 .if ${PHP_MODNAME} == "mcrypt"
-LIB_DEPENDS+=	libmcrypt.so:${PORTSDIR}/security/libmcrypt
+LIB_DEPENDS+=	libltdl.so:${PORTSDIR}/devel/libltdl \
+		libmcrypt.so:${PORTSDIR}/security/libmcrypt
 
 CONFIGURE_ARGS+=--with-mcrypt=${LOCALBASE}
-
-USE_AUTOTOOLS=	libltdl
 .endif
 
 .if ${PHP_MODNAME} == "mssql"

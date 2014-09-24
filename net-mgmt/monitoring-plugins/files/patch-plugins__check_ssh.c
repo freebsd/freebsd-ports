@@ -1,5 +1,5 @@
---- ./plugins/check_ssh.c.orig	2014-07-06 12:26:39.000000000 +0200
-+++ ./plugins/check_ssh.c	2014-07-29 15:15:33.000000000 +0200
+--- plugins/check_ssh.c.orig	2014-07-06 10:26:39 UTC
++++ plugins/check_ssh.c
 @@ -255,6 +255,7 @@
  			printf
  				(_("SSH WARNING - %s (protocol %s) version mismatch, expected '%s'\n"),

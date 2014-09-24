@@ -23,14 +23,6 @@ IGNORE=		USES=imake:${imake_ARGS:S/ /,/g} is not a valid argument
 imake_ARGS=
 .endif
 
-.if defined(NO_INSTALL_MANPAGES)
-imake_ARGS+=	noman
-.endif
-
-.if ! ${imake_ARGS:Mnoman}
-MANCOMPRESSED?=	yes
-.endif
-
 BUILD_DEPENDS+=		imake:${PORTSDIR}/devel/imake
 
 .if defined(USE_GCC)

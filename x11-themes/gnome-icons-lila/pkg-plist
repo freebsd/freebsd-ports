@@ -1187,15 +1187,3 @@ share/icons/Lila/scalable/stock/weather-showers-scattered.svg
 share/icons/Lila/scalable/stock/weather-showers.svg
 share/icons/Lila/scalable/stock/weather-snow.svg
 share/icons/Lila/scalable/stock/weather-storm.svg
-@dirrm share/icons/Lila/scalable/stock
-@dirrm share/icons/Lila/scalable/misc
-@dirrm share/icons/Lila/scalable/mimetypes
-@dirrm share/icons/Lila/scalable/filesystems
-@dirrm share/icons/Lila/scalable/emblems
-@dirrm share/icons/Lila/scalable/devices
-@dirrm share/icons/Lila/scalable/apps
-@dirrm share/icons/Lila/scalable
-@dirrm share/icons/Lila/36x36/apps
-@dirrm share/icons/Lila/36x36
-@dirrm share/icons/Lila
-@dirrmtry share/icons

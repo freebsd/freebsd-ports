@@ -19,4 +19,6 @@ CONFIGURE_ENV=	LC_ALL=
 MAKE_ENV=	LC_ALL=
 MAKE_JOBS_UNSAFE=	yes
 
+PORTDATA=	*
+
 .include <bsd.port.mk>

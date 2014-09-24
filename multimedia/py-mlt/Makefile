@@ -1,11 +1,11 @@
 # Created by: Charlie Kester <corky1951@comcast.net>
 # $FreeBSD$
 
-PORTREVISION=	1
+PORTREVISION=	0
 CATEGORIES=	multimedia python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	avilla@FreeBSD.org
 COMMENT=	Python bindings for the MLT multimedia framework
 
 LICENSE=	GPLv2
@@ -14,7 +14,7 @@ LICENSE_COMB=	single
 LIB_DEPENDS=	libmlt.so:${PORTSDIR}/${MASTER_PORT}
 BUILD_DEPENDS=	swig:${PORTSDIR}/devel/swig13
 
-USE_PYTHON=	yes
+USES=		python:2
 MASTERDIR=	${.CURDIR:H:H}/multimedia/mlt
 
 EXAMPLESDIR=	${PREFIX}/share/examples/${PORTNAME}/python
@@ -44,7 +44,7 @@ do-install:
 	@cd ${STAGEDIR}${PYTHON_SITELIBDIR} && ${PYTHON_CMD} -c 'import mlt'
 	@cd ${STAGEDIR}${PYTHON_SITELIBDIR} && ${PYTHON_CMD} -Oc 'import mlt'
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
-. for f in codecs getimage play waveforms
+. for f in codecs getimage play switcher waveforms webvfx_generator
 	${INSTALL_DATA} ${INSTALL_WRKSRC}/${f}.py ${STAGEDIR}${EXAMPLESDIR}
 . endfor
 

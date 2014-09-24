@@ -44,17 +44,7 @@
  # Check whether --enable-shared or --disable-shared was given.
  if test "${enable_shared+set}" = set; then
    enableval="$enable_shared"
-@@ -8303,7 +8291,8 @@
- 
- 
- # This can be used to rebuild libtool when needed
--LIBTOOL_DEPS="$ac_aux_dir/ltmain.sh"
-+LIBTOOL_DEPS="--disable-ltlibs $ac_aux_dir/ltmain.sh"
-+$ac_aux_dir/ltconfig $LIBTOOL_DEPS
- 
- # Always use our own libtool.
- LIBTOOL='$(SHELL) $(top_builddir)/libtool'
-@@ -11061,7 +11050,7 @@
+@@ -11061,7 +11049,7 @@
  
  
  # Check whether --with-debug or --without-debug was given.
@@ -63,7 +53,7 @@
    withval="$with_debug"
    use_debug="yes"
  else
-@@ -11788,8 +11777,8 @@
+@@ -11788,8 +11776,8 @@
  s,@CPP@,$CPP,;t t
  s,@EGREP@,$EGREP,;t t
  s,@LIBTOOL@,$LIBTOOL,;t t

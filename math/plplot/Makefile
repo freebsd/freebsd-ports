@@ -15,6 +15,7 @@ LICENSE=	LGPL21 # (or later)
 BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash \
 		${FREEFONT_DIR}/FreeMono.ttf:${PORTSDIR}/x11-fonts/freefont-ttf
 LIB_DEPENDS=	libLASi.so:${PORTSDIR}/devel/lasi \
+		libltdl.so:${PORTSDIR}/devel/libltdl \
 		libqhull.so:${PORTSDIR}/math/qhull5 \
 		libfreetype.so:${PORTSDIR}/print/freetype2
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash \
@@ -34,7 +35,6 @@ CMAKE_ARGS=	-DENABLE_java:BOOL=OFF -DENABLE_octave:BOOL=OFF \
 		-DPL_FREETYPE_FONT_PATH:PATH="${FREEFONT_DIR}" \
 		-DPLD_plmeta:BOOL=OFF
 CFLAGS+=	-D_IS_BUILDING_PLPLOT_PORT_
-USE_AUTOTOOLS=	libltdl
 USE_LDCONFIG=	yes
 
 FREEFONT_DIR=	${LOCALBASE}/lib/X11/fonts/freefont-ttf

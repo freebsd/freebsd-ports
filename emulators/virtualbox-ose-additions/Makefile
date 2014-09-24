@@ -2,7 +2,7 @@
 # $FreeBSD: head/emulators/virtualbox-ose-additions/Makefile 354896 2014-05-22 23:10:51Z jkim $
 
 PORTNAME=	virtualbox-ose
-DISTVERSION=	4.3.12
+DISTVERSION=	4.3.16
 PORTREVISION=	1
 CATEGORIES=	emulators
 MASTER_SITES=	http://download.virtualbox.org/virtualbox/${DISTVERSION}/ \
@@ -20,11 +20,14 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 BUILD_DEPENDS=	yasm:${PORTSDIR}/devel/yasm \
 		kmk:${PORTSDIR}/devel/kBuild
 
+CPE_VENDOR=	oracle
+CPE_PRODUCT=	vm_virtualbox
+
 UNIQUENAME=	${PORTNAME}${PKGNAMESUFFIX}
 PATCHDIR=	${.CURDIR}/../${PORTNAME}/files
 WRKSRC=		${WRKDIR}/VirtualBox-${PORTVERSION}
 USE_RC_SUBR=	vboxguest vboxservice
-USES=		compiler:features iconv kmod tar:bzip2
+USES=		compiler:features cpe iconv kmod tar:bzip2
 ONLY_FOR_ARCHS=	i386 amd64
 USE_PYTHON_BUILD=	yes
 MAKE_JOBS_UNSAFE=	yes

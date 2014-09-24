@@ -1,13 +1,9 @@
-@unexec if cmp -s %D/etc/vdpau_wrapper.cfg.sample %D/etc/vdpau_wrapper.cfg; then rm -f %D/etc/vdpau_wrapper.cfg; fi
-etc/vdpau_wrapper.cfg.sample
-@exec if [ ! -f %D/etc/vdpau_wrapper.cfg ]; then cp -p %D/%F %B/vdpau_wrapper.cfg; fi
+@sample etc/vdpau_wrapper.cfg.sample
 include/vdpau/vdpau.h
 include/vdpau/vdpau_x11.h
-lib/libvdpau.la
 lib/libvdpau.so
 lib/libvdpau.so.1
 lib/libvdpau.so.1.0.0
-lib/vdpau/libvdpau_trace.la
 lib/vdpau/libvdpau_trace.so
 lib/vdpau/libvdpau_trace.so.1
 lib/vdpau/libvdpau_trace.so.1.0.0

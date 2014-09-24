@@ -154,38 +154,3 @@ share/locale/vi/LC_MESSAGES/avant-window-navigator.mo
 share/locale/zh_CN/LC_MESSAGES/avant-window-navigator.mo
 share/locale/zh_HK/LC_MESSAGES/avant-window-navigator.mo
 share/locale/zh_TW/LC_MESSAGES/avant-window-navigator.mo
-@dirrmtry share/locale/zh_HK/LC_MESSAGES
-@dirrmtry share/locale/zh_HK
-@dirrmtry share/locale/nds/LC_MESSAGES
-@dirrmtry share/locale/nds
-@dirrmtry share/locale/kab/LC_MESSAGES
-@dirrmtry share/locale/kab
-@dirrmtry share/locale/jv/LC_MESSAGES
-@dirrmtry share/locale/jv
-@dirrmtry share/locale/csb/LC_MESSAGES
-@dirrmtry share/locale/csb
-@dirrmtry share/locale/ast/LC_MESSAGES
-@dirrmtry share/locale/ast
-@dirrmtry share/icons/hicolor/scalable/apps
-@dirrmtry share/icons/hicolor/scalable
-@dirrmtry share/icons/hicolor/48x48/apps
-@dirrmtry share/icons/hicolor/48x48
-@dirrmtry share/icons/hicolor/32x32/apps
-@dirrmtry share/icons/hicolor/32x32
-@dirrmtry share/icons/hicolor/24x24/apps
-@dirrmtry share/icons/hicolor/24x24
-@dirrmtry share/icons/hicolor
-@dirrmtry share/icons
-@dirrm share/gtk-doc/html/libawn
-@dirrmtry share/gtk-doc/html
-@dirrmtry share/gtk-doc
-@dirrm %%DATADIR%%/themes/default-theme
-@dirrm %%DATADIR%%/themes
-@dirrm %%DATADIR%%/schemas
-@dirrm %%DATADIR%%/defs
-@dirrm %%DATADIR%%/awn-manager
-@dirrm %%DATADIR%%/applets
-@dirrm %%DATADIR%%/active
-@dirrm %%DATADIR%%
-@dirrm %%PYTHON_SITELIBDIR%%/awn
-@dirrm include/libawn

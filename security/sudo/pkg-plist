@@ -82,9 +82,5 @@ sbin/visudo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/sudoers.mo
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 etc/sudoers.d/.keep-me
-@dirrm libexec/sudo
-@dirrmtry etc/sudoers.d
-@cwd /
-@dirrmtry /var/db/sudo
-@dirrmtry /var/run/sudo
-@cwd
+@dir /var/db/sudo
+@dir /var/run/sudo

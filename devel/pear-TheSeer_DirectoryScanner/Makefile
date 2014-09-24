@@ -12,17 +12,11 @@ COMMENT=	Recursive directory scanner and filter
 
 LICENSE=	BSD2CLAUSE
 
-BUILD_DEPENDS=	pear>=1.8.1:${PORTSDIR}/devel/pear \
-		${PEARDIR}/.channels/pear.netpirates.net.reg:${PORTSDIR}/devel/pear-channel-theseer
-RUN_DEPENDS=	pear>=1.8.1:${PORTSDIR}/devel/pear \
-		${PEARDIR}/.channels/pear.netpirates.net.reg:${PORTSDIR}/devel/pear-channel-theseer
+BUILD_DEPENDS=	${PEARDIR}/.channels/pear.netpirates.net.reg:${PORTSDIR}/devel/pear-channel-theseer
+RUN_DEPENDS=	${PEARDIR}/.channels/pear.netpirates.net.reg:${PORTSDIR}/devel/pear-channel-theseer
 
 USE_PHP=	fileinfo
 PEAR_CHANNEL=	theseer
-PEAR_AUTOINSTALL=	yes
+USES=	pear
 
-IGNORE_WITH_PHP=	52
-
-.include <bsd.port.pre.mk>
-.include "${PORTSDIR}/devel/pear/bsd.pear.mk"
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

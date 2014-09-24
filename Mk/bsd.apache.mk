@@ -80,7 +80,7 @@ Apache_Pre_Include=		bsd.apache.mk
 .include "${PORTSDIR}/Mk/bsd.default-versions.mk"
 
 .if defined(DEFAULT_APACHE_VER)
-WARNING+=	"DEFAULT_APACHE_VER is defined, consider using DEFAULT_VERSIONS=apache=${DEFAULT_APACHE_VER} instead"
+WARNING+=	"DEFAULT_APACHE_VER is defined, consider using DEFAULT_VERSIONS+=apache=${DEFAULT_APACHE_VER} instead"
 .endif
 
 DEFAULT_APACHE_VERSION?=	${APACHE_DEFAULT:S/.//}
@@ -118,13 +118,6 @@ IGNORE=	${_ERROR_MSG} Illegal use of USE_APACHE ( no version specified )
 
 # ===============================================================
 .if defined(AP_PORT_IS_SERVER)
-# MFC TODO: remove this check
-# used only by www/cakephp* ports
-.if defined(SLAVE_PORT_MODULES)
-DEFAULT_MODULES_CATEGORIES+=	SLAVE_PORT
-ALL_MODULES_CATEGORIES+=	SLAVE_PORT
-.endif
-
 # Module selection
 .for category in ${DEFAULT_MODULES_CATEGORIES}
 DEFAULT_MODULES+=	${${category}_MODULES}
@@ -278,7 +271,7 @@ SHORTMODNAME?=	${MODULENAME:S/mod_//}
 SRC_FILE?=	${MODULENAME}.c
 
 .if exists(${HTTPD})
-_APACHE_VERSION!=	${HTTPD} -V | ${SED} -ne 's/^Server version: Apache\/\([0-9]\)\.\([0-9]*\).*/\1\2/p'
+_APACHE_VERSION!=	${HTTPD} -v | ${SED} -ne 's/^Server version: Apache\/\([0-9]\)\.\([0-9]*\).*/\1\2/p'
 .elif defined(APACHE_PORT)
 _APACHE_VERSION!=	${ECHO_CMD} ${APACHE_PORT} | ${SED} -ne 's,.*/apache\([0-9]*\).*,\1,p'
 .endif

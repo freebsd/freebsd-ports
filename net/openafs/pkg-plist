@@ -569,26 +569,10 @@ man/man8/volinfo.8.gz
 man/man8/volserver.8.gz
 man/man8/vsys.8.gz
 man/man8/xfs_size_check.8.gz
-@unexec if cmp -s %D/etc/openafs/CellServDB.sample %D/etc/openafs/CellServDB ; then rm %D/etc/openafs/CellServDB ; fi
-etc/openafs/CellServDB.sample
-@exec if [ ! -e %D/etc/openafs/CellServDB ] ; then cp %D/etc/openafs/CellServDB.sample %D/etc/openafs/CellServDB ; fi
-@unexec if cmp -s %D/etc/openafs/ThisCell.sample %D/etc/openafs/ThisCell ; then rm %D/etc/openafs/ThisCell ; fi
-etc/openafs/ThisCell.sample
-@exec if [ ! -e %D/etc/openafs/ThisCell ] ; then cp -p %D/etc/openafs/ThisCell.sample %D/etc/openafs/ThisCell ; fi
-@unexec if cmp -s %D/etc/openafs/cacheinfo.sample %D/etc/openafs/cacheinfo ; then rm %D/etc/openafs/cacheinfo ; fi
-etc/openafs/cacheinfo.sample
-@exec if [ ! -e %D/etc/openafs/cacheinfo ] ; then cp -p %D/etc/openafs/cacheinfo.sample %D/etc/openafs/cacheinfo ; fi
-@dirrm include/openafs/rx
-@dirrm include/openafs/afs
-@dirrm include/openafs
-@dirrm lib/afs
-@dirrm libexec/openafs
-@dirrmtry etc/openafs
-@dirrm %%DATADIR%%/C
-@dirrm %%DATADIR%%
-@cwd /
-%%KMODDIR%%/libafs.ko
-@exec /bin/mkdir -p %D/%%AFSMNTDIR%% %D/%%AFSSTATEDIR%% %D/%%AFSCACHEDIR%%
-@dirrmtry %%AFSMNTDIR%%
-@dirrmtry %%AFSCACHEDIR%%
-@dirrmtry %%AFSSTATEDIR%%
+@sample etc/openafs/CellServDB.sample
+@sample etc/openafs/ThisCell.sample
+@sample etc/openafs/cacheinfo.sample
+/%%KMODDIR%%/libafs.ko
+@dir /%%AFSMNTDIR%%
+@dir /%%AFSCACHEDIR%%
+@dir /%%AFSSTATEDIR%%

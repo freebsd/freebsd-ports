@@ -13,21 +13,17 @@ COMMENT=	Copy/Paste Detector (CPD) for PHP code
 
 LICENSE=	BSD
 
-BUILD_DEPENDS=	pear>=1.9.4:${PORTSDIR}/devel/pear \
-		pear-ezc_ConsoleTools>=1.6:${PORTSDIR}/devel/pear-ezc_ConsoleTools \
+BUILD_DEPENDS=	pear-ezc_ConsoleTools>=1.6:${PORTSDIR}/devel/pear-ezc_ConsoleTools \
 		pear-SebastianBergmann_FinderFacade>=1.0.4:${PORTSDIR}/devel/pear-SebastianBergmann_FinderFacade \
 		pear-PHP_Timer>=1.0.4:${PORTSDIR}/devel/pear-PHP_Timer \
 		${PEARDIR}/.channels/pear.phpunit.de.reg:${PORTSDIR}/devel/pear-channel-phpunit
-RUN_DEPENDS=	pear>=1.9.4:${PORTSDIR}/devel/pear \
-		pear-ezc_ConsoleTools>=1.6:${PORTSDIR}/devel/pear-ezc_ConsoleTools \
+RUN_DEPENDS=	pear-ezc_ConsoleTools>=1.6:${PORTSDIR}/devel/pear-ezc_ConsoleTools \
 		pear-SebastianBergmann_FinderFacade>=1.0.4:${PORTSDIR}/devel/pear-SebastianBergmann_FinderFacade \
 		pear-PHP_Timer>=1.0.4:${PORTSDIR}/devel/pear-PHP_Timer \
 		${PEARDIR}/.channels/pear.phpunit.de.reg:${PORTSDIR}/devel/pear-channel-phpunit
 
 USE_PHP=	tokenizer
 PEAR_CHANNEL=	phpunit
-PEAR_AUTOINSTALL=	yes
+USES=	pear
 
-.include <bsd.port.pre.mk>
-.include "${PORTSDIR}/devel/pear/bsd.pear.mk"
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -13,6 +13,7 @@
     SUBDIR += ach
     SUBDIR += adzap
     SUBDIR += amphetadesk
+    SUBDIR += alef-webfont
     SUBDIR += analog
     SUBDIR += anyremote2html
     SUBDIR += anyterm
@@ -62,6 +63,7 @@
     SUBDIR += cakephp22
     SUBDIR += cakephp23
     SUBDIR += calamaris
+    SUBDIR += calendarserver
     SUBDIR += castget
     SUBDIR += caudium14
     SUBDIR += cblog
@@ -375,6 +377,8 @@
     SUBDIR += links
     SUBDIR += links-hacked
     SUBDIR += links1
+    SUBDIR += linux-c6-qt47-webkit
+    SUBDIR += linux-c6-flashplugin11
     SUBDIR += linux-f10-flashplugin11
     SUBDIR += linux-firefox
     SUBDIR += linux-libgtkembedmoz
@@ -394,7 +398,6 @@
     SUBDIR += mathjax
     SUBDIR += mathopd
     SUBDIR += mediawiki119
-    SUBDIR += mediawiki121
     SUBDIR += mediawiki122
     SUBDIR += mediawiki123
     SUBDIR += mergelog
@@ -809,6 +812,7 @@
     SUBDIR += p5-Dancer-Plugin-ExtDirect
     SUBDIR += p5-Dancer-Plugin-Feed
     SUBDIR += p5-Dancer-Plugin-Lexicon
+    SUBDIR += p5-Dancer-Plugin-Memcached
     SUBDIR += p5-Dancer-Plugin-REST
     SUBDIR += p5-Dancer-Plugin-SiteMap
     SUBDIR += p5-Dancer-Plugin-ValidationClass
@@ -1725,9 +1729,6 @@
     SUBDIR += rt42
     SUBDIR += ruby-amazon
     SUBDIR += ruby-aws
-    SUBDIR += ruby-borges
-    SUBDIR += ruby-fcgi
-    SUBDIR += ruby-fcgiwrap
     SUBDIR += ruby-google
     SUBDIR += ruby-wgettsv
     SUBDIR += rubygem-actionpack
@@ -1854,7 +1855,6 @@
     SUBDIR += rubygem-rqrcode
     SUBDIR += rubygem-savon
     SUBDIR += rubygem-scrapi
-    SUBDIR += rubygem-scrubyt
     SUBDIR += rubygem-select2-rails
     SUBDIR += rubygem-selenium-webdriver
     SUBDIR += rubygem-simple-rss

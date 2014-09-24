@@ -35,7 +35,7 @@ post-extract:
 
 post-patch:
 	@${REINPLACE_CMD} -E \
-		's,(bin|include|info|lib|man|sbin)dir),DESTDIR)$$(&,' \
+		's,(bin|include|info|lib|man|sbin)dir),DESTDIR)$$(&,g' \
 		${WRKSRC}/include/Makefile.in \
 		${WRKSRC}/librplay/Makefile.in \
 		${WRKSRC}/rplayd/Makefile.in \

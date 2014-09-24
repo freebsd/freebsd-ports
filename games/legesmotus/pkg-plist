@@ -6,6 +6,3 @@
 %%SERVERSCANNER%%man/man6/lmscan.6.gz
 %%SERVER%%man/man6/lmserver.6.gz
 %%CLIENT%%share/icons/hicolor/256x256/legesmotus.png
-%%CLIENT%%@dirrmtry share/icons/hicolor/256x256
-%%CLIENT%%@dirrmtry share/icons/hicolor
-%%CLIENT%%@dirrmtry share/icons

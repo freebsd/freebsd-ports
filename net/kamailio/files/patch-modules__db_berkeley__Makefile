@@ -1,0 +1,11 @@
+--- modules/db_berkeley/Makefile.orig	2014-08-06 15:29:51 UTC
++++ modules/db_berkeley/Makefile
+@@ -25,7 +25,7 @@
+ # extra install for kamailio
+ 
+ install-berkeley-scripts: $(bin_prefix)/$(bin_dir)
+-		BERKELEYDBON=yes make -C ../../utils/kamctl/ install-modules
++		BERKELEYDBON=yes $(MAKE) -C ../../utils/kamctl/ install-modules
+ 
+ install-scripts: install-berkeley-scripts
+ 

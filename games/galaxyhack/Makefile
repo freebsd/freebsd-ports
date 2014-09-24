@@ -10,7 +10,7 @@ MASTER_SITES=	SF \
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	games@FreeBSD.org
 COMMENT=	AI script based strategy game
 
 LICENSE=	GPLv2
@@ -31,6 +31,11 @@ USE_SDL=	gfx image mixer sdl
 ALL_TARGET=	${PORTNAME}
 
 SUB_FILES=	${PORTNAME}-sh
+
+PLIST_FILES=	bin/galaxyhack \
+		libexec/galaxyhack \
+		share/pixmaps/galaxyhack.png
+PORTDATA=	*
 
 DESKTOP_ENTRIES="GalaxyHack" "" "${PREFIX}/share/pixmaps/galaxyhack.png" \
 		"${PORTNAME}" "" ""

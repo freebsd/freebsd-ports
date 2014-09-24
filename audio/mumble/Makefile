@@ -2,13 +2,14 @@
 # $FreeBSD$
 
 PORTNAME=	mumble
-PORTVERSION=	1.2.6
-PORTREVISION=	1
+PORTVERSION=	1.2.8
 CATEGORIES=	audio
 MASTER_SITES=	SF/${PORTNAME}/Mumble/${PORTVERSION}
 
 MAINTAINER=	feld@FreeBSD.org
 COMMENT=	Voice chat software primarily intended for use while gaming
+
+LICENSE=	BSD3CLAUSE
 
 LIB_DEPENDS+=	libspeex.so:${PORTSDIR}/audio/speex \
 		libsndfile.so:${PORTSDIR}/audio/libsndfile \
@@ -17,7 +18,10 @@ LIB_DEPENDS+=	libspeex.so:${PORTSDIR}/audio/speex \
 		libprotoc.so:${PORTSDIR}/devel/protobuf \
 		libopus.so:${PORTSDIR}/audio/opus
 
+PLIST_SUB+=	PORTVERSION="${PORTVERSION}"
+
 USES=		gmake pkgconfig qmake
+USE_LDCONFIG=	yes
 USE_QT4=	gui svg iconengines_run xml sql network l10n \
 		linguist_build moc_build rcc_build uic_build \
 		opengl sql-sqlite3_run

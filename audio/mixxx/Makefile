@@ -6,8 +6,7 @@ PORTVERSION=	1.11.0
 DISTVERSIONSUFFIX=	-src
 PORTREVISION=	8
 CATEGORIES=	audio
-MASTER_SITES=	http://downloads.mixxx.org/%SUBDIR%/
-MASTER_SITE_SUBDIR=	${PORTNAME}-${PORTVERSION}
+MASTER_SITES=	http://downloads.mixxx.org/${PORTNAME}-${PORTVERSION}/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	DJ mixing application
@@ -32,6 +31,9 @@ USE_QT4=	corelib gui network opengl script sql svg xml \
 USE_GL=		glu
 MAKE_ARGS=	qtdir="${QT_PREFIX}" optimize=0
 LATE_INSTALL_ARGS=	--install-sandbox=${STAGEDIR}
+
+PORTDATA=	*
+PORTDOCS=	*
 
 OPTIONS_DEFINE=		DOCS FAAD GPERFTOOLS LAME SHOUTCAST WAVPACK
 OPTIONS_DEFAULT=	FAAD SHOUTCAST WAVPACK

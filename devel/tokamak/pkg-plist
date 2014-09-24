@@ -12,4 +12,3 @@ include/math/ne_smath.h
 include/math/ne_type.h
 include/tokamak.h
 lib/libtokamak_m.a
-@dirrm include/math

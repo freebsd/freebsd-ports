@@ -113,7 +113,7 @@
 # defining ${opt}_${deptype}_DEPENDS will add its content to the actual
 # dependency when the option is enabled.  Defining
 # ${opt}_${deptype}_DEPENDS_OFF will add its content to the actual dependency
-# when the option is enabled. 
+# when the option is disabled.
 
 ##
 # Set all the options available for the ports, beginning with the

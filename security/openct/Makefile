@@ -12,10 +12,11 @@ COMMENT=	Middleware framework for smart card terminals
 
 LICENSE=	LGPL21
 
+LIB_DEPENDS=	libltdl.so:${PORTSDIR}/devel/libltdl
+
 OPTIONS_DEFINE=	PCSC DOCS
 PCSC_DESC=	Enable PC/SC support
 
-USE_AUTOTOOLS=	libltdl
 GNU_CONFIGURE=	yes
 USES=		gmake libtool pkgconfig
 USE_LDCONFIG=	yes

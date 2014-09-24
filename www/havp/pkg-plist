@@ -2,7 +2,6 @@ sbin/havp
 @unexec if cmp -s %D/etc/havp/havp.config %D/etc/havp/havp.config.default; then rm -f %D/etc/havp/havp.config; fi
 etc/havp/havp.config.default
 @exec [ -f %B/havp.config ] || cp %B/%f %B/havp.config
-@dirrmtry etc/havp
 @unexec [ ! -f %%RUN_DIR%%/havp.pid ] || %D/etc/rc.d/havp stop
 %%EXAMPLESDIR%%/blacklist.sample
 %%EXAMPLESDIR%%/templates/br/blacklist.html
@@ -14,9 +13,7 @@ etc/havp/havp.config.default
 %%EXAMPLESDIR%%/templates/br/request.html
 %%EXAMPLESDIR%%/templates/br/scanner.html
 %%EXAMPLESDIR%%/templates/br/virus.html
-@dirrm %%EXAMPLESDIR%%/templates/br
 %%EXAMPLESDIR%%/templates/css2/havp.css
-@dirrm %%EXAMPLESDIR%%/templates/css2
 %%EXAMPLESDIR%%/templates/de/blacklist.html
 %%EXAMPLESDIR%%/templates/de/dns.html
 %%EXAMPLESDIR%%/templates/de/down.html
@@ -26,7 +23,6 @@ etc/havp/havp.config.default
 %%EXAMPLESDIR%%/templates/de/request.html
 %%EXAMPLESDIR%%/templates/de/scanner.html
 %%EXAMPLESDIR%%/templates/de/virus.html
-@dirrm %%EXAMPLESDIR%%/templates/de
 %%EXAMPLESDIR%%/templates/en/blacklist.html
 %%EXAMPLESDIR%%/templates/en/dns.html
 %%EXAMPLESDIR%%/templates/en/down.html
@@ -36,7 +32,6 @@ etc/havp/havp.config.default
 %%EXAMPLESDIR%%/templates/en/request.html
 %%EXAMPLESDIR%%/templates/en/scanner.html
 %%EXAMPLESDIR%%/templates/en/virus.html
-@dirrm %%EXAMPLESDIR%%/templates/en
 %%EXAMPLESDIR%%/templates/es/blacklist.html
 %%EXAMPLESDIR%%/templates/es/dns.html
 %%EXAMPLESDIR%%/templates/es/down.html
@@ -46,7 +41,6 @@ etc/havp/havp.config.default
 %%EXAMPLESDIR%%/templates/es/request.html
 %%EXAMPLESDIR%%/templates/es/scanner.html
 %%EXAMPLESDIR%%/templates/es/virus.html
-@dirrm %%EXAMPLESDIR%%/templates/es
 %%EXAMPLESDIR%%/templates/fr/blacklist.html
 %%EXAMPLESDIR%%/templates/fr/dns.html
 %%EXAMPLESDIR%%/templates/fr/down.html
@@ -56,7 +50,6 @@ etc/havp/havp.config.default
 %%EXAMPLESDIR%%/templates/fr/request.html
 %%EXAMPLESDIR%%/templates/fr/scanner.html
 %%EXAMPLESDIR%%/templates/fr/virus.html
-@dirrm %%EXAMPLESDIR%%/templates/fr
 %%EXAMPLESDIR%%/templates/it/blacklist.html
 %%EXAMPLESDIR%%/templates/it/dns.html
 %%EXAMPLESDIR%%/templates/it/down.html
@@ -66,7 +59,6 @@ etc/havp/havp.config.default
 %%EXAMPLESDIR%%/templates/it/request.html
 %%EXAMPLESDIR%%/templates/it/scanner.html
 %%EXAMPLESDIR%%/templates/it/virus.html
-@dirrm %%EXAMPLESDIR%%/templates/it
 %%EXAMPLESDIR%%/templates/nl/blacklist.html
 %%EXAMPLESDIR%%/templates/nl/dns.html
 %%EXAMPLESDIR%%/templates/nl/down.html
@@ -76,7 +68,6 @@ etc/havp/havp.config.default
 %%EXAMPLESDIR%%/templates/nl/request.html
 %%EXAMPLESDIR%%/templates/nl/scanner.html
 %%EXAMPLESDIR%%/templates/nl/virus.html
-@dirrm %%EXAMPLESDIR%%/templates/nl
 %%EXAMPLESDIR%%/templates/pf/blacklist.html
 %%EXAMPLESDIR%%/templates/pf/dns.html
 %%EXAMPLESDIR%%/templates/pf/down.html
@@ -86,7 +77,6 @@ etc/havp/havp.config.default
 %%EXAMPLESDIR%%/templates/pf/request.html
 %%EXAMPLESDIR%%/templates/pf/scanner.html
 %%EXAMPLESDIR%%/templates/pf/virus.html
-@dirrm %%EXAMPLESDIR%%/templates/pf
 %%EXAMPLESDIR%%/templates/pl/blacklist.html
 %%EXAMPLESDIR%%/templates/pl/dns.html
 %%EXAMPLESDIR%%/templates/pl/down.html
@@ -96,7 +86,6 @@ etc/havp/havp.config.default
 %%EXAMPLESDIR%%/templates/pl/request.html
 %%EXAMPLESDIR%%/templates/pl/scanner.html
 %%EXAMPLESDIR%%/templates/pl/virus.html
-@dirrm %%EXAMPLESDIR%%/templates/pl
 %%EXAMPLESDIR%%/templates/ru/blacklist.html
 %%EXAMPLESDIR%%/templates/ru/dns.html
 %%EXAMPLESDIR%%/templates/ru/down.html
@@ -106,7 +95,6 @@ etc/havp/havp.config.default
 %%EXAMPLESDIR%%/templates/ru/request.html
 %%EXAMPLESDIR%%/templates/ru/scanner.html
 %%EXAMPLESDIR%%/templates/ru/virus.html
-@dirrm %%EXAMPLESDIR%%/templates/ru
 %%EXAMPLESDIR%%/templates/sv/blacklist.html
 %%EXAMPLESDIR%%/templates/sv/dns.html
 %%EXAMPLESDIR%%/templates/sv/down.html
@@ -116,17 +104,7 @@ etc/havp/havp.config.default
 %%EXAMPLESDIR%%/templates/sv/request.html
 %%EXAMPLESDIR%%/templates/sv/scanner.html
 %%EXAMPLESDIR%%/templates/sv/virus.html
-@dirrm %%EXAMPLESDIR%%/templates/sv
-@dirrm %%EXAMPLESDIR%%/templates
 %%EXAMPLESDIR%%/whitelist.sample
-@dirrm %%EXAMPLESDIR%%
-@cwd /
-@mode 755
-@owner havp
-@group havp
-@dirrmtry %%LOG_DIR%%
-@dirrmtry %%TMP_DIR%%
-@dirrmtry %%RUN_DIR%%
-@owner
-@group
-@mode
+@dir(havp,havp,755) %%LOG_DIR%%
+@dir(havp,havp,755) %%TMP_DIR%%
+@dir(havp,havp,755) %%RUN_DIR%%

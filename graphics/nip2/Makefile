@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	nip2
-PORTVERSION=	7.40.3
-PORTREVISION=	6
+PORTVERSION=	7.40.4
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.vips.ecs.soton.ac.uk/supported/${PORTVERSION:R}/
 
@@ -13,10 +13,7 @@ COMMENT=	Graphical user interface for VIPS
 LICENSE=	GPLv2
 
 BUILD_DEPENDS=	xdg-open:${PORTSDIR}/devel/xdg-utils
-LIB_DEPENDS=	libgoffice-*.so:${PORTSDIR}/devel/goffice \
-		libgvc.so:${PORTSDIR}/graphics/graphviz \
-		libvips.so:${PORTSDIR}/graphics/vips \
-		libgsl.so:${PORTSDIR}/math/gsl
+LIB_DEPENDS=	libvips.so:${PORTSDIR}/graphics/vips
 RUN_DEPENDS=	xdg-open:${PORTSDIR}/devel/xdg-utils
 
 USES=		bison desktop-file-utils dos2unix gettext gmake pkgconfig \
@@ -24,12 +21,27 @@ USES=		bison desktop-file-utils dos2unix gettext gmake pkgconfig \
 DOS2UNIX_GLOB=	*.def
 USE_GNOME=	gnomemimedata gtk20 libxml2
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--disable-update-desktop \
-		--without-goffice
+CONFIGURE_ARGS=	--disable-update-desktop
 
 SUB_FILES=	run-nip2.sh
 
-OPTIONS_DEFINE=	DOCS
+OPTIONS_DEFINE=		DOCS FFTW GOFFICE GRAPHVIZ GSF GSL
+OPTIONS_DEFAULT=	FFTW GOFFICE GRAPHVIZ GSF GSL
+
+FFTW_LIB_DEPENDS=	libfftw3.so:${PORTSDIR}/math/fftw3
+FFTW_CONFIGURE_WITH=	fftw3
+GOFFICE_DESC=		Use libgoffice to show plots
+GOFFICE_LIB_DEPENDS=	libgoffice-*.so:${PORTSDIR}/devel/goffice
+GOFFICE_CONFIGURE_WITH=	libgoffice
+GRAPHVIZ_DESC=		Use libgvc to show workspace dependency graphs
+GRAPHVIZ_LIB_DEPENDS=	libgvc.so:${PORTSDIR}/graphics/graphviz
+GRAPHVIZ_CONFIGURE_WITH=	libgvc
+GSF_DESC=		Use libgsf to save plots to files
+GSF_USE=		gnome=libgsf
+GSF_CONFIGURE_WITH=	libgsf
+GSL_DESC=		Use gsl for numeric functions
+GSL_LIB_DEPENDS=	libgsl.so:${PORTSDIR}/math/gsl
+GSL_CONFIGURE_WITH=	gsl
 
 post-patch:
 	@${REINPLACE_CMD} -e \

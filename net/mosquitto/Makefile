@@ -24,8 +24,6 @@ USES=		cmake
 USE_PYTHON=	2
 NOCONFIGURE=	yes
 USE_RC_SUBR=	mosquitto
-MANCOMPRESSED=	no
-NO_MANCOMPRESS=	yes
 USE_LDCONFIG=	yes
 
 USERS=		nobody

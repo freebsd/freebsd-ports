@@ -150,18 +150,3 @@ share/icons/Snow-Apple/AUTHORS
 share/icons/Snow-Apple/ChangeLog
 share/icons/Snow-Apple/README
 share/icons/Snow-Apple/index.theme
-@dirrm share/icons/Snow-Apple/96x96/filesystems
-@dirrm share/icons/Snow-Apple/96x96/devices
-@dirrm share/icons/Snow-Apple/96x96
-@dirrm share/icons/Snow-Apple/72x72/filesystems
-@dirrm share/icons/Snow-Apple/72x72/devices
-@dirrm share/icons/Snow-Apple/72x72
-@dirrm share/icons/Snow-Apple/48x48/mimetypes
-@dirrm share/icons/Snow-Apple/48x48/filesystems
-@dirrm share/icons/Snow-Apple/48x48/emblems
-@dirrm share/icons/Snow-Apple/48x48/devices
-@dirrm share/icons/Snow-Apple/48x48
-@dirrm share/icons/Snow-Apple/192x192/filesystems
-@dirrm share/icons/Snow-Apple/192x192
-@dirrm share/icons/Snow-Apple
-@dirrmtry share/icons

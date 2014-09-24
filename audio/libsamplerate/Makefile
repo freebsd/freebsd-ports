@@ -43,15 +43,7 @@ BUILD_DEPENDS +=	libsndfile>=0:${PORTSDIR}/audio/libsndfile
 CONFIGURE_ARGS+=	--disable-sndfile
 .endif
 
-post-patch:
-.if empty(PORT_OPTIONS:MDOCS)
-	@${REINPLACE_CMD} -e '/SUBDIRS =/s/doc //' ${WRKSRC}/Makefile.in
-.endif
-.if empty(PORT_OPTIONS:MEXAMPLES)
-	@${REINPLACE_CMD} -e '/SUBDIRS =/s/examples //' ${WRKSRC}/Makefile.in
-.endif
-
-.if defined(MAINTAINER_MODE) || defined(PACKAGE_BUILDING)
+.if defined(MAINTAINER_MODE)
 check regression-test test: build
 	@cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${MAKE} ${_MAKE_JOBS} ${MAKE_ARGS} \
 	check

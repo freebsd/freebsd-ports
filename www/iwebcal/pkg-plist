@@ -1,3 +1,5 @@
+@owner %%WWWOWN%%
+@group %%WWWGRP%%
 %%WWWDIR%%/README.txt
 %%WWWDIR%%/Sample.ics
 %%WWWDIR%%/base/main.inc
@@ -43,3 +45,5 @@
 @dirrm %%WWWDIR%%/base
 @dirrmtry %%WWWDIR%%/cache
 @dirrmtry %%WWWDIR%%
+@owner root
+@group wheel

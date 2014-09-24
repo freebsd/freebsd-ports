@@ -14,6 +14,7 @@ LICENSE=	GPLv3
 LIB_DEPENDS=	libogg.so:${PORTSDIR}/audio/libogg \
 		libopus.so:${PORTSDIR}/audio/opus \
 		libpulse.so:${PORTSDIR}/audio/pulseaudio \
+		libltdl.so:${PORTSDIR}/devel/libltdl \
 		libunistring.so:${PORTSDIR}/devel/libunistring \
 		libidn.so:${PORTSDIR}/dns/libidn \
 		libglpk.so:${PORTSDIR}/math/glpk \
@@ -25,7 +26,6 @@ LIB_DEPENDS=	libogg.so:${PORTSDIR}/audio/libogg \
 USES=		gmake iconv libtool pathfix pkgconfig
 USE_GNOME=	glib20
 USE_GSTREAMER1=	yes
-USE_AUTOTOOLS=	libltdl
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-silent-rules \
 		--with-extractor=${LOCALBASE} \

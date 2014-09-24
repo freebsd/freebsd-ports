@@ -17,15 +17,13 @@ GH_COMMIT=	1bb28d3
 
 PORTDOCS=	README.md
 
-SLAVE_PORT_MODULES=	REWRITE
-
 CONFLICTS=	cakephp-1?-* cakephp-2[1]-.* cakephp-2.3.*
 
 NO_BUILD=	yes
 USES=		gettext
 USE_PHP=	ctype session
 WANT_PHP_WEB=	yes
-DEFAULT_VERSIONS=	php=5
+DEFAULT_VERSIONS+=	php=5
 
 CAKE_CONF_FILES=	\
 		app/Config/acl.php \

@@ -170,9 +170,6 @@ share/config/kdenlive_titles.knsrc
 share/config/kdenlive_wipes.knsrc
 share/config/kdenliveeffectscategory.rc
 share/config/kdenlivetranscodingrc
-share/doc/HTML/ca/kdenlive/common
-share/doc/HTML/ca/kdenlive/index.cache.bz2
-share/doc/HTML/ca/kdenlive/index.docbook
 share/doc/HTML/en/kdenlive/Kdenlive-Quickstart-Add-Last-Clip.png
 share/doc/HTML/en/kdenlive/Kdenlive-Quickstart-Add-Transition.png
 share/doc/HTML/en/kdenlive/Kdenlive-Quickstart-EffectStack.png
@@ -194,43 +191,6 @@ share/doc/HTML/en/kdenlive/Kdenlive_Quickstart-TimelineCursor.png
 share/doc/HTML/en/kdenlive/common
 share/doc/HTML/en/kdenlive/index.cache.bz2
 share/doc/HTML/en/kdenlive/index.docbook
-share/doc/HTML/es/kdenlive/common
-share/doc/HTML/es/kdenlive/index.cache.bz2
-share/doc/HTML/es/kdenlive/index.docbook
-share/doc/HTML/it/kdenlive/common
-share/doc/HTML/it/kdenlive/index.cache.bz2
-share/doc/HTML/it/kdenlive/index.docbook
-share/doc/HTML/nl/kdenlive/common
-share/doc/HTML/nl/kdenlive/index.cache.bz2
-share/doc/HTML/nl/kdenlive/index.docbook
-share/doc/HTML/pt/kdenlive/common
-share/doc/HTML/pt/kdenlive/index.cache.bz2
-share/doc/HTML/pt/kdenlive/index.docbook
-share/doc/HTML/pt_BR/kdenlive/common
-share/doc/HTML/pt_BR/kdenlive/index.cache.bz2
-share/doc/HTML/pt_BR/kdenlive/index.docbook
-share/doc/HTML/sv/kdenlive/common
-share/doc/HTML/sv/kdenlive/index.cache.bz2
-share/doc/HTML/sv/kdenlive/index.docbook
-share/doc/HTML/uk/kdenlive/Kdenlive-Quickstart-Add-Last-Clip.png
-share/doc/HTML/uk/kdenlive/Kdenlive-Quickstart-Add-Transition.png
-share/doc/HTML/uk/kdenlive/Kdenlive_Quickstart-Add-Clips.png
-share/doc/HTML/uk/kdenlive/Kdenlive_Quickstart-Add-Effect.png
-share/doc/HTML/uk/kdenlive/Kdenlive_Quickstart-Effect-Flag.png
-share/doc/HTML/uk/kdenlive/Kdenlive_Quickstart-Fadeout.png
-share/doc/HTML/uk/kdenlive/Kdenlive_Quickstart-Folder-Structure.png
-share/doc/HTML/uk/kdenlive/Kdenlive_Quickstart-Mainwindow.png
-share/doc/HTML/uk/kdenlive/Kdenlive_Quickstart-New-Project.png
-share/doc/HTML/uk/kdenlive/Kdenlive_Quickstart-Overlap-Clips.png
-share/doc/HTML/uk/kdenlive/Kdenlive_Quickstart-Renderer.png
-share/doc/HTML/uk/kdenlive/Kdenlive_Quickstart-Rendering.png
-share/doc/HTML/uk/kdenlive/Kdenlive_Quickstart-Resize-Marker.png
-share/doc/HTML/uk/kdenlive/Kdenlive_Quickstart-Save-Project.png
-share/doc/HTML/uk/kdenlive/Kdenlive_Quickstart-Timeline-Clips.png
-share/doc/HTML/uk/kdenlive/Kdenlive_Quickstart-TimelineCursor.png
-share/doc/HTML/uk/kdenlive/common
-share/doc/HTML/uk/kdenlive/index.cache.bz2
-share/doc/HTML/uk/kdenlive/index.docbook
 share/icons/hicolor/128x128/actions/kdenlive-select-all.png
 share/icons/hicolor/128x128/mimetypes/application-x-kdenlivetitle.png
 share/icons/hicolor/16x16/actions/kdenlive-add-clip.png
@@ -431,19 +391,3 @@ share/kde4/services/westleypreview.desktop
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/kdenlive.mo
 share/mime/packages/kdenlive.xml
 share/mime/packages/westley.xml
-@dirrm share/doc/HTML/uk/kdenlive
-@dirrm share/doc/HTML/sv/kdenlive
-@dirrm share/doc/HTML/pt_BR/kdenlive
-@dirrm share/doc/HTML/pt/kdenlive
-@dirrm share/doc/HTML/nl/kdenlive
-@dirrm share/doc/HTML/it/kdenlive
-@dirrm share/doc/HTML/es/kdenlive
-@dirrm share/doc/HTML/en/kdenlive
-@dirrm share/doc/HTML/ca/kdenlive
-@dirrm share/apps/kdenlive/titles
-@dirrm share/apps/kdenlive/pics
-@dirrm share/apps/kdenlive/lumas
-@dirrm share/apps/kdenlive/export
-@dirrm share/apps/kdenlive/effects/update
-@dirrm share/apps/kdenlive/effects
-@dirrm share/apps/kdenlive

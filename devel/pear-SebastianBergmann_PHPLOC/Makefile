@@ -13,8 +13,7 @@ COMMENT=	Tool for quickly measuring the size of a PHP project
 
 LICENSE=	BSD
 
-BUILD_DEPENDS=	pear>=1.9.4:${PORTSDIR}/devel/pear \
-		pear-Symfony_Component_Console>=1.1.0:${PORTSDIR}/devel/pear-Symfony_Component_Console \
+BUILD_DEPENDS=	pear-Symfony_Component_Console>=1.1.0:${PORTSDIR}/devel/pear-Symfony_Component_Console \
 		pear-SebastianBergmann_FinderFacade>=1.1.0:${PORTSDIR}/devel/pear-SebastianBergmann_FinderFacade \
 		pear-SebastianBergmann_Git>=1.0.0:${PORTSDIR}/devel/pear-SebastianBergmann_Git \
 		pear-SebastianBergmann_Version>=1.0.0:${PORTSDIR}/devel/pear-SebastianBergmann_Version \
@@ -23,8 +22,6 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USE_PHP=	tokenizer
 PEAR_CHANNEL=	phpunit
-PEAR_AUTOINSTALL=	yes
+USES=	pear
 
-.include <bsd.port.pre.mk>
-.include "${PORTSDIR}/devel/pear/bsd.pear.mk"
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -14,5 +14,3 @@ share/locale/fr/LC_MESSAGES/jack-rack.mo
 share/locale/de/LC_MESSAGES/jack-rack.mo
 share/locale/ru/LC_MESSAGES/jack-rack.mo
 share/pixmaps/jack-rack-icon.png
-@dirrmtry share/dtds
-@dirrm %%DATADIR%%

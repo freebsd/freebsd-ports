@@ -14,13 +14,12 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	libmaa.so:${PORTSDIR}/devel/libmaa
 
 USE_RC_SUBR=	${PORTNAME}
-USES=		bison libtool gmake
-USE_AUTOTOOLS=	libtoolize
+USES=		bison gmake libtool:build
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-etcdir=${PREFIX}/etc --with-cflags="${CFLAGS}" \
 		--without-local-zlib
 CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+LIBS+=		-L${LOCALBASE}/lib
 
 SUB_FILES+=	dictd.conf pkg-message
 SUB_LIST+=	PORTSDIR=${PORTSDIR}
@@ -35,6 +34,6 @@ post-patch:
 	@${REINPLACE_CMD} -e "s|\([\ \t(]\)T_USER|\1T_USERNAME|g" ${WRKSRC}/*.[chly]
 
 post-install:
-	@${CP} ${WRKDIR}/${PORTNAME}.conf ${STAGEDIR}${PREFIX}/etc/${PORTNAME}.conf.sample
+	@${INSTALL_DATA} ${WRKDIR}/${PORTNAME}.conf ${STAGEDIR}${PREFIX}/etc/${PORTNAME}.conf.sample
 
 .include <bsd.port.mk>

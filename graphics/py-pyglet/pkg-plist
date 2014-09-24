@@ -295,21 +295,3 @@
 %%PYTHON_SITELIBDIR%%/pyglet/window/xlib/xsync.py
 %%PYTHON_SITELIBDIR%%/pyglet/window/xlib/xsync.pyc
 %%PYTHON_SITELIBDIR%%/pyglet/window/xlib/xsync.pyo
-@dirrm %%PYTHON_SITELIBDIR%%/pyglet/window/xlib
-@dirrm %%PYTHON_SITELIBDIR%%/pyglet/window/win32
-@dirrm %%PYTHON_SITELIBDIR%%/pyglet/window/carbon
-@dirrm %%PYTHON_SITELIBDIR%%/pyglet/window
-@dirrm %%PYTHON_SITELIBDIR%%/pyglet/text/formats
-@dirrm %%PYTHON_SITELIBDIR%%/pyglet/text
-@dirrm %%PYTHON_SITELIBDIR%%/pyglet/media/drivers/openal
-@dirrm %%PYTHON_SITELIBDIR%%/pyglet/media/drivers/directsound
-@dirrm %%PYTHON_SITELIBDIR%%/pyglet/media/drivers/alsa
-@dirrm %%PYTHON_SITELIBDIR%%/pyglet/media/drivers
-@dirrm %%PYTHON_SITELIBDIR%%/pyglet/media
-@dirrm %%PYTHON_SITELIBDIR%%/pyglet/image/codecs
-@dirrm %%PYTHON_SITELIBDIR%%/pyglet/image
-@dirrm %%PYTHON_SITELIBDIR%%/pyglet/graphics
-@dirrm %%PYTHON_SITELIBDIR%%/pyglet/gl
-@dirrm %%PYTHON_SITELIBDIR%%/pyglet/font
-@dirrm %%PYTHON_SITELIBDIR%%/pyglet/app
-@dirrm %%PYTHON_SITELIBDIR%%/pyglet

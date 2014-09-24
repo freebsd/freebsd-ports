@@ -149,6 +149,7 @@
     SUBDIR += libpbl
     SUBDIR += libsdb
     SUBDIR += libzdb
+    SUBDIR += linux-c6-sqlite3
     SUBDIR += linux-f10-sqlite3
     SUBDIR += linux-oracle-instantclient-basic
     SUBDIR += linux-oracle-instantclient-sdk
@@ -808,12 +809,6 @@
     SUBDIR += rrdtool12
     SUBDIR += ruby-bdb
     SUBDIR += ruby-cdb
-    SUBDIR += ruby-dbd_mysql
-    SUBDIR += ruby-dbd_odbc
-    SUBDIR += ruby-dbd_pg
-    SUBDIR += ruby-dbd_sqlite
-    SUBDIR += ruby-dbd_sqlite3
-    SUBDIR += ruby-dbi
     SUBDIR += ruby-gdbm
     SUBDIR += ruby-mysql
     SUBDIR += ruby-o_dbm
@@ -838,6 +833,10 @@
     SUBDIR += rubygem-couchrest
     SUBDIR += rubygem-data_objects
     SUBDIR += rubygem-datamapper
+    SUBDIR += rubygem-dbd-mysql
+    SUBDIR += rubygem-dbd-odbc
+    SUBDIR += rubygem-dbd-pg
+    SUBDIR += rubygem-dbd-sqlite3
     SUBDIR += rubygem-dbi
     SUBDIR += rubygem-dm-active_model
     SUBDIR += rubygem-dm-aggregates

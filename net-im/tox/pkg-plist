@@ -2,6 +2,7 @@ bin/DHT_bootstrap
 include/tox/tox.h
 include/tox/toxav.h
 include/tox/toxdns.h
+include/tox/toxencryptsave.h
 lib/libtoxav.a
 %%SODIUM%%lib/libtoxav.so
 %%SODIUM%%lib/libtoxav.so.0
@@ -14,6 +15,9 @@ lib/libtoxdns.a
 %%SODIUM%%lib/libtoxdns.so
 %%SODIUM%%lib/libtoxdns.so.0
 %%SODIUM%%lib/libtoxdns.so.0.0.0
+lib/libtoxencryptsave.a
+%%SODIUM%%lib/libtoxencryptsave.so
+%%SODIUM%%lib/libtoxencryptsave.so.0
+%%SODIUM%%lib/libtoxencryptsave.so.0.0.0
 libdata/pkgconfig/libtoxav.pc
 libdata/pkgconfig/libtoxcore.pc
-@dirrm include/tox

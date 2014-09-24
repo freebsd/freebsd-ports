@@ -3,6 +3,7 @@
 
 PORTNAME=	libid3tag
 PORTVERSION=	0.15.1b
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	SF/mad/${PORTNAME}/${PORTVERSION} \
 		ftp://ftp.mars.org/pub/mpeg/
@@ -14,11 +15,9 @@ LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual
 
 GNU_CONFIGURE=	yes
+INSTALL_TARGET=	install-strip
+USES=		libtool pkgconfig
 USE_LDCONFIG=	yes
-USES=		pkgconfig
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|echo aout|echo elf|g' ${WRKSRC}/configure
 
 post-build:
 	cd ${WRKSRC} && CONFIG_FILES=id3tag.pc CONFIG_HEADERS= ${SH} ./config.status

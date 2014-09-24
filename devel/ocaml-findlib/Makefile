@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	findlib
-PORTVERSION=	1.5.2
+PORTVERSION=	1.5.3
 CATEGORIES=	devel
 MASTER_SITES=	http://download.camlcity.org/download/
 PKGNAMEPREFIX=	ocaml-
@@ -43,12 +43,5 @@ post-install:
 	cd ${WRKSRC}/doc && ${COPYTREE_SHARE} \* ${STAGEDIR}${DOCSDIR} \
 		"! -regex .*ref-man.*"
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/ocamlfind
-	# Copied from Makefile; requires functional installation:
-	cd ${WRKSRC}/src/bytes/_build && \
-	${SETENV} ${MAKE_ENV} \
-		OCAMLFIND_CONF=${STAGEDIR}${PREFIX}/etc/findlib.conf \
-		${STAGEDIR}${PREFIX}/bin/ocamlfind install bytes ../META \
-			bytes.cmi bytes.cma -optional \
-			bytes.cmx bytes.cmxa bytes.a bytes.cmxs
 
 .include <bsd.port.mk>

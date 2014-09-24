@@ -1,3 +1,5 @@
+@owner %%WWWOWN%%
+@group %%WWWGRP%%
 %%PHPBT%%/CHANGELOG
 %%PHPBT%%/COPYING
 %%PHPBT%%/INSTALL
@@ -214,4 +216,6 @@
 @dirrm %%PHPBT%%/templates/default
 @dirrm %%PHPBT%%/templates
 @dirrm %%PHPBT%%
+@owner root
+@group wheel
 @dirrmtry www/data-dist

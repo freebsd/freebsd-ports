@@ -17,7 +17,7 @@ Autotools_Include_MAINTAINER=	autotools@FreeBSD.org
 #	autoconf213, autoheader213 (legacy version)
 #	automake, aclocal
 #	automake14, aclocal14 (legacy version)
-#	libtool, libtoolize, libltdl
+#	libtoolize
 #
 # ':env' is used to specify that the environmental variables are needed
 #	but the relevant tool should NOT be run as part of the
@@ -41,12 +41,6 @@ Autotools_Include_MAINTAINER=	autotools@FreeBSD.org
 # LIBTOOLIZE_ARGS=...
 #	- Extra arguments passed to libtoolize during configure step
 #
-# LIBTOOLFLAGS=<value>
-#	- Arguments passed to libtool during configure step
-#
-# LIBTOOLFILES=<list-of-files>
-#	- A list of files to patch during libtool pre-configuration
-#
 # AUTOTOOLSFILES=<list-of-files>
 #	- A list of files to further patch with derived information
 #	  post-patching to reduce churn during component updates
@@ -60,7 +54,7 @@ Autotools_Include_MAINTAINER=	autotools@FreeBSD.org
 # Known autotools components
 _AUTOTOOLS_ALL=	autoconf autoheader autoconf213 autoheader213 \
 		automake aclocal automake14 aclocal14 \
-		libtool libtoolize libltdl
+		libtoolize
 
 # Incompatible autotools mixing
 _AUTOTOOLS_IGN_autoconf=	autoconf213 autoheader213
@@ -254,25 +248,13 @@ BUILD_DEPENDS+=		${AUTOCONF_DEPENDS}
 .endif
 
 #---------------------------------------------------------------------------
-# libltdl
+# libtoolize
 #---------------------------------------------------------------------------
 
-.if defined(_AUTOTOOL_libltdl)
-LIB_DEPENDS+=		libltdl.so:${PORTSDIR}/devel/libltdl
-.endif
-
-#---------------------------------------------------------------------------
-# libtool/libtoolize
-#---------------------------------------------------------------------------
-
-.if defined(_AUTOTOOL_libtool) || defined(_AUTOTOOL_libtoolize)
+.if defined(_AUTOTOOL_libtoolize)
 LIBTOOL_VERSION=	2.4
 LIBTOOL_PORT=		devel/libtool
 
-. if defined(_AUTOTOOL_libtool) && ${_AUTOTOOL_libtool} == "yes"
-_AUTOTOOL_rule_libtool=		yes
-GNU_CONFIGURE?=			yes
-. endif
 . if defined(_AUTOTOOL_libtoolize) && ${_AUTOTOOL_libtoolize} == "yes"
 _AUTOTOOL_rule_libtoolize=	yes
 GNU_CONFIGURE?=			yes
@@ -281,27 +263,17 @@ GNU_CONFIGURE?=			yes
 .endif
 
 .if defined(LIBTOOL_VERSION)
-LIBTOOL=		${LOCALBASE}/bin/libtool
 LIBTOOLIZE=		${LOCALBASE}/bin/libtoolize
 LIBTOOL_LIBEXECDIR=	${LOCALBASE}/libexec/libtool
 LIBTOOL_SHAREDIR=	${LOCALBASE}/share/libtool
 LIBTOOL_M4=		${LOCALBASE}/share/aclocal/libtool.m4
 LTMAIN=			${LOCALBASE}/share/libtool/config/ltmain.sh
 
-LIBTOOL_VARS=		LIBTOOL=${LIBTOOL} \
-			LIBTOOLIZE=${LIBTOOLIZE} \
+LIBTOOL_VARS=		LIBTOOLIZE=${LIBTOOLIZE} \
 			LIBTOOL_LIBEXECDIR=${LIBTOOL_LIBEXECDIR} \
 			LIBTOOL_SHAREDIR=${LIBTOOL_SHAREDIR} \
 			LIBTOOL_M4=${LIBTOOL_M4} \
 			LTMAIN=${LTMAIN}
-
-LIBTOOLFLAGS?=		# default to empty
-
-. if defined(_AUTOTOOL_rule_autoconf) || defined(_AUTOTOOL_rule_autoconf213)
-LIBTOOLFILES?=		aclocal.m4
-. elif defined(_AUTOTOOL_rule_libtool)
-LIBTOOLFILES?=		${CONFIGURE_SCRIPT}
-. endif
 
 LIBTOOLIZE_ARGS?=	-i -c -f
 
@@ -327,12 +299,12 @@ ${var:tu}_ENV+=		${AUTOTOOLS_VARS}
 
 .if !target(run-autotools)
 .ORDER:		run-autotools run-autotools-libtoolize run-autotools-aclocal \
-		patch-autotools-libtool run-autotools-autoconf \
-		run-autotools-autoheader run-autotools-automake
+		run-autotools-autoconf run-autotools-autoheader \
+		run-autotools-automake
 
 run-autotools::	run-autotools-libtoolize run-autotools-aclocal \
-		patch-autotools-libtool run-autotools-autoconf \
-		run-autotools-autoheader run-autotools-automake
+		run-autotools-autoconf run-autotools-autoheader \
+		run-autotools-automake
 .endif
 
 .if !target(run-autotools-aclocal)
@@ -380,20 +352,6 @@ run-autotools-libtoolize:
 . if defined(_AUTOTOOL_rule_libtoolize)
 	@(cd ${CONFIGURE_WRKSRC} && ${SETENV} ${AUTOTOOLS_ENV} ${LIBTOOLIZE} \
 		${LIBTOOLIZE_ARGS})
-. else
-	@${DO_NADA}
-. endif
-.endif
-
-.if !target(patch-autotools-libtool)
-patch-autotools-libtool::
-. if defined(_AUTOTOOL_rule_libtool)
-	@for file in ${LIBTOOLFILES}; do \
-		${REINPLACE_CMD} -e \
-			"/^ltmain=/!s|\$$ac_aux_dir/ltmain.sh|${LIBTOOLFLAGS} ${LTMAIN}|g; \
-			/^LIBTOOL=/s|\$$(top_builddir)/libtool|${LIBTOOL}|g" \
-			${PATCH_WRKSRC}/$$file; \
-	done;
 . else
 	@${DO_NADA}
 . endif

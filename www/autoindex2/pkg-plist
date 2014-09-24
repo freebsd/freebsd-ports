@@ -230,16 +230,5 @@
 %%INSTALLDIR%%/templates/readme.html
 @owner
 @group
-@dirrm %%INSTALLDIR%%/classes
-@dirrm %%INSTALLDIR%%/index_icons/apache
-@dirrm %%INSTALLDIR%%/index_icons/kde
-@dirrm %%INSTALLDIR%%/index_icons/osx
-@dirrm %%INSTALLDIR%%/index_icons/winvista
-@dirrm %%INSTALLDIR%%/index_icons/winxp
-@dirrm %%INSTALLDIR%%/index_icons
-@dirrm %%INSTALLDIR%%/languages
-@dirrm %%INSTALLDIR%%/templates/default
-@dirrm %%INSTALLDIR%%/templates/simple_image_gallery
-@dirrm %%INSTALLDIR%%/templates
-@dirrmtry %%INSTALLDIR%%
+@dir %%INSTALLDIR%%
 

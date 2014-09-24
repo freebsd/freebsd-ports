@@ -1,6 +1,6 @@
---- Makefile.orig	2014-01-11 00:15:02.000000000 +0800
-+++ Makefile	2014-01-11 00:16:03.000000000 +0800
-@@ -129,16 +129,16 @@ install: all
+--- Makefile.orig	2012-03-22 11:43:52 UTC
++++ Makefile
+@@ -129,16 +129,14 @@
  	@echo "(the default theme is missing)"
  .else
  	@echo installing executable file to ${DEST_PREFIX}/bin
@@ -11,7 +11,6 @@
 +	@mkdir -p $(DESTDIR)${DEST_PREFIX}/bin
 +	@cp -f metalock $(DESTDIR)${DEST_PREFIX}/bin
 +	@chmod 755 $(DESTDIR)${DEST_PREFIX}/bin/metalock
-+	@chmod u+s $(DESTDIR)${DEST_PREFIX}/bin/metalock
  	@echo -n "installing theme to "
  	@echo "${DEST_PREFIX}/share/metalock/themes/${DEFAULT_THEME}"
 -	@mkdir -p ${DEST_PREFIX}/share/metalock/themes
@@ -20,7 +19,6 @@
 -	@chmod 644 ${DEST_PREFIX}/share/metalock/themes/${DEFAULT_THEME}/*
 +	@mkdir -p $(DESTDIR)${DEST_PREFIX}/share/metalock/themes
 +	@cp -pRf ../themes/${DEFAULT_THEME} $(DESTDIR)${DEST_PREFIX}/share/metalock/themes
-+	@chown 0:0 $(DESTDIR)${DEST_PREFIX}/share/metalock/themes/${DEFAULT_THEME}/*
 +	@chmod 644 $(DESTDIR)${DEST_PREFIX}/share/metalock/themes/${DEFAULT_THEME}/*
  	@echo "finished installing metalock"
  .endif

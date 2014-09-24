@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	php5
-PORTVERSION=	5.4.32
+PORTVERSION=	5.4.33
 PORTREVISION?=	0
 CATEGORIES?=	lang devel www
 MASTER_SITES=	${MASTER_SITE_PHP}
@@ -17,13 +17,12 @@ LICENSE=	PHP301
 LATEST_LINK=	${PKGNAMEPREFIX}${PORTNAME}${PKGNAMESUFFIX}
 
 USES=		tar:bzip2 cpe
+CPE_PRODUCT=	php
 NO_OPTIONS_SORT=yes
 .if !defined(PKGNAMESUFFIX)
 USE_AUTOTOOLS=	autoconf
 
 LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre
-
-CPE_PRODUCT=	php
 
 CONFIGURE_ARGS+=--with-layout=GNU \
 		--localstatedir=/var \
@@ -143,6 +142,7 @@ CONFIGURE_ARGS+=--with-zend-vm=GOTO
 
 CONFIGURE_ENV+=	ac_cv_pthreads_lib="" \
 		ac_cv_pthreads_cflags="" \
+		ac_cv_decimal_fp_supported="no" \
 		pthreads_working="yes" \
 		lt_cv_path_SED="sed"
 

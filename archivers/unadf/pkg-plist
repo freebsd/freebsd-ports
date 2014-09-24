@@ -1,0 +1,51 @@
+bin/unadf
+include/adflib/adf_bitm.h
+include/adflib/adf_blk.h
+include/adflib/adf_cache.h
+include/adflib/adf_defs.h
+include/adflib/adf_dir.h
+include/adflib/adf_disk.h
+include/adflib/adf_dump.h
+include/adflib/adf_env.h
+include/adflib/adf_err.h
+include/adflib/adf_file.h
+include/adflib/adf_hd.h
+include/adflib/adf_link.h
+include/adflib/adf_nativ.h
+include/adflib/adf_raw.h
+include/adflib/adf_salv.h
+include/adflib/adf_str.h
+include/adflib/adf_util.h
+include/adflib/adflib.h
+include/adflib/defendian.h
+include/adflib/hd_blk.h
+include/adflib/prefix.h
+lib/libadf.a
+lib/libadf.so
+lib/libadf.so.0
+lib/libadf.so.0.0.12
+libdata/pkgconfig/adflib.pc
+%%PORTDOCS%%%%DOCSDIR%%/API.txt
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/FAQ/adf_info.html
+%%PORTDOCS%%%%DOCSDIR%%/FAQ/adf_info.txt
+%%PORTDOCS%%%%DOCSDIR%%/FAQ/adf_info_V0_9.txt
+%%PORTDOCS%%%%DOCSDIR%%/FAQ/image/adf_dir.gif
+%%PORTDOCS%%%%DOCSDIR%%/FAQ/image/adf_file.gif
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/api_device.html
+%%PORTDOCS%%%%DOCSDIR%%/api_dir.html
+%%PORTDOCS%%%%DOCSDIR%%/api_env.html
+%%PORTDOCS%%%%DOCSDIR%%/api_file.html
+%%PORTDOCS%%%%DOCSDIR%%/api_index.html
+%%PORTDOCS%%%%DOCSDIR%%/api_native.html
+%%PORTDOCS%%%%DOCSDIR%%/api_salv.html
+%%PORTDOCS%%%%DOCSDIR%%/api_volume.html
+%%PORTDOCS%%%%DOCSDIR%%/version0.7.9d_gary.txt
+@dirrm %%PORTDOCS%%%%DOCSDIR%%/FAQ/image
+@dirrm %%PORTDOCS%%%%DOCSDIR%%/FAQ
+@dirrm %%PORTDOCS%%%%DOCSDIR%%
+@dirrm include/adflib

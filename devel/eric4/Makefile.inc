@@ -22,7 +22,7 @@ I18N_LANG?=	ru
 INSTALL_CMD?=	install-i18n.py -p ${STAGEDIR}
 MAKE_ENV+=	"HOME=${WRKDIR}"
 
-USE_PYTHON=	yes
+USES+=		python:2
 NO_BUILD=	yes
 PLIST_FILES?=	%%DATADIR%%/i18n/${PORTNAME}_${I18N_LANG}.qm
 EXTRA_PATCHES?=	${.CURDIR}/../../devel/eric4/files/extra-patch-install-i18n.py

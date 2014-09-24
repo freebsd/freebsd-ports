@@ -11,6 +11,7 @@ MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Physics-based sandbox game
 
 LICENSE=	GPLv3
+LICENSE_FILE=	${WRKSRC}/doc/caph/COPYING
 
 LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png
 
@@ -33,12 +34,7 @@ DESKTOP_ENTRIES="Caph" \
 
 OPTIONS_DEFINE=	DOCS OPTIMIZED_CFLAGS
 OPTIONS_DEFAULT=OPTIMIZED_CFLAGS
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MOPTIMIZED_CFLAGS}
-CFLAGS+=	-O3 -ffast-math
-.endif
+OPTIMIZED_CFLAGS_CFLAGS=	-O3 -ffast-math
 
 do-build:
 	cd ${BUILD_WRKSRC} && ${CC} ${CFLAGS} -o caph -I../include *.c \

@@ -526,7 +526,6 @@
     SUBDIR += moosefs-client
     SUBDIR += moosefs-master
     SUBDIR += moreutils
-    SUBDIR += moreutils-parallel
     SUBDIR += most
     SUBDIR += mount.app
     SUBDIR += mountsmb2
@@ -672,7 +671,6 @@
     SUBDIR += pftables
     SUBDIR += pftop
     SUBDIR += phantom
-    SUBDIR += philesight
     SUBDIR += php5-fileinfo
     SUBDIR += php5-posix
     SUBDIR += php53-fileinfo
@@ -831,6 +829,7 @@
     SUBDIR += rubygem-teamocil
     SUBDIR += rubygem-winrm
     SUBDIR += rubygem-yell
+    SUBDIR += rundeck
     SUBDIR += runit
     SUBDIR += runwhen
     SUBDIR += safe-rm

@@ -17,7 +17,8 @@ COMMENT=	Free RADIUS server implementation
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libgdbm.so:${PORTSDIR}/databases/gdbm
+LIB_DEPENDS=	libgdbm.so:${PORTSDIR}/databases/gdbm \
+		libltdl.so:${PORTSDIR}/devel/libltdl
 
 LOGDIR?=	/var/log
 KRB5_CONFIG?=	/usr/bin/krb5-config --libs
@@ -29,7 +30,7 @@ USE_RC_SUBR=	radiusd
 
 USES=		gmake libtool shebangfix tar:bzip2
 SHEBANG_FILES=	scripts/radsqlrelay src/modules/rlm_counter/rad_counter
-USE_AUTOTOOLS=	libltdl libtoolize aclocal autoconf autoheader
+USE_AUTOTOOLS=	libtoolize aclocal autoconf autoheader
 USE_OPENSSL=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 CFLAGS+=	${CPPFLAGS}

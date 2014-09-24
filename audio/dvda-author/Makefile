@@ -13,16 +13,16 @@ MAINTAINER=	martin.dieringer@gmx.de
 COMMENT=	Author and playback unencrypted and uncompressed Audio-DVDs
 
 LIB_DEPENDS=	libFLAC.so:${PORTSDIR}/audio/flac \
-	libogg.so:${PORTSDIR}/audio/libogg \
-	libsox.so:${PORTSDIR}/audio/sox \
-	libsamplerate.so:${PORTSDIR}/audio/libsamplerate \
-	libpng15.so:${PORTSDIR}/graphics/png
+		libogg.so:${PORTSDIR}/audio/libogg \
+		libsox.so:${PORTSDIR}/audio/sox \
+		libsamplerate.so:${PORTSDIR}/audio/libsamplerate \
+		libltdl.so:${PORTSDIR}/devel/libltdl \
+		libpng15.so:${PORTSDIR}/graphics/png
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 LDFLAGS+=	-L${LOCALBASE}/lib
 CPPFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/FLAC
 
-USE_AUTOTOOLS=	libltdl
 USES=		tar:bzip2
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-flac=${LOCALBASE}/lib/libFLAC.so \

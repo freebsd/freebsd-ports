@@ -2,7 +2,7 @@
 
 PORTNAME=	libva
 PORTVERSION=	1.3.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	multimedia
 MASTER_SITES=	http://cgit.freedesktop.org/${PORTNAME}/snapshot/
 
@@ -15,12 +15,10 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 BUILD_DEPENDS=	${LOCALBASE}/include/linux/videodev2.h:${PORTSDIR}/multimedia/v4l_compat
 LIB_DEPENDS=	libdrm.so:${PORTSDIR}/graphics/libdrm
 
-USES=		libtool:keepla pkgconfig tar:bzip2
+USES=		autoreconf libtool pkgconfig tar:bzip2
 USE_XORG=	glproto pciaccess xext xfixes
 USE_GL=		gl
-USE_AUTOTOOLS=	aclocal autoheader automake autoconf libtoolize
-ACLOCAL_ARGS=	-I.
-AUTOMAKE_ARGS=	--add-missing
+GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--program-prefix=va
 USE_LDCONFIG=	yes
 
@@ -51,21 +49,13 @@ INSTALL_TARGET=	install-strip
 
 post-patch:	.SILENT
 	${REINPLACE_CMD} -e 's|\($$libdir\)/dri|\1/va|' \
-		-e 's|$${libdir}/\(pkgconfig\)|$${prefix}/libdata/\1|' \
-		-e 's/\(LIBVA_LT_CURRENT\)=libva_lt_current/\1=1/' \
-		-e 's/\(LIBVA_LT_REV\)=libva_lt_revision/\1=3301/' \
-		-e 's/\(LIBVA_LT_AGE\)=libva_lt_age/\1=0/' \
+		-e 's|$${libdir}/\(pkgconfig\)|${PREFIX}/libdata/\1|' \
 		${WRKSRC}/configure.ac
 	${REINPLACE_CMD} -e 's/va\(info\)/\1/g' -e 's/info\.c/vainfo\.c/' \
 		${WRKSRC}/test/vainfo/Makefile.am
 	${REINPLACE_CMD} '/^export VA_HEADER_/d' \
 		${WRKSRC}/doc/Makefile.am
 	${REINPLACE_CMD} 's/-ldl//' ${WRKSRC}/va/Makefile.am
-
-# XXX: work around an issue with automake-1.13 erroring out on a
-#      non-existent m4 directory before libtoolize creates it
-pre-configure::
-	@${MKDIR} ${WRKSRC}/m4
 
 post-configure:	.SILENT
 	${REINPLACE_CMD} 's/-lpthread/${PTHREAD_LIBS}/' \

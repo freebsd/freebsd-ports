@@ -31,8 +31,9 @@ OPTIONS_DEFINE+=	GDBM
 
 .else	# !defined(PKGNAMESUFFIX)
 
+LIB_DEPENDS+=	libltdl.so:${PORTSDIR}/devel/libltdl
+
 USES=		iconv gmake libtool perl5 tar:bzip2
-USE_AUTOTOOLS=	libltdl
 GNU_CONFIGURE=	yes
 USE_SUBMAKE=	yes
 

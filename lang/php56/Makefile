@@ -17,13 +17,12 @@ LICENSE=	PHP301
 LATEST_LINK=	${PKGNAMEPREFIX}${PORTNAME}${PKGNAMESUFFIX}
 
 USES=		tar:bzip2 cpe
+CPE_PRODUCT=	php
 NO_OPTIONS_SORT=yes
 .if !defined(PKGNAMESUFFIX)
 USE_AUTOTOOLS=	autoconf
 
 LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre
-
-CPE_PRODUCT=	php
 
 CONFIGURE_ARGS+=--with-layout=GNU \
 		--localstatedir=/var \

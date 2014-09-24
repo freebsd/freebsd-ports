@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	walcommander
-PORTVERSION=	0.16.1.git20140829
+PORTVERSION=	0.17.0
 CATEGORIES=	x11-fm
 
 MAINTAINER=	amdmi3@FreeBSD.org
@@ -14,13 +14,11 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 USE_GITHUB=	yes
 GH_ACCOUNT=	corporateshark
 GH_PROJECT=	WalCommander
-GH_TAGNAME=	${GH_COMMIT}
-GH_COMMIT=	7038a3e
+GH_TAGNAME=	release-${PORTVERSION}
+GH_COMMIT=	a73beeb
 
-USES=		cmake:outsource
+USES=		compiler:c++11-lib cmake
 USE_XORG=	x11
-
-CMAKE_SOURCE_PATH=${WRKSRC}/wcm
 
 PORTDOCS=	CHANGELOG CHANGELOG.GitHub README.md readme_eng.txt
 

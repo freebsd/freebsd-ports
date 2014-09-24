@@ -31,48 +31,23 @@ share/icons/hicolor/24x24/apps/gitg.png
 share/icons/hicolor/256x256/apps/gitg.png
 share/icons/hicolor/32x32/apps/gitg.png
 share/icons/hicolor/48x48/apps/gitg.png
-share/icons/hicolor/512x512/apps/gitg.png
-share/locale/ca/LC_MESSAGES/gitg.mo
-share/locale/cs/LC_MESSAGES/gitg.mo
-share/locale/da/LC_MESSAGES/gitg.mo
-share/locale/de/LC_MESSAGES/gitg.mo
-share/locale/el/LC_MESSAGES/gitg.mo
-share/locale/en_GB/LC_MESSAGES/gitg.mo
-share/locale/es/LC_MESSAGES/gitg.mo
-share/locale/fi/LC_MESSAGES/gitg.mo
-share/locale/fr/LC_MESSAGES/gitg.mo
-share/locale/gl/LC_MESSAGES/gitg.mo
-share/locale/he/LC_MESSAGES/gitg.mo
-share/locale/id/LC_MESSAGES/gitg.mo
-share/locale/it/LC_MESSAGES/gitg.mo
-share/locale/ko/LC_MESSAGES/gitg.mo
-share/locale/lt/LC_MESSAGES/gitg.mo
-share/locale/nb/LC_MESSAGES/gitg.mo
-share/locale/nl/LC_MESSAGES/gitg.mo
-share/locale/pa/LC_MESSAGES/gitg.mo
-share/locale/pl/LC_MESSAGES/gitg.mo
-share/locale/pt_BR/LC_MESSAGES/gitg.mo
-share/locale/ro/LC_MESSAGES/gitg.mo
-share/locale/ru/LC_MESSAGES/gitg.mo
-share/locale/sl/LC_MESSAGES/gitg.mo
-share/locale/sr/LC_MESSAGES/gitg.mo
-share/locale/sr@latin/LC_MESSAGES/gitg.mo
-share/locale/sv/LC_MESSAGES/gitg.mo
-share/locale/uk/LC_MESSAGES/gitg.mo
-share/locale/zh_CN/LC_MESSAGES/gitg.mo
-share/vala/vapi/libgitg-1.0.vapi
-share/vala/vapi/libgitg-ext-1.0.vapi
-@dirrmtry share/icons/hicolor/512x512/apps
-@dirrmtry share/icons/hicolor/512x512
-@dirrmtry share/appdata
-@dirrm lib/gitg/plugins
-@dirrm lib/gitg
-@dirrm include/libgitg-ext-1.0/libgitg-ext
-@dirrm include/libgitg-ext-1.0
-@dirrm include/libgitg-1.0/libgitg
-@dirrm include/libgitg-1.0
-@dirrmtry %%DATADIR%%/icons/hicolor/scalable/actions
-@dirrmtry %%DATADIR%%/icons/hicolor/scalable
-@dirrmtry %%DATADIR%%/icons/hicolor
-@dirrmtry %%DATADIR%%/icons
-@dirrmtry %%DATADIR%%
+share/icons/hicolor/scalable/apps/gitg.svg
+%%NLS%%share/locale/da/LC_MESSAGES/gitg.mo
+%%NLS%%share/locale/de/LC_MESSAGES/gitg.mo
+%%NLS%%share/locale/en_GB/LC_MESSAGES/gitg.mo
+%%NLS%%share/locale/es/LC_MESSAGES/gitg.mo
+%%NLS%%share/locale/fr/LC_MESSAGES/gitg.mo
+%%NLS%%share/locale/gl/LC_MESSAGES/gitg.mo
+%%NLS%%share/locale/it/LC_MESSAGES/gitg.mo
+%%NLS%%share/locale/ko/LC_MESSAGES/gitg.mo
+%%NLS%%share/locale/lt/LC_MESSAGES/gitg.mo
+%%NLS%%share/locale/nb/LC_MESSAGES/gitg.mo
+%%NLS%%share/locale/nl/LC_MESSAGES/gitg.mo
+%%NLS%%share/locale/pa/LC_MESSAGES/gitg.mo
+%%NLS%%share/locale/pt_BR/LC_MESSAGES/gitg.mo
+%%NLS%%share/locale/ro/LC_MESSAGES/gitg.mo
+%%NLS%%share/locale/ru/LC_MESSAGES/gitg.mo
+%%NLS%%share/locale/sl/LC_MESSAGES/gitg.mo
+%%NLS%%share/locale/sv/LC_MESSAGES/gitg.mo
+%%NLS%%share/locale/uk/LC_MESSAGES/gitg.mo
+%%NLS%%share/locale/zh_CN/LC_MESSAGES/gitg.mo

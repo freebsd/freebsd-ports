@@ -12,6 +12,7 @@ COMMENT=	Tool for monitoring IPv6 address usage
 
 LICENSE=	GPLv3
 
+USES=		uidfix
 CFLAGS+=	-DIPV6MON_CONF=\\\"${PREFIX}/etc/ipv6mon.conf\\\"
 USERS=		${PORTNAME}
 GROUPS=		${PORTNAME}

@@ -1,0 +1,47 @@
+This is the core code base for the Calendar and Contacts Server,
+which is a CalDAV, CardDAV, WebDAV, and HTTP server.
+
+For general information about the server, see:
+	http://www.calendarserver.org/
+plus online DOCs, including RFCs (if installed).
+
+Getting Started
+---------------
+
+Before you can run the server, you need to set up a configuration file
+(etc/caldavd/caldavd.plist).
+If you installed the examples configuration, you could start with a test
+configuration by copying and editing from
+%%PREFIX%%/share/examples/calendarserver/ to %%PREFIX%%/etc/caldavd/
+the files
+caldavd*.plist
+auth/accounts.dtd
+auth/accounts.xml
+auth/augments.dtd
+auth/augments-test.xml
+auth/proxies.dtd
+auth/proxies-test.xml
+
+You will need to choose a "directory service" to use to populate your server's
+principals (users, groups and resources). A directory service provides
+the Calendar and Contacts Server with information about these principals.
+
+Some of the directory services which are supported by the Calendar and
+Contacts Server include:
+
+- XMLDirectoryService: this service is configurable via an XML file that
+contains principal information. The file auth/accounts.xml provides
+an example principals configuration.
+
+- OpenDirectoryService: this service uses Apple's OpenDirectory client (which in
+turn uses LDAP, Active Directory, etc.) to obtain principal information.
+The above configuration uses XMLDirectoryService by default.
+This is a generally useful configuration for development and testing.
+
+This file contains a user principal, named admin, with password admin,
+which is set up (in caldavd-test.plist) to have administrative permissions
+on the server.
+
+Updates from earlier versions may require a DB schema update, which is done
+automatically on server start up, if <key>FailIfUpgradeNeeded</key> is set to
+<true/>.

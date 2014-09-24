@@ -4,36 +4,36 @@
 #
 # A quick note on configurable make symbols:
 #
-# INTERACTIVE_CONFIGURE: Launches Configure in its default mode,
-#	which is *very* interactive. Disabled here by default to conform to
-#	FreeBSD guidelines, this mode is useful if you have problems with the
+# INTERACTIVE_CONFIGURE: Launches Configure in its default mode, which is
+#	*very* interactive. Disabled here by default to conform to FreeBSD
+#	guidelines, this mode is useful if you have problems with the
 #	default Configure.
 #
-# WITH_GUI: Disable this to build a headless version of Gtk-Gnutella.
-#       Therefore, monitoring of operations for Gtk-Gnutella will have to be
-#       done without relying on any GUI, and the configuration is done via
-#       files only.
+# GUI: Disable this to build a headless version of Gtk-Gnutella. Therefore,
+#	monitoring of operations for Gtk-Gnutella will have to be
+#	done without relying on any GUI, and the configuration is done via
+#	files only.
 #
-# WITH_TLS: Enable support for scrambling GNet connections. Currently supported
-#       only by Gtk-Gnutella.
+# TLS: Enable support for scrambling GNet connections. Currently supported
+#	only by Gtk-Gnutella.
 #
-# WITH_NLS: Enable National Language Support for translation of User Interface.
+# NLS: Enable National Language Support for translation of User Interface.
 #
-# WITH_IPV6: Enable to support IPv6 connections. The real configuration takes
-#       place at run-time so keeping it enabled will not force IPv6 usage.
+# IPV6: Enable to support IPv6 connections. The real configuration takes
+#	place at run-time so keeping it enabled will not force IPv6 usage.
 #
-# WITH_DBUS: Enable D-Bus IPC support. No further information available.
+# DBUS: Enable D-Bus IPC support. No further information available.
 #
-# WITH_DEBUG: Compile with debugging symbols. Useful if you intend to make
-#	a bug report.
+# DEBUG: Compile with debugging symbols. Useful if you intend to make a
+#	bug report.
 #
-# WITH_PORTABILITY: Configure code to use the PATH variable at run-time
-#	at a cost in performance. Useful if you intend to move the executable
+# PORTABILITY: Configure code to use the PATH variable at run-time at a
+#	cost in performance. Useful if you intend to move the executable
 #	to multiple machines.
 #
 
 PORTNAME=	gtk-gnutella
-PORTVERSION=	1.1.0
+PORTVERSION=	1.1.1
 CATEGORIES=	net-p2p ipv6
 MASTER_SITES=	SF
 
@@ -68,7 +68,7 @@ OPTIONS_DEFINE=		DBUS DEBUG GUI IPV6 NLS PORTABILITY TLS
 OPTIONS_DEFAULT=	GUI TLS
 OPTIONS_SUB=		yes
 
-DBUS_LIB_DEPENDS=	libdbus.so:${PORTSDIR}/devel/dbus
+DBUS_LIB_DEPENDS=	libdbus-1.so:${PORTSDIR}/devel/dbus
 DBUS_CONFIGURE_OFF=	-Ud_dbus
 DEBUG_CONFIGURE_ON=	-Ud_official
 GUI_USE=		gnome=gtk20
@@ -90,6 +90,9 @@ CONFIGURE_ARGS+=	-ders
 .if ${PORT_OPTIONS:MGUI}
 INSTALLS_ICONS=	yes
 .endif
+
+post-extract:
+	@${CHMOD} -R a+rX ${WRKSRC}
 
 post-patch:
 	@${FIND} ${WRKSRC} -name "Makefile.SH" | ${XARGS} ${REINPLACE_CMD} -e \

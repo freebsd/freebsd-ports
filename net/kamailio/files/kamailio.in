@@ -1,0 +1,29 @@
+#!/bin/sh
+#
+# $FreeBSD: net/kamailio/files/kamailio.in
+#
+# PROVIDE: kamailio
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Add the following line to /etc/rc.conf to enable this service
+# at system startup:
+#
+# kamailio_enable (bool): Set to NO by default.
+# 			  Set it to YES to enable kamailio.
+#
+
+. /etc/rc.subr
+
+name=kamailio
+rcvar=kamailio_enable
+
+load_rc_config ${name}
+
+: ${kamailio_enable:=NO}
+
+command="/usr/local/sbin/kamailio"
+required_files="/usr/local/etc/kamailio/kamailio.cfg"
+
+
+run_rc_command $1

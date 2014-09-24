@@ -2,7 +2,6 @@
 
 PORTNAME=	bind
 PORTVERSION=	${ISCVERSION:S/-P/P/}
-PORTREVISION=	5
 CATEGORIES=	dns net ipv6
 MASTER_SITES=	ISC/bind9/${ISCVERSION}
 PKGNAMESUFFIX=	99
@@ -14,7 +13,7 @@ COMMENT=	BIND DNS suite with updated DNSSEC and DNS64
 LICENSE=	ISCL
 
 # ISC releases things like 9.8.0-P1, which our versioning doesn't like
-ISCVERSION=	9.9.5-P1
+ISCVERSION=	9.9.6
 
 MAKE_JOBS_UNSAFE=	yes
 
@@ -98,8 +97,7 @@ FILTER_AAAA_CONFIGURE_ENABLE=	filter-aaaa
 GOST_CONFIGURE_WITH=	gost
 
 PYTHON_CONFIGURE_WITH=	python
-PYTHON_USE=	PYTHON=yes
-PYTHON_USES=	gmake
+PYTHON_USES=	python
 
 DLZ_POSTGRESQL_CONFIGURE_ON=	--with-dlz-postgres=yes
 DLZ_POSTGRESQL_USE=		pgsql=yes
@@ -110,7 +108,7 @@ RPZ_NSIP_CONFIGURE_ENABLE=	rpz-nsip
 
 RPZ_NSDNAME_CONFIGURE_ENABLE=	rpz-nsdname
 
-RPZ_PATCH_PATCHFILES=	9.9.5-P1-rpz2+rl.14038.05.patch:vix
+RPZ_PATCH_PATCHFILES=	9.9.6-rpz2+rl.14038.05.patch:vix
 RPZ_PATCH_PATCH_SITES=	http://ss.vix.su/~vjs/:vix ${MASTER_SITE_LOCAL:S/%SUBDIR%/mat\/bind/:S/$/:vix/}
 
 RRL_CONFIGURE_ENABLE=	rrl
@@ -176,6 +174,8 @@ CONFIGURE_ARGS+=	--prefix=${PREFIX} \
 			--sysconfdir=${BIND_DESTETC}
 SUB_LIST+=	BIND_DESTETC="${BIND_DESTETC}"
 
+PORTDOCS=	*
+
 .if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1000100
 PLIST_SUB+=	NOBASE="" BASE="@comment "
 USE_RC_SUBR+=	named
@@ -207,15 +207,14 @@ post-patch:
 		${WRKSRC}/bin/named/Makefile.in.Dist > \
 		${WRKSRC}/bin/named/Makefile.in
 
-.if ${PORT_OPTIONS:MDOCS}
-PORTDOCS=	*
-.endif
+post-configure:
+	@${REINPLACE_CMD} -e '/^SO_LDFLAGS/s/-Wl,-rpath,/-rpath /' ${WRKSRC}/bin/tests/system/dlzexternal/Makefile
+
 post-install:
 .if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${STAGEDIR}${DOCSDIR}/arm ${STAGEDIR}${DOCSDIR}/misc
+	${MKDIR} ${STAGEDIR}${DOCSDIR}/arm
 	${INSTALL_DATA} ${WRKSRC}/doc/arm/*.html ${STAGEDIR}${DOCSDIR}/arm
 	${INSTALL_DATA} ${WRKSRC}/doc/arm/Bv9ARM.pdf ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/doc/misc/[a-z]* ${STAGEDIR}${DOCSDIR}/misc
 	${INSTALL_DATA} ${WRKSRC}/CHANGES ${WRKSRC}/COPYRIGHT ${WRKSRC}/FAQ \
 		${WRKSRC}/HISTORY ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 .endif

@@ -3,7 +3,7 @@
 
 PORTNAME=	ttftot42
 PORTVERSION=	0.3.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	print
 MASTER_SITES=	http://www.nih.at/ttftot42/
 

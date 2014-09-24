@@ -16,10 +16,10 @@ LIB_DEPENDS=	libmp3splt.so:${PORTSDIR}/audio/libmp3splt \
 		libmad.so:${PORTSDIR}/audio/libmad \
 		libogg.so:${PORTSDIR}/audio/libogg \
 		libvorbis.so:${PORTSDIR}/audio/libvorbis \
-		libid3tag.so:${PORTSDIR}/audio/libid3tag
+		libid3tag.so:${PORTSDIR}/audio/libid3tag \
+		libltdl.so:${PORTSDIR}/devel/libltdl
 
 INSTALLS_OMF=	yes
-USE_AUTOTOOLS=	libltdl
 USE_GSTREAMER=	yes
 USE_GNOME=	gnomedocutils gtk20
 GNU_CONFIGURE=	yes

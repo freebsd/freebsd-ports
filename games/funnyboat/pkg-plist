@@ -48,5 +48,3 @@ lib/funnyboat/steamboat.py
 lib/funnyboat/titanic.py
 lib/funnyboat/util.py
 lib/funnyboat/water.py
-@dirrm lib/funnyboat/data
-@dirrm lib/funnyboat

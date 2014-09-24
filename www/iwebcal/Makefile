@@ -3,6 +3,7 @@
 
 PORTNAME=	iwebcal
 PORTVERSION=	2.1
+PORTREVISION=	1
 CATEGORIES=	www deskutils
 MASTER_SITES=	SF
 EXTRACT_SUFX=	.tgz
@@ -13,6 +14,7 @@ COMMENT=	Webbased iCal calendar viewer
 NO_BUILD=	yes
 USE_PHP=	yes
 WRKSRC=		${WRKDIR}/iWebCal
+PLIST_SUB=	WWWOWN="${WWWOWN}" WWWGRP="${WWWGRP}"
 
 post-extract:
 	-@${FIND} ${WRKSRC}/ -type d -name '.svn' | ${XARGS} ${RM} -rf
@@ -20,6 +22,5 @@ post-extract:
 do-install:
 	@${MKDIR} ${STAGEDIR}${WWWDIR}
 	${CP} -R ${WRKSRC}/* ${STAGEDIR}${WWWDIR}
-	${CHOWN} -R ${WWWOWN}:${WWWGRP} ${STAGEDIR}${WWWDIR}/
 
 .include <bsd.port.mk>

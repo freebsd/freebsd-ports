@@ -395,7 +395,7 @@ BROKEN=		Otlozhu has not supported yet (not ported liblaretz)
 .if ${OSVERSION} < 1000000
 PORT_OPTIONS:=	${PORT_OPTIONS:O:u}
 PORT_OPTIONS:=	${PORT_OPTIONS:NBITTORRENT}
-USE_GCC=	4.8+
+USE_GCC=	yes
 .endif
 
 .include <bsd.port.mk>

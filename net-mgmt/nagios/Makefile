@@ -3,7 +3,7 @@
 
 PORTNAME=	nagios
 PORTVERSION=	3.5.1
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	net-mgmt
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-3.x/${PORTNAME}-${PORTVERSION}
 
@@ -12,13 +12,13 @@ COMMENT=	Powerful network monitoring system
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libgd.so:${PORTSDIR}/graphics/gd
+LIB_DEPENDS=	libltdl.so:${PORTSDIR}/devel/libltdl \
+		libgd.so:${PORTSDIR}/graphics/gd
 
 PORTSCOUT=	limit:^3.
 
-USES=		iconv perl5 uidfix
+USES=		iconv perl5
 USE_PERL5=	build
-USE_AUTOTOOLS=	autoconf libltdl
 USE_PHP=	yes
 USE_RC_SUBR=	nagios
 
@@ -33,7 +33,6 @@ CONFIGURE_ARGS=	--with-command-user=${NAGIOSUSER} \
 		--with-cgiurl=${NAGIOSCGIURL} \
 		--sbindir=${PREFIX}/${NAGIOSWWWDIR}/cgi-bin \
 		--libexecdir=${PREFIX}/libexec/nagios \
-		--datarootdir=${PREFIX}/${NAGIOSWWWDIR} \
 		--datadir=${PREFIX}/${NAGIOSWWWDIR} \
 		--sysconfdir=${PREFIX}/etc/nagios \
 		--localstatedir=${NAGIOSDIR} \
@@ -100,6 +99,7 @@ post-extract:
 .include <bsd.port.options.mk>
 
 post-patch:
+	@${REINPLACE_CMD} '/^INSTALL_OPTS=/d' ${WRKSRC}/configure
 .if ${PORT_OPTIONS:MUNHANDLED_HACK}
 	@${REINPLACE_CMD} -e 's#;serviceprops=42\&#;serviceprops=10\&#g' \
 		-e 's#;hostprops=42\"#;hostprops=10\"#g' ${WRKSRC}/html/side.php

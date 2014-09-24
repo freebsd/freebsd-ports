@@ -235,21 +235,3 @@ lib/libc++.so
 lib/libc++.so.1
 lib/libc++.so.1.0
 lib/c++/libstdc++.so
-@dirrm include/c++/v1/support/win32
-@dirrm include/c++/v1/support/solaris
-@dirrm include/c++/v1/support/ibm
-@dirrm include/c++/v1/support
-@dirrm include/c++/v1/ext
-@dirrm include/c++/v1/experimental
-@dirrm include/c++/v1/c++/v1/support/win32
-@dirrm include/c++/v1/c++/v1/support/solaris
-@dirrm include/c++/v1/c++/v1/support/ibm
-@dirrm include/c++/v1/c++/v1/support
-@dirrm include/c++/v1/c++/v1/ext
-@dirrm include/c++/v1/c++/v1/experimental
-@dirrm include/c++/v1/c++/v1
-@dirrm include/c++/v1/c++
-@dirrm include/c++/v1/CMakeFiles
-@dirrm include/c++/v1
-@dirrmtry include/c++
-@dirrm lib/c++

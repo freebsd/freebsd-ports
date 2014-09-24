@@ -1,5 +1,0 @@
-share/pear/Date/Holidays/Driver/PHPdotNet.php
-share/pear/packages/pear-Date_Holidays_PHPdotNet-0.1.2/package.xml
-share/pear/tests/Date_Holidays_PHPdotNet/Date_Holidays_Driver_PHPdotNet_TestSuite.php
-@dirrm share/pear/tests/Date_Holidays_PHPdotNet
-@dirrm share/pear/packages/pear-Date_Holidays_PHPdotNet-0.1.2

@@ -81,13 +81,3 @@ lib/libsfml1-system.so
 lib/libsfml1-system.so.1.6
 lib/libsfml1-window.so
 lib/libsfml1-window.so.1.6
-@dirrm include/SFML1/Audio
-@dirrm include/SFML1/Graphics
-@dirrm include/SFML1/Network/Unix
-@dirrm include/SFML1/Network/Win32
-@dirrm include/SFML1/Network
-@dirrm include/SFML1/System/Unix
-@dirrm include/SFML1/System/Win32
-@dirrm include/SFML1/System
-@dirrm include/SFML1/Window
-@dirrm include/SFML1

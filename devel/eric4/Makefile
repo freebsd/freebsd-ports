@@ -1,7 +1,7 @@
 # Created by: Boris Samorodov <bsam@FreeBSD.org>
 # $FreeBSD$
 
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel python
 DISTNAME=	${PORTNAME}-${PORTVERSION}
 
@@ -21,6 +21,10 @@ SUB_FILES=	eric4.desktop
 OPTIONS_DEFINE=	DOCS EXAMPLES
 EXTRA_PATCHES=
 
+PORTDATA=	*
+PORTDOCS=	*
+PORTEXAMPLES=	*
+
 do-configure:
 	${SED}  -e 's,PYTHON_SITELIBDIR,${PYTHON_SITELIBDIR},' \
 		-e 's,PREFIX,${PREFIX},' \
@@ -32,7 +36,7 @@ do-configure:
 
 post-install:
 	${INSTALL_DATA} ${WRKDIR}/eric4.desktop ${STAGEDIR}${PREFIX}/share/applications/
-	${LN} -sf ${DATADIR}/icons/default/eric.png ${STAGEDIR}${PREFIX}/share/pixmaps/
+	${LN} -sf ${DATADIR}/icons/default/eric.png ${STAGEDIR}${PREFIX}/share/pixmaps/eric4.png
 	@${MKDIR} ${STAGEDIR}${DATADIR}/i18n
 
 .include "${.CURDIR}/../../devel/eric4/Makefile.inc"

@@ -20,7 +20,7 @@
      case "`$KRB5CFGPATH --version`" in
        "Kerberos 5 "*)	GSSAPI_IMPL="MIT";;
 -      [hH]eimdal*)		GSSAPI_IMPL="Heimdal";;
-+      ?eimdal*)		GSSAPI_IMPL="Heimdal";;
++      *[[hH]]eimdal*)		GSSAPI_IMPL="Heimdal";;
        *)		GSSAPI_IMPL="Unknown";;
     esac
    else

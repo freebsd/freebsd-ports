@@ -7,4 +7,3 @@ lib/libalkimia.so.4
 lib/libalkimia.so.4.3.2
 libdata/pkgconfig/libalkimia.pc
 share/apps/cmake/modules/FindLibAlkimia.cmake
-@dirrm include/alkimia

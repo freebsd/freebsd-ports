@@ -1,5 +1,5 @@
---- ./html/Makefile.in.orig	2014-04-29 17:55:49.000000000 +0200
-+++ ./html/Makefile.in	2014-05-06 15:38:27.000000000 +0200
+--- html/Makefile.in.orig	2014-08-12 15:00:01 UTC
++++ html/Makefile.in
 @@ -35,58 +35,58 @@
  devclean: distclean
  

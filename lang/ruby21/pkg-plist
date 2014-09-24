@@ -1379,6 +1379,7 @@ man/man1/%%RUBY_NAME%%.1.gz
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d1/df0/ossl__pkey_8c.html
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d1/df0/ossl__pkey_8c_source.html
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d1/df3/structrb__const__entry__struct.html
+%%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d1/dfc/structrb__addrinfo.html
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d1/dfc/regparse_8h.html
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d1/dfc/regparse_8h_source.html
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d1/dff/struct_onig_capture_tree_node_struct.html
@@ -3726,7 +3727,6 @@ man/man1/%%RUBY_NAME%%.1.gz
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/globals_vars_g.html
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/globals_vars_h.html
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/globals_vars_i.html
-%%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/globals_vars_j.html
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/globals_vars_k.html
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/globals_vars_l.html
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/globals_vars_m.html
@@ -4541,6 +4541,7 @@ man/man1/%%RUBY_NAME%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/Complex/to_s-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/ConditionVariable/broadcast-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/ConditionVariable/cdesc-ConditionVariable.ri
+%%RDOC%%%%RUBY_RIDIR%%/ConditionVariable/marshal_dump-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/ConditionVariable/new-c.ri
 %%RDOC%%%%RUBY_RIDIR%%/ConditionVariable/signal-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/ConditionVariable/wait-i.ri
@@ -10989,6 +10990,7 @@ man/man1/%%RUBY_NAME%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/Queue/empty%3f-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Queue/enq-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Queue/length-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Queue/marshal_dump-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Queue/new-c.ri
 %%RDOC%%%%RUBY_RIDIR%%/Queue/num_waiting-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Queue/pop-i.ri

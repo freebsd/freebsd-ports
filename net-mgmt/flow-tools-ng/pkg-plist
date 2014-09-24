@@ -69,18 +69,5 @@ man/man1/flow-rpt2rrd.1.gz
 %%DATADIR%%/gasn
 %%DATADIR%%/gprot
 %%DATADIR%%/gserv
-@dirrmtry %%DATADIR%%
-@dirrmtry %%ETCDIR%%
-@cwd /var
-@exec install -d -o flowtools -g flowtools -m 1700 %D/db/flows
-@exec install -d -o flowtools -g flowtools -m 700 %D/run/flow-capture
-@owner flowtools
-@group flowtools
-@mode 700
-@dirrmtry run/flow-capture
-@mode 1700
-@dirrmtry db/flows
-@owner
-@group
-@mode
-@cwd %%RESETPREFIX%%
+@dir(flowtools,flowtools,1700) /var/db/flows
+@dir(flowtools,flowtools,700) /var/run/flow-capture

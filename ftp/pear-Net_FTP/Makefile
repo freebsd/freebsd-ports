@@ -9,12 +9,7 @@ CATEGORIES=	ftp www pear
 MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	PEAR OO interface to the PHP FTP functions plus some additions
 
-BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
-RUN_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
-
 USE_PHP=	ftp
-PEAR_AUTOINSTALL=	yes
+USES=	pear
 
-.include <bsd.port.pre.mk>
-.include "${PORTSDIR}/devel/pear/bsd.pear.mk"
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

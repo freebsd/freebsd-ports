@@ -34,10 +34,11 @@ COMMENT=	Image processing tools
 
 #LICENSE=	APACHE20
 
+LIB_DEPENDS=	libltdl.so:${PORTSDIR}/devel/libltdl
+
 # This port uses .la files, keep libtool:keepla! (magick/module.c)
 USES=		gmake libtool:keepla pathfix perl5 pkgconfig shebangfix tar:xz
 SHEBANG_FILES=	www/source/examples.pl
-USE_AUTOTOOLS=	libltdl
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	MAKE=${MAKE_CMD}
 CONFIGURE_ARGS=	--without-dps \

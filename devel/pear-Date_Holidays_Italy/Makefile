@@ -8,14 +8,8 @@ MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	Driver based class to calculate holidays in Italy
 
 BUILD_DEPENDS=	${PEARDIR}/Date/Holidays.php:${PORTSDIR}/devel/pear-Date_Holidays
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+RUN_DEPENDS=	${PEARDIR}/Date/Holidays.php:${PORTSDIR}/devel/pear-Date_Holidays
 
-CATEGORY=	Date
-FILES=		Holidays/Driver/Italy.php
-TESTS=		Date_Holidays_Driver_Italy_TestSuite.php
+USES=		pear
 
-PLIST_SUB=	PORTVERSION=${PORTVERSION}
-
-.include <bsd.port.pre.mk>
-.include "${PORTSDIR}/devel/pear/bsd.pear.mk"
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

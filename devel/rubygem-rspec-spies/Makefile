@@ -16,4 +16,7 @@ USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
 
+DEPRECATED=	Same syntax available in rspec 2.14 and later
+EXPIRATION_DATE=	2014-10-17
+
 .include <bsd.port.mk>

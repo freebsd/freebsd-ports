@@ -2,6 +2,7 @@
 
 PORTNAME=	pike78
 PORTVERSION=	${PIKEVERSION}
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	http://pike.ida.liu.se/pub/pike/all/${PORTVERSION}/ \
 		ftp://pike.ida.liu.se/pub/pike/beta/${PORTVERSION}/ \

@@ -5,7 +5,7 @@ PORTVERSION=	2006.08.03
 CATEGORIES=	devel
 MASTER_SITES=	LOCAL/eadler/delta
 
-MAINTAINER=	eadler@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Heuristically minimizes interesting files
 
 LICENSE=	BSD2CLAUSE

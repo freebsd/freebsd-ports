@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	groonga
-PORTVERSION=	4.0.4
+PORTVERSION=	4.0.5
 CATEGORIES=	textproc
 MASTER_SITES=	http://packages.groonga.org/source/groonga/
 
@@ -14,12 +14,16 @@ LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre
 
 USES=		gmake libtool pathfix pkgconfig
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--disable-silent-rules \
-		--disable-benchmark \
+CONFIGURE_ARGS=	--disable-benchmark \
 		--disable-document \
-		--with-munin-plugins \
+		--disable-silent-rules \
 		--localstatedir=/var \
-		--with-log-path=/var/log/groonga.log
+		--without-cutter \
+		--without-inkscape \
+		--without-kytea \
+		--without-lemon \
+		--with-log-path=/var/log/groonga.log \
+		--with-munin-plugins
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
 
@@ -64,7 +68,7 @@ post-patch:
 		'/NGX_PID_PATH/s|mkdir|${TRUE}| ; \
 		 /NGX_HTTP_LOG_PATH/s|mkdir|${TRUE}| ; \
 		 /NGX_ERROR_LOG_PATH/s|mkdir|${TRUE}|' \
-		${WRKSRC}/vendor/nginx-1.7.3/auto/install
+		${WRKSRC}/vendor/nginx-1.7.4/auto/install
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/sbin/groonga-httpd

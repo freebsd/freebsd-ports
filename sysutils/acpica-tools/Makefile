@@ -15,8 +15,9 @@ COMMENT=	Tools from the ACPI Component Architecture (ACPICA) project
 LICENSE=	BSD3CLAUSE GPLv2
 LICENSE_COMB=	dual
 
+BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4
+
 USES=		bison gmake
-YACC=		${LOCALBASE}/bin/bison
 
 ACPICA_TOOLS=	acpibin acpidump acpiexec acpihelp acpinames acpisrc
 ACPICA_TOOLS+=	acpixtract iasl
@@ -25,7 +26,8 @@ PLIST_FILES=	${ACPICA_TOOLS:S,^,bin/,}
 WRKSRC_SUBDIR=	generate/unix
 
 MAKE_ARGS=	HOST=_FreeBSD NOOPT=TRUE PROGS="${ACPICA_TOOLS}"
-MAKE_ARGS+=	CC="${CC}" LEX="${FLEX}" YACC="${YACC}"
+MAKE_ARGS+=	CC="${CC}" LEX="${FLEX}" MACROPROC="${LOCALBASE}/bin/gm4"
+MAKE_ARGS+=	YACC="${LOCALBASE}/bin/bison"
 
 do-install:
 	@${INSTALL_PROGRAM} ${ACPICA_TOOLS:S,^,${WRKSRC}/bin/,} \

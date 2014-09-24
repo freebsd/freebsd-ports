@@ -13,6 +13,8 @@ MASTER_SITES=	http://www.aleksey.com/xmlsec/download/ \
 MAINTAINER=	johans@FreeBSD.org
 COMMENT=	XML Security Library
 
+LIB_DEPENDS=	libltdl.so:${PORTSDIR}/devel/libltdl
+
 OPTIONS_DEFINE=	DOCS GNUTLS NSS
 OPTIONS_SUB=	yes
 GNUTLS_DESC=		Enable GNUTLS support
@@ -27,7 +29,6 @@ INSTALL_TARGET=	install-strip
 USES=		libtool:oldver pathfix pkgconfig
 USE_OPENSSL=	yes
 USE_GNOME=	libxml2 libxslt
-USE_AUTOTOOLS=	libltdl
 USE_LDCONFIG=	yes
 
 CFLAGS+=	-I${LOCALBASE}/include

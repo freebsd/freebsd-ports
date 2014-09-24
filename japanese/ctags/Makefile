@@ -21,7 +21,7 @@ PORTDOCS=	README README_J.TXT
 OPTIONS_DEFINE=	DOCS
 
 post-patch:
-	@${REINPLACE_CMD} -E '/^DEST_/ s,(bin|lib|inc|man1)dir),DESTDIR)$$(&,g' \
+	@${REINPLACE_CMD} -E 's,(bin|lib|inc|man1)dir),DESTDIR)$$(&,g' \
 		${WRKSRC}/Makefile.in
 
 post-install:

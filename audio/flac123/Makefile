@@ -17,17 +17,11 @@ LIB_DEPENDS=	libFLAC.so:${PORTSDIR}/audio/flac \
 
 OPTIONS_DEFINE=	DOCS
 
-USE_AUTOTOOLS=	aclocal autoconf automake
-AUTOMAKE_ARGS=	--add-missing
-USES=		gmake
+USES=		autoreconf gmake
 GNU_CONFIGURE=	yes
 
 PORTDOCS=	README.remote
 PLIST_FILES=	bin/flac123
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|' \
-		${WRKSRC}/configure
 
 post-install:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}

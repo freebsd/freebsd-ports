@@ -70,7 +70,7 @@ CONFIGURE_ARGS+=	--enable-freelist
 .elif ${PORT_OPTIONS:MALLOCATORS}
 CONFIGURE_ARGS+=	--disable-freelist
 .else
-FORBIDDEN=	No allocation strategy selected
+IGNORE=	no allocation strategy selected
 .endif
 
 .if ${OSVERSION} >= 900033 && exists(/usr/bin/clang)

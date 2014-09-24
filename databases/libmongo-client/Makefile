@@ -16,16 +16,10 @@ GH_ACCOUNT=	algernon
 GH_TAGNAME=	${PORTNAME}-${PORTVERSION}
 GH_COMMIT=	ff123ed # should be 9cbb488, but does not
 
-USE_AUTOTOOLS=	automake autoconf libtoolize
 GNU_CONFIGURE=	yes
-USES=		libtool pkgconfig gmake pathfix
+USES=		autoreconf libtool pkgconfig gmake pathfix
 USE_GNOME=	glib20
 USE_LDCONFIG=	yes
-CONFIGURE_ENV+=	PKG_CONFIG_DIR=${LOCALBASE}/libdata/pkgconfig
 PATHFIX_MAKEFILEIN=Makefile.am
-
-run-autotools:
-	@cd ${CONFIGURE_WRKSRC} && \
-		${SETENV} ${AUTOTOOLS_ENV} ${AUTORECONF} -i
 
 .include <bsd.port.mk>

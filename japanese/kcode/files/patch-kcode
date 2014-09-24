@@ -1,0 +1,10 @@
+--- ./kcode.orig	2014-09-20 02:00:07.356860273 +0400
++++ ./kcode	2014-09-20 02:00:18.458870406 +0400
+@@ -5,6 +5,7 @@
+ # Copyright (c) 2004 HIROSE, Masaaki. All rights reserved.
+ #
+ 
++=encoding utf8
+ =head1 NAME
+ 
+ B<kcode> - 各種文字コードを表示する

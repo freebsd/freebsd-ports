@@ -47,13 +47,11 @@ do-install:
 	@${ECHO_CMD} '@dirrmtry ${WWWDIR_REL}' >> ${TMPPLIST}
 	@cd ${WRKSRC} && ${COPYTREE_SHARE} "${LAMDATA}" ${STAGEDIR}${WWWDIR}
 .for DIR in ${WRITEABLES}
-	@${CHOWN} -R ${WWWOWN} ${STAGEDIR}${WWWDIR}/${DIR}
 	@${CHMOD} -R u+w ${STAGEDIR}${WWWDIR}/${DIR}
 	@${ECHO_CMD} '@exec ${CHOWN} -R ${WWWOWN} %D/${WWWDIR_REL}/${DIR}' >> ${TMPPLIST}
 	@${ECHO_CMD} '@exec ${CHMOD} -R u+w %D/${WWWDIR_REL}/${DIR}' >> ${TMPPLIST}
 .endfor
 	@${CHMOD} u+x ${STAGEDIR}${WWWDIR}/lib/lamdaemon.pl
-	@${ECHO_CMD} '@exec ${CHMOD} u+x %D/${WWWDIR_REL}/lib/lamdaemon.pl' >> ${TMPPLIST}
 .if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	@cd ${WRKSRC} && ${COPYTREE_SHARE} "${PORTDOCS}" ${STAGEDIR}${DOCSDIR}

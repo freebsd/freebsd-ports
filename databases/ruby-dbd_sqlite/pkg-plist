@@ -1,5 +1,0 @@
-%%RUBY_SITELIBDIR%%/dbd/SQLite.rb
-%%RUBY_SITELIBDIR%%/dbd/sqlite/database.rb
-%%RUBY_SITELIBDIR%%/dbd/sqlite/statement.rb
-@dirrm %%RUBY_SITELIBDIR%%/dbd/sqlite
-@dirrmtry %%RUBY_SITELIBDIR%%/dbd

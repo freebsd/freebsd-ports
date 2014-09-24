@@ -15,8 +15,6 @@ lib/liblqr-1.so
 lib/liblqr-1.so.0
 lib/liblqr-1.so.0.3.1
 libdata/pkgconfig/lqr-1.pc
-@dirrm include/lqr-1/lqr
-@dirrm include/lqr-1
 %%HTMLDOCS%%%%DOCSDIR%%/Introduction.html
 %%HTMLDOCS%%%%DOCSDIR%%/about-this-doc.html
 %%HTMLDOCS%%%%DOCSDIR%%/api-manual.html
@@ -120,4 +118,3 @@ libdata/pkgconfig/lqr-1.pc
 %%HTMLDOCS%%%%DOCSDIR%%/seam-carve.html
 %%HTMLDOCS%%%%DOCSDIR%%/tuning.html
 %%HTMLDOCS%%%%DOCSDIR%%/vmaps.html
-%%HTMLDOCS%%@dirrm %%DOCSDIR%%

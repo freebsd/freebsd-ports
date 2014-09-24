@@ -5,8 +5,7 @@ PORTNAME=	kaffeine
 PORTVERSION=	1.2.2
 PORTREVISION=	7
 CATEGORIES=	multimedia kde
-MASTER_SITES=	SF
-MASTER_SITE_SUBDIR=	kaffeine/current
+MASTER_SITES=	SF/kaffeine/current
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Xine-base multimedia player
@@ -26,6 +25,5 @@ USE_XORG=	xscrnsaver
 
 post-patch:
 	${REINPLACE_CMD} -e 's,add_subdirectory(x-test),,' ${WRKSRC}/po/CMakeLists.txt
-
 
 .include <bsd.port.mk>

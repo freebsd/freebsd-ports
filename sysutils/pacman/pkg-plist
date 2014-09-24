@@ -118,13 +118,11 @@ man/man8/vercmp.8.gz
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/libalpm.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/pacman-scripts.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/pacman.mo
-%%NLS%%@dirrm share/locale/sr@latin/LC_MESSAGES
-%%NLS%%@dirrm share/locale/sr@latin
-%%NLS%%@dirrm share/locale/kk/LC_MESSAGES
-%%NLS%%@dirrm share/locale/kk
 %%DATADIR%%/ChangeLog.proto
 %%DATADIR%%/PKGBUILD-split.proto
 %%DATADIR%%/PKGBUILD.proto
 %%DATADIR%%/proto.install
-@dirrm %%DATADIR%%
-@dirrmtry %%PACMAN_ROOT%%
+@dir /var/cache/pacman/pkg
+@dir /var/cache/pacman
+@dir /var/lib/pacman
+@dir /var/lib

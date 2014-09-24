@@ -12,7 +12,3 @@ share/locale/es/LC_MESSAGES/resynthesizer.mo
 %%DATADIR%%/help/en/gimp-help.xml
 %%DATADIR%%/help/en/index.html
 %%DATADIR%%/help/images/wilber.png
-@dirrm %%DATADIR%%/help/images
-@dirrm %%DATADIR%%/help/en
-@dirrm %%DATADIR%%/help
-@dirrm %%DATADIR%%

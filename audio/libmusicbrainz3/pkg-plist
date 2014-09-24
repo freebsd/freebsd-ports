@@ -30,4 +30,3 @@ lib/libmusicbrainz3.so
 lib/libmusicbrainz3.so.6
 lib/libmusicbrainz3.so.6.3.0
 libdata/pkgconfig/libmusicbrainz3.pc
-@dirrm include/musicbrainz3

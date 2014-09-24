@@ -24,7 +24,6 @@ USERS=		prosody
 GROUPS=		${USERS}
 
 USE_RC_SUBR=	prosody
-MANCOMPRESSED=	no
 
 OPTIONS_DEFINE= LUAJIT
 LUAJIT_DESC=    Run prosody using luajit

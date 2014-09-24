@@ -4,19 +4,15 @@ include/X11/Xcm/XcmEdidParse.h
 include/X11/Xcm/XcmEvents.h
 include/X11/Xcm/XcmVersion.h
 lib/cmake/Xcm/XcmConfig.cmake
-lib/libXcm.la
 lib/libXcm.so
 lib/libXcm.so.0
 lib/libXcm.so.0.0.5
-lib/libXcmDDC.la
 lib/libXcmDDC.so
 lib/libXcmDDC.so.0
 lib/libXcmDDC.so.0.0.5
-lib/libXcmEDID.la
 lib/libXcmEDID.so
 lib/libXcmEDID.so.0
 lib/libXcmEDID.so.0.0.5
-lib/libXcmX11.la
 lib/libXcmX11.so
 lib/libXcmX11.so.0
 lib/libXcmX11.so.0.0.5
@@ -31,6 +27,3 @@ man/man3/XcmEvents.3.gz
 man/man3/XcolorProfile.3.gz
 man/man3/XcolorRegion.3.gz
 man/man3/libXcm.3.gz
-@dirrmtry lib/cmake/Xcm
-@dirrmtry lib/cmake
-@dirrmtry include/X11/Xcm

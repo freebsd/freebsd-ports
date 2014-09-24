@@ -35,10 +35,7 @@ OPTIONS_DEFINE=	DOCS
 
 PORTDOCS=	kqemu-doc.html kqemu-tech.html
 PLIST_FILES=	"include/kqemu/kqemu.h"
-PLIST_FILES+=	"@dirrm include/kqemu"
-PLIST_FILES+=	"@cwd /"
-PLIST_FILES+=	${KMODDIR:C,^/,,}/kqemu.ko
-PLIST_FILES+=	"@cwd ${PREFIX}"
+PLIST_FILES+=	${KMODDIR}/kqemu.ko
 
 MAKEFILE=	Makefile.freebsd
 
@@ -49,11 +46,6 @@ MAKE_CMD_ARGS+=	ARCH=x86_64
 .endif
 
 CFLAGS+=	${DEBUG_FLAGS}
-
-# Not sure about the exact OSVERSION:
-.if ${OSVERSION} > 1000015
-BROKEN=		KPI changes in 10 and up, use bhyve or vbox
-.endif
 
 post-patch:
 # Apply extra patches from the qemu-devel list; in the unlikely case that

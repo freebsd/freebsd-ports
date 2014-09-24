@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	phpbb
-PORTVERSION=	3.0.11
-PORTREVISION=	2
+PORTVERSION=	3.0.12
+PORTREVISION=	0
 CATEGORIES=	chinese www
 MASTER_SITES=	http://www.phpbb-tw.net/phpbb/download/ \
 		http://freebsd.ee.ccu.edu.tw/phpBB/

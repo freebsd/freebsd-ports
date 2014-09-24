@@ -4,8 +4,7 @@
 PORTNAME=	debootstrap
 PORTVERSION=	1.0.61
 CATEGORIES=	sysutils
-MASTER_SITES=	${MASTER_SITE_DEBIAN}
-MASTER_SITE_SUBDIR=	pool/main/d/${PORTNAME}
+MASTER_SITES=	DEBIAN/pool/main/d/${PORTNAME}
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	lifanov@mail.lifanov.com
@@ -34,7 +33,7 @@ post-patch:
 		${WRKSRC}/debootstrap
 
 post-install:
-	@${INSTALL_MAN} ${WRKSRC}/debootstrap.8 \
-		${STAGEDIR}${PREFIX}/man/man8/debootstrap.8
+	${INSTALL_MAN} ${WRKSRC}/debootstrap.8 \
+		${STAGEDIR}${MAN8PREFIX}/man/man8/debootstrap.8
 
 .include <bsd.port.mk>

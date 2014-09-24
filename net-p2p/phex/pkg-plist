@@ -12,4 +12,3 @@ bin/phex
 %%DATADIR%%/phex.jar
 %%DATADIR%%/slf4j-api-1.5.6.jar
 %%DATADIR%%/xSocket-2.2.jar
-@dirrm %%DATADIR%%

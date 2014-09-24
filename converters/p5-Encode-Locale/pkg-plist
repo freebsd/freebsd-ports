@@ -1,6 +1,3 @@
 %%PERL5_MAN3%%/Encode::Locale.3.gz
 %%SITE_PERL%%/Encode/Locale.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Encode/Locale/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Encode/Locale
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Encode
-@dirrmtry %%SITE_PERL%%/Encode

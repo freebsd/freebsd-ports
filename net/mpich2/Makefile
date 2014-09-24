@@ -3,7 +3,7 @@
 
 PORTNAME=	mpich2
 DISTVERSION=	1.5
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	5
 CATEGORIES=	net java parallel
 MASTER_SITES=	http://www.mcs.anl.gov/research/projects/mpich2/downloads/tarballs/${DISTVERSION}/
@@ -26,6 +26,7 @@ USES=		libtool:keepla fortran perl5 pkgconfig python
 USE_GCC=	yes
 USE_LDCONFIG=	yes
 USE_PERL5=	build
+INSTALL_TARGET=	install-strip
 
 OPTIONS_DEFINE_i386=	JAVA
 OPTIONS_DEFINE_amd64=	JAVA
@@ -41,9 +42,11 @@ CONFIGURE_ARGS=	--enable-romio --enable-shared	\
 		--docdir="${DOCSDIR}" \
 		--with-python="${PYTHON_CMD}"
 CONFIGURE_ENV=	FCFLAGS="${FFLAGS}" \
+		MPI_CFLAGS="${LOCALBASE}/include" \
 		PACKAGE=${PORTNAME} \
 		PTHREAD_LIBS="${PTHREAD_LIBS}"
 
+CFLAGS+=	-I${LOCALBASE}/include
 CPPFLAGS+=	-I${LOCALBASE}/include
 .if ${FFLAGS} == "-O"
 FFLAGS=		-O2
@@ -173,6 +176,9 @@ post-install:
 .for pg in ${BIN2STRIP}
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${pg}
 .endfor
+.if ${PORT_OPTIONS:MJAVA}
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/trace_rlog/libTraceInput.so
+.endif
 
 .if defined(MAINTAINER_MODE)
 regression-test:	install

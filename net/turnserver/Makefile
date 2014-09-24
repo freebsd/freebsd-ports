@@ -1,15 +1,15 @@
 # $FreeBSD$
 
 PORTNAME=	turnserver
-PORTVERSION=	3.2.2.5
-PORTREVISION=	2
+PORTVERSION=	3.2.4.4
 CATEGORIES=	net
-MASTER_SITES=	http://turnserver.open-sys.org/downloads/v${PORTVERSION}/ \
-		http://turnserver.open-sys.org/downloads/extradocs/ \
-		http://www.olegmoskalenko.com/turnserver/v${PORTVERSION}/ \
-		http://www.olegmoskalenko.com/turnserver/extradocs/
+MASTER_SITES=	http://turnserver.open-sys.org/downloads/v${PORTVERSION}/:prog \
+		http://turnserver.open-sys.org/downloads/extradocs/:xdocs \
+		http://coturn.net/turnserver/v${PORTVERSION}/:prog \
+		http://coturn.net/turnserver/extradocs/:xdocs
 PKGNAMEPREFIX=
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} turn.extra.docs-2.0.0.1.tar.gz
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:prog \
+		turn.extra.docs-2.0.0.1.tar.gz:xdocs
 
 MAINTAINER=	mom040267@gmail.com
 COMMENT=	STUN/TURN Server; IPv6, DTLS support; RFCs 5389, 5766, 6062, 6156
@@ -21,6 +21,8 @@ LIB_DEPENDS=	libevent.so:${PORTSDIR}/devel/libevent2
 CONFLICTS=	libevent-1.*
 
 SUB_FILES=	pkg-message
+
+MANPAGES=	turnserver.1 turnadmin.1 turnutils.1 turnutils_peer.1 turnutils_stunclient.1 turnutils_uclient.1 rfc5766-turn-server.1
 
 USE_OPENSSL=	YES
 
@@ -62,6 +64,7 @@ longtermsecure/secure_tls_client_c2c_tcp_relay.sh longtermsecure/secure_tls_clie
 longtermsecure/secure_udp_c2c.sh longtermsecure/secure_udp_client.sh \
 longtermsecure/secure_dos_attack.sh longtermsecure/secure_udp_client.sh \
 longtermsecuredb/secure_relay_with_db_psql.sh longtermsecuredb/secure_relay_with_db_mysql.sh \
+longtermsecuredb/secure_relay_with_db_mysql_ssl.sh \
 longtermsecuredb/secure_relay_with_db_redis.sh \
 restapi/secure_relay_secret.sh restapi/secure_relay_secret_with_db_mysql.sh \
 restapi/secure_relay_secret.sh restapi/secure_relay_secret_with_db_redis.sh \
@@ -100,7 +103,7 @@ do-install:
 .for f in ${_BIN_UTILS}
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/turnutils_${f} ${STAGEDIR}${PREFIX}/bin/
 .endfor
-.for f in ${MAN1}
+.for f in ${MANPAGES}
 	${INSTALL_MAN} ${WRKSRC}/man/man1/${f} ${STAGEDIR}${PREFIX}/man/man1/${f}
 .endfor
 	${MKDIR} ${STAGEDIR}${DATADIR}/

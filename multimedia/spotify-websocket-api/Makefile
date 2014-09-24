@@ -3,7 +3,7 @@
 
 PORTNAME=	SpotifyWebsocketAPI
 PORTVERSION=	0.2
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	multimedia python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -13,16 +13,14 @@ COMMENT=	Websocket API and client for Spotify
 NO_ARCH=	yes
 
 USE_GITHUB=	yes
-GH_COMMIT=	9ad8639
+GH_COMMIT=	d397ed2
 GH_ACCOUNT=	Hexxeh
 GH_PROJECT=	spotify-websocket-api
 GH_TAGNAME=	${GH_COMMIT}
 
-USES=		shebangfix
+USES=		shebangfix python
 SHEBANG_FILES=	spotify_web/spotify.py ${CLIENTFILES}
-USE_PYTHON=	yes # tested with 2.7
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
+USE_PYTHON=	autoplist concurrent distutils
 
 OPTIONSFILE=	${PORT_DBDIR}/py-${PORTNAME}/options
 OPTIONS_DEFINE=	EXAMPLES
@@ -45,6 +43,8 @@ EXAMPLES_LIB_DEPENDS=libao.so:${PORTSDIR}/audio/libao \
 EXAMPLES_RUN_DEPENDS=${PYTHON_PKGNAMEPREFIX}curl>=0:${PORTSDIR}/ftp/py-curl \
 	${PYTHON_PKGNAMEPREFIX}gobject>=0:${PORTSDIR}/devel/py-gobject
 EXAMPLES_USE=	GSTREAMER=python
+
+PLIST_FILES=	bin/respotify bin/respotify-helper.py bin/respotify.py
 
 post-patch:
 	${REINPLACE_CMD} -e "s|%%PREFIX%%|${PREFIX}|" \

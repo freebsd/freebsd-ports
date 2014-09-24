@@ -18,15 +18,13 @@ GH_COMMIT=	a59e55e
 
 PORTDOCS=	README
 
-SLAVE_PORT_MODULES=	REWRITE
-
 CONFLICTS=	cakephp-1[12]-* cakephp-2?-.* cakephp-2.?.*
 
 NO_BUILD=	yes
 USES=		gettext
 USE_PHP=	session
 WANT_PHP_WEB=	yes
-DEFAULT_VERSIONS=	php=5
+DEFAULT_VERSIONS+=	php=5
 
 CAKE_CONF_FILES=	\
 		app/config/acl.ini.php \

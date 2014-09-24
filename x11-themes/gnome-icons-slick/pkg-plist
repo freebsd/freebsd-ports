@@ -379,18 +379,3 @@ share/icons/Slick/48x48/mimetypes/gnome-mime-video-x-msvideo.png
 share/icons/Slick/48x48/mimetypes/gnome-package.png
 share/icons/Slick/ChangeLog
 share/icons/Slick/index.theme
-@dirrm share/icons/Slick/48x48/mimetypes
-@dirrm share/icons/Slick/48x48/filesystems
-@dirrm share/icons/Slick/48x48/devices
-@dirrm share/icons/Slick/48x48/apps
-@dirrm share/icons/Slick/48x48
-@dirrm share/icons/Slick/36x36/mimetypes
-@dirrm share/icons/Slick/36x36/filesystems
-@dirrm share/icons/Slick/36x36/devices
-@dirrm share/icons/Slick/36x36/apps
-@dirrm share/icons/Slick/36x36
-@dirrm share/icons/Slick/24x24/stock
-@dirrm share/icons/Slick/24x24/filesystems
-@dirrm share/icons/Slick/24x24
-@dirrm share/icons/Slick
-@dirrmtry share/icons

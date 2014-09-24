@@ -1,3 +1,5 @@
+@owner %%WWWOWN%%
+@group %%WWWGRP%%
 %%WWWDIR%%/README.markdown
 %%WWWDIR%%/bundled-libs/.current_version
 %%WWWDIR%%/bundled-libs/Cache/BUNDLE_NOTICE
@@ -3391,3 +3393,5 @@
 @dirrmtry %%WWWDIR%%/templates_c
 @dirrmtry %%WWWDIR%%/uploads
 @dirrmtry %%WWWDIR%%
+@owner root
+@group wheel

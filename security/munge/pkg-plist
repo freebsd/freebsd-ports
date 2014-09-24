@@ -1,4 +1,3 @@
-@stopdaemon munged
 bin/munge
 bin/remunge
 bin/unmunge
@@ -29,13 +28,7 @@ man/man3/munge_strerror.3.gz
 man/man7/munge.7.gz
 man/man8/munged.8.gz
 sbin/munged
-@cwd /var
-@exec mkdir -p %D/lib
-@exec mkdir -p -m 711 %D/lib/munge
-@exec mkdir -p -m 700 %D/log/munge
-@exec mkdir -p %D/run/munge
-@dirrmtry run/munge
-@dirrmtry log/munge
-@dirrmtry lib/munge
-@dirrmtry lib
-@cwd %%RESETPREFIX%%
+@dir /var/run/munge
+@dir(,,700) /var/log/munge
+@dir(,,711) /var/lib/munge
+@dir /var/lib

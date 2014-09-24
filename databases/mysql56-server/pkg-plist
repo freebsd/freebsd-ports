@@ -1,4 +1,3 @@
-@stopdaemon mysql-server
 bin/innochecksum
 bin/my_print_defaults
 bin/myisam_ftdump
@@ -129,31 +128,3 @@ man/man8/mysqld.8.gz
 %%DATADIR%%/spanish/errmsg.sys
 %%DATADIR%%/swedish/errmsg.sys
 %%DATADIR%%/ukrainian/errmsg.sys
-@dirrm lib/mysql/plugin
-@dirrmtry lib/mysql
-@dirrm %%DATADIR%%/bulgarian
-@dirrm %%DATADIR%%/charsets
-@dirrm %%DATADIR%%/czech
-@dirrm %%DATADIR%%/danish
-@dirrm %%DATADIR%%/dutch
-@dirrm %%DATADIR%%/english
-@dirrm %%DATADIR%%/estonian
-@dirrm %%DATADIR%%/french
-@dirrm %%DATADIR%%/german
-@dirrm %%DATADIR%%/greek
-@dirrm %%DATADIR%%/hungarian
-@dirrm %%DATADIR%%/italian
-@dirrm %%DATADIR%%/japanese
-@dirrm %%DATADIR%%/korean
-@dirrm %%DATADIR%%/norwegian
-@dirrm %%DATADIR%%/norwegian-ny
-@dirrm %%DATADIR%%/polish
-@dirrm %%DATADIR%%/portuguese
-@dirrm %%DATADIR%%/romanian
-@dirrm %%DATADIR%%/russian
-@dirrm %%DATADIR%%/serbian
-@dirrm %%DATADIR%%/slovak
-@dirrm %%DATADIR%%/spanish
-@dirrm %%DATADIR%%/swedish
-@dirrm %%DATADIR%%/ukrainian
-@dirrm %%DATADIR%%

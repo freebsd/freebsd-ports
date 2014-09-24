@@ -109,6 +109,11 @@
     SUBDIR += libxaw3dxft
     SUBDIR += libxfce4gui
     SUBDIR += libzvt
+    SUBDIR += linux-c6-pango
+    SUBDIR += linux-c6-tk85
+    SUBDIR += linux-c6-gtk2
+    SUBDIR += linux-c6-qt47-x11
+    SUBDIR += linux-c6-openmotif
     SUBDIR += linux-f10-blt
     SUBDIR += linux-f10-gtk2
     SUBDIR += linux-f10-openmotif
@@ -218,7 +223,6 @@
     SUBDIR += qwt6
     SUBDIR += qwt6-designerplugin
     SUBDIR += rep-gtk2
-    SUBDIR += ruby-fox16
     SUBDIR += rubygem-gdk3
     SUBDIR += rubygem-gtk2
     SUBDIR += rubygem-gtk3

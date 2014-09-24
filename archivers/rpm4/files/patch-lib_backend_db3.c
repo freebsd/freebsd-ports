@@ -6,6 +6,6 @@
  #include <sys/wait.h>
 +#include <sys/types.h>
 +#include <signal.h>
+ #include <db.h>
  
  #include <rpm/rpmtypes.h>
- #include <rpm/rpmmacro.h>

@@ -3,7 +3,7 @@
 
 PORTNAME=	libecap
 PORTVERSION=	0.2.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	www security
 MASTER_SITES=	http://www.measurement-factory.com/tmp/ecap/
 
@@ -11,14 +11,14 @@ MAINTAINER=	tmseck@FreeBSD.org
 COMMENT=	Library for module based network content analysis
 
 LICENSE=	BSD2CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 OPTIONS_DEFINE=	DOCS
 
-USES=		libtool:keepla
+USES=		libtool
 
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-USE_GCC=	any
 INSTALL_TARGET=	install-strip
 
 PORTDOCS=	CREDITS LICENSE NOTICE README

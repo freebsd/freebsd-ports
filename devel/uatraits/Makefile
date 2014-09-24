@@ -10,34 +10,21 @@ MASTER_SITES=	http://people.freebsd.org/~demon/
 MAINTAINER=	demon@FreeBSD.org
 COMMENT=	User-Agent detection library
 
-BUILD_DEPENDS=	autoconf:${PORTSDIR}/devel/autoconf \
-		automake:${PORTSDIR}/devel/automake \
-		libtool:${PORTSDIR}/devel/libtool
 LIB_DEPENDS=	libboost_python.so:${PORTSDIR}/devel/boost-python-libs \
 		libpcre.so:${PORTSDIR}/devel/pcre \
 		libxml2.so:${PORTSDIR}/textproc/libxml2
 
-USES=		libtool pkgconfig
+USES=		autoreconf libtool pkgconfig python
 GNU_CONFIGURE=	yes
-USE_PYTHON=	yes
 USE_OPENSSL=	yes
 USE_LDCONFIG=	yes
 
-.include <bsd.port.pre.mk>
+CONFIGURE_ARGS=	--with-boost-prefix=${LOCALBASE} \
+		--with-pcre-prefix=${LOCALBASE} \
+		--enable-python --disable-perl --disable-tests \
+		--disable-java --disable-nodejs
+CONFIGURE_ENV=	crypto_CFLAGS="-I${OPENSSLINC}" \
+		crypto_LIBS="-L${OPENSSLLIB} -lcrypto"
+CPPFLAGS+=	-I${LOCALBASE}/include
 
-.if exists(${PYTHON_CMD}-config)
-PYLIBS!=	${PYTHON_CMD}-config --libs
-.endif
-CONFIGURE_ARGS+=	--with-boost-prefix=${LOCALBASE} \
-			--with-pcre-prefix=${LOCALBASE} \
-			--enable-python --disable-perl --disable-tests \
-			--disable-java --disable-nodejs
-CPPFLAGS+=	"-I${LOCALBASE}/include"
-CONFIGURE_ENV+=		crypto_CFLAGS="-I${OPENSSLINC}" \
-			crypto_LIBS="-L${OPENSSLLIB} -lcrypto" \
-			PYTHON_LIBS="${PYLIBS} -L${LOCALBASE}/lib"
-
-pre-configure:
-	cd ${WRKSRC} && ./autogen.sh
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

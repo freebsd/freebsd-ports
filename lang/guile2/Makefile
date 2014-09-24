@@ -16,13 +16,13 @@ COMMENT=	GNU Ubiquitous Intelligent Language for Extension
 LICENSE=	LGPL21
 
 LIB_DEPENDS=	libgmp.so:${PORTSDIR}/math/gmp \
+		libltdl.so:${PORTSDIR}/devel/libltdl \
 		libunistring.so:${PORTSDIR}/devel/libunistring \
 		libffi.so.6:${PORTSDIR}/devel/libffi
 
 CONFLICTS_INSTALL=	guile-[0-9]*
 
 USES=		charsetfix gmake libtool ncurses pathfix pkgconfig readline
-USE_AUTOTOOLS=	libltdl
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include

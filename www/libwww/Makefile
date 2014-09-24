@@ -12,15 +12,11 @@ MAINTAINER=	marius@nuenneri.ch
 COMMENT=	The W3C Reference Library
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--enable-shared --enable-static --with-zlib --with-ssl=${OPENSSLBASE}
+CONFIGURE_ARGS=	--with-zlib --with-ssl=${OPENSSLBASE}
 USES=		perl5 gmake libtool tar:tgz
 USE_PERL5=	build
 USE_LDCONFIG=	yes
 USE_OPENSSL=	yes
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|$${CONFIG_SHELL-/bin/sh} $$ac_aux_dir|$$ac_aux_dir|' \
-		${WRKSRC}/configure
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/modules/expat/xmlparse/xmlparse.h \

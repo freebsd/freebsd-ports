@@ -103,4 +103,3 @@ lib/frei0r-1/value.so
 lib/frei0r-1/vertigo.so
 lib/frei0r-1/xfade0r.so
 libdata/pkgconfig/frei0r.pc
-@dirrmtry lib/frei0r-1

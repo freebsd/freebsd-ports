@@ -58,19 +58,3 @@ share/mimelnk/application/x-qfsm.desktop
 %%DATADIR%%/French.qm
 %%DATADIR%%/German.qm
 %%DATADIR%%/Russian.qm
-@dirrm %%DATADIR%%
-@dirrmtry share/mimelnk/application
-@dirrmtry share/mimelnk
-@dirrmtry share/icons/hicolor/64x64/mimetypes
-@dirrmtry share/icons/hicolor/64x64/apps
-@dirrmtry share/icons/hicolor/64x64
-@dirrmtry share/icons/hicolor/48x48/mimetypes
-@dirrmtry share/icons/hicolor/48x48/apps
-@dirrmtry share/icons/hicolor/48x48
-@dirrmtry share/icons/hicolor/32x32/mimetypes
-@dirrmtry share/icons/hicolor/32x32/apps
-@dirrmtry share/icons/hicolor/32x32
-@dirrmtry share/icons/hicolor
-@dirrmtry share/icons
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

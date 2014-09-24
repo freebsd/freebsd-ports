@@ -13,10 +13,9 @@ COMMENT=	Integer-only fully Ogg Vorbis compliant decoder library
 
 SNAP_DATE=	02132004
 WRKSRC=		${WRKDIR}/Tremor
-USES=		libtool tar:tgz
-USE_AUTOTOOLS=	aclocal automake autoconf libtoolize
-AUTOMAKE_ARGS=	-a -c
+USES=		autoreconf libtool tar:tgz
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
+INSTALL_TARGET=	install-strip
 
 .include <bsd.port.mk>

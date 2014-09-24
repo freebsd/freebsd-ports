@@ -171,35 +171,4 @@
 %%WWWDIR%%/templates/sendmail.template.php
 %%WWWDIR%%/templates/summary.template.php
 %%WWWDIR%%/templates/viewmail.template.php
-@dirrm %%WWWDIR%%/lib/pear/PEAR/Validator
-@dirrm %%WWWDIR%%/lib/pear/PEAR/Task/Windowseol
-@dirrm %%WWWDIR%%/lib/pear/PEAR/Task/Unixeol
-@dirrm %%WWWDIR%%/lib/pear/PEAR/Task/Replace
-@dirrm %%WWWDIR%%/lib/pear/PEAR/Task/Postinstallscript
-@dirrm %%WWWDIR%%/lib/pear/PEAR/Task
-@dirrm %%WWWDIR%%/lib/pear/PEAR/REST
-@dirrm %%WWWDIR%%/lib/pear/PEAR/PackageFile/v2
-@dirrm %%WWWDIR%%/lib/pear/PEAR/PackageFile/Parser
-@dirrm %%WWWDIR%%/lib/pear/PEAR/PackageFile/Generator
-@dirrm %%WWWDIR%%/lib/pear/PEAR/PackageFile
-@dirrm %%WWWDIR%%/lib/pear/PEAR/Installer/Role
-@dirrm %%WWWDIR%%/lib/pear/PEAR/Installer
-@dirrm %%WWWDIR%%/lib/pear/PEAR/Frontend
-@dirrm %%WWWDIR%%/lib/pear/PEAR/Downloader
-@dirrm %%WWWDIR%%/lib/pear/PEAR/Command
-@dirrm %%WWWDIR%%/lib/pear/PEAR/ChannelFile
-@dirrm %%WWWDIR%%/lib/pear/PEAR
-@dirrm %%WWWDIR%%/lib/pear/OS
-@dirrm %%WWWDIR%%/lib/pear/Net
-@dirrm %%WWWDIR%%/lib/pear/Mail
-@dirrm %%WWWDIR%%/lib/pear/DB
-@dirrm %%WWWDIR%%/lib/pear
-@dirrm %%WWWDIR%%/lib
-@dirrm %%WWWDIR%%/contrib/mysql
-@dirrm %%WWWDIR%%/contrib
-@dirrmtry %%WWWDIR%%/config
-@dirrm %%WWWDIR%%/img
-@dirrm %%WWWDIR%%/lang
-@dirrm %%WWWDIR%%/scripts
-@dirrm %%WWWDIR%%/templates
-@dirrmtry %%WWWDIR%%
+@dir(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%

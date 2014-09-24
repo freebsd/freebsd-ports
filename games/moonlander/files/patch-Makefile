@@ -8,7 +8,7 @@
 +#CC=gcc
  
 -LIBS=SDL_image
-+LIBS=`sdl-config --libs` -lSDL_image -lSDL_mixer
++LIBS=`sdl-config --libs` -lSDL_image -lSDL_mixer -lm
  
  C_FILES=moon_lander.c game_lib.c DT_drawtext.c
  OBJ_FILES=moon_lander.o game_lib.o DT_drawtext.o 

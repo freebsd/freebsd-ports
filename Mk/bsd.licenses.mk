@@ -146,7 +146,6 @@ _LICENSE_LIST_PORT_VARS=	PERMS NAME GROUPS
 # Path variables
 #
 # _LICENSE_DIR		- Directory to install licenses
-# _LICENSE_DIR_REL	- Same as above, without ${PREFIX}
 # _LICENSE_STORE	- Store for known license files
 # _LICENSE_CATALOG	- License catalog (make include file) to be created (dst)
 # _LICENSE_CATALOG_TMP	- Same as above, but in WRKDIR (src)
@@ -157,7 +156,6 @@ _LICENSE_LIST_PORT_VARS=	PERMS NAME GROUPS
 # 					  few more targets only.
 
 _LICENSE_DIR?=		${PREFIX}/share/licenses/${PKGNAME}
-_LICENSE_DIR_REL?=	share/licenses/${PKGNAME}
 _LICENSE_STORE?=	${PORTSDIR}/Templates/Licenses
 _LICENSE_CATALOG?=	${_LICENSE_DIR}/catalog.mk
 _LICENSE_CATALOG_TMP?=	${WRKDIR}/.license-catalog.mk
@@ -747,15 +745,15 @@ ${_LICENSE_COOKIE}:
 # Package list entries, and installation
 
 .if !defined(NO_LICENSES_INSTALL)
-PLIST_FILES+=	${_LICENSE_DIR_REL}/${_LICENSE_CATALOG:T} \
-				${_LICENSE_DIR_REL}/${_LICENSE_REPORT:T}
+PLIST_FILES+=	${_LICENSE_CATALOG} \
+				${_LICENSE_REPORT}
 
 .if ${_LICENSE_COMB} == "single"
-PLIST_FILES+=	${_LICENSE_DIR_REL}/${_LICENSE}
+PLIST_FILES+=	${_LICENSE_DIR}/${_LICENSE}
 .else
 .	for lic in ${_LICENSE}
 .		if defined(_LICENSE_FILE_${lic})
-PLIST_FILES+=	${_LICENSE_DIR_REL}/${lic}
+PLIST_FILES+=	${_LICENSE_DIR}/${lic}
 .		endif
 .	endfor
 .endif
@@ -771,13 +769,6 @@ install-license:
 	@${INSTALL_DATA} ${_LICENSE_FILE_${lic}} ${STAGEDIR}${_LICENSE_DIR}/${lic}
 .	endfor
 .endif
-# XXX @dirrmtry entry must be here (no way to do with PLIST_* vars)
-	@${ECHO_CMD} "@owner root" >> ${TMPPLIST}
-	@${ECHO_CMD} "@group wheel" >> ${TMPPLIST}
-	@${ECHO_CMD} "@cwd ${PREFIX}" >> ${TMPPLIST}
-	@${ECHO_CMD} "@dirrm ${_LICENSE_DIR_REL}" >> ${TMPPLIST}
-	@${ECHO_CMD} "@unexec rmdir %D/share/licenses 2>/dev/null || true" >> ${TMPPLIST}
-
 .endif
 
 .else	# !LICENSE

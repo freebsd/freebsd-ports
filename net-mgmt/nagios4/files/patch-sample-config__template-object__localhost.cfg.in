@@ -1,5 +1,5 @@
---- ./sample-config/template-object/localhost.cfg.in.orig	2013-11-25 14:16:25.000000000 +0000
-+++ ./sample-config/template-object/localhost.cfg.in	2014-01-24 22:40:43.000000000 +0000
+--- sample-config/template-object/localhost.cfg.in.orig	2014-08-12 15:00:01 UTC
++++ sample-config/template-object/localhost.cfg.in
 @@ -4,7 +4,7 @@
  #
  # NOTE: This config file is intended to serve as an *extremely* simple 

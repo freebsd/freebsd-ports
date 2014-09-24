@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	webcamd
-PORTVERSION=	3.17.0.5
+PORTVERSION=	3.17.0.6
 CATEGORIES=	multimedia
 MASTER_SITES=	http://www.selasky.org/hans_petter/distfiles/ \
 		http://home.selasky.org:8192/distfiles/
@@ -102,11 +102,16 @@ do-configure:
 post-patch:
 	@cd ${WRKSRC}/patches; ${SH} ./do_patch.sh
 
+pre-install:
+	@${SED} -i .orig \
+		-e "s|%%PREFIX%%|${PREFIX}|g" \
+		-e "s|%%LIBHAL%%|${LIBHAL}|g" \
+		-e "s|%%LIBCUSE%%|${LIBCUSE}|g" \
+		${WRKDIR}/webcamd
+
 post-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/devd
 	@${SED} -e "s|%%PREFIX%%|${PREFIX}|g" \
-		-e "s|%%LIBHAL%%|${LIBHAL}|g" \
-		-e "s|%%LIBCUSE%%|${LIBCUSE}|g" \
 		< ${FILESDIR}/webcamd.conf.in > ${WRKDIR}/webcamd.conf
 	${INSTALL_DATA} "${WRKDIR}/webcamd.conf" ${STAGEDIR}${PREFIX}/etc/devd
 

@@ -349,7 +349,6 @@
     SUBDIR += gnome-tetravex
     SUBDIR += gnomeattacks
     SUBDIR += gnomebreakout
-    SUBDIR += gnomechess
     SUBDIR += gnomekiss
     SUBDIR += gnomesudoku
     SUBDIR += gnono

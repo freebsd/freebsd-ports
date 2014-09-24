@@ -1,7 +1,6 @@
 bin/opencdk-config
 include/opencdk.h
 lib/libopencdk.a
-lib/libopencdk.la
 lib/libopencdk.so
 lib/libopencdk.so.10
 lib/libopencdk.so.10.0.6

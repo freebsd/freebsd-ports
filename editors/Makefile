@@ -266,5 +266,7 @@
     SUBDIR += zile
     SUBDIR += zim
     SUBDIR += zoinks
+    SUBDIR += sublime
+    SUBDIR += sublime3
 
 .include <bsd.port.subdir.mk>

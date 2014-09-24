@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	nginx
-PORTVERSION=	1.7.4
-PORTREVISION=	1
+PORTVERSION=	1.7.5
 CATEGORIES=	www
 MASTER_SITES=	http://nginx.org/download/
 MASTER_SITES+=	${MASTER_SITE_LOCAL}
@@ -108,8 +107,8 @@ OPTIONS_DEFINE=	\
 	XSS \
 	VIDEO
 
-OPTIONS_SINGLE=		VIDEO
-OPTIONS_SINGLE_VIDEO=	HTTP_MP4 HTTP_MP4_H264
+OPTIONS_RADIO=		VIDEO
+OPTIONS_RADIO_VIDEO=	HTTP_MP4 HTTP_MP4_H264
 OPTIONS_DEFAULT=	IPV6 HTTP HTTP_CACHE HTTP_REWRITE HTTP_SSL HTTP_STATUS WWW
 
 DEBUGLOG_DESC=			Enable debug log (--with-debug)
@@ -688,10 +687,11 @@ CONFIGURE_ARGS+=--add-module=${WRKDIR}/openresty-redis2-nginx-module-${GIT_REDIS
 .endif
 
 .if ${PORT_OPTIONS:MRTMP}
-NGINX_RTMP_VERSION=	1.1.4
+NGINX_RTMP_VERSION=	1.1.5
 MASTER_SITES+=	https://github.com/arut/nginx-rtmp-module/archive/v${NGINX_RTMP_VERSION}/:rtmp
 DISTFILES+=	rtmp-nginx-module-v${NGINX_RTMP_VERSION}.tar.gz:rtmp
 CONFIGURE_ARGS+=--add-module=${WRKDIR}/nginx-rtmp-module-${NGINX_RTMP_VERSION}
+EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-arut-rtmp-module
 .endif
 
 .if ${PORT_OPTIONS:MSET_MISC}
@@ -728,6 +728,7 @@ CONFIGURE_ARGS+=--add-module=${WRKDIR}/openresty-srcache-nginx-module-${GIT_SRCA
 .endif
 
 .if ${PORT_OPTIONS:MSUPERVISORD}
+IGNORE=	SUPERVISORD: update require
 NGINX_SUPERVISORD_VERSION=	1.4
 MASTER_SITES+=	http://labs.frickle.com/files/:supervisord
 DISTFILES+=	ngx_supervisord-${NGINX_SUPERVISORD_VERSION}.tar.gz:supervisord

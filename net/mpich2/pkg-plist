@@ -880,9 +880,9 @@ sbin/mpeuninstall
 %%DATADIR%%/examples/graphics/cpi.c
 %%DATADIR%%/examples/graphics/cxgraphics.c
 %%DATADIR%%/examples/graphics/fxgraphics.f
-%%DATADIR%%/examples/logfiles/barrier.rlog
-%%DATADIR%%/examples/logfiles/fpilog.clog
-%%DATADIR%%/examples/logfiles/fpilog.slog2
+%%JAVA%%%%DATADIR%%/examples/logfiles/barrier.rlog
+%%JAVA%%%%DATADIR%%/examples/logfiles/fpilog.clog
+%%JAVA%%%%DATADIR%%/examples/logfiles/fpilog.slog2
 %%DATADIR%%/examples/logging/Makefile
 %%DATADIR%%/examples/logging/comm1_isr.c
 %%DATADIR%%/examples/logging/comm1_isr_loop.c
@@ -903,15 +903,3 @@ sbin/mpeuninstall
 %%DATADIR%%/examples/logging/pthread_sendrecv.c
 %%DATADIR%%/examples/logging/pthread_sendrecv_user.c
 %%DATADIR%%/examples/logging/srtest.c
-@dirrm %%DATADIR%%/examples/logfiles
-@dirrm %%DATADIR%%/examples/logging
-@dirrm %%DATADIR%%/examples/graphics
-@dirrm %%DATADIR%%/examples/collchk
-@dirrm %%DATADIR%%/examples
-@dirrm %%DATADIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/www4
-%%JAVA%%%%PORTDOCS%%@dirrm %%DOCSDIR%%/jumpshot-4/html
-%%JAVA%%%%PORTDOCS%%@dirrm %%DOCSDIR%%/jumpshot-4
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-%%JAVA%%@dirrm lib/trace_rlog
-@dirrm include/primitives

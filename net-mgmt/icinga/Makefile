@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	icinga
-PORTVERSION=	1.11.5
-PORTREVISION=	2
+PORTVERSION=	1.11.7
 CATEGORIES=	net-mgmt
 MASTER_SITES=	https://github.com/Icinga/${PORTNAME}-core/releases/download/v${PORTVERSION}/
 
@@ -12,10 +11,11 @@ COMMENT=	Enterprise grade open source monitoring system based on Nagios
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libgd.so:${PORTSDIR}/graphics/gd
+LIB_DEPENDS=	libltdl.so:${PORTSDIR}/devel/libltdl \
+		libgd.so:${PORTSDIR}/graphics/gd
 
 USES=		iconv gmake
-USE_AUTOTOOLS=	autoconf libltdl
+USE_AUTOTOOLS=	autoconf
 USE_RC_SUBR=	icinga
 
 GNU_CONFIGURE=	yes
@@ -86,7 +86,7 @@ NAGPLUGINS_RUN_DEPENDS=	${LOCALBASE}/libexec/nagios/check_nagios:${PORTSDIR}/net
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MIDOUTILS}
-LIB_DEPENDS+=		libdbi.so:${PORTSDIR}/databases/libdbi-drivers
+LIB_DEPENDS+=		libdbi.so:${PORTSDIR}/databases/libdbi
 CONFIGURE_ARGS+=	--enable-idoutils \
 			--enable-ssl \
 			--with-dbi-lib=${LOCALBASE}/lib \

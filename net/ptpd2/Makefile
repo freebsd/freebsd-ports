@@ -16,9 +16,8 @@ CONFLICTS=	ptpd2-devel.*
 
 ETCDIR=	${PREFIX}/etc/${PORTNAME}${PKGNAMESUFFIX}
 
-USES=		gmake libtool
 GNU_CONFIGURE=	yes
-USE_AUTOTOOLS=	autoconf:env aclocal:env automake:env libtoolize
+USES=		autoreconf gmake libtool
 
 PORTDOCS=	*
 
@@ -31,11 +30,6 @@ SNMP_CONFIGURE_ENABLE=	snmp
 SNMP_LIB_DEPENDS=	libnetsnmp.so:${PORTSDIR}/net-mgmt/net-snmp
 
 .include <bsd.port.options.mk>
-
-run-autotools:	run-autotools-autoreconf
-
-run-autotools-autoreconf:
-	@cd ${CONFIGURE_WRKSRC} && ${SETENV} ${AUTOTOOLS_ENV} ${AUTORECONF} -i
 
 post-install:
 .if ${PORT_OPTIONS:MDOCS}

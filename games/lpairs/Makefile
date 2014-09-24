@@ -15,17 +15,19 @@ USE_SDL=	sdl
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
+PLIST_FILES=	bin/${PORTNAME}
+PORTDATA=	*
+
 OPTIONS_DEFINE=	NLS
 
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}
-PLIST_SUB+=	NLS=""
 USES+=		gettext
 CONFIGURE_ARGS=	--with-libintl-prefix=${LOCALBASE}
+PLIST_FILES+=	share/locale/de/LC_MESSAGES/lpairs.mo
 .else
 CONFIGURE_ARGS+=--disable-nls
-PLIST_SUB+=	NLS="@comment "
 .endif
 
 post-patch:

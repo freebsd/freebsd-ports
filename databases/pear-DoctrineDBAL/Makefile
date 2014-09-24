@@ -26,29 +26,16 @@ ODBC_DESC=	Install PHP DBO driver for ODBC
 PGSQL_DESC=	Install PHP DBO driver for PostgreSQL
 SQLITE_DESC=	Install PHP DBO driver for SQLite
 
+USES=		pear
 PEAR_CHANNEL=	doctrine
-PEAR_AUTOINSTALL=	yes
 
 USE_PHP=	pdo
 WANT_PHP_CLI=	yes
 
-.include <bsd.port.pre.mk>
+DBLIB_RUN_DEPENDS=	${PHPBASE}/lib/php/${PHP_EXT_DIR}/pdo_dblib.so:${PORTSDIR}/databases/php${PHP_VER}-pdo_dblib
+MYSQL_USE=	PHP=pdo_mysql
+ODBC_RUN_DEPENDS=	${PHPBASE}/lib/php/${PHP_EXT_DIR}/pdo_odbc.so:${PORTSDIR}/databases/php${PHP_VER}-pdo_odbc
+PGSQL_USE=	PHP=pdo_pgsql
+SQLITE_USE=	PHP=pdo_sqlite
 
-.if ${PORT_OPTIONS:MDBLIB}
-RUN_DEPENDS+=	${PHPBASE}/lib/php/${PHP_EXT_DIR}/pdo_dblib.so:${PORTSDIR}/databases/php${PHP_VER}-pdo_dblib
-.endif
-.if ${PORT_OPTIONS:MMYSQL}
-USE_PHP+=	pdo_mysql
-.endif
-.if ${PORT_OPTIONS:MODBC}
-RUN_DEPENDS+=	${PHPBASE}/lib/php/${PHP_EXT_DIR}/pdo_odbc.so:${PORTSDIR}/databases/php${PHP_VER}-pdo_odbc
-.endif
-.if ${PORT_OPTIONS:MPGSQL}
-USE_PHP+=	pdo_pgsql
-.endif
-.if ${PORT_OPTIONS:MSQLITE}
-USE_PHP+=	pdo_sqlite
-.endif
-
-.include "${PORTSDIR}/devel/pear/bsd.pear.mk"
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -26,6 +26,6 @@ do-install:
 	(cd ${WRKSRC}/libs/linux-gcc-FreeBSD/ && \
 		${INSTALL_LIB} libjson_linux-gcc-FreeBSD_libmt.so \
 		${STAGEDIR}${PREFIX}/lib/libjsoncpp.so.0)
-	(cd ${STAGEDIR}${PREFIX}/lib/ && ${LN} -s libjsoncpp.so.0 libjsoncpp.so )
+	(cd ${STAGEDIR}${PREFIX}/lib/ && ${LN} -sf libjsoncpp.so.0 libjsoncpp.so )
 
 .include <bsd.port.mk>

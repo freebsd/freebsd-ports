@@ -3,6 +3,7 @@
 
 PORTNAME=	swig
 PORTVERSION=	2.0.12
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
@@ -13,14 +14,12 @@ LICENSE=	GPLv3
 
 LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre
 
-USES=		gmake libtool lua:51
-USE_AUTOTOOLS=	autoconf:env
+USES=		gmake lua:51
 
 VER=		${PORTVERSION:R}
 PLIST_SUB+=	PORTVERSION=${PORTVERSION} VER="${VER}"
 
 GNU_CONFIGURE=	yes
-CFLAGS+=	-fPIC -DPIC
 ALL_TARGET=	# none
 
 CONFIGURE_ARGS+=--program-suffix=${VER}
@@ -33,7 +32,7 @@ OCTAVE_VER_CMD=	${LOCALBASE}/bin/octave-config -v 2>/dev/null || ${TRUE}
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 post-patch:
 	${SETENV} OCTAVE_VER=$$(${OCTAVE_VER_CMD}) \
@@ -68,4 +67,4 @@ post-install:
 regression-test: build
 	cd ${WRKSRC} && ${MAKE_CMD} check
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

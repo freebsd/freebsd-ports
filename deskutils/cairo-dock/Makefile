@@ -28,8 +28,6 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 CMAKE_ARGS+=	-Dinstall-pc-path:STRING="${LOCALBASE}/libdata/pkgconfig"
 CMAKE_ARGS+=	-DROOT_PREFIX:PATH=${STAGEDIR}
 
-MANCOMPRESSED=	yes
-
 post-patch:
 	@${FIND} ${WRKSRC} -type f -name "*" | ${XARGS} ${REINPLACE_CMD} -e \
 	    's|/usr/share/pixmaps/|${LOCALBASE}/share/pixmaps/|g; \

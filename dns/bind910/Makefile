@@ -2,7 +2,6 @@
 
 PORTNAME=	bind
 PORTVERSION=	${ISCVERSION:S/-P/P/}
-PORTREVISION=	5
 CATEGORIES=	dns net ipv6
 MASTER_SITES=	ISC/bind9/${ISCVERSION}
 PKGNAMESUFFIX?=	910
@@ -14,7 +13,7 @@ COMMENT=	BIND DNS suite with updated DNSSEC and DNS64
 LICENSE=	ISCL
 
 # ISC releases things like 9.8.0-P1, which our versioning doesn't like
-ISCVERSION=	9.10.0-P2
+ISCVERSION=	9.10.1
 
 MAKE_JOBS_UNSAFE=	yes
 
@@ -35,7 +34,7 @@ CONFIGURE_ARGS=	--localstatedir=/var --disable-linux-caps \
 		--with-libxml2=${LOCALBASE}
 ETCDIR=		${PREFIX}/etc/namedb
 
-CONFLICTS=	bind9*-9.[456789].* bind9*-sdb-9.[456789].*
+CONFLICTS+=	bind9*-9.[456789].* bind9*-sdb-9.[456789].*
 
 SUB_FILES=	pkg-message
 
@@ -117,8 +116,7 @@ GEOIP_LIB_DEPENDS=	libGeoIP.so:${PORTSDIR}/net/GeoIP
 GOST_CONFIGURE_WITH=	gost
 
 PYTHON_CONFIGURE_WITH=	python
-PYTHON_USE=	PYTHON=yes
-PYTHON_USES=	gmake
+PYTHON_USES=	python
 
 DLZ_POSTGRESQL_CONFIGURE_ON=	--with-dlz-postgres=yes
 DLZ_POSTGRESQL_USE=		pgsql=yes
@@ -190,6 +188,8 @@ PKGDEINSTALL=	${PKGINSTALL}
 CONFIGURE_ARGS+=	--prefix=${PREFIX} \
 			--sysconfdir=${ETCDIR}
 
+PORTDOCS=	*
+
 .if !defined(BIND_TOOLS_SLAVE)
 post-patch:
 .for FILE in check/named-checkconf.8 named/named.8 nsupdate/nsupdate.1 \
@@ -208,15 +208,11 @@ post-patch:
 		${WRKSRC}/bin/named/Makefile.in.Dist > \
 		${WRKSRC}/bin/named/Makefile.in
 
-.if ${PORT_OPTIONS:MDOCS}
-PORTDOCS=	*
-.endif
 post-install:
 .if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${STAGEDIR}${DOCSDIR}/arm ${STAGEDIR}${DOCSDIR}/misc
+	${MKDIR} ${STAGEDIR}${DOCSDIR}/arm
 	${INSTALL_DATA} ${WRKSRC}/doc/arm/*.html ${STAGEDIR}${DOCSDIR}/arm
 	${INSTALL_DATA} ${WRKSRC}/doc/arm/Bv9ARM.pdf ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/doc/misc/[a-z]* ${STAGEDIR}${DOCSDIR}/misc
 	${INSTALL_DATA} ${WRKSRC}/CHANGES ${WRKSRC}/COPYRIGHT ${WRKSRC}/FAQ \
 		${WRKSRC}/HISTORY ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 .endif

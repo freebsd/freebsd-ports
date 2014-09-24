@@ -3,6 +3,7 @@
 
 PORTNAME=	geronimo
 DISTVERSION=	3.0-beta-1
+PORTREVISION=	1
 CATEGORIES=	www devel java
 MASTER_SITES=	${MASTER_SITE_APACHE}
 MASTER_SITE_SUBDIR=	geronimo/${DISTVERSION}
@@ -45,7 +46,7 @@ WRKDIR?=	${WRKDIRPREFIX}${.CURDIR}/work
 WRKSRC=		${WRKDIR}/${DISTNAME:S/-bin//}
 JAR_FILE=	bin/server.jar
 LATEST_LINK=	${APP_SHORTNAME}
-PLIST_FILES=	${GERONIMO_OUT:S,^${PREFIX}/,,}
+PLIST_FILES=	"@(${GERONIMO_USER},${GERONIMO_GROUP},) ${GERONIMO_OUT:S,^${PREFIX}/,,}"
 
 SUB_LIST=	GERONIMO_HOME=${APP_HOME} \
 		APP_SHORTNAME=${APP_SHORTNAME} \
@@ -76,16 +77,18 @@ post-patch:
 	@${REINPLACE_CMD} -e '/^activemq.data/s|= |= ${APP_HOME}/|' ${WRKSRC}/var/config/config-substitutions.properties
 
 do-install:
-	${MKDIR} ${STAGEDIR}${APP_HOME} && ${CHOWN} ${GERONIMO_USER}:${GERONIMO_GROUP} ${STAGEDIR}${APP_HOME}
+	${MKDIR} ${STAGEDIR}${APP_HOME}
 	@(cd ${WRKSRC} && ${FIND} . |\
-		 ${CPIO} -pdmu -R ${GERONIMO_USER}:${GERONIMO_GROUP} ${STAGEDIR}${APP_HOME})
-	${INSTALL} -o ${GERONIMO_USER} -g ${GERONIMO_GROUP} -m 0644 /dev/null ${STAGEDIR}${GERONIMO_OUT}
+		 ${CPIO} -pdmu ${STAGEDIR}${APP_HOME})
+	${INSTALL} -m 0644 /dev/null ${STAGEDIR}${GERONIMO_OUT}
 
 post-install:
 	@${ECHO_MSG} "${APP_TITLE} ${PORTVERSION} has been installed in ${APP_HOME}."
+	@${ECHO_CMD} -e '@owner ${GERONIMO_USER}\n@group ${GERONIMO_GROUP}' >> ${TMPPLIST}
 	@${FIND} -s ${WRKSRC} -not -type d | \
 		 ${SED} -ne 's,^${WRKSRC},${APP_HOME:S,${PREFIX}/,,},p' >> ${TMPPLIST}
 	@${FIND} -s -d ${WRKSRC} -type d | \
 		 ${SED} -ne 's,^${WRKSRC},@dirrm ${APP_HOME:S,${PREFIX}/,,},p' >> ${TMPPLIST}
+	@${ECHO_CMD} -e '@owner root\n@group wheel' >> ${TMPPLIST}
 
 .include <bsd.port.mk>

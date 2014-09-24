@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Type-Tiny-XS
-PORTVERSION=	0.011
-PORTREVISION=	1
+PORTVERSION=	0.012
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:TOBYINK
@@ -19,6 +18,8 @@ USE_PERL5=	configure
 USES=		perl5
 
 post-install:
+	${CHMOD} u+w ${STAGEDIR}${SITE_PERL}/${PERL_ARCH}/auto/Type/Tiny/XS/XS.so
 	${STRIP_CMD} ${STAGEDIR}${SITE_PERL}/${PERL_ARCH}/auto/Type/Tiny/XS/XS.so
+	${CHMOD} u-w ${STAGEDIR}${SITE_PERL}/${PERL_ARCH}/auto/Type/Tiny/XS/XS.so
 
 .include <bsd.port.mk>

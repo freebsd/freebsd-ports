@@ -54,7 +54,6 @@
 #	[...]
 #	%%WEBPLUGIN_DIR%%/fooplugin.so
 #	%%WEBPLUGIN_DIR%%/fooplugin.xpi
-#	@dirrmtry %%WEBPLUGIN_DIR%%
 #	------------------------------------------------------
 #
 # Here is what it will look like when it creates the symlinks:
@@ -93,7 +92,6 @@
 #	lib/application/fooplugin.la
 #	lib/application/fooplugin.so
 #	lib/application/fooplugin.xpi
-#	@dirrm lib/application
 #	------------------------------------------------------
 #
 # Here is what it will look like when it creates symlinks:
@@ -165,18 +163,17 @@ _WEBPLUGIN_LINKFARMS=	${_WEBPLUGIN_APPS} ${_WEBPLUGIN_SLDIRS}
 WEBPLUGIN_DIR?=		${_WEBPLUGIN_LIBDIR:S,^${LOCALBASE}/,${PREFIX}/,}/${WEBPLUGIN_NAME}
 
 PLIST_SUB+=		WEBPLUGIN_DIR="${WEBPLUGIN_DIR:S,^${PREFIX}/,,}"
+.for d in ${_WEBPLUGIN_LINKFARMS}
+.for l in ${WEBPLUGIN_FILES}
+PLIST_FILES+=	${d}/${l}
+.endfor
+.endfor
 
 webplugin-post-install:
-	@${ECHO_CMD} "@cwd ${LOCALBASE}" >> ${TMPPLIST}
 .for d in ${_WEBPLUGIN_LINKFARMS}
-	${INSTALL} -d ${STAGEDIR}${d}
+	${MKDIR} ${STAGEDIR}${d}
 .for l in ${WEBPLUGIN_FILES}
 	${LN} -sf ${l:S,^,${WEBPLUGIN_DIR}/,} ${STAGEDIR}${d}/
-	@${ECHO_CMD} "${d:S,^${LOCALBASE}/,,}/${l:T}" >> ${TMPPLIST}
 .endfor
-	@${ECHO_CMD} "@unexec rmdir ${d:S,^${LOCALBASE},%D,} 2>/dev/null || true" >> ${TMPPLIST}
 .endfor
-	@${ECHO_CMD} "@unexec rmdir ${_WEBPLUGIN_SLDIR:S,^${LOCALBASE},%D,} 2>/dev/null || true" >> ${TMPPLIST}
-	@${ECHO_CMD} "@unexec rmdir ${_WEBPLUGIN_LIBDIR:S,^${LOCALBASE},%D,} 2>/dev/null || true" >> ${TMPPLIST}
-
 .endif

@@ -17,6 +17,11 @@ USE_QT4=	corelib gui opengl moc_build rcc_build xml script
 WRKSRC=		${WRKDIR}/structure-synth
 DOS2UNIX_GLOB=	*.cpp *.h
 
+PLIST_FILES=	bin/structure-synth \
+		share/applications/structure-synth.desktop \
+		share/pixmaps/structure-synth.png
+PORTDATA=	*
+
 post-extract:
 	@${MV} "${WRKDIR}/Structure Synth Source Code" ${WRKSRC}
 	@${RM} -rf ${WRKSRC}/Examples/DontDeploy

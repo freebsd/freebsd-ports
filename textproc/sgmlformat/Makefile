@@ -11,7 +11,7 @@ MASTER_SITE_SUBDIR=	kuriyama
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Generates groff and HTML from linuxdoc and docbook SGML documents
 
-USES=		perl5
+USES=		perl5 uidfix
 USE_PERL5=	run
 MAKE_ENV=	STAGEDIR=${STAGEDIR}
 
@@ -42,8 +42,5 @@ post-patch:
 
 pre-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/share/sgml/transpec
-
-post-install:
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>

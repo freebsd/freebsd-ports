@@ -22,6 +22,8 @@ LIB_DEPENDS=	libsamplerate.so:${PORTSDIR}/audio/libsamplerate \
 		liborc-0.4.so:${PORTSDIR}/devel/orc \
 		libjson-c.so:${PORTSDIR}/devel/json-c \
 		libdbus-1.so:${PORTSDIR}/devel/dbus \
+		libltdl.so:${PORTSDIR}/devel/libltdl \
+		libgdbm.so:${PORTSDIR}/databases/gdbm \
 		libck-connector.so:${PORTSDIR}/sysutils/consolekit
 
 USE_GNOME=	glib20 gnomehier intltool
@@ -30,7 +32,7 @@ USE_LDCONFIG=	yes
 USES=		execinfo gettext gmake libtool pathfix \
 		pkgconfig tar:xz
 GNU_CONFIGURE=	yes
-USE_AUTOTOOLS=	libltdl
+MAKE_JOBS_UNSAFE=yes
 CONFIGURE_ENV=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 		PTHREAD_LIBS="${PTHREAD_LIBS}" \
 		OPENSSL_CFLAGS="-I/usr/include" \

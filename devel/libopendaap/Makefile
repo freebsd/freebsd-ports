@@ -13,6 +13,7 @@ COMMENT=	C lib used to connect to iTunes(R) music shares
 USES=		libtool pathfix pkgconfig tar:bzip2
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
+INSTALL_TARGET=	install-strip
 
 post-patch:
 .for file in Makefile.in opendaap.pc.in

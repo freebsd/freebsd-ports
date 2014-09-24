@@ -11,10 +11,10 @@ COMMENT=	Utility to split MP3 and Ogg files (via CUE sheets)
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libmp3splt.so:${PORTSDIR}/audio/libmp3splt
+LIB_DEPENDS=	libmp3splt.so:${PORTSDIR}/audio/libmp3splt \
+		libltdl.so:${PORTSDIR}/devel/libltdl
 
-USES=	pkgconfig:build
-USE_AUTOTOOLS=	libltdl
+USES=		pkgconfig:build
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-oggsplt_symlink
 CONFIGURE_ENV+=	PKG_CONFIG_PATH=${LOCALBASE}/lib/pkgconfig

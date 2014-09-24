@@ -12,15 +12,11 @@ COMMENT=	PHP Mess Detector
 
 LICENSE=	BSD
 
-BUILD_DEPENDS=	pear>=1.6.0:${PORTSDIR}/devel/pear \
-		${PEARDIR}/.channels/pear.phpmd.org.reg:${PORTSDIR}/devel/pear-channel-phpmd
-RUN_DEPENDS=	pear>=1.6.0:${PORTSDIR}/devel/pear \
-		${PEARDIR}/.channels/pear.phpmd.org.reg:${PORTSDIR}/devel/pear-channel-phpmd
+BUILD_DEPENDS=	${PEARDIR}/.channels/pear.phpmd.org.reg:${PORTSDIR}/devel/pear-channel-phpmd
+RUN_DEPENDS=	${PEARDIR}/.channels/pear.phpmd.org.reg:${PORTSDIR}/devel/pear-channel-phpmd
 
+USES=	pear
 PEAR_CHANNEL=	phpmd
-PEAR_AUTOINSTALL=	yes
 USE_PHP=	dom simplexml
 
-.include <bsd.port.pre.mk>
-.include "${PORTSDIR}/devel/pear/bsd.pear.mk"
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

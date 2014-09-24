@@ -17,17 +17,11 @@ sbin/puppetdb
 @sample etc/puppetdb/conf.d/database.ini.sample
 @sample etc/puppetdb/conf.d/jetty.ini.sample
 @sample etc/puppetdb/conf.d/repl.ini.sample
-@group wheel
-@dirrmtry etc/puppetdb/conf.d
-@dirrmtry etc/puppetdb
-@dirrm libexec/puppetdb
-@dirrm %%DATADIR%%
-@cwd /
+@group
 @mode 0750
-@dirrmtry var/db/puppetdb/state
-@dirrmtry var/db/puppetdb/db
-@dirrmtry var/db/puppetdb/mq
-@dirrmtry var/db/puppetdb
-@owner puppetdb
-@dirrmtry var/log/puppetdb
-@cwd %%RESETPREFIX%%
+@dir /var/db/puppetdb/state
+@dir /var/db/puppetdb/db
+@dir /var/db/puppetdb/mq
+@dir /var/db/puppetdb
+@mode
+@dir(puppetdb,,) /var/log/puppetdb

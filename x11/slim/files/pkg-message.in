@@ -9,4 +9,11 @@ slim_enable=yes
 
 into /etc/rc.conf
 
+*** Option "sessions" is no longer supported. ***
+
+Now you need to put session files in the directory specified by option
+"sessiondir". They should be xdg-style .desktop files.
+The "Name" entry in the session file would be used as session name.
+The "Exec" entry would replace %session in login_cmd.
+
 *************************************************************************

@@ -14,10 +14,10 @@ COMMENT=	Python Database API interface to the Sybase RDBMS
 
 LICENSE=	BSD3CLAUSE
 
-LIB_DEPENDS=	libtds.so:${PORTSDIR}/databases/freetds
+LIB_DEPENDS=	libct.so:${PORTSDIR}/databases/freetds
 
-USE_PYTHON=	yes
-USE_PYDISTUTILS=	yes
+USES=		python
+USE_PYTHON=	distutils
 
 OPTIONS_DEFINE=	DOCS THREADS EXAMPLES
 OPTIONS_DEFAULT=THREADS

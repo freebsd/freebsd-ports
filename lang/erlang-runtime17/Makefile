@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	erlang
-PORTVERSION=	17.1
-PORTREVISION=	1
+PORTVERSION=	17.3
 CATEGORIES=	lang parallel java
 MASTER_SITES=	http://www.erlang.org/download/:erlangorg		\
 		http://erlang.stacken.kth.se/download/:erlangorg	\
@@ -26,7 +25,6 @@ ERLANG_LIB=	${PORTNAME}${PORTVERSION:C/\..*//}
 
 SUB_FILES=	pkg-message
 SUB_LIST=	ERLANG_LIB=${ERLANG_LIB}
-PLIST_SUB=	ERLANG_LIB=${ERLANG_LIB}
 
 MAKE_JOBS_UNSAFE=yes
 
@@ -125,7 +123,6 @@ CONFIGURE_ARGS+=--without-odbc
 
 ERLANG_MAN=	otp_doc_man_${ERL_RELEASE}.tar.gz
 ERLANG_DOCS=	otp_doc_html_${ERL_RELEASE}.tar.gz
-ERLANG_PLIST=	${WRKDIR}/pkg-plist
 
 .if ${PORT_OPTIONS:MTHREADS}
 CONFIGURE_ARGS+=--enable-threads
@@ -179,23 +176,11 @@ post-install:
 
 	@cd ${STAGEDIR}${PREFIX}; ${FIND} lib/${ERLANG_LIB}/* -type d -empty \
 		| ${SORT} \
-		| ${SED} -e 's#^#@exec ${MKDIR} %D/#g' \
-		> ${ERLANG_PLIST}
+		| ${SED} -e 's#^#@dir #g' \
+		> ${TMPPLIST}
 
 	@cd ${STAGEDIR}${PREFIX}; ${FIND} lib/${ERLANG_LIB}/* -type f -o -type l \
 		| ${SORT} \
-		>> ${ERLANG_PLIST}
-
-	@cd ${STAGEDIR}${PREFIX}; ${FIND} lib/${ERLANG_LIB}/* -type d \
-		| ${SORT} -r \
-		| ${SED} -e 's/^/@dirrm /g' \
-		>> ${ERLANG_PLIST}
-
-	@${ECHO_CMD} "r ${TMPPLIST}"		> ${WRKDIR}/ex.script
-	@${ECHO_CMD} "/Insert PLIST here"	>> ${WRKDIR}/ex.script
-	@${ECHO_CMD} "d"			>> ${WRKDIR}/ex.script
-	@${ECHO_CMD} "r ${ERLANG_PLIST}"	>> ${WRKDIR}/ex.script
-	@${ECHO_CMD} "x!"			>> ${WRKDIR}/ex.script
-	@cd ${WRKDIR}; ex < ex.script
+		>> ${TMPPLIST}
 
 .include <bsd.port.mk>

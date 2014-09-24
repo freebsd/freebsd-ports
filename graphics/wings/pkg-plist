@@ -352,17 +352,3 @@ lib/erlang/lib/wings-%%VERSION%%/src/wpa.erl
 lib/erlang/lib/wings-%%VERSION%%/textures/brand.png
 lib/erlang/lib/wings-%%VERSION%%/textures/grandcanyon.png
 share/pixmaps/wings.ico
-@dirrm lib/erlang/lib/wings-%%VERSION%%/textures
-@dirrm lib/erlang/lib/wings-%%VERSION%%/src
-@dirrm lib/erlang/lib/wings-%%VERSION%%/shaders
-@dirrm lib/erlang/lib/wings-%%VERSION%%/plugins/primitives
-@dirrm lib/erlang/lib/wings-%%VERSION%%/plugins/import_export
-@dirrm lib/erlang/lib/wings-%%VERSION%%/plugins/default
-@dirrm lib/erlang/lib/wings-%%VERSION%%/plugins/commands
-@dirrm lib/erlang/lib/wings-%%VERSION%%/plugins/autouv
-@dirrm lib/erlang/lib/wings-%%VERSION%%/plugins/accel
-@dirrm lib/erlang/lib/wings-%%VERSION%%/plugins
-@dirrm lib/erlang/lib/wings-%%VERSION%%/patches
-@dirrm lib/erlang/lib/wings-%%VERSION%%/fonts
-@dirrm lib/erlang/lib/wings-%%VERSION%%/ebin
-@dirrm lib/erlang/lib/wings-%%VERSION%%

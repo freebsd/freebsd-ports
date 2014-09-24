@@ -1,7 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	squid
-PORTVERSION=	3.4.7
+PORTVERSION=	3.4.8
+PORTREVISION=	1
 CATEGORIES=	www ipv6
 MASTER_SITES=	http://www.squid-cache.org/Versions/v3/${PORTVERSION:R}/ \
 		http://www2.us.squid-cache.org/Versions/v3/${PORTVERSION:R}/ \
@@ -28,7 +29,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 CONFLICTS_INSTALL=	squid33-*
 
-USES=		perl5 tar:xz shebangfix
+USES=		cpe perl5 tar:xz shebangfix
+CPE_VENDOR=	squid-cache
 SHEBANG_FILES=	scripts/*.pl contrib/*.pl src/*.pl tools/*.pl \
 		helpers/external_acl/kerberos_ldap_group/cert_tool \
 		helpers/ssl/cert_valid.pl
@@ -45,16 +47,16 @@ SUB_FILES+=	pkg-install pkg-message
 
 OPTIONS_SUB=	yes
 OPTIONS_DEFINE=	ARP_ACL AUTH_KERB AUTH_LDAP AUTH_NIS AUTH_SASL AUTH_SMB \
-		AUTH_SQL \
-		CACHE_DIGESTS DEBUG DELAY_POOLS DNS_HELPER ECAP ESI \
-		FOLLOW_XFF FS_AUFS HTCP ICAP ICMP IDENT IPV6 KQUEUE \
+		AUTH_SQL CACHE_DIGESTS DEBUG DELAY_POOLS DNS_HELPER ECAP ESI \
+		FOLLOW_XFF FS_AUFS FS_DISKD FS_ROCK HTCP ICAP ICMP IDENT IPV6 KQUEUE \
 		LARGEFILE SNMP SSL SSL_CRTD STACKTRACES LAX_HTTP \
 		TP_IPF TP_IPFW TP_PF VIA_DB WCCP WCCPV2 DOCS EXAMPLES
 
-# Note: FS_FCOSS was removed from OPTIONS, it is broken and only experimentel
+# Note: FS_FCOSS was removed from OPTIONS, it is broken and only experimental
 #OPTIONS_DEFINE+=	FS_COSS
 
-OPTIONS_DEFAULT=AUTH_KERB AUTH_NIS FS_AUFS HTCP IDENT KQUEUE SNMP WCCP WCCPV2
+OPTIONS_DEFAULT=AUTH_KERB AUTH_NIS FS_AUFS FS_DISKD HTCP IDENT KQUEUE SNMP \
+		WCCP WCCPV2
 
 ARP_ACL_CONFIGURE_ENABLE=	eui
 AUTH_LDAP_CFLAGS=		-I${LOCALBASE}/include
@@ -97,6 +99,7 @@ STACKTRACES_CONFIGURE_ENABLE=	stacktraces
 TP_IPFW_CONFIGURE_ENABLE=	ipfw-transparent
 TP_IPF_CONFIGURE_ENABLE=	ipf-transparent
 TP_PF_CONFIGURE_ENABLE=		pf-transparent
+TP_PF_CONFIGURE_WITH=		nat-devpf
 VIA_DB_CONFIGURE_ENABLE=	forw-via-db
 WCCPV2_CONFIGURE_ENABLE=	wccpv2
 WCCP_CONFIGURE_ENABLE=		wccp
@@ -115,11 +118,13 @@ CACHE_DIGESTS_DESC=	Use cache digests
 DEBUG_DESC=		Build with extended debugging support
 DELAY_POOLS_DESC=	Delay pools (bandwidth limiting)
 DNS_HELPER_DESC=	Use external dnsserver processes for DNS
-ECAP_DESC=		Loadable content adaptation modules (broken on FreeBSD 10+)
+ECAP_DESC=		Loadable content adaptation modules
 ESI_DESC=		ESI support
 FOLLOW_XFF_DESC=	Support for the X-Following-For header
-FS_AUFS_DESC=		AUFS (async-io) support
+FS_AUFS_DESC=		AUFS (threaded-io) support
 FS_COSS_DESC=		COSS (not stable yet)
+FS_DISKD_DESC=		DISKD storage engine controlled by separate service
+FS_ROCK_DESC=		ROCK (unstable)
 HTCP_DESC=		HTCP support
 ICAP_DESC=		the ICAP client
 ICMP_DESC=		ICMP pinging and network measurement
@@ -221,7 +226,7 @@ negotiate_auth=	kerberos wrapper
 . if ${OPSYS} == DragonFly
 LIB_DEPENDS+=	libkrb5.so:${PORTSDIR}/security/krb5
 . endif
-# the kerberos_ldap_group external helper depends on LDAP and SASL:
+# the kerberos_ldap_group external helper also depends on LDAP and SASL:
 . if ${PORT_OPTIONS:MAUTH_LDAP} && ${PORT_OPTIONS:MAUTH_SASL}
 external_acl+=	kerberos_ldap_group
 . endif
@@ -236,8 +241,8 @@ CONFIGURE_ARGS+=	--enable-auth-basic="${basic_auth}" \
 			--enable-auth-ntlm="${ntlm_auth}"
 
 # Storage schemes:
-storage_schemes=	diskd rock ufs
-diskio_modules=		AIO Blocking DiskDaemon IpcIo Mmapped
+storage_schemes=	ufs
+diskio_modules=		AIO Blocking IpcIo Mmapped
 
 .if ${PORT_OPTIONS:MFS_AUFS}
 storage_schemes+=	aufs
@@ -253,6 +258,16 @@ CONFIGURE_ARGS+=	--without-pthreads
 BROKEN=			FS_COSS does not compile
 storage_schemes+=	coss
 .endif
+
+.if ${PORT_OPTIONS:MFS_DISKD}
+storage_schemes+=	diskd
+diskio_modules+=	DiskDaemon
+.endif
+
+.if ${PORT_OPTIONS:MFS_ROCK}
+storage_schemes+=	rock
+.endif
+
 
 CONFIGURE_ARGS+=	--enable-storeio="${storage_schemes}" \
 			--enable-disk-io="${diskio_modules}"
@@ -282,17 +297,6 @@ CONFIGURE_ARGS+=	--enable-storeid-rewrite-helpers="${storeid_rewrite_helpers}"
 CONFIGURE_ARGS+=	--with-openssl="${OPENSSLBASE}"
 CFLAGS+=		-I${OPENSSLINC}
 LDFLAGS+=		-L${OPENSSLLIB}
-.endif
-
-.if ${PORT_OPTIONS:MECAP}
-.if ${OPSYS} == FreeBSD && ${OSVERSION} > 1000000
-# re-evaluate on FreeBSD 10+ with the next release
-# http://www.squid-cache.org/mail-archive/squid-users/201402/0324.html
-BROKEN=		ECAP and clang are not friendly
-.endif
-LIB_DEPENDS+=	libecap.so:${PORTSDIR}/www/libecap
-CFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
 .endif
 
 .if ${PORT_OPTIONS:MSTACKTRACES}

@@ -13,13 +13,13 @@ COMMENT=	The GNU spreadsheet for X11 and terminals
 
 LICENSE=	GPLv2
 
-USE_PERL5=	build
 USES=		bison perl5
-USE_AUTOTOOLS=	autoconf213
-MAKE_ENV+=	DESTDIR=${STAGEDIR}
-CPPFLAGS+=	-I${LOCALBASE}/include
-LIBS+=		-L${LOCALBASE}/lib
+USE_PERL5=	build
+GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-x --without-xlt --without-SciPlot
+CPPFLAGS+=	-I${LOCALBASE}/include
+LIBS+=		-L${LOCALBASE}/lib -lintl
+MAKE_ENV+=	DESTDIR=${STAGEDIR}
 
 INFO=		oleo
 

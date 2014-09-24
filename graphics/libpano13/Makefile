@@ -16,9 +16,7 @@ LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
 
 USE_GNOME=	gtk20 glib20 pango atk
 
-USES=		libtool
-USE_AUTOTOOLS=	autoconf:env autoheader:env aclocal:env \
-		automake:env libtoolize
+USES=		autoreconf libtool
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include/gtk-2.0 \
 		-I${LOCALBASE}/include/glib-2.0 \
@@ -27,6 +25,7 @@ CPPFLAGS+=	-I${LOCALBASE}/include/gtk-2.0 \
 CONFIGURE_ARGS=	--with-png=${LOCALBASE} \
 		--with-jpeg=${LOCALBASE} \
 		--with-tiff=${LOCALBASE}
+INSTALL_TARGET=	install-strip
 
 USE_LDCONFIG=	yes
 
@@ -40,11 +39,5 @@ PLIST_SUB=	JAVA=""
 CONFIGURE_ARGS+=	--without-java
 PLIST_SUB=	JAVA="@comment "
 .endif
-
-pre-configure:
-	cd ${WRKSRC} && ./bootstrap
-
-post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libpano13.so.2
 
 .include <bsd.port.mk>

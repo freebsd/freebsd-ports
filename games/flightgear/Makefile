@@ -3,7 +3,7 @@
 
 PORTNAME=	flightgear
 PORTVERSION=	3.0.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	games
 # see http://www.flightgear.org/templates.js
 MASTER_SITES=	http://mirrors.ibiblio.org/flightgear/ftp/Source/ \
@@ -21,8 +21,7 @@ LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
 		libpng15.so:${PORTSDIR}/graphics/png \
 		libboost_thread.so:${PORTSDIR}/devel/boost-libs \
 		libfltk.so:${PORTSDIR}/x11-toolkits/fltk \
-		libosg.so:${PORTSDIR}/graphics/osg \
-		libdbus-1.so:${PORTSDIR}/devel/dbus
+		libosg.so:${PORTSDIR}/graphics/osg
 BUILD_DEPENDS=	${LOCALBASE}/lib/libplibsl.a:${PORTSDIR}/x11-toolkits/plib \
 		${LOCALBASE}/lib/libSimGearCore.a:${PORTSDIR}/devel/simgear
 RUN_DEPENDS=	${LOCALBASE}/lib/libplibsl.a:${PORTSDIR}/x11-toolkits/plib \
@@ -37,11 +36,16 @@ USES=		tar:bzip2 dos2unix cmake compiler:features openal:al,alut
 DOS2UNIX_REGEX=	.*\.(c|h|cxx|cpp|hxx|hpp)
 CMAKE_ARGS+=	-DJPEG_FACTORY:BOOL=ON \
 		-DENABLE_JS_SERVER:BOOL=ON \
-		-DUSE_DBUS:BOOL=ON \
 		-DSYSTEM_SQLITE:BOOL=ON \
 		-DFG_DATA_DIR:PATH=${LOCALBASE}/share/${PORTNAME} \
 		-DCMAKE_INSTALL_MANDIR:PATH=${MANPREFIX}/man \
 		-DFGCOM_DATA_PATH:PATH=${DATADIR}
+
+OPTIONS_DEFINE=	DBUS
+OPTIONS_DEFAULT=	DBUS
+DBUS_LIB_DEPENDS=	libdbus-1.so:${PORTSDIR}/devel/dbus
+DBUS_CMAKE_ON=	-DUSE_DBUS:BOOL=ON
+DBUS_CMAKE_OFF=	-DUSE_DBUS:BOOL=OFF
 
 .include <bsd.port.pre.mk>
 

@@ -290,6 +290,15 @@
     SUBDIR += libtomcrypt
     SUBDIR += libwhisker
     SUBDIR += libyubikey
+    SUBDIR += linux-c6-libgpg-error
+    SUBDIR += linux-c6-libssh2
+    SUBDIR += linux-c6-openssl
+    SUBDIR += linux-c6-libtasn1
+    SUBDIR += linux-c6-nss
+    SUBDIR += linux-c6-gnutls
+    SUBDIR += linux-c6-cyrus-sasl2
+    SUBDIR += linux-c6-openssl-compat
+    SUBDIR += linux-c6-libgcrypt
     SUBDIR += linux-f10-cyrus-sasl2
     SUBDIR += linux-f10-gnutls
     SUBDIR += linux-f10-libgcrypt
@@ -608,7 +617,6 @@
     SUBDIR += p5-Yahoo-BBAuth
     SUBDIR += p5-dicewaregen
     SUBDIR += p5-openxpki
-    SUBDIR += p5-openxpki-client-html-mason
     SUBDIR += p5-openxpki-i18n
     SUBDIR += pad
     SUBDIR += pam-mysql
@@ -854,8 +862,6 @@
     SUBDIR += rkhunter
     SUBDIR += rndpassw
     SUBDIR += ruby-camellia
-    SUBDIR += ruby-crypt
-    SUBDIR += ruby-gpgme
     SUBDIR += ruby-hmac
     SUBDIR += ruby-password
     SUBDIR += ruby-tcpwrap

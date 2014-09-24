@@ -1,2 +1,2 @@
 bin/spine
-etc/spine.conf.sample
+@sample etc/spine.conf.sample

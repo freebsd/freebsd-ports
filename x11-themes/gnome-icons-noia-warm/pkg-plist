@@ -1970,38 +1970,3 @@ share/icons/NoiaWarm/96x96/mimetypes/gnome-mime-x-font-afm.png
 share/icons/NoiaWarm/96x96/mimetypes/gnome-package.png
 share/icons/NoiaWarm/ChangeLog
 share/icons/NoiaWarm/index.theme
-@dirrm share/icons/NoiaWarm/96x96/mimetypes
-@dirrm share/icons/NoiaWarm/96x96/filesystems
-@dirrm share/icons/NoiaWarm/96x96/devices
-@dirrm share/icons/NoiaWarm/96x96/apps
-@dirrm share/icons/NoiaWarm/96x96
-@dirrm share/icons/NoiaWarm/72x72/mimetypes
-@dirrm share/icons/NoiaWarm/72x72/filesystems
-@dirrm share/icons/NoiaWarm/72x72/devices
-@dirrm share/icons/NoiaWarm/72x72/apps
-@dirrm share/icons/NoiaWarm/72x72
-@dirrm share/icons/NoiaWarm/48x48/stock
-@dirrm share/icons/NoiaWarm/48x48/mimetypes
-@dirrm share/icons/NoiaWarm/48x48/filesystems
-@dirrm share/icons/NoiaWarm/48x48/devices
-@dirrm share/icons/NoiaWarm/48x48/apps
-@dirrm share/icons/NoiaWarm/48x48
-@dirrm share/icons/NoiaWarm/36x36/stock
-@dirrm share/icons/NoiaWarm/36x36/mimetypes
-@dirrm share/icons/NoiaWarm/36x36/filesystems
-@dirrm share/icons/NoiaWarm/36x36/devices
-@dirrm share/icons/NoiaWarm/36x36/apps
-@dirrm share/icons/NoiaWarm/36x36
-@dirrm share/icons/NoiaWarm/24x24/stock
-@dirrm share/icons/NoiaWarm/24x24/filesystems
-@dirrm share/icons/NoiaWarm/24x24/devices
-@dirrm share/icons/NoiaWarm/24x24/apps
-@dirrm share/icons/NoiaWarm/24x24
-@dirrm share/icons/NoiaWarm/12x12/stock
-@dirrm share/icons/NoiaWarm/12x12/mimetypes
-@dirrm share/icons/NoiaWarm/12x12/filesystems
-@dirrm share/icons/NoiaWarm/12x12/devices
-@dirrm share/icons/NoiaWarm/12x12/apps
-@dirrm share/icons/NoiaWarm/12x12
-@dirrm share/icons/NoiaWarm
-@dirrmtry share/icons

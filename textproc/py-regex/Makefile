@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	regex
-PORTVERSION=	2014.05.23
+PORTVERSION=	2014.06.28
 CATEGORIES=	textproc python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -11,9 +11,8 @@ COMMENT=	Alternative regular expression module, to replace re
 
 LICENSE=	PSFL
 
-USE_PYTHON=		yes
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
+USES=		python
+USE_PYTHON=	autoplist distutils
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/_regex.so

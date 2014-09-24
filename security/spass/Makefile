@@ -5,7 +5,7 @@ PORTVERSION=	3.0
 PORTREVISION=	2
 CATEGORIES=	security
 
-MAINTAINER=	eadler@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Secure password generator with a true random number generator
 
 LICENSE=	GPLv3

@@ -3,4 +3,3 @@ lib/libdiscid.so
 lib/libdiscid.so.0
 lib/libdiscid.so.0.6.1
 libdata/pkgconfig/libdiscid.pc
-@dirrm include/discid

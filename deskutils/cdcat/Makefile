@@ -28,7 +28,7 @@ LIB_DEPENDS=	libtar.so:${PORTSDIR}/devel/libtar \
 CONFIGURE_WRKSRC=	${WRKSRC}/src
 BUILD_WRKSRC=	${CONFIGURE_WRKSRC}
 
-USES=		qmake:norecursive tar:bzip2
+USES=		libtool qmake:norecursive tar:bzip2
 USE_QT4=	corelib gui xml linguist_build moc_build uic_build
 QMAKE_ARGS=	INCLUDEPATH+="${L7Z_WRKSRC}/Lib7Zip" \
 		LIBS+="${L7Z_WRKSRC}/Lib7Zip/lib7zip.a" \

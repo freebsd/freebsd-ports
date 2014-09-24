@@ -2,13 +2,14 @@
 # $FreeBSD$
 
 PORTNAME=	tuxpaint-config
-PORTVERSION=	0.0.12
-PORTREVISION=	3
+PORTVERSION=	0.0.13
 CATEGORIES=	games
 MASTER_SITES=	SF/tuxpaint/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Graphical tool to change TuxPaint settings
+
+LICENSE=	GPLv2 # (or later)
 
 LIB_DEPENDS=	libpaper.so:${PORTSDIR}/print/libpaper \
 		libfltk.so:${PORTSDIR}/x11-toolkits/fltk
@@ -17,16 +18,19 @@ RUN_DEPENDS=	tuxpaint:${PORTSDIR}/games/tuxpaint
 USES=		gettext gmake
 MAKE_ARGS=	PREFIX="${PREFIX}" \
 		MAN_PREFIX="${MANPREFIX}/man" \
-		X11_ICON_PREFIX="${PREFIX}/share/pixmaps/" \
-		CFLAGS="${CXXFLAGS} -I${LOCALBASE}/include" \
-		ARCH_LINKS="-L${LOCALBASE}/lib -lintl"
-INSTALL_TARGET=	install-bin install-data install-man install-gettext install-doc
+		GNOME_PREFIX="${PREFIX}" \
+		CFLAGS="${CXXFLAGS} ${CPPFLAGS}" \
+		ARCH_LINKS="${LDFLAGS}"
+INSTALL_TARGET=	install-bin install-data install-man install-gettext \
+		install-doc install-gnome
 MAKE_JOBS_UNSAFE=yes
+
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib -lintl
 
 OPTIONS_DEFINE=	DOCS
 
-post-patch:
-	@${REINPLACE_CMD} -E 's,(BIN|DATA|DOC|LOCALE|MAN)_PREFIX),DESTDIR)$$(&,' \
-		${WRKSRC}/Makefile
+post-extract:
+	@${CHMOD} -R a+rX ${WRKSRC}
 
 .include <bsd.port.mk>

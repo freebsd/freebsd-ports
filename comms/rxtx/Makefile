@@ -26,7 +26,4 @@ NO_MTREE=	yes
 
 PLIST_SUB=	ARCH=${ARCH}
 
-post-patch:
-	@${REINPLACE_CMD} -e 's|echo aout|echo elf|' ${WRKSRC}/configure ${WRKSRC}/ltconfig
-
 .include <bsd.port.mk>

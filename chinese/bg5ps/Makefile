@@ -3,6 +3,7 @@
 
 PORTNAME=	bg5ps
 PORTVERSION=	1.3.0p3
+PORTREVISION=	1
 CATEGORIES=	chinese print
 MASTER_SITES=	http://ftp.jaist.ac.jp/pub/FreeBSD/distfiles/ \
 		http://www.gtlib.gatech.edu/pub/FreeBSD/distfiles/

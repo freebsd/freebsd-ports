@@ -25,4 +25,6 @@ RUBYGEM_AUTOPLIST=	yes
 
 PLIST_FILES=	bin/sprockets
 
+PORTSCOUT=	limit:^2\.11
+
 .include <bsd.port.mk>

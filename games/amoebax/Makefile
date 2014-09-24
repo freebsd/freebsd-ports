@@ -22,6 +22,11 @@ GNU_CONFIGURE=	yes
 USE_SDL=	sdl mixer image
 
 PORTDOCS=	*
+PORTDATA=	*
+PLIST_FILES=	bin/amoebax \
+		man/man6/amoebax.6.gz \
+		share/applications/amoebax.desktop \
+		share/pixmaps/amoebax.svg
 
 OPTIONS_DEFINE=	DOCS
 

@@ -71,55 +71,44 @@ include/apr-1/apu.h
 include/apr-1/apu_errno.h
 include/apr-1/apu_version.h
 include/apr-1/apu_want.h
+lib/apr-util-1/.keep.me
 %%NSS%%lib/apr-util-1/apr_crypto_nss-1.so
 %%NSS%%lib/apr-util-1/apr_crypto_nss.so
-%%NSS%%lib/apr-util-1/apr_crypto_nss.la
 %%NSS%%lib/apr-util-1/apr_crypto_nss.a
 %%SSL%%lib/apr-util-1/apr_crypto_openssl-1.so
 %%SSL%%lib/apr-util-1/apr_crypto_openssl.a
-%%SSL%%lib/apr-util-1/apr_crypto_openssl.la
 %%SSL%%lib/apr-util-1/apr_crypto_openssl.so
 %%FREETDS%%lib/apr-util-1/apr_dbd_freetds-1.so
 %%FREETDS%%lib/apr-util-1/apr_dbd_freetds.a
-%%FREETDS%%lib/apr-util-1/apr_dbd_freetds.la
 %%FREETDS%%lib/apr-util-1/apr_dbd_freetds.so
 %%MYSQL%%lib/apr-util-1/apr_dbd_mysql-1.so
 %%MYSQL%%lib/apr-util-1/apr_dbd_mysql.a
-%%MYSQL%%lib/apr-util-1/apr_dbd_mysql.la
 %%MYSQL%%lib/apr-util-1/apr_dbd_mysql.so
 %%PGSQL%%lib/apr-util-1/apr_dbd_pgsql-1.so
 %%PGSQL%%lib/apr-util-1/apr_dbd_pgsql.a
-%%PGSQL%%lib/apr-util-1/apr_dbd_pgsql.la
 %%PGSQL%%lib/apr-util-1/apr_dbd_pgsql.so
 %%SQLITE%%lib/apr-util-1/apr_dbd_sqlite3-1.so
 %%SQLITE%%lib/apr-util-1/apr_dbd_sqlite3.a
-%%SQLITE%%lib/apr-util-1/apr_dbd_sqlite3.la
 %%SQLITE%%lib/apr-util-1/apr_dbd_sqlite3.so
 %%BDB%%lib/apr-util-1/apr_dbm_db-1.so
 %%BDB%%lib/apr-util-1/apr_dbm_db.a
-%%BDB%%lib/apr-util-1/apr_dbm_db.la
 %%BDB%%lib/apr-util-1/apr_dbm_db.so
 %%GDBM%%lib/apr-util-1/apr_dbm_gdbm-1.so
 %%GDBM%%lib/apr-util-1/apr_dbm_gdbm.a
-%%GDBM%%lib/apr-util-1/apr_dbm_gdbm.la
 %%GDBM%%lib/apr-util-1/apr_dbm_gdbm.so
 %%NDBM%%lib/apr-util-1/apr_dbm_ndbm-1.so
 %%NDBM%%lib/apr-util-1/apr_dbm_ndbm.a
-%%NDBM%%lib/apr-util-1/apr_dbm_ndbm.la
 %%NDBM%%lib/apr-util-1/apr_dbm_ndbm.so
 %%LDAP%%lib/apr-util-1/apr_ldap-1.so
 %%LDAP%%lib/apr-util-1/apr_ldap.a
-%%LDAP%%lib/apr-util-1/apr_ldap.la
 %%LDAP%%lib/apr-util-1/apr_ldap.so
 lib/apr.exp
 lib/aprutil.exp
 lib/libapr-1.a
-lib/libapr-1.la
 lib/libapr-1.so
 lib/libapr-1.so.0
 lib/libapr-1.so.%%SHLIB_APR_MAJOR%%
 lib/libaprutil-1.a
-lib/libaprutil-1.la
 lib/libaprutil-1.so
 lib/libaprutil-1.so.0
 lib/libaprutil-1.so.%%SHLIB_APU_MAJOR%%
@@ -130,7 +119,3 @@ libdata/pkgconfig/apr-util-1.pc
 %%DATADIR%%/build-1/make_exports.awk
 %%DATADIR%%/build-1/make_var_export.awk
 %%DATADIR%%/build-1/mkdir.sh
-@dirrm include/apr-1
-%%APU_EXTRAS%%@dirrm lib/apr-util-1
-@dirrm %%DATADIR%%/build-1
-@dirrm %%DATADIR%%

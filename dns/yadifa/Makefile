@@ -2,25 +2,35 @@
 # $FreeBSD$
 
 PORTNAME=	yadifa
-PORTVERSION=	1.0.3
-PORTREVISION=	3
-DISTVERSIONSUFFIX=	-2880
+PORTVERSION=	2.0.0
+DISTVERSIONSUFFIX=	-4192
 CATEGORIES=	dns ipv6
-MASTER_SITES=	http://cdn.yadifa.eu/sites/default/files/releases/
+MASTER_SITES=	http://cdn.yadifa.eu/sites/default/files/releases/ LOCAL/mat/yadifa
 
 MAINTAINER=	mat@FreeBSD.org
 COMMENT=	YADIFA is an authoritative Name Server with DNSSEC capabilities
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKSRC}/COPYING
 
-OPTIONS_DEFINE=	DOCS EXAMPLES TCL
+OPTIONS_DEFINE=	DOCS EXAMPLES TCL RRL MESSAGES NSID
+OPTIONS_DEFAULT=	RRL NSID
+OPTIONS_SUB=	yes
+
+RRL_DESC=	Response Rate Limiting
+MESSAGES_DESC=	Use messages instead of send (if many ip aliases)
+NSID_DESC=	Name Server Identifier Option
 
 GNU_CONFIGURE=	yes
-USES=		libtool
+USES=		libtool tar:tgz autoreconf compiler:c11
 USE_OPENSSL=	yes
 CONFIGURE_ARGS=	--localstatedir=/var
+
 TCL_USES=	tcl
 TCL_CONFIGURE_ENABLE=	tcl
+RRL_CONFIGURE_ENABLE=	rrl
+MESSAGES_CONFIGURE_ENABLE=	messages
+NSID_CONFIGURE_ENABLE=	nsid
 
 USE_RC_SUBR=	${PORTNAME}d
 

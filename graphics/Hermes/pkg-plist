@@ -10,4 +10,5 @@ include/Hermes/Types.h
 lib/libHermes.a
 lib/libHermes.so
 lib/libHermes.so.1
+lib/libHermes.so.1.0.0
 @dirrm include/Hermes

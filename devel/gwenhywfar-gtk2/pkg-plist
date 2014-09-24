@@ -3,4 +3,3 @@ lib/libgwengui-gtk2.so
 lib/libgwengui-gtk2.so.0
 lib/libgwengui-gtk2.so.0.0.0
 libdata/pkgconfig/gwengui-gtk2.pc
-@dirrm include/gwenhywfar4/gwen-gui-gtk2

@@ -2,9 +2,9 @@ bin/libmcrypt-config
 include/mcrypt.h
 include/mutils/mcrypt.h
 lib/libmcrypt.a
-lib/libmcrypt.la
 lib/libmcrypt.so
-lib/libmcrypt.so.8
+lib/libmcrypt.so.4
+lib/libmcrypt.so.4.4.8
 @exec mkdir -p %D/lib/libmcrypt
 man/man3/mcrypt.3.gz
 share/aclocal/libmcrypt.m4

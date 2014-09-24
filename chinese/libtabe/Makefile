@@ -3,31 +3,28 @@
 
 PORTNAME=	libtabe
 PORTVERSION=	0.2.6
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	chinese
 MASTER_SITES=	ftp://cle.linux.org.tw/pub/xcin/cvs/
 
 MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	Unified library for Chinese text processing
 
-USES=		gmake
+USES=		gmake libtool
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 USE_BDB=	yes
 OBSOLETE_BDB_VAR=	USE_DB2
 DATADIR=	${PREFIX}/share/tabe
 DOCSDIR=	${PREFIX}/share/doc/tabe
-CONFIGURE_ARGS=	--prefix=${PREFIX} \
-		--includedir=${PREFIX}/include/tabe \
+CONFIGURE_ARGS=	--includedir=${PREFIX}/include/tabe \
 		--with-db-name=${BDB_LIB_NAME} \
 		--with-db-inc=${BDB_INCLUDE_DIR} \
 		--with-db-lib=${BDB_LIB_DIR} \
-		--with-db-bin=${LOCALBASE}/bin \
-		--enable-shared
+		--with-db-bin=${LOCALBASE}/bin
 MAKE_JOBS_UNSAFE=	yes
 
 OPTIONS_DEFINE=	DOCS X11
-OPTIONS_DEFAULT=	DOCS
 
 .include <bsd.port.options.mk>
 
@@ -51,7 +48,6 @@ pre-everything::
 .endif
 
 post-patch:
-	${REINPLACE_CMD} -e '/objformat/s/echo aout/echo elf/' ${WRKSRC}/configure
 .if !${PORT_OPTIONS:MX11}
 	${REINPLACE_CMD} -e '/all:/s/ bims//; /bims/d' ${WRKSRC}/src/Makefile.in
 .endif
