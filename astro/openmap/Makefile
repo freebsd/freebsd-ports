@@ -22,6 +22,9 @@ MAKE_ARGS+=	-Dopenmap.home=${WRKSRC} \
 
 SUB_FILES=	openmap.sh
 
+PORTDATA=	*
+PORTDOCS=	*
+
 MAKE_JOBS_UNSAFE=	yes
 
 OPTIONS_DEFINE=	DOCS
