@@ -12,8 +12,7 @@ COMMENT=	C-language sources to HTML converter
 
 LICENSE=	GPLv2
 
-USE_AUTOTOOLS=	autoconf213
-
+GNU_CONFIGURE=	yes
 PLIST_FILES=	bin/c2html man/man1/c2html.1.gz
 PORTDOCS=	AUTHORS NEWS README
 
