@@ -39,7 +39,3 @@ man/man1/bashbug.1.gz
 %%NLS%%share/locale/vi/LC_MESSAGES/bash.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/bash.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/bash.mo
-%%NLS%%@dirrmtry share/locale/en@boldquot/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/en@boldquot
-%%NLS%%@dirrmtry share/locale/en@quot/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/en@quot
